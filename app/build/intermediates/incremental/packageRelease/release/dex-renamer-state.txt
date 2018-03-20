@@ -1,0 +1,4 @@
+#Tue Mar 20 23:13:32 AEDT 2018
+base.0=/home/duane/AndroidStudioProjects/WeeWxWeather/app/build/intermediates/transforms/dex/release/0
+path.0=classes.dex
+renamed.0=classes.dex

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">WeeWx Weather App</string>
+    <string name="settings">Settings</string>
+    <string name="about">About</string>
+    <string name="fileURI">Enter the URI to your settings.txt.</string>
+    <string name="refresh_time">Choose Refresh Time</string>
+    <string name="save_settings">Save Settings</string>
+    <string name="refresh">Refresh</string>
+    <string name="empty">Empty</string>
+    <string name="today">Today Stats</string>
+    <string name="radarURI">Enter the radar.html address (optional)</string>
+    <string name="stats">Weather Statistics</string>
+    <string name="todayStats">Today\'s Statistics</string>
+    <string name="yesterdayStats">Yesterday\'s Statistics</string>
+    <string name="monthlyStats">Monthly Statistics</string>
+    <string name="updateBG">Update in the Background?</string>
+    <string name="yes">Yes</string>
+    <string name="forecast">Forecast</string>
+    <string name="mainmenu">Main Menu</string>
+    <string name="metric">Use Metric</string>
+</resources>
