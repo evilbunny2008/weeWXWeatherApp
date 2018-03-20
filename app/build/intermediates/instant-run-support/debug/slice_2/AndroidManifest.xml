@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.odiousapps.weewxweather"
-      android:versionCode="1008"
-      android:versionName="0.1.8"
-      split="lib_slice_2_apk">
-</manifest>
