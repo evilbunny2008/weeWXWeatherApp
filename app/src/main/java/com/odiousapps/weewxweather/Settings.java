@@ -85,7 +85,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
                         boolean validURL1 = false;
                         boolean validURL2 = false;
                         boolean validURL3 = false;
-                        String ajax = "", radar = "", forecast = "";
+                        String data = "", radar = "", forecast = "";
 
                         CheckBox cb1 = findViewById(R.id.cb1);
                         CheckBox cb2 = findViewById(R.id.cb2);
@@ -119,8 +119,8 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
                             for(String bit : bits)
                             {
                                 String[] mb = bit.split("=", 2);
-                                if (mb[0].equals("ajax"))
-                                    ajax = mb[1];
+                                if (mb[0].equals("data"))
+                                    data = mb[1];
                                 if (mb[0].equals("radar"))
                                     radar = mb[1];
                                 if (mb[0].equals("forecast"))
@@ -141,20 +141,20 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
 
                         if (!validURL)
                         {
-                            handlerAJAX.sendEmptyMessage(0);
+                            handlerDATA.sendEmptyMessage(0);
                             return;
                         }
 
-                        if (ajax.equals(""))
+                        if (data.equals(""))
                         {
-                            handlerAJAX.sendEmptyMessage(0);
+                            handlerDATA.sendEmptyMessage(0);
                             return;
                         }
 
                         try
                         {
-                            Common.LogMessage("checking: " + ajax);
-                            URL url = new URL(ajax);
+                            Common.LogMessage("checking: " + data);
+                            URL url = new URL(data);
                             URLConnection conn = url.openConnection();
                             conn.connect();
                             InputStream in = conn.getInputStream();
@@ -170,7 +170,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
 
                         if (!validURL1)
                         {
-                            handlerAJAX.sendEmptyMessage(0);
+                            handlerDATA.sendEmptyMessage(0);
                             return;
                         }
 
@@ -242,14 +242,14 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
 
                         common.SetStringPref("SETTINGS_URL", et1.getText().toString());
                         common.SetIntPref("updateInterval", pos);
-                        common.SetStringPref("BASE_URL", ajax);
+                        common.SetStringPref("BASE_URL", data);
                         common.SetStringPref("RADAR_URL", radar);
                         common.SetStringPref("FORECAST_URL", forecast);
                         common.SetBoolPref("bgdl", cb1.isChecked());
                         common.SetBoolPref("metric", cb2.isChecked());
-                        Intent data = new Intent();
-                        data.putExtra("urlChanged", true);
-                        setResult(RESULT_OK, data);
+                        Intent intent = new Intent();
+                        intent.putExtra("urlChanged", true);
+                        setResult(RESULT_OK, intent);
 
                         handlerDone.sendEmptyMessage(0);
                     }
@@ -292,7 +292,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
     };
 
     @SuppressLint("HandlerLeak")
-    private Handler handlerAJAX = new Handler()
+    private Handler handlerDATA = new Handler()
     {
         @Override
         public void handleMessage(Message msg)
@@ -300,7 +300,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
             dialog.dismiss();
             new AlertDialog.Builder(Settings.this)
                     .setTitle("Invalid URL")
-                    .setMessage("Wasn't able to connect or download ajax on your server")
+                    .setMessage("Wasn't able to connect or download data.txt on your server")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
                     {
                         @Override

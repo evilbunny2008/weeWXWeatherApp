@@ -278,15 +278,15 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         if (radar != null && !radar.equals(""))
         {
             String html = "<!DOCTYPE html>\n" +
-                    "<html lang=\"en\">\n" +
+                    "<html>\n" +
                     "  <head>\n" +
-                    "    <meta charset=\"utf-8\">\n" +
-                    "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
+                    "    <meta charset='utf-8'>\n" +
+                    "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
                     "  </head>\n" +
                     "  <body>\n" +
                     "\t<br>\n" +
-                    "\t<img id='ajaxRadar' alt=\"Regional Radar\" style=\"margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;\"\n" +
-                    "\tsrc=\"" + radar + "\">\n" +
+                    "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
+                    "\tsrc='" + radar + "'>\n" +
                     "  </body>\n" +
                     "</html>";
             wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
