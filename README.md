@@ -1,4 +1,4 @@
-## WeeWxWeatherApp -- A weather app designed specifically to use data from WeeWx
+## WeeWxWeatherApp -- A weather app designed for WeeWx
 
 This is community maintained project I do in my free time. Don't expect everything to be perfect and working. Rather be prepared that there are problems, as always try to fix them and contribute. If you can't fix the issue, please file a bug under issues so we can track the progress and resolution of the problem.
 
