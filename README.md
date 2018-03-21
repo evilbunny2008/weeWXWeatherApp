@@ -7,6 +7,7 @@ This is community maintained project I do in my free time. Don't expect everythi
  - [Screen Shots](#screen-shots)
  - [Installation](#installation)
    - [Preparing WeeWx](#preparing-weewx)
+   - [Setting up the app](#setting-up-the-app)
    - [Home Screen Widget](#home-screen-widget)
  - [License](#license)
  - [Credits](#credits)
