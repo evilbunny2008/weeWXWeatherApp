@@ -6,9 +6,9 @@ This is community maintained project I do in my free time. Don't expect everythi
 
  - [Screen Shots](#screen-shots)
  - [Installation](#installation)
+   - [Preparing WeeWx](#preparing-weewx)
+   - [Home Screen Widget](#home-screen-widget)
  - [License](#license)
-  - [Preparing WeeWx](#preparing-weewx)
-  - [Home Screen Widget](#home-screen-widget)
  - [Credits](#credits)
 
 ## Screen Shots
