@@ -7,6 +7,8 @@ This is community maintained project I do in my free time. Don't expect everythi
  - [Screen Shots](#screen-shots)
  - [Installation](#installation)
  - [License](#license)
+  - [Preparing WeeWx](#preparing-weewx)
+  - [Home Screen Widget](#home-screen-widget)
  - [Credits](#credits)
 
 ## Screen Shots
@@ -16,7 +18,7 @@ This is community maintained project I do in my free time. Don't expect everythi
 
 ## Installation
 
-### Setting up WeeWx
+### Preparing WeeWx
 
 Unlike general weather apps, which get data from third party websites, this app gets data from personal weather stations running WeeWx. Before you can use this app, you need to prepare WeeWx with a custom template. To find out more about running WeeWx you can find details on the [WeeWx website](http://weewx.com/).
 
