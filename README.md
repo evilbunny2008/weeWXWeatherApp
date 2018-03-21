@@ -8,6 +8,7 @@ This is community maintained project I do in my free time. Don't expect everythi
  - [Installation](#installation)
    - [Preparing WeeWx](#preparing-weewx)
    - [WeeWx alltime data](#weewx-alltime-data)
+   - [Settings.txt](#settings.txt)
    - [Setting up the app](#setting-up-the-app)
    - [Home Screen Widget](#home-screen-widget)
  - [License](#license)
@@ -35,9 +36,11 @@ From there you then need to add the template into the /etc/weewx/skin/Standard/s
 ```
 You shouldn't need to reboot or even restart WeeWx, as the skin.conf file is re-read before new reports are generated. 
 
+For more details on setting up and running WeeWx, check out the documentation on [WeeWX's website](http://www.weewx.com/docs/usersguide.htm)
+
 ### WeeWx alltime data
 
-If you would like alltime statistics to show up in the app you need to copy xstat.py in the user/ directory. On a debian install just copy xstat.py by doing the following:
+If you would like alltime statistics to show up in the app you need to copy xstat.py in the user/ directory. On a debian system just do the following:
 ```
 cp /usr/share/doc/weewx/examples/xstats/bin/user/xstats.py /usr/share/weewx/user/xstats.py
 ```
@@ -46,10 +49,9 @@ Then you need to edit /etc/weewx/skin/Standard/skin.conf and add the following l
 [CheetahGenerator]
     search_list_extensions = user.xstats.ExtendedStatistics
 ```
+### Settings.txt
 
-Next you need to download the [settings.txt](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt) file and save it to your website in the weewx website directory, this can be either /var/www/weewx/ or /var/www/html/weewx/. You then need to customise the settings.txt file, this includes giving the URL to the data.txt file, you can also add the URL to a nearby radar image, such as from WeatherUnderground. The forecast line will use Yahoo! forecasts and you just need to enter the town/city, state/province and country you want the forecast for.
-
-For more details on setting up and running WeeWx, check out the documentation on [WeeWX's website](http://www.weewx.com/docs/usersguide.htm)
+To let the app know where to download information from we have a meta config file with all the details. You can view the example [settings.txt](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt) file and save it to your website in the weewx website directory, this can be either /var/www/weewx/ or /var/www/html/weewx/. You then need to customise the settings file. Currently there is three lines in the file, the first is the URL to the data.txt file from above. Secondly there is an option for an animated gif file of weather radar, currenly only tested on weatherunderground images. The third line is for forecasts from [Yahoo! weather](https://www.yahoo.com/?ilc=401) and you just need to enter the town/city, state/province and country you want the forecast for.
 
 ### Setting up the app
 
