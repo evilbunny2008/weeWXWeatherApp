@@ -42,6 +42,8 @@ Then you need to edit /etc/weewx/skin/Standard/skin.conf and add the following l
     search_list_extensions = user.xstats.ExtendedStatistics
 ```
 
+For more details on setting up and running WeeWx, check out the documentation on [WeeWX's website](http://www.weewx.com/docs/usersguide.htm)
+
 ## License
 
 Source code is made available under the GPLv3 license, in the hope they might be useful to others. See [LICENSE](LICENSE) for details.
