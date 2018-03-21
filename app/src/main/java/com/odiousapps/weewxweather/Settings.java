@@ -48,7 +48,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
         common = new Common(this);
 
         et1 = findViewById(R.id.settings);
-        et1.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/settings.txt"));
+        et1.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/settings.txt"));
 
         Spinner s1 = findViewById(R.id.spinner1);
         ArrayAdapter<String>adapter = new ArrayAdapter<>(Settings.this, android.R.layout.simple_spinner_item, paths);
@@ -90,7 +90,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
                         CheckBox cb1 = findViewById(R.id.cb1);
                         CheckBox cb2 = findViewById(R.id.cb2);
 
-                        if (et1.getText().toString().equals("https://example.com/settings.txt") || et1.getText().toString().equals(""))
+                        if (et1.getText().toString().equals("https://example.com/weewx/settings.txt") || et1.getText().toString().equals(""))
                         {
                             handlerSettings.sendEmptyMessage(0);
                             return;
