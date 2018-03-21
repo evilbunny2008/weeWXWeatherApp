@@ -8,7 +8,7 @@ This is community maintained project I do in my free time. Don't expect everythi
  - [Installation](#installation)
    - [Preparing WeeWx](#preparing-weewx)
    - [WeeWx alltime data](#weewx-alltime-data)
-   - [Settings.txt](#settings.txt)
+   - [Settings.txt](#settingstxt)
    - [Setting up the app](#setting-up-the-app)
    - [Home Screen Widget](#home-screen-widget)
  - [License](#license)
