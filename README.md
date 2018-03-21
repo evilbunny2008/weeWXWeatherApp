@@ -5,6 +5,7 @@ This is community maintained project I do in my free time. Don't expect everythi
 ## Contents
 
  - [Screen Shots](#screen-shots)
+ - [Installation](#installation)
  - [License](#license)
  - [Credits](#credits)
 
@@ -12,6 +13,22 @@ This is community maintained project I do in my free time. Don't expect everythi
 
 <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-104333.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-105034.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-104351.jpg">
 <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-104407.jpg"><br>
+
+## Installation
+
+To use this app you need a weather station, a computer to run WeeeWX software up and running, more details on that are available on the [WeeWx website](http://weewx.com/).
+
+You need to download and customised the [settings.txt](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt) and save it to your website in the weewx directory.
+
+You also need to download the [data.txt.tmpl](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/data.txt.tmpl) and save it into your skin directory, on a debian based install this is /etc/weewx/skin/Standard/data.txt.tmpl
+
+You then need to add the template into the skin.conf file, for example:
+```
+ [CheetahGenerator]
+    [[ToDate]]
+        [[[data]]]
+            template = data.txt.tmpl
+```
 
 ## License
 
