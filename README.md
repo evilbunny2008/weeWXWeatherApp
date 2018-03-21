@@ -7,6 +7,7 @@ This is community maintained project I do in my free time. Don't expect everythi
  - [Screen Shots](#screen-shots)
  - [Installation](#installation)
    - [Preparing WeeWx](#preparing-weewx)
+   - [WeeWx alltime data](#weewx-alltime-data)
    - [Setting up the app](#setting-up-the-app)
    - [Home Screen Widget](#home-screen-widget)
  - [License](#license)
@@ -34,7 +35,9 @@ From there you then need to add the template into the /etc/weewx/skin/Standard/s
 ```
 You shouldn't need to reboot or even restart WeeWx, as the skin.conf file is re-read before new reports are generated. 
 
-If you would also like alltime statistics you also need to install the xstat.py, on a debian install you can do this by doing the following:
+### WeeWx alltime data
+
+If you would like alltime statistics to show up in the app you need to copy xstat.py in the user/ directory. On a debian install just copy xstat.py by doing the following:
 ```
 cp /usr/share/doc/weewx/examples/xstats/bin/user/xstats.py /usr/share/weewx/user/xstats.py
 ```
