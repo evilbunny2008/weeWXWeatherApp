@@ -14,7 +14,8 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"
                   android:configChanges="orientation"
-                  android:screenOrientation="portrait">
+                  android:screenOrientation="portrait"
+                  android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -34,17 +35,17 @@
         </activity>
         <activity
             android:label="Statistics"
-            android:launchMode="singleInstance"
             android:name=".Stats"
             android:configChanges="orientation"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
         </activity>
         <activity
             android:label="Forecast"
-            android:launchMode="singleInstance"
             android:name=".Forecast"
             android:configChanges="orientation"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
         </activity>
         <receiver android:name="WidgetProvider" android:label="WeeWx(2x1)">
             <intent-filter>

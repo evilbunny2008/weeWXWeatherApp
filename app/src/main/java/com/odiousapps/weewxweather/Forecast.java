@@ -94,6 +94,8 @@ public class Forecast extends AppCompatActivity implements GestureDetector.OnGes
                 forceRefresh();
                 return true;
             case R.id.mainmenu:
+                startActivity(new Intent(getBaseContext(), MainActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
             case R.id.settings:

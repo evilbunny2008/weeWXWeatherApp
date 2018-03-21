@@ -8,6 +8,8 @@ public class RNAutoStart extends BroadcastReceiver
 {
     public void onReceive(Context c, Intent i)
     {
+        Common.LogMessage("Broadcast intent detected " + i.getAction());
+
         Common.LogMessage("RNAutostart: i=" + i.toString());
         Common common = new Common(c);
 

@@ -8,31 +8,31 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.widget.RemoteViews;
 
-public class Common
+class Common
 {
     private final static String PREFS_NAME = "WeeWxWeatherPrefs";
     private final static boolean debug_on = true;
     private Context context;
-    public final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36";
+    final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36";
 
-    public Common(Context c)
+    Common(Context c)
     {
         System.setProperty ("http.agent", UA);
         this.context = c;
     }
 
-    public static void LogMessage(String value)
+    static void LogMessage(String value)
     {
         LogMessage(value, false);
     }
 
-    public static void LogMessage(String value, boolean showAnyway)
+    static void LogMessage(String value, boolean showAnyway)
     {
         if (debug_on || showAnyway)
             System.out.println("WeeWx Weather: ts=" + System.currentTimeMillis() + ", message='" + value + "'");
     }
 
-    public void SetStringPref(String name, String value)
+    void SetStringPref(String name, String value)
     {
         SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
         SharedPreferences.Editor editor = settings.edit();
@@ -42,10 +42,10 @@ public class Common
         LogMessage("Updating '" + name + "'='" + value + "'");
     }
 
-    public String GetStringPref(String name, String defval)
+    String GetStringPref(String name, String defval)
     {
         SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
-        String value = defval;
+        String value;
 
         try
         {
@@ -63,17 +63,17 @@ public class Common
         return value;
     }
 
-    public void SetLongPref(String name, long value)
+    void SetLongPref(String name, long value)
     {
         SetStringPref(name, "" + value);
     }
 
-    public long GetLongPref(String name)
+    long GetLongPref(String name)
     {
         return GetLongPref(name, 0);
     }
 
-    public long GetLongPref(String name, long defval)
+    long GetLongPref(String name, long defval)
     {
         String val = GetStringPref(name, "" + defval);
         if (val == null)
@@ -81,17 +81,17 @@ public class Common
         return Long.parseLong(val);
     }
 
-    public void SetIntPref(String name, int value)
+    void SetIntPref(String name, int value)
     {
         SetStringPref(name, "" + value);
     }
 
-    public int GetIntPref(String name)
+    int GetIntPref(String name)
     {
         return GetIntPref(name, 0);
     }
 
-    public int GetIntPref(String name, int defval)
+    int GetIntPref(String name, int defval)
     {
         String val = GetStringPref(name, "" + defval);
         if (val == null)
@@ -99,7 +99,7 @@ public class Common
         return Integer.parseInt(val);
     }
 
-    public void SetBoolPref(String name, boolean value)
+    void SetBoolPref(String name, boolean value)
     {
         String val = "0";
         if (value)
@@ -108,24 +108,22 @@ public class Common
         SetStringPref(name, val);
     }
 
-    public boolean GetBoolPref(String name)
+    boolean GetBoolPref(String name)
     {
         return GetBoolPref(name, false);
     }
 
-    public boolean GetBoolPref(String name, boolean defval)
+    boolean GetBoolPref(String name, boolean defval)
     {
         String value = "0";
         if (defval)
             value = "1";
 
         String val = GetStringPref(name, value);
-        if (val.equals("1"))
-            return true;
-        return false;
+        return val.equals("1");
     }
 
-    public RemoteViews buildUpdate(Context context)
+    RemoteViews buildUpdate(Context context)
     {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
         Bitmap myBitmap = Bitmap.createBitmap(600, 440, Bitmap.Config.ARGB_4444);
