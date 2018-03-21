@@ -66,12 +66,12 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
         sb.append("<span style='font-size:18pt;font-weight:bold;'>Today's Statistics</span>");
         sb.append("<table style='width:100%;border:0px;'>");
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='temperature.png'></td><td>" + bits[3] + "\u00B0" + bits[60] + "</td><td>" + bits[4] +
-                "</td><td>" + bits[2] + "</td><td>" + bits[1]  + "\u00B0" + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='temperature.png'></td><td>" + bits[3] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td>" + bits[4] +
+                "</td><td>" + bits[2] + "</td><td>" + bits[1]  + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='droplet.png'></td><td>" + bits[15] + "\u00B0" + bits[60] + "</td><td>" + bits[16] +
-                "</td><td>" + bits[14] + "</td><td>" + bits[13]  + "\u00B0" + bits[60] + "</td><td><img style='width:"+iw+"px' src='droplet.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='droplet.png'></td><td>" + bits[15] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td>" + bits[16] +
+                "</td><td>" + bits[14] + "</td><td>" + bits[13]  + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td><img style='width:"+iw+"px' src='droplet.png'></td></tr>";
         sb.append(stmp);
 
         stmp = "<tr><td><img style='width:"+iw+"px' src='humidity.png'></td><td>" + bits[9] + bits[64] + "</td><td>" + bits[10] +
@@ -92,12 +92,12 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
         sb.append("<span style='font-size:18pt;font-weight:bold;'>Yesterday's Statistics</span>");
         sb.append("<table style='width:100%;border:0px;'>");
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='temperature.png'></td><td>" + bits[67] + "\u00B0" + bits[60] + "</td><td>" + bits[68] +
-                "</td><td>" + bits[66] + "</td><td>" + bits[69]  + "\u00B0" + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='temperature.png'></td><td>" + bits[67] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td>" + bits[68] +
+                "</td><td>" + bits[66] + "</td><td>" + bits[69]  + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='droplet.png'></td><td>" + bits[78] + "\u00B0" + bits[60] + "</td><td>" + bits[79] +
-                "</td><td>" + bits[77] + "</td><td>" + bits[76]  + "\u00B0" + bits[60] + "</td><td><img style='width:"+iw+"px' src='droplet.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='droplet.png'></td><td>" + bits[78] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td>" + bits[79] +
+                "</td><td>" + bits[77] + "</td><td>" + bits[76]  + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td><img style='width:"+iw+"px' src='droplet.png'></td></tr>";
         sb.append(stmp);
 
         stmp = "<tr><td><img style='width:"+iw+"px' src='humidity.png'></td><td>" + bits[82] + bits[64] + "</td><td>" + bits[83] +
@@ -120,12 +120,12 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
             sb.append("<span style='font-size:18pt;font-weight:bold;'>This Month's Statistics</span>");
             sb.append("<table style='width:100%;border:0px;'>");
 
-            stmp = "<tr><td><img style='width:" + iw + "px' src='temperature.png'></td><td>" + bits[90] + "\u00B0" + bits[60] + "</td><td>" + bits[91].split(" ")[0] +
-                    "</td><td>" + bits[89].split(" ")[0] + "</td><td>" + bits[88] + "\u00B0" + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
+            stmp = "<tr><td><img style='width:" + iw + "px' src='temperature.png'></td><td>" + bits[90] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td>" + bits[91].split(" ")[0] +
+                    "</td><td>" + bits[89].split(" ")[0] + "</td><td>" + bits[88] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
             sb.append(stmp);
 
-            stmp = "<tr><td><img style='width:" + iw + "px' src='droplet.png'></td><td>" + bits[101] + "\u00B0" + bits[60] + "</td><td>" + bits[102].split(" ")[0] +
-                    "</td><td>" + bits[100].split(" ")[0] + "</td><td>" + bits[99] + "\u00B0" + bits[60] + "</td><td><img style='width:" + iw + "px' src='droplet.png'></td></tr>";
+            stmp = "<tr><td><img style='width:" + iw + "px' src='droplet.png'></td><td>" + bits[101] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td>" + bits[102].split(" ")[0] +
+                    "</td><td>" + bits[100].split(" ")[0] + "</td><td>" + bits[99] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td><img style='width:" + iw + "px' src='droplet.png'></td></tr>";
             sb.append(stmp);
 
             stmp = "<tr><td><img style='width:" + iw + "px' src='humidity.png'></td><td>" + bits[105] + bits[64] + "</td><td>" + bits[106].split(" ")[0] +
@@ -149,12 +149,12 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
             sb.append("<span style='font-size:18pt;font-weight:bold;'>This Year's Statistics</span>");
             sb.append("<table style='width:100%;border:0px;'>");
 
-            stmp = "<tr><td><img style='width:" + iw + "px' src='temperature.png'></td><td>" + bits[113] + "\u00B0" + bits[60] + "</td><td>" + bits[114].split(" ")[0] +
-                    "</td><td>" + bits[112].split(" ")[0] + "</td><td>" + bits[111] + "\u00B0" + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
+            stmp = "<tr><td><img style='width:" + iw + "px' src='temperature.png'></td><td>" + bits[113] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td>" + bits[114].split(" ")[0] +
+                    "</td><td>" + bits[112].split(" ")[0] + "</td><td>" + bits[111] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
             sb.append(stmp);
 
-            stmp = "<tr><td><img style='width:" + iw + "px' src='droplet.png'></td><td>" + bits[124] + "\u00B0" + bits[60] + "</td><td>" + bits[125].split(" ")[0] +
-                    "</td><td>" + bits[123].split(" ")[0] + "</td><td>" + bits[122] + "\u00B0" + bits[60] + "</td><td><img style='width:" + iw + "px' src='droplet.png'></td></tr>";
+            stmp = "<tr><td><img style='width:" + iw + "px' src='droplet.png'></td><td>" + bits[124] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td>" + bits[125].split(" ")[0] +
+                    "</td><td>" + bits[123].split(" ")[0] + "</td><td>" + bits[122] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td><img style='width:" + iw + "px' src='droplet.png'></td></tr>";
             sb.append(stmp);
 
             stmp = "<tr><td><img style='width:" + iw + "px' src='humidity.png'></td><td>" + bits[128] + bits[64] + "</td><td>" + bits[129].split(" ")[0] +
@@ -178,12 +178,12 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
             sb.append("<span style='font-size:18pt;font-weight:bold;'>All Time Statistics</span>");
             sb.append("<table style='width:100%;border:0px;'>");
 
-            stmp = "<tr><td><img style='width:" + iw + "px' src='temperature.png'></td><td>" + bits[136] + "\u00B0" + bits[60] + "</td><td>" + bits[137].split(" ")[0] +
-                    "</td><td>" + bits[135].split(" ")[0] + "</td><td>" + bits[134] + "\u00B0" + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
+            stmp = "<tr><td><img style='width:" + iw + "px' src='temperature.png'></td><td>" + bits[136] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td>" + bits[137].split(" ")[0] +
+                    "</td><td>" + bits[135].split(" ")[0] + "</td><td>" + bits[134] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
             sb.append(stmp);
 
-            stmp = "<tr><td><img style='width:" + iw + "px' src='droplet.png'></td><td>" + bits[147] + "\u00B0" + bits[60] + "</td><td>" + bits[148].split(" ")[0] +
-                    "</td><td>" + bits[146].split(" ")[0] + "</td><td>" + bits[145] + "\u00B0" + bits[60] + "</td><td><img style='width:" + iw + "px' src='droplet.png'></td></tr>";
+            stmp = "<tr><td><img style='width:" + iw + "px' src='droplet.png'></td><td>" + bits[147] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td>" + bits[148].split(" ")[0] +
+                    "</td><td>" + bits[146].split(" ")[0] + "</td><td>" + bits[145] + "\u00B0" + bits[60].substring(bits[60].length() -1) + "</td><td><img style='width:" + iw + "px' src='droplet.png'></td></tr>";
             sb.append(stmp);
 
             stmp = "<tr><td><img style='width:" + iw + "px' src='humidity.png'></td><td>" + bits[151] + bits[64] + "</td><td>" + bits[152].split(" ")[0] +

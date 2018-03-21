@@ -46,14 +46,14 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
         checkFields((TextView)findViewById(R.id.textView), bits[56]);
         checkFields((TextView)findViewById(R.id.textView2), bits[54] + " " + bits[55]);
-        checkFields((TextView)findViewById(R.id.textView3), bits[0] + "\u00B0" + bits[60]);
+        checkFields((TextView)findViewById(R.id.textView3), bits[0] + "\u00B0" + bits[60].substring(bits[60].length() -1));
 
         checkFields((TextView)findViewById(R.id.textView4), bits[25] + bits[61]);
         checkFields((TextView)findViewById(R.id.textView5), bits[37] + bits[63]);
         checkFields((TextView)findViewById(R.id.textView6), bits[29]);
         checkFields((TextView)findViewById(R.id.textView7), bits[6] + bits[64]);
         checkFields((TextView)findViewById(R.id.textView8), bits[20] + bits[62]);
-        checkFields((TextView)findViewById(R.id.textView9), bits[12] + "\u00B0" + bits[60]);
+        checkFields((TextView)findViewById(R.id.textView9), bits[12] + "\u00B0" + bits[60].substring(bits[60].length() -1));
         checkFields((TextView)findViewById(R.id.textView10), bits[45] + "UVI");
         checkFields((TextView)findViewById(R.id.textView11), bits[43] + "W/m\u00B2");
 
