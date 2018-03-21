@@ -39,7 +39,6 @@ cp /usr/share/doc/weewx/examples/xstats/bin/user/xstats.py /usr/share/weewx/user
 Then you need to edit /etc/weewx/skin/Standard/skin.conf and add the following line:
 ```
 [CheetahGenerator]
-    encoding = html_entities
     search_list_extensions = user.xstats.ExtendedStatistics
 ```
 
