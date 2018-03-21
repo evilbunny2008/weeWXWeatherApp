@@ -22,12 +22,25 @@ You need to download and customised the [settings.txt](https://raw.githubusercon
 
 You also need to download the [data.txt.tmpl](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/data.txt.tmpl) and save it into your skin directory, on a debian based install this is /etc/weewx/skin/Standard/data.txt.tmpl
 
-You then need to add the template into the skin.conf file, for example:
+You then need to add the template into the /etc/weewx/skin/Standard/skin.conf file, for example:
 ```
  [CheetahGenerator]
     [[ToDate]]
         [[[data]]]
             template = data.txt.tmpl
+```
+You shouldn't need to reboot or even restart WeeWx, as the skin.conf file is re-read before new reports are generated. 
+
+If you would like all time statistics you need to install the xstat.py, on a debian install you can do this by doing:
+
+```
+cp /usr/share/doc/weewx/examples/xstats/bin/user/xstats.py /usr/share/weewx/user/xstats.py
+```
+Then you need to edit /etc/weewx/skin/Standard/skin.conf and add the following line:
+```
+[CheetahGenerator]
+    encoding = html_entities
+    search_list_extensions = user.xstats.ExtendedStatistics
 ```
 
 ## License
