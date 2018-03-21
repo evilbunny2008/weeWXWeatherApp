@@ -16,7 +16,7 @@ This is community maintained project I do in my free time. Don't expect everythi
 
 ## Installation
 
-To use this app you need a weather station, a computer to run WeeeWX software up and running, more details on that are available on the [WeeWx website](http://weewx.com/).
+To use this app you need a weather station, a computer running WeeeWX software up and running, more details on that are available on the [WeeWx website](http://weewx.com/).
 
 You need to download and customised the [settings.txt](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt) and save it to your website in the weewx directory.
 
@@ -32,7 +32,6 @@ You then need to add the template into the /etc/weewx/skin/Standard/skin.conf fi
 You shouldn't need to reboot or even restart WeeWx, as the skin.conf file is re-read before new reports are generated. 
 
 If you would like all time statistics you need to install the xstat.py, on a debian install you can do this by doing:
-
 ```
 cp /usr/share/doc/weewx/examples/xstats/bin/user/xstats.py /usr/share/weewx/user/xstats.py
 ```
@@ -43,6 +42,10 @@ Then you need to edit /etc/weewx/skin/Standard/skin.conf and add the following l
 ```
 
 For more details on setting up and running WeeWx, check out the documentation on [WeeWX's website](http://www.weewx.com/docs/usersguide.htm)
+
+Finally you can install the app from [Google Play](https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather). Once you start the app the settings box will appear asking you where to find settings.txt file. Finally click 'Save Settings' and wait a few moments for the app to download your weather data.
+
+You can also install a home screen widget by pressing and holding on a blank area of your home screen, then there should be an option for widgets, scroll down to WeeWx Weather App, it's a 2x1 widget. You need to make sure background downloading is enabled in settings otherwise the widget will only update when the app is running.
 
 ## License
 
