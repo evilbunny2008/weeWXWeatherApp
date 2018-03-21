@@ -51,11 +51,13 @@ Then you need to edit /etc/weewx/skin/Standard/skin.conf and add the following l
 ```
 ### Settings.txt
 
-To let the app know where to download information from we have a meta config file with all the details. You can view the example [settings.txt](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt) file and save it to your website in the weewx website directory, this can be either /var/www/weewx/ or /var/www/html/weewx/. You then need to customise the settings file. Currently there is three lines in the file, the first is the URL to the data.txt file from above. Secondly there is an option for an animated gif file of weather radar, currenly only tested on weatherunderground images. The third line is for forecasts from [Yahoo! weather](https://www.yahoo.com/?ilc=401) and you just need to enter the town/city, state/province and country you want the forecast for.
+To let the app know where to download information from we have a meta config file with all the details. This saves a lot of typing, especially on radar URLs from WeatherUnderground. I have provided a example [settings.txt](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt) file, you can save it to your website in the weewx website directory, this can be either /var/www/weewx/ or /var/www/html/weewx/.
+
+You then need to customise the settings file, using the example as a guide only. Currently there is three lines in the file, the first is the URL to the data.txt file from above. Secondly there is an option for an animated gif file weather radar. The third line is for forecasts from [Yahoo! Weather API](https://www.yahoo.com/?ilc=401) and you just need to enter the town/city, state/province and country you want the forecast for.
 
 ### Setting up the app
 
-Once you install and run the app from [Google Play](https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather), the settings box will appear asking for the URL to the settings.txt file. Simply enter in the URL and click 'Save Settings', the app will then check to make sure the details in settings.txt is valid and will trigger a download of your weather information, once downloaded the app will then display the weather information.
+Once you install and run the app from [Google Play](https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather) the settings box will appear asking for the URL to the settings.txt file. Simply enter in the URL and click 'Save Settings', the app will then check to make sure the details in settings.txt is valid and will trigger a download of your weather information, once downloaded the app will then display the weather information.
 
 ### Home Screen Widget
 
