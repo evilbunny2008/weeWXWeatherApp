@@ -1,9 +1,15 @@
 package com.odiousapps.weewxweather;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.webkit.WebView;
 import android.widget.TextView;
@@ -11,6 +17,7 @@ import android.widget.TextView;
 public class Stats  extends AppCompatActivity implements GestureDetector.OnGestureListener
 {
     GestureDetector gestureDetector;
+    int REQUEST_CODE = 2;
 
     Common common = null;
 
@@ -28,6 +35,74 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
         common = new Common(this);
 
         updateFields();
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(myService.UPDATE_INTENT);
+        registerReceiver(serviceReceiver, filter);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.stats_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Handle item selection
+        switch (item.getItemId())
+        {
+            case R.id.refresh:
+                forceRefresh();
+                return true;
+            case R.id.forecast:
+                startActivity(new Intent(getBaseContext(), Forecast.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+                return true;
+            case R.id.mainmenu:
+                finish();
+                return true;
+            case R.id.about:
+                startActivity(new Intent(getBaseContext(), About.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
+    {
+        @Override
+        public void onReceive(Context context, Intent intent)
+        {
+            try
+            {
+                Common.LogMessage("We have a hit, so we should probably update the screen.");
+                String action = intent.getAction();
+                if(action != null && action.equals(myService.UPDATE_INTENT))
+                    runOnUiThread(new Runnable()
+                    {
+                        @Override
+                        public void run()
+                        {
+                            updateFields();
+                        }
+                    });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+    public void forceRefresh()
+    {
+        if(myService.singleton != null)
+            myService.singleton.getWeather();
     }
 
     @Override
@@ -48,7 +123,7 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
         int iw = 17;
 
         String bits[] = common.GetStringPref("LastDownload", "").split("\\|");
-        if (bits.length < 157)
+        if(bits.length < 157)
             return;
 
 // Today Stats
@@ -215,6 +290,7 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
     {
         super.finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        unregisterReceiver(serviceReceiver);
     }
 
     @Override
