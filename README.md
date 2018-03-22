@@ -36,7 +36,7 @@ wee_extension --install data-0.1.0.tar.gz
 wget -O /var/www/weewx/settings.txt https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt
 sudo nano /var/www/weewx/settings.txt
 ```
-You need to change the data= line to point to data.txt on your server which was completed in step 1, you also have the option of pointing radar= line to an image or animated image from the web. The third line, forecast= accepts a place name for forecasts. Press ctrl+x to exit and save.
+You need to change the data= line to point to data.txt on your server which was completed in step 1, you also have the option of pointing radar= line to an image or animated image from the web, for possible radar images view our [list of radar sources](RadarURLs.md). The third line, forecast= accepts a place name for forecasts. Press ctrl+x to exit and save.
 
 ### Step 3, installing the app
 You can now get the app from [Google Play](https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather).
