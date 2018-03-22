@@ -42,6 +42,12 @@ The white space/indentation is needed, once you are done, press press ctrl+x to 
 ```
 cp /usr/share/doc/weewx/examples/xstats/bin/user/xstats.py /usr/share/weewx/user/xstats.py
 ```
+Then you need to sudo nano /etc/weewx/skin/Standard/skin.conf and add the following line:
+```
+[CheetahGenerator]
+...
+    search_list_extensions = user.xstats.ExtendedStatistics
+```
 ### Step 4, create settings.txt
 ```
 wget -O /var/www/weewx/settings.txt https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt
