@@ -32,7 +32,7 @@ wget -O /etc/weewx/skins/Standard/data.txt.tmpl https://raw.githubusercontent.co
 ```
 sudo nano /etc/weewx/skins/Standard/skin.conf
 ```
-press ctrl+w to search, then type "ToDate" (without the quotes) and hit the enter key and then enter the following:
+Press ctrl+w to search, then type "ToDate" (without the quotes) and hit the enter key and then enter the following:
 ```
         [[[data]]]
             template = data.txt.tmpl
@@ -52,7 +52,7 @@ sudo nano /var/www/weewx/settings.txt
 You need to change the data= line to point to data.txt on your server which was completed in step 1, you also have the option of pointing radar= line to an image or animated image from the web. The third line, forecast= accepts a place name for forecasts. Press ctrl+x to exit and save.
 
 ### Step 5, installing the app
-The app is now available on [Google Play](https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather).
+You can get the app from [Google Play](https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather).
 
 On first boot the app will prompt you for the URL to your settings.txt file, once entered click save and in a few seconds you should be up and running.
 
