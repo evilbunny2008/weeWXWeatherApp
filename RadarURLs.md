@@ -11,3 +11,7 @@ Below is a list of radar images that can be used in the app
 ## [NiederschlagsRadar - Germany](https://www.niederschlagsradar.de)
 
 <img width='300px' src='https://www.niederschlagsradar.de/image.ashx?type=loop3stunde&lightning=0&jaar=-3&regio=homepage&tijdid=201209281150&time='>
+
+## [Meteo60 - France](https://www.meteo60.fr)
+
+<img width='300px' src='https://www.meteo60.fr/satellites/animation-satellite-visible-france.gif'>
