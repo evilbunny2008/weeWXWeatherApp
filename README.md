@@ -5,8 +5,8 @@ This is a community maintained project I do in my free time. While all efforts a
 ## Contents
 
  - [Screen Shots](#screen-shots)
- - [Installation](#installation)
-   - [Concise instructions](#concise-instructions)
+ - [Concise Instructions](#concise-instructions)
+ - [Expanded Installation Instructions](#expanded-installation-instructions)
    - [Preparing weeWx](#preparing-weewx)
    - [WeeWx alltime data](#weewx-alltime-data)
    - [Settings.txt](#settingstxt)
@@ -20,18 +20,16 @@ This is a community maintained project I do in my free time. While all efforts a
 <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-104333.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-105034.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-104351.jpg"><br>
 <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-104407.jpg"><br>
 
-## Installation
-
-### Concise instructions
+## Concise Instructions
 
 In case you want the short version, below is the concise steps:
 
-#### Step 1, install the data.txt.tmpl file in your current skin directory.
+### Step 1, install the data.txt.tmpl file in your current skin directory.
 ```
 wget -O /etc/weewx/skins/Standard/data.txt.tmpl https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/data.txt.tmpl
 ```
 
-#### Step 2, update skin.conf
+### Step 2, update skin.conf
 ```
 sudo nano /etc/weewx/skins/Standard/skin.conf
 press ctrl+w to search, then type "ToDate" (without the quotes) and hit the enter key and then enter the following:
@@ -41,22 +39,24 @@ The white space/indentation is needed
 Then press ctrl+x to exit and save
 ```
 
-#### Step 3, enable extended statistics
+### Step 3, enable extended statistics
 ```
 cp /usr/share/doc/weewx/examples/xstats/bin/user/xstats.py /usr/share/weewx/user/xstats.py
 ```
 
-#### Step 4, create settings.txt
+### Step 4, create settings.txt
 ```
 wget -O /var/www/weewx/settings.txt https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt
 sudo nano /var/www/weewx/settings.txt
 ```
 You need to change the data= line to point to data.txt on your server which was completed in step 1, you also have the option of pointing radar= line to an image or animated image from the web. The third line, forecast= accepts a place name for forecasts. Press ctrl+x to exit and save.
 
-#### Step 5, installing the app
-The app is now available on <a href='https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather'><img height='100px'  src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'></a>.
+### Step 5, installing the app
+The app is now available on [Google Play](https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather).
 
 On first boot the app will prompt you for the URL to your settings.txt file, once entered click save and in a few seconds you should be up and running.
+
+## Expanded Installation Instructions
 
 ### Preparing weeWx
 
