@@ -24,7 +24,7 @@ This is a community maintained project I do in my free time. While all efforts a
 
 ### Concise instructions
 
-In case you didn't want to follow the full steps, below is the concise version:
+In case you want the short version, below is the concise steps:
 
 #### Step 1, install the data.txt.tmpl file in your current skin directory.
 ```
@@ -54,12 +54,13 @@ sudo nano /var/www/weewx/settings.txt
 You need to change the data= line to point to data.txt on your server which was completed in step 1, you also have the option of pointing radar= line to an image or animated image from the web. The third line, forecast= accepts a place name for forecasts. Press ctrl+x to exit and save.
 
 #### Step 5, installing the app
-The app at Google Play, 
+The app is now available on <a href='https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather'><img height='100px'  src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'></a>.
 
+On first boot the app will prompt you for the URL to your settings.txt file, once entered click save and in a few seconds you should be up and running.
 
 ### Preparing weeWx
 
-Unlike general weather apps, which get data from third party websites, this app gets data from personal weather stations running weeWx. Before you can use this app, you need to prepare weeWx with a custom template. To find out more about running weeWx you can find details on the [weeWx website](http://weewx.com/).
+Unlike general weather apps, which get data from third party websites, this app gets data from personal weather stations running weeWx. Before you can use this app, you need to prepare weeWx with a custom template. To find out more about running weeWx you can find details on the [weeWx website](http://weewx.com/downloads/).
 
 You need to download the [data.txt template](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/data.txt.tmpl) and save it into your skin directory. On a debian install this will be /etc/weewx/skin/Standard/data.txt.tmpl, this file isn't really user configurable, so just copy it in place.
 
