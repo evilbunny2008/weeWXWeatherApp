@@ -85,7 +85,7 @@ If you wish to have weather on your home screen you can do this by pressing and 
 
 ## License
 
-Source code is made available under the GPLv3 license, in the hope they might be useful to others. See [LICENSE](LICENSE) for details.
+Source code is made available under the GPLv3 license, in the hope it might be useful to others. See [LICENSE](LICENSE) for details.
 
 ## Credits
 
