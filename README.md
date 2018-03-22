@@ -60,7 +60,7 @@ wee_extension --install data-0.1.0.tar.gz
 
 To let the app know where to download information from we have a meta config file with all the details. This saves a lot of typing, especially on radar URLs from WeatherUnderground. I have provided an example [settings.txt](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt) file, you can save it to your website in the weewx website directory, this is usually /var/www/weewx/.
 
-You then need to customise the settings file, using the example as a guide only. Currently there is three lines in the file. The first is the URL to the data.txt file, this is usually http://&lt;yourdomain&gt;.com/weewx/data.txt. Secondly there is an option for an animated gif file weather radar, for possible radar images view our [list of radar sources](RadarURLs.md). The third line is for forecasts from [Yahoo! Weather API](https://www.yahoo.com/?ilc=401) and you just need to enter the town/city, state/province and country you want the forecast for.
+You then need to customise the settings file, using the example as a guide only. There are three lines in the file. The first is the URL to the data.txt file, this is usually http://&lt;yourdomain&gt;.com/weewx/data.txt. Secondly there is an option for an animated gif file weather radar, for possible radar images view our [list of radar sources](RadarURLs.md). The third line is for forecasts from [Yahoo! Weather API](https://www.yahoo.com/?ilc=401) and you just need to enter the town/city, state/province and country you want the forecast for.
 
 ### Setting up the app
 
@@ -68,7 +68,7 @@ Once you install and run the app from [Google Play](https://play.google.com/stor
 
 ### Home Screen Widget
 
-If you wish to have weather on your home screen you can do this by pressing and holding on a blank area of your home screen, then there should be an option for widgets, scroll down to weeWx Weather App, and it's a 2x1 widget. If you want up to date weather information you just need to have background downloading enabled in the app, otherwise the widget will only update when the app is running.
+If you wish to have weather on your home screen you can do this by pressing and holding on a blank area of your home screen, then select widgets, finally scroll down to weeWx Weather App, and it's a 2x1 widget. If you want up to date weather information you just need to have background downloading enabled in the app, otherwise the widget will only update when the app is running.
 
 ## License
 
