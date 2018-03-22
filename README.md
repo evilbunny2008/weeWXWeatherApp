@@ -1,6 +1,8 @@
 ## WeeWxWeatherApp -- A weather app for weeWx
 
-This is a community maintained project I do in my free time. While all efforts are taken to test everything works, in some cases things get overlooked, so don't expect everything to be working perfectly. If you spot a problem please try to fix it and contribute where you can. If you aren't able to fix the issue, please file a bug under issues so we can track the progress and resolution of the problem.
+Unlike general weather apps, which get data from third party websites, this app gets data from personal weather stations running WeeWx.
+
+This is a community maintained project that I do in my free time. While all efforts are taken to test everything works, in some cases things get overlooked. If you spot a problem please try to fix it and contribute where you can. If you aren't able to fix the issue, please file a bug under issues so we can track the progress and resolution of the problem.
 
 ## Contents
 
