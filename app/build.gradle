@@ -6,8 +6,8 @@ android {
         applicationId "com.odiousapps.weewxweather"
         minSdkVersion 14
         targetSdkVersion 26
-        versionCode 1010
-        versionName "0.1.10"
+        versionCode 1011
+        versionName "0.1.11"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

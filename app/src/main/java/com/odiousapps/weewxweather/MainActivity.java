@@ -76,6 +76,10 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         if(common.GetStringPref("BASE_URL", "").equals(""))
             startActivityForResult(new Intent(getBaseContext(), Settings.class), REQUEST_CODE);
 
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(myService.UPDATE_INTENT);
+        registerReceiver(serviceReceiver, filter);
+
         // use last downloaded data while a bg thread runs
         startService();
         updateFields();
@@ -208,6 +212,14 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         super.onDestroy();
     }
 
+    @Override
+    public void finish()
+    {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        unregisterReceiver(serviceReceiver);
+    }
+
     private void startService()
     {
         if(myService.singleton == null)
@@ -216,9 +228,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             if(myService.singleton == null)
                 startService(new Intent(this, myService.class));
 
-            IntentFilter filter = new IntentFilter();
-            filter.addAction(myService.UPDATE_INTENT);
-            registerReceiver(serviceReceiver, filter);
             Common.LogMessage("Currently listening for broadcasts");
 
             getWeather();
@@ -229,12 +238,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
     private void stopUpdates()
     {
-        try
-        {
-            unregisterReceiver(serviceReceiver);
-        } catch (Exception e) {
-            //TODO: something here maybe?
-        }
         Common.LogMessage("Stopping Service.");
         if(!common.GetBoolPref("bgdl", true))
             stopService(new Intent(this, myService.class));
