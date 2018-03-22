@@ -10,7 +10,7 @@ This is a community maintained project that I do in my free time. While all effo
  - [Concise Instructions](#concise-instructions)
  - [Expanded Installation Instructions](#expanded-installation-instructions)
    - [Preparing weeWx](#preparing-weewx)
-   - [WeeWx alltime data](#weewx-alltime-data)
+   - [Installing the data extension](#installing-the-data-extension)
    - [Settings.txt](#settingstxt)
    - [Setting up the app](#setting-up-the-app)
    - [Home Screen Widget](#home-screen-widget)
@@ -26,39 +26,20 @@ This is a community maintained project that I do in my free time. While all effo
 
 In case you want the short version, below is the concise steps:
 
-### Step 1, install the data.txt.tmpl file in your current skin directory.
+### Step 1, install the data extension for weeWx.
 ```
-wget -O /etc/weewx/skins/Standard/data.txt.tmpl https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/data.txt.tmpl
+wget https://github.com/evilbunny2008/WeeWxWeatherApp/releases/download/0.1.0/data-0.1.0.tar.gz
+wee_extension --install data-0.1.0.tar.gz
 ```
-### Step 2, update skin.conf
-```
-sudo nano /etc/weewx/skins/Standard/skin.conf
-```
-Press ctrl+w to search, then type "ToDate" (without the quotes) and hit the enter key and then enter the following:
-```
-        [[[data]]]
-            template = data.txt.tmpl
-```
-The white space/indentation is needed, once you are done, press press ctrl+x to exit and save
-### Step 3, enable extended statistics
-```
-cp /usr/share/doc/weewx/examples/xstats/bin/user/xstats.py /usr/share/weewx/user/xstats.py
-```
-Then you need to sudo nano /etc/weewx/skin/Standard/skin.conf and add the following line:
-```
-[CheetahGenerator]
-...
-    search_list_extensions = user.xstats.ExtendedStatistics
-```
-### Step 4, create settings.txt
+### Step 2, create settings.txt
 ```
 wget -O /var/www/weewx/settings.txt https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt
 sudo nano /var/www/weewx/settings.txt
 ```
 You need to change the data= line to point to data.txt on your server which was completed in step 1, you also have the option of pointing radar= line to an image or animated image from the web. The third line, forecast= accepts a place name for forecasts. Press ctrl+x to exit and save.
 
-### Step 5, installing the app
-You can get the app from [Google Play](https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather).
+### Step 3, installing the app
+You can now get the app from [Google Play](https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather).
 
 On first boot the app will prompt you for the URL to your settings.txt file, once entered click save and in a few seconds you should be up and running.
 
@@ -68,33 +49,17 @@ On first boot the app will prompt you for the URL to your settings.txt file, onc
 
 Unlike general weather apps, which get data from third party websites, this app gets data from personal weather stations running weeWx. Before you can use this app, you need to prepare weeWx with a custom template. To find out more about running weeWx you can find details on the [weeWx website](http://weewx.com/downloads/).
 
-You need to download the [data.txt template](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/data.txt.tmpl) and save it into your skin directory. On a debian install this will be /etc/weewx/skin/Standard/data.txt.tmpl, this file isn't really user configurable, so just copy it in place.
+### Installing the data extension
 
-From there you then need to add the template into the /etc/weewx/skin/Standard/skin.conf file, for example:
+Firstly you need to install the data extension which will then setup weeWx to generate the data.txt file needed by the app.
 ```
- [CheetahGenerator]
-    [[ToDate]]
-        [[[data]]]
-            template = data.txt.tmpl
+wget https://github.com/evilbunny2008/WeeWxWeatherApp/releases/download/0.1.0/data-0.1.0.tar.gz
+wee_extension --install data-0.1.0.tar.gz
 ```
-You shouldn't need to reboot or even restart weeWx, as the skin.conf file is re-read before new reports are generated. 
 
-For more details on setting up and running weeWx, check out the documentation on [weeWX's website](http://www.weewx.com/docs/usersguide.htm)
-
-### WeeWx alltime data
-
-If you would like alltime statistics to show up in the app you need to copy xstat.py in the user/ directory. On a debian system just do the following:
-```
-cp /usr/share/doc/weewx/examples/xstats/bin/user/xstats.py /usr/share/weewx/user/xstats.py
-```
-Then you need to edit /etc/weewx/skin/Standard/skin.conf and add the following line:
-```
-[CheetahGenerator]
-    search_list_extensions = user.xstats.ExtendedStatistics
-```
 ### Settings.txt
 
-To let the app know where to download information from we have a meta config file with all the details. This saves a lot of typing, especially on radar URLs from WeatherUnderground. I have provided an example [settings.txt](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt) file, you can save it to your website in the weewx website directory, this can be either /var/www/weewx/ or /var/www/html/weewx/.
+To let the app know where to download information from we have a meta config file with all the details. This saves a lot of typing, especially on radar URLs from WeatherUnderground. I have provided an example [settings.txt](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt) file, you can save it to your website in the weewx website directory, this is usually /var/www/weewx/.
 
 You then need to customise the settings file, using the example as a guide only. Currently there is three lines in the file, the first is the URL to the data.txt file from above. Secondly there is an option for an animated gif file weather radar, for possible radar images view our [list of radar sources](RadarURLs.md). The third line is for forecasts from [Yahoo! Weather API](https://www.yahoo.com/?ilc=401) and you just need to enter the town/city, state/province and country you want the forecast for.
 
