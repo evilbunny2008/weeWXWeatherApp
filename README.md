@@ -1,12 +1,12 @@
-## WeeWxWeatherApp -- A weather app for WeeWx
+## WeeWxWeatherApp -- A weather app for weeWx
 
-This is community maintained project I do in my free time. Don't expect everything to be perfect and working. Rather be prepared that there are problems, as always try to fix them and contribute. If you can't fix the issue, please file a bug under issues so we can track the progress and resolution of the problem.
+This is a community maintained project I do in my free time. While all efforts are taken to test everything works, in some cases things get overlooked, so don't expect everything to be working perfectly. If you spot a problem please try to fix it and contribute where you can. If you aren't able to fix the issue, please file a bug under issues so we can track the progress and resolution of the problem.
 
 ## Contents
 
  - [Screen Shots](#screen-shots)
  - [Installation](#installation)
-   - [Preparing WeeWx](#preparing-weewx)
+   - [Preparing weeWx](#preparing-weewx)
    - [WeeWx alltime data](#weewx-alltime-data)
    - [Settings.txt](#settingstxt)
    - [Setting up the app](#setting-up-the-app)
@@ -21,9 +21,9 @@ This is community maintained project I do in my free time. Don't expect everythi
 
 ## Installation
 
-### Preparing WeeWx
+### Preparing weeWx
 
-Unlike general weather apps, which get data from third party websites, this app gets data from personal weather stations running WeeWx. Before you can use this app, you need to prepare WeeWx with a custom template. To find out more about running WeeWx you can find details on the [WeeWx website](http://weewx.com/).
+Unlike general weather apps, which get data from third party websites, this app gets data from personal weather stations running weeWx. Before you can use this app, you need to prepare weeWx with a custom template. To find out more about running weeWx you can find details on the [weeWx website](http://weewx.com/).
 
 You need to download the [data.txt template](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/data.txt.tmpl) and save it into your skin directory. On a debian install this will be /etc/weewx/skin/Standard/data.txt.tmpl, this file isn't really user configurable, so just copy it in place.
 
@@ -34,9 +34,9 @@ From there you then need to add the template into the /etc/weewx/skin/Standard/s
         [[[data]]]
             template = data.txt.tmpl
 ```
-You shouldn't need to reboot or even restart WeeWx, as the skin.conf file is re-read before new reports are generated. 
+You shouldn't need to reboot or even restart weeWx, as the skin.conf file is re-read before new reports are generated. 
 
-For more details on setting up and running WeeWx, check out the documentation on [WeeWX's website](http://www.weewx.com/docs/usersguide.htm)
+For more details on setting up and running weeWx, check out the documentation on [WeeWX's website](http://www.weewx.com/docs/usersguide.htm)
 
 ### WeeWx alltime data
 
@@ -61,7 +61,7 @@ Once you install and run the app from [Google Play](https://play.google.com/stor
 
 ### Home Screen Widget
 
-If you wish to have weather on your home screen you can do this by pressing and holding on a blank area of your home screen, then there should be an option for widgets, scroll down to WeeWx Weather App, and it's a 2x1 widget. If you want up to date weather information you just need to have background downloading enabled in the app, otherwise the widget will only update when the app is running.
+If you wish to have weather on your home screen you can do this by pressing and holding on a blank area of your home screen, then there should be an option for widgets, scroll down to weeWx Weather App, and it's a 2x1 widget. If you want up to date weather information you just need to have background downloading enabled in the app, otherwise the widget will only update when the app is running.
 
 ## License
 
@@ -69,5 +69,5 @@ Source code is made available under the GPLv3 license, in the hope they might be
 
 ## Credits
 
-Big thanks to the <a href='http://weewx.com'>WeeWx project</a>, as this app wouldn't be possible otherwise.<br><br>
+Big thanks to the <a href='http://weewx.com'>weeWx project</a>, as this app wouldn't be possible otherwise.<br><br>
 Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and <a href='https://www.yahoo.com/?ilc=401'>Yahoo! Weather Forecasts</a><br><br>This app is by <a href='https://odiousapps.com'>OdiousApps</a>.
