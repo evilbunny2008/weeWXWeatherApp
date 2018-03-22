@@ -28,16 +28,16 @@ In case you want the short version, below is the concise steps:
 ```
 wget -O /etc/weewx/skins/Standard/data.txt.tmpl https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/data.txt.tmpl
 ```
-
 ### Step 2, update skin.conf
 ```
 sudo nano /etc/weewx/skins/Standard/skin.conf
+```
 press ctrl+w to search, then type "ToDate" (without the quotes) and hit the enter key and then enter the following:
+```
         [[[data]]]
             template = data.txt.tmpl
-The white space/indentation is needed
-Then press ctrl+x to exit and save
 ```
+The white space/indentation is needed, once you are done, press press ctrl+x to exit and save
 
 ### Step 3, enable extended statistics
 ```
@@ -73,7 +73,7 @@ From there you then need to add the template into the /etc/weewx/skin/Standard/s
 ```
 You shouldn't need to reboot or even restart weeWx, as the skin.conf file is re-read before new reports are generated. 
 
-For more details on setting up and running weeWx, check out the documentation on [WeeWX's website](http://www.weewx.com/docs/usersguide.htm)
+For more details on setting up and running weeWx, check out the documentation on [weeWX's website](http://www.weewx.com/docs/usersguide.htm)
 
 ### WeeWx alltime data
 
