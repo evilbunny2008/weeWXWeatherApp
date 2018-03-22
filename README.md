@@ -27,8 +27,15 @@ This is a community maintained project that I do in my free time. While all effo
 In case you want the short version, below is the concise steps:
 
 ### Step 1, install the data extension for weeWx.
+
+For imperial
 ```
-wget https://github.com/evilbunny2008/WeeWxWeatherApp/releases/download/0.1.0/data-0.1.0.tar.gz
+wget https://github.com/evilbunny2008/WeeWxWeatherApp/releases/download/0.1.0/data-0.1.0-imperial.tar.gz
+wee_extension --install data-0.1.0.tar.gz
+```
+For metric
+```
+wget https://github.com/evilbunny2008/WeeWxWeatherApp/releases/download/0.1.0/data-0.1.1-metric.tar.gz
 wee_extension --install data-0.1.0.tar.gz
 ```
 ### Step 2, create settings.txt
