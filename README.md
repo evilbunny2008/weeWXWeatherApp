@@ -89,5 +89,10 @@ Source code is made available under the GPLv3 license, in the hope the code migh
 
 ## Credits
 
-Big thanks to the <a href='http://weewx.com'>weeWx project</a>, as this app wouldn't be possible otherwise.<br><br>
-Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and <a href='https://www.yahoo.com/?ilc=401'>Yahoo! Weather Forecasts</a><br><br>This app is by <a href='https://odiousapps.com'>OdiousApps</a>.
+Big thanks to the [weeWx project](http://weewx.com), as this app wouldn't be possible otherwise.
+
+Weather Icons from [FlatIcon](https://www.flaticon.com) and is licensed under [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
+
+[Yahoo! Weather](https://www.yahoo.com/?ilc=401) Forecasts API
+
+This app is by [OdiousApps](https://odiousapps.com).
