@@ -145,7 +145,7 @@ class Common
             paint.setTextSize(48);
             myCanvas.drawText(bits[55], myCanvas.getWidth() / 2, 140, paint);
             paint.setTextSize(200);
-            myCanvas.drawText(bits[0] + "\u00B0" + bits[60].substring(bits[60].length() -1), myCanvas.getWidth() / 2, 310, paint);
+            myCanvas.drawText(bits[0] + bits[60], myCanvas.getWidth() / 2, 310, paint);
 
             paint.setTextAlign(Paint.Align.LEFT);
             paint.setTextSize(64);
