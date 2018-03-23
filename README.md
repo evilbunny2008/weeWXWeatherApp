@@ -1,6 +1,6 @@
-## WeeWxWeatherApp -- A weather app for weeWx
+## weeWxWeatherApp -- A weather app for weeWx
 
-Unlike general weather apps, which get data from third party websites, this app gets data from personal weather stations running WeeWx.
+Unlike general weather apps, which get data from third party websites, this app gets data from personal weather stations running weeWx.
 
 This is a community maintained project that I do in my free time. While all efforts are taken to test everything works, in some cases things get overlooked. If you spot a problem please try to fix it and contribute where you can. If you aren't able to fix the issue, please file a bug under issues so we can track the progress and resolution of the problem.
 
@@ -19,8 +19,8 @@ This is a community maintained project that I do in my free time. While all effo
 
 ## Screen Shots
 
-<img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-104333.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-105034.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-104351.jpg"><br>
-<img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/screenshots/Screenshot_20180321-104407.jpg"><br>
+<img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-104333.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-105034.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-104351.jpg"><br>
+<img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-104407.jpg"><br>
 
 ## Concise Instructions
 
@@ -29,17 +29,17 @@ In case you want the short version, below is the concise steps:
 ### Step 1, install the data extension for weeWx.
 For imperial
 ```
-wget https://github.com/evilbunny2008/WeeWxWeatherApp/releases/download/0.1.0/data-0.1.0-imperial.tar.gz
+wget https://github.com/evilbunny2008/weeWxWeatherApp/releases/download/0.1.0/data-0.1.0-imperial.tar.gz
 wee_extension --install data-0.1.0-imperial.tar.gz
 ```
 For metric
 ```
-wget https://github.com/evilbunny2008/WeeWxWeatherApp/releases/download/0.1.0/data-0.1.1-metric.tar.gz
+wget https://github.com/evilbunny2008/weeWxWeatherApp/releases/download/0.1.1/data-0.1.1-metric.tar.gz
 wee_extension --install data-0.1.1-metric.tar.gz
 ```
 ### Step 2, create settings.txt
 ```
-wget -O /var/www/weewx/settings.txt https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt
+wget -O /var/www/weewx/settings.txt https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/settings.txt
 sudo nano /var/www/weewx/settings.txt
 ```
 You need to change the data= line to point to data.txt on your server which was completed in step 1, this is usually http://&lt;yourdomain&gt;.com/weewx/data.txt. You also have the option of pointing radar= line to an image or animated image from the web, for possible radar images view our [list of radar sources](RadarURLs.md). The third line, forecast= accepts a place name for forecasts. Press ctrl+x to exit and save.
@@ -61,17 +61,17 @@ Firstly you need to install the data extension which will then setup weeWx to ge
 
 For imperial
 ```
-wget https://github.com/evilbunny2008/WeeWxWeatherApp/releases/download/0.1.0/data-0.1.0-imperial.tar.gz
+wget https://github.com/evilbunny2008/weeWxWeatherApp/releases/download/0.1.0/data-0.1.0-imperial.tar.gz
 wee_extension --install data-0.1.0-imperial.tar.gz
 ```
 For metric
 ```
-wget https://github.com/evilbunny2008/WeeWxWeatherApp/releases/download/0.1.0/data-0.1.1-metric.tar.gz
+wget https://github.com/evilbunny2008/weeWxWeatherApp/releases/download/0.1.0/data-0.1.1-metric.tar.gz
 wee_extension --install data-0.1.1-metric.tar.gz
 ```
 ### Settings.txt
 
-To let the app know where to download information from we have a meta config file with all the details. This saves a lot of typing, especially on radar URLs from WeatherUnderground. I have provided an example [settings.txt](https://raw.githubusercontent.com/evilbunny2008/WeeWxWeatherApp/master/settings.txt) file, you can save it to your website in the weewx website directory, this is usually /var/www/weewx/.
+To let the app know where to download information from we have a meta config file with all the details. This saves a lot of typing, especially on radar URLs from WeatherUnderground. I have provided an example [settings.txt](https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/settings.txt) file, you can save it to your website in the weewx website directory, this is usually /var/www/weewx/.
 
 You then need to customise the settings file, using the example as a guide only. There are three lines in the file. The first is the URL to the data.txt file, this is usually http://&lt;yourdomain&gt;.com/weewx/data.txt. Secondly there is an option for an animated gif file weather radar, for possible radar images view our [list of radar sources](RadarURLs.md). The third line is for forecasts from [Yahoo! Weather API](https://www.yahoo.com/?ilc=401) and you just need to enter the town/city, state/province and country you want the forecast for.
 
