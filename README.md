@@ -34,7 +34,7 @@ wee_extension --install data-0.1.0-imperial.tar.gz
 ```
 For metric
 ```
-wget https://github.com/evilbunny2008/weeWxWeatherApp/releases/download/0.1.1/data-0.1.1-metric.tar.gz
+wget https://github.com/evilbunny2008/weeWxWeatherApp/releases/download/0.1.0/data-0.1.1-metric.tar.gz
 wee_extension --install data-0.1.1-metric.tar.gz
 ```
 ### Step 2, create settings.txt
