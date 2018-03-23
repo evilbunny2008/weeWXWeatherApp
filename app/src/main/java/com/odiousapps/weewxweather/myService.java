@@ -28,6 +28,8 @@ public class myService extends Service
 
     public static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
 
+    boolean doUpdate = true;
+
     public void onCreate()
     {
         super.onCreate();
@@ -52,6 +54,11 @@ public class myService extends Service
         return Service.START_STICKY;
     }
 
+    public boolean Update()
+    {
+        return doUpdate;
+    }
+
     public void Reminder()
     {
         if(timer == null)
@@ -62,6 +69,7 @@ public class myService extends Service
         getWeather();
         Common.LogMessage("Running getWeather();");
     }
+
     public void onDestroy()
     {
         super.onDestroy();
@@ -187,7 +195,6 @@ public class myService extends Service
                 try
                 {
                     URL url = new URL(common.GetStringPref("BASE_URL", ""));
-                    Common.LogMessage("BASE_URL="+common.GetStringPref("BASE_URL", ""));
                     HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
                     urlConnection.setRequestMethod("GET");
                     urlConnection.setDoOutput(true);
@@ -203,7 +210,8 @@ public class myService extends Service
 
                     common.SetStringPref("LastDownload", sb.toString().trim());
 
-                    SendIntents();
+                    if(doUpdate)
+                        SendIntents();
                 } catch (Exception e) {
                     Common.LogMessage(e.toString());
                 }
@@ -247,9 +255,12 @@ public class myService extends Service
                 else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF))
                 {
                     Common.LogMessage("ACTION_SCREEN_OFF");
+                    doUpdate = false;
+                    // stop updating until the ACTION_USER_PRESENT is seen
                 }
                 else if (intent.getAction().equals(Intent.ACTION_USER_PRESENT))
                 {
+                    doUpdate = true;
                     SendIntents();
                     Common.LogMessage("ACTION_USER_PRESENT");
                 }

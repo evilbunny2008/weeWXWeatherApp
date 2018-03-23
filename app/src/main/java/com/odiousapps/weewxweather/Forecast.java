@@ -18,6 +18,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Calendar;
 
 import static java.lang.Math.round;
 
@@ -213,7 +214,14 @@ public class Forecast extends AppCompatActivity implements GestureDetector.OnGes
 
             StringBuilder str = new StringBuilder();
 
-            JSONObject tmp = forecast.getJSONObject(0);
+            int start = 0;
+            Calendar calendar = Calendar.getInstance();
+            int hour = calendar.get(Calendar.HOUR_OF_DAY);
+
+            if(hour >= 18)
+                start = 1;
+
+            JSONObject tmp = forecast.getJSONObject(start);
             int code = tmp.getInt("code");
             String stmp;
 
@@ -236,7 +244,7 @@ public class Forecast extends AppCompatActivity implements GestureDetector.OnGes
             stmp = "<table style='width:100%;border:0px;'>";
             str.append(stmp);
 
-            for (int i = 1; i <= 5; i++)
+            for (int i = start + 1; i <= start + 5; i++)
             {
                 tmp = forecast.getJSONObject(i);
                 code = tmp.getInt("code");

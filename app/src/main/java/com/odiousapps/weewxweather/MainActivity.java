@@ -82,9 +82,10 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
         // use last downloaded data while a bg thread runs
         startService();
+        reloadWebView();
         Common.LogMessage("set things in motion!");
 
-        new ReloadWebView(300);
+        new ReloadWebView(600);
     }
 
     @Override
@@ -206,7 +207,10 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     @Override
     public void onBackPressed()
     {
-        moveTaskToBack(true);
+        if(common.GetBoolPref("bgdl", true))
+            moveTaskToBack(true);
+        else
+            finish();
     }
 
     @Override
@@ -222,7 +226,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     {
         super.onResume();
         updateFields();
-        reloadWebView();
     }
 
     private void startService()
@@ -255,6 +258,9 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         @Override
         public void onReceive(Context context, Intent intent)
         {
+            if(myService.singleton == null || !myService.singleton.Update())
+                return;
+
             try
             {
                 Common.LogMessage("We have a hit, so we should probably update the screen.");
