@@ -98,13 +98,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             return true;
         }
 
-        if(motionEvent2.getX() - motionEvent1.getX() > 100)
-        {
-            Common.LogMessage("Swipe Right");
-            //finish();
-            return true;
-        }
-
         return true;
     }
 
@@ -211,6 +204,12 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     }
 
     @Override
+    public void onBackPressed()
+    {
+        moveTaskToBack(true);
+    }
+
+    @Override
     public void finish()
     {
         super.finish();
@@ -244,9 +243,11 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
     private void stopUpdates()
     {
-        Common.LogMessage("Stopping Service.");
         if(!common.GetBoolPref("bgdl", true))
+        {
             stopService(new Intent(this, myService.class));
+            Common.LogMessage("Stopping Service.");
+        }
     }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()

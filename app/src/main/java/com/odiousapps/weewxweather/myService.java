@@ -2,8 +2,11 @@ package com.odiousapps.weewxweather;
 
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.IBinder;
 import android.widget.RemoteViews;
 
@@ -21,6 +24,7 @@ public class myService extends Service
     private Common common = null;
     Timer timer = null;
     Thread t = null;
+    LockScreenReceiver lockScreenReceiver;
 
     public static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
 
@@ -32,6 +36,20 @@ public class myService extends Service
 
         Reminder();
         Common.LogMessage("myService started.");
+
+        lockScreenReceiver = new LockScreenReceiver();
+        IntentFilter lockFilter = new IntentFilter();
+        lockFilter.addAction(Intent.ACTION_SCREEN_ON);
+        lockFilter.addAction(Intent.ACTION_SCREEN_OFF);
+        lockFilter.addAction(Intent.ACTION_USER_PRESENT);
+        registerReceiver(lockScreenReceiver, lockFilter);
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId)
+    {
+        Common.LogMessage("WeeWXService marked START_STICKY");
+        return Service.START_STICKY;
     }
 
     public void Reminder()
@@ -44,10 +62,11 @@ public class myService extends Service
         getWeather();
         Common.LogMessage("Running getWeather();");
     }
-
     public void onDestroy()
     {
         super.onDestroy();
+
+        unregisterReceiver(lockScreenReceiver);
 
         if (timer != null)
         {
@@ -212,5 +231,29 @@ public class myService extends Service
     public IBinder onBind(Intent arg0)
     {
         return null;
+    }
+
+    public class LockScreenReceiver extends BroadcastReceiver
+    {
+        @Override
+        public void onReceive(Context context, Intent intent)
+        {
+            if (intent != null && intent.getAction() != null)
+            {
+                if (intent.getAction().equals(Intent.ACTION_SCREEN_ON))
+                {
+                    Common.LogMessage("ACTION_SCREEN_ON");
+                }
+                else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF))
+                {
+                    Common.LogMessage("ACTION_SCREEN_OFF");
+                }
+                else if (intent.getAction().equals(Intent.ACTION_USER_PRESENT))
+                {
+                    SendIntents();
+                    Common.LogMessage("ACTION_USER_PRESENT");
+                }
+            }
+        }
     }
 }
