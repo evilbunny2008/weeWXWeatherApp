@@ -1,4 +1,4 @@
 data=https://example.com/weewx/data.txt
 radar=https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=071&brand=wui&num=12&delay=75&type=A0Q&frame=0&scale=1.000&noclutter=0&lat=0&lon=0&label=you&showstorms=0&map.x=400&map.y=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=0&rainsnow=0&lightning=0&smooth=0
 forecast=Sydney, NSW, AU
-webcam=https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/webcam.jpg
+webcam=http://mx.cafesydney.com:8888/mjpg/video.mjpg
