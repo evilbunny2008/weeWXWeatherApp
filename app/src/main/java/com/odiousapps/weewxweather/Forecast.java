@@ -134,7 +134,7 @@ public class Forecast extends AppCompatActivity implements GestureDetector.OnGes
                 wv.loadDataWithBaseURL(null, bits, "text/html", "utf-8", null);
 
                 if(!common.GetStringPref("FORECAST_URL", "").equals(""))
-                    forceRefresh();
+                    getForecast();
             }
         }
     }
@@ -221,11 +221,11 @@ public class Forecast extends AppCompatActivity implements GestureDetector.OnGes
 
             StringBuilder str = new StringBuilder();
 
-            int start = 0;
             Calendar calendar = Calendar.getInstance();
             int hour = calendar.get(Calendar.HOUR_OF_DAY);
 
-            if(hour >= 18)
+            int start = 0;
+            if(hour >= 15)
                 start = 1;
 
             JSONObject tmp = forecast.getJSONObject(start);
@@ -306,9 +306,7 @@ public class Forecast extends AppCompatActivity implements GestureDetector.OnGes
     }
 
     @Override
-    public void onLongPress(MotionEvent arg0)
-    {
-    }
+    public void onLongPress(MotionEvent arg0) {}
 
     @Override
     public boolean onScroll(MotionEvent arg0, MotionEvent arg1, float arg2, float arg3)
@@ -317,9 +315,7 @@ public class Forecast extends AppCompatActivity implements GestureDetector.OnGes
     }
 
     @Override
-    public void onShowPress(MotionEvent arg0)
-    {
-    }
+    public void onShowPress(MotionEvent arg0) {}
 
     @Override
     public boolean onSingleTapUp(MotionEvent arg0)

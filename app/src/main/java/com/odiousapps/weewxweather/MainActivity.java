@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     int REQUEST_CODE = 1;
 
 
-    void checkFields(TextView tv, String txt)
+    private void checkFields(TextView tv, String txt)
     {
         if(!tv.getText().toString().equals(txt))
             tv.setText(txt);
     }
 
-    void updateFields()
+    private void updateFields()
     {
         Common.LogMessage("updateFields()");
         String bits[] = common.GetStringPref("LastDownload","").split("\\|");
