@@ -29,13 +29,13 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     int REQUEST_CODE = 1;
 
 
-    public void checkFields(TextView tv, String txt)
+    void checkFields(TextView tv, String txt)
     {
         if(!tv.getText().toString().equals(txt))
             tv.setText(txt);
     }
 
-    public void updateFields()
+    void updateFields()
     {
         Common.LogMessage("updateFields()");
         String bits[] = common.GetStringPref("LastDownload","").split("\\|");
@@ -171,6 +171,10 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         {
             case R.id.forecast:
                 startActivity(new Intent(getBaseContext(), Forecast.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                return true;
+            case R.id.webcam:
+                startActivity(new Intent(getBaseContext(), Webcam.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 return true;
             case R.id.refresh:

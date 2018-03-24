@@ -60,6 +60,13 @@ public class Forecast extends AppCompatActivity implements GestureDetector.OnGes
             finish();
         }
 
+        if(motionEvent1.getX() - motionEvent2.getX() > 100)
+        {
+            Common.LogMessage("Swipe Left");
+            startActivity(new Intent(getBaseContext(), Webcam.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        }
+
         return true;
     }
 

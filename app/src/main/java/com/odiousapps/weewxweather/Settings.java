@@ -85,7 +85,8 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
                         boolean validURL1 = false;
                         boolean validURL2 = false;
                         boolean validURL3 = false;
-                        String data = "", radar = "", forecast = "";
+                        boolean validURL4 = false;
+                        String data = "", radar = "", forecast = "", webcam = "";
 
                         CheckBox cb1 = findViewById(R.id.cb1);
                         CheckBox cb2 = findViewById(R.id.cb2);
@@ -125,6 +126,8 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
                                     radar = mb[1];
                                 if (mb[0].equals("forecast"))
                                     forecast = mb[1];
+                                if (mb[0].equals("webcam"))
+                                    webcam = mb[1];
                             }
 
                             validURL = true;
@@ -240,12 +243,39 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
                             }
                         }
 
+                        if (!webcam.equals(""))
+                        {
+                            try
+                            {
+                                Common.LogMessage("checking: " + webcam);
+                                URL url = new URL(webcam);
+                                URLConnection conn = url.openConnection();
+                                conn.connect();
+                                InputStream in = conn.getInputStream();
+                                in.close();
+                                validURL4 = true;
+                            } catch (MalformedURLException e) {
+                                e.printStackTrace();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                            if(!validURL4)
+                            {
+                                handlerWEBCAM.sendEmptyMessage(0);
+                                return;
+                            }
+                        }
+
                         common.SetStringPref("SETTINGS_URL", et1.getText().toString());
                         common.SetIntPref("updateInterval", pos);
                         common.SetStringPref("BASE_URL", data);
                         common.SetStringPref("RADAR_URL", radar);
                         common.SetStringPref("FORECAST_URL", forecast);
                         common.SetBoolPref("bgdl", cb1.isChecked());
+                        common.SetStringPref("WEBCAM_URL", webcam);
                         common.SetBoolPref("metric", cb2.isChecked());
                         Intent intent = new Intent();
                         intent.putExtra("urlChanged", true);
@@ -341,6 +371,26 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
             new AlertDialog.Builder(Settings.this)
                     .setTitle("Invalid URL")
                     .setMessage("Wasn't able to connect or download the forecast.")
+                    .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                        }
+                    }).show();
+        }
+    };
+
+    @SuppressLint("HandlerLeak")
+    private Handler handlerWEBCAM = new Handler()
+    {
+        @Override
+        public void handleMessage(Message msg)
+        {
+            dialog.dismiss();
+            new AlertDialog.Builder(Settings.this)
+                    .setTitle("Invalid URL")
+                    .setMessage("Wasn't able to connect or download webcam from your server")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
                     {
                         @Override

@@ -18,4 +18,5 @@
     <string name="forecast">Forecast</string>
     <string name="mainmenu">Main Menu</string>
     <string name="metric">Use Metric</string>
+    <string name="webcam">Webcam</string>
 </resources>
