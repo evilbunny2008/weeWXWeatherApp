@@ -42,7 +42,9 @@ wee_extension --install data-0.1.1-metric.tar.gz
 wget -O /var/www/weewx/settings.txt https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/settings.txt
 sudo nano /var/www/weewx/settings.txt
 ```
-You need to change the data= line to point to data.txt on your server which was completed in step 1, this is usually http://&lt;yourdomain&gt;.com/weewx/data.txt. You also have the option of pointing the radar= line to an image or animated image from the web, for possible radar images view our [list of radar sources](RadarURLs.md). The third line, forecast= accepts a place name for forecasts. Press ctrl+x to exit and save.
+You need to change the data= line to point to data.txt on your server which was completed in step 1, this is usually http://&lt;yourdomain&gt;.com/weewx/data.txt. You also have the option of pointing the radar= line to an image or animated image from the web, for possible radar images view our [list of radar sources](RadarURLs.md). The third line, forecast= accepts a place name for forecasts. The fourth line, webcam=, is for a webcam image or motion jpeg.
+
+Press ctrl+x to exit and save.
 
 ### Step 3, installing the app
 You can now get the app from [Google Play](https://play.google.com/store/apps/details?id=com.odiousapps.weewxweather).
@@ -73,7 +75,7 @@ wee_extension --install data-0.1.1-metric.tar.gz
 
 To let the app know where to download information from we have a meta config file with all the details. This saves a lot of typing, especially on radar URLs from WeatherUnderground. I have provided an example [settings.txt](https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/settings.txt) file, you can save it to your website in the weewx website directory, this is usually /var/www/weewx/.
 
-You then need to customise the settings file, using the example as a guide only. There are three lines in the file. The first is the URL to the data.txt file, this is usually http://&lt;yourdomain&gt;.com/weewx/data.txt. Secondly there is an option for an image or an animated image file for weather radar. For possible radar images view our [list of radar sources](RadarURLs.md). The third line is for forecasts from [Yahoo! Weather API](https://www.yahoo.com/?ilc=401) and you just need to enter the town/city, state/province and country you want the forecast for.
+You then need to customise the settings file, using the example as a guide only. There are three lines in the file. The first is the URL to the data.txt file, this is usually http://&lt;yourdomain&gt;.com/weewx/data.txt. Secondly there is an option for an image or an animated image file for weather radar. For possible radar images view our [list of radar sources](RadarURLs.md). The third line is for forecasts from [Yahoo! Weather API](https://www.yahoo.com/?ilc=401) and you just need to enter the town/city, state/province and country you want the forecast for. The fourth line, webcam=, is for a webcam image or motion jpeg.
 
 ### Setting up the app
 
