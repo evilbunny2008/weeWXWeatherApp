@@ -4,6 +4,10 @@
           android:title="@string/mainmenu"/>
     <item android:id="@+id/settings"
           android:title="@string/settings"/>
+    <item android:id="@+id/stats"
+          android:title="@string/stats"/>
+    <item android:id="@+id/webcam"
+          android:title="@string/webcam"/>
     <item android:id="@+id/refresh"
           android:title="@string/refresh"/>
     <item android:id="@+id/about"

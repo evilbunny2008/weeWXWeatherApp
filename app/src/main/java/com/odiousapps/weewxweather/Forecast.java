@@ -106,6 +106,15 @@ public class Forecast extends AppCompatActivity implements GestureDetector.OnGes
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
+            case R.id.webcam:
+                startActivity(new Intent(getBaseContext(), Webcam.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+                return true;
+            case R.id.stats:
+                startActivity(new Intent(getBaseContext(), Stats.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                return true;
             case R.id.settings:
                 startActivityForResult(new Intent(getBaseContext(), Settings.class), REQUEST_CODE);
                 return true;

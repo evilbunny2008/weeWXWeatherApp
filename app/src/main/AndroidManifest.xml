@@ -55,6 +55,13 @@
             android:screenOrientation="landscape"
             android:launchMode="singleTask">
         </activity>
+        <activity
+            android:label="Custom"
+            android:name=".Custom"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask">
+        </activity>
         <receiver android:name="WidgetProvider" android:label="WeeWx(2x1)">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

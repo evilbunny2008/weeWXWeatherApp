@@ -159,7 +159,12 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     public boolean onCreateOptionsMenu(Menu menu)
     {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.weather_menu, menu);
+
+        if(common.GetStringPref("CUSTOM_URL", "").equals(""))
+            inflater.inflate(R.menu.weather_menu, menu);
+        else
+            inflater.inflate(R.menu.weather_menu_custom, menu);
+
         return true;
     }
 
@@ -169,6 +174,10 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         // Handle item selection
         switch (item.getItemId())
         {
+            case R.id.custom:
+                startActivity(new Intent(getBaseContext(), Custom.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                return true;
             case R.id.forecast:
                 startActivity(new Intent(getBaseContext(), Forecast.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

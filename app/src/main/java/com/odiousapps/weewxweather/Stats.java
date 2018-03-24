@@ -64,6 +64,11 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
                 return true;
+            case R.id.webcam:
+                startActivity(new Intent(getBaseContext(), Webcam.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                finish();
+                return true;
             case R.id.mainmenu:
                 finish();
                 return true;
