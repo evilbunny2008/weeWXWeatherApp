@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.TextView;
 
@@ -22,12 +23,11 @@ import java.util.Calendar;
 
 import static java.lang.Math.round;
 
-public class Forecast extends AppCompatActivity implements GestureDetector.OnGestureListener
+public class Forecast extends AppCompatActivity
 {
     Common common = null;
     WebView wv = null;
     int REQUEST_CODE = 1;
-    GestureDetector gestureDetector;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,43 +38,55 @@ public class Forecast extends AppCompatActivity implements GestureDetector.OnGes
         if(getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        gestureDetector = new GestureDetector(Forecast.this, Forecast.this);
-
         common = new Common(this);
         Common.LogMessage("set things in motion!");
 
         wv = findViewById(R.id.webView1);
 
+        View v = findViewById(R.id.wholeScreen);
+        //noinspection AndroidLintClickableViewAccessibility
+        v.setOnTouchListener(new OnSwipeTouchListener(this)
+        {
+            @Override
+            public void onSwipeRight()
+            {
+                Common.LogMessage("Swipe Right");
+                finish();
+            }
+
+            @Override
+            public void onSwipeLeft()
+            {
+                Common.LogMessage("Swipe Left");
+                startActivity(new Intent(getBaseContext(), Webcam.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        wv = findViewById(R.id.webView1);
+        //noinspection AndroidLintClickableViewAccessibility
+        wv.setOnTouchListener(new OnSwipeTouchListener(this)
+        {
+            @Override
+            public void onSwipeRight()
+            {
+                Common.LogMessage("Swipe Right");
+                finish();
+            }
+
+            @Override
+            public void onSwipeLeft()
+            {
+                Common.LogMessage("Swipe Left");
+                startActivity(new Intent(getBaseContext(), Webcam.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
         String bits = "<body><h3>Please wait while your forecast is loaded.</h3></body>";
         wv.loadDataWithBaseURL(null, bits, "text/html", "utf-8", null);
 
         getForecast();
-    }
-
-    @Override
-    public boolean onFling(MotionEvent motionEvent1, MotionEvent motionEvent2, float X, float Y)
-    {
-        if(motionEvent2.getX() - motionEvent1.getX() > 100)
-        {
-            Common.LogMessage("Swipe Right");
-            finish();
-        }
-
-        if(motionEvent1.getX() - motionEvent2.getX() > 100)
-        {
-            Common.LogMessage("Swipe Left");
-            startActivity(new Intent(getBaseContext(), Webcam.class));
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-        }
-
-        return true;
-    }
-
-    @Override
-    public boolean onSupportNavigateUp()
-    {
-        finish();
-        return true;
     }
 
     @Override
@@ -312,35 +324,5 @@ public class Forecast extends AppCompatActivity implements GestureDetector.OnGes
 
         TextView tv1 = findViewById(R.id.forecast);
         tv1.setText(desc.substring(19));
-    }
-
-    @Override
-    public void onLongPress(MotionEvent arg0) {}
-
-    @Override
-    public boolean onScroll(MotionEvent arg0, MotionEvent arg1, float arg2, float arg3)
-    {
-        return false;
-    }
-
-    @Override
-    public void onShowPress(MotionEvent arg0) {}
-
-    @Override
-    public boolean onSingleTapUp(MotionEvent arg0)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent motionEvent)
-    {
-        return gestureDetector.onTouchEvent(motionEvent);
-    }
-
-    @Override
-    public boolean onDown(MotionEvent arg0)
-    {
-        return false;
     }
 }

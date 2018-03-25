@@ -11,14 +11,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-public class Stats  extends AppCompatActivity implements GestureDetector.OnGestureListener
+public class Stats  extends AppCompatActivity
 {
-    GestureDetector gestureDetector;
     int REQUEST_CODE = 2;
-
+    WebView wv;
     Common common = null;
 
     @Override
@@ -30,9 +30,47 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
         if(getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        gestureDetector = new GestureDetector(Stats.this, Stats.this);
-
         common = new Common(this);
+
+        View v = findViewById(R.id.wholeScreen);
+        //noinspection AndroidLintClickableViewAccessibility
+        v.setOnTouchListener(new OnSwipeTouchListener(this)
+        {
+            @Override
+            public void onSwipeRight()
+            {
+                Common.LogMessage("Swipe Right");
+                finish();
+            }
+
+            @Override
+            public void onSwipeLeft()
+            {
+                Common.LogMessage("Swipe Left");
+                startActivity(new Intent(getBaseContext(), Forecast.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        wv = findViewById(R.id.webView1);
+        //noinspection AndroidLintClickableViewAccessibility
+        wv.setOnTouchListener(new OnSwipeTouchListener(this)
+        {
+            @Override
+            public void onSwipeRight()
+            {
+                Common.LogMessage("Swipe Right");
+                finish();
+            }
+
+            @Override
+            public void onSwipeLeft()
+            {
+                Common.LogMessage("Swipe Left");
+                startActivity(new Intent(getBaseContext(), Forecast.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
 
         updateFields();
 
@@ -285,8 +323,6 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
         sb.append(footer);
 
         Common.LogMessage("sb: "+sb.toString());
-
-        WebView wv = findViewById(R.id.webView1);
         wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
     }
 
@@ -296,58 +332,5 @@ public class Stats  extends AppCompatActivity implements GestureDetector.OnGestu
         super.finish();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         unregisterReceiver(serviceReceiver);
-    }
-
-    @Override
-    public boolean onFling(MotionEvent motionEvent1, MotionEvent motionEvent2, float X, float Y)
-    {
-        if(motionEvent2.getX() - motionEvent1.getX() > 100)
-        {
-            Common.LogMessage("Swipe Right");
-            finish();
-        }
-
-        if(motionEvent1.getX() - motionEvent2.getX() > 100)
-        {
-            Common.LogMessage("Swipe Left");
-            startActivity(new Intent(getBaseContext(), Forecast.class));
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-        }
-
-        return true;
-    }
-
-    @Override
-    public void onLongPress(MotionEvent arg0)
-    {
-    }
-
-    @Override
-    public boolean onScroll(MotionEvent arg0, MotionEvent arg1, float arg2, float arg3)
-    {
-        return false;
-    }
-
-    @Override
-    public void onShowPress(MotionEvent arg0)
-    {
-    }
-
-    @Override
-    public boolean onSingleTapUp(MotionEvent arg0)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent motionEvent)
-    {
-        return gestureDetector.onTouchEvent(motionEvent);
-    }
-
-    @Override
-    public boolean onDown(MotionEvent arg0)
-    {
-        return false;
     }
 }

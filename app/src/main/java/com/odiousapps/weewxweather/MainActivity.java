@@ -7,11 +7,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.MotionEvent;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
@@ -19,14 +18,14 @@ import android.widget.TextView;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener
+public class MainActivity extends AppCompatActivity
 {
     // App Icon Source
     // http://www.clker.com/cliparts/5/6/4/d/1206565706595088919Anonymous_simple_weather_symbols_13.svg.hi.png
 
-    GestureDetector gestureDetector;
     Common common = null;
     int REQUEST_CODE = 1;
+    WebView wv;
 
 
     private void checkFields(TextView tv, String txt)
@@ -69,9 +68,33 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        common = new Common(this);
+        View v = findViewById(R.id.wholeScreen);
+        //noinspection AndroidLintClickableViewAccessibility
+        v.setOnTouchListener(new OnSwipeTouchListener(this)
+        {
+            @Override
+            public void onSwipeLeft()
+            {
+                Common.LogMessage("Swipe Left");
+                startActivity(new Intent(getBaseContext(), Stats.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
 
-        gestureDetector = new GestureDetector(MainActivity.this, MainActivity.this);
+        wv = findViewById(R.id.webView1);
+        //noinspection AndroidLintClickableViewAccessibility
+        wv.setOnTouchListener(new OnSwipeTouchListener(this)
+        {
+            @Override
+            public void onSwipeLeft()
+            {
+                Common.LogMessage("Swipe Left");
+                startActivity(new Intent(getBaseContext(), Stats.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        common = new Common(this);
 
         if(common.GetStringPref("BASE_URL", "").equals(""))
             startActivityForResult(new Intent(getBaseContext(), Settings.class), REQUEST_CODE);
@@ -86,20 +109,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         Common.LogMessage("set things in motion!");
 
         new ReloadWebView(600);
-    }
-
-    @Override
-    public boolean onFling(MotionEvent motionEvent1, MotionEvent motionEvent2, float X, float Y)
-    {
-        if(motionEvent1.getX() - motionEvent2.getX() > 100)
-        {
-            Common.LogMessage("Swipe Left");
-            startActivity(new Intent(getBaseContext(), Stats.class));
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            return true;
-        }
-
-        return true;
     }
 
     @Override
@@ -119,40 +128,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
                     getWeather();
             }
         }
-    }
-
-    @Override
-    public void onLongPress(MotionEvent arg0)
-    {
-    }
-
-    @Override
-    public boolean onScroll(MotionEvent arg0, MotionEvent arg1, float arg2, float arg3)
-    {
-        return false;
-    }
-
-    @Override
-    public void onShowPress(MotionEvent arg0)
-    {
-    }
-
-    @Override
-    public boolean onSingleTapUp(MotionEvent arg0)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent motionEvent)
-    {
-        return gestureDetector.onTouchEvent(motionEvent);
-    }
-
-    @Override
-    public boolean onDown(MotionEvent arg0)
-    {
-        return false;
     }
 
     @Override
@@ -297,7 +272,6 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     protected void reloadWebView()
     {
         Common.LogMessage("reload radar...");
-        WebView wv = findViewById(R.id.webView1);
         wv.getSettings().setAppCacheEnabled(false);
         wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         wv.getSettings().setUserAgentString(Common.UA);

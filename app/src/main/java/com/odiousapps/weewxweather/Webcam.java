@@ -2,11 +2,8 @@ package com.odiousapps.weewxweather;
 
 import android.app.ActionBar;
 import android.app.Activity;
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Vibrator;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -14,10 +11,10 @@ import android.webkit.WebView;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Webcam extends Activity implements GestureDetector.OnGestureListener
+public class Webcam extends Activity
 {
     Common common = null;
-    GestureDetector gestureDetector;
+    WebView wv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -34,9 +31,55 @@ public class Webcam extends Activity implements GestureDetector.OnGestureListene
 
         common = new Common(this);
 
-        gestureDetector = new GestureDetector(Webcam.this, Webcam.this);
+        wv = findViewById(R.id.webcam);
+        wv.setLongClickable(true);
+        wv.setOnLongClickListener(new View.OnLongClickListener()
+        {
+            public boolean onLongClick(View arg0)
+            {
+                Common.LogMessage("Long Clicked ");
+                reloadWebView();
+                return false;
+            }
+        });
 
-        reloadImageView();
+        //noinspection AndroidLintClickableViewAccessibility
+        wv.setOnTouchListener(new OnSwipeTouchListener(this)
+        {
+            @Override
+            public void onSwipeUp()
+            {
+                finish();
+            }
+
+            @Override
+            public void onSwipeDown()
+            {
+                if(!common.GetStringPref("CUSTOM_URL", "").equals(""))
+                {
+                    startActivity(new Intent(getBaseContext(), Custom.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                }
+            }
+
+            @Override
+            public void onSwipeRight()
+            {
+                finish();
+            }
+
+            @Override
+            public void onSwipeLeft()
+            {
+                if(!common.GetStringPref("CUSTOM_URL", "").equals(""))
+                {
+                    startActivity(new Intent(getBaseContext(), Custom.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                }
+            }
+        });
+
+        reloadWebView();
         Common.LogMessage("set things in motion!");
 
         new ReloadWebView(300);
@@ -49,10 +92,9 @@ public class Webcam extends Activity implements GestureDetector.OnGestureListene
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
-    protected void reloadImageView()
+    protected void reloadWebView()
     {
         Common.LogMessage("reload webcam...");
-        WebView wv = findViewById(R.id.webcam);
         wv.getSettings().setAppCacheEnabled(false);
         wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
         wv.getSettings().setUserAgentString(Common.UA);
@@ -68,9 +110,9 @@ public class Webcam extends Activity implements GestureDetector.OnGestureListene
                 "    <meta charset='utf-8'>\n" +
                 "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
                 "  </head>\n" +
-                "  <body>\n" +
+                "  <body style='padding:0px;margin:0px;'>\n" +
                 "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
-                "\tsrc='" + webcam + "?date=" + Math.round(System.currentTimeMillis() / 1000) + "'>\n" +
+                "\tsrc='" + webcam + "?date=" + System.currentTimeMillis() + "'>\n" +
                 "  </body>\n" +
                 "</html>";
         wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
@@ -103,60 +145,9 @@ public class Webcam extends Activity implements GestureDetector.OnGestureListene
                 @Override
                 public void run()
                 {
-                    reloadImageView();
+                    reloadWebView();
                 }
             });
         }
-    }
-
-    @Override
-    public boolean onFling(MotionEvent motionEvent1, MotionEvent motionEvent2, float X, float Y)
-    {
-        if(motionEvent2.getX() - motionEvent1.getX() > 100)
-        {
-            Common.LogMessage("Swipe Right");
-            finish();
-            return true;
-        }
-
-        return true;
-    }
-
-    @Override
-    public void onLongPress(MotionEvent arg0)
-    {
-        Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-        if(vibrator != null)
-        {
-            vibrator.vibrate(100);
-            reloadImageView();
-        }
-    }
-
-    @Override
-    public boolean onScroll(MotionEvent arg0, MotionEvent arg1, float arg2, float arg3)
-    {
-        return false;
-    }
-
-    @Override
-    public void onShowPress(MotionEvent arg0) {}
-
-    @Override
-    public boolean onSingleTapUp(MotionEvent arg0)
-    {
-        return false;
-    }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent motionEvent)
-    {
-        return gestureDetector.onTouchEvent(motionEvent);
-    }
-
-    @Override
-    public boolean onDown(MotionEvent arg0)
-    {
-        return false;
     }
 }
