@@ -2,6 +2,7 @@ package com.odiousapps.weewxweather;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.webkit.WebView;
 
 import java.util.Timer;
@@ -28,6 +29,13 @@ public class Custom extends Activity
             public void onSwipeRight()
             {
                 finish();
+            }
+
+            @Override
+            public void longPress(MotionEvent e)
+            {
+                Common.LogMessage("long press");
+                reloadWebView();
             }
         });
 

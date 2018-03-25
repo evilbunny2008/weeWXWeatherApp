@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -91,6 +92,13 @@ public class MainActivity extends AppCompatActivity
                 Common.LogMessage("Swipe Left");
                 startActivity(new Intent(getBaseContext(), Stats.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+
+            @Override
+            public void longPress(MotionEvent e)
+            {
+                Common.LogMessage("long press");
+                reloadWebView();
             }
         });
 

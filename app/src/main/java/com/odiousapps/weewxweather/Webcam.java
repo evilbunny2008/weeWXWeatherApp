@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -32,16 +33,6 @@ public class Webcam extends Activity
         common = new Common(this);
 
         wv = findViewById(R.id.webcam);
-        wv.setLongClickable(true);
-        wv.setOnLongClickListener(new View.OnLongClickListener()
-        {
-            public boolean onLongClick(View arg0)
-            {
-                Common.LogMessage("Long Clicked ");
-                reloadWebView();
-                return false;
-            }
-        });
 
         //noinspection AndroidLintClickableViewAccessibility
         wv.setOnTouchListener(new OnSwipeTouchListener(this)
@@ -76,6 +67,13 @@ public class Webcam extends Activity
                     startActivity(new Intent(getBaseContext(), Custom.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 }
+            }
+
+            @Override
+            public void longPress(MotionEvent e)
+            {
+                Common.LogMessage("long press");
+                reloadWebView();
             }
         });
 

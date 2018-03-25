@@ -183,7 +183,7 @@ public class Forecast extends AppCompatActivity
                 {
                     int curtime = round(System.currentTimeMillis() / 1000);
 
-                    if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 3 * 3600 < curtime)
+                    if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 3600 < curtime)
                     {
                         generateForecast();
 

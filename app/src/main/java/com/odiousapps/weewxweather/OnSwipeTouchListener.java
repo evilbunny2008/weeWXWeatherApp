@@ -33,6 +33,12 @@ public class OnSwipeTouchListener implements View.OnTouchListener
             return true;
         }
 
+        @Override
+        public void onLongPress(MotionEvent e)
+        {
+            longPress(e);
+        }
+
         // Determines the fling velocity and then fires the appropriate swipe event accordingly
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
@@ -69,6 +75,8 @@ public class OnSwipeTouchListener implements View.OnTouchListener
             return false;
         }
     }
+
+    void longPress(MotionEvent e) {}
 
     void onSwipeRight() {}
 
