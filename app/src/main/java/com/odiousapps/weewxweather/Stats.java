@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.Menu;
@@ -69,6 +70,15 @@ public class Stats  extends AppCompatActivity
                 Common.LogMessage("Swipe Left");
                 startActivity(new Intent(getBaseContext(), Forecast.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+
+            @Override
+            public void longPress(MotionEvent e)
+            {
+                Common.LogMessage("long press");
+                Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(150);
+                forceRefresh();
             }
         });
 

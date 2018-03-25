@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -27,7 +28,6 @@ public class MainActivity extends AppCompatActivity
     Common common = null;
     int REQUEST_CODE = 1;
     WebView wv;
-
 
     private void checkFields(TextView tv, String txt)
     {
@@ -97,6 +97,8 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void longPress(MotionEvent e)
             {
+                Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(150);
                 Common.LogMessage("long press");
                 reloadWebView();
             }

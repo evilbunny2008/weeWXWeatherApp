@@ -1,7 +1,9 @@
 package com.odiousapps.weewxweather;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.view.GestureDetector;
 import android.view.Menu;
@@ -19,7 +21,9 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import static java.lang.Math.round;
 
@@ -80,6 +84,15 @@ public class Forecast extends AppCompatActivity
                 Common.LogMessage("Swipe Left");
                 startActivity(new Intent(getBaseContext(), Webcam.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+
+            @Override
+            public void longPress(MotionEvent e)
+            {
+                Common.LogMessage("long press");
+                Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(150);
+                forceRefresh();
             }
         });
 
@@ -253,11 +266,18 @@ public class Forecast extends AppCompatActivity
             int code = tmp.getInt("code");
             String stmp;
 
-            stmp = "<table style='width:100%;border:0px;'>";
+            SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm");
+            long rssCheck = common.GetIntPref("rssCheck", 0);
+            rssCheck *= 1000;
+            Date resultdate = new Date(rssCheck);
+
+
+            stmp = "<table style='width:100%;border:0px;'><tr>";
             str.append(stmp);
             stmp = "<tr><td style='width:50%;font-size:16pt;'>" + tmp.getString("date") + "</td>";
             str.append(stmp);
-            stmp = "<td style='width:50%;text-align:right;' rowspan='2'><img width='100px' src='file:///android_res/drawable/yahoo"+code+"'></td></tr>";
+            stmp = "<td style='width:50%;text-align:right;' rowspan='2'><img width='80px' src='file:///android_res/drawable/yahoo"+code+"'><br/>" +
+                    sdf.format(resultdate) + "</td></tr>";
             str.append(stmp);
 
             stmp = "<tr><td style='width:50%;font-size:48pt;'>" + tmp.getString("high") + "&deg;" + temp + "</td></tr>";

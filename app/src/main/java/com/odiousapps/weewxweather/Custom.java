@@ -1,8 +1,12 @@
 package com.odiousapps.weewxweather;
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.MotionEvent;
+import android.view.View;
 import android.webkit.WebView;
 
 import java.util.Timer;
@@ -18,6 +22,13 @@ public class Custom extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.custom);
+
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+        ActionBar actionBar = getActionBar();
+        if(actionBar != null)
+            actionBar.hide();
 
         common = new Common(this);
         wv = findViewById(R.id.custom);
@@ -35,6 +46,8 @@ public class Custom extends Activity
             public void longPress(MotionEvent e)
             {
                 Common.LogMessage("long press");
+                Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(150);
                 reloadWebView();
             }
         });

@@ -2,8 +2,10 @@ package com.odiousapps.weewxweather;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -73,6 +75,8 @@ public class Webcam extends Activity
             public void longPress(MotionEvent e)
             {
                 Common.LogMessage("long press");
+                Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(150);
                 reloadWebView();
             }
         });
