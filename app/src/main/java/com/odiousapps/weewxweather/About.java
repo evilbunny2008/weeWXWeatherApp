@@ -1,22 +1,22 @@
 package com.odiousapps.weewxweather;
 
-import android.app.Activity;
-import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.view.Window;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class About extends Activity
+public class About
 {
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_dialog);
+    private Common common;
 
-        TextView tv = findViewById(R.id.about);
+    About() {}
+
+    View myAbout(LayoutInflater inflater, ViewGroup container)
+    {
+        View rootView = inflater.inflate(R.layout.fragment_about, container, false);
+        TextView tv = rootView.findViewById(R.id.about);
 
         String lines = "<html><body>Big thanks to the <a href='http://weewx.com'>WeeWx project</a>, as this app " +
                 "wouldn't be possible otherwise.<br><br>" +
@@ -27,5 +27,7 @@ public class About extends Activity
 
         tv.setText(Html.fromHtml(lines));
         tv.setMovementMethod(LinkMovementMethod.getInstance());
+
+        return rootView;
     }
 }

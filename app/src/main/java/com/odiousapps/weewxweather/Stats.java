@@ -4,128 +4,36 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Bundle;
-import android.os.Vibrator;
-import android.support.v7.app.AppCompatActivity;
-import android.view.GestureDetector;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.MotionEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.TextView;
 
-public class Stats  extends AppCompatActivity
+public class Stats
 {
-    int REQUEST_CODE = 2;
-    WebView wv;
-    Common common = null;
+    private Common common;
+    private View rootView;
+    private WebView wv;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
+
+    Stats(Common common)
     {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.stats);
+        this.common = common;
+    }
 
-        if(getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        common = new Common(this);
-
-        View v = findViewById(R.id.wholeScreen);
-        //noinspection AndroidLintClickableViewAccessibility
-        v.setOnTouchListener(new OnSwipeTouchListener(this)
-        {
-            @Override
-            public void onSwipeRight()
-            {
-                Common.LogMessage("Swipe Right");
-                finish();
-            }
-
-            @Override
-            public void onSwipeLeft()
-            {
-                Common.LogMessage("Swipe Left");
-                startActivity(new Intent(getBaseContext(), Forecast.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-        });
-
-        wv = findViewById(R.id.webView1);
-        //noinspection AndroidLintClickableViewAccessibility
-        wv.setOnTouchListener(new OnSwipeTouchListener(this)
-        {
-            @Override
-            public void onSwipeRight()
-            {
-                Common.LogMessage("Swipe Right");
-                finish();
-            }
-
-            @Override
-            public void onSwipeLeft()
-            {
-                Common.LogMessage("Swipe Left");
-                startActivity(new Intent(getBaseContext(), Forecast.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-
-            @Override
-            public void longPress(MotionEvent e)
-            {
-                Common.LogMessage("long press");
-                Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(150);
-                forceRefresh();
-            }
-        });
-
+    View myStats(LayoutInflater inflater, ViewGroup container)
+    {
+        rootView = inflater.inflate(R.layout.fragment_stats, container, false);
+        wv = rootView.findViewById(R.id.webView1);
         updateFields();
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(myService.UPDATE_INTENT);
-        registerReceiver(serviceReceiver, filter);
-    }
+        filter.addAction(myService.EXIT_INTENT);
+        common.context.registerReceiver(serviceReceiver, filter);
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.stats_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle item selection
-        switch (item.getItemId())
-        {
-            case R.id.refresh:
-                forceRefresh();
-                return true;
-            case R.id.forecast:
-                startActivity(new Intent(getBaseContext(), Forecast.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
-                return true;
-            case R.id.webcam:
-                startActivity(new Intent(getBaseContext(), Webcam.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
-                return true;
-            case R.id.mainmenu:
-                finish();
-                return true;
-            case R.id.about:
-                startActivity(new Intent(getBaseContext(), About.class));
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        return rootView;
     }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
@@ -138,14 +46,9 @@ public class Stats  extends AppCompatActivity
                 Common.LogMessage("We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
                 if(action != null && action.equals(myService.UPDATE_INTENT))
-                    runOnUiThread(new Runnable()
-                    {
-                        @Override
-                        public void run()
-                        {
-                            updateFields();
-                        }
-                    });
+                    updateFields();
+                else if(action != null && action.equals(myService.EXIT_INTENT))
+                    common.context.unregisterReceiver(serviceReceiver);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -156,13 +59,6 @@ public class Stats  extends AppCompatActivity
     {
         if(myService.singleton != null)
             myService.singleton.getWeather();
-    }
-
-    @Override
-    public boolean onSupportNavigateUp()
-    {
-        finish();
-        return true;
     }
 
     public void checkFields(TextView tv, String txt)
@@ -180,8 +76,8 @@ public class Stats  extends AppCompatActivity
             return;
 
 // Today Stats
-        checkFields((TextView)findViewById(R.id.textView), bits[56]);
-        checkFields((TextView)findViewById(R.id.textView2), bits[54]);
+        checkFields((TextView)rootView.findViewById(R.id.textView), bits[56]);
+        checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54]);
 
         String stmp;
         StringBuilder sb = new StringBuilder();
@@ -334,13 +230,5 @@ public class Stats  extends AppCompatActivity
 
         Common.LogMessage("sb: "+sb.toString());
         wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
-    }
-
-    @Override
-    public void finish()
-    {
-        super.finish();
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-        unregisterReceiver(serviceReceiver);
     }
 }

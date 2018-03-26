@@ -1,16 +1,16 @@
 package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.support.design.widget.TabLayout;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Window;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -27,53 +27,54 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 
-public class Settings extends Activity implements AdapterView.OnItemSelectedListener
+class Settings implements AdapterView.OnItemSelectedListener
 {
     private Common common = null;
     private EditText et1;
+    View rootView;
 
     private ProgressDialog dialog;
 
     private static int pos;
     private static final String[] paths = {"Manual Updates", "Every 5 Minutes", "Every 10 Minutes", "Every 15 Minutes", "Every 30 Minutes", "Every Hour"};
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
+    Settings(Common common)
     {
-        super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_settings);
-        setFinishOnTouchOutside(false);
+        this.common = common;
+    }
 
-        common = new Common(this);
+    View mySettings(LayoutInflater inflater, ViewGroup container)
+    {
+        final View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
+        this.rootView = rootView;
 
-        et1 = findViewById(R.id.settings);
+        et1 = rootView.findViewById(R.id.settings);
         et1.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/settings.txt"));
 
-        Spinner s1 = findViewById(R.id.spinner1);
-        ArrayAdapter<String>adapter = new ArrayAdapter<>(Settings.this, android.R.layout.simple_spinner_item, paths);
+        Spinner s1 = rootView.findViewById(R.id.spinner1);
+        ArrayAdapter<String>adapter = new ArrayAdapter<>(common.context, android.R.layout.simple_spinner_item, paths);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s1.setAdapter(adapter);
         s1.setSelection(common.GetIntPref("updateInterval", 1));
         s1.setOnItemSelectedListener(this);
 
         boolean bgdl = common.GetBoolPref("bgdl", true);
-        CheckBox cb1 = findViewById(R.id.cb1);
+        CheckBox cb1 = rootView.findViewById(R.id.cb1);
         if(!bgdl)
             cb1.setChecked(false);
 
         boolean metric = common.GetBoolPref("metric", true);
-        CheckBox cb2 = findViewById(R.id.cb2);
+        CheckBox cb2 = rootView.findViewById(R.id.cb2);
         if(!metric)
             cb2.setChecked(false);
 
-        Button b1 = findViewById(R.id.button);
+        Button b1 = rootView.findViewById(R.id.button);
         b1.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View arg0)
             {
                 Common.LogMessage("show dialog");
-                dialog = ProgressDialog.show(Settings.this, "Testing submitted URLs", "Please wait while we verify the URL you submitted.", false);
+                dialog = ProgressDialog.show(common.context, "Testing submitted URLs", "Please wait while we verify the URL you submitted.", false);
                 dialog.show();
 
                 Thread t = new Thread(new Runnable()
@@ -89,8 +90,8 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
                         boolean validURL5 = false;
                         String data = "", radar = "", forecast = "", webcam = "", custom = "";
 
-                        CheckBox cb1 = findViewById(R.id.cb1);
-                        CheckBox cb2 = findViewById(R.id.cb2);
+                        CheckBox cb1 = rootView.findViewById(R.id.cb1);
+                        CheckBox cb2 = rootView.findViewById(R.id.cb2);
 
                         if (et1.getText().toString().equals("https://example.com/weewx/settings.txt") || et1.getText().toString().equals(""))
                         {
@@ -309,7 +310,6 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
                         common.SetBoolPref("metric", cb2.isChecked());
                         Intent intent = new Intent();
                         intent.putExtra("urlChanged", true);
-                        setResult(RESULT_OK, intent);
 
                         handlerDone.sendEmptyMessage(0);
                     }
@@ -318,6 +318,8 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
                 t.start();
             }
         });
+
+        return rootView;
     }
 
     @SuppressLint("HandlerLeak")
@@ -326,8 +328,12 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
         @Override
         public void handleMessage(Message msg)
         {
+            Common.LogMessage("sending intents");
             dialog.dismiss();
-            finish();
+            Intent intent = new Intent();
+            intent.setAction(myService.TAB0_INTENT);
+            common.context.sendBroadcast(intent);
+            Common.LogMessage("sent intents");
         }
     };
 
@@ -338,7 +344,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
         public void handleMessage(Message msg)
         {
             dialog.dismiss();
-            new AlertDialog.Builder(Settings.this)
+            new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
                     .setMessage("Wasn't able to connect or download settings from your server")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
@@ -358,7 +364,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
         public void handleMessage(Message msg)
         {
             dialog.dismiss();
-            new AlertDialog.Builder(Settings.this)
+            new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
                     .setMessage("Wasn't able to connect or download data.txt on your server")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
@@ -378,7 +384,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
         public void handleMessage(Message msg)
         {
             dialog.dismiss();
-            new AlertDialog.Builder(Settings.this)
+            new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
                     .setMessage("Wasn't able to connect or download radar from your server")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
@@ -398,7 +404,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
         public void handleMessage(Message msg)
         {
             dialog.dismiss();
-            new AlertDialog.Builder(Settings.this)
+            new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
                     .setMessage("Wasn't able to connect or download the forecast.")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
@@ -418,7 +424,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
         public void handleMessage(Message msg)
         {
             dialog.dismiss();
-            new AlertDialog.Builder(Settings.this)
+            new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
                     .setMessage("Wasn't able to connect or download webcam from your server")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
@@ -438,7 +444,7 @@ public class Settings extends Activity implements AdapterView.OnItemSelectedList
         public void handleMessage(Message msg)
         {
             dialog.dismiss();
-            new AlertDialog.Builder(Settings.this)
+            new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
                     .setMessage("Wasn't able to connect or download your custom file from your server")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()

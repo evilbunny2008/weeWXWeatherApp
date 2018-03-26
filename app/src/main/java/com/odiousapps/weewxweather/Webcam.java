@@ -1,100 +1,30 @@
 package com.odiousapps.weewxweather;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Vibrator;
-import android.view.MotionEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-public class Webcam extends Activity
+class Webcam
 {
-    Common common = null;
-    WebView wv;
+    private Common common;
+    private WebView wv;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
+    Webcam(Common common)
     {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.webcam);
+        this.common = common;
+    }
 
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-        ActionBar actionBar = getActionBar();
-        if(actionBar != null)
-            actionBar.hide();
-
-        common = new Common(this);
-
-        wv = findViewById(R.id.webcam);
-
-        //noinspection AndroidLintClickableViewAccessibility
-        wv.setOnTouchListener(new OnSwipeTouchListener(this)
-        {
-            @Override
-            public void onSwipeUp()
-            {
-                finish();
-            }
-
-            @Override
-            public void onSwipeDown()
-            {
-                if(!common.GetStringPref("CUSTOM_URL", "").equals(""))
-                {
-                    startActivity(new Intent(getBaseContext(), Custom.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                }
-            }
-
-            @Override
-            public void onSwipeRight()
-            {
-                finish();
-            }
-
-            @Override
-            public void onSwipeLeft()
-            {
-                if(!common.GetStringPref("CUSTOM_URL", "").equals(""))
-                {
-                    startActivity(new Intent(getBaseContext(), Custom.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                }
-            }
-
-            @Override
-            public void longPress(MotionEvent e)
-            {
-                Common.LogMessage("long press");
-                Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(150);
-                reloadWebView();
-            }
-        });
-
+    View myWebcam(LayoutInflater inflater, ViewGroup container)
+    {
+        View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
+        wv = rootView.findViewById(R.id.webcam);
         reloadWebView();
-        Common.LogMessage("set things in motion!");
-
-        new ReloadWebView(300);
+        return rootView;
     }
 
-    @Override
-    public void finish()
-    {
-        super.finish();
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-    }
-
-    protected void reloadWebView()
+    private void reloadWebView()
     {
         Common.LogMessage("reload webcam...");
         wv.getSettings().setAppCacheEnabled(false);
@@ -110,7 +40,7 @@ public class Webcam extends Activity
                 "<html>\n" +
                 "  <head>\n" +
                 "    <meta charset='utf-8'>\n" +
-                "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
+//                "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
                 "  </head>\n" +
                 "  <body style='padding:0px;margin:0px;'>\n" +
                 "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
@@ -118,38 +48,5 @@ public class Webcam extends Activity
                 "  </body>\n" +
                 "</html>";
         wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-    }
-
-    protected class ReloadWebView extends TimerTask
-    {
-        Activity context;
-        Timer timer;
-
-        private ReloadWebView(int seconds)
-        {
-            Common.LogMessage("new Timer == "+seconds);
-            timer = new Timer();
-            timer.schedule(this,0,seconds * 1000);
-        }
-
-        @Override
-        public void run()
-        {
-            if(context == null || context.isFinishing())
-            {
-                // Activity killed
-                this.cancel();
-                return;
-            }
-
-            context.runOnUiThread(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    reloadWebView();
-                }
-            });
-        }
     }
 }

@@ -20,13 +20,15 @@ import java.util.TimerTask;
 
 public class myService extends Service
 {
-    public static myService singleton = null;
+    static myService singleton = null;
     private Common common = null;
     Timer timer = null;
     Thread t = null;
     LockScreenReceiver lockScreenReceiver;
 
-    public static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
+    static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
+    static String TAB0_INTENT = "com.odiousapps.weewxweather.TAB0_INTENT";
+    static String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 
     boolean doUpdate = true;
 
@@ -73,6 +75,11 @@ public class myService extends Service
     public void onDestroy()
     {
         super.onDestroy();
+
+        Intent intent = new Intent();
+        intent.setAction(EXIT_INTENT);
+        sendBroadcast(intent);
+        Common.LogMessage("myService Fired off exit broadcast.");
 
         unregisterReceiver(lockScreenReceiver);
 

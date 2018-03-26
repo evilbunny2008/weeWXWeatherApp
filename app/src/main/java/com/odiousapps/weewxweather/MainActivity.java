@@ -1,67 +1,29 @@
 package com.odiousapps.weewxweather;
 
-import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Vibrator;
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.widget.TextView;
 
-import java.util.Timer;
-import java.util.TimerTask;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
 {
-    // App Icon Source
-    // http://www.clker.com/cliparts/5/6/4/d/1206565706595088919Anonymous_simple_weather_symbols_13.svg.hi.png
-
-    Common common = null;
-    int REQUEST_CODE = 1;
-    WebView wv;
-
-    private void checkFields(TextView tv, String txt)
-    {
-        if(!tv.getText().toString().equals(txt))
-            tv.setText(txt);
-    }
-
-    private void updateFields()
-    {
-        Common.LogMessage("updateFields()");
-        String bits[] = common.GetStringPref("LastDownload","").split("\\|");
-        if(bits.length < 65)
-            return;
-
-        Common.LogMessage("updating fields.");
-
-        checkFields((TextView)findViewById(R.id.textView), bits[56]);
-        checkFields((TextView)findViewById(R.id.textView2), bits[54] + " " + bits[55]);
-        checkFields((TextView)findViewById(R.id.textView3), bits[0] + bits[60]);
-
-        checkFields((TextView)findViewById(R.id.textView4), bits[25] + bits[61]);
-        checkFields((TextView)findViewById(R.id.textView5), bits[37] + bits[63]);
-        checkFields((TextView)findViewById(R.id.textView6), bits[29]);
-        checkFields((TextView)findViewById(R.id.textView7), bits[6] + bits[64]);
-        checkFields((TextView)findViewById(R.id.textView8), bits[20] + bits[62]);
-        checkFields((TextView)findViewById(R.id.textView9), bits[12] + bits[60]);
-        checkFields((TextView)findViewById(R.id.textView10), bits[45] + "UVI");
-        checkFields((TextView)findViewById(R.id.textView11), bits[43] + "W/m\u00B2");
-
-        checkFields((TextView)findViewById(R.id.textView12), bits[57]);
-        checkFields((TextView)findViewById(R.id.textView13), bits[58]);
-        checkFields((TextView)findViewById(R.id.textView14), bits[47]);
-        checkFields((TextView)findViewById(R.id.textView15), bits[48]);
-    }
+    private SectionsPagerAdapter mSectionsPagerAdapter;
+    private ViewPager mViewPager;
+    private TabLayout tabLayout;
+    private Common common;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -69,186 +31,56 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        View v = findViewById(R.id.wholeScreen);
-        //noinspection AndroidLintClickableViewAccessibility
-        v.setOnTouchListener(new OnSwipeTouchListener(this)
-        {
-            @Override
-            public void onSwipeLeft()
-            {
-                Common.LogMessage("Swipe Left");
-                startActivity(new Intent(getBaseContext(), Stats.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-        });
-
-        wv = findViewById(R.id.webView1);
-        //noinspection AndroidLintClickableViewAccessibility
-        wv.setOnTouchListener(new OnSwipeTouchListener(this)
-        {
-            @Override
-            public void onSwipeLeft()
-            {
-                Common.LogMessage("Swipe Left");
-                startActivity(new Intent(getBaseContext(), Stats.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-
-            @Override
-            public void longPress(MotionEvent e)
-            {
-                Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(150);
-                Common.LogMessage("long press");
-                reloadWebView();
-            }
-        });
-
         common = new Common(this);
 
-        if(common.GetStringPref("BASE_URL", "").equals(""))
-            startActivityForResult(new Intent(getBaseContext(), Settings.class), REQUEST_CODE);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+
+        tabLayout = findViewById(R.id.tabs);
+
+        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+
+        try
+        {
+            if (common.GetStringPref("BASE_URL", "").equals(""))
+                tabLayout.getTabAt(5).select();
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
+        if(myService.singleton == null)
+            startService(new Intent(this, myService.class));
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(myService.UPDATE_INTENT);
+        filter.addAction(myService.TAB0_INTENT);
         registerReceiver(serviceReceiver, filter);
-
-        // use last downloaded data while a bg thread runs
-        startService();
-        reloadWebView();
-        Common.LogMessage("set things in motion!");
-
-        new ReloadWebView(600);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
-        Common.LogMessage("onActivityResult();");
-
-        Common.LogMessage("requestCode == "+requestCode);
-        Common.LogMessage("resultCode == "+resultCode);
-
-        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE)
-        {
-            if (data.hasExtra("urlChanged"))
-            {
-                Common.LogMessage("w00t!");
-                if(!common.GetStringPref("BASE_URL", "").equals(""))
-                    getWeather();
-            }
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        MenuInflater inflater = getMenuInflater();
-
-        if(common.GetStringPref("CUSTOM_URL", "").equals(""))
-            inflater.inflate(R.menu.weather_menu, menu);
-        else
-            inflater.inflate(R.menu.weather_menu_custom, menu);
-
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle item selection
-        switch (item.getItemId())
-        {
-            case R.id.custom:
-                startActivity(new Intent(getBaseContext(), Custom.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                return true;
-            case R.id.forecast:
-                startActivity(new Intent(getBaseContext(), Forecast.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                return true;
-            case R.id.webcam:
-                startActivity(new Intent(getBaseContext(), Webcam.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                return true;
-            case R.id.refresh:
-                getWeather();
-                return true;
-            case R.id.settings:
-                startActivityForResult(new Intent(getBaseContext(), Settings.class), REQUEST_CODE);
-                return true;
-            case R.id.stats:
-                startActivity(new Intent(getBaseContext(), Stats.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                return true;
-            case R.id.about:
-                startActivity(new Intent(getBaseContext(), About.class));
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    public void getWeather()
-    {
-        if(myService.singleton != null)
-            myService.singleton.getWeather();
-    }
-
-    @Override
-    public void onDestroy()
-    {
-        stopUpdates();
-        super.onDestroy();
     }
 
     @Override
     public void onBackPressed()
     {
         if(common.GetBoolPref("bgdl", true))
+        {
             moveTaskToBack(true);
-        else
-            finish();
-    }
-
-    @Override
-    public void finish()
-    {
-        super.finish();
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-        unregisterReceiver(serviceReceiver);
-    }
-
-    @Override
-    public void onResume()
-    {
-        super.onResume();
-        updateFields();
-    }
-
-    private void startService()
-    {
-        if(myService.singleton == null)
-        {
-            Common.LogMessage("starting service.");
-            if(myService.singleton == null)
-                startService(new Intent(this, myService.class));
-
-            Common.LogMessage("Currently listening for broadcasts");
-
-            getWeather();
         } else {
-            Common.LogMessage("service already running.");
+            stopService(new Intent(this, myService.class));
+            unregisterReceiver(serviceReceiver);
+            finish();
         }
     }
 
-    private void stopUpdates()
+    private void switchToTab(int tab)
     {
-        if(!common.GetBoolPref("bgdl", true))
-        {
-            stopService(new Intent(this, myService.class));
-            Common.LogMessage("Stopping Service.");
-        }
+        if(tab < 0)
+            tab = 0;
+        if(tab > 7)
+            tab = 7;
+        tabLayout.getTabAt(tab).select();
     }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
@@ -263,14 +95,13 @@ public class MainActivity extends AppCompatActivity
             {
                 Common.LogMessage("We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
-                if(action != null && action.equals(myService.UPDATE_INTENT))
+                if(action != null && action.equals(myService.TAB0_INTENT))
                     runOnUiThread(new Runnable()
                     {
                         @Override
                         public void run()
                         {
-                            reloadWebView();
-                            updateFields();
+                            switchToTab(0);
                         }
                     });
             } catch (Exception e) {
@@ -279,66 +110,75 @@ public class MainActivity extends AppCompatActivity
         }
     };
 
-    protected void reloadWebView()
+    public static class PlaceholderFragment extends Fragment
     {
-        Common.LogMessage("reload radar...");
-        wv.getSettings().setAppCacheEnabled(false);
-        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-        wv.getSettings().setUserAgentString(Common.UA);
-        wv.clearCache(true);
-        String radar = common.GetStringPref("RADAR_URL", "");
+        private static final String ARG_SECTION_NUMBER = "section_number";
 
-        if (radar != null && !radar.equals(""))
+        public PlaceholderFragment() {}
+
+        public static PlaceholderFragment newInstance(int sectionNumber)
         {
-            String html = "<!DOCTYPE html>\n" +
-                    "<html>\n" +
-                    "  <head>\n" +
-                    "    <meta charset='utf-8'>\n" +
-                    "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
-                    "  </head>\n" +
-                    "  <body>\n" +
-                    "\t<br>\n" +
-                    "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
-                    "\tsrc='" + radar + "'>\n" +
-                    "  </body>\n" +
-                    "</html>";
-            wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-        } else {
-            String html = "<html><body>Radar URL not set, go to settings to change</body></html>";
-            wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-        }
-    }
-
-    protected class ReloadWebView extends TimerTask
-    {
-        Activity context;
-        Timer timer;
-
-        private ReloadWebView(int seconds)
-        {
-            Common.LogMessage("new Timer == "+seconds);
-            timer = new Timer();
-            timer.schedule(this,0,seconds * 1000);
+            PlaceholderFragment fragment = new PlaceholderFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
         }
 
         @Override
-        public void run()
+        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            if(context == null || context.isFinishing())
-            {
-                // Activity killed
-                this.cancel();
-                return;
-            }
+            Common common = new Common(getContext());
 
-            context.runOnUiThread(new Runnable()
+            if(getArguments().getInt(ARG_SECTION_NUMBER) == 1)
             {
-                @Override
-                public void run()
-                {
-                    reloadWebView();
-                }
-            });
+                Weather weather = new Weather(common);
+                return weather.myWeather(inflater, container);
+            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
+                Stats stats = new Stats(common);
+                return stats.myStats(inflater, container);
+            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
+                Forecast forecast = new Forecast(common);
+                return forecast.myForecast(inflater, container);
+            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
+                Webcam webcam = new Webcam(common);
+                return webcam.myWebcam(inflater, container);
+            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
+                Custom custom = new Custom(common);
+                return custom.myCustom(inflater, container);
+            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
+                Settings settings = new Settings(common);
+                return settings.mySettings(inflater, container);
+            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 7) {
+                About a = new About();
+                return a.myAbout(inflater, container);
+            } else {
+                View rootView = inflater.inflate(R.layout.fragment_main, container, false);
+                TextView textView = rootView.findViewById(R.id.section_label);
+                textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+                return rootView;
+            }
+        }
+    }
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter
+    {
+
+        SectionsPagerAdapter(FragmentManager fm)
+        {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position)
+        {
+            return PlaceholderFragment.newInstance(position + 1);
+        }
+
+        @Override
+        public int getCount()
+        {
+            return 7;
         }
     }
 }

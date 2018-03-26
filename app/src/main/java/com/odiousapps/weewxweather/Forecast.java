@@ -1,16 +1,15 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Vibrator;
-import android.support.v7.app.AppCompatActivity;
-import android.view.GestureDetector;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.MotionEvent;
+import android.content.IntentFilter;
+import android.os.Handler;
+import android.os.Message;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.TextView;
 
@@ -25,153 +24,51 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import static java.lang.Math.round;
-
-public class Forecast extends AppCompatActivity
+public class Forecast
 {
-    Common common = null;
-    WebView wv = null;
-    int REQUEST_CODE = 1;
+    private Common common;
+    private View rootView;
+    private WebView wv;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState)
+    Forecast(Common common)
     {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.forecast);
+        this.common = common;
+    }
 
-        if(getSupportActionBar() != null)
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-        common = new Common(this);
-        Common.LogMessage("set things in motion!");
-
-        wv = findViewById(R.id.webView1);
-
-        View v = findViewById(R.id.wholeScreen);
-        //noinspection AndroidLintClickableViewAccessibility
-        v.setOnTouchListener(new OnSwipeTouchListener(this)
-        {
-            @Override
-            public void onSwipeRight()
-            {
-                Common.LogMessage("Swipe Right");
-                finish();
-            }
-
-            @Override
-            public void onSwipeLeft()
-            {
-                Common.LogMessage("Swipe Left");
-                startActivity(new Intent(getBaseContext(), Webcam.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-        });
-
-        wv = findViewById(R.id.webView1);
-        //noinspection AndroidLintClickableViewAccessibility
-        wv.setOnTouchListener(new OnSwipeTouchListener(this)
-        {
-            @Override
-            public void onSwipeRight()
-            {
-                Common.LogMessage("Swipe Right");
-                finish();
-            }
-
-            @Override
-            public void onSwipeLeft()
-            {
-                Common.LogMessage("Swipe Left");
-                startActivity(new Intent(getBaseContext(), Webcam.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-            }
-
-            @Override
-            public void longPress(MotionEvent e)
-            {
-                Common.LogMessage("long press");
-                Vibrator vibrator = (Vibrator)getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(150);
-                forceRefresh();
-            }
-        });
-
-        String bits = "<body><h3>Please wait while your forecast is loaded.</h3></body>";
-        wv.loadDataWithBaseURL(null, bits, "text/html", "utf-8", null);
-
+    View myForecast(LayoutInflater inflater, ViewGroup container)
+    {
+        rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
+        wv = rootView.findViewById(R.id.webView1);
         getForecast();
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(myService.UPDATE_INTENT);
+        filter.addAction(myService.EXIT_INTENT);
+        common.context.registerReceiver(serviceReceiver, filter);
+
+        return rootView;
     }
 
-    @Override
-    public void finish()
+    private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
     {
-        super.finish();
-        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.forecast_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle item selection
-        switch (item.getItemId())
+        @Override
+        public void onReceive(Context context, Intent intent)
         {
-            case R.id.refresh:
-                forceRefresh();
-                return true;
-            case R.id.mainmenu:
-                startActivity(new Intent(getBaseContext(), MainActivity.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
-                return true;
-            case R.id.webcam:
-                startActivity(new Intent(getBaseContext(), Webcam.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                finish();
-                return true;
-            case R.id.stats:
-                startActivity(new Intent(getBaseContext(), Stats.class));
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                return true;
-            case R.id.settings:
-                startActivityForResult(new Intent(getBaseContext(), Settings.class), REQUEST_CODE);
-                return true;
-            case R.id.about:
-                startActivity(new Intent(getBaseContext(), About.class));
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data)
-    {
-        Common.LogMessage("onActivityResult();");
-
-        Common.LogMessage("requestCode == "+requestCode);
-        Common.LogMessage("resultCode == "+resultCode);
-
-        if (resultCode == RESULT_OK && requestCode == REQUEST_CODE)
-        {
-            if (data.hasExtra("urlChanged"))
+            try
             {
-                Common.LogMessage("w00t!");
-                String bits = "<body><h3>Please wait while your forecast is loaded.</h3></body>";
-                wv.loadDataWithBaseURL(null, bits, "text/html", "utf-8", null);
-
-                if(!common.GetStringPref("FORECAST_URL", "").equals(""))
+                Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
+                String action = intent.getAction();
+                if(action != null && action.equals(myService.UPDATE_INTENT))
+                {
                     getForecast();
+                } else if(action != null && action.equals(myService.EXIT_INTENT)) {
+                    common.context.unregisterReceiver(serviceReceiver);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
-    }
+    };
 
     private void forceRefresh()
     {
@@ -194,7 +91,7 @@ public class Forecast extends AppCompatActivity
             {
                 try
                 {
-                    int curtime = round(System.currentTimeMillis() / 1000);
+                    int curtime = Math.round(System.currentTimeMillis() / 1000);
 
                     if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 3600 < curtime)
                     {
@@ -221,9 +118,8 @@ public class Forecast extends AppCompatActivity
                         common.SetStringPref("forecastData", sb.toString().trim());
                     }
 
-                    generateForecast();
-                } catch (Exception e)
-                {
+                    handlerDone.sendEmptyMessage(0);
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
@@ -231,6 +127,16 @@ public class Forecast extends AppCompatActivity
 
         t.start();
     }
+
+    @SuppressLint("HandlerLeak")
+    private Handler handlerDone = new Handler()
+    {
+        @Override
+        public void handleMessage(Message msg)
+        {
+            generateForecast();
+        }
+    };
 
     private void generateForecast()
     {
@@ -272,7 +178,7 @@ public class Forecast extends AppCompatActivity
             Date resultdate = new Date(rssCheck);
 
 
-            stmp = "<table style='width:100%;border:0px;'><tr>";
+            stmp = "<table style='width:100%;border:0px;'>";
             str.append(stmp);
             stmp = "<tr><td style='width:50%;font-size:16pt;'>" + tmp.getString("date") + "</td>";
             str.append(stmp);
@@ -319,17 +225,8 @@ public class Forecast extends AppCompatActivity
             stmp = "</table>";
             str.append(stmp);
 
-            final String bits = str.toString();
-
-            runOnUiThread(new Runnable()
-            {
-                @Override
-                public void run()
-                {
-                    Common.LogMessage("finished building forecast: " + bits);
-                    updateForecast(bits, desc);
-                }
-            });
+            Common.LogMessage("finished building forecast: " + str.toString());
+            updateForecast(str.toString(), desc);
         } catch (Exception e) {
             //Common.LogMessage("Error parsing data " + e.toString());
             e.printStackTrace();
@@ -342,7 +239,7 @@ public class Forecast extends AppCompatActivity
         fc += bits + "</body></html>";
         wv.loadDataWithBaseURL(null, fc, "text/html", "utf-8", null);
 
-        TextView tv1 = findViewById(R.id.forecast);
+        TextView tv1 = rootView.findViewById(R.id.forecast);
         tv1.setText(desc.substring(19));
     }
 }
