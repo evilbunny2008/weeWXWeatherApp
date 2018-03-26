@@ -7,8 +7,9 @@ This is a community maintained project that I do in my free time. While all effo
 ## Contents
 
  - [Screen Shots](#screen-shots)
- - [Concise Instructions](https://github.com/evilbunny2008/weeWxWeatherApp/wiki#concise-instructions)
- - [Expanded Installation Instructions](https://github.com/evilbunny2008/weeWxWeatherApp/wiki#expanded-installation-instructions)
+ - [Installation](https://github.com/evilbunny2008/weeWxWeatherApp/wiki)
+   - [Concise Instructions](https://github.com/evilbunny2008/weeWxWeatherApp/wiki#concise-instructions)
+   - [Expanded Installation Instructions](https://github.com/evilbunny2008/weeWxWeatherApp/wiki#expanded-installation-instructions)
  - [License](#license)
  - [Credits](#credits)
 
@@ -16,6 +17,10 @@ This is a community maintained project that I do in my free time. While all effo
 
 <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-104333.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-105034.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-104351.jpg"><br>
 <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-104407.jpg"><br>
+
+## Installation
+
+Installation instuctions have moved to [the wiki](https://github.com/evilbunny2008/weeWxWeatherApp/wiki/home)
 
 ## License
 
