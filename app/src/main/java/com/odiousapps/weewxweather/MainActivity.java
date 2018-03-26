@@ -83,6 +83,12 @@ public class MainActivity extends AppCompatActivity
         tabLayout.getTabAt(tab).select();
     }
 
+    public void getWeather()
+    {
+        if(myService.singleton != null)
+            myService.singleton.getWeather();
+    }
+
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
     {
         @Override
@@ -96,6 +102,9 @@ public class MainActivity extends AppCompatActivity
                 Common.LogMessage("We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
                 if(action != null && action.equals(myService.TAB0_INTENT))
+                {
+                    getWeather();
+
                     runOnUiThread(new Runnable()
                     {
                         @Override
@@ -104,6 +113,7 @@ public class MainActivity extends AppCompatActivity
                             switchToTab(0);
                         }
                     });
+                }
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,6 +61,18 @@ class Weather
     {
         rootView = inflater.inflate(R.layout.fragment_weather, container, false);
         wv = rootView.findViewById(R.id.webView1);
+        wv.setOnLongClickListener(new View.OnLongClickListener()
+        {
+            @Override
+            public boolean onLongClick(View v)
+            {
+                Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(150);
+                Common.LogMessage("long press");
+                reloadWebView();
+                return true;
+            }
+        });
         reloadWebView();
 
         IntentFilter filter = new IntentFilter();
@@ -68,12 +81,6 @@ class Weather
         common.context.registerReceiver(serviceReceiver, filter);
 
         return updateFields();
-    }
-
-    void stopWeather()
-    {
-        Common.LogMessage("exit received");
-        common.context.unregisterReceiver(serviceReceiver);
     }
 
     protected void reloadWebView()

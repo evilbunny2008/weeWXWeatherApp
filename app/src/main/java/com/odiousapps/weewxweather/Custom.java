@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,18 @@ public class Custom
     {
         View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
         wv = rootView.findViewById(R.id.webcam);
+        wv.setOnLongClickListener(new View.OnLongClickListener()
+        {
+            @Override
+            public boolean onLongClick(View v)
+            {
+                Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
+                vibrator.vibrate(150);
+                Common.LogMessage("long press");
+                reloadWebView();
+                return true;
+            }
+        });
         reloadWebView();
 
         IntentFilter filter = new IntentFilter();
