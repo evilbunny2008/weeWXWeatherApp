@@ -15,8 +15,8 @@ This is a community maintained project that I do in my free time. While all effo
 
 ## Screen Shots
 
-<img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-104333.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-105034.jpg"> <img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-104351.jpg"><br>
-<img width="250px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-104407.jpg"><br>
+<img width="300px" src="https://github.com/evilbunny2008/weeWxWeatherApp/blob/master/screenshots/Screenshot_20180326-215718.jpg"> <img width="300px" src="https://github.com/evilbunny2008/weeWxWeatherApp/blob/master/screenshots/Screenshot_20180326-215733.jpg"> <img width="300px" src="https://github.com/evilbunny2008/weeWxWeatherApp/blob/master/screenshots/Screenshot_20180326-215809.jpg">
+<img width="300px" src="https://raw.githubusercontent.com/evilbunny2008/weeWxWeatherApp/master/screenshots/Screenshot_20180321-104407.jpg"><br>
 
 ## Installation
 
