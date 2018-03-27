@@ -1,17 +1,35 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.os.Handler;
+import android.os.Message;
 import android.os.Vibrator;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.ImageView;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.net.URL;
 
 class Webcam
 {
     private Common common;
-    private WebView wv;
+    private ImageView iv;
+    private File f;
 
     Webcam(Common common)
     {
@@ -20,20 +38,24 @@ class Webcam
 
     View myWebcam(LayoutInflater inflater, ViewGroup container)
     {
-        View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
-        wv = rootView.findViewById(R.id.webcam);
-        wv.setOnLongClickListener(new View.OnLongClickListener()
+        View rootView;
+        rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
+        iv = rootView.findViewById(R.id.webcam);
+
+        iv.setOnLongClickListener(new View.OnLongClickListener()
         {
             @Override
             public boolean onLongClick(View v)
             {
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(150);
+                if(vibrator != null)
+                    vibrator.vibrate(150);
                 Common.LogMessage("long press");
                 reloadWebView();
                 return true;
             }
         });
+
         reloadWebView();
         return rootView;
     }
@@ -41,26 +63,78 @@ class Webcam
     private void reloadWebView()
     {
         Common.LogMessage("reload webcam...");
-        wv.getSettings().setAppCacheEnabled(false);
-        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-        wv.getSettings().setUserAgentString(Common.UA);
-        wv.clearCache(true);
         String webcam = common.GetStringPref("WEBCAM_URL", "");
 
-        if (webcam == null || webcam.equals(""))
-            webcam = "http://mx.cafesydney.com:8888/mjpg/video.mjpg";
+        final String webURL = webcam;
 
-        String html = "<!DOCTYPE html>\n" +
-                "<html>\n" +
-                "  <head>\n" +
-                "    <meta charset='utf-8'>\n" +
-//                "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
-                "  </head>\n" +
-                "  <body style='padding:0px;margin:0px;'>\n" +
-                "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
-                "\tsrc='" + webcam + "?date=" + System.currentTimeMillis() + "'>\n" +
-                "  </body>\n" +
-                "</html>";
-        wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+        Thread t = new Thread(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                try
+                {
+                    Common.LogMessage("starting to download bitmap");
+                    InputStream is = new URL(webURL).openStream();
+                    Bitmap bm = BitmapFactory.decodeStream(is);
+
+                    int width = bm.getWidth();
+                    int height = bm.getHeight();
+
+                    Matrix matrix = new Matrix();
+                    matrix.postRotate(90);
+
+                    Bitmap scaledBitmap = Bitmap.createScaledBitmap(bm,width,height,true);
+
+                    Bitmap rotatedBitmap = Bitmap.createBitmap(scaledBitmap , 0, 0, scaledBitmap .getWidth(), scaledBitmap .getHeight(), matrix, true);
+
+                    f = new File(common.context.getCacheDir(), "tempBMP");
+                    FileOutputStream outStream = new FileOutputStream(f);
+                    rotatedBitmap.compress(Bitmap.CompressFormat.JPEG, 85, outStream);
+                    outStream.close();
+                    Common.LogMessage("done downloading, prompt handler to draw to iv");
+                    handlerDone.sendEmptyMessage(0);
+                } catch (Exception e) {
+                    handlerSettings.sendEmptyMessage(0);
+                }
+            }
+        });
+
+        t.start();
     }
+
+    @SuppressLint("HandlerLeak")
+    private Handler handlerDone = new Handler()
+    {
+        @Override
+        public void handleMessage(Message msg)
+        {
+            if(f.exists())
+            {
+                Bitmap myBitmap = BitmapFactory.decodeFile(f.getAbsolutePath());
+                iv.setImageBitmap(myBitmap);
+                //noinspection ResultOfMethodCallIgnored
+                f.delete();
+            }
+        }
+    };
+
+    @SuppressLint("HandlerLeak")
+    private Handler handlerSettings = new Handler()
+    {
+        @Override
+        public void handleMessage(Message msg)
+        {
+            new AlertDialog.Builder(common.context)
+                    .setTitle("Invalid Image")
+                    .setMessage("You supplied an image in your settings.txt that is invalid or unsupported.")
+                    .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                        }
+                    }).show();
+        }
+    };
 }

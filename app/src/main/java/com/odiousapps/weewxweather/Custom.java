@@ -24,8 +24,8 @@ class Custom
 
     View myCustom(LayoutInflater inflater, ViewGroup container)
     {
-        View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
-        wv = rootView.findViewById(R.id.webcam);
+        View rootView = inflater.inflate(R.layout.fragment_custom, container, false);
+        wv = rootView.findViewById(R.id.custom);
         wv.setOnLongClickListener(new View.OnLongClickListener()
         {
             @Override
