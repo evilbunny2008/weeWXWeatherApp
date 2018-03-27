@@ -67,7 +67,8 @@ class Weather
             public boolean onLongClick(View v)
             {
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(150);
+                if(vibrator != null)
+                    vibrator.vibrate(150);
                 Common.LogMessage("long press");
                 reloadWebView();
                 return true;
@@ -83,7 +84,7 @@ class Weather
         return updateFields();
     }
 
-    protected void reloadWebView()
+    private void reloadWebView()
     {
         Common.LogMessage("reload radar...");
         wv.getSettings().setAppCacheEnabled(false);

@@ -20,8 +20,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity
 {
-    private SectionsPagerAdapter mSectionsPagerAdapter;
-    private ViewPager mViewPager;
     private TabLayout tabLayout;
     private Common common;
 
@@ -33,10 +31,10 @@ public class MainActivity extends AppCompatActivity
 
         common = new Common(this);
 
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
-        mViewPager = findViewById(R.id.container);
+        ViewPager mViewPager = findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         tabLayout = findViewById(R.id.tabs);
@@ -46,9 +44,9 @@ public class MainActivity extends AppCompatActivity
 
         try
         {
-            if (common.GetStringPref("BASE_URL", "").equals(""))
-                tabLayout.getTabAt(5).select();
-        } catch (NullPointerException e) {
+            if(common.GetStringPref("BASE_URL", "").equals(""))
+                switchToTab(5);
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
@@ -80,7 +78,16 @@ public class MainActivity extends AppCompatActivity
             tab = 0;
         if(tab > 7)
             tab = 7;
-        tabLayout.getTabAt(tab).select();
+
+        if(tabLayout.getTabAt(tab) != null)
+        {
+            try
+            {
+                tabLayout.getTabAt(tab).select();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void getWeather()
@@ -160,7 +167,7 @@ public class MainActivity extends AppCompatActivity
                 Settings settings = new Settings(common);
                 return settings.mySettings(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 7) {
-                About a = new About();
+                About a = new About(common);
                 return a.myAbout(inflater, container);
             } else {
                 View rootView = inflater.inflate(R.layout.fragment_main, container, false);

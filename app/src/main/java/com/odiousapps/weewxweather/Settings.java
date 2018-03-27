@@ -7,7 +7,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.design.widget.TabLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,9 +28,8 @@ import java.net.URLEncoder;
 
 class Settings implements AdapterView.OnItemSelectedListener
 {
-    private Common common = null;
+    private Common common;
     private EditText et1;
-    View rootView;
 
     private ProgressDialog dialog;
 
@@ -46,7 +44,6 @@ class Settings implements AdapterView.OnItemSelectedListener
     View mySettings(LayoutInflater inflater, ViewGroup container)
     {
         final View rootView = inflater.inflate(R.layout.fragment_settings, container, false);
-        this.rootView = rootView;
 
         et1 = rootView.findViewById(R.id.settings);
         et1.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/settings.txt"));

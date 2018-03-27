@@ -46,7 +46,8 @@ public class Forecast
             public boolean onLongClick(View v)
             {
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(150);
+                if(vibrator != null)
+                    vibrator.vibrate(150);
                 Common.LogMessage("long press");
                 forceRefresh();
                 return true;
@@ -185,6 +186,7 @@ public class Forecast
             int code = tmp.getInt("code");
             String stmp;
 
+            @SuppressLint("SimpleDateFormat")
             SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm");
             long rssCheck = common.GetIntPref("rssCheck", 0);
             rssCheck *= 1000;

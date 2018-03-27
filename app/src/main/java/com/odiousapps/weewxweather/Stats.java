@@ -33,7 +33,8 @@ public class Stats
             public boolean onLongClick(View v)
             {
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(150);
+                if(vibrator != null)
+                    vibrator.vibrate(150);
                 Common.LogMessage("long press");
                 forceRefresh();
                 return true;
@@ -68,19 +69,19 @@ public class Stats
         }
     };
 
-    public void forceRefresh()
+    private void forceRefresh()
     {
         if(myService.singleton != null)
             myService.singleton.getWeather();
     }
 
-    public void checkFields(TextView tv, String txt)
+    private void checkFields(TextView tv, String txt)
     {
         if(!tv.getText().toString().equals(txt))
             tv.setText(txt);
     }
 
-    public void updateFields()
+    private void updateFields()
     {
         int iw = 17;
 
@@ -152,7 +153,7 @@ public class Stats
         stmp = "</table><br>";
         sb.append(stmp);
 
-        if (bits.length >= 110 && !bits[110].equals(""))
+        if(bits.length >= 110 && !bits[110].equals(""))
         {
             sb.append("<span style='font-size:18pt;font-weight:bold;'>This Month's Statistics</span>");
             sb.append("<table style='width:100%;border:0px;'>");

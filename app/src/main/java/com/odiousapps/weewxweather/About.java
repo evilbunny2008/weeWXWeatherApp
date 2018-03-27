@@ -11,7 +11,10 @@ public class About
 {
     private Common common;
 
-    About() {}
+    About(Common common)
+    {
+        this.common = common;
+    }
 
     View myAbout(LayoutInflater inflater, ViewGroup container)
     {

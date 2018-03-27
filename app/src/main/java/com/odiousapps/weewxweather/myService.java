@@ -255,21 +255,20 @@ public class myService extends Service
         {
             if (intent != null && intent.getAction() != null)
             {
-                if (intent.getAction().equals(Intent.ACTION_SCREEN_ON))
+                switch(intent.getAction())
                 {
-                    Common.LogMessage("ACTION_SCREEN_ON");
-                }
-                else if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF))
-                {
-                    Common.LogMessage("ACTION_SCREEN_OFF");
-                    doUpdate = false;
-                    // stop updating until the ACTION_USER_PRESENT is seen
-                }
-                else if (intent.getAction().equals(Intent.ACTION_USER_PRESENT))
-                {
-                    doUpdate = true;
-                    SendIntents();
-                    Common.LogMessage("ACTION_USER_PRESENT");
+                    case Intent.ACTION_SCREEN_ON:
+                        Common.LogMessage("ACTION_SCREEN_ON");
+                        return;
+                    case Intent.ACTION_SCREEN_OFF:
+                        Common.LogMessage("ACTION_SCREEN_OFF");
+                        doUpdate = false;
+                        // stop updating until the ACTION_USER_PRESENT is seen
+                        return;
+                    case Intent.ACTION_USER_PRESENT:
+                        doUpdate = true;
+                        SendIntents();
+                        Common.LogMessage("ACTION_USER_PRESENT");
                 }
             }
         }
