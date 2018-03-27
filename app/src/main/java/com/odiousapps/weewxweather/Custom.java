@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Vibrator;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
-public class Custom
+class Custom
 {
     private Common common;
     private WebView wv;
@@ -30,12 +32,45 @@ public class Custom
             public boolean onLongClick(View v)
             {
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-                vibrator.vibrate(150);
+                if(vibrator != null)
+                    vibrator.vibrate(150);
                 Common.LogMessage("long press");
                 reloadWebView();
                 return true;
             }
         });
+
+        wv.setWebViewClient(new WebViewClient()
+        {
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url)
+            {
+                return false;
+            }
+        });
+
+        wv.setOnKeyListener(new View.OnKeyListener()
+        {
+            @Override
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                if(event.getAction() == android.view.KeyEvent.ACTION_DOWN)
+                {
+                    if((keyCode == android.view.KeyEvent.KEYCODE_BACK))
+                    {
+                        if(wv != null)
+                        {
+                            if(wv.canGoBack())
+                            {
+                                wv.goBack();
+                            }
+                        }
+                    }
+                }
+                return true;
+            }
+        });
+
         reloadWebView();
 
         IntentFilter filter = new IntentFilter();
@@ -46,7 +81,7 @@ public class Custom
         return rootView;
     }
 
-    protected void reloadWebView()
+    private void reloadWebView()
     {
         Common.LogMessage("reload custom...");
 
