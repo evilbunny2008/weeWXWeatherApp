@@ -26,6 +26,20 @@ public class Stats
     View myStats(LayoutInflater inflater, ViewGroup container)
     {
         rootView = inflater.inflate(R.layout.fragment_stats, container, false);
+        rootView.setOnLongClickListener(new View.OnLongClickListener()
+        {
+            @Override
+            public boolean onLongClick(View v)
+            {
+                Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
+                if(vibrator != null)
+                    vibrator.vibrate(150);
+                Common.LogMessage("rootview long press");
+                forceRefresh();
+                return true;
+            }
+        });
+
         wv = rootView.findViewById(R.id.webView1);
         wv.setOnLongClickListener(new View.OnLongClickListener()
         {
@@ -35,7 +49,7 @@ public class Stats
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
                 if(vibrator != null)
                     vibrator.vibrate(150);
-                Common.LogMessage("long press");
+                Common.LogMessage("webview long press");
                 forceRefresh();
                 return true;
             }

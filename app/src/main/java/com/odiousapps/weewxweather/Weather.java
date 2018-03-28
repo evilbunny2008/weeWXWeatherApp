@@ -60,6 +60,20 @@ class Weather
     View myWeather(LayoutInflater inflater, ViewGroup container)
     {
         rootView = inflater.inflate(R.layout.fragment_weather, container, false);
+        rootView.setOnLongClickListener(new View.OnLongClickListener()
+        {
+            @Override
+            public boolean onLongClick(View v)
+            {
+                Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
+                if(vibrator != null)
+                    vibrator.vibrate(150);
+                Common.LogMessage("rootview long press");
+                forceRefresh();
+                return true;
+            }
+        });
+
         wv = rootView.findViewById(R.id.webView1);
         wv.setOnLongClickListener(new View.OnLongClickListener()
         {
@@ -69,7 +83,7 @@ class Weather
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
                 if(vibrator != null)
                     vibrator.vibrate(150);
-                Common.LogMessage("long press");
+                Common.LogMessage("webview long press");
                 reloadWebView();
                 return true;
             }
@@ -82,6 +96,12 @@ class Weather
         common.context.registerReceiver(serviceReceiver, filter);
 
         return updateFields();
+    }
+
+    private void forceRefresh()
+    {
+        if(myService.singleton != null)
+            myService.singleton.getWeather();
     }
 
     private void reloadWebView()

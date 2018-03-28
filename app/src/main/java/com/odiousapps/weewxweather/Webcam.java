@@ -10,6 +10,7 @@ import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
@@ -68,12 +69,12 @@ class Webcam
 
         if(webURL.equals(""))
         {
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+            if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            {
                 iv.setImageDrawable(common.context.getApplicationContext().getDrawable(R.drawable.nowebcam));
             } else {
                 iv.setImageDrawable(common.context.getResources().getDrawable(R.drawable.nowebcam));
             }
-
 
             return;
         }

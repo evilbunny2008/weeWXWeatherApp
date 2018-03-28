@@ -21,7 +21,7 @@ public class About
         View rootView = inflater.inflate(R.layout.fragment_about, container, false);
         TextView tv = rootView.findViewById(R.id.about);
 
-        String lines = "<html><body>Big thanks to the <a href='http://weewx.com'>WeeWx project</a>, as this app " +
+        String lines = "<html><body>Big thanks to the <a href='http://weewx.com'>weeWx project</a>, as this app " +
                 "wouldn't be possible otherwise.<br><br>" +
                 "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
                 "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a><br><br>" +
