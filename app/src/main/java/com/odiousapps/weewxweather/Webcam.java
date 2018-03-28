@@ -67,7 +67,16 @@ class Webcam
         final String webURL = common.GetStringPref("WEBCAM_URL", "");
 
         if(webURL.equals(""))
+        {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                iv.setImageDrawable(common.context.getApplicationContext().getDrawable(R.drawable.nowebcam));
+            } else {
+                iv.setImageDrawable(common.context.getResources().getDrawable(R.drawable.nowebcam));
+            }
+
+
             return;
+        }
 
         Thread t = new Thread(new Runnable()
         {
@@ -77,9 +86,9 @@ class Webcam
                 try
                 {
                     Common.LogMessage("starting to download bitmap from: " + webURL);
+                    URL url = new URL(webURL);
                     if(webURL.substring(webURL.length() - 5).equals("mjpeg") || webURL.substring(webURL.length() - 4).equals("mjpg"))
                     {
-                        URL url = new URL(webURL);
                         MjpegRunner mr = new MjpegRunner(url);
                         mr.run();
 
@@ -95,7 +104,7 @@ class Webcam
                             e.printStackTrace();
                         }
                     } else {
-                        InputStream is = new URL(webURL).openStream();
+                        InputStream is = url.openStream();
                         bm = BitmapFactory.decodeStream(is);
                     }
 

@@ -91,7 +91,7 @@ class Settings implements AdapterView.OnItemSelectedListener
                         boolean validURL3 = false;
                         boolean validURL4 = false;
                         boolean validURL5 = false;
-                        String data = "", radar = "", forecast = "", webcam = "", custom = "", oldurl = common.GetStringPref("WEBCAM_URL", "");
+                        String data = "", radar = "", forecast = "", webcam = "", custom = "";
 
                         CheckBox cb1 = rootView.findViewById(R.id.cb1);
                         CheckBox cb2 = rootView.findViewById(R.id.cb2);
@@ -312,10 +312,7 @@ class Settings implements AdapterView.OnItemSelectedListener
                         common.SetStringPref("CUSTOM_URL", custom);
                         common.SetBoolPref("metric", cb2.isChecked());
 
-                        if(!oldurl.equals(webcam) && !oldurl.equals(""))
-                            handlerNeedRestart.sendEmptyMessage(0);
-                        else
-                            handlerDone.sendEmptyMessage(0);
+                        handlerDone.sendEmptyMessage(0);
                     }
                 });
 
@@ -340,33 +337,6 @@ class Settings implements AdapterView.OnItemSelectedListener
             intent.setAction(myService.TAB0_INTENT);
             common.context.sendBroadcast(intent);
             Common.LogMessage("sent intents");
-        }
-    };
-
-    @SuppressLint("HandlerLeak")
-    private Handler handlerNeedRestart = new Handler()
-    {
-        @Override
-        public void handleMessage(Message msg)
-        {
-            b1.setEnabled(true);
-            dialog.dismiss();
-            new AlertDialog.Builder(common.context)
-                    .setTitle("App needs a restart")
-                    .setMessage("This app needs a restart to reload config.")
-                    .setPositiveButton("Restart now", new DialogInterface.OnClickListener()
-                    {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which)
-                        {
-                            Intent mStartActivity = new Intent(common.context, MainActivity.class);
-                            int mPendingIntentId = 123456;
-                            PendingIntent mPendingIntent = PendingIntent.getActivity(common.context, mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
-                            AlarmManager mgr = (AlarmManager)common.context.getSystemService(Context.ALARM_SERVICE);
-                            mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
-                            System.exit(0);
-                        }
-                    }).show();
         }
     };
 
