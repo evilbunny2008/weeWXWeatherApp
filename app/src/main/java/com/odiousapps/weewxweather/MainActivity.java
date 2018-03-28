@@ -158,6 +158,7 @@ public class MainActivity extends AppCompatActivity
                 Forecast forecast = new Forecast(common);
                 return forecast.myForecast(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
+                String webURL = common.GetStringPref("WEBCAM_URL", "");
                 Webcam webcam = new Webcam(common);
                 return webcam.myWebcam(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 5) {

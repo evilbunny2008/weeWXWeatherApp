@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -63,11 +64,13 @@ class Custom
                             if(wv.canGoBack())
                             {
                                 wv.goBack();
+                                return true;
                             }
                         }
                     }
                 }
-                return true;
+
+                return false;
             }
         });
 
@@ -90,6 +93,10 @@ class Custom
         if (custom == null || custom.equals(""))
             return;
 
+        wv.getSettings().setAppCacheEnabled(false);
+        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        wv.getSettings().setUserAgentString(Common.UA);
+        wv.clearCache(true);
         wv.loadUrl(custom);
     }
 

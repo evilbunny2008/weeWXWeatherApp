@@ -2,8 +2,11 @@ package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -31,8 +34,7 @@ class Webcam
 
     View myWebcam(LayoutInflater inflater, ViewGroup container)
     {
-        View rootView;
-        rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
         iv = rootView.findViewById(R.id.webcam);
 
         iv.setOnLongClickListener(new View.OnLongClickListener()
@@ -50,6 +52,12 @@ class Webcam
         });
 
         reloadWebView();
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction(myService.UPDATE_INTENT);
+        filter.addAction(myService.EXIT_INTENT);
+        common.context.registerReceiver(serviceReceiver, filter);
+
         return rootView;
     }
 
@@ -58,6 +66,9 @@ class Webcam
         Common.LogMessage("reload webcam...");
         final String webURL = common.GetStringPref("WEBCAM_URL", "");
 
+        if(webURL.equals(""))
+            return;
+
         Thread t = new Thread(new Runnable()
         {
             @Override
@@ -65,9 +76,28 @@ class Webcam
             {
                 try
                 {
-                    Common.LogMessage("starting to download bitmap");
-                    InputStream is = new URL(webURL).openStream();
-                    bm = BitmapFactory.decodeStream(is);
+                    Common.LogMessage("starting to download bitmap from: " + webURL);
+                    if(webURL.substring(webURL.length() - 5).equals("mjpeg") || webURL.substring(webURL.length() - 4).equals("mjpg"))
+                    {
+                        URL url = new URL(webURL);
+                        MjpegRunner mr = new MjpegRunner(url);
+                        mr.run();
+
+                        try
+                        {
+                            while (mr.bm == null)
+                                Thread.sleep(1000);
+
+                            Common.LogMessage("trying to set bm");
+                            bm = mr.bm;
+                        } catch (Exception e)
+                        {
+                            e.printStackTrace();
+                        }
+                    } else {
+                        InputStream is = new URL(webURL).openStream();
+                        bm = BitmapFactory.decodeStream(is);
+                    }
 
                     int width = bm.getWidth();
                     int height = bm.getHeight();
@@ -80,7 +110,9 @@ class Webcam
 
                     Common.LogMessage("done downloading, prompt handler to draw to iv");
                     handlerDone.sendEmptyMessage(0);
-                } catch (Exception e) {
+                } catch (Exception e)
+                {
+                    e.printStackTrace();
                     handlerSettings.sendEmptyMessage(0);
                 }
             }
@@ -115,6 +147,27 @@ class Webcam
                         {
                         }
                     }).show();
+        }
+    };
+
+    private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
+    {
+        @Override
+        public void onReceive(Context context, Intent intent)
+        {
+            try
+            {
+                Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
+                String action = intent.getAction();
+                if(action != null && action.equals(myService.UPDATE_INTENT))
+                {
+                    reloadWebView();
+                } else if(action != null && action.equals(myService.EXIT_INTENT)) {
+                    common.context.unregisterReceiver(serviceReceiver);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     };
 }

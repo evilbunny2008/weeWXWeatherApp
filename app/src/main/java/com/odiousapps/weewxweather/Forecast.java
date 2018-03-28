@@ -248,10 +248,11 @@ public class Forecast
         }
     }
 
-    private void updateForecast(String bits, String desc)
+    private void updateForecast(final String bits, final String desc)
     {
         String fc = "<html><body style='text-align:center'>";
         fc += bits + "</body></html>";
+
         wv.loadDataWithBaseURL(null, fc, "text/html", "utf-8", null);
 
         TextView tv1 = rootView.findViewById(R.id.forecast);

@@ -1,8 +1,11 @@
 package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
@@ -30,6 +33,7 @@ class Settings implements AdapterView.OnItemSelectedListener
 {
     private Common common;
     private EditText et1;
+    private Button b1;
 
     private ProgressDialog dialog;
 
@@ -65,11 +69,13 @@ class Settings implements AdapterView.OnItemSelectedListener
         if(!metric)
             cb2.setChecked(false);
 
-        Button b1 = rootView.findViewById(R.id.button);
+        b1 = rootView.findViewById(R.id.button);
         b1.setOnClickListener(new View.OnClickListener()
         {
             public void onClick(View arg0)
             {
+                b1.setEnabled(false);
+
                 Common.LogMessage("show dialog");
                 dialog = ProgressDialog.show(common.context, "Testing submitted URLs", "Please wait while we verify the URL you submitted.", false);
                 dialog.show();
@@ -85,7 +91,7 @@ class Settings implements AdapterView.OnItemSelectedListener
                         boolean validURL3 = false;
                         boolean validURL4 = false;
                         boolean validURL5 = false;
-                        String data = "", radar = "", forecast = "", webcam = "", custom = "";
+                        String data = "", radar = "", forecast = "", webcam = "", custom = "", oldurl = common.GetStringPref("WEBCAM_URL", "");
 
                         CheckBox cb1 = rootView.findViewById(R.id.cb1);
                         CheckBox cb2 = rootView.findViewById(R.id.cb2);
@@ -305,10 +311,11 @@ class Settings implements AdapterView.OnItemSelectedListener
                         common.SetStringPref("WEBCAM_URL", webcam);
                         common.SetStringPref("CUSTOM_URL", custom);
                         common.SetBoolPref("metric", cb2.isChecked());
-                        Intent intent = new Intent();
-                        intent.putExtra("urlChanged", true);
 
-                        handlerDone.sendEmptyMessage(0);
+                        if(!oldurl.equals(webcam) && !oldurl.equals(""))
+                            handlerNeedRestart.sendEmptyMessage(0);
+                        else
+                            handlerDone.sendEmptyMessage(0);
                     }
                 });
 
@@ -328,9 +335,38 @@ class Settings implements AdapterView.OnItemSelectedListener
             Common.LogMessage("sending intents");
             dialog.dismiss();
             Intent intent = new Intent();
+            intent.putExtra("urlChanged", true);
+            intent = new Intent();
             intent.setAction(myService.TAB0_INTENT);
             common.context.sendBroadcast(intent);
             Common.LogMessage("sent intents");
+        }
+    };
+
+    @SuppressLint("HandlerLeak")
+    private Handler handlerNeedRestart = new Handler()
+    {
+        @Override
+        public void handleMessage(Message msg)
+        {
+            b1.setEnabled(true);
+            dialog.dismiss();
+            new AlertDialog.Builder(common.context)
+                    .setTitle("App needs a restart")
+                    .setMessage("This app needs a restart to reload config.")
+                    .setPositiveButton("Restart now", new DialogInterface.OnClickListener()
+                    {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which)
+                        {
+                            Intent mStartActivity = new Intent(common.context, MainActivity.class);
+                            int mPendingIntentId = 123456;
+                            PendingIntent mPendingIntent = PendingIntent.getActivity(common.context, mPendingIntentId,    mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+                            AlarmManager mgr = (AlarmManager)common.context.getSystemService(Context.ALARM_SERVICE);
+                            mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
+                            System.exit(0);
+                        }
+                    }).show();
         }
     };
 
@@ -340,17 +376,18 @@ class Settings implements AdapterView.OnItemSelectedListener
         @Override
         public void handleMessage(Message msg)
         {
+            b1.setEnabled(true);
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
-                    .setTitle("Invalid URL")
-                    .setMessage("Wasn't able to connect or download settings from your server")
-                    .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+                .setTitle("Invalid URL")
+                .setMessage("Wasn't able to connect or download settings from your server")
+                .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which)
                     {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which)
-                        {
-                        }
-                    }).show();
+                    }
+                }).show();
         }
     };
 
@@ -360,6 +397,7 @@ class Settings implements AdapterView.OnItemSelectedListener
         @Override
         public void handleMessage(Message msg)
         {
+            b1.setEnabled(true);
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
@@ -380,6 +418,7 @@ class Settings implements AdapterView.OnItemSelectedListener
         @Override
         public void handleMessage(Message msg)
         {
+            b1.setEnabled(true);
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
@@ -400,6 +439,7 @@ class Settings implements AdapterView.OnItemSelectedListener
         @Override
         public void handleMessage(Message msg)
         {
+            b1.setEnabled(true);
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
@@ -420,6 +460,7 @@ class Settings implements AdapterView.OnItemSelectedListener
         @Override
         public void handleMessage(Message msg)
         {
+            b1.setEnabled(true);
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
@@ -440,6 +481,7 @@ class Settings implements AdapterView.OnItemSelectedListener
         @Override
         public void handleMessage(Message msg)
         {
+            b1.setEnabled(true);
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")

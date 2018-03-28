@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 class Common
@@ -28,8 +29,8 @@ class Common
 
     static void LogMessage(String value, boolean showAnyway)
     {
-        if (debug_on || showAnyway)
-            System.out.println("WeeWx Weather: ts=" + System.currentTimeMillis() + ", message='" + value + "'");
+        if(debug_on || showAnyway)
+            Log.i("WeeWx Weather", "message='" + value + "'");
     }
 
     void SetStringPref(String name, String value)
