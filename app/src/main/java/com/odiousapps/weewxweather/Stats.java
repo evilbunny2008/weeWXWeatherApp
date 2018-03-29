@@ -17,7 +17,6 @@ public class Stats
     private View rootView;
     private WebView wv;
 
-
     Stats(Common common)
     {
         this.common = common;
@@ -167,6 +166,7 @@ public class Stats
         stmp = "</table><br>";
         sb.append(stmp);
 
+        //noinspection ConstantConditions
         if(bits.length >= 110 && !bits[110].equals(""))
         {
             sb.append("<span style='font-size:18pt;font-weight:bold;'>This Month's Statistics</span>");
@@ -196,6 +196,7 @@ public class Stats
             sb.append(stmp);
         }
 
+        //noinspection ConstantConditions
         if (bits.length >= 133 && !bits[133].equals(""))
         {
             sb.append("<span style='font-size:18pt;font-weight:bold;'>This Year's Statistics</span>");
@@ -225,6 +226,7 @@ public class Stats
             sb.append(stmp);
         }
 
+        //noinspection ConstantConditions
         if (bits.length >= 157 && !bits[157].equals(""))
         {
             sb.append("<span style='font-size:18pt;font-weight:bold;'>All Time Statistics</span>");

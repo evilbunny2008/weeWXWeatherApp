@@ -262,12 +262,18 @@ public class Forecast
         }
     }
 
-    private void updateForecast(final String bits, final String desc)
+    private void updateForecast(String bits, String desc)
     {
-        String fc = "<html><body style='text-align:center'>";
-        fc += bits + "</body></html>";
+        final String fc = "<html><body style='text-align:center'>"  + bits + "</body></html>";
 
-        wv.loadDataWithBaseURL(null, fc, "text/html", "utf-8", null);
+        wv.post(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                wv.loadDataWithBaseURL(null, fc, "text/html", "utf-8", null);
+            }
+        });
 
         TextView tv1 = rootView.findViewById(R.id.forecast);
         tv1.setText(desc.substring(19));

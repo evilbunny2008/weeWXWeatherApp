@@ -64,17 +64,19 @@ class Common
         return value;
     }
 
+    @SuppressWarnings("unused")
     void SetLongPref(String name, long value)
     {
         SetStringPref(name, "" + value);
     }
 
+    @SuppressWarnings("unused")
     long GetLongPref(String name)
     {
         return GetLongPref(name, 0);
     }
 
-    long GetLongPref(String name, long defval)
+    private long GetLongPref(String name, @SuppressWarnings("SameParameterValue") long defval)
     {
         String val = GetStringPref(name, "" + defval);
         if (val == null)
@@ -87,6 +89,7 @@ class Common
         SetStringPref(name, "" + value);
     }
 
+    @SuppressWarnings("unused")
     int GetIntPref(String name)
     {
         return GetIntPref(name, 0);
@@ -109,6 +112,7 @@ class Common
         SetStringPref(name, val);
     }
 
+    @SuppressWarnings("unused")
     boolean GetBoolPref(String name)
     {
         return GetBoolPref(name, false);

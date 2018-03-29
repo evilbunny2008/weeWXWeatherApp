@@ -30,6 +30,7 @@ public class myService extends Service
     static String TAB0_INTENT = "com.odiousapps.weewxweather.TAB0_INTENT";
     static String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 
+    boolean widgetUpdate = true;
     boolean doUpdate = true;
 
     public void onCreate()
@@ -54,11 +55,6 @@ public class myService extends Service
     {
         Common.LogMessage("WeeWXService marked START_STICKY");
         return Service.START_STICKY;
-    }
-
-    public boolean Update()
-    {
-        return doUpdate;
     }
 
     public void Reminder()
@@ -216,9 +212,7 @@ public class myService extends Service
                     in.close();
 
                     common.SetStringPref("LastDownload", sb.toString().trim());
-
-                    if(doUpdate)
-                        SendIntents();
+                    SendIntents();
                 } catch (Exception e) {
                     Common.LogMessage(e.toString());
                 }
@@ -228,18 +222,24 @@ public class myService extends Service
         t.start();
     }
 
-    private void SendIntents()
+    void SendIntents()
     {
-        Intent intent = new Intent();
-        intent.setAction(UPDATE_INTENT);
-        sendBroadcast(intent);
-        Common.LogMessage("Fired off first update broadcast.");
+        if(doUpdate)
+        {
+            Intent intent = new Intent();
+            intent.setAction(UPDATE_INTENT);
+            sendBroadcast(intent);
+            Common.LogMessage("update_intent broadcast.");
+        }
 
-        RemoteViews remoteViews = common.buildUpdate(this);
-        ComponentName thisWidget = new ComponentName(this, WidgetProvider.class);
-        AppWidgetManager manager = AppWidgetManager.getInstance(this);
-        manager.updateAppWidget(thisWidget, remoteViews);
-        Common.LogMessage("widget intent broadcasted");
+        if(widgetUpdate)
+        {
+            RemoteViews remoteViews = common.buildUpdate(this);
+            ComponentName thisWidget = new ComponentName(this, WidgetProvider.class);
+            AppWidgetManager manager = AppWidgetManager.getInstance(this);
+            manager.updateAppWidget(thisWidget, remoteViews);
+            Common.LogMessage("widget intent broadcasted");
+        }
     }
 
     @Override
@@ -262,13 +262,12 @@ public class myService extends Service
                         return;
                     case Intent.ACTION_SCREEN_OFF:
                         Common.LogMessage("ACTION_SCREEN_OFF");
-                        doUpdate = false;
-                        // stop updating until the ACTION_USER_PRESENT is seen
+                        widgetUpdate = false;
                         return;
                     case Intent.ACTION_USER_PRESENT:
-                        doUpdate = true;
-                        SendIntents();
                         Common.LogMessage("ACTION_USER_PRESENT");
+                        widgetUpdate = true;
+                        SendIntents();
                 }
             }
         }

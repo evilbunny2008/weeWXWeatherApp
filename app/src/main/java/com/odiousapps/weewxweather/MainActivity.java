@@ -72,6 +72,29 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    @Override
+    protected void onPause()
+    {
+        super.onPause();
+        if(myService.singleton != null)
+        {
+            Common.LogMessage("pausing app updates");
+            myService.singleton.doUpdate = false;
+        }
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        if(myService.singleton != null)
+        {
+            Common.LogMessage("resuming app updates");
+            myService.singleton.doUpdate = true;
+            myService.singleton.SendIntents();
+        }
+    }
+
     private void switchToTab(int tab)
     {
         if(tab < 0)
@@ -83,6 +106,7 @@ public class MainActivity extends AppCompatActivity
         {
             try
             {
+                //noinspection ConstantConditions
                 tabLayout.getTabAt(tab).select();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -101,9 +125,6 @@ public class MainActivity extends AppCompatActivity
         @Override
         public void onReceive(Context context, Intent intent)
         {
-            if(myService.singleton == null || !myService.singleton.Update())
-                return;
-
             try
             {
                 Common.LogMessage("We have a hit, so we should probably update the screen.");
@@ -158,7 +179,6 @@ public class MainActivity extends AppCompatActivity
                 Forecast forecast = new Forecast(common);
                 return forecast.myForecast(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
-                String webURL = common.GetStringPref("WEBCAM_URL", "");
                 Webcam webcam = new Webcam(common);
                 return webcam.myWebcam(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
@@ -168,7 +188,7 @@ public class MainActivity extends AppCompatActivity
                 Settings settings = new Settings(common);
                 return settings.mySettings(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 7) {
-                About a = new About(common);
+                About a = new About();
                 return a.myAbout(inflater, container);
             } else {
                 View rootView = inflater.inflate(R.layout.fragment_main, container, false);

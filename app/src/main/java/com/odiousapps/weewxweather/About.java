@@ -9,13 +9,6 @@ import android.widget.TextView;
 
 public class About
 {
-    private Common common;
-
-    About(Common common)
-    {
-        this.common = common;
-    }
-
     View myAbout(LayoutInflater inflater, ViewGroup container)
     {
         View rootView = inflater.inflate(R.layout.fragment_about, container, false);
