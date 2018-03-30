@@ -76,7 +76,7 @@ class Common
         return GetLongPref(name, 0);
     }
 
-    private long GetLongPref(String name, @SuppressWarnings("SameParameterValue") long defval)
+    long GetLongPref(String name, @SuppressWarnings("SameParameterValue") long defval)
     {
         String val = GetStringPref(name, "" + defval);
         if (val == null)

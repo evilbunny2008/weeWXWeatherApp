@@ -309,6 +309,9 @@ class Settings implements AdapterView.OnItemSelectedListener
                         common.SetStringPref("CUSTOM_URL", custom);
                         common.SetBoolPref("metric", cb2.isChecked());
 
+                        myService.singleton.stopTimer();
+                        myService.singleton.startTimer();
+
                         handlerDone.sendEmptyMessage(0);
                     }
                 });

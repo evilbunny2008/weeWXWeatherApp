@@ -39,7 +39,6 @@ public class myService extends Service
         singleton = this;
         common = new Common(this);
 
-        Reminder();
         Common.LogMessage("myService started.");
 
         lockScreenReceiver = new LockScreenReceiver();
@@ -48,6 +47,8 @@ public class myService extends Service
         lockFilter.addAction(Intent.ACTION_SCREEN_OFF);
         lockFilter.addAction(Intent.ACTION_USER_PRESENT);
         registerReceiver(lockScreenReceiver, lockFilter);
+
+        startTimer();
     }
 
     @Override
@@ -57,18 +58,62 @@ public class myService extends Service
         return Service.START_STICKY;
     }
 
-    public void Reminder()
+    void stopTimer()
+    {
+        if (timer != null)
+        {
+            Common.LogMessage("Stopping timer thread");
+            timer.cancel();
+            timer.purge();
+            timer = null;
+        }
+    }
+
+    public void startTimer()
     {
         if(timer == null)
             timer = new Timer();
 
+        int pos = common.GetIntPref("updateInterval", 1);
+        if(pos <= 0)
+            return;
+
+        int period;
+
         Calendar date = Calendar.getInstance();
-        date.set(Calendar.MINUTE, 5);
+
+        switch(pos)
+        {
+            case 1:
+                date.set(Calendar.MINUTE, 5);
+                period = 5 * 60000;
+                break;
+            case 2:
+                date.set(Calendar.MINUTE, 10);
+                period = 10 * 60000;
+                break;
+            case 3:
+                date.set(Calendar.MINUTE, 15);
+                period = 15 * 60000;
+                break;
+            case 4:
+                date.set(Calendar.MINUTE, 15);
+                period = 30 * 60000;
+                break;
+            case 5:
+                date.set(Calendar.MINUTE, 60);
+                period = 60 * 60000;
+                break;
+            default:
+                return;
+        }
+
         date.set(Calendar.SECOND, 30);
         date.set(Calendar.MILLISECOND, 0);
 
-        timer.scheduleAtFixedRate(new myTimer(), date.getTime(), 300000);
-        Common.LogMessage("New timer set to repeat every 30 seconds past 5 minute");
+
+        timer.scheduleAtFixedRate(new myTimer(), date.getTime(), period);
+        Common.LogMessage("New timer set to repeat every " + period + "ms");
     }
 
     public void onDestroy()
@@ -82,13 +127,7 @@ public class myService extends Service
 
         unregisterReceiver(lockScreenReceiver);
 
-        if (timer != null)
-        {
-            Common.LogMessage("I'm melting... MELTING...");
-            timer.cancel();
-            timer.purge();
-            timer = null;
-        }
+        stopTimer();
 
         if(t != null)
         {
@@ -117,69 +156,6 @@ public class myService extends Service
             if(pos == 0)
                 return;
 
-            if(pos == 1)
-            {
-                switch (mins)
-                {
-                    case 0:
-                    case 5:
-                    case 10:
-                    case 15:
-                    case 20:
-                    case 25:
-                    case 30:
-                    case 35:
-                    case 40:
-                    case 45:
-                    case 50:
-                    case 55:
-                        break;
-                    default:
-                        return;
-                }
-            } else if(pos == 2) {
-                switch (mins)
-                {
-                    case 0:
-                    case 10:
-                    case 20:
-                    case 30:
-                    case 40:
-                    case 50:
-                        break;
-                    default:
-                        return;
-                }
-            } else if(pos == 3) {
-                switch (mins)
-                {
-                    case 0:
-                    case 15:
-                    case 30:
-                    case 45:
-                        break;
-                    default:
-                        return;
-                }
-            } else if(pos == 4) {
-                switch (mins)
-                {
-                    case 0:
-                    case 30:
-                        break;
-                    default:
-                        return;
-                }
-            } else if(pos == 5) {
-                switch (mins)
-                {
-                    case 0:
-                        break;
-                    default:
-                        return;
-                }
-            }
-
             Common.LogMessage("Running getWeather();");
             getWeather();
         }
@@ -202,7 +178,7 @@ public class myService extends Service
                 try
                 {
                     URL url = new URL(common.GetStringPref("BASE_URL", ""));
-                    HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                    HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
                     urlConnection.setRequestMethod("GET");
                     urlConnection.setDoOutput(true);
                     urlConnection.connect();

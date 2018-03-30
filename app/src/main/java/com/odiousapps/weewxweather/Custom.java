@@ -93,10 +93,6 @@ class Custom
         if (custom == null || custom.equals(""))
             return;
 
-        wv.getSettings().setAppCacheEnabled(false);
-        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-        wv.getSettings().setUserAgentString(Common.UA);
-        wv.clearCache(true);
         wv.loadUrl(custom);
     }
 

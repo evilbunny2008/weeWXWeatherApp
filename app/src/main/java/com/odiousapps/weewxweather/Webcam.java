@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
@@ -19,6 +20,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
@@ -79,6 +83,20 @@ class Webcam
             return;
         }
 
+        File file = new File(common.context.getFilesDir(), "webcam.jpg");
+        if(file.exists())
+        {
+            Common.LogMessage("file: "+file.toString());
+            try
+            {
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                Bitmap bm = BitmapFactory.decodeFile(file.toString(), options);
+                iv.setImageBitmap(bm);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
         Thread t = new Thread(new Runnable()
         {
             @Override
@@ -118,6 +136,25 @@ class Webcam
                     Bitmap scaledBitmap = Bitmap.createScaledBitmap(bm,width,height,true);
                     bm = Bitmap.createBitmap(scaledBitmap , 0, 0, scaledBitmap .getWidth(), scaledBitmap .getHeight(), matrix, true);
 
+                    FileOutputStream out = null;
+                    File file = new File(common.context.getFilesDir(), "webcam.jpg");
+
+                    try
+                    {
+                        out = new FileOutputStream(file);
+                        bm.compress(Bitmap.CompressFormat.JPEG, 85, out); // bmp is your Bitmap instance
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    } finally {
+                        try
+                        {
+                            if (out != null)
+                                out.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
                     Common.LogMessage("done downloading, prompt handler to draw to iv");
                     handlerDone.sendEmptyMessage(0);
                 } catch (Exception e)
@@ -138,6 +175,7 @@ class Webcam
         public void handleMessage(Message msg)
         {
             iv.setImageBitmap(bm);
+            iv.invalidate();
         }
     };
 
