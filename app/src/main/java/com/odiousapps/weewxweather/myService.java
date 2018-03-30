@@ -62,10 +62,13 @@ public class myService extends Service
         if(timer == null)
             timer = new Timer();
 
-        timer.schedule(new myTimer(), 1,60000);
-        Common.LogMessage("New timer set to repeat every 60000ms");
-        getWeather();
-        Common.LogMessage("Running getWeather();");
+        Calendar date = Calendar.getInstance();
+        date.set(Calendar.MINUTE, 5);
+        date.set(Calendar.SECOND, 30);
+        date.set(Calendar.MILLISECOND, 0);
+
+        timer.scheduleAtFixedRate(new myTimer(), date.getTime(), 300000);
+        Common.LogMessage("New timer set to repeat every 30 seconds past 5 minute");
     }
 
     public void onDestroy()
@@ -103,10 +106,11 @@ public class myService extends Service
         public void run()
         {
             Calendar calendar = Calendar.getInstance();
+            int hours = calendar.get(Calendar.HOUR_OF_DAY);
             int mins = calendar.get(Calendar.MINUTE);
             int secs = calendar.get(Calendar.SECOND);
 
-            Common.LogMessage("mins:secs == "+mins+":"+secs);
+            Common.LogMessage("hour:min:sec == "+ hours + ":" + mins + ":" + secs);
 
             int pos = common.GetIntPref("updateInterval", 1);
 
@@ -117,18 +121,18 @@ public class myService extends Service
             {
                 switch (mins)
                 {
-                    case 1:
-                    case 6:
-                    case 11:
-                    case 16:
-                    case 21:
-                    case 26:
-                    case 31:
-                    case 36:
-                    case 41:
-                    case 46:
-                    case 51:
-                    case 56:
+                    case 0:
+                    case 5:
+                    case 10:
+                    case 15:
+                    case 20:
+                    case 25:
+                    case 30:
+                    case 35:
+                    case 40:
+                    case 45:
+                    case 50:
+                    case 55:
                         break;
                     default:
                         return;
@@ -136,12 +140,12 @@ public class myService extends Service
             } else if(pos == 2) {
                 switch (mins)
                 {
-                    case 1:
-                    case 11:
-                    case 21:
-                    case 31:
-                    case 41:
-                    case 51:
+                    case 0:
+                    case 10:
+                    case 20:
+                    case 30:
+                    case 40:
+                    case 50:
                         break;
                     default:
                         return;
@@ -149,10 +153,10 @@ public class myService extends Service
             } else if(pos == 3) {
                 switch (mins)
                 {
-                    case 1:
-                    case 16:
-                    case 31:
-                    case 46:
+                    case 0:
+                    case 15:
+                    case 30:
+                    case 45:
                         break;
                     default:
                         return;
@@ -160,8 +164,8 @@ public class myService extends Service
             } else if(pos == 4) {
                 switch (mins)
                 {
-                    case 1:
-                    case 31:
+                    case 0:
+                    case 30:
                         break;
                     default:
                         return;
@@ -169,7 +173,7 @@ public class myService extends Service
             } else if(pos == 5) {
                 switch (mins)
                 {
-                    case 1:
+                    case 0:
                         break;
                     default:
                         return;
