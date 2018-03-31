@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -7,6 +8,7 @@ import android.graphics.Movie;
 import android.net.Uri;
 import android.os.SystemClock;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.View;
 
 import java.io.File;
@@ -21,6 +23,7 @@ public class GifImageView extends View
     private int mWidth, mHeight;
     private long mStart;
     private Context mContext;
+    private float scale;
 
     public GifImageView(Context context)
     {
@@ -46,10 +49,19 @@ public class GifImageView extends View
 
     private void init()
     {
-        setFocusable(true);
+        setFocusable(false);
         mMovie = Movie.decodeStream(mInputStream);
-        mWidth = (int)Math.round(mMovie.width() * 1.6);
-        mHeight = (int)Math.round(mMovie.height() * 1.6);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        float width = displayMetrics.widthPixels;
+
+        scale =  width / (float)mMovie.width() * 0.96f;
+
+        Common.LogMessage("scale="+scale+",mMovie.width="+mMovie.width()+",width="+width);
+
+        mWidth = (int)Math.round(mMovie.width() * scale);
+        mHeight = (int)Math.round(mMovie.height() * scale);
 
         requestLayout();
     }
@@ -77,7 +89,7 @@ public class GifImageView extends View
             int relTime = (int) ((now - mStart) % duration);
 
             canvas.drawColor(Color.TRANSPARENT);
-            canvas.scale(1.6f, 1.6f);
+            canvas.scale((float)scale, (float)scale);
 
             mMovie.setTime(relTime);
             mMovie.draw(canvas, 0, 0);
