@@ -10,6 +10,7 @@ import java.io.StringWriter;
 import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.UnknownHostException;
 
 public class MjpegRunner implements Runnable
 {
@@ -21,13 +22,13 @@ public class MjpegRunner implements Runnable
     private boolean isRunning = true;
     Bitmap bm = null;
 
-    MjpegRunner(URL url) throws IOException
+    MjpegRunner(URL url) throws Exception
     {
         this.url = url;
         start();
     }
 
-    private void start() throws IOException
+    private void start() throws Exception
     {
         URLConnection urlConn = url.openConnection();
         urlConn.setReadTimeout(5000);

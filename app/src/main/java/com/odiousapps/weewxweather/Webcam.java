@@ -11,7 +11,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Build;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
@@ -25,6 +24,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.net.UnknownHostException;
 
 class Webcam
 {
@@ -157,10 +157,12 @@ class Webcam
 
                     Common.LogMessage("done downloading, prompt handler to draw to iv");
                     handlerDone.sendEmptyMessage(0);
-                } catch (Exception e)
-                {
+//                } catch (UnknownHostException e) {
+//                    e.printStackTrace();
+//                    handlerSettings.sendEmptyMessage(0);
+                } catch (Exception e) {
                     e.printStackTrace();
-                    handlerSettings.sendEmptyMessage(0);
+                    handlerDone.sendEmptyMessage(0);
                 }
             }
         });

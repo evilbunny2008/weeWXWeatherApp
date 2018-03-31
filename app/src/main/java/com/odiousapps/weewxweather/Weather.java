@@ -1,9 +1,16 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Message;
 import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +19,21 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URI;
+import java.net.URL;
+import java.net.UnknownHostException;
+
 class Weather
 {
     private Common common;
     private View rootView;
-    private WebView wv;
+    //private WebView wv;
+    private GifImageView gif;
 
     Weather(Common common)
     {
@@ -74,8 +91,8 @@ class Weather
             }
         });
 
-        wv = rootView.findViewById(R.id.webView1);
-        wv.setOnLongClickListener(new View.OnLongClickListener()
+        gif = rootView.findViewById(R.id.radar);
+        gif.setOnLongClickListener(new View.OnLongClickListener()
         {
             @Override
             public boolean onLongClick(View v)
@@ -83,11 +100,15 @@ class Weather
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
                 if(vibrator != null)
                     vibrator.vibrate(150);
-                Common.LogMessage("webview long press");
+                Common.LogMessage("gif long press");
                 reloadWebView();
                 return true;
             }
         });
+
+        if(new File(common.context.getFilesDir() + "/radar.gif").exists())
+            gif.setGifBitmap(common.context.getFilesDir() + "/radar.gif");
+
         reloadWebView();
 
         IntentFilter filter = new IntentFilter();
@@ -107,32 +128,75 @@ class Weather
     private void reloadWebView()
     {
         Common.LogMessage("reload radar...");
-        wv.getSettings().setAppCacheEnabled(false);
-        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-        wv.getSettings().setUserAgentString(Common.UA);
-        wv.clearCache(true);
-        String radar = common.GetStringPref("RADAR_URL", "");
+        final String radar = common.GetStringPref("RADAR_URL", "");
 
-        if (radar != null && !radar.equals(""))
+        Thread t = new Thread(new Runnable()
         {
-            String html = "<!DOCTYPE html>\n" +
-                    "<html>\n" +
-                    "  <head>\n" +
-                    "    <meta charset='utf-8'>\n" +
-                    "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
-                    "  </head>\n" +
-                    "  <body>\n" +
-                    "\t<br>\n" +
-                    "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
-                    "\tsrc='" + radar + "'>\n" +
-                    "  </body>\n" +
-                    "</html>";
-            wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-        } else {
-            String html = "<html><body>Radar URL not set, go to settings to change</body></html>";
-            wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-        }
+            @Override
+            public void run()
+            {
+                Bitmap bm;
+                try
+                {
+                    Common.LogMessage("starting to download image from: " + radar);
+                    URL url = new URL(radar);
+
+                    InputStream ins = url.openStream();
+                    File file = new File(common.context.getFilesDir(), "radar.gif");
+                    FileOutputStream out = null;
+
+                    try
+                    {
+                        out = new FileOutputStream(file);
+                        final byte[] b = new byte[2048];
+                        int length;
+                        while ((length = ins.read(b)) != -1)
+                            out.write(b, 0, length);
+                    } catch (Exception e)
+                    {
+                        e.printStackTrace();
+                    } finally
+                    {
+                        try
+                        {
+                            if (ins != null)
+                                ins.close();
+                            if (out != null)
+                                out.close();
+                        } catch (IOException e)
+                        {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    Common.LogMessage("done downloading, prompt handler to draw to movie");
+                    handlerDone.sendEmptyMessage(0);
+                } catch (UnknownHostException e) {
+                    handlerDone.sendEmptyMessage(0);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        t.start();
     }
+
+    @SuppressLint("HandlerLeak")
+    private Handler handlerDone = new Handler()
+    {
+        @Override
+        public void handleMessage(Message msg)
+        {
+            try
+            {
+                gif.setGifBitmap(common.context.getFilesDir() + "/radar.gif");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
     {
