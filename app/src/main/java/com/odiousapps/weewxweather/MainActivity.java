@@ -159,6 +159,14 @@ public class MainActivity extends AppCompatActivity
     public static class PlaceholderFragment extends Fragment
     {
         private static final String ARG_SECTION_NUMBER = "section_number";
+        private int lastPos = 0;
+        private Weather weather;
+        private Stats stats;
+        private Forecast forecast;
+        private Webcam webcam;
+        private Custom custom;
+        private Settings settings;
+        private About about;
 
         public PlaceholderFragment() {}
 
@@ -172,32 +180,67 @@ public class MainActivity extends AppCompatActivity
         }
 
         @Override
+        public void onDestroyView()
+        {
+            super.onDestroyView();
+
+            switch(lastPos)
+            {
+                case 1:
+                    weather.doStop();
+                    break;
+                case 2:
+                    stats.doStop();
+                    break;
+                case 3:
+                    forecast.doStop();
+                    break;
+                case 4:
+                    webcam.doStop();
+                    break;
+                case 5:
+                    custom.doStop();
+                    break;
+                case 6:
+                    //settings.doStop();
+                    break;
+                case 7:
+                    //about.doStop();
+                    break;
+            }
+
+            Common.LogMessage("onDestroyView() has been called lastpos ="+lastPos);
+        }
+
+        @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             Common common = new Common(getContext());
 
+            lastPos = getArguments().getInt(ARG_SECTION_NUMBER);
+
             if(getArguments().getInt(ARG_SECTION_NUMBER) == 1)
             {
-                Weather weather = new Weather(common);
+                weather = new Weather(common);
                 return weather.myWeather(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
-                Stats stats = new Stats(common);
+                stats = new Stats(common);
                 return stats.myStats(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
-                Forecast forecast = new Forecast(common);
+                forecast = new Forecast(common);
                 return forecast.myForecast(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
-                Webcam webcam = new Webcam(common);
+                webcam = new Webcam(common);
                 return webcam.myWebcam(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
-                Custom custom = new Custom(common);
+                custom = new Custom(common);
                 return custom.myCustom(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
-                Settings settings = new Settings(common);
+                settings = new Settings(common);
                 return settings.mySettings(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 7) {
-                About a = new About();
-                return a.myAbout(inflater, container);
+                about = new About();
+                return about.myAbout(inflater, container);
             } else {
                 View rootView = inflater.inflate(R.layout.fragment_main, container, false);
                 TextView textView = rootView.findViewById(R.id.section_label);

@@ -200,6 +200,12 @@ class Webcam
         }
     };
 
+    public void doStop()
+    {
+        Common.LogMessage("webcam.java -- unregisterReceiver");
+        common.context.unregisterReceiver(serviceReceiver);
+    }
+
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
     {
         @Override

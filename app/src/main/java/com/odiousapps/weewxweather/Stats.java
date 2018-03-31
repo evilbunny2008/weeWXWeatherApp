@@ -63,6 +63,12 @@ public class Stats
         return rootView;
     }
 
+    public void doStop()
+    {
+        Common.LogMessage("stats.java -- unregisterReceiver");
+        common.context.unregisterReceiver(serviceReceiver);
+    }
+
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
     {
         @Override

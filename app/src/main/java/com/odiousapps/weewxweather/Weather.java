@@ -6,25 +6,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Matrix;
-import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URI;
 import java.net.URL;
 import java.net.UnknownHostException;
 
@@ -111,6 +104,7 @@ class Weather
 
         reloadWebView();
 
+        Common.LogMessage("weather.java -- filter == null, adding a new filter");
         IntentFilter filter = new IntentFilter();
         filter.addAction(myService.UPDATE_INTENT);
         filter.addAction(myService.EXIT_INTENT);
@@ -135,7 +129,6 @@ class Weather
             @Override
             public void run()
             {
-                Bitmap bm;
                 try
                 {
                     Common.LogMessage("starting to download image from: " + radar);
@@ -197,6 +190,11 @@ class Weather
         }
     };
 
+    public void doStop()
+    {
+        Common.LogMessage("weather.java -- unregisterReceiver");
+        common.context.unregisterReceiver(serviceReceiver);
+    }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
     {
@@ -205,13 +203,14 @@ class Weather
         {
             try
             {
-                Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
                 if(action != null && action.equals(myService.UPDATE_INTENT))
                 {
+                    Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                     updateFields();
                     reloadWebView();
                 } else if(action != null && action.equals(myService.EXIT_INTENT)) {
+                    Common.LogMessage("weather.java -- unregisterReceiver");
                     common.context.unregisterReceiver(serviceReceiver);
                 }
             } catch (Exception e) {

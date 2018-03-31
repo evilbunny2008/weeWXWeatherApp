@@ -96,6 +96,12 @@ class Custom
         wv.loadUrl(custom);
     }
 
+    public void doStop()
+    {
+        Common.LogMessage("custom.java -- unregisterReceiver");
+        common.context.unregisterReceiver(serviceReceiver);
+    }
+
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
     {
         @Override
