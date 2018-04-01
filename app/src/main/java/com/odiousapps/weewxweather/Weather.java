@@ -11,7 +11,6 @@ import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.io.File;
@@ -100,7 +99,7 @@ class Weather
         });
 
         if(new File(common.context.getFilesDir() + "/radar.gif").exists())
-            gif.setGifBitmap(common.context.getFilesDir() + "/radar.gif");
+            gif.setGifFromFile(common.context.getFilesDir() + "/radar.gif");
 
         reloadWebView();
 
@@ -123,6 +122,10 @@ class Weather
     {
         Common.LogMessage("reload radar...");
         final String radar = common.GetStringPref("RADAR_URL", "");
+
+        if(radar.equals(""))
+            return;
+
 
         Thread t = new Thread(new Runnable()
         {
@@ -183,7 +186,7 @@ class Weather
         {
             try
             {
-                gif.setGifBitmap(common.context.getFilesDir() + "/radar.gif");
+                gif.setGifFromFile(common.context.getFilesDir() + "/radar.gif");
             } catch (Exception e) {
                 e.printStackTrace();
             }

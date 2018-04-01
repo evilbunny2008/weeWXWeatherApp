@@ -100,7 +100,7 @@ public class GifImageView extends View
         }
     }
 
-    public void setGifBitmap(String filename)
+    public void setGifFromFile(String filename)
     {
         File file = new File(filename);
         try
