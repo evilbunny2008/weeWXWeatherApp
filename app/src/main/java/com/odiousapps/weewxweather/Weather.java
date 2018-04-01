@@ -103,7 +103,7 @@ class Weather
 
         reloadWebView();
 
-        Common.LogMessage("weather.java -- filter == null, adding a new filter");
+        Common.LogMessage("weather.java -- adding a new filter");
         IntentFilter filter = new IntentFilter();
         filter.addAction(myService.UPDATE_INTENT);
         filter.addAction(myService.EXIT_INTENT);
@@ -186,6 +186,7 @@ class Weather
         {
             try
             {
+                Common.LogMessage(common.context.getFilesDir() + "/radar.gif");
                 gif.setGifFromFile(common.context.getFilesDir() + "/radar.gif");
             } catch (Exception e) {
                 e.printStackTrace();
