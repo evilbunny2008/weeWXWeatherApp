@@ -108,7 +108,7 @@ public class Stats
         if(bits.length < 157)
             return;
 
-// Today Stats
+//      Today Stats
         checkFields((TextView)rootView.findViewById(R.id.textView), bits[56]);
         checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54]);
 

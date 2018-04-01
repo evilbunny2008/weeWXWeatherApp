@@ -248,12 +248,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="24sp"/>
+            android:textSize="12sp"/>
 
-        <com.odiousapps.weewxweather.GifImageView
-            android:id="@+id/radar"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"/>
+            android:clipToPadding="false"
+            android:fillViewport="false">
+            <com.odiousapps.weewxweather.GifImageView
+                android:id="@+id/radar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"/>
+        </ScrollView>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

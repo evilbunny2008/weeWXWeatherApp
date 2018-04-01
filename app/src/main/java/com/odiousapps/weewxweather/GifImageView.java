@@ -10,6 +10,7 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.ScrollView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -55,10 +56,12 @@ public class GifImageView extends View
         DisplayMetrics displayMetrics = new DisplayMetrics();
         ((Activity) getContext()).getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         float width = displayMetrics.widthPixels;
+        float height = displayMetrics.heightPixels;
 
-        scale =  width / (float)mMovie.width() * 0.96f;
+        scale =  width / (float)mMovie.width() * 0.95f;
 
         Common.LogMessage("scale="+scale+",mMovie.width="+mMovie.width()+",width="+width);
+        Common.LogMessage("scale="+scale+",mMovie.height="+mMovie.height()+",height="+height);
 
         mWidth = (int)Math.round(mMovie.width() * scale);
         mHeight = (int)Math.round(mMovie.height() * scale);
