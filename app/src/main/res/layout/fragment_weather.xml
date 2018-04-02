@@ -250,17 +250,10 @@
             android:gravity="center"
             android:textSize="12sp"/>
 
-        <ScrollView
+        <WebView
+            android:id="@+id/radar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:fillViewport="false">
-            <com.odiousapps.weewxweather.GifImageView
-                android:id="@+id/radar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:scaleType="fitXY"/>
-        </ScrollView>
+            android:layout_height="match_parent"/>
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

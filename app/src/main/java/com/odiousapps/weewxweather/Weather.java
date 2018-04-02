@@ -11,6 +11,8 @@ import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.webkit.WebSettings;
 import android.widget.TextView;
 
 import java.io.File;
@@ -24,8 +26,7 @@ class Weather
 {
     private Common common;
     private View rootView;
-    //private WebView wv;
-    private GifImageView gif;
+    private WebView wv;
 
     Weather(Common common)
     {
@@ -83,8 +84,8 @@ class Weather
             }
         });
 
-        gif = rootView.findViewById(R.id.radar);
-        gif.setOnLongClickListener(new View.OnLongClickListener()
+        wv = rootView.findViewById(R.id.radar);
+        wv.setOnLongClickListener(new View.OnLongClickListener()
         {
             @Override
             public boolean onLongClick(View v)
@@ -92,16 +93,16 @@ class Weather
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
                 if(vibrator != null)
                     vibrator.vibrate(150);
-                Common.LogMessage("gif long press");
-                reloadWebView();
+                Common.LogMessage("wv long press");
+                loadWebView();
                 return true;
             }
         });
 
-        if(new File(common.context.getFilesDir() + "/radar.gif").exists())
-            gif.setGifFromFile(common.context.getFilesDir() + "/radar.gif");
+        loadWebView();
 
-        reloadWebView();
+        if(!common.GetStringPref("RADAR_URL", "").equals(""))
+            reloadWebView();
 
         Common.LogMessage("weather.java -- adding a new filter");
         IntentFilter filter = new IntentFilter();
@@ -118,13 +119,46 @@ class Weather
             myService.singleton.getWeather();
     }
 
+    private void loadWebView()
+    {
+        String radar = common.context.getFilesDir() + "/radar.gif";
+
+        wv.getSettings().setAppCacheEnabled(false);
+        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        wv.getSettings().setUserAgentString(Common.UA);
+        wv.clearCache(true);
+
+        if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+        {
+            String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
+            wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+            return;
+        }
+
+        String html = "<!DOCTYPE html>\n" +
+                "<html>\n" +
+                "  <head>\n" +
+                "    <meta charset='utf-8'>\n" +
+                "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
+                "  </head>\n" +
+                "  <body>\n" +
+                "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
+                "\tsrc='file://" + radar + "'>\n" +
+                "  </body>\n" +
+                "</html>";
+        wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+    }
+
     private void reloadWebView()
     {
         Common.LogMessage("reload radar...");
         final String radar = common.GetStringPref("RADAR_URL", "");
 
         if(radar.equals(""))
+        {
+            loadWebView();
             return;
+        }
 
 
         Thread t = new Thread(new Runnable()
@@ -138,7 +172,7 @@ class Weather
                     URL url = new URL(radar);
 
                     InputStream ins = url.openStream();
-                    File file = new File(common.context.getFilesDir(), "radar.gif");
+                    File file = new File(common.context.getFilesDir(), "/radar.gif");
                     FileOutputStream out = null;
 
                     try
@@ -187,7 +221,7 @@ class Weather
             try
             {
                 Common.LogMessage(common.context.getFilesDir() + "/radar.gif");
-                gif.setGifFromFile(common.context.getFilesDir() + "/radar.gif");
+                loadWebView();
             } catch (Exception e) {
                 e.printStackTrace();
             }
