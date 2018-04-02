@@ -3,6 +3,7 @@ package com.odiousapps.weewxweather;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
@@ -10,6 +11,7 @@ import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -72,6 +74,9 @@ class Settings implements AdapterView.OnItemSelectedListener
             public void onClick(View arg0)
             {
                 b1.setEnabled(false);
+                InputMethodManager mgr = (InputMethodManager)common.context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                if(mgr != null)
+                    mgr.hideSoftInputFromWindow(et1.getWindowToken(), 0);
 
                 Common.LogMessage("show dialog");
                 dialog = ProgressDialog.show(common.context, "Testing submitted URLs", "Please wait while we verify the URL you submitted.", false);
