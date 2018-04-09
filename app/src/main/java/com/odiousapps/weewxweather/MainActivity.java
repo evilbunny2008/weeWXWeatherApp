@@ -1,15 +1,10 @@
 package com.odiousapps.weewxweather;
 
-import android.Manifest;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.os.Build;
-import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 
 import android.support.v4.app.Fragment;
@@ -22,14 +17,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
     private TabLayout tabLayout;
     private Common common;
-    private static final int REQUEST = 112;
-    private Context mContext = MainActivity.this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)

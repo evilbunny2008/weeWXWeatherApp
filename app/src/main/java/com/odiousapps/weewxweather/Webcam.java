@@ -1,10 +1,8 @@
 package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Bitmap;
@@ -24,7 +22,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.net.UnknownHostException;
 
 class Webcam
 {
@@ -180,7 +177,7 @@ class Webcam
             iv.invalidate();
         }
     };
-
+/*
     @SuppressLint("HandlerLeak")
     private Handler handlerSettings = new Handler()
     {
@@ -199,7 +196,7 @@ class Webcam
                     }).show();
         }
     };
-
+*/
     public void doStop()
     {
         Common.LogMessage("webcam.java -- unregisterReceiver");

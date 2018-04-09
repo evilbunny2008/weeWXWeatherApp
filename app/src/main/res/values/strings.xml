@@ -22,4 +22,11 @@
     <string name="webcam">Webcam Page</string>
     <string name="custom">Custom Screen</string>
     <string name="about">About weeWx Weather App</string>
+    <string name="weather2">Weather</string>
+    <string name="stats2">Statistics</string>
+    <string name="forecast2">Forecast</string>
+    <string name="webcam2">Webcam</string>
+    <string name="custom2">Custom</string>
+    <string name="settings2">Settings</string>
+    <string name="about2">About</string>
 </resources>

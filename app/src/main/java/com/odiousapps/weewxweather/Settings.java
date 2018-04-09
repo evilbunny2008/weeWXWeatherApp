@@ -219,7 +219,7 @@ class Settings implements AdapterView.OnItemSelectedListener
                                 forecast = URLEncoder.encode(forecast, "utf-8");
                                 Common.LogMessage("forecast=" + forecast);
                             } catch (Exception e) {
-                                // TODO: something here
+                                e.printStackTrace();
                             }
 
                             if(cb2.isChecked())
@@ -252,7 +252,7 @@ class Settings implements AdapterView.OnItemSelectedListener
                             }
                         }
 
-                        if (!webcam.equals(""))
+                        if(!webcam.equals(""))
                         {
                             try
                             {
@@ -278,7 +278,7 @@ class Settings implements AdapterView.OnItemSelectedListener
                             }
                         }
 
-                        if (!custom.equals(""))
+                        if (!custom.equals("") && !custom.equals("https://example.com/mobile.html"))
                         {
                             try
                             {
@@ -302,7 +302,8 @@ class Settings implements AdapterView.OnItemSelectedListener
                                 handlerCUSTOM.sendEmptyMessage(0);
                                 return;
                             }
-                        }
+                        } else
+                            custom = "";
 
                         common.SetStringPref("SETTINGS_URL", et1.getText().toString());
                         common.SetIntPref("updateInterval", pos);
