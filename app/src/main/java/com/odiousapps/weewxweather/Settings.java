@@ -122,7 +122,7 @@ class Settings implements AdapterView.OnItemSelectedListener
                             }
                             in.close();
 
-                            String[] bits = sb.toString().trim().split("\\n");
+                            String[] bits = sb.toString().replaceAll("[^\\p{ASCII}]", "").trim().split("\\n");
 
                             for(String bit : bits)
                             {
@@ -356,7 +356,7 @@ class Settings implements AdapterView.OnItemSelectedListener
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
                 .setTitle("Invalid URL")
-                .setMessage("Wasn't able to connect or download settings from your server")
+                .setMessage("Wasn't able to connect or download settings.txt from your server")
                 .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
                 {
                     @Override
@@ -377,7 +377,7 @@ class Settings implements AdapterView.OnItemSelectedListener
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
-                    .setMessage("Wasn't able to connect or download data.txt on your server")
+                    .setMessage("Wasn't able to connect or download data.txt from your server")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
                     {
                         @Override
@@ -398,7 +398,7 @@ class Settings implements AdapterView.OnItemSelectedListener
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
-                    .setMessage("Wasn't able to connect or download radar from your server")
+                    .setMessage("Wasn't able to connect or download radar= image from the internet")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
                     {
                         @Override
@@ -419,7 +419,7 @@ class Settings implements AdapterView.OnItemSelectedListener
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
-                    .setMessage("Wasn't able to connect or download the forecast.")
+                    .setMessage("Wasn't able to connect or download the forecast from Yahoo.")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
                     {
                         @Override
@@ -440,7 +440,7 @@ class Settings implements AdapterView.OnItemSelectedListener
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
-                    .setMessage("Wasn't able to connect or download webcam from your server")
+                    .setMessage("Wasn't able to connect or download a webcam image from your server")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
                     {
                         @Override
@@ -461,7 +461,7 @@ class Settings implements AdapterView.OnItemSelectedListener
             dialog.dismiss();
             new AlertDialog.Builder(common.context)
                     .setTitle("Invalid URL")
-                    .setMessage("Wasn't able to connect or download your custom file from your server")
+                    .setMessage("Wasn't able to connect or download from the custom URL specified")
                     .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
                     {
                         @Override
