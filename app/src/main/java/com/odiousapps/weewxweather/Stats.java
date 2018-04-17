@@ -5,11 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.widget.TextView;
+
+import java.util.Locale;
 
 public class Stats
 {
@@ -100,6 +103,28 @@ public class Stats
             tv.setText(txt);
     }
 
+    private String convert(String cur)
+    {
+    	//cur = "9:34:00 PM";
+	    String[] bits = cur.trim().split(" ");
+
+	    String[] time = bits[0].trim().split(":");
+	    int hours = Integer.parseInt(time[0]);
+	    int mins = Integer.parseInt(time[1]);
+	    int secs = Integer.parseInt(time[2]);
+
+	    boolean pm = bits[1].trim().toLowerCase().equals("pm");
+
+	    Log.i("weeWx", "pm == '" + bits[1] + "'");
+
+	    if(!pm && hours == 12)
+	    	hours = 0;
+	    else if(pm && hours != 12)
+	    	hours = hours + 12;
+
+	    return String.format(Locale.getDefault(), "%02d:%02d:%02d", hours, mins, secs);
+    }
+
     private void updateFields()
     {
         int iw = 17;
@@ -123,23 +148,23 @@ public class Stats
         sb.append("<span style='font-size:18pt;font-weight:bold;'>Today's Statistics</span>");
         sb.append("<table style='width:100%;border:0px;'>");
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='temperature.png'></td><td>" + bits[3] + bits[60] + "</td><td>" + bits[4] +
-                "</td><td>" + bits[2] + "</td><td>" + bits[1]  + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='temperature.png'></td><td>" + bits[3] + bits[60] + "</td><td>" + convert(bits[4]) +
+                "</td><td>" + convert(bits[2]) + "</td><td>" + bits[1]  + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='droplet.png'></td><td>" + bits[15] + bits[60] + "</td><td>" + bits[16] +
-                "</td><td>" + bits[14] + "</td><td>" + bits[13]  + bits[60] + "</td><td><img style='width:"+iw+"px' src='droplet.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='droplet.png'></td><td>" + bits[15] + bits[60] + "</td><td>" + convert(bits[16]) +
+                "</td><td>" + convert(bits[14]) + "</td><td>" + bits[13]  + bits[60] + "</td><td><img style='width:"+iw+"px' src='droplet.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='humidity.png'></td><td>" + bits[9] + bits[64] + "</td><td>" + bits[10] +
-                "</td><td>" + bits[8] + "</td><td>" + bits[6]  + bits[64] + "</td><td><img style='width:"+iw+"px' src='humidity.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='humidity.png'></td><td>" + bits[9] + bits[64] + "</td><td>" + convert(bits[10]) +
+                "</td><td>" + convert(bits[8]) + "</td><td>" + bits[6]  + bits[64] + "</td><td><img style='width:"+iw+"px' src='humidity.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='barometer.png'></td><td>" + bits[39] + bits[63] + "</td><td>" + bits[40] +
-                "</td><td>" + bits[42] + "</td><td>" + bits[41]  + bits[63] + "</td><td><img style='width:"+iw+"px' src='barometer.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='barometer.png'></td><td>" + bits[39] + bits[63] + "</td><td>" + convert(bits[40]) +
+                "</td><td>" + convert(bits[42]) + "</td><td>" + bits[41]  + bits[63] + "</td><td><img style='width:"+iw+"px' src='barometer.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[25] + bits[61] + " " + bits[32] + " " + bits[33] +
+        stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[25] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +
                 "</td><td>" + bits[20] + bits[62] + "</td><td><img style='width:"+iw+"px' src='umbrella.png'></td></tr>";
         sb.append(stmp);
 
@@ -149,23 +174,23 @@ public class Stats
         sb.append("<span style='font-size:18pt;font-weight:bold;'>Yesterday's Statistics</span>");
         sb.append("<table style='width:100%;border:0px;'>");
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='temperature.png'></td><td>" + bits[67] + bits[60] + "</td><td>" + bits[68] +
-                "</td><td>" + bits[66] + "</td><td>" + bits[69]  + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='temperature.png'></td><td>" + bits[67] + bits[60] + "</td><td>" + convert(bits[68]) +
+                "</td><td>" + convert(bits[66]) + "</td><td>" + bits[69]  + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='droplet.png'></td><td>" + bits[78] + bits[60] + "</td><td>" + bits[79] +
-                "</td><td>" + bits[77] + "</td><td>" + bits[76]  + bits[60] + "</td><td><img style='width:"+iw+"px' src='droplet.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='droplet.png'></td><td>" + bits[78] + bits[60] + "</td><td>" + convert(bits[79]) +
+                "</td><td>" + convert(bits[77]) + "</td><td>" + bits[76]  + bits[60] + "</td><td><img style='width:"+iw+"px' src='droplet.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='humidity.png'></td><td>" + bits[82] + bits[64] + "</td><td>" + bits[83] +
-                "</td><td>" + bits[81] + "</td><td>" + bits[80]  + bits[64] + "</td><td><img style='width:"+iw+"px' src='humidity.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='humidity.png'></td><td>" + bits[82] + bits[64] + "</td><td>" + convert(bits[83]) +
+                "</td><td>" + convert(bits[81]) + "</td><td>" + bits[80]  + bits[64] + "</td><td><img style='width:"+iw+"px' src='humidity.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='barometer.png'></td><td>" + bits[84] + bits[63] + "</td><td>" + bits[85] +
-                "</td><td>" + bits[81] + "</td><td>" + bits[86]  + bits[63] + "</td><td><img style='width:"+iw+"px' src='barometer.png'></td></tr>";
+        stmp = "<tr><td><img style='width:"+iw+"px' src='barometer.png'></td><td>" + bits[84] + bits[63] + "</td><td>" + convert(bits[85]) +
+                "</td><td>" + convert(bits[87]) + "</td><td>" + bits[86]  + bits[63] + "</td><td><img style='width:"+iw+"px' src='barometer.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[69] + bits[61] + " " + bits[70] + " " + bits[71] +
+        stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[69] + bits[61] + " " + bits[70] + " " + convert(bits[71]) +
                 "</td><td>" + bits[21] + bits[62] + "</td><td><img style='width:"+iw+"px' src='umbrella.png'></td></tr>";
         sb.append(stmp);
 
