@@ -6,8 +6,8 @@ android {
         applicationId "com.odiousapps.weewxweather"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 2015
-        versionName "0.2.15"
+        versionCode 2016
+        versionName "0.2.16"
     }
     buildTypes {
         release {

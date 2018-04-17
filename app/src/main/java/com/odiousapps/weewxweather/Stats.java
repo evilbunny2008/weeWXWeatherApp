@@ -162,7 +162,7 @@ public class Stats
         sb.append(stmp);
 
         stmp = "<tr><td><img style='width:"+iw+"px' src='barometer.png'></td><td>" + bits[84] + bits[63] + "</td><td>" + bits[85] +
-                "</td><td>" + bits[81] + "</td><td>" + bits[80]  + bits[63] + "</td><td><img style='width:"+iw+"px' src='barometer.png'></td></tr>";
+                "</td><td>" + bits[81] + "</td><td>" + bits[86]  + bits[63] + "</td><td><img style='width:"+iw+"px' src='barometer.png'></td></tr>";
         sb.append(stmp);
 
         stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[69] + bits[61] + " " + bits[70] + " " + bits[71] +
