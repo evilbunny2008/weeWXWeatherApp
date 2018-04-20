@@ -35,7 +35,7 @@ public class Stats
             {
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
                 if(vibrator != null)
-                    vibrator.vibrate(150);
+                    vibrator.vibrate(250);
                 Common.LogMessage("rootview long press");
                 forceRefresh();
                 return true;
@@ -43,19 +43,21 @@ public class Stats
         });
 
         wv = rootView.findViewById(R.id.webView1);
-        wv.setOnLongClickListener(new View.OnLongClickListener()
+	    wv.getSettings().setUserAgentString(Common.UA);
+	    wv.setOnLongClickListener(new View.OnLongClickListener()
         {
             @Override
             public boolean onLongClick(View v)
             {
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
                 if(vibrator != null)
-                    vibrator.vibrate(150);
+                    vibrator.vibrate(250);
                 Common.LogMessage("webview long press");
                 forceRefresh();
                 return true;
             }
         });
+
         updateFields();
 
         IntentFilter filter = new IntentFilter();
@@ -107,6 +109,9 @@ public class Stats
     {
     	//cur = "9:34:00 PM";
 	    String[] bits = cur.trim().split(" ");
+
+	    if(bits.length < 2)
+	    	return cur;
 
 	    String[] time = bits[0].trim().split(":");
 	    int hours = Integer.parseInt(time[0]);

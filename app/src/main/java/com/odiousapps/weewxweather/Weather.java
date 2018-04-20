@@ -77,7 +77,7 @@ class Weather
             {
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
                 if(vibrator != null)
-                    vibrator.vibrate(150);
+                    vibrator.vibrate(250);
                 Common.LogMessage("rootview long press");
                 forceRefresh();
                 return true;
@@ -85,6 +85,7 @@ class Weather
         });
 
         wv = rootView.findViewById(R.id.radar);
+	    wv.getSettings().setUserAgentString(Common.UA);
         wv.setOnLongClickListener(new View.OnLongClickListener()
         {
             @Override
@@ -92,7 +93,7 @@ class Weather
             {
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
                 if(vibrator != null)
-                    vibrator.vibrate(150);
+                    vibrator.vibrate(250);
                 Common.LogMessage("wv long press");
                 loadWebView();
                 return true;

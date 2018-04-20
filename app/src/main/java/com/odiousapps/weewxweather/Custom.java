@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -22,18 +23,21 @@ class Custom
         this.common = common;
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     View myCustom(LayoutInflater inflater, ViewGroup container)
     {
         View rootView = inflater.inflate(R.layout.fragment_custom, container, false);
         wv = rootView.findViewById(R.id.custom);
-        wv.setOnLongClickListener(new View.OnLongClickListener()
+        wv.getSettings().setUserAgentString(Common.UA);
+	    wv.getSettings().setJavaScriptEnabled(true);
+	    wv.setOnLongClickListener(new View.OnLongClickListener()
         {
             @Override
             public boolean onLongClick(View v)
             {
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
                 if(vibrator != null)
-                    vibrator.vibrate(150);
+                    vibrator.vibrate(250);
                 Common.LogMessage("long press");
                 reloadWebView();
                 return true;

@@ -18,7 +18,7 @@ class Common
 
     Common(Context c)
     {
-        System.setProperty ("http.agent", UA);
+        System.setProperty("http.agent", UA);
         this.context = c;
     }
 
