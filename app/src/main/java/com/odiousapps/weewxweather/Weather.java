@@ -160,7 +160,7 @@ class Weather
             loadWebView();
             return;
         }
-        
+
         Thread t = new Thread(new Runnable()
         {
             @Override
