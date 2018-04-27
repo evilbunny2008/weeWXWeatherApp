@@ -115,9 +115,9 @@ class Webcam
 
                             Common.LogMessage("trying to set bm");
                             bm = mr.bm;
-                        } catch (Exception e)
-                        {
+                        } catch (Exception e) {
                             e.printStackTrace();
+                            return;
                         }
                     } else {
                         InputStream is = url.openStream();

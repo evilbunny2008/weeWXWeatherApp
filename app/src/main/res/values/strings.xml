@@ -6,7 +6,7 @@
     <string name="fileURI">Enter the URI to your settings.txt.</string>
     <string name="refresh_time">Choose Refresh Time</string>
     <string name="save_settings">Save Settings</string>
-    <string name="refresh">Refresh</string>
+    <string name="refresh">Manual Refresh</string>
     <string name="empty">Empty</string>
     <string name="today">Today Stats</string>
     <string name="radarURI">Enter the radar.html address (optional)</string>

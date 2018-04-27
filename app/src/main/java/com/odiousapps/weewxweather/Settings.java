@@ -6,6 +6,9 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.os.Handler;
 import android.os.Message;
 import android.view.LayoutInflater;
@@ -20,9 +23,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -32,7 +38,8 @@ class Settings implements AdapterView.OnItemSelectedListener
 {
     private Common common;
     private EditText et1;
-    private Button b1;
+	private Button b1;
+	private Button b2;
 
     private ProgressDialog dialog;
 
@@ -52,8 +59,8 @@ class Settings implements AdapterView.OnItemSelectedListener
         et1.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/settings.txt"));
 
         Spinner s1 = rootView.findViewById(R.id.spinner1);
-        ArrayAdapter<String>adapter = new ArrayAdapter<>(common.context, android.R.layout.simple_spinner_item, paths);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter<String>adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
+        adapter.setDropDownViewResource(R.layout.spinner_layout);
         s1.setAdapter(adapter);
         s1.setSelection(common.GetIntPref("updateInterval", 1));
         s1.setOnItemSelectedListener(this);
@@ -67,6 +74,163 @@ class Settings implements AdapterView.OnItemSelectedListener
         CheckBox cb2 = rootView.findViewById(R.id.cb2);
         if(!metric)
             cb2.setChecked(false);
+
+	    b2 = rootView.findViewById(R.id.refresh);
+	    b2.setOnClickListener(new View.OnClickListener()
+		{
+			public void onClick(View arg0)
+			{
+				b2.setEnabled(false);
+				dialog = ProgressDialog.show(common.context, "Updating data", "Please wait while we manually refresh weather content.", false);
+				dialog.show();
+
+				Thread t = new Thread(new Runnable()
+				{
+					@Override
+					public void run()
+					{
+						try
+						{
+							URL url = new URL(common.GetStringPref("BASE_URL", ""));
+							HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+							urlConnection.setRequestMethod("GET");
+							urlConnection.setDoOutput(true);
+							urlConnection.connect();
+
+							BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+
+							StringBuilder sb = new StringBuilder();
+							String line;
+							while ((line = in.readLine()) != null)
+								sb.append(line);
+							in.close();
+
+							String radar = common.GetStringPref("RADAR_URL", "");
+							if(!radar.equals(""))
+							{
+								Common.LogMessage("starting to download image from: " + radar);
+								url = new URL(radar);
+
+								InputStream ins = url.openStream();
+								File file = new File(common.context.getFilesDir(), "/radar.gif");
+								FileOutputStream out = null;
+
+								try
+								{
+									out = new FileOutputStream(file);
+									final byte[] b = new byte[2048];
+									int length;
+									while ((length = ins.read(b)) != -1)
+										out.write(b, 0, length);
+								} catch (Exception e) {
+									e.printStackTrace();
+								} finally {
+									try
+									{
+										if (ins != null)
+											ins.close();
+										if (out != null)
+											out.close();
+									} catch (IOException e)
+									{
+										e.printStackTrace();
+									}
+								}
+							}
+
+							common.SetStringPref("LastDownload", sb.toString().trim());
+							String rss = common.GetStringPref("FORECAST_URL", "");
+							if(!rss.equals(""))
+							{
+								int curtime = Math.round(System.currentTimeMillis() / 1000);
+								url = new URL(rss);
+								URLConnection conn = url.openConnection();
+								conn.setDoOutput(true);
+								conn.connect();
+
+								in = new BufferedReader(new InputStreamReader(url.openStream()));
+
+								sb = new StringBuilder();
+								while ((line = in.readLine()) != null)
+								{
+									line += "\n";
+									sb.append(line);
+								}
+								in.close();
+
+								Common.LogMessage("updating rss cache");
+								common.SetIntPref("rssCheck", curtime);
+								common.SetStringPref("forecastData", sb.toString().trim());
+							}
+
+							String webURL = common.GetStringPref("WEBCAM_URL", "");
+							if(!webURL.equals(""))
+							{
+								Bitmap bm;
+								Common.LogMessage("starting to download bitmap from: " + webURL);
+								url = new URL(webURL);
+								if (webURL.endsWith("mjpeg") || webURL.endsWith("mjpg"))
+								{
+									MjpegRunner mr = new MjpegRunner(url);
+									mr.run();
+
+									try
+									{
+										while (mr.bm == null)
+											Thread.sleep(1000);
+
+										Common.LogMessage("trying to set bm");
+										bm = mr.bm;
+									} catch (Exception e) {
+										e.printStackTrace();
+										return;
+									}
+								} else {
+									InputStream is = url.openStream();
+									bm = BitmapFactory.decodeStream(is);
+								}
+
+								int width = bm.getWidth();
+								int height = bm.getHeight();
+
+								Matrix matrix = new Matrix();
+								matrix.postRotate(90);
+
+								Bitmap scaledBitmap = Bitmap.createScaledBitmap(bm, width, height, true);
+								bm = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+
+								FileOutputStream out = null;
+								File file = new File(common.context.getFilesDir(), "webcam.jpg");
+
+								try
+								{
+									out = new FileOutputStream(file);
+									bm.compress(Bitmap.CompressFormat.JPEG, 85, out); // bmp is your Bitmap instance
+								} catch (Exception e) {
+									e.printStackTrace();
+								} finally {
+									try
+									{
+										if (out != null)
+											out.close();
+									} catch (IOException e) {
+										e.printStackTrace();
+									}
+								}
+							}
+
+							myService.singleton.SendIntents();
+						} catch (Exception e) {
+							Common.LogMessage(e.toString());
+						}
+
+						handlerDone.sendEmptyMessage(0);
+					}
+				});
+
+				t.start();
+			}
+		});
 
         b1 = rootView.findViewById(R.id.button);
         b1.setOnClickListener(new View.OnClickListener()

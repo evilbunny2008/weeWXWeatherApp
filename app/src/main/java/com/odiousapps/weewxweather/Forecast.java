@@ -114,7 +114,7 @@ public class Forecast
         getForecast();
     }
 
-    private void getForecast()
+    void getForecast()
     {
         final String rss = common.GetStringPref("FORECAST_URL", "");
         if(rss.equals(""))

@@ -160,8 +160,7 @@ class Weather
             loadWebView();
             return;
         }
-
-
+        
         Thread t = new Thread(new Runnable()
         {
             @Override
@@ -183,11 +182,9 @@ class Weather
                         int length;
                         while ((length = ins.read(b)) != -1)
                             out.write(b, 0, length);
-                    } catch (Exception e)
-                    {
+                    } catch (Exception e) {
                         e.printStackTrace();
-                    } finally
-                    {
+                    } finally {
                         try
                         {
                             if (ins != null)
