@@ -132,7 +132,12 @@ class Custom
     public void doStop()
     {
         Common.LogMessage("custom.java -- unregisterReceiver");
-        common.context.unregisterReceiver(serviceReceiver);
+        try
+        {
+	        common.context.unregisterReceiver(serviceReceiver);
+        } catch (Exception e) {
+	        Common.LogMessage("already unregistered");
+        }
     }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
