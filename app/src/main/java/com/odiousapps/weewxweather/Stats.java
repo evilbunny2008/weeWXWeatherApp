@@ -5,10 +5,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Vibrator;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.webkit.WebView;
 import android.widget.TextView;
 
@@ -42,6 +44,19 @@ public class Stats
             }
         });
 
+	    final SwipeRefreshLayout swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+	    swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+	    {
+		    @Override
+		    public void onRefresh()
+		    {
+			    swipeLayout.setRefreshing(true);
+			    Common.LogMessage("onRefresh();");
+			    forceRefresh();
+			    swipeLayout.setRefreshing(false);
+		    }
+	    });
+
         wv = rootView.findViewById(R.id.webView1);
 	    wv.getSettings().setUserAgentString(Common.UA);
 	    wv.setOnLongClickListener(new View.OnLongClickListener()
@@ -58,7 +73,18 @@ public class Stats
             }
         });
 
-        updateFields();
+	    wv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+		    @Override
+		    public void onScrollChanged() {
+			    if (wv.getScrollY() == 0) {
+				    swipeLayout.setEnabled(true);
+			    } else {
+				    swipeLayout.setEnabled(false);
+			    }
+		    }
+	    });
+
+	    updateFields();
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(myService.UPDATE_INTENT);

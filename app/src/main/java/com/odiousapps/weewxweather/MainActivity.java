@@ -233,12 +233,9 @@ public class MainActivity extends AppCompatActivity
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 7) {
                 about = new About();
                 return about.myAbout(inflater, container);
-            } else {
-                View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-                TextView textView = rootView.findViewById(R.id.section_label);
-                textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
-                return rootView;
             }
+
+            return null;
         }
     }
 

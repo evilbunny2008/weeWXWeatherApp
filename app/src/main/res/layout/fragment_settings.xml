@@ -33,7 +33,7 @@
             android:ems="10"
             android:hint="@string/fileURI"
             android:inputType="textUri"
-            android:textSize="24sp"/>
+            android:textSize="18sp"/>
 
         <TextView
             android:layout_width="match_parent"

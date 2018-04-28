@@ -8,6 +8,7 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,6 +84,20 @@ class Weather
                 return true;
             }
         });
+
+	    final SwipeRefreshLayout swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+	    swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+	    {
+		    @Override
+		    public void onRefresh()
+		    {
+		    	swipeLayout.setRefreshing(true);
+		    	Common.LogMessage("onRefresh();");
+			    forceRefresh();
+			    reloadWebView();
+			    swipeLayout.setRefreshing(false);
+		    }
+	    });
 
         wv = rootView.findViewById(R.id.radar);
 	    wv.getSettings().setUserAgentString(Common.UA);

@@ -6,10 +6,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Vibrator;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -17,6 +19,7 @@ class Custom
 {
     private Common common;
     private WebView wv;
+	private SwipeRefreshLayout swipeLayout;
 
     Custom(Common common)
     {
@@ -43,6 +46,33 @@ class Custom
                 return true;
             }
         });
+
+	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+	    swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+	    {
+		    @Override
+		    public void onRefresh()
+		    {
+			    swipeLayout.setRefreshing(true);
+			    Common.LogMessage("onRefresh();");
+			    reloadWebView();
+			    swipeLayout.setRefreshing(false);
+		    }
+	    });
+
+	    wv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
+	    {
+		    @Override
+		    public void onScrollChanged()
+		    {
+			    if (wv.getScrollY() == 0)
+			    {
+				    swipeLayout.setEnabled(true);
+			    } else {
+				    swipeLayout.setEnabled(false);
+			    }
+		    }
+	    });
 
         wv.setWebViewClient(new WebViewClient()
         {

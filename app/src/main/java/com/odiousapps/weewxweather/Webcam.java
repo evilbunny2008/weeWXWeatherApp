@@ -12,6 +12,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +29,7 @@ class Webcam
     private Common common;
     private ImageView iv;
     private Bitmap bm;
+    private SwipeRefreshLayout swipeLayout;
 
     Webcam(Common common)
     {
@@ -52,6 +54,18 @@ class Webcam
                 return true;
             }
         });
+
+	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+	    swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+	    {
+		    @Override
+		    public void onRefresh()
+		    {
+			    swipeLayout.setRefreshing(true);
+			    Common.LogMessage("onRefresh();");
+			    reloadWebView();
+		    }
+	    });
 
         reloadWebView();
 
@@ -175,6 +189,7 @@ class Webcam
         {
             iv.setImageBitmap(bm);
             iv.invalidate();
+	        swipeLayout.setRefreshing(false);
         }
     };
 /*

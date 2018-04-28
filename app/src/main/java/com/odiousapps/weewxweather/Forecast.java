@@ -8,9 +8,11 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.webkit.WebView;
 import android.widget.TextView;
 
@@ -30,6 +32,7 @@ public class Forecast
     private Common common;
     private View rootView;
     private WebView wv;
+    private SwipeRefreshLayout swipeLayout;
 
     Forecast(Common common)
     {
@@ -53,6 +56,18 @@ public class Forecast
             }
         });
 
+	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+	    swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+	    {
+		    @Override
+		    public void onRefresh()
+		    {
+			    swipeLayout.setRefreshing(true);
+			    Common.LogMessage("onRefresh();");
+			    forceRefresh();
+		    }
+	    });
+
         wv = rootView.findViewById(R.id.webView1);
 	    wv.getSettings().setUserAgentString(Common.UA);
         wv.setOnLongClickListener(new View.OnLongClickListener()
@@ -68,6 +83,20 @@ public class Forecast
                 return true;
             }
         });
+
+	    wv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
+	    {
+		    @Override
+		    public void onScrollChanged()
+		    {
+			    if (wv.getScrollY() == 0)
+			    {
+				    swipeLayout.setEnabled(true);
+			    } else {
+				    swipeLayout.setEnabled(false);
+			    }
+		    }
+	    });
 
         getForecast();
 
@@ -131,7 +160,8 @@ public class Forecast
 
                     if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 3600 < curtime)
                     {
-                        generateForecast();
+                    	if(!common.GetStringPref("forecastData", "").equals(""))
+                            generateForecast();
 
                         Common.LogMessage("no forecast data or cache is more than 3 hour old");
                         URL url = new URL(rss);
@@ -181,7 +211,16 @@ public class Forecast
         try
         {
             Common.LogMessage("getting json data");
-            json = new JSONObject(common.GetStringPref("forecastData", ""));
+            String data;
+
+	        data = common.GetStringPref("forecastData", "");
+            while(data.equals(""))
+            {
+            	Thread.sleep(1000);
+	            data = common.GetStringPref("forecastData", "");
+            }
+
+            json = new JSONObject(data);
 
             Common.LogMessage("starting JSON Parsing");
 
@@ -285,5 +324,6 @@ public class Forecast
 
         TextView tv1 = rootView.findViewById(R.id.forecast);
         tv1.setText(desc.substring(19));
+	    swipeLayout.setRefreshing(false);
     }
 }
