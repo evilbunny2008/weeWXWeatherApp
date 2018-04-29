@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -26,6 +27,7 @@ import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class Forecast
 {
@@ -211,107 +213,154 @@ public class Forecast
 
     private void generateForecast()
     {
-        JSONObject json;
+        Common.LogMessage("getting json data");
+        String data = "";
+        String fctype = common.GetStringPref("fctype", "Yahoo");
 
         try
         {
-            Common.LogMessage("getting json data");
-            String data;
-
 	        data = common.GetStringPref("forecastData", "");
-            while(data.equals(""))
-            {
-            	Thread.sleep(1000);
-	            data = common.GetStringPref("forecastData", "");
-            }
-
-            json = new JSONObject(data);
-
-            Common.LogMessage("starting JSON Parsing");
-
-            JSONObject query = json.getJSONObject("query");
-            JSONObject results = query.getJSONObject("results");
-            JSONObject channel = results.getJSONObject("channel");
-            JSONObject item = channel.getJSONObject("item");
-            JSONObject units = channel.getJSONObject("units");
-            String temp = units.getString("temperature");
-            final String desc = channel.getString("description");
-            JSONArray forecast = item.getJSONArray("forecast");
-            Common.LogMessage("ended JSON Parsing");
-
-            StringBuilder str = new StringBuilder();
-
-            Calendar calendar = Calendar.getInstance();
-            int hour = calendar.get(Calendar.HOUR_OF_DAY);
-
-            int start = 0;
-            if(hour >= 15)
-                start = 1;
-
-            JSONObject tmp = forecast.getJSONObject(start);
-            int code = tmp.getInt("code");
-            String stmp;
-
-            @SuppressLint("SimpleDateFormat")
-            SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm");
-            long rssCheck = common.GetIntPref("rssCheck", 0);
-            rssCheck *= 1000;
-            Date resultdate = new Date(rssCheck);
-
-
-            stmp = "<table style='width:100%;border:0px;'>";
-            str.append(stmp);
-            stmp = "<tr><td style='width:50%;font-size:16pt;'>" + tmp.getString("date") + "</td>";
-            str.append(stmp);
-            stmp = "<td style='width:50%;text-align:right;' rowspan='2'><img width='80px' src='file:///android_res/drawable/yahoo"+code+"'><br/>" +
-                    sdf.format(resultdate) + "</td></tr>";
-            str.append(stmp);
-
-            stmp = "<tr><td style='width:50%;font-size:48pt;'>" + tmp.getString("high") + "&deg;" + temp + "</td></tr>";
-            str.append(stmp);
-
-            stmp = "<tr><td style='font-size:16pt;'>" + tmp.getString("low") + "&deg;" + temp + "</td>";
-            str.append(stmp);
-
-            stmp = "<td style='text-align:right;font-size:16pt;'>" + tmp.getString("text") + "</td></tr></table><br>";
-            str.append(stmp);
-
-            stmp = "<table style='width:100%;border:0px;'>";
-            str.append(stmp);
-
-            for (int i = start + 1; i <= start + 5; i++)
-            {
-                tmp = forecast.getJSONObject(i);
-                code = tmp.getInt("code");
-
-                stmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/yahoo"+code+"'></td>";
-                str.append(stmp);
-
-                stmp = "<td style='width:45%;'><b>" + tmp.getString("day") + ", " + tmp.getString("date") + "</b></td>";
-                str.append(stmp);
-
-                stmp = "<td style='width:45%;text-align:right;'><b>" + tmp.getString("high") + "&deg;" + temp + "</b></td></tr>";
-                str.append(stmp);
-
-                stmp = "<tr><td>" + tmp.getString("text") + "</td>";
-                str.append(stmp);
-
-                stmp = "<td style='text-align:right;'>" + tmp.getString("low") + "&deg;" + temp + "</td></tr>";
-                str.append(stmp);
-
-                stmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-                str.append(stmp);
-            }
-
-            stmp = "</table>";
-            str.append(stmp);
-
-            Common.LogMessage("finished building forecast: " + str.toString());
-            updateForecast(str.toString(), desc);
+	        while (data.equals(""))
+	        {
+		        Thread.sleep(1000);
+		        data = common.GetStringPref("forecastData", "");
+	        }
         } catch (Exception e) {
-            //Common.LogMessage("Error parsing data " + e.toString());
-            e.printStackTrace();
+        	e.printStackTrace();
+        	return;
         }
+
+	    if(fctype.toLowerCase().equals("yahoo"))
+		    doYahoo(data);
+	    else if(fctype.toLowerCase().equals("weatherzone"))
+		    doWZ(data);
+    }
+
+	private void doWZ(String data)
+	{
+		try
+		{
+			StringBuilder str = new StringBuilder();
+			String stmp = "", desc = "", content = "", pubDate = "";
+
+			String[] bits = data.split("<title>");
+			if(bits.length >= 2)
+				desc = bits[1].split("</title>")[0].trim();
+
+			bits = data.split("<description>");
+			if(bits.length >= 3)
+			{
+				String s = bits[2].split("</description>")[0];
+				content = s.substring(9, s.length() - 4).trim();
+			}
+
+			bits = data.split("<pubDate>");
+			if(bits.length >= 2)
+				pubDate = bits[1].split("</pubDate>")[0].trim();
+
+			SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
+			long mdate = sdf.parse(pubDate).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			pubDate = sdf.format(mdate);
+			content = "<div style='font-size:16pt;'>" + pubDate + "</div><br/><br/>" + content;
+
+			updateForecast(content, desc);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+    private void doYahoo(String data)
+    {
+	    JSONObject json;
+
+    	try
+	    {
+		    json = new JSONObject(data);
+
+		    Common.LogMessage("starting JSON Parsing");
+
+		    JSONObject query = json.getJSONObject("query");
+		    JSONObject results = query.getJSONObject("results");
+		    JSONObject channel = results.getJSONObject("channel");
+		    JSONObject item = channel.getJSONObject("item");
+		    JSONObject units = channel.getJSONObject("units");
+		    String temp = units.getString("temperature");
+		    final String desc = channel.getString("description").substring(19);
+		    JSONArray forecast = item.getJSONArray("forecast");
+		    Common.LogMessage("ended JSON Parsing");
+
+		    StringBuilder str = new StringBuilder();
+
+		    Calendar calendar = Calendar.getInstance();
+		    int hour = calendar.get(Calendar.HOUR_OF_DAY);
+
+		    int start = 0;
+		    if (hour >= 15)
+			    start = 1;
+
+		    JSONObject tmp = forecast.getJSONObject(start);
+		    int code = tmp.getInt("code");
+		    String stmp;
+
+		    SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+		    long rssCheck = common.GetIntPref("rssCheck", 0);
+		    rssCheck *= 1000;
+		    Date resultdate = new Date(rssCheck);
+
+
+		    stmp = "<table style='width:100%;border:0px;'>";
+		    str.append(stmp);
+		    stmp = "<tr><td style='width:50%;font-size:16pt;'>" + tmp.getString("date") + "</td>";
+		    str.append(stmp);
+		    stmp = "<td style='width:50%;text-align:right;' rowspan='2'><img width='80px' src='file:///android_res/drawable/yahoo" + code + "'><br/>" +
+				    sdf.format(resultdate) + "</td></tr>";
+		    str.append(stmp);
+
+		    stmp = "<tr><td style='width:50%;font-size:48pt;'>" + tmp.getString("high") + "&deg;" + temp + "</td></tr>";
+		    str.append(stmp);
+
+		    stmp = "<tr><td style='font-size:16pt;'>" + tmp.getString("low") + "&deg;" + temp + "</td>";
+		    str.append(stmp);
+
+		    stmp = "<td style='text-align:right;font-size:16pt;'>" + tmp.getString("text") + "</td></tr></table><br>";
+		    str.append(stmp);
+
+		    stmp = "<table style='width:100%;border:0px;'>";
+		    str.append(stmp);
+
+		    for (int i = start + 1; i <= start + 5; i++)
+		    {
+			    tmp = forecast.getJSONObject(i);
+			    code = tmp.getInt("code");
+
+			    stmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/yahoo" + code + "'></td>";
+			    str.append(stmp);
+
+			    stmp = "<td style='width:45%;'><b>" + tmp.getString("day") + ", " + tmp.getString("date") + "</b></td>";
+			    str.append(stmp);
+
+			    stmp = "<td style='width:45%;text-align:right;'><b>" + tmp.getString("high") + "&deg;" + temp + "</b></td></tr>";
+			    str.append(stmp);
+
+			    stmp = "<tr><td>" + tmp.getString("text") + "</td>";
+			    str.append(stmp);
+
+			    stmp = "<td style='text-align:right;'>" + tmp.getString("low") + "&deg;" + temp + "</td></tr>";
+			    str.append(stmp);
+
+			    stmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+			    str.append(stmp);
+		    }
+
+		    stmp = "</table>";
+		    str.append(stmp);
+
+		    Common.LogMessage("finished building forecast: " + str.toString());
+		    updateForecast(str.toString(), desc);
+	    } catch (Exception e) {
+    		e.printStackTrace();
+	    }
     }
 
     private void updateForecast(String bits, String desc)
@@ -328,7 +377,17 @@ public class Forecast
         });
 
         TextView tv1 = rootView.findViewById(R.id.forecast);
-        tv1.setText(desc.substring(19));
+        tv1.setText(desc);
+
+	    ImageView im = rootView.findViewById(R.id.logo);
+	    if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("yahoo"))
+	    {
+
+		    im.setImageResource(R.drawable.purple);
+	    } else if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("weatherzone")) {
+	        im.setImageResource(R.drawable.wz);
+        }
+
 	    swipeLayout.setRefreshing(false);
     }
 }

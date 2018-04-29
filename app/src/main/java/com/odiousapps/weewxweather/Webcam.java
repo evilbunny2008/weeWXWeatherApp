@@ -28,7 +28,7 @@ class Webcam
 {
     private Common common;
     private ImageView iv;
-    private Bitmap bm;
+    private static Bitmap bm;
     private SwipeRefreshLayout swipeLayout;
 
     Webcam(Common common)
@@ -113,72 +113,78 @@ class Webcam
             @Override
             public void run()
             {
-                try
-                {
-                    Common.LogMessage("starting to download bitmap from: " + webURL);
-                    URL url = new URL(webURL);
-                    if(webURL.substring(webURL.length() - 5).equals("mjpeg") || webURL.substring(webURL.length() - 4).equals("mjpg"))
-                    {
-                        MjpegRunner mr = new MjpegRunner(url);
-                        mr.run();
-
-                        try
-                        {
-                            while (mr.bm == null)
-                                Thread.sleep(1000);
-
-                            Common.LogMessage("trying to set bm");
-                            bm = mr.bm;
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            return;
-                        }
-                    } else {
-                        InputStream is = url.openStream();
-                        bm = BitmapFactory.decodeStream(is);
-                    }
-
-                    int width = bm.getWidth();
-                    int height = bm.getHeight();
-
-                    Matrix matrix = new Matrix();
-                    matrix.postRotate(90);
-
-                    Bitmap scaledBitmap = Bitmap.createScaledBitmap(bm,width,height,true);
-                    bm = Bitmap.createBitmap(scaledBitmap , 0, 0, scaledBitmap .getWidth(), scaledBitmap .getHeight(), matrix, true);
-
-                    FileOutputStream out = null;
-                    File file = new File(common.context.getFilesDir(), "webcam.jpg");
-
-                    try
-                    {
-                        out = new FileOutputStream(file);
-                        bm.compress(Bitmap.CompressFormat.JPEG, 85, out); // bmp is your Bitmap instance
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    } finally {
-                        try
-                        {
-                            if (out != null)
-                                out.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    Common.LogMessage("done downloading, prompt handler to draw to iv");
+				Common.LogMessage("done downloading, prompt handler to draw to iv");
+	            if(downloadWebcam(webURL, common.context.getFilesDir()))
+	                handlerDone.sendEmptyMessage(0);
+	            else
                     handlerDone.sendEmptyMessage(0);
-//                } catch (UnknownHostException e) {
-//                    e.printStackTrace();
-//                    handlerSettings.sendEmptyMessage(0);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    handlerDone.sendEmptyMessage(0);
-                }
             }
         });
 
         t.start();
+    }
+
+    static boolean downloadWebcam(String webURL, File getFiles)
+    {
+    	try
+	    {
+		    Common.LogMessage("starting to download bitmap from: " + webURL);
+		    URL url = new URL(webURL);
+		    if (webURL.substring(webURL.length() - 5).equals("mjpeg") || webURL.substring(webURL.length() - 4).equals("mjpg"))
+		    {
+			    MjpegRunner mr = new MjpegRunner(url);
+			    mr.run();
+
+			    try
+			    {
+				    while (mr.bm == null)
+					    Thread.sleep(1000);
+
+				    Common.LogMessage("trying to set bm");
+				    bm = mr.bm;
+			    } catch (Exception e) {
+				    e.printStackTrace();
+				    return false;
+			    }
+		    } else {
+			    InputStream is = url.openStream();
+			    bm = BitmapFactory.decodeStream(is);
+		    }
+
+		    int width = bm.getWidth();
+		    int height = bm.getHeight();
+
+		    Matrix matrix = new Matrix();
+		    matrix.postRotate(90);
+
+		    Bitmap scaledBitmap = Bitmap.createScaledBitmap(bm, width, height, true);
+		    bm = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
+
+		    FileOutputStream out = null;
+		    File file = new File(getFiles, "webcam.jpg");
+
+		    try
+		    {
+			    out = new FileOutputStream(file);
+			    bm.compress(Bitmap.CompressFormat.JPEG, 85, out); // bmp is your Bitmap instance
+		    } catch (Exception e) {
+			    e.printStackTrace();
+			    return false;
+		    } finally {
+			    try
+			    {
+				    if (out != null)
+					    out.close();
+			    } catch (IOException e) {
+				    e.printStackTrace();
+			    }
+		    }
+
+		    return true;
+	    } catch (Exception e) {
+    		e.printStackTrace();
+    		return false;
+	    }
     }
 
     @SuppressLint("HandlerLeak")

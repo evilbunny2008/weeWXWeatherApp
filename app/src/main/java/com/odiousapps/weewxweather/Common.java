@@ -30,7 +30,7 @@ class Common
     static void LogMessage(String value, boolean showAnyway)
     {
         if(debug_on || showAnyway)
-            Log.i("WeeWx Weather", "message='" + value + "'");
+            Log.i("weeWx Weather", "message='" + value + "'");
     }
 
     void SetStringPref(String name, String value)
