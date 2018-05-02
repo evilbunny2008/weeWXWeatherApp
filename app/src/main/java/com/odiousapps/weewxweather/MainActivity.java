@@ -16,8 +16,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.TextView;
-
 public class MainActivity extends AppCompatActivity
 {
     private TabLayout tabLayout;
@@ -66,10 +64,18 @@ public class MainActivity extends AppCompatActivity
         {
             moveTaskToBack(true);
         } else {
-            stopService(new Intent(this, myService.class));
-            unregisterReceiver(serviceReceiver);
             finish();
         }
+    }
+
+    @Override
+    public void onDestroy()
+    {
+	    super.onDestroy();
+
+	    stopService(new Intent(this, myService.class));
+	    unregisterReceiver(serviceReceiver);
+	    System.exit(0);
     }
 
     @Override

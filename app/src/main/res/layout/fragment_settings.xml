@@ -81,5 +81,11 @@
             android:text="@string/save_settings"
             android:textSize="18sp"/>
 
+        <Button
+            android:id="@+id/deleteData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/delete_all_data"
+            android:textSize="18sp"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

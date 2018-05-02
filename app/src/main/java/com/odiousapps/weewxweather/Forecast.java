@@ -1,6 +1,7 @@
 package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -35,8 +36,9 @@ public class Forecast
     private View rootView;
     private WebView wv;
     private SwipeRefreshLayout swipeLayout;
+	private ProgressDialog dialog;
 
-    Forecast(Common common)
+	Forecast(Common common)
     {
         this.common = common;
     }
@@ -100,12 +102,12 @@ public class Forecast
 		    }
 	    });
 
-        getForecast();
+	    IntentFilter filter = new IntentFilter();
+	    filter.addAction(myService.UPDATE_INTENT);
+	    filter.addAction(myService.EXIT_INTENT);
+	    common.context.registerReceiver(serviceReceiver, filter);
 
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(myService.UPDATE_INTENT);
-        filter.addAction(myService.EXIT_INTENT);
-        common.context.registerReceiver(serviceReceiver, filter);
+	    getForecast();
 
         return rootView;
     }
@@ -150,13 +152,24 @@ public class Forecast
         getForecast();
     }
 
-    void getForecast()
+    private void getForecast()
     {
         final String rss = common.GetStringPref("FORECAST_URL", "");
         if(rss.equals(""))
-            wv.loadDataWithBaseURL(null, "<html><body>Forecast URL not set, go to settings to change</body></html>", "text/html", "utf-8", null);
+        {
+	        wv.loadDataWithBaseURL(null, "<html><body>Forecast URL not set, go to settings to change</body></html>", "text/html", "utf-8", null);
+	        return;
+        }
 
-        Thread t = new Thread(new Runnable()
+	    swipeLayout.setRefreshing(false);
+
+	    dialog = ProgressDialog.show(common.context, "Updating Forecast", "Please wait while we get some fresh data", false);
+	    dialog.show();
+
+	    if(!common.GetStringPref("forecastData", "").equals(""))
+		    generateForecast();
+
+	    Thread t = new Thread(new Runnable()
         {
             @Override
             public void run()
@@ -167,9 +180,6 @@ public class Forecast
 
                     if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 3600 < curtime)
                     {
-                    	if(!common.GetStringPref("forecastData", "").equals(""))
-                            generateForecast();
-
                         Common.LogMessage("no forecast data or cache is more than 3 hour old");
                         URL url = new URL(rss);
                         URLConnection conn = url.openConnection();
@@ -181,8 +191,9 @@ public class Forecast
                         StringBuilder sb = new StringBuilder();
                         while ((line = in.readLine()) != null)
                         {
-                            line += "\n";
-                            sb.append(line);
+                        	line = line.trim();
+							if(line.length() > 0)
+                               sb.append(line);
                         }
                         in.close();
 
@@ -214,7 +225,7 @@ public class Forecast
     private void generateForecast()
     {
         Common.LogMessage("getting json data");
-        String data = "";
+        String data;
         String fctype = common.GetStringPref("fctype", "Yahoo");
 
         try
@@ -234,14 +245,19 @@ public class Forecast
 		    doYahoo(data);
 	    else if(fctype.toLowerCase().equals("weatherzone"))
 		    doWZ(data);
+
+	    if(dialog != null)
+	    {
+		    dialog.dismiss();
+		    dialog = null;
+	    }
     }
 
 	private void doWZ(String data)
 	{
 		try
 		{
-			StringBuilder str = new StringBuilder();
-			String stmp = "", desc = "", content = "", pubDate = "";
+			String desc = "", content = "", pubDate = "";
 
 			String[] bits = data.split("<title>");
 			if(bits.length >= 2)
@@ -262,7 +278,13 @@ public class Forecast
 			long mdate = sdf.parse(pubDate).getTime();
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 			pubDate = sdf.format(mdate);
+
+			content = content.replace("http://www.weatherzone.com.au/images/icons/fcast_30/", "file:///android_res/drawable/wz")
+						.replace(".gif", ".png");
+
 			content = "<div style='font-size:16pt;'>" + pubDate + "</div><br/><br/>" + content;
+
+			Common.LogMessage("content="+content);
 
 			updateForecast(content, desc);
 		} catch (Exception e) {
@@ -382,12 +404,9 @@ public class Forecast
 	    ImageView im = rootView.findViewById(R.id.logo);
 	    if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("yahoo"))
 	    {
-
 		    im.setImageResource(R.drawable.purple);
 	    } else if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("weatherzone")) {
 	        im.setImageResource(R.drawable.wz);
         }
-
-	    swipeLayout.setRefreshing(false);
     }
 }

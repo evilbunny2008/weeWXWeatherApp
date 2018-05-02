@@ -54,7 +54,7 @@ public class myService extends Service
     @Override
     public int onStartCommand(Intent intent, int flags, int startId)
     {
-        Common.LogMessage("WeeWXService marked START_STICKY");
+        Common.LogMessage("weeWXService marked START_STICKY");
         return Service.START_STICKY;
     }
 

@@ -86,7 +86,57 @@ class Settings implements AdapterView.OnItemSelectedListener
             }
         });
 
-        return rootView;
+	    Button b2 = rootView.findViewById(R.id.deleteData);
+	    b2.setOnClickListener(new View.OnClickListener()
+	    {
+		    public void onClick(View arg0)
+		    {
+		    	checkReally();
+		    }
+	    });
+
+	    return rootView;
+    }
+
+    private void checkReally()
+    {
+	    AlertDialog.Builder builder = new AlertDialog.Builder(common.context);
+	    builder.setMessage("Are you sure you want to remove all data?").setCancelable(false)
+		    .setPositiveButton("Yes", new android.content.DialogInterface.OnClickListener()
+		    {
+			    public void onClick(DialogInterface dialoginterface, int i)
+			    {
+				    Common.LogMessage("trash all data");
+
+				    common.RemovePref("SETTINGS_URL");
+				    common.RemovePref("updateInterval");
+				    common.RemovePref("BASE_URL");
+				    common.RemovePref("RADAR_URL");
+				    common.RemovePref("FORECAST_URL");
+				    common.RemovePref("fctype");
+				    common.RemovePref("WEBCAM_URL");
+				    common.RemovePref("CUSTOM_URL");
+				    common.RemovePref("metric");
+				    common.RemovePref("bgdl");
+				    common.RemovePref("rssCheck");
+				    common.RemovePref("forecastData");
+				    common.RemovePref("LastDownload");
+				    common.commit();
+
+				    dialoginterface.cancel();
+
+				    System.exit(0);
+			    }
+		    }).setNegativeButton("No", new android.content.DialogInterface.OnClickListener()
+		    {
+			    public void onClick(DialogInterface dialoginterface, int i)
+			    {
+				    dialoginterface.cancel();
+			    }
+		    });
+
+	    builder.create().show();
+
     }
 
     private void processSettings(final View rootView)
@@ -276,8 +326,9 @@ class Settings implements AdapterView.OnItemSelectedListener
 					    StringBuilder sb = new StringBuilder();
 					    while ((line = in.readLine()) != null)
 					    {
-						    line += "\n";
-						    sb.append(line);
+						    line = line.trim();
+					    	if(line.length() > 0)
+							    sb.append(line);
 					    }
 					    in.close();
 

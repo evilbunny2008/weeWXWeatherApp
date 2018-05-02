@@ -28,4 +28,5 @@
     <string name="custom2">Custom</string>
     <string name="settings2">Settings</string>
     <string name="about2">About</string>
+    <string name="delete_all_data">Delete All Data and Shutdown</string>
 </resources>

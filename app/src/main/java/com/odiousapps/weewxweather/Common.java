@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -41,6 +42,24 @@ class Common
         editor.apply();
 
         LogMessage("Updating '" + name + "'='" + value + "'");
+    }
+
+	void RemovePref(String name)
+	{
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.remove(name);
+		editor.apply();
+
+		LogMessage("Removing '" + name + "'");
+	}
+
+	@SuppressLint("ApplySharedPref")
+    void commit()
+    {
+	    SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+	    SharedPreferences.Editor editor = settings.edit();
+	    editor.commit();
     }
 
     String GetStringPref(String name, String defval)
