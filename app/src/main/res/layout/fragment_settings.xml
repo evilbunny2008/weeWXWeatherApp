@@ -2,7 +2,10 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusableInTouchMode="true"
+    android:focusable="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,10 +77,39 @@
             android:text="@string/yes"
             android:textSize="24sp"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/radarforecast"
+            android:textSize="18sp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/showRadar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="@string/show_radar"
+                android:textSize="24sp"/>
+
+            <RadioButton
+                android:id="@+id/showForecast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/show_forecast"
+                android:textSize="24sp"/>
+        </RadioGroup>
+
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="@string/save_settings"
             android:textSize="18sp"/>
 
@@ -85,6 +117,7 @@
             android:id="@+id/deleteData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:text="@string/delete_all_data"
             android:textSize="18sp"/>
     </LinearLayout>

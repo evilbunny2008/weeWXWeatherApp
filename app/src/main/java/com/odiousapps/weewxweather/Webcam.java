@@ -94,21 +94,21 @@ class Webcam
             return;
         }
 
-        File file = new File(common.context.getFilesDir(), "webcam.jpg");
-        if(file.exists())
-        {
-            Common.LogMessage("file: "+file.toString());
-            try
-            {
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                Bitmap bm = BitmapFactory.decodeFile(file.toString(), options);
-                iv.setImageBitmap(bm);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+	    File file = new File(common.context.getFilesDir(), "webcam.jpg");
+	    if(file.exists())
+	    {
+		    Common.LogMessage("file: "+file.toString());
+		    try
+		    {
+			    BitmapFactory.Options options = new BitmapFactory.Options();
+			    Bitmap bm = BitmapFactory.decodeFile(file.toString(), options);
+			    iv.setImageBitmap(bm);
+		    } catch (Exception e) {
+			    e.printStackTrace();
+		    }
+	    }
 
-        Thread t = new Thread(new Runnable()
+	    Thread t = new Thread(new Runnable()
         {
             @Override
             public void run()
@@ -130,7 +130,7 @@ class Webcam
 	    {
 		    Common.LogMessage("starting to download bitmap from: " + webURL);
 		    URL url = new URL(webURL);
-		    if (webURL.substring(webURL.length() - 5).equals("mjpeg") || webURL.substring(webURL.length() - 4).equals("mjpg"))
+		    if (webURL.toLowerCase().endsWith(".mjpeg") || webURL.toLowerCase().endsWith(".mjpg"))
 		    {
 			    MjpegRunner mr = new MjpegRunner(url);
 			    mr.run();

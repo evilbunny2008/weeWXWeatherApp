@@ -54,8 +54,13 @@ public class myService extends Service
     @Override
     public int onStartCommand(Intent intent, int flags, int startId)
     {
-        Common.LogMessage("weeWXService marked START_STICKY");
-        return Service.START_STICKY;
+	    if(common.GetBoolPref("bgdl", false))
+	    {
+		    Common.LogMessage("weeWXService marked START_STICKY");
+		    return Service.START_STICKY;
+	    }
+
+	    return Service.START_NOT_STICKY;
     }
 
     void stopTimer()

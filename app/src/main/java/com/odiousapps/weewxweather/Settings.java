@@ -1,8 +1,11 @@
 package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,9 +20,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RemoteViews;
 import android.widget.Spinner;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -50,6 +56,15 @@ class Settings implements AdapterView.OnItemSelectedListener
 
         et1 = rootView.findViewById(R.id.settings);
         et1.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/settings.txt"));
+        et1.setOnFocusChangeListener(new View.OnFocusChangeListener()
+        {
+		    @Override
+		    public void onFocusChange(View v, boolean hasFocus)
+		    {
+			    if (!hasFocus)
+				    hideKeyboard(v);
+		    }
+		});
 
         Spinner s1 = rootView.findViewById(R.id.spinner1);
         ArrayAdapter<String>adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
@@ -67,6 +82,11 @@ class Settings implements AdapterView.OnItemSelectedListener
         CheckBox cb2 = rootView.findViewById(R.id.cb2);
         if(!metric)
             cb2.setChecked(false);
+
+        boolean radarforecast = common.GetBoolPref("radarforecast", true);
+	    RadioButton showForecast = rootView.findViewById(R.id.showForecast);
+        if(!radarforecast)
+        	showForecast.setChecked(true);
 
         b1 = rootView.findViewById(R.id.button);
         b1.setOnClickListener(new View.OnClickListener()
@@ -98,6 +118,13 @@ class Settings implements AdapterView.OnItemSelectedListener
 	    return rootView;
     }
 
+	private void hideKeyboard(View view)
+	{
+		InputMethodManager inputMethodManager =(InputMethodManager)common.context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+		if(inputMethodManager != null)
+			inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+	}
+
     private void checkReally()
     {
 	    AlertDialog.Builder builder = new AlertDialog.Builder(common.context);
@@ -121,7 +148,26 @@ class Settings implements AdapterView.OnItemSelectedListener
 				    common.RemovePref("rssCheck");
 				    common.RemovePref("forecastData");
 				    common.RemovePref("LastDownload");
+				    common.RemovePref("radarforecast");
 				    common.commit();
+
+				    common.context.stopService(new Intent(common.context, myService.class));
+
+				    File file = new File(common.context.getFilesDir(), "webcam.jpg");
+				    if(file.exists() && file.canWrite())
+					    if(!file.delete())
+						    Common.LogMessage("couldn't delete webcam.jpg");
+
+				    file = new File(common.context.getFilesDir(), "radar.gif");
+				    if(file.exists() && file.canWrite())
+					    if(!file.delete())
+						    Common.LogMessage("couldn't delete radar.gif");
+
+				    RemoteViews remoteViews = common.buildUpdate(common.context);
+				    ComponentName thisWidget = new ComponentName(common.context, WidgetProvider.class);
+				    AppWidgetManager manager = AppWidgetManager.getInstance(common.context);
+				    manager.updateAppWidget(thisWidget, remoteViews);
+				    Common.LogMessage("widget intent broadcasted");
 
 				    dialoginterface.cancel();
 
@@ -163,6 +209,8 @@ class Settings implements AdapterView.OnItemSelectedListener
 
 			    CheckBox cb1 = rootView.findViewById(R.id.cb1);
 			    CheckBox cb2 = rootView.findViewById(R.id.cb2);
+
+			    RadioButton showRadar = rootView.findViewById(R.id.showRadar);
 
 			    if (et1.getText().toString().equals("https://example.com/weewx/settings.txt") || et1.getText().toString().equals(""))
 			    {
@@ -399,6 +447,7 @@ class Settings implements AdapterView.OnItemSelectedListener
 			    common.SetStringPref("CUSTOM_URL", custom);
 			    common.SetBoolPref("metric", cb2.isChecked());
 			    common.SetBoolPref("bgdl", cb1.isChecked());
+			    common.SetBoolPref("radarforecast", showRadar.isChecked());
 
 			    myService.singleton.stopTimer();
 			    myService.singleton.startTimer();

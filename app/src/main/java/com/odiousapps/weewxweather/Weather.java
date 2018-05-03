@@ -12,15 +12,19 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.webkit.WebView;
 import android.webkit.WebSettings;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
+import java.net.URLConnection;
 import java.net.UnknownHostException;
 
 class Weather
@@ -95,6 +99,7 @@ class Weather
 		    	Common.LogMessage("onRefresh();");
 			    forceRefresh();
 			    reloadWebView();
+			    reloadForecast();
 			    swipeLayout.setRefreshing(false);
 		    }
 	    });
@@ -115,10 +120,26 @@ class Weather
             }
         });
 
+	    wv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
+	    {
+		    @Override
+		    public void onScrollChanged()
+		    {
+			    if (wv.getScrollY() == 0)
+			    {
+				    swipeLayout.setEnabled(true);
+			    } else {
+				    swipeLayout.setEnabled(false);
+			    }
+		    }
+	    });
+
         loadWebView();
 
         if(!common.GetStringPref("RADAR_URL", "").equals(""))
             reloadWebView();
+        if(!common.GetBoolPref("radarforecast", true))
+        	reloadForecast();
 
         Common.LogMessage("weather.java -- adding a new filter");
         IntentFilter filter = new IntentFilter();
@@ -133,40 +154,142 @@ class Weather
     {
         if(myService.singleton != null)
             myService.singleton.getWeather();
+	    wipeForecast();
     }
 
     private void loadWebView()
     {
-        String radar = common.context.getFilesDir() + "/radar.gif";
+    	if(common.GetBoolPref("radarforecast", true))
+	    {
+		    String radar = common.context.getFilesDir() + "/radar.gif";
 
-        wv.getSettings().setAppCacheEnabled(false);
-        wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-        wv.getSettings().setUserAgentString(Common.UA);
-        wv.clearCache(true);
+		    wv.getSettings().setAppCacheEnabled(false);
+		    wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+		    wv.getSettings().setUserAgentString(Common.UA);
+		    wv.clearCache(true);
 
-        if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
-        {
-            String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
-            wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-            return;
-        }
+		    if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+		    {
+			    String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
+			    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+			    return;
+		    }
 
-        String html = "<!DOCTYPE html>\n" +
-                "<html>\n" +
-                "  <head>\n" +
-                "    <meta charset='utf-8'>\n" +
-                "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
-                "  </head>\n" +
-                "  <body>\n" +
-                "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
-                "\tsrc='file://" + radar + "'>\n" +
-                "  </body>\n" +
-                "</html>";
-        wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+		    String html = "<!DOCTYPE html>\n" +
+				    "<html>\n" +
+				    "  <head>\n" +
+				    "    <meta charset='utf-8'>\n" +
+				    "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
+				    "  </head>\n" +
+				    "  <body>\n" +
+				    "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
+				    "\tsrc='file://" + radar + "'>\n" +
+				    "  </body>\n" +
+				    "</html>";
+		    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+	    } else {
+		    String fctype = common.GetStringPref("fctype", "Yahoo");
+		    String data = common.GetStringPref("forecastData", "");
+		    if(fctype.toLowerCase().equals("yahoo"))
+		    {
+			    String[] content = common.processYahoo(data);
+			    if(content == null || content.length <= 0)
+			    	return;
+			    final String fc = "<html><body style='text-align:center'>"  + content[0] + "</body></html>";
+			    wv.post(new Runnable()
+			    {
+				    @Override
+				    public void run()
+				    {
+					    wv.loadDataWithBaseURL(null, fc, "text/html", "utf-8", null);
+				    }
+			    });
+
+		    } else if(fctype.toLowerCase().equals("weatherzone")) {
+			    String[] content = common.processWZ(data);
+			    if(content == null || content.length <= 0)
+				    return;
+			    final String fc = "<html><body style='text-align:center'>"  + content[0] + "</body></html>";
+
+			    wv.post(new Runnable()
+			    {
+				    @Override
+				    public void run()
+				    {
+					    wv.loadDataWithBaseURL(null, fc, "text/html", "utf-8", null);
+				    }
+			    });
+
+		    }
+	    }
+    }
+
+	private void wipeForecast()
+	{
+		Common.LogMessage("wiping rss cache");
+		common.SetIntPref("rssCheck", 0);
+		common.SetStringPref("forecastData", "");
+		reloadForecast();
+	}
+
+	private void reloadForecast()
+    {
+	    if(common.GetBoolPref("radarforecast", true))
+		    return;
+
+	    final String rss = common.GetStringPref("FORECAST_URL", "");
+
+	    Common.LogMessage("forecast checking: " + rss);
+
+	    Thread t = new Thread(new Runnable()
+	    {
+		    @Override
+		    public void run()
+		    {
+			    try
+			    {
+				    int curtime = Math.round(System.currentTimeMillis() / 1000);
+
+				    if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 3600 < curtime)
+				    {
+					    Common.LogMessage("no forecast data or cache is more than 3 hour old");
+					    URL url = new URL(rss);
+					    URLConnection conn = url.openConnection();
+					    conn.setDoOutput(true);
+					    conn.connect();
+					    BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+
+					    String line;
+					    StringBuilder sb = new StringBuilder();
+					    while ((line = in.readLine()) != null)
+					    {
+						    line = line.trim();
+						    if(line.length() > 0)
+							    sb.append(line);
+					    }
+					    in.close();
+
+					    Common.LogMessage("updating rss cache");
+					    common.SetIntPref("rssCheck", curtime);
+					    common.SetStringPref("forecastData", sb.toString().trim());
+				    }
+
+				    handlerDone.sendEmptyMessage(0);
+			    } catch (Exception e) {
+				    e.printStackTrace();
+			    }
+		    }
+	    });
+
+	    t.start();
+
     }
 
     private void reloadWebView()
     {
+	    if(!common.GetBoolPref("radarforecast", true))
+	    	return;
+
         Common.LogMessage("reload radar...");
         final String radar = common.GetStringPref("RADAR_URL", "");
 
@@ -265,6 +388,7 @@ class Weather
                     Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                     updateFields();
                     reloadWebView();
+                    reloadForecast();
                 } else if(action != null && action.equals(myService.EXIT_INTENT)) {
                     Common.LogMessage("weather.java -- unregisterReceiver");
                     common.context.unregisterReceiver(serviceReceiver);

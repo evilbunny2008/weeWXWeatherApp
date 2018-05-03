@@ -105,8 +105,8 @@ public class MainActivity extends AppCompatActivity
     {
         if(tab < 0)
             tab = 0;
-        if(tab > 7)
-            tab = 7;
+        if(tab > 6)
+            tab = 6;
 
         if(tabLayout.getTabAt(tab) != null)
         {
@@ -213,12 +213,11 @@ public class MainActivity extends AppCompatActivity
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            Common common = new Common(getContext());
+	        Common common = new Common(getContext());
 
-            lastPos = getArguments().getInt(ARG_SECTION_NUMBER);
+	        lastPos = getArguments().getInt(ARG_SECTION_NUMBER);
 
-            if(getArguments().getInt(ARG_SECTION_NUMBER) == 1)
-            {
+		    if(getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
                 weather = new Weather(common);
                 return weather.myWeather(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
@@ -231,12 +230,12 @@ public class MainActivity extends AppCompatActivity
                 webcam = new Webcam(common);
                 return webcam.myWebcam(inflater, container);
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
-                custom = new Custom(common);
-                return custom.myCustom(inflater, container);
-            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
-                settings = new Settings(common);
-                return settings.mySettings(inflater, container);
-            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 7) {
+			    custom = new Custom(common);
+			    return custom.myCustom(inflater, container);
+		    } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
+				    settings = new Settings(common);
+				    return settings.mySettings(inflater, container);
+		    } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 7) {
                 about = new About();
                 return about.myAbout(inflater, container);
             }
