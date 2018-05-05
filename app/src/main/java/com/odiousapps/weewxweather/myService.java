@@ -7,12 +7,15 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.os.IBinder;
 import android.widget.RemoteViews;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.net.Authenticator;
 import java.net.HttpURLConnection;
+import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.util.Calendar;
 import java.util.Timer;
@@ -182,7 +185,23 @@ public class myService extends Service
             {
                 try
                 {
-                    URL url = new URL(common.GetStringPref("BASE_URL", ""));
+                	String data = common.GetStringPref("BASE_URL", "");
+	                Uri uri = Uri.parse(data);
+	                final String[] UC = uri.getUserInfo().split(":");
+	                Common.LogMessage("uri username = "+uri.getUserInfo());
+
+	                if(UC.length > 1)
+	                {
+		                Authenticator.setDefault(new Authenticator()
+		                {
+			                protected PasswordAuthentication getPasswordAuthentication()
+			                {
+				                return new PasswordAuthentication(UC[0], UC[1].toCharArray());
+			                }
+		                });
+	                }
+
+                    URL url = new URL(data);
                     HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
                     urlConnection.setRequestMethod("GET");
                     urlConnection.setDoOutput(true);
