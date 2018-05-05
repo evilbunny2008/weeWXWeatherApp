@@ -136,7 +136,7 @@ class Custom
         {
 	        common.context.unregisterReceiver(serviceReceiver);
         } catch (Exception e) {
-	        Common.LogMessage("already unregistered");
+	        e.printStackTrace();
         }
     }
 

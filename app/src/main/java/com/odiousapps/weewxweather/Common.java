@@ -79,10 +79,12 @@ class Common
         {
             value = settings.getString(name, defval);
         } catch (ClassCastException cce) {
+        	cce.printStackTrace();
             //SetStringPref(name, defval);
             return defval;
         } catch (Exception e) {
             LogMessage("GetStringPref(" + name + ", " + defval + ") Err: " + e.toString());
+            e.printStackTrace();
             return defval;
         }
 
@@ -91,7 +93,7 @@ class Common
         return value;
     }
 
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "SameParameterValue"})
     void SetLongPref(String name, long value)
     {
         SetStringPref(name, "" + value);

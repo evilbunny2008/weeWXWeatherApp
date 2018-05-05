@@ -53,11 +53,11 @@ public class MjpegRunner implements Runnable
                 Common.LogMessage("got an image... wooo!");
                 isRunning = false;
             } catch (SocketTimeoutException ste) {
-                System.err.println("failed stream read: " + ste);
+	            ste.printStackTrace();
                 stop();
 
             } catch (IOException e) {
-                System.err.println("failed stream read: " + e);
+	            e.printStackTrace();
                 stop();
             }
         }
@@ -66,7 +66,7 @@ public class MjpegRunner implements Runnable
         try {
             urlStream.close();
         } catch (IOException ioe) {
-            System.err.println("Failed to close the stream: " + ioe);
+	        ioe.printStackTrace();
         }
     }
 

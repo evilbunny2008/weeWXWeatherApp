@@ -40,6 +40,7 @@ import android.widget.Spinner;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -209,6 +210,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("rssCheck");
 						common.RemovePref("forecastData");
 						common.RemovePref("LastDownload");
+						common.RemovePref("LastDownloadTime");
 						common.RemovePref("radarforecast");
 						common.commit();
 
@@ -272,6 +274,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				CheckBox cb2 = findViewById(R.id.cb2);
 
 				RadioButton showRadar = findViewById(R.id.showRadar);
+				int curtime = Math.round(System.currentTimeMillis() / 1000);
 
 				if (et1.getText().toString().equals("https://example.com/weewx/settings.txt") || et1.getText().toString().equals(""))
 				{
@@ -282,20 +285,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				try
 				{
 					Uri uri = Uri.parse(et1.getText().toString());
-					Common.LogMessage("settings.txt == "+et1.getText().toString());
+					Common.LogMessage("settings.txt == " + et1.getText().toString());
 					common.SetStringPref("SETTINGS_URL", et1.getText().toString());
-					final String[] UC = uri.getUserInfo().split(":");
-					Common.LogMessage("uri username = "+uri.getUserInfo());
-
-					if(UC != null && UC.length > 1)
+					if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
 					{
-						Authenticator.setDefault(new Authenticator()
+						final String[] UC = uri.getUserInfo().split(":");
+						Common.LogMessage("uri username = " + uri.getUserInfo());
+
+						if (UC != null && UC.length > 1)
 						{
-							protected PasswordAuthentication getPasswordAuthentication()
+							Authenticator.setDefault(new Authenticator()
 							{
-								return new PasswordAuthentication(UC[0], UC[1].toCharArray());
-							}
-						});
+								protected PasswordAuthentication getPasswordAuthentication()
+								{
+									return new PasswordAuthentication(UC[0], UC[1].toCharArray());
+								}
+							});
+						}
 					}
 
 					URL url = new URL(et1.getText().toString());
@@ -361,18 +367,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					try
 					{
 						Uri uri = Uri.parse(data);
-						final String[] UC = uri.getUserInfo().split(":");
-						Common.LogMessage("uri username = "+uri.getUserInfo());
-
-						if(UC != null && UC.length > 1)
+						if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
 						{
-							Authenticator.setDefault(new Authenticator()
+							final String[] UC = uri.getUserInfo().split(":");
+							Common.LogMessage("uri username = " + uri.getUserInfo());
+
+							if (UC != null && UC.length > 1)
 							{
-								protected PasswordAuthentication getPasswordAuthentication()
+								Authenticator.setDefault(new Authenticator()
 								{
-									return new PasswordAuthentication(UC[0], UC[1].toCharArray());
-								}
-							});
+									protected PasswordAuthentication getPasswordAuthentication()
+									{
+										return new PasswordAuthentication(UC[0], UC[1].toCharArray());
+									}
+								});
+							}
 						}
 
 						URL url = new URL(data);
@@ -390,6 +399,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						in.close();
 
 						common.SetStringPref("LastDownload", sb.toString().trim());
+						common.SetLongPref("LastDownloadTime", curtime);
 						validURL1 = true;
 					} catch (MalformedURLException e) {
 						e.printStackTrace();
@@ -411,23 +421,39 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				{
 					try
 					{
-						Common.LogMessage("checking: " + radar);
+						Common.LogMessage("starting to download image from: " + radar);
 						URL url = new URL(radar);
-						URLConnection conn = url.openConnection();
-						conn.connect();
-						InputStream in = conn.getInputStream();
-						in.close();
-						validURL2 = true;
 
-						if(myService.singleton != null)
-							myService.singleton.getWeather();
-					} catch (MalformedURLException e) {
-						e.printStackTrace();
-					} catch (IOException e) {
-						e.printStackTrace();
+						InputStream ins = url.openStream();
+						File file = new File(common.context.getFilesDir(), "/radar.gif");
+						FileOutputStream out = null;
+
+						try
+						{
+							out = new FileOutputStream(file);
+							final byte[] b = new byte[2048];
+							int length;
+							while ((length = ins.read(b)) != -1)
+								out.write(b, 0, length);
+							validURL2 = true;
+						} catch (Exception e) {
+							e.printStackTrace();
+						} finally {
+							try
+							{
+								if (ins != null)
+									ins.close();
+								if (out != null)
+									out.close();
+							} catch (IOException e)
+							{
+								e.printStackTrace();
+							}
+						}
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
+
 
 					if (!validURL2)
 					{
@@ -466,7 +492,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					try
 					{
 						Common.LogMessage("checking: " + forecast);
-						int curtime = Math.round(System.currentTimeMillis() / 1000);
 
 						URL url = new URL(forecast);
 						URLConnection conn = url.openConnection();

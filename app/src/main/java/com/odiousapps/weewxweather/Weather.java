@@ -282,7 +282,6 @@ class Weather
 	    });
 
 	    t.start();
-
     }
 
     private void reloadWebView()
@@ -338,6 +337,7 @@ class Weather
                     Common.LogMessage("done downloading, prompt handler to draw to movie");
                     handlerDone.sendEmptyMessage(0);
                 } catch (UnknownHostException e) {
+                	e.printStackTrace();
                     handlerDone.sendEmptyMessage(0);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -371,7 +371,7 @@ class Weather
 	    {
 		    common.context.unregisterReceiver(serviceReceiver);
 	    } catch (Exception e) {
-		    Common.LogMessage("already unregistered");
+			e.printStackTrace();
 	    }
     }
 

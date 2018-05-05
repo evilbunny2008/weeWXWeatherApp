@@ -187,18 +187,21 @@ public class myService extends Service
                 {
                 	String data = common.GetStringPref("BASE_URL", "");
 	                Uri uri = Uri.parse(data);
-	                final String[] UC = uri.getUserInfo().split(":");
-	                Common.LogMessage("uri username = "+uri.getUserInfo());
-
-	                if(UC.length > 1)
+	                if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
 	                {
-		                Authenticator.setDefault(new Authenticator()
+		                final String[] UC = uri.getUserInfo().split(":");
+		                Common.LogMessage("uri username = " + uri.getUserInfo());
+
+		                if (UC.length > 1)
 		                {
-			                protected PasswordAuthentication getPasswordAuthentication()
+			                Authenticator.setDefault(new Authenticator()
 			                {
-				                return new PasswordAuthentication(UC[0], UC[1].toCharArray());
-			                }
-		                });
+				                protected PasswordAuthentication getPasswordAuthentication()
+				                {
+					                return new PasswordAuthentication(UC[0], UC[1].toCharArray());
+				                }
+			                });
+		                }
 	                }
 
                     URL url = new URL(data);
@@ -216,9 +219,10 @@ public class myService extends Service
                     in.close();
 
                     common.SetStringPref("LastDownload", sb.toString().trim());
+                    common.SetLongPref("LastDownloadTime", Math.round(System.currentTimeMillis() / 1000));
                     SendIntents();
                 } catch (Exception e) {
-                    Common.LogMessage(e.toString());
+                    e.printStackTrace();
                 }
             }
         });
