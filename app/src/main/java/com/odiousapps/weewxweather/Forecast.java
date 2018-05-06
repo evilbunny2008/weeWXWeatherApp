@@ -171,9 +171,9 @@ public class Forecast
                 {
                     int curtime = Math.round(System.currentTimeMillis() / 1000);
 
-                    if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 3600 < curtime)
+                    if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 7190 < curtime)
                     {
-                        Common.LogMessage("no forecast data or cache is more than 3 hour old");
+                        Common.LogMessage("no forecast data or cache is more than 2 hour old");
                         URL url = new URL(rss);
                         URLConnection conn = url.openConnection();
                         conn.setDoOutput(true);

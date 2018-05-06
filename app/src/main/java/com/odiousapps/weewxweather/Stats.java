@@ -210,7 +210,7 @@ public class Stats
 
 //      Today Stats
         checkFields((TextView)rootView.findViewById(R.id.textView), bits[56]);
-        checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54]);
+        checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
 
         String stmp;
         StringBuilder sb = new StringBuilder();

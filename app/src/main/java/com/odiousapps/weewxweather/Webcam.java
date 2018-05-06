@@ -101,7 +101,7 @@ class Webcam
 		    try
 		    {
 			    BitmapFactory.Options options = new BitmapFactory.Options();
-			    Bitmap bm = BitmapFactory.decodeFile(file.toString(), options);
+			    bm = BitmapFactory.decodeFile(file.toString(), options);
 			    iv.setImageBitmap(bm);
 		    } catch (Exception e) {
 			    e.printStackTrace();
@@ -113,11 +113,19 @@ class Webcam
             @Override
             public void run()
             {
-				Common.LogMessage("done downloading, prompt handler to draw to iv");
-	            if(downloadWebcam(webURL, common.context.getFilesDir()))
-	                handlerDone.sendEmptyMessage(0);
-	            else
-                    handlerDone.sendEmptyMessage(0);
+	            int curtime = Math.round(System.currentTimeMillis() / 1000);
+
+	            File file = new File(common.context.getFilesDir(), "webcam.jpg");
+
+	            if(!file.exists() || Math.round(file.lastModified() / 1000) + 290 > curtime)
+	            {
+		            if(!downloadWebcam(webURL, common.context.getFilesDir()))
+		            	Common.LogMessage("Skipped downloading");
+		            else
+			            Common.LogMessage("done downloading, prompt handler to draw to iv");
+	            }
+
+	            handlerDone.sendEmptyMessage(0);
             }
         });
 

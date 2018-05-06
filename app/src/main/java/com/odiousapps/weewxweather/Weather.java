@@ -74,6 +74,9 @@ class Weather
 
     View myWeather(LayoutInflater inflater, ViewGroup container)
     {
+    	if(inflater == null || container == null)
+    		return null;
+
         rootView = inflater.inflate(R.layout.fragment_weather, container, false);
         rootView.setOnLongClickListener(new View.OnLongClickListener()
         {
@@ -250,9 +253,9 @@ class Weather
 			    {
 				    int curtime = Math.round(System.currentTimeMillis() / 1000);
 
-				    if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 3600 < curtime)
+				    if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 7190 < curtime)
 				    {
-					    Common.LogMessage("no forecast data or cache is more than 3 hour old");
+					    Common.LogMessage("no forecast data or cache is more than 2 hour old");
 					    URL url = new URL(rss);
 					    URLConnection conn = url.openConnection();
 					    conn.setDoOutput(true);
@@ -310,6 +313,12 @@ class Weather
 
                     InputStream ins = url.openStream();
                     File file = new File(common.context.getFilesDir(), "/radar.gif");
+
+	                int curtime = Math.round(System.currentTimeMillis() / 1000);
+
+                    if(Math.round(file.lastModified() / 1000) + 590 > curtime)
+						return;
+
                     FileOutputStream out = null;
 
                     try
@@ -335,13 +344,13 @@ class Weather
                     }
 
                     Common.LogMessage("done downloading, prompt handler to draw to movie");
-                    handlerDone.sendEmptyMessage(0);
                 } catch (UnknownHostException e) {
                 	e.printStackTrace();
-                    handlerDone.sendEmptyMessage(0);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+	            handlerDone.sendEmptyMessage(0);
             }
         });
 
