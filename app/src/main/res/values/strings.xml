@@ -34,6 +34,7 @@
     <string name="radarforecast">Radar or Forecast on main screen</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">weeWx Weather App Settings</string>
-    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_title">weeWx Weather App</string>
+    <string name="demo_min_label">Min</string>
+    <string name="demo_max_label">Max</string>
 </resources>

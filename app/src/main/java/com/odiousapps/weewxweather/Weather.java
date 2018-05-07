@@ -344,8 +344,6 @@ class Weather
                     }
 
                     Common.LogMessage("done downloading, prompt handler to draw to movie");
-                } catch (UnknownHostException e) {
-                	e.printStackTrace();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

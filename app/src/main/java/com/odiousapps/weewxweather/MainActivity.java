@@ -24,6 +24,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,9 +36,11 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RemoteViews;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -60,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private EditText et1;
 	private Button b1;
 	private Button b2;
+	private Button b3;
+	private boolean showSettings = true;
 
 	private ProgressDialog dialog;
 
@@ -144,6 +150,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    b1 = findViewById(R.id.button);
 	    b2 = findViewById(R.id.deleteData);
+	    b3 = findViewById(R.id.aboutButton);
+
+	    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
+	    settingsLayout.setVisibility(View.VISIBLE);
+	    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
+	    aboutLayout.setVisibility(View.GONE);
 
 	    b1.setOnClickListener(new View.OnClickListener()
 	    {
@@ -170,6 +182,46 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    checkReally();
 		    }
 	    });
+
+	    b3.setOnClickListener(new View.OnClickListener()
+	    {
+		    public void onClick(View arg0)
+		    {
+		    	if(showSettings)
+			    {
+			    	showSettings = false;
+				    b1.setVisibility(View.INVISIBLE);
+				    b3.setText(R.string.settings2);
+
+				    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
+				    settingsLayout.setVisibility(View.GONE);
+				    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
+				    aboutLayout.setVisibility(View.VISIBLE);
+			    } else {
+				    showSettings = true;
+				    b1.setVisibility(View.VISIBLE);
+				    b3.setText(R.string.about2);
+
+				    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
+				    aboutLayout.setVisibility(View.GONE);
+				    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
+				    settingsLayout.setVisibility(View.VISIBLE);
+			    }
+
+		    }
+	    });
+
+	    TextView tv = findViewById(R.id.aboutText);
+
+	    String lines = "<html><body>Big thanks to the <a href='http://weewx.com'>weeWx project</a>, as this app " +
+			    "wouldn't be possible otherwise.<br><br>" +
+			    "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
+			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a><br><br>" +
+			    "<a href='https://www.yahoo.com/?ilc=401'>Yahoo! Weather</a> Forecast API<br><br>" +
+			    "This app is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
+
+	    tv.setText(Html.fromHtml(lines));
+	    tv.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
 	private void hideKeyboard(View view)
@@ -212,6 +264,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("LastDownload");
 						common.RemovePref("LastDownloadTime");
 						common.RemovePref("radarforecast");
+						common.RemovePref("seekBar");
 						common.commit();
 
 						common.context.stopService(new Intent(common.context, myService.class));
@@ -828,7 +881,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         private Forecast forecast;
         private Webcam webcam;
         private Custom custom;
-        private About about;
 
         public PlaceholderFragment() {}
 
@@ -893,9 +945,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
 			    custom = new Custom(common);
 			    return custom.myCustom(inflater, container);
-		    } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
-                about = new About();
-                return about.myAbout(inflater, container);
             }
 
             return null;
@@ -918,7 +967,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         @Override
         public int getCount()
         {
-            return 6;
+            return 5;
         }
     }
 }

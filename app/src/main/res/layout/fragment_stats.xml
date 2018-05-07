@@ -23,6 +23,18 @@
             android:layout_height="wrap_content"
             android:gravity="center"/>
 
+        <SeekBar
+            android:id="@+id/pageZoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hapticFeedbackEnabled="true"
+            android:max="20"
+            android:padding="10dp"
+            android:progress="10"
+            android:soundEffectsEnabled="true"/>
+
         <WebView
             android:id="@+id/webView1"
             android:layout_width="match_parent"

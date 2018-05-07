@@ -12,8 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.webkit.WebView;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Locale;
 
 public class Stats
@@ -21,8 +24,9 @@ public class Stats
     private Common common;
     private View rootView;
     private WebView wv;
+    private SeekBar seekBar;
 
-    Stats(Common common)
+	Stats(Common common)
     {
         this.common = common;
     }
@@ -81,6 +85,30 @@ public class Stats
 			    } else {
 				    swipeLayout.setEnabled(false);
 			    }
+		    }
+	    });
+
+	    seekBar = rootView.findViewById(R.id.pageZoom);
+	    seekBar.setProgress(common.GetIntPref("seekBar", 10));
+
+	    seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
+	    {
+		    @Override
+		    public void onProgressChanged(SeekBar seekBar, int i, boolean b)
+		    {
+			    updateFields();
+			    if(b)
+				    common.SetIntPref("seekBar", i);
+		    }
+
+		    @Override
+		    public void onStartTrackingTouch(SeekBar seekBar)
+		    {
+		    }
+
+		    @Override
+		    public void onStopTrackingTouch(SeekBar seekBar)
+		    {
 		    }
 	    });
 
@@ -212,10 +240,14 @@ public class Stats
         checkFields((TextView)rootView.findViewById(R.id.textView), bits[56]);
         checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
 
+		double percent = (seekBar.getProgress() + 90) / 100.00;
+		NumberFormat formatter = new DecimalFormat("#0.00");
+		String p = formatter.format(percent);
+
         String stmp;
         StringBuilder sb = new StringBuilder();
 
-        String header = "<html><body style='text-align:center;'>";
+	    String header = "<html><body style='text-align:center; transform: scale(" + p + "); transform-origin: 0 0;'>";
         String footer = "</body></html>";
 
         sb.append(header);
@@ -239,7 +271,7 @@ public class Stats
                 "</td><td>" + convert(bits[42]) + "</td><td>" + bits[41]  + bits[63] + "</td><td><img style='width:"+iw+"px' src='barometer.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[25] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +
+        stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +
                 "</td><td>" + bits[20] + bits[62] + "</td><td><img style='width:"+iw+"px' src='umbrella.png'></td></tr>";
         sb.append(stmp);
 

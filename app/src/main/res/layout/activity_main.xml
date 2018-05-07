@@ -52,12 +52,6 @@
                 android:layout_height="wrap_content"
                 android:text="@string/custom2"/>
 
-            <android.support.design.widget.TabItem
-                android:id="@+id/tabItem6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/about2"/>
-
         </android.support.design.widget.TabLayout>
     </android.support.design.widget.AppBarLayout>
 
