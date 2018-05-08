@@ -113,18 +113,47 @@ class Webcam
             @Override
             public void run()
             {
+	            int period = 0;
 	            int curtime = Math.round(System.currentTimeMillis() / 1000);
 
 	            File file = new File(common.context.getFilesDir(), "webcam.jpg");
 
 	            Common.LogMessage("curtime = " + curtime + ", file.lastModified() == " + Math.round(file.lastModified() / 1000));
 
-	            if(force || !file.exists() || Math.round(file.lastModified() / 1000) + 290 < curtime)
+	            if(!force)
 	            {
-		            if(!downloadWebcam(webURL, common.context.getFilesDir()))
-		            	Common.LogMessage("Skipped downloading");
-		            else
+		            int pos = common.GetIntPref("updateInterval", 1);
+		            if (pos <= 0)
+			            return;
+
+		            switch (pos)
+		            {
+			            case 1:
+				            period = 5 * 60 - 10;
+				            break;
+			            case 2:
+				            period = 10 * 60 - 10;
+				            break;
+			            case 3:
+				            period = 15 * 60 - 10;
+				            break;
+			            case 4:
+				            period = 30 * 60 - 10;
+				            break;
+			            case 5:
+				            period = 60 * 60 - 10;
+				            break;
+			            default:
+				            return;
+		            }
+	            }
+
+	            if(force || !file.exists() || Math.round(file.lastModified() / 1000) + period < curtime)
+	            {
+		            if(downloadWebcam(webURL, common.context.getFilesDir()))
 			            Common.LogMessage("done downloading, prompt handler to draw to iv");
+		            else
+			            Common.LogMessage("Skipped downloading");
 	            }
 
 	            handlerDone.sendEmptyMessage(0);
@@ -134,7 +163,6 @@ class Webcam
         t.start();
     }
 
-    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     static boolean downloadWebcam(String webURL, File getFiles)
     {
     	try

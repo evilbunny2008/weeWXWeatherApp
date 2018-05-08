@@ -7,11 +7,14 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Vibrator;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.webkit.ConsoleMessage;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -106,6 +109,15 @@ class Custom
                 return false;
             }
         });
+
+        wv.setWebChromeClient(new WebChromeClient()
+	    {
+		    @Override
+		    public boolean onConsoleMessage(ConsoleMessage cm)
+		    {
+			    return true;
+		    }
+	    });
 
         reloadWebView();
 

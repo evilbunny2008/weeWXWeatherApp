@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.webkit.ConsoleMessage;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebSettings;
 import android.widget.TextView;
@@ -25,7 +27,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.UnknownHostException;
 
 class Weather
 {
@@ -131,6 +132,15 @@ class Weather
 			    } else {
 				    swipeLayout.setEnabled(false);
 			    }
+		    }
+	    });
+
+	    wv.setWebChromeClient(new WebChromeClient()
+	    {
+		    @Override
+		    public boolean onConsoleMessage(ConsoleMessage cm)
+		    {
+			    return true;
 		    }
 	    });
 
