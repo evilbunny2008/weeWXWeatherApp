@@ -50,7 +50,7 @@ class Webcam
                 if(vibrator != null)
                     vibrator.vibrate(250);
                 Common.LogMessage("long press");
-                reloadWebView();
+                reloadWebView(true);
                 return true;
             }
         });
@@ -63,11 +63,11 @@ class Webcam
 		    {
 			    swipeLayout.setRefreshing(true);
 			    Common.LogMessage("onRefresh();");
-			    reloadWebView();
+			    reloadWebView(true);
 		    }
 	    });
 
-        reloadWebView();
+        reloadWebView(false);
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(myService.UPDATE_INTENT);
@@ -77,7 +77,7 @@ class Webcam
         return rootView;
     }
 
-    private void reloadWebView()
+    private void reloadWebView(final boolean force)
     {
         Common.LogMessage("reload webcam...");
         final String webURL = common.GetStringPref("WEBCAM_URL", "");
@@ -117,7 +117,9 @@ class Webcam
 
 	            File file = new File(common.context.getFilesDir(), "webcam.jpg");
 
-	            if(!file.exists() || Math.round(file.lastModified() / 1000) + 290 > curtime)
+	            Common.LogMessage("curtime = " + curtime + ", file.lastModified() == " + Math.round(file.lastModified() / 1000));
+
+	            if(force || !file.exists() || Math.round(file.lastModified() / 1000) + 290 < curtime)
 	            {
 		            if(!downloadWebcam(webURL, common.context.getFilesDir()))
 		            	Common.LogMessage("Skipped downloading");
@@ -132,6 +134,7 @@ class Webcam
         t.start();
     }
 
+    @SuppressWarnings("BooleanMethodIsAlwaysInverted")
     static boolean downloadWebcam(String webURL, File getFiles)
     {
     	try
@@ -248,7 +251,7 @@ class Webcam
                 String action = intent.getAction();
                 if(action != null && action.equals(myService.UPDATE_INTENT))
                 {
-                    reloadWebView();
+                    reloadWebView(true);
                 } else if(action != null && action.equals(myService.EXIT_INTENT)) {
                     common.context.unregisterReceiver(serviceReceiver);
                 }

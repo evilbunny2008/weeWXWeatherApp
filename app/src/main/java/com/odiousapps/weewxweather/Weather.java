@@ -74,9 +74,6 @@ class Weather
 
     View myWeather(LayoutInflater inflater, ViewGroup container)
     {
-    	if(inflater == null || container == null)
-    		return null;
-
         rootView = inflater.inflate(R.layout.fragment_weather, container, false);
         rootView.setOnLongClickListener(new View.OnLongClickListener()
         {
