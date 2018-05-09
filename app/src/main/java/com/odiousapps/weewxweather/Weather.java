@@ -165,6 +165,7 @@ class Weather
         if(myService.singleton != null)
             myService.singleton.getWeather();
 	    wipeForecast();
+	    loadWebView();
     }
 
     private void loadWebView()
@@ -172,11 +173,6 @@ class Weather
     	if(common.GetBoolPref("radarforecast", true))
 	    {
 		    String radar = common.context.getFilesDir() + "/radar.gif";
-
-		    wv.getSettings().setAppCacheEnabled(false);
-		    wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-		    wv.getSettings().setUserAgentString(Common.UA);
-		    wv.clearCache(true);
 
 		    if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 		    {

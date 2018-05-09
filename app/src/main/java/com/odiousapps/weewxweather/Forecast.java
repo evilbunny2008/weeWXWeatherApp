@@ -19,6 +19,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
@@ -30,6 +34,8 @@ public class Forecast
     private WebView wv;
     private SwipeRefreshLayout swipeLayout;
 	private ProgressDialog dialog;
+	private TextView forecast;
+	private ImageView im;
 
 	Forecast(Common common)
     {
@@ -38,20 +44,21 @@ public class Forecast
 
     View myForecast(LayoutInflater inflater, ViewGroup container)
     {
-        rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
-        rootView.setOnLongClickListener(new View.OnLongClickListener()
-        {
-            @Override
-            public boolean onLongClick(View v)
-            {
-                Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-                if(vibrator != null)
-                    vibrator.vibrate(250);
-                Common.LogMessage("rootview long press");
-                forceRefresh();
-                return true;
-            }
-        });
+	    rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
+	    rootView.setOnLongClickListener(new View.OnLongClickListener()
+	    {
+		    @Override
+		    public boolean onLongClick(View v)
+		    {
+			    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
+			    if (vibrator != null)
+				    vibrator.vibrate(250);
+			    Common.LogMessage("rootview long press");
+			    forceRefresh();
+			    reloadWebView(true);
+			    return true;
+		    }
+	    });
 
 	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 	    swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
@@ -62,24 +69,26 @@ public class Forecast
 			    swipeLayout.setRefreshing(true);
 			    Common.LogMessage("onRefresh();");
 			    forceRefresh();
+			    reloadWebView(true);
 		    }
 	    });
 
-        wv = rootView.findViewById(R.id.webView1);
+	    wv = rootView.findViewById(R.id.webView1);
 	    wv.getSettings().setUserAgentString(Common.UA);
-        wv.setOnLongClickListener(new View.OnLongClickListener()
-        {
-            @Override
-            public boolean onLongClick(View v)
-            {
-                Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-                if(vibrator != null)
-                    vibrator.vibrate(250);
-                Common.LogMessage("webview long press");
-                forceRefresh();
-                return true;
-            }
-        });
+	    wv.setOnLongClickListener(new View.OnLongClickListener()
+	    {
+		    @Override
+		    public boolean onLongClick(View v)
+		    {
+			    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
+			    if (vibrator != null)
+				    vibrator.vibrate(250);
+			    Common.LogMessage("webview long press");
+			    forceRefresh();
+			    reloadWebView(true);
+			    return true;
+		    }
+	    });
 
 	    wv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
 	    {
@@ -89,7 +98,8 @@ public class Forecast
 			    if (wv.getScrollY() == 0)
 			    {
 				    swipeLayout.setEnabled(true);
-			    } else {
+			    } else
+			    {
 				    swipeLayout.setEnabled(false);
 			    }
 		    }
@@ -100,12 +110,124 @@ public class Forecast
 	    filter.addAction(myService.EXIT_INTENT);
 	    common.context.registerReceiver(serviceReceiver, filter);
 
-	    getForecast();
+	    forecast = rootView.findViewById(R.id.forecast);
+	    im = rootView.findViewById(R.id.logo);
+
+	    if (common.GetBoolPref("radarforecast", true))
+	    {
+	    	Common.LogMessage("Displaying forecast");
+		    getForecast();
+		    forecast.setText(R.string.forecast);
+		    im.setVisibility(View.VISIBLE);
+	    } else {
+		    Common.LogMessage("Displaying radar");
+		    loadWebView();
+		    reloadWebView(false);
+		    forecast.setText(R.string.radar_page);
+		    im.setVisibility(View.GONE);
+        }
 
         return rootView;
     }
 
-    public void doStop()
+	private void loadWebView()
+	{
+		String radar = common.context.getFilesDir() + "/radar.gif";
+
+		if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+		{
+			String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
+			wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+			return;
+		}
+
+		String html = "<!DOCTYPE html>\n" +
+				"<html>\n" +
+				"  <head>\n" +
+				"    <meta charset='utf-8'>\n" +
+				"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
+				"  </head>\n" +
+				"  <body>\n" +
+				"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
+				"\tsrc='file://" + radar + "'>\n" +
+				"  </body>\n" +
+				"</html>";
+		wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+	}
+
+	private void reloadWebView(final boolean force)
+	{
+		if(common.GetBoolPref("radarforecast", true))
+			return;
+
+		Common.LogMessage("reload radar...");
+		final String radar = common.GetStringPref("RADAR_URL", "");
+
+		if(radar.equals(""))
+		{
+			loadWebView();
+			return;
+		}
+
+		Thread t = new Thread(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				try
+				{
+					Common.LogMessage("starting to download image from: " + radar);
+					URL url = new URL(radar);
+
+					InputStream ins = url.openStream();
+					File file = new File(common.context.getFilesDir(), "/radar.gif");
+
+					int curtime = Math.round(System.currentTimeMillis() / 1000);
+
+					if(!force && Math.round(file.lastModified() / 1000) + 590 > curtime)
+					{
+						handlerDone.sendEmptyMessage(0);
+						return;
+					}
+
+					FileOutputStream out = null;
+
+					try
+					{
+						out = new FileOutputStream(file);
+						final byte[] b = new byte[2048];
+						int length;
+						while ((length = ins.read(b)) != -1)
+							out.write(b, 0, length);
+					} catch (Exception e) {
+						e.printStackTrace();
+					} finally {
+						try
+						{
+							if (ins != null)
+								ins.close();
+							if (out != null)
+								out.close();
+						} catch (IOException e)
+						{
+							e.printStackTrace();
+						}
+					}
+
+					Common.LogMessage("done downloading, prompt handler to draw to movie");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+
+				handlerDone.sendEmptyMessage(0);
+			}
+		});
+
+		t.start();
+	}
+
+
+	public void doStop()
     {
         Common.LogMessage("forecast.java -- unregisterReceiver");
 	    try
@@ -127,7 +249,19 @@ public class Forecast
                 String action = intent.getAction();
                 if(action != null && action.equals(myService.UPDATE_INTENT))
                 {
-                    getForecast();
+	                if (common.GetBoolPref("radarforecast", true))
+	                {
+		                Common.LogMessage("Displaying forecast");
+		                getForecast();
+		                forecast.setText(R.string.forecast);
+		                im.setVisibility(View.VISIBLE);
+	                } else {
+		                Common.LogMessage("Displaying radar");
+		                loadWebView();
+		                reloadWebView(true);
+		                forecast.setText(R.string.radar_page);
+		                im.setVisibility(View.GONE);
+	                }
                 } else if(action != null && action.equals(myService.EXIT_INTENT)) {
                     common.context.unregisterReceiver(serviceReceiver);
                 }
@@ -139,6 +273,9 @@ public class Forecast
 
     private void forceRefresh()
     {
+	    if(!common.GetBoolPref("radarforecast", true))
+		    return;
+
         Common.LogMessage("wiping rss cache");
         common.SetIntPref("rssCheck", 0);
         common.SetStringPref("forecastData", "");
@@ -147,14 +284,15 @@ public class Forecast
 
     private void getForecast()
     {
+	    if(!common.GetBoolPref("radarforecast", true))
+		    return;
+
         final String rss = common.GetStringPref("FORECAST_URL", "");
         if(rss.equals(""))
         {
 	        wv.loadDataWithBaseURL(null, "<html><body>Forecast URL not set, go to settings to change</body></html>", "text/html", "utf-8", null);
 	        return;
         }
-
-	    swipeLayout.setRefreshing(false);
 
 	    dialog = ProgressDialog.show(common.context, "Updating Forecast", "Please wait while we get some fresh data", false);
 	    dialog.show();
@@ -194,11 +332,11 @@ public class Forecast
                         common.SetIntPref("rssCheck", curtime);
                         common.SetStringPref("forecastData", sb.toString().trim());
                     }
-
-                    handlerDone.sendEmptyMessage(0);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+	            handlerDone.sendEmptyMessage(0);
             }
         });
 
@@ -211,7 +349,18 @@ public class Forecast
         @Override
         public void handleMessage(Message msg)
         {
-            generateForecast();
+	        if (common.GetBoolPref("radarforecast", true))
+	        	generateForecast();
+	        else
+	        	loadWebView();
+
+	        swipeLayout.setRefreshing(false);
+
+	        if(dialog != null)
+	        {
+		        dialog.dismiss();
+		        dialog = null;
+	        }
         }
     };
 
@@ -220,6 +369,8 @@ public class Forecast
         Common.LogMessage("getting json data");
         String data;
         String fctype = common.GetStringPref("fctype", "Yahoo");
+
+	    swipeLayout.setRefreshing(false);
 
         try
         {
@@ -244,12 +395,6 @@ public class Forecast
 		    if(content != null && content.length >= 2)
 			    updateForecast(content[0], content[1]);
 	    }
-
-	    if(dialog != null)
-	    {
-		    dialog.dismiss();
-		    dialog = null;
-	    }
     }
 
     private void updateForecast(String bits, String desc)
@@ -268,12 +413,9 @@ public class Forecast
         TextView tv1 = rootView.findViewById(R.id.forecast);
         tv1.setText(desc);
 
-	    ImageView im = rootView.findViewById(R.id.logo);
 	    if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("yahoo"))
-	    {
 		    im.setImageResource(R.drawable.purple);
-	    } else if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("weatherzone")) {
+	    else if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("weatherzone"))
 	        im.setImageResource(R.drawable.wz);
-        }
     }
 }

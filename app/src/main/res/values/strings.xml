@@ -37,4 +37,6 @@
     <string name="nav_header_title">weeWx Weather App</string>
     <string name="demo_min_label">Min</string>
     <string name="demo_max_label">Max</string>
+    <string name="radar">Radar</string>
+    <string name="radar_page">Radar Page</string>
 </resources>

@@ -90,7 +90,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         tabLayout = findViewById(R.id.tabs);
 
-        mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+	    if(!common.GetBoolPref("radarforecast", true))
+		    //noinspection ConstantConditions
+		    tabLayout.getTabAt(2).setText(R.string.radar);
+
+	    mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
         try
@@ -635,7 +639,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				myService.singleton.startTimer();
 
 				handlerDone.sendEmptyMessage(0);
-
 			}
 		});
 
@@ -648,6 +651,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		@Override
 		public void handleMessage(Message msg)
 		{
+			if(!common.GetBoolPref("radarforecast", true))
+				//noinspection ConstantConditions
+				tabLayout.getTabAt(2).setText(R.string.radar);
+			else
+				//noinspection ConstantConditions
+				tabLayout.getTabAt(2).setText(R.string.forecast2);
+
 			b1.setEnabled(true);
 			b2.setEnabled(true);
 			dialog.dismiss();
