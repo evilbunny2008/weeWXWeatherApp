@@ -10,11 +10,15 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
+import android.webkit.ConsoleMessage;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -42,6 +46,7 @@ public class Forecast
         this.common = common;
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     View myForecast(LayoutInflater inflater, ViewGroup container)
     {
 	    rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
@@ -74,7 +79,33 @@ public class Forecast
 	    });
 
 	    wv = rootView.findViewById(R.id.webView1);
+
 	    wv.getSettings().setUserAgentString(Common.UA);
+	    wv.getSettings().setJavaScriptEnabled(true);
+
+	    wv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
+	    {
+		    @Override
+		    public void onScrollChanged()
+		    {
+			    if (wv.getScrollY() == 0)
+			    {
+				    swipeLayout.setEnabled(true);
+			    } else {
+				    swipeLayout.setEnabled(false);
+			    }
+		    }
+	    });
+
+	    wv.setWebChromeClient(new WebChromeClient()
+	    {
+		    @Override
+		    public boolean onConsoleMessage(ConsoleMessage cm)
+		    {
+			    return true;
+		    }
+	    });
+
 	    wv.setOnLongClickListener(new View.OnLongClickListener()
 	    {
 		    @Override
@@ -84,9 +115,23 @@ public class Forecast
 			    if (vibrator != null)
 				    vibrator.vibrate(250);
 			    Common.LogMessage("webview long press");
-			    forceRefresh();
-			    reloadWebView(true);
+			    if(common.GetStringPref("radtype", "image").equals("image"))
+			    {
+				    forceRefresh();
+				    reloadWebView(true);
+			    } else if(common.GetStringPref("radtype", "image").equals("webpage")) {
+				    wv.reload();
+			    }
 			    return true;
+		    }
+	    });
+
+	    wv.setWebViewClient(new WebViewClient()
+	    {
+		    @Override
+		    public boolean shouldOverrideUrlLoading(WebView view, String url)
+		    {
+			    return false;
 		    }
 	    });
 
@@ -117,13 +162,18 @@ public class Forecast
 	    {
 	    	Common.LogMessage("Displaying forecast");
 		    getForecast();
-		    forecast.setText(R.string.forecast);
+		    forecast.setVisibility(View.VISIBLE);
 		    im.setVisibility(View.VISIBLE);
 	    } else {
 		    Common.LogMessage("Displaying radar");
-		    loadWebView();
-		    reloadWebView(false);
-		    forecast.setText(R.string.radar_page);
+		    if(common.GetStringPref("fctype", "yahoo").equals("yahoo") || common.GetStringPref("fctype", "yahoo").equals("weatherzone"))
+		    {
+			    loadWebView();
+		        reloadWebView(false);
+
+		    } else if(common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals(""))
+		    	wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
+		    forecast.setVisibility(View.GONE);
 		    im.setVisibility(View.GONE);
         }
 
@@ -132,27 +182,32 @@ public class Forecast
 
 	private void loadWebView()
 	{
-		String radar = common.context.getFilesDir() + "/radar.gif";
-
-		if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+		if(common.GetStringPref("radtype", "image").equals("image"))
 		{
-			String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
-			wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-			return;
-		}
+			String radar = common.context.getFilesDir() + "/radar.gif";
 
-		String html = "<!DOCTYPE html>\n" +
-				"<html>\n" +
-				"  <head>\n" +
-				"    <meta charset='utf-8'>\n" +
-				"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
-				"  </head>\n" +
-				"  <body>\n" +
-				"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
-				"\tsrc='file://" + radar + "'>\n" +
-				"  </body>\n" +
-				"</html>";
-		wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+			if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+			{
+				String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
+				wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+				return;
+			}
+
+			String html = "<!DOCTYPE html>\n" +
+					"<html>\n" +
+					"  <head>\n" +
+					"    <meta charset='utf-8'>\n" +
+					"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
+					"  </head>\n" +
+					"  <body>\n" +
+					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
+					"\tsrc='file://" + radar + "'>\n" +
+					"  </body>\n" +
+					"</html>";
+			wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+		} else if(common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals("")) {
+			wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
+		}
 	}
 
 	private void reloadWebView(final boolean force)
@@ -163,9 +218,10 @@ public class Forecast
 		Common.LogMessage("reload radar...");
 		final String radar = common.GetStringPref("RADAR_URL", "");
 
-		if(radar.equals(""))
+		if(radar.equals("") || common.GetStringPref("radtype", "image").equals("webpage"))
 		{
 			loadWebView();
+			handlerDone.sendEmptyMessage(0);
 			return;
 		}
 
@@ -253,13 +309,13 @@ public class Forecast
 	                {
 		                Common.LogMessage("Displaying forecast");
 		                getForecast();
-		                forecast.setText(R.string.forecast);
+		                forecast.setVisibility(View.VISIBLE);
 		                im.setVisibility(View.VISIBLE);
 	                } else {
 		                Common.LogMessage("Displaying radar");
 		                loadWebView();
 		                reloadWebView(true);
-		                forecast.setText(R.string.radar_page);
+		                forecast.setVisibility(View.GONE);
 		                im.setVisibility(View.GONE);
 	                }
                 } else if(action != null && action.equals(myService.EXIT_INTENT)) {

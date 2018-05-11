@@ -256,6 +256,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("SETTINGS_URL");
 						common.RemovePref("updateInterval");
 						common.RemovePref("BASE_URL");
+						common.RemovePref("radtype");
 						common.RemovePref("RADAR_URL");
 						common.RemovePref("FORECAST_URL");
 						common.RemovePref("fctype");
@@ -325,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				String oldwebcam = common.GetStringPref("WEBCAM_URL", "");
 				String oldcustom = common.GetStringPref("CUSTOM_URL", "");
 
-				String data = "", radar = "", forecast = "", webcam = "", custom = "", fctype = "";
+				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", fctype = "";
 
 				CheckBox cb1 = findViewById(R.id.cb1);
 				CheckBox cb2 = findViewById(R.id.cb2);
@@ -383,10 +384,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						String[] mb = bit.split("=", 2);
 						if (mb[0].equals("data"))
 							data = mb[1];
+						if(mb[0].equals("radtype"))
+							radtype = mb[1].toLowerCase();
 						if (mb[0].equals("radar"))
 							radar = mb[1];
 						if(mb[0].equals("fctype"))
-							fctype = mb[1];
+							fctype = mb[1].toLowerCase();
 						if (mb[0].equals("forecast"))
 							forecast = mb[1];
 						if (mb[0].equals("webcam"))
@@ -397,6 +400,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 					if(fctype == null || fctype.equals(""))
 						fctype = "Yahoo";
+
+					if(radtype == null || radtype.equals(""))
+						radtype = "image";
 
 					validURL = true;
 				} catch (MalformedURLException e) {
@@ -478,39 +484,57 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				{
 					try
 					{
-						Common.LogMessage("starting to download image from: " + radar);
-						URL url = new URL(radar);
-
-						InputStream ins = url.openStream();
-						File file = new File(common.context.getFilesDir(), "/radar.gif");
-						FileOutputStream out = null;
-
-						try
+						if(radtype.equals("image"))
 						{
-							out = new FileOutputStream(file);
-							final byte[] b = new byte[2048];
-							int length;
-							while ((length = ins.read(b)) != -1)
-								out.write(b, 0, length);
-							validURL2 = true;
-						} catch (Exception e) {
-							e.printStackTrace();
-						} finally {
+							Common.LogMessage("starting to download image from: " + radar);
+							URL url = new URL(radar);
+
+							InputStream ins = url.openStream();
+							File file = new File(common.context.getFilesDir(), "/radar.gif");
+							FileOutputStream out = null;
+
 							try
 							{
-								if (ins != null)
-									ins.close();
-								if (out != null)
-									out.close();
-							} catch (IOException e)
+								out = new FileOutputStream(file);
+								final byte[] b = new byte[2048];
+								int length;
+								while ((length = ins.read(b)) != -1)
+									out.write(b, 0, length);
+								validURL2 = true;
+							} catch (Exception e) {
+								e.printStackTrace();
+							} finally {
+								try
+								{
+									if (ins != null)
+										ins.close();
+									if (out != null)
+										out.close();
+								} catch (IOException e)
+								{
+									e.printStackTrace();
+								}
+							}
+						} else if(radtype.equals("webpage")) {
+							try
 							{
+								Common.LogMessage("checking: " + radar);
+								URL url = new URL(radar);
+								URLConnection conn = url.openConnection();
+								conn.connect();
+
+								validURL2 = true;
+							} catch (MalformedURLException e) {
+								e.printStackTrace();
+							} catch (IOException e) {
+								e.printStackTrace();
+							} catch (Exception e) {
 								e.printStackTrace();
 							}
 						}
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-
 
 					if (!validURL2)
 					{
@@ -523,18 +547,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				{
 					try
 					{
-						forecast = URLEncoder.encode(forecast, "utf-8");
-						Common.LogMessage("forecast=" + forecast);
-						Common.LogMessage("fctype=" + fctype);
-
-						if(fctype.toLowerCase().equals("yahoo"))
+						switch (fctype)
 						{
-							if (cb2.isChecked())
-								forecast = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + forecast + "%22)%20and%20u%3D'c'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
-							else
-								forecast = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + forecast + "%22)%20and%20u%3D'f'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
-						} else if(fctype.toLowerCase().equals("weatherzone")) {
-							forecast = "http://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecast + "&obs=0&fc=1&warn=0";
+							case "yahoo":
+								forecast = URLEncoder.encode(forecast, "utf-8");
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+
+								if (cb2.isChecked())
+									forecast = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + forecast + "%22)%20and%20u%3D'c'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+								else
+									forecast = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + forecast + "%22)%20and%20u%3D'f'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+								break;
+							case "weatherzone":
+								forecast = "http://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecast + "&obs=0&fc=1&warn=0";
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
+							default:
+								handlerForecast.sendEmptyMessage(0);
+								return;
 						}
 
 					} catch (Exception e) {
@@ -561,7 +593,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						while ((line = in.readLine()) != null)
 						{
 							line = line.trim();
-							if(line.length() > 0)
+							if (line.length() > 0)
 								sb.append(line);
 						}
 						in.close();
@@ -605,8 +637,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						URL url = new URL(custom);
 						URLConnection conn = url.openConnection();
 						conn.connect();
-						InputStream in = conn.getInputStream();
-						in.close();
+
 						validURL5 = true;
 					} catch (MalformedURLException e) {
 						e.printStackTrace();
@@ -626,6 +657,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetStringPref("SETTINGS_URL", et1.getText().toString());
 				common.SetIntPref("updateInterval", pos);
 				common.SetStringPref("BASE_URL", data);
+				common.SetStringPref("radtype", radtype);
 				common.SetStringPref("RADAR_URL", radar);
 				common.SetStringPref("FORECAST_URL", forecast);
 				common.SetStringPref("fctype", fctype);

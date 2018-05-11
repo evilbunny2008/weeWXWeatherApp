@@ -212,7 +212,7 @@ class Common
 		    if(bits.length >= 3)
 		    {
 			    String s = bits[2].split("</description>")[0];
-			    content = s.substring(9, s.length() - 4).trim();
+			    content = s.substring(9, s.length() - 3).trim();
 		    }
 
 		    bits = data.split("<pubDate>");

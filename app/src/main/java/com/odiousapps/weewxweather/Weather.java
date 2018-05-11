@@ -16,7 +16,7 @@ import android.view.ViewTreeObserver;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
-import android.webkit.WebSettings;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -73,6 +73,7 @@ class Weather
         return rootView;
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     View myWeather(LayoutInflater inflater, ViewGroup container)
     {
         rootView = inflater.inflate(R.layout.fragment_weather, container, false);
@@ -106,6 +107,8 @@ class Weather
 	    });
 
         wv = rootView.findViewById(R.id.radar);
+
+	    wv.getSettings().setJavaScriptEnabled(true);
 	    wv.getSettings().setUserAgentString(Common.UA);
         wv.setOnLongClickListener(new View.OnLongClickListener()
         {
@@ -120,6 +123,15 @@ class Weather
                 return true;
             }
         });
+
+	    wv.setWebViewClient(new WebViewClient()
+	    {
+		    @Override
+		    public boolean shouldOverrideUrlLoading(WebView view, String url)
+		    {
+			    return false;
+		    }
+	    });
 
 	    wv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
 	    {
@@ -172,27 +184,39 @@ class Weather
     {
     	if(common.GetBoolPref("radarforecast", true))
 	    {
-		    String radar = common.context.getFilesDir() + "/radar.gif";
-
-		    if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+		    switch (common.GetStringPref("radtype", "image"))
 		    {
-			    String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
-			    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-			    return;
-		    }
+			    case "image":
+				    String radar = common.context.getFilesDir() + "/radar.gif";
 
-		    String html = "<!DOCTYPE html>\n" +
-				    "<html>\n" +
-				    "  <head>\n" +
-				    "    <meta charset='utf-8'>\n" +
-				    "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
-				    "  </head>\n" +
-				    "  <body>\n" +
-				    "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
-				    "\tsrc='file://" + radar + "'>\n" +
-				    "  </body>\n" +
-				    "</html>";
-		    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+				    if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+				    {
+					    String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
+					    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+					    return;
+				    }
+
+				    String html = "<!DOCTYPE html>\n" +
+						    "<html>\n" +
+						    "  <head>\n" +
+						    "    <meta charset='utf-8'>\n" +
+						    "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
+						    "  </head>\n" +
+						    "  <body>\n" +
+						    "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
+						    "\tsrc='file://" + radar + "'>\n" +
+						    "  </body>\n" +
+						    "</html>";
+				    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+				    break;
+			    case "webpage":
+				    wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
+				    break;
+			    default:
+				    String tmphtml = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
+				    wv.loadDataWithBaseURL(null, tmphtml, "text/html", "utf-8", null);
+				    break;
+		    }
 	    } else {
 		    String fctype = common.GetStringPref("fctype", "Yahoo");
 		    String data = common.GetStringPref("forecastData", "");
