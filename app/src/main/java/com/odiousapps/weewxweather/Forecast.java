@@ -37,7 +37,7 @@ public class Forecast
     private View rootView;
     private WebView wv;
     private SwipeRefreshLayout swipeLayout;
-	private ProgressDialog dialog;
+//	private ProgressDialog dialog;
 	private TextView forecast;
 	private ImageView im;
 
@@ -350,8 +350,10 @@ public class Forecast
 	        return;
         }
 
-	    dialog = ProgressDialog.show(common.context, "Updating Forecast", "Please wait while we get some fresh data", false);
-	    dialog.show();
+        if(!swipeLayout.isRefreshing())
+	        swipeLayout.setRefreshing(true);
+//	    dialog = ProgressDialog.show(common.context, "Updating Forecast", "Please wait while we get some fresh data", false);
+//	    dialog.show();
 
 	    if(!common.GetStringPref("forecastData", "").equals(""))
 		    generateForecast();
@@ -412,11 +414,11 @@ public class Forecast
 
 	        swipeLayout.setRefreshing(false);
 
-	        if(dialog != null)
-	        {
-		        dialog.dismiss();
-		        dialog = null;
-	        }
+//	        if(dialog != null)
+//	        {
+//		        dialog.dismiss();
+//		        dialog = null;
+//	        }
         }
     };
 

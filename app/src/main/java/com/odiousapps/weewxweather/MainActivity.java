@@ -137,9 +137,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    s1.setSelection(common.GetIntPref("updateInterval", 1));
 	    s1.setOnItemSelectedListener(this);
 
-	    boolean bgdl = common.GetBoolPref("bgdl", true);
 	    CheckBox cb1 = findViewById(R.id.cb1);
-	    if(!bgdl)
+	    if(!common.GetBoolPref("bgdl", true))
 		    cb1.setChecked(false);
 
 	    boolean metric = common.GetBoolPref("metric", true);
@@ -832,15 +831,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	@Override
     public void onBackPressed()
     {
+	    super.onBackPressed();
 	    if (mDrawerLayout.isDrawerOpen(GravityCompat.START))
 	    {
 		    mDrawerLayout.closeDrawer(GravityCompat.START);
 	    } else {
-		    super.onBackPressed();
 		    if(common.GetBoolPref("bgdl", true))
 		    {
+			    Common.LogMessage("Moving task to background");
 			    moveTaskToBack(true);
+			    Common.LogMessage("app should now be in the bg.");
 		    } else {
+			    Common.LogMessage("finishing up.");
 			    finish();
 		    }
 	    }
@@ -851,9 +853,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     {
 	    super.onDestroy();
 
-	    stopService(new Intent(this, myService.class));
 	    unregisterReceiver(serviceReceiver);
-	    System.exit(0);
+
+	    if(!common.GetBoolPref("bgdl", true))
+	    {
+		    stopService(new Intent(this, myService.class));
+		    System.exit(0);
+	    }
     }
 
     @Override
