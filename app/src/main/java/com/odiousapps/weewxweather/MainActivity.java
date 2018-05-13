@@ -268,7 +268,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("LastDownloadTime");
 						common.RemovePref("radarforecast");
 						common.RemovePref("seekBar");
-						common.RemovePref("RainTodaySinceField");
 						common.commit();
 
 						common.context.stopService(new Intent(common.context, myService.class));
@@ -326,8 +325,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				String oldcustom = common.GetStringPref("CUSTOM_URL", "");
 
 				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", fctype = "";
-
-				int RainTodaySinceField = 20;
 
 				CheckBox cb1 = findViewById(R.id.cb1);
 				CheckBox cb2 = findViewById(R.id.cb2);
@@ -398,12 +395,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							webcam = mb[1];
 						if (mb[0].equals("custom"))
 							custom = mb[1];
-						if (mb[0].equals("raintodaysincefield"))
-							RainTodaySinceField = Integer.valueOf(mb[1].trim());
 					}
-
-					if(RainTodaySinceField < 0 || RainTodaySinceField > 999)
-						RainTodaySinceField = 20;
 
 					if(fctype == null || fctype.equals(""))
 						fctype = "Yahoo";
@@ -673,7 +665,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetBoolPref("metric", cb2.isChecked());
 				common.SetBoolPref("bgdl", cb1.isChecked());
 				common.SetBoolPref("radarforecast", showRadar.isChecked());
-				common.SetIntPref("RainTodaySinceField", RainTodaySinceField);
 
 				myService.singleton.stopTimer();
 				myService.singleton.startTimer();

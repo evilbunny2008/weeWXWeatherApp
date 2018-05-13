@@ -271,8 +271,12 @@ public class Stats
                 "</td><td>" + convert(bits[42]) + "</td><td>" + bits[41]  + bits[63] + "</td><td><img style='width:"+iw+"px' src='barometer.png'></td></tr>";
         sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]) + "</td><td>" +
-                bits[common.GetIntPref("RainTodaySinceField", 20)] + bits[62] + "</td><td><img style='width:"+iw+"px' src='umbrella.png'></td></tr>";
+	    String rain = bits[20];
+	    if(!bits[158].equals(""))
+		    rain = bits[158];
+
+        stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +
+		        "</td><td>" + rain + bits[62] + "</td><td><img style='width:"+iw+"px' src='umbrella.png'></td></tr>";
         sb.append(stmp);
 
         stmp = "</table><br>";

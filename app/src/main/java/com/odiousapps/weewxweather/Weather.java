@@ -60,7 +60,12 @@ class Weather
         checkFields((TextView)rootView.findViewById(R.id.textView5), bits[37] + bits[63]);
         checkFields((TextView)rootView.findViewById(R.id.textView6), bits[29]);
         checkFields((TextView)rootView.findViewById(R.id.textView7), bits[6] + bits[64]);
-        checkFields((TextView)rootView.findViewById(R.id.textView8), bits[20] + bits[62]);
+
+	    String rain = bits[20];
+	    if(!bits[158].equals(""))
+		    rain = bits[158];
+
+        checkFields((TextView)rootView.findViewById(R.id.textView8), rain + bits[62]);
         checkFields((TextView)rootView.findViewById(R.id.textView9), bits[12] + bits[60]);
         checkFields((TextView)rootView.findViewById(R.id.textView10), bits[45] + "UVI");
         checkFields((TextView)rootView.findViewById(R.id.textView11), bits[43] + "W/m\u00B2");

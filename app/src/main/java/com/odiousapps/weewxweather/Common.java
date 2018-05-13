@@ -33,11 +33,10 @@ class Common
         System.setProperty("http.agent", UA);
         this.context = c;
 
-	    PackageManager pm = c.getPackageManager();
-	    PackageInfo version = null;
 	    try
 	    {
-		    version = pm.getPackageInfo("com.odiousapps.weewxweather", 0);
+		    PackageManager pm = c.getPackageManager();
+		    PackageInfo version = pm.getPackageInfo("com.odiousapps.weewxweather", 0);
 		    appversion = version.versionName;
 		    LogMessage("appversion="+appversion);
 	    } catch (Exception e) {
@@ -207,7 +206,12 @@ class Common
 
             paint.setTextAlign(Paint.Align.RIGHT);
             paint.setTextSize(64);
-            myCanvas.drawText(bits[20] + bits[62], myCanvas.getWidth() - 20, 400, paint);
+
+            String rain = bits[20];
+            if(!bits[158].equals(""))
+            	rain = bits[158];
+
+            myCanvas.drawText(rain + bits[62], myCanvas.getWidth() - 20, 400, paint);
         } else {
             paint.setTextSize(200);
             myCanvas.drawText("Error!", myCanvas.getWidth() / 2, 300, paint);
