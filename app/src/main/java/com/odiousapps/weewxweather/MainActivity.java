@@ -220,8 +220,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "wouldn't be possible otherwise.<br><br>" +
 			    "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
 			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a><br><br>" +
-			    "<a href='https://www.yahoo.com/?ilc=401'>Yahoo! Weather</a> Forecast API<br><br>" +
-			    "This app is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
+			    "weeWx Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
 	    tv.setText(Html.fromHtml(lines));
 	    tv.setMovementMethod(LinkMovementMethod.getInstance());
@@ -269,6 +268,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("LastDownloadTime");
 						common.RemovePref("radarforecast");
 						common.RemovePref("seekBar");
+						common.RemovePref("RainTodaySinceField");
 						common.commit();
 
 						common.context.stopService(new Intent(common.context, myService.class));
@@ -327,6 +327,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", fctype = "";
 
+				int RainTodaySinceField = 20;
+
 				CheckBox cb1 = findViewById(R.id.cb1);
 				CheckBox cb2 = findViewById(R.id.cb2);
 
@@ -381,6 +383,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					for (String bit : bits)
 					{
 						String[] mb = bit.split("=", 2);
+						mb[0] = mb[0].trim().toLowerCase();
 						if (mb[0].equals("data"))
 							data = mb[1];
 						if(mb[0].equals("radtype"))
@@ -395,7 +398,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							webcam = mb[1];
 						if (mb[0].equals("custom"))
 							custom = mb[1];
+						if (mb[0].equals("raintodaysincefield"))
+							RainTodaySinceField = Integer.valueOf(mb[1].trim());
 					}
+
+					if(RainTodaySinceField < 0 || RainTodaySinceField > 999)
+						RainTodaySinceField = 20;
 
 					if(fctype == null || fctype.equals(""))
 						fctype = "Yahoo";
@@ -665,6 +673,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetBoolPref("metric", cb2.isChecked());
 				common.SetBoolPref("bgdl", cb1.isChecked());
 				common.SetBoolPref("radarforecast", showRadar.isChecked());
+				common.SetIntPref("RainTodaySinceField", RainTodaySinceField);
 
 				myService.singleton.stopTimer();
 				myService.singleton.startTimer();

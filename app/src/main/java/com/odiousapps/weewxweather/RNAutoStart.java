@@ -15,8 +15,13 @@ public class RNAutoStart extends BroadcastReceiver
 
         if(myService.singleton == null && common.GetBoolPref("bgdl", true))
         {
-            c.startService(new Intent(c, myService.class));
-            Common.LogMessage("onReceive() start");
+        	try
+	        {
+		        c.startService(new Intent(c, myService.class));
+		        Common.LogMessage("onReceive() start");
+	        } catch (Exception e) {
+        		e.printStackTrace();
+	        }
         }
     }
 }

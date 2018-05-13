@@ -3,6 +3,8 @@ package com.odiousapps.weewxweather;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -22,6 +24,7 @@ class Common
 {
     private final static String PREFS_NAME = "WeeWxWeatherPrefs";
     private final static boolean debug_on = true;
+	private String appversion = "0.0.0";
     Context context;
     final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36";
 
@@ -29,6 +32,22 @@ class Common
     {
         System.setProperty("http.agent", UA);
         this.context = c;
+
+	    PackageManager pm = c.getPackageManager();
+	    PackageInfo version = null;
+	    try
+	    {
+		    version = pm.getPackageInfo("com.odiousapps.weewxweather", 0);
+		    appversion = version.versionName;
+		    LogMessage("appversion="+appversion);
+	    } catch (Exception e) {
+	    	e.printStackTrace();
+	    }
+    }
+
+    String getAppversion()
+    {
+    	return appversion;
     }
 
     static void LogMessage(String value)

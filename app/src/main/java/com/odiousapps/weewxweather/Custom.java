@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Vibrator;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -115,6 +114,7 @@ class Custom
 		    @Override
 		    public boolean onConsoleMessage(ConsoleMessage cm)
 		    {
+//		    	Common.LogMessage(cm.message());
 			    return true;
 		    }
 	    });
