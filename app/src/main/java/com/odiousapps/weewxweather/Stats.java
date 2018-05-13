@@ -272,7 +272,7 @@ public class Stats
         sb.append(stmp);
 
 	    String rain = bits[20];
-	    if(!bits[158].equals(""))
+	    if(bits.length >= 158 && !bits[158].equals(""))
 		    rain = bits[158];
 
         stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +

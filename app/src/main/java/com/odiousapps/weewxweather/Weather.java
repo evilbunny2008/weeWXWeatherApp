@@ -62,7 +62,7 @@ class Weather
         checkFields((TextView)rootView.findViewById(R.id.textView7), bits[6] + bits[64]);
 
 	    String rain = bits[20];
-	    if(!bits[158].equals(""))
+	    if(bits.length >= 158 && !bits[158].equals(""))
 		    rain = bits[158];
 
         checkFields((TextView)rootView.findViewById(R.id.textView8), rain + bits[62]);
