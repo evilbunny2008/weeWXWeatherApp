@@ -61,11 +61,11 @@ class Weather
         checkFields((TextView)rootView.findViewById(R.id.textView6), bits[29]);
         checkFields((TextView)rootView.findViewById(R.id.textView7), bits[6] + bits[64]);
 
-	    String rain = bits[20];
-	    if(bits.length >= 158 && !bits[158].equals(""))
-		    rain = bits[158];
+	    String rain = bits[20] + bits[62] + " since mn";
+	    if(bits.length >= 159 && !bits[158].equals(""))
+		    rain = bits[158] + bits[62] + " since " + bits[159];
 
-        checkFields((TextView)rootView.findViewById(R.id.textView8), rain + bits[62]);
+        checkFields((TextView)rootView.findViewById(R.id.textView8), rain);
         checkFields((TextView)rootView.findViewById(R.id.textView9), bits[12] + bits[60]);
         checkFields((TextView)rootView.findViewById(R.id.textView10), bits[45] + "UVI");
         checkFields((TextView)rootView.findViewById(R.id.textView11), bits[43] + "W/m\u00B2");
