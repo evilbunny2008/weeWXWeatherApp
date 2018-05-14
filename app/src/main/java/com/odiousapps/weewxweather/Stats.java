@@ -234,6 +234,9 @@ public class Stats
 
 	    String bits[] = common.GetStringPref("LastDownload", "").split("\\|");
 
+	    if(bits.length < 65)
+	    	return;
+
 //      Today Stats
 	    checkFields((TextView) rootView.findViewById(R.id.textView), bits[56]);
 	    checkFields((TextView) rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
