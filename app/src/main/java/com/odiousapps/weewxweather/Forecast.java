@@ -1,7 +1,6 @@
 package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
-import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +9,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +35,6 @@ public class Forecast
     private View rootView;
     private WebView wv;
     private SwipeRefreshLayout swipeLayout;
-//	private ProgressDialog dialog;
 	private TextView forecast;
 	private ImageView im;
 
@@ -352,8 +349,6 @@ public class Forecast
 
         if(!swipeLayout.isRefreshing())
 	        swipeLayout.setRefreshing(true);
-//	    dialog = ProgressDialog.show(common.context, "Updating Forecast", "Please wait while we get some fresh data", false);
-//	    dialog.show();
 
 	    if(!common.GetStringPref("forecastData", "").equals(""))
 		    generateForecast();
@@ -413,12 +408,6 @@ public class Forecast
 	        	loadWebView();
 
 	        swipeLayout.setRefreshing(false);
-
-//	        if(dialog != null)
-//	        {
-//		        dialog.dismiss();
-//		        dialog = null;
-//	        }
         }
     };
 

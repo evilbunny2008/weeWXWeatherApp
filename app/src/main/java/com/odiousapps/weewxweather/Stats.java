@@ -230,86 +230,87 @@ public class Stats
 
     private void updateFields()
     {
-        int iw = 17;
+	    int iw = 17;
 
-        String bits[] = common.GetStringPref("LastDownload", "").split("\\|");
-        if(bits.length < 157)
-            return;
+	    String bits[] = common.GetStringPref("LastDownload", "").split("\\|");
 
 //      Today Stats
-        checkFields((TextView)rootView.findViewById(R.id.textView), bits[56]);
-        checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
+	    checkFields((TextView) rootView.findViewById(R.id.textView), bits[56]);
+	    checkFields((TextView) rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
 
-		double percent = (seekBar.getProgress() + 90) / 100.00;
-		NumberFormat formatter = new DecimalFormat("#0.00");
-		String p = formatter.format(percent);
+	    double percent = (seekBar.getProgress() + 90) / 100.00;
+	    NumberFormat formatter = new DecimalFormat("#0.00");
+	    String p = formatter.format(percent);
 
-        String stmp;
-        StringBuilder sb = new StringBuilder();
+	    String stmp;
+	    StringBuilder sb = new StringBuilder();
 
 	    String header = "<html><body style='text-align:center; transform: scale(" + p + "); transform-origin: 0 0;'>";
-        String footer = "</body></html>";
+	    String footer = "</body></html>";
 
-        sb.append(header);
+	    sb.append(header);
 
-        sb.append("<span style='font-size:18pt;font-weight:bold;'>Today's Statistics</span>");
-        sb.append("<table style='width:100%;border:0px;'>");
+	    sb.append("<span style='font-size:18pt;font-weight:bold;'>Today's Statistics</span>");
+	    sb.append("<table style='width:100%;border:0px;'>");
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='temperature.png'></td><td>" + bits[3] + bits[60] + "</td><td>" + convert(bits[4]) +
-                "</td><td>" + convert(bits[2]) + "</td><td>" + bits[1]  + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
-        sb.append(stmp);
+	    stmp = "<tr><td><img style='width:" + iw + "px' src='temperature.png'></td><td>" + bits[3] + bits[60] + "</td><td>" + convert(bits[4]) +
+			    "</td><td>" + convert(bits[2]) + "</td><td>" + bits[1] + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
+	    sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='droplet.png'></td><td>" + bits[15] + bits[60] + "</td><td>" + convert(bits[16]) +
-                "</td><td>" + convert(bits[14]) + "</td><td>" + bits[13]  + bits[60] + "</td><td><img style='width:"+iw+"px' src='droplet.png'></td></tr>";
-        sb.append(stmp);
+	    stmp = "<tr><td><img style='width:" + iw + "px' src='droplet.png'></td><td>" + bits[15] + bits[60] + "</td><td>" + convert(bits[16]) +
+			    "</td><td>" + convert(bits[14]) + "</td><td>" + bits[13] + bits[60] + "</td><td><img style='width:" + iw + "px' src='droplet.png'></td></tr>";
+	    sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='humidity.png'></td><td>" + bits[9] + bits[64] + "</td><td>" + convert(bits[10]) +
-                "</td><td>" + convert(bits[8]) + "</td><td>" + bits[6]  + bits[64] + "</td><td><img style='width:"+iw+"px' src='humidity.png'></td></tr>";
-        sb.append(stmp);
+	    stmp = "<tr><td><img style='width:" + iw + "px' src='humidity.png'></td><td>" + bits[9] + bits[64] + "</td><td>" + convert(bits[10]) +
+			    "</td><td>" + convert(bits[8]) + "</td><td>" + bits[6] + bits[64] + "</td><td><img style='width:" + iw + "px' src='humidity.png'></td></tr>";
+	    sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='barometer.png'></td><td>" + bits[39] + bits[63] + "</td><td>" + convert(bits[40]) +
-                "</td><td>" + convert(bits[42]) + "</td><td>" + bits[41]  + bits[63] + "</td><td><img style='width:"+iw+"px' src='barometer.png'></td></tr>";
-        sb.append(stmp);
+	    stmp = "<tr><td><img style='width:" + iw + "px' src='barometer.png'></td><td>" + bits[39] + bits[63] + "</td><td>" + convert(bits[40]) +
+			    "</td><td>" + convert(bits[42]) + "</td><td>" + bits[41] + bits[63] + "</td><td><img style='width:" + iw + "px' src='barometer.png'></td></tr>";
+	    sb.append(stmp);
 
 	    String rain = bits[20];
-	    if(bits.length >= 158 && !bits[158].equals(""))
+	    if (bits.length > 158 && !bits[158].equals(""))
 		    rain = bits[158];
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +
-		        "</td><td>" + rain + bits[62] + "</td><td><img style='width:"+iw+"px' src='umbrella.png'></td></tr>";
-        sb.append(stmp);
+	    stmp = "<tr><td><img style='width:" + iw + "px' src='windsock.png'></td><td colspan='3'>" + bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +
+			    "</td><td>" + rain + bits[62] + "</td><td><img style='width:" + iw + "px' src='umbrella.png'></td></tr>";
+	    sb.append(stmp);
 
-        stmp = "</table><br>";
-        sb.append(stmp);
+	    stmp = "</table><br>";
+	    sb.append(stmp);
 
-        sb.append("<span style='font-size:18pt;font-weight:bold;'>Yesterday's Statistics</span>");
-        sb.append("<table style='width:100%;border:0px;'>");
+	    if (bits.length > 87 && !bits[87].equals(""))
+	    {
+		    sb.append("<span style='font-size:18pt;font-weight:bold;'>Yesterday's Statistics</span>");
+		    sb.append("<table style='width:100%;border:0px;'>");
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='temperature.png'></td><td>" + bits[67] + bits[60] + "</td><td>" + convert(bits[68]) +
-                "</td><td>" + convert(bits[66]) + "</td><td>" + bits[69]  + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
-        sb.append(stmp);
+		    stmp = "<tr><td><img style='width:" + iw + "px' src='temperature.png'></td><td>" + bits[67] + bits[60] + "</td><td>" + convert(bits[68]) +
+				    "</td><td>" + convert(bits[66]) + "</td><td>" + bits[69] + bits[60] + "</td><td><img style='width:" + iw + "px' src='temperature.png'></td></tr>";
+		    sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='droplet.png'></td><td>" + bits[78] + bits[60] + "</td><td>" + convert(bits[79]) +
-                "</td><td>" + convert(bits[77]) + "</td><td>" + bits[76]  + bits[60] + "</td><td><img style='width:"+iw+"px' src='droplet.png'></td></tr>";
-        sb.append(stmp);
+		    stmp = "<tr><td><img style='width:" + iw + "px' src='droplet.png'></td><td>" + bits[78] + bits[60] + "</td><td>" + convert(bits[79]) +
+				    "</td><td>" + convert(bits[77]) + "</td><td>" + bits[76] + bits[60] + "</td><td><img style='width:" + iw + "px' src='droplet.png'></td></tr>";
+		    sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='humidity.png'></td><td>" + bits[82] + bits[64] + "</td><td>" + convert(bits[83]) +
-                "</td><td>" + convert(bits[81]) + "</td><td>" + bits[80]  + bits[64] + "</td><td><img style='width:"+iw+"px' src='humidity.png'></td></tr>";
-        sb.append(stmp);
+		    stmp = "<tr><td><img style='width:" + iw + "px' src='humidity.png'></td><td>" + bits[82] + bits[64] + "</td><td>" + convert(bits[83]) +
+				    "</td><td>" + convert(bits[81]) + "</td><td>" + bits[80] + bits[64] + "</td><td><img style='width:" + iw + "px' src='humidity.png'></td></tr>";
+		    sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='barometer.png'></td><td>" + bits[84] + bits[63] + "</td><td>" + convert(bits[85]) +
-                "</td><td>" + convert(bits[87]) + "</td><td>" + bits[86]  + bits[63] + "</td><td><img style='width:"+iw+"px' src='barometer.png'></td></tr>";
-        sb.append(stmp);
+		    stmp = "<tr><td><img style='width:" + iw + "px' src='barometer.png'></td><td>" + bits[84] + bits[63] + "</td><td>" + convert(bits[85]) +
+				    "</td><td>" + convert(bits[87]) + "</td><td>" + bits[86] + bits[63] + "</td><td><img style='width:" + iw + "px' src='barometer.png'></td></tr>";
+		    sb.append(stmp);
 
-        stmp = "<tr><td><img style='width:"+iw+"px' src='windsock.png'></td><td colspan='3'>" + bits[69] + bits[61] + " " + bits[70] + " " + convert(bits[71]) +
-                "</td><td>" + bits[21] + bits[62] + "</td><td><img style='width:"+iw+"px' src='umbrella.png'></td></tr>";
-        sb.append(stmp);
+		    stmp = "<tr><td><img style='width:" + iw + "px' src='windsock.png'></td><td colspan='3'>" + bits[69] + bits[61] + " " + bits[70] + " " + convert(bits[71]) +
+				    "</td><td>" + bits[21] + bits[62] + "</td><td><img style='width:" + iw + "px' src='umbrella.png'></td></tr>";
+		    sb.append(stmp);
 
-        stmp = "</table><br>";
-        sb.append(stmp);
+		    stmp = "</table><br>";
+		    sb.append(stmp);
+	    }
 
         //noinspection ConstantConditions
-        if(bits.length >= 110 && !bits[110].equals(""))
+        if(bits.length > 110 && !bits[110].equals(""))
         {
             sb.append("<span style='font-size:18pt;font-weight:bold;'>This Month's Statistics</span>");
             sb.append("<table style='width:100%;border:0px;'>");
@@ -339,7 +340,7 @@ public class Stats
         }
 
         //noinspection ConstantConditions
-        if (bits.length >= 133 && !bits[133].equals(""))
+        if (bits.length > 133 && !bits[133].equals(""))
         {
             sb.append("<span style='font-size:18pt;font-weight:bold;'>This Year's Statistics</span>");
             sb.append("<table style='width:100%;border:0px;'>");
@@ -369,7 +370,7 @@ public class Stats
         }
 
         //noinspection ConstantConditions
-        if (bits.length >= 157 && !bits[157].equals(""))
+        if (bits.length > 157 && !bits[157].equals(""))
         {
             sb.append("<span style='font-size:18pt;font-weight:bold;'>All Time Statistics</span>");
             sb.append("<table style='width:100%;border:0px;'>");

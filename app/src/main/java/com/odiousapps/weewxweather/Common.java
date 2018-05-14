@@ -208,7 +208,7 @@ class Common
             paint.setTextSize(64);
 
 	        String rain = bits[20];
-	        if(bits.length >= 158 && !bits[158].equals(""))
+	        if(bits.length > 158 && !bits[158].equals(""))
 		        rain = bits[158];
 
             myCanvas.drawText(rain + bits[62], myCanvas.getWidth() - 20, 400, paint);

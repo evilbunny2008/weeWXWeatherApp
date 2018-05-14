@@ -62,7 +62,7 @@ class Weather
         checkFields((TextView)rootView.findViewById(R.id.textView7), bits[6] + bits[64]);
 
 	    String rain = bits[20] + bits[62] + " since mn";
-	    if(bits.length >= 159 && !bits[158].equals(""))
+	    if(bits.length > 159 && !bits[158].equals(""))
 		    rain = bits[158] + bits[62] + " since " + bits[159];
 
         checkFields((TextView)rootView.findViewById(R.id.textView8), rain);
