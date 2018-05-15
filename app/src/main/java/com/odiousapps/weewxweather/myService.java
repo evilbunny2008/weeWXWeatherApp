@@ -186,6 +186,9 @@ public class myService extends Service
                 try
                 {
                 	String data = common.GetStringPref("BASE_URL", "");
+                	if(data.equals(""))
+                		return;
+
 	                Uri uri = Uri.parse(data);
 	                if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
 	                {

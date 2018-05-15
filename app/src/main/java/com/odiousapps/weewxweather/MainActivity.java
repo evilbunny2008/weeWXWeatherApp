@@ -974,6 +974,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+        	if(inflater == null || container == null)
+        		return null;
+
 	        Common common = new Common(getContext());
 
 	        lastPos = getArguments().getInt(ARG_SECTION_NUMBER);
