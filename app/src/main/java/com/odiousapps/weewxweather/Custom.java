@@ -134,9 +134,13 @@ class Custom
         Common.LogMessage("reload custom...");
 
         String custom = common.GetStringPref("CUSTOM_URL", "");
+        String custom_url = common.GetStringPref("custom_url", "");
 
         if (custom == null || custom.equals(""))
             return;
+
+        if(custom_url != null && !custom_url.equals(""))
+        	custom = custom_url;
 
         wv.loadUrl(custom);
     }

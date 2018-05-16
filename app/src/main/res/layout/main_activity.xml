@@ -22,166 +22,189 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/nav_header_height"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/nav_header_height">
 
             <LinearLayout
-                android:id="@+id/settingsLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
+                    android:id="@+id/settingsLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/fileURI"
-                    android:textSize="18sp"/>
+                    android:orientation="vertical"
+                    android:visibility="visible">
 
-                <EditText
-                    android:id="@+id/settings"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:ems="10"
-                    android:hint="@string/fileURI"
-                    android:inputType="textUri"
-                    android:textSize="18sp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/metric"
-                    android:textSize="18sp"/>
-
-                <CheckBox
-                    android:id="@+id/cb2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/yes"
-                    android:textSize="18sp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/refresh_time"
-                    android:textSize="18sp"/>
-
-                <Spinner
-                    android:id="@+id/spinner1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:spinnerMode="dropdown"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/updateBG"
-                    android:textSize="18sp"/>
-
-                <CheckBox
-                    android:id="@+id/cb1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="@string/yes"
-                    android:textSize="18sp"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/radarforecast"
-                    android:textSize="18sp"/>
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <RadioButton
-                        android:id="@+id/showRadar"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:text="@string/fileURL"
+                        android:textSize="18sp"/>
+
+                    <EditText
+                        android:id="@+id/settings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:ems="10"
+                        android:hint="@string/fileURL"
+                        android:inputType="textUri"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/metric"
+                        android:textSize="18sp"/>
+
+                    <CheckBox
+                        android:id="@+id/cb2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="@string/show_radar"
+                        android:text="@string/yes"
                         android:textSize="18sp"/>
 
-                    <RadioButton
-                        android:id="@+id/showForecast"
+                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/show_forecast"
+                        android:text="@string/refresh_time"
                         android:textSize="18sp"/>
-                </RadioGroup>
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/aboutLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
+                    <Spinner
+                        android:id="@+id/spinner1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:spinnerMode="dropdown"/>
 
-                <TextView
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/updateBG"
+                        android:textSize="18sp"/>
+
+                    <CheckBox
+                        android:id="@+id/cb1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/yes"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/radarforecast"
+                        android:textSize="18sp"/>
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/showRadar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:checked="true"
+                            android:text="@string/show_radar"
+                            android:textSize="18sp"/>
+
+                        <RadioButton
+                            android:id="@+id/showForecast"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/show_forecast"
+                            android:textSize="18sp"/>
+                    </RadioGroup>
+
+                    <TextView
+                        android:id="@+id/custom"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="@string/custom_url"/>
+
+                    <EditText
+                        android:id="@+id/customURL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:ems="10"
+                        android:hint="@string/custom_url"
+                        android:inputType="textUri"
+                        android:textSize="18sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/aboutLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:text="@string/about"
-                    android:textSize="28sp"/>
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
-                <TextView
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="@string/about"
+                        android:textSize="28sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:id="@+id/aboutText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textSize="18sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:textSize="18sp"/>
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/aboutText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:textSize="18sp"/>
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/save_settings"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        tools:ignore="ButtonStyle"/>
 
-            </LinearLayout>
-
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/aboutButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about2"
+                        android:layout_weight="1"
+                        android:textSize="18sp"
+                        tools:ignore="ButtonStyle"/>
+                </LinearLayout>
 
                 <Button
-                    android:id="@+id/button"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/deleteData"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/save_settings"
-                    android:layout_weight="1"
-                    android:textSize="18sp"
-                    tools:ignore="ButtonStyle"/>
-
-                <Button
-                    android:id="@+id/aboutButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/about2"
-                    android:layout_weight="1"
-                    android:textSize="18sp"
-                    tools:ignore="ButtonStyle"/>
+                    android:layout_marginTop="20dp"
+                    android:text="@string/delete_all_data"
+                    android:textSize="18sp"/>
             </LinearLayout>
-
-            <Button
-                android:id="@+id/deleteData"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/delete_all_data"
-                android:textSize="18sp"/>
-        </LinearLayout>
+        </ScrollView>
     </android.support.design.widget.NavigationView>
 </android.support.v4.widget.DrawerLayout>

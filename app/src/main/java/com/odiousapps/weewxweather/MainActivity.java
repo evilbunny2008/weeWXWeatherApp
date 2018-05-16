@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private TabLayout tabLayout;
     private Common common;
     private DrawerLayout mDrawerLayout;
-	private EditText et1;
+	private EditText settingsURL, customURL;
 	private Button b1;
 	private Button b2;
 	private Button b3;
@@ -118,15 +118,28 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void doSettings()
     {
-	    et1 = findViewById(R.id.settings);
-	    et1.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/settings.txt"));
-	    et1.setOnFocusChangeListener(new View.OnFocusChangeListener()
+	    settingsURL = findViewById(R.id.settings);
+	    settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/settings.txt"));
+	    settingsURL.setOnFocusChangeListener(new View.OnFocusChangeListener()
 	    {
 		    @Override
 		    public void onFocusChange(View v, boolean hasFocus)
 		    {
 			    if (!hasFocus)
 				    hideKeyboard(v);
+		    }
+	    });
+
+	    customURL = findViewById(R.id.customURL);
+	    customURL.setText(common.GetStringPref("custom_url", ""));
+	    customURL.setOnFocusChangeListener(new View.OnFocusChangeListener()
+	    {
+		    @Override
+		    public void onFocusChange(View v, boolean hasFocus)
+		    {
+			    if (!hasFocus)
+				    hideKeyboard(v);
+
 		    }
 	    });
 
@@ -168,7 +181,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    b2.setEnabled(false);
 			    InputMethodManager mgr = (InputMethodManager)common.context.getSystemService(Context.INPUT_METHOD_SERVICE);
 			    if(mgr != null)
-				    mgr.hideSoftInputFromWindow(et1.getWindowToken(), 0);
+			    {
+				    mgr.hideSoftInputFromWindow(settingsURL.getWindowToken(), 0);
+				    mgr.hideSoftInputFromWindow(customURL.getWindowToken(), 0);
+			    }
 
 			    Common.LogMessage("show dialog");
 			    dialog = ProgressDialog.show(common.context, "Testing submitted URLs", "Please wait while we verify the URL you submitted.", false);
@@ -194,6 +210,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    {
 			    	showSettings = false;
 				    b1.setVisibility(View.INVISIBLE);
+				    b2.setVisibility(View.INVISIBLE);
 				    b3.setText(R.string.settings2);
 
 				    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
@@ -203,6 +220,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    } else {
 				    showSettings = true;
 				    b1.setVisibility(View.VISIBLE);
+				    b2.setVisibility(View.VISIBLE);
 				    b3.setText(R.string.about2);
 
 				    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
@@ -260,6 +278,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("fctype");
 						common.RemovePref("WEBCAM_URL");
 						common.RemovePref("CUSTOM_URL");
+						common.RemovePref("custom_url");
 						common.RemovePref("metric");
 						common.RemovePref("bgdl");
 						common.RemovePref("rssCheck");
@@ -323,8 +342,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				String oldforecast = common.GetStringPref("FORECAST_URL", "");
 				String oldwebcam = common.GetStringPref("WEBCAM_URL", "");
 				String oldcustom = common.GetStringPref("CUSTOM_URL", "");
+				String oldcustom_url = common.GetStringPref("custom_url", "");
 
-				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", fctype = "";
+				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url = "", fctype = "";
 
 				CheckBox cb1 = findViewById(R.id.cb1);
 				CheckBox cb2 = findViewById(R.id.cb2);
@@ -332,7 +352,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				RadioButton showRadar = findViewById(R.id.showRadar);
 				int curtime = Math.round(System.currentTimeMillis() / 1000);
 
-				if (et1.getText().toString().equals("https://example.com/weewx/settings.txt") || et1.getText().toString().equals(""))
+				if (settingsURL.getText().toString().equals("https://example.com/weewx/settings.txt") || settingsURL.getText().toString().equals(""))
 				{
 					handlerSettings.sendEmptyMessage(0);
 					return;
@@ -340,9 +360,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				try
 				{
-					Uri uri = Uri.parse(et1.getText().toString());
-					Common.LogMessage("settings.txt == " + et1.getText().toString());
-					common.SetStringPref("SETTINGS_URL", et1.getText().toString());
+					Uri uri = Uri.parse(settingsURL.getText().toString());
+					Common.LogMessage("settings.txt == " + settingsURL.getText().toString());
+					common.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
 					if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
 					{
 						final String[] UC = uri.getUserInfo().split(":");
@@ -360,7 +380,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						}
 					}
 
-					URL url = new URL(et1.getText().toString());
+					URL url = new URL(settingsURL.getText().toString());
 					URLConnection conn = url.openConnection();
 					conn.setDoOutput(true);
 					conn.connect();
@@ -628,32 +648,63 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					}
 				}
 
-				if (!custom.equals("") && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
+				custom_url = customURL.getText().toString();
+
+				if(custom_url.equals(""))
 				{
-					try
+					if (!custom.equals("") && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
 					{
-						Common.LogMessage("checking: " + custom);
-						URL url = new URL(custom);
-						URLConnection conn = url.openConnection();
-						conn.connect();
+						try
+						{
+							Common.LogMessage("checking: " + custom);
+							URL url = new URL(custom);
+							URLConnection conn = url.openConnection();
+							conn.connect();
+							common.RemovePref("custom_url");
 
-						validURL5 = true;
-					} catch (MalformedURLException e) {
-						e.printStackTrace();
-					} catch (IOException e) {
-						e.printStackTrace();
-					} catch (Exception e) {
-						e.printStackTrace();
+							validURL5 = true;
+						} catch (MalformedURLException e) {
+							e.printStackTrace();
+						} catch (IOException e) {
+							e.printStackTrace();
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+
+						if (!validURL5)
+						{
+							handlerCUSTOM.sendEmptyMessage(0);
+							return;
+						}
 					}
-
-					if (!validURL5)
+				} else {
+					if (!custom_url.equals(oldcustom_url))
 					{
-						handlerCUSTOM.sendEmptyMessage(0);
-						return;
+						try
+						{
+							Common.LogMessage("checking: " + custom_url);
+							URL url = new URL(custom_url);
+							URLConnection conn = url.openConnection();
+							conn.connect();
+
+							validURL5 = true;
+						} catch (MalformedURLException e) {
+							e.printStackTrace();
+						} catch (IOException e) {
+							e.printStackTrace();
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
+
+						if (!validURL5)
+						{
+							handlerCUSTOM_URL.sendEmptyMessage(0);
+							return;
+						}
 					}
 				}
 
-				common.SetStringPref("SETTINGS_URL", et1.getText().toString());
+				common.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
 				common.SetIntPref("updateInterval", pos);
 				common.SetStringPref("BASE_URL", data);
 				common.SetStringPref("radtype", radtype);
@@ -662,6 +713,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetStringPref("fctype", fctype);
 				common.SetStringPref("WEBCAM_URL", webcam);
 				common.SetStringPref("CUSTOM_URL", custom);
+				common.SetStringPref("custom_url", custom_url);
 				common.SetBoolPref("metric", cb2.isChecked());
 				common.SetBoolPref("bgdl", cb1.isChecked());
 				common.SetBoolPref("radarforecast", showRadar.isChecked());
@@ -808,6 +860,28 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	@SuppressLint("HandlerLeak")
 	private Handler handlerCUSTOM = new Handler()
+	{
+		@Override
+		public void handleMessage(Message msg)
+		{
+			b1.setEnabled(true);
+			b2.setEnabled(true);
+			dialog.dismiss();
+			new AlertDialog.Builder(common.context)
+					.setTitle("Invalid URL")
+					.setMessage("Wasn't able to connect or download from the custom URL specified")
+					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+					{
+						@Override
+						public void onClick(DialogInterface dialog, int which)
+						{
+						}
+					}).show();
+		}
+	};
+
+	@SuppressLint("HandlerLeak")
+	private Handler handlerCUSTOM_URL = new Handler()
 	{
 		@Override
 		public void handleMessage(Message msg)

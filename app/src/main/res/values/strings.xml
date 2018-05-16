@@ -3,12 +3,12 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="settings">Settings Page</string>
-    <string name="fileURI">Enter the URI to your settings.txt.</string>
+    <string name="fileURL">Enter the URL to your settings.txt.</string>
     <string name="refresh_time">Choose Refresh Time</string>
     <string name="save_settings">Save Settings</string>
     <string name="empty">Empty</string>
     <string name="today">Today Stats</string>
-    <string name="radarURI">Enter the radar.html address (optional)</string>
+    <string name="radarURL">Enter the radar.html address (optional)</string>
     <string name="stats">Weather Statistics</string>
     <string name="todayStats">Today\'s Statistics</string>
     <string name="yesterdayStats">Yesterday\'s Statistics</string>
@@ -38,4 +38,5 @@
     <string name="demo_min_label">Min</string>
     <string name="demo_max_label">Max</string>
     <string name="radar">Radar</string>
+    <string name="custom_url">Enter your custom URL (optional)</string>
 </resources>

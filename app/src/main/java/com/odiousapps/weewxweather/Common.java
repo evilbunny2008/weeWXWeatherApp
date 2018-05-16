@@ -182,10 +182,8 @@ class Common
         Bitmap myBitmap = Bitmap.createBitmap(600, 440, Bitmap.Config.ARGB_4444);
         Canvas myCanvas = new Canvas(myBitmap);
         Paint paint = new Paint();
-//        Typeface clock = Typeface.createFromAsset(context.getAssets(),"Clockopia.ttf");
         paint.setAntiAlias(true);
         paint.setSubpixelText(true);
-        //paint.setTypeface(clock);
         paint.setStyle(Paint.Style.FILL);
         paint.setColor(Color.BLACK);
         paint.setTextAlign(Paint.Align.CENTER);

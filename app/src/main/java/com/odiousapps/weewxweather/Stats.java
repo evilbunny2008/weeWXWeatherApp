@@ -273,11 +273,19 @@ public class Stats
 	    sb.append(stmp);
 
 	    String rain = bits[20];
+	    String since = "since mn";
+
 	    if (bits.length > 158 && !bits[158].equals(""))
 		    rain = bits[158];
 
+	    if (bits.length > 159 && !bits[158].equals("") && !bits[159].equals(""))
+		    since = "since " + bits[159];
+
 	    stmp = "<tr><td><img style='width:" + iw + "px' src='windsock.png'></td><td colspan='3'>" + bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +
 			    "</td><td>" + rain + bits[62] + "</td><td><img style='width:" + iw + "px' src='umbrella.png'></td></tr>";
+	    sb.append(stmp);
+
+	    stmp = "<tr><td>&nbsp;</td><td colspan='3'>&nbsp;</td><td>" + since + "</td><td>&nbsp;</td></tr>";
 	    sb.append(stmp);
 
 	    stmp = "</table><br>";
