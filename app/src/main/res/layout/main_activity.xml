@@ -141,6 +141,49 @@
                         android:hint="@string/custom_url"
                         android:inputType="textUri"
                         android:textSize="18sp"/>
+
+                    <TextView
+                        android:id="@+id/fgtv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="@string/fgColour"/>
+
+                    <EditText
+                        android:id="@+id/fgPicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:ems="10"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:hint="@string/empty"
+                        android:inputType="textUri"
+                        android:textSize="18sp"
+                        tools:ignore="KeyboardInaccessibleWidget"/>
+
+                    <TextView
+                        android:id="@+id/bgtv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:text="@string/bgColour"/>
+
+                    <EditText
+                        android:id="@+id/bgPicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:ems="10"
+                        android:clickable="true"
+                        android:focusable="false"
+                        android:hint="@string/empty"
+                        android:inputType="textUri"
+                        android:textSize="18sp"
+                        tools:ignore="KeyboardInaccessibleWidget"/>
+
                 </LinearLayout>
 
                 <LinearLayout

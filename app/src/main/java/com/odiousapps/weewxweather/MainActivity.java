@@ -14,6 +14,7 @@ import android.content.IntentFilter;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
+import android.support.annotation.ColorInt;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -42,6 +43,9 @@ import android.widget.RemoteViews;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
+import com.pes.androidmaterialcolorpickerdialog.ColorPickerCallback;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -61,7 +65,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private TabLayout tabLayout;
     private Common common;
     private DrawerLayout mDrawerLayout;
-	private EditText settingsURL, customURL;
+	private EditText settingsURL;
+	private EditText customURL;
+	private EditText fgColour;
+	private EditText bgColour;
 	private Button b1;
 	private Button b2;
 	private Button b3;
@@ -139,7 +146,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		    {
 			    if (!hasFocus)
 				    hideKeyboard(v);
-
 		    }
 	    });
 
@@ -242,11 +248,60 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    tv.setText(Html.fromHtml(lines));
 	    tv.setMovementMethod(LinkMovementMethod.getInstance());
+
+	    fgColour = findViewById(R.id.fgPicker);
+	    String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
+	    fgColour.setText(hex);
+	    fgColour.setOnClickListener(new View.OnClickListener()
+	    {
+		    @Override
+		    public void onClick(View v)
+		    {
+			    showPicker(common.GetIntPref("fgColour", 0xFF000000),true);
+		    }
+	    });
+
+	    bgColour = findViewById(R.id.bgPicker);
+	    hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase();
+	    bgColour.setText(hex);
+	    bgColour.setOnClickListener(new View.OnClickListener()
+	    {
+		    @Override
+		    public void onClick(View v)
+		    {
+			    showPicker(common.GetIntPref("bgColour", 0xFFFFFFFF),false);
+		    }
+	    });
+    }
+
+    private void showPicker(int col, final boolean fgColour)
+    {
+	    final ColorPicker cp = new ColorPicker(MainActivity.this, col >> 24 & 255, col >> 16 & 255, col >> 8 & 255, col & 255);
+
+	    cp.setCallback(new ColorPickerCallback()
+	    {
+		    @Override
+		    public void onColorChosen(@ColorInt int colour)
+		    {
+			    Common.LogMessage("Pure Hex" + Integer.toHexString(colour));
+
+			    if(fgColour)
+				    common.SetIntPref("fgColour", colour);
+			    else
+				    common.SetIntPref("bgColour", colour);
+
+			    myService.singleton.SendIntents();
+
+			    cp.dismiss();
+		    }
+	    });
+
+	    cp.show();
     }
 
 	private void hideKeyboard(View view)
 	{
-		InputMethodManager inputMethodManager =(InputMethodManager)common.context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+		InputMethodManager inputMethodManager = (InputMethodManager)common.context.getSystemService(Activity.INPUT_METHOD_SERVICE);
 		if(inputMethodManager != null)
 			inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
 	}
@@ -287,6 +342,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("LastDownloadTime");
 						common.RemovePref("radarforecast");
 						common.RemovePref("seekBar");
+						common.RemovePref("fgColour");
+						common.RemovePref("bgColour");
 						common.commit();
 
 						common.context.stopService(new Intent(common.context, myService.class));
@@ -344,7 +401,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				String oldcustom = common.GetStringPref("CUSTOM_URL", "");
 				String oldcustom_url = common.GetStringPref("custom_url", "");
 
-				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url = "", fctype = "";
+				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "";
 
 				CheckBox cb1 = findViewById(R.id.cb1);
 				CheckBox cb2 = findViewById(R.id.cb2);
@@ -988,6 +1045,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         }
                     });
                 }
+
+	            if(action != null && action.equals(myService.UPDATE_INTENT))
+	            {
+		            String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
+		            fgColour.setText(hex);
+		            hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase();
+		            bgColour.setText(hex);
+	            }
             } catch (Exception e) {
                 e.printStackTrace();
             }

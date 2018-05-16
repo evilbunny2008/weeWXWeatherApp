@@ -7,8 +7,8 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.RectF;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -184,12 +184,23 @@ class Common
         Paint paint = new Paint();
         paint.setAntiAlias(true);
         paint.setSubpixelText(true);
+
+        int bgColour = GetIntPref("bgColour", 0xFFFFFFFF);
+	    paint.setStyle(Paint.Style.FILL);
+	    paint.setColor(bgColour);
+
+	    RectF rectF = new RectF(0, 0,myCanvas.getWidth(),myCanvas.getHeight());
+	    int cornersRadius = 25;
+	    myCanvas.drawRoundRect(rectF, cornersRadius, cornersRadius, paint);
+
+	    int fgColour = GetIntPref("fgColour", 0xFF000000);
+
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.BLACK);
+        paint.setColor(fgColour);
         paint.setTextAlign(Paint.Align.CENTER);
 
         String bits[] = GetStringPref("LastDownload","").split("\\|");
-        if(bits.length >= 110)
+        if(bits.length > 110)
         {
             paint.setTextSize(64);
             myCanvas.drawText(bits[56], myCanvas.getWidth() / 2, 80, paint);

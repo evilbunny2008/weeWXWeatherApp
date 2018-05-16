@@ -6,8 +6,8 @@ android {
         applicationId "com.odiousapps.weewxweather"
         minSdkVersion 16
         targetSdkVersion 26
-        versionCode 3016
-        versionName "0.3.16"
+        versionCode 3017
+        versionName "0.3.17"
     }
     buildTypes {
         release {
@@ -23,4 +23,5 @@ dependencies {
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
+    implementation 'com.pes.materialcolorpicker:library:1.2.0'
 }

@@ -136,7 +136,7 @@ class Custom
         String custom = common.GetStringPref("CUSTOM_URL", "");
         String custom_url = common.GetStringPref("custom_url", "");
 
-        if (custom == null || custom.equals(""))
+        if ((custom == null || custom.equals("")) && (custom_url == null || custom_url.equals("")))
             return;
 
         if(custom_url != null && !custom_url.equals(""))

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">weeWx Weather App</string>
     <string name="action_settings">Settings</string>
@@ -39,4 +40,6 @@
     <string name="demo_max_label">Max</string>
     <string name="radar">Radar</string>
     <string name="custom_url">Enter your custom URL (optional)</string>
+    <string name="fgColour">Widget Foreground Colour Picker</string>
+    <string name="bgColour">Widget Background Colour Picker</string>
 </resources>
