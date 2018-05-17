@@ -233,13 +233,14 @@ class Weather
 			    String[] content = common.processYahoo(data);
 			    if(content == null || content.length <= 0)
 			    	return;
-			    final String fc = "<html><body style='text-align:center'>"  + content[0] + "</body></html>";
+			    String yahoo = "<img src='purple.png' height='29px'/><br/>";
+			    final String fc = "<html><body style='text-align:center'>" + yahoo + content[0] + "</body></html>";
 			    wv.post(new Runnable()
 			    {
 				    @Override
 				    public void run()
 				    {
-					    wv.loadDataWithBaseURL(null, fc, "text/html", "utf-8", null);
+					    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
 				    }
 			    });
 
@@ -247,16 +248,25 @@ class Weather
 			    String[] content = common.processWZ(data);
 			    if(content == null || content.length <= 0)
 				    return;
-			    final String fc = "<html><body style='text-align:center'>"  + content[0] + "</body></html>";
+
+			    String wz = "<img src='wz.png' height='29px'/><br/>";
+			    final String fc = "<html><body style='text-align:center'>" + wz + content[0] + "</body></html>";
 
 			    wv.post(new Runnable()
 			    {
 				    @Override
 				    public void run()
 				    {
-					    wv.loadDataWithBaseURL(null, fc, "text/html", "utf-8", null);
+					    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
 				    }
 			    });
+
+			    /*
+			    	    if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("yahoo"))
+		    im.setImageResource(R.drawable.purple);
+	    else if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("weatherzone"))
+	        im.setImageResource(R.drawable.wz);
+			     */
 
 		    }
 	    }
