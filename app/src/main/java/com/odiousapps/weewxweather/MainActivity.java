@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private void doSettings()
     {
 	    settingsURL = findViewById(R.id.settings);
-	    settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/settings.txt"));
+	    settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
 	    settingsURL.setOnFocusChangeListener(new View.OnFocusChangeListener()
 	    {
 		    @Override
@@ -409,7 +409,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				RadioButton showRadar = findViewById(R.id.showRadar);
 				int curtime = Math.round(System.currentTimeMillis() / 1000);
 
-				if (settingsURL.getText().toString().equals("https://example.com/weewx/settings.txt") || settingsURL.getText().toString().equals(""))
+				if (settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt") || settingsURL.getText().toString().equals(""))
 				{
 					handlerSettings.sendEmptyMessage(0);
 					return;
@@ -418,7 +418,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				try
 				{
 					Uri uri = Uri.parse(settingsURL.getText().toString());
-					Common.LogMessage("settings.txt == " + settingsURL.getText().toString());
+					Common.LogMessage("inigo-settings.txt == " + settingsURL.getText().toString());
 					common.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
 					if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
 					{
@@ -816,7 +816,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			dialog.dismiss();
 			new AlertDialog.Builder(common.context)
 					.setTitle("Invalid URL")
-					.setMessage("Wasn't able to connect or download settings.txt from your server")
+					.setMessage("Wasn't able to connect or download the settings from your server")
 					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
 					{
 						@Override
