@@ -75,6 +75,12 @@ class Weather
         checkFields((TextView)rootView.findViewById(R.id.textView14), bits[47]);
         checkFields((TextView)rootView.findViewById(R.id.textView15), bits[48]);
 
+	    if(bits.length > 169)
+	    {
+		    checkFields((TextView) rootView.findViewById(R.id.hometemp), bits[160] + bits[60]);
+		    checkFields((TextView) rootView.findViewById(R.id.homehumid), bits[165] + bits[64]);
+	    }
+
         return rootView;
     }
 

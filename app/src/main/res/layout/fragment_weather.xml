@@ -180,6 +180,43 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/home1"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_weight="0.05"
+                android:contentDescription="@string/empty"
+                android:src="@drawable/home"/>
+
+            <TextView
+                android:id="@+id/hometemp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".40"
+                android:gravity="start"/>
+
+            <TextView
+                android:id="@+id/homehumid"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".40"
+                android:gravity="end"/>
+
+            <ImageView
+                android:id="@+id/home4"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_weight="0.05"
+                android:contentDescription="@string/empty"
+                android:src="@drawable/home"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
