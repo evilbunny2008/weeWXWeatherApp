@@ -59,6 +59,20 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@string/indoor_readings"
+                        android:textSize="18sp"/>
+
+                    <CheckBox
+                        android:id="@+id/showIndoor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="@string/yes"
+                        android:textSize="18sp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="@string/metric"
                         android:textSize="18sp"/>
 

@@ -17,6 +17,7 @@ import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -74,6 +75,12 @@ class Weather
         checkFields((TextView)rootView.findViewById(R.id.textView13), bits[58]);
         checkFields((TextView)rootView.findViewById(R.id.textView14), bits[47]);
         checkFields((TextView)rootView.findViewById(R.id.textView15), bits[48]);
+
+	    LinearLayout homerow = rootView.findViewById(R.id.homerow);
+        if(common.GetBoolPref("showIndoor", false))
+			homerow.setVisibility(View.VISIBLE);
+        else
+	        homerow.setVisibility(View.GONE);
 
 	    if(bits.length > 169)
 	    {

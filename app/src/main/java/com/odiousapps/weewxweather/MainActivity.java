@@ -165,6 +165,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    if(!metric)
 		    cb2.setChecked(false);
 
+	    boolean showIndoor = common.GetBoolPref("showIndoor", false);
+	    CheckBox cb3 = findViewById(R.id.showIndoor);
+	    if(!showIndoor)
+		    cb3.setChecked(false);
+
 	    boolean radarforecast = common.GetBoolPref("radarforecast", true);
 	    RadioButton showForecast = findViewById(R.id.showForecast);
 	    if(!radarforecast)
@@ -335,6 +340,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("CUSTOM_URL");
 						common.RemovePref("custom_url");
 						common.RemovePref("metric");
+						common.RemovePref("showIndoor");
 						common.RemovePref("bgdl");
 						common.RemovePref("rssCheck");
 						common.RemovePref("forecastData");
@@ -405,6 +411,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				CheckBox cb1 = findViewById(R.id.cb1);
 				CheckBox cb2 = findViewById(R.id.cb2);
+				CheckBox cb3 = findViewById(R.id.showIndoor);
 
 				RadioButton showRadar = findViewById(R.id.showRadar);
 				int curtime = Math.round(System.currentTimeMillis() / 1000);
@@ -772,6 +779,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetStringPref("CUSTOM_URL", custom);
 				common.SetStringPref("custom_url", custom_url);
 				common.SetBoolPref("metric", cb2.isChecked());
+				common.SetBoolPref("showIndoor", cb3.isChecked());
 				common.SetBoolPref("bgdl", cb1.isChecked());
 				common.SetBoolPref("radarforecast", showRadar.isChecked());
 

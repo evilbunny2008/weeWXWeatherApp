@@ -272,7 +272,7 @@ public class Stats
 			    "</td><td>" + convert(bits[42]) + "</td><td>" + bits[41] + bits[63] + "</td><td><img style='width:" + iw + "px' src='barometer.png'></td></tr>";
 	    sb.append(stmp);
 
-	    if(bits.length > 201)
+	    if(bits.length > 201 && common.GetBoolPref("showIndoor", false))
 	    {
 		    stmp = "<tr><td><img style='width:" + iw + "px' src='home.png'></td><td>" + bits[163] + bits[60] + "</td><td>" + convert(bits[164]) +
 				    "</td><td>" + convert(bits[162]) + "</td><td>" + bits[161] + bits[60] + "</td><td><img style='width:" + iw + "px' src='home.png'></td></tr>";
@@ -323,7 +323,7 @@ public class Stats
 				    "</td><td>" + convert(bits[87]) + "</td><td>" + bits[86] + bits[63] + "</td><td><img style='width:" + iw + "px' src='barometer.png'></td></tr>";
 		    sb.append(stmp);
 
-		    if(bits.length > 201)
+		    if(bits.length > 201 && common.GetBoolPref("showIndoor", false))
 		    {
 			    stmp = "<tr><td><img style='width:" + iw + "px' src='home.png'></td><td>" + bits[172] + bits[60] + "</td><td>" + convert(bits[173]) +
 					    "</td><td>" + convert(bits[171]) + "</td><td>" + bits[170] + bits[60] + "</td><td><img style='width:" + iw + "px' src='home.png'></td></tr>";
@@ -337,6 +337,19 @@ public class Stats
 		    stmp = "<tr><td><img style='width:" + iw + "px' src='windsock.png'></td><td colspan='3'>" + bits[69] + bits[61] + " " + bits[70] + " " + convert(bits[71]) +
 				    "</td><td>" + bits[21] + bits[62] + "</td><td><img style='width:" + iw + "px' src='umbrella.png'></td></tr>";
 		    sb.append(stmp);
+
+		    rain = bits[21];
+		    since = "before mn";
+
+		    if (bits.length > 203 && !bits[203].equals(""))
+			    rain = bits[202];
+
+		    if (bits.length > 203 && !bits[202].equals("") && !bits[203].equals(""))
+			    since = "before " + bits[203];
+
+		    stmp = "<tr><td>&nbsp;</td><td colspan='3'>&nbsp;</td><td>" + since + "</td><td>&nbsp;</td></tr>";
+		    sb.append(stmp);
+
 
 		    stmp = "</table><br>";
 		    sb.append(stmp);
@@ -364,7 +377,7 @@ public class Stats
                     "</td><td>" + getTime(bits[110]) + "</td><td>" + bits[109] + bits[63] + "</td><td><img style='width:" + iw + "px' src='barometer.png'></td></tr>";
             sb.append(stmp);
 
-	        if(bits.length > 201)
+	        if(bits.length > 201 && common.GetBoolPref("showIndoor", false))
 	        {
 		        stmp = "<tr><td><img style='width:" + iw + "px' src='home.png'></td><td>" + bits[180] + bits[60] + "</td><td>" + getTime(bits[181]) +
 				        "</td><td>" + getTime(bits[179]) + "</td><td>" + bits[178] + bits[60] + "</td><td><img style='width:" + iw + "px' src='home.png'></td></tr>";
@@ -405,7 +418,7 @@ public class Stats
                     "</td><td>" + getTime(bits[133]) + "</td><td>" + bits[132] + bits[63] + "</td><td><img style='width:" + iw + "px' src='barometer.png'></td></tr>";
             sb.append(stmp);
 
-	        if(bits.length > 201)
+	        if(bits.length > 201 && common.GetBoolPref("showIndoor", false))
 	        {
 		        stmp = "<tr><td><img style='width:" + iw + "px' src='home.png'></td><td>" + bits[188] + bits[60] + "</td><td>" + getTime(bits[189]) +
 				        "</td><td>" + getTime(bits[187]) + "</td><td>" + bits[186] + bits[60] + "</td><td><img style='width:" + iw + "px' src='home.png'></td></tr>";
@@ -446,7 +459,7 @@ public class Stats
                     "</td><td>" + getTime(bits[156]) + "</td><td>" + bits[155] + bits[63] + "</td><td><img style='width:" + iw + "px' src='barometer.png'></td></tr>";
             sb.append(stmp);
 
-	        if(bits.length > 201)
+	        if(bits.length > 201 && common.GetBoolPref("showIndoor", false))
 	        {
 		        stmp = "<tr><td><img style='width:" + iw + "px' src='home.png'></td><td>" + bits[196] + bits[60] + "</td><td>" + getTime(bits[197]) +
 				        "</td><td>" + getTime(bits[195]) + "</td><td>" + bits[194] + bits[60] + "</td><td><img style='width:" + iw + "px' src='home.png'></td></tr>";
