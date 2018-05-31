@@ -32,6 +32,8 @@ public class myService extends Service
     static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
     static String TAB0_INTENT = "com.odiousapps.weewxweather.TAB0_INTENT";
     static String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
+	static String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
+	static final long inigo_version = 4000;
 
     boolean widgetUpdate = true;
     boolean doUpdate = true;
@@ -185,9 +187,9 @@ public class myService extends Service
             {
                 try
                 {
-                	String data = common.GetStringPref("BASE_URL", "");
-                	if(data.equals(""))
-                		return;
+	                String data = common.GetStringPref("BASE_URL", "");
+	                if (data.equals(""))
+		                return;
 
 	                Uri uri = Uri.parse(data);
 	                if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
@@ -207,21 +209,50 @@ public class myService extends Service
 		                }
 	                }
 
-                    URL url = new URL(data);
-                    HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-                    urlConnection.setRequestMethod("GET");
-                    urlConnection.setDoOutput(true);
-                    urlConnection.connect();
+	                URL url = new URL(data);
+	                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+	                urlConnection.setRequestMethod("GET");
+	                urlConnection.setDoOutput(true);
+	                urlConnection.connect();
 
-                    BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+	                StringBuilder sb = new StringBuilder();
+	                String line;
 
-                    StringBuilder sb = new StringBuilder();
-                    String line;
-                    while ((line = in.readLine()) != null)
-                        sb.append(line);
-                    in.close();
+	                try
+	                {
+		                BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+		                while ((line = in.readLine()) != null)
+			                sb.append(line);
+		                in.close();
+	                } catch (Exception e) {
+	                	Common.LogMessage(e.toString());
+	                }
 
-                    common.SetStringPref("LastDownload", sb.toString().trim());
+	                line = sb.toString().trim();
+	                String bits[] = line.split("\\|");
+	                if (Double.valueOf(bits[0]) < inigo_version)
+	                {
+	                	if(common.GetLongPref("inigo_version", 0) < inigo_version)
+		                {
+		                	common.SetLongPref("inigo_version", inigo_version);
+			                sendAlert();
+		                }
+	                }
+
+	                if (Double.valueOf(bits[0]) >= 4000)
+	                {
+		                sb = new StringBuilder();
+		                for (int i = 1; i < bits.length; i++)
+		                {
+			                if(sb.length() > 0)
+				                sb.append("|");
+			                sb.append(bits[i]);
+		                }
+
+		                line = sb.toString().trim();
+	                }
+
+                    common.SetStringPref("LastDownload", line);
                     common.SetLongPref("LastDownloadTime", Math.round(System.currentTimeMillis() / 1000));
                     SendIntents();
                 } catch (Exception e) {
@@ -231,6 +262,14 @@ public class myService extends Service
         });
 
         t.start();
+    }
+
+    void sendAlert()
+    {
+	    Intent intent = new Intent();
+	    intent.setAction(INIGO_INTENT);
+	    sendBroadcast(intent);
+	    Common.LogMessage("Send user note about upgrading the Inigo Plugin");
     }
 
     void SendIntents()

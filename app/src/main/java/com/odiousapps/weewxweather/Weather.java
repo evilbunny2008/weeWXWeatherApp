@@ -63,8 +63,8 @@ class Weather
         checkFields((TextView)rootView.findViewById(R.id.textView7), bits[6] + bits[64]);
 
 	    String rain = bits[20] + bits[62] + " since mn";
-	    if(bits.length > 159 && !bits[158].equals(""))
-		    rain = bits[158] + bits[62] + " since " + bits[159];
+	    if(bits.length > 160 && !bits[160].equals(""))
+		    rain = bits[158] + bits[62] + " since " + bits[160];
 
         checkFields((TextView)rootView.findViewById(R.id.textView8), rain);
         checkFields((TextView)rootView.findViewById(R.id.textView9), bits[12] + bits[60]);
@@ -82,10 +82,10 @@ class Weather
         else
 	        homerow.setVisibility(View.GONE);
 
-	    if(bits.length > 169)
+	    if(bits.length > 166)
 	    {
-		    checkFields((TextView) rootView.findViewById(R.id.hometemp), bits[160] + bits[60]);
-		    checkFields((TextView) rootView.findViewById(R.id.homehumid), bits[165] + bits[64]);
+		    checkFields((TextView) rootView.findViewById(R.id.hometemp), bits[161] + bits[60]);
+		    checkFields((TextView) rootView.findViewById(R.id.homehumid), bits[166] + bits[64]);
 	    }
 
         return rootView;

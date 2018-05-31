@@ -118,10 +118,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         IntentFilter filter = new IntentFilter();
         filter.addAction(myService.UPDATE_INTENT);
         filter.addAction(myService.TAB0_INTENT);
+        filter.addAction(myService.INIGO_INTENT);
         registerReceiver(serviceReceiver, filter);
 
         doSettings();
     }
+
+    private void showUpdateAvailable()
+	{
+		final AlertDialog.Builder d = new AlertDialog.Builder(this);
+		d.setTitle("weeWx Weather App");
+		d.setMessage("This app has been updated but the server you are connecting to hasn't updated the Inigo Plugin for weeWx. Fields may not show up properly until weeWx is updated.");
+		d.setPositiveButton("OK", null);
+		d.setIcon(R.drawable.ic_launcher_foreground);
+		d.show();
+	}
 
     private void doSettings()
     {
@@ -1060,6 +1071,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		            fgColour.setText(hex);
 		            hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase();
 		            bgColour.setText(hex);
+	            }
+
+	            if(action != null && action.equals(myService.INIGO_INTENT))
+	            {
+		            showUpdateAvailable();
 	            }
             } catch (Exception e) {
                 e.printStackTrace();
