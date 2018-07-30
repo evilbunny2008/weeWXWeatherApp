@@ -251,6 +251,9 @@ class Common
 		    if(bits.length >= 2)
 			    pubDate = bits[1].split("</pubDate>")[0].trim();
 
+		    if(pubDate.equals(""))
+			    return null;
+
 		    SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
 		    long mdate = sdf.parse(pubDate).getTime();
 		    sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());

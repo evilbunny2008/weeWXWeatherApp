@@ -13,6 +13,7 @@ import android.widget.RemoteViews;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.InterruptedIOException;
 import java.net.Authenticator;
 import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
@@ -59,13 +60,8 @@ public class myService extends Service
     @Override
     public int onStartCommand(Intent intent, int flags, int startId)
     {
-	    if(common.GetBoolPref("bgdl", false))
-	    {
-		    Common.LogMessage("weeWXService marked START_STICKY");
-		    return Service.START_STICKY;
-	    }
-
-	    return Service.START_NOT_STICKY;
+	    Common.LogMessage("weeWXService marked START_STICKY");
+	    return Service.START_STICKY;
     }
 
     void stopTimer()
@@ -210,7 +206,9 @@ public class myService extends Service
 	                }
 
 	                URL url = new URL(data);
-	                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+	                HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+	                urlConnection.setConnectTimeout(5000);
+	                urlConnection.setReadTimeout(5000);
 	                urlConnection.setRequestMethod("GET");
 	                urlConnection.setDoOutput(true);
 	                urlConnection.connect();
@@ -218,43 +216,57 @@ public class myService extends Service
 	                StringBuilder sb = new StringBuilder();
 	                String line;
 
+	                InterruptThread it = new InterruptThread(Thread.currentThread(), urlConnection);
+	                Thread myThread = new Thread(it);
+
 	                try
 	                {
+		                myThread.start();
 		                BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
 		                while ((line = in.readLine()) != null)
 			                sb.append(line);
 		                in.close();
+	                } catch(InterruptedIOException ioe) {
+	                	//TODO: ignore this.
 	                } catch (Exception e) {
-	                	Common.LogMessage(e.toString());
+	                	e.printStackTrace();
 	                }
+
+	                it.interupt = false;
+	                myThread.interrupt();
 
 	                line = sb.toString().trim();
-	                String bits[] = line.split("\\|");
-	                if (Double.valueOf(bits[0]) < inigo_version)
+	                if(!line.equals(""))
 	                {
-	                	if(common.GetLongPref("inigo_version", 0) < inigo_version)
+		                String bits[] = line.split("\\|");
+		                if (Double.valueOf(bits[0]) < inigo_version)
 		                {
-		                	common.SetLongPref("inigo_version", inigo_version);
-			                sendAlert();
-		                }
-	                }
-
-	                if (Double.valueOf(bits[0]) >= 4000)
-	                {
-		                sb = new StringBuilder();
-		                for (int i = 1; i < bits.length; i++)
-		                {
-			                if(sb.length() > 0)
-				                sb.append("|");
-			                sb.append(bits[i]);
+			                if (common.GetLongPref("inigo_version", 0) < inigo_version)
+			                {
+				                common.SetLongPref("inigo_version", inigo_version);
+				                sendAlert();
+			                }
 		                }
 
-		                line = sb.toString().trim();
-	                }
+		                if (Double.valueOf(bits[0]) >= 4000)
+		                {
+			                sb = new StringBuilder();
+			                for (int i = 1; i < bits.length; i++)
+			                {
+				                if (sb.length() > 0)
+					                sb.append("|");
+				                sb.append(bits[i]);
+			                }
 
-                    common.SetStringPref("LastDownload", line);
-                    common.SetLongPref("LastDownloadTime", Math.round(System.currentTimeMillis() / 1000));
-                    SendIntents();
+			                line = sb.toString().trim();
+		                }
+
+		                common.SetStringPref("LastDownload", line);
+		                common.SetLongPref("LastDownloadTime", Math.round(System.currentTimeMillis() / 1000));
+		                SendIntents();
+	                }
+                } catch (java.net.SocketTimeoutException e) {
+                	e.printStackTrace();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -263,6 +275,36 @@ public class myService extends Service
 
         t.start();
     }
+
+	public class InterruptThread implements Runnable
+	{
+		Thread parent;
+		HttpURLConnection con;
+		boolean interupt;
+
+		InterruptThread(Thread parent, HttpURLConnection con)
+		{
+			this.parent = parent;
+			this.con = con;
+			this.interupt = true;
+		}
+
+		public void run()
+		{
+			try
+			{
+				Thread.sleep(15000);
+				if(interupt)
+				{
+					Common.LogMessage("Timer thread forcing parent to quit connection");
+					con.disconnect();
+					parent.interrupt();
+				}
+			} catch (InterruptedException e) {
+				// TODO: ignore this.
+			}
+		}
+	}
 
     void sendAlert()
     {
