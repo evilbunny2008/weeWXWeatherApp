@@ -436,7 +436,7 @@ class Weather
 	    {
 		    common.context.unregisterReceiver(serviceReceiver);
 	    } catch (Exception e) {
-			e.printStackTrace();
+			//TODO: ignore this exception...
 	    }
     }
 
