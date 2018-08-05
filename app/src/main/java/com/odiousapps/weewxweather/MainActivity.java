@@ -794,7 +794,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetBoolPref("bgdl", cb1.isChecked());
 				common.SetBoolPref("radarforecast", showRadar.isChecked());
 
-				myService.singleton.stopTimer();
+				if(myService.singleton == null)
+					startService(new Intent(common.context, myService.class));
+				else
+					myService.singleton.stopTimer();
+
 				myService.singleton.startTimer();
 
 				handlerDone.sendEmptyMessage(0);
@@ -1020,6 +1024,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         {
             Common.LogMessage("pausing app updates");
             myService.singleton.doUpdate = false;
+	        if(!common.GetBoolPref("bgdl", true))
+	            stopService(new Intent(common.context, myService.class));
         }
     }
 
@@ -1027,11 +1033,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     protected void onResume()
     {
         super.onResume();
-        if(myService.singleton != null)
+
+	    Common.LogMessage("resuming app updates");
+
+	    if(myService.singleton == null)
         {
-            Common.LogMessage("resuming app updates");
-            myService.singleton.doUpdate = true;
-            myService.singleton.SendIntents();
+	        startService(new Intent(common.context, myService.class));
+        } else {
+	        myService.singleton.doUpdate = true;
+	        myService.singleton.SendIntents();
         }
     }
 
