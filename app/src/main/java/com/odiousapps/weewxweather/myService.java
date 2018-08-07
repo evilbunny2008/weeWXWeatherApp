@@ -144,6 +144,8 @@ public class myService extends Service
 
         singleton = null;
         Common.LogMessage("myService stopped.");
+	    if(!common.GetBoolPref("bgdl", true))
+	        System.exit(0);
     }
 
     class myTimer extends TimerTask

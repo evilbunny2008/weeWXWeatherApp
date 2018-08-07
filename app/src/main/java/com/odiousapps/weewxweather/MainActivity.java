@@ -985,11 +985,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	@Override
     public void onBackPressed()
     {
-	    super.onBackPressed();
 	    if (mDrawerLayout.isDrawerOpen(GravityCompat.START))
 	    {
 		    mDrawerLayout.closeDrawer(GravityCompat.START);
 	    } else {
+		    super.onBackPressed();
 		    if(common.GetBoolPref("bgdl", true))
 		    {
 			    Common.LogMessage("Moving task to background");
