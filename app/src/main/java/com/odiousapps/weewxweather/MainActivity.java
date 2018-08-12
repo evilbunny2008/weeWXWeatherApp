@@ -985,7 +985,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	@Override
     public void onBackPressed()
     {
-	    if (mDrawerLayout.isDrawerOpen(GravityCompat.START))
+	    if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
 	    {
 		    mDrawerLayout.closeDrawer(GravityCompat.START);
 	    } else {
@@ -1009,7 +1009,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    unregisterReceiver(serviceReceiver);
 
-	    if(!common.GetBoolPref("bgdl", true))
+	    if(!common.GetBoolPref("bgdl", true) || common.GetIntPref("updateInterval", 1) == 0)
 	    {
 		    stopService(new Intent(this, myService.class));
 		    System.exit(0);
@@ -1024,7 +1024,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         {
             Common.LogMessage("pausing app updates");
             myService.singleton.doUpdate = false;
-	        if(!common.GetBoolPref("bgdl", true))
+	        if(!common.GetBoolPref("bgdl", true) || common.GetIntPref("updateInterval", 1) == 0)
 	            stopService(new Intent(common.context, myService.class));
         }
     }

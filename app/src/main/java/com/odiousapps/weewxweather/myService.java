@@ -144,7 +144,7 @@ public class myService extends Service
 
         singleton = null;
         Common.LogMessage("myService stopped.");
-	    if(!common.GetBoolPref("bgdl", true))
+	    if(!common.GetBoolPref("bgdl", true) || common.GetIntPref("updateInterval", 1) == 0)
 	        System.exit(0);
     }
 
