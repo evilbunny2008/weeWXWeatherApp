@@ -57,6 +57,9 @@ class Weather
         checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
         checkFields((TextView)rootView.findViewById(R.id.textView3), bits[0] + bits[60]);
 
+	    if(bits.length > 203)
+		    checkFields((TextView)rootView.findViewById(R.id.appTemp), "App Temp: " + bits[203] + bits[60]);
+
         checkFields((TextView)rootView.findViewById(R.id.textView4), bits[25] + bits[61]);
         checkFields((TextView)rootView.findViewById(R.id.textView5), bits[37] + bits[63]);
         checkFields((TextView)rootView.findViewById(R.id.textView6), bits[29]);

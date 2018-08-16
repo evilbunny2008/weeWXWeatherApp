@@ -30,6 +30,13 @@
             android:gravity="center"
             android:textSize="48sp"/>
 
+        <TextView
+            android:id="@+id/appTemp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="24sp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="30dp"
