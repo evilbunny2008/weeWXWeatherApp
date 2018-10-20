@@ -2,7 +2,9 @@ package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.AlertDialog;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
@@ -54,7 +56,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.Authenticator;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.net.URLConnection;
@@ -112,13 +113,54 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             e.printStackTrace();
         }
 
-        if(myService.singleton == null)
-            startService(new Intent(this, myService.class));
+	    int pos = common.GetIntPref("updateInterval", 1);
+	    if(pos <= 0)
+		    return;
+
+	    long period;
+
+	    switch(pos)
+	    {
+		    case 1:
+			    period = 5 * 60000;
+			    break;
+		    case 2:
+			    period = 10 * 60000;
+			    break;
+		    case 3:
+			    period = 15 * 60000;
+			    break;
+		    case 4:
+			    period = 30 * 60000;
+			    break;
+		    case 5:
+			    period = 60 * 60000;
+			    break;
+		    default:
+			    return;
+	    }
+
+	    AlarmManager mgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
+	    Intent i = new Intent(this, UpdateCheck.class);
+
+	    if(mgr != null)
+	    {
+		    PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, PendingIntent.FLAG_CANCEL_CURRENT);
+		    mgr.cancel(pi);
+
+		    long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + 45000;
+		    Common.LogMessage("weewxstart == " + start);
+		    Common.LogMessage("weewxperiod == " + period);
+
+		    pi = PendingIntent.getBroadcast(this, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
+		    //mgr.setInexactRepeating(AlarmManager.RTC, start, period, pi);
+		    mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
+	    }
 
         IntentFilter filter = new IntentFilter();
-        filter.addAction(myService.UPDATE_INTENT);
-        filter.addAction(myService.TAB0_INTENT);
-        filter.addAction(myService.INIGO_INTENT);
+        filter.addAction(Common.UPDATE_INTENT);
+        filter.addAction(Common.TAB0_INTENT);
+        filter.addAction(Common.INIGO_INTENT);
         registerReceiver(serviceReceiver, filter);
 
         doSettings();
@@ -306,7 +348,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    else
 				    common.SetIntPref("bgColour", colour);
 
-			    myService.singleton.SendIntents();
+			    common.SendIntents();
 
 			    cp.dismiss();
 		    }
@@ -362,8 +404,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("fgColour");
 						common.RemovePref("bgColour");
 						common.commit();
-
-						common.context.stopService(new Intent(common.context, myService.class));
 
 						File file = new File(common.context.getFilesDir(), "webcam.jpg");
 						if(file.exists() && file.canWrite())
@@ -499,10 +539,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						radtype = "image";
 
 					validURL = true;
-				} catch (MalformedURLException e) {
-					e.printStackTrace();
-				} catch (IOException e) {
-					e.printStackTrace();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -558,10 +594,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.SetStringPref("LastDownload", sb.toString().trim());
 						common.SetLongPref("LastDownloadTime", curtime);
 						validURL1 = true;
-					} catch (MalformedURLException e) {
-						e.printStackTrace();
-					} catch (IOException e) {
-						e.printStackTrace();
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -618,10 +650,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								conn.connect();
 
 								validURL2 = true;
-							} catch (MalformedURLException e) {
-								e.printStackTrace();
-							} catch (IOException e) {
-								e.printStackTrace();
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
@@ -697,10 +725,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.SetStringPref("forecastData", sb.toString().trim());
 
 						validURL3 = true;
-					} catch (MalformedURLException e) {
-						e.printStackTrace();
-					} catch (IOException e) {
-						e.printStackTrace();
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -738,10 +762,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							common.RemovePref("custom_url");
 
 							validURL5 = true;
-						} catch (MalformedURLException e) {
-							e.printStackTrace();
-						} catch (IOException e) {
-							e.printStackTrace();
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -763,10 +783,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							conn.connect();
 
 							validURL5 = true;
-						} catch (MalformedURLException e) {
-							e.printStackTrace();
-						} catch (IOException e) {
-							e.printStackTrace();
 						} catch (Exception e) {
 							e.printStackTrace();
 						}
@@ -793,13 +809,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetBoolPref("showIndoor", cb3.isChecked());
 				common.SetBoolPref("bgdl", cb1.isChecked());
 				common.SetBoolPref("radarforecast", showRadar.isChecked());
-
-				if(myService.singleton == null)
-					startService(new Intent(common.context, myService.class));
-				else
-					myService.singleton.stopTimer();
-
-				myService.singleton.startTimer();
 
 				handlerDone.sendEmptyMessage(0);
 			}
@@ -1006,27 +1015,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     public void onDestroy()
     {
 	    super.onDestroy();
-
 	    unregisterReceiver(serviceReceiver);
-
-	    if(!common.GetBoolPref("bgdl", true) || common.GetIntPref("updateInterval", 1) == 0)
-	    {
-		    stopService(new Intent(this, myService.class));
-		    System.exit(0);
-	    }
-    }
-
-    @Override
-    protected void onPause()
-    {
-        super.onPause();
-        if(myService.singleton != null)
-        {
-            Common.LogMessage("pausing app updates");
-            myService.singleton.doUpdate = false;
-	        if(!common.GetBoolPref("bgdl", true) || common.GetIntPref("updateInterval", 1) == 0)
-	            stopService(new Intent(common.context, myService.class));
-        }
     }
 
     @Override
@@ -1035,20 +1024,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onResume();
 
 	    Common.LogMessage("resuming app updates");
-
-	    if(myService.singleton == null)
-        {
-	        startService(new Intent(common.context, myService.class));
-        } else {
-	        myService.singleton.doUpdate = true;
-	        myService.singleton.SendIntents();
-        }
+	    common.SendIntents();
     }
 
     public void getWeather()
     {
-        if(myService.singleton != null)
-            myService.singleton.getWeather();
+        common.getWeather();
     }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
@@ -1060,7 +1041,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             {
                 Common.LogMessage("We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
-                if(action != null && action.equals(myService.TAB0_INTENT))
+                if(action != null && action.equals(Common.TAB0_INTENT))
                 {
                     getWeather();
 
@@ -1075,7 +1056,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     });
                 }
 
-	            if(action != null && action.equals(myService.UPDATE_INTENT))
+	            if(action != null && action.equals(Common.UPDATE_INTENT))
 	            {
 		            String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
 		            fgColour.setText(hex);
@@ -1083,7 +1064,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		            bgColour.setText(hex);
 	            }
 
-	            if(action != null && action.equals(myService.INIGO_INTENT))
+	            if(action != null && action.equals(Common.INIGO_INTENT))
 	            {
 		            showUpdateAvailable();
 	            }

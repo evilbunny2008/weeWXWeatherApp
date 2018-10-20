@@ -45,6 +45,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
-        <service android:name=".myService" />
+        <receiver android:name=".UpdateCheck" />
     </application>
 </manifest>

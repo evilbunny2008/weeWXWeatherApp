@@ -1,7 +1,10 @@
 package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -9,12 +12,20 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.net.Uri;
 import android.util.Log;
 import android.widget.RemoteViews;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.InterruptedIOException;
+import java.net.Authenticator;
+import java.net.HttpURLConnection;
+import java.net.PasswordAuthentication;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -26,9 +37,19 @@ class Common
     private final static boolean debug_on = true;
 	private String appversion = "0.0.0";
     Context context;
+
     final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36";
 
-    Common(Context c)
+	static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
+	static String TAB0_INTENT = "com.odiousapps.weewxweather.TAB0_INTENT";
+	static String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
+	static String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
+
+	static final long inigo_version = 4000;
+
+	Thread t = null;
+
+	Common(Context c)
     {
         System.setProperty("http.agent", UA);
         this.context = c;
@@ -368,4 +389,163 @@ class Common
 
 	    return null;
     }
+
+	void SendIntents()
+	{
+		Intent intent = new Intent();
+		intent.setAction(Common.UPDATE_INTENT);
+		context.sendBroadcast(intent);
+		Common.LogMessage("update_intent broadcast.");
+
+		RemoteViews remoteViews = buildUpdate(context);
+		ComponentName thisWidget = new ComponentName(context, WidgetProvider.class);
+		AppWidgetManager manager = AppWidgetManager.getInstance(context);
+		manager.updateAppWidget(thisWidget, remoteViews);
+		Common.LogMessage("widget intent broadcasted");
+	}
+
+	void getWeather()
+	{
+		if(t != null)
+		{
+			if(t.isAlive())
+				t.interrupt();
+			t = null;
+		}
+
+		t = new Thread(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				try
+				{
+					String data = GetStringPref("BASE_URL", "");
+					if (data.equals(""))
+						return;
+
+					Uri uri = Uri.parse(data);
+					if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
+					{
+						final String[] UC = uri.getUserInfo().split(":");
+						Common.LogMessage("uri username = " + uri.getUserInfo());
+
+						if (UC.length > 1)
+						{
+							Authenticator.setDefault(new Authenticator()
+							{
+								protected PasswordAuthentication getPasswordAuthentication()
+								{
+									return new PasswordAuthentication(UC[0], UC[1].toCharArray());
+								}
+							});
+						}
+					}
+
+					URL url = new URL(data);
+					HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+					urlConnection.setConnectTimeout(5000);
+					urlConnection.setReadTimeout(5000);
+					urlConnection.setRequestMethod("GET");
+					urlConnection.setDoOutput(true);
+					urlConnection.connect();
+
+					StringBuilder sb = new StringBuilder();
+					String line;
+
+					InterruptThread it = new InterruptThread(Thread.currentThread(), urlConnection);
+					Thread myThread = new Thread(it);
+
+					try
+					{
+						myThread.start();
+						BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+						while ((line = in.readLine()) != null)
+							sb.append(line);
+						in.close();
+					} catch(InterruptedIOException ioe) {
+						//TODO: ignore this.
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+
+					it.interupt = false;
+					myThread.interrupt();
+
+					line = sb.toString().trim();
+					if(!line.equals(""))
+					{
+						String bits[] = line.split("\\|");
+						if (Double.valueOf(bits[0]) < Common.inigo_version)
+						{
+							if(GetLongPref("inigo_version", 0) < Common.inigo_version)
+							{
+								SetLongPref("inigo_version", Common.inigo_version);
+								sendAlert();
+							}
+						}
+
+						if (Double.valueOf(bits[0]) >= 4000)
+						{
+							sb = new StringBuilder();
+							for (int i = 1; i < bits.length; i++)
+							{
+								if (sb.length() > 0)
+									sb.append("|");
+								sb.append(bits[i]);
+							}
+
+							line = sb.toString().trim();
+						}
+
+						SetStringPref("LastDownload", line);
+						SetLongPref("LastDownloadTime", Math.round(System.currentTimeMillis() / 1000));
+						SendIntents();
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+
+		t.start();
+	}
+
+	public class InterruptThread implements Runnable
+	{
+		Thread parent;
+		HttpURLConnection con;
+		boolean interupt;
+
+		InterruptThread(Thread parent, HttpURLConnection con)
+		{
+			this.parent = parent;
+			this.con = con;
+			this.interupt = true;
+		}
+
+		public void run()
+		{
+			try
+			{
+				Thread.sleep(15000);
+				if(interupt)
+				{
+					Common.LogMessage("Timer thread forcing parent to quit connection");
+					con.disconnect();
+					parent.interrupt();
+				}
+			} catch (InterruptedException e) {
+				// TODO: ignore this.
+			}
+		}
+	}
+
+	void sendAlert()
+	{
+		Intent intent = new Intent();
+		intent.setAction(Common.INIGO_INTENT);
+		context.sendBroadcast(intent);
+		Common.LogMessage("Send user note about upgrading the Inigo Plugin");
+	}
 }

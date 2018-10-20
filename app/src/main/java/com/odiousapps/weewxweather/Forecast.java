@@ -148,8 +148,8 @@ public class Forecast
 	    });
 
 	    IntentFilter filter = new IntentFilter();
-	    filter.addAction(myService.UPDATE_INTENT);
-	    filter.addAction(myService.EXIT_INTENT);
+	    filter.addAction(Common.UPDATE_INTENT);
+	    filter.addAction(Common.EXIT_INTENT);
 	    common.context.registerReceiver(serviceReceiver, filter);
 
 	    forecast = rootView.findViewById(R.id.forecast);
@@ -300,7 +300,7 @@ public class Forecast
             {
                 Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
-                if(action != null && action.equals(myService.UPDATE_INTENT))
+                if(action != null && action.equals(Common.UPDATE_INTENT))
                 {
 	                if (common.GetBoolPref("radarforecast", true))
 	                {
@@ -315,7 +315,7 @@ public class Forecast
 		                forecast.setVisibility(View.GONE);
 		                im.setVisibility(View.GONE);
 	                }
-                } else if(action != null && action.equals(myService.EXIT_INTENT)) {
+                } else if(action != null && action.equals(Common.EXIT_INTENT)) {
                     common.context.unregisterReceiver(serviceReceiver);
                 }
             } catch (Exception e) {

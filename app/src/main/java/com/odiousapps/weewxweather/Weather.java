@@ -189,8 +189,8 @@ class Weather
 
         Common.LogMessage("weather.java -- adding a new filter");
         IntentFilter filter = new IntentFilter();
-        filter.addAction(myService.UPDATE_INTENT);
-        filter.addAction(myService.EXIT_INTENT);
+        filter.addAction(Common.UPDATE_INTENT);
+        filter.addAction(Common.EXIT_INTENT);
         common.context.registerReceiver(serviceReceiver, filter);
 
         return updateFields();
@@ -198,8 +198,7 @@ class Weather
 
     private void forceRefresh()
     {
-        if(myService.singleton != null)
-            myService.singleton.getWeather();
+        common.getWeather();
 	    wipeForecast();
 	    loadWebView();
     }
@@ -451,13 +450,13 @@ class Weather
             try
             {
                 String action = intent.getAction();
-                if(action != null && action.equals(myService.UPDATE_INTENT))
+                if(action != null && action.equals(Common.UPDATE_INTENT))
                 {
                     Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                     updateFields();
                     reloadWebView();
                     reloadForecast();
-                } else if(action != null && action.equals(myService.EXIT_INTENT)) {
+                } else if(action != null && action.equals(Common.EXIT_INTENT)) {
                     Common.LogMessage("weather.java -- unregisterReceiver");
                     common.context.unregisterReceiver(serviceReceiver);
                 }
