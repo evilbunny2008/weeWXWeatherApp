@@ -113,6 +113,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             e.printStackTrace();
         }
 
+	    IntentFilter filter = new IntentFilter();
+	    filter.addAction(Common.UPDATE_INTENT);
+	    filter.addAction(Common.TAB0_INTENT);
+	    filter.addAction(Common.INIGO_INTENT);
+	    registerReceiver(serviceReceiver, filter);
+
+	    doSettings();
+
 	    int pos = common.GetIntPref("updateInterval", 1);
 	    if(pos <= 0)
 		    return;
@@ -156,14 +164,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		    //mgr.setInexactRepeating(AlarmManager.RTC, start, period, pi);
 		    mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
 	    }
-
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Common.UPDATE_INTENT);
-        filter.addAction(Common.TAB0_INTENT);
-        filter.addAction(Common.INIGO_INTENT);
-        registerReceiver(serviceReceiver, filter);
-
-        doSettings();
     }
 
     private void showUpdateAvailable()
