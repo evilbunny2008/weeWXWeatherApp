@@ -96,7 +96,7 @@
                         android:layout_height="wrap_content"
                         android:spinnerMode="dropdown"/>
 
-                    <TextView
+                    <!-- TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/updateBG"
@@ -108,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:checked="true"
                         android:text="@string/yes"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp"/ -->
 
                     <TextView
                         android:layout_width="match_parent"

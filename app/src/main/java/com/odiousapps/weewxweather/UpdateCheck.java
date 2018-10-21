@@ -23,7 +23,6 @@ public class UpdateCheck extends BroadcastReceiver
 
 		context = c;
 		common = new Common(context);
-		common.getWeather();
 
 		Thread t = new Thread(new Runnable()
 		{
@@ -36,44 +35,25 @@ public class UpdateCheck extends BroadcastReceiver
 					Common.LogMessage("UpdateCheck.java exception: " + e.toString());
 				}
 
-				int pos = common.GetIntPref("updateInterval", 1);
-				if(pos <= 0)
+				long[] ret = common.getPeriod();
+				long period = ret[0];
+				long wait = ret[1];
+				if(period <= 0)
 					return;
 
-				long period;
+				common.getWeather();
 
-				switch(pos)
-				{
-					case 1:
-						period = 5 * 60000;
-						break;
-					case 2:
-						period = 10 * 60000;
-						break;
-					case 3:
-						period = 15 * 60000;
-						break;
-					case 4:
-						period = 30 * 60000;
-						break;
-					case 5:
-						period = 60 * 60000;
-						break;
-					default:
-						return;
-				}
 
 				AlarmManager mgr = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
 				Intent myInent = new Intent(c, UpdateCheck.class);
 
 				if(mgr != null)
 				{
-					long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + period + 45000;
+					long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + period + wait;
 					Common.LogMessage("weewxstart == " + start);
 					Common.LogMessage("weewxperiod == " + period);
-
+					Common.LogMessage("weewxwait == " + wait);
 					PendingIntent pi = PendingIntent.getBroadcast(c, 0, myInent, PendingIntent.FLAG_UPDATE_CURRENT);
-					//mgr.setInexactRepeating(AlarmManager.RTC, start, period, pi);
 					mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
 				}
 

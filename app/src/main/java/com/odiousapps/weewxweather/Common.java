@@ -22,11 +22,13 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.InterruptedIOException;
+import java.lang.reflect.Array;
 import java.net.Authenticator;
 import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -63,6 +65,41 @@ class Common
 	    } catch (Exception e) {
 	    	e.printStackTrace();
 	    }
+    }
+
+    long[] getPeriod()
+    {
+		long[] def = {0, 0};
+
+	    int pos = GetIntPref("updateInterval", 1);
+	    if(pos <= 0)
+		    return def;
+
+	    long period;
+
+	    switch(pos)
+	    {
+		    case 1:
+			    period = 5 * 60000;
+			    break;
+		    case 2:
+			    period = 10 * 60000;
+			    break;
+		    case 3:
+			    period = 15 * 60000;
+			    break;
+		    case 4:
+			    period = 30 * 60000;
+			    break;
+		    case 5:
+			    period = 60 * 60000;
+			    break;
+		    default:
+			    return def;
+	    }
+
+	    long ret[] = {period, 45000};
+	    return ret;
     }
 
     String getAppversion()

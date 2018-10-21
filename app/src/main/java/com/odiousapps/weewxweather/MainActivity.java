@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.ColorInt;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -121,32 +122,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    doSettings();
 
-	    int pos = common.GetIntPref("updateInterval", 1);
-	    if(pos <= 0)
+	    long[] ret = common.getPeriod();
+	    long period = ret[0];
+	    long wait = ret[1];
+	    if(period <= 0)
 		    return;
-
-	    long period;
-
-	    switch(pos)
-	    {
-		    case 1:
-			    period = 5 * 60000;
-			    break;
-		    case 2:
-			    period = 10 * 60000;
-			    break;
-		    case 3:
-			    period = 15 * 60000;
-			    break;
-		    case 4:
-			    period = 30 * 60000;
-			    break;
-		    case 5:
-			    period = 60 * 60000;
-			    break;
-		    default:
-			    return;
-	    }
 
 	    AlarmManager mgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
 	    Intent i = new Intent(this, UpdateCheck.class);
@@ -156,12 +136,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		    PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, PendingIntent.FLAG_CANCEL_CURRENT);
 		    mgr.cancel(pi);
 
-		    long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + 45000;
+		    long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
 		    Common.LogMessage("weewxstart == " + start);
 		    Common.LogMessage("weewxperiod == " + period);
-
+		    Common.LogMessage("weewxwait == " + wait);
 		    pi = PendingIntent.getBroadcast(this, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
-		    //mgr.setInexactRepeating(AlarmManager.RTC, start, period, pi);
 		    mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
 	    }
     }
@@ -208,10 +187,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    s1.setAdapter(adapter);
 	    s1.setSelection(common.GetIntPref("updateInterval", 1));
 	    s1.setOnItemSelectedListener(this);
-
-	    CheckBox cb1 = findViewById(R.id.cb1);
-	    if(!common.GetBoolPref("bgdl", true))
-		    cb1.setChecked(false);
 
 	    boolean metric = common.GetBoolPref("metric", true);
 	    CheckBox cb2 = findViewById(R.id.cb2);
@@ -394,7 +369,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("custom_url");
 						common.RemovePref("metric");
 						common.RemovePref("showIndoor");
-						common.RemovePref("bgdl");
 						common.RemovePref("rssCheck");
 						common.RemovePref("forecastData");
 						common.RemovePref("LastDownload");
@@ -460,7 +434,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "";
 
-				CheckBox cb1 = findViewById(R.id.cb1);
 				CheckBox cb2 = findViewById(R.id.cb2);
 				CheckBox cb3 = findViewById(R.id.showIndoor);
 
@@ -807,7 +780,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetStringPref("custom_url", custom_url);
 				common.SetBoolPref("metric", cb2.isChecked());
 				common.SetBoolPref("showIndoor", cb3.isChecked());
-				common.SetBoolPref("bgdl", cb1.isChecked());
 				common.SetBoolPref("radarforecast", showRadar.isChecked());
 
 				handlerDone.sendEmptyMessage(0);
@@ -833,6 +805,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			b1.setEnabled(true);
 			b2.setEnabled(true);
 			dialog.dismiss();
+			common.SendIntents();
 			mDrawerLayout.closeDrawer(GravityCompat.START);
 		}
 	};
@@ -999,15 +972,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		    mDrawerLayout.closeDrawer(GravityCompat.START);
 	    } else {
 		    super.onBackPressed();
-		    if(common.GetBoolPref("bgdl", true))
-		    {
-			    Common.LogMessage("Moving task to background");
-			    moveTaskToBack(true);
-			    Common.LogMessage("app should now be in the bg.");
-		    } else {
-			    Common.LogMessage("finishing up.");
-			    finish();
-		    }
+		    Common.LogMessage("finishing up.");
+		    finish();
 	    }
     }
 
@@ -1126,32 +1092,37 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
         @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+        public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-        	if(inflater == null || container == null)
+        	if(container == null)
         		return null;
 
 	        Common common = new Common(getContext());
 
-	        lastPos = getArguments().getInt(ARG_SECTION_NUMBER);
+	        Bundle args = getArguments();
 
-		    if(getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
-                weather = new Weather(common);
-                return weather.myWeather(inflater, container);
-            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
-                stats = new Stats(common);
-                return stats.myStats(inflater, container);
-            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
-                forecast = new Forecast(common);
-                return forecast.myForecast(inflater, container);
-            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
-                webcam = new Webcam(common);
-                return webcam.myWebcam(inflater, container);
-            } else if(getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
-			    custom = new Custom(common);
-			    return custom.myCustom(inflater, container);
-            }
+	        if(args != null)
+	        {
+		        lastPos = args.getInt(ARG_SECTION_NUMBER);
 
+		        if (args.getInt(ARG_SECTION_NUMBER) == 1)
+		        {
+			        weather = new Weather(common);
+			        return weather.myWeather(inflater, container);
+		        } else if (args.getInt(ARG_SECTION_NUMBER) == 2) {
+			        stats = new Stats(common);
+			        return stats.myStats(inflater, container);
+		        } else if (args.getInt(ARG_SECTION_NUMBER) == 3) {
+			        forecast = new Forecast(common);
+			        return forecast.myForecast(inflater, container);
+		        } else if (args.getInt(ARG_SECTION_NUMBER) == 4) {
+			        webcam = new Webcam(common);
+			        return webcam.myWebcam(inflater, container);
+		        } else if (args.getInt(ARG_SECTION_NUMBER) == 5) {
+			        custom = new Custom(common);
+			        return custom.myCustom(inflater, container);
+		        }
+	        }
             return null;
         }
     }
