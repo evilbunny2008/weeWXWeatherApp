@@ -7,7 +7,6 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
-import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.net.URLConnection;
 
@@ -52,11 +51,7 @@ public class MjpegRunner implements Runnable
                 bm = BitmapFactory.decodeStream(bais);
                 Common.LogMessage("got an image... wooo!");
                 isRunning = false;
-            } catch (SocketTimeoutException ste) {
-	            ste.printStackTrace();
-                stop();
-
-            } catch (IOException e) {
+            } catch (Exception e) {
 	            e.printStackTrace();
                 stop();
             }

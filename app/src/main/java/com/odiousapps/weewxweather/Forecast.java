@@ -29,7 +29,7 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class Forecast
+class Forecast
 {
     private Common common;
     private View rootView;
@@ -280,7 +280,7 @@ public class Forecast
 	}
 
 
-	public void doStop()
+	void doStop()
     {
         Common.LogMessage("forecast.java -- unregisterReceiver");
 	    try

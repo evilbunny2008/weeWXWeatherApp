@@ -19,7 +19,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
-public class Stats
+class Stats
 {
     private Common common;
     private View rootView;
@@ -122,7 +122,7 @@ public class Stats
         return rootView;
     }
 
-    public void doStop()
+    void doStop()
     {
         Common.LogMessage("stats.java -- unregisterReceiver");
 	    try

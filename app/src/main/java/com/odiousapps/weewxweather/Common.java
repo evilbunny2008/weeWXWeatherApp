@@ -22,13 +22,11 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.InterruptedIOException;
-import java.lang.reflect.Array;
 import java.net.Authenticator;
 import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
@@ -47,9 +45,9 @@ class Common
 	static String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 	static String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
 
-	static final long inigo_version = 4000;
+	private static final long inigo_version = 4000;
 
-	Thread t = null;
+	private Thread t = null;
 
 	Common(Context c)
     {
@@ -98,8 +96,7 @@ class Common
 			    return def;
 	    }
 
-	    long ret[] = {period, 45000};
-	    return ret;
+	    return new long[]{period, 45000};
     }
 
     String getAppversion()
@@ -115,7 +112,7 @@ class Common
     static void LogMessage(String value, boolean showAnyway)
     {
         if(debug_on || showAnyway)
-            Log.i("weeWx Weather", "message='" + value + "'");
+            Log.i("weeWX Weather", "message='" + value + "'");
     }
 
     void SetStringPref(String name, String value)
@@ -578,7 +575,7 @@ class Common
 		}
 	}
 
-	void sendAlert()
+	private void sendAlert()
 	{
 		Intent intent = new Intent();
 		intent.setAction(Common.INIGO_INTENT);

@@ -8,7 +8,6 @@ import android.content.Intent;
 
 public class UpdateCheck extends BroadcastReceiver
 {
-	private Context context;
 	private Common common;
 
 	@Override
@@ -21,8 +20,7 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		context = c;
-		common = new Common(context);
+		common = new Common(c);
 
 		Thread t = new Thread(new Runnable()
 		{

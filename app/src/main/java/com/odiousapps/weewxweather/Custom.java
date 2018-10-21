@@ -145,7 +145,7 @@ class Custom
         wv.loadUrl(custom);
     }
 
-    public void doStop()
+    void doStop()
     {
         Common.LogMessage("custom.java -- unregisterReceiver");
         try

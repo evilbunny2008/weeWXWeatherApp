@@ -148,8 +148,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     private void showUpdateAvailable()
 	{
 		final AlertDialog.Builder d = new AlertDialog.Builder(this);
-		d.setTitle("weeWx Weather App");
-		d.setMessage("This app has been updated but the server you are connecting to hasn't updated the Inigo Plugin for weeWx. Fields may not show up properly until weeWx is updated.");
+		d.setTitle("weeWX Weather App");
+		d.setMessage("This app has been updated but the server you are connecting to hasn't updated the Inigo Plugin for weeWX. Fields may not show up properly until weeWX is updated.");
 		d.setPositiveButton("OK", null);
 		d.setIcon(R.drawable.ic_launcher_foreground);
 		d.show();
@@ -273,14 +273,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    TextView tv = findViewById(R.id.aboutText);
 
-	    String lines = "<html><body>Big thanks to the <a href='http://weewx.com'>weeWx project</a>, as this app " +
+	    String lines = "<html><body>Big thanks to the <a href='http://weewx.com'>weeWX project</a>, as this app " +
 			    "wouldn't be possible otherwise.<br><br>" +
 			    "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
 			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a><br><br>" +
-			    "weeWx Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
+			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
 	    tv.setText(Html.fromHtml(lines));
 	    tv.setMovementMethod(LinkMovementMethod.getInstance());
+
+	    // https://github.com/Pes8/android-material-color-picker-dialog
 
 	    fgColour = findViewById(R.id.fgPicker);
 	    String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();

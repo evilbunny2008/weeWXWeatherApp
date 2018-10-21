@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">weeWx Weather App</string>
+    <string name="app_name">weeWX Weather App</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="settings">Settings Page</string>
@@ -21,7 +21,7 @@
     <string name="metric">Use Metric in Yahoo! Forecasts?</string>
     <string name="webcam">Webcam Page</string>
     <string name="custom">Custom Screen</string>
-    <string name="about">About weeWx Weather App</string>
+    <string name="about">About weeWX Weather App</string>
     <string name="weather2">Weather</string>
     <string name="stats2">Statistics</string>
     <string name="forecast2">Forecast</string>
@@ -35,7 +35,7 @@
     <string name="radarforecast">Radar or Forecast on main screen</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">weeWx Weather App</string>
+    <string name="nav_header_title">weeWX Weather App</string>
     <string name="demo_min_label">Min</string>
     <string name="demo_max_label">Max</string>
     <string name="radar">Radar</string>

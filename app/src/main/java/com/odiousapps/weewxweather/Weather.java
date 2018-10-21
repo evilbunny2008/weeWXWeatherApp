@@ -431,7 +431,7 @@ class Weather
         }
     };
 
-    public void doStop()
+    void doStop()
     {
         Common.LogMessage("weather.java -- unregisterReceiver");
 	    try

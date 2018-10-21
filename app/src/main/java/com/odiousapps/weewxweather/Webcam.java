@@ -257,7 +257,7 @@ class Webcam
         }
     };
 */
-    public void doStop()
+    void doStop()
     {
         Common.LogMessage("webcam.java -- unregisterReceiver");
 	    try
