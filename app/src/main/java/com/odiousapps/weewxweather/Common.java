@@ -459,6 +459,7 @@ class Common
 						return;
 
 					reallyGetWeather(data);
+					SendIntents();
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
