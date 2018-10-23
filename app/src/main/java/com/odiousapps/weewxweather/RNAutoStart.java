@@ -22,27 +22,21 @@ public class RNAutoStart extends BroadcastReceiver
 	    if(period <= 0)
 		    return;
 
-        try
+	    long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
+
+	    Common.LogMessage("weewxstart == " + start);
+	    Common.LogMessage("weewxperiod == " + period);
+	    Common.LogMessage("weewxwait == " + wait);
+
+	    AlarmManager mgr = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
+        Intent myIntent = new Intent(c, UpdateCheck.class);
+
+        if(mgr != null)
         {
-	        AlarmManager mgr = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
-	        Intent myIntent = new Intent(c, UpdateCheck.class);
-
-	        if(mgr != null)
-	        {
-		        PendingIntent pi = PendingIntent.getBroadcast(c, 0, myIntent, PendingIntent.FLAG_CANCEL_CURRENT);
-		        mgr.cancel(pi);
-
-		        long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
-		        Common.LogMessage("weewxstart == " + start);
-		        Common.LogMessage("weewxperiod == " + period);
-		        Common.LogMessage("weewxwait == " + wait);
-		        pi = PendingIntent.getBroadcast(c, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-		        mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
-	        }
-
-	        Common.LogMessage("onReceive() end");
-        } catch (Exception e) {
-            e.printStackTrace();
+	        PendingIntent pi = PendingIntent.getBroadcast(c, 0, myIntent, 0);
+	        mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
         }
+
+        Common.LogMessage("onReceive() end");
     }
 }

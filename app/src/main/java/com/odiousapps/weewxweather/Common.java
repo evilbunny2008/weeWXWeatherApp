@@ -458,84 +458,7 @@ class Common
 					if (data.equals(""))
 						return;
 
-					Uri uri = Uri.parse(data);
-					if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
-					{
-						final String[] UC = uri.getUserInfo().split(":");
-						Common.LogMessage("uri username = " + uri.getUserInfo());
-
-						if (UC.length > 1)
-						{
-							Authenticator.setDefault(new Authenticator()
-							{
-								protected PasswordAuthentication getPasswordAuthentication()
-								{
-									return new PasswordAuthentication(UC[0], UC[1].toCharArray());
-								}
-							});
-						}
-					}
-
-					URL url = new URL(data);
-					HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-					urlConnection.setConnectTimeout(5000);
-					urlConnection.setReadTimeout(5000);
-					urlConnection.setRequestMethod("GET");
-					urlConnection.setDoOutput(true);
-					urlConnection.connect();
-
-					StringBuilder sb = new StringBuilder();
-					String line;
-
-					InterruptThread it = new InterruptThread(Thread.currentThread(), urlConnection);
-					Thread myThread = new Thread(it);
-
-					try
-					{
-						myThread.start();
-						BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-						while ((line = in.readLine()) != null)
-							sb.append(line);
-						in.close();
-					} catch(InterruptedIOException ioe) {
-						//TODO: ignore this.
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-
-					it.interupt = false;
-					myThread.interrupt();
-
-					line = sb.toString().trim();
-					if(!line.equals(""))
-					{
-						String bits[] = line.split("\\|");
-						if (Double.valueOf(bits[0]) < Common.inigo_version)
-						{
-							if(GetLongPref("inigo_version", 0) < Common.inigo_version)
-							{
-								SetLongPref("inigo_version", Common.inigo_version);
-								sendAlert();
-							}
-						}
-
-						if (Double.valueOf(bits[0]) >= 4000)
-						{
-							sb = new StringBuilder();
-							for (int i = 1; i < bits.length; i++)
-							{
-								if (sb.length() > 0)
-									sb.append("|");
-								sb.append(bits[i]);
-							}
-
-							line = sb.toString().trim();
-						}
-
-						SetStringPref("LastDownload", line);
-						SetLongPref("LastDownloadTime", Math.round(System.currentTimeMillis() / 1000));
-						SendIntents();
-					}
+					reallyGetWeather(data);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -545,7 +468,81 @@ class Common
 		t.start();
 	}
 
-	public class InterruptThread implements Runnable
+	void reallyGetWeather(String data) throws Exception
+	{
+		Uri uri = Uri.parse(data);
+		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
+		{
+			final String[] UC = uri.getUserInfo().split(":");
+			Common.LogMessage("uri username = " + uri.getUserInfo());
+
+			if (UC.length > 1)
+			{
+				Authenticator.setDefault(new Authenticator()
+				{
+					protected PasswordAuthentication getPasswordAuthentication()
+					{
+						return new PasswordAuthentication(UC[0], UC[1].toCharArray());
+					}
+				});
+			}
+		}
+
+		URL url = new URL(data);
+		HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+		urlConnection.setConnectTimeout(5000);
+		urlConnection.setReadTimeout(5000);
+		urlConnection.setRequestMethod("GET");
+		urlConnection.setDoOutput(true);
+		urlConnection.connect();
+
+		StringBuilder sb = new StringBuilder();
+		String line;
+
+		InterruptThread it = new InterruptThread(Thread.currentThread(), urlConnection);
+		Thread myThread = new Thread(it);
+
+		myThread.start();
+		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+		while ((line = in.readLine()) != null)
+			sb.append(line);
+		in.close();
+
+		it.interupt = false;
+		myThread.interrupt();
+
+		line = sb.toString().trim();
+		if(!line.equals(""))
+		{
+			String bits[] = line.split("\\|");
+			if (Double.valueOf(bits[0]) < Common.inigo_version)
+			{
+				if(GetLongPref("inigo_version", 0) < Common.inigo_version)
+				{
+					SetLongPref("inigo_version", Common.inigo_version);
+					sendAlert();
+				}
+			}
+
+			if (Double.valueOf(bits[0]) >= 4000)
+			{
+				sb = new StringBuilder();
+				for (int i = 1; i < bits.length; i++)
+				{
+					if (sb.length() > 0)
+						sb.append("|");
+					sb.append(bits[i]);
+				}
+
+				line = sb.toString().trim();
+			}
+
+			SetStringPref("LastDownload", line);
+			SetLongPref("LastDownloadTime", Math.round(System.currentTimeMillis() / 1000));
+		}
+	}
+
+	class InterruptThread implements Runnable
 	{
 		Thread parent;
 		HttpURLConnection con;

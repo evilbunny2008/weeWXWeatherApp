@@ -55,6 +55,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.InterruptedIOException;
 import java.net.Authenticator;
 import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
@@ -128,19 +129,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    if(period <= 0)
 		    return;
 
+	    long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
+
+	    Common.LogMessage("weewxstart == " + start);
+	    Common.LogMessage("weewxperiod == " + period);
+	    Common.LogMessage("weewxwait == " + wait);
+
 	    AlarmManager mgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
 	    Intent i = new Intent(this, UpdateCheck.class);
 
 	    if(mgr != null)
 	    {
-		    PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, PendingIntent.FLAG_CANCEL_CURRENT);
-		    mgr.cancel(pi);
-
-		    long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
-		    Common.LogMessage("weewxstart == " + start);
-		    Common.LogMessage("weewxperiod == " + period);
-		    Common.LogMessage("weewxwait == " + wait);
-		    pi = PendingIntent.getBroadcast(this, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
+		    PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
 		    mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
 	    }
     }
@@ -493,11 +493,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						mb[0] = mb[0].trim().toLowerCase();
 						if (mb[0].equals("data"))
 							data = mb[1];
-						if(mb[0].equals("radtype"))
+						if (mb[0].equals("radtype"))
 							radtype = mb[1].toLowerCase();
 						if (mb[0].equals("radar"))
 							radar = mb[1];
-						if(mb[0].equals("fctype"))
+						if (mb[0].equals("fctype"))
 							fctype = mb[1].toLowerCase();
 						if (mb[0].equals("forecast"))
 							forecast = mb[1];
@@ -524,6 +524,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					return;
 				}
 
+				Common.LogMessage("data == " + data);
+
 				if (data.equals(""))
 				{
 					handlerDATA.sendEmptyMessage(0);
@@ -534,40 +536,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				{
 					try
 					{
-						Uri uri = Uri.parse(data);
-						if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
-						{
-							final String[] UC = uri.getUserInfo().split(":");
-							Common.LogMessage("uri username = " + uri.getUserInfo());
-
-							if (UC != null && UC.length > 1)
-							{
-								Authenticator.setDefault(new Authenticator()
-								{
-									protected PasswordAuthentication getPasswordAuthentication()
-									{
-										return new PasswordAuthentication(UC[0], UC[1].toCharArray());
-									}
-								});
-							}
-						}
-
-						URL url = new URL(data);
-						HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-						urlConnection.setRequestMethod("GET");
-						urlConnection.setDoOutput(true);
-						urlConnection.connect();
-
-						BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-
-						StringBuilder sb = new StringBuilder();
-						String line;
-						while ((line = in.readLine()) != null)
-							sb.append(line);
-						in.close();
-
-						common.SetStringPref("LastDownload", sb.toString().trim());
-						common.SetLongPref("LastDownloadTime", curtime);
+						common.reallyGetWeather(data);
 						validURL1 = true;
 					} catch (Exception e) {
 						e.printStackTrace();

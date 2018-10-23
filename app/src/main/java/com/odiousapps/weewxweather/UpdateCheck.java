@@ -22,43 +22,28 @@ public class UpdateCheck extends BroadcastReceiver
 
 		common = new Common(c);
 
-		Thread t = new Thread(new Runnable()
+		final long[] ret = common.getPeriod();
+		final long period = ret[0];
+		final long wait = ret[1];
+		if(period <= 0)
+			return;
+
+		final long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + period + wait;
+
+		Common.LogMessage("weewxstart == " + start);
+		Common.LogMessage("weewxperiod == " + period);
+		Common.LogMessage("weewxwait == " + wait);
+
+		common.getWeather();
+		AlarmManager mgr = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
+		Intent myInent = new Intent(c, UpdateCheck.class);
+
+		if(mgr != null)
 		{
-			public void run()
-			{
-				try
-				{
-					Common.LogMessage("UpdateCheck.java try");
-				} catch (Exception e) {
-					Common.LogMessage("UpdateCheck.java exception: " + e.toString());
-				}
+			PendingIntent pi = PendingIntent.getBroadcast(c, 0, myInent, 0);
+			mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
+		}
 
-				long[] ret = common.getPeriod();
-				long period = ret[0];
-				long wait = ret[1];
-				if(period <= 0)
-					return;
-
-				common.getWeather();
-
-
-				AlarmManager mgr = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
-				Intent myInent = new Intent(c, UpdateCheck.class);
-
-				if(mgr != null)
-				{
-					long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + period + wait;
-					Common.LogMessage("weewxstart == " + start);
-					Common.LogMessage("weewxperiod == " + period);
-					Common.LogMessage("weewxwait == " + wait);
-					PendingIntent pi = PendingIntent.getBroadcast(c, 0, myInent, PendingIntent.FLAG_UPDATE_CURRENT);
-					mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
-				}
-
-				Common.LogMessage("UpdateCheck.java finished.");
-			}
-		});
-
-		t.start();
+		Common.LogMessage("UpdateCheck.java finished.");
 	}
 }
