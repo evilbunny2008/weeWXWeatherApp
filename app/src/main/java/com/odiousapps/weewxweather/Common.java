@@ -284,7 +284,7 @@ class Common
         return views;
     }
 
-    String[] processWZ(String data)
+	String[] processWZ(String data)
     {
 	    try
 	    {
@@ -352,7 +352,7 @@ class Common
 			    stmp = "<td style='text-align:right;'>" + range[0] + "</td></tr>";
 			    str.append(stmp);
 
-			    stmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+			    stmp = "<tr><td style='font-size:4pt;' colspan='5'>&nbsp;</td></tr>";
 			    str.append(stmp);
 
 		    }
