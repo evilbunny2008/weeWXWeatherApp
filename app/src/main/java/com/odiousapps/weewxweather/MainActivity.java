@@ -55,9 +55,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.InterruptedIOException;
 import java.net.Authenticator;
-import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.net.URLConnection;
@@ -137,12 +135,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    AlarmManager mgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
 	    Intent i = new Intent(this, UpdateCheck.class);
+	    PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
 
 	    if(mgr != null)
-	    {
-		    PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
 		    mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
-	    }
     }
 
     private void showUpdateAvailable()
@@ -753,6 +749,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetBoolPref("showIndoor", cb3.isChecked());
 				common.SetBoolPref("radarforecast", showRadar.isChecked());
 
+				common.SendIntents();
 				handlerDone.sendEmptyMessage(0);
 			}
 		});
@@ -776,7 +773,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			b1.setEnabled(true);
 			b2.setEnabled(true);
 			dialog.dismiss();
-			common.SendIntents();
 			mDrawerLayout.closeDrawer(GravityCompat.START);
 		}
 	};

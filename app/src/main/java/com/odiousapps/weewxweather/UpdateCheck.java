@@ -8,8 +8,6 @@ import android.content.Intent;
 
 public class UpdateCheck extends BroadcastReceiver
 {
-	private Common common;
-
 	@Override
 	public void onReceive(final Context c, Intent i)
 	{
@@ -20,7 +18,7 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		common = new Common(c);
+		Common common = new Common(c);
 
 		final long[] ret = common.getPeriod();
 		final long period = ret[0];
@@ -28,21 +26,20 @@ public class UpdateCheck extends BroadcastReceiver
 		if(period <= 0)
 			return;
 
+		common.getWeather();
+
 		final long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + period + wait;
 
 		Common.LogMessage("weewxstart == " + start);
 		Common.LogMessage("weewxperiod == " + period);
 		Common.LogMessage("weewxwait == " + wait);
 
-		common.getWeather();
 		AlarmManager mgr = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
-		Intent myInent = new Intent(c, UpdateCheck.class);
+		Intent myIntent = new Intent(c, UpdateCheck.class);
+		PendingIntent pi = PendingIntent.getBroadcast(c, 0, myIntent, 0);
 
 		if(mgr != null)
-		{
-			PendingIntent pi = PendingIntent.getBroadcast(c, 0, myInent, 0);
 			mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
-		}
 
 		Common.LogMessage("UpdateCheck.java finished.");
 	}

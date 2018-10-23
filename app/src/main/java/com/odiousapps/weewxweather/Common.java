@@ -21,7 +21,6 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.InterruptedIOException;
 import java.net.Authenticator;
 import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
@@ -96,7 +95,7 @@ class Common
 			    return def;
 	    }
 
-	    return new long[]{period, 45000};
+	    return new long[]{period, 30000};
     }
 
     String getAppversion()
@@ -167,7 +166,7 @@ class Common
     }
 
     @SuppressWarnings({"unused", "SameParameterValue"})
-    void SetLongPref(String name, long value)
+    private void SetLongPref(String name, long value)
     {
         SetStringPref(name, "" + value);
     }
@@ -309,15 +308,59 @@ class Common
 		    if(pubDate.equals(""))
 			    return null;
 
+		    StringBuilder str = new StringBuilder();
+		    String stmp;
+
 		    SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
 		    long mdate = sdf.parse(pubDate).getTime();
 		    sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 		    pubDate = sdf.format(mdate);
 
-		    content = content.replace("http://www.weatherzone.com.au/images/icons/fcast_30/", "file:///android_res/drawable/wz")
+		    content = content.replace("src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "width=\"40px\" src=\"file:///android_res/drawable/wz")
 				    .replace(".gif", ".png");
 
-		    content = "<div style='font-size:16pt;'>" + pubDate + "</div><br/><br/>" + content;
+		    stmp = "<table style='width:100%;border:0px;'>";
+		    str.append(stmp);
+
+		    String newContent = "";
+		    String[] days = content.split("<b>");
+		    for(String day : days)
+		    {
+			    String[] tmp = day.split("</b>", 2);
+			    String dayName = tmp[0];
+
+			    if(tmp.length <= 1)
+				    continue;
+
+			    String[] mybits = tmp[1].split("<br />");
+			    String myimg = mybits[1];
+			    String mydesc = mybits[2];
+			    String[] range = mybits[3].split(" - ", 2);
+
+			    stmp = "<tr><td style='width:10%;' rowspan='2'>" + myimg + "</td>";
+			    str.append(stmp);
+
+			    stmp = "<td style='width:65%;'><b>" + dayName + "</b></td>";
+			    str.append(stmp);
+
+			    stmp = "<td style='width:25%;text-align:right;'><b>" + range[1] + "</b></td></tr>";
+			    str.append(stmp);
+
+			    stmp = "<tr><td>" + mydesc + "</td>";
+			    str.append(stmp);
+
+			    stmp = "<td style='text-align:right;'>" + range[0] + "</td></tr>";
+			    str.append(stmp);
+
+			    stmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+			    str.append(stmp);
+
+		    }
+
+		    stmp = "</table>";
+		    str.append(stmp);
+
+		    content = "<div style='font-size:16pt;'>" + pubDate + "</div>" + str.toString();
 
 		    Common.LogMessage("content="+content);
 
@@ -350,6 +393,7 @@ class Common
 		    Common.LogMessage("ended JSON Parsing");
 
 		    StringBuilder str = new StringBuilder();
+		    String stmp;
 
 		    Calendar calendar = Calendar.getInstance();
 		    int hour = calendar.get(Calendar.HOUR_OF_DAY);
@@ -360,7 +404,6 @@ class Common
 
 		    JSONObject tmp = forecast.getJSONObject(start);
 		    int code = tmp.getInt("code");
-		    String stmp;
 
 		    SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 		    long rssCheck = GetIntPref("rssCheck", 0);

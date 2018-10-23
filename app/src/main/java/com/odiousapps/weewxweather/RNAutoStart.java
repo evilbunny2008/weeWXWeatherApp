@@ -14,7 +14,6 @@ public class RNAutoStart extends BroadcastReceiver
 
         Common.LogMessage("RNAutostart: i=" + i.toString());
         Common common = new Common(c);
-	    common.getWeather();
 
 	    long[] ret = common.getPeriod();
 	    long period = ret[0];
@@ -22,6 +21,7 @@ public class RNAutoStart extends BroadcastReceiver
 	    if(period <= 0)
 		    return;
 
+	    common.getWeather();
 	    long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
 
 	    Common.LogMessage("weewxstart == " + start);
@@ -30,12 +30,10 @@ public class RNAutoStart extends BroadcastReceiver
 
 	    AlarmManager mgr = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
         Intent myIntent = new Intent(c, UpdateCheck.class);
+	    PendingIntent pi = PendingIntent.getBroadcast(c, 0, myIntent, 0);
 
         if(mgr != null)
-        {
-	        PendingIntent pi = PendingIntent.getBroadcast(c, 0, myIntent, 0);
 	        mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
-        }
 
         Common.LogMessage("onReceive() end");
     }
