@@ -95,7 +95,7 @@ class Common
 			    return def;
 	    }
 
-	    return new long[]{period, 30000};
+	    return new long[]{period, 45000};
     }
 
     String getAppversion()
@@ -322,7 +322,6 @@ class Common
 		    stmp = "<table style='width:100%;border:0px;'>";
 		    str.append(stmp);
 
-		    String newContent = "";
 		    String[] days = content.split("<b>");
 		    for(String day : days)
 		    {

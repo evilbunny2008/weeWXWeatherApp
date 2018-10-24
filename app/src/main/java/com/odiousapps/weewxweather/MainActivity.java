@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    AlarmManager mgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
 	    Intent i = new Intent(this, UpdateCheck.class);
-	    PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, 0);
+	    PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
 
 	    if(mgr != null)
 		    mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);

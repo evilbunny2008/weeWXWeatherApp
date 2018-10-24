@@ -36,7 +36,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 		AlarmManager mgr = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
 		Intent myIntent = new Intent(c, UpdateCheck.class);
-		PendingIntent pi = PendingIntent.getBroadcast(c, 0, myIntent, 0);
+		PendingIntent pi = PendingIntent.getBroadcast(c, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
 		if(mgr != null)
 			mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);

@@ -34,18 +34,19 @@
                 android:id="@+id/textView3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="start"
                 android:layout_gravity="center_vertical"
-                android:layout_weight="0.5"
+                android:layout_weight="0.55"
+                android:gravity="start"
+                android:textAlignment="textEnd"
                 android:textSize="48sp"/>
 
             <TextView
                 android:id="@+id/appTemp"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="end"
                 android:layout_gravity="bottom"
-                android:layout_weight="0.5"
+                android:layout_weight="0.45"
+                android:gravity="end"
                 android:textSize="24sp"/>
         </LinearLayout>
 
@@ -305,7 +306,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="12sp"/>
+            android:textSize="6sp"/>
 
         <WebView
             android:id="@+id/radar"
