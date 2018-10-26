@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -30,5 +31,24 @@ public class WidgetProvider extends AppWidgetProvider
             remoteViews.setOnClickPendingIntent(R.id.widget, pendingIntent);
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
         }
+
+	    long[] ret = common.getPeriod();
+	    long period = ret[0];
+	    long wait = ret[1];
+	    if(period <= 0)
+		    return;
+
+	    long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
+
+	    Common.LogMessage("WidgetProvider - weewxstart == " + start);
+	    Common.LogMessage("WidgetProvider - weewxperiod == " + period);
+	    Common.LogMessage("WidgetProvider - weewxwait == " + wait);
+
+	    AlarmManager mgr = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+	    Intent myIntent = new Intent(context, UpdateCheck.class);
+	    PendingIntent pi = PendingIntent.getBroadcast(context, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+	    if(mgr != null)
+		    mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
     }
 }

@@ -30,9 +30,9 @@ public class UpdateCheck extends BroadcastReceiver
 
 		final long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + period + wait;
 
-		Common.LogMessage("weewxstart == " + start);
-		Common.LogMessage("weewxperiod == " + period);
-		Common.LogMessage("weewxwait == " + wait);
+		Common.LogMessage("UpdateCheck - weewxstart == " + start);
+		Common.LogMessage("UpdateCheck - weewxperiod == " + period);
+		Common.LogMessage("UpdateCheck - weewxwait == " + wait);
 
 		AlarmManager mgr = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
 		Intent myIntent = new Intent(c, UpdateCheck.class);

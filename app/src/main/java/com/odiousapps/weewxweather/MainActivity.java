@@ -129,9 +129,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
 
-	    Common.LogMessage("weewxstart == " + start);
-	    Common.LogMessage("weewxperiod == " + period);
-	    Common.LogMessage("weewxwait == " + wait);
+	    Common.LogMessage("MainActivity - weewxstart == " + start);
+	    Common.LogMessage("MainActivity - weewxperiod == " + period);
+	    Common.LogMessage("MainActivity - weewxwait == " + wait);
 
 	    AlarmManager mgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
 	    Intent i = new Intent(this, UpdateCheck.class);
@@ -622,7 +622,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 									forecast = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + forecast + "%22)%20and%20u%3D'f'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
 								break;
 							case "weatherzone":
-								forecast = "http://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecast + "&obs=0&fc=1&warn=0";
+								forecast = "https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecast + "&obs=0&fc=1&warn=0";
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
