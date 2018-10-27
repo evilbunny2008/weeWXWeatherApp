@@ -18,7 +18,7 @@
     <string name="yes">Yes</string>
     <string name="forecast">Forecast Page</string>
     <string name="mainmenu">Weather Page</string>
-    <string name="metric">Use Metric in Yahoo! Forecasts?</string>
+    <string name="metric">Use Metric in Forecasts?</string>
     <string name="webcam">Webcam Page</string>
     <string name="custom">Custom Screen</string>
     <string name="about">About weeWX Weather App</string>

@@ -30,14 +30,16 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+import static java.lang.Math.round;
+
 class Common
 {
-    private final static String PREFS_NAME = "WeeWxWeatherPrefs";
-    private final static boolean debug_on = true;
+	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
+	private final static boolean debug_on = true;
 	private String appversion = "0.0.0";
-    Context context;
+	Context context;
 
-    final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36";
+	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36";
 
 	static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
 	static String TAB0_INTENT = "com.odiousapps.weewxweather.TAB0_INTENT";
@@ -49,80 +51,81 @@ class Common
 	private Thread t = null;
 
 	Common(Context c)
-    {
-        System.setProperty("http.agent", UA);
-        this.context = c;
+	{
+		System.setProperty("http.agent", UA);
+		this.context = c;
 
-	    try
-	    {
-		    PackageManager pm = c.getPackageManager();
-		    PackageInfo version = pm.getPackageInfo("com.odiousapps.weewxweather", 0);
-		    appversion = version.versionName;
-		    LogMessage("appversion="+appversion);
-	    } catch (Exception e) {
-	    	e.printStackTrace();
-	    }
-    }
+		try
+		{
+			PackageManager pm = c.getPackageManager();
+			PackageInfo version = pm.getPackageInfo("com.odiousapps.weewxweather", 0);
+			appversion = version.versionName;
+			LogMessage("appversion=" + appversion);
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 
-    long[] getPeriod()
-    {
+	long[] getPeriod()
+	{
 		long[] def = {0, 0};
 
-	    int pos = GetIntPref("updateInterval", 1);
-	    if(pos <= 0)
-		    return def;
+		int pos = GetIntPref("updateInterval", 1);
+		if (pos <= 0)
+			return def;
 
-	    long period;
+		long period;
 
-	    switch(pos)
-	    {
-		    case 1:
-			    period = 5 * 60000;
-			    break;
-		    case 2:
-			    period = 10 * 60000;
-			    break;
-		    case 3:
-			    period = 15 * 60000;
-			    break;
-		    case 4:
-			    period = 30 * 60000;
-			    break;
-		    case 5:
-			    period = 60 * 60000;
-			    break;
-		    default:
-			    return def;
-	    }
+		switch (pos)
+		{
+			case 1:
+				period = 5 * 60000;
+				break;
+			case 2:
+				period = 10 * 60000;
+				break;
+			case 3:
+				period = 15 * 60000;
+				break;
+			case 4:
+				period = 30 * 60000;
+				break;
+			case 5:
+				period = 60 * 60000;
+				break;
+			default:
+				return def;
+		}
 
-	    return new long[]{period, 45000};
-    }
+		return new long[]{period, 45000};
+	}
 
-    String getAppversion()
-    {
-    	return appversion;
-    }
+	String getAppversion()
+	{
+		return appversion;
+	}
 
-    static void LogMessage(String value)
-    {
-        LogMessage(value, false);
-    }
+	static void LogMessage(String value)
+	{
+		LogMessage(value, false);
+	}
 
-    static void LogMessage(String value, boolean showAnyway)
-    {
-        if(debug_on || showAnyway)
-            Log.i("weeWX Weather", "message='" + value + "'");
-    }
+	static void LogMessage(String value, boolean showAnyway)
+	{
+		if (debug_on || showAnyway)
+			Log.i("weeWX Weather", "message='" + value + "'");
+	}
 
-    void SetStringPref(String name, String value)
-    {
-        SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
-        SharedPreferences.Editor editor = settings.edit();
-        editor.putString(name, value);
-        editor.apply();
+	void SetStringPref(String name, String value)
+	{
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.putString(name, value);
+		editor.apply();
 
-        LogMessage("Updating '" + name + "'='" + value + "'");
-    }
+		LogMessage("Updating '" + name + "'='" + value + "'");
+	}
 
 	void RemovePref(String name)
 	{
@@ -135,241 +138,259 @@ class Common
 	}
 
 	@SuppressLint("ApplySharedPref")
-    void commit()
-    {
-	    SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
-	    SharedPreferences.Editor editor = settings.edit();
-	    editor.commit();
-    }
+	void commit()
+	{
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		SharedPreferences.Editor editor = settings.edit();
+		editor.commit();
+	}
 
-    String GetStringPref(String name, String defval)
-    {
-        SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
-        String value;
+	String GetStringPref(String name, String defval)
+	{
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		String value;
 
-        try
-        {
-            value = settings.getString(name, defval);
-        } catch (ClassCastException cce) {
-        	cce.printStackTrace();
-            //SetStringPref(name, defval);
-            return defval;
-        } catch (Exception e) {
-            LogMessage("GetStringPref(" + name + ", " + defval + ") Err: " + e.toString());
-            e.printStackTrace();
-            return defval;
-        }
+		try
+		{
+			value = settings.getString(name, defval);
+		} catch (ClassCastException cce)
+		{
+			cce.printStackTrace();
+			//SetStringPref(name, defval);
+			return defval;
+		} catch (Exception e)
+		{
+			LogMessage("GetStringPref(" + name + ", " + defval + ") Err: " + e.toString());
+			e.printStackTrace();
+			return defval;
+		}
 
-        LogMessage(name + "'='" + value + "'");
+		LogMessage(name + "'='" + value + "'");
 
-        return value;
-    }
+		return value;
+	}
 
-    @SuppressWarnings({"unused", "SameParameterValue"})
-    private void SetLongPref(String name, long value)
-    {
-        SetStringPref(name, "" + value);
-    }
+	@SuppressWarnings({"unused", "SameParameterValue"})
+	private void SetLongPref(String name, long value)
+	{
+		SetStringPref(name, "" + value);
+	}
 
-    @SuppressWarnings("unused")
-    long GetLongPref(String name)
-    {
-        return GetLongPref(name, 0);
-    }
+	@SuppressWarnings("unused")
+	long GetLongPref(String name)
+	{
+		return GetLongPref(name, 0);
+	}
 
-    @SuppressWarnings("WeakerAccess")
-    long GetLongPref(String name, @SuppressWarnings("SameParameterValue") long defval)
-    {
-        String val = GetStringPref(name, "" + defval);
-        if (val == null)
-            return defval;
-        return Long.parseLong(val);
-    }
+	@SuppressWarnings("WeakerAccess")
+	long GetLongPref(String name, @SuppressWarnings("SameParameterValue") long defval)
+	{
+		String val = GetStringPref(name, "" + defval);
+		if (val == null)
+			return defval;
+		return Long.parseLong(val);
+	}
 
-    void SetIntPref(String name, int value)
-    {
-        SetStringPref(name, "" + value);
-    }
+	void SetIntPref(String name, int value)
+	{
+		SetStringPref(name, "" + value);
+	}
 
-    @SuppressWarnings("unused")
-    int GetIntPref(String name)
-    {
-        return GetIntPref(name, 0);
-    }
+	@SuppressWarnings("unused")
+	int GetIntPref(String name)
+	{
+		return GetIntPref(name, 0);
+	}
 
-    int GetIntPref(String name, int defval)
-    {
-        String val = GetStringPref(name, "" + defval);
-        if (val == null)
-            return defval;
-        return Integer.parseInt(val);
-    }
+	int GetIntPref(String name, int defval)
+	{
+		String val = GetStringPref(name, "" + defval);
+		if (val == null)
+			return defval;
+		return Integer.parseInt(val);
+	}
 
-    void SetBoolPref(String name, boolean value)
-    {
-        String val = "0";
-        if (value)
-            val = "1";
+	void SetBoolPref(String name, boolean value)
+	{
+		String val = "0";
+		if (value)
+			val = "1";
 
-        SetStringPref(name, val);
-    }
+		SetStringPref(name, val);
+	}
 
-    @SuppressWarnings("unused")
-    boolean GetBoolPref(String name)
-    {
-        return GetBoolPref(name, false);
-    }
+	@SuppressWarnings("unused")
+	boolean GetBoolPref(String name)
+	{
+		return GetBoolPref(name, false);
+	}
 
-    boolean GetBoolPref(String name, boolean defval)
-    {
-        String value = "0";
-        if (defval)
-            value = "1";
+	boolean GetBoolPref(String name, boolean defval)
+	{
+		String value = "0";
+		if (defval)
+			value = "1";
 
-        String val = GetStringPref(name, value);
-        return val.equals("1");
-    }
+		String val = GetStringPref(name, value);
+		return val.equals("1");
+	}
 
-    RemoteViews buildUpdate(Context context)
-    {
-        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
-        Bitmap myBitmap = Bitmap.createBitmap(600, 440, Bitmap.Config.ARGB_4444);
-        Canvas myCanvas = new Canvas(myBitmap);
-        Paint paint = new Paint();
-        paint.setAntiAlias(true);
-        paint.setSubpixelText(true);
+	RemoteViews buildUpdate(Context context)
+	{
+		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
+		Bitmap myBitmap = Bitmap.createBitmap(600, 440, Bitmap.Config.ARGB_4444);
+		Canvas myCanvas = new Canvas(myBitmap);
+		Paint paint = new Paint();
+		paint.setAntiAlias(true);
+		paint.setSubpixelText(true);
 
-        int bgColour = GetIntPref("bgColour", 0xFFFFFFFF);
-	    paint.setStyle(Paint.Style.FILL);
-	    paint.setColor(bgColour);
+		int bgColour = GetIntPref("bgColour", 0xFFFFFFFF);
+		paint.setStyle(Paint.Style.FILL);
+		paint.setColor(bgColour);
 
-	    RectF rectF = new RectF(0, 0,myCanvas.getWidth(),myCanvas.getHeight());
-	    int cornersRadius = 25;
-	    myCanvas.drawRoundRect(rectF, cornersRadius, cornersRadius, paint);
+		RectF rectF = new RectF(0, 0, myCanvas.getWidth(), myCanvas.getHeight());
+		int cornersRadius = 25;
+		myCanvas.drawRoundRect(rectF, cornersRadius, cornersRadius, paint);
 
-	    int fgColour = GetIntPref("fgColour", 0xFF000000);
+		int fgColour = GetIntPref("fgColour", 0xFF000000);
 
-        paint.setStyle(Paint.Style.FILL);
-        paint.setColor(fgColour);
-        paint.setTextAlign(Paint.Align.CENTER);
+		paint.setStyle(Paint.Style.FILL);
+		paint.setColor(fgColour);
+		paint.setTextAlign(Paint.Align.CENTER);
 
-        String bits[] = GetStringPref("LastDownload","").split("\\|");
-        if(bits.length > 110)
-        {
-            paint.setTextSize(64);
-            myCanvas.drawText(bits[56], myCanvas.getWidth() / 2, 80, paint);
-            paint.setTextSize(48);
-            myCanvas.drawText(bits[55], myCanvas.getWidth() / 2, 140, paint);
-            paint.setTextSize(200);
-            myCanvas.drawText(bits[0] + bits[60], myCanvas.getWidth() / 2, 310, paint);
+		String bits[] = GetStringPref("LastDownload", "").split("\\|");
+		if (bits.length > 110)
+		{
+			paint.setTextSize(64);
+			myCanvas.drawText(bits[56], myCanvas.getWidth() / 2, 80, paint);
+			paint.setTextSize(48);
+			myCanvas.drawText(bits[55], myCanvas.getWidth() / 2, 140, paint);
+			paint.setTextSize(200);
+			myCanvas.drawText(bits[0] + bits[60], myCanvas.getWidth() / 2, 310, paint);
 
-            paint.setTextAlign(Paint.Align.LEFT);
-            paint.setTextSize(64);
-            myCanvas.drawText(bits[25] + bits[61], 20, 400, paint);
+			paint.setTextAlign(Paint.Align.LEFT);
+			paint.setTextSize(64);
+			myCanvas.drawText(bits[25] + bits[61], 20, 400, paint);
 
-            paint.setTextAlign(Paint.Align.RIGHT);
-            paint.setTextSize(64);
+			paint.setTextAlign(Paint.Align.RIGHT);
+			paint.setTextSize(64);
 
-	        String rain = bits[20];
-	        if(bits.length > 158 && !bits[158].equals(""))
-		        rain = bits[158];
+			String rain = bits[20];
+			if (bits.length > 158 && !bits[158].equals(""))
+				rain = bits[158];
 
-            myCanvas.drawText(rain + bits[62], myCanvas.getWidth() - 20, 400, paint);
-        } else {
-            paint.setTextSize(200);
-            myCanvas.drawText("Error!", myCanvas.getWidth() / 2, 300, paint);
-        }
+			myCanvas.drawText(rain + bits[62], myCanvas.getWidth() - 20, 400, paint);
+		} else
+		{
+			paint.setTextSize(200);
+			myCanvas.drawText("Error!", myCanvas.getWidth() / 2, 300, paint);
+		}
 
-        views.setImageViewBitmap(R.id.widget, myBitmap);
-        return views;
-    }
+		views.setImageViewBitmap(R.id.widget, myBitmap);
+		return views;
+	}
 
 	String[] processWZ(String data)
-    {
-	    try
-	    {
-		    String desc = "", content = "", pubDate = "";
+	{
+		boolean metric = GetBoolPref("metric", true);
 
-		    String[] bits = data.split("<title>");
-		    if(bits.length >= 2)
-			    desc = bits[1].split("</title>")[0].trim();
+		try
+		{
+			String desc = "", content = "", pubDate = "";
 
-		    bits = data.split("<description>");
-		    if(bits.length >= 3)
-		    {
-			    String s = bits[2].split("</description>")[0];
-			    content = s.substring(9, s.length() - 3).trim();
-		    }
+			String[] bits = data.split("<title>");
+			if (bits.length >= 2)
+				desc = bits[1].split("</title>")[0].trim();
 
-		    bits = data.split("<pubDate>");
-		    if(bits.length >= 2)
-			    pubDate = bits[1].split("</pubDate>")[0].trim();
+			bits = data.split("<description>");
+			if (bits.length >= 3)
+			{
+				String s = bits[2].split("</description>")[0];
+				content = s.substring(9, s.length() - 3).trim();
+			}
 
-		    if(pubDate.equals(""))
-			    return null;
+			bits = data.split("<pubDate>");
+			if (bits.length >= 2)
+				pubDate = bits[1].split("</pubDate>")[0].trim();
 
-		    StringBuilder str = new StringBuilder();
-		    String stmp;
+			if (pubDate.equals(""))
+				return null;
 
-		    SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
-		    long mdate = sdf.parse(pubDate).getTime();
-		    sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-		    pubDate = sdf.format(mdate);
+			StringBuilder str = new StringBuilder();
+			String stmp;
 
-		    content = content.replace("src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "width=\"40px\" src=\"file:///android_res/drawable/wz")
-				    .replace(".gif", ".png");
+			SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
+			long mdate = sdf.parse(pubDate).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			pubDate = sdf.format(mdate);
 
-		    stmp = "<table style='width:100%;border:0px;'>";
-		    str.append(stmp);
+			content = content.replace("src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "width=\"40px\" src=\"file:///android_res/drawable/wz")
+					.replace(".gif", ".png");
 
-		    String[] days = content.split("<b>");
-		    for(String day : days)
-		    {
-			    String[] tmp = day.split("</b>", 2);
-			    String dayName = tmp[0];
+			stmp = "<table style='width:100%;border:0px;'>";
+			str.append(stmp);
 
-			    if(tmp.length <= 1)
-				    continue;
+			String[] days = content.split("<b>");
+			for (String day : days)
+			{
+				String[] tmp = day.split("</b>", 2);
+				String dayName = tmp[0];
 
-			    String[] mybits = tmp[1].split("<br />");
-			    String myimg = mybits[1];
-			    String mydesc = mybits[2];
-			    String[] range = mybits[3].split(" - ", 2);
+				if (tmp.length <= 1)
+					continue;
 
-			    stmp = "<tr><td style='width:10%;' rowspan='2'>" + myimg + "</td>";
-			    str.append(stmp);
+				String[] mybits = tmp[1].split("<br />");
+				String myimg = mybits[1];
+				String mydesc = mybits[2];
+				String[] range = mybits[3].split(" - ", 2);
 
-			    stmp = "<td style='width:65%;'><b>" + dayName + "</b></td>";
-			    str.append(stmp);
+				stmp = "<tr><td style='width:10%;' rowspan='2'>" + myimg + "</td>";
+				str.append(stmp);
 
-			    stmp = "<td style='width:25%;text-align:right;'><b>" + range[1] + "</b></td></tr>";
-			    str.append(stmp);
+				stmp = "<td style='width:65%;'><b>" + dayName + "</b></td>";
+				str.append(stmp);
 
-			    stmp = "<tr><td>" + mydesc + "</td>";
-			    str.append(stmp);
+				stmp = "<td style='width:25%;text-align:right;'><b>" + scrubTemp(range[1], metric) + "</b></td></tr>";
+				str.append(stmp);
 
-			    stmp = "<td style='text-align:right;'>" + range[0] + "</td></tr>";
-			    str.append(stmp);
+				stmp = "<tr><td>" + mydesc + "</td>";
+				str.append(stmp);
 
-			    stmp = "<tr><td style='font-size:4pt;' colspan='5'>&nbsp;</td></tr>";
-			    str.append(stmp);
+				stmp = "<td style='text-align:right;'>" + scrubTemp(range[0], metric) + "</td></tr>";
+				str.append(stmp);
 
-		    }
+				stmp = "<tr><td style='font-size:4pt;' colspan='5'>&nbsp;</td></tr>";
+				str.append(stmp);
 
-		    stmp = "</table>";
-		    str.append(stmp);
+			}
 
-		    content = "<div style='font-size:16pt;'>" + pubDate + "</div>" + str.toString();
+			stmp = "</table>";
+			str.append(stmp);
 
-		    Common.LogMessage("content="+content);
+			content = "<div style='font-size:16pt;'>" + pubDate + "</div>" + str.toString();
 
-		    return new String[]{content, desc};
-	    } catch (Exception e) {
-		    e.printStackTrace();
-	    }
+			Common.LogMessage("content=" + content);
 
-	    return null;
-    }
+			return new String[]{content, desc};
+		} catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	private String scrubTemp(String temp, boolean metric)
+	{
+		if(temp.length() <= 7 || metric)
+			return temp;
+
+		float i = Float.parseFloat(temp.substring(0, temp.length() - 7));
+		LogMessage("i == " + i);
+		int f = round(9.0f / 5.0f * i + 32.0f);
+		LogMessage("f == " + f);
+		return String.valueOf(f) + "&#176;F";
+	}
 
     String[] processYahoo(String data)
     {
@@ -459,7 +480,8 @@ class Common
 
 		    Common.LogMessage("finished building forecast: " + str.toString());
 		    return new String[]{str.toString(), desc};
-	    } catch (Exception e) {
+	    } catch (Exception e)
+	    {
 		    e.printStackTrace();
 	    }
 
@@ -581,7 +603,7 @@ class Common
 			}
 
 			SetStringPref("LastDownload", line);
-			SetLongPref("LastDownloadTime", Math.round(System.currentTimeMillis() / 1000));
+			SetLongPref("LastDownloadTime", round(System.currentTimeMillis() / 1000));
 		}
 	}
 
