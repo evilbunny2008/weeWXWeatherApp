@@ -27,7 +27,6 @@ import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 import static java.lang.Math.round;
@@ -292,6 +291,11 @@ class Common
 
 	String[] processWZ(String data)
 	{
+		return processWZ(data, false);
+	}
+
+	String[] processWZ(String data, boolean showHeader)
+	{
 		boolean metric = GetBoolPref("metric", true);
 
 		try
@@ -327,47 +331,113 @@ class Common
 			content = content.replace("src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "width=\"40px\" src=\"file:///android_res/drawable/wz")
 					.replace(".gif", ".png");
 
-			stmp = "<table style='width:100%;border:0px;'>";
-			str.append(stmp);
-
-			String[] days = content.split("<b>");
-			for (String day : days)
+			if(showHeader)
 			{
+				String[] days = content.split("<b>");
+				String day = days[1];
 				String[] tmp = day.split("</b>", 2);
-				String dayName = tmp[0];
-
-				if (tmp.length <= 1)
-					continue;
 
 				String[] mybits = tmp[1].split("<br />");
 				String myimg = mybits[1];
 				String mydesc = mybits[2];
 				String[] range = mybits[3].split(" - ", 2);
 
-				stmp = "<tr><td style='width:10%;' rowspan='2'>" + myimg + "</td>";
+
+				stmp = "<table style='width:100%;border:0px;'>";
 				str.append(stmp);
 
-				stmp = "<td style='width:65%;'><b>" + dayName + "</b></td>";
+				stmp = "<tr><td style='width:50%;font-size:48pt;'>" + scrubTemp(range[1], metric) + "</td>";
 				str.append(stmp);
 
-				stmp = "<td style='width:25%;text-align:right;'><b>" + scrubTemp(range[1], metric) + "</b></td></tr>";
+				stmp = "<td style='width:50%;text-align:right;'>" + myimg.replace("40px", "80px") + "</td></tr>";
 				str.append(stmp);
 
-				stmp = "<tr><td>" + mydesc + "</td>";
+				stmp = "<tr><td style='font-size:16pt;'>" + scrubTemp(range[0], metric) + "</td>";
 				str.append(stmp);
 
-				stmp = "<td style='text-align:right;'>" + scrubTemp(range[0], metric) + "</td></tr>";
+				stmp = "<td style='text-align:right;font-size:16pt;'>" +mydesc + "</td></tr></table><br />";
 				str.append(stmp);
 
-				stmp = "<tr><td style='font-size:4pt;' colspan='5'>&nbsp;</td></tr>";
+				stmp = "<table style='width:100%;border:0px;'>";
 				str.append(stmp);
 
+				for(int i = 2; i < days.length; i++)
+				{
+					day = days[i];
+					tmp = day.split("</b>", 2);
+					String dayName = tmp[0];
+
+					if (tmp.length <= 1)
+						continue;
+
+					mybits = tmp[1].split("<br />");
+					myimg = mybits[1];
+					mydesc = mybits[2];
+					range = mybits[3].split(" - ", 2);
+
+					stmp = "<tr><td style='width:10%;' rowspan='2'>" + myimg + "</td>";
+					str.append(stmp);
+
+					stmp = "<td style='width:65%;'><b>" + dayName + "</b></td>";
+					str.append(stmp);
+
+					stmp = "<td style='width:25%;text-align:right;'><b>" + scrubTemp(range[1], metric) + "</b></td></tr>";
+					str.append(stmp);
+
+					stmp = "<tr><td>" + mydesc + "</td>";
+					str.append(stmp);
+
+					stmp = "<td style='text-align:right;'>" + scrubTemp(range[0], metric) + "</td></tr>";
+					str.append(stmp);
+
+					stmp = "<tr><td style='font-size:4pt;' colspan='5'>&nbsp;</td></tr>";
+					str.append(stmp);
+				}
+
+				stmp = "</table>";
+				str.append(stmp);
+			} else {
+				stmp = "<table style='width:100%;border:0px;'>";
+				str.append(stmp);
+
+				String[] days = content.split("<b>");
+				for (String day : days)
+				{
+					String[] tmp = day.split("</b>", 2);
+					String dayName = tmp[0];
+
+					if (tmp.length <= 1)
+						continue;
+
+					String[] mybits = tmp[1].split("<br />");
+					String myimg = mybits[1];
+					String mydesc = mybits[2];
+					String[] range = mybits[3].split(" - ", 2);
+
+					stmp = "<tr><td style='width:10%;' rowspan='2'>" + myimg + "</td>";
+					str.append(stmp);
+
+					stmp = "<td style='width:65%;'><b>" + dayName + "</b></td>";
+					str.append(stmp);
+
+					stmp = "<td style='width:25%;text-align:right;'><b>" + scrubTemp(range[1], metric) + "</b></td></tr>";
+					str.append(stmp);
+
+					stmp = "<tr><td>" + mydesc + "</td>";
+					str.append(stmp);
+
+					stmp = "<td style='text-align:right;'>" + scrubTemp(range[0], metric) + "</td></tr>";
+					str.append(stmp);
+
+					stmp = "<tr><td style='font-size:4pt;' colspan='5'>&nbsp;</td></tr>";
+					str.append(stmp);
+				}
+
+				stmp = "</table>";
+				str.append(stmp);
 			}
 
-			stmp = "</table>";
-			str.append(stmp);
-
-			content = "<div style='font-size:16pt;'>" + pubDate + "</div>" + str.toString();
+			content = "<div style='font-size:12pt;'>" + pubDate + "</div>" + str.toString();
 
 			Common.LogMessage("content=" + content);
 
@@ -392,7 +462,12 @@ class Common
 		return String.valueOf(f) + "&#176;F";
 	}
 
-    String[] processYahoo(String data)
+	String[] processYahoo(String data)
+	{
+		return processYahoo(data, false);
+	}
+
+    String[] processYahoo(String data, boolean showHeader)
     {
 	    JSONObject json;
 
@@ -405,6 +480,7 @@ class Common
 		    JSONObject query = json.getJSONObject("query");
 		    JSONObject results = query.getJSONObject("results");
 		    JSONObject channel = results.getJSONObject("channel");
+		    String pubdate = channel.getString("lastBuildDate");
 		    JSONObject item = channel.getJSONObject("item");
 		    JSONObject units = channel.getJSONObject("units");
 		    String temp = units.getString("temperature");
@@ -425,63 +501,98 @@ class Common
 		    JSONObject tmp = forecast.getJSONObject(start);
 		    int code = tmp.getInt("code");
 
-		    SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-		    long rssCheck = GetIntPref("rssCheck", 0);
-		    rssCheck *= 1000;
-		    Date resultdate = new Date(rssCheck);
+//		    SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+//		    long rssCheck = GetIntPref("rssCheck", 0);
+//		    rssCheck *= 1000;
+//		    Date resultdate = new Date(rssCheck);
 
-
-		    stmp = "<table style='width:100%;border:0px;'>";
-		    str.append(stmp);
-		    stmp = "<tr><td style='width:50%;font-size:16pt;'>" + tmp.getString("date") + "</td>";
-		    str.append(stmp);
-		    stmp = "<td style='width:50%;text-align:right;' rowspan='2'><img width='80px' src='file:///android_res/drawable/yahoo" + code + "'><br/>" +
-				    sdf.format(resultdate) + "</td></tr>";
-		    str.append(stmp);
-
-		    stmp = "<tr><td style='width:50%;font-size:48pt;'>" + tmp.getString("high") + "&deg;" + temp + "</td></tr>";
-		    str.append(stmp);
-
-		    stmp = "<tr><td style='font-size:16pt;'>" + tmp.getString("low") + "&deg;" + temp + "</td>";
-		    str.append(stmp);
-
-		    stmp = "<td style='text-align:right;font-size:16pt;'>" + tmp.getString("text") + "</td></tr></table><br>";
-		    str.append(stmp);
-
-		    stmp = "<table style='width:100%;border:0px;'>";
-		    str.append(stmp);
-
-		    for (int i = start + 1; i <= start + 5; i++)
+		    if(showHeader)
 		    {
-			    tmp = forecast.getJSONObject(i);
-			    code = tmp.getInt("code");
-
-			    stmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/yahoo" + code + "'></td>";
+			    stmp = "<div style='font-size:12pt;'>" + pubdate + "</div>";
 			    str.append(stmp);
 
-			    stmp = "<td style='width:45%;'><b>" + tmp.getString("day") + ", " + tmp.getString("date") + "</b></td>";
+			    stmp = "<table style='width:100%;border:0px;'>";
 			    str.append(stmp);
 
-			    stmp = "<td style='width:45%;text-align:right;'><b>" + tmp.getString("high") + "&deg;" + temp + "</b></td></tr>";
+			    stmp = "<tr><td style='width:50%;font-size:48pt;'>" + tmp.getString("high") + "&deg;" + temp + "</td>";
 			    str.append(stmp);
 
-			    stmp = "<tr><td>" + tmp.getString("text") + "</td>";
+			    stmp = "<td style='width:50%;text-align:right;'><img width='80px' src='file:///android_res/drawable/yahoo" + code + ".png'></td></tr>";
 			    str.append(stmp);
 
-			    stmp = "<td style='text-align:right;'>" + tmp.getString("low") + "&deg;" + temp + "</td></tr>";
+			    stmp = "<tr><td style='font-size:16pt;'>" + tmp.getString("low") + "&deg;" + temp + "</td>";
 			    str.append(stmp);
 
-			    stmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+			    stmp = "<td style='text-align:right;font-size:16pt;'>" + tmp.getString("text") + "</td></tr></table><br />";
+			    str.append(stmp);
+
+			    stmp = "<table style='width:100%;border:0px;'>";
+			    str.append(stmp);
+
+			    for (int i = start + 1; i <= start + 5; i++)
+			    {
+				    tmp = forecast.getJSONObject(i);
+				    code = tmp.getInt("code");
+
+				    stmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/yahoo" + code + ".png'></td>";
+				    str.append(stmp);
+
+				    stmp = "<td style='width:45%;'><b>" + tmp.getString("day") + ", " + tmp.getString("date") + "</b></td>";
+				    str.append(stmp);
+
+				    stmp = "<td style='width:45%;text-align:right;'><b>" + tmp.getString("high") + "&deg;" + temp + "</b></td></tr>";
+				    str.append(stmp);
+
+				    stmp = "<tr><td>" + tmp.getString("text") + "</td>";
+				    str.append(stmp);
+
+				    stmp = "<td style='text-align:right;'>" + tmp.getString("low") + "&deg;" + temp + "</td></tr>";
+				    str.append(stmp);
+
+				    stmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+				    str.append(stmp);
+			    }
+
+			    stmp = "</table>";
+			    str.append(stmp);
+		    } else {
+			    stmp = "<div style='font-size:12pt;'>" + pubdate + "</div>";
+			    str.append(stmp);
+
+			    stmp = "<table style='width:100%;border:0px;'>";
+			    str.append(stmp);
+
+			    for (int i = start; i <= start + 5; i++)
+			    {
+				    tmp = forecast.getJSONObject(i);
+				    code = tmp.getInt("code");
+
+				    stmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/yahoo" + code + "'></td>";
+				    str.append(stmp);
+
+				    stmp = "<td style='width:45%;'><b>" + tmp.getString("day") + ", " + tmp.getString("date") + "</b></td>";
+				    str.append(stmp);
+
+				    stmp = "<td style='width:45%;text-align:right;'><b>" + tmp.getString("high") + "&deg;" + temp + "</b></td></tr>";
+				    str.append(stmp);
+
+				    stmp = "<tr><td>" + tmp.getString("text") + "</td>";
+				    str.append(stmp);
+
+				    stmp = "<td style='text-align:right;'>" + tmp.getString("low") + "&deg;" + temp + "</td></tr>";
+				    str.append(stmp);
+
+				    stmp = "<tr><td style='font-size:5pt;' colspan='5'>&nbsp;</td></tr>";
+				    str.append(stmp);
+			    }
+
+			    stmp = "</table>";
 			    str.append(stmp);
 		    }
 
-		    stmp = "</table>";
-		    str.append(stmp);
-
 		    Common.LogMessage("finished building forecast: " + str.toString());
 		    return new String[]{str.toString(), desc};
-	    } catch (Exception e)
-	    {
+	    } catch (Exception e) {
 		    e.printStackTrace();
 	    }
 

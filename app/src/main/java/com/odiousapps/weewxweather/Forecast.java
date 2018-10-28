@@ -434,11 +434,11 @@ class Forecast
 
 	    if(fctype.toLowerCase().equals("yahoo"))
 	    {
-		    String[] content = common.processYahoo(data);
+		    String[] content = common.processYahoo(data, true);
 		    if(content != null && content.length >= 2)
 			    updateForecast(content[0], content[1]);
 	    } else if(fctype.toLowerCase().equals("weatherzone")) {
-		    String[] content = common.processWZ(data);
+		    String[] content = common.processWZ(data, true);
 		    if(content != null && content.length >= 2)
 			    updateForecast(content[0], content[1]);
 	    }
