@@ -28,11 +28,26 @@
             android:textSize="24sp"
             app:srcCompat="@drawable/purple"/>
 
-        <WebView
-            android:id="@+id/webView1"
+        <!-- https://github.com/rongi/rotate-layout -->
+        <com.github.rongi.rotate_layout.layout.RotateLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rotateWeb"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"/>
+            app:angle="-90">
 
+            <WebView
+                android:id="@+id/webView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"/>
+        </com.github.rongi.rotate_layout.layout.RotateLayout>
+
+        <WebView
+            android:id="@+id/webView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone"/>
     </LinearLayout>
 </android.support.v4.widget.SwipeRefreshLayout>

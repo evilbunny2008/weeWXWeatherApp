@@ -20,6 +20,8 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.github.rongi.rotate_layout.layout.RotateLayout;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -33,10 +35,11 @@ class Forecast
 {
     private Common common;
     private View rootView;
-    private WebView wv;
+    private WebView wv1, wv2;
     private SwipeRefreshLayout swipeLayout;
 	private TextView forecast;
 	private ImageView im;
+	private RotateLayout rl;
 
 	Forecast(Common common)
     {
@@ -75,17 +78,19 @@ class Forecast
 		    }
 	    });
 
-	    wv = rootView.findViewById(R.id.webView1);
+	    rl = rootView.findViewById(R.id.rotateWeb);
+	    wv1 = rootView.findViewById(R.id.webView1);
+	    wv2 = rootView.findViewById(R.id.webView2);
 
-	    wv.getSettings().setUserAgentString(Common.UA);
-	    wv.getSettings().setJavaScriptEnabled(true);
+	    wv1.getSettings().setUserAgentString(Common.UA);
+	    wv1.getSettings().setJavaScriptEnabled(true);
 
-	    wv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
+	    wv1.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
 	    {
 		    @Override
 		    public void onScrollChanged()
 		    {
-			    if (wv.getScrollY() == 0)
+			    if (wv1.getScrollY() == 0)
 			    {
 				    swipeLayout.setEnabled(true);
 			    } else {
@@ -94,7 +99,7 @@ class Forecast
 		    }
 	    });
 
-	    wv.setWebChromeClient(new WebChromeClient()
+	    wv1.setWebChromeClient(new WebChromeClient()
 	    {
 		    @Override
 		    public boolean onConsoleMessage(ConsoleMessage cm)
@@ -103,7 +108,7 @@ class Forecast
 		    }
 	    });
 
-	    wv.setOnLongClickListener(new View.OnLongClickListener()
+	    wv1.setOnLongClickListener(new View.OnLongClickListener()
 	    {
 		    @Override
 		    public boolean onLongClick(View v)
@@ -117,13 +122,13 @@ class Forecast
 				    forceRefresh();
 				    reloadWebView(true);
 			    } else if(common.GetStringPref("radtype", "image").equals("webpage")) {
-				    wv.reload();
+				    wv1.reload();
 			    }
 			    return true;
 		    }
 	    });
 
-	    wv.setWebViewClient(new WebViewClient()
+	    wv1.setWebViewClient(new WebViewClient()
 	    {
 		    @Override
 		    public boolean shouldOverrideUrlLoading(WebView view, String url)
@@ -132,12 +137,82 @@ class Forecast
 		    }
 	    });
 
-	    wv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
+	    wv1.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
 	    {
 		    @Override
 		    public void onScrollChanged()
 		    {
-			    if (wv.getScrollY() == 0)
+			    if (wv1.getScrollY() == 0)
+			    {
+				    swipeLayout.setEnabled(true);
+			    } else
+			    {
+				    swipeLayout.setEnabled(false);
+			    }
+		    }
+	    });
+
+	    wv2.getSettings().setUserAgentString(Common.UA);
+	    wv2.getSettings().setJavaScriptEnabled(true);
+
+	    wv2.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
+	    {
+		    @Override
+		    public void onScrollChanged()
+		    {
+			    if (wv2.getScrollY() == 0)
+			    {
+				    swipeLayout.setEnabled(true);
+			    } else {
+				    swipeLayout.setEnabled(false);
+			    }
+		    }
+	    });
+
+	    wv2.setWebChromeClient(new WebChromeClient()
+	    {
+		    @Override
+		    public boolean onConsoleMessage(ConsoleMessage cm)
+		    {
+			    return true;
+		    }
+	    });
+
+	    wv2.setOnLongClickListener(new View.OnLongClickListener()
+	    {
+		    @Override
+		    public boolean onLongClick(View v)
+		    {
+			    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
+			    if (vibrator != null)
+				    vibrator.vibrate(250);
+			    Common.LogMessage("webview long press");
+			    if(common.GetStringPref("radtype", "image").equals("image"))
+			    {
+				    forceRefresh();
+				    reloadWebView(true);
+			    } else if(common.GetStringPref("radtype", "image").equals("webpage")) {
+				    wv2.reload();
+			    }
+			    return true;
+		    }
+	    });
+
+	    wv2.setWebViewClient(new WebViewClient()
+	    {
+		    @Override
+		    public boolean shouldOverrideUrlLoading(WebView view, String url)
+		    {
+			    return false;
+		    }
+	    });
+
+	    wv2.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
+	    {
+		    @Override
+		    public void onScrollChanged()
+		    {
+			    if (wv2.getScrollY() == 0)
 			    {
 				    swipeLayout.setEnabled(true);
 			    } else
@@ -159,6 +234,8 @@ class Forecast
 	    {
 	    	Common.LogMessage("Displaying forecast");
 		    getForecast();
+		    rl.setVisibility(View.GONE);
+		    wv2.setVisibility(View.VISIBLE);
 		    forecast.setVisibility(View.VISIBLE);
 		    im.setVisibility(View.VISIBLE);
 	    } else {
@@ -167,9 +244,14 @@ class Forecast
 		    {
 			    loadWebView();
 		        reloadWebView(false);
+			    rl.setVisibility(View.VISIBLE);
+			    wv2.setVisibility(View.GONE);
+		    } else if(common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals("")) {
+			    wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
+			    rl.setVisibility(View.GONE);
+			    wv2.setVisibility(View.VISIBLE);
+		    }
 
-		    } else if(common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals(""))
-		    	wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
 		    forecast.setVisibility(View.GONE);
 		    im.setVisibility(View.GONE);
         }
@@ -181,12 +263,13 @@ class Forecast
 	{
 		if(common.GetStringPref("radtype", "image").equals("image"))
 		{
+			rl.setVisibility(View.VISIBLE);
 			String radar = common.context.getFilesDir() + "/radar.gif";
 
 			if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 			{
 				String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
-				wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+				wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
 				return;
 			}
 
@@ -197,13 +280,17 @@ class Forecast
 					"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
 					"  </head>\n" +
 					"  <body>\n" +
-					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
+					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:84%;max-height:84%;width:auto;height:auto;'\n" +
 					"\tsrc='file://" + radar + "'>\n" +
 					"  </body>\n" +
 					"</html>";
-			wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+			wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+			rl.setVisibility(View.VISIBLE);
+			wv2.setVisibility(View.GONE);
 		} else if(common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals("")) {
-			wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
+			wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
+			rl.setVisibility(View.GONE);
+			wv2.setVisibility(View.VISIBLE);
 		}
 	}
 
@@ -308,12 +395,16 @@ class Forecast
 		                getForecast();
 		                forecast.setVisibility(View.VISIBLE);
 		                im.setVisibility(View.VISIBLE);
+		                rl.setVisibility(View.GONE);
+		                wv2.setVisibility(View.VISIBLE);
 	                } else {
 		                Common.LogMessage("Displaying radar");
 		                loadWebView();
 		                reloadWebView(true);
 		                forecast.setVisibility(View.GONE);
 		                im.setVisibility(View.GONE);
+		                rl.setVisibility(View.VISIBLE);
+		                wv2.setVisibility(View.GONE);
 	                }
                 } else if(action != null && action.equals(Common.EXIT_INTENT)) {
                     common.context.unregisterReceiver(serviceReceiver);
@@ -343,7 +434,7 @@ class Forecast
         final String rss = common.GetStringPref("FORECAST_URL", "");
         if(rss.equals(""))
         {
-	        wv.loadDataWithBaseURL(null, "<html><body>Forecast URL not set, go to settings to change</body></html>", "text/html", "utf-8", null);
+	        wv1.loadDataWithBaseURL(null, "<html><body>Forecast URL not set, go to settings to change</body></html>", "text/html", "utf-8", null);
 	        return;
         }
 
@@ -448,12 +539,12 @@ class Forecast
     {
         final String fc = "<html><body style='text-align:center'>"  + bits + "</body></html>";
 
-        wv.post(new Runnable()
+        wv2.post(new Runnable()
         {
             @Override
             public void run()
             {
-                wv.loadDataWithBaseURL(null, fc, "text/html", "utf-8", null);
+                wv2.loadDataWithBaseURL(null, fc, "text/html", "utf-8", null);
             }
         });
 
