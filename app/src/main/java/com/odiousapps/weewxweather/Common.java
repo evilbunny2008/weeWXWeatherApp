@@ -328,11 +328,11 @@ class Common
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 			pubDate = sdf.format(mdate);
 
-			content = content.replace("src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "width=\"40px\" src=\"file:///android_res/drawable/wz")
-					.replace(".gif", ".png");
-
 			if(showHeader)
 			{
+				content = content.replace("src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "width=\"50px\" src=\"file:///android_res/drawable/wz")
+						.replace(".gif", ".png");
+
 				String[] days = content.split("<b>");
 				String day = days[1];
 				String[] tmp = day.split("</b>", 2);
@@ -349,7 +349,7 @@ class Common
 				stmp = "<tr><td style='width:50%;font-size:48pt;'>" + scrubTemp(range[1], metric) + "</td>";
 				str.append(stmp);
 
-				stmp = "<td style='width:50%;text-align:right;'>" + myimg.replace("40px", "80px") + "</td></tr>";
+				stmp = "<td style='width:50%;text-align:right;'>" + myimg.replace("50px", "80px") + "</td></tr>";
 				str.append(stmp);
 
 				stmp = "<tr><td style='font-size:16pt;'>" + scrubTemp(range[0], metric) + "</td>";
@@ -397,6 +397,9 @@ class Common
 				stmp = "</table>";
 				str.append(stmp);
 			} else {
+				content = content.replace("src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "width=\"40px\" src=\"file:///android_res/drawable/wz")
+						.replace(".gif", ".png");
+
 				stmp = "<table style='width:100%;border:0px;'>";
 				str.append(stmp);
 

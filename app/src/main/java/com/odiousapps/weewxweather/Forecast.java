@@ -274,8 +274,8 @@ class Forecast
 				return;
 			}
 
-			int height = Math.round((float)Resources.getSystem().getDisplayMetrics().widthPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.95f);
-			int width = Math.round((float)Resources.getSystem().getDisplayMetrics().heightPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.95f);
+			int height = Math.round((float)Resources.getSystem().getDisplayMetrics().widthPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
+			int width = Math.round((float)Resources.getSystem().getDisplayMetrics().heightPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
 
 			String html = "<!DOCTYPE html>\n" +
 					"<html>\n" +
@@ -284,9 +284,11 @@ class Forecast
 					"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
 					"  </head>\n" +
 					"  <body>\n" +
+					"\t<div style='text-align:center;'>\n" +
 //					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:84%;width:auto;height:auto;'\n" +
 					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" + height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
 					"\tsrc='file://" + radar + "'>\n" +
+					"\t</div>\n" +
 					"  </body>\n" +
 					"</html>";
 			wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
