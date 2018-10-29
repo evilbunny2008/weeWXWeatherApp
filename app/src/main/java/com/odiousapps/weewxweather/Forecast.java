@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
@@ -273,6 +274,9 @@ class Forecast
 				return;
 			}
 
+			int height = Math.round((float)Resources.getSystem().getDisplayMetrics().widthPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.95f);
+			int width = Math.round((float)Resources.getSystem().getDisplayMetrics().heightPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.95f);
+
 			String html = "<!DOCTYPE html>\n" +
 					"<html>\n" +
 					"  <head>\n" +
@@ -280,7 +284,8 @@ class Forecast
 					"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
 					"  </head>\n" +
 					"  <body>\n" +
-					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:84%;max-height:84%;width:auto;height:auto;'\n" +
+//					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:84%;width:auto;height:auto;'\n" +
+					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" + height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
 					"\tsrc='file://" + radar + "'>\n" +
 					"  </body>\n" +
 					"</html>";
@@ -348,8 +353,7 @@ class Forecast
 								ins.close();
 							if (out != null)
 								out.close();
-						} catch (IOException e)
-						{
+						} catch (IOException e) {
 							e.printStackTrace();
 						}
 					}
@@ -418,12 +422,24 @@ class Forecast
     private void forceRefresh()
     {
 	    if(!common.GetBoolPref("radarforecast", true))
-		    return;
-
-        Common.LogMessage("wiping rss cache");
-        common.SetIntPref("rssCheck", 0);
-        common.SetStringPref("forecastData", "");
-        getForecast();
+	    {
+		    Common.LogMessage("wiping webcam image");
+		    File file = new File(common.context.getFilesDir(), "/radar.gif");
+		    try
+		    {
+		    	if(file.exists())
+				    if(!file.delete())
+				    	Common.LogMessage("File wiped.");
+		    } catch (Exception e) {
+		    	e.printStackTrace();
+		    }
+		    reloadWebView(true);
+	    } else {
+		    Common.LogMessage("wiping rss cache");
+		    common.SetIntPref("rssCheck", 0);
+		    common.SetStringPref("forecastData", "");
+		    getForecast();
+	    }
     }
 
     private void getForecast()
@@ -434,7 +450,7 @@ class Forecast
         final String rss = common.GetStringPref("FORECAST_URL", "");
         if(rss.equals(""))
         {
-	        wv1.loadDataWithBaseURL(null, "<html><body>Forecast URL not set, go to settings to change</body></html>", "text/html", "utf-8", null);
+	        wv1.loadDataWithBaseURL(null, "<html><body>Forecast URL not set, edit settings.txt to change</body></html>", "text/html", "utf-8", null);
 	        return;
         }
 
