@@ -16,7 +16,7 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
@@ -35,7 +35,7 @@
                 <LinearLayout
                     android:id="@+id/settingsLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:visibility="visible">
 
@@ -54,7 +54,8 @@
                         android:ems="10"
                         android:hint="@string/fileURL"
                         android:inputType="textUri"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp"
+                        tools:ignore="Autofill"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -96,20 +97,6 @@
                         android:layout_height="wrap_content"
                         android:spinnerMode="dropdown"/>
 
-                    <!-- TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/updateBG"
-                        android:textSize="18sp"/>
-
-                    <CheckBox
-                        android:id="@+id/cb1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="@string/yes"
-                        android:textSize="18sp"/ -->
-
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -142,8 +129,8 @@
                         android:id="@+id/custom"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:text="@string/custom_url"/>
+                        android:text="@string/custom_url"
+                        android:textSize="18sp"/>
 
                     <EditText
                         android:id="@+id/customURL"
@@ -154,14 +141,15 @@
                         android:ems="10"
                         android:hint="@string/custom_url"
                         android:inputType="textUri"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp"
+                        tools:ignore="Autofill"/>
 
                     <TextView
                         android:id="@+id/fgtv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:text="@string/fgColour"/>
+                        android:text="@string/fgColour"
+                        android:textSize="18sp"/>
 
                     <EditText
                         android:id="@+id/fgPicker"
@@ -169,20 +157,20 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:ems="10"
                         android:clickable="true"
+                        android:ems="10"
                         android:focusable="false"
                         android:hint="@string/empty"
                         android:inputType="textUri"
                         android:textSize="18sp"
-                        tools:ignore="KeyboardInaccessibleWidget"/>
+                        tools:ignore="Autofill,KeyboardInaccessibleWidget"/>
 
                     <TextView
                         android:id="@+id/bgtv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:text="@string/bgColour"/>
+                        android:text="@string/bgColour"
+                        android:textSize="18sp"/>
 
                     <EditText
                         android:id="@+id/bgPicker"
@@ -190,13 +178,13 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:ems="10"
                         android:clickable="true"
+                        android:ems="10"
                         android:focusable="false"
                         android:hint="@string/empty"
                         android:inputType="textUri"
                         android:textSize="18sp"
-                        tools:ignore="KeyboardInaccessibleWidget"/>
+                        tools:ignore="Autofill,KeyboardInaccessibleWidget"/>
 
                 </LinearLayout>
 
@@ -261,6 +249,13 @@
                     android:layout_marginTop="20dp"
                     android:text="@string/delete_all_data"
                     android:textSize="18sp"/>
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="253dp"
+                    android:textSize="100sp"
+                    android:visibility="invisible"/>
             </LinearLayout>
         </ScrollView>
     </android.support.design.widget.NavigationView>

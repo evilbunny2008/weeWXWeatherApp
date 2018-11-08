@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    IntentFilter filter = new IntentFilter();
 	    filter.addAction(Common.UPDATE_INTENT);
+	    filter.addAction(Common.FAILED_INTENT);
 	    filter.addAction(Common.TAB0_INTENT);
 	    filter.addAction(Common.INIGO_INTENT);
 	    registerReceiver(serviceReceiver, filter);
@@ -177,11 +178,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		    }
 	    });
 
+	    pos = common.GetIntPref("updateInterval", 1);
 	    Spinner s1 = findViewById(R.id.spinner1);
 	    ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
 	    adapter.setDropDownViewResource(R.layout.spinner_layout);
 	    s1.setAdapter(adapter);
-	    s1.setSelection(common.GetIntPref("updateInterval", 1));
+	    s1.setSelection(pos);
 	    s1.setOnItemSelectedListener(this);
 
 	    boolean metric = common.GetBoolPref("metric", true);
@@ -440,6 +442,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				if (settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt") || settingsURL.getText().toString().equals(""))
 				{
+					common.SetStringPref("lastError", "URL was set to the default or was empty");
 					handlerSettings.sendEmptyMessage(0);
 					return;
 				}
@@ -511,6 +514,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 					validURL = true;
 				} catch (Exception e) {
+					common.SetStringPref("lastError", e.toString());
 					e.printStackTrace();
 				}
 
@@ -524,6 +528,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				if (data.equals(""))
 				{
+					common.SetStringPref("lastError", "Data url was blank");
 					handlerDATA.sendEmptyMessage(0);
 					return;
 				}
@@ -535,6 +540,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.reallyGetWeather(data);
 						validURL1 = true;
 					} catch (Exception e) {
+						common.SetStringPref("lastError", e.toString());
 						e.printStackTrace();
 					}
 				} else
@@ -568,6 +574,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 									out.write(b, 0, length);
 								validURL2 = true;
 							} catch (Exception e) {
+								common.SetStringPref("lastError", e.toString());
 								e.printStackTrace();
 							} finally {
 								try
@@ -595,6 +602,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							}
 						}
 					} catch (Exception e) {
+						common.SetStringPref("lastError", e.toString());
 						e.printStackTrace();
 					}
 
@@ -632,6 +640,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						}
 
 					} catch (Exception e) {
+						common.SetStringPref("lastError", e.toString());
 						e.printStackTrace();
 					}
 				}
@@ -666,6 +675,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 						validURL3 = true;
 					} catch (Exception e) {
+						common.SetStringPref("lastError", e.toString());
 						e.printStackTrace();
 					}
 
@@ -703,6 +713,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 							validURL5 = true;
 						} catch (Exception e) {
+							common.SetStringPref("lastError", e.toString());
 							e.printStackTrace();
 						}
 
@@ -724,6 +735,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 							validURL5 = true;
 						} catch (Exception e) {
+							common.SetStringPref("lastError", e.toString());
 							e.printStackTrace();
 						}
 
@@ -787,8 +799,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			b2.setEnabled(true);
 			dialog.dismiss();
 			new AlertDialog.Builder(common.context)
-					.setTitle("Invalid URL")
-					.setMessage("Wasn't able to connect or download the settings from your server")
+					.setTitle("Wasn't able to connect or download the settings from your server")
+					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
 					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
 					{
 						@Override
@@ -809,8 +821,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			b2.setEnabled(true);
 			dialog.dismiss();
 			new AlertDialog.Builder(common.context)
-					.setTitle("Invalid URL")
-					.setMessage("Wasn't able to connect or download data.txt from your server")
+					.setTitle("Wasn't able to connect or download data.txt from your server")
+					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
 					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
 					{
 						@Override
@@ -831,8 +843,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			b2.setEnabled(true);
 			dialog.dismiss();
 			new AlertDialog.Builder(common.context)
-					.setTitle("Invalid URL")
-					.setMessage("Wasn't able to connect or download radar= image from the internet")
+					.setTitle("Wasn't able to connect or download radar= image from the internet")
+					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
 					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
 					{
 						@Override
@@ -853,8 +865,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			b2.setEnabled(true);
 			dialog.dismiss();
 			new AlertDialog.Builder(common.context)
-					.setTitle("Invalid URL")
-					.setMessage("Wasn't able to connect or download the forecast from Yahoo.")
+					.setTitle("Wasn't able to connect or download the forecast from Yahoo.")
+					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
 					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
 					{
 						@Override
@@ -875,8 +887,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			b2.setEnabled(true);
 			dialog.dismiss();
 			new AlertDialog.Builder(common.context)
-					.setTitle("Invalid URL")
-					.setMessage("Wasn't able to connect or download a webcam image from your server")
+					.setTitle("Wasn't able to connect or download a webcam image from your server")
+					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
 					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
 					{
 						@Override
@@ -897,8 +909,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			b2.setEnabled(true);
 			dialog.dismiss();
 			new AlertDialog.Builder(common.context)
-					.setTitle("Invalid URL")
-					.setMessage("Wasn't able to connect or download from the custom URL specified")
+					.setTitle("Wasn't able to connect or download from the custom URL specified")
+					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
 					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
 					{
 						@Override
@@ -919,8 +931,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			b2.setEnabled(true);
 			dialog.dismiss();
 			new AlertDialog.Builder(common.context)
-					.setTitle("Invalid URL")
-					.setMessage("Wasn't able to connect or download from the custom URL specified")
+					.setTitle("Wasn't able to connect or download from the custom URL specified")
+					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
 					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
 					{
 						@Override
@@ -1000,6 +1012,30 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	            if(action != null && action.equals(Common.INIGO_INTENT))
 	            {
 		            showUpdateAvailable();
+	            }
+
+	            if(action != null && action.equals(Common.FAILED_INTENT))
+	            {
+		            runOnUiThread(new Runnable()
+		            {
+			            @Override
+			            public void run()
+			            {
+				            //swipeLayout.setRefreshing(false);
+				            new AlertDialog
+						            .Builder(common.context)
+						            .setTitle("An error occurred while attempting to update usage")
+						            .setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+						            .setPositiveButton("Ok", new DialogInterface.OnClickListener()
+						            {
+							            @Override
+							            public void onClick(DialogInterface dialog, int which)
+							            {
+							            }
+						            }).show();
+			            }
+		            });
+
 	            }
             } catch (Exception e) {
                 e.printStackTrace();

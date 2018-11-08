@@ -44,6 +44,7 @@ class Common
 	static String TAB0_INTENT = "com.odiousapps.weewxweather.TAB0_INTENT";
 	static String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 	static String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
+	static String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
 	private static final long inigo_version = 4000;
 
@@ -640,6 +641,8 @@ class Common
 					SendIntents();
 				} catch (Exception e) {
 					e.printStackTrace();
+					SetStringPref("lastError", e.toString());
+					SendFailedIntent();
 				}
 			}
 		});
@@ -669,8 +672,8 @@ class Common
 
 		URL url = new URL(data);
 		HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-		urlConnection.setConnectTimeout(5000);
-		urlConnection.setReadTimeout(5000);
+		urlConnection.setConnectTimeout(10000);
+		urlConnection.setReadTimeout(10000);
 		urlConnection.setRequestMethod("GET");
 		urlConnection.setDoOutput(true);
 		urlConnection.connect();
@@ -757,5 +760,13 @@ class Common
 		intent.setAction(Common.INIGO_INTENT);
 		context.sendBroadcast(intent);
 		Common.LogMessage("Send user note about upgrading the Inigo Plugin");
+	}
+
+	private void SendFailedIntent()
+	{
+		Intent intent = new Intent();
+		intent.setAction(FAILED_INTENT);
+		context.sendBroadcast(intent);
+		LogMessage("failed_intent broadcast.");
 	}
 }
