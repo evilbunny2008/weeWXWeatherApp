@@ -68,12 +68,6 @@ class Webcam
 	    });
 
         reloadWebView(false);
-
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Common.UPDATE_INTENT);
-        filter.addAction(Common.EXIT_INTENT);
-        common.context.registerReceiver(serviceReceiver, filter);
-
         return rootView;
     }
 
@@ -237,35 +231,25 @@ class Webcam
 	        swipeLayout.setRefreshing(false);
         }
     };
-/*
-    @SuppressLint("HandlerLeak")
-    private Handler handlerSettings = new Handler()
+
+	void doResume()
+	{
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(Common.UPDATE_INTENT);
+		filter.addAction(Common.EXIT_INTENT);
+		common.context.registerReceiver(serviceReceiver, filter);
+		Common.LogMessage("webcam.java -- registerReceiver");
+	}
+
+    void doPause()
     {
-        @Override
-        public void handleMessage(Message msg)
-        {
-            new AlertDialog.Builder(common.context)
-                    .setTitle("Invalid Image")
-                    .setMessage("You supplied an image in your settings.txt that is invalid or unsupported.")
-                    .setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
-                    {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which)
-                        {
-                        }
-                    }).show();
-        }
-    };
-*/
-    void doStop()
-    {
-        Common.LogMessage("webcam.java -- unregisterReceiver");
 	    try
 	    {
 		    common.context.unregisterReceiver(serviceReceiver);
 	    } catch (Exception e) {
 		    e.printStackTrace();
 	    }
+	    Common.LogMessage("webcam.java -- unregisterReceiver");
     }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
@@ -278,11 +262,9 @@ class Webcam
                 Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
                 if(action != null && action.equals(Common.UPDATE_INTENT))
-                {
                     reloadWebView(true);
-                } else if(action != null && action.equals(Common.EXIT_INTENT)) {
-                    common.context.unregisterReceiver(serviceReceiver);
-                }
+                else if(action != null && action.equals(Common.EXIT_INTENT))
+                    doPause();
             } catch (Exception e) {
                 e.printStackTrace();
             }

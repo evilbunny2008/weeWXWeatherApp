@@ -113,24 +113,27 @@ class Stats
 	    });
 
 	    updateFields();
-
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Common.UPDATE_INTENT);
-        filter.addAction(Common.EXIT_INTENT);
-        common.context.registerReceiver(serviceReceiver, filter);
-
-        return rootView;
+	    return rootView;
     }
 
-    void doStop()
+    void doResume()
     {
-        Common.LogMessage("stats.java -- unregisterReceiver");
+	    IntentFilter filter = new IntentFilter();
+	    filter.addAction(Common.UPDATE_INTENT);
+	    filter.addAction(Common.EXIT_INTENT);
+	    common.context.registerReceiver(serviceReceiver, filter);
+	    Common.LogMessage("stats.java -- registerReceiver");
+    }
+
+    void doPause()
+    {
 	    try
 	    {
 		    common.context.unregisterReceiver(serviceReceiver);
 	    } catch (Exception e) {
 		    //TODO: ignore this exception...
 	    }
+	    Common.LogMessage("stats.java -- unregisterReceiver");
     }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
@@ -145,7 +148,7 @@ class Stats
                 if(action != null && action.equals(Common.UPDATE_INTENT))
                     updateFields();
                 else if(action != null && action.equals(Common.EXIT_INTENT))
-                    common.context.unregisterReceiver(serviceReceiver);
+                    doPause();
             } catch (Exception e) {
                 e.printStackTrace();
             }

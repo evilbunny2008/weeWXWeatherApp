@@ -187,12 +187,6 @@ class Weather
         if(!common.GetBoolPref("radarforecast", true))
         	reloadForecast();
 
-        Common.LogMessage("weather.java -- adding a new filter");
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Common.UPDATE_INTENT);
-        filter.addAction(Common.EXIT_INTENT);
-        common.context.registerReceiver(serviceReceiver, filter);
-
         return updateFields();
     }
 
@@ -431,15 +425,24 @@ class Weather
         }
     };
 
-    void doStop()
+    void doResume()
     {
-        Common.LogMessage("weather.java -- unregisterReceiver");
+	    IntentFilter filter = new IntentFilter();
+	    filter.addAction(Common.UPDATE_INTENT);
+	    filter.addAction(Common.EXIT_INTENT);
+	    common.context.registerReceiver(serviceReceiver, filter);
+	    Common.LogMessage("weather.java -- adding a new filter");
+    }
+
+    void doPause()
+    {
 	    try
 	    {
 		    common.context.unregisterReceiver(serviceReceiver);
 	    } catch (Exception e) {
 			//TODO: ignore this exception...
 	    }
+	    Common.LogMessage("weather.java -- unregisterReceiver");
     }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
@@ -457,8 +460,7 @@ class Weather
                     reloadWebView();
                     reloadForecast();
                 } else if(action != null && action.equals(Common.EXIT_INTENT)) {
-                    Common.LogMessage("weather.java -- unregisterReceiver");
-                    common.context.unregisterReceiver(serviceReceiver);
+                    doPause();
                 }
             } catch (Exception e) {
                 e.printStackTrace();

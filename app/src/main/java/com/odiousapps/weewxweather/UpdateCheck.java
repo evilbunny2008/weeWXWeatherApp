@@ -19,28 +19,15 @@ public class UpdateCheck extends BroadcastReceiver
 		}
 
 		Common common = new Common(c);
+		common.setAlarm("UpdateCheck");
 
-		final long[] ret = common.getPeriod();
-		final long period = ret[0];
-		final long wait = ret[1];
-		if(period <= 0)
+		if(common.GetBoolPref("onlyWIFI") && !common.checkWifiOnAndConnected())
+		{
+			Common.LogMessage("Skipping update due to wifi setting.");
 			return;
+		}
 
 		common.getWeather();
-
-		final long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + period + wait;
-
-		Common.LogMessage("UpdateCheck - weewxstart == " + start);
-		Common.LogMessage("UpdateCheck - weewxperiod == " + period);
-		Common.LogMessage("UpdateCheck - weewxwait == " + wait);
-
-		AlarmManager mgr = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
-		Intent myIntent = new Intent(c, UpdateCheck.class);
-		PendingIntent pi = PendingIntent.getBroadcast(c, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-		if(mgr != null)
-			mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
-
 		Common.LogMessage("UpdateCheck.java finished.");
 	}
 }

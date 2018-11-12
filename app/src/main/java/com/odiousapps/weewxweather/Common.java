@@ -1,6 +1,8 @@
 package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
@@ -13,6 +15,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.net.Uri;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -67,7 +71,7 @@ class Common
 		}
 	}
 
-	long[] getPeriod()
+	private long[] getPeriod()
 	{
 		long[] def = {0, 0};
 
@@ -99,6 +103,31 @@ class Common
 		}
 
 		return new long[]{period, 45000};
+	}
+
+	void setAlarm(String from)
+	{
+		long[] ret = getPeriod();
+		long period = ret[0];
+		long wait = ret[1];
+		if(period <= 0)
+			return;
+
+		long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
+
+		if(start < System.currentTimeMillis())
+			start += period;
+
+		LogMessage(from + " - start == " + start);
+		LogMessage(from + " - period == " + period);
+		LogMessage(from + " - wait == " + wait);
+
+		AlarmManager mgr = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+		Intent myIntent = new Intent(context, UpdateCheck.class);
+		PendingIntent pi = PendingIntent.getBroadcast(context, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+		if(mgr != null)
+			mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
 	}
 
 	String getAppversion()
@@ -751,6 +780,20 @@ class Common
 			} catch (InterruptedException e) {
 				// TODO: ignore this.
 			}
+		}
+	}
+
+	//	https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
+	boolean checkWifiOnAndConnected()
+	{
+		WifiManager wifiMgr = (WifiManager)context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+
+		if (wifiMgr.isWifiEnabled())
+		{ // Wi-Fi adapter is ON
+			WifiInfo wifiInfo = wifiMgr.getConnectionInfo();
+			return wifiInfo.getNetworkId() != -1;
+		} else {
+			return false; // Wi-Fi adapter is OFF
 		}
 	}
 

@@ -120,12 +120,6 @@ class Custom
 	    });
 
         reloadWebView();
-
-        IntentFilter filter = new IntentFilter();
-        filter.addAction(Common.UPDATE_INTENT);
-        filter.addAction(Common.EXIT_INTENT);
-        common.context.registerReceiver(serviceReceiver, filter);
-
         return rootView;
     }
 
@@ -145,15 +139,24 @@ class Custom
         wv.loadUrl(custom);
     }
 
-    void doStop()
+    void doResume()
     {
-        Common.LogMessage("custom.java -- unregisterReceiver");
+	    IntentFilter filter = new IntentFilter();
+	    filter.addAction(Common.UPDATE_INTENT);
+	    filter.addAction(Common.EXIT_INTENT);
+	    common.context.registerReceiver(serviceReceiver, filter);
+	    Common.LogMessage("custom.java -- registerReceiver");
+    }
+
+    void doPause()
+    {
         try
         {
 	        common.context.unregisterReceiver(serviceReceiver);
         } catch (Exception e) {
 	        e.printStackTrace();
         }
+	    Common.LogMessage("custom.java -- unregisterReceiver");
     }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
@@ -166,11 +169,9 @@ class Custom
                 Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
                 if(action != null && action.equals(Common.UPDATE_INTENT))
-                {
                     reloadWebView();
-                } else if(action != null && action.equals(Common.EXIT_INTENT)) {
-                    common.context.unregisterReceiver(serviceReceiver);
-                }
+                else if(action != null && action.equals(Common.EXIT_INTENT))
+                    doPause();
             } catch (Exception e) {
                 e.printStackTrace();
             }

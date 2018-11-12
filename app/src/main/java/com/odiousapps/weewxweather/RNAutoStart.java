@@ -14,26 +14,7 @@ public class RNAutoStart extends BroadcastReceiver
 
         Common.LogMessage("RNAutostart: i=" + i.toString());
         Common common = new Common(c);
-
-	    long[] ret = common.getPeriod();
-	    long period = ret[0];
-	    long wait = ret[1];
-	    if(period <= 0)
-		    return;
-
-	    long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
-
-	    Common.LogMessage("RNAutoStart - weewxstart == " + start);
-	    Common.LogMessage("RNAutoStart - weewxperiod == " + period);
-	    Common.LogMessage("RNAutoStart - weewxwait == " + wait);
-
-	    AlarmManager mgr = (AlarmManager)c.getSystemService(Context.ALARM_SERVICE);
-        Intent myIntent = new Intent(c, UpdateCheck.class);
-	    PendingIntent pi = PendingIntent.getBroadcast(c, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-		if(mgr != null)
-			mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
-
+	    common.setAlarm("RNAutoStart");
         Common.LogMessage("onReceive() end");
     }
 }

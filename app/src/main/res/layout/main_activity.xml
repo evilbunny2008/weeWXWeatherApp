@@ -57,32 +57,32 @@
                         android:textSize="18sp"
                         tools:ignore="Autofill"/>
 
-                    <TextView
+                    <Switch
+                        android:id="@+id/show_indoor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/indoor_readings"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:textSize="18sp"/>
 
-                    <CheckBox
-                        android:id="@+id/showIndoor"
+                    <Switch
+                        android:id="@+id/metric_forecasts"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="@string/yes"
-                        android:textSize="18sp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:text="@string/metric"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:textSize="18sp"/>
 
-                    <CheckBox
-                        android:id="@+id/cb2"
+                    <Switch
+                        android:id="@+id/wifi_only"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="@string/yes"
+                        android:text="@string/update_over_wifi"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:textSize="18sp"/>
 
                     <TextView
@@ -95,6 +95,8 @@
                         android:id="@+id/spinner1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
                         android:spinnerMode="dropdown"/>
 
                     <TextView
@@ -114,6 +116,8 @@
                             android:layout_weight="1"
                             android:checked="true"
                             android:text="@string/show_radar"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
                             android:textSize="18sp"/>
 
                         <RadioButton
@@ -122,6 +126,8 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:text="@string/show_forecast"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
                             android:textSize="18sp"/>
                     </RadioGroup>
 
@@ -160,7 +166,7 @@
                         android:clickable="true"
                         android:ems="10"
                         android:focusable="false"
-                        android:hint="@string/empty"
+                        android:hint="@string/fgColour"
                         android:inputType="textUri"
                         android:textSize="18sp"
                         tools:ignore="Autofill,KeyboardInaccessibleWidget"/>
@@ -181,7 +187,7 @@
                         android:clickable="true"
                         android:ems="10"
                         android:focusable="false"
-                        android:hint="@string/empty"
+                        android:hint="@string/bgColour"
                         android:inputType="textUri"
                         android:textSize="18sp"
                         tools:ignore="Autofill,KeyboardInaccessibleWidget"/>

@@ -223,11 +223,6 @@ class Forecast
 		    }
 	    });
 
-	    IntentFilter filter = new IntentFilter();
-	    filter.addAction(Common.UPDATE_INTENT);
-	    filter.addAction(Common.EXIT_INTENT);
-	    common.context.registerReceiver(serviceReceiver, filter);
-
 	    forecast = rootView.findViewById(R.id.forecast);
 	    im = rootView.findViewById(R.id.logo);
 
@@ -285,7 +280,6 @@ class Forecast
 					"  </head>\n" +
 					"  <body>\n" +
 					"\t<div style='text-align:center;'>\n" +
-//					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:84%;width:auto;height:auto;'\n" +
 					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" + height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
 					"\tsrc='file://" + radar + "'>\n" +
 					"\t</div>\n" +
@@ -372,16 +366,24 @@ class Forecast
 		t.start();
 	}
 
+	void doResume()
+	{
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(Common.UPDATE_INTENT);
+		filter.addAction(Common.EXIT_INTENT);
+		common.context.registerReceiver(serviceReceiver, filter);
+		Common.LogMessage("forecast.java -- registerReceiver");
+	}
 
-	void doStop()
+	void doPause()
     {
-        Common.LogMessage("forecast.java -- unregisterReceiver");
 	    try
 	    {
 		    common.context.unregisterReceiver(serviceReceiver);
 	    } catch (Exception e) {
 		    e.printStackTrace();
 	    }
+	    Common.LogMessage("forecast.java -- unregisterReceiver");
     }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
@@ -413,7 +415,7 @@ class Forecast
 		                wv2.setVisibility(View.GONE);
 	                }
                 } else if(action != null && action.equals(Common.EXIT_INTENT)) {
-                    common.context.unregisterReceiver(serviceReceiver);
+                    doPause();
                 }
             } catch (Exception e) {
                 e.printStackTrace();

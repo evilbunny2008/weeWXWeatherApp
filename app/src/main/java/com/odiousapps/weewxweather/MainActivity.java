@@ -38,12 +38,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RemoteViews;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
@@ -113,33 +113,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             e.printStackTrace();
         }
 
-	    IntentFilter filter = new IntentFilter();
-	    filter.addAction(Common.UPDATE_INTENT);
-	    filter.addAction(Common.FAILED_INTENT);
-	    filter.addAction(Common.TAB0_INTENT);
-	    filter.addAction(Common.INIGO_INTENT);
-	    registerReceiver(serviceReceiver, filter);
-
 	    doSettings();
-
-	    long[] ret = common.getPeriod();
-	    long period = ret[0];
-	    long wait = ret[1];
-	    if(period <= 0)
-		    return;
-
-	    long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
-
-	    Common.LogMessage("MainActivity - weewxstart == " + start);
-	    Common.LogMessage("MainActivity - weewxperiod == " + period);
-	    Common.LogMessage("MainActivity - weewxwait == " + wait);
-
-	    AlarmManager mgr = (AlarmManager)this.getSystemService(Context.ALARM_SERVICE);
-	    Intent i = new Intent(this, UpdateCheck.class);
-	    PendingIntent pi = PendingIntent.getBroadcast(this, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
-
-	    if(mgr != null)
-		    mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
+	    common.setAlarm("MainActivity");
     }
 
     private void showUpdateAvailable()
@@ -186,15 +161,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    s1.setSelection(pos);
 	    s1.setOnItemSelectedListener(this);
 
-	    boolean metric = common.GetBoolPref("metric", true);
-	    CheckBox cb2 = findViewById(R.id.cb2);
-	    if(!metric)
-		    cb2.setChecked(false);
+	    Switch metric_forecasts = findViewById(R.id.metric_forecasts);
+	    metric_forecasts.setChecked(common.GetBoolPref("metric", true));
 
-	    boolean showIndoor = common.GetBoolPref("showIndoor", false);
-	    CheckBox cb3 = findViewById(R.id.showIndoor);
-	    if(!showIndoor)
-		    cb3.setChecked(false);
+	    Switch show_indoor = findViewById(R.id.show_indoor);
+	    show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
+
+	    Switch wifi_only = findViewById(R.id.wifi_only);
+	    wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
 
 	    boolean radarforecast = common.GetBoolPref("radarforecast", true);
 	    RadioButton showForecast = findViewById(R.id.showForecast);
@@ -434,8 +408,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "";
 
-				CheckBox cb2 = findViewById(R.id.cb2);
-				CheckBox cb3 = findViewById(R.id.showIndoor);
+				Switch metric_forecasts = findViewById(R.id.metric_forecasts);
+				Switch show_indoor = findViewById(R.id.show_indoor);
+				Switch wifi_only = findViewById(R.id.wifi_only);
 
 				RadioButton showRadar = findViewById(R.id.showRadar);
 				int curtime = Math.round(System.currentTimeMillis() / 1000);
@@ -624,7 +599,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 
-								if (cb2.isChecked())
+								if (metric_forecasts.isChecked())
 									forecast = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + forecast + "%22)%20and%20u%3D'c'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
 								else
 									forecast = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + forecast + "%22)%20and%20u%3D'f'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
@@ -757,9 +732,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetStringPref("WEBCAM_URL", webcam);
 				common.SetStringPref("CUSTOM_URL", custom);
 				common.SetStringPref("custom_url", custom_url);
-				common.SetBoolPref("metric", cb2.isChecked());
-				common.SetBoolPref("showIndoor", cb3.isChecked());
 				common.SetBoolPref("radarforecast", showRadar.isChecked());
+
+				common.SetBoolPref("metric", metric_forecasts.isChecked());
+				common.SetBoolPref("showIndoor", show_indoor.isChecked());
+				common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
 
 				common.SendIntents();
 				handlerDone.sendEmptyMessage(0);
@@ -957,16 +934,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     @Override
-    public void onDestroy()
+    public void onPause()
     {
-	    super.onDestroy();
 	    unregisterReceiver(serviceReceiver);
+	    super.onPause();
     }
 
     @Override
     protected void onResume()
     {
         super.onResume();
+
+	    IntentFilter filter = new IntentFilter();
+	    filter.addAction(Common.UPDATE_INTENT);
+	    filter.addAction(Common.FAILED_INTENT);
+	    filter.addAction(Common.TAB0_INTENT);
+	    filter.addAction(Common.INIGO_INTENT);
+	    registerReceiver(serviceReceiver, filter);
 
 	    Common.LogMessage("resuming app updates");
 	    common.SendIntents();
@@ -1065,34 +1049,56 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
 
         @Override
-        public void onDestroyView()
+        public void onPause()
         {
-            super.onDestroyView();
+        	super.onPause();
+	        switch(lastPos)
+	        {
+		        case 1:
+			        weather.doPause();
+			        break;
+		        case 2:
+			        stats.doPause();
+			        break;
+		        case 3:
+			        forecast.doPause();
+			        break;
+		        case 4:
+			        webcam.doPause();
+			        break;
+		        case 5:
+			        custom.doPause();
+			        break;
+	        }
 
-            switch(lastPos)
-            {
-                case 1:
-                    weather.doStop();
-                    break;
-                case 2:
-                    stats.doStop();
-                    break;
-                case 3:
-                    forecast.doStop();
-                    break;
-                case 4:
-                    webcam.doStop();
-                    break;
-                case 5:
-                    custom.doStop();
-                    break;
-                case 6:
-                    //about.doStop();
-                    break;
-            }
-
-            Common.LogMessage("onDestroyView() has been called lastpos ="+lastPos);
+	        Common.LogMessage("onPause() has been called lastpos ="+lastPos);
         }
+
+        @Override
+	    public void onResume()
+	    {
+		    super.onResume();
+		    switch(lastPos)
+		    {
+			    case 1:
+				    weather.doResume();
+				    break;
+			    case 2:
+				    stats.doResume();
+				    break;
+			    case 3:
+				    forecast.doResume();
+				    break;
+			    case 4:
+				    webcam.doResume();
+				    break;
+			    case 5:
+				    custom.doResume();
+				    break;
+		    }
+
+		    Common.LogMessage("onResume() has been called lastpos ="+lastPos);
+	    }
 
         @Override
         public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
