@@ -2,9 +2,7 @@ package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.AlarmManager;
 import android.app.AlertDialog;
-import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
@@ -74,6 +72,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private Button b2;
 	private Button b3;
 	private boolean showSettings = true;
+	private Spinner s1;
+	private Switch show_indoor, metric_forecasts;
+	private TextView tv;
 
 	private ProgressDialog dialog;
 
@@ -113,76 +114,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             e.printStackTrace();
         }
 
-	    doSettings();
-	    common.setAlarm("MainActivity");
-    }
-
-    private void showUpdateAvailable()
-	{
-		final AlertDialog.Builder d = new AlertDialog.Builder(this);
-		d.setTitle("weeWX Weather App");
-		d.setMessage("This app has been updated but the server you are connecting to hasn't updated the Inigo Plugin for weeWX. Fields may not show up properly until weeWX is updated.");
-		d.setPositiveButton("OK", null);
-		d.setIcon(R.drawable.ic_launcher_foreground);
-		d.show();
-	}
-
-    private void doSettings()
-    {
 	    settingsURL = findViewById(R.id.settings);
-	    settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
-	    settingsURL.setOnFocusChangeListener(new View.OnFocusChangeListener()
-	    {
-		    @Override
-		    public void onFocusChange(View v, boolean hasFocus)
-		    {
-			    if (!hasFocus)
-				    hideKeyboard(v);
-		    }
-	    });
-
 	    customURL = findViewById(R.id.customURL);
-	    customURL.setText(common.GetStringPref("custom_url", ""));
-	    customURL.setOnFocusChangeListener(new View.OnFocusChangeListener()
-	    {
-		    @Override
-		    public void onFocusChange(View v, boolean hasFocus)
-		    {
-			    if (!hasFocus)
-				    hideKeyboard(v);
-		    }
-	    });
-
-	    pos = common.GetIntPref("updateInterval", 1);
-	    Spinner s1 = findViewById(R.id.spinner1);
+	    s1 = findViewById(R.id.spinner1);
 	    ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
 	    adapter.setDropDownViewResource(R.layout.spinner_layout);
 	    s1.setAdapter(adapter);
-	    s1.setSelection(pos);
 	    s1.setOnItemSelectedListener(this);
 
-	    Switch metric_forecasts = findViewById(R.id.metric_forecasts);
-	    metric_forecasts.setChecked(common.GetBoolPref("metric", true));
-
-	    Switch show_indoor = findViewById(R.id.show_indoor);
-	    show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
-
-	    Switch wifi_only = findViewById(R.id.wifi_only);
-	    wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
-
-	    boolean radarforecast = common.GetBoolPref("radarforecast", true);
-	    RadioButton showForecast = findViewById(R.id.showForecast);
-	    if(!radarforecast)
-		    showForecast.setChecked(true);
+	    metric_forecasts = findViewById(R.id.metric_forecasts);
+	    show_indoor = findViewById(R.id.show_indoor);
 
 	    b1 = findViewById(R.id.button);
 	    b2 = findViewById(R.id.deleteData);
 	    b3 = findViewById(R.id.aboutButton);
 
-	    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
-	    settingsLayout.setVisibility(View.VISIBLE);
-	    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
-	    aboutLayout.setVisibility(View.GONE);
+	    fgColour = findViewById(R.id.fgPicker);
+	    bgColour = findViewById(R.id.bgPicker);
 
 	    b1.setOnClickListener(new View.OnClickListener()
 	    {
@@ -217,9 +165,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    {
 		    public void onClick(View arg0)
 		    {
-		    	if(showSettings)
+			    if(showSettings)
 			    {
-			    	showSettings = false;
+				    showSettings = false;
 				    b1.setVisibility(View.INVISIBLE);
 				    b2.setVisibility(View.INVISIBLE);
 				    b3.setText(R.string.settings2);
@@ -243,7 +191,64 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		    }
 	    });
 
-	    TextView tv = findViewById(R.id.aboutText);
+	    tv = findViewById(R.id.aboutText);
+		doSettings();
+
+	    common.setAlarm("MainActivity");
+    }
+
+    private void showUpdateAvailable()
+	{
+		final AlertDialog.Builder d = new AlertDialog.Builder(this);
+		d.setTitle("weeWX Weather App");
+		d.setMessage("This app has been updated but the server you are connecting to hasn't updated the Inigo Plugin for weeWX. Fields may not show up properly until weeWX is updated.");
+		d.setPositiveButton("OK", null);
+		d.setIcon(R.drawable.ic_launcher_foreground);
+		d.show();
+	}
+
+    private void doSettings()
+    {
+	    settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
+	    settingsURL.setOnFocusChangeListener(new View.OnFocusChangeListener()
+	    {
+		    @Override
+		    public void onFocusChange(View v, boolean hasFocus)
+		    {
+			    if (!hasFocus)
+				    hideKeyboard(v);
+		    }
+	    });
+
+	    customURL.setText(common.GetStringPref("custom_url", ""));
+	    customURL.setOnFocusChangeListener(new View.OnFocusChangeListener()
+	    {
+		    @Override
+		    public void onFocusChange(View v, boolean hasFocus)
+		    {
+			    if (!hasFocus)
+				    hideKeyboard(v);
+		    }
+	    });
+
+	    pos = common.GetIntPref("updateInterval", 1);
+	    s1.setSelection(pos);
+
+	    metric_forecasts.setChecked(common.GetBoolPref("metric", true));
+	    show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
+
+	    Switch wifi_only = findViewById(R.id.wifi_only);
+	    wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
+
+	    boolean radarforecast = common.GetBoolPref("radarforecast", true);
+	    RadioButton showForecast = findViewById(R.id.showForecast);
+	    if(!radarforecast)
+		    showForecast.setChecked(true);
+
+	    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
+	    settingsLayout.setVisibility(View.VISIBLE);
+	    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
+	    aboutLayout.setVisibility(View.GONE);
 
 	    String lines = "<html><body>Big thanks to the <a href='http://weewx.com'>weeWX project</a>, as this app " +
 			    "wouldn't be possible otherwise.<br><br>" +
@@ -256,7 +261,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    // https://github.com/Pes8/android-material-color-picker-dialog
 
-	    fgColour = findViewById(R.id.fgPicker);
 	    String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
 	    fgColour.setText(hex);
 	    fgColour.setOnClickListener(new View.OnClickListener()
@@ -268,7 +272,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		    }
 	    });
 
-	    bgColour = findViewById(R.id.bgPicker);
 	    hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase();
 	    bgColour.setText(hex);
 	    bgColour.setOnClickListener(new View.OnClickListener()

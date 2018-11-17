@@ -17,7 +17,6 @@ import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -48,6 +47,8 @@ class Weather
 
     private View updateFields()
     {
+	    int iw = 17;
+
         Common.LogMessage("updateFields()");
         String bits[] = common.GetStringPref("LastDownload","").split("\\|");
         if(bits.length < 65)
@@ -55,41 +56,104 @@ class Weather
 
         checkFields((TextView)rootView.findViewById(R.id.textView), bits[56]);
         checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
-        checkFields((TextView)rootView.findViewById(R.id.textView3), bits[0] + bits[60]);
 
+	    WebView current = rootView.findViewById(R.id.current);
+	    current.getSettings().setUserAgentString(Common.UA);
+	    current.setOnLongClickListener(new View.OnLongClickListener()
+	    {
+		    @Override
+		    public boolean onLongClick(View v)
+		    {
+			    Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
+			    if(vibrator != null)
+				    vibrator.vibrate(250);
+			    Common.LogMessage("current long press");
+			    updateFields();
+			    return true;
+		    }
+	    });
+
+	    current.setWebViewClient(new WebViewClient()
+	    {
+		    @Override
+		    public boolean shouldOverrideUrlLoading(WebView view, String url)
+		    {
+			    return false;
+		    }
+	    });
+	    current.setWebChromeClient(new WebChromeClient()
+	    {
+		    @Override
+		    public boolean onConsoleMessage(ConsoleMessage cm)
+		    {
+			    return true;
+		    }
+	    });
+
+	    String stmp;
+	    StringBuilder sb = new StringBuilder();
+
+	    String header = "<html><body>";
+	    String footer = "</body></html>";
+	    sb.append(header);
+
+	    sb.append("<table style='width:100%;border:0px;'>");
+
+	    stmp = "<tr><td style='font-size:36pt;text-align:right;'>" + bits[0] + bits[60] + "</td>";
 	    if(bits.length > 203)
-		    checkFields((TextView)rootView.findViewById(R.id.appTemp), "AT: " + bits[203] + bits[60]);
+		    stmp += "<td style='font-size:18pt;text-align:right;vertical-align:bottom;'>AT: " + bits[203] + bits[60] +"</td></tr></table>";
+	    else
+	    	stmp += "<td>&nbsp</td></tr></table>";
 
-        checkFields((TextView)rootView.findViewById(R.id.textView4), bits[25] + bits[61]);
-        checkFields((TextView)rootView.findViewById(R.id.textView5), bits[37] + bits[63]);
-        checkFields((TextView)rootView.findViewById(R.id.textView6), bits[29]);
-        checkFields((TextView)rootView.findViewById(R.id.textView7), bits[6] + bits[64]);
+	    sb.append(stmp);
+	    sb.append("<table style='width:100%;border:0px;'>");
+
+	    stmp = "<tr><td><img style='width:" + iw + "px' src='windsock.png'></td><td>" + bits[25] + bits[61] + "</td>" +
+			    "<td style='text-align:right;'>" + bits[1] + bits[60] + "</td><td><img style='width:" + iw + "px' src='barometer.png'></td></tr>";
+	    sb.append(stmp);
+
+	    stmp = "<tr><td><img style='width:" + iw + "px' src='compass.png'></td><td>" + bits[37] + bits[63] + "</td>" +
+			    "<td style='text-align:right;'>" + bits[6] + bits[64] + "</td><td><img style='width:" + iw + "px' src='humidity.png'></td></tr>";
+	    sb.append(stmp);
 
 	    String rain = bits[20] + bits[62] + " since mn";
 	    if(bits.length > 160 && !bits[160].equals(""))
 		    rain = bits[158] + bits[62] + " since " + bits[160];
 
-        checkFields((TextView)rootView.findViewById(R.id.textView8), rain);
-        checkFields((TextView)rootView.findViewById(R.id.textView9), bits[12] + bits[60]);
-        checkFields((TextView)rootView.findViewById(R.id.textView10), bits[45] + "UVI");
-        checkFields((TextView)rootView.findViewById(R.id.textView11), bits[43] + "W/m\u00B2");
+	    stmp = "<tr><td><img style='width:" + iw + "px' src='umbrella.png'></td><td>" + rain + "</td>" +
+			    "<td style='text-align:right;'>" + bits[12] + bits[60] + "</td><td><img style='width:" + iw + "px' src='droplet.png'></td></tr>";
+	    sb.append(stmp);
 
-        checkFields((TextView)rootView.findViewById(R.id.textView12), bits[57]);
-        checkFields((TextView)rootView.findViewById(R.id.textView13), bits[58]);
-        checkFields((TextView)rootView.findViewById(R.id.textView14), bits[47]);
-        checkFields((TextView)rootView.findViewById(R.id.textView15), bits[48]);
+	    stmp = "<tr><td><img style='width:" + iw + "px' src='sunglasses.png'></td><td>" + bits[45] + "UVI</td>" +
+			    "<td style='text-align:right;'>" + bits[43] + "W/m\u00B2</td><td><img style='width:" + iw + "px' src='sunglasses.png'></td></tr>";
+	    sb.append(stmp);
 
-	    LinearLayout homerow = rootView.findViewById(R.id.homerow);
-        if(common.GetBoolPref("showIndoor", false))
-			homerow.setVisibility(View.VISIBLE);
-        else
-	        homerow.setVisibility(View.GONE);
-
-	    if(bits.length > 166)
+	    if(bits.length > 202 && common.GetBoolPref("showIndoor", false))
 	    {
-		    checkFields((TextView) rootView.findViewById(R.id.hometemp), bits[161] + bits[60]);
-		    checkFields((TextView) rootView.findViewById(R.id.homehumid), bits[166] + bits[64]);
+		    stmp = "<tr><td><img style='width:" + iw + "px' src='home.png'></td><td>" + bits[161] + bits[60] + "</td>" +
+				    "<td style='text-align:right;'>" + bits[166] + bits[64] + "</td><td><img style='width:" + iw + "px' src='home.png'></td></tr>";
+		    sb.append(stmp);
 	    }
+
+	    stmp = "</table>";
+	    sb.append(stmp);
+
+	    sb.append("<table style='width:100%;border:0px;'>");
+
+	    stmp = "<tr>" +
+			    "<td><img style='width:" + iw + "px' src='sunrise.png'></td><td>" + bits[57] + "</td>" +
+			    "<td><img style='width:" + iw + "px' src='sunset.png'></td><td>" + bits[58] + "</td>" +
+			    "<td><img style='width:" + iw + "px' src='moonrise.png'></td><td>" + bits[47] + "</td>" +
+	            "<td><img style='width:" + iw + "px' src='moonset.png'></td><td>" + bits[48] + "</td></tr>";
+	    sb.append(stmp);
+
+	    stmp = "</table>";
+	    sb.append(stmp);
+
+	    sb.append(footer);
+	    String html = sb.toString().trim();
+
+	    current.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
 
         return rootView;
     }
@@ -252,7 +316,6 @@ class Weather
 					    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
 				    }
 			    });
-
 		    } else if(fctype.toLowerCase().equals("weatherzone")) {
 			    String[] content = common.processWZ(data);
 			    if(content == null || content.length <= 0)
@@ -269,14 +332,6 @@ class Weather
 					    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
 				    }
 			    });
-
-			    /*
-			    	    if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("yahoo"))
-		    im.setImageResource(R.drawable.purple);
-	    else if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("weatherzone"))
-	        im.setImageResource(R.drawable.wz);
-			     */
-
 		    }
 	    }
     }

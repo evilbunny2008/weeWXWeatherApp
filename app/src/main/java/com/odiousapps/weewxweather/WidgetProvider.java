@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -11,6 +10,17 @@ import android.widget.RemoteViews;
 public class WidgetProvider extends AppWidgetProvider
 {
     Common common = null;
+
+	@Override
+	public void onReceive(Context context, Intent intent)
+	{
+		Common.LogMessage("onReceive() called..");
+		AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+		int[] appWidgetIds = intent.getIntArrayExtra("appWidgetIds");
+
+		if(appWidgetIds != null && appWidgetIds.length > 0)
+			onUpdate(context, appWidgetManager, appWidgetIds);
+	}
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)

@@ -240,8 +240,8 @@ class Stats
 	    	return;
 
 //      Today Stats
-	    checkFields((TextView) rootView.findViewById(R.id.textView), bits[56]);
-	    checkFields((TextView) rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
+	    checkFields((TextView)rootView.findViewById(R.id.textView), bits[56]);
+	    checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
 
 	    double percent = (seekBar.getProgress() + 90) / 100.00;
 	    NumberFormat formatter = new DecimalFormat("#0.00");
