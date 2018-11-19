@@ -32,6 +32,6 @@ Big thanks to the [weeWX project](http://weeWX.com), as this app wouldn't be pos
 
 Weather Icons from [FlatIcon](https://www.flaticon.com) and is licensed under [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
 
-[Yahoo! Weather](https://www.yahoo.com/?ilc=401) Forecasts API
+Forecasts supplied by [Yahoo!](https://www.yahoo.com/?ilc=401), [weatherzone](https://weatherzone.com.au) and [yr.no](https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr)
 
 This app is by [OdiousApps](https://odiousapps.com).
