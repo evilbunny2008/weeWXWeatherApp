@@ -12,20 +12,19 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
-import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.Gravity;
@@ -81,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private static int pos;
 	private static final String[] paths = {"Manual Updates", "Every 5 Minutes", "Every 10 Minutes", "Every 15 Minutes", "Every 30 Minutes", "Every Hour"};
 
-    @Override
+	@Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -254,6 +253,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "wouldn't be possible otherwise.<br><br>" +
 			    "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
 			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a><br><br>" +
+			    "Forecasts supplied by <a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, <a href='https://weatherzone.com.au'>weatherzone</a> and <a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a><br><br>" +
 			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
 	    tv.setText(Html.fromHtml(lines));
@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    });
     }
 
-    private void showPicker(int col, final boolean fgColour)
+	private void showPicker(int col, final boolean fgColour)
     {
 	    final ColorPicker cp = new ColorPicker(MainActivity.this, col >> 24 & 255, col >> 16 & 255, col >> 8 & 255, col & 255);
 
@@ -401,6 +401,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				boolean validURL2 = false;
 				boolean validURL3 = false;
 				boolean validURL5 = false;
+
+				common.SetStringPref("lastError", "");
 
 				String olddata = common.GetStringPref("BASE_URL", "");
 				String oldradar = common.GetStringPref("RADAR_URL", "");
@@ -612,6 +614,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
+							case "yr.no":
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
 							default:
 								handlerForecast.sendEmptyMessage(0);
 								return;
@@ -622,6 +628,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						e.printStackTrace();
 					}
 				}
+
+				Common.LogMessage("line 635");
 
 				if (!forecast.equals("") && !forecast.equals(oldforecast))
 				{

@@ -57,7 +57,7 @@ class Weather
         checkFields((TextView)rootView.findViewById(R.id.textView), bits[56]);
         checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
 
-	    WebView current = rootView.findViewById(R.id.current);
+	    final WebView current = rootView.findViewById(R.id.current);
 	    current.getSettings().setUserAgentString(Common.UA);
 	    current.setOnLongClickListener(new View.OnLongClickListener()
 	    {
@@ -151,9 +151,16 @@ class Weather
 	    sb.append(stmp);
 
 	    sb.append(footer);
-	    String html = sb.toString().trim();
+	    final String html = sb.toString().trim();
 
-	    current.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
+	    current.post(new Runnable()
+	    {
+		    @Override
+		    public void run()
+		    {
+			    current.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
+		    }
+	    });
 
         return rootView;
     }
@@ -272,12 +279,19 @@ class Weather
 
 				    if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 				    {
-					    String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
-					    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+					    final String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
+					    wv.post(new Runnable()
+					    {
+						    @Override
+						    public void run()
+						    {
+							    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+						    }
+					    });
 					    return;
 				    }
 
-				    String html = "<!DOCTYPE html>\n" +
+				    final String html = "<!DOCTYPE html>\n" +
 						    "<html>\n" +
 						    "  <head>\n" +
 						    "    <meta charset='utf-8'>\n" +
@@ -288,7 +302,14 @@ class Weather
 						    "\tsrc='file://" + radar + "'>\n" +
 						    "  </body>\n" +
 						    "</html>";
-				    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+				    wv.post(new Runnable()
+				    {
+					    @Override
+					    public void run()
+					    {
+						    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+					    }
+				    });
 				    break;
 			    case "webpage":
 				    wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
@@ -301,37 +322,63 @@ class Weather
 	    } else {
 		    String fctype = common.GetStringPref("fctype", "Yahoo");
 		    String data = common.GetStringPref("forecastData", "");
-		    if(fctype.toLowerCase().equals("yahoo"))
+		    switch (fctype.toLowerCase())
 		    {
-			    String[] content = common.processYahoo(data);
-			    if(content == null || content.length <= 0)
-			    	return;
-			    String yahoo = "<img src='purple.png' height='29px'/><br/>";
-			    final String fc = "<html><body style='text-align:center'>" + yahoo + content[0] + "</body></html>";
-			    wv.post(new Runnable()
+			    case "yahoo":
 			    {
-				    @Override
-				    public void run()
+				    String[] content = common.processYahoo(data);
+				    if (content == null || content.length <= 0)
+					    return;
+				    String yahoo = "<img src='purple.png' height='29px'/><br/>";
+				    final String fc = "<html><body style='text-align:center'>" + yahoo + content[0] + "</body></html>";
+				    wv.post(new Runnable()
 				    {
-					    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-				    }
-			    });
-		    } else if(fctype.toLowerCase().equals("weatherzone")) {
-			    String[] content = common.processWZ(data);
-			    if(content == null || content.length <= 0)
-				    return;
-
-			    String wz = "<img src='wz.png' height='29px'/><br/>";
-			    final String fc = "<html><body style='text-align:center'>" + wz + content[0] + "</body></html>";
-
-			    wv.post(new Runnable()
+					    @Override
+					    public void run()
+					    {
+						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
+					    }
+				    });
+				    break;
+			    }
+			    case "weatherzone":
 			    {
-				    @Override
-				    public void run()
+				    String[] content = common.processWZ(data);
+				    if (content == null || content.length <= 0)
+					    return;
+
+				    String wz = "<img src='wz.png' height='29px'/><br/>";
+				    final String fc = "<html><body style='text-align:center'>" + wz + content[0] + "</body></html>";
+
+				    wv.post(new Runnable()
 				    {
-					    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-				    }
-			    });
+					    @Override
+					    public void run()
+					    {
+						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
+					    }
+				    });
+				    break;
+			    }
+			    case "yr.no":
+			    {
+				    String[] content = common.processYR(data);
+				    if (content == null || content.length <= 0)
+					    return;
+
+				    String yrno = "<img src='yrno.png' height='29px'/><br/>";
+				    final String fc = "<html><body style='text-align:center'>" + yrno + content[0] + "</body></html>";
+
+				    wv.post(new Runnable()
+				    {
+					    @Override
+					    public void run()
+					    {
+						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
+					    }
+				    });
+				    break;
+			    }
 		    }
 	    }
     }

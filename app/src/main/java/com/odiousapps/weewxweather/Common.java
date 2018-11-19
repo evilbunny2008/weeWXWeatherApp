@@ -33,6 +33,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
+import fr.arnaudguyon.xmltojsonlib.XmlToJson;
+
 import static java.lang.Math.round;
 
 class Common
@@ -319,6 +321,108 @@ class Common
 		return views;
 	}
 
+	String[] processYR(String data)
+	{
+		//boolean metric = GetBoolPref("metric", true);
+		StringBuilder out = new StringBuilder();
+		String desc;
+
+		try
+		{
+			JSONObject jobj = new XmlToJson.Builder(data).build().toJson();
+			if(jobj == null)
+				return null;
+
+
+			jobj = jobj.getJSONObject("weatherdata");
+			JSONObject location = jobj.getJSONObject("location");
+			desc = location.getString("name") + ", " + location.getString("country");
+
+			long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
+			SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			String lastupdate = sdf.format(mdate);
+
+			JSONArray jarr = jobj.getJSONObject("forecast")
+					.getJSONObject("tabular")
+					.getJSONArray("time");
+
+			if(jarr == null)
+				return null;
+
+			String tmp = "<div style='font-size:12pt;'>" + lastupdate + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			String olddate = "";
+			for(int i = 0; i < jarr.length(); i++)
+			{
+				String from = jarr.getJSONObject(i).getString("from");
+				String to = jarr.getJSONObject(i).getString("to");
+				String period = jarr.getJSONObject(i).getString("period");
+				JSONObject symbol = jarr.getJSONObject(i).getJSONObject("symbol");
+				JSONObject precipitation = jarr.getJSONObject(i).getJSONObject("precipitation");
+				JSONObject temperature = jarr.getJSONObject(i).getJSONObject("temperature");
+				JSONObject windDirection = jarr.getJSONObject(i).getJSONObject("windDirection");
+				//JSONObject pressure = jarr.getJSONObject(i).getJSONObject("pressure");
+				JSONObject windSpeed = jarr.getJSONObject(i).getJSONObject("windSpeed");
+
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+				mdate = sdf.parse(from).getTime();
+				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+				String date = sdf.format(mdate);
+
+				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
+				from = sdf.format(mdate);
+
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+				mdate = sdf.parse(to).getTime();
+				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
+				to = sdf.format(mdate);
+
+				if(i == 0 || Integer.parseInt(period) == 0)
+				{
+					if(!olddate.equals("") && olddate.equals(date))
+						break;
+
+					olddate = date;
+
+					tmp = "<tr><th colspan='5' style='text-align:left;'><strong>" + date + "</strong></th></tr>\n";
+					out.append(tmp);
+					tmp = "<tr><th>Time</th><th>FCast</th><th>Temp</th><th>Rain</th><th>Wind</th></tr>\n";
+					out.append(tmp);
+				}
+
+				tmp = "<tr>" +
+						"<td>" + from + "-" + to + "</td>";
+				out.append(tmp);
+
+				String code = symbol.getString("var");
+
+				tmp = "<td><img width='40px' src='file:///android_res/drawable/yrno" + code + ".png'></td>";
+				out.append(tmp);
+
+				tmp = "<td>" + temperature.getString("value") + "*C</td>";
+				out.append(tmp);
+
+				tmp = "<td>" + precipitation.getString("value") + "mm</td>";
+				out.append(tmp);
+
+				tmp = "<td>" + windSpeed.getString("name") + ", " + windSpeed.get("mps") + "m/s from the " + windDirection.getString("name") + "</td>";
+				out.append(tmp);
+
+				out.append("</tr>\n");
+			}
+
+			out.append("</table>");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{out.toString(), desc};
+	}
+
 	String[] processWZ(String data)
 	{
 		return processWZ(data, false);
@@ -475,8 +579,7 @@ class Common
 			Common.LogMessage("content=" + content);
 
 			return new String[]{content, desc};
-		} catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
@@ -533,11 +636,6 @@ class Common
 
 		    JSONObject tmp = forecast.getJSONObject(start);
 		    int code = tmp.getInt("code");
-
-//		    SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-//		    long rssCheck = GetIntPref("rssCheck", 0);
-//		    rssCheck *= 1000;
-//		    Date resultdate = new Date(rssCheck);
 
 		    if(showHeader)
 		    {
@@ -702,8 +800,8 @@ class Common
 
 		URL url = new URL(data);
 		HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-		urlConnection.setConnectTimeout(10000);
-		urlConnection.setReadTimeout(10000);
+		urlConnection.setConnectTimeout(60000);
+		urlConnection.setReadTimeout(60000);
 		urlConnection.setRequestMethod("GET");
 		urlConnection.setDoOutput(true);
 		urlConnection.connect();

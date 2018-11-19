@@ -6,8 +6,8 @@ android {
         applicationId "com.odiousapps.weewxweather"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 6000
-        versionName "0.6.0"
+        versionCode 6001
+        versionName "0.6.1"
     }
     buildTypes {
         release {
@@ -25,4 +25,5 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.pes.materialcolorpicker:library:1.2.4'
     implementation 'rongi.rotate-layout:rotate-layout:3.0.0'
+    implementation 'com.github.smart-fun:XmlToJson:1.4.4'
 }

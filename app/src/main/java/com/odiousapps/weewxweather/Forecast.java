@@ -543,15 +543,29 @@ class Forecast
         	return;
         }
 
-	    if(fctype.toLowerCase().equals("yahoo"))
+	    switch(fctype.toLowerCase())
 	    {
-		    String[] content = common.processYahoo(data, true);
-		    if(content != null && content.length >= 2)
-			    updateForecast(content[0], content[1]);
-	    } else if(fctype.toLowerCase().equals("weatherzone")) {
-		    String[] content = common.processWZ(data, true);
-		    if(content != null && content.length >= 2)
-			    updateForecast(content[0], content[1]);
+		    case "yahoo":
+		    {
+			    String[] content = common.processYahoo(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
+		    case "weatherzone":
+		    {
+			    String[] content = common.processWZ(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
+		    case "yr.no":
+		    {
+			    String[] content = common.processYR(data);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
 	    }
     }
 
@@ -571,9 +585,17 @@ class Forecast
         TextView tv1 = rootView.findViewById(R.id.forecast);
         tv1.setText(desc);
 
-	    if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("yahoo"))
-		    im.setImageResource(R.drawable.purple);
-	    else if(common.GetStringPref("fctype", "yahoo").toLowerCase().equals("weatherzone"))
-	        im.setImageResource(R.drawable.wz);
+	    switch(common.GetStringPref("fctype", "yahoo").toLowerCase())
+	    {
+		    case "yahoo":
+			    im.setImageResource(R.drawable.purple);
+			    break;
+		    case "weatherzone":
+			    im.setImageResource(R.drawable.wz);
+			    break;
+		    case "yr.no":
+			    im.setImageResource(R.drawable.yrno);
+			    break;
+	    }
     }
 }
