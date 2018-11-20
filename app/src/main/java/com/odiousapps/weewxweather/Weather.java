@@ -19,6 +19,9 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -27,6 +30,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+
+import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 
 class Weather
 {
@@ -379,6 +384,25 @@ class Weather
 				    });
 				    break;
 			    }
+			    case "bom.gov.au":
+			    {
+			    	String[] content = common.processBOM(data);
+			    	if(content == null || content.length <= 0)
+			    		return;
+
+				    String bom = "<img src='bom.png' height='29px'/><br/>";
+				    final String fc = "<html><body style='text-align:center'>" + bom + content[0] + "</body></html>";
+
+				    wv.post(new Runnable()
+				    {
+					    @Override
+					    public void run()
+					    {
+						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
+					    }
+				    });
+				    break;
+		        }
 		    }
 	    }
     }
@@ -428,9 +452,36 @@ class Weather
 					    }
 					    in.close();
 
+					    String tmp = sb.toString().trim();
+					    if(common.GetStringPref("fctype", "Yahoo").equals("bom.gov.au"))
+					    {
+					    	try
+						    {
+							    JSONObject jobj = new XmlToJson.Builder(tmp).build().toJson();
+							    if(jobj == null)
+							    	return;
+
+							    jobj = jobj.getJSONObject("product");
+							    String content = jobj.getJSONObject("amoc").getJSONObject("issue-time-local").getString("content");
+							    JSONArray area = jobj.getJSONObject("forecast").getJSONArray("area");
+							    for (int i = 0; i < area.length(); i++)
+							    {
+								    JSONObject o = area.getJSONObject(i);
+								    if (o.getString("description").equals(common.GetStringPref("bomtown", "")))
+								    {
+									    o.put("content", content);
+									    tmp = o.toString();
+									    break;
+								    }
+							    }
+						    } catch (Exception e) {
+					    		e.printStackTrace();
+						    }
+					    }
+
 					    Common.LogMessage("updating rss cache");
 					    common.SetIntPref("rssCheck", curtime);
-					    common.SetStringPref("forecastData", sb.toString().trim());
+					    common.SetStringPref("forecastData", tmp);
 				    }
 
 				    handlerDone.sendEmptyMessage(0);

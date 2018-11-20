@@ -566,6 +566,13 @@ class Forecast
 				    updateForecast(content[0], content[1]);
 			    break;
 		    }
+		    case "bom.gov.au":
+		    {
+			    String[] content = common.processBOM(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
 	    }
     }
 
@@ -595,6 +602,9 @@ class Forecast
 			    break;
 		    case "yr.no":
 			    im.setImageResource(R.drawable.yrno);
+			    break;
+		    case "bom.gov.au":
+			    im.setImageResource(R.drawable.bom);
 			    break;
 	    }
     }

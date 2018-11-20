@@ -321,6 +321,110 @@ class Common
 		return views;
 	}
 
+	String[] processBOM(String data)
+	{
+		return processBOM(data, false);
+	}
+
+	String[] processBOM(String data, boolean showHeader)
+	{
+		String desc;
+		StringBuilder out = new StringBuilder();
+
+		if(data == null || data.equals(""))
+			return null;
+
+		try
+		{
+			JSONObject jobj = new JSONObject(data);
+			desc = jobj.getString("description");
+
+			String tmp = jobj.getString("content");
+			tmp = tmp.substring(0, tmp.length() - 6);
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+			long mdate = sdf.parse(tmp).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			String date = sdf.format(mdate);
+
+			tmp = "<div style='font-size:12pt;'>" + date + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			JSONArray jarr = jobj.getJSONArray("forecast-period");
+			for(int i = 0; i < jarr.length(); i++)
+			{
+				String text = "";
+				String code = "";
+				String min = "";
+				String max = "";
+				JSONObject j = jarr.getJSONObject(i);
+				for(int x = 0; x < j.getJSONArray("text").length(); x++)
+				{
+					if(j.getJSONArray("text").getJSONObject(x).getString("type").equals("precis"))
+					{
+						text = j.getJSONArray("text").getJSONObject(x).getString("content");
+						break;
+					}
+				}
+
+				for(int x = 0; x < j.getJSONArray("element").length(); x++)
+				{
+					if(j.getJSONArray("element").getJSONObject(x).getString("type").equals("forecast_icon_code"))
+						code = j.getJSONArray("element").getJSONObject(x).getString("content");
+
+					if(j.getJSONArray("element").getJSONObject(x).getString("type").equals("air_temperature_minimum"))
+						min = j.getJSONArray("element").getJSONObject(x).getString("content");
+
+					if(j.getJSONArray("element").getJSONObject(x).getString("type").equals("air_temperature_maximum"))
+						max = j.getJSONArray("element").getJSONObject(x).getString("content");
+				}
+
+				date = j.getString("start-time-local").trim();
+				date = date.substring(0, date.length() - 6);
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+				mdate = sdf.parse(date).getTime();
+				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				date = sdf.format(mdate);
+
+				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/bom" + code + ".png'></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
+				out.append(tmp);
+
+				if(!max.equals(""))
+					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "&deg;C</b></td></tr>";
+				else
+					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td>" + text + "</td>";
+				out.append(tmp);
+
+				if(!min.equals(""))
+					tmp = "<td style='text-align:right;'>" + min + "&deg;C</td></tr>";
+				else
+					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+				//LogMessage(jarr.getJSONObject(i).toString(2));
+			}
+
+			out.append("</table>");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{out.toString(), desc};
+	}
+
 	String[] processYR(String data)
 	{
 		//boolean metric = GetBoolPref("metric", true);
@@ -332,7 +436,6 @@ class Common
 			JSONObject jobj = new XmlToJson.Builder(data).build().toJson();
 			if(jobj == null)
 				return null;
-
 
 			jobj = jobj.getJSONObject("weatherdata");
 			JSONObject location = jobj.getJSONObject("location");
@@ -402,7 +505,7 @@ class Common
 				tmp = "<td><img width='40px' src='file:///android_res/drawable/yrno" + code + ".png'></td>";
 				out.append(tmp);
 
-				tmp = "<td>" + temperature.getString("value") + "*C</td>";
+				tmp = "<td>" + temperature.getString("value") + "&deg;C</td>";
 				out.append(tmp);
 
 				tmp = "<td>" + precipitation.getString("value") + "mm</td>";

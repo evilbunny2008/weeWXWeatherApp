@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -11,16 +12,20 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -42,9 +47,13 @@ import android.widget.RemoteViews;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
 import com.pes.androidmaterialcolorpickerdialog.ColorPickerCallback;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -57,6 +66,8 @@ import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+
+import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 {
@@ -79,6 +90,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	private static int pos;
 	private static final String[] paths = {"Manual Updates", "Every 5 Minutes", "Every 10 Minutes", "Every 15 Minutes", "Every 30 Minutes", "Every Hour"};
+
+	private boolean hasPermission = false;
+	int permsRequestCode = 200;
 
 	@Override
     protected void onCreate(Bundle savedInstanceState)
@@ -192,11 +206,48 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    tv = findViewById(R.id.aboutText);
 		doSettings();
+		doPerms();
 
 	    common.setAlarm("MainActivity");
     }
 
-    private void showUpdateAvailable()
+	private void doPerms()
+	{
+		if(Build.VERSION.SDK_INT < 23)
+		{
+			hasPermission = true;
+		} else {
+			if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+			{
+				ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, permsRequestCode);
+			} else {
+				hasPermission = true;
+			}
+		}
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+	{
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+		hasPermission = false;
+		if (requestCode == permsRequestCode)
+		{
+			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+			{
+				hasPermission = true;
+			}
+		}
+
+		if (!hasPermission)
+		{
+			Toast.makeText(this, "bad user, bad...", Toast.LENGTH_LONG).show();
+			finish();
+		}
+	}
+
+	private void showUpdateAvailable()
 	{
 		final AlertDialog.Builder d = new AlertDialog.Builder(this);
 		d.setTitle("weeWX Weather App");
@@ -253,7 +304,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "wouldn't be possible otherwise.<br><br>" +
 			    "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
 			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a><br><br>" +
-			    "Forecasts supplied by <a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, <a href='https://weatherzone.com.au'>weatherzone</a> and <a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a><br><br>" +
+			    "Forecasts supplied by <a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, <a href='https://weatherzone.com.au'>weatherzone</a> and " +
+			    "<a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a><br><br>" +
 			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
 	    tv.setText(Html.fromHtml(lines));
@@ -354,6 +406,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("seekBar");
 						common.RemovePref("fgColour");
 						common.RemovePref("bgColour");
+						common.RemovePref("bomtown");
 						common.commit();
 
 						File file = new File(common.context.getFilesDir(), "webcam.jpg");
@@ -597,7 +650,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				{
 					try
 					{
-						switch (fctype)
+						switch (fctype.toLowerCase())
 						{
 							case "yahoo":
 								forecast = URLEncoder.encode(forecast, "utf-8");
@@ -618,7 +671,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
+							case "bom.gov.au":
+								String bomtown = forecast.split(",")[1].trim();
+								common.SetStringPref("bomtown", bomtown);
+								forecast = "ftp://ftp.bom.gov.au/anon/gen/fwo/" + forecast.split(",")[0].trim() + ".xml";
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								Common.LogMessage("bomtown=" + bomtown);
+								break;
 							default:
+								common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
 								handlerForecast.sendEmptyMessage(0);
 								return;
 						}
@@ -655,9 +717,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						}
 						in.close();
 
+						String tmp = sb.toString().trim();
+						if(fctype.equals("bom.gov.au"))
+						{
+							JSONObject jobj = new XmlToJson.Builder(tmp).build().toJson().getJSONObject("product");
+							String content = jobj.getJSONObject("amoc").getJSONObject("issue-time-local").getString("content");
+							JSONArray area = jobj.getJSONObject("forecast").getJSONArray("area");
+							for(int i = 0; i < area.length(); i++)
+							{
+								JSONObject o = area.getJSONObject(i);
+								if(o.getString("description").equals(common.GetStringPref("bomtown", "")))
+								{
+									o.put("content", content);
+									tmp = o.toString();
+									break;
+								}
+							}
+						}
+
 						Common.LogMessage("updating rss cache");
 						common.SetIntPref("rssCheck", curtime);
-						common.SetStringPref("forecastData", sb.toString().trim());
+						common.SetStringPref("forecastData", tmp);
 
 						validURL3 = true;
 					} catch (Exception e) {
