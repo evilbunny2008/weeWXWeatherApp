@@ -23,6 +23,9 @@ import android.widget.TextView;
 
 import com.github.rongi.rotate_layout.layout.RotateLayout;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -31,6 +34,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+
+import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 
 class Forecast
 {
@@ -492,9 +497,36 @@ class Forecast
                         }
                         in.close();
 
+	                    String tmp = sb.toString().trim();
+	                    if(common.GetStringPref("fctype", "Yahoo").equals("bom.gov.au"))
+	                    {
+		                    try
+		                    {
+			                    JSONObject jobj = new XmlToJson.Builder(tmp).build().toJson();
+			                    if(jobj == null)
+				                    return;
+
+			                    jobj = jobj.getJSONObject("product");
+			                    String content = jobj.getJSONObject("amoc").getJSONObject("issue-time-local").getString("content");
+			                    JSONArray area = jobj.getJSONObject("forecast").getJSONArray("area");
+			                    for (int i = 0; i < area.length(); i++)
+			                    {
+				                    JSONObject o = area.getJSONObject(i);
+				                    if (o.getString("description").equals(common.GetStringPref("bomtown", "")))
+				                    {
+					                    o.put("content", content);
+					                    tmp = o.toString();
+					                    break;
+				                    }
+			                    }
+		                    } catch (Exception e) {
+			                    e.printStackTrace();
+		                    }
+	                    }
+
                         Common.LogMessage("updating rss cache");
                         common.SetIntPref("rssCheck", curtime);
-                        common.SetStringPref("forecastData", sb.toString().trim());
+                        common.SetStringPref("forecastData", tmp);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -573,6 +605,13 @@ class Forecast
 				    updateForecast(content[0], content[1]);
 			    break;
 		    }
+		    case "wmo.int":
+		    {
+		    	String[] content = common.processWMO(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
 	    }
     }
 
@@ -605,6 +644,9 @@ class Forecast
 			    break;
 		    case "bom.gov.au":
 			    im.setImageResource(R.drawable.bom);
+			    break;
+		    case "wmo.int":
+			    im.setImageResource(R.drawable.wmo);
 			    break;
 	    }
     }

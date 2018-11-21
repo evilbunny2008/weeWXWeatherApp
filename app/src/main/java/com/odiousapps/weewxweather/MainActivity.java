@@ -305,7 +305,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
 			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a><br><br>" +
 			    "Forecasts supplied by <a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, <a href='https://weatherzone.com.au'>weatherzone</a> and " +
-			    "<a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a><br><br>" +
+			    "<a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a>" +
+			    "<a href='https://bom.gov.au'>Bureau of Meteorology</a><br><br>" +
 			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
 	    tv.setText(Html.fromHtml(lines));
@@ -679,6 +680,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("fctype=" + fctype);
 								Common.LogMessage("bomtown=" + bomtown);
 								break;
+							case "wmo.int":
+								forecast = "https://worldweather.wmo.int/en/json/" + forecast.trim() + "_en.xml";
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
 							default:
 								common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
 								handlerForecast.sendEmptyMessage(0);
@@ -717,6 +723,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						}
 						in.close();
 
+						boolean found = false;
+
 						String tmp = sb.toString().trim();
 						if(fctype.equals("bom.gov.au"))
 						{
@@ -730,8 +738,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								{
 									o.put("content", content);
 									tmp = o.toString();
+									found = true;
 									break;
 								}
+							}
+
+							if(!found)
+							{
+								common.SetStringPref("lastError", "Unable to match '" + common.GetStringPref("bomtown", "") + "'. Make sure you selected the right state file ID and a town where the BoM produces forecasts.");
+								handlerForecast.sendEmptyMessage(0);
+								return;
 							}
 						}
 

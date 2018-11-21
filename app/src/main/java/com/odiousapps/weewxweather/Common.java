@@ -21,6 +21,7 @@ import android.util.Log;
 import android.widget.RemoteViews;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -321,6 +322,97 @@ class Common
 		return views;
 	}
 
+	String[] processWMO(String data)
+	{
+		return processWMO(data, false);
+	}
+
+	String[] processWMO(String data, boolean showHeader)
+	{
+		if(data == null || data.equals(""))
+			return null;
+
+		String desc = "";
+		StringBuilder out = new StringBuilder();
+		boolean metric = GetBoolPref("metric", true);
+
+		try
+		{
+			JSONObject jobj = new JSONObject(data);
+
+			desc = jobj.getJSONObject("city").getString("cityName") + ", " + jobj.getJSONObject("city").getJSONObject("member").getString("memName");
+			String tmp = jobj.getJSONObject("city").getJSONObject("forecast").getString("issueDate");
+
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+			long mdate = sdf.parse(tmp).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			String date = sdf.format(mdate);
+
+			tmp = "<div style='font-size:12pt;'>" + date + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			JSONArray jarr = jobj.getJSONObject("city").getJSONObject("forecast").getJSONArray("forecastDay");
+			for(int i = 0; i < jarr.length(); i++)
+			{
+				JSONObject j = jarr.getJSONObject(i);
+
+				date = j.getString("forecastDate").trim();
+				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+				mdate = sdf.parse(date).getTime();
+				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				date = sdf.format(mdate);
+
+				String text = j.getString("weather");
+				String max = j.getString("maxTemp") + "&deg;C";
+				String min = j.getString("minTemp") + "&deg;C";
+				if(!metric)
+				{
+					max = j.getString("maxTempF") + "&deg;F";
+					min = j.getString("minTempF") + "&deg;F";
+				}
+
+				String code = j.getString("weatherIcon");
+				code = code.substring(0, 2);
+
+				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/i" + code + ".png'></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
+				out.append(tmp);
+
+				if(!max.equals(""))
+					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
+				else
+					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td>" + text + "</td>";
+				out.append(tmp);
+
+				if(!min.equals(""))
+					tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
+				else
+					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+
+			out.append("</table>");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{out.toString(), desc};
+	}
+
 	String[] processBOM(String data)
 	{
 		return processBOM(data, false);
@@ -337,7 +429,7 @@ class Common
 		try
 		{
 			JSONObject jobj = new JSONObject(data);
-			desc = jobj.getString("description");
+			desc = jobj.getString("description") + ", Australia";
 
 			String tmp = jobj.getString("content");
 			tmp = tmp.substring(0, tmp.length() - 6);
@@ -368,16 +460,22 @@ class Common
 					}
 				}
 
-				for(int x = 0; x < j.getJSONArray("element").length(); x++)
+				try
 				{
-					if(j.getJSONArray("element").getJSONObject(x).getString("type").equals("forecast_icon_code"))
-						code = j.getJSONArray("element").getJSONObject(x).getString("content");
+					JSONArray jarr2 = j.getJSONArray("element");
+					for (int x = 0; x < jarr2.length(); x++)
+					{
+						if (jarr2.getJSONObject(x).getString("type").equals("forecast_icon_code"))
+							code = jarr2.getJSONObject(x).getString("content");
 
-					if(j.getJSONArray("element").getJSONObject(x).getString("type").equals("air_temperature_minimum"))
-						min = j.getJSONArray("element").getJSONObject(x).getString("content");
+						if (jarr2.getJSONObject(x).getString("type").equals("air_temperature_minimum"))
+							min = jarr2.getJSONObject(x).getString("content");
 
-					if(j.getJSONArray("element").getJSONObject(x).getString("type").equals("air_temperature_maximum"))
-						max = j.getJSONArray("element").getJSONObject(x).getString("content");
+						if (jarr2.getJSONObject(x).getString("type").equals("air_temperature_maximum"))
+							max = jarr2.getJSONObject(x).getString("content");
+					}
+				} catch (JSONException e) {
+					code = j.getJSONObject("element").getString("content");
 				}
 
 				date = j.getString("start-time-local").trim();
