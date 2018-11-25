@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		if (!hasPermission)
 		{
-			Toast.makeText(this, "bad user, bad...", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, "Can't continue without being able to access shared storage.", Toast.LENGTH_LONG).show();
 			finish();
 		}
 	}
@@ -305,8 +305,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
 			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a><br><br>" +
 			    "Forecasts supplied by <a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, <a href='https://weatherzone.com.au'>weatherzone</a> and " +
-			    "<a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a>" +
-			    "<a href='https://bom.gov.au'>Bureau of Meteorology</a><br><br>" +
+			    "<a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a>, " +
+			    "<a href='https://bom.gov.au'>Bureau of Meteorology</a>, <a href='https://www.weather.gov'>Weather.gov</a> and " +
+			    "<a href='https://worldweather.wmo.int/en/home.html'>World Meteorology Organisation</a>" +
+			    "<br><br>" +
 			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
 	    tv.setText(Html.fromHtml(lines));
@@ -685,12 +687,36 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
+							case "weather.gov":
+								String lat = "", lon = "";
+
+								if(forecast.contains("?"))
+									forecast = forecast.split("\\?", 2)[1].trim();
+
+								if(forecast.contains("lat") && forecast.contains("lon"))
+								{
+									String[] tmp = forecast.split("&", 2);
+									for(String line : tmp)
+									{
+										if(line.split("=", 2)[0].equals("lat"))
+											lat = line.split("=", 2)[1].trim();
+										if(line.split("=", 2)[0].equals("lon"))
+											lon = line.split("=", 2)[1].trim();
+									}
+								} else {
+									lat = forecast.split(",")[0].trim();
+									lon = forecast.split(",")[1].trim();
+								}
+
+								forecast = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon=" + lon + "&unit=0&lg=english&FcstType=json";
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
 							default:
 								common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
 								handlerForecast.sendEmptyMessage(0);
 								return;
 						}
-
 					} catch (Exception e) {
 						common.SetStringPref("lastError", e.toString());
 						e.printStackTrace();

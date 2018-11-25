@@ -607,7 +607,14 @@ class Forecast
 		    }
 		    case "wmo.int":
 		    {
-		    	String[] content = common.processWMO(data, true);
+				String[] content = common.processWMO(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
+		    case "weather.gov":
+		    {
+			    String[] content = common.processWGOV(data, true);
 			    if(content != null && content.length >= 2)
 				    updateForecast(content[0], content[1]);
 			    break;
@@ -647,6 +654,9 @@ class Forecast
 			    break;
 		    case "wmo.int":
 			    im.setImageResource(R.drawable.wmo);
+			    break;
+		    case "weather.gov":
+			    im.setImageResource(R.drawable.wgov);
 			    break;
 	    }
     }

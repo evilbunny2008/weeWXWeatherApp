@@ -11,12 +11,17 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.Rect;
 import android.graphics.RectF;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Environment;
+import android.util.Base64;
 import android.util.Log;
 import android.widget.RemoteViews;
 
@@ -24,15 +29,24 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.lang.reflect.Field;
 import java.net.Authenticator;
 import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
 import java.net.URL;
+import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.regex.Pattern;
 
 import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 
@@ -56,11 +70,15 @@ class Common
 	private static final long inigo_version = 4000;
 
 	private Thread t = null;
+	private JSONObject nws = null;
+
+	private Typeface tf;
 
 	Common(Context c)
 	{
 		System.setProperty("http.agent", UA);
 		this.context = c;
+		tf = Typeface.createFromAsset(context.getAssets(), "font/fradmcn.ttf");
 
 		try
 		{
@@ -68,10 +86,12 @@ class Common
 			PackageInfo version = pm.getPackageInfo("com.odiousapps.weewxweather", 0);
 			appversion = version.versionName;
 			LogMessage("appversion=" + appversion);
-		} catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
+		loadNWS();
+		LogMessage("Loaded NWS");
 	}
 
 	private long[] getPeriod()
@@ -322,6 +342,292 @@ class Common
 		return views;
 	}
 
+	String[] processWGOV(String data)
+	{
+		return processWGOV(data, false);
+	}
+
+	String[] processWGOV(String data, boolean showHeader)
+	{
+		if(data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		String desc;
+		StringBuilder out = new StringBuilder();
+
+		try
+		{
+			JSONObject jobj = new JSONObject(data);
+
+			desc = jobj.getJSONObject("currentobservation").getString("name");
+			String tmp = jobj.getString("creationDate");
+
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+			long mdate = sdf.parse(tmp).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			String date = sdf.format(mdate);
+
+			tmp = "<div style='font-size:12pt;'>" + date + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			final File file = new File(Environment.getExternalStorageDirectory(), "/WGOV/");
+			if(!file.exists())
+			{
+				if(!file.mkdirs())
+				{
+					return null;
+				}
+			}
+
+			JSONArray periodName = jobj.getJSONObject("time").getJSONArray("startPeriodName");
+			JSONArray weather = jobj.getJSONObject("data").getJSONArray("weather");
+			final JSONArray iconLink = jobj.getJSONObject("data").getJSONArray("iconLink");
+			JSONArray temperature = jobj.getJSONObject("data").getJSONArray("temperature");
+			for(int i = 0; i < periodName.length(); i++)
+			{
+				String fimg = "", simg = "", fper = "", sper = "", number;
+				iconLink.put(i, iconLink.getString(i).replace("http://", "https://"));
+				final String url = iconLink.getString(i);
+				//final String url = "https://forecast.weather.gov/DualImage.php?i=nra_sn&j=nshra&ip=40&jp=40";
+				//final String url = "https://forecast.weather.gov/DualImage.php?i=nbkn&j=nfg";
+				//final String url = "https://forecast.weather.gov/DualImage.php?i=fg&j=bkn";
+				//final String url = "https://forecast.weather.gov/DualImage.php?i=shra&j=shra&ip=50&jp=20";
+
+				//LogMessage("weather.gov url == " + url);
+
+				String fn = "wgov" + url.substring(url.lastIndexOf('/') + 1, url.length()).replace(".png", ".jpg");
+				if(fn.startsWith("wgovDualImage.php"))
+				{
+					fn = "wgov_" + convertToHex(genSHA(fn.substring(4, fn.length()))) + ".jpg";
+					tmp = url.split("\\?", 2)[1].trim();
+					String[] lines = tmp.split("&");
+					for(String line : lines)
+					{
+						line = line.trim();
+						String[] bits = line.split("=", 2);
+						if(bits[0].trim().equals("i"))
+							fimg = "wgov" + bits[1].trim();
+						if(bits[0].trim().equals("j"))
+							simg = "wgov" + bits[1].trim();
+						if(bits[0].trim().equals("ip"))
+							fper = bits[1].trim();
+						if(bits[0].trim().equals("jp"))
+							sper = bits[1].trim();
+					}
+
+					BitmapFactory.Options options = new BitmapFactory.Options();
+					options.inJustDecodeBounds = false;
+					Bitmap bmp1 = null, bmp2 = null;
+
+					try
+					{
+						Class res = R.drawable.class;
+						Field field = res.getField(fimg);
+						int drawableId = field.getInt(null);
+						if(drawableId != 0)
+							bmp1 = BitmapFactory.decodeResource(context.getResources(), drawableId, options);
+					} catch (Exception e) {
+						//LogMessage("Failure to get drawable id.");
+					}
+
+					try
+					{
+						Class res = R.drawable.class;
+						Field field = res.getField(simg);
+						int drawableId = field.getInt(null);
+						if(drawableId != 0)
+							bmp2 = BitmapFactory.decodeResource(context.getResources(), drawableId, options);
+					} catch (Exception e) {
+						//LogMessage("Failure to get drawable id.");
+					}
+
+					if(bmp1 != null && bmp2 != null)
+					{
+						//LogMessage("fimg = " + fimg);
+						//LogMessage("simg = " + simg);
+						//LogMessage("fper = " + fper);
+						//LogMessage("sper = " + sper);
+
+						if(!fimg.equals(simg))
+						{
+							Bitmap bmp = combineImages(bmp1, bmp2, fimg.substring(4), simg.substring(4), fper + "%", sper + "%");
+							if (bmp == null)
+							{
+								LogMessage("continue1, bmp is null");
+								continue;
+							}
+
+							ByteArrayOutputStream stream = new ByteArrayOutputStream();
+							bmp.compress(Bitmap.CompressFormat.JPEG, 75, stream);
+							byte[] byteArray = stream.toByteArray();
+							bmp.recycle();
+
+							// https://stackoverflow.com/questions/9224056/android-bitmap-to-base64-string
+
+							String encoded = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.DEFAULT);
+							iconLink.put(i, encoded);
+
+							//context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(file2)));
+							//LogMessage("wrote " + url + " to " + iconLink.getString(i).substring(0, 100));
+						} else {
+							Bitmap bmp = combineImage(bmp1, fper + "%", sper + "%");
+							if (bmp == null)
+							{
+								LogMessage("continue2, bmp is null");
+								continue;
+							}
+
+							ByteArrayOutputStream stream = new ByteArrayOutputStream();
+							bmp.compress(Bitmap.CompressFormat.JPEG, 75, stream);
+							byte[] byteArray = stream.toByteArray();
+							bmp.recycle();
+
+							String encoded = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.DEFAULT);
+							iconLink.put(i, encoded);
+						}
+					}
+				} else {
+					Pattern p = Pattern.compile("[^0-9]");
+					number = p.matcher(fn).replaceAll("");
+					if(!number.equals(""))
+					{
+						Bitmap bmp3 = null;
+						BitmapFactory.Options options = new BitmapFactory.Options();
+						options.inJustDecodeBounds = false;
+
+						fn = fn.replaceAll("\\d{2,3}\\.jpg$", "\\.jpg");
+
+						try
+						{
+							Class res = R.drawable.class;
+							Field field = res.getField(fn.substring(0, fn.length() - 4));
+							int drawableId = field.getInt(null);
+							if(drawableId != 0)
+								bmp3 = BitmapFactory.decodeResource(context.getResources(), drawableId, options);
+						} catch (Exception e) {
+							LogMessage("Failure to get drawable id for: " + fn);
+						}
+
+						if(bmp3 != null)
+						{
+							Bitmap bmp4 = BitmapFactory.decodeResource(context.getResources(), R.drawable.wgovoverlay, options);
+							bmp3 = overlay(bmp3, bmp4, number + "%");
+
+							ByteArrayOutputStream stream = new ByteArrayOutputStream();
+							bmp3.compress(Bitmap.CompressFormat.JPEG, 75, stream);
+							byte[] byteArray = stream.toByteArray();
+							bmp3.recycle();
+							bmp4.recycle();
+
+							// https://stackoverflow.com/questions/9224056/android-bitmap-to-base64-string
+
+							String encoded = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.DEFAULT);
+							iconLink.put(i, encoded);
+
+							LogMessage("wrote " + fn + " to " + iconLink.getString(i).substring(0, 100));
+						}
+					}
+				}
+
+				final String fileName = fn;
+				final File myFile = new File(file, fileName);
+				boolean found = false;
+
+				if(!iconLink.getString(i).startsWith("data:"))
+				{
+					try
+					{
+						Class res = R.drawable.class;
+						Field field = res.getField(fileName.substring(0, fileName.length() - 4));
+						int drawableId = field.getInt(null);
+						if(drawableId != 0)
+							found = true;
+					} catch (Exception e) {
+						//LogMessage("Failure to get drawable id.");
+					}
+
+					if (!found)
+					{
+						if (!myFile.exists())
+						{
+							Thread t = new Thread(new Runnable()
+							{
+								@Override
+								public void run()
+								{
+									try
+									{
+										URL u = new URL(url);
+										InputStream is = u.openStream();
+										BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
+
+										Bitmap bmp = BitmapFactory.decodeStream(bufferedInputStream);
+										OutputStream stream = new FileOutputStream(myFile);
+										bmp.compress(Bitmap.CompressFormat.JPEG, 75, stream);
+										stream.flush();
+										stream.close();
+										is.close();
+
+										context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(myFile)));
+										LogMessage("wrote " + url + " to " + myFile.getAbsolutePath());
+									} catch (Exception e) {
+										e.printStackTrace();
+									}
+								}
+							});
+
+							t.start();
+						}
+					}
+
+					File f = new File("/android_res/drawable/" + fileName);
+
+					if (found)
+					{
+						iconLink.put(i, Uri.fromFile(f));
+					} else if (myFile.exists() && myFile.isFile()) {
+						iconLink.put(i, Uri.fromFile(myFile));
+					}
+				}
+
+				//LogMessage("iconLink.getString(i) => " + iconLink.getString(i));
+
+				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + iconLink.getString(i) + "'></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + periodName.getString(i) + "</b></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:10%;text-align:right;'><b>" + temperature.getString(i) + "&deg;F</b></td></tr>";
+				if(metric)
+					tmp = "<td style='width:10%;text-align:right;'><b>" + round((Double.parseDouble(temperature.getString(i)) - 32.0) * 5.0 / 9.0)  + "&deg;C</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td style='width:80%;'>" + weather.getString(i) + "</td>";
+				out.append(tmp);
+
+				tmp = "<td>&nbsp;</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+
+			out.append("</table>");
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{out.toString(), desc};
+	}
+
 	String[] processWMO(String data)
 	{
 		return processWMO(data, false);
@@ -332,7 +638,7 @@ class Common
 		if(data == null || data.equals(""))
 			return null;
 
-		String desc = "";
+		String desc;
 		StringBuilder out = new StringBuilder();
 		boolean metric = GetBoolPref("metric", true);
 
@@ -420,11 +726,12 @@ class Common
 
 	String[] processBOM(String data, boolean showHeader)
 	{
-		String desc;
-		StringBuilder out = new StringBuilder();
-
 		if(data == null || data.equals(""))
 			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		String desc;
+		StringBuilder out = new StringBuilder();
 
 		try
 		{
@@ -432,8 +739,7 @@ class Common
 			desc = jobj.getString("description") + ", Australia";
 
 			String tmp = jobj.getString("content");
-			tmp = tmp.substring(0, tmp.length() - 6);
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 			long mdate = sdf.parse(tmp).getTime();
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 			String date = sdf.format(mdate);
@@ -479,8 +785,7 @@ class Common
 				}
 
 				date = j.getString("start-time-local").trim();
-				date = date.substring(0, date.length() - 6);
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 				mdate = sdf.parse(date).getTime();
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				date = sdf.format(mdate);
@@ -490,6 +795,15 @@ class Common
 
 				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
 				out.append(tmp);
+
+				if(metric)
+				{
+					max = max + "&deg;C";
+					min = min + "&deg;C";
+				} else {
+					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				}
 
 				if(!max.equals(""))
 					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "&deg;C</b></td></tr>";
@@ -570,7 +884,7 @@ class Common
 
 				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
 				mdate = sdf.parse(from).getTime();
-				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				String date = sdf.format(mdate);
 
 				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
@@ -1111,5 +1425,257 @@ class Common
 		intent.setAction(FAILED_INTENT);
 		context.sendBroadcast(intent);
 		LogMessage("failed_intent broadcast.");
+	}
+
+	// https://stackoverflow.com/questions/3103652/hash-string-via-sha-256-in-java
+
+	private static byte[] genSHA(String s)
+	{
+		byte abyte0[];
+		try
+		{
+			MessageDigest messagedigest = MessageDigest.getInstance("MD5");
+			messagedigest.update(s.getBytes("UTF-8"));
+			abyte0 = messagedigest.digest();
+		} catch (Exception exception) {
+			return null;
+		}
+		return abyte0;
+	}
+
+	private static String convertToHex(byte buf[])
+	{
+		if(buf == null)
+			return null;
+
+		return String.format("%032x", new java.math.BigInteger(1, buf));
+	}
+
+	// Thanks goes to the https://saratoga-weather.org folk for the base NOAA icons and code for dualimage.php
+
+	private Bitmap combineImage(Bitmap bmp1, String fnum, String snum)
+	{
+		try
+		{
+			int x1 = bmp1.getHeight();
+			int y1 = bmp1.getWidth();
+
+			Bitmap bmp = bmp1.copy(Bitmap.Config.ARGB_8888, true);
+
+			Paint paint = new Paint();
+			paint.setAntiAlias(true);
+			Canvas comboImage = new Canvas(bmp);
+			comboImage.drawBitmap(bmp1, 0f, 0f, null);
+
+			if (!fnum.equals("%") || !snum.equals("%"))
+			{
+				BitmapFactory.Options options = new BitmapFactory.Options();
+				options.inJustDecodeBounds = false;
+				Bitmap bmp2 = BitmapFactory.decodeResource(context.getResources(), R.drawable.wgovoverlay, options);
+				paint = new Paint();
+				paint.setAlpha(100);
+				comboImage.drawBitmap(bmp2, 0f, bmp1.getHeight() - bmp2.getHeight(), paint);
+			}
+
+			if (!fnum.equals("%") && !snum.equals("%"))
+			{
+				// Draw arrow
+				paint = new Paint();
+				paint.setAntiAlias(true);
+				paint.setColor(0xff00487b);
+				paint.setStyle(Paint.Style.STROKE);
+				paint.setStrokeWidth(5);
+				comboImage.drawLine( 100, bmp1.getHeight() - 20, 140, bmp1.getHeight() - 20, paint);
+				comboImage.drawLine( 125, bmp1.getHeight() - 33, 140, bmp1.getHeight() - 20, paint);
+				comboImage.drawLine( 125, bmp1.getHeight() - 7, 140, bmp1.getHeight() - 20, paint);
+			}
+
+			if(!fnum.equals("%"))
+			{
+				paint = new Paint();
+				paint.setAntiAlias(true);
+				paint.setColor(0xff00487b);
+				paint.setTextSize(50);
+				paint.setTypeface(Typeface.create(tf, Typeface.BOLD));
+
+				comboImage.drawText(fnum, 5, y1 - 5, paint);
+			}
+
+			if(!snum.equals("%"))
+			{
+				paint = new Paint();
+				paint.setAntiAlias(true);
+				paint.setColor(0xff00487b);
+				paint.setTextSize(50);
+				paint.setTypeface(Typeface.create(tf, Typeface.BOLD));
+
+				Rect textBounds = new Rect();
+				paint.getTextBounds(snum, 0, snum.length(), textBounds);
+				int width = (int) paint.measureText(snum);
+
+				comboImage.drawText(snum, x1 - width - 5, y1 - 5, paint);
+			}
+
+			return bmp;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	private Bitmap combineImages(Bitmap bmp1, Bitmap bmp2, String fimg, String simg, String fnum, String snum)
+	{
+		try
+		{
+			int x1 = bmp1.getHeight();
+			int y1 = bmp1.getWidth();
+
+			int x2 = bmp2.getHeight();
+			int y2 = bmp2.getWidth();
+
+			String[] bits = nws.getString(fimg).split("\\|");
+			switch (bits[1].trim())
+			{
+				case "L":
+					bmp1 = Bitmap.createBitmap(bmp1, 0, 0, x1 / 2, y1);
+					break;
+				case "R":
+					bmp1 = Bitmap.createBitmap(bmp1, x1 / 2, 0, x1 - x1 / 2, y1);
+					break;
+				default:
+					bmp1 = Bitmap.createBitmap(bmp1, x1 / 4, 0, x1 * 3 / 4, y1);
+					break;
+			}
+
+			bits = nws.getString(simg).split("\\|");
+			switch (bits[1].trim())
+			{
+				case "L":
+					bmp2 = Bitmap.createBitmap(bmp2, 0, 0, x2 / 2, y2);
+					break;
+				case "R":
+					bmp2 = Bitmap.createBitmap(bmp2, x2 / 2, 0, x2 - x2 / 2, y2);
+					break;
+				default:
+					bmp2 = Bitmap.createBitmap(bmp2, x2 / 4, 0, x2 * 3 / 4, y2);
+					break;
+			}
+
+			Bitmap bmp = Bitmap.createBitmap(x1, y1, Bitmap.Config.ARGB_8888);
+			bmp = bmp.copy(Bitmap.Config.ARGB_8888, true);
+
+			Paint paint = new Paint();
+			paint.setAntiAlias(true);
+			Canvas comboImage = new Canvas(bmp);
+			comboImage.drawBitmap(bmp1, 0f, 0f, null);
+			comboImage.drawBitmap(bmp2, x1 / 2, 0f, null);
+
+			paint.setColor(0xff000000);
+			paint.setStyle(Paint.Style.STROKE);
+			paint.setStrokeWidth(10);
+			comboImage.drawLine( x1 / 2, 0, x1 / 2, y1, paint);
+
+			paint.setColor(0xffffffff);
+			paint.setStyle(Paint.Style.STROKE);
+			paint.setStrokeWidth(6);
+			comboImage.drawLine( x1 / 2, 0, x1 / 2, y1, paint);
+
+			if(!fnum.equals("%") || !snum.equals("%"))
+			{
+				BitmapFactory.Options options = new BitmapFactory.Options();
+				options.inJustDecodeBounds = false;
+				Bitmap bmp4 = BitmapFactory.decodeResource(context.getResources(), R.drawable.wgovoverlay, options);
+				paint = new Paint();
+				paint.setAlpha(100);
+				comboImage.drawBitmap(bmp4, 0f, bmp1.getHeight() - bmp4.getHeight(), paint);
+			}
+
+			if (!fnum.equals("%") && !snum.equals("%"))
+			{
+				// Draw arrow
+				paint = new Paint();
+				paint.setAntiAlias(true);
+				paint.setColor(0xff00487b);
+				paint.setStyle(Paint.Style.STROKE);
+				paint.setStrokeWidth(5);
+				comboImage.drawLine( 100, bmp1.getHeight() - 20, 140, bmp1.getHeight() - 20, paint);
+				comboImage.drawLine( 125, bmp1.getHeight() - 33, 140, bmp1.getHeight() - 20, paint);
+				comboImage.drawLine( 125, bmp1.getHeight() - 7, 140, bmp1.getHeight() - 20, paint);
+			}
+
+			if(!fnum.equals("%"))
+			{
+				paint = new Paint();
+				paint.setAntiAlias(true);
+				paint.setColor(0xff00487b);
+				paint.setTextSize(50);
+				paint.setTypeface(Typeface.create(tf, Typeface.BOLD));
+
+				comboImage.drawText(fnum, 5, y1 - 5, paint);
+			}
+
+			if(!snum.equals("%"))
+			{
+				paint = new Paint();
+				paint.setAntiAlias(true);
+				paint.setColor(0xff00487b);
+				paint.setTextSize(50);
+				paint.setTypeface(Typeface.create(tf, Typeface.BOLD));
+
+				Rect textBounds = new Rect();
+				paint.getTextBounds(snum, 0, snum.length(), textBounds);
+				int width = (int) paint.measureText(snum);
+
+				comboImage.drawText(snum, x1 - width - 5, y1 - 5, paint);
+			}
+
+			return bmp;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	// https://stackoverflow.com/questions/1540272/android-how-to-overlay-a-bitmap-draw-over-a-bitmap
+
+	private Bitmap overlay(Bitmap bmp1, Bitmap bmp2, String s)
+	{
+		Paint paint = new Paint();
+		paint.setAlpha(100);
+
+		Bitmap bmp3 = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), bmp1.getConfig());
+		Canvas canvas = new Canvas(bmp3);
+		canvas.drawBitmap(bmp1, 0f, 0f, null);
+		canvas.drawBitmap(bmp2, 0f, bmp1.getHeight() - bmp2.getHeight(), paint);
+		paint.setAntiAlias(true);
+		paint.setColor(0xff00487b);
+		paint.setTextSize(50);
+		paint.setTypeface(Typeface.create(tf, Typeface.BOLD));
+		Rect textBounds = new Rect();
+		paint.getTextBounds(s, 0, s.length(), textBounds);
+		int width = (int)paint.measureText(s);
+
+		canvas.drawText(s, bmp1.getWidth() - width, bmp1.getHeight() - 5, paint);
+
+		return bmp3;
+	}
+
+	// https://stackoverflow.com/questions/19945411/android-java-how-can-i-parse-a-local-json-file-from-assets-folder-into-a-listvi
+
+	private void loadNWS()
+	{
+		try
+		{
+			InputStream is = context.getResources().openRawResource(R.raw.nws);
+			int size = is.available();
+			byte[] buffer = new byte[size];
+			if(is.read(buffer) > 0)
+				nws = new JSONObject(new String(buffer, "UTF-8"));
+			is.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
