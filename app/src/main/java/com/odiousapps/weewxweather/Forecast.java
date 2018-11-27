@@ -593,7 +593,7 @@ class Forecast
 		    }
 		    case "yr.no":
 		    {
-			    String[] content = common.processYR(data);
+			    String[] content = common.processYR(data, true);
 			    if(content != null && content.length >= 2)
 				    updateForecast(content[0], content[1]);
 			    break;
@@ -615,6 +615,13 @@ class Forecast
 		    case "weather.gov":
 		    {
 			    String[] content = common.processWGOV(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
+		    case "weather.gc.ca":
+		    {
+			    String[] content = common.processWCA(data, true);
 			    if(content != null && content.length >= 2)
 				    updateForecast(content[0], content[1]);
 			    break;
@@ -657,6 +664,9 @@ class Forecast
 			    break;
 		    case "weather.gov":
 			    im.setImageResource(R.drawable.wgov);
+			    break;
+		    case "weather.gc.ca":
+			    im.setImageResource(R.drawable.wca);
 			    break;
 	    }
     }

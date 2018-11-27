@@ -28,21 +28,20 @@ import android.widget.RemoteViews;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.lang.reflect.Field;
 import java.net.Authenticator;
 import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
 import java.net.URL;
-import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -342,6 +341,186 @@ class Common
 		return views;
 	}
 
+	String[] processWCA(String data)
+	{
+		return processWCA(data, false);
+	}
+
+	String[] processWCA(String data, boolean showHeader)
+	{
+		if(data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		String tmp;
+		StringBuilder out = new StringBuilder();
+		String desc;
+
+		try
+		{
+			String obs = data.split("Forecast issued: ", 2)[1].trim();
+			obs = obs.split("</span>", 2)[0].trim().replaceAll(" PM ", " pm ").replaceAll(" AM ", " am ");
+			//LogMessage("obs == " + obs);
+
+			int i = 0, j = obs.indexOf(":");
+			String hour = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			String minute = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			String ampm = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			//String TZ = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			//String DOW = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			String day = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			String month = obs.substring(i, j);
+			i = j + 1;
+			j = obs.length();
+			String year = obs.substring(i, j);
+
+			obs = hour + ":" + minute + " " + ampm + " " + day + " " + month + " " + year;
+
+			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
+			long mdate = sdf.parse(obs).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			obs = sdf.format(mdate);
+			//LogMessage("obs == " + obs);
+
+			tmp = "<div style='font-size:12pt;'>" + obs + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			desc = data.split("<dt>Observed at:</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
+
+			data = data.split("<div class=\"div-table\">", 2)[1].trim();
+			data = data.split("<section><details open=\"open\" class=\"wxo-detailedfore\">")[0].trim();
+			data = data.substring(0, data.length() - 7).trim();
+
+			String[] bits = data.split("<div class=\"div-column\">");
+
+			for(i = 1; i < bits.length; i++)
+			{
+				Document doc = Jsoup.parse(bits[i].trim());
+				Elements div = doc.select("div");
+				for (j = 0; j < div.size(); j++)
+				{
+					String date = "", text = "", img_url = "", encoded, temp = "", pop = "";
+
+					if (div.get(j).className().contains("greybkgrd"))
+					{
+						j++;
+						continue;
+					}
+
+					if(div.get(j).toString().contains("div-row-head"))
+					{
+						if(div.get(j).toString().contains("<a "))
+						{
+							date = div.get(j).select("a").html();
+						} else {
+							try
+							{
+								if(!div.get(j).select("div").html().contains("Night"))
+									date = div.get(j).select("div").select("strong").outerHtml().split("<strong title=\"", 2)[1].split("\">", 2)[0].trim();
+								else
+									date = "Night";
+
+								//LogMessage("date = " + date);
+							} catch (Exception e) {
+								e.printStackTrace();
+							}
+						}
+					}
+
+					j++;
+
+					if(div.get(j).toString().contains("div-row-data"))
+					{
+						if(metric)
+							temp = div.get(j).select("div").select("span").html().split("<abbr")[0].trim() + "C";
+						else
+							temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].trim() + "F";
+						text = div.get(j).select("div").select("img").outerHtml().split("alt=\"", 2)[1].split("\"", 2)[0].trim();
+						img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src=\"", 2)[1].split("\"", 2)[0].trim();
+						pop = div.get(j).select("div").select("small").html().trim();
+					}
+
+					BitmapFactory.Options options = new BitmapFactory.Options();
+					options.inJustDecodeBounds = false;
+					Bitmap bmp = null;
+
+					final String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "\\.png");
+					//final File myFile = new File(file, fileName);
+
+					try
+					{
+						Class res = R.drawable.class;
+						Field field = res.getField(fileName.substring(0, fileName.length() - 4));
+						int drawableId = field.getInt(null);
+						if(drawableId != 0)
+							bmp = BitmapFactory.decodeResource(context.getResources(), drawableId, options);
+					} catch (Exception e) {
+						//LogMessage("Failure to get drawable id.");
+					}
+
+					if (bmp == null)
+					{
+						encoded = img_url;
+					} else {
+						ByteArrayOutputStream stream = new ByteArrayOutputStream();
+						bmp.compress(Bitmap.CompressFormat.PNG, 9, stream);
+						byte[] byteArray = stream.toByteArray();
+						bmp.recycle();
+
+						// https://stackoverflow.com/questions/9224056/android-bitmap-to-base64-string
+						encoded = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.DEFAULT);
+					}
+
+					tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + encoded + "'></td>";
+					out.append(tmp);
+
+					tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
+					out.append(tmp);
+
+					tmp = "<td style='width:10%;text-align:right;'><b>" + temp + "</b></td></tr>";
+					out.append(tmp);
+
+					tmp = "<tr><td style='width:80%;'>" + text + "</td>";
+					out.append(tmp);
+
+					if(pop.equals(""))
+						tmp = "<td>&nbsp;</td></tr>";
+					else
+						tmp = "<td style='text-align:right;'>" + pop + "</td></tr>";
+					out.append(tmp);
+
+					if(showHeader)
+					{
+						tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+						out.append(tmp);
+					}
+				}
+			}
+
+			out.append("</table>");
+			//LogMessage(out.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{out.toString(), desc};
+	}
+
 	String[] processWGOV(String data)
 	{
 		return processWGOV(data, false);
@@ -373,15 +552,6 @@ class Common
 			tmp = "<table style='width:100%;'>\n";
 			out.append(tmp);
 
-			final File file = new File(Environment.getExternalStorageDirectory(), "/WGOV/");
-			if(!file.exists())
-			{
-				if(!file.mkdirs())
-				{
-					return null;
-				}
-			}
-
 			JSONArray periodName = jobj.getJSONObject("time").getJSONArray("startPeriodName");
 			JSONArray weather = jobj.getJSONObject("data").getJSONArray("weather");
 			final JSONArray iconLink = jobj.getJSONObject("data").getJSONArray("iconLink");
@@ -391,17 +561,11 @@ class Common
 				String fimg = "", simg = "", fper = "", sper = "", number;
 				iconLink.put(i, iconLink.getString(i).replace("http://", "https://"));
 				final String url = iconLink.getString(i);
-				//final String url = "https://forecast.weather.gov/DualImage.php?i=nra_sn&j=nshra&ip=40&jp=40";
-				//final String url = "https://forecast.weather.gov/DualImage.php?i=nbkn&j=nfg";
-				//final String url = "https://forecast.weather.gov/DualImage.php?i=fg&j=bkn";
-				//final String url = "https://forecast.weather.gov/DualImage.php?i=shra&j=shra&ip=50&jp=20";
-
-				//LogMessage("weather.gov url == " + url);
 
 				String fn = "wgov" + url.substring(url.lastIndexOf('/') + 1, url.length()).replace(".png", ".jpg");
 				if(fn.startsWith("wgovDualImage.php"))
 				{
-					fn = "wgov_" + convertToHex(genSHA(fn.substring(4, fn.length()))) + ".jpg";
+					//fn = "wgov_" + convertToHex(genSHA(fn.substring(4, fn.length()))) + ".jpg";
 					tmp = url.split("\\?", 2)[1].trim();
 					String[] lines = tmp.split("&");
 					for(String line : lines)
@@ -446,11 +610,6 @@ class Common
 
 					if(bmp1 != null && bmp2 != null)
 					{
-						//LogMessage("fimg = " + fimg);
-						//LogMessage("simg = " + simg);
-						//LogMessage("fper = " + fper);
-						//LogMessage("sper = " + sper);
-
 						if(!fimg.equals(simg))
 						{
 							Bitmap bmp = combineImages(bmp1, bmp2, fimg.substring(4), simg.substring(4), fper + "%", sper + "%");
@@ -529,67 +688,6 @@ class Common
 
 							LogMessage("wrote " + fn + " to " + iconLink.getString(i).substring(0, 100));
 						}
-					}
-				}
-
-				final String fileName = fn;
-				final File myFile = new File(file, fileName);
-				boolean found = false;
-
-				if(!iconLink.getString(i).startsWith("data:"))
-				{
-					try
-					{
-						Class res = R.drawable.class;
-						Field field = res.getField(fileName.substring(0, fileName.length() - 4));
-						int drawableId = field.getInt(null);
-						if(drawableId != 0)
-							found = true;
-					} catch (Exception e) {
-						//LogMessage("Failure to get drawable id.");
-					}
-
-					if (!found)
-					{
-						if (!myFile.exists())
-						{
-							Thread t = new Thread(new Runnable()
-							{
-								@Override
-								public void run()
-								{
-									try
-									{
-										URL u = new URL(url);
-										InputStream is = u.openStream();
-										BufferedInputStream bufferedInputStream = new BufferedInputStream(is);
-
-										Bitmap bmp = BitmapFactory.decodeStream(bufferedInputStream);
-										OutputStream stream = new FileOutputStream(myFile);
-										bmp.compress(Bitmap.CompressFormat.JPEG, 75, stream);
-										stream.flush();
-										stream.close();
-										is.close();
-
-										context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(myFile)));
-										LogMessage("wrote " + url + " to " + myFile.getAbsolutePath());
-									} catch (Exception e) {
-										e.printStackTrace();
-									}
-								}
-							});
-
-							t.start();
-						}
-					}
-
-					File f = new File("/android_res/drawable/" + fileName);
-
-					if (found)
-					{
-						iconLink.put(i, Uri.fromFile(f));
-					} else if (myFile.exists() && myFile.isFile()) {
-						iconLink.put(i, Uri.fromFile(myFile));
 					}
 				}
 
@@ -839,6 +937,11 @@ class Common
 
 	String[] processYR(String data)
 	{
+		return processYR(data, false);
+	}
+
+	String[] processYR(String data, boolean showHeader)
+	{
 		//boolean metric = GetBoolPref("metric", true);
 		StringBuilder out = new StringBuilder();
 		String desc;
@@ -927,6 +1030,12 @@ class Common
 				out.append(tmp);
 
 				out.append("</tr>\n");
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
 			}
 
 			out.append("</table>");
@@ -1428,7 +1537,7 @@ class Common
 	}
 
 	// https://stackoverflow.com/questions/3103652/hash-string-via-sha-256-in-java
-
+/*
 	private static byte[] genSHA(String s)
 	{
 		byte abyte0[];
@@ -1452,7 +1561,7 @@ class Common
 	}
 
 	// Thanks goes to the https://saratoga-weather.org folk for the base NOAA icons and code for dualimage.php
-
+*/
 	private Bitmap combineImage(Bitmap bmp1, String fnum, String snum)
 	{
 		try
