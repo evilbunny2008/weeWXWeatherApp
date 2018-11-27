@@ -67,6 +67,16 @@
                         android:textSize="18sp"/>
 
                     <Switch
+                        android:id="@+id/dark_theme"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        android:text="@string/use_dark_theme"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:textSize="18sp"/>
+
+                    <Switch
                         android:id="@+id/metric_forecasts"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

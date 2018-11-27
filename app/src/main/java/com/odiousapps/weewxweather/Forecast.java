@@ -46,10 +46,12 @@ class Forecast
 	private TextView forecast;
 	private ImageView im;
 	private RotateLayout rl;
+	private boolean dark_theme;
 
 	Forecast(Common common)
     {
         this.common = common;
+	    dark_theme = common.GetBoolPref("dark_theme", false);
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -269,8 +271,11 @@ class Forecast
 
 			if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 			{
-				String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
-				wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+				String html = "<html>";
+				if(dark_theme)
+					html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				html += "<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
+				wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
 				return;
 			}
 
@@ -281,8 +286,10 @@ class Forecast
 					"<html>\n" +
 					"  <head>\n" +
 					"    <meta charset='utf-8'>\n" +
-					"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
-					"  </head>\n" +
+					"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
+			if(dark_theme)
+					html += "<style>body{color: #fff; background-color: #000;}</style>";
+			html += "  </head>\n" +
 					"  <body>\n" +
 					"\t<div style='text-align:center;'>\n" +
 					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" + height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
@@ -290,7 +297,7 @@ class Forecast
 					"\t</div>\n" +
 					"  </body>\n" +
 					"</html>";
-			wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+			wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
 			rl.setVisibility(View.VISIBLE);
 			wv2.setVisibility(View.GONE);
 		} else if(common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals("")) {
@@ -459,7 +466,11 @@ class Forecast
         final String rss = common.GetStringPref("FORECAST_URL", "");
         if(rss.equals(""))
         {
-	        wv1.loadDataWithBaseURL(null, "<html><body>Forecast URL not set, edit settings.txt to change</body></html>", "text/html", "utf-8", null);
+        	String html = "<html>";
+        	if(dark_theme)
+        		html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+        	html += "<body>Forecast URL not set, edit settings.txt to change</body></html>";
+	        wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
 	        return;
         }
 
@@ -631,19 +642,34 @@ class Forecast
 
     private void updateForecast(String bits, String desc)
     {
-        final String fc = "<html><body style='text-align:center'>"  + bits + "</body></html>";
+        String tmpfc = "<html>";
+        if(dark_theme)
+        	tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+        tmpfc += "<body style='text-align:center'>"  + bits + "</body></html>";
+
+        final String fc = tmpfc;
 
         wv2.post(new Runnable()
         {
             @Override
             public void run()
             {
-                wv2.loadDataWithBaseURL(null, fc, "text/html", "utf-8", null);
+                wv2.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
             }
         });
 
         TextView tv1 = rootView.findViewById(R.id.forecast);
-        tv1.setText(desc);
+        if(!dark_theme)
+        {
+	        tv1.setTextColor(0xff000000);
+	        tv1.setBackgroundColor(0xffffffff);
+	        im.setBackgroundColor(0xffffffff);
+        } else {
+	        tv1.setTextColor(0xffffffff);
+	        tv1.setBackgroundColor(0xff000000);
+	        im.setBackgroundColor(0xff000000);
+        }
+	    tv1.setText(desc);
 
 	    switch(common.GetStringPref("fctype", "yahoo").toLowerCase())
 	    {

@@ -44,4 +44,5 @@
     <string name="bgColour">Widget Background Colour Picker</string>
     <string name="indoor_readings">Show Indoor Readings?</string>
     <string name="update_over_wifi">Only update over wifi?</string>
+    <string name="use_dark_theme">Use Dark Theme?</string>
 </resources>

@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.webkit.WebView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -25,10 +26,13 @@ class Stats
     private View rootView;
     private WebView wv;
     private SeekBar seekBar;
+    private boolean dark_theme;
+	private LinearLayout ll1;
 
 	Stats(Common common)
     {
         this.common = common;
+	    dark_theme = common.GetBoolPref("dark_theme", false);
     }
 
     View myStats(LayoutInflater inflater, ViewGroup container)
@@ -88,9 +92,19 @@ class Stats
 		    }
 	    });
 
+	    ll1 = rootView.findViewById(R.id.ll1);
+
 	    seekBar = rootView.findViewById(R.id.pageZoom);
 	    seekBar.setProgress(common.GetIntPref("seekBar", 10));
 
+	    if(dark_theme)
+	    {
+		    seekBar.setBackgroundColor(0xff000000);
+		    ll1.setBackgroundColor(0xff000000);
+	    } else {
+		    seekBar.setBackgroundColor(0xffffffff);
+		    ll1.setBackgroundColor(0xffffffff);
+	    }
 	    seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
 	    {
 		    @Override
@@ -164,6 +178,17 @@ class Stats
     {
         if(!tv.getText().toString().equals(txt))
             tv.setText(txt);
+
+	    if(!dark_theme)
+	    {
+		    tv.setTextColor(0xff000000);
+		    tv.setBackgroundColor(0xffffffff);
+		    Common.LogMessage("no dark theme");
+	    } else {
+		    tv.setTextColor(0xffffffff);
+		    tv.setBackgroundColor(0xff000000);
+		    Common.LogMessage("dark theme");
+	    }
     }
 
     private String convert(String cur)
@@ -250,7 +275,10 @@ class Stats
 	    String stmp;
 	    StringBuilder sb = new StringBuilder();
 
-	    String header = "<html><body style='text-align:center; transform: scale(" + p + "); transform-origin: 0 0;'>";
+	    String header = "<html>";
+	    if(dark_theme)
+	    	header += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+	    header += "<body style='text-align:center; transform: scale(" + p + "); transform-origin: 0 0;'>";
 	    String footer = "</body></html>";
 
 	    sb.append(header);

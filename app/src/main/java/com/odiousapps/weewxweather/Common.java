@@ -20,7 +20,6 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.os.Environment;
 import android.util.Base64;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -34,7 +33,6 @@ import org.jsoup.select.Elements;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Field;
@@ -413,7 +411,7 @@ class Common
 				Elements div = doc.select("div");
 				for (j = 0; j < div.size(); j++)
 				{
-					String date = "", text = "", img_url = "", encoded, temp = "", pop = "";
+					String date, text = "", img_url = "", encoded, temp = "", pop = "";
 
 					if (div.get(j).className().contains("greybkgrd"))
 					{
@@ -423,69 +421,52 @@ class Common
 
 					if(div.get(j).toString().contains("div-row-head"))
 					{
-						if(div.get(j).toString().contains("<a "))
-						{
-							date = div.get(j).select("a").html();
-						} else {
-							try
-							{
-								if(!div.get(j).select("div").html().contains("Night"))
-									date = div.get(j).select("div").select("strong").outerHtml().split("<strong title=\"", 2)[1].split("\">", 2)[0].trim();
-								else
-									date = "Night";
+						if(div.get(j).select("div").html().contains("Tonight"))
+							date = "Tonight";
+						else if(div.get(j).select("div").html().contains("Night"))
+							date = "Night";
+						else
+							date = div.get(j).html().split("<strong title=\"", 2)[1].split("\">", 2)[0].trim();
 
-								//LogMessage("date = " + date);
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
-						}
-					}
+						//LogMessage("date = " + date);
+					} else
+						continue;
 
 					j++;
 
-					if(div.get(j).toString().contains("div-row-data"))
+					if(j >= div.size())
 					{
-						if(metric)
-							temp = div.get(j).select("div").select("span").html().split("<abbr")[0].trim() + "C";
-						else
-							temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].trim() + "F";
-						text = div.get(j).select("div").select("img").outerHtml().split("alt=\"", 2)[1].split("\"", 2)[0].trim();
-						img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src=\"", 2)[1].split("\"", 2)[0].trim();
-						pop = div.get(j).select("div").select("small").html().trim();
+						LogMessage("continue");
+						continue;
+					}
+
+					try
+					{
+						//LogMessage(div.get(j).html());
+						if (div.outerHtml().contains("div-row-data"))
+						{
+							if (metric)
+								temp = div.get(j).select("div").select("span").html().split("<abbr")[0].trim() + "C";
+							else
+								temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].trim() + "F";
+							text = div.get(j).select("div").select("img").outerHtml().split("alt=\"", 2)[1].split("\"", 2)[0].trim();
+							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src=\"", 2)[1].split("\"", 2)[0].trim();
+							pop = div.get(j).select("div").select("small").html().trim();
+						}
+					} catch (Exception e) {
+						LogMessage("hmmm 2 == " + div.html());
+						e.printStackTrace();
+						System.exit(0);
 					}
 
 					BitmapFactory.Options options = new BitmapFactory.Options();
 					options.inJustDecodeBounds = false;
 					Bitmap bmp = null;
 
-					final String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "\\.png");
-					//final File myFile = new File(file, fileName);
+					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "\\.png");
+					//LogMessage("fileName == " + fileName);
 
-					try
-					{
-						Class res = R.drawable.class;
-						Field field = res.getField(fileName.substring(0, fileName.length() - 4));
-						int drawableId = field.getInt(null);
-						if(drawableId != 0)
-							bmp = BitmapFactory.decodeResource(context.getResources(), drawableId, options);
-					} catch (Exception e) {
-						//LogMessage("Failure to get drawable id.");
-					}
-
-					if (bmp == null)
-					{
-						encoded = img_url;
-					} else {
-						ByteArrayOutputStream stream = new ByteArrayOutputStream();
-						bmp.compress(Bitmap.CompressFormat.PNG, 9, stream);
-						byte[] byteArray = stream.toByteArray();
-						bmp.recycle();
-
-						// https://stackoverflow.com/questions/9224056/android-bitmap-to-base64-string
-						encoded = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.DEFAULT);
-					}
-
-					tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + encoded + "'></td>";
+					tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
 					out.append(tmp);
 
 					tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
@@ -1345,7 +1326,7 @@ class Common
 			    str.append(stmp);
 		    }
 
-		    Common.LogMessage("finished building forecast: " + str.toString());
+		    //Common.LogMessage("finished building forecast: " + str.toString());
 		    return new String[]{str.toString(), desc};
 	    } catch (Exception e) {
 		    e.printStackTrace();

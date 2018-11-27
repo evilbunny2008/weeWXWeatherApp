@@ -38,16 +38,29 @@ class Weather
     private Common common;
     private View rootView;
     private WebView wv;
+    private boolean dark_theme;
 
     Weather(Common common)
     {
         this.common = common;
+	    dark_theme = common.GetBoolPref("dark_theme", false);
     }
 
     private void checkFields(TextView tv, String txt)
     {
         if(!tv.getText().toString().equals(txt))
             tv.setText(txt);
+
+        if(!dark_theme)
+        {
+	        tv.setTextColor(0xff000000);
+	        tv.setBackgroundColor(0xffffffff);
+	        Common.LogMessage("no dark theme");
+        } else {
+	        tv.setTextColor(0xffffffff);
+	        tv.setBackgroundColor(0xff000000);
+	        Common.LogMessage("dark theme");
+        }
     }
 
     private View updateFields()
@@ -98,7 +111,11 @@ class Weather
 	    String stmp;
 	    StringBuilder sb = new StringBuilder();
 
-	    String header = "<html><body>";
+	    String header;
+	    if(!dark_theme)
+	    	header = "<html><body>";
+	    else
+	    	header = "<html><head><style>body{color: #fff; background-color: #000;}</style></head><body>";
 	    String footer = "</body></html>";
 	    sb.append(header);
 
@@ -296,17 +313,21 @@ class Weather
 					    return;
 				    }
 
-				    final String html = "<!DOCTYPE html>\n" +
+				    String tmphtml = "<!DOCTYPE html>\n" +
 						    "<html>\n" +
 						    "  <head>\n" +
 						    "    <meta charset='utf-8'>\n" +
-						    "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" +
-						    "  </head>\n" +
+						    "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
+				    if(dark_theme)
+					    tmphtml += "<style>body{color: #fff; background-color: #000;}</style>";
+
+				    tmphtml += "  </head>\n" +
 						    "  <body>\n" +
 						    "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
 						    "\tsrc='file://" + radar + "'>\n" +
 						    "  </body>\n" +
 						    "</html>";
+				    final String html = tmphtml;
 				    wv.post(new Runnable()
 				    {
 					    @Override
@@ -320,7 +341,10 @@ class Weather
 				    wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
 				    break;
 			    default:
-				    String tmphtml = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
+				    tmphtml = "<html>";
+				    if(dark_theme)
+				    	tmphtml = "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    tmphtml += "<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
 				    wv.loadDataWithBaseURL(null, tmphtml, "text/html", "utf-8", null);
 				    break;
 		    }
@@ -335,7 +359,14 @@ class Weather
 				    if (content == null || content.length <= 0)
 					    return;
 				    String yahoo = "<img src='purple.png' height='29px'/><br/>";
-				    final String fc = "<html><body style='text-align:center'>" + yahoo + content[0] + "</body></html>";
+
+				    String tmpfc = "<html>";
+				    if(dark_theme)
+				    	tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    tmpfc += "<body style='text-align:center'>" + yahoo + content[0] + "</body></html>";
+
+				    final String fc = tmpfc;
+
 				    wv.post(new Runnable()
 				    {
 					    @Override
@@ -353,7 +384,11 @@ class Weather
 					    return;
 
 				    String wz = "<img src='wz.png' height='29px'/><br/>";
-				    final String fc = "<html><body style='text-align:center'>" + wz + content[0] + "</body></html>";
+				    String tmpfc = "<html>";
+				    if(dark_theme)
+				    	tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    tmpfc += "<body style='text-align:center'>" + wz + content[0] + "</body></html>";
+				    final String fc = tmpfc;
 
 				    wv.post(new Runnable()
 				    {
@@ -372,7 +407,12 @@ class Weather
 					    return;
 
 				    String yrno = "<img src='yrno.png' height='29px'/><br/>";
-				    final String fc = "<html><body style='text-align:center'>" + yrno + content[0] + "</body></html>";
+				    String tmpfc = "<html>";
+				    if(dark_theme)
+					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    tmpfc += "<body style='text-align:center'>" + yrno + content[0] + "</body></html>";
+
+				    final String fc = tmpfc;
 
 				    wv.post(new Runnable()
 				    {
@@ -391,7 +431,12 @@ class Weather
 			    		return;
 
 				    String bom = "<img src='bom.png' height='29px'/><br/>";
-				    final String fc = "<html><body style='text-align:center'>" + bom + content[0] + "</body></html>";
+				    String tmpfc = "<html>";
+				    if(dark_theme)
+					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+					tmpfc += "<body style='text-align:center'>" + bom + content[0] + "</body></html>";
+
+					final String fc = tmpfc;
 
 				    wv.post(new Runnable()
 				    {
@@ -410,7 +455,12 @@ class Weather
 					    return;
 
 				    String wmo = "<img src='wmo.png' height='29px'/><br/>";
-				    final String fc = "<html><body style='text-align:center'>" + wmo + content[0] + "</body></html>";
+				    String tmpfc = "<html>";
+				    if(dark_theme)
+					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    tmpfc += "<body style='text-align:center'>" + wmo + content[0] + "</body></html>";
+
+				    final String fc = tmpfc;
 
 				    wv.post(new Runnable()
 				    {
@@ -429,7 +479,12 @@ class Weather
 					    return;
 
 				    String wgov = "<img src='wgov.png' height='29px'/><br/>";
-				    final String fc = "<html><body style='text-align:center'>" + wgov + content[0] + "</body></html>";
+				    String tmpfc = "<html>";
+				    if(dark_theme)
+					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+					tmpfc += "<body style='text-align:center'>" + wgov + content[0] + "</body></html>";
+
+					final String fc = tmpfc;
 
 				    wv.post(new Runnable()
 				    {
@@ -448,7 +503,11 @@ class Weather
 					    return;
 
 				    String wca = "<img src='wca.png' height='29px'/><br/>";
-				    final String fc = "<html><body style='text-align:center'>" + wca + content[0] + "</body></html>";
+				    String tmpfc = "<html>";
+				    if(dark_theme)
+				    	tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    tmpfc += "<body style='text-align:center'>" + wca + content[0] + "</body></html>";
+				    final String fc = tmpfc;
 
 				    wv.post(new Runnable()
 				    {
@@ -666,6 +725,7 @@ class Weather
                 if(action != null && action.equals(Common.UPDATE_INTENT))
                 {
                     Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
+	                dark_theme = common.GetBoolPref("dark_theme", false);
                     updateFields();
                     reloadWebView();
                     reloadForecast();

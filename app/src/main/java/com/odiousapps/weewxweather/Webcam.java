@@ -30,10 +30,12 @@ class Webcam
     private ImageView iv;
     private static Bitmap bm;
     private SwipeRefreshLayout swipeLayout;
+    private boolean dark_theme = false;
 
     Webcam(Common common)
     {
         this.common = common;
+	    dark_theme = common.GetBoolPref("dark_theme", false);
     }
 
     View myWebcam(LayoutInflater inflater, ViewGroup container)
@@ -41,7 +43,10 @@ class Webcam
         View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
         iv = rootView.findViewById(R.id.webcam);
 
-        iv.setOnLongClickListener(new View.OnLongClickListener()
+	    if(dark_theme)
+		    iv.setBackgroundColor(0xff000000);
+
+	    iv.setOnLongClickListener(new View.OnLongClickListener()
         {
             @Override
             public boolean onLongClick(View v)

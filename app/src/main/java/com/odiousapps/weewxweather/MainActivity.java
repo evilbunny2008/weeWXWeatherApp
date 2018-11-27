@@ -83,8 +83,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private Button b3;
 	private boolean showSettings = true;
 	private Spinner s1;
-	private Switch show_indoor, metric_forecasts;
+	private Switch show_indoor, metric_forecasts, dark_theme;
 	private TextView tv;
+	private boolean use_dark_theme = false;
 
 	private ProgressDialog dialog;
 
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.main_activity);
 
         common = new Common(this);
+        use_dark_theme = common.GetBoolPref("dark_theme");
 
 	    mDrawerLayout = findViewById(R.id.drawer_layout);
 
@@ -137,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    metric_forecasts = findViewById(R.id.metric_forecasts);
 	    show_indoor = findViewById(R.id.show_indoor);
+	    dark_theme = findViewById(R.id.dark_theme);
 
 	    b1 = findViewById(R.id.button);
 	    b2 = findViewById(R.id.deleteData);
@@ -286,6 +289,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    metric_forecasts.setChecked(common.GetBoolPref("metric", true));
 	    show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
+	    dark_theme.setChecked(common.GetBoolPref("dark_theme", false));
 
 	    Switch wifi_only = findViewById(R.id.wifi_only);
 	    wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
@@ -304,10 +308,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "wouldn't be possible otherwise.<br><br>" +
 			    "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
 			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a><br><br>" +
-			    "Forecasts supplied by <a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, <a href='https://weatherzone.com.au'>weatherzone</a> and " +
+			    "Forecasts supplied by <a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, <a href='https://weatherzone.com.au'>weatherzone</a>, " +
 			    "<a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a>, " +
-			    "<a href='https://bom.gov.au'>Bureau of Meteorology</a>, <a href='https://www.weather.gov'>Weather.gov</a> and " +
-			    "<a href='https://worldweather.wmo.int/en/home.html'>World Meteorology Organisation</a>" +
+			    "<a href='https://bom.gov.au'>Bureau of Meteorology</a>, <a href='https://www.weather.gov'>Weather.gov</a>, " +
+			    "<a href='https://worldweather.wmo.int/en/home.html'>World Meteorology Organisation</a> and " +
+			    "<a href='https://weather.gc.ca'>Environment Canada</a>" +
 			    "<br><br>" +
 			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
@@ -410,6 +415,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("fgColour");
 						common.RemovePref("bgColour");
 						common.RemovePref("bomtown");
+						common.RemovePref("dark_theme");
 						common.commit();
 
 						File file = new File(common.context.getFilesDir(), "webcam.jpg");
@@ -873,6 +879,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				common.SetBoolPref("metric", metric_forecasts.isChecked());
 				common.SetBoolPref("showIndoor", show_indoor.isChecked());
+				common.SetBoolPref("dark_theme", dark_theme.isChecked());
 				common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
 
 				common.SendIntents();
