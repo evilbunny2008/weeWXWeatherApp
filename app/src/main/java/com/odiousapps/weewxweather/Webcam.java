@@ -267,8 +267,14 @@ class Webcam
                 Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
                 if(action != null && action.equals(Common.UPDATE_INTENT))
-                    reloadWebView(true);
-                else if(action != null && action.equals(Common.EXIT_INTENT))
+                {
+	                dark_theme = common.GetBoolPref("dark_theme", false);
+	                if(dark_theme)
+		                iv.setBackgroundColor(0xff000000);
+	                else
+		                iv.setBackgroundColor(0xffffffff);
+	                reloadWebView(true);
+                } else if(action != null && action.equals(Common.EXIT_INTENT))
                     doPause();
             } catch (Exception e) {
                 e.printStackTrace();

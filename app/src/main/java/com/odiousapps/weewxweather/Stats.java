@@ -27,7 +27,7 @@ class Stats
     private WebView wv;
     private SeekBar seekBar;
     private boolean dark_theme;
-	private LinearLayout ll1;
+    private LinearLayout ll1;
 
 	Stats(Common common)
     {
@@ -157,11 +157,23 @@ class Stats
         {
             try
             {
-                Common.LogMessage("We have a hit, so we should probably update the screen.");
-                String action = intent.getAction();
-                if(action != null && action.equals(Common.UPDATE_INTENT))
-                    updateFields();
-                else if(action != null && action.equals(Common.EXIT_INTENT))
+	            Common.LogMessage("We have a hit, so we should probably update the screen.");
+	            String action = intent.getAction();
+	            if (action != null && action.equals(Common.UPDATE_INTENT))
+	            {
+		            dark_theme = common.GetBoolPref("dark_theme", false);
+
+		            if(dark_theme)
+		            {
+			            seekBar.setBackgroundColor(0xff000000);
+			            ll1.setBackgroundColor(0xff000000);
+		            } else {
+			            seekBar.setBackgroundColor(0xffffffff);
+			            ll1.setBackgroundColor(0xffffffff);
+		            }
+
+		            updateFields();
+	            } else if(action != null && action.equals(Common.EXIT_INTENT))
                     doPause();
             } catch (Exception e) {
                 e.printStackTrace();

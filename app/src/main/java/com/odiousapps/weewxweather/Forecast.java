@@ -409,6 +409,8 @@ class Forecast
                 String action = intent.getAction();
                 if(action != null && action.equals(Common.UPDATE_INTENT))
                 {
+	                dark_theme = common.GetBoolPref("dark_theme", false);
+
 	                if (common.GetBoolPref("radarforecast", true))
 	                {
 		                Common.LogMessage("Displaying forecast");
@@ -637,6 +639,13 @@ class Forecast
 				    updateForecast(content[0], content[1]);
 			    break;
 		    }
+		    case "metoffice.gov.uk":
+		    {
+			    String[] content = common.processMET(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
 	    }
     }
 
@@ -694,6 +703,9 @@ class Forecast
 		    case "weather.gc.ca":
 			    im.setImageResource(R.drawable.wca);
 			    break;
+		    case "metoffice.gov.uk":
+				im.setImageResource(R.drawable.met);
+				break;
 	    }
     }
 }

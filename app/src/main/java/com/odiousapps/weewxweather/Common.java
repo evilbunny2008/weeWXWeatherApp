@@ -339,6 +339,83 @@ class Common
 		return views;
 	}
 
+	String[] processMET(String data)
+	{
+		return processMET(data, false);
+	}
+
+	String[] processMET(String data, boolean showHeader)
+	{
+		if(data == null || data.equals(""))
+			return null;
+
+		//boolean metric = GetBoolPref("metric", true);
+		long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
+		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+		String lastupdate = sdf.format(mdate);
+
+		String tmp;
+		StringBuilder out = new StringBuilder();
+		String desc;
+
+		try
+		{
+			desc = data.split("<title>", 2)[1].split(" weather - Met Office</title>",2)[0].trim();
+
+			tmp = "<div style='font-size:12pt;'>" + lastupdate + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			String[] forecasts = data.split("<ul id=\"dayNav\"", 2)[1].split("</ul>", 2)[0].split("<li");
+			for(int i = 1; i < forecasts.length; i++)
+			{
+				String date = forecasts[i].split("data-tab-id=\"", 2)[1].split("\"")[0].trim();
+
+				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+				mdate = sdf.parse(date).getTime();
+				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				date = sdf.format(mdate);
+
+				String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class=\"icon\"")[1].split("src=\"")[1].split("\">")[0].trim();
+				String fileName =  "met" + icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("\\.svg$", "\\.png");
+				String min = forecasts[i].split("<span class=\"tab-temp-low\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
+				String max = forecasts[i].split("<span class=\"tab-temp-high\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
+				String text = forecasts[i].split("<div class=\"summary-text", 2)[1].split("\">", 3)[2]
+									.split("</div>", 2)[0].replaceAll("</span>", "").replaceAll("<span>", "");
+
+				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td style='width:80%;'>" + text + "</td>";
+				out.append(tmp);
+
+				tmp = "<td style='text-align:right;vertical-align:top;'>" + min + "</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+
+			out.append("</table>");
+			//LogMessage(out.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{out.toString(), desc};
+	}
+
 	String[] processWCA(String data)
 	{
 		return processWCA(data, false);
@@ -357,7 +434,7 @@ class Common
 		try
 		{
 			String obs = data.split("Forecast issued: ", 2)[1].trim();
-			obs = obs.split("</span>", 2)[0].trim().replaceAll(" PM ", " pm ").replaceAll(" AM ", " am ");
+			obs = obs.split("</span>", 2)[0].trim();
 			//LogMessage("obs == " + obs);
 
 			int i = 0, j = obs.indexOf(":");
@@ -411,7 +488,7 @@ class Common
 				Elements div = doc.select("div");
 				for (j = 0; j < div.size(); j++)
 				{
-					String date, text = "", img_url = "", encoded, temp = "", pop = "";
+					String date, text = "", img_url = "", temp = "", pop = "";
 
 					if (div.get(j).className().contains("greybkgrd"))
 					{
@@ -461,7 +538,6 @@ class Common
 
 					BitmapFactory.Options options = new BitmapFactory.Options();
 					options.inJustDecodeBounds = false;
-					Bitmap bmp = null;
 
 					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "\\.png");
 					//LogMessage("fileName == " + fileName);
@@ -884,8 +960,8 @@ class Common
 					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
-				if(!max.equals(""))
-					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "&deg;C</b></td></tr>";
+				if(!max.equals("&deg;C"))
+					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
 				else
 					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
 				out.append(tmp);
@@ -893,8 +969,8 @@ class Common
 				tmp = "<tr><td>" + text + "</td>";
 				out.append(tmp);
 
-				if(!min.equals(""))
-					tmp = "<td style='text-align:right;'>" + min + "&deg;C</td></tr>";
+				if(!min.equals("&deg;C"))
+					tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
 				else
 					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
 				out.append(tmp);

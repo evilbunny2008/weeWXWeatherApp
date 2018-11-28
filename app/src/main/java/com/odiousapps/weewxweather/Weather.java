@@ -236,7 +236,7 @@ class Weather
                 if(vibrator != null)
                     vibrator.vibrate(250);
                 Common.LogMessage("wv long press");
-                loadWebView();
+	            forceRefresh();
                 return true;
             }
         });
@@ -505,8 +505,31 @@ class Weather
 				    String wca = "<img src='wca.png' height='29px'/><br/>";
 				    String tmpfc = "<html>";
 				    if(dark_theme)
-				    	tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
 				    tmpfc += "<body style='text-align:center'>" + wca + content[0] + "</body></html>";
+				    final String fc = tmpfc;
+
+				    wv.post(new Runnable()
+				    {
+					    @Override
+					    public void run()
+					    {
+						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
+					    }
+				    });
+				    break;
+			    }
+			    case "metoffice.gov.uk":
+			    {
+				    String[] content = common.processMET(data);
+				    if(content == null || content.length <= 0)
+					    return;
+
+				    String logo = "<img src='met.png' height='29px'/><br/>";
+				    String tmpfc = "<html>";
+				    if(dark_theme)
+					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    tmpfc += "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 				    final String fc = tmpfc;
 
 				    wv.post(new Runnable()

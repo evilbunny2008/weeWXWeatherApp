@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private Spinner s1;
 	private Switch show_indoor, metric_forecasts, dark_theme;
 	private TextView tv;
-	private boolean use_dark_theme = false;
 
 	private ProgressDialog dialog;
 
@@ -102,7 +101,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.main_activity);
 
         common = new Common(this);
-        use_dark_theme = common.GetBoolPref("dark_theme");
 
 	    mDrawerLayout = findViewById(R.id.drawer_layout);
 
@@ -719,6 +717,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("fctype=" + fctype);
 								break;
 							case "weather.gc.ca":
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
+							case "metoffice.gov.uk":
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
