@@ -17,9 +17,11 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
+import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Environment;
 import android.util.Base64;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -33,13 +35,17 @@ import org.jsoup.select.Elements;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.lang.reflect.Field;
 import java.net.Authenticator;
 import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
 import java.net.URL;
+import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -337,6 +343,182 @@ class Common
 
 		views.setImageViewBitmap(R.id.widget, myBitmap);
 		return views;
+	}
+
+	String[] processBOM2(String data)
+	{
+		return processBOM2(data, false);
+	}
+
+	String[] processBOM2(String data, boolean showHeader)
+	{
+		if(data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		String desc;
+		String tmp;
+		StringBuilder out = new StringBuilder();
+
+		try
+		{
+			Document doc = Jsoup.parse(data);
+			desc = doc.title().split(" - Bureau of Meteorology")[0].trim();
+			String fcdiv = doc.select("div.forecasts").html();
+			String obs = doc.select("span").html().split("issued at ")[1].split("\\.", 2)[0].trim();
+
+			int i = 0, j = obs.indexOf(":");
+			String hour = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			String minute = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			String ampm = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			//String TZ = obs.substring(i, j);
+			i = j + 5;
+			j = obs.indexOf(" ", i);
+			//String DOW = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			String day = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			String month = obs.substring(i, j);
+			i = j + 1;
+			j = obs.length();
+			String year = obs.substring(i, j);
+
+			obs = hour + ":" + minute + " " + ampm + " " + day + " " + month + " " + year;
+
+			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
+			long mdate = sdf.parse(obs).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			obs = sdf.format(mdate);
+
+			tmp = "<div style='font-size:12pt;'>" + obs + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			String[] bits = fcdiv.split("<dl class=\"forecast-summary\">");
+			String bit = bits[1];
+			day = bit.split("<a href=\"", 2)[1].split("\">", 2)[1].split("</a>", 2)[0].trim();
+			String icon = "http://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
+			String min = "", max = "";
+
+			if(bit.contains("<dd class=\"max\">"))
+				max = bit.split("<dd class=\"max\">")[1].split("</dd>")[0].trim();
+
+			if(bit.contains("<dd class=\"min\">"))
+				min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
+
+			String text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
+
+			String fileName =  "bom2" + icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("-", "_");
+			fileName = checkImage(fileName, icon);
+
+			tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+			out.append(tmp);
+
+			tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
+			out.append(tmp);
+
+			max = max.replaceAll("°C", "").trim();
+			min = min.replaceAll("°C", "").trim();
+
+			if(metric)
+			{
+				max = max + "&deg;C";
+				min = min + "&deg;C";
+			} else {
+				max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+			}
+
+			if(!max.equals("&deg;C"))
+				tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
+			else
+				tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
+			out.append(tmp);
+
+			tmp = "<tr><td>" + text + "</td>";
+			out.append(tmp);
+
+			if(!min.equals("&deg;C"))
+				tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
+			else
+				tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
+			out.append(tmp);
+
+			if(showHeader)
+			{
+				tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+				out.append(tmp);
+			}
+
+			for(i = 2; i < bits.length; i++)
+			{
+				bit = bits[i];
+				day = bit.split("<a href=\"", 2)[1].split("\">", 2)[1].split("</a>", 2)[0].trim();
+				icon = "http://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
+				max = bit.split("<dd class=\"max\">")[1].split("</dd>")[0].trim();
+				min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
+				text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
+
+				fileName =  "bom2" + icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("-", "_");
+				fileName = checkImage(fileName, icon);
+
+				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
+				out.append(tmp);
+
+				max = max.replaceAll("°C", "").trim();
+				min = min.replaceAll("°C", "").trim();
+
+				if(metric)
+				{
+					max = max + "&deg;C";
+					min = min + "&deg;C";
+				} else {
+					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				}
+
+				if(!max.equals("&deg;C"))
+					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
+				else
+					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td>" + text + "</td>";
+				out.append(tmp);
+
+				if(!min.equals("&deg;C"))
+					tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
+				else
+					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+
+			out.append("</table>");
+			//System.exit(0);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{out.toString(), desc};
 	}
 
 	String[] processMET(String data)
@@ -1593,32 +1775,100 @@ class Common
 		LogMessage("failed_intent broadcast.");
 	}
 
-	// https://stackoverflow.com/questions/3103652/hash-string-via-sha-256-in-java
-/*
-	private static byte[] genSHA(String s)
+	private String checkImage(String fileName, String icon)
 	{
-		byte abyte0[];
 		try
 		{
-			MessageDigest messagedigest = MessageDigest.getInstance("MD5");
-			messagedigest.update(s.getBytes("UTF-8"));
-			abyte0 = messagedigest.digest();
-		} catch (Exception exception) {
-			return null;
+			Class res = R.drawable.class;
+			Field field = res.getField(fileName.substring(0, fileName.length() - 4));
+			int drawableId = field.getInt(null);
+			if(drawableId != 0)
+				return fileName;
+		} catch (Exception e) {
+			//LogMessage("Failure to get drawable id.");
 		}
-		return abyte0;
+
+		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		f = new File(f, fileName);
+		if(f.exists())
+			return f.getAbsolutePath();
+
+		LogMessage("File '" + fileName + "' isn't in drawable or in /sdcard, so will download and return: " + icon);
+		downloadImage(fileName, icon);
+
+		return icon;
 	}
 
-	private static String convertToHex(byte buf[])
+	private void downloadImage(final String fileName, final String imageURL)
 	{
-		if(buf == null)
-			return null;
+		Thread t = new Thread(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				if (fileName == null || fileName.equals("") || imageURL == null || imageURL.equals(""))
+					return;
 
-		return String.format("%032x", new java.math.BigInteger(1, buf));
+				Common.LogMessage("checking: " + imageURL);
+
+				try
+				{
+					File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+					if (!f.exists())
+						if (!f.mkdirs())
+							return;
+
+					f = new File(f, fileName);
+
+					if(f.exists())
+						return;
+
+					try
+					{
+						Class res = R.drawable.class;
+						Field field = res.getField(fileName.substring(0, fileName.length() - 4));
+						int drawableId = field.getInt(null);
+						if(drawableId != 0)
+							return;
+					} catch (Exception e) {
+						//LogMessage("Failure to get drawable id.");
+					}
+
+					LogMessage("f == " + f.getAbsolutePath());
+					LogMessage("imageURL == " + imageURL);
+
+					OutputStream outputStream = new FileOutputStream(f.getAbsolutePath());
+
+					URL url = new URL(imageURL);
+					URLConnection conn = url.openConnection();
+					conn.setDoOutput(true);
+					conn.connect();
+					InputStream input = conn.getInputStream();
+
+					int count;
+					byte data[] = new byte[1024];
+					while ((count = input.read(data)) != -1)
+						outputStream.write(data, 0, count);
+
+					input.close();
+					outputStream.flush();
+					outputStream.close();
+
+					if (f.exists() && f.isFile())
+					{
+						MediaScannerConnection.scanFile(context.getApplicationContext(), new String[]{f.getAbsolutePath()}, null, null);
+						context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(f)));
+					}
+				} catch (Exception e)
+				{
+					e.printStackTrace();
+				}
+			}
+		});
+
+		t.start();
 	}
 
-	// Thanks goes to the https://saratoga-weather.org folk for the base NOAA icons and code for dualimage.php
-*/
 	private Bitmap combineImage(Bitmap bmp1, String fnum, String snum)
 	{
 		try

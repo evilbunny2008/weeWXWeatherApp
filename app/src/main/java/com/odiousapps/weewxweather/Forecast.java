@@ -646,6 +646,13 @@ class Forecast
 				    updateForecast(content[0], content[1]);
 			    break;
 		    }
+		    case "bom2":
+		    {
+			    String[] content = common.processBOM2(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
 	    }
     }
 
@@ -706,6 +713,9 @@ class Forecast
 		    case "metoffice.gov.uk":
 				im.setImageResource(R.drawable.met);
 				break;
+		    case "bom2":
+			    im.setImageResource(R.drawable.bom);
+			    break;
 	    }
     }
 }
