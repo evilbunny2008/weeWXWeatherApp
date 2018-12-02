@@ -871,6 +871,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					}
 				}
 
+				if(forecast.equals(""))
+				{
+					common.SetIntPref("rssCheck", 0);
+					common.SetStringPref("forecastData", "");
+				}
+
 				common.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
 				common.SetIntPref("updateInterval", pos);
 				common.SetStringPref("BASE_URL", data);
@@ -888,7 +894,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetBoolPref("dark_theme", dark_theme.isChecked());
 				common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
 
-				common.SendIntents();
+				common.SendRefresh();
 				handlerDone.sendEmptyMessage(0);
 			}
 		});

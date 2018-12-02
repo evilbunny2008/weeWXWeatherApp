@@ -65,6 +65,7 @@ class Common
 	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36";
 
 	static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
+	static String REFRESH_INTENT = "com.odiousapps.weewxweather.REFRESH_INTENT";
 	static String TAB0_INTENT = "com.odiousapps.weewxweather.TAB0_INTENT";
 	static String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 	static String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
@@ -1181,6 +1182,9 @@ class Common
 
 	String[] processYR(String data, boolean showHeader)
 	{
+		if(data == null || data.equals(""))
+			return null;
+
 		//boolean metric = GetBoolPref("metric", true);
 		StringBuilder out = new StringBuilder();
 		String desc;
@@ -1294,6 +1298,8 @@ class Common
 	String[] processWZ(String data, boolean showHeader)
 	{
 		boolean metric = GetBoolPref("metric", true);
+		if(data == null || data.equals(""))
+			return null;
 
 		try
 		{
@@ -1469,6 +1475,8 @@ class Common
     String[] processYahoo(String data, boolean showHeader)
     {
 	    JSONObject json;
+	    if(data == null || data.equals(""))
+		    return null;
 
 	    try
 	    {
@@ -1606,6 +1614,14 @@ class Common
 		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
 		context.sendBroadcast(intent);
 		Common.LogMessage("widget intent broadcasted");
+	}
+
+	void SendRefresh()
+	{
+		Intent intent = new Intent();
+		intent.setAction(Common.REFRESH_INTENT);
+		context.sendBroadcast(intent);
+		Common.LogMessage("refresh_intent broadcast.");
 	}
 
 	void getWeather()

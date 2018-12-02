@@ -299,7 +299,11 @@ class Weather
 			    case "image":
 				    String radar = common.context.getFilesDir() + "/radar.gif";
 
-				    if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+				    File myFile = new File(radar);
+				    Common.LogMessage("myFile == " + myFile.getAbsolutePath());
+				    Common.LogMessage("myFile.exists() == " + myFile.exists());
+
+				    if (radar.equals("") || !myFile.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 				    {
 					    final String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
 					    wv.post(new Runnable()
@@ -338,19 +342,54 @@ class Weather
 				    });
 				    break;
 			    case "webpage":
-				    wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
+				    wv.post(new Runnable()
+				    {
+					    @Override
+					    public void run()
+					    {
+					    	wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
+					    }
+				    });
 				    break;
 			    default:
 				    tmphtml = "<html>";
 				    if(dark_theme)
 				    	tmphtml = "<head><style>body{color: #fff; background-color: #000;}</style></head>";
 				    tmphtml += "<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
-				    wv.loadDataWithBaseURL(null, tmphtml, "text/html", "utf-8", null);
+				    final String shtml = tmphtml;
+				    wv.post(new Runnable()
+				    {
+					    @Override
+					    public void run()
+					    {
+						    wv.loadDataWithBaseURL(null, shtml, "text/html", "utf-8", null);
+					    }
+				    });
 				    break;
 		    }
 	    } else {
 		    String fctype = common.GetStringPref("fctype", "Yahoo");
 		    String data = common.GetStringPref("forecastData", "");
+
+		    if(data.equals(""))
+		    {
+			    String tmphtml = "<html>";
+			    if (dark_theme)
+				    tmphtml = "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+			    tmphtml += "<body>Forecast URL not set or is still downloading. You can go to settings to change.</body></html>";
+			    final String shtml = tmphtml;
+			    wv.post(new Runnable()
+			    {
+				    @Override
+				    public void run()
+				    {
+					    wv.loadDataWithBaseURL(null, shtml, "text/html", "utf-8", null);
+				    }
+			    });
+
+			    return;
+		    }
+
 		    switch (fctype.toLowerCase())
 		    {
 			    case "yahoo":
@@ -361,8 +400,8 @@ class Weather
 				    String yahoo = "<img src='purple.png' height='29px'/><br/>";
 
 				    String tmpfc = "<html>";
-				    if(dark_theme)
-				    	tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    if (dark_theme)
+					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
 				    tmpfc += "<body style='text-align:center'>" + yahoo + content[0] + "</body></html>";
 
 				    final String fc = tmpfc;
@@ -385,8 +424,8 @@ class Weather
 
 				    String wz = "<img src='wz.png' height='29px'/><br/>";
 				    String tmpfc = "<html>";
-				    if(dark_theme)
-				    	tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    if (dark_theme)
+					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
 				    tmpfc += "<body style='text-align:center'>" + wz + content[0] + "</body></html>";
 				    final String fc = tmpfc;
 
@@ -408,7 +447,7 @@ class Weather
 
 				    String yrno = "<img src='yrno.png' height='29px'/><br/>";
 				    String tmpfc = "<html>";
-				    if(dark_theme)
+				    if (dark_theme)
 					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
 				    tmpfc += "<body style='text-align:center'>" + yrno + content[0] + "</body></html>";
 
@@ -426,17 +465,17 @@ class Weather
 			    }
 			    case "bom.gov.au":
 			    {
-			    	String[] content = common.processBOM(data);
-			    	if(content == null || content.length <= 0)
-			    		return;
+				    String[] content = common.processBOM(data);
+				    if (content == null || content.length <= 0)
+					    return;
 
 				    String bom = "<img src='bom.png' height='29px'/><br/>";
 				    String tmpfc = "<html>";
-				    if(dark_theme)
+				    if (dark_theme)
 					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-					tmpfc += "<body style='text-align:center'>" + bom + content[0] + "</body></html>";
+				    tmpfc += "<body style='text-align:center'>" + bom + content[0] + "</body></html>";
 
-					final String fc = tmpfc;
+				    final String fc = tmpfc;
 
 				    wv.post(new Runnable()
 				    {
@@ -447,16 +486,16 @@ class Weather
 					    }
 				    });
 				    break;
-		        }
+			    }
 			    case "wmo.int":
 			    {
 				    String[] content = common.processWMO(data);
-				    if(content == null || content.length <= 0)
+				    if (content == null || content.length <= 0)
 					    return;
 
 				    String wmo = "<img src='wmo.png' height='29px'/><br/>";
 				    String tmpfc = "<html>";
-				    if(dark_theme)
+				    if (dark_theme)
 					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
 				    tmpfc += "<body style='text-align:center'>" + wmo + content[0] + "</body></html>";
 
@@ -475,16 +514,16 @@ class Weather
 			    case "weather.gov":
 			    {
 				    String[] content = common.processWGOV(data);
-				    if(content == null || content.length <= 0)
+				    if (content == null || content.length <= 0)
 					    return;
 
 				    String wgov = "<img src='wgov.png' height='29px'/><br/>";
 				    String tmpfc = "<html>";
-				    if(dark_theme)
+				    if (dark_theme)
 					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-					tmpfc += "<body style='text-align:center'>" + wgov + content[0] + "</body></html>";
+				    tmpfc += "<body style='text-align:center'>" + wgov + content[0] + "</body></html>";
 
-					final String fc = tmpfc;
+				    final String fc = tmpfc;
 
 				    wv.post(new Runnable()
 				    {
@@ -499,12 +538,12 @@ class Weather
 			    case "weather.gc.ca":
 			    {
 				    String[] content = common.processWCA(data);
-				    if(content == null || content.length <= 0)
+				    if (content == null || content.length <= 0)
 					    return;
 
 				    String wca = "<img src='wca.png' height='29px'/><br/>";
 				    String tmpfc = "<html>";
-				    if(dark_theme)
+				    if (dark_theme)
 					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
 				    tmpfc += "<body style='text-align:center'>" + wca + content[0] + "</body></html>";
 				    final String fc = tmpfc;
@@ -522,12 +561,12 @@ class Weather
 			    case "metoffice.gov.uk":
 			    {
 				    String[] content = common.processMET(data);
-				    if(content == null || content.length <= 0)
+				    if (content == null || content.length <= 0)
 					    return;
 
 				    String logo = "<img src='met.png' height='29px'/><br/>";
 				    String tmpfc = "<html>";
-				    if(dark_theme)
+				    if (dark_theme)
 					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
 				    tmpfc += "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 				    final String fc = tmpfc;
@@ -545,12 +584,12 @@ class Weather
 			    case "bom2":
 			    {
 				    String[] content = common.processBOM2(data);
-				    if(content == null || content.length <= 0)
+				    if (content == null || content.length <= 0)
 					    return;
 
 				    String bom = "<img src='bom.png' height='29px'/><br/>";
 				    String tmpfc = "<html>";
-				    if(dark_theme)
+				    if (dark_theme)
 					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
 				    tmpfc += "<body style='text-align:center'>" + bom + content[0] + "</body></html>";
 
@@ -584,6 +623,21 @@ class Weather
 		    return;
 
 	    final String rss = common.GetStringPref("FORECAST_URL", "");
+
+	    if(rss.equals(""))
+	    {
+		    final String html = "<html><body>Forecast URL not set or is still downloading. You can go to settings to change.</body></html>";
+		    wv.post(new Runnable()
+		    {
+			    @Override
+			    public void run()
+			    {
+				    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+			    }
+		    });
+
+		    return;
+	    }
 
 	    Common.LogMessage("forecast checking: " + rss);
 
@@ -746,6 +800,7 @@ class Weather
 	    IntentFilter filter = new IntentFilter();
 	    filter.addAction(Common.UPDATE_INTENT);
 	    filter.addAction(Common.EXIT_INTENT);
+	    filter.addAction(Common.REFRESH_INTENT);
 	    common.context.registerReceiver(serviceReceiver, filter);
 	    Common.LogMessage("weather.java -- adding a new filter");
     }
@@ -771,11 +826,15 @@ class Weather
                 String action = intent.getAction();
                 if(action != null && action.equals(Common.UPDATE_INTENT))
                 {
-                    Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
+	                Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
 	                dark_theme = common.GetBoolPref("dark_theme", false);
-                    updateFields();
-                    reloadWebView();
-                    reloadForecast();
+	                updateFields();
+	                reloadWebView();
+	                reloadForecast();
+                } else if(action != null && action.equals(Common.REFRESH_INTENT)) {
+	                Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
+	                dark_theme = common.GetBoolPref("dark_theme", false);
+	                loadWebView();
                 } else if(action != null && action.equals(Common.EXIT_INTENT)) {
                     doPause();
                 }

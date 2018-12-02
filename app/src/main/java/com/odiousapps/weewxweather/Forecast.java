@@ -383,6 +383,7 @@ class Forecast
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Common.UPDATE_INTENT);
 		filter.addAction(Common.EXIT_INTENT);
+		filter.addAction(Common.REFRESH_INTENT);
 		common.context.registerReceiver(serviceReceiver, filter);
 		Common.LogMessage("forecast.java -- registerReceiver");
 	}
@@ -428,6 +429,9 @@ class Forecast
 		                rl.setVisibility(View.VISIBLE);
 		                wv2.setVisibility(View.GONE);
 	                }
+                } else if(action != null && action.equals(Common.REFRESH_INTENT)) {
+	                getForecast();
+	                reloadWebView(false);
                 } else if(action != null && action.equals(Common.EXIT_INTENT)) {
                     doPause();
                 }
@@ -468,11 +472,12 @@ class Forecast
         final String rss = common.GetStringPref("FORECAST_URL", "");
         if(rss.equals(""))
         {
-        	String html = "<html>";
-        	if(dark_theme)
-        		html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-        	html += "<body>Forecast URL not set, edit settings.txt to change</body></html>";
+	        String html = "<html>";
+	        if (dark_theme)
+		        html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+	        html += "<body>Forecast URL not set, edit settings.txt to change</body></html>";
 	        wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
+	        wv2.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
 	        return;
         }
 
@@ -573,11 +578,21 @@ class Forecast
         String data;
         String fctype = common.GetStringPref("fctype", "Yahoo");
 
-	    swipeLayout.setRefreshing(false);
+	    data = common.GetStringPref("forecastData", "");
+	    if(data.equals(""))
+	    {
+		    String html = "<html>";
+		    if(dark_theme)
+			    html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+		    html += "<body>Forecast URL not set, edit settings.txt to change</body></html>";
 
-        try
+		    wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+		    swipeLayout.setRefreshing(false);
+		    return;
+	    }
+
+	    try
         {
-	        data = common.GetStringPref("forecastData", "");
 	        while (data.equals(""))
 	        {
 		        Thread.sleep(1000);
@@ -654,6 +669,8 @@ class Forecast
 			    break;
 		    }
 	    }
+
+	    swipeLayout.setRefreshing(false);
     }
 
     private void updateForecast(String bits, String desc)
