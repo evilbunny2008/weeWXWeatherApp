@@ -49,6 +49,7 @@ import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 import fr.arnaudguyon.xmltojsonlib.XmlToJson;
@@ -2109,5 +2110,140 @@ class Common
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	String downloadSettings(String url) throws Exception
+	{
+		Uri uri = Uri.parse(url);
+		Common.LogMessage("inigo-settings.txt == " + url);
+		SetStringPref("SETTINGS_URL", url);
+		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
+		{
+			final String[] UC = uri.getUserInfo().split(":");
+			Common.LogMessage("uri username = " + uri.getUserInfo());
+
+			if (UC != null && UC.length > 1)
+			{
+				Authenticator.setDefault(new Authenticator()
+				{
+					protected PasswordAuthentication getPasswordAuthentication()
+					{
+						return new PasswordAuthentication(UC[0], UC[1].toCharArray());
+					}
+				});
+			}
+		}
+
+		URL settings = new URL(url);
+		URLConnection conn = settings.openConnection();
+		conn.setDoOutput(true);
+		conn.connect();
+
+		BufferedReader in = new BufferedReader(new InputStreamReader(settings.openStream()));
+		StringBuilder sb = new StringBuilder();
+		String line;
+		while ((line = in.readLine()) != null)
+		{
+			line += "\n";
+			sb.append(line);
+		}
+		in.close();
+
+		return sb.toString().replaceAll("[^\\p{ASCII}]+$", "").trim();
+	}
+
+	String downloadRADAR(String radar) throws Exception
+	{
+		return downloadRADAR(radar, false);
+	}
+
+	String downloadRADAR(String radar, boolean force) throws Exception
+	{
+		if(!checkWifiOnAndConnected() && !force)
+		{
+			LogMessage("Not on wifi, skipping image download.");
+			return null;
+		}
+
+		LogMessage("starting to download image from: " + radar);
+		URL url = new URL(radar);
+		InputStream ins = url.openStream();
+		File file = new File(context.getFilesDir(), "/radar.gif");
+		FileOutputStream out = null;
+
+		out = new FileOutputStream(file);
+		final byte[] b = new byte[2048];
+		int length;
+		while ((length = ins.read(b)) != -1)
+			out.write(b, 0, length);
+		ins.close();
+		out.flush();
+		out.close();
+
+		return file.getAbsolutePath();
+	}
+
+	boolean checkURL(String setting) throws Exception
+	{
+		Common.LogMessage("checking: " + setting);
+		URL url = new URL(setting);
+		URLConnection conn = url.openConnection();
+		conn.connect();
+
+		return true;
+	}
+
+	String downloadForecast() throws Exception
+	{
+		return downloadForecast(GetStringPref("fctype", "Yahoo"), GetStringPref("FORECAST_URL", ""), GetStringPref("bomtown", ""));
+	}
+
+	String downloadForecast(String fctype, String forecast, String bomtown) throws Exception
+	{
+		boolean found = false;
+
+		URL url = new URL(forecast);
+		URLConnection conn = url.openConnection();
+		conn.setDoOutput(true);
+		conn.connect();
+		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+
+		String line;
+		StringBuilder sb = new StringBuilder();
+		while ((line = in.readLine()) != null)
+		{
+			line = line.trim();
+			if (line.length() > 0)
+				sb.append(line);
+		}
+		in.close();
+
+		String tmp = sb.toString().trim();
+
+		if(fctype.equals("bom.gov.au"))
+		{
+			JSONObject jobj = Objects.requireNonNull(new XmlToJson.Builder(tmp).build().toJson()).getJSONObject("product");
+			String content = jobj.getJSONObject("amoc").getJSONObject("issue-time-local").getString("content");
+			JSONArray area = jobj.getJSONObject("forecast").getJSONArray("area");
+			for(int i = 0; i < area.length(); i++)
+			{
+				JSONObject o = area.getJSONObject(i);
+				if(o.getString("description").equals(bomtown))
+				{
+					o.put("content", content);
+					tmp = o.toString();
+					found = true;
+					break;
+				}
+			}
+
+			if(!found)
+			{
+				SetStringPref("lastError", "Unable to match '" + bomtown + "'. Make sure you selected the right state file ID and a town where the BoM produces forecasts.");
+				return null;
+			}
+		}
+
+		return tmp;
 	}
 }

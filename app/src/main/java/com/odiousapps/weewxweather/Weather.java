@@ -19,19 +19,7 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
-import java.net.URLConnection;
-
-import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 
 class Weather
 {
@@ -39,6 +27,7 @@ class Weather
     private View rootView;
     private WebView wv;
     private boolean dark_theme;
+	private SwipeRefreshLayout swipeLayout;
 
     Weather(Common common)
     {
@@ -203,23 +192,22 @@ class Weather
                 if(vibrator != null)
                     vibrator.vibrate(250);
                 Common.LogMessage("rootview long press");
-                forceRefresh();
+	            forceRefresh();
+	            reloadWebView(true);
                 return true;
             }
         });
 
-	    final SwipeRefreshLayout swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 	    swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
 	    {
 		    @Override
 		    public void onRefresh()
 		    {
-		    	swipeLayout.setRefreshing(true);
-		    	Common.LogMessage("onRefresh();");
+			    swipeLayout.setRefreshing(true);
+			    Common.LogMessage("onRefresh();");
 			    forceRefresh();
-			    reloadWebView();
-			    reloadForecast();
-			    swipeLayout.setRefreshing(false);
+			    reloadWebView(true);
 		    }
 	    });
 
@@ -237,6 +225,7 @@ class Weather
                     vibrator.vibrate(250);
                 Common.LogMessage("wv long press");
 	            forceRefresh();
+	            reloadWebView(true);
                 return true;
             }
         });
@@ -276,9 +265,9 @@ class Weather
         loadWebView();
 
         if(!common.GetStringPref("RADAR_URL", "").equals(""))
-            reloadWebView();
+            reloadWebView(false);
         if(!common.GetBoolPref("radarforecast", true))
-        	reloadForecast();
+        	reloadForecast(false);
 
         return updateFields();
     }
@@ -287,7 +276,7 @@ class Weather
     {
         common.getWeather();
 	    wipeForecast();
-	    loadWebView();
+	    reloadWebView(true);
     }
 
     private void loadWebView()
@@ -614,19 +603,19 @@ class Weather
 		Common.LogMessage("wiping rss cache");
 		common.SetIntPref("rssCheck", 0);
 		common.SetStringPref("forecastData", "");
-		reloadForecast();
+		reloadForecast(true);
 	}
 
-	private void reloadForecast()
+	private void reloadForecast(boolean force)
     {
 	    if(common.GetBoolPref("radarforecast", true))
 		    return;
 
-	    final String rss = common.GetStringPref("FORECAST_URL", "");
+	    final String forecast_url = common.GetStringPref("FORECAST_URL", "");
 
-	    if(rss.equals(""))
+	    if(forecast_url.equals(""))
 	    {
-		    final String html = "<html><body>Forecast URL not set or is still downloading. You can go to settings to change.</body></html>";
+		    final String html = "<html><body>Forecast URL not set. Edit inigo-settings.txt to change.</body></html>";
 		    wv.post(new Runnable()
 		    {
 			    @Override
@@ -639,7 +628,18 @@ class Weather
 		    return;
 	    }
 
-	    Common.LogMessage("forecast checking: " + rss);
+	    if(!common.checkWifiOnAndConnected() && !force)
+	    {
+	    	Common.LogMessage("Not on wifi and not a forced refresh");
+		    if(swipeLayout.isRefreshing())
+			    swipeLayout.setRefreshing(false);
+		    return;
+	    }
+
+	    if(!swipeLayout.isRefreshing())
+		    swipeLayout.setRefreshing(true);
+
+	    Common.LogMessage("forecast checking: " + forecast_url);
 
 	    Thread t = new Thread(new Runnable()
 	    {
@@ -653,65 +653,27 @@ class Weather
 				    if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 7190 < curtime)
 				    {
 					    Common.LogMessage("no forecast data or cache is more than 2 hour old");
-					    URL url = new URL(rss);
-					    URLConnection conn = url.openConnection();
-					    conn.setDoOutput(true);
-					    conn.connect();
-					    BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
 
-					    String line;
-					    StringBuilder sb = new StringBuilder();
-					    while ((line = in.readLine()) != null)
-					    {
-						    line = line.trim();
-						    if(line.length() > 0)
-							    sb.append(line);
-					    }
-					    in.close();
-
-					    String tmp = sb.toString().trim();
-					    if(common.GetStringPref("fctype", "Yahoo").equals("bom.gov.au"))
-					    {
-					    	try
-						    {
-							    JSONObject jobj = new XmlToJson.Builder(tmp).build().toJson();
-							    if(jobj == null)
-							    	return;
-
-							    jobj = jobj.getJSONObject("product");
-							    String content = jobj.getJSONObject("amoc").getJSONObject("issue-time-local").getString("content");
-							    JSONArray area = jobj.getJSONObject("forecast").getJSONArray("area");
-							    for (int i = 0; i < area.length(); i++)
-							    {
-								    JSONObject o = area.getJSONObject(i);
-								    if (o.getString("description").equals(common.GetStringPref("bomtown", "")))
-								    {
-									    o.put("content", content);
-									    tmp = o.toString();
-									    break;
-								    }
-							    }
-						    } catch (Exception e) {
-					    		e.printStackTrace();
-						    }
-					    }
-
-					    Common.LogMessage("updating rss cache");
-					    common.SetIntPref("rssCheck", curtime);
-					    common.SetStringPref("forecastData", tmp);
+					    String tmp = common.downloadForecast();
+						if(tmp != null)
+						{
+							Common.LogMessage("updating rss cache");
+							common.SetIntPref("rssCheck", curtime);
+							common.SetStringPref("forecastData", tmp);
+						}
 				    }
-
-				    handlerDone.sendEmptyMessage(0);
 			    } catch (Exception e) {
 				    e.printStackTrace();
 			    }
+
+			    handlerDone.sendEmptyMessage(0);
 		    }
 	    });
 
 	    t.start();
     }
 
-    private void reloadWebView()
+    private void reloadWebView(boolean force)
     {
 	    if(!common.GetBoolPref("radarforecast", true))
 	    	return;
@@ -721,9 +683,21 @@ class Weather
 
         if(radar.equals(""))
         {
-            loadWebView();
+	        loadWebView();
+	        handlerDone.sendEmptyMessage(0);
             return;
         }
+
+	    if(!common.checkWifiOnAndConnected() && !force)
+	    {
+		    Common.LogMessage("Not on wifi and not a forced refresh");
+		    if(swipeLayout.isRefreshing())
+			    swipeLayout.setRefreshing(false);
+		    return;
+	    }
+
+	    if(!swipeLayout.isRefreshing())
+		    swipeLayout.setRefreshing(true);
 
         Thread t = new Thread(new Runnable()
         {
@@ -733,41 +707,8 @@ class Weather
                 try
                 {
                     Common.LogMessage("starting to download image from: " + radar);
-                    URL url = new URL(radar);
-
-                    InputStream ins = url.openStream();
-                    File file = new File(common.context.getFilesDir(), "/radar.gif");
-
-	                int curtime = Math.round(System.currentTimeMillis() / 1000);
-
-                    if(Math.round(file.lastModified() / 1000) + 590 > curtime)
-						return;
-
-                    FileOutputStream out = null;
-
-                    try
-                    {
-                        out = new FileOutputStream(file);
-                        final byte[] b = new byte[2048];
-                        int length;
-                        while ((length = ins.read(b)) != -1)
-                            out.write(b, 0, length);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    } finally {
-                        try
-                        {
-                            if (ins != null)
-                                ins.close();
-                            if (out != null)
-                                out.close();
-                        } catch (IOException e)
-                        {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    Common.LogMessage("done downloading, prompt handler to draw to movie");
+                    String fn = common.downloadRADAR(radar);
+                    Common.LogMessage("done downloading " + fn + ", prompt handler to draw to movie");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -785,13 +726,8 @@ class Weather
         @Override
         public void handleMessage(Message msg)
         {
-            try
-            {
-                Common.LogMessage(common.context.getFilesDir() + "/radar.gif");
-                loadWebView();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+			common.SendRefresh();
+	        swipeLayout.setRefreshing(false);
         }
     };
 
@@ -829,8 +765,8 @@ class Weather
 	                Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
 	                dark_theme = common.GetBoolPref("dark_theme", false);
 	                updateFields();
-	                reloadWebView();
-	                reloadForecast();
+	                reloadWebView(false);
+	                reloadForecast(false);
                 } else if(action != null && action.equals(Common.REFRESH_INTENT)) {
 	                Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
 	                dark_theme = common.GetBoolPref("dark_theme", false);

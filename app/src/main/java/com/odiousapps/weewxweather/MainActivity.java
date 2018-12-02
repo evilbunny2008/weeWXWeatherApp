@@ -13,7 +13,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -52,22 +51,8 @@ import android.widget.Toast;
 import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
 import com.pes.androidmaterialcolorpickerdialog.ColorPickerCallback;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.Authenticator;
-import java.net.PasswordAuthentication;
-import java.net.URL;
-import java.net.URLConnection;
 import java.net.URLEncoder;
-
-import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 {
@@ -471,7 +456,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				String oldcustom = common.GetStringPref("CUSTOM_URL", "");
 				String oldcustom_url = common.GetStringPref("custom_url", "");
 
-				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "";
+				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "";
 
 				Switch metric_forecasts = findViewById(R.id.metric_forecasts);
 				Switch show_indoor = findViewById(R.id.show_indoor);
@@ -489,43 +474,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				try
 				{
-					Uri uri = Uri.parse(settingsURL.getText().toString());
-					Common.LogMessage("inigo-settings.txt == " + settingsURL.getText().toString());
-					common.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
-					if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
-					{
-						final String[] UC = uri.getUserInfo().split(":");
-						Common.LogMessage("uri username = " + uri.getUserInfo());
-
-						if (UC != null && UC.length > 1)
-						{
-							Authenticator.setDefault(new Authenticator()
-							{
-								protected PasswordAuthentication getPasswordAuthentication()
-								{
-									return new PasswordAuthentication(UC[0], UC[1].toCharArray());
-								}
-							});
-						}
-					}
-
-					URL url = new URL(settingsURL.getText().toString());
-					URLConnection conn = url.openConnection();
-					conn.setDoOutput(true);
-					conn.connect();
-
-					BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-					StringBuilder sb = new StringBuilder();
-					String line;
-					while ((line = in.readLine()) != null)
-					{
-						line += "\n";
-						sb.append(line);
-					}
-					in.close();
-
-					String[] bits = sb.toString().replaceAll("[^\\p{ASCII}]", "").trim().split("\\n");
-
+					String[] bits = common.downloadSettings(settingsURL.getText().toString()).split("\\n");
 					for (String bit : bits)
 					{
 						String[] mb = bit.split("=", 2);
@@ -598,48 +547,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					{
 						if(radtype.equals("image"))
 						{
-							Common.LogMessage("starting to download image from: " + radar);
-							URL url = new URL(radar);
-
-							InputStream ins = url.openStream();
-							File file = new File(common.context.getFilesDir(), "/radar.gif");
-							FileOutputStream out = null;
-
-							try
-							{
-								out = new FileOutputStream(file);
-								final byte[] b = new byte[2048];
-								int length;
-								while ((length = ins.read(b)) != -1)
-									out.write(b, 0, length);
-								validURL2 = true;
-							} catch (Exception e) {
-								common.SetStringPref("lastError", e.toString());
-								e.printStackTrace();
-							} finally {
-								try
-								{
-									if (ins != null)
-										ins.close();
-									if (out != null)
-										out.close();
-								} catch (IOException e)
-								{
-									e.printStackTrace();
-								}
-							}
+							String filename = common.downloadRADAR(radar);
+							File f = new File(filename);
+							validURL2 = f.exists();
 						} else if(radtype.equals("webpage")) {
-							try
-							{
-								Common.LogMessage("checking: " + radar);
-								URL url = new URL(radar);
-								URLConnection conn = url.openConnection();
-								conn.connect();
-
-								validURL2 = true;
-							} catch (Exception e) {
-								e.printStackTrace();
-							}
+							validURL2 = common.checkURL(radar);
 						}
 					} catch (Exception e) {
 						common.SetStringPref("lastError", e.toString());
@@ -679,7 +591,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("fctype=" + fctype);
 								break;
 							case "bom.gov.au":
-								String bomtown = forecast.split(",")[1].trim();
+								bomtown = forecast.split(",")[1].trim();
 								common.SetStringPref("bomtown", bomtown);
 								forecast = "ftp://ftp.bom.gov.au/anon/gen/fwo/" + forecast.split(",")[0].trim() + ".xml";
 								Common.LogMessage("forecast=" + forecast);
@@ -739,7 +651,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					}
 				}
 
-				Common.LogMessage("line 635");
+				Common.LogMessage("line 654");
 
 				if (!forecast.equals("") && !forecast.equals(oldforecast))
 				{
@@ -748,56 +660,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					try
 					{
 						Common.LogMessage("checking: " + forecast);
-
-						URL url = new URL(forecast);
-						URLConnection conn = url.openConnection();
-						conn.setDoOutput(true);
-						conn.connect();
-						BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-
-						String line;
-						StringBuilder sb = new StringBuilder();
-						while ((line = in.readLine()) != null)
+						String tmp = common.downloadForecast(fctype, forecast, bomtown);
+						if(tmp != null)
 						{
-							line = line.trim();
-							if (line.length() > 0)
-								sb.append(line);
+							validURL3 = true;
+							Common.LogMessage("updating rss cache");
+							common.SetIntPref("rssCheck", curtime);
+							common.SetStringPref("forecastData", tmp);
 						}
-						in.close();
-
-						boolean found = false;
-
-						String tmp = sb.toString().trim();
-						if(fctype.equals("bom.gov.au"))
-						{
-							JSONObject jobj = new XmlToJson.Builder(tmp).build().toJson().getJSONObject("product");
-							String content = jobj.getJSONObject("amoc").getJSONObject("issue-time-local").getString("content");
-							JSONArray area = jobj.getJSONObject("forecast").getJSONArray("area");
-							for(int i = 0; i < area.length(); i++)
-							{
-								JSONObject o = area.getJSONObject(i);
-								if(o.getString("description").equals(common.GetStringPref("bomtown", "")))
-								{
-									o.put("content", content);
-									tmp = o.toString();
-									found = true;
-									break;
-								}
-							}
-
-							if(!found)
-							{
-								common.SetStringPref("lastError", "Unable to match '" + common.GetStringPref("bomtown", "") + "'. Make sure you selected the right state file ID and a town where the BoM produces forecasts.");
-								handlerForecast.sendEmptyMessage(0);
-								return;
-							}
-						}
-
-						Common.LogMessage("updating rss cache");
-						common.SetIntPref("rssCheck", curtime);
-						common.SetStringPref("forecastData", tmp);
-
-						validURL3 = true;
 					} catch (Exception e) {
 						common.SetStringPref("lastError", e.toString());
 						e.printStackTrace();
@@ -829,13 +699,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					{
 						try
 						{
-							Common.LogMessage("checking: " + custom);
-							URL url = new URL(custom);
-							URLConnection conn = url.openConnection();
-							conn.connect();
-							common.RemovePref("custom_url");
-
-							validURL5 = true;
+							if(common.checkURL(custom))
+								validURL5 = true;
+							else
+								common.RemovePref("custom_url");
 						} catch (Exception e) {
 							common.SetStringPref("lastError", e.toString());
 							e.printStackTrace();
@@ -852,12 +719,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					{
 						try
 						{
-							Common.LogMessage("checking: " + custom_url);
-							URL url = new URL(custom_url);
-							URLConnection conn = url.openConnection();
-							conn.connect();
-
-							validURL5 = true;
+							if(common.checkURL(custom_url))
+								validURL5 = true;
 						} catch (Exception e) {
 							common.SetStringPref("lastError", e.toString());
 							e.printStackTrace();

@@ -30,7 +30,7 @@ class Webcam
     private ImageView iv;
     private static Bitmap bm;
     private SwipeRefreshLayout swipeLayout;
-    private boolean dark_theme = false;
+    private boolean dark_theme;
 
     Webcam(Common common)
     {
@@ -273,7 +273,7 @@ class Webcam
 		                iv.setBackgroundColor(0xff000000);
 	                else
 		                iv.setBackgroundColor(0xffffffff);
-	                reloadWebView(true);
+	                reloadWebView(false);
                 } else if(action != null && action.equals(Common.EXIT_INTENT))
                     doPause();
             } catch (Exception e) {
