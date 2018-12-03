@@ -2243,7 +2243,7 @@ class Common
 	private String downloadString(String fromURL) throws Exception
 	{
 		Uri uri = Uri.parse(fromURL);
-		Common.LogMessage("inigo-settings.txt == " + fromURL);
+		Common.LogMessage("fromURL == " + fromURL);
 		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
 		{
 			final String[] UC = uri.getUserInfo().split(":");
@@ -2285,7 +2285,7 @@ class Common
 	private File downloadBinary(File f, String fromURL) throws Exception
 	{
 		Uri uri = Uri.parse(fromURL);
-		Common.LogMessage("inigo-settings.txt == " + fromURL);
+		Common.LogMessage("fromURL == " + fromURL);
 		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
 		{
 			final String[] UC = uri.getUserInfo().split(":");

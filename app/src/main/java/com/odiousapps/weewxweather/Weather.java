@@ -192,6 +192,7 @@ class Weather
                 if(vibrator != null)
                     vibrator.vibrate(250);
                 Common.LogMessage("rootview long press");
+	            swipeLayout.setRefreshing(true);
 	            forceRefresh();
 	            reloadWebView(true);
                 return true;
@@ -223,6 +224,7 @@ class Weather
                 Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
                 if(vibrator != null)
                     vibrator.vibrate(250);
+	            swipeLayout.setRefreshing(true);
                 Common.LogMessage("wv long press");
 	            forceRefresh();
 	            reloadWebView(true);
@@ -274,14 +276,17 @@ class Weather
 
     private void forceRefresh()
     {
-        common.getWeather();
+	    swipeLayout.setRefreshing(true);
+	    common.getWeather();
 	    wipeForecast();
 	    reloadWebView(true);
     }
 
     private void loadWebView()
     {
-    	if(common.GetBoolPref("radarforecast", true))
+	    swipeLayout.setRefreshing(true);
+
+	    if(common.GetBoolPref("radarforecast", true))
 	    {
 		    switch (common.GetStringPref("radtype", "image"))
 		    {
@@ -303,6 +308,7 @@ class Weather
 							    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
 						    }
 					    });
+					    swipeLayout.setRefreshing(false);
 					    return;
 				    }
 
@@ -375,7 +381,7 @@ class Weather
 					    wv.loadDataWithBaseURL(null, shtml, "text/html", "utf-8", null);
 				    }
 			    });
-
+			    swipeLayout.setRefreshing(false);
 			    return;
 		    }
 
@@ -619,6 +625,8 @@ class Weather
 			    }
 		    }
 	    }
+
+	    swipeLayout.setRefreshing(false);
     }
 
 	private void wipeForecast()
@@ -690,6 +698,8 @@ class Weather
 			    } catch (Exception e) {
 				    e.printStackTrace();
 			    }
+
+			    swipeLayout.setRefreshing(false);
 		    }
 	    });
 
@@ -713,8 +723,7 @@ class Weather
 	    if(!common.checkWifiOnAndConnected() && !force)
 	    {
 		    Common.LogMessage("Not on wifi and not a forced refresh");
-		    if(swipeLayout.isRefreshing())
-			    swipeLayout.setRefreshing(false);
+		    swipeLayout.setRefreshing(false);
 		    return;
 	    }
 
@@ -735,6 +744,8 @@ class Weather
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+	            swipeLayout.setRefreshing(false);
             }
         });
 
@@ -748,7 +759,6 @@ class Weather
         public void handleMessage(Message msg)
         {
 			common.SendRefresh();
-	        swipeLayout.setRefreshing(false);
         }
     };
 

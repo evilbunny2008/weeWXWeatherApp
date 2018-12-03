@@ -54,6 +54,7 @@ class Forecast
 			    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
 			    if (vibrator != null)
 				    vibrator.vibrate(250);
+			    swipeLayout.setRefreshing(true);
 			    Common.LogMessage("rootview long press");
 			    reloadWebView(true);
 			    getForecast(true);
@@ -112,6 +113,7 @@ class Forecast
 			    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
 			    if (vibrator != null)
 				    vibrator.vibrate(250);
+			    swipeLayout.setRefreshing(true);
 			    Common.LogMessage("webview long press");
 			    reloadWebView(true);
 			    getForecast(true);
@@ -177,6 +179,7 @@ class Forecast
 			    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
 			    if (vibrator != null)
 				    vibrator.vibrate(250);
+			    swipeLayout.setRefreshing(true);
 			    Common.LogMessage("webview long press");
 			    reloadWebView(true);
 			    getForecast(true);
@@ -211,23 +214,7 @@ class Forecast
 	    forecast = rootView.findViewById(R.id.forecast);
 	    im = rootView.findViewById(R.id.logo);
 
-	    if (common.GetBoolPref("radarforecast", true))
-	    {
-	    	Common.LogMessage("Displaying forecast");
-		    getForecast(false);
-		    rl.setVisibility(View.GONE);
-		    wv2.setVisibility(View.VISIBLE);
-		    forecast.setVisibility(View.VISIBLE);
-		    im.setVisibility(View.VISIBLE);
-	    } else {
-		    Common.LogMessage("Displaying radar");
-		    loadWebView();
-		    rl.setVisibility(View.VISIBLE);
-		    wv2.setVisibility(View.GONE);
-
-		    forecast.setVisibility(View.GONE);
-		    im.setVisibility(View.GONE);
-        }
+	    updateScreen();
 
         return rootView;
     }
@@ -235,51 +222,53 @@ class Forecast
 	private void loadWebView()
 	{
 		if(common.GetBoolPref("radarforecast", true))
+			return;
+
+		swipeLayout.setRefreshing(true);
+
+		if (common.GetStringPref("radtype", "image").equals("image"))
 		{
-			if (common.GetStringPref("radtype", "image").equals("image"))
+			rl.setVisibility(View.VISIBLE);
+			String radar = common.context.getFilesDir() + "/radar.gif";
+
+			if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 			{
-				rl.setVisibility(View.VISIBLE);
-				String radar = common.context.getFilesDir() + "/radar.gif";
-
-				if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
-				{
-					String html = "<html>";
-					if (dark_theme)
-						html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-					html += "<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
-					wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
-					return;
-				}
-
-				int height = Math.round((float) Resources.getSystem().getDisplayMetrics().widthPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
-				int width = Math.round((float) Resources.getSystem().getDisplayMetrics().heightPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
-
-				String html = "<!DOCTYPE html>\n" +
-						"<html>\n" +
-						"  <head>\n" +
-						"    <meta charset='utf-8'>\n" +
-						"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
+				String html = "<html>";
 				if (dark_theme)
-					html += "<style>body{color: #fff; background-color: #000;}</style>";
-				html += "  </head>\n" +
-						"  <body>\n" +
-						"\t<div style='text-align:center;'>\n" +
-						"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" + height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
-						"\tsrc='file://" + radar + "'>\n" +
-						"\t</div>\n" +
-						"  </body>\n" +
-						"</html>";
+					html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				html += "<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
 				wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
-				rl.setVisibility(View.VISIBLE);
-				wv2.setVisibility(View.GONE);
-			} else if (common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals("")) {
-				wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
-				rl.setVisibility(View.GONE);
-				wv2.setVisibility(View.VISIBLE);
+				return;
 			}
-		} else {
-			generateForecast();
+
+			int height = Math.round((float) Resources.getSystem().getDisplayMetrics().widthPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
+			int width = Math.round((float) Resources.getSystem().getDisplayMetrics().heightPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
+
+			String html = "<!DOCTYPE html>\n" +
+					"<html>\n" +
+					"  <head>\n" +
+					"    <meta charset='utf-8'>\n" +
+					"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
+			if (dark_theme)
+				html += "<style>body{color: #fff; background-color: #000;}</style>";
+			html += "  </head>\n" +
+					"  <body>\n" +
+					"\t<div style='text-align:center;'>\n" +
+					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" + height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
+					"\tsrc='file://" + radar + "'>\n" +
+					"\t</div>\n" +
+					"  </body>\n" +
+					"</html>";
+			wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
+			rl.setVisibility(View.VISIBLE);
+			wv2.setVisibility(View.GONE);
+		} else if (common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals("")) {
+			wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
+			rl.setVisibility(View.GONE);
+			wv2.setVisibility(View.VISIBLE);
 		}
+
+		swipeLayout.setRefreshing(false);
 	}
 
 	@SuppressWarnings("SameParameterValue")
@@ -300,13 +289,11 @@ class Forecast
 		if(!common.checkWifiOnAndConnected() && !force)
 		{
 			Common.LogMessage("Not on wifi and not a forced refresh");
-			if(swipeLayout.isRefreshing())
-				swipeLayout.setRefreshing(false);
+			swipeLayout.setRefreshing(false);
 			return;
 		}
 
-		if(!swipeLayout.isRefreshing())
-			swipeLayout.setRefreshing(true);
+		swipeLayout.setRefreshing(true);
 
 		Thread t = new Thread(new Runnable()
 		{
@@ -322,6 +309,8 @@ class Forecast
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+
+				swipeLayout.setRefreshing(false);
 			}
 		});
 
@@ -349,38 +338,42 @@ class Forecast
 	    Common.LogMessage("forecast.java -- unregisterReceiver");
     }
 
+    private void updateScreen()
+    {
+	    if (common.GetBoolPref("radarforecast", true))
+	    {
+		    Common.LogMessage("Displaying forecast");
+		    getForecast(false);
+		    forecast.setVisibility(View.VISIBLE);
+		    im.setVisibility(View.VISIBLE);
+		    rl.setVisibility(View.GONE);
+		    wv2.setVisibility(View.VISIBLE);
+	    } else {
+		    Common.LogMessage("Displaying radar");
+		    loadWebView();
+		    forecast.setVisibility(View.GONE);
+		    im.setVisibility(View.GONE);
+		    rl.setVisibility(View.VISIBLE);
+		    wv2.setVisibility(View.GONE);
+	    }
+    }
+
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
     {
         @Override
         public void onReceive(Context context, Intent intent)
         {
-            try
+	        try
             {
                 Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
                 if(action != null && action.equals(Common.UPDATE_INTENT))
                 {
 	                dark_theme = common.GetBoolPref("dark_theme", false);
-
-	                if (common.GetBoolPref("radarforecast", true))
-	                {
-		                Common.LogMessage("Displaying forecast");
-		                getForecast(false);
-		                forecast.setVisibility(View.VISIBLE);
-		                im.setVisibility(View.VISIBLE);
-		                rl.setVisibility(View.GONE);
-		                wv2.setVisibility(View.VISIBLE);
-	                } else {
-		                Common.LogMessage("Displaying radar");
-		                loadWebView();
-		                forecast.setVisibility(View.GONE);
-		                im.setVisibility(View.GONE);
-		                rl.setVisibility(View.VISIBLE);
-		                wv2.setVisibility(View.GONE);
-	                }
+	                updateScreen();
                 } else if(action != null && action.equals(Common.REFRESH_INTENT)) {
-	                getForecast(false);
-	                loadWebView();
+	                dark_theme = common.GetBoolPref("dark_theme", false);
+	                updateScreen();
                 } else if(action != null && action.equals(Common.EXIT_INTENT)) {
                     doPause();
                 }
@@ -392,6 +385,7 @@ class Forecast
 
     private void getForecast(boolean force)
     {
+	    swipeLayout.setRefreshing(true);
 	    if(!common.GetBoolPref("radarforecast", true))
 		    return;
 
@@ -415,13 +409,11 @@ class Forecast
 	    if(!common.checkWifiOnAndConnected() && !force)
 	    {
 		    Common.LogMessage("Not on wifi and not a forced refresh");
-		    if(swipeLayout.isRefreshing())
-			    swipeLayout.setRefreshing(false);
+		    swipeLayout.setRefreshing(false);
 		    return;
 	    }
 
-	    if(!swipeLayout.isRefreshing())
-		    swipeLayout.setRefreshing(true);
+	    swipeLayout.setRefreshing(true);
 
 	    if(!common.GetStringPref("forecastData", "").equals(""))
 		    generateForecast();
@@ -449,6 +441,8 @@ class Forecast
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+	            swipeLayout.setRefreshing(false);
             }
         });
 
@@ -468,7 +462,9 @@ class Forecast
 
     private void generateForecast()
     {
-        Common.LogMessage("getting json data");
+	    swipeLayout.setRefreshing(true);
+
+	    Common.LogMessage("getting json data");
         String data;
         String fctype = common.GetStringPref("fctype", "Yahoo");
 

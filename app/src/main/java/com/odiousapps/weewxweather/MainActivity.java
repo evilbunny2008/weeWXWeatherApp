@@ -1027,7 +1027,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			            @Override
 			            public void run()
 			            {
-				            //swipeLayout.setRefreshing(false);
 				            new AlertDialog
 						            .Builder(common.context)
 						            .setTitle("An error occurred while attempting to update usage")
