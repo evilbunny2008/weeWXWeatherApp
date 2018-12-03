@@ -56,6 +56,7 @@ class Forecast
 				    vibrator.vibrate(250);
 			    Common.LogMessage("rootview long press");
 			    reloadWebView(true);
+			    getForecast(true);
 			    return true;
 		    }
 	    });
@@ -69,6 +70,7 @@ class Forecast
 			    swipeLayout.setRefreshing(true);
 			    Common.LogMessage("onRefresh();");
 			    reloadWebView(true);
+			    getForecast(true);
 		    }
 	    });
 
@@ -111,12 +113,8 @@ class Forecast
 			    if (vibrator != null)
 				    vibrator.vibrate(250);
 			    Common.LogMessage("webview long press");
-			    if(common.GetStringPref("radtype", "image").equals("image"))
-			    {
-				    reloadWebView(true);
-			    } else if(common.GetStringPref("radtype", "image").equals("webpage")) {
-				    wv1.reload();
-			    }
+			    reloadWebView(true);
+			    getForecast(true);
 			    return true;
 		    }
 	    });
@@ -180,12 +178,8 @@ class Forecast
 			    if (vibrator != null)
 				    vibrator.vibrate(250);
 			    Common.LogMessage("webview long press");
-			    if(common.GetStringPref("radtype", "image").equals("image"))
-			    {
-				    reloadWebView(true);
-			    } else if(common.GetStringPref("radtype", "image").equals("webpage")) {
-				    wv2.reload();
-			    }
+			    reloadWebView(true);
+			    getForecast(true);
 			    return true;
 		    }
 	    });
@@ -283,6 +277,7 @@ class Forecast
 		}
 	}
 
+	@SuppressWarnings("SameParameterValue")
 	private void reloadWebView(boolean force)
 	{
 		if(common.GetBoolPref("radarforecast", true))
@@ -317,8 +312,8 @@ class Forecast
 				try
 				{
 					Common.LogMessage("starting to download image from: " + radar);
-					String fn = common.downloadRADAR(radar);
-					Common.LogMessage("done downloading " + fn + ", prompt handler to draw to movie");
+					File f = common.downloadRADAR(radar);
+					Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

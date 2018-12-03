@@ -42,7 +42,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.lang.reflect.Field;
 import java.net.Authenticator;
-import java.net.HttpURLConnection;
 import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.net.URLConnection;
@@ -99,7 +98,7 @@ class Common
 		LogMessage("Loaded NWS");
 	}
 
-	private long[] getPeriod()
+	long[] getPeriod()
 	{
 		long[] def = {0, 0};
 
@@ -171,7 +170,12 @@ class Common
 	static void LogMessage(String value, boolean showAnyway)
 	{
 		if (debug_on || showAnyway)
-			Log.i("weeWX Weather", "message='" + value + "'");
+		{
+			int len = value.indexOf("\n");
+			if(len <= 0)
+				len = value.length();
+			Log.i("weeWX Weather", "message='" + value.substring(0, len) + "'");
+		}
 	}
 
 	void SetStringPref(String name, String value)
@@ -869,9 +873,6 @@ class Common
 
 							String encoded = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.DEFAULT);
 							iconLink.put(i, encoded);
-
-							//context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(file2)));
-							//LogMessage("wrote " + url + " to " + iconLink.getString(i).substring(0, 100));
 						} else {
 							Bitmap bmp = combineImage(bmp1, fper + "%", sper + "%");
 							if (bmp == null)
@@ -1641,11 +1642,11 @@ class Common
 			{
 				try
 				{
-					String data = GetStringPref("BASE_URL", "");
-					if (data.equals(""))
+					String fromURL = GetStringPref("BASE_URL", "");
+					if (fromURL.equals(""))
 						return;
 
-					reallyGetWeather(data);
+					reallyGetWeather(fromURL);
 					SendIntents();
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -1658,50 +1659,9 @@ class Common
 		t.start();
 	}
 
-	void reallyGetWeather(String data) throws Exception
+	void reallyGetWeather(String fromURL) throws Exception
 	{
-		Uri uri = Uri.parse(data);
-		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
-		{
-			final String[] UC = uri.getUserInfo().split(":");
-			Common.LogMessage("uri username = " + uri.getUserInfo());
-
-			if (UC.length > 1)
-			{
-				Authenticator.setDefault(new Authenticator()
-				{
-					protected PasswordAuthentication getPasswordAuthentication()
-					{
-						return new PasswordAuthentication(UC[0], UC[1].toCharArray());
-					}
-				});
-			}
-		}
-
-		URL url = new URL(data);
-		HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-		urlConnection.setConnectTimeout(60000);
-		urlConnection.setReadTimeout(60000);
-		urlConnection.setRequestMethod("GET");
-		urlConnection.setDoOutput(true);
-		urlConnection.connect();
-
-		StringBuilder sb = new StringBuilder();
-		String line;
-
-		InterruptThread it = new InterruptThread(Thread.currentThread(), urlConnection);
-		Thread myThread = new Thread(it);
-
-		myThread.start();
-		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-		while ((line = in.readLine()) != null)
-			sb.append(line);
-		in.close();
-
-		it.interupt = false;
-		myThread.interrupt();
-
-		line = sb.toString().trim();
+		String line = downloadString(fromURL);
 		if(!line.equals(""))
 		{
 			String bits[] = line.split("\\|");
@@ -1716,7 +1676,7 @@ class Common
 
 			if (Double.valueOf(bits[0]) >= 4000)
 			{
-				sb = new StringBuilder();
+				StringBuilder sb = new StringBuilder();
 				for (int i = 1; i < bits.length; i++)
 				{
 					if (sb.length() > 0)
@@ -1732,37 +1692,8 @@ class Common
 		}
 	}
 
-	class InterruptThread implements Runnable
-	{
-		Thread parent;
-		HttpURLConnection con;
-		boolean interupt;
-
-		InterruptThread(Thread parent, HttpURLConnection con)
-		{
-			this.parent = parent;
-			this.con = con;
-			this.interupt = true;
-		}
-
-		public void run()
-		{
-			try
-			{
-				Thread.sleep(15000);
-				if(interupt)
-				{
-					Common.LogMessage("Timer thread forcing parent to quit connection");
-					con.disconnect();
-					parent.interrupt();
-				}
-			} catch (InterruptedException e) {
-				// TODO: ignore this.
-			}
-		}
-	}
-
 	//	https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
+	@SuppressWarnings("BooleanMethodIsAlwaysInverted")
 	boolean checkWifiOnAndConnected()
 	{
 		WifiManager wifiMgr = (WifiManager)context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
@@ -1771,9 +1702,9 @@ class Common
 		{ // Wi-Fi adapter is ON
 			WifiInfo wifiInfo = wifiMgr.getConnectionInfo();
 			return wifiInfo.getNetworkId() != -1;
-		} else {
-			return false; // Wi-Fi adapter is OFF
 		}
+
+		return false; // Wi-Fi adapter is OFF
 	}
 
 	private void sendAlert()
@@ -1854,22 +1785,7 @@ class Common
 					LogMessage("f == " + f.getAbsolutePath());
 					LogMessage("imageURL == " + imageURL);
 
-					OutputStream outputStream = new FileOutputStream(f.getAbsolutePath());
-
-					URL url = new URL(imageURL);
-					URLConnection conn = url.openConnection();
-					conn.setDoOutput(true);
-					conn.connect();
-					InputStream input = conn.getInputStream();
-
-					int count;
-					byte data[] = new byte[1024];
-					while ((count = input.read(data)) != -1)
-						outputStream.write(data, 0, count);
-
-					input.close();
-					outputStream.flush();
-					outputStream.close();
+					downloadBinary(f, imageURL);
 
 					if (f.exists() && f.isFile())
 					{
@@ -2114,73 +2030,15 @@ class Common
 
 	String downloadSettings(String url) throws Exception
 	{
-		Uri uri = Uri.parse(url);
-		Common.LogMessage("inigo-settings.txt == " + url);
 		SetStringPref("SETTINGS_URL", url);
-		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
-		{
-			final String[] UC = uri.getUserInfo().split(":");
-			Common.LogMessage("uri username = " + uri.getUserInfo());
-
-			if (UC != null && UC.length > 1)
-			{
-				Authenticator.setDefault(new Authenticator()
-				{
-					protected PasswordAuthentication getPasswordAuthentication()
-					{
-						return new PasswordAuthentication(UC[0], UC[1].toCharArray());
-					}
-				});
-			}
-		}
-
-		URL settings = new URL(url);
-		URLConnection conn = settings.openConnection();
-		conn.setDoOutput(true);
-		conn.connect();
-
-		BufferedReader in = new BufferedReader(new InputStreamReader(settings.openStream()));
-		StringBuilder sb = new StringBuilder();
-		String line;
-		while ((line = in.readLine()) != null)
-		{
-			line += "\n";
-			sb.append(line);
-		}
-		in.close();
-
-		return sb.toString().replaceAll("[^\\p{ASCII}]+$", "").trim();
+		return downloadString(url).replaceAll("[^\\p{ASCII}]+$", "").trim();
 	}
 
-	String downloadRADAR(String radar) throws Exception
+	File downloadRADAR(String radar) throws Exception
 	{
-		return downloadRADAR(radar, false);
-	}
-
-	String downloadRADAR(String radar, boolean force) throws Exception
-	{
-		if(!checkWifiOnAndConnected() && !force)
-		{
-			LogMessage("Not on wifi, skipping image download.");
-			return null;
-		}
-
 		LogMessage("starting to download image from: " + radar);
-		URL url = new URL(radar);
-		InputStream ins = url.openStream();
 		File file = new File(context.getFilesDir(), "/radar.gif");
-		FileOutputStream out = null;
-
-		out = new FileOutputStream(file);
-		final byte[] b = new byte[2048];
-		int length;
-		while ((length = ins.read(b)) != -1)
-			out.write(b, 0, length);
-		ins.close();
-		out.flush();
-		out.close();
-
-		return file.getAbsolutePath();
+		return downloadBinary(file, radar);
 	}
 
 	boolean checkURL(String setting) throws Exception
@@ -2200,31 +2058,16 @@ class Common
 
 	String downloadForecast(String fctype, String forecast, String bomtown) throws Exception
 	{
-		boolean found = false;
-
-		URL url = new URL(forecast);
-		URLConnection conn = url.openConnection();
-		conn.setDoOutput(true);
-		conn.connect();
-		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
-
-		String line;
-		StringBuilder sb = new StringBuilder();
-		while ((line = in.readLine()) != null)
-		{
-			line = line.trim();
-			if (line.length() > 0)
-				sb.append(line);
-		}
-		in.close();
-
-		String tmp = sb.toString().trim();
+		String tmp = downloadString(forecast);
 
 		if(fctype.equals("bom.gov.au"))
 		{
+			boolean found = false;
+
 			JSONObject jobj = Objects.requireNonNull(new XmlToJson.Builder(tmp).build().toJson()).getJSONObject("product");
 			String content = jobj.getJSONObject("amoc").getJSONObject("issue-time-local").getString("content");
 			JSONArray area = jobj.getJSONObject("forecast").getJSONArray("area");
+
 			for(int i = 0; i < area.length(); i++)
 			{
 				JSONObject o = area.getJSONObject(i);
@@ -2240,10 +2083,95 @@ class Common
 			if(!found)
 			{
 				SetStringPref("lastError", "Unable to match '" + bomtown + "'. Make sure you selected the right state file ID and a town where the BoM produces forecasts.");
-				return null;
+				throw new Exception("Unable to match '" + bomtown + "'. Make sure you selected the right state file ID and a town where the BoM produces forecasts.");
 			}
 		}
 
 		return tmp;
+	}
+
+	private String downloadString(String fromURL) throws Exception
+	{
+		Uri uri = Uri.parse(fromURL);
+		Common.LogMessage("inigo-settings.txt == " + fromURL);
+		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
+		{
+			final String[] UC = uri.getUserInfo().split(":");
+			Common.LogMessage("uri username = " + uri.getUserInfo());
+
+			if (UC != null && UC.length > 1)
+			{
+				Authenticator.setDefault(new Authenticator()
+				{
+					protected PasswordAuthentication getPasswordAuthentication()
+					{
+						return new PasswordAuthentication(UC[0], UC[1].toCharArray());
+					}
+				});
+			}
+		}
+
+		URL url = new URL(fromURL);
+		URLConnection conn = url.openConnection();
+		conn.setConnectTimeout(60000);
+		conn.setReadTimeout(60000);
+		conn.setDoOutput(true);
+		conn.connect();
+		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+
+		String line;
+		StringBuilder sb = new StringBuilder();
+		while ((line = in.readLine()) != null)
+		{
+			line = line.trim() + "\n";
+			if (line.length() > 0)
+				sb.append(line);
+		}
+		in.close();
+
+		return sb.toString().trim();
+	}
+
+	private File downloadBinary(File f, String fromURL) throws Exception
+	{
+		Uri uri = Uri.parse(fromURL);
+		Common.LogMessage("inigo-settings.txt == " + fromURL);
+		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
+		{
+			final String[] UC = uri.getUserInfo().split(":");
+			Common.LogMessage("uri username = " + uri.getUserInfo());
+
+			if (UC != null && UC.length > 1)
+			{
+				Authenticator.setDefault(new Authenticator()
+				{
+					protected PasswordAuthentication getPasswordAuthentication()
+					{
+						return new PasswordAuthentication(UC[0], UC[1].toCharArray());
+					}
+				});
+			}
+		}
+
+		OutputStream outputStream = new FileOutputStream(f.getAbsolutePath());
+
+		URL url = new URL(fromURL);
+		URLConnection conn = url.openConnection();
+		conn.setConnectTimeout(60000);
+		conn.setReadTimeout(60000);
+		conn.setDoOutput(true);
+		conn.connect();
+		InputStream input = conn.getInputStream();
+
+		int count;
+		byte data[] = new byte[1024];
+		while ((count = input.read(data)) != -1)
+			outputStream.write(data, 0, count);
+
+		input.close();
+		outputStream.flush();
+		outputStream.close();
+
+		return f;
 	}
 }

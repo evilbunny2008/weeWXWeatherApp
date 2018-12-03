@@ -547,8 +547,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					{
 						if(radtype.equals("image"))
 						{
-							String filename = common.downloadRADAR(radar);
-							File f = new File(filename);
+							File f = common.downloadRADAR(radar);
 							validURL2 = f.exists();
 						} else if(radtype.equals("webpage")) {
 							validURL2 = common.checkURL(radar);

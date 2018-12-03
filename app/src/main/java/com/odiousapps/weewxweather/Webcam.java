@@ -24,6 +24,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
+import static java.lang.Math.round;
+
 class Webcam
 {
     private Common common;
@@ -113,11 +115,11 @@ class Webcam
             public void run()
             {
 	            int period = 0;
-	            int curtime = Math.round(System.currentTimeMillis() / 1000);
+	            int curtime = round(System.currentTimeMillis() / 1000);
 
 	            File file = new File(common.context.getFilesDir(), "webcam.jpg");
 
-	            Common.LogMessage("curtime = " + curtime + ", file.lastModified() == " + Math.round(file.lastModified() / 1000));
+	            Common.LogMessage("curtime = " + curtime + ", file.lastModified() == " + round(file.lastModified() / 1000));
 
 	            if(!force)
 	            {
@@ -125,29 +127,11 @@ class Webcam
 		            if (pos <= 0)
 			            return;
 
-		            switch (pos)
-		            {
-			            case 1:
-				            period = 5 * 60 - 10;
-				            break;
-			            case 2:
-				            period = 10 * 60 - 10;
-				            break;
-			            case 3:
-				            period = 15 * 60 - 10;
-				            break;
-			            case 4:
-				            period = 30 * 60 - 10;
-				            break;
-			            case 5:
-				            period = 60 * 60 - 10;
-				            break;
-			            default:
-				            return;
-		            }
+		            long[] ret = common.getPeriod();
+		            period = round(ret[0] / 1000);
 	            }
 
-	            if(force || !file.exists() || Math.round(file.lastModified() / 1000) + period < curtime)
+	            if(force || !file.exists() || round(file.lastModified() / 1000) + period < curtime)
 	            {
 		            if(downloadWebcam(webURL, common.context.getFilesDir()))
 			            Common.LogMessage("done downloading, prompt handler to draw to iv");

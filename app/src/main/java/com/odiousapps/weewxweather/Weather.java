@@ -707,8 +707,8 @@ class Weather
                 try
                 {
                     Common.LogMessage("starting to download image from: " + radar);
-                    String fn = common.downloadRADAR(radar);
-                    Common.LogMessage("done downloading " + fn + ", prompt handler to draw to movie");
+                    File f = common.downloadRADAR(radar);
+                    Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
