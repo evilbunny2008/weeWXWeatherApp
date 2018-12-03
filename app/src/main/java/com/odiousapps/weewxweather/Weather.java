@@ -793,14 +793,15 @@ class Weather
                 String action = intent.getAction();
                 if(action != null && action.equals(Common.UPDATE_INTENT))
                 {
-	                Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
+	                Common.LogMessage("Weather() We have a update_intent, so we should probably update the screen.");
 	                dark_theme = common.GetBoolPref("dark_theme", false);
 	                updateFields();
 	                reloadWebView(false);
 	                reloadForecast(false);
                 } else if(action != null && action.equals(Common.REFRESH_INTENT)) {
-	                Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
+	                Common.LogMessage("Weather() We have a refresh_intent, so we should probably update the screen.");
 	                dark_theme = common.GetBoolPref("dark_theme", false);
+	                updateFields();
 	                loadWebView();
                 } else if(action != null && action.equals(Common.EXIT_INTENT)) {
                     doPause();

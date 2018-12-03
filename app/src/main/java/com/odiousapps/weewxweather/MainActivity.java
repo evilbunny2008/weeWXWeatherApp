@@ -377,7 +377,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					{
 						Common.LogMessage("trash all data");
 
-						common.RemovePref("SETTINGS_URL");
+						//common.RemovePref("SETTINGS_URL");
 						common.RemovePref("updateInterval");
 						common.RemovePref("BASE_URL");
 						common.RemovePref("radtype");
