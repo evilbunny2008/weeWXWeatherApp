@@ -631,6 +631,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
+							case "weather.gc.ca-fr":
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
 							case "metoffice.gov.uk":
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);

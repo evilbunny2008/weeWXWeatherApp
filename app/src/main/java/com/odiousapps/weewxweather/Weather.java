@@ -547,6 +547,29 @@ class Weather
 				    });
 				    break;
 			    }
+			    case "weather.gc.ca-fr":
+			    {
+				    String[] content = common.processWCAF(data);
+				    if (content == null || content.length <= 0)
+					    return;
+
+				    String wca = "<img src='wca.png' height='29px'/><br/>";
+				    String tmpfc = "<html>";
+				    if (dark_theme)
+					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    tmpfc += "<body style='text-align:center'>" + wca + content[0] + "</body></html>";
+				    final String fc = tmpfc;
+
+				    wv.post(new Runnable()
+				    {
+					    @Override
+					    public void run()
+					    {
+						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
+					    }
+				    });
+				    break;
+			    }
 			    case "metoffice.gov.uk":
 			    {
 				    String[] content = common.processMET(data);
@@ -660,13 +683,13 @@ class Weather
 							Common.LogMessage("updating rss cache");
 							common.SetIntPref("rssCheck", curtime);
 							common.SetStringPref("forecastData", tmp);
+
+							handlerDone.sendEmptyMessage(0);
 						}
 				    }
 			    } catch (Exception e) {
 				    e.printStackTrace();
 			    }
-
-			    handlerDone.sendEmptyMessage(0);
 		    }
 	    });
 
@@ -684,7 +707,6 @@ class Weather
         if(radar.equals(""))
         {
 	        loadWebView();
-	        handlerDone.sendEmptyMessage(0);
             return;
         }
 
@@ -709,11 +731,10 @@ class Weather
                     Common.LogMessage("starting to download image from: " + radar);
                     File f = common.downloadRADAR(radar);
                     Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
+	                handlerDone.sendEmptyMessage(0);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-	            handlerDone.sendEmptyMessage(0);
             }
         });
 

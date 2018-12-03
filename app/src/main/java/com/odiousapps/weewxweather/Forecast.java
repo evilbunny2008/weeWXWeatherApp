@@ -234,46 +234,51 @@ class Forecast
 
 	private void loadWebView()
 	{
-		if(common.GetStringPref("radtype", "image").equals("image"))
+		if(common.GetBoolPref("radarforecast", true))
 		{
-			rl.setVisibility(View.VISIBLE);
-			String radar = common.context.getFilesDir() + "/radar.gif";
-
-			if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+			if (common.GetStringPref("radtype", "image").equals("image"))
 			{
-				String html = "<html>";
-				if(dark_theme)
-					html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				html += "<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
-				wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
-				return;
-			}
+				rl.setVisibility(View.VISIBLE);
+				String radar = common.context.getFilesDir() + "/radar.gif";
 
-			int height = Math.round((float)Resources.getSystem().getDisplayMetrics().widthPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
-			int width = Math.round((float)Resources.getSystem().getDisplayMetrics().heightPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
+				if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+				{
+					String html = "<html>";
+					if (dark_theme)
+						html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+					html += "<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
+					wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
+					return;
+				}
 
-			String html = "<!DOCTYPE html>\n" +
-					"<html>\n" +
-					"  <head>\n" +
-					"    <meta charset='utf-8'>\n" +
-					"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
-			if(dark_theme)
+				int height = Math.round((float) Resources.getSystem().getDisplayMetrics().widthPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
+				int width = Math.round((float) Resources.getSystem().getDisplayMetrics().heightPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
+
+				String html = "<!DOCTYPE html>\n" +
+						"<html>\n" +
+						"  <head>\n" +
+						"    <meta charset='utf-8'>\n" +
+						"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
+				if (dark_theme)
 					html += "<style>body{color: #fff; background-color: #000;}</style>";
-			html += "  </head>\n" +
-					"  <body>\n" +
-					"\t<div style='text-align:center;'>\n" +
-					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" + height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
-					"\tsrc='file://" + radar + "'>\n" +
-					"\t</div>\n" +
-					"  </body>\n" +
-					"</html>";
-			wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
-			rl.setVisibility(View.VISIBLE);
-			wv2.setVisibility(View.GONE);
-		} else if(common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals("")) {
-			wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
-			rl.setVisibility(View.GONE);
-			wv2.setVisibility(View.VISIBLE);
+				html += "  </head>\n" +
+						"  <body>\n" +
+						"\t<div style='text-align:center;'>\n" +
+						"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" + height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
+						"\tsrc='file://" + radar + "'>\n" +
+						"\t</div>\n" +
+						"  </body>\n" +
+						"</html>";
+				wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
+				rl.setVisibility(View.VISIBLE);
+				wv2.setVisibility(View.GONE);
+			} else if (common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals("")) {
+				wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
+				rl.setVisibility(View.GONE);
+				wv2.setVisibility(View.VISIBLE);
+			}
+		} else {
+			generateForecast();
 		}
 	}
 
@@ -289,7 +294,6 @@ class Forecast
 		if(radar.equals("") || common.GetStringPref("radtype", "image").equals("webpage"))
 		{
 			loadWebView();
-			handlerDone.sendEmptyMessage(0);
 			return;
 		}
 
@@ -314,11 +318,10 @@ class Forecast
 					Common.LogMessage("starting to download image from: " + radar);
 					File f = common.downloadRADAR(radar);
 					Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
+					handlerDone.sendEmptyMessage(0);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-
-				handlerDone.sendEmptyMessage(0);
 			}
 		});
 
@@ -441,12 +444,11 @@ class Forecast
 	                    Common.LogMessage("updating rss cache");
 	                    common.SetIntPref("rssCheck", curtime);
 	                    common.SetStringPref("forecastData", tmp);
+	                    handlerDone.sendEmptyMessage(0);
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-	            handlerDone.sendEmptyMessage(0);
             }
         });
 
@@ -546,6 +548,13 @@ class Forecast
 				    updateForecast(content[0], content[1]);
 			    break;
 		    }
+		    case "weather.gc.ca-fr":
+		    {
+			    String[] content = common.processWCAF(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
 		    case "metoffice.gov.uk":
 		    {
 			    String[] content = common.processMET(data, true);
@@ -617,6 +626,9 @@ class Forecast
 			    im.setImageResource(R.drawable.wgov);
 			    break;
 		    case "weather.gc.ca":
+			    im.setImageResource(R.drawable.wca);
+			    break;
+		    case "weather.gc.ca-fr":
 			    im.setImageResource(R.drawable.wca);
 			    break;
 		    case "metoffice.gov.uk":

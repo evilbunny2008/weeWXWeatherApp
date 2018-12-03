@@ -766,6 +766,156 @@ class Common
 		return new String[]{out.toString(), desc};
 	}
 
+	String[] processWCAF(String data)
+	{
+		return processWCAF(data, false);
+	}
+
+	String[] processWCAF(String data, boolean showHeader)
+	{
+		if(data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		String tmp;
+		StringBuilder out = new StringBuilder();
+		String desc;
+
+		try
+		{
+			String obs = data.split("Prévisions émises à : ", 2)[1].trim();
+			obs = obs.split("</span>", 2)[0].trim();
+			//LogMessage("obs == " + obs);
+
+			// 16h00 HNP le dimanche 2 décembre 2018
+			int i = 0, j = obs.indexOf("h");
+			String hour = obs.substring(i, j);
+			i = j + 1;
+			j = obs.indexOf(" ", i);
+			String minute = obs.substring(i, j);
+
+			String[] bits = obs.split(" ");
+			String day = bits[bits.length - 3];
+			String month = bits[bits.length - 2];
+			String year = bits[bits.length - 1];
+
+			obs = hour + ":" + minute + " " + day + " " + month + " " + year;
+
+			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm d MMMM yyyy", Locale.CANADA_FRENCH);
+			long mdate = sdf.parse(obs).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.CANADA_FRENCH);
+			obs = sdf.format(mdate);
+			//LogMessage("obs == " + obs);
+
+			tmp = "<div style='font-size:12pt;'>" + obs + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			desc = data.split("<dt>Enregistrées à :</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
+
+			data = data.split("<div class=\"div-table\">", 2)[1].trim();
+			data = data.split("<section><details open=\"open\" class=\"wxo-detailedfore\">")[0].trim();
+			data = data.substring(0, data.length() - 7).trim();
+
+			bits = data.split("<div class=\"div-column\">");
+
+			for(i = 1; i < bits.length; i++)
+			{
+				Document doc = Jsoup.parse(bits[i].trim());
+				Elements div = doc.select("div");
+				for (j = 0; j < div.size(); j++)
+				{
+					String date, text = "", img_url = "", temp = "", pop = "";
+
+					if (div.get(j).className().contains("greybkgrd"))
+					{
+						j++;
+						continue;
+					}
+
+					if(div.get(j).toString().contains("div-row-head"))
+					{
+						if(div.get(j).select("div").html().contains("Ce soir et cette nuit"))
+							date = "Cette nuit";
+						else if(div.get(j).select("div").html().contains("Nuit"))
+							date = "Nuit";
+						else
+							date = div.get(j).html().split("<strong title=\"", 2)[1].split("\">", 2)[0].trim();
+
+						//LogMessage("date = " + date);
+					} else
+						continue;
+
+					j++;
+
+					if(j >= div.size())
+					{
+						LogMessage("continue");
+						continue;
+					}
+
+					try
+					{
+						//LogMessage(div.get(j).html());
+						if (div.outerHtml().contains("div-row-data"))
+						{
+							if (metric)
+								temp = div.get(j).select("div").select("span").html().split("<abbr")[0].trim() + "C";
+							else
+								temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].trim() + "F";
+							text = div.get(j).select("div").select("img").outerHtml().split("alt=\"", 2)[1].split("\"", 2)[0].trim();
+							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src=\"", 2)[1].split("\"", 2)[0].trim();
+							pop = div.get(j).select("div").select("small").html().trim();
+						}
+					} catch (Exception e) {
+						LogMessage("hmmm 2 == " + div.html());
+						e.printStackTrace();
+						System.exit(0);
+					}
+
+					BitmapFactory.Options options = new BitmapFactory.Options();
+					options.inJustDecodeBounds = false;
+
+					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "\\.png");
+					//LogMessage("fileName == " + fileName);
+
+					tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+					out.append(tmp);
+
+					tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
+					out.append(tmp);
+
+					tmp = "<td style='width:10%;text-align:right;'><b>" + temp + "</b></td></tr>";
+					out.append(tmp);
+
+					tmp = "<tr><td style='width:80%;'>" + text + "</td>";
+					out.append(tmp);
+
+					if(pop.equals(""))
+						tmp = "<td>&nbsp;</td></tr>";
+					else
+						tmp = "<td style='text-align:right;'>" + pop + "</td></tr>";
+					out.append(tmp);
+
+					if(showHeader)
+					{
+						tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+						out.append(tmp);
+					}
+				}
+			}
+
+			out.append("</table>");
+			//LogMessage(out.toString());
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{out.toString(), desc};
+	}
+
 	String[] processWGOV(String data)
 	{
 		return processWGOV(data, false);
