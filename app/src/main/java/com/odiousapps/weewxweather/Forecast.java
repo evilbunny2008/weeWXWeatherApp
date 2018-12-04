@@ -216,6 +216,16 @@ class Forecast
 
 	    updateScreen();
 
+	    File f2 = new File(common.context.getFilesDir(), "/radar.gif");
+	    long[] period = common.getPeriod();
+
+	    if(!common.GetStringPref("RADAR_URL", "").equals("") && f2.lastModified() + period[0] < System.currentTimeMillis())
+		    reloadWebView(false);
+
+	    int curtime = Math.round(System.currentTimeMillis() / 1000);
+	    if(!common.GetBoolPref("radarforecast", true) && common.GetIntPref("rssCheck", 0) + 7190 < curtime)
+		    getForecast(false);
+
         return rootView;
     }
 
@@ -305,7 +315,9 @@ class Forecast
 					Common.LogMessage("starting to download image from: " + radar);
 					File f = common.downloadRADAR(radar);
 					Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
-					handlerDone.sendEmptyMessage(0);
+					File f2 = new File(common.context.getFilesDir(), "/radar.gif");
+					if(f.renameTo(f2))
+						handlerDone.sendEmptyMessage(0);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -356,6 +368,8 @@ class Forecast
 		    rl.setVisibility(View.VISIBLE);
 		    wv2.setVisibility(View.GONE);
 	    }
+
+	    swipeLayout.setRefreshing(false);
     }
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
@@ -480,18 +494,6 @@ class Forecast
 		    swipeLayout.setRefreshing(false);
 		    return;
 	    }
-
-	    try
-        {
-	        while (data.equals(""))
-	        {
-		        Thread.sleep(1000);
-		        data = common.GetStringPref("forecastData", "");
-	        }
-        } catch (Exception e) {
-        	e.printStackTrace();
-        	return;
-        }
 
 	    switch(fctype.toLowerCase())
 	    {

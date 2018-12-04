@@ -194,7 +194,6 @@ class Weather
                 Common.LogMessage("rootview long press");
 	            swipeLayout.setRefreshing(true);
 	            forceRefresh();
-	            reloadWebView(true);
                 return true;
             }
         });
@@ -208,7 +207,6 @@ class Weather
 			    swipeLayout.setRefreshing(true);
 			    Common.LogMessage("onRefresh();");
 			    forceRefresh();
-			    reloadWebView(true);
 		    }
 	    });
 
@@ -227,7 +225,6 @@ class Weather
 	            swipeLayout.setRefreshing(true);
                 Common.LogMessage("wv long press");
 	            forceRefresh();
-	            reloadWebView(true);
                 return true;
             }
         });
@@ -266,9 +263,14 @@ class Weather
 
         loadWebView();
 
-        if(!common.GetStringPref("RADAR_URL", "").equals(""))
+	    File f2 = new File(common.context.getFilesDir(), "/radar.gif");
+	    long[] period = common.getPeriod();
+
+        if(!common.GetStringPref("RADAR_URL", "").equals("") && f2.lastModified() + period[0] < System.currentTimeMillis())
             reloadWebView(false);
-        if(!common.GetBoolPref("radarforecast", true))
+
+	    int curtime = Math.round(System.currentTimeMillis() / 1000);
+	    if(!common.GetBoolPref("radarforecast", true) && common.GetIntPref("rssCheck", 0) + 7190 < curtime)
         	reloadForecast(false);
 
         return updateFields();
@@ -278,8 +280,8 @@ class Weather
     {
 	    swipeLayout.setRefreshing(true);
 	    common.getWeather();
-	    wipeForecast();
 	    reloadWebView(true);
+	    reloadForecast(true);
     }
 
     private void loadWebView()
@@ -326,15 +328,7 @@ class Weather
 						    "\tsrc='file://" + radar + "'>\n" +
 						    "  </body>\n" +
 						    "</html>";
-				    final String html = tmphtml;
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-					    }
-				    });
+				    wv.loadDataWithBaseURL(null, tmphtml, "text/html", "utf-8", null);
 				    break;
 			    case "webpage":
 				    wv.post(new Runnable()
@@ -629,14 +623,6 @@ class Weather
 	    swipeLayout.setRefreshing(false);
     }
 
-	private void wipeForecast()
-	{
-		Common.LogMessage("wiping rss cache");
-		common.SetIntPref("rssCheck", 0);
-		common.SetStringPref("forecastData", "");
-		reloadForecast(true);
-	}
-
 	private void reloadForecast(boolean force)
     {
 	    if(common.GetBoolPref("radarforecast", true))
@@ -740,7 +726,9 @@ class Weather
                     Common.LogMessage("starting to download image from: " + radar);
                     File f = common.downloadRADAR(radar);
                     Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
-	                handlerDone.sendEmptyMessage(0);
+                    File f2 = new File(common.context.getFilesDir(), "/radar.gif");
+                    if(f.renameTo(f2))
+                    	handlerDone.sendEmptyMessage(0);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

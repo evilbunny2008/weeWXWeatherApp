@@ -1797,7 +1797,7 @@ class Common
 						return;
 
 					reallyGetWeather(fromURL);
-					SendIntents();
+					SendRefresh();
 				} catch (Exception e) {
 					e.printStackTrace();
 					SetStringPref("lastError", e.toString());
@@ -2187,7 +2187,7 @@ class Common
 	File downloadRADAR(String radar) throws Exception
 	{
 		LogMessage("starting to download image from: " + radar);
-		File file = new File(context.getFilesDir(), "/radar.gif");
+		File file = new File(context.getFilesDir(), "/radar.gif.tmp");
 		return downloadBinary(file, radar);
 	}
 
