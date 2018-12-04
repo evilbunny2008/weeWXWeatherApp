@@ -518,7 +518,6 @@ class Common
 			}
 
 			out.append("</table>");
-			//System.exit(0);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -1325,6 +1324,129 @@ class Common
 		}
 
 		return new String[]{out.toString(), desc};
+	}
+
+	String[] processAEMET(String data)
+	{
+		return processAEMET(data, false);
+	}
+
+	String[] processAEMET(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		StringBuilder out = new StringBuilder();
+		String tmp;
+		String desc;
+
+		try
+		{
+			JSONObject jobj = new XmlToJson.Builder(data).build().toJson();
+			if (jobj == null)
+				return null;
+
+			jobj = jobj.getJSONObject("root");
+			desc = jobj.getString("nombre") + ", " + jobj.getString("provincia");
+
+			String elaborado = jobj.getString("elaborado");
+
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+			long mdate = sdf.parse(elaborado).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			elaborado = sdf.format(mdate);
+
+			tmp = "<div style='font-size:12pt;'>" + elaborado + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			JSONArray days = jobj.getJSONObject("prediccion").getJSONArray("dia");
+			for(int i = 0; i < days.length(); i++)
+			{
+				JSONObject jtmp = days.getJSONObject(i);
+				String fecha = jtmp.getString("fecha");
+				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+				mdate = sdf.parse(fecha).getTime();
+				sdf = new SimpleDateFormat("EEEE", new Locale("es", "ES"));
+				fecha = sdf.format(mdate);
+
+				JSONObject estado_cielo = null;
+
+				Object v = jtmp.get("estado_cielo");
+				if(v instanceof JSONObject)
+				{
+					estado_cielo = jtmp.getJSONObject("estado_cielo");
+				} else if(v instanceof JSONArray) {
+					JSONArray jarr = jtmp.getJSONArray("estado_cielo");
+					for(int j = 0; j < jarr.length(); j++)
+					{
+						if(!jarr.getJSONObject(j).getString("descripcion").equals(""))
+						{
+							estado_cielo = jarr.getJSONObject(j);
+							break;
+						}
+					}
+				}
+
+				if(estado_cielo == null)
+					return null;
+
+				JSONObject temperatura = jtmp.getJSONObject("temperatura");
+
+				String code = estado_cielo.getString("content");
+				String url = "http://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
+
+				String fileName = "aemet_" + code + "_g.png";
+				fileName = checkImage(fileName, url);
+
+				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + fecha + "</b></td>";
+				out.append(tmp);
+
+				String max = temperatura.getString("maxima");
+				String min = temperatura.getString("minima");
+				if(metric)
+				{
+					max = max + "&deg;C";
+					min = min + "&deg;C";
+				} else {
+					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				}
+
+				if(!max.equals("&deg;C"))
+					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
+				else
+					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td>" + estado_cielo.getString("descripcion") + "</td>";
+				out.append(tmp);
+
+				if(!min.equals("&deg;C"))
+					tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
+				else
+					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+
+			out.append("</table>");
+			return new String[]{out.toString(), desc};
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
 	}
 
 	String[] processYR(String data)
@@ -2282,8 +2404,32 @@ class Common
 		return sb.toString().trim();
 	}
 
+
+	@SuppressWarnings("unused")
+	void writeFile(File f, String data) throws Exception
+	{
+		File dir = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		if (!dir.exists())
+			if (!dir.mkdirs())
+				return;
+
+		OutputStream outputStream = new FileOutputStream(f);
+		outputStream.write(data.getBytes());
+		outputStream.flush();
+		outputStream.close();
+
+		LogMessage("wrote to " + f.getAbsolutePath());
+		MediaScannerConnection.scanFile(context.getApplicationContext(), new String[]{f.getAbsolutePath()}, null, null);
+		context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(f)));
+	}
+
 	private File downloadBinary(File f, String fromURL) throws Exception
 	{
+		File dir = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		if (!dir.exists())
+			if (!dir.mkdirs())
+				return null;
+
 		Uri uri = Uri.parse(fromURL);
 		Common.LogMessage("fromURL == " + fromURL);
 		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
@@ -2321,6 +2467,10 @@ class Common
 		input.close();
 		outputStream.flush();
 		outputStream.close();
+
+		LogMessage("wrote to " + f.getAbsolutePath());
+		MediaScannerConnection.scanFile(context.getApplicationContext(), new String[]{f.getAbsolutePath()}, null, null);
+		context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(f)));
 
 		return f;
 	}

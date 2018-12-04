@@ -567,6 +567,13 @@ class Forecast
 				    updateForecast(content[0], content[1]);
 			    break;
 		    }
+		    case "aemet.es":
+		    {
+			    String[] content = common.processAEMET(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
 	    }
 
 	    swipeLayout.setRefreshing(false);
@@ -635,6 +642,8 @@ class Forecast
 		    case "bom2":
 			    im.setImageResource(R.drawable.bom);
 			    break;
+		    case "aemet.es":
+		    	im.setImageResource(R.drawable.aemet);
 	    }
     }
 }
