@@ -47,7 +47,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
@@ -217,7 +219,6 @@ class Common
 		} catch (ClassCastException cce)
 		{
 			cce.printStackTrace();
-			//SetStringPref(name, defval);
 			return defval;
 		} catch (Exception e)
 		{
@@ -594,7 +595,6 @@ class Common
 			}
 
 			out.append("</table>");
-			//LogMessage(out.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -622,7 +622,6 @@ class Common
 		{
 			String obs = data.split("Forecast issued: ", 2)[1].trim();
 			obs = obs.split("</span>", 2)[0].trim();
-			//LogMessage("obs == " + obs);
 
 			int i = 0, j = obs.indexOf(":");
 			String hour = obs.substring(i, j);
@@ -654,7 +653,6 @@ class Common
 			long mdate = sdf.parse(obs).getTime();
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 			obs = sdf.format(mdate);
-			//LogMessage("obs == " + obs);
 
 			tmp = "<div style='font-size:12pt;'>" + obs + "</div>";
 			out.append(tmp);
@@ -691,8 +689,6 @@ class Common
 							date = "Night";
 						else
 							date = div.get(j).html().split("<strong title=\"", 2)[1].split("\">", 2)[0].trim();
-
-						//LogMessage("date = " + date);
 					} else
 						continue;
 
@@ -706,7 +702,6 @@ class Common
 
 					try
 					{
-						//LogMessage(div.get(j).html());
 						if (div.outerHtml().contains("div-row-data"))
 						{
 							if (metric)
@@ -727,7 +722,6 @@ class Common
 					options.inJustDecodeBounds = false;
 
 					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "\\.png");
-					//LogMessage("fileName == " + fileName);
 
 					tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
 					out.append(tmp);
@@ -756,7 +750,6 @@ class Common
 			}
 
 			out.append("</table>");
-			//LogMessage(out.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -784,9 +777,7 @@ class Common
 		{
 			String obs = data.split("Prévisions émises à : ", 2)[1].trim();
 			obs = obs.split("</span>", 2)[0].trim();
-			//LogMessage("obs == " + obs);
 
-			// 16h00 HNP le dimanche 2 décembre 2018
 			int i = 0, j = obs.indexOf("h");
 			String hour = obs.substring(i, j);
 			i = j + 1;
@@ -804,7 +795,6 @@ class Common
 			long mdate = sdf.parse(obs).getTime();
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.CANADA_FRENCH);
 			obs = sdf.format(mdate);
-			//LogMessage("obs == " + obs);
 
 			tmp = "<div style='font-size:12pt;'>" + obs + "</div>";
 			out.append(tmp);
@@ -841,8 +831,6 @@ class Common
 							date = "Nuit";
 						else
 							date = div.get(j).html().split("<strong title=\"", 2)[1].split("\">", 2)[0].trim();
-
-						//LogMessage("date = " + date);
 					} else
 						continue;
 
@@ -856,7 +844,6 @@ class Common
 
 					try
 					{
-						//LogMessage(div.get(j).html());
 						if (div.outerHtml().contains("div-row-data"))
 						{
 							if (metric)
@@ -877,7 +864,6 @@ class Common
 					options.inJustDecodeBounds = false;
 
 					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "\\.png");
-					//LogMessage("fileName == " + fileName);
 
 					tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
 					out.append(tmp);
@@ -906,7 +892,6 @@ class Common
 			}
 
 			out.append("</table>");
-			//LogMessage(out.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
@@ -1081,8 +1066,6 @@ class Common
 						}
 					}
 				}
-
-				//LogMessage("iconLink.getString(i) => " + iconLink.getString(i));
 
 				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + iconLink.getString(i) + "'></td>";
 				out.append(tmp);
@@ -1314,7 +1297,6 @@ class Common
 					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
 					out.append(tmp);
 				}
-				//LogMessage(jarr.getJSONObject(i).toString(2));
 			}
 
 			out.append("</table>");
@@ -1324,6 +1306,107 @@ class Common
 		}
 
 		return new String[]{out.toString(), desc};
+	}
+
+	String[] processDWD(String data)
+	{
+		return processDWD(data, false);
+	}
+
+	String[] processDWD(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		StringBuilder out = new StringBuilder();
+		String tmp;
+		String desc = "";
+
+		try
+		{
+			String[] bits = data.split("<title>");
+			if (bits.length >= 2)
+				desc = bits[1].split("</title>")[0];
+			desc = desc.substring(desc.lastIndexOf(" - ") + 3, desc.length()).trim();
+			String ftime = data.split("<tr class=\"headRow\">", 2)[1].split("</tr>", 2)[0].trim();
+			String date = ftime.split("<td width=\"30%\" class=\"stattime\">", 2)[1].split("</td>", 2)[0].trim();
+			ftime = date + " " + ftime.split("<td width=\"40%\" class=\"stattime\">", 2)[1].split(" Uhr</td>", 2)[0].trim();
+
+			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy' 'HH", Locale.getDefault());
+			long mdate = sdf.parse(ftime).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			ftime = sdf.format(mdate);
+
+			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			data = data.split("<td width=\"40%\" class=\"statwert\">Vorhersage</td>", 2)[1].split("</table>", 2)[0].trim();
+
+			bits = data.split("<tr");
+			for(int i = 1; i < bits.length; i++)
+			{
+				String bit = bits[i];
+				String day, icon, temp;
+				if(bit.split("<td ><b>", 2).length > 1)
+					day = bit.split("<td ><b>", 2)[1].split("</b></td>", 2)[0].trim();
+				else
+					day = bit.split("<td><b>", 2)[1].split("</b></td>", 2)[0].trim();
+
+				if(bit.split("<td ><img name=\"piktogramm\" src=\"", 2).length > 1)
+					icon = bit.split("<td ><img name=\"piktogramm\" src=\"", 2)[1].split("\" width=\"50\" alt=\"",2)[0].trim();
+				else
+					icon = bit.split("<td><img name=\"piktogramm\" src=\"", 2)[1].split("\" width=\"50\" alt=\"",2)[0].trim();
+
+				if(bit.split("\"></td>\n<td >", 2).length > 1)
+					temp = bit.split("\"></td>\n<td >", 2)[1].split("Grad <abbr title=\"Celsius\">C</abbr></td>\n", 2)[0].trim();
+				else
+					temp = bit.split("\"></td>\n<td>", 2)[1].split("Grad <abbr title=\"Celsius\">C</abbr></td>\n", 2)[0].trim();
+
+				icon = icon.replaceAll("/DE/wetter/_functions/piktos/vhs_", "").replaceAll("\\?__blob=normal", "").trim();
+				String fileName = "dwd_" + icon.replaceAll("-", "_");
+				String url = "https://www.dwd.de/DE/wetter/_functions/piktos/" + icon + "?__blob=normal";
+				fileName = checkImage(fileName, url);
+
+				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
+				out.append(tmp);
+
+				if(metric)
+					temp = temp + "&deg;C";
+				else
+					temp = round((Double.parseDouble(temp) * 9.0 / 5.0) + 32.0) + "&deg;F";
+
+				if(!temp.equals("&deg;C"))
+					tmp = "<td style='width:10%;text-align:right;'><b>" + temp + "</b></td></tr>";
+				else
+					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td>&nbsp;</td>";
+				out.append(tmp);
+
+				tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+
+			out.append("</table>");
+			return new String[]{out.toString(), desc};
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
 	}
 
 	String[] processAEMET(String data)
@@ -1459,7 +1542,6 @@ class Common
 		if(data == null || data.equals(""))
 			return null;
 
-		//boolean metric = GetBoolPref("metric", true);
 		StringBuilder out = new StringBuilder();
 		String desc;
 
@@ -1499,7 +1581,6 @@ class Common
 				JSONObject precipitation = jarr.getJSONObject(i).getJSONObject("precipitation");
 				JSONObject temperature = jarr.getJSONObject(i).getJSONObject("temperature");
 				JSONObject windDirection = jarr.getJSONObject(i).getJSONObject("windDirection");
-				//JSONObject pressure = jarr.getJSONObject(i).getJSONObject("pressure");
 				JSONObject windSpeed = jarr.getJSONObject(i).getJSONObject("windSpeed");
 
 				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
@@ -1866,7 +1947,6 @@ class Common
 			    str.append(stmp);
 		    }
 
-		    //Common.LogMessage("finished building forecast: " + str.toString());
 		    return new String[]{str.toString(), desc};
 	    } catch (Exception e) {
 		    e.printStackTrace();
@@ -1971,12 +2051,12 @@ class Common
 		WifiManager wifiMgr = (WifiManager)context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
 		if (wifiMgr.isWifiEnabled())
-		{ // Wi-Fi adapter is ON
+		{
 			WifiInfo wifiInfo = wifiMgr.getConnectionInfo();
 			return wifiInfo.getNetworkId() != -1;
 		}
 
-		return false; // Wi-Fi adapter is OFF
+		return false;
 	}
 
 	private void sendAlert()
@@ -2013,7 +2093,6 @@ class Common
 		if(f.exists())
 			return f.getAbsolutePath();
 
-		LogMessage("File '" + fileName + "' isn't in drawable or in /sdcard, so will download and return: " + icon);
 		downloadImage(fileName, icon);
 
 		return icon;
@@ -2404,14 +2483,15 @@ class Common
 		return sb.toString().trim();
 	}
 
-
 	@SuppressWarnings("unused")
-	void writeFile(File f, String data) throws Exception
+	void writeFile(String fileName, String data) throws Exception
 	{
 		File dir = new File(Environment.getExternalStorageDirectory(), "weeWX");
 		if (!dir.exists())
 			if (!dir.mkdirs())
 				return;
+
+		File f = new File(dir, fileName);
 
 		OutputStream outputStream = new FileOutputStream(f);
 		outputStream.write(data.getBytes());

@@ -574,6 +574,13 @@ class Forecast
 				    updateForecast(content[0], content[1]);
 			    break;
 		    }
+		    case "dwd.de":
+		    {
+			    String[] content = common.processDWD(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
 	    }
 
 	    swipeLayout.setRefreshing(false);
@@ -643,7 +650,11 @@ class Forecast
 			    im.setImageResource(R.drawable.bom);
 			    break;
 		    case "aemet.es":
-		    	im.setImageResource(R.drawable.aemet);
+			    im.setImageResource(R.drawable.aemet);
+			    break;
+		    case "dwd.de":
+			    im.setImageResource(R.drawable.dwd);
+			    break;
 	    }
     }
 }

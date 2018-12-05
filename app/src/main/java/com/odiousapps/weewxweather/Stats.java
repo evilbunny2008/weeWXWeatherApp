@@ -163,6 +163,20 @@ class Stats
 	            {
 		            dark_theme = common.GetBoolPref("dark_theme", false);
 
+		            if (dark_theme)
+		            {
+			            seekBar.setBackgroundColor(0xff000000);
+			            ll1.setBackgroundColor(0xff000000);
+		            } else
+		            {
+			            seekBar.setBackgroundColor(0xffffffff);
+			            ll1.setBackgroundColor(0xffffffff);
+		            }
+
+		            updateFields();
+	            } else if (action != null && action.equals(Common.REFRESH_INTENT)) {
+		            dark_theme = common.GetBoolPref("dark_theme", false);
+
 		            if(dark_theme)
 		            {
 			            seekBar.setBackgroundColor(0xff000000);

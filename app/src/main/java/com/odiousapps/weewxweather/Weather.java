@@ -641,6 +641,30 @@ class Weather
 				    });
 				    break;
 			    }
+			    case "dwd.de":
+			    {
+				    String[] content = common.processDWD(data);
+				    if (content == null || content.length <= 0)
+					    return;
+
+				    String logo = "<img src='dwd.png' height='29px'/><br/>";
+				    String tmpfc = "<html>";
+				    if (dark_theme)
+					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    tmpfc += "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+
+				    final String fc = tmpfc;
+
+				    wv.post(new Runnable()
+				    {
+					    @Override
+					    public void run()
+					    {
+						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
+					    }
+				    });
+				    break;
+			    }
 		    }
 	    }
 
