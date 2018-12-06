@@ -291,11 +291,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "wouldn't be possible otherwise.<br><br>" +
 			    "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
 			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a><br><br>" +
-			    "Forecasts supplied by <a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, <a href='https://weatherzone.com.au'>weatherzone</a>, " +
+			    "Forecasts supplied by" +
+			    "<a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, " +
+			    "<a href='https://weatherzone.com.au'>weatherzone</a>, " +
 			    "<a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a>, " +
-			    "<a href='https://bom.gov.au'>Bureau of Meteorology</a>, <a href='https://www.weather.gov'>Weather.gov</a>, " +
-			    "<a href='https://worldweather.wmo.int/en/home.html'>World Meteorology Organisation</a> and " +
-			    "<a href='https://weather.gc.ca'>Environment Canada</a>" +
+			    "<a href='https://bom.gov.au'>Bureau of Meteorology</a>, " +
+			    "<a href='https://www.weather.gov'>Weather.gov</a>, " +
+			    "<a href='https://worldweather.wmo.int/en/home.html'>World Meteorology Organisation</a>, " +
+			    "<a href='https://weather.gc.ca'>Environment Canada</a>, " +
+			    "<a href='https://www.metoffice.gov.uk'>UK Met Office</a>, " +
+			    "<a href='https://www.aemet.es'>La Agencia Estatal de Meteorología (AEMET)</a>, " +
+			    "<a href='https://www.dwd.de'>Deutscher Wetterdienst (DWD)</a>, " +
+			    "<a href='https://metservice.com'>MetService.com</a>" +
 			    "<br><br>" +
 			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
@@ -648,6 +655,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("fctype=" + fctype);
 								break;
 							case "dwd.de":
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
+							case "metservice.com":
+								forecast = "https://www.metservice.com/publicData/localForecast" + forecast;
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;

@@ -159,7 +159,7 @@ class Stats
             {
 	            Common.LogMessage("We have a hit, so we should probably update the screen.");
 	            String action = intent.getAction();
-	            if (action != null && action.equals(Common.UPDATE_INTENT))
+	            if (action != null && (action.equals(Common.UPDATE_INTENT) || action.equals(Common.REFRESH_INTENT)))
 	            {
 		            dark_theme = common.GetBoolPref("dark_theme", false);
 
@@ -169,19 +169,6 @@ class Stats
 			            ll1.setBackgroundColor(0xff000000);
 		            } else
 		            {
-			            seekBar.setBackgroundColor(0xffffffff);
-			            ll1.setBackgroundColor(0xffffffff);
-		            }
-
-		            updateFields();
-	            } else if (action != null && action.equals(Common.REFRESH_INTENT)) {
-		            dark_theme = common.GetBoolPref("dark_theme", false);
-
-		            if(dark_theme)
-		            {
-			            seekBar.setBackgroundColor(0xff000000);
-			            ll1.setBackgroundColor(0xff000000);
-		            } else {
 			            seekBar.setBackgroundColor(0xffffffff);
 			            ll1.setBackgroundColor(0xffffffff);
 		            }

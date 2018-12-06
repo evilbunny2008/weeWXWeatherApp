@@ -47,9 +47,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
@@ -1306,6 +1304,101 @@ class Common
 		}
 
 		return new String[]{out.toString(), desc};
+	}
+
+	String[] processMetService(String data)
+	{
+		return processMetService(data, false);
+	}
+
+	String[] processMetService(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		StringBuilder out = new StringBuilder();
+		String tmp;
+		String desc;
+
+		try
+		{
+			JSONObject jobj = new JSONObject(data);
+			JSONArray days = jobj.getJSONArray("days");
+			String ftime = days.getJSONObject(0).getString("issuedAtISO");
+			desc = jobj.getString("locationECWasp") + ", New Zealand";
+
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+			long mdate = sdf.parse(ftime).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			ftime = sdf.format(mdate);
+
+			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			for(int i = 0; i < days.length(); i++)
+			{
+				JSONObject jtmp = days.getJSONObject(i);
+				String dow = jtmp.getString("dow");
+				String text = jtmp.getString("forecast");
+				String max = jtmp.getString("max");
+				String min = jtmp.getString("min");
+				String icon;
+				if(jtmp.has("partDayData"))
+					icon = jtmp.getJSONObject("partDayData").getJSONObject("afternoon").getString("forecastWord");
+				else
+					icon = jtmp.getString("forecastWord");
+
+				icon = "ms_" + icon.toLowerCase().replaceAll("-", "_").replaceAll(" ", "_").trim() + ".png";
+
+				//LogMessage("icon == " + icon);
+
+				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + icon + "'></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + dow + "</b></td>";
+				out.append(tmp);
+
+				if(metric)
+				{
+					max = max + "&deg;C";
+					min = min + "&deg;C";
+				} else {
+					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				}
+
+				if(!max.equals("&deg;C"))
+					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
+				else
+					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td>" + text + "</td>";
+				out.append(tmp);
+
+				if(!min.equals("&deg;C"))
+					tmp = "<td style='text-align:right;vertical-align:top;'>" + min + "</td></tr>";
+				else
+					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+
+			out.append("</table>");
+			return new String[]{out.toString(), desc};
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
 	}
 
 	String[] processDWD(String data)

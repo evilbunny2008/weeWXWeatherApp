@@ -248,6 +248,7 @@ class Forecast
 					html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
 				html += "<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
 				wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
+				swipeLayout.setRefreshing(false);
 				return;
 			}
 
@@ -272,10 +273,26 @@ class Forecast
 			wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
 			rl.setVisibility(View.VISIBLE);
 			wv2.setVisibility(View.GONE);
+			swipeLayout.setRefreshing(false);
 		} else if (common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals("")) {
-			wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
 			rl.setVisibility(View.GONE);
 			wv2.setVisibility(View.VISIBLE);
+
+			if(wv2.getOriginalUrl() == null)
+			{
+				wv2.post(new Runnable()
+				{
+					@Override
+					public void run()
+					{
+						wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
+						swipeLayout.setRefreshing(false);
+					}
+				});
+			} else {
+				wv2.reload();
+				swipeLayout.setRefreshing(false);
+			}
 		}
 
 		swipeLayout.setRefreshing(false);
@@ -292,7 +309,11 @@ class Forecast
 
 		if(radar.equals("") || common.GetStringPref("radtype", "image").equals("webpage"))
 		{
-			loadWebView();
+			if(wv2.getOriginalUrl() == null)
+				loadWebView();
+			else
+				wv2.reload();
+			swipeLayout.setRefreshing(false);
 			return;
 		}
 
@@ -385,9 +406,6 @@ class Forecast
                 {
 	                dark_theme = common.GetBoolPref("dark_theme", false);
 	                updateScreen();
-                } else if(action != null && action.equals(Common.REFRESH_INTENT)) {
-	                dark_theme = common.GetBoolPref("dark_theme", false);
-	                updateScreen();
                 } else if(action != null && action.equals(Common.EXIT_INTENT)) {
                     doPause();
                 }
@@ -399,7 +417,6 @@ class Forecast
 
     private void getForecast(boolean force)
     {
-	    swipeLayout.setRefreshing(true);
 	    if(!common.GetBoolPref("radarforecast", true))
 		    return;
 
@@ -414,6 +431,7 @@ class Forecast
 			    public void run()
 			    {
 				    wv2.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+				    swipeLayout.setRefreshing(false);
 			    }
 		    });
 
@@ -581,6 +599,13 @@ class Forecast
 				    updateForecast(content[0], content[1]);
 			    break;
 		    }
+		    case "metservice.com":
+		    {
+			    String[] content = common.processMetService(data, true);
+			    if(content != null && content.length >= 2)
+				    updateForecast(content[0], content[1]);
+			    break;
+		    }
 	    }
 
 	    swipeLayout.setRefreshing(false);
@@ -654,6 +679,9 @@ class Forecast
 			    break;
 		    case "dwd.de":
 			    im.setImageResource(R.drawable.dwd);
+			    break;
+		    case "metservice.com":
+			    im.setImageResource(R.drawable.metservice);
 			    break;
 	    }
     }
