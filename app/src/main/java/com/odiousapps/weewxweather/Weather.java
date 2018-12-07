@@ -120,10 +120,10 @@ class Weather
 	    sb.append("<table style='width:100%;border:0px;'>");
 
 	    stmp = "<tr><td><img style='width:" + iw + "px' src='windsock.png'></td><td>" + bits[25] + bits[61] + "</td>" +
-			    "<td style='text-align:right;'>" + bits[1] + bits[60] + "</td><td><img style='width:" + iw + "px' src='barometer.png'></td></tr>";
+			    "<td style='text-align:right;'>" + bits[37] + bits[63] + "</td><td><img style='width:" + iw + "px' src='barometer.png'></td></tr>";
 	    sb.append(stmp);
 
-	    stmp = "<tr><td><img style='width:" + iw + "px' src='compass.png'></td><td>" + bits[37] + bits[63] + "</td>" +
+	    stmp = "<tr><td><img style='width:" + iw + "px' src='compass.png'></td><td>" + bits[30] + "</td>" +
 			    "<td style='text-align:right;'>" + bits[6] + bits[64] + "</td><td><img style='width:" + iw + "px' src='humidity.png'></td></tr>";
 	    sb.append(stmp);
 
@@ -209,6 +209,7 @@ class Weather
 			    forceRefresh();
 		    }
 	    });
+	    swipeLayout.setRefreshing(true);
 
         wv = rootView.findViewById(R.id.radar);
 
@@ -288,411 +289,293 @@ class Weather
     {
 	    swipeLayout.setRefreshing(true);
 
-	    if(common.GetBoolPref("radarforecast", true))
+	    Thread t = new Thread(new Runnable()
 	    {
-		    switch (common.GetStringPref("radtype", "image"))
+		    @Override
+		    public void run()
 		    {
-			    case "image":
-				    String radar = common.context.getFilesDir() + "/radar.gif";
+			    final StringBuffer sb = new StringBuffer();
+			    String tmp;
 
-				    File myFile = new File(radar);
-				    Common.LogMessage("myFile == " + myFile.getAbsolutePath());
-				    Common.LogMessage("myFile.exists() == " + myFile.exists());
+			    swipeLayout.setRefreshing(true);
 
-				    if (radar.equals("") || !myFile.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+			    if (common.GetBoolPref("radarforecast", true))
+			    {
+				    switch (common.GetStringPref("radtype", "image"))
 				    {
-					    final String html = "<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
-					    wv.post(new Runnable()
+					    case "image":
 					    {
-						    @Override
-						    public void run()
+						    String radar = common.context.getFilesDir() + "/radar.gif";
+
+						    File myFile = new File(radar);
+						    Common.LogMessage("myFile == " + myFile.getAbsolutePath());
+						    Common.LogMessage("myFile.exists() == " + myFile.exists());
+
+						    if (radar.equals("") || !myFile.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 						    {
-							    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+							    sb.append("<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>");
+							    wv.loadDataWithBaseURL(null, sb.toString(), "text/html", "utf-8", null);
+							    return;
+						    } else {
+							    sb.append("<!DOCTYPE html>\n" +
+									    "<html>\n" +
+									    "  <head>\n" +
+									    "    <meta charset='utf-8'>\n" +
+									    "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n");
+							    if (dark_theme)
+								    sb.append("<style>body{color: #fff; background-color: #000;}</style>");
+
+							    tmp = "  </head>\n" +
+									    "  <body>\n" +
+									    "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
+									    "\tsrc='file://" + radar + "'>\n" +
+									    "  </body>\n" +
+									    "</html>";
+							    sb.append(tmp);
+							    wv.loadDataWithBaseURL(null, sb.toString(), "text/html", "utf-8", null);
+							    break;
 						    }
-					    });
-					    swipeLayout.setRefreshing(false);
+					    }
+					    case "webpage":
+						    wv.post(new Runnable()
+						    {
+							    @Override
+							    public void run()
+							    {
+								    wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
+							    }
+						    });
+						    return;
+					    default:
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    sb.append("<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>");
+						    break;
+				    }
+
+				    wv.post(new Runnable()
+				    {
+					    @Override
+					    public void run()
+					    {
+						    wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
+					    }
+				    });
+				    swipeLayout.setRefreshing(false);
+			    } else {
+				    String fctype = common.GetStringPref("fctype", "Yahoo");
+				    String data = common.GetStringPref("forecastData", "");
+
+				    if (data.equals(""))
+				    {
+					    sb.append("<html>");
+					    if (dark_theme)
+						    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+					    tmp = "<body>Forecast URL not set or is still downloading. You can go to settings to change.</body></html>";
+					    sb.append(tmp);
 					    return;
 				    }
 
-				    String tmphtml = "<!DOCTYPE html>\n" +
-						    "<html>\n" +
-						    "  <head>\n" +
-						    "    <meta charset='utf-8'>\n" +
-						    "    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
-				    if(dark_theme)
-					    tmphtml += "<style>body{color: #fff; background-color: #000;}</style>";
-
-				    tmphtml += "  </head>\n" +
-						    "  <body>\n" +
-						    "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
-						    "\tsrc='file://" + radar + "'>\n" +
-						    "  </body>\n" +
-						    "</html>";
-				    wv.loadDataWithBaseURL(null, tmphtml, "text/html", "utf-8", null);
-				    break;
-			    case "webpage":
-				    wv.post(new Runnable()
+				    switch (fctype.toLowerCase())
 				    {
-					    @Override
-					    public void run()
+					    case "yahoo":
 					    {
-					    	wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
+						    String[] content = common.processYahoo(data);
+						    if (content == null || content.length <= 0)
+							    return;
+						    String logo = "<img src='purple.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
 					    }
-				    });
-				    break;
-			    default:
-				    tmphtml = "<html>";
-				    if(dark_theme)
-				    	tmphtml = "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmphtml += "<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
-				    final String shtml = tmphtml;
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
+					    case "weatherzone":
 					    {
-						    wv.loadDataWithBaseURL(null, shtml, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-		    }
-	    } else {
-		    String fctype = common.GetStringPref("fctype", "Yahoo");
-		    String data = common.GetStringPref("forecastData", "");
+						    String[] content = common.processWZ(data);
+						    if (content == null || content.length <= 0)
+							    return;
 
-		    if(data.equals(""))
-		    {
-			    String tmphtml = "<html>";
-			    if (dark_theme)
-				    tmphtml = "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-			    tmphtml += "<body>Forecast URL not set or is still downloading. You can go to settings to change.</body></html>";
-			    final String shtml = tmphtml;
+						    String logo = "<img src='wz.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "yr.no":
+					    {
+						    String[] content = common.processYR(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='yrno.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "bom.gov.au":
+					    {
+						    String[] content = common.processBOM(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='bom.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "wmo.int":
+					    {
+						    String[] content = common.processWMO(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='wmo.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "weather.gov":
+					    {
+						    String[] content = common.processWGOV(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='wgov.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "weather.gc.ca":
+					    {
+						    String[] content = common.processWCA(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='wca.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "weather.gc.ca-fr":
+					    {
+						    String[] content = common.processWCAF(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='wca.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "metoffice.gov.uk":
+					    {
+						    String[] content = common.processMET(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='met.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "bom2":
+					    {
+						    String[] content = common.processBOM2(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='bom.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "aemet.es":
+					    {
+						    String[] content = common.processAEMET(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='aemet.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "dwd.de":
+					    {
+						    String[] content = common.processDWD(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='dwd.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "metservice.com":
+					    {
+						    String[] content = common.processMetService(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='metservice.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+				    }
+			    }
+
 			    wv.post(new Runnable()
 			    {
 				    @Override
 				    public void run()
 				    {
-					    wv.loadDataWithBaseURL(null, shtml, "text/html", "utf-8", null);
+					    wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
 				    }
 			    });
 			    swipeLayout.setRefreshing(false);
-			    return;
 		    }
+	    });
 
-		    switch (fctype.toLowerCase())
-		    {
-			    case "yahoo":
-			    {
-				    String[] content = common.processYahoo(data);
-				    if (content == null || content.length <= 0)
-					    return;
-				    String yahoo = "<img src='purple.png' height='29px'/><br/>";
-
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + yahoo + content[0] + "</body></html>";
-
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "weatherzone":
-			    {
-				    String[] content = common.processWZ(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String wz = "<img src='wz.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + wz + content[0] + "</body></html>";
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "yr.no":
-			    {
-				    String[] content = common.processYR(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String yrno = "<img src='yrno.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + yrno + content[0] + "</body></html>";
-
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "bom.gov.au":
-			    {
-				    String[] content = common.processBOM(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String bom = "<img src='bom.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + bom + content[0] + "</body></html>";
-
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "wmo.int":
-			    {
-				    String[] content = common.processWMO(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String wmo = "<img src='wmo.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + wmo + content[0] + "</body></html>";
-
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "weather.gov":
-			    {
-				    String[] content = common.processWGOV(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String wgov = "<img src='wgov.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + wgov + content[0] + "</body></html>";
-
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "weather.gc.ca":
-			    {
-				    String[] content = common.processWCA(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String wca = "<img src='wca.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + wca + content[0] + "</body></html>";
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "weather.gc.ca-fr":
-			    {
-				    String[] content = common.processWCAF(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String wca = "<img src='wca.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + wca + content[0] + "</body></html>";
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "metoffice.gov.uk":
-			    {
-				    String[] content = common.processMET(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String logo = "<img src='met.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "bom2":
-			    {
-				    String[] content = common.processBOM2(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String bom = "<img src='bom.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + bom + content[0] + "</body></html>";
-
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "aemet.es":
-			    {
-				    String[] content = common.processAEMET(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String logo = "<img src='aemet.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
-
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "dwd.de":
-			    {
-				    String[] content = common.processDWD(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String logo = "<img src='dwd.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
-
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-			    case "metservice.com":
-			    {
-				    String[] content = common.processMetService(data);
-				    if (content == null || content.length <= 0)
-					    return;
-
-				    String logo = "<img src='metservice.png' height='29px'/><br/>";
-				    String tmpfc = "<html>";
-				    if (dark_theme)
-					    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmpfc += "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
-
-				    final String fc = tmpfc;
-
-				    wv.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-					    }
-				    });
-				    break;
-			    }
-		    }
-	    }
-
-	    swipeLayout.setRefreshing(false);
+	    t.start();
     }
 
 	private void reloadForecast(boolean force)

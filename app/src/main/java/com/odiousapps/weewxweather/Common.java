@@ -898,6 +898,8 @@ class Common
 		return new String[]{out.toString(), desc};
 	}
 
+	// Thanks goes to the https://saratoga-weather.org folk for the base NOAA icons and code for dualimage.php
+
 	String[] processWGOV(String data)
 	{
 		return processWGOV(data, false);

@@ -37,7 +37,7 @@ public class WidgetProvider extends AppWidgetProvider
             Common.LogMessage("appWidgetsIds["+i+"] = " + appWidgetIds[i]);
             RemoteViews remoteViews = common.buildUpdate(context);
 
-            Intent launchActivity = new Intent(context, MainActivity.class);
+            Intent launchActivity = new Intent(context, SplashScreen.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchActivity, 0);
             remoteViews.setOnClickPendingIntent(R.id.widget, pendingIntent);
             appWidgetManager.updateAppWidget(widgetId, remoteViews);

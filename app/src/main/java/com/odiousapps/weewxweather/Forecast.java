@@ -494,121 +494,130 @@ class Forecast
 
     private void generateForecast()
     {
-	    swipeLayout.setRefreshing(true);
-
-	    Common.LogMessage("getting json data");
-        String data;
-        String fctype = common.GetStringPref("fctype", "Yahoo");
-
-	    data = common.GetStringPref("forecastData", "");
-	    if(data.equals(""))
+    	Thread t = new Thread(new Runnable()
 	    {
-		    String html = "<html>";
-		    if(dark_theme)
-			    html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-		    html += "<body>Forecast URL not set, edit settings.txt to change</body></html>";
+		    @Override
+		    public void run()
+		    {
+			    swipeLayout.setRefreshing(true);
 
-		    wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-		    swipeLayout.setRefreshing(false);
-		    return;
-	    }
+			    Common.LogMessage("getting json data");
+		        String data;
+		        String fctype = common.GetStringPref("fctype", "Yahoo");
 
-	    switch(fctype.toLowerCase())
-	    {
-		    case "yahoo":
-		    {
-			    String[] content = common.processYahoo(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "weatherzone":
-		    {
-			    String[] content = common.processWZ(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "yr.no":
-		    {
-			    String[] content = common.processYR(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "bom.gov.au":
-		    {
-			    String[] content = common.processBOM(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "wmo.int":
-		    {
-				String[] content = common.processWMO(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "weather.gov":
-		    {
-			    String[] content = common.processWGOV(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "weather.gc.ca":
-		    {
-			    String[] content = common.processWCA(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "weather.gc.ca-fr":
-		    {
-			    String[] content = common.processWCAF(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "metoffice.gov.uk":
-		    {
-			    String[] content = common.processMET(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "bom2":
-		    {
-			    String[] content = common.processBOM2(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "aemet.es":
-		    {
-			    String[] content = common.processAEMET(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "dwd.de":
-		    {
-			    String[] content = common.processDWD(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-		    case "metservice.com":
-		    {
-			    String[] content = common.processMetService(data, true);
-			    if(content != null && content.length >= 2)
-				    updateForecast(content[0], content[1]);
-			    break;
-		    }
-	    }
+			    data = common.GetStringPref("forecastData", "");
+			    if(data.equals(""))
+			    {
+				    String html = "<html>";
+				    if(dark_theme)
+					    html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    html += "<body>Forecast URL not set, edit settings.txt to change</body></html>";
 
-	    swipeLayout.setRefreshing(false);
+				    wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+				    swipeLayout.setRefreshing(false);
+				    return;
+			    }
+
+			    switch(fctype.toLowerCase())
+			    {
+				    case "yahoo":
+				    {
+					    String[] content = common.processYahoo(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "weatherzone":
+				    {
+					    String[] content = common.processWZ(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "yr.no":
+				    {
+					    String[] content = common.processYR(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "bom.gov.au":
+				    {
+					    String[] content = common.processBOM(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "wmo.int":
+				    {
+						String[] content = common.processWMO(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "weather.gov":
+				    {
+					    String[] content = common.processWGOV(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "weather.gc.ca":
+				    {
+					    String[] content = common.processWCA(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "weather.gc.ca-fr":
+				    {
+					    String[] content = common.processWCAF(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "metoffice.gov.uk":
+				    {
+					    String[] content = common.processMET(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "bom2":
+				    {
+					    String[] content = common.processBOM2(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "aemet.es":
+				    {
+					    String[] content = common.processAEMET(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "dwd.de":
+				    {
+					    String[] content = common.processDWD(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+				    case "metservice.com":
+				    {
+					    String[] content = common.processMetService(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
+			    }
+
+			    swipeLayout.setRefreshing(false);
+		    }
+	    });
+
+    	t.start();
     }
 
     private void updateForecast(String bits, String desc)
