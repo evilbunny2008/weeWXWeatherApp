@@ -134,8 +134,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				    e.printStackTrace();
 			    }
 
-			    doSettings();
-			    doPerms();
+			    Handler mHandler = new Handler(Looper.getMainLooper());
+			    mHandler.post(new Runnable()
+			    {
+				    @Override
+				    public void run()
+				    {
+					    doSettings();
+					    doPerms();
+				    }
+			    });
+
 			    common.setAlarm("MainActivity");
 		    }
 	    });
@@ -189,39 +198,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		d.show();
 	}
 
-	private void doAdapter()
-	{
-		ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
-		adapter.setDropDownViewResource(R.layout.spinner_layout);
-		s1.setAdapter(adapter);
-		s1.setOnItemSelectedListener(this);
-		pos = common.GetIntPref("updateInterval", 1);
-		s1.setSelection(pos);
-
-		Switch wifi_only = findViewById(R.id.wifi_only);
-		wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
-		metric_forecasts.setChecked(common.GetBoolPref("metric", true));
-		show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
-		dark_theme.setChecked(common.GetBoolPref("dark_theme", false));
-
-		SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-		ViewPager mViewPager = findViewById(R.id.container);
-		mViewPager.setAdapter(mSectionsPagerAdapter);
-		mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-		tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-	}
-
     private void doSettings()
     {
-	    Handler mHandler = new Handler(Looper.getMainLooper());
-	    mHandler.post(new Runnable()
-	    {
-		    @Override
-		    public void run()
-		    {
-		    	doAdapter();
-		    }
-	    });
+	    ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
+	    adapter.setDropDownViewResource(R.layout.spinner_layout);
+	    s1.setAdapter(adapter);
+	    s1.setOnItemSelectedListener(this);
+	    pos = common.GetIntPref("updateInterval", 1);
+	    s1.setSelection(pos);
+
+	    Switch wifi_only = findViewById(R.id.wifi_only);
+	    wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
+	    metric_forecasts.setChecked(common.GetBoolPref("metric", true));
+	    show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
+	    dark_theme.setChecked(common.GetBoolPref("dark_theme", false));
+
+	    SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+	    ViewPager mViewPager = findViewById(R.id.container);
+	    mViewPager.setAdapter(mSectionsPagerAdapter);
+	    mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+	    tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
 	    b1.setOnClickListener(new View.OnClickListener()
 	    {
@@ -303,11 +299,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				    hideKeyboard(v);
 		    }
 	    });
-
-	    boolean radarforecast = common.GetBoolPref("radarforecast", true);
-	    RadioButton showForecast = findViewById(R.id.showForecast);
-	    if(!radarforecast)
-		    showForecast.setChecked(true);
 
 	    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
 	    settingsLayout.setVisibility(View.VISIBLE);
