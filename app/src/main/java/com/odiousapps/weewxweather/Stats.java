@@ -567,7 +567,7 @@ class Stats
 				    public void run()
 				    {
 					    wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
-					    swipeLayout.setRefreshing(true);
+					    swipeLayout.setRefreshing(false);
 				    }
 			    });
 		    }

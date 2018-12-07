@@ -417,7 +417,11 @@ class Weather
 					    {
 						    String[] content = common.processYahoo(data);
 						    if (content == null || content.length <= 0)
+						    {
+						    	stopRefreshing();
 							    return;
+						    }
+
 						    String logo = "<img src='purple.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
@@ -430,7 +434,10 @@ class Weather
 					    {
 						    String[] content = common.processWZ(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='wz.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -444,7 +451,10 @@ class Weather
 					    {
 						    String[] content = common.processYR(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='yrno.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -458,7 +468,10 @@ class Weather
 					    {
 						    String[] content = common.processBOM(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='bom.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -472,7 +485,10 @@ class Weather
 					    {
 						    String[] content = common.processWMO(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='wmo.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -486,7 +502,10 @@ class Weather
 					    {
 						    String[] content = common.processWGOV(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='wgov.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -500,7 +519,10 @@ class Weather
 					    {
 						    String[] content = common.processWCA(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='wca.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -514,7 +536,10 @@ class Weather
 					    {
 						    String[] content = common.processWCAF(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='wca.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -528,7 +553,10 @@ class Weather
 					    {
 						    String[] content = common.processMET(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='met.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -542,7 +570,10 @@ class Weather
 					    {
 						    String[] content = common.processBOM2(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='bom.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -556,7 +587,10 @@ class Weather
 					    {
 						    String[] content = common.processAEMET(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='aemet.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -570,7 +604,10 @@ class Weather
 					    {
 						    String[] content = common.processDWD(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='dwd.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -584,7 +621,10 @@ class Weather
 					    {
 						    String[] content = common.processMetService(data);
 						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
 							    return;
+						    }
 
 						    String logo = "<img src='metservice.png' height='29px'/><br/>";
 						    sb.append("<html>");
@@ -603,31 +643,49 @@ class Weather
 				    public void run()
 				    {
 					    wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
+					    swipeLayout.setRefreshing(false);
 				    }
 			    });
-			    swipeLayout.setRefreshing(false);
 		    }
 	    });
 
 	    t.start();
     }
 
+    private void stopRefreshing()
+    {
+	    Handler mHandler = new Handler(Looper.getMainLooper());
+	    mHandler.post(new Runnable()
+	    {
+		    @Override
+		    public void run()
+		    {
+			    swipeLayout.setRefreshing(false);
+		    }
+	    });
+    }
+
 	private void reloadForecast(boolean force)
     {
 	    if(common.GetBoolPref("radarforecast", true))
+	    {
+	    	stopRefreshing();
 		    return;
+	    }
 
 	    final String forecast_url = common.GetStringPref("FORECAST_URL", "");
 
 	    if(forecast_url.equals(""))
 	    {
 		    final String html = "<html><body>Forecast URL not set. Edit inigo-settings.txt to change.</body></html>";
-		    wv.post(new Runnable()
+		    Handler mHandler = new Handler(Looper.getMainLooper());
+		    mHandler.post(new Runnable()
 		    {
 			    @Override
 			    public void run()
 			    {
 				    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+				    swipeLayout.setRefreshing(false);
 			    }
 		    });
 

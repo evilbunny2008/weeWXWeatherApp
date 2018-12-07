@@ -281,7 +281,8 @@ class Forecast
 
 			if(wv2.getOriginalUrl() == null)
 			{
-				wv2.post(new Runnable()
+				Handler mHandler = new Handler(Looper.getMainLooper());
+				mHandler.post(new Runnable()
 				{
 					@Override
 					public void run()
@@ -426,7 +427,9 @@ class Forecast
 	    if(forecast_url.equals(""))
 	    {
 		    final String html = "<html><body>Forecast URL not set. Edit inigo-settings.txt to change.</body></html>";
-		    wv2.post(new Runnable()
+
+		    Handler mHandler = new Handler(Looper.getMainLooper());
+		    mHandler.post(new Runnable()
 		    {
 			    @Override
 			    public void run()
@@ -636,7 +639,8 @@ class Forecast
 
 			    final String fc = tmpfc;
 
-			    wv2.post(new Runnable()
+			    Handler mHandler = new Handler(Looper.getMainLooper());
+			    mHandler.post(new Runnable()
 			    {
 				    @Override
 				    public void run()
