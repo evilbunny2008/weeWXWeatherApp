@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.os.Vibrator;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -620,78 +621,87 @@ class Forecast
     	t.start();
     }
 
-    private void updateForecast(String bits, String desc)
+    private void updateForecast(final String bits, final String desc)
     {
-        String tmpfc = "<html>";
-        if(dark_theme)
-        	tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-        tmpfc += "<body style='text-align:center'>"  + bits + "</body></html>";
-
-        final String fc = tmpfc;
-
-        wv2.post(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                wv2.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-            }
-        });
-
-        TextView tv1 = rootView.findViewById(R.id.forecast);
-        if(!dark_theme)
-        {
-	        tv1.setTextColor(0xff000000);
-	        tv1.setBackgroundColor(0xffffffff);
-	        im.setBackgroundColor(0xffffffff);
-        } else {
-	        tv1.setTextColor(0xffffffff);
-	        tv1.setBackgroundColor(0xff000000);
-	        im.setBackgroundColor(0xff000000);
-        }
-	    tv1.setText(desc);
-
-	    switch(common.GetStringPref("fctype", "yahoo").toLowerCase())
+	    Handler mHandler = new Handler(Looper.getMainLooper());
+	    mHandler.post(new Runnable()
 	    {
-		    case "yahoo":
-			    im.setImageResource(R.drawable.purple);
-			    break;
-		    case "weatherzone":
-			    im.setImageResource(R.drawable.wz);
-			    break;
-		    case "yr.no":
-			    im.setImageResource(R.drawable.yrno);
-			    break;
-		    case "bom.gov.au":
-			    im.setImageResource(R.drawable.bom);
-			    break;
-		    case "wmo.int":
-			    im.setImageResource(R.drawable.wmo);
-			    break;
-		    case "weather.gov":
-			    im.setImageResource(R.drawable.wgov);
-			    break;
-		    case "weather.gc.ca":
-			    im.setImageResource(R.drawable.wca);
-			    break;
-		    case "weather.gc.ca-fr":
-			    im.setImageResource(R.drawable.wca);
-			    break;
-		    case "metoffice.gov.uk":
-				im.setImageResource(R.drawable.met);
-				break;
-		    case "bom2":
-			    im.setImageResource(R.drawable.bom);
-			    break;
-		    case "aemet.es":
-			    im.setImageResource(R.drawable.aemet);
-			    break;
-		    case "dwd.de":
-			    im.setImageResource(R.drawable.dwd);
-			    break;
-		    case "metservice.com":
-			    im.setImageResource(R.drawable.metservice);
-			    break;
-	    }
+		    @Override
+		    public void run()
+		    {
+			    String tmpfc = "<html>";
+			    if (dark_theme)
+				    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+			    tmpfc += "<body style='text-align:center'>" + bits + "</body></html>";
+
+			    final String fc = tmpfc;
+
+			    wv2.post(new Runnable()
+			    {
+				    @Override
+				    public void run()
+				    {
+					    wv2.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
+				    }
+			    });
+
+			    TextView tv1 = rootView.findViewById(R.id.forecast);
+			    if (!dark_theme)
+			    {
+				    tv1.setTextColor(0xff000000);
+				    tv1.setBackgroundColor(0xffffffff);
+				    im.setBackgroundColor(0xffffffff);
+			    } else
+			    {
+				    tv1.setTextColor(0xffffffff);
+				    tv1.setBackgroundColor(0xff000000);
+				    im.setBackgroundColor(0xff000000);
+			    }
+			    tv1.setText(desc);
+
+			    switch (common.GetStringPref("fctype", "yahoo").toLowerCase())
+			    {
+				    case "yahoo":
+					    im.setImageResource(R.drawable.purple);
+					    break;
+				    case "weatherzone":
+					    im.setImageResource(R.drawable.wz);
+					    break;
+				    case "yr.no":
+					    im.setImageResource(R.drawable.yrno);
+					    break;
+				    case "bom.gov.au":
+					    im.setImageResource(R.drawable.bom);
+					    break;
+				    case "wmo.int":
+					    im.setImageResource(R.drawable.wmo);
+					    break;
+				    case "weather.gov":
+					    im.setImageResource(R.drawable.wgov);
+					    break;
+				    case "weather.gc.ca":
+					    im.setImageResource(R.drawable.wca);
+					    break;
+				    case "weather.gc.ca-fr":
+					    im.setImageResource(R.drawable.wca);
+					    break;
+				    case "metoffice.gov.uk":
+					    im.setImageResource(R.drawable.met);
+					    break;
+				    case "bom2":
+					    im.setImageResource(R.drawable.bom);
+					    break;
+				    case "aemet.es":
+					    im.setImageResource(R.drawable.aemet);
+					    break;
+				    case "dwd.de":
+					    im.setImageResource(R.drawable.dwd);
+					    break;
+				    case "metservice.com":
+					    im.setImageResource(R.drawable.metservice);
+					    break;
+			    }
+		    }
+	    });
     }
 }

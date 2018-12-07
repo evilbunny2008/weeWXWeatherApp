@@ -171,8 +171,7 @@ class Stats
 		            {
 			            seekBar.setBackgroundColor(0xff000000);
 			            ll1.setBackgroundColor(0xff000000);
-		            } else
-		            {
+		            } else {
 			            seekBar.setBackgroundColor(0xffffffff);
 			            ll1.setBackgroundColor(0xffffffff);
 		            }
@@ -191,7 +190,20 @@ class Stats
 		common.getWeather();
     }
 
-    private void checkFields(TextView tv, String txt)
+    private void checkFields(final TextView tv, final String txt)
+    {
+	    Handler mHandler = new Handler(Looper.getMainLooper());
+	    mHandler.post(new Runnable()
+	    {
+		    @Override
+		    public void run()
+		    {
+			    reallyCheckFields(tv, txt);
+		    }
+	    });
+    }
+
+    private void reallyCheckFields(TextView tv, String txt)
     {
         if(!tv.getText().toString().equals(txt))
             tv.setText(txt);
@@ -279,6 +291,14 @@ class Stats
 		    @Override
 		    public void run()
 		    {
+			    try
+			    {
+				    // Sleep needed to stop frames dropping while loading
+				    Thread.sleep(500);
+			    } catch (Exception e) {
+				    e.printStackTrace();
+			    }
+
 			    int iw = 17;
 
 			    String bits[] = common.GetStringPref("LastDownload", "").split("\\|");
@@ -292,8 +312,7 @@ class Stats
 				    @Override
 				    public void run()
 				    {
-					    if(!swipeLayout.isRefreshing())
-						    swipeLayout.setRefreshing(true);
+					    swipeLayout.setRefreshing(true);
 				    }
 			    });
 
@@ -542,13 +561,13 @@ class Stats
 
 			    sb.append(footer);
 
-			    wv.post(new Runnable()
+			    mHandler.post(new Runnable()
 			    {
 				    @Override
 				    public void run()
 				    {
 					    wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
-					    swipeLayout.setRefreshing(false);
+					    swipeLayout.setRefreshing(true);
 				    }
 			    });
 		    }

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.os.Vibrator;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -44,11 +45,9 @@ class Weather
         {
 	        tv.setTextColor(0xff000000);
 	        tv.setBackgroundColor(0xffffffff);
-	        Common.LogMessage("no dark theme");
         } else {
 	        tv.setTextColor(0xffffffff);
 	        tv.setBackgroundColor(0xff000000);
-	        Common.LogMessage("dark theme");
         }
     }
 
@@ -98,7 +97,7 @@ class Weather
 	    });
 
 	    String stmp;
-	    StringBuilder sb = new StringBuilder();
+	    final StringBuilder sb = new StringBuilder();
 
 	    String header;
 	    if(!dark_theme)
@@ -162,14 +161,15 @@ class Weather
 	    sb.append(stmp);
 
 	    sb.append(footer);
-	    final String html = sb.toString().trim();
 
-	    current.post(new Runnable()
+	    Handler mHandler = new Handler(Looper.getMainLooper());
+	    mHandler.post(new Runnable()
 	    {
 		    @Override
 		    public void run()
 		    {
-			    current.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
+			    current.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString().trim(), "text/html", "utf-8", null);
+			    swipeLayout.setRefreshing(true);
 		    }
 	    });
 
@@ -283,6 +283,7 @@ class Weather
 	    common.getWeather();
 	    reloadWebView(true);
 	    reloadForecast(true);
+	    swipeLayout.setRefreshing(false);
     }
 
     private void loadWebView()
@@ -294,10 +295,26 @@ class Weather
 		    @Override
 		    public void run()
 		    {
+			    try
+			    {
+				    // Sleep needed to stop frames dropping while loading
+				    Thread.sleep(500);
+			    } catch (Exception e) {
+				    e.printStackTrace();
+			    }
+
 			    final StringBuffer sb = new StringBuffer();
 			    String tmp;
 
-			    swipeLayout.setRefreshing(true);
+			    Handler mHandler = new Handler(Looper.getMainLooper());
+			    mHandler.post(new Runnable()
+			    {
+				    @Override
+				    public void run()
+				    {
+					    swipeLayout.setRefreshing(true);
+				    }
+			    });
 
 			    if (common.GetBoolPref("radarforecast", true))
 			    {
@@ -314,7 +331,15 @@ class Weather
 						    if (radar.equals("") || !myFile.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 						    {
 							    sb.append("<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>");
-							    wv.loadDataWithBaseURL(null, sb.toString(), "text/html", "utf-8", null);
+							    mHandler.post(new Runnable()
+							    {
+								    @Override
+								    public void run()
+								    {
+									    wv.loadDataWithBaseURL(null, sb.toString(), "text/html", "utf-8", null);
+									    swipeLayout.setRefreshing(false);
+								    }
+							    });
 							    return;
 						    } else {
 							    sb.append("<!DOCTYPE html>\n" +
@@ -332,17 +357,26 @@ class Weather
 									    "  </body>\n" +
 									    "</html>";
 							    sb.append(tmp);
-							    wv.loadDataWithBaseURL(null, sb.toString(), "text/html", "utf-8", null);
-							    break;
+							    mHandler.post(new Runnable()
+							    {
+								    @Override
+								    public void run()
+								    {
+									    wv.loadDataWithBaseURL(null, sb.toString(), "text/html", "utf-8", null);
+									    swipeLayout.setRefreshing(false);
+								    }
+							    });
+							    return;
 						    }
 					    }
 					    case "webpage":
-						    wv.post(new Runnable()
+						    mHandler.post(new Runnable()
 						    {
 							    @Override
 							    public void run()
 							    {
 								    wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
+								    swipeLayout.setRefreshing(false);
 							    }
 						    });
 						    return;
@@ -354,15 +388,15 @@ class Weather
 						    break;
 				    }
 
-				    wv.post(new Runnable()
+				    mHandler.post(new Runnable()
 				    {
 					    @Override
 					    public void run()
 					    {
 						    wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
+						    swipeLayout.setRefreshing(false);
 					    }
 				    });
-				    swipeLayout.setRefreshing(false);
 			    } else {
 				    String fctype = common.GetStringPref("fctype", "Yahoo");
 				    String data = common.GetStringPref("forecastData", "");
@@ -563,7 +597,7 @@ class Weather
 				    }
 			    }
 
-			    wv.post(new Runnable()
+			    mHandler.post(new Runnable()
 			    {
 				    @Override
 				    public void run()
@@ -721,7 +755,7 @@ class Weather
 	    {
 		    common.context.unregisterReceiver(serviceReceiver);
 	    } catch (Exception e) {
-			//TODO: ignore this exception...
+			// e.printStackTrace();
 	    }
 	    Common.LogMessage("weather.java -- unregisterReceiver");
     }

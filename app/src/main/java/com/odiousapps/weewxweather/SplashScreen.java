@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import static java.lang.Thread.sleep;
-
 public class SplashScreen extends AppCompatActivity
 {
 	@Override
@@ -25,11 +23,13 @@ public class SplashScreen extends AppCompatActivity
 			{
 				try
 				{
-					sleep(500);
-					startApp();
+					// Sleep needed to stop frames dropping while loading
+					Thread.sleep(500);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+
+				startApp();
 				finish();
 			}
 		}).start();

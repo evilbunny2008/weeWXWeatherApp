@@ -16,6 +16,7 @@ import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
@@ -89,20 +90,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    mDrawerLayout = findViewById(R.id.drawer_layout);
 
-        SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-
-        // Set up the ViewPager with the sections adapter.
-        ViewPager mViewPager = findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-
         tabLayout = findViewById(R.id.tabs);
 
 	    if(!common.GetBoolPref("radarforecast", true))
 		    //noinspection ConstantConditions
 		    tabLayout.getTabAt(2).setText(R.string.radar);
-
-	    mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-        tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
         try
         {
@@ -115,10 +107,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    settingsURL = findViewById(R.id.settings);
 	    customURL = findViewById(R.id.customURL);
 	    s1 = findViewById(R.id.spinner1);
-	    ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
-	    adapter.setDropDownViewResource(R.layout.spinner_layout);
-	    s1.setAdapter(adapter);
-	    s1.setOnItemSelectedListener(this);
 
 	    metric_forecasts = findViewById(R.id.metric_forecasts);
 	    show_indoor = findViewById(R.id.show_indoor);
@@ -130,6 +118,110 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    fgColour = findViewById(R.id.fgPicker);
 	    bgColour = findViewById(R.id.bgPicker);
+
+	    tv = findViewById(R.id.aboutText);
+
+	    Thread t = new Thread(new Runnable()
+	    {
+		    @Override
+		    public void run()
+		    {
+			    try
+			    {
+				    // Sleep needed to stop frames dropping while loading
+				    Thread.sleep(500);
+			    } catch (Exception e) {
+				    e.printStackTrace();
+			    }
+
+			    doSettings();
+			    doPerms();
+			    common.setAlarm("MainActivity");
+		    }
+	    });
+
+	    t.start();
+    }
+
+	private void doPerms()
+	{
+		if(Build.VERSION.SDK_INT < 23)
+		{
+			hasPermission = true;
+		} else {
+			if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+			{
+				ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, permsRequestCode);
+			} else {
+				hasPermission = true;
+			}
+		}
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+	{
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+		hasPermission = false;
+		if (requestCode == permsRequestCode)
+		{
+			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+			{
+				hasPermission = true;
+			}
+		}
+
+		if (!hasPermission)
+		{
+			Toast.makeText(this, "Can't continue without being able to access shared storage.", Toast.LENGTH_LONG).show();
+			finish();
+		}
+	}
+
+	private void showUpdateAvailable()
+	{
+		final AlertDialog.Builder d = new AlertDialog.Builder(this);
+		d.setTitle("weeWX Weather App");
+		d.setMessage("This app has been updated but the server you are connecting to hasn't updated the Inigo Plugin for weeWX. Fields may not show up properly until weeWX is updated.");
+		d.setPositiveButton("OK", null);
+		d.setIcon(R.drawable.ic_launcher_foreground);
+		d.show();
+	}
+
+	private void doAdapter()
+	{
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
+		adapter.setDropDownViewResource(R.layout.spinner_layout);
+		s1.setAdapter(adapter);
+		s1.setOnItemSelectedListener(this);
+		pos = common.GetIntPref("updateInterval", 1);
+		s1.setSelection(pos);
+
+		Switch wifi_only = findViewById(R.id.wifi_only);
+		wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
+		metric_forecasts.setChecked(common.GetBoolPref("metric", true));
+		show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
+		dark_theme.setChecked(common.GetBoolPref("dark_theme", false));
+
+		SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+		ViewPager mViewPager = findViewById(R.id.container);
+		mViewPager.setAdapter(mSectionsPagerAdapter);
+		mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+		tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
+	}
+
+    private void doSettings()
+    {
+	    Handler mHandler = new Handler(Looper.getMainLooper());
+	    mHandler.post(new Runnable()
+	    {
+		    @Override
+		    public void run()
+		    {
+		    	doAdapter();
+		    }
+	    });
 
 	    b1.setOnClickListener(new View.OnClickListener()
 	    {
@@ -190,61 +282,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		    }
 	    });
 
-	    tv = findViewById(R.id.aboutText);
-		doSettings();
-		doPerms();
-
-	    common.setAlarm("MainActivity");
-    }
-
-	private void doPerms()
-	{
-		if(Build.VERSION.SDK_INT < 23)
-		{
-			hasPermission = true;
-		} else {
-			if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
-			{
-				ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, permsRequestCode);
-			} else {
-				hasPermission = true;
-			}
-		}
-	}
-
-	@Override
-	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
-	{
-		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-		hasPermission = false;
-		if (requestCode == permsRequestCode)
-		{
-			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-			{
-				hasPermission = true;
-			}
-		}
-
-		if (!hasPermission)
-		{
-			Toast.makeText(this, "Can't continue without being able to access shared storage.", Toast.LENGTH_LONG).show();
-			finish();
-		}
-	}
-
-	private void showUpdateAvailable()
-	{
-		final AlertDialog.Builder d = new AlertDialog.Builder(this);
-		d.setTitle("weeWX Weather App");
-		d.setMessage("This app has been updated but the server you are connecting to hasn't updated the Inigo Plugin for weeWX. Fields may not show up properly until weeWX is updated.");
-		d.setPositiveButton("OK", null);
-		d.setIcon(R.drawable.ic_launcher_foreground);
-		d.show();
-	}
-
-    private void doSettings()
-    {
 	    settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
 	    settingsURL.setOnFocusChangeListener(new View.OnFocusChangeListener()
 	    {
@@ -266,16 +303,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				    hideKeyboard(v);
 		    }
 	    });
-
-	    pos = common.GetIntPref("updateInterval", 1);
-	    s1.setSelection(pos);
-
-	    metric_forecasts.setChecked(common.GetBoolPref("metric", true));
-	    show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
-	    dark_theme.setChecked(common.GetBoolPref("dark_theme", false));
-
-	    Switch wifi_only = findViewById(R.id.wifi_only);
-	    wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
 
 	    boolean radarforecast = common.GetBoolPref("radarforecast", true);
 	    RadioButton showForecast = findViewById(R.id.showForecast);
