@@ -47,7 +47,9 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Pattern;
 
@@ -58,7 +60,7 @@ import static java.lang.Math.round;
 class Common
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
-	private final static boolean debug_on = false;
+	private final static boolean debug_on = true;
 	private String appversion = "0.0.0";
 	Context context;
 
@@ -77,6 +79,7 @@ class Common
 	private JSONObject nws = null;
 
 	private Typeface tf;
+	private Map<String, String> lookupTable = new HashMap<>();
 
 	Common(Context c)
 	{
@@ -94,6 +97,7 @@ class Common
 			e.printStackTrace();
 		}
 
+		makeTable();
 		loadNWS();
 		LogMessage("Loaded NWS");
 	}
@@ -348,6 +352,115 @@ class Common
 
 		views.setImageViewBitmap(R.id.widget, myBitmap);
 		return views;
+	}
+
+	String[] processMF(String data)
+	{
+		return processMF(data, false);
+	}
+
+	String[] processMF(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		StringBuilder out = new StringBuilder();
+		String tmp;
+		String desc;
+
+		try
+		{
+			desc = data.split("<h1>", 2)[1].split("</h1>", 2)[0].trim();
+
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+			String ftime = sdf.format(System.currentTimeMillis());
+			ftime += " " + data.split("<p class=\"heure-de-prevision\">Prévisions météo actualisées à ", 2)[1].split("</p>", 2)[0].trim();
+
+			sdf = new SimpleDateFormat("yyyy-MM-dd HH'h'mm", Locale.getDefault());
+			long mdate = sdf.parse(ftime).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.FRANCE);
+			ftime = sdf.format(mdate);
+
+			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			data = data.split("<!-- LISTE JOURS -->", 2)[1].split("<!-- LISTE JOURS/ -->", 2)[0].trim();
+
+			String[] bits = data.split("title=\"");
+			for(int i = 1; i < bits.length; i++)
+			{
+				String bit = bits[i].trim();
+
+				String text = bit.split("\">", 2)[0].trim();
+
+				sdf = new SimpleDateFormat("-MM-yyyy", Locale.getDefault());
+				String day = bit.split("<a>", 2)[1].split("</a>", 2)[0].trim() + sdf.format(System.currentTimeMillis());
+				String min = bit.split("class=\"min-temp\">", 2)[1].split("°C Minimale", 2)[0].trim();
+				String max = bit.split("class=\"max-temp\">", 2)[1].split("°C Maximale", 2)[0].trim();
+				String icon = bit.split("<dd class=\"pic40 ", 2)[1].split("\">")[0];
+
+				sdf = new SimpleDateFormat("EEE dd-MM-yyyy", Locale.FRANCE);
+				mdate = sdf.parse(day).getTime();
+				sdf = new SimpleDateFormat("EEEE", Locale.FRANCE);
+				day = sdf.format(mdate);
+
+				while(lookupTable.get(icon) == null && icon.length() > 0)
+				{
+					icon = icon.substring(0, icon.length() - 1);
+					LogMessage("icon == " + icon);
+				}
+
+				if(lookupTable.get(icon) != null)
+					tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + lookupTable.get(icon) + "'></td>";
+				else
+					tmp = "<tr><td style='width:10%;' rowspan='2'>N/A</td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
+				out.append(tmp);
+
+				if(metric)
+				{
+					max = max + "&deg;C";
+					min = min + "&deg;C";
+				} else {
+					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				}
+
+				if(!max.equals("&deg;C"))
+					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
+				else
+					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td>" + text + "</td>";
+				out.append(tmp);
+
+				if(!min.equals("&deg;C"))
+					tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
+				else
+					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+
+			tmp = "</table>";
+			out.append(tmp);
+			return new String[]{out.toString(), desc};
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
 	}
 
 	String[] processBOM2(String data)
@@ -2648,5 +2761,219 @@ class Common
 		context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(f)));
 
 		return f;
+	}
+
+	private void makeTable()
+	{
+		lookupTable.put("N_W1_0-N_0", "mf_n_w2_1.png");
+		lookupTable.put("N_W2_1", "mf_n_w2_1.png");
+		lookupTable.put("N_W1_0-N_7", "mf_n_w2_1.png");
+		lookupTable.put("J_W1_0-N", "mf_n_w2_1.png");
+
+		lookupTable.put("J_W1_0-N_5", "mf_j_w1_0_n_5.png");
+
+		lookupTable.put("N_W1_0-N_5", "mf_n_w1_0_n_5.png");
+
+		lookupTable.put("J_W2_2", "mf_j_w1_0_n_2.png");
+		lookupTable.put("J_W1_0-N_1", "mf_j_w1_0_n_2.png");
+		lookupTable.put("J_W1_0-N_2", "mf_j_w1_0_n_2.png");
+		lookupTable.put("J_W1_0-N_4", "mf_j_w1_0_n_2.png");
+		lookupTable.put("J_W1_0-N_6", "mf_j_w1_0_n_2.png");
+
+		lookupTable.put("N_W2_2", "mf_n_w2_2.png");
+		lookupTable.put("N_W1_0-N_1", "mf_n_w2_2.png");
+		lookupTable.put("N_W1_0-N_2", "mf_n_w2_2.png");
+		lookupTable.put("N_W1_0-N_4", "mf_n_w2_2.png");
+		lookupTable.put("N_W1_0-N_6", "mf_n_w2_2.png");
+
+		lookupTable.put("J_W1_0-N_3", "mf_j_w2_3.png");
+		lookupTable.put("N_W1_0-N_3", "mf_j_w2_3.png");
+		lookupTable.put("J_W2_3", "mf_j_w2_3.png");
+		lookupTable.put("N_W2_3", "mf_j_w2_3.png");
+
+		lookupTable.put("J_W1_1-N", "mf_j_w1_1_n.png");
+		lookupTable.put("J_W1_2-N", "mf_j_w1_1_n.png");
+		lookupTable.put("J_W1_33-N", "mf_j_w1_1_n.png");
+
+		lookupTable.put("N_W1_1-N", "mf_n_w1_1_n.png");
+		lookupTable.put("N_W1_2-N", "mf_n_w1_1_n.png");
+		lookupTable.put("N_W1_33-N", "mf_n_w1_1_n.png");
+
+		lookupTable.put("N_W1_1-N_3", "mf_n_w1_1_n_3.png");
+		lookupTable.put("J_W1_1-N_3", "mf_n_w1_1_n_3.png");
+		lookupTable.put("N_W1_2-N_3", "mf_n_w1_1_n_3.png");
+		lookupTable.put("J_W1_2-N_3", "mf_n_w1_1_n_3.png");
+		lookupTable.put("N_W1_33-N_3", "mf_n_w1_1_n_3.png");
+		lookupTable.put("J_W1_33-N_3", "mf_n_w1_1_n_3.png");
+
+		lookupTable.put("J_W1_3-N", "mf_j_w2_4.png");
+		lookupTable.put("N_W1_3-N", "mf_j_w2_4.png");
+		lookupTable.put("J_W2_4", "mf_j_w2_4.png");
+		lookupTable.put("N_W2_4", "mf_j_w2_4.png");
+
+		lookupTable.put("J_W1_4-N", "mf_j_w2_5.png");
+		lookupTable.put("J_W1_5-N", "mf_j_w2_5.png");
+		lookupTable.put("J_W1_6-N", "mf_j_w2_5.png");
+		lookupTable.put("J_W2_5", "mf_j_w2_5.png");
+		lookupTable.put("N_W2_5", "mf_j_w2_5.png");
+		lookupTable.put("N_W1_4-N", "mf_j_w2_5.png");
+		lookupTable.put("N_W1_5-N", "mf_j_w2_5.png");
+		lookupTable.put("N_W1_6-N", "mf_j_w2_5.png");
+
+		lookupTable.put("J_W1_7-N", "mf_j_w1_7_n.png");
+		lookupTable.put("N_W1_7-N", "mf_j_w1_7_n.png");
+
+		lookupTable.put("J_W1_8-N", "mf_j_w1_8_n.png");
+
+		lookupTable.put("N_W1_8-N", "mf_n_w1_8_n.png");
+
+		lookupTable.put("N_W1_8-N_3", "mf_n_w1_8_n_3.png");
+		lookupTable.put("J_W1_8-N_3", "mf_n_w1_8_n_3.png");
+
+		lookupTable.put("J_W1_9-N", "mf_j_w2_6.png");
+		lookupTable.put("J_W1_18-N", "mf_j_w2_6.png");
+		lookupTable.put("J_W1_30-N", "mf_j_w2_6.png");
+		lookupTable.put("J_W2_6", "mf_j_w2_6.png");
+		lookupTable.put("J_W2_12", "mf_j_w2_6.png");
+
+		lookupTable.put("N_W1_9-N", "mf_n_w2_6.png");
+		lookupTable.put("N_W1_18-N", "mf_n_w2_6.png");
+		lookupTable.put("N_W1_30-N", "mf_n_w2_6.png");
+		lookupTable.put("N_W2_6", "mf_n_w2_6.png");
+		lookupTable.put("N_W2_12", "mf_n_w2_6.png");
+
+		lookupTable.put("J_W1_9-N_3", "mf_j_w1_9_n_3.png");
+		lookupTable.put("N_W1_9-N_3", "mf_j_w1_9_n_3.png");
+		lookupTable.put("J_W1_18-N_3", "mf_j_w1_9_n_3.png");
+		lookupTable.put("N_W1_18-N_3", "mf_j_w1_9_n_3.png");
+		lookupTable.put("J_W1_30-N_3", "mf_j_w1_9_n_3.png");
+		lookupTable.put("N_W1_30-N_3", "mf_j_w1_9_n_3.png");
+
+		//lookupTable.put("J_W1_19-N", "mf_large_10_a.png");
+		lookupTable.put("J_W2_8", "mf_j_w2_8.png");
+		lookupTable.put("J_W2_14", "mf_j_w2_8.png");
+
+		//lookupTable.put("N_W1_19-N", "mf_large_10_b.png");
+		lookupTable.put("N_W2_8", "mf_n_w2_8.png");
+		lookupTable.put("N_W2_14", "mf_n_w2_8.png");
+
+		lookupTable.put("J_W1_10-N", "mf_j_w1_10_n.png");
+		lookupTable.put("J_W1_19-N", "mf_j_w1_10_n.png");
+		lookupTable.put("N_W1_10-N", "mf_j_w1_10_n.png");
+		lookupTable.put("N_W1_19-N", "mf_j_w1_10_n.png");
+
+		lookupTable.put("J_W1_11-N", "mf_j_w2_9.png");
+		lookupTable.put("N_W1_11-N", "mf_j_w2_9.png");
+		lookupTable.put("J_W2_9", "mf_j_w2_9.png");
+		lookupTable.put("N_W2_9", "mf_j_w2_9.png");
+
+		lookupTable.put("J_W1_32", "mf_j_w1_32.png");
+		lookupTable.put("J_W2_16", "mf_j_w1_32.png");
+
+		lookupTable.put("N_W1_32", "mf_n_w1_32.png");
+		lookupTable.put("N_W2_16", "mf_n_w1_32.png");
+
+		lookupTable.put("J_W1_12", "mf_j_w1_12.png");
+		lookupTable.put("N_W1_12", "mf_j_w1_12.png");
+		lookupTable.put("J_W1_32-N_3", "mf_j_w1_12.png");
+		lookupTable.put("N_W1_32-N_3", "mf_j_w1_12.png");
+		lookupTable.put("J_W2_17", "mf_j_w1_12.png");
+		lookupTable.put("N_W2_17", "mf_j_w1_12.png");
+
+		lookupTable.put("J_W1_13", "mf_j_w2_13.png");
+		lookupTable.put("J_W1_21", "mf_j_w2_13.png");
+		lookupTable.put("J_W2_7", "mf_j_w2_13.png");
+		lookupTable.put("J_W2_13", "mf_j_w2_13.png");
+
+		lookupTable.put("N_W1_13", "mf_n_w1_13.png");
+		lookupTable.put("N_W1_21", "mf_n_w1_13.png");
+		lookupTable.put("N_W2_7", "mf_n_w1_13.png");
+		lookupTable.put("N_W2_13", "mf_n_w1_13.png");
+
+		lookupTable.put("J_W1_13-N_3", "mf_j_w_w1_13_n_3.png");
+		lookupTable.put("N_W1_13-N_3", "mf_j_w_w1_13_n_3.png");
+		lookupTable.put("J_W1_21-N_3", "mf_j_w_w1_13_n_3.png");
+		lookupTable.put("N_W1_21-N_3", "mf_j_w_w1_13_n_3.png");
+
+		lookupTable.put("J_W1_14", "mf_j_w1_14.png");
+		lookupTable.put("J_W1_20", "mf_j_w1_14.png");
+
+		lookupTable.put("N_W1_14", "mf_n_w1_14.png");
+		lookupTable.put("N_W1_20", "mf_n_w1_14.png");
+
+		lookupTable.put("J_W1_20-N_3", "mf_j_w1_14_n_3.png");
+		lookupTable.put("N_W1_20-N_3", "mf_j_w1_14_n_3.png");
+		lookupTable.put("N_W1_14-N_3", "mf_j_w1_14_n_3.png");
+		lookupTable.put("J_W1_14-N_3", "mf_j_w1_14_n_3.png");
+
+		lookupTable.put("J_W1_15", "mf_j_w2_10.png");
+		lookupTable.put("J_W1_22", "mf_j_w2_10.png");
+		lookupTable.put("J_W2_10", "mf_j_w2_10.png");
+		lookupTable.put("J_W2_15", "mf_j_w2_10.png");
+		lookupTable.put("J_W2_19", "mf_j_w2_10.png");
+
+		lookupTable.put("N_W1_15", "mf_n_w1_15.png");
+		lookupTable.put("N_W1_22", "mf_n_w1_15.png");
+		lookupTable.put("N_W2_10", "mf_n_w1_15.png");
+		lookupTable.put("N_W2_15", "mf_n_w1_15.png");
+		lookupTable.put("N_W2_19", "mf_n_w1_15.png");
+
+		lookupTable.put("J_W1_22-N_3", "mf_j_w1_16_n_3.png");
+		lookupTable.put("N_W1_22-N_3", "mf_j_w1_16_n_3.png");
+		lookupTable.put("J_W1_15-N_3", "mf_j_w1_16_n_3.png");
+		lookupTable.put("N_W1_15-N_3", "mf_j_w1_16_n_3.png");
+		lookupTable.put("W1_16", "mf_j_w1_16_n_3.png");
+		lookupTable.put("J_W1_16-N", "mf_j_w1_16_n_3.png");
+		lookupTable.put("N_W1_16-N", "mf_j_w1_16_n_3.png");
+
+		lookupTable.put("J_W1_17-N", "mf_n_w2_11.png");
+		lookupTable.put("N_W1_17-N", "mf_n_w2_11.png");
+		lookupTable.put("N_W2_11", "mf_n_w2_11.png");
+		lookupTable.put("J_W2_11", "mf_n_w2_11.png");
+
+		lookupTable.put("J_W1_23-N", "mf_j_w1_29-n.png");
+		lookupTable.put("J_W1_28-N", "mf_j_w1_29-n.png");
+		lookupTable.put("J_W1_29-N", "mf_j_w1_29-n.png");
+
+		lookupTable.put("N_W1_23-N", "mf_n_w1_28_n.png");
+		lookupTable.put("N_W1_28-N", "mf_n_w1_28_n.png");
+		lookupTable.put("N_W1_29-N", "mf_n_w1_28_n.png");
+
+		lookupTable.put("J_W1_23-N_3", "mf_n_w1_23_n_3.png");
+		lookupTable.put("N_W1_23-N_3", "mf_n_w1_23_n_3.png");
+		lookupTable.put("J_W1_28-N_3", "mf_n_w1_23_n_3.png");
+		lookupTable.put("N_W1_28-N_3", "mf_n_w1_23_n_3.png");
+		lookupTable.put("J_W1_29-N_3", "mf_n_w1_23_n_3.png");
+		lookupTable.put("N_W1_29-N_3", "mf_n_w1_23_n_3.png");
+
+		lookupTable.put("J_W1_24-N", "mf_j_w2_18.png");
+		lookupTable.put("J_W1_26-N", "mf_j_w2_18.png");
+		lookupTable.put("J_W1_31-N", "mf_j_w2_18.png");
+		lookupTable.put("J_W2_18", "mf_j_w2_18.png");
+
+		lookupTable.put("N_W1_24-N", "mf_n_w2_18.png");
+		lookupTable.put("N_W1_26-N", "mf_n_w2_18.png");
+		lookupTable.put("N_W1_31-N", "mf_n_w2_18.png");
+		lookupTable.put("N_W2_18", "mf_n_w2_18.png");
+
+		lookupTable.put("J_W1_24-N_3", "mf_j_w1_24_n_3.png");
+		lookupTable.put("J_W1_31-N_3", "mf_j_w1_24_n_3.png");
+		lookupTable.put("J_W1_26-N_3", "mf_j_w1_24_n_3.png");
+		lookupTable.put("N_W1_26-N_3", "mf_j_w1_24_n_3.png");
+		lookupTable.put("N_W1_24-N_3", "mf_j_w1_24_n_3.png");
+		lookupTable.put("N_W1_31-N_3", "mf_j_w1_24_n_3.png");
+
+		lookupTable.put("J_W1_25-N", "mf_j_w1_27_n.png");
+		lookupTable.put("J_W1_27-N", "mf_j_w1_27_n.png");
+
+		lookupTable.put("N_W1_25-N", "mf_n_w1_27_n.png");
+		lookupTable.put("N_W1_27-N", "mf_n_w1_27_n.png");
+
+		lookupTable.put("J_W1_25-N_3", "mf_n_w1_27_n_3.png");
+		lookupTable.put("N_W1_25-N_3", "mf_n_w1_27_n_3.png");
+		lookupTable.put("J_W1_27-N_3", "mf_n_w1_27_n_3.png");
+		lookupTable.put("N_W1_27-N_3", "mf_n_w1_27_n_3.png");
+
+		lookupTable.put("J_W1_32-N_2", "mf_j_w1_32_n_2.png");
 	}
 }

@@ -114,7 +114,7 @@ class Custom
 		    @Override
 		    public boolean onConsoleMessage(ConsoleMessage cm)
 		    {
-//		    	Common.LogMessage(cm.message());
+		    	Common.LogMessage(cm.message());
 			    return true;
 		    }
 	    });
@@ -143,6 +143,7 @@ class Custom
     {
 	    IntentFilter filter = new IntentFilter();
 	    filter.addAction(Common.UPDATE_INTENT);
+	    filter.addAction(Common.REFRESH_INTENT);
 	    filter.addAction(Common.EXIT_INTENT);
 	    common.context.registerReceiver(serviceReceiver, filter);
 	    Common.LogMessage("custom.java -- registerReceiver");
@@ -168,7 +169,7 @@ class Custom
             {
                 Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
-                if(action != null && action.equals(Common.UPDATE_INTENT))
+                if(action != null && (action.equals(Common.UPDATE_INTENT) || action.equals(Common.REFRESH_INTENT)))
                     reloadWebView();
                 else if(action != null && action.equals(Common.EXIT_INTENT))
                     doPause();

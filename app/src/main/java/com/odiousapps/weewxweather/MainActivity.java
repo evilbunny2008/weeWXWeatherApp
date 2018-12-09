@@ -213,6 +213,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
 	    dark_theme.setChecked(common.GetBoolPref("dark_theme", false));
 
+	    RadioButton showRadar = findViewById(R.id.showRadar);
+	    showRadar.setChecked(common.GetBoolPref("radarforecast", true));
+	    RadioButton showForecast = findViewById(R.id.showForecast);
+	    showForecast.setChecked(!common.GetBoolPref("radarforecast", true));
+
 	    SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 	    ViewPager mViewPager = findViewById(R.id.container);
 	    mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -681,6 +686,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
+							case "meteofrance.com":
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
 							default:
 								common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
 								handlerForecast.sendEmptyMessage(0);
@@ -902,7 +911,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			b2.setEnabled(true);
 			dialog.dismiss();
 			new AlertDialog.Builder(common.context)
-					.setTitle("Wasn't able to connect or download the forecast from Yahoo.")
+					.setTitle("Wasn't able to connect or download the forecast.")
 					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
 					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
 					{

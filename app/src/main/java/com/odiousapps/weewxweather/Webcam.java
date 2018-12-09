@@ -225,6 +225,7 @@ class Webcam
 	{
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Common.UPDATE_INTENT);
+		filter.addAction(Common.REFRESH_INTENT);
 		filter.addAction(Common.EXIT_INTENT);
 		common.context.registerReceiver(serviceReceiver, filter);
 		Common.LogMessage("webcam.java -- registerReceiver");
@@ -250,7 +251,7 @@ class Webcam
             {
                 Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
-                if(action != null && action.equals(Common.UPDATE_INTENT))
+                if(action != null && (action.equals(Common.UPDATE_INTENT) || action.equals(Common.REFRESH_INTENT)))
                 {
 	                dark_theme = common.GetBoolPref("dark_theme", false);
 	                if(dark_theme)

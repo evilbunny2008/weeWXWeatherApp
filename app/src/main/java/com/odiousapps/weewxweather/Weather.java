@@ -634,6 +634,20 @@ class Weather
 						    sb.append(tmp);
 						    break;
 					    }
+					    case "meteofrance.com":
+					    {
+						    String[] content = common.processMF(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='mf.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
 				    }
 			    }
 

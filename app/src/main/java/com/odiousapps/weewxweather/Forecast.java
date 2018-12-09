@@ -356,8 +356,8 @@ class Forecast
 	{
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Common.UPDATE_INTENT);
-		filter.addAction(Common.EXIT_INTENT);
 		filter.addAction(Common.REFRESH_INTENT);
+		filter.addAction(Common.EXIT_INTENT);
 		common.context.registerReceiver(serviceReceiver, filter);
 		Common.LogMessage("forecast.java -- registerReceiver");
 	}
@@ -404,7 +404,7 @@ class Forecast
             {
                 Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
                 String action = intent.getAction();
-                if(action != null && action.equals(Common.UPDATE_INTENT))
+                if(action != null && (action.equals(Common.UPDATE_INTENT) || action.equals(Common.REFRESH_INTENT)))
                 {
 	                dark_theme = common.GetBoolPref("dark_theme", false);
 	                updateScreen();
@@ -615,6 +615,13 @@ class Forecast
 						    updateForecast(content[0], content[1]);
 					    break;
 				    }
+				    case "meteofrance.com":
+				    {
+					    String[] content = common.processMF(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
 			    }
 
 			    swipeLayout.setRefreshing(false);
@@ -703,6 +710,9 @@ class Forecast
 					    break;
 				    case "metservice.com":
 					    im.setImageResource(R.drawable.metservice);
+					    break;
+				    case "meteofrance.com":
+					    im.setImageResource(R.drawable.mf);
 					    break;
 			    }
 		    }
