@@ -6,8 +6,8 @@ android {
         applicationId "com.odiousapps.weewxweather"
         minSdkVersion 19
         targetSdkVersion 28
-        versionCode 7000
-        versionName "0.7.0"
+        versionCode 7001
+        versionName "0.7.1"
     }
     buildTypes {
         release {

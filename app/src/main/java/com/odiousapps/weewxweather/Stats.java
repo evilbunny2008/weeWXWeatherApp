@@ -276,7 +276,7 @@ class Stats
 
     	try
 	    {
-		    return str.split(" ")[0];
+		    return str.split(" ", 2)[0];
 	    } catch (Exception e) {
     		e.printStackTrace();
 	    }
@@ -365,6 +365,13 @@ class Stats
 				    sb.append(stmp);
 			    }
 
+			    if(bits.length > 205 && !bits[205].equals(""))
+			    {
+				    stmp = "<tr><td><img style='width:" + iw + "px' src='sunglasses.png'></td><td>" + bits[205] + "UVI</td><td>" + convert(bits[206]) +
+						    "</td><td>" + convert(bits[208]) + "</td><td style='text-align:right;'>" + bits[207] + "W/m\u00B2</td><td><img style='width:" + iw + "px' src='sunglasses.png'></td></tr>";
+				    sb.append(stmp);
+			    }
+
 			    String rain = bits[20];
 			    String since = "since mn";
 
@@ -413,6 +420,13 @@ class Stats
 
 					    stmp = "<tr><td><img style='width:" + iw + "px' src='home.png'></td><td>" + bits[177] + bits[64] + "</td><td>" + convert(bits[178]) +
 							    "</td><td>" + convert(bits[176]) + "</td><td>" + bits[175] + bits[64] + "</td><td><img style='width:" + iw + "px' src='home.png'></td></tr>";
+					    sb.append(stmp);
+				    }
+
+				    if(bits.length > 209 && !bits[209].equals(""))
+				    {
+					    stmp = "<tr><td><img style='width:" + iw + "px' src='sunglasses.png'></td><td>" + bits[209] + "UVI</td><td>" + convert(bits[210]) +
+							    "</td><td>" + convert(bits[212]) + "</td><td style='text-align:right;'>" + bits[211] + "W/m\u00B2</td><td><img style='width:" + iw + "px' src='sunglasses.png'></td></tr>";
 					    sb.append(stmp);
 				    }
 
@@ -469,6 +483,13 @@ class Stats
 					    sb.append(stmp);
 				    }
 
+				    if(bits.length > 213 && !bits[213].equals(""))
+				    {
+					    stmp = "<tr><td><img style='width:" + iw + "px' src='sunglasses.png'></td><td>" + bits[213] + "UVI</td><td>" + getTime(bits[214]) +
+							    "</td><td>" + getTime(bits[216]) + "</td><td style='text-align:right;'>" + bits[215] + "W/m\u00B2</td><td><img style='width:" + iw + "px' src='sunglasses.png'></td></tr>";
+					    sb.append(stmp);
+				    }
+
 				    stmp = "<tr><td><img style='width:" + iw + "px' src='windsock.png'></td><td colspan='3'>" + bits[92] + bits[61] + " " + bits[93] + " " + getTime(bits[94]) +
 						    "</td><td>" + bits[22] + bits[62] + "</td><td><img style='width:" + iw + "px' src='umbrella.png'></td></tr>";
 				    sb.append(stmp);
@@ -510,6 +531,13 @@ class Stats
 					    sb.append(stmp);
 				    }
 
+				    if(bits.length > 217 && !bits[217].equals(""))
+				    {
+					    stmp = "<tr><td><img style='width:" + iw + "px' src='sunglasses.png'></td><td>" + bits[217] + "UVI</td><td>" + getTime(bits[218]) +
+							    "</td><td>" + getTime(bits[220]) + "</td><td style='text-align:right;'>" + bits[219] + "W/m\u00B2</td><td><img style='width:" + iw + "px' src='sunglasses.png'></td></tr>";
+					    sb.append(stmp);
+				    }
+
 				    stmp = "<tr><td><img style='width:" + iw + "px' src='windsock.png'></td><td colspan='3'>" + bits[115] + bits[61] + " " + bits[116] + " " + getTime(bits[117]) +
 						    "</td><td>" + bits[23] + bits[62] + "</td><td><img style='width:" + iw + "px' src='umbrella.png'></td></tr>";
 				    sb.append(stmp);
@@ -548,6 +576,13 @@ class Stats
 
 					    stmp = "<tr><td><img style='width:" + iw + "px' src='home.png'></td><td>" + bits[201] + bits[64] + "</td><td>" + getTime(bits[202]) +
 							    "</td><td>" + getTime(bits[200]) + "</td><td>" + bits[199] + bits[64] + "</td><td><img style='width:" + iw + "px' src='home.png'></td></tr>";
+					    sb.append(stmp);
+				    }
+
+				    if(bits.length > 221 && !bits[221].equals(""))
+				    {
+					    stmp = "<tr><td><img style='width:" + iw + "px' src='sunglasses.png'></td><td>" + bits[221] + "UVI</td><td>" + getTime(bits[222]) +
+							    "</td><td>" + getTime(bits[224]) + "</td><td style='text-align:right;'>" + bits[223] + "W/m\u00B2</td><td><img style='width:" + iw + "px' src='sunglasses.png'></td></tr>";
 					    sb.append(stmp);
 				    }
 
