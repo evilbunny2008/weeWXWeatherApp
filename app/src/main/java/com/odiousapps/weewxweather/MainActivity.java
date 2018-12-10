@@ -325,7 +325,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "<a href='https://www.metoffice.gov.uk'>UK Met Office</a>, " +
 			    "<a href='https://www.aemet.es'>La Agencia Estatal de Meteorología (AEMET)</a>, " +
 			    "<a href='https://www.dwd.de'>Deutscher Wetterdienst (DWD)</a>, " +
-			    "<a href='https://metservice.com'>MetService.com</a>" +
+			    "<a href='https://metservice.com'>MetService.com</a>, " +
+			    "<a href='https://meteofrance.com'>MeteoFrance.com</a>, " +
+			    "<a href='https://www.smn.gob.ar'>Servicio Meteorológico Nacional</a>" +
 			    "<br><br>" +
 			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
@@ -628,7 +630,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("bomtown=" + bomtown);
 								break;
 							case "wmo.int":
-								forecast = "https://worldweather.wmo.int/en/json/" + forecast.trim() + "_en.xml";
+								if(!forecast.startsWith("http"))
+									forecast = "https://worldweather.wmo.int/en/json/" + forecast.trim() + "_en.xml";
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
@@ -687,6 +690,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("fctype=" + fctype);
 								break;
 							case "meteofrance.com":
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
+							case "smn.gob.ar":
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;

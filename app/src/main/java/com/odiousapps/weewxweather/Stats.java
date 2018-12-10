@@ -212,11 +212,9 @@ class Stats
 	    {
 		    tv.setTextColor(0xff000000);
 		    tv.setBackgroundColor(0xffffffff);
-		    Common.LogMessage("no dark theme");
 	    } else {
 		    tv.setTextColor(0xffffffff);
 		    tv.setBackgroundColor(0xff000000);
-		    Common.LogMessage("dark theme");
 	    }
     }
 
@@ -329,7 +327,7 @@ class Stats
 
 			    String header = "<html>";
 			    if(dark_theme)
-				    header += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    header += "<head><style>body{color: #fff; background-color: #000;}img{filter:invert(100%);}</style></head>";
 			    header += "<body style='text-align:center; transform: scale(" + p + "); transform-origin: 0 0;'>";
 			    String footer = "</body></html>";
 

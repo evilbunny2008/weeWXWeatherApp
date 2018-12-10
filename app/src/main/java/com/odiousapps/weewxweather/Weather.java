@@ -103,7 +103,7 @@ class Weather
 	    if(!dark_theme)
 	    	header = "<html><body>";
 	    else
-	    	header = "<html><head><style>body{color: #fff; background-color: #000;}</style></head><body>";
+		    header = "<html><head><style>body{color: #fff; background-color: #000;}img{filter:invert(100%);}</style></head><body>";
 	    String footer = "</body></html>";
 	    sb.append(header);
 
@@ -476,7 +476,10 @@ class Weather
 						    String logo = "<img src='bom.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
+						    {
+						    	logo = "<img src='bom.png' style='filter:invert(100%);' height='29px'/><br/>";
 							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    }
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -578,9 +581,13 @@ class Weather
 						    String logo = "<img src='bom.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
+						    {
+							    logo = "<img src='bom.png' style='filter:invert(100%);' height='29px'/><br/>";
 							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    }
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
+
 						    break;
 					    }
 					    case "aemet.es":
@@ -644,6 +651,24 @@ class Weather
 						    sb.append("<html>");
 						    if (dark_theme)
 							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
+					    case "smn.gob.ar":
+					    {
+						    String[] content = common.processSMN(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='smn.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if (dark_theme)
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}img{filter:invert(100%);}</style>" + Common.ssheader + "</head>";
+						    else
+						    	tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
+
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;

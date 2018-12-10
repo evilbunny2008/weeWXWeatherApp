@@ -622,6 +622,13 @@ class Forecast
 						    updateForecast(content[0], content[1]);
 					    break;
 				    }
+				    case "smn.gob.ar":
+				    {
+					    String[] content = common.processSMN(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
 			    }
 
 			    swipeLayout.setRefreshing(false);
@@ -713,6 +720,9 @@ class Forecast
 					    break;
 				    case "meteofrance.com":
 					    im.setImageResource(R.drawable.mf);
+					    break;
+				    case "smn.gob.ar":
+					    im.setImageResource(R.drawable.smn);
 					    break;
 			    }
 		    }

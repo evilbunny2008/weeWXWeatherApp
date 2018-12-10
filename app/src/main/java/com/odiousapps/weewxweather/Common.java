@@ -81,6 +81,8 @@ class Common
 	private Typeface tf;
 	private Map<String, String> lookupTable = new HashMap<>();
 
+	static String ssheader = "<link rel='stylesheet' href='file:///android_asset/weathericons.css'>";
+
 	Common(Context c)
 	{
 		System.setProperty("http.agent", UA);
@@ -354,6 +356,117 @@ class Common
 		return views;
 	}
 
+	String[] processSMN(String data)
+	{
+		return processSMN(data, false);
+	}
+
+	String[] processSMN(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		StringBuilder out = new StringBuilder();
+		String tmp;
+		String desc;
+
+		try
+		{
+			data = data.split("<div id=\"block_city_detail\"", 2)[1]; //.split("</div></div>", 2)[0].trim();
+			desc = data.split("<h1>", 2)[1].split("</h1>", 2)[0].trim();
+
+			String ftime = data.split("<h3 class=\"infoTitle\">Actualizado: ", 2)[1].split("hs.</h3>", 2)[0].trim();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+			ftime = sdf.format(System.currentTimeMillis()) + " " + ftime;
+
+			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+			long mdate = sdf.parse(ftime).getTime();
+			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			ftime = sdf.format(mdate);
+
+			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			data = data.split("<div class=\"panels-flexible-row panels-flexible-row-base2cols-1 clearfix", 2)[0]
+					   .split("</div></div>")[0].trim();
+			//writeFile("data.txt", data);
+
+			String[] bits = data.split("extendedForecastDay");
+			for (int i = 1; i < bits.length; i++)
+			{
+				String line = bits[i].trim();
+//				Log.i("weeWX Weather", line);
+				String day = line.split("<h3>", 2)[1].split("</h3>", 2)[0].trim();
+				String min = line.split("<p>Min ", 2)[1].split("ºC", 2)[0].trim();
+				String max = line.split("Max ",2)[1].split("ºC", 2)[0].trim();
+				String morning = line.split("<p><b>")[1].split("</b>", 2)[0].trim();
+				String night = line.split("<p><b>")[2].split("</b>", 2)[0].trim();
+				String icon1 = line.split("<i class=\"wi ")[1].split("\"></i>", 2)[0].trim();
+				String icon2 = line.split("<i class=\"wi ")[2].split("\"></i>", 2)[0].trim();
+				String text1 = line.split("<div class=\"col col-md-8\">")[1].split("</div>", 2)[0].trim();
+				String text2 = line.split("<div class=\"col col-md-8\">")[2].split("</div>", 2)[0].trim();
+
+
+				tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:20px;' class='wi " + icon1 + "'></i></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + day + " - " + morning + "</b></td>";
+				out.append(tmp);
+
+				if(metric)
+				{
+					max = max + "&deg;C";
+					min = min + "&deg;C";
+				} else {
+					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				}
+
+				if(!max.equals("&deg;C"))
+					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
+				else
+					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td colspan='2'>" + text1 + "</td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:20px;' class='wi " + icon2 + "'></i></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + day + " - " + night + "</b></td>";
+				out.append(tmp);
+
+				if(!min.equals("&deg;C"))
+					tmp = "<td style='width:10%;text-align:right;'><b>" + min + "</b></td></tr>";
+				else
+					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td colspan='2'>" + text2 + "</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+
+			tmp = "</table>";
+			out.append(tmp);
+			return new String[]{out.toString(), desc};
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+
 	String[] processMF(String data)
 	{
 		return processMF(data, false);
@@ -400,7 +513,7 @@ class Common
 				String day = bit.split("<a>", 2)[1].split("</a>", 2)[0].trim() + sdf.format(System.currentTimeMillis());
 				String min = bit.split("class=\"min-temp\">", 2)[1].split("°C Minimale", 2)[0].trim();
 				String max = bit.split("class=\"max-temp\">", 2)[1].split("°C Maximale", 2)[0].trim();
-				String icon = bit.split("<dd class=\"pic40 ", 2)[1].split("\">")[0];
+				String icon = bit.split("<dd class=\"pic40 ", 2)[1].split("\">",2)[0].trim();
 
 				sdf = new SimpleDateFormat("EEE dd-MM-yyyy", Locale.FRANCE);
 				mdate = sdf.parse(day).getTime();
@@ -1265,7 +1378,7 @@ class Common
 				}
 
 				String code = j.getString("weatherIcon");
-				code = code.substring(0, 2);
+				code = code.substring(0, code.length() - 2);
 
 				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/i" + code + ".png'></td>";
 				out.append(tmp);
