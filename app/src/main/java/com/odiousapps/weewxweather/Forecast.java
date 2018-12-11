@@ -240,10 +240,16 @@ class Forecast
 
 		if (common.GetStringPref("radtype", "image").equals("image"))
 		{
-			rl.setVisibility(View.VISIBLE);
 			String radar = common.context.getFilesDir() + "/radar.gif";
+			File rf = new File(radar);
 
-			if (radar.equals("") || !new File(radar).exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+			if(!radar.equals("") && !rf.exists() && !common.GetStringPref("RADAR_URL", "").equals("") && common.checkConnection())
+			{
+				reloadWebView(true);
+				return;
+			}
+
+			if (radar.equals("") || !rf.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 			{
 				String html = "<html>";
 				if (dark_theme)
@@ -383,15 +389,23 @@ class Forecast
 		    getForecast(false);
 		    forecast.setVisibility(View.VISIBLE);
 		    im.setVisibility(View.VISIBLE);
-		    rl.setVisibility(View.VISIBLE);
-		    wv2.setVisibility(View.GONE);
-	    } else {
-		    Common.LogMessage("Displaying radar");
-		    loadWebView();
-		    forecast.setVisibility(View.GONE);
-		    im.setVisibility(View.GONE);
 		    rl.setVisibility(View.GONE);
 		    wv2.setVisibility(View.VISIBLE);
+	    } else {
+		    Common.LogMessage("Displaying radar");
+		    if (common.GetStringPref("radtype", "image").equals("image"))
+		    {
+			    forecast.setVisibility(View.GONE);
+			    im.setVisibility(View.GONE);
+			    rl.setVisibility(View.VISIBLE);
+			    wv2.setVisibility(View.GONE);
+		    } else {
+			    forecast.setVisibility(View.GONE);
+			    im.setVisibility(View.GONE);
+			    rl.setVisibility(View.GONE);
+			    wv2.setVisibility(View.VISIBLE);
+		    }
+		    loadWebView();
 	    }
 
 	    swipeLayout.setRefreshing(false);
