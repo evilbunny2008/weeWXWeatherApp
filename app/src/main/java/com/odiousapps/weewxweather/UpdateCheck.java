@@ -19,7 +19,7 @@ public class UpdateCheck extends BroadcastReceiver
 		Common common = new Common(c);
 		common.setAlarm("UpdateCheck");
 
-		if(common.GetBoolPref("onlyWIFI") && !common.checkWifiOnAndConnected())
+		if(!common.checkConnection())
 		{
 			Common.LogMessage("Skipping update due to wifi setting.");
 			return;

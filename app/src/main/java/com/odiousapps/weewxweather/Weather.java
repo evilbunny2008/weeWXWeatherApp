@@ -731,7 +731,7 @@ class Weather
 		    return;
 	    }
 
-	    if(!common.checkWifiOnAndConnected() && !force)
+	    if(!common.checkConnection() && !force)
 	    {
 	    	Common.LogMessage("Not on wifi and not a forced refresh");
 		    if(swipeLayout.isRefreshing())
@@ -792,7 +792,7 @@ class Weather
             return;
         }
 
-	    if(!common.checkWifiOnAndConnected() && !force)
+	    if(!common.checkConnection() && !force)
 	    {
 		    Common.LogMessage("Not on wifi and not a forced refresh");
 		    swipeLayout.setRefreshing(false);

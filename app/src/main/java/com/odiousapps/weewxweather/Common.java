@@ -2366,18 +2366,22 @@ class Common
 	}
 
 	//	https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
-	@SuppressWarnings("BooleanMethodIsAlwaysInverted")
-	boolean checkWifiOnAndConnected()
+	boolean checkConnection()
 	{
-		WifiManager wifiMgr = (WifiManager)context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
-
-		if (wifiMgr.isWifiEnabled())
+		if(GetBoolPref("onlyWIFI", false))
 		{
-			WifiInfo wifiInfo = wifiMgr.getConnectionInfo();
-			return wifiInfo.getNetworkId() != -1;
+			WifiManager wifiMgr = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+
+			if (wifiMgr.isWifiEnabled())
+			{
+				WifiInfo wifiInfo = wifiMgr.getConnectionInfo();
+				return wifiInfo.getNetworkId() != -1;
+			}
+
+			return false;
 		}
 
-		return false;
+		return true;
 	}
 
 	private void sendAlert()

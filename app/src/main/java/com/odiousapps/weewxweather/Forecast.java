@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
@@ -279,22 +280,18 @@ class Forecast
 			rl.setVisibility(View.GONE);
 			wv2.setVisibility(View.VISIBLE);
 
-			if(wv2.getOriginalUrl() == null)
+			if(common.checkConnection())
 			{
-				Handler mHandler = new Handler(Looper.getMainLooper());
-				mHandler.post(new Runnable()
-				{
-					@Override
-					public void run()
-					{
-						wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
-						swipeLayout.setRefreshing(false);
-					}
-				});
-			} else {
-				wv2.reload();
-				swipeLayout.setRefreshing(false);
+				wv2.clearCache(true);
+				wv2.clearHistory();
+				wv2.clearFormData();
+				WebSettings webSettings = wv2.getSettings();
+				webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
 			}
+
+			wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
+
+			swipeLayout.setRefreshing(false);
 		}
 
 		swipeLayout.setRefreshing(false);
@@ -311,15 +308,12 @@ class Forecast
 
 		if(radar.equals("") || common.GetStringPref("radtype", "image").equals("webpage"))
 		{
-			if(wv2.getOriginalUrl() == null)
-				loadWebView();
-			else
-				wv2.reload();
+			loadWebView();
 			swipeLayout.setRefreshing(false);
 			return;
 		}
 
-		if(!common.checkWifiOnAndConnected() && !force)
+		if(!common.checkConnection() && !force)
 		{
 			Common.LogMessage("Not on wifi and not a forced refresh");
 			swipeLayout.setRefreshing(false);
@@ -345,7 +339,15 @@ class Forecast
 					e.printStackTrace();
 				}
 
-				swipeLayout.setRefreshing(false);
+				Handler mHandler = new Handler(Looper.getMainLooper());
+				mHandler.post(new Runnable()
+				{
+					@Override
+					public void run()
+					{
+						swipeLayout.setRefreshing(false);
+					}
+				});
 			}
 		});
 
@@ -381,15 +383,15 @@ class Forecast
 		    getForecast(false);
 		    forecast.setVisibility(View.VISIBLE);
 		    im.setVisibility(View.VISIBLE);
-		    rl.setVisibility(View.GONE);
-		    wv2.setVisibility(View.VISIBLE);
+		    rl.setVisibility(View.VISIBLE);
+		    wv2.setVisibility(View.GONE);
 	    } else {
 		    Common.LogMessage("Displaying radar");
 		    loadWebView();
 		    forecast.setVisibility(View.GONE);
 		    im.setVisibility(View.GONE);
-		    rl.setVisibility(View.VISIBLE);
-		    wv2.setVisibility(View.GONE);
+		    rl.setVisibility(View.GONE);
+		    wv2.setVisibility(View.VISIBLE);
 	    }
 
 	    swipeLayout.setRefreshing(false);
@@ -442,10 +444,10 @@ class Forecast
 		    return;
 	    }
 
-	    if(!common.checkWifiOnAndConnected() && !force)
+	    if(!common.checkConnection() && !force)
 	    {
 		    Common.LogMessage("Not on wifi and not a forced refresh");
-		    swipeLayout.setRefreshing(false);
+		    handlerDone.sendEmptyMessage(0);
 		    return;
 	    }
 
@@ -477,9 +479,7 @@ class Forecast
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-	            swipeLayout.setRefreshing(false);
-            }
+	        }
         });
 
         t.start();
@@ -503,7 +503,15 @@ class Forecast
 		    @Override
 		    public void run()
 		    {
-			    swipeLayout.setRefreshing(true);
+			    Handler mHandler = new Handler(Looper.getMainLooper());
+			    mHandler.post(new Runnable()
+			    {
+				    @Override
+				    public void run()
+				    {
+					    swipeLayout.setRefreshing(true);
+				    }
+			    });
 
 			    Common.LogMessage("getting json data");
 		        String data;
@@ -512,13 +520,22 @@ class Forecast
 			    data = common.GetStringPref("forecastData", "");
 			    if(data.equals(""))
 			    {
-				    String html = "<html>";
+				    String tmp = "<html>";
 				    if(dark_theme)
-					    html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    html += "<body>Forecast URL not set, edit settings.txt to change</body></html>";
+					    tmp += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    tmp += "<body>Forecast URL not set, edit settings.txt to change</body></html>";
 
-				    wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-				    swipeLayout.setRefreshing(false);
+				    final String html = tmp;
+
+				    mHandler.post(new Runnable()
+				    {
+					    @Override
+					    public void run()
+					    {
+						    wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+						    swipeLayout.setRefreshing(false);
+					    }
+				    });
 				    return;
 			    }
 
@@ -631,7 +648,14 @@ class Forecast
 				    }
 			    }
 
-			    swipeLayout.setRefreshing(false);
+			    mHandler.post(new Runnable()
+			    {
+				    @Override
+				    public void run()
+				    {
+					    swipeLayout.setRefreshing(false);
+				    }
+			    });
 		    }
 	    });
 
