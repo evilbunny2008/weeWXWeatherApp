@@ -114,8 +114,8 @@ class Custom
 		    @Override
 		    public boolean onConsoleMessage(ConsoleMessage cm)
 		    {
-		    	Common.LogMessage(cm.message());
-			    return true;
+		    	Common.LogMessage("My Application: " + cm.message());
+			    return super.onConsoleMessage(cm);
 		    }
 	    });
 

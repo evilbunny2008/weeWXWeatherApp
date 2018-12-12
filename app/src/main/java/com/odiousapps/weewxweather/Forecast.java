@@ -686,7 +686,9 @@ class Forecast
 		    {
 			    String tmpfc = "<html>";
 			    if (dark_theme)
-				    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+				    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+			    else
+			    	tmpfc += "<head>" + Common.ssheader + "</head>";
 			    tmpfc += "<body style='text-align:center'>" + bits + "</body></html>";
 
 			    final String fc = tmpfc;

@@ -22,6 +22,8 @@ import android.widget.TextView;
 
 import java.io.File;
 
+import static java.lang.Math.round;
+
 class Weather
 {
     private Common common;
@@ -101,11 +103,14 @@ class Weather
 
 	    String header;
 	    if(!dark_theme)
-	    	header = "<html><body>";
+	    	header = "<html><head>" + Common.ssheader + "</head><body>";
 	    else
-		    header = "<html><head><style>body{color: #fff; background-color: #000;}img{filter:invert(100%);}</style></head><body>";
-	    String footer = "</body></html>";
+		    header = "<html><head><style>body{color: #fff; background-color: #000;}img{filter:invert(100%);}</style>" + Common.ssheader + "</head><body>";
 	    sb.append(header);
+
+		Common.LogMessage("header == " + header);
+
+	    String footer = "</body></html>";
 
 	    sb.append("<table style='width:100%;border:0px;'>");
 
@@ -114,34 +119,33 @@ class Weather
 		    stmp += "<td style='font-size:18pt;text-align:right;vertical-align:bottom;'>AT: " + bits[203] + bits[60] +"</td></tr></table>";
 	    else
 	    	stmp += "<td>&nbsp</td></tr></table>";
-
 	    sb.append(stmp);
 	    sb.append("<table style='width:100%;border:0px;'>");
 
-	    stmp = "<tr><td><img style='width:" + iw + "px' src='windsock.png'></td><td>" + bits[25] + bits[61] + "</td>" +
-			    "<td style='text-align:right;'>" + bits[37] + bits[63] + "</td><td><img style='width:" + iw + "px' src='barometer.png'></td></tr>";
+	    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-windy'></i></td><td>" + bits[25] + bits[61] + "</td>" +
+			    "<td style='text-align:right;'>" + bits[37] + bits[63] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td></tr>";
 	    sb.append(stmp);
 
-	    stmp = "<tr><td><img style='width:" + iw + "px' src='compass.png'></td><td>" + bits[30] + "</td>" +
-			    "<td style='text-align:right;'>" + bits[6] + bits[64] + "</td><td><img style='width:" + iw + "px' src='humidity.png'></td></tr>";
+	    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-wind wi-towards-" + bits[30].toLowerCase() + "'></i></td><td>" + bits[30] + "</td>" +
+			    "<td style='text-align:right;'>" + bits[6] + bits[64] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-humidity'></i></td></tr>";
 	    sb.append(stmp);
 
 	    String rain = bits[20] + bits[62] + " since mn";
 	    if(bits.length > 160 && !bits[160].equals(""))
 		    rain = bits[158] + bits[62] + " since " + bits[160];
 
-	    stmp = "<tr><td><img style='width:" + iw + "px' src='umbrella.png'></td><td>" + rain + "</td>" +
-			    "<td style='text-align:right;'>" + bits[12] + bits[60] + "</td><td><img style='width:" + iw + "px' src='droplet.png'></td></tr>";
+	    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td><td>" + rain + "</td>" +
+			    "<td style='text-align:right;'>" + bits[12] + bits[60] + "</td><td><i style='font-size:" + round(iw * 1.4) + "px;' class='wi wi-raindrop'></i></td></tr>";
 	    sb.append(stmp);
 
-	    stmp = "<tr><td><img style='width:" + iw + "px' src='sunglasses.png'></td><td>" + bits[45] + "UVI</td>" +
-			    "<td style='text-align:right;'>" + bits[43] + "W/m\u00B2</td><td><img style='width:" + iw + "px' src='sunglasses.png'></td></tr>";
+	    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[45] + "UVI</td>" +
+			    "<td style='text-align:right;'>" + bits[43] + "W/m\u00B2</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
 	    sb.append(stmp);
 
 	    if(bits.length > 202 && common.GetBoolPref("showIndoor", false))
 	    {
-		    stmp = "<tr><td><img style='width:" + iw + "px' src='home.png'></td><td>" + bits[161] + bits[60] + "</td>" +
-				    "<td style='text-align:right;'>" + bits[166] + bits[64] + "</td><td><img style='width:" + iw + "px' src='home.png'></td></tr>";
+		    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td><td>" + bits[161] + bits[60] + "</td>" +
+				    "<td style='text-align:right;'>" + bits[166] + bits[64] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>";
 		    sb.append(stmp);
 	    }
 
@@ -151,16 +155,26 @@ class Weather
 	    sb.append("<table style='width:100%;border:0px;'>");
 
 	    stmp = "<tr>" +
-			    "<td><img style='width:" + iw + "px' src='sunrise.png'></td><td>" + bits[57] + "</td>" +
-			    "<td><img style='width:" + iw + "px' src='sunset.png'></td><td>" + bits[58] + "</td>" +
-			    "<td><img style='width:" + iw + "px' src='moonrise.png'></td><td>" + bits[47] + "</td>" +
-	            "<td><img style='width:" + iw + "px' src='moonset.png'></td><td>" + bits[48] + "</td></tr>";
+			    "<td><i style='font-size:" + iw + "px;' class='wi wi-sunrise'></i></td><td>" + bits[57] + "</td>" +
+			    "<td><i style='font-size:" + iw + "px;' class='wi wi-sunset'></i></td><td>" + bits[58] + "</td>" +
+			    "<td><i style='font-size:" + iw + "px;' class='wi wi-moonrise'></i></td><td>" + bits[47] + "</td>" +
+	            "<td><i style='font-size:" + iw + "px;' class='wi wi-moonset'></i></td><td>" + bits[48] + "</td></tr>";
 	    sb.append(stmp);
 
 	    stmp = "</table>";
 	    sb.append(stmp);
 
 	    sb.append(footer);
+
+	    current.setWebChromeClient(new WebChromeClient()
+	    {
+		    @Override
+		    public boolean onConsoleMessage(ConsoleMessage cm)
+		    {
+			    Common.LogMessage(cm.message());
+			    return super.onConsoleMessage(cm);
+		    }
+	    });
 
 	    Handler mHandler = new Handler(Looper.getMainLooper());
 	    mHandler.post(new Runnable()
@@ -169,7 +183,7 @@ class Weather
 		    public void run()
 		    {
 			    current.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString().trim(), "text/html", "utf-8", null);
-			    swipeLayout.setRefreshing(true);
+			    swipeLayout.setRefreshing(false);
 		    }
 	    });
 
@@ -270,7 +284,7 @@ class Weather
         if(!common.GetStringPref("RADAR_URL", "").equals("") && f2.lastModified() + period[0] < System.currentTimeMillis())
             reloadWebView(false);
 
-	    int curtime = Math.round(System.currentTimeMillis() / 1000);
+	    int curtime = round(System.currentTimeMillis() / 1000);
 	    if(!common.GetBoolPref("radarforecast", true) && common.GetIntPref("rssCheck", 0) + 7190 < curtime)
         	reloadForecast(false);
 
@@ -425,7 +439,10 @@ class Weather
 						    String logo = "<img src='purple.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -442,7 +459,10 @@ class Weather
 						    String logo = "<img src='wz.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -459,7 +479,10 @@ class Weather
 						    String logo = "<img src='yrno.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -477,9 +500,12 @@ class Weather
 						    sb.append("<html>");
 						    if (dark_theme)
 						    {
-						    	logo = "<img src='bom.png' style='filter:invert(100%);' height='29px'/><br/>";
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
-						    }
+							    logo = "<img src='bom.png' style='filter:invert(100%);' height='29px'/><br/>";
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    } else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
+
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -496,7 +522,10 @@ class Weather
 						    String logo = "<img src='wmo.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -513,7 +542,10 @@ class Weather
 						    String logo = "<img src='wgov.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -530,7 +562,10 @@ class Weather
 						    String logo = "<img src='wca.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -547,7 +582,10 @@ class Weather
 						    String logo = "<img src='wca.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -564,7 +602,10 @@ class Weather
 						    String logo = "<img src='met.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -580,11 +621,13 @@ class Weather
 
 						    String logo = "<img src='bom.png' height='29px'/><br/>";
 						    sb.append("<html>");
-						    if (dark_theme)
+						    if(dark_theme)
 						    {
 							    logo = "<img src='bom.png' style='filter:invert(100%);' height='29px'/><br/>";
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
-						    }
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    } else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 
@@ -602,7 +645,10 @@ class Weather
 						    String logo = "<img src='aemet.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -619,7 +665,10 @@ class Weather
 						    String logo = "<img src='dwd.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -636,7 +685,10 @@ class Weather
 						    String logo = "<img src='metservice.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -650,7 +702,10 @@ class Weather
 						    String logo = "<img src='mf.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;
@@ -751,7 +806,7 @@ class Weather
 		    {
 			    try
 			    {
-				    int curtime = Math.round(System.currentTimeMillis() / 1000);
+				    int curtime = round(System.currentTimeMillis() / 1000);
 
 				    if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 7190 < curtime)
 				    {

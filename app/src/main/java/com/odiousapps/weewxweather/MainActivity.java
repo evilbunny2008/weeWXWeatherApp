@@ -313,8 +313,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    String lines = "<html><body>Big thanks to the <a href='http://weewx.com'>weeWX project</a>, as this app " +
 			    "wouldn't be possible otherwise.<br><br>" +
 			    "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
-			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a><br><br>" +
-			    "Forecasts supplied by" +
+			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and " +
+			    "<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers" +
+			    "<br><br>" +
+			    "Forecasts by" +
 			    "<a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, " +
 			    "<a href='https://weatherzone.com.au'>weatherzone</a>, " +
 			    "<a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a>, " +
@@ -323,8 +325,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "<a href='https://worldweather.wmo.int/en/home.html'>World Meteorology Organisation</a>, " +
 			    "<a href='https://weather.gc.ca'>Environment Canada</a>, " +
 			    "<a href='https://www.metoffice.gov.uk'>UK Met Office</a>, " +
-			    "<a href='https://www.aemet.es'>La Agencia Estatal de Meteorología (AEMET)</a>, " +
-			    "<a href='https://www.dwd.de'>Deutscher Wetterdienst (DWD)</a>, " +
+			    "<a href='https://www.aemet.es'>La Agencia Estatal de Meteorología</a>, " +
+			    "<a href='https://www.dwd.de'>Deutscher Wetterdienst</a>, " +
 			    "<a href='https://metservice.com'>MetService.com</a>, " +
 			    "<a href='https://meteofrance.com'>MeteoFrance.com</a>, " +
 			    "<a href='https://www.smn.gob.ar'>Servicio Meteorológico Nacional</a>" +

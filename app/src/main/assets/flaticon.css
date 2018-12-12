@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "flaticon";
+  src: url("file:///android_asset/font/flaticon.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+    font-family: "flaticon";
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-temperature:before { content: "\f100"; }
+.flaticon-home-page:before { content: "\f101"; }
+.flaticon-women-sunglasses:before { content: "\f102"; }
+.flaticon-windy:before { content: "\f103"; }

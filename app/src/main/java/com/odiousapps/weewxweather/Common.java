@@ -81,7 +81,9 @@ class Common
 	private Typeface tf;
 	private Map<String, String> lookupTable = new HashMap<>();
 
-	static String ssheader = "<link rel='stylesheet' href='file:///android_asset/weathericons.css'>";
+	static String ssheader = "<link rel='stylesheet' href='file:///android_asset/weathericons.css'>" +
+								"<link rel='stylesheet' href='file:///android_asset/weathericons_wind.css'>" +
+								"<link rel='stylesheet' type='text/css' href='file:///android_asset/flaticon.css'>";
 
 	Common(Context c)
 	{
@@ -285,7 +287,7 @@ class Common
 		SetStringPref(name, val);
 	}
 
-	@SuppressWarnings("SameParameterValue")
+	@SuppressWarnings({"SameParameterValue", "unused"})
 	boolean GetBoolPref(String name)
 	{
 		return GetBoolPref(name, false);
@@ -410,7 +412,7 @@ class Common
 				String text2 = line.split("<div class=\"col col-md-8\">")[2].split("</div>", 2)[0].trim();
 
 
-				tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:20px;' class='wi " + icon1 + "'></i></td>";
+				tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='wi " + icon1 + "'></i></td>";
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + day + " - " + morning + "</b></td>";
@@ -434,7 +436,7 @@ class Common
 				tmp = "<tr><td colspan='2'>" + text1 + "</td></tr>";
 				out.append(tmp);
 
-				tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:20px;' class='wi " + icon2 + "'></i></td>";
+				tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='wi " + icon2 + "'></i></td>";
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + day + " - " + night + "</b></td>";
@@ -2195,7 +2197,7 @@ class Common
 			    stmp = "<tr><td style='width:50%;font-size:48pt;'>" + tmp.getString("high") + "&deg;" + temp + "</td>";
 			    str.append(stmp);
 
-			    stmp = "<td style='width:50%;text-align:right;'><img width='80px' src='file:///android_res/drawable/yahoo" + code + ".png'></td></tr>";
+			    stmp = "<td style='width:50%;text-align:right;'><i style='font-size:60px;' class='wi wi-yahoo-" + code + "'></i></td></tr>";
 			    str.append(stmp);
 
 			    stmp = "<tr><td style='font-size:16pt;'>" + tmp.getString("low") + "&deg;" + temp + "</td>";
@@ -2212,7 +2214,7 @@ class Common
 				    tmp = forecast.getJSONObject(i);
 				    code = tmp.getInt("code");
 
-				    stmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/yahoo" + code + ".png'></td>";
+				    stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-yahoo-" + code + "'></i></td>";
 				    str.append(stmp);
 
 				    stmp = "<td style='width:45%;'><b>" + tmp.getString("day") + ", " + tmp.getString("date") + "</b></td>";
@@ -2245,7 +2247,7 @@ class Common
 				    tmp = forecast.getJSONObject(i);
 				    code = tmp.getInt("code");
 
-				    stmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/yahoo" + code + "'></td>";
+				    stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-yahoo-" + code + "'></i></td>";
 				    str.append(stmp);
 
 				    stmp = "<td style='width:45%;'><b>" + tmp.getString("day") + ", " + tmp.getString("date") + "</b></td>";
