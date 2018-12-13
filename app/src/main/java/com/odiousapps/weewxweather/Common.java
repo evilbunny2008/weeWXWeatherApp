@@ -358,6 +358,86 @@ class Common
 		return views;
 	}
 
+	String[] processDarkSky(String data)
+	{
+		return processDarkSky(data, false);
+	}
+
+	String[] processDarkSky(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		StringBuilder out = new StringBuilder();
+		String tmp;
+		String desc;
+
+		long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
+		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+		String ftime = sdf.format(mdate);
+
+		tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
+		out.append(tmp);
+		tmp = "<table style='width:100%;'>\n";
+		out.append(tmp);
+
+		try
+		{
+			JSONObject jobj = new JSONObject(data);
+			desc = jobj.getString("latitude") + ", " + jobj.getString("longitude");
+			JSONObject daily = jobj.getJSONObject("daily");
+			JSONArray  jarr = daily.getJSONArray("data");
+			for(int i = 0; i < jarr.length(); i++)
+			{
+				JSONObject day = jarr.getJSONObject(i);
+				String icon = day.getString("icon");
+				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				ftime = sdf.format(((long)day.getInt("time") * 1000));
+
+				String max = Integer.toString(round(day.getInt("temperatureHigh")));
+				String min = Integer.toString(round(day.getInt("temperatureLow")));
+
+				if(metric)
+				{
+					max += "&deg;C";
+					min += "&deg;C";
+				} else {
+					max += "&deg;F";
+					min += "&deg;F";
+				}
+
+				tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='wi wi-forecast-io-" + icon + "'></i></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + ftime + "</b></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td>" + day.getString("summary") + "</td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:10%;text-align:right;'>" + min + "</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+			tmp = "</table>";
+			out.append(tmp);
+			return new String[]{out.toString(), desc};
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
 	String[] processSMN(String data)
 	{
 		return processSMN(data, false);
@@ -394,13 +474,11 @@ class Common
 
 			data = data.split("<div class=\"panels-flexible-row panels-flexible-row-base2cols-1 clearfix", 2)[0]
 					   .split("</div></div>")[0].trim();
-			//writeFile("data.txt", data);
 
 			String[] bits = data.split("extendedForecastDay");
 			for (int i = 1; i < bits.length; i++)
 			{
 				String line = bits[i].trim();
-//				Log.i("weeWX Weather", line);
 				String day = line.split("<h3>", 2)[1].split("</h3>", 2)[0].trim();
 				String min = line.split("<p>Min ", 2)[1].split("ºC", 2)[0].trim();
 				String max = line.split("Max ",2)[1].split("ºC", 2)[0].trim();
@@ -410,7 +488,6 @@ class Common
 				String icon2 = line.split("<i class=\"wi ")[2].split("\"></i>", 2)[0].trim();
 				String text1 = line.split("<div class=\"col col-md-8\">")[1].split("</div>", 2)[0].trim();
 				String text2 = line.split("<div class=\"col col-md-8\">")[2].split("</div>", 2)[0].trim();
-
 
 				tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='wi " + icon1 + "'></i></td>";
 				out.append(tmp);
@@ -467,7 +544,6 @@ class Common
 
 		return null;
 	}
-
 
 	String[] processMF(String data)
 	{
@@ -1382,7 +1458,7 @@ class Common
 				String code = j.getString("weatherIcon");
 				code = code.substring(0, code.length() - 2);
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/i" + code + ".png'></td>";
+				tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file:///android_res/drawable/i" + code + ".png'></td>";
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
@@ -2736,6 +2812,14 @@ class Common
 
 	String downloadForecast(String fctype, String forecast, String bomtown) throws Exception
 	{
+		if(fctype.equals("darksky.net"))
+		{
+			forecast += "?exclude=currently,minutely,hourly,alerts,flags";
+			forecast += "&lang=" + Locale.getDefault().getLanguage();
+			if(GetBoolPref("metric", true))
+				forecast += "&units=si";
+		}
+
 		String tmp = downloadString(forecast);
 
 		if(fctype.equals("bom.gov.au"))

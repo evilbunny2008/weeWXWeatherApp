@@ -329,7 +329,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "<a href='https://www.dwd.de'>Deutscher Wetterdienst</a>, " +
 			    "<a href='https://metservice.com'>MetService.com</a>, " +
 			    "<a href='https://meteofrance.com'>MeteoFrance.com</a>, " +
-			    "<a href='https://www.smn.gob.ar'>Servicio Meteorológico Nacional</a>" +
+			    "<a href='https://www.smn.gob.ar'>Servicio Meteorológico Nacional</a>, " +
+			    "<a href='https://darksky.net'>DarkSky.net</a>" +
 			    "<br><br>" +
 			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
@@ -699,6 +700,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
+							case "darksky.net":
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
 							default:
 								common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
 								handlerForecast.sendEmptyMessage(0);
@@ -710,7 +715,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					}
 				}
 
-				Common.LogMessage("line 654");
+				Common.LogMessage("line 718");
 
 				if (!forecast.equals("") && !forecast.equals(oldforecast))
 				{
@@ -815,6 +820,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetBoolPref("showIndoor", show_indoor.isChecked());
 				common.SetBoolPref("dark_theme", dark_theme.isChecked());
 				common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
+
+				try
+				{
+					if (fctype.equals("darksky.net"))
+						common.downloadForecast(fctype, forecast, bomtown);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 
 				common.SendRefresh();
 				handlerDone.sendEmptyMessage(0);

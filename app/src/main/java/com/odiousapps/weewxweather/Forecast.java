@@ -660,6 +660,13 @@ class Forecast
 						    updateForecast(content[0], content[1]);
 					    break;
 				    }
+				    case "darksky.net":
+				    {
+					    String[] content = common.processDarkSky(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
 			    }
 
 			    mHandler.post(new Runnable()
@@ -763,6 +770,9 @@ class Forecast
 					    break;
 				    case "smn.gob.ar":
 					    im.setImageResource(R.drawable.smn);
+					    break;
+				    case "darksky.net":
+					    im.setImageResource(R.drawable.darksky);
 					    break;
 			    }
 		    }
