@@ -85,6 +85,13 @@ class Common
 								"<link rel='stylesheet' href='file:///android_asset/weathericons_wind.css'>" +
 								"<link rel='stylesheet' type='text/css' href='file:///android_asset/flaticon.css'>";
 
+	static final float[] NEGATIVE = {
+			-1.0f,     0,     0,    0, 255, // red
+			0, -1.0f,     0,    0, 255, // green
+			0,     0, -1.0f,    0, 255, // blue
+			0,     0,     0, 1.0f,   0  // alpha
+	};
+
 	Common(Context c)
 	{
 		System.setProperty("http.agent", UA);
@@ -605,7 +612,7 @@ class Common
 				}
 
 				if(lookupTable.get(icon) != null)
-					tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + lookupTable.get(icon) + "'></td>";
+					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + lookupTable.get(icon) + "'></td>";
 				else
 					tmp = "<tr><td style='width:10%;' rowspan='2'>N/A</td>";
 				out.append(tmp);
@@ -726,10 +733,12 @@ class Common
 
 			String text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
 
-			String fileName =  "bom2" + icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("-", "_");
-			fileName = checkImage(fileName, icon);
+			String fileName =  icon.substring(icon.lastIndexOf('/') + 1, icon.length() - 4);
 
-			tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+			if(!fileName.equals("frost"))
+				tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-" + fileName + "'></i></td>";
+			else
+				tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
 			out.append(tmp);
 
 			tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
@@ -777,10 +786,12 @@ class Common
 				min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
 				text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
 
-				fileName =  "bom2" + icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("-", "_");
-				fileName = checkImage(fileName, icon);
+				fileName =  icon.substring(icon.lastIndexOf('/') + 1, icon.length() - 4);
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+				if(!fileName.equals("frost"))
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-" + fileName + "'></i></td>";
+				else
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
@@ -874,7 +885,7 @@ class Common
 				String text = forecasts[i].split("<div class=\"summary-text", 2)[1].split("\">", 3)[2]
 									.split("</div>", 2)[0].replaceAll("</span>", "").replaceAll("<span>", "");
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+				tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + fileName + "'></td>";
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
@@ -1025,7 +1036,7 @@ class Common
 
 					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "\\.png");
 
-					tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + fileName + "'></td>";
 					out.append(tmp);
 
 					tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
@@ -1167,7 +1178,7 @@ class Common
 
 					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "\\.png");
 
-					tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + fileName + "'></td>";
 					out.append(tmp);
 
 					tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
@@ -1371,7 +1382,7 @@ class Common
 					}
 				}
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + iconLink.getString(i) + "'></td>";
+				tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + iconLink.getString(i) + "'></td>";
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + periodName.getString(i) + "</b></td>";
@@ -1566,7 +1577,10 @@ class Common
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				date = sdf.format(mdate);
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='file:///android_res/drawable/bom" + code + ".png'></td>";
+				if(!code.equals("14"))
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-ftp-" + code + "'></i></td>";
+				else
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
@@ -1657,11 +1671,12 @@ class Common
 				else
 					icon = jtmp.getString("forecastWord");
 
-				icon = "ms_" + icon.toLowerCase().replaceAll("-", "_").replaceAll(" ", "_").trim() + ".png";
+				icon = icon.toLowerCase().replaceAll(" ", "-").trim();
 
-				//LogMessage("icon == " + icon);
-
-				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + icon + "'></td>";
+				if(!icon.equals("frost"))
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-metservice-" + icon + "'></i></td>";
+				else
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + dow + "</b></td>";
@@ -1769,7 +1784,7 @@ class Common
 				String url = "https://www.dwd.de/DE/wetter/_functions/piktos/" + icon + "?__blob=normal";
 				fileName = checkImage(fileName, url);
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+				tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + fileName + "'></td>";
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
@@ -1883,7 +1898,7 @@ class Common
 				String fileName = "aemet_" + code + "_g.png";
 				fileName = checkImage(fileName, url);
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'>" + "<img width='40px' src='" + fileName + "'></td>";
+				tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + fileName + "'></td>";
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + fecha + "</b></td>";
@@ -2817,7 +2832,7 @@ class Common
 			forecast += "?exclude=currently,minutely,hourly,alerts,flags";
 			forecast += "&lang=" + Locale.getDefault().getLanguage();
 			if(GetBoolPref("metric", true))
-				forecast += "&units=si";
+				forecast += "&units=ca";
 		}
 
 		String tmp = downloadString(forecast);

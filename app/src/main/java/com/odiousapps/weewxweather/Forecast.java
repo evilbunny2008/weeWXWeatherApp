@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
+import android.graphics.ColorMatrixColorFilter;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -737,6 +738,10 @@ class Forecast
 					    break;
 				    case "bom.gov.au":
 					    im.setImageResource(R.drawable.bom);
+					    if(dark_theme)
+						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+					    else
+						    im.setColorFilter(null);
 					    break;
 				    case "wmo.int":
 					    im.setImageResource(R.drawable.wmo);
@@ -755,6 +760,10 @@ class Forecast
 					    break;
 				    case "bom2":
 					    im.setImageResource(R.drawable.bom);
+					    if(dark_theme)
+						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+					    else
+					    	im.setColorFilter(null);
 					    break;
 				    case "aemet.es":
 					    im.setImageResource(R.drawable.aemet);
@@ -764,6 +773,10 @@ class Forecast
 					    break;
 				    case "metservice.com":
 					    im.setImageResource(R.drawable.metservice);
+					    if(dark_theme)
+						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+					    else
+						    im.setColorFilter(null);
 					    break;
 				    case "meteofrance.com":
 					    im.setImageResource(R.drawable.mf);
@@ -773,6 +786,10 @@ class Forecast
 					    break;
 				    case "darksky.net":
 					    im.setImageResource(R.drawable.darksky);
+					    if(dark_theme)
+						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+					    else
+						    im.setColorFilter(null);
 					    break;
 			    }
 		    }

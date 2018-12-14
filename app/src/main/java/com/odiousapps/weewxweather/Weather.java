@@ -105,7 +105,7 @@ class Weather
 	    if(!dark_theme)
 	    	header = "<html><head>" + Common.ssheader + "</head><body>";
 	    else
-		    header = "<html><head><style>body{color: #fff; background-color: #000;}img{filter:invert(100%);}</style>" + Common.ssheader + "</head><body>";
+		    header = "<html><head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head><body>";
 	    sb.append(header);
 
 		Common.LogMessage("header == " + header);
@@ -684,9 +684,12 @@ class Weather
 
 						    String logo = "<img src='metservice.png' height='29px'/><br/>";
 						    sb.append("<html>");
-						    if (dark_theme)
+
+						    if(dark_theme)
+						    {
+							    logo = "<img src='metservice.png' style='filter:invert(100%);' height='29px'/><br/>";
 							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
-						    else
+						    } else
 							    tmp = "<head>" + Common.ssheader + "</head>";
 						    sb.append(tmp);
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";

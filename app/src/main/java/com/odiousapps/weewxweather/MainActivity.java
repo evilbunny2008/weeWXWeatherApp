@@ -717,7 +717,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				Common.LogMessage("line 718");
 
-				if (!forecast.equals("") && !forecast.equals(oldforecast))
+				if (!forecast.equals("") && !oldforecast.startsWith(forecast))
 				{
 					Common.LogMessage("forecast checking: " + forecast);
 

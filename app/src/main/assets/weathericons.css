@@ -1958,3 +1958,132 @@
 .wi-yrno-50:before {
   content: "\f064";
 }
+.wi-bom-ftp-1:before {
+  content: "\f00d";
+}
+.wi-bom-ftp-2:before {
+  content: "\f02e";
+}
+.wi-bom-ftp-3:before {
+  content: "\f002";
+}
+.wi-bom-ftp-4:before {
+  content: "\f013";
+}
+.wi-bom-ftp-6:before {
+  content: "\f0b6";
+}
+.wi-bom-ftp-8:before {
+  content: "\f019";
+}
+.wi-bom-ftp-9:before {
+  content: "\f050";
+}
+.wi-bom-ftp-10:before {
+  content: "\f003";
+}
+.wi-bom-ftp-11:before {
+  content: "\f008";
+}
+.wi-bom-ftp-12:before {
+  content: "\f018";
+}
+.wi-bom-ftp-13:before {
+  content: "\f082";
+}
+.wi-bom-ftp-15:before {
+  content: "\f076";
+}
+.wi-bom-ftp-16:before {
+  content: "\f01e";
+}
+.wi-bom-ftp-17:before {
+  content: "\f008";
+}
+.wi-bom-clear:before {
+  content: "\f02e";
+}
+.wi-bom-cloudy:before {
+  content: "\f013";
+}
+.wi-bom-dust:before {
+  content: "\f082";
+}
+.wi-bom-fog:before {
+  content: "\f003";
+}
+.wi-bom-haze:before {
+  content: "\f0b6";
+}
+.wi-bom-heavy-showers:before {
+  content: "\f019";
+}
+.wi-bom-light-rain:before {
+  content: "\f01a";
+}
+.wi-bom-light-showers:before {
+  content: "\f009";
+}
+.wi-bom-partly-cloudy:before {
+  content: "\f002";
+}
+.wi-bom-rain:before {
+  content: "\f019";
+}
+.wi-bom-showers:before {
+  content: "\f009";
+}
+.wi-bom-snow:before {
+  content: "\f076";
+}
+.wi-bom-storm:before {
+  content: "\f010";
+}
+.wi-bom-sunny:before {
+  content: "\f00d";
+}
+.wi-bom-tropical-cyclone:before {
+  content: "\f073";
+}
+.wi-bom-wind:before {
+  content: "\f050";
+}
+.wi-metservice-cloudy:before {
+  content: "\f013";
+}
+.wi-metservice-drizzle:before {
+  content: "\f01a";
+}
+.wi-metservice-few-showers:before {
+  content: "\f008";
+}
+.wi-metservice-fine:before {
+  content: "\f00d";
+}
+.wi-metservice-fog:before {
+  content: "\f014";
+}
+.wi-metservice-hail:before {
+  content: "\f015";
+}
+.wi-metservice-partly-cloudy:before {
+  content: "\f002";
+}
+.wi-metservice-rain:before {
+  content: "\f019";
+}
+.wi-metservice-showers:before {
+  content: "\f01a";
+}
+.wi-metservice-snow:before {
+  content: "\f01b";
+}
+.wi-metservice-thunder:before {
+  content: "\f01e";
+}
+.wi-metservice-wind:before {
+  content: "\f050";
+}
+.wi-metservice-wind-and-rain:before {
+  content: "\f018";
+}
