@@ -1467,9 +1467,21 @@ class Common
 				}
 
 				String code = j.getString("weatherIcon");
+				LogMessage("weatherIcon == " + code);
 				code = code.substring(0, code.length() - 2);
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file:///android_res/drawable/i" + code + ".png'></td>";
+				if((Integer.parseInt(code) >= 1 && Integer.parseInt(code) <= 27) || code.equals("31") || code.equals("35"))
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-wmo-" + code + "'></i></td>";
+				else if(code.equals("28"))
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-cactus'></i></td>";
+				else if(code.equals("29") || code.equals("30"))
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+				else if(code.equals("32"))
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-cold'></i></td>";
+				else if(code.equals("33"))
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-warm'></i></td>";
+				else if(code.equals("34"))
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-cool'></i></td>";
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";

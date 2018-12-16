@@ -2087,3 +2087,119 @@
 .wi-metservice-wind-and-rain:before {
   content: "\f018";
 }
+.wi-wmo-1:before,
+.wi-wmo-01:before {
+  content: "\f082";
+}
+.wi-wmo-2:before,
+.wi-wmo-02:before {
+  content: "\f01e";
+}
+.wi-wmo-3:before,
+.wi-wmo-03:before {
+  content: "\f0b5";
+}
+.wi-wmo-4:before,
+.wi-wmo-04:before {
+  content: "\f064";
+}
+.wi-wmo-5:before,
+.wi-wmo-05:before {
+  content: "\f00a";
+}
+.wi-wmo-6:before,
+.wi-wmo-06:before {
+  content: "\f01b";
+}
+.wi-wmo-7:before,
+.wi-wmo-07:before {
+  content: "\f01b";
+}
+.wi-wmo-8:before,
+.wi-wmo-08:before {
+  content: "\f0b5";
+}
+.wi-wmo-9:before,
+.wi-wmo-09:before {
+  content: "\f01a";
+}
+.wi-wmo-10:before {
+  content: "\f009";
+}
+.wi-wmo-11:before {
+  content: "\f009";
+}
+.wi-wmo-12:before {
+  content: "\f01a";
+}
+.wi-wmo-13:before {
+  content: "\f017";
+}
+.wi-wmo-14:before {
+  content: "\f019";
+}
+.wi-wmo-15:before {
+  content: "\f019";
+}
+.wi-wmo-16:before {
+  content: "\f014";
+}
+.wi-wmo-17:before {
+  content: "\f003";
+}
+.wi-wmo-18:before {
+  content: "\f062";
+}
+.wi-wmo-19:before {
+  content: "\f0b6";
+}
+.wi-wmo-20:before {
+  content: "\f013";
+}
+.wi-wmo-21:before,
+.wi-wmo-21a:before {
+  content: "\f002";
+}
+.wi-wmo-21b:before {
+  content: "\f086";
+}
+.wi-wmo-22:before,
+.wi-wmo-22a:before {
+  content: "\f00c";
+}
+.wi-wmo-22b:before {
+  content: "\f031";
+}
+.wi-wmo-23:before,
+.wi-wmo-23a:before {
+  content: "\f013";
+}
+.wi-wmo-23b:before {
+  content: "\f013";
+}
+.wi-wmo-24:before,
+.wi-wmo-24a:before {
+  content: "\f00d";
+}
+.wi-wmo-24b:before {
+  content: "\f02e";
+}
+.wi-wmo-25:before,
+.wi-wmo-25a:before {
+  content: "\f00d";
+}
+.wi-wmo-25b:before {
+  content: "\f02e";
+}
+.wi-wmo-26:before {
+  content: "\f050";
+}
+.wi-wmo-27:before {
+  content: "\f07a";
+}
+.wi-wmo-31:before {
+  content: "\f072";
+}
+.wi-wmo-35:before {
+  content: "\f0c8";
+}
