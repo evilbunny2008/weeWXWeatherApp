@@ -54,6 +54,7 @@ import com.pes.androidmaterialcolorpickerdialog.ColorPickerCallback;
 
 import java.io.File;
 import java.net.URLEncoder;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 {
@@ -701,10 +702,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("fctype=" + fctype);
 								break;
 							case "darksky.net":
+								forecast += "?exclude=currently,minutely,hourly,alerts,flags";
+								forecast += "&lang=" + Locale.getDefault().getLanguage();
+								if(metric_forecasts.isChecked())
+									forecast += "&units=ca";
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
 							case "openweathermap.org":
+								if(metric_forecasts.isChecked())
+									forecast += "&unit=metric";
+								else
+									forecast += "&unit=imperial";
+								forecast += "&lang=" + Locale.getDefault().getLanguage();
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
@@ -719,9 +729,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					}
 				}
 
-				Common.LogMessage("line 722");
+				Common.LogMessage("line 728");
 
-				if (!forecast.equals("") && !oldforecast.startsWith(forecast))
+				if (!forecast.equals("") && !oldforecast.equals(forecast))
 				{
 					Common.LogMessage("forecast checking: " + forecast);
 

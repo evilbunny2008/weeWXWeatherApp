@@ -2916,14 +2916,6 @@ class Common
 
 	String downloadForecast(String fctype, String forecast, String bomtown) throws Exception
 	{
-		if(fctype.equals("darksky.net"))
-		{
-			forecast += "?exclude=currently,minutely,hourly,alerts,flags";
-			forecast += "&lang=" + Locale.getDefault().getLanguage();
-			if(GetBoolPref("metric", true))
-				forecast += "&units=ca";
-		}
-
 		String tmp = downloadString(forecast);
 
 		if(fctype.equals("bom.gov.au"))
