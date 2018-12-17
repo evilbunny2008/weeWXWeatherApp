@@ -1467,7 +1467,6 @@ class Common
 				}
 
 				String code = j.getString("weatherIcon");
-				LogMessage("weatherIcon == " + code);
 				code = code.substring(0, code.length() - 2);
 
 				if((Integer.parseInt(code) >= 1 && Integer.parseInt(code) <= 27) || code.equals("31") || code.equals("35"))
@@ -1940,6 +1939,84 @@ class Common
 					tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
 				else
 					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+
+			out.append("</table>");
+			return new String[]{out.toString(), desc};
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
+	String[] processOWM(String data)
+	{
+		return processOWM(data, false);
+	}
+
+	String[] processOWM(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		StringBuilder out = new StringBuilder();
+		String tmp;
+		String desc;
+
+		long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
+		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+		String date = sdf.format(mdate);
+
+		tmp = "<div style='font-size:12pt;'>" + date + "</div>";
+		out.append(tmp);
+		tmp = "<table style='width:100%;'>\n";
+		out.append(tmp);
+
+		try
+		{
+			JSONObject jobj = new JSONObject(data);
+			desc = jobj.getJSONObject("city").getString("name") + ", " + jobj.getJSONObject("city").getString("country");
+			JSONArray jarr = jobj.getJSONArray("list");
+			sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+			for(int i = 0; i < jarr.length(); i++)
+			{
+				JSONObject j = jarr.getJSONObject(i);
+				long mtime = (long)j.getInt("dt") * 1000;
+				date = sdf.format(mtime);
+
+				JSONObject temp = j.getJSONObject("temp");
+				int min = (int)round(Double.parseDouble(temp.getString("min")));
+				int max = (int)round(Double.parseDouble(temp.getString("max")));
+				JSONObject weather = j.getJSONArray("weather").getJSONObject(0);
+
+				int id = weather.getInt("id");
+				String text = weather.getString("description");
+				String icon = weather.getString("icon");
+
+				if(!icon.endsWith("n"))
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-owm-day-" + id + "'></i></td>";
+				else
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-owm-night-" + id + "'></i></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:10%;text-align:right;'><b>" + max + "&deg;C</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td style='width:80%;'>" + text + "</td>";
+				out.append(tmp);
+
+				tmp = "<td style='text-align:right;'>" + min + "&deg;C</td></tr>";
 				out.append(tmp);
 
 				if(showHeader)
