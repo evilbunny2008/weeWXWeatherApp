@@ -711,10 +711,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								break;
 							case "openweathermap.org":
 								if(metric_forecasts.isChecked())
-									forecast += "&unit=metric";
+									forecast += "&units=metric";
 								else
-									forecast += "&unit=imperial";
+									forecast += "&units=imperial";
 								forecast += "&lang=" + Locale.getDefault().getLanguage();
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
+							case "apixu.com":
+								forecast += "&days=10";
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;

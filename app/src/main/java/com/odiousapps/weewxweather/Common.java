@@ -77,6 +77,7 @@ class Common
 
 	private Thread t = null;
 	private JSONObject nws = null;
+	private JSONArray conditions = null;
 
 	private Typeface tf;
 	private Map<String, String> lookupTable = new HashMap<>();
@@ -96,7 +97,7 @@ class Common
 	{
 		System.setProperty("http.agent", UA);
 		this.context = c;
-		tf = Typeface.createFromAsset(context.getAssets(), "font/fradmcn.ttf");
+		tf = Typeface.create("Arial", Typeface.NORMAL);
 
 		try
 		{
@@ -111,6 +112,8 @@ class Common
 		makeTable();
 		loadNWS();
 		LogMessage("Loaded NWS");
+		loadConditions();
+		LogMessage("Loaded Conditions");
 	}
 
 	long[] getPeriod()
@@ -1957,6 +1960,116 @@ class Common
 		return null;
 	}
 
+	String[] processAPIXU(String data)
+	{
+		return processAPIXU(data, false);
+	}
+
+	String[] processAPIXU(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		StringBuilder out = new StringBuilder();
+		String tmp;
+		String desc;
+
+		boolean metric = GetBoolPref("metric", true);
+
+		try
+		{
+			JSONObject jobj = new JSONObject(data);
+
+			long mdate = jobj.getJSONObject("location").getLong("localtime_epoch") * 1000;
+			SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+			String date = sdf.format(mdate);
+
+			tmp = "<div style='font-size:12pt;'>" + date + "</div>";
+			out.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			out.append(tmp);
+
+			desc = jobj.getJSONObject("location").getString("name") + ", " + jobj.getJSONObject("location").getString("country");
+			JSONArray jarr = jobj.getJSONObject("forecast").getJSONArray("forecastday");
+			sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+			for(int i = 0; i < jarr.length(); i++)
+			{
+				JSONObject j = jarr.getJSONObject(i);
+				long mtime = j.getLong("date_epoch") * 1000;
+				date = sdf.format(mtime);
+
+				JSONObject day = j.getJSONObject("day");
+
+				String min, max;
+
+				if(metric)
+				{
+					min = (int)round(day.getDouble("mintemp_c")) + "&deg;C";
+					max = (int)round(day.getDouble("maxtemp_c")) + "&deg;C";
+				} else {
+					min = (int)round(day.getDouble("mintemp_f")) + "&deg;F";
+					max = (int)round(day.getDouble("maxtemp_f")) + "&deg;F";
+				}
+
+				int code = day.getJSONObject("condition").getInt("code");
+
+				String text = "", icon = "";
+
+				for(int k = 0; k < conditions.length(); k++)
+				{
+					JSONObject cond = conditions.getJSONObject(k);
+					if(cond.getInt("code") == code)
+					{
+						icon = String.valueOf(cond.getInt("icon"));
+						if(Locale.getDefault().getLanguage().equals("en"))
+						{
+							text = cond.getString("day");
+						} else {
+							for(int l = 0; l < cond.getJSONArray("languages").length(); l++)
+							{
+								JSONObject lang = cond.getJSONArray("languages").getJSONObject(l);
+								if(lang.getString("lang_iso").equals(Locale.getDefault().getLanguage()))
+								{
+									text = lang.getString("day_text");
+									break;
+								}
+							}
+						}
+						break;
+					}
+				}
+
+				tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-apixu-" + icon + "'></i></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
+				out.append(tmp);
+
+				tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
+				out.append(tmp);
+
+				tmp = "<tr><td style='width:80%;'>" + text + "</td>";
+				out.append(tmp);
+
+				tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
+				out.append(tmp);
+
+				if(showHeader)
+				{
+					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
+					out.append(tmp);
+				}
+			}
+
+			out.append("</table>");
+			return new String[]{out.toString(), desc};
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return null;
+	}
+
 	String[] processOWM(String data)
 	{
 		return processOWM(data, false);
@@ -1971,6 +2084,7 @@ class Common
 		String tmp;
 		String desc;
 
+		boolean metric = GetBoolPref("metric", true);
 		long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 		String date = sdf.format(mdate);
@@ -2010,13 +2124,19 @@ class Common
 				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
 				out.append(tmp);
 
-				tmp = "<td style='width:10%;text-align:right;'><b>" + max + "&deg;C</b></td></tr>";
+				if(metric)
+					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "&deg;C</b></td></tr>";
+				else
+					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "&deg;F</b></td></tr>";
 				out.append(tmp);
 
 				tmp = "<tr><td style='width:80%;'>" + text + "</td>";
 				out.append(tmp);
 
-				tmp = "<td style='text-align:right;'>" + min + "&deg;C</td></tr>";
+				if(metric)
+					tmp = "<td style='text-align:right;'>" + min + "&deg;C</td></tr>";
+				else
+					tmp = "<td style='text-align:right;'>" + min + "&deg;F</td></tr>";
 				out.append(tmp);
 
 				if(showHeader)
@@ -2880,6 +3000,21 @@ class Common
 			byte[] buffer = new byte[size];
 			if(is.read(buffer) > 0)
 				nws = new JSONObject(new String(buffer, "UTF-8"));
+			is.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void loadConditions()
+	{
+		try
+		{
+			InputStream is = context.getResources().openRawResource(R.raw.conditions);
+			int size = is.available();
+			byte[] buffer = new byte[size];
+			if(is.read(buffer) > 0)
+				conditions = new JSONArray(new String(buffer, "UTF-8"));
 			is.close();
 		} catch (Exception e) {
 			e.printStackTrace();

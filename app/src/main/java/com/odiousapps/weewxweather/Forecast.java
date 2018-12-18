@@ -675,6 +675,13 @@ class Forecast
 						    updateForecast(content[0], content[1]);
 					    break;
 				    }
+				    case "apixu.com":
+				    {
+					    String[] content = common.processAPIXU(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
 			    }
 
 			    mHandler.post(new Runnable()
@@ -800,6 +807,13 @@ class Forecast
 					    break;
 				    case "openweathermap.org":
 					    im.setImageResource(R.drawable.owm);
+					    break;
+				    case "apixu.com":
+					    im.setImageResource(R.drawable.apixu);
+					    if(dark_theme)
+						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+					    else
+						    im.setColorFilter(null);
 					    break;
 			    }
 		    }

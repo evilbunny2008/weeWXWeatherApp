@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'weathericons';
-  src: url('file:///android_asset/font/weathericons.ttf');
+  src: url('file:///android_asset/font/weathericons.woff');
   font-weight: normal;
   font-style: normal;
 }

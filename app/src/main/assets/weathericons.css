@@ -21,7 +21,7 @@
  */
 @font-face {
   font-family: 'weathericons';
-  src: url('file:///android_asset/font/weathericons.ttf');
+  src: url('file:///android_asset/font/weathericons.woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -2202,4 +2202,148 @@
 }
 .wi-wmo-35:before {
   content: "\f0c8";
+}
+.wi-apixu-113:before {
+  content: "\f00d";
+}
+.wi-apixu-116:before {
+  content: "\f002";
+}
+.wi-apixu-119:before {
+  content: "\f041";
+}
+.wi-apixu-122:before {
+  content: "\f013";
+}
+.wi-apixu-143:before {
+  content: "\f014";
+}
+.wi-apixu-176:before {
+  content: "\f008";
+}
+.wi-apixu-179:before {
+  content: "\f00a";
+}
+.wi-apixu-182:before {
+  content: "\f0b5";
+}
+.wi-apixu-185:before {
+  content: "\f014";
+}
+.wi-apixu-200:before {
+  content: "\f01e";
+}
+.wi-apixu-227:before {
+  content: "\f064";
+}
+.wi-apixu-230:before {
+  content: "\f064";
+}
+.wi-apixu-248:before {
+  content: "\f014";
+}
+.wi-apixu-260:before {
+  content: "\f014";
+}
+.wi-apixu-263:before {
+  content: "\f01c";
+}
+.wi-apixu-266:before {
+  content: "\f01c";
+}
+.wi-apixu-281:before {
+  content: "\f019";
+}
+.wi-apixu-284:before {
+  content: "\f019";
+}
+.wi-apixu-293:before {
+  content: "\f008";
+}
+.wi-apixu-296:before {
+  content: "\f01c";
+}
+.wi-apixu-299:before {
+  content: "\f008";
+}
+.wi-apixu-302:before {
+  content: "\f019";
+}
+.wi-apixu-305:before {
+  content: "\f008";
+}
+.wi-apixu-308:before {
+  content: "\f019";
+}
+.wi-apixu-311:before {
+  content: "\f019";
+}
+.wi-apixu-314:before {
+  content: "\f019";
+}
+.wi-apixu-317:before {
+  content: "\f017";
+}
+.wi-apixu-320:before {
+  content: "\f0b2";
+}
+.wi-apixu-323:before {
+  content: "\f00a";
+}
+.wi-apixu-326:before {
+  content: "\f01b";
+}
+.wi-apixu-329:before {
+  content: "\f00a";
+}
+.wi-apixu-332:before {
+  content: "\f01b";
+}
+.wi-apixu-335:before {
+  content: "\f00a";
+}
+.wi-apixu-338:before {
+  content: "\f01b";
+}
+.wi-apixu-350:before {
+  content: "\f01b";
+}
+.wi-apixu-353:before {
+  content: "\f008";
+}
+.wi-apixu-356:before {
+  content: "\f008";
+}
+.wi-apixu-359:before {
+  content: "\f019";
+}
+.wi-apixu-362:before {
+  content: "\f0b5";
+}
+.wi-apixu-365:before {
+  content: "\f0b5";
+}
+.wi-apixu-368:before {
+  content: "\f00a";
+}
+.wi-apixu-371:before {
+  content: "\f00a";
+}
+.wi-apixu-374:before {
+  content: "\f00a";
+}
+.wi-apixu-377:before {
+  content: "\f00a";
+}
+.wi-apixu-386:before {
+  content: "\f01e";
+}
+.wi-apixu-389:before {
+  content: "\f01e";
+}
+.wi-apixu-392:before {
+  content: "\f01e";
+}
+.wi-apixu-395:before {
+  content: "\f01e";
 }
