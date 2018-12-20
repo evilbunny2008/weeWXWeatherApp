@@ -78,7 +78,7 @@ class Common
 	static String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
 	private static final long inigo_version = 4000;
-	static final long icon_version = 1;
+	static final long icon_version = 4;
 	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.7.11/icons.zip";
 
 	private Thread t = null;
@@ -2790,7 +2790,7 @@ class Common
 		try
 		{
 			Class res = R.drawable.class;
-			Field field = res.getField(fileName.substring(0, fileName.length() - 4));
+			Field field = res.getField(fileName.substring(0, fileName.lastIndexOf(".") - 1));
 			int drawableId = field.getInt(null);
 			if(drawableId != 0)
 				return fileName;
@@ -2798,8 +2798,8 @@ class Common
 			//LogMessage("Failure to get drawable id.");
 		}
 
-		if(icon != null)
-			downloadImage(fileName, icon);
+		//if(icon != null)
+			//downloadImage(fileName, icon);
 
 		return fileName;
 	}
@@ -3500,42 +3500,45 @@ class Common
 			MediaScannerConnection.scanFile(context.getApplicationContext(), new String[]{f.getAbsolutePath()}, null, null);
 			context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(f)));
 		}
+
+		if(f.exists() && f.isDirectory())
+		{
+			MediaScannerConnection.scanFile(context.getApplicationContext(), new String[] {f.getAbsolutePath()}, null, null);
+		}
 	}
 
 	boolean downloadIcons() throws Exception
 	{
 		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
 		File dir = f;
+
+		if(!dir.exists() && !dir.mkdirs())
+			throw new Exception("There was a problem making the icons directory, you will need to try again.");
+
+		if(!dir.exists() && dir.mkdirs())
+			publish(dir);
+
 		f = new File(f, "icon.zip");
 		if(downloadJSOUP(f, icon_url) == null)
 			throw new Exception("There was a problem downloading icons, you will need to try again.");
+
 		dir = new File(dir, "icons");
+		if(!dir.exists() && dir.mkdirs())
+			publish(dir);
+
+		if(!dir.exists())
+			throw new Exception("There was a problem making the icons directory, you will need to try again.");
+
 		unzip(f, dir);
-		if(f.exists())
-		{
-			if(f.delete())
-			{
-				throw new Exception("There was a problem cleaning up temporary files");
-			}
-		}
 
 		return true;
 	}
 
 	private void unzip(File zipFilePath, File destDir) throws Exception
 	{
-		if(!destDir.exists())
-		{
-			if(!destDir.mkdirs())
-			{
-				throw new Exception("There was a problem creating 1 or more directories on external storage");
-			}
-		}
-
-		FileInputStream fis;
+		LogMessage("dsetDir: " + destDir.getAbsolutePath());
 		byte[] buffer = new byte[1024];
-
-		fis = new FileInputStream(zipFilePath);
+		FileInputStream fis = new FileInputStream(zipFilePath);
 		ZipInputStream zis = new ZipInputStream(fis);
 		ZipEntry ze = zis.getNextEntry();
 		while(ze != null)
@@ -3543,7 +3546,8 @@ class Common
 			String fileName = ze.getName();
 			File newFile = new File(destDir + File.separator + fileName);
 			LogMessage("Unzipping to " + newFile.getAbsolutePath());
-			if(!new File(newFile.getParent()).mkdirs())
+			File dir = new File(newFile.getParent());
+			if(!dir.exists() && !dir.mkdirs())
 				throw new Exception("There was a problem creating 1 or more directories on external storage");
 
 			FileOutputStream fos = new FileOutputStream(newFile);
