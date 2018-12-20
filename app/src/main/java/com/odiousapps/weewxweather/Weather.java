@@ -722,7 +722,7 @@ class Weather
 						    String logo = "<img src='smn.png' height='29px'/><br/>";
 						    sb.append("<html>");
 						    if (dark_theme)
-							    tmp = "<head><style>body{color: #fff; background-color: #000;}img{filter:invert(100%);}</style>" + Common.ssheader + "</head>";
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
 						    else
 						    	tmp = "<head>" + Common.ssheader + "</head>";
 						    sb.append(tmp);

@@ -210,6 +210,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    Switch wifi_only = findViewById(R.id.wifi_only);
 	    wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
+	    Switch use_icons = findViewById(R.id.use_icons);
+	    use_icons.setChecked(common.GetBoolPref("use_icons", false));
 	    metric_forecasts.setChecked(common.GetBoolPref("metric", true));
 	    show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
 	    dark_theme.setChecked(common.GetBoolPref("dark_theme", false));
@@ -435,6 +437,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("bgColour");
 						common.RemovePref("bomtown");
 						common.RemovePref("dark_theme");
+						common.RemovePref("use_icons");
 						common.commit();
 
 						File file = new File(common.context.getFilesDir(), "webcam.jpg");
@@ -497,9 +500,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				Switch metric_forecasts = findViewById(R.id.metric_forecasts);
 				Switch show_indoor = findViewById(R.id.show_indoor);
 				Switch wifi_only = findViewById(R.id.wifi_only);
+				Switch use_icons = findViewById(R.id.use_icons);
 
 				RadioButton showRadar = findViewById(R.id.showRadar);
 				int curtime = Math.round(System.currentTimeMillis() / 1000);
+
+				if(use_icons.isChecked() && common.GetLongPref("icon_version", 0) < Common.icon_version)
+				{
+					try
+					{
+						if (!common.downloadIcons())
+						{
+							common.SetStringPref("lastError", "Icons failed to download fully, you will need to retry.");
+							handlerSettings.sendEmptyMessage(0);
+							return;
+						}
+					} catch (Exception e) {
+						common.SetStringPref("lastError", e.toString());
+						handlerSettings.sendEmptyMessage(0);
+						return;
+					}
+
+					common.SetLongPref("icon_version", Common.icon_version);
+				}
 
 				if (settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt") || settingsURL.getText().toString().equals(""))
 				{
@@ -839,14 +862,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetBoolPref("showIndoor", show_indoor.isChecked());
 				common.SetBoolPref("dark_theme", dark_theme.isChecked());
 				common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
-
-				try
-				{
-					if (fctype.equals("darksky.net"))
-						common.downloadForecast(fctype, forecast, bomtown);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				common.SetBoolPref("use_icons", use_icons.isChecked());
 
 				common.SendRefresh();
 				handlerDone.sendEmptyMessage(0);

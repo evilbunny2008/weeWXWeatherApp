@@ -29,6 +29,7 @@ import android.widget.RemoteViews;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -36,6 +37,7 @@ import org.jsoup.select.Elements;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -52,6 +54,8 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Pattern;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 
@@ -74,6 +78,8 @@ class Common
 	static String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
 	private static final long inigo_version = 4000;
+	static final long icon_version = 1;
+	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.7.11/icons.zip";
 
 	private Thread t = null;
 	private JSONObject nws = null;
@@ -87,7 +93,7 @@ class Common
 								"<link rel='stylesheet' type='text/css' href='file:///android_asset/flaticon.css'>";
 
 	static final float[] NEGATIVE = {
-			-1.0f,     0,     0,    0, 255, // red
+		-1.0f,     0,     0,    0, 255, // red
 			0, -1.0f,     0,    0, 255, // green
 			0,     0, -1.0f,    0, 255, // blue
 			0,     0,     0, 1.0f,   0  // alpha
@@ -108,12 +114,6 @@ class Common
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		makeTable();
-		loadNWS();
-		LogMessage("Loaded NWS");
-		loadConditions();
-		LogMessage("Loaded Conditions");
 	}
 
 	long[] getPeriod()
@@ -249,7 +249,7 @@ class Common
 	}
 
 	@SuppressWarnings({"unused", "SameParameterValue"})
-	private void SetLongPref(String name, long value)
+	void SetLongPref(String name, long value)
 	{
 		SetStringPref(name, "" + value);
 	}
@@ -459,6 +459,7 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
 		StringBuilder out = new StringBuilder();
 		String tmp;
 		String desc;
@@ -499,7 +500,15 @@ class Common
 				String text1 = line.split("<div class=\"col col-md-8\">")[1].split("</div>", 2)[0].trim();
 				String text2 = line.split("<div class=\"col col-md-8\">")[2].split("</div>", 2)[0].trim();
 
-				tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='wi " + icon1 + "'></i></td>";
+				if(!use_icons)
+				{
+					tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='wi " + icon1 + "'></i></td>";
+				} else {
+					String icon = "https://www.smn.gob.ar/sites/all/themes/smn/images/weather-icons/big-" + icon1 + ".png";
+					String fileName = "smn_" + icon1.replaceAll("-", "_") + ".png";
+					fileName = checkImage(fileName, icon);
+					tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+				}
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + day + " - " + morning + "</b></td>";
@@ -523,7 +532,15 @@ class Common
 				tmp = "<tr><td colspan='2'>" + text1 + "</td></tr>";
 				out.append(tmp);
 
-				tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='wi " + icon2 + "'></i></td>";
+				if(!use_icons)
+				{
+					tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='wi " + icon2 + "'></i></td>";
+				} else {
+					String icon = "https://www.smn.gob.ar/sites/all/themes/smn/images/weather-icons/big-" + icon2 + ".png";
+					String fileName = "smn_" + icon2.replaceAll("-", "_") + ".png";
+					fileName = checkImage(fileName, icon);
+					tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+				}
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + day + " - " + night + "</b></td>";
@@ -589,6 +606,12 @@ class Common
 			out.append(tmp);
 
 			data = data.split("<!-- LISTE JOURS -->", 2)[1].split("<!-- LISTE JOURS/ -->", 2)[0].trim();
+
+			if(lookupTable.size() <= 0)
+			{
+				makeTable();
+				LogMessage("Loaded lookup table.");
+			}
 
 			String[] bits = data.split("title=\"");
 			for(int i = 1; i < bits.length; i++)
@@ -675,6 +698,7 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
 		String tmp;
 		StringBuilder out = new StringBuilder();
@@ -738,10 +762,17 @@ class Common
 
 			String fileName =  icon.substring(icon.lastIndexOf('/') + 1, icon.length() - 4);
 
-			if(!fileName.equals("frost"))
-				tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-" + fileName + "'></i></td>";
-			else
-				tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+			if(!use_icons)
+			{
+				if(!fileName.equals("frost"))
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-" + fileName + "'></i></td>";
+				else
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+			} else {
+				fileName = "bom2" + icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("-", "_");
+				fileName = checkImage(fileName, icon);
+				tmp = "<tr><td style='width:10%;' rowspan='2'><img src='file://" + fileName + "'></td>";
+			}
 			out.append(tmp);
 
 			tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
@@ -791,10 +822,17 @@ class Common
 
 				fileName =  icon.substring(icon.lastIndexOf('/') + 1, icon.length() - 4);
 
-				if(!fileName.equals("frost"))
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-" + fileName + "'></i></td>";
-				else
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+				if(!use_icons)
+				{
+					if(!fileName.equals("frost"))
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-" + fileName + "'></i></td>";
+					else
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+				} else {
+					fileName = "bom2" + icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("-", "_");
+					fileName = checkImage(fileName, icon);
+					tmp = "<tr><td style='width:10%;' rowspan='2'><img src='file://" + fileName + "'></td>";
+				}
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
@@ -1031,7 +1069,6 @@ class Common
 					} catch (Exception e) {
 						LogMessage("hmmm 2 == " + div.html());
 						e.printStackTrace();
-						System.exit(0);
 					}
 
 					BitmapFactory.Options options = new BitmapFactory.Options();
@@ -1173,7 +1210,6 @@ class Common
 					} catch (Exception e) {
 						LogMessage("hmmm 2 == " + div.html());
 						e.printStackTrace();
-						System.exit(0);
 					}
 
 					BitmapFactory.Options options = new BitmapFactory.Options();
@@ -1531,6 +1567,7 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
 		StringBuilder out = new StringBuilder();
 
@@ -1591,10 +1628,16 @@ class Common
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				date = sdf.format(mdate);
 
-				if(!code.equals("14"))
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-ftp-" + code + "'></i></td>";
-				else
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+				if(!use_icons)
+				{
+					if(!code.equals("14"))
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-ftp-" + code + "'></i></td>";
+					else
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+				} else {
+					String fileName = checkImage("bom" + code + ".png", null);
+					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+				}
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
@@ -1651,6 +1694,7 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
 		StringBuilder out = new StringBuilder();
 		String tmp;
 		String desc;
@@ -1687,10 +1731,17 @@ class Common
 
 				icon = icon.toLowerCase().replaceAll(" ", "-").trim();
 
-				if(!icon.equals("frost"))
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-metservice-" + icon + "'></i></td>";
-				else
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+				if(!use_icons)
+				{
+					if(!icon.equals("frost"))
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-metservice-" + icon + "'></i></td>";
+					else
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+				} else {
+					icon = icon.replaceAll("-", "_");
+					String fileName = checkImage("ms_" + icon + ".png", null);
+					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+				}
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + dow + "</b></td>";
@@ -1747,6 +1798,7 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
+//		boolean use_icons = GetBoolPref("use_icons", false);
 		StringBuilder out = new StringBuilder();
 		String tmp;
 		String desc = "";
@@ -1975,6 +2027,12 @@ class Common
 		String desc;
 
 		boolean metric = GetBoolPref("metric", true);
+
+		if(conditions == null)
+		{
+			loadConditions();
+			LogMessage("Loaded Conditions");
+		}
 
 		try
 		{
@@ -2452,9 +2510,11 @@ class Common
 
     String[] processYahoo(String data, boolean showHeader)
     {
-	    JSONObject json;
 	    if(data == null || data.equals(""))
 		    return null;
+
+	    JSONObject json;
+	    boolean use_icons = GetBoolPref("use_icons", false);
 
 	    try
 	    {
@@ -2497,7 +2557,14 @@ class Common
 			    stmp = "<tr><td style='width:50%;font-size:48pt;'>" + tmp.getString("high") + "&deg;" + temp + "</td>";
 			    str.append(stmp);
 
-			    stmp = "<td style='width:50%;text-align:right;'><i style='font-size:60px;' class='wi wi-yahoo-" + code + "'></i></td></tr>";
+			    if(!use_icons)
+			    {
+				    stmp = "<td style='width:50%;text-align:right;'><i style='font-size:60px;' class='wi wi-yahoo-" + code + "'></i></td></tr>";
+			    } else {
+				    String fileName = checkImage("yahoo" + code + ".gif", null);
+				    stmp = "<td style='width:50%;text-align:right;'><img width='80px' src='file://" + fileName + "'></td></tr>";
+			    }
+			    LogMessage(stmp);
 			    str.append(stmp);
 
 			    stmp = "<tr><td style='font-size:16pt;'>" + tmp.getString("low") + "&deg;" + temp + "</td>";
@@ -2514,13 +2581,19 @@ class Common
 				    tmp = forecast.getJSONObject(i);
 				    code = tmp.getInt("code");
 
-				    stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-yahoo-" + code + "'></i></td>";
+				    if(!use_icons)
+				    {
+					    stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-yahoo-" + code + "'></i></td>";
+				    } else {
+					    String fileName = checkImage("yahoo" + code + ".gif", null);
+					    stmp = "<tr><td style='width:10%;' rowspan='2'><img width='30px' src='file://" + fileName + "'></td>";
+				    }
 				    str.append(stmp);
 
 				    stmp = "<td style='width:45%;'><b>" + tmp.getString("day") + ", " + tmp.getString("date") + "</b></td>";
 				    str.append(stmp);
 
-				    stmp = "<td style='width:45%;text-align:right;'><b>" + tmp.getString("high") + "&deg;" + temp + "</b></td></tr>";
+				    stmp = "<td style='width:45%;text-align:right;'><b>" + tmp.getString("high") + "&deg;" + temp + "</b></td>";
 				    str.append(stmp);
 
 				    stmp = "<tr><td>" + tmp.getString("text") + "</td>";
@@ -2547,7 +2620,14 @@ class Common
 				    tmp = forecast.getJSONObject(i);
 				    code = tmp.getInt("code");
 
-				    stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-yahoo-" + code + "'></i></td>";
+				    if(!use_icons)
+				    {
+					    stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-yahoo-" + code + "'></i></td>";
+				    } else {
+					    String fileName = checkImage("yahoo" + code + ".gif", null);
+					    stmp = "<tr><td style='width:10%;' rowspan='2'><img width='30px' src='file://" + fileName + "'></td>";
+				    }
+				    LogMessage(stmp);
 				    str.append(stmp);
 
 				    stmp = "<td style='width:45%;'><b>" + tmp.getString("day") + ", " + tmp.getString("date") + "</b></td>";
@@ -2560,9 +2640,6 @@ class Common
 				    str.append(stmp);
 
 				    stmp = "<td style='text-align:right;'>" + tmp.getString("low") + "&deg;" + temp + "</td></tr>";
-				    str.append(stmp);
-
-				    stmp = "<tr><td style='font-size:5pt;' colspan='5'>&nbsp;</td></tr>";
 				    str.append(stmp);
 			    }
 
@@ -2640,7 +2717,7 @@ class Common
 		if(!line.equals(""))
 		{
 			String bits[] = line.split("\\|");
-			if (Double.valueOf(bits[0]) < Common.inigo_version)
+			if (Double.valueOf(bits[0]) < inigo_version)
 			{
 				if(GetLongPref("inigo_version", 0) < Common.inigo_version)
 				{
@@ -2704,6 +2781,12 @@ class Common
 
 	private String checkImage(String fileName, String icon)
 	{
+		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		f = new File(f, "icons");
+		f = new File(f, fileName);
+		if(f.exists() && f.isFile() && f.length() > 0)
+			return f.getAbsolutePath();
+
 		try
 		{
 			Class res = R.drawable.class;
@@ -2715,14 +2798,10 @@ class Common
 			//LogMessage("Failure to get drawable id.");
 		}
 
-		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
-		f = new File(f, fileName);
-		if(f.exists())
-			return f.getAbsolutePath();
+		if(icon != null)
+			downloadImage(fileName, icon);
 
-		downloadImage(fileName, icon);
-
-		return icon;
+		return fileName;
 	}
 
 	private void downloadImage(final String fileName, final String imageURL)
@@ -2740,38 +2819,21 @@ class Common
 				try
 				{
 					File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+					f = new File(f, "icons");
 					if (!f.exists())
 						if (!f.mkdirs())
 							return;
 
 					f = new File(f, fileName);
 
-					if(f.exists())
+					if(f.exists() && f.isFile() && f.length() > 0)
 						return;
-
-					try
-					{
-						Class res = R.drawable.class;
-						Field field = res.getField(fileName.substring(0, fileName.length() - 4));
-						int drawableId = field.getInt(null);
-						if(drawableId != 0)
-							return;
-					} catch (Exception e) {
-						//LogMessage("Failure to get drawable id.");
-					}
 
 					LogMessage("f == " + f.getAbsolutePath());
 					LogMessage("imageURL == " + imageURL);
 
-					downloadBinary(f, imageURL);
-
-					if (f.exists() && f.isFile())
-					{
-						MediaScannerConnection.scanFile(context.getApplicationContext(), new String[]{f.getAbsolutePath()}, null, null);
-						context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(f)));
-					}
-				} catch (Exception e)
-				{
+					downloadJSOUP(f, imageURL);
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
@@ -2860,6 +2922,12 @@ class Common
 
 			int x2 = bmp2.getHeight();
 			int y2 = bmp2.getWidth();
+
+			if(nws == null)
+			{
+				loadNWS();
+				LogMessage("Loaded NWS");
+			}
 
 			String[] bits = nws.getString(fimg).split("\\|");
 			switch (bits[1].trim())
@@ -3140,24 +3208,40 @@ class Common
 		outputStream.flush();
 		outputStream.close();
 
-		LogMessage("wrote to " + f.getAbsolutePath());
-		MediaScannerConnection.scanFile(context.getApplicationContext(), new String[]{f.getAbsolutePath()}, null, null);
-		context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(f)));
+		publish(f);
+	}
+
+	@SuppressWarnings({"SameParameterValue"})
+	private File downloadJSOUP(File f, String fromURL) throws Exception
+	{
+		File dir = f.getParentFile();
+		if (!dir.exists())
+			if (!dir.mkdirs())
+				return null;
+
+		Connection.Response resultResponse = Jsoup.connect(fromURL).userAgent(UA).maxBodySize(Integer.MAX_VALUE).ignoreContentType(true).execute();
+		FileOutputStream out = new FileOutputStream(f);
+		out.write(resultResponse.bodyAsBytes());
+		out.flush();
+		out.close();
+		publish(f);
+
+		return f;
 	}
 
 	private File downloadBinary(File f, String fromURL) throws Exception
 	{
-		File dir = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		File dir = f.getParentFile();
 		if (!dir.exists())
 			if (!dir.mkdirs())
 				return null;
 
 		Uri uri = Uri.parse(fromURL);
-		Common.LogMessage("fromURL == " + fromURL);
+		LogMessage("fromURL == " + fromURL);
 		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
 		{
 			final String[] UC = uri.getUserInfo().split(":");
-			Common.LogMessage("uri username = " + uri.getUserInfo());
+			LogMessage("uri username = " + uri.getUserInfo());
 
 			if (UC != null && UC.length > 1)
 			{
@@ -3171,7 +3255,7 @@ class Common
 			}
 		}
 
-		OutputStream outputStream = new FileOutputStream(f.getAbsolutePath());
+		OutputStream outputStream = new FileOutputStream(f);
 
 		URL url = new URL(fromURL);
 		URLConnection conn = url.openConnection();
@@ -3190,10 +3274,7 @@ class Common
 		outputStream.flush();
 		outputStream.close();
 
-		LogMessage("wrote to " + f.getAbsolutePath());
-		MediaScannerConnection.scanFile(context.getApplicationContext(), new String[]{f.getAbsolutePath()}, null, null);
-		context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(f)));
-
+		publish(f);
 		return f;
 	}
 
@@ -3409,5 +3490,77 @@ class Common
 		lookupTable.put("N_W1_27-N_3", "mf_n_w1_27_n_3.png");
 
 		lookupTable.put("J_W1_32-N_2", "mf_j_w1_32_n_2.png");
+	}
+
+	private void publish(File f)
+	{
+		LogMessage("wrote to " + f.getAbsolutePath());
+		if (f.exists() && f.isFile())
+		{
+			MediaScannerConnection.scanFile(context.getApplicationContext(), new String[]{f.getAbsolutePath()}, null, null);
+			context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(f)));
+		}
+	}
+
+	boolean downloadIcons() throws Exception
+	{
+		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		File dir = f;
+		f = new File(f, "icon.zip");
+		if(downloadJSOUP(f, icon_url) == null)
+			throw new Exception("There was a problem downloading icons, you will need to try again.");
+		dir = new File(dir, "icons");
+		unzip(f, dir);
+		if(f.exists())
+		{
+			if(f.delete())
+			{
+				throw new Exception("There was a problem cleaning up temporary files");
+			}
+		}
+
+		return true;
+	}
+
+	private void unzip(File zipFilePath, File destDir) throws Exception
+	{
+		if(!destDir.exists())
+		{
+			if(!destDir.mkdirs())
+			{
+				throw new Exception("There was a problem creating 1 or more directories on external storage");
+			}
+		}
+
+		FileInputStream fis;
+		byte[] buffer = new byte[1024];
+
+		fis = new FileInputStream(zipFilePath);
+		ZipInputStream zis = new ZipInputStream(fis);
+		ZipEntry ze = zis.getNextEntry();
+		while(ze != null)
+		{
+			String fileName = ze.getName();
+			File newFile = new File(destDir + File.separator + fileName);
+			LogMessage("Unzipping to " + newFile.getAbsolutePath());
+			if(!new File(newFile.getParent()).mkdirs())
+				throw new Exception("There was a problem creating 1 or more directories on external storage");
+
+			FileOutputStream fos = new FileOutputStream(newFile);
+			int len;
+			while ((len = zis.read(buffer)) > 0)
+				fos.write(buffer, 0, len);
+			fos.flush();
+			fos.close();
+
+			publish(newFile);
+			//close this ZipEntry
+			zis.closeEntry();
+			ze = zis.getNextEntry();
+		}
+
+		zis.closeEntry();
+		zis.close();
+		fis.close();
 	}
 }

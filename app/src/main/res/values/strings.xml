@@ -46,4 +46,5 @@
     <string name="update_over_wifi">Only update over wifi?</string>
     <string name="use_dark_theme">Use Dark Theme?</string>
     <string name="rooster">Rooster</string>
+    <string name="use_icons">Use icons instead of glyphs?</string>
 </resources>
