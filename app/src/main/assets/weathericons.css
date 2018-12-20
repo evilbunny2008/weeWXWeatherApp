@@ -1838,18 +1838,21 @@
 .wi-yrno-01d:before {
   content: "\f00d";
 }
+.wi-yrno-01m:before,
 .wi-yrno-01n:before {
   content: "\f02e";
 }
 .wi-yrno-02d:before {
   content: "\f00c";
 }
+.wi-yrno-02m:before,
 .wi-yrno-02n:before {
   content: "\f083";
 }
 .wi-yrno-03d:before {
   content: "\f002";
 }
+.wi-yrno-03m:before,
 .wi-yrno-03n:before {
   content: "\f031";
 }
@@ -1859,30 +1862,35 @@
 .wi-yrno-05d:before {
   content: "\f009";
 }
+.wi-yrno-05m:before,
 .wi-yrno-05n:before {
   content: "\f037";
 }
 .wi-yrno-06d:before {
   content: "\f00e";
 }
+.wi-yrno-06m:before,
 .wi-yrno-06n:before {
   content: "\f03a";
 }
 .wi-yrno-07d:before {
   content: "\f017";
 }
+.wi-yrno-07m:before,
 .wi-yrno-07n:before {
   content: "\f017";
 }
 .wi-yrno-08d:before {
   content: "\f0b2";
 }
-.wi-yrno-08d:before {
+.wi-yrno-08m:before,
+.wi-yrno-08n:before {
   content: "\f0b3";
 }
 .wi-yrno-09d:before {
   content: "\f01a";
 }
+.wi-yrno-09m:before,
 .wi-yrno-09n:before {
   content: "\f037";
 }
@@ -1907,12 +1915,14 @@
 .wi-yrno-20d:before {
   content: "\f068";
 }
+.wi-yrno-20m:before,
 .wi-yrno-20n:before {
   content: "\f069";
 }
 .wi-yrno-21d:before {
   content: "\f06b";
 }
+.wi-yrno-21m:before,
 .wi-yrno-21n:before {
   content: "\f06c";
 }
@@ -1925,36 +1935,42 @@
 .wi-yrno-24d:before {
   content: "\f00e";
 }
+.wi-yrno-24m:before,
 .wi-yrno-24n:before {
   content: "\f03a";
 }
 .wi-yrno-25d:before {
   content: "\f010";
 }
-.wi-yrno-25d:before {
+.wi-yrno-25m:before,
+.wi-yrno-25n:before {
   content: "\f03b";
 }
 .wi-yrno-26d:before {
   content: "\f068";
 }
+.wi-yrno-26m:before,
 .wi-yrno-26n:before {
   content: "\f069";
 }
 .wi-yrno-27d:before {
   content: "\f068";
 }
+.wi-yrno-27m:before,
 .wi-yrno-27n:before {
   content: "\f069";
 }
 .wi-yrno-28d:before {
   content: "\f06b";
 }
+.wi-yrno-28m:before,
 .wi-yrno-28n:before {
   content: "\f06c";
 }
 .wi-yrno-29d:before {
   content: "\f06b";
 }
+.wi-yrno-29m:before,
 .wi-yrno-29n:before {
   content: "\f06c";
 }
@@ -1976,36 +1992,42 @@
 .wi-yrno-40d:before {
   content: "\f009";
 }
+.wi-yrno-40m:before,
 .wi-yrno-40n:before {
   content: "\f037";
 }
 .wi-yrno-41d:before {
   content: "\f008";
 }
+.wi-yrno-41m:before,
 .wi-yrno-41n:before {
   content: "\f036";
 }
 .wi-yrno-42d:before {
   content: "\f0b2";
 }
+.wi-yrno-42m:before,
 .wi-yrno-42n:before {
   content: "\f0b3";
 }
 .wi-yrno-43d:before {
   content: "\f0b2";
 }
+.wi-yrno-43m:before,
 .wi-yrno-43n:before {
   content: "\f0b3";
 }
 .wi-yrno-44d:before {
   content: "\f00a";
 }
+.wi-yrno-44m:before,
 .wi-yrno-44n:before {
   content: "\f038";
 }
 .wi-yrno-45d:before {
   content: "\f065";
 }
+.wi-yrno-45m:before,
 .wi-yrno-45n:before {
   content: "\f066";
 }
