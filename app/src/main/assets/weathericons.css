@@ -1835,32 +1835,56 @@
 .wi-wu-unknown:before {
   content: "\f00d";
 }
-.wi-yrno-1:before {
+.wi-yrno-01d:before {
   content: "\f00d";
 }
-.wi-yrno-2:before {
+.wi-yrno-01n:before {
+  content: "\f02e";
+}
+.wi-yrno-02d:before {
   content: "\f00c";
 }
-.wi-yrno-3:before {
+.wi-yrno-02n:before {
+  content: "\f083";
+}
+.wi-yrno-03d:before {
   content: "\f002";
 }
-.wi-yrno-4:before {
+.wi-yrno-03n:before {
+  content: "\f031";
+}
+.wi-yrno-04:before {
   content: "\f013";
 }
-.wi-yrno-5:before {
+.wi-yrno-05d:before {
   content: "\f009";
 }
-.wi-yrno-6:before {
+.wi-yrno-05n:before {
+  content: "\f037";
+}
+.wi-yrno-06d:before {
   content: "\f00e";
 }
-.wi-yrno-7:before {
+.wi-yrno-06n:before {
+  content: "\f03a";
+}
+.wi-yrno-07d:before {
   content: "\f017";
 }
-.wi-yrno-8:before {
+.wi-yrno-07n:before {
+  content: "\f017";
+}
+.wi-yrno-08d:before {
   content: "\f0b2";
 }
-.wi-yrno-9:before {
+.wi-yrno-08d:before {
+  content: "\f0b3";
+}
+.wi-yrno-09d:before {
   content: "\f01a";
+}
+.wi-yrno-09n:before {
+  content: "\f037";
 }
 .wi-yrno-10:before {
   content: "\f015";
@@ -1880,11 +1904,17 @@
 .wi-yrno-15:before {
   content: "\f014";
 }
-.wi-yrno-20:before {
+.wi-yrno-20d:before {
   content: "\f068";
 }
-.wi-yrno-21:before {
+.wi-yrno-20n:before {
+  content: "\f069";
+}
+.wi-yrno-21d:before {
   content: "\f06b";
+}
+.wi-yrno-21n:before {
+  content: "\f06c";
 }
 .wi-yrno-22:before {
   content: "\f00e";
@@ -1892,23 +1922,41 @@
 .wi-yrno-23:before {
   content: "\f068";
 }
-.wi-yrno-24:before {
+.wi-yrno-24d:before {
   content: "\f00e";
 }
-.wi-yrno-25:before {
+.wi-yrno-24n:before {
+  content: "\f03a";
+}
+.wi-yrno-25d:before {
   content: "\f010";
 }
-.wi-yrno-26:before {
+.wi-yrno-25d:before {
+  content: "\f03b";
+}
+.wi-yrno-26d:before {
   content: "\f068";
 }
-.wi-yrno-27:before {
+.wi-yrno-26n:before {
+  content: "\f069";
+}
+.wi-yrno-27d:before {
   content: "\f068";
 }
-.wi-yrno-28:before {
+.wi-yrno-27n:before {
+  content: "\f069";
+}
+.wi-yrno-28d:before {
   content: "\f06b";
 }
-.wi-yrno-29:before {
+.wi-yrno-28n:before {
+  content: "\f06c";
+}
+.wi-yrno-29d:before {
   content: "\f06b";
+}
+.wi-yrno-29n:before {
+  content: "\f06c";
 }
 .wi-yrno-30:before {
   content: "\f01d";
@@ -1925,23 +1973,41 @@
 .wi-yrno-34:before {
   content: "\f06b";
 }
-.wi-yrno-40:before {
+.wi-yrno-40d:before {
   content: "\f009";
 }
-.wi-yrno-41:before {
+.wi-yrno-40n:before {
+  content: "\f037";
+}
+.wi-yrno-41d:before {
   content: "\f008";
 }
-.wi-yrno-42:before {
+.wi-yrno-41n:before {
+  content: "\f036";
+}
+.wi-yrno-42d:before {
   content: "\f0b2";
 }
-.wi-yrno-43:before {
+.wi-yrno-42n:before {
+  content: "\f0b3";
+}
+.wi-yrno-43d:before {
   content: "\f0b2";
 }
-.wi-yrno-44:before {
+.wi-yrno-43n:before {
+  content: "\f0b3";
+}
+.wi-yrno-44d:before {
   content: "\f00a";
 }
-.wi-yrno-45:before {
+.wi-yrno-44n:before {
+  content: "\f038";
+}
+.wi-yrno-45d:before {
   content: "\f065";
+}
+.wi-yrno-45n:before {
+  content: "\f066";
 }
 .wi-yrno-46:before {
   content: "\f01c";

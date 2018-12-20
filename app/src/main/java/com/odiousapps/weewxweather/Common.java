@@ -2223,6 +2223,7 @@ class Common
 		if(data == null || data.equals(""))
 			return null;
 
+		boolean use_icons = GetBoolPref("use_icons", false);
 		StringBuilder out = new StringBuilder();
 		String desc;
 
@@ -2286,8 +2287,8 @@ class Common
 
 					tmp = "<tr><th colspan='5' style='text-align:left;'><strong>" + date + "</strong></th></tr>\n";
 					out.append(tmp);
-					tmp = "<tr><th>Time</th><th>FCast</th><th>Temp</th><th>Rain</th><th>Wind</th></tr>\n";
-					out.append(tmp);
+					//tmp = "<tr><th>Time</th><th>FCast</th><th>Temp</th><th>Rain</th><th>Wind</th></tr>\n";
+					//out.append(tmp);
 				}
 
 				tmp = "<tr>" +
@@ -2296,7 +2297,15 @@ class Common
 
 				String code = symbol.getString("var");
 
-				tmp = "<td><img width='40px' src='file:///android_res/drawable/yrno" + code + ".png'></td>";
+				if(!use_icons)
+				{
+					tmp = "<td><i style='font-size:30px;' class='wi wi-yrno-" + code + "'></i></td>";
+					//tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+				} else {
+					String fileName = checkImage("yrno" + code + ".png", null);
+					tmp = "<td><img width='40px' src='file://" + fileName + "'></td>";
+				}
+
 				out.append(tmp);
 
 				tmp = "<td>" + temperature.getString("value") + "&deg;C</td>";
@@ -2801,9 +2810,10 @@ class Common
 		//if(icon != null)
 			//downloadImage(fileName, icon);
 
-		return fileName;
+		return icon;
 	}
 
+	@SuppressWarnings("unused")
 	private void downloadImage(final String fileName, final String imageURL)
 	{
 		Thread t = new Thread(new Runnable()
