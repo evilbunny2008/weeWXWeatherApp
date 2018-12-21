@@ -2435,3 +2435,126 @@
 .wi-apixu-395:before {
   content: "\f01e";
 }
+.wi-weatherzone-clear:before {
+  content: "\f00d";
+}
+.wi-weatherzone-clearing-shower:before {
+  content: "\f009";
+}
+.wi-weatherzone-cloud-and-wind-increasing:before {
+  content: "\f000";
+}
+.wi-weatherzone-cloud-increasing:before {
+  content: "\f002";
+}
+.wi-weatherzone-cloudy:before {
+  content: "\f013";
+}
+.wi-weatherzone-drizzle:before {
+  content: "\f01c";
+}
+.wi-weatherzone-drizzle-clearing:before {
+  content: "\f00b";
+}
+.wi-weatherzone-fog-then-sunny:before {
+  content: "\f014";
+}
+.wi-weatherzone-hazy:before {
+  content: "\f0b6";
+}
+.wi-weatherzone-heavy-rain:before {
+  content: "\f019";
+}
+.wi-weatherzone-heavy-showers:before {
+  content: "\f008";
+}
+.wi-weatherzone-increasing-sunshine:before {
+  content: "\f00c";
+}
+.wi-weatherzone-late-shower:before {
+  content: "\f009";
+}
+.wi-weatherzone-late-thunder:before {
+  content: "\f010";
+}
+.wi-weatherzone-mostly-cloudy:before {
+  content: "\f002";
+}
+.wi-weatherzone-mostly-sunny:before {
+  content: "\f00c";
+}
+.wi-weatherzone-overcast:before {
+  content: "\f013";
+}
+.wi-weatherzone-possible-shower:before {
+  content: "\f009";
+}
+.wi-weatherzone-possible-thunderstorm:before {
+  content: "\f010";
+}
+.wi-weatherzone-rain:before {
+  content: "\f019";
+}
+.wi-weatherzone-rain-and-snow:before {
+  content: "\f017";
+}
+.wi-weatherzone-rain-clearing:before {
+  content: "\f008";
+}
+.wi-weatherzone-rain-developing:before {
+  content: "\f008";
+}
+.wi-weatherzone-rain-tending-to-snow:before {
+  content: "\f076";
+}
+.wi-weatherzone-showers:before {
+  content: "\f01a";
+}
+.wi-weatherzone-showers-easing:before {
+  content: "\f009";
+}
+.wi-weatherzone-showers-increasing:before {
+  content: "\f009";
+}
+.wi-weatherzone-snow:before {
+  content: "\f01b";
+}
+.wi-weatherzone-snow-developing:before {
+  content: "\f00a";
+}
+.wi-weatherzone-snowfalls-clearing:before {
+  content: "\f00a";
+}
+.wi-weatherzone-snow-showers:before {
+  content: "\f00a";
+}
+.wi-weatherzone-snow-tending-to-rain:before {
+  content: "\f00a";
+}
+.wi-weatherzone-sunny:before {
+  content: "\f00d";
+}
+.wi-weatherzone-thunderstorms:before {
+  content: "\f016";
+}
+.wi-weatherzone-thunderstorms-clearing:before {
+  content: "\f010";
+}
+.wi-weatherzone-wind-and-rain-increasing:before {
+  content: "\f018";
+}
+.wi-weatherzone-wind-and-showers-easing:before {
+  content: "\f018";
+}
+.wi-weatherzone-windy:before {
+  content: "\f050";
+}
+.wi-weatherzone-windy-with-rain:before {
+  content: "\f018";
+}
+.wi-weatherzone-windy-with-showers:before {
+  content: "\f01a";
+}
+.wi-weatherzone-wzwindy-with-snow:before {
+  content: "\f064";
+}

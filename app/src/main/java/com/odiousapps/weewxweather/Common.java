@@ -2342,31 +2342,22 @@ class Common
 
 	String[] processWZ(String data, boolean showHeader)
 	{
-		boolean metric = GetBoolPref("metric", true);
 		if(data == null || data.equals(""))
 			return null;
 
+		boolean use_icons = GetBoolPref("use_icons", false);
+		boolean metric = GetBoolPref("metric", true);
 		try
 		{
 			String desc = "", content = "", pubDate = "";
 
-			String[] bits = data.split("<title>");
-			if (bits.length >= 2)
-				desc = bits[1].split("</title>")[0].trim();
-
-			bits = data.split("<description>");
-			if (bits.length >= 3)
-			{
-				String s = bits[2].split("</description>")[0];
-				content = s.substring(9, s.length() - 3).trim();
-			}
-
-			bits = data.split("<pubDate>");
-			if (bits.length >= 2)
-				pubDate = bits[1].split("</pubDate>")[0].trim();
-
-			if (pubDate.equals(""))
+			JSONObject jobj = new XmlToJson.Builder(data).build().toJson();
+			if (jobj == null)
 				return null;
+
+			jobj = jobj.getJSONObject("rss").getJSONObject("channel");
+			desc = jobj.getString("title");
+			pubDate = jobj.getString("pubDate");
 
 			StringBuilder str = new StringBuilder();
 			String stmp;
@@ -2378,18 +2369,16 @@ class Common
 
 			if(showHeader)
 			{
-				content = content.replace("src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "width=\"50px\" src=\"file:///android_res/drawable/wz")
-						.replace(".gif", ".png");
-
-				String[] days = content.split("<b>");
+				JSONObject item = jobj.getJSONArray("item").getJSONObject(0);
+				String[] days = item.getString("description").trim().split("<b>");
 				String day = days[1];
 				String[] tmp = day.split("</b>", 2);
 
 				String[] mybits = tmp[1].split("<br />");
-				String myimg = mybits[1];
-				String mydesc = mybits[2];
+				String myimg = mybits[1].trim().replaceAll("<img src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "")
+												.replaceAll("\">", "").replaceAll(".gif", "").replaceAll("_", "-").trim();;
+				String mydesc = mybits[2].trim();
 				String[] range = mybits[3].split(" - ", 2);
-
 
 				stmp = "<table style='width:100%;border:0px;'>";
 				str.append(stmp);
@@ -2397,7 +2386,17 @@ class Common
 				stmp = "<tr><td style='width:50%;font-size:48pt;'>" + scrubTemp(range[1], metric) + "</td>";
 				str.append(stmp);
 
-				stmp = "<td style='width:50%;text-align:right;'>" + myimg.replace("50px", "80px") + "</td></tr>";
+				if(!use_icons)
+				{
+					if(!myimg.equals("frost-then-sunny"))
+						stmp = "<td style='width:50%;text-align:right;'><i style='font-size:80px;' class='wi wi-weatherzone-" + myimg + "'></i></td></tr>";
+					else
+						stmp = "<td style='width:50%;text-align:right;'><i style='font-size:80px;' class='flaticon-thermometer'></i></td></tr>";
+				} else {
+					String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
+					fileName = checkImage(fileName, null);
+					stmp = "<td style='width:50%;text-align:right;'><img width='80px' src='file://" + fileName + "'></td></tr>";
+				}
 				str.append(stmp);
 
 				stmp = "<tr><td style='font-size:16pt;'>" + scrubTemp(range[0], metric) + "</td>";
@@ -2419,11 +2418,22 @@ class Common
 						continue;
 
 					mybits = tmp[1].split("<br />");
-					myimg = mybits[1];
-					mydesc = mybits[2];
+					myimg = mybits[1].trim().replaceAll("<img src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "")
+											.replaceAll("\">", "").replaceAll(".gif", "").replaceAll("_", "-").trim();
+					mydesc = mybits[2].trim();
 					range = mybits[3].split(" - ", 2);
 
-					stmp = "<tr><td style='width:10%;' rowspan='2'>" + myimg + "</td>";
+					if(!use_icons)
+					{
+						if(!myimg.equals("frost-then-sunny"))
+							stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weatherzone-" + myimg + "'></i></td>";
+						else
+							stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+					} else {
+						String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
+						fileName = checkImage(fileName, null);
+						stmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					}
 					str.append(stmp);
 
 					stmp = "<td style='width:65%;'><b>" + dayName + "</b></td>";
@@ -2445,13 +2455,12 @@ class Common
 				stmp = "</table>";
 				str.append(stmp);
 			} else {
-				content = content.replace("src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "width=\"40px\" src=\"file:///android_res/drawable/wz")
-						.replace(".gif", ".png");
+				JSONObject item = jobj.getJSONArray("item").getJSONObject(0);
 
 				stmp = "<table style='width:100%;border:0px;'>";
 				str.append(stmp);
 
-				String[] days = content.split("<b>");
+				String[] days = item.getString("description").trim().split("<b>");
 				for (String day : days)
 				{
 					String[] tmp = day.split("</b>", 2);
@@ -2461,11 +2470,22 @@ class Common
 						continue;
 
 					String[] mybits = tmp[1].split("<br />");
-					String myimg = mybits[1];
-					String mydesc = mybits[2];
+					String myimg = mybits[1].trim().replaceAll("<img src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "")
+										.replaceAll("\">", "").replaceAll(".gif", "").replaceAll("_", "-").trim();
+					String mydesc = mybits[2].trim();
 					String[] range = mybits[3].split(" - ", 2);
 
-					stmp = "<tr><td style='width:10%;' rowspan='2'>" + myimg + "</td>";
+					if(!use_icons)
+					{
+						if(!myimg.equals("frost-then-sunny"))
+							stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weatherzone-" + myimg + "'></i></td>";
+						else
+							stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+					} else {
+						String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
+						fileName = checkImage(fileName, null);
+						stmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					}
 					str.append(stmp);
 
 					stmp = "<td style='width:65%;'><b>" + dayName + "</b></td>";
