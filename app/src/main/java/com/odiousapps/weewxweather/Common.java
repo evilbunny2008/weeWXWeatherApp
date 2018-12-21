@@ -78,7 +78,7 @@ class Common
 	static String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
 	private static final long inigo_version = 4000;
-	static final long icon_version = 4;
+	static final long icon_version = 5;
 	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.7.11/icons.zip";
 
 	private Thread t = null;
@@ -1900,6 +1900,7 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
 		StringBuilder out = new StringBuilder();
 		String tmp;
 		String desc;
@@ -1959,12 +1960,18 @@ class Common
 				JSONObject temperatura = jtmp.getJSONObject("temperatura");
 
 				String code = estado_cielo.getString("content");
-				String url = "http://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
-
-				String fileName = "aemet_" + code + "_g.png";
-				fileName = checkImage(fileName, url);
-
-				tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + fileName + "'></td>";
+				if(!use_icons)
+				{
+					if(!code.startsWith("7"))
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-aemet-" + code + "'></i></td>";
+					else
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+				} else {
+					String url = "http://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
+					String fileName = "aemet_" + code + "_g.png";
+					fileName = checkImage(fileName, url);
+					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+				}
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + fecha + "</b></td>";
@@ -2027,6 +2034,7 @@ class Common
 		String desc;
 
 		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
 
 		if(conditions == null)
 		{
@@ -2097,7 +2105,20 @@ class Common
 					}
 				}
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-apixu-" + icon + "'></i></td>";
+				if(!use_icons)
+				{
+					if(!icon.endsWith("n"))
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-apixu-" + icon + "'></i></td>";
+					else
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-apixu-night-" + icon + "'></i></td>";
+				} else {
+					String fileName;
+					if(!icon.endsWith("n"))
+						fileName = checkImage("apixu_" + icon + ".png", null);
+					else
+						fileName = checkImage("apixu_night_" + icon + ".png", null);
+					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+				}
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
@@ -2349,7 +2370,7 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		try
 		{
-			String desc = "", content = "", pubDate = "";
+			String desc, content, pubDate;
 
 			JSONObject jobj = new XmlToJson.Builder(data).build().toJson();
 			if (jobj == null)
@@ -2376,7 +2397,7 @@ class Common
 
 				String[] mybits = tmp[1].split("<br />");
 				String myimg = mybits[1].trim().replaceAll("<img src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "")
-												.replaceAll("\">", "").replaceAll(".gif", "").replaceAll("_", "-").trim();;
+												.replaceAll("\">", "").replaceAll(".gif", "").replaceAll("_", "-").trim();
 				String mydesc = mybits[2].trim();
 				String[] range = mybits[3].split(" - ", 2);
 
@@ -2510,7 +2531,7 @@ class Common
 
 			content = "<div style='font-size:12pt;'>" + pubDate + "</div>" + str.toString();
 
-			Common.LogMessage("content=" + content);
+			LogMessage("content=" + content);
 
 			return new String[]{content, desc};
 		} catch (Exception e) {
