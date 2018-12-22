@@ -1798,7 +1798,7 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
-//		boolean use_icons = GetBoolPref("use_icons", false);
+		boolean use_icons = GetBoolPref("use_icons", false);
 		StringBuilder out = new StringBuilder();
 		String tmp;
 		String desc = "";
@@ -1850,7 +1850,17 @@ class Common
 				String url = "https://www.dwd.de/DE/wetter/_functions/piktos/" + icon + "?__blob=normal";
 				fileName = checkImage(fileName, url);
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + fileName + "'></td>";
+				if(!use_icons)
+				{
+					icon = icon.replaceAll("_", "-");
+					icon = icon.substring(0, icon.lastIndexOf("."));
+					if(!icon.equals("pic-48") && !icon.equals("pic-66") && !icon.equals("pic67"))
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-dwd-" + icon + "'></i></td>";
+					else
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+				} else {
+					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+				}
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
@@ -2308,8 +2318,6 @@ class Common
 
 					tmp = "<tr><th colspan='5' style='text-align:left;'><strong>" + date + "</strong></th></tr>\n";
 					out.append(tmp);
-					//tmp = "<tr><th>Time</th><th>FCast</th><th>Temp</th><th>Rain</th><th>Wind</th></tr>\n";
-					//out.append(tmp);
 				}
 
 				tmp = "<tr>" +
@@ -2321,7 +2329,6 @@ class Common
 				if(!use_icons)
 				{
 					tmp = "<td><i style='font-size:30px;' class='wi wi-yrno-" + code + "'></i></td>";
-					//tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
 				} else {
 					String fileName = checkImage("yrno" + code + ".png", null);
 					tmp = "<td><img width='40px' src='file://" + fileName + "'></td>";
