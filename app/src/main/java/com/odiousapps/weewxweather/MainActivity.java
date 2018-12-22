@@ -505,7 +505,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				RadioButton showRadar = findViewById(R.id.showRadar);
 				int curtime = Math.round(System.currentTimeMillis() / 1000);
 
-				if(use_icons.isChecked() && common.GetLongPref("icon_version", 0) < Common.icon_version)
+				if(use_icons.isChecked() && (common.GetLongPref("icon_version", 0) < Common.icon_version || !common.checkForImages()))
 				{
 					try
 					{
@@ -757,7 +757,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					}
 				}
 
-				Common.LogMessage("line 728");
+				Common.LogMessage("line 760");
+
+				if(fctype.equals("weather.gov") && !common.checkForImages() && !use_icons.isChecked())
+				{
+					common.SetStringPref("lastError", "forecast type " + fctype + " needs to have icons available, Please switch to using icons and try again.");
+					handlerForecastIcons.sendEmptyMessage(0);
+					return;
+				}
 
 				if (!forecast.equals("") && !oldforecast.equals(forecast))
 				{
@@ -969,6 +976,28 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			dialog.dismiss();
 			new AlertDialog.Builder(common.context)
 					.setTitle("Wasn't able to connect or download the forecast.")
+					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+					{
+						@Override
+						public void onClick(DialogInterface dialog, int which)
+						{
+						}
+					}).show();
+		}
+	};
+
+	@SuppressLint("HandlerLeak")
+	private Handler handlerForecastIcons = new Handler()
+	{
+		@Override
+		public void handleMessage(Message msg)
+		{
+			b1.setEnabled(true);
+			b2.setEnabled(true);
+			dialog.dismiss();
+			new AlertDialog.Builder(common.context)
+					.setTitle("Wasn't able to detect forecast icons.")
 					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
 					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
 					{

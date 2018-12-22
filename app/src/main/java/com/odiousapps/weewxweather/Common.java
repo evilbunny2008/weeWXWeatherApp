@@ -85,7 +85,7 @@ class Common
 	private JSONObject nws = null;
 	private JSONArray conditions = null;
 
-	private Typeface tf;
+	private Typeface tf_bold;
 	private Map<String, String> lookupTable = new HashMap<>();
 
 	static String ssheader = "<link rel='stylesheet' href='file:///android_asset/weathericons.css'>" +
@@ -103,7 +103,7 @@ class Common
 	{
 		System.setProperty("http.agent", UA);
 		this.context = c;
-		tf = Typeface.create("Arial", Typeface.NORMAL);
+		tf_bold = Typeface.create("sans-serif", Typeface.BOLD);
 
 		try
 		{
@@ -892,6 +892,7 @@ class Common
 			return null;
 
 		//boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
 		long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 		String lastupdate = sdf.format(mdate);
@@ -920,13 +921,19 @@ class Common
 				date = sdf.format(mdate);
 
 				String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class=\"icon\"")[1].split("src=\"")[1].split("\">")[0].trim();
-				String fileName =  "met" + icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("\\.svg$", "\\.png");
+				String fileName =  icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("\\.svg$", "\\.png");
 				String min = forecasts[i].split("<span class=\"tab-temp-low\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
 				String max = forecasts[i].split("<span class=\"tab-temp-high\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
 				String text = forecasts[i].split("<div class=\"summary-text", 2)[1].split("\">", 3)[2]
 									.split("</div>", 2)[0].replaceAll("</span>", "").replaceAll("<span>", "");
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + fileName + "'></td>";
+				if(!use_icons)
+				{
+					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-metoffice-" + fileName.substring(0, fileName.lastIndexOf(".")) + "'></i></td>";
+				} else {
+					fileName = checkImage("met" + fileName, null);
+					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+				}
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
@@ -1298,7 +1305,6 @@ class Common
 				String fn = "wgov" + url.substring(url.lastIndexOf('/') + 1, url.length()).replace(".png", ".jpg");
 				if(fn.startsWith("wgovDualImage.php"))
 				{
-					//fn = "wgov_" + convertToHex(genSHA(fn.substring(4, fn.length()))) + ".jpg";
 					tmp = url.split("\\?", 2)[1].trim();
 					String[] lines = tmp.split("&");
 					for(String line : lines)
@@ -1315,31 +1321,8 @@ class Common
 							sper = bits[1].trim();
 					}
 
-					BitmapFactory.Options options = new BitmapFactory.Options();
-					options.inJustDecodeBounds = false;
-					Bitmap bmp1 = null, bmp2 = null;
-
-					try
-					{
-						Class res = R.drawable.class;
-						Field field = res.getField(fimg);
-						int drawableId = field.getInt(null);
-						if(drawableId != 0)
-							bmp1 = BitmapFactory.decodeResource(context.getResources(), drawableId, options);
-					} catch (Exception e) {
-						//LogMessage("Failure to get drawable id.");
-					}
-
-					try
-					{
-						Class res = R.drawable.class;
-						Field field = res.getField(simg);
-						int drawableId = field.getInt(null);
-						if(drawableId != 0)
-							bmp2 = BitmapFactory.decodeResource(context.getResources(), drawableId, options);
-					} catch (Exception e) {
-						//LogMessage("Failure to get drawable id.");
-					}
+					Bitmap bmp1 = loadImage(fimg + ".jpg");
+					Bitmap bmp2 = loadImage(simg + ".jpg");
 
 					if(bmp1 != null && bmp2 != null)
 					{
@@ -1383,26 +1366,12 @@ class Common
 					number = p.matcher(fn).replaceAll("");
 					if(!number.equals(""))
 					{
-						Bitmap bmp3 = null;
-						BitmapFactory.Options options = new BitmapFactory.Options();
-						options.inJustDecodeBounds = false;
-
 						fn = fn.replaceAll("\\d{2,3}\\.jpg$", "\\.jpg");
-
-						try
-						{
-							Class res = R.drawable.class;
-							Field field = res.getField(fn.substring(0, fn.length() - 4));
-							int drawableId = field.getInt(null);
-							if(drawableId != 0)
-								bmp3 = BitmapFactory.decodeResource(context.getResources(), drawableId, options);
-						} catch (Exception e) {
-							LogMessage("Failure to get drawable id for: " + fn);
-						}
+						Bitmap bmp3 = loadImage(fn);
 
 						if(bmp3 != null)
 						{
-							Bitmap bmp4 = BitmapFactory.decodeResource(context.getResources(), R.drawable.wgovoverlay, options);
+							Bitmap bmp4 = loadImage("wgovoverlay.jpg");
 							bmp3 = overlay(bmp3, bmp4, number + "%");
 
 							ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -1415,8 +1384,6 @@ class Common
 
 							String encoded = "data:image/jpeg;base64," + Base64.encodeToString(byteArray, Base64.DEFAULT);
 							iconLink.put(i, encoded);
-
-							LogMessage("wrote " + fn + " to " + iconLink.getString(i).substring(0, 100));
 						}
 					}
 				}
@@ -2836,6 +2803,20 @@ class Common
 		LogMessage("failed_intent broadcast.");
 	}
 
+	// https://stackoverflow.com/questions/8710515/reading-an-image-file-into-bitmap-from-sdcard-why-am-i-getting-a-nullpointerexc
+
+	private Bitmap loadImage(String fileName)
+	{
+		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		f = new File(f, "icons");
+		f = new File(f, fileName);
+
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inJustDecodeBounds = false;
+		options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+		return BitmapFactory.decodeFile(f.getAbsolutePath(), options);
+	}
+
 	private String checkImage(String fileName, String icon)
 	{
 		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
@@ -2852,7 +2833,7 @@ class Common
 			if(drawableId != 0)
 				return fileName;
 		} catch (Exception e) {
-			//LogMessage("Failure to get drawable id.");
+//			LogMessage("Failure to get drawable id.");
 		}
 
 		//if(icon != null)
@@ -2916,9 +2897,7 @@ class Common
 
 			if (!fnum.equals("%") || !snum.equals("%"))
 			{
-				BitmapFactory.Options options = new BitmapFactory.Options();
-				options.inJustDecodeBounds = false;
-				Bitmap bmp2 = BitmapFactory.decodeResource(context.getResources(), R.drawable.wgovoverlay, options);
+				Bitmap bmp2 = loadImage("wgovoverlay.jpg");
 				paint = new Paint();
 				paint.setAlpha(100);
 				comboImage.drawBitmap(bmp2, 0f, bmp1.getHeight() - bmp2.getHeight(), paint);
@@ -2942,8 +2921,8 @@ class Common
 				paint = new Paint();
 				paint.setAntiAlias(true);
 				paint.setColor(0xff00487b);
-				paint.setTextSize(50);
-				paint.setTypeface(Typeface.create(tf, Typeface.BOLD));
+				paint.setTextSize(13);
+				paint.setTypeface(tf_bold);
 
 				comboImage.drawText(fnum, 5, y1 - 5, paint);
 			}
@@ -2953,8 +2932,8 @@ class Common
 				paint = new Paint();
 				paint.setAntiAlias(true);
 				paint.setColor(0xff00487b);
-				paint.setTextSize(50);
-				paint.setTypeface(Typeface.create(tf, Typeface.BOLD));
+				paint.setTextSize(13);
+				paint.setTypeface(tf_bold);
 
 				Rect textBounds = new Rect();
 				paint.getTextBounds(snum, 0, snum.length(), textBounds);
@@ -3038,7 +3017,7 @@ class Common
 			{
 				BitmapFactory.Options options = new BitmapFactory.Options();
 				options.inJustDecodeBounds = false;
-				Bitmap bmp4 = BitmapFactory.decodeResource(context.getResources(), R.drawable.wgovoverlay, options);
+				Bitmap bmp4 =  loadImage("wgovoverlay.jpg");
 				paint = new Paint();
 				paint.setAlpha(100);
 				comboImage.drawBitmap(bmp4, 0f, bmp1.getHeight() - bmp4.getHeight(), paint);
@@ -3062,8 +3041,8 @@ class Common
 				paint = new Paint();
 				paint.setAntiAlias(true);
 				paint.setColor(0xff00487b);
-				paint.setTextSize(50);
-				paint.setTypeface(Typeface.create(tf, Typeface.BOLD));
+				paint.setTextSize(13);
+				paint.setTypeface(tf_bold);
 
 				comboImage.drawText(fnum, 5, y1 - 5, paint);
 			}
@@ -3073,8 +3052,8 @@ class Common
 				paint = new Paint();
 				paint.setAntiAlias(true);
 				paint.setColor(0xff00487b);
-				paint.setTextSize(50);
-				paint.setTypeface(Typeface.create(tf, Typeface.BOLD));
+				paint.setTextSize(13);
+				paint.setTypeface(tf_bold);
 
 				Rect textBounds = new Rect();
 				paint.getTextBounds(snum, 0, snum.length(), textBounds);
@@ -3104,8 +3083,8 @@ class Common
 		canvas.drawBitmap(bmp2, 0f, bmp1.getHeight() - bmp2.getHeight(), paint);
 		paint.setAntiAlias(true);
 		paint.setColor(0xff00487b);
-		paint.setTextSize(50);
-		paint.setTypeface(Typeface.create(tf, Typeface.BOLD));
+		paint.setTextSize(13);
+		paint.setTypeface(tf_bold);
 		Rect textBounds = new Rect();
 		paint.getTextBounds(s, 0, s.length(), textBounds);
 		int width = (int)paint.measureText(s);
@@ -3624,5 +3603,26 @@ class Common
 		zis.closeEntry();
 		zis.close();
 		fis.close();
+	}
+
+	@SuppressWarnings("BooleanMethodIsAlwaysInverted")
+	boolean checkForImages()
+	{
+		File dir = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		dir = new File(dir, "icons");
+		if(!dir.exists() || !dir.isDirectory())
+			return false;
+
+		String[] files = new String[]{"aemet_11_g.png", "apixu_113.png", "bom1.png", "bom2clear.png", "dwd_pic_0_8.png",
+										"i1.png", "met0.png", "mf_j_w1_0_n_2.png", "ms_cloudy.png", "smn_wi_cloudy.png",
+										"wca00.png", "wgovbkn.jpg", "wzclear.png", "yahoo0.gif", "yrno01d.png"};
+		for(String file : files)
+		{
+			File f = new File(dir, file);
+			if (!f.exists() || !f.isFile())
+				return false;
+		}
+
+		return true;
 	}
 }
