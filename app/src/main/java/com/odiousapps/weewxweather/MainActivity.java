@@ -512,12 +512,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						if (!common.downloadIcons())
 						{
 							common.SetStringPref("lastError", "Icons failed to download fully, you will need to retry.");
-							handlerSettings.sendEmptyMessage(0);
+							handlerForecastIcons.sendEmptyMessage(1);
 							return;
 						}
 					} catch (Exception e) {
 						common.SetStringPref("lastError", e.toString());
-						handlerSettings.sendEmptyMessage(0);
+						handlerForecastIcons.sendEmptyMessage(1);
 						return;
 					}
 

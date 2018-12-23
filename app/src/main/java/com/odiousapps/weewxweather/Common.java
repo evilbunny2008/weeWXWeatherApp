@@ -583,6 +583,7 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
 		StringBuilder out = new StringBuilder();
 		String tmp;
 		String desc;
@@ -624,23 +625,36 @@ class Common
 				String day = bit.split("<a>", 2)[1].split("</a>", 2)[0].trim() + sdf.format(System.currentTimeMillis());
 				String min = bit.split("class=\"min-temp\">", 2)[1].split("°C Minimale", 2)[0].trim();
 				String max = bit.split("class=\"max-temp\">", 2)[1].split("°C Maximale", 2)[0].trim();
-				String icon = bit.split("<dd class=\"pic40 ", 2)[1].split("\">",2)[0].trim();
+				String icon = bit.split("<dd class=\"pic40 ", 2)[1].split("\">", 2)[0].trim();
 
 				sdf = new SimpleDateFormat("EEE dd-MM-yyyy", Locale.FRANCE);
 				mdate = sdf.parse(day).getTime();
-				sdf = new SimpleDateFormat("EEEE", Locale.FRANCE);
+				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				day = sdf.format(mdate);
 
-				while(lookupTable.get(icon) == null && icon.length() > 0)
+				String tmpicon = icon;
+				while (lookupTable.get(tmpicon) == null && tmpicon.length() > 0)
 				{
-					icon = icon.substring(0, icon.length() - 1);
-					LogMessage("icon == " + icon);
+					LogMessage("icon == " + tmpicon);
+					tmpicon = tmpicon.substring(0, tmpicon.length() - 1);
 				}
 
-				if(lookupTable.get(icon) != null)
-					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + lookupTable.get(icon) + "'></td>";
-				else
+				if(lookupTable.get(tmpicon) != null)
+				{
+					if(!use_icons)
+					{
+						if(!lookupTable.get(tmpicon).replaceAll("_", "-").equals("j-w1-8-n"))
+							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-meteofrance-" + lookupTable.get(tmpicon).replaceAll("_", "-") + "'></i></td>";
+						else
+							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+					} else {
+						String fileName = checkImage("mf_" + lookupTable.get(tmpicon) + ".png", null);
+						tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					}
+				} else {
+					// Something should be done here, didn't find a match for icon...
 					tmp = "<tr><td style='width:10%;' rowspan='2'>N/A</td>";
+				}
 				out.append(tmp);
 
 				tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
@@ -679,6 +693,20 @@ class Common
 
 			tmp = "</table>";
 			out.append(tmp);
+/*
+			List<String> strList = new ArrayList<String>();
+			for(String key : lookupTable.values())
+			{
+
+				key = ".@{wi-css-prefix}-meteofrance-" + key.replaceAll("_", "-") + ":before      { content: @                ; }\n";
+				if(!strList.contains(key))
+					strList.add(key);
+			}
+
+			Collections.sort(strList);
+
+			writeFile("wi-meteofrance.less", strList.toString());
+*/
 			return new String[]{out.toString(), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -1083,7 +1111,10 @@ class Common
 
 					if(!use_icons)
 					{
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weather-gc-ca-" + fileName + "'></i></td>";
+						if(fileName.equals("26"))
+							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weather-gc-ca-" + fileName + "'></i></td>";
+						else
+							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
 					} else {
 						fileName = checkImage("wca" + fileName + ".png", null);
 						tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
@@ -1224,19 +1255,18 @@ class Common
 						e.printStackTrace();
 					}
 
-					BitmapFactory.Options options = new BitmapFactory.Options();
-					options.inJustDecodeBounds = false;
-
 					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "");
 
 					if(!use_icons)
 					{
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weather-gc-ca-" + fileName + "'></i></td>";
+						if(fileName.equals("26"))
+							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weather-gc-ca-" + fileName + "'></i></td>";
+						else
+							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
 					} else {
 						fileName = checkImage("wca" + fileName + ".png", null);
 						tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
 					}
-					LogMessage(tmp);
 					out.append(tmp);
 
 					tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
@@ -3329,216 +3359,217 @@ class Common
 
 	private void makeTable()
 	{
-		lookupTable.put("N_W1_0-N_0", "mf_n_w2_1.png");
-		lookupTable.put("N_W2_1", "mf_n_w2_1.png");
-		lookupTable.put("N_W1_0-N_7", "mf_n_w2_1.png");
-		lookupTable.put("J_W1_0-N", "mf_n_w2_1.png");
+		lookupTable.put("N_W1_0-N_0", "n_w2_1");
+		lookupTable.put("N_W2_1", "n_w2_1");
+		lookupTable.put("N_W1_0-N_7", "n_w2_1");
+		lookupTable.put("J_W1_0-N", "n_w2_1");
+		lookupTable.put("J_W2_1", "n_w2_1");
 
-		lookupTable.put("J_W1_0-N_5", "mf_j_w1_0_n_5.png");
+		lookupTable.put("J_W1_0-N_5", "j_w1_0_n_5");
 
-		lookupTable.put("N_W1_0-N_5", "mf_n_w1_0_n_5.png");
+		lookupTable.put("N_W1_0-N_5", "n_w1_0_n_5");
 
-		lookupTable.put("J_W2_2", "mf_j_w1_0_n_2.png");
-		lookupTable.put("J_W1_0-N_1", "mf_j_w1_0_n_2.png");
-		lookupTable.put("J_W1_0-N_2", "mf_j_w1_0_n_2.png");
-		lookupTable.put("J_W1_0-N_4", "mf_j_w1_0_n_2.png");
-		lookupTable.put("J_W1_0-N_6", "mf_j_w1_0_n_2.png");
+		lookupTable.put("J_W2_2", "j_w1_0_n_2");
+		lookupTable.put("J_W1_0-N_1", "j_w1_0_n_2");
+		lookupTable.put("J_W1_0-N_2", "j_w1_0_n_2");
+		lookupTable.put("J_W1_0-N_4", "j_w1_0_n_2");
+		lookupTable.put("J_W1_0-N_6", "j_w1_0_n_2");
 
-		lookupTable.put("N_W2_2", "mf_n_w2_2.png");
-		lookupTable.put("N_W1_0-N_1", "mf_n_w2_2.png");
-		lookupTable.put("N_W1_0-N_2", "mf_n_w2_2.png");
-		lookupTable.put("N_W1_0-N_4", "mf_n_w2_2.png");
-		lookupTable.put("N_W1_0-N_6", "mf_n_w2_2.png");
+		lookupTable.put("N_W2_2", "n_w2_2");
+		lookupTable.put("N_W1_0-N_1", "n_w2_2");
+		lookupTable.put("N_W1_0-N_2", "n_w2_2");
+		lookupTable.put("N_W1_0-N_4", "n_w2_2");
+		lookupTable.put("N_W1_0-N_6", "n_w2_2");
 
-		lookupTable.put("J_W1_0-N_3", "mf_j_w2_3.png");
-		lookupTable.put("N_W1_0-N_3", "mf_j_w2_3.png");
-		lookupTable.put("J_W2_3", "mf_j_w2_3.png");
-		lookupTable.put("N_W2_3", "mf_j_w2_3.png");
+		lookupTable.put("J_W1_0-N_3", "j_w2_3");
+		lookupTable.put("N_W1_0-N_3", "j_w2_3");
+		lookupTable.put("J_W2_3", "j_w2_3");
+		lookupTable.put("N_W2_3", "j_w2_3");
 
-		lookupTable.put("J_W1_1-N", "mf_j_w1_1_n.png");
-		lookupTable.put("J_W1_2-N", "mf_j_w1_1_n.png");
-		lookupTable.put("J_W1_33-N", "mf_j_w1_1_n.png");
+		lookupTable.put("J_W1_1-N", "j_w1_1_n");
+		lookupTable.put("J_W1_2-N", "j_w1_1_n");
+		lookupTable.put("J_W1_33-N", "j_w1_1_n");
 
-		lookupTable.put("N_W1_1-N", "mf_n_w1_1_n.png");
-		lookupTable.put("N_W1_2-N", "mf_n_w1_1_n.png");
-		lookupTable.put("N_W1_33-N", "mf_n_w1_1_n.png");
+		lookupTable.put("N_W1_1-N", "n_w1_1_n");
+		lookupTable.put("N_W1_2-N", "n_w1_1_n");
+		lookupTable.put("N_W1_33-N", "n_w1_1_n");
 
-		lookupTable.put("N_W1_1-N_3", "mf_n_w1_1_n_3.png");
-		lookupTable.put("J_W1_1-N_3", "mf_n_w1_1_n_3.png");
-		lookupTable.put("N_W1_2-N_3", "mf_n_w1_1_n_3.png");
-		lookupTable.put("J_W1_2-N_3", "mf_n_w1_1_n_3.png");
-		lookupTable.put("N_W1_33-N_3", "mf_n_w1_1_n_3.png");
-		lookupTable.put("J_W1_33-N_3", "mf_n_w1_1_n_3.png");
+		lookupTable.put("N_W1_1-N_3", "n_w1_1_n_3");
+		lookupTable.put("J_W1_1-N_3", "n_w1_1_n_3");
+		lookupTable.put("N_W1_2-N_3", "n_w1_1_n_3");
+		lookupTable.put("J_W1_2-N_3", "n_w1_1_n_3");
+		lookupTable.put("N_W1_33-N_3", "n_w1_1_n_3");
+		lookupTable.put("J_W1_33-N_3", "n_w1_1_n_3");
 
-		lookupTable.put("J_W1_3-N", "mf_j_w2_4.png");
-		lookupTable.put("N_W1_3-N", "mf_j_w2_4.png");
-		lookupTable.put("J_W2_4", "mf_j_w2_4.png");
-		lookupTable.put("N_W2_4", "mf_j_w2_4.png");
+		lookupTable.put("J_W1_3-N", "j_w2_4");
+		lookupTable.put("N_W1_3-N", "j_w2_4");
+		lookupTable.put("J_W2_4", "j_w2_4");
+		lookupTable.put("N_W2_4", "j_w2_4");
 
-		lookupTable.put("J_W1_4-N", "mf_j_w2_5.png");
-		lookupTable.put("J_W1_5-N", "mf_j_w2_5.png");
-		lookupTable.put("J_W1_6-N", "mf_j_w2_5.png");
-		lookupTable.put("J_W2_5", "mf_j_w2_5.png");
-		lookupTable.put("N_W2_5", "mf_j_w2_5.png");
-		lookupTable.put("N_W1_4-N", "mf_j_w2_5.png");
-		lookupTable.put("N_W1_5-N", "mf_j_w2_5.png");
-		lookupTable.put("N_W1_6-N", "mf_j_w2_5.png");
+		lookupTable.put("J_W1_4-N", "j_w2_5");
+		lookupTable.put("J_W1_5-N", "j_w2_5");
+		lookupTable.put("J_W1_6-N", "j_w2_5");
+		lookupTable.put("J_W2_5", "j_w2_5");
+		lookupTable.put("N_W2_5", "j_w2_5");
+		lookupTable.put("N_W1_4-N", "j_w2_5");
+		lookupTable.put("N_W1_5-N", "j_w2_5");
+		lookupTable.put("N_W1_6-N", "j_w2_5");
 
-		lookupTable.put("J_W1_7-N", "mf_j_w1_7_n.png");
-		lookupTable.put("N_W1_7-N", "mf_j_w1_7_n.png");
+		lookupTable.put("J_W1_7-N", "j_w1_7_n");
+		lookupTable.put("N_W1_7-N", "j_w1_7_n");
 
-		lookupTable.put("J_W1_8-N", "mf_j_w1_8_n.png");
+		lookupTable.put("J_W1_8-N", "j_w1_8_n");
 
-		lookupTable.put("N_W1_8-N", "mf_n_w1_8_n.png");
+		lookupTable.put("N_W1_8-N", "n_w1_8_n");
 
-		lookupTable.put("N_W1_8-N_3", "mf_n_w1_8_n_3.png");
-		lookupTable.put("J_W1_8-N_3", "mf_n_w1_8_n_3.png");
+		lookupTable.put("N_W1_8-N_3", "n_w1_8_n_3");
+		lookupTable.put("J_W1_8-N_3", "n_w1_8_n_3");
 
-		lookupTable.put("J_W1_9-N", "mf_j_w2_6.png");
-		lookupTable.put("J_W1_18-N", "mf_j_w2_6.png");
-		lookupTable.put("J_W1_30-N", "mf_j_w2_6.png");
-		lookupTable.put("J_W2_6", "mf_j_w2_6.png");
-		lookupTable.put("J_W2_12", "mf_j_w2_6.png");
+		lookupTable.put("J_W1_9-N", "j_w2_6");
+		lookupTable.put("J_W1_18-N", "j_w2_6");
+		lookupTable.put("J_W1_30-N", "j_w2_6");
+		lookupTable.put("J_W2_6", "j_w2_6");
+		lookupTable.put("J_W2_12", "j_w2_6");
 
-		lookupTable.put("N_W1_9-N", "mf_n_w2_6.png");
-		lookupTable.put("N_W1_18-N", "mf_n_w2_6.png");
-		lookupTable.put("N_W1_30-N", "mf_n_w2_6.png");
-		lookupTable.put("N_W2_6", "mf_n_w2_6.png");
-		lookupTable.put("N_W2_12", "mf_n_w2_6.png");
+		lookupTable.put("N_W1_9-N", "n_w2_6");
+		lookupTable.put("N_W1_18-N", "n_w2_6");
+		lookupTable.put("N_W1_30-N", "n_w2_6");
+		lookupTable.put("N_W2_6", "n_w2_6");
+		lookupTable.put("N_W2_12", "n_w2_6");
 
-		lookupTable.put("J_W1_9-N_3", "mf_j_w1_9_n_3.png");
-		lookupTable.put("N_W1_9-N_3", "mf_j_w1_9_n_3.png");
-		lookupTable.put("J_W1_18-N_3", "mf_j_w1_9_n_3.png");
-		lookupTable.put("N_W1_18-N_3", "mf_j_w1_9_n_3.png");
-		lookupTable.put("J_W1_30-N_3", "mf_j_w1_9_n_3.png");
-		lookupTable.put("N_W1_30-N_3", "mf_j_w1_9_n_3.png");
+		lookupTable.put("J_W1_9-N_3", "j_w1_9_n_3");
+		lookupTable.put("N_W1_9-N_3", "j_w1_9_n_3");
+		lookupTable.put("J_W1_18-N_3", "j_w1_9_n_3");
+		lookupTable.put("N_W1_18-N_3", "j_w1_9_n_3");
+		lookupTable.put("J_W1_30-N_3", "j_w1_9_n_3");
+		lookupTable.put("N_W1_30-N_3", "j_w1_9_n_3");
 
-		//lookupTable.put("J_W1_19-N", "mf_large_10_a.png");
-		lookupTable.put("J_W2_8", "mf_j_w2_8.png");
-		lookupTable.put("J_W2_14", "mf_j_w2_8.png");
+		//lookupTable.put("J_W1_19-N", "large_10_a");
+		lookupTable.put("J_W2_8", "j_w2_8");
+		lookupTable.put("J_W2_14", "j_w2_8");
 
-		//lookupTable.put("N_W1_19-N", "mf_large_10_b.png");
-		lookupTable.put("N_W2_8", "mf_n_w2_8.png");
-		lookupTable.put("N_W2_14", "mf_n_w2_8.png");
+		//lookupTable.put("N_W1_19-N", "large_10_b");
+		lookupTable.put("N_W2_8", "n_w2_8");
+		lookupTable.put("N_W2_14", "n_w2_8");
 
-		lookupTable.put("J_W1_10-N", "mf_j_w1_10_n.png");
-		lookupTable.put("J_W1_19-N", "mf_j_w1_10_n.png");
-		lookupTable.put("N_W1_10-N", "mf_j_w1_10_n.png");
-		lookupTable.put("N_W1_19-N", "mf_j_w1_10_n.png");
+		lookupTable.put("J_W1_10-N", "j_w1_10_n");
+		lookupTable.put("J_W1_19-N", "j_w1_10_n");
+		lookupTable.put("N_W1_10-N", "j_w1_10_n");
+		lookupTable.put("N_W1_19-N", "j_w1_10_n");
 
-		lookupTable.put("J_W1_11-N", "mf_j_w2_9.png");
-		lookupTable.put("N_W1_11-N", "mf_j_w2_9.png");
-		lookupTable.put("J_W2_9", "mf_j_w2_9.png");
-		lookupTable.put("N_W2_9", "mf_j_w2_9.png");
+		lookupTable.put("J_W1_11-N", "j_w2_9");
+		lookupTable.put("N_W1_11-N", "j_w2_9");
+		lookupTable.put("J_W2_9", "j_w2_9");
+		lookupTable.put("N_W2_9", "j_w2_9");
 
-		lookupTable.put("J_W1_32", "mf_j_w1_32.png");
-		lookupTable.put("J_W2_16", "mf_j_w1_32.png");
+		lookupTable.put("J_W1_32", "j_w1_32");
+		lookupTable.put("J_W2_16", "j_w1_32");
 
-		lookupTable.put("N_W1_32", "mf_n_w1_32.png");
-		lookupTable.put("N_W2_16", "mf_n_w1_32.png");
+		lookupTable.put("N_W1_32", "n_w1_32");
+		lookupTable.put("N_W2_16", "n_w1_32");
 
-		lookupTable.put("J_W1_12", "mf_j_w1_12.png");
-		lookupTable.put("N_W1_12", "mf_j_w1_12.png");
-		lookupTable.put("J_W1_32-N_3", "mf_j_w1_12.png");
-		lookupTable.put("N_W1_32-N_3", "mf_j_w1_12.png");
-		lookupTable.put("J_W2_17", "mf_j_w1_12.png");
-		lookupTable.put("N_W2_17", "mf_j_w1_12.png");
+		lookupTable.put("J_W1_12", "j_w1_12");
+		lookupTable.put("N_W1_12", "j_w1_12");
+		lookupTable.put("J_W1_32-N_3", "j_w1_12");
+		lookupTable.put("N_W1_32-N_3", "j_w1_12");
+		lookupTable.put("J_W2_17", "j_w1_12");
+		lookupTable.put("N_W2_17", "j_w1_12");
 
-		lookupTable.put("J_W1_13", "mf_j_w2_13.png");
-		lookupTable.put("J_W1_21", "mf_j_w2_13.png");
-		lookupTable.put("J_W2_7", "mf_j_w2_13.png");
-		lookupTable.put("J_W2_13", "mf_j_w2_13.png");
+		lookupTable.put("J_W1_13", "j_w2_13");
+		lookupTable.put("J_W1_21", "j_w2_13");
+		lookupTable.put("J_W2_7", "j_w2_13");
+		lookupTable.put("J_W2_13", "j_w2_13");
 
-		lookupTable.put("N_W1_13", "mf_n_w1_13.png");
-		lookupTable.put("N_W1_21", "mf_n_w1_13.png");
-		lookupTable.put("N_W2_7", "mf_n_w1_13.png");
-		lookupTable.put("N_W2_13", "mf_n_w1_13.png");
+		lookupTable.put("N_W1_13", "n_w1_13");
+		lookupTable.put("N_W1_21", "n_w1_13");
+		lookupTable.put("N_W2_7", "n_w1_13");
+		lookupTable.put("N_W2_13", "n_w1_13");
 
-		lookupTable.put("J_W1_13-N_3", "mf_j_w_w1_13_n_3.png");
-		lookupTable.put("N_W1_13-N_3", "mf_j_w_w1_13_n_3.png");
-		lookupTable.put("J_W1_21-N_3", "mf_j_w_w1_13_n_3.png");
-		lookupTable.put("N_W1_21-N_3", "mf_j_w_w1_13_n_3.png");
+		lookupTable.put("J_W1_13-N_3", "j_w_w1_13_n_3");
+		lookupTable.put("N_W1_13-N_3", "j_w_w1_13_n_3");
+		lookupTable.put("J_W1_21-N_3", "j_w_w1_13_n_3");
+		lookupTable.put("N_W1_21-N_3", "j_w_w1_13_n_3");
 
-		lookupTable.put("J_W1_14", "mf_j_w1_14.png");
-		lookupTable.put("J_W1_20", "mf_j_w1_14.png");
+		lookupTable.put("J_W1_14", "j_w1_14");
+		lookupTable.put("J_W1_20", "j_w1_14");
 
-		lookupTable.put("N_W1_14", "mf_n_w1_14.png");
-		lookupTable.put("N_W1_20", "mf_n_w1_14.png");
+		lookupTable.put("N_W1_14", "n_w1_14");
+		lookupTable.put("N_W1_20", "n_w1_14");
 
-		lookupTable.put("J_W1_20-N_3", "mf_j_w1_14_n_3.png");
-		lookupTable.put("N_W1_20-N_3", "mf_j_w1_14_n_3.png");
-		lookupTable.put("N_W1_14-N_3", "mf_j_w1_14_n_3.png");
-		lookupTable.put("J_W1_14-N_3", "mf_j_w1_14_n_3.png");
+		lookupTable.put("J_W1_20-N_3", "j_w1_14_n_3");
+		lookupTable.put("N_W1_20-N_3", "j_w1_14_n_3");
+		lookupTable.put("N_W1_14-N_3", "j_w1_14_n_3");
+		lookupTable.put("J_W1_14-N_3", "j_w1_14_n_3");
 
-		lookupTable.put("J_W1_15", "mf_j_w2_10.png");
-		lookupTable.put("J_W1_22", "mf_j_w2_10.png");
-		lookupTable.put("J_W2_10", "mf_j_w2_10.png");
-		lookupTable.put("J_W2_15", "mf_j_w2_10.png");
-		lookupTable.put("J_W2_19", "mf_j_w2_10.png");
+		lookupTable.put("J_W1_15", "j_w2_10");
+		lookupTable.put("J_W1_22", "j_w2_10");
+		lookupTable.put("J_W2_10", "j_w2_10");
+		lookupTable.put("J_W2_15", "j_w2_10");
+		lookupTable.put("J_W2_19", "j_w2_10");
 
-		lookupTable.put("N_W1_15", "mf_n_w1_15.png");
-		lookupTable.put("N_W1_22", "mf_n_w1_15.png");
-		lookupTable.put("N_W2_10", "mf_n_w1_15.png");
-		lookupTable.put("N_W2_15", "mf_n_w1_15.png");
-		lookupTable.put("N_W2_19", "mf_n_w1_15.png");
+		lookupTable.put("N_W1_15", "n_w1_15");
+		lookupTable.put("N_W1_22", "n_w1_15");
+		lookupTable.put("N_W2_10", "n_w1_15");
+		lookupTable.put("N_W2_15", "n_w1_15");
+		lookupTable.put("N_W2_19", "n_w1_15");
 
-		lookupTable.put("J_W1_22-N_3", "mf_j_w1_16_n_3.png");
-		lookupTable.put("N_W1_22-N_3", "mf_j_w1_16_n_3.png");
-		lookupTable.put("J_W1_15-N_3", "mf_j_w1_16_n_3.png");
-		lookupTable.put("N_W1_15-N_3", "mf_j_w1_16_n_3.png");
-		lookupTable.put("W1_16", "mf_j_w1_16_n_3.png");
-		lookupTable.put("J_W1_16-N", "mf_j_w1_16_n_3.png");
-		lookupTable.put("N_W1_16-N", "mf_j_w1_16_n_3.png");
+		lookupTable.put("J_W1_22-N_3", "j_w1_16_n_3");
+		lookupTable.put("N_W1_22-N_3", "j_w1_16_n_3");
+		lookupTable.put("J_W1_15-N_3", "j_w1_16_n_3");
+		lookupTable.put("N_W1_15-N_3", "j_w1_16_n_3");
+		lookupTable.put("W1_16", "j_w1_16_n_3");
+		lookupTable.put("J_W1_16-N", "j_w1_16_n_3");
+		lookupTable.put("N_W1_16-N", "j_w1_16_n_3");
 
-		lookupTable.put("J_W1_17-N", "mf_n_w2_11.png");
-		lookupTable.put("N_W1_17-N", "mf_n_w2_11.png");
-		lookupTable.put("N_W2_11", "mf_n_w2_11.png");
-		lookupTable.put("J_W2_11", "mf_n_w2_11.png");
+		lookupTable.put("J_W1_17-N", "n_w2_11");
+		lookupTable.put("N_W1_17-N", "n_w2_11");
+		lookupTable.put("N_W2_11", "n_w2_11");
+		lookupTable.put("J_W2_11", "n_w2_11");
 
-		lookupTable.put("J_W1_23-N", "mf_j_w1_29-n.png");
-		lookupTable.put("J_W1_28-N", "mf_j_w1_29-n.png");
-		lookupTable.put("J_W1_29-N", "mf_j_w1_29-n.png");
+		lookupTable.put("J_W1_23-N", "j_w1_29-n");
+		lookupTable.put("J_W1_28-N", "j_w1_29-n");
+		lookupTable.put("J_W1_29-N", "j_w1_29-n");
 
-		lookupTable.put("N_W1_23-N", "mf_n_w1_28_n.png");
-		lookupTable.put("N_W1_28-N", "mf_n_w1_28_n.png");
-		lookupTable.put("N_W1_29-N", "mf_n_w1_28_n.png");
+		lookupTable.put("N_W1_23-N", "n_w1_28_n");
+		lookupTable.put("N_W1_28-N", "n_w1_28_n");
+		lookupTable.put("N_W1_29-N", "n_w1_28_n");
 
-		lookupTable.put("J_W1_23-N_3", "mf_n_w1_23_n_3.png");
-		lookupTable.put("N_W1_23-N_3", "mf_n_w1_23_n_3.png");
-		lookupTable.put("J_W1_28-N_3", "mf_n_w1_23_n_3.png");
-		lookupTable.put("N_W1_28-N_3", "mf_n_w1_23_n_3.png");
-		lookupTable.put("J_W1_29-N_3", "mf_n_w1_23_n_3.png");
-		lookupTable.put("N_W1_29-N_3", "mf_n_w1_23_n_3.png");
+		lookupTable.put("J_W1_23-N_3", "n_w1_23_n_3");
+		lookupTable.put("N_W1_23-N_3", "n_w1_23_n_3");
+		lookupTable.put("J_W1_28-N_3", "n_w1_23_n_3");
+		lookupTable.put("N_W1_28-N_3", "n_w1_23_n_3");
+		lookupTable.put("J_W1_29-N_3", "n_w1_23_n_3");
+		lookupTable.put("N_W1_29-N_3", "n_w1_23_n_3");
 
-		lookupTable.put("J_W1_24-N", "mf_j_w2_18.png");
-		lookupTable.put("J_W1_26-N", "mf_j_w2_18.png");
-		lookupTable.put("J_W1_31-N", "mf_j_w2_18.png");
-		lookupTable.put("J_W2_18", "mf_j_w2_18.png");
+		lookupTable.put("J_W1_24-N", "j_w2_18");
+		lookupTable.put("J_W1_26-N", "j_w2_18");
+		lookupTable.put("J_W1_31-N", "j_w2_18");
+		lookupTable.put("J_W2_18", "j_w2_18");
 
-		lookupTable.put("N_W1_24-N", "mf_n_w2_18.png");
-		lookupTable.put("N_W1_26-N", "mf_n_w2_18.png");
-		lookupTable.put("N_W1_31-N", "mf_n_w2_18.png");
-		lookupTable.put("N_W2_18", "mf_n_w2_18.png");
+		lookupTable.put("N_W1_24-N", "n_w2_18");
+		lookupTable.put("N_W1_26-N", "n_w2_18");
+		lookupTable.put("N_W1_31-N", "n_w2_18");
+		lookupTable.put("N_W2_18", "n_w2_18");
 
-		lookupTable.put("J_W1_24-N_3", "mf_j_w1_24_n_3.png");
-		lookupTable.put("J_W1_31-N_3", "mf_j_w1_24_n_3.png");
-		lookupTable.put("J_W1_26-N_3", "mf_j_w1_24_n_3.png");
-		lookupTable.put("N_W1_26-N_3", "mf_j_w1_24_n_3.png");
-		lookupTable.put("N_W1_24-N_3", "mf_j_w1_24_n_3.png");
-		lookupTable.put("N_W1_31-N_3", "mf_j_w1_24_n_3.png");
+		lookupTable.put("J_W1_24-N_3", "j_w1_24_n_3");
+		lookupTable.put("J_W1_31-N_3", "j_w1_24_n_3");
+		lookupTable.put("J_W1_26-N_3", "j_w1_24_n_3");
+		lookupTable.put("N_W1_26-N_3", "j_w1_24_n_3");
+		lookupTable.put("N_W1_24-N_3", "j_w1_24_n_3");
+		lookupTable.put("N_W1_31-N_3", "j_w1_24_n_3");
 
-		lookupTable.put("J_W1_25-N", "mf_j_w1_27_n.png");
-		lookupTable.put("J_W1_27-N", "mf_j_w1_27_n.png");
+		lookupTable.put("J_W1_25-N", "j_w1_27_n");
+		lookupTable.put("J_W1_27-N", "j_w1_27_n");
 
-		lookupTable.put("N_W1_25-N", "mf_n_w1_27_n.png");
-		lookupTable.put("N_W1_27-N", "mf_n_w1_27_n.png");
+		lookupTable.put("N_W1_25-N", "n_w1_27_n");
+		lookupTable.put("N_W1_27-N", "n_w1_27_n");
 
-		lookupTable.put("J_W1_25-N_3", "mf_n_w1_27_n_3.png");
-		lookupTable.put("N_W1_25-N_3", "mf_n_w1_27_n_3.png");
-		lookupTable.put("J_W1_27-N_3", "mf_n_w1_27_n_3.png");
-		lookupTable.put("N_W1_27-N_3", "mf_n_w1_27_n_3.png");
+		lookupTable.put("J_W1_25-N_3", "n_w1_27_n_3");
+		lookupTable.put("N_W1_25-N_3", "n_w1_27_n_3");
+		lookupTable.put("J_W1_27-N_3", "n_w1_27_n_3");
+		lookupTable.put("N_W1_27-N_3", "n_w1_27_n_3");
 
-		lookupTable.put("J_W1_32-N_2", "mf_j_w1_32_n_2.png");
+		lookupTable.put("J_W1_32-N_2", "j_w1_32_n_2");
 	}
 
 	private void publish(File f)
