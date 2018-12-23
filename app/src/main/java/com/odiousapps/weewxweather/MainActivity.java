@@ -761,7 +761,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				if(fctype.equals("weather.gov") && !common.checkForImages() && !use_icons.isChecked())
 				{
-					common.SetStringPref("lastError", "forecast type " + fctype + " needs to have icons available, Please switch to using icons and try again.");
+					common.SetStringPref("lastError", "Forecast type '" + fctype + "' needs to have icons available, Please switch to using icons and try again.");
 					handlerForecastIcons.sendEmptyMessage(0);
 					return;
 				}

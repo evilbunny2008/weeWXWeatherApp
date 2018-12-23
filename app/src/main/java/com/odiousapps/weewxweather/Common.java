@@ -975,6 +975,7 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
 		String tmp;
 		StringBuilder out = new StringBuilder();
 		String desc;
@@ -1078,12 +1079,15 @@ class Common
 						e.printStackTrace();
 					}
 
-					BitmapFactory.Options options = new BitmapFactory.Options();
-					options.inJustDecodeBounds = false;
+					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "");
 
-					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "\\.png");
-
-					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + fileName + "'></td>";
+					if(!use_icons)
+					{
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weather-gc-ca-" + fileName + "'></i></td>";
+					} else {
+						fileName = checkImage("wca" + fileName + ".png", null);
+						tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					}
 					out.append(tmp);
 
 					tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
@@ -1129,6 +1133,7 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
 		String tmp;
 		StringBuilder out = new StringBuilder();
 		String desc;
@@ -1222,9 +1227,16 @@ class Common
 					BitmapFactory.Options options = new BitmapFactory.Options();
 					options.inJustDecodeBounds = false;
 
-					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "\\.png");
+					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "");
 
-					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + fileName + "'></td>";
+					if(!use_icons)
+					{
+						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weather-gc-ca-" + fileName + "'></i></td>";
+					} else {
+						fileName = checkImage("wca" + fileName + ".png", null);
+						tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					}
+					LogMessage(tmp);
 					out.append(tmp);
 
 					tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
