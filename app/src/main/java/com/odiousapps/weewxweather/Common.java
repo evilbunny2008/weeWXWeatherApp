@@ -769,8 +769,8 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
-		String tmp;
-		StringBuilder out = new StringBuilder();
+		String pubDate;
+		List<Day> days = new ArrayList<>();
 
 		try
 		{
@@ -795,7 +795,7 @@ class Common
 			//String DOW = obs.substring(i, j);
 			i = j + 1;
 			j = obs.indexOf(" ", i);
-			String day = obs.substring(i, j);
+			String date = obs.substring(i, j);
 			i = j + 1;
 			j = obs.indexOf(" ", i);
 			String month = obs.substring(i, j);
@@ -803,151 +803,100 @@ class Common
 			j = obs.length();
 			String year = obs.substring(i, j);
 
-			obs = hour + ":" + minute + " " + ampm + " " + day + " " + month + " " + year;
+			obs = hour + ":" + minute + " " + ampm + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
 			long mdate = sdf.parse(obs).getTime();
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			obs = sdf.format(mdate);
-
-			tmp = "<div style='font-size:12pt;'>" + obs + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
+			pubDate = sdf.format(mdate);
 
 			String[] bits = fcdiv.split("<dl class=\"forecast-summary\">");
 			String bit = bits[1];
-			day = bit.split("<a href=\"", 2)[1].split("\">", 2)[1].split("</a>", 2)[0].trim();
-			String icon = "http://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
-			String min = "", max = "";
+			Day day = new Day();
+
+			day.day = bit.split("<a href=\"", 2)[1].split("\">", 2)[1].split("</a>", 2)[0].trim();
+			day.icon = "http://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
 
 			if(bit.contains("<dd class=\"max\">"))
-				max = bit.split("<dd class=\"max\">")[1].split("</dd>")[0].trim();
+				day.max = bit.split("<dd class=\"max\">")[1].split("</dd>")[0].trim();
 
 			if(bit.contains("<dd class=\"min\">"))
-				min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
+				day.min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
 
 			String text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
 
-			String fileName =  icon.substring(icon.lastIndexOf('/') + 1, icon.length() - 4);
+			String fileName =  day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length() - 4);
 
 			if(!use_icons)
 			{
 				if(!fileName.equals("frost"))
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-" + fileName + "'></i></td>";
+					day.icon = "wi wi-bom-" + fileName;
 				else
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+					day.icon = "flaticon-thermometer";
 			} else {
-				fileName = "bom2" + icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("-", "_");
-				fileName = checkImage(fileName, icon);
-				tmp = "<tr><td style='width:10%;' rowspan='2'><img src='file://" + fileName + "'></td>";
+				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length()).replaceAll("-", "_");
+				fileName = checkImage(fileName, day.icon);
+				day.icon = "file://" + fileName;
 			}
-			out.append(tmp);
 
-			tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
-			out.append(tmp);
-
-			max = max.replaceAll("°C", "").trim();
-			min = min.replaceAll("°C", "").trim();
+			day.max = day.max.replaceAll("°C", "").trim();
+			day.min = day.min.replaceAll("°C", "").trim();
 
 			if(metric)
 			{
-				max = max + "&deg;C";
-				min = min + "&deg;C";
+				day.max += "&deg;C";
+				day.min = "&deg;C";
 			} else {
-				max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-				min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 			}
 
-			if(!max.equals("&deg;C"))
-				tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
-			else
-				tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
-			out.append(tmp);
-
-			tmp = "<tr><td>" + text + "</td>";
-			out.append(tmp);
-
-			if(!min.equals("&deg;C"))
-				tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
-			else
-				tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
-			out.append(tmp);
-
-			if(showHeader)
-			{
-				tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-				out.append(tmp);
-			}
+			days.add(day);
 
 			for(i = 2; i < bits.length; i++)
 			{
+				day = new Day();
 				bit = bits[i];
-				day = bit.split("<a href=\"", 2)[1].split("\">", 2)[1].split("</a>", 2)[0].trim();
-				icon = "http://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
-				max = bit.split("<dd class=\"max\">")[1].split("</dd>")[0].trim();
-				min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
-				text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
+				day.day = bit.split("<a href=\"", 2)[1].split("\">", 2)[1].split("</a>", 2)[0].trim();
+				day.icon = "http://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
+				day.max = bit.split("<dd class=\"max\">")[1].split("</dd>")[0].trim();
+				day.min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
+				day.text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
 
-				fileName =  icon.substring(icon.lastIndexOf('/') + 1, icon.length() - 4);
+				fileName = day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length() - 4);
 
 				if(!use_icons)
 				{
 					if(!fileName.equals("frost"))
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-" + fileName + "'></i></td>";
+						day.icon = "wi wi-bom-" + fileName;
 					else
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+						day.icon = "flaticon-thermometer";
 				} else {
-					fileName = "bom2" + icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("-", "_");
-					fileName = checkImage(fileName, icon);
-					tmp = "<tr><td style='width:10%;' rowspan='2'><img src='file://" + fileName + "'></td>";
+					fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length()).replaceAll("-", "_");
+					fileName = checkImage(fileName, day.icon);
+					day.icon = "file://" + fileName;
 				}
-				out.append(tmp);
 
-				tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
-				out.append(tmp);
-
-				max = max.replaceAll("°C", "").trim();
-				min = min.replaceAll("°C", "").trim();
+				day.max = day.max.replaceAll("°C", "").trim();
+				day.min = day.min.replaceAll("°C", "").trim();
 
 				if(metric)
 				{
-					max = max + "&deg;C";
-					min = min + "&deg;C";
+					day.max = day.max + "&deg;C";
+					day.min = day.min + "&deg;C";
 				} else {
-					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
-				if(!max.equals("&deg;C"))
-					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
-				else
-					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
-				out.append(tmp);
-
-				tmp = "<tr><td>" + text + "</td>";
-				out.append(tmp);
-
-				if(!min.equals("&deg;C"))
-					tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
-				else
-					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+				days.add(day);
 			}
-
-			out.append("</table>");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 
-		return new String[]{out.toString(), desc};
+		return new String[]{generateForecast(days, pubDate, showHeader), desc};
 	}
 
 	String[] processMET(String data)
@@ -955,82 +904,70 @@ class Common
 		return processMET(data, false);
 	}
 
+	@SuppressWarnings("StringConcatenationInLoop")
 	String[] processMET(String data, boolean showHeader)
 	{
 		if(data == null || data.equals(""))
 			return null;
 
-		//boolean metric = GetBoolPref("metric", true);
+		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
 		long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 		String lastupdate = sdf.format(mdate);
-
-		String tmp;
-		StringBuilder out = new StringBuilder();
 		String desc;
+		List<Day> days = new ArrayList<>();
 
 		try
 		{
 			desc = data.split("<title>", 2)[1].split(" weather - Met Office</title>",2)[0].trim();
 
-			tmp = "<div style='font-size:12pt;'>" + lastupdate + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
-
 			String[] forecasts = data.split("<ul id=\"dayNav\"", 2)[1].split("</ul>", 2)[0].split("<li");
 			for(int i = 1; i < forecasts.length; i++)
 			{
+				Day day = new Day();
 				String date = forecasts[i].split("data-tab-id=\"", 2)[1].split("\"")[0].trim();
 
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 				mdate = sdf.parse(date).getTime();
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
-				date = sdf.format(mdate);
+				day.day = sdf.format(mdate);
 
 				String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class=\"icon\"")[1].split("src=\"")[1].split("\">")[0].trim();
 				String fileName =  icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("\\.svg$", "\\.png");
-				String min = forecasts[i].split("<span class=\"tab-temp-low\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
-				String max = forecasts[i].split("<span class=\"tab-temp-high\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
-				String text = forecasts[i].split("<div class=\"summary-text", 2)[1].split("\">", 3)[2]
+				day.min = forecasts[i].split("<span class=\"tab-temp-low\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
+				day.max = forecasts[i].split("<span class=\"tab-temp-high\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
+				day.text = forecasts[i].split("<div class=\"summary-text", 2)[1].split("\">", 3)[2]
 									.split("</div>", 2)[0].replaceAll("</span>", "").replaceAll("<span>", "");
+
+				day.min = day.min.substring(0, day.min.length() - 5);
+				day.max = day.max.substring(0, day.max.length() - 5);
 
 				if(!use_icons)
 				{
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-metoffice-" + fileName.substring(0, fileName.lastIndexOf(".")) + "'></i></td>";
+					day.icon = "wi wi-metoffice-" + fileName.substring(0, fileName.lastIndexOf("."));
 				} else {
 					fileName = checkImage("met" + fileName, null);
-					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					day.icon = "file://" + fileName;
 				}
-				out.append(tmp);
 
-				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
-				out.append(tmp);
-
-				tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
-				out.append(tmp);
-
-				tmp = "<tr><td style='width:80%;'>" + text + "</td>";
-				out.append(tmp);
-
-				tmp = "<td style='text-align:right;vertical-align:top;'>" + min + "</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
+				if(metric)
 				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
+					day.max += "&deg;C";
+					day.min += "&deg;C";
+				} else {
+					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
-			}
 
-			out.append("</table>");
+				days.add(day);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 
-		return new String[]{out.toString(), desc};
+		return new String[]{generateForecast(days, lastupdate, showHeader), desc};
 	}
 
 	String[] processWCA(String data)
@@ -1324,12 +1261,6 @@ class Common
 					else
 						tmp = "<td style='text-align:right;'>" + pop + "</td></tr>";
 					out.append(tmp);
-
-					if(showHeader)
-					{
-						tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-						out.append(tmp);
-					}
 				}
 			}
 
@@ -1611,6 +1542,7 @@ class Common
 		return processBOM(data, false);
 	}
 
+	@SuppressWarnings("StringConcatenationInLoop")
 	String[] processBOM(String data, boolean showHeader)
 	{
 		if(data == null || data.equals(""))
@@ -1619,7 +1551,8 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
-		StringBuilder out = new StringBuilder();
+		String ftime;
+		List<Day> days = new ArrayList<>();
 
 		try
 		{
@@ -1630,26 +1563,20 @@ class Common
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 			long mdate = sdf.parse(tmp).getTime();
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			String date = sdf.format(mdate);
-
-			tmp = "<div style='font-size:12pt;'>" + date + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
+			ftime = sdf.format(mdate);
 
 			JSONArray jarr = jobj.getJSONArray("forecast-period");
 			for(int i = 0; i < jarr.length(); i++)
 			{
-				String text = "";
+				Day day = new Day();
 				String code = "";
-				String min = "";
-				String max = "";
+
 				JSONObject j = jarr.getJSONObject(i);
 				for(int x = 0; x < j.getJSONArray("text").length(); x++)
 				{
 					if(j.getJSONArray("text").getJSONObject(x).getString("type").equals("precis"))
 					{
-						text = j.getJSONArray("text").getJSONObject(x).getString("content");
+						day.text = j.getJSONArray("text").getJSONObject(x).getString("content");
 						break;
 					}
 				}
@@ -1663,74 +1590,52 @@ class Common
 							code = jarr2.getJSONObject(x).getString("content");
 
 						if (jarr2.getJSONObject(x).getString("type").equals("air_temperature_minimum"))
-							min = jarr2.getJSONObject(x).getString("content");
+							day.min = jarr2.getJSONObject(x).getString("content");
 
 						if (jarr2.getJSONObject(x).getString("type").equals("air_temperature_maximum"))
-							max = jarr2.getJSONObject(x).getString("content");
+							day.max = jarr2.getJSONObject(x).getString("content");
 					}
 				} catch (JSONException e) {
 					code = j.getJSONObject("element").getString("content");
 				}
 
-				date = j.getString("start-time-local").trim();
+				String date = j.getString("start-time-local").trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 				mdate = sdf.parse(date).getTime();
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
-				date = sdf.format(mdate);
+				day.day = sdf.format(mdate);
 
 				if(!use_icons)
 				{
 					if(!code.equals("14"))
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-bom-ftp-" + code + "'></i></td>";
+						day.icon = "wi wi-bom-ftp-" + code;
 					else
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+						day.icon = "flaticon-thermometer";
 				} else {
 					String fileName = checkImage("bom" + code + ".png", null);
-					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					day.icon = "file://" + fileName;
 				}
-				out.append(tmp);
-
-				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
-				out.append(tmp);
 
 				if(metric)
 				{
-					max = max + "&deg;C";
-					min = min + "&deg;C";
+					day.max += "&deg;C";
+					day.min += "&deg;C";
 				} else {
-					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
-				if(!max.equals("&deg;C"))
-					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
-				else
-					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
-				out.append(tmp);
+				if(day.max.equals("&deg;C") || day.max.equals("&deg;F"))
+					day.max = "N/A";
 
-				tmp = "<tr><td>" + text + "</td>";
-				out.append(tmp);
-
-				if(!min.equals("&deg;C"))
-					tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
-				else
-					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+				days.add(day);
 			}
-
-			out.append("</table>");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 
-		return new String[]{out.toString(), desc};
+		return new String[]{generateForecast(days, ftime, showHeader), desc};
 	}
 
 	String[] processMetService(String data)
@@ -1738,6 +1643,7 @@ class Common
 		return processMetService(data, false);
 	}
 
+	@SuppressWarnings("StringConcatenationInLoop")
 	String[] processMetService(String data, boolean showHeader)
 	{
 		if (data == null || data.equals(""))
@@ -1745,15 +1651,14 @@ class Common
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
-		StringBuilder out = new StringBuilder();
-		String tmp;
+		List<Day> days = new ArrayList<>();
 		String desc;
 
 		try
 		{
 			JSONObject jobj = new JSONObject(data);
-			JSONArray days = jobj.getJSONArray("days");
-			String ftime = days.getJSONObject(0).getString("issuedAtISO");
+			JSONArray loop = jobj.getJSONArray("days");
+			String ftime = loop.getJSONObject(0).getString("issuedAtISO");
 			desc = jobj.getString("locationECWasp") + ", New Zealand";
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
@@ -1761,75 +1666,46 @@ class Common
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 			ftime = sdf.format(mdate);
 
-			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
-
-			for(int i = 0; i < days.length(); i++)
+			for(int i = 0; i < loop.length(); i++)
 			{
-				JSONObject jtmp = days.getJSONObject(i);
-				String dow = jtmp.getString("dow");
-				String text = jtmp.getString("forecast");
-				String max = jtmp.getString("max");
-				String min = jtmp.getString("min");
-				String icon;
+				Day day = new Day();
+				JSONObject jtmp = loop.getJSONObject(i);
+				day.day = jtmp.getString("dow");
+				day.text = jtmp.getString("forecast");
+				day.max = jtmp.getString("max");
+				day.min = jtmp.getString("min");
 				if(jtmp.has("partDayData"))
-					icon = jtmp.getJSONObject("partDayData").getJSONObject("afternoon").getString("forecastWord");
+					day.icon = jtmp.getJSONObject("partDayData").getJSONObject("afternoon").getString("forecastWord");
 				else
-					icon = jtmp.getString("forecastWord");
+					day.icon = jtmp.getString("forecastWord");
 
-				icon = icon.toLowerCase().replaceAll(" ", "-").trim();
+				day.icon = day.icon.toLowerCase().replaceAll(" ", "-").trim();
 
 				if(!use_icons)
 				{
-					if(!icon.equals("frost"))
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-metservice-" + icon + "'></i></td>";
+					if(!day.icon.equals("frost"))
+						day.icon = "wi wi-metservice-" + day.icon;
 					else
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+						day.icon = "flaticon-thermometer";
 				} else {
-					icon = icon.replaceAll("-", "_");
-					String fileName = checkImage("ms_" + icon + ".png", null);
-					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					day.icon = day.icon.replaceAll("-", "_");
+					String fileName = checkImage("ms_" + day.icon + ".png", null);
+					day.icon = "file://" + fileName;
 				}
-				out.append(tmp);
-
-				tmp = "<td style='width:80%;'><b>" + dow + "</b></td>";
-				out.append(tmp);
 
 				if(metric)
 				{
-					max = max + "&deg;C";
-					min = min + "&deg;C";
+					day.max += "&deg;C";
+					day.min += "&deg;C";
 				} else {
-					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
-				if(!max.equals("&deg;C"))
-					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
-				else
-					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
-				out.append(tmp);
-
-				tmp = "<tr><td>" + text + "</td>";
-				out.append(tmp);
-
-				if(!min.equals("&deg;C"))
-					tmp = "<td style='text-align:right;vertical-align:top;'>" + min + "</td></tr>";
-				else
-					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+				days.add(day);
 			}
 
-			out.append("</table>");
-			return new String[]{out.toString(), desc};
+			return new String[]{generateForecast(days, ftime, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -1849,8 +1725,7 @@ class Common
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
-		StringBuilder out = new StringBuilder();
-		String tmp;
+		List<Day> days = new ArrayList<>();
 		String desc = "";
 
 		try
@@ -1868,22 +1743,17 @@ class Common
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 			ftime = sdf.format(mdate);
 
-			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
-
 			data = data.split("<td width=\"40%\" class=\"statwert\">Vorhersage</td>", 2)[1].split("</table>", 2)[0].trim();
-
 			bits = data.split("<tr");
 			for(int i = 1; i < bits.length; i++)
 			{
+				Day day = new Day();
 				String bit = bits[i];
-				String day, icon, temp;
+				String d, icon, temp;
 				if(bit.split("<td ><b>", 2).length > 1)
-					day = bit.split("<td ><b>", 2)[1].split("</b></td>", 2)[0].trim();
+					d = bit.split("<td ><b>", 2)[1].split("</b></td>", 2)[0].trim();
 				else
-					day = bit.split("<td><b>", 2)[1].split("</b></td>", 2)[0].trim();
+					d = bit.split("<td><b>", 2)[1].split("</b></td>", 2)[0].trim();
 
 				if(bit.split("<td ><img name=\"piktogramm\" src=\"", 2).length > 1)
 					icon = bit.split("<td ><img name=\"piktogramm\" src=\"", 2)[1].split("\" width=\"50\" alt=\"",2)[0].trim();
@@ -1905,43 +1775,23 @@ class Common
 					icon = icon.replaceAll("_", "-");
 					icon = icon.substring(0, icon.lastIndexOf("."));
 					if(!icon.equals("pic-48") && !icon.equals("pic-66") && !icon.equals("pic67"))
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-dwd-" + icon + "'></i></td>";
+						day.icon = "wi wi-dwd-" + icon;
 					else
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+						day.icon = "flaticon-thermometer";
 				} else {
-					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					day.icon = "file://" + fileName;
 				}
-				out.append(tmp);
 
-				tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
-				out.append(tmp);
-
+				day.day = d;
+				day.min = "&deg;C";
 				if(metric)
-					temp = temp + "&deg;C";
+					day.max = temp + "&deg;C";
 				else
-					temp = round((Double.parseDouble(temp) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = round((Double.parseDouble(temp) * 9.0 / 5.0) + 32.0) + "&deg;F";
 
-				if(!temp.equals("&deg;C"))
-					tmp = "<td style='width:10%;text-align:right;'><b>" + temp + "</b></td></tr>";
-				else
-					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
-				out.append(tmp);
-
-				tmp = "<tr><td>&nbsp;</td>";
-				out.append(tmp);
-
-				tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+				days.add(day);
 			}
-
-			out.append("</table>");
-			return new String[]{out.toString(), desc};
+			return new String[]{generateForecast(days, ftime, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -2,11 +2,11 @@ package com.odiousapps.weewxweather;
 
 class Day
 {
-	String day;
-	String icon;
-	String max;
-	String text;
-	String min;
+	String day = "";
+	String icon = "";
+	String text = "";
+	String max = "";
+	String min = "";
 
 	public String toString()
 	{
