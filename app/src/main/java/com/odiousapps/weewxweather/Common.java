@@ -409,8 +409,7 @@ class Common
 				{
 					max += "&deg;C";
 					min += "&deg;C";
-				} else
-				{
+				} else {
 					max += "&deg;F";
 					min += "&deg;F";
 				}
@@ -747,7 +746,6 @@ class Common
 				days.add(thisDay);
 			}
 
-			//writeFile("days.txt", days.toString());
 			return new String[]{generateForecast(days, ftime, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -823,7 +821,7 @@ class Common
 			if(bit.contains("<dd class=\"min\">"))
 				day.min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
 
-			String text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
+				day.text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
 
 			String fileName =  day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length() - 4);
 
@@ -982,13 +980,13 @@ class Common
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
-		String tmp;
-		StringBuilder out = new StringBuilder();
+		String obs;
 		String desc;
+		List<Day> days = new ArrayList<>();
 
 		try
 		{
-			String obs = data.split("Forecast issued: ", 2)[1].trim();
+			obs = data.split("Forecast issued: ", 2)[1].trim();
 			obs = obs.split("</span>", 2)[0].trim();
 
 			int i = 0, j = obs.indexOf(":");
@@ -1007,7 +1005,7 @@ class Common
 			//String DOW = obs.substring(i, j);
 			i = j + 1;
 			j = obs.indexOf(" ", i);
-			String day = obs.substring(i, j);
+			String date = obs.substring(i, j);
 			i = j + 1;
 			j = obs.indexOf(" ", i);
 			String month = obs.substring(i, j);
@@ -1015,17 +1013,12 @@ class Common
 			j = obs.length();
 			String year = obs.substring(i, j);
 
-			obs = hour + ":" + minute + " " + ampm + " " + day + " " + month + " " + year;
+			obs = hour + ":" + minute + " " + ampm + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
 			long mdate = sdf.parse(obs).getTime();
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 			obs = sdf.format(mdate);
-
-			tmp = "<div style='font-size:12pt;'>" + obs + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
 
 			desc = data.split("<dt>Observed at:</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
 
@@ -1041,7 +1034,8 @@ class Common
 				Elements div = doc.select("div");
 				for (j = 0; j < div.size(); j++)
 				{
-					String date, text = "", img_url = "", temp = "", pop = "";
+					String text = "", img_url = "", temp = "", pop = "";
+					Day day = new Day();
 
 					if (div.get(j).className().contains("greybkgrd"))
 					{
@@ -1089,46 +1083,29 @@ class Common
 
 					if(!use_icons)
 					{
-						if(fileName.equals("26"))
-							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weather-gc-ca-" + fileName + "'></i></td>";
+						if(!fileName.equals("26"))
+							day.icon = "wi wi-weather-gc-ca-" + fileName;
 						else
-							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+							day.icon = "flaticon-thermometer";
 					} else {
 						fileName = checkImage("wca" + fileName + ".png", null);
-						tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+						day.icon = "file://" + fileName;
 					}
-					out.append(tmp);
 
-					tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
-					out.append(tmp);
+					day.day = date;
+					day.max = temp;
+					day.text = text;
+					day.min = pop;
 
-					tmp = "<td style='width:10%;text-align:right;'><b>" + temp + "</b></td></tr>";
-					out.append(tmp);
-
-					tmp = "<tr><td style='width:80%;'>" + text + "</td>";
-					out.append(tmp);
-
-					if(pop.equals(""))
-						tmp = "<td>&nbsp;</td></tr>";
-					else
-						tmp = "<td style='text-align:right;'>" + pop + "</td></tr>";
-					out.append(tmp);
-
-					if(showHeader)
-					{
-						tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-						out.append(tmp);
-					}
+					days.add(day);
 				}
 			}
-
-			out.append("</table>");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 
-		return new String[]{out.toString(), desc};
+		return new String[]{generateForecast(days, obs, showHeader), desc};
 	}
 
 	String[] processWCAF(String data)
@@ -1143,13 +1120,13 @@ class Common
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
-		String tmp;
-		StringBuilder out = new StringBuilder();
 		String desc;
+		List<Day> days = new ArrayList<>();
+		String obs;
 
 		try
 		{
-			String obs = data.split("Prévisions émises à : ", 2)[1].trim();
+			obs = data.split("Prévisions émises à : ", 2)[1].trim();
 			obs = obs.split("</span>", 2)[0].trim();
 
 			int i = 0, j = obs.indexOf("h");
@@ -1159,21 +1136,16 @@ class Common
 			String minute = obs.substring(i, j);
 
 			String[] bits = obs.split(" ");
-			String day = bits[bits.length - 3];
+			String date = bits[bits.length - 3];
 			String month = bits[bits.length - 2];
 			String year = bits[bits.length - 1];
 
-			obs = hour + ":" + minute + " " + day + " " + month + " " + year;
+			obs = hour + ":" + minute + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm d MMMM yyyy", Locale.CANADA_FRENCH);
 			long mdate = sdf.parse(obs).getTime();
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.CANADA_FRENCH);
 			obs = sdf.format(mdate);
-
-			tmp = "<div style='font-size:12pt;'>" + obs + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
 
 			desc = data.split("<dt>Enregistrées à :</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
 
@@ -1189,7 +1161,8 @@ class Common
 				Elements div = doc.select("div");
 				for (j = 0; j < div.size(); j++)
 				{
-					String date, text = "", img_url = "", temp = "", pop = "";
+					Day day = new Day();
+					String text = "", img_url = "", temp = "", pop = "";
 
 					if (div.get(j).className().contains("greybkgrd"))
 					{
@@ -1237,40 +1210,29 @@ class Common
 
 					if(!use_icons)
 					{
-						if(fileName.equals("26"))
-							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weather-gc-ca-" + fileName + "'></i></td>";
+						if(!fileName.equals("26"))
+							day.icon = "wi wi-weather-gc-ca-" + fileName;
 						else
-							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+							day.icon = "flaticon-thermometer";
 					} else {
 						fileName = checkImage("wca" + fileName + ".png", null);
-						tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+						day.icon = "file://" + fileName;
 					}
-					out.append(tmp);
 
-					tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
-					out.append(tmp);
-
-					tmp = "<td style='width:10%;text-align:right;'><b>" + temp + "</b></td></tr>";
-					out.append(tmp);
-
-					tmp = "<tr><td style='width:80%;'>" + text + "</td>";
-					out.append(tmp);
-
-					if(pop.equals(""))
-						tmp = "<td>&nbsp;</td></tr>";
-					else
-						tmp = "<td style='text-align:right;'>" + pop + "</td></tr>";
-					out.append(tmp);
+					day.day = date;
+					day.max = temp;
+					day.text = text;
+					day.min = pop;
+					days.add(day);
 				}
 			}
 
-			out.append("</table>");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 
-		return new String[]{out.toString(), desc};
+		return new String[]{generateForecast(days, obs, showHeader), desc};
 	}
 
 	// Thanks goes to the https://saratoga-weather.org folk for the base NOAA icons and code for dualimage.php
@@ -1445,10 +1407,10 @@ class Common
 		if(data == null || data.equals(""))
 			return null;
 
-		String desc;
-		StringBuilder out = new StringBuilder();
 		boolean metric = GetBoolPref("metric", true);
-
+		String desc;
+		String pubDate;
+		List<Day> days = new ArrayList<>();
 		try
 		{
 			JSONObject jobj = new JSONObject(data);
@@ -1459,82 +1421,54 @@ class Common
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
 			long mdate = sdf.parse(tmp).getTime();
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			String date = sdf.format(mdate);
-
-			tmp = "<div style='font-size:12pt;'>" + date + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
+			pubDate = sdf.format(mdate);
 
 			JSONArray jarr = jobj.getJSONObject("city").getJSONObject("forecast").getJSONArray("forecastDay");
 			for(int i = 0; i < jarr.length(); i++)
 			{
+				Day day = new Day();
 				JSONObject j = jarr.getJSONObject(i);
 
-				date = j.getString("forecastDate").trim();
+				String date = j.getString("forecastDate").trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 				mdate = sdf.parse(date).getTime();
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				date = sdf.format(mdate);
 
-				String text = j.getString("weather");
-				String max = j.getString("maxTemp") + "&deg;C";
-				String min = j.getString("minTemp") + "&deg;C";
+				day.text = j.getString("weather");
+				day.max = j.getString("maxTemp") + "&deg;C";
+				day.min = j.getString("minTemp") + "&deg;C";
 				if(!metric)
 				{
-					max = j.getString("maxTempF") + "&deg;F";
-					min = j.getString("minTempF") + "&deg;F";
+					day.max = j.getString("maxTempF") + "&deg;F";
+					day.min = j.getString("minTempF") + "&deg;F";
 				}
 
 				String code = j.getString("weatherIcon");
 				code = code.substring(0, code.length() - 2);
 
 				if((Integer.parseInt(code) >= 1 && Integer.parseInt(code) <= 27) || code.equals("31") || code.equals("35"))
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-wmo-" + code + "'></i></td>";
+					day.icon = "wi wi-wmo-" + code;
 				else if(code.equals("28"))
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-cactus'></i></td>";
+					day.icon = "flaticon-cactus";
 				else if(code.equals("29") || code.equals("30"))
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+					day.icon = "flaticon-thermometer";
 				else if(code.equals("32"))
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-cold'></i></td>";
+					day.icon = "flaticon-cold";
 				else if(code.equals("33"))
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-warm'></i></td>";
+					day.icon = "flaticon-warm";
 				else if(code.equals("34"))
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-cool'></i></td>";
-				out.append(tmp);
+					day.icon = "flaticon-cool";
 
-				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
-				out.append(tmp);
-
-				if(!max.equals(""))
-					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
-				else
-					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
-				out.append(tmp);
-
-				tmp = "<tr><td>" + text + "</td>";
-				out.append(tmp);
-
-				if(!min.equals(""))
-					tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
-				else
-					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+				day.day = date;
+				days.add(day);
 			}
-
-			out.append("</table>");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 
-		return new String[]{out.toString(), desc};
+		return new String[]{generateForecast(days, pubDate, showHeader), desc};
 	}
 
 	String[] processBOM(String data)
@@ -1804,6 +1738,7 @@ class Common
 		return processAEMET(data, false);
 	}
 
+	@SuppressWarnings("StringConcatenationInLoop")
 	String[] processAEMET(String data, boolean showHeader)
 	{
 		if (data == null || data.equals(""))
@@ -1811,9 +1746,9 @@ class Common
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
-		StringBuilder out = new StringBuilder();
-		String tmp;
+		List<Day> days = new ArrayList<>();
 		String desc;
+		String elaborado;
 
 		try
 		{
@@ -1824,26 +1759,22 @@ class Common
 			jobj = jobj.getJSONObject("root");
 			desc = jobj.getString("nombre") + ", " + jobj.getString("provincia");
 
-			String elaborado = jobj.getString("elaborado");
+			elaborado = jobj.getString("elaborado");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
 			long mdate = sdf.parse(elaborado).getTime();
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 			elaborado = sdf.format(mdate);
 
-			tmp = "<div style='font-size:12pt;'>" + elaborado + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
-
-			JSONArray days = jobj.getJSONObject("prediccion").getJSONArray("dia");
-			for(int i = 0; i < days.length(); i++)
+			JSONArray dates = jobj.getJSONObject("prediccion").getJSONArray("dia");
+			for(int i = 0; i < dates.length(); i++)
 			{
-				JSONObject jtmp = days.getJSONObject(i);
+				Day day = new Day();
+				JSONObject jtmp = dates.getJSONObject(i);
 				String fecha = jtmp.getString("fecha");
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 				mdate = sdf.parse(fecha).getTime();
-				sdf = new SimpleDateFormat("EEEE", new Locale("es", "ES"));
+				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				fecha = sdf.format(mdate);
 
 				JSONObject estado_cielo = null;
@@ -1873,55 +1804,33 @@ class Common
 				if(!use_icons)
 				{
 					if(!code.startsWith("7"))
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-aemet-" + code + "'></i></td>";
+						day.icon = "wi wi-aemet-" + code;
 					else
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+						day.icon = "flaticon-thermometer";
 				} else {
 					String url = "http://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
 					String fileName = "aemet_" + code + "_g.png";
 					fileName = checkImage(fileName, url);
-					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					day.icon = "file://" + fileName;
 				}
-				out.append(tmp);
 
-				tmp = "<td style='width:80%;'><b>" + fecha + "</b></td>";
-				out.append(tmp);
-
-				String max = temperatura.getString("maxima");
-				String min = temperatura.getString("minima");
+				day.day = fecha;
+				day.max = temperatura.getString("maxima");
+				day.min = temperatura.getString("minima");
 				if(metric)
 				{
-					max = max + "&deg;C";
-					min = min + "&deg;C";
+					day.max += "&deg;C";
+					day.min += "&deg;C";
 				} else {
-					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
-				if(!max.equals("&deg;C"))
-					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
-				else
-					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
-				out.append(tmp);
-
-				tmp = "<tr><td>" + estado_cielo.getString("descripcion") + "</td>";
-				out.append(tmp);
-
-				if(!min.equals("&deg;C"))
-					tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
-				else
-					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+				day.text = estado_cielo.getString("descripcion");
+				days.add(day);
 			}
 
-			out.append("</table>");
-			return new String[]{out.toString(), desc};
+			return new String[]{generateForecast(days, elaborado, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -1939,9 +1848,9 @@ class Common
 		if (data == null || data.equals(""))
 			return null;
 
-		StringBuilder out = new StringBuilder();
-		String tmp;
+		List<Day> days = new ArrayList<>();
 		String desc;
+		String pubDate;
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
@@ -1958,36 +1867,32 @@ class Common
 
 			long mdate = jobj.getJSONObject("location").getLong("localtime_epoch") * 1000;
 			SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			String date = sdf.format(mdate);
-
-			tmp = "<div style='font-size:12pt;'>" + date + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
+			pubDate = sdf.format(mdate);
 
 			desc = jobj.getJSONObject("location").getString("name") + ", " + jobj.getJSONObject("location").getString("country");
 			JSONArray jarr = jobj.getJSONObject("forecast").getJSONArray("forecastday");
 			sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 			for(int i = 0; i < jarr.length(); i++)
 			{
+				Day day = new Day();
 				JSONObject j = jarr.getJSONObject(i);
 				long mtime = j.getLong("date_epoch") * 1000;
-				date = sdf.format(mtime);
+				String date = sdf.format(mtime);
 
-				JSONObject day = j.getJSONObject("day");
+				JSONObject thisDay = j.getJSONObject("day");
 
 				String min, max;
 
 				if(metric)
 				{
-					min = (int)round(day.getDouble("mintemp_c")) + "&deg;C";
-					max = (int)round(day.getDouble("maxtemp_c")) + "&deg;C";
+					min = (int)round(thisDay.getDouble("mintemp_c")) + "&deg;C";
+					max = (int)round(thisDay.getDouble("maxtemp_c")) + "&deg;C";
 				} else {
-					min = (int)round(day.getDouble("mintemp_f")) + "&deg;F";
-					max = (int)round(day.getDouble("maxtemp_f")) + "&deg;F";
+					min = (int)round(thisDay.getDouble("mintemp_f")) + "&deg;F";
+					max = (int)round(thisDay.getDouble("maxtemp_f")) + "&deg;F";
 				}
 
-				int code = day.getJSONObject("condition").getInt("code");
+				int code = thisDay.getJSONObject("condition").getInt("code");
 
 				String text = "", icon = "";
 
@@ -2018,40 +1923,26 @@ class Common
 				if(!use_icons)
 				{
 					if(!icon.endsWith("n"))
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-apixu-" + icon + "'></i></td>";
+						day.icon = "wi wi-apixu-" + icon;
 					else
-						tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-apixu-night-" + icon + "'></i></td>";
+						day.icon = "wi wi-apixu-night-" + icon;
 				} else {
 					String fileName;
 					if(!icon.endsWith("n"))
 						fileName = checkImage("apixu_" + icon + ".png", null);
 					else
 						fileName = checkImage("apixu_night_" + icon + ".png", null);
-					tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					day.icon = "file://" + fileName;
 				}
-				out.append(tmp);
 
-				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
-				out.append(tmp);
-
-				tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
-				out.append(tmp);
-
-				tmp = "<tr><td style='width:80%;'>" + text + "</td>";
-				out.append(tmp);
-
-				tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+				day.day = date;
+				day.text = text;
+				day.max = max;
+				day.min = min;
+				days.add(day);
 			}
 
-			out.append("</table>");
-			return new String[]{out.toString(), desc};
+			return new String[]{generateForecast(days, pubDate, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -2069,19 +1960,13 @@ class Common
 		if (data == null || data.equals(""))
 			return null;
 
-		StringBuilder out = new StringBuilder();
-		String tmp;
+		List<Day> days = new ArrayList<>();
 		String desc;
 
 		boolean metric = GetBoolPref("metric", true);
 		long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-		String date = sdf.format(mdate);
-
-		tmp = "<div style='font-size:12pt;'>" + date + "</div>";
-		out.append(tmp);
-		tmp = "<table style='width:100%;'>\n";
-		out.append(tmp);
+		String pubDate = sdf.format(mdate);
 
 		try
 		{
@@ -2091,9 +1976,10 @@ class Common
 			sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 			for(int i = 0; i < jarr.length(); i++)
 			{
+				Day day = new Day();
 				JSONObject j = jarr.getJSONObject(i);
 				long mtime = (long)j.getInt("dt") * 1000;
-				date = sdf.format(mtime);
+				String date = sdf.format(mtime);
 
 				JSONObject temp = j.getJSONObject("temp");
 				int min = (int)round(Double.parseDouble(temp.getString("min")));
@@ -2105,38 +1991,26 @@ class Common
 				String icon = weather.getString("icon");
 
 				if(!icon.endsWith("n"))
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-owm-day-" + id + "'></i></td>";
+					day.icon = "wi wi-owm-day-" + id;
 				else
-					tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-owm-night-" + id + "'></i></td>";
-				out.append(tmp);
+					day.icon = "wi wi-owm-night-" + id;
 
-				tmp = "<td style='width:80%;'><b>" + date + "</b></td>";
-				out.append(tmp);
+				day.day = date;
 
 				if(metric)
-					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "&deg;C</b></td></tr>";
+					day.max = max + "&deg;C";
 				else
-					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "&deg;F</b></td></tr>";
-				out.append(tmp);
-
-				tmp = "<tr><td style='width:80%;'>" + text + "</td>";
-				out.append(tmp);
+					day.max = max + "&deg;F";
+				day.text = text;
 
 				if(metric)
-					tmp = "<td style='text-align:right;'>" + min + "&deg;C</td></tr>";
+					day.min = min + "&deg;C";
 				else
-					tmp = "<td style='text-align:right;'>" + min + "&deg;F</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+					day.min = min + "&deg;F";
+				days.add(day);
 			}
 
-			out.append("</table>");
-			return new String[]{out.toString(), desc};
+			return new String[]{generateForecast(days, pubDate, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -2155,8 +2029,9 @@ class Common
 			return null;
 
 		boolean use_icons = GetBoolPref("use_icons", false);
-		StringBuilder out = new StringBuilder();
+		List<Day> days = new ArrayList<>();
 		String desc;
+		String pubDate;
 
 		try
 		{
@@ -2170,7 +2045,7 @@ class Common
 
 			long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
 			SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			String lastupdate = sdf.format(mdate);
+			pubDate = sdf.format(mdate);
 
 			JSONArray jarr = jobj.getJSONObject("forecast")
 					.getJSONObject("tabular")
@@ -2179,14 +2054,10 @@ class Common
 			if(jarr == null)
 				return null;
 
-			String tmp = "<div style='font-size:12pt;'>" + lastupdate + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
-
 			String olddate = "";
 			for(int i = 0; i < jarr.length(); i++)
 			{
+				Day day = new Day();
 				String from = jarr.getJSONObject(i).getString("from");
 				String to = jarr.getJSONObject(i).getString("to");
 				String period = jarr.getJSONObject(i).getString("period");
@@ -2209,58 +2080,29 @@ class Common
 				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
 				to = sdf.format(mdate);
 
-				if(i == 0 || Integer.parseInt(period) == 0)
-				{
-					if(!olddate.equals("") && olddate.equals(date))
-						break;
-
-					olddate = date;
-
-					tmp = "<tr><th colspan='5' style='text-align:left;'><strong>" + date + "</strong></th></tr>\n";
-					out.append(tmp);
-				}
-
-				tmp = "<tr>" +
-						"<td>" + from + "-" + to + "</td>";
-				out.append(tmp);
+				day.day = date + ": " + from + "-" + to;
 
 				String code = symbol.getString("var");
 
 				if(!use_icons)
 				{
-					tmp = "<td><i style='font-size:30px;' class='wi wi-yrno-" + code + "'></i></td>";
+					day.icon = "wi wi-yrno-" + code;
 				} else {
 					String fileName = checkImage("yrno" + code + ".png", null);
-					tmp = "<td><img width='40px' src='file://" + fileName + "'></td>";
+					day.icon = "file://" + fileName;
 				}
 
-				out.append(tmp);
-
-				tmp = "<td>" + temperature.getString("value") + "&deg;C</td>";
-				out.append(tmp);
-
-				tmp = "<td>" + precipitation.getString("value") + "mm</td>";
-				out.append(tmp);
-
-				tmp = "<td>" + windSpeed.getString("name") + ", " + windSpeed.get("mps") + "m/s from the " + windDirection.getString("name") + "</td>";
-				out.append(tmp);
-
-				out.append("</tr>\n");
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+				day.max = temperature.getString("value") + "&deg;C";
+				day.min = precipitation.getString("value") + "mm";
+				day.text = windSpeed.getString("name") + ", " + windSpeed.get("mps") + "m/s from the " + windDirection.getString("name");
+				days.add(day);
 			}
-
-			out.append("</table>");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 
-		return new String[]{out.toString(), desc};
+		return new String[]{generateForecast(days, pubDate, showHeader), desc};
 	}
 
 	String[] processWZ(String data)
@@ -2353,9 +2195,10 @@ class Common
 	    if(data == null || data.equals(""))
 		    return null;
 
-	    JSONObject json;
 	    boolean use_icons = GetBoolPref("use_icons", false);
-
+	    JSONObject json;
+		List<Day> days = new ArrayList<>();
+		String pubDate;
 	    try
 	    {
 		    json = new JSONObject(data);
@@ -2365,17 +2208,13 @@ class Common
 		    JSONObject query = json.getJSONObject("query");
 		    JSONObject results = query.getJSONObject("results");
 		    JSONObject channel = results.getJSONObject("channel");
-		    String pubdate = channel.getString("lastBuildDate");
+		    pubDate = channel.getString("lastBuildDate");
 		    JSONObject item = channel.getJSONObject("item");
 		    JSONObject units = channel.getJSONObject("units");
 		    String temp = units.getString("temperature");
 		    final String desc = channel.getString("description").substring(19);
 		    JSONArray forecast = item.getJSONArray("forecast");
 		    Common.LogMessage("ended JSON Parsing");
-
-		    StringBuilder str = new StringBuilder();
-		    String stmp;
-
 		    Calendar calendar = Calendar.getInstance();
 		    int hour = calendar.get(Calendar.HOUR_OF_DAY);
 
@@ -2386,108 +2225,29 @@ class Common
 		    JSONObject tmp = forecast.getJSONObject(start);
 		    int code = tmp.getInt("code");
 
-		    if(showHeader)
+
+		    for (int i = start; i <= start + 5; i++)
 		    {
-			    stmp = "<div style='font-size:12pt;'>" + pubdate + "</div>";
-			    str.append(stmp);
-
-			    stmp = "<table style='width:100%;border:0px;'>";
-			    str.append(stmp);
-
-			    stmp = "<tr><td style='width:50%;font-size:48pt;'>" + tmp.getString("high") + "&deg;" + temp + "</td>";
-			    str.append(stmp);
+		    	Day day = new Day();
+			    tmp = forecast.getJSONObject(i);
+			    code = tmp.getInt("code");
 
 			    if(!use_icons)
 			    {
-				    stmp = "<td style='width:50%;text-align:right;'><i style='font-size:60px;' class='wi wi-yahoo-" + code + "'></i></td></tr>";
+				    day.icon = "wi wi-yahoo-" + code;
 			    } else {
 				    String fileName = checkImage("yahoo" + code + ".gif", null);
-				    stmp = "<td style='width:50%;text-align:right;'><img width='80px' src='file://" + fileName + "'></td></tr>";
-			    }
-			    LogMessage(stmp);
-			    str.append(stmp);
-
-			    stmp = "<tr><td style='font-size:16pt;'>" + tmp.getString("low") + "&deg;" + temp + "</td>";
-			    str.append(stmp);
-
-			    stmp = "<td style='text-align:right;font-size:16pt;'>" + tmp.getString("text") + "</td></tr></table><br />";
-			    str.append(stmp);
-
-			    stmp = "<table style='width:100%;border:0px;'>";
-			    str.append(stmp);
-
-			    for (int i = start + 1; i <= start + 5; i++)
-			    {
-				    tmp = forecast.getJSONObject(i);
-				    code = tmp.getInt("code");
-
-				    if(!use_icons)
-				    {
-					    stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-yahoo-" + code + "'></i></td>";
-				    } else {
-					    String fileName = checkImage("yahoo" + code + ".gif", null);
-					    stmp = "<tr><td style='width:10%;' rowspan='2'><img width='30px' src='file://" + fileName + "'></td>";
-				    }
-				    str.append(stmp);
-
-				    stmp = "<td style='width:45%;'><b>" + tmp.getString("day") + ", " + tmp.getString("date") + "</b></td>";
-				    str.append(stmp);
-
-				    stmp = "<td style='width:45%;text-align:right;'><b>" + tmp.getString("high") + "&deg;" + temp + "</b></td>";
-				    str.append(stmp);
-
-				    stmp = "<tr><td>" + tmp.getString("text") + "</td>";
-				    str.append(stmp);
-
-				    stmp = "<td style='text-align:right;'>" + tmp.getString("low") + "&deg;" + temp + "</td></tr>";
-				    str.append(stmp);
-
-				    stmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-				    str.append(stmp);
+				    day.icon = "file://" + fileName;
 			    }
 
-			    stmp = "</table>";
-			    str.append(stmp);
-		    } else {
-			    stmp = "<div style='font-size:12pt;'>" + pubdate + "</div>";
-			    str.append(stmp);
-
-			    stmp = "<table style='width:100%;border:0px;'>";
-			    str.append(stmp);
-
-			    for (int i = start; i <= start + 5; i++)
-			    {
-				    tmp = forecast.getJSONObject(i);
-				    code = tmp.getInt("code");
-
-				    if(!use_icons)
-				    {
-					    stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-yahoo-" + code + "'></i></td>";
-				    } else {
-					    String fileName = checkImage("yahoo" + code + ".gif", null);
-					    stmp = "<tr><td style='width:10%;' rowspan='2'><img width='30px' src='file://" + fileName + "'></td>";
-				    }
-				    LogMessage(stmp);
-				    str.append(stmp);
-
-				    stmp = "<td style='width:45%;'><b>" + tmp.getString("day") + ", " + tmp.getString("date") + "</b></td>";
-				    str.append(stmp);
-
-				    stmp = "<td style='width:45%;text-align:right;'><b>" + tmp.getString("high") + "&deg;" + temp + "</b></td></tr>";
-				    str.append(stmp);
-
-				    stmp = "<tr><td>" + tmp.getString("text") + "</td>";
-				    str.append(stmp);
-
-				    stmp = "<td style='text-align:right;'>" + tmp.getString("low") + "&deg;" + temp + "</td></tr>";
-				    str.append(stmp);
-			    }
-
-			    stmp = "</table>";
-			    str.append(stmp);
+			    day.day = tmp.getString("day") + ", " + tmp.getString("date");
+			    day.max = tmp.getString("high") + "&deg;" + temp;
+			    day.text = tmp.getString("text");
+			    day.min = tmp.getString("low") + "&deg;" + temp;
+			    days.add(day);
 		    }
 
-		    return new String[]{str.toString(), desc};
+		    return new String[]{generateForecast(days, pubDate, showHeader), desc};
 	    } catch (Exception e) {
 		    e.printStackTrace();
 	    }
