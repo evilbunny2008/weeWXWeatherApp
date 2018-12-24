@@ -42,14 +42,15 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.lang.reflect.Field;
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
@@ -93,10 +94,10 @@ class Common
 								"<link rel='stylesheet' type='text/css' href='file:///android_asset/flaticon.css'>";
 
 	static final float[] NEGATIVE = {
-		-1.0f,     0,     0,    0, 255, // red
-			0, -1.0f,     0,    0, 255, // green
-			0,     0, -1.0f,    0, 255, // blue
-			0,     0,     0, 1.0f,   0  // alpha
+			-1.0f, 0, 0, 0, 255, // red
+			0, -1.0f, 0, 0, 255, // green
+			0, 0, -1.0f, 0, 255, // blue
+			0, 0, 0, 1.0f, 0  // alpha
 	};
 
 	Common(Context c)
@@ -111,7 +112,8 @@ class Common
 			PackageInfo version = pm.getPackageInfo("com.odiousapps.weewxweather", 0);
 			appversion = version.versionName;
 			LogMessage("appversion=" + appversion);
-		} catch (Exception e) {
+		} catch (Exception e)
+		{
 			e.printStackTrace();
 		}
 	}
@@ -155,23 +157,23 @@ class Common
 		long[] ret = getPeriod();
 		long period = ret[0];
 		long wait = ret[1];
-		if(period <= 0)
+		if (period <= 0)
 			return;
 
-		long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
+		long start = Math.round((double) System.currentTimeMillis() / (double) period) * period + wait;
 
-		if(start < System.currentTimeMillis())
+		if (start < System.currentTimeMillis())
 			start += period;
 
 		LogMessage(from + " - start == " + start);
 		LogMessage(from + " - period == " + period);
 		LogMessage(from + " - wait == " + wait);
 
-		AlarmManager mgr = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+		AlarmManager mgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		Intent myIntent = new Intent(context, UpdateCheck.class);
 		PendingIntent pi = PendingIntent.getBroadcast(context, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
-		if(mgr != null)
+		if (mgr != null)
 			mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
 	}
 
@@ -190,7 +192,7 @@ class Common
 		if (debug_on || showAnyway)
 		{
 			int len = value.indexOf("\n");
-			if(len <= 0)
+			if (len <= 0)
 				len = value.length();
 			Log.i("weeWX Weather", "message='" + value.substring(0, len) + "'");
 		}
@@ -379,31 +381,26 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
-		StringBuilder out = new StringBuilder();
-		String tmp;
 		String desc;
 
-		long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
+		long mdate = (long) GetIntPref("rssCheck", 0) * 1000;
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-		String ftime = sdf.format(mdate);
+		String myftime = sdf.format(mdate);
 
-		tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
-		out.append(tmp);
-		tmp = "<table style='width:100%;'>\n";
-		out.append(tmp);
+		List<Day> days = new ArrayList<>();
 
 		try
 		{
 			JSONObject jobj = new JSONObject(data);
 			desc = jobj.getString("latitude") + ", " + jobj.getString("longitude");
 			JSONObject daily = jobj.getJSONObject("daily");
-			JSONArray  jarr = daily.getJSONArray("data");
+			JSONArray jarr = daily.getJSONArray("data");
 			for(int i = 0; i < jarr.length(); i++)
 			{
 				JSONObject day = jarr.getJSONObject(i);
 				String icon = day.getString("icon");
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
-				ftime = sdf.format(((long)day.getInt("time") * 1000));
+				String ftime = sdf.format(((long) day.getInt("time") * 1000));
 
 				String max = Integer.toString(round(day.getInt("temperatureHigh")));
 				String min = Integer.toString(round(day.getInt("temperatureLow")));
@@ -412,36 +409,24 @@ class Common
 				{
 					max += "&deg;C";
 					min += "&deg;C";
-				} else {
+				} else
+				{
 					max += "&deg;F";
 					min += "&deg;F";
 				}
 
-				tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='wi wi-forecast-io-" + icon + "'></i></td>";
-				out.append(tmp);
-
-				tmp = "<td style='width:80%;'><b>" + ftime + "</b></td>";
-				out.append(tmp);
-
-				tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
-				out.append(tmp);
-
-				tmp = "<tr><td>" + day.getString("summary") + "</td>";
-				out.append(tmp);
-
-				tmp = "<td style='width:10%;text-align:right;'>" + min + "</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+				Day d = new Day();
+				d.icon = "wi wi-forecast-io-" + icon;
+				d.day = ftime;
+				d.max = max;
+				d.text = day.getString("summary");
+				d.min = min;
+				days.add(d);
 			}
-			tmp = "</table>";
-			out.append(tmp);
-			return new String[]{out.toString(), desc};
-		} catch (Exception e) {
+
+			return new String[]{generateForecast(days, myftime, showHeader), desc};
+		} catch (Exception e)
+		{
 			e.printStackTrace();
 		}
 
@@ -460,8 +445,6 @@ class Common
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
-		StringBuilder out = new StringBuilder();
-		String tmp;
 		String desc;
 
 		try
@@ -478,21 +461,18 @@ class Common
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 			ftime = sdf.format(mdate);
 
-			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
-
 			data = data.split("<div class=\"panels-flexible-row panels-flexible-row-base2cols-1 clearfix", 2)[0]
-					   .split("</div></div>")[0].trim();
+					.split("</div></div>")[0].trim();
 
+			List<Day> days = new ArrayList<>();
 			String[] bits = data.split("extendedForecastDay");
 			for (int i = 1; i < bits.length; i++)
 			{
+				Day d = new Day();
 				String line = bits[i].trim();
 				String day = line.split("<h3>", 2)[1].split("</h3>", 2)[0].trim();
 				String min = line.split("<p>Min ", 2)[1].split("ºC", 2)[0].trim();
-				String max = line.split("Max ",2)[1].split("ºC", 2)[0].trim();
+				String max = line.split("Max ", 2)[1].split("ºC", 2)[0].trim();
 				String morning = line.split("<p><b>")[1].split("</b>", 2)[0].trim();
 				String night = line.split("<p><b>")[2].split("</b>", 2)[0].trim();
 				String icon1 = line.split("<i class=\"wi ")[1].split("\"></i>", 2)[0].trim();
@@ -502,74 +482,173 @@ class Common
 
 				if(!use_icons)
 				{
-					tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='wi " + icon1 + "'></i></td>";
+					d.icon = "wi " + icon1;
 				} else {
 					String icon = "https://www.smn.gob.ar/sites/all/themes/smn/images/weather-icons/big-" + icon1 + ".png";
 					String fileName = "smn_" + icon1.replaceAll("-", "_") + ".png";
 					fileName = checkImage(fileName, icon);
-					tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					d.icon = "file://" + fileName;
 				}
-				out.append(tmp);
 
-				tmp = "<td style='width:80%;'><b>" + day + " - " + morning + "</b></td>";
-				out.append(tmp);
+				d.day = day + " - " + morning;
 
 				if(metric)
-				{
 					max = max + "&deg;C";
-					min = min + "&deg;C";
-				} else {
-					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
-				}
-
-				if(!max.equals("&deg;C"))
-					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
 				else
-					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
-				out.append(tmp);
+					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
 
-				tmp = "<tr><td colspan='2'>" + text1 + "</td></tr>";
-				out.append(tmp);
+				d.max = max;
+				d.min = "&deg;C";
+				d.text = text1;
+				days.add(d);
+				d = new Day();
 
 				if(!use_icons)
 				{
-					tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='wi " + icon2 + "'></i></td>";
+					d.icon = "wi " + icon2;
 				} else {
 					String icon = "https://www.smn.gob.ar/sites/all/themes/smn/images/weather-icons/big-" + icon2 + ".png";
 					String fileName = "smn_" + icon2.replaceAll("-", "_") + ".png";
 					fileName = checkImage(fileName, icon);
-					tmp = "<tr><td style='width:10%; vertical-align:top;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+					d.icon = "file://" + fileName;
 				}
-				out.append(tmp);
 
-				tmp = "<td style='width:80%;'><b>" + day + " - " + night + "</b></td>";
-				out.append(tmp);
+				d.day = day + " - " + night;
 
-				if(!min.equals("&deg;C"))
-					tmp = "<td style='width:10%;text-align:right;'><b>" + min + "</b></td></tr>";
+				if(metric)
+					min = min + "&deg;C";
 				else
-					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
-				out.append(tmp);
+					min = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
 
-				tmp = "<tr><td colspan='2'>" + text2 + "</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+				d.max = min;
+				d.min = "&deg;C";
+				d.text = text2;
+				days.add(d);
 			}
 
-			tmp = "</table>";
-			out.append(tmp);
-			return new String[]{out.toString(), desc};
+			return new String[]{generateForecast(days, ftime, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		return null;
+	}
+
+	private String generateForecast(List<Day> days, String ftime, boolean showHeader)
+	{
+		if(days == null || days.size() <= 0)
+			return null;
+
+		StringBuilder sb = new StringBuilder();
+		String tmp;
+
+		if(showHeader)
+		{
+			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
+			sb.append(tmp);
+
+			tmp = "<table style='width:100%;border:0px;'>";
+			sb.append(tmp);
+
+			if(days.get(0).max.equals("&deg;C") || days.get(0).max.equals("&deg;F"))
+				tmp = "<tr><td style='width:50%;font-size:48pt;'>&nbsp;</td>";
+			else
+				tmp = "<tr><td style='width:50%;font-size:48pt;'>" + days.get(0).max + "</td>";
+			sb.append(tmp);
+
+			if(!days.get(0).icon.startsWith("file:///"))
+				tmp = "<td style='width:50%;text-align:right;'><i style='font-size:80px;' class='" + days.get(0).icon + "'></i></td></tr>";
+			else
+				tmp = "<td style='width:50%;text-align:right;'><img width='80px' src='" + days.get(0).icon + "'></td></tr>";
+			sb.append(tmp);
+
+			if(days.get(0).min.equals("&deg;C") || days.get(0).min.equals("&deg;F"))
+			{
+				tmp = "<tr><td style='text-align:right;font-size:16pt;' colspan='2'>" + days.get(0).text + "</td></tr></table><br />";
+				sb.append(tmp);
+			} else {
+				tmp = "<tr><td style='font-size:16pt;'>" + days.get(0).min + "</td>";
+				sb.append(tmp);
+				tmp = "<td style='text-align:right;font-size:16pt;'>" + days.get(0).text + "</td></tr></table><br />";
+				sb.append(tmp);
+			}
+
+			tmp = "<table style='width:100%;border:0px;'>";
+			sb.append(tmp);
+
+			for(int i = 1; i < days.size(); i++)
+			{
+				Day day = days.get(i);
+				if(!day.icon.startsWith("file:///"))
+					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='" + day.icon + "'></i></td>";
+				else
+					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><img width='40px' src='" + day.icon + "'></td>";
+				sb.append(tmp);
+
+				tmp = "<td style='width:65%;'><b>" + day.day + "</b></td>";
+				sb.append(tmp);
+
+				if(day.max.equals("&deg;C") || day.max.equals("&deg;F"))
+					tmp = "<td style='width:25%;text-align:right;vertical-align:top;'>&nbsp;</td></tr>";
+				else
+					tmp = "<td style='width:25%;text-align:right;vertical-align:top;'><b>" + day.max + "</b></td></tr>";
+				sb.append(tmp);
+
+				if(day.min.equals("&deg;C") || day.min.equals("&deg;F"))
+				{
+					tmp = "<tr><td colspan='2'>" + day.text + "</td></tr>";
+					sb.append(tmp);
+				} else {
+					tmp = "<tr><td>" + day.text + "</td>";
+					sb.append(tmp);
+					tmp = "<td style='width:10%;text-align:right;vertical-align:top;'>" + day.min + "</td></tr>";
+					sb.append(tmp);
+				}
+
+				tmp = "<tr><td style='font-size:4pt;' colspan='5'>&nbsp;</td></tr>";
+				sb.append(tmp);
+			}
+
+			tmp = "</table>";
+			sb.append(tmp);
+		} else {
+			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
+			sb.append(tmp);
+			tmp = "<table style='width:100%;'>\n";
+			sb.append(tmp);
+
+			for (Day day : days)
+			{
+				if(!day.icon.startsWith("file:///"))
+					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='" + day.icon + "'></i></td>";
+				else
+					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><img width='40px' src='" + day.icon + "'></td>";
+				sb.append(tmp);
+
+				tmp = "<td style='width:80%;'><b>" + day.day + "</b></td>";
+				sb.append(tmp);
+
+				if(!day.max.equals("&deg;C") && !day.max.equals("&deg;F"))
+					tmp = "<td style='width:10%;text-align:right;vertical-align:top;'><b>" + day.max + "</b></td></tr>";
+				else
+					tmp = "<td style='width:10%;'><b>&nbsp;</b></td></tr>";
+				sb.append(tmp);
+
+				if(day.min.equals("&deg;C") || day.min.equals("&deg;F"))
+				{
+					tmp = "<tr><td colspan='2'>" + day.text + "</td></tr>";
+					sb.append(tmp);
+				} else {
+					tmp = "<tr><td>" + day.text + "</td>";
+					sb.append(tmp);
+					tmp = "<td style='width:10%;text-align:right;vertical-align:top;'>" + day.min + "</td></tr>";
+					sb.append(tmp);
+				}
+			}
+
+			sb.append("</table>");
+		}
+		return sb.toString();
 	}
 
 	String[] processMF(String data)
@@ -584,8 +663,6 @@ class Common
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
-		StringBuilder out = new StringBuilder();
-		String tmp;
 		String desc;
 
 		try
@@ -601,11 +678,6 @@ class Common
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.FRANCE);
 			ftime = sdf.format(mdate);
 
-			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
-
 			data = data.split("<!-- LISTE JOURS -->", 2)[1].split("<!-- LISTE JOURS/ -->", 2)[0].trim();
 
 			if(lookupTable.size() <= 0)
@@ -614,9 +686,11 @@ class Common
 				LogMessage("Loaded lookup table.");
 			}
 
+			List<Day> days = new ArrayList<>();
 			String[] bits = data.split("title=\"");
 			for(int i = 1; i < bits.length; i++)
 			{
+				Day thisDay = new Day();
 				String bit = bits[i].trim();
 
 				String text = bit.split("\">", 2)[0].trim();
@@ -644,21 +718,19 @@ class Common
 					if(!use_icons)
 					{
 						if(!lookupTable.get(tmpicon).replaceAll("_", "-").equals("j-w1-8-n"))
-							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-meteofrance-" + lookupTable.get(tmpicon).replaceAll("_", "-") + "'></i></td>";
+							thisDay.icon = "wi wi-meteofrance-"  + lookupTable.get(tmpicon).replaceAll("_", "-");
 						else
-							tmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
+							thisDay.icon = "flaticon-thermometer";
 					} else {
 						String fileName = checkImage("mf_" + lookupTable.get(tmpicon) + ".png", null);
-						tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
+						thisDay.icon = "file://" + fileName;
 					}
 				} else {
 					// Something should be done here, didn't find a match for icon...
-					tmp = "<tr><td style='width:10%;' rowspan='2'>N/A</td>";
+					thisDay.icon = "N/A";
 				}
-				out.append(tmp);
 
-				tmp = "<td style='width:80%;'><b>" + day + "</b></td>";
-				out.append(tmp);
+				thisDay.day = day;
 
 				if(metric)
 				{
@@ -669,45 +741,14 @@ class Common
 					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
-				if(!max.equals("&deg;C"))
-					tmp = "<td style='width:10%;text-align:right;'><b>" + max + "</b></td></tr>";
-				else
-					tmp = "<td style='width:10%;text-align:right;'><b>&nbsp;</b></td></tr>";
-				out.append(tmp);
-
-				tmp = "<tr><td>" + text + "</td>";
-				out.append(tmp);
-
-				if(!min.equals("&deg;C"))
-					tmp = "<td style='text-align:right;'>" + min + "</td></tr>";
-				else
-					tmp = "<td style='text-align:right;'>&nbsp;</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
-				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
-				}
+				thisDay.max = max;
+				thisDay.min = min;
+				thisDay.text = text;
+				days.add(thisDay);
 			}
 
-			tmp = "</table>";
-			out.append(tmp);
-/*
-			List<String> strList = new ArrayList<String>();
-			for(String key : lookupTable.values())
-			{
-
-				key = ".@{wi-css-prefix}-meteofrance-" + key.replaceAll("_", "-") + ":before      { content: @                ; }\n";
-				if(!strList.contains(key))
-					strList.add(key);
-			}
-
-			Collections.sort(strList);
-
-			writeFile("wi-meteofrance.less", strList.toString());
-*/
-			return new String[]{out.toString(), desc};
+			//writeFile("days.txt", days.toString());
+			return new String[]{generateForecast(days, ftime, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -2386,7 +2427,7 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		try
 		{
-			String desc, content, pubDate;
+			String desc, pubDate;
 
 			JSONObject jobj = new XmlToJson.Builder(data).build().toJson();
 			if (jobj == null)
@@ -2396,177 +2437,60 @@ class Common
 			desc = jobj.getString("title");
 			pubDate = jobj.getString("pubDate");
 
-			StringBuilder str = new StringBuilder();
-			String stmp;
-
 			SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
 			long mdate = sdf.parse(pubDate).getTime();
 			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 			pubDate = sdf.format(mdate);
 
-			if(showHeader)
+			List<Day> days = new ArrayList<>();
+
+			JSONObject item = jobj.getJSONArray("item").getJSONObject(0);
+			String[] items = item.getString("description").trim().split("<b>");
+			for (String i : items)
 			{
-				JSONObject item = jobj.getJSONArray("item").getJSONObject(0);
-				String[] days = item.getString("description").trim().split("<b>");
-				String day = days[1];
-				String[] tmp = day.split("</b>", 2);
+				Day day = new Day();
+				String[] tmp = i.split("</b>", 2);
+				String dayName = tmp[0];
+
+				if (tmp.length <= 1)
+					continue;
 
 				String[] mybits = tmp[1].split("<br />");
 				String myimg = mybits[1].trim().replaceAll("<img src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "")
-												.replaceAll("\">", "").replaceAll(".gif", "").replaceAll("_", "-").trim();
+									.replaceAll("\">", "").replaceAll(".gif", "").replaceAll("_", "-").trim();
 				String mydesc = mybits[2].trim();
 				String[] range = mybits[3].split(" - ", 2);
-
-				stmp = "<table style='width:100%;border:0px;'>";
-				str.append(stmp);
-
-				stmp = "<tr><td style='width:50%;font-size:48pt;'>" + scrubTemp(range[1], metric) + "</td>";
-				str.append(stmp);
 
 				if(!use_icons)
 				{
 					if(!myimg.equals("frost-then-sunny"))
-						stmp = "<td style='width:50%;text-align:right;'><i style='font-size:80px;' class='wi wi-weatherzone-" + myimg + "'></i></td></tr>";
+						day.icon = "wi wi-weatherzone-" + myimg;
 					else
-						stmp = "<td style='width:50%;text-align:right;'><i style='font-size:80px;' class='flaticon-thermometer'></i></td></tr>";
+						day.icon = "flaticon-thermometer";
 				} else {
 					String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
 					fileName = checkImage(fileName, null);
-					stmp = "<td style='width:50%;text-align:right;'><img width='80px' src='file://" + fileName + "'></td></tr>";
+					day.icon = "file://" + fileName;
 				}
-				str.append(stmp);
 
-				stmp = "<tr><td style='font-size:16pt;'>" + scrubTemp(range[0], metric) + "</td>";
-				str.append(stmp);
-
-				stmp = "<td style='text-align:right;font-size:16pt;'>" +mydesc + "</td></tr></table><br />";
-				str.append(stmp);
-
-				stmp = "<table style='width:100%;border:0px;'>";
-				str.append(stmp);
-
-				for(int i = 2; i < days.length; i++)
+				day.day = dayName;
+				day.max = range[1];
+				day.min = range[0];
+				if(!metric)
 				{
-					day = days[i];
-					tmp = day.split("</b>", 2);
-					String dayName = tmp[0];
-
-					if (tmp.length <= 1)
-						continue;
-
-					mybits = tmp[1].split("<br />");
-					myimg = mybits[1].trim().replaceAll("<img src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "")
-											.replaceAll("\">", "").replaceAll(".gif", "").replaceAll("_", "-").trim();
-					mydesc = mybits[2].trim();
-					range = mybits[3].split(" - ", 2);
-
-					if(!use_icons)
-					{
-						if(!myimg.equals("frost-then-sunny"))
-							stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weatherzone-" + myimg + "'></i></td>";
-						else
-							stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
-					} else {
-						String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
-						fileName = checkImage(fileName, null);
-						stmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
-					}
-					str.append(stmp);
-
-					stmp = "<td style='width:65%;'><b>" + dayName + "</b></td>";
-					str.append(stmp);
-
-					stmp = "<td style='width:25%;text-align:right;'><b>" + scrubTemp(range[1], metric) + "</b></td></tr>";
-					str.append(stmp);
-
-					stmp = "<tr><td>" + mydesc + "</td>";
-					str.append(stmp);
-
-					stmp = "<td style='text-align:right;'>" + scrubTemp(range[0], metric) + "</td></tr>";
-					str.append(stmp);
-
-					stmp = "<tr><td style='font-size:4pt;' colspan='5'>&nbsp;</td></tr>";
-					str.append(stmp);
+					day.max = round(Double.parseDouble(range[1].substring(0, range[1].length() - 7)) * 9.0 / 5.0 + 32.0) + "&deg;F";
+					day.min = round((Double.parseDouble(range[0].substring(0, range[0].length() - 7)) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
-
-				stmp = "</table>";
-				str.append(stmp);
-			} else {
-				JSONObject item = jobj.getJSONArray("item").getJSONObject(0);
-
-				stmp = "<table style='width:100%;border:0px;'>";
-				str.append(stmp);
-
-				String[] days = item.getString("description").trim().split("<b>");
-				for (String day : days)
-				{
-					String[] tmp = day.split("</b>", 2);
-					String dayName = tmp[0];
-
-					if (tmp.length <= 1)
-						continue;
-
-					String[] mybits = tmp[1].split("<br />");
-					String myimg = mybits[1].trim().replaceAll("<img src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "")
-										.replaceAll("\">", "").replaceAll(".gif", "").replaceAll("_", "-").trim();
-					String mydesc = mybits[2].trim();
-					String[] range = mybits[3].split(" - ", 2);
-
-					if(!use_icons)
-					{
-						if(!myimg.equals("frost-then-sunny"))
-							stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='wi wi-weatherzone-" + myimg + "'></i></td>";
-						else
-							stmp = "<tr><td style='width:10%;' rowspan='2'><i style='font-size:30px;' class='flaticon-thermometer'></i></td>";
-					} else {
-						String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
-						fileName = checkImage(fileName, null);
-						stmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='file://" + fileName + "'></td>";
-					}
-					str.append(stmp);
-
-					stmp = "<td style='width:65%;'><b>" + dayName + "</b></td>";
-					str.append(stmp);
-
-					stmp = "<td style='width:25%;text-align:right;'><b>" + scrubTemp(range[1], metric) + "</b></td></tr>";
-					str.append(stmp);
-
-					stmp = "<tr><td>" + mydesc + "</td>";
-					str.append(stmp);
-
-					stmp = "<td style='text-align:right;'>" + scrubTemp(range[0], metric) + "</td></tr>";
-					str.append(stmp);
-
-					stmp = "<tr><td style='font-size:4pt;' colspan='5'>&nbsp;</td></tr>";
-					str.append(stmp);
-				}
-
-				stmp = "</table>";
-				str.append(stmp);
+				day.text = mydesc;
+				days.add(day);
 			}
 
-			content = "<div style='font-size:12pt;'>" + pubDate + "</div>" + str.toString();
-
-			LogMessage("content=" + content);
-
-			return new String[]{content, desc};
+			return new String[]{generateForecast(days, pubDate, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		return null;
-	}
-
-	private String scrubTemp(String temp, boolean metric)
-	{
-		if(temp.length() <= 7 || metric)
-			return temp;
-
-		float i = Float.parseFloat(temp.substring(0, temp.length() - 7));
-		LogMessage("i == " + i);
-		int f = round(9.0f / 5.0f * i + 32.0f);
-		LogMessage("f == " + f);
-		return String.valueOf(f) + "&#176;F";
 	}
 
 	String[] processYahoo(String data)
@@ -2867,17 +2791,7 @@ class Common
 		if(f.exists() && f.isFile() && f.length() > 0)
 			return f.getAbsolutePath();
 
-		try
-		{
-			Class res = R.drawable.class;
-			Field field = res.getField(fileName.substring(0, fileName.lastIndexOf(".") - 1));
-			int drawableId = field.getInt(null);
-			if(drawableId != 0)
-				return fileName;
-		} catch (Exception e) {
-//			LogMessage("Failure to get drawable id.");
-		}
-
+		// Icon is missing we should probably ask to send information as feedback
 		//if(icon != null)
 			//downloadImage(fileName, icon);
 
