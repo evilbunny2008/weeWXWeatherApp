@@ -54,6 +54,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.TimeZone;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -262,8 +263,8 @@ class Common
 		return GetLongPref(name, 0);
 	}
 
-	@SuppressWarnings("WeakerAccess")
-	long GetLongPref(String name, @SuppressWarnings("SameParameterValue") long defval)
+	@SuppressWarnings("WeakerAccess, SameParameterValue")
+	long GetLongPref(String name, long defval)
 	{
 		String val = GetStringPref(name, "" + defval);
 		if (val == null)
@@ -383,10 +384,7 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		String desc;
 
-		long mdate = (long) GetIntPref("rssCheck", 0) * 1000;
-		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-		String myftime = sdf.format(mdate);
-
+		long timestamp = (long) GetIntPref("rssCheck", 0) * 1000;
 		List<Day> days = new ArrayList<>();
 
 		try
@@ -399,7 +397,7 @@ class Common
 			{
 				JSONObject day = jarr.getJSONObject(i);
 				String icon = day.getString("icon");
-				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				String ftime = sdf.format(((long) day.getInt("time") * 1000));
 
 				String max = Integer.toString(round(day.getInt("temperatureHigh")));
@@ -423,7 +421,7 @@ class Common
 				days.add(d);
 			}
 
-			return new String[]{generateForecast(days, myftime, showHeader), desc};
+			return new String[]{generateForecast(days, timestamp, showHeader), desc};
 		} catch (Exception e)
 		{
 			e.printStackTrace();
@@ -445,6 +443,7 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
+		long timestamp;
 
 		try
 		{
@@ -456,9 +455,7 @@ class Common
 			ftime = sdf.format(System.currentTimeMillis()) + " " + ftime;
 
 			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
-			long mdate = sdf.parse(ftime).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			ftime = sdf.format(mdate);
+			timestamp = sdf.parse(ftime).getTime();
 
 			data = data.split("<div class=\"panels-flexible-row panels-flexible-row-base2cols-1 clearfix", 2)[0]
 					.split("</div></div>")[0].trim();
@@ -525,7 +522,7 @@ class Common
 				days.add(d);
 			}
 
-			return new String[]{generateForecast(days, ftime, showHeader), desc};
+			return new String[]{generateForecast(days, timestamp, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -533,7 +530,7 @@ class Common
 		return null;
 	}
 
-	private String generateForecast(List<Day> days, String ftime, boolean showHeader)
+	private String generateForecast(List<Day> days, long timestamp, boolean showHeader)
 	{
 		if(days == null || days.size() <= 0)
 			return null;
@@ -541,11 +538,14 @@ class Common
 		StringBuilder sb = new StringBuilder();
 		String tmp;
 
+		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
+		String ftime = sdf.format(timestamp);
+
+		tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
+		sb.append(tmp);
+
 		if(showHeader)
 		{
-			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
-			sb.append(tmp);
-
 			tmp = "<table style='width:100%;border:0px;'>";
 			sb.append(tmp);
 
@@ -555,7 +555,7 @@ class Common
 				tmp = "<tr><td style='width:50%;font-size:48pt;'>" + days.get(0).max + "</td>";
 			sb.append(tmp);
 
-			if(!days.get(0).icon.startsWith("file:///"))
+			if(!days.get(0).icon.startsWith("file:///") && !days.get(0).icon.startsWith("data:image"))
 				tmp = "<td style='width:50%;text-align:right;'><i style='font-size:80px;' class='" + days.get(0).icon + "'></i></td></tr>";
 			else
 				tmp = "<td style='width:50%;text-align:right;'><img width='80px' src='" + days.get(0).icon + "'></td></tr>";
@@ -578,7 +578,7 @@ class Common
 			for(int i = 1; i < days.size(); i++)
 			{
 				Day day = days.get(i);
-				if(!day.icon.startsWith("file:///"))
+				if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
 					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='" + day.icon + "'></i></td>";
 				else
 					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><img width='40px' src='" + day.icon + "'></td>";
@@ -608,17 +608,14 @@ class Common
 				sb.append(tmp);
 			}
 
-			tmp = "</table>";
-			sb.append(tmp);
+			sb.append("</table>");
 		} else {
-			tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
-			sb.append(tmp);
 			tmp = "<table style='width:100%;'>\n";
 			sb.append(tmp);
 
 			for (Day day : days)
 			{
-				if(!day.icon.startsWith("file:///"))
+				if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
 					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='" + day.icon + "'></i></td>";
 				else
 					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><img width='40px' src='" + day.icon + "'></td>";
@@ -663,6 +660,7 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
+		long timestamp;
 
 		try
 		{
@@ -673,9 +671,7 @@ class Common
 			ftime += " " + data.split("<p class=\"heure-de-prevision\">Prévisions météo actualisées à ", 2)[1].split("</p>", 2)[0].trim();
 
 			sdf = new SimpleDateFormat("yyyy-MM-dd HH'h'mm", Locale.getDefault());
-			long mdate = sdf.parse(ftime).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.FRANCE);
-			ftime = sdf.format(mdate);
+			timestamp = sdf.parse(ftime).getTime();
 
 			data = data.split("<!-- LISTE JOURS -->", 2)[1].split("<!-- LISTE JOURS/ -->", 2)[0].trim();
 
@@ -701,7 +697,7 @@ class Common
 				String icon = bit.split("<dd class=\"pic40 ", 2)[1].split("\">", 2)[0].trim();
 
 				sdf = new SimpleDateFormat("EEE dd-MM-yyyy", Locale.FRANCE);
-				mdate = sdf.parse(day).getTime();
+				long mdate = sdf.parse(day).getTime();
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				day = sdf.format(mdate);
 
@@ -746,7 +742,7 @@ class Common
 				days.add(thisDay);
 			}
 
-			return new String[]{generateForecast(days, ftime, showHeader), desc};
+			return new String[]{generateForecast(days, timestamp, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -767,8 +763,8 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
-		String pubDate;
 		List<Day> days = new ArrayList<>();
+		long timestamp;
 
 		try
 		{
@@ -804,9 +800,7 @@ class Common
 			obs = hour + ":" + minute + " " + ampm + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
-			long mdate = sdf.parse(obs).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			pubDate = sdf.format(mdate);
+			timestamp = sdf.parse(obs).getTime();
 
 			String[] bits = fcdiv.split("<dl class=\"forecast-summary\">");
 			String bit = bits[1];
@@ -894,7 +888,7 @@ class Common
 			return null;
 		}
 
-		return new String[]{generateForecast(days, pubDate, showHeader), desc};
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processMET(String data)
@@ -910,9 +904,7 @@ class Common
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
-		long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
-		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-		String lastupdate = sdf.format(mdate);
+		long timestamp = (long)GetIntPref("rssCheck", 0) * 1000;
 		String desc;
 		List<Day> days = new ArrayList<>();
 
@@ -926,8 +918,8 @@ class Common
 				Day day = new Day();
 				String date = forecasts[i].split("data-tab-id=\"", 2)[1].split("\"")[0].trim();
 
-				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-				mdate = sdf.parse(date).getTime();
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+				long mdate = sdf.parse(date).getTime();
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				day.day = sdf.format(mdate);
 
@@ -965,7 +957,7 @@ class Common
 			return null;
 		}
 
-		return new String[]{generateForecast(days, lastupdate, showHeader), desc};
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processWCA(String data)
@@ -980,13 +972,13 @@ class Common
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
-		String obs;
 		String desc;
 		List<Day> days = new ArrayList<>();
+		long timestamp;
 
 		try
 		{
-			obs = data.split("Forecast issued: ", 2)[1].trim();
+			String obs = data.split("Forecast issued: ", 2)[1].trim();
 			obs = obs.split("</span>", 2)[0].trim();
 
 			int i = 0, j = obs.indexOf(":");
@@ -1016,9 +1008,7 @@ class Common
 			obs = hour + ":" + minute + " " + ampm + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
-			long mdate = sdf.parse(obs).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			obs = sdf.format(mdate);
+			timestamp = sdf.parse(obs).getTime();
 
 			desc = data.split("<dt>Observed at:</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
 
@@ -1105,7 +1095,7 @@ class Common
 			return null;
 		}
 
-		return new String[]{generateForecast(days, obs, showHeader), desc};
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processWCAF(String data)
@@ -1122,11 +1112,11 @@ class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
 		List<Day> days = new ArrayList<>();
-		String obs;
+		long timestamp;
 
 		try
 		{
-			obs = data.split("Prévisions émises à : ", 2)[1].trim();
+			String obs = data.split("Prévisions émises à : ", 2)[1].trim();
 			obs = obs.split("</span>", 2)[0].trim();
 
 			int i = 0, j = obs.indexOf("h");
@@ -1143,9 +1133,7 @@ class Common
 			obs = hour + ":" + minute + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm d MMMM yyyy", Locale.CANADA_FRENCH);
-			long mdate = sdf.parse(obs).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.CANADA_FRENCH);
-			obs = sdf.format(mdate);
+			timestamp = sdf.parse(obs).getTime();
 
 			desc = data.split("<dt>Enregistrées à :</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
 
@@ -1232,7 +1220,7 @@ class Common
 			return null;
 		}
 
-		return new String[]{generateForecast(days, obs, showHeader), desc};
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	// Thanks goes to the https://saratoga-weather.org folk for the base NOAA icons and code for dualimage.php
@@ -1248,8 +1236,9 @@ class Common
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
+		List<Day> days = new ArrayList<>();
+		long timestamp;
 		String desc;
-		StringBuilder out = new StringBuilder();
 
 		try
 		{
@@ -1259,14 +1248,7 @@ class Common
 			String tmp = jobj.getString("creationDate");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			long mdate = sdf.parse(tmp).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			String date = sdf.format(mdate);
-
-			tmp = "<div style='font-size:12pt;'>" + date + "</div>";
-			out.append(tmp);
-			tmp = "<table style='width:100%;'>\n";
-			out.append(tmp);
+			timestamp = sdf.parse(tmp).getTime();
 
 			JSONArray periodName = jobj.getJSONObject("time").getJSONArray("startPeriodName");
 			JSONArray weather = jobj.getJSONObject("data").getJSONArray("weather");
@@ -1274,6 +1256,7 @@ class Common
 			JSONArray temperature = jobj.getJSONObject("data").getJSONArray("temperature");
 			for(int i = 0; i < periodName.length(); i++)
 			{
+				Day day = new Day();
 				String fimg = "", simg = "", fper = "", sper = "", number;
 				iconLink.put(i, iconLink.getString(i).replace("http://", "https://"));
 				final String url = iconLink.getString(i);
@@ -1364,37 +1347,27 @@ class Common
 					}
 				}
 
-				tmp = "<tr><td style='width:10%;' rowspan='2'><img width='40px' src='" + iconLink.getString(i) + "'></td>";
-				out.append(tmp);
-
-				tmp = "<td style='width:80%;'><b>" + periodName.getString(i) + "</b></td>";
-				out.append(tmp);
-
-				tmp = "<td style='width:10%;text-align:right;'><b>" + temperature.getString(i) + "&deg;F</b></td></tr>";
-				if(metric)
-					tmp = "<td style='width:10%;text-align:right;'><b>" + round((Double.parseDouble(temperature.getString(i)) - 32.0) * 5.0 / 9.0)  + "&deg;C</b></td></tr>";
-				out.append(tmp);
-
-				tmp = "<tr><td style='width:80%;'>" + weather.getString(i) + "</td>";
-				out.append(tmp);
-
-				tmp = "<td>&nbsp;</td></tr>";
-				out.append(tmp);
-
-				if(showHeader)
+				if(iconLink.getString(i).toLowerCase().startsWith("http"))
 				{
-					tmp = "<tr><td style='font-size:10pt;' colspan='5'>&nbsp;</td></tr>";
-					out.append(tmp);
+					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).trim().replaceAll("\\.png$", "\\.jpg");
+					day.icon = "file://" + checkImage(fileName, iconLink.getString(i));
+				} else {
+					day.icon = iconLink.getString(i);
 				}
+				day.day = periodName.getString(i);
+				if(!metric)
+					day.max = temperature.getString(i) + "&deg;F";
+				else
+					day.max = round((Double.parseDouble(temperature.getString(i)) - 32.0) * 5.0 / 9.0)  + "&deg;C";
+				day.text = weather.getString(i);
+				days.add(day);
 			}
-
-			out.append("</table>");
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
 
-		return new String[]{out.toString(), desc};
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processWMO(String data)
@@ -1409,8 +1382,9 @@ class Common
 
 		boolean metric = GetBoolPref("metric", true);
 		String desc;
-		String pubDate;
+		long timestamp;
 		List<Day> days = new ArrayList<>();
+
 		try
 		{
 			JSONObject jobj = new JSONObject(data);
@@ -1419,9 +1393,7 @@ class Common
 			String tmp = jobj.getJSONObject("city").getJSONObject("forecast").getString("issueDate");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-			long mdate = sdf.parse(tmp).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			pubDate = sdf.format(mdate);
+			timestamp = sdf.parse(tmp).getTime();
 
 			JSONArray jarr = jobj.getJSONObject("city").getJSONObject("forecast").getJSONArray("forecastDay");
 			for(int i = 0; i < jarr.length(); i++)
@@ -1431,7 +1403,7 @@ class Common
 
 				String date = j.getString("forecastDate").trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-				mdate = sdf.parse(date).getTime();
+				long mdate = sdf.parse(date).getTime();
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				date = sdf.format(mdate);
 
@@ -1468,7 +1440,7 @@ class Common
 			return null;
 		}
 
-		return new String[]{generateForecast(days, pubDate, showHeader), desc};
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processBOM(String data)
@@ -1485,7 +1457,7 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
-		String ftime;
+		long timestamp;
 		List<Day> days = new ArrayList<>();
 
 		try
@@ -1495,9 +1467,7 @@ class Common
 
 			String tmp = jobj.getString("content");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			long mdate = sdf.parse(tmp).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			ftime = sdf.format(mdate);
+			timestamp = sdf.parse(tmp).getTime();
 
 			JSONArray jarr = jobj.getJSONArray("forecast-period");
 			for(int i = 0; i < jarr.length(); i++)
@@ -1535,7 +1505,7 @@ class Common
 
 				String date = j.getString("start-time-local").trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-				mdate = sdf.parse(date).getTime();
+				long mdate = sdf.parse(date).getTime();
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				day.day = sdf.format(mdate);
 
@@ -1569,7 +1539,7 @@ class Common
 			return null;
 		}
 
-		return new String[]{generateForecast(days, ftime, showHeader), desc};
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processMetService(String data)
@@ -1587,6 +1557,7 @@ class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		List<Day> days = new ArrayList<>();
 		String desc;
+		long timestamp;
 
 		try
 		{
@@ -1596,9 +1567,7 @@ class Common
 			desc = jobj.getString("locationECWasp") + ", New Zealand";
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			long mdate = sdf.parse(ftime).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			ftime = sdf.format(mdate);
+			timestamp = sdf.parse(ftime).getTime();
 
 			for(int i = 0; i < loop.length(); i++)
 			{
@@ -1638,13 +1607,12 @@ class Common
 
 				days.add(day);
 			}
-
-			return new String[]{generateForecast(days, ftime, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 
-		return null;
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processDWD(String data)
@@ -1661,6 +1629,7 @@ class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		List<Day> days = new ArrayList<>();
 		String desc = "";
+		long timestamp;
 
 		try
 		{
@@ -1673,9 +1642,7 @@ class Common
 			ftime = date + " " + ftime.split("<td width=\"40%\" class=\"stattime\">", 2)[1].split(" Uhr</td>", 2)[0].trim();
 
 			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy' 'HH", Locale.getDefault());
-			long mdate = sdf.parse(ftime).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			ftime = sdf.format(mdate);
+			timestamp = sdf.parse(ftime).getTime();
 
 			data = data.split("<td width=\"40%\" class=\"statwert\">Vorhersage</td>", 2)[1].split("</table>", 2)[0].trim();
 			bits = data.split("<tr");
@@ -1725,12 +1692,12 @@ class Common
 
 				days.add(day);
 			}
-			return new String[]{generateForecast(days, ftime, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 
-		return null;
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processAEMET(String data)
@@ -1748,7 +1715,7 @@ class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		List<Day> days = new ArrayList<>();
 		String desc;
-		String elaborado;
+		long timestamp;
 
 		try
 		{
@@ -1759,12 +1726,10 @@ class Common
 			jobj = jobj.getJSONObject("root");
 			desc = jobj.getString("nombre") + ", " + jobj.getString("provincia");
 
-			elaborado = jobj.getString("elaborado");
+			String elaborado = jobj.getString("elaborado");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-			long mdate = sdf.parse(elaborado).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			elaborado = sdf.format(mdate);
+			timestamp = sdf.parse(elaborado).getTime();
 
 			JSONArray dates = jobj.getJSONObject("prediccion").getJSONArray("dia");
 			for(int i = 0; i < dates.length(); i++)
@@ -1773,7 +1738,7 @@ class Common
 				JSONObject jtmp = dates.getJSONObject(i);
 				String fecha = jtmp.getString("fecha");
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-				mdate = sdf.parse(fecha).getTime();
+				long mdate = sdf.parse(fecha).getTime();
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				fecha = sdf.format(mdate);
 
@@ -1829,13 +1794,12 @@ class Common
 				day.text = estado_cielo.getString("descripcion");
 				days.add(day);
 			}
-
-			return new String[]{generateForecast(days, elaborado, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 
-		return null;
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processAPIXU(String data)
@@ -1850,7 +1814,7 @@ class Common
 
 		List<Day> days = new ArrayList<>();
 		String desc;
-		String pubDate;
+		long timestamp;
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
@@ -1865,13 +1829,11 @@ class Common
 		{
 			JSONObject jobj = new JSONObject(data);
 
-			long mdate = jobj.getJSONObject("location").getLong("localtime_epoch") * 1000;
-			SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			pubDate = sdf.format(mdate);
+			timestamp = jobj.getJSONObject("location").getLong("localtime_epoch") * 1000;
 
 			desc = jobj.getJSONObject("location").getString("name") + ", " + jobj.getJSONObject("location").getString("country");
 			JSONArray jarr = jobj.getJSONObject("forecast").getJSONArray("forecastday");
-			sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+			SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 			for(int i = 0; i < jarr.length(); i++)
 			{
 				Day day = new Day();
@@ -1941,13 +1903,12 @@ class Common
 				day.min = min;
 				days.add(day);
 			}
-
-			return new String[]{generateForecast(days, pubDate, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 
-		return null;
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processOWM(String data)
@@ -1964,16 +1925,14 @@ class Common
 		String desc;
 
 		boolean metric = GetBoolPref("metric", true);
-		long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
-		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-		String pubDate = sdf.format(mdate);
+		long timestamp = (long)GetIntPref("rssCheck", 0) * 1000;
 
 		try
 		{
 			JSONObject jobj = new JSONObject(data);
 			desc = jobj.getJSONObject("city").getString("name") + ", " + jobj.getJSONObject("city").getString("country");
 			JSONArray jarr = jobj.getJSONArray("list");
-			sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+			SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 			for(int i = 0; i < jarr.length(); i++)
 			{
 				Day day = new Day();
@@ -2009,13 +1968,12 @@ class Common
 					day.min = min + "&deg;F";
 				days.add(day);
 			}
-
-			return new String[]{generateForecast(days, pubDate, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 
-		return null;
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processYR(String data)
@@ -2031,7 +1989,7 @@ class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		List<Day> days = new ArrayList<>();
 		String desc;
-		String pubDate;
+		long timestamp;
 
 		try
 		{
@@ -2043,9 +2001,7 @@ class Common
 			JSONObject location = jobj.getJSONObject("location");
 			desc = location.getString("name") + ", " + location.getString("country");
 
-			long mdate = (long)GetIntPref("rssCheck", 0) * 1000;
-			SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			pubDate = sdf.format(mdate);
+			timestamp = (long)GetIntPref("rssCheck", 0) * 1000;
 
 			JSONArray jarr = jobj.getJSONObject("forecast")
 					.getJSONObject("tabular")
@@ -2054,21 +2010,20 @@ class Common
 			if(jarr == null)
 				return null;
 
-			String olddate = "";
 			for(int i = 0; i < jarr.length(); i++)
 			{
 				Day day = new Day();
 				String from = jarr.getJSONObject(i).getString("from");
 				String to = jarr.getJSONObject(i).getString("to");
-				String period = jarr.getJSONObject(i).getString("period");
+				//String period = jarr.getJSONObject(i).getString("period");
 				JSONObject symbol = jarr.getJSONObject(i).getJSONObject("symbol");
 				JSONObject precipitation = jarr.getJSONObject(i).getJSONObject("precipitation");
 				JSONObject temperature = jarr.getJSONObject(i).getJSONObject("temperature");
 				JSONObject windDirection = jarr.getJSONObject(i).getJSONObject("windDirection");
 				JSONObject windSpeed = jarr.getJSONObject(i).getJSONObject("windSpeed");
 
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-				mdate = sdf.parse(from).getTime();
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+				long mdate = sdf.parse(from).getTime();
 				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				String date = sdf.format(mdate);
 
@@ -2102,7 +2057,7 @@ class Common
 			return null;
 		}
 
-		return new String[]{generateForecast(days, pubDate, showHeader), desc};
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processWZ(String data)
@@ -2117,24 +2072,22 @@ class Common
 
 		boolean use_icons = GetBoolPref("use_icons", false);
 		boolean metric = GetBoolPref("metric", true);
+		List<Day> days = new ArrayList<>();
+		long timestamp;
+		String desc;
+
 		try
 		{
-			String desc, pubDate;
-
 			JSONObject jobj = new XmlToJson.Builder(data).build().toJson();
 			if (jobj == null)
 				return null;
 
 			jobj = jobj.getJSONObject("rss").getJSONObject("channel");
 			desc = jobj.getString("title");
-			pubDate = jobj.getString("pubDate");
+			String pubDate = jobj.getString("pubDate");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
-			long mdate = sdf.parse(pubDate).getTime();
-			sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-			pubDate = sdf.format(mdate);
-
-			List<Day> days = new ArrayList<>();
+			timestamp = sdf.parse(pubDate).getTime();
 
 			JSONObject item = jobj.getJSONArray("item").getJSONObject(0);
 			String[] items = item.getString("description").trim().split("<b>");
@@ -2176,13 +2129,12 @@ class Common
 				day.text = mydesc;
 				days.add(day);
 			}
-
-			return new String[]{generateForecast(days, pubDate, showHeader), desc};
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
 
-		return null;
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	String[] processYahoo(String data)
@@ -2198,23 +2150,24 @@ class Common
 	    boolean use_icons = GetBoolPref("use_icons", false);
 	    JSONObject json;
 		List<Day> days = new ArrayList<>();
-		String pubDate;
+		long timestamp;
+		String desc;
+
 	    try
 	    {
 		    json = new JSONObject(data);
-
-		    Common.LogMessage("starting JSON Parsing");
-
 		    JSONObject query = json.getJSONObject("query");
 		    JSONObject results = query.getJSONObject("results");
 		    JSONObject channel = results.getJSONObject("channel");
-		    pubDate = channel.getString("lastBuildDate");
+		    String pubDate = query.getString("created");
+		    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
+		    sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
+		    timestamp = sdf.parse(pubDate).getTime();
 		    JSONObject item = channel.getJSONObject("item");
 		    JSONObject units = channel.getJSONObject("units");
 		    String temp = units.getString("temperature");
-		    final String desc = channel.getString("description").substring(19);
+		    desc = channel.getString("description").substring(19);
 		    JSONArray forecast = item.getJSONArray("forecast");
-		    Common.LogMessage("ended JSON Parsing");
 		    Calendar calendar = Calendar.getInstance();
 		    int hour = calendar.get(Calendar.HOUR_OF_DAY);
 
@@ -2222,9 +2175,8 @@ class Common
 		    if (hour >= 15)
 			    start = 1;
 
-		    JSONObject tmp = forecast.getJSONObject(start);
-		    int code = tmp.getInt("code");
-
+		    JSONObject tmp;// = forecast.getJSONObject(start);
+		    int code;// = tmp.getInt("code");
 
 		    for (int i = start; i <= start + 5; i++)
 		    {
@@ -2246,13 +2198,12 @@ class Common
 			    day.min = tmp.getString("low") + "&deg;" + temp;
 			    days.add(day);
 		    }
-
-		    return new String[]{generateForecast(days, pubDate, showHeader), desc};
 	    } catch (Exception e) {
 		    e.printStackTrace();
+		    return null;
 	    }
 
-	    return null;
+	    return new String[]{generateForecast(days, timestamp, showHeader), desc};
     }
 
 	void SendIntents()
@@ -2402,8 +2353,8 @@ class Common
 			return f.getAbsolutePath();
 
 		// Icon is missing we should probably ask to send information as feedback
-		//if(icon != null)
-			//downloadImage(fileName, icon);
+//		if(icon != null)
+//			downloadImage(fileName, icon);
 
 		return icon;
 	}
@@ -2796,8 +2747,8 @@ class Common
 		return sb.toString().trim();
 	}
 
-	@SuppressWarnings("unused")
-	void writeFile(String fileName, String data) throws Exception
+	@SuppressWarnings({"unused", "SameParameterValue"})
+	private void writeFile(String fileName, String data) throws Exception
 	{
 		File dir = new File(Environment.getExternalStorageDirectory(), "weeWX");
 		if (!dir.exists())
