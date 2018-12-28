@@ -7,9 +7,10 @@ class Day
 	String text = "";
 	String max = "";
 	String min = "";
+	long timestamp = 0;
 
 	public String toString()
 	{
-		return "day == " + day + "\nicon == " + icon + "\ntext == " + text + "\nmax == " + max + "\nmin == " + min + "\n\n";
+		return "day == " + day + "\nicon == " + icon + "\ntext == " + text + "\nmax == " + max + "\nmin == " + min + "\ntimestamp == " + timestamp + "\n\n";
 	}
 }

@@ -797,6 +797,9 @@ class Weather
 				    @Override
 				    public void run()
 				    {
+					    wv.clearFormData();
+					    wv.clearHistory();
+					    wv.clearCache(true);
 					    wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
 					    swipeLayout.setRefreshing(false);
 				    }

@@ -721,6 +721,9 @@ class Forecast
 				    @Override
 				    public void run()
 				    {
+					    wv2.clearFormData();
+					    wv2.clearHistory();
+					    wv2.clearCache(true);
 					    wv2.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
 				    }
 			    });
