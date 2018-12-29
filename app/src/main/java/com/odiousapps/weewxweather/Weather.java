@@ -889,8 +889,6 @@ class Weather
 			    } catch (Exception e) {
 				    e.printStackTrace();
 			    }
-
-			    swipeLayout.setRefreshing(false);
 		    }
 	    });
 
@@ -937,8 +935,6 @@ class Weather
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-	            swipeLayout.setRefreshing(false);
             }
         });
 
@@ -951,7 +947,8 @@ class Weather
         @Override
         public void handleMessage(Message msg)
         {
-			common.SendRefresh();
+	        swipeLayout.setRefreshing(false);
+	        common.SendRefresh();
         }
     };
 

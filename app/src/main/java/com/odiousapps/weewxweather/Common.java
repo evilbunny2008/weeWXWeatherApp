@@ -22,6 +22,7 @@ import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Environment;
+import android.text.Html;
 import android.util.Base64;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -443,7 +444,7 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
-		long timestamp;
+		long timestamp, lastTS;
 
 		try
 		{
@@ -455,7 +456,7 @@ class Common
 			ftime = sdf.format(System.currentTimeMillis()) + " " + ftime;
 
 			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
-			timestamp = sdf.parse(ftime).getTime();
+			lastTS = timestamp = sdf.parse(ftime).getTime();
 
 			data = data.split("<div class=\"panels-flexible-row panels-flexible-row-base2cols-1 clearfix", 2)[0]
 					.split("</div></div>")[0].trim();
@@ -488,6 +489,7 @@ class Common
 
 				// TODO: convert day name to timestamp
 				day.day = date + " - " + morning;
+				day.timestamp = convertDaytoTS(day.day, new Locale("es", "AR"), lastTS);
 
 				if(metric)
 					max = max + "&deg;C";
@@ -498,6 +500,8 @@ class Common
 				day.min = "&deg;C";
 				day.text = text1;
 				days.add(day);
+
+				lastTS = day.timestamp;
 
 				day = new Day();
 
@@ -511,8 +515,8 @@ class Common
 					day.icon = "file://" + fileName;
 				}
 
-				// TODO: convert day name to timestamp
 				day.day = date + " - " + night;
+				day.timestamp = convertDaytoTS(day.day, new Locale("es", "AR"), lastTS);
 
 				if(metric)
 					min = min + "&deg;C";
@@ -523,6 +527,8 @@ class Common
 				day.min = "&deg;C";
 				day.text = text2;
 				days.add(day);
+
+				lastTS = day.timestamp;
 			}
 
 			return new String[]{generateForecast(days, timestamp, showHeader), desc};
@@ -990,7 +996,7 @@ class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
 		List<Day> days = new ArrayList<>();
-		long timestamp;
+		long timestamp, lastTS;
 
 		try
 		{
@@ -1024,7 +1030,7 @@ class Common
 			obs = hour + ":" + minute + " " + ampm + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
-			timestamp = sdf.parse(obs).getTime();
+			lastTS = timestamp = sdf.parse(obs).getTime();
 
 			desc = data.split("<dt>Observed at:</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
 
@@ -1051,13 +1057,17 @@ class Common
 
 					if(div.get(j).toString().contains("div-row-head"))
 					{
-						// TODO: convert day of week name to timestamp
 						if(div.get(j).select("div").html().contains("Tonight"))
+						{
 							date = "Tonight";
-						else if(div.get(j).select("div").html().contains("Night"))
+							day.timestamp = lastTS;
+						} else if(div.get(j).select("div").html().contains("Night")) {
 							date = "Night";
-						else
+							day.timestamp = lastTS;
+						} else {
 							date = div.get(j).html().split("<strong title=\"", 2)[1].split("\">", 2)[0].trim();
+							day.timestamp = convertDaytoTS(date, Locale.CANADA, lastTS);
+						}
 					} else
 						continue;
 
@@ -1105,6 +1115,8 @@ class Common
 					day.min = pop;
 
 					days.add(day);
+
+					lastTS = day.timestamp;
 				}
 			}
 		} catch (Exception e) {
@@ -1129,7 +1141,7 @@ class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
 		List<Day> days = new ArrayList<>();
-		long timestamp;
+		long timestamp, lastTS;
 
 		try
 		{
@@ -1150,7 +1162,7 @@ class Common
 			obs = hour + ":" + minute + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm d MMMM yyyy", Locale.CANADA_FRENCH);
-			timestamp = sdf.parse(obs).getTime();
+			lastTS = timestamp = sdf.parse(obs).getTime();
 
 			desc = data.split("<dt>Enregistrées à :</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
 
@@ -1177,13 +1189,17 @@ class Common
 
 					if(div.get(j).toString().contains("div-row-head"))
 					{
-						// TODO: convert day name to timestamp
 						if(div.get(j).select("div").html().contains("Ce soir et cette nuit"))
+						{
 							date = "Cette nuit";
-						else if(div.get(j).select("div").html().contains("Nuit"))
+							day.timestamp = lastTS;
+						} else if (div.get(j).select("div").html().contains("Nuit")) {
 							date = "Nuit";
-						else
+							day.timestamp = lastTS;
+						} else {
 							date = div.get(j).html().split("<strong title=\"", 2)[1].split("\">", 2)[0].trim();
+							day.timestamp = convertDaytoTS(date, Locale.CANADA_FRENCH, lastTS);
+						}
 					} else
 						continue;
 
@@ -1230,6 +1246,8 @@ class Common
 					day.text = text;
 					day.min = pop;
 					days.add(day);
+
+					lastTS = day.timestamp;
 				}
 			}
 
@@ -2093,12 +2111,15 @@ class Common
 	private long convertDaytoTS(String dayName, Locale locale, long lastTS)
 	{
 		long startTS = lastTS;
+
+		dayName = Html.fromHtml(dayName).toString();
+
 		while(true)
 		{
 			SimpleDateFormat sdf = new SimpleDateFormat("EEEE", locale);
 			String ftime = sdf.format(lastTS);
-			LogMessage("ftime == " + ftime + ", dayName == " + dayName);
-			if(dayName.startsWith(ftime))
+			//LogMessage("ftime == " + ftime + ", dayName == " + dayName);
+			if(dayName.toLowerCase().startsWith(ftime.toLowerCase()))
 				return lastTS;
 
 			lastTS += 86400000;
