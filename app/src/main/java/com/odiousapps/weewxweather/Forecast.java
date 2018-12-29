@@ -682,6 +682,13 @@ class Forecast
 						    updateForecast(content[0], content[1]);
 					    break;
 				    }
+				    case "weather.com":
+				    {
+					    String[] content = common.processWCOM(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
 			    }
 
 			    mHandler.post(new Runnable()
@@ -817,6 +824,9 @@ class Forecast
 						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
 					    else
 						    im.setColorFilter(null);
+					    break;
+				    case "weather.com":
+					    im.setImageResource(R.drawable.weather_com);
 					    break;
 			    }
 		    }

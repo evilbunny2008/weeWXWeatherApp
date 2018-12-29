@@ -1853,6 +1853,77 @@ class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
+	String[] processWCOM(String data)
+	{
+		return processWCOM(data, false);
+	}
+
+	@SuppressWarnings("StringConcatenationInLoop")
+	String[] processWCOM(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
+		long timestamp = GetLongPref("rssCheck", 0) * 1000;
+
+		List<Day> days = new ArrayList<>();
+		String desc;
+
+		try
+		{
+			JSONObject jobj = new JSONObject(data);
+			desc = jobj.getString("id");
+
+			JSONArray validDate = jobj.getJSONObject("vt1dailyForecast").getJSONArray("validDate");
+			JSONArray icons = jobj.getJSONObject("vt1dailyForecast").getJSONObject("day").getJSONArray("icon");
+			JSONArray phrase = jobj.getJSONObject("vt1dailyForecast").getJSONObject("day").getJSONArray("phrase");
+			JSONArray day_temp = jobj.getJSONObject("vt1dailyForecast").getJSONObject("day").getJSONArray("temperature");
+			JSONArray night_temp = jobj.getJSONObject("vt1dailyForecast").getJSONObject("night").getJSONArray("temperature");
+
+			SimpleDateFormat dayname = new SimpleDateFormat("EEEE", Locale.getDefault());
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXX", Locale.getDefault());
+			for(int i = 0; i < validDate.length(); i++)
+			{
+				if(icons.getString(i) == null || icons.getString(i).equals("null"))
+					continue;
+
+				Day day = new Day();
+				day.timestamp = sdf.parse(validDate.getString(i)).getTime();
+				day.day = dayname.format(day.timestamp);
+				day.text = phrase.getString(i);
+				day.icon = icons.getString(i);
+				day.max = day_temp.getString(i);
+				day.min = night_temp.getString(i);
+
+				if(!use_icons)
+				{
+					day.icon = "wi wi-yahoo-" + day.icon;
+				} else {
+					String fileName = checkImage("yahoo" + day.icon + ".gif", null);
+					day.icon = "file://" + fileName;
+				}
+
+				if(metric)
+				{
+					day.max += "&deg;C";
+					day.min += "&deg;C";
+				} else {
+					day.max += "&deg;F";
+					day.min += "&deg;F";
+				}
+
+				days.add(day);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
+	}
+
 	String[] processAPIXU(String data)
 	{
 		return processAPIXU(data, false);
