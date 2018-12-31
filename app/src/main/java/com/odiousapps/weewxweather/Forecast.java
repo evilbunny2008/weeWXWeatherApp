@@ -689,6 +689,13 @@ class Forecast
 						    updateForecast(content[0], content[1]);
 					    break;
 				    }
+				    case "met.ie":
+				    {
+					    String[] content = common.processMETIE(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
 			    }
 
 			    mHandler.post(new Runnable()
@@ -827,6 +834,13 @@ class Forecast
 					    break;
 				    case "weather.com":
 					    im.setImageResource(R.drawable.weather_com);
+					    break;
+				    case "met.ie":
+					    im.setImageResource(R.drawable.met_ie);
+					    if(dark_theme)
+						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+					    else
+						    im.setColorFilter(null);
 					    break;
 			    }
 		    }

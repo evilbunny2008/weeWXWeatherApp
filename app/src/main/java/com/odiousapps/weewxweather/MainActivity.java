@@ -52,6 +52,8 @@ import android.widget.Toast;
 import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
 import com.pes.androidmaterialcolorpickerdialog.ColorPickerCallback;
 
+import org.json.JSONObject;
+
 import java.io.File;
 import java.net.URLEncoder;
 import java.util.Locale;
@@ -436,6 +438,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						common.RemovePref("fgColour");
 						common.RemovePref("bgColour");
 						common.RemovePref("bomtown");
+						common.RemovePref("metierev");
 						common.RemovePref("dark_theme");
 						common.RemovePref("use_icons");
 						common.commit();
@@ -495,7 +498,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				String oldcustom = common.GetStringPref("CUSTOM_URL", "");
 				String oldcustom_url = common.GetStringPref("custom_url", "");
 
-				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "";
+				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "", metierev = "";
 
 				Switch metric_forecasts = findViewById(R.id.metric_forecasts);
 				Switch show_indoor = findViewById(R.id.show_indoor);
@@ -756,6 +759,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
+							case "met.ie":
+								metierev = "https://prodapi.metweb.ie/location/reverse/" + forecast.replaceAll(",", "/");
+								forecast = "https://prodapi.metweb.ie/weather/daily/" + forecast.replaceAll(",", "/") + "/10";
+								if(common.GetStringPref("metierev", "").equals("") || !forecast.equals(oldforecast))
+								{
+									metierev = common.downloadForecast(fctype, metierev, null);
+									JSONObject jobj = new JSONObject(metierev);
+									metierev = jobj.getString("city") + ", Ireland";
+									common.SetStringPref("metierev", metierev);
+								}
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								Common.LogMessage("metierev=" + metierev);
+								break;
 							default:
 								common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
 								handlerForecast.sendEmptyMessage(0);
@@ -767,7 +784,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					}
 				}
 
-				Common.LogMessage("line 760");
+				Common.LogMessage("line 780");
 
 				if(fctype.equals("weather.gov") && !common.checkForImages() && !use_icons.isChecked())
 				{

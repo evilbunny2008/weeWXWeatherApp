@@ -42,6 +42,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.InterruptedIOException;
 import java.io.OutputStream;
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;
@@ -81,7 +82,7 @@ class Common
 	static String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
 	private static final long inigo_version = 4000;
-	static final long icon_version = 5;
+	static final long icon_version = 6;
 	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.7.11/icons.zip";
 
 	private Thread t = null;
@@ -487,7 +488,6 @@ class Common
 					day.icon = "file://" + fileName;
 				}
 
-				// TODO: convert day name to timestamp
 				day.day = date + " - " + morning;
 				day.timestamp = convertDaytoTS(day.day, new Locale("es", "AR"), lastTS);
 
@@ -1924,6 +1924,66 @@ class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
+	String[] processMETIE(String data)
+	{
+		return processMETIE(data, false);
+	}
+
+	@SuppressWarnings("StringConcatenationInLoop")
+	String[] processMETIE(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
+		long timestamp = GetLongPref("rssCheck", 0) * 1000;
+
+		List<Day> days = new ArrayList<>();
+		String desc;
+
+		try
+		{
+			desc = GetStringPref("metierev", "");
+
+			SimpleDateFormat dayname = new SimpleDateFormat("EEEE", Locale.getDefault());
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+			JSONArray jarr = new JSONArray(data);
+			for(int i = 0; i < jarr.length(); i++)
+			{
+				JSONObject jobj = jarr.getJSONObject(i);
+				Day day = new Day();
+				String tmpDay = jobj.getString("date") + " " + jobj.getString("time");
+				day.timestamp = sdf.parse(tmpDay).getTime();
+				day.day = dayname.format(day.timestamp);
+				day.max = jobj.getString("temperature");
+				day.icon = jobj.getString("weatherNumber");
+
+				if(!use_icons)
+				{
+					day.icon = "wi wi-met-ie-" + day.icon;
+				} else {
+					String fileName = checkImage("y" + day.icon + ".png", null);
+					day.icon = "file://" + fileName;
+				}
+
+				day.text = jobj.getString("weatherDescription");
+
+				if(metric)
+					day.max += "&deg;C";
+				else
+					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+
+				days.add(day);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
+	}
+
 	String[] processAPIXU(String data)
 	{
 		return processAPIXU(data, false);
@@ -2403,6 +2463,8 @@ class Common
 
 					reallyGetWeather(fromURL);
 					SendRefresh();
+				} catch (InterruptedException | InterruptedIOException ie) {
+					ie.printStackTrace();
 				} catch (Exception e) {
 					e.printStackTrace();
 					SetStringPref("lastError", e.toString());
@@ -3285,7 +3347,7 @@ class Common
 
 		String[] files = new String[]{"aemet_11_g.png", "apixu_113.png", "bom1.png", "bom2clear.png", "dwd_pic_0_8.png",
 										"i1.png", "met0.png", "mf_j_w1_0_n_2.png", "ms_cloudy.png", "smn_wi_cloudy.png",
-										"wca00.png", "wgovbkn.jpg", "wzclear.png", "yahoo0.gif", "yrno01d.png"};
+										"wca00.png", "wgovbkn.jpg", "wzclear.png", "y01d.png", "yahoo0.gif", "yrno01d.png"};
 		for(String file : files)
 		{
 			File f = new File(dir, file);
