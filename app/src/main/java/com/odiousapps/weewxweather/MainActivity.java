@@ -498,7 +498,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				String oldcustom = common.GetStringPref("CUSTOM_URL", "");
 				String oldcustom_url = common.GetStringPref("custom_url", "");
 
-				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "", metierev = "";
+				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "", metierev;
 
 				Switch metric_forecasts = findViewById(R.id.metric_forecasts);
 				Switch show_indoor = findViewById(R.id.show_indoor);

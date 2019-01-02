@@ -2439,6 +2439,13 @@ class Common
 		intent.setAction(Common.REFRESH_INTENT);
 		context.sendBroadcast(intent);
 		Common.LogMessage("refresh_intent broadcast.");
+
+		intent = new Intent(context, WidgetProvider.class);
+		intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
+		int ids[] = AppWidgetManager.getInstance(context.getApplicationContext()).getAppWidgetIds(new ComponentName(context.getApplicationContext(), WidgetProvider.class));
+		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
+		context.sendBroadcast(intent);
+		Common.LogMessage("widget intent broadcasted");
 	}
 
 	void getWeather()
