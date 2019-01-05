@@ -26,6 +26,7 @@ public class UpdateCheck extends BroadcastReceiver
 		}
 
 		common.getWeather();
+		common.getForecast();
 		Common.LogMessage("UpdateCheck.java finished.");
 	}
 }

@@ -3364,4 +3364,62 @@ class Common
 
 		return true;
 	}
+
+	void getForecast()
+	{
+		getForecast(false);
+	}
+
+	@SuppressWarnings({"WeakerAccess", "SameParameterValue"})
+	void getForecast(boolean force)
+	{
+		if(GetBoolPref("radarforecast", true))
+		{
+			return;
+		}
+
+		final String forecast_url = GetStringPref("FORECAST_URL", "");
+
+		if(forecast_url.equals(""))
+		{
+			return;
+		}
+
+		if(!checkConnection() && !force)
+		{
+			LogMessage("Not on wifi and not a forced refresh");
+			return;
+		}
+
+		LogMessage("forecast checking: " + forecast_url);
+
+		Thread t = new Thread(new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				try
+				{
+					int curtime = round(System.currentTimeMillis() / 1000);
+
+					if(GetStringPref("forecastData", "").equals("") || GetIntPref("rssCheck", 0) + 7190 < curtime)
+					{
+						LogMessage("no forecast data or cache is more than 2 hour old");
+
+						String tmp = downloadForecast();
+						if(tmp != null)
+						{
+							LogMessage("updating rss cache");
+							SetIntPref("rssCheck", curtime);
+							SetStringPref("forecastData", tmp);
+						}
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+
+		t.start();
+	}
 }
