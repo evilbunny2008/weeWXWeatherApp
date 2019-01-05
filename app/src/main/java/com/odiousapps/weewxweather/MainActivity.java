@@ -506,7 +506,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				Switch use_icons = findViewById(R.id.use_icons);
 
 				RadioButton showRadar = findViewById(R.id.showRadar);
-				int curtime = Math.round(System.currentTimeMillis() / 1000);
+				long curtime = Math.round(System.currentTimeMillis() / 1000);
 
 				if(use_icons.isChecked() && (common.GetLongPref("icon_version", 0) < Common.icon_version || !common.checkForImages()))
 				{
@@ -805,7 +805,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						{
 							validURL3 = true;
 							Common.LogMessage("updating rss cache");
-							common.SetIntPref("rssCheck", curtime);
+							common.SetLongPref("rssCheck", curtime);
 							common.SetStringPref("forecastData", tmp);
 						}
 					} catch (Exception e) {
@@ -876,7 +876,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				if(forecast.equals(""))
 				{
-					common.SetIntPref("rssCheck", 0);
+					common.SetLongPref("rssCheck", 0);
 					common.SetStringPref("forecastData", "");
 				}
 

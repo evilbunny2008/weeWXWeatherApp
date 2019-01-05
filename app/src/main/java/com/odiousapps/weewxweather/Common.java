@@ -386,7 +386,7 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		String desc;
 
-		long timestamp = (long) GetIntPref("rssCheck", 0) * 1000;
+		long timestamp = GetLongPref("rssCheck", 0) * 1000;
 		List<Day> days = new ArrayList<>();
 
 		try
@@ -926,7 +926,7 @@ class Common
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
-		long timestamp = (long)GetIntPref("rssCheck", 0) * 1000;
+		long timestamp = GetLongPref("rssCheck", 0) * 1000;
 		String desc;
 		List<Day> days = new ArrayList<>();
 
@@ -2106,7 +2106,7 @@ class Common
 		String desc;
 
 		boolean metric = GetBoolPref("metric", true);
-		long timestamp = (long)GetIntPref("rssCheck", 0) * 1000;
+		long timestamp = GetLongPref("rssCheck", 0) * 1000;
 
 		try
 		{
@@ -2180,7 +2180,7 @@ class Common
 			JSONObject location = jobj.getJSONObject("location");
 			desc = location.getString("name") + ", " + location.getString("country");
 
-			timestamp = (long)GetIntPref("rssCheck", 0) * 1000;
+			timestamp = GetLongPref("rssCheck", 0) * 1000;
 
 			JSONArray jarr = jobj.getJSONObject("forecast")
 					.getJSONObject("tabular")
@@ -3391,6 +3391,21 @@ class Common
 			return;
 		}
 
+		final long curtime = round(System.currentTimeMillis() / 1000);
+
+		if(GetStringPref("forecastData", "").equals("") || GetLongPref("rssCheck", 0) + 7190 < curtime)
+		{
+			LogMessage("no forecast data or cache is more than 2 hour old");
+		} else {
+			LogMessage("cache isn't more than 2 hour old");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+			String date = sdf.format(GetLongPref("rssCheck", 0) * 1000);
+			LogMessage("rsscheck == " + date);
+			date = sdf.format(curtime * 1000);
+			LogMessage("curtime == " + date);
+			return;
+		}
+
 		LogMessage("forecast checking: " + forecast_url);
 
 		Thread t = new Thread(new Runnable()
@@ -3400,19 +3415,12 @@ class Common
 			{
 				try
 				{
-					int curtime = round(System.currentTimeMillis() / 1000);
-
-					if(GetStringPref("forecastData", "").equals("") || GetIntPref("rssCheck", 0) + 7190 < curtime)
+					String tmp = downloadForecast();
+					if(tmp != null)
 					{
-						LogMessage("no forecast data or cache is more than 2 hour old");
-
-						String tmp = downloadForecast();
-						if(tmp != null)
-						{
-							LogMessage("updating rss cache");
-							SetIntPref("rssCheck", curtime);
-							SetStringPref("forecastData", tmp);
-						}
+						LogMessage("updating rss cache");
+						SetLongPref("rssCheck", curtime);
+						SetStringPref("forecastData", tmp);
 					}
 				} catch (Exception e) {
 					e.printStackTrace();

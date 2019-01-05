@@ -284,8 +284,8 @@ class Weather
         if(!common.GetStringPref("RADAR_URL", "").equals("") && f2.lastModified() + period[0] < System.currentTimeMillis())
             reloadWebView(false);
 
-	    int curtime = round(System.currentTimeMillis() / 1000);
-	    if(!common.GetBoolPref("radarforecast", true) && common.GetIntPref("rssCheck", 0) + 7190 < curtime)
+	    long curtime = round(System.currentTimeMillis() / 1000);
+	    if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < curtime)
         	reloadForecast(false);
 
         return updateFields();
@@ -910,9 +910,9 @@ class Weather
 		    {
 			    try
 			    {
-				    int curtime = round(System.currentTimeMillis() / 1000);
+				    long curtime = round(System.currentTimeMillis() / 1000);
 
-				    if(common.GetStringPref("forecastData", "").equals("") || common.GetIntPref("rssCheck", 0) + 7190 < curtime)
+				    if(common.GetStringPref("forecastData", "").equals("") || common.GetLongPref("rssCheck", 0) + 7190 < curtime)
 				    {
 					    Common.LogMessage("no forecast data or cache is more than 2 hour old");
 
@@ -920,7 +920,7 @@ class Weather
 						if(tmp != null)
 						{
 							Common.LogMessage("updating rss cache");
-							common.SetIntPref("rssCheck", curtime);
+							common.SetLongPref("rssCheck", curtime);
 							common.SetStringPref("forecastData", tmp);
 
 							handlerDone.sendEmptyMessage(0);
