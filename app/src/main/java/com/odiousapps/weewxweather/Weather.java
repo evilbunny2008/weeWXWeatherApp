@@ -284,7 +284,7 @@ class Weather
         if(!common.GetStringPref("RADAR_URL", "").equals("") && f2.lastModified() + period[0] < System.currentTimeMillis())
             reloadWebView(false);
 
-	    long curtime = round(System.currentTimeMillis() / 1000);
+	    long curtime = Math.round(System.currentTimeMillis() / 1000.0);
 	    if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < curtime)
         	reloadForecast(false);
 
@@ -910,7 +910,7 @@ class Weather
 		    {
 			    try
 			    {
-				    long curtime = round(System.currentTimeMillis() / 1000);
+				    long curtime = round(System.currentTimeMillis() / 1000.0);
 
 				    if(common.GetStringPref("forecastData", "").equals("") || common.GetLongPref("rssCheck", 0) + 7190 < curtime)
 				    {

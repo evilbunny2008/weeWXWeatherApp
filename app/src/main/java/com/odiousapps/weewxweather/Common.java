@@ -72,7 +72,7 @@ class Common
 	private String appversion = "0.0.0";
 	Context context;
 
-	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.186 Safari/537.36";
+	final static String UA = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36";
 
 	static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
 	static String REFRESH_INTENT = "com.odiousapps.weewxweather.REFRESH_INTENT";
@@ -345,11 +345,11 @@ class Common
 		if (bits.length > 110)
 		{
 			paint.setTextSize(64);
-			myCanvas.drawText(bits[56], myCanvas.getWidth() / 2, 80, paint);
+			myCanvas.drawText(bits[56], Math.round(myCanvas.getWidth() / 2.0), 80, paint);
 			paint.setTextSize(48);
-			myCanvas.drawText(bits[55], myCanvas.getWidth() / 2, 140, paint);
+			myCanvas.drawText(bits[55], Math.round(myCanvas.getWidth() / 2.0), 140, paint);
 			paint.setTextSize(200);
-			myCanvas.drawText(bits[0] + bits[60], myCanvas.getWidth() / 2, 310, paint);
+			myCanvas.drawText(bits[0] + bits[60], Math.round(myCanvas.getWidth() / 2.0), 310, paint);
 
 			paint.setTextAlign(Paint.Align.LEFT);
 			paint.setTextSize(64);
@@ -363,10 +363,9 @@ class Common
 				rain = bits[158];
 
 			myCanvas.drawText(rain + bits[62], myCanvas.getWidth() - 20, 400, paint);
-		} else
-		{
+		} else {
 			paint.setTextSize(200);
-			myCanvas.drawText("Error!", myCanvas.getWidth() / 2, 300, paint);
+			myCanvas.drawText("Error!", Math.round(myCanvas.getWidth() / 2.0), 300, paint);
 		}
 
 		views.setImageViewBitmap(R.id.widget, myBitmap);
@@ -721,8 +720,8 @@ class Common
 				{
 					if(!use_icons)
 					{
-						if(!lookupTable.get(tmpicon).replaceAll("_", "-").equals("j-w1-8-n"))
-							day.icon = "wi wi-meteofrance-"  + lookupTable.get(tmpicon).replaceAll("_", "-");
+						if(!Objects.requireNonNull(lookupTable.get(tmpicon)).replaceAll("_", "-").equals("j-w1-8-n"))
+							day.icon = "wi wi-meteofrance-"  + Objects.requireNonNull(lookupTable.get(tmpicon)).replaceAll("_", "-");
 						else
 							day.icon = "flaticon-thermometer";
 					} else {
@@ -838,7 +837,7 @@ class Common
 				else
 					day.icon = "flaticon-thermometer";
 			} else {
-				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length()).replaceAll("-", "_");
+				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 				fileName = checkImage(fileName, day.icon);
 				day.icon = "file://" + fileName;
 			}
@@ -886,7 +885,7 @@ class Common
 					else
 						day.icon = "flaticon-thermometer";
 				} else {
-					fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length()).replaceAll("-", "_");
+					fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 					fileName = checkImage(fileName, day.icon);
 					day.icon = "file://" + fileName;
 				}
@@ -946,7 +945,7 @@ class Common
 				day.day = sdf.format(day.timestamp);
 
 				String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class=\"icon\"")[1].split("src=\"")[1].split("\">")[0].trim();
-				String fileName =  icon.substring(icon.lastIndexOf('/') + 1, icon.length()).replaceAll("\\.svg$", "\\.png");
+				String fileName =  icon.substring(icon.lastIndexOf('/') + 1).replaceAll("\\.svg$", "\\.png");
 				day.min = forecasts[i].split("<span class=\"tab-temp-low\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
 				day.max = forecasts[i].split("<span class=\"tab-temp-high\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
 				day.text = forecasts[i].split("<div class=\"summary-text", 2)[1].split("\">", 3)[2]
@@ -1096,7 +1095,7 @@ class Common
 						e.printStackTrace();
 					}
 
-					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "");
+					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1).replaceAll("\\.gif$", "");
 
 					if(!use_icons)
 					{
@@ -1228,7 +1227,7 @@ class Common
 						e.printStackTrace();
 					}
 
-					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1, img_url.length()).replaceAll("\\.gif$", "");
+					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1).replaceAll("\\.gif$", "");
 
 					if(!use_icons)
 					{
@@ -1298,7 +1297,7 @@ class Common
 				iconLink.put(i, iconLink.getString(i).replace("http://", "https://"));
 				String url = iconLink.getString(i);
 
-				String fn = "wgov" + url.substring(url.lastIndexOf('/') + 1, url.length()).replace(".png", ".jpg");
+				String fn = "wgov" + url.substring(url.lastIndexOf('/') + 1).replace(".png", ".jpg");
 				if(fn.startsWith("wgovDualImage.php"))
 				{
 					tmp = url.split("\\?", 2)[1].trim();
@@ -1681,7 +1680,7 @@ class Common
 			String[] bits = data.split("<title>");
 			if (bits.length >= 2)
 				desc = bits[1].split("</title>")[0];
-			desc = desc.substring(desc.lastIndexOf(" - ") + 3, desc.length()).trim();
+			desc = desc.substring(desc.lastIndexOf(" - ") + 3).trim();
 			String ftime = data.split("<tr class=\"headRow\">", 2)[1].split("</tr>", 2)[0].trim();
 			String date = ftime.split("<td width=\"30%\" class=\"stattime\">", 2)[1].split("</td>", 2)[0].trim();
 			ftime = date + " " + ftime.split("<td width=\"40%\" class=\"stattime\">", 2)[1].split(" Uhr</td>", 2)[0].trim();
@@ -2512,7 +2511,7 @@ class Common
 			}
 
 			SetStringPref("LastDownload", line);
-			SetLongPref("LastDownloadTime", round(System.currentTimeMillis() / 1000));
+			SetLongPref("LastDownloadTime", Math.round(System.currentTimeMillis() / 1000.0));
 		}
 	}
 
@@ -2649,9 +2648,9 @@ class Common
 				paint.setColor(0xff00487b);
 				paint.setStyle(Paint.Style.STROKE);
 				paint.setStrokeWidth(1);
-				comboImage.drawLine( x1 / 2 + 5, y1 - 9, x1 / 2 + 10, y1 - 7, paint);
-				comboImage.drawLine( x1 / 2 - 10, y1 - 7, x1 / 2 + 10, y1 - 7, paint);
-				comboImage.drawLine( x1 / 2 + 5, y1 - 5, x1 / 2 + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 9, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) - 10, y1 - 7, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 5, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
 			}
 
 			if(!fnum.equals("%"))
@@ -2739,17 +2738,17 @@ class Common
 			paint.setAntiAlias(true);
 			Canvas comboImage = new Canvas(bmp);
 			comboImage.drawBitmap(bmp1, 0f, 0f, null);
-			comboImage.drawBitmap(bmp2, x1 / 2, 0f, null);
+			comboImage.drawBitmap(bmp2, Math.round(x1 / 2.0), 0f, null);
 
 			paint.setColor(0xff000000);
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeWidth(4);
-			comboImage.drawLine( x1 / 2, 0, x1 / 2, y1, paint);
+			comboImage.drawLine( Math.round(x1 / 2.0), 0, Math.round(x1 / 2.0), y1, paint);
 
 			paint.setColor(0xffffffff);
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeWidth(2);
-			comboImage.drawLine( x1 / 2, 0, x1 / 2, y1, paint);
+			comboImage.drawLine( Math.round(x1 / 2.0), 0, Math.round(x1 / 2.0), y1, paint);
 
 			if(!fnum.equals("%") || !snum.equals("%"))
 			{
@@ -2769,9 +2768,9 @@ class Common
 				paint.setColor(0xff00487b);
 				paint.setStyle(Paint.Style.STROKE);
 				paint.setStrokeWidth(1);
-				comboImage.drawLine( x1 / 2 + 5, y1 - 9, x1 / 2 + 10, y1 - 7, paint);
-				comboImage.drawLine( x1 / 2 - 10, y1 - 7, x1 / 2 + 10, y1 - 7, paint);
-				comboImage.drawLine( x1 / 2 + 5, y1 - 5, x1 / 2 + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 9, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) - 10, y1 - 7, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 5, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
 			}
 
 			if(!fnum.equals("%"))
@@ -2834,6 +2833,7 @@ class Common
 
 	// https://stackoverflow.com/questions/19945411/android-java-how-can-i-parse-a-local-json-file-from-assets-folder-into-a-listvi
 
+	@SuppressWarnings("CharsetObjectCanBeUsed")
 	private void loadNWS()
 	{
 		try
@@ -2849,6 +2849,7 @@ class Common
 		}
 	}
 
+	@SuppressWarnings("CharsetObjectCanBeUsed")
 	private void loadConditions()
 	{
 		try
@@ -2935,7 +2936,7 @@ class Common
 			final String[] UC = uri.getUserInfo().split(":");
 			Common.LogMessage("uri username = " + uri.getUserInfo());
 
-			if (UC != null && UC.length > 1)
+			if (UC.length > 1)
 			{
 				Authenticator.setDefault(new Authenticator()
 				{
@@ -2987,7 +2988,7 @@ class Common
 	}
 
 	@SuppressWarnings({"SameParameterValue"})
-	private File downloadJSOUP(File f, String fromURL) throws Exception
+	File downloadJSOUP(File f, String fromURL) throws Exception
 	{
 		File dir = f.getParentFile();
 		if (!dir.exists())
@@ -3018,7 +3019,7 @@ class Common
 			final String[] UC = uri.getUserInfo().split(":");
 			LogMessage("uri username = " + uri.getUserInfo());
 
-			if (UC != null && UC.length > 1)
+			if (UC.length > 1)
 			{
 				Authenticator.setDefault(new Authenticator()
 				{
@@ -3391,7 +3392,7 @@ class Common
 			return;
 		}
 
-		final long curtime = round(System.currentTimeMillis() / 1000);
+		final long curtime = Math.round(System.currentTimeMillis() / 1000.0);
 
 		if(GetStringPref("forecastData", "").equals("") || GetLongPref("rssCheck", 0) + 7190 < curtime)
 		{

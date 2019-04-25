@@ -225,7 +225,7 @@ class Forecast
 	    if(!common.GetStringPref("RADAR_URL", "").equals("") && f2.lastModified() + period[0] < System.currentTimeMillis())
 		    reloadWebView(false);
 
-	    long curtime = Math.round(System.currentTimeMillis() / 1000);
+	    long curtime = Math.round(System.currentTimeMillis() / 1000.0);
 	    if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < curtime)
 		    getForecast(false);
 
@@ -337,7 +337,8 @@ class Forecast
 				try
 				{
 					Common.LogMessage("starting to download image from: " + radar);
-					File f = common.downloadRADAR(radar);
+					File file = new File(common.context.getFilesDir(), "/radar.gif.tmp");
+					File f = common.downloadJSOUP(file, radar);
 					Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
 					File f2 = new File(common.context.getFilesDir(), "/radar.gif");
 					if(f.renameTo(f2))
@@ -478,7 +479,7 @@ class Forecast
             {
                 try
                 {
-                    long curtime = Math.round(System.currentTimeMillis() / 1000);
+                    long curtime = Math.round(System.currentTimeMillis() / 1000.0);
 
                     if(common.GetStringPref("forecastData", "").equals("") || common.GetLongPref("rssCheck", 0) + 7190 < curtime)
                     {

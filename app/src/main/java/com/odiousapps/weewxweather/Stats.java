@@ -387,7 +387,7 @@ class Stats
 					    "</td><td>" + rain + bits[62] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td></tr>";
 			    sb.append(stmp);
 
-			    stmp = "<tr><td>&nbsp;</td><td colspan='3'>&nbsp;</td><td>" + since + "</td><td>&nbsp;</td></tr>";
+			    stmp = "<tr><td colspan='4'>&nbsp;</td><td colspan='2'>" + since + "</td></tr>";
 			    sb.append(stmp);
 
 			    stmp = "</table><br>";
@@ -445,7 +445,7 @@ class Stats
 				    if (bits.length > 160 && !bits[159].equals("") && !bits[160].equals(""))
 					    since = "before " + bits[160];
 
-				    stmp = "<tr><td>&nbsp;</td><td colspan='3'>&nbsp;</td><td>" + since + "</td><td>&nbsp;</td></tr>";
+				    stmp = "<tr><td colspan='4'>&nbsp;</td><td colspan='2'>" + since + "</td></tr>";
 				    sb.append(stmp);
 
 				    stmp = "</table><br>";

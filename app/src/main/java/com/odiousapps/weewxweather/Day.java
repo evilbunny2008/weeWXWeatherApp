@@ -1,5 +1,7 @@
 package com.odiousapps.weewxweather;
 
+import android.support.annotation.NonNull;
+
 class Day
 {
 	String day = "";
@@ -9,6 +11,7 @@ class Day
 	String min = "";
 	long timestamp = 0;
 
+	@NonNull
 	public String toString()
 	{
 		return "day == " + day + "\nicon == " + icon + "\ntext == " + text + "\nmax == " + max + "\nmin == " + min + "\ntimestamp == " + timestamp + "\n\n";

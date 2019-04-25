@@ -479,7 +479,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	{
 		Thread t = new Thread(new Runnable()
 		{
-			@SuppressWarnings("ConstantConditions")
 			@Override
 			public void run()
 			{
@@ -506,7 +505,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				Switch use_icons = findViewById(R.id.use_icons);
 
 				RadioButton showRadar = findViewById(R.id.showRadar);
-				long curtime = Math.round(System.currentTimeMillis() / 1000);
+				long curtime = Math.round(System.currentTimeMillis() / 1000.0);
 
 				if(use_icons.isChecked() && (common.GetLongPref("icon_version", 0) < Common.icon_version || !common.checkForImages()))
 				{
@@ -609,7 +608,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					{
 						if(radtype.equals("image"))
 						{
-							File f = common.downloadRADAR(radar);
+							File file = new File(getFilesDir(), "/radar.gif.tmp");
+							File f = common.downloadJSOUP(file, radar);
 							validURL2 = f.exists();
 						} else if(radtype.equals("webpage")) {
 							validURL2 = common.checkURL(radar);

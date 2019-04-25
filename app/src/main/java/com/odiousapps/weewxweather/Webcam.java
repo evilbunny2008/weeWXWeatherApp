@@ -114,12 +114,12 @@ class Webcam
             @Override
             public void run()
             {
-	            int period = 0;
-	            int curtime = round(System.currentTimeMillis() / 1000);
+	            long period = 0;
+	            long curtime = round(System.currentTimeMillis() / 1000.0);
 
 	            File file = new File(common.context.getFilesDir(), "webcam.jpg");
 
-	            Common.LogMessage("curtime = " + curtime + ", file.lastModified() == " + round(file.lastModified() / 1000));
+	            Common.LogMessage("curtime = " + curtime + ", file.lastModified() == " + round(file.lastModified() / 1000.0));
 
 	            if(!force)
 	            {
@@ -128,10 +128,10 @@ class Webcam
 			            return;
 
 		            long[] ret = common.getPeriod();
-		            period = round(ret[0] / 1000);
+		            period = Math.round(ret[0] / 1000.0);
 	            }
 
-	            if(force || !file.exists() || round(file.lastModified() / 1000) + period < curtime)
+	            if(force || !file.exists() || round(file.lastModified() / 1000.0) + period < curtime)
 	            {
 		            if(downloadWebcam(webURL, common.context.getFilesDir()))
 			            Common.LogMessage("done downloading, prompt handler to draw to iv");
