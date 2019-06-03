@@ -50,13 +50,11 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
-import java.util.TimeZone;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -82,8 +80,8 @@ class Common
 	static String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
 	private static final long inigo_version = 4000;
-	static final long icon_version = 6;
-	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.7.11/icons.zip";
+	static final long icon_version = 8;
+	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.8.21/icons.zip";
 
 	private Thread t = null;
 	private JSONObject nws = null;
@@ -265,7 +263,7 @@ class Common
 		return GetLongPref(name, 0);
 	}
 
-	@SuppressWarnings("WeakerAccess, SameParameterValue")
+	@SuppressWarnings("SameParameterValue")
 	long GetLongPref(String name, long defval)
 	{
 		String val = GetStringPref(name, "" + defval);
@@ -341,7 +339,7 @@ class Common
 		paint.setColor(fgColour);
 		paint.setTextAlign(Paint.Align.CENTER);
 
-		String bits[] = GetStringPref("LastDownload", "").split("\\|");
+		String[] bits = GetStringPref("LastDownload", "").split("\\|");
 		if (bits.length > 110)
 		{
 			paint.setTextSize(64);
@@ -425,113 +423,6 @@ class Common
 			return new String[]{generateForecast(days, timestamp, showHeader), desc};
 		} catch (Exception e)
 		{
-			e.printStackTrace();
-		}
-
-		return null;
-	}
-
-	String[] processSMN(String data)
-	{
-		return processSMN(data, false);
-	}
-
-	String[] processSMN(String data, boolean showHeader)
-	{
-		if (data == null || data.equals(""))
-			return null;
-
-		boolean metric = GetBoolPref("metric", true);
-		boolean use_icons = GetBoolPref("use_icons", false);
-		String desc;
-		long timestamp, lastTS;
-
-		try
-		{
-			data = data.split("<div id=\"block_city_detail\"", 2)[1]; //.split("</div></div>", 2)[0].trim();
-			desc = data.split("<h1>", 2)[1].split("</h1>", 2)[0].trim();
-
-			String ftime = data.split("<h3 class=\"infoTitle\">Actualizado: ", 2)[1].split("hs.</h3>", 2)[0].trim();
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-			ftime = sdf.format(System.currentTimeMillis()) + " " + ftime;
-
-			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
-			lastTS = timestamp = sdf.parse(ftime).getTime();
-
-			data = data.split("<div class=\"panels-flexible-row panels-flexible-row-base2cols-1 clearfix", 2)[0]
-					.split("</div></div>")[0].trim();
-
-			List<Day> days = new ArrayList<>();
-			String[] bits = data.split("extendedForecastDay");
-			for (int i = 1; i < bits.length; i++)
-			{
-				Day day = new Day();
-				String line = bits[i].trim();
-				String date = line.split("<h3>", 2)[1].split("</h3>", 2)[0].trim();
-				String min = line.split("<p>Min ", 2)[1].split("ºC", 2)[0].trim();
-				String max = line.split("Max ", 2)[1].split("ºC", 2)[0].trim();
-				String morning = line.split("<p><b>")[1].split("</b>", 2)[0].trim();
-				String night = line.split("<p><b>")[2].split("</b>", 2)[0].trim();
-				String icon1 = line.split("<i class=\"wi ")[1].split("\"></i>", 2)[0].trim();
-				String icon2 = line.split("<i class=\"wi ")[2].split("\"></i>", 2)[0].trim();
-				String text1 = line.split("<div class=\"col col-md-8\">")[1].split("</div>", 2)[0].trim();
-				String text2 = line.split("<div class=\"col col-md-8\">")[2].split("</div>", 2)[0].trim();
-
-				if(!use_icons)
-				{
-					day.icon = "wi " + icon1;
-				} else {
-					String icon = "https://www.smn.gob.ar/sites/all/themes/smn/images/weather-icons/big-" + icon1 + ".png";
-					String fileName = "smn_" + icon1.replaceAll("-", "_") + ".png";
-					fileName = checkImage(fileName, icon);
-					day.icon = "file://" + fileName;
-				}
-
-				day.day = date + " - " + morning;
-				day.timestamp = convertDaytoTS(day.day, new Locale("es", "AR"), lastTS);
-
-				if(metric)
-					max = max + "&deg;C";
-				else
-					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-
-				day.max = max;
-				day.min = "&deg;C";
-				day.text = text1;
-				days.add(day);
-
-				lastTS = day.timestamp;
-
-				day = new Day();
-
-				if(!use_icons)
-				{
-					day.icon = "wi " + icon2;
-				} else {
-					String icon = "https://www.smn.gob.ar/sites/all/themes/smn/images/weather-icons/big-" + icon2 + ".png";
-					String fileName = "smn_" + icon2.replaceAll("-", "_") + ".png";
-					fileName = checkImage(fileName, icon);
-					day.icon = "file://" + fileName;
-				}
-
-				day.day = date + " - " + night;
-				day.timestamp = convertDaytoTS(day.day, new Locale("es", "AR"), lastTS);
-
-				if(metric)
-					min = min + "&deg;C";
-				else
-					min = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-
-				day.max = min;
-				day.min = "&deg;C";
-				day.text = text2;
-				days.add(day);
-
-				lastTS = day.timestamp;
-			}
-
-			return new String[]{generateForecast(days, timestamp, showHeader), desc};
-		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
@@ -826,7 +717,7 @@ class Common
 			if(bit.contains("<dd class=\"min\">"))
 				day.min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
 
-				day.text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
+			day.text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
 
 			String fileName =  day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length() - 4);
 
@@ -917,7 +808,6 @@ class Common
 		return processMET(data, false);
 	}
 
-	@SuppressWarnings("StringConcatenationInLoop")
 	String[] processMET(String data, boolean showHeader)
 	{
 		if(data == null || data.equals(""))
@@ -1357,7 +1247,7 @@ class Common
 						}
 					}
 				} else {
-					Pattern p = Pattern.compile("[^0-9]");
+					Pattern p = Pattern.compile("[0-9]");
 					number = p.matcher(fn).replaceAll("");
 					if(!number.equals(""))
 					{
@@ -1490,7 +1380,6 @@ class Common
 		return processBOM(data, false);
 	}
 
-	@SuppressWarnings("StringConcatenationInLoop")
 	String[] processBOM(String data, boolean showHeader)
 	{
 		if(data == null || data.equals(""))
@@ -1756,7 +1645,6 @@ class Common
 		return processAEMET(data, false);
 	}
 
-	@SuppressWarnings("StringConcatenationInLoop")
 	String[] processAEMET(String data, boolean showHeader)
 	{
 		if (data == null || data.equals(""))
@@ -2344,6 +2232,32 @@ class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
+	private String[] checkFiles(String url) throws Exception
+	{
+		String filename = new File(url).getName();
+
+		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		f = new File(f, filename);
+		if(!f.exists())
+		{
+			LogMessage("File not found: " + "yahoo-" + filename);
+			LogMessage("downloading...");
+
+			String new_url = "http://delungra.com/weewx/yahoo-missing.php?filename=" + filename;
+			f = downloadBinary(f, new_url);
+			if(f == null)
+				return new String[]{null, "f is invalid."};
+
+			if(f.exists())
+				return new String[]{"", f.getAbsolutePath()};
+		} else {
+			LogMessage("yahoo-" + filename);
+			return new String[]{"", f.getAbsolutePath()};
+		}
+
+		return new String[]{null, "Failed to load or download icon: " + filename};
+	}
+
 	String[] processYahoo(String data)
 	{
 		return processYahoo(data, false);
@@ -2354,60 +2268,81 @@ class Common
 	    if(data == null || data.equals(""))
 		    return null;
 
-	    boolean use_icons = GetBoolPref("use_icons", false);
-	    JSONObject json;
+	    boolean metric = GetBoolPref("metric", true);
+
 		List<Day> days = new ArrayList<>();
-		long timestamp;
+		long timestamp = GetLongPref("rssCheck", 0) * 1000;
 		String desc;
+	    Document doc;
 
 	    try
 	    {
-		    json = new JSONObject(data);
-		    JSONObject query = json.getJSONObject("query");
-		    JSONObject results = query.getJSONObject("results");
-		    JSONObject channel = results.getJSONObject("channel");
-		    String pubDate = query.getString("created");
-		    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault());
-		    sdf.setTimeZone(TimeZone.getTimeZone("UTC"));
-		    timestamp = sdf.parse(pubDate).getTime();
-		    JSONObject item = channel.getJSONObject("item");
-		    JSONObject units = channel.getJSONObject("units");
-		    String temp = units.getString("temperature");
-		    desc = channel.getString("description").substring(19);
-		    JSONArray forecast = item.getJSONArray("forecast");
-		    Calendar calendar = Calendar.getInstance();
-		    int hour = calendar.get(Calendar.HOUR_OF_DAY);
+		    String[] bits = data.split("data-reactid=\"7\">", 8);
+		    String[] b = bits[7].split("</h1>", 2);
+		    String town = b[0];
+		    String rest = b[1];
+		    b = rest.split("data-reactid=\"8\">", 2)[1].split("</div>", 2);
+		    String country = b[0];
+		    rest = b[1];
 
-		    int start = 0;
-		    if (hour >= 15)
-			    start = 1;
-
-		    JSONObject tmp;// = forecast.getJSONObject(start);
-		    int code;// = tmp.getInt("code");
-
-		    for (int i = start; i <= start + 5; i++)
+		    desc = town.trim() + ", " + country.trim();
+		    int[] daynums = new int[]{196, 221, 241, 261, 281, 301, 321, 341, 361, 381};
+		    for (int startid : daynums)
 		    {
-		    	Day day = new Day();
-			    tmp = forecast.getJSONObject(i);
-			    code = tmp.getInt("code");
+		    	Day myday = new Day();
 
-			    if(!use_icons)
+			    int endid;
+			    long last_ts = System.currentTimeMillis();
+
+			    if(startid == 196)
+				    endid = startid + 24;
+			    else
+				    endid = startid + 19;
+
+			    String tmpstr = rest.split("<span data-reactid=\"" + startid + "\">", 2)[1];
+			    bits = tmpstr.split("data-reactid=\"" + endid + "\">", 2);
+			    tmpstr = bits[0];
+			    rest = bits[1];
+			    String dow = tmpstr.split("</span>", 2)[0].trim();
+			    myday.timestamp = convertDaytoTS(dow, new Locale("en", "US"), last_ts);
+			    SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+			    myday.day = sdf.format(myday.timestamp);
+
+			    myday.text = tmpstr.split("<img alt=\"", 2)[1].split("\"", 2)[0].trim();
+			    myday.icon = tmpstr.split("<img alt=\"", 2)[1].split("\"", 2)[1];
+			    myday.icon = myday.icon.split("src=\"", 2)[1].split("\"", 2)[0].trim();
+
+			    myday.max = tmpstr.split("data-reactid=\"" + (startid + 10)  + "\">", 2)[1];
+			    myday.max = myday.max.split("</span>", 2)[0].trim();
+			    myday.min = tmpstr.split("data-reactid=\"" + (startid + 13)  + "\">", 2)[1];
+			    myday.min = myday.min.split("</span>", 2)[0].trim();
+
+			    doc = Jsoup.parse(myday.max.trim());
+			    myday.max = doc.text();
+
+			    doc = Jsoup.parse(myday.min.trim());
+			    myday.min = doc.text();
+
+			    myday.max = myday.max.substring(0, myday.max.length() - 1);
+			    myday.min = myday.min.substring(0, myday.min.length() - 1);
+
+			    if(metric)
 			    {
-				    day.icon = "wi wi-yahoo-" + code;
+				    myday.max = round((Double.parseDouble(myday.max) - 32.0) * 5.0 / 9.0) + "&deg;C";
+				    myday.min = round((Double.parseDouble(myday.min) - 32.0) * 5.0 / 9.0) + "&deg;C";
 			    } else {
-				    String fileName = checkImage("yahoo" + code + ".gif", null);
-				    day.icon = "file://" + fileName;
+				    myday.max += "&deg;F";
+				    myday.min += "&deg;F";
 			    }
 
-			    sdf = new SimpleDateFormat("dd MMM yyyy", Locale.getDefault());
-			    day.timestamp = sdf.parse(tmp.getString("date")).getTime();
-			    sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
-			    day.day = sdf.format(day.timestamp);
+			    String[] ret = checkFiles(myday.icon);
+			    if(ret[0] != null)
+				    myday.icon = "file://" + ret[1];
+			    else
+				    return ret;
 
-			    day.max = tmp.getString("high") + "&deg;" + temp;
-			    day.text = tmp.getString("text");
-			    day.min = tmp.getString("low") + "&deg;" + temp;
-			    days.add(day);
+                LogMessage(myday.toString());
+			    days.add(myday);
 		    }
 	    } catch (Exception e) {
 		    e.printStackTrace();
@@ -2426,7 +2361,7 @@ class Common
 
 		intent = new Intent(context, WidgetProvider.class);
 		intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
-		int ids[] = AppWidgetManager.getInstance(context.getApplicationContext()).getAppWidgetIds(new ComponentName(context.getApplicationContext(), WidgetProvider.class));
+		int[] ids = AppWidgetManager.getInstance(context.getApplicationContext()).getAppWidgetIds(new ComponentName(context.getApplicationContext(), WidgetProvider.class));
 		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
 		context.sendBroadcast(intent);
 		Common.LogMessage("widget intent broadcasted");
@@ -2441,7 +2376,7 @@ class Common
 
 		intent = new Intent(context, WidgetProvider.class);
 		intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
-		int ids[] = AppWidgetManager.getInstance(context.getApplicationContext()).getAppWidgetIds(new ComponentName(context.getApplicationContext(), WidgetProvider.class));
+		int[] ids = AppWidgetManager.getInstance(context.getApplicationContext()).getAppWidgetIds(new ComponentName(context.getApplicationContext(), WidgetProvider.class));
 		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
 		context.sendBroadcast(intent);
 		Common.LogMessage("widget intent broadcasted");
@@ -2487,7 +2422,7 @@ class Common
 		String line = downloadString(fromURL);
 		if(!line.equals(""))
 		{
-			String bits[] = line.split("\\|");
+			String[] bits = line.split("\\|");
 			if (Double.valueOf(bits[0]) < inigo_version)
 			{
 				if(GetLongPref("inigo_version", 0) < Common.inigo_version)
@@ -2710,7 +2645,7 @@ class Common
 					bmp1 = Bitmap.createBitmap(bmp1, 0, 0, x1 / 2, y1);
 					break;
 				case "R":
-					bmp1 = Bitmap.createBitmap(bmp1, x1 / 2, 0, x1 - x1 / 2, y1);
+					bmp1 = Bitmap.createBitmap(bmp1, x1 / 2, 0, x1, y1);
 					break;
 				default:
 					bmp1 = Bitmap.createBitmap(bmp1, x1 / 4, 0, x1 * 3 / 4, y1);
@@ -2724,7 +2659,7 @@ class Common
 					bmp2 = Bitmap.createBitmap(bmp2, 0, 0, x2 / 2, y2);
 					break;
 				case "R":
-					bmp2 = Bitmap.createBitmap(bmp2, x2 / 2, 0, x2 - x2 / 2, y2);
+					bmp2 = Bitmap.createBitmap(bmp2, x2 / 2, 0, x2, y2);
 					break;
 				default:
 					bmp2 = Bitmap.createBitmap(bmp2, x2 / 4, 0, x2 * 3 / 4, y2);
@@ -2754,7 +2689,7 @@ class Common
 			{
 				BitmapFactory.Options options = new BitmapFactory.Options();
 				options.inJustDecodeBounds = false;
-				Bitmap bmp4 =  loadImage("wgovoverlay.jpg");
+				Bitmap bmp4 = loadImage("wgovoverlay.jpg");
 				paint = new Paint();
 				paint.setAlpha(100);
 				comboImage.drawBitmap(bmp4, 0f, bmp1.getHeight() - bmp4.getHeight(), paint);
@@ -3042,7 +2977,7 @@ class Common
 		InputStream input = conn.getInputStream();
 
 		int count;
-		byte data[] = new byte[1024];
+		byte[] data = new byte[1024];
 		while ((count = input.read(data)) != -1)
 			outputStream.write(data, 0, count);
 
@@ -3060,6 +2995,7 @@ class Common
 		lookupTable.put("N_W2_1", "n_w2_1");
 		lookupTable.put("N_W1_0-N_7", "n_w2_1");
 		lookupTable.put("J_W1_0-N", "n_w2_1");
+		lookupTable.put("J_W1_0-N_0", "n_w2_1");
 		lookupTable.put("J_W2_1", "n_w2_1");
 
 		lookupTable.put("J_W1_0-N_5", "j_w1_0_n_5");
@@ -3354,7 +3290,7 @@ class Common
 			return false;
 
 		String[] files = new String[]{"aemet_11_g.png", "apixu_113.png", "bom1.png", "bom2clear.png", "dwd_pic_0_8.png",
-										"i1.png", "met0.png", "mf_j_w1_0_n_2.png", "ms_cloudy.png", "smn_wi_cloudy.png",
+										"i1.png", "met0.png", "mf_j_w1_0_n_2.png", "ms_cloudy.png",
 										"wca00.png", "wgovbkn.jpg", "wzclear.png", "y01d.png", "yahoo0.gif", "yrno01d.png"};
 		for(String file : files)
 		{

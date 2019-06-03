@@ -58,7 +58,7 @@ class Weather
 	    int iw = 17;
 
         Common.LogMessage("updateFields()");
-        String bits[] = common.GetStringPref("LastDownload","").split("\\|");
+        String[] bits = common.GetStringPref("LastDownload","").split("\\|");
         if(bits.length < 65)
             return rootView;
 
@@ -709,24 +709,6 @@ class Weather
 						    else
 							    tmp = "<head>" + Common.ssheader + "</head>";
 						    sb.append(tmp);
-						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
-						    sb.append(tmp);
-						    break;
-					    }
-					    case "smn.gob.ar":
-					    {
-						    String[] content = common.processSMN(data);
-						    if (content == null || content.length <= 0)
-							    return;
-
-						    String logo = "<img src='smn.png' height='29px'/><br/>";
-						    sb.append("<html>");
-						    if (dark_theme)
-							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
-						    else
-						    	tmp = "<head>" + Common.ssheader + "</head>";
-						    sb.append(tmp);
-
 						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						    sb.append(tmp);
 						    break;

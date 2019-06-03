@@ -655,13 +655,6 @@ class Forecast
 						    updateForecast(content[0], content[1]);
 					    break;
 				    }
-				    case "smn.gob.ar":
-				    {
-					    String[] content = common.processSMN(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
 				    case "darksky.net":
 				    {
 					    String[] content = common.processDarkSky(data, true);
@@ -749,8 +742,7 @@ class Forecast
 				    tv1.setTextColor(0xff000000);
 				    tv1.setBackgroundColor(0xffffffff);
 				    im.setBackgroundColor(0xffffffff);
-			    } else
-			    {
+			    } else {
 				    tv1.setTextColor(0xffffffff);
 				    tv1.setBackgroundColor(0xff000000);
 				    im.setBackgroundColor(0xff000000);
@@ -812,9 +804,6 @@ class Forecast
 					    break;
 				    case "meteofrance.com":
 					    im.setImageResource(R.drawable.mf);
-					    break;
-				    case "smn.gob.ar":
-					    im.setImageResource(R.drawable.smn);
 					    break;
 				    case "darksky.net":
 					    im.setImageResource(R.drawable.darksky);

@@ -633,14 +633,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						switch (fctype.toLowerCase())
 						{
 							case "yahoo":
-								forecast = URLEncoder.encode(forecast, "utf-8");
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
-
-								if (metric_forecasts.isChecked())
-									forecast = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + forecast + "%22)%20and%20u%3D'c'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
-								else
-									forecast = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + forecast + "%22)%20and%20u%3D'f'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+								if(!forecast.startsWith("http"))
+								{
+									common.SetStringPref("lastError", "Yahoo API recently changed, you need to update your settings.");
+									handlerForecast.sendEmptyMessage(0);
+									return;
+								}
 								break;
 							case "weatherzone":
 								forecast = "https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecast + "&obs=0&fc=1&warn=0";
@@ -673,7 +673,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 								if(forecast.contains("lat") && forecast.contains("lon"))
 								{
-									String[] tmp = forecast.split("&", 2);
+									String[] tmp = forecast.split("&");
 									for(String line : tmp)
 									{
 										if(line.split("=", 2)[0].equals("lat"))
@@ -723,10 +723,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
-							case "smn.gob.ar":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
 							case "darksky.net":
 								forecast += "?exclude=currently,minutely,hourly,alerts,flags";
 								forecast += "&lang=" + Locale.getDefault().getLanguage();
@@ -750,7 +746,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("fctype=" + fctype);
 								break;
 							case "weather.com":
-								forecast = "https://api.weather.com/v2/turbo/vt1dailyForecast?apiKey=d522aa97197fd864d36b418f39ebb323&format=json&geocode=" + forecast;
+								forecast = "https://api.weather.com/v2/turbo/vt1dailyForecast?apiKey=d522aa97197fd864d36b418f39ebb323&format=json&geocode=" + forecast + "&language=en-US";
 								if(metric_forecasts.isChecked())
 									forecast += "&units=m";
 								else
@@ -786,7 +782,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				Common.LogMessage("line 780");
 
-				if(fctype.equals("weather.gov") && !common.checkForImages() && !use_icons.isChecked())
+				if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !common.checkForImages() && !use_icons.isChecked())
 				{
 					common.SetStringPref("lastError", "Forecast type '" + fctype + "' needs to have icons available, Please switch to using icons and try again.");
 					handlerForecastIcons.sendEmptyMessage(0);
