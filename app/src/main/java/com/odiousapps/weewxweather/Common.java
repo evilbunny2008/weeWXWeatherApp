@@ -70,7 +70,7 @@ class Common
 	private String appversion = "0.0.0";
 	Context context;
 
-	final static String UA = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36";
+	final static  String UA = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36";
 
 	static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
 	static String REFRESH_INTENT = "com.odiousapps.weewxweather.REFRESH_INTENT";
@@ -80,8 +80,8 @@ class Common
 	static String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
 	private static final long inigo_version = 4000;
-	static final long icon_version = 8;
-	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.8.21/icons.zip";
+	static final long icon_version = 9;
+	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.8.25/icons.zip";
 
 	private Thread t = null;
 	private JSONObject nws = null;
@@ -2802,8 +2802,13 @@ class Common
 
 	String downloadSettings(String url) throws Exception
 	{
+		String UTF8_BOM = "\uFEFF";
+
 		SetStringPref("SETTINGS_URL", url);
-		return downloadString(url).replaceAll("[^\\p{ASCII}]+$", "").trim();
+		String cfg = downloadString(url).trim();
+		if(cfg.startsWith(UTF8_BOM))
+			cfg = cfg.substring(1).trim();
+		return cfg;
 	}
 
 	File downloadRADAR(String radar) throws Exception

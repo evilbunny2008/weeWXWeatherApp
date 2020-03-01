@@ -55,7 +55,6 @@ import com.pes.androidmaterialcolorpickerdialog.ColorPickerCallback;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.net.URLEncoder;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
@@ -334,7 +333,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "<a href='https://www.dwd.de'>Deutscher Wetterdienst</a>, " +
 			    "<a href='https://metservice.com'>MetService.com</a>, " +
 			    "<a href='https://meteofrance.com'>MeteoFrance.com</a>, " +
-			    "<a href='https://www.smn.gob.ar'>Servicio Meteorológico Nacional</a>, " +
 			    "<a href='https://darksky.net'>DarkSky.net</a>" +
 			    "<br><br>" +
 			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
