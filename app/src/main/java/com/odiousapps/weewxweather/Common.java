@@ -1761,24 +1761,25 @@ class Common
 		try
 		{
 			JSONObject jobj = new JSONObject(data);
-			desc = jobj.getString("id");
+			desc = "TODO";
 
-			JSONArray validDate = jobj.getJSONObject("vt1dailyForecast").getJSONArray("validDate");
-			JSONArray icons = jobj.getJSONObject("vt1dailyForecast").getJSONObject("day").getJSONArray("icon");
-			JSONArray phrase = jobj.getJSONObject("vt1dailyForecast").getJSONObject("day").getJSONArray("phrase");
-			JSONArray day_temp = jobj.getJSONObject("vt1dailyForecast").getJSONObject("day").getJSONArray("temperature");
-			JSONArray night_temp = jobj.getJSONObject("vt1dailyForecast").getJSONObject("night").getJSONArray("temperature");
+			JSONArray validDate = jobj.getJSONArray("dayOfWeek");
+			JSONArray timestamps = jobj.getJSONArray("validTimeUtc");
+			JSONObject daypart = jobj.getJSONArray("daypart").getJSONObject(0);
+			JSONArray icons = daypart.getJSONArray("iconCode");
+			JSONArray phrase = daypart.getJSONArray("wxPhraseLong");
+			JSONArray day_temp = jobj.getJSONArray("temperatureMax");
+			JSONArray night_temp = jobj.getJSONArray("temperatureMin");
+			JSONArray dayname = jobj.getJSONArray("dayOfWeek");
 
-			SimpleDateFormat dayname = new SimpleDateFormat("EEEE", Locale.getDefault());
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXX", Locale.getDefault());
 			for(int i = 0; i < validDate.length(); i++)
 			{
-				if(icons.getString(i) == null || icons.getString(i).equals("null"))
+				if (icons.getString(i) == null || icons.getString(i).equals("null"))
 					continue;
 
 				Day day = new Day();
-				day.timestamp = sdf.parse(validDate.getString(i)).getTime();
-				day.day = dayname.format(day.timestamp);
+				day.timestamp = timestamps.getLong(i);
+				day.day = dayname.getString(i);
 				day.text = phrase.getString(i);
 				day.icon = icons.getString(i);
 				day.max = day_temp.getString(i);
