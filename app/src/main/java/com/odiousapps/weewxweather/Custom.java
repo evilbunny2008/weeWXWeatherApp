@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Vibrator;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +16,11 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 class Custom
 {
-    private Common common;
+    private final Common common;
     private WebView wv;
 	private SwipeRefreshLayout swipeLayout;
 
@@ -67,12 +68,7 @@ class Custom
 		    @Override
 		    public void onScrollChanged()
 		    {
-			    if (wv.getScrollY() == 0)
-			    {
-				    swipeLayout.setEnabled(true);
-			    } else {
-				    swipeLayout.setEnabled(false);
-			    }
+			    swipeLayout.setEnabled(wv.getScrollY() == 0);
 		    }
 	    });
 

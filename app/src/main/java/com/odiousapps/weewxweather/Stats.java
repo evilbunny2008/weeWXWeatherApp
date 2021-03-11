@@ -7,7 +7,6 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Vibrator;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,11 +21,13 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import static java.lang.Math.round;
 
 class Stats
 {
-    private Common common;
+    private final Common common;
     private View rootView;
     private WebView wv;
     private SeekBar seekBar;
@@ -89,11 +90,7 @@ class Stats
 	    wv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
 		    @Override
 		    public void onScrollChanged() {
-			    if (wv.getScrollY() == 0) {
-				    swipeLayout.setEnabled(true);
-			    } else {
-				    swipeLayout.setEnabled(false);
-			    }
+			    swipeLayout.setEnabled(wv.getScrollY() == 0);
 		    }
 	    });
 
@@ -301,7 +298,7 @@ class Stats
 
 			    int iw = 17;
 
-			    String bits[] = common.GetStringPref("LastDownload", "").split("\\|");
+			    String[] bits = common.GetStringPref("LastDownload", "").split("\\|");
 
 			    if(bits.length < 65)
 				    return;
@@ -452,7 +449,6 @@ class Stats
 				    sb.append(stmp);
 			    }
 
-			    //noinspection ConstantConditions
 			    if(bits.length > 110 && !bits[110].equals(""))
 			    {
 				    sb.append("<span style='font-size:18pt;font-weight:bold;'>This Month's Statistics</span>");
@@ -500,7 +496,6 @@ class Stats
 				    sb.append(stmp);
 			    }
 
-			    //noinspection ConstantConditions
 			    if (bits.length > 133 && !bits[133].equals(""))
 			    {
 				    sb.append("<span style='font-size:18pt;font-weight:bold;'>This Year's Statistics</span>");
@@ -548,7 +543,6 @@ class Stats
 				    sb.append(stmp);
 			    }
 
-			    //noinspection ConstantConditions
 			    if (bits.length > 157 && !bits[157].equals(""))
 			    {
 				    sb.append("<span style='font-size:18pt;font-weight:bold;'>All Time Statistics</span>");

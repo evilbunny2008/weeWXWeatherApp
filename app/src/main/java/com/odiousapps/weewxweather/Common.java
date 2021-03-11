@@ -21,7 +21,6 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.os.Environment;
 import android.text.Html;
 import android.util.Base64;
 import android.util.Log;
@@ -70,7 +69,7 @@ class Common
 	private String appversion = "0.0.0";
 	Context context;
 
-	final static  String UA = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36";
+	final static  String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36";
 
 	static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
 	static String REFRESH_INTENT = "com.odiousapps.weewxweather.REFRESH_INTENT";
@@ -87,8 +86,8 @@ class Common
 	private JSONObject nws = null;
 	private JSONArray conditions = null;
 
-	private Typeface tf_bold;
-	private Map<String, String> lookupTable = new HashMap<>();
+	private final Typeface tf_bold;
+	private final Map<String, String> lookupTable = new HashMap<>();
 
 	static String ssheader = "<link rel='stylesheet' href='file:///android_asset/weathericons.css'>" +
 								"<link rel='stylesheet' href='file:///android_asset/weathericons_wind.css'>" +
@@ -251,19 +250,16 @@ class Common
 		return value;
 	}
 
-	@SuppressWarnings({"unused", "SameParameterValue"})
 	void SetLongPref(String name, long value)
 	{
 		SetStringPref(name, "" + value);
 	}
 
-	@SuppressWarnings("unused")
 	long GetLongPref(String name)
 	{
 		return GetLongPref(name, 0);
 	}
 
-	@SuppressWarnings("SameParameterValue")
 	long GetLongPref(String name, long defval)
 	{
 		String val = GetStringPref(name, "" + defval);
@@ -277,7 +273,6 @@ class Common
 		SetStringPref(name, "" + value);
 	}
 
-	@SuppressWarnings("unused")
 	int GetIntPref(String name)
 	{
 		return GetIntPref(name, 0);
@@ -300,7 +295,6 @@ class Common
 		SetStringPref(name, val);
 	}
 
-	@SuppressWarnings({"SameParameterValue", "unused"})
 	boolean GetBoolPref(String name)
 	{
 		return GetBoolPref(name, false);
@@ -2237,7 +2231,7 @@ class Common
 	{
 		String filename = new File(url).getName();
 
-		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		File f = new File(context.getExternalFilesDir(""), "weeWX");
 		f = new File(f, filename);
 		if(!f.exists())
 		{
@@ -2490,7 +2484,7 @@ class Common
 
 	private Bitmap loadImage(String fileName)
 	{
-		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		File f = new File(context.getExternalFilesDir(""), "weeWX");
 		f = new File(f, "icons");
 		f = new File(f, fileName);
 
@@ -2502,7 +2496,7 @@ class Common
 
 	private String checkImage(String fileName, String icon)
 	{
-		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		File f = new File(context.getExternalFilesDir(""), "weeWX");
 		f = new File(f, "icons");
 		f = new File(f, fileName);
 		if(f.exists() && f.isFile() && f.length() > 0)
@@ -2530,7 +2524,7 @@ class Common
 
 				try
 				{
-					File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+					File f = new File(context.getExternalFilesDir(""), "weeWX");
 					f = new File(f, "icons");
 					if (!f.exists())
 						if (!f.mkdirs())
@@ -2913,7 +2907,7 @@ class Common
 	@SuppressWarnings({"unused", "SameParameterValue"})
 	private void writeFile(String fileName, String data) throws Exception
 	{
-		File dir = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		File dir = new File(context.getExternalFilesDir(""), "weeWX");
 		if (!dir.exists())
 			if (!dir.mkdirs())
 				return;
@@ -3228,7 +3222,7 @@ class Common
 
 	boolean downloadIcons() throws Exception
 	{
-		File f = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		File f = new File(context.getExternalFilesDir(""), "weeWX");
 		File dir = f;
 
 		if(!dir.exists() && !dir.mkdirs())
@@ -3249,6 +3243,8 @@ class Common
 			throw new Exception("There was a problem making the icons directory, you will need to try again.");
 
 		unzip(f, dir);
+		if(!f.delete())
+			throw new Exception("There was a problem cleaning up the zip file.");
 
 		return true;
 	}
@@ -3290,7 +3286,7 @@ class Common
 	@SuppressWarnings("BooleanMethodIsAlwaysInverted")
 	boolean checkForImages()
 	{
-		File dir = new File(Environment.getExternalStorageDirectory(), "weeWX");
+		File dir = new File(context.getExternalFilesDir(""), "weeWX");
 		dir = new File(dir, "icons");
 		if(!dir.exists() || !dir.isDirectory())
 			return false;

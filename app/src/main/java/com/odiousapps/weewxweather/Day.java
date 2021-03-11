@@ -1,6 +1,6 @@
 package com.odiousapps.weewxweather;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 class Day
 {

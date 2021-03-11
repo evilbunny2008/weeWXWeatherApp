@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -12,24 +11,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.support.annotation.ColorInt;
-import android.support.annotation.NonNull;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.Gravity;
@@ -45,10 +30,9 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RemoteViews;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
 import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
 import com.pes.androidmaterialcolorpickerdialog.ColorPickerCallback;
 
@@ -56,6 +40,18 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.util.Locale;
+import java.util.Objects;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 {
@@ -71,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private Button b3;
 	private boolean showSettings = true;
 	private Spinner s1;
-	private Switch show_indoor, metric_forecasts, dark_theme;
+	private SwitchCompat show_indoor, metric_forecasts, dark_theme;
 	private TextView tv;
 
 	private ProgressDialog dialog;
@@ -79,9 +75,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private static int pos;
 	private static final String[] paths = {"Manual Updates", "Every 5 Minutes", "Every 10 Minutes", "Every 15 Minutes", "Every 30 Minutes", "Every Hour"};
 
-	private boolean hasPermission = false;
-	int permsRequestCode = 200;
-
+	@SuppressLint("WrongConstant")
 	@Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -95,8 +89,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         tabLayout = findViewById(R.id.tabs);
 
 	    if(!common.GetBoolPref("radarforecast", true))
-		    //noinspection ConstantConditions
-		    tabLayout.getTabAt(2).setText(R.string.radar);
+		    Objects.requireNonNull(tabLayout.getTabAt(2)).setText(R.string.radar);
 
         try
         {
@@ -143,7 +136,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				    public void run()
 				    {
 					    doSettings();
-					    doPerms();
 				    }
 			    });
 
@@ -153,42 +145,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    t.start();
     }
-
-	private void doPerms()
-	{
-		if(Build.VERSION.SDK_INT < 23)
-		{
-			hasPermission = true;
-		} else {
-			if(ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
-			{
-				ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, permsRequestCode);
-			} else {
-				hasPermission = true;
-			}
-		}
-	}
-
-	@Override
-	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
-	{
-		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-
-		hasPermission = false;
-		if (requestCode == permsRequestCode)
-		{
-			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
-			{
-				hasPermission = true;
-			}
-		}
-
-		if (!hasPermission)
-		{
-			Toast.makeText(this, "Can't continue without being able to access shared storage.", Toast.LENGTH_LONG).show();
-			finish();
-		}
-	}
 
 	private void showUpdateAvailable()
 	{
@@ -209,9 +165,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    pos = common.GetIntPref("updateInterval", 1);
 	    s1.setSelection(pos);
 
-	    Switch wifi_only = findViewById(R.id.wifi_only);
+	    SwitchCompat wifi_only = findViewById(R.id.wifi_only);
 	    wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
-	    Switch use_icons = findViewById(R.id.use_icons);
+	    SwitchCompat use_icons = findViewById(R.id.use_icons);
 	    use_icons.setChecked(common.GetBoolPref("use_icons", false));
 	    metric_forecasts.setChecked(common.GetBoolPref("metric", true));
 	    show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
@@ -497,10 +453,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "", metierev;
 
-				Switch metric_forecasts = findViewById(R.id.metric_forecasts);
-				Switch show_indoor = findViewById(R.id.show_indoor);
-				Switch wifi_only = findViewById(R.id.wifi_only);
-				Switch use_icons = findViewById(R.id.use_icons);
+				SwitchCompat metric_forecasts = findViewById(R.id.metric_forecasts);
+				SwitchCompat show_indoor = findViewById(R.id.show_indoor);
+				SwitchCompat wifi_only = findViewById(R.id.wifi_only);
+				SwitchCompat use_icons = findViewById(R.id.use_icons);
 
 				RadioButton showRadar = findViewById(R.id.showRadar);
 				long curtime = Math.round(System.currentTimeMillis() / 1000.0);
@@ -554,10 +510,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							custom = mb[1];
 					}
 
-					if(fctype == null || fctype.equals(""))
+					if(fctype.equals(""))
 						fctype = "Yahoo";
 
-					if(radtype == null || radtype.equals(""))
+					if(radtype.equals(""))
 						radtype = "image";
 
 					validURL = true;
@@ -902,7 +858,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	}
 
 	@SuppressLint("HandlerLeak")
-	private Handler handlerDone = new Handler()
+	private final Handler handlerDone = new Handler()
 	{
 		@Override
 		public void handleMessage(Message msg)
@@ -922,7 +878,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	};
 
 	@SuppressLint("HandlerLeak")
-	private Handler handlerSettings = new Handler()
+	private final Handler handlerSettings = new Handler()
 	{
 		@Override
 		public void handleMessage(Message msg)
@@ -944,7 +900,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	};
 
 	@SuppressLint("HandlerLeak")
-	private Handler handlerDATA = new Handler()
+	private final Handler handlerDATA = new Handler()
 	{
 		@Override
 		public void handleMessage(Message msg)
@@ -966,7 +922,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	};
 
 	@SuppressLint("HandlerLeak")
-	private Handler handlerRADAR = new Handler()
+	private final Handler handlerRADAR = new Handler()
 	{
 		@Override
 		public void handleMessage(Message msg)
@@ -988,7 +944,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	};
 
 	@SuppressLint("HandlerLeak")
-	private Handler handlerForecast = new Handler()
+	private final Handler handlerForecast = new Handler()
 	{
 		@Override
 		public void handleMessage(Message msg)
@@ -1010,7 +966,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	};
 
 	@SuppressLint("HandlerLeak")
-	private Handler handlerForecastIcons = new Handler()
+	private final Handler handlerForecastIcons = new Handler()
 	{
 		@Override
 		public void handleMessage(Message msg)
@@ -1032,7 +988,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	};
 
 	@SuppressLint("HandlerLeak")
-	private Handler handlerWEBCAM = new Handler()
+	private final Handler handlerWEBCAM = new Handler()
 	{
 		@Override
 		public void handleMessage(Message msg)
@@ -1054,7 +1010,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	};
 
 	@SuppressLint("HandlerLeak")
-	private Handler handlerCUSTOM = new Handler()
+	private final Handler handlerCUSTOM = new Handler()
 	{
 		@Override
 		public void handleMessage(Message msg)
@@ -1076,7 +1032,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	};
 
 	@SuppressLint("HandlerLeak")
-	private Handler handlerCUSTOM_URL = new Handler()
+	private final Handler handlerCUSTOM_URL = new Handler()
 	{
 		@Override
 		public void handleMessage(Message msg)
@@ -1312,13 +1268,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     }
 
-    public class SectionsPagerAdapter extends FragmentPagerAdapter
+    public static class SectionsPagerAdapter extends FragmentPagerAdapter
     {
         SectionsPagerAdapter(FragmentManager fm)
         {
             super(fm);
         }
 
+        @NonNull
         @Override
         public Fragment getItem(int position)
         {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.SwipeRefreshLayout
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/swipeToRefresh"
@@ -30,7 +30,6 @@
 
         <!-- https://github.com/rongi/rotate-layout -->
         <com.github.rongi.rotate_layout.layout.RotateLayout
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/rotateWeb"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -50,4 +49,4 @@
             android:gravity="center"
             android:visibility="gone"/>
     </LinearLayout>
-</android.support.v4.widget.SwipeRefreshLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -9,7 +9,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Vibrator;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,11 +21,13 @@ import android.widget.TextView;
 
 import java.io.File;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import static java.lang.Math.round;
 
 class Weather
 {
-    private Common common;
+    private final Common common;
     private View rootView;
     private WebView wv;
     private boolean dark_theme;
@@ -258,12 +259,7 @@ class Weather
 		    @Override
 		    public void onScrollChanged()
 		    {
-			    if (wv.getScrollY() == 0)
-			    {
-				    swipeLayout.setEnabled(true);
-			    } else {
-				    swipeLayout.setEnabled(false);
-			    }
+			    swipeLayout.setEnabled(wv.getScrollY() == 0);
 		    }
 	    });
 
@@ -342,7 +338,7 @@ class Weather
 						    Common.LogMessage("myFile == " + myFile.getAbsolutePath());
 						    Common.LogMessage("myFile.exists() == " + myFile.exists());
 
-						    if (radar.equals("") || !myFile.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+						    if(!myFile.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 						    {
 							    sb.append("<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>");
 							    mHandler.post(new Runnable()
@@ -964,7 +960,7 @@ class Weather
     }
 
     @SuppressLint("HandlerLeak")
-    private Handler handlerDone = new Handler()
+    private final Handler handlerDone = new Handler()
     {
         @Override
         public void handleMessage(Message msg)

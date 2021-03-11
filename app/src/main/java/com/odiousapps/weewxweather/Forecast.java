@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Vibrator;
-import android.support.v4.widget.SwipeRefreshLayout;
+import androidx.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,9 +28,11 @@ import com.github.rongi.rotate_layout.layout.RotateLayout;
 
 import java.io.File;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 class Forecast
 {
-    private Common common;
+    private final Common common;
     private View rootView;
     private WebView wv1, wv2;
     private SwipeRefreshLayout swipeLayout;
@@ -90,12 +92,7 @@ class Forecast
 		    @Override
 		    public void onScrollChanged()
 		    {
-			    if (wv1.getScrollY() == 0)
-			    {
-				    swipeLayout.setEnabled(true);
-			    } else {
-				    swipeLayout.setEnabled(false);
-			    }
+			    swipeLayout.setEnabled(wv1.getScrollY() == 0);
 		    }
 	    });
 
@@ -138,13 +135,7 @@ class Forecast
 		    @Override
 		    public void onScrollChanged()
 		    {
-			    if (wv1.getScrollY() == 0)
-			    {
-				    swipeLayout.setEnabled(true);
-			    } else
-			    {
-				    swipeLayout.setEnabled(false);
-			    }
+			    swipeLayout.setEnabled(wv1.getScrollY() == 0);
 		    }
 	    });
 
@@ -156,12 +147,7 @@ class Forecast
 		    @Override
 		    public void onScrollChanged()
 		    {
-			    if (wv2.getScrollY() == 0)
-			    {
-				    swipeLayout.setEnabled(true);
-			    } else {
-				    swipeLayout.setEnabled(false);
-			    }
+			    swipeLayout.setEnabled(wv2.getScrollY() == 0);
 		    }
 	    });
 
@@ -204,13 +190,7 @@ class Forecast
 		    @Override
 		    public void onScrollChanged()
 		    {
-			    if (wv2.getScrollY() == 0)
-			    {
-				    swipeLayout.setEnabled(true);
-			    } else
-			    {
-				    swipeLayout.setEnabled(false);
-			    }
+			    swipeLayout.setEnabled(wv2.getScrollY() == 0);
 		    }
 	    });
 
@@ -244,13 +224,13 @@ class Forecast
 			String radar = common.context.getFilesDir() + "/radar.gif";
 			File rf = new File(radar);
 
-			if(!radar.equals("") && !rf.exists() && !common.GetStringPref("RADAR_URL", "").equals("") && common.checkConnection())
+			if(!rf.exists() && !common.GetStringPref("RADAR_URL", "").equals("") && common.checkConnection())
 			{
 				reloadWebView(true);
 				return;
 			}
 
-			if (radar.equals("") || !rf.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+			if (!rf.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 			{
 				String html = "<html>";
 				if (dark_theme)
@@ -502,10 +482,10 @@ class Forecast
     }
 
     @SuppressLint("HandlerLeak")
-    private Handler handlerDone = new Handler()
+    private final Handler handlerDone = new Handler()
     {
         @Override
-        public void handleMessage(Message msg)
+        public void handleMessage(@NonNull Message msg)
         {
 	        common.SendRefresh();
 	        swipeLayout.setRefreshing(false);
@@ -774,8 +754,6 @@ class Forecast
 					    im.setImageResource(R.drawable.wgov);
 					    break;
 				    case "weather.gc.ca":
-					    im.setImageResource(R.drawable.wca);
-					    break;
 				    case "weather.gc.ca-fr":
 					    im.setImageResource(R.drawable.wca);
 					    break;

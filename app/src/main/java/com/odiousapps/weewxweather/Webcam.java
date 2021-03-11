@@ -12,7 +12,6 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,11 +23,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import static java.lang.Math.round;
 
 class Webcam
 {
-    private Common common;
+    private final Common common;
     private ImageView iv;
     private static Bitmap bm;
     private SwipeRefreshLayout swipeLayout;
@@ -78,6 +79,7 @@ class Webcam
         return rootView;
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     private void reloadWebView(final boolean force)
     {
         Common.LogMessage("reload webcam...");
@@ -210,7 +212,7 @@ class Webcam
     }
 
     @SuppressLint("HandlerLeak")
-    private Handler handlerDone = new Handler()
+    private final Handler handlerDone = new Handler()
     {
         @Override
         public void handleMessage(Message msg)
