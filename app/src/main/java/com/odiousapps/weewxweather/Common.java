@@ -79,7 +79,7 @@ class Common
 
 	private static final long inigo_version = 4000;
 	static final long icon_version = 10;
-	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.8.25/icons.zip";
+	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.9.4/icons.zip";
 
 	private Thread t = null;
 	private JSONObject nws = null;
