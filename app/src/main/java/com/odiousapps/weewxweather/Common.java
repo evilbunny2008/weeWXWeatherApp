@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -218,12 +217,11 @@ class Common
 		LogMessage("Removing '" + name + "'");
 	}
 
-	@SuppressLint("ApplySharedPref")
 	void commit()
 	{
 		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		SharedPreferences.Editor editor = settings.edit();
-		editor.commit();
+		editor.apply();
 	}
 
 	String GetStringPref(String name, String defval)
@@ -1634,6 +1632,81 @@ class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
+	String[] processILMETEO(String data)
+	{
+		return processILMETEO(data, false);
+	}
+
+	String[] processILMETEO(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
+		List<Day> days = new ArrayList<>();
+		String desc = "";
+		long timestamp, lastTS;
+
+		try
+		{
+			String[] bits = data.split("<title>");
+			if (bits.length >= 2)
+				desc = bits[1].split(" &#9655; ")[0];
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+			String ftime = sdf.format(System.currentTimeMillis());
+			ftime = ftime + " " + data.split("<b>Aggiornamento delle ore</b> ", 2)[1].split(" - ", 2)[0].trim();
+			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+			lastTS = timestamp = sdf.parse(ftime).getTime();
+
+			data = data.split("<li class=\"tabnav\">")[0].trim();
+			bits = data.split("<span style=\"display:block\">");
+			for(int i = 1; i < bits.length; i++)
+			{
+				Day day = new Day();
+				String bit = bits[i].split("</li>")[0].trim();
+				String icon, temp;
+				day.day = bit.split("</span>", 2)[0].trim();
+
+				day.timestamp = convertDaytoTS(day.day, new Locale("it", "IT"), lastTS);
+				if(day.timestamp != 0)
+				{
+					sdf = new SimpleDateFormat("EEE dd", Locale.getDefault());
+					day.day = sdf.format(day.timestamp) + " " + day.day.substring(day.day.lastIndexOf(" ") + 1);
+				}
+
+				icon = bit.split("<span class=\"s ", 2)[1].split("\"></span>",2)[0].trim();
+				day.max = bit.split("<span class=\"tmax\">", 2)[1].split("&deg;</span>", 2)[0].trim();
+				day.min = bit.split("<span class=\"tmin\">", 2)[1].split("&deg;</span>", 2)[0].trim();
+
+				if(use_icons)
+				{
+					String fileName = "ilmeteo_" + icon + ".png";
+					day.icon = "file://" + checkImage(fileName, null);
+				} else {
+					day.icon = "wi wi-ilmeteo-" + icon;
+				}
+
+				if(metric)
+				{
+					day.max += "&deg;C";
+					day.min += "&deg;C";
+				} else {
+					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				}
+
+				days.add(day);
+				lastTS = day.timestamp;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
+	}
+
 	String[] processAEMET(String data)
 	{
 		return processAEMET(data, false);
@@ -2418,7 +2491,7 @@ class Common
 		if(!line.equals(""))
 		{
 			String[] bits = line.split("\\|");
-			if (Double.valueOf(bits[0]) < inigo_version)
+			if (Double.parseDouble(bits[0]) < inigo_version)
 			{
 				if(GetLongPref("inigo_version", 0) < Common.inigo_version)
 				{
@@ -2427,7 +2500,7 @@ class Common
 				}
 			}
 
-			if (Double.valueOf(bits[0]) >= 4000)
+			if (Double.parseDouble(bits[0]) >= 4000)
 			{
 				StringBuilder sb = new StringBuilder();
 				for (int i = 1; i < bits.length; i++)
@@ -3292,7 +3365,7 @@ class Common
 			return false;
 
 		String[] files = new String[]{"aemet_11_g.png", "apixu_113.png", "bom1.png", "bom2clear.png", "dwd_pic_0_8.png",
-										"i1.png", "met0.png", "mf_j_w1_0_n_2.png", "ms_cloudy.png",
+										"i1.png", "ilmeteo_ss1.png", "met0.png", "mf_j_w1_0_n_2.png", "ms_cloudy.png",
 										"wca00.png", "wgovbkn.jpg", "wzclear.png", "y01d.png", "yahoo0.gif", "yrno01d.png"};
 		for(String file : files)
 		{

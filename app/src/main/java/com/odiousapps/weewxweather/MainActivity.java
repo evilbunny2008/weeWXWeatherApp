@@ -724,6 +724,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("fctype=" + fctype);
 								Common.LogMessage("metierev=" + metierev);
 								break;
+							case "ilmeteo.it":
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
 							default:
 								common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
 								handlerForecast.sendEmptyMessage(0);
@@ -735,7 +739,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					}
 				}
 
-				Common.LogMessage("line 780");
+				Common.LogMessage("line 742");
 
 				if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !common.checkForImages() && !use_icons.isChecked())
 				{

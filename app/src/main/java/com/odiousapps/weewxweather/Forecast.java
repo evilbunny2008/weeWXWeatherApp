@@ -670,6 +670,13 @@ class Forecast
 						    updateForecast(content[0], content[1]);
 					    break;
 				    }
+				    case "ilmeteo.it":
+				    {
+				    	String[] content = common.processILMETEO(data, true);
+				    	if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+				    	break;
+				    }
 			    }
 
 			    mHandler.post(new Runnable()
@@ -763,9 +770,11 @@ class Forecast
 				    case "bom2":
 					    im.setImageResource(R.drawable.bom);
 					    if(dark_theme)
+					    {
 						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					    else
-					    	im.setColorFilter(null);
+					    } else {
+						    im.setColorFilter(null);
+					    }
 					    break;
 				    case "aemet.es":
 					    im.setImageResource(R.drawable.aemet);
@@ -809,6 +818,9 @@ class Forecast
 						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
 					    else
 						    im.setColorFilter(null);
+					    break;
+				    case "ilmeteo.it":
+					    im.setImageResource(R.drawable.ilmeteo_it);
 					    break;
 			    }
 		    }

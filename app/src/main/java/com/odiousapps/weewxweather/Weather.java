@@ -807,6 +807,24 @@ class Weather
 						    sb.append(tmp);
 						    break;
 					    }
+					    case "ilmeteo.it":
+					    {
+						    String[] content = common.processILMETEO(data);
+						    if (content == null || content.length <= 0)
+							    return;
+
+						    String logo = "<img src='ilmeteo_it.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if(dark_theme)
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
+
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+						    break;
+					    }
 				    }
 			    }
 

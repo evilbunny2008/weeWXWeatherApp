@@ -7,8 +7,8 @@ android {
         minSdkVersion 19
         //noinspection OldTargetApi
         targetSdkVersion 29
-        versionCode 9002
-        versionName "0.9.2"
+        versionCode 9004
+        versionName "0.9.4"
     }
     buildTypes {
         release {

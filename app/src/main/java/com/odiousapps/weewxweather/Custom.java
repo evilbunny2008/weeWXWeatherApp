@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -49,6 +50,9 @@ class Custom
                 return true;
             }
         });
+
+	    WebSettings settings = wv.getSettings();
+	    settings.setDomStorageEnabled(true);
 
 	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 	    swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
