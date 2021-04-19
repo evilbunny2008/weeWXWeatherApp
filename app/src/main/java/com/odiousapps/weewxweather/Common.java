@@ -253,10 +253,10 @@ class Common
 		SetStringPref(name, "" + value);
 	}
 
-	long GetLongPref(String name)
-	{
-		return GetLongPref(name, 0);
-	}
+//	long GetLongPref(String name)
+//	{
+//		return GetLongPref(name, 0);
+//	}
 
 	long GetLongPref(String name, long defval)
 	{
@@ -271,10 +271,10 @@ class Common
 		SetStringPref(name, "" + value);
 	}
 
-	int GetIntPref(String name)
-	{
-		return GetIntPref(name, 0);
-	}
+//	int GetIntPref(String name)
+//	{
+//		return GetIntPref(name, 0);
+//	}
 
 	int GetIntPref(String name, int defval)
 	{
@@ -1665,7 +1665,7 @@ class Common
 			{
 				Day day = new Day();
 				String bit = bits[i].split("</li>")[0].trim();
-				String icon, temp;
+				String icon;
 				day.day = bit.split("</span>", 2)[0].trim();
 
 				day.timestamp = convertDaytoTS(day.day, new Locale("it", "IT"), lastTS);
@@ -1856,7 +1856,8 @@ class Common
 				{
 					day.icon = "wi wi-yahoo-" + day.icon;
 				} else {
-					String fileName = checkImage("yahoo" + day.icon + ".gif", null);
+					String fileName = checkImage(day.icon + ".png", null);
+					Common.LogMessage("yahoo filename = " + fileName);
 					day.icon = "file://" + fileName;
 				}
 
@@ -2302,9 +2303,9 @@ class Common
 
 	private String[] checkFiles(String url) throws Exception
 	{
-		String filename = new File(url).getName();
-
+		String filename = "yahoo-" + new File(url).getName();
 		File f = new File(context.getExternalFilesDir(""), "weeWX");
+		f = new File(f,"icons");
 		f = new File(f, filename);
 		if(!f.exists())
 		{
@@ -2319,7 +2320,7 @@ class Common
 			if(f.exists())
 				return new String[]{"", f.getAbsolutePath()};
 		} else {
-			LogMessage("yahoo-" + filename);
+			LogMessage(filename);
 			return new String[]{"", f.getAbsolutePath()};
 		}
 

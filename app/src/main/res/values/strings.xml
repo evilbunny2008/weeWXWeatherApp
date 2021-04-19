@@ -47,4 +47,7 @@
     <string name="use_dark_theme">Use Dark Theme?</string>
     <string name="rooster">Rooster</string>
     <string name="use_icons">Use icons instead of glyphs?</string>
+    <string name="this_months_stats">This Month\'s Statistics</string>
+    <string name="this_year_stats">This Year\'s Statistics</string>
+    <string name="all_time_stats">All Time Statistics</string>
 </resources>

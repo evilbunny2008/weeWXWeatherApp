@@ -334,7 +334,9 @@ class Stats
 
 			    sb.append(header);
 
-			    sb.append("<span style='font-size:18pt;font-weight:bold;'>Today's Statistics</span>");
+			    sb.append("<span style='font-size:18pt;font-weight:bold;'>");
+			    sb.append(common.context.getString(R.string.todayStats));
+			    sb.append("</span>");
 			    sb.append("<table style='width:100%;border:0px;'>");
 
 			    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[3] + bits[60] + "</td><td>" + convert(bits[4]) +
@@ -392,7 +394,9 @@ class Stats
 
 			    if (bits.length > 87 && !bits[87].equals(""))
 			    {
-				    sb.append("<span style='font-size:18pt;font-weight:bold;'>Yesterday's Statistics</span>");
+				    sb.append("<span style='font-size:18pt;font-weight:bold;'>");
+				    sb.append(common.context.getString(R.string.yesterdayStats));
+				    sb.append("</span>");
 				    sb.append("<table style='width:100%;border:0px;'>");
 
 				    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[67] + bits[60] + "</td><td>" + convert(bits[68]) +
@@ -451,7 +455,9 @@ class Stats
 
 			    if(bits.length > 110 && !bits[110].equals(""))
 			    {
-				    sb.append("<span style='font-size:18pt;font-weight:bold;'>This Month's Statistics</span>");
+				    sb.append("<span style='font-size:18pt;font-weight:bold;'>");
+				    sb.append(common.context.getString(R.string.this_months_stats));
+				    sb.append("</span>");
 				    sb.append("<table style='width:100%;border:0px;'>");
 
 				    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[90] + bits[60] + "</td><td>" + getTime(bits[91]) +
@@ -498,7 +504,9 @@ class Stats
 
 			    if (bits.length > 133 && !bits[133].equals(""))
 			    {
-				    sb.append("<span style='font-size:18pt;font-weight:bold;'>This Year's Statistics</span>");
+				    sb.append("<span style='font-size:18pt;font-weight:bold;'>");
+				    sb.append(common.context.getString(R.string.this_year_stats));
+				    sb.append("</span>");
 				    sb.append("<table style='width:100%;border:0px;'>");
 
 				    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[113] + bits[60] + "</td><td>" + getTime(bits[114]) +
@@ -545,7 +553,9 @@ class Stats
 
 			    if (bits.length > 157 && !bits[157].equals(""))
 			    {
-				    sb.append("<span style='font-size:18pt;font-weight:bold;'>All Time Statistics</span>");
+				    sb.append("<span style='font-size:18pt;font-weight:bold;'>");
+
+				    sb.append("</span>");
 				    sb.append("<table style='width:100%;border:0px;'>");
 
 				    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[136] + bits[60] + "</td><td>" + getTime(bits[137]) +

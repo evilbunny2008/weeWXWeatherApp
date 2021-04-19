@@ -47,4 +47,7 @@
     <string name="use_dark_theme">Usa tema scuro?</string>
     <string name="rooster">Rooster</string>
     <string name="use_icons">Usare le icone invece dei glifi?</string>
+    <string name="this_months_stats">Questo Mese</string>
+    <string name="this_year_stats">Anno in corso</string>
+    <string name="all_time_stats">Assoluti</string>
 </resources>
