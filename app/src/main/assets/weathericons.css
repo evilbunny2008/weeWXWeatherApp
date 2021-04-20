@@ -3641,4 +3641,18 @@
 .wi-ilmeteo-ss24:before {
   content: "\f072";
 }
-
+.wi-tempoitalia-nuvoloso:before {
+  content: "\f002";
+}
+.wi-tempoitalia-nuvoloso_piovaschi:before {
+  content: "\f00b";
+}
+.wi-tempoitalia-poco_nuvoloso:before {
+  content: "\f00c";
+}
+.wi-tempoitalia-sereno:before {
+  content: "\f00d";
+}
+.wi-tempoitalia-molto_nuvoloso:before {
+  content: "\f002";
+}

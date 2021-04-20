@@ -78,8 +78,8 @@ class Common
 	static String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
 	private static final long inigo_version = 4000;
-	static final long icon_version = 10;
-	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.9.4/icons.zip";
+	static final long icon_version = 11;
+	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.9.6/icons.zip";
 
 	private Thread t = null;
 	private JSONObject nws = null;
@@ -1755,20 +1755,20 @@ class Common
 					day.icon = "file://" + ret[1];
 				else
 					return ret;
-				LogMessage("day.icon=" + day.icon);
+//				LogMessage("day.icon=" + day.icon);
 
 				day.max = bit.split("<td class=\"tempmax\">", 2)[1].split("°C</td>", 2)[0].trim();
 				day.min = bit.split("<td class=\"tempmin\">", 2)[1].split("°C</td>", 2)[0].trim();
 
 				day.text = bit.split("<td class=\"skyDesc\">")[1].split("</td>")[0].trim();
 
-				if(use_icons)
+				if(!use_icons)
 				{
-					String fileName = day.icon;
-					LogMessage("day.icon=" + day.icon);
-				} else {
-					day.icon = "wi wi-tempoitalia-" + icon;
+					String filename = new File(icon).getName();
+					day.icon = "wi wi-tempoitalia-" + filename.substring(0, filename.length() - 4);
 				}
+
+				LogMessage("day.icon=" + day.icon);
 
 				if(metric)
 				{
@@ -2429,7 +2429,7 @@ class Common
 			if(f.exists())
 				return new String[]{"", f.getAbsolutePath()};
 		} else {
-			LogMessage(filename);
+			//LogMessage(filename);
 			return new String[]{"", f.getAbsolutePath()};
 		}
 
