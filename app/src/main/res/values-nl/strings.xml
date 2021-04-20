@@ -50,4 +50,6 @@
     <string name="this_months_stats">This Month\'s Statistics</string>
     <string name="this_year_stats">This Year\'s Statistics</string>
     <string name="all_time_stats">All Time Statistics</string>
+    <string name="since">since</string>
+    <string name="before">before</string>
 </resources>

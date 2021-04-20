@@ -1707,6 +1707,89 @@ class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
+	String[] processTempoItalia(String data)
+	{
+		return processTempoItalia(data, false);
+	}
+
+	String[] processTempoItalia(String data, boolean showHeader)
+	{
+		if (data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
+		List<Day> days = new ArrayList<>();
+		String desc = "";
+		long timestamp, lastTS;
+
+		try
+		{
+			String stuff = data.split("<div id=\"weatherDayNavigator\">", 2)[1].trim();
+			stuff = stuff.split("<h2>", 2)[1].trim();
+			desc = stuff.split(" <span class=\"day\">")[0].trim();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+			String ftime = sdf.format(System.currentTimeMillis());
+			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+			lastTS = timestamp = sdf.parse(ftime).getTime();
+
+			data = data.split("<tbody>")[1].trim();
+			String[] bits = data.split("<tr>");
+			for(int i = 1; i < bits.length; i++)
+			{
+				Day day = new Day();
+				String bit = bits[i].trim();
+				String icon;
+				day.day = bit.split("<td class=\"timeweek\">")[1].split("\">")[1].split("</a></td>", 2)[0].trim();
+
+				day.timestamp = convertDaytoTS(day.day, new Locale("it", "IT"), lastTS);
+				if(day.timestamp != 0)
+				{
+					sdf = new SimpleDateFormat("EEE dd", Locale.getDefault());
+					day.day = sdf.format(day.timestamp) + " " + day.day.substring(day.day.lastIndexOf(" ") + 1);
+				}
+
+				icon = bit.split("<td class=\"skyIcon\"><img src=\"", 2)[1].split("\" alt=\"",2)[0].trim();
+				String[] ret = checkFilesIt(icon);
+				if(ret[0] != null)
+					day.icon = "file://" + ret[1];
+				else
+					return ret;
+				LogMessage("day.icon=" + day.icon);
+
+				day.max = bit.split("<td class=\"tempmax\">", 2)[1].split("°C</td>", 2)[0].trim();
+				day.min = bit.split("<td class=\"tempmin\">", 2)[1].split("°C</td>", 2)[0].trim();
+
+				day.text = bit.split("<td class=\"skyDesc\">")[1].split("</td>")[0].trim();
+
+				if(use_icons)
+				{
+					String fileName = day.icon;
+					LogMessage("day.icon=" + day.icon);
+				} else {
+					day.icon = "wi wi-tempoitalia-" + icon;
+				}
+
+				if(metric)
+				{
+					day.max += "&deg;C";
+					day.min += "&deg;C";
+				} else {
+					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				}
+
+				days.add(day);
+				lastTS = day.timestamp;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
+	}
+
 	String[] processAEMET(String data)
 	{
 		return processAEMET(data, false);
@@ -2312,7 +2395,33 @@ class Common
 			LogMessage("File not found: " + "yahoo-" + filename);
 			LogMessage("downloading...");
 
-			String new_url = "http://delungra.com/weewx/yahoo-missing.php?filename=" + filename;
+			String new_url = "https://delungra.com/weewx/yahoo-missing.php?filename=" + filename;
+			f = downloadBinary(f, new_url);
+			if(f == null)
+				return new String[]{null, "f is invalid."};
+
+			if(f.exists())
+				return new String[]{"", f.getAbsolutePath()};
+		} else {
+			LogMessage(filename);
+			return new String[]{"", f.getAbsolutePath()};
+		}
+
+		return new String[]{null, "Failed to load or download icon: " + filename};
+	}
+
+	private String[] checkFilesIt(String url) throws Exception
+	{
+		String filename = "tempoitalia-" + new File(url).getName();
+		File f = new File(context.getExternalFilesDir(""), "weeWX");
+		f = new File(f,"icons");
+		f = new File(f, filename);
+		if(!f.exists())
+		{
+			LogMessage("File not found: " + "tempoitalia-" + filename);
+			LogMessage("downloading...");
+
+			String new_url = "https://delungra.com/weewx/TempoItalia-missing.php?filename=" + filename;
 			f = downloadBinary(f, new_url);
 			if(f == null)
 				return new String[]{null, "f is invalid."};

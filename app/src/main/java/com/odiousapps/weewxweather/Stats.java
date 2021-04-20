@@ -374,13 +374,13 @@ class Stats
 			    }
 
 			    String rain = bits[20];
-			    String since = "since mn";
+			    String since = common.context.getString(R.string.since) + " mn";
 
 			    if (bits.length > 160 && !bits[160].equals(""))
 				    rain = bits[158];
 
 			    if (bits.length > 160 && !bits[158].equals("") && !bits[160].equals(""))
-				    since = "since " + bits[160];
+				    since = common.context.getString(R.string.since) + " " + bits[160];
 
 			    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-windy'></i></td><td colspan='3'>" + bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +
 					    "</td><td>" + rain + bits[62] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td></tr>";
@@ -434,7 +434,7 @@ class Stats
 				    }
 
 				    rain = bits[21];
-				    since = "before mn";
+				    String before = common.context.getString(R.string.before) + " mn";
 
 				    if (bits.length > 160 && !bits[159].equals(""))
 					    rain = bits[159];
@@ -444,9 +444,9 @@ class Stats
 				    sb.append(stmp);
 
 				    if (bits.length > 160 && !bits[159].equals("") && !bits[160].equals(""))
-					    since = "before " + bits[160];
+					    before = common.context.getString(R.string.before) + " " + bits[160];
 
-				    stmp = "<tr><td colspan='4'>&nbsp;</td><td colspan='2'>" + since + "</td></tr>";
+				    stmp = "<tr><td colspan='4'>&nbsp;</td><td colspan='2'>" + before + "</td></tr>";
 				    sb.append(stmp);
 
 				    stmp = "</table><br>";

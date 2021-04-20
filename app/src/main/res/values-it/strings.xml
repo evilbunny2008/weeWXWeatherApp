@@ -50,4 +50,6 @@
     <string name="this_months_stats">Questo Mese</string>
     <string name="this_year_stats">Anno in corso</string>
     <string name="all_time_stats">Assoluti</string>
+    <string name="since">dal</string>
+    <string name="before">prima</string>
 </resources>

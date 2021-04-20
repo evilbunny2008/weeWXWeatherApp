@@ -677,6 +677,13 @@ class Forecast
 						    updateForecast(content[0], content[1]);
 				    	break;
 				    }
+				    case "tempoitalia.it":
+				    {
+					    String[] content = common.processTempoItalia(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
 			    }
 
 			    mHandler.post(new Runnable()
@@ -821,6 +828,9 @@ class Forecast
 					    break;
 				    case "ilmeteo.it":
 					    im.setImageResource(R.drawable.ilmeteo_it);
+					    break;
+				    case "tempoitalia.it":
+					    im.setImageResource(R.drawable.tempoitalia_it);
 					    break;
 			    }
 		    }
