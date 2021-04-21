@@ -554,7 +554,7 @@ class Stats
 			    if (bits.length > 157 && !bits[157].equals(""))
 			    {
 				    sb.append("<span style='font-size:18pt;font-weight:bold;'>");
-
+					sb.append(common.context.getString(R.string.all_time_stats));
 				    sb.append("</span>");
 				    sb.append("<table style='width:100%;border:0px;'>");
 

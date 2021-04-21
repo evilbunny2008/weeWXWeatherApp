@@ -52,4 +52,10 @@
     <string name="all_time_stats">All Time Statistics</string>
     <string name="since">since</string>
     <string name="before">before</string>
+    <string name="manual_update">Manual Updates</string>
+    <string name="every_5_minutes">Every 5 Minutes</string>
+    <string name="every_10_minutes">Every 10 Minutes</string>
+    <string name="every_15_minutes">Every 15 Minutes</string>
+    <string name="every_30_minutes">Every 30 Minutes</string>
+    <string name="every_hour">Every Hour</string>
 </resources>

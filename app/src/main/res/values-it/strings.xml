@@ -52,4 +52,10 @@
     <string name="all_time_stats">Assoluti</string>
     <string name="since">dal</string>
     <string name="before">prima</string>
+    <string name="manual_update">Aggiorna manualmente</string>
+    <string name="every_5_minutes">Ogni 5 Minuti</string>
+    <string name="every_10_minutes">Ogni 10 Minuti</string>
+    <string name="every_15_minutes">Ogni 15 Minuti</string>
+    <string name="every_30_minutes">Ogni 30 Minuti</string>
+    <string name="every_hour">Ogni ora</string>
 </resources>

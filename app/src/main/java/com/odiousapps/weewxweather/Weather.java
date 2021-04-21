@@ -131,9 +131,9 @@ class Weather
 			    "<td style='text-align:right;'>" + bits[6] + bits[64] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-humidity'></i></td></tr>";
 	    sb.append(stmp);
 
-	    String rain = bits[20] + bits[62] + " since mn";
+	    String rain = bits[20] + bits[62] + " " + common.context.getString(R.string.since) + " mn";
 	    if(bits.length > 160 && !bits[160].equals(""))
-		    rain = bits[158] + bits[62] + " since " + bits[160];
+		    rain = bits[158] + bits[62] + " " + common.context.getString(R.string.since) + " " + bits[160];
 
 	    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td><td>" + rain + "</td>" +
 			    "<td style='text-align:right;'>" + bits[12] + bits[60] + "</td><td><i style='font-size:" + round(iw * 1.4) + "px;' class='wi wi-raindrop'></i></td></tr>";

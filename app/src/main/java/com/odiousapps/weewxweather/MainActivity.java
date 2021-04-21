@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private ProgressDialog dialog;
 
 	private static int pos;
-	private static final String[] paths = {"Manual Updates", "Every 5 Minutes", "Every 10 Minutes", "Every 15 Minutes", "Every 30 Minutes", "Every Hour"};
+	private static String[] paths;
 
 	@SuppressLint("WrongConstant")
 	@Override
@@ -158,6 +158,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void doSettings()
     {
+    	paths = new String[]
+	    {
+            getString(R.string.manual_update),
+		    getString(R.string.every_5_minutes),
+		    getString(R.string.every_10_minutes),
+		    getString(R.string.every_15_minutes),
+		    getString(R.string.every_30_minutes),
+		    getString(R.string.every_hour),
+	    };
 	    ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
 	    adapter.setDropDownViewResource(R.layout.spinner_layout);
 	    s1.setAdapter(adapter);
