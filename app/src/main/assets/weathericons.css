@@ -3656,3 +3656,9 @@
 .wi-tempoitalia-molto_nuvoloso:before {
   content: "\f002";
 }
+.wi-tempoitalia-coperto:before {
+  content: "\f013";
+}
+.wi-tempoitalia-coperto_pioggia:before {
+  content: "\f01c";
+}

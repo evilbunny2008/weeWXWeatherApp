@@ -78,8 +78,8 @@ class Common
 	static String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
 	private static final long inigo_version = 4000;
-	static final long icon_version = 11;
-	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.9.6/icons.zip";
+	static final long icon_version = 12;
+	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.9.8/icons.zip";
 
 	private Thread t = null;
 	private JSONObject nws = null;
