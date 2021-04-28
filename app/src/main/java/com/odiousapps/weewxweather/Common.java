@@ -46,6 +46,7 @@ import java.net.Authenticator;
 import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -68,7 +69,7 @@ class Common
 	private String appversion = "0.0.0";
 	Context context;
 
-	final static  String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36";
+	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36";
 
 	static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
 	static String REFRESH_INTENT = "com.odiousapps.weewxweather.REFRESH_INTENT";
@@ -3013,7 +3014,7 @@ class Common
 
 	String downloadForecast(String fctype, String forecast, String bomtown) throws Exception
 	{
-		String tmp = downloadString(forecast);
+		String tmp = downloadString2(forecast);
 
 		if(fctype.equals("bom.gov.au"))
 		{
@@ -3045,6 +3046,22 @@ class Common
 		return tmp;
 	}
 
+	private String downloadString2(String fromURL) throws Exception
+	{
+		Connection.Response resultResponse = Jsoup.connect(fromURL)
+													.userAgent(UA)
+													.referrer("http://www.bom.gov.au")
+													.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+													.header("Cache-Control", "max-age=0")
+													.header("Accept-Language", "en-au")
+													.header("Upgrade-Insecure-Requests", "1")
+													.header("Accept-Encoding", "deflate")
+													.header("Connection", "keep-alive")
+													.maxBodySize(Integer.MAX_VALUE)
+													.ignoreContentType(true).execute();
+		return resultResponse.body();
+	}
+
 	private String downloadString(String fromURL) throws Exception
 	{
 		Uri uri = Uri.parse(fromURL);
@@ -3068,6 +3085,7 @@ class Common
 
 		URL url = new URL(fromURL);
 		URLConnection conn = url.openConnection();
+		conn.setRequestProperty("Referer", fromURL);
 		conn.setConnectTimeout(60000);
 		conn.setReadTimeout(60000);
 		conn.setDoOutput(true);
