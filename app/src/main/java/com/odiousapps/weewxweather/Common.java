@@ -3014,7 +3014,12 @@ class Common
 
 	String downloadForecast(String fctype, String forecast, String bomtown) throws Exception
 	{
-		String tmp = downloadString2(forecast);
+		String tmp;
+
+		if(!fctype.equals("bom2"))
+			tmp = downloadString(forecast);
+		else
+			tmp = downloadString2(forecast);
 
 		if(fctype.equals("bom.gov.au"))
 		{
