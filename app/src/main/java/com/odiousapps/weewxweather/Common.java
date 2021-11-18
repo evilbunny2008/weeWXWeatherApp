@@ -112,8 +112,7 @@ class Common
 			PackageInfo version = pm.getPackageInfo("com.odiousapps.weewxweather", 0);
 			appversion = version.versionName;
 			LogMessage("appversion=" + appversion);
-		} catch (Exception e)
-		{
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -2277,6 +2276,305 @@ class Common
 		}
 
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
+	}
+
+	String[] processMetNO(String data)
+	{
+		return processMetNO(data, false);
+	}
+
+	String[] processMetNO(String data, boolean showHeader)
+	{
+		if(data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
+		List<Day> days = new ArrayList<>();
+		String desc = "MeVille";
+		long timestamp;
+
+		try
+		{
+//			desc = location.getString("name") + ", " + location.getString("country");
+
+			JSONObject jobj = new JSONObject(data);
+			jobj = jobj.getJSONObject("properties");
+			String updated_at = jobj.getJSONObject("meta").getString("updated_at");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+			timestamp = sdf.parse(updated_at).getTime();
+			JSONArray jarr = jobj.getJSONArray("timeseries");
+
+			if(jarr == null)
+				return null;
+
+			for(int i = 0; i < jarr.length(); i++)
+			{
+				Day day = new Day();
+				String time = jarr.getJSONObject(i).getString("time");
+				day.timestamp = sdf.parse(time).getTime();
+
+				JSONObject tsdata = jarr.getJSONObject(i).getJSONObject("data");
+				double temp = tsdata.getJSONObject("instant").getJSONObject("details").getDouble("air_temperature");
+				if(metric)
+					day.max = round(temp) + "&deg;C";
+				else
+					day.max = round((temp * 9.0 / 5.0) + 32.0) + "&deg;F";
+
+				String icon;
+
+				try
+				{
+					try
+					{
+						double precip = tsdata.getJSONObject("next_1_hours").getJSONObject("details").getDouble("precipitation_amount");
+						if(metric)
+							day.min = precip + "mm";
+						else
+							day.min = (round(precip / 25.4 * 1000.0) / 1000.0) + "in";
+
+						icon = tsdata.getJSONObject("next_1_hours").getJSONObject("summary").getString("symbol_code");
+					} catch (Exception e) {
+						double precip = tsdata.getJSONObject("next_6_hours").getJSONObject("details").getDouble("precipitation_amount");
+						if(metric)
+							day.min = precip + "mm";
+						else
+							day.min = (round(precip / 25.4 * 1000.0) / 1000.0) + "in";
+
+						icon = tsdata.getJSONObject("next_6_hours").getJSONObject("summary").getString("symbol_code");
+					}
+				} catch (Exception e) {
+					continue;
+				}
+
+				double windSpeed = tsdata.getJSONObject("instant").getJSONObject("details").getDouble("wind_speed");
+				double windDir = tsdata.getJSONObject("instant").getJSONObject("details").getDouble("wind_from_direction");
+				if(metric)
+					day.text = windSpeed + "m/s from the " + degtoname(windDir);
+				else
+					day.text = (round(windSpeed * 22.36936) / 10.0) + "mph from the " + degtoname(windDir);
+
+				SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE d, HH:mm", Locale.getDefault());
+				day.day = sdf2.format(day.timestamp);
+
+				LogMessage("time == " + time);
+				LogMessage("icon == " + icon);
+				String code = getCode(icon);
+
+				if(!use_icons)
+				{
+					day.icon = "wi wi-yrno-" + code;
+				} else {
+					String fileName = checkImage("yrno" + code + ".png", null);
+					day.icon = "file://" + fileName;
+				}
+
+				days.add(day);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
+	}
+
+	private String degtoname(double deg)
+	{
+		if(deg <= 22.5)
+			return "North";
+		else if(deg <= 67.5)
+			return "North East";
+		else if(deg <= 112.5)
+			return "East";
+		else if(deg <= 157.5)
+			return "South East";
+		else if(deg <= 202.5)
+			return "South";
+		else if(deg <= 247.5)
+			return "South West";
+		else if(deg <= 292.5)
+			return "West";
+		else if(deg <= 337.5)
+			return "North West";
+		return "North";
+	}
+
+	private String getCode(String icon)
+	{
+		switch(icon)
+		{
+			case "clearsky_day":
+				return "01d";
+			case "clearsky_night":
+				return "01n";
+			case "clearsky_polartwilight":
+				return "01m";
+			case "fair_day":
+				return "02d";
+			case "fair_night":
+				return "02n";
+			case "fair_polartwilight":
+				return "02m";
+			case "partlycloudy_day":
+				return "03d";
+			case "partlycloudy_night":
+				return "03n";
+			case "partlycloudy_polartwilight":
+				return "03m";
+			case "cloudy":
+				return "04";
+			case "rainshowers_day":
+				return "05d";
+			case "rainshowers_night":
+				return "05n";
+			case "rainshowers_polartwilight":
+				return "05m";
+			case "rainshowersandthunder_day":
+				return "06d";
+			case "rainshowersandthunder_night":
+				return "06n";
+			case "rainshowersandthunder_polartwilight":
+				return "06m";
+			case "sleetshowers_day":
+				return "07d";
+			case "sleetshowers_night":
+				return "07n";
+			case "sleetshowers_polartwilight":
+				return "07m";
+			case "snowshowers_day":
+				return "08d";
+			case "snowshowers_night":
+				return "08n";
+			case "snowshowers_polartwilight":
+				return "08m";
+			case "rain":
+				return "09";
+			case "heavyrain":
+				return "10";
+			case "heavyrainandthunder":
+				return "11";
+			case "sleet":
+				return "12";
+			case "snow":
+				return "13";
+			case "snowandthunder":
+				return "14";
+			case "fog":
+				return "15";
+
+			case "sleetshowersandthunder_day":
+				return "20d";
+			case "sleetshowersandthunder_night":
+				return "20n";
+			case "sleetshowersandthunder_polartwilight":
+				return "20m";
+			case "snowshowersandthunder_day":
+				return "21d";
+			case "snowshowersandthunder_night":
+				return "21n";
+			case "snowshowersandthunder_polartwilight":
+				return "21m";
+			case "rainandthunder":
+				return "22";
+			case "sleetandthunder":
+				return "23";
+			case "lightrainshowersandthunder_day":
+				return "24d";
+			case "lightrainshowersandthunder_night":
+				return "24n";
+			case "lightrainshowersandthunder_polartwilight":
+				return "24m";
+			case "heavyrainshowersandthunder_day":
+				return "25d";
+			case "heavyrainshowersandthunder_night":
+				return "25n";
+			case "heavyrainshowersandthunder_polartwilight":
+				return "25m";
+			case "lightssleetshowersandthunder_day":
+				return "26d";
+			case "lightssleetshowersandthunder_night":
+				return "26n";
+			case "lightssleetshowersandthunder_polartwilight":
+				return "26m";
+			case "heavysleetshowersandthunder_day":
+				return "27d";
+			case "heavysleetshowersandthunder_night":
+				return "27n";
+			case "heavysleetshowersandthunder_polartwilight":
+				return "27m";
+			case "lightssnowshowersandthunder_day":
+				return "28d";
+			case "lightssnowshowersandthunder_night":
+				return "28n";
+			case "lightssnowshowersandthunder_polartwilight":
+				return "28m";
+			case "heavysnowshowersandthunder_day":
+				return "29d";
+			case "heavysnowshowersandthunder_night":
+				return "29n";
+			case "heavysnowshowersandthunder_polartwilight":
+				return "29m";
+			case "lightrainandthunder":
+				return "30";
+			case "lightsleetandthunder":
+				return "31";
+			case "heavysleetandthunder":
+				return "32";
+			case "lightsnowandthunder":
+				return "33";
+			case "heavysnowandthunder":
+				return "34";
+
+			case "lightrainshowers_day":
+				return "40d";
+			case "lightrainshowers_night":
+				return "40n";
+			case "lightrainshowers_polartwilight":
+				return "40m";
+			case "heavyrainshowers_day":
+				return "41d";
+			case "heavyrainshowers_night":
+				return "41n";
+			case "heavyrainshowers_polartwilight":
+				return "41m";
+			case "lightsleetshowers_day":
+				return "42d";
+			case "lightsleetshowers_night":
+				return "42n";
+			case "lightsleetshowers_polartwilight":
+				return "42m";
+			case "heavysleetshowers_day":
+				return "43d";
+			case "heavysleetshowers_night":
+				return "43n";
+			case "heavysleetshowers_polartwilight":
+				return "43m";
+			case "lightsnowshowers_day":
+				return "44d";
+			case "lightsnowshowers_night":
+				return "44n";
+			case "lightsnowshowers_polartwilight":
+				return "44m";
+			case "heavysnowshowers_day":
+				return "45d";
+			case "heavysnowshowers_night":
+				return "45n";
+			case "heavysnowshowers_polartwilight":
+				return "45m";
+			case "lightrain":
+				return "46";
+			case "lightsleet":
+				return "47";
+			case "heavysleet":
+				return "48";
+			case "lightsnow":
+				return "49";
+			case "heavysnow":
+				return "50";
+		}
+
+		return "01d";
 	}
 
 	private long convertDaytoTS(String dayName, Locale locale, long lastTS)

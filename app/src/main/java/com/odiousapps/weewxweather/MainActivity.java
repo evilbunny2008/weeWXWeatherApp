@@ -614,6 +614,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
+							case "met.no":
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
 							case "bom.gov.au":
 								bomtown = forecast.split(",")[1].trim();
 								common.SetStringPref("bomtown", bomtown);
