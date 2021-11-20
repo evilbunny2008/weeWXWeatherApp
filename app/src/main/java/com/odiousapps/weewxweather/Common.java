@@ -33,32 +33,38 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.InterruptedIOException;
 import java.io.OutputStream;
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
+import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 import fr.arnaudguyon.xmltojsonlib.XmlToJson;
+import okhttp3.ConnectionSpec;
+import okhttp3.Credentials;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import okhttp3.Route;
 
 import static java.lang.Math.round;
 
@@ -3365,47 +3371,62 @@ class Common
 		return resultResponse.body();
 	}
 
+	private int responseCount(Response response)
+	{
+		int result = 1;
+		while ((response = response.priorResponse()) != null)
+			result++;
+		return result;
+	}
+
 	private String downloadString(String fromURL) throws Exception
 	{
+		OkHttpClient client;
+		Request request;
+
 		Uri uri = Uri.parse(fromURL);
-		Common.LogMessage("fromURL == " + fromURL);
-		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
+		if(uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
 		{
-			final String[] UC = uri.getUserInfo().split(":");
-			Common.LogMessage("uri username = " + uri.getUserInfo());
+			String[] UC = uri.getUserInfo().split(":");
+			LogMessage("uri username = " + UC[0]);
 
-			if (UC.length > 1)
-			{
-				Authenticator.setDefault(new Authenticator()
+			client = new OkHttpClient.Builder()
+				.connectTimeout(60, TimeUnit.SECONDS)
+				.writeTimeout(60, TimeUnit.SECONDS)
+				.readTimeout(60, TimeUnit.SECONDS)
+				.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS))
+				.authenticator(new okhttp3.Authenticator()
 				{
-					protected PasswordAuthentication getPasswordAuthentication()
+					@Override
+					public Request authenticate(Route route, Response response) throws IOException
 					{
-						return new PasswordAuthentication(UC[0], UC[1].toCharArray());
+						if (responseCount(response) >= 3)
+							return null;
+
+						String credential = Credentials.basic(UC[0], UC[1]);
+						return response.request().newBuilder().header("Authorization", credential).build();
 					}
-				});
-			}
+				})
+				.build();
+		} else {
+			client = new OkHttpClient.Builder()
+					.connectTimeout(60, TimeUnit.SECONDS)
+					.writeTimeout(60, TimeUnit.SECONDS)
+					.readTimeout(60, TimeUnit.SECONDS)
+					.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS))
+					.build();
 		}
 
-		URL url = new URL(fromURL);
-		URLConnection conn = url.openConnection();
-		conn.setRequestProperty("Referer", fromURL);
-		conn.setConnectTimeout(60000);
-		conn.setReadTimeout(60000);
-		conn.setDoOutput(true);
-		conn.connect();
-		BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
+		request = new Request.Builder().url(fromURL)
+				.addHeader("Referer", fromURL)
+				.addHeader("User-Agent", UA)
+				.build();
 
-		String line;
-		StringBuilder sb = new StringBuilder();
-		while ((line = in.readLine()) != null)
-		{
-			line = line.trim() + "\n";
-			if (line.length() > 0)
-				sb.append(line);
+		try (Response response = client.newCall(request).execute()) {
+			String rb = response.body().string().trim();
+			LogMessage(rb);
+			return rb;
 		}
-		in.close();
-
-		return sb.toString().trim();
 	}
 
 	@SuppressWarnings({"unused", "SameParameterValue"})
@@ -3451,46 +3472,55 @@ class Common
 			if (!dir.mkdirs())
 				return null;
 
-		Uri uri = Uri.parse(fromURL);
-		LogMessage("fromURL == " + fromURL);
-		if (uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
-		{
-			final String[] UC = uri.getUserInfo().split(":");
-			LogMessage("uri username = " + uri.getUserInfo());
-
-			if (UC.length > 1)
-			{
-				Authenticator.setDefault(new Authenticator()
-				{
-					protected PasswordAuthentication getPasswordAuthentication()
-					{
-						return new PasswordAuthentication(UC[0], UC[1].toCharArray());
-					}
-				});
-			}
-		}
-
+		OkHttpClient client;
+		Request request;
 		OutputStream outputStream = new FileOutputStream(f);
 
-		URL url = new URL(fromURL);
-		URLConnection conn = url.openConnection();
-		conn.setConnectTimeout(60000);
-		conn.setReadTimeout(60000);
-		conn.setDoOutput(true);
-		conn.connect();
-		InputStream input = conn.getInputStream();
+		Uri uri = Uri.parse(fromURL);
+		if(uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
+		{
+			String[] UC = uri.getUserInfo().split(":");
+			LogMessage("uri username = " + UC[0]);
 
-		int count;
-		byte[] data = new byte[1024];
-		while ((count = input.read(data)) != -1)
-			outputStream.write(data, 0, count);
+			client = new OkHttpClient.Builder()
+					.connectTimeout(60, TimeUnit.SECONDS)
+					.writeTimeout(60, TimeUnit.SECONDS)
+					.readTimeout(60, TimeUnit.SECONDS)
+					.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS))
+					.authenticator(new okhttp3.Authenticator()
+					{
+						@Override
+						public Request authenticate(Route route, Response response) throws IOException
+						{
+							if (responseCount(response) >= 3)
+								return null;
 
-		input.close();
-		outputStream.flush();
-		outputStream.close();
+							String credential = Credentials.basic(UC[0], UC[1]);
+							return response.request().newBuilder().header("Authorization", credential).build();
+						}
+					})
+					.build();
+		} else {
+			client = new OkHttpClient.Builder()
+					.connectTimeout(60, TimeUnit.SECONDS)
+					.writeTimeout(60, TimeUnit.SECONDS)
+					.readTimeout(60, TimeUnit.SECONDS)
+					.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS))
+					.build();
+		}
 
-		publish(f);
-		return f;
+		request = new Request.Builder().url(fromURL)
+				.addHeader("Referer", fromURL)
+				.addHeader("User-Agent", UA)
+				.build();
+
+		try (Response response = client.newCall(request).execute()) {
+			outputStream.write(response.body().bytes());
+			outputStream.flush();
+			outputStream.close();
+			publish(f);
+			return f;
+		}
 	}
 
 	private void makeTable()

@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     defaultConfig {
         applicationId "com.odiousapps.weewxweather"
         minSdkVersion 19
         //noinspection OldTargetApi
-        targetSdkVersion 29
-        versionCode 9011
-        versionName "0.9.11"
+        targetSdkVersion 30
+        versionCode 9012
+        versionName "0.9.12"
     }
     buildTypes {
         release {
@@ -28,4 +28,5 @@ dependencies {
     implementation 'rongi.rotate-layout:rotate-layout:3.0.0'
     implementation 'com.github.smart-fun:XmlToJson:1.4.4'
     implementation 'org.jsoup:jsoup:1.11.3'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.0'
 }
