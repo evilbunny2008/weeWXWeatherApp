@@ -41,8 +41,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
 import java.io.OutputStream;
-import java.net.Authenticator;
-import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.SimpleDateFormat;
@@ -615,7 +613,11 @@ class Common
 							day.icon = "flaticon-thermometer";
 					} else {
 						String fileName = checkImage("mf_" + lookupTable.get(tmpicon) + ".png", null);
-						day.icon = "file://" + fileName;
+						File f = new File(fileName);
+						FileInputStream imageInFile = new FileInputStream(f);
+						byte[] imageData = new byte[(int) f.length()];
+						imageInFile.read(imageData);
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					}
 				} else {
 					// Something should be done here, didn't find a match for icon...
@@ -728,7 +730,11 @@ class Common
 			} else {
 				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 				fileName = checkImage(fileName, day.icon);
-				day.icon = "file://" + fileName;
+				File f = new File(fileName);
+				FileInputStream imageInFile = new FileInputStream(f);
+				byte[] imageData = new byte[(int) f.length()];
+				imageInFile.read(imageData);
+				day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 			}
 
 			day.max = day.max.replaceAll("°C", "").trim();
@@ -776,7 +782,11 @@ class Common
 				} else {
 					fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 					fileName = checkImage(fileName, day.icon);
-					day.icon = "file://" + fileName;
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				day.max = day.max.replaceAll("°C", "").trim();
@@ -847,7 +857,11 @@ class Common
 					day.icon = "wi wi-metoffice-" + fileName.substring(0, fileName.lastIndexOf("."));
 				} else {
 					fileName = checkImage("met" + fileName, null);
-					day.icon = "file://" + fileName;
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				if(metric)
@@ -993,7 +1007,11 @@ class Common
 							day.icon = "flaticon-thermometer";
 					} else {
 						fileName = checkImage("wca" + fileName + ".png", null);
-						day.icon = "file://" + fileName;
+						File f = new File(fileName);
+						FileInputStream imageInFile = new FileInputStream(f);
+						byte[] imageData = new byte[(int) f.length()];
+						imageInFile.read(imageData);
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					}
 
 					day.day = date;
@@ -1125,7 +1143,11 @@ class Common
 							day.icon = "flaticon-thermometer";
 					} else {
 						fileName = checkImage("wca" + fileName + ".png", null);
-						day.icon = "file://" + fileName;
+						File f = new File(fileName);
+						FileInputStream imageInFile = new FileInputStream(f);
+						byte[] imageData = new byte[(int) f.length()];
+						imageInFile.read(imageData);
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					}
 
 					day.day = date;
@@ -1274,7 +1296,12 @@ class Common
 				if(iconLink.getString(i).toLowerCase().startsWith("http"))
 				{
 					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).trim().replaceAll("\\.png$", "\\.jpg");
-					day.icon = "file://" + checkImage(fileName, iconLink.getString(i));
+					fileName = checkImage(fileName, iconLink.getString(i));
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				} else {
 					day.icon = iconLink.getString(i);
 				}
@@ -1446,7 +1473,11 @@ class Common
 						day.icon = "flaticon-thermometer";
 				} else {
 					String fileName = checkImage("bom" + code + ".png", null);
-					day.icon = "file://" + fileName;
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				if(metric)
@@ -1524,7 +1555,11 @@ class Common
 				} else {
 					day.icon = day.icon.replaceAll("-", "_");
 					String fileName = checkImage("ms_" + day.icon + ".png", null);
-					day.icon = "file://" + fileName;
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				if(metric)
@@ -1618,7 +1653,11 @@ class Common
 					else
 						day.icon = "flaticon-thermometer";
 				} else {
-					day.icon = "file://" + fileName;
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				day.min = "&deg;C";
@@ -1688,7 +1727,12 @@ class Common
 				if(use_icons)
 				{
 					String fileName = "ilmeteo_" + icon + ".png";
-					day.icon = "file://" + checkImage(fileName, null);
+					fileName = checkImage(fileName, null);
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				} else {
 					day.icon = "wi wi-ilmeteo-" + icon;
 				}
@@ -1758,8 +1802,13 @@ class Common
 				icon = bit.split("<td class=\"skyIcon\"><img src=\"", 2)[1].split("\" alt=\"",2)[0].trim();
 				String[] ret = checkFilesIt(icon);
 				if(ret[0] != null)
-					day.icon = "file://" + ret[1];
-				else
+				{
+					File f = new File(ret[1]);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+				} else
 					return ret;
 //				LogMessage("day.icon=" + day.icon);
 
@@ -1871,8 +1920,11 @@ class Common
 					String url = "http://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
 					String fileName = "aemet_" + code + "_g.png";
 					fileName = checkImage(fileName, url);
-					day.icon = "file://" + fileName;
-				}
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);				}
 
 				day.max = temperatura.getString("maxima");
 				day.min = temperatura.getString("minima");
@@ -1947,7 +1999,11 @@ class Common
 				} else {
 					String fileName = checkImage(day.icon + ".png", null);
 					Common.LogMessage("yahoo filename = " + fileName);
-					day.icon = "file://" + fileName;
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				if(metric)
@@ -2009,7 +2065,11 @@ class Common
 					day.icon = "wi wi-met-ie-" + day.icon;
 				} else {
 					String fileName = checkImage("y" + day.icon + ".png", null);
-					day.icon = "file://" + fileName;
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				day.text = jobj.getString("weatherDescription");
@@ -2121,7 +2181,11 @@ class Common
 						fileName = checkImage("apixu_" + icon + ".png", null);
 					else
 						fileName = checkImage("apixu_night_" + icon + ".png", null);
-					day.icon = "file://" + fileName;
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				day.text = text;
@@ -2268,7 +2332,11 @@ class Common
 					day.icon = "wi wi-yrno-" + code;
 				} else {
 					String fileName = checkImage("yrno" + code + ".png", null);
-					day.icon = "file://" + fileName;
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				day.max = temperature.getString("value") + "&deg;C";
@@ -2297,7 +2365,7 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
 		List<Day> days = new ArrayList<>();
-		String desc = "MeVille";
+		String desc = "";
 		long timestamp;
 
 		try
@@ -2372,7 +2440,11 @@ class Common
 					day.icon = "wi wi-yrno-" + code;
 				} else {
 					String fileName = checkImage("yrno" + code + ".png", null);
-					day.icon = "file://" + fileName;
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				days.add(day);
@@ -2667,7 +2739,11 @@ class Common
 				} else {
 					String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
 					fileName = checkImage(fileName, null);
-					day.icon = "file://" + fileName;
+					File f = new File(fileName);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					imageInFile.read(imageData);
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				day.max = range[1];
@@ -2772,12 +2848,12 @@ class Common
 		    int[] daynums = new int[]{196, 221, 241, 261, 281, 301, 321, 341, 361, 381};
 		    for (int startid : daynums)
 		    {
-		    	Day myday = new Day();
+			    Day myday = new Day();
 
 			    int endid;
 			    long last_ts = System.currentTimeMillis();
 
-			    if(startid == 196)
+			    if (startid == 196)
 				    endid = startid + 24;
 			    else
 				    endid = startid + 19;
@@ -2795,9 +2871,9 @@ class Common
 			    myday.icon = tmpstr.split("<img alt=\"", 2)[1].split("\"", 2)[1];
 			    myday.icon = myday.icon.split("src=\"", 2)[1].split("\"", 2)[0].trim();
 
-			    myday.max = tmpstr.split("data-reactid=\"" + (startid + 10)  + "\">", 2)[1];
+			    myday.max = tmpstr.split("data-reactid=\"" + (startid + 10) + "\">", 2)[1];
 			    myday.max = myday.max.split("</span>", 2)[0].trim();
-			    myday.min = tmpstr.split("data-reactid=\"" + (startid + 13)  + "\">", 2)[1];
+			    myday.min = tmpstr.split("data-reactid=\"" + (startid + 13) + "\">", 2)[1];
 			    myday.min = myday.min.split("</span>", 2)[0].trim();
 
 			    doc = Jsoup.parse(myday.max.trim());
@@ -2809,19 +2885,25 @@ class Common
 			    myday.max = myday.max.substring(0, myday.max.length() - 1);
 			    myday.min = myday.min.substring(0, myday.min.length() - 1);
 
-			    if(metric)
+			    if (metric)
 			    {
 				    myday.max = round((Double.parseDouble(myday.max) - 32.0) * 5.0 / 9.0) + "&deg;C";
 				    myday.min = round((Double.parseDouble(myday.min) - 32.0) * 5.0 / 9.0) + "&deg;C";
-			    } else {
+			    } else
+			    {
 				    myday.max += "&deg;F";
 				    myday.min += "&deg;F";
 			    }
 
 			    String[] ret = checkFiles(myday.icon);
-			    if(ret[0] != null)
-				    myday.icon = "file://" + ret[1];
-			    else
+			    if (ret[0] != null)
+			    {
+				    File f = new File(ret[1]);
+				    FileInputStream imageInFile = new FileInputStream(f);
+				    byte[] imageData = new byte[(int) f.length()];
+				    imageInFile.read(imageData);
+				    myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+			    } else
 				    return ret;
 
                 LogMessage(myday.toString());
