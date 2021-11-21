@@ -619,13 +619,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("fctype=" + fctype);
 								break;
 							case "bom.gov.au":
-								bomtown = forecast.split(",")[1].trim();
-								common.SetStringPref("bomtown", bomtown);
-								forecast = "ftp://ftp.bom.gov.au/anon/gen/fwo/" + forecast.split(",")[0].trim() + ".xml";
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								Common.LogMessage("bomtown=" + bomtown);
-								break;
+								common.SetStringPref("lastError", "forecast type " + fctype + " is no longer supported due to ftp support being dropped in Android. Use bom2 forecasts instead, check the wiki for details.");
+								handlerForecast.sendEmptyMessage(0);
+								return;
 							case "wmo.int":
 								if(!forecast.startsWith("http"))
 									forecast = "https://worldweather.wmo.int/en/json/" + forecast.trim() + "_en.xml";
@@ -686,10 +682,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
-							case "meteofrance.com":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
 							case "darksky.net":
 								forecast += "?exclude=currently,minutely,hourly,alerts,flags";
 								forecast += "&lang=" + Locale.getDefault().getLanguage();
@@ -704,11 +696,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								else
 									forecast += "&units=imperial";
 								forecast += "&lang=" + Locale.getDefault().getLanguage();
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "apixu.com":
-								forecast += "&days=10";
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
@@ -736,10 +723,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								Common.LogMessage("metierev=" + metierev);
-								break;
-							case "ilmeteo.it":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
 								break;
 							case "tempoitalia.it":
 								Common.LogMessage("forecast=" + forecast);

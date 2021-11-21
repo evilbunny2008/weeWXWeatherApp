@@ -542,111 +542,6 @@ class Common
 		return sb.toString();
 	}
 
-	String[] processMF(String data)
-	{
-		return processMF(data, false);
-	}
-
-	String[] processMF(String data, boolean showHeader)
-	{
-		if (data == null || data.equals(""))
-			return null;
-
-		boolean metric = GetBoolPref("metric", true);
-		boolean use_icons = GetBoolPref("use_icons", false);
-		String desc;
-		long timestamp;
-
-		try
-		{
-			desc = data.split("<h1>", 2)[1].split("</h1>", 2)[0].trim();
-
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-			String ftime = sdf.format(System.currentTimeMillis());
-			ftime += " " + data.split("<p class=\"heure-de-prevision\">Prévisions météo actualisées à ", 2)[1].split("</p>", 2)[0].trim();
-
-			sdf = new SimpleDateFormat("yyyy-MM-dd HH'h'mm", Locale.getDefault());
-			timestamp = sdf.parse(ftime).getTime();
-
-			data = data.split("<!-- LISTE JOURS -->", 2)[1].split("<!-- LISTE JOURS/ -->", 2)[0].trim();
-
-			if(lookupTable.size() <= 0)
-			{
-				makeTable();
-				LogMessage("Loaded lookup table.");
-			}
-
-			List<Day> days = new ArrayList<>();
-			String[] bits = data.split("title=\"");
-			for(int i = 1; i < bits.length; i++)
-			{
-				Day day = new Day();
-				String bit = bits[i].trim();
-
-				String text = bit.split("\">", 2)[0].trim();
-
-				sdf = new SimpleDateFormat("-MM-yyyy", Locale.getDefault());
-				String date = bit.split("<a>", 2)[1].split("</a>", 2)[0].trim() + sdf.format(System.currentTimeMillis());
-				String min = bit.split("class=\"min-temp\">", 2)[1].split("°C Minimale", 2)[0].trim();
-				String max = bit.split("class=\"max-temp\">", 2)[1].split("°C Maximale", 2)[0].trim();
-				String icon = bit.split("<dd class=\"pic40 ", 2)[1].split("\">", 2)[0].trim();
-
-				sdf = new SimpleDateFormat("EEE dd-MM-yyyy", Locale.FRANCE);
-				day.timestamp = sdf.parse(date).getTime();
-				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
-				day.day = sdf.format(day.timestamp);
-
-				String tmpicon = icon;
-				while (lookupTable.get(tmpicon) == null && tmpicon.length() > 0)
-				{
-					LogMessage("icon == " + tmpicon);
-					tmpicon = tmpicon.substring(0, tmpicon.length() - 1);
-				}
-
-				if(lookupTable.get(tmpicon) != null)
-				{
-					if(!use_icons)
-					{
-						if(!Objects.requireNonNull(lookupTable.get(tmpicon)).replaceAll("_", "-").equals("j-w1-8-n"))
-							day.icon = "wi wi-meteofrance-"  + Objects.requireNonNull(lookupTable.get(tmpicon)).replaceAll("_", "-");
-						else
-							day.icon = "flaticon-thermometer";
-					} else {
-						String fileName = checkImage("mf_" + lookupTable.get(tmpicon) + ".png", null);
-						File f = new File(fileName);
-						FileInputStream imageInFile = new FileInputStream(f);
-						byte[] imageData = new byte[(int) f.length()];
-						imageInFile.read(imageData);
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					}
-				} else {
-					// Something should be done here, didn't find a match for icon...
-					day.icon = "N/A";
-				}
-
-				if(metric)
-				{
-					max = max + "&deg;C";
-					min = min + "&deg;C";
-				} else {
-					max = round((Double.parseDouble(max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					min = round((Double.parseDouble(min) * 9.0 / 5.0) + 32.0) + "&deg;F";
-				}
-
-				day.max = max;
-				day.min = min;
-				day.text = text;
-				days.add(day);
-			}
-
-			return new String[]{generateForecast(days, timestamp, showHeader), desc};
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return null;
-	}
-
 	String[] processBOM2(String data)
 	{
 		return processBOM2(data, false);
@@ -1524,7 +1419,7 @@ class Common
 			JSONObject jobj = new JSONObject(data);
 			JSONArray loop = jobj.getJSONArray("days");
 			String ftime = loop.getJSONObject(0).getString("issuedAtISO");
-			desc = jobj.getString("locationECWasp") + ", New Zealand";
+			desc = jobj.getString("locationWASP") + ", New Zealand";
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 			timestamp = sdf.parse(ftime).getTime();
@@ -1617,27 +1512,27 @@ class Common
 				Day day = new Day();
 				String bit = bits[i];
 				String icon, temp;
-				if(bit.split("<td ><b>", 2).length > 1)
+				if (bit.split("<td ><b>", 2).length > 1)
 					day.day = bit.split("<td ><b>", 2)[1].split("</b></td>", 2)[0].trim();
 				else
 					day.day = bit.split("<td><b>", 2)[1].split("</b></td>", 2)[0].trim();
 
 				day.timestamp = convertDaytoTS(day.day, new Locale("de", "DE"), lastTS);
-				if(day.timestamp != 0)
+				if (day.timestamp != 0)
 				{
 					sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 					day.day = sdf.format(day.timestamp) + " " + day.day.substring(day.day.lastIndexOf(" ") + 1);
 				}
 
-				if(bit.split("<td ><img name=\"piktogramm\" src=\"", 2).length > 1)
-					icon = bit.split("<td ><img name=\"piktogramm\" src=\"", 2)[1].split("\" width=\"50\" alt=\"",2)[0].trim();
+				if (bit.split("<td ><img name=\"piktogramm\" src=\"", 2).length > 1)
+					icon = bit.split("<td ><img name=\"piktogramm\" src=\"", 2)[1].split("\" width=\"50\" alt=\"", 2)[0].trim();
 				else
-					icon = bit.split("<td><img name=\"piktogramm\" src=\"", 2)[1].split("\" width=\"50\" alt=\"",2)[0].trim();
+					icon = bit.split("<td><img name=\"piktogramm\" src=\"", 2)[1].split("\" width=\"50\" alt=\"", 2)[0].trim();
 
-				if(bit.split("\"></td>\n<td >", 2).length > 1)
-					temp = bit.split("\"></td>\n<td >", 2)[1].split("Grad <abbr title=\"Celsius\">C</abbr></td>\n", 2)[0].trim();
+				if (bit.split("\"></td>\r\n<td >", 2).length > 1)
+					temp = bit.split("\"></td>\r\n<td >", 2)[1].split("Grad <abbr title=\"Celsius\">C</abbr></td>\r\n", 2)[0].trim();
 				else
-					temp = bit.split("\"></td>\n<td>", 2)[1].split("Grad <abbr title=\"Celsius\">C</abbr></td>\n", 2)[0].trim();
+					temp = bit.split("\"></td>\r\n<td>", 2)[1].split("Grad <abbr title=\"Celsius\">C</abbr></td>\r\n", 2)[0].trim();
 
 				icon = icon.replaceAll("/DE/wetter/_functions/piktos/vhs_", "").replaceAll("\\?__blob=normal", "").trim();
 				String fileName = "dwd_" + icon.replaceAll("-", "_");
@@ -1665,86 +1560,6 @@ class Common
 					day.max = temp + "&deg;C";
 				else
 					day.max = round((Double.parseDouble(temp) * 9.0 / 5.0) + 32.0) + "&deg;F";
-
-				days.add(day);
-				lastTS = day.timestamp;
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-
-		return new String[]{generateForecast(days, timestamp, showHeader), desc};
-	}
-
-	String[] processILMETEO(String data)
-	{
-		return processILMETEO(data, false);
-	}
-
-	String[] processILMETEO(String data, boolean showHeader)
-	{
-		if (data == null || data.equals(""))
-			return null;
-
-		boolean metric = GetBoolPref("metric", true);
-		boolean use_icons = GetBoolPref("use_icons", false);
-		List<Day> days = new ArrayList<>();
-		String desc = "";
-		long timestamp, lastTS;
-
-		try
-		{
-			String[] bits = data.split("<title>");
-			if (bits.length >= 2)
-				desc = bits[1].split(" &#9655; ")[0];
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-			String ftime = sdf.format(System.currentTimeMillis());
-			ftime = ftime + " " + data.split("<b>Aggiornamento delle ore</b> ", 2)[1].split(" - ", 2)[0].trim();
-			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
-			lastTS = timestamp = sdf.parse(ftime).getTime();
-
-			data = data.split("<li class=\"tabnav\">")[0].trim();
-			bits = data.split("<span style=\"display:block\">");
-			for(int i = 1; i < bits.length; i++)
-			{
-				Day day = new Day();
-				String bit = bits[i].split("</li>")[0].trim();
-				String icon;
-				day.day = bit.split("</span>", 2)[0].trim();
-
-				day.timestamp = convertDaytoTS(day.day, new Locale("it", "IT"), lastTS);
-				if(day.timestamp != 0)
-				{
-					sdf = new SimpleDateFormat("EEE dd", Locale.getDefault());
-					day.day = sdf.format(day.timestamp) + " " + day.day.substring(day.day.lastIndexOf(" ") + 1);
-				}
-
-				icon = bit.split("<span class=\"s ", 2)[1].split("\"></span>",2)[0].trim();
-				day.max = bit.split("<span class=\"tmax\">", 2)[1].split("&deg;</span>", 2)[0].trim();
-				day.min = bit.split("<span class=\"tmin\">", 2)[1].split("&deg;</span>", 2)[0].trim();
-
-				if(use_icons)
-				{
-					String fileName = "ilmeteo_" + icon + ".png";
-					fileName = checkImage(fileName, null);
-					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-				} else {
-					day.icon = "wi wi-ilmeteo-" + icon;
-				}
-
-				if(metric)
-				{
-					day.max += "&deg;C";
-					day.min += "&deg;C";
-				} else {
-					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
-				}
 
 				days.add(day);
 				lastTS = day.timestamp;
@@ -1999,11 +1814,13 @@ class Common
 				} else {
 					String fileName = checkImage(day.icon + ".png", null);
 					Common.LogMessage("yahoo filename = " + fileName);
+/*
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
 					imageInFile.read(imageData);
 					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+*/
 				}
 
 				if(metric)
@@ -2089,122 +1906,7 @@ class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processAPIXU(String data)
-	{
-		return processAPIXU(data, false);
-	}
-
-	String[] processAPIXU(String data, boolean showHeader)
-	{
-		if (data == null || data.equals(""))
-			return null;
-
-		List<Day> days = new ArrayList<>();
-		String desc;
-		long timestamp;
-
-		boolean metric = GetBoolPref("metric", true);
-		boolean use_icons = GetBoolPref("use_icons", false);
-
-		if(conditions == null)
-		{
-			loadConditions();
-			LogMessage("Loaded Conditions");
-		}
-
-		try
-		{
-			JSONObject jobj = new JSONObject(data);
-
-			timestamp = jobj.getJSONObject("location").getLong("localtime_epoch") * 1000;
-
-			desc = jobj.getJSONObject("location").getString("name") + ", " + jobj.getJSONObject("location").getString("country");
-			JSONArray jarr = jobj.getJSONObject("forecast").getJSONArray("forecastday");
-			SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
-			for(int i = 0; i < jarr.length(); i++)
-			{
-				Day day = new Day();
-				JSONObject j = jarr.getJSONObject(i);
-				day.timestamp = j.getLong("date_epoch") * 1000;
-				day.day = sdf.format(day.timestamp);
-
-				JSONObject thisDay = j.getJSONObject("day");
-
-				String min, max;
-
-				if(metric)
-				{
-					min = (int)round(thisDay.getDouble("mintemp_c")) + "&deg;C";
-					max = (int)round(thisDay.getDouble("maxtemp_c")) + "&deg;C";
-				} else {
-					min = (int)round(thisDay.getDouble("mintemp_f")) + "&deg;F";
-					max = (int)round(thisDay.getDouble("maxtemp_f")) + "&deg;F";
-				}
-
-				int code = thisDay.getJSONObject("condition").getInt("code");
-
-				String text = "", icon = "";
-
-				for(int k = 0; k < conditions.length(); k++)
-				{
-					JSONObject cond = conditions.getJSONObject(k);
-					if(cond.getInt("code") == code)
-					{
-						icon = String.valueOf(cond.getInt("icon"));
-						if(Locale.getDefault().getLanguage().equals("en"))
-						{
-							text = cond.getString("day");
-						} else {
-							for(int l = 0; l < cond.getJSONArray("languages").length(); l++)
-							{
-								JSONObject lang = cond.getJSONArray("languages").getJSONObject(l);
-								if(lang.getString("lang_iso").equals(Locale.getDefault().getLanguage()))
-								{
-									text = lang.getString("day_text");
-									break;
-								}
-							}
-						}
-						break;
-					}
-				}
-
-				if(!use_icons)
-				{
-					if(!icon.endsWith("n"))
-						day.icon = "wi wi-apixu-" + icon;
-					else
-						day.icon = "wi wi-apixu-night-" + icon;
-				} else {
-					String fileName;
-					if(!icon.endsWith("n"))
-						fileName = checkImage("apixu_" + icon + ".png", null);
-					else
-						fileName = checkImage("apixu_night_" + icon + ".png", null);
-					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-				}
-
-				day.text = text;
-				day.max = max;
-				day.min = min;
-				days.add(day);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-			return null;
-		}
-
-		return new String[]{generateForecast(days, timestamp, showHeader), desc};
-	}
-
-	String[] processOWM(String data)
-	{
-		return processOWM(data, false);
-	}
+	String[] processOWM(String data) { return processOWM(data, false); }
 
 	String[] processOWM(String data, boolean showHeader)
 	{

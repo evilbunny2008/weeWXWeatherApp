@@ -635,13 +635,6 @@ class Forecast
 						    updateForecast(content[0], content[1]);
 					    break;
 				    }
-				    case "meteofrance.com":
-				    {
-					    String[] content = common.processMF(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
 				    case "darksky.net":
 				    {
 					    String[] content = common.processDarkSky(data, true);
@@ -652,13 +645,6 @@ class Forecast
 				    case "openweathermap.org":
 				    {
 					    String[] content = common.processOWM(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "apixu.com":
-				    {
-					    String[] content = common.processAPIXU(data, true);
 					    if(content != null && content.length >= 2)
 						    updateForecast(content[0], content[1]);
 					    break;
@@ -676,13 +662,6 @@ class Forecast
 					    if(content != null && content.length >= 2)
 						    updateForecast(content[0], content[1]);
 					    break;
-				    }
-				    case "ilmeteo.it":
-				    {
-				    	String[] content = common.processILMETEO(data, true);
-				    	if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-				    	break;
 				    }
 				    case "tempoitalia.it":
 				    {
