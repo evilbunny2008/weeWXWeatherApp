@@ -9,6 +9,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Vibrator;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import java.io.File;
+import java.io.FileInputStream;
 
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -360,10 +362,21 @@ class Weather
 							    if (dark_theme)
 								    sb.append("<style>body{color: #fff; background-color: #000;}</style>");
 
+							    try
+							    {
+								    File f = new File(radar);
+								    FileInputStream imageInFile = new FileInputStream(f);
+								    byte[] imageData = new byte[(int) f.length()];
+								    imageInFile.read(imageData);
+								    radar = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							    } catch (Exception e) {
+							    	e.printStackTrace();
+							    }
+
 							    tmp = "  </head>\n" +
 									    "  <body>\n" +
 									    "\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-width:100%;width:auto;height:auto;'\n" +
-									    "\tsrc='file://" + radar + "'>\n" +
+									    "\tsrc='" + radar + "'>\n" +
 									    "  </body>\n" +
 									    "</html>";
 							    sb.append(tmp);

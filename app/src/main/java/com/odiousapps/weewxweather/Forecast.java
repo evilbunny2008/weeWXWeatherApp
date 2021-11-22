@@ -12,6 +12,8 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Vibrator;
 import androidx.annotation.NonNull;
+
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +29,7 @@ import android.widget.TextView;
 import com.github.rongi.rotate_layout.layout.RotateLayout;
 
 import java.io.File;
+import java.io.FileInputStream;
 
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -251,11 +254,23 @@ class Forecast
 					"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
 			if (dark_theme)
 				html += "<style>body{color: #fff; background-color: #000;}</style>";
+
+			try
+			{
+				File f = new File(radar);
+				FileInputStream imageInFile = new FileInputStream(f);
+				byte[] imageData = new byte[(int) f.length()];
+				imageInFile.read(imageData);
+				radar = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
 			html += "  </head>\n" +
 					"  <body>\n" +
 					"\t<div style='text-align:center;'>\n" +
 					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" + height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
-					"\tsrc='file://" + radar + "'>\n" +
+					"\tsrc='" + radar + "'>\n" +
 					"\t</div>\n" +
 					"  </body>\n" +
 					"</html>";
