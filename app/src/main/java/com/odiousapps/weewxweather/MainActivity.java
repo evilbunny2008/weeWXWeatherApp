@@ -669,6 +669,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);
 								break;
+							case "bom3":
+								forecast = "https://api.weather.bom.gov.au/v1/locations/" + forecast.trim() + "/forecasts/daily";
+								Common.LogMessage("forecast=" + forecast);
+								Common.LogMessage("fctype=" + fctype);
+								break;
 							case "aemet.es":
 								Common.LogMessage("forecast=" + forecast);
 								Common.LogMessage("fctype=" + fctype);

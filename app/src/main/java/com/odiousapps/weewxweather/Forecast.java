@@ -629,6 +629,13 @@ class Forecast
 						    updateForecast(content[0], content[1]);
 					    break;
 				    }
+				    case "bom3":
+				    {
+					    String[] content = common.processBOM3(data, true);
+					    if(content != null && content.length >= 2)
+						    updateForecast(content[0], content[1]);
+					    break;
+				    }
 				    case "aemet.es":
 				    {
 					    String[] content = common.processAEMET(data, true);
@@ -779,6 +786,15 @@ class Forecast
 					    im.setImageResource(R.drawable.met);
 					    break;
 				    case "bom2":
+					    im.setImageResource(R.drawable.bom);
+					    if(dark_theme)
+					    {
+						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+					    } else {
+						    im.setColorFilter(null);
+					    }
+					    break;
+				    case "bom3":
 					    im.setImageResource(R.drawable.bom);
 					    if(dark_theme)
 					    {

@@ -393,7 +393,7 @@ class Common
 				Day d = new Day();
 				JSONObject day = jarr.getJSONObject(i);
 				String icon = day.getString("icon");
-				SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				SimpleDateFormat sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				d.timestamp = day.getLong("time") * 1000;
 				d.day = sdf.format(d.timestamp);
 
@@ -601,7 +601,7 @@ class Common
 			day.day = bit.split("<a href=\"", 2)[1].split("\">", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
 			sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 			day.timestamp = sdf.parse(day.day).getTime();
-			sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+			sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			day.day = sdf.format(day.timestamp);
 
 			day.icon = "http://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
@@ -658,7 +658,7 @@ class Common
 				day.day = bit.split("<a href=\"", 2)[1].split("\">", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 				day.timestamp = sdf.parse(day.day).getTime();
-				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
 				day.icon = "http://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
@@ -706,6 +706,103 @@ class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
+	String[] processBOM3(String data)
+	{
+		return processBOM3(data, false);
+	}
+
+	String[] processBOM3(String data, boolean showHeader)
+	{
+		if(data == null || data.equals(""))
+			return null;
+
+		boolean metric = GetBoolPref("metric", true);
+		boolean use_icons = GetBoolPref("use_icons", false);
+		String desc;
+		List<Day> days = new ArrayList<>();
+		long timestamp;
+
+		try
+		{
+			JSONObject jobj = new JSONObject(data);
+
+			desc = jobj.getJSONObject("metadata").getString("forecast_region");
+			String tmp = jobj.getJSONObject("metadata").getString("issue_time");
+
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+			timestamp = sdf.parse(tmp).getTime();
+
+			JSONArray mydays = jobj.getJSONArray("data");
+			for(int i = 1; i < mydays.length(); i++)
+			{
+				Day day = new Day();
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+				day.timestamp = sdf.parse(mydays.getJSONObject(i).getString("date")).getTime();
+				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
+				day.day = sdf.format(day.timestamp);
+
+				if(metric)
+				{
+					day.max = mydays.getJSONObject(i).getInt("temp_max") + "&deg;C";
+					day.min = mydays.getJSONObject(i).getInt("temp_min") + "&deg;C";
+				} else {
+					day.max = round((mydays.getJSONObject(i).getInt("temp_max") * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = round((mydays.getJSONObject(i).getInt("temp_min") * 9.0 / 5.0) + 32.0) + "&deg;F";
+				}
+
+				if(!mydays.getJSONObject(i).getString("extended_text").equals("null"))
+					day.text = mydays.getJSONObject(i).getString("extended_text");
+
+				String fileName = bomlookup(mydays.getJSONObject(i).getString("icon_descriptor"));
+				if(!fileName.equals("null"))
+				{
+					if (!use_icons)
+					{
+						if (!fileName.equals("frost"))
+							day.icon = "wi wi-bom-" + fileName;
+						else
+							day.icon = "flaticon-thermometer";
+					} else {
+						fileName = checkImage("bom2" + fileName + ".png", null);
+						File f = new File(fileName);
+						FileInputStream imageInFile = new FileInputStream(f);
+						byte[] imageData = new byte[(int) f.length()];
+						imageInFile.read(imageData);
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					}
+				}
+
+				days.add(day);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
+	}
+
+	private String bomlookup(String icon)
+	{
+		icon = icon.replace("-", "_");
+
+		switch(icon)
+		{
+			case "shower":
+				return "showers";
+			case "dusty":
+				return "dust";
+			case "mostly_sunny":
+				return "partly_cloudy";
+			case "light_shower":
+				return "light_showers";
+			case "windy":
+				return "wind";
+		}
+
+		return icon;
+	}
+
 	String[] processMET(String data)
 	{
 		return processMET(data, false);
@@ -734,7 +831,7 @@ class Common
 
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 				day.timestamp = sdf.parse(date).getTime();
-				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
 				String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class=\"icon\"")[1].split("src=\"")[1].split("\">")[0].trim();
@@ -1256,7 +1353,7 @@ class Common
 				String date = j.getString("forecastDate").trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 				day.timestamp = sdf.parse(date).getTime();
-				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				date = sdf.format(day.timestamp);
 
 				day.text = j.getString("weather");
@@ -1357,7 +1454,7 @@ class Common
 				String date = j.getString("start-time-local").trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 				day.timestamp = sdf.parse(date).getTime();
-				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
 				if(!use_icons)
@@ -1520,7 +1617,7 @@ class Common
 				day.timestamp = convertDaytoTS(day.day, new Locale("de", "DE"), lastTS);
 				if (day.timestamp != 0)
 				{
-					sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+					sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 					day.day = sdf.format(day.timestamp) + " " + day.day.substring(day.day.lastIndexOf(" ") + 1);
 				}
 
@@ -1698,7 +1795,7 @@ class Common
 				String fecha = jtmp.getString("fecha");
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 				day.timestamp = sdf.parse(fecha).getTime();
-				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
 				JSONObject estado_cielo = null;
@@ -1864,7 +1961,7 @@ class Common
 		{
 			desc = GetStringPref("metierev", "");
 
-			SimpleDateFormat dayname = new SimpleDateFormat("EEEE", Locale.getDefault());
+			SimpleDateFormat dayname = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			JSONArray jarr = new JSONArray(data);
 			for(int i = 0; i < jarr.length(); i++)
@@ -1924,7 +2021,7 @@ class Common
 			JSONObject jobj = new JSONObject(data);
 			desc = jobj.getJSONObject("city").getString("name") + ", " + jobj.getJSONObject("city").getString("country");
 			JSONArray jarr = jobj.getJSONArray("list");
-			SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+			SimpleDateFormat sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			for(int i = 0; i < jarr.length(); i++)
 			{
 				Day day = new Day();
@@ -2014,7 +2111,7 @@ class Common
 
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
 				day.timestamp = sdf.parse(from).getTime();
-				sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				String date = sdf.format(day.timestamp);
 
 				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
@@ -2417,7 +2514,7 @@ class Common
 				day.timestamp = convertDaytoTS(tmp[0], new Locale("en", "AU"), lastTS);
 				if(day.timestamp != 0)
 				{
-					sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+					sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 					day.day = sdf.format(day.timestamp);
 				} else {
 					day.day = tmp[0];
@@ -2566,7 +2663,7 @@ class Common
 			    rest = bits[1];
 			    String dow = tmpstr.split("</span>", 2)[0].trim();
 			    myday.timestamp = convertDaytoTS(dow, new Locale("en", "US"), last_ts);
-			    SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+			    SimpleDateFormat sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			    myday.day = sdf.format(myday.timestamp);
 
 			    myday.text = tmpstr.split("<img alt=\"", 2)[1].split("\"", 2)[0].trim();
@@ -2771,6 +2868,7 @@ class Common
 		File f = new File(context.getExternalFilesDir(""), "weeWX");
 		f = new File(f, "icons");
 		f = new File(f, fileName);
+		//LogMessage("f = " + f.getAbsolutePath());
 		if(f.exists() && f.isFile() && f.length() > 0)
 			return f.getAbsolutePath();
 

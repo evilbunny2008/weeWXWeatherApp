@@ -162,6 +162,7 @@ class Weather
 			    "<td><i style='font-size:" + iw + "px;' class='wi wi-sunset'></i></td><td>" + bits[58] + "</td>" +
 			    "<td><i style='font-size:" + iw + "px;' class='wi wi-moonrise'></i></td><td>" + bits[47] + "</td>" +
 	            "<td><i style='font-size:" + iw + "px;' class='wi wi-moonset'></i></td><td>" + bits[48] + "</td></tr>";
+	    Common.LogMessage("stmp = " + stmp);
 	    sb.append(stmp);
 
 	    stmp = "</table>";
@@ -642,6 +643,29 @@ class Weather
 					    case "bom2":
 					    {
 						    String[] content = common.processBOM2(data);
+						    if (content == null || content.length <= 0)
+						    {
+							    stopRefreshing();
+							    return;
+						    }
+
+						    String logo = "<img src='bom.png' height='29px'/><br/>";
+						    sb.append("<html>");
+						    if(dark_theme)
+						    {
+							    logo = "<img src='bom.png' style='filter:invert(100%);' height='29px'/><br/>";
+							    tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+						    } else
+							    tmp = "<head>" + Common.ssheader + "</head>";
+						    sb.append(tmp);
+						    tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
+						    sb.append(tmp);
+
+						    break;
+					    }
+					    case "bom3":
+					    {
+						    String[] content = common.processBOM3(data);
 						    if (content == null || content.length <= 0)
 						    {
 							    stopRefreshing();
