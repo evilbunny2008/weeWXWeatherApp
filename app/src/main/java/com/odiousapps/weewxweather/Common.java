@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -37,7 +38,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
 import java.io.OutputStream;
@@ -46,10 +46,8 @@ import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
@@ -62,7 +60,6 @@ import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import okhttp3.Route;
 
 import static java.lang.Math.round;
 
@@ -88,10 +85,8 @@ class Common
 
 	private Thread t = null;
 	private JSONObject nws = null;
-	private JSONArray conditions = null;
 
 	private final Typeface tf_bold;
-	private final Map<String, String> lookupTable = new HashMap<>();
 
 	static String ssheader = "<link rel='stylesheet' href='file:///android_asset/weathericons.css'>" +
 								"<link rel='stylesheet' href='file:///android_asset/weathericons_wind.css'>" +
@@ -168,12 +163,13 @@ class Common
 		if (start < System.currentTimeMillis())
 			start += period;
 
-		LogMessage(from + " - start == " + start);
-		LogMessage(from + " - period == " + period);
-		LogMessage(from + " - wait == " + wait);
+		LogMessage(from + " - start == " + start, true);
+		LogMessage(from + " - period == " + period, true);
+		LogMessage(from + " - wait == " + wait, true);
 
 		AlarmManager mgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		Intent myIntent = new Intent(context, UpdateCheck.class);
+		@SuppressLint("UnspecifiedImmutableFlag")
 		PendingIntent pi = PendingIntent.getBroadcast(context, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
 		if (mgr != null)
@@ -257,11 +253,6 @@ class Common
 		SetStringPref(name, "" + value);
 	}
 
-//	long GetLongPref(String name)
-//	{
-//		return GetLongPref(name, 0);
-//	}
-
 	long GetLongPref(String name, long defval)
 	{
 		String val = GetStringPref(name, "" + defval);
@@ -274,11 +265,6 @@ class Common
 	{
 		SetStringPref(name, "" + value);
 	}
-
-//	int GetIntPref(String name)
-//	{
-//		return GetIntPref(name, 0);
-//	}
 
 	int GetIntPref(String name, int defval)
 	{
@@ -295,11 +281,6 @@ class Common
 			val = "1";
 
 		SetStringPref(name, val);
-	}
-
-	boolean GetBoolPref(String name)
-	{
-		return GetBoolPref(name, false);
 	}
 
 	boolean GetBoolPref(String name, boolean defval)
@@ -459,13 +440,12 @@ class Common
 			if(days.get(0).min.equals("&deg;C") || days.get(0).min.equals("&deg;F"))
 			{
 				tmp = "<tr><td style='text-align:right;font-size:16pt;' colspan='2'>" + days.get(0).text + "</td></tr></table><br />";
-				sb.append(tmp);
 			} else {
 				tmp = "<tr><td style='font-size:16pt;'>" + days.get(0).min + "</td>";
 				sb.append(tmp);
 				tmp = "<td style='text-align:right;font-size:16pt;'>" + days.get(0).text + "</td></tr></table><br />";
-				sb.append(tmp);
 			}
+			sb.append(tmp);
 
 			tmp = "<table style='width:100%;border:0px;'>";
 			sb.append(tmp);
@@ -491,19 +471,17 @@ class Common
 				if(day.min.equals("&deg;C") || day.min.equals("&deg;F"))
 				{
 					tmp = "<tr><td colspan='2'>" + day.text + "</td></tr>";
-					sb.append(tmp);
 				} else {
 					tmp = "<tr><td>" + day.text + "</td>";
 					sb.append(tmp);
 					tmp = "<td style='width:10%;text-align:right;vertical-align:top;'>" + day.min + "</td></tr>";
-					sb.append(tmp);
 				}
+				sb.append(tmp);
 
 				tmp = "<tr><td style='font-size:4pt;' colspan='5'>&nbsp;</td></tr>";
 				sb.append(tmp);
 			}
 
-			sb.append("</table>");
 		} else {
 			tmp = "<table style='width:100%;'>\n";
 			sb.append(tmp);
@@ -528,17 +506,16 @@ class Common
 				if(day.min.equals("&deg;C") || day.min.equals("&deg;F"))
 				{
 					tmp = "<tr><td colspan='2'>" + day.text + "</td></tr>";
-					sb.append(tmp);
 				} else {
 					tmp = "<tr><td>" + day.text + "</td>";
 					sb.append(tmp);
 					tmp = "<td style='width:10%;text-align:right;vertical-align:top;'>" + day.min + "</td></tr>";
-					sb.append(tmp);
 				}
+				sb.append(tmp);
 			}
 
-			sb.append("</table>");
 		}
+		sb.append("</table>");
 		return sb.toString();
 	}
 
@@ -592,7 +569,7 @@ class Common
 			obs = hour + ":" + minute + " " + ampm + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
-			timestamp = sdf.parse(obs).getTime();
+			timestamp = Objects.requireNonNull(sdf.parse(obs)).getTime();
 
 			String[] bits = fcdiv.split("<dl class=\"forecast-summary\">");
 			String bit = bits[1];
@@ -600,7 +577,7 @@ class Common
 
 			day.day = bit.split("<a href=\"", 2)[1].split("\">", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
 			sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-			day.timestamp = sdf.parse(day.day).getTime();
+			day.timestamp = Objects.requireNonNull(sdf.parse(day.day)).getTime();
 			sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			day.day = sdf.format(day.timestamp);
 
@@ -657,7 +634,7 @@ class Common
 				bit = bits[i];
 				day.day = bit.split("<a href=\"", 2)[1].split("\">", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-				day.timestamp = sdf.parse(day.day).getTime();
+				day.timestamp = Objects.requireNonNull(sdf.parse(day.day)).getTime();
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
@@ -729,25 +706,58 @@ class Common
 			desc = jobj.getJSONObject("metadata").getString("forecast_region");
 			String tmp = jobj.getJSONObject("metadata").getString("issue_time");
 
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			timestamp = sdf.parse(tmp).getTime();
+			SimpleDateFormat sdf;
+			if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
+			{
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+			} else {
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+			}
+			timestamp = Objects.requireNonNull(sdf.parse(tmp)).getTime();
 
 			JSONArray mydays = jobj.getJSONArray("data");
-			for(int i = 1; i < mydays.length(); i++)
+			for(int i = 0; i < mydays.length(); i++)
 			{
 				Day day = new Day();
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-				day.timestamp = sdf.parse(mydays.getJSONObject(i).getString("date")).getTime();
+				if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
+				{
+					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+				} else {
+					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+				}
+				day.timestamp = Objects.requireNonNull(sdf.parse(mydays.getJSONObject(i).getString("date"))).getTime();
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
 				if(metric)
 				{
-					day.max = mydays.getJSONObject(i).getInt("temp_max") + "&deg;C";
-					day.min = mydays.getJSONObject(i).getInt("temp_min") + "&deg;C";
+					try
+					{
+						day.max = mydays.getJSONObject(0).getInt("temp_max") + "&deg;C";
+					} catch (Exception e) {
+						// ignore errors
+					}
+
+					try
+					{
+						day.min = mydays.getJSONObject(0).getInt("temp_min") + "&deg;C";
+					} catch (Exception e) {
+						// ignore errors
+					}
 				} else {
-					day.max = round((mydays.getJSONObject(i).getInt("temp_max") * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = round((mydays.getJSONObject(i).getInt("temp_min") * 9.0 / 5.0) + 32.0) + "&deg;F";
+					try
+					{
+						day.max = round((mydays.getJSONObject(0).getInt("temp_max") * 9.0 / 5.0) + 32.0) + "&deg;F";
+					} catch (Exception e) {
+						// ignore errors
+					}
+
+					try
+					{
+						day.min = round((mydays.getJSONObject(0).getInt("temp_min") * 9.0 / 5.0) + 32.0) + "&deg;F";
+					} catch (Exception e) {
+						// ignore errors
+					}
 				}
 
 				if(!mydays.getJSONObject(i).getString("extended_text").equals("null"))
@@ -830,7 +840,7 @@ class Common
 				String date = forecasts[i].split("data-tab-id=\"", 2)[1].split("\"")[0].trim();
 
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-				day.timestamp = sdf.parse(date).getTime();
+				day.timestamp = Objects.requireNonNull(sdf.parse(date)).getTime();
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
@@ -923,7 +933,7 @@ class Common
 			obs = hour + ":" + minute + " " + ampm + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
-			lastTS = timestamp = sdf.parse(obs).getTime();
+			lastTS = timestamp = Objects.requireNonNull(sdf.parse(obs)).getTime();
 
 			desc = data.split("<dt>Observed at:</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
 
@@ -1059,7 +1069,7 @@ class Common
 			obs = hour + ":" + minute + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm d MMMM yyyy", Locale.CANADA_FRENCH);
-			lastTS = timestamp = sdf.parse(obs).getTime();
+			lastTS = timestamp = Objects.requireNonNull(sdf.parse(obs)).getTime();
 
 			desc = data.split("<dt>Enregistrées à :</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
 
@@ -1184,8 +1194,14 @@ class Common
 			desc = jobj.getJSONObject("currentobservation").getString("name");
 			String tmp = jobj.getString("creationDate");
 
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			timestamp = sdf.parse(tmp).getTime();
+			SimpleDateFormat sdf;
+			if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
+			{
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+			} else {
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+			}
+			timestamp = Objects.requireNonNull(sdf.parse(tmp)).getTime();
 
 			JSONArray periodName = jobj.getJSONObject("time").getJSONArray("startPeriodName");
 			JSONArray validTime = jobj.getJSONObject("time").getJSONArray("startValidTime");
@@ -1298,10 +1314,13 @@ class Common
 					day.icon = iconLink.getString(i);
 				}
 
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-				day.timestamp = sdf.parse(validTime.getString(i)).getTime();
-				//sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
-//				day.day = sdf.format(day.timestamp);
+				if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
+				{
+					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+				} else {
+					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+				}
+				day.timestamp = Objects.requireNonNull(sdf.parse(validTime.getString(i))).getTime();
 				day.day = periodName.getString(i);
 
 				if(!metric)
@@ -1342,7 +1361,7 @@ class Common
 			String tmp = jobj.getJSONObject("city").getJSONObject("forecast").getString("issueDate");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-			timestamp = sdf.parse(tmp).getTime();
+			timestamp = Objects.requireNonNull(sdf.parse(tmp)).getTime();
 
 			JSONArray jarr = jobj.getJSONObject("city").getJSONObject("forecast").getJSONArray("forecastDay");
 			for(int i = 0; i < jarr.length(); i++)
@@ -1352,7 +1371,7 @@ class Common
 
 				String date = j.getString("forecastDate").trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-				day.timestamp = sdf.parse(date).getTime();
+				day.timestamp = Objects.requireNonNull(sdf.parse(date)).getTime();
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				date = sdf.format(day.timestamp);
 
@@ -1414,8 +1433,14 @@ class Common
 			desc = jobj.getString("description") + ", Australia";
 
 			String tmp = jobj.getString("content");
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			timestamp = sdf.parse(tmp).getTime();
+			SimpleDateFormat sdf;
+			if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
+			{
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+			} else {
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+			}
+			timestamp = Objects.requireNonNull(sdf.parse(tmp)).getTime();
 
 			JSONArray jarr = jobj.getJSONArray("forecast-period");
 			for(int i = 0; i < jarr.length(); i++)
@@ -1452,8 +1477,13 @@ class Common
 				}
 
 				String date = j.getString("start-time-local").trim();
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-				day.timestamp = sdf.parse(date).getTime();
+				if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
+				{
+					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+				} else {
+					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+				}
+				day.timestamp = Objects.requireNonNull(sdf.parse(date)).getTime();
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
@@ -1499,7 +1529,6 @@ class Common
 		return processMetService(data, false);
 	}
 
-	@SuppressWarnings("StringConcatenationInLoop")
 	String[] processMetService(String data, boolean showHeader)
 	{
 		if (data == null || data.equals(""))
@@ -1518,15 +1547,26 @@ class Common
 			String ftime = loop.getJSONObject(0).getString("issuedAtISO");
 			desc = jobj.getString("locationWASP") + ", New Zealand";
 
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			timestamp = sdf.parse(ftime).getTime();
+			SimpleDateFormat sdf;
+			if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
+			{
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+			} else {
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+			}
+			timestamp = Objects.requireNonNull(sdf.parse(ftime)).getTime();
 
 			for(int i = 0; i < loop.length(); i++)
 			{
 				Day day = new Day();
 				JSONObject jtmp = loop.getJSONObject(i);
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-				day.timestamp = sdf.parse(jtmp.getString("dateISO")).getTime();
+				if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
+				{
+					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+				} else {
+					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+				}
+				day.timestamp = Objects.requireNonNull(sdf.parse(jtmp.getString("dateISO"))).getTime();
 				day.day = jtmp.getString("dow");
 				day.text = jtmp.getString("forecast");
 				day.max = jtmp.getString("max");
@@ -1600,7 +1640,7 @@ class Common
 			ftime = date + " " + ftime.split("<td width=\"40%\" class=\"stattime\">", 2)[1].split(" Uhr</td>", 2)[0].trim();
 
 			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy' 'HH", Locale.getDefault());
-			lastTS = timestamp = sdf.parse(ftime).getTime();
+			lastTS = timestamp = Objects.requireNonNull(sdf.parse(ftime)).getTime();
 
 			data = data.split("<td width=\"40%\" class=\"statwert\">Vorhersage</td>", 2)[1].split("</table>", 2)[0].trim();
 			bits = data.split("<tr");
@@ -1682,7 +1722,7 @@ class Common
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
 		List<Day> days = new ArrayList<>();
-		String desc = "";
+		String desc;
 		long timestamp, lastTS;
 
 		try
@@ -1693,7 +1733,7 @@ class Common
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String ftime = sdf.format(System.currentTimeMillis());
 			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
-			lastTS = timestamp = sdf.parse(ftime).getTime();
+			lastTS = timestamp = Objects.requireNonNull(sdf.parse(ftime)).getTime();
 
 			data = data.split("<tbody>")[1].trim();
 			String[] bits = data.split("<tr>");
@@ -1785,7 +1825,7 @@ class Common
 			String elaborado = jobj.getString("elaborado");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-			timestamp = sdf.parse(elaborado).getTime();
+			timestamp = Objects.requireNonNull(sdf.parse(elaborado)).getTime();
 
 			JSONArray dates = jobj.getJSONObject("prediccion").getJSONArray("dia");
 			for(int i = 0; i < dates.length(); i++)
@@ -1794,7 +1834,7 @@ class Common
 				JSONObject jtmp = dates.getJSONObject(i);
 				String fecha = jtmp.getString("fecha");
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-				day.timestamp = sdf.parse(fecha).getTime();
+				day.timestamp = Objects.requireNonNull(sdf.parse(fecha)).getTime();
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
@@ -1865,7 +1905,6 @@ class Common
 		return processWCOM(data, false);
 	}
 
-	@SuppressWarnings("StringConcatenationInLoop")
 	String[] processWCOM(String data, boolean showHeader)
 	{
 		if (data == null || data.equals(""))
@@ -1911,13 +1950,12 @@ class Common
 				} else {
 					String fileName = checkImage(day.icon + ".png", null);
 					Common.LogMessage("yahoo filename = " + fileName);
-/*
+
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
 					imageInFile.read(imageData);
 					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-*/
 				}
 
 				if(metric)
@@ -1944,7 +1982,6 @@ class Common
 		return processMETIE(data, false);
 	}
 
-	@SuppressWarnings("StringConcatenationInLoop")
 	String[] processMETIE(String data, boolean showHeader)
 	{
 		if (data == null || data.equals(""))
@@ -1969,7 +2006,7 @@ class Common
 				JSONObject jobj = jarr.getJSONObject(i);
 				Day day = new Day();
 				String tmpDay = jobj.getString("date") + " " + jobj.getString("time");
-				day.timestamp = sdf.parse(tmpDay).getTime();
+				day.timestamp = Objects.requireNonNull(sdf.parse(tmpDay)).getTime();
 				day.day = dayname.format(day.timestamp);
 				day.max = jobj.getString("temperature");
 				day.icon = jobj.getString("weatherNumber");
@@ -2094,9 +2131,6 @@ class Common
 					.getJSONObject("tabular")
 					.getJSONArray("time");
 
-			if(jarr == null)
-				return null;
-
 			for(int i = 0; i < jarr.length(); i++)
 			{
 				Day day = new Day();
@@ -2110,7 +2144,7 @@ class Common
 				JSONObject windSpeed = jarr.getJSONObject(i).getJSONObject("windSpeed");
 
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-				day.timestamp = sdf.parse(from).getTime();
+				day.timestamp = Objects.requireNonNull(sdf.parse(from)).getTime();
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				String date = sdf.format(day.timestamp);
 
@@ -2118,7 +2152,7 @@ class Common
 				from = sdf.format(day.timestamp);
 
 				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-				long mdate = sdf.parse(to).getTime();
+				long mdate = Objects.requireNonNull(sdf.parse(to)).getTime();
 				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
 				to = sdf.format(mdate);
 
@@ -2174,18 +2208,21 @@ class Common
 			JSONObject jobj = new JSONObject(data);
 			jobj = jobj.getJSONObject("properties");
 			String updated_at = jobj.getJSONObject("meta").getString("updated_at");
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			timestamp = sdf.parse(updated_at).getTime();
+			SimpleDateFormat sdf;
+			if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
+			{
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+			} else {
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
+			}
+			timestamp = Objects.requireNonNull(sdf.parse(updated_at)).getTime();
 			JSONArray jarr = jobj.getJSONArray("timeseries");
-
-			if(jarr == null)
-				return null;
 
 			for(int i = 0; i < jarr.length(); i++)
 			{
 				Day day = new Day();
 				String time = jarr.getJSONObject(i).getString("time");
-				day.timestamp = sdf.parse(time).getTime();
+				day.timestamp = Objects.requireNonNull(sdf.parse(time)).getTime();
 
 				JSONObject tsdata = jarr.getJSONObject(i).getJSONObject("data");
 				double temp = tsdata.getJSONObject("instant").getJSONObject("details").getDouble("air_temperature");
@@ -2502,7 +2539,7 @@ class Common
 			String pubDate = jobj.getString("pubDate");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
-			timestamp = sdf.parse(pubDate).getTime();
+			timestamp = Objects.requireNonNull(sdf.parse(pubDate)).getTime();
 			lastTS = timestamp;
 
 			JSONObject item = jobj.getJSONArray("item").getJSONObject(0);
@@ -2663,7 +2700,7 @@ class Common
 			    rest = bits[1];
 			    String dow = tmpstr.split("</span>", 2)[0].trim();
 			    myday.timestamp = convertDaytoTS(dow, new Locale("en", "US"), last_ts);
-			    SimpleDateFormat sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
+			    SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 			    myday.day = sdf.format(myday.timestamp);
 
 			    myday.text = tmpstr.split("<img alt=\"", 2)[1].split("\"", 2)[0].trim();
@@ -2755,26 +2792,22 @@ class Common
 			t = null;
 		}
 
-		t = new Thread(new Runnable()
+		t = new Thread(() ->
 		{
-			@Override
-			public void run()
+			try
 			{
-				try
-				{
-					String fromURL = GetStringPref("BASE_URL", "");
-					if (fromURL.equals(""))
-						return;
+				String fromURL = GetStringPref("BASE_URL", "");
+				if (fromURL.equals(""))
+					return;
 
-					reallyGetWeather(fromURL);
-					SendRefresh();
-				} catch (InterruptedException | InterruptedIOException ie) {
-					ie.printStackTrace();
-				} catch (Exception e) {
-					e.printStackTrace();
-					SetStringPref("lastError", e.toString());
-					SendFailedIntent();
-				}
+				reallyGetWeather(fromURL);
+				SendRefresh();
+			} catch (InterruptedException | InterruptedIOException ie) {
+				ie.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+				SetStringPref("lastError", e.toString());
+				SendFailedIntent();
 			}
 		});
 
@@ -2882,36 +2915,32 @@ class Common
 	@SuppressWarnings("unused")
 	private void downloadImage(final String fileName, final String imageURL)
 	{
-		Thread t = new Thread(new Runnable()
+		Thread t = new Thread(() ->
 		{
-			@Override
-			public void run()
+			if (fileName == null || fileName.equals("") || imageURL == null || imageURL.equals(""))
+				return;
+
+			Common.LogMessage("checking: " + imageURL);
+
+			try
 			{
-				if (fileName == null || fileName.equals("") || imageURL == null || imageURL.equals(""))
-					return;
-
-				Common.LogMessage("checking: " + imageURL);
-
-				try
-				{
-					File f = new File(context.getExternalFilesDir(""), "weeWX");
-					f = new File(f, "icons");
-					if (!f.exists())
-						if (!f.mkdirs())
-							return;
-
-					f = new File(f, fileName);
-
-					if(f.exists() && f.isFile() && f.length() > 0)
+				File f = new File(context.getExternalFilesDir(""), "weeWX");
+				f = new File(f, "icons");
+				if (!f.exists())
+					if (!f.mkdirs())
 						return;
 
-					LogMessage("f == " + f.getAbsolutePath());
-					LogMessage("imageURL == " + imageURL);
+				f = new File(f, fileName);
 
-					downloadJSOUP(f, imageURL);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
+				if(f.exists() && f.isFile() && f.length() > 0)
+					return;
+
+				LogMessage("f == " + f.getAbsolutePath());
+				LogMessage("imageURL == " + imageURL);
+
+				downloadJSOUP(f, imageURL);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		});
 
@@ -3149,22 +3178,6 @@ class Common
 		}
 	}
 
-	@SuppressWarnings("CharsetObjectCanBeUsed")
-	private void loadConditions()
-	{
-		try
-		{
-			InputStream is = context.getResources().openRawResource(R.raw.conditions);
-			int size = is.available();
-			byte[] buffer = new byte[size];
-			if(is.read(buffer) > 0)
-				conditions = new JSONArray(new String(buffer, "UTF-8"));
-			is.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	String downloadSettings(String url) throws Exception
 	{
 		String UTF8_BOM = "\uFEFF";
@@ -3277,17 +3290,13 @@ class Common
 				.writeTimeout(60, TimeUnit.SECONDS)
 				.readTimeout(60, TimeUnit.SECONDS)
 				.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS))
-				.authenticator(new okhttp3.Authenticator()
+				.authenticator((route, response) ->
 				{
-					@Override
-					public Request authenticate(Route route, Response response) throws IOException
-					{
-						if (responseCount(response) >= 3)
-							return null;
+					if (responseCount(response) >= 3)
+						return null;
 
-						String credential = Credentials.basic(UC[0], UC[1]);
-						return response.request().newBuilder().header("Authorization", credential).build();
-					}
+					String credential = Credentials.basic(UC[0], UC[1]);
+					return response.request().newBuilder().header("Authorization", credential).build();
 				})
 				.build();
 		} else {
@@ -3305,6 +3314,7 @@ class Common
 				.build();
 
 		try (Response response = client.newCall(request).execute()) {
+			assert response.body() != null;
 			String rb = response.body().string().trim();
 			LogMessage(rb);
 			return rb;
@@ -3333,6 +3343,7 @@ class Common
 	File downloadJSOUP(File f, String fromURL) throws Exception
 	{
 		File dir = f.getParentFile();
+		assert dir != null;
 		if (!dir.exists())
 			if (!dir.mkdirs())
 				return null;
@@ -3350,6 +3361,7 @@ class Common
 	private File downloadBinary(File f, String fromURL) throws Exception
 	{
 		File dir = f.getParentFile();
+		assert dir != null;
 		if (!dir.exists())
 			if (!dir.mkdirs())
 				return null;
@@ -3369,17 +3381,13 @@ class Common
 					.writeTimeout(60, TimeUnit.SECONDS)
 					.readTimeout(60, TimeUnit.SECONDS)
 					.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS))
-					.authenticator(new okhttp3.Authenticator()
+					.authenticator((route, response) ->
 					{
-						@Override
-						public Request authenticate(Route route, Response response) throws IOException
-						{
-							if (responseCount(response) >= 3)
-								return null;
+						if (responseCount(response) >= 3)
+							return null;
 
-							String credential = Credentials.basic(UC[0], UC[1]);
-							return response.request().newBuilder().header("Authorization", credential).build();
-						}
+						String credential = Credentials.basic(UC[0], UC[1]);
+						return response.request().newBuilder().header("Authorization", credential).build();
 					})
 					.build();
 		} else {
@@ -3397,228 +3405,13 @@ class Common
 				.build();
 
 		try (Response response = client.newCall(request).execute()) {
+			assert response.body() != null;
 			outputStream.write(response.body().bytes());
 			outputStream.flush();
 			outputStream.close();
 			publish(f);
 			return f;
 		}
-	}
-
-	private void makeTable()
-	{
-		lookupTable.put("N_W1_0-N_0", "n_w2_1");
-		lookupTable.put("N_W2_1", "n_w2_1");
-		lookupTable.put("N_W1_0-N_7", "n_w2_1");
-		lookupTable.put("J_W1_0-N", "n_w2_1");
-		lookupTable.put("J_W1_0-N_0", "n_w2_1");
-		lookupTable.put("J_W2_1", "n_w2_1");
-
-		lookupTable.put("J_W1_0-N_5", "j_w1_0_n_5");
-
-		lookupTable.put("N_W1_0-N_5", "n_w1_0_n_5");
-
-		lookupTable.put("J_W2_2", "j_w1_0_n_2");
-		lookupTable.put("J_W1_0-N_1", "j_w1_0_n_2");
-		lookupTable.put("J_W1_0-N_2", "j_w1_0_n_2");
-		lookupTable.put("J_W1_0-N_4", "j_w1_0_n_2");
-		lookupTable.put("J_W1_0-N_6", "j_w1_0_n_2");
-
-		lookupTable.put("N_W2_2", "n_w2_2");
-		lookupTable.put("N_W1_0-N_1", "n_w2_2");
-		lookupTable.put("N_W1_0-N_2", "n_w2_2");
-		lookupTable.put("N_W1_0-N_4", "n_w2_2");
-		lookupTable.put("N_W1_0-N_6", "n_w2_2");
-
-		lookupTable.put("J_W1_0-N_3", "j_w2_3");
-		lookupTable.put("N_W1_0-N_3", "j_w2_3");
-		lookupTable.put("J_W2_3", "j_w2_3");
-		lookupTable.put("N_W2_3", "j_w2_3");
-
-		lookupTable.put("J_W1_1-N", "j_w1_1_n");
-		lookupTable.put("J_W1_2-N", "j_w1_1_n");
-		lookupTable.put("J_W1_33-N", "j_w1_1_n");
-
-		lookupTable.put("N_W1_1-N", "n_w1_1_n");
-		lookupTable.put("N_W1_2-N", "n_w1_1_n");
-		lookupTable.put("N_W1_33-N", "n_w1_1_n");
-
-		lookupTable.put("N_W1_1-N_3", "n_w1_1_n_3");
-		lookupTable.put("J_W1_1-N_3", "n_w1_1_n_3");
-		lookupTable.put("N_W1_2-N_3", "n_w1_1_n_3");
-		lookupTable.put("J_W1_2-N_3", "n_w1_1_n_3");
-		lookupTable.put("N_W1_33-N_3", "n_w1_1_n_3");
-		lookupTable.put("J_W1_33-N_3", "n_w1_1_n_3");
-
-		lookupTable.put("J_W1_3-N", "j_w2_4");
-		lookupTable.put("N_W1_3-N", "j_w2_4");
-		lookupTable.put("J_W2_4", "j_w2_4");
-		lookupTable.put("N_W2_4", "j_w2_4");
-
-		lookupTable.put("J_W1_4-N", "j_w2_5");
-		lookupTable.put("J_W1_5-N", "j_w2_5");
-		lookupTable.put("J_W1_6-N", "j_w2_5");
-		lookupTable.put("J_W2_5", "j_w2_5");
-		lookupTable.put("N_W2_5", "j_w2_5");
-		lookupTable.put("N_W1_4-N", "j_w2_5");
-		lookupTable.put("N_W1_5-N", "j_w2_5");
-		lookupTable.put("N_W1_6-N", "j_w2_5");
-
-		lookupTable.put("J_W1_7-N", "j_w1_7_n");
-		lookupTable.put("N_W1_7-N", "j_w1_7_n");
-
-		lookupTable.put("J_W1_8-N", "j_w1_8_n");
-
-		lookupTable.put("N_W1_8-N", "n_w1_8_n");
-
-		lookupTable.put("N_W1_8-N_3", "n_w1_8_n_3");
-		lookupTable.put("J_W1_8-N_3", "n_w1_8_n_3");
-
-		lookupTable.put("J_W1_9-N", "j_w2_6");
-		lookupTable.put("J_W1_18-N", "j_w2_6");
-		lookupTable.put("J_W1_30-N", "j_w2_6");
-		lookupTable.put("J_W2_6", "j_w2_6");
-		lookupTable.put("J_W2_12", "j_w2_6");
-
-		lookupTable.put("N_W1_9-N", "n_w2_6");
-		lookupTable.put("N_W1_18-N", "n_w2_6");
-		lookupTable.put("N_W1_30-N", "n_w2_6");
-		lookupTable.put("N_W2_6", "n_w2_6");
-		lookupTable.put("N_W2_12", "n_w2_6");
-
-		lookupTable.put("J_W1_9-N_3", "j_w1_9_n_3");
-		lookupTable.put("N_W1_9-N_3", "j_w1_9_n_3");
-		lookupTable.put("J_W1_18-N_3", "j_w1_9_n_3");
-		lookupTable.put("N_W1_18-N_3", "j_w1_9_n_3");
-		lookupTable.put("J_W1_30-N_3", "j_w1_9_n_3");
-		lookupTable.put("N_W1_30-N_3", "j_w1_9_n_3");
-
-		//lookupTable.put("J_W1_19-N", "large_10_a");
-		lookupTable.put("J_W2_8", "j_w2_8");
-		lookupTable.put("J_W2_14", "j_w2_8");
-
-		//lookupTable.put("N_W1_19-N", "large_10_b");
-		lookupTable.put("N_W2_8", "n_w2_8");
-		lookupTable.put("N_W2_14", "n_w2_8");
-
-		lookupTable.put("J_W1_10-N", "j_w1_10_n");
-		lookupTable.put("J_W1_19-N", "j_w1_10_n");
-		lookupTable.put("N_W1_10-N", "j_w1_10_n");
-		lookupTable.put("N_W1_19-N", "j_w1_10_n");
-
-		lookupTable.put("J_W1_11-N", "j_w2_9");
-		lookupTable.put("N_W1_11-N", "j_w2_9");
-		lookupTable.put("J_W2_9", "j_w2_9");
-		lookupTable.put("N_W2_9", "j_w2_9");
-
-		lookupTable.put("J_W1_32", "j_w1_32");
-		lookupTable.put("J_W2_16", "j_w1_32");
-
-		lookupTable.put("N_W1_32", "n_w1_32");
-		lookupTable.put("N_W2_16", "n_w1_32");
-
-		lookupTable.put("J_W1_12", "j_w1_12");
-		lookupTable.put("N_W1_12", "j_w1_12");
-		lookupTable.put("J_W1_32-N_3", "j_w1_12");
-		lookupTable.put("N_W1_32-N_3", "j_w1_12");
-		lookupTable.put("J_W2_17", "j_w1_12");
-		lookupTable.put("N_W2_17", "j_w1_12");
-
-		lookupTable.put("J_W1_13", "j_w2_13");
-		lookupTable.put("J_W1_21", "j_w2_13");
-		lookupTable.put("J_W2_7", "j_w2_13");
-		lookupTable.put("J_W2_13", "j_w2_13");
-
-		lookupTable.put("N_W1_13", "n_w1_13");
-		lookupTable.put("N_W1_21", "n_w1_13");
-		lookupTable.put("N_W2_7", "n_w1_13");
-		lookupTable.put("N_W2_13", "n_w1_13");
-
-		lookupTable.put("J_W1_13-N_3", "j_w_w1_13_n_3");
-		lookupTable.put("N_W1_13-N_3", "j_w_w1_13_n_3");
-		lookupTable.put("J_W1_21-N_3", "j_w_w1_13_n_3");
-		lookupTable.put("N_W1_21-N_3", "j_w_w1_13_n_3");
-
-		lookupTable.put("J_W1_14", "j_w1_14");
-		lookupTable.put("J_W1_20", "j_w1_14");
-
-		lookupTable.put("N_W1_14", "n_w1_14");
-		lookupTable.put("N_W1_20", "n_w1_14");
-
-		lookupTable.put("J_W1_20-N_3", "j_w1_14_n_3");
-		lookupTable.put("N_W1_20-N_3", "j_w1_14_n_3");
-		lookupTable.put("N_W1_14-N_3", "j_w1_14_n_3");
-		lookupTable.put("J_W1_14-N_3", "j_w1_14_n_3");
-
-		lookupTable.put("J_W1_15", "j_w2_10");
-		lookupTable.put("J_W1_22", "j_w2_10");
-		lookupTable.put("J_W2_10", "j_w2_10");
-		lookupTable.put("J_W2_15", "j_w2_10");
-		lookupTable.put("J_W2_19", "j_w2_10");
-
-		lookupTable.put("N_W1_15", "n_w1_15");
-		lookupTable.put("N_W1_22", "n_w1_15");
-		lookupTable.put("N_W2_10", "n_w1_15");
-		lookupTable.put("N_W2_15", "n_w1_15");
-		lookupTable.put("N_W2_19", "n_w1_15");
-
-		lookupTable.put("J_W1_22-N_3", "j_w1_16_n_3");
-		lookupTable.put("N_W1_22-N_3", "j_w1_16_n_3");
-		lookupTable.put("J_W1_15-N_3", "j_w1_16_n_3");
-		lookupTable.put("N_W1_15-N_3", "j_w1_16_n_3");
-		lookupTable.put("W1_16", "j_w1_16_n_3");
-		lookupTable.put("J_W1_16-N", "j_w1_16_n_3");
-		lookupTable.put("N_W1_16-N", "j_w1_16_n_3");
-
-		lookupTable.put("J_W1_17-N", "n_w2_11");
-		lookupTable.put("N_W1_17-N", "n_w2_11");
-		lookupTable.put("N_W2_11", "n_w2_11");
-		lookupTable.put("J_W2_11", "n_w2_11");
-
-		lookupTable.put("J_W1_23-N", "j_w1_29-n");
-		lookupTable.put("J_W1_28-N", "j_w1_29-n");
-		lookupTable.put("J_W1_29-N", "j_w1_29-n");
-
-		lookupTable.put("N_W1_23-N", "n_w1_28_n");
-		lookupTable.put("N_W1_28-N", "n_w1_28_n");
-		lookupTable.put("N_W1_29-N", "n_w1_28_n");
-
-		lookupTable.put("J_W1_23-N_3", "n_w1_23_n_3");
-		lookupTable.put("N_W1_23-N_3", "n_w1_23_n_3");
-		lookupTable.put("J_W1_28-N_3", "n_w1_23_n_3");
-		lookupTable.put("N_W1_28-N_3", "n_w1_23_n_3");
-		lookupTable.put("J_W1_29-N_3", "n_w1_23_n_3");
-		lookupTable.put("N_W1_29-N_3", "n_w1_23_n_3");
-
-		lookupTable.put("J_W1_24-N", "j_w2_18");
-		lookupTable.put("J_W1_26-N", "j_w2_18");
-		lookupTable.put("J_W1_31-N", "j_w2_18");
-		lookupTable.put("J_W2_18", "j_w2_18");
-
-		lookupTable.put("N_W1_24-N", "n_w2_18");
-		lookupTable.put("N_W1_26-N", "n_w2_18");
-		lookupTable.put("N_W1_31-N", "n_w2_18");
-		lookupTable.put("N_W2_18", "n_w2_18");
-
-		lookupTable.put("J_W1_24-N_3", "j_w1_24_n_3");
-		lookupTable.put("J_W1_31-N_3", "j_w1_24_n_3");
-		lookupTable.put("J_W1_26-N_3", "j_w1_24_n_3");
-		lookupTable.put("N_W1_26-N_3", "j_w1_24_n_3");
-		lookupTable.put("N_W1_24-N_3", "j_w1_24_n_3");
-		lookupTable.put("N_W1_31-N_3", "j_w1_24_n_3");
-
-		lookupTable.put("J_W1_25-N", "j_w1_27_n");
-		lookupTable.put("J_W1_27-N", "j_w1_27_n");
-
-		lookupTable.put("N_W1_25-N", "n_w1_27_n");
-		lookupTable.put("N_W1_27-N", "n_w1_27_n");
-
-		lookupTable.put("J_W1_25-N_3", "n_w1_27_n_3");
-		lookupTable.put("N_W1_25-N_3", "n_w1_27_n_3");
-		lookupTable.put("J_W1_27-N_3", "n_w1_27_n_3");
-		lookupTable.put("N_W1_27-N_3", "n_w1_27_n_3");
-
-		lookupTable.put("J_W1_32-N_2", "j_w1_32_n_2");
 	}
 
 	private void publish(File f)
@@ -3677,7 +3470,7 @@ class Common
 			String fileName = ze.getName();
 			File newFile = new File(destDir + File.separator + fileName);
 			LogMessage("Unzipping to " + newFile.getAbsolutePath());
-			File dir = new File(newFile.getParent());
+			File dir = new File(Objects.requireNonNull(newFile.getParent()));
 			if(!dir.exists() && !dir.mkdirs())
 				throw new Exception("There was a problem creating 1 or more directories on external storage");
 
@@ -3763,23 +3556,19 @@ class Common
 
 		LogMessage("forecast checking: " + forecast_url);
 
-		Thread t = new Thread(new Runnable()
+		Thread t = new Thread(() ->
 		{
-			@Override
-			public void run()
+			try
 			{
-				try
+				String tmp = downloadForecast();
+				if(tmp != null)
 				{
-					String tmp = downloadForecast();
-					if(tmp != null)
-					{
-						LogMessage("updating rss cache");
-						SetLongPref("rssCheck", curtime);
-						SetStringPref("forecastData", tmp);
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
+					LogMessage("updating rss cache");
+					SetLongPref("rssCheck", curtime);
+					SetStringPref("forecastData", tmp);
 				}
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		});
 
