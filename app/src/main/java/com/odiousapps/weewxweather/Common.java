@@ -605,8 +605,8 @@ class Common
 				File f = new File(fileName);
 				FileInputStream imageInFile = new FileInputStream(f);
 				byte[] imageData = new byte[(int) f.length()];
-				imageInFile.read(imageData);
-				day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+				if(imageInFile.read(imageData) > 0)
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 			}
 
 			day.max = day.max.replaceAll("°C", "").trim();
@@ -657,8 +657,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				day.max = day.max.replaceAll("°C", "").trim();
@@ -733,28 +733,28 @@ class Common
 				{
 					try
 					{
-						day.max = mydays.getJSONObject(0).getInt("temp_max") + "&deg;C";
+						day.max = mydays.getJSONObject(i).getInt("temp_max") + "&deg;C";
 					} catch (Exception e) {
 						// ignore errors
 					}
 
 					try
 					{
-						day.min = mydays.getJSONObject(0).getInt("temp_min") + "&deg;C";
+						day.min = mydays.getJSONObject(i).getInt("temp_min") + "&deg;C";
 					} catch (Exception e) {
 						// ignore errors
 					}
 				} else {
 					try
 					{
-						day.max = round((mydays.getJSONObject(0).getInt("temp_max") * 9.0 / 5.0) + 32.0) + "&deg;F";
+						day.max = round((mydays.getJSONObject(i).getInt("temp_max") * 9.0 / 5.0) + 32.0) + "&deg;F";
 					} catch (Exception e) {
 						// ignore errors
 					}
 
 					try
 					{
-						day.min = round((mydays.getJSONObject(0).getInt("temp_min") * 9.0 / 5.0) + 32.0) + "&deg;F";
+						day.min = round((mydays.getJSONObject(i).getInt("temp_min") * 9.0 / 5.0) + 32.0) + "&deg;F";
 					} catch (Exception e) {
 						// ignore errors
 					}
@@ -777,8 +777,8 @@ class Common
 						File f = new File(fileName);
 						FileInputStream imageInFile = new FileInputStream(f);
 						byte[] imageData = new byte[(int) f.length()];
-						imageInFile.read(imageData);
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					}
 				}
 
@@ -862,8 +862,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				if(metric)
@@ -1012,8 +1012,8 @@ class Common
 						File f = new File(fileName);
 						FileInputStream imageInFile = new FileInputStream(f);
 						byte[] imageData = new byte[(int) f.length()];
-						imageInFile.read(imageData);
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					}
 
 					day.day = date;
@@ -1148,8 +1148,8 @@ class Common
 						File f = new File(fileName);
 						FileInputStream imageInFile = new FileInputStream(f);
 						byte[] imageData = new byte[(int) f.length()];
-						imageInFile.read(imageData);
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					}
 
 					day.day = date;
@@ -1308,8 +1308,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				} else {
 					day.icon = iconLink.getString(i);
 				}
@@ -1498,8 +1498,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				if(metric)
@@ -1590,8 +1590,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				if(metric)
@@ -1688,8 +1688,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				day.min = "&deg;C";
@@ -1758,8 +1758,8 @@ class Common
 					File f = new File(ret[1]);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				} else
 					return ret;
 //				LogMessage("day.icon=" + day.icon);
@@ -1875,8 +1875,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);				}
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);				}
 
 				day.max = temperatura.getString("maxima");
 				day.min = temperatura.getString("minima");
@@ -1954,8 +1954,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				if(metric)
@@ -2019,8 +2019,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				day.text = jobj.getString("weatherDescription");
@@ -2168,8 +2168,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				day.max = temperature.getString("value") + "&deg;C";
@@ -2279,8 +2279,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				days.add(day);
@@ -2578,8 +2578,8 @@ class Common
 					File f = new File(fileName);
 					FileInputStream imageInFile = new FileInputStream(f);
 					byte[] imageData = new byte[(int) f.length()];
-					imageInFile.read(imageData);
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					if(imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				}
 
 				day.max = range[1];
@@ -2737,8 +2737,8 @@ class Common
 				    File f = new File(ret[1]);
 				    FileInputStream imageInFile = new FileInputStream(f);
 				    byte[] imageData = new byte[(int) f.length()];
-				    imageInFile.read(imageData);
-				    myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+				    if(imageInFile.read(imageData) > 0)
+				    	myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 			    } else
 				    return ret;
 
