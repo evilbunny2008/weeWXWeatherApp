@@ -1,14 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
     defaultConfig {
         applicationId "com.odiousapps.weewxweather"
         minSdkVersion 19
-        //noinspection OldTargetApi
-        targetSdkVersion 30
-        versionCode 9016
-        versionName "0.9.16"
+        targetSdkVersion 33
+        versionCode 1000001
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -16,19 +15,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'com.odiousapps.weewxweather'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':colorpicker')
-    //noinspection GradleDependency
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    //noinspection GradleDependency
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
-    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'com.google.android.material:material:1.7.0'
     implementation 'rongi.rotate-layout:rotate-layout:3.0.0'
     implementation 'com.github.smart-fun:XmlToJson:1.5.1'
-    implementation 'org.jsoup:jsoup:1.11.3'
-    implementation 'com.squareup.okhttp3:okhttp:3.12.13'
+    implementation 'org.jsoup:jsoup:1.13.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
 }

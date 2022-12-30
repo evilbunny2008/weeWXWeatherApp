@@ -170,7 +170,7 @@ class Common
 		AlarmManager mgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		Intent myIntent = new Intent(context, UpdateCheck.class);
 		@SuppressLint("UnspecifiedImmutableFlag")
-		PendingIntent pi = PendingIntent.getBroadcast(context, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+		PendingIntent pi = PendingIntent.getBroadcast(context, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
 		if (mgr != null)
 			mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
@@ -2732,7 +2732,7 @@ class Common
 			    }
 
 			    String[] ret = checkFiles(myday.icon);
-			    if (ret[0] != null)
+				if (ret[0] != null)
 			    {
 				    File f = new File(ret[1]);
 				    FileInputStream imageInFile = new FileInputStream(f);
@@ -2742,7 +2742,7 @@ class Common
 			    } else
 				    return ret;
 
-                LogMessage(myday.toString());
+				LogMessage(myday.toString());
 			    days.add(myday);
 		    }
 	    } catch (Exception e) {

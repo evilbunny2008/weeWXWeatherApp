@@ -5,6 +5,7 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.widget.RemoteViews;
 
 public class WidgetProvider extends AppWidgetProvider
@@ -25,8 +26,8 @@ public class WidgetProvider extends AppWidgetProvider
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
     {
-        common = new Common(context);
-	    common.setAlarm("WidgetProvider");
+		common = new Common(context);
+		common.setAlarm("WidgetProvider");
 
         final int count = appWidgetIds.length;
 
@@ -38,7 +39,7 @@ public class WidgetProvider extends AppWidgetProvider
             RemoteViews remoteViews = common.buildUpdate(context);
 
             Intent launchActivity = new Intent(context, SplashScreen.class);
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchActivity, 0);
+	        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchActivity, PendingIntent.FLAG_IMMUTABLE);
             remoteViews.setOnClickPendingIntent(R.id.widget, pendingIntent);
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
         }

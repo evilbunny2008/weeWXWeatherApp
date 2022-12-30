@@ -1105,6 +1105,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
     {
+        @SuppressLint("SuspiciousIndentation")
         @Override
         public void onReceive(Context context, Intent intent)
         {
@@ -1127,7 +1128,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     });
                 }
 
-	            if(action != null && action.equals(Common.UPDATE_INTENT))
+				if(action != null && action.equals(Common.UPDATE_INTENT))
 	            {
 		            String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
 		            fgColour.setText(hex);
