@@ -29,7 +29,7 @@
             app:srcCompat="@drawable/purple"/>
 
         <!-- https://github.com/rongi/rotate-layout -->
-        <com.github.rongi.rotate_layout.layout.RotateLayout
+        <com.odiousapps.weewxweather.RotateLayout
             android:id="@+id/rotateWeb"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -40,7 +40,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"/>
-        </com.github.rongi.rotate_layout.layout.RotateLayout>
+        </com.odiousapps.weewxweather.RotateLayout>
 
         <WebView
             android:id="@+id/webView2"

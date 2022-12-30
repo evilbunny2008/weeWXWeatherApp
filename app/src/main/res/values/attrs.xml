@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RotateLayout">
+        <!-- Child view of this layout will be rotated by this angle. -->
+        <attr name="angle" format="integer"/>
+    </declare-styleable>
+</resources>

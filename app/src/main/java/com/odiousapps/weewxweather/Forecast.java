@@ -26,8 +26,6 @@ import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.github.rongi.rotate_layout.layout.RotateLayout;
-
 import java.io.File;
 import java.io.FileInputStream;
 
