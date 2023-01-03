@@ -33,7 +33,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.github.evilbunny2008.androidmaterialcolorpickerdialog.ColorPicker;
-import com.github.evilbunny2008.androidmaterialcolorpickerdialog.ColorPickerCallback;
 import com.google.android.material.tabs.TabLayout;
 
 import org.json.JSONObject;
@@ -42,7 +41,6 @@ import java.io.File;
 import java.util.Locale;
 import java.util.Objects;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -67,12 +65,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private Button b3;
 	private boolean showSettings = true;
 	private Spinner s1;
-	private SwitchCompat show_indoor, metric_forecasts, dark_theme;
+	private Spinner s2;
+	private SwitchCompat show_indoor, metric_forecasts;
 	private TextView tv;
 
 	private ProgressDialog dialog;
 
 	private static int pos;
+	private static int theme;
 
 	@SuppressLint("WrongConstant")
 	@Override
@@ -81,14 +81,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
 
-        common = new Common(this);
+		common = new Common(this);
 
-	    mDrawerLayout = findViewById(R.id.drawer_layout);
+		mDrawerLayout = findViewById(R.id.drawer_layout);
 
-        tabLayout = findViewById(R.id.tabs);
+		tabLayout = findViewById(R.id.tabs);
 
-	    if(!common.GetBoolPref("radarforecast", true))
-		    Objects.requireNonNull(tabLayout.getTabAt(2)).setText(R.string.radar);
+		if(!common.GetBoolPref("radarforecast", true))
+			Objects.requireNonNull(tabLayout.getTabAt(2)).setText(R.string.radar);
 
         try
         {
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    metric_forecasts = findViewById(R.id.metric_forecasts);
 	    show_indoor = findViewById(R.id.show_indoor);
-	    dark_theme = findViewById(R.id.dark_theme);
+	    s2 = findViewById(R.id.spinner2);
 
 	    b1 = findViewById(R.id.button);
 	    b2 = findViewById(R.id.deleteData);
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		    }
 
 		    Handler mHandler = new Handler(Looper.getMainLooper());
-		    mHandler.post(() -> doSettings());
+		    mHandler.post(this::doSettings);
 
 		    common.setAlarm("MainActivity");
 	    });
@@ -168,7 +168,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    use_icons.setChecked(common.GetBoolPref("use_icons", false));
 	    metric_forecasts.setChecked(common.GetBoolPref("metric", true));
 	    show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
-	    dark_theme.setChecked(common.GetBoolPref("dark_theme", false));
+
+	    String[] themeString = new String[]
+			    {
+					    getString(R.string.use_light_theme),
+					    getString(R.string.use_dark_theme),
+					    getString(R.string.use_system_default)
+			    };
+	    ArrayAdapter<String> adapter2 = new ArrayAdapter<>(common.context, R.layout.spinner_layout, themeString);
+	    adapter2.setDropDownViewResource(R.layout.spinner_layout);
+	    s2.setAdapter(adapter2);
+	    s2.setOnItemSelectedListener(this);
+	    theme = common.GetIntPref("dark_theme", 2);
+	    s2.setSelection(theme);
 
 	    RadioButton showRadar = findViewById(R.id.showRadar);
 	    showRadar.setChecked(common.GetBoolPref("radarforecast", true));
@@ -229,25 +241,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    });
 
 	    settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
-	    settingsURL.setOnFocusChangeListener(new View.OnFocusChangeListener()
+	    settingsURL.setOnFocusChangeListener((v, hasFocus) ->
 	    {
-		    @Override
-		    public void onFocusChange(View v, boolean hasFocus)
-		    {
-			    if (!hasFocus)
-				    hideKeyboard(v);
-		    }
+		    if (!hasFocus)
+			    hideKeyboard(v);
 	    });
 
 	    customURL.setText(common.GetStringPref("custom_url", ""));
-	    customURL.setOnFocusChangeListener(new View.OnFocusChangeListener()
+	    customURL.setOnFocusChangeListener((v, hasFocus) ->
 	    {
-		    @Override
-		    public void onFocusChange(View v, boolean hasFocus)
-		    {
-			    if (!hasFocus)
-				    hideKeyboard(v);
-		    }
+		    if (!hasFocus)
+			    hideKeyboard(v);
 	    });
 
 	    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
@@ -274,7 +278,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			    "<a href='https://www.dwd.de'>Deutscher Wetterdienst</a>, " +
 			    "<a href='https://metservice.com'>MetService.com</a>, " +
 			    "<a href='https://meteofrance.com'>MeteoFrance.com</a>, " +
-			    "<a href='https://darksky.net'>DarkSky.net</a>" +
 			    "<br><br>" +
 			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
@@ -285,47 +288,29 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
 	    fgColour.setText(hex);
-	    fgColour.setOnClickListener(new View.OnClickListener()
-	    {
-		    @Override
-		    public void onClick(View v)
-		    {
-			    showPicker(common.GetIntPref("fgColour", 0xFF000000),true);
-		    }
-	    });
+	    fgColour.setOnClickListener(v -> showPicker(common.GetIntPref("fgColour", 0xFF000000),true));
 
 	    hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase();
 	    bgColour.setText(hex);
-	    bgColour.setOnClickListener(new View.OnClickListener()
-	    {
-		    @Override
-		    public void onClick(View v)
-		    {
-			    showPicker(common.GetIntPref("bgColour", 0xFFFFFFFF),false);
-		    }
-	    });
+	    bgColour.setOnClickListener(v -> showPicker(common.GetIntPref("bgColour", 0xFFFFFFFF),false));
     }
 
 	private void showPicker(int col, final boolean fgColour)
     {
 	    final ColorPicker cp = new ColorPicker(MainActivity.this, col >> 24 & 255, col >> 16 & 255, col >> 8 & 255, col & 255);
 
-	    cp.setCallback(new ColorPickerCallback()
+	    cp.setCallback(colour ->
 	    {
-		    @Override
-		    public void onColorChosen(@ColorInt int colour)
-		    {
-			    Common.LogMessage("Pure Hex" + Integer.toHexString(colour));
+		    Common.LogMessage("Pure Hex" + Integer.toHexString(colour));
 
-			    if(fgColour)
-				    common.SetIntPref("fgColour", colour);
-			    else
-				    common.SetIntPref("bgColour", colour);
+		    if(fgColour)
+			    common.SetIntPref("fgColour", colour);
+		    else
+			    common.SetIntPref("bgColour", colour);
 
-			    common.SendIntents();
+		    common.SendIntents();
 
-			    cp.dismiss();
-		    }
+		    cp.dismiss();
 	    });
 
 	    cp.show();
@@ -340,7 +325,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	public void onItemSelected(AdapterView<?> parent, View v, int position, long id)
 	{
-		pos = position;
+		Common.LogMessage("Before -> pos="+pos+",theme="+theme);
+
+		if(parent.getId() == R.id.spinner1)
+			pos = position;
+		else if(parent.getId() == R.id.spinner2)
+			theme = position;
+
+		Common.LogMessage("After -> pos="+pos+",theme="+theme);
 	}
 
 	@Override
@@ -350,65 +342,56 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(common.context);
 		builder.setMessage("Are you sure you want to remove all data?").setCancelable(false)
-				.setPositiveButton("Yes", new android.content.DialogInterface.OnClickListener()
+				.setPositiveButton("Yes", (dialoginterface, i) ->
 				{
-					public void onClick(DialogInterface dialoginterface, int i)
-					{
-						Common.LogMessage("trash all data");
+					Common.LogMessage("trash all data");
 
-						//common.RemovePref("SETTINGS_URL");
-						common.RemovePref("updateInterval");
-						common.RemovePref("BASE_URL");
-						common.RemovePref("radtype");
-						common.RemovePref("RADAR_URL");
-						common.RemovePref("FORECAST_URL");
-						common.RemovePref("fctype");
-						common.RemovePref("WEBCAM_URL");
-						common.RemovePref("CUSTOM_URL");
-						common.RemovePref("custom_url");
-						common.RemovePref("metric");
-						common.RemovePref("showIndoor");
-						common.RemovePref("rssCheck");
-						common.RemovePref("forecastData");
-						common.RemovePref("LastDownload");
-						common.RemovePref("LastDownloadTime");
-						common.RemovePref("radarforecast");
-						common.RemovePref("seekBar");
-						common.RemovePref("fgColour");
-						common.RemovePref("bgColour");
-						common.RemovePref("bomtown");
-						common.RemovePref("metierev");
-						common.RemovePref("dark_theme");
-						common.RemovePref("use_icons");
-						common.commit();
+					//common.RemovePref("SETTINGS_URL");
+					common.RemovePref("updateInterval");
+					common.RemovePref("BASE_URL");
+					common.RemovePref("radtype");
+					common.RemovePref("RADAR_URL");
+					common.RemovePref("FORECAST_URL");
+					common.RemovePref("fctype");
+					common.RemovePref("WEBCAM_URL");
+					common.RemovePref("CUSTOM_URL");
+					common.RemovePref("custom_url");
+					common.RemovePref("metric");
+					common.RemovePref("showIndoor");
+					common.RemovePref("rssCheck");
+					common.RemovePref("forecastData");
+					common.RemovePref("LastDownload");
+					common.RemovePref("LastDownloadTime");
+					common.RemovePref("radarforecast");
+					common.RemovePref("seekBar");
+					common.RemovePref("fgColour");
+					common.RemovePref("bgColour");
+					common.RemovePref("bomtown");
+					common.RemovePref("metierev");
+					common.RemovePref("dark_theme");
+					common.RemovePref("use_icons");
+					common.commit();
 
-						File file = new File(common.context.getFilesDir(), "webcam.jpg");
-						if(file.exists() && file.canWrite())
-							if(!file.delete())
-								Common.LogMessage("couldn't delete webcam.jpg");
+					File file = new File(common.context.getFilesDir(), "webcam.jpg");
+					if(file.exists() && file.canWrite())
+						if(!file.delete())
+							Common.LogMessage("couldn't delete webcam.jpg");
 
-						file = new File(common.context.getFilesDir(), "radar.gif");
-						if(file.exists() && file.canWrite())
-							if(!file.delete())
-								Common.LogMessage("couldn't delete radar.gif");
+					file = new File(common.context.getFilesDir(), "radar.gif");
+					if(file.exists() && file.canWrite())
+						if(!file.delete())
+							Common.LogMessage("couldn't delete radar.gif");
 
-						RemoteViews remoteViews = common.buildUpdate(common.context);
-						ComponentName thisWidget = new ComponentName(common.context, WidgetProvider.class);
-						AppWidgetManager manager = AppWidgetManager.getInstance(common.context);
-						manager.updateAppWidget(thisWidget, remoteViews);
-						Common.LogMessage("widget intent broadcasted");
+					RemoteViews remoteViews = common.buildUpdate(common.context, theme);
+					ComponentName thisWidget = new ComponentName(common.context, WidgetProvider.class);
+					AppWidgetManager manager = AppWidgetManager.getInstance(common.context);
+					manager.updateAppWidget(thisWidget, remoteViews);
+					Common.LogMessage("widget intent broadcasted");
 
-						dialoginterface.cancel();
+					dialoginterface.cancel();
 
-						System.exit(0);
-					}
-				}).setNegativeButton("No", new android.content.DialogInterface.OnClickListener()
-		{
-			public void onClick(DialogInterface dialoginterface, int i)
-			{
-				dialoginterface.cancel();
-			}
-		});
+					System.exit(0);
+				}).setNegativeButton("No", (dialoginterface, i) -> dialoginterface.cancel());
 
 		builder.create().show();
 
@@ -416,427 +399,415 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	private void processSettings()
 	{
-		Thread t = new Thread(new Runnable()
+		Thread t = new Thread(() ->
 		{
-			@Override
-			public void run()
+			boolean validURL = false;
+			boolean validURL1 = false;
+			boolean validURL2 = false;
+			boolean validURL3 = false;
+			boolean validURL5 = false;
+
+			common.SetStringPref("lastError", "");
+
+			String olddata = common.GetStringPref("BASE_URL", "");
+			String oldradar = common.GetStringPref("RADAR_URL", "");
+			String oldforecast = common.GetStringPref("FORECAST_URL", "");
+			String oldwebcam = common.GetStringPref("WEBCAM_URL", "");
+			String oldcustom = common.GetStringPref("CUSTOM_URL", "");
+			String oldcustom_url = common.GetStringPref("custom_url", "");
+
+			String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "", metierev;
+
+			SwitchCompat metric_forecasts = findViewById(R.id.metric_forecasts);
+			SwitchCompat show_indoor = findViewById(R.id.show_indoor);
+			SwitchCompat wifi_only = findViewById(R.id.wifi_only);
+			SwitchCompat use_icons = findViewById(R.id.use_icons);
+
+			RadioButton showRadar = findViewById(R.id.showRadar);
+			long curtime = Math.round(System.currentTimeMillis() / 1000.0);
+
+			if(use_icons.isChecked() && (common.GetLongPref("icon_version", 0) < Common.icon_version || !common.checkForImages()))
 			{
-				boolean validURL = false;
-				boolean validURL1 = false;
-				boolean validURL2 = false;
-				boolean validURL3 = false;
-				boolean validURL5 = false;
-
-				common.SetStringPref("lastError", "");
-
-				String olddata = common.GetStringPref("BASE_URL", "");
-				String oldradar = common.GetStringPref("RADAR_URL", "");
-				String oldforecast = common.GetStringPref("FORECAST_URL", "");
-				String oldwebcam = common.GetStringPref("WEBCAM_URL", "");
-				String oldcustom = common.GetStringPref("CUSTOM_URL", "");
-				String oldcustom_url = common.GetStringPref("custom_url", "");
-
-				String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "", metierev;
-
-				SwitchCompat metric_forecasts = findViewById(R.id.metric_forecasts);
-				SwitchCompat show_indoor = findViewById(R.id.show_indoor);
-				SwitchCompat wifi_only = findViewById(R.id.wifi_only);
-				SwitchCompat use_icons = findViewById(R.id.use_icons);
-
-				RadioButton showRadar = findViewById(R.id.showRadar);
-				long curtime = Math.round(System.currentTimeMillis() / 1000.0);
-
-				if(use_icons.isChecked() && (common.GetLongPref("icon_version", 0) < Common.icon_version || !common.checkForImages()))
+				try
 				{
-					try
+					if (!common.downloadIcons())
 					{
-						if (!common.downloadIcons())
-						{
-							common.SetStringPref("lastError", "Icons failed to download fully, you will need to retry.");
-							handlerForecastIcons.sendEmptyMessage(1);
-							return;
-						}
-					} catch (Exception e) {
-						common.SetStringPref("lastError", e.toString());
+						common.SetStringPref("lastError", "Icons failed to download fully, you will need to retry.");
 						handlerForecastIcons.sendEmptyMessage(1);
 						return;
 					}
-
-					common.SetLongPref("icon_version", Common.icon_version);
-				}
-
-				if (settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt") || settingsURL.getText().toString().equals(""))
-				{
-					common.SetStringPref("lastError", "URL was set to the default or was empty");
-					handlerSettings.sendEmptyMessage(0);
+				} catch (Exception e) {
+					common.SetStringPref("lastError", e.toString());
+					handlerForecastIcons.sendEmptyMessage(1);
 					return;
 				}
 
+				common.SetLongPref("icon_version", Common.icon_version);
+			}
+
+			if (settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt") || settingsURL.getText().toString().equals(""))
+			{
+				common.SetStringPref("lastError", "URL was set to the default or was empty");
+				handlerSettings.sendEmptyMessage(0);
+				return;
+			}
+
+			try
+			{
+				String[] bits = common.downloadSettings(settingsURL.getText().toString()).split("\\n");
+				for (String bit : bits)
+				{
+					String[] mb = bit.split("=", 2);
+					mb[0] = mb[0].trim().toLowerCase();
+					if (mb[0].equals("data"))
+						data = mb[1];
+					if (mb[0].equals("radtype"))
+						radtype = mb[1].toLowerCase();
+					if (mb[0].equals("radar"))
+						radar = mb[1];
+					if (mb[0].equals("fctype"))
+						fctype = mb[1].toLowerCase();
+					if (mb[0].equals("forecast"))
+						forecast = mb[1];
+					if (mb[0].equals("webcam"))
+						webcam = mb[1];
+					if (mb[0].equals("custom"))
+						custom = mb[1];
+				}
+
+				if(fctype.equals(""))
+					fctype = "Yahoo";
+
+				if(radtype.equals(""))
+					radtype = "image";
+
+				validURL = true;
+			} catch (Exception e) {
+				common.SetStringPref("lastError", e.toString());
+				e.printStackTrace();
+			}
+
+			if (!validURL)
+			{
+				handlerSettings.sendEmptyMessage(0);
+				return;
+			}
+
+			Common.LogMessage("data == " + data);
+
+			if (data.equals(""))
+			{
+				common.SetStringPref("lastError", "Data url was blank");
+				handlerDATA.sendEmptyMessage(0);
+				return;
+			}
+
+			if (!data.equals(olddata))
+			{
 				try
 				{
-					String[] bits = common.downloadSettings(settingsURL.getText().toString()).split("\\n");
-					for (String bit : bits)
+					common.reallyGetWeather(data);
+					validURL1 = true;
+				} catch (Exception e) {
+					common.SetStringPref("lastError", e.toString());
+					e.printStackTrace();
+				}
+			} else
+				validURL1 = true;
+
+			if (!validURL1)
+			{
+				handlerDATA.sendEmptyMessage(0);
+				return;
+			}
+
+			if (!radar.equals("") && !radar.equals(oldradar))
+			{
+				try
+				{
+					if(radtype.equals("image"))
 					{
-						String[] mb = bit.split("=", 2);
-						mb[0] = mb[0].trim().toLowerCase();
-						if (mb[0].equals("data"))
-							data = mb[1];
-						if (mb[0].equals("radtype"))
-							radtype = mb[1].toLowerCase();
-						if (mb[0].equals("radar"))
-							radar = mb[1];
-						if (mb[0].equals("fctype"))
-							fctype = mb[1].toLowerCase();
-						if (mb[0].equals("forecast"))
-							forecast = mb[1];
-						if (mb[0].equals("webcam"))
-							webcam = mb[1];
-						if (mb[0].equals("custom"))
-							custom = mb[1];
+						File file = new File(getFilesDir(), "/radar.gif.tmp");
+						File f = common.downloadJSOUP(file, radar);
+						validURL2 = f.exists();
+					} else if(radtype.equals("webpage")) {
+						validURL2 = common.checkURL(radar);
 					}
-
-					if(fctype.equals(""))
-						fctype = "Yahoo";
-
-					if(radtype.equals(""))
-						radtype = "image";
-
-					validURL = true;
 				} catch (Exception e) {
 					common.SetStringPref("lastError", e.toString());
 					e.printStackTrace();
 				}
 
-				if (!validURL)
+				if (!validURL2)
 				{
-					handlerSettings.sendEmptyMessage(0);
+					handlerRADAR.sendEmptyMessage(0);
 					return;
 				}
-
-				Common.LogMessage("data == " + data);
-
-				if (data.equals(""))
-				{
-					common.SetStringPref("lastError", "Data url was blank");
-					handlerDATA.sendEmptyMessage(0);
-					return;
-				}
-
-				if (!data.equals(olddata))
-				{
-					try
-					{
-						common.reallyGetWeather(data);
-						validURL1 = true;
-					} catch (Exception e) {
-						common.SetStringPref("lastError", e.toString());
-						e.printStackTrace();
-					}
-				} else
-					validURL1 = true;
-
-				if (!validURL1)
-				{
-					handlerDATA.sendEmptyMessage(0);
-					return;
-				}
-
-				if (!radar.equals("") && !radar.equals(oldradar))
-				{
-					try
-					{
-						if(radtype.equals("image"))
-						{
-							File file = new File(getFilesDir(), "/radar.gif.tmp");
-							File f = common.downloadJSOUP(file, radar);
-							validURL2 = f.exists();
-						} else if(radtype.equals("webpage")) {
-							validURL2 = common.checkURL(radar);
-						}
-					} catch (Exception e) {
-						common.SetStringPref("lastError", e.toString());
-						e.printStackTrace();
-					}
-
-					if (!validURL2)
-					{
-						handlerRADAR.sendEmptyMessage(0);
-						return;
-					}
-				}
-
-				if(!forecast.equals(""))
-				{
-					try
-					{
-						switch (fctype.toLowerCase())
-						{
-							case "yahoo":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								if(!forecast.startsWith("http"))
-								{
-									common.SetStringPref("lastError", "Yahoo API recently changed, you need to update your settings.");
-									handlerForecast.sendEmptyMessage(0);
-									return;
-								}
-								break;
-							case "weatherzone":
-								forecast = "https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecast + "&obs=0&fc=1&warn=0";
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "yr.no":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "met.no":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "bom.gov.au":
-								common.SetStringPref("lastError", "forecast type " + fctype + " is no longer supported due to ftp support being dropped in Android. Use bom2 forecasts instead, check the wiki for details.");
-								handlerForecast.sendEmptyMessage(0);
-								return;
-							case "wmo.int":
-								if(!forecast.startsWith("http"))
-									forecast = "https://worldweather.wmo.int/en/json/" + forecast.trim() + "_en.xml";
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "weather.gov":
-								String lat = "", lon = "";
-
-								if(forecast.contains("?"))
-									forecast = forecast.split("\\?", 2)[1].trim();
-
-								if(forecast.contains("lat") && forecast.contains("lon"))
-								{
-									String[] tmp = forecast.split("&");
-									for(String line : tmp)
-									{
-										if(line.split("=", 2)[0].equals("lat"))
-											lat = line.split("=", 2)[1].trim();
-										if(line.split("=", 2)[0].equals("lon"))
-											lon = line.split("=", 2)[1].trim();
-									}
-								} else {
-									lat = forecast.split(",")[0].trim();
-									lon = forecast.split(",")[1].trim();
-								}
-
-								forecast = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon=" + lon + "&unit=0&lg=english&FcstType=json";
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "weather.gc.ca":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "weather.gc.ca-fr":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "metoffice.gov.uk":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "bom2":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "bom3":
-								forecast = "https://api.weather.bom.gov.au/v1/locations/" + forecast.trim() + "/forecasts/daily";
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "aemet.es":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "dwd.de":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "metservice.com":
-								forecast = "https://www.metservice.com/publicData/localForecast" + forecast;
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "darksky.net":
-								forecast += "?exclude=currently,minutely,hourly,alerts,flags";
-								forecast += "&lang=" + Locale.getDefault().getLanguage();
-								if(metric_forecasts.isChecked())
-									forecast += "&units=ca";
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "openweathermap.org":
-								if(metric_forecasts.isChecked())
-									forecast += "&units=metric";
-								else
-									forecast += "&units=imperial";
-								forecast += "&lang=" + Locale.getDefault().getLanguage();
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "weather.com":
-								forecast = "https://api.weather.com/v3/wx/forecast/daily/5day?geocode=" + forecast + "&format=json&apiKey=d522aa97197fd864d36b418f39ebb323";
-								//forecast = "https://api.weather.com/v2/turbo/vt1dailyForecast?apiKey=d522aa97197fd864d36b418f39ebb323&format=json&geocode=" + forecast + "&language=en-US";
-								if(metric_forecasts.isChecked())
-									forecast += "&units=m";
-								else
-									forecast += "&units=e";
-								forecast += "&language=" + Locale.getDefault().getLanguage() + "-" + Locale.getDefault().getCountry();
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							case "met.ie":
-								metierev = "https://prodapi.metweb.ie/location/reverse/" + forecast.replaceAll(",", "/");
-								forecast = "https://prodapi.metweb.ie/weather/daily/" + forecast.replaceAll(",", "/") + "/10";
-								if(common.GetStringPref("metierev", "").equals("") || !forecast.equals(oldforecast))
-								{
-									metierev = common.downloadForecast(fctype, metierev, null);
-									JSONObject jobj = new JSONObject(metierev);
-									metierev = jobj.getString("city") + ", Ireland";
-									common.SetStringPref("metierev", metierev);
-								}
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								Common.LogMessage("metierev=" + metierev);
-								break;
-							case "tempoitalia.it":
-								Common.LogMessage("forecast=" + forecast);
-								Common.LogMessage("fctype=" + fctype);
-								break;
-							default:
-								common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
-								handlerForecast.sendEmptyMessage(0);
-								return;
-						}
-					} catch (Exception e) {
-						common.SetStringPref("lastError", e.toString());
-						e.printStackTrace();
-					}
-				}
-
-				Common.LogMessage("line 742");
-
-				if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !common.checkForImages() && !use_icons.isChecked())
-				{
-					common.SetStringPref("lastError", "Forecast type '" + fctype + "' needs to have icons available, Please switch to using icons and try again.");
-					handlerForecastIcons.sendEmptyMessage(0);
-					return;
-				}
-
-				if (!forecast.equals("") && !oldforecast.equals(forecast))
-				{
-					Common.LogMessage("forecast checking: " + forecast);
-
-					try
-					{
-						Common.LogMessage("checking: " + forecast);
-						String tmp = common.downloadForecast(fctype, forecast, bomtown);
-						if(tmp != null)
-						{
-							validURL3 = true;
-							Common.LogMessage("updating rss cache");
-							common.SetLongPref("rssCheck", curtime);
-							common.SetStringPref("forecastData", tmp);
-						}
-					} catch (Exception e) {
-						common.SetStringPref("lastError", e.toString());
-						e.printStackTrace();
-					}
-
-					if (!validURL3)
-					{
-						handlerForecast.sendEmptyMessage(0);
-						return;
-					}
-				}
-
-				if (!webcam.equals("") && !webcam.equals(oldwebcam))
-				{
-					Common.LogMessage("checking: " + webcam);
-
-					if (!Webcam.downloadWebcam(webcam, common.context.getFilesDir()))
-					{
-						handlerWEBCAM.sendEmptyMessage(0);
-						return;
-					}
-				}
-
-				custom_url = customURL.getText().toString();
-
-				if(custom_url.equals(""))
-				{
-					if (!custom.equals("") && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
-					{
-						try
-						{
-							if(common.checkURL(custom))
-								validURL5 = true;
-							else
-								common.RemovePref("custom_url");
-						} catch (Exception e) {
-							common.SetStringPref("lastError", e.toString());
-							e.printStackTrace();
-						}
-
-						if (!validURL5)
-						{
-							handlerCUSTOM.sendEmptyMessage(0);
-							return;
-						}
-					}
-				} else {
-					if (!custom_url.equals(oldcustom_url))
-					{
-						try
-						{
-							if(common.checkURL(custom_url))
-								validURL5 = true;
-						} catch (Exception e) {
-							common.SetStringPref("lastError", e.toString());
-							e.printStackTrace();
-						}
-
-						if (!validURL5)
-						{
-							handlerCUSTOM_URL.sendEmptyMessage(0);
-							return;
-						}
-					}
-				}
-
-				if(forecast.equals(""))
-				{
-					common.SetLongPref("rssCheck", 0);
-					common.SetStringPref("forecastData", "");
-				}
-
-				common.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
-				common.SetIntPref("updateInterval", pos);
-				common.SetStringPref("BASE_URL", data);
-				common.SetStringPref("radtype", radtype);
-				common.SetStringPref("RADAR_URL", radar);
-				common.SetStringPref("FORECAST_URL", forecast);
-				common.SetStringPref("fctype", fctype);
-				common.SetStringPref("WEBCAM_URL", webcam);
-				common.SetStringPref("CUSTOM_URL", custom);
-				common.SetStringPref("custom_url", custom_url);
-				common.SetBoolPref("radarforecast", showRadar.isChecked());
-
-				common.SetBoolPref("metric", metric_forecasts.isChecked());
-				common.SetBoolPref("showIndoor", show_indoor.isChecked());
-				common.SetBoolPref("dark_theme", dark_theme.isChecked());
-				common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
-				common.SetBoolPref("use_icons", use_icons.isChecked());
-
-				common.SendRefresh();
-				handlerDone.sendEmptyMessage(0);
 			}
+
+			if(!forecast.equals(""))
+			{
+				try
+				{
+					switch (fctype.toLowerCase())
+					{
+						case "yahoo":
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							if(!forecast.startsWith("http"))
+							{
+								common.SetStringPref("lastError", "Yahoo API recently changed, you need to update your settings.");
+								handlerForecast.sendEmptyMessage(0);
+								return;
+							}
+							break;
+						case "weatherzone":
+							forecast = "https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecast + "&obs=0&fc=1&warn=0";
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "yr.no":
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "met.no":
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "bom.gov.au":
+							common.SetStringPref("lastError", "forecast type " + fctype + " is no longer supported due to ftp support being dropped in Android. Use bom2 forecasts instead, check the wiki for details.");
+							handlerForecast.sendEmptyMessage(0);
+							return;
+						case "wmo.int":
+							if(!forecast.startsWith("http"))
+								forecast = "https://worldweather.wmo.int/en/json/" + forecast.trim() + "_en.xml";
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "weather.gov":
+							String lat = "", lon = "";
+
+							if(forecast.contains("?"))
+								forecast = forecast.split("\\?", 2)[1].trim();
+
+							if(forecast.contains("lat") && forecast.contains("lon"))
+							{
+								String[] tmp = forecast.split("&");
+								for(String line : tmp)
+								{
+									if(line.split("=", 2)[0].equals("lat"))
+										lat = line.split("=", 2)[1].trim();
+									if(line.split("=", 2)[0].equals("lon"))
+										lon = line.split("=", 2)[1].trim();
+								}
+							} else {
+								lat = forecast.split(",")[0].trim();
+								lon = forecast.split(",")[1].trim();
+							}
+
+							forecast = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon=" + lon + "&unit=0&lg=english&FcstType=json";
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "weather.gc.ca":
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "weather.gc.ca-fr":
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "metoffice.gov.uk":
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "bom2":
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "bom3":
+							forecast = "https://api.weather.bom.gov.au/v1/locations/" + forecast.trim() + "/forecasts/daily";
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "aemet.es":
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "dwd.de":
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "metservice.com":
+							forecast = "https://www.metservice.com/publicData/localForecast" + forecast;
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "openweathermap.org":
+							if(metric_forecasts.isChecked())
+								forecast += "&units=metric";
+							else
+								forecast += "&units=imperial";
+							forecast += "&lang=" + Locale.getDefault().getLanguage();
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "weather.com":
+							forecast = "https://api.weather.com/v3/wx/forecast/daily/5day?geocode=" + forecast + "&format=json&apiKey=d522aa97197fd864d36b418f39ebb323";
+							//forecast = "https://api.weather.com/v2/turbo/vt1dailyForecast?apiKey=d522aa97197fd864d36b418f39ebb323&format=json&geocode=" + forecast + "&language=en-US";
+							if(metric_forecasts.isChecked())
+								forecast += "&units=m";
+							else
+								forecast += "&units=e";
+							forecast += "&language=" + Locale.getDefault().getLanguage() + "-" + Locale.getDefault().getCountry();
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						case "met.ie":
+							metierev = "https://prodapi.metweb.ie/location/reverse/" + forecast.replaceAll(",", "/");
+							forecast = "https://prodapi.metweb.ie/weather/daily/" + forecast.replaceAll(",", "/") + "/10";
+							if(common.GetStringPref("metierev", "").equals("") || !forecast.equals(oldforecast))
+							{
+								metierev = common.downloadForecast(fctype, metierev, null);
+								JSONObject jobj = new JSONObject(metierev);
+								metierev = jobj.getString("city") + ", Ireland";
+								common.SetStringPref("metierev", metierev);
+							}
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							Common.LogMessage("metierev=" + metierev);
+							break;
+						case "tempoitalia.it":
+							Common.LogMessage("forecast=" + forecast);
+							Common.LogMessage("fctype=" + fctype);
+							break;
+						default:
+							common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
+							handlerForecast.sendEmptyMessage(0);
+							return;
+					}
+				} catch (Exception e) {
+					common.SetStringPref("lastError", e.toString());
+					e.printStackTrace();
+				}
+			}
+
+			Common.LogMessage("line 742");
+
+			if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !common.checkForImages() && !use_icons.isChecked())
+			{
+				common.SetStringPref("lastError", "Forecast type '" + fctype + "' needs to have icons available, Please switch to using icons and try again.");
+				handlerForecastIcons.sendEmptyMessage(0);
+				return;
+			}
+
+			if (!forecast.equals("") && !oldforecast.equals(forecast))
+			{
+				Common.LogMessage("forecast checking: " + forecast);
+
+				try
+				{
+					Common.LogMessage("checking: " + forecast);
+					String tmp = common.downloadForecast(fctype, forecast, bomtown);
+					if(tmp != null)
+					{
+						validURL3 = true;
+						Common.LogMessage("updating rss cache");
+						common.SetLongPref("rssCheck", curtime);
+						common.SetStringPref("forecastData", tmp);
+					}
+				} catch (Exception e) {
+					common.SetStringPref("lastError", e.toString());
+					e.printStackTrace();
+				}
+
+				if (!validURL3)
+				{
+					handlerForecast.sendEmptyMessage(0);
+					return;
+				}
+			}
+
+			if (!webcam.equals("") && !webcam.equals(oldwebcam))
+			{
+				Common.LogMessage("checking: " + webcam);
+
+				if (!Webcam.downloadWebcam(webcam, common.context.getFilesDir()))
+				{
+					handlerWEBCAM.sendEmptyMessage(0);
+					return;
+				}
+			}
+
+			custom_url = customURL.getText().toString();
+
+			if(custom_url.equals(""))
+			{
+				if (!custom.equals("") && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
+				{
+					try
+					{
+						if(common.checkURL(custom))
+							validURL5 = true;
+						else
+							common.RemovePref("custom_url");
+					} catch (Exception e) {
+						common.SetStringPref("lastError", e.toString());
+						e.printStackTrace();
+					}
+
+					if (!validURL5)
+					{
+						handlerCUSTOM.sendEmptyMessage(0);
+						return;
+					}
+				}
+			} else {
+				if (!custom_url.equals(oldcustom_url))
+				{
+					try
+					{
+						if(common.checkURL(custom_url))
+							validURL5 = true;
+					} catch (Exception e) {
+						common.SetStringPref("lastError", e.toString());
+						e.printStackTrace();
+					}
+
+					if (!validURL5)
+					{
+						handlerCUSTOM_URL.sendEmptyMessage(0);
+						return;
+					}
+				}
+			}
+
+			if(forecast.equals(""))
+			{
+				common.SetLongPref("rssCheck", 0);
+				common.SetStringPref("forecastData", "");
+			}
+
+			common.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
+			common.SetIntPref("updateInterval", pos);
+			common.SetStringPref("BASE_URL", data);
+			common.SetStringPref("radtype", radtype);
+			common.SetStringPref("RADAR_URL", radar);
+			common.SetStringPref("FORECAST_URL", forecast);
+			common.SetStringPref("fctype", fctype);
+			common.SetStringPref("WEBCAM_URL", webcam);
+			common.SetStringPref("CUSTOM_URL", custom);
+			common.SetStringPref("custom_url", custom_url);
+			common.SetBoolPref("radarforecast", showRadar.isChecked());
+
+			common.SetBoolPref("metric", metric_forecasts.isChecked());
+			common.SetBoolPref("showIndoor", show_indoor.isChecked());
+			common.SetIntPref("dark_theme", theme);
+			common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
+			common.SetBoolPref("use_icons", use_icons.isChecked());
+
+			common.SendRefresh();
+			handlerDone.sendEmptyMessage(0);
 		});
 
 		t.start();
@@ -846,7 +817,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private final Handler handlerDone = new Handler()
 	{
 		@Override
-		public void handleMessage(Message msg)
+		public void handleMessage(@NonNull Message msg)
 		{
 			if(!common.GetBoolPref("radarforecast", true))
 				//noinspection ConstantConditions
@@ -866,7 +837,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private final Handler handlerSettings = new Handler()
 	{
 		@Override
-		public void handleMessage(Message msg)
+		public void handleMessage(@NonNull Message msg)
 		{
 			b1.setEnabled(true);
 			b2.setEnabled(true);
@@ -874,12 +845,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			new AlertDialog.Builder(common.context)
 					.setTitle("Wasn't able to connect or download the settings from your server")
 					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
 					{
-						@Override
-						public void onClick(DialogInterface dialog, int which)
-						{
-						}
 					}).show();
 		}
 	};
@@ -888,7 +855,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private final Handler handlerDATA = new Handler()
 	{
 		@Override
-		public void handleMessage(Message msg)
+		public void handleMessage(@NonNull Message msg)
 		{
 			b1.setEnabled(true);
 			b2.setEnabled(true);
@@ -896,12 +863,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			new AlertDialog.Builder(common.context)
 					.setTitle("Wasn't able to connect or download data.txt from your server")
 					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
 					{
-						@Override
-						public void onClick(DialogInterface dialog, int which)
-						{
-						}
 					}).show();
 		}
 	};
@@ -910,7 +873,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private final Handler handlerRADAR = new Handler()
 	{
 		@Override
-		public void handleMessage(Message msg)
+		public void handleMessage(@NonNull Message msg)
 		{
 			b1.setEnabled(true);
 			b2.setEnabled(true);
@@ -918,12 +881,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			new AlertDialog.Builder(common.context)
 					.setTitle("Wasn't able to connect or download radar= image from the internet")
 					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
 					{
-						@Override
-						public void onClick(DialogInterface dialog, int which)
-						{
-						}
 					}).show();
 		}
 	};
@@ -932,7 +891,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private final Handler handlerForecast = new Handler()
 	{
 		@Override
-		public void handleMessage(Message msg)
+		public void handleMessage(@NonNull Message msg)
 		{
 			b1.setEnabled(true);
 			b2.setEnabled(true);
@@ -940,12 +899,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			new AlertDialog.Builder(common.context)
 					.setTitle("Wasn't able to connect or download the forecast.")
 					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
 					{
-						@Override
-						public void onClick(DialogInterface dialog, int which)
-						{
-						}
 					}).show();
 		}
 	};
@@ -954,7 +909,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private final Handler handlerForecastIcons = new Handler()
 	{
 		@Override
-		public void handleMessage(Message msg)
+		public void handleMessage(@NonNull Message msg)
 		{
 			b1.setEnabled(true);
 			b2.setEnabled(true);
@@ -962,12 +917,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			new AlertDialog.Builder(common.context)
 					.setTitle("Wasn't able to detect forecast icons.")
 					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
 					{
-						@Override
-						public void onClick(DialogInterface dialog, int which)
-						{
-						}
 					}).show();
 		}
 	};
@@ -976,7 +927,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private final Handler handlerWEBCAM = new Handler()
 	{
 		@Override
-		public void handleMessage(Message msg)
+		public void handleMessage(@NonNull Message msg)
 		{
 			b1.setEnabled(true);
 			b2.setEnabled(true);
@@ -984,12 +935,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			new AlertDialog.Builder(common.context)
 					.setTitle("Wasn't able to connect or download a webcam image from your server")
 					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
 					{
-						@Override
-						public void onClick(DialogInterface dialog, int which)
-						{
-						}
 					}).show();
 		}
 	};
@@ -998,7 +945,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private final Handler handlerCUSTOM = new Handler()
 	{
 		@Override
-		public void handleMessage(Message msg)
+		public void handleMessage(@NonNull Message msg)
 		{
 			b1.setEnabled(true);
 			b2.setEnabled(true);
@@ -1006,12 +953,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			new AlertDialog.Builder(common.context)
 					.setTitle("Wasn't able to connect or download from the custom URL specified")
 					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
 					{
-						@Override
-						public void onClick(DialogInterface dialog, int which)
-						{
-						}
 					}).show();
 		}
 	};
@@ -1020,7 +963,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private final Handler handlerCUSTOM_URL = new Handler()
 	{
 		@Override
-		public void handleMessage(Message msg)
+		public void handleMessage(@NonNull Message msg)
 		{
 			b1.setEnabled(true);
 			b2.setEnabled(true);
@@ -1028,12 +971,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			new AlertDialog.Builder(common.context)
 					.setTitle("Wasn't able to connect or download from the custom URL specified")
 					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", new DialogInterface.OnClickListener()
+					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
 					{
-						@Override
-						public void onClick(DialogInterface dialog, int which)
-						{
-						}
 					}).show();
 		}
 	};
@@ -1093,14 +1032,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 {
                     getWeather();
 
-                    runOnUiThread(new Runnable()
+                    runOnUiThread(() ->
                     {
-                        @Override
-                        public void run()
-                        {
-	                        //noinspection ConstantConditions
-	                        tabLayout.getTabAt(0).select();
-                        }
+	                    //noinspection ConstantConditions
+	                    tabLayout.getTabAt(0).select();
                     });
                 }
 
@@ -1119,24 +1054,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	            if(action != null && action.equals(Common.FAILED_INTENT))
 	            {
-		            runOnUiThread(new Runnable()
-		            {
-			            @Override
-			            public void run()
-			            {
-				            new AlertDialog
-						            .Builder(common.context)
-						            .setTitle("An error occurred while attempting to update usage")
-						            .setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-						            .setPositiveButton("Ok", new DialogInterface.OnClickListener()
-						            {
-							            @Override
-							            public void onClick(DialogInterface dialog, int which)
-							            {
-							            }
-						            }).show();
-			            }
-		            });
+		            runOnUiThread(() -> new AlertDialog
+				            .Builder(common.context)
+				            .setTitle("An error occurred while attempting to update usage")
+				            .setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+				            .setPositiveButton("Ok", new DialogInterface.OnClickListener()
+				            {
+					            @Override
+					            public void onClick(DialogInterface dialog, int which)
+					            {
+					            }
+				            }).show());
 
 	            }
             } catch (Exception e) {

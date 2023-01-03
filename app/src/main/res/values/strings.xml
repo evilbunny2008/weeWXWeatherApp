@@ -58,4 +58,6 @@
     <string name="every_15_minutes">Every 15 Minutes</string>
     <string name="every_30_minutes">Every 30 Minutes</string>
     <string name="every_hour">Every Hour</string>
+    <string name="use_light_theme">Use Light Theme</string>
+    <string name="use_system_default">Use System Default</string>
 </resources>

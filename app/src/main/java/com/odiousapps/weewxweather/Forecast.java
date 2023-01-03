@@ -11,13 +11,10 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Vibrator;
-import androidx.annotation.NonNull;
-
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -29,6 +26,7 @@ import android.widget.TextView;
 import java.io.File;
 import java.io.FileInputStream;
 
+import androidx.annotation.NonNull;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 class Forecast
@@ -40,45 +38,39 @@ class Forecast
 	private TextView forecast;
 	private ImageView im;
 	private RotateLayout rl;
-	private boolean dark_theme;
+	private int dark_theme;
 
 	Forecast(Common common)
     {
-        this.common = common;
-	    dark_theme = common.GetBoolPref("dark_theme", false);
+		this.common = common;
+	    dark_theme = common.GetIntPref("dark_theme", 2);
+	    if(dark_theme == 2)
+		    dark_theme = common.getSystemTheme();
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     View myForecast(LayoutInflater inflater, ViewGroup container)
     {
 	    rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
-	    rootView.setOnLongClickListener(new View.OnLongClickListener()
+	    rootView.setOnLongClickListener(v ->
 	    {
-		    @Override
-		    public boolean onLongClick(View v)
-		    {
-			    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
-			    if (vibrator != null)
-				    vibrator.vibrate(250);
-			    swipeLayout.setRefreshing(true);
-			    Common.LogMessage("rootview long press");
-			    reloadWebView(true);
-			    getForecast(true);
-			    return true;
-		    }
+		    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
+		    if (vibrator != null)
+			    vibrator.vibrate(250);
+		    swipeLayout.setRefreshing(true);
+		    Common.LogMessage("rootview long press");
+		    reloadWebView(true);
+		    getForecast(true);
+		    return true;
 	    });
 
 	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-	    swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+	    swipeLayout.setOnRefreshListener(() ->
 	    {
-		    @Override
-		    public void onRefresh()
-		    {
-			    swipeLayout.setRefreshing(true);
-			    Common.LogMessage("onRefresh();");
-			    reloadWebView(true);
-			    getForecast(true);
-		    }
+		    swipeLayout.setRefreshing(true);
+		    Common.LogMessage("onRefresh();");
+		    reloadWebView(true);
+		    getForecast(true);
 	    });
 
 	    rl = rootView.findViewById(R.id.rotateWeb);
@@ -88,14 +80,7 @@ class Forecast
 	    wv1.getSettings().setUserAgentString(Common.UA);
 	    wv1.getSettings().setJavaScriptEnabled(true);
 
-	    wv1.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
-	    {
-		    @Override
-		    public void onScrollChanged()
-		    {
-			    swipeLayout.setEnabled(wv1.getScrollY() == 0);
-		    }
-	    });
+	    wv1.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv1.getScrollY() == 0));
 
 	    wv1.setWebChromeClient(new WebChromeClient()
 	    {
@@ -106,20 +91,16 @@ class Forecast
 		    }
 	    });
 
-	    wv1.setOnLongClickListener(new View.OnLongClickListener()
+	    wv1.setOnLongClickListener(v ->
 	    {
-		    @Override
-		    public boolean onLongClick(View v)
-		    {
-			    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
-			    if (vibrator != null)
-				    vibrator.vibrate(250);
-			    swipeLayout.setRefreshing(true);
-			    Common.LogMessage("webview long press");
-			    reloadWebView(true);
-			    getForecast(true);
-			    return true;
-		    }
+		    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
+		    if (vibrator != null)
+			    vibrator.vibrate(250);
+		    swipeLayout.setRefreshing(true);
+		    Common.LogMessage("webview long press");
+		    reloadWebView(true);
+		    getForecast(true);
+		    return true;
 	    });
 
 	    wv1.setWebViewClient(new WebViewClient()
@@ -131,26 +112,12 @@ class Forecast
 		    }
 	    });
 
-	    wv1.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
-	    {
-		    @Override
-		    public void onScrollChanged()
-		    {
-			    swipeLayout.setEnabled(wv1.getScrollY() == 0);
-		    }
-	    });
+	    wv1.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv1.getScrollY() == 0));
 
 	    wv2.getSettings().setUserAgentString(Common.UA);
 	    wv2.getSettings().setJavaScriptEnabled(true);
 
-	    wv2.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
-	    {
-		    @Override
-		    public void onScrollChanged()
-		    {
-			    swipeLayout.setEnabled(wv2.getScrollY() == 0);
-		    }
-	    });
+	    wv2.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv2.getScrollY() == 0));
 
 	    wv2.setWebChromeClient(new WebChromeClient()
 	    {
@@ -161,20 +128,16 @@ class Forecast
 		    }
 	    });
 
-	    wv2.setOnLongClickListener(new View.OnLongClickListener()
+	    wv2.setOnLongClickListener(v ->
 	    {
-		    @Override
-		    public boolean onLongClick(View v)
-		    {
-			    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
-			    if (vibrator != null)
-				    vibrator.vibrate(250);
-			    swipeLayout.setRefreshing(true);
-			    Common.LogMessage("webview long press");
-			    reloadWebView(true);
-			    getForecast(true);
-			    return true;
-		    }
+		    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
+		    if (vibrator != null)
+			    vibrator.vibrate(250);
+		    swipeLayout.setRefreshing(true);
+		    Common.LogMessage("webview long press");
+		    reloadWebView(true);
+		    getForecast(true);
+		    return true;
 	    });
 
 	    wv2.setWebViewClient(new WebViewClient()
@@ -186,14 +149,7 @@ class Forecast
 		    }
 	    });
 
-	    wv2.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
-	    {
-		    @Override
-		    public void onScrollChanged()
-		    {
-			    swipeLayout.setEnabled(wv2.getScrollY() == 0);
-		    }
-	    });
+	    wv2.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv2.getScrollY() == 0));
 
 	    forecast = rootView.findViewById(R.id.forecast);
 	    im = rootView.findViewById(R.id.logo);
@@ -234,7 +190,7 @@ class Forecast
 			if (!rf.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 			{
 				String html = "<html>";
-				if (dark_theme)
+				if (dark_theme == 1)
 					html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
 				html += "<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
 				wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
@@ -250,7 +206,7 @@ class Forecast
 					"  <head>\n" +
 					"    <meta charset='utf-8'>\n" +
 					"    <meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
-			if (dark_theme)
+			if (dark_theme == 1)
 				html += "<style>body{color: #fff; background-color: #000;}</style>";
 
 			try
@@ -258,8 +214,8 @@ class Forecast
 				File f = new File(radar);
 				FileInputStream imageInFile = new FileInputStream(f);
 				byte[] imageData = new byte[(int) f.length()];
-				imageInFile.read(imageData);
-				radar = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+				if(imageInFile.read(imageData) > 0)
+					radar = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -322,34 +278,23 @@ class Forecast
 
 		swipeLayout.setRefreshing(true);
 
-		Thread t = new Thread(new Runnable()
+		Thread t = new Thread(() ->
 		{
-			@Override
-			public void run()
+			try
 			{
-				try
-				{
-					Common.LogMessage("starting to download image from: " + radar);
-					File file = new File(common.context.getFilesDir(), "/radar.gif.tmp");
-					File f = common.downloadJSOUP(file, radar);
-					Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
-					File f2 = new File(common.context.getFilesDir(), "/radar.gif");
-					if(f.renameTo(f2))
-						handlerDone.sendEmptyMessage(0);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-
-				Handler mHandler = new Handler(Looper.getMainLooper());
-				mHandler.post(new Runnable()
-				{
-					@Override
-					public void run()
-					{
-						swipeLayout.setRefreshing(false);
-					}
-				});
+				Common.LogMessage("starting to download image from: " + radar);
+				File file = new File(common.context.getFilesDir(), "/radar.gif.tmp");
+				File f = common.downloadJSOUP(file, radar);
+				Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
+				File f2 = new File(common.context.getFilesDir(), "/radar.gif");
+				if(f.renameTo(f2))
+					handlerDone.sendEmptyMessage(0);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
+
+			Handler mHandler = new Handler(Looper.getMainLooper());
+			mHandler.post(() -> swipeLayout.setRefreshing(false));
 		});
 
 		t.start();
@@ -417,7 +362,9 @@ class Forecast
                 String action = intent.getAction();
                 if(action != null && (action.equals(Common.UPDATE_INTENT) || action.equals(Common.REFRESH_INTENT)))
                 {
-	                dark_theme = common.GetBoolPref("dark_theme", false);
+	                dark_theme = common.GetIntPref("dark_theme", 2);
+	                if(dark_theme == 2)
+		                dark_theme = common.getSystemTheme();
 	                updateScreen();
                 } else if(action != null && action.equals(Common.EXIT_INTENT)) {
                     doPause();
@@ -440,14 +387,10 @@ class Forecast
 		    final String html = "<html><body>Forecast URL not set. Edit inigo-settings.txt to change.</body></html>";
 
 		    Handler mHandler = new Handler(Looper.getMainLooper());
-		    mHandler.post(new Runnable()
+		    mHandler.post(() ->
 		    {
-			    @Override
-			    public void run()
-			    {
-				    wv2.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-				    swipeLayout.setRefreshing(false);
-			    }
+			    wv2.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+			    swipeLayout.setRefreshing(false);
 		    });
 
 		    return;
@@ -465,31 +408,27 @@ class Forecast
 	    if(!common.GetStringPref("forecastData", "").equals(""))
 		    generateForecast();
 
-	    Thread t = new Thread(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-                try
-                {
-                    long curtime = Math.round(System.currentTimeMillis() / 1000.0);
+	    Thread t = new Thread(() ->
+	    {
+	        try
+	        {
+	            long curtime = Math.round(System.currentTimeMillis() / 1000.0);
 
-                    if(common.GetStringPref("forecastData", "").equals("") || common.GetLongPref("rssCheck", 0) + 7190 < curtime)
-                    {
-	                    Common.LogMessage("no forecast data or cache is more than 2 hour old");
+	            if(common.GetStringPref("forecastData", "").equals("") || common.GetLongPref("rssCheck", 0) + 7190 < curtime)
+	            {
+		            Common.LogMessage("no forecast data or cache is more than 2 hour old");
 
-	                    String tmp = common.downloadForecast();
+		            String tmp = common.downloadForecast();
 
-	                    Common.LogMessage("updating rss cache");
-	                    common.SetLongPref("rssCheck", curtime);
-	                    common.SetStringPref("forecastData", tmp);
-	                    handlerDone.sendEmptyMessage(0);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+		            Common.LogMessage("updating rss cache");
+		            common.SetLongPref("rssCheck", curtime);
+		            common.SetStringPref("forecastData", tmp);
+		            handlerDone.sendEmptyMessage(0);
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
 	        }
-        });
+		});
 
         t.start();
     }
@@ -507,200 +446,171 @@ class Forecast
 
     private void generateForecast()
     {
-    	Thread t = new Thread(new Runnable()
+    	Thread t = new Thread(() ->
 	    {
-		    @Override
-		    public void run()
+		    Handler mHandler = new Handler(Looper.getMainLooper());
+		    mHandler.post(() -> swipeLayout.setRefreshing(true));
+
+		    Common.LogMessage("getting json data");
+	        String data;
+	        String fctype = common.GetStringPref("fctype", "Yahoo");
+
+		    data = common.GetStringPref("forecastData", "");
+		    if(data.equals(""))
 		    {
-			    Handler mHandler = new Handler(Looper.getMainLooper());
-			    mHandler.post(new Runnable()
+			    String tmp = "<html>";
+			    if(dark_theme == 1)
+				    tmp += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
+			    tmp += "<body>Forecast URL not set, edit settings.txt to change</body></html>";
+
+			    final String html = tmp;
+
+			    mHandler.post(() ->
 			    {
-				    @Override
-				    public void run()
-				    {
-					    swipeLayout.setRefreshing(true);
-				    }
+				    wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+				    swipeLayout.setRefreshing(false);
 			    });
-
-			    Common.LogMessage("getting json data");
-		        String data;
-		        String fctype = common.GetStringPref("fctype", "Yahoo");
-
-			    data = common.GetStringPref("forecastData", "");
-			    if(data.equals(""))
-			    {
-				    String tmp = "<html>";
-				    if(dark_theme)
-					    tmp += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				    tmp += "<body>Forecast URL not set, edit settings.txt to change</body></html>";
-
-				    final String html = tmp;
-
-				    mHandler.post(new Runnable()
-				    {
-					    @Override
-					    public void run()
-					    {
-						    wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-						    swipeLayout.setRefreshing(false);
-					    }
-				    });
-				    return;
-			    }
-
-			    switch(fctype.toLowerCase())
-			    {
-				    case "yahoo":
-				    {
-					    String[] content = common.processYahoo(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "weatherzone":
-				    {
-					    String[] content = common.processWZ(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "yr.no":
-				    {
-					    String[] content = common.processYR(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "met.no":
-				    {
-					    String[] content = common.processMetNO(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "bom.gov.au":
-				    {
-					    String[] content = common.processBOM(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "wmo.int":
-				    {
-						String[] content = common.processWMO(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "weather.gov":
-				    {
-					    String[] content = common.processWGOV(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "weather.gc.ca":
-				    {
-					    String[] content = common.processWCA(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "weather.gc.ca-fr":
-				    {
-					    String[] content = common.processWCAF(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "metoffice.gov.uk":
-				    {
-					    String[] content = common.processMET(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "bom2":
-				    {
-					    String[] content = common.processBOM2(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "bom3":
-				    {
-					    String[] content = common.processBOM3(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "aemet.es":
-				    {
-					    String[] content = common.processAEMET(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "dwd.de":
-				    {
-					    String[] content = common.processDWD(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "metservice.com":
-				    {
-					    String[] content = common.processMetService(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "darksky.net":
-				    {
-					    String[] content = common.processDarkSky(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "openweathermap.org":
-				    {
-					    String[] content = common.processOWM(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "weather.com":
-				    {
-					    String[] content = common.processWCOM(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "met.ie":
-				    {
-					    String[] content = common.processMETIE(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-				    case "tempoitalia.it":
-				    {
-					    String[] content = common.processTempoItalia(data, true);
-					    if(content != null && content.length >= 2)
-						    updateForecast(content[0], content[1]);
-					    break;
-				    }
-			    }
-
-			    mHandler.post(new Runnable()
-			    {
-				    @Override
-				    public void run()
-				    {
-					    swipeLayout.setRefreshing(false);
-				    }
-			    });
+			    return;
 		    }
+
+		    switch(fctype.toLowerCase())
+		    {
+			    case "yahoo":
+			    {
+				    String[] content = common.processYahoo(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "weatherzone":
+			    {
+				    String[] content = common.processWZ(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "yr.no":
+			    {
+				    String[] content = common.processYR(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "met.no":
+			    {
+				    String[] content = common.processMetNO(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "bom.gov.au":
+			    {
+				    String[] content = common.processBOM(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "wmo.int":
+			    {
+					String[] content = common.processWMO(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "weather.gov":
+			    {
+				    String[] content = common.processWGOV(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "weather.gc.ca":
+			    {
+				    String[] content = common.processWCA(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "weather.gc.ca-fr":
+			    {
+				    String[] content = common.processWCAF(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "metoffice.gov.uk":
+			    {
+				    String[] content = common.processMET(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "bom2":
+			    {
+				    String[] content = common.processBOM2(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "bom3":
+			    {
+				    String[] content = common.processBOM3(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "aemet.es":
+			    {
+				    String[] content = common.processAEMET(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "dwd.de":
+			    {
+				    String[] content = common.processDWD(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "metservice.com":
+			    {
+				    String[] content = common.processMetService(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "openweathermap.org":
+			    {
+				    String[] content = common.processOWM(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "weather.com":
+			    {
+				    String[] content = common.processWCOM(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "met.ie":
+			    {
+				    String[] content = common.processMETIE(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+			    case "tempoitalia.it":
+			    {
+				    String[] content = common.processTempoItalia(data, true);
+				    if(content != null && content.length >= 2)
+					    updateForecast(content[0], content[1]);
+				    break;
+			    }
+		    }
+
+		    mHandler.post(() -> swipeLayout.setRefreshing(false));
 	    });
 
     	t.start();
@@ -709,148 +619,133 @@ class Forecast
     private void updateForecast(final String bits, final String desc)
     {
 	    Handler mHandler = new Handler(Looper.getMainLooper());
-	    mHandler.post(new Runnable()
+	    mHandler.post(() ->
 	    {
-		    @Override
-		    public void run()
+		    String tmpfc = "<html>";
+		    if (dark_theme == 1)
+			    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+		    else
+			    tmpfc += "<head>" + Common.ssheader + "</head>";
+		    tmpfc += "<body style='text-align:center'>" + bits + "</body></html>";
+
+		    final String fc = tmpfc;
+
+		    Handler mHandler1 = new Handler(Looper.getMainLooper());
+		    mHandler1.post(() ->
 		    {
-			    String tmpfc = "<html>";
-			    if (dark_theme)
-				    tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
-			    else
-			    	tmpfc += "<head>" + Common.ssheader + "</head>";
-			    tmpfc += "<body style='text-align:center'>" + bits + "</body></html>";
+			    wv2.clearFormData();
+			    wv2.clearHistory();
+			    wv2.clearCache(true);
+			    wv2.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
+		    });
 
-			    final String fc = tmpfc;
+		    TextView tv1 = rootView.findViewById(R.id.forecast);
+		    if (dark_theme == 0)
+		    {
+			    tv1.setTextColor(0xff000000);
+			    tv1.setBackgroundColor(0xffffffff);
+			    im.setBackgroundColor(0xffffffff);
+		    } else {
+			    tv1.setTextColor(0xffffffff);
+			    tv1.setBackgroundColor(0xff000000);
+			    im.setBackgroundColor(0xff000000);
+		    }
+		    tv1.setText(desc);
 
-			    Handler mHandler = new Handler(Looper.getMainLooper());
-			    mHandler.post(new Runnable()
-			    {
-				    @Override
-				    public void run()
+		    switch (common.GetStringPref("fctype", "yahoo").toLowerCase())
+		    {
+			    case "yahoo":
+				    im.setImageResource(R.drawable.purple);
+				    break;
+			    case "weatherzone":
+				    im.setImageResource(R.drawable.wz);
+				    break;
+			    case "yr.no":
+				    im.setImageResource(R.drawable.yrno);
+				    break;
+			    case "met.no":
+				    im.setImageResource(R.drawable.met_no);
+				    break;
+			    case "bom.gov.au":
+				    im.setImageResource(R.drawable.bom);
+				    if(dark_theme == 1)
+					    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+				    else
+					    im.setColorFilter(null);
+				    break;
+			    case "wmo.int":
+				    im.setImageResource(R.drawable.wmo);
+				    break;
+			    case "weather.gov":
+				    im.setImageResource(R.drawable.wgov);
+				    break;
+			    case "weather.gc.ca":
+			    case "weather.gc.ca-fr":
+				    im.setImageResource(R.drawable.wca);
+				    break;
+			    case "metoffice.gov.uk":
+				    im.setImageResource(R.drawable.met);
+				    break;
+			    case "bom2":
+				    im.setImageResource(R.drawable.bom);
+				    if(dark_theme == 1)
 				    {
-					    wv2.clearFormData();
-					    wv2.clearHistory();
-					    wv2.clearCache(true);
-					    wv2.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
+					    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+				    } else {
+					    im.setColorFilter(null);
 				    }
-			    });
-
-			    TextView tv1 = rootView.findViewById(R.id.forecast);
-			    if (!dark_theme)
-			    {
-				    tv1.setTextColor(0xff000000);
-				    tv1.setBackgroundColor(0xffffffff);
-				    im.setBackgroundColor(0xffffffff);
-			    } else {
-				    tv1.setTextColor(0xffffffff);
-				    tv1.setBackgroundColor(0xff000000);
-				    im.setBackgroundColor(0xff000000);
-			    }
-			    tv1.setText(desc);
-
-			    switch (common.GetStringPref("fctype", "yahoo").toLowerCase())
-			    {
-				    case "yahoo":
-					    im.setImageResource(R.drawable.purple);
-					    break;
-				    case "weatherzone":
-					    im.setImageResource(R.drawable.wz);
-					    break;
-				    case "yr.no":
-					    im.setImageResource(R.drawable.yrno);
-					    break;
-				    case "met.no":
-					    im.setImageResource(R.drawable.met_no);
-					    break;
-				    case "bom.gov.au":
-					    im.setImageResource(R.drawable.bom);
-					    if(dark_theme)
-						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					    else
-						    im.setColorFilter(null);
-					    break;
-				    case "wmo.int":
-					    im.setImageResource(R.drawable.wmo);
-					    break;
-				    case "weather.gov":
-					    im.setImageResource(R.drawable.wgov);
-					    break;
-				    case "weather.gc.ca":
-				    case "weather.gc.ca-fr":
-					    im.setImageResource(R.drawable.wca);
-					    break;
-				    case "metoffice.gov.uk":
-					    im.setImageResource(R.drawable.met);
-					    break;
-				    case "bom2":
-					    im.setImageResource(R.drawable.bom);
-					    if(dark_theme)
-					    {
-						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					    } else {
-						    im.setColorFilter(null);
-					    }
-					    break;
-				    case "bom3":
-					    im.setImageResource(R.drawable.bom);
-					    if(dark_theme)
-					    {
-						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					    } else {
-						    im.setColorFilter(null);
-					    }
-					    break;
-				    case "aemet.es":
-					    im.setImageResource(R.drawable.aemet);
-					    break;
-				    case "dwd.de":
-					    im.setImageResource(R.drawable.dwd);
-					    break;
-				    case "metservice.com":
-					    im.setImageResource(R.drawable.metservice);
-					    if(dark_theme)
-						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					    else
-						    im.setColorFilter(null);
-					    break;
-				    case "meteofrance.com":
-					    im.setImageResource(R.drawable.mf);
-					    break;
-				    case "darksky.net":
-					    im.setImageResource(R.drawable.darksky);
-					    if(dark_theme)
-						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					    else
-						    im.setColorFilter(null);
-					    break;
-				    case "openweathermap.org":
-					    im.setImageResource(R.drawable.owm);
-					    break;
-				    case "apixu.com":
-					    im.setImageResource(R.drawable.apixu);
-					    if(dark_theme)
-						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					    else
-						    im.setColorFilter(null);
-					    break;
-				    case "weather.com":
-					    im.setImageResource(R.drawable.weather_com);
-					    break;
-				    case "met.ie":
-					    im.setImageResource(R.drawable.met_ie);
-					    if(dark_theme)
-						    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					    else
-						    im.setColorFilter(null);
-					    break;
-				    case "ilmeteo.it":
-					    im.setImageResource(R.drawable.ilmeteo_it);
-					    break;
-				    case "tempoitalia.it":
-					    im.setImageResource(R.drawable.tempoitalia_it);
-					    break;
-			    }
+				    break;
+			    case "bom3":
+				    im.setImageResource(R.drawable.bom);
+				    if(dark_theme == 1)
+				    {
+					    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+				    } else {
+					    im.setColorFilter(null);
+				    }
+				    break;
+			    case "aemet.es":
+				    im.setImageResource(R.drawable.aemet);
+				    break;
+			    case "dwd.de":
+				    im.setImageResource(R.drawable.dwd);
+				    break;
+			    case "metservice.com":
+				    im.setImageResource(R.drawable.metservice);
+				    if(dark_theme == 1)
+					    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+				    else
+					    im.setColorFilter(null);
+				    break;
+			    case "meteofrance.com":
+				    im.setImageResource(R.drawable.mf);
+				    break;
+			    case "openweathermap.org":
+				    im.setImageResource(R.drawable.owm);
+				    break;
+			    case "apixu.com":
+				    im.setImageResource(R.drawable.apixu);
+				    if(dark_theme == 1)
+					    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+				    else
+					    im.setColorFilter(null);
+				    break;
+			    case "weather.com":
+				    im.setImageResource(R.drawable.weather_com);
+				    break;
+			    case "met.ie":
+				    im.setImageResource(R.drawable.met_ie);
+				    if(dark_theme == 1)
+					    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
+				    else
+					    im.setColorFilter(null);
+				    break;
+			    case "ilmeteo.it":
+				    im.setImageResource(R.drawable.ilmeteo_it);
+				    break;
+			    case "tempoitalia.it":
+				    im.setImageResource(R.drawable.tempoitalia_it);
+				    break;
 		    }
 	    });
     }

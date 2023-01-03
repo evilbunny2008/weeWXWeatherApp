@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Vibrator;
@@ -33,46 +32,40 @@ class Webcam
     private ImageView iv;
     private static Bitmap bm;
     private SwipeRefreshLayout swipeLayout;
-    private boolean dark_theme;
+    private int dark_theme;
 
     Webcam(Common common)
     {
-        this.common = common;
-	    dark_theme = common.GetBoolPref("dark_theme", false);
-    }
+		this.common = common;
+	    dark_theme = common.GetIntPref("dark_theme", 2);
+	    if(dark_theme == 2)
+		    dark_theme = common.getSystemTheme();
+	}
 
     View myWebcam(LayoutInflater inflater, ViewGroup container)
     {
         View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
         iv = rootView.findViewById(R.id.webcam);
 
-	    if(dark_theme)
+	    if(dark_theme == 1)
 		    iv.setBackgroundColor(0xff000000);
 
-	    iv.setOnLongClickListener(new View.OnLongClickListener()
-        {
-            @Override
-            public boolean onLongClick(View v)
-            {
-                Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-                if(vibrator != null)
-                    vibrator.vibrate(250);
-                Common.LogMessage("long press");
-                reloadWebView(true);
-                return true;
-            }
-        });
+	    iv.setOnLongClickListener(v ->
+	    {
+	        Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
+	        if(vibrator != null)
+	            vibrator.vibrate(250);
+	        Common.LogMessage("long press");
+	        reloadWebView(true);
+	        return true;
+	    });
 
 	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-	    swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+	    swipeLayout.setOnRefreshListener(() ->
 	    {
-		    @Override
-		    public void onRefresh()
-		    {
-			    swipeLayout.setRefreshing(true);
-			    Common.LogMessage("onRefresh();");
-			    reloadWebView(true);
-		    }
+		    swipeLayout.setRefreshing(true);
+		    Common.LogMessage("onRefresh();");
+		    reloadWebView(true);
 	    });
 
         reloadWebView(false);
@@ -87,20 +80,14 @@ class Webcam
 
         if(webURL.equals(""))
         {
-            if(android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-            {
-                iv.setImageDrawable(common.context.getApplicationContext().getDrawable(R.drawable.nowebcam));
-            } else {
-                iv.setImageDrawable(common.context.getResources().getDrawable(R.drawable.nowebcam));
-            }
-
-            return;
+	        iv.setImageDrawable(common.context.getApplicationContext().getDrawable(R.drawable.nowebcam));
+	        return;
         }
 
 	    File file = new File(common.context.getFilesDir(), "webcam.jpg");
 	    if(file.exists())
 	    {
-		    Common.LogMessage("file: "+file.toString());
+		    Common.LogMessage("file: "+ file);
 		    try
 		    {
 			    BitmapFactory.Options options = new BitmapFactory.Options();
@@ -111,39 +98,35 @@ class Webcam
 		    }
 	    }
 
-	    Thread t = new Thread(new Runnable()
-        {
-            @Override
-            public void run()
-            {
-	            long period = 0;
-	            long curtime = round(System.currentTimeMillis() / 1000.0);
+	    Thread t = new Thread(() ->
+	    {
+		    long period = 0;
+		    long curtime = round(System.currentTimeMillis() / 1000.0);
 
-	            File file = new File(common.context.getFilesDir(), "webcam.jpg");
+		    File file1 = new File(common.context.getFilesDir(), "webcam.jpg");
 
-	            Common.LogMessage("curtime = " + curtime + ", file.lastModified() == " + round(file.lastModified() / 1000.0));
+		    Common.LogMessage("curtime = " + curtime + ", file.lastModified() == " + round(file1.lastModified() / 1000.0));
 
-	            if(!force)
-	            {
-		            int pos = common.GetIntPref("updateInterval", 1);
-		            if (pos <= 0)
-			            return;
+		    if(!force)
+		    {
+			    int pos = common.GetIntPref("updateInterval", 1);
+			    if (pos <= 0)
+				    return;
 
-		            long[] ret = common.getPeriod();
-		            period = Math.round(ret[0] / 1000.0);
-	            }
+			    long[] ret = common.getPeriod();
+			    period = Math.round(ret[0] / 1000.0);
+		    }
 
-	            if(force || !file.exists() || round(file.lastModified() / 1000.0) + period < curtime)
-	            {
-		            if(downloadWebcam(webURL, common.context.getFilesDir()))
-			            Common.LogMessage("done downloading, prompt handler to draw to iv");
-		            else
-			            Common.LogMessage("Skipped downloading");
-	            }
+		    if(force || !file1.exists() || round(file1.lastModified() / 1000.0) + period < curtime)
+		    {
+			    if(downloadWebcam(webURL, common.context.getFilesDir()))
+				    Common.LogMessage("done downloading, prompt handler to draw to iv");
+			    else
+				    Common.LogMessage("Skipped downloading");
+		    }
 
-	            handlerDone.sendEmptyMessage(0);
-            }
-        });
+		    handlerDone.sendEmptyMessage(0);
+	    });
 
         t.start();
     }
@@ -255,8 +238,10 @@ class Webcam
                 String action = intent.getAction();
                 if(action != null && (action.equals(Common.UPDATE_INTENT) || action.equals(Common.REFRESH_INTENT)))
                 {
-	                dark_theme = common.GetBoolPref("dark_theme", false);
-	                if(dark_theme)
+	                dark_theme = common.GetIntPref("dark_theme", 2);
+	                if(dark_theme == 2)
+		                dark_theme = common.getSystemTheme();
+	                if(dark_theme == 1)
 		                iv.setBackgroundColor(0xff000000);
 	                else
 		                iv.setBackgroundColor(0xffffffff);

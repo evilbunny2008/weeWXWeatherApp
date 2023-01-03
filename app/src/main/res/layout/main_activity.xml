@@ -67,16 +67,6 @@
                         android:textSize="18sp"/>
 
                     <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/dark_theme"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:checked="false"
-                        android:text="@string/use_dark_theme"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:textSize="18sp"/>
-
-                    <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/metric_forecasts"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -107,6 +97,20 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:text="@string/use_dark_theme"
+                        android:textSize="18sp"/>
+
+                    <Spinner
+                        android:id="@+id/spinner2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:spinnerMode="dropdown"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:text="@string/refresh_time"
                         android:textSize="18sp"/>
 
@@ -132,12 +136,12 @@
                             android:id="@+id/showRadar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:checked="true"
                             android:text="@string/show_radar"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:textSize="18sp"/>
+                            android:textSize="18sp" />
 
                         <RadioButton
                             android:id="@+id/showForecast"

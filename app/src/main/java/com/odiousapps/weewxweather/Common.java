@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -21,6 +22,7 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+import android.os.Build;
 import android.text.Html;
 import android.util.Base64;
 import android.util.Log;
@@ -150,6 +152,7 @@ class Common
 		return new long[]{period, 45000};
 	}
 
+	@SuppressLint("UnspecifiedImmutableFlag")
 	void setAlarm(String from)
 	{
 		long[] ret = getPeriod();
@@ -169,11 +172,14 @@ class Common
 
 		AlarmManager mgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
 		Intent myIntent = new Intent(context, UpdateCheck.class);
-		@SuppressLint("UnspecifiedImmutableFlag")
-		PendingIntent pi = PendingIntent.getBroadcast(context, 0, myIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+		PendingIntent pendingIntent;
+		if(Build.VERSION.SDK_INT >= 23)
+			pendingIntent = PendingIntent.getActivity(context, 0, myIntent, PendingIntent.FLAG_IMMUTABLE);
+		else
+			pendingIntent = PendingIntent.getActivity(context, 0, myIntent, 0);
 
 		if (mgr != null)
-			mgr.setExact(AlarmManager.RTC_WAKEUP, start, pi);
+			mgr.setExact(AlarmManager.RTC_WAKEUP, start, pendingIntent);
 	}
 
 	String getAppversion()
@@ -293,8 +299,10 @@ class Common
 		return val.equals("1");
 	}
 
-	RemoteViews buildUpdate(Context context)
+	RemoteViews buildUpdate(Context context, int dark_theme)
 	{
+		int bgColour, fgColour;
+
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
 		Bitmap myBitmap = Bitmap.createBitmap(600, 440, Bitmap.Config.ARGB_4444);
 		Canvas myCanvas = new Canvas(myBitmap);
@@ -302,7 +310,10 @@ class Common
 		paint.setAntiAlias(true);
 		paint.setSubpixelText(true);
 
-		int bgColour = GetIntPref("bgColour", 0xFFFFFFFF);
+		if(dark_theme == 0)
+			bgColour = GetIntPref("bgColour", 0xFFFFFFFF);
+		else
+			bgColour = GetIntPref("bgColour", 0xFF000000);
 		paint.setStyle(Paint.Style.FILL);
 		paint.setColor(bgColour);
 
@@ -310,7 +321,15 @@ class Common
 		int cornersRadius = 25;
 		myCanvas.drawRoundRect(rectF, cornersRadius, cornersRadius, paint);
 
-		int fgColour = GetIntPref("fgColour", 0xFF000000);
+		if(dark_theme == 0)
+			fgColour = GetIntPref("fgColour", 0xFF000000);
+		else
+			fgColour = GetIntPref("fgColour", 0xFFFFFFFF);
+
+		if(bgColour == 0xFF000000 && fgColour == 0xFF000000)
+			fgColour = 0xFFFFFFFF;
+		else if(bgColour == 0xFFFFFFFF && fgColour == 0xFFFFFFFF)
+			fgColour = 0xFF000000;
 
 		paint.setStyle(Paint.Style.FILL);
 		paint.setColor(fgColour);
@@ -345,65 +364,6 @@ class Common
 
 		views.setImageViewBitmap(R.id.widget, myBitmap);
 		return views;
-	}
-
-	String[] processDarkSky(String data)
-	{
-		return processDarkSky(data, false);
-	}
-
-	String[] processDarkSky(String data, boolean showHeader)
-	{
-		if (data == null || data.equals(""))
-			return null;
-
-		boolean metric = GetBoolPref("metric", true);
-		String desc;
-
-		long timestamp = GetLongPref("rssCheck", 0) * 1000;
-		List<Day> days = new ArrayList<>();
-
-		try
-		{
-			JSONObject jobj = new JSONObject(data);
-			desc = jobj.getString("latitude") + ", " + jobj.getString("longitude");
-			JSONObject daily = jobj.getJSONObject("daily");
-			JSONArray jarr = daily.getJSONArray("data");
-			for(int i = 0; i < jarr.length(); i++)
-			{
-				Day d = new Day();
-				JSONObject day = jarr.getJSONObject(i);
-				String icon = day.getString("icon");
-				SimpleDateFormat sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
-				d.timestamp = day.getLong("time") * 1000;
-				d.day = sdf.format(d.timestamp);
-
-				String max = Integer.toString(round(day.getInt("temperatureHigh")));
-				String min = Integer.toString(round(day.getInt("temperatureLow")));
-
-				if(metric)
-				{
-					max += "&deg;C";
-					min += "&deg;C";
-				} else {
-					max += "&deg;F";
-					min += "&deg;F";
-				}
-
-				d.icon = "wi wi-forecast-io-" + icon;
-				d.text = day.getString("summary");
-				d.max = max;
-				d.min = min;
-				days.add(d);
-			}
-
-			return new String[]{generateForecast(days, timestamp, showHeader), desc};
-		} catch (Exception e)
-		{
-			e.printStackTrace();
-		}
-
-		return null;
 	}
 
 	private String generateForecast(List<Day> days, long timestamp, boolean showHeader)
@@ -3573,5 +3533,23 @@ class Common
 		});
 
 		t.start();
+	}
+
+	int getSystemTheme()
+	{
+		switch (context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK)
+		{
+			case Configuration.UI_MODE_NIGHT_NO:
+				Common.LogMessage("Night mode off");
+				return 0;
+			case Configuration.UI_MODE_NIGHT_YES:
+				Common.LogMessage("Night mode on");
+				return 1;
+			case Configuration.UI_MODE_NIGHT_UNDEFINED:
+				Common.LogMessage("Night mode not set, default to off");
+				return 0;
+		}
+
+		return 0;
 	}
 }

@@ -10,7 +10,6 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -33,48 +32,33 @@ class Custom
     @SuppressLint("SetJavaScriptEnabled")
     View myCustom(LayoutInflater inflater, ViewGroup container)
     {
-        View rootView = inflater.inflate(R.layout.fragment_custom, container, false);
-        wv = rootView.findViewById(R.id.custom);
-        wv.getSettings().setUserAgentString(Common.UA);
-	    wv.getSettings().setJavaScriptEnabled(true);
-	    wv.setOnLongClickListener(new View.OnLongClickListener()
-        {
-            @Override
-            public boolean onLongClick(View v)
-            {
-                Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-                if(vibrator != null)
-                    vibrator.vibrate(250);
-                Common.LogMessage("long press");
-                reloadWebView();
-                return true;
-            }
-        });
+		View rootView = inflater.inflate(R.layout.fragment_custom, container, false);
+		wv = rootView.findViewById(R.id.custom);
+		wv.getSettings().setUserAgentString(Common.UA);
+		wv.getSettings().setJavaScriptEnabled(true);
+		wv.setOnLongClickListener(v ->
+		{
+			Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
+			if(vibrator != null)
+			vibrator.vibrate(250);
+			Common.LogMessage("long press");
+			reloadWebView();
+			return true;
+		});
 
 	    WebSettings settings = wv.getSettings();
 	    settings.setDomStorageEnabled(true);
 
 	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-	    swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener()
+	    swipeLayout.setOnRefreshListener(() ->
 	    {
-		    @Override
-		    public void onRefresh()
-		    {
-			    swipeLayout.setRefreshing(true);
-			    Common.LogMessage("onRefresh();");
-			    reloadWebView();
-			    swipeLayout.setRefreshing(false);
-		    }
+		    swipeLayout.setRefreshing(true);
+		    Common.LogMessage("onRefresh();");
+		    reloadWebView();
+		    swipeLayout.setRefreshing(false);
 	    });
 
-	    wv.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener()
-	    {
-		    @Override
-		    public void onScrollChanged()
-		    {
-			    swipeLayout.setEnabled(wv.getScrollY() == 0);
-		    }
-	    });
+	    wv.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv.getScrollY() == 0));
 
         wv.setWebViewClient(new WebViewClient()
         {
@@ -85,28 +69,24 @@ class Custom
             }
         });
 
-        wv.setOnKeyListener(new View.OnKeyListener()
+        wv.setOnKeyListener((v, keyCode, event) ->
         {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event)
+            if(event.getAction() == KeyEvent.ACTION_DOWN)
             {
-                if(event.getAction() == android.view.KeyEvent.ACTION_DOWN)
+                if((keyCode == KeyEvent.KEYCODE_BACK))
                 {
-                    if((keyCode == android.view.KeyEvent.KEYCODE_BACK))
+                    if(wv != null)
                     {
-                        if(wv != null)
+                        if(wv.canGoBack())
                         {
-                            if(wv.canGoBack())
-                            {
-                                wv.goBack();
-                                return true;
-                            }
+                            wv.goBack();
+                            return true;
                         }
                     }
                 }
-
-                return false;
             }
+
+            return false;
         });
 
         wv.setWebChromeClient(new WebChromeClient()
@@ -114,8 +94,8 @@ class Custom
 		    @Override
 		    public boolean onConsoleMessage(ConsoleMessage cm)
 		    {
-		    	Common.LogMessage("My Application: " + cm.message());
-			    return super.onConsoleMessage(cm);
+				Common.LogMessage("My Application: " + cm.message());
+				return super.onConsoleMessage(cm);
 		    }
 	    });
 
