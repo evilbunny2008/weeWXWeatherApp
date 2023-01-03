@@ -197,10 +197,10 @@ class Weather
     @SuppressLint("SetJavaScriptEnabled")
     View myWeather(LayoutInflater inflater, ViewGroup container)
     {
-    	if(inflater == null || container == null)
-    		return null;
+		if(inflater == null || container == null)
+			return null;
 
-        rootView = inflater.inflate(R.layout.fragment_weather, container, false);
+		rootView = inflater.inflate(R.layout.fragment_weather, container, false);
         rootView.setOnLongClickListener(new View.OnLongClickListener()
         {
             @Override

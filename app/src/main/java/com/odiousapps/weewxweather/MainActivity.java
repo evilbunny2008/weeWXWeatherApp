@@ -32,9 +32,9 @@ import android.widget.RemoteViews;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.github.evilbunny2008.androidmaterialcolorpickerdialog.ColorPicker;
+import com.github.evilbunny2008.androidmaterialcolorpickerdialog.ColorPickerCallback;
 import com.google.android.material.tabs.TabLayout;
-import com.pes.androidmaterialcolorpickerdialog.ColorPicker;
-import com.pes.androidmaterialcolorpickerdialog.ColorPickerCallback;
 
 import org.json.JSONObject;
 
@@ -48,10 +48,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import androidx.fragment.app.Fragment;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 {
@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private ProgressDialog dialog;
 
 	private static int pos;
-	private static String[] paths;
 
 	@SuppressLint("WrongConstant")
 	@Override
@@ -116,31 +115,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	    tv = findViewById(R.id.aboutText);
 
-	    Thread t = new Thread(new Runnable()
+	    Thread t = new Thread(() ->
 	    {
-		    @Override
-		    public void run()
+		    try
 		    {
-			    try
-			    {
-				    // Sleep needed to stop frames dropping while loading
-				    Thread.sleep(500);
-			    } catch (Exception e) {
-				    e.printStackTrace();
-			    }
-
-			    Handler mHandler = new Handler(Looper.getMainLooper());
-			    mHandler.post(new Runnable()
-			    {
-				    @Override
-				    public void run()
-				    {
-					    doSettings();
-				    }
-			    });
-
-			    common.setAlarm("MainActivity");
+			    // Sleep needed to stop frames dropping while loading
+			    Thread.sleep(500);
+		    } catch (Exception e) {
+			    e.printStackTrace();
 		    }
+
+		    Handler mHandler = new Handler(Looper.getMainLooper());
+		    mHandler.post(() -> doSettings());
+
+		    common.setAlarm("MainActivity");
 	    });
 
 	    t.start();
@@ -158,15 +146,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     private void doSettings()
     {
-    	paths = new String[]
-	    {
-            getString(R.string.manual_update),
-		    getString(R.string.every_5_minutes),
-		    getString(R.string.every_10_minutes),
-		    getString(R.string.every_15_minutes),
-		    getString(R.string.every_30_minutes),
-		    getString(R.string.every_hour),
-	    };
+	    String[] paths = new String[]
+			    {
+					    getString(R.string.manual_update),
+					    getString(R.string.every_5_minutes),
+					    getString(R.string.every_10_minutes),
+					    getString(R.string.every_15_minutes),
+					    getString(R.string.every_30_minutes),
+					    getString(R.string.every_hour),
+			    };
 	    ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
 	    adapter.setDropDownViewResource(R.layout.spinner_layout);
 	    s1.setAdapter(adapter);
@@ -193,63 +181,51 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 	    tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
-	    b1.setOnClickListener(new View.OnClickListener()
+	    b1.setOnClickListener(arg0 ->
 	    {
-		    public void onClick(View arg0)
+		    b1.setEnabled(false);
+		    b2.setEnabled(false);
+		    InputMethodManager mgr = (InputMethodManager)common.context.getSystemService(Context.INPUT_METHOD_SERVICE);
+		    if(mgr != null)
 		    {
-			    b1.setEnabled(false);
-			    b2.setEnabled(false);
-			    InputMethodManager mgr = (InputMethodManager)common.context.getSystemService(Context.INPUT_METHOD_SERVICE);
-			    if(mgr != null)
-			    {
-				    mgr.hideSoftInputFromWindow(settingsURL.getWindowToken(), 0);
-				    mgr.hideSoftInputFromWindow(customURL.getWindowToken(), 0);
-			    }
-
-			    Common.LogMessage("show dialog");
-			    dialog = ProgressDialog.show(common.context, "Testing submitted URLs", "Please wait while we verify the URL you submitted.", false);
-			    dialog.show();
-
-			    processSettings();
+			    mgr.hideSoftInputFromWindow(settingsURL.getWindowToken(), 0);
+			    mgr.hideSoftInputFromWindow(customURL.getWindowToken(), 0);
 		    }
+
+		    Common.LogMessage("show dialog");
+		    dialog = ProgressDialog.show(common.context, "Testing submitted URLs", "Please wait while we verify the URL you submitted.", false);
+		    dialog.show();
+
+		    processSettings();
 	    });
 
-	    b2.setOnClickListener(new View.OnClickListener()
+	    b2.setOnClickListener(arg0 -> checkReally());
+
+	    b3.setOnClickListener(arg0 ->
 	    {
-		    public void onClick(View arg0)
+		    if(showSettings)
 		    {
-			    checkReally();
+			    showSettings = false;
+			    b1.setVisibility(View.INVISIBLE);
+			    b2.setVisibility(View.INVISIBLE);
+			    b3.setText(R.string.settings2);
+
+			    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
+			    settingsLayout.setVisibility(View.GONE);
+			    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
+			    aboutLayout.setVisibility(View.VISIBLE);
+		    } else {
+			    showSettings = true;
+			    b1.setVisibility(View.VISIBLE);
+			    b2.setVisibility(View.VISIBLE);
+			    b3.setText(R.string.about2);
+
+			    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
+			    aboutLayout.setVisibility(View.GONE);
+			    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
+			    settingsLayout.setVisibility(View.VISIBLE);
 		    }
-	    });
 
-	    b3.setOnClickListener(new View.OnClickListener()
-	    {
-		    public void onClick(View arg0)
-		    {
-			    if(showSettings)
-			    {
-				    showSettings = false;
-				    b1.setVisibility(View.INVISIBLE);
-				    b2.setVisibility(View.INVISIBLE);
-				    b3.setText(R.string.settings2);
-
-				    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
-				    settingsLayout.setVisibility(View.GONE);
-				    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
-				    aboutLayout.setVisibility(View.VISIBLE);
-			    } else {
-				    showSettings = true;
-				    b1.setVisibility(View.VISIBLE);
-				    b2.setVisibility(View.VISIBLE);
-				    b3.setText(R.string.about2);
-
-				    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
-				    aboutLayout.setVisibility(View.GONE);
-				    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
-				    settingsLayout.setVisibility(View.VISIBLE);
-			    }
-
-		    }
 	    });
 
 	    settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));

@@ -238,7 +238,7 @@ class Common
 			return defval;
 		} catch (Exception e)
 		{
-			LogMessage("GetStringPref(" + name + ", " + defval + ") Err: " + e.toString());
+			LogMessage("GetStringPref(" + name + ", " + defval + ") Err: " + e);
 			e.printStackTrace();
 			return defval;
 		}
