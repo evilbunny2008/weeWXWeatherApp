@@ -4,10 +4,10 @@ android {
     compileSdkVersion 33
     defaultConfig {
         applicationId "com.odiousapps.weewxweather"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 33
-        versionCode 1000003
-        versionName "1.0.3"
+        versionCode 1000004
+        versionName "1.0.4"
     }
     buildTypes {
         release {

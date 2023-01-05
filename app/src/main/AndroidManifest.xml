@@ -60,5 +60,6 @@
             </intent-filter>
         </receiver>
         <receiver android:name=".UpdateCheck" />
+        <receiver android:name="com.odiousapps.weewxweather.Common$AlarmRestart" />
     </application>
 </manifest>

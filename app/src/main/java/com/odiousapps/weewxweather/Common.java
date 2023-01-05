@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -22,7 +21,6 @@ import android.media.MediaScannerConnection;
 import android.net.Uri;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
-import android.os.Build;
 import android.text.Html;
 import android.util.Base64;
 import android.util.Log;
@@ -152,7 +150,6 @@ class Common
 		return new long[]{period, 45000};
 	}
 
-	@SuppressLint("UnspecifiedImmutableFlag")
 	void setAlarm(String from)
 	{
 		long[] ret = getPeriod();
@@ -170,16 +167,10 @@ class Common
 		LogMessage(from + " - period == " + period, true);
 		LogMessage(from + " - wait == " + wait, true);
 
-		AlarmManager mgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-		Intent myIntent = new Intent(context, UpdateCheck.class);
-		PendingIntent pendingIntent;
-		if(Build.VERSION.SDK_INT >= 23)
-			pendingIntent = PendingIntent.getActivity(context, 0, myIntent, PendingIntent.FLAG_IMMUTABLE);
-		else
-			pendingIntent = PendingIntent.getActivity(context, 0, myIntent, 0);
-
-		if (mgr != null)
-			mgr.setExact(AlarmManager.RTC_WAKEUP, start, pendingIntent);
+		Intent myAlarm = new Intent(context.getApplicationContext(), UpdateCheck.class);
+		PendingIntent recurringAlarm = PendingIntent.getBroadcast(context.getApplicationContext(), 0, myAlarm, PendingIntent.FLAG_IMMUTABLE);
+		AlarmManager alarms = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+		alarms.setExact(AlarmManager.RTC_WAKEUP, start, recurringAlarm);
 	}
 
 	String getAppversion()
