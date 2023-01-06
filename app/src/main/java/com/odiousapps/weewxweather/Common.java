@@ -250,6 +250,7 @@ class Common
 		SetStringPref(name, "" + value);
 	}
 
+	@SuppressWarnings({"SameParameterValue"})
 	long GetLongPref(String name, long defval)
 	{
 		String val = GetStringPref(name, "" + defval);
@@ -280,6 +281,7 @@ class Common
 		SetStringPref(name, val);
 	}
 
+	@SuppressWarnings({"SameParameterValue"})
 	boolean GetBoolPref(String name, boolean defval)
 	{
 		String value = "0";
@@ -2857,8 +2859,8 @@ class Common
 			return f.getAbsolutePath();
 
 		// Icon is missing we should probably ask to send information as feedback
-//		if(icon != null)
-//			downloadImage(fileName, icon);
+		if(icon != null)
+			downloadImage(fileName, icon);
 
 		return icon;
 	}
@@ -3266,7 +3268,7 @@ class Common
 
 		try (Response response = client.newCall(request).execute()) {
 			assert response.body() != null;
-			String rb = response.body().string().trim();
+			String rb = Objects.requireNonNull(response.body()).string().trim();
 			LogMessage(rb);
 			return rb;
 		}

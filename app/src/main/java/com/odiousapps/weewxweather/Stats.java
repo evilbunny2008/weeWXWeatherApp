@@ -64,17 +64,17 @@ class Stats
 		    swipeLayout.setRefreshing(false);
 	    });
 
-        wv = rootView.findViewById(R.id.webView1);
-	    wv.getSettings().setUserAgentString(Common.UA);
-	    wv.setOnLongClickListener(v ->
-	    {
-	        Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-	        if(vibrator != null)
-	            vibrator.vibrate(250);
-	        Common.LogMessage("webview long press");
-	        forceRefresh();
-	        return true;
-	    });
+		wv = rootView.findViewById(R.id.webView1);
+		wv.getSettings().setUserAgentString(Common.UA);
+		wv.setOnLongClickListener(v ->
+		{
+			Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
+			if(vibrator != null)
+				vibrator.vibrate(250);
+			Common.LogMessage("webview long press");
+			forceRefresh();
+			return true;
+		});
 
 	    wv.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv.getScrollY() == 0));
 
@@ -571,14 +571,10 @@ class Stats
 
 		    sb.append(footer);
 
-		    mHandler.post(new Runnable()
+		    mHandler.post(() ->
 		    {
-			    @Override
-			    public void run()
-			    {
-				    wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
-				    swipeLayout.setRefreshing(false);
-			    }
+			    wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
+			    swipeLayout.setRefreshing(false);
 		    });
 	    });
 

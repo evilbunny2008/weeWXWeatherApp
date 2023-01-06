@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Message;
 import android.os.Vibrator;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -106,11 +105,11 @@ class Weather
 	        header = "<html><head>" + Common.ssheader + "</head><body>";
 	    else
 		    header = "<html><head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head><body>";
-	    sb.append(header);
+		sb.append(header);
 
 		Common.LogMessage("header == " + header);
 
-	    String footer = "</body></html>";
+		String footer = "</body></html>";
 
 	    sb.append("<table style='width:100%;border:0px;'>");
 
@@ -848,7 +847,12 @@ class Weather
 						common.SetLongPref("rssCheck", curtime);
 						common.SetStringPref("forecastData", tmp);
 
-						handlerDone.sendEmptyMessage(0);
+						Handler mHandler1 = new Handler(Looper.getMainLooper());
+						mHandler1.post(() ->
+						{
+							swipeLayout.setRefreshing(false);
+							common.SendRefresh();
+						});
 					}
 			    }
 		    } catch (Exception e) {
@@ -892,7 +896,14 @@ class Weather
 	            Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
 	            File f2 = new File(common.context.getFilesDir(), "/radar.gif");
 	            if(f.renameTo(f2))
-	                handlerDone.sendEmptyMessage(0);
+	            {
+		            Handler mHandler1 = new Handler(Looper.getMainLooper());
+		            mHandler1.post(() ->
+		            {
+			            swipeLayout.setRefreshing(false);
+			            common.SendRefresh();
+		            });
+	            }
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
@@ -900,17 +911,6 @@ class Weather
 
 	    t.start();
 	}
-
-	@SuppressLint("HandlerLeak")
-	private final Handler handlerDone = new Handler()
-	{
-	    @Override
-	    public void handleMessage(Message msg)
-	    {
-	        swipeLayout.setRefreshing(false);
-	        common.SendRefresh();
-	    }
-	};
 
 	void doResume()
 	{

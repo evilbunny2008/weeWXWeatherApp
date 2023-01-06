@@ -40,7 +40,7 @@ class Custom
 		{
 			Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
 			if(vibrator != null)
-			vibrator.vibrate(250);
+				vibrator.vibrate(250);
 			Common.LogMessage("long press");
 			reloadWebView();
 			return true;

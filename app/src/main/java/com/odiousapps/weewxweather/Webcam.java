@@ -9,7 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
 import android.os.Handler;
-import android.os.Message;
+import android.os.Looper;
 import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,12 +42,12 @@ class Webcam
 		    dark_theme = common.getSystemTheme();
 	}
 
-    View myWebcam(LayoutInflater inflater, ViewGroup container)
-    {
-        View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
-        iv = rootView.findViewById(R.id.webcam);
+	View myWebcam(LayoutInflater inflater, ViewGroup container)
+	{
+		View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
+		iv = rootView.findViewById(R.id.webcam);
 
-	    if(dark_theme == 1)
+		if(dark_theme == 1)
 		    iv.setBackgroundColor(0xff000000);
 
 	    iv.setOnLongClickListener(v ->
@@ -125,7 +125,13 @@ class Webcam
 				    Common.LogMessage("Skipped downloading");
 		    }
 
-		    handlerDone.sendEmptyMessage(0);
+		    Handler mHandler1 = new Handler(Looper.getMainLooper());
+		    mHandler1.post(() ->
+		    {
+			    iv.setImageBitmap(bm);
+			    iv.invalidate();
+			    swipeLayout.setRefreshing(false);
+		    });
 	    });
 
         t.start();
@@ -193,18 +199,6 @@ class Webcam
     		return false;
 	    }
     }
-
-    @SuppressLint("HandlerLeak")
-    private final Handler handlerDone = new Handler()
-    {
-        @Override
-        public void handleMessage(Message msg)
-        {
-            iv.setImageBitmap(bm);
-            iv.invalidate();
-	        swipeLayout.setRefreshing(false);
-        }
-    };
 
 	void doResume()
 	{

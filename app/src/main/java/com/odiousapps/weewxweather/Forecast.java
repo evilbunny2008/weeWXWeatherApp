@@ -9,7 +9,6 @@ import android.content.res.Resources;
 import android.graphics.ColorMatrixColorFilter;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Message;
 import android.os.Vibrator;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -26,7 +25,6 @@ import android.widget.TextView;
 import java.io.File;
 import java.io.FileInputStream;
 
-import androidx.annotation.NonNull;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 class Forecast
@@ -163,10 +161,10 @@ class Forecast
 		    reloadWebView(false);
 
 	    long curtime = Math.round(System.currentTimeMillis() / 1000.0);
-	    if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < curtime)
-		    getForecast(false);
+		if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < curtime)
+			getForecast(false);
 
-        return rootView;
+		return rootView;
     }
 
 	private void loadWebView()
@@ -288,7 +286,14 @@ class Forecast
 				Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
 				File f2 = new File(common.context.getFilesDir(), "/radar.gif");
 				if(f.renameTo(f2))
-					handlerDone.sendEmptyMessage(0);
+				{
+					Handler mHandler = new Handler(Looper.getMainLooper());
+					mHandler.post(() ->
+					{
+						common.SendRefresh();
+						swipeLayout.setRefreshing(false);
+					});
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -399,7 +404,12 @@ class Forecast
 	    if(!common.checkConnection() && !force)
 	    {
 		    Common.LogMessage("Not on wifi and not a forced refresh");
-		    handlerDone.sendEmptyMessage(0);
+		    Handler mHandler = new Handler(Looper.getMainLooper());
+		    mHandler.post(() ->
+		    {
+			    common.SendRefresh();
+			    swipeLayout.setRefreshing(false);
+		    });
 		    return;
 	    }
 
@@ -410,6 +420,8 @@ class Forecast
 
 	    Thread t = new Thread(() ->
 	    {
+		    Handler mHandler = new Handler(Looper.getMainLooper());
+
 	        try
 	        {
 	            long curtime = Math.round(System.currentTimeMillis() / 1000.0);
@@ -423,7 +435,11 @@ class Forecast
 		            Common.LogMessage("updating rss cache");
 		            common.SetLongPref("rssCheck", curtime);
 		            common.SetStringPref("forecastData", tmp);
-		            handlerDone.sendEmptyMessage(0);
+		            mHandler.post(() ->
+		            {
+			            common.SendRefresh();
+			            swipeLayout.setRefreshing(false);
+		            });
 	            }
 	        } catch (Exception e) {
 	            e.printStackTrace();
@@ -432,17 +448,6 @@ class Forecast
 
         t.start();
     }
-
-    @SuppressLint("HandlerLeak")
-    private final Handler handlerDone = new Handler()
-    {
-        @Override
-        public void handleMessage(@NonNull Message msg)
-        {
-	        common.SendRefresh();
-	        swipeLayout.setRefreshing(false);
-        }
-    };
 
     private void generateForecast()
     {
