@@ -6,7 +6,6 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.widget.RemoteViews;
 
 public class WidgetProvider extends AppWidgetProvider
@@ -53,11 +52,7 @@ public class WidgetProvider extends AppWidgetProvider
 
             Intent launchActivity = new Intent(context, SplashScreen.class);
 
-	        PendingIntent pendingIntent;
-	        if(Build.VERSION.SDK_INT >= 23)
-		        pendingIntent = PendingIntent.getActivity(context, 0, launchActivity, PendingIntent.FLAG_IMMUTABLE);
-			else
-		        pendingIntent = PendingIntent.getActivity(context, 0, launchActivity, 0);
+	        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchActivity, PendingIntent.FLAG_IMMUTABLE);
             remoteViews.setOnClickPendingIntent(R.id.widget, pendingIntent);
             appWidgetManager.updateAppWidget(widgetId, remoteViews);
         }

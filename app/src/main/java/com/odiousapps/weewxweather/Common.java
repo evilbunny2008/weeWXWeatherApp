@@ -70,7 +70,7 @@ class Common
 	private String appversion = "0.0.0";
 	Context context;
 
-	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36";
+	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36";
 
 	static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
 	static String REFRESH_INTENT = "com.odiousapps.weewxweather.REFRESH_INTENT";
@@ -81,7 +81,7 @@ class Common
 
 	private static final long inigo_version = 4000;
 	static final long icon_version = 12;
-	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/0.9.8/icons.zip";
+	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/1.0.3/icons.zip";
 
 	private Thread t = null;
 	private JSONObject nws = null;
@@ -3357,7 +3357,7 @@ class Common
 
 		try (Response response = client.newCall(request).execute()) {
 			assert response.body() != null;
-			outputStream.write(response.body().bytes());
+			outputStream.write(Objects.requireNonNull(response.body()).bytes());
 			outputStream.flush();
 			outputStream.close();
 			publish(f);
@@ -3419,7 +3419,13 @@ class Common
 		while(ze != null)
 		{
 			String fileName = ze.getName();
-			File newFile = new File(destDir + File.separator + fileName);
+			File newFile = new File(destDir, fileName);
+			String canonicalPath = newFile.getCanonicalPath();
+			if (!canonicalPath.startsWith(destDir.toString()))
+			{
+				LogMessage("File '" + canonicalPath + "' is a security problem, skipping.");
+				continue;
+			}
 			LogMessage("Unzipping to " + newFile.getAbsolutePath());
 			File dir = new File(Objects.requireNonNull(newFile.getParent()));
 			if(!dir.exists() && !dir.mkdirs())

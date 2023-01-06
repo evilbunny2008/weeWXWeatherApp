@@ -8,13 +8,11 @@ import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Message;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.Gravity;
@@ -433,12 +431,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					if (!common.downloadIcons())
 					{
 						common.SetStringPref("lastError", "Icons failed to download fully, you will need to retry.");
-						handlerForecastIcons.sendEmptyMessage(1);
+						runOnUiThread(() -> {
+							b1.setEnabled(true);
+							b2.setEnabled(true);
+							dialog.dismiss();
+							new AlertDialog.Builder(common.context)
+									.setTitle("Wasn't able to detect forecast icons.")
+									.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+									.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+									{
+									}).show();
+						});
 						return;
 					}
 				} catch (Exception e) {
 					common.SetStringPref("lastError", e.toString());
-					handlerForecastIcons.sendEmptyMessage(1);
+					runOnUiThread(() -> {
+						b1.setEnabled(true);
+						b2.setEnabled(true);
+						dialog.dismiss();
+						new AlertDialog.Builder(common.context)
+								.setTitle("Wasn't able to detect forecast icons.")
+								.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+								.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+								{
+								}).show();
+					});
 					return;
 				}
 
@@ -448,7 +466,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			if (settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt") || settingsURL.getText().toString().equals(""))
 			{
 				common.SetStringPref("lastError", "URL was set to the default or was empty");
-				handlerSettings.sendEmptyMessage(0);
+				runOnUiThread(() -> {
+					b1.setEnabled(true);
+					b2.setEnabled(true);
+					dialog.dismiss();
+					new AlertDialog.Builder(common.context)
+							.setTitle("Wasn't able to connect or download the settings from your server")
+							.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+							.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+							{
+							}).show();
+				});
 				return;
 			}
 
@@ -489,7 +517,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			if (!validURL)
 			{
-				handlerSettings.sendEmptyMessage(0);
+				runOnUiThread(() -> {
+					b1.setEnabled(true);
+					b2.setEnabled(true);
+					dialog.dismiss();
+					new AlertDialog.Builder(common.context)
+							.setTitle("Wasn't able to connect or download the settings from your server")
+							.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+							.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+							{
+							}).show();
+				});
 				return;
 			}
 
@@ -498,7 +536,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			if (data.equals(""))
 			{
 				common.SetStringPref("lastError", "Data url was blank");
-				handlerDATA.sendEmptyMessage(0);
+				runOnUiThread(() -> {
+					b1.setEnabled(true);
+					b2.setEnabled(true);
+					dialog.dismiss();
+					new AlertDialog.Builder(common.context)
+							.setTitle("Wasn't able to connect or download data.txt from your server")
+							.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+							.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+							{
+							}).show();
+				});
 				return;
 			}
 
@@ -517,7 +565,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			if (!validURL1)
 			{
-				handlerDATA.sendEmptyMessage(0);
+				runOnUiThread(() -> {
+					b1.setEnabled(true);
+					b2.setEnabled(true);
+					dialog.dismiss();
+					new AlertDialog.Builder(common.context)
+							.setTitle("Wasn't able to connect or download data.txt from your server")
+							.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+							.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+							{
+							}).show();
+				});
 				return;
 			}
 
@@ -540,7 +598,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				if (!validURL2)
 				{
-					handlerRADAR.sendEmptyMessage(0);
+					runOnUiThread(() -> {
+						b1.setEnabled(true);
+						b2.setEnabled(true);
+						dialog.dismiss();
+						new AlertDialog.Builder(common.context)
+								.setTitle("Wasn't able to connect or download radar= image from the internet")
+								.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+								.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+								{
+								}).show();
+					});
 					return;
 				}
 			}
@@ -557,7 +625,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							if(!forecast.startsWith("http"))
 							{
 								common.SetStringPref("lastError", "Yahoo API recently changed, you need to update your settings.");
-								handlerForecast.sendEmptyMessage(0);
+								runOnUiThread(() -> {
+									b1.setEnabled(true);
+									b2.setEnabled(true);
+									dialog.dismiss();
+									new AlertDialog.Builder(common.context)
+											.setTitle("Wasn't able to connect or download the forecast.")
+											.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+											.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+											{
+											}).show();
+								});
 								return;
 							}
 							break;
@@ -576,7 +654,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							break;
 						case "bom.gov.au":
 							common.SetStringPref("lastError", "forecast type " + fctype + " is no longer supported due to ftp support being dropped in Android. Use bom2 forecasts instead, check the wiki for details.");
-							handlerForecast.sendEmptyMessage(0);
+							runOnUiThread(() -> {
+								b1.setEnabled(true);
+								b2.setEnabled(true);
+								dialog.dismiss();
+								new AlertDialog.Builder(common.context)
+										.setTitle("Wasn't able to connect or download the forecast.")
+										.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+										.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+										{
+										}).show();
+							});
 							return;
 						case "wmo.int":
 							if(!forecast.startsWith("http"))
@@ -683,7 +771,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							break;
 						default:
 							common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
-							handlerForecast.sendEmptyMessage(0);
+							runOnUiThread(() -> {
+								b1.setEnabled(true);
+								b2.setEnabled(true);
+								dialog.dismiss();
+								new AlertDialog.Builder(common.context)
+										.setTitle("Wasn't able to connect or download the forecast.")
+										.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+										.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+										{
+										}).show();
+							});
 							return;
 					}
 				} catch (Exception e) {
@@ -697,7 +795,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !common.checkForImages() && !use_icons.isChecked())
 			{
 				common.SetStringPref("lastError", "Forecast type '" + fctype + "' needs to have icons available, Please switch to using icons and try again.");
-				handlerForecastIcons.sendEmptyMessage(0);
+				runOnUiThread(() -> {
+					b1.setEnabled(true);
+					b2.setEnabled(true);
+					dialog.dismiss();
+					new AlertDialog.Builder(common.context)
+							.setTitle("Wasn't able to detect forecast icons.")
+							.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+							.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+							{
+							}).show();
+				});
 				return;
 			}
 
@@ -723,7 +831,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				if (!validURL3)
 				{
-					handlerForecast.sendEmptyMessage(0);
+					runOnUiThread(() -> {
+						b1.setEnabled(true);
+						b2.setEnabled(true);
+						dialog.dismiss();
+						new AlertDialog.Builder(common.context)
+								.setTitle("Wasn't able to connect or download the forecast.")
+								.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+								.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+								{
+								}).show();
+					});
 					return;
 				}
 			}
@@ -734,7 +852,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				if (!Webcam.downloadWebcam(webcam, common.context.getFilesDir()))
 				{
-					handlerWEBCAM.sendEmptyMessage(0);
+					runOnUiThread(() -> {
+						b1.setEnabled(true);
+						b2.setEnabled(true);
+						dialog.dismiss();
+						new AlertDialog.Builder(common.context)
+								.setTitle("Wasn't able to connect or download a webcam image from your server")
+								.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+								.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+								{
+								}).show();
+					});
 					return;
 				}
 			}
@@ -758,7 +886,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 					if (!validURL5)
 					{
-						handlerCUSTOM.sendEmptyMessage(0);
+						runOnUiThread(() -> {
+							b1.setEnabled(true);
+							b2.setEnabled(true);
+							dialog.dismiss();
+							new AlertDialog.Builder(common.context)
+									.setTitle("Wasn't able to connect or download from the custom URL specified")
+									.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+									.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+									{
+									}).show();
+						});
 						return;
 					}
 				}
@@ -776,7 +914,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 					if (!validURL5)
 					{
-						handlerCUSTOM_URL.sendEmptyMessage(0);
+						runOnUiThread(() -> {
+							b1.setEnabled(true);
+							b2.setEnabled(true);
+							dialog.dismiss();
+							new AlertDialog.Builder(common.context)
+									.setTitle("Wasn't able to connect or download from the custom URL specified")
+									.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+									.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+									{
+									}).show();
+						});
 						return;
 					}
 				}
@@ -807,175 +955,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			common.SetBoolPref("use_icons", use_icons.isChecked());
 
 			common.SendRefresh();
-			handlerDone.sendEmptyMessage(0);
+			runOnUiThread(() -> {
+				if(!common.GetBoolPref("radarforecast", true))
+					//noinspection ConstantConditions
+					tabLayout.getTabAt(2).setText(R.string.radar);
+				else
+					//noinspection ConstantConditions
+					tabLayout.getTabAt(2).setText(R.string.forecast2);
+
+				b1.setEnabled(true);
+				b2.setEnabled(true);
+				dialog.dismiss();
+				mDrawerLayout.closeDrawer(GravityCompat.START);
+			});
 		});
 
 		t.start();
 	}
-
-	@SuppressLint("HandlerLeak")
-	private final Handler handlerDone = new Handler()
-	{
-		@Override
-		public void handleMessage(@NonNull Message msg)
-		{
-			if(!common.GetBoolPref("radarforecast", true))
-				//noinspection ConstantConditions
-				tabLayout.getTabAt(2).setText(R.string.radar);
-			else
-				//noinspection ConstantConditions
-				tabLayout.getTabAt(2).setText(R.string.forecast2);
-
-			b1.setEnabled(true);
-			b2.setEnabled(true);
-			dialog.dismiss();
-			mDrawerLayout.closeDrawer(GravityCompat.START);
-		}
-	};
-
-	@SuppressLint("HandlerLeak")
-	private final Handler handlerSettings = new Handler()
-	{
-		@Override
-		public void handleMessage(@NonNull Message msg)
-		{
-			b1.setEnabled(true);
-			b2.setEnabled(true);
-			dialog.dismiss();
-			new AlertDialog.Builder(common.context)
-					.setTitle("Wasn't able to connect or download the settings from your server")
-					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
-					{
-					}).show();
-		}
-	};
-
-	@SuppressLint("HandlerLeak")
-	private final Handler handlerDATA = new Handler()
-	{
-		@Override
-		public void handleMessage(@NonNull Message msg)
-		{
-			b1.setEnabled(true);
-			b2.setEnabled(true);
-			dialog.dismiss();
-			new AlertDialog.Builder(common.context)
-					.setTitle("Wasn't able to connect or download data.txt from your server")
-					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
-					{
-					}).show();
-		}
-	};
-
-	@SuppressLint("HandlerLeak")
-	private final Handler handlerRADAR = new Handler()
-	{
-		@Override
-		public void handleMessage(@NonNull Message msg)
-		{
-			b1.setEnabled(true);
-			b2.setEnabled(true);
-			dialog.dismiss();
-			new AlertDialog.Builder(common.context)
-					.setTitle("Wasn't able to connect or download radar= image from the internet")
-					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
-					{
-					}).show();
-		}
-	};
-
-	@SuppressLint("HandlerLeak")
-	private final Handler handlerForecast = new Handler()
-	{
-		@Override
-		public void handleMessage(@NonNull Message msg)
-		{
-			b1.setEnabled(true);
-			b2.setEnabled(true);
-			dialog.dismiss();
-			new AlertDialog.Builder(common.context)
-					.setTitle("Wasn't able to connect or download the forecast.")
-					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
-					{
-					}).show();
-		}
-	};
-
-	@SuppressLint("HandlerLeak")
-	private final Handler handlerForecastIcons = new Handler()
-	{
-		@Override
-		public void handleMessage(@NonNull Message msg)
-		{
-			b1.setEnabled(true);
-			b2.setEnabled(true);
-			dialog.dismiss();
-			new AlertDialog.Builder(common.context)
-					.setTitle("Wasn't able to detect forecast icons.")
-					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
-					{
-					}).show();
-		}
-	};
-
-	@SuppressLint("HandlerLeak")
-	private final Handler handlerWEBCAM = new Handler()
-	{
-		@Override
-		public void handleMessage(@NonNull Message msg)
-		{
-			b1.setEnabled(true);
-			b2.setEnabled(true);
-			dialog.dismiss();
-			new AlertDialog.Builder(common.context)
-					.setTitle("Wasn't able to connect or download a webcam image from your server")
-					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
-					{
-					}).show();
-		}
-	};
-
-	@SuppressLint("HandlerLeak")
-	private final Handler handlerCUSTOM = new Handler()
-	{
-		@Override
-		public void handleMessage(@NonNull Message msg)
-		{
-			b1.setEnabled(true);
-			b2.setEnabled(true);
-			dialog.dismiss();
-			new AlertDialog.Builder(common.context)
-					.setTitle("Wasn't able to connect or download from the custom URL specified")
-					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
-					{
-					}).show();
-		}
-	};
-
-	@SuppressLint("HandlerLeak")
-	private final Handler handlerCUSTOM_URL = new Handler()
-	{
-		@Override
-		public void handleMessage(@NonNull Message msg)
-		{
-			b1.setEnabled(true);
-			b2.setEnabled(true);
-			dialog.dismiss();
-			new AlertDialog.Builder(common.context)
-					.setTitle("Wasn't able to connect or download from the custom URL specified")
-					.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-					.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
-					{
-					}).show();
-		}
-	};
 
 	@Override
     public void onBackPressed()
@@ -1058,12 +1054,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				            .Builder(common.context)
 				            .setTitle("An error occurred while attempting to update usage")
 				            .setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-				            .setPositiveButton("Ok", new DialogInterface.OnClickListener()
+				            .setPositiveButton("Ok", (dialog, which) ->
 				            {
-					            @Override
-					            public void onClick(DialogInterface dialog, int which)
-					            {
-					            }
 				            }).show());
 
 	            }
