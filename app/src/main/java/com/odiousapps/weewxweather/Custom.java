@@ -129,16 +129,16 @@ class Custom
 	    Common.LogMessage("custom.java -- registerReceiver");
     }
 
-    void doPause()
-    {
-        try
-        {
-	        common.context.unregisterReceiver(serviceReceiver);
-        } catch (Exception e) {
-	        e.printStackTrace();
-        }
-	    Common.LogMessage("custom.java -- unregisterReceiver");
-    }
+	void doPause()
+	{
+		try
+		{
+			common.context.unregisterReceiver(serviceReceiver);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		Common.LogMessage("custom.java -- unregisterReceiver");
+	}
 
     private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
     {

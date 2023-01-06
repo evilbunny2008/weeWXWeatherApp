@@ -68,16 +68,16 @@ class Common
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	private final static boolean debug_on = true;
 	private String appversion = "0.0.0";
-	Context context;
+	final Context context;
 
 	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36";
 
-	static String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
-	static String REFRESH_INTENT = "com.odiousapps.weewxweather.REFRESH_INTENT";
-	static String TAB0_INTENT = "com.odiousapps.weewxweather.TAB0_INTENT";
-	static String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
-	static String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
-	static String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
+	static final String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
+	static final String REFRESH_INTENT = "com.odiousapps.weewxweather.REFRESH_INTENT";
+	static final String TAB0_INTENT = "com.odiousapps.weewxweather.TAB0_INTENT";
+	static final String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
+	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
+	static final String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
 	private static final long inigo_version = 4000;
 	static final long icon_version = 12;
@@ -88,7 +88,7 @@ class Common
 
 	private final Typeface tf_bold;
 
-	static String ssheader = "<link rel='stylesheet' href='file:///android_asset/weathericons.css'>" +
+	static final String ssheader = "<link rel='stylesheet' href='file:///android_asset/weathericons.css'>" +
 								"<link rel='stylesheet' href='file:///android_asset/weathericons_wind.css'>" +
 								"<link rel='stylesheet' type='text/css' href='file:///android_asset/flaticon.css'>";
 
@@ -3149,6 +3149,7 @@ class Common
 		return downloadBinary(file, radar);
 	}
 
+	@SuppressWarnings("SameReturnValue")
 	boolean checkURL(String setting) throws Exception
 	{
 		Common.LogMessage("checking: " + setting);
@@ -3382,6 +3383,7 @@ class Common
 		}
 	}
 
+	@SuppressWarnings("SameReturnValue")
 	boolean downloadIcons() throws Exception
 	{
 		File f = new File(context.getExternalFilesDir(""), "weeWX");

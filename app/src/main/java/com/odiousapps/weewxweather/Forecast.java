@@ -692,14 +692,6 @@ class Forecast
 				    im.setImageResource(R.drawable.met);
 				    break;
 			    case "bom2":
-				    im.setImageResource(R.drawable.bom);
-				    if(dark_theme == 1)
-				    {
-					    im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-				    } else {
-					    im.setColorFilter(null);
-				    }
-				    break;
 			    case "bom3":
 				    im.setImageResource(R.drawable.bom);
 				    if(dark_theme == 1)

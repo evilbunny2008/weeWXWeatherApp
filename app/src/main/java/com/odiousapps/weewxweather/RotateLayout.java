@@ -66,6 +66,7 @@ public class RotateLayout extends ViewGroup {
 	/**
 	 * Returns current angle of this layout
 	 */
+	@SuppressWarnings("unused")
 	public int getAngle() {
 		return angle;
 	}
@@ -73,6 +74,7 @@ public class RotateLayout extends ViewGroup {
 	/**
 	 * Sets current angle of this layout.
 	 */
+	@SuppressWarnings("unused")
 	public void setAngle(int angle) {
 		if (this.angle != angle) {
 			this.angle = angle;

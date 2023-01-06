@@ -645,9 +645,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							Common.LogMessage("fctype=" + fctype);
 							break;
 						case "yr.no":
-							Common.LogMessage("forecast=" + forecast);
-							Common.LogMessage("fctype=" + fctype);
-							break;
 						case "met.no":
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
@@ -698,31 +695,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							Common.LogMessage("fctype=" + fctype);
 							break;
 						case "weather.gc.ca":
-							Common.LogMessage("forecast=" + forecast);
-							Common.LogMessage("fctype=" + fctype);
-							break;
 						case "weather.gc.ca-fr":
-							Common.LogMessage("forecast=" + forecast);
-							Common.LogMessage("fctype=" + fctype);
-							break;
 						case "metoffice.gov.uk":
-							Common.LogMessage("forecast=" + forecast);
-							Common.LogMessage("fctype=" + fctype);
-							break;
 						case "bom2":
+						case "aemet.es":
+						case "dwd.de":
+						case "tempoitalia.it":
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
 							break;
 						case "bom3":
 							forecast = "https://api.weather.bom.gov.au/v1/locations/" + forecast.trim() + "/forecasts/daily";
-							Common.LogMessage("forecast=" + forecast);
-							Common.LogMessage("fctype=" + fctype);
-							break;
-						case "aemet.es":
-							Common.LogMessage("forecast=" + forecast);
-							Common.LogMessage("fctype=" + fctype);
-							break;
-						case "dwd.de":
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
 							break;
@@ -764,10 +747,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
 							Common.LogMessage("metierev=" + metierev);
-							break;
-						case "tempoitalia.it":
-							Common.LogMessage("forecast=" + forecast);
-							Common.LogMessage("fctype=" + fctype);
 							break;
 						default:
 							common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
