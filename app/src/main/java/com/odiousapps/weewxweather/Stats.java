@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Vibrator;
@@ -20,11 +21,14 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.Locale;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static java.lang.Math.round;
 
-class Stats
+public class Stats extends Fragment
 {
     private final Common common;
     private View rootView;
@@ -42,8 +46,10 @@ class Stats
 		    dark_theme = common.getSystemTheme();
     }
 
-    View myStats(LayoutInflater inflater, ViewGroup container)
-    {
+	@Nullable
+	@Override
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	{
 		rootView = inflater.inflate(R.layout.fragment_stats, container, false);
 		rootView.setOnLongClickListener(v ->
 		{
@@ -56,7 +62,7 @@ class Stats
 		});
 
 	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-	    swipeLayout.setOnRefreshListener(() ->
+		swipeLayout.setOnRefreshListener(() ->
 	    {
 		    swipeLayout.setRefreshing(true);
 		    Common.LogMessage("onRefresh();");
@@ -116,8 +122,10 @@ class Stats
 	    return rootView;
     }
 
-    void doResume()
+    public void onResume()
     {
+	    super.onResume();
+	    updateFields();
 	    IntentFilter filter = new IntentFilter();
 	    filter.addAction(Common.UPDATE_INTENT);
 	    filter.addAction(Common.REFRESH_INTENT);
@@ -126,12 +134,14 @@ class Stats
 	    Common.LogMessage("stats.java -- registerReceiver");
     }
 
-    void doPause()
+    public void onPause()
     {
+	    super.onPause();
 	    try
 	    {
 		    common.context.unregisterReceiver(serviceReceiver);
-	    } catch (Exception e) {
+	    } catch (Exception e)
+	    {
 		    //TODO: ignore this exception...
 	    }
 	    Common.LogMessage("stats.java -- unregisterReceiver");
@@ -163,7 +173,7 @@ class Stats
 
 		            updateFields();
 	            } else if(action != null && action.equals(Common.EXIT_INTENT))
-                    doPause();
+                    onPause();
             } catch (Exception e) {
                 e.printStackTrace();
             }

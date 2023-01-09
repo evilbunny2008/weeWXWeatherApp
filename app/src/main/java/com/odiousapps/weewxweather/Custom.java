@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -16,9 +17,12 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-class Custom
+public class Custom extends Fragment
 {
     private final Common common;
     private WebView wv;
@@ -29,9 +33,11 @@ class Custom
         this.common = common;
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
-    View myCustom(LayoutInflater inflater, ViewGroup container)
-    {
+	@SuppressLint("SetJavaScriptEnabled")
+	@Nullable
+	@Override
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	{
 		View rootView = inflater.inflate(R.layout.fragment_custom, container, false);
 		wv = rootView.findViewById(R.id.custom);
 		wv.getSettings().setUserAgentString(Common.UA);
@@ -119,8 +125,10 @@ class Custom
         wv.loadUrl(custom);
     }
 
-    void doResume()
+    public void onResume()
     {
+	    super.onResume();
+	    reloadWebView();
 	    IntentFilter filter = new IntentFilter();
 	    filter.addAction(Common.UPDATE_INTENT);
 	    filter.addAction(Common.REFRESH_INTENT);
@@ -129,12 +137,14 @@ class Custom
 	    Common.LogMessage("custom.java -- registerReceiver");
     }
 
-	void doPause()
+	public void onPause()
 	{
+		super.onPause();
 		try
 		{
 			common.context.unregisterReceiver(serviceReceiver);
-		} catch (Exception e) {
+		} catch (Exception e)
+		{
 			e.printStackTrace();
 		}
 		Common.LogMessage("custom.java -- unregisterReceiver");
@@ -152,7 +162,7 @@ class Custom
                 if(action != null && (action.equals(Common.UPDATE_INTENT) || action.equals(Common.REFRESH_INTENT)))
                     reloadWebView();
                 else if(action != null && action.equals(Common.EXIT_INTENT))
-                    doPause();
+                    onPause();
             } catch (Exception e) {
                 e.printStackTrace();
             }

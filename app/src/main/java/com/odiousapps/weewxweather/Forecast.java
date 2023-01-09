@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.graphics.ColorMatrixColorFilter;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Vibrator;
@@ -25,9 +26,12 @@ import android.widget.TextView;
 import java.io.File;
 import java.io.FileInputStream;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-class Forecast
+public class Forecast extends Fragment
 {
     private final Common common;
     private View rootView;
@@ -47,7 +51,9 @@ class Forecast
     }
 
     @SuppressLint("SetJavaScriptEnabled")
-    View myForecast(LayoutInflater inflater, ViewGroup container)
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
 	    rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
 	    rootView.setOnLongClickListener(v ->
@@ -305,8 +311,10 @@ class Forecast
 		t.start();
 	}
 
-	void doResume()
+	public void onResume()
 	{
+		super.onResume();
+		updateScreen();
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Common.UPDATE_INTENT);
 		filter.addAction(Common.REFRESH_INTENT);
@@ -315,16 +323,17 @@ class Forecast
 		Common.LogMessage("forecast.java -- registerReceiver");
 	}
 
-	void doPause()
-    {
-	    try
-	    {
-		    common.context.unregisterReceiver(serviceReceiver);
-	    } catch (Exception e) {
-		    e.printStackTrace();
-	    }
-	    Common.LogMessage("forecast.java -- unregisterReceiver");
-    }
+	public void onPause()
+	{
+		super.onPause();
+		try
+		{
+			common.context.unregisterReceiver(serviceReceiver);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		Common.LogMessage("forecast.java -- unregisterReceiver");
+	}
 
     private void updateScreen()
     {
@@ -372,7 +381,7 @@ class Forecast
 		                dark_theme = common.getSystemTheme();
 	                updateScreen();
                 } else if(action != null && action.equals(Common.EXIT_INTENT)) {
-                    doPause();
+                    onPause();
                 }
             } catch (Exception e) {
                 e.printStackTrace();

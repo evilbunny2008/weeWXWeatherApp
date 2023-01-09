@@ -16,9 +16,7 @@ import android.os.Looper;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -32,10 +30,12 @@ import android.widget.TextView;
 
 import com.github.evilbunny2008.androidmaterialcolorpickerdialog.ColorPicker;
 import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 import org.json.JSONObject;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -46,8 +46,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.viewpager2.widget.ViewPager2;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 {
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	@Override
     protected void onCreate(Bundle savedInstanceState)
     {
-        super.onCreate(savedInstanceState);
+		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity);
 
 		common = new Common(this);
@@ -85,16 +86,52 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		tabLayout = findViewById(R.id.tabs);
 
-		if(!common.GetBoolPref("radarforecast", true))
+	    SectionsStateAdapter mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
+	    mSectionsPagerAdapter.addFragment(new Weather(common));
+	    mSectionsPagerAdapter.addFragment(new Stats(common));
+	    mSectionsPagerAdapter.addFragment(new Forecast(common));
+	    mSectionsPagerAdapter.addFragment(new Webcam(common));
+	    mSectionsPagerAdapter.addFragment(new Custom(common));
+
+	    ViewPager2 mViewPager = findViewById(R.id.container);
+		mViewPager.setAdapter(mSectionsPagerAdapter);
+	    String[] tabTitles;
+	    if(common.GetBoolPref("radarforecast", true))
+		    tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.radar),
+				    getString(R.string.webcam2), getString(R.string.custom2)};
+	    else
+		    tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.forecast2),
+				    getString(R.string.webcam2), getString(R.string.custom2)};
+	    new TabLayoutMediator(tabLayout, mViewPager, ((tab, position) -> tab.setText(tabTitles[position]))).attach();
+
+	    mViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback()
+	    {
+		    @Override
+		    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+			    super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+		    }
+
+		    @Override
+		    public void onPageSelected(int position) {
+			    super.onPageSelected(position);
+		    }
+
+		    @Override
+		    public void onPageScrollStateChanged(int state) {
+			    super.onPageScrollStateChanged(state);
+		    }
+	    });
+
+	    if(!common.GetBoolPref("radarforecast", true))
 			Objects.requireNonNull(tabLayout.getTabAt(2)).setText(R.string.radar);
 
-        try
-        {
-            if(common.GetStringPref("BASE_URL", "").equals(""))
-	            mDrawerLayout.openDrawer(Gravity.START);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+		try
+		{
+			if(common.GetStringPref("BASE_URL", "").equals(""))
+				mDrawerLayout.openDrawer(Gravity.START);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 	    settingsURL = findViewById(R.id.settings);
 	    customURL = findViewById(R.id.customURL);
@@ -184,12 +221,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    showRadar.setChecked(common.GetBoolPref("radarforecast", true));
 	    RadioButton showForecast = findViewById(R.id.showForecast);
 	    showForecast.setChecked(!common.GetBoolPref("radarforecast", true));
-
-	    SectionsPagerAdapter mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
-	    ViewPager mViewPager = findViewById(R.id.container);
-	    mViewPager.setAdapter(mSectionsPagerAdapter);
-	    mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-	    tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
 	    b1.setOnClickListener(arg0 ->
 	    {
@@ -646,6 +677,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							break;
 						case "yr.no":
 						case "met.no":
+						case "weather.gc.ca":
+						case "weather.gc.ca-fr":
+						case "metoffice.gov.uk":
+						case "bom2":
+						case "aemet.es":
+						case "dwd.de":
+						case "tempoitalia.it":
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
 							break;
@@ -691,16 +729,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							}
 
 							forecast = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon=" + lon + "&unit=0&lg=english&FcstType=json";
-							Common.LogMessage("forecast=" + forecast);
-							Common.LogMessage("fctype=" + fctype);
-							break;
-						case "weather.gc.ca":
-						case "weather.gc.ca-fr":
-						case "metoffice.gov.uk":
-						case "bom2":
-						case "aemet.es":
-						case "dwd.de":
-						case "tempoitalia.it":
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
 							break;
@@ -1044,133 +1072,31 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
     };
 
-    public static class PlaceholderFragment extends Fragment
-    {
-        private static final String ARG_SECTION_NUMBER = "section_number";
-        private int lastPos = 0;
-        private Weather weather;
-        private Stats stats;
-        private Forecast forecast;
-        private Webcam webcam;
-        private Custom custom;
+	public static class SectionsStateAdapter extends FragmentStateAdapter
+	{
+		private final ArrayList<Fragment> arrayList = new ArrayList<>();
 
-        public PlaceholderFragment() {}
+		public SectionsStateAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle)
+		{
+			super(fragmentManager, lifecycle);
+		}
 
-        public static PlaceholderFragment newInstance(int sectionNumber)
-        {
-            PlaceholderFragment fragment = new PlaceholderFragment();
-            Bundle args = new Bundle();
-            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
-            fragment.setArguments(args);
-            return fragment;
-        }
+		public void addFragment(Fragment fragment)
+		{
+			arrayList.add(fragment);
+		}
 
-        @Override
-        public void onPause()
-        {
-        	super.onPause();
-	        switch(lastPos)
-	        {
-		        case 1:
-			        weather.doPause();
-			        break;
-		        case 2:
-			        stats.doPause();
-			        break;
-		        case 3:
-			        forecast.doPause();
-			        break;
-		        case 4:
-			        webcam.doPause();
-			        break;
-		        case 5:
-			        custom.doPause();
-			        break;
-	        }
+		@NonNull
+		@Override
+		public Fragment createFragment(int position)
+		{
+			return arrayList.get(position);
+		}
 
-	        Common.LogMessage("onPause() has been called lastpos ="+lastPos);
-        }
-
-        @Override
-	    public void onResume()
-	    {
-		    super.onResume();
-		    switch(lastPos)
-		    {
-			    case 1:
-				    weather.doResume();
-				    break;
-			    case 2:
-				    stats.doResume();
-				    break;
-			    case 3:
-				    forecast.doResume();
-				    break;
-			    case 4:
-				    webcam.doResume();
-				    break;
-			    case 5:
-				    custom.doResume();
-				    break;
-		    }
-
-		    Common.LogMessage("onResume() has been called lastpos ="+lastPos);
-	    }
-
-        @Override
-        public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-        {
-        	if(container == null)
-        		return null;
-
-	        Common common = new Common(getContext());
-
-	        Bundle args = getArguments();
-
-	        if(args != null)
-	        {
-		        lastPos = args.getInt(ARG_SECTION_NUMBER);
-
-		        if (args.getInt(ARG_SECTION_NUMBER) == 1)
-		        {
-			        weather = new Weather(common);
-			        return weather.myWeather(inflater, container);
-		        } else if (args.getInt(ARG_SECTION_NUMBER) == 2) {
-			        stats = new Stats(common);
-			        return stats.myStats(inflater, container);
-		        } else if (args.getInt(ARG_SECTION_NUMBER) == 3) {
-			        forecast = new Forecast(common);
-			        return forecast.myForecast(inflater, container);
-		        } else if (args.getInt(ARG_SECTION_NUMBER) == 4) {
-			        webcam = new Webcam(common);
-			        return webcam.myWebcam(inflater, container);
-		        } else if (args.getInt(ARG_SECTION_NUMBER) == 5) {
-			        custom = new Custom(common);
-			        return custom.myCustom(inflater, container);
-		        }
-	        }
-            return null;
-        }
-    }
-
-    public static class SectionsPagerAdapter extends FragmentPagerAdapter
-    {
-        SectionsPagerAdapter(FragmentManager fm)
-        {
-            super(fm);
-        }
-
-        @NonNull
-        @Override
-        public Fragment getItem(int position)
-        {
-            return PlaceholderFragment.newInstance(position + 1);
-        }
-
-        @Override
-        public int getCount()
-        {
-            return 5;
-        }
-    }
+		@Override
+		public int getItemCount()
+		{
+			return arrayList.size();
+		}
+	}
 }

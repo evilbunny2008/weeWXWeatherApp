@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Vibrator;
@@ -21,11 +22,14 @@ import android.widget.TextView;
 import java.io.File;
 import java.io.FileInputStream;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static java.lang.Math.round;
 
-class Weather
+public class Weather extends Fragment
 {
     private final Common common;
     private View rootView;
@@ -187,11 +191,10 @@ class Weather
 	}
 
 	@SuppressLint("SetJavaScriptEnabled")
-	View myWeather(LayoutInflater inflater, ViewGroup container)
+	@Nullable
+	@Override
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
-		if(inflater == null || container == null)
-			return null;
-
 		rootView = inflater.inflate(R.layout.fragment_weather, container, false);
 	    rootView.setOnLongClickListener(v ->
 	    {
@@ -912,57 +915,62 @@ class Weather
 	    t.start();
 	}
 
-	void doResume()
+	public void onResume()
 	{
-	    IntentFilter filter = new IntentFilter();
-	    filter.addAction(Common.UPDATE_INTENT);
-	    filter.addAction(Common.EXIT_INTENT);
-	    filter.addAction(Common.REFRESH_INTENT);
-	    common.context.registerReceiver(serviceReceiver, filter);
-	    Common.LogMessage("weather.java -- adding a new filter");
+		super.onResume();
+		updateFields();
+		loadWebView();
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(Common.UPDATE_INTENT);
+		filter.addAction(Common.EXIT_INTENT);
+		filter.addAction(Common.REFRESH_INTENT);
+		common.context.registerReceiver(serviceReceiver, filter);
+		Common.LogMessage("weather.java -- adding a new filter");
 	}
 
-	void doPause()
+	public void onPause()
 	{
-	    try
-	    {
-		    common.context.unregisterReceiver(serviceReceiver);
-	    } catch (Exception e) {
+		super.onPause();
+		try
+		{
+			common.context.unregisterReceiver(serviceReceiver);
+		} catch (Exception e)
+		{
 			// e.printStackTrace();
-	    }
-	    Common.LogMessage("weather.java -- unregisterReceiver");
+		}
+		Common.LogMessage("weather.java -- unregisterReceiver");
 	}
 
 	private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
 	{
-	    @Override
-	    public void onReceive(Context context, Intent intent)
-	    {
-	        try
-	        {
-	            String action = intent.getAction();
-	            if(action != null && action.equals(Common.UPDATE_INTENT))
-	            {
-	                Common.LogMessage("Weather() We have a update_intent, so we should probably update the screen.");
-		            dark_theme = common.GetIntPref("dark_theme", 2);
-		            if(dark_theme == 2)
-			            dark_theme = common.getSystemTheme();
-	                updateFields();
-	                reloadWebView(false);
-	                reloadForecast(false);
-	            } else if(action != null && action.equals(Common.REFRESH_INTENT)) {
-	                Common.LogMessage("Weather() We have a refresh_intent, so we should probably update the screen.");
-		            dark_theme = common.GetIntPref("dark_theme", 2);
-		            if(dark_theme == 2)
-			            dark_theme = common.getSystemTheme();
-	                updateFields();
-	                loadWebView();
-	            } else if(action != null && action.equals(Common.EXIT_INTENT)) {
-	                doPause();
-	            }
-	        } catch (Exception e) {
-	            e.printStackTrace();
-	        }
-	    }
+		@Override
+		public void onReceive(Context context, Intent intent)
+		{
+			try
+			{
+				String action = intent.getAction();
+				if(action != null && action.equals(Common.UPDATE_INTENT))
+				{
+					Common.LogMessage("Weather() We have a update_intent, so we should probably update the screen.");
+					dark_theme = common.GetIntPref("dark_theme", 2);
+					if(dark_theme == 2)
+						dark_theme = common.getSystemTheme();
+					updateFields();
+					reloadWebView(false);
+					reloadForecast(false);
+				} else if(action != null && action.equals(Common.REFRESH_INTENT)) {
+					Common.LogMessage("Weather() We have a refresh_intent, so we should probably update the screen.");
+					dark_theme = common.GetIntPref("dark_theme", 2);
+					if(dark_theme == 2)
+						dark_theme = common.getSystemTheme();
+					updateFields();
+					loadWebView();
+				} else if(action != null && action.equals(Common.EXIT_INTENT)) {
+					onPause();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 	};
 }

@@ -8,6 +8,7 @@ import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Vibrator;
@@ -22,11 +23,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static java.lang.Math.round;
 
-class Webcam
+public class Webcam extends Fragment
 {
     private final Common common;
     private ImageView iv;
@@ -42,23 +46,25 @@ class Webcam
 		    dark_theme = common.getSystemTheme();
 	}
 
-	View myWebcam(LayoutInflater inflater, ViewGroup container)
+	@Nullable
+	@Override
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
 		View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
 		iv = rootView.findViewById(R.id.webcam);
 
 		if(dark_theme == 1)
-		    iv.setBackgroundColor(0xff000000);
+			iv.setBackgroundColor(0xff000000);
 
-	    iv.setOnLongClickListener(v ->
-	    {
-	        Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-	        if(vibrator != null)
-	            vibrator.vibrate(250);
-	        Common.LogMessage("long press");
-	        reloadWebView(true);
-	        return true;
-	    });
+		iv.setOnLongClickListener(v ->
+		{
+			Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
+			if(vibrator != null)
+				vibrator.vibrate(250);
+			Common.LogMessage("long press");
+			reloadWebView(true);
+			return true;
+		});
 
 	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 	    swipeLayout.setOnRefreshListener(() ->
@@ -200,8 +206,10 @@ class Webcam
 	    }
     }
 
-	void doResume()
+	public void onResume()
 	{
+		super.onResume();
+		reloadWebView(false);
 		IntentFilter filter = new IntentFilter();
 		filter.addAction(Common.UPDATE_INTENT);
 		filter.addAction(Common.REFRESH_INTENT);
@@ -210,8 +218,9 @@ class Webcam
 		Common.LogMessage("webcam.java -- registerReceiver");
 	}
 
-    void doPause()
+    public void onPause()
     {
+	    super.onPause();
 	    try
 	    {
 		    common.context.unregisterReceiver(serviceReceiver);
@@ -241,7 +250,7 @@ class Webcam
 		                iv.setBackgroundColor(0xffffffff);
 	                reloadWebView(false);
                 } else if(action != null && action.equals(Common.EXIT_INTENT))
-                    doPause();
+                    onPause();
             } catch (Exception e) {
                 e.printStackTrace();
             }
