@@ -475,7 +475,7 @@ public class Forecast extends Fragment
 			    String tmp = "<html>";
 			    if(dark_theme == 1)
 				    tmp += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-			    tmp += "<body>Forecast URL not set, edit settings.txt to change</body></html>";
+			    tmp += "<body>" + getString(R.string.forecast_url_not_set) + "</body></html>";
 
 			    final String html = tmp;
 

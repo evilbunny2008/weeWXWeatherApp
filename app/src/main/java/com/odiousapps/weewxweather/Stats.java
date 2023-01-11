@@ -61,14 +61,14 @@ public class Stats extends Fragment
 			return true;
 		});
 
-	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setOnRefreshListener(() ->
-	    {
-		    swipeLayout.setRefreshing(true);
-		    Common.LogMessage("onRefresh();");
-		    forceRefresh();
-		    swipeLayout.setRefreshing(false);
-	    });
+		{
+			swipeLayout.setRefreshing(true);
+			Common.LogMessage("onRefresh();");
+			forceRefresh();
+			swipeLayout.setRefreshing(false);
+		});
 
 		wv = rootView.findViewById(R.id.webView1);
 		wv.getSettings().setUserAgentString(Common.UA);
@@ -314,7 +314,7 @@ public class Stats extends Fragment
 		    sb.append(header);
 
 		    sb.append("<span style='font-size:18pt;font-weight:bold;'>");
-		    sb.append(common.context.getString(R.string.todayStats));
+		    sb.append(getString(R.string.todayStats));
 		    sb.append("</span>");
 		    sb.append("<table style='width:100%;border:0px;'>");
 
@@ -353,13 +353,13 @@ public class Stats extends Fragment
 		    }
 
 		    String rain = bits[20];
-		    String since = common.context.getString(R.string.since) + " mn";
+		    String since = getString(R.string.since) + " mn";
 
 		    if (bits.length > 160 && !bits[160].equals(""))
 			    rain = bits[158];
 
 		    if (bits.length > 160 && !bits[158].equals("") && !bits[160].equals(""))
-			    since = common.context.getString(R.string.since) + " " + bits[160];
+			    since = getString(R.string.since) + " " + bits[160];
 
 		    stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-windy'></i></td><td colspan='3'>" + bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +
 				    "</td><td>" + rain + bits[62] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td></tr>";
@@ -374,7 +374,7 @@ public class Stats extends Fragment
 		    if (bits.length > 87 && !bits[87].equals(""))
 		    {
 			    sb.append("<span style='font-size:18pt;font-weight:bold;'>");
-			    sb.append(common.context.getString(R.string.yesterdayStats));
+			    sb.append(getString(R.string.yesterdayStats));
 			    sb.append("</span>");
 			    sb.append("<table style='width:100%;border:0px;'>");
 
@@ -413,7 +413,7 @@ public class Stats extends Fragment
 			    }
 
 			    rain = bits[21];
-			    String before = common.context.getString(R.string.before) + " mn";
+			    String before = getString(R.string.before) + " mn";
 
 			    if (bits.length > 160 && !bits[159].equals(""))
 				    rain = bits[159];
@@ -423,7 +423,7 @@ public class Stats extends Fragment
 			    sb.append(stmp);
 
 			    if (bits.length > 160 && !bits[159].equals("") && !bits[160].equals(""))
-				    before = common.context.getString(R.string.before) + " " + bits[160];
+				    before = getString(R.string.before) + " " + bits[160];
 
 			    stmp = "<tr><td colspan='4'>&nbsp;</td><td colspan='2'>" + before + "</td></tr>";
 			    sb.append(stmp);
@@ -435,7 +435,7 @@ public class Stats extends Fragment
 		    if(bits.length > 110 && !bits[110].equals(""))
 		    {
 			    sb.append("<span style='font-size:18pt;font-weight:bold;'>");
-			    sb.append(common.context.getString(R.string.this_months_stats));
+			    sb.append(getString(R.string.this_months_stats));
 			    sb.append("</span>");
 			    sb.append("<table style='width:100%;border:0px;'>");
 
@@ -484,7 +484,7 @@ public class Stats extends Fragment
 		    if (bits.length > 133 && !bits[133].equals(""))
 		    {
 			    sb.append("<span style='font-size:18pt;font-weight:bold;'>");
-			    sb.append(common.context.getString(R.string.this_year_stats));
+			    sb.append(getString(R.string.this_year_stats));
 			    sb.append("</span>");
 			    sb.append("<table style='width:100%;border:0px;'>");
 
@@ -533,7 +533,7 @@ public class Stats extends Fragment
 		    if (bits.length > 157 && !bits[157].equals(""))
 		    {
 			    sb.append("<span style='font-size:18pt;font-weight:bold;'>");
-				sb.append(common.context.getString(R.string.all_time_stats));
+				sb.append(getString(R.string.all_time_stats));
 			    sb.append("</span>");
 			    sb.append("<table style='width:100%;border:0px;'>");
 

@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">weeWX Weather App</string>
     <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
     <string name="settings">Settings Page</string>
     <string name="fileURL">Enter the URL to your settings.txt</string>
     <string name="refresh_time">Choose Refresh Time</string>
@@ -59,5 +58,30 @@
     <string name="every_30_minutes">Every 30 Minutes</string>
     <string name="every_hour">Every Hour</string>
     <string name="use_light_theme">Use Light Theme</string>
+    <string name="use_dark_theme2">Use Dark Theme</string>
     <string name="use_system_default">Use System Default</string>
+    <string name="forecast_url_not_set">Forecast URL not set, edit settings.txt to change</string>
+    <string name="inigo_needs_updating">This app has been updated but the server you are connecting to hasn\'t updated the Inigo Plugin for weeWX. Fields may not show up properly until weeWX is updated.</string>
+    <string name="ok">Ok</string>
+    <string name="testing_urls">Testing submitted URLs</string>
+    <string name="please_wait_verify_url">Please wait while we verify the URL you submitted.</string>
+    <string name="remove_all_data">Are you sure you want to remove all data?</string>
+    <string name="no">No</string>
+    <string name="icons_failed_to_download">Icons failed to download fully, you will need to retry.</string>
+    <string name="wasnt_able_to_detect_icons">Wasn\'t able to detect forecast icons.</string>
+    <string name="ill_fix_and_try_again">I\'ll Fix It and Try Again</string>
+    <string name="error_occurred_while_attempting_to_update">An error occurred while attempting to update usage</string>
+    <string name="unknown_error_occurred">Unknown error occurred</string>
+    <string name="wasnt_able_to_connect_custom_url">Wasn\'t able to connect or download from the custom URL specified</string>
+    <string name="wasnt_able_to_connect_webcam_url">Wasn\'t able to connect or download a webcam image from your server</string>
+    <string name="wasnt_able_to_connect_forecast">Wasn\'t able to connect or download the forecast.</string>
+    <string name="wasnt_able_to_detect_forecast_icons">Wasn\'t able to detect forecast icons.</string>
+    <string name="forecast_type_needs_icons">Forecast type \'%1$s\' needs to have icons available, Please switch to using icons and try again.</string>
+    <string name="forecast_type_is_invalid">Forecast type \'%1$s\' is invalid, check your settings file and try again.</string>
+    <string name="wasnt_able_to_connect_radar_image">Wasn\'t able to connect or download radar= image from the internet</string>
+    <string name="wasnt_able_to_connect_data_txt">Wasn\'t able to connect or download data.txt from your server</string>
+    <string name="data_url_was_blank">Data url was blank</string>
+    <string name="wasnt_able_to_connect_settings">Wasn\'t able to connect or download the settings from your server</string>
+    <string name="url_was_default_or_empty">URL was set to the default or was empty</string>
+    <string name="radar_url_not_set">Radar URL not set or is still downloading. You can go to settings to change.</string>
 </resources>

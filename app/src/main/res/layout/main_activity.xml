@@ -54,45 +54,50 @@
                         android:ems="10"
                         android:hint="@string/fileURL"
                         android:inputType="textUri"
+                        android:minHeight="48dp"
                         android:textSize="18sp"
-                        tools:ignore="Autofill"/>
+                        tools:ignore="Autofill,TextContrastCheck,DuplicateSpeakableTextCheck" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/show_indoor"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/indoor_readings"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:textSize="18sp"/>
+                        android:minHeight="48dp"
+                        android:text="@string/indoor_readings"
+                        android:textSize="18sp" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/metric_forecasts"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="@string/metric"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:textSize="18sp"/>
+                        android:checked="true"
+                        android:minHeight="48dp"
+                        android:text="@string/metric"
+                        android:textSize="18sp" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/wifi_only"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/update_over_wifi"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:textSize="18sp"/>
+                        android:minHeight="48dp"
+                        android:text="@string/update_over_wifi"
+                        android:textSize="18sp" />
 
                     <androidx.appcompat.widget.SwitchCompat
                         android:id="@+id/use_icons"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/use_icons"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:textSize="18sp"/>
+                        android:minHeight="48dp"
+                        android:text="@string/use_icons"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -106,7 +111,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:spinnerMode="dropdown"/>
+                        android:minHeight="48dp"
+                        android:spinnerMode="dropdown"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -120,7 +127,9 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:spinnerMode="dropdown"/>
+                        android:minHeight="48dp"
+                        android:spinnerMode="dropdown"
+                        tools:ignore="SpeakableTextPresentCheck" />
 
                     <TextView
                         android:layout_width="match_parent"
@@ -140,6 +149,7 @@
                             android:layout_marginRight="10dp"
                             android:layout_weight="1"
                             android:checked="true"
+                            android:minHeight="48dp"
                             android:text="@string/show_radar"
                             android:textSize="18sp" />
 
@@ -147,11 +157,12 @@
                             android:id="@+id/showForecast"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/show_forecast"
                             android:layout_marginLeft="10dp"
                             android:layout_marginRight="10dp"
-                            android:textSize="18sp"/>
+                            android:layout_weight="1"
+                            android:minHeight="48dp"
+                            android:text="@string/show_forecast"
+                            android:textSize="18sp" />
                     </RadioGroup>
 
                     <TextView
@@ -170,8 +181,9 @@
                         android:ems="10"
                         android:hint="@string/custom_url"
                         android:inputType="textUri"
+                        android:minHeight="48dp"
                         android:textSize="18sp"
-                        tools:ignore="Autofill"/>
+                        tools:ignore="Autofill,TextContrastCheck,DuplicateSpeakableTextCheck" />
 
                     <TextView
                         android:id="@+id/fgtv"

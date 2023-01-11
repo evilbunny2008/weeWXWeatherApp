@@ -309,13 +309,7 @@ public class Weather extends Fragment
 
 					    if(!myFile.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 					    {
-						    sb.append("<html><body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>");
-						    mHandler.post(() ->
-						    {
-							    wv.loadDataWithBaseURL(null, sb.toString(), "text/html", "utf-8", null);
-							    swipeLayout.setRefreshing(false);
-						    });
-						    return;
+						    sb.append("<html><body>" + getString(R.string.radar_url_not_set) + "</body></html>");
 					    } else {
 						    sb.append("<!DOCTYPE html>\n" +
 								    "<html>\n" +
@@ -343,13 +337,13 @@ public class Weather extends Fragment
 								    "  </body>\n" +
 								    "</html>";
 						    sb.append(tmp);
-						    mHandler.post(() ->
-						    {
-							    wv.loadDataWithBaseURL(null, sb.toString(), "text/html", "utf-8", null);
-							    swipeLayout.setRefreshing(false);
-						    });
-						    return;
 					    }
+					    mHandler.post(() ->
+					    {
+						    wv.loadDataWithBaseURL(null, sb.toString(), "text/html", "utf-8", null);
+						    swipeLayout.setRefreshing(false);
+					    });
+					    return;
 				    }
 				    case "webpage":
 					    mHandler.post(() ->
@@ -820,13 +814,13 @@ public class Weather extends Fragment
 		    return;
 	    }
 
-	    if(!common.checkConnection() && !force)
-	    {
-	        Common.LogMessage("Not on wifi and not a forced refresh");
-		    if(swipeLayout.isRefreshing())
-			    swipeLayout.setRefreshing(false);
-		    return;
-	    }
+		if(!common.checkConnection() && !force)
+		{
+			Common.LogMessage("Not on wifi and not a forced refresh");
+			if(swipeLayout.isRefreshing())
+				swipeLayout.setRefreshing(false);
+			return;
+		}
 
 	    if(!swipeLayout.isRefreshing())
 		    swipeLayout.setRefreshing(true);

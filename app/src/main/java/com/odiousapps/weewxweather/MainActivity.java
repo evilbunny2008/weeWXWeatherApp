@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		    }
 	    });
 
-	    if(!common.GetBoolPref("radarforecast", true))
+		if(!common.GetBoolPref("radarforecast", true))
 			Objects.requireNonNull(tabLayout.getTabAt(2)).setText(R.string.radar);
 
 		try
@@ -172,9 +172,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private void showUpdateAvailable()
 	{
 		final AlertDialog.Builder d = new AlertDialog.Builder(this);
-		d.setTitle("weeWX Weather App");
-		d.setMessage("This app has been updated but the server you are connecting to hasn't updated the Inigo Plugin for weeWX. Fields may not show up properly until weeWX is updated.");
-		d.setPositiveButton("OK", null);
+		d.setTitle(getString(R.string.app_name));
+		d.setMessage(getString(R.string.inigo_needs_updating));
+		d.setPositiveButton(getString(R.string.ok), null);
 		d.setIcon(R.drawable.ic_launcher_foreground);
 		d.show();
 	}
@@ -207,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    String[] themeString = new String[]
 			    {
 					    getString(R.string.use_light_theme),
-					    getString(R.string.use_dark_theme),
+					    getString(R.string.use_dark_theme2),
 					    getString(R.string.use_system_default)
 			    };
 	    ArrayAdapter<String> adapter2 = new ArrayAdapter<>(common.context, R.layout.spinner_layout, themeString);
@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		    }
 
 		    Common.LogMessage("show dialog");
-		    dialog = ProgressDialog.show(common.context, "Testing submitted URLs", "Please wait while we verify the URL you submitted.", false);
+		    dialog = ProgressDialog.show(common.context, getString(R.string.testing_urls), getString(R.string.please_wait_verify_url), false);
 		    dialog.show();
 
 		    processSettings();
@@ -370,8 +370,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private void checkReally()
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(common.context);
-		builder.setMessage("Are you sure you want to remove all data?").setCancelable(false)
-				.setPositiveButton("Yes", (dialoginterface, i) ->
+		builder.setMessage(getString(R.string.remove_all_data)).setCancelable(false)
+				.setPositiveButton(getString(R.string.ok), (dialoginterface, i) ->
 				{
 					Common.LogMessage("trash all data");
 
@@ -420,7 +420,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					dialoginterface.cancel();
 
 					System.exit(0);
-				}).setNegativeButton("No", (dialoginterface, i) -> dialoginterface.cancel());
+				}).setNegativeButton(getString(R.string.no), (dialoginterface, i) -> dialoginterface.cancel());
 
 		builder.create().show();
 
@@ -461,15 +461,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				{
 					if (!common.downloadIcons())
 					{
-						common.SetStringPref("lastError", "Icons failed to download fully, you will need to retry.");
+						common.SetStringPref("lastError", getString(R.string.icons_failed_to_download));
 						runOnUiThread(() -> {
 							b1.setEnabled(true);
 							b2.setEnabled(true);
 							dialog.dismiss();
 							new AlertDialog.Builder(common.context)
-									.setTitle("Wasn't able to detect forecast icons.")
-									.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-									.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+									.setTitle(getString(R.string.wasnt_able_to_detect_icons))
+									.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+									.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 									{
 									}).show();
 						});
@@ -482,9 +482,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(common.context)
-								.setTitle("Wasn't able to detect forecast icons.")
-								.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-								.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+								.setTitle(getString(R.string.wasnt_able_to_detect_icons))
+								.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
 					});
@@ -496,15 +496,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			if (settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt") || settingsURL.getText().toString().equals(""))
 			{
-				common.SetStringPref("lastError", "URL was set to the default or was empty");
+				common.SetStringPref("lastError", getString(R.string.url_was_default_or_empty));
 				runOnUiThread(() -> {
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(common.context)
-							.setTitle("Wasn't able to connect or download the settings from your server")
-							.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-							.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+							.setTitle(getString(R.string.wasnt_able_to_connect_settings))
+							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
@@ -553,9 +553,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(common.context)
-							.setTitle("Wasn't able to connect or download the settings from your server")
-							.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-							.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+							.setTitle(getString(R.string.wasnt_able_to_connect_settings))
+							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
@@ -566,15 +566,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			if (data.equals(""))
 			{
-				common.SetStringPref("lastError", "Data url was blank");
+				common.SetStringPref("lastError", getString(R.string.data_url_was_blank));
 				runOnUiThread(() -> {
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(common.context)
-							.setTitle("Wasn't able to connect or download data.txt from your server")
-							.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-							.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+							.setTitle(getString(R.string.wasnt_able_to_connect_data_txt))
+							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
@@ -601,9 +601,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(common.context)
-							.setTitle("Wasn't able to connect or download data.txt from your server")
-							.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-							.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+							.setTitle(getString(R.string.wasnt_able_to_connect_radar_image))
+							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
@@ -634,9 +634,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(common.context)
-								.setTitle("Wasn't able to connect or download radar= image from the internet")
-								.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-								.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+								.setTitle(getString(R.string.wasnt_able_to_connect_radar_image))
+								.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
 					});
@@ -662,8 +662,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 									dialog.dismiss();
 									new AlertDialog.Builder(common.context)
 											.setTitle("Wasn't able to connect or download the forecast.")
-											.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-											.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+											.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+											.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 											{
 											}).show();
 								});
@@ -688,15 +688,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							Common.LogMessage("fctype=" + fctype);
 							break;
 						case "bom.gov.au":
-							common.SetStringPref("lastError", "forecast type " + fctype + " is no longer supported due to ftp support being dropped in Android. Use bom2 forecasts instead, check the wiki for details.");
+							common.SetStringPref("lastError", "Forecast type " + fctype + " is no longer supported due to ftp support being dropped in Android. Use bom2 forecasts instead, check the wiki for details.");
 							runOnUiThread(() -> {
 								b1.setEnabled(true);
 								b2.setEnabled(true);
 								dialog.dismiss();
 								new AlertDialog.Builder(common.context)
-										.setTitle("Wasn't able to connect or download the forecast.")
-										.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-										.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+										.setTitle(getString(R.string.wasnt_able_to_connect_forecast))
+										.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+										.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 										{
 										}).show();
 							});
@@ -777,15 +777,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							Common.LogMessage("metierev=" + metierev);
 							break;
 						default:
-							common.SetStringPref("lastError", "forecast type " + fctype + " is invalid, check your settings file and try again.");
+							common.SetStringPref("lastError", String.format(getString(R.string.forecast_type_is_invalid), fctype));
 							runOnUiThread(() -> {
 								b1.setEnabled(true);
 								b2.setEnabled(true);
 								dialog.dismiss();
 								new AlertDialog.Builder(common.context)
-										.setTitle("Wasn't able to connect or download the forecast.")
-										.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-										.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+										.setTitle(getString(R.string.wasnt_able_to_connect_forecast))
+										.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+										.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 										{
 										}).show();
 							});
@@ -801,15 +801,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !common.checkForImages() && !use_icons.isChecked())
 			{
-				common.SetStringPref("lastError", "Forecast type '" + fctype + "' needs to have icons available, Please switch to using icons and try again.");
+				common.SetStringPref("lastError", String.format(getString(R.string.forecast_type_needs_icons), fctype));
 				runOnUiThread(() -> {
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(common.context)
-							.setTitle("Wasn't able to detect forecast icons.")
-							.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-							.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+							.setTitle(getString(R.string.wasnt_able_to_detect_forecast_icons))
+							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
@@ -843,9 +843,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(common.context)
-								.setTitle("Wasn't able to connect or download the forecast.")
-								.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-								.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+								.setTitle(getString(R.string.wasnt_able_to_connect_forecast))
+								.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
 					});
@@ -864,9 +864,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(common.context)
-								.setTitle("Wasn't able to connect or download a webcam image from your server")
-								.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-								.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+								.setTitle(getString(R.string.wasnt_able_to_connect_webcam_url))
+								.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
 					});
@@ -898,9 +898,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							b2.setEnabled(true);
 							dialog.dismiss();
 							new AlertDialog.Builder(common.context)
-									.setTitle("Wasn't able to connect or download from the custom URL specified")
-									.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-									.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+									.setTitle(getString(R.string.wasnt_able_to_connect_custom_url))
+									.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+									.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 									{
 									}).show();
 						});
@@ -926,9 +926,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							b2.setEnabled(true);
 							dialog.dismiss();
 							new AlertDialog.Builder(common.context)
-									.setTitle("Wasn't able to connect or download from the custom URL specified")
-									.setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
-									.setPositiveButton("I'll Fix It and Try Again", (dialog, which) ->
+									.setTitle(getString(R.string.wasnt_able_to_connect_custom_url))
+									.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+									.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 									{
 									}).show();
 						});
@@ -1059,8 +1059,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	            {
 		            runOnUiThread(() -> new AlertDialog
 				            .Builder(common.context)
-				            .setTitle("An error occurred while attempting to update usage")
-				            .setMessage(common.GetStringPref("lastError", "Unknown error occurred"))
+				            .setTitle(getString(R.string.error_occurred_while_attempting_to_update))
+				            .setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 				            .setPositiveButton("Ok", (dialog, which) ->
 				            {
 				            }).show());
