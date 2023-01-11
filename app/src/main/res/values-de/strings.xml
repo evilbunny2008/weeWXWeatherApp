@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">weeWX Wetter App</string>
     <string name="action_settings">Einstellungen</string>
-    <string name="section_format">Hallo Welt von Abschnitt: %1$d</string>
     <string name="settings">Einstellungsseite</string>
     <string name="fileURL">Gib URL zur eigenen settings.txt ein</string>
     <string name="refresh_time">Aktualisierungsintervall wählen</string>

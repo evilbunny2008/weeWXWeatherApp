@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">weeWX Weather App</string>
     <string name="action_settings">Impostazioni</string>
-    <string name="section_format">Ciao Mondo dalla sezio: %1$d</string>
     <string name="settings">Pagina delle impostazioni</string>
     <string name="fileURL">Inserisci l\'URL del tuo settings.txt</string>
     <string name="refresh_time">Aggiorna</string>

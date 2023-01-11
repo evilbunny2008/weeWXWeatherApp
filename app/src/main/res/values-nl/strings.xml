@@ -2,7 +2,6 @@
 <resources>
     <string name="app_name">weeWX-weerapp</string>
     <string name="action_settings">Instellingen</string>
-    <string name="section_format">Hallo wereld vanuit sectie: %1$d</string>
     <string name="settings">Instellingenpagina</string>
     <string name="fileURL">Geef de url op in settings.txt</string>
     <string name="refresh_time">Kies de ververstijd</string>
