@@ -26,7 +26,8 @@
         <WebView
             android:id="@+id/current"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="true" />
 
         <WebView
             android:id="@+id/radar"

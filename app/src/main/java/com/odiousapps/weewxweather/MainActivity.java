@@ -93,34 +93,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    mSectionsPagerAdapter.addFragment(new Webcam(common));
 	    mSectionsPagerAdapter.addFragment(new Custom(common));
 
-	    ViewPager2 mViewPager = findViewById(R.id.container);
+		ViewPager2 mViewPager = findViewById(R.id.container);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
-	    String[] tabTitles;
-	    if(common.GetBoolPref("radarforecast", true))
-		    tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.radar),
-				    getString(R.string.webcam2), getString(R.string.custom2)};
-	    else
-		    tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.forecast2),
-				    getString(R.string.webcam2), getString(R.string.custom2)};
-	    new TabLayoutMediator(tabLayout, mViewPager, ((tab, position) -> tab.setText(tabTitles[position]))).attach();
+		String[] tabTitles;
+		if(common.GetBoolPref("radarforecast", true))
+			tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.radar), getString(R.string.webcam2), getString(R.string.custom2)};
+		else
+			tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.forecast2), getString(R.string.webcam2), getString(R.string.custom2)};
+		new TabLayoutMediator(tabLayout, mViewPager, ((tab, position) -> tab.setText(tabTitles[position]))).attach();
 
-	    mViewPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback()
-	    {
-		    @Override
-		    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-			    super.onPageScrolled(position, positionOffset, positionOffsetPixels);
-		    }
 
-		    @Override
-		    public void onPageSelected(int position) {
-			    super.onPageSelected(position);
-		    }
-
-		    @Override
-		    public void onPageScrollStateChanged(int state) {
-			    super.onPageScrollStateChanged(state);
-		    }
-	    });
 
 		if(!common.GetBoolPref("radarforecast", true))
 			Objects.requireNonNull(tabLayout.getTabAt(2)).setText(R.string.radar);

@@ -1,10 +1,7 @@
 package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.KeyEvent;
@@ -128,44 +125,12 @@ public class Custom extends Fragment
     public void onResume()
     {
 	    super.onResume();
-	    reloadWebView();
-	    IntentFilter filter = new IntentFilter();
-	    filter.addAction(Common.UPDATE_INTENT);
-	    filter.addAction(Common.REFRESH_INTENT);
-	    filter.addAction(Common.EXIT_INTENT);
-	    common.context.registerReceiver(serviceReceiver, filter);
 	    Common.LogMessage("custom.java -- registerReceiver");
     }
 
 	public void onPause()
 	{
 		super.onPause();
-		try
-		{
-			common.context.unregisterReceiver(serviceReceiver);
-		} catch (Exception e)
-		{
-			e.printStackTrace();
-		}
 		Common.LogMessage("custom.java -- unregisterReceiver");
 	}
-
-    private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
-    {
-        @Override
-        public void onReceive(Context context, Intent intent)
-        {
-            try
-            {
-                Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
-                String action = intent.getAction();
-                if(action != null && (action.equals(Common.UPDATE_INTENT) || action.equals(Common.REFRESH_INTENT)))
-                    reloadWebView();
-                else if(action != null && action.equals(Common.EXIT_INTENT))
-                    onPause();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    };
 }
