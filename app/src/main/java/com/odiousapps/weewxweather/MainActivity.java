@@ -102,8 +102,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.forecast2), getString(R.string.webcam2), getString(R.string.custom2)};
 		new TabLayoutMediator(tabLayout, mViewPager, ((tab, position) -> tab.setText(tabTitles[position]))).attach();
 
-
-
 		if(!common.GetBoolPref("radarforecast", true))
 			Objects.requireNonNull(tabLayout.getTabAt(2)).setText(R.string.radar);
 
