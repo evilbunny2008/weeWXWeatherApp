@@ -57,4 +57,33 @@
     <string name="every_15_minutes">Every 15 Minutes</string>
     <string name="every_30_minutes">Every 30 Minutes</string>
     <string name="every_hour">Every Hour</string>
+
+    <!-- Automatically Translated -->
+    <string name="use_light_theme">Gebruik een licht thema</string>
+    <string name="use_dark_theme2">Gebruik een donker thema</string>
+    <string name="use_system_default">Gebruik Systeemstandaard</string>
+    <string name="forecast_url_not_set">Prognose-URL niet ingesteld, bewerk settings.txt om te wijzigen</string>
+    <string name="inigo_needs_updating">Deze app is bijgewerkt, maar de server waarmee u verbinding maakt, heeft de Inigo-plug-in voor weeWX niet bijgewerkt. Velden worden mogelijk niet correct weergegeven totdat weeWX is bijgewerkt.</string>
+    <string name="ok">Oké</string>
+    <string name="testing_urls">Ingediende URL\'s testen</string>
+    <string name="please_wait_verify_url">Even geduld a.u.b. terwijl we de door u ingediende URL verifiëren.</string>
+    <string name="remove_all_data">Weet u zeker dat u alle gegevens wilt verwijderen?</string>
+    <string name="no">Nee</string>
+    <string name="icons_failed_to_download">Pictogrammen konden niet volledig worden gedownload. U moet het opnieuw proberen.</string>
+    <string name="wasnt_able_to_detect_icons">Kon prognosepictogrammen niet detecteren.</string>
+    <string name="ill_fix_and_try_again">Ik repareer het en probeer het opnieuw</string>
+    <string name="error_occurred_while_attempting_to_update">Er is een fout opgetreden tijdens een poging om het gebruik bij te werken</string>
+    <string name="unknown_error_occurred">Er is een onbekende fout opgetreden</string>
+    <string name="wasnt_able_to_connect_custom_url">Kan geen verbinding maken met of downloaden van de opgegeven aangepaste URL</string>
+    <string name="wasnt_able_to_connect_webcam_url">Kan geen verbinding maken met of een webcambeeld downloaden van uw server</string>
+    <string name="wasnt_able_to_connect_forecast">Kan de voorspelling niet verbinden of downloaden.</string>
+    <string name="wasnt_able_to_detect_forecast_icons">Kon prognosepictogrammen niet detecteren.</string>
+    <string name="forecast_type_needs_icons">Prognosetype \'%1$s\' moet pictogrammen beschikbaar hebben. Schakel over naar het gebruik van pictogrammen en probeer het opnieuw.</string>
+    <string name="forecast_type_is_invalid">Prognosetype \'%1$s\' is ongeldig, controleer uw instellingenbestand en probeer het opnieuw.</string>
+    <string name="wasnt_able_to_connect_radar_image">Kan geen radar=-afbeelding van internet verbinden of downloaden</string>
+    <string name="wasnt_able_to_connect_data_txt">Kan data.txt niet van uw server verbinden of downloaden</string>
+    <string name="data_url_was_blank">Gegevens-URL was leeg</string>
+    <string name="wasnt_able_to_connect_settings">Kan geen verbinding maken of de instellingen van uw server downloaden</string>
+    <string name="url_was_default_or_empty">URL was ingesteld op de standaardwaarde of was leeg</string>
+    <string name="radar_url_not_set">Radar-URL niet ingesteld of is nog aan het downloaden. U kunt naar instellingen gaan om te wijzigen.</string>
 </resources>

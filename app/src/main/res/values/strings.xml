@@ -62,7 +62,7 @@
     <string name="use_system_default">Use System Default</string>
     <string name="forecast_url_not_set">Forecast URL not set, edit settings.txt to change</string>
     <string name="inigo_needs_updating">This app has been updated but the server you are connecting to hasn\'t updated the Inigo Plugin for weeWX. Fields may not show up properly until weeWX is updated.</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="testing_urls">Testing submitted URLs</string>
     <string name="please_wait_verify_url">Please wait while we verify the URL you submitted.</string>
     <string name="remove_all_data">Are you sure you want to remove all data?</string>
