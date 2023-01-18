@@ -19,14 +19,14 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 public class Custom extends Fragment
 {
-    private final Common common;
-    private WebView wv;
+	private final Common common;
+	private WebView wv;
 	private SwipeRefreshLayout swipeLayout;
 
-    Custom(Common common)
-    {
-        this.common = common;
-    }
+	Custom(Common common)
+	{
+		this.common = common;
+	}
 
 	@SuppressLint("SetJavaScriptEnabled")
 	@Nullable
@@ -38,93 +38,90 @@ public class Custom extends Fragment
 		wv.getSettings().setUserAgentString(Common.UA);
 		wv.getSettings().setJavaScriptEnabled(true);
 
-	    WebSettings settings = wv.getSettings();
-	    settings.setDomStorageEnabled(true);
+		WebSettings settings = wv.getSettings();
+		settings.setDomStorageEnabled(true);
 
-	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-	    swipeLayout.setOnRefreshListener(() ->
-	    {
-		    Common.LogMessage("wv.getScrollY() == " + wv.getScrollY());
-		    swipeLayout.setRefreshing(true);
-		    Common.LogMessage("onRefresh();");
-		    reloadWebView();
-		    swipeLayout.setRefreshing(false);
-	    });
-
-	    wv.getViewTreeObserver().addOnScrollChangedListener(() ->
-	    {
+		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+		swipeLayout.setOnRefreshListener(() ->
+		{
 			Common.LogMessage("wv.getScrollY() == " + wv.getScrollY());
-		    if(wv.getScrollY() == 0)
-			    swipeLayout.setEnabled(true);
-		    else
-			    swipeLayout.setEnabled(false);
-	    });
+			swipeLayout.setRefreshing(true);
+			Common.LogMessage("onRefresh();");
+			reloadWebView();
+			swipeLayout.setRefreshing(false);
+		});
 
-        wv.setWebViewClient(new WebViewClient()
-        {
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url)
-            {
-                return false;
-            }
-        });
+		wv.getViewTreeObserver().addOnScrollChangedListener(() ->
+		{
+			Common.LogMessage("wv.getScrollY() == " + wv.getScrollY());
+			swipeLayout.setEnabled(wv.getScrollY() == 0);
+		});
 
-        wv.setOnKeyListener((v, keyCode, event) ->
-        {
-            if(event.getAction() == KeyEvent.ACTION_DOWN)
-            {
-                if((keyCode == KeyEvent.KEYCODE_BACK))
-                {
-                    if(wv != null)
-                    {
-                        if(wv.canGoBack())
-                        {
-                            wv.goBack();
-                            return true;
-                        }
-                    }
-                }
-            }
+		wv.setWebViewClient(new WebViewClient()
+		{
+			@Override
+			public boolean shouldOverrideUrlLoading(WebView view, String url)
+			{
+				return false;
+			}
+		});
 
-            return false;
-        });
+		wv.setOnKeyListener((v, keyCode, event) ->
+		{
+			if(event.getAction() == KeyEvent.ACTION_DOWN)
+			{
+				if((keyCode == KeyEvent.KEYCODE_BACK))
+				{
+					if(wv != null)
+					{
+						if(wv.canGoBack())
+						{
+							wv.goBack();
+							return true;
+						}
+					}
+				}
+			}
 
-        wv.setWebChromeClient(new WebChromeClient()
-	    {
-		    @Override
-		    public boolean onConsoleMessage(ConsoleMessage cm)
-		    {
+			return false;
+		});
+
+		wv.setWebChromeClient(new WebChromeClient()
+		{
+			@Override
+			public boolean onConsoleMessage(ConsoleMessage cm)
+			{
 				Common.LogMessage("My Application: " + cm.message());
 				return super.onConsoleMessage(cm);
-		    }
-	    });
+			}
+		});
 
-        reloadWebView();
-        return rootView;
-    }
+		reloadWebView();
+		return rootView;
+	}
 
-    private void reloadWebView()
-    {
-        Common.LogMessage("reload custom...");
+	private void reloadWebView()
+	{
+		Common.LogMessage("reload custom...");
 
-        String custom = common.GetStringPref("CUSTOM_URL", "");
-        String custom_url = common.GetStringPref("custom_url", "");
+		String custom = common.GetStringPref("CUSTOM_URL", "");
+		String custom_url = common.GetStringPref("custom_url", "");
 
-        if ((custom == null || custom.equals("")) && (custom_url == null || custom_url.equals("")))
-            return;
+		if ((custom == null || custom.equals("")) && (custom_url == null || custom_url.equals("")))
+			return;
 
-        if(custom_url != null && !custom_url.equals(""))
-        	custom = custom_url;
+		if(custom_url != null && !custom_url.equals(""))
+			custom = custom_url;
 
 		wv.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
-        wv.loadUrl(custom);
-    }
+		wv.loadUrl(custom);
+	}
 
-    public void onResume()
-    {
-	    super.onResume();
-	    Common.LogMessage("custom.java -- registerReceiver");
-    }
+	public void onResume()
+	{
+		super.onResume();
+		Common.LogMessage("custom.java -- registerReceiver");
+	}
 
 	public void onPause()
 	{

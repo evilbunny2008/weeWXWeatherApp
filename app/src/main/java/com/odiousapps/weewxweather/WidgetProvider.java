@@ -10,7 +10,7 @@ import android.widget.RemoteViews;
 
 public class WidgetProvider extends AppWidgetProvider
 {
-    Common common = null;
+	Common common = null;
 	private int dark_theme;
 
 	@Override
@@ -30,31 +30,31 @@ public class WidgetProvider extends AppWidgetProvider
 			onUpdate(context, appWidgetManager, appWidgetIds);
 	}
 
-    @SuppressLint("UnspecifiedImmutableFlag")
-    @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
-    {
+	@SuppressLint("UnspecifiedImmutableFlag")
+	@Override
+	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
+	{
 		common = new Common(context);
 		common.setAlarm("WidgetProvider");
 
-	    dark_theme = common.GetIntPref("dark_theme", 2);
-	    if(dark_theme == 2)
-		    dark_theme = common.getSystemTheme();
+		dark_theme = common.GetIntPref("dark_theme", 2);
+		if(dark_theme == 2)
+			dark_theme = common.getSystemTheme();
 
-        final int count = appWidgetIds.length;
+		final int count = appWidgetIds.length;
 
-        for(int i = 0; i < count; i++)
-        {
-            int widgetId = appWidgetIds[i];
+		for(int i = 0; i < count; i++)
+		{
+			int widgetId = appWidgetIds[i];
 
-            Common.LogMessage("appWidgetsIds["+i+"] = " + appWidgetIds[i]);
-            RemoteViews remoteViews = common.buildUpdate(context, dark_theme);
+			Common.LogMessage("appWidgetsIds["+i+"] = " + appWidgetIds[i]);
+			RemoteViews remoteViews = common.buildUpdate(context, dark_theme);
 
-            Intent launchActivity = new Intent(context, SplashScreen.class);
+			Intent launchActivity = new Intent(context, SplashScreen.class);
 
-	        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchActivity, PendingIntent.FLAG_IMMUTABLE);
-            remoteViews.setOnClickPendingIntent(R.id.widget, pendingIntent);
-            appWidgetManager.updateAppWidget(widgetId, remoteViews);
-        }
-    }
+			PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchActivity, PendingIntent.FLAG_IMMUTABLE);
+			remoteViews.setOnClickPendingIntent(R.id.widget, pendingIntent);
+			appWidgetManager.updateAppWidget(widgetId, remoteViews);
+		}
+	}
 }

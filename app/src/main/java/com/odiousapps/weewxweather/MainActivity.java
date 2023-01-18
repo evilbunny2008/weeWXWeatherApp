@@ -51,9 +51,9 @@ import androidx.viewpager2.widget.ViewPager2;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
 {
-    private TabLayout tabLayout;
-    private Common common;
-    private DrawerLayout mDrawerLayout;
+	private TabLayout tabLayout;
+	private Common common;
+	private DrawerLayout mDrawerLayout;
 	private EditText settingsURL;
 	private EditText customURL;
 	private EditText fgColour;
@@ -74,8 +74,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 	@SuppressLint("WrongConstant")
 	@Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+	protected void onCreate(Bundle savedInstanceState)
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity);
 
@@ -85,12 +85,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		tabLayout = findViewById(R.id.tabs);
 
-	    SectionsStateAdapter mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
-	    mSectionsPagerAdapter.addFragment(new Weather(common));
-	    mSectionsPagerAdapter.addFragment(new Stats(common));
-	    mSectionsPagerAdapter.addFragment(new Forecast(common));
-	    mSectionsPagerAdapter.addFragment(new Webcam(common));
-	    mSectionsPagerAdapter.addFragment(new Custom(common));
+		SectionsStateAdapter mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
+		mSectionsPagerAdapter.addFragment(new Weather(common));
+		mSectionsPagerAdapter.addFragment(new Stats(common));
+		mSectionsPagerAdapter.addFragment(new Forecast(common));
+		mSectionsPagerAdapter.addFragment(new Webcam(common));
+		mSectionsPagerAdapter.addFragment(new Custom(common));
 
 		ViewPager2 mViewPager = findViewById(R.id.container);
 		//mViewPager.setUserInputEnabled(false);
@@ -110,41 +110,41 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			e.printStackTrace();
 		}
 
-	    settingsURL = findViewById(R.id.settings);
-	    customURL = findViewById(R.id.customURL);
-	    s1 = findViewById(R.id.spinner1);
+		settingsURL = findViewById(R.id.settings);
+		customURL = findViewById(R.id.customURL);
+		s1 = findViewById(R.id.spinner1);
 
-	    metric_forecasts = findViewById(R.id.metric_forecasts);
-	    show_indoor = findViewById(R.id.show_indoor);
-	    s2 = findViewById(R.id.spinner2);
+		metric_forecasts = findViewById(R.id.metric_forecasts);
+		show_indoor = findViewById(R.id.show_indoor);
+		s2 = findViewById(R.id.spinner2);
 
-	    b1 = findViewById(R.id.button);
-	    b2 = findViewById(R.id.deleteData);
-	    b3 = findViewById(R.id.aboutButton);
+		b1 = findViewById(R.id.button);
+		b2 = findViewById(R.id.deleteData);
+		b3 = findViewById(R.id.aboutButton);
 
-	    fgColour = findViewById(R.id.fgPicker);
-	    bgColour = findViewById(R.id.bgPicker);
+		fgColour = findViewById(R.id.fgPicker);
+		bgColour = findViewById(R.id.bgPicker);
 
-	    tv = findViewById(R.id.aboutText);
+		tv = findViewById(R.id.aboutText);
 
-	    Thread t = new Thread(() ->
-	    {
-		    try
-		    {
-			    // Sleep needed to stop frames dropping while loading
-			    Thread.sleep(500);
-		    } catch (Exception e) {
-			    e.printStackTrace();
-		    }
+		Thread t = new Thread(() ->
+		{
+			try
+			{
+				// Sleep needed to stop frames dropping while loading
+				Thread.sleep(500);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 
-		    Handler mHandler = new Handler(Looper.getMainLooper());
-		    mHandler.post(this::doSettings);
+			Handler mHandler = new Handler(Looper.getMainLooper());
+			mHandler.post(this::doSettings);
 
-		    common.setAlarm("MainActivity");
-	    });
+			common.setAlarm("MainActivity");
+		});
 
-	    t.start();
-    }
+		t.start();
+	}
 
 	private void showUpdateAvailable()
 	{
@@ -156,171 +156,171 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		d.show();
 	}
 
-    private void doSettings()
-    {
-	    String[] paths = new String[]
-			    {
-					    getString(R.string.manual_update),
-					    getString(R.string.every_5_minutes),
-					    getString(R.string.every_10_minutes),
-					    getString(R.string.every_15_minutes),
-					    getString(R.string.every_30_minutes),
-					    getString(R.string.every_hour),
-			    };
-	    ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
-	    adapter.setDropDownViewResource(R.layout.spinner_layout);
-	    s1.setAdapter(adapter);
-	    s1.setOnItemSelectedListener(this);
-	    pos = common.GetIntPref("updateInterval", 1);
-	    s1.setSelection(pos);
+	private void doSettings()
+	{
+		String[] paths = new String[]
+				{
+						getString(R.string.manual_update),
+						getString(R.string.every_5_minutes),
+						getString(R.string.every_10_minutes),
+						getString(R.string.every_15_minutes),
+						getString(R.string.every_30_minutes),
+						getString(R.string.every_hour),
+				};
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
+		adapter.setDropDownViewResource(R.layout.spinner_layout);
+		s1.setAdapter(adapter);
+		s1.setOnItemSelectedListener(this);
+		pos = common.GetIntPref("updateInterval", 1);
+		s1.setSelection(pos);
 
-	    SwitchCompat wifi_only = findViewById(R.id.wifi_only);
-	    wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
-	    SwitchCompat use_icons = findViewById(R.id.use_icons);
-	    use_icons.setChecked(common.GetBoolPref("use_icons", false));
-	    metric_forecasts.setChecked(common.GetBoolPref("metric", true));
-	    show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
+		SwitchCompat wifi_only = findViewById(R.id.wifi_only);
+		wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
+		SwitchCompat use_icons = findViewById(R.id.use_icons);
+		use_icons.setChecked(common.GetBoolPref("use_icons", false));
+		metric_forecasts.setChecked(common.GetBoolPref("metric", true));
+		show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
 
-	    String[] themeString = new String[]
-			    {
-					    getString(R.string.use_light_theme),
-					    getString(R.string.use_dark_theme2),
-					    getString(R.string.use_system_default)
-			    };
-	    ArrayAdapter<String> adapter2 = new ArrayAdapter<>(common.context, R.layout.spinner_layout, themeString);
-	    adapter2.setDropDownViewResource(R.layout.spinner_layout);
-	    s2.setAdapter(adapter2);
-	    s2.setOnItemSelectedListener(this);
-	    theme = common.GetIntPref("dark_theme", 2);
-	    s2.setSelection(theme);
+		String[] themeString = new String[]
+				{
+						getString(R.string.use_light_theme),
+						getString(R.string.use_dark_theme2),
+						getString(R.string.use_system_default)
+				};
+		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(common.context, R.layout.spinner_layout, themeString);
+		adapter2.setDropDownViewResource(R.layout.spinner_layout);
+		s2.setAdapter(adapter2);
+		s2.setOnItemSelectedListener(this);
+		theme = common.GetIntPref("dark_theme", 2);
+		s2.setSelection(theme);
 
-	    RadioButton showRadar = findViewById(R.id.showRadar);
-	    showRadar.setChecked(common.GetBoolPref("radarforecast", true));
-	    RadioButton showForecast = findViewById(R.id.showForecast);
-	    showForecast.setChecked(!common.GetBoolPref("radarforecast", true));
+		RadioButton showRadar = findViewById(R.id.showRadar);
+		showRadar.setChecked(common.GetBoolPref("radarforecast", true));
+		RadioButton showForecast = findViewById(R.id.showForecast);
+		showForecast.setChecked(!common.GetBoolPref("radarforecast", true));
 
-	    b1.setOnClickListener(arg0 ->
-	    {
-		    b1.setEnabled(false);
-		    b2.setEnabled(false);
-		    InputMethodManager mgr = (InputMethodManager)common.context.getSystemService(Context.INPUT_METHOD_SERVICE);
-		    if(mgr != null)
-		    {
-			    mgr.hideSoftInputFromWindow(settingsURL.getWindowToken(), 0);
-			    mgr.hideSoftInputFromWindow(customURL.getWindowToken(), 0);
-		    }
+		b1.setOnClickListener(arg0 ->
+		{
+			b1.setEnabled(false);
+			b2.setEnabled(false);
+			InputMethodManager mgr = (InputMethodManager)common.context.getSystemService(Context.INPUT_METHOD_SERVICE);
+			if(mgr != null)
+			{
+				mgr.hideSoftInputFromWindow(settingsURL.getWindowToken(), 0);
+				mgr.hideSoftInputFromWindow(customURL.getWindowToken(), 0);
+			}
 
-		    Common.LogMessage("show dialog");
-		    dialog = ProgressDialog.show(common.context, getString(R.string.testing_urls), getString(R.string.please_wait_verify_url), false);
-		    dialog.show();
+			Common.LogMessage("show dialog");
+			dialog = ProgressDialog.show(common.context, getString(R.string.testing_urls), getString(R.string.please_wait_verify_url), false);
+			dialog.show();
 
-		    processSettings();
-	    });
+			processSettings();
+		});
 
-	    b2.setOnClickListener(arg0 -> checkReally());
+		b2.setOnClickListener(arg0 -> checkReally());
 
-	    b3.setOnClickListener(arg0 ->
-	    {
-		    if(showSettings)
-		    {
-			    showSettings = false;
-			    b1.setVisibility(View.INVISIBLE);
-			    b2.setVisibility(View.INVISIBLE);
-			    b3.setText(R.string.settings2);
+		b3.setOnClickListener(arg0 ->
+		{
+			if(showSettings)
+			{
+				showSettings = false;
+				b1.setVisibility(View.INVISIBLE);
+				b2.setVisibility(View.INVISIBLE);
+				b3.setText(R.string.settings2);
 
-			    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
-			    settingsLayout.setVisibility(View.GONE);
-			    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
-			    aboutLayout.setVisibility(View.VISIBLE);
-		    } else {
-			    showSettings = true;
-			    b1.setVisibility(View.VISIBLE);
-			    b2.setVisibility(View.VISIBLE);
-			    b3.setText(R.string.about2);
+				LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
+				settingsLayout.setVisibility(View.GONE);
+				LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
+				aboutLayout.setVisibility(View.VISIBLE);
+			} else {
+				showSettings = true;
+				b1.setVisibility(View.VISIBLE);
+				b2.setVisibility(View.VISIBLE);
+				b3.setText(R.string.about2);
 
-			    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
-			    aboutLayout.setVisibility(View.GONE);
-			    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
-			    settingsLayout.setVisibility(View.VISIBLE);
-		    }
+				LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
+				aboutLayout.setVisibility(View.GONE);
+				LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
+				settingsLayout.setVisibility(View.VISIBLE);
+			}
 
-	    });
+		});
 
-	    settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
-	    settingsURL.setOnFocusChangeListener((v, hasFocus) ->
-	    {
-		    if (!hasFocus)
-			    hideKeyboard(v);
-	    });
+		settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
+		settingsURL.setOnFocusChangeListener((v, hasFocus) ->
+		{
+			if (!hasFocus)
+				hideKeyboard(v);
+		});
 
-	    customURL.setText(common.GetStringPref("custom_url", ""));
-	    customURL.setOnFocusChangeListener((v, hasFocus) ->
-	    {
-		    if (!hasFocus)
-			    hideKeyboard(v);
-	    });
+		customURL.setText(common.GetStringPref("custom_url", ""));
+		customURL.setOnFocusChangeListener((v, hasFocus) ->
+		{
+			if (!hasFocus)
+				hideKeyboard(v);
+		});
 
-	    LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
-	    settingsLayout.setVisibility(View.VISIBLE);
-	    LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
-	    aboutLayout.setVisibility(View.GONE);
+		LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
+		settingsLayout.setVisibility(View.VISIBLE);
+		LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
+		aboutLayout.setVisibility(View.GONE);
 
-	    String lines = "<html><body>Big thanks to the <a href='http://weewx.com'>weeWX project</a>, as this app " +
-			    "wouldn't be possible otherwise.<br><br>" +
-			    "Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
-			    "is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and " +
-			    "<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers" +
-			    "<br><br>" +
-			    "Forecasts by" +
-			    "<a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, " +
-			    "<a href='https://weatherzone.com.au'>weatherzone</a>, " +
-			    "<a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a>, " +
-			    "<a href='https://bom.gov.au'>Bureau of Meteorology</a>, " +
-			    "<a href='https://www.weather.gov'>Weather.gov</a>, " +
-			    "<a href='https://worldweather.wmo.int/en/home.html'>World Meteorology Organisation</a>, " +
-			    "<a href='https://weather.gc.ca'>Environment Canada</a>, " +
-			    "<a href='https://www.metoffice.gov.uk'>UK Met Office</a>, " +
-			    "<a href='https://www.aemet.es'>La Agencia Estatal de Meteorología</a>, " +
-			    "<a href='https://www.dwd.de'>Deutscher Wetterdienst</a>, " +
-			    "<a href='https://metservice.com'>MetService.com</a>, " +
-			    "<a href='https://meteofrance.com'>MeteoFrance.com</a>, " +
-			    "<br><br>" +
-			    "weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
+		String lines = "<html><body>Big thanks to the <a href='http://weewx.com'>weeWX project</a>, as this app " +
+				"wouldn't be possible otherwise.<br><br>" +
+				"Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
+				"is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and " +
+				"<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers" +
+				"<br><br>" +
+				"Forecasts by" +
+				"<a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, " +
+				"<a href='https://weatherzone.com.au'>weatherzone</a>, " +
+				"<a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a>, " +
+				"<a href='https://bom.gov.au'>Bureau of Meteorology</a>, " +
+				"<a href='https://www.weather.gov'>Weather.gov</a>, " +
+				"<a href='https://worldweather.wmo.int/en/home.html'>World Meteorology Organisation</a>, " +
+				"<a href='https://weather.gc.ca'>Environment Canada</a>, " +
+				"<a href='https://www.metoffice.gov.uk'>UK Met Office</a>, " +
+				"<a href='https://www.aemet.es'>La Agencia Estatal de Meteorología</a>, " +
+				"<a href='https://www.dwd.de'>Deutscher Wetterdienst</a>, " +
+				"<a href='https://metservice.com'>MetService.com</a>, " +
+				"<a href='https://meteofrance.com'>MeteoFrance.com</a>, " +
+				"<br><br>" +
+				"weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
 
-	    tv.setText(Html.fromHtml(lines));
-	    tv.setMovementMethod(LinkMovementMethod.getInstance());
+		tv.setText(Html.fromHtml(lines));
+		tv.setMovementMethod(LinkMovementMethod.getInstance());
 
-	    // https://github.com/Pes8/android-material-color-picker-dialog
+		// https://github.com/Pes8/android-material-color-picker-dialog
 
-	    String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
-	    fgColour.setText(hex);
-	    fgColour.setOnClickListener(v -> showPicker(common.GetIntPref("fgColour", 0xFF000000),true));
+		String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
+		fgColour.setText(hex);
+		fgColour.setOnClickListener(v -> showPicker(common.GetIntPref("fgColour", 0xFF000000),true));
 
-	    hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase();
-	    bgColour.setText(hex);
-	    bgColour.setOnClickListener(v -> showPicker(common.GetIntPref("bgColour", 0xFFFFFFFF),false));
-    }
+		hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase();
+		bgColour.setText(hex);
+		bgColour.setOnClickListener(v -> showPicker(common.GetIntPref("bgColour", 0xFFFFFFFF),false));
+	}
 
 	private void showPicker(int col, final boolean fgColour)
-    {
-	    final ColorPicker cp = new ColorPicker(MainActivity.this, col >> 24 & 255, col >> 16 & 255, col >> 8 & 255, col & 255);
+	{
+		final ColorPicker cp = new ColorPicker(MainActivity.this, col >> 24 & 255, col >> 16 & 255, col >> 8 & 255, col & 255);
 
-	    cp.setCallback(colour ->
-	    {
-		    Common.LogMessage("Pure Hex" + Integer.toHexString(colour));
+		cp.setCallback(colour ->
+		{
+			Common.LogMessage("Pure Hex" + Integer.toHexString(colour));
 
-		    if(fgColour)
-			    common.SetIntPref("fgColour", colour);
-		    else
-			    common.SetIntPref("bgColour", colour);
+			if(fgColour)
+				common.SetIntPref("fgColour", colour);
+			else
+				common.SetIntPref("bgColour", colour);
 
-		    common.SendIntents();
+			common.SendIntents();
 
-		    cp.dismiss();
-	    });
+			cp.dismiss();
+		});
 
-	    cp.show();
-    }
+		cp.show();
+	}
 
 	private void hideKeyboard(View view)
 	{
@@ -958,96 +958,96 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	}
 
 	@Override
-    public void onBackPressed()
-    {
-	    if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
-	    {
-		    mDrawerLayout.closeDrawer(GravityCompat.START);
-	    } else {
-		    super.onBackPressed();
-		    Common.LogMessage("finishing up.");
-		    finish();
-	    }
-    }
+	public void onBackPressed()
+	{
+		if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
+		{
+			mDrawerLayout.closeDrawer(GravityCompat.START);
+		} else {
+			super.onBackPressed();
+			Common.LogMessage("finishing up.");
+			finish();
+		}
+	}
 
-    @Override
-    public void onPause()
-    {
-	    unregisterReceiver(serviceReceiver);
-	    super.onPause();
-    }
+	@Override
+	public void onPause()
+	{
+		unregisterReceiver(serviceReceiver);
+		super.onPause();
+	}
 
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
+	@Override
+	protected void onResume()
+	{
+		super.onResume();
 
-	    IntentFilter filter = new IntentFilter();
-	    filter.addAction(Common.UPDATE_INTENT);
-	    filter.addAction(Common.FAILED_INTENT);
-	    filter.addAction(Common.TAB0_INTENT);
-	    filter.addAction(Common.INIGO_INTENT);
-	    registerReceiver(serviceReceiver, filter);
+		IntentFilter filter = new IntentFilter();
+		filter.addAction(Common.UPDATE_INTENT);
+		filter.addAction(Common.FAILED_INTENT);
+		filter.addAction(Common.TAB0_INTENT);
+		filter.addAction(Common.INIGO_INTENT);
+		registerReceiver(serviceReceiver, filter);
 
-	    Common.LogMessage("resuming app updates");
-	    common.SendIntents();
-    }
+		Common.LogMessage("resuming app updates");
+		common.SendIntents();
+	}
 
-    public void getWeather()
-    {
-        common.getWeather();
-    }
+	public void getWeather()
+	{
+		common.getWeather();
+	}
 
-    private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
-    {
-        @SuppressLint("SuspiciousIndentation")
-        @Override
-        public void onReceive(Context context, Intent intent)
-        {
-            try
-            {
-                Common.LogMessage("We have a hit, so we should probably update the screen.");
-                String action = intent.getAction();
-                if(action != null && action.equals(Common.TAB0_INTENT))
-                {
-                    getWeather();
+	private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
+	{
+		@SuppressLint("SuspiciousIndentation")
+		@Override
+		public void onReceive(Context context, Intent intent)
+		{
+			try
+			{
+				Common.LogMessage("We have a hit, so we should probably update the screen.");
+				String action = intent.getAction();
+				if(action != null && action.equals(Common.TAB0_INTENT))
+				{
+					getWeather();
 
-                    runOnUiThread(() ->
-                    {
-	                    //noinspection ConstantConditions
-	                    tabLayout.getTabAt(0).select();
-                    });
-                }
+					runOnUiThread(() ->
+					{
+						//noinspection ConstantConditions
+						tabLayout.getTabAt(0).select();
+					});
+				}
 
 				if(action != null && action.equals(Common.UPDATE_INTENT))
-	            {
-		            String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
-		            fgColour.setText(hex);
-		            hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase();
-		            bgColour.setText(hex);
-	            }
+				{
+					String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
+					fgColour.setText(hex);
+					hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase();
+					bgColour.setText(hex);
+				}
 
-	            if(action != null && action.equals(Common.INIGO_INTENT))
-	            {
-		            showUpdateAvailable();
-	            }
+				if(action != null && action.equals(Common.INIGO_INTENT))
+				{
+					showUpdateAvailable();
+				}
 
-	            if(action != null && action.equals(Common.FAILED_INTENT))
-	            {
-		            runOnUiThread(() -> new AlertDialog
-				            .Builder(common.context)
-				            .setTitle(getString(R.string.error_occurred_while_attempting_to_update))
-				            .setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-				            .setPositiveButton("Ok", (dialog, which) ->
-				            {
-				            }).show());
+				if(action != null && action.equals(Common.FAILED_INTENT))
+				{
+					runOnUiThread(() -> new AlertDialog
+							.Builder(common.context)
+							.setTitle(getString(R.string.error_occurred_while_attempting_to_update))
+							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+							.setPositiveButton("Ok", (dialog, which) ->
+							{
+							}).show());
 
-	            }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-    };
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	};
 
 	public static class SectionsStateAdapter extends FragmentStateAdapter
 	{

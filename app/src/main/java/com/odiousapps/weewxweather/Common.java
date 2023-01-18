@@ -2611,100 +2611,100 @@ class Common
 		return processYahoo(data, false);
 	}
 
-    String[] processYahoo(String data, boolean showHeader)
-    {
-	    if(data == null || data.equals(""))
-		    return null;
+	String[] processYahoo(String data, boolean showHeader)
+	{
+		if(data == null || data.equals(""))
+			return null;
 
-	    boolean metric = GetBoolPref("metric", true);
+		boolean metric = GetBoolPref("metric", true);
 
 		List<Day> days = new ArrayList<>();
 		long timestamp = GetLongPref("rssCheck", 0) * 1000;
 		String desc;
-	    Document doc;
+		Document doc;
 
-	    try
-	    {
-		    String[] bits = data.split("data-reactid=\"7\">", 8);
-		    String[] b = bits[7].split("</h1>", 2);
-		    String town = b[0];
-		    String rest = b[1];
-		    b = rest.split("data-reactid=\"8\">", 2)[1].split("</div>", 2);
-		    String country = b[0];
-		    rest = b[1];
+		try
+		{
+			String[] bits = data.split("data-reactid=\"7\">", 8);
+			String[] b = bits[7].split("</h1>", 2);
+			String town = b[0];
+			String rest = b[1];
+			b = rest.split("data-reactid=\"8\">", 2)[1].split("</div>", 2);
+			String country = b[0];
+			rest = b[1];
 
-		    desc = town.trim() + ", " + country.trim();
-		    int[] daynums = new int[]{196, 221, 241, 261, 281, 301, 321, 341, 361, 381};
-		    for (int startid : daynums)
-		    {
-			    Day myday = new Day();
+			desc = town.trim() + ", " + country.trim();
+			int[] daynums = new int[]{196, 221, 241, 261, 281, 301, 321, 341, 361, 381};
+			for (int startid : daynums)
+			{
+				Day myday = new Day();
 
-			    int endid;
-			    long last_ts = System.currentTimeMillis();
+				int endid;
+				long last_ts = System.currentTimeMillis();
 
-			    if (startid == 196)
-				    endid = startid + 24;
-			    else
-				    endid = startid + 19;
+				if (startid == 196)
+					endid = startid + 24;
+				else
+					endid = startid + 19;
 
-			    String tmpstr = rest.split("<span data-reactid=\"" + startid + "\">", 2)[1];
-			    bits = tmpstr.split("data-reactid=\"" + endid + "\">", 2);
-			    tmpstr = bits[0];
-			    rest = bits[1];
-			    String dow = tmpstr.split("</span>", 2)[0].trim();
-			    myday.timestamp = convertDaytoTS(dow, new Locale("en", "US"), last_ts);
-			    SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
-			    myday.day = sdf.format(myday.timestamp);
+				String tmpstr = rest.split("<span data-reactid=\"" + startid + "\">", 2)[1];
+				bits = tmpstr.split("data-reactid=\"" + endid + "\">", 2);
+				tmpstr = bits[0];
+				rest = bits[1];
+				String dow = tmpstr.split("</span>", 2)[0].trim();
+				myday.timestamp = convertDaytoTS(dow, new Locale("en", "US"), last_ts);
+				SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
+				myday.day = sdf.format(myday.timestamp);
 
-			    myday.text = tmpstr.split("<img alt=\"", 2)[1].split("\"", 2)[0].trim();
-			    myday.icon = tmpstr.split("<img alt=\"", 2)[1].split("\"", 2)[1];
-			    myday.icon = myday.icon.split("src=\"", 2)[1].split("\"", 2)[0].trim();
+				myday.text = tmpstr.split("<img alt=\"", 2)[1].split("\"", 2)[0].trim();
+				myday.icon = tmpstr.split("<img alt=\"", 2)[1].split("\"", 2)[1];
+				myday.icon = myday.icon.split("src=\"", 2)[1].split("\"", 2)[0].trim();
 
-			    myday.max = tmpstr.split("data-reactid=\"" + (startid + 10) + "\">", 2)[1];
-			    myday.max = myday.max.split("</span>", 2)[0].trim();
-			    myday.min = tmpstr.split("data-reactid=\"" + (startid + 13) + "\">", 2)[1];
-			    myday.min = myday.min.split("</span>", 2)[0].trim();
+				myday.max = tmpstr.split("data-reactid=\"" + (startid + 10) + "\">", 2)[1];
+				myday.max = myday.max.split("</span>", 2)[0].trim();
+				myday.min = tmpstr.split("data-reactid=\"" + (startid + 13) + "\">", 2)[1];
+				myday.min = myday.min.split("</span>", 2)[0].trim();
 
-			    doc = Jsoup.parse(myday.max.trim());
-			    myday.max = doc.text();
+				doc = Jsoup.parse(myday.max.trim());
+				myday.max = doc.text();
 
-			    doc = Jsoup.parse(myday.min.trim());
-			    myday.min = doc.text();
+				doc = Jsoup.parse(myday.min.trim());
+				myday.min = doc.text();
 
-			    myday.max = myday.max.substring(0, myday.max.length() - 1);
-			    myday.min = myday.min.substring(0, myday.min.length() - 1);
+				myday.max = myday.max.substring(0, myday.max.length() - 1);
+				myday.min = myday.min.substring(0, myday.min.length() - 1);
 
-			    if (metric)
-			    {
-				    myday.max = round((Double.parseDouble(myday.max) - 32.0) * 5.0 / 9.0) + "&deg;C";
-				    myday.min = round((Double.parseDouble(myday.min) - 32.0) * 5.0 / 9.0) + "&deg;C";
-			    } else
-			    {
-				    myday.max += "&deg;F";
-				    myday.min += "&deg;F";
-			    }
+				if (metric)
+				{
+					myday.max = round((Double.parseDouble(myday.max) - 32.0) * 5.0 / 9.0) + "&deg;C";
+					myday.min = round((Double.parseDouble(myday.min) - 32.0) * 5.0 / 9.0) + "&deg;C";
+				} else
+				{
+					myday.max += "&deg;F";
+					myday.min += "&deg;F";
+				}
 
-			    String[] ret = checkFiles(myday.icon);
+				String[] ret = checkFiles(myday.icon);
 				if (ret[0] != null)
-			    {
-				    File f = new File(ret[1]);
-				    FileInputStream imageInFile = new FileInputStream(f);
-				    byte[] imageData = new byte[(int) f.length()];
-				    if(imageInFile.read(imageData) > 0)
-				    	myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-			    } else
-				    return ret;
+				{
+					File f = new File(ret[1]);
+					FileInputStream imageInFile = new FileInputStream(f);
+					byte[] imageData = new byte[(int) f.length()];
+					if(imageInFile.read(imageData) > 0)
+						myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+				} else
+					return ret;
 
 				LogMessage(myday.toString());
-			    days.add(myday);
-		    }
-	    } catch (Exception e) {
-		    e.printStackTrace();
-		    return null;
-	    }
+				days.add(myday);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 
-	    return new String[]{generateForecast(days, timestamp, showHeader), desc};
-    }
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
+	}
 
 	void SendIntents()
 	{
