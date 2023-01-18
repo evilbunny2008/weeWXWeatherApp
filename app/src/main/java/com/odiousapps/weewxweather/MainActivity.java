@@ -3,7 +3,6 @@ package com.odiousapps.weewxweather;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.appwidget.AppWidgetManager;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
@@ -13,7 +12,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.Gravity;
 import android.view.View;
@@ -41,6 +39,7 @@ import java.util.Locale;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.text.HtmlCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
@@ -67,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private SwitchCompat show_indoor, metric_forecasts;
 	private TextView tv;
 
-	private ProgressDialog dialog;
+	private AlertDialog dialog;
 
 	private static int pos;
 	private static int theme;
@@ -152,7 +151,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		d.setTitle(getString(R.string.app_name));
 		d.setMessage(getString(R.string.inigo_needs_updating));
 		d.setPositiveButton(getString(R.string.ok), null);
-		d.setIcon(R.drawable.ic_launcher_foreground);
+		d.setIcon(R.mipmap.ic_launcher_foreground);
 		d.show();
 	}
 
@@ -211,9 +210,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			}
 
 			Common.LogMessage("show dialog");
-			dialog = ProgressDialog.show(common.context, getString(R.string.testing_urls), getString(R.string.please_wait_verify_url), false);
+			AlertDialog.Builder builder = new AlertDialog.Builder(common.context);
+			builder.setCancelable(false);
+			builder.setView(R.layout.layout_loading_dialog);
+			dialog = builder.create();
 			dialog.show();
-
 			processSettings();
 		});
 
@@ -271,32 +272,19 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				"is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and " +
 				"<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers" +
 				"<br><br>" +
-				"Forecasts by" +
-				"<a href='https://www.yahoo.com/?ilc=401'>Yahoo!</a>, " +
-				"<a href='https://weatherzone.com.au'>weatherzone</a>, " +
-				"<a href='https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr'>yr.no</a>, " +
-				"<a href='https://bom.gov.au'>Bureau of Meteorology</a>, " +
-				"<a href='https://www.weather.gov'>Weather.gov</a>, " +
-				"<a href='https://worldweather.wmo.int/en/home.html'>World Meteorology Organisation</a>, " +
-				"<a href='https://weather.gc.ca'>Environment Canada</a>, " +
-				"<a href='https://www.metoffice.gov.uk'>UK Met Office</a>, " +
-				"<a href='https://www.aemet.es'>La Agencia Estatal de Meteorología</a>, " +
-				"<a href='https://www.dwd.de'>Deutscher Wetterdienst</a>, " +
-				"<a href='https://metservice.com'>MetService.com</a>, " +
-				"<a href='https://meteofrance.com'>MeteoFrance.com</a>, " +
-				"<br><br>" +
-				"weeWX Weather App v" + common.getAppversion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>";
+				"weeWX Weather App v" + common.getAppVersion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>" +
+				"<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
 
-		tv.setText(Html.fromHtml(lines));
+		tv.setText(HtmlCompat.fromHtml(lines, HtmlCompat.FROM_HTML_MODE_LEGACY));
 		tv.setMovementMethod(LinkMovementMethod.getInstance());
 
 		// https://github.com/Pes8/android-material-color-picker-dialog
 
-		String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
+		String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase(Locale.ENGLISH);
 		fgColour.setText(hex);
 		fgColour.setOnClickListener(v -> showPicker(common.GetIntPref("fgColour", 0xFF000000),true));
 
-		hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase();
+		hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase(Locale.ENGLISH);
 		bgColour.setText(hex);
 		bgColour.setOnClickListener(v -> showPicker(common.GetIntPref("bgColour", 0xFFFFFFFF),false));
 	}
@@ -348,7 +336,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(common.context);
 		builder.setMessage(getString(R.string.remove_all_data)).setCancelable(false)
-				.setPositiveButton(getString(R.string.ok), (dialoginterface, i) ->
+				.setPositiveButton(getString(R.string.ok), (dialog_interface, i) ->
 				{
 					Common.LogMessage("trash all data");
 
@@ -394,10 +382,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					manager.updateAppWidget(thisWidget, remoteViews);
 					Common.LogMessage("widget intent broadcasted");
 
-					dialoginterface.cancel();
+					dialog_interface.cancel();
 
 					System.exit(0);
-				}).setNegativeButton(getString(R.string.no), (dialoginterface, i) -> dialoginterface.cancel());
+				}).setNegativeButton(getString(R.string.no), (dialog_interface, i) -> dialog_interface.cancel());
 
 		builder.create().show();
 
@@ -430,7 +418,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			SwitchCompat use_icons = findViewById(R.id.use_icons);
 
 			RadioButton showRadar = findViewById(R.id.showRadar);
-			long curtime = Math.round(System.currentTimeMillis() / 1000.0);
+			long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
 			if(use_icons.isChecked() && (common.GetLongPref("icon_version", 0) < Common.icon_version || !common.checkForImages()))
 			{
@@ -494,15 +482,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				for (String bit : bits)
 				{
 					String[] mb = bit.split("=", 2);
-					mb[0] = mb[0].trim().toLowerCase();
+					mb[0] = mb[0].trim().toLowerCase(Locale.ENGLISH);
 					if (mb[0].equals("data"))
 						data = mb[1];
 					if (mb[0].equals("radtype"))
-						radtype = mb[1].toLowerCase();
+						radtype = mb[1].toLowerCase(Locale.ENGLISH);
 					if (mb[0].equals("radar"))
 						radar = mb[1];
 					if (mb[0].equals("fctype"))
-						fctype = mb[1].toLowerCase();
+						fctype = mb[1].toLowerCase(Locale.ENGLISH);
 					if (mb[0].equals("forecast"))
 						forecast = mb[1];
 					if (mb[0].equals("webcam"))
@@ -625,7 +613,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			{
 				try
 				{
-					switch (fctype.toLowerCase())
+					switch (fctype.toLowerCase(Locale.ENGLISH))
 					{
 						case "yahoo":
 							Common.LogMessage("forecast=" + forecast);
@@ -730,7 +718,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							break;
 						case "weather.com":
 							forecast = "https://api.weather.com/v3/wx/forecast/daily/5day?geocode=" + forecast + "&format=json&apiKey=d522aa97197fd864d36b418f39ebb323";
-							//forecast = "https://api.weather.com/v2/turbo/vt1dailyForecast?apiKey=d522aa97197fd864d36b418f39ebb323&format=json&geocode=" + forecast + "&language=en-US";
 							if(metric_forecasts.isChecked())
 								forecast += "&units=m";
 							else
@@ -745,7 +732,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							if(common.GetStringPref("metierev", "").equals("") || !forecast.equals(oldforecast))
 							{
 								metierev = common.downloadForecast(fctype, metierev, null);
-								JSONObject jobj = new JSONObject(metierev);
+								JSONObject jobj= new JSONObject(metierev);
 								metierev = jobj.getString("city") + ", Ireland";
 								common.SetStringPref("metierev", metierev);
 							}
@@ -805,7 +792,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					{
 						validURL3 = true;
 						Common.LogMessage("updating rss cache");
-						common.SetLongPref("rssCheck", curtime);
+						common.SetLongPref("rssCheck", current_time);
 						common.SetStringPref("forecastData", tmp);
 					}
 				} catch (Exception e) {
@@ -1021,9 +1008,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				if(action != null && action.equals(Common.UPDATE_INTENT))
 				{
-					String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase();
+					String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase(Locale.ENGLISH);
 					fgColour.setText(hex);
-					hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase();
+					hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase(Locale.ENGLISH);
 					bgColour.setText(hex);
 				}
 

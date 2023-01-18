@@ -18,12 +18,12 @@ import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -81,16 +81,6 @@ public class Forecast extends Fragment
 				return true;
 			}
 		});
-
-		wv1.setWebViewClient(new WebViewClient()
-		{
-			@Override
-			public boolean shouldOverrideUrlLoading(WebView view, String url)
-			{
-				return false;
-			}
-		});
-
 		wv1.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv1.getScrollY() == 0));
 
 		wv2.getSettings().setUserAgentString(Common.UA);
@@ -106,16 +96,6 @@ public class Forecast extends Fragment
 				return true;
 			}
 		});
-
-		wv2.setWebViewClient(new WebViewClient()
-		{
-			@Override
-			public boolean shouldOverrideUrlLoading(WebView view, String url)
-			{
-				return false;
-			}
-		});
-
 		wv2.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv2.getScrollY() == 0));
 
 		forecast = rootView.findViewById(R.id.forecast);
@@ -129,8 +109,8 @@ public class Forecast extends Fragment
 		if(!common.GetStringPref("RADAR_URL", "").equals("") && f2.lastModified() + period[0] < System.currentTimeMillis())
 			reloadWebView(false);
 
-		long curtime = Math.round(System.currentTimeMillis() / 1000.0);
-		if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < curtime)
+		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+		if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 			getForecast(false);
 
 		return rootView;
@@ -179,10 +159,14 @@ public class Forecast extends Fragment
 			try
 			{
 				File f = new File(radar);
-				FileInputStream imageInFile = new FileInputStream(f);
-				byte[] imageData = new byte[(int) f.length()];
-				if(imageInFile.read(imageData) > 0)
-					radar = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+				try(FileInputStream imageInFile = new FileInputStream(f))
+				{
+					byte[] imageData = new byte[(int) f.length()];
+					if (imageInFile.read(imageData) > 0)
+						radar = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -396,16 +380,16 @@ public class Forecast extends Fragment
 
 			try
 			{
-				long curtime = Math.round(System.currentTimeMillis() / 1000.0);
+				long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
-				if(common.GetStringPref("forecastData", "").equals("") || common.GetLongPref("rssCheck", 0) + 7190 < curtime)
+				if(common.GetStringPref("forecastData", "").equals("") || common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 				{
 					Common.LogMessage("no forecast data or cache is more than 2 hour old");
 
 					String tmp = common.downloadForecast();
 
 					Common.LogMessage("updating rss cache");
-					common.SetLongPref("rssCheck", curtime);
+					common.SetLongPref("rssCheck", current_time);
 					common.SetStringPref("forecastData", tmp);
 					mHandler.post(() ->
 					{
@@ -450,7 +434,7 @@ public class Forecast extends Fragment
 				return;
 			}
 
-			switch(fctype.toLowerCase())
+			switch(fctype.toLowerCase(Locale.ENGLISH))
 			{
 				case "yahoo":
 				{
@@ -600,9 +584,9 @@ public class Forecast extends Fragment
 		{
 			String tmpfc = "<html>";
 			if (dark_theme == 1)
-				tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.ssheader + "</head>";
+				tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.style_sheet_header + "</head>";
 			else
-				tmpfc += "<head>" + Common.ssheader + "</head>";
+				tmpfc += "<head>" + Common.style_sheet_header + "</head>";
 			tmpfc += "<body style='text-align:center'>" + bits + "</body></html>";
 
 			final String fc = tmpfc;
@@ -629,7 +613,7 @@ public class Forecast extends Fragment
 			}
 			tv1.setText(desc);
 
-			switch (common.GetStringPref("fctype", "yahoo").toLowerCase())
+			switch (common.GetStringPref("fctype", "yahoo").toLowerCase(Locale.ENGLISH))
 			{
 				case "yahoo":
 					im.setImageResource(R.drawable.purple);

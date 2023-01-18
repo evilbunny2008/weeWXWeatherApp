@@ -272,8 +272,8 @@ public class Stats extends Fragment
 			mHandler.post(() -> swipeLayout.setRefreshing(true));
 
 			// Today Stats
-			checkFields((TextView)rootView.findViewById(R.id.textView), bits[56]);
-			checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
+			checkFields(rootView.findViewById(R.id.textView), bits[56]);
+			checkFields(rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
 
 			double percent = (seekBar.getProgress() + 90) / 100.00;
 			NumberFormat formatter = new DecimalFormat("#0.00");
@@ -284,9 +284,9 @@ public class Stats extends Fragment
 
 			String header = "<html>";
 			if(dark_theme == 1)
-				header += "<head><style>body{color: #fff; background-color: #000;}img{filter:invert(100%);}</style>" + Common.ssheader + "</head>";
+				header += "<head><style>body{color: #fff; background-color: #000;}img{filter:invert(100%);}</style>" + Common.style_sheet_header + "</head>";
 			else
-				header += "<head>" + Common.ssheader + "</head>";
+				header += "<head>" + Common.style_sheet_header + "</head>";
 			header += "<body style='text-align:center; transform: scale(" + p + "); transform-origin: 0 0;'>";
 			String footer = "</body></html>";
 

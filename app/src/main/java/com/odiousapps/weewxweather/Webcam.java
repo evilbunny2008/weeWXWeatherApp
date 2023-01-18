@@ -11,7 +11,6 @@ import android.graphics.Matrix;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Vibrator;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +21,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -55,16 +55,6 @@ public class Webcam extends Fragment
 
 		if(dark_theme == 1)
 			iv.setBackgroundColor(0xff000000);
-
-		iv.setOnLongClickListener(v ->
-		{
-			Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-			if(vibrator != null)
-				vibrator.vibrate(250);
-			Common.LogMessage("long press");
-			reloadWebView(true);
-			return true;
-		});
 
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setOnRefreshListener(() ->
@@ -107,11 +97,11 @@ public class Webcam extends Fragment
 		Thread t = new Thread(() ->
 		{
 			long period = 0;
-			long curtime = round(System.currentTimeMillis() / 1000.0);
+			long current_time = round(System.currentTimeMillis() / 1000.0);
 
 			File file1 = new File(common.context.getFilesDir(), "webcam.jpg");
 
-			Common.LogMessage("curtime = " + curtime + ", file.lastModified() == " + round(file1.lastModified() / 1000.0));
+			Common.LogMessage("current_time = " + current_time + ", file.lastModified() == " + round(file1.lastModified() / 1000.0));
 
 			if(!force)
 			{
@@ -123,7 +113,7 @@ public class Webcam extends Fragment
 				period = Math.round(ret[0] / 1000.0);
 			}
 
-			if(force || !file1.exists() || round(file1.lastModified() / 1000.0) + period < curtime)
+			if(force || !file1.exists() || round(file1.lastModified() / 1000.0) + period < current_time)
 			{
 				if(downloadWebcam(webURL, common.context.getFilesDir()))
 					Common.LogMessage("done downloading, prompt handler to draw to iv");
@@ -149,7 +139,7 @@ public class Webcam extends Fragment
 		{
 			Common.LogMessage("starting to download bitmap from: " + webURL);
 			URL url = new URL(webURL);
-			if (webURL.toLowerCase().endsWith(".mjpeg") || webURL.toLowerCase().endsWith(".mjpg"))
+			if (webURL.toLowerCase(Locale.ENGLISH).endsWith(".mjpeg") || webURL.toLowerCase(Locale.ENGLISH).endsWith(".mjpg"))
 			{
 				MjpegRunner mr = new MjpegRunner(url);
 				mr.run();

@@ -294,9 +294,9 @@
                 <TextView
                     android:id="@+id/textView16"
                     android:layout_width="match_parent"
-                    android:layout_height="253dp"
+                    android:layout_height="400dp"
                     android:textSize="100sp"
-                    android:visibility="invisible"/>
+                    android:visibility="invisible" />
             </LinearLayout>
         </ScrollView>
     </com.google.android.material.navigation.NavigationView>

@@ -10,7 +10,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
+
+import androidx.annotation.NonNull;
 
 import static android.view.View.MeasureSpec.UNSPECIFIED;
 import static java.lang.Math.PI;
@@ -20,7 +21,7 @@ import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 
 /**
- * https://github.com/rongi/rotate-layout
+ * <a href="https://github.com/rongi/rotate-layout">...</a>
  * Rotates first view in this layout by specified angle.
  * <p>
  * This layout is supposed to have only one view. Behaviour of the views after the first one
@@ -50,17 +51,18 @@ public class RotateLayout extends ViewGroup {
 	}
 
 	public RotateLayout(Context context, AttributeSet attrs) {
-		this(context, attrs, 0);
-	}
-
-	public RotateLayout(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs);
 
-		final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RotateLayout);
-		angle = a.getInt(R.styleable.RotateLayout_angle, 0);
-		a.recycle();
+		try
+		{
+			final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RotateLayout);
+			angle = a.getInt(R.styleable.RotateLayout_angle, 0);
+			a.recycle();
 
-		setWillNotDraw(false);
+			setWillNotDraw(false);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
@@ -161,9 +163,10 @@ public class RotateLayout extends ViewGroup {
 	}
 
 	@Override
-	public ViewParent invalidateChildInParent(int[] location, Rect dirty) {
+	public void onDescendantInvalidated(@NonNull View v, @NonNull View v2)
+	{
 		invalidate();
-		return super.invalidateChildInParent(location, dirty);
+		super.onDescendantInvalidated(v, v2);
 	}
 
 	@Override

@@ -7,8 +7,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -18,10 +16,10 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.media.MediaScannerConnection;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.net.Uri;
-import android.net.wifi.WifiInfo;
-import android.net.wifi.WifiManager;
-import android.text.Html;
 import android.util.Base64;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -54,6 +52,7 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import androidx.core.text.HtmlCompat;
 import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 import okhttp3.ConnectionSpec;
 import okhttp3.Credentials;
@@ -67,7 +66,7 @@ class Common
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	private final static boolean debug_on = true;
-	private String appversion = "0.0.0";
+	private final String app_version;
 	final Context context;
 
 	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36";
@@ -88,7 +87,7 @@ class Common
 
 	private final Typeface tf_bold;
 
-	static final String ssheader = "<link rel='stylesheet' href='file:///android_asset/weathericons.css'>" +
+	static final String style_sheet_header = "<link rel='stylesheet' href='file:///android_asset/weathericons.css'>" +
 								"<link rel='stylesheet' href='file:///android_asset/weathericons_wind.css'>" +
 								"<link rel='stylesheet' type='text/css' href='file:///android_asset/flaticon.css'>";
 
@@ -104,16 +103,8 @@ class Common
 		System.setProperty("http.agent", UA);
 		this.context = c;
 		tf_bold = Typeface.create("sans-serif", Typeface.BOLD);
-
-		try
-		{
-			PackageManager pm = c.getPackageManager();
-			PackageInfo version = pm.getPackageInfo("com.odiousapps.weewxweather", 0);
-			appversion = version.versionName;
-			LogMessage("appversion=" + appversion);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		app_version = BuildConfig.VERSION_NAME;
+		LogMessage("app_version=" + app_version);
 	}
 
 	long[] getPeriod()
@@ -173,9 +164,9 @@ class Common
 		alarms.setExact(AlarmManager.RTC_WAKEUP, start, recurringAlarm);
 	}
 
-	String getAppversion()
+	String getAppVersion()
 	{
-		return appversion;
+		return app_version;
 	}
 
 	static void LogMessage(String value)
@@ -221,23 +212,23 @@ class Common
 		editor.apply();
 	}
 
-	String GetStringPref(String name, String defval)
+	String GetStringPref(String name, String default_value)
 	{
 		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
 		String value;
 
 		try
 		{
-			value = settings.getString(name, defval);
+			value = settings.getString(name, default_value);
 		} catch (ClassCastException cce)
 		{
 			cce.printStackTrace();
-			return defval;
+			return default_value;
 		} catch (Exception e)
 		{
-			LogMessage("GetStringPref(" + name + ", " + defval + ") Err: " + e);
+			LogMessage("GetStringPref(" + name + ", " + default_value + ") Err: " + e);
 			e.printStackTrace();
-			return defval;
+			return default_value;
 		}
 
 		LogMessage(name + "'='" + value + "'");
@@ -251,11 +242,11 @@ class Common
 	}
 
 	@SuppressWarnings({"SameParameterValue"})
-	long GetLongPref(String name, long defval)
+	long GetLongPref(String name, long default_value)
 	{
-		String val = GetStringPref(name, "" + defval);
+		String val = GetStringPref(name, "" + default_value);
 		if (val == null)
-			return defval;
+			return default_value;
 		return Long.parseLong(val);
 	}
 
@@ -264,11 +255,11 @@ class Common
 		SetStringPref(name, "" + value);
 	}
 
-	int GetIntPref(String name, int defval)
+	int GetIntPref(String name, int default_value)
 	{
-		String val = GetStringPref(name, "" + defval);
+		String val = GetStringPref(name, "" + default_value);
 		if (val == null)
-			return defval;
+			return default_value;
 		return Integer.parseInt(val);
 	}
 
@@ -282,10 +273,10 @@ class Common
 	}
 
 	@SuppressWarnings({"SameParameterValue"})
-	boolean GetBoolPref(String name, boolean defval)
+	boolean GetBoolPref(String name, boolean default_value)
 	{
 		String value = "0";
-		if (defval)
+		if (default_value)
 			value = "1";
 
 		String val = GetStringPref(name, value);
@@ -297,7 +288,7 @@ class Common
 		int bgColour, fgColour;
 
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
-		Bitmap myBitmap = Bitmap.createBitmap(600, 440, Bitmap.Config.ARGB_4444);
+		Bitmap myBitmap = Bitmap.createBitmap(600, 440, Bitmap.Config.ARGB_8888);
 		Canvas myCanvas = new Canvas(myBitmap);
 		Paint paint = new Paint();
 		paint.setAntiAlias(true);
@@ -368,9 +359,9 @@ class Common
 		String tmp;
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
-		String ftime = sdf.format(timestamp);
+		String string_time = sdf.format(timestamp);
 
-		tmp = "<div style='font-size:12pt;'>" + ftime + "</div>";
+		tmp = "<div style='font-size:12pt;'>" + string_time + "</div>";
 		sb.append(tmp);
 
 		if(showHeader)
@@ -502,7 +493,7 @@ class Common
 			String minute = obs.substring(i, j);
 			i = j + 1;
 			j = obs.indexOf(" ", i);
-			String ampm = obs.substring(i, j);
+			String am_pm = obs.substring(i, j);
 			i = j + 1;
 			j = obs.indexOf(" ", i);
 			//String TZ = obs.substring(i, j);
@@ -519,7 +510,7 @@ class Common
 			j = obs.length();
 			String year = obs.substring(i, j);
 
-			obs = hour + ":" + minute + " " + ampm + " " + date + " " + month + " " + year;
+			obs = hour + ":" + minute + " " + am_pm + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
 			timestamp = Objects.requireNonNull(sdf.parse(obs)).getTime();
@@ -556,10 +547,14 @@ class Common
 				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 				fileName = checkImage(fileName, day.icon);
 				File f = new File(fileName);
-				FileInputStream imageInFile = new FileInputStream(f);
-				byte[] imageData = new byte[(int) f.length()];
-				if(imageInFile.read(imageData) > 0)
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+				try(FileInputStream imageInFile = new FileInputStream(f))
+				{
+					byte[] imageData = new byte[(int) f.length()];
+					if (imageInFile.read(imageData) > 0)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 
 			day.max = day.max.replaceAll("°C", "").trim();
@@ -608,10 +603,14 @@ class Common
 					fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 					fileName = checkImage(fileName, day.icon);
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if (imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 				day.max = day.max.replaceAll("°C", "").trim();
@@ -728,10 +727,14 @@ class Common
 					} else {
 						fileName = checkImage("bom2" + fileName + ".png", null);
 						File f = new File(fileName);
-						FileInputStream imageInFile = new FileInputStream(f);
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						try(FileInputStream imageInFile = new FileInputStream(f))
+						{
+							byte[] imageData = new byte[(int) f.length()];
+							if(imageInFile.read(imageData) > 0)
+								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
 					}
 				}
 
@@ -813,10 +816,14 @@ class Common
 				} else {
 					fileName = checkImage("met" + fileName, null);
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 				if(metric)
@@ -866,7 +873,7 @@ class Common
 			String minute = obs.substring(i, j);
 			i = j + 1;
 			j = obs.indexOf(" ", i);
-			String ampm = obs.substring(i, j);
+			String am_pm = obs.substring(i, j);
 			i = j + 1;
 			j = obs.indexOf(" ", i);
 			//String TZ = obs.substring(i, j);
@@ -883,7 +890,7 @@ class Common
 			j = obs.length();
 			String year = obs.substring(i, j);
 
-			obs = hour + ":" + minute + " " + ampm + " " + date + " " + month + " " + year;
+			obs = hour + ":" + minute + " " + am_pm + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
 			lastTS = timestamp = Objects.requireNonNull(sdf.parse(obs)).getTime();
@@ -963,10 +970,14 @@ class Common
 					} else {
 						fileName = checkImage("wca" + fileName + ".png", null);
 						File f = new File(fileName);
-						FileInputStream imageInFile = new FileInputStream(f);
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						try(FileInputStream imageInFile = new FileInputStream(f))
+						{
+							byte[] imageData = new byte[(int) f.length()];
+							if(imageInFile.read(imageData) > 0)
+								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
 					}
 
 					day.day = date;
@@ -1099,10 +1110,14 @@ class Common
 					} else {
 						fileName = checkImage("wca" + fileName + ".png", null);
 						File f = new File(fileName);
-						FileInputStream imageInFile = new FileInputStream(f);
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						try(FileInputStream imageInFile = new FileInputStream(f))
+						{
+							byte[] imageData = new byte[(int) f.length()];
+							if(imageInFile.read(imageData) > 0)
+								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						} catch (Exception e) {
+							e.printStackTrace();
+						}
 					}
 
 					day.day = date;
@@ -1228,7 +1243,7 @@ class Common
 						}
 					}
 				} else {
-					Pattern p = Pattern.compile("[0-9]");
+					Pattern p = Pattern.compile("\\d");
 					number = p.matcher(fn).replaceAll("");
 					if(!number.equals(""))
 					{
@@ -1254,15 +1269,19 @@ class Common
 					}
 				}
 
-				if(iconLink.getString(i).toLowerCase().startsWith("http"))
+				if(iconLink.getString(i).toLowerCase(Locale.ENGLISH).startsWith("http"))
 				{
 					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).trim().replaceAll("\\.png$", "\\.jpg");
 					fileName = checkImage(fileName, iconLink.getString(i));
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				} else {
 					day.icon = iconLink.getString(i);
 				}
@@ -1449,10 +1468,14 @@ class Common
 				} else {
 					String fileName = checkImage("bom" + code + ".png", null);
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 				if(metric)
@@ -1497,7 +1520,7 @@ class Common
 		{
 			JSONObject jobj = new JSONObject(data);
 			JSONArray loop = jobj.getJSONArray("days");
-			String ftime = loop.getJSONObject(0).getString("issuedAtISO");
+			String string_time = loop.getJSONObject(0).getString("issuedAtISO");
 			desc = jobj.getString("locationWASP") + ", New Zealand";
 
 			SimpleDateFormat sdf;
@@ -1507,7 +1530,7 @@ class Common
 			} else {
 				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
 			}
-			timestamp = Objects.requireNonNull(sdf.parse(ftime)).getTime();
+			timestamp = Objects.requireNonNull(sdf.parse(string_time)).getTime();
 
 			for(int i = 0; i < loop.length(); i++)
 			{
@@ -1529,7 +1552,7 @@ class Common
 				else
 					day.icon = jtmp.getString("forecastWord");
 
-				day.icon = day.icon.toLowerCase().replaceAll(" ", "-").trim();
+				day.icon = day.icon.toLowerCase(Locale.ENGLISH).replaceAll(" ", "-").trim();
 
 				if(!use_icons)
 				{
@@ -1541,10 +1564,14 @@ class Common
 					day.icon = day.icon.replaceAll("-", "_");
 					String fileName = checkImage("ms_" + day.icon + ".png", null);
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 				if(metric)
@@ -1588,12 +1615,12 @@ class Common
 			if (bits.length >= 2)
 				desc = bits[1].split("</title>")[0];
 			desc = desc.substring(desc.lastIndexOf(" - ") + 3).trim();
-			String ftime = data.split("<tr class=\"headRow\">", 2)[1].split("</tr>", 2)[0].trim();
-			String date = ftime.split("<td width=\"30%\" class=\"stattime\">", 2)[1].split("</td>", 2)[0].trim();
-			ftime = date + " " + ftime.split("<td width=\"40%\" class=\"stattime\">", 2)[1].split(" Uhr</td>", 2)[0].trim();
+			String string_time = data.split("<tr class=\"headRow\">", 2)[1].split("</tr>", 2)[0].trim();
+			String date = string_time.split("<td width=\"30%\" class=\"stattime\">", 2)[1].split("</td>", 2)[0].trim();
+			string_time = date + " " + string_time.split("<td width=\"40%\" class=\"stattime\">", 2)[1].split(" Uhr</td>", 2)[0].trim();
 
 			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy' 'HH", Locale.getDefault());
-			lastTS = timestamp = Objects.requireNonNull(sdf.parse(ftime)).getTime();
+			lastTS = timestamp = Objects.requireNonNull(sdf.parse(string_time)).getTime();
 
 			data = data.split("<td width=\"40%\" class=\"statwert\">Vorhersage</td>", 2)[1].split("</table>", 2)[0].trim();
 			bits = data.split("<tr");
@@ -1639,10 +1666,14 @@ class Common
 						day.icon = "flaticon-thermometer";
 				} else {
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 				day.min = "&deg;C";
@@ -1684,9 +1715,9 @@ class Common
 			stuff = stuff.split("<h2>", 2)[1].trim();
 			desc = stuff.split(" <span class=\"day\">")[0].trim();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
-			String ftime = sdf.format(System.currentTimeMillis());
+			String string_time = sdf.format(System.currentTimeMillis());
 			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
-			lastTS = timestamp = Objects.requireNonNull(sdf.parse(ftime)).getTime();
+			lastTS = timestamp = Objects.requireNonNull(sdf.parse(string_time)).getTime();
 
 			data = data.split("<tbody>")[1].trim();
 			String[] bits = data.split("<tr>");
@@ -1709,10 +1740,14 @@ class Common
 				if(ret[0] != null)
 				{
 					File f = new File(ret[1]);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				} else
 					return ret;
 //				LogMessage("day.icon=" + day.icon);
@@ -1794,14 +1829,15 @@ class Common
 				JSONObject estado_cielo = null;
 
 				Object v = jtmp.get("estado_cielo");
-				if(v instanceof JSONObject)
+				if (v instanceof JSONObject)
 				{
 					estado_cielo = jtmp.getJSONObject("estado_cielo");
-				} else if(v instanceof JSONArray) {
+				} else if (v instanceof JSONArray)
+				{
 					JSONArray jarr = jtmp.getJSONArray("estado_cielo");
-					for(int j = 0; j < jarr.length(); j++)
+					for (int j = 0; j < jarr.length(); j++)
 					{
-						if(!jarr.getJSONObject(j).getString("descripcion").equals(""))
+						if (!jarr.getJSONObject(j).getString("descripcion").equals(""))
 						{
 							estado_cielo = jarr.getJSONObject(j);
 							break;
@@ -1809,27 +1845,33 @@ class Common
 					}
 				}
 
-				if(estado_cielo == null)
+				if (estado_cielo == null)
 					return null;
 
 				JSONObject temperatura = jtmp.getJSONObject("temperatura");
 
 				String code = estado_cielo.getString("content");
-				if(!use_icons)
+				if (!use_icons)
 				{
-					if(!code.startsWith("7"))
+					if (!code.startsWith("7"))
 						day.icon = "wi wi-aemet-" + code;
 					else
 						day.icon = "flaticon-thermometer";
-				} else {
+				} else
+				{
 					String url = "http://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
 					String fileName = "aemet_" + code + "_g.png";
 					fileName = checkImage(fileName, url);
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);				}
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if (imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
 
 				day.max = temperatura.getString("maxima");
 				day.min = temperatura.getString("minima");
@@ -1905,10 +1947,14 @@ class Common
 					Common.LogMessage("yahoo filename = " + fileName);
 
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 				if(metric)
@@ -1970,10 +2016,14 @@ class Common
 				} else {
 					String fileName = checkImage("y" + day.icon + ".png", null);
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 				day.text = jobj.getString("weatherDescription");
@@ -2119,10 +2169,14 @@ class Common
 				} else {
 					String fileName = checkImage("yrno" + code + ".png", null);
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 				day.max = temperature.getString("value") + "&deg;C";
@@ -2230,10 +2284,14 @@ class Common
 				} else {
 					String fileName = checkImage("yrno" + code + ".png", null);
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 				days.add(day);
@@ -2448,14 +2506,14 @@ class Common
 	{
 		long startTS = lastTS;
 
-		dayName = Html.fromHtml(dayName).toString();
+		dayName = HtmlCompat.fromHtml(dayName, HtmlCompat.FROM_HTML_MODE_LEGACY).toString();
 
 		while(true)
 		{
 			SimpleDateFormat sdf = new SimpleDateFormat("EEEE", locale);
-			String ftime = sdf.format(lastTS);
-			//LogMessage("ftime == " + ftime + ", dayName == " + dayName);
-			if(dayName.toLowerCase().startsWith(ftime.toLowerCase()))
+			String string_time = sdf.format(lastTS);
+			//LogMessage("string_time == " + string_time + ", dayName == " + dayName);
+			if(dayName.toLowerCase(Locale.ENGLISH).startsWith(string_time.toLowerCase(Locale.ENGLISH)))
 				return lastTS;
 
 			lastTS += 86400000;
@@ -2529,10 +2587,14 @@ class Common
 					String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
 					fileName = checkImage(fileName, null);
 					File f = new File(fileName);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				}
 
 				day.max = range[1];
@@ -2688,10 +2750,14 @@ class Common
 				if (ret[0] != null)
 				{
 					File f = new File(ret[1]);
-					FileInputStream imageInFile = new FileInputStream(f);
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-						myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					try(FileInputStream imageInFile = new FileInputStream(f))
+					{
+						byte[] imageData = new byte[(int) f.length()];
+						if(imageInFile.read(imageData) > 0)
+							myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
 				} else
 					return ret;
 
@@ -2803,20 +2869,19 @@ class Common
 	//	https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
 	boolean checkConnection()
 	{
-		if(GetBoolPref("onlyWIFI", false))
-		{
-			WifiManager wifiMgr = (WifiManager) context.getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+		if(!GetBoolPref("onlyWIFI", false))
+			return true;
 
-			if (wifiMgr.isWifiEnabled())
-			{
-				WifiInfo wifiInfo = wifiMgr.getConnectionInfo();
-				return wifiInfo.getNetworkId() != -1;
-			}
-
+		ConnectivityManager connMgr = (ConnectivityManager)context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+		if (connMgr == null)
 			return false;
-		}
 
-		return true;
+		Network network = connMgr.getActiveNetwork();
+		if(network == null)
+			return false;
+
+		NetworkCapabilities capabilities = connMgr.getNetworkCapabilities(network);
+		return capabilities != null && capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
 	}
 
 	private void sendAlert()
@@ -3267,8 +3332,8 @@ class Common
 				.addHeader("User-Agent", UA)
 				.build();
 
-		try (Response response = client.newCall(request).execute()) {
-			assert response.body() != null;
+		try (Response response = client.newCall(request).execute())
+		{
 			String rb = Objects.requireNonNull(response.body()).string().trim();
 			LogMessage(rb);
 			return rb;
@@ -3358,8 +3423,8 @@ class Common
 				.addHeader("User-Agent", UA)
 				.build();
 
-		try (Response response = client.newCall(request).execute()) {
-			assert response.body() != null;
+		try (Response response = client.newCall(request).execute())
+		{
 			outputStream.write(Objects.requireNonNull(response.body()).bytes());
 			outputStream.flush();
 			outputStream.close();
@@ -3371,16 +3436,8 @@ class Common
 	private void publish(File f)
 	{
 		LogMessage("wrote to " + f.getAbsolutePath());
-		if (f.exists() && f.isFile())
-		{
+		if (f.exists())
 			MediaScannerConnection.scanFile(context.getApplicationContext(), new String[]{f.getAbsolutePath()}, null, null);
-			context.getApplicationContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(f)));
-		}
-
-		if(f.exists() && f.isDirectory())
-		{
-			MediaScannerConnection.scanFile(context.getApplicationContext(), new String[] {f.getAbsolutePath()}, null, null);
-		}
 	}
 
 	@SuppressWarnings("SameReturnValue")
@@ -3500,9 +3557,9 @@ class Common
 			return;
 		}
 
-		final long curtime = Math.round(System.currentTimeMillis() / 1000.0);
+		final long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
-		if(GetStringPref("forecastData", "").equals("") || GetLongPref("rssCheck", 0) + 7190 < curtime)
+		if(GetStringPref("forecastData", "").equals("") || GetLongPref("rssCheck", 0) + 7190 < current_time)
 		{
 			LogMessage("no forecast data or cache is more than 2 hour old");
 		} else {
@@ -3510,8 +3567,8 @@ class Common
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String date = sdf.format(GetLongPref("rssCheck", 0) * 1000);
 			LogMessage("rsscheck == " + date);
-			date = sdf.format(curtime * 1000);
-			LogMessage("curtime == " + date);
+			date = sdf.format(current_time * 1000);
+			LogMessage("current_time == " + date);
 			return;
 		}
 
@@ -3525,7 +3582,7 @@ class Common
 				if(tmp != null)
 				{
 					LogMessage("updating rss cache");
-					SetLongPref("rssCheck", curtime);
+					SetLongPref("rssCheck", current_time);
 					SetStringPref("forecastData", tmp);
 				}
 			} catch (Exception e) {
