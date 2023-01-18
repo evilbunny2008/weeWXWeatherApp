@@ -10,7 +10,6 @@ import android.graphics.ColorMatrixColorFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Vibrator;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,18 +55,6 @@ public class Forecast extends Fragment
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
 	    rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
-	    rootView.setOnLongClickListener(v ->
-	    {
-		    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
-		    if (vibrator != null)
-			    vibrator.vibrate(250);
-		    swipeLayout.setRefreshing(true);
-		    Common.LogMessage("rootview long press");
-		    reloadWebView(true);
-		    getForecast(true);
-		    return true;
-	    });
-
 	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 	    swipeLayout.setOnRefreshListener(() ->
 	    {
@@ -95,18 +82,6 @@ public class Forecast extends Fragment
 		    }
 	    });
 
-	    wv1.setOnLongClickListener(v ->
-	    {
-		    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
-		    if (vibrator != null)
-			    vibrator.vibrate(250);
-		    swipeLayout.setRefreshing(true);
-		    Common.LogMessage("webview long press");
-		    reloadWebView(true);
-		    getForecast(true);
-		    return true;
-	    });
-
 	    wv1.setWebViewClient(new WebViewClient()
 	    {
 		    @Override
@@ -130,18 +105,6 @@ public class Forecast extends Fragment
 		    {
 			    return true;
 		    }
-	    });
-
-	    wv2.setOnLongClickListener(v ->
-	    {
-		    Vibrator vibrator = (Vibrator) common.context.getSystemService(Context.VIBRATOR_SERVICE);
-		    if (vibrator != null)
-			    vibrator.vibrate(250);
-		    swipeLayout.setRefreshing(true);
-		    Common.LogMessage("webview long press");
-		    reloadWebView(true);
-		    getForecast(true);
-		    return true;
 	    });
 
 	    wv2.setWebViewClient(new WebViewClient()

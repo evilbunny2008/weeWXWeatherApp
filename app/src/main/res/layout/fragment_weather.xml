@@ -34,7 +34,7 @@
             android:layout_width="match_parent">
 
             <WebView
-                android:id="@+id/radar"
+                android:id="@+id/forecast"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </androidx.core.widget.NestedScrollView>

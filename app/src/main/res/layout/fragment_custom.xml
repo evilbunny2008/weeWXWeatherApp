@@ -9,7 +9,8 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent">
 
-        <WebView android:id="@+id/custom"
+        <WebView
+            android:id="@+id/custom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </androidx.core.widget.NestedScrollView>

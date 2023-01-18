@@ -1,9 +1,7 @@
 package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,15 +37,6 @@ public class Custom extends Fragment
 		wv = rootView.findViewById(R.id.custom);
 		wv.getSettings().setUserAgentString(Common.UA);
 		wv.getSettings().setJavaScriptEnabled(true);
-		wv.setOnLongClickListener(v ->
-		{
-			Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-			if(vibrator != null)
-				vibrator.vibrate(250);
-			Common.LogMessage("long press");
-			reloadWebView();
-			return true;
-		});
 
 	    WebSettings settings = wv.getSettings();
 	    settings.setDomStorageEnabled(true);
@@ -55,13 +44,21 @@ public class Custom extends Fragment
 	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 	    swipeLayout.setOnRefreshListener(() ->
 	    {
+		    Common.LogMessage("wv.getScrollY() == " + wv.getScrollY());
 		    swipeLayout.setRefreshing(true);
 		    Common.LogMessage("onRefresh();");
 		    reloadWebView();
 		    swipeLayout.setRefreshing(false);
 	    });
 
-	    wv.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv.getScrollY() == 0));
+	    wv.getViewTreeObserver().addOnScrollChangedListener(() ->
+	    {
+			Common.LogMessage("wv.getScrollY() == " + wv.getScrollY());
+		    if(wv.getScrollY() == 0)
+			    swipeLayout.setEnabled(true);
+		    else
+			    swipeLayout.setEnabled(false);
+	    });
 
         wv.setWebViewClient(new WebViewClient()
         {
@@ -119,6 +116,7 @@ public class Custom extends Fragment
         if(custom_url != null && !custom_url.equals(""))
         	custom = custom_url;
 
+		wv.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
         wv.loadUrl(custom);
     }
 

@@ -7,7 +7,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Vibrator;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,16 +50,6 @@ public class Stats extends Fragment
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
 		rootView = inflater.inflate(R.layout.fragment_stats, container, false);
-		rootView.setOnLongClickListener(v ->
-		{
-			Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-			if(vibrator != null)
-				vibrator.vibrate(250);
-			Common.LogMessage("rootview long press");
-			forceRefresh();
-			return true;
-		});
-
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setOnRefreshListener(() ->
 		{
@@ -72,16 +61,6 @@ public class Stats extends Fragment
 
 		wv = rootView.findViewById(R.id.webView1);
 		wv.getSettings().setUserAgentString(Common.UA);
-		wv.setOnLongClickListener(v ->
-		{
-			Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-			if(vibrator != null)
-				vibrator.vibrate(250);
-			Common.LogMessage("webview long press");
-			forceRefresh();
-			return true;
-		});
-
 	    wv.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv.getScrollY() == 0));
 
 	    ll1 = rootView.findViewById(R.id.ll1);

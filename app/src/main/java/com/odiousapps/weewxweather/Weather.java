@@ -8,7 +8,6 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Vibrator;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,7 +32,7 @@ public class Weather extends Fragment
 {
     private final Common common;
     private View rootView;
-    private WebView wv;
+	private WebView forecast;
     private int dark_theme;
 	private SwipeRefreshLayout swipeLayout;
 
@@ -43,6 +42,62 @@ public class Weather extends Fragment
 		dark_theme = common.GetIntPref("dark_theme", 2);
 		if(dark_theme == 2)
 			dark_theme = common.getSystemTheme();
+	}
+
+	@SuppressLint("SetJavaScriptEnabled")
+	@Nullable
+	@Override
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	{
+		rootView = inflater.inflate(R.layout.fragment_weather, container, false);
+
+		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+		swipeLayout.setOnRefreshListener(() ->
+		{
+			swipeLayout.setRefreshing(true);
+			Common.LogMessage("onRefresh();");
+			forceRefresh();
+		});
+		swipeLayout.setRefreshing(true);
+
+		forecast = rootView.findViewById(R.id.forecast);
+
+		forecast.getSettings().setJavaScriptEnabled(true);
+		forecast.getSettings().setUserAgentString(Common.UA);
+
+		forecast.setWebViewClient(new WebViewClient()
+		{
+			@Override
+			public boolean shouldOverrideUrlLoading(WebView view, String url)
+			{
+				return false;
+			}
+		});
+
+		forecast.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(forecast.getScrollY() == 0));
+
+		forecast.setWebChromeClient(new WebChromeClient()
+		{
+			@Override
+			public boolean onConsoleMessage(ConsoleMessage cm)
+			{
+				return true;
+			}
+		});
+
+		loadWebView();
+
+		File f2 = new File(common.context.getFilesDir(), "/radar.gif");
+		long[] period = common.getPeriod();
+
+		if(!common.GetStringPref("RADAR_URL", "").equals("") && f2.lastModified() + period[0] < System.currentTimeMillis())
+			reloadWebView(false);
+
+		long curtime = Math.round(System.currentTimeMillis() / 1000.0);
+		if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < curtime)
+			reloadForecast(false);
+
+		return updateFields();
 	}
 
 	private void checkFields(TextView tv, String txt)
@@ -69,21 +124,11 @@ public class Weather extends Fragment
 	    if(bits.length < 65)
 	        return rootView;
 
-	    checkFields((TextView)rootView.findViewById(R.id.textView), bits[56]);
-	    checkFields((TextView)rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
+	    checkFields(rootView.findViewById(R.id.textView), bits[56]);
+	    checkFields(rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
 
 	    final WebView current = rootView.findViewById(R.id.current);
 	    current.getSettings().setUserAgentString(Common.UA);
-	    current.setOnLongClickListener(v ->
-	    {
-		    Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-		    if(vibrator != null)
-			    vibrator.vibrate(250);
-		    Common.LogMessage("current long press");
-		    updateFields();
-		    return true;
-	    });
-
 	    current.setWebViewClient(new WebViewClient()
 	    {
 		    @Override
@@ -190,82 +235,6 @@ public class Weather extends Fragment
 	    return rootView;
 	}
 
-	@SuppressLint("SetJavaScriptEnabled")
-	@Nullable
-	@Override
-	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
-	{
-		rootView = inflater.inflate(R.layout.fragment_weather, container, false);
-	    rootView.setOnLongClickListener(v ->
-	    {
-	        Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-	        if(vibrator != null)
-	            vibrator.vibrate(250);
-				Common.LogMessage("rootview long press");
-				swipeLayout.setRefreshing(true);
-	        forceRefresh();
-	        return true;
-	    });
-
-	    swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-	    swipeLayout.setOnRefreshListener(() ->
-	    {
-		    swipeLayout.setRefreshing(true);
-		    Common.LogMessage("onRefresh();");
-		    forceRefresh();
-	    });
-	    swipeLayout.setRefreshing(true);
-
-	    wv = rootView.findViewById(R.id.radar);
-
-	    wv.getSettings().setJavaScriptEnabled(true);
-	    wv.getSettings().setUserAgentString(Common.UA);
-	    wv.setOnLongClickListener(v ->
-	    {
-	        Vibrator vibrator = (Vibrator)common.context.getSystemService(Context.VIBRATOR_SERVICE);
-	        if(vibrator != null)
-	            vibrator.vibrate(250);
-	        swipeLayout.setRefreshing(true);
-	        Common.LogMessage("wv long press");
-	        forceRefresh();
-	        return true;
-	    });
-
-	    wv.setWebViewClient(new WebViewClient()
-	    {
-		    @Override
-		    public boolean shouldOverrideUrlLoading(WebView view, String url)
-		    {
-			    return false;
-		    }
-	    });
-
-	    wv.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv.getScrollY() == 0));
-
-	    wv.setWebChromeClient(new WebChromeClient()
-	    {
-		    @Override
-		    public boolean onConsoleMessage(ConsoleMessage cm)
-		    {
-			    return true;
-		    }
-	    });
-
-	    loadWebView();
-
-	    File f2 = new File(common.context.getFilesDir(), "/radar.gif");
-	    long[] period = common.getPeriod();
-
-	    if(!common.GetStringPref("RADAR_URL", "").equals("") && f2.lastModified() + period[0] < System.currentTimeMillis())
-	        reloadWebView(false);
-
-	    long curtime = Math.round(System.currentTimeMillis() / 1000.0);
-	    if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < curtime)
-	        reloadForecast(false);
-
-	    return updateFields();
-	}
-
 	private void forceRefresh()
 	{
 	    swipeLayout.setRefreshing(true);
@@ -309,7 +278,7 @@ public class Weather extends Fragment
 
 					    if(!myFile.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 					    {
-						    sb.append("<html><body>" + getString(R.string.radar_url_not_set) + "</body></html>");
+						    sb.append("<html><body>").append(getString(R.string.radar_url_not_set)).append("</body></html>");
 					    } else {
 						    sb.append("<!DOCTYPE html>\n" +
 								    "<html>\n" +
@@ -340,7 +309,7 @@ public class Weather extends Fragment
 					    }
 					    mHandler.post(() ->
 					    {
-						    wv.loadDataWithBaseURL(null, sb.toString(), "text/html", "utf-8", null);
+						    forecast.loadDataWithBaseURL(null, sb.toString(), "text/html", "utf-8", null);
 						    swipeLayout.setRefreshing(false);
 					    });
 					    return;
@@ -348,7 +317,9 @@ public class Weather extends Fragment
 				    case "webpage":
 					    mHandler.post(() ->
 					    {
-						    wv.loadUrl(common.GetStringPref("RADAR_URL", ""));
+							String radar_url = common.GetStringPref("RADAR_URL", "");
+							Common.LogMessage("Loading RADAR_URL -> " + radar_url);
+						    forecast.loadUrl(radar_url);
 						    swipeLayout.setRefreshing(false);
 					    });
 					    return;
@@ -362,7 +333,7 @@ public class Weather extends Fragment
 
 			    mHandler.post(() ->
 			    {
-				    wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
+				    forecast.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
 				    swipeLayout.setRefreshing(false);
 			    });
 		    } else {
@@ -774,10 +745,10 @@ public class Weather extends Fragment
 
 		    mHandler.post(() ->
 		    {
-			    wv.clearFormData();
-			    wv.clearHistory();
-			    wv.clearCache(true);
-			    wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
+			    forecast.clearFormData();
+			    forecast.clearHistory();
+			    forecast.clearCache(true);
+			    forecast.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
 			    swipeLayout.setRefreshing(false);
 		    });
 	    });
@@ -807,7 +778,7 @@ public class Weather extends Fragment
 		    Handler mHandler = new Handler(Looper.getMainLooper());
 		    mHandler.post(() ->
 		    {
-			    wv.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+			    forecast.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
 			    swipeLayout.setRefreshing(false);
 		    });
 
@@ -928,8 +899,7 @@ public class Weather extends Fragment
 		try
 		{
 			common.context.unregisterReceiver(serviceReceiver);
-		} catch (Exception e)
-		{
+		} catch (Exception e) {
 			// e.printStackTrace();
 		}
 		Common.LogMessage("weather.java -- unregisterReceiver");

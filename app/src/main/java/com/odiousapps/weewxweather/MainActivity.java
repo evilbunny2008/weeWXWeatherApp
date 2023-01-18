@@ -37,7 +37,6 @@ import org.json.JSONObject;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Locale;
-import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -94,16 +93,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	    mSectionsPagerAdapter.addFragment(new Custom(common));
 
 		ViewPager2 mViewPager = findViewById(R.id.container);
+		//mViewPager.setUserInputEnabled(false);
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 		String[] tabTitles;
 		if(common.GetBoolPref("radarforecast", true))
-			tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.radar), getString(R.string.webcam2), getString(R.string.custom2)};
-		else
 			tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.forecast2), getString(R.string.webcam2), getString(R.string.custom2)};
+		else
+			tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.radar), getString(R.string.webcam2), getString(R.string.custom2)};
 		new TabLayoutMediator(tabLayout, mViewPager, ((tab, position) -> tab.setText(tabTitles[position]))).attach();
-
-		if(!common.GetBoolPref("radarforecast", true))
-			Objects.requireNonNull(tabLayout.getTabAt(2)).setText(R.string.radar);
 
 		try
 		{
