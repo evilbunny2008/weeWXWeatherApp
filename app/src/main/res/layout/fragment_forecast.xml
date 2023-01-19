@@ -42,15 +42,10 @@
                 android:gravity="center"/>
         </com.odiousapps.weewxweather.RotateLayout>
 
-        <androidx.core.widget.NestedScrollView
+        <WebView
+            android:id="@+id/webView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <WebView
-                android:id="@+id/webView2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:visibility="gone"/>
-        </androidx.core.widget.NestedScrollView>
+            android:layout_height="match_parent"
+            android:visibility="gone" />
     </LinearLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -29,14 +29,9 @@
             android:layout_height="wrap_content"
             android:nestedScrollingEnabled="true" />
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_height="match_parent"
-            android:layout_width="match_parent">
-
-            <WebView
-                android:id="@+id/forecast"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </androidx.core.widget.NestedScrollView>
+        <WebView
+            android:id="@+id/forecast"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
