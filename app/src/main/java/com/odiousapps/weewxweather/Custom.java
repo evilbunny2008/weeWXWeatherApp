@@ -10,6 +10,7 @@ import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -55,6 +56,7 @@ public class Custom extends Fragment
 			Common.LogMessage("wv.getScrollY() == " + wv.getScrollY());
 			swipeLayout.setEnabled(wv.getScrollY() == 0);
 		});
+		wv.setWebViewClient(new WebViewClient());
 
 		wv.setOnKeyListener((v, keyCode, event) ->
 		{

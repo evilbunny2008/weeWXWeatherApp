@@ -18,6 +18,7 @@ import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -97,6 +98,8 @@ public class Forecast extends Fragment
 			}
 		});
 		wv2.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv2.getScrollY() == 0));
+
+		wv2.setWebViewClient(new WebViewClient());
 
 		forecast = rootView.findViewById(R.id.forecast);
 		im = rootView.findViewById(R.id.logo);

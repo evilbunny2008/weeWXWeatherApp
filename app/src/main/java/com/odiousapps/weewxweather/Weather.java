@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
 import java.io.File;
@@ -75,6 +76,8 @@ public class Weather extends Fragment
 				return true;
 			}
 		});
+
+		forecast.setWebViewClient(new WebViewClient());
 
 		loadWebView();
 
