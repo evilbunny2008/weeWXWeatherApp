@@ -427,7 +427,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					if (!common.downloadIcons())
 					{
 						common.SetStringPref("lastError", getString(R.string.icons_failed_to_download));
-						runOnUiThread(() -> {
+						runOnUiThread(() ->
+						{
 							b1.setEnabled(true);
 							b2.setEnabled(true);
 							dialog.dismiss();

@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 33
+    compileSdkVersion 34
     defaultConfig {
         applicationId "com.odiousapps.weewxweather"
         minSdkVersion 23
-        targetSdkVersion 33
-        versionCode 1000013
-        versionName "1.0.13"
+        targetSdkVersion 34
+        versionCode 1000014
+        versionName "1.0.14"
     }
 
     buildTypes {
@@ -31,9 +31,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.android.material:material:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.6.0'
-	implementation 'androidx.core:core:1.9.0'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+	implementation 'androidx.core:core:1.12.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'com.github.smart-fun:XmlToJson:1.5.2'
