@@ -148,8 +148,10 @@ public class Forecast extends Fragment
 				return;
 			}
 
-			int height = Math.round((float) Resources.getSystem().getDisplayMetrics().widthPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
-			int width = Math.round((float) Resources.getSystem().getDisplayMetrics().heightPixels / Resources.getSystem().getDisplayMetrics().scaledDensity * 0.955f);
+			float sd = Resources.getSystem().getDisplayMetrics().density;
+
+			int height = Math.round((float) Resources.getSystem().getDisplayMetrics().widthPixels / sd * 0.955f);
+			int width = Math.round((float) Resources.getSystem().getDisplayMetrics().heightPixels / sd * 0.955f);
 
 			String html = "<!DOCTYPE html>\n" +
 					"<html>\n" +

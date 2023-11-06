@@ -36,6 +36,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Locale;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
@@ -81,6 +83,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		common = new Common(this);
 
 		mDrawerLayout = findViewById(R.id.drawer_layout);
+
+		OnBackPressedDispatcher onBackPressedDispatcher = getOnBackPressedDispatcher();
+		onBackPressedDispatcher.addCallback(this, onBackPressedCallback);
 
 		tabLayout = findViewById(R.id.tabs);
 
@@ -945,18 +950,20 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		t.start();
 	}
 
-	@Override
-	public void onBackPressed()
+	OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true)
 	{
-		if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
+		@Override
+		public void handleOnBackPressed()
 		{
-			mDrawerLayout.closeDrawer(GravityCompat.START);
-		} else {
-			super.onBackPressed();
-			Common.LogMessage("finishing up.");
-			finish();
+			if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
+			{
+				mDrawerLayout.closeDrawer(GravityCompat.START);
+			} else {
+				Common.LogMessage("finishing up.");
+				finish();
+			}
 		}
-	}
+	};
 
 	@Override
 	public void onPause()

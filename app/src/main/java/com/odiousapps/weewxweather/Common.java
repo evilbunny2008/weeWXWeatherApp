@@ -20,6 +20,7 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.Uri;
+import android.os.Build;
 import android.util.Base64;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -65,7 +66,7 @@ import static java.lang.Math.round;
 class Common
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
-	private final static boolean debug_on = true;
+	private final static boolean debug_on = false;
 	private final String app_version;
 	final Context context;
 
@@ -160,8 +161,16 @@ class Common
 
 		Intent myAlarm = new Intent(context.getApplicationContext(), UpdateCheck.class);
 		PendingIntent recurringAlarm = PendingIntent.getBroadcast(context.getApplicationContext(), 0, myAlarm, PendingIntent.FLAG_IMMUTABLE);
-		AlarmManager alarms = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-		alarms.setExact(AlarmManager.RTC_WAKEUP, start, recurringAlarm);
+
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
+		{
+			AlarmManager alarms = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+			if(alarms.canScheduleExactAlarms())
+				alarms.setExact(AlarmManager.RTC_WAKEUP, start, recurringAlarm);
+		} else {
+			AlarmManager alarms = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+			alarms.setExact(AlarmManager.RTC_WAKEUP, start, recurringAlarm);
+		}
 	}
 
 	String getAppVersion()
