@@ -120,23 +120,15 @@ class Common
 
 		switch (pos)
 		{
-			case 1:
-				period = 5 * 60000;
-				break;
-			case 2:
-				period = 10 * 60000;
-				break;
-			case 3:
-				period = 15 * 60000;
-				break;
-			case 4:
-				period = 30 * 60000;
-				break;
-			case 5:
-				period = 60 * 60000;
-				break;
-			default:
+			case 1 -> period = 5 * 60000;
+			case 2 -> period = 10 * 60000;
+			case 3 -> period = 15 * 60000;
+			case 4 -> period = 30 * 60000;
+			case 5 -> period = 60 * 60000;
+			default ->
+			{
 				return def;
+			}
 		}
 
 		return new long[]{period, 45000};
@@ -761,21 +753,16 @@ class Common
 	{
 		icon = icon.replace("-", "_");
 
-		switch(icon)
-		{
-			case "shower":
-				return "showers";
-			case "dusty":
-				return "dust";
-			case "mostly_sunny":
-				return "partly_cloudy";
-			case "light_shower":
-				return "light_showers";
-			case "windy":
-				return "wind";
-		}
+		return switch (icon)
+				{
+					case "shower" -> "showers";
+					case "dusty" -> "dust";
+					case "mostly_sunny" -> "partly_cloudy";
+					case "light_shower" -> "light_showers";
+					case "windy" -> "wind";
+					default -> icon;
+				};
 
-		return icon;
 	}
 
 	String[] processMET(String data)
@@ -810,7 +797,7 @@ class Common
 				day.day = sdf.format(day.timestamp);
 
 				String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class=\"icon\"")[1].split("src=\"")[1].split("\">")[0].trim();
-				String fileName =  icon.substring(icon.lastIndexOf('/') + 1).replaceAll("\\.svg$", "\\.png");
+				String fileName =  icon.substring(icon.lastIndexOf('/') + 1).replaceAll("\\.svg$", ".png");
 				day.min = forecasts[i].split("<span class=\"tab-temp-low\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
 				day.max = forecasts[i].split("<span class=\"tab-temp-high\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
 				day.text = forecasts[i].split("<div class=\"summary-text", 2)[1].split("\">", 3)[2]
@@ -1256,7 +1243,7 @@ class Common
 					number = p.matcher(fn).replaceAll("");
 					if(!number.equals(""))
 					{
-						fn = fn.replaceAll("\\d{2,3}\\.jpg$", "\\.jpg");
+						fn = fn.replaceAll("\\d{2,3}\\.jpg$", ".jpg");
 						Bitmap bmp3 = loadImage(fn);
 
 						if(bmp3 != null)
@@ -1280,7 +1267,7 @@ class Common
 
 				if(iconLink.getString(i).toLowerCase(Locale.ENGLISH).startsWith("http"))
 				{
-					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).trim().replaceAll("\\.png$", "\\.jpg");
+					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).trim().replaceAll("\\.png$", ".jpg");
 					fileName = checkImage(fileName, iconLink.getString(i));
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
@@ -2336,179 +2323,94 @@ class Common
 
 	private String getCode(String icon)
 	{
-		switch(icon)
-		{
-			case "clearsky_day":
-				return "01d";
-			case "clearsky_night":
-				return "01n";
-			case "clearsky_polartwilight":
-				return "01m";
-			case "fair_day":
-				return "02d";
-			case "fair_night":
-				return "02n";
-			case "fair_polartwilight":
-				return "02m";
-			case "partlycloudy_day":
-				return "03d";
-			case "partlycloudy_night":
-				return "03n";
-			case "partlycloudy_polartwilight":
-				return "03m";
-			case "cloudy":
-				return "04";
-			case "rainshowers_day":
-				return "05d";
-			case "rainshowers_night":
-				return "05n";
-			case "rainshowers_polartwilight":
-				return "05m";
-			case "rainshowersandthunder_day":
-				return "06d";
-			case "rainshowersandthunder_night":
-				return "06n";
-			case "rainshowersandthunder_polartwilight":
-				return "06m";
-			case "sleetshowers_day":
-				return "07d";
-			case "sleetshowers_night":
-				return "07n";
-			case "sleetshowers_polartwilight":
-				return "07m";
-			case "snowshowers_day":
-				return "08d";
-			case "snowshowers_night":
-				return "08n";
-			case "snowshowers_polartwilight":
-				return "08m";
-			case "rain":
-				return "09";
-			case "heavyrain":
-				return "10";
-			case "heavyrainandthunder":
-				return "11";
-			case "sleet":
-				return "12";
-			case "snow":
-				return "13";
-			case "snowandthunder":
-				return "14";
-			case "fog":
-				return "15";
+		return switch (icon)
+				{
+					case "clearsky_day" -> "01d";
+					case "clearsky_night" -> "01n";
+					case "clearsky_polartwilight" -> "01m";
+					case "fair_day" -> "02d";
+					case "fair_night" -> "02n";
+					case "fair_polartwilight" -> "02m";
+					case "partlycloudy_day" -> "03d";
+					case "partlycloudy_night" -> "03n";
+					case "partlycloudy_polartwilight" -> "03m";
+					case "cloudy" -> "04";
+					case "rainshowers_day" -> "05d";
+					case "rainshowers_night" -> "05n";
+					case "rainshowers_polartwilight" -> "05m";
+					case "rainshowersandthunder_day" -> "06d";
+					case "rainshowersandthunder_night" -> "06n";
+					case "rainshowersandthunder_polartwilight" -> "06m";
+					case "sleetshowers_day" -> "07d";
+					case "sleetshowers_night" -> "07n";
+					case "sleetshowers_polartwilight" -> "07m";
+					case "snowshowers_day" -> "08d";
+					case "snowshowers_night" -> "08n";
+					case "snowshowers_polartwilight" -> "08m";
+					case "rain" -> "09";
+					case "heavyrain" -> "10";
+					case "heavyrainandthunder" -> "11";
+					case "sleet" -> "12";
+					case "snow" -> "13";
+					case "snowandthunder" -> "14";
+					case "fog" -> "15";
+					case "sleetshowersandthunder_day" -> "20d";
+					case "sleetshowersandthunder_night" -> "20n";
+					case "sleetshowersandthunder_polartwilight" -> "20m";
+					case "snowshowersandthunder_day" -> "21d";
+					case "snowshowersandthunder_night" -> "21n";
+					case "snowshowersandthunder_polartwilight" -> "21m";
+					case "rainandthunder" -> "22";
+					case "sleetandthunder" -> "23";
+					case "lightrainshowersandthunder_day" -> "24d";
+					case "lightrainshowersandthunder_night" -> "24n";
+					case "lightrainshowersandthunder_polartwilight" -> "24m";
+					case "heavyrainshowersandthunder_day" -> "25d";
+					case "heavyrainshowersandthunder_night" -> "25n";
+					case "heavyrainshowersandthunder_polartwilight" -> "25m";
+					case "lightssleetshowersandthunder_day" -> "26d";
+					case "lightssleetshowersandthunder_night" -> "26n";
+					case "lightssleetshowersandthunder_polartwilight" -> "26m";
+					case "heavysleetshowersandthunder_day" -> "27d";
+					case "heavysleetshowersandthunder_night" -> "27n";
+					case "heavysleetshowersandthunder_polartwilight" -> "27m";
+					case "lightssnowshowersandthunder_day" -> "28d";
+					case "lightssnowshowersandthunder_night" -> "28n";
+					case "lightssnowshowersandthunder_polartwilight" -> "28m";
+					case "heavysnowshowersandthunder_day" -> "29d";
+					case "heavysnowshowersandthunder_night" -> "29n";
+					case "heavysnowshowersandthunder_polartwilight" -> "29m";
+					case "lightrainandthunder" -> "30";
+					case "lightsleetandthunder" -> "31";
+					case "heavysleetandthunder" -> "32";
+					case "lightsnowandthunder" -> "33";
+					case "heavysnowandthunder" -> "34";
+					case "lightrainshowers_day" -> "40d";
+					case "lightrainshowers_night" -> "40n";
+					case "lightrainshowers_polartwilight" -> "40m";
+					case "heavyrainshowers_day" -> "41d";
+					case "heavyrainshowers_night" -> "41n";
+					case "heavyrainshowers_polartwilight" -> "41m";
+					case "lightsleetshowers_day" -> "42d";
+					case "lightsleetshowers_night" -> "42n";
+					case "lightsleetshowers_polartwilight" -> "42m";
+					case "heavysleetshowers_day" -> "43d";
+					case "heavysleetshowers_night" -> "43n";
+					case "heavysleetshowers_polartwilight" -> "43m";
+					case "lightsnowshowers_day" -> "44d";
+					case "lightsnowshowers_night" -> "44n";
+					case "lightsnowshowers_polartwilight" -> "44m";
+					case "heavysnowshowers_day" -> "45d";
+					case "heavysnowshowers_night" -> "45n";
+					case "heavysnowshowers_polartwilight" -> "45m";
+					case "lightrain" -> "46";
+					case "lightsleet" -> "47";
+					case "heavysleet" -> "48";
+					case "lightsnow" -> "49";
+					case "heavysnow" -> "50";
+					default -> "01d";
+				};
 
-			case "sleetshowersandthunder_day":
-				return "20d";
-			case "sleetshowersandthunder_night":
-				return "20n";
-			case "sleetshowersandthunder_polartwilight":
-				return "20m";
-			case "snowshowersandthunder_day":
-				return "21d";
-			case "snowshowersandthunder_night":
-				return "21n";
-			case "snowshowersandthunder_polartwilight":
-				return "21m";
-			case "rainandthunder":
-				return "22";
-			case "sleetandthunder":
-				return "23";
-			case "lightrainshowersandthunder_day":
-				return "24d";
-			case "lightrainshowersandthunder_night":
-				return "24n";
-			case "lightrainshowersandthunder_polartwilight":
-				return "24m";
-			case "heavyrainshowersandthunder_day":
-				return "25d";
-			case "heavyrainshowersandthunder_night":
-				return "25n";
-			case "heavyrainshowersandthunder_polartwilight":
-				return "25m";
-			case "lightssleetshowersandthunder_day":
-				return "26d";
-			case "lightssleetshowersandthunder_night":
-				return "26n";
-			case "lightssleetshowersandthunder_polartwilight":
-				return "26m";
-			case "heavysleetshowersandthunder_day":
-				return "27d";
-			case "heavysleetshowersandthunder_night":
-				return "27n";
-			case "heavysleetshowersandthunder_polartwilight":
-				return "27m";
-			case "lightssnowshowersandthunder_day":
-				return "28d";
-			case "lightssnowshowersandthunder_night":
-				return "28n";
-			case "lightssnowshowersandthunder_polartwilight":
-				return "28m";
-			case "heavysnowshowersandthunder_day":
-				return "29d";
-			case "heavysnowshowersandthunder_night":
-				return "29n";
-			case "heavysnowshowersandthunder_polartwilight":
-				return "29m";
-			case "lightrainandthunder":
-				return "30";
-			case "lightsleetandthunder":
-				return "31";
-			case "heavysleetandthunder":
-				return "32";
-			case "lightsnowandthunder":
-				return "33";
-			case "heavysnowandthunder":
-				return "34";
-
-			case "lightrainshowers_day":
-				return "40d";
-			case "lightrainshowers_night":
-				return "40n";
-			case "lightrainshowers_polartwilight":
-				return "40m";
-			case "heavyrainshowers_day":
-				return "41d";
-			case "heavyrainshowers_night":
-				return "41n";
-			case "heavyrainshowers_polartwilight":
-				return "41m";
-			case "lightsleetshowers_day":
-				return "42d";
-			case "lightsleetshowers_night":
-				return "42n";
-			case "lightsleetshowers_polartwilight":
-				return "42m";
-			case "heavysleetshowers_day":
-				return "43d";
-			case "heavysleetshowers_night":
-				return "43n";
-			case "heavysleetshowers_polartwilight":
-				return "43m";
-			case "lightsnowshowers_day":
-				return "44d";
-			case "lightsnowshowers_night":
-				return "44n";
-			case "lightsnowshowers_polartwilight":
-				return "44m";
-			case "heavysnowshowers_day":
-				return "45d";
-			case "heavysnowshowers_night":
-				return "45n";
-			case "heavysnowshowers_polartwilight":
-				return "45m";
-			case "lightrain":
-				return "46";
-			case "lightsleet":
-				return "47";
-			case "heavysleet":
-				return "48";
-			case "lightsnow":
-				return "49";
-			case "heavysnow":
-				return "50";
-		}
-
-		return "01d";
 	}
 
 	private long convertDaytoTS(String dayName, Locale locale, long lastTS)
@@ -3062,29 +2964,17 @@ class Common
 			String[] bits = nws.getString(fimg).split("\\|");
 			switch (bits[1].trim())
 			{
-				case "L":
-					bmp1 = Bitmap.createBitmap(bmp1, 0, 0, x1 / 2, y1);
-					break;
-				case "R":
-					bmp1 = Bitmap.createBitmap(bmp1, x1 / 2, 0, x1, y1);
-					break;
-				default:
-					bmp1 = Bitmap.createBitmap(bmp1, x1 / 4, 0, x1 * 3 / 4, y1);
-					break;
+				case "L" -> bmp1 = Bitmap.createBitmap(bmp1, 0, 0, x1 / 2, y1);
+				case "R" -> bmp1 = Bitmap.createBitmap(bmp1, x1 / 2, 0, x1, y1);
+				default -> bmp1 = Bitmap.createBitmap(bmp1, x1 / 4, 0, x1 * 3 / 4, y1);
 			}
 
 			bits = nws.getString(simg).split("\\|");
 			switch (bits[1].trim())
 			{
-				case "L":
-					bmp2 = Bitmap.createBitmap(bmp2, 0, 0, x2 / 2, y2);
-					break;
-				case "R":
-					bmp2 = Bitmap.createBitmap(bmp2, x2 / 2, 0, x2, y2);
-					break;
-				default:
-					bmp2 = Bitmap.createBitmap(bmp2, x2 / 4, 0, x2 * 3 / 4, y2);
-					break;
+				case "L" -> bmp2 = Bitmap.createBitmap(bmp2, 0, 0, x2 / 2, y2);
+				case "R" -> bmp2 = Bitmap.createBitmap(bmp2, x2 / 2, 0, x2, y2);
+				default -> bmp2 = Bitmap.createBitmap(bmp2, x2 / 4, 0, x2 * 3 / 4, y2);
 			}
 
 			Bitmap bmp = Bitmap.createBitmap(x1, y1, Bitmap.Config.ARGB_8888);
@@ -3606,15 +3496,21 @@ class Common
 	{
 		switch (context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK)
 		{
-			case Configuration.UI_MODE_NIGHT_NO:
+			case Configuration.UI_MODE_NIGHT_NO ->
+			{
 				Common.LogMessage("Night mode off");
 				return 0;
-			case Configuration.UI_MODE_NIGHT_YES:
+			}
+			case Configuration.UI_MODE_NIGHT_YES ->
+			{
 				Common.LogMessage("Night mode on");
 				return 1;
-			case Configuration.UI_MODE_NIGHT_UNDEFINED:
+			}
+			case Configuration.UI_MODE_NIGHT_UNDEFINED ->
+			{
 				Common.LogMessage("Night mode not set, default to off");
 				return 0;
+			}
 		}
 
 		return 0;

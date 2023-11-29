@@ -9,6 +9,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -982,7 +983,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		filter.addAction(Common.FAILED_INTENT);
 		filter.addAction(Common.TAB0_INTENT);
 		filter.addAction(Common.INIGO_INTENT);
-		registerReceiver(serviceReceiver, filter);
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
+			registerReceiver(serviceReceiver, filter, RECEIVER_NOT_EXPORTED);
+		else
+			registerReceiver(serviceReceiver, filter);
 
 		Common.LogMessage("resuming app updates");
 		common.SendIntents();

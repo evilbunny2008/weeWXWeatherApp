@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Resources;
 import android.graphics.ColorMatrixColorFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -271,7 +272,10 @@ public class Forecast extends Fragment
 		filter.addAction(Common.UPDATE_INTENT);
 		filter.addAction(Common.REFRESH_INTENT);
 		filter.addAction(Common.EXIT_INTENT);
-		common.context.registerReceiver(serviceReceiver, filter);
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
+			common.context.registerReceiver(serviceReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
+		else
+			common.context.registerReceiver(serviceReceiver, filter);
 		Common.LogMessage("forecast.java -- registerReceiver");
 	}
 
