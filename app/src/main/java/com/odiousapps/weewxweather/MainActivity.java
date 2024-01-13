@@ -622,13 +622,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				{
 					switch (fctype.toLowerCase(Locale.ENGLISH))
 					{
-						case "yahoo":
+						case "yahoo" ->
+						{
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
-							if(!forecast.startsWith("http"))
+							if (!forecast.startsWith("http"))
 							{
 								common.SetStringPref("lastError", "Yahoo API recently changed, you need to update your settings.");
-								runOnUiThread(() -> {
+								runOnUiThread(() ->
+								{
 									b1.setEnabled(true);
 									b2.setEnabled(true);
 									dialog.dismiss();
@@ -641,27 +643,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 								});
 								return;
 							}
-							break;
-						case "weatherzone":
+						}
+						case "weatherzone" ->
+						{
 							forecast = "https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecast + "&obs=0&fc=1&warn=0";
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
-							break;
-						case "yr.no":
-						case "met.no":
-						case "weather.gc.ca":
-						case "weather.gc.ca-fr":
-						case "metoffice.gov.uk":
-						case "bom2":
-						case "aemet.es":
-						case "dwd.de":
-						case "tempoitalia.it":
+						}
+						case "yr.no", "met.no", "weather.gc.ca", "weather.gc.ca-fr", "metoffice.gov.uk", "bom2", "aemet.es", "dwd.de", "tempoitalia.it" ->
+						{
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
-							break;
-						case "bom.gov.au":
+						}
+						case "bom.gov.au" ->
+						{
 							common.SetStringPref("lastError", "Forecast type " + fctype + " is no longer supported due to ftp support being dropped in Android. Use bom2 forecasts instead, check the wiki for details.");
-							runOnUiThread(() -> {
+							runOnUiThread(() ->
+							{
 								b1.setEnabled(true);
 								b2.setEnabled(true);
 								dialog.dismiss();
@@ -673,83 +671,91 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 										}).show();
 							});
 							return;
-						case "wmo.int":
-							if(!forecast.startsWith("http"))
+						}
+						case "wmo.int" ->
+						{
+							if (!forecast.startsWith("http"))
 								forecast = "https://worldweather.wmo.int/en/json/" + forecast.trim() + "_en.xml";
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
-							break;
-						case "weather.gov":
+						}
+						case "weather.gov" ->
+						{
 							String lat = "", lon = "";
-
-							if(forecast.contains("?"))
+							if (forecast.contains("?"))
 								forecast = forecast.split("\\?", 2)[1].trim();
-
-							if(forecast.contains("lat") && forecast.contains("lon"))
+							if (forecast.contains("lat") && forecast.contains("lon"))
 							{
 								String[] tmp = forecast.split("&");
-								for(String line : tmp)
+								for (String line : tmp)
 								{
-									if(line.split("=", 2)[0].equals("lat"))
+									if (line.split("=", 2)[0].equals("lat"))
 										lat = line.split("=", 2)[1].trim();
-									if(line.split("=", 2)[0].equals("lon"))
+									if (line.split("=", 2)[0].equals("lon"))
 										lon = line.split("=", 2)[1].trim();
 								}
-							} else {
+							} else
+							{
 								lat = forecast.split(",")[0].trim();
 								lon = forecast.split(",")[1].trim();
 							}
-
 							forecast = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon=" + lon + "&unit=0&lg=english&FcstType=json";
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
-							break;
-						case "bom3":
+						}
+						case "bom3" ->
+						{
 							forecast = "https://api.weather.bom.gov.au/v1/locations/" + forecast.trim() + "/forecasts/daily";
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
-							break;
-						case "metservice.com":
+						}
+						case "metservice.com" ->
+						{
 							forecast = "https://www.metservice.com/publicData/localForecast" + forecast;
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
-							break;
-						case "openweathermap.org":
-							if(metric_forecasts.isChecked())
+						}
+						case "openweathermap.org" ->
+						{
+							if (metric_forecasts.isChecked())
 								forecast += "&units=metric";
 							else
 								forecast += "&units=imperial";
 							forecast += "&lang=" + Locale.getDefault().getLanguage();
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
-							break;
-						case "weather.com":
+						}
+						case "weather.com" ->
+						{
 							forecast = "https://api.weather.com/v3/wx/forecast/daily/5day?geocode=" + forecast + "&format=json&apiKey=d522aa97197fd864d36b418f39ebb323";
-							if(metric_forecasts.isChecked())
+							if (metric_forecasts.isChecked())
 								forecast += "&units=m";
 							else
 								forecast += "&units=e";
 							forecast += "&language=" + Locale.getDefault().getLanguage() + "-" + Locale.getDefault().getCountry();
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
-							break;
-						case "met.ie":
+						}
+						case "met.ie" ->
+						{
 							metierev = "https://prodapi.metweb.ie/location/reverse/" + forecast.replaceAll(",", "/");
 							forecast = "https://prodapi.metweb.ie/weather/daily/" + forecast.replaceAll(",", "/") + "/10";
-							if(common.GetStringPref("metierev", "").equals("") || !forecast.equals(oldforecast))
+							if (common.GetStringPref("metierev", "").equals("") || !forecast.equals(oldforecast))
 							{
 								metierev = common.downloadForecast(fctype, metierev, null);
-								JSONObject jobj= new JSONObject(metierev);
+								JSONObject jobj = new JSONObject(metierev);
 								metierev = jobj.getString("city") + ", Ireland";
 								common.SetStringPref("metierev", metierev);
 							}
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
 							Common.LogMessage("metierev=" + metierev);
-							break;
-						default:
+						}
+						default ->
+						{
 							common.SetStringPref("lastError", String.format(getString(R.string.forecast_type_is_invalid), fctype));
-							runOnUiThread(() -> {
+							runOnUiThread(() ->
+							{
 								b1.setEnabled(true);
 								b2.setEnabled(true);
 								dialog.dismiss();
@@ -761,6 +767,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 										}).show();
 							});
 							return;
+						}
 					}
 				} catch (Exception e) {
 					common.SetStringPref("lastError", e.toString());

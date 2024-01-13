@@ -154,11 +154,13 @@ public class Forecast extends Fragment
 			int height = Math.round((float) Resources.getSystem().getDisplayMetrics().widthPixels / sd * 0.955f);
 			int width = Math.round((float) Resources.getSystem().getDisplayMetrics().heightPixels / sd * 0.955f);
 
-			String html = "<!DOCTYPE html>\n" +
-					"<html>\n" +
-					"  <head>\n" +
-					"	<meta charset='utf-8'>\n" +
-					"	<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n";
+			String html = """
+					<!DOCTYPE html>
+					<html>
+					  <head>
+						<meta charset='utf-8'>
+						<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+					""";
 			if (dark_theme == 1)
 				html += "<style>body{color: #fff; background-color: #000;}</style>";
 
@@ -443,140 +445,121 @@ public class Forecast extends Fragment
 				return;
 			}
 
-			switch(fctype.toLowerCase(Locale.ENGLISH))
+			switch (fctype.toLowerCase(Locale.ENGLISH))
 			{
-				case "yahoo":
+				case "yahoo" ->
 				{
 					String[] content = common.processYahoo(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "weatherzone":
+				case "weatherzone" ->
 				{
 					String[] content = common.processWZ(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "yr.no":
+				case "yr.no" ->
 				{
 					String[] content = common.processYR(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "met.no":
+				case "met.no" ->
 				{
 					String[] content = common.processMetNO(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "bom.gov.au":
+				case "bom.gov.au" ->
 				{
 					String[] content = common.processBOM(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "wmo.int":
+				case "wmo.int" ->
 				{
 					String[] content = common.processWMO(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "weather.gov":
+				case "weather.gov" ->
 				{
 					String[] content = common.processWGOV(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "weather.gc.ca":
+				case "weather.gc.ca" ->
 				{
 					String[] content = common.processWCA(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "weather.gc.ca-fr":
+				case "weather.gc.ca-fr" ->
 				{
 					String[] content = common.processWCAF(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "metoffice.gov.uk":
+				case "metoffice.gov.uk" ->
 				{
 					String[] content = common.processMET(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "bom2":
+				case "bom2" ->
 				{
 					String[] content = common.processBOM2(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "bom3":
+				case "bom3" ->
 				{
 					String[] content = common.processBOM3(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "aemet.es":
+				case "aemet.es" ->
 				{
 					String[] content = common.processAEMET(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "dwd.de":
+				case "dwd.de" ->
 				{
 					String[] content = common.processDWD(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "metservice.com":
+				case "metservice.com" ->
 				{
 					String[] content = common.processMetService(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "openweathermap.org":
+				case "openweathermap.org" ->
 				{
 					String[] content = common.processOWM(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "weather.com":
+				case "weather.com" ->
 				{
 					String[] content = common.processWCOM(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "met.ie":
+				case "met.ie" ->
 				{
 					String[] content = common.processMETIE(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
-				case "tempoitalia.it":
+				case "tempoitalia.it" ->
 				{
 					String[] content = common.processTempoItalia(data, true);
-					if(content != null && content.length >= 2)
+					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
-					break;
 				}
 			}
 
@@ -624,90 +607,64 @@ public class Forecast extends Fragment
 
 			switch (common.GetStringPref("fctype", "yahoo").toLowerCase(Locale.ENGLISH))
 			{
-				case "yahoo":
-					im.setImageResource(R.drawable.purple);
-					break;
-				case "weatherzone":
-					im.setImageResource(R.drawable.wz);
-					break;
-				case "yr.no":
-					im.setImageResource(R.drawable.yrno);
-					break;
-				case "met.no":
-					im.setImageResource(R.drawable.met_no);
-					break;
-				case "bom.gov.au":
+				case "yahoo" -> im.setImageResource(R.drawable.purple);
+				case "weatherzone" -> im.setImageResource(R.drawable.wz);
+				case "yr.no" -> im.setImageResource(R.drawable.yrno);
+				case "met.no" -> im.setImageResource(R.drawable.met_no);
+				case "bom.gov.au" ->
+				{
 					im.setImageResource(R.drawable.bom);
-					if(dark_theme == 1)
+					if (dark_theme == 1)
 						im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
 					else
 						im.setColorFilter(null);
-					break;
-				case "wmo.int":
-					im.setImageResource(R.drawable.wmo);
-					break;
-				case "weather.gov":
-					im.setImageResource(R.drawable.wgov);
-					break;
-				case "weather.gc.ca":
-				case "weather.gc.ca-fr":
-					im.setImageResource(R.drawable.wca);
-					break;
-				case "metoffice.gov.uk":
-					im.setImageResource(R.drawable.met);
-					break;
-				case "bom2":
-				case "bom3":
+				}
+				case "wmo.int" -> im.setImageResource(R.drawable.wmo);
+				case "weather.gov" -> im.setImageResource(R.drawable.wgov);
+				case "weather.gc.ca", "weather.gc.ca-fr" -> im.setImageResource(R.drawable.wca);
+				case "metoffice.gov.uk" -> im.setImageResource(R.drawable.met);
+				case "bom2", "bom3" ->
+				{
 					im.setImageResource(R.drawable.bom);
-					if(dark_theme == 1)
+					if (dark_theme == 1)
 					{
 						im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					} else {
+					} else
+					{
 						im.setColorFilter(null);
 					}
-					break;
-				case "aemet.es":
-					im.setImageResource(R.drawable.aemet);
-					break;
-				case "dwd.de":
-					im.setImageResource(R.drawable.dwd);
-					break;
-				case "metservice.com":
+				}
+				case "aemet.es" -> im.setImageResource(R.drawable.aemet);
+				case "dwd.de" -> im.setImageResource(R.drawable.dwd);
+				case "metservice.com" ->
+				{
 					im.setImageResource(R.drawable.metservice);
-					if(dark_theme == 1)
+					if (dark_theme == 1)
 						im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
 					else
 						im.setColorFilter(null);
-					break;
-				case "meteofrance.com":
-					im.setImageResource(R.drawable.mf);
-					break;
-				case "openweathermap.org":
-					im.setImageResource(R.drawable.owm);
-					break;
-				case "apixu.com":
+				}
+				case "meteofrance.com" -> im.setImageResource(R.drawable.mf);
+				case "openweathermap.org" -> im.setImageResource(R.drawable.owm);
+				case "apixu.com" ->
+				{
 					im.setImageResource(R.drawable.apixu);
-					if(dark_theme == 1)
+					if (dark_theme == 1)
 						im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
 					else
 						im.setColorFilter(null);
-					break;
-				case "weather.com":
-					im.setImageResource(R.drawable.weather_com);
-					break;
-				case "met.ie":
+				}
+				case "weather.com" -> im.setImageResource(R.drawable.weather_com);
+				case "met.ie" ->
+				{
 					im.setImageResource(R.drawable.met_ie);
-					if(dark_theme == 1)
+					if (dark_theme == 1)
 						im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
 					else
 						im.setColorFilter(null);
-					break;
-				case "ilmeteo.it":
-					im.setImageResource(R.drawable.ilmeteo_it);
-					break;
-				case "tempoitalia.it":
-					im.setImageResource(R.drawable.tempoitalia_it);
-					break;
+				}
+				case "ilmeteo.it" -> im.setImageResource(R.drawable.ilmeteo_it);
+				case "tempoitalia.it" -> im.setImageResource(R.drawable.tempoitalia_it);
 			}
 		});
 	}

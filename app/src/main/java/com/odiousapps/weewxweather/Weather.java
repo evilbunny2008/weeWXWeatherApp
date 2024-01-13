@@ -174,7 +174,7 @@ public class Weather extends Fragment
 		sb.append(stmp);
 
 		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[45] + "UVI</td>" +
-				"<td style='text-align:right;'>" + bits[43] + "W/m\u00B2</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
+				"<td style='text-align:right;'>" + bits[43] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
 		sb.append(stmp);
 
 		if(bits.length > 202 && common.GetBoolPref("showIndoor", false))
@@ -255,7 +255,7 @@ public class Weather extends Fragment
 			{
 				switch (common.GetStringPref("radtype", "image"))
 				{
-					case "image":
+					case "image" ->
 					{
 						String radar = common.context.getFilesDir() + "/radar.gif";
 
@@ -263,30 +263,35 @@ public class Weather extends Fragment
 						Common.LogMessage("myFile == " + myFile.getAbsolutePath());
 						Common.LogMessage("myFile.exists() == " + myFile.exists());
 
-						if(!myFile.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+						if (!myFile.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
 						{
 							sb.append("<html><body>").append(getString(R.string.radar_url_not_set)).append("</body></html>");
-						} else {
-							sb.append("<!DOCTYPE html>\n" +
-									"<html>\n" +
-									"  <head>\n" +
-									"	<meta charset='utf-8'>\n" +
-									"	<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n");
+						} else
+						{
+							sb.append("""
+									<!DOCTYPE html>
+									<html>
+									  <head>
+										<meta charset='utf-8'>
+										<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+									""");
 							if (dark_theme == 1)
 								sb.append("<style>body{color: #fff; background-color: #000;}</style>");
 
 							try
 							{
 								File f = new File(radar);
-								try(FileInputStream imageInFile = new FileInputStream(f))
+								try (FileInputStream imageInFile = new FileInputStream(f))
 								{
 									byte[] imageData = new byte[(int) f.length()];
 									if (imageInFile.read(imageData) > 0)
 										radar = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-								} catch (Exception e2) {
+								} catch (Exception e2)
+								{
 									e2.printStackTrace();
 								}
-							} catch (Exception e) {
+							} catch (Exception e)
+							{
 								e.printStackTrace();
 							}
 
@@ -305,7 +310,8 @@ public class Weather extends Fragment
 						});
 						return;
 					}
-					case "webpage":
+					case "webpage" ->
+					{
 						mHandler.post(() ->
 						{
 							String radar_url = common.GetStringPref("RADAR_URL", "");
@@ -314,12 +320,14 @@ public class Weather extends Fragment
 							swipeLayout.setRefreshing(false);
 						});
 						return;
-					default:
+					}
+					default ->
+					{
 						sb.append("<html>");
 						if (dark_theme == 1)
 							sb.append("<head><style>body{color: #fff; background-color: #000;}</style></head>");
 						sb.append("<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>");
-						break;
+					}
 				}
 
 				mHandler.post(() ->
@@ -343,10 +351,10 @@ public class Weather extends Fragment
 
 				switch (fctype.toLowerCase(Locale.ENGLISH))
 				{
-					case "yahoo":
+					case "yahoo" ->
 					{
 						String[] content = common.processYahoo(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -361,12 +369,11 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "weatherzone":
+					case "weatherzone" ->
 					{
 						String[] content = common.processWZ(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -381,12 +388,11 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "yr.no":
+					case "yr.no" ->
 					{
 						String[] content = common.processYR(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -401,12 +407,11 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "met.no":
+					case "met.no" ->
 					{
 						String[] content = common.processMetNO(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -421,12 +426,11 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "bom.gov.au":
+					case "bom.gov.au" ->
 					{
 						String[] content = common.processBOM(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -444,12 +448,11 @@ public class Weather extends Fragment
 
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "wmo.int":
+					case "wmo.int" ->
 					{
 						String[] content = common.processWMO(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -464,12 +467,11 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "weather.gov":
+					case "weather.gov" ->
 					{
 						String[] content = common.processWGOV(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -484,12 +486,11 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "weather.gc.ca":
+					case "weather.gc.ca" ->
 					{
 						String[] content = common.processWCA(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -504,12 +505,11 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "weather.gc.ca-fr":
+					case "weather.gc.ca-fr" ->
 					{
 						String[] content = common.processWCAF(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -524,12 +524,11 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "metoffice.gov.uk":
+					case "metoffice.gov.uk" ->
 					{
 						String[] content = common.processMET(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -544,12 +543,11 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "bom2":
+					case "bom2" ->
 					{
 						String[] content = common.processBOM2(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -557,7 +555,7 @@ public class Weather extends Fragment
 
 						String logo = "<img src='bom.png' height='29px'/><br/>";
 						sb.append("<html>");
-						if(dark_theme == 1)
+						if (dark_theme == 1)
 						{
 							logo = "<img src='bom.png' style='filter:invert(100%);' height='29px'/><br/>";
 							tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.style_sheet_header + "</head>";
@@ -567,12 +565,11 @@ public class Weather extends Fragment
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
 
-						break;
 					}
-					case "bom3":
+					case "bom3" ->
 					{
 						String[] content = common.processBOM3(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -580,7 +577,7 @@ public class Weather extends Fragment
 
 						String logo = "<img src='bom.png' height='29px'/><br/>";
 						sb.append("<html>");
-						if(dark_theme == 1)
+						if (dark_theme == 1)
 						{
 							logo = "<img src='bom.png' style='filter:invert(100%);' height='29px'/><br/>";
 							tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.style_sheet_header + "</head>";
@@ -590,12 +587,11 @@ public class Weather extends Fragment
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
 
-						break;
 					}
-					case "aemet.es":
+					case "aemet.es" ->
 					{
 						String[] content = common.processAEMET(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -610,12 +606,11 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "dwd.de":
+					case "dwd.de" ->
 					{
 						String[] content = common.processDWD(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -630,12 +625,11 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "metservice.com":
+					case "metservice.com" ->
 					{
 						String[] content = common.processMetService(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -644,7 +638,7 @@ public class Weather extends Fragment
 						String logo = "<img src='metservice.png' height='29px'/><br/>";
 						sb.append("<html>");
 
-						if(dark_theme == 1)
+						if (dark_theme == 1)
 						{
 							logo = "<img src='metservice.png' style='filter:invert(100%);' height='29px'/><br/>";
 							tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.style_sheet_header + "</head>";
@@ -653,17 +647,16 @@ public class Weather extends Fragment
 						sb.append(tmp);
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "openweathermap.org":
+					case "openweathermap.org" ->
 					{
 						String[] content = common.processOWM(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 							return;
 
 						String logo = "<img src='owm.png' height='29px'/><br/>";
 						sb.append("<html>");
-						if(dark_theme == 1)
+						if (dark_theme == 1)
 							tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.style_sheet_header + "</head>";
 						else
 							tmp = "<head>" + Common.style_sheet_header + "</head>";
@@ -671,17 +664,16 @@ public class Weather extends Fragment
 
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "weather.com":
+					case "weather.com" ->
 					{
 						String[] content = common.processWCOM(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 							return;
 
 						String logo = "<img src='weather_com.png' height='29px'/><br/>";
 						sb.append("<html>");
-						if(dark_theme == 1)
+						if (dark_theme == 1)
 						{
 							logo = "<img src='weather_com.png' style='filter:invert(100%);' height='29px'/><br/>";
 							tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.style_sheet_header + "</head>";
@@ -691,17 +683,16 @@ public class Weather extends Fragment
 
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "met.ie":
+					case "met.ie" ->
 					{
 						String[] content = common.processMETIE(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 							return;
 
 						String logo = "<img src='met_ie.png' height='29px'/><br/>";
 						sb.append("<html>");
-						if(dark_theme == 1)
+						if (dark_theme == 1)
 						{
 							logo = "<img src='met_ie.png' style='filter:invert(100%);' height='29px'/><br/>";
 							tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.style_sheet_header + "</head>";
@@ -711,17 +702,16 @@ public class Weather extends Fragment
 
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
-					case "tempoitalia.it":
+					case "tempoitalia.it" ->
 					{
 						String[] content = common.processTempoItalia(data);
-						if (content == null || content.length <= 0)
+						if (content == null || content.length == 0)
 							return;
 
 						String logo = "<img src='tempoitalia_it.png' height='29px'/><br/>";
 						sb.append("<html>");
-						if(dark_theme == 1)
+						if (dark_theme == 1)
 							tmp = "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.style_sheet_header + "</head>";
 						else
 							tmp = "<head>" + Common.style_sheet_header + "</head>";
@@ -729,7 +719,6 @@ public class Weather extends Fragment
 
 						tmp = "<body style='text-align:center'>" + logo + content[0] + "</body></html>";
 						sb.append(tmp);
-						break;
 					}
 				}
 			}

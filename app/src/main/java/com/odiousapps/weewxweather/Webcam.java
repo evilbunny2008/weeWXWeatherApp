@@ -147,9 +147,6 @@ public class Webcam extends Fragment
 
 				try
 				{
-					while (mr.bm == null)
-						Thread.sleep(1000);
-
 					Common.LogMessage("trying to set bm");
 					bm = mr.bm;
 				} catch (Exception e) {

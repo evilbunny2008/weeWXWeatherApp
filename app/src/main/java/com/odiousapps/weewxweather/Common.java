@@ -20,7 +20,6 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.Uri;
-import android.os.Build;
 import android.util.Base64;
 import android.util.Log;
 import android.widget.RemoteViews;
@@ -142,7 +141,7 @@ class Common
 		if (period <= 0)
 			return;
 
-		long start = Math.round((double) System.currentTimeMillis() / (double) period) * period + wait;
+		long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
 
 		if (start < System.currentTimeMillis())
 			start += period;
@@ -154,15 +153,8 @@ class Common
 		Intent myAlarm = new Intent(context.getApplicationContext(), UpdateCheck.class);
 		PendingIntent recurringAlarm = PendingIntent.getBroadcast(context.getApplicationContext(), 0, myAlarm, PendingIntent.FLAG_IMMUTABLE);
 
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S)
-		{
-			AlarmManager alarms = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-			if(alarms.canScheduleExactAlarms())
-				alarms.setExact(AlarmManager.RTC_WAKEUP, start, recurringAlarm);
-		} else {
-			AlarmManager alarms = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-			alarms.setExact(AlarmManager.RTC_WAKEUP, start, recurringAlarm);
-		}
+		AlarmManager alarms = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+		alarms.set(AlarmManager.RTC_WAKEUP, start, recurringAlarm);
 	}
 
 	String getAppVersion()
@@ -239,13 +231,13 @@ class Common
 
 	void SetLongPref(String name, long value)
 	{
-		SetStringPref(name, "" + value);
+		SetStringPref(name, String.valueOf(value));
 	}
 
 	@SuppressWarnings({"SameParameterValue"})
 	long GetLongPref(String name, long default_value)
 	{
-		String val = GetStringPref(name, "" + default_value);
+		String val = GetStringPref(name, String.valueOf(default_value));
 		if (val == null)
 			return default_value;
 		return Long.parseLong(val);
@@ -253,12 +245,12 @@ class Common
 
 	void SetIntPref(String name, int value)
 	{
-		SetStringPref(name, "" + value);
+		SetStringPref(name, String.valueOf(value));
 	}
 
 	int GetIntPref(String name, int default_value)
 	{
-		String val = GetStringPref(name, "" + default_value);
+		String val = GetStringPref(name, String.valueOf(default_value));
 		if (val == null)
 			return default_value;
 		return Integer.parseInt(val);
@@ -353,7 +345,7 @@ class Common
 
 	private String generateForecast(List<Day> days, long timestamp, boolean showHeader)
 	{
-		if(days == null || days.size() <= 0)
+		if(days == null || days.size() == 0)
 			return null;
 
 		StringBuilder sb = new StringBuilder();
@@ -2325,7 +2317,6 @@ class Common
 	{
 		return switch (icon)
 				{
-					case "clearsky_day" -> "01d";
 					case "clearsky_night" -> "01n";
 					case "clearsky_polartwilight" -> "01m";
 					case "fair_day" -> "02d";
@@ -2479,7 +2470,7 @@ class Common
 					day.day = tmp[0];
 				}
 
-				if (tmp.length <= 1)
+				if (tmp.length == 1)
 					continue;
 
 				String[] mybits = tmp[1].split("<br />");
@@ -2685,6 +2676,8 @@ class Common
 
 	void SendIntents()
 	{
+		getWeather();
+		getForecast();
 		Intent intent = new Intent();
 		intent.setAction(Common.UPDATE_INTENT);
 		context.sendBroadcast(intent);

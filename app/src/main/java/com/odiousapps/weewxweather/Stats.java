@@ -331,7 +331,7 @@ public class Stats extends Fragment
 			if(bits.length > 205 && !bits[205].equals(""))
 			{
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[205] + "UVI</td><td>" + convert(bits[206]) +
-						"</td><td>" + convert(bits[208]) + "</td><td style='text-align:right;'>" + bits[207] + "W/m\u00B2</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
+						"</td><td>" + convert(bits[208]) + "</td><td style='text-align:right;'>" + bits[207] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
 				sb.append(stmp);
 			}
 
@@ -391,7 +391,7 @@ public class Stats extends Fragment
 				if(bits.length > 209 && !bits[209].equals(""))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[209] + "UVI</td><td>" + convert(bits[210]) +
-							"</td><td>" + convert(bits[212]) + "</td><td style='text-align:right;'>" + bits[211] + "W/m\u00B2</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
+							"</td><td>" + convert(bits[212]) + "</td><td style='text-align:right;'>" + bits[211] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
 					sb.append(stmp);
 				}
 
@@ -452,7 +452,7 @@ public class Stats extends Fragment
 				if(bits.length > 213 && !bits[213].equals(""))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[213] + "UVI</td><td>" + getTime(bits[214]) +
-							"</td><td>" + getTime(bits[216]) + "</td><td style='text-align:right;'>" + bits[215] + "W/m\u00B2</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
+							"</td><td>" + getTime(bits[216]) + "</td><td style='text-align:right;'>" + bits[215] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
 					sb.append(stmp);
 				}
 
@@ -501,7 +501,7 @@ public class Stats extends Fragment
 				if(bits.length > 217 && !bits[217].equals(""))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[217] + "UVI</td><td>" + getTime(bits[218]) +
-							"</td><td>" + getTime(bits[220]) + "</td><td style='text-align:right;'>" + bits[219] + "W/m\u00B2</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
+							"</td><td>" + getTime(bits[220]) + "</td><td style='text-align:right;'>" + bits[219] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
 					sb.append(stmp);
 				}
 
@@ -550,7 +550,7 @@ public class Stats extends Fragment
 				if(bits.length > 221 && !bits[221].equals(""))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[221] + "UVI</td><td>" + getTime(bits[222]) +
-							"</td><td>" + getTime(bits[224]) + "</td><td style='text-align:right;'>" + bits[223] + "W/m\u00B2</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
+							"</td><td>" + getTime(bits[224]) + "</td><td style='text-align:right;'>" + bits[223] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
 					sb.append(stmp);
 				}
 
