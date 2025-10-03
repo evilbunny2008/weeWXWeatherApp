@@ -61,7 +61,7 @@ public class RotateLayout extends ViewGroup {
 
 			setWillNotDraw(false);
 		} catch (Exception e) {
-			e.printStackTrace();
+			Common.doStackOutput(e);
 		}
 	}
 

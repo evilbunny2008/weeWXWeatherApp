@@ -107,6 +107,12 @@ class Common
 		LogMessage("app_version=" + app_version);
 	}
 
+	/** @noinspection CallToPrintStackTrace*/
+	static void doStackOutput(Exception e)
+	{
+		e.printStackTrace();
+	}
+
 	long[] getPeriod()
 	{
 		long[] def = {0, 0};
@@ -215,12 +221,12 @@ class Common
 			value = settings.getString(name, default_value);
 		} catch (ClassCastException cce)
 		{
-			cce.printStackTrace();
+			doStackOutput(cce);
 			return default_value;
 		} catch (Exception e)
 		{
 			LogMessage("GetStringPref(" + name + ", " + default_value + ") Err: " + e);
-			e.printStackTrace();
+			doStackOutput(e);
 			return default_value;
 		}
 
@@ -330,7 +336,7 @@ class Common
 			paint.setTextSize(64);
 
 			String rain = bits[20];
-			if (bits.length > 158 && !bits[158].equals(""))
+			if (bits.length > 158 && !bits[158].isEmpty())
 				rain = bits[158];
 
 			myCanvas.drawText(rain + bits[62], myCanvas.getWidth() - 20, 400, paint);
@@ -345,7 +351,7 @@ class Common
 
 	private String generateForecast(List<Day> days, long timestamp, boolean showHeader)
 	{
-		if(days == null || days.size() == 0)
+		if(days == null || days.isEmpty())
 			return null;
 
 		StringBuilder sb = new StringBuilder();
@@ -463,7 +469,7 @@ class Common
 
 	String[] processBOM2(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -546,7 +552,8 @@ class Common
 					if (imageInFile.read(imageData) > 0)
 						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				} catch (Exception e) {
-					e.printStackTrace();
+					doStackOutput(e);
+					doStackOutput(e);
 				}
 			}
 
@@ -558,13 +565,13 @@ class Common
 				day.max += "&deg;C";
 				day.min += "&deg;C";
 			} else {
-				if(!day.max.equals(""))
+				if(!day.max.isEmpty())
 					day.max += round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-				if(!day.min.equals(""))
+				if(!day.min.isEmpty())
 					day.min += round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 			}
 
-			if(day.max.equals("") || day.max.startsWith("&deg;"))
+			if(day.max.isEmpty() || day.max.startsWith("&deg;"))
 				day.max = "N/A";
 
 			days.add(day);
@@ -602,7 +609,7 @@ class Common
 						if (imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				}
 
@@ -621,7 +628,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -635,7 +642,7 @@ class Common
 
 	String[] processBOM3(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -726,7 +733,7 @@ class Common
 							if(imageInFile.read(imageData) > 0)
 								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 						} catch (Exception e) {
-							e.printStackTrace();
+							doStackOutput(e);
 						}
 					}
 				}
@@ -734,7 +741,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -764,7 +771,7 @@ class Common
 
 	String[] processMET(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -810,7 +817,7 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				}
 
@@ -826,7 +833,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -840,7 +847,7 @@ class Common
 
 	String[] processWCA(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -944,7 +951,7 @@ class Common
 						}
 					} catch (Exception e) {
 						LogMessage("hmmm 2 == " + div.html());
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 
 					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1).replaceAll("\\.gif$", "");
@@ -964,7 +971,7 @@ class Common
 							if(imageInFile.read(imageData) > 0)
 								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 						} catch (Exception e) {
-							e.printStackTrace();
+							doStackOutput(e);
 						}
 					}
 
@@ -979,7 +986,7 @@ class Common
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -993,7 +1000,7 @@ class Common
 
 	String[] processWCAF(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1084,7 +1091,7 @@ class Common
 						}
 					} catch (Exception e) {
 						LogMessage("hmmm 2 == " + div.html());
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 
 					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1).replaceAll("\\.gif$", "");
@@ -1104,7 +1111,7 @@ class Common
 							if(imageInFile.read(imageData) > 0)
 								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 						} catch (Exception e) {
-							e.printStackTrace();
+							doStackOutput(e);
 						}
 					}
 
@@ -1119,7 +1126,7 @@ class Common
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -1135,7 +1142,7 @@ class Common
 
 	String[] processWGOV(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1233,7 +1240,7 @@ class Common
 				} else {
 					Pattern p = Pattern.compile("\\d");
 					number = p.matcher(fn).replaceAll("");
-					if(!number.equals(""))
+					if(!number.isEmpty())
 					{
 						fn = fn.replaceAll("\\d{2,3}\\.jpg$", ".jpg");
 						Bitmap bmp3 = loadImage(fn);
@@ -1268,7 +1275,7 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				} else {
 					day.icon = iconLink.getString(i);
@@ -1291,7 +1298,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -1305,7 +1312,7 @@ class Common
 
 	String[] processWMO(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1364,7 +1371,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -1378,7 +1385,7 @@ class Common
 
 	String[] processBOM(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1462,7 +1469,7 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				}
 
@@ -1481,7 +1488,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -1495,7 +1502,7 @@ class Common
 
 	String[] processMetService(String data, boolean showHeader)
 	{
-		if (data == null || data.equals(""))
+		if (data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1506,6 +1513,7 @@ class Common
 
 		try
 		{
+			Common.LogMessage(data, true);
 			JSONObject jobj = new JSONObject(data);
 			JSONArray loop = jobj.getJSONArray("days");
 			String string_time = loop.getJSONObject(0).getString("issuedAtISO");
@@ -1558,7 +1566,7 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				}
 
@@ -1574,7 +1582,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -1588,7 +1596,7 @@ class Common
 
 	String[] processDWD(String data, boolean showHeader)
 	{
-		if (data == null || data.equals(""))
+		if (data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1622,7 +1630,8 @@ class Common
 				else
 					day.day = bit.split("<td><b>", 2)[1].split("</b></td>", 2)[0].trim();
 
-				day.timestamp = convertDaytoTS(day.day, new Locale("de", "DE"), lastTS);
+				Locale locale = new Locale.Builder().setLanguage("de").setRegion("DE").build();
+				day.timestamp = convertDaytoTS(day.day, locale, lastTS);
 				if (day.timestamp != 0)
 				{
 					sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
@@ -1660,7 +1669,7 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				}
 
@@ -1674,7 +1683,7 @@ class Common
 				lastTS = day.timestamp;
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -1688,7 +1697,7 @@ class Common
 
 	String[] processTempoItalia(String data, boolean showHeader)
 	{
-		if (data == null || data.equals(""))
+		if (data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1716,7 +1725,8 @@ class Common
 				String icon;
 				day.day = bit.split("<td class=\"timeweek\">")[1].split("\">")[1].split("</a></td>", 2)[0].trim();
 
-				day.timestamp = convertDaytoTS(day.day, new Locale("it", "IT"), lastTS);
+				Locale locale = new Locale.Builder().setLanguage("it").setRegion("IT").build();
+				day.timestamp = convertDaytoTS(day.day, locale, lastTS);
 				if(day.timestamp != 0)
 				{
 					sdf = new SimpleDateFormat("EEE dd", Locale.getDefault());
@@ -1734,7 +1744,7 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				} else
 					return ret;
@@ -1766,7 +1776,7 @@ class Common
 				lastTS = day.timestamp;
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -1780,7 +1790,7 @@ class Common
 
 	String[] processAEMET(String data, boolean showHeader)
 	{
-		if (data == null || data.equals(""))
+		if (data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1825,7 +1835,7 @@ class Common
 					JSONArray jarr = jtmp.getJSONArray("estado_cielo");
 					for (int j = 0; j < jarr.length(); j++)
 					{
-						if (!jarr.getJSONObject(j).getString("descripcion").equals(""))
+						if (!jarr.getJSONObject(j).getString("descripcion").isEmpty())
 						{
 							estado_cielo = jarr.getJSONObject(j);
 							break;
@@ -1857,7 +1867,7 @@ class Common
 						if (imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				}
 
@@ -1876,7 +1886,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -1890,7 +1900,7 @@ class Common
 
 	String[] processWCOM(String data, boolean showHeader)
 	{
-		if (data == null || data.equals(""))
+		if (data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1941,7 +1951,7 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				}
 
@@ -1957,7 +1967,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -1971,7 +1981,7 @@ class Common
 
 	String[] processMETIE(String data, boolean showHeader)
 	{
-		if (data == null || data.equals(""))
+		if (data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2010,7 +2020,7 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				}
 
@@ -2024,7 +2034,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -2035,7 +2045,7 @@ class Common
 
 	String[] processOWM(String data, boolean showHeader)
 	{
-		if (data == null || data.equals(""))
+		if (data == null || data.isEmpty())
 			return null;
 
 		List<Day> days = new ArrayList<>();
@@ -2084,7 +2094,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -2098,7 +2108,7 @@ class Common
 
 	String[] processYR(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean use_icons = GetBoolPref("use_icons", false);
@@ -2163,7 +2173,7 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				}
 
@@ -2173,7 +2183,7 @@ class Common
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -2187,7 +2197,7 @@ class Common
 
 	String[] processMetNO(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2278,14 +2288,14 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				}
 
 				days.add(day);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -2432,7 +2442,7 @@ class Common
 
 	String[] processWZ(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean use_icons = GetBoolPref("use_icons", false);
@@ -2461,7 +2471,8 @@ class Common
 			{
 				Day day = new Day();
 				String[] tmp = i.split("</b>", 2);
-				day.timestamp = convertDaytoTS(tmp[0], new Locale("en", "AU"), lastTS);
+				Locale locale = new Locale.Builder().setLanguage("en").setRegion("AU").build();
+				day.timestamp = convertDaytoTS(day.day, locale, lastTS);
 				if(day.timestamp != 0)
 				{
 					sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
@@ -2495,7 +2506,7 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				}
 
@@ -2511,7 +2522,7 @@ class Common
 				lastTS = day.timestamp;
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -2577,7 +2588,7 @@ class Common
 
 	String[] processYahoo(String data, boolean showHeader)
 	{
-		if(data == null || data.equals(""))
+		if(data == null || data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2616,7 +2627,8 @@ class Common
 				tmpstr = bits[0];
 				rest = bits[1];
 				String dow = tmpstr.split("</span>", 2)[0].trim();
-				myday.timestamp = convertDaytoTS(dow, new Locale("en", "US"), last_ts);
+				Locale locale = new Locale.Builder().setLanguage("en").setRegion("US").build();
+				myday.timestamp = convertDaytoTS(dow, locale, last_ts);
 				SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				myday.day = sdf.format(myday.timestamp);
 
@@ -2658,7 +2670,7 @@ class Common
 						if(imageInFile.read(imageData) > 0)
 							myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
-						e.printStackTrace();
+						doStackOutput(e);
 					}
 				} else
 					return ret;
@@ -2667,7 +2679,7 @@ class Common
 				days.add(myday);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 			return null;
 		}
 
@@ -2720,15 +2732,15 @@ class Common
 			try
 			{
 				String fromURL = GetStringPref("BASE_URL", "");
-				if (fromURL.equals(""))
+				if (fromURL.isEmpty())
 					return;
 
 				reallyGetWeather(fromURL);
 				SendRefresh();
 			} catch (InterruptedException | InterruptedIOException ie) {
-				ie.printStackTrace();
+				doStackOutput(ie);
 			} catch (Exception e) {
-				e.printStackTrace();
+				doStackOutput(e);
 				SetStringPref("lastError", e.toString());
 				SendFailedIntent();
 			}
@@ -2740,7 +2752,7 @@ class Common
 	void reallyGetWeather(String fromURL) throws Exception
 	{
 		String line = downloadString(fromURL);
-		if(!line.equals(""))
+		if(!line.isEmpty())
 		{
 			String[] bits = line.split("\\|");
 			if (Double.parseDouble(bits[0]) < inigo_version)
@@ -2757,7 +2769,7 @@ class Common
 				StringBuilder sb = new StringBuilder();
 				for (int i = 1; i < bits.length; i++)
 				{
-					if (sb.length() > 0)
+					if (!sb.isEmpty())
 						sb.append("|");
 					sb.append(bits[i]);
 				}
@@ -2839,7 +2851,7 @@ class Common
 	{
 		Thread t = new Thread(() ->
 		{
-			if (fileName == null || fileName.equals("") || imageURL == null || imageURL.equals(""))
+			if (fileName == null || fileName.isEmpty() || imageURL == null || imageURL.isEmpty())
 				return;
 
 			Common.LogMessage("checking: " + imageURL);
@@ -2862,7 +2874,7 @@ class Common
 
 				downloadJSOUP(f, imageURL);
 			} catch (Exception e) {
-				e.printStackTrace();
+				doStackOutput(e);
 			}
 		});
 
@@ -2932,7 +2944,7 @@ class Common
 
 			return bmp;
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 		}
 
 		return null;
@@ -3040,7 +3052,7 @@ class Common
 
 			return bmp;
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 		}
 
 		return null;
@@ -3053,7 +3065,7 @@ class Common
 		Paint paint = new Paint();
 		paint.setAlpha(100);
 
-		Bitmap bmp3 = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), bmp1.getConfig());
+		Bitmap bmp3 = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), Objects.requireNonNull(bmp1.getConfig()));
 		Canvas canvas = new Canvas(bmp3);
 		canvas.drawBitmap(bmp1, 0f, 0f, null);
 		canvas.drawBitmap(bmp2, 0f, bmp1.getHeight() - bmp2.getHeight(), paint);
@@ -3084,7 +3096,7 @@ class Common
 				nws = new JSONObject(new String(buffer, "UTF-8"));
 			is.close();
 		} catch (Exception e) {
-			e.printStackTrace();
+			doStackOutput(e);
 		}
 	}
 
@@ -3438,7 +3450,7 @@ class Common
 
 		final String forecast_url = GetStringPref("FORECAST_URL", "");
 
-		if(forecast_url.equals(""))
+		if(forecast_url.isEmpty())
 		{
 			return;
 		}
@@ -3451,7 +3463,7 @@ class Common
 
 		final long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
-		if(GetStringPref("forecastData", "").equals("") || GetLongPref("rssCheck", 0) + 7190 < current_time)
+		if(GetStringPref("forecastData", "").isEmpty() || GetLongPref("rssCheck", 0) + 7190 < current_time)
 		{
 			LogMessage("no forecast data or cache is more than 2 hour old");
 		} else {
@@ -3478,7 +3490,7 @@ class Common
 					SetStringPref("forecastData", tmp);
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				doStackOutput(e);
 			}
 		});
 

@@ -99,10 +99,10 @@ public class Custom extends Fragment
 		String custom = common.GetStringPref("CUSTOM_URL", "");
 		String custom_url = common.GetStringPref("custom_url", "");
 
-		if ((custom == null || custom.equals("")) && (custom_url == null || custom_url.equals("")))
+		if ((custom == null || custom.isEmpty()) && (custom_url == null || custom_url.isEmpty()))
 			return;
 
-		if(custom_url != null && !custom_url.equals(""))
+		if(custom_url != null && !custom_url.isEmpty())
 			custom = custom_url;
 
 		wv.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);

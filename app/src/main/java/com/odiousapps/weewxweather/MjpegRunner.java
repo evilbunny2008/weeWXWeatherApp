@@ -52,7 +52,7 @@ public class MjpegRunner implements Runnable
 				Common.LogMessage("got an image... wooo!");
 				isRunning = false;
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 				stop();
 			}
 		}
@@ -60,9 +60,8 @@ public class MjpegRunner implements Runnable
 		// close streams
 		try {
 			urlStream.close();
-		} catch (IOException ioe) {
-			ioe.printStackTrace();
-		}
+		} catch (IOException e) {
+			Common.doStackOutput(e);		}
 	}
 
 	private byte[] retrieveNextImage() throws IOException

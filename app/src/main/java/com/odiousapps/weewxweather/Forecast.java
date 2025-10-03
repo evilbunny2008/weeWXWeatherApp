@@ -110,7 +110,7 @@ public class Forecast extends Fragment
 		File f2 = new File(common.context.getFilesDir(), "/radar.gif");
 		long[] period = common.getPeriod();
 
-		if(!common.GetStringPref("RADAR_URL", "").equals("") && f2.lastModified() + period[0] < System.currentTimeMillis())
+		if(!common.GetStringPref("RADAR_URL", "").isEmpty() && f2.lastModified() + period[0] < System.currentTimeMillis())
 			reloadWebView(false);
 
 		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
@@ -132,13 +132,13 @@ public class Forecast extends Fragment
 			String radar = common.context.getFilesDir() + "/radar.gif";
 			File rf = new File(radar);
 
-			if(!rf.exists() && !common.GetStringPref("RADAR_URL", "").equals("") && common.checkConnection())
+			if(!rf.exists() && !common.GetStringPref("RADAR_URL", "").isEmpty() && common.checkConnection())
 			{
 				reloadWebView(true);
 				return;
 			}
 
-			if (!rf.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+			if (!rf.exists() || common.GetStringPref("RADAR_URL", "").isEmpty())
 			{
 				String html = "<html>";
 				if (dark_theme == 1)
@@ -172,11 +172,11 @@ public class Forecast extends Fragment
 					byte[] imageData = new byte[(int) f.length()];
 					if (imageInFile.read(imageData) > 0)
 						radar = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-				} catch (Exception e2) {
-					e2.printStackTrace();
+				} catch (Exception e) {
+					Common.doStackOutput(e);
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 
 			html += "  </head>\n" +
@@ -191,7 +191,7 @@ public class Forecast extends Fragment
 			rl.setVisibility(View.VISIBLE);
 			wv2.setVisibility(View.GONE);
 			swipeLayout.setRefreshing(false);
-		} else if (common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").equals("")) {
+		} else if (common.GetStringPref("radtype", "image").equals("webpage") && !common.GetStringPref("RADAR_URL", "").isEmpty()) {
 			rl.setVisibility(View.GONE);
 			wv2.setVisibility(View.VISIBLE);
 
@@ -221,7 +221,7 @@ public class Forecast extends Fragment
 		Common.LogMessage("reload radar...");
 		final String radar = common.GetStringPref("RADAR_URL", "");
 
-		if(radar.equals("") || common.GetStringPref("radtype", "image").equals("webpage"))
+		if(radar.isEmpty() || common.GetStringPref("radtype", "image").equals("webpage"))
 		{
 			loadWebView();
 			swipeLayout.setRefreshing(false);
@@ -256,7 +256,7 @@ public class Forecast extends Fragment
 					});
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 
 			Handler mHandler = new Handler(Looper.getMainLooper());
@@ -288,7 +288,7 @@ public class Forecast extends Fragment
 		{
 			common.context.unregisterReceiver(serviceReceiver);
 		} catch (Exception e) {
-			e.printStackTrace();
+			Common.doStackOutput(e);
 		}
 		Common.LogMessage("forecast.java -- unregisterReceiver");
 	}
@@ -342,7 +342,7 @@ public class Forecast extends Fragment
 					onPause();
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 		}
 	};
@@ -354,7 +354,7 @@ public class Forecast extends Fragment
 
 		final String forecast_url = common.GetStringPref("FORECAST_URL", "");
 
-		if(forecast_url.equals(""))
+		if(forecast_url.isEmpty())
 		{
 			final String html = "<html><body>Forecast URL not set. Edit inigo-settings.txt to change.</body></html>";
 
@@ -382,7 +382,7 @@ public class Forecast extends Fragment
 
 		swipeLayout.setRefreshing(true);
 
-		if(!common.GetStringPref("forecastData", "").equals(""))
+		if(!common.GetStringPref("forecastData", "").isEmpty())
 			generateForecast();
 
 		Thread t = new Thread(() ->
@@ -393,7 +393,7 @@ public class Forecast extends Fragment
 			{
 				long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
-				if(common.GetStringPref("forecastData", "").equals("") || common.GetLongPref("rssCheck", 0) + 7190 < current_time)
+				if(common.GetStringPref("forecastData", "").isEmpty() || common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 				{
 					Common.LogMessage("no forecast data or cache is more than 2 hour old");
 
@@ -409,7 +409,7 @@ public class Forecast extends Fragment
 					});
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 		});
 
@@ -428,7 +428,7 @@ public class Forecast extends Fragment
 			String fctype = common.GetStringPref("fctype", "Yahoo");
 
 			data = common.GetStringPref("forecastData", "");
-			if(data.equals(""))
+			if(data.isEmpty())
 			{
 				String tmp = "<html>";
 				if(dark_theme == 1)

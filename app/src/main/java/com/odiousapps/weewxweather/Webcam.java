@@ -75,7 +75,7 @@ public class Webcam extends Fragment
 		Common.LogMessage("reload webcam...");
 		final String webURL = common.GetStringPref("WEBCAM_URL", "");
 
-		if(webURL.equals(""))
+		if(webURL.isEmpty())
 		{
 			iv.setImageDrawable(common.context.getApplicationContext().getDrawable(R.drawable.nowebcam));
 			return;
@@ -91,7 +91,7 @@ public class Webcam extends Fragment
 				bm = BitmapFactory.decodeFile(file.toString(), options);
 				iv.setImageBitmap(bm);
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 		}
 
@@ -150,7 +150,7 @@ public class Webcam extends Fragment
 					Common.LogMessage("trying to set bm");
 					bm = mr.bm;
 				} catch (Exception e) {
-					e.printStackTrace();
+					Common.doStackOutput(e);
 					return false;
 				}
 			} else {
@@ -175,7 +175,7 @@ public class Webcam extends Fragment
 				out = new FileOutputStream(file);
 				bm.compress(Bitmap.CompressFormat.JPEG, 85, out); // bmp is your Bitmap instance
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 				return false;
 			} finally {
 				try
@@ -183,13 +183,13 @@ public class Webcam extends Fragment
 					if (out != null)
 						out.close();
 				} catch (IOException e) {
-					e.printStackTrace();
+					Common.doStackOutput(e);
 				}
 			}
 
 			return true;
 		} catch (Exception e) {
-			e.printStackTrace();
+			Common.doStackOutput(e);
 			return false;
 		}
 	}
@@ -216,7 +216,7 @@ public class Webcam extends Fragment
 		{
 			common.context.unregisterReceiver(serviceReceiver);
 		} catch (Exception e) {
-			e.printStackTrace();
+			Common.doStackOutput(e);
 		}
 		Common.LogMessage("webcam.java -- unregisterReceiver");
 	}
@@ -243,7 +243,7 @@ public class Webcam extends Fragment
 				} else if(action != null && action.equals(Common.EXIT_INTENT))
 					onPause();
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 		}
 	};

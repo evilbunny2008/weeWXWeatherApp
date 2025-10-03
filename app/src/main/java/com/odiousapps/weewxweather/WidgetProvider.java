@@ -50,7 +50,7 @@ public class WidgetProvider extends AppWidgetProvider
 			Common.LogMessage("appWidgetsIds["+i+"] = " + appWidgetIds[i]);
 			RemoteViews remoteViews = common.buildUpdate(context, dark_theme);
 
-			Intent launchActivity = new Intent(context, SplashScreen.class);
+			Intent launchActivity = new Intent(context, MainActivity.class);
 
 			PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchActivity, PendingIntent.FLAG_IMMUTABLE);
 			remoteViews.setOnClickPendingIntent(R.id.widget, pendingIntent);

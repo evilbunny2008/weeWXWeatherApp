@@ -85,7 +85,7 @@ public class Weather extends Fragment
 		File f2 = new File(common.context.getFilesDir(), "/radar.gif");
 		long[] period = common.getPeriod();
 
-		if(!common.GetStringPref("RADAR_URL", "").equals("") && f2.lastModified() + period[0] < System.currentTimeMillis())
+		if(!common.GetStringPref("RADAR_URL", "").isEmpty() && f2.lastModified() + period[0] < System.currentTimeMillis())
 			reloadWebView(false);
 
 		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
@@ -166,7 +166,7 @@ public class Weather extends Fragment
 		sb.append(stmp);
 
 		String rain = bits[20] + bits[62] + " " + common.context.getString(R.string.since) + " mn";
-		if(bits.length > 160 && !bits[160].equals(""))
+		if(bits.length > 160 && !bits[160].isEmpty())
 			rain = bits[158] + bits[62] + " " + common.context.getString(R.string.since) + " " + bits[160];
 
 		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td><td>" + rain + "</td>" +
@@ -242,7 +242,7 @@ public class Weather extends Fragment
 				// Sleep needed to stop frames dropping while loading
 				Thread.sleep(500);
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 
 			final StringBuffer sb = new StringBuffer();
@@ -263,7 +263,7 @@ public class Weather extends Fragment
 						Common.LogMessage("myFile == " + myFile.getAbsolutePath());
 						Common.LogMessage("myFile.exists() == " + myFile.exists());
 
-						if (!myFile.exists() || common.GetStringPref("RADAR_URL", "").equals(""))
+						if (!myFile.exists() || common.GetStringPref("RADAR_URL", "").isEmpty())
 						{
 							sb.append("<html><body>").append(getString(R.string.radar_url_not_set)).append("</body></html>");
 						} else
@@ -286,13 +286,12 @@ public class Weather extends Fragment
 									byte[] imageData = new byte[(int) f.length()];
 									if (imageInFile.read(imageData) > 0)
 										radar = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-								} catch (Exception e2)
-								{
-									e2.printStackTrace();
+								} catch (Exception e) {
+									Common.doStackOutput(e);
 								}
 							} catch (Exception e)
 							{
-								e.printStackTrace();
+								Common.doStackOutput(e);
 							}
 
 							tmp = "  </head>\n" +
@@ -339,7 +338,7 @@ public class Weather extends Fragment
 				String fctype = common.GetStringPref("fctype", "Yahoo");
 				String data = common.GetStringPref("forecastData", "");
 
-				if (data.equals(""))
+				if (data.isEmpty())
 				{
 					sb.append("<html>");
 					if (dark_theme == 1)
@@ -752,7 +751,7 @@ public class Weather extends Fragment
 
 		final String forecast_url = common.GetStringPref("FORECAST_URL", "");
 
-		if(forecast_url.equals(""))
+		if(forecast_url.isEmpty())
 		{
 			final String html = "<html><body>Forecast URL not set. Edit inigo-settings.txt to change.</body></html>";
 			Handler mHandler = new Handler(Looper.getMainLooper());
@@ -784,7 +783,7 @@ public class Weather extends Fragment
 			{
 				long current_time = round(System.currentTimeMillis() / 1000.0);
 
-				if(common.GetStringPref("forecastData", "").equals("") || common.GetLongPref("rssCheck", 0) + 7190 < current_time)
+				if(common.GetStringPref("forecastData", "").isEmpty() || common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 				{
 					Common.LogMessage("no forecast data or cache is more than 2 hour old");
 
@@ -804,7 +803,7 @@ public class Weather extends Fragment
 					}
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 		});
 
@@ -819,7 +818,7 @@ public class Weather extends Fragment
 		Common.LogMessage("reload radar...");
 		final String radar = common.GetStringPref("RADAR_URL", "");
 
-		if(radar.equals(""))
+		if(radar.isEmpty())
 		{
 			loadWebView();
 			return;
@@ -853,7 +852,7 @@ public class Weather extends Fragment
 					});
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 		});
 
@@ -916,7 +915,7 @@ public class Weather extends Fragment
 					onPause();
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 		}
 	};

@@ -42,8 +42,12 @@ import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.core.graphics.Insets;
 import androidx.core.text.HtmlCompat;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -78,12 +82,18 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		super.onCreate(savedInstanceState);
+		super.onCreate(null);
+		WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 		setContentView(R.layout.main_activity);
 
 		common = new Common(this);
 
 		mDrawerLayout = findViewById(R.id.drawer_layout);
+		ViewCompat.setOnApplyWindowInsetsListener(mDrawerLayout, (v, insets) -> {
+			Insets sysBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+			v.setPadding(sysBars.left, sysBars.top, sysBars.right, sysBars.bottom);
+			return insets;
+		});
 
 		OnBackPressedDispatcher onBackPressedDispatcher = getOnBackPressedDispatcher();
 		onBackPressedDispatcher.addCallback(this, onBackPressedCallback);
@@ -109,10 +119,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		try
 		{
-			if(common.GetStringPref("BASE_URL", "").equals(""))
+			if(common.GetStringPref("BASE_URL", "").isEmpty())
 				mDrawerLayout.openDrawer(Gravity.START);
 		} catch (Exception e) {
-			e.printStackTrace();
+			Common.doStackOutput(e);
 		}
 
 		settingsURL = findViewById(R.id.settings);
@@ -139,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				// Sleep needed to stop frames dropping while loading
 				Thread.sleep(500);
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 
 			Handler mHandler = new Handler(Looper.getMainLooper());
@@ -466,7 +476,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetLongPref("icon_version", Common.icon_version);
 			}
 
-			if (settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt") || settingsURL.getText().toString().equals(""))
+			if (settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt") || settingsURL.getText().toString().isEmpty())
 			{
 				common.SetStringPref("lastError", getString(R.string.url_was_default_or_empty));
 				runOnUiThread(() -> {
@@ -506,16 +516,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						custom = mb[1];
 				}
 
-				if(fctype.equals(""))
+				if(fctype.isEmpty())
 					fctype = "Yahoo";
 
-				if(radtype.equals(""))
+				if(radtype.isEmpty())
 					radtype = "image";
 
 				validURL = true;
 			} catch (Exception e) {
 				common.SetStringPref("lastError", e.toString());
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 
 			if (!validURL)
@@ -536,7 +546,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			Common.LogMessage("data == " + data);
 
-			if (data.equals(""))
+			if (data.isEmpty())
 			{
 				common.SetStringPref("lastError", getString(R.string.data_url_was_blank));
 				runOnUiThread(() -> {
@@ -561,7 +571,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					validURL1 = true;
 				} catch (Exception e) {
 					common.SetStringPref("lastError", e.toString());
-					e.printStackTrace();
+					Common.doStackOutput(e);
 				}
 			} else
 				validURL1 = true;
@@ -582,7 +592,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				return;
 			}
 
-			if (!radar.equals("") && !radar.equals(oldradar))
+			if (!radar.isEmpty() && !radar.equals(oldradar))
 			{
 				try
 				{
@@ -596,7 +606,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					}
 				} catch (Exception e) {
 					common.SetStringPref("lastError", e.toString());
-					e.printStackTrace();
+					Common.doStackOutput(e);
 				}
 
 				if (!validURL2)
@@ -616,7 +626,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				}
 			}
 
-			if(!forecast.equals(""))
+			if(!forecast.isEmpty())
 			{
 				try
 				{
@@ -740,7 +750,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						{
 							metierev = "https://prodapi.metweb.ie/location/reverse/" + forecast.replaceAll(",", "/");
 							forecast = "https://prodapi.metweb.ie/weather/daily/" + forecast.replaceAll(",", "/") + "/10";
-							if (common.GetStringPref("metierev", "").equals("") || !forecast.equals(oldforecast))
+							if (common.GetStringPref("metierev", "").isEmpty() || !forecast.equals(oldforecast))
 							{
 								metierev = common.downloadForecast(fctype, metierev, null);
 								JSONObject jobj = new JSONObject(metierev);
@@ -771,7 +781,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					}
 				} catch (Exception e) {
 					common.SetStringPref("lastError", e.toString());
-					e.printStackTrace();
+					Common.doStackOutput(e);
 				}
 			}
 
@@ -794,7 +804,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				return;
 			}
 
-			if (!forecast.equals("") && !oldforecast.equals(forecast))
+			if (!forecast.isEmpty() && !oldforecast.equals(forecast))
 			{
 				Common.LogMessage("forecast checking: " + forecast);
 
@@ -811,7 +821,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					}
 				} catch (Exception e) {
 					common.SetStringPref("lastError", e.toString());
-					e.printStackTrace();
+					Common.doStackOutput(e);
 				}
 
 				if (!validURL3)
@@ -831,7 +841,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				}
 			}
 
-			if (!webcam.equals("") && !webcam.equals(oldwebcam))
+			if (!webcam.isEmpty() && !webcam.equals(oldwebcam))
 			{
 				Common.LogMessage("checking: " + webcam);
 
@@ -854,9 +864,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			custom_url = customURL.getText().toString();
 
-			if(custom_url.equals(""))
+			if(custom_url.isEmpty())
 			{
-				if (!custom.equals("") && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
+				if (!custom.isEmpty() && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
 				{
 					try
 					{
@@ -866,7 +876,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							common.RemovePref("custom_url");
 					} catch (Exception e) {
 						common.SetStringPref("lastError", e.toString());
-						e.printStackTrace();
+						Common.doStackOutput(e);
 					}
 
 					if (!validURL5)
@@ -894,7 +904,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							validURL5 = true;
 					} catch (Exception e) {
 						common.SetStringPref("lastError", e.toString());
-						e.printStackTrace();
+						Common.doStackOutput(e);
 					}
 
 					if (!validURL5)
@@ -915,7 +925,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				}
 			}
 
-			if(forecast.equals(""))
+			if(forecast.isEmpty())
 			{
 				common.SetLongPref("rssCheck", 0);
 				common.SetStringPref("forecastData", "");
@@ -1050,7 +1060,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 				}
 			} catch (Exception e) {
-				e.printStackTrace();
+				Common.doStackOutput(e);
 			}
 		}
 	};
