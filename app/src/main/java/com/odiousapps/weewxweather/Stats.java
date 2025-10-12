@@ -328,7 +328,7 @@ public class Stats extends Fragment
 				sb.append(stmp);
 			}
 
-			if(bits.length > 205 && !bits[205].isEmpty())
+			if(bits.length > 205 && !Common.isEmpty(bits[205]))
 			{
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[205] + "UVI</td><td>" + convert(bits[206]) +
 						"</td><td>" + convert(bits[208]) + "</td><td style='text-align:right;'>" + bits[207] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
@@ -338,10 +338,10 @@ public class Stats extends Fragment
 			String rain = bits[20];
 			String since = getString(R.string.since) + " mn";
 
-			if (bits.length > 160 && !bits[160].isEmpty())
+			if (bits.length > 160 && !Common.isEmpty(bits[160]))
 				rain = bits[158];
 
-			if (bits.length > 160 && !bits[158].isEmpty() && !bits[160].isEmpty())
+			if (bits.length > 160 && !Common.isEmpty(bits[158]) && !Common.isEmpty(bits[160]))
 				since = getString(R.string.since) + " " + bits[160];
 
 			stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-windy'></i></td><td colspan='3'>" + bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +
@@ -354,7 +354,7 @@ public class Stats extends Fragment
 			stmp = "</table><br>";
 			sb.append(stmp);
 
-			if (bits.length > 87 && !bits[87].isEmpty())
+			if (bits.length > 87 && !Common.isEmpty(bits[87]))
 			{
 				sb.append("<span style='font-size:18pt;font-weight:bold;'>");
 				sb.append(getString(R.string.yesterdayStats));
@@ -388,7 +388,7 @@ public class Stats extends Fragment
 					sb.append(stmp);
 				}
 
-				if(bits.length > 209 && !bits[209].isEmpty())
+				if(bits.length > 209 && !Common.isEmpty(bits[209]))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[209] + "UVI</td><td>" + convert(bits[210]) +
 							"</td><td>" + convert(bits[212]) + "</td><td style='text-align:right;'>" + bits[211] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
@@ -398,14 +398,14 @@ public class Stats extends Fragment
 				rain = bits[21];
 				String before = getString(R.string.before) + " mn";
 
-				if (bits.length > 160 && !bits[159].isEmpty())
+				if (bits.length > 160 && !Common.isEmpty(bits[159]))
 					rain = bits[159];
 
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-windy'></i></td><td colspan='3'>" + bits[69] + bits[61] + " " + bits[70] + " " + convert(bits[71]) +
 						"</td><td>" + rain + bits[62] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td></tr>";
 				sb.append(stmp);
 
-				if (bits.length > 160 && !bits[159].isEmpty() && !bits[160].isEmpty())
+				if (bits.length > 160 && !Common.isEmpty(bits[159]) && !Common.isEmpty(bits[160]))
 					before = getString(R.string.before) + " " + bits[160];
 
 				stmp = "<tr><td colspan='4'>&nbsp;</td><td colspan='2'>" + before + "</td></tr>";
@@ -415,7 +415,7 @@ public class Stats extends Fragment
 				sb.append(stmp);
 			}
 
-			if(bits.length > 110 && !bits[110].isEmpty())
+			if(bits.length > 110 && !Common.isEmpty(bits[110]))
 			{
 				sb.append("<span style='font-size:18pt;font-weight:bold;'>");
 				sb.append(getString(R.string.this_months_stats));
@@ -449,7 +449,7 @@ public class Stats extends Fragment
 					sb.append(stmp);
 				}
 
-				if(bits.length > 213 && !bits[213].isEmpty())
+				if(bits.length > 213 && !Common.isEmpty(bits[213]))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[213] + "UVI</td><td>" + getTime(bits[214]) +
 							"</td><td>" + getTime(bits[216]) + "</td><td style='text-align:right;'>" + bits[215] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
@@ -464,7 +464,7 @@ public class Stats extends Fragment
 				sb.append(stmp);
 			}
 
-			if (bits.length > 133 && !bits[133].isEmpty())
+			if (bits.length > 133 && !Common.isEmpty(bits[133]))
 			{
 				sb.append("<span style='font-size:18pt;font-weight:bold;'>");
 				sb.append(getString(R.string.this_year_stats));
@@ -498,7 +498,7 @@ public class Stats extends Fragment
 					sb.append(stmp);
 				}
 
-				if(bits.length > 217 && !bits[217].isEmpty())
+				if(bits.length > 217 && !Common.isEmpty(bits[217]))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[217] + "UVI</td><td>" + getTime(bits[218]) +
 							"</td><td>" + getTime(bits[220]) + "</td><td style='text-align:right;'>" + bits[219] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
@@ -513,7 +513,7 @@ public class Stats extends Fragment
 				sb.append(stmp);
 			}
 
-			if (bits.length > 157 && !bits[157].isEmpty())
+			if (bits.length > 157 && !Common.isEmpty(bits[157]))
 			{
 				sb.append("<span style='font-size:18pt;font-weight:bold;'>");
 				sb.append(getString(R.string.all_time_stats));
@@ -547,7 +547,7 @@ public class Stats extends Fragment
 					sb.append(stmp);
 				}
 
-				if(bits.length > 221 && !bits[221].isEmpty())
+				if(bits.length > 221 && !Common.isEmpty(bits[221]))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[221] + "UVI</td><td>" + getTime(bits[222]) +
 							"</td><td>" + getTime(bits[224]) + "</td><td style='text-align:right;'>" + bits[223] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";

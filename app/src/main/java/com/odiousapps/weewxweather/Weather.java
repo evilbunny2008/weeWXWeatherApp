@@ -85,7 +85,7 @@ public class Weather extends Fragment
 		File f2 = new File(common.context.getFilesDir(), "/radar.gif");
 		long[] period = common.getPeriod();
 
-		if(!common.GetStringPref("RADAR_URL", "").isEmpty() && f2.lastModified() + period[0] < System.currentTimeMillis())
+		if(!Common.isEmpty(common.GetStringPref("RADAR_URL", "")) && f2.lastModified() + period[0] < System.currentTimeMillis())
 			reloadWebView(false);
 
 		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
@@ -166,7 +166,7 @@ public class Weather extends Fragment
 		sb.append(stmp);
 
 		String rain = bits[20] + bits[62] + " " + common.context.getString(R.string.since) + " mn";
-		if(bits.length > 160 && !bits[160].isEmpty())
+		if(bits.length > 160 && !Common.isEmpty(bits[160]))
 			rain = bits[158] + bits[62] + " " + common.context.getString(R.string.since) + " " + bits[160];
 
 		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td><td>" + rain + "</td>" +
@@ -263,7 +263,7 @@ public class Weather extends Fragment
 						Common.LogMessage("myFile == " + myFile.getAbsolutePath());
 						Common.LogMessage("myFile.exists() == " + myFile.exists());
 
-						if (!myFile.exists() || common.GetStringPref("RADAR_URL", "").isEmpty())
+						if (!myFile.exists() || Common.isEmpty(common.GetStringPref("RADAR_URL", "")))
 						{
 							sb.append("<html><body>").append(getString(R.string.radar_url_not_set)).append("</body></html>");
 						} else
@@ -338,7 +338,7 @@ public class Weather extends Fragment
 				String fctype = common.GetStringPref("fctype", "Yahoo");
 				String data = common.GetStringPref("forecastData", "");
 
-				if (data.isEmpty())
+				if(Common.isEmpty(data))
 				{
 					sb.append("<html>");
 					if (dark_theme == 1)
@@ -751,7 +751,7 @@ public class Weather extends Fragment
 
 		final String forecast_url = common.GetStringPref("FORECAST_URL", "");
 
-		if(forecast_url.isEmpty())
+		if(Common.isEmpty(forecast_url))
 		{
 			final String html = "<html><body>Forecast URL not set. Edit inigo-settings.txt to change.</body></html>";
 			Handler mHandler = new Handler(Looper.getMainLooper());
@@ -783,7 +783,7 @@ public class Weather extends Fragment
 			{
 				long current_time = round(System.currentTimeMillis() / 1000.0);
 
-				if(common.GetStringPref("forecastData", "").isEmpty() || common.GetLongPref("rssCheck", 0) + 7190 < current_time)
+				if(Common.isEmpty(common.GetStringPref("forecastData", "")) || common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 				{
 					Common.LogMessage("no forecast data or cache is more than 2 hour old");
 
@@ -818,7 +818,7 @@ public class Weather extends Fragment
 		Common.LogMessage("reload radar...");
 		final String radar = common.GetStringPref("RADAR_URL", "");
 
-		if(radar.isEmpty())
+		if(Common.isEmpty(radar))
 		{
 			loadWebView();
 			return;

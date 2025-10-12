@@ -75,7 +75,7 @@ public class Webcam extends Fragment
 		Common.LogMessage("reload webcam...");
 		final String webURL = common.GetStringPref("WEBCAM_URL", "");
 
-		if(webURL.isEmpty())
+		if(Common.isEmpty(webURL))
 		{
 			iv.setImageDrawable(common.context.getApplicationContext().getDrawable(R.drawable.nowebcam));
 			return;

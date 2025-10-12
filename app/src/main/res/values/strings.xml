@@ -84,4 +84,5 @@
     <string name="wasnt_able_to_connect_settings">Wasn\'t able to connect or download the settings from your server</string>
     <string name="url_was_default_or_empty">URL was set to the default or was empty</string>
     <string name="radar_url_not_set">Radar URL not set or is still downloading. You can go to settings to change.</string>
+	<string name="wasnt_able_to_connect_or_download">Wasn\'t able to connect or download the forecast.</string>
 </resources>

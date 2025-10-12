@@ -113,6 +113,21 @@ class Common
 		e.printStackTrace();
 	}
 
+	public static boolean isEmpty(StringBuilder sb)
+	{
+		return sb == null || sb.length() == 0;
+	}
+
+	public static boolean isEmpty(String str)
+	{
+		return str == null || str.length() == 0;
+	}
+
+	public static boolean isEmpty(List<Day> list)
+	{
+		return list.isEmpty();
+	}
+
 	long[] getPeriod()
 	{
 		long[] def = {0, 0};
@@ -336,7 +351,7 @@ class Common
 			paint.setTextSize(64);
 
 			String rain = bits[20];
-			if (bits.length > 158 && !bits[158].isEmpty())
+			if (bits.length > 158 && !isEmpty(bits[158]))
 				rain = bits[158];
 
 			myCanvas.drawText(rain + bits[62], myCanvas.getWidth() - 20, 400, paint);
@@ -351,7 +366,9 @@ class Common
 
 	private String generateForecast(List<Day> days, long timestamp, boolean showHeader)
 	{
-		if(days == null || days.isEmpty())
+		LogMessage("Starting generateForecast()");
+		LogMessage("days: "+days);
+		if(isEmpty(days))
 			return null;
 
 		StringBuilder sb = new StringBuilder();
@@ -469,7 +486,8 @@ class Common
 
 	String[] processBOM2(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -565,13 +583,13 @@ class Common
 				day.max += "&deg;C";
 				day.min += "&deg;C";
 			} else {
-				if(!day.max.isEmpty())
+				if(!isEmpty(day.max))
 					day.max += round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-				if(!day.min.isEmpty())
+				if(!isEmpty(day.min))
 					day.min += round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 			}
 
-			if(day.max.isEmpty() || day.max.startsWith("&deg;"))
+			if(isEmpty(day.max) || day.max.startsWith("&deg;"))
 				day.max = "N/A";
 
 			days.add(day);
@@ -642,7 +660,9 @@ class Common
 
 	String[] processBOM3(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+		LogMessage("Starting processBOM3()");
+
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -771,7 +791,7 @@ class Common
 
 	String[] processMET(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -847,7 +867,7 @@ class Common
 
 	String[] processWCA(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1000,7 +1020,7 @@ class Common
 
 	String[] processWCAF(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1142,7 +1162,7 @@ class Common
 
 	String[] processWGOV(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1240,7 +1260,7 @@ class Common
 				} else {
 					Pattern p = Pattern.compile("\\d");
 					number = p.matcher(fn).replaceAll("");
-					if(!number.isEmpty())
+					if(!isEmpty(number))
 					{
 						fn = fn.replaceAll("\\d{2,3}\\.jpg$", ".jpg");
 						Bitmap bmp3 = loadImage(fn);
@@ -1312,7 +1332,7 @@ class Common
 
 	String[] processWMO(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1385,7 +1405,7 @@ class Common
 
 	String[] processBOM(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1502,7 +1522,7 @@ class Common
 
 	String[] processMetService(String data, boolean showHeader)
 	{
-		if (data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1596,7 +1616,7 @@ class Common
 
 	String[] processDWD(String data, boolean showHeader)
 	{
-		if (data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1697,7 +1717,7 @@ class Common
 
 	String[] processTempoItalia(String data, boolean showHeader)
 	{
-		if (data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1790,7 +1810,7 @@ class Common
 
 	String[] processAEMET(String data, boolean showHeader)
 	{
-		if (data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1835,7 +1855,7 @@ class Common
 					JSONArray jarr = jtmp.getJSONArray("estado_cielo");
 					for (int j = 0; j < jarr.length(); j++)
 					{
-						if (!jarr.getJSONObject(j).getString("descripcion").isEmpty())
+						if (!isEmpty(jarr.getJSONObject(j).getString("descripcion")))
 						{
 							estado_cielo = jarr.getJSONObject(j);
 							break;
@@ -1900,7 +1920,7 @@ class Common
 
 	String[] processWCOM(String data, boolean showHeader)
 	{
-		if (data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1981,7 +2001,7 @@ class Common
 
 	String[] processMETIE(String data, boolean showHeader)
 	{
-		if (data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2045,7 +2065,7 @@ class Common
 
 	String[] processOWM(String data, boolean showHeader)
 	{
-		if (data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		List<Day> days = new ArrayList<>();
@@ -2108,7 +2128,7 @@ class Common
 
 	String[] processYR(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean use_icons = GetBoolPref("use_icons", false);
@@ -2197,7 +2217,7 @@ class Common
 
 	String[] processMetNO(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2442,7 +2462,7 @@ class Common
 
 	String[] processWZ(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean use_icons = GetBoolPref("use_icons", false);
@@ -2588,7 +2608,7 @@ class Common
 
 	String[] processYahoo(String data, boolean showHeader)
 	{
-		if(data == null || data.isEmpty())
+		if(isEmpty(data))
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2732,7 +2752,7 @@ class Common
 			try
 			{
 				String fromURL = GetStringPref("BASE_URL", "");
-				if (fromURL.isEmpty())
+				if(isEmpty(fromURL))
 					return;
 
 				reallyGetWeather(fromURL);
@@ -2752,7 +2772,7 @@ class Common
 	void reallyGetWeather(String fromURL) throws Exception
 	{
 		String line = downloadString(fromURL);
-		if(!line.isEmpty())
+		if(!isEmpty(line))
 		{
 			String[] bits = line.split("\\|");
 			if (Double.parseDouble(bits[0]) < inigo_version)
@@ -2769,7 +2789,7 @@ class Common
 				StringBuilder sb = new StringBuilder();
 				for (int i = 1; i < bits.length; i++)
 				{
-					if (!sb.isEmpty())
+					if (!isEmpty(sb))
 						sb.append("|");
 					sb.append(bits[i]);
 				}
@@ -2851,7 +2871,7 @@ class Common
 	{
 		Thread t = new Thread(() ->
 		{
-			if (fileName == null || fileName.isEmpty() || imageURL == null || imageURL.isEmpty())
+			if (isEmpty(fileName) || isEmpty(imageURL))
 				return;
 
 			Common.LogMessage("checking: " + imageURL);
@@ -3450,7 +3470,7 @@ class Common
 
 		final String forecast_url = GetStringPref("FORECAST_URL", "");
 
-		if(forecast_url.isEmpty())
+		if(isEmpty(forecast_url))
 		{
 			return;
 		}
@@ -3463,7 +3483,7 @@ class Common
 
 		final long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
-		if(GetStringPref("forecastData", "").isEmpty() || GetLongPref("rssCheck", 0) + 7190 < current_time)
+		if(isEmpty(GetStringPref("forecastData", "")) || GetLongPref("rssCheck", 0) + 7190 < current_time)
 		{
 			LogMessage("no forecast data or cache is more than 2 hour old");
 		} else {

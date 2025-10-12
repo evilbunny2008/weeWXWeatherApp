@@ -42,12 +42,14 @@ import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.text.HtmlCompat;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -82,9 +84,23 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		super.onCreate(null);
-		WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity);
+
+		WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+		final CoordinatorLayout rootView = findViewById(R.id.main_content);
+
+		rootView.setOnApplyWindowInsetsListener((view, insets) ->
+		{
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
+			{
+				WindowInsetsControllerCompat insetsController = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+				insetsController.show(WindowInsetsCompat.Type.systemBars());
+			}
+
+			return insets;
+		});
 
 		common = new Common(this);
 
@@ -119,7 +135,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		try
 		{
-			if(common.GetStringPref("BASE_URL", "").isEmpty())
+			if(Common.isEmpty(common.GetStringPref("BASE_URL", "")))
 				mDrawerLayout.openDrawer(Gravity.START);
 		} catch (Exception e) {
 			Common.doStackOutput(e);
@@ -476,7 +492,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetLongPref("icon_version", Common.icon_version);
 			}
 
-			if (settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt") || settingsURL.getText().toString().isEmpty())
+			if(Common.isEmpty(settingsURL.getText().toString()) || settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt"))
 			{
 				common.SetStringPref("lastError", getString(R.string.url_was_default_or_empty));
 				runOnUiThread(() -> {
@@ -516,10 +532,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						custom = mb[1];
 				}
 
-				if(fctype.isEmpty())
+				if(Common.isEmpty(fctype))
 					fctype = "Yahoo";
 
-				if(radtype.isEmpty())
+				if(Common.isEmpty(radtype))
 					radtype = "image";
 
 				validURL = true;
@@ -546,7 +562,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			Common.LogMessage("data == " + data);
 
-			if (data.isEmpty())
+			if (Common.isEmpty(data))
 			{
 				common.SetStringPref("lastError", getString(R.string.data_url_was_blank));
 				runOnUiThread(() -> {
@@ -592,7 +608,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				return;
 			}
 
-			if (!radar.isEmpty() && !radar.equals(oldradar))
+			if (!Common.isEmpty(radar) && !radar.equals(oldradar))
 			{
 				try
 				{
@@ -626,7 +642,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				}
 			}
 
-			if(!forecast.isEmpty())
+			if(!Common.isEmpty(forecast))
 			{
 				try
 				{
@@ -636,7 +652,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						{
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
-							if (!forecast.startsWith("http"))
+							if(!forecast.startsWith("http"))
 							{
 								common.SetStringPref("lastError", "Yahoo API recently changed, you need to update your settings.");
 								runOnUiThread(() ->
@@ -645,7 +661,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 									b2.setEnabled(true);
 									dialog.dismiss();
 									new AlertDialog.Builder(common.context)
-											.setTitle("Wasn't able to connect or download the forecast.")
+											.setTitle(getString(R.string.wasnt_able_to_connect_or_download))
 											.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 											.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 											{
@@ -750,7 +766,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						{
 							metierev = "https://prodapi.metweb.ie/location/reverse/" + forecast.replaceAll(",", "/");
 							forecast = "https://prodapi.metweb.ie/weather/daily/" + forecast.replaceAll(",", "/") + "/10";
-							if (common.GetStringPref("metierev", "").isEmpty() || !forecast.equals(oldforecast))
+							if(Common.isEmpty(common.GetStringPref("metierev", "")) || !forecast.equals(oldforecast))
 							{
 								metierev = common.downloadForecast(fctype, metierev, null);
 								JSONObject jobj = new JSONObject(metierev);
@@ -804,7 +820,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				return;
 			}
 
-			if (!forecast.isEmpty() && !oldforecast.equals(forecast))
+			if (!Common.isEmpty(forecast) && !oldforecast.equals(forecast))
 			{
 				Common.LogMessage("forecast checking: " + forecast);
 
@@ -841,7 +857,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				}
 			}
 
-			if (!webcam.isEmpty() && !webcam.equals(oldwebcam))
+			if (!Common.isEmpty(webcam) && !webcam.equals(oldwebcam))
 			{
 				Common.LogMessage("checking: " + webcam);
 
@@ -864,9 +880,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			custom_url = customURL.getText().toString();
 
-			if(custom_url.isEmpty())
+			if(Common.isEmpty(custom_url))
 			{
-				if (!custom.isEmpty() && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
+				if (!Common.isEmpty(custom) && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
 				{
 					try
 					{
@@ -925,7 +941,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				}
 			}
 
-			if(forecast.isEmpty())
+			if(Common.isEmpty(forecast))
 			{
 				common.SetLongPref("rssCheck", 0);
 				common.SetStringPref("forecastData", "");
