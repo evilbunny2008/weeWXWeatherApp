@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.annotation.SuppressLint;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -44,6 +45,7 @@ import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
@@ -65,7 +67,7 @@ import static java.lang.Math.round;
 class Common
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
-	private final static boolean debug_on = false;
+	private final static boolean debug_on = true;
 	private final String app_version;
 	final Context context;
 
@@ -201,7 +203,7 @@ class Common
 
 	void SetStringPref(String name, String value)
 	{
-		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putString(name, value);
 		editor.apply();
@@ -209,26 +211,41 @@ class Common
 		LogMessage("Updating '" + name + "'='" + value + "'");
 	}
 
+	@SuppressWarnings("SameParameterValue")
 	void RemovePref(String name)
 	{
-		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
+
+		// Wipe the entry...
+		editor.putString(name, "");
 		editor.remove(name);
 		editor.apply();
 
 		LogMessage("Removing '" + name + "'");
 	}
 
-	void commit()
+	void clearPref()
 	{
-		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		prefs.edit().clear().apply();
+
+		LogMessage("Clearing Prefs");
+	}
+
+	@SuppressLint("ApplySharedPref")
+	void commitPref()
+	{
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
-		editor.apply();
+		editor.commit();
+
+		LogMessage("Commiting Prefs");
 	}
 
 	String GetStringPref(String name, String default_value)
 	{
-		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		String value;
 
 		try
@@ -364,10 +381,24 @@ class Common
 		return views;
 	}
 
+	private Day getFirstDay(List<Day> days)
+	{
+		Day first = null;
+		if (days != null && !days.isEmpty())
+		{
+			Iterator<Day> it = days.iterator();
+			if (it.hasNext())
+				first = it.next();
+		}
+
+		return first;
+	}
+
 	private String generateForecast(List<Day> days, long timestamp, boolean showHeader)
 	{
 		LogMessage("Starting generateForecast()");
 		LogMessage("days: "+days);
+
 		if(isEmpty(days))
 			return null;
 
@@ -382,28 +413,30 @@ class Common
 
 		if(showHeader)
 		{
+			Day first = getFirstDay(days);
+
 			tmp = "<table style='width:100%;border:0px;'>";
 			sb.append(tmp);
 
-			if(days.get(0).max.equals("&deg;C") || days.get(0).max.equals("&deg;F"))
+			if(first.max.equals("&deg;C") || first.max.equals("&deg;F"))
 				tmp = "<tr><td style='width:50%;font-size:48pt;'>&nbsp;</td>";
 			else
-				tmp = "<tr><td style='width:50%;font-size:48pt;'>" + days.get(0).max + "</td>";
+				tmp = "<tr><td style='width:50%;font-size:48pt;'>" + first.max + "</td>";
 			sb.append(tmp);
 
-			if(!days.get(0).icon.startsWith("file:///") && !days.get(0).icon.startsWith("data:image"))
-				tmp = "<td style='width:50%;text-align:right;'><i style='font-size:80px;' class='" + days.get(0).icon + "'></i></td></tr>";
+			if(!first.icon.startsWith("file:///") && !first.icon.startsWith("data:image"))
+				tmp = "<td style='width:50%;text-align:right;'><i style='font-size:80px;' class='" + first.icon + "'></i></td></tr>";
 			else
-				tmp = "<td style='width:50%;text-align:right;'><img width='80px' src='" + days.get(0).icon + "'></td></tr>";
+				tmp = "<td style='width:50%;text-align:right;'><img width='80px' src='" + first.icon + "'></td></tr>";
 			sb.append(tmp);
 
-			if(days.get(0).min.equals("&deg;C") || days.get(0).min.equals("&deg;F"))
+			if(first.min.equals("&deg;C") || first.min.equals("&deg;F"))
 			{
-				tmp = "<tr><td style='text-align:right;font-size:16pt;' colspan='2'>" + days.get(0).text + "</td></tr></table><br />";
+				tmp = "<tr><td style='text-align:right;font-size:16pt;' colspan='2'>" + first.text + "</td></tr></table><br />";
 			} else {
-				tmp = "<tr><td style='font-size:16pt;'>" + days.get(0).min + "</td>";
+				tmp = "<tr><td style='font-size:16pt;'>" + first.min + "</td>";
 				sb.append(tmp);
-				tmp = "<td style='text-align:right;font-size:16pt;'>" + days.get(0).text + "</td></tr></table><br />";
+				tmp = "<td style='text-align:right;font-size:16pt;'>" + first.text + "</td></tr></table><br />";
 			}
 			sb.append(tmp);
 

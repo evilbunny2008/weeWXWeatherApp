@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/swipeToRefresh"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+	android:theme="@style/AppTheme.weeWxWeatherApp.WhiteBackground">
 
     <ImageView
         android:id="@+id/webcam"

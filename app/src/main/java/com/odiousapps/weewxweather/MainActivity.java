@@ -14,22 +14,23 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.method.LinkMovementMethod;
-import android.view.Gravity;
+import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
+import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.RemoteViews;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.github.evilbunny2008.androidmaterialcolorpickerdialog.ColorPicker;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.materialswitch.MaterialSwitch;
+import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textview.MaterialTextView;
 
 import org.json.JSONObject;
 
@@ -41,7 +42,6 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.graphics.Insets;
 import androidx.core.text.HtmlCompat;
@@ -57,41 +57,46 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener
 {
 	private TabLayout tabLayout;
 	private Common common;
 	private DrawerLayout mDrawerLayout;
-	private EditText settingsURL;
-	private EditText customURL;
-	private EditText fgColour;
-	private EditText bgColour;
-	private Button b1;
-	private Button b2;
-	private Button b3;
-	private boolean showSettings = true;
-	private Spinner s1;
-	private Spinner s2;
-	private SwitchCompat show_indoor, metric_forecasts;
-	private TextView tv;
+	private TextInputEditText settingsURL;
+	private TextInputEditText customURL;
+	//private TextInputEditText fgColour;
+	//private TextInputEditText bgColour;
+	private MaterialButton b1;
+	private MaterialButton b2;
+	private MaterialButton b3;
+	private MaterialButton b4;
+	private AutoCompleteTextView s1;
+	private AutoCompleteTextView s2;
+	private MaterialSwitch show_indoor, metric_forecasts;
+	private MaterialTextView tv;
 
 	private AlertDialog dialog;
+
+	private LinearLayout settingsLayout;
+	private LinearLayout aboutLayout;
 
 	private static int pos;
 	private static int theme;
 
-	@SuppressLint("WrongConstant")
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_activity);
 
+		for (java.lang.reflect.Method m : ColorPicker.class.getMethods())
+			Log.d("evilbunny CP_METHOD", m.getName());
+
 		WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
 		final CoordinatorLayout rootView = findViewById(R.id.main_content);
 
-		rootView.setOnApplyWindowInsetsListener((view, insets) ->
+		ViewCompat.setOnApplyWindowInsetsListener(rootView, (view, insets) ->
 		{
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
 			{
@@ -99,17 +104,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				insetsController.show(WindowInsetsCompat.Type.systemBars());
 			}
 
+			Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+			// Preserve existing padding
+			int left = view.getPaddingLeft();
+			int right = view.getPaddingRight();
+
+			// Add system top inset to the existing top padding
+			int top = view.getPaddingTop() + systemInsets.top;
+			int bottom = view.getPaddingBottom() + systemInsets.bottom;
+
+			view.setPadding(left, top, right, bottom);
+
 			return insets;
 		});
 
 		common = new Common(this);
 
 		mDrawerLayout = findViewById(R.id.drawer_layout);
-		ViewCompat.setOnApplyWindowInsetsListener(mDrawerLayout, (v, insets) -> {
-			Insets sysBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-			v.setPadding(sysBars.left, sysBars.top, sysBars.right, sysBars.bottom);
-			return insets;
-		});
 
 		OnBackPressedDispatcher onBackPressedDispatcher = getOnBackPressedDispatcher();
 		onBackPressedDispatcher.addCallback(this, onBackPressedCallback);
@@ -136,10 +148,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		try
 		{
 			if(Common.isEmpty(common.GetStringPref("BASE_URL", "")))
-				mDrawerLayout.openDrawer(Gravity.START);
+				mDrawerLayout.openDrawer(GravityCompat.START);
 		} catch (Exception e) {
 			Common.doStackOutput(e);
 		}
+
+		settingsLayout = findViewById(R.id.settingsLayout);
+		aboutLayout = findViewById(R.id.aboutLayout);
 
 		settingsURL = findViewById(R.id.settings);
 		customURL = findViewById(R.id.customURL);
@@ -149,12 +164,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		show_indoor = findViewById(R.id.show_indoor);
 		s2 = findViewById(R.id.spinner2);
 
-		b1 = findViewById(R.id.button);
+		b1 = findViewById(R.id.saveButton);
 		b2 = findViewById(R.id.deleteData);
 		b3 = findViewById(R.id.aboutButton);
+		b4 = findViewById(R.id.settingsButton);
 
-		fgColour = findViewById(R.id.fgPicker);
-		bgColour = findViewById(R.id.bgPicker);
+		//fgColour = findViewById(R.id.fg_Picker);
+	//	bgColour = findViewById(R.id.bg_Picker);
 
 		tv = findViewById(R.id.aboutText);
 
@@ -190,44 +206,50 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private void doSettings()
 	{
 		String[] paths = new String[]
-				{
-						getString(R.string.manual_update),
-						getString(R.string.every_5_minutes),
-						getString(R.string.every_10_minutes),
-						getString(R.string.every_15_minutes),
-						getString(R.string.every_30_minutes),
-						getString(R.string.every_hour),
-				};
-		ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
-		adapter.setDropDownViewResource(R.layout.spinner_layout);
-		s1.setAdapter(adapter);
-		s1.setOnItemSelectedListener(this);
-		pos = common.GetIntPref("updateInterval", 1);
-		s1.setSelection(pos);
+		{
+			getString(R.string.manual_update),
+			getString(R.string.every_5_minutes),
+			getString(R.string.every_10_minutes),
+			getString(R.string.every_15_minutes),
+			getString(R.string.every_30_minutes),
+			getString(R.string.every_hour),
+		};
 
-		SwitchCompat wifi_only = findViewById(R.id.wifi_only);
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
+		s1.setAdapter(adapter);
+		s1.setOnItemClickListener(this);
+		pos = common.GetIntPref("updateInterval", 1);
+		if(pos >= 0 && pos < paths.length)
+			s1.setText(paths[pos], false);
+		else
+			s1.setText(getString(R.string.every_5_minutes));
+
+		MaterialSwitch wifi_only = findViewById(R.id.wifi_only);
 		wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
-		SwitchCompat use_icons = findViewById(R.id.use_icons);
+		MaterialSwitch use_icons = findViewById(R.id.use_icons);
 		use_icons.setChecked(common.GetBoolPref("use_icons", false));
 		metric_forecasts.setChecked(common.GetBoolPref("metric", true));
 		show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
 
 		String[] themeString = new String[]
-				{
-						getString(R.string.use_light_theme),
-						getString(R.string.use_dark_theme2),
-						getString(R.string.use_system_default)
-				};
-		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(common.context, R.layout.spinner_layout, themeString);
-		adapter2.setDropDownViewResource(R.layout.spinner_layout);
-		s2.setAdapter(adapter2);
-		s2.setOnItemSelectedListener(this);
-		theme = common.GetIntPref("dark_theme", 2);
-		s2.setSelection(theme);
+		{
+			getString(R.string.use_light_theme),
+			getString(R.string.use_dark_theme2),
+			getString(R.string.use_system_default)
+		};
 
-		RadioButton showRadar = findViewById(R.id.showRadar);
+		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(common.context, R.layout.spinner_layout, themeString);
+		s2.setAdapter(adapter2);
+		s2.setOnItemClickListener(this);
+		theme = common.GetIntPref("dark_theme", 2);
+		if (theme >= 0 && theme < themeString.length)
+			s2.setText(themeString[theme], false);
+		else
+			s2.setText(getString(R.string.use_system_default));
+
+		MaterialRadioButton showRadar = findViewById(R.id.showRadar);
 		showRadar.setChecked(common.GetBoolPref("radarforecast", true));
-		RadioButton showForecast = findViewById(R.id.showForecast);
+		MaterialRadioButton showForecast = findViewById(R.id.showForecast);
 		showForecast.setChecked(!common.GetBoolPref("radarforecast", true));
 
 		b1.setOnClickListener(arg0 ->
@@ -254,29 +276,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		b3.setOnClickListener(arg0 ->
 		{
-			if(showSettings)
-			{
-				showSettings = false;
-				b1.setVisibility(View.INVISIBLE);
-				b2.setVisibility(View.INVISIBLE);
-				b3.setText(R.string.settings2);
+			settingsLayout.setVisibility(View.GONE);
+			aboutLayout.setVisibility(View.VISIBLE);
+		});
 
-				LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
-				settingsLayout.setVisibility(View.GONE);
-				LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
-				aboutLayout.setVisibility(View.VISIBLE);
-			} else {
-				showSettings = true;
-				b1.setVisibility(View.VISIBLE);
-				b2.setVisibility(View.VISIBLE);
-				b3.setText(R.string.about2);
-
-				LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
-				aboutLayout.setVisibility(View.GONE);
-				LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
-				settingsLayout.setVisibility(View.VISIBLE);
-			}
-
+		b4.setOnClickListener(arg0 ->
+		{
+			aboutLayout.setVisibility(View.GONE);
+			settingsLayout.setVisibility(View.VISIBLE);
 		});
 
 		settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
@@ -312,15 +319,15 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		// https://github.com/Pes8/android-material-color-picker-dialog
 
-		String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase(Locale.ENGLISH);
-		fgColour.setText(hex);
-		fgColour.setOnClickListener(v -> showPicker(common.GetIntPref("fgColour", 0xFF000000),true));
+		//String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase(Locale.ENGLISH);
+		//fgColour.setText(hex);
+//		fgColour.setOnClickListener(v -> showPicker(common.GetIntPref("fgColour", 0xFF000000),true));
 
-		hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase(Locale.ENGLISH);
-		bgColour.setText(hex);
-		bgColour.setOnClickListener(v -> showPicker(common.GetIntPref("bgColour", 0xFFFFFFFF),false));
+		//hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase(Locale.ENGLISH);
+		//bgColour.setText(hex);
+//		bgColour.setOnClickListener(v -> showPicker(common.GetIntPref("bgColour", 0xFFFFFFFF),false));
 	}
-
+/*
 	private void showPicker(int col, final boolean fgColour)
 	{
 		final ColorPicker cp = new ColorPicker(MainActivity.this, col >> 24 & 255, col >> 16 & 255, col >> 8 & 255, col & 255);
@@ -341,7 +348,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		cp.show();
 	}
-
+*/
 	private void hideKeyboard(View view)
 	{
 		InputMethodManager inputMethodManager = (InputMethodManager)common.context.getSystemService(Activity.INPUT_METHOD_SERVICE);
@@ -349,7 +356,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
 	}
 
-	public void onItemSelected(AdapterView<?> parent, View v, int position, long id)
+	public void onItemClick(AdapterView<?> parent, View v, int position, long id)
 	{
 		Common.LogMessage("Before -> pos="+pos+",theme="+theme);
 
@@ -361,9 +368,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		Common.LogMessage("After -> pos="+pos+",theme="+theme);
 	}
 
-	@Override
-	public void onNothingSelected(AdapterView<?> adapterView) { }
-
 	private void checkReally()
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(common.context);
@@ -372,31 +376,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				{
 					Common.LogMessage("trash all data");
 
-					//common.RemovePref("SETTINGS_URL");
-					common.RemovePref("updateInterval");
-					common.RemovePref("BASE_URL");
-					common.RemovePref("radtype");
-					common.RemovePref("RADAR_URL");
-					common.RemovePref("FORECAST_URL");
-					common.RemovePref("fctype");
-					common.RemovePref("WEBCAM_URL");
-					common.RemovePref("CUSTOM_URL");
-					common.RemovePref("custom_url");
-					common.RemovePref("metric");
-					common.RemovePref("showIndoor");
-					common.RemovePref("rssCheck");
-					common.RemovePref("forecastData");
-					common.RemovePref("LastDownload");
-					common.RemovePref("LastDownloadTime");
-					common.RemovePref("radarforecast");
-					common.RemovePref("seekBar");
-					common.RemovePref("fgColour");
-					common.RemovePref("bgColour");
-					common.RemovePref("bomtown");
-					common.RemovePref("metierev");
-					common.RemovePref("dark_theme");
-					common.RemovePref("use_icons");
-					common.commit();
+					common.clearPref();
+					common.commitPref();
 
 					File file = new File(common.context.getFilesDir(), "webcam.jpg");
 					if(file.exists() && file.canWrite())
@@ -420,7 +401,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				}).setNegativeButton(getString(R.string.no), (dialog_interface, i) -> dialog_interface.cancel());
 
 		builder.create().show();
-
 	}
 
 	private void processSettings()
@@ -444,12 +424,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "", metierev;
 
-			SwitchCompat metric_forecasts = findViewById(R.id.metric_forecasts);
-			SwitchCompat show_indoor = findViewById(R.id.show_indoor);
-			SwitchCompat wifi_only = findViewById(R.id.wifi_only);
-			SwitchCompat use_icons = findViewById(R.id.use_icons);
+			MaterialSwitch metric_forecasts = findViewById(R.id.metric_forecasts);
+			MaterialSwitch show_indoor = findViewById(R.id.show_indoor);
+			MaterialSwitch wifi_only = findViewById(R.id.wifi_only);
+			MaterialSwitch use_icons = findViewById(R.id.use_icons);
 
-			RadioButton showRadar = findViewById(R.id.showRadar);
+			MaterialRadioButton showRadar = findViewById(R.id.showRadar);
 			long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
 			if(use_icons.isChecked() && (common.GetLongPref("icon_version", 0) < Common.icon_version || !common.checkForImages()))
@@ -492,7 +472,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				common.SetLongPref("icon_version", Common.icon_version);
 			}
 
-			if(Common.isEmpty(settingsURL.getText().toString()) || settingsURL.getText().toString().equals("https://example.com/weewx/inigo-settings.txt"))
+			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().trim() : "";
+			if(Common.isEmpty(settings_url) || settings_url.equals("https://example.com/weewx/inigo-settings.txt"))
 			{
 				common.SetStringPref("lastError", getString(R.string.url_was_default_or_empty));
 				runOnUiThread(() -> {
@@ -506,6 +487,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 							{
 							}).show();
 				});
+
 				return;
 			}
 
@@ -878,8 +860,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				}
 			}
 
-			custom_url = customURL.getText().toString();
-
+			custom_url = customURL.getText() != null ? customURL.getText().toString().trim() : "";
 			if(Common.isEmpty(custom_url))
 			{
 				if (!Common.isEmpty(custom) && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
@@ -1006,6 +987,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		super.onPause();
 	}
 
+	@SuppressLint("UnspecifiedRegisterReceiverFlag")
 	@Override
 	protected void onResume()
 	{
@@ -1051,13 +1033,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 					});
 				}
 
-				if(action != null && action.equals(Common.UPDATE_INTENT))
-				{
-					String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase(Locale.ENGLISH);
-					fgColour.setText(hex);
-					hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase(Locale.ENGLISH);
-					bgColour.setText(hex);
-				}
+	//			if(action != null && action.equals(Common.UPDATE_INTENT))
+	//			{
+					//String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase(Locale.ENGLISH);
+					//fgColour.setText(hex);
+					//hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase(Locale.ENGLISH);
+					//bgColour.setText(hex);
+	//			}
 
 				if(action != null && action.equals(Common.INIGO_INTENT))
 				{

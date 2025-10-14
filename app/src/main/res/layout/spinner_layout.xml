@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/spinnerTarget"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:textColor="#000000"
-    android:textSize="22sp"
-    />
+<com.google.android.material.textview.MaterialTextView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:paddingStart="16dp"
+	android:paddingEnd="16dp"
+	android:minHeight="?attr/listPreferredItemHeightSmall"
+	android:gravity="center_vertical"
+	android:textAppearance="?attr/textAppearanceBody1" />

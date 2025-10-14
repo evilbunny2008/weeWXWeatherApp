@@ -1,308 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout
-    android:id="@+id/drawer_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+	android:id="@+id/drawer_layout"
+	android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:openDrawer="start">
+	android:fitsSystemWindows="true"
+	tools:openDrawer="start">
 
     <include
         layout="@layout/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header_main">
+	    android:fillViewport="true"
+	    android:layout_gravity="start"
+	    android:focusableInTouchMode="true"
+	    app:headerLayout="@layout/nav_header_main">
 
         <ScrollView
+	        android:id="@+id/sv1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/nav_header_height">
+            android:layout_height="wrap_content"
+	        android:fillViewport="true"
+	        android:layout_marginTop="@dimen/nav_header_height"
+	        android:clipToPadding="false"
+	        android:theme="@style/AppTheme.weeWxWeatherApp.WhiteBackground">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+	        <LinearLayout
+		        android:layout_width="match_parent"
+		        android:layout_height="wrap_content"
+		        android:orientation="vertical"
+		        android:paddingLeft="10dp"
+		        android:paddingRight="10dp"
+		        android:paddingBottom="30dp">
 
-                <LinearLayout
-                    android:id="@+id/settingsLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:visibility="visible">
+		        <LinearLayout
+			        android:id="@+id/settingsLayout"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical"
+			        android:visibility="visible">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/fileURL"
-                        android:textSize="18sp"/>
+		            <com.google.android.material.textfield.TextInputLayout
+		                android:layout_width="match_parent"
+		                android:layout_height="wrap_content"
+			            android:hint="@string/fileURL">
 
-                    <EditText
-                        android:id="@+id/settings"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:ems="10"
-                        android:hint="@string/fileURL"
-                        android:inputType="textUri"
-                        android:minHeight="48dp"
-                        android:textSize="18sp"
-                        tools:ignore="Autofill,TextContrastCheck,DuplicateSpeakableTextCheck,VisualLintTextFieldSize" />
+		                <com.google.android.material.textfield.TextInputEditText
+		                    android:id="@+id/settings"
+		                    android:layout_width="match_parent"
+		                    android:layout_height="wrap_content"
+			                android:gravity="center_vertical"
+			                android:textSize="20sp"
+		                    android:inputType="textUri"
+			                tools:ignore="VisualLintTextFieldSize" />
+		            </com.google.android.material.textfield.TextInputLayout>
 
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/show_indoor"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:minHeight="48dp"
-                        android:text="@string/indoor_readings"
-                        android:textSize="18sp"
+	                <com.google.android.material.materialswitch.MaterialSwitch
+	                    android:id="@+id/show_indoor"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:minHeight="48dp"
+	                    android:text="@string/indoor_readings"
+	                    android:textSize="18sp"
 	                    tools:ignore="VisualLintButtonSize" />
 
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/metric_forecasts"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:checked="true"
-                        android:minHeight="48dp"
-                        android:text="@string/metric"
-                        android:textSize="18sp"
+			        <com.google.android.material.materialswitch.MaterialSwitch
+	                        android:id="@+id/metric_forecasts"
+	                        android:layout_width="match_parent"
+	                        android:layout_height="wrap_content"
+	                        android:checked="true"
+	                        android:minHeight="48dp"
+	                        android:text="@string/metric"
+	                        android:textSize="18sp"
+		                    tools:ignore="VisualLintButtonSize" />
+
+	                <com.google.android.material.materialswitch.MaterialSwitch
+	                    android:id="@+id/wifi_only"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:minHeight="48dp"
+	                    android:text="@string/update_over_wifi"
+	                    android:textSize="18sp"
 	                    tools:ignore="VisualLintButtonSize" />
 
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/wifi_only"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:minHeight="48dp"
-                        android:text="@string/update_over_wifi"
-                        android:textSize="18sp"
+	                <com.google.android.material.materialswitch.MaterialSwitch
+	                    android:id="@+id/use_icons"
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:minHeight="48dp"
+	                    android:text="@string/use_icons"
+	                    android:textSize="18sp"
 	                    tools:ignore="VisualLintButtonSize" />
 
-                    <androidx.appcompat.widget.SwitchCompat
-                        android:id="@+id/use_icons"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:minHeight="48dp"
-                        android:text="@string/use_icons"
-                        android:textSize="18sp"
-	                    tools:ignore="VisualLintButtonSize" />
+			        <com.google.android.material.textfield.TextInputLayout
+				        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:labelFor="@id/spinner2"
+				        android:hint="@string/use_dark_theme"
+				        app:boxBackgroundMode="outline"
+				        app:boxStrokeWidth="1dp"
+				        app:boxStrokeColor="?attr/colorOutline">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/use_dark_theme"
-                        android:textSize="18sp"/>
+				        <AutoCompleteTextView
+					        android:id="@+id/spinner2"
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:clickable="true"
+					        android:focusable="true"
+					        android:hint="@string/use_dark_theme"
+					        android:importantForAutofill="no"
+					        android:inputType="none"
+					        tools:ignore="NoSpeakableText,VisualLintTextFieldSize,SpeakableTextPresentCheck" />
+			        </com.google.android.material.textfield.TextInputLayout>
 
-                    <Spinner
-                        android:id="@+id/spinner2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:minHeight="48dp"
-                        android:spinnerMode="dropdown"
-                        tools:ignore="SpeakableTextPresentCheck" />
+			        <com.google.android.material.textfield.TextInputLayout
+				        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:labelFor="@id/spinner1"
+				        android:hint="@string/refresh_time"
+				        app:boxBackgroundMode="outline"
+				        app:boxStrokeWidth="1dp"
+				        app:boxStrokeColor="?attr/colorOutline">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/refresh_time"
-                        android:textSize="18sp"/>
+				        <AutoCompleteTextView
+					        android:id="@+id/spinner1"
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:clickable="true"
+					        android:focusable="true"
+					        android:hint="@string/refresh_time"
+					        android:importantForAutofill="no"
+					        android:inputType="none"
+					        tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck" />
+			        </com.google.android.material.textfield.TextInputLayout>
 
-                    <Spinner
-                        android:id="@+id/spinner1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:minHeight="48dp"
-                        android:spinnerMode="dropdown"
-                        tools:ignore="SpeakableTextPresentCheck" />
+	                <com.google.android.material.textview.MaterialTextView
+	                    android:layout_width="match_parent"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/radarforecast"
+	                    android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/radarforecast"
-                        android:textSize="18sp"/>
+			        <RadioGroup
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="vertical"
+				        android:gravity="end">
 
-                    <RadioGroup
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+				        <com.google.android.material.radiobutton.MaterialRadioButton
+					        android:id="@+id/showRadar"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:checked="true"
+					        android:minHeight="48dp"
+					        android:text="@string/show_radar" />
 
-                        <RadioButton
-                            android:id="@+id/showRadar"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_weight="1"
-                            android:checked="true"
-                            android:minHeight="48dp"
-                            android:text="@string/show_radar"
-                            android:textSize="18sp"
-	                        tools:ignore="VisualLintButtonSize" />
+				        <com.google.android.material.radiobutton.MaterialRadioButton
+					        android:id="@+id/showForecast"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:minHeight="48dp"
+					        android:text="@string/show_forecast" />
+			        </RadioGroup>
 
-                        <RadioButton
-                            android:id="@+id/showForecast"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="10dp"
-                            android:layout_weight="1"
-                            android:minHeight="48dp"
-                            android:text="@string/show_forecast"
-                            android:textSize="18sp"
-	                        tools:ignore="VisualLintButtonSize" />
-                    </RadioGroup>
+			        <com.google.android.material.textfield.TextInputLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:hint="@string/custom_url">
 
-                    <TextView
-                        android:id="@+id/custom"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/custom_url"
-                        android:textSize="18sp"/>
+				        <com.google.android.material.textfield.TextInputEditText
+					        android:id="@+id/customURL"
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:gravity="center_vertical"
+					        android:inputType="textUri"
+					        tools:ignore="VisualLintTextFieldSize" />
+			        </com.google.android.material.textfield.TextInputLayout>
 
-                    <EditText
-                        android:id="@+id/customURL"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:ems="10"
-                        android:hint="@string/custom_url"
-                        android:inputType="textUri"
-                        android:minHeight="48dp"
-                        android:textSize="18sp"
-                        tools:ignore="Autofill,TextContrastCheck,DuplicateSpeakableTextCheck,VisualLintTextFieldSize" />
+			        <!-- colo
+				        android:id="@+id/fg_Picker"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:autofillHints="@string/fgColour"
+				        android:gravity="center_vertical"
+				        android:hint="@string/fgColour"
+				        android:inputType="text"
+				        android:textColorHint="#78909C"
+				        app:cardElevation="0dp"
+				        tools:ignore="VisualLintTextFieldSize" / -->
 
-                    <TextView
-                        android:id="@+id/fgtv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/fgColour"
-                        android:textSize="18sp"/>
+			        <com.google.android.material.textfield.TextInputLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:hint="@string/bgColour">
 
-                    <EditText
-                        android:id="@+id/fgPicker"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:clickable="true"
-                        android:ems="10"
-                        android:focusable="false"
-                        android:hint="@string/fgColour"
-                        android:inputType="textUri"
-                        android:textSize="18sp"
-                        tools:ignore="Autofill,KeyboardInaccessibleWidget,VisualLintTextFieldSize"/>
+				        <com.google.android.material.textfield.TextInputEditText
+					        android:id="@+id/bg_Picker"
+					        android:layout_width="match_parent"
+					        android:layout_height="wrap_content"
+					        android:gravity="center_vertical"
+					        android:inputType="textUri"
+					        tools:ignore="VisualLintTextFieldSize" />
+			        </com.google.android.material.textfield.TextInputLayout>
 
-                    <TextView
-                        android:id="@+id/bgtv"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/bgColour"
-                        android:textSize="18sp"/>
+			        <LinearLayout
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/bgPicker"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="10dp"
-                        android:clickable="true"
-                        android:ems="10"
-                        android:focusable="false"
-                        android:hint="@string/bgColour"
-                        android:inputType="textUri"
-                        android:textSize="18sp"
-                        tools:ignore="Autofill,KeyboardInaccessibleWidget,VisualLintTextFieldSize"/>
+				        <com.google.android.material.button.MaterialButton
+					        android:id="@+id/saveButton"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:text="@string/save_settings"
+					        android:layout_weight="1"
+					        android:textSize="18sp"
+					        tools:ignore="ButtonStyle,VisualLintButtonSize"/>
 
-                </LinearLayout>
+				        <com.google.android.material.button.MaterialButton
+					        android:id="@+id/aboutButton"
+					        android:layout_width="wrap_content"
+					        android:layout_height="wrap_content"
+					        android:text="@string/about2"
+					        android:layout_weight="1"
+					        android:textSize="18sp"
+					        tools:ignore="ButtonStyle,VisualLintButtonSize"/>
+			        </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/aboutLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:visibility="gone">
+			        <com.google.android.material.button.MaterialButton
+				        android:id="@+id/deleteData"
+				        android:layout_width="match_parent"
+				        android:layout_height="wrap_content"
+				        android:text="@string/delete_all_data"
+				        android:textSize="18sp"
+				        tools:ignore="VisualLintButtonSize" />
+		        </LinearLayout>
 
-                    <TextView
+		        <LinearLayout
+			        android:id="@+id/aboutLayout"
+			        android:layout_width="match_parent"
+			        android:layout_height="wrap_content"
+			        android:orientation="vertical"
+			        android:visibility="gone">
+
+                    <com.google.android.material.textview.MaterialTextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/about"
+	                    android:layout_marginBottom="25sp"
                         android:textSize="28sp"/>
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:textSize="18sp"/>
-
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/aboutText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:textSize="18sp"/>
+	                    android:layout_marginBottom="25sp"
+	                    android:textSize="18sp"/>
 
-                </LinearLayout>
+			        <com.google.android.material.button.MaterialButton
+				        android:id="@+id/settingsButton"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:text="@string/settings2"
+				        android:layout_gravity="center" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/save_settings"
-                        android:layout_weight="1"
-                        android:textSize="18sp"
-                        tools:ignore="ButtonStyle,VisualLintButtonSize"/>
-
-                    <Button
-                        android:id="@+id/aboutButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/about2"
-                        android:layout_weight="1"
-                        android:textSize="18sp"
-                        tools:ignore="ButtonStyle,VisualLintButtonSize"/>
-                </LinearLayout>
-
-                <Button
-                    android:id="@+id/deleteData"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="@string/delete_all_data"
-                    android:textSize="18sp"
-	                tools:ignore="VisualLintButtonSize" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="match_parent"
-                    android:layout_height="400dp"
-                    android:textSize="100sp"
-                    android:visibility="invisible" />
-            </LinearLayout>
+		        </LinearLayout>
+	        </LinearLayout>
         </ScrollView>
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

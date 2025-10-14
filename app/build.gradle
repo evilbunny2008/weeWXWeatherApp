@@ -9,8 +9,8 @@ android {
         applicationId = "com.odiousapps.weewxweather"
         minSdk = 23
         targetSdk = 36
-        versionCode = 1001001
-        versionName = "1.1.1"
+        versionCode = 1001002
+        versionName = "1.1.2"
     }
 
 	buildFeatures {
@@ -45,12 +45,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.google.android.material:material:1.13.0'
-    implementation 'androidx.appcompat:appcompat:1.7.1'
-	implementation 'androidx.core:core:1.17.0'
+	implementation 'androidx.core:core-ktx:1.17.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 	implementation 'com.github.smart-fun:XmlToJson:1.5.3'
     implementation 'org.jsoup:jsoup:1.21.2'
     implementation 'com.squareup.okhttp3:okhttp:5.2.1'
-    implementation 'com.github.evilbunny2008:android-material-color-picker-dialog:1.3.7'
+    implementation 'com.github.evilbunny2008:android-material-color-picker-dialog:1.3.10'
 }

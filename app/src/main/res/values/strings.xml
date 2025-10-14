@@ -8,7 +8,7 @@
     <string name="save_settings">Save Settings</string>
     <string name="empty">Empty</string>
     <string name="today">Today Stats</string>
-    <string name="radarURL">Enter the radar.html address (optional)</string>
+    <string name="radarURL">Optional: Radar URL</string>
     <string name="stats">Weather Statistics</string>
     <string name="todayStats">Today\'s Statistics</string>
     <string name="yesterdayStats">Yesterday\'s Statistics</string>
@@ -38,7 +38,7 @@
     <string name="demo_min_label">Min</string>
     <string name="demo_max_label">Max</string>
     <string name="radar">Radar</string>
-    <string name="custom_url">Enter your custom URL (optional)</string>
+    <string name="custom_url">Optional: Custom URL</string>
     <string name="fgColour">Widget Foreground Colour Picker</string>
     <string name="bgColour">Widget Background Colour Picker</string>
     <string name="indoor_readings">Show Indoor Readings?</string>
@@ -85,4 +85,5 @@
     <string name="url_was_default_or_empty">URL was set to the default or was empty</string>
     <string name="radar_url_not_set">Radar URL not set or is still downloading. You can go to settings to change.</string>
 	<string name="wasnt_able_to_connect_or_download">Wasn\'t able to connect or download the forecast.</string>
+	<string name="select_an_option">Select an option</string>
 </resources>
