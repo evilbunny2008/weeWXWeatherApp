@@ -79,7 +79,7 @@ import static java.lang.Math.round;
 public class Common
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
-	private final static boolean debug_on = true;
+	private final static boolean debug_on = false;
 	private final String app_version;
 	Context context;
 
