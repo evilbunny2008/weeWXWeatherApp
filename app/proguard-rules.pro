@@ -42,13 +42,13 @@
 
 # Retrofit / OkHttp
 -keep class retrofit2.** { *; }
--keep class okhttp3.** { *; }
--dontwarn okhttp3.**
+#-keep class okhttp3.** { *; }
+#-dontwarn okhttp3.**
 -dontwarn okio.**
 
 # Room / SQLite
 -keep class androidx.room.** { *; }
--keep @androidx.room.Dao class * { *; }
+#-keep @androidx.room.Dao class * { *; }
 
 ########################################
 # Misc

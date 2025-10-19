@@ -20,7 +20,7 @@ This is a community maintained project that I do in my free time. While all effo
 
 ## Installation
 
-Installation instuctions have moved to [the wiki](https://github.com/evilbunny2008/weeWXWeatherApp/wiki/home)
+Installation instructions have moved to [the wiki](https://github.com/evilbunny2008/weeWXWeatherApp/wiki/home)
 
 ## License
 

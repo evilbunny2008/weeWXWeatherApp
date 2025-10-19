@@ -1,17 +1,9 @@
 package com.odiousapps.weewxweather;
 
-import android.annotation.SuppressLint;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,7 +11,6 @@ import android.widget.ImageView;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Locale;
@@ -27,36 +18,52 @@ import java.util.Locale;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static java.lang.Math.round;
 
+@SuppressWarnings({"UseCompatLoadingForDrawables", "UnspecifiedRegisterReceiverFlag"})
 public class Webcam extends Fragment
 {
-	private final Common common;
+	private Common common;
 	private ImageView iv;
 	private static Bitmap bm;
 	private SwipeRefreshLayout swipeLayout;
-	private int dark_theme;
+
+	public Webcam()
+	{
+	}
 
 	Webcam(Common common)
 	{
 		this.common = common;
-		dark_theme = common.GetIntPref("dark_theme", 2);
-		if(dark_theme == 2)
-			dark_theme = common.getSystemTheme();
+	}
+
+	public static Webcam newInstance(Common common)
+	{
+		return new Webcam(common);
 	}
 
 	@Nullable
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
+		super.onCreateView(inflater, container, savedInstanceState);
+
+		CommonViewModel commonViewModel = new ViewModelProvider(this).get(CommonViewModel.class);
+
+		if(commonViewModel.getCommon() == null)
+		{
+			commonViewModel.setCommon(common);
+		} else {
+			common = commonViewModel.getCommon();
+			common.reload(common.context);
+		}
+
 		View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
 		iv = rootView.findViewById(R.id.webcam);
-
-		if(dark_theme == 1)
-			iv.setBackgroundColor(0xff000000);
-
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setOnRefreshListener(() ->
 		{
@@ -69,13 +76,12 @@ public class Webcam extends Fragment
 		return rootView;
 	}
 
-	@SuppressLint("UseCompatLoadingForDrawables")
 	private void reloadWebView(final boolean force)
 	{
 		Common.LogMessage("reload webcam...");
 		final String webURL = common.GetStringPref("WEBCAM_URL", "");
 
-		if(Common.isEmpty(webURL))
+		if(webURL.isEmpty())
 		{
 			iv.setImageDrawable(common.context.getApplicationContext().getDrawable(R.drawable.nowebcam));
 			return;
@@ -122,8 +128,7 @@ public class Webcam extends Fragment
 					Common.LogMessage("Skipped downloading");
 			}
 
-			Handler mHandler1 = new Handler(Looper.getMainLooper());
-			mHandler1.post(() ->
+			iv.post(() ->
 			{
 				iv.setImageBitmap(bm);
 				iv.invalidate();
@@ -167,84 +172,45 @@ public class Webcam extends Fragment
 			Bitmap scaledBitmap = Bitmap.createScaledBitmap(bm, width, height, true);
 			bm = Bitmap.createBitmap(scaledBitmap, 0, 0, scaledBitmap.getWidth(), scaledBitmap.getHeight(), matrix, true);
 
-			FileOutputStream out = null;
+			//FileOutputStream out = null;
 			File file = new File(getFiles, "webcam.jpg");
 
-			try
+			try(FileOutputStream out = new FileOutputStream(file))
 			{
-				out = new FileOutputStream(file);
 				bm.compress(Bitmap.CompressFormat.JPEG, 85, out); // bmp is your Bitmap instance
+				return true;
 			} catch (Exception e) {
 				Common.doStackOutput(e);
-				return false;
-			} finally {
-				try
-				{
-					if (out != null)
-						out.close();
-				} catch (IOException e) {
-					Common.doStackOutput(e);
-				}
 			}
-
-			return true;
 		} catch (Exception e) {
 			Common.doStackOutput(e);
-			return false;
 		}
+
+		return false;
 	}
 
 	public void onResume()
 	{
 		super.onResume();
-		reloadWebView(false);
-		IntentFilter filter = new IntentFilter();
-		filter.addAction(Common.UPDATE_INTENT);
-		filter.addAction(Common.REFRESH_INTENT);
-		filter.addAction(Common.EXIT_INTENT);
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
-			common.context.registerReceiver(serviceReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
-		else
-			common.context.registerReceiver(serviceReceiver, filter);
+		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 		Common.LogMessage("webcam.java -- registerReceiver");
 	}
 
 	public void onPause()
 	{
 		super.onPause();
-		try
-		{
-			common.context.unregisterReceiver(serviceReceiver);
-		} catch (Exception e) {
-			Common.doStackOutput(e);
-		}
+		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 		Common.LogMessage("webcam.java -- unregisterReceiver");
 	}
 
-	private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
+	private final Observer<String> notificationObserver = str ->
 	{
-		@Override
-		public void onReceive(Context context, Intent intent)
-		{
-			try
-			{
-				Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
-				String action = intent.getAction();
-				if(action != null && (action.equals(Common.UPDATE_INTENT) || action.equals(Common.REFRESH_INTENT)))
-				{
-					dark_theme = common.GetIntPref("dark_theme", 2);
-					if(dark_theme == 2)
-						dark_theme = common.getSystemTheme();
-					if(dark_theme == 1)
-						iv.setBackgroundColor(0xff000000);
-					else
-						iv.setBackgroundColor(0xffffffff);
-					reloadWebView(false);
-				} else if(action != null && action.equals(Common.EXIT_INTENT))
-					onPause();
-			} catch (Exception e) {
-				Common.doStackOutput(e);
-			}
-		}
+		Common.LogMessage("notificationObserver == " + str);
+
+		if (str.equals(Common.UPDATE_INTENT) || str.equals(Common.REFRESH_INTENT))
+			reloadWebView(true);
+
+		if(str.equals(Common.EXIT_INTENT))
+			onPause();
 	};
 }

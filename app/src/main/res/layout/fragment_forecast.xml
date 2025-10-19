@@ -2,17 +2,17 @@
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/swipeToRefresh"
+	style="@style/AppTheme.weeWxWeatherApp.ViewPager"
+	android:id="@+id/swipeToRefresh"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-	android:theme="@style/AppTheme.weeWxWeatherApp.WhiteBackground">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
+        <com.google.android.material.textview.MaterialTextView
             android:id="@+id/forecast"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,20 +33,24 @@
         <com.odiousapps.weewxweather.RotateLayout
             android:id="@+id/rotateWeb"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+	        android:layout_weight="1"
             app:angle="-90">
 
             <WebView
                 android:id="@+id/webView1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"/>
+	            android:scrollbars="none"
+	            android:gravity="center" />
         </com.odiousapps.weewxweather.RotateLayout>
 
         <WebView
             android:id="@+id/webView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
+            android:layout_height="0dp"
+	        android:layout_weight="1"
+	        android:scrollbars="none"
+	        android:visibility="gone" />
     </LinearLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

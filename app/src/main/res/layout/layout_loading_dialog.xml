@@ -1,20 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="20dp"
-	android:theme="@style/AppTheme.weeWxWeatherApp.WhiteBackground">
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	style="@style/AppTheme.weeWxWeatherApp.ViewPager"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="horizontal"
+	android:padding="20dp">
 
-	<ProgressBar
-        android:layout_width="0dp"
+	<com.google.android.material.progressindicator.CircularProgressIndicator
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1" />
+		app:indicatorSize="48dp"
+		app:trackThickness="4dp"
+		app:indicatorColor="@color/Black"/>
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="4"
+        android:layout_weight="1"
         android:gravity="center"
+	    android:paddingHorizontal="5dp"
         android:text="@string/please_wait_verify_url" />
 </LinearLayout>

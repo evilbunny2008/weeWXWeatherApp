@@ -1,14 +1,14 @@
 package com.odiousapps.weewxweather;
 
-import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -23,6 +23,11 @@ import android.net.NetworkCapabilities;
 import android.net.Uri;
 import android.util.Base64;
 import android.util.Log;
+import android.view.View;
+import android.webkit.ConsoleMessage;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
 import android.widget.RemoteViews;
 
 import org.json.JSONArray;
@@ -42,6 +47,7 @@ import java.io.InterruptedIOException;
 import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,7 +60,10 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
+import androidx.lifecycle.LiveData;
 import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 import okhttp3.ConnectionSpec;
 import okhttp3.Credentials;
@@ -64,15 +73,19 @@ import okhttp3.Response;
 
 import static java.lang.Math.round;
 
-class Common
+@SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref",
+		"SameReturnValue", "WeakerAccess", "BooleanMethodIsAlwaysInverted",
+		"SetJavaScriptEnabled"})
+public class Common
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	private final static boolean debug_on = true;
 	private final String app_version;
-	final Context context;
+	Context context;
 
 	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36";
 
+	static final String WIDGET_UPDATE = "com.odiousapps.weewxweather.WIDGET_UPDATE";
 	static final String UPDATE_INTENT = "com.odiousapps.weewxweather.UPDATE_INTENT";
 	static final String REFRESH_INTENT = "com.odiousapps.weewxweather.REFRESH_INTENT";
 	static final String TAB0_INTENT = "com.odiousapps.weewxweather.TAB0_INTENT";
@@ -81,7 +94,7 @@ class Common
 	static final String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
 	private static final long inigo_version = 4000;
-	static final long icon_version = 12;
+	public static final long icon_version = 12;
 	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/1.0.3/icons.zip";
 
 	private Thread t = null;
@@ -89,23 +102,81 @@ class Common
 
 	private final Typeface tf_bold;
 
-	static final String style_sheet_header = "<link rel='stylesheet' href='file:///android_asset/weathericons.css'>" +
-								"<link rel='stylesheet' href='file:///android_asset/weathericons_wind.css'>" +
-								"<link rel='stylesheet' type='text/css' href='file:///android_asset/flaticon.css'>";
+	Colours colours;
+	static String current_html_headers;
 
-	static final float[] NEGATIVE = {
-			-1.0f, 0, 0, 0, 255, // red
-			0, -1.0f, 0, 0, 255, // green
-			0, 0, -1.0f, 0, 255, // blue
-			0, 0, 0, 1.0f, 0  // alpha
-	};
+	private static final String html_header = """
+            <!DOCTYPE html>
+            <html lang="en">
+            <head>
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <meta name="color-scheme" content="light dark">
+              <link rel='stylesheet' href='file:///android_asset/weathericons.css'>
+              <link rel='stylesheet' href='file:///android_asset/weathericons_wind.css'>
+              <link rel='stylesheet' type='text/css' href='file:///android_asset/flaticon.css'>
+              <style>
+              :root {
+                color-scheme: light dark;
+              }
+              body {
+                background-color: WHITE_HEX;
+                color: BLACK_HEX;
+              }
 
-	Common(Context c)
+              @media (prefers-color-scheme: dark) {
+                body {
+                  background-color: BLACK_HEX;
+                  color: WHITE_HEX;
+                }
+
+                a {
+                  color: LIGHT_BLUE_ACCENT;
+                }
+
+                hr {
+                  border-color: DARK_GRAY;
+                }
+
+                img { filter: brightness(0.9) contrast(0.9); }
+              }
+            </style>
+            </head>
+            <body>
+            """;
+
+	static final String html_footer = "\n</body>\n</html>";
+
+	void replaceHexString(String html_tag, int colour)
 	{
-		System.setProperty("http.agent", UA);
-		this.context = c;
-		tf_bold = Typeface.create("sans-serif", Typeface.BOLD);
+		String hex = String.format("#%06X", 0xFFFFFF & colour);
+		current_html_headers = current_html_headers.replaceAll(html_tag, hex);
+	}
+
+	public void reload(Context context)
+	{
+		this.context = context;
+
+		current_html_headers = html_header;
+		colours = new Colours(context);
+		replaceHexString("WHITE_HEX", ContextCompat.getColor(context, R.color.White));
+		replaceHexString("BLACK_HEX", ContextCompat.getColor(context, R.color.Black));
+		replaceHexString("ALMOST_BLACK", colours.AlmostBlack);
+		replaceHexString("LIGHT_BLUE_ACCENT", colours.LightBlueAccent);
+		replaceHexString("DARK_GRAY", colours.DarkGray);
+		replaceHexString("LIGHT_GRAY", colours.LightGray);
+	}
+
+	public Common(Context context)
+	{
+		this.context = context;
+
 		app_version = BuildConfig.VERSION_NAME;
+		System.setProperty("http.agent", UA);
+		tf_bold = Typeface.create("sans-serif", Typeface.BOLD);
+
+		reload(context);
+
 		LogMessage("app_version=" + app_version);
 	}
 
@@ -118,16 +189,6 @@ class Common
 	public static boolean isEmpty(StringBuilder sb)
 	{
 		return sb == null || sb.length() == 0;
-	}
-
-	public static boolean isEmpty(String str)
-	{
-		return str == null || str.length() == 0;
-	}
-
-	public static boolean isEmpty(List<Day> list)
-	{
-		return list.isEmpty();
 	}
 
 	long[] getPeriod()
@@ -208,10 +269,9 @@ class Common
 		editor.putString(name, value);
 		editor.apply();
 
-		LogMessage("Updating '" + name + "'='" + value + "'");
+		//LogMessage("Updating '" + name + "'='" + value + "'");
 	}
 
-	@SuppressWarnings("SameParameterValue")
 	void RemovePref(String name)
 	{
 		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
@@ -222,7 +282,7 @@ class Common
 		editor.remove(name);
 		editor.apply();
 
-		LogMessage("Removing '" + name + "'");
+		//LogMessage("Removing '" + name + "'");
 	}
 
 	void clearPref()
@@ -230,39 +290,57 @@ class Common
 		SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		prefs.edit().clear().apply();
 
-		LogMessage("Clearing Prefs");
+		//LogMessage("Clearing Prefs");
 	}
 
-	@SuppressLint("ApplySharedPref")
 	void commitPref()
 	{
 		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.commit();
 
-		LogMessage("Commiting Prefs");
+		//LogMessage("Commiting Prefs");
+	}
+
+	boolean isPrefSet(String name)
+	{
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		String default_value = "unknown";
+
+		try
+		{
+			String value = settings.getString(name, default_value).trim();
+			if(!value.equals(default_value))
+			{
+				LogMessage("Pref '" + name + "'was set to '" + value + "'.");
+				return true;
+			}
+		} catch (Exception ignored) {
+		}
+
+		//LogMessage("Pref '" + name + "'was not set.");
+		return false;
 	}
 
 	String GetStringPref(String name, String default_value)
 	{
-		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		SharedPreferences settings;
 		String value;
 
 		try
 		{
+			settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 			value = settings.getString(name, default_value);
-		} catch (ClassCastException cce)
-		{
+		} catch (ClassCastException cce) {
 			doStackOutput(cce);
 			return default_value;
-		} catch (Exception e)
-		{
-			LogMessage("GetStringPref(" + name + ", " + default_value + ") Err: " + e);
+		} catch (Exception e) {
+			//LogMessage("GetStringPref(" + name + ", " + default_value + ") Err: " + e);
 			doStackOutput(e);
 			return default_value;
 		}
 
-		LogMessage(name + "'='" + value + "'");
+		//LogMessage(name + "'='" + value + "'");
 
 		return value;
 	}
@@ -272,13 +350,27 @@ class Common
 		SetStringPref(name, String.valueOf(value));
 	}
 
-	@SuppressWarnings({"SameParameterValue"})
 	long GetLongPref(String name, long default_value)
 	{
 		String val = GetStringPref(name, String.valueOf(default_value));
 		if (val == null)
 			return default_value;
+
 		return Long.parseLong(val);
+	}
+
+	void SetFloatPref(String name, float value)
+	{
+		SetStringPref(name, String.valueOf(value));
+	}
+
+	float GetFloatPref(String name, float default_value)
+	{
+		String val = GetStringPref(name, String.valueOf(default_value)).trim();
+		if(val.isEmpty())
+			return 0.0f;
+
+		return Float.parseFloat(val);
 	}
 
 	void SetIntPref(String name, int value)
@@ -291,7 +383,7 @@ class Common
 		String val = GetStringPref(name, String.valueOf(default_value));
 		if (val == null)
 			return default_value;
-		return Integer.parseInt(val);
+		return (int)Float.parseFloat(val);
 	}
 
 	void SetBoolPref(String name, boolean value)
@@ -303,7 +395,6 @@ class Common
 		SetStringPref(name, val);
 	}
 
-	@SuppressWarnings({"SameParameterValue"})
 	boolean GetBoolPref(String name, boolean default_value)
 	{
 		String value = "0";
@@ -314,10 +405,35 @@ class Common
 		return val.equals("1");
 	}
 
-	RemoteViews buildUpdate(Context context, int dark_theme)
+	static void setWebview(WebView wv)
 	{
-		int bgColour, fgColour;
+		wv.getSettings().setUserAgentString(Common.UA);
+		wv.getSettings().setJavaScriptEnabled(true);
+		wv.setOverScrollMode(View.OVER_SCROLL_NEVER);
+		wv.setNestedScrollingEnabled(true);
+		wv.clearCache(true);
+		wv.clearHistory();
+		wv.clearFormData();
+		wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+		wv.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
+		wv.getSettings().setBuiltInZoomControls(true);
+		wv.getSettings().setDisplayZoomControls(false);
+		wv.getSettings().setLoadWithOverviewMode(true);
+		wv.getSettings().setUseWideViewPort(true);
+		wv.setWebChromeClient(new myWebChromeClient());
+	}
 
+	static final class myWebChromeClient extends WebChromeClient
+	{
+		@Override
+		public boolean onConsoleMessage(ConsoleMessage cm)
+		{
+			return true;
+		}
+	}
+
+	void buildUpdate(Context context)
+	{
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
 		Bitmap myBitmap = Bitmap.createBitmap(600, 440, Bitmap.Config.ARGB_8888);
 		Canvas myCanvas = new Canvas(myBitmap);
@@ -325,10 +441,9 @@ class Common
 		paint.setAntiAlias(true);
 		paint.setSubpixelText(true);
 
-		if(dark_theme == 0)
-			bgColour = GetIntPref("bgColour", 0xFFFFFFFF);
-		else
-			bgColour = GetIntPref("bgColour", 0xFF000000);
+		int bgColour = GetIntPref("bgColour", colours.widgetBG);
+		int fgColour = GetIntPref("fgColour", colours.widgetFG);
+
 		paint.setStyle(Paint.Style.FILL);
 		paint.setColor(bgColour);
 
@@ -336,15 +451,10 @@ class Common
 		int cornersRadius = 25;
 		myCanvas.drawRoundRect(rectF, cornersRadius, cornersRadius, paint);
 
-		if(dark_theme == 0)
-			fgColour = GetIntPref("fgColour", 0xFF000000);
-		else
-			fgColour = GetIntPref("fgColour", 0xFFFFFFFF);
-
-		if(bgColour == 0xFF000000 && fgColour == 0xFF000000)
-			fgColour = 0xFFFFFFFF;
-		else if(bgColour == 0xFFFFFFFF && fgColour == 0xFFFFFFFF)
-			fgColour = 0xFF000000;
+		if(bgColour == colours.Black && fgColour == colours.Black)
+			fgColour = colours.White;
+		else if(bgColour == colours.White && fgColour == colours.White)
+			fgColour = colours.Black;
 
 		paint.setStyle(Paint.Style.FILL);
 		paint.setColor(fgColour);
@@ -368,7 +478,7 @@ class Common
 			paint.setTextSize(64);
 
 			String rain = bits[20];
-			if (bits.length > 158 && !isEmpty(bits[158]))
+			if (bits.length > 158 && !bits[158].isEmpty())
 				rain = bits[158];
 
 			myCanvas.drawText(rain + bits[62], myCanvas.getWidth() - 20, 400, paint);
@@ -378,7 +488,14 @@ class Common
 		}
 
 		views.setImageViewBitmap(R.id.widget, myBitmap);
-		return views;
+
+		Intent launchActivity = new Intent(context, MainActivity.class);
+		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchActivity, PendingIntent.FLAG_IMMUTABLE);
+		views.setOnClickPendingIntent(R.id.widget, pendingIntent);
+
+		ComponentName thisWidget = new ComponentName(context, WidgetProvider.class);
+		AppWidgetManager manager = AppWidgetManager.getInstance(context);
+		manager.updateAppWidget(thisWidget, views);
 	}
 
 	private Day getFirstDay(List<Day> days)
@@ -399,7 +516,7 @@ class Common
 		LogMessage("Starting generateForecast()");
 		LogMessage("days: "+days);
 
-		if(isEmpty(days))
+		if(days.isEmpty())
 			return null;
 
 		StringBuilder sb = new StringBuilder();
@@ -520,7 +637,7 @@ class Common
 	String[] processBOM2(String data, boolean showHeader)
 	{
 
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -616,13 +733,13 @@ class Common
 				day.max += "&deg;C";
 				day.min += "&deg;C";
 			} else {
-				if(!isEmpty(day.max))
+				if(!day.max.isEmpty())
 					day.max += round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-				if(!isEmpty(day.min))
+				if(!day.min.isEmpty())
 					day.min += round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 			}
 
-			if(isEmpty(day.max) || day.max.startsWith("&deg;"))
+			if(day.max.isEmpty() || day.max.startsWith("&deg;"))
 				day.max = "N/A";
 
 			days.add(day);
@@ -695,7 +812,7 @@ class Common
 	{
 		LogMessage("Starting processBOM3()");
 
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -824,7 +941,7 @@ class Common
 
 	String[] processMET(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -900,7 +1017,7 @@ class Common
 
 	String[] processWCA(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1053,7 +1170,7 @@ class Common
 
 	String[] processWCAF(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1195,7 +1312,7 @@ class Common
 
 	String[] processWGOV(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1238,8 +1355,8 @@ class Common
 					String[] lines = tmp.split("&");
 					for(String line : lines)
 					{
-						line = line.trim();
-						String[] bits = line.split("=", 2);
+						String trim_line = line.trim();
+						String[] bits = trim_line.split("=", 2);
 						if(bits[0].trim().equals("i"))
 							fimg = "wgov" + bits[1].trim();
 						if(bits[0].trim().equals("j"))
@@ -1293,7 +1410,7 @@ class Common
 				} else {
 					Pattern p = Pattern.compile("\\d");
 					number = p.matcher(fn).replaceAll("");
-					if(!isEmpty(number))
+					if(!number.isEmpty())
 					{
 						fn = fn.replaceAll("\\d{2,3}\\.jpg$", ".jpg");
 						Bitmap bmp3 = loadImage(fn);
@@ -1365,7 +1482,7 @@ class Common
 
 	String[] processWMO(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1438,7 +1555,7 @@ class Common
 
 	String[] processBOM(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1555,7 +1672,7 @@ class Common
 
 	String[] processMetService(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1649,7 +1766,7 @@ class Common
 
 	String[] processDWD(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1750,7 +1867,7 @@ class Common
 
 	String[] processTempoItalia(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1843,7 +1960,7 @@ class Common
 
 	String[] processAEMET(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1888,7 +2005,7 @@ class Common
 					JSONArray jarr = jtmp.getJSONArray("estado_cielo");
 					for (int j = 0; j < jarr.length(); j++)
 					{
-						if (!isEmpty(jarr.getJSONObject(j).getString("descripcion")))
+						if (!jarr.getJSONObject(j).getString("descripcion").isEmpty())
 						{
 							estado_cielo = jarr.getJSONObject(j);
 							break;
@@ -1953,7 +2070,7 @@ class Common
 
 	String[] processWCOM(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2034,7 +2151,7 @@ class Common
 
 	String[] processMETIE(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2098,7 +2215,7 @@ class Common
 
 	String[] processOWM(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		List<Day> days = new ArrayList<>();
@@ -2161,7 +2278,7 @@ class Common
 
 	String[] processYR(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean use_icons = GetBoolPref("use_icons", false);
@@ -2250,7 +2367,7 @@ class Common
 
 	String[] processMetNO(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2495,7 +2612,7 @@ class Common
 
 	String[] processWZ(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean use_icons = GetBoolPref("use_icons", false);
@@ -2641,7 +2758,7 @@ class Common
 
 	String[] processYahoo(String data, boolean showHeader)
 	{
-		if(isEmpty(data))
+		if(data.isEmpty())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2743,32 +2860,36 @@ class Common
 	{
 		getWeather();
 		getForecast();
-		Intent intent = new Intent();
-		intent.setAction(Common.UPDATE_INTENT);
-		context.sendBroadcast(intent);
-		Common.LogMessage("update_intent broadcast.");
 
-		intent = new Intent(context, WidgetProvider.class);
-		intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
-		int[] ids = AppWidgetManager.getInstance(context.getApplicationContext()).getAppWidgetIds(new ComponentName(context.getApplicationContext(), WidgetProvider.class));
-		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
-		context.sendBroadcast(intent);
-		Common.LogMessage("widget intent broadcasted");
+		SendWidgetUpdate();
+
+		NotificationManager.updateNotificationMessage(Common.UPDATE_INTENT);
+		Common.LogMessage("update intent broadcasted");
 	}
 
-	void SendRefresh()
+	private void SendRefresh()
 	{
-		Intent intent = new Intent();
-		intent.setAction(Common.REFRESH_INTENT);
-		context.sendBroadcast(intent);
-		Common.LogMessage("refresh_intent broadcast.");
+		SendWidgetUpdate();
 
-		intent = new Intent(context, WidgetProvider.class);
+		NotificationManager.updateNotificationMessage(Common.REFRESH_INTENT);
+		Common.LogMessage("refresh intent broadcasted");
+	}
+
+	void SendWidgetUpdate()
+	{
+		buildUpdate(context);
+		Common.LogMessage("widget intent broadcasted");
+/*
+
+		NotificationManager.updateNotificationMessage(Common.WIDGET_UPDATE);
+		Common.LogMessage("widget update broadcast");
+
+		Intent intent = new Intent(context, WidgetProvider.class);
 		intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
 		int[] ids = AppWidgetManager.getInstance(context.getApplicationContext()).getAppWidgetIds(new ComponentName(context.getApplicationContext(), WidgetProvider.class));
 		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
 		context.sendBroadcast(intent);
-		Common.LogMessage("widget intent broadcasted");
+ */
 	}
 
 	void getWeather()
@@ -2785,11 +2906,11 @@ class Common
 			try
 			{
 				String fromURL = GetStringPref("BASE_URL", "");
-				if(isEmpty(fromURL))
+				if(fromURL.isEmpty())
 					return;
 
 				reallyGetWeather(fromURL);
-				SendRefresh();
+				//SendRefresh();
 			} catch (InterruptedException | InterruptedIOException ie) {
 				doStackOutput(ie);
 			} catch (Exception e) {
@@ -2805,7 +2926,7 @@ class Common
 	void reallyGetWeather(String fromURL) throws Exception
 	{
 		String line = downloadString(fromURL);
-		if(!isEmpty(line))
+		if(!line.isEmpty())
 		{
 			String[] bits = line.split("\\|");
 			if (Double.parseDouble(bits[0]) < inigo_version)
@@ -2855,17 +2976,13 @@ class Common
 
 	private void sendAlert()
 	{
-		Intent intent = new Intent();
-		intent.setAction(Common.INIGO_INTENT);
-		context.sendBroadcast(intent);
+		NotificationManager.updateNotificationMessage(Common.INIGO_INTENT);
 		Common.LogMessage("Send user note about upgrading the Inigo Plugin");
 	}
 
 	private void SendFailedIntent()
 	{
-		Intent intent = new Intent();
-		intent.setAction(FAILED_INTENT);
-		context.sendBroadcast(intent);
+		NotificationManager.updateNotificationMessage(Common.FAILED_INTENT);
 		LogMessage("failed_intent broadcast.");
 	}
 
@@ -2899,12 +3016,11 @@ class Common
 		return icon;
 	}
 
-	@SuppressWarnings("unused")
 	private void downloadImage(final String fileName, final String imageURL)
 	{
 		Thread t = new Thread(() ->
 		{
-			if (isEmpty(fileName) || isEmpty(imageURL))
+			if (fileName.isEmpty() || imageURL.isEmpty())
 				return;
 
 			Common.LogMessage("checking: " + imageURL);
@@ -2961,7 +3077,7 @@ class Common
 				// Draw arrow
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(0xff00487b);
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setStyle(Paint.Style.STROKE);
 				paint.setStrokeWidth(1);
 				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 9, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
@@ -2973,7 +3089,7 @@ class Common
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(0xff00487b);
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -2984,7 +3100,7 @@ class Common
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(0xff00487b);
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -3044,12 +3160,12 @@ class Common
 			comboImage.drawBitmap(bmp1, 0f, 0f, null);
 			comboImage.drawBitmap(bmp2, Math.round(x1 / 2.0), 0f, null);
 
-			paint.setColor(0xff000000);
+			paint.setColor(ContextCompat.getColor(context, R.color.Black));
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeWidth(4);
 			comboImage.drawLine( Math.round(x1 / 2.0), 0, Math.round(x1 / 2.0), y1, paint);
 
-			paint.setColor(0xffffffff);
+			paint.setColor(ContextCompat.getColor(context, R.color.White));
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeWidth(2);
 			comboImage.drawLine( Math.round(x1 / 2.0), 0, Math.round(x1 / 2.0), y1, paint);
@@ -3069,7 +3185,7 @@ class Common
 				// Draw arrow
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(0xff00487b);
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setStyle(Paint.Style.STROKE);
 				paint.setStrokeWidth(1);
 				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 9, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
@@ -3081,7 +3197,7 @@ class Common
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(0xff00487b);
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -3092,7 +3208,7 @@ class Common
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(0xff00487b);
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -3123,7 +3239,7 @@ class Common
 		canvas.drawBitmap(bmp1, 0f, 0f, null);
 		canvas.drawBitmap(bmp2, 0f, bmp1.getHeight() - bmp2.getHeight(), paint);
 		paint.setAntiAlias(true);
-		paint.setColor(0xff00487b);
+		paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 		paint.setTextSize(13);
 		paint.setTypeface(tf_bold);
 		Rect textBounds = new Rect();
@@ -3137,7 +3253,6 @@ class Common
 
 	// https://stackoverflow.com/questions/19945411/android-java-how-can-i-parse-a-local-json-file-from-assets-folder-into-a-listvi
 
-	@SuppressWarnings("CharsetObjectCanBeUsed")
 	private void loadNWS()
 	{
 		try
@@ -3146,7 +3261,7 @@ class Common
 			int size = is.available();
 			byte[] buffer = new byte[size];
 			if(is.read(buffer) > 0)
-				nws = new JSONObject(new String(buffer, "UTF-8"));
+				nws = new JSONObject(new String(buffer, StandardCharsets.UTF_8));
 			is.close();
 		} catch (Exception e) {
 			doStackOutput(e);
@@ -3171,7 +3286,6 @@ class Common
 		return downloadBinary(file, radar);
 	}
 
-	@SuppressWarnings("SameReturnValue")
 	boolean checkURL(String setting) throws Exception
 	{
 		Common.LogMessage("checking: " + setting);
@@ -3297,7 +3411,6 @@ class Common
 		}
 	}
 
-	@SuppressWarnings({"unused", "SameParameterValue"})
 	private void writeFile(String fileName, String data) throws Exception
 	{
 		File dir = new File(context.getExternalFilesDir(""), "weeWX");
@@ -3315,7 +3428,6 @@ class Common
 		publish(f);
 	}
 
-	@SuppressWarnings({"SameParameterValue"})
 	File downloadJSOUP(File f, String fromURL) throws Exception
 	{
 		File dir = f.getParentFile();
@@ -3397,7 +3509,6 @@ class Common
 			MediaScannerConnection.scanFile(context.getApplicationContext(), new String[]{f.getAbsolutePath()}, null, null);
 	}
 
-	@SuppressWarnings("SameReturnValue")
 	boolean downloadIcons() throws Exception
 	{
 		File f = new File(context.getExternalFilesDir(""), "weeWX");
@@ -3467,7 +3578,6 @@ class Common
 		fis.close();
 	}
 
-	@SuppressWarnings("BooleanMethodIsAlwaysInverted")
 	boolean checkForImages()
 	{
 		File dir = new File(context.getExternalFilesDir(""), "weeWX");
@@ -3493,7 +3603,6 @@ class Common
 		getForecast(false);
 	}
 
-	@SuppressWarnings({"WeakerAccess", "SameParameterValue"})
 	void getForecast(boolean force)
 	{
 		if(GetBoolPref("radarforecast", true))
@@ -3503,10 +3612,8 @@ class Common
 
 		final String forecast_url = GetStringPref("FORECAST_URL", "");
 
-		if(isEmpty(forecast_url))
-		{
+		if(forecast_url.isEmpty())
 			return;
-		}
 
 		if(!checkConnection() && !force)
 		{
@@ -3516,7 +3623,7 @@ class Common
 
 		final long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
-		if(isEmpty(GetStringPref("forecastData", "")) || GetLongPref("rssCheck", 0) + 7190 < current_time)
+		if(GetStringPref("forecastData", "").isEmpty() || GetLongPref("rssCheck", 0) + 7190 < current_time)
 		{
 			LogMessage("no forecast data or cache is more than 2 hour old");
 		} else {
@@ -3550,27 +3657,95 @@ class Common
 		t.start();
 	}
 
-	int getSystemTheme()
+	public int getDayNightMode()
 	{
-		switch (context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK)
+		return GetIntPref("DayNightMode", 2);
+	}
+
+	public int getDayNightTheme()
+	{
+		if(isPrefSet("DayNightMode"))
 		{
-			case Configuration.UI_MODE_NIGHT_NO ->
+			int isNightMode = getDayNightMode();
+			if (isNightMode == 0)
 			{
-				Common.LogMessage("Night mode off");
-				return 0;
-			}
-			case Configuration.UI_MODE_NIGHT_YES ->
-			{
-				Common.LogMessage("Night mode on");
-				return 1;
-			}
-			case Configuration.UI_MODE_NIGHT_UNDEFINED ->
-			{
-				Common.LogMessage("Night mode not set, default to off");
-				return 0;
+				Common.LogMessage("Night mode off...");
+				return AppCompatDelegate.MODE_NIGHT_NO;
+			} else if (isNightMode == 1) {
+				Common.LogMessage("Night mode on...");
+				return AppCompatDelegate.MODE_NIGHT_YES;
+			} else if (isNightMode == 2) {
+				Common.LogMessage("Set to system default...");
+				return AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
 			}
 		}
 
-		return 0;
+		Common.LogMessage("Theme not set yet, defaulting to system theme...");
+		return AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+	}
+
+	public static Activity getActivity(Context context)
+	{
+		while(context instanceof android.content.ContextWrapper)
+		{
+			if(context instanceof Activity)
+				return (Activity) context;
+
+			context = ((ContextWrapper)context).getBaseContext();
+		}
+
+		return null;
+	}
+
+	static class Colours
+	{
+		public final int widgetBG;
+		public final int widgetFG;
+
+		public final int White;
+		public final int Black;
+
+		public final int AlmostBlack;
+		public final int LightBlueAccent;
+		public final int DarkGray;
+		public final int LightGray;
+
+		public Colours(Context context)
+		{
+			widgetBG = ContextCompat.getColor(context, R.color.widgetBackgroundColour);
+			widgetFG = ContextCompat.getColor(context, R.color.widgetTextColour);
+
+			White = ContextCompat.getColor(context, R.color.White);
+			Black = ContextCompat.getColor(context, R.color.Black);
+
+			AlmostBlack = ContextCompat.getColor(context, R.color.AlmostBlack);
+			LightBlueAccent = ContextCompat.getColor(context, R.color.LightBlueAccent);
+			DarkGray = ContextCompat.getColor(context, R.color.DarkGray);
+			LightGray = ContextCompat.getColor(context, R.color.LightGray);
+		}
+	}
+
+	public static class NotificationLiveData extends LiveData<String>
+	{
+		public void setNotification(String message)
+		{
+			postValue(message);
+		}
+	}
+
+	public static class NotificationManager
+	{
+
+		private static final NotificationLiveData notificationLiveData = new NotificationLiveData();
+
+		public static void updateNotificationMessage(String message)
+		{
+			notificationLiveData.setNotification(message);
+		}
+
+		public static NotificationLiveData getNotificationLiveData()
+		{
+			return notificationLiveData;
+		}
 	}
 }

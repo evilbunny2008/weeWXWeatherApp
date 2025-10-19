@@ -1,10 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -13,44 +8,69 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
-import android.widget.LinearLayout;
-import android.widget.SeekBar;
 import android.widget.TextView;
 
-import java.text.DecimalFormat;
-import java.text.NumberFormat;
+import com.github.evilbunny2008.colourpicker.CPSlider;
+
 import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static java.lang.Math.round;
 
 public class Stats extends Fragment
 {
-	private final Common common;
+	private Common common;
 	private View rootView;
 	private WebView wv;
-	private SeekBar seekBar;
-	private int dark_theme;
-	private LinearLayout ll1;
 	private SwipeRefreshLayout swipeLayout;
+
+	public Stats()
+	{
+	}
 
 	Stats(Common common)
 	{
 		this.common = common;
-		dark_theme = common.GetIntPref("dark_theme", 2);
-		if(dark_theme == 2)
-			dark_theme = common.getSystemTheme();
+	}
+
+	public static Stats newInstance(Common common)
+	{
+		return new Stats(common);
 	}
 
 	@Nullable
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
+		super.onCreateView(inflater, container, savedInstanceState);
+
+		CommonViewModel commonViewModel = new ViewModelProvider(this).get(CommonViewModel.class);
+
+		if(commonViewModel.getCommon() == null)
+		{
+			commonViewModel.setCommon(common);
+		} else {
+			common = commonViewModel.getCommon();
+			common.reload(common.context);
+		}
+
 		rootView = inflater.inflate(R.layout.fragment_stats, container, false);
+
+		doStuff();
+		updateFields();
+
+		return rootView;
+	}
+
+	void doStuff()
+	{
+		wv = rootView.findViewById(R.id.webView1);
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setOnRefreshListener(() ->
 		{
@@ -60,107 +80,77 @@ public class Stats extends Fragment
 			swipeLayout.setRefreshing(false);
 		});
 
-		wv = rootView.findViewById(R.id.webView1);
-		wv.getSettings().setUserAgentString(Common.UA);
-		wv.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv.getScrollY() == 0));
-
-		ll1 = rootView.findViewById(R.id.ll1);
-
-		seekBar = rootView.findViewById(R.id.pageZoom);
-		seekBar.setProgress(common.GetIntPref("seekBar", 10));
-
-		if(dark_theme == 1)
+		swipeLayout.setOnChildScrollUpCallback((parent, child) ->
 		{
-			seekBar.setBackgroundColor(0xff000000);
-			ll1.setBackgroundColor(0xff000000);
-		} else {
-			seekBar.setBackgroundColor(0xffffffff);
-			ll1.setBackgroundColor(0xffffffff);
-		}
-		seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener()
-		{
-			@Override
-			public void onProgressChanged(SeekBar seekBar, int i, boolean b)
-			{
-				updateFields();
-				if(b)
-					common.SetIntPref("seekBar", i);
-			}
-
-			@Override
-			public void onStartTrackingTouch(SeekBar seekBar)
-			{
-			}
-
-			@Override
-			public void onStopTrackingTouch(SeekBar seekBar)
-			{
-			}
+			// Return true if the WebView can scroll up (i.e., we should NOT trigger refresh)
+			return wv.getScrollY() > 0;
 		});
 
-		updateFields();
-		return rootView;
+		Common.setWebview(wv);
+
+		CPSlider mySlider = rootView.findViewById(R.id.pageZoom);
+		int default_zoom = common.GetIntPref("mySlider", 100);
+		mySlider.setValue(default_zoom);
+		mySlider.addOnChangeListener((slider, value, fromUser) ->
+		{
+			if(fromUser)
+			{
+				common.SetIntPref("mySlider", (int)value);
+				wv.post(() -> setZoom((int)value));
+			}
+		});
+	}
+
+	void setZoom()
+	{
+		int default_zoom = common.GetIntPref("mySlider", 100);
+
+		if(default_zoom < 50)
+			default_zoom = 100;
+
+		if(default_zoom > 200)
+			default_zoom = 100;
+
+		setZoom(default_zoom);
+	}
+
+	void setZoom(int zoom)
+	{
+		int scrollX = wv.getScrollX();
+		int scrollY = wv.getScrollY();
+
+		wv.getSettings().setTextZoom(zoom);
+		wv.reload();
+
+		// After reload completes, restore scroll
+		wv.scrollTo(scrollX, scrollY);
+
+		Common.LogMessage("new value = " + zoom, true);
 	}
 
 	public void onResume()
 	{
 		super.onResume();
-		updateFields();
-		IntentFilter filter = new IntentFilter();
-		filter.addAction(Common.UPDATE_INTENT);
-		filter.addAction(Common.REFRESH_INTENT);
-		filter.addAction(Common.EXIT_INTENT);
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
-			common.context.registerReceiver(serviceReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
-		else
-			common.context.registerReceiver(serviceReceiver, filter);
+		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 		Common.LogMessage("stats.java -- registerReceiver");
 	}
 
 	public void onPause()
 	{
 		super.onPause();
-		try
-		{
-			common.context.unregisterReceiver(serviceReceiver);
-		} catch (Exception e)
-		{
-			//TODO: ignore this exception...
-		}
+		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 		Common.LogMessage("stats.java -- unregisterReceiver");
 	}
 
-	private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
+	private final Observer<String> notificationObserver = str ->
 	{
-		@Override
-		public void onReceive(Context context, Intent intent)
-		{
-			try
-			{
-				Common.LogMessage("We have a hit, so we should probably update the screen.");
-				String action = intent.getAction();
-				if (action != null && (action.equals(Common.UPDATE_INTENT) || action.equals(Common.REFRESH_INTENT)))
-				{
-					dark_theme = common.GetIntPref("dark_theme", 2);
-					if(dark_theme == 2)
-						dark_theme = common.getSystemTheme();
+		Common.LogMessage("notificationObserver == " + str);
 
-					if (dark_theme == 1)
-					{
-						seekBar.setBackgroundColor(0xff000000);
-						ll1.setBackgroundColor(0xff000000);
-					} else {
-						seekBar.setBackgroundColor(0xffffffff);
-						ll1.setBackgroundColor(0xffffffff);
-					}
+		if (str.equals(Common.UPDATE_INTENT) || str.equals(Common.REFRESH_INTENT))
+			updateFields();
 
-					updateFields();
-				} else if(action != null && action.equals(Common.EXIT_INTENT))
-					onPause();
-			} catch (Exception e) {
-				Common.doStackOutput(e);
-			}
-		}
+		if(str.equals(Common.EXIT_INTENT))
+			onPause();
 	};
 
 	private void forceRefresh()
@@ -178,15 +168,6 @@ public class Stats extends Fragment
 	{
 		if(!tv.getText().toString().equals(txt))
 			tv.setText(txt);
-
-		if(dark_theme == 0)
-		{
-			tv.setTextColor(0xff000000);
-			tv.setBackgroundColor(0xffffffff);
-		} else {
-			tv.setTextColor(0xffffffff);
-			tv.setBackgroundColor(0xff000000);
-		}
 	}
 
 	private String convert(String cur)
@@ -279,27 +260,14 @@ public class Stats extends Fragment
 			checkFields(rootView.findViewById(R.id.textView), bits[56]);
 			checkFields(rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
 
-			double percent = (seekBar.getProgress() + 90) / 100.00;
-			NumberFormat formatter = new DecimalFormat("#0.00");
-			String p = formatter.format(percent);
-
 			String stmp;
 			final StringBuilder sb = new StringBuilder();
 
-			String header = "<html>";
-			if(dark_theme == 1)
-				header += "<head><style>body{color: #fff; background-color: #000;}img{filter:invert(100%);}</style>" + Common.style_sheet_header + "</head>";
-			else
-				header += "<head>" + Common.style_sheet_header + "</head>";
-			header += "<body style='text-align:center; transform: scale(" + p + "); transform-origin: 0 0;'>";
-			String footer = "</body></html>";
-
-			sb.append(header);
-
+			sb.append(Common.current_html_headers);
 			sb.append("<span style='font-size:18pt;font-weight:bold;'>");
 			sb.append(getString(R.string.todayStats));
 			sb.append("</span>");
-			sb.append("<table style='width:100%;border:0px;'>");
+			sb.append("<table style='width:100%;border:0px;'>\n");
 
 			stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[3] + bits[60] + "</td><td>" + convert(bits[4]) +
 					"</td><td>" + convert(bits[2]) + "</td><td>" + bits[1] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td></tr>";
@@ -328,7 +296,7 @@ public class Stats extends Fragment
 				sb.append(stmp);
 			}
 
-			if(bits.length > 205 && !Common.isEmpty(bits[205]))
+			if(bits.length > 205 && !bits[205].isEmpty())
 			{
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[205] + "UVI</td><td>" + convert(bits[206]) +
 						"</td><td>" + convert(bits[208]) + "</td><td style='text-align:right;'>" + bits[207] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
@@ -338,10 +306,10 @@ public class Stats extends Fragment
 			String rain = bits[20];
 			String since = getString(R.string.since) + " mn";
 
-			if (bits.length > 160 && !Common.isEmpty(bits[160]))
+			if (bits.length > 160 && !bits[160].isEmpty())
 				rain = bits[158];
 
-			if (bits.length > 160 && !Common.isEmpty(bits[158]) && !Common.isEmpty(bits[160]))
+			if (bits.length > 160 && !bits[158].isEmpty() && !bits[160].isEmpty())
 				since = getString(R.string.since) + " " + bits[160];
 
 			stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-windy'></i></td><td colspan='3'>" + bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]) +
@@ -351,15 +319,15 @@ public class Stats extends Fragment
 			stmp = "<tr><td colspan='4'>&nbsp;</td><td colspan='2'>" + since + "</td></tr>";
 			sb.append(stmp);
 
-			stmp = "</table><br>";
+			stmp = "</table><br/>\n";
 			sb.append(stmp);
 
-			if (bits.length > 87 && !Common.isEmpty(bits[87]))
+			if (bits.length > 87 && !bits[87].isEmpty())
 			{
 				sb.append("<span style='font-size:18pt;font-weight:bold;'>");
 				sb.append(getString(R.string.yesterdayStats));
-				sb.append("</span>");
-				sb.append("<table style='width:100%;border:0px;'>");
+				sb.append("</span>\n");
+				sb.append("<table style='width:100%;border:0px;'>\n");
 
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[67] + bits[60] + "</td><td>" + convert(bits[68]) +
 						"</td><td>" + convert(bits[66]) + "</td><td>" + bits[65] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td></tr>";
@@ -388,7 +356,7 @@ public class Stats extends Fragment
 					sb.append(stmp);
 				}
 
-				if(bits.length > 209 && !Common.isEmpty(bits[209]))
+				if(bits.length > 209 && !bits[209].isEmpty())
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[209] + "UVI</td><td>" + convert(bits[210]) +
 							"</td><td>" + convert(bits[212]) + "</td><td style='text-align:right;'>" + bits[211] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
@@ -398,29 +366,29 @@ public class Stats extends Fragment
 				rain = bits[21];
 				String before = getString(R.string.before) + " mn";
 
-				if (bits.length > 160 && !Common.isEmpty(bits[159]))
+				if (bits.length > 160 && !bits[159].isEmpty())
 					rain = bits[159];
 
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-windy'></i></td><td colspan='3'>" + bits[69] + bits[61] + " " + bits[70] + " " + convert(bits[71]) +
 						"</td><td>" + rain + bits[62] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td></tr>";
 				sb.append(stmp);
 
-				if (bits.length > 160 && !Common.isEmpty(bits[159]) && !Common.isEmpty(bits[160]))
+				if (bits.length > 160 && !bits[159].isEmpty() && !bits[160].isEmpty())
 					before = getString(R.string.before) + " " + bits[160];
 
 				stmp = "<tr><td colspan='4'>&nbsp;</td><td colspan='2'>" + before + "</td></tr>";
 				sb.append(stmp);
 
-				stmp = "</table><br>";
+				stmp = "</table><br/>\n";
 				sb.append(stmp);
 			}
 
-			if(bits.length > 110 && !Common.isEmpty(bits[110]))
+			if(bits.length > 110 && !bits[110].isEmpty())
 			{
 				sb.append("<span style='font-size:18pt;font-weight:bold;'>");
 				sb.append(getString(R.string.this_months_stats));
-				sb.append("</span>");
-				sb.append("<table style='width:100%;border:0px;'>");
+				sb.append("</span>\n");
+				sb.append("<table style='width:100%;border:0px;'>\n");
 
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[90] + bits[60] + "</td><td>" + getTime(bits[91]) +
 						"</td><td>" + getTime(bits[89]) + "</td><td>" + bits[88] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td></tr>";
@@ -449,7 +417,7 @@ public class Stats extends Fragment
 					sb.append(stmp);
 				}
 
-				if(bits.length > 213 && !Common.isEmpty(bits[213]))
+				if(bits.length > 213 && !bits[213].isEmpty())
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[213] + "UVI</td><td>" + getTime(bits[214]) +
 							"</td><td>" + getTime(bits[216]) + "</td><td style='text-align:right;'>" + bits[215] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
@@ -460,16 +428,16 @@ public class Stats extends Fragment
 						"</td><td>" + bits[22] + bits[62] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td></tr>";
 				sb.append(stmp);
 
-				stmp = "</table><br>";
+				stmp = "</table><br/>\n";
 				sb.append(stmp);
 			}
 
-			if (bits.length > 133 && !Common.isEmpty(bits[133]))
+			if (bits.length > 133 && !bits[133].isEmpty())
 			{
-				sb.append("<span style='font-size:18pt;font-weight:bold;'>");
+				sb.append("<span style='font-size:18pt;font-weight:bold;'>\n");
 				sb.append(getString(R.string.this_year_stats));
-				sb.append("</span>");
-				sb.append("<table style='width:100%;border:0px;'>");
+				sb.append("</span>\n");
+				sb.append("<table style='width:100%;border:0px;'>\n");
 
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[113] + bits[60] + "</td><td>" + getTime(bits[114]) +
 						"</td><td>" + getTime(bits[112]) + "</td><td>" + bits[111] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td></tr>";
@@ -498,7 +466,7 @@ public class Stats extends Fragment
 					sb.append(stmp);
 				}
 
-				if(bits.length > 217 && !Common.isEmpty(bits[217]))
+				if(bits.length > 217 && !bits[217].isEmpty())
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[217] + "UVI</td><td>" + getTime(bits[218]) +
 							"</td><td>" + getTime(bits[220]) + "</td><td style='text-align:right;'>" + bits[219] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
@@ -509,16 +477,16 @@ public class Stats extends Fragment
 						"</td><td>" + bits[23] + bits[62] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td></tr>";
 				sb.append(stmp);
 
-				stmp = "</table><br>";
+				stmp = "</table><br/>\n";
 				sb.append(stmp);
 			}
 
-			if (bits.length > 157 && !Common.isEmpty(bits[157]))
+			if (bits.length > 157 && !bits[157].isEmpty())
 			{
-				sb.append("<span style='font-size:18pt;font-weight:bold;'>");
+				sb.append("<span style='font-size:18pt;font-weight:bold;'>\n");
 				sb.append(getString(R.string.all_time_stats));
-				sb.append("</span>");
-				sb.append("<table style='width:100%;border:0px;'>");
+				sb.append("</span>\n");
+				sb.append("<table style='width:100%;border:0px;'>\n");
 
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[136] + bits[60] + "</td><td>" + getTime(bits[137]) +
 						"</td><td>" + getTime(bits[135]) + "</td><td>" + bits[134] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td></tr>";
@@ -547,7 +515,7 @@ public class Stats extends Fragment
 					sb.append(stmp);
 				}
 
-				if(bits.length > 221 && !Common.isEmpty(bits[221]))
+				if(bits.length > 221 && !bits[221].isEmpty())
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[221] + "UVI</td><td>" + getTime(bits[222]) +
 							"</td><td>" + getTime(bits[224]) + "</td><td style='text-align:right;'>" + bits[223] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
@@ -558,16 +526,19 @@ public class Stats extends Fragment
 						"</td><td>" + bits[157] + bits[62] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td></tr>";
 				sb.append(stmp);
 
-				stmp = "</table><br>";
+				stmp = "</table><br/>\n";
 				sb.append(stmp);
 			}
 
-			sb.append(footer);
+			sb.append(Common.html_footer);
 
-			mHandler.post(() ->
+			String html = sb.toString();
+
+			wv.post(() ->
 			{
-				wv.loadDataWithBaseURL("file:///android_res/drawable/", sb.toString(), "text/html", "utf-8", null);
+				wv.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
 				swipeLayout.setRefreshing(false);
+				setZoom();
 			});
 		});
 

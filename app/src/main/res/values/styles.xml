@@ -1,55 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<style name="AppTheme.weeWxWeatherApp.Common" parent="AppTheme.weeWxWeatherApp">
-		<!-- Customize your theme here. -->
-		<item name="windowActionBar">false</item>
+		<item name="windowActionBar">true</item>
 		<item name="windowNoTitle">true</item>
-		<item name="android:textColor">@color/black</item>
+		<item name="android:textColor">@color/textColor</item>
 		<item name="android:textSize">20sp</item>
 		<item name="android:navigationBarColor">@color/colorPrimary</item>
 		<item name="android:statusBarColor">@color/colorPrimary</item>
-	</style>
-
-	<style name="AppTheme" parent="AppTheme.weeWxWeatherApp.Common">
-		<!-- Stub -->
-	</style>
-
-	<style name="AppTheme.weeWxWeatherApp.WhiteBackground" parent="AppTheme.weeWxWeatherApp">
-		<item name="android:background">@color/white</item>
 	</style>
 
 	<style name="AppTheme.weeWxWeatherApp.AppBarLayout" parent="AppTheme.weeWxWeatherApp.Common">
 		<item name="android:background">@color/colorPrimary</item>
 		<item name="colorPrimary">@color/white</item>
 		<item name="colorPrimaryDark">@color/white</item>
-		<item name="tabSelectedTextColor">@color/white</item>
-		<item name="tabTextColor">@color/white</item>
+		<item name="android:textColorPrimary">@color/white</item>
+		<item name="android:textColorSecondary">@color/white</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.Other" parent="AppTheme.weeWxWeatherApp.Common">
-		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorAccent">@color/colorAccent</item>
+	<style name="AppTheme.weeWxWeatherApp.TabLayout" parent="AppTheme.weeWxWeatherApp.Common">
+		<item name="android:background">@color/colorPrimary</item>
+		<item name="tabSelectedTextColor">@color/tabSelectedTextColor</item>
+		<item name="tabIndicatorColor">@color/tabIndicatorColor</item>
+		<item name="tabIndicatorHeight">5dp</item>
+		<item name="tabTextColor">@color/tabSelectedTextColor</item>
+		<item name="tabIndicatorFullWidth">true</item>
+		<item name="tabInlineLabel">true</item>
+		<item name="tabMode">scrollable</item>
 	</style>
 
-	<style name="DatePickerSpinner" parent="AppTheme.weeWxWeatherApp.Common">
-		<item name="android:textSize">22sp</item>
-		<item name="android:textColorPrimary">@color/colorPrimaryDark</item>
-	</style>
-
-	<style name="BigTextStyle" parent="AppTheme.weeWxWeatherApp.Common">
-		<item name="android:textSize">48sp</item>
-	</style>
-
-	<style name="HeaderTextStyle" parent="AppTheme.weeWxWeatherApp.Common">
-		<item name="android:textSize">30sp</item>
-	</style>
-
-	<style name="BiggerTextStyle" parent="AppTheme.weeWxWeatherApp.Common">
-		<item name="android:textSize">24sp</item>
-	</style>
-
-	<style name="SmallTextStyle" parent="AppTheme.weeWxWeatherApp.Common">
-		<item name="android:textSize">14sp</item>
+	<style name="AppTheme.weeWxWeatherApp.ViewPager" parent="AppTheme.weeWxWeatherApp.Common">
+		<item name="android:background">@color/colorBackground</item>
 	</style>
 </resources>

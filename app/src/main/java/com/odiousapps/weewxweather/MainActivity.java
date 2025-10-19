@@ -1,30 +1,23 @@
 package com.odiousapps.weewxweather;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.appwidget.AppWidgetManager;
-import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.LinearLayout;
-import android.widget.RemoteViews;
+import android.widget.ScrollView;
 
-import com.github.evilbunny2008.androidmaterialcolorpickerdialog.ColorPicker;
+import com.github.evilbunny2008.colourpicker.CPEditText;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.color.DynamicColors;
 import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.tabs.TabLayout;
@@ -35,6 +28,7 @@ import com.google.android.material.textview.MaterialTextView;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -42,7 +36,7 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.text.HtmlCompat;
 import androidx.core.view.GravityCompat;
@@ -54,18 +48,21 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
+import androidx.lifecycle.Observer;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener
+@SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag", "NotifyDataSetChanged"})
+public class MainActivity extends AppCompatActivity
 {
 	private TabLayout tabLayout;
 	private Common common;
 	private DrawerLayout mDrawerLayout;
 	private TextInputEditText settingsURL;
 	private TextInputEditText customURL;
-	//private TextInputEditText fgColour;
-	//private TextInputEditText bgColour;
+	private CPEditText fgColour;
+	private CPEditText bgColour;
 	private MaterialButton b1;
 	private MaterialButton b2;
 	private MaterialButton b3;
@@ -73,71 +70,105 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	private AutoCompleteTextView s1;
 	private AutoCompleteTextView s2;
 	private MaterialSwitch show_indoor, metric_forecasts;
-	private MaterialTextView tv;
 
 	private AlertDialog dialog;
 
-	private LinearLayout settingsLayout;
+	private LinearLayout settingLayout;
 	private LinearLayout aboutLayout;
 
-	private static int pos;
-	private static int theme;
+	private ScrollView scrollView;
+
+	SectionsStateAdapter mSectionsPagerAdapter;
+
+	private static int UpdateFrequency;
+	private static int DayNightMode;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main_activity);
-
-		for (java.lang.reflect.Method m : ColorPicker.class.getMethods())
-			Log.d("evilbunny CP_METHOD", m.getName());
 
 		WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
-		final CoordinatorLayout rootView = findViewById(R.id.main_content);
+		DynamicColors.applyToActivitiesIfAvailable(this.getApplication());
 
-		ViewCompat.setOnApplyWindowInsetsListener(rootView, (view, insets) ->
+		setContentView(R.layout.main_activity);
+
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
 		{
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
-			{
-				WindowInsetsControllerCompat insetsController = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
-				insetsController.show(WindowInsetsCompat.Type.systemBars());
-			}
+			WindowInsetsControllerCompat insetsController = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+			insetsController.show(WindowInsetsCompat.Type.systemBars());
+		}
 
+		mDrawerLayout = findViewById(R.id.drawer_layout);
+		mDrawerLayout.addDrawerListener(handleDrawerListener);
+
+		scrollView = findViewById(R.id.sv1);
+
+		final int initialLeft = scrollView.getPaddingLeft();
+		final int initialTop = scrollView.getPaddingTop();
+		final int initialRight = scrollView.getPaddingRight();
+		final int initialBottom = scrollView.getPaddingBottom();
+
+		ViewCompat.setOnApplyWindowInsetsListener(scrollView, (view, insets) ->
+		{
 			Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+			Insets imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime());
 
-			// Preserve existing padding
-			int left = view.getPaddingLeft();
-			int right = view.getPaddingRight();
+			int bottom = initialBottom + Math.max(systemInsets.bottom, imeInsets.bottom);
 
-			// Add system top inset to the existing top padding
-			int top = view.getPaddingTop() + systemInsets.top;
-			int bottom = view.getPaddingBottom() + systemInsets.bottom;
+			Common.LogMessage("Setting scrollView Insets Debug...");
+			Common.LogMessage("SYS bottom: " + systemInsets.bottom);
+			Common.LogMessage("IME bottom: " + imeInsets.bottom);
+			Common.LogMessage("New Bottom Padding: " + bottom);
 
-			view.setPadding(left, top, right, bottom);
+			scrollView.setPadding(
+					initialLeft + systemInsets.left,
+					initialTop + systemInsets.top,
+					initialRight + systemInsets.right,
+					bottom
+			);
 
 			return insets;
 		});
 
 		common = new Common(this);
 
-		mDrawerLayout = findViewById(R.id.drawer_layout);
+		common.SendWidgetUpdate();
 
 		OnBackPressedDispatcher onBackPressedDispatcher = getOnBackPressedDispatcher();
 		onBackPressedDispatcher.addCallback(this, onBackPressedCallback);
 
 		tabLayout = findViewById(R.id.tabs);
 
-		SectionsStateAdapter mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
-		mSectionsPagerAdapter.addFragment(new Weather(common));
-		mSectionsPagerAdapter.addFragment(new Stats(common));
-		mSectionsPagerAdapter.addFragment(new Forecast(common));
-		mSectionsPagerAdapter.addFragment(new Webcam(common));
-		mSectionsPagerAdapter.addFragment(new Custom(common));
-
 		ViewPager2 mViewPager = findViewById(R.id.container);
-		//mViewPager.setUserInputEnabled(false);
+		mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
+		mSectionsPagerAdapter.addFragment(Weather.newInstance(common));
+		mSectionsPagerAdapter.addFragment(Stats.newInstance(common));
+		mSectionsPagerAdapter.addFragment(Forecast.newInstance(common));
+		mSectionsPagerAdapter.addFragment(Webcam.newInstance(common));
+		mSectionsPagerAdapter.addFragment(Custom.newInstance(common));
 		mViewPager.setAdapter(mSectionsPagerAdapter);
+
+		// Reduce swipe sensitivity
+		try
+		{
+			Field recyclerViewField = ViewPager2.class.getDeclaredField("mRecyclerView");
+			recyclerViewField.setAccessible(true);
+			RecyclerView recyclerView = (RecyclerView) recyclerViewField.get(mViewPager);
+
+			Field touchSlopField = RecyclerView.class.getDeclaredField("mTouchSlop");
+			touchSlopField.setAccessible(true);
+			Object tmp = touchSlopField.get(recyclerView);
+			if(tmp != null)
+			{
+				int touchSlop = (int)tmp;
+				touchSlopField.set(recyclerView, touchSlop * 3); // 3× less sensitive
+			}
+		} catch (Exception e) {
+			Common.doStackOutput(e);
+		}
+
 		String[] tabTitles;
 		if(common.GetBoolPref("radarforecast", true))
 			tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.forecast2), getString(R.string.webcam2), getString(R.string.custom2)};
@@ -147,13 +178,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		try
 		{
-			if(Common.isEmpty(common.GetStringPref("BASE_URL", "")))
+			if(common.GetStringPref("BASE_URL", "").isEmpty())
 				mDrawerLayout.openDrawer(GravityCompat.START);
 		} catch (Exception e) {
 			Common.doStackOutput(e);
 		}
 
-		settingsLayout = findViewById(R.id.settingsLayout);
+		settingLayout = findViewById(R.id.settingLayout);
 		aboutLayout = findViewById(R.id.aboutLayout);
 
 		settingsURL = findViewById(R.id.settings);
@@ -169,10 +200,26 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		b3 = findViewById(R.id.aboutButton);
 		b4 = findViewById(R.id.settingsButton);
 
-		//fgColour = findViewById(R.id.fg_Picker);
-	//	bgColour = findViewById(R.id.bg_Picker);
+		// https://github.com/Pes8/android-material-color-picker-dialog
+		fgColour = findViewById(R.id.fg_Picker);
+		String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", ContextCompat.getColor(common.context, R.color.White))).toUpperCase(Locale.ENGLISH);
+		Common.LogMessage("Setting fgColour to "+ hex);
+		fgColour.setText(hex);
+		fgColour.setOnColourPickedListener((colour, fg) ->
+		{
+			common.SetIntPref("fgColour", colour);
+			resetActivity();
+		});
 
-		tv = findViewById(R.id.aboutText);
+		bgColour = findViewById(R.id.bg_Picker);
+		hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", ContextCompat.getColor(common.context, R.color.White))).toUpperCase(Locale.ENGLISH);
+		Common.LogMessage("Setting bgColour to "+ hex);
+		bgColour.setText(hex);
+		bgColour.setOnColourPickedListener((colour, bg) ->
+		{
+			common.SetIntPref("fgColour", colour);
+			resetActivity();
+		});
 
 		Thread t = new Thread(() ->
 		{
@@ -191,6 +238,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 		});
 
 		t.start();
+	}
+
+	private void resetActivity()
+	{
+		Common.LogMessage("Resetting mSectionsPagerAdapter");
+		weeWXApp.applyTheme(common.context);
+		Common.getActivity(common.context).recreate();
 	}
 
 	private void showUpdateAvailable()
@@ -217,10 +271,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
 		s1.setAdapter(adapter);
-		s1.setOnItemClickListener(this);
-		pos = common.GetIntPref("updateInterval", 1);
-		if(pos >= 0 && pos < paths.length)
-			s1.setText(paths[pos], false);
+		s1.setOnItemClickListener((parent, view, position, id) ->
+		{
+			UpdateFrequency = position;
+			Common.LogMessage("New UpdateFrequency == " + UpdateFrequency, true);
+		});
+		UpdateFrequency = common.GetIntPref("updateInterval", 1);
+		if(UpdateFrequency >= 0 && UpdateFrequency < paths.length)
+			s1.setText(paths[UpdateFrequency], false);
 		else
 			s1.setText(getString(R.string.every_5_minutes));
 
@@ -233,19 +291,24 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		String[] themeString = new String[]
 		{
-			getString(R.string.use_light_theme),
-			getString(R.string.use_dark_theme2),
-			getString(R.string.use_system_default)
+			getString(R.string.light_theme),
+			getString(R.string.dark_theme),
+			getString(R.string.system_default)
 		};
 
 		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(common.context, R.layout.spinner_layout, themeString);
 		s2.setAdapter(adapter2);
-		s2.setOnItemClickListener(this);
-		theme = common.GetIntPref("dark_theme", 2);
-		if (theme >= 0 && theme < themeString.length)
-			s2.setText(themeString[theme], false);
+		s2.setOnItemClickListener((parent, view, position, id) ->
+		{
+			DayNightMode = position;
+			Common.LogMessage("New DayNightMode == " + DayNightMode, true);
+		});
+
+		DayNightMode = common.GetIntPref("DayNightMode", 2);
+		if (DayNightMode >= 0 && DayNightMode < themeString.length)
+			s2.setText(themeString[DayNightMode], false);
 		else
-			s2.setText(getString(R.string.use_system_default));
+			s2.setText(getString(R.string.system_default));
 
 		MaterialRadioButton showRadar = findViewById(R.id.showRadar);
 		showRadar.setChecked(common.GetBoolPref("radarforecast", true));
@@ -276,14 +339,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 		b3.setOnClickListener(arg0 ->
 		{
-			settingsLayout.setVisibility(View.GONE);
+			settingLayout.setVisibility(View.GONE);
 			aboutLayout.setVisibility(View.VISIBLE);
+			scrollView.smoothScrollTo(0, 0);
 		});
 
 		b4.setOnClickListener(arg0 ->
 		{
 			aboutLayout.setVisibility(View.GONE);
-			settingsLayout.setVisibility(View.VISIBLE);
+			settingLayout.setVisibility(View.VISIBLE);
+			scrollView.smoothScrollTo(0, 0);
 		});
 
 		settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
@@ -300,72 +365,32 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				hideKeyboard(v);
 		});
 
-		LinearLayout settingsLayout = findViewById(R.id.settingsLayout);
-		settingsLayout.setVisibility(View.VISIBLE);
-		LinearLayout aboutLayout = findViewById(R.id.aboutLayout);
+		settingLayout.setVisibility(View.VISIBLE);
 		aboutLayout.setVisibility(View.GONE);
 
-		String lines = "<html><body>Big thanks to the <a href='http://weewx.com'>weeWX project</a>, as this app " +
+		MaterialTextView mtv1 = findViewById(R.id.header_needs_underlining);
+		String lines = "<b><u>" + getString(R.string.nav_header_title) + "</u></b>";
+		mtv1.setText(HtmlCompat.fromHtml(lines, HtmlCompat.FROM_HTML_MODE_LEGACY));
+		mtv1.setMovementMethod(LinkMovementMethod.getInstance());
+
+		lines = "Big thanks to the <a href='http://weewx.com'>weeWX project</a>, as this app " +
 				"wouldn't be possible otherwise.<br><br>" +
 				"Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
 				"is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and " +
 				"<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers" +
 				"<br><br>" +
-				"weeWX Weather App v" + common.getAppVersion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.</body</html>" +
-				"<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
+				"weeWX Weather App v" + common.getAppVersion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.";
 
+		MaterialTextView tv = findViewById(R.id.aboutText);
 		tv.setText(HtmlCompat.fromHtml(lines, HtmlCompat.FROM_HTML_MODE_LEGACY));
 		tv.setMovementMethod(LinkMovementMethod.getInstance());
-
-		// https://github.com/Pes8/android-material-color-picker-dialog
-
-		//String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase(Locale.ENGLISH);
-		//fgColour.setText(hex);
-//		fgColour.setOnClickListener(v -> showPicker(common.GetIntPref("fgColour", 0xFF000000),true));
-
-		//hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase(Locale.ENGLISH);
-		//bgColour.setText(hex);
-//		bgColour.setOnClickListener(v -> showPicker(common.GetIntPref("bgColour", 0xFFFFFFFF),false));
 	}
-/*
-	private void showPicker(int col, final boolean fgColour)
-	{
-		final ColorPicker cp = new ColorPicker(MainActivity.this, col >> 24 & 255, col >> 16 & 255, col >> 8 & 255, col & 255);
 
-		cp.setCallback(colour ->
-		{
-			Common.LogMessage("Pure Hex" + Integer.toHexString(colour));
-
-			if(fgColour)
-				common.SetIntPref("fgColour", colour);
-			else
-				common.SetIntPref("bgColour", colour);
-
-			common.SendIntents();
-
-			cp.dismiss();
-		});
-
-		cp.show();
-	}
-*/
 	private void hideKeyboard(View view)
 	{
 		InputMethodManager inputMethodManager = (InputMethodManager)common.context.getSystemService(Activity.INPUT_METHOD_SERVICE);
 		if(inputMethodManager != null)
 			inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-	}
-
-	public void onItemClick(AdapterView<?> parent, View v, int position, long id)
-	{
-		Common.LogMessage("Before -> pos="+pos+",theme="+theme);
-
-		if(parent.getId() == R.id.spinner1)
-			pos = position;
-		else if(parent.getId() == R.id.spinner2)
-			theme = position;
-
-		Common.LogMessage("After -> pos="+pos+",theme="+theme);
 	}
 
 	private void checkReally()
@@ -389,11 +414,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						if(!file.delete())
 							Common.LogMessage("couldn't delete radar.gif");
 
-					RemoteViews remoteViews = common.buildUpdate(common.context, theme);
-					ComponentName thisWidget = new ComponentName(common.context, WidgetProvider.class);
-					AppWidgetManager manager = AppWidgetManager.getInstance(common.context);
-					manager.updateAppWidget(thisWidget, remoteViews);
-					Common.LogMessage("widget intent broadcasted");
+					common.SendWidgetUpdate();
 
 					dialog_interface.cancel();
 
@@ -473,7 +494,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			}
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().trim() : "";
-			if(Common.isEmpty(settings_url) || settings_url.equals("https://example.com/weewx/inigo-settings.txt"))
+			if(settings_url.isEmpty() || settings_url.equals("https://example.com/weewx/inigo-settings.txt"))
 			{
 				common.SetStringPref("lastError", getString(R.string.url_was_default_or_empty));
 				runOnUiThread(() -> {
@@ -514,10 +535,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						custom = mb[1];
 				}
 
-				if(Common.isEmpty(fctype))
+				if(fctype.isEmpty())
 					fctype = "Yahoo";
 
-				if(Common.isEmpty(radtype))
+				if(radtype.isEmpty())
 					radtype = "image";
 
 				validURL = true;
@@ -544,7 +565,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			Common.LogMessage("data == " + data);
 
-			if (Common.isEmpty(data))
+			if (data.isEmpty())
 			{
 				common.SetStringPref("lastError", getString(R.string.data_url_was_blank));
 				runOnUiThread(() -> {
@@ -590,7 +611,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				return;
 			}
 
-			if (!Common.isEmpty(radar) && !radar.equals(oldradar))
+			if (!radar.isEmpty() && !radar.equals(oldradar))
 			{
 				try
 				{
@@ -624,7 +645,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				}
 			}
 
-			if(!Common.isEmpty(forecast))
+			if(!forecast.isEmpty())
 			{
 				try
 				{
@@ -748,7 +769,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 						{
 							metierev = "https://prodapi.metweb.ie/location/reverse/" + forecast.replaceAll(",", "/");
 							forecast = "https://prodapi.metweb.ie/weather/daily/" + forecast.replaceAll(",", "/") + "/10";
-							if(Common.isEmpty(common.GetStringPref("metierev", "")) || !forecast.equals(oldforecast))
+							if(common.GetStringPref("metierev", "").isEmpty() || !forecast.equals(oldforecast))
 							{
 								metierev = common.downloadForecast(fctype, metierev, null);
 								JSONObject jobj = new JSONObject(metierev);
@@ -802,7 +823,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				return;
 			}
 
-			if (!Common.isEmpty(forecast) && !oldforecast.equals(forecast))
+			if (!forecast.isEmpty() && !oldforecast.equals(forecast))
 			{
 				Common.LogMessage("forecast checking: " + forecast);
 
@@ -839,7 +860,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				}
 			}
 
-			if (!Common.isEmpty(webcam) && !webcam.equals(oldwebcam))
+			if (!webcam.isEmpty() && !webcam.equals(oldwebcam))
 			{
 				Common.LogMessage("checking: " + webcam);
 
@@ -861,9 +882,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 			}
 
 			custom_url = customURL.getText() != null ? customURL.getText().toString().trim() : "";
-			if(Common.isEmpty(custom_url))
+			if(custom_url.isEmpty())
 			{
-				if (!Common.isEmpty(custom) && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
+				if (!custom.isEmpty() && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
 				{
 					try
 					{
@@ -922,14 +943,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 				}
 			}
 
-			if(Common.isEmpty(forecast))
+			if(forecast.isEmpty())
 			{
 				common.SetLongPref("rssCheck", 0);
 				common.SetStringPref("forecastData", "");
 			}
 
 			common.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
-			common.SetIntPref("updateInterval", pos);
+			common.SetIntPref("updateInterval", UpdateFrequency);
 			common.SetStringPref("BASE_URL", data);
 			common.SetStringPref("radtype", radtype);
 			common.SetStringPref("RADAR_URL", radar);
@@ -942,39 +963,60 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 			common.SetBoolPref("metric", metric_forecasts.isChecked());
 			common.SetBoolPref("showIndoor", show_indoor.isChecked());
-			common.SetIntPref("dark_theme", theme);
+			common.SetIntPref("DayNightMode", DayNightMode);
 			common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
 			common.SetBoolPref("use_icons", use_icons.isChecked());
 
-			common.SendRefresh();
-			runOnUiThread(() -> {
-				if(!common.GetBoolPref("radarforecast", true))
-					//noinspection ConstantConditions
-					tabLayout.getTabAt(2).setText(R.string.radar);
-				else
-					//noinspection ConstantConditions
-					tabLayout.getTabAt(2).setText(R.string.forecast2);
-
+			runOnUiThread(() ->
+			{
+				Common.LogMessage("Do some stuff here...");
 				b1.setEnabled(true);
 				b2.setEnabled(true);
 				dialog.dismiss();
 				mDrawerLayout.closeDrawer(GravityCompat.START);
+				resetActivity();
 			});
 		});
 
 		t.start();
 	}
 
-	OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true)
+	final DrawerLayout.SimpleDrawerListener handleDrawerListener = new DrawerLayout.SimpleDrawerListener()
+	{
+		@Override
+		public void onDrawerOpened(@NonNull View drawerView)
+		{
+			InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+			View focus = getCurrentFocus();
+			if(imm != null && focus != null)
+			{
+				Common.LogMessage("Detected a back press in the DrawerLayout...");
+				imm.hideSoftInputFromWindow(focus.getWindowToken(), 0);
+				focus.clearFocus();
+			}
+		}
+	};
+
+	final OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true)
 	{
 		@Override
 		public void handleOnBackPressed()
 		{
-			if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
+			Common.LogMessage("Detected an application back press...");
+			View focus = getCurrentFocus();
+			InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+			if(focus != null && imm != null && imm.isAcceptingText())
 			{
+				Common.LogMessage("Let's hide the on screen keyboard...");
+				imm.hideSoftInputFromWindow(focus.getWindowToken(), 0);
+				focus.postDelayed(focus::clearFocus, 100);
+			} else if(mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
+				Common.LogMessage("Let's shut the draw...");
 				mDrawerLayout.closeDrawer(GravityCompat.START);
 			} else {
-				Common.LogMessage("finishing up.");
+				Common.LogMessage("Let's finish up...");
+				setEnabled(false);
+				getOnBackPressedDispatcher().onBackPressed();
 				finish();
 			}
 		}
@@ -983,83 +1025,46 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 	@Override
 	public void onPause()
 	{
-		unregisterReceiver(serviceReceiver);
+		Common.LogMessage("Stopping app updates");
+		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 		super.onPause();
 	}
 
-	@SuppressLint("UnspecifiedRegisterReceiverFlag")
 	@Override
 	protected void onResume()
 	{
+		Common.LogMessage("Resuming app updates");
 		super.onResume();
-
-		IntentFilter filter = new IntentFilter();
-		filter.addAction(Common.UPDATE_INTENT);
-		filter.addAction(Common.FAILED_INTENT);
-		filter.addAction(Common.TAB0_INTENT);
-		filter.addAction(Common.INIGO_INTENT);
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
-			registerReceiver(serviceReceiver, filter, RECEIVER_NOT_EXPORTED);
-		else
-			registerReceiver(serviceReceiver, filter);
-
-		Common.LogMessage("resuming app updates");
-		common.SendIntents();
+		Common.NotificationManager.getNotificationLiveData().observe(this, notificationObserver);
 	}
 
-	public void getWeather()
+	private final Observer<String> notificationObserver = str ->
 	{
-		common.getWeather();
-	}
+		Common.LogMessage("notificationObserver: " + str);
 
-	private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
-	{
-		@SuppressLint("SuspiciousIndentation")
-		@Override
-		public void onReceive(Context context, Intent intent)
+		if(str.equals(Common.TAB0_INTENT))
 		{
-			try
+			common.getWeather();
+			runOnUiThread(() ->
 			{
-				Common.LogMessage("We have a hit, so we should probably update the screen.");
-				String action = intent.getAction();
-				if(action != null && action.equals(Common.TAB0_INTENT))
-				{
-					getWeather();
+				TabLayout.Tab tab = tabLayout.getTabAt(0);
+				if(tab != null)
+					tab.select();
+			});
+		}
 
-					runOnUiThread(() ->
+		if(str.equals(Common.INIGO_INTENT))
+			showUpdateAvailable();
+
+		if(str.equals(Common.FAILED_INTENT))
+		{
+			runOnUiThread(() -> new AlertDialog
+					.Builder(common.context)
+					.setTitle(getString(R.string.error_occurred_while_attempting_to_update))
+					.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+					.setPositiveButton("Ok", (dialog, which) ->
 					{
-						//noinspection ConstantConditions
-						tabLayout.getTabAt(0).select();
-					});
-				}
-
-	//			if(action != null && action.equals(Common.UPDATE_INTENT))
-	//			{
-					//String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", 0xFF000000)).toUpperCase(Locale.ENGLISH);
-					//fgColour.setText(hex);
-					//hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", 0xFFFFFFFF)).toUpperCase(Locale.ENGLISH);
-					//bgColour.setText(hex);
-	//			}
-
-				if(action != null && action.equals(Common.INIGO_INTENT))
-				{
-					showUpdateAvailable();
-				}
-
-				if(action != null && action.equals(Common.FAILED_INTENT))
-				{
-					runOnUiThread(() -> new AlertDialog
-							.Builder(common.context)
-							.setTitle(getString(R.string.error_occurred_while_attempting_to_update))
-							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-							.setPositiveButton("Ok", (dialog, which) ->
-							{
-							}).show());
-
-				}
-			} catch (Exception e) {
-				Common.doStackOutput(e);
-			}
+					}).show());
 		}
 	};
 

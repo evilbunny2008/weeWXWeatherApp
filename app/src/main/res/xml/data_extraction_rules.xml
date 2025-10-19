@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <data-extraction-rules>
-    <cloud-backup>
-    </cloud-backup>
+	<!-- Include SharedPreferences for extraction -->
+	<include domain="sharedpref" path="." />
+
+	<!-- Include app files -->
+	<include domain="file" path="." />
+
+	<!-- Include databases -->
+	<include domain="database" path="." />
+
+	<!-- Exclude cache folder under files/ -->
+	<exclude domain="file" path="cache/" />
+
+	<!-- Exclude temp folder under files/ -->
+	<exclude domain="file" path="temp/" />
 </data-extraction-rules>

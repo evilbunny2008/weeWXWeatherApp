@@ -30,8 +30,10 @@ import static java.lang.Math.sin;
  * XML attributes
  * See com.github.rongi.rotate_layout.R.styleable#RotateLayout RotateLayout Attributes,
  */
-public class RotateLayout extends ViewGroup {
 
+@SuppressWarnings("unused")
+public class RotateLayout extends ViewGroup
+{
 	private int angle;
 
 	private final Matrix rotateMatrix = new Matrix();
@@ -46,16 +48,17 @@ public class RotateLayout extends ViewGroup {
 
 	private boolean angleChanged = true;
 
-	public RotateLayout(Context context) {
+	public RotateLayout(Context context)
+	{
 		this(context, null);
 	}
 
-	public RotateLayout(Context context, AttributeSet attrs) {
+	public RotateLayout(Context context, AttributeSet attrs)
+	{
 		super(context, attrs);
 
-		try
+		try(TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RotateLayout))
 		{
-			final TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RotateLayout);
 			angle = a.getInt(R.styleable.RotateLayout_angle, 0);
 			a.recycle();
 
@@ -68,17 +71,18 @@ public class RotateLayout extends ViewGroup {
 	/**
 	 * Returns current angle of this layout
 	 */
-	@SuppressWarnings("unused")
-	public int getAngle() {
+	public int getAngle()
+	{
 		return angle;
 	}
 
 	/**
 	 * Sets current angle of this layout.
 	 */
-	@SuppressWarnings("unused")
-	public void setAngle(int angle) {
-		if (this.angle != angle) {
+	public void setAngle(int angle)
+	{
+		if(this.angle != angle)
+		{
 			this.angle = angle;
 			angleChanged = true;
 			requestLayout();
@@ -89,19 +93,22 @@ public class RotateLayout extends ViewGroup {
 	/**
 	 * Returns this layout's child or null if there is no any
 	 */
-	public View getView() {
-		if (getChildCount() > 0) {
+	public View getView()
+	{
+		if(getChildCount() > 0)
 			return getChildAt(0);
-		} else {
+		else
 			return null;
-		}
 	}
 
 	@Override
-	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+	{
 		final View child = getView();
-		if (child != null) {
-			if (abs(angle % 180) == 90) {
+		if(child != null)
+		{
+			if(abs(angle % 180) == 90)
+			{
 				//noinspection SuspiciousNameCombination
 				measureChild(child, heightMeasureSpec, widthMeasureSpec);
 				setMeasuredDimension(
@@ -130,11 +137,13 @@ public class RotateLayout extends ViewGroup {
 	}
 
 	@Override
-	protected void onLayout(boolean changed, int l, int t, int r, int b) {
+	protected void onLayout(boolean changed, int l, int t, int r, int b)
+	{
 		int layoutWidth = r - l;
 		int layoutHeight = b - t;
 
-		if (angleChanged || changed) {
+		if(angleChanged || changed)
+		{
 			final RectF layoutRect = tempRectF1;
 			layoutRect.set(0, 0, layoutWidth, layoutHeight);
 			final RectF layoutRectRotated = tempRectF2;
@@ -145,7 +154,8 @@ public class RotateLayout extends ViewGroup {
 		}
 
 		final View child = getView();
-		if (child != null) {
+		if(child != null)
+		{
 			int childLeft = (layoutWidth - child.getMeasuredWidth()) / 2;
 			int childTop = (layoutHeight - child.getMeasuredHeight()) / 2;
 			int childRight = childLeft + child.getMeasuredWidth();
@@ -155,7 +165,8 @@ public class RotateLayout extends ViewGroup {
 	}
 
 	@Override
-	protected void dispatchDraw(Canvas canvas) {
+	protected void dispatchDraw(Canvas canvas)
+	{
 		canvas.save();
 		canvas.rotate(-angle, getWidth() / 2f, getHeight() / 2f);
 		super.dispatchDraw(canvas);
@@ -170,7 +181,8 @@ public class RotateLayout extends ViewGroup {
 	}
 
 	@Override
-	public boolean dispatchTouchEvent(MotionEvent event) {
+	public boolean dispatchTouchEvent(MotionEvent event)
+	{
 		viewTouchPoint[0] = event.getX();
 		viewTouchPoint[1] = event.getY();
 
@@ -186,7 +198,8 @@ public class RotateLayout extends ViewGroup {
 	/**
 	 * Circle angle, from 0 to TAU
 	 */
-	private Double angle_c() {
+	private Double angle_c()
+	{
 		// True circle constant, not that petty imposter known as "PI"
 		double TAU = 2 * PI;
 		return TAU * angle / 360;

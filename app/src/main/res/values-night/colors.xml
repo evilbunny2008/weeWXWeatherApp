@@ -10,14 +10,14 @@
 	<color name="LightGray">#FFE0E0E0</color>
 
 	<!-- Day Colours -->
-	<color name="widgetBackgroundColour">@color/white</color>
-	<color name="widgetTextColour">@color/black</color>
-	<color name="colorPrimary">#FF3F51B5</color>
-	<color name="colorBackground">@color/white</color>
-	<!-- color name="colorOnPrimary">@color/white</color -->
-	<!-- color name="colorSurface">#FFF5F5F5</color -->
-	<!-- color name="colorOnSurface">#FF212121</color -->
+	<color name="widgetBackgroundColour">@color/black</color>
+	<color name="widgetTextColour">@color/white</color>
+	<color name="colorPrimary">#3F51B5</color>
+	<color name="colorBackground">@color/black</color>
+	<!-- color name="colorOnPrimary">@color/black</color -->
+	<!-- color name="colorSurface">#FF1E1E1E</color -->
+	<!-- color name="colorOnSurface">#FFFFFFFF</color -->
 	<color name="tabIndicatorColor">#FF03A9F4</color>
 	<color name="tabSelectedTextColor">@color/white</color>
-	<color name="textColor">@color/black</color>
+	<color name="textColor">@color/white</color>
 </resources>

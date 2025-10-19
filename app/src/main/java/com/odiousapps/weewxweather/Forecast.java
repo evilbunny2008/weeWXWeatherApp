@@ -1,13 +1,6 @@
 package com.odiousapps.weewxweather;
 
-import android.annotation.SuppressLint;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.res.Resources;
-import android.graphics.ColorMatrixColorFilter;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -15,9 +8,6 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.ConsoleMessage;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
@@ -30,34 +20,66 @@ import java.util.Locale;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+@SuppressWarnings("SameParameterValue")
 public class Forecast extends Fragment
 {
-	private final Common common;
+	private Common common;
 	private View rootView;
 	private WebView wv1, wv2;
 	private SwipeRefreshLayout swipeLayout;
 	private TextView forecast;
 	private ImageView im;
 	private RotateLayout rl;
-	private int dark_theme;
+
+	public Forecast()
+	{
+	}
 
 	Forecast(Common common)
 	{
 		this.common = common;
-		dark_theme = common.GetIntPref("dark_theme", 2);
-		if(dark_theme == 2)
-			dark_theme = common.getSystemTheme();
 	}
 
-	@SuppressLint("SetJavaScriptEnabled")
+	public static Forecast newInstance(Common common)
+	{
+		return new Forecast(common);
+	}
+
 	@Nullable
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
+		super.onCreateView(inflater, container, savedInstanceState);
+
+		CommonViewModel commonViewModel = new ViewModelProvider(this).get(CommonViewModel.class);
+
 		rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
+
+		wv1 = rootView.findViewById(R.id.webView1);
+		wv2 = rootView.findViewById(R.id.webView2);
+
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+		swipeLayout.setRefreshing(true);
+
+		if(commonViewModel.getCommon() == null)
+		{
+			commonViewModel.setCommon(common);
+		} else {
+			common = commonViewModel.getCommon();
+			common.reload(common.context);
+		}
+
+		loadWidgets();
+
+		return rootView;
+	}
+
+	private void loadWidgets()
+	{
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
@@ -66,41 +88,37 @@ public class Forecast extends Fragment
 			getForecast(true);
 		});
 
+		wv1.setWebViewClient(new WebViewClient()
+		{
+			@Override
+			public void onPageFinished(WebView view, String url)
+			{
+				super.onPageFinished(view, url);
+				if(rl.getVisibility() == View.VISIBLE)
+					swipeLayout.setRefreshing(false);
+			}
+		});
+
+		wv2.setWebViewClient(new WebViewClient()
+		{
+			@Override
+			public void onPageFinished(WebView view, String url)
+			{
+				super.onPageFinished(view, url);
+				if(wv2.getVisibility() == View.VISIBLE)
+					swipeLayout.setRefreshing(false);
+			}
+		});
+
 		rl = rootView.findViewById(R.id.rotateWeb);
-		wv1 = rootView.findViewById(R.id.webView1);
-		wv2 = rootView.findViewById(R.id.webView2);
 
-		wv1.getSettings().setUserAgentString(Common.UA);
-		wv1.getSettings().setJavaScriptEnabled(true);
+		Common.setWebview(wv1);
+		Common.setWebview(wv2);
 
 		wv1.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv1.getScrollY() == 0));
-
-		wv1.setWebChromeClient(new WebChromeClient()
-		{
-			@Override
-			public boolean onConsoleMessage(ConsoleMessage cm)
-			{
-				return true;
-			}
-		});
 		wv1.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv1.getScrollY() == 0));
-
-		wv2.getSettings().setUserAgentString(Common.UA);
-		wv2.getSettings().setJavaScriptEnabled(true);
-
 		wv2.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv2.getScrollY() == 0));
-
-		wv2.setWebChromeClient(new WebChromeClient()
-		{
-			@Override
-			public boolean onConsoleMessage(ConsoleMessage cm)
-			{
-				return true;
-			}
-		});
 		wv2.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv2.getScrollY() == 0));
-
-		wv2.setWebViewClient(new WebViewClient());
 
 		forecast = rootView.findViewById(R.id.forecast);
 		im = rootView.findViewById(R.id.logo);
@@ -110,14 +128,12 @@ public class Forecast extends Fragment
 		File f2 = new File(common.context.getFilesDir(), "/radar.gif");
 		long[] period = common.getPeriod();
 
-		if(!Common.isEmpty(common.GetStringPref("RADAR_URL", "")) && f2.lastModified() + period[0] < System.currentTimeMillis())
+		if(!common.GetStringPref("RADAR_URL", "").isEmpty() && f2.lastModified() + period[0] < System.currentTimeMillis())
 			reloadWebView(false);
 
 		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 		if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 			getForecast(false);
-
-		return rootView;
 	}
 
 	private void loadWebView()
@@ -125,27 +141,25 @@ public class Forecast extends Fragment
 		if(common.GetBoolPref("radarforecast", true))
 			return;
 
-		swipeLayout.setRefreshing(true);
-
 		if (common.GetStringPref("radtype", "image").equals("image"))
 		{
 			String radar = common.context.getFilesDir() + "/radar.gif";
 			File rf = new File(radar);
 
-			if(!rf.exists() && !Common.isEmpty(common.GetStringPref("RADAR_URL", "")) && common.checkConnection())
+			if(!rf.exists() && !common.GetStringPref("RADAR_URL", "").isEmpty() && common.checkConnection())
 			{
 				reloadWebView(true);
 				return;
 			}
 
-			if (!rf.exists() || Common.isEmpty(common.GetStringPref("RADAR_URL", "")))
+			if (!rf.exists() || common.GetStringPref("RADAR_URL", "").isEmpty())
 			{
-				String html = "<html>";
-				if (dark_theme == 1)
-					html += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				html += "<body>Radar URL not set or is still downloading. You can go to settings to change.</body></html>";
+				String html = Common.current_html_headers;
+				html += "Radar URL not set or is still downloading. You can go to settings to change.";
+				html += Common.html_footer;
+
 				wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
-				swipeLayout.setRefreshing(false);
+
 				return;
 			}
 
@@ -153,16 +167,6 @@ public class Forecast extends Fragment
 
 			int height = Math.round((float) Resources.getSystem().getDisplayMetrics().widthPixels / sd * 0.955f);
 			int width = Math.round((float) Resources.getSystem().getDisplayMetrics().heightPixels / sd * 0.955f);
-
-			String html = """
-					<!DOCTYPE html>
-					<html>
-					  <head>
-						<meta charset='utf-8'>
-						<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-					""";
-			if (dark_theme == 1)
-				html += "<style>body{color: #fff; background-color: #000;}</style>";
 
 			try
 			{
@@ -179,41 +183,24 @@ public class Forecast extends Fragment
 				Common.doStackOutput(e);
 			}
 
-			html += "  </head>\n" +
-					"  <body>\n" +
-					"\t<div style='text-align:center;'>\n" +
+			String html = Common.current_html_headers;
+			html += "\t<div style='text-align:center;'>\n" +
 					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" + height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
 					"\tsrc='" + radar + "'>\n" +
-					"\t</div>\n" +
-					"  </body>\n" +
-					"</html>";
+					"\t</div>";
+			html += Common.html_footer;
+
 			wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
 			rl.setVisibility(View.VISIBLE);
 			wv2.setVisibility(View.GONE);
-			swipeLayout.setRefreshing(false);
 		} else if(common.GetStringPref("radtype", "image").equals("webpage") &&
-				!Common.isEmpty(common.GetStringPref("RADAR_URL", ""))) {
+				!common.GetStringPref("RADAR_URL", "").isEmpty()) {
 			rl.setVisibility(View.GONE);
 			wv2.setVisibility(View.VISIBLE);
-
-			if(common.checkConnection())
-			{
-				wv2.clearCache(true);
-				wv2.clearHistory();
-				wv2.clearFormData();
-				WebSettings webSettings = wv2.getSettings();
-				webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
-			}
-
 			wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
-
-			swipeLayout.setRefreshing(false);
 		}
-
-		swipeLayout.setRefreshing(false);
 	}
 
-	@SuppressWarnings("SameParameterValue")
 	private void reloadWebView(boolean force)
 	{
 		if(common.GetBoolPref("radarforecast", true))
@@ -222,10 +209,9 @@ public class Forecast extends Fragment
 		Common.LogMessage("reload radar...");
 		final String radar = common.GetStringPref("RADAR_URL", "");
 
-		if(Common.isEmpty(radar) || common.GetStringPref("radtype", "image").equals("webpage"))
+		if(radar.isEmpty() || common.GetStringPref("radtype", "image").equals("webpage"))
 		{
 			loadWebView();
-			swipeLayout.setRefreshing(false);
 			return;
 		}
 
@@ -235,8 +221,6 @@ public class Forecast extends Fragment
 			swipeLayout.setRefreshing(false);
 			return;
 		}
-
-		swipeLayout.setRefreshing(true);
 
 		Thread t = new Thread(() ->
 		{
@@ -252,16 +236,13 @@ public class Forecast extends Fragment
 					Handler mHandler = new Handler(Looper.getMainLooper());
 					mHandler.post(() ->
 					{
-						common.SendRefresh();
-						swipeLayout.setRefreshing(false);
+						wv1.post(() -> wv1.reload());
+						wv2.post(() -> wv2.reload());
 					});
 				}
 			} catch (Exception e) {
 				Common.doStackOutput(e);
 			}
-
-			Handler mHandler = new Handler(Looper.getMainLooper());
-			mHandler.post(() -> swipeLayout.setRefreshing(false));
 		});
 
 		t.start();
@@ -270,29 +251,27 @@ public class Forecast extends Fragment
 	public void onResume()
 	{
 		super.onResume();
-		updateScreen();
-		IntentFilter filter = new IntentFilter();
-		filter.addAction(Common.UPDATE_INTENT);
-		filter.addAction(Common.REFRESH_INTENT);
-		filter.addAction(Common.EXIT_INTENT);
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE)
-			common.context.registerReceiver(serviceReceiver, filter, Context.RECEIVER_NOT_EXPORTED);
-		else
-			common.context.registerReceiver(serviceReceiver, filter);
+		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 		Common.LogMessage("forecast.java -- registerReceiver");
 	}
 
 	public void onPause()
 	{
 		super.onPause();
-		try
-		{
-			common.context.unregisterReceiver(serviceReceiver);
-		} catch (Exception e) {
-			Common.doStackOutput(e);
-		}
+		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 		Common.LogMessage("forecast.java -- unregisterReceiver");
 	}
+
+	private final Observer<String> notificationObserver = s ->
+	{
+		Common.LogMessage("notificationObserver == " + s);
+
+		if(s.equals(Common.UPDATE_INTENT) || s.equals(Common.REFRESH_INTENT))
+			updateScreen();
+
+		if(s.equals(Common.EXIT_INTENT))
+			onPause();
+	};
 
 	private void updateScreen()
 	{
@@ -320,33 +299,7 @@ public class Forecast extends Fragment
 			}
 			loadWebView();
 		}
-
-		swipeLayout.setRefreshing(false);
 	}
-
-	private final BroadcastReceiver serviceReceiver = new BroadcastReceiver()
-	{
-		@Override
-		public void onReceive(Context context, Intent intent)
-		{
-			try
-			{
-				Common.LogMessage("Weather() We have a hit, so we should probably update the screen.");
-				String action = intent.getAction();
-				if(action != null && (action.equals(Common.UPDATE_INTENT) || action.equals(Common.REFRESH_INTENT)))
-				{
-					dark_theme = common.GetIntPref("dark_theme", 2);
-					if(dark_theme == 2)
-						dark_theme = common.getSystemTheme();
-					updateScreen();
-				} else if(action != null && action.equals(Common.EXIT_INTENT)) {
-					onPause();
-				}
-			} catch (Exception e) {
-				Common.doStackOutput(e);
-			}
-		}
-	};
 
 	private void getForecast(boolean force)
 	{
@@ -355,16 +308,13 @@ public class Forecast extends Fragment
 
 		final String forecast_url = common.GetStringPref("FORECAST_URL", "");
 
-		if(Common.isEmpty(forecast_url))
+		if(forecast_url.isEmpty())
 		{
-			final String html = "<html><body>Forecast URL not set. Edit inigo-settings.txt to change.</body></html>";
+			final String html = Common.current_html_headers + "Forecast URL not set. Edit inigo-settings.txt to change." + Common.html_footer;
 
 			Handler mHandler = new Handler(Looper.getMainLooper());
 			mHandler.post(() ->
-			{
-				wv2.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-				swipeLayout.setRefreshing(false);
-			});
+					wv2.loadDataWithBaseURL(null, html, "text/html", "utf-8", null));
 
 			return;
 		}
@@ -372,42 +322,36 @@ public class Forecast extends Fragment
 		if(!common.checkConnection() && !force)
 		{
 			Common.LogMessage("Not on wifi and not a forced refresh");
-			Handler mHandler = new Handler(Looper.getMainLooper());
-			mHandler.post(() ->
-			{
-				common.SendRefresh();
-				swipeLayout.setRefreshing(false);
-			});
 			return;
 		}
 
-		swipeLayout.setRefreshing(true);
-
-		if(!Common.isEmpty(common.GetStringPref("forecastData", "")))
+		if(!common.GetStringPref("forecastData", "").isEmpty())
 			generateForecast();
 
 		Thread t = new Thread(() ->
 		{
-			Handler mHandler = new Handler(Looper.getMainLooper());
-
 			try
 			{
 				long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
-				if(Common.isEmpty(common.GetStringPref("forecastData", "")) || common.GetLongPref("rssCheck", 0) + 7190 < current_time)
+				if(common.GetStringPref("forecastData", "").isEmpty() || common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 				{
 					Common.LogMessage("no forecast data or cache is more than 2 hour old");
+
+					Handler mHandler = new Handler(Looper.getMainLooper());
+					mHandler.post(() ->
+							swipeLayout.setRefreshing(true));
 
 					String tmp = common.downloadForecast();
 
 					Common.LogMessage("updating rss cache");
 					common.SetLongPref("rssCheck", current_time);
 					common.SetStringPref("forecastData", tmp);
-					mHandler.post(() ->
-					{
-						common.SendRefresh();
-						swipeLayout.setRefreshing(false);
-					});
+					wv1.post(() ->
+							wv1.post(() -> wv1.reload()));
+
+					wv2.post(() ->
+							wv2.post(() -> wv2.reload()));
 				}
 			} catch (Exception e) {
 				Common.doStackOutput(e);
@@ -421,28 +365,17 @@ public class Forecast extends Fragment
 	{
 		Thread t = new Thread(() ->
 		{
-			Handler mHandler = new Handler(Looper.getMainLooper());
-			mHandler.post(() -> swipeLayout.setRefreshing(true));
-
 			Common.LogMessage("getting json data");
 			String data;
 			String fctype = common.GetStringPref("fctype", "Yahoo");
 
 			data = common.GetStringPref("forecastData", "");
-			if(Common.isEmpty(data))
+			if(data.isEmpty())
 			{
-				String tmp = "<html>";
-				if(dark_theme == 1)
-					tmp += "<head><style>body{color: #fff; background-color: #000;}</style></head>";
-				tmp += "<body>" + getString(R.string.forecast_url_not_set) + "</body></html>";
+				final String html = Common.current_html_headers + getString(R.string.forecast_url_not_set) + Common.html_footer;
 
-				final String html = tmp;
-
-				mHandler.post(() ->
-				{
-					wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
-					swipeLayout.setRefreshing(false);
-				});
+				wv1.post(() ->
+						wv1.loadDataWithBaseURL(null, html, "text/html", "utf-8", null));
 				return;
 			}
 
@@ -563,8 +496,6 @@ public class Forecast extends Fragment
 						updateForecast(content[0], content[1]);
 				}
 			}
-
-			mHandler.post(() -> swipeLayout.setRefreshing(false));
 		});
 
 		t.start();
@@ -575,14 +506,7 @@ public class Forecast extends Fragment
 		Handler mHandler = new Handler(Looper.getMainLooper());
 		mHandler.post(() ->
 		{
-			String tmpfc = "<html>";
-			if (dark_theme == 1)
-				tmpfc += "<head><style>body{color: #fff; background-color: #000;}</style>" + Common.style_sheet_header + "</head>";
-			else
-				tmpfc += "<head>" + Common.style_sheet_header + "</head>";
-			tmpfc += "<body style='text-align:center'>" + bits + "</body></html>";
-
-			final String fc = tmpfc;
+			final String fc = Common.current_html_headers + "<div style='text-align:center'>" + bits + "</div>" + Common.html_footer;
 
 			Handler mHandler1 = new Handler(Looper.getMainLooper());
 			mHandler1.post(() ->
@@ -594,16 +518,6 @@ public class Forecast extends Fragment
 			});
 
 			TextView tv1 = rootView.findViewById(R.id.forecast);
-			if (dark_theme == 0)
-			{
-				tv1.setTextColor(0xff000000);
-				tv1.setBackgroundColor(0xffffffff);
-				im.setBackgroundColor(0xffffffff);
-			} else {
-				tv1.setTextColor(0xffffffff);
-				tv1.setBackgroundColor(0xff000000);
-				im.setBackgroundColor(0xff000000);
-			}
 			tv1.setText(desc);
 
 			switch (common.GetStringPref("fctype", "yahoo").toLowerCase(Locale.ENGLISH))
@@ -615,10 +529,7 @@ public class Forecast extends Fragment
 				case "bom.gov.au" ->
 				{
 					im.setImageResource(R.drawable.bom);
-					if (dark_theme == 1)
-						im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					else
-						im.setColorFilter(null);
+					im.setColorFilter(null);
 				}
 				case "wmo.int" -> im.setImageResource(R.drawable.wmo);
 				case "weather.gov" -> im.setImageResource(R.drawable.wgov);
@@ -627,42 +538,23 @@ public class Forecast extends Fragment
 				case "bom2", "bom3" ->
 				{
 					im.setImageResource(R.drawable.bom);
-					if (dark_theme == 1)
-					{
-						im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					} else
-					{
-						im.setColorFilter(null);
-					}
+					im.setColorFilter(null);
 				}
 				case "aemet.es" -> im.setImageResource(R.drawable.aemet);
 				case "dwd.de" -> im.setImageResource(R.drawable.dwd);
-				case "metservice.com" ->
-				{
-					im.setImageResource(R.drawable.metservice);
-					if (dark_theme == 1)
-						im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					else
-						im.setColorFilter(null);
-				}
+				case "metservice.com" -> im.setImageResource(R.drawable.metservice);
 				case "meteofrance.com" -> im.setImageResource(R.drawable.mf);
 				case "openweathermap.org" -> im.setImageResource(R.drawable.owm);
 				case "apixu.com" ->
 				{
 					im.setImageResource(R.drawable.apixu);
-					if (dark_theme == 1)
-						im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					else
-						im.setColorFilter(null);
+					im.setColorFilter(null);
 				}
 				case "weather.com" -> im.setImageResource(R.drawable.weather_com);
 				case "met.ie" ->
 				{
 					im.setImageResource(R.drawable.met_ie);
-					if (dark_theme == 1)
-						im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE));
-					else
-						im.setColorFilter(null);
+					im.setColorFilter(null);
 				}
 				case "ilmeteo.it" -> im.setImageResource(R.drawable.ilmeteo_it);
 				case "tempoitalia.it" -> im.setImageResource(R.drawable.tempoitalia_it);
