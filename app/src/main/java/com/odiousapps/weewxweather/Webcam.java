@@ -19,7 +19,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static java.lang.Math.round;
@@ -27,44 +26,20 @@ import static java.lang.Math.round;
 @SuppressWarnings({"UseCompatLoadingForDrawables", "UnspecifiedRegisterReceiverFlag"})
 public class Webcam extends Fragment
 {
-	private Common common;
 	private ImageView iv;
 	private static Bitmap bm;
 	private SwipeRefreshLayout swipeLayout;
 
-	public Webcam()
-	{
-	}
-
-	Webcam(Common common)
-	{
-		this.common = common;
-	}
-
-	public static Webcam newInstance(Common common)
-	{
-		return new Webcam(common);
-	}
-
-	@Nullable
-	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
-		CommonViewModel commonViewModel = new ViewModelProvider(this).get(CommonViewModel.class);
-
-		if(commonViewModel.getCommon() == null)
-		{
-			commonViewModel.setCommon(common);
-		} else {
-			common = commonViewModel.getCommon();
-			common.reload(common.context);
-		}
-
 		View rootView = inflater.inflate(R.layout.fragment_webcam, container, false);
 		iv = rootView.findViewById(R.id.webcam);
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+		swipeLayout.setBackgroundColor(KeyValue.bgColour);
+
+		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
@@ -76,18 +51,27 @@ public class Webcam extends Fragment
 		return rootView;
 	}
 
+	void stopRefreshing()
+	{
+		if(!swipeLayout.isRefreshing())
+			return;
+
+		swipeLayout.post(() -> swipeLayout.setRefreshing(false));
+	}
+
 	private void reloadWebView(final boolean force)
 	{
 		Common.LogMessage("reload webcam...");
-		final String webURL = common.GetStringPref("WEBCAM_URL", "");
+		final String webURL = Common.GetStringPref("WEBCAM_URL", "");
 
 		if(webURL.isEmpty())
 		{
-			iv.setImageDrawable(common.context.getApplicationContext().getDrawable(R.drawable.nowebcam));
+			iv.setImageDrawable(Common.getContext().getDrawable(R.drawable.nowebcam));
+			stopRefreshing();
 			return;
 		}
 
-		File file = new File(common.context.getFilesDir(), "webcam.jpg");
+		File file = new File(Common.getFilesDir(), "webcam.jpg");
 		if(file.exists())
 		{
 			Common.LogMessage("file: "+ file);
@@ -95,7 +79,8 @@ public class Webcam extends Fragment
 			{
 				BitmapFactory.Options options = new BitmapFactory.Options();
 				bm = BitmapFactory.decodeFile(file.toString(), options);
-				iv.setImageBitmap(bm);
+				iv.post(() -> iv.setImageBitmap(bm));
+				Common.LogMessage("Finished reading webcam.jpg into memory and iv should have updated...");
 			} catch (Exception e) {
 				Common.doStackOutput(e);
 			}
@@ -106,33 +91,36 @@ public class Webcam extends Fragment
 			long period = 0;
 			long current_time = round(System.currentTimeMillis() / 1000.0);
 
-			File file1 = new File(common.context.getFilesDir(), "webcam.jpg");
+			File file1 = new File(Common.getFilesDir(), "webcam.jpg");
 
 			Common.LogMessage("current_time = " + current_time + ", file.lastModified() == " + round(file1.lastModified() / 1000.0));
 
 			if(!force)
 			{
-				int pos = common.GetIntPref("updateInterval", 1);
+				int pos = Common.GetIntPref("updateInterval", 1);
 				if (pos <= 0)
+				{
+					stopRefreshing();
 					return;
+				}
 
-				long[] ret = common.getPeriod();
+				long[] ret = Common.getPeriod();
 				period = Math.round(ret[0] / 1000.0);
 			}
 
 			if(force || !file1.exists() || round(file1.lastModified() / 1000.0) + period < current_time)
 			{
-				if(downloadWebcam(webURL, common.context.getFilesDir()))
-					Common.LogMessage("done downloading, prompt handler to draw to iv");
-				else
-					Common.LogMessage("Skipped downloading");
+				downloadWebcam(webURL, Common.getFilesDir());
+				Common.LogMessage("Finished downloading from webURL: " + webURL);
 			}
 
 			iv.post(() ->
 			{
+				Common.LogMessage("Prompt iv to redraw...");
+
 				iv.setImageBitmap(bm);
 				iv.invalidate();
-				swipeLayout.setRefreshing(false);
+				stopRefreshing();
 			});
 		});
 
@@ -153,7 +141,7 @@ public class Webcam extends Fragment
 				try
 				{
 					Common.LogMessage("trying to set bm");
-					bm = mr.bm;
+					bm = mr.getBM();
 				} catch (Exception e) {
 					Common.doStackOutput(e);
 					return false;
@@ -177,7 +165,7 @@ public class Webcam extends Fragment
 
 			try(FileOutputStream out = new FileOutputStream(file))
 			{
-				bm.compress(Bitmap.CompressFormat.JPEG, 85, out); // bmp is your Bitmap instance
+				bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
 				return true;
 			} catch (Exception e) {
 				Common.doStackOutput(e);

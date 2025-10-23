@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	style="@style/AppTheme.weeWxWeatherApp.ViewPager"
+	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/swipeToRefresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
+	    android:id="@+id/weather_ll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -15,26 +16,29 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+	        android:text="My Place, My Country"
             android:gravity="center"
-            android:textSize="24sp" />
+            android:textSize="28sp"
+	        tools:ignore="HardcodedText" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"/>
+	        android:text="Tue, 21 Oct 2025 21:25 EST"
+            android:gravity="center"
+	        android:textSize="18sp"
+	        tools:ignore="HardcodedText" />
 
         <WebView
             android:id="@+id/current"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-	        android:scrollbars="none" />
+            android:layout_height="wrap_content" />
 
         <WebView
             android:id="@+id/forecast"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-	        android:layout_weight="1"
-	        android:scrollbars="none" />
+	        android:layout_weight="1" />
     </LinearLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

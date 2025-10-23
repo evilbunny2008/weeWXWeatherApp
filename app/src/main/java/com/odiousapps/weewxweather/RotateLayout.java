@@ -48,23 +48,23 @@ public class RotateLayout extends ViewGroup
 
 	private boolean angleChanged = true;
 
-	public RotateLayout(Context context)
-	{
-		this(context, null);
-	}
-
 	public RotateLayout(Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
 
+		Common.LogMessage("About to act on a typedArray!");
 		try(TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RotateLayout))
 		{
+			Common.LogMessage("Step 1 complete...");
 			angle = a.getInt(R.styleable.RotateLayout_angle, 0);
+			Common.LogMessage("Step 2 complete...");
 			a.recycle();
+			Common.LogMessage("Step 3 complete...");
 
 			setWillNotDraw(false);
+			Common.LogMessage("Step 4 complete...");
 		} catch (Exception e) {
-			Common.doStackOutput(e);
+			Common.LogMessage("Error: " + e);
 		}
 	}
 
@@ -204,5 +204,4 @@ public class RotateLayout extends ViewGroup
 		double TAU = 2 * PI;
 		return TAU * angle / 360;
 	}
-
 }

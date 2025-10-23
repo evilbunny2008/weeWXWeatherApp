@@ -14,7 +14,6 @@ import android.webkit.WebViewClient;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
@@ -22,23 +21,8 @@ import androidx.webkit.WebViewFeature;
 @SuppressWarnings("deprecation")
 public class Custom extends Fragment
 {
-	private Common common;
 	private WebView wv;
 	private SwipeRefreshLayout swipeLayout;
-
-	public Custom()
-	{
-	}
-
-	Custom(Common common)
-	{
-		this.common = common;
-	}
-
-	public static Custom newInstance(Common common)
-	{
-		return new Custom(common);
-	}
 
 	@Nullable
 	@Override
@@ -47,17 +31,6 @@ public class Custom extends Fragment
 	                         @Nullable Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
-
-		CommonViewModel commonViewModel =
-				new ViewModelProvider(this).get(CommonViewModel.class);
-
-		if(commonViewModel.getCommon() == null)
-		{
-			commonViewModel.setCommon(common);
-		} else {
-			common = commonViewModel.getCommon();
-			common.reload(common.context);
-		}
 
 		View rootView = inflater.inflate(R.layout.fragment_custom, container, false);
 
@@ -85,9 +58,12 @@ public class Custom extends Fragment
 				if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
 					WebSettingsCompat.setAlgorithmicDarkeningAllowed(wv.getSettings(), true);
 
-				WebSettingsCompat.setForceDark(wv.getSettings(),
-						(common.getDayNightTheme() == 1) ? WebSettingsCompat.FORCE_DARK_ON :
-						 WebSettingsCompat.FORCE_DARK_OFF);
+				int mode = WebSettingsCompat.FORCE_DARK_OFF;
+
+				if(KeyValue.mode == 1)
+					mode = WebSettingsCompat.FORCE_DARK_ON;
+
+				WebSettingsCompat.setForceDark(wv.getSettings(), mode);
 			}
 		}
 
@@ -157,8 +133,8 @@ public class Custom extends Fragment
 	{
 		Common.LogMessage("reload custom...");
 
-		String custom = common.GetStringPref("CUSTOM_URL", "");
-		String custom_url = common.GetStringPref("custom_url", "");
+		String custom = Common.GetStringPref("CUSTOM_URL", "");
+		String custom_url = Common.GetStringPref("custom_url", "");
 
 		if(custom.isEmpty() && custom_url.isEmpty())
 			return;

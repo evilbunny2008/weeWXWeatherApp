@@ -1,24 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+	<style name="AppTheme.weeWxWeatherApp.Light.Common" parent="AppTheme.weeWxWeatherApp.Light">
+		<item name="windowActionBar">true</item>
+		<item name="windowNoTitle">true</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
+	</style>
+
+	<style name="AppTheme.weeWxWeatherApp.Dark.Common" parent="AppTheme.weeWxWeatherApp.Dark">
+		<item name="windowActionBar">true</item>
+		<item name="windowNoTitle">true</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
+	</style>
+
 	<style name="AppTheme.weeWxWeatherApp.Common" parent="AppTheme.weeWxWeatherApp">
 		<item name="windowActionBar">true</item>
 		<item name="windowNoTitle">true</item>
-		<item name="android:textColor">@color/textColor</item>
+		<item name="android:windowNoTitle">true</item>
+		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
+	</style>
+
+	<style name="AppTheme.weeWxWeatherApp.Light.ViewPager" parent="AppTheme.weeWxWeatherApp.Light.Common" tools:ignore="UnusedResources">
+		<item name="android:background">@color/White</item>
+		<item name="android:textColor">@color/Black</item>
 		<item name="android:textSize">20sp</item>
-		<item name="android:navigationBarColor">@color/colorPrimary</item>
-		<item name="android:statusBarColor">@color/colorPrimary</item>
+	</style>
+
+	<style name="AppTheme.weeWxWeatherApp.Dark.ViewPager" parent="AppTheme.weeWxWeatherApp.Dark.Common" tools:ignore="UnusedResources">
+		<item name="android:background">@color/Black</item>
+		<item name="android:textColor">@color/White</item>
+		<item name="android:textSize">20sp</item>
+	</style>
+
+	<style name="AppTheme.weeWxWeatherApp.ViewPager" parent="AppTheme.weeWxWeatherApp.Common" tools:ignore="UnusedResources">
+		<item name="android:background">@color/splash_background</item>
+		<item name="android:textColor">@color/splash_foreground</item>
+		<item name="android:textSize">20sp</item>
+	</style>
+
+	<style name="Widget.weeWXApp" tools:ignore="UnusedResources">
+
+	</style>
+
+	<style name="AppTheme.weeWxWeatherApp.NavBar" parent="AppTheme.weeWxWeatherApp.Common">
+		<item name="android:windowBackground">@color/MyAppNavBarColour</item>
+		<item name="android:background">@color/MyAppNavBarColour</item>
+		<item name="android:textColorPrimary">@color/MyAppNavBarTextColour</item>
+		<item name="android:textColorSecondary">@color/MyAppNavBarTextColour</item>
+		<item name="android:textColor">@color/MyAppNavBarTextColour</item>
+		<item name="android:textSize">20sp</item>
 	</style>
 
 	<style name="AppTheme.weeWxWeatherApp.AppBarLayout" parent="AppTheme.weeWxWeatherApp.Common">
-		<item name="android:background">@color/colorPrimary</item>
-		<item name="colorPrimary">@color/white</item>
-		<item name="colorPrimaryDark">@color/white</item>
-		<item name="android:textColorPrimary">@color/white</item>
-		<item name="android:textColorSecondary">@color/white</item>
+		<item name="android:background">@color/MyAppNavBarColour</item>
+		<item name="android:textColorPrimary">@color/MyAppNavBarTextColour</item>
+		<item name="android:textColorSecondary">@color/MyAppNavBarTextColour</item>
+		<item name="android:textColor">@color/MyAppNavBarTextColour</item>
+		<item name="android:textSize">20sp</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.TabLayout" parent="AppTheme.weeWxWeatherApp.Common">
-		<item name="android:background">@color/colorPrimary</item>
+	<style name="AppTheme.weeWxWeatherApp.TabBarLayout" parent="AppTheme.weeWxWeatherApp.Common">
+		<item name="android:background">@color/MyAppNavBarColour</item>
+		<item name="android:textColorPrimary">@color/MyAppNavBarTextColour</item>
+		<item name="android:textColorSecondary">@color/MyAppNavBarTextColour</item>
+		<item name="android:textColor">@color/MyAppNavBarTextColour</item>
+		<item name="android:textSize">20sp</item>
 		<item name="tabSelectedTextColor">@color/tabSelectedTextColor</item>
 		<item name="tabIndicatorColor">@color/tabIndicatorColor</item>
 		<item name="tabIndicatorHeight">5dp</item>
@@ -28,7 +78,43 @@
 		<item name="tabMode">scrollable</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.ViewPager" parent="AppTheme.weeWxWeatherApp.Common">
-		<item name="android:background">@color/colorBackground</item>
+	<style name="Widget.weeWXApp.RadioButtons" parent="AppTheme.weeWxWeatherApp.Common">
+		<item name="android:textSize">20sp</item>
+		<item name="buttonTint">@color/MyAppNavBarColour</item>
 	</style>
+
+	<style name="Widget.weeWXApp.Button" parent="AppTheme.weeWxWeatherApp.Common">
+		<item name="android:textSize">16sp</item>
+		<item name="android:insetTop">8dp</item>
+		<item name="android:insetBottom">8dp</item>
+		<item name="cornerRadius">12dp</item>
+		<item name="android:letterSpacing">0.05</item>
+		<item name="android:textAllCaps">false</item>
+		<item name="android:textColor">@color/White</item>
+		<item name="backgroundTint">@color/MyAppNavBarColour</item>
+	</style>
+
+	<style name="Widget.weeWXApp.Switch" parent="AppTheme.weeWxWeatherApp.Common" tools:ignore="UnusedResources">
+		<item name="thumbTint">@color/MyAppNavBarColour</item>
+		<item name="trackTint">@color/MyTintColour</item>
+	</style>
+
+	<style name="Widget.weeWXApp.CPSlider" parent="AppTheme.weeWxWeatherApp.Common">
+		<item name="android:layout_width">match_parent</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:layout_marginStart">10dp</item>
+		<item name="android:layout_marginEnd">10dp</item>
+		<item name="android:valueFrom">50</item>
+		<item name="android:valueTo">200</item>
+		<item name="android:stepSize">1</item>
+		<item name="android:value">100</item>
+		<item name="thumbTint">@color/MyAppNavBarColour</item>
+		<item name="trackTint">@color/LightBlueAccent</item>
+		<item name="haloColor">@color/LightBlueAccent</item>
+		<item name="trackColorInactive">@color/LightBlueAccent</item>
+	</style>
+
+	<declare-styleable name="MaxWidthLinearLayout">
+		<attr name="maxWidth" format="dimension" />
+	</declare-styleable>
 </resources>

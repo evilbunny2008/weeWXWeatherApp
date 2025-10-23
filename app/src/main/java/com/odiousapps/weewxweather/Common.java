@@ -3,18 +3,16 @@ package com.odiousapps.weewxweather;
 import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
-import android.appwidget.AppWidgetManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.media.MediaScannerConnection;
 import android.net.ConnectivityManager;
@@ -28,7 +26,9 @@ import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.widget.RemoteViews;
+
+import com.github.evilbunny2008.colourpicker.CustomEditText;
+import com.github.evilbunny2008.xmltojson.XmlToJson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -51,10 +51,10 @@ import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
@@ -64,7 +64,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
 import androidx.lifecycle.LiveData;
-import fr.arnaudguyon.xmltojsonlib.XmlToJson;
 import okhttp3.ConnectionSpec;
 import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
@@ -75,13 +74,11 @@ import static java.lang.Math.round;
 
 @SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref",
 		"SameReturnValue", "WeakerAccess", "BooleanMethodIsAlwaysInverted",
-		"SetJavaScriptEnabled"})
+		"SetJavaScriptEnabled", "SetTextI18n"})
 public class Common
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	private final static boolean debug_on = false;
-	private final String app_version;
-	Context context;
 
 	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36";
 
@@ -97,12 +94,12 @@ public class Common
 	public static final long icon_version = 12;
 	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/1.0.3/icons.zip";
 
-	private Thread t = null;
-	private JSONObject nws = null;
+	private static Thread t = null;
+	private static JSONObject nws = null;
 
-	private final Typeface tf_bold;
+	private static Typeface tf_bold = null;
 
-	Colours colours;
+	static Colours colours;
 	static String current_html_headers;
 
 	private static final String html_header = """
@@ -110,7 +107,7 @@ public class Common
             <html lang="en">
             <head>
               <meta charset="utf-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
               <meta name="color-scheme" content="light dark">
               <link rel='stylesheet' href='file:///android_asset/weathericons.css'>
               <link rel='stylesheet' href='file:///android_asset/weathericons_wind.css'>
@@ -147,37 +144,56 @@ public class Common
 
 	static final String html_footer = "\n</body>\n</html>";
 
-	void replaceHexString(String html_tag, int colour)
+	static final String about_blurb = "Big thanks to the <a href='http://weewx.com'>weeWX project</a>, as this app " +
+		"wouldn't be possible otherwise.<br><br>" +
+		"Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
+		"is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and " +
+		"<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers" +
+		"<br><br>" +
+		"weeWX Weather App v" + getAppVersion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.";
+
+	static void replaceHex6String(String html_tag, int colour)
 	{
-		String hex = String.format("#%06X", 0xFFFFFF & colour);
+		String hex = String.format(CustomEditText.getFixedChar() + "%06X", 0xFFFFFF & colour);
 		current_html_headers = current_html_headers.replaceAll(html_tag, hex);
 	}
 
-	public void reload(Context context)
+	static void replaceHex8String(String html_tag, int colour)
 	{
-		this.context = context;
-
-		current_html_headers = html_header;
-		colours = new Colours(context);
-		replaceHexString("WHITE_HEX", ContextCompat.getColor(context, R.color.White));
-		replaceHexString("BLACK_HEX", ContextCompat.getColor(context, R.color.Black));
-		replaceHexString("ALMOST_BLACK", colours.AlmostBlack);
-		replaceHexString("LIGHT_BLUE_ACCENT", colours.LightBlueAccent);
-		replaceHexString("DARK_GRAY", colours.DarkGray);
-		replaceHexString("LIGHT_GRAY", colours.LightGray);
+		String hex = CustomEditText.getFixedChar() + String.format("%08X", colour);
+		current_html_headers = current_html_headers.replaceAll(html_tag, hex);
 	}
 
-	public Common(Context context)
+	static void reload()
 	{
-		this.context = context;
+		current_html_headers = html_header;
+		colours = new Colours();
+		getDayNightMode();
+		replaceHex6String("WHITE_HEX", ContextCompat.getColor(getContext(), R.color.White));
+		replaceHex6String("BLACK_HEX", ContextCompat.getColor(getContext(), R.color.Black));
+		replaceHex6String("ALMOST_BLACK", colours.AlmostBlack);
+		replaceHex6String("LIGHT_BLUE_ACCENT", colours.LightBlueAccent);
+		replaceHex6String("DARK_GRAY", colours.DarkGray);
+		replaceHex6String("LIGHT_GRAY", colours.LightGray);
+	}
 
-		app_version = BuildConfig.VERSION_NAME;
-		System.setProperty("http.agent", UA);
-		tf_bold = Typeface.create("sans-serif", Typeface.BOLD);
+	static
+	{
+		try
+		{
+			System.setProperty("http.agent", UA);
+		} catch(Exception ignored) {
+		}
 
-		reload(context);
+		try
+		{
+			tf_bold = Typeface.create("sans-serif", Typeface.BOLD);
+		} catch(Exception ignored) {
+		}
 
-		LogMessage("app_version=" + app_version);
+		reload();
+
+		LogMessage("app_version=" + getAppVersion());
 	}
 
 	/** @noinspection CallToPrintStackTrace*/
@@ -191,12 +207,12 @@ public class Common
 		return sb == null || sb.length() == 0;
 	}
 
-	long[] getPeriod()
+	static long[] getPeriod()
 	{
 		long[] def = {0, 0};
 
 		int pos = GetIntPref("updateInterval", 1);
-		if (pos <= 0)
+		if(pos <= 0)
 			return def;
 
 		long period;
@@ -217,33 +233,33 @@ public class Common
 		return new long[]{period, 45000};
 	}
 
-	void setAlarm(String from)
+	static void setAlarm(String from)
 	{
 		long[] ret = getPeriod();
 		long period = ret[0];
 		long wait = ret[1];
-		if (period <= 0)
+		if(period <= 0)
 			return;
 
-		long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
+		long start = round((double)System.currentTimeMillis() / (double)period) * period + wait;
 
-		if (start < System.currentTimeMillis())
+		if(start < System.currentTimeMillis())
 			start += period;
 
-		LogMessage(from + " - start == " + start, true);
-		LogMessage(from + " - period == " + period, true);
-		LogMessage(from + " - wait == " + wait, true);
+		LogMessage(from + " - start == " + start);
+		LogMessage(from + " - period == " + period);
+		LogMessage(from + " - wait == " + wait);
 
-		Intent myAlarm = new Intent(context.getApplicationContext(), UpdateCheck.class);
-		PendingIntent recurringAlarm = PendingIntent.getBroadcast(context.getApplicationContext(), 0, myAlarm, PendingIntent.FLAG_IMMUTABLE);
+		Intent myAlarm = new Intent(getContext(), UpdateCheck.class);
+		PendingIntent recurringAlarm = PendingIntent.getBroadcast(getContext(), 0, myAlarm, PendingIntent.FLAG_IMMUTABLE);
 
-		AlarmManager alarms = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+		AlarmManager alarms = (AlarmManager)getContext().getSystemService(Context.ALARM_SERVICE);
 		alarms.set(AlarmManager.RTC_WAKEUP, start, recurringAlarm);
 	}
 
-	String getAppVersion()
+	static String getAppVersion()
 	{
-		return app_version;
+		return BuildConfig.VERSION_NAME;
 	}
 
 	static void LogMessage(String value)
@@ -253,18 +269,18 @@ public class Common
 
 	static void LogMessage(String value, boolean showAnyway)
 	{
-		if (debug_on || showAnyway)
+		if(debug_on || showAnyway)
 		{
 			int len = value.indexOf("\n");
-			if (len <= 0)
+			if(len <= 0)
 				len = value.length();
-			Log.i("weeWX Weather", "message='" + value.substring(0, len) + "'");
+			Log.i("weeWX App", "message='" + value.substring(0, len) + "'");
 		}
 	}
 
-	void SetStringPref(String name, String value)
+	static void SetStringPref(String name, String value)
 	{
-		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		SharedPreferences settings = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putString(name, value);
 		editor.apply();
@@ -272,9 +288,9 @@ public class Common
 		//LogMessage("Updating '" + name + "'='" + value + "'");
 	}
 
-	void RemovePref(String name)
+	static void RemovePref(String name)
 	{
-		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		SharedPreferences settings = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
 
 		// Wipe the entry...
@@ -285,26 +301,26 @@ public class Common
 		//LogMessage("Removing '" + name + "'");
 	}
 
-	void clearPref()
+	static void clearPref()
 	{
-		SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		SharedPreferences prefs = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		prefs.edit().clear().apply();
 
 		//LogMessage("Clearing Prefs");
 	}
 
-	void commitPref()
+	static void commitPref()
 	{
-		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		SharedPreferences settings = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.commit();
 
 		//LogMessage("Commiting Prefs");
 	}
 
-	boolean isPrefSet(String name)
+	static boolean isPrefSet(String name)
 	{
-		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		SharedPreferences settings = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		String default_value = "unknown";
 
 		try
@@ -322,14 +338,14 @@ public class Common
 		return false;
 	}
 
-	String GetStringPref(String name, String default_value)
+	static String GetStringPref(String name, String default_value)
 	{
 		SharedPreferences settings;
 		String value;
 
 		try
 		{
-			settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+			settings = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 			value = settings.getString(name, default_value);
 		} catch (ClassCastException cce) {
 			doStackOutput(cce);
@@ -345,26 +361,26 @@ public class Common
 		return value;
 	}
 
-	void SetLongPref(String name, long value)
+	static void SetLongPref(String name, long value)
 	{
 		SetStringPref(name, String.valueOf(value));
 	}
 
-	long GetLongPref(String name, long default_value)
+	static long GetLongPref(String name, long default_value)
 	{
 		String val = GetStringPref(name, String.valueOf(default_value));
-		if (val == null)
+		if(val == null)
 			return default_value;
 
 		return Long.parseLong(val);
 	}
 
-	void SetFloatPref(String name, float value)
+	static void SetFloatPref(String name, float value)
 	{
 		SetStringPref(name, String.valueOf(value));
 	}
 
-	float GetFloatPref(String name, float default_value)
+	static float GetFloatPref(String name, float default_value)
 	{
 		String val = GetStringPref(name, String.valueOf(default_value)).trim();
 		if(val.isEmpty())
@@ -373,41 +389,46 @@ public class Common
 		return Float.parseFloat(val);
 	}
 
-	void SetIntPref(String name, int value)
+	static void SetIntPref(String name, int value)
 	{
 		SetStringPref(name, String.valueOf(value));
 	}
 
-	int GetIntPref(String name, int default_value)
+	static int GetIntPref(String name, int default_value)
 	{
 		String val = GetStringPref(name, String.valueOf(default_value));
-		if (val == null)
+		if(val == null)
 			return default_value;
 		return (int)Float.parseFloat(val);
 	}
 
-	void SetBoolPref(String name, boolean value)
+	static void SetBoolPref(String name, boolean value)
 	{
 		String val = "0";
-		if (value)
+		if(value)
 			val = "1";
 
 		SetStringPref(name, val);
 	}
 
-	boolean GetBoolPref(String name, boolean default_value)
+	static boolean GetBoolPref(String name, boolean default_value)
 	{
 		String value = "0";
-		if (default_value)
+		if(default_value)
 			value = "1";
 
 		String val = GetStringPref(name, value);
 		return val.equals("1");
 	}
 
+	static File getFilesDir()
+	{
+		return getContext().getFilesDir();
+	}
+
 	static void setWebview(WebView wv)
 	{
-		wv.getSettings().setUserAgentString(Common.UA);
+		wv.getSettings().setUserAgentString(UA);
 		wv.getSettings().setJavaScriptEnabled(true);
 		wv.setOverScrollMode(View.OVER_SCROLL_NEVER);
 		wv.setNestedScrollingEnabled(true);
@@ -416,11 +437,20 @@ public class Common
 		wv.clearFormData();
 		wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
 		wv.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
-		wv.getSettings().setBuiltInZoomControls(true);
-		wv.getSettings().setDisplayZoomControls(false);
 		wv.getSettings().setLoadWithOverviewMode(true);
 		wv.getSettings().setUseWideViewPort(true);
+		//wv.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+		wv.setScrollContainer(false);
+		wv.getSettings().setDisplayZoomControls(false);
+		wv.getSettings().setBuiltInZoomControls(false);
+		wv.setVerticalScrollBarEnabled(false);
+		wv.setHorizontalScrollBarEnabled(false);
 		wv.setWebChromeClient(new myWebChromeClient());
+	}
+
+	public static String getString(int str)
+	{
+		return getContext().getString(str);
 	}
 
 	static final class myWebChromeClient extends WebChromeClient
@@ -432,86 +462,20 @@ public class Common
 		}
 	}
 
-	void buildUpdate(Context context)
-	{
-		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
-		Bitmap myBitmap = Bitmap.createBitmap(600, 440, Bitmap.Config.ARGB_8888);
-		Canvas myCanvas = new Canvas(myBitmap);
-		Paint paint = new Paint();
-		paint.setAntiAlias(true);
-		paint.setSubpixelText(true);
-
-		int bgColour = GetIntPref("bgColour", colours.widgetBG);
-		int fgColour = GetIntPref("fgColour", colours.widgetFG);
-
-		paint.setStyle(Paint.Style.FILL);
-		paint.setColor(bgColour);
-
-		RectF rectF = new RectF(0, 0, myCanvas.getWidth(), myCanvas.getHeight());
-		int cornersRadius = 25;
-		myCanvas.drawRoundRect(rectF, cornersRadius, cornersRadius, paint);
-
-		if(bgColour == colours.Black && fgColour == colours.Black)
-			fgColour = colours.White;
-		else if(bgColour == colours.White && fgColour == colours.White)
-			fgColour = colours.Black;
-
-		paint.setStyle(Paint.Style.FILL);
-		paint.setColor(fgColour);
-		paint.setTextAlign(Paint.Align.CENTER);
-
-		String[] bits = GetStringPref("LastDownload", "").split("\\|");
-		if (bits.length > 110)
-		{
-			paint.setTextSize(64);
-			myCanvas.drawText(bits[56], Math.round(myCanvas.getWidth() / 2.0), 80, paint);
-			paint.setTextSize(48);
-			myCanvas.drawText(bits[55], Math.round(myCanvas.getWidth() / 2.0), 140, paint);
-			paint.setTextSize(200);
-			myCanvas.drawText(bits[0] + bits[60], Math.round(myCanvas.getWidth() / 2.0), 310, paint);
-
-			paint.setTextAlign(Paint.Align.LEFT);
-			paint.setTextSize(64);
-			myCanvas.drawText(bits[25] + bits[61], 20, 400, paint);
-
-			paint.setTextAlign(Paint.Align.RIGHT);
-			paint.setTextSize(64);
-
-			String rain = bits[20];
-			if (bits.length > 158 && !bits[158].isEmpty())
-				rain = bits[158];
-
-			myCanvas.drawText(rain + bits[62], myCanvas.getWidth() - 20, 400, paint);
-		} else {
-			paint.setTextSize(200);
-			myCanvas.drawText("Error!", Math.round(myCanvas.getWidth() / 2.0), 300, paint);
-		}
-
-		views.setImageViewBitmap(R.id.widget, myBitmap);
-
-		Intent launchActivity = new Intent(context, MainActivity.class);
-		PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, launchActivity, PendingIntent.FLAG_IMMUTABLE);
-		views.setOnClickPendingIntent(R.id.widget, pendingIntent);
-
-		ComponentName thisWidget = new ComponentName(context, WidgetProvider.class);
-		AppWidgetManager manager = AppWidgetManager.getInstance(context);
-		manager.updateAppWidget(thisWidget, views);
-	}
-
-	private Day getFirstDay(List<Day> days)
+	private static Day getFirstDay(List<Day> days)
 	{
 		Day first = null;
-		if (days != null && !days.isEmpty())
+		if(days != null && !days.isEmpty())
 		{
 			Iterator<Day> it = days.iterator();
-			if (it.hasNext())
+			if(it.hasNext())
 				first = it.next();
 		}
 
 		return first;
 	}
 
-	private String generateForecast(List<Day> days, long timestamp, boolean showHeader)
+	private static String generateForecast(List<Day> days, long timestamp, boolean showHeader)
 	{
 		LogMessage("Starting generateForecast()");
 		LogMessage("days: "+days);
@@ -525,14 +489,14 @@ public class Common
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 		String string_time = sdf.format(timestamp);
 
-		tmp = "<div style='font-size:12pt;'>" + string_time + "</div>";
+		tmp = "\n<div style='font-size:12pt; text-align:center'>" + string_time + "</div>\n";
 		sb.append(tmp);
 
 		if(showHeader)
 		{
 			Day first = getFirstDay(days);
 
-			tmp = "<table style='width:100%;border:0px;'>";
+			tmp = "\n<table style='width:100%;border:0px;'>";
 			sb.append(tmp);
 
 			if(first.max.equals("&deg;C") || first.max.equals("&deg;F"))
@@ -557,7 +521,7 @@ public class Common
 			}
 			sb.append(tmp);
 
-			tmp = "<table style='width:100%;border:0px;'>";
+			tmp = "\n<table style='width:100%;border:0px;'>";
 			sb.append(tmp);
 
 			for(int i = 1; i < days.size(); i++)
@@ -593,7 +557,7 @@ public class Common
 			}
 
 		} else {
-			tmp = "<table style='width:100%;'>\n";
+			tmp = "\n<table style='width:100%;'>\n";
 			sb.append(tmp);
 
 			for (Day day : days)
@@ -629,12 +593,12 @@ public class Common
 		return sb.toString();
 	}
 
-	String[] processBOM2(String data)
+	static String[] processBOM2(String data)
 	{
 		return processBOM2(data, false);
 	}
 
-	String[] processBOM2(String data, boolean showHeader)
+	static String[] processBOM2(String data, boolean showHeader)
 	{
 
 		if(data.isEmpty())
@@ -644,7 +608,7 @@ public class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		String desc;
 		List<Day> days = new ArrayList<>();
-		long timestamp;
+		long timestamp = 0;
 
 		try
 		{
@@ -680,7 +644,9 @@ public class Common
 			obs = hour + ":" + minute + " " + am_pm + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
-			timestamp = Objects.requireNonNull(sdf.parse(obs)).getTime();
+			Date df = sdf.parse(obs);
+			if(df != null)
+				timestamp = df.getTime();
 
 			String[] bits = fcdiv.split("<dl class=\"forecast-summary\">");
 			String bit = bits[1];
@@ -688,7 +654,12 @@ public class Common
 
 			day.day = bit.split("<a href=\"", 2)[1].split("\">", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
 			sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-			day.timestamp = Objects.requireNonNull(sdf.parse(day.day)).getTime();
+
+			day.timestamp = 0;
+			df = sdf.parse(day.day);
+			if(df != null)
+				day.timestamp = df.getTime();
+
 			sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			day.day = sdf.format(day.timestamp);
 
@@ -717,7 +688,7 @@ public class Common
 				try(FileInputStream imageInFile = new FileInputStream(f))
 				{
 					byte[] imageData = new byte[(int) f.length()];
-					if (imageInFile.read(imageData) > 0)
+					if(imageInFile.read(imageData) > 0)
 						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				} catch (Exception e) {
 					doStackOutput(e);
@@ -750,7 +721,11 @@ public class Common
 				bit = bits[i];
 				day.day = bit.split("<a href=\"", 2)[1].split("\">", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-				day.timestamp = Objects.requireNonNull(sdf.parse(day.day)).getTime();
+				day.timestamp = 0;
+				df = sdf.parse(day.day);
+				if(df != null)
+					day.timestamp = df.getTime();
+
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
@@ -774,7 +749,7 @@ public class Common
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
 						byte[] imageData = new byte[(int) f.length()];
-						if (imageInFile.read(imageData) > 0)
+						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
 						doStackOutput(e);
@@ -803,12 +778,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processBOM3(String data)
+	static String[] processBOM3(String data)
 	{
 		return processBOM3(data, false);
 	}
 
-	String[] processBOM3(String data, boolean showHeader)
+	static String[] processBOM3(String data, boolean showHeader)
 	{
 		LogMessage("Starting processBOM3()");
 
@@ -829,25 +804,24 @@ public class Common
 			String tmp = jobj.getJSONObject("metadata").getString("issue_time");
 
 			SimpleDateFormat sdf;
-			if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
-			{
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			} else {
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-			}
-			timestamp = Objects.requireNonNull(sdf.parse(tmp)).getTime();
+			sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+
+			timestamp = 0;
+			Date df = sdf.parse(tmp);
+			if(df != null)
+				timestamp = df.getTime();
 
 			JSONArray mydays = jobj.getJSONArray("data");
 			for(int i = 0; i < mydays.length(); i++)
 			{
 				Day day = new Day();
-				if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
-				{
-					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-				} else {
-					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-				}
-				day.timestamp = Objects.requireNonNull(sdf.parse(mydays.getJSONObject(i).getString("date"))).getTime();
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+
+				day.timestamp = 0;
+				df = sdf.parse(mydays.getJSONObject(i).getString("date"));
+				if(df != null)
+					day.timestamp = df.getTime();
+
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
@@ -888,9 +862,9 @@ public class Common
 				String fileName = bomlookup(mydays.getJSONObject(i).getString("icon_descriptor"));
 				if(!fileName.equals("null"))
 				{
-					if (!use_icons)
+					if(!use_icons)
 					{
-						if (!fileName.equals("frost"))
+						if(!fileName.equals("frost"))
 							day.icon = "wi wi-bom-" + fileName;
 						else
 							day.icon = "flaticon-thermometer";
@@ -918,7 +892,7 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	private String bomlookup(String icon)
+	private static String bomlookup(String icon)
 	{
 		icon = icon.replace("-", "_");
 
@@ -934,12 +908,12 @@ public class Common
 
 	}
 
-	String[] processMET(String data)
+	static String[] processMET(String data)
 	{
 		return processMET(data, false);
 	}
 
-	String[] processMET(String data, boolean showHeader)
+	static String[] processMET(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -961,7 +935,12 @@ public class Common
 				String date = forecasts[i].split("data-tab-id=\"", 2)[1].split("\"")[0].trim();
 
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-				day.timestamp = Objects.requireNonNull(sdf.parse(date)).getTime();
+
+				day.timestamp = 0;
+				Date df = sdf.parse(date);
+				if(df != null)
+					day.timestamp = df.getTime();
+
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
@@ -1010,12 +989,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processWCA(String data)
+	static String[] processWCA(String data)
 	{
 		return processWCA(data, false);
 	}
 
-	String[] processWCA(String data, boolean showHeader)
+	static String[] processWCA(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -1058,7 +1037,11 @@ public class Common
 			obs = hour + ":" + minute + " " + am_pm + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("h:mm aa d MMMM yyyy", Locale.getDefault());
-			lastTS = timestamp = Objects.requireNonNull(sdf.parse(obs)).getTime();
+
+			lastTS = timestamp = 0;
+			Date df = sdf.parse(obs);
+			if(df != null)
+				lastTS = timestamp = df.getTime();
 
 			desc = data.split("<dt>Observed at:</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
 
@@ -1077,7 +1060,7 @@ public class Common
 					String text = "", img_url = "", temp = "", pop = "";
 					Day day = new Day();
 
-					if (div.get(j).className().contains("greybkgrd"))
+					if(div.get(j).className().contains("greybkgrd"))
 					{
 						j++;
 						continue;
@@ -1109,9 +1092,9 @@ public class Common
 
 					try
 					{
-						if (div.outerHtml().contains("div-row-data"))
+						if(div.outerHtml().contains("div-row-data"))
 						{
-							if (metric)
+							if(metric)
 								temp = div.get(j).select("div").select("span").html().split("<abbr")[0].trim() + "C";
 							else
 								temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].trim() + "F";
@@ -1163,12 +1146,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processWCAF(String data)
+	static String[] processWCAF(String data)
 	{
 		return processWCAF(data, false);
 	}
 
-	String[] processWCAF(String data, boolean showHeader)
+	static String[] processWCAF(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -1198,7 +1181,11 @@ public class Common
 			obs = hour + ":" + minute + " " + date + " " + month + " " + year;
 
 			SimpleDateFormat sdf = new SimpleDateFormat("HH:mm d MMMM yyyy", Locale.CANADA_FRENCH);
-			lastTS = timestamp = Objects.requireNonNull(sdf.parse(obs)).getTime();
+
+			lastTS = timestamp = 0;
+			Date df = sdf.parse(obs);
+			if(df != null)
+				lastTS = timestamp = df.getTime();
 
 			desc = data.split("<dt>Enregistrées à :</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
 
@@ -1217,7 +1204,7 @@ public class Common
 					Day day = new Day();
 					String text = "", img_url = "", temp = "", pop = "";
 
-					if (div.get(j).className().contains("greybkgrd"))
+					if(div.get(j).className().contains("greybkgrd"))
 					{
 						j++;
 						continue;
@@ -1229,7 +1216,7 @@ public class Common
 						{
 							date = "Cette nuit";
 							day.timestamp = lastTS;
-						} else if (div.get(j).select("div").html().contains("Nuit")) {
+						} else if(div.get(j).select("div").html().contains("Nuit")) {
 							date = "Nuit";
 							day.timestamp = lastTS;
 						} else {
@@ -1249,9 +1236,9 @@ public class Common
 
 					try
 					{
-						if (div.outerHtml().contains("div-row-data"))
+						if(div.outerHtml().contains("div-row-data"))
 						{
-							if (metric)
+							if(metric)
 								temp = div.get(j).select("div").select("span").html().split("<abbr")[0].trim() + "C";
 							else
 								temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].trim() + "F";
@@ -1305,12 +1292,12 @@ public class Common
 
 	// Thanks goes to the https://saratoga-weather.org folk for the base NOAA icons and code for dualimage.php
 
-	String[] processWGOV(String data)
+	static String[] processWGOV(String data)
 	{
 		return processWGOV(data, false);
 	}
 
-	String[] processWGOV(String data, boolean showHeader)
+	static String[] processWGOV(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -1328,13 +1315,12 @@ public class Common
 			String tmp = jobj.getString("creationDate");
 
 			SimpleDateFormat sdf;
-			if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
-			{
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			} else {
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-			}
-			timestamp = Objects.requireNonNull(sdf.parse(tmp)).getTime();
+			sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+
+			timestamp = 0;
+			Date df =sdf.parse(tmp);
+			if(df != null)
+				timestamp = df.getTime();
 
 			JSONArray periodName = jobj.getJSONObject("time").getJSONArray("startPeriodName");
 			JSONArray validTime = jobj.getJSONObject("time").getJSONArray("startValidTime");
@@ -1375,7 +1361,7 @@ public class Common
 						if(!fimg.equals(simg))
 						{
 							Bitmap bmp = combineImages(bmp1, bmp2, fimg.substring(4), simg.substring(4), fper + "%", sper + "%");
-							if (bmp == null)
+							if(bmp == null)
 							{
 								LogMessage("continue1, bmp is null");
 								continue;
@@ -1392,7 +1378,7 @@ public class Common
 							iconLink.put(i, encoded);
 						} else {
 							Bitmap bmp = combineImage(bmp1, fper + "%", sper + "%");
-							if (bmp == null)
+							if(bmp == null)
 							{
 								LogMessage("continue2, bmp is null");
 								continue;
@@ -1451,13 +1437,13 @@ public class Common
 					day.icon = iconLink.getString(i);
 				}
 
-				if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
-				{
-					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-				} else {
-					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-				}
-				day.timestamp = Objects.requireNonNull(sdf.parse(validTime.getString(i))).getTime();
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+
+				day.timestamp = 0;
+				df = sdf.parse(validTime.getString(i));
+				if(df != null)
+					day.timestamp = df.getTime();
+
 				day.day = periodName.getString(i);
 
 				if(!metric)
@@ -1475,12 +1461,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processWMO(String data)
+	static String[] processWMO(String data)
 	{
 		return processWMO(data, false);
 	}
 
-	String[] processWMO(String data, boolean showHeader)
+	static String[] processWMO(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -1498,7 +1484,11 @@ public class Common
 			String tmp = jobj.getJSONObject("city").getJSONObject("forecast").getString("issueDate");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-			timestamp = Objects.requireNonNull(sdf.parse(tmp)).getTime();
+
+			timestamp = 0;
+			Date df = sdf.parse(tmp);
+			if(df != null)
+				timestamp = df.getTime();
 
 			JSONArray jarr = jobj.getJSONObject("city").getJSONObject("forecast").getJSONArray("forecastDay");
 			for(int i = 0; i < jarr.length(); i++)
@@ -1508,7 +1498,12 @@ public class Common
 
 				String date = j.getString("forecastDate").trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-				day.timestamp = Objects.requireNonNull(sdf.parse(date)).getTime();
+
+				day.timestamp = 0;
+				df = sdf.parse(date);
+				if(df != null)
+					day.timestamp = df.getTime();
+
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				date = sdf.format(day.timestamp);
 
@@ -1548,12 +1543,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processBOM(String data)
+	static String[] processBOM(String data)
 	{
 		return processBOM(data, false);
 	}
 
-	String[] processBOM(String data, boolean showHeader)
+	static String[] processBOM(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -1571,13 +1566,12 @@ public class Common
 
 			String tmp = jobj.getString("content");
 			SimpleDateFormat sdf;
-			if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
-			{
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			} else {
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-			}
-			timestamp = Objects.requireNonNull(sdf.parse(tmp)).getTime();
+			sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+
+			timestamp = 0;
+			Date df = sdf.parse(tmp);
+			if(df != null)
+				timestamp = df.getTime();
 
 			JSONArray jarr = jobj.getJSONArray("forecast-period");
 			for(int i = 0; i < jarr.length(); i++)
@@ -1600,13 +1594,13 @@ public class Common
 					JSONArray jarr2 = j.getJSONArray("element");
 					for (int x = 0; x < jarr2.length(); x++)
 					{
-						if (jarr2.getJSONObject(x).getString("type").equals("forecast_icon_code"))
+						if(jarr2.getJSONObject(x).getString("type").equals("forecast_icon_code"))
 							code = jarr2.getJSONObject(x).getString("content");
 
-						if (jarr2.getJSONObject(x).getString("type").equals("air_temperature_minimum"))
+						if(jarr2.getJSONObject(x).getString("type").equals("air_temperature_minimum"))
 							day.min = jarr2.getJSONObject(x).getString("content");
 
-						if (jarr2.getJSONObject(x).getString("type").equals("air_temperature_maximum"))
+						if(jarr2.getJSONObject(x).getString("type").equals("air_temperature_maximum"))
 							day.max = jarr2.getJSONObject(x).getString("content");
 					}
 				} catch (JSONException e) {
@@ -1614,13 +1608,13 @@ public class Common
 				}
 
 				String date = j.getString("start-time-local").trim();
-				if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
-				{
-					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-				} else {
-					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-				}
-				day.timestamp = Objects.requireNonNull(sdf.parse(date)).getTime();
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+
+				day.timestamp = 0;
+				df = sdf.parse(date);
+				if(df != null)
+					day.timestamp = df.getTime();
+
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
@@ -1665,12 +1659,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processMetService(String data)
+	static String[] processMetService(String data)
 	{
 		return processMetService(data, false);
 	}
 
-	String[] processMetService(String data, boolean showHeader)
+	static String[] processMetService(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -1679,36 +1673,34 @@ public class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		List<Day> days = new ArrayList<>();
 		String desc;
-		long timestamp;
+		long timestamp = 0;
+		long tmp_timestamp = 0;
 
 		try
 		{
-			Common.LogMessage(data, true);
+			LogMessage(data);
 			JSONObject jobj = new JSONObject(data);
 			JSONArray loop = jobj.getJSONArray("days");
 			String string_time = loop.getJSONObject(0).getString("issuedAtISO");
 			desc = jobj.getString("locationWASP") + ", New Zealand";
 
-			SimpleDateFormat sdf;
-			if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
-			{
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			} else {
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-			}
-			timestamp = Objects.requireNonNull(sdf.parse(string_time)).getTime();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+
+			Date df = sdf.parse(string_time);
+			if(df != null)
+				timestamp = df.getTime();
 
 			for(int i = 0; i < loop.length(); i++)
 			{
 				Day day = new Day();
 				JSONObject jtmp = loop.getJSONObject(i);
-				if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
-				{
-					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-				} else {
-					sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-				}
-				day.timestamp = Objects.requireNonNull(sdf.parse(jtmp.getString("dateISO"))).getTime();
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+
+				df = sdf.parse(jtmp.getString("dateISO"));
+				if(df != null)
+					tmp_timestamp = df.getTime();
+
+				day.timestamp = tmp_timestamp;
 				day.day = jtmp.getString("dow");
 				day.text = jtmp.getString("forecast");
 				day.max = jtmp.getString("max");
@@ -1759,12 +1751,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processDWD(String data)
+	static String[] processDWD(String data)
 	{
 		return processDWD(data, false);
 	}
 
-	String[] processDWD(String data, boolean showHeader)
+	static String[] processDWD(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -1773,12 +1765,13 @@ public class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		List<Day> days = new ArrayList<>();
 		String desc = "";
-		long timestamp, lastTS;
+		long timestamp = 0;
+		long lastTS = 0;
 
 		try
 		{
 			String[] bits = data.split("<title>");
-			if (bits.length >= 2)
+			if(bits.length >= 2)
 				desc = bits[1].split("</title>")[0];
 			desc = desc.substring(desc.lastIndexOf(" - ") + 3).trim();
 			String string_time = data.split("<tr class=\"headRow\">", 2)[1].split("</tr>", 2)[0].trim();
@@ -1786,7 +1779,9 @@ public class Common
 			string_time = date + " " + string_time.split("<td width=\"40%\" class=\"stattime\">", 2)[1].split(" Uhr</td>", 2)[0].trim();
 
 			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy' 'HH", Locale.getDefault());
-			lastTS = timestamp = Objects.requireNonNull(sdf.parse(string_time)).getTime();
+			Date df = sdf.parse(string_time);
+			if(df != null)
+				lastTS = timestamp = df.getTime();
 
 			data = data.split("<td width=\"40%\" class=\"statwert\">Vorhersage</td>", 2)[1].split("</table>", 2)[0].trim();
 			bits = data.split("<tr");
@@ -1795,25 +1790,25 @@ public class Common
 				Day day = new Day();
 				String bit = bits[i];
 				String icon, temp;
-				if (bit.split("<td ><b>", 2).length > 1)
+				if(bit.split("<td ><b>", 2).length > 1)
 					day.day = bit.split("<td ><b>", 2)[1].split("</b></td>", 2)[0].trim();
 				else
 					day.day = bit.split("<td><b>", 2)[1].split("</b></td>", 2)[0].trim();
 
 				Locale locale = new Locale.Builder().setLanguage("de").setRegion("DE").build();
 				day.timestamp = convertDaytoTS(day.day, locale, lastTS);
-				if (day.timestamp != 0)
+				if(day.timestamp != 0)
 				{
 					sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 					day.day = sdf.format(day.timestamp) + " " + day.day.substring(day.day.lastIndexOf(" ") + 1);
 				}
 
-				if (bit.split("<td ><img name=\"piktogramm\" src=\"", 2).length > 1)
+				if(bit.split("<td ><img name=\"piktogramm\" src=\"", 2).length > 1)
 					icon = bit.split("<td ><img name=\"piktogramm\" src=\"", 2)[1].split("\" width=\"50\" alt=\"", 2)[0].trim();
 				else
 					icon = bit.split("<td><img name=\"piktogramm\" src=\"", 2)[1].split("\" width=\"50\" alt=\"", 2)[0].trim();
 
-				if (bit.split("\"></td>\r\n<td >", 2).length > 1)
+				if(bit.split("\"></td>\r\n<td >", 2).length > 1)
 					temp = bit.split("\"></td>\r\n<td >", 2)[1].split("Grad <abbr title=\"Celsius\">C</abbr></td>\r\n", 2)[0].trim();
 				else
 					temp = bit.split("\"></td>\r\n<td>", 2)[1].split("Grad <abbr title=\"Celsius\">C</abbr></td>\r\n", 2)[0].trim();
@@ -1860,12 +1855,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processTempoItalia(String data)
+	static String[] processTempoItalia(String data)
 	{
 		return processTempoItalia(data, false);
 	}
 
-	String[] processTempoItalia(String data, boolean showHeader)
+	static String[] processTempoItalia(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -1874,7 +1869,8 @@ public class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		List<Day> days = new ArrayList<>();
 		String desc;
-		long timestamp, lastTS;
+		long timestamp = 0;
+		long lastTS = 0;
 
 		try
 		{
@@ -1884,7 +1880,9 @@ public class Common
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String string_time = sdf.format(System.currentTimeMillis());
 			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
-			lastTS = timestamp = Objects.requireNonNull(sdf.parse(string_time)).getTime();
+			Date df = sdf.parse(string_time);
+			if(df != null)
+				lastTS = timestamp = df.getTime();
 
 			data = data.split("<tbody>")[1].trim();
 			String[] bits = data.split("<tr>");
@@ -1953,12 +1951,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processAEMET(String data)
+	static String[] processAEMET(String data)
 	{
 		return processAEMET(data, false);
 	}
 
-	String[] processAEMET(String data, boolean showHeader)
+	static String[] processAEMET(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -1967,12 +1965,12 @@ public class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		List<Day> days = new ArrayList<>();
 		String desc;
-		long timestamp;
+		long timestamp = 0;
 
 		try
 		{
 			JSONObject jobj = new XmlToJson.Builder(data).build().toJson();
-			if (jobj == null)
+			if(jobj == null)
 				return null;
 
 			jobj = jobj.getJSONObject("root");
@@ -1981,7 +1979,9 @@ public class Common
 			String elaborado = jobj.getString("elaborado");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-			timestamp = Objects.requireNonNull(sdf.parse(elaborado)).getTime();
+			Date df = sdf.parse(elaborado);
+			if(df != null)
+				timestamp = df.getTime();
 
 			JSONArray dates = jobj.getJSONObject("prediccion").getJSONArray("dia");
 			for(int i = 0; i < dates.length(); i++)
@@ -1990,22 +1990,27 @@ public class Common
 				JSONObject jtmp = dates.getJSONObject(i);
 				String fecha = jtmp.getString("fecha");
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-				day.timestamp = Objects.requireNonNull(sdf.parse(fecha)).getTime();
+
+				day.timestamp = 0;
+				df = sdf.parse(fecha);
+				if(df != null)
+					day.timestamp = df.getTime();
+
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
 				JSONObject estado_cielo = null;
 
 				Object v = jtmp.get("estado_cielo");
-				if (v instanceof JSONObject)
+				if(v instanceof JSONObject)
 				{
 					estado_cielo = jtmp.getJSONObject("estado_cielo");
-				} else if (v instanceof JSONArray)
+				} else if(v instanceof JSONArray)
 				{
 					JSONArray jarr = jtmp.getJSONArray("estado_cielo");
 					for (int j = 0; j < jarr.length(); j++)
 					{
-						if (!jarr.getJSONObject(j).getString("descripcion").isEmpty())
+						if(!jarr.getJSONObject(j).getString("descripcion").isEmpty())
 						{
 							estado_cielo = jarr.getJSONObject(j);
 							break;
@@ -2013,15 +2018,15 @@ public class Common
 					}
 				}
 
-				if (estado_cielo == null)
+				if(estado_cielo == null)
 					return null;
 
 				JSONObject temperatura = jtmp.getJSONObject("temperatura");
 
 				String code = estado_cielo.getString("content");
-				if (!use_icons)
+				if(!use_icons)
 				{
-					if (!code.startsWith("7"))
+					if(!code.startsWith("7"))
 						day.icon = "wi wi-aemet-" + code;
 					else
 						day.icon = "flaticon-thermometer";
@@ -2034,7 +2039,7 @@ public class Common
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
 						byte[] imageData = new byte[(int) f.length()];
-						if (imageInFile.read(imageData) > 0)
+						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					} catch (Exception e) {
 						doStackOutput(e);
@@ -2063,12 +2068,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processWCOM(String data)
+	static String[] processWCOM(String data)
 	{
 		return processWCOM(data, false);
 	}
 
-	String[] processWCOM(String data, boolean showHeader)
+	static String[] processWCOM(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -2096,7 +2101,7 @@ public class Common
 
 			for(int i = 0; i < validDate.length(); i++)
 			{
-				if (icons.getString(i) == null || icons.getString(i).equals("null"))
+				if(icons.getString(i) == null || icons.getString(i).equals("null"))
 					continue;
 
 				Day day = new Day();
@@ -2112,7 +2117,7 @@ public class Common
 					day.icon = "wi wi-yahoo-" + day.icon;
 				} else {
 					String fileName = checkImage(day.icon + ".png", null);
-					Common.LogMessage("yahoo filename = " + fileName);
+					LogMessage("yahoo filename = " + fileName);
 
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
@@ -2144,12 +2149,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processMETIE(String data)
+	static String[] processMETIE(String data)
 	{
 		return processMETIE(data, false);
 	}
 
-	String[] processMETIE(String data, boolean showHeader)
+	static String[] processMETIE(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -2173,7 +2178,11 @@ public class Common
 				JSONObject jobj = jarr.getJSONObject(i);
 				Day day = new Day();
 				String tmpDay = jobj.getString("date") + " " + jobj.getString("time");
-				day.timestamp = Objects.requireNonNull(sdf.parse(tmpDay)).getTime();
+				day.timestamp = 0;
+				Date df = sdf.parse(tmpDay);
+				if(df != null)
+					day.timestamp = df.getTime();
+
 				day.day = dayname.format(day.timestamp);
 				day.max = jobj.getString("temperature");
 				day.icon = jobj.getString("weatherNumber");
@@ -2211,9 +2220,9 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processOWM(String data) { return processOWM(data, false); }
+	static String[] processOWM(String data) { return processOWM(data, false); }
 
-	String[] processOWM(String data, boolean showHeader)
+	static String[] processOWM(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -2271,12 +2280,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processYR(String data)
+	static String[] processYR(String data)
 	{
 		return processYR(data, false);
 	}
 
-	String[] processYR(String data, boolean showHeader)
+	static String[] processYR(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -2315,7 +2324,11 @@ public class Common
 				JSONObject windSpeed = jarr.getJSONObject(i).getJSONObject("windSpeed");
 
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-				day.timestamp = Objects.requireNonNull(sdf.parse(from)).getTime();
+				day.timestamp = 0;
+				Date df = sdf.parse(from);
+				if(df != null)
+					day.timestamp = df.getTime();
+
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				String date = sdf.format(day.timestamp);
 
@@ -2323,7 +2336,11 @@ public class Common
 				from = sdf.format(day.timestamp);
 
 				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-				long mdate = Objects.requireNonNull(sdf.parse(to)).getTime();
+				long mdate = 0;
+				df = sdf.parse(to);
+				if(df != null)
+					mdate = df.getTime();
+
 				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
 				to = sdf.format(mdate);
 
@@ -2360,12 +2377,12 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	String[] processMetNO(String data)
+	static String[] processMetNO(String data)
 	{
 		return processMetNO(data, false);
 	}
 
-	String[] processMetNO(String data, boolean showHeader)
+	static String[] processMetNO(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -2383,21 +2400,24 @@ public class Common
 			JSONObject jobj = new JSONObject(data);
 			jobj = jobj.getJSONObject("properties");
 			String updated_at = jobj.getJSONObject("meta").getString("updated_at");
-			SimpleDateFormat sdf;
-			if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N)
-			{
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-			} else {
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-			}
-			timestamp = Objects.requireNonNull(sdf.parse(updated_at)).getTime();
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+
+			timestamp = 0;
+			Date df = sdf.parse(updated_at);
+			if(df != null)
+				timestamp = df.getTime();
+
 			JSONArray jarr = jobj.getJSONArray("timeseries");
 
 			for(int i = 0; i < jarr.length(); i++)
 			{
 				Day day = new Day();
 				String time = jarr.getJSONObject(i).getString("time");
-				day.timestamp = Objects.requireNonNull(sdf.parse(time)).getTime();
+
+				day.timestamp = 0;
+				df = sdf.parse(time);
+				if(df != null)
+					day.timestamp = df.getTime();
 
 				JSONObject tsdata = jarr.getJSONObject(i).getJSONObject("data");
 				double temp = tsdata.getJSONObject("instant").getJSONObject("details").getDouble("air_temperature");
@@ -2472,7 +2492,7 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	private String degtoname(double deg)
+	private static String degtoname(double deg)
 	{
 		if(deg <= 22.5)
 			return "North";
@@ -2493,7 +2513,7 @@ public class Common
 		return "North";
 	}
 
-	private String getCode(String icon)
+	private static String getCode(String icon)
 	{
 		return switch (icon)
 				{
@@ -2584,7 +2604,7 @@ public class Common
 
 	}
 
-	private long convertDaytoTS(String dayName, Locale locale, long lastTS)
+	private static long convertDaytoTS(String dayName, Locale locale, long lastTS)
 	{
 		long startTS = lastTS;
 
@@ -2605,12 +2625,12 @@ public class Common
 		}
 	}
 
-	String[] processWZ(String data)
+	static String[] processWZ(String data)
 	{
 		return processWZ(data, false);
 	}
 
-	String[] processWZ(String data, boolean showHeader)
+	static String[] processWZ(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -2618,13 +2638,14 @@ public class Common
 		boolean use_icons = GetBoolPref("use_icons", false);
 		boolean metric = GetBoolPref("metric", true);
 		List<Day> days = new ArrayList<>();
-		long timestamp, lastTS;
+		long timestamp = 0;
+		long lastTS = 0;
 		String desc;
 
 		try
 		{
 			JSONObject jobj = new XmlToJson.Builder(data).build().toJson();
-			if (jobj == null)
+			if(jobj == null)
 				return null;
 
 			jobj = jobj.getJSONObject("rss").getJSONObject("channel");
@@ -2632,8 +2653,9 @@ public class Common
 			String pubDate = jobj.getString("pubDate");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.getDefault());
-			timestamp = Objects.requireNonNull(sdf.parse(pubDate)).getTime();
-			lastTS = timestamp;
+			Date df = sdf.parse(pubDate);
+			if(df != null)
+				lastTS = timestamp = df.getTime();
 
 			JSONObject item = jobj.getJSONArray("item").getJSONObject(0);
 			String[] items = item.getString("description").trim().split("<b>");
@@ -2651,7 +2673,7 @@ public class Common
 					day.day = tmp[0];
 				}
 
-				if (tmp.length == 1)
+				if(tmp.length == 1)
 					continue;
 
 				String[] mybits = tmp[1].split("<br />");
@@ -2699,10 +2721,10 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	private String[] checkFiles(String url) throws Exception
+	private static String[] checkFiles(String url) throws Exception
 	{
 		String filename = "yahoo-" + new File(url).getName();
-		File f = new File(context.getExternalFilesDir(""), "weeWX");
+		File f = new File(getContext().getExternalFilesDir(""), "weeWX");
 		f = new File(f,"icons");
 		f = new File(f, filename);
 		if(!f.exists())
@@ -2725,10 +2747,10 @@ public class Common
 		return new String[]{null, "Failed to load or download icon: " + filename};
 	}
 
-	private String[] checkFilesIt(String url) throws Exception
+	private static String[] checkFilesIt(String url) throws Exception
 	{
 		String filename = "tempoitalia-" + new File(url).getName();
-		File f = new File(context.getExternalFilesDir(""), "weeWX");
+		File f = new File(getContext().getExternalFilesDir(""), "weeWX");
 		f = new File(f,"icons");
 		f = new File(f, filename);
 		if(!f.exists())
@@ -2751,12 +2773,12 @@ public class Common
 		return new String[]{null, "Failed to load or download icon: " + filename};
 	}
 
-	String[] processYahoo(String data)
+	static String[] processYahoo(String data)
 	{
 		return processYahoo(data, false);
 	}
 
-	String[] processYahoo(String data, boolean showHeader)
+	static String[] processYahoo(String data, boolean showHeader)
 	{
 		if(data.isEmpty())
 			return null;
@@ -2787,7 +2809,7 @@ public class Common
 				int endid;
 				long last_ts = System.currentTimeMillis();
 
-				if (startid == 196)
+				if(startid == 196)
 					endid = startid + 24;
 				else
 					endid = startid + 19;
@@ -2820,7 +2842,7 @@ public class Common
 				myday.max = myday.max.substring(0, myday.max.length() - 1);
 				myday.min = myday.min.substring(0, myday.min.length() - 1);
 
-				if (metric)
+				if(metric)
 				{
 					myday.max = round((Double.parseDouble(myday.max) - 32.0) * 5.0 / 9.0) + "&deg;C";
 					myday.min = round((Double.parseDouble(myday.min) - 32.0) * 5.0 / 9.0) + "&deg;C";
@@ -2831,7 +2853,7 @@ public class Common
 				}
 
 				String[] ret = checkFiles(myday.icon);
-				if (ret[0] != null)
+				if(ret[0] != null)
 				{
 					File f = new File(ret[1]);
 					try(FileInputStream imageInFile = new FileInputStream(f))
@@ -2856,43 +2878,31 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	void SendIntents()
+	static void buildUpdate()
+	{
+		WidgetProvider.updateAppWidget();
+	}
+
+	static void SendIntents()
 	{
 		getWeather();
 		getForecast();
 
-		SendWidgetUpdate();
+		buildUpdate();
 
-		NotificationManager.updateNotificationMessage(Common.UPDATE_INTENT);
-		Common.LogMessage("update intent broadcasted");
+		NotificationManager.updateNotificationMessage(UPDATE_INTENT);
+		LogMessage("update intent broadcasted");
 	}
 
-	private void SendRefresh()
+	private static void SendRefresh()
 	{
-		SendWidgetUpdate();
+		buildUpdate();
 
-		NotificationManager.updateNotificationMessage(Common.REFRESH_INTENT);
-		Common.LogMessage("refresh intent broadcasted");
+		NotificationManager.updateNotificationMessage(REFRESH_INTENT);
+		LogMessage("refresh intent broadcasted");
 	}
 
-	void SendWidgetUpdate()
-	{
-		buildUpdate(context);
-		Common.LogMessage("widget intent broadcasted");
-/*
-
-		NotificationManager.updateNotificationMessage(Common.WIDGET_UPDATE);
-		Common.LogMessage("widget update broadcast");
-
-		Intent intent = new Intent(context, WidgetProvider.class);
-		intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
-		int[] ids = AppWidgetManager.getInstance(context.getApplicationContext()).getAppWidgetIds(new ComponentName(context.getApplicationContext(), WidgetProvider.class));
-		intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
-		context.sendBroadcast(intent);
- */
-	}
-
-	void getWeather()
+	static void getWeather()
 	{
 		if(t != null)
 		{
@@ -2910,7 +2920,7 @@ public class Common
 					return;
 
 				reallyGetWeather(fromURL);
-				//SendRefresh();
+				SendRefresh();
 			} catch (InterruptedException | InterruptedIOException ie) {
 				doStackOutput(ie);
 			} catch (Exception e) {
@@ -2923,27 +2933,27 @@ public class Common
 		t.start();
 	}
 
-	void reallyGetWeather(String fromURL) throws Exception
+	static void reallyGetWeather(String fromURL) throws Exception
 	{
 		String line = downloadString(fromURL);
 		if(!line.isEmpty())
 		{
 			String[] bits = line.split("\\|");
-			if (Double.parseDouble(bits[0]) < inigo_version)
+			if(Double.parseDouble(bits[0]) < inigo_version)
 			{
-				if(GetLongPref("inigo_version", 0) < Common.inigo_version)
+				if(GetLongPref("inigo_version", 0) < inigo_version)
 				{
-					SetLongPref("inigo_version", Common.inigo_version);
+					SetLongPref("inigo_version", inigo_version);
 					sendAlert();
 				}
 			}
 
-			if (Double.parseDouble(bits[0]) >= 4000)
+			if(Double.parseDouble(bits[0]) >= 4000)
 			{
 				StringBuilder sb = new StringBuilder();
 				for (int i = 1; i < bits.length; i++)
 				{
-					if (!isEmpty(sb))
+					if(!isEmpty(sb))
 						sb.append("|");
 					sb.append(bits[i]);
 				}
@@ -2952,18 +2962,18 @@ public class Common
 			}
 
 			SetStringPref("LastDownload", line);
-			SetLongPref("LastDownloadTime", Math.round(System.currentTimeMillis() / 1000.0));
+			SetLongPref("LastDownloadTime", round(System.currentTimeMillis() / 1000.0));
 		}
 	}
 
 	//	https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
-	boolean checkConnection()
+	static boolean checkConnection()
 	{
 		if(!GetBoolPref("onlyWIFI", false))
 			return true;
 
-		ConnectivityManager connMgr = (ConnectivityManager)context.getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
-		if (connMgr == null)
+		ConnectivityManager connMgr = (ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+		if(connMgr == null)
 			return false;
 
 		Network network = connMgr.getActiveNetwork();
@@ -2974,23 +2984,23 @@ public class Common
 		return capabilities != null && capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI);
 	}
 
-	private void sendAlert()
+	private static void sendAlert()
 	{
-		NotificationManager.updateNotificationMessage(Common.INIGO_INTENT);
-		Common.LogMessage("Send user note about upgrading the Inigo Plugin");
+		NotificationManager.updateNotificationMessage(INIGO_INTENT);
+		LogMessage("Send user note about upgrading the Inigo Plugin");
 	}
 
-	private void SendFailedIntent()
+	private static void SendFailedIntent()
 	{
-		NotificationManager.updateNotificationMessage(Common.FAILED_INTENT);
+		NotificationManager.updateNotificationMessage(FAILED_INTENT);
 		LogMessage("failed_intent broadcast.");
 	}
 
 	// https://stackoverflow.com/questions/8710515/reading-an-image-file-into-bitmap-from-sdcard-why-am-i-getting-a-nullpointerexc
 
-	private Bitmap loadImage(String fileName)
+	private static Bitmap loadImage(String fileName)
 	{
-		File f = new File(context.getExternalFilesDir(""), "weeWX");
+		File f = new File(getContext().getExternalFilesDir(""), "weeWX");
 		f = new File(f, "icons");
 		f = new File(f, fileName);
 
@@ -3000,9 +3010,9 @@ public class Common
 		return BitmapFactory.decodeFile(f.getAbsolutePath(), options);
 	}
 
-	private String checkImage(String fileName, String icon)
+	private static String checkImage(String fileName, String icon)
 	{
-		File f = new File(context.getExternalFilesDir(""), "weeWX");
+		File f = new File(getContext().getExternalFilesDir(""), "weeWX");
 		f = new File(f, "icons");
 		f = new File(f, fileName);
 		//LogMessage("f = " + f.getAbsolutePath());
@@ -3016,21 +3026,21 @@ public class Common
 		return icon;
 	}
 
-	private void downloadImage(final String fileName, final String imageURL)
+	private static void downloadImage(final String fileName, final String imageURL)
 	{
 		Thread t = new Thread(() ->
 		{
-			if (fileName.isEmpty() || imageURL.isEmpty())
+			if(fileName.isEmpty() || imageURL.isEmpty())
 				return;
 
-			Common.LogMessage("checking: " + imageURL);
+			LogMessage("checking: " + imageURL);
 
 			try
 			{
-				File f = new File(context.getExternalFilesDir(""), "weeWX");
+				File f = new File(getContext().getExternalFilesDir(""), "weeWX");
 				f = new File(f, "icons");
-				if (!f.exists())
-					if (!f.mkdirs())
+				if(!f.exists())
+					if(!f.mkdirs())
 						return;
 
 				f = new File(f, fileName);
@@ -3050,7 +3060,7 @@ public class Common
 		t.start();
 	}
 
-	private Bitmap combineImage(Bitmap bmp1, String fnum, String snum)
+	private static Bitmap combineImage(Bitmap bmp1, String fnum, String snum)
 	{
 		try
 		{
@@ -3064,7 +3074,7 @@ public class Common
 			Canvas comboImage = new Canvas(bmp);
 			comboImage.drawBitmap(bmp1, 0f, 0f, null);
 
-			if (!fnum.equals("%") || !snum.equals("%"))
+			if(!fnum.equals("%") || !snum.equals("%"))
 			{
 				Bitmap bmp2 = loadImage("wgovoverlay.jpg");
 				paint = new Paint();
@@ -3072,24 +3082,24 @@ public class Common
 				comboImage.drawBitmap(bmp2, 0f, bmp1.getHeight() - bmp2.getHeight(), paint);
 			}
 
-			if (!fnum.equals("%") && !snum.equals("%"))
+			if(!fnum.equals("%") && !snum.equals("%"))
 			{
 				// Draw arrow
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
 				paint.setStyle(Paint.Style.STROKE);
 				paint.setStrokeWidth(1);
-				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 9, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
-				comboImage.drawLine( Math.round(x1 / 2.0) - 10, y1 - 7, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
-				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 5, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( round(x1 / 2.0) + 5, y1 - 9, round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( round(x1 / 2.0) - 10, y1 - 7, round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( round(x1 / 2.0) + 5, y1 - 5, round(x1 / 2.0) + 10, y1 - 7, paint);
 			}
 
 			if(!fnum.equals("%"))
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -3100,7 +3110,7 @@ public class Common
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -3119,7 +3129,7 @@ public class Common
 		return null;
 	}
 
-	private Bitmap combineImages(Bitmap bmp1, Bitmap bmp2, String fimg, String simg, String fnum, String snum)
+	private static Bitmap combineImages(Bitmap bmp1, Bitmap bmp2, String fimg, String simg, String fnum, String snum)
 	{
 		try
 		{
@@ -3158,17 +3168,17 @@ public class Common
 			paint.setAntiAlias(true);
 			Canvas comboImage = new Canvas(bmp);
 			comboImage.drawBitmap(bmp1, 0f, 0f, null);
-			comboImage.drawBitmap(bmp2, Math.round(x1 / 2.0), 0f, null);
+			comboImage.drawBitmap(bmp2, round(x1 / 2.0), 0f, null);
 
-			paint.setColor(ContextCompat.getColor(context, R.color.Black));
+			paint.setColor(ContextCompat.getColor(getContext(), R.color.Black));
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeWidth(4);
-			comboImage.drawLine( Math.round(x1 / 2.0), 0, Math.round(x1 / 2.0), y1, paint);
+			comboImage.drawLine( round(x1 / 2.0), 0, round(x1 / 2.0), y1, paint);
 
-			paint.setColor(ContextCompat.getColor(context, R.color.White));
+			paint.setColor(ContextCompat.getColor(getContext(), R.color.White));
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeWidth(2);
-			comboImage.drawLine( Math.round(x1 / 2.0), 0, Math.round(x1 / 2.0), y1, paint);
+			comboImage.drawLine( round(x1 / 2.0), 0, round(x1 / 2.0), y1, paint);
 
 			if(!fnum.equals("%") || !snum.equals("%"))
 			{
@@ -3180,24 +3190,24 @@ public class Common
 				comboImage.drawBitmap(bmp4, 0f, bmp1.getHeight() - bmp4.getHeight(), paint);
 			}
 
-			if (!fnum.equals("%") && !snum.equals("%"))
+			if(!fnum.equals("%") && !snum.equals("%"))
 			{
 				// Draw arrow
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
 				paint.setStyle(Paint.Style.STROKE);
 				paint.setStrokeWidth(1);
-				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 9, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
-				comboImage.drawLine( Math.round(x1 / 2.0) - 10, y1 - 7, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
-				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 5, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( round(x1 / 2.0) + 5, y1 - 9, round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( round(x1 / 2.0) - 10, y1 - 7, round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( round(x1 / 2.0) + 5, y1 - 5, round(x1 / 2.0) + 10, y1 - 7, paint);
 			}
 
 			if(!fnum.equals("%"))
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -3208,7 +3218,7 @@ public class Common
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -3229,17 +3239,21 @@ public class Common
 
 	// https://stackoverflow.com/questions/1540272/android-how-to-overlay-a-bitmap-draw-over-a-bitmap
 
-	private Bitmap overlay(Bitmap bmp1, Bitmap bmp2, String s)
+	private static Bitmap overlay(Bitmap bmp1, Bitmap bmp2, String s)
 	{
 		Paint paint = new Paint();
 		paint.setAlpha(100);
 
-		Bitmap bmp3 = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), Objects.requireNonNull(bmp1.getConfig()));
+		Bitmap.Config btmp = bmp1.getConfig();
+		if(btmp == null)
+			btmp = Bitmap.Config.ARGB_8888;
+
+		Bitmap bmp3 = Bitmap.createBitmap(bmp1.getWidth(), bmp1.getHeight(), btmp);
 		Canvas canvas = new Canvas(bmp3);
 		canvas.drawBitmap(bmp1, 0f, 0f, null);
 		canvas.drawBitmap(bmp2, 0f, bmp1.getHeight() - bmp2.getHeight(), paint);
 		paint.setAntiAlias(true);
-		paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
+		paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
 		paint.setTextSize(13);
 		paint.setTypeface(tf_bold);
 		Rect textBounds = new Rect();
@@ -3253,11 +3267,11 @@ public class Common
 
 	// https://stackoverflow.com/questions/19945411/android-java-how-can-i-parse-a-local-json-file-from-assets-folder-into-a-listvi
 
-	private void loadNWS()
+	private static void loadNWS()
 	{
 		try
 		{
-			InputStream is = context.getResources().openRawResource(R.raw.nws);
+			InputStream is = getContext().getResources().openRawResource(R.raw.nws);
 			int size = is.available();
 			byte[] buffer = new byte[size];
 			if(is.read(buffer) > 0)
@@ -3268,7 +3282,7 @@ public class Common
 		}
 	}
 
-	String downloadSettings(String url) throws Exception
+	static String downloadSettings(String url) throws Exception
 	{
 		String UTF8_BOM = "\uFEFF";
 
@@ -3279,16 +3293,16 @@ public class Common
 		return cfg;
 	}
 
-	File downloadRADAR(String radar) throws Exception
+	static File downloadRADAR(String radar) throws Exception
 	{
 		LogMessage("starting to download image from: " + radar);
-		File file = new File(context.getFilesDir(), "/radar.gif.tmp");
+		File file = new File(getContext().getFilesDir(), "/radar.gif.tmp");
 		return downloadBinary(file, radar);
 	}
 
-	boolean checkURL(String setting) throws Exception
+	static boolean checkURL(String setting) throws Exception
 	{
-		Common.LogMessage("checking: " + setting);
+		LogMessage("checking: " + setting);
 		URL url = new URL(setting);
 		URLConnection conn = url.openConnection();
 		conn.connect();
@@ -3296,12 +3310,12 @@ public class Common
 		return true;
 	}
 
-	String downloadForecast() throws Exception
+	static String downloadForecast() throws Exception
 	{
 		return downloadForecast(GetStringPref("fctype", "Yahoo"), GetStringPref("FORECAST_URL", ""), GetStringPref("bomtown", ""));
 	}
 
-	String downloadForecast(String fctype, String forecast, String bomtown) throws Exception
+	static String downloadForecast(String fctype, String forecast, String bomtown) throws Exception
 	{
 		String tmp;
 
@@ -3314,7 +3328,12 @@ public class Common
 		{
 			boolean found = false;
 
-			JSONObject jobj = Objects.requireNonNull(new XmlToJson.Builder(tmp).build().toJson()).getJSONObject("product");
+			JSONObject jobj = new JSONObject();
+			JSONObject tmp_result = new XmlToJson.Builder(tmp).build().toJson();
+
+			if(tmp_result != null)
+				jobj = tmp_result.getJSONObject("product");
+
 			String content = jobj.getJSONObject("amoc").getJSONObject("issue-time-local").getString("content");
 			JSONArray area = jobj.getJSONObject("forecast").getJSONArray("area");
 
@@ -3340,7 +3359,7 @@ public class Common
 		return tmp;
 	}
 
-	private String downloadString2(String fromURL) throws Exception
+	private static String downloadString2(String fromURL) throws Exception
 	{
 		Connection.Response resultResponse = Jsoup.connect(fromURL)
 													.userAgent(UA)
@@ -3356,7 +3375,7 @@ public class Common
 		return resultResponse.body();
 	}
 
-	private int responseCount(Response response)
+	private static int responseCount(Response response)
 	{
 		int result = 1;
 		while ((response = response.priorResponse()) != null)
@@ -3364,7 +3383,7 @@ public class Common
 		return result;
 	}
 
-	private String downloadString(String fromURL) throws Exception
+	private static String downloadString(String fromURL) throws Exception
 	{
 		OkHttpClient client;
 		Request request;
@@ -3382,7 +3401,7 @@ public class Common
 				.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS))
 				.authenticator((route, response) ->
 				{
-					if (responseCount(response) >= 3)
+					if(responseCount(response) >= 3)
 						return null;
 
 					String credential = Credentials.basic(UC[0], UC[1]);
@@ -3405,17 +3424,17 @@ public class Common
 
 		try (Response response = client.newCall(request).execute())
 		{
-			String rb = Objects.requireNonNull(response.body()).string().trim();
+			String rb = response.body().string().trim();
 			LogMessage(rb);
 			return rb;
 		}
 	}
 
-	private void writeFile(String fileName, String data) throws Exception
+	private static void writeFile(String fileName, String data) throws Exception
 	{
-		File dir = new File(context.getExternalFilesDir(""), "weeWX");
-		if (!dir.exists())
-			if (!dir.mkdirs())
+		File dir = new File(getContext().getExternalFilesDir(""), "weeWX");
+		if(!dir.exists())
+			if(!dir.mkdirs())
 				return;
 
 		File f = new File(dir, fileName);
@@ -3428,12 +3447,12 @@ public class Common
 		publish(f);
 	}
 
-	File downloadJSOUP(File f, String fromURL) throws Exception
+	static File downloadJSOUP(File f, String fromURL) throws Exception
 	{
 		File dir = f.getParentFile();
 		assert dir != null;
-		if (!dir.exists())
-			if (!dir.mkdirs())
+		if(!dir.exists())
+			if(!dir.mkdirs())
 				return null;
 
 		Connection.Response resultResponse = Jsoup.connect(fromURL).userAgent(UA).maxBodySize(Integer.MAX_VALUE).ignoreContentType(true).execute();
@@ -3446,12 +3465,12 @@ public class Common
 		return f;
 	}
 
-	private File downloadBinary(File f, String fromURL) throws Exception
+	private static File downloadBinary(File f, String fromURL) throws Exception
 	{
 		File dir = f.getParentFile();
 		assert dir != null;
-		if (!dir.exists())
-			if (!dir.mkdirs())
+		if(!dir.exists())
+			if(!dir.mkdirs())
 				return null;
 
 		OkHttpClient client;
@@ -3471,7 +3490,7 @@ public class Common
 					.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS))
 					.authenticator((route, response) ->
 					{
-						if (responseCount(response) >= 3)
+						if(responseCount(response) >= 3)
 							return null;
 
 						String credential = Credentials.basic(UC[0], UC[1]);
@@ -3494,7 +3513,7 @@ public class Common
 
 		try (Response response = client.newCall(request).execute())
 		{
-			outputStream.write(Objects.requireNonNull(response.body()).bytes());
+			outputStream.write(response.body().bytes());
 			outputStream.flush();
 			outputStream.close();
 			publish(f);
@@ -3502,16 +3521,16 @@ public class Common
 		}
 	}
 
-	private void publish(File f)
+	private static void publish(File f)
 	{
 		LogMessage("wrote to " + f.getAbsolutePath());
-		if (f.exists())
-			MediaScannerConnection.scanFile(context.getApplicationContext(), new String[]{f.getAbsolutePath()}, null, null);
+		if(f.exists())
+			MediaScannerConnection.scanFile(getContext(), new String[]{f.getAbsolutePath()}, null, null);
 	}
 
-	boolean downloadIcons() throws Exception
+	static boolean downloadIcons() throws Exception
 	{
-		File f = new File(context.getExternalFilesDir(""), "weeWX");
+		File f = new File(getContext().getExternalFilesDir(""), "weeWX");
 		File dir = f;
 
 		if(!dir.exists() && !dir.mkdirs())
@@ -3538,7 +3557,7 @@ public class Common
 		return true;
 	}
 
-	private void unzip(File zipFilePath, File destDir) throws Exception
+	private static void unzip(File zipFilePath, File destDir) throws Exception
 	{
 		LogMessage("dsetDir: " + destDir.getAbsolutePath());
 		byte[] buffer = new byte[1024];
@@ -3550,27 +3569,30 @@ public class Common
 			String fileName = ze.getName();
 			File newFile = new File(destDir, fileName);
 			String canonicalPath = newFile.getCanonicalPath();
-			if (!canonicalPath.startsWith(destDir.toString()))
+			if(!canonicalPath.startsWith(destDir.toString()))
 			{
 				LogMessage("File '" + canonicalPath + "' is a security problem, skipping.");
 				continue;
 			}
 			LogMessage("Unzipping to " + newFile.getAbsolutePath());
-			File dir = new File(Objects.requireNonNull(newFile.getParent()));
-			if(!dir.exists() && !dir.mkdirs())
-				throw new Exception("There was a problem creating 1 or more directories on external storage");
+			if(newFile.getParent() != null)
+			{
+				File dir = new File(newFile.getParent());
+				if(!dir.exists() && !dir.mkdirs())
+					throw new Exception("There was a problem creating 1 or more directories on external storage");
 
-			FileOutputStream fos = new FileOutputStream(newFile);
-			int len;
-			while ((len = zis.read(buffer)) > 0)
-				fos.write(buffer, 0, len);
-			fos.flush();
-			fos.close();
+				FileOutputStream fos = new FileOutputStream(newFile);
+				int len;
+				while ((len = zis.read(buffer)) > 0)
+					fos.write(buffer, 0, len);
+				fos.flush();
+				fos.close();
 
-			publish(newFile);
-			//close this ZipEntry
-			zis.closeEntry();
-			ze = zis.getNextEntry();
+				publish(newFile);
+				//close this ZipEntry
+				zis.closeEntry();
+				ze = zis.getNextEntry();
+			}
 		}
 
 		zis.closeEntry();
@@ -3578,9 +3600,9 @@ public class Common
 		fis.close();
 	}
 
-	boolean checkForImages()
+	static boolean checkForImages()
 	{
-		File dir = new File(context.getExternalFilesDir(""), "weeWX");
+		File dir = new File(getContext().getExternalFilesDir(""), "weeWX");
 		dir = new File(dir, "icons");
 		if(!dir.exists() || !dir.isDirectory())
 			return false;
@@ -3591,19 +3613,24 @@ public class Common
 		for(String file : files)
 		{
 			File f = new File(dir, file);
-			if (!f.exists() || !f.isFile())
+			if(!f.exists() || !f.isFile())
 				return false;
 		}
 
 		return true;
 	}
 
-	void getForecast()
+	static Context getContext()
+	{
+		return weeWXApp.getInstance().getApplicationContext();
+	}
+
+	static void getForecast()
 	{
 		getForecast(false);
 	}
 
-	void getForecast(boolean force)
+	static void getForecast(boolean force)
 	{
 		if(GetBoolPref("radarforecast", true))
 		{
@@ -3621,7 +3648,7 @@ public class Common
 			return;
 		}
 
-		final long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+		final long current_time = round(System.currentTimeMillis() / 1000.0);
 
 		if(GetStringPref("forecastData", "").isEmpty() || GetLongPref("rssCheck", 0) + 7190 < current_time)
 		{
@@ -3657,36 +3684,68 @@ public class Common
 		t.start();
 	}
 
-	public int getDayNightMode()
+	static void getDayNightMode()
+	{
+		int current_mode, current_theme, bgColour, fgColour;
+		Context context = getContext();
+		boolean prefSet = Common.isPrefSet("DayNightMode");
+		int nightDaySetting = getAppDayNightSetting();
+		int nightModeFlags = getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+
+		current_mode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
+		current_theme = R.style.AppTheme_weeWxWeatherApp_Light_Common;
+		bgColour = ContextCompat.getColor(context, R.color.White);
+		fgColour = ContextCompat.getColor(context, R.color.Black);
+
+		if(prefSet)
+		{
+			if (nightDaySetting == 0)
+			{
+				Common.LogMessage("Night mode off...");
+				current_mode = AppCompatDelegate.MODE_NIGHT_NO;
+				current_theme = R.style.AppTheme_weeWxWeatherApp_Light_Common;
+				bgColour = ContextCompat.getColor(context, R.color.White);
+				fgColour = ContextCompat.getColor(context, R.color.Black);
+			} else if (nightDaySetting == 1) {
+				Common.LogMessage("Night mode on...");
+				current_mode = AppCompatDelegate.MODE_NIGHT_NO;
+				current_theme = R.style.AppTheme_weeWxWeatherApp_Dark_Common;
+				bgColour = ContextCompat.getColor(context, R.color.Black);
+				fgColour = ContextCompat.getColor(context, R.color.White);
+			}
+		}
+
+		if(!prefSet || (nightDaySetting != 0 && nightDaySetting != 1))
+		{
+			if(nightModeFlags == Configuration.UI_MODE_NIGHT_NO)
+			{
+				Common.LogMessage("Night mode off...");
+				bgColour = ContextCompat.getColor(context, R.color.White);
+				fgColour = ContextCompat.getColor(context, R.color.Black);
+				current_theme = R.style.AppTheme_weeWxWeatherApp_Light_Common;
+			} else {
+				Common.LogMessage("Night mode on...");
+				bgColour = ContextCompat.getColor(context, R.color.Black);
+				fgColour = ContextCompat.getColor(context, R.color.White);
+				current_theme = R.style.AppTheme_weeWxWeatherApp_Dark_Common;
+			}
+		}
+
+		KeyValue.theme = current_theme;
+		KeyValue.mode = current_mode;
+		KeyValue.bgColour = bgColour;
+		KeyValue.fgColour = fgColour;
+	}
+
+	static int getAppDayNightSetting()
 	{
 		return GetIntPref("DayNightMode", 2);
 	}
 
-	public int getDayNightTheme()
+	static Activity getActivity()
 	{
-		if(isPrefSet("DayNightMode"))
-		{
-			int isNightMode = getDayNightMode();
-			if (isNightMode == 0)
-			{
-				Common.LogMessage("Night mode off...");
-				return AppCompatDelegate.MODE_NIGHT_NO;
-			} else if (isNightMode == 1) {
-				Common.LogMessage("Night mode on...");
-				return AppCompatDelegate.MODE_NIGHT_YES;
-			} else if (isNightMode == 2) {
-				Common.LogMessage("Set to system default...");
-				return AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-			}
-		}
-
-		Common.LogMessage("Theme not set yet, defaulting to system theme...");
-		return AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-	}
-
-	public static Activity getActivity(Context context)
-	{
-		while(context instanceof android.content.ContextWrapper)
+		Context context = getContext();
+		while(context instanceof ContextWrapper)
 		{
 			if(context instanceof Activity)
 				return (Activity) context;
@@ -3695,34 +3754,6 @@ public class Common
 		}
 
 		return null;
-	}
-
-	static class Colours
-	{
-		public final int widgetBG;
-		public final int widgetFG;
-
-		public final int White;
-		public final int Black;
-
-		public final int AlmostBlack;
-		public final int LightBlueAccent;
-		public final int DarkGray;
-		public final int LightGray;
-
-		public Colours(Context context)
-		{
-			widgetBG = ContextCompat.getColor(context, R.color.widgetBackgroundColour);
-			widgetFG = ContextCompat.getColor(context, R.color.widgetTextColour);
-
-			White = ContextCompat.getColor(context, R.color.White);
-			Black = ContextCompat.getColor(context, R.color.Black);
-
-			AlmostBlack = ContextCompat.getColor(context, R.color.AlmostBlack);
-			LightBlueAccent = ContextCompat.getColor(context, R.color.LightBlueAccent);
-			DarkGray = ContextCompat.getColor(context, R.color.DarkGray);
-			LightGray = ContextCompat.getColor(context, R.color.LightGray);
-		}
 	}
 
 	public static class NotificationLiveData extends LiveData<String>
@@ -3746,6 +3777,34 @@ public class Common
 		public static NotificationLiveData getNotificationLiveData()
 		{
 			return notificationLiveData;
+		}
+	}
+
+	static class Colours
+	{
+		public final int widgetBG;
+		public final int widgetFG;
+
+		public final int White;
+		public final int Black;
+
+		public final int AlmostBlack;
+		public final int LightBlueAccent;
+		public final int DarkGray;
+		public final int LightGray;
+
+		public Colours()
+		{
+			widgetBG = ContextCompat.getColor(getContext(), R.color.widgetBackgroundColour);
+			widgetFG = ContextCompat.getColor(getContext(), R.color.widgetTextColour);
+
+			White = ContextCompat.getColor(getContext(), R.color.White);
+			Black = ContextCompat.getColor(getContext(), R.color.Black);
+
+			AlmostBlack = ContextCompat.getColor(getContext(), R.color.AlmostBlack);
+			LightBlueAccent = ContextCompat.getColor(getContext(), R.color.LightBlueAccent);
+			DarkGray = ContextCompat.getColor(getContext(), R.color.DarkGray);
+			LightGray = ContextCompat.getColor(getContext(), R.color.LightGray);
 		}
 	}
 }

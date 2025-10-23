@@ -10,7 +10,7 @@ import java.io.StringWriter;
 import java.net.URL;
 import java.net.URLConnection;
 
-public class MjpegRunner implements Runnable
+class MjpegRunner implements Runnable
 {
 	// https://github.com/andrealaforgia/mjpeg-client/blob/master/src/main/java/com/andrealaforgia/mjpegclient/MjpegRunner.java
 
@@ -18,12 +18,17 @@ public class MjpegRunner implements Runnable
 	private final URL url;
 	private InputStream urlStream;
 	private boolean isRunning = true;
-	Bitmap bm = null;
+	private Bitmap bm = null;
 
 	MjpegRunner(URL url) throws Exception
 	{
 		this.url = url;
 		start();
+	}
+
+	Bitmap getBM()
+	{
+		return bm;
 	}
 
 	private void start() throws Exception

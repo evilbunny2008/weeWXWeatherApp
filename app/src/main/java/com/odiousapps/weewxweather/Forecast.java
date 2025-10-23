@@ -2,8 +2,6 @@ package com.odiousapps.weewxweather;
 
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,13 +19,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 @SuppressWarnings("SameParameterValue")
 public class Forecast extends Fragment
 {
-	private Common common;
 	private View rootView;
 	private WebView wv1, wv2;
 	private SwipeRefreshLayout swipeLayout;
@@ -35,27 +31,9 @@ public class Forecast extends Fragment
 	private ImageView im;
 	private RotateLayout rl;
 
-	public Forecast()
-	{
-	}
-
-	Forecast(Common common)
-	{
-		this.common = common;
-	}
-
-	public static Forecast newInstance(Common common)
-	{
-		return new Forecast(common);
-	}
-
-	@Nullable
-	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
-
-		CommonViewModel commonViewModel = new ViewModelProvider(this).get(CommonViewModel.class);
 
 		rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
 
@@ -65,21 +43,6 @@ public class Forecast extends Fragment
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setRefreshing(true);
 
-		if(commonViewModel.getCommon() == null)
-		{
-			commonViewModel.setCommon(common);
-		} else {
-			common = commonViewModel.getCommon();
-			common.reload(common.context);
-		}
-
-		loadWidgets();
-
-		return rootView;
-	}
-
-	private void loadWidgets()
-	{
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
@@ -95,7 +58,7 @@ public class Forecast extends Fragment
 			{
 				super.onPageFinished(view, url);
 				if(rl.getVisibility() == View.VISIBLE)
-					swipeLayout.setRefreshing(false);
+					stopRefreshing();
 			}
 		});
 
@@ -106,7 +69,7 @@ public class Forecast extends Fragment
 			{
 				super.onPageFinished(view, url);
 				if(wv2.getVisibility() == View.VISIBLE)
-					swipeLayout.setRefreshing(false);
+					stopRefreshing();
 			}
 		});
 
@@ -125,40 +88,49 @@ public class Forecast extends Fragment
 
 		updateScreen();
 
-		File f2 = new File(common.context.getFilesDir(), "/radar.gif");
-		long[] period = common.getPeriod();
+		File f2 = new File(Common.getFilesDir(), "/radar.gif");
+		long[] period = Common.getPeriod();
 
-		if(!common.GetStringPref("RADAR_URL", "").isEmpty() && f2.lastModified() + period[0] < System.currentTimeMillis())
+		if(!Common.GetStringPref("RADAR_URL", "").isEmpty() && f2.lastModified() + period[0] < System.currentTimeMillis())
 			reloadWebView(false);
 
 		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
-		if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < current_time)
+		if(!Common.GetBoolPref("radarforecast", true) && Common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 			getForecast(false);
+
+		return rootView;
+	}
+
+	private void stopRefreshing()
+	{
+		if(swipeLayout.isRefreshing())
+			swipeLayout.post(() -> swipeLayout.setRefreshing(false));
 	}
 
 	private void loadWebView()
 	{
-		if(common.GetBoolPref("radarforecast", true))
+		if(Common.GetBoolPref("radarforecast", true))
 			return;
 
-		if (common.GetStringPref("radtype", "image").equals("image"))
+		if (Common.GetStringPref("radtype", "image").equals("image"))
 		{
-			String radar = common.context.getFilesDir() + "/radar.gif";
+			String radar = Common.getFilesDir() + "/radar.gif";
 			File rf = new File(radar);
 
-			if(!rf.exists() && !common.GetStringPref("RADAR_URL", "").isEmpty() && common.checkConnection())
+			if(!rf.exists() && !Common.GetStringPref("RADAR_URL", "").isEmpty() && Common.checkConnection())
 			{
 				reloadWebView(true);
 				return;
 			}
 
-			if (!rf.exists() || common.GetStringPref("RADAR_URL", "").isEmpty())
+			if (!rf.exists() || Common.GetStringPref("RADAR_URL", "").isEmpty())
 			{
-				String html = Common.current_html_headers;
-				html += "Radar URL not set or is still downloading. You can go to settings to change.";
-				html += Common.html_footer;
+				final String html = Common.current_html_headers +
+						"Radar URL not set or is still downloading. You can go to settings to change." +
+						Common.html_footer;
 
-				wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
+				wv1.post(() -> wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null));
+				stopRefreshing();
 
 				return;
 			}
@@ -183,42 +155,44 @@ public class Forecast extends Fragment
 				Common.doStackOutput(e);
 			}
 
-			String html = Common.current_html_headers;
-			html += "\t<div style='text-align:center;'>\n" +
+			final String html = Common.current_html_headers +
+					"\t<div style='text-align:center;'>\n" +
 					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" + height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
 					"\tsrc='" + radar + "'>\n" +
-					"\t</div>";
-			html += Common.html_footer;
+					"\t</div>" +
+					Common.html_footer;
 
-			wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
+			wv1.post(() -> wv1.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null));
+			stopRefreshing();
 			rl.setVisibility(View.VISIBLE);
 			wv2.setVisibility(View.GONE);
-		} else if(common.GetStringPref("radtype", "image").equals("webpage") &&
-				!common.GetStringPref("RADAR_URL", "").isEmpty()) {
+		} else if(Common.GetStringPref("radtype", "image").equals("webpage") &&
+				!Common.GetStringPref("RADAR_URL", "").isEmpty()) {
 			rl.setVisibility(View.GONE);
 			wv2.setVisibility(View.VISIBLE);
-			wv2.loadUrl(common.GetStringPref("RADAR_URL", ""));
+			wv2.post(() -> wv2.loadUrl(Common.GetStringPref("RADAR_URL", "")));
+			stopRefreshing();
 		}
 	}
 
 	private void reloadWebView(boolean force)
 	{
-		if(common.GetBoolPref("radarforecast", true))
+		if(Common.GetBoolPref("radarforecast", true))
 			return;
 
 		Common.LogMessage("reload radar...");
-		final String radar = common.GetStringPref("RADAR_URL", "");
+		final String radar = Common.GetStringPref("RADAR_URL", "");
 
-		if(radar.isEmpty() || common.GetStringPref("radtype", "image").equals("webpage"))
+		if(radar.isEmpty() || Common.GetStringPref("radtype", "image").equals("webpage"))
 		{
 			loadWebView();
 			return;
 		}
 
-		if(!common.checkConnection() && !force)
+		if(!Common.checkConnection() && !force)
 		{
 			Common.LogMessage("Not on wifi and not a forced refresh");
-			swipeLayout.setRefreshing(false);
+			stopRefreshing();
 			return;
 		}
 
@@ -226,22 +200,24 @@ public class Forecast extends Fragment
 		{
 			try
 			{
-				Common.LogMessage("starting to download image from: " + radar);
-				File file = new File(common.context.getFilesDir(), "/radar.gif.tmp");
-				File f = common.downloadJSOUP(file, radar);
-				Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
-				File f2 = new File(common.context.getFilesDir(), "/radar.gif");
-				if(f.renameTo(f2))
+				Common.LogMessage("Starting to download image from: " + radar);
+				File file = new File(Common.getFilesDir(), "/radar.gif.tmp");
+				File f = Common.downloadJSOUP(file, radar);
+				String ftmp = f != null ? f.getAbsolutePath() : null;
+				if(ftmp != null)
 				{
-					Handler mHandler = new Handler(Looper.getMainLooper());
-					mHandler.post(() ->
-					{
-						wv1.post(() -> wv1.reload());
-						wv2.post(() -> wv2.reload());
-					});
+					Common.LogMessage("Done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
+					File f2 = new File(Common.getFilesDir(), "/radar.gif");
+					if(!f.renameTo(f2))
+						Common.LogMessage("Failed to rename '"+ f.getAbsolutePath() + "' to '" + f2.getAbsolutePath() + "'");
 				}
+
+				wv1.post(() -> wv1.reload());
+				wv2.post(() -> wv2.reload());
+				stopRefreshing();
 			} catch (Exception e) {
 				Common.doStackOutput(e);
+				stopRefreshing();
 			}
 		});
 
@@ -266,8 +242,8 @@ public class Forecast extends Fragment
 	{
 		Common.LogMessage("notificationObserver == " + s);
 
-		if(s.equals(Common.UPDATE_INTENT) || s.equals(Common.REFRESH_INTENT))
-			updateScreen();
+		//if(s.equals(Common.UPDATE_INTENT) || s.equals(Common.REFRESH_INTENT))
+		//	updateScreen();
 
 		if(s.equals(Common.EXIT_INTENT))
 			onPause();
@@ -275,7 +251,7 @@ public class Forecast extends Fragment
 
 	private void updateScreen()
 	{
-		if (common.GetBoolPref("radarforecast", true))
+		if (Common.GetBoolPref("radarforecast", true))
 		{
 			Common.LogMessage("Displaying forecast");
 			getForecast(false);
@@ -283,9 +259,10 @@ public class Forecast extends Fragment
 			im.setVisibility(View.VISIBLE);
 			rl.setVisibility(View.GONE);
 			wv2.setVisibility(View.VISIBLE);
+			stopRefreshing();
 		} else {
 			Common.LogMessage("Displaying radar");
-			if (common.GetStringPref("radtype", "image").equals("image"))
+			if (Common.GetStringPref("radtype", "image").equals("image"))
 			{
 				forecast.setVisibility(View.GONE);
 				im.setVisibility(View.GONE);
@@ -303,29 +280,29 @@ public class Forecast extends Fragment
 
 	private void getForecast(boolean force)
 	{
-		if(!common.GetBoolPref("radarforecast", true))
+		if(!Common.GetBoolPref("radarforecast", true))
 			return;
 
-		final String forecast_url = common.GetStringPref("FORECAST_URL", "");
+		final String forecast_url = Common.GetStringPref("FORECAST_URL", "");
 
 		if(forecast_url.isEmpty())
 		{
 			final String html = Common.current_html_headers + "Forecast URL not set. Edit inigo-settings.txt to change." + Common.html_footer;
 
-			Handler mHandler = new Handler(Looper.getMainLooper());
-			mHandler.post(() ->
+			wv2.post(() ->
 					wv2.loadDataWithBaseURL(null, html, "text/html", "utf-8", null));
+			stopRefreshing();
 
 			return;
 		}
 
-		if(!common.checkConnection() && !force)
+		if(!Common.checkConnection() && !force)
 		{
 			Common.LogMessage("Not on wifi and not a forced refresh");
 			return;
 		}
 
-		if(!common.GetStringPref("forecastData", "").isEmpty())
+		if(!Common.GetStringPref("forecastData", "").isEmpty())
 			generateForecast();
 
 		Thread t = new Thread(() ->
@@ -334,24 +311,21 @@ public class Forecast extends Fragment
 			{
 				long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
-				if(common.GetStringPref("forecastData", "").isEmpty() || common.GetLongPref("rssCheck", 0) + 7190 < current_time)
+				if(Common.GetStringPref("forecastData", "").isEmpty() || Common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 				{
 					Common.LogMessage("no forecast data or cache is more than 2 hour old");
 
-					Handler mHandler = new Handler(Looper.getMainLooper());
-					mHandler.post(() ->
-							swipeLayout.setRefreshing(true));
+					stopRefreshing();
 
-					String tmp = common.downloadForecast();
+					String tmp = Common.downloadForecast();
 
 					Common.LogMessage("updating rss cache");
-					common.SetLongPref("rssCheck", current_time);
-					common.SetStringPref("forecastData", tmp);
-					wv1.post(() ->
-							wv1.post(() -> wv1.reload()));
+					Common.SetLongPref("rssCheck", current_time);
+					Common.SetStringPref("forecastData", tmp);
 
-					wv2.post(() ->
-							wv2.post(() -> wv2.reload()));
+					wv1.post(() -> wv1.reload());
+					wv2.post(() -> wv2.reload());
+					stopRefreshing();
 				}
 			} catch (Exception e) {
 				Common.doStackOutput(e);
@@ -367,9 +341,9 @@ public class Forecast extends Fragment
 		{
 			Common.LogMessage("getting json data");
 			String data;
-			String fctype = common.GetStringPref("fctype", "Yahoo");
+			String fctype = Common.GetStringPref("fctype", "Yahoo");
 
-			data = common.GetStringPref("forecastData", "");
+			data = Common.GetStringPref("forecastData", "");
 			if(data.isEmpty())
 			{
 				final String html = Common.current_html_headers + getString(R.string.forecast_url_not_set) + Common.html_footer;
@@ -383,119 +357,121 @@ public class Forecast extends Fragment
 			{
 				case "yahoo" ->
 				{
-					String[] content = common.processYahoo(data, true);
+					String[] content = Common.processYahoo(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "weatherzone" ->
 				{
-					String[] content = common.processWZ(data, true);
+					String[] content = Common.processWZ(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "yr.no" ->
 				{
-					String[] content = common.processYR(data, true);
+					String[] content = Common.processYR(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "met.no" ->
 				{
-					String[] content = common.processMetNO(data, true);
+					String[] content = Common.processMetNO(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "bom.gov.au" ->
 				{
-					String[] content = common.processBOM(data, true);
+					String[] content = Common.processBOM(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "wmo.int" ->
 				{
-					String[] content = common.processWMO(data, true);
+					String[] content = Common.processWMO(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "weather.gov" ->
 				{
-					String[] content = common.processWGOV(data, true);
+					String[] content = Common.processWGOV(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "weather.gc.ca" ->
 				{
-					String[] content = common.processWCA(data, true);
+					String[] content = Common.processWCA(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "weather.gc.ca-fr" ->
 				{
-					String[] content = common.processWCAF(data, true);
+					String[] content = Common.processWCAF(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "metoffice.gov.uk" ->
 				{
-					String[] content = common.processMET(data, true);
+					String[] content = Common.processMET(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "bom2" ->
 				{
-					String[] content = common.processBOM2(data, true);
+					String[] content = Common.processBOM2(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "bom3" ->
 				{
-					String[] content = common.processBOM3(data, true);
+					String[] content = Common.processBOM3(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "aemet.es" ->
 				{
-					String[] content = common.processAEMET(data, true);
+					String[] content = Common.processAEMET(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "dwd.de" ->
 				{
-					String[] content = common.processDWD(data, true);
+					String[] content = Common.processDWD(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "metservice.com" ->
 				{
-					String[] content = common.processMetService(data, true);
+					String[] content = Common.processMetService(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "openweathermap.org" ->
 				{
-					String[] content = common.processOWM(data, true);
+					String[] content = Common.processOWM(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "weather.com" ->
 				{
-					String[] content = common.processWCOM(data, true);
+					String[] content = Common.processWCOM(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "met.ie" ->
 				{
-					String[] content = common.processMETIE(data, true);
+					String[] content = Common.processMETIE(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 				case "tempoitalia.it" ->
 				{
-					String[] content = common.processTempoItalia(data, true);
+					String[] content = Common.processTempoItalia(data, true);
 					if (content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
 			}
+
+			stopRefreshing();
 		});
 
 		t.start();
@@ -503,62 +479,59 @@ public class Forecast extends Fragment
 
 	private void updateForecast(final String bits, final String desc)
 	{
-		Handler mHandler = new Handler(Looper.getMainLooper());
-		mHandler.post(() ->
+		final String fc = Common.current_html_headers + "<div style='text-align:center'>" + bits + "</div>" + Common.html_footer;
+
+		wv2.post(() ->
 		{
-			final String fc = Common.current_html_headers + "<div style='text-align:center'>" + bits + "</div>" + Common.html_footer;
-
-			Handler mHandler1 = new Handler(Looper.getMainLooper());
-			mHandler1.post(() ->
-			{
-				wv2.clearFormData();
-				wv2.clearHistory();
-				wv2.clearCache(true);
-				wv2.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
-			});
-
-			TextView tv1 = rootView.findViewById(R.id.forecast);
-			tv1.setText(desc);
-
-			switch (common.GetStringPref("fctype", "yahoo").toLowerCase(Locale.ENGLISH))
-			{
-				case "yahoo" -> im.setImageResource(R.drawable.purple);
-				case "weatherzone" -> im.setImageResource(R.drawable.wz);
-				case "yr.no" -> im.setImageResource(R.drawable.yrno);
-				case "met.no" -> im.setImageResource(R.drawable.met_no);
-				case "bom.gov.au" ->
-				{
-					im.setImageResource(R.drawable.bom);
-					im.setColorFilter(null);
-				}
-				case "wmo.int" -> im.setImageResource(R.drawable.wmo);
-				case "weather.gov" -> im.setImageResource(R.drawable.wgov);
-				case "weather.gc.ca", "weather.gc.ca-fr" -> im.setImageResource(R.drawable.wca);
-				case "metoffice.gov.uk" -> im.setImageResource(R.drawable.met);
-				case "bom2", "bom3" ->
-				{
-					im.setImageResource(R.drawable.bom);
-					im.setColorFilter(null);
-				}
-				case "aemet.es" -> im.setImageResource(R.drawable.aemet);
-				case "dwd.de" -> im.setImageResource(R.drawable.dwd);
-				case "metservice.com" -> im.setImageResource(R.drawable.metservice);
-				case "meteofrance.com" -> im.setImageResource(R.drawable.mf);
-				case "openweathermap.org" -> im.setImageResource(R.drawable.owm);
-				case "apixu.com" ->
-				{
-					im.setImageResource(R.drawable.apixu);
-					im.setColorFilter(null);
-				}
-				case "weather.com" -> im.setImageResource(R.drawable.weather_com);
-				case "met.ie" ->
-				{
-					im.setImageResource(R.drawable.met_ie);
-					im.setColorFilter(null);
-				}
-				case "ilmeteo.it" -> im.setImageResource(R.drawable.ilmeteo_it);
-				case "tempoitalia.it" -> im.setImageResource(R.drawable.tempoitalia_it);
-			}
+			wv2.clearFormData();
+			wv2.clearHistory();
+			wv2.clearCache(true);
+			wv2.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
 		});
+
+		TextView tv1 = rootView.findViewById(R.id.forecast);
+		tv1.post(() -> tv1.setText(desc));
+
+		switch (Common.GetStringPref("fctype", "yahoo").toLowerCase(Locale.ENGLISH))
+		{
+			case "yahoo" -> im.post(() -> im.setImageResource(R.drawable.purple));
+			case "weatherzone" -> im.post(() -> im.setImageResource(R.drawable.wz));
+			case "yr.no" -> im.post(() -> im.setImageResource(R.drawable.yrno));
+			case "met.no" -> im.post(() -> im.setImageResource(R.drawable.met_no));
+			case "bom.gov.au" ->
+			{
+				im.post(() -> im.setImageResource(R.drawable.bom));
+				im.post(() -> im.setColorFilter(null));
+			}
+			case "wmo.int" -> im.post(() -> im.setImageResource(R.drawable.wmo));
+			case "weather.gov" -> im.post(() -> im.setImageResource(R.drawable.wgov));
+			case "weather.gc.ca", "weather.gc.ca-fr" -> im.post(() -> im.setImageResource(R.drawable.wca));
+			case "metoffice.gov.uk" -> im.post(() -> im.setImageResource(R.drawable.met));
+			case "bom2", "bom3" ->
+			{
+				im.post(() -> im.setImageResource(R.drawable.bom));
+				im.post(() -> im.setColorFilter(null));
+			}
+			case "aemet.es" -> im.post(() -> im.setImageResource(R.drawable.aemet));
+			case "dwd.de" -> im.post(() -> im.setImageResource(R.drawable.dwd));
+			case "metservice.com" -> im.post(() -> im.setImageResource(R.drawable.metservice));
+			case "meteofrance.com" -> im.post(() -> im.setImageResource(R.drawable.mf));
+			case "openweathermap.org" -> im.post(() -> im.setImageResource(R.drawable.owm));
+			case "apixu.com" ->
+			{
+				im.post(() -> im.setImageResource(R.drawable.apixu));
+				im.post(() -> im.setColorFilter(null));
+			}
+			case "weather.com" -> im.post(() -> im.setImageResource(R.drawable.weather_com));
+			case "met.ie" ->
+			{
+				im.post(() -> im.setImageResource(R.drawable.met_ie));
+				im.post(() -> im.setColorFilter(null));
+			}
+			case "ilmeteo.it" -> im.post(() -> im.setImageResource(R.drawable.ilmeteo_it));
+			case "tempoitalia.it" -> im.post(() -> im.setImageResource(R.drawable.tempoitalia_it));
+		}
+
+		stopRefreshing();
 	}
 }

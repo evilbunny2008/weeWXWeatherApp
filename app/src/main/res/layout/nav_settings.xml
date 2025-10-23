@@ -3,7 +3,6 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	style="@style/AppTheme.weeWxWeatherApp.ViewPager"
 	android:layout_width="match_parent"
 	android:layout_height="0dp"
 	android:layout_weight="1"
@@ -18,8 +17,8 @@
 
 		<com.google.android.material.textfield.TextInputLayout
 			android:layout_width="match_parent"
-			android:layout_height="0dp"
-			android:layout_weight="1"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="20dp"
 			android:hint="@string/fileURL"
 			tools:ignore="VisualLintBounds">
 
@@ -27,11 +26,11 @@
 				android:id="@+id/settings"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
 				android:gravity="center_vertical"
 				android:inputType="textUri"
 				android:textSize="20sp"
-				android:layout_marginTop="10dp"
-				tools:ignore="VisualLintTextFieldSize" />
+				tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck" />
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.materialswitch.MaterialSwitch
@@ -93,11 +92,11 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:clickable="true"
-				android:focusable="true"
+				android:focusable="false"
 				android:importantForAutofill="no"
 				android:inputType="none"
 				android:textSize="20sp"
-				tools:ignore="NoSpeakableText,VisualLintTextFieldSize,SpeakableTextPresentCheck" />
+				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.textfield.TextInputLayout
@@ -118,25 +117,24 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:clickable="true"
-				android:focusable="true"
-				android:textSize="20sp"
+				android:focusable="false"
 				android:importantForAutofill="no"
 				android:inputType="none"
-				tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck" />
+				android:textSize="20sp"
+				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.textview.MaterialTextView
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:layout_margin="8dp"
-			android:gravity="bottom"
 			android:ellipsize="none"
-			android:inputType="textMultiLine"
-			android:maxLines="1"
-			android:textSize="20sp"
+			android:gravity="bottom"
+			android:layout_marginTop="10dp"
 			android:scrollHorizontally="false"
 			android:singleLine="false"
 			android:text="@string/radarforecast"
+			android:textSize="20sp"
 			tools:ignore="VisualLintBounds" />
 
 		<RadioGroup
@@ -147,6 +145,7 @@
 			tools:ignore="VisualLintBounds">
 
 			<com.google.android.material.radiobutton.MaterialRadioButton
+				style="@style/Widget.weeWXApp.RadioButtons"
 				android:id="@+id/showRadar"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -154,14 +153,17 @@
 				android:padding="0dp"
 				android:gravity="center_vertical"
 				android:layout_gravity="center_vertical"
+				android:minHeight="48dp"
 				android:text="@string/show_radar" />
 
 			<com.google.android.material.radiobutton.MaterialRadioButton
+				style="@style/Widget.weeWXApp.RadioButtons"
 				android:id="@+id/showForecast"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:gravity="center_vertical"
 				android:layout_gravity="center_vertical"
+				android:minHeight="48dp"
 				android:text="@string/show_forecast" />
 		</RadioGroup>
 
@@ -178,7 +180,8 @@
 				android:layout_height="wrap_content"
 				android:gravity="center_vertical"
 				android:inputType="textUri"
-				tools:ignore="VisualLintTextFieldSize" />
+				android:minHeight="48dp"
+				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize,TextContrastCheck" />
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.textfield.TextInputLayout
@@ -196,7 +199,8 @@
 				android:gravity="center_vertical"
 				android:clickable="true"
 				android:focusable="false"
-				tools:ignore="VisualLintTextFieldSize" />
+				android:minHeight="48dp"
+				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.textfield.TextInputLayout
@@ -210,10 +214,11 @@
 				android:id="@+id/bg_Picker"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:gravity="center_vertical"
 				android:clickable="true"
 				android:focusable="false"
-				tools:ignore="VisualLintTextFieldSize" />
+				android:gravity="center_vertical"
+				android:minHeight="48dp"
+				tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck" />
 		</com.google.android.material.textfield.TextInputLayout>
 	</LinearLayout>
 
@@ -225,6 +230,7 @@
 		tools:ignore="VisualLintBounds">
 
 		<com.google.android.material.button.MaterialButton
+			style="@style/Widget.weeWXApp.Button"
 			android:id="@+id/aboutButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -232,9 +238,10 @@
 			android:minHeight="48dp"
 			android:text="@string/about"
 			android:textSize="18sp"
-			tools:ignore="ButtonStyle,VisualLintButtonSize,TouchTargetSizeCheck" />
+			tools:ignore="VisualLintButtonSize" />
 
 		<com.google.android.material.button.MaterialButton
+			style="@style/Widget.weeWXApp.Button"
 			android:id="@+id/saveButton"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
@@ -242,15 +249,16 @@
 			android:minHeight="48dp"
 			android:text="@string/save_settings"
 			android:textSize="18sp"
-			tools:ignore="ButtonStyle,VisualLintButtonSize,TouchTargetSizeCheck" />
+			tools:ignore="VisualLintButtonSize" />
 	</LinearLayout>
 
 	<com.google.android.material.button.MaterialButton
+		style="@style/Widget.weeWXApp.Button"
 		android:id="@+id/deleteData"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:text="@string/delete_all_data"
 		android:textSize="18sp"
-		android:layout_marginTop="10dp"
+		android:layout_marginVertical="10dp"
 		tools:ignore="VisualLintButtonSize,VisualLintBounds" />
 </LinearLayout>

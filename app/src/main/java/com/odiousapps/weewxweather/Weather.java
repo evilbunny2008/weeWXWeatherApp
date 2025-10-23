@@ -1,15 +1,16 @@
 package com.odiousapps.weewxweather;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.material.textview.MaterialTextView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,50 +20,31 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static java.lang.Math.round;
 
 public class Weather extends Fragment
 {
-	private Common common;
 	private View rootView;
 	private WebView forecast;
 	private WebView current;
 	private SwipeRefreshLayout swipeLayout;
 
-	public Weather()
-	{
-	}
-
-	Weather(Common common)
-	{
-		this.common = common;
-	}
-
-	public static Weather newInstance(Common common)
-	{
-		return new Weather(common);
-	}
-
-	@Nullable
-	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
-		CommonViewModel commonViewModel = new ViewModelProvider(this).get(CommonViewModel.class);
-
-		if(commonViewModel.getCommon() == null)
-		{
-			commonViewModel.setCommon(common);
-		} else {
-			common = commonViewModel.getCommon();
-			common.reload(common.context);
-		}
-
 		rootView = inflater.inflate(R.layout.fragment_weather, container, false);
+
+		LinearLayout ll = rootView.findViewById(R.id.weather_ll);
+		ll.setBackgroundColor(KeyValue.bgColour);
+
+		MaterialTextView tv1 = rootView.findViewById(R.id.textView);
+		MaterialTextView tv2 = rootView.findViewById(R.id.textView2);
+
+		tv1.setTextColor(KeyValue.fgColour);
+		tv2.setTextColor(KeyValue.fgColour);
 
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setRefreshing(true);
@@ -90,6 +72,8 @@ public class Weather extends Fragment
 
 		current = rootView.findViewById(R.id.current);
 		Common.setWebview(current);
+		current.setNestedScrollingEnabled(false);
+		current.setScrollContainer(true);
 
 		drawEverything();
 
@@ -98,7 +82,7 @@ public class Weather extends Fragment
 
 	private void checkFields(TextView tv, String txt)
 	{
-		if (!tv.getText().toString().equals(txt))
+		if(!tv.getText().toString().equals(txt))
 			tv.post(() -> tv.setText(txt));
 	}
 
@@ -108,18 +92,18 @@ public class Weather extends Fragment
 
 		Common.LogMessage("drawEverything()");
 
-		File f2 = new File(common.context.getFilesDir(), "/radar.gif");
-		long[] period = common.getPeriod();
+		File f2 = new File(Common.getFilesDir(), "/radar.gif");
+		long[] period = Common.getPeriod();
 
-		if(!common.GetStringPref("RADAR_URL", "").isEmpty() && f2.lastModified() + period[0] < System.currentTimeMillis())
+		if(!Common.GetStringPref("RADAR_URL", "").isEmpty() && f2.lastModified() + period[0] < System.currentTimeMillis())
 			reloadWebView(false);
 
 		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
-		if(!common.GetBoolPref("radarforecast", true) && common.GetLongPref("rssCheck", 0) + 7190 < current_time)
+		if(!Common.GetBoolPref("radarforecast", true) && Common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 			reloadForecast(false);
 
 		Common.LogMessage("updateFields()");
-		String[] bits = common.GetStringPref("LastDownload","").split("\\|");
+		String[] bits = Common.GetStringPref("LastDownload","").split("\\|");
 		if(bits.length < 65)
 			return;
 
@@ -130,7 +114,7 @@ public class Weather extends Fragment
 		final StringBuilder sb = new StringBuilder();
 
 		sb.append(Common.current_html_headers);
-		sb.append("<table style='width:100%;border:0px;'>");
+		sb.append("\n<table style='width:100%;border:0px;'>");
 
 		stmp = "<tr><td style='font-size:36pt;text-align:right;'>" + bits[0] + bits[60] + "</td>";
 		if(bits.length > 203)
@@ -138,7 +122,7 @@ public class Weather extends Fragment
 		else
 			stmp += "<td>&nbsp</td></tr></table>";
 		sb.append(stmp);
-		sb.append("<table style='width:100%;border:0px;'>");
+		sb.append("\n<table style='width:100%;border:0px;'>");
 
 		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-windy'></i></td><td>" + bits[25] + bits[61] + "</td>" +
 				"<td style='text-align:right;'>" + bits[37] + bits[63] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td></tr>";
@@ -148,9 +132,9 @@ public class Weather extends Fragment
 				"<td style='text-align:right;'>" + bits[6] + bits[64] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-humidity'></i></td></tr>";
 		sb.append(stmp);
 
-		String rain = bits[20] + bits[62] + " " + common.context.getString(R.string.since) + " mn";
+		String rain = bits[20] + bits[62] + " " + Common.getString(R.string.since) + " mn";
 		if(bits.length > 160 && !bits[160].isEmpty())
-			rain = bits[158] + bits[62] + " " + common.context.getString(R.string.since) + " " + bits[160];
+			rain = bits[158] + bits[62] + " " + Common.getString(R.string.since) + " " + bits[160];
 
 		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td><td>" + rain + "</td>" +
 				"<td style='text-align:right;'>" + bits[12] + bits[60] + "</td><td><i style='font-size:" + round(iw * 1.4) + "px;' class='wi wi-raindrop'></i></td></tr>";
@@ -160,7 +144,7 @@ public class Weather extends Fragment
 				"<td style='text-align:right;'>" + bits[43] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
 		sb.append(stmp);
 
-		if(bits.length > 202 && common.GetBoolPref("showIndoor", false))
+		if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
 		{
 			stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td><td>" + bits[161] + bits[60] + "</td>" +
 					"<td style='text-align:right;'>" + bits[166] + bits[64] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>";
@@ -170,14 +154,13 @@ public class Weather extends Fragment
 		stmp = "</table>";
 		sb.append(stmp);
 
-		sb.append("<table style='width:100%;border:0px;'>");
+		sb.append("\n<table style='width:100%;border:0px;'>");
 
 		stmp = "<tr>" +
 				"<td><i style='font-size:" + iw + "px;' class='wi wi-sunrise'></i></td><td>" + bits[57] + "</td>" +
 				"<td><i style='font-size:" + iw + "px;' class='wi wi-sunset'></i></td><td>" + bits[58] + "</td>" +
 				"<td><i style='font-size:" + iw + "px;' class='wi wi-moonrise'></i></td><td>" + bits[47] + "</td>" +
 				"<td><i style='font-size:" + iw + "px;' class='wi wi-moonset'></i></td><td>" + bits[48] + "</td></tr>";
-		Common.LogMessage("stmp = " + stmp);
 		sb.append(stmp);
 
 		stmp = "</table>";
@@ -218,7 +201,7 @@ public class Weather extends Fragment
 	private void forceRefresh()
 	{
 		Common.LogMessage("forceRefresh()");
-		common.getWeather();
+		Common.getWeather();
 		reloadWebView(true);
 		reloadForecast(true);
 	}
@@ -238,19 +221,26 @@ public class Weather extends Fragment
 
 			final StringBuilder sb = new StringBuilder();
 
-			if (common.GetBoolPref("radarforecast", true))
+			if(Common.GetBoolPref("radarforecast", true))
 			{
-				switch (common.GetStringPref("radtype", "image"))
+				switch(Common.GetStringPref("radtype", "image"))
 				{
+					case "webpage" ->
+					{
+						String radar_url = Common.GetStringPref("RADAR_URL", "");
+						Common.LogMessage("Loading RADAR_URL -> " + radar_url);
+						forecast.post(() -> forecast.loadUrl(radar_url));
+						return;
+					}
 					case "image" ->
 					{
-						String radar = common.context.getFilesDir() + "/radar.gif";
+						String radar = Common.getFilesDir() + "/radar.gif";
 
 						File myFile = new File(radar);
 						Common.LogMessage("myFile == " + myFile.getAbsolutePath());
 						Common.LogMessage("myFile.exists() == " + myFile.exists());
 
-						if (!myFile.exists() || common.GetStringPref("RADAR_URL", "").isEmpty())
+						if(!myFile.exists() || Common.GetStringPref("RADAR_URL", "").isEmpty())
 						{
 							sb.append(Common.current_html_headers)
 									.append(getString(R.string.radar_url_not_set))
@@ -264,7 +254,7 @@ public class Weather extends Fragment
 								try (FileInputStream imageInFile = new FileInputStream(f))
 								{
 									byte[] imageData = new byte[(int) f.length()];
-									if (imageInFile.read(imageData) > 0)
+									if(imageInFile.read(imageData) > 0)
 										radar = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 								} catch (Exception e) {
 									Common.doStackOutput(e);
@@ -279,18 +269,6 @@ public class Weather extends Fragment
 									.append(radar).append("'>");
 							sb.append(Common.html_footer);
 						}
-
-						forceForecastRefresh(sb.toString());
-
-						return;
-					}
-					case "webpage" ->
-					{
-						String radar_url = common.GetStringPref("RADAR_URL", "");
-						Common.LogMessage("Loading RADAR_URL -> " + radar_url);
-						forecast.loadUrl(radar_url);
-
-						return;
 					}
 					default ->
 					{
@@ -304,8 +282,8 @@ public class Weather extends Fragment
 
 				return;
 			} else {
-				String fctype = common.GetStringPref("fctype", "Yahoo");
-				String data = common.GetStringPref("forecastData", "");
+				String fctype = Common.GetStringPref("fctype", "Yahoo");
+				String data = Common.GetStringPref("forecastData", "");
 
 				if(data.isEmpty())
 				{
@@ -315,27 +293,27 @@ public class Weather extends Fragment
 					return;
 				}
 
-				switch (fctype.toLowerCase(Locale.ENGLISH))
+				switch(fctype.toLowerCase(Locale.ENGLISH))
 				{
 					case "yahoo" ->
 					{
-						String[] content = common.processYahoo(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processYahoo(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
 						}
 
-						String logo = "<img src='purple.png' height='29px'/>";
 						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>").append(logo)
+						sb.append("<div style='text-align:center'>")
+								.append("<img src='purple.png' height='29px'/>")
 								.append("</div>").append(content[0]);
 						sb.append(Common.html_footer);
 					}
 					case "weatherzone" ->
 					{
-						String[] content = common.processWZ(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processWZ(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -349,8 +327,8 @@ public class Weather extends Fragment
 					}
 					case "yr.no" ->
 					{
-						String[] content = common.processYR(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processYR(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -364,8 +342,8 @@ public class Weather extends Fragment
 					}
 					case "met.no" ->
 					{
-						String[] content = common.processMetNO(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processMetNO(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -374,14 +352,13 @@ public class Weather extends Fragment
 						sb.append(Common.current_html_headers);
 						sb.append("<div style='text-align:center'>")
 								.append("<img src='met_no.png' height='29px'/>")
-								.append(content[0])
-								.append("</div>");
+								.append("</div>").append(content[0]);
 						sb.append(Common.html_footer);
 					}
 					case "bom.gov.au" ->
 					{
-						String[] content = common.processBOM(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processBOM(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -395,8 +372,8 @@ public class Weather extends Fragment
 					}
 					case "wmo.int" ->
 					{
-						String[] content = common.processWMO(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processWMO(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -410,8 +387,8 @@ public class Weather extends Fragment
 					}
 					case "weather.gov" ->
 					{
-						String[] content = common.processWGOV(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processWGOV(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -425,8 +402,8 @@ public class Weather extends Fragment
 					}
 					case "weather.gc.ca" ->
 					{
-						String[] content = common.processWCA(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processWCA(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -440,8 +417,8 @@ public class Weather extends Fragment
 					}
 					case "weather.gc.ca-fr" ->
 					{
-						String[] content = common.processWCAF(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processWCAF(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -450,13 +427,13 @@ public class Weather extends Fragment
 						sb.append(Common.current_html_headers);
 						sb.append("<div style='text-align:center'>")
 								.append("<img src='wca.png' height='29px'/>")
-								.append(content[0]).append("</div><");
+								.append("</div><").append(content[0]);
 						sb.append(Common.html_footer);
 					}
 					case "metoffice.gov.uk" ->
 					{
-						String[] content = common.processMET(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processMET(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -469,8 +446,8 @@ public class Weather extends Fragment
 					}
 					case "bom2" ->
 					{
-						String[] content = common.processBOM2(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processBOM2(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -485,8 +462,8 @@ public class Weather extends Fragment
 					}
 					case "bom3" ->
 					{
-						String[] content = common.processBOM3(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processBOM3(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -500,8 +477,8 @@ public class Weather extends Fragment
 					}
 					case "aemet.es" ->
 					{
-						String[] content = common.processAEMET(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processAEMET(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -515,8 +492,8 @@ public class Weather extends Fragment
 					}
 					case "dwd.de" ->
 					{
-						String[] content = common.processDWD(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processDWD(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -530,8 +507,8 @@ public class Weather extends Fragment
 					}
 					case "metservice.com" ->
 					{
-						String[] content = common.processMetService(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processMetService(data);
+						if(content == null || content.length == 0)
 						{
 							stopRefreshing();
 							return;
@@ -545,8 +522,8 @@ public class Weather extends Fragment
 					}
 					case "openweathermap.org" ->
 					{
-						String[] content = common.processOWM(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processOWM(data);
+						if(content == null || content.length == 0)
 							return;
 
 						sb.append(Common.current_html_headers);
@@ -557,8 +534,8 @@ public class Weather extends Fragment
 					}
 					case "weather.com" ->
 					{
-						String[] content = common.processWCOM(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processWCOM(data);
+						if(content == null || content.length == 0)
 							return;
 
 						sb.append(Common.current_html_headers);
@@ -569,8 +546,8 @@ public class Weather extends Fragment
 					}
 					case "met.ie" ->
 					{
-						String[] content = common.processMETIE(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processMETIE(data);
+						if(content == null || content.length == 0)
 							return;
 
 						sb.append(Common.current_html_headers);
@@ -581,8 +558,8 @@ public class Weather extends Fragment
 					}
 					case "tempoitalia.it" ->
 					{
-						String[] content = common.processTempoItalia(data);
-						if (content == null || content.length == 0)
+						String[] content = Common.processTempoItalia(data);
+						if(content == null || content.length == 0)
 							return;
 
 						sb.append(Common.current_html_headers);
@@ -594,6 +571,7 @@ public class Weather extends Fragment
 				}
 			}
 
+			CustomDebug.writeDebug(sb.toString());
 			forceForecastRefresh(sb.toString());
 		});
 
@@ -606,24 +584,22 @@ public class Weather extends Fragment
 		if(!swipeLayout.isRefreshing())
 			return;
 
-		Handler mHandler = new Handler(Looper.getMainLooper());
-		mHandler.post(() -> swipeLayout.setRefreshing(false));
-
 		forecast.post(() -> forecast.reload());
 		current.post(() -> current.reload());
+		swipeLayout.post(() -> swipeLayout.setRefreshing(false));
 	}
 
 	private void reloadForecast(boolean force)
 	{
 		Common.LogMessage("reloadForecast()");
 
-		if(common.GetBoolPref("radarforecast", true) || (!common.checkConnection() && !force))
+		if(Common.GetBoolPref("radarforecast", true) || (!Common.checkConnection() && !force))
 		{
 			stopRefreshing();
 			return;
 		}
 
-		final String forecast_url = common.GetStringPref("FORECAST_URL", "");
+		final String forecast_url = Common.GetStringPref("FORECAST_URL", "");
 
 		if(forecast_url.isEmpty())
 		{
@@ -641,18 +617,18 @@ public class Weather extends Fragment
 			{
 				long current_time = round(System.currentTimeMillis() / 1000.0);
 
-				if(common.GetStringPref("forecastData", "").isEmpty() ||
-						common.GetLongPref("rssCheck", 0) + 7190 < current_time ||
+				if(Common.GetStringPref("forecastData", "").isEmpty() ||
+						Common.GetLongPref("rssCheck", 0) + 7190 < current_time ||
 						force)
 				{
 					Common.LogMessage("no forecast data or cache is more than 2 hour old or was forced...");
 
-					String tmp = common.downloadForecast();
+					String tmp = Common.downloadForecast();
 					if(tmp != null)
 					{
 						Common.LogMessage("updating rss cache");
-						common.SetLongPref("rssCheck", current_time);
-						common.SetStringPref("forecastData", tmp);
+						Common.SetLongPref("rssCheck", current_time);
+						Common.SetStringPref("forecastData", tmp);
 
 						drawEverything();
 					}
@@ -669,13 +645,13 @@ public class Weather extends Fragment
 	{
 		Common.LogMessage("reloadWebView()");
 
-		if(!common.GetBoolPref("radarforecast", true))
+		if(!Common.GetBoolPref("radarforecast", true))
 		{
 			stopRefreshing();
 			return;
 		}
 
-		if(!common.checkConnection() && !force)
+		if(!Common.checkConnection() && !force)
 		{
 			Common.LogMessage("Not on wifi and not a forced refresh");
 			stopRefreshing();
@@ -683,7 +659,7 @@ public class Weather extends Fragment
 		}
 
 		Common.LogMessage("reload radar...");
-		final String radar = common.GetStringPref("RADAR_URL", "");
+		final String radar = Common.GetStringPref("RADAR_URL", "");
 
 		if(radar.isEmpty())
 		{
@@ -696,9 +672,9 @@ public class Weather extends Fragment
 			try
 			{
 				Common.LogMessage("starting to download image from: " + radar);
-				File f = common.downloadRADAR(radar);
+				File f = Common.downloadRADAR(radar);
 				Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
-				File f2 = new File(common.context.getFilesDir(), "/radar.gif");
+				File f2 = new File(Common.getFilesDir(), "/radar.gif");
 				if(f.renameTo(f2))
 					stopRefreshing();
 			} catch (Exception e) {
@@ -727,7 +703,7 @@ public class Weather extends Fragment
 	{
 		Common.LogMessage("notificationObserver == " + str);
 
-		if (str.equals(Common.UPDATE_INTENT) || str.equals(Common.REFRESH_INTENT))
+		if(str.equals(Common.UPDATE_INTENT) || str.equals(Common.REFRESH_INTENT))
 		{
 			reloadWebView(false);
 			reloadForecast(false);

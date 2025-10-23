@@ -17,11 +17,10 @@
 
 	<LinearLayout
 		android:id="@+id/custom_drawer"
-		android:layout_width="match_parent"
+		android:layout_width="320dp"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
-		android:layout_gravity="start"
-		android:background="@color/white">
+		android:layout_gravity="start">
 
 		<include layout="@layout/nav_header_main" />
 

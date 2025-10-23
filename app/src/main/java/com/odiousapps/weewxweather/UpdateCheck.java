@@ -9,24 +9,23 @@ public class UpdateCheck extends BroadcastReceiver
 	@Override
 	public void onReceive(final Context c, Intent i)
 	{
-		Common.LogMessage("UpdateCheck.java started.", true);
+		Common.LogMessage("UpdateCheck.java started.");
 		if(c == null)
 		{
 			Common.LogMessage("UpdateCheck.java failed, c == null");
 			return;
 		}
 
-		Common common = new Common(c);
-		common.setAlarm("UpdateCheck");
+		Common.setAlarm("UpdateCheck");
 
-		if(!common.checkConnection())
+		if(!Common.checkConnection())
 		{
-			Common.LogMessage("Skipping update due to wifi setting.", true);
+			Common.LogMessage("Skipping update due to wifi setting.");
 			return;
 		}
 
-		common.getWeather();
-		common.getForecast();
-		Common.LogMessage("UpdateCheck.java finished.", true);
+		Common.getWeather();
+		Common.getForecast();
+		Common.LogMessage("UpdateCheck.java finished.");
 	}
 }

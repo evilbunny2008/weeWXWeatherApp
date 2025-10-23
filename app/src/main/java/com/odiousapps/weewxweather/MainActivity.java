@@ -3,10 +3,11 @@ package com.odiousapps.weewxweather;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
+import android.text.Editable;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -16,8 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
+import com.github.evilbunny2008.colourpicker.CustomEditText;
 import com.google.android.material.button.MaterialButton;
-import com.google.android.material.color.DynamicColors;
 import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.tabs.TabLayout;
@@ -35,7 +36,6 @@ import java.util.Locale;
 import androidx.activity.OnBackPressedCallback;
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.text.HtmlCompat;
@@ -46,6 +46,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.core.view.WindowInsetsControllerCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.Observer;
@@ -53,11 +54,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
-@SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag", "NotifyDataSetChanged"})
-public class MainActivity extends AppCompatActivity
+import static com.github.evilbunny2008.colourpicker.Common.parseHexToColour;
+import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
+
+@SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag",
+		"UnsafeIntentLaunch", "NotifyDataSetChanged", "SourceLockedOrientationActivity"})
+public class MainActivity extends FragmentActivity
 {
 	private TabLayout tabLayout;
-	private Common common;
 	private DrawerLayout mDrawerLayout;
 	private TextInputEditText settingsURL;
 	private TextInputEditText customURL;
@@ -78,19 +82,27 @@ public class MainActivity extends AppCompatActivity
 
 	private ScrollView scrollView;
 
-	SectionsStateAdapter mSectionsPagerAdapter;
+	private SectionsStateAdapter mSectionsPagerAdapter;
 
-	private static int UpdateFrequency;
-	private static int DayNightMode;
+	private int UpdateFrequency;
+	private int DayNightMode;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
+		setTheme(KeyValue.theme);
+		WidgetProvider.updateAppWidget();
+
 		super.onCreate(savedInstanceState);
 
 		WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
-		DynamicColors.applyToActivitiesIfAvailable(this.getApplication());
+		boolean isTablet = getResources().getConfiguration().smallestScreenWidthDp >= 720;
+
+		if(isTablet)
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+		else
+			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		setContentView(R.layout.main_activity);
 
@@ -102,6 +114,9 @@ public class MainActivity extends AppCompatActivity
 
 		mDrawerLayout = findViewById(R.id.drawer_layout);
 		mDrawerLayout.addDrawerListener(handleDrawerListener);
+
+		LinearLayout dl = findViewById(R.id.custom_drawer);
+		dl.setBackgroundColor(KeyValue.bgColour);
 
 		scrollView = findViewById(R.id.sv1);
 
@@ -123,18 +138,14 @@ public class MainActivity extends AppCompatActivity
 			Common.LogMessage("New Bottom Padding: " + bottom);
 
 			scrollView.setPadding(
-					initialLeft + systemInsets.left,
-					initialTop + systemInsets.top,
-					initialRight + systemInsets.right,
-					bottom
+				initialLeft + systemInsets.left,
+				initialTop + systemInsets.top,
+				initialRight + systemInsets.right,
+				bottom
 			);
 
 			return insets;
 		});
-
-		common = new Common(this);
-
-		common.SendWidgetUpdate();
 
 		OnBackPressedDispatcher onBackPressedDispatcher = getOnBackPressedDispatcher();
 		onBackPressedDispatcher.addCallback(this, onBackPressedCallback);
@@ -143,11 +154,13 @@ public class MainActivity extends AppCompatActivity
 
 		ViewPager2 mViewPager = findViewById(R.id.container);
 		mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
-		mSectionsPagerAdapter.addFragment(Weather.newInstance(common));
-		mSectionsPagerAdapter.addFragment(Stats.newInstance(common));
-		mSectionsPagerAdapter.addFragment(Forecast.newInstance(common));
-		mSectionsPagerAdapter.addFragment(Webcam.newInstance(common));
-		mSectionsPagerAdapter.addFragment(Custom.newInstance(common));
+		mSectionsPagerAdapter.addFragment(new Weather());
+		mSectionsPagerAdapter.addFragment(new Stats());
+		mSectionsPagerAdapter.addFragment(new Forecast());
+		mSectionsPagerAdapter.addFragment(new Webcam());
+		mSectionsPagerAdapter.addFragment(new Custom());
+
+		mViewPager.setOffscreenPageLimit(mSectionsPagerAdapter.getItemCount());
 		mViewPager.setAdapter(mSectionsPagerAdapter);
 
 		// Reduce swipe sensitivity
@@ -170,7 +183,7 @@ public class MainActivity extends AppCompatActivity
 		}
 
 		String[] tabTitles;
-		if(common.GetBoolPref("radarforecast", true))
+		if(Common.GetBoolPref("radarforecast", true))
 			tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.forecast2), getString(R.string.webcam2), getString(R.string.custom2)};
 		else
 			tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.radar), getString(R.string.webcam2), getString(R.string.custom2)};
@@ -178,7 +191,7 @@ public class MainActivity extends AppCompatActivity
 
 		try
 		{
-			if(common.GetStringPref("BASE_URL", "").isEmpty())
+			if(Common.GetStringPref("BASE_URL", "").isEmpty())
 				mDrawerLayout.openDrawer(GravityCompat.START);
 		} catch (Exception e) {
 			Common.doStackOutput(e);
@@ -202,63 +215,17 @@ public class MainActivity extends AppCompatActivity
 
 		// https://github.com/Pes8/android-material-color-picker-dialog
 		fgColour = findViewById(R.id.fg_Picker);
-		String hex = "#" + Integer.toHexString(common.GetIntPref("fgColour", ContextCompat.getColor(common.context, R.color.White))).toUpperCase(Locale.ENGLISH);
-		Common.LogMessage("Setting fgColour to "+ hex);
+		int fg = Common.GetIntPref("fgColour", ContextCompat.getColor(this, R.color.Black));
+		String hex = CustomEditText.getFixedChar() + String.format("%08X", fg).toUpperCase();
+		Common.LogMessage("Line223 Setting fgColour to "+ to_ARGB_hex(hex));
 		fgColour.setText(hex);
-		fgColour.setOnColourPickedListener((colour, fg) ->
-		{
-			common.SetIntPref("fgColour", colour);
-			resetActivity();
-		});
 
 		bgColour = findViewById(R.id.bg_Picker);
-		hex = "#" + Integer.toHexString(common.GetIntPref("bgColour", ContextCompat.getColor(common.context, R.color.White))).toUpperCase(Locale.ENGLISH);
-		Common.LogMessage("Setting bgColour to "+ hex);
+		int bg = Common.GetIntPref("bgColour", ContextCompat.getColor(this, R.color.White));
+		hex = CustomEditText.getFixedChar() + String.format("%08X", bg).toUpperCase();
+		Common.LogMessage("Line229 Setting bgColour to "+ to_ARGB_hex(hex));
 		bgColour.setText(hex);
-		bgColour.setOnColourPickedListener((colour, bg) ->
-		{
-			common.SetIntPref("fgColour", colour);
-			resetActivity();
-		});
 
-		Thread t = new Thread(() ->
-		{
-			try
-			{
-				// Sleep needed to stop frames dropping while loading
-				Thread.sleep(500);
-			} catch (Exception e) {
-				Common.doStackOutput(e);
-			}
-
-			Handler mHandler = new Handler(Looper.getMainLooper());
-			mHandler.post(this::doSettings);
-
-			common.setAlarm("MainActivity");
-		});
-
-		t.start();
-	}
-
-	private void resetActivity()
-	{
-		Common.LogMessage("Resetting mSectionsPagerAdapter");
-		weeWXApp.applyTheme(common.context);
-		Common.getActivity(common.context).recreate();
-	}
-
-	private void showUpdateAvailable()
-	{
-		final AlertDialog.Builder d = new AlertDialog.Builder(this);
-		d.setTitle(getString(R.string.app_name));
-		d.setMessage(getString(R.string.inigo_needs_updating));
-		d.setPositiveButton(getString(R.string.ok), null);
-		d.setIcon(R.mipmap.ic_launcher_foreground);
-		d.show();
-	}
-
-	private void doSettings()
-	{
 		String[] paths = new String[]
 		{
 			getString(R.string.manual_update),
@@ -269,25 +236,22 @@ public class MainActivity extends AppCompatActivity
 			getString(R.string.every_hour),
 		};
 
-		ArrayAdapter<String> adapter = new ArrayAdapter<>(common.context, R.layout.spinner_layout, paths);
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_layout, paths);
 		s1.setAdapter(adapter);
 		s1.setOnItemClickListener((parent, view, position, id) ->
 		{
 			UpdateFrequency = position;
-			Common.LogMessage("New UpdateFrequency == " + UpdateFrequency, true);
+			Common.LogMessage("New UpdateFrequency == " + UpdateFrequency);
 		});
-		UpdateFrequency = common.GetIntPref("updateInterval", 1);
-		if(UpdateFrequency >= 0 && UpdateFrequency < paths.length)
-			s1.setText(paths[UpdateFrequency], false);
-		else
-			s1.setText(getString(R.string.every_5_minutes));
+		UpdateFrequency = Common.GetIntPref("updateInterval", 1);
+		s1.setText(paths[UpdateFrequency], false);
 
 		MaterialSwitch wifi_only = findViewById(R.id.wifi_only);
-		wifi_only.setChecked(common.GetBoolPref("onlyWIFI", false));
+		wifi_only.setChecked(Common.GetBoolPref("onlyWIFI", false));
 		MaterialSwitch use_icons = findViewById(R.id.use_icons);
-		use_icons.setChecked(common.GetBoolPref("use_icons", false));
-		metric_forecasts.setChecked(common.GetBoolPref("metric", true));
-		show_indoor.setChecked(common.GetBoolPref("showIndoor", false));
+		use_icons.setChecked(Common.GetBoolPref("use_icons", false));
+		metric_forecasts.setChecked(Common.GetBoolPref("metric", true));
+		show_indoor.setChecked(Common.GetBoolPref("showIndoor", false));
 
 		String[] themeString = new String[]
 		{
@@ -296,30 +260,27 @@ public class MainActivity extends AppCompatActivity
 			getString(R.string.system_default)
 		};
 
-		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(common.context, R.layout.spinner_layout, themeString);
+		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_layout, themeString);
 		s2.setAdapter(adapter2);
 		s2.setOnItemClickListener((parent, view, position, id) ->
 		{
 			DayNightMode = position;
-			Common.LogMessage("New DayNightMode == " + DayNightMode, true);
+			Common.LogMessage("New DayNightMode == " + DayNightMode);
 		});
 
-		DayNightMode = common.GetIntPref("DayNightMode", 2);
-		if (DayNightMode >= 0 && DayNightMode < themeString.length)
-			s2.setText(themeString[DayNightMode], false);
-		else
-			s2.setText(getString(R.string.system_default));
+		DayNightMode = Common.GetIntPref("DayNightMode", 2);
+		s2.setText(themeString[DayNightMode], false);
 
 		MaterialRadioButton showRadar = findViewById(R.id.showRadar);
-		showRadar.setChecked(common.GetBoolPref("radarforecast", true));
+		showRadar.setChecked(Common.GetBoolPref("radarforecast", true));
 		MaterialRadioButton showForecast = findViewById(R.id.showForecast);
-		showForecast.setChecked(!common.GetBoolPref("radarforecast", true));
+		showForecast.setChecked(!Common.GetBoolPref("radarforecast", true));
 
 		b1.setOnClickListener(arg0 ->
 		{
 			b1.setEnabled(false);
 			b2.setEnabled(false);
-			InputMethodManager mgr = (InputMethodManager)common.context.getSystemService(Context.INPUT_METHOD_SERVICE);
+			InputMethodManager mgr = (InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE);
 			if(mgr != null)
 			{
 				mgr.hideSoftInputFromWindow(settingsURL.getWindowToken(), 0);
@@ -327,7 +288,7 @@ public class MainActivity extends AppCompatActivity
 			}
 
 			Common.LogMessage("show dialog");
-			AlertDialog.Builder builder = new AlertDialog.Builder(common.context);
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setCancelable(false);
 			builder.setView(R.layout.layout_loading_dialog);
 			dialog = builder.create();
@@ -351,14 +312,14 @@ public class MainActivity extends AppCompatActivity
 			scrollView.smoothScrollTo(0, 0);
 		});
 
-		settingsURL.setText(common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
+		settingsURL.setText(Common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
 		settingsURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
 			if (!hasFocus)
 				hideKeyboard(v);
 		});
 
-		customURL.setText(common.GetStringPref("custom_url", ""));
+		customURL.setText(Common.GetStringPref("custom_url", ""));
 		customURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
 			if (!hasFocus)
@@ -373,48 +334,61 @@ public class MainActivity extends AppCompatActivity
 		mtv1.setText(HtmlCompat.fromHtml(lines, HtmlCompat.FROM_HTML_MODE_LEGACY));
 		mtv1.setMovementMethod(LinkMovementMethod.getInstance());
 
-		lines = "Big thanks to the <a href='http://weewx.com'>weeWX project</a>, as this app " +
-				"wouldn't be possible otherwise.<br><br>" +
-				"Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
-				"is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and " +
-				"<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers" +
-				"<br><br>" +
-				"weeWX Weather App v" + common.getAppVersion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.";
-
 		MaterialTextView tv = findViewById(R.id.aboutText);
-		tv.setText(HtmlCompat.fromHtml(lines, HtmlCompat.FROM_HTML_MODE_LEGACY));
+		tv.setText(HtmlCompat.fromHtml(Common.about_blurb, HtmlCompat.FROM_HTML_MODE_LEGACY));
 		tv.setMovementMethod(LinkMovementMethod.getInstance());
+
+		Common.setAlarm("MainActivity.onCreate() has finished...");
+	}
+
+	private void resetActivity()
+	{
+		Common.LogMessage("Resetting mSectionsPagerAdapter");
+		((weeWXApp)getApplication()).applyTheme();
+		Intent intent = getIntent();
+		finish();
+		startActivity(intent);
+	}
+
+	private void showUpdateAvailable()
+	{
+		final AlertDialog.Builder d = new AlertDialog.Builder(this);
+		d.setTitle(getString(R.string.app_name));
+		d.setMessage(getString(R.string.inigo_needs_updating));
+		d.setPositiveButton(getString(R.string.ok), null);
+		d.setIcon(R.mipmap.ic_launcher_foreground);
+		d.show();
 	}
 
 	private void hideKeyboard(View view)
 	{
-		InputMethodManager inputMethodManager = (InputMethodManager)common.context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+		InputMethodManager inputMethodManager = (InputMethodManager)this.getSystemService(Activity.INPUT_METHOD_SERVICE);
 		if(inputMethodManager != null)
 			inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
 	}
 
 	private void checkReally()
 	{
-		AlertDialog.Builder builder = new AlertDialog.Builder(common.context);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(getString(R.string.remove_all_data)).setCancelable(false)
 				.setPositiveButton(getString(R.string.ok), (dialog_interface, i) ->
 				{
 					Common.LogMessage("trash all data");
 
-					common.clearPref();
-					common.commitPref();
+					Common.clearPref();
+					Common.commitPref();
 
-					File file = new File(common.context.getFilesDir(), "webcam.jpg");
+					File file = new File(this.getFilesDir(), "webcam.jpg");
 					if(file.exists() && file.canWrite())
 						if(!file.delete())
 							Common.LogMessage("couldn't delete webcam.jpg");
 
-					file = new File(common.context.getFilesDir(), "radar.gif");
+					file = new File(this.getFilesDir(), "radar.gif");
 					if(file.exists() && file.canWrite())
 						if(!file.delete())
 							Common.LogMessage("couldn't delete radar.gif");
 
-					common.SendWidgetUpdate();
+					WidgetProvider.updateAppWidget();
 
 					dialog_interface.cancel();
 
@@ -434,14 +408,14 @@ public class MainActivity extends AppCompatActivity
 			boolean validURL3 = false;
 			boolean validURL5 = false;
 
-			common.SetStringPref("lastError", "");
+			Common.SetStringPref("lastError", "");
 
-			String olddata = common.GetStringPref("BASE_URL", "");
-			String oldradar = common.GetStringPref("RADAR_URL", "");
-			String oldforecast = common.GetStringPref("FORECAST_URL", "");
-			String oldwebcam = common.GetStringPref("WEBCAM_URL", "");
-			String oldcustom = common.GetStringPref("CUSTOM_URL", "");
-			String oldcustom_url = common.GetStringPref("custom_url", "");
+			String olddata = Common.GetStringPref("BASE_URL", "");
+			String oldradar = Common.GetStringPref("RADAR_URL", "");
+			String oldforecast = Common.GetStringPref("FORECAST_URL", "");
+			String oldwebcam = Common.GetStringPref("WEBCAM_URL", "");
+			String oldcustom = Common.GetStringPref("CUSTOM_URL", "");
+			String oldcustom_url = Common.GetStringPref("custom_url", "");
 
 			String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "", metierev;
 
@@ -453,21 +427,21 @@ public class MainActivity extends AppCompatActivity
 			MaterialRadioButton showRadar = findViewById(R.id.showRadar);
 			long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
-			if(use_icons.isChecked() && (common.GetLongPref("icon_version", 0) < Common.icon_version || !common.checkForImages()))
+			if(use_icons.isChecked() && (Common.GetLongPref("icon_version", 0) < Common.icon_version || !Common.checkForImages()))
 			{
 				try
 				{
-					if (!common.downloadIcons())
+					if (!Common.downloadIcons())
 					{
-						common.SetStringPref("lastError", getString(R.string.icons_failed_to_download));
+						Common.SetStringPref("lastError", getString(R.string.icons_failed_to_download));
 						runOnUiThread(() ->
 						{
 							b1.setEnabled(true);
 							b2.setEnabled(true);
 							dialog.dismiss();
-							new AlertDialog.Builder(common.context)
+							new AlertDialog.Builder(this)
 									.setTitle(getString(R.string.wasnt_able_to_detect_icons))
-									.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+									.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 									.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 									{
 									}).show();
@@ -475,14 +449,14 @@ public class MainActivity extends AppCompatActivity
 						return;
 					}
 				} catch (Exception e) {
-					common.SetStringPref("lastError", e.toString());
+					Common.SetStringPref("lastError", e.toString());
 					runOnUiThread(() -> {
 						b1.setEnabled(true);
 						b2.setEnabled(true);
 						dialog.dismiss();
-						new AlertDialog.Builder(common.context)
+						new AlertDialog.Builder(this)
 								.setTitle(getString(R.string.wasnt_able_to_detect_icons))
-								.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+								.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
@@ -490,20 +464,20 @@ public class MainActivity extends AppCompatActivity
 					return;
 				}
 
-				common.SetLongPref("icon_version", Common.icon_version);
+				Common.SetLongPref("icon_version", Common.icon_version);
 			}
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().trim() : "";
 			if(settings_url.isEmpty() || settings_url.equals("https://example.com/weewx/inigo-settings.txt"))
 			{
-				common.SetStringPref("lastError", getString(R.string.url_was_default_or_empty));
+				Common.SetStringPref("lastError", getString(R.string.url_was_default_or_empty));
 				runOnUiThread(() -> {
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
-					new AlertDialog.Builder(common.context)
+					new AlertDialog.Builder(this)
 							.setTitle(getString(R.string.wasnt_able_to_connect_settings))
-							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+							.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
@@ -514,7 +488,7 @@ public class MainActivity extends AppCompatActivity
 
 			try
 			{
-				String[] bits = common.downloadSettings(settingsURL.getText().toString()).split("\\n");
+				String[] bits = Common.downloadSettings(settingsURL.getText().toString()).split("\\n");
 				for (String bit : bits)
 				{
 					String[] mb = bit.split("=", 2);
@@ -543,7 +517,7 @@ public class MainActivity extends AppCompatActivity
 
 				validURL = true;
 			} catch (Exception e) {
-				common.SetStringPref("lastError", e.toString());
+				Common.SetStringPref("lastError", e.toString());
 				Common.doStackOutput(e);
 			}
 
@@ -553,9 +527,9 @@ public class MainActivity extends AppCompatActivity
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
-					new AlertDialog.Builder(common.context)
+					new AlertDialog.Builder(this)
 							.setTitle(getString(R.string.wasnt_able_to_connect_settings))
-							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+							.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
@@ -567,18 +541,19 @@ public class MainActivity extends AppCompatActivity
 
 			if (data.isEmpty())
 			{
-				common.SetStringPref("lastError", getString(R.string.data_url_was_blank));
+				Common.SetStringPref("lastError", getString(R.string.data_url_was_blank));
 				runOnUiThread(() -> {
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
-					new AlertDialog.Builder(common.context)
+					new AlertDialog.Builder(this)
 							.setTitle(getString(R.string.wasnt_able_to_connect_data_txt))
-							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+							.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
+
 				return;
 			}
 
@@ -586,10 +561,10 @@ public class MainActivity extends AppCompatActivity
 			{
 				try
 				{
-					common.reallyGetWeather(data);
+					Common.reallyGetWeather(data);
 					validURL1 = true;
 				} catch (Exception e) {
-					common.SetStringPref("lastError", e.toString());
+					Common.SetStringPref("lastError", e.toString());
 					Common.doStackOutput(e);
 				}
 			} else
@@ -601,13 +576,14 @@ public class MainActivity extends AppCompatActivity
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
-					new AlertDialog.Builder(common.context)
+					new AlertDialog.Builder(this)
 							.setTitle(getString(R.string.wasnt_able_to_connect_radar_image))
-							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+							.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
+
 				return;
 			}
 
@@ -618,13 +594,14 @@ public class MainActivity extends AppCompatActivity
 					if(radtype.equals("image"))
 					{
 						File file = new File(getFilesDir(), "/radar.gif.tmp");
-						File f = common.downloadJSOUP(file, radar);
-						validURL2 = f.exists();
+						File f = Common.downloadJSOUP(file, radar);
+						if(f != null)
+							validURL2 = f.exists();
 					} else if(radtype.equals("webpage")) {
-						validURL2 = common.checkURL(radar);
+						validURL2 = Common.checkURL(radar);
 					}
 				} catch (Exception e) {
-					common.SetStringPref("lastError", e.toString());
+					Common.SetStringPref("lastError", e.toString());
 					Common.doStackOutput(e);
 				}
 
@@ -634,13 +611,14 @@ public class MainActivity extends AppCompatActivity
 						b1.setEnabled(true);
 						b2.setEnabled(true);
 						dialog.dismiss();
-						new AlertDialog.Builder(common.context)
+						new AlertDialog.Builder(this)
 								.setTitle(getString(R.string.wasnt_able_to_connect_radar_image))
-								.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+								.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
 					});
+
 					return;
 				}
 			}
@@ -657,15 +635,15 @@ public class MainActivity extends AppCompatActivity
 							Common.LogMessage("fctype=" + fctype);
 							if(!forecast.startsWith("http"))
 							{
-								common.SetStringPref("lastError", "Yahoo API recently changed, you need to update your settings.");
+								Common.SetStringPref("lastError", "Yahoo API recently changed, you need to update your settings.");
 								runOnUiThread(() ->
 								{
 									b1.setEnabled(true);
 									b2.setEnabled(true);
 									dialog.dismiss();
-									new AlertDialog.Builder(common.context)
+									new AlertDialog.Builder(this)
 											.setTitle(getString(R.string.wasnt_able_to_connect_or_download))
-											.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+											.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 											.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 											{
 											}).show();
@@ -686,15 +664,15 @@ public class MainActivity extends AppCompatActivity
 						}
 						case "bom.gov.au" ->
 						{
-							common.SetStringPref("lastError", "Forecast type " + fctype + " is no longer supported due to ftp support being dropped in Android. Use bom2 forecasts instead, check the wiki for details.");
+							Common.SetStringPref("lastError", "Forecast type " + fctype + " is no longer supported due to ftp support being dropped in Android. Use bom2 forecasts instead, check the wiki for details.");
 							runOnUiThread(() ->
 							{
 								b1.setEnabled(true);
 								b2.setEnabled(true);
 								dialog.dismiss();
-								new AlertDialog.Builder(common.context)
+								new AlertDialog.Builder(this)
 										.setTitle(getString(R.string.wasnt_able_to_connect_forecast))
-										.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+										.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 										.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 										{
 										}).show();
@@ -769,12 +747,12 @@ public class MainActivity extends AppCompatActivity
 						{
 							metierev = "https://prodapi.metweb.ie/location/reverse/" + forecast.replaceAll(",", "/");
 							forecast = "https://prodapi.metweb.ie/weather/daily/" + forecast.replaceAll(",", "/") + "/10";
-							if(common.GetStringPref("metierev", "").isEmpty() || !forecast.equals(oldforecast))
+							if(Common.GetStringPref("metierev", "").isEmpty() || !forecast.equals(oldforecast))
 							{
-								metierev = common.downloadForecast(fctype, metierev, null);
+								metierev = Common.downloadForecast(fctype, metierev, null);
 								JSONObject jobj = new JSONObject(metierev);
 								metierev = jobj.getString("city") + ", Ireland";
-								common.SetStringPref("metierev", metierev);
+								Common.SetStringPref("metierev", metierev);
 							}
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
@@ -782,44 +760,46 @@ public class MainActivity extends AppCompatActivity
 						}
 						default ->
 						{
-							common.SetStringPref("lastError", String.format(getString(R.string.forecast_type_is_invalid), fctype));
+							Common.SetStringPref("lastError", String.format(getString(R.string.forecast_type_is_invalid), fctype));
 							runOnUiThread(() ->
 							{
 								b1.setEnabled(true);
 								b2.setEnabled(true);
 								dialog.dismiss();
-								new AlertDialog.Builder(common.context)
+								new AlertDialog.Builder(this)
 										.setTitle(getString(R.string.wasnt_able_to_connect_forecast))
-										.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+										.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 										.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 										{
 										}).show();
 							});
+
 							return;
 						}
 					}
 				} catch (Exception e) {
-					common.SetStringPref("lastError", e.toString());
+					Common.SetStringPref("lastError", e.toString());
 					Common.doStackOutput(e);
 				}
 			}
 
 			Common.LogMessage("line 742");
 
-			if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !common.checkForImages() && !use_icons.isChecked())
+			if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !Common.checkForImages() && !use_icons.isChecked())
 			{
-				common.SetStringPref("lastError", String.format(getString(R.string.forecast_type_needs_icons), fctype));
+				Common.SetStringPref("lastError", String.format(getString(R.string.forecast_type_needs_icons), fctype));
 				runOnUiThread(() -> {
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
-					new AlertDialog.Builder(common.context)
+					new AlertDialog.Builder(this)
 							.setTitle(getString(R.string.wasnt_able_to_detect_forecast_icons))
-							.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+							.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
+
 				return;
 			}
 
@@ -830,16 +810,16 @@ public class MainActivity extends AppCompatActivity
 				try
 				{
 					Common.LogMessage("checking: " + forecast);
-					String tmp = common.downloadForecast(fctype, forecast, bomtown);
+					String tmp = Common.downloadForecast(fctype, forecast, bomtown);
 					if(tmp != null)
 					{
 						validURL3 = true;
 						Common.LogMessage("updating rss cache");
-						common.SetLongPref("rssCheck", current_time);
-						common.SetStringPref("forecastData", tmp);
+						Common.SetLongPref("rssCheck", current_time);
+						Common.SetStringPref("forecastData", tmp);
 					}
 				} catch (Exception e) {
-					common.SetStringPref("lastError", e.toString());
+					Common.SetStringPref("lastError", e.toString());
 					Common.doStackOutput(e);
 				}
 
@@ -849,13 +829,14 @@ public class MainActivity extends AppCompatActivity
 						b1.setEnabled(true);
 						b2.setEnabled(true);
 						dialog.dismiss();
-						new AlertDialog.Builder(common.context)
+						new AlertDialog.Builder(this)
 								.setTitle(getString(R.string.wasnt_able_to_connect_forecast))
-								.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+								.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
 					});
+
 					return;
 				}
 			}
@@ -864,19 +845,20 @@ public class MainActivity extends AppCompatActivity
 			{
 				Common.LogMessage("checking: " + webcam);
 
-				if (!Webcam.downloadWebcam(webcam, common.context.getFilesDir()))
+				if (!Webcam.downloadWebcam(webcam, this.getFilesDir()))
 				{
 					runOnUiThread(() -> {
 						b1.setEnabled(true);
 						b2.setEnabled(true);
 						dialog.dismiss();
-						new AlertDialog.Builder(common.context)
+						new AlertDialog.Builder(this)
 								.setTitle(getString(R.string.wasnt_able_to_connect_webcam_url))
-								.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+								.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
 					});
+
 					return;
 				}
 			}
@@ -888,12 +870,12 @@ public class MainActivity extends AppCompatActivity
 				{
 					try
 					{
-						if(common.checkURL(custom))
+						if(Common.checkURL(custom))
 							validURL5 = true;
 						else
-							common.RemovePref("custom_url");
+							Common.RemovePref("custom_url");
 					} catch (Exception e) {
-						common.SetStringPref("lastError", e.toString());
+						Common.SetStringPref("lastError", e.toString());
 						Common.doStackOutput(e);
 					}
 
@@ -903,9 +885,9 @@ public class MainActivity extends AppCompatActivity
 							b1.setEnabled(true);
 							b2.setEnabled(true);
 							dialog.dismiss();
-							new AlertDialog.Builder(common.context)
+							new AlertDialog.Builder(this)
 									.setTitle(getString(R.string.wasnt_able_to_connect_custom_url))
-									.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+									.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 									.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 									{
 									}).show();
@@ -918,10 +900,10 @@ public class MainActivity extends AppCompatActivity
 				{
 					try
 					{
-						if(common.checkURL(custom_url))
+						if(Common.checkURL(custom_url))
 							validURL5 = true;
 					} catch (Exception e) {
-						common.SetStringPref("lastError", e.toString());
+						Common.SetStringPref("lastError", e.toString());
 						Common.doStackOutput(e);
 					}
 
@@ -931,13 +913,14 @@ public class MainActivity extends AppCompatActivity
 							b1.setEnabled(true);
 							b2.setEnabled(true);
 							dialog.dismiss();
-							new AlertDialog.Builder(common.context)
+							new AlertDialog.Builder(this)
 									.setTitle(getString(R.string.wasnt_able_to_connect_custom_url))
-									.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+									.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 									.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
 									{
 									}).show();
 						});
+
 						return;
 					}
 				}
@@ -945,35 +928,48 @@ public class MainActivity extends AppCompatActivity
 
 			if(forecast.isEmpty())
 			{
-				common.SetLongPref("rssCheck", 0);
-				common.SetStringPref("forecastData", "");
+				Common.SetLongPref("rssCheck", 0);
+				Common.SetStringPref("forecastData", "");
 			}
 
-			common.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
-			common.SetIntPref("updateInterval", UpdateFrequency);
-			common.SetStringPref("BASE_URL", data);
-			common.SetStringPref("radtype", radtype);
-			common.SetStringPref("RADAR_URL", radar);
-			common.SetStringPref("FORECAST_URL", forecast);
-			common.SetStringPref("fctype", fctype);
-			common.SetStringPref("WEBCAM_URL", webcam);
-			common.SetStringPref("CUSTOM_URL", custom);
-			common.SetStringPref("custom_url", custom_url);
-			common.SetBoolPref("radarforecast", showRadar.isChecked());
+			Common.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
+			Common.SetIntPref("updateInterval", UpdateFrequency);
+			Common.SetStringPref("BASE_URL", data);
+			Common.SetStringPref("radtype", radtype);
+			Common.SetStringPref("RADAR_URL", radar);
+			Common.SetStringPref("FORECAST_URL", forecast);
+			Common.SetStringPref("fctype", fctype);
+			Common.SetStringPref("WEBCAM_URL", webcam);
+			Common.SetStringPref("CUSTOM_URL", custom);
+			Common.SetStringPref("custom_url", custom_url);
+			Common.SetBoolPref("radarforecast", showRadar.isChecked());
 
-			common.SetBoolPref("metric", metric_forecasts.isChecked());
-			common.SetBoolPref("showIndoor", show_indoor.isChecked());
-			common.SetIntPref("DayNightMode", DayNightMode);
-			common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
-			common.SetBoolPref("use_icons", use_icons.isChecked());
+			Common.SetBoolPref("metric", metric_forecasts.isChecked());
+			Common.SetBoolPref("showIndoor", show_indoor.isChecked());
+			Common.SetIntPref("DayNightMode", DayNightMode);
+			Common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
+			Common.SetBoolPref("use_icons", use_icons.isChecked());
+
+			Editable edit = fgColour.getText();
+			if(edit != null && edit.length() > 0)
+			{
+				int fg = parseHexToColour(edit.toString());
+				Common.SetIntPref("fgColour", fg);
+				Common.LogMessage("Saved widget fg colour: " + to_ARGB_hex(fg));
+			}
+
+			edit = bgColour.getText();
+			if(edit != null && edit.length() > 0)
+			{
+				int bg = parseHexToColour(edit.toString());
+				Common.SetIntPref("bgColour", bg);
+				Common.LogMessage("Saved widget bg colour: " + to_ARGB_hex(bg));
+			}
 
 			runOnUiThread(() ->
 			{
 				Common.LogMessage("Do some stuff here...");
-				b1.setEnabled(true);
-				b2.setEnabled(true);
 				dialog.dismiss();
-				mDrawerLayout.closeDrawer(GravityCompat.START);
 				resetActivity();
 			});
 		});
@@ -1044,7 +1040,7 @@ public class MainActivity extends AppCompatActivity
 
 		if(str.equals(Common.TAB0_INTENT))
 		{
-			common.getWeather();
+			Common.getWeather();
 			runOnUiThread(() ->
 			{
 				TabLayout.Tab tab = tabLayout.getTabAt(0);
@@ -1059,16 +1055,16 @@ public class MainActivity extends AppCompatActivity
 		if(str.equals(Common.FAILED_INTENT))
 		{
 			runOnUiThread(() -> new AlertDialog
-					.Builder(common.context)
+					.Builder(this)
 					.setTitle(getString(R.string.error_occurred_while_attempting_to_update))
-					.setMessage(common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+					.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
 					.setPositiveButton("Ok", (dialog, which) ->
 					{
 					}).show());
 		}
 	};
 
-	public static class SectionsStateAdapter extends FragmentStateAdapter
+	static class SectionsStateAdapter extends FragmentStateAdapter
 	{
 		private final ArrayList<Fragment> arrayList = new ArrayList<>();
 

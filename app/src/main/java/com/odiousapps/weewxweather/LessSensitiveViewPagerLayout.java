@@ -5,23 +5,24 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.FrameLayout;
 
+import androidx.annotation.NonNull;
+
 @SuppressWarnings("FieldCanBeLocal")
 public class LessSensitiveViewPagerLayout extends FrameLayout
 {
 	private float startX, startY;
 	private final float SWIPE_SLOP = 50f; // Increase to make horizontal swipes harder
 
-	public LessSensitiveViewPagerLayout(Context context)
+	public LessSensitiveViewPagerLayout(@NonNull Context context)
 	{
 		super(context);
 	}
 
-	public LessSensitiveViewPagerLayout(Context context, AttributeSet attrs)
+	public LessSensitiveViewPagerLayout(@NonNull Context context, AttributeSet attrs)
 	{
 		super(context, attrs);
 	}
 
-	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev)
 	{
 		switch (ev.getActionMasked())

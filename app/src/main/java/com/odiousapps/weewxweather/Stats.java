@@ -1,13 +1,12 @@
 package com.odiousapps.weewxweather;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.github.evilbunny2008.colourpicker.CPSlider;
@@ -18,49 +17,25 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static java.lang.Math.round;
 
 public class Stats extends Fragment
 {
-	private Common common;
+	private CPSlider mySlider;
 	private View rootView;
 	private WebView wv;
 	private SwipeRefreshLayout swipeLayout;
 
-	public Stats()
-	{
-	}
-
-	Stats(Common common)
-	{
-		this.common = common;
-	}
-
-	public static Stats newInstance(Common common)
-	{
-		return new Stats(common);
-	}
-
-	@Nullable
-	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
-		CommonViewModel commonViewModel = new ViewModelProvider(this).get(CommonViewModel.class);
-
-		if(commonViewModel.getCommon() == null)
-		{
-			commonViewModel.setCommon(common);
-		} else {
-			common = commonViewModel.getCommon();
-			common.reload(common.context);
-		}
-
 		rootView = inflater.inflate(R.layout.fragment_stats, container, false);
+
+		LinearLayout ll = rootView.findViewById(R.id.stats_ll);
+		ll.setBackgroundColor(KeyValue.bgColour);
 
 		doStuff();
 		updateFields();
@@ -70,14 +45,18 @@ public class Stats extends Fragment
 
 	void doStuff()
 	{
+		mySlider = rootView.findViewById(R.id.pageZoom);
+		mySlider.setBackgroundColor(KeyValue.bgColour);
 		wv = rootView.findViewById(R.id.webView1);
+		Common.setWebview(wv);
+
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
+		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
 		{
-			swipeLayout.setRefreshing(true);
+			swipeLayout.post(() -> swipeLayout.setRefreshing(true));
 			Common.LogMessage("onRefresh();");
 			forceRefresh();
-			swipeLayout.setRefreshing(false);
 		});
 
 		swipeLayout.setOnChildScrollUpCallback((parent, child) ->
@@ -86,46 +65,49 @@ public class Stats extends Fragment
 			return wv.getScrollY() > 0;
 		});
 
-		Common.setWebview(wv);
-
-		CPSlider mySlider = rootView.findViewById(R.id.pageZoom);
-		int default_zoom = common.GetIntPref("mySlider", 100);
+		int default_zoom = sanitiseZoom(Common.GetIntPref("mySlider", 100));
 		mySlider.setValue(default_zoom);
 		mySlider.addOnChangeListener((slider, value, fromUser) ->
 		{
+			Common.LogMessage("Slider zoom =" + value + "%");
+
 			if(fromUser)
 			{
-				common.SetIntPref("mySlider", (int)value);
-				wv.post(() -> setZoom((int)value));
+				Common.SetIntPref("mySlider", (int)value);
+				setZoom((int)value);
 			}
 		});
 	}
 
-	void setZoom()
+	void stopRefreshing()
 	{
-		int default_zoom = common.GetIntPref("mySlider", 100);
+		if(!swipeLayout.isRefreshing())
+			return;
 
-		if(default_zoom < 50)
-			default_zoom = 100;
+		swipeLayout.post(() -> swipeLayout.setRefreshing(false));
+	}
 
-		if(default_zoom > 200)
-			default_zoom = 100;
+	int sanitiseZoom(int zoom)
+	{
+		//zoom = Math.round(Math.round(zoom * 10.0f) * 10.0f);
 
-		setZoom(default_zoom);
+		if(zoom < 50)
+			zoom = 50;
+
+		if(zoom > 200)
+			zoom = 200;
+
+		return zoom;
 	}
 
 	void setZoom(int zoom)
 	{
-		int scrollX = wv.getScrollX();
-		int scrollY = wv.getScrollY();
+		final int finalZoom = sanitiseZoom(zoom);
 
-		wv.getSettings().setTextZoom(zoom);
-		wv.reload();
+		Common.LogMessage("new zoom value = " + finalZoom + "%");
 
-		// After reload completes, restore scroll
-		wv.scrollTo(scrollX, scrollY);
-
-		Common.LogMessage("new value = " + zoom, true);
+		mySlider.post(() -> mySlider.setValue(finalZoom));
+		wv.post(() -> wv.getSettings().setTextZoom(finalZoom));
 	}
 
 	public void onResume()
@@ -155,19 +137,13 @@ public class Stats extends Fragment
 
 	private void forceRefresh()
 	{
-		common.getWeather();
+		Common.getWeather();
 	}
 
 	private void checkFields(final TextView tv, final String txt)
 	{
-		Handler mHandler = new Handler(Looper.getMainLooper());
-		mHandler.post(() -> reallyCheckFields(tv, txt));
-	}
-
-	private void reallyCheckFields(TextView tv, String txt)
-	{
 		if(!tv.getText().toString().equals(txt))
-			tv.setText(txt);
+			tv.post(() -> tv.setText(txt));
 	}
 
 	private String convert(String cur)
@@ -248,13 +224,10 @@ public class Stats extends Fragment
 
 			int iw = 17;
 
-			String[] bits = common.GetStringPref("LastDownload", "").split("\\|");
+			String[] bits = Common.GetStringPref("LastDownload", "").split("\\|");
 
 			if(bits.length < 65)
 				return;
-
-			Handler mHandler = new Handler(Looper.getMainLooper());
-			mHandler.post(() -> swipeLayout.setRefreshing(true));
 
 			// Today Stats
 			checkFields(rootView.findViewById(R.id.textView), bits[56]);
@@ -264,10 +237,10 @@ public class Stats extends Fragment
 			final StringBuilder sb = new StringBuilder();
 
 			sb.append(Common.current_html_headers);
-			sb.append("<span style='font-size:18pt;font-weight:bold;'>");
+			sb.append("<div style='font-size:18pt;font-weight:bold;text-align:center;'>");
 			sb.append(getString(R.string.todayStats));
-			sb.append("</span>");
-			sb.append("<table style='width:100%;border:0px;'>\n");
+			sb.append("</div>");
+			sb.append("\n<table style='width:100%;border:0px;'>\n");
 
 			stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[3] + bits[60] + "</td><td>" + convert(bits[4]) +
 					"</td><td>" + convert(bits[2]) + "</td><td>" + bits[1] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td></tr>";
@@ -285,7 +258,7 @@ public class Stats extends Fragment
 					"</td><td>" + convert(bits[42]) + "</td><td>" + bits[41] + bits[63] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td></tr>";
 			sb.append(stmp);
 
-			if(bits.length > 202 && common.GetBoolPref("showIndoor", false))
+			if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
 			{
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td><td>" + bits[164] + bits[60] + "</td><td>" + convert(bits[165]) +
 						"</td><td>" + convert(bits[163]) + "</td><td>" + bits[162] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>";
@@ -324,10 +297,10 @@ public class Stats extends Fragment
 
 			if (bits.length > 87 && !bits[87].isEmpty())
 			{
-				sb.append("<span style='font-size:18pt;font-weight:bold;'>");
+				sb.append("<div style='font-size:18pt;font-weight:bold;text-align:center;'>");
 				sb.append(getString(R.string.yesterdayStats));
-				sb.append("</span>\n");
-				sb.append("<table style='width:100%;border:0px;'>\n");
+				sb.append("</div>");
+				sb.append("\n<table style='width:100%;border:0px;'>\n");
 
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[67] + bits[60] + "</td><td>" + convert(bits[68]) +
 						"</td><td>" + convert(bits[66]) + "</td><td>" + bits[65] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td></tr>";
@@ -345,7 +318,7 @@ public class Stats extends Fragment
 						"</td><td>" + convert(bits[87]) + "</td><td>" + bits[86] + bits[63] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td></tr>";
 				sb.append(stmp);
 
-				if(bits.length > 202 && common.GetBoolPref("showIndoor", false))
+				if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td><td>" + bits[173] + bits[60] + "</td><td>" + convert(bits[174]) +
 							"</td><td>" + convert(bits[172]) + "</td><td>" + bits[171] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>";
@@ -385,10 +358,10 @@ public class Stats extends Fragment
 
 			if(bits.length > 110 && !bits[110].isEmpty())
 			{
-				sb.append("<span style='font-size:18pt;font-weight:bold;'>");
+				sb.append("<div style='font-size:18pt;font-weight:bold;text-align:center;'>");
 				sb.append(getString(R.string.this_months_stats));
-				sb.append("</span>\n");
-				sb.append("<table style='width:100%;border:0px;'>\n");
+				sb.append("</div>");
+				sb.append("\n<table style='width:100%;border:0px;'>\n");
 
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[90] + bits[60] + "</td><td>" + getTime(bits[91]) +
 						"</td><td>" + getTime(bits[89]) + "</td><td>" + bits[88] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td></tr>";
@@ -406,7 +379,7 @@ public class Stats extends Fragment
 						"</td><td>" + getTime(bits[110]) + "</td><td>" + bits[109] + bits[63] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td></tr>";
 				sb.append(stmp);
 
-				if(bits.length > 202 && common.GetBoolPref("showIndoor", false))
+				if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td><td>" + bits[181] + bits[60] + "</td><td>" + getTime(bits[182]) +
 							"</td><td>" + getTime(bits[180]) + "</td><td>" + bits[179] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>";
@@ -434,10 +407,10 @@ public class Stats extends Fragment
 
 			if (bits.length > 133 && !bits[133].isEmpty())
 			{
-				sb.append("<span style='font-size:18pt;font-weight:bold;'>\n");
+				sb.append("<div style='font-size:18pt;font-weight:bold;text-align:center;'>");
 				sb.append(getString(R.string.this_year_stats));
-				sb.append("</span>\n");
-				sb.append("<table style='width:100%;border:0px;'>\n");
+				sb.append("</div>");
+				sb.append("\n<table style='width:100%;border:0px;'>\n");
 
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[113] + bits[60] + "</td><td>" + getTime(bits[114]) +
 						"</td><td>" + getTime(bits[112]) + "</td><td>" + bits[111] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td></tr>";
@@ -455,7 +428,7 @@ public class Stats extends Fragment
 						"</td><td>" + getTime(bits[133]) + "</td><td>" + bits[132] + bits[63] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td></tr>";
 				sb.append(stmp);
 
-				if(bits.length > 202 && common.GetBoolPref("showIndoor", false))
+				if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td><td>" + bits[189] + bits[60] + "</td><td>" + getTime(bits[190]) +
 							"</td><td>" + getTime(bits[188]) + "</td><td>" + bits[187] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>";
@@ -483,10 +456,10 @@ public class Stats extends Fragment
 
 			if (bits.length > 157 && !bits[157].isEmpty())
 			{
-				sb.append("<span style='font-size:18pt;font-weight:bold;'>\n");
+				sb.append("<div style='font-size:18pt;font-weight:bold;text-align:center;'>");
 				sb.append(getString(R.string.all_time_stats));
-				sb.append("</span>\n");
-				sb.append("<table style='width:100%;border:0px;'>\n");
+				sb.append("</div>");
+				sb.append("\n<table style='width:100%;border:0px;'>\n");
 
 				stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td><td>" + bits[136] + bits[60] + "</td><td>" + getTime(bits[137]) +
 						"</td><td>" + getTime(bits[135]) + "</td><td>" + bits[134] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-temperature'></i></td></tr>";
@@ -504,7 +477,7 @@ public class Stats extends Fragment
 						"</td><td>" + getTime(bits[156]) + "</td><td>" + bits[155] + bits[63] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td></tr>";
 				sb.append(stmp);
 
-				if(bits.length > 202 && common.GetBoolPref("showIndoor", false))
+				if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
 				{
 					stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td><td>" + bits[197] + bits[60] + "</td><td>" + getTime(bits[198]) +
 							"</td><td>" + getTime(bits[196]) + "</td><td>" + bits[195] + bits[60] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>";
@@ -534,12 +507,8 @@ public class Stats extends Fragment
 
 			String html = sb.toString();
 
-			wv.post(() ->
-			{
-				wv.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null);
-				swipeLayout.setRefreshing(false);
-				setZoom();
-			});
+			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null));
+			stopRefreshing();
 		});
 
 		t.start();

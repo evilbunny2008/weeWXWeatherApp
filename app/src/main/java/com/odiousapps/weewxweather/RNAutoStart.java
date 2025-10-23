@@ -11,8 +11,7 @@ public class RNAutoStart extends BroadcastReceiver
 		Common.LogMessage("Broadcast intent detected " + i.getAction());
 
 		Common.LogMessage("RNAutostart: i=" + i);
-		Common common = new Common(c);
-		common.setAlarm("RNAutoStart");
+		Common.setAlarm("RNAutoStart");
 		Common.LogMessage("onReceive() end");
 	}
 }

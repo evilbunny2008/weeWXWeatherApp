@@ -1,74 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:orientation="vertical"
 	tools:context=".MainActivity">
 
-	<LinearLayout
+    <com.google.android.material.appbar.AppBarLayout
+	    style="@style/AppTheme.weeWxWeatherApp.AppBarLayout"
+	    android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.tabs.TabLayout
+	        style="@style/AppTheme.weeWxWeatherApp.TabBarLayout"
+	        app:tabGravity="fill"
+	        app:tabMode="auto"
+	        android:id="@+id/tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.tabs.TabItem
+	            android:id="@+id/tabItem1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/weather2" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/stats2" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/forecast2" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/webcam2" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/tabItem5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/custom2" />
+
+        </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+	<com.odiousapps.weewxweather.LessSensitiveViewPagerLayout
+		app:layout_behavior="@string/appbar_scrolling_view_behavior"
 		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:orientation="vertical">
+		android:layout_height="0dp"
+		android:layout_weight="1">
 
-	    <com.google.android.material.appbar.AppBarLayout
-	        android:id="@+id/appbar"
+	    <androidx.viewpager2.widget.ViewPager2
+		    android:id="@+id/container"
 	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content">
-
-	        <com.google.android.material.tabs.TabLayout
-		        style="@style/AppTheme.weeWxWeatherApp.TabLayout"
-		        android:id="@+id/tabs"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content">
-
-	            <com.google.android.material.tabs.TabItem
-		            android:id="@+id/tabItem1"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="@string/weather2"/>
-
-	            <com.google.android.material.tabs.TabItem
-	                android:id="@+id/tabItem2"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="@string/stats2"/>
-
-	            <com.google.android.material.tabs.TabItem
-	                android:id="@+id/tabItem3"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="@string/forecast2"
-	                android:visibility="gone"/>
-
-	            <com.google.android.material.tabs.TabItem
-	                android:id="@+id/tabItem4"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="@string/webcam2"/>
-
-	            <com.google.android.material.tabs.TabItem
-	                android:id="@+id/tabItem5"
-	                android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="@string/custom2"/>
-
-	        </com.google.android.material.tabs.TabLayout>
-	    </com.google.android.material.appbar.AppBarLayout>
-
-		<com.odiousapps.weewxweather.LessSensitiveViewPagerLayout
-			app:layout_behavior="@string/appbar_scrolling_view_behavior"
-			android:layout_width="match_parent"
-			android:layout_height="0dp"
-			android:layout_weight="1">
-
-		    <androidx.viewpager2.widget.ViewPager2
-			    style="@style/AppTheme.weeWxWeatherApp.ViewPager"
-			    android:id="@+id/container"
-		        android:layout_width="match_parent"
-			    android:layout_height="match_parent"
-		        android:orientation="horizontal" />
-		</com.odiousapps.weewxweather.LessSensitiveViewPagerLayout>
-	</LinearLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+		    android:layout_height="match_parent"
+	        android:orientation="horizontal" />
+	</com.odiousapps.weewxweather.LessSensitiveViewPagerLayout>
+</LinearLayout>
