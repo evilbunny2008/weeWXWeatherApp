@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Không thể kết nối hoặc tải xuống hình ảnh webcam từ máy chủ của bạn</string>
     <string name="wasnt_able_to_connect_forecast">Không thể kết nối hoặc tải xuống dự báo</string>
     <string name="wasnt_able_to_detect_forecast_icons">Không thể phát hiện các biểu tượng dự báo</string>
-    <string name="forecast_type_needs_icons">Loại dự báo \'%%1$ss\' cần có sẵn biểu tượng, Vui lòng chuyển sang sử dụng biểu tượng và thử lại</string>
-    <string name="forecast_type_is_invalid">Loại dự báo \'%%1$ss\' không hợp lệ, hãy kiểm tra tệp cài đặt của bạn và thử lại</string>
+    <string name="forecast_type_needs_icons">Loại dự báo \'%1$s\' cần có sẵn biểu tượng, Vui lòng chuyển sang sử dụng biểu tượng và thử lại</string>
+    <string name="forecast_type_is_invalid">Loại dự báo \'%1$s\' không hợp lệ, hãy kiểm tra tệp cài đặt của bạn và thử lại</string>
     <string name="wasnt_able_to_connect_radar_image">Không thể kết nối hoặc tải xuống hình ảnh radar= từ internet</string>
     <string name="wasnt_able_to_connect_data_txt">Không thể kết nối hoặc tải xuống data.txt từ máy chủ của bạn</string>
     <string name="data_url_was_blank">URL dữ liệu trống</string>

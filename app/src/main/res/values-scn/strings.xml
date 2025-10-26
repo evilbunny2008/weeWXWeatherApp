@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Non putìa cunnetti o scaricari n\'immaggini dâ webcam dû to sirver</string>
     <string name="wasnt_able_to_connect_forecast">Non putìa cunnèttiri o scaricari li privisioni</string>
     <string name="wasnt_able_to_detect_forecast_icons">Non putìa rilevari icuni di privisioni</string>
-    <string name="forecast_type_needs_icons">Prufustari tipi \'%%1$ss\' havi a aviri icuni disponìbbili, si prega di passari a usari icuni e pruvari n\'autra vota</string>
-    <string name="forecast_type_is_invalid">Lu tipu di privisioni \'%%1$ss\' è nun validu, cuntrolla lu file di paràmitri e pruva n\'autra vota</string>
+    <string name="forecast_type_needs_icons">Prufustari tipi \'%1$s\' havi a aviri icuni disponìbbili, si prega di passari a usari icuni e pruvari n\'autra vota</string>
+    <string name="forecast_type_is_invalid">Lu tipu di privisioni \'%1$s\' è nun validu, cuntrolla lu file di paràmitri e pruva n\'autra vota</string>
     <string name="wasnt_able_to_connect_radar_image">Nun putìa cunnèttiri o scaricari radar= mmàggini di internet</string>
     <string name="wasnt_able_to_connect_data_txt">Nun era capaci di cunnèttiri o scaricari dati.txt dû server</string>
     <string name="data_url_was_blank">L\'URL dî dati era vacanti</string>

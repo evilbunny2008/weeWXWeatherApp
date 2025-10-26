@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Na ontumi mfa webcam mfonini bi nkɔ anaasɛ ɔntwe mfi wo server so</string>
     <string name="wasnt_able_to_connect_forecast">Na ontumi nkɔka anaasɛ ɔntwe nkɔmhyɛ no</string>
     <string name="wasnt_able_to_detect_forecast_icons">Na ontumi nhu nkɔmhyɛ ahyɛnsode ahorow</string>
-    <string name="forecast_type_needs_icons">Nkɔmhyɛ Type \'%%1$ss\' hia sɛ wonya icons a ɛwɔ hɔ, yɛsrɛ wo dan kɔ icons a wode bedi dwuma so na sɔ hwɛ bio</string>
-    <string name="forecast_type_is_invalid">Forecast Type \'%%1$ss\' no nyɛ adwuma, hwɛ wo settings fael no na sɔ hwɛ bio</string>
+    <string name="forecast_type_needs_icons">Nkɔmhyɛ Type \'%1$s\' hia sɛ wonya icons a ɛwɔ hɔ, yɛsrɛ wo dan kɔ icons a wode bedi dwuma so na sɔ hwɛ bio</string>
+    <string name="forecast_type_is_invalid">Forecast Type \'%1$s\' no nyɛ adwuma, hwɛ wo settings fael no na sɔ hwɛ bio</string>
     <string name="wasnt_able_to_connect_radar_image">Na ontumi mfa radar= mfonini mfi Intanɛt so anaasɛ ɔntwe</string>
     <string name="wasnt_able_to_connect_data_txt">wantumi ankɔ so ankɔfa data.txt amfi wo server so anaa antwe</string>
     <string name="data_url_was_blank">Data URL no yɛ blank</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Waar nët in kontitsioon fer een webcam pilt fon tayn serwer se ferklayche orer download mache</string>
     <string name="wasnt_able_to_connect_forecast">Waar nët in kontitsioon fer ti prokramatsioon se ferklayche orer se download mache</string>
     <string name="wasnt_able_to_detect_forecast_icons">Waar nët in kontitsioon fer ti protuktsioons ikone se fine</string>
-    <string name="forecast_type_needs_icons">Forecast type \'%s praucht ikone hon, Bitte wech xafe fer ikone penutse un noch mool proope</string>
-    <string name="forecast_type_is_invalid">Forecast tip \'%s%%1$ss\' is inwaliteet, kontroliire tayn instëlunge file un proope noch mool</string>
+    <string name="forecast_type_needs_icons">Forecast type \'%1$s\' praucht ikone hon, Bitte wech xafe fer ikone penutse un noch mool proope</string>
+    <string name="forecast_type_is_invalid">Forecast tip \'%s%1$s\' is inwaliteet, kontroliire tayn instëlunge file un proope noch mool</string>
     <string name="wasnt_able_to_connect_radar_image">Waar nët in kontitsioon fer radar= pilt fon te internet se ferklayche orer download mache</string>
     <string name="wasnt_able_to_connect_data_txt">Waar nët in kontitsioon fer ti data.txt fon tayn serwer se ferklayche orer download mache</string>
     <string name="data_url_was_blank">Data URL waar leetich</string>

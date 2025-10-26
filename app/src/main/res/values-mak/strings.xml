@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Tena nakkulle a\'lampa yareka a\'download gambara\' webcam battu ri servernu</string>
     <string name="wasnt_able_to_connect_forecast">Tena nakkulle a\'lampa yareka a\'download anjo ramalanna</string>
     <string name="wasnt_able_to_detect_forecast_icons">Tena nakkulle nadeteksi ikon ramalanna</string>
-    <string name="forecast_type_needs_icons">Ruang tipe \'%1s\' parallui nia\' ikonna, Kipinrai a\'pake ikon siagang coba pole</string>
-    <string name="forecast_type_is_invalid">Rute tipe \'%1s\' anre\' na\'kulle nisala, paressai file settingnu nampa nucoba pole</string>
+    <string name="forecast_type_needs_icons">Ruang tipe \'%1$s\' parallui nia\' ikonna, Kipinrai a\'pake ikon siagang coba pole</string>
+    <string name="forecast_type_is_invalid">Rute tipe \'%1$s\' anre\' na\'kulle nisala, paressai file settingnu nampa nucoba pole</string>
     <string name="wasnt_able_to_connect_radar_image">Tena nakkulle a\'lampa yareka a\'download radar= gambara\' battu ri internet</string>
     <string name="wasnt_able_to_connect_data_txt">Tena nakkulle a\'lampa mange ri data.txt battu ri servernu</string>
     <string name="data_url_was_blank">Data URL kosong</string>

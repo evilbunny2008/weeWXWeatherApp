@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Mete ŋu do ka alo wɔ webcam nɔnɔmetata aɖe tso wò server dzi o</string>
     <string name="wasnt_able_to_connect_forecast">Mete ŋu do ka alo wɔ nyagblɔɖia ƒe kɔpi o</string>
     <string name="wasnt_able_to_detect_forecast_icons">Mete ŋu de dzesi nyagblɔɖi ƒe nɔnɔmetatawo o</string>
-    <string name="forecast_type_needs_icons">Nyagblɔɖi ƒomevi \'%%1$ss\' hiã be nɔnɔmetatawo nanɔ anyi, taflatse trɔ ɖe dzesiwo zazã ŋu eye nàgadze agbagba ake</string>
-    <string name="forecast_type_is_invalid">Nyagblɔɖi ƒe ƒomevi \'%%1$ss\' mele eteƒe o, lé ŋku ɖe wò settings file ŋu eye nàgadze agbagba ake</string>
+    <string name="forecast_type_needs_icons">Nyagblɔɖi ƒomevi \'%1$s\' hiã be nɔnɔmetatawo nanɔ anyi, taflatse trɔ ɖe dzesiwo zazã ŋu eye nàgadze agbagba ake</string>
+    <string name="forecast_type_is_invalid">Nyagblɔɖi ƒe ƒomevi \'%1$s\' mele eteƒe o, lé ŋku ɖe wò settings file ŋu eye nàgadze agbagba ake</string>
     <string name="wasnt_able_to_connect_radar_image">Mete ŋu do ka alo wɔ radar= nɔnɔmetata tso internet dzi o</string>
     <string name="wasnt_able_to_connect_data_txt">Mete ŋu do ka alo wɔ data.txt tso wò server dzi o</string>
     <string name="data_url_was_blank">Data URL nɔ ƒuƒlu</string>

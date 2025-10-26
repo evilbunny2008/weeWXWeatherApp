@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Tikabaasa kukwatanisa nari okutunga ekishushani kya weebu kuruga aha server yaawe</string>
     <string name="wasnt_able_to_connect_forecast">Tikabaasa kukwatanisa nari kutunga okutebereza</string>
     <string name="wasnt_able_to_detect_forecast_icons">Tikabaasa kumanya ebishushani ebirikuteberezibwa</string>
-    <string name="forecast_type_needs_icons">Ekika kya f \'%%1$ss\'s\'s kugira ebishushani ebiriho, Nyabura we hindura omu kukozesa ebishushani kandi ogyezeho</string>
-    <string name="forecast_type_is_invalid">Ekika kya f \'%%1$ss\' tikiine nshonga, reeba fairo yaawe y\'okutebeekanisa kandi ogarukye ogyezeho</string>
+    <string name="forecast_type_needs_icons">Ekika kya f \'%1$s\'s\'s kugira ebishushani ebiriho, Nyabura we hindura omu kukozesa ebishushani kandi ogyezeho</string>
+    <string name="forecast_type_is_invalid">Ekika kya f \'%1$s\' tikiine nshonga, reeba fairo yaawe y\'okutebeekanisa kandi ogarukye ogyezeho</string>
     <string name="wasnt_able_to_connect_radar_image">Tikabaasa kukwatanisa nari okutunga ekishushani kya radar= kuruga aha intaneeti</string>
     <string name="wasnt_able_to_connect_data_txt">Tikirikubaasa kukwatiraine nari okutunga amakuru.txt kuruga aha server yaawe</string>
     <string name="data_url_was_blank">URL ya data ekaba etariho</string>

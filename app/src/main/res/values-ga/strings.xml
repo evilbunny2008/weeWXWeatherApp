@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Níorbh fhéidir íomhá ceamara gréasáin a nascadh nó a íoslódáil ó do fhreastalaí</string>
     <string name="wasnt_able_to_connect_forecast">Níorbh fhéidir an réamhaisnéis a nascadh ná a íoslódáil</string>
     <string name="wasnt_able_to_detect_forecast_icons">Níorbh fhéidir deilbhíní réamhaisnéise a bhrath</string>
-    <string name="forecast_type_needs_icons">Ní mór deilbhíní a bheith ar fáil don chineál réamhaisnéise \'%%1$ss\', athraigh go dtí deilbhíní a úsáid agus bain triail eile as</string>
-    <string name="forecast_type_is_invalid">Tá an cineál réamhaisnéise \'%%1$ss\' neamhbhailí, seiceáil do chomhad socruithe agus bain triail eile as</string>
+    <string name="forecast_type_needs_icons">Ní mór deilbhíní a bheith ar fáil don chineál réamhaisnéise \'%1$s\', athraigh go dtí deilbhíní a úsáid agus bain triail eile as</string>
+    <string name="forecast_type_is_invalid">Tá an cineál réamhaisnéise \'%1$s\' neamhbhailí, seiceáil do chomhad socruithe agus bain triail eile as</string>
     <string name="wasnt_able_to_connect_radar_image">Níorbh fhéidir íomhá radar= a nascadh ná a íoslódáil ón Idirlíon</string>
     <string name="wasnt_able_to_connect_data_txt">Níorbh fhéidir data.txt a nascadh nó a íoslódáil ó do fhreastalaí</string>
     <string name="data_url_was_blank">Bhí an URL sonraí bán</string>

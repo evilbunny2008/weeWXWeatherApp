@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Niy może sie łōnczyć ani pobrać ôbrazu kamery internetowego ze swojigo serwera</string>
     <string name="wasnt_able_to_connect_forecast">Niy może sie łōnczyć ani pobrać prognozy</string>
     <string name="wasnt_able_to_detect_forecast_icons">Niy może wykryć ikōn prognozujōncych</string>
-    <string name="forecast_type_needs_icons">Zorta Forcacast \'%%1$ss\' musi mieć dostympno ikōny, Proszōm przełōnczyć sie na używanie ikōn i sprōbuj zaś</string>
-    <string name="forecast_type_is_invalid">Zorta Forcacast \'%%1$ss\' je nieważno, sprawdź plik ustawiyń i sprōbuj ôd nowa</string>
+    <string name="forecast_type_needs_icons">Zorta Forcacast \'%1$s\' musi mieć dostympno ikōny, Proszōm przełōnczyć sie na używanie ikōn i sprōbuj zaś</string>
+    <string name="forecast_type_is_invalid">Zorta Forcacast \'%1$s\' je nieważno, sprawdź plik ustawiyń i sprōbuj ôd nowa</string>
     <string name="wasnt_able_to_connect_radar_image">Niy można połōnczyć ani pobiyrać ôbraz radar=</string>
     <string name="wasnt_able_to_connect_data_txt">Niy można połōnczyć ani pobiyrać dane.txt ze swojigo serwera</string>
     <string name="data_url_was_blank">Dane URL było prōzne</string>

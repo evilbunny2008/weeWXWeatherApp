@@ -32,6 +32,8 @@ public class weeWXApp extends Application
 		//if (DynamicColors.isDynamicColorAvailable())
 		//	DynamicColors.applyToActivitiesIfAvailable(this);
 
+		Common.getDayNightMode();
+
 		if(AppCompatDelegate.getDefaultNightMode() != KeyValue.mode)
 			AppCompatDelegate.setDefaultNightMode(KeyValue.mode);
 

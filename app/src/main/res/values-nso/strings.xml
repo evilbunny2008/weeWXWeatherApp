@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">E be e sa kgone go kgokaganya goba go taonelouta seswantšho sa webcam go tšwa go seva ya gago</string>
     <string name="wasnt_able_to_connect_forecast">wasn\'t able to connect goba go taonelouta ponelopele</string>
     <string name="wasnt_able_to_detect_forecast_icons">wasn\'t able to detect diaekhone ponelopele</string>
-    <string name="forecast_type_needs_icons">Mohuta wa ponelopele \'%%1$ss\' e hloka go ba le diaekhone tše di lego gona, hle fetogela go šomiša diaekhone gomme o leke gape</string>
-    <string name="forecast_type_is_invalid">Mohuta wa ponelopele \'%%1$ss\' ga o šome, hlahloba faele ya gago ya dipeakanyo gomme o leke gape</string>
+    <string name="forecast_type_needs_icons">Mohuta wa ponelopele \'%1$s\' e hloka go ba le diaekhone tše di lego gona, hle fetogela go šomiša diaekhone gomme o leke gape</string>
+    <string name="forecast_type_is_invalid">Mohuta wa ponelopele \'%1$s\' ga o šome, hlahloba faele ya gago ya dipeakanyo gomme o leke gape</string>
     <string name="wasnt_able_to_connect_radar_image">ga se a kgona go kgokaganya goba go taonelouta radar= seswantšho go tšwa Inthaneteng</string>
     <string name="wasnt_able_to_connect_data_txt">ga se ya kgona go kgokaganya goba go taonelouta data.txt go tšwa go seva ya gago</string>
     <string name="data_url_was_blank">URL ya data e be e se na selo</string>

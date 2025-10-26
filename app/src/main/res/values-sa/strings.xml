@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">भवतः सर्वरतः वेबकैम-चित्रं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमानं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान्।</string>
     <string name="wasnt_able_to_detect_forecast_icons">पूर्वानुमानचिह्नानि ज्ञातुं न शक्तवान् ।</string>
-    <string name="forecast_type_needs_icons">पूर्वानुमानं \'%%1$ss\' इत्यस्य आइकन् उपलब्धं कर्तुं आवश्यकता अस्ति, कृपया चिह्नानां उपयोगेन स्विच् कृत्वा पुनः प्रयासं कुर्वन्तु।</string>
-    <string name="forecast_type_is_invalid">पूर्वानुमानप्रकारः \'%%1$ss\' अमान्यः अस्ति, स्वस्य सेटिंग्स् सञ्चिकां परीक्ष्य पुनः प्रयासं कुर्वन्तु ।</string>
+    <string name="forecast_type_needs_icons">पूर्वानुमानं \'%1$s\' इत्यस्य आइकन् उपलब्धं कर्तुं आवश्यकता अस्ति, कृपया चिह्नानां उपयोगेन स्विच् कृत्वा पुनः प्रयासं कुर्वन्तु।</string>
+    <string name="forecast_type_is_invalid">पूर्वानुमानप्रकारः \'%1$s\' अमान्यः अस्ति, स्वस्य सेटिंग्स् सञ्चिकां परीक्ष्य पुनः प्रयासं कुर्वन्तु ।</string>
     <string name="wasnt_able_to_connect_radar_image">अन्तर्जालतः Radar= चित्रं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
     <string name="wasnt_able_to_connect_data_txt">भवतः सर्वरतः data.txt इत्यस्य कनेक्ट् कर्तुं वा डाउनलोड् कर्तुं वा समर्थः नासीत् ।</string>
     <string name="data_url_was_blank">Data URL रिक्तं आसीत् ।</string>

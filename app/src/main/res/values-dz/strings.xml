@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ཁྱོད་རའི་སར་བར་ལས་ ཝེབ་ཀེམ་གྱི་གཟུགས་བརྙན་ཅིག་ མཐུད་མ་ཚུགསཔ་ ཡང་ན་ ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="wasnt_able_to_connect_forecast">མཐུད་མ་ཚུགསཔ་ཡང་ན་ སྔོན་བཤད་ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="wasnt_able_to_detect_forecast_icons">སྔོན་དཔག་ངོས་དཔར་ཚུ་ ཤེས་རྟོགས་འབད་མ་ཚུགས།</string>
-    <string name="forecast_type_needs_icons">དབྱེ་བ་ \'%%1$ss\' གི་ ངོས་དཔར་ཚུ་ འཐོབ་ཚུགསཔ་ཨིན་ ངོས་དཔར་ཚུ་ ལག་ལེན་འཐབ་ནི་ལུ་ སོར་བསྒྱུར་འབད་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད་གནང་།</string>
-    <string name="forecast_type_is_invalid">སྔོན་བཤད་དབྱེ་བ་ \'%%1$ss\' ནུས་མེད་ཨིན་ ཁྱོད་ཀྱི་སྒྲིག་སྟངས་ཡིག་སྣོད་ཞིབ་དཔྱད་འབད་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད།</string>
+    <string name="forecast_type_needs_icons">དབྱེ་བ་ \'%1$s\' གི་ ངོས་དཔར་ཚུ་ འཐོབ་ཚུགསཔ་ཨིན་ ངོས་དཔར་ཚུ་ ལག་ལེན་འཐབ་ནི་ལུ་ སོར་བསྒྱུར་འབད་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད་གནང་།</string>
+    <string name="forecast_type_is_invalid">སྔོན་བཤད་དབྱེ་བ་ \'%1$s\' ནུས་མེད་ཨིན་ ཁྱོད་ཀྱི་སྒྲིག་སྟངས་ཡིག་སྣོད་ཞིབ་དཔྱད་འབད་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད།</string>
     <string name="wasnt_able_to_connect_radar_image">ཡོངས་འབྲེལ་ནང་ལས་ ར་ཌར་= གཟུགས་བརྙན་ཕབ་ལེན་འབད་མ་ཚུགསཔ་ཨིན་ན།</string>
     <string name="wasnt_able_to_connect_data_txt">ཁྱོད་རའི་སར་བར་ལས་ མཐུད་མ་ཚུགསཔ་ཡང་ན་ data.txt ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="data_url_was_blank">གནད་སྡུད་ཡུ་ཨར་ཨེལ་འདི་སྟོངམ་སྦེ་འདུག</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Не можеше да се поврзе или преземе слика од веб-камера од вашиот сервер</string>
     <string name="wasnt_able_to_connect_forecast">Не можеше да се поврзе или преземе прогнозата</string>
     <string name="wasnt_able_to_detect_forecast_icons">Не можеше да ги открие иконите за прогноза</string>
-    <string name="forecast_type_needs_icons">Типот на прогноза \'%%1$ss\' треба да има достапни икони, префрлете се на користење икони и обидете се повторно</string>
-    <string name="forecast_type_is_invalid">Типот на прогноза \'%%1$ss\' е неважечки, проверете ја датотеката со поставки и обидете се повторно</string>
+    <string name="forecast_type_needs_icons">Типот на прогноза \'%1$s\' треба да има достапни икони, префрлете се на користење икони и обидете се повторно</string>
+    <string name="forecast_type_is_invalid">Типот на прогноза \'%1$s\' е неважечки, проверете ја датотеката со поставки и обидете се повторно</string>
     <string name="wasnt_able_to_connect_radar_image">Не можеше да се поврзе или преземе радар= слика од интернет</string>
     <string name="wasnt_able_to_connect_data_txt">Не можеше да се поврзе или преземе data.txt од вашиот сервер</string>
     <string name="data_url_was_blank">URL-адресата на податоците беше празна</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">L\'è minga facil per i utent che g\'he vœut de duperà i file de la pagina</string>
     <string name="wasnt_able_to_connect_forecast">L\'è minga facil per i utent de la scheda</string>
     <string name="wasnt_able_to_detect_forecast_icons">G\'he sun di limitaziun de l\'inflaziun</string>
-    <string name="forecast_type_needs_icons">Per i impostaziun de \'%%1$ss\' g\'he vœur de vèss sicür che \'l\'è facil de vèss sicür che i client e i archivi sun</string>
-    <string name="forecast_type_is_invalid">Per i impostaziun de \'%%1$ss\' g\'he de vèss sicür che \'l\'è la tò posiziun e l\'è minga facil.\'</string>
+    <string name="forecast_type_needs_icons">Per i impostaziun de \'%1$s\' g\'he vœur de vèss sicür che \'l\'è facil de vèss sicür che i client e i archivi sun</string>
+    <string name="forecast_type_is_invalid">Per i impostaziun de \'%1$s\' g\'he de vèss sicür che \'l\'è la tò posiziun e l\'è minga facil.\'</string>
     <string name="wasnt_able_to_connect_radar_image">L\'installaziun de la fotocamera l\'è minga sultant un utent che g\'ha denter di dispusitif</string>
     <string name="wasnt_able_to_connect_data_txt">L\'installaziun de la scheda de credit l\'è minga dispunibel per la vòstra aplicaziun</string>
     <string name="data_url_was_blank">I analist g\'han cumincià a duperà i dati</string>

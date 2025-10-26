@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">No pude conectarme ni descargar una imagen de cámara web desde su servidor</string>
     <string name="wasnt_able_to_connect_forecast">No pude conectarme ni descargar el pronóstico</string>
     <string name="wasnt_able_to_detect_forecast_icons">No se pudieron detectar los íconos de pronóstico</string>
-    <string name="forecast_type_needs_icons">El tipo de pronóstico \'%%1$ss\' debe tener íconos disponibles. Cambie a usar íconos e inténtelo nuevamente</string>
-    <string name="forecast_type_is_invalid">El tipo de pronóstico \'%%1$ss\' no es válido. Verifique su archivo de configuración e inténtelo nuevamente</string>
+    <string name="forecast_type_needs_icons">El tipo de pronóstico \'%1$s\' debe tener íconos disponibles. Cambie a usar íconos e inténtelo nuevamente</string>
+    <string name="forecast_type_is_invalid">El tipo de pronóstico \'%1$s\' no es válido. Verifique su archivo de configuración e inténtelo nuevamente</string>
     <string name="wasnt_able_to_connect_radar_image">No pude conectarme ni descargar la imagen radar= de Internet</string>
     <string name="wasnt_able_to_connect_data_txt">No pude conectarme ni descargar data.txt desde su servidor</string>
     <string name="data_url_was_blank">La URL de datos estaba en blanco</string>

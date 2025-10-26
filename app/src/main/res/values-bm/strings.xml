@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">tun tɛ se ka webcam ja dɔ don walima ka a telesarse ka bɔ i ka sèrwɛri la</string>
     <string name="wasnt_able_to_connect_forecast">Was\'t se ka connect walima ka telechargé ka fɔ</string>
     <string name="wasnt_able_to_detect_forecast_icons">Was\'t se ka detection pronostic icons</string>
-    <string name="forecast_type_needs_icons">Forecast type \'%%1$ss\' mago bɛ taamasiyɛnw na minnu bɛ sɔrɔ, aw bɛ se ka wuli ka baara kɛ ni taamasiyɛnw ye ani ka segin ka a lajɛ</string>
-    <string name="forecast_type_is_invalid">Forecast type \'%%1$ss\' tɛ baara la, i ka settings file lajɛ ani ka segin a kan</string>
+    <string name="forecast_type_needs_icons">Forecast type \'%1$s\' mago bɛ taamasiyɛnw na minnu bɛ sɔrɔ, aw bɛ se ka wuli ka baara kɛ ni taamasiyɛnw ye ani ka segin ka a lajɛ</string>
+    <string name="forecast_type_is_invalid">Forecast type \'%1$s\' tɛ baara la, i ka settings file lajɛ ani ka segin a kan</string>
     <string name="wasnt_able_to_connect_radar_image">tun tɛ se ka radari= ja bɔ ɛntɛrinɛti kan</string>
     <string name="wasnt_able_to_connect_data_txt">tun tɛ se ka data.txt ɲɔgɔn sɔrɔ walima ka telesarse ka bɔ i ka sèrwɛri la</string>
     <string name="data_url_was_blank">Data URL tun ye blank ye</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">E ne e sa khone ho hokela kapa ho jarolla setšoantšo sa webcam ho tsoa ho seva ea hau</string>
     <string name="wasnt_able_to_connect_forecast">E ne e sa khone ho hokela kapa ho jarolla poloko</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ke ne ke khona ho bona litšoantšo tsa polao li bolela esale pele</string>
-    <string name="forecast_type_needs_icons">Ho hlokahala mofuta oa \'%%1$ss\'</string>
-    <string name="forecast_type_is_invalid">Tsebiso ea \'%%1$ss\'e sa nepahala, sheba file ea hau ea litlhokahalo ebe u leka hape</string>
+    <string name="forecast_type_needs_icons">Ho hlokahala mofuta oa \'%1$s\'</string>
+    <string name="forecast_type_is_invalid">Tsebiso ea \'%1$s\'e sa nepahala, sheba file ea hau ea litlhokahalo ebe u leka hape</string>
     <string name="wasnt_able_to_connect_radar_image">E ne e sa khone ho hokela kapa ho jarolla radar = setšoantšo se tsoang inthaneteng</string>
     <string name="wasnt_able_to_connect_data_txt">E ne e sa khone ho hokela kapa ho jarolla data.txt ho tsoa ho seva ea hau</string>
     <string name="data_url_was_blank">URL ea data e ne e se na letho</string>

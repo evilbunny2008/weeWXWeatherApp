@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ntiyashoboye guhuza canke gukuraho ishusho y\'urubuga kuri server yawe</string>
     <string name="wasnt_able_to_connect_forecast">Ntiyashoboye guhuza canke gukuraho ivy\'imbere y\'igihe</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ntiyashoboye kumenya ibishushanyo vy\'imbere y\'igihe</string>
-    <string name="forecast_type_needs_icons">Ubwoko bwa Forecast \'%%1$ss\' bukeneye kugira ibishushanyo biriho, Ndagusavye uhindure gukoresha ibishushanyo maze ugerageze</string>
-    <string name="forecast_type_is_invalid">Ubwoko bwa Forecast \'%%1$ss\' ntaco bumaze, suzuma dosiye yawe y\'imiterere maze ugerageze kandi</string>
+    <string name="forecast_type_needs_icons">Ubwoko bwa Forecast \'%1$s\' bukeneye kugira ibishushanyo biriho, Ndagusavye uhindure gukoresha ibishushanyo maze ugerageze</string>
+    <string name="forecast_type_is_invalid">Ubwoko bwa Forecast \'%1$s\' ntaco bumaze, suzuma dosiye yawe y\'imiterere maze ugerageze kandi</string>
     <string name="wasnt_able_to_connect_radar_image">Ntiyashoboye guhuza canke gukuraho radar= ishusho kuri internet</string>
     <string name="wasnt_able_to_connect_data_txt">Ntiyashoboye guhuza canke gukuraho amakuru.txt kuri server yawe</string>
     <string name="data_url_was_blank">URL y\'amakuru yari ubusa</string>

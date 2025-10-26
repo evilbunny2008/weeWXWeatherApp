@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ezin izan da zure zerbitzaritik konektatu edo deskargatu webcam irudi bat</string>
     <string name="wasnt_able_to_connect_forecast">Ezin izan da iragarpena konektatu edo deskargatu</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ezin izan dira iragarpen ikonoak hauteman</string>
-    <string name="forecast_type_needs_icons">\'%%1$ss\' iragarpen motak ikonoak erabilgarri izan behar ditu. Aldatu ikonoak erabiltzera eta saiatu berriro</string>
-    <string name="forecast_type_is_invalid">\'%%1$ss\' iragarpen mota ez da baliozkoa, egiaztatu ezarpenen fitxategia eta saiatu berriro</string>
+    <string name="forecast_type_needs_icons">\'%1$s\' iragarpen motak ikonoak erabilgarri izan behar ditu. Aldatu ikonoak erabiltzera eta saiatu berriro</string>
+    <string name="forecast_type_is_invalid">\'%1$s\' iragarpen mota ez da baliozkoa, egiaztatu ezarpenen fitxategia eta saiatu berriro</string>
     <string name="wasnt_able_to_connect_radar_image">Ezin izan da konektatu edo deskargatu radar= irudia Internetetik</string>
     <string name="wasnt_able_to_connect_data_txt">Ezin izan da data.txt zure zerbitzaritik konektatu edo deskargatu</string>
     <string name="data_url_was_blank">Datuen URLa hutsik zegoen</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ma setgħetx tikkonnettja jew tniżżel immaġni tal-webcam mis-server tiegħek</string>
     <string name="wasnt_able_to_connect_forecast">Ma setax jgħaqqad jew tniżżel it-tbassir</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ma setax jiskopri ikoni tat-tbassir</string>
-    <string name="forecast_type_needs_icons">It-tip ta\' tbassir \'%%1$ss\' jeħtieġ li jkollu ikoni disponibbli, Jekk jogħġbok aqleb għall-użu tal-ikoni u erġa\' pprova</string>
-    <string name="forecast_type_is_invalid">It-tip ta\' tbassir \'%%1$ss\' mhuwiex validu, iċċekkja l-fajl tas-settings tiegħek u erġa\' pprova</string>
+    <string name="forecast_type_needs_icons">It-tip ta\' tbassir \'%1$s\' jeħtieġ li jkollu ikoni disponibbli, Jekk jogħġbok aqleb għall-użu tal-ikoni u erġa\' pprova</string>
+    <string name="forecast_type_is_invalid">It-tip ta\' tbassir \'%1$s\' mhuwiex validu, iċċekkja l-fajl tas-settings tiegħek u erġa\' pprova</string>
     <string name="wasnt_able_to_connect_radar_image">Ma setgħetx tikkonnettja jew tniżżel ir-radar= immaġini mill-internet</string>
     <string name="wasnt_able_to_connect_data_txt">Ma setgħetx tikkonnettja jew tniżżel data.txt mis-server tiegħek</string>
     <string name="data_url_was_blank">L-URL tad-dejta kien vojt</string>

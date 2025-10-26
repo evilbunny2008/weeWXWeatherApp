@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Konnt net e Webcambild vun Ärem Server verbannen oder eroflueden</string>
     <string name="wasnt_able_to_connect_forecast">Konnt d\'Prognose net konnektéieren oder eroflueden</string>
     <string name="wasnt_able_to_detect_forecast_icons">War net fäeg Prognoseikonen z\'entdecken</string>
-    <string name="forecast_type_needs_icons">Prognosetyp \'%%1$ss\' muss Symboler verfügbar hunn, wiesselt w.e.g. op d\'Ikonen ze benotzen a probéiert nach eng Kéier</string>
-    <string name="forecast_type_is_invalid">Prognosetyp \'%%1$ss\' ass ongëlteg, kontrolléiert Är Astellungsdatei a probéiert nach eng Kéier</string>
+    <string name="forecast_type_needs_icons">Prognosetyp \'%1$s\' muss Symboler verfügbar hunn, wiesselt w.e.g. op d\'Ikonen ze benotzen a probéiert nach eng Kéier</string>
+    <string name="forecast_type_is_invalid">Prognosetyp \'%1$s\' ass ongëlteg, kontrolléiert Är Astellungsdatei a probéiert nach eng Kéier</string>
     <string name="wasnt_able_to_connect_radar_image">Konnt net konnektéieren oder Radar= Bild vum Internet eroflueden</string>
     <string name="wasnt_able_to_connect_data_txt">Konnt net konnektéieren oder data.txt vun Ärem Server eroflueden</string>
     <string name="data_url_was_blank">Donnéeën URL war eidel</string>

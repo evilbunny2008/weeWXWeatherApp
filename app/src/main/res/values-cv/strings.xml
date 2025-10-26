@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Сирĕн сервертан веб-камера ÿкерчĕкне çыхăнтарма е скачать тума пултарайман</string>
     <string name="wasnt_able_to_connect_forecast">Прогноза çыхăнтарма е скачать тума пултарайман</string>
     <string name="wasnt_able_to_detect_forecast_icons">Прогноз значокĕсене тупса палăртма пултарайман</string>
-    <string name="forecast_type_needs_icons">Прогноз типĕ \'%%1$ss\' кирлĕ значоксем пулмалла, значоксемпе усă курса тепĕр хут хăтланса пăхăр</string>
-    <string name="forecast_type_is_invalid">Прогноз типĕ \'%%1$ss\' тĕрĕс мар, настройкăсен файла тĕрĕслесе пăхăр та тепĕр хут хăтланса пăхăр</string>
+    <string name="forecast_type_needs_icons">Прогноз типĕ \'%1$s\' кирлĕ значоксем пулмалла, значоксемпе усă курса тепĕр хут хăтланса пăхăр</string>
+    <string name="forecast_type_is_invalid">Прогноз типĕ \'%1$s\' тĕрĕс мар, настройкăсен файла тĕрĕслесе пăхăр та тепĕр хут хăтланса пăхăр</string>
     <string name="wasnt_able_to_connect_radar_image">Интернетран радар= радар= ӳкерчӗке ҫыхӑнтарма е скачать тума пултарайман</string>
     <string name="wasnt_able_to_connect_data_txt">Хăвăрăн сервертан даннăйсене çыхăнтарма е скачать тума пултарайман</string>
     <string name="data_url_was_blank">Даннăйсен URL-адресĕ пушă пулнă</string>

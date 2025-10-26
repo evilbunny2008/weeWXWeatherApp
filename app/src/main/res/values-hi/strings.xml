@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">आपके सर्वर से वेबकैम छवि कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमान को कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
     <string name="wasnt_able_to_detect_forecast_icons">पूर्वानुमान चिह्नों का पता लगाने में सक्षम नहीं था</string>
-    <string name="forecast_type_needs_icons">पूर्वानुमान प्रकार \'%%1$ss\' में आइकन उपलब्ध होने चाहिए, कृपया आइकन का उपयोग करना शुरू करें और पुनः प्रयास करें।</string>
-    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%%1$ss\' अमान्य है, अपनी सेटिंग फ़ाइल जांचें और पुनः प्रयास करें।</string>
+    <string name="forecast_type_needs_icons">पूर्वानुमान प्रकार \'%1$s\' में आइकन उपलब्ध होने चाहिए, कृपया आइकन का उपयोग करना शुरू करें और पुनः प्रयास करें।</string>
+    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य है, अपनी सेटिंग फ़ाइल जांचें और पुनः प्रयास करें।</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेट से रडार = छवि को कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
     <string name="wasnt_able_to_connect_data_txt">आपके सर्वर से data.txt कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
     <string name="data_url_was_blank">डेटा यूआरएल खाली था</string>

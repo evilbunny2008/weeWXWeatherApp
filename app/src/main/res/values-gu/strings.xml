@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">તમારા સર્વરથી વેબકેમ ઇમેજને કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
     <string name="wasnt_able_to_connect_forecast">અનુમાન કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
     <string name="wasnt_able_to_detect_forecast_icons">આગાહીના ચિહ્નો શોધવામાં સક્ષમ ન હતા</string>
-    <string name="forecast_type_needs_icons">અનુમાન પ્રકાર \'%%1$ss\' માટે ચિહ્નો ઉપલબ્ધ હોવા જરૂરી છે, કૃપા કરીને ચિહ્નોનો ઉપયોગ કરવા પર સ્વિચ કરો અને ફરી પ્રયાસ કરો</string>
-    <string name="forecast_type_is_invalid">અનુમાન પ્રકાર \'%%1$ss\' અમાન્ય છે, તમારી સેટિંગ્સ ફાઇલ તપાસો અને ફરી પ્રયાસ કરો</string>
+    <string name="forecast_type_needs_icons">અનુમાન પ્રકાર \'%1$s\' માટે ચિહ્નો ઉપલબ્ધ હોવા જરૂરી છે, કૃપા કરીને ચિહ્નોનો ઉપયોગ કરવા પર સ્વિચ કરો અને ફરી પ્રયાસ કરો</string>
+    <string name="forecast_type_is_invalid">અનુમાન પ્રકાર \'%1$s\' અમાન્ય છે, તમારી સેટિંગ્સ ફાઇલ તપાસો અને ફરી પ્રયાસ કરો</string>
     <string name="wasnt_able_to_connect_radar_image">ઈન્ટરનેટ પરથી radar= ઈમેજને કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
     <string name="wasnt_able_to_connect_data_txt">તમારા સર્વરથી data.txt કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
     <string name="data_url_was_blank">ડેટા URL ખાલી હતું</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Серверинъизден веб-камера ресимини багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_connect_forecast">Прогнозны багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_detect_forecast_icons">Прогноз левхаларыны тапып оламады</string>
-    <string name="forecast_type_needs_icons">\'%%1$ss\' типи иконалар олмакъ керек, Лютфен, левхаларны къулланып, кене тырышынъыз</string>
-    <string name="forecast_type_is_invalid">\'%%1$ssporecart типи догъру дегиль, параметрлер файлынъызны тешкеринъиз ве кене тырышынъыз</string>
+    <string name="forecast_type_needs_icons">\'%1$s\' типи иконалар олмакъ керек, Лютфен, левхаларны къулланып, кене тырышынъыз</string>
+    <string name="forecast_type_is_invalid">\'%1$sporecart типи догъру дегиль, параметрлер файлынъызны тешкеринъиз ве кене тырышынъыз</string>
     <string name="wasnt_able_to_connect_radar_image">Интернеттен радар= ресимни багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_connect_data_txt">Серверинъизден data.txt багълап я да юклеп оламады</string>
     <string name="data_url_was_blank">Малюмат URL бош эди</string>

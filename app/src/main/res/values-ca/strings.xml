@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">No s\'ha pogut connectar ni baixar una imatge de càmera web del vostre servidor</string>
     <string name="wasnt_able_to_connect_forecast">No s\'ha pogut connectar ni baixar la previsió</string>
     <string name="wasnt_able_to_detect_forecast_icons">No s\'ha pogut detectar icones de previsió</string>
-    <string name="forecast_type_needs_icons">El tipus de previsió \'%%1$ss\' ha de tenir icones disponibles. Si us plau, canvieu a utilitzar icones i torneu-ho a provar</string>
-    <string name="forecast_type_is_invalid">El tipus de previsió \'%%1$ss\' no és vàlid, comproveu el fitxer de configuració i torneu-ho a provar</string>
+    <string name="forecast_type_needs_icons">El tipus de previsió \'%1$s\' ha de tenir icones disponibles. Si us plau, canvieu a utilitzar icones i torneu-ho a provar</string>
+    <string name="forecast_type_is_invalid">El tipus de previsió \'%1$s\' no és vàlid, comproveu el fitxer de configuració i torneu-ho a provar</string>
     <string name="wasnt_able_to_connect_radar_image">No s\'ha pogut connectar ni baixar la imatge radar= d\'Internet</string>
     <string name="wasnt_able_to_connect_data_txt">No s\'ha pogut connectar ni baixar data.txt del vostre servidor</string>
     <string name="data_url_was_blank">L\'URL de les dades estava en blanc</string>

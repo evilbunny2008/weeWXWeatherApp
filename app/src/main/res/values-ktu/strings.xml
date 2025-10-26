@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Yandi lendaka kuvukisa ve to kubaka kifwanisu ya web na serveur na nge</string>
     <string name="wasnt_able_to_connect_forecast">Yandi lendaka ve kukangama to kubaka mambu yina bo vandaka kuyindula</string>
     <string name="wasnt_able_to_detect_forecast_icons">Yandi lendaka kuzaba ve bifwanisu ya bo ke tubaka na ntwala</string>
-    <string name="forecast_type_needs_icons">Mutindu ya ntete \'%%1$ss\' kele na mfunu ya kuvanda na bifwanisu, Pardon soba kusadila bifwanisu mpi kumeka diaka</string>
-    <string name="forecast_type_is_invalid">Mutindu ya ntwala ya \'%%1$ss\' kele ya kukonda mfunu, tala fichier ya baparametre na nge mpi meka diaka</string>
+    <string name="forecast_type_needs_icons">Mutindu ya ntete \'%1$s\' kele na mfunu ya kuvanda na bifwanisu, Pardon soba kusadila bifwanisu mpi kumeka diaka</string>
+    <string name="forecast_type_is_invalid">Mutindu ya ntwala ya \'%1$s\' kele ya kukonda mfunu, tala fichier ya baparametre na nge mpi meka diaka</string>
     <string name="wasnt_able_to_connect_radar_image">Yandi lendaka kukangama ve to kubaka radar= kifwanisu na internet</string>
     <string name="wasnt_able_to_connect_data_txt">Yau lendaka kukangama ve to kubaka bansangu.tt na serveur na nge</string>
     <string name="data_url_was_blank">URL ya bansangu vandaka ya mpamba</string>

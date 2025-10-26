@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Pa t \'kapab konekte oswa telechaje yon imaj webcam nan sèvè ou a</string>
     <string name="wasnt_able_to_connect_forecast">Pa t \'kapab konekte oswa telechaje pwevwa a</string>
     <string name="wasnt_able_to_detect_forecast_icons">Pa t \'kapab detekte ikon previzyon</string>
-    <string name="forecast_type_needs_icons">Kalite previzyon \'%%1$ss\' bezwen genyen ikon disponib, Tanpri chanje pou itilize ikon epi eseye ankò</string>
-    <string name="forecast_type_is_invalid">Kalite previzyon \'%%1$ss\' pa valab, tcheke dosye paramèt ou a epi eseye ankò</string>
+    <string name="forecast_type_needs_icons">Kalite previzyon \'%1$s\' bezwen genyen ikon disponib, Tanpri chanje pou itilize ikon epi eseye ankò</string>
+    <string name="forecast_type_is_invalid">Kalite previzyon \'%1$s\' pa valab, tcheke dosye paramèt ou a epi eseye ankò</string>
     <string name="wasnt_able_to_connect_radar_image">Pa t \'kapab konekte oswa telechaje rada = imaj soti nan entènèt la</string>
     <string name="wasnt_able_to_connect_data_txt">Pa t \'kapab konekte oswa telechaje data.txt soti nan sèvè ou a</string>
     <string name="data_url_was_blank">URL done yo te vid</string>

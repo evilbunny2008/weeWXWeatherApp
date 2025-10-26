@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Nuk mund të lidhej ose të shkarkohej një imazh i kamerës së internetit nga serveri yt</string>
     <string name="wasnt_able_to_connect_forecast">Nuk mund të lidhej ose shkarkohej parashikimi</string>
     <string name="wasnt_able_to_detect_forecast_icons">Nuk ishte në gjendje të zbulonte ikonat e parashikimit</string>
-    <string name="forecast_type_needs_icons">Lloji i parashikimit \'%%1$ss\' duhet të ketë ikona të disponueshme. Ju lutemi, kaloni te përdorimi i ikonave dhe provoni përsëri</string>
-    <string name="forecast_type_is_invalid">Lloji i parashikimit \'%%1$ss\' është i pavlefshëm, kontrollo skedarin e cilësimeve dhe provo sërish</string>
+    <string name="forecast_type_needs_icons">Lloji i parashikimit \'%1$s\' duhet të ketë ikona të disponueshme. Ju lutemi, kaloni te përdorimi i ikonave dhe provoni përsëri</string>
+    <string name="forecast_type_is_invalid">Lloji i parashikimit \'%1$s\' është i pavlefshëm, kontrollo skedarin e cilësimeve dhe provo sërish</string>
     <string name="wasnt_able_to_connect_radar_image">Nuk mund të lidhej ose të shkarkohej imazhi i radarit= nga interneti</string>
     <string name="wasnt_able_to_connect_data_txt">Nuk mund të lidhej ose shkarkohej data.txt nga serveri yt</string>
     <string name="data_url_was_blank">URL-ja e të dhënave ishte bosh</string>

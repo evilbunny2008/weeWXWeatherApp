@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">קען נישט פאַרבינדן אָדער אראפקאפיע אַ וועבקאַם בילד פֿון דיין סערווער</string>
     <string name="wasnt_able_to_connect_forecast">קען נישט פאַרבינדן אָדער אראפקאפיע די פאָרויסזאָגן</string>
     <string name="wasnt_able_to_detect_forecast_icons">איז נישט ביכולת צו דעטעקט פאָרויסזאָגן ייקאַנז</string>
-    <string name="forecast_type_needs_icons">פאָרויסזאָגן טיפּ \'%%1$ss\' דאַרף האָבן ייקאַנז בנימצא, ביטע באַשטימען צו ניצן ייקאַנז און פּרובירן ווידער</string>
-    <string name="forecast_type_is_invalid">פאָרויסזאָגן טיפּ \'%%1$ss\' איז פאַרקריפּלט, טשעק דיין סעטטינגס טעקע און פּרובירן ווידער</string>
+    <string name="forecast_type_needs_icons">פאָרויסזאָגן טיפּ \'%1$s\' דאַרף האָבן ייקאַנז בנימצא, ביטע באַשטימען צו ניצן ייקאַנז און פּרובירן ווידער</string>
+    <string name="forecast_type_is_invalid">פאָרויסזאָגן טיפּ \'%1$s\' איז פאַרקריפּלט, טשעק דיין סעטטינגס טעקע און פּרובירן ווידער</string>
     <string name="wasnt_able_to_connect_radar_image">קען נישט פאַרבינדן אָדער אראפקאפיע ראַדאַר= בילד פֿון דער אינטערנעץ</string>
     <string name="wasnt_able_to_connect_data_txt">קען נישט פאַרבינדן אָדער אראפקאפיע דאַטאַ.טקסט פון דיין סערווער</string>
     <string name="data_url_was_blank">דאַטן URL איז ליידיק</string>

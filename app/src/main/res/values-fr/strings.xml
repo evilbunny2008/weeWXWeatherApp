@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Impossible de se connecter ou de télécharger une image de webcam depuis votre serveur</string>
     <string name="wasnt_able_to_connect_forecast">Je n\'ai pas pu me connecter ou télécharger les prévisions</string>
     <string name="wasnt_able_to_detect_forecast_icons">Impossible de détecter les icônes de prévisions</string>
-    <string name="forecast_type_needs_icons">Le type de prévision \'%%1$ss\' doit avoir des icônes disponibles. Veuillez passer à l\'utilisation d\'icônes et réessayer</string>
-    <string name="forecast_type_is_invalid">Le type de prévision \'%%1$ss\' n\'est pas valide, vérifiez votre fichier de paramètres et réessayez</string>
+    <string name="forecast_type_needs_icons">Le type de prévision \'%1$s\' doit avoir des icônes disponibles. Veuillez passer à l\'utilisation d\'icônes et réessayer</string>
+    <string name="forecast_type_is_invalid">Le type de prévision \'%1$s\' n\'est pas valide, vérifiez votre fichier de paramètres et réessayez</string>
     <string name="wasnt_able_to_connect_radar_image">Impossible de se connecter ou de télécharger l\'image radar= depuis Internet</string>
     <string name="wasnt_able_to_connect_data_txt">Je n\'ai pas pu me connecter ou télécharger data.txt depuis votre serveur</string>
     <string name="data_url_was_blank">L\'URL des données était vide</string>

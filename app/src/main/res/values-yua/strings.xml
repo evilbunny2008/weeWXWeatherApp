@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ma\' bin capaz u conectar wa descargar jump\'éel wíimbala\' webcam tak u servidor</string>
     <string name="wasnt_able_to_connect_forecast">Ma\' bin capaz u conectar wa descargar le pronóstico</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ma\' bin capaz u detectar iconos pronóstico</string>
-    <string name="forecast_type_needs_icons">Táanil ti\' le yáax \'%%1$ss\' k\'a\'abéet u yaantal iconos disponibles, Béet k\'ex ti\' u búukinta\'al iconos yéetel k\'aax u tu ka\'atéen</string>
-    <string name="forecast_type_is_invalid">Bin yano\'ob Forecast \'%%1$ss\' jach inválido, compruebe u archivo configuración yéetel k\'aax u tu ka\'atéen</string>
+    <string name="forecast_type_needs_icons">Táanil ti\' le yáax \'%1$s\' k\'a\'abéet u yaantal iconos disponibles, Béet k\'ex ti\' u búukinta\'al iconos yéetel k\'aax u tu ka\'atéen</string>
+    <string name="forecast_type_is_invalid">Bin yano\'ob Forecast \'%1$s\' jach inválido, compruebe u archivo configuración yéetel k\'aax u tu ka\'atéen</string>
     <string name="wasnt_able_to_connect_radar_image">Ma\' bin capaz u conectar wa descargar radar = wíimbala\' tak internet</string>
     <string name="wasnt_able_to_connect_data_txt">Ma\' bin capaz u conectar wa descargar datos.txt tak u servidor</string>
     <string name="data_url_was_blank">URL datos ka\'ach ti\' sak</string>

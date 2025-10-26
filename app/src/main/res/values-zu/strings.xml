@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ayikwazanga ukuxhuma noma ukulanda isithombe se-webcam kusuka kuseva yakho</string>
     <string name="wasnt_able_to_connect_forecast">Ayikwazanga ukuxhuma noma ukulanda isibikezelo</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ayikwazanga ukuthola izithonjana zesimo sezulu</string>
-    <string name="forecast_type_needs_icons">Uhlobo lwesimo sezulu \'%%1$ss\' ludinga ukuba nezimpawu ezitholakalayo, sicela ushintshele ekusebenziseni izithonjana bese uzama futhi</string>
-    <string name="forecast_type_is_invalid">Uhlobo lwesimo sezulu \'%%1$ss\' alulungile, hlola ifayela lakho lezilungiselelo bese uzama futhi</string>
+    <string name="forecast_type_needs_icons">Uhlobo lwesimo sezulu \'%1$s\' ludinga ukuba nezimpawu ezitholakalayo, sicela ushintshele ekusebenziseni izithonjana bese uzama futhi</string>
+    <string name="forecast_type_is_invalid">Uhlobo lwesimo sezulu \'%1$s\' alulungile, hlola ifayela lakho lezilungiselelo bese uzama futhi</string>
     <string name="wasnt_able_to_connect_radar_image">Ayikwazanga ukuxhuma noma ukulanda i-radar = isithombe kusuka kwi-Intanethi</string>
     <string name="wasnt_able_to_connect_data_txt">Ayikwazanga ukuxhuma noma ukulanda idatha.txt kusuka kuseva yakho</string>
     <string name="data_url_was_blank">I-URL yedatha yayingenalutho</string>

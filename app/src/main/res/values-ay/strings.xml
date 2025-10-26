@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">janiw mä webcam uñacht\'äwi servidor ukan conectar jan ukax apkatañjamäkänti</string>
     <string name="wasnt_able_to_connect_forecast">janiw conectar jan ukax pronóstico ukar apkatañjamäkänti</string>
     <string name="wasnt_able_to_detect_forecast_icons">janiw pronóstico icononak uñt\'añjamäkänti</string>
-    <string name="forecast_type_needs_icons">Pronóstico tipo \'%%1$ss\' ukax iconos ukanakaw utjañapa, ukax icononak apnaqañar mayjt\'ayañamawa ukat mayamp yant\'añamawa</string>
-    <string name="forecast_type_is_invalid">Pronóstico Tipo \'%%1$ss\' ukax janiw askïkiti, configuración de configuración ukar uñakipt\'añamawa ukat mayamp yant\'añamawa</string>
+    <string name="forecast_type_needs_icons">Pronóstico tipo \'%1$s\' ukax iconos ukanakaw utjañapa, ukax icononak apnaqañar mayjt\'ayañamawa ukat mayamp yant\'añamawa</string>
+    <string name="forecast_type_is_invalid">Pronóstico Tipo \'%1$s\' ukax janiw askïkiti, configuración de configuración ukar uñakipt\'añamawa ukat mayamp yant\'añamawa</string>
     <string name="wasnt_able_to_connect_radar_image">janiw Radar= uñacht\'äwix internet tuqit uñt\'ayasiñjamäkänti jan ukax apkatañjamäkänti</string>
     <string name="wasnt_able_to_connect_data_txt">janiw dates.txt ukax servidor ukan conectar jan ukax apkatañjamäkänti</string>
     <string name="data_url_was_blank">Datos url ukax ch\'usawjawa</string>

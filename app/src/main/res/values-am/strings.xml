@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">የድር ካሜራዎን ከአገልጋይዎ ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_connect_forecast">ትንበያውን ማገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_detect_forecast_icons">ትንበያ አዶዎችን ማግኘት አልተቻለም</string>
-    <string name="forecast_type_needs_icons">ትንበያ አይነት \'%%1$ss\' አዶዎች እንዲኖሩ ይፈልጋል, እባክዎን አዶዎችን ወደ መጠቀም እና እንደገና ይሞክሩ</string>
-    <string name="forecast_type_is_invalid">ትንበያ አይነት \'%%1$ssልክ ያልሆነ ነው, የቅንብሮች ፋይልዎን ይፈትሹ እና እንደገና ይሞክሩ</string>
+    <string name="forecast_type_needs_icons">ትንበያ አይነት \'%1$s\' አዶዎች እንዲኖሩ ይፈልጋል, እባክዎን አዶዎችን ወደ መጠቀም እና እንደገና ይሞክሩ</string>
+    <string name="forecast_type_is_invalid">ትንበያ አይነት \'%1$sልክ ያልሆነ ነው, የቅንብሮች ፋይልዎን ይፈትሹ እና እንደገና ይሞክሩ</string>
     <string name="wasnt_able_to_connect_radar_image">የራአር = ምስል ከበይነመረቡ ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_connect_data_txt">ከአገልጋይዎ ጋር የመረጃ ማገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="data_url_was_blank">የውሂብ ዩ አር ኤል ባዶ ነበር</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ne ok nyal tudruok kata keto picha mar webcam kuom server mari</string>
     <string name="wasnt_able_to_connect_forecast">Ne ok nyal tudruok kata ng\'ado bura</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ne ok nyal ng\'eyo kaka ne aneno gik ma ne otimore</string>
-    <string name="forecast_type_needs_icons">Forecast \'%%1$ss\' s\'s dwaro ni obed gi icons ma nitie, Aimo mondo ilok tiyo gi icon kendo item kendo</string>
-    <string name="forecast_type_is_invalid">Forecast \'%%1$ss\' utie lembe ma pire tek, nen file peri mi settings man tem kendo</string>
+    <string name="forecast_type_needs_icons">Forecast \'%1$s\' s\'s dwaro ni obed gi icons ma nitie, Aimo mondo ilok tiyo gi icon kendo item kendo</string>
+    <string name="forecast_type_is_invalid">Forecast \'%1$s\' utie lembe ma pire tek, nen file peri mi settings man tem kendo</string>
     <string name="wasnt_able_to_connect_radar_image">Ne ok nyal tudruok kata ng\'ado rad= cal ma wuok e intanet</string>
     <string name="wasnt_able_to_connect_data_txt">Ne ok nyal tudruok kata download data.txt kuom server mari</string>
     <string name="data_url_was_blank">Data U URuda ma ng\'ato nyalo ng\'eyo maber</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">अपने सर्वर थमां इक वेबकैम छवि गी कनेक्ट जां डाउनलोड नेईं करी सकेआ हा।</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमान गी कनेक्ट जां डाउनलोड नेईं करी सकेआ।</string>
     <string name="wasnt_able_to_detect_forecast_icons">पूर्वानुमान आइकन दा पता नेईं लगाई सकेआ।</string>
-    <string name="forecast_type_needs_icons">पूर्वानुमान प्रकार \'%%1$ss\' गी आइकन उपलब्ध होने दी लोड़ ऐ, कृपया आइकनें दा इस्तेमाल करने पर स्विच करो ते दुबारा कोशश करो।</string>
-    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%%1$ss\' अवैध ऐ, अपनी सेटिंग्स फाइल दी जांच करो ते दुबारा कोशश करो</string>
+    <string name="forecast_type_needs_icons">पूर्वानुमान प्रकार \'%1$s\' गी आइकन उपलब्ध होने दी लोड़ ऐ, कृपया आइकनें दा इस्तेमाल करने पर स्विच करो ते दुबारा कोशश करो।</string>
+    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अवैध ऐ, अपनी सेटिंग्स फाइल दी जांच करो ते दुबारा कोशश करो</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेट थमां रडार= छवि गी कनेक्ट करने जां डाउनलोड करने च समर्थ नेईं हा</string>
     <string name="wasnt_able_to_connect_data_txt">अपने सर्वर थमां डाटा.txt कनेक्ट जां डाउनलोड नेईं करी सकेआ हा।</string>
     <string name="data_url_was_blank">डेटा URL खाली था</string>

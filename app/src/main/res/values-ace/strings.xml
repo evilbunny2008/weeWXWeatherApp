@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Hana jeuet meuhubong atawa download gamba webcam dari server droeneuh</string>
     <string name="wasnt_able_to_connect_forecast">Hana jeuet meuhubong atawa download ramalan</string>
     <string name="wasnt_able_to_detect_forecast_icons">Hana jeut ji deteksi ikon ramalan</string>
-    <string name="forecast_type_needs_icons">Tipe ramalan \'%%1$sss\' peureulee na ikon nyang na, Silakan meugantoe keu pakek ikon dan cuba lom</string>
-    <string name="forecast_type_is_invalid">Tipe ramalan \'%%1$sss\' hana sah, neupareksa file setting droeneuh dan neucuba lom</string>
+    <string name="forecast_type_needs_icons">Tipe ramalan \'%1$s\' peureulee na ikon nyang na, Silakan meugantoe keu pakek ikon dan cuba lom</string>
+    <string name="forecast_type_is_invalid">Tipe ramalan \'%1$s\' hana sah, neupareksa file setting droeneuh dan neucuba lom</string>
     <string name="wasnt_able_to_connect_radar_image">Hana jeuet meuhubong atawa download radar= gamba dari internet</string>
     <string name="wasnt_able_to_connect_data_txt">Hana jeuet meuhubong atawa download data.txt dari server droeneuh</string>
     <string name="data_url_was_blank">URL Data nyan kosong</string>

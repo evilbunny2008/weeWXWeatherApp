@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Tacaali na maka yakusuntinkanya nangu ukukopa icikope ca webu ukufuma kuli server wenu</string>
     <string name="wasnt_able_to_connect_forecast">Tacaali na maka ya kulundanya nelyo ukukopa ifya ku ntanshi</string>
     <string name="wasnt_able_to_detect_forecast_icons">Tacaali na maka ya kusanga ifishibilo fya ku ntanshi</string>
-    <string name="forecast_type_needs_icons">Umusango wa kusesema \'%%1$ss\'s pakuti ube ne fishibilo ifisangwa, Mukwai pilile ukubomfya ifishibilo no kwesha na kabili</string>
-    <string name="forecast_type_is_invalid">Umusango wa kusesema \'%%1$ss\'s\'s taulinga, moneni failo yenu iya fipekanyo no kwesha na kabili</string>
+    <string name="forecast_type_needs_icons">Umusango wa kusesema \'%1$s\'s pakuti ube ne fishibilo ifisangwa, Mukwai pilile ukubomfya ifishibilo no kwesha na kabili</string>
+    <string name="forecast_type_is_invalid">Umusango wa kusesema \'%1$s\'s\'s taulinga, moneni failo yenu iya fipekanyo no kwesha na kabili</string>
     <string name="wasnt_able_to_connect_radar_image">Tacaali na maka yakusuntinkanya nangu ukukopa radar= icikope ukufuma pali intaneti</string>
     <string name="wasnt_able_to_connect_data_txt">Tacaali na maka yakusuntinkanya nangu ukukopa amashiwi.txt ukufuma ku cibombelo cenu</string>
     <string name="data_url_was_blank">URL ya fyebo yali iya fye</string>

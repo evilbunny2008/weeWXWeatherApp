@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Bai iya haɗi ko saukar da hoton gidan yanar gizo daga sabar ku ba</string>
     <string name="wasnt_able_to_connect_forecast">Bai iya haɗi ba ko sauke hasashen</string>
     <string name="wasnt_able_to_detect_forecast_icons">Bai sami damar gano gumakan da aka hasashe ba</string>
-    <string name="forecast_type_needs_icons">Nau\'in nau\'in \'%%1$ss\' buƙatar samun gumaka, don Allah a canza zuwa ta amfani da gumaka da sake gwadawa</string>
-    <string name="forecast_type_is_invalid">Nau\'in hasashe \'%%1$ss\' ba shi da inganci, duba fayil ɗin saitunan ku kuma sake gwadawa</string>
+    <string name="forecast_type_needs_icons">Nau\'in nau\'in \'%1$s\' buƙatar samun gumaka, don Allah a canza zuwa ta amfani da gumaka da sake gwadawa</string>
+    <string name="forecast_type_is_invalid">Nau\'in hasashe \'%1$s\' ba shi da inganci, duba fayil ɗin saitunan ku kuma sake gwadawa</string>
     <string name="wasnt_able_to_connect_radar_image">Bai iya haɗi ko saukar da rad = hoto daga Intanet ba</string>
     <string name="wasnt_able_to_connect_data_txt">Bai sami damar haɗi ko sauke bayanai ba .txt daga sabar ku</string>
     <string name="data_url_was_blank">URL ɗin bayanai ba komai</string>

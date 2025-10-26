@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Не вдалося підключитися або завантажити зображення веб-камери з вашого сервера</string>
     <string name="wasnt_able_to_connect_forecast">Не вдалося підключитися чи завантажити прогноз</string>
     <string name="wasnt_able_to_detect_forecast_icons">Не вдалося виявити значки прогнозу</string>
-    <string name="forecast_type_needs_icons">Для типу прогнозу \'%%1$ss\' потрібні піктограми. Перейдіть на використання піктограм і повторіть спробу</string>
-    <string name="forecast_type_is_invalid">Тип прогнозу \'%%1$ss\' недійсний, перевірте файл налаштувань і повторіть спробу</string>
+    <string name="forecast_type_needs_icons">Для типу прогнозу \'%1$s\' потрібні піктограми. Перейдіть на використання піктограм і повторіть спробу</string>
+    <string name="forecast_type_is_invalid">Тип прогнозу \'%1$s\' недійсний, перевірте файл налаштувань і повторіть спробу</string>
     <string name="wasnt_able_to_connect_radar_image">Не вдалося підключитися або завантажити радар = зображення з Інтернету</string>
     <string name="wasnt_able_to_connect_data_txt">Не вдалося підключитися або завантажити файл data.txt із вашого сервера</string>
     <string name="data_url_was_blank">URL-адреса даних була пустою</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Nem sikerült csatlakozni vagy letölteni a webkamera képét a szerverről</string>
     <string name="wasnt_able_to_connect_forecast">Nem sikerült csatlakozni vagy letölteni az előrejelzést</string>
     <string name="wasnt_able_to_detect_forecast_icons">Nem sikerült észlelni az előrejelzési ikonokat</string>
-    <string name="forecast_type_needs_icons">A \'%%1$ss\' előrejelzéstípusnak rendelkeznie kell elérhető ikonokkal. Kérjük, váltson át ikonok használatára, és próbálja újra</string>
-    <string name="forecast_type_is_invalid">A \'%%1$ss\' előrejelzéstípus érvénytelen, ellenőrizze a beállításfájlt, és próbálkozzon újra</string>
+    <string name="forecast_type_needs_icons">A \'%1$s\' előrejelzéstípusnak rendelkeznie kell elérhető ikonokkal. Kérjük, váltson át ikonok használatára, és próbálja újra</string>
+    <string name="forecast_type_is_invalid">A \'%1$s\' előrejelzéstípus érvénytelen, ellenőrizze a beállításfájlt, és próbálkozzon újra</string>
     <string name="wasnt_able_to_connect_radar_image">Nem sikerült csatlakozni vagy letölteni a radar=képet az internetről</string>
     <string name="wasnt_able_to_connect_data_txt">Nem sikerült csatlakozni vagy letölteni a data.txt fájlt a szerveréről</string>
     <string name="data_url_was_blank">Az adatok URL-címe üres volt</string>

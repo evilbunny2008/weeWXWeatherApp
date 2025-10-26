@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">अपना सर्वर से वेबकैम के छवि कनेक्ट भा डाउनलोड ना कर पवले रहले</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमान के कनेक्ट भा डाउनलोड ना कर पवले</string>
     <string name="wasnt_able_to_detect_forecast_icons">पूर्वानुमान आइकन के पता ना लगा पवले रहले</string>
-    <string name="forecast_type_needs_icons">पूर्वानुमान प्रकार \'%%1$ss\' के आइकन उपलब्ध होखे के चाहीं, कृपया आइकन के उपयोग पर स्विच करीं आ फिर से कोशिश करीं।</string>
-    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%%1$ss\' अमान्य बा, आपन सेटिंग्स फाइल के जांच करीं आ फेर से कोशिश करीं।</string>
+    <string name="forecast_type_needs_icons">पूर्वानुमान प्रकार \'%1$s\' के आइकन उपलब्ध होखे के चाहीं, कृपया आइकन के उपयोग पर स्विच करीं आ फिर से कोशिश करीं।</string>
+    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य बा, आपन सेटिंग्स फाइल के जांच करीं आ फेर से कोशिश करीं।</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेट से रडार= छवि ना कनेक्ट हो पवले आ डाउनलोड ना कर पवले</string>
     <string name="wasnt_able_to_connect_data_txt">अपना सर्वर से data.txt के कनेक्ट भा डाउनलोड ना कर पवले रहले</string>
     <string name="data_url_was_blank">डेटा यूआरएल खाली रहे</string>

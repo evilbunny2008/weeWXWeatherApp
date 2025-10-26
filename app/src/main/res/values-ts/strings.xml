@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">A nga swi kotanga ku hlanganisa kumbe ku kopa xifaniso xa webcam eka sevha ya wena</string>
     <string name="wasnt_able_to_connect_forecast">a nga swi kotanga ku hlanganisa kumbe ku kopa vuprofeta</string>
     <string name="wasnt_able_to_detect_forecast_icons">A nga swi kotanga ku vona swifaniso swa vuprofeta</string>
-    <string name="forecast_type_needs_icons">Muxaka wa vuprofeta \'%%1$ss\' wu lava ku va na swifaniso leswi kumekaka, hi kombela u cincela eka ku tirhisa swifaniso ivi u ringeta nakambe</string>
-    <string name="forecast_type_is_invalid">Muxaka wa vuprofeta \'%%1$ss\' a wu tirhi, languta fayili ya wena ya swiyimiso ivi u ringeta nakambe</string>
+    <string name="forecast_type_needs_icons">Muxaka wa vuprofeta \'%1$s\' wu lava ku va na swifaniso leswi kumekaka, hi kombela u cincela eka ku tirhisa swifaniso ivi u ringeta nakambe</string>
+    <string name="forecast_type_is_invalid">Muxaka wa vuprofeta \'%1$s\' a wu tirhi, languta fayili ya wena ya swiyimiso ivi u ringeta nakambe</string>
     <string name="wasnt_able_to_connect_radar_image">a nga swi kotanga ku hlanganisa kumbe ku kopa xifaniso xa radar= ku suka eka inthanete</string>
     <string name="wasnt_able_to_connect_data_txt">a nga swi kotanga ku hlanganisa kumbe ku kopa data.txt ku suka eka sevha ya wena</string>
     <string name="data_url_was_blank">URL ya data a yi nga ri na nchumu</string>

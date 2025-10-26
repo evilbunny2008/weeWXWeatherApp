@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Nénten prasida nyambung utawi ngunduh gambar webcam saking server Sametoné</string>
     <string name="wasnt_able_to_connect_forecast">Nenten prasida nyambung utawi ngunduh ramalan punika</string>
     <string name="wasnt_able_to_detect_forecast_icons">Nenten prasida mendeteksi ikon ramalan</string>
-    <string name="forecast_type_needs_icons">Jenis fonecast \'%%1$ss\' perlu madue ikon sane wenten, Ngiring ganti nganggen ikon lan indayang malih</string>
-    <string name="forecast_type_is_invalid">Jenis fonecast \'%%1$ss\' nénten sah, tureksain file setélan Sametoné lan indayang malih</string>
+    <string name="forecast_type_needs_icons">Jenis fonecast \'%1$s\' perlu madue ikon sane wenten, Ngiring ganti nganggen ikon lan indayang malih</string>
+    <string name="forecast_type_is_invalid">Jenis fonecast \'%1$s\' nénten sah, tureksain file setélan Sametoné lan indayang malih</string>
     <string name="wasnt_able_to_connect_radar_image">Nenten prasida nyambung utawi ngunduh radar= gambar saking internet</string>
     <string name="wasnt_able_to_connect_data_txt">Nénten prasida nyambung utawi ngunduh data.txt saking server Sametoné</string>
     <string name="data_url_was_blank">URL data sampun puyung</string>

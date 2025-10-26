@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Pa ti kapab konekte oubyen telesarz en zimaz web avek ou server</string>
     <string name="wasnt_able_to_connect_forecast">Pa ti kapab konekte oubyen telesarz previzyon</string>
     <string name="wasnt_able_to_detect_forecast_icons">Pa ti kapab detekte bann ikonn previzyon</string>
-    <string name="forecast_type_needs_icons">Kalite previzyon \'%%1$ss\' i bezwen annan bann ikon ki disponib, Silvouple sanz pour servi bann ikon e esey ankor</string>
-    <string name="forecast_type_is_invalid">Kalite previzyon \'%%1$ss\' i pa valab, tyek ou dosye laranzman e esey ankor</string>
+    <string name="forecast_type_needs_icons">Kalite previzyon \'%1$s\' i bezwen annan bann ikon ki disponib, Silvouple sanz pour servi bann ikon e esey ankor</string>
+    <string name="forecast_type_is_invalid">Kalite previzyon \'%1$s\' i pa valab, tyek ou dosye laranzman e esey ankor</string>
     <string name="wasnt_able_to_connect_radar_image">Pa ti kapab konekte oubyen telesarz radar= zimaz sorti dan internet</string>
     <string name="wasnt_able_to_connect_data_txt">Pa ti kapab konekte oubyen telesarz lenformasyon.etks sorti kot ou server</string>
     <string name="data_url_was_blank">URL lenformasyon ti vid</string>

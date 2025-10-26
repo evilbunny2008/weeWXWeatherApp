@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ag to sarag ya ikonekta odino i-download so imahen na webmam ya imahin</string>
     <string name="wasnt_able_to_connect_forecast">Ag to sarag ya ikonekta odino i-download so ipapasakbay</string>
     <string name="wasnt_able_to_detect_forecast_icons">Agto nadetektaan iray icon na panagpasakbay</string>
-    <string name="forecast_type_needs_icons">Kailangan ya walay \'%%1$ss\' ya wala ray icon ya wala, Ipangasin onsaliw ed pangusar na icon tan salien lamet</string>
-    <string name="forecast_type_is_invalid">Say tipo ya klase na \'%%1$ss\' so ag-akapan-importante, nengnengen so pangi-file mo na saray pasen tan salien mo lamet</string>
+    <string name="forecast_type_needs_icons">Kailangan ya walay \'%1$s\' ya wala ray icon ya wala, Ipangasin onsaliw ed pangusar na icon tan salien lamet</string>
+    <string name="forecast_type_is_invalid">Say tipo ya klase na \'%1$s\' so ag-akapan-importante, nengnengen so pangi-file mo na saray pasen tan salien mo lamet</string>
     <string name="wasnt_able_to_connect_radar_image">Ag la makakonekta odino makakonekta na download ) ya imahen manlapud internet</string>
     <string name="wasnt_able_to_connect_data_txt">Ag-akakonekta odino na-download iray data. text ed server yo</string>
     <string name="data_url_was_blank">Data URL ay blangko</string>

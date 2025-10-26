@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ne povis konekti aŭ elŝuti retkameraan bildon de via servilo</string>
     <string name="wasnt_able_to_connect_forecast">Ne povis konekti aŭ elŝuti la prognozon</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ne povis detekti prognozajn ikonojn</string>
-    <string name="forecast_type_needs_icons">Prognoza tipo \'%%1$ss\' devas havi ikonojn disponeblaj. Bonvolu ŝanĝi al uzado de piktogramoj kaj provi denove</string>
-    <string name="forecast_type_is_invalid">Prognoza tipo \'%%1$ss\' estas nevalida, kontrolu vian agordan dosieron kaj provu denove</string>
+    <string name="forecast_type_needs_icons">Prognoza tipo \'%1$s\' devas havi ikonojn disponeblaj. Bonvolu ŝanĝi al uzado de piktogramoj kaj provi denove</string>
+    <string name="forecast_type_is_invalid">Prognoza tipo \'%1$s\' estas nevalida, kontrolu vian agordan dosieron kaj provu denove</string>
     <string name="wasnt_able_to_connect_radar_image">Ne povis konekti aŭ elŝuti radar= bildon de la interreto</string>
     <string name="wasnt_able_to_connect_data_txt">Ne povis konekti aŭ elŝuti data.txt de via servilo</string>
     <string name="data_url_was_blank">Datuma URL estis malplena</string>

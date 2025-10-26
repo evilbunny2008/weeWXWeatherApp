@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈ ၶႅပ်းႁၢင်ႈ ဝႅပ်ႉသၢႆႉ တီႈၼႂ်း Server ၸဝ်ႈၵဝ်ႇ</string>
     <string name="wasnt_able_to_connect_forecast">ဢမ်ႇတၼ်းလႆႈ ၵွင်ႉ ဢမ်ႇၼၼ် လူင်းဢဝ် ၶၢဝ်ႇလၢမ်းၶၢတ်ႈ။</string>
     <string name="wasnt_able_to_detect_forecast_icons">ဢမ်ႇႁူႉလႆႈ ႁၢင်ႈၽၢင် ဢၼ်လၢမ်းၶၢတ်ႈဝႆႉၼၼ်ႉ။</string>
-    <string name="forecast_type_needs_icons">မဵဝ်း Forecast \'%%1$ss\' လူဝ်ႇလႆႈမီး ႁၢင်ႈၽၢင် ဢၼ်မီးဝႆႉ, လႅၵ်ႈလၢႆႈၸႂ်ႉတိုဝ်း ဢၢႆႇၵူဝ်ႇသေ ၸၢမ်းတူၺ်းၶိုၼ်း။</string>
-    <string name="forecast_type_is_invalid">မဵဝ်း Forecast \'%%1$ss\' ၼႆႉ ဢမ်ႇၸႂ်ႈ ဢၼ်မၢၼ်ႇမႅၼ်ႈသေ တူၺ်းတီႈ ၾၢႆႇ settings ၸဝ်ႈၵဝ်ႇသေ ၶိုၼ်းၶတ်းၸႂ်တူၺ်း။</string>
+    <string name="forecast_type_needs_icons">မဵဝ်း Forecast \'%1$s\' လူဝ်ႇလႆႈမီး ႁၢင်ႈၽၢင် ဢၼ်မီးဝႆႉ, လႅၵ်ႈလၢႆႈၸႂ်ႉတိုဝ်း ဢၢႆႇၵူဝ်ႇသေ ၸၢမ်းတူၺ်းၶိုၼ်း။</string>
+    <string name="forecast_type_is_invalid">မဵဝ်း Forecast \'%1$s\' ၼႆႉ ဢမ်ႇၸႂ်ႈ ဢၼ်မၢၼ်ႇမႅၼ်ႈသေ တူၺ်းတီႈ ၾၢႆႇ settings ၸဝ်ႈၵဝ်ႇသေ ၶိုၼ်းၶတ်းၸႂ်တူၺ်း။</string>
     <string name="wasnt_able_to_connect_radar_image">ဢမ်ႇမေႃၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈ radar= ၶႅပ်းႁၢင်ႈ တီႈၼႂ်းဢိၼ်ႇတႃႇၼႅတ်ႉ</string>
     <string name="wasnt_able_to_connect_data_txt">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းၶေႃႈမုၼ်း.txt တီႈ Server ၸဝ်ႈၵဝ်ႇ</string>
     <string name="data_url_was_blank">Data URL ပဵၼ်ပဝ်ႇ</string>

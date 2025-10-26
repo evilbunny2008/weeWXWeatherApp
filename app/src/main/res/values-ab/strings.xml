@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Усервер аҟынтәи ауеб-камера асахьа аидҳәалара ма ахәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_forecast">Аԥхьарбара аидҳәалара ма ахәыҵахра алшара амамызт</string>
     <string name="wasnt_able_to_detect_forecast_icons">Аԥааимбаражәа аконақәа рыԥшаара залымшаӡеит</string>
-    <string name="forecast_type_needs_icons">Аԥхьарбара ахкы \'%%1$sss\' адыргаҷақәа рымазар ауп, Гәаҳәарас иҟасҵоит, аиконақәа рхархәара ахь аиасра, насгьы даҽазнык шәҽазышәшәа</string>
-    <string name="forecast_type_is_invalid">Аԥхьагәаҭара \'%%1$sss\' иашам, шәеиқәыршәарақәа рфаил гәаҭаны, даҽазнык шәҽазышәшәа</string>
+    <string name="forecast_type_needs_icons">Аԥхьарбара ахкы \'%1$s\' адыргаҷақәа рымазар ауп, Гәаҳәарас иҟасҵоит, аиконақәа рхархәара ахь аиасра, насгьы даҽазнык шәҽазышәшәа</string>
+    <string name="forecast_type_is_invalid">Аԥхьагәаҭара \'%1$s\' иашам, шәеиқәыршәарақәа рфаил гәаҭаны, даҽазнык шәҽазышәшәа</string>
     <string name="wasnt_able_to_connect_radar_image">Интернет аҟынтәи радар=исахьа аҿаҳәара ма ахәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_data_txt">Усервер аҟынтәи data.txt еидызкыло ма ихәыҵаҳәҳәар алымшеит</string>
     <string name="data_url_was_blank">Адыррақәа URL ҭацәын</string>

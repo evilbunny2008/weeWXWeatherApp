@@ -3888,14 +3888,14 @@ public class Common
 
 		if(prefSet)
 		{
-			if (nightDaySetting == 0)
+			if(nightDaySetting == 0)
 			{
 				LogMessage("Night mode off...");
 				current_mode = AppCompatDelegate.MODE_NIGHT_NO;
 				current_theme = R.style.AppTheme_weeWxWeatherApp_Light_Common;
 				bgColour = ContextCompat.getColor(context, R.color.White);
 				fgColour = ContextCompat.getColor(context, R.color.Black);
-			} else if (nightDaySetting == 1) {
+			} else if(nightDaySetting == 1) {
 				LogMessage("Night mode on...");
 				current_mode = AppCompatDelegate.MODE_NIGHT_NO;
 				current_theme = R.style.AppTheme_weeWxWeatherApp_Dark_Common;

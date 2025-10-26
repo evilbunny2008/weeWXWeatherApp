@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ʻAʻole hiki iā ia ke hoʻopili a hoʻoiho i kahi kiʻi pūnaewele pūnaewele mai kāu kikowaena</string>
     <string name="wasnt_able_to_connect_forecast">ʻAʻole hiki ke hoʻopili a hoʻoiho i ka wānana</string>
     <string name="wasnt_able_to_detect_forecast_icons">ʻAʻole i hiki keʻike i nā kiʻina wanana</string>
-    <string name="forecast_type_needs_icons">Pono nā\'ōlelo huna \'%%1$ss\' e loaʻa i nā kiʻina i loaʻa, eʻoluʻolu e hoʻohana i nā kiʻi a ho\'āʻo hou</string>
-    <string name="forecast_type_is_invalid">ʻAʻole pololei ka\'ōlelo huna \'%%1$ss\' iʻole, e nānā i kāu faila hoʻonohonoho a ho\'āʻo hou</string>
+    <string name="forecast_type_needs_icons">Pono nā\'ōlelo huna \'%1$s\' e loaʻa i nā kiʻina i loaʻa, eʻoluʻolu e hoʻohana i nā kiʻi a ho\'āʻo hou</string>
+    <string name="forecast_type_is_invalid">ʻAʻole pololei ka\'ōlelo huna \'%1$s\' iʻole, e nānā i kāu faila hoʻonohonoho a ho\'āʻo hou</string>
     <string name="wasnt_able_to_connect_radar_image">ʻAʻole i hiki ke hoʻopili a hoʻoiho i ka radar = kiʻi mai ka pūnaewele</string>
     <string name="wasnt_able_to_connect_data_txt">ʻAʻole i hiki ke hoʻopili a hoʻoiho i ka\'ikepili.Txt mai kāu kikowaena</string>
     <string name="data_url_was_blank">ʻAʻole paʻa kaʻikepili o URL</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">உங்கள் சர்வரிலிருந்து வெப்கேம் படத்தை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="wasnt_able_to_connect_forecast">முன்னறிவிப்பை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="wasnt_able_to_detect_forecast_icons">முன்னறிவிப்பு ஐகான்களைக் கண்டறிய முடியவில்லை</string>
-    <string name="forecast_type_needs_icons">முன்னறிவிப்பு வகை \'%%1$ss\' இல் ஐகான்கள் இருக்க வேண்டும், ஐகான்களைப் பயன்படுத்துவதற்கு மாற்றி மீண்டும் முயற்சிக்கவும்</string>
-    <string name="forecast_type_is_invalid">முன்னறிவிப்பு வகை \'%%1$ss\' தவறானது, உங்கள் அமைப்புக் கோப்பைச் சரிபார்த்து மீண்டும் முயலவும்</string>
+    <string name="forecast_type_needs_icons">முன்னறிவிப்பு வகை \'%1$s\' இல் ஐகான்கள் இருக்க வேண்டும், ஐகான்களைப் பயன்படுத்துவதற்கு மாற்றி மீண்டும் முயற்சிக்கவும்</string>
+    <string name="forecast_type_is_invalid">முன்னறிவிப்பு வகை \'%1$s\' தவறானது, உங்கள் அமைப்புக் கோப்பைச் சரிபார்த்து மீண்டும் முயலவும்</string>
     <string name="wasnt_able_to_connect_radar_image">இணையத்திலிருந்து ரேடார்= படத்தை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="wasnt_able_to_connect_data_txt">உங்கள் சர்வரிலிருந்து data.txtஐ இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="data_url_was_blank">தரவு URL காலியாக இருந்தது</string>

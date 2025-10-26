@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Натавонист, ки тасвири веб-камераро аз сервери худ зеркашӣ кунад ё зеркашӣ кунад</string>
     <string name="wasnt_able_to_connect_forecast">Наметавонад пешгӯӣ ё зеркашӣ кунад</string>
     <string name="wasnt_able_to_detect_forecast_icons">Нишондиҳандаҳои пешгӯиро ошкор карда натавонист</string>
-    <string name="forecast_type_needs_icons">Намуди дурнамо \'%%1$ss\' барои доштани нишонаҳо мавҷуд аст, лутфан ба истифодаи нишонаҳо гузаред ва бори дигар кӯшиш кунед</string>
-    <string name="forecast_type_is_invalid">Намуди дурнамои \'%%1$ss\' нодуруст аст, файли танзимоти худро санҷед ва бори дигар кӯшиш кунед</string>
+    <string name="forecast_type_needs_icons">Намуди дурнамо \'%1$s\' барои доштани нишонаҳо мавҷуд аст, лутфан ба истифодаи нишонаҳо гузаред ва бори дигар кӯшиш кунед</string>
+    <string name="forecast_type_is_invalid">Намуди дурнамои \'%1$s\' нодуруст аст, файли танзимоти худро санҷед ва бори дигар кӯшиш кунед</string>
     <string name="wasnt_able_to_connect_radar_image">Натавонистанд Радар = Тасвирро аз Интернет</string>
     <string name="wasnt_able_to_connect_data_txt">Наметавонад васл ё зеркашии маълумотро аз сервери худ пайваст кунад ё зеркашӣ кунад</string>
     <string name="data_url_was_blank">URL маълумот холӣ буд</string>

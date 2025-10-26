@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Сервериңизден веб-камеранын сүрөтүн туташа алган жок же жүктөп алган жок</string>
     <string name="wasnt_able_to_connect_forecast">Алдын-ала туташа алган жок же жүктөп алууну алган жок</string>
     <string name="wasnt_able_to_detect_forecast_icons">Божомолдун сүрөтчөлөрүн аныктай алган жок</string>
-    <string name="forecast_type_needs_icons">Болжолдоо тиби \'%%1$ss\' иконалар болушу керек, сүрөтчөлөрдү колдонууга өтүңүз жана дагы бир жолу аракет кылып көрүңүз</string>
-    <string name="forecast_type_is_invalid">\'%%1$ss\'болжолдоолору жараксыз, жөндөөлөрүңүздүн файлыңызды текшерип, дагы бир жолу аракет кылып көрүңүз</string>
+    <string name="forecast_type_needs_icons">Болжолдоо тиби \'%1$s\' иконалар болушу керек, сүрөтчөлөрдү колдонууга өтүңүз жана дагы бир жолу аракет кылып көрүңүз</string>
+    <string name="forecast_type_is_invalid">\'%1$s\'болжолдоолору жараксыз, жөндөөлөрүңүздүн файлыңызды текшерип, дагы бир жолу аракет кылып көрүңүз</string>
     <string name="wasnt_able_to_connect_radar_image">Туташа алган жок же жүктөп ала алган жок</string>
     <string name="wasnt_able_to_connect_data_txt">Сервериңизден туташа албайсыз же жүктөп ала алган жок</string>
     <string name="data_url_was_blank">Маалыматтар URL бош болчу</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ma awoodin inuu ku xirmo ama ka soo dejisto sawirka webcam server-kaaga</string>
     <string name="wasnt_able_to_connect_forecast">Ma awoodin inuu isku xidho ama soo dejiyo saadaasha</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ma awoodin in la ogaado astaamaha saadaasha</string>
-    <string name="forecast_type_needs_icons">Nooca saadaasha ah \'%%1$ss\' waxay u baahan yihiin in loo helo astaamo, fadlan u beddel adoo isticmaalaya astaamaha oo isku day mar labaad</string>
-    <string name="forecast_type_is_invalid">Nooca saadaasha ah \'%%1$ss\' waa mid aan shaqeynaynin, hubi faylkaaga dejinta oo iskuday markale</string>
+    <string name="forecast_type_needs_icons">Nooca saadaasha ah \'%1$s\' waxay u baahan yihiin in loo helo astaamo, fadlan u beddel adoo isticmaalaya astaamaha oo isku day mar labaad</string>
+    <string name="forecast_type_is_invalid">Nooca saadaasha ah \'%1$s\' waa mid aan shaqeynaynin, hubi faylkaaga dejinta oo iskuday markale</string>
     <string name="wasnt_able_to_connect_radar_image">Ma awoodin inay ku xirato ama kala soo bixiso radar = muuqaal internetka</string>
     <string name="wasnt_able_to_connect_data_txt">Ma awoodin inuu ku xirmo ama kala sooco xogta.txt server-kaaga</string>
     <string name="data_url_was_blank">URL-ka xogta ayaa maran</string>

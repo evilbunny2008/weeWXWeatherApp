@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">La konsege liga ka download imajen webcam ida husi ita nia servidor</string>
     <string name="wasnt_able_to_connect_forecast">La konsege liga ka download previzaun</string>
     <string name="wasnt_able_to_detect_forecast_icons">La konsege detekta íkonu previzaun</string>
-    <string name="forecast_type_needs_icons">Tipu previzaun \'%%1$ss\' presiza iha íkonu sira ne\'ebé disponivel, Favor ida muda ba uza íkonu sira no koko fali</string>
-    <string name="forecast_type_is_invalid">Tipu previzaun \'%%1$ss\' la válidu, verifika ita-nia file settings no koko fali</string>
+    <string name="forecast_type_needs_icons">Tipu previzaun \'%1$s\' presiza iha íkonu sira ne\'ebé disponivel, Favor ida muda ba uza íkonu sira no koko fali</string>
+    <string name="forecast_type_is_invalid">Tipu previzaun \'%1$s\' la válidu, verifika ita-nia file settings no koko fali</string>
     <string name="wasnt_able_to_connect_radar_image">La konsege liga ka download radar= imajen husi internet</string>
     <string name="wasnt_able_to_connect_data_txt">La konsege liga ka download dadus.txt husi ita nia servidor</string>
     <string name="data_url_was_blank">URL dadus mamuk</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">לא הצליח להתחבר או להוריד תמונת מצלמת אינטרנט מהשרת שלך</string>
     <string name="wasnt_able_to_connect_forecast">לא הצליח להתחבר או להוריד את התחזית</string>
     <string name="wasnt_able_to_detect_forecast_icons">לא הצליח לזהות סמלי תחזית</string>
-    <string name="forecast_type_needs_icons">סוג התחזית \'%%1$ss\' צריך להיות עם סמלים זמינים, אנא עבור לשימוש בסמלים ונסה שוב</string>
-    <string name="forecast_type_is_invalid">סוג התחזית \'%%1$ss\' אינו חוקי, בדוק את קובץ ההגדרות ונסה שוב</string>
+    <string name="forecast_type_needs_icons">סוג התחזית \'%1$s\' צריך להיות עם סמלים זמינים, אנא עבור לשימוש בסמלים ונסה שוב</string>
+    <string name="forecast_type_is_invalid">סוג התחזית \'%1$s\' אינו חוקי, בדוק את קובץ ההגדרות ונסה שוב</string>
     <string name="wasnt_able_to_connect_radar_image">לא הצליח להתחבר או להוריד תמונת radar= מהאינטרנט</string>
     <string name="wasnt_able_to_connect_data_txt">לא הצליח להתחבר או להוריד את data.txt מהשרת שלך</string>
     <string name="data_url_was_blank">כתובת האתר של הנתונים הייתה ריקה</string>

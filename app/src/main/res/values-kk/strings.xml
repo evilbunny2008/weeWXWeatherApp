@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Серверден веб-камера кескінін қосып немесе жүктей алмады</string>
     <string name="wasnt_able_to_connect_forecast">Болжалды қосыла немесе жүктей алмады</string>
     <string name="wasnt_able_to_detect_forecast_icons">Болжам белгішелерін анықтай алмады</string>
-    <string name="forecast_type_needs_icons">\'%%1$ss\' болжамының белгішелері болуы керек, белгішелерді пайдаланып, белгішелерді пайдаланып, әрекетті қайталаңыз</string>
-    <string name="forecast_type_is_invalid">\'%%1$ss\' болжамы жарамсыз, параметрлер файлын тексеріп, әрекетті қайталаңыз</string>
+    <string name="forecast_type_needs_icons">\'%1$s\' болжамының белгішелері болуы керек, белгішелерді пайдаланып, белгішелерді пайдаланып, әрекетті қайталаңыз</string>
+    <string name="forecast_type_is_invalid">\'%1$s\' болжамы жарамсыз, параметрлер файлын тексеріп, әрекетті қайталаңыз</string>
     <string name="wasnt_able_to_connect_radar_image">Интернеттен радар = суретті қосуға немесе жүктеуге болмады</string>
     <string name="wasnt_able_to_connect_data_txt">Data.txt серверін серверден қосуға немесе жүктеуге болмады</string>
     <string name="data_url_was_blank">Деректер URL мекенжайы бос болды</string>

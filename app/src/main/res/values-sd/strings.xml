@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">توهان جي سرور مان ويب ڪيم تصوير ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
     <string name="wasnt_able_to_connect_forecast">اڳڪٿي کي ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
     <string name="wasnt_able_to_detect_forecast_icons">اڳڪٿي آئڪن کي ڳولڻ جي قابل نه هو</string>
-    <string name="forecast_type_needs_icons">اڳڪٿي جي قسم \'%%1$ss\' لاءِ آئڪن موجود هجڻ گهرجن، مھرباني ڪري آئڪن استعمال ڪرڻ تي سوئچ ڪريو ۽ وري ڪوشش ڪريو</string>
-    <string name="forecast_type_is_invalid">اڳڪٿي جو قسم \'%%1$ss\' غلط آهي، پنهنجي سيٽنگ فائل چيڪ ڪريو ۽ ٻيهر ڪوشش ڪريو</string>
+    <string name="forecast_type_needs_icons">اڳڪٿي جي قسم \'%1$s\' لاءِ آئڪن موجود هجڻ گهرجن، مھرباني ڪري آئڪن استعمال ڪرڻ تي سوئچ ڪريو ۽ وري ڪوشش ڪريو</string>
+    <string name="forecast_type_is_invalid">اڳڪٿي جو قسم \'%1$s\' غلط آهي، پنهنجي سيٽنگ فائل چيڪ ڪريو ۽ ٻيهر ڪوشش ڪريو</string>
     <string name="wasnt_able_to_connect_radar_image">ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو radar= انٽرنيٽ تان تصوير</string>
     <string name="wasnt_able_to_connect_data_txt">توهان جي سرور مان data.txt ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
     <string name="data_url_was_blank">ڊيٽا URL خالي هو</string>

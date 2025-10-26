@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ستاسو د سرور څخه د ویب کیم عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_connect_forecast">وړاندوینه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_detect_forecast_icons">د وړاندوینې شبیهونو موندلو توان نه درلود</string>
-    <string name="forecast_type_needs_icons">د وړاندوینې ډول \'%%1$ss\' ته اړتیا ده چې شبیه شتون ولري، مهرباني وکړئ د عکسونو کارولو ته لاړ شئ او بیا هڅه وکړئ</string>
-    <string name="forecast_type_is_invalid">د وړاندوینې ډول \'%%1$ss\' ناسم دی، د خپل ترتیباتو فایل وګورئ او بیا هڅه وکړئ</string>
+    <string name="forecast_type_needs_icons">د وړاندوینې ډول \'%1$s\' ته اړتیا ده چې شبیه شتون ولري، مهرباني وکړئ د عکسونو کارولو ته لاړ شئ او بیا هڅه وکړئ</string>
+    <string name="forecast_type_is_invalid">د وړاندوینې ډول \'%1$s\' ناسم دی، د خپل ترتیباتو فایل وګورئ او بیا هڅه وکړئ</string>
     <string name="wasnt_able_to_connect_radar_image">د انټرنیټ څخه د رادار = عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_connect_data_txt">ستاسو د سرور څخه د data.txt د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="data_url_was_blank">د معلوماتو URL خالي و</string>

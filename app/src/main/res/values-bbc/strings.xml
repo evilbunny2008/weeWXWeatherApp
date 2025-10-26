@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ndang boi dihubungkon manang diunduh hamu gambar webcam sian server muna</string>
     <string name="wasnt_able_to_connect_forecast">Ndang boi dihubungkon manang diunduh ramalan i</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ndang boi deteksi ikon ramalan</string>
-    <string name="forecast_type_needs_icons">Jenis ramalan \'%%1$ss\' porlu adong ikon na adong, Mohon beralih tu mamangke ikon jala mancoba muse</string>
-    <string name="forecast_type_is_invalid">Jenis ramalan \'%%1$ss\' ndang sah, pareso ma file pengaturanmuna jala coba ma muse</string>
+    <string name="forecast_type_needs_icons">Jenis ramalan \'%1$s\' porlu adong ikon na adong, Mohon beralih tu mamangke ikon jala mancoba muse</string>
+    <string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' ndang sah, pareso ma file pengaturanmuna jala coba ma muse</string>
     <string name="wasnt_able_to_connect_radar_image">Dang boi sambung manang mangunduh radar= gambar sian internet</string>
     <string name="wasnt_able_to_connect_data_txt">Ndang boi dihubungkon manang diunduh data.txxt sian server muna</string>
     <string name="data_url_was_blank">URL Data kosong</string>

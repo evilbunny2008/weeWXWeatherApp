@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Gak bisa nyambung atau ngunduh gambar webcam dari pelayan lo</string>
     <string name="wasnt_able_to_connect_forecast">Gak bisa nyambung atau ngunduh ramalan</string>
     <string name="wasnt_able_to_detect_forecast_icons">Gak bisa deteksi ikon ramalan</string>
-    <string name="forecast_type_needs_icons">Jenis ramalan \'%%1$ss\' perlu punya ikon yang tersedia, Tolong beralih ke pake ikon dan coba lagi</string>
-    <string name="forecast_type_is_invalid">Jenis ramalan \'%%1$ss\' itu ga sah, cek file pengaturan lo dan coba lagi</string>
+    <string name="forecast_type_needs_icons">Jenis ramalan \'%1$s\' perlu punya ikon yang tersedia, Tolong beralih ke pake ikon dan coba lagi</string>
+    <string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' itu ga sah, cek file pengaturan lo dan coba lagi</string>
     <string name="wasnt_able_to_connect_radar_image">Bukannya kagak bisa nyambung atau download radar= gambar dari internet</string>
     <string name="wasnt_able_to_connect_data_txt">Gak bisa nyambung atau download data.txt dari server lo</string>
     <string name="data_url_was_blank">URL data udah kosong</string>

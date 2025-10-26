@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">तुमच्या सर्व्हरवरून वेबकॅम इमेज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>
     <string name="wasnt_able_to_connect_forecast">अंदाज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>
     <string name="wasnt_able_to_detect_forecast_icons">अंदाज चिन्ह शोधण्यात सक्षम नाही</string>
-    <string name="forecast_type_needs_icons">अंदाज प्रकार \'%%1$ss\' ला चिन्ह उपलब्ध असणे आवश्यक आहे, कृपया चिन्हे वापरण्यासाठी स्विच करा आणि पुन्हा प्रयत्न करा</string>
-    <string name="forecast_type_is_invalid">अंदाज प्रकार \'%%1$ss\' अवैध आहे, तुमची सेटिंग फाइल तपासा आणि पुन्हा प्रयत्न करा</string>
+    <string name="forecast_type_needs_icons">अंदाज प्रकार \'%1$s\' ला चिन्ह उपलब्ध असणे आवश्यक आहे, कृपया चिन्हे वापरण्यासाठी स्विच करा आणि पुन्हा प्रयत्न करा</string>
+    <string name="forecast_type_is_invalid">अंदाज प्रकार \'%1$s\' अवैध आहे, तुमची सेटिंग फाइल तपासा आणि पुन्हा प्रयत्न करा</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेटवरून radar= प्रतिमा कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
     <string name="wasnt_able_to_connect_data_txt">तुमच्या सर्व्हरवरून data.txt कनेक्ट करण्यात किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
     <string name="data_url_was_blank">डेटा URL रिक्त होती</string>

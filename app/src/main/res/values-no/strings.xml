@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Kunne ikke koble til eller laste ned et webkamerabilde fra serveren din</string>
     <string name="wasnt_able_to_connect_forecast">Kunne ikke koble til eller laste ned prognosen</string>
     <string name="wasnt_able_to_detect_forecast_icons">Kunne ikke oppdage prognoseikoner</string>
-    <string name="forecast_type_needs_icons">Prognosetypen \'%%1$ss\' må ha ikoner tilgjengelig. Bytt til å bruke ikoner og prøv igjen</string>
-    <string name="forecast_type_is_invalid">Prognosetypen \'%%1$ss\' er ugyldig, sjekk innstillingsfilen og prøv igjen</string>
+    <string name="forecast_type_needs_icons">Prognosetypen \'%1$s\' må ha ikoner tilgjengelig. Bytt til å bruke ikoner og prøv igjen</string>
+    <string name="forecast_type_is_invalid">Prognosetypen \'%1$s\' er ugyldig, sjekk innstillingsfilen og prøv igjen</string>
     <string name="wasnt_able_to_connect_radar_image">Kunne ikke koble til eller laste ned radar=-bilde fra internett</string>
     <string name="wasnt_able_to_connect_data_txt">Kunne ikke koble til eller laste ned data.txt fra serveren din</string>
     <string name="data_url_was_blank">Datanettadressen var tom</string>

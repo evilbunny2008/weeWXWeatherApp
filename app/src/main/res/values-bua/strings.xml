@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Танай серверһээ веб-камерын зураг холбохо гү, али татажа абаха аргагүй байгаа</string>
     <string name="wasnt_able_to_connect_forecast">Уридшалан мэдээсэл холбожо, татажа абаха аргагүй байгаа</string>
     <string name="wasnt_able_to_detect_forecast_icons">Уридшалан мэдэхэ дүрсэнүүдые элирүүлжэ шадаагүй</string>
-    <string name="forecast_type_needs_icons">Уридшалан мэдээсэл \'%%1$ss\' дүрсэнүүдтэй байха хэрэгтэй, дүрсэнүүдые хэрэглэхэеэ шэлжэжэ, дахин туршагты</string>
-    <string name="forecast_type_is_invalid">Уридшалан мэдээсэл \'%%1$ss\' хүсэнгүй, өөрынгөө тохиргоонуудай файл шалгаад, дахин туршагты</string>
+    <string name="forecast_type_needs_icons">Уридшалан мэдээсэл \'%1$s\' дүрсэнүүдтэй байха хэрэгтэй, дүрсэнүүдые хэрэглэхэеэ шэлжэжэ, дахин туршагты</string>
+    <string name="forecast_type_is_invalid">Уридшалан мэдээсэл \'%1$s\' хүсэнгүй, өөрынгөө тохиргоонуудай файл шалгаад, дахин туршагты</string>
     <string name="wasnt_able_to_connect_radar_image">Интернет сооһоо радар= зураг холбоо гү, али татажа абаха аргагүй байгаа</string>
     <string name="wasnt_able_to_connect_data_txt">Танай серверһээ data.txt холбохо гү, али татажа абаха аргагүй байгаа</string>
     <string name="data_url_was_blank">Мэдээсэлэй URL хооһон байгаа</string>

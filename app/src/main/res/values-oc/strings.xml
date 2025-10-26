@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Era pas capable de connectar o de telecargar una imatge webcam dempuèi vòstre servidor</string>
     <string name="wasnt_able_to_connect_forecast">Era pas capable de connectar o de telecargar la prevision</string>
     <string name="wasnt_able_to_detect_forecast_icons">Era pas capable de detectar d\'icònas de prevision</string>
-    <string name="forecast_type_needs_icons">Lo tipe de prevision \'%%1$ss\' a besonh d\'aver d\'icònas disponiblas, Mercés de cambiar a l\'utilizacion d\'icònas e tornatz ensajar</string>
-    <string name="forecast_type_is_invalid">Lo tipe de prevision \'%%1$ss\' es invalid, verificatz vòstre fichièr de paramètres e ensajatz tornarmai</string>
+    <string name="forecast_type_needs_icons">Lo tipe de prevision \'%1$s\' a besonh d\'aver d\'icònas disponiblas, Mercés de cambiar a l\'utilizacion d\'icònas e tornatz ensajar</string>
+    <string name="forecast_type_is_invalid">Lo tipe de prevision \'%1$s\' es invalid, verificatz vòstre fichièr de paramètres e ensajatz tornarmai</string>
     <string name="wasnt_able_to_connect_radar_image">Era pas capable de connectar o de telecargar radar= imatge d\'internet</string>
     <string name="wasnt_able_to_connect_data_txt">Era pas capable de connectar o de telecargar de donadas.txt de vòstre servidor</string>
     <string name="data_url_was_blank">L\'URL de donadas foguèt en blanc</string>

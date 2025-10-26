@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">无法连接或从您的服务器下载网络摄像头图像</string>
     <string name="wasnt_able_to_connect_forecast">无法连接或下载天气预报。</string>
     <string name="wasnt_able_to_detect_forecast_icons">无法检测到预测图标。</string>
-    <string name="forecast_type_needs_icons">预测类型\'%%1$ss\'需要有可用的图标，请切换到使用图标并重试。</string>
-    <string name="forecast_type_is_invalid">预测类型\'%%1$ss\'无效，请检查您的设置文件并重试。</string>
+    <string name="forecast_type_needs_icons">预测类型\'%1$s\'需要有可用的图标，请切换到使用图标并重试。</string>
+    <string name="forecast_type_is_invalid">预测类型\'%1$s\'无效，请检查您的设置文件并重试。</string>
     <string name="wasnt_able_to_connect_radar_image">无法从互联网连接或下载雷达=图像</string>
     <string name="wasnt_able_to_connect_data_txt">无法连接或从您的服务器下载 data.txt</string>
     <string name="data_url_was_blank">数据 URL 为空</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">A yeke pëpe ti tene mo sara kua na mbeni image ti webcam na ndö ti serveur ti mo</string>
     <string name="wasnt_able_to_connect_forecast">A lingbi ti sara connexion wala ti téléchargé ni</string>
     <string name="wasnt_able_to_detect_forecast_icons">A yeke pëpe ti hinga a-icone ti prévision</string>
-    <string name="forecast_type_needs_icons">A lingbi type type \'%%1$ss\' aduti na a-icone so ayeke dä, Pardon, changé ti sara kua na a-icone na ti tara encore</string>
-    <string name="forecast_type_is_invalid">A yeke nzoni ti tene mo sara kua na type \'%%1$ss\', bâ fichier ti a-paramètre ti mo na mo kiri mo tara ni</string>
+    <string name="forecast_type_needs_icons">A lingbi type type \'%1$s\' aduti na a-icone so ayeke dä, Pardon, changé ti sara kua na a-icone na ti tara encore</string>
+    <string name="forecast_type_is_invalid">A yeke nzoni ti tene mo sara kua na type \'%1$s\', bâ fichier ti a-paramètre ti mo na mo kiri mo tara ni</string>
     <string name="wasnt_able_to_connect_radar_image">A yeke pëpe ti tene e sara kua na radar= image na ndö ti internet</string>
     <string name="wasnt_able_to_connect_data_txt">A yeke pëpe ti tene e sara kua na asango.txt na ndö ti serveur ti e</string>
     <string name="data_url_was_blank">URL ti asango ayeke senge</string>

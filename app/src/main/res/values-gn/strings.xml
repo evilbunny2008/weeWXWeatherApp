@@ -59,7 +59,7 @@
     <string name="wasnt_able_to_connect_forecast">Ndaikatúikuri oñembojoaju térã omboguejy pe pronóstico</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ndaikatúikuri ojehechakuaa umi icono pronóstico rehegua</string>
     <string name="forecast_type_needs_icons">Tipo de pronóstico \'%1$sS\' oikotevẽ oreko iconos disponibles, por favor, eike eipuru hag̃ua umi icono ha eñeha\'ã jey</string>
-    <string name="forecast_type_is_invalid">Previsión Tipo \'%%1$ss\' ndovaléi, ehecha ne archivo ñemboheko ha eñeha\'ã jey</string>
+    <string name="forecast_type_is_invalid">Previsión Tipo \'%1$s\' ndovaléi, ehecha ne archivo ñemboheko ha eñeha\'ã jey</string>
     <string name="wasnt_able_to_connect_radar_image">Ndaikatúikuri oñembojoaju térã omboguejy radar= ta\'ãnga internet-gui</string>
     <string name="wasnt_able_to_connect_data_txt">Ndaikatúikuri oñembojoaju térã omboguejy data.txt nde servidor-gui</string>
     <string name="data_url_was_blank">URL de datos ha\'e kuri en blanco</string>

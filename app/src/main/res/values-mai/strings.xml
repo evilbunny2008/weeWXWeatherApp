@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">की अहाँक सर्वर सँ कोनो वेबकैम छवि कनेक्ट वा डाउनलोड नहि क\' सकैत छल</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमान के कनेक्ट या डाउनलोड नै क सकलौं।</string>
     <string name="wasnt_able_to_detect_forecast_icons">पूर्वानुमान आइकन के पता नै लगा सकल छल</string>
-    <string name="forecast_type_needs_icons">पूर्वानुमान प्रकार \'%%1$ss\' चिह्न उपलब्ध होने की जरूरत है, कृपया आइकन का उपयोग करके स्विच करक और पुनः प्रयास करें |</string>
-    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%%1$ss\' अमान्य अछि, अपन सेटिंग्स फाइल चेक करू आ फेरसँ प्रयास करू</string>
+    <string name="forecast_type_needs_icons">पूर्वानुमान प्रकार \'%1$s\' चिह्न उपलब्ध होने की जरूरत है, कृपया आइकन का उपयोग करके स्विच करक और पुनः प्रयास करें |</string>
+    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य अछि, अपन सेटिंग्स फाइल चेक करू आ फेरसँ प्रयास करू</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेट 2019 स राडार= छवि कनेक्ट या डाउनलोड नै क सकलौं छल।</string>
     <string name="wasnt_able_to_connect_data_txt">अहाँक सर्वर सँ डाटा.txt केँ कनेक्ट वा डाउनलोड नहि क\' सकल छल</string>
     <string name="data_url_was_blank">डाटा यूआरएल खाली छल</string>

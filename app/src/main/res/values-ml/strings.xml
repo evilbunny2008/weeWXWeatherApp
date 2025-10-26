@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">നിങ്ങളുടെ സെർവറിൽ നിന്ന് ഒരു വെബ്‌ക്യാം ഇമേജ് കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_forecast">പ്രവചനം ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_detect_forecast_icons">പ്രവചന ഐക്കണുകൾ കണ്ടെത്താനായില്ല</string>
-    <string name="forecast_type_needs_icons">\'%%1$ss\' എന്ന പ്രവചന തരത്തിന് ഐക്കണുകൾ ലഭ്യമാകേണ്ടതുണ്ട്, ദയവായി ഐക്കണുകൾ ഉപയോഗിക്കുന്നതിലേക്ക് മാറി വീണ്ടും ശ്രമിക്കുക</string>
-    <string name="forecast_type_is_invalid">പ്രവചന തരം \'%%1$ss\' അസാധുവാണ്, നിങ്ങളുടെ ക്രമീകരണ ഫയൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക</string>
+    <string name="forecast_type_needs_icons">\'%1$s\' എന്ന പ്രവചന തരത്തിന് ഐക്കണുകൾ ലഭ്യമാകേണ്ടതുണ്ട്, ദയവായി ഐക്കണുകൾ ഉപയോഗിക്കുന്നതിലേക്ക് മാറി വീണ്ടും ശ്രമിക്കുക</string>
+    <string name="forecast_type_is_invalid">പ്രവചന തരം \'%1$s\' അസാധുവാണ്, നിങ്ങളുടെ ക്രമീകരണ ഫയൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക</string>
     <string name="wasnt_able_to_connect_radar_image">ഇൻ്റർനെറ്റിൽ നിന്ന് റഡാർ= ഇമേജ് ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_data_txt">നിങ്ങളുടെ സെർവറിൽ നിന്ന് data.txt കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="data_url_was_blank">ഡാറ്റ URL ശൂന്യമായിരുന്നു</string>

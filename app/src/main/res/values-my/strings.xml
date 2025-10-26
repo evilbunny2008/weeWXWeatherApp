@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">သင်၏ဆာဗာမှဝက်ဘ်ကင်မရာပုံရိပ်ကိုချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
     <string name="wasnt_able_to_connect_forecast">ခန့်မှန်းချက်ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ခဲ့ပါ။</string>
     <string name="wasnt_able_to_detect_forecast_icons">ခန့်မှန်းချက်အိုင်ကွန်များကိုရှာဖွေတွေ့ရှိနိုင်ခြင်းမရှိခဲ့ပါ။</string>
-    <string name="forecast_type_needs_icons">ခန့်မှန်းလျှင် \'%%1$ss\' တွင် icon များရှိသည့် icon များရှိရမည့် icon များရှိရန်လိုအပ်ပါသည်။ ကျေးဇူးပြု. အိုင်ကွန်များကိုပြောင်းပါ။ ထပ်မံကြိုးစားပါ။</string>
-    <string name="forecast_type_is_invalid">ခန့်မှန်းချက် \'%%1$ss\' သည်မမှန်ကန်ပါ, သင်၏ချိန်ညှိချက်များဖိုင်ကိုစစ်ဆေးပြီးထပ်မံကြိုးစားပါ။</string>
+    <string name="forecast_type_needs_icons">ခန့်မှန်းလျှင် \'%1$s\' တွင် icon များရှိသည့် icon များရှိရမည့် icon များရှိရန်လိုအပ်ပါသည်။ ကျေးဇူးပြု. အိုင်ကွန်များကိုပြောင်းပါ။ ထပ်မံကြိုးစားပါ။</string>
+    <string name="forecast_type_is_invalid">ခန့်မှန်းချက် \'%1$s\' သည်မမှန်ကန်ပါ, သင်၏ချိန်ညှိချက်များဖိုင်ကိုစစ်ဆေးပြီးထပ်မံကြိုးစားပါ။</string>
     <string name="wasnt_able_to_connect_radar_image">ရေဒါနှင့်ချိတ်ဆက်ရန် (သို့) ဒေါင်းလုပ်ဆွဲယူနိုင်ခဲ့သည်</string>
     <string name="wasnt_able_to_connect_data_txt">သင်၏ဆာဗာမှဒေတာများကိုချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
     <string name="data_url_was_blank">ဒေတာ URL သည်ကွက်လပ်ဖြစ်သည်</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">تعذر الاتصال أو تنزيل صورة كاميرا الويب من الخادم الخاص بك</string>
     <string name="wasnt_able_to_connect_forecast">لم أتمكن من الاتصال أو تنزيل التوقعات</string>
     <string name="wasnt_able_to_detect_forecast_icons">لم يكن قادراً على اكتشاف أيقونات التوقعات</string>
-    <string name="forecast_type_needs_icons">يحتاج نوع التنبؤ \'%%1$ss\' إلى توفر أيقونات، يرجى التبديل إلى استخدام الرموز والمحاولة مرة أخرى</string>
-    <string name="forecast_type_is_invalid">نوع التوقع \'%%1$ss\' غير صالح، تحقق من ملف الإعدادات وحاول مرة أخرى</string>
+    <string name="forecast_type_needs_icons">يحتاج نوع التنبؤ \'%1$s\' إلى توفر أيقونات، يرجى التبديل إلى استخدام الرموز والمحاولة مرة أخرى</string>
+    <string name="forecast_type_is_invalid">نوع التوقع \'%1$s\' غير صالح، تحقق من ملف الإعدادات وحاول مرة أخرى</string>
     <string name="wasnt_able_to_connect_radar_image">لم أتمكن من الاتصال أو تنزيل صورة الرادار من الإنترنت</string>
     <string name="wasnt_able_to_connect_data_txt">تعذر الاتصال بملف data.txt أو تنزيله من خادمك</string>
     <string name="data_url_was_blank">عنوان URL للبيانات كان فارغًا</string>

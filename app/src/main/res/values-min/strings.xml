@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Indak dapek mahubuangkan atau mangunduakan gambar webcam dari server Sanak</string>
     <string name="wasnt_able_to_connect_forecast">Indak dapek mahubuangkan atau mangunduakan ramalan</string>
     <string name="wasnt_able_to_detect_forecast_icons">Indak mampu mandeteksi ikon ramalan</string>
-    <string name="forecast_type_needs_icons">Tipekan tipe app \'%%1$ss\' paralu ado ikon nan tasadio, Silakan baraliah ka manggunoan ikon dan mancubo baliak</string>
-    <string name="forecast_type_is_invalid">Tipu tipe \'%%1$ss\' indak sah, pareso file pangaturan Sanak dan cubo baliak</string>
+    <string name="forecast_type_needs_icons">Tipekan tipe app \'%1$s\' paralu ado ikon nan tasadio, Silakan baraliah ka manggunoan ikon dan mancubo baliak</string>
+    <string name="forecast_type_is_invalid">Tipu tipe \'%1$s\' indak sah, pareso file pangaturan Sanak dan cubo baliak</string>
     <string name="wasnt_able_to_connect_radar_image">Indak mampu manyambuang atau mandownload radar= gambar dari internet</string>
     <string name="wasnt_able_to_connect_data_txt">Indak dapek manyambuang atau mangunduakan data.txt dari server Sanak</string>
     <string name="data_url_was_blank">URL Data pun kosong</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Teu tiasa nyambung atanapi ngundeur gambar webcam tina server anjeun</string>
     <string name="wasnt_able_to_connect_forecast">Henteu tiasa nyambung atanapi unduh ramalan</string>
     <string name="wasnt_able_to_detect_forecast_icons">Teu tiasa ngadeteksi ikon ramalan</string>
-    <string name="forecast_type_needs_icons">Jenis ramalan \'%%1$ss\' kedah gaduh ikon sayogi, punten pindahkeun nganggo ikon sareng cobian deui</string>
-    <string name="forecast_type_is_invalid">Jenis ramalan \'%%1$ss\' henteu leres, pariksa file setélan anjeun sareng cobian deui</string>
+    <string name="forecast_type_needs_icons">Jenis ramalan \'%1$s\' kedah gaduh ikon sayogi, punten pindahkeun nganggo ikon sareng cobian deui</string>
+    <string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' henteu leres, pariksa file setélan anjeun sareng cobian deui</string>
     <string name="wasnt_able_to_connect_radar_image">Henteu tiasa nyambungkeun atanapi unduh radar = gambar tina internét</string>
     <string name="wasnt_able_to_connect_data_txt">Teu tiasa nyambung atanapi ngundeur data.txt ti server anjeun</string>
     <string name="data_url_was_blank">URL data kosong</string>

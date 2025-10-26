@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Dai nakakonekta o naka-download nin webcam na imahe hale sa saindong server</string>
     <string name="wasnt_able_to_connect_forecast">Dai nakakonekta o naka-download kan hula</string>
     <string name="wasnt_able_to_detect_forecast_icons">Dai nakarisa nin mga icon nin paghula</string>
-    <string name="forecast_type_needs_icons">\'%%1$ss\' An tipo nin paghula kaipuhan na igwa nin mga icon na makukua, Magbalyo tabi sa paggamit nin mga icon asin purbaran giraray</string>
-    <string name="forecast_type_is_invalid">An tipo nin paghula \'%%1$ss\' bakong balido, helingon an saindong mga setting file asin purbaran giraray</string>
+    <string name="forecast_type_needs_icons">\'%1$s\' An tipo nin paghula kaipuhan na igwa nin mga icon na makukua, Magbalyo tabi sa paggamit nin mga icon asin purbaran giraray</string>
+    <string name="forecast_type_is_invalid">An tipo nin paghula \'%1$s\' bakong balido, helingon an saindong mga setting file asin purbaran giraray</string>
     <string name="wasnt_able_to_connect_radar_image">Dai nakakonekta o nakaka-download radar= imahe hale sa internet</string>
     <string name="wasnt_able_to_connect_data_txt">Dai nakapagkonektar o naka-download nin datos.txt hale sa saindong serbidor</string>
     <string name="data_url_was_blank">Blangko an URL kan datos</string>

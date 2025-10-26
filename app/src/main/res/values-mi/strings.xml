@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Kaore i taea te hono atu ranei ki te tango i tetahi whakaahua Webcam mai i to kaituku</string>
     <string name="wasnt_able_to_connect_forecast">Kaore i taea te hono atu ranei ki te tango i te matapae</string>
     <string name="wasnt_able_to_detect_forecast_icons">Kaore i taea te kite i nga tohu tohu</string>
-    <string name="forecast_type_needs_icons">Momo matapae \'%%1$ss\' me whai waahi nga tohu, me huri ki te whakamahi i nga tohu me te ngana ano</string>
-    <string name="forecast_type_is_invalid">Momo matapae \'%%1$ss\' he muhu, tirohia to kōnae tautuhinga ka ngana ano</string>
+    <string name="forecast_type_needs_icons">Momo matapae \'%1$s\' me whai waahi nga tohu, me huri ki te whakamahi i nga tohu me te ngana ano</string>
+    <string name="forecast_type_is_invalid">Momo matapae \'%1$s\' he muhu, tirohia to kōnae tautuhinga ka ngana ano</string>
     <string name="wasnt_able_to_connect_radar_image">Kaore i taea te hono atu ranei ki te tango i te radar = whakaahua mai i te Ipurangi</string>
     <string name="wasnt_able_to_connect_data_txt">Kaore i taea te hono atu ranei ki te tango raraunga.txt mai i to kaitono</string>
     <string name="data_url_was_blank">Ko te URL Raraunga he waatea</string>

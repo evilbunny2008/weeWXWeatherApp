@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">喺伺服器上面連接唔到或者下載網絡攝影機圖片</string>
     <string name="wasnt_able_to_connect_forecast">無法連接或下載預測。</string>
     <string name="wasnt_able_to_detect_forecast_icons">偵測唔到預測圖示。</string>
-    <string name="forecast_type_needs_icons">預測類型「%%1$ss」需要有圖示，請轉用圖示，再試。</string>
-    <string name="forecast_type_is_invalid">預測類型「%%1$ss」係無效嘅，檢查你嘅設定檔案，然後再試。</string>
+    <string name="forecast_type_needs_icons">預測類型「%1$s」需要有圖示，請轉用圖示，再試。</string>
+    <string name="forecast_type_is_invalid">預測類型「%1$s」係無效嘅，檢查你嘅設定檔案，然後再試。</string>
     <string name="wasnt_able_to_connect_radar_image">喺互聯網上面連接唔到或者下載 radar = 圖片</string>
     <string name="wasnt_able_to_connect_data_txt">喺伺服器上面連接唔到或者下載資料 . txt</string>
     <string name="data_url_was_blank">資料網址係空白嘅</string>

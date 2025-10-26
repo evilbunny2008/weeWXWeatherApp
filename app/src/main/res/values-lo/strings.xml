@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດຮູບພາບ webcam ຈາກ server ຂອງທ່ານ</string>
     <string name="wasnt_able_to_connect_forecast">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດການຄາດຄະເນໄດ້</string>
     <string name="wasnt_able_to_detect_forecast_icons">ບໍ່ສາມາດທີ່ຈະກວດພົບຮູບສັນຍາລັກຄາດຄະເນ</string>
-    <string name="forecast_type_needs_icons">ການຄາດຄະເນປະເພດ \'%%1$ss\' ຕ້ອງມີຮູບສັນຍາລັກທີ່ມີຢູ່, ກະລຸນາປ່ຽນໄປໃຊ້ໄອຄອນແລະລອງໃຫມ່ອີກຄັ້ງ</string>
-    <string name="forecast_type_is_invalid">ການຄາດຄະເນປະເພດ \'%%1$ss\' ບໍ່ຖືກຕ້ອງ, ກວດເບິ່ງເອກະສານການຕັ້ງຄ່າຂອງທ່ານແລະລອງໃຫມ່ອີກຄັ້ງ</string>
+    <string name="forecast_type_needs_icons">ການຄາດຄະເນປະເພດ \'%1$s\' ຕ້ອງມີຮູບສັນຍາລັກທີ່ມີຢູ່, ກະລຸນາປ່ຽນໄປໃຊ້ໄອຄອນແລະລອງໃຫມ່ອີກຄັ້ງ</string>
+    <string name="forecast_type_is_invalid">ການຄາດຄະເນປະເພດ \'%1$s\' ບໍ່ຖືກຕ້ອງ, ກວດເບິ່ງເອກະສານການຕັ້ງຄ່າຂອງທ່ານແລະລອງໃຫມ່ອີກຄັ້ງ</string>
     <string name="wasnt_able_to_connect_radar_image">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດ Radar = ຈາກອິນເຕີເນັດ</string>
     <string name="wasnt_able_to_connect_data_txt">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດຂໍ້ມູນໄດ້ .txt ຈາກເຄື່ອງແມ່ຂ່າຍຂອງທ່ານ</string>
     <string name="data_url_was_blank">url ຂໍ້ມູນແມ່ນຫວ່າງເປົ່າ</string>

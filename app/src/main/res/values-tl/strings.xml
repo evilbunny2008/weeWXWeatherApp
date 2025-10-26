@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Hindi nakakonekta o mag -download ng isang imahe ng webcam mula sa iyong server</string>
     <string name="wasnt_able_to_connect_forecast">Hindi nakakonekta o i -download ang forecast</string>
     <string name="wasnt_able_to_detect_forecast_icons">Hindi nakakakita ng mga icon ng forecast</string>
-    <string name="forecast_type_needs_icons">Ang uri ng forecast \'%%1$ss\' ay kailangang magkaroon ng magagamit na mga icon, mangyaring lumipat sa paggamit ng mga icon at subukang muli</string>
-    <string name="forecast_type_is_invalid">Ang uri ng forecast \'%%1$ss\' ay hindi wasto, suriin ang iyong file ng mga setting at subukang muli</string>
+    <string name="forecast_type_needs_icons">Ang uri ng forecast \'%1$s\' ay kailangang magkaroon ng magagamit na mga icon, mangyaring lumipat sa paggamit ng mga icon at subukang muli</string>
+    <string name="forecast_type_is_invalid">Ang uri ng forecast \'%1$s\' ay hindi wasto, suriin ang iyong file ng mga setting at subukang muli</string>
     <string name="wasnt_able_to_connect_radar_image">Hindi nakakonekta o mag -download ng radar = imahe mula sa internet</string>
     <string name="wasnt_able_to_connect_data_txt">Hindi nakakonekta o mag -download ng data.txt mula sa iyong server</string>
     <string name="data_url_was_blank">Ang Data URL ay blangko</string>

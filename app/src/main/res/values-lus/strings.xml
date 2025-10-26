@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">I server atanga webcam image connect emaw download emaw theih a ni lo</string>
     <string name="wasnt_able_to_connect_forecast">Forecast chu a connect thei lo va, a download thei lo bawk</string>
     <string name="wasnt_able_to_detect_forecast_icons">forecast icons te pawh a detect thei lo</string>
-    <string name="forecast_type_needs_icons">Forecast Type \'%%1$ss\' hian icon a neih a ngai a, icon hman danah inthlak la, han tum leh teh</string>
-    <string name="forecast_type_is_invalid">Forecast type \'%%1$ss\' a dik lo a, i settings file kha check la, han try leh teh</string>
+    <string name="forecast_type_needs_icons">Forecast Type \'%1$s\' hian icon a neih a ngai a, icon hman danah inthlak la, han tum leh teh</string>
+    <string name="forecast_type_is_invalid">Forecast type \'%1$s\' a dik lo a, i settings file kha check la, han try leh teh</string>
     <string name="wasnt_able_to_connect_radar_image">Radar= a inzawm thei lo va, a download thei lo bawk</string>
     <string name="wasnt_able_to_connect_data_txt">i server atang chuan data.txt a connect thei lo va, a download thei lo bawk</string>
     <string name="data_url_was_blank">Data URL chu a blank a</string>

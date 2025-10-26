@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">مۇلازىمېتىردىن تور كامېراسى سۈرىتىنى ئۇلىيالمىدى ياكى چۈشۈرگىلى بولمايدۇ</string>
     <string name="wasnt_able_to_connect_forecast">بۇ پەرەزنى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
     <string name="wasnt_able_to_detect_forecast_icons">ئالدىن تەكشۈرۈش سىنبەلگىسىنى بايقىيالمىدى</string>
-    <string name="forecast_type_needs_icons">مۆلچەردىكى \'%%1$ss\' نى ئىشلەتكىلى بولىدۇ, سىنبەلگىلەرنى ئىشلىتىپ قايتا سىناڭ</string>
-    <string name="forecast_type_is_invalid">مۆلچەر تىپى \'%%1$ss\'ئىناۋەتسىز, تەڭشەكلىرى ھۆججىتىڭىزنى تەكشۈرۈڭ ۋە قايتا سىناڭ</string>
+    <string name="forecast_type_needs_icons">مۆلچەردىكى \'%1$s\' نى ئىشلەتكىلى بولىدۇ, سىنبەلگىلەرنى ئىشلىتىپ قايتا سىناڭ</string>
+    <string name="forecast_type_is_invalid">مۆلچەر تىپى \'%1$s\'ئىناۋەتسىز, تەڭشەكلىرى ھۆججىتىڭىزنى تەكشۈرۈڭ ۋە قايتا سىناڭ</string>
     <string name="wasnt_able_to_connect_radar_image">رادار = توردىن رادار = رەسىمنى ئۇلىيالمىدى</string>
     <string name="wasnt_able_to_connect_data_txt">مۇلازىمېتىردىن ئۇلىنىش ياكى چۈشۈرگىلى بولمىدى. مۇلازىمېتىرىڭىزدىن</string>
     <string name="data_url_was_blank">سانلىق مەلۇمات URLلىرى قۇرۇق ئىدى</string>

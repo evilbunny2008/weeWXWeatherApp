@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Gat ekki tengst eða hlaðið niður vefmyndavélarmynd af þjóninum þínum</string>
     <string name="wasnt_able_to_connect_forecast">Gat ekki tengst eða hlaðið niður spánni</string>
     <string name="wasnt_able_to_detect_forecast_icons">Gat ekki greint spátákn</string>
-    <string name="forecast_type_needs_icons">Spágerðin \'%%1$ss\' þarf að hafa tákn tiltæk, vinsamlega skiptu yfir í að nota tákn og reyndu aftur</string>
-    <string name="forecast_type_is_invalid">Spágerðin \'%%1$ss\' er ógild, athugaðu stillingaskrána þína og reyndu aftur</string>
+    <string name="forecast_type_needs_icons">Spágerðin \'%1$s\' þarf að hafa tákn tiltæk, vinsamlega skiptu yfir í að nota tákn og reyndu aftur</string>
+    <string name="forecast_type_is_invalid">Spágerðin \'%1$s\' er ógild, athugaðu stillingaskrána þína og reyndu aftur</string>
     <string name="wasnt_able_to_connect_radar_image">Gat ekki tengst eða hlaðið niður radar= mynd af netinu</string>
     <string name="wasnt_able_to_connect_data_txt">Gat ekki tengst eða hlaðið niður data.txt af þjóninum þínum</string>
     <string name="data_url_was_blank">Gagnaslóð var auð</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">আপোনাৰ চাৰ্ভাৰৰ পৰা এটা WebCam ছবি সংযোগ বা ডাউনল\'ড কৰিব পৰা নাছিল</string>
     <string name="wasnt_able_to_connect_forecast">পূৰ্বাভাস সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল।</string>
     <string name="wasnt_able_to_detect_forecast_icons">পূৰ্বাভাস আইকন ধৰা পেলাব পৰা নাছিল।</string>
-    <string name="forecast_type_needs_icons">\'%%1$ss\' ৰ পূৰ্বাভাসে আইকনসমূহ উপলব্ধ কৰিব লাগিব, অনুগ্ৰহ কৰি আইকনসমূহ ব্যৱহাৰ কৰিবলৈ সলনি কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
-    <string name="forecast_type_is_invalid">পূৰ্বাভাসৰ ধৰণ \'%%1$ss\' অবৈধ, আপোনাৰ ছেটিংছ ফাইল পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
+    <string name="forecast_type_needs_icons">\'%1$s\' ৰ পূৰ্বাভাসে আইকনসমূহ উপলব্ধ কৰিব লাগিব, অনুগ্ৰহ কৰি আইকনসমূহ ব্যৱহাৰ কৰিবলৈ সলনি কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
+    <string name="forecast_type_is_invalid">পূৰ্বাভাসৰ ধৰণ \'%1$s\' অবৈধ, আপোনাৰ ছেটিংছ ফাইল পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
     <string name="wasnt_able_to_connect_radar_image">ইণ্টাৰনেটৰ পৰা Radar= ছবি সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
     <string name="wasnt_able_to_connect_data_txt">আপোনাৰ চাৰ্ভাৰৰ পৰা Data.txt সংযোগ বা ডাউনল\'ড কৰিব পৰা নাছিল।</string>
     <string name="data_url_was_blank">ডাটা URL খালী আছিল</string>

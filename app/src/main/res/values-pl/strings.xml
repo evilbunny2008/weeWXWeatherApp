@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Nie udało się połączyć lub pobrać obrazu z kamery internetowej z Twojego serwera</string>
     <string name="wasnt_able_to_connect_forecast">Nie udało się połączyć ani pobrać prognozy</string>
     <string name="wasnt_able_to_detect_forecast_icons">Nie udało się wykryć ikon prognozy</string>
-    <string name="forecast_type_needs_icons">Typ prognozy \'%%1$ss\' musi mieć dostępne ikony. Przełącz się na używanie ikon i spróbuj ponownie</string>
-    <string name="forecast_type_is_invalid">Typ prognozy \'%%1$ss\' jest nieprawidłowy. Sprawdź plik ustawień i spróbuj ponownie</string>
+    <string name="forecast_type_needs_icons">Typ prognozy \'%1$s\' musi mieć dostępne ikony. Przełącz się na używanie ikon i spróbuj ponownie</string>
+    <string name="forecast_type_is_invalid">Typ prognozy \'%1$s\' jest nieprawidłowy. Sprawdź plik ustawień i spróbuj ponownie</string>
     <string name="wasnt_able_to_connect_radar_image">Nie udało się połączyć ani pobrać obrazu radar= z Internetu</string>
     <string name="wasnt_able_to_connect_data_txt">Nie udało się połączyć lub pobrać pliku data.txt z Twojego serwera</string>
     <string name="data_url_was_blank">Adres URL danych był pusty</string>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Tidak dapat menyambungkan atau mengunduh gambar webcam dari server Anda</string>
     <string name="wasnt_able_to_connect_forecast">Tidak dapat menghubungkan atau mengunduh ramalan cuaca</string>
     <string name="wasnt_able_to_detect_forecast_icons">Tidak dapat mendeteksi ikon perkiraan cuaca</string>
-    <string name="forecast_type_needs_icons">Jenis perkiraan \'%%1$ss\' harus memiliki ikon yang tersedia. Silakan beralih menggunakan ikon dan coba lagi</string>
-    <string name="forecast_type_is_invalid">Jenis perkiraan \'%%1$ss\' tidak valid, periksa file pengaturan Anda dan coba lagi</string>
+    <string name="forecast_type_needs_icons">Jenis perkiraan \'%1$s\' harus memiliki ikon yang tersedia. Silakan beralih menggunakan ikon dan coba lagi</string>
+    <string name="forecast_type_is_invalid">Jenis perkiraan \'%1$s\' tidak valid, periksa file pengaturan Anda dan coba lagi</string>
     <string name="wasnt_able_to_connect_radar_image">Tidak dapat menghubungkan atau mengunduh radar= gambar dari internet</string>
     <string name="wasnt_able_to_connect_data_txt">Tidak dapat menyambungkan atau mengunduh data.txt dari server Anda</string>
     <string name="data_url_was_blank">URL data kosong</string>
