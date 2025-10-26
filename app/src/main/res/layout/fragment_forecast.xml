@@ -1,55 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-	android:id="@+id/swipeToRefresh"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/forecast_linear_layout"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+	<include layout="@layout/forecast_layout"
+		android:id="@+id/swipeToRefresh1" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/forecast"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/forecast"
-            android:textSize="24sp"/>
-
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="match_parent"
-            android:layout_height="29dp"
-            android:contentDescription="@string/empty"
-            android:gravity="center"
-            android:textSize="24sp"
-            app:srcCompat="@drawable/purple"/>
-
-        <!-- https://github.com/rongi/rotate-layout -->
-        <com.odiousapps.weewxweather.RotateLayout
-            android:id="@+id/rotateWeb"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-	        android:layout_weight="1"
-            app:angle="-90">
-
-            <WebView
-                android:id="@+id/webView1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-	            android:scrollbars="none"
-	            android:gravity="center" />
-        </com.odiousapps.weewxweather.RotateLayout>
-
-        <WebView
-            android:id="@+id/webView2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-	        android:layout_weight="1"
-	        android:scrollbars="none"
-	        android:visibility="gone" />
-    </LinearLayout>
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+	<include layout="@layout/radar_layout"
+		android:id="@+id/radarFrameLayout" />
+</LinearLayout>

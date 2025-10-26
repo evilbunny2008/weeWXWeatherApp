@@ -28,9 +28,9 @@ Source code is made available under the GPLv3 license, in the hope the code migh
 
 ## Credits
 
-Big thanks to the [weeWX project](http://weeWX.com), as this app wouldn't be possible otherwise.
+Big thanks to the [weeWX project](https://weeWX.com), as this app wouldn't be possible otherwise.
 
-Weather Icons from [FlatIcon](https://www.flaticon.com) and is licensed under [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
+Weather Icons from [FlatIcon](https://www.flaticon.com) and is licensed under [CC 3.0 BY](https://creativecommons.org/licenses/by/3.0/)
 
 Forecasts supplied by [Yahoo!](https://www.yahoo.com/?ilc=401), [weatherzone](https://weatherzone.com.au) and [yr.no](https://hjelp.yr.no/hc/en-us/articles/360001940793-Free-weather-data-service-from-Yr)
 

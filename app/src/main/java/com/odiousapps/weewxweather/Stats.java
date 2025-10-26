@@ -224,7 +224,11 @@ public class Stats extends Fragment
 
 			int iw = 17;
 
-			String[] bits = Common.GetStringPref("LastDownload", "").split("\\|");
+			String tmpStr = Common.GetStringPref("LastDownload", "");
+			if(tmpStr == null)
+				return;
+
+			String[] bits = tmpStr.split("\\|");
 
 			if(bits.length < 65)
 				return;

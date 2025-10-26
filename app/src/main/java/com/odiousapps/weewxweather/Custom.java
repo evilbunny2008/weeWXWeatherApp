@@ -136,10 +136,10 @@ public class Custom extends Fragment
 		String custom = Common.GetStringPref("CUSTOM_URL", "");
 		String custom_url = Common.GetStringPref("custom_url", "");
 
-		if(custom.isEmpty() && custom_url.isEmpty())
+		if((custom == null || custom.isEmpty()) && (custom_url == null || custom_url.isEmpty()))
 			return;
 
-		if(!custom_url.isEmpty())
+		if(custom_url != null && !custom_url.isEmpty())
 			wv.loadUrl(custom_url);
 		else
 			wv.loadUrl(custom);

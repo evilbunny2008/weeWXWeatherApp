@@ -113,6 +113,10 @@ public class Common
               <link rel='stylesheet' href='file:///android_asset/weathericons_wind.css'>
               <link rel='stylesheet' type='text/css' href='file:///android_asset/flaticon.css'>
               <style>
+              html, body {
+                margin: 0;
+                padding: 0;
+              }
               :root {
                 color-scheme: light dark;
               }
@@ -144,10 +148,10 @@ public class Common
 
 	static final String html_footer = "\n</body>\n</html>";
 
-	static final String about_blurb = "Big thanks to the <a href='http://weewx.com'>weeWX project</a>, as this app " +
+	static final String about_blurb = "Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app " +
 		"wouldn't be possible otherwise.<br><br>" +
 		"Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
-		"is licensed under <a href='http://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and " +
+		"is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and " +
 		"<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers" +
 		"<br><br>" +
 		"weeWX Weather App v" + getAppVersion() + " is by <a href='https://odiousapps.com'>OdiousApps</a>.";
@@ -166,11 +170,15 @@ public class Common
 
 	static void reload()
 	{
+		Context context = getContext();
+		if(context == null)
+			return;
+
 		current_html_headers = html_header;
 		colours = new Colours();
 		getDayNightMode();
-		replaceHex6String("WHITE_HEX", ContextCompat.getColor(getContext(), R.color.White));
-		replaceHex6String("BLACK_HEX", ContextCompat.getColor(getContext(), R.color.Black));
+		replaceHex6String("WHITE_HEX", ContextCompat.getColor(context, R.color.White));
+		replaceHex6String("BLACK_HEX", ContextCompat.getColor(context, R.color.Black));
 		replaceHex6String("ALMOST_BLACK", colours.AlmostBlack);
 		replaceHex6String("LIGHT_BLUE_ACCENT", colours.LightBlueAccent);
 		replaceHex6String("DARK_GRAY", colours.DarkGray);
@@ -235,6 +243,10 @@ public class Common
 
 	static void setAlarm(String from)
 	{
+		Context context = getContext();
+		if(context == null)
+			return;
+
 		long[] ret = getPeriod();
 		long period = ret[0];
 		long wait = ret[1];
@@ -250,10 +262,11 @@ public class Common
 		LogMessage(from + " - period == " + period);
 		LogMessage(from + " - wait == " + wait);
 
-		Intent myAlarm = new Intent(getContext(), UpdateCheck.class);
-		PendingIntent recurringAlarm = PendingIntent.getBroadcast(getContext(), 0, myAlarm, PendingIntent.FLAG_IMMUTABLE);
+		Intent myAlarm = new Intent(context.getApplicationContext(), UpdateCheck.class);
+		PendingIntent recurringAlarm = PendingIntent.getBroadcast(context.getApplicationContext(),
+				0, myAlarm, PendingIntent.FLAG_IMMUTABLE);
 
-		AlarmManager alarms = (AlarmManager)getContext().getSystemService(Context.ALARM_SERVICE);
+		AlarmManager alarms = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
 		alarms.set(AlarmManager.RTC_WAKEUP, start, recurringAlarm);
 	}
 
@@ -280,7 +293,11 @@ public class Common
 
 	static void SetStringPref(String name, String value)
 	{
-		SharedPreferences settings = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		Context context = getContext();
+		if(context == null)
+			return;
+
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.putString(name, value);
 		editor.apply();
@@ -290,7 +307,11 @@ public class Common
 
 	static void RemovePref(String name)
 	{
-		SharedPreferences settings = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		Context context = getContext();
+		if(context == null)
+			return;
+
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
 
 		// Wipe the entry...
@@ -303,7 +324,11 @@ public class Common
 
 	static void clearPref()
 	{
-		SharedPreferences prefs = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		Context context = getContext();
+		if(context == null)
+			return;
+
+		SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		prefs.edit().clear().apply();
 
 		//LogMessage("Clearing Prefs");
@@ -311,7 +336,11 @@ public class Common
 
 	static void commitPref()
 	{
-		SharedPreferences settings = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		Context context = getContext();
+		if(context == null)
+			return;
+
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = settings.edit();
 		editor.commit();
 
@@ -320,7 +349,11 @@ public class Common
 
 	static boolean isPrefSet(String name)
 	{
-		SharedPreferences settings = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+		Context context = getContext();
+		if(context == null)
+			return false;
+
+		SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 		String default_value = "unknown";
 
 		try
@@ -340,12 +373,16 @@ public class Common
 
 	static String GetStringPref(String name, String default_value)
 	{
+		Context context = getContext();
+		if(context == null)
+			return null;
+
 		SharedPreferences settings;
 		String value;
 
 		try
 		{
-			settings = getContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+			settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 			value = settings.getString(name, default_value);
 		} catch (ClassCastException cce) {
 			doStackOutput(cce);
@@ -382,7 +419,11 @@ public class Common
 
 	static float GetFloatPref(String name, float default_value)
 	{
-		String val = GetStringPref(name, String.valueOf(default_value)).trim();
+		String str = GetStringPref(name, String.valueOf(default_value));
+		if(str == null)
+			return default_value;
+
+		String val = str.trim();
 		if(val.isEmpty())
 			return 0.0f;
 
@@ -418,12 +459,19 @@ public class Common
 			value = "1";
 
 		String val = GetStringPref(name, value);
+		if(val == null)
+			return default_value;
+
 		return val.equals("1");
 	}
 
 	static File getFilesDir()
 	{
-		return getContext().getFilesDir();
+		Context context = getContext();
+		if(context == null)
+			return null;
+
+		return context.getFilesDir();
 	}
 
 	static void setWebview(WebView wv)
@@ -440,7 +488,7 @@ public class Common
 		wv.getSettings().setLoadWithOverviewMode(true);
 		wv.getSettings().setUseWideViewPort(true);
 		//wv.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-		wv.setScrollContainer(false);
+		wv.setScrollContainer(true);
 		wv.getSettings().setDisplayZoomControls(false);
 		wv.getSettings().setBuiltInZoomControls(false);
 		wv.setVerticalScrollBarEnabled(false);
@@ -450,7 +498,11 @@ public class Common
 
 	public static String getString(int str)
 	{
-		return getContext().getString(str);
+		Context context = getContext();
+		if(context == null)
+			return String.valueOf(str);
+
+		return context.getString(str);
 	}
 
 	static final class myWebChromeClient extends WebChromeClient
@@ -663,7 +715,7 @@ public class Common
 			sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			day.day = sdf.format(day.timestamp);
 
-			day.icon = "http://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
+			day.icon = "https://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
 
 			if(bit.contains("<dd class=\"max\">"))
 				day.max = bit.split("<dd class=\"max\">")[1].split("</dd>")[0].trim();
@@ -684,6 +736,9 @@ public class Common
 			} else {
 				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 				fileName = checkImage(fileName, day.icon);
+				if(fileName == null)
+					return null;
+
 				File f = new File(fileName);
 				try(FileInputStream imageInFile = new FileInputStream(f))
 				{
@@ -729,7 +784,7 @@ public class Common
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
-				day.icon = "http://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
+				day.icon = "https://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
 				day.max = bit.split("<dd class=\"max\">")[1].split("</dd>")[0].trim();
 				day.min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
 				day.text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
@@ -745,6 +800,9 @@ public class Common
 				} else {
 					fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 					fileName = checkImage(fileName, day.icon);
+					if(fileName == null)
+						return null;
+
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
@@ -870,6 +928,9 @@ public class Common
 							day.icon = "flaticon-thermometer";
 					} else {
 						fileName = checkImage("bom2" + fileName + ".png", null);
+						if(fileName == null)
+							return null;
+
 						File f = new File(fileName);
 						try(FileInputStream imageInFile = new FileInputStream(f))
 						{
@@ -959,6 +1020,9 @@ public class Common
 					day.icon = "wi wi-metoffice-" + fileName.substring(0, fileName.lastIndexOf("."));
 				} else {
 					fileName = checkImage("met" + fileName, null);
+					if(fileName == null)
+						return null;
+
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
@@ -1117,6 +1181,9 @@ public class Common
 							day.icon = "flaticon-thermometer";
 					} else {
 						fileName = checkImage("wca" + fileName + ".png", null);
+						if(fileName == null)
+							return null;
+
 						File f = new File(fileName);
 						try(FileInputStream imageInFile = new FileInputStream(f))
 						{
@@ -1261,6 +1328,9 @@ public class Common
 							day.icon = "flaticon-thermometer";
 					} else {
 						fileName = checkImage("wca" + fileName + ".png", null);
+						if(fileName == null)
+							return null;
+
 						File f = new File(fileName);
 						try(FileInputStream imageInFile = new FileInputStream(f))
 						{
@@ -1404,7 +1474,12 @@ public class Common
 						if(bmp3 != null)
 						{
 							Bitmap bmp4 = loadImage("wgovoverlay.jpg");
+							if(bmp4 == null)
+								return null;
+
 							bmp3 = overlay(bmp3, bmp4, number + "%");
+							if(bmp3 == null)
+								return null;
 
 							ByteArrayOutputStream stream = new ByteArrayOutputStream();
 							bmp3.compress(Bitmap.CompressFormat.JPEG, 75, stream);
@@ -1424,6 +1499,9 @@ public class Common
 				{
 					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).trim().replaceAll("\\.png$", ".jpg");
 					fileName = checkImage(fileName, iconLink.getString(i));
+					if(fileName == null)
+						return null;
+
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
@@ -1626,6 +1704,9 @@ public class Common
 						day.icon = "flaticon-thermometer";
 				} else {
 					String fileName = checkImage("bom" + code + ".png", null);
+					if(fileName == null)
+						return null;
+
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
@@ -1721,6 +1802,9 @@ public class Common
 				} else {
 					day.icon = day.icon.replaceAll("-", "_");
 					String fileName = checkImage("ms_" + day.icon + ".png", null);
+					if(fileName == null)
+						return null;
+
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
@@ -1817,6 +1901,8 @@ public class Common
 				String fileName = "dwd_" + icon.replaceAll("-", "_");
 				String url = "https://www.dwd.de/DE/wetter/_functions/piktos/" + icon + "?__blob=normal";
 				fileName = checkImage(fileName, url);
+				if(fileName == null)
+					return null;
 
 				if(!use_icons)
 				{
@@ -2032,9 +2118,12 @@ public class Common
 						day.icon = "flaticon-thermometer";
 				} else
 				{
-					String url = "http://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
+					String url = "https://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
 					String fileName = "aemet_" + code + "_g.png";
 					fileName = checkImage(fileName, url);
+					if(fileName == null)
+						return null;
+
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
@@ -2117,6 +2206,9 @@ public class Common
 					day.icon = "wi wi-yahoo-" + day.icon;
 				} else {
 					String fileName = checkImage(day.icon + ".png", null);
+					if(fileName == null)
+						return null;
+
 					LogMessage("yahoo filename = " + fileName);
 
 					File f = new File(fileName);
@@ -2192,6 +2284,9 @@ public class Common
 					day.icon = "wi wi-met-ie-" + day.icon;
 				} else {
 					String fileName = checkImage("y" + day.icon + ".png", null);
+					if(fileName == null)
+						return null;
+
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
@@ -2353,6 +2448,9 @@ public class Common
 					day.icon = "wi wi-yrno-" + code;
 				} else {
 					String fileName = checkImage("yrno" + code + ".png", null);
+					if(fileName == null)
+						return null;
+
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
@@ -2471,6 +2569,9 @@ public class Common
 					day.icon = "wi wi-yrno-" + code;
 				} else {
 					String fileName = checkImage("yrno" + code + ".png", null);
+					if(fileName == null)
+						return null;
+
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
@@ -2677,7 +2778,7 @@ public class Common
 					continue;
 
 				String[] mybits = tmp[1].split("<br />");
-				String myimg = mybits[1].trim().replaceAll("<img src=\"http://www.weatherzone.com.au/images/icons/fcast_30/", "")
+				String myimg = mybits[1].trim().replaceAll("<img src=\"https://www.weatherzone.com.au/images/icons/fcast_30/", "")
 									.replaceAll("\">", "").replaceAll(".gif", "").replaceAll("_", "-").trim();
 				String mydesc = mybits[2].trim();
 				String[] range = mybits[3].split(" - ", 2);
@@ -2691,6 +2792,9 @@ public class Common
 				} else {
 					String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
 					fileName = checkImage(fileName, null);
+					if(fileName == null)
+						return null;
+
 					File f = new File(fileName);
 					try(FileInputStream imageInFile = new FileInputStream(f))
 					{
@@ -2723,8 +2827,12 @@ public class Common
 
 	private static String[] checkFiles(String url) throws Exception
 	{
+		Context context = getContext();
+		if(context == null)
+			return new String[]{null, "Failed to load or download icon from url: " + url};
+
 		String filename = "yahoo-" + new File(url).getName();
-		File f = new File(getContext().getExternalFilesDir(""), "weeWX");
+		File f = new File(context.getExternalFilesDir(""), "weeWX");
 		f = new File(f,"icons");
 		f = new File(f, filename);
 		if(!f.exists())
@@ -2749,8 +2857,12 @@ public class Common
 
 	private static String[] checkFilesIt(String url) throws Exception
 	{
+		Context context = getContext();
+		if(context == null)
+			return new String[]{null, "Failed to load or download from url: " + url};
+
 		String filename = "tempoitalia-" + new File(url).getName();
-		File f = new File(getContext().getExternalFilesDir(""), "weeWX");
+		File f = new File(context.getExternalFilesDir(""), "weeWX");
 		f = new File(f,"icons");
 		f = new File(f, filename);
 		if(!f.exists())
@@ -2916,7 +3028,7 @@ public class Common
 			try
 			{
 				String fromURL = GetStringPref("BASE_URL", "");
-				if(fromURL.isEmpty())
+				if(fromURL == null || fromURL.isEmpty())
 					return;
 
 				reallyGetWeather(fromURL);
@@ -2969,10 +3081,14 @@ public class Common
 	//	https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
 	static boolean checkConnection()
 	{
+		Context context = getContext();
+		if(context == null)
+			return false;
+
 		if(!GetBoolPref("onlyWIFI", false))
 			return true;
 
-		ConnectivityManager connMgr = (ConnectivityManager)getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+		ConnectivityManager connMgr = (ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		if(connMgr == null)
 			return false;
 
@@ -3000,7 +3116,11 @@ public class Common
 
 	private static Bitmap loadImage(String fileName)
 	{
-		File f = new File(getContext().getExternalFilesDir(""), "weeWX");
+		Context context = getContext();
+		if(context == null)
+			return null;
+
+		File f = new File(context.getExternalFilesDir(""), "weeWX");
 		f = new File(f, "icons");
 		f = new File(f, fileName);
 
@@ -3012,7 +3132,11 @@ public class Common
 
 	private static String checkImage(String fileName, String icon)
 	{
-		File f = new File(getContext().getExternalFilesDir(""), "weeWX");
+		Context context = getContext();
+		if(context == null)
+			return null;
+
+		File f = new File(context.getExternalFilesDir(""), "weeWX");
 		f = new File(f, "icons");
 		f = new File(f, fileName);
 		//LogMessage("f = " + f.getAbsolutePath());
@@ -3028,6 +3152,10 @@ public class Common
 
 	private static void downloadImage(final String fileName, final String imageURL)
 	{
+		Context context = getContext();
+		if(context == null)
+			return;
+
 		Thread t = new Thread(() ->
 		{
 			if(fileName.isEmpty() || imageURL.isEmpty())
@@ -3037,7 +3165,7 @@ public class Common
 
 			try
 			{
-				File f = new File(getContext().getExternalFilesDir(""), "weeWX");
+				File f = new File(context.getExternalFilesDir(""), "weeWX");
 				f = new File(f, "icons");
 				if(!f.exists())
 					if(!f.mkdirs())
@@ -3062,6 +3190,10 @@ public class Common
 
 	private static Bitmap combineImage(Bitmap bmp1, String fnum, String snum)
 	{
+		Context context = getContext();
+		if(context == null)
+			return null;
+
 		try
 		{
 			int x1 = bmp1.getHeight();
@@ -3077,6 +3209,9 @@ public class Common
 			if(!fnum.equals("%") || !snum.equals("%"))
 			{
 				Bitmap bmp2 = loadImage("wgovoverlay.jpg");
+				if(bmp2 == null)
+					return null;
+
 				paint = new Paint();
 				paint.setAlpha(100);
 				comboImage.drawBitmap(bmp2, 0f, bmp1.getHeight() - bmp2.getHeight(), paint);
@@ -3087,7 +3222,7 @@ public class Common
 				// Draw arrow
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setStyle(Paint.Style.STROKE);
 				paint.setStrokeWidth(1);
 				comboImage.drawLine( round(x1 / 2.0) + 5, y1 - 9, round(x1 / 2.0) + 10, y1 - 7, paint);
@@ -3099,7 +3234,7 @@ public class Common
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -3110,7 +3245,7 @@ public class Common
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -3131,6 +3266,10 @@ public class Common
 
 	private static Bitmap combineImages(Bitmap bmp1, Bitmap bmp2, String fimg, String simg, String fnum, String snum)
 	{
+		Context context = getContext();
+		if(context == null)
+			return null;
+
 		try
 		{
 			int x1 = bmp1.getHeight();
@@ -3170,12 +3309,12 @@ public class Common
 			comboImage.drawBitmap(bmp1, 0f, 0f, null);
 			comboImage.drawBitmap(bmp2, round(x1 / 2.0), 0f, null);
 
-			paint.setColor(ContextCompat.getColor(getContext(), R.color.Black));
+			paint.setColor(ContextCompat.getColor(context, R.color.Black));
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeWidth(4);
 			comboImage.drawLine( round(x1 / 2.0), 0, round(x1 / 2.0), y1, paint);
 
-			paint.setColor(ContextCompat.getColor(getContext(), R.color.White));
+			paint.setColor(ContextCompat.getColor(context, R.color.White));
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeWidth(2);
 			comboImage.drawLine( round(x1 / 2.0), 0, round(x1 / 2.0), y1, paint);
@@ -3185,6 +3324,9 @@ public class Common
 				BitmapFactory.Options options = new BitmapFactory.Options();
 				options.inJustDecodeBounds = false;
 				Bitmap bmp4 = loadImage("wgovoverlay.jpg");
+				if(bmp4 == null)
+					return null;
+
 				paint = new Paint();
 				paint.setAlpha(100);
 				comboImage.drawBitmap(bmp4, 0f, bmp1.getHeight() - bmp4.getHeight(), paint);
@@ -3195,7 +3337,7 @@ public class Common
 				// Draw arrow
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setStyle(Paint.Style.STROKE);
 				paint.setStrokeWidth(1);
 				comboImage.drawLine( round(x1 / 2.0) + 5, y1 - 9, round(x1 / 2.0) + 10, y1 - 7, paint);
@@ -3207,7 +3349,7 @@ public class Common
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -3218,7 +3360,7 @@ public class Common
 			{
 				paint = new Paint();
 				paint.setAntiAlias(true);
-				paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
+				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setTextSize(13);
 				paint.setTypeface(tf_bold);
 
@@ -3241,6 +3383,10 @@ public class Common
 
 	private static Bitmap overlay(Bitmap bmp1, Bitmap bmp2, String s)
 	{
+		Context context = getContext();
+		if(context == null)
+			return null;
+
 		Paint paint = new Paint();
 		paint.setAlpha(100);
 
@@ -3253,7 +3399,7 @@ public class Common
 		canvas.drawBitmap(bmp1, 0f, 0f, null);
 		canvas.drawBitmap(bmp2, 0f, bmp1.getHeight() - bmp2.getHeight(), paint);
 		paint.setAntiAlias(true);
-		paint.setColor(ContextCompat.getColor(getContext(), R.color.LightPrussianBlue));
+		paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 		paint.setTextSize(13);
 		paint.setTypeface(tf_bold);
 		Rect textBounds = new Rect();
@@ -3269,9 +3415,13 @@ public class Common
 
 	private static void loadNWS()
 	{
+		Context context = getContext();
+		if(context == null)
+			return;
+
 		try
 		{
-			InputStream is = getContext().getResources().openRawResource(R.raw.nws);
+			InputStream is = context.getResources().openRawResource(R.raw.nws);
 			int size = is.available();
 			byte[] buffer = new byte[size];
 			if(is.read(buffer) > 0)
@@ -3295,8 +3445,12 @@ public class Common
 
 	static File downloadRADAR(String radar) throws Exception
 	{
+		Context context = getContext();
+		if(context == null)
+			return null;
+
 		LogMessage("starting to download image from: " + radar);
-		File file = new File(getContext().getFilesDir(), "/radar.gif.tmp");
+		File file = new File(context.getFilesDir(), "/radar.gif.tmp");
 		return downloadBinary(file, radar);
 	}
 
@@ -3312,7 +3466,19 @@ public class Common
 
 	static String downloadForecast() throws Exception
 	{
-		return downloadForecast(GetStringPref("fctype", "Yahoo"), GetStringPref("FORECAST_URL", ""), GetStringPref("bomtown", ""));
+		String str1 = GetStringPref("fctype", "Yahoo");
+		if(str1 == null)
+			return null;
+
+		String str2 = GetStringPref("FORECAST_URL", "");
+		if(str2 == null)
+			return null;
+
+		String str3 = GetStringPref("bomtown", "");
+		if(str3 == null)
+			return null;
+
+		return downloadForecast(str1, str2, str3);
 	}
 
 	static String downloadForecast(String fctype, String forecast, String bomtown) throws Exception
@@ -3363,7 +3529,7 @@ public class Common
 	{
 		Connection.Response resultResponse = Jsoup.connect(fromURL)
 													.userAgent(UA)
-													.referrer("http://www.bom.gov.au")
+													.referrer("https://www.bom.gov.au")
 													.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
 													.header("Cache-Control", "max-age=0")
 													.header("Accept-Language", "en-au")
@@ -3432,7 +3598,11 @@ public class Common
 
 	private static void writeFile(String fileName, String data) throws Exception
 	{
-		File dir = new File(getContext().getExternalFilesDir(""), "weeWX");
+		Context context = getContext();
+		if(context == null)
+			return;
+
+		File dir = new File(context.getExternalFilesDir(""), "weeWX");
 		if(!dir.exists())
 			if(!dir.mkdirs())
 				return;
@@ -3523,14 +3693,22 @@ public class Common
 
 	private static void publish(File f)
 	{
+		Context context = getContext();
+		if(context == null)
+			return;
+
 		LogMessage("wrote to " + f.getAbsolutePath());
 		if(f.exists())
-			MediaScannerConnection.scanFile(getContext(), new String[]{f.getAbsolutePath()}, null, null);
+			MediaScannerConnection.scanFile(context, new String[]{f.getAbsolutePath()}, null, null);
 	}
 
 	static boolean downloadIcons() throws Exception
 	{
-		File f = new File(getContext().getExternalFilesDir(""), "weeWX");
+		Context context = getContext();
+		if(context == null)
+			return false;
+
+		File f = new File(context.getExternalFilesDir(""), "weeWX");
 		File dir = f;
 
 		if(!dir.exists() && !dir.mkdirs())
@@ -3602,7 +3780,11 @@ public class Common
 
 	static boolean checkForImages()
 	{
-		File dir = new File(getContext().getExternalFilesDir(""), "weeWX");
+		Context context = getContext();
+		if(context == null)
+			return false;
+
+		File dir = new File(context.getExternalFilesDir(""), "weeWX");
 		dir = new File(dir, "icons");
 		if(!dir.exists() || !dir.isDirectory())
 			return false;
@@ -3622,6 +3804,9 @@ public class Common
 
 	static Context getContext()
 	{
+		if(weeWXApp.getInstance() == null)
+			return null;
+
 		return weeWXApp.getInstance().getApplicationContext();
 	}
 
@@ -3638,8 +3823,7 @@ public class Common
 		}
 
 		final String forecast_url = GetStringPref("FORECAST_URL", "");
-
-		if(forecast_url.isEmpty())
+		if(forecast_url == null || forecast_url.isEmpty())
 			return;
 
 		if(!checkConnection() && !force)
@@ -3649,8 +3833,10 @@ public class Common
 		}
 
 		final long current_time = round(System.currentTimeMillis() / 1000.0);
+		String str1 = GetStringPref("forecastData", "");
+		long long1 = GetLongPref("rssCheck", 0);
 
-		if(GetStringPref("forecastData", "").isEmpty() || GetLongPref("rssCheck", 0) + 7190 < current_time)
+		if(str1 == null || str1.isEmpty() || long1 + 7190 < current_time)
 		{
 			LogMessage("no forecast data or cache is more than 2 hour old");
 		} else {
@@ -3686,11 +3872,14 @@ public class Common
 
 	static void getDayNightMode()
 	{
-		int current_mode, current_theme, bgColour, fgColour;
 		Context context = getContext();
+		if(context == null)
+			return;
+
+		int current_mode, current_theme, bgColour, fgColour;
 		boolean prefSet = Common.isPrefSet("DayNightMode");
 		int nightDaySetting = getAppDayNightSetting();
-		int nightModeFlags = getContext().getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+		int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
 
 		current_mode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
 		current_theme = R.style.AppTheme_weeWxWeatherApp_Light_Common;
@@ -3701,13 +3890,13 @@ public class Common
 		{
 			if (nightDaySetting == 0)
 			{
-				Common.LogMessage("Night mode off...");
+				LogMessage("Night mode off...");
 				current_mode = AppCompatDelegate.MODE_NIGHT_NO;
 				current_theme = R.style.AppTheme_weeWxWeatherApp_Light_Common;
 				bgColour = ContextCompat.getColor(context, R.color.White);
 				fgColour = ContextCompat.getColor(context, R.color.Black);
 			} else if (nightDaySetting == 1) {
-				Common.LogMessage("Night mode on...");
+				LogMessage("Night mode on...");
 				current_mode = AppCompatDelegate.MODE_NIGHT_NO;
 				current_theme = R.style.AppTheme_weeWxWeatherApp_Dark_Common;
 				bgColour = ContextCompat.getColor(context, R.color.Black);
@@ -3719,12 +3908,12 @@ public class Common
 		{
 			if(nightModeFlags == Configuration.UI_MODE_NIGHT_NO)
 			{
-				Common.LogMessage("Night mode off...");
+				LogMessage("Night mode off...");
 				bgColour = ContextCompat.getColor(context, R.color.White);
 				fgColour = ContextCompat.getColor(context, R.color.Black);
 				current_theme = R.style.AppTheme_weeWxWeatherApp_Light_Common;
 			} else {
-				Common.LogMessage("Night mode on...");
+				LogMessage("Night mode on...");
 				bgColour = ContextCompat.getColor(context, R.color.Black);
 				fgColour = ContextCompat.getColor(context, R.color.White);
 				current_theme = R.style.AppTheme_weeWxWeatherApp_Dark_Common;
@@ -3745,6 +3934,9 @@ public class Common
 	static Activity getActivity()
 	{
 		Context context = getContext();
+		if(context == null)
+			return null;
+
 		while(context instanceof ContextWrapper)
 		{
 			if(context instanceof Activity)
@@ -3782,29 +3974,33 @@ public class Common
 
 	static class Colours
 	{
-		public final int widgetBG;
-		public final int widgetFG;
+		public int widgetBG = 0x00000000;
+		public int widgetFG = 0xFFFFFFFF;
 
-		public final int White;
-		public final int Black;
+		public int White = 0xFFFFFFFF;
+		public int Black = 0xFF000000;
 
-		public final int AlmostBlack;
-		public final int LightBlueAccent;
-		public final int DarkGray;
-		public final int LightGray;
+		public int AlmostBlack = 0xFF121212;
+		public int LightBlueAccent = 0xFF82B1FF;
+		public int DarkGray = 0xFF333333;
+		public int LightGray = 0xFFE0E0E0;
 
 		public Colours()
 		{
-			widgetBG = ContextCompat.getColor(getContext(), R.color.widgetBackgroundColour);
-			widgetFG = ContextCompat.getColor(getContext(), R.color.widgetTextColour);
+			Context context = getContext();
+			if(context != null)
+			{
+				widgetBG = ContextCompat.getColor(context, R.color.widgetBackgroundColour);
+				widgetFG = ContextCompat.getColor(context, R.color.widgetTextColour);
 
-			White = ContextCompat.getColor(getContext(), R.color.White);
-			Black = ContextCompat.getColor(getContext(), R.color.Black);
+				White = ContextCompat.getColor(context, R.color.White);
+				Black = ContextCompat.getColor(context, R.color.Black);
 
-			AlmostBlack = ContextCompat.getColor(getContext(), R.color.AlmostBlack);
-			LightBlueAccent = ContextCompat.getColor(getContext(), R.color.LightBlueAccent);
-			DarkGray = ContextCompat.getColor(getContext(), R.color.DarkGray);
-			LightGray = ContextCompat.getColor(getContext(), R.color.LightGray);
+				AlmostBlack = ContextCompat.getColor(context, R.color.AlmostBlack);
+				LightBlueAccent = ContextCompat.getColor(context, R.color.LightBlueAccent);
+				DarkGray = ContextCompat.getColor(context, R.color.DarkGray);
+				LightGray = ContextCompat.getColor(context, R.color.LightGray);
+			}
 		}
 	}
 }

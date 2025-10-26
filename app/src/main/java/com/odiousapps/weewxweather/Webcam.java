@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
@@ -62,11 +63,15 @@ public class Webcam extends Fragment
 	private void reloadWebView(final boolean force)
 	{
 		Common.LogMessage("reload webcam...");
+		Context context = Common.getContext();
+		if(context == null)
+			return;
+
 		final String webURL = Common.GetStringPref("WEBCAM_URL", "");
 
-		if(webURL.isEmpty())
+		if(webURL == null || webURL.isEmpty())
 		{
-			iv.setImageDrawable(Common.getContext().getDrawable(R.drawable.nowebcam));
+			iv.setImageDrawable(context.getDrawable(R.drawable.nowebcam));
 			stopRefreshing();
 			return;
 		}
@@ -110,7 +115,7 @@ public class Webcam extends Fragment
 
 			if(force || !file1.exists() || round(file1.lastModified() / 1000.0) + period < current_time)
 			{
-				downloadWebcam(webURL, Common.getFilesDir());
+				downloadWebcam(webURL, context.getFilesDir());
 				Common.LogMessage("Finished downloading from webURL: " + webURL);
 			}
 

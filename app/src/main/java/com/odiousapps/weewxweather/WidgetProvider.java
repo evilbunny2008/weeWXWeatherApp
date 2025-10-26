@@ -35,7 +35,7 @@ public class WidgetProvider extends AppWidgetProvider
 	@Override
 	public void onAppWidgetOptionsChanged(Context context, AppWidgetManager appWidgetManager, int appWidgetId, Bundle newOptions)
 	{
-		Common.setAlarm("WidgetProvider.onUpdate()");
+		Common.setAlarm("WidgetProvider.onAppWidgetOptionsChanged()");
 		Common.LogMessage("onAppWidgetOptionsChanged() called..", true);
 
 		KeyValue.widgetMinWidth.put(appWidgetId, newOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH));
@@ -75,27 +75,34 @@ public class WidgetProvider extends AppWidgetProvider
 		views.setTextColor(R.id.widget_wind, fgColour);
 		views.setTextColor(R.id.widget_rain, fgColour);
 
-		String[] bits = Common.GetStringPref("LastDownload", "").split("\\|");
-		if(bits.length > 110)
+		views.setTextViewText(R.id.widget_location, "");
+		views.setTextViewText(R.id.widget_time, "");
+		views.setTextViewText(R.id.widget_temperature, "");
+		views.setTextViewText(R.id.widget_wind, "");
+		views.setTextViewText(R.id.widget_rain, "");
+
+		String lastDownload = Common.GetStringPref("LastDownload", "");
+		if(lastDownload != null && !lastDownload.isEmpty())
 		{
-			String tmp = bits[20];
-			if(bits.length > 158 && !bits[158].isEmpty())
-				tmp = bits[158];
+			String[] bits = lastDownload.split("\\|");
+			if(bits.length > 110)
+			{
+				String tmp = bits[20];
+				if (bits.length > 158 && !bits[158].isEmpty())
+					tmp = bits[158];
 
-			tmp += bits[62];
+				tmp += bits[62];
 
-			views.setTextViewText(R.id.widget_location, bits[56]);
-			views.setTextViewText(R.id.widget_time, bits[55]);
-			views.setTextViewText(R.id.widget_temperature, bits[0] + bits[60]);
-			views.setTextViewText(R.id.widget_wind, bits[25] + bits[61]);
-			views.setTextViewText(R.id.widget_rain, tmp);
-			Common.LogMessage("Temperature set to " + bits[0] + bits[60], true);
+				views.setTextViewText(R.id.widget_location, bits[56]);
+				views.setTextViewText(R.id.widget_time, bits[55]);
+				views.setTextViewText(R.id.widget_temperature, bits[0] + bits[60]);
+				views.setTextViewText(R.id.widget_wind, bits[25] + bits[61]);
+				views.setTextViewText(R.id.widget_rain, tmp);
+				Common.LogMessage("Temperature set to " + bits[0] + bits[60], true);
+			} else {
+				Common.LogMessage("Temperature set to Error!", true);
+			}
 		} else {
-			views.setTextViewText(R.id.widget_location, "");
-			views.setTextViewText(R.id.widget_time, "");
-			views.setTextViewText(R.id.widget_temperature, "Error!");
-			views.setTextViewText(R.id.widget_wind, "");
-			views.setTextViewText(R.id.widget_rain, "");
 			Common.LogMessage("Temperature set to Error!", true);
 		}
 

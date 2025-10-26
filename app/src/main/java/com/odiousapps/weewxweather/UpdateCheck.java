@@ -9,10 +9,10 @@ public class UpdateCheck extends BroadcastReceiver
 	@Override
 	public void onReceive(final Context c, Intent i)
 	{
-		Common.LogMessage("UpdateCheck.java started.");
+		Common.LogMessage("UpdateCheck.java started.", true);
 		if(c == null)
 		{
-			Common.LogMessage("UpdateCheck.java failed, c == null");
+			Common.LogMessage("UpdateCheck.java failed, c == null", true);
 			return;
 		}
 
@@ -20,12 +20,12 @@ public class UpdateCheck extends BroadcastReceiver
 
 		if(!Common.checkConnection())
 		{
-			Common.LogMessage("Skipping update due to wifi setting.");
+			Common.LogMessage("Skipping update due to wifi setting.", true);
 			return;
 		}
 
 		Common.getWeather();
 		Common.getForecast();
-		Common.LogMessage("UpdateCheck.java finished.");
+		Common.LogMessage("UpdateCheck.java finished.", true);
 	}
 }

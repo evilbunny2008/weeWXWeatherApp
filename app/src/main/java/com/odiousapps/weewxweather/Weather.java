@@ -10,6 +10,7 @@ import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.io.File;
@@ -24,30 +25,41 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static java.lang.Math.round;
 
-public class Weather extends Fragment
+@SuppressWarnings("ResultOfMethodCallIgnored")
+public class Weather extends Fragment implements View.OnClickListener
 {
-	private View rootView;
 	private WebView forecast;
 	private WebView current;
 	private SwipeRefreshLayout swipeLayout;
+	private MaterialCheckBox floatingCheckBox;
+	private LinearLayout fll;
+	private boolean isVisible;
+	private boolean disableSwipeOnRadar;
+	private boolean disabledSwipe;
+	private MainActivity activity;
+	private MaterialTextView tv1, tv2;
 
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
-		rootView = inflater.inflate(R.layout.fragment_weather, container, false);
+		activity = (MainActivity)getActivity();
 
-		LinearLayout ll = rootView.findViewById(R.id.weather_ll);
-		ll.setBackgroundColor(KeyValue.bgColour);
+		View rootView = inflater.inflate(R.layout.fragment_weather, container, false);
 
-		MaterialTextView tv1 = rootView.findViewById(R.id.textView);
-		MaterialTextView tv2 = rootView.findViewById(R.id.textView2);
+		fll = rootView.findViewById(R.id.floating_linear_layout);
+
+		tv1 = rootView.findViewById(R.id.textView);
+		tv2 = rootView.findViewById(R.id.textView2);
 
 		tv1.setTextColor(KeyValue.fgColour);
 		tv2.setTextColor(KeyValue.fgColour);
 
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setRefreshing(true);
+		swipeLayout.setBackgroundColor(KeyValue.bgColour);
+		fll.setBackgroundColor(KeyValue.bgColour);
+
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
@@ -55,26 +67,42 @@ public class Weather extends Fragment
 			forceRefresh();
 		});
 
+		floatingCheckBox = rootView.findViewById(R.id.floatingCheckBoxMain);
+		floatingCheckBox.setOnClickListener(this);
+
 		forecast = rootView.findViewById(R.id.forecast);
-		forecast.setWebViewClient(new WebViewClient()
+		Common.setWebview(forecast);
+
+		current = rootView.findViewById(R.id.current);
+		Common.setWebview(current);
+
+		current.getViewTreeObserver().addOnScrollChangedListener(() ->
+				swipeLayout.setEnabled(current.getScrollY() == 0));
+
+		current.setWebViewClient(new WebViewClient()
 		{
 			@Override
 			public void onPageFinished(WebView view, String url)
 			{
 				super.onPageFinished(view, url);
-				swipeLayout.setRefreshing(false);
+				stopRefreshing();
+
+				// Post a Runnable to make sure contentHeight is available
+				view.postDelayed(() ->
+				{
+					int contentHeightPx = (int)(current.getContentHeight() *
+							current.getResources().getDisplayMetrics().density) +
+							tv1.getHeight() + tv2.getHeight();
+					ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
+					params.height = contentHeightPx - (int)(10 * current.getResources().getDisplayMetrics().density);
+					swipeLayout.setLayoutParams(params);
+					Common.LogMessage("New Height: " + contentHeightPx, true);
+					//view.setLayoutParams(params);
+				}, 100); // 100ms delay lets the page finish rendering
 			}
 		});
 
-		Common.setWebview(forecast);
-		forecast.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(forecast.getScrollY() == 0));
 		loadWebView();
-
-		current = rootView.findViewById(R.id.current);
-		Common.setWebview(current);
-		current.setNestedScrollingEnabled(false);
-		current.setScrollContainer(true);
-
 		drawEverything();
 
 		return rootView;
@@ -88,6 +116,7 @@ public class Weather extends Fragment
 
 	void drawEverything()
 	{
+		String[] bits;
 		int iw = 17;
 
 		Common.LogMessage("drawEverything()");
@@ -95,7 +124,11 @@ public class Weather extends Fragment
 		File f2 = new File(Common.getFilesDir(), "/radar.gif");
 		long[] period = Common.getPeriod();
 
-		if(!Common.GetStringPref("RADAR_URL", "").isEmpty() && f2.lastModified() + period[0] < System.currentTimeMillis())
+		String radarURL = Common.GetStringPref("RADAR_URL", "");
+		if(radarURL == null)
+			return;
+
+		if(!radarURL.isEmpty() && f2.lastModified() + period[0] < System.currentTimeMillis())
 			reloadWebView(false);
 
 		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
@@ -103,33 +136,41 @@ public class Weather extends Fragment
 			reloadForecast(false);
 
 		Common.LogMessage("updateFields()");
-		String[] bits = Common.GetStringPref("LastDownload","").split("\\|");
-		if(bits.length < 65)
+		String lastDownload = Common.GetStringPref("LastDownload","");
+		if(lastDownload != null && !lastDownload.isEmpty())
+		{
+			bits = lastDownload.split("\\|");
+			if (bits.length < 65)
+				return;
+		} else
 			return;
 
-		checkFields(rootView.findViewById(R.id.textView), bits[56]);
-		checkFields(rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
+		checkFields(tv1, bits[56]);
+		checkFields(tv2, bits[54] + " " + bits[55]);
 
 		String stmp;
 		final StringBuilder sb = new StringBuilder();
 
 		sb.append(Common.current_html_headers);
-		sb.append("\n<table style='width:100%;border:0px;'>");
+		sb.append("<table style='width:100%;border:0px;'>");
 
 		stmp = "<tr><td style='font-size:36pt;text-align:right;'>" + bits[0] + bits[60] + "</td>";
 		if(bits.length > 203)
-			stmp += "<td style='font-size:18pt;text-align:right;vertical-align:bottom;'>AT: " + bits[203] + bits[60] +"</td></tr></table>";
+			stmp += "<td style='font-size:18pt;text-align:right;vertical-align:bottom;'>AT: " + bits[203] + bits[60] +"</td></tr></table>\n";
 		else
-			stmp += "<td>&nbsp</td></tr></table>";
+			stmp += "<td>&nbsp</td></tr></table>\n";
 		sb.append(stmp);
-		sb.append("\n<table style='width:100%;border:0px;'>");
+		sb.append("<table style='width:100%;border:0px;'>\n");
 
-		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-windy'></i></td><td>" + bits[25] + bits[61] + "</td>" +
-				"<td style='text-align:right;'>" + bits[37] + bits[63] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td></tr>";
+		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-windy'></i></td><td>" +
+				bits[25] + bits[61] + "</td>" + "<td style='text-align:right;'>" + bits[37] +
+				bits[63] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td></tr>\n";
 		sb.append(stmp);
 
-		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-wind wi-towards-" + bits[30].toLowerCase(Locale.ENGLISH) + "'></i></td><td>" + bits[30] + "</td>" +
-				"<td style='text-align:right;'>" + bits[6] + bits[64] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-humidity'></i></td></tr>";
+		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-wind wi-towards-" +
+				bits[30].toLowerCase(Locale.ENGLISH) + "'></i></td><td>" + bits[30] + "</td>" +
+				"<td style='text-align:right;'>" + bits[6] + bits[64] + "</td><td><i style='font-size:" + iw +
+				"px;' class='wi wi-humidity'></i></td></tr>\n";
 		sb.append(stmp);
 
 		String rain = bits[20] + bits[62] + " " + Common.getString(R.string.since) + " mn";
@@ -137,33 +178,36 @@ public class Weather extends Fragment
 			rain = bits[158] + bits[62] + " " + Common.getString(R.string.since) + " " + bits[160];
 
 		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td><td>" + rain + "</td>" +
-				"<td style='text-align:right;'>" + bits[12] + bits[60] + "</td><td><i style='font-size:" + round(iw * 1.4) + "px;' class='wi wi-raindrop'></i></td></tr>";
+				"<td style='text-align:right;'>" + bits[12] + bits[60] + "</td><td><i style='font-size:" +
+				round(iw * 1.4) + "px;' class='wi wi-raindrop'></i></td></tr>\n";
 		sb.append(stmp);
 
-		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" + bits[45] + "UVI</td>" +
-				"<td style='text-align:right;'>" + bits[43] + "W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>";
+		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" +
+				bits[45] + "UVI</td>" + "<td style='text-align:right;'>" + bits[43] +
+				"W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>\n";
 		sb.append(stmp);
 
 		if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
 		{
-			stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td><td>" + bits[161] + bits[60] + "</td>" +
-					"<td style='text-align:right;'>" + bits[166] + bits[64] + "</td><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>";
+			stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td><td>" +
+					bits[161] + bits[60] + "</td>" + "<td style='text-align:right;'>" + bits[166] + bits[64] +
+					"</td><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>\n";
 			sb.append(stmp);
 		}
 
-		stmp = "</table>";
+		stmp = "</table>\n";
 		sb.append(stmp);
 
-		sb.append("\n<table style='width:100%;border:0px;'>");
+		sb.append("<table style='width:100%;border:0px;'>");
 
 		stmp = "<tr>" +
 				"<td><i style='font-size:" + iw + "px;' class='wi wi-sunrise'></i></td><td>" + bits[57] + "</td>" +
 				"<td><i style='font-size:" + iw + "px;' class='wi wi-sunset'></i></td><td>" + bits[58] + "</td>" +
 				"<td><i style='font-size:" + iw + "px;' class='wi wi-moonrise'></i></td><td>" + bits[47] + "</td>" +
-				"<td><i style='font-size:" + iw + "px;' class='wi wi-moonset'></i></td><td>" + bits[48] + "</td></tr>";
+				"<td><i style='font-size:" + iw + "px;' class='wi wi-moonset'></i></td><td>" + bits[48] + "</td></tr>\n";
 		sb.append(stmp);
 
-		stmp = "</table>";
+		stmp = "</table>\n";
 		sb.append(stmp);
 
 		sb.append(Common.html_footer);
@@ -180,7 +224,8 @@ public class Weather extends Fragment
 			forecast.clearFormData();
 			forecast.clearHistory();
 			forecast.clearCache(true);
-			forecast.loadDataWithBaseURL("file:///android_res/drawable/", str, "text/html", "utf-8", null);
+			forecast.loadDataWithBaseURL("file:///android_res/drawable/", str,
+					"text/html", "utf-8", null);
 		});
 	}
 
@@ -194,7 +239,8 @@ public class Weather extends Fragment
 			current.clearFormData();
 			current.clearHistory();
 			current.clearCache(true);
-			current.loadDataWithBaseURL("file:///android_res/drawable/", str, "text/html", "utf-8", null);
+			current.loadDataWithBaseURL("file:///android_res/drawable/", str,
+					"text/html", "utf-8", null);
 		});
 	}
 
@@ -223,24 +269,38 @@ public class Weather extends Fragment
 
 			if(Common.GetBoolPref("radarforecast", true))
 			{
-				switch(Common.GetStringPref("radtype", "image"))
+				if(fll.getVisibility() != View.VISIBLE)
+					fll.post(() -> fll.setVisibility(View.VISIBLE));
+				updateSwipe();
+				String radtype = Common.GetStringPref("radtype", "image");
+				if(radtype == null)
+					return;
+
+				switch(radtype)
 				{
 					case "webpage" ->
 					{
 						String radar_url = Common.GetStringPref("RADAR_URL", "");
+						if(radar_url == null)
+							return;
+
 						Common.LogMessage("Loading RADAR_URL -> " + radar_url);
 						forecast.post(() -> forecast.loadUrl(radar_url));
 						return;
 					}
 					case "image" ->
 					{
+						String radarURL = Common.GetStringPref("RADAR_URL", "");
+						if(radarURL == null)
+							return;
+
 						String radar = Common.getFilesDir() + "/radar.gif";
 
 						File myFile = new File(radar);
 						Common.LogMessage("myFile == " + myFile.getAbsolutePath());
 						Common.LogMessage("myFile.exists() == " + myFile.exists());
 
-						if(!myFile.exists() || Common.GetStringPref("RADAR_URL", "").isEmpty())
+						if(!myFile.exists() || radarURL.isEmpty())
 						{
 							sb.append(Common.current_html_headers)
 									.append(getString(R.string.radar_url_not_set))
@@ -282,10 +342,16 @@ public class Weather extends Fragment
 
 				return;
 			} else {
+				if(fll.getVisibility() != View.GONE)
+					fll.post(() -> fll.setVisibility(View.GONE));
+				updateSwipe();
 				String fctype = Common.GetStringPref("fctype", "Yahoo");
+				if(fctype == null || fctype.isEmpty())
+					return;
+
 				String data = Common.GetStringPref("forecastData", "");
 
-				if(data.isEmpty())
+				if(data == null || data.isEmpty())
 				{
 					sb.append(Common.current_html_headers);
 					sb.append("Forecast URL not set or is still downloading. You can go to settings to change.");
@@ -601,7 +667,7 @@ public class Weather extends Fragment
 
 		final String forecast_url = Common.GetStringPref("FORECAST_URL", "");
 
-		if(forecast_url.isEmpty())
+		if(forecast_url == null || forecast_url.isEmpty())
 		{
 			final String html = Common.current_html_headers + "Forecast URL not set. Edit inigo-settings.txt to change." + Common.html_footer;
 			forceForecastRefresh(html);
@@ -615,9 +681,11 @@ public class Weather extends Fragment
 		{
 			try
 			{
+				String forecastData = Common.GetStringPref("forecastData", "");
+
 				long current_time = round(System.currentTimeMillis() / 1000.0);
 
-				if(Common.GetStringPref("forecastData", "").isEmpty() ||
+				if(forecastData == null || forecastData.isEmpty() ||
 						Common.GetLongPref("rssCheck", 0) + 7190 < current_time ||
 						force)
 				{
@@ -661,7 +729,7 @@ public class Weather extends Fragment
 		Common.LogMessage("reload radar...");
 		final String radar = Common.GetStringPref("RADAR_URL", "");
 
-		if(radar.isEmpty())
+		if(radar == null || radar.isEmpty())
 		{
 			loadWebView();
 			return;
@@ -669,14 +737,25 @@ public class Weather extends Fragment
 
 		Thread t = new Thread(() ->
 		{
+			if(fll.getVisibility() != View.VISIBLE)
+				fll.post(() -> fll.setVisibility(View.VISIBLE));
+			updateSwipe();
+
 			try
 			{
 				Common.LogMessage("starting to download image from: " + radar);
 				File f = Common.downloadRADAR(radar);
+				if(f == null || f.length() == 0)
+				{
+					Common.LogMessage("failed to download radar image");
+					stopRefreshing();
+					return;
+				}
+
 				Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
 				File f2 = new File(Common.getFilesDir(), "/radar.gif");
-				if(f.renameTo(f2))
-					stopRefreshing();
+				f.renameTo(f2);
+				stopRefreshing();
 			} catch (Exception e) {
 				Common.doStackOutput(e);
 			}
@@ -688,20 +767,43 @@ public class Weather extends Fragment
 	public void onResume()
 	{
 		super.onResume();
+
+		Common.LogMessage("Weather.onResume()", true);
+
+		if(isVisible)
+			return;
+
+		isVisible = true;
+
+		Common.LogMessage("Weather.onResume()-- adding notification manager...", true);
 		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
-		Common.LogMessage("weather.java -- adding a new filter");
+
+		Common.LogMessage("Weather.onResume() -- updating the value of the floating checkbox...", true);
+		disableSwipeOnRadar = Common.GetBoolPref("disableSwipeOnRadar", false);
+		floatingCheckBox.setChecked(disableSwipeOnRadar);
+		updateSwipe();
 	}
 
 	public void onPause()
 	{
 		super.onPause();
+
+		Common.LogMessage("Weather.onPause()", true);
+
+		if(!isVisible)
+			return;
+
+		isVisible = false;
+
 		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
-		Common.LogMessage("weather.java -- unregisterReceiver");
+		doPause();
+
+		Common.LogMessage("Weather.onPause()-- removing notification manager...", true);
 	}
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		Common.LogMessage("notificationObserver == " + str);
+		Common.LogMessage("notificationObserver == " + str, true);
 
 		if(str.equals(Common.UPDATE_INTENT) || str.equals(Common.REFRESH_INTENT))
 		{
@@ -713,4 +815,48 @@ public class Weather extends Fragment
 		if(str.equals(Common.EXIT_INTENT))
 			onPause();
 	};
+
+	void doPause()
+	{
+		if(disabledSwipe)
+		{
+			disabledSwipe = false;
+			Common.LogMessage("Enabling swipe between screens...", true);
+			activity.setUserInputPager(true);
+		}
+	}
+
+	@SuppressWarnings("ConstantConditions")
+	void updateSwipe()
+	{
+		if(!isVisible)
+			return;
+
+		if((disabledSwipe && disableSwipeOnRadar) || (!disabledSwipe && !disableSwipeOnRadar))
+			return;
+
+		if(!disabledSwipe && disableSwipeOnRadar && fll.getVisibility() == View.VISIBLE)
+		{
+			disabledSwipe = true;
+			Common.LogMessage("Disabling swipe between screens...", true);
+			activity.setUserInputPager(false);
+			return;
+		}
+
+		if(disabledSwipe && !disableSwipeOnRadar)
+		{
+			disabledSwipe = false;
+			Common.LogMessage("Enabling swipe between screens...", true);
+			activity.setUserInputPager(true);
+		}
+	}
+
+	@Override
+	public void onClick(View view)
+	{
+		disableSwipeOnRadar = floatingCheckBox.isChecked();
+		Common.SetBoolPref("disableSwipeOnRadar", disableSwipeOnRadar);
+		updateSwipe();
+		Common.LogMessage("Forecast.onClick() finished...", true);
+	}
 }

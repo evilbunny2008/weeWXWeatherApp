@@ -7,11 +7,11 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-@SuppressWarnings("FieldCanBeLocal")
+@SuppressWarnings({"unused", "FieldCanBeLocal"})
 public class LessSensitiveViewPagerLayout extends FrameLayout
 {
 	private float startX, startY;
-	private final float SWIPE_SLOP = 50f; // Increase to make horizontal swipes harder
+	private float SWIPE_SLOP = 50f; // Increase to make horizontal swipes harder
 
 	public LessSensitiveViewPagerLayout(@NonNull Context context)
 	{
@@ -35,6 +35,8 @@ public class LessSensitiveViewPagerLayout extends FrameLayout
 				float dx = Math.abs(ev.getX() - startX);
 				float dy = Math.abs(ev.getY() - startY);
 
+				//Common.LogMessage("dx=" + dx + " dy=" + dy + " intercept=" + (dx > SWIPE_SLOP && dx > dy), true);
+
 				// Only intercept if it's a strong horizontal gesture
 				if (dx > SWIPE_SLOP && dx > dy)
 				{
@@ -47,5 +49,10 @@ public class LessSensitiveViewPagerLayout extends FrameLayout
 		}
 
 		return super.onInterceptTouchEvent(ev);
+	}
+
+	public void setSwipeSlop(float slop)
+	{
+		SWIPE_SLOP = slop;
 	}
 }

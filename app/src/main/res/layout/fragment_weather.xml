@@ -1,44 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+<LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:id="@+id/swipeToRefresh"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
 
-    <LinearLayout
-	    android:id="@+id/weather_ll"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+		android:id="@+id/swipeToRefresh"
+	    android:layout_width="match_parent"
+	    android:layout_height="300dp">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-	        android:text="My Place, My Country"
-            android:gravity="center"
-            android:textSize="28sp"
-	        tools:ignore="HardcodedText" />
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-	        android:text="Tue, 21 Oct 2025 21:25 EST"
-            android:gravity="center"
-	        android:textSize="18sp"
-	        tools:ignore="HardcodedText" />
+	        <com.google.android.material.textview.MaterialTextView
+	            android:id="@+id/textView"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+		        android:text="My Place, My Country"
+	            android:gravity="center"
+	            android:textSize="28sp"
+		        tools:ignore="HardcodedText" />
 
-        <WebView
-            android:id="@+id/current"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+	        <com.google.android.material.textview.MaterialTextView
+	            android:id="@+id/textView2"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+		        android:text="Tue, 21 Oct 2025 21:25 EST"
+	            android:gravity="center"
+		        android:textSize="18sp"
+		        tools:ignore="HardcodedText" />
 
-        <WebView
-            android:id="@+id/forecast"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-	        android:layout_weight="1" />
-    </LinearLayout>
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+		    <WebView
+			    android:id="@+id/current"
+			    android:layout_width="match_parent"
+			    android:layout_height="match_parent"
+			    android:overScrollMode="never" />
+		</LinearLayout>
+	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+	<FrameLayout
+		android:id="@+id/forecastFrameLayout"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
+
+		<WebView
+			android:id="@+id/forecast"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:overScrollMode="never" />
+
+		<LinearLayout
+			android:id="@+id/floating_linear_layout"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|end"
+			android:layout_marginEnd="15dp"
+			android:layout_marginBottom="110dp"
+			android:visibility="gone">
+
+			<!-- Floating checkbox -->
+			<com.google.android.material.checkbox.MaterialCheckBox
+				android:id="@+id/floatingCheckBoxMain"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:checked="true"
+				android:text="@string/swipe_lock"
+				android:textColor="#FF000000"
+				android:background="#AA82B1FF"
+				tools:ignore="RtlSymmetry,VisualLintBounds" />
+		</LinearLayout>
+	</FrameLayout>
+</LinearLayout>

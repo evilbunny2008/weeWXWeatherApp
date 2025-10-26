@@ -12,6 +12,10 @@ class KeyValue
 	static int fgColour;
 	static int UpdateFrequency;
 
+	final static int forecast = 1;
+	final static int radar = 2;
+	final static int rotated = 3;
+
 	final static Map<Integer, Integer> widgetMinHeight = new HashMap<>();
 	final static Map<Integer, Integer> widgetMinWidth = new HashMap<>();
 	final static Map<Integer, Integer> widgetMaxHeight = new HashMap<>();

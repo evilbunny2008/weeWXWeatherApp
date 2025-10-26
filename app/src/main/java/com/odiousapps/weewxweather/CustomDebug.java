@@ -1,5 +1,6 @@
 package com.odiousapps.weewxweather;
 
+import android.content.Context;
 import android.os.Environment;
 
 import java.io.File;
@@ -13,7 +14,11 @@ class CustomDebug
 {
 	static void writeDebug(String text)
 	{
-		String fn = Common.getContext().getApplicationInfo().loadLabel(weeWXApp.getInstance().getPackageManager()) + ".txt";
+		Context context = weeWXApp.getInstance();
+		if(context == null)
+			return;
+
+		String fn = context.getApplicationInfo().loadLabel(weeWXApp.getInstance().getPackageManager()) + ".txt";
 	}
 
 	static void writeDebug(String filename, String text)

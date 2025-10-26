@@ -3,7 +3,6 @@ package com.odiousapps.weewxweather;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
 import android.os.Bundle;
@@ -74,6 +73,7 @@ public class MainActivity extends FragmentActivity
 	private AutoCompleteTextView s1;
 	private AutoCompleteTextView s2;
 	private MaterialSwitch show_indoor, metric_forecasts;
+	private static ViewPager2 mViewPager;
 
 	private AlertDialog dialog;
 
@@ -152,7 +152,7 @@ public class MainActivity extends FragmentActivity
 
 		tabLayout = findViewById(R.id.tabs);
 
-		ViewPager2 mViewPager = findViewById(R.id.container);
+		mViewPager = findViewById(R.id.container);
 		mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
 		mSectionsPagerAdapter.addFragment(new Weather());
 		mSectionsPagerAdapter.addFragment(new Stats());
@@ -191,7 +191,8 @@ public class MainActivity extends FragmentActivity
 
 		try
 		{
-			if(Common.GetStringPref("BASE_URL", "").isEmpty())
+			String baseURL = Common.GetStringPref("BASE_URL", "");
+			if(baseURL == null || baseURL.isEmpty())
 				mDrawerLayout.openDrawer(GravityCompat.START);
 		} catch (Exception e) {
 			Common.doStackOutput(e);
@@ -341,13 +342,43 @@ public class MainActivity extends FragmentActivity
 		Common.setAlarm("MainActivity.onCreate() has finished...");
 	}
 
+	void closeKeyboard()
+	{
+		View focus = getCurrentFocus();
+		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+		closeKeyboard(focus, imm);
+	}
+
+	void closeKeyboard(View focus, InputMethodManager imm)
+	{
+		if(focus != null && imm != null && imm.isAcceptingText())
+		{
+			Common.LogMessage("Let's hide the on screen keyboard...");
+
+			imm.hideSoftInputFromWindow(focus.getWindowToken(), 0);
+			focus.postDelayed(focus::clearFocus, 100);
+		}
+	}
+
+	void closeDrawer()
+	{
+		if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
+		{
+			Common.LogMessage("Let's shut the drawer...");
+			mDrawerLayout.closeDrawer(GravityCompat.START);
+		}
+	}
+
 	private void resetActivity()
 	{
 		Common.LogMessage("Resetting mSectionsPagerAdapter");
 		((weeWXApp)getApplication()).applyTheme();
-		Intent intent = getIntent();
-		finish();
-		startActivity(intent);
+		closeKeyboard();
+		closeDrawer();
+		this.recreate();
+		//Intent intent = getIntent();
+		//finish();
+		//startActivity(intent);
 	}
 
 	private void showUpdateAvailable()
@@ -402,6 +433,7 @@ public class MainActivity extends FragmentActivity
 	{
 		Thread t = new Thread(() ->
 		{
+			String tmpStr;
 			boolean validURL = false;
 			boolean validURL1 = false;
 			boolean validURL2 = false;
@@ -747,7 +779,12 @@ public class MainActivity extends FragmentActivity
 						{
 							metierev = "https://prodapi.metweb.ie/location/reverse/" + forecast.replaceAll(",", "/");
 							forecast = "https://prodapi.metweb.ie/weather/daily/" + forecast.replaceAll(",", "/") + "/10";
-							if(Common.GetStringPref("metierev", "").isEmpty() || !forecast.equals(oldforecast))
+
+							tmpStr = Common.GetStringPref("metierev", "");
+							if(tmpStr == null)
+								return;
+
+							if(tmpStr.isEmpty() || !forecast.equals(oldforecast))
 							{
 								metierev = Common.downloadForecast(fctype, metierev, null);
 								JSONObject jobj = new JSONObject(metierev);
@@ -803,7 +840,7 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			if (!forecast.isEmpty() && !oldforecast.equals(forecast))
+			if(!forecast.isEmpty() && oldforecast != null && !oldforecast.equals(forecast))
 			{
 				Common.LogMessage("forecast checking: " + forecast);
 
@@ -1004,11 +1041,10 @@ public class MainActivity extends FragmentActivity
 			if(focus != null && imm != null && imm.isAcceptingText())
 			{
 				Common.LogMessage("Let's hide the on screen keyboard...");
-				imm.hideSoftInputFromWindow(focus.getWindowToken(), 0);
-				focus.postDelayed(focus::clearFocus, 100);
+				closeKeyboard(focus, imm);
 			} else if(mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
 				Common.LogMessage("Let's shut the draw...");
-				mDrawerLayout.closeDrawer(GravityCompat.START);
+				closeDrawer();
 			} else {
 				Common.LogMessage("Let's finish up...");
 				setEnabled(false);
@@ -1063,6 +1099,20 @@ public class MainActivity extends FragmentActivity
 					}).show());
 		}
 	};
+
+	public boolean isViewPagerNull()
+	{
+		return mViewPager == null;
+	}
+
+	public void setUserInputPager(boolean b)
+	{
+		Common.LogMessage("MainActivity.setUserInputPager()",true);
+		if(isViewPagerNull())
+			return;
+
+		mViewPager.post(() -> mViewPager.setUserInputEnabled(b));
+	}
 
 	static class SectionsStateAdapter extends FragmentStateAdapter
 	{
