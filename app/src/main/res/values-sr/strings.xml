@@ -27,8 +27,6 @@
     <string name="bgColour">Бирач боја позадине виџета</string>
     <string name="indoor_readings">Схов Индоор Реадингс?</string>
     <string name="update_over_wifi">Ажурирати само преко Ви-Фи-ја?</string>
-    <string name="app_theme">Тема апликације?</string>
-    <string name="use_icons">Прикажи иконе?</string>
     <string name="this_months_stats">Статистика овог месеца</string>
     <string name="this_year_stats">Овогодишња статистика</string>
     <string name="all_time_stats">Статистика свих времена</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">УРЛ радара није подешен или се још увек преузима. Можете да одете у подешавања да промените</string>
     <string name="wasnt_able_to_connect_or_download">Нисам могао да се повежем или преузмем прогнозу</string>
     <string name="swipe_lock">Превуците закључавање</string>
+    <string name="widget_theme">Видгет Тхеме</string>
+    <string name="match_app">Матцх Апп</string>
+    <string name="custom_setting">Цустом Цолорс</string>
+    <string name="app_theme">Апп Тхеме</string>
+    <string name="use_icons">Прикажи иконе</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">Rangi mar Yach mar Loch mar Piny</string>
     <string name="indoor_readings">Nyiso Gik ma Isomogo Gik Moko?</string>
     <string name="update_over_wifi">&lt;2Zepa&gt; To mana kuom wifi?</string>
-    <string name="app_theme">Apmeme?</string>
-    <string name="use_icons">Be inyiso nyiso ni in gi ng\'eyo?</string>
     <string name="this_months_stats">Dwe mar Dwe ni</string>
     <string name="this_year_stats">Kwan mar Higa ni</string>
     <string name="all_time_stats">Namba duto mag Saa</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL mar radar ok oket kata pod oting\'o gik moko. Inyalo dhi e chenro mondo ilok</string>
     <string name="wasnt_able_to_connect_or_download">Ne ok anyal tudruok kata ng\'ado paro ma ne oket</string>
     <string name="swipe_lock">Rito Loch mar Sowi</string>
+    <string name="widget_theme">Thuolo mar dhao</string>
+    <string name="match_app">App mar kwan</string>
+    <string name="custom_setting">Rangi mag kidienje</string>
+    <string name="app_theme">Apom mapiyo</string>
+    <string name="use_icons">Nyis Fweny</string>
 </resources>

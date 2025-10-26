@@ -27,8 +27,6 @@
     <string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
     <string name="indoor_readings">इण्डोर रीडिंग दिखाएँ?</string>
     <string name="update_over_wifi">केवलं WiFi इत्यस्य उपरि अद्यतनं कुर्वन्तु?</string>
-    <string name="app_theme">एप् विषयः?</string>
-    <string name="use_icons">चिह्नानि दर्शयन्ति वा?</string>
     <string name="this_months_stats">अस्य मासस्य सांख्यिकी</string>
     <string name="this_year_stats">अस्मिन् वर्षे सांख्यिकी</string>
     <string name="all_time_stats">सर्वकालिक सांख्यिकी</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL सेट् न करोति वा अद्यापि डाउनलोड् करोति। परिवर्तनार्थं भवान् सेटिङ्ग्स् मध्ये गन्तुं शक्नोति ।</string>
     <string name="wasnt_able_to_connect_or_download">पूर्वानुमानं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान्।</string>
     <string name="swipe_lock">स्वाइप लॉक 1</string>
+    <string name="widget_theme">विजेट विषय 1</string>
+    <string name="match_app">app app 1</string>
+    <string name="custom_setting">कस्टम रंग 1</string>
+    <string name="app_theme">एप् विषयवस्तु</string>
+    <string name="use_icons">आइकन दिखाएँ</string>
 </resources>

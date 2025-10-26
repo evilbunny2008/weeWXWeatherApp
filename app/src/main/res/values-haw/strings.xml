@@ -27,8 +27,6 @@
     <string name="bgColour">ʻO ke kāʻei kelepona helu kelepona</string>
     <string name="indoor_readings">Hōʻike i nā heluhelu indor?</string>
     <string name="update_over_wifi">Hou wale no wifi?</string>
-    <string name="app_theme">Kumuhana?</string>
-    <string name="use_icons">Hōʻike i nā kiʻi?</string>
     <string name="this_months_stats">ʻO nā helu helu o kēia mahina</string>
     <string name="this_year_stats">ʻO nā helu helu o kēia makahiki</string>
     <string name="all_time_stats">Nā helu helu āpau</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">ʻO Radar URLʻaʻole i hoʻonohonoho a iʻole e hoʻoiho ana. Hiki iāʻoe ke hele i nā hoʻonohonoho e hoʻololi</string>
     <string name="wasnt_able_to_connect_or_download">ʻAʻole hiki ke hoʻopili a hoʻoiho i ka wānana</string>
     <string name="swipe_lock">Laki laka</string>
+    <string name="widget_theme">Kumuhana kumuhana</string>
+    <string name="match_app">Match app</string>
+    <string name="custom_setting">Kino kala</string>
+    <string name="app_theme">KAMEHI</string>
+    <string name="use_icons">Hōʻike i nā kiʻi</string>
 </resources>

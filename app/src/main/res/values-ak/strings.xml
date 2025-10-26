@@ -27,8 +27,6 @@
     <string name="bgColour">widget akyi kɔla picker</string>
     <string name="indoor_readings">Kyerɛ akenkan a ɛwɔ dan mu?</string>
     <string name="update_over_wifi">Update nkutoo na ɛwɔ WiFi so?</string>
-    <string name="app_theme">App asɛmti?</string>
-    <string name="use_icons">Kyerɛ icons?</string>
     <string name="this_months_stats">Ɔsram yi akontaabu</string>
     <string name="this_year_stats">Afe yi akontaabu</string>
     <string name="all_time_stats">Bere akontaabu nyinaa</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL no nyɛ nea wɔde asi hɔ anaasɛ ɛda so ara twetwe. Wubetumi akɔ nhyehyɛe ahorow mu akɔsesa</string>
     <string name="wasnt_able_to_connect_or_download">Na ontumi nkɔka anaasɛ ɔntwe nkɔmhyɛ no</string>
     <string name="swipe_lock">Swipe lock</string>
+    <string name="widget_theme">widget asɛmti</string>
+    <string name="match_app">Match app</string>
+    <string name="custom_setting">Nneɛma a Wɔde Yɛ Nneɛma a Wɔahyɛ Da Ayɛ</string>
+    <string name="app_theme">App asɛmti</string>
+    <string name="use_icons">Kyerɛ ahyɛnsode ahorow</string>
 </resources>

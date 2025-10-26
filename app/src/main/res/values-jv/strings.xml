@@ -27,9 +27,7 @@
     <string name="bgColour">Widget Warna Widget Picker</string>
     <string name="indoor_readings">Tampilake wacan njero ruangan?</string>
     <string name="update_over_wifi">Mung nganyari liwat WiFi?</string>
-    <string name="app_theme">Tema App?</string>
-    <string name="use_icons">Tampilake lambang?</string>
-    <string name="this_months_stats">Statistik wulan iki</string>
+	<string name="this_months_stats">Statistik wulan iki</string>
     <string name="this_year_stats">Statistik taun iki</string>
     <string name="all_time_stats">Kabeh Statistik Wektu</string>
     <string name="since">Wiwit</string>

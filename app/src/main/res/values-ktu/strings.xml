@@ -27,8 +27,6 @@
     <string name="bgColour">Widgeur de la Cuvers</string>
     <string name="indoor_readings">Songa Balutangu ya Kati?</string>
     <string name="update_over_wifi">Kaka kutula na zulu ya wifi?</string>
-    <string name="app_theme">Ntu-Diambu ya App?</string>
-    <string name="use_icons">Monisa Bifwanisu?</string>
     <string name="this_months_stats">Bantalu ya Ngonda yai</string>
     <string name="this_year_stats">Bantalu ya Mvula yai</string>
     <string name="all_time_stats">Bantalu yonso</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL me tulama ve to yandi ke baka kaka. Nge lenda kwenda na baparametre sambu na kusoba</string>
     <string name="wasnt_able_to_connect_or_download">Yandi lendaka ve kukangama to kubaka mambu yina bo vandaka kuyindula</string>
     <string name="swipe_lock">Kusukula Nsinga</string>
+    <string name="widget_theme">Ntu-Diambu ya Widgent</string>
+    <string name="match_app">App ya kufwanana</string>
+    <string name="custom_setting">Ba couleur ya kuyidika</string>
+    <string name="app_theme">Ntu-Diambu ya App</string>
+    <string name="use_icons">Monisa Bifwanisu</string>
 </resources>

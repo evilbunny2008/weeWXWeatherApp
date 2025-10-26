@@ -27,8 +27,6 @@
     <string name="bgColour">O Picker pe widget Color</string>
     <string name="indoor_readings">Show Indoor Lekhlimata?</string>
     <string name="update_over_wifi">Numaj o aktualizacia pe wifi?</string>
-    <string name="app_theme">App tema?</string>
-    <string name="use_icons">Sikaven Ikoni?</string>
     <string name="this_months_stats">Kado shonsko Statistika</string>
     <string name="this_year_stats">Kado bersh si e statistika</string>
     <string name="all_time_stats">Sa e statistike vash e vrama</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL na si shutino vaj si inke tele tele. Tu shaj zhas ande settingura te paruves</string>
     <string name="wasnt_able_to_connect_or_download">Nashti te konektirinelpe vaj te lav tele e prognoza</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Tema widget tema</string>
+    <string name="match_app">App App</string>
+    <string name="custom_setting">Kolovură and-o śero</string>
+    <string name="app_theme">App tema</string>
+    <string name="use_icons">Sikaven ikoni</string>
 </resources>

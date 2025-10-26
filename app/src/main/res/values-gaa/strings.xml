@@ -27,8 +27,6 @@
     <string name="bgColour">Kɔɔyɔɔ ni yɔɔ sɛɛgbɛ Su Picker</string>
     <string name="indoor_readings">Nyɛjiea Nyɛhe ni Wɔkaneɔ yɛ shĩa lɛ mli?</string>
     <string name="update_over_wifi">wifi tsakemɔ pɛ?</string>
-    <string name="app_theme">App Yitso?</string>
-    <string name="use_icons">Tsɔɔmɔ Icons?</string>
     <string name="this_months_stats">Nyɔji nɛɛ akɔntaabuu</string>
     <string name="this_year_stats">Afi nɛɛ akɔntaabuu</string>
     <string name="all_time_stats">Be he akɔntaabuu fɛɛ</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL jeee loo eejie lolo. Obaanyɛ oya settings koni otsake</string>
     <string name="wasnt_able_to_connect_or_download">Enyɛɛɛ ekɛ nɔ ni atsɔɔ mli lɛ abɔ he loo okɛwo nɔ</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Wiji saneyitso</string>
+    <string name="match_app">Teemɔ app</string>
+    <string name="custom_setting">Kusum sui</string>
+    <string name="app_theme">app Yitso</string>
+    <string name="use_icons">Tsɔɔmɔ Icons</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">Widget རྒྱབ་ལྗོངས་ཚོས་གཞི།</string>
     <string name="indoor_readings">ནང་ན་ལྷག་ནི་ཚུ་སྟོན?</string>
     <string name="update_over_wifi">ཝའི་ཕའི་ཐོག་ལས་རྐྱངམ་ཅིག་དུས་མཐུན་བཟོ་ནི་ཨིན་ན?</string>
-    <string name="app_theme">App Theme?</string>
-    <string name="use_icons">ངོས་དཔར་སྟོན་ག?</string>
     <string name="this_months_stats">འདི་ཟླཝ་གི་རྩིས་ཞིབ་ཀྱི་ཨིན།</string>
     <string name="this_year_stats">ལོ་འདིའི་རྩིས་དཔྱད།</string>
     <string name="all_time_stats">དུས་ཚོད་ཀྱི་རྩིས་དཔྱད་ཆ་མཉམ།</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">རེ་ཌར་ཡུ་ཨར་ཨེལ་འདི་གཞི་སྒྲིག་མ་འབདཝ་མ་ཚད་ ད་ལྟོ་ཡང་ཕབ་ལེན་འབད་དོ་ཡོདཔ་ཨིན། ཁྱོད་ཀྱིས་ སྒྲིག་སྟངས་ཚུ་བསྒྱུར་བཅོས་འབད་ནི་ལུ་འགྱོ་ཚུགས།</string>
     <string name="wasnt_able_to_connect_or_download">མཐུད་མ་ཚུགསཔ་ཡང་ན་ སྔོན་བཤད་ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="swipe_lock">ལྡེ་མིག་བཤུད་འབད།</string>
+    <string name="widget_theme">ཝིཌི་གེཊ་བརྗོད་དོན་།</string>
+    <string name="match_app">མཐུན་འགྲན་ App</string>
+    <string name="custom_setting">སྲོལ་སྒྲིག་ཚོས་གཞི་ཚུ།</string>
+    <string name="app_theme">App བརྗོད་གཞི།</string>
+    <string name="use_icons">ངོས་དཔར་སྟོན།</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">විජට් පසුබිම් වර්ණ තේරීම</string>
     <string name="indoor_readings">ගෘහස්ථ කියවීම් පෙන්වන්නද?</string>
     <string name="update_over_wifi">wifi හරහා පමණක් යාවත්කාලීන කරන්නද?</string>
-    <string name="app_theme">යෙදුම් තේමාව?</string>
-    <string name="use_icons">අයිකන පෙන්වන්නද?</string>
     <string name="this_months_stats">මෙම මාසයේ සංඛ්යා ලේඛන</string>
     <string name="this_year_stats">මෙම වසරේ සංඛ්යා ලේඛන</string>
     <string name="all_time_stats">සර්වකාලීන සංඛ්‍යාලේඛන</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">රේඩාර් URL සකසා නැත හෝ තවමත් බාගත වෙමින් පවතී. ඔබට වෙනස් කිරීමට සැකසීම් වෙත යා හැක</string>
     <string name="wasnt_able_to_connect_or_download">අනාවැකිය සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
     <string name="swipe_lock">ස්වයිප් අගුල</string>
+    <string name="widget_theme">විජට් තේමාව</string>
+    <string name="match_app">ගැලපෙන යෙදුම</string>
+    <string name="custom_setting">අභිරුචි වර්ණ</string>
+    <string name="app_theme">යෙදුම් තේමාව</string>
+    <string name="use_icons">අයිකන පෙන්වන්න</string>
 </resources>

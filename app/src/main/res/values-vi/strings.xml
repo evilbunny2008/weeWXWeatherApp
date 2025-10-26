@@ -27,8 +27,6 @@
     <string name="bgColour">Bộ chọn màu nền của widget</string>
     <string name="indoor_readings">Hiển thị bài đọc trong nhà?</string>
     <string name="update_over_wifi">Chỉ cập nhật qua wifi?</string>
-    <string name="app_theme">Chủ đề ứng dụng?</string>
-    <string name="use_icons">Hiển thị biểu tượng?</string>
     <string name="this_months_stats">Thống kê của tháng này</string>
     <string name="this_year_stats">Thống kê năm nay</string>
     <string name="all_time_stats">Thống kê mọi thời đại</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL radar chưa được đặt hoặc vẫn đang tải xuống. Bạn có thể vào cài đặt để thay đổi</string>
     <string name="wasnt_able_to_connect_or_download">Không thể kết nối hoặc tải xuống dự báo</string>
     <string name="swipe_lock">Khóa vuốt</string>
+    <string name="widget_theme">Chủ đề tiện ích</string>
+    <string name="match_app">Ứng dụng phù hợp</string>
+    <string name="custom_setting">Màu tùy chỉnh</string>
+    <string name="app_theme">Chủ đề ứng dụng</string>
+    <string name="use_icons">Hiển thị biểu tượng</string>
 </resources>

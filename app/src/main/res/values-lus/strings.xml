@@ -27,8 +27,6 @@
     <string name="bgColour">widget background rawng chi hrang hrang a awm bawk</string>
     <string name="indoor_readings">Indoor readings entir?</string>
     <string name="update_over_wifi">WiFi hmanga update chauh a ni em?</string>
-    <string name="app_theme">App theme a ni em?</string>
-    <string name="use_icons">Icons te hi entir rawh?</string>
     <string name="this_months_stats">Tun thla chhunga statistics</string>
     <string name="this_year_stats">Kumin a statistics</string>
     <string name="all_time_stats">Hun zawng zawng Statistics</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">radar url set a ni lo emaw a la download reng bawk. Settings ah kal in thlak theih a ni</string>
     <string name="wasnt_able_to_connect_or_download">Forecast chu a connect thei lo va, a download thei lo bawk</string>
     <string name="swipe_lock">Swipe lock a ni a, lock a ni</string>
+    <string name="widget_theme">widget theme</string>
+    <string name="match_app">Match app a ni a, app 100 a ni</string>
+    <string name="custom_setting">Custom rawng hrang hrang</string>
+    <string name="app_theme">App Theme 100 a ni</string>
+    <string name="use_icons">icons te chu entir rawh</string>
 </resources>

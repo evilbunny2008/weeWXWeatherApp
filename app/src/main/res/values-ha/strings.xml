@@ -27,8 +27,6 @@
     <string name="bgColour">Widget na Farko na Farko</string>
     <string name="indoor_readings">Nuna karatun cikin gida?</string>
     <string name="update_over_wifi">Kawai sabuntawa akan WIFI?</string>
-    <string name="app_theme">Takaddun app?</string>
-    <string name="use_icons">Nuna gumakan?</string>
     <string name="this_months_stats">Statisticdiddigar wannan watan</string>
     <string name="this_year_stats">Statisticsididdigar wannan shekara</string>
     <string name="all_time_stats">Duk Statime States</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL ba saita ko har yanzu zazzagewa ba. Kuna iya zuwa saiti don canzawa</string>
     <string name="wasnt_able_to_connect_or_download">Bai iya haɗi ba ko sauke hasashen</string>
     <string name="swipe_lock">Kulle swipe</string>
+    <string name="widget_theme">Taron Widget</string>
+    <string name="match_app">Dace da app</string>
+    <string name="custom_setting">Launuka masu al\'ada</string>
+    <string name="app_theme">Takardar App</string>
+    <string name="use_icons">Gumakan Nuna</string>
 </resources>

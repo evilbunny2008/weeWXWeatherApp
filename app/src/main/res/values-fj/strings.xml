@@ -27,8 +27,6 @@
     <string name="bgColour">Rai vakaveitaravi kei na colo ni Cocker Cocketr Pecker</string>
     <string name="indoor_readings">Vakaraitaka na Wiliwili ni Wiliwili?</string>
     <string name="update_over_wifi">Na vakavoui duadua ga vei ira na wifi?</string>
-    <string name="app_theme">App Theme?</string>
-    <string name="use_icons">Vakaraitaka na Ka I vakaraitaki?</string>
     <string name="this_months_stats">Na iTukutuku ni Vula oqo</string>
     <string name="this_year_stats">Na Siga ni Vula oqo</string>
     <string name="all_time_stats">Na Gaunataki</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Na Radar URL e sega ni tabaki se se lavetaka tiko. Sa rawa mo lako ki na ituvatuva mo veisau</string>
     <string name="wasnt_able_to_connect_or_download">Sa sega ni rawa me ra semata se lavetaka na itukutuku</string>
     <string name="swipe_lock">iyaloyalo</string>
+    <string name="widget_theme">Na Lako mai e</string>
+    <string name="match_app">Wilika na iVura</string>
+    <string name="custom_setting">Bibi sara</string>
+    <string name="app_theme">vakalawa e</string>
+    <string name="use_icons">Okena</string>
 </resources>

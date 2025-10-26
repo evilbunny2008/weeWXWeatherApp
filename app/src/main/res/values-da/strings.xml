@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Baggrundsfarvevælger</string>
     <string name="indoor_readings">Vis indendørs aflæsninger?</string>
     <string name="update_over_wifi">Kun opdatere over wifi?</string>
-    <string name="app_theme">App-tema?</string>
-    <string name="use_icons">Vis ikoner?</string>
     <string name="this_months_stats">Denne måneds statistik</string>
     <string name="this_year_stats">Årets statistik</string>
     <string name="all_time_stats">Alle tiders statistik</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar-URL ikke angivet eller downloades stadig. Du kan gå til indstillinger for at ændre</string>
     <string name="wasnt_able_to_connect_or_download">Kunne ikke oprette forbindelse eller downloade prognosen</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Widget-tema</string>
+    <string name="match_app">Match app</string>
+    <string name="custom_setting">Brugerdefinerede farver</string>
+    <string name="app_theme">App-tema</string>
+    <string name="use_icons">Vis ikoner</string>
 </resources>

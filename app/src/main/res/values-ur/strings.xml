@@ -27,8 +27,6 @@
     <string name="bgColour">ویجیٹ پس منظر کا رنگ چننے والا</string>
     <string name="indoor_readings">انڈور ریڈنگ دکھائیں؟</string>
     <string name="update_over_wifi">صرف وائی فائی پر اپ ڈیٹ؟</string>
-    <string name="app_theme">ایپ تھیم؟</string>
-    <string name="use_icons">شبیہیں دکھائیں؟</string>
     <string name="this_months_stats">اس مہینے کے اعدادوشمار</string>
     <string name="this_year_stats">اس سال کے اعدادوشمار</string>
     <string name="all_time_stats">ہر وقت کے اعدادوشمار</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">ریڈار یو آر ایل سیٹ نہیں ہے یا اب بھی ڈاؤن لوڈ کررہا ہے۔ آپ تبدیل کرنے کے لئے ترتیبات پر جاسکتے ہیں۔</string>
     <string name="wasnt_able_to_connect_or_download">پیشن گوئی سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا۔</string>
     <string name="swipe_lock">سوائپ لاک</string>
+    <string name="widget_theme">ویجیٹ تھیم</string>
+    <string name="match_app">میچ ایپ</string>
+    <string name="custom_setting">کسٹم رنگ</string>
+    <string name="app_theme">ایپ تھیم</string>
+    <string name="use_icons">شبیہیں دکھائیں</string>
 </resources>

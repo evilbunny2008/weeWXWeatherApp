@@ -27,8 +27,6 @@
     <string name="bgColour">Widget bakgrundsfärgväljare</string>
     <string name="indoor_readings">Visa avläsningar inomhus?</string>
     <string name="update_over_wifi">Uppdatera bara via wifi?</string>
-    <string name="app_theme">App-tema?</string>
-    <string name="use_icons">Visa ikoner?</string>
     <string name="this_months_stats">Månadens statistik</string>
     <string name="this_year_stats">Årets statistik</string>
     <string name="all_time_stats">All Time Statistics</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar-URL inte inställd eller laddas fortfarande ned. Du kan gå till inställningar för att ändra</string>
     <string name="wasnt_able_to_connect_or_download">Det gick inte att ansluta eller ladda ner prognosen</string>
     <string name="swipe_lock">Sveplås</string>
+    <string name="widget_theme">Widget-tema</string>
+    <string name="match_app">Match app</string>
+    <string name="custom_setting">Anpassade färger</string>
+    <string name="app_theme">App-tema</string>
+    <string name="use_icons">Visa ikoner</string>
 </resources>

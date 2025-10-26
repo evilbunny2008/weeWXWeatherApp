@@ -27,8 +27,6 @@
     <string name="bgColour">widget background nga kolor picker</string>
     <string name="indoor_readings">Ipakita dagiti panagbasa iti uneg ti balay?</string>
     <string name="update_over_wifi">update laeng babaen ti WiFi?</string>
-    <string name="app_theme">Tema ti App?</string>
-    <string name="use_icons">Ipakita dagiti ikono?</string>
     <string name="this_months_stats">Dagiti estadistika daytoy a bulan</string>
     <string name="this_year_stats">Dagiti estadistika ita a tawen</string>
     <string name="all_time_stats">Amin nga Estadistika ti Panawen</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL Saan a naiset wenno ag-download pay laeng. Mabalinmo ti mapan iti Settings tapno agbaliw</string>
     <string name="wasnt_able_to_connect_or_download">saan a nakakonekta wenno mai-download ti forecast</string>
     <string name="swipe_lock">I-swipe ti kandado</string>
+    <string name="widget_theme">Tema ti widget</string>
+    <string name="match_app">App ti Panagtunos</string>
+    <string name="custom_setting">Dagiti kostumbre a kolor</string>
+    <string name="app_theme">Tema ti App</string>
+    <string name="use_icons">Ipakita dagiti ikono</string>
 </resources>

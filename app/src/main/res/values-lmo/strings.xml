@@ -27,8 +27,6 @@
     <string name="bgColour">Godete la g\'ha anca el sistema de l\'aria</string>
     <string name="indoor_readings">Tegni-l in de l\'audienza?</string>
     <string name="update_over_wifi">Sultant i noster dati?</string>
-    <string name="app_theme">EL\'O?</string>
-    <string name="use_icons">Exemo?</string>
     <string name="this_months_stats">Chesta l\'è la politica</string>
     <string name="this_year_stats">Chestu l\'è el guverno</string>
     <string name="all_time_stats">Tüt i autur</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">El schermu l\'è minga el numer de la pagina 2….. Pœdet anca duperà el tò conto</string>
     <string name="wasnt_able_to_connect_or_download">L\'è minga facil per i utent de la scheda</string>
     <string name="swipe_lock">Lar</string>
+    <string name="widget_theme">\'el</string>
+    <string name="match_app">Sì</string>
+    <string name="custom_setting">Lar</string>
+    <string name="app_theme">Sì</string>
+    <string name="use_icons">Sent</string>
 </resources>

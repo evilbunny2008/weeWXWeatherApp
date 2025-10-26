@@ -27,8 +27,6 @@
     <string name="bgColour">Redget Photo ea \'mala oa motlakase</string>
     <string name="indoor_readings">Bontša ho bala ka hare?</string>
     <string name="update_over_wifi">Ntlafatsa feela WiFi?</string>
-    <string name="app_theme">Sehlooho sa APP?</string>
-    <string name="use_icons">Bontša Icons?</string>
     <string name="this_months_stats">Lipalopalo tsa khoeli ena</string>
     <string name="this_year_stats">Lipalopalo tsa selemo sena</string>
     <string name="all_time_stats">Liphatlalatso tsohle tsa nako</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Ratar url ha e behe kapa e ntse e jarolla. U ka ea litlhophiso ho fetoha</string>
     <string name="wasnt_able_to_connect_or_download">E ne e sa khone ho hokela kapa ho jarolla poloko</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Sehlooho sa Widget</string>
+    <string name="match_app">Match APP</string>
+    <string name="custom_setting">Mebala ea setso</string>
+    <string name="app_theme">Sehlooho sa app</string>
+    <string name="use_icons">Bontša Icons</string>
 </resources>

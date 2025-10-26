@@ -27,8 +27,6 @@
     <string name="bgColour">విడ్జెట్ బ్యాక్‌గ్రౌండ్ కలర్ పిక్కర్</string>
     <string name="indoor_readings">ఇండోర్ రీడింగ్‌లను చూపించాలా?</string>
     <string name="update_over_wifi">వైఫై ద్వారా మాత్రమే అప్‌డేట్ చేయాలా?</string>
-    <string name="app_theme">యాప్ థీమ్?</string>
-    <string name="use_icons">చిహ్నాలను చూపించాలా?</string>
     <string name="this_months_stats">ఈ నెల గణాంకాలు</string>
     <string name="this_year_stats">ఈ సంవత్సరం గణాంకాలు</string>
     <string name="all_time_stats">ఆల్ టైమ్ స్టాటిస్టిక్స్</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">రాడార్ URL సెట్ చేయబడలేదు లేదా డౌన్‌లోడ్ అవుతోంది. మీరు మార్చడానికి సెట్టింగ్‌లకు వెళ్లవచ్చు</string>
     <string name="wasnt_able_to_connect_or_download">సూచనను కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="swipe_lock">స్వైప్ లాక్</string>
+    <string name="widget_theme">విడ్జెట్ థీమ్</string>
+    <string name="match_app">అనువర్తనాన్ని సరిపోల్చండి</string>
+    <string name="custom_setting">అనుకూల రంగులు</string>
+    <string name="app_theme">యాప్ థీమ్</string>
+    <string name="use_icons">చిహ్నాలను చూపించు</string>
 </resources>

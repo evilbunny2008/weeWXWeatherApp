@@ -27,8 +27,6 @@
     <string name="bgColour">ווידזשיט הינטערגרונט קאָליר פּיקער</string>
     <string name="indoor_readings">ווייַזן דרינענדיק רידינגז?</string>
     <string name="update_over_wifi">נאָר דערהייַנטיקן איבער וויפי?</string>
-    <string name="app_theme">אַפּ טעמע?</string>
-    <string name="use_icons">ווייַזן ייקאַנז?</string>
     <string name="this_months_stats">דעם חודש ס סטאַטיסטיק</string>
     <string name="this_year_stats">דעם יאָר ס סטאַטיסטיק</string>
     <string name="all_time_stats">אַלע צייט סטאַטיסטיק</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">ראַדאַר URL איז נישט באַשטימט אָדער איז נאָך דאַונלאָודינג. איר קענט גיין צו סעטטינגס צו טוישן</string>
     <string name="wasnt_able_to_connect_or_download">קען נישט פאַרבינדן אָדער אראפקאפיע די פאָרויסזאָגן</string>
     <string name="swipe_lock">לאַקכענען לאַק</string>
+    <string name="widget_theme">ווידגעט טים</string>
+    <string name="match_app">גלייַכן אַפּ</string>
+    <string name="custom_setting">מנהג קאָלאָרס</string>
+    <string name="app_theme">אַפּ טעמע</string>
+    <string name="use_icons">ווייַזן יקאָנס</string>
 </resources>

@@ -61,8 +61,8 @@ public class WidgetProvider extends AppWidgetProvider
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
 		Common.LogMessage("RemoteViews built: " + views);
 
-		int bgColour = Common.GetIntPref("bgColour", Common.colours.widgetBG);
-		int fgColour = Common.GetIntPref("fgColour", Common.colours.widgetFG);
+		int bgColour = KeyValue.widgetBG;
+		int fgColour = KeyValue.widgetFG;
 
 		Common.LogMessage("fgColour = " + to_ARGB_hex(fgColour), true);
 		Common.LogMessage("bgColour = " + to_ARGB_hex(bgColour), true);

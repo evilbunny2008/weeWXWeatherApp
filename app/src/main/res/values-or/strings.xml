@@ -27,8 +27,6 @@
     <string name="bgColour">ୱିଜେଟ୍ ପୃଷ୍ଠଭୂମି ରଙ୍ଗ ପିକର୍ |</string>
     <string name="indoor_readings">ଇନଡୋର ପଠନ ଦେଖାନ୍ତୁ?</string>
     <string name="update_over_wifi">କେବଳ ୱାଇଫାଇ ଉପରେ ଅପଡେଟ୍?</string>
-    <string name="app_theme">ଆପ୍ ଥିମ୍?</string>
-    <string name="use_icons">ଆଇକନ୍ ଦେଖାନ୍ତୁ?</string>
     <string name="this_months_stats">ଏହି ମାସର ପରିସଂଖ୍ୟାନ |</string>
     <string name="this_year_stats">ଏହି ବର୍ଷର ପରିସଂଖ୍ୟାନ |</string>
     <string name="all_time_stats">ସମସ୍ତ ସମୟ ପରିସଂଖ୍ୟାନ |</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">ରାଡାର URL ସେଟ୍ ହୋଇନାହିଁ କିମ୍ବା ତଥାପି ଡାଉନଲୋଡ୍ କରୁଛି | ଆପଣ ପରିବର୍ତ୍ତନ କରିବାକୁ ସେଟିଂକୁ ଯାଇପାରିବେ |</string>
     <string name="wasnt_able_to_connect_or_download">ପୂର୍ବାନୁମାନକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="swipe_lock">ସ୍ୱାଇପ୍ ଲକ୍ |</string>
+    <string name="widget_theme">ୱିଜେଟ୍ ଥିମ୍ |</string>
+    <string name="match_app">ମ୍ୟାଚ୍ ଆପ୍ |</string>
+    <string name="custom_setting">କଷ୍ଟମ୍ ରଙ୍ଗ |</string>
+    <string name="app_theme">ଆପ୍ ଥିମ୍ |</string>
+    <string name="use_icons">ଆଇକନ୍ ଦେଖାନ୍ତୁ |</string>
 </resources>

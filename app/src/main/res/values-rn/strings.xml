@@ -27,8 +27,6 @@
     <string name="bgColour">Igisubizo c\'Ibara ry\'Ibara</string>
     <string name="indoor_readings">Erekana Ibisomwa vyo mu nzu?</string>
     <string name="update_over_wifi">Gusa n\'uwuhindura wifi?</string>
-    <string name="app_theme">App Insiguro?</string>
-    <string name="use_icons">Erekana Ikoni?</string>
     <string name="this_months_stats">Imibare y\'ukwezi kw\'ukwezi kwa mbere</string>
     <string name="this_year_stats">Imibare y\'umwaka</string>
     <string name="all_time_stats">Imibare yose y\'Igihe</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL ntiyishiraho canke iracariko irakura. Ushobora kuja mu ma settings kugira ngo uhindure</string>
     <string name="wasnt_able_to_connect_or_download">Ntiyashoboye guhuza canke gukuraho ivy\'imbere y\'igihe</string>
     <string name="swipe_lock">Gusuka</string>
+    <string name="widget_theme">Insiguro y\'Ingengo y\'Imari</string>
+    <string name="match_app">Guhuza App</string>
+    <string name="custom_setting">Amabara</string>
+    <string name="app_theme">Insiguro ya App</string>
+    <string name="use_icons">Ivyerekanwa</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">Motlhopi wa Mmala wa Lemorago la Widget</string>
     <string name="indoor_readings">Bontsha Dipuiso tsa ka Fa Kantlong?</string>
     <string name="update_over_wifi">Ke fela ntšhwafatso ka ga wifi?</string>
-    <string name="app_theme">Setlhogo sa Tiriswa?</string>
-    <string name="use_icons">Diaekhone tsa Pontsho?</string>
     <string name="this_months_stats">Dipalopalo tsa Kgwedi eno</string>
     <string name="this_year_stats">Dipalopalo tsa Ngwaga o</string>
     <string name="all_time_stats">Dipalopalo tsotlhe tsa Nako</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL ga e a seta kgotsa e sa ntse e laisolola. O ka ya kwa diseting go fetoga</string>
     <string name="wasnt_able_to_connect_or_download">O ne a sa kgone go golaganya kgotsa go laisolola ponelopele</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Setlhogo sa Morero wa Sediriswa</string>
+    <string name="match_app">Tshwantshanya Tiriswa</string>
+    <string name="custom_setting">Mebala e e Tlwaelegileng</string>
+    <string name="app_theme">Setlhogo sa Tiriswa</string>
+    <string name="use_icons">Diaekhone tsa Pontsho</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">Umzobo ongemva wewijethi</string>
     <string name="indoor_readings">Bonisa ukufundwa ngaphakathi?</string>
     <string name="update_over_wifi">Hlaziya kuphela ngaphezulu kwe-wifi?</string>
-    <string name="app_theme">Umxholo we-APP?</string>
-    <string name="use_icons">Bonisa ii-icons?</string>
     <string name="this_months_stats">Amanani eNyanga</string>
     <string name="this_year_stats">Amanani onyaka</string>
     <string name="all_time_stats">Onke amanani Amanani</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">I-URL ye-radar engaseti okanye isazikhuphela. Ungaya kwiisetingi ukutshintsha</string>
     <string name="wasnt_able_to_connect_or_download">Ayikwazanga ukuqhagamshela okanye ukhuphele uqikelelo</string>
     <string name="swipe_lock">I-Swipe Tock</string>
+    <string name="widget_theme">Umxholo we-Word</string>
+    <string name="match_app">Tshatisa usetyenziso</string>
+    <string name="custom_setting">Imibala yesiko</string>
+    <string name="app_theme">Umxholo we-APP</string>
+    <string name="use_icons">Bonisa ii-icon</string>
 </resources>

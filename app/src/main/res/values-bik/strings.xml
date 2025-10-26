@@ -27,8 +27,6 @@
     <string name="bgColour">Wedyt Likod sa Bukid sa Kolor sa Badoy</string>
     <string name="indoor_readings">Magpahiling nin mga Babasahon sa Laog?</string>
     <string name="update_over_wifi">Update lang sa wifi?</string>
-    <string name="app_theme">Tema sa App?</string>
-    <string name="use_icons">Palabas Icon?</string>
     <string name="this_months_stats">Ngonian na Bulan an Estadistika</string>
     <string name="this_year_stats">An Estadistika ngonyan na Taon</string>
     <string name="all_time_stats">Gabos na Estadistika sa Panahon</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">An URL kan Radar dai naka-set o nag-dodownload pa. Pwede kamong magduman sa mga setting na dapat baguhon</string>
     <string name="wasnt_able_to_connect_or_download">Dai nakakonekta o naka-download kan hula</string>
     <string name="swipe_lock">I-swipe an Lock</string>
+    <string name="widget_theme">Tema sa Widyet</string>
+    <string name="match_app">Tugma App App</string>
+    <string name="custom_setting">Mga Kolor sa Pasadya</string>
+    <string name="app_theme">Tema sa Apela</string>
+    <string name="use_icons">Ipahiling an mga Icon</string>
 </resources>

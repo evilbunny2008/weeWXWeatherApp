@@ -27,8 +27,6 @@
     <string name="bgColour">Ploša fona krāsa Pikers</string>
     <string name="indoor_readings">Paruodeit īkštelpu lasejumus?</string>
     <string name="update_over_wifi">Tikai atjaunuot par wifi?</string>
-    <string name="app_theme">App Tema?</string>
-    <string name="use_icons">Paruodeit ikonys?</string>
     <string name="this_months_stats">Itei mieneša statistika</string>
     <string name="this_year_stats">Itei goda statistika</string>
     <string name="all_time_stats">100 doc#1281 Vysa laika statistika</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL nav īlykts voi vēļ lejupluodej. Var īt iz īstatejumim, kab maineitūs</string>
     <string name="wasnt_able_to_connect_or_download">Nabeja prognoze, ni lejupluodēt, ni lejupluodēt</string>
     <string name="swipe_lock">Swipe Slēgšona</string>
+    <string name="widget_theme">Widget Tema</string>
+    <string name="match_app">100 doc#1159 Saskaņa</string>
+    <string name="custom_setting">Pīlāguotys kruosys</string>
+    <string name="app_theme">App tema</string>
+    <string name="use_icons">100 doc#1163</string>
 </resources>

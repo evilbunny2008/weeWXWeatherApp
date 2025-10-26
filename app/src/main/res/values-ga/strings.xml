@@ -27,8 +27,6 @@
     <string name="bgColour">Roghnóir Dath Cúlra Giuirléid</string>
     <string name="indoor_readings">Taispeáin Léamha Laistigh?</string>
     <string name="update_over_wifi">Nuashonrú thar wifi amháin?</string>
-    <string name="app_theme">Téama Aipe?</string>
-    <string name="use_icons">Taispeáin Deilbhíní?</string>
     <string name="this_months_stats">Staitisticí na Míosa seo</string>
     <string name="this_year_stats">Staitisticí na Bliana seo</string>
     <string name="all_time_stats">Staitisticí Gach Am</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Níl an URL Radar socraithe nó tá sé fós á íoslódáil. Is féidir leat dul go dtí socruithe a athrú</string>
     <string name="wasnt_able_to_connect_or_download">Níorbh fhéidir an réamhaisnéis a nascadh ná a íoslódáil</string>
     <string name="swipe_lock">Glais Swipe</string>
+    <string name="widget_theme">Téama Giuirléid</string>
+    <string name="match_app">App Match</string>
+    <string name="custom_setting">Dathanna an Chustaim</string>
+    <string name="app_theme">Téama App</string>
+    <string name="use_icons">Taispeáin Deilbhíní</string>
 </resources>

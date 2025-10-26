@@ -27,8 +27,6 @@
     <string name="bgColour">Widget agtergrondkleurkieser</string>
     <string name="indoor_readings">Wys binnenshuise lesings?</string>
     <string name="update_over_wifi">Dateer net op via wifi?</string>
-    <string name="app_theme">Programtema?</string>
-    <string name="use_icons">Wys ikone?</string>
     <string name="this_months_stats">Hierdie maand se statistieke</string>
     <string name="this_year_stats">Vanjaar se Statistiek</string>
     <string name="all_time_stats">Alle tye Statistiek</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar-URL nie gestel nie of is nog besig om af te laai. Jy kan na instellings gaan om te verander</string>
     <string name="wasnt_able_to_connect_or_download">Kon nie die voorspelling koppel of aflaai nie</string>
     <string name="swipe_lock">Swiep Lock</string>
+    <string name="widget_theme">Widget Tema</string>
+    <string name="match_app">Pas App</string>
+    <string name="custom_setting">Pasgemaakte kleure</string>
+    <string name="app_theme">App Tema</string>
+    <string name="use_icons">Wys ikone</string>
 </resources>

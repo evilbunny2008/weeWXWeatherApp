@@ -27,8 +27,6 @@
     <string name="bgColour">Pengingak warna latar</string>
     <string name="indoor_readings">Tampilkeun bacaan Indoor?</string>
     <string name="update_over_wifi">Ngan ukur update langkung wifi?</string>
-    <string name="app_theme">Téma App?</string>
-    <string name="use_icons">Tampilkeun ikon?</string>
     <string name="this_months_stats">Statistik bulan ieu</string>
     <string name="this_year_stats">Statistik taun ieu</string>
     <string name="all_time_stats">Sadaya Statistik Waktos</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL teu dipasang atanapi masih diunduh. Anjeun tiasa angkat kana setélan pikeun robih</string>
     <string name="wasnt_able_to_connect_or_download">Henteu tiasa nyambung atanapi unduh ramalan</string>
     <string name="swipe_lock">Konci konci</string>
+    <string name="widget_theme">Téma widget</string>
+    <string name="match_app">Patandingan aplikasi</string>
+    <string name="custom_setting">Warna adat</string>
+    <string name="app_theme">Téma aplikasi</string>
+    <string name="use_icons">Ikon</string>
 </resources>

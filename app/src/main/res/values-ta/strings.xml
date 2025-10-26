@@ -27,8 +27,6 @@
     <string name="bgColour">விட்ஜெட் பின்னணி வண்ணத் தேர்வி</string>
     <string name="indoor_readings">உட்புற வாசிப்புகளைக் காட்டவா?</string>
     <string name="update_over_wifi">வைஃபை மூலம் மட்டும் புதுப்பிக்கவா?</string>
-    <string name="app_theme">ஆப் தீம்?</string>
-    <string name="use_icons">ஐகான்களைக் காட்டவா?</string>
     <string name="this_months_stats">இந்த மாத புள்ளிவிவரங்கள்</string>
     <string name="this_year_stats">இந்த ஆண்டு புள்ளிவிவரங்கள்</string>
     <string name="all_time_stats">அனைத்து நேர புள்ளிவிவரங்கள்</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">ரேடார் URL அமைக்கப்படவில்லை அல்லது இன்னும் பதிவிறக்குகிறது. மாற்றுவதற்கு நீங்கள் அமைப்புகளுக்குச் செல்லலாம்</string>
     <string name="wasnt_able_to_connect_or_download">முன்னறிவிப்பை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="swipe_lock">ஸ்வைப் பூட்டு</string>
+    <string name="widget_theme">விட்ஜெட் தீம்</string>
+    <string name="match_app">பொருத்த ஆப்</string>
+    <string name="custom_setting">விருப்ப நிறங்கள்</string>
+    <string name="app_theme">பயன்பாட்டு தீம்</string>
+    <string name="use_icons">ஐகான்களைக் காட்டு</string>
 </resources>

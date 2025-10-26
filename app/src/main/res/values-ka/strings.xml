@@ -27,8 +27,6 @@
     <string name="bgColour">ვიჯეტის ფონის ფერის ამომრჩევი</string>
     <string name="indoor_readings">აჩვენო შიდა წაკითხვები?</string>
     <string name="update_over_wifi">განაახლეთ მხოლოდ wifi-ით?</string>
-    <string name="app_theme">აპის თემა?</string>
-    <string name="use_icons">ხატულების ჩვენება?</string>
     <string name="this_months_stats">ამ თვის სტატისტიკა</string>
     <string name="this_year_stats">წლევანდელი სტატისტიკა</string>
     <string name="all_time_stats">ყველა დროის სტატისტიკა</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">რადარის URL არ არის დაყენებული ან ჯერ კიდევ იტვირთება. შესაცვლელად შეგიძლიათ გადახვიდეთ პარამეტრებზე</string>
     <string name="wasnt_able_to_connect_or_download">პროგნოზის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="swipe_lock">გადაფურცლეთ ჩაკეტვა</string>
+    <string name="widget_theme">ვიჯეტის თემა</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">მორგებული ფერები</string>
+    <string name="app_theme">აპლიკაციის თემა</string>
+    <string name="use_icons">ხატების ჩვენება</string>
 </resources>

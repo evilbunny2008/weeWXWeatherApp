@@ -24,6 +24,8 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
+		Common.reload();
+		WidgetProvider.updateAppWidget();
 		Common.getWeather();
 		Common.getForecast();
 		Common.LogMessage("UpdateCheck.java finished.", true);

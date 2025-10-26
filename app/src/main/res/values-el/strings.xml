@@ -27,8 +27,6 @@
     <string name="bgColour">Επιλογέας χρώματος φόντου widget</string>
     <string name="indoor_readings">Εμφάνιση αναγνώσεων σε εσωτερικούς χώρους;</string>
     <string name="update_over_wifi">Ενημέρωση μόνο μέσω wifi;</string>
-    <string name="app_theme">Θέμα εφαρμογής;</string>
-    <string name="use_icons">Εμφάνιση εικονιδίων;</string>
     <string name="this_months_stats">Στατιστικά αυτού του μήνα</string>
     <string name="this_year_stats">Στατιστικά της φετινής χρονιάς</string>
     <string name="all_time_stats">Στατιστικά όλων των εποχών</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Η διεύθυνση URL ραντάρ δεν έχει οριστεί ή εξακολουθεί να γίνεται λήψη. Μπορείτε να μεταβείτε στις ρυθμίσεις για αλλαγή</string>
     <string name="wasnt_able_to_connect_or_download">Δεν ήταν δυνατή η σύνδεση ή η λήψη της πρόβλεψης</string>
     <string name="swipe_lock">Κλείδωμα ολίσθησης</string>
+    <string name="widget_theme">Θέμα widget</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Προσαρμοσμένα χρώματα</string>
+    <string name="app_theme">Θέμα εφαρμογής</string>
+    <string name="use_icons">Εμφάνιση εικονιδίων</string>
 </resources>

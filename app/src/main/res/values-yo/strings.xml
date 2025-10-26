@@ -27,8 +27,6 @@
     <string name="bgColour">Ẹrọ ailorukọ Ayanfẹ</string>
     <string name="indoor_readings">Ṣe afihan awọn kika sinu ile?</string>
     <string name="update_over_wifi">Imudojuiwọn nikan lori WiFi?</string>
-    <string name="app_theme">Akori app?</string>
-    <string name="use_icons">Fihan awọn aami?</string>
     <string name="this_months_stats">Awọn iṣiro oṣu yii</string>
     <string name="this_year_stats">Awọn iṣiro ọdun yii</string>
     <string name="all_time_stats">Gbogbo awọn iṣiro akoko</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL Redar ko ṣeto tabi tun n gbasilẹ. O le lọ si awọn eto lati yipada</string>
     <string name="wasnt_able_to_connect_or_download">Ko ni anfani lati sopọ tabi ṣe igbasilẹ asọtẹlẹ naa</string>
     <string name="swipe_lock">Ra titiipa</string>
+    <string name="widget_theme">Ẹrọ ẹrọ ẹrọ ailorukọ</string>
+    <string name="match_app">App</string>
+    <string name="custom_setting">Awọn awọ aṣa</string>
+    <string name="app_theme">Akori app</string>
+    <string name="use_icons">Fihan awọn aami</string>
 </resources>

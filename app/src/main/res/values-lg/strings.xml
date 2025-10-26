@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Background Langi Picker</string>
     <string name="indoor_readings">Laga ebisomeddwa mu nnyumba?</string>
     <string name="update_over_wifi">update yokka ku WiFi?</string>
-    <string name="app_theme">Omulamwa gwa App?</string>
-    <string name="use_icons">Laga ebifaananyi?</string>
     <string name="this_months_stats">Ebibalo by\'omwezi guno</string>
     <string name="this_year_stats">Ebibalo by\'omwaka guno</string>
     <string name="all_time_stats">Ebibalo by\'ebiseera byonna</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL teteekeddwa oba ekyawanula. Osobola okugenda mu settings okukyusa</string>
     <string name="wasnt_able_to_connect_or_download">Wasn\'t able okuyunga oba okuwanula forecast</string>
     <string name="swipe_lock">Swipe kkufulu</string>
+    <string name="widget_theme">Omulamwa gwa Widget</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Langi za custom</string>
+    <string name="app_theme">Omulamwa gwa App</string>
+    <string name="use_icons">Laga ebifaananyi</string>
 </resources>

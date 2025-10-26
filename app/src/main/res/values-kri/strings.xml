@@ -27,8 +27,6 @@
     <string name="bgColour">Widget bakgrunn color picker</string>
     <string name="indoor_readings">Sho indo ridin dɛn?</string>
     <string name="update_over_wifi">Na onli apdet ova WiFi?</string>
-    <string name="app_theme">APP TƐM?</string>
-    <string name="use_icons">Sho aykɔn dɛn?</string>
     <string name="this_months_stats">Dis mɔnt in statystiks</string>
     <string name="this_year_stats">Dis ia in statystiks</string>
     <string name="all_time_stats">Ɔl di tɛm statystik dɛn</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar url nɔ sɛt ɔ stil de dawnlod. Yu kin go na sɛtin dɛn fɔ chenj</string>
     <string name="wasnt_able_to_connect_or_download">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod di fɔkɔs</string>
     <string name="swipe_lock">Swip lok we yu de swip</string>
+    <string name="widget_theme">Di tim fɔ widget</string>
+    <string name="match_app">Match app fɔ mek yu mach</string>
+    <string name="custom_setting">Kastom Kɔlɔ dɛn</string>
+    <string name="app_theme">APP TƐM</string>
+    <string name="use_icons">Sho aykɔn dɛn</string>
 </resources>

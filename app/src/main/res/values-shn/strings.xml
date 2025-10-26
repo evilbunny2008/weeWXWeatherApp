@@ -27,8 +27,6 @@
     <string name="bgColour">သီၽၢႆႇလင်သီ ပိၵ်ႉၵႃႇ</string>
     <string name="indoor_readings">ၼႄလိၵ်ႈၼႂ်းႁွင်ႈႁႃႉ?</string>
     <string name="update_over_wifi">ႁဵတ်း Update ၼိူဝ် wifi ၵူၺ်းႁႃႉ?</string>
-    <string name="app_theme">App Theme?</string>
-    <string name="use_icons">ၸၢတ်ႈ Icons?</string>
     <string name="this_months_stats">သဵၼ်ႈမၢႆလိူၼ်ၼႆႉ</string>
     <string name="this_year_stats">သဵၼ်ႈမၢႆပီၼႆႉ</string>
     <string name="all_time_stats">သဵၼ်ႈမၢႆၶၢဝ်းယၢမ်းၵူႈလွင်ႈ</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL ဢမ်ႇလႆႈတမ်းဝၢင်း ဢမ်ႇၼၼ် တိုၵ်ႉလူင်းယူႇ။ ၵႂႃႇလႅၵ်ႈလႆၢႈၵေႃႈလႆႈ၊</string>
     <string name="wasnt_able_to_connect_or_download">ဢမ်ႇတၼ်းလႆႈ ၵွင်ႉ ဢမ်ႇၼၼ် လူင်းဢဝ် ၶၢဝ်ႇလၢမ်းၶၢတ်ႈ။</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">ၽူႈႁပ်ႉပၢၵ်ႇ</string>
+    <string name="match_app">App</string>
+    <string name="custom_setting">ၶိုတ်းၶၢၼ်း</string>
+    <string name="app_theme">App Theme</string>
+    <string name="use_icons">ၼႄ Icons</string>
 </resources>

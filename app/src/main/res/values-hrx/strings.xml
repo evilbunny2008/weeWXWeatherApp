@@ -27,8 +27,6 @@
     <string name="bgColour">Wurset Hintergrund Farbe Picker</string>
     <string name="indoor_readings">Tsaych ti Indoor Leese?</string>
     <string name="update_over_wifi">Ploos aktualisiirunge iwer wifi?</string>
-    <string name="app_theme">App Theema?</string>
-    <string name="use_icons">Tsaych Ikone?</string>
     <string name="this_months_stats">Tas Moonat fon tëm Moonat</string>
     <string name="this_year_stats">Tas yoer fon te Statistike</string>
     <string name="all_time_stats">Ti kans tsayt fon te tsayt</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL net in setse orer noch am download mache. Tuu khanst in ti instëlunge keen fer se ënere</string>
     <string name="wasnt_able_to_connect_or_download">Waar nët in kontitsioon fer ti prokramatsioon se ferklayche orer se download mache</string>
     <string name="swipe_lock">Xeen xlus</string>
+    <string name="widget_theme">Wedget Theema</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Kunde Farbe</string>
+    <string name="app_theme">App Theema</string>
+    <string name="use_icons">Tsaych Ikon</string>
 </resources>

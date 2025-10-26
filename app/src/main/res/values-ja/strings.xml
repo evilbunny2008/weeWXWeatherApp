@@ -27,8 +27,6 @@
     <string name="bgColour">ウィジェットの背景カラーピッカー</string>
     <string name="indoor_readings">屋内測定値を表示しますか?</string>
     <string name="update_over_wifi">Wi-Fi 経由でのみ更新しますか?</string>
-    <string name="app_theme">アプリのテーマ?</string>
-    <string name="use_icons">アイコンを表示しますか?</string>
     <string name="this_months_stats">今月の統計</string>
     <string name="this_year_stats">今年の統計</string>
     <string name="all_time_stats">すべての時間の統計</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">レーダー URL が設定されていないか、まだダウンロード中です。設定に移動して変更できます。</string>
     <string name="wasnt_able_to_connect_or_download">接続できなかった、または予測をダウンロードできませんでした。</string>
     <string name="swipe_lock">スワイプロック</string>
+    <string name="widget_theme">ウィジェットのテーマ</string>
+    <string name="match_app">マッチングアプリ</string>
+    <string name="custom_setting">カスタムカラー</string>
+    <string name="app_theme">アプリのテーマ</string>
+    <string name="use_icons">アイコンを表示</string>
 </resources>

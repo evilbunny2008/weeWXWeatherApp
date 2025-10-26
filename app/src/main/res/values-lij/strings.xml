@@ -27,8 +27,6 @@
     <string name="bgColour">Piccin de sfondo de widget Colore</string>
     <string name="indoor_readings">Mostra e Lettue de l\'Indoor?</string>
     <string name="update_over_wifi">Solo aggiornâ in sciô wifi?</string>
-    <string name="app_theme">App Tema?</string>
-    <string name="use_icons">Mostra i Icons?</string>
     <string name="this_months_stats">Statistica de sto Mesciâ</string>
     <string name="this_year_stats">Sto de l\'anno o l\'é de statistiche</string>
     <string name="all_time_stats">Tutistica de tutto o tempo</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">L\'URL Radar o no l\'é impostou ò o l\'é ancon o download. O peu anâ à de impostaçioin pe cangiâ</string>
     <string name="wasnt_able_to_connect_or_download">No l\'ea bon de connettise ò scaricâ a previxon</string>
     <string name="swipe_lock">Cavallaia de sciortia</string>
+    <string name="widget_theme">Tema de widget</string>
+    <string name="match_app">App astimma</string>
+    <string name="custom_setting">Colors personalizzæ</string>
+    <string name="app_theme">Aprime</string>
+    <string name="use_icons">Mostra Icons</string>
 </resources>

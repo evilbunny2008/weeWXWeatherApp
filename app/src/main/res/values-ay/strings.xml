@@ -27,8 +27,6 @@
     <string name="bgColour">Widget ukax mä color picker ukhamawa</string>
     <string name="indoor_readings">¿Uñt\'ayasiñ uñacht\'ayañati?</string>
     <string name="update_over_wifi">¿Wifi tuqit machaqar tukuyañakiti?</string>
-    <string name="app_theme">App ukax temati?</string>
-    <string name="use_icons">¿Iconos uñacht\'ayaña?</string>
     <string name="this_months_stats">Aka phaxsinx estadísticas ukanakaw utji</string>
     <string name="this_year_stats">Jichha marax estadísticas ukanakaw utji</string>
     <string name="all_time_stats">Taqi pacha Estadísticas ukanaka</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL radar ukax janiw utjkiti jan ukax wali apkatatawa. Mayjt\'ayañatakix configuración ukar sarañamawa</string>
     <string name="wasnt_able_to_connect_or_download">janiw conectar jan ukax pronóstico ukar apkatañjamäkänti</string>
     <string name="swipe_lock">Ukax mä swipe llawintatawa</string>
+    <string name="widget_theme">Widget ukax mä temawa</string>
+    <string name="match_app">Mä app</string>
+    <string name="custom_setting">Ukax mä juk\'a ch\'amanchatawa</string>
+    <string name="app_theme">App ukax tema ukawa</string>
+    <string name="use_icons">Uñacht\'ayaña icononaka</string>
 </resources>

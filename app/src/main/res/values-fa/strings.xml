@@ -27,8 +27,6 @@
     <string name="bgColour">انتخابگر رنگ پس زمینه ویجت</string>
     <string name="indoor_readings">نمایش خواندنی های داخل ساختمان؟</string>
     <string name="update_over_wifi">فقط از طریق وای فای آپدیت شود؟</string>
-    <string name="app_theme">تم برنامه؟</string>
-    <string name="use_icons">نمایش نمادها؟</string>
     <string name="this_months_stats">آمار این ماه</string>
     <string name="this_year_stats">آمار امسال</string>
     <string name="all_time_stats">آمار همه زمان ها</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL رادار تنظیم نشده است یا هنوز در حال دانلود است. برای تغییر می توانید به تنظیمات بروید</string>
     <string name="wasnt_able_to_connect_or_download">امکان اتصال یا دانلود پیش‌بینی وجود نداشت</string>
     <string name="swipe_lock">قفل را بکشید</string>
+    <string name="widget_theme">تم ویجت</string>
+    <string name="match_app">برنامه مطابقت</string>
+    <string name="custom_setting">رنگ های سفارشی</string>
+    <string name="app_theme">تم برنامه</string>
+    <string name="use_icons">نمایش نمادها</string>
 </resources>

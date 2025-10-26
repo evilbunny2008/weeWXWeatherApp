@@ -27,8 +27,6 @@
     <string name="bgColour">Achtergrondkleurkiezer voor widgets</string>
     <string name="indoor_readings">Binnenmetingen weergeven?</string>
     <string name="update_over_wifi">Alleen updaten via wifi?</string>
-    <string name="app_theme">App-thema?</string>
-    <string name="use_icons">Pictogrammen tonen?</string>
     <string name="this_months_stats">De statistieken van deze maand</string>
     <string name="this_year_stats">De statistieken van dit jaar</string>
     <string name="all_time_stats">Statistieken aller tijden</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar-URL is niet ingesteld of wordt nog gedownload. U kunt naar de instellingen gaan om deze te wijzigen</string>
     <string name="wasnt_able_to_connect_or_download">Kon geen verbinding maken of de voorspelling downloaden</string>
     <string name="swipe_lock">Veeg vergrendelen</string>
+    <string name="widget_theme">Widget-thema</string>
+    <string name="match_app">Match-app</string>
+    <string name="custom_setting">Aangepaste kleuren</string>
+    <string name="app_theme">App-thema</string>
+    <string name="use_icons">Pictogrammen weergeven</string>
 </resources>

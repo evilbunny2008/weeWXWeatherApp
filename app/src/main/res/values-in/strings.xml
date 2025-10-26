@@ -27,8 +27,6 @@
     <string name="bgColour">Pemilih Warna Latar Belakang Widget</string>
     <string name="indoor_readings">Tampilkan Bacaan Dalam Ruangan?</string>
     <string name="update_over_wifi">Hanya perbarui melalui wifi?</string>
-    <string name="app_theme">Tema Aplikasi?</string>
-    <string name="use_icons">Tampilkan Ikon?</string>
     <string name="this_months_stats">Statistik Bulan Ini</string>
     <string name="this_year_stats">Statistik Tahun Ini</string>
     <string name="all_time_stats">Statistik Sepanjang Masa</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL radar tidak disetel atau masih diunduh. Anda dapat pergi ke pengaturan untuk mengubahnya</string>
     <string name="wasnt_able_to_connect_or_download">Tidak dapat menghubungkan atau mengunduh ramalan cuaca</string>
     <string name="swipe_lock">Gesek Kunci</string>
+    <string name="widget_theme">Tema Widget</string>
+    <string name="match_app">Aplikasi Pertandingan</string>
+    <string name="custom_setting">Warna Khusus</string>
+    <string name="app_theme">Tema Aplikasi</string>
+    <string name="use_icons">Tampilkan Ikon</string>
 </resources>

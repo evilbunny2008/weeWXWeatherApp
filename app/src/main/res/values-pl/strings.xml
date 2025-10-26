@@ -27,8 +27,6 @@
     <string name="bgColour">Próbnik koloru tła widgetu</string>
     <string name="indoor_readings">Pokazać odczyty w pomieszczeniu?</string>
     <string name="update_over_wifi">Aktualizować tylko przez Wi-Fi?</string>
-    <string name="app_theme">Motyw aplikacji?</string>
-    <string name="use_icons">Pokazać ikony?</string>
     <string name="this_months_stats">Statystyki z tego miesiąca</string>
     <string name="this_year_stats">Tegoroczne statystyki</string>
     <string name="all_time_stats">Statystyki wszechczasów</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Adres URL radaru nie jest ustawiony lub nadal trwa pobieranie. Możesz przejść do ustawień, aby je zmienić</string>
     <string name="wasnt_able_to_connect_or_download">Nie udało się połączyć ani pobrać prognozy</string>
     <string name="swipe_lock">Przesuń blokadę</string>
+    <string name="widget_theme">Motyw widgetu</string>
+    <string name="match_app">Dopasuj aplikację</string>
+    <string name="custom_setting">Niestandardowe kolory</string>
+    <string name="app_theme">Motyw aplikacji</string>
+    <string name="use_icons">Pokaż ikony</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">Widgetaren atzeko planoko kolore-hautatzailea</string>
     <string name="indoor_readings">Barruko irakurketak erakutsi?</string>
     <string name="update_over_wifi">Wifi bidez soilik eguneratu?</string>
-    <string name="app_theme">Aplikazioaren gaia?</string>
-    <string name="use_icons">Erakutsi ikonoak?</string>
     <string name="this_months_stats">Hilabete honetako Estatistikak</string>
     <string name="this_year_stats">Aurtengo Estatistika</string>
     <string name="all_time_stats">Denbora guztietako estatistikak</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URLa ez da ezarri edo oraindik deskargatzen ari da. Ezarpenetara joan zaitezke aldatzeko</string>
     <string name="wasnt_able_to_connect_or_download">Ezin izan da iragarpena konektatu edo deskargatu</string>
     <string name="swipe_lock">Irristatu blokeoa</string>
+    <string name="widget_theme">Widget Gaia</string>
+    <string name="match_app">Match aplikazioa</string>
+    <string name="custom_setting">Kolore pertsonalizatuak</string>
+    <string name="app_theme">Aplikazioaren gaia</string>
+    <string name="use_icons">Erakutsi ikonoak</string>
 </resources>

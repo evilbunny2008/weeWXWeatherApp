@@ -27,8 +27,6 @@
     <string name="bgColour">Վիջեթի ֆոնի գույնի ընտրիչ</string>
     <string name="indoor_readings">Ցուցադրե՞լ ներքին ընթերցումները:</string>
     <string name="update_over_wifi">Թարմացնել միայն wifi-ի միջոցով:</string>
-    <string name="app_theme">Հավելվածի թեմա?</string>
-    <string name="use_icons">Ցուցադրե՞լ պատկերակները:</string>
     <string name="this_months_stats">Այս ամսվա վիճակագրությունը</string>
     <string name="this_year_stats">Այս տարվա վիճակագրությունը</string>
     <string name="all_time_stats">Բոլոր ժամանակների վիճակագրություն</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Ռադարի URL-ը սահմանված չէ կամ դեռ ներբեռնվում է: Փոխելու համար կարող եք գնալ կարգավորումներ:</string>
     <string name="wasnt_able_to_connect_or_download">Չհաջողվեց միացնել կամ ներբեռնել կանխատեսումը:</string>
     <string name="swipe_lock">Սահեցրեք կողպեքը</string>
+    <string name="widget_theme">Վիջեթի թեմա</string>
+    <string name="match_app">Համապատասխան հավելված</string>
+    <string name="custom_setting">Պատվերով Գույներ</string>
+    <string name="app_theme">Հավելվածի թեմա</string>
+    <string name="use_icons">Ցույց տալ սրբապատկերները</string>
 </resources>

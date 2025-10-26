@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Birač boja pozadine</string>
     <string name="indoor_readings">Show Indoor Readings?</string>
     <string name="update_over_wifi">Ažurirati samo preko WiFi mreže?</string>
-    <string name="app_theme">Tema aplikacije?</string>
-    <string name="use_icons">Prikaži ikone?</string>
     <string name="this_months_stats">Statistika ovog mjeseca</string>
     <string name="this_year_stats">Ovogodišnja statistika</string>
     <string name="all_time_stats">Statistika svih vremena</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL radara nije postavljen ili se još uvijek preuzima. Možete otići u postavke da promijenite</string>
     <string name="wasnt_able_to_connect_or_download">Nije bilo moguće povezati se ili preuzeti prognozu</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Widget Theme</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Custom Colors</string>
+    <string name="app_theme">App Theme</string>
+    <string name="use_icons">Prikaži ikone</string>
 </resources>

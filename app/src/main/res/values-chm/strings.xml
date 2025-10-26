@@ -27,8 +27,6 @@
     <string name="bgColour">Виджет фон тӱс пикер</string>
     <string name="indoor_readings">Пӧрт кӧргыштӧ лудмашым ончыкташ?</string>
     <string name="update_over_wifi">Wifi ӱмбалне уэмдымаш гына?</string>
-    <string name="app_theme">Приложений теме?</string>
-    <string name="use_icons">Иконка-влакым ончыкташ?</string>
     <string name="this_months_stats">Тиде тылзе статистике</string>
     <string name="this_year_stats">Тиде ийыште статистике</string>
     <string name="all_time_stats">Чыла жапыште статистике</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Радар УРЛ огыл шынден але эше скачать. Те вашталтен кертеш настройкыш вашталташ</string>
     <string name="wasnt_able_to_connect_or_download">Прогнозым ушен але скачать ыштен кертын огыл</string>
     <string name="swipe_lock">Свайп локтылалтше</string>
+    <string name="widget_theme">Виджет теме</string>
+    <string name="match_app">Матч-ан приложений</string>
+    <string name="custom_setting">Йӱла тӱс</string>
+    <string name="app_theme">Приложений теме</string>
+    <string name="use_icons">Иконка-влакым ончыкташ</string>
 </resources>

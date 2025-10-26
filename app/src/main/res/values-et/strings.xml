@@ -27,8 +27,6 @@
     <string name="bgColour">Vidina taustavärvi valija</string>
     <string name="indoor_readings">Kas näidata siselugemisi?</string>
     <string name="update_over_wifi">Kas värskendada ainult WiFi kaudu?</string>
-    <string name="app_theme">Rakenduse teema?</string>
-    <string name="use_icons">Kas näidata ikoone?</string>
     <string name="this_months_stats">Selle kuu statistika</string>
     <string name="this_year_stats">Selle aasta statistika</string>
     <string name="all_time_stats">Kogu aegade statistika</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radari URL-i pole määratud või see on endiselt allalaadimisel. Muutmiseks võite minna seadetesse</string>
     <string name="wasnt_able_to_connect_or_download">Ühendust ei saanud luua ega prognoosi alla laadida</string>
     <string name="swipe_lock">Pühkige lukustus</string>
+    <string name="widget_theme">Vidinateema</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Kohandatud värvid</string>
+    <string name="app_theme">Rakenduse teema</string>
+    <string name="use_icons">Kuva ikoonid</string>
 </resources>

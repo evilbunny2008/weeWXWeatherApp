@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Hannergrondfaarf Picker</string>
     <string name="indoor_readings">Indoor Liesungen weisen?</string>
     <string name="update_over_wifi">Nëmmen Update iwwer Wifi?</string>
-    <string name="app_theme">App Thema?</string>
-    <string name="use_icons">Ikonen weisen?</string>
     <string name="this_months_stats">Statistike vun dësem Mount</string>
     <string name="this_year_stats">Dëst Joer d\'Statistiken</string>
     <string name="all_time_stats">All Zäit Statistiken</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL net agestallt oder gëtt nach erofgelueden. Dir kënnt op d\'Astellunge goen fir ze änneren</string>
     <string name="wasnt_able_to_connect_or_download">Konnt d\'Prognose net konnektéieren oder eroflueden</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Widget Thema</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Benotzerdefinéiert Faarwen</string>
+    <string name="app_theme">App Thema</string>
+    <string name="use_icons">Ikonen weisen</string>
 </resources>

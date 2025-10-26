@@ -27,8 +27,6 @@
     <string name="bgColour">વિજેટ પૃષ્ઠભૂમિ રંગ પીકર</string>
     <string name="indoor_readings">ઇન્ડોર રીડિંગ્સ બતાવીએ?</string>
     <string name="update_over_wifi">માત્ર વાઇફાઇ પર અપડેટ?</string>
-    <string name="app_theme">એપ્લિકેશન થીમ?</string>
-    <string name="use_icons">ચિહ્નો બતાવીએ?</string>
     <string name="this_months_stats">આ મહિનાના આંકડા</string>
     <string name="this_year_stats">આ વર્ષના આંકડા</string>
     <string name="all_time_stats">બધા સમયના આંકડા</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">રડાર URL સેટ નથી અથવા હજુ પણ ડાઉનલોડ થઈ રહ્યું છે. તમે બદલવા માટે સેટિંગ્સમાં જઈ શકો છો</string>
     <string name="wasnt_able_to_connect_or_download">અનુમાન કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
     <string name="swipe_lock">સ્વાઇપ લોક</string>
+    <string name="widget_theme">વિજેટ થીમ</string>
+    <string name="match_app">મેચ એપ્લિકેશન</string>
+    <string name="custom_setting">કસ્ટમ રંગો</string>
+    <string name="app_theme">એપ્લિકેશન થીમ</string>
+    <string name="use_icons">ચિહ્નો બતાવો</string>
 </resources>

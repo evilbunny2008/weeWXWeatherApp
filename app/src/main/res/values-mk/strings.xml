@@ -27,8 +27,6 @@
     <string name="bgColour">Избирач на боја на заднина на виџети</string>
     <string name="indoor_readings">Прикажи читања во затворен простор?</string>
     <string name="update_over_wifi">Ажурирање само преку WiFi?</string>
-    <string name="app_theme">Тема за апликација?</string>
-    <string name="use_icons">Прикажи икони?</string>
     <string name="this_months_stats">Статистика за овој месец</string>
     <string name="this_year_stats">Статистика за оваа година</string>
     <string name="all_time_stats">Статистика за сите времиња</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL-то на радарот не е поставено или сè уште се презема. Можете да отидете во поставките за да ги промените</string>
     <string name="wasnt_able_to_connect_or_download">Не можеше да се поврзе или преземе прогнозата</string>
     <string name="swipe_lock">Заклучување со лизгање</string>
+    <string name="widget_theme">Тема за виџети</string>
+    <string name="match_app">Апликација за натпревар</string>
+    <string name="custom_setting">Прилагодени бои</string>
+    <string name="app_theme">Тема на апликацијата</string>
+    <string name="use_icons">Прикажи икони</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
     <string name="indoor_readings">इंडोर रीडिंग देखाउ?</string>
     <string name="update_over_wifi">केवल वाईफाई पर अपडेट करू?</string>
-    <string name="app_theme">ऐप थीम?</string>
-    <string name="use_icons">आइकन देखाउ?</string>
     <string name="this_months_stats">एहि मासक आंकड़ा</string>
     <string name="this_year_stats">एहि बेरक आंकड़ा</string>
     <string name="all_time_stats">सब समय के आँकड़े</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">रडार यूआरएल सेट नहि अछि या एखनो डाउनलोड भ रहल अछि. बदलय लेल अहां सेटिंग मे जा सकय छी</string>
     <string name="wasnt_able_to_connect_or_download">पूर्वानुमान के कनेक्ट या डाउनलोड नै क सकलौं।</string>
     <string name="swipe_lock">स्वाइप ताला 2019।</string>
+    <string name="widget_theme">विजेट थीम 2019।</string>
+    <string name="match_app">मैच एप्प 2019।</string>
+    <string name="custom_setting">कस्टम रंग 2019।</string>
+    <string name="app_theme">ऐप थीम 2019।</string>
+    <string name="use_icons">आइकन दिखाएँ</string>
 </resources>

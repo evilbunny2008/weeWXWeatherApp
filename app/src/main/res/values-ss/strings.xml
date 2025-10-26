@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Imvelaphi Yembala Picker</string>
     <string name="indoor_readings">Khombisa Tifundvo Tasendlini?</string>
     <string name="update_over_wifi">Ubuyekete kuphela ngetulu kwe-wifi?</string>
-    <string name="app_theme">Ingcikitsi Ye-App?</string>
-    <string name="use_icons">Khombisa Tintfo Letimbi?</string>
     <string name="this_months_stats">LeTibalo Tenyanga</string>
     <string name="this_year_stats">Tibalo Temnyaka</string>
     <string name="all_time_stats">Tonkhe Tibalo Tesikhatsi</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL ayiseki nobe isalandvwa. Ungaya kumasethingi kute ushintje</string>
     <string name="wasnt_able_to_connect_or_download">Akazange akwati kuxhumana nobe kulandza lesibiketelo</string>
     <string name="swipe_lock">Swapha Lukhiya</string>
+    <string name="widget_theme">Ingcikitsi Yelidget</string>
+    <string name="match_app">I-App Yemdlalo</string>
+    <string name="custom_setting">Imibala Yemasiko</string>
+    <string name="app_theme">Ingcikitsi Yekusebenta</string>
+    <string name="use_icons">Khombisa Timo</string>
 </resources>

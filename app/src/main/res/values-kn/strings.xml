@@ -27,8 +27,6 @@
     <string name="bgColour">ವಿಜೆಟ್ ಹಿನ್ನೆಲೆ ಬಣ್ಣ ಪಿಕ್ಕರ್</string>
     <string name="indoor_readings">ಒಳಾಂಗಣ ವಾಚನಗೋಷ್ಠಿಯನ್ನು ತೋರಿಸುವುದೇ?</string>
     <string name="update_over_wifi">ವೈಫೈ ಮೂಲಕ ಮಾತ್ರ ನವೀಕರಿಸುವುದೇ?</string>
-    <string name="app_theme">ಅಪ್ಲಿಕೇಶನ್ ಥೀಮ್?</string>
-    <string name="use_icons">ಐಕಾನ್‌ಗಳನ್ನು ತೋರಿಸುವುದೇ?</string>
     <string name="this_months_stats">ಈ ತಿಂಗಳ ಅಂಕಿಅಂಶಗಳು</string>
     <string name="this_year_stats">ಈ ವರ್ಷದ ಅಂಕಿಅಂಶಗಳು</string>
     <string name="all_time_stats">ಸಾರ್ವಕಾಲಿಕ ಅಂಕಿಅಂಶಗಳು</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">ರಾಡಾರ್ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ ಅಥವಾ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ. ಬದಲಾಯಿಸಲು ನೀವು ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಹೋಗಬಹುದು</string>
     <string name="wasnt_able_to_connect_or_download">ಮುನ್ಸೂಚನೆಯನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="swipe_lock">ಸ್ವೈಪ್ ಲಾಕ್</string>
+    <string name="widget_theme">ವಿಜೆಟ್ ಥೀಮ್</string>
+    <string name="match_app">ಹೊಂದಾಣಿಕೆ ಅಪ್ಲಿಕೇಶನ್</string>
+    <string name="custom_setting">ಕಸ್ಟಮ್ ಬಣ್ಣಗಳು</string>
+    <string name="app_theme">ಅಪ್ಲಿಕೇಶನ್ ಥೀಮ್</string>
+    <string name="use_icons">ಐಕಾನ್‌ಗಳನ್ನು ತೋರಿಸಿ</string>
 </resources>

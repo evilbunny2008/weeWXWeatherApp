@@ -27,8 +27,6 @@
     <string name="bgColour">Widget background color picker</string>
     <string name="indoor_readings">Magpakita ng panloob na pagbabasa?</string>
     <string name="update_over_wifi">I -update lamang ang WiFi?</string>
-    <string name="app_theme">Tema ng app?</string>
-    <string name="use_icons">Ipakita ang mga icon?</string>
     <string name="this_months_stats">Istatistika ng buwang ito</string>
     <string name="this_year_stats">Ang mga istatistika ng taong ito</string>
     <string name="all_time_stats">Lahat ng mga istatistika ng oras</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Hindi nakatakda ang Radar URL o nag -download pa rin. Maaari kang pumunta sa mga setting upang magbago</string>
     <string name="wasnt_able_to_connect_or_download">Hindi nakakonekta o i -download ang forecast</string>
     <string name="swipe_lock">Mag -swipe lock</string>
+    <string name="widget_theme">Tema ng widget</string>
+    <string name="match_app">Itugma ang app</string>
+    <string name="custom_setting">Pasadyang mga kulay</string>
+    <string name="app_theme">Tema ng app</string>
+    <string name="use_icons">Ipakita ang mga icon</string>
 </resources>

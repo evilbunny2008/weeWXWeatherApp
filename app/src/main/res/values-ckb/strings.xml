@@ -27,8 +27,6 @@
     <string name="bgColour">ویجت باکگراوند ڕەنگ هەڵگر</string>
     <string name="indoor_readings">خوێندنەوەکانی ناوماڵ پیشان بدە؟</string>
     <string name="update_over_wifi">تەنها نوێکردنەوە لە ڕێگەی وایفایەوە؟</string>
-    <string name="app_theme">تەوەرەی ئەپ؟</string>
-    <string name="use_icons">ئایکۆنەکان پیشان بدە؟</string>
     <string name="this_months_stats">ئاماری ئەم مانگە</string>
     <string name="this_year_stats">ئاماری ئەمساڵ</string>
     <string name="all_time_stats">ئاماری هەموو کاتەکان</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar url دانەنراوە یان هێشتا دابەزاندن. دەتوانیت بچیتە سەر ڕێکخستنەکان بۆ گۆڕانکاری</string>
     <string name="wasnt_able_to_connect_or_download">نەیتوانی پەیوەندی بکات یان پێشبینیەکە دابەزێنرێت</string>
     <string name="swipe_lock">سوایپ قوفڵ</string>
+    <string name="widget_theme">ویجت تەوەرە</string>
+    <string name="match_app">ئەپی یاری</string>
+    <string name="custom_setting">ڕەنگە تایبەتەکان</string>
+    <string name="app_theme">تەوەری ئەپ</string>
+    <string name="use_icons">ئایکۆنەکان پیشان بدە</string>
 </resources>

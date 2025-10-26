@@ -27,8 +27,6 @@
     <string name="bgColour">위젯 배경색 선택기</string>
     <string name="indoor_readings">실내 판독값을 표시하시겠습니까?</string>
     <string name="update_over_wifi">Wi-Fi를 통해서만 업데이트하시겠습니까?</string>
-    <string name="app_theme">앱 테마?</string>
-    <string name="use_icons">아이콘을 표시하시겠습니까?</string>
     <string name="this_months_stats">이번 달 통계</string>
     <string name="this_year_stats">올해의 통계</string>
     <string name="all_time_stats">전체 시간 통계</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">레이더 URL이 설정되지 않았거나 아직 다운로드 중입니다. 설정으로 이동하여 변경할 수 있습니다</string>
     <string name="wasnt_able_to_connect_or_download">일기예보를 연결하거나 다운로드할 수 없습니다</string>
     <string name="swipe_lock">스와이프 잠금</string>
+    <string name="widget_theme">위젯 테마</string>
+    <string name="match_app">매치 앱</string>
+    <string name="custom_setting">사용자 정의 색상</string>
+    <string name="app_theme">앱 테마</string>
+    <string name="use_icons">아이콘 표시</string>
 </resources>

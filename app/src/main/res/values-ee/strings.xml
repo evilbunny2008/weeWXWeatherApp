@@ -27,8 +27,6 @@
     <string name="bgColour">Widget ƒe megbenyawo ƒe amadede tiatia</string>
     <string name="indoor_readings">Ðe nuxexlẽ siwo le xɔ me fiaa?</string>
     <string name="update_over_wifi">Ðeko wowɔ asitɔtrɔ le WiFi ŋua?</string>
-    <string name="app_theme">App ƒe tanya?</string>
-    <string name="use_icons">Fia nɔnɔmetatawo?</string>
     <string name="this_months_stats">Ɣleti sia ƒe akɔntabubuwo</string>
     <string name="this_year_stats">Ƒe sia ƒe ƒe akɔntabubuwo</string>
     <string name="all_time_stats">Ɣeyiɣiwo Katã ƒe Akɔntabubuwo</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL meɖoe o alo egakpɔtɔ le eƒe kɔpi wɔm. Àte ŋu ayi Settings be nàtrɔ</string>
     <string name="wasnt_able_to_connect_or_download">Mete ŋu do ka alo wɔ nyagblɔɖia ƒe kɔpi o</string>
     <string name="swipe_lock">Swipe ƒe ʋuƒo</string>
+    <string name="widget_theme">Widget ƒe tanya</string>
+    <string name="match_app">Match app</string>
+    <string name="custom_setting">Amadede siwo wowɔ ɖe ɖoɖo nu</string>
+    <string name="app_theme">App ƒe tanya</string>
+    <string name="use_icons">Fia nɔnɔmetatawo</string>
 </resources>

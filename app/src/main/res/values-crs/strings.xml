@@ -27,8 +27,6 @@
     <string name="bgColour">Pikater Kouler Par deryer</string>
     <string name="indoor_readings">Montre bann lektir Enteryer?</string>
     <string name="update_over_wifi">Zis met azour lo wifi?</string>
-    <string name="app_theme">Tenm App?</string>
-    <string name="use_icons">Montre bann Ikon?</string>
     <string name="this_months_stats">Statistik sa mwan</string>
     <string name="this_year_stats">Statistik sa lannen</string>
     <string name="all_time_stats">Touletan Statistik Letan</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL radar pa met oubyen i ankor pe telesarze. Ou kapab al dan bann paramet pour sanze</string>
     <string name="wasnt_able_to_connect_or_download">Pa ti kapab konekte oubyen telesarz previzyon</string>
     <string name="swipe_lock">Lakors glise</string>
+    <string name="widget_theme">Tenm Dezespere</string>
+    <string name="match_app">Aplik ki koresponn</string>
+    <string name="custom_setting">Kouler personnalize</string>
+    <string name="app_theme">Tenm App</string>
+    <string name="use_icons">Montre bann Ikon</string>
 </resources>

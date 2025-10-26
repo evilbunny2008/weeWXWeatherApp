@@ -27,8 +27,6 @@
     <string name="bgColour">Выбор цвета фона виджета</string>
     <string name="indoor_readings">Показать внутренние чтения?</string>
     <string name="update_over_wifi">Обновляться только через Wi-Fi?</string>
-    <string name="app_theme">Тема приложения?</string>
-    <string name="use_icons">Показать значки?</string>
     <string name="this_months_stats">Статистика этого месяца</string>
     <string name="this_year_stats">Статистика этого года</string>
     <string name="all_time_stats">Статистика за все время</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL-адрес радара не задан или все еще загружается. Вы можете зайти в настройки, чтобы изменить</string>
     <string name="wasnt_able_to_connect_or_download">Не удалось подключиться или скачать прогноз</string>
     <string name="swipe_lock">Проведите блокировку</string>
+    <string name="widget_theme">Тема виджета</string>
+    <string name="match_app">Приложение \'Матч\'</string>
+    <string name="custom_setting">Пользовательские цвета</string>
+    <string name="app_theme">Тема приложения</string>
+    <string name="use_icons">Показать значки</string>
 </resources>

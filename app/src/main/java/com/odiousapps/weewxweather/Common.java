@@ -90,6 +90,8 @@ public class Common
 	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
 	static final String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 
+	static final String WIDGET_THEME_MODE = "widget_theme_mode";
+
 	private static final long inigo_version = 4000;
 	public static final long icon_version = 12;
 	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/1.0.3/icons.zip";
@@ -3877,9 +3879,11 @@ public class Common
 			return;
 
 		int current_mode, current_theme, bgColour, fgColour;
+		boolean isWidgetSet = false;
 		boolean prefSet = Common.isPrefSet("DayNightMode");
 		int nightDaySetting = getAppDayNightSetting();
 		int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+		KeyValue.widget_theme_mode = GetIntPref(WIDGET_THEME_MODE, 0);
 
 		current_mode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
 		current_theme = R.style.AppTheme_weeWxWeatherApp_Light_Common;
@@ -3902,6 +3906,13 @@ public class Common
 				bgColour = ContextCompat.getColor(context, R.color.Black);
 				fgColour = ContextCompat.getColor(context, R.color.White);
 			}
+
+			if(KeyValue.widget_theme_mode == 1)
+			{
+				isWidgetSet = true;
+				KeyValue.widgetBG = bgColour;
+				KeyValue.widgetFG = fgColour;
+			}
 		}
 
 		if(!prefSet || (nightDaySetting != 0 && nightDaySetting != 1))
@@ -3918,6 +3929,26 @@ public class Common
 				fgColour = ContextCompat.getColor(context, R.color.White);
 				current_theme = R.style.AppTheme_weeWxWeatherApp_Dark_Common;
 			}
+		}
+
+		if(KeyValue.widget_theme_mode == 2 || (KeyValue.widget_theme_mode == 0 && nightModeFlags == Configuration.UI_MODE_NIGHT_NO))
+		{
+			isWidgetSet = true;
+			KeyValue.widgetBG = ContextCompat.getColor(context, R.color.White);
+			KeyValue.widgetFG = ContextCompat.getColor(context, R.color.Black);
+		}
+
+		if(KeyValue.widget_theme_mode == 3 || (KeyValue.widget_theme_mode == 0 && nightModeFlags == Configuration.UI_MODE_NIGHT_YES))
+		{
+			isWidgetSet = true;
+			KeyValue.widgetBG = ContextCompat.getColor(context, R.color.Black);
+			KeyValue.widgetFG = ContextCompat.getColor(context, R.color.White);
+		}
+
+		if(KeyValue.widget_theme_mode == 4 || !isWidgetSet)
+		{
+			KeyValue.widgetBG = Common.GetIntPref("bgColour", ContextCompat.getColor(context, R.color.White));
+			KeyValue.widgetFG = Common.GetIntPref("fgColour", ContextCompat.getColor(context, R.color.Black));
 		}
 
 		KeyValue.theme = current_theme;

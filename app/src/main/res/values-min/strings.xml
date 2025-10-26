@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Latar Pitiah Warna</string>
     <string name="indoor_readings">Tunjuakkan Bacoan Dalam Ruangan?</string>
     <string name="update_over_wifi">Hanyo update nan labiah dari wifi?</string>
-    <string name="app_theme">Tema App?</string>
-    <string name="use_icons">Tunjuakkan ka Ikon?</string>
     <string name="this_months_stats">Statistik Bulan ko</string>
     <string name="this_year_stats">Statistik Tahun ko</string>
     <string name="all_time_stats">Sagalo Statistik Wakatu</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL indak ditetapkan atau masih mangunduakan. Sanak bisa pai ka pangaturan untuak barubah</string>
     <string name="wasnt_able_to_connect_or_download">Indak dapek mahubuangkan atau mangunduakan ramalan</string>
     <string name="swipe_lock">Kunci gegap</string>
+    <string name="widget_theme">Tema Widget</string>
+    <string name="match_app">App</string>
+    <string name="custom_setting">Warna</string>
+    <string name="app_theme">Tema Aplikasi</string>
+    <string name="use_icons">Tunjuakkan Ikon</string>
 </resources>

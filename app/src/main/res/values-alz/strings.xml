@@ -27,8 +27,6 @@
     <string name="bgColour">Ng\'atu m\'utimo lembe m\'urombo ku cik mi ng\'om maeni</string>
     <string name="indoor_readings">Nyuth nisomo Injira?</string>
     <string name="update_over_wifi">Kende kende lembe ma nyen kende kende iwi lembe mi ng\'om?</string>
-    <string name="app_theme">Application?</string>
-    <string name="use_icons">Nyuth ni gony?</string>
     <string name="this_months_stats">Lembe maeni mi Month</string>
     <string name="this_year_stats">I oro maeni, Stastics mi oro maeni</string>
     <string name="all_time_stats">Lembe ceke ma jutimo</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL ok owegi kata pod download. Icopo cidho i settings pi niloko</string>
     <string name="wasnt_able_to_connect_or_download">Ne ok nyal tudruok kata ng\'ado bura</string>
     <string name="swipe_lock">Somep</string>
+    <string name="widget_theme">Winye</string>
+    <string name="match_app">Jam tic peri mir AP application peri</string>
+    <string name="custom_setting">Custristo</string>
+    <string name="app_theme">neno wi lembe</string>
+    <string name="use_icons">Nyuth</string>
 </resources>

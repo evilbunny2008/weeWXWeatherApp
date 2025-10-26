@@ -27,8 +27,6 @@
     <string name="bgColour">Kalsaso ed Likod na Paraan Liket</string>
     <string name="indoor_readings">Ipanengneng so Panagbasa ed Loob?</string>
     <string name="update_over_wifi">Labi labat ed wifi?</string>
-    <string name="app_theme">Apphete?</string>
-    <string name="use_icons">Ipanengneng so Icon?</string>
     <string name="this_months_stats">Sayan Estado na sayan Bulan</string>
     <string name="this_year_stats">Say Estadistis na sayan Taon</string>
     <string name="all_time_stats">Amin ya Panaon ya Estadistika</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL ag-ise-set odino man-dow-download. Sarag moy onlad saray set ya manguman</string>
     <string name="wasnt_able_to_connect_or_download">Ag to sarag ya ikonekta odino i-download so ipapasakbay</string>
     <string name="swipe_lock">Sulo Kaket</string>
+    <string name="widget_theme">Say Tema</string>
+    <string name="match_app">Itunton App</string>
+    <string name="custom_setting">Kutaan na Kolor</string>
+    <string name="app_theme">Appyo</string>
+    <string name="use_icons">Ipanengneng iray Icon</string>
 </resources>

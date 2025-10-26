@@ -27,8 +27,6 @@
     <string name="bgColour">Erangi y\'omurundi gwa Widget</string>
     <string name="indoor_readings">Yoreka Eby\'okushoma omu nju?</string>
     <string name="update_over_wifi">Okugarukamu kwa wifi kusha?</string>
-    <string name="app_theme">App Eby\'omutwe?</string>
-    <string name="use_icons">Yoreka Icos?</string>
     <string name="this_months_stats">Ebibaro by\'okwezi</string>
     <string name="this_year_stats">Ebibaro by\'omwaka ogu</string>
     <string name="all_time_stats">Ebibaro by\'obwire bwona</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL terikutaho nari eri aha mutwe. Noobaasa kuza omu ntebeekanisa kuhindura</string>
     <string name="wasnt_able_to_connect_or_download">Tikabaasa kukwatanisa nari kutunga okutebereza</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Marima Omutwe</string>
+    <string name="match_app">Tamu app</string>
+    <string name="custom_setting">Endagaano z\'okugura</string>
+    <string name="app_theme">App Omutwe</string>
+    <string name="use_icons">Yoreka Icos</string>
 </resources>

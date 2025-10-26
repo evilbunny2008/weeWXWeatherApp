@@ -27,8 +27,6 @@
     <string name="bgColour">Seletor de cores de fundo do widget</string>
     <string name="indoor_readings">Mostrar leituras internas?</string>
     <string name="update_over_wifi">Atualizar apenas por wifi?</string>
-    <string name="app_theme">Tema do aplicativo?</string>
-    <string name="use_icons">Mostrar ícones?</string>
     <string name="this_months_stats">Estatísticas deste mês</string>
     <string name="this_year_stats">Estatísticas deste ano</string>
     <string name="all_time_stats">Estatísticas de todos os tempos</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL do radar não definido ou ainda está sendo baixado. Você pode ir para as configurações para alterar</string>
     <string name="wasnt_able_to_connect_or_download">Não foi possível conectar ou baixar a previsão</string>
     <string name="swipe_lock">Deslizar bloqueio</string>
+    <string name="widget_theme">Tema de widget</string>
+    <string name="match_app">Aplicativo de correspondência</string>
+    <string name="custom_setting">Cores personalizadas</string>
+    <string name="app_theme">Tema do aplicativo</string>
+    <string name="use_icons">Mostrar ícones</string>
 </resources>

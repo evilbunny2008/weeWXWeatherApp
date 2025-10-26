@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Antesedente Kór Picker</string>
     <string name="indoor_readings">Hatudu Leitura sira iha uma laran?</string>
     <string name="update_over_wifi">Atualizasaun deit liu husi wifi?</string>
-    <string name="app_theme">Tema App?</string>
-    <string name="use_icons">Hatudu Icons?</string>
     <string name="this_months_stats">Fulan ida ne\'e nia Estatístika</string>
     <string name="this_year_stats">Estatístika Tinan ne\'e nian</string>
     <string name="all_time_stats">Estatístika Tempu hotu-hotu</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL la tau ka sei download nafatin. Ita bele ba iha setting hodi muda</string>
     <string name="wasnt_able_to_connect_or_download">La konsege liga ka download previzaun</string>
     <string name="swipe_lock">Trava Swipe</string>
+    <string name="widget_theme">Tema Widget</string>
+    <string name="match_app">App Match App</string>
+    <string name="custom_setting">Kór sira iha Alfándega</string>
+    <string name="app_theme">Tema App</string>
+    <string name="use_icons">Hatudu Ikons</string>
 </resources>

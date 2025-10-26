@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Arka Plan Renk Seçici</string>
     <string name="indoor_readings">İç Mekan Okumaları Gösterilsin mi?</string>
     <string name="update_over_wifi">Güncelleme sadece Wi-Fi üzerinden mi yapılıyor?</string>
-    <string name="app_theme">Uygulama Teması?</string>
-    <string name="use_icons">Simgeler Gösterilsin mi?</string>
     <string name="this_months_stats">Bu Ayın İstatistikleri</string>
     <string name="this_year_stats">Bu Yılın İstatistikleri</string>
     <string name="all_time_stats">Tüm Zamanların İstatistikleri</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL\'si ayarlanmadı veya hâlâ indiriliyor. Değiştirmek için ayarlara gidebilirsiniz</string>
     <string name="wasnt_able_to_connect_or_download">Tahmin bağlanamadı veya indirilemedi</string>
     <string name="swipe_lock">Kaydırma Kilidi</string>
+    <string name="widget_theme">Widget Teması</string>
+    <string name="match_app">Maç Uygulaması</string>
+    <string name="custom_setting">Özel Renkler</string>
+    <string name="app_theme">Uygulama Teması</string>
+    <string name="use_icons">Simgeleri Göster</string>
 </resources>

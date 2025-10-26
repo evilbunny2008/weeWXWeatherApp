@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Fondo de Color Picker</string>
     <string name="indoor_readings">¿Ukhupi ñawinchaykunata qhawarichiy?</string>
     <string name="update_over_wifi">Solo actualización sobre WiFi?</string>
-    <string name="app_theme">¿App temachu?</string>
-    <string name="use_icons">¿Iconokunatachu rikuchin?</string>
     <string name="this_months_stats">Kay killamanta yupaykuna</string>
     <string name="this_year_stats">Kay watapaq yupay</string>
     <string name="all_time_stats">Tukuy pacha yupay</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar url mana churasqachu nitaq kunankamachu uraykachichkan. cambianaykipaqmi churanakunaman riyta atinki</string>
     <string name="wasnt_able_to_connect_or_download">mana atirqanchu chay pronóstico nisqa t\'inkiyta nitaq uraykachiytapas</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Widget tema</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Sapanchasqa llimp\'ikuna</string>
+    <string name="app_theme">App Tema</string>
+    <string name="use_icons">Iconokunata rikuchiy</string>
 </resources>

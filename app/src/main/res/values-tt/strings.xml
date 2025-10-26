@@ -27,8 +27,6 @@
     <string name="bgColour">Виджет фон төсе</string>
     <string name="indoor_readings">Ябык укуларны күрсәтәсезме?</string>
     <string name="update_over_wifi">WiFi-ны гына яңарту гына?</string>
-    <string name="app_theme">Кушымта темасы?</string>
-    <string name="use_icons">Иконалар шоу?</string>
     <string name="this_months_stats">Бу ай статистика</string>
     <string name="this_year_stats">Быелгы статистика</string>
     <string name="all_time_stats">Барлык вакыт статистикасы</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Радар Урл көйләнми яки әле дә йөкләнми. Сез үзгәрү өчен көйләүләргә бара аласыз</string>
     <string name="wasnt_able_to_connect_or_download">Фаразны тоташтыра яки йөкли алмады</string>
     <string name="swipe_lock">Сөртү йозак</string>
+    <string name="widget_theme">Виджет темасы</string>
+    <string name="match_app">Матч кушымтасы</string>
+    <string name="custom_setting">Махсус төсләр</string>
+    <string name="app_theme">Кушымта темасы</string>
+    <string name="use_icons">Иконалар шоу</string>
 </resources>

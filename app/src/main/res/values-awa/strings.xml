@@ -27,8 +27,6 @@
     <string name="bgColour">विजेट बैकग्राउंड कलर पिकर</string>
     <string name="indoor_readings">इनडोर रीडिंग का शो दिखाओ?</string>
     <string name="update_over_wifi">केवल वाईफाई पर अपडेट है?</string>
-    <string name="app_theme">ऐप थीम क?</string>
-    <string name="use_icons">आइकन दिखाओ?</string>
     <string name="this_months_stats">इस महीना के आंकड़े</string>
     <string name="this_year_stats">इस साल का आंकड़े</string>
     <string name="all_time_stats">सब समय आंकड़े</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">रडार यूआरएल सेट नहीं है या अभी भी डाउनलोड कर रहा है। आप बदलाव के लिए सेटिंग्स मा जा सकत हैं।</string>
     <string name="wasnt_able_to_connect_or_download">पूर्वानुमान का कनेक्ट या डाउनलोड करै मा सक्षम नाहीं रहा।</string>
     <string name="swipe_lock">स्वाइप लॉक</string>
+    <string name="widget_theme">विजेट थीम</string>
+    <string name="match_app">मिलान ऐप</string>
+    <string name="custom_setting">कस्टम रंग</string>
+    <string name="app_theme">ऐप थीम</string>
+    <string name="use_icons">आइकन देखावा</string>
 </resources>

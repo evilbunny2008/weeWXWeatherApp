@@ -27,8 +27,6 @@
     <string name="bgColour">Wijetị na-ahụ maka egwuregwu</string>
     <string name="indoor_readings">Gosiputa ihe eji eme ihe?</string>
     <string name="update_over_wifi">Naanị imelite na WiFi?</string>
-    <string name="app_theme">Isi okwu?</string>
-    <string name="use_icons">Gosi akara ngosi?</string>
     <string name="this_months_stats">Ọnụ ọgụgụ ọnwa a</string>
     <string name="this_year_stats">Ọnụ ọgụgụ nke afọ a</string>
     <string name="all_time_stats">Oge niile</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Dradar Url setịpụrụ ma ọ bụ na-ebudata. Can nwere ike ịga ntọala ịgbanwe</string>
     <string name="wasnt_able_to_connect_or_download">Enweghị ike ijikọ ma ọ bụ budata amụma ahụ</string>
     <string name="swipe_lock">Mkpọchi swipe</string>
+    <string name="widget_theme">Isiokwu Wijetị</string>
+    <string name="match_app">Ngwakọta ngwa</string>
+    <string name="custom_setting">Agba omenala</string>
+    <string name="app_theme">Okwu</string>
+    <string name="use_icons">Gosi akara ngosi</string>
 </resources>

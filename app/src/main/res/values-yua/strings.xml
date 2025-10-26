@@ -27,8 +27,6 @@
     <string name="bgColour">Pixan u boonil u ju\'unil tu\'ux yaan u widget</string>
     <string name="indoor_readings">¿K\'aaba\'e\' le xooko\'ob interiores?</string>
     <string name="update_over_wifi">Chéen actualizar yóok\'ol wifi?</string>
-    <string name="app_theme">¿Tema app?</string>
-    <string name="use_icons">¿Kʼaʼabéet u yeʼesik Icono?</string>
     <string name="this_months_stats">Le Estadísticas ti\' le wi\'inal</string>
     <string name="this_year_stats">Estadísticas le ja\'aba\'</string>
     <string name="all_time_stats">Tuláakal le estadísticas ti\' le k\'iin</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL ma\' establecido wa láayli\' táan u descargando. Je\'el u páajtal u bin u ajustes utia\'al k\'ex</string>
     <string name="wasnt_able_to_connect_or_download">Ma\' bin capaz u conectar wa descargar le pronóstico</string>
     <string name="swipe_lock">K\'ala\'an swipe</string>
+    <string name="widget_theme">Widget Teme</string>
+    <string name="match_app">App partido</string>
+    <string name="custom_setting">Boonilo\'ob personalizados</string>
+    <string name="app_theme">Yiit u App</string>
+    <string name="use_icons">Weʼesik Icons</string>
 </resources>

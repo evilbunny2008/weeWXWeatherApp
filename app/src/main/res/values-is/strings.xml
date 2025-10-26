@@ -27,8 +27,6 @@
     <string name="bgColour">Bakgrunnslitaval búnaðar</string>
     <string name="indoor_readings">Sýna upplestur innandyra?</string>
     <string name="update_over_wifi">Aðeins uppfæra í gegnum wifi?</string>
-    <string name="app_theme">App þema?</string>
-    <string name="use_icons">Sýna tákn?</string>
     <string name="this_months_stats">Tölfræði þessa mánaðar</string>
     <string name="this_year_stats">Tölfræði þessa árs</string>
     <string name="all_time_stats">Tölfræði allra tíma</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Ratsjárslóð ekki stillt eða er enn að hlaðast niður. Þú getur farið í stillingar til að breyta</string>
     <string name="wasnt_able_to_connect_or_download">Gat ekki tengst eða hlaðið niður spánni</string>
     <string name="swipe_lock">Strjúktu læsingu</string>
+    <string name="widget_theme">Græjuþema</string>
+    <string name="match_app">Match app</string>
+    <string name="custom_setting">Sérsniðnir litir</string>
+    <string name="app_theme">App þema</string>
+    <string name="use_icons">Sýna tákn</string>
 </resources>

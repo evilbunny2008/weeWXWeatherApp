@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Background Color Portker</string>
     <string name="indoor_readings">Ratidza kuverenga kwemukati?</string>
     <string name="update_over_wifi">Gadziriso chete pamusoro peWiFi?</string>
-    <string name="app_theme">Theme theme?</string>
-    <string name="use_icons">Ratidza zvidhori?</string>
     <string name="this_months_stats">Nhamba yemwedzi uno</string>
     <string name="this_year_stats">Nhamba dzegore rino</string>
     <string name="all_time_stats">Zvese zvenguva yehuwandu</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL isina kuiswa kana ichiri kurodha pasi. Iwe unogona kuenda kune marongero ekuchinja</string>
     <string name="wasnt_able_to_connect_or_download">Haina kukwanisa kubatanidza kana kurodha iyo fungidziro</string>
     <string name="swipe_lock">Swipe kukiya</string>
+    <string name="widget_theme">Widget theme</string>
+    <string name="match_app">Match app</string>
+    <string name="custom_setting">Tsika mavara</string>
+    <string name="app_theme">Theme dingindira</string>
+    <string name="use_icons">Ratidza zvidhori</string>
 </resources>

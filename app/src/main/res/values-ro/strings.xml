@@ -27,8 +27,6 @@
     <string name="bgColour">Selector de culori de fundal widget</string>
     <string name="indoor_readings">Afișați lecturi în interior?</string>
     <string name="update_over_wifi">Actualizați doar prin wifi?</string>
-    <string name="app_theme">Tema aplicației?</string>
-    <string name="use_icons">Afișați pictogramele?</string>
     <string name="this_months_stats">Statisticile acestei luni</string>
     <string name="this_year_stats">Statisticile de anul acesta</string>
     <string name="all_time_stats">Statistici All Time</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Adresa URL a radarului nu este setată sau încă se descarcă. Puteți merge la setări pentru a schimba</string>
     <string name="wasnt_able_to_connect_or_download">Nu am putut să mă conectez sau să descărcați prognoza</string>
     <string name="swipe_lock">Glisați Blocarea</string>
+    <string name="widget_theme">Tema widgetului</string>
+    <string name="match_app">Aplicația de potrivire</string>
+    <string name="custom_setting">Culori personalizate</string>
+    <string name="app_theme">Tema aplicației</string>
+    <string name="use_icons">Afișați pictograme</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">Zgjedhësi i ngjyrës së sfondit të miniaplikacionit</string>
     <string name="indoor_readings">Të shfaqen leximet e brendshme?</string>
     <string name="update_over_wifi">Përditëso vetëm përmes Wi-Fi?</string>
-    <string name="app_theme">Tema e aplikacionit?</string>
-    <string name="use_icons">Të shfaqen ikonat?</string>
     <string name="this_months_stats">Statistikat e këtij muaji</string>
     <string name="this_year_stats">Statistikat e këtij viti</string>
     <string name="all_time_stats">Statistikat e të gjitha kohërave</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL-ja e radarit nuk është caktuar ose është ende duke u shkarkuar. Mund të shkoni te cilësimet për të ndryshuar</string>
     <string name="wasnt_able_to_connect_or_download">Nuk mund të lidhej ose shkarkohej parashikimi</string>
     <string name="swipe_lock">Kyçja me rrëshqitje</string>
+    <string name="widget_theme">Tema e miniaplikacionit</string>
+    <string name="match_app">Aplikacioni i ndeshjes</string>
+    <string name="custom_setting">Ngjyrat e personalizuara</string>
+    <string name="app_theme">Tema e aplikacionit</string>
+    <string name="use_icons">Shfaq ikonat</string>
 </resources>

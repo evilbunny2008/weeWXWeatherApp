@@ -27,8 +27,6 @@
     <string name="bgColour">Widget háttérszínválasztó</string>
     <string name="indoor_readings">Beltéri olvasmányok megjelenítése?</string>
     <string name="update_over_wifi">Csak wifin keresztül frissíted?</string>
-    <string name="app_theme">App téma?</string>
-    <string name="use_icons">Ikonok megjelenítése?</string>
     <string name="this_months_stats">E havi statisztika</string>
     <string name="this_year_stats">Az idei statisztika</string>
     <string name="all_time_stats">Minden idők statisztika</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">A radar URL-je nincs beállítva, vagy még mindig letöltés alatt áll. A beállításokhoz léphet a módosításhoz</string>
     <string name="wasnt_able_to_connect_or_download">Nem sikerült csatlakozni vagy letölteni az előrejelzést</string>
     <string name="swipe_lock">Csúsztassa el a Zárolást</string>
+    <string name="widget_theme">Widget téma</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Egyedi színek</string>
+    <string name="app_theme">App téma</string>
+    <string name="use_icons">Ikonok megjelenítése</string>
 </resources>

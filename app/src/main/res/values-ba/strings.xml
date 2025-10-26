@@ -27,8 +27,6 @@
     <string name="bgColour">Виджет фон төҫө Пикер</string>
     <string name="indoor_readings">Өй эсендәге уҡыуҙарҙы күрһәтегеҙ?</string>
     <string name="update_over_wifi">Тик яңыртыу өҫтөндә wifi?</string>
-    <string name="app_theme">App Teme?</string>
-    <string name="use_icons">Иконалар күрһәтегеҙ?</string>
     <string name="this_months_stats">Был Ай статистикаһы</string>
     <string name="this_year_stats">Был йыл статистикаһы</string>
     <string name="all_time_stats">Бөтә ваҡыт статистикаһы</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Радар URL ҡуйылмаған йәки һаман да скачать. Һеҙ үҙгәрергә параметрҙарға барырға мөмкин</string>
     <string name="wasnt_able_to_connect_or_download">Прогнозды тоташтыра йәки скачать итә алманы</string>
     <string name="swipe_lock">Свайп Блок</string>
+    <string name="widget_theme">Виджет темаһы</string>
+    <string name="match_app">Матч App</string>
+    <string name="custom_setting">Ҡулланыусы төҫтәре</string>
+    <string name="app_theme">App Teme</string>
+    <string name="use_icons">Иконалар күрһәтеү</string>
 </resources>

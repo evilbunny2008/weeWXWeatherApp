@@ -27,8 +27,6 @@
     <string name="bgColour">Виджет арын өнгөний зураг сонгогч</string>
     <string name="indoor_readings">Доторх уншилтыг харуулах уу?</string>
     <string name="update_over_wifi">Зөвхөн WiFi-г шинэчлэх үү?</string>
-    <string name="app_theme">Апп сэдэв үү?</string>
-    <string name="use_icons">Дүрсийг харуулах уу?</string>
     <string name="this_months_stats">Энэ сарын статистик</string>
     <string name="this_year_stats">Энэ жилийн статистик</string>
     <string name="all_time_stats">Бүх цагийн статистик</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">RADAR URL тохируулаагүй эсвэл одоо ч татаж байгаа. Та өөрчлөлтийг тохируулахын тулд очиж болно</string>
     <string name="wasnt_able_to_connect_or_download">Урьдчилсан мэдээг холбож, татаж авах боломжгүй байсан</string>
     <string name="swipe_lock">Батгаа дэлгэрүүл</string>
+    <string name="widget_theme">Виджет сэдэв</string>
+    <string name="match_app">Тохирон бүхий дамжуулагч</string>
+    <string name="custom_setting">Тусгай өнгө</string>
+    <string name="app_theme">Програмын сэдэв</string>
+    <string name="use_icons">Тибс харуул</string>
 </resources>

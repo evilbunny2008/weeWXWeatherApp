@@ -27,8 +27,6 @@
     <string name="bgColour">كىچىك قورال رەڭلىك رەڭ</string>
     <string name="indoor_readings">ئۆي سىرتىدىكى ئوقۇشنى كۆرسىتىشمۇ?</string>
     <string name="update_over_wifi">پەقەت WiFi دىن يېڭىلاندىمۇ?</string>
-    <string name="app_theme">ئەپ تېشىمۇ?</string>
-    <string name="use_icons">سىنبەلگىلەرنى كۆرسىتەمسىز?</string>
     <string name="this_months_stats">بۇ ئايدىكى ستاتىستىكا</string>
     <string name="this_year_stats">بۇ يىل</string>
     <string name="all_time_stats">بارلىق ۋاقىت ستاتىستىكىسى</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">رادار URL تەڭشەلمىدى ياكى يەنىلا چۈشۈرۈۋاتىدۇ. تەڭشەكلەرگە بارسىڭىز بولىدۇ</string>
     <string name="wasnt_able_to_connect_or_download">بۇ پەرەزنى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
     <string name="swipe_lock">Swipe lock</string>
+    <string name="widget_theme">Wililget تېما</string>
+    <string name="match_app">Match دېتالى</string>
+    <string name="custom_setting">ئىختىيارى رەڭ</string>
+    <string name="app_theme">ئەپ تېمىسى</string>
+    <string name="use_icons">سىنبەلگىلەرنى كۆرسىتىڭ</string>
 </resources>

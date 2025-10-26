@@ -27,8 +27,6 @@
     <string name="bgColour">Widget</string>
     <string name="indoor_readings">Erekana gusoma mu nzu?</string>
     <string name="update_over_wifi">Kuvugurura gusa WiFi?</string>
-    <string name="app_theme">Insanganyamatsiko ya App?</string>
-    <string name="use_icons">Erekana amashusho?</string>
     <string name="this_months_stats">Iyi nyubako y\'uku kwezi</string>
     <string name="this_year_stats">Uyu mwaka imibare</string>
     <string name="all_time_stats">Imibare yose</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL ntabwo ishyirwaho cyangwa iracyakuyemo. Urashobora kujya muri Igenamiterere kugirango uhindure</string>
     <string name="wasnt_able_to_connect_or_download">Ntabwo yashoboye guhuza cyangwa gukuramo ibyateganijwe</string>
     <string name="swipe_lock">Guhanagura</string>
+    <string name="widget_theme">Insanganyamatsiko ya Widget</string>
+    <string name="match_app">Guhuza porogaramu</string>
+    <string name="custom_setting">Amabara yihariye</string>
+    <string name="app_theme">Insanganyamatsiko ya App</string>
+    <string name="use_icons">Erekana amashusho</string>
 </resources>

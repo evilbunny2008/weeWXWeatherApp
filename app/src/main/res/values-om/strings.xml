@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Duubbee Halluu Filannoo</string>
     <string name="indoor_readings">Dubbisa mana keessaa agarsiisi?</string>
     <string name="update_over_wifi">Wifi irratti update qofa?</string>
-    <string name="app_theme">Appii mata duree?</string>
-    <string name="use_icons">Mallattoolee agarsiisi?</string>
     <string name="this_months_stats">Istaatistiksii ji\'a kanaa</string>
     <string name="this_year_stats">Istaatistiksii bara kanaa</string>
     <string name="all_time_stats">Istaatistiksii yeroo hunda</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar url hin saagitu ykn ammallee buufachaa jira. Jijjiiruuf gara settings deemuu dandeessa</string>
     <string name="wasnt_able_to_connect_or_download">Raaga sana wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="swipe_lock">Qulfii swipe</string>
+    <string name="widget_theme">Mata duree Widget</string>
+    <string name="match_app">Appii Walsimsiisaa</string>
+    <string name="custom_setting">Halluuwwan aadaa</string>
+    <string name="app_theme">Mata duree appii</string>
+    <string name="use_icons">Mallattoolee agarsiisi</string>
 </resources>

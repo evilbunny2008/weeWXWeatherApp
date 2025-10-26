@@ -27,8 +27,6 @@
     <string name="bgColour">小工具背景顏色派克</string>
     <string name="indoor_readings">展出室內閱讀？</string>
     <string name="update_over_wifi">只係更新過 wifi?</string>
-    <string name="app_theme">App 主題？</string>
-    <string name="use_icons">顯示圖示？</string>
     <string name="this_months_stats">呢個月嘅統計資料</string>
     <string name="this_year_stats">今年嘅統計資料</string>
     <string name="all_time_stats">所有時間統計</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">雷達網址未設定或者仲係下載緊。你可以去設定改變。</string>
     <string name="wasnt_able_to_connect_or_download">無法連接或下載預測。</string>
     <string name="swipe_lock">滑鎖</string>
+    <string name="widget_theme">小工具主題</string>
+    <string name="match_app">配合 App</string>
+    <string name="custom_setting">訂造顏色</string>
+    <string name="app_theme">App 主題</string>
+    <string name="use_icons">顯示圖示</string>
 </resources>

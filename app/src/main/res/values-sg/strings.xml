@@ -27,8 +27,6 @@
     <string name="bgColour">A yeke na lege ni ti tene e sara kua na ni</string>
     <string name="indoor_readings">Fa dikongo ye ti yâ ti da ni?</string>
     <string name="update_over_wifi">Gi mise à jour la wifi?</string>
-    <string name="app_theme">App theme?</string>
-    <string name="use_icons">Fa a-Icon?</string>
     <string name="this_months_stats">Statistique ti Nze so</string>
     <string name="this_year_stats">Statistique ti Ngu so</string>
     <string name="all_time_stats">A-étude ti ngoi kue</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL ni ayeke dä pëpe wala lo ngbâ ti téléchargé ni. Mo lingbi ti gue na a-paramètre ti changé</string>
     <string name="wasnt_able_to_connect_or_download">A lingbi ti sara connexion wala ti téléchargé ni</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Tënë ti Widget</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Couleur ti personnalisé</string>
+    <string name="app_theme">Application theme</string>
+    <string name="use_icons">Fa a-Icon</string>
 </resources>

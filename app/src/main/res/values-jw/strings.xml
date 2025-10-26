@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Warna Widget Picker</string>
     <string name="indoor_readings">Tampilake wacan njero ruangan?</string>
     <string name="update_over_wifi">Mung nganyari liwat WiFi?</string>
-    <string name="app_theme">Tema App?</string>
-    <string name="use_icons">Tampilake lambang?</string>
     <string name="this_months_stats">Statistik wulan iki</string>
     <string name="this_year_stats">Statistik taun iki</string>
     <string name="all_time_stats">Kabeh Statistik Wektu</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL Radar ora disetel utawa isih diunduh. Sampeyan bisa mbukak setelan kanggo ngganti</string>
     <string name="wasnt_able_to_connect_or_download">Ora bisa nyambung utawa ndownload ramalan kasebut</string>
     <string name="swipe_lock">Gesek kunci</string>
+    <string name="widget_theme">Tema Widget</string>
+    <string name="match_app">Cocog app</string>
+    <string name="custom_setting">Werna Custom</string>
+    <string name="app_theme">Tema App</string>
+    <string name="use_icons">Tampilake lambang</string>
 </resources>

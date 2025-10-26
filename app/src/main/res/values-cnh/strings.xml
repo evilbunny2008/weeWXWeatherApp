@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Background Color Picker</string>
     <string name="indoor_readings">Innchung Readings kha langhter?</string>
     <string name="update_over_wifi">Wifi nakin update lawng?</string>
-    <string name="app_theme">App Theme?</string>
-    <string name="use_icons">Icons kha langhter?</string>
     <string name="this_months_stats">Tutan Thla 2019 cu</string>
     <string name="this_year_stats">Tukum zatlangbu</string>
     <string name="all_time_stats">Caan relnak vialte</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL cu set lo asiloah download a si rih. Thlennak caah settings ah na kal khawh</string>
     <string name="wasnt_able_to_connect_or_download">Forecast pehtlaihnak le download tuah khawh a si lo</string>
     <string name="swipe_lock">Swipe</string>
+    <string name="widget_theme">Widget Theme</string>
+    <string name="match_app">App</string>
+    <string name="custom_setting">Custom rong</string>
+    <string name="app_theme">App Theme</string>
+    <string name="use_icons">Icons kha hmuhsak</string>
 </resources>

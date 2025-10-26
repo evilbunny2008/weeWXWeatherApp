@@ -27,8 +27,6 @@
     <string name="bgColour">Valdiklio fono spalvos parinkiklis</string>
     <string name="indoor_readings">Rodyti vidaus skaitymus?</string>
     <string name="update_over_wifi">Atnaujinti tik per wifi?</string>
-    <string name="app_theme">Programos tema?</string>
-    <string name="use_icons">Rodyti piktogramas?</string>
     <string name="this_months_stats">Šio mėnesio statistika</string>
     <string name="this_year_stats">Šių metų statistika</string>
     <string name="all_time_stats">Visų laikų statistika</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radaro URL nenustatytas arba vis dar atsisiunčiamas. Norėdami pakeisti, galite eiti į nustatymus</string>
     <string name="wasnt_able_to_connect_or_download">Nepavyko prisijungti arba atsisiųsti prognozės</string>
     <string name="swipe_lock">Perbraukite užraktas</string>
+    <string name="widget_theme">Valdiklio tema</string>
+    <string name="match_app">\'Match\' programa</string>
+    <string name="custom_setting">Individualios spalvos</string>
+    <string name="app_theme">Programos tema</string>
+    <string name="use_icons">Rodyti piktogramas</string>
 </resources>

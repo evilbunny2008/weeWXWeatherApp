@@ -27,8 +27,6 @@
     <string name="bgColour">Recogist de Color de fons de Widget</string>
     <string name="indoor_readings">Mostrar Lecturas Interioras?</string>
     <string name="update_over_wifi">Solo actualizar sobre wifi?</string>
-    <string name="app_theme">Tema de App?</string>
-    <string name="use_icons">Mostrar las Iconas?</string>
     <string name="this_months_stats">Estadisticas de este Mes</string>
     <string name="this_year_stats">Estadísticas d\'aqueste An</string>
     <string name="all_time_stats">Todas las Estadisticas del tiempo</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL pas definit o es encara en telecargament. Podètz anar als paramètres per cambiar</string>
     <string name="wasnt_able_to_connect_or_download">Era pas capable de connectar o de telecargar la prevision</string>
     <string name="swipe_lock">Bloquejament de vestits</string>
+    <string name="widget_theme">Tema de Widget</string>
+    <string name="match_app">Aplicacion de partida</string>
+    <string name="custom_setting">Colors personalizadas</string>
+    <string name="app_theme">Tema de App</string>
+    <string name="use_icons">Mostrar Icons</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">ዊጀት ድሕረ ባይታ ሕብሪ ምልቃም</string>
     <string name="indoor_readings">ኣብ ውሽጢ ገዛ ንባባት ምርኣይ?</string>
     <string name="update_over_wifi">ኣብ ልዕሊ ዋይፋይ ጥራይ እዩ update?</string>
-    <string name="app_theme">ኣፕ ቴማ?</string>
-    <string name="use_icons">ምልክታት ምርኣይ?</string>
     <string name="this_months_stats">ናይዚ ወርሒ ስታቲስቲክስ</string>
     <string name="this_year_stats">ናይ ሎሚ ዓመት ስታቲስቲክስ</string>
     <string name="all_time_stats">ናይ ኩሉ ግዜ ስታቲስቲክስ</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">ራዳር URL ኣይተቐመጠን ወይ ሕጂ ውን ይወርድ ኣሎ። ናብ ቅጥዕታት ክትከይድ ትኽእል ኢኻ ክትቅየር ትኽእል ኢኻ።</string>
     <string name="wasnt_able_to_connect_or_download">ነቲ ትንበያ ከተራኽቦ ወይ ከተውርዶ ኣይከኣለን።</string>
     <string name="swipe_lock">ስዋይፕ ሎክ</string>
+    <string name="widget_theme">ዊጀት ቴማ</string>
+    <string name="match_app">ናይ ምትእስሳር ኣፕ</string>
+    <string name="custom_setting">ብሕታዊ ሕብርታት</string>
+    <string name="app_theme">ኣፕ ቴማ</string>
+    <string name="use_icons">ምልክታት ምርኣይ</string>
 </resources>

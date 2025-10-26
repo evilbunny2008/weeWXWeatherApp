@@ -27,8 +27,6 @@
     <string name="bgColour">Kala ma ki yubu ki jami</string>
     <string name="indoor_readings">Nyut Kwan me Kwan Kwan ma Kimiyo i Ot?</string>
     <string name="update_over_wifi">Lok manyen keken i wi Wifi?</string>
-    <string name="app_theme">Apme?</string>
-    <string name="use_icons">Nyuto Iontis?</string>
     <string name="this_months_stats">Wel me dwe man</string>
     <string name="this_year_stats">Wel me mwaka ni</string>
     <string name="all_time_stats">Jami ma time kare weng</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Pe kiketo URL nyo pud tye ka keto jami. Itwero wot i yub me loko</string>
     <string name="wasnt_able_to_connect_or_download">Pe onongo twero kubbe nyo twero kwanyo jami ma bitimme anyim</string>
     <string name="swipe_lock">Swit Lock</string>
+    <string name="widget_theme">Wi lok ma nyutu</string>
+    <string name="match_app">Apc ma ki yubu ki mac</string>
+    <string name="custom_setting">Kala me tekwaro</string>
+    <string name="app_theme">Pwony me lwongo</string>
+    <string name="use_icons">Nyut</string>
 </resources>

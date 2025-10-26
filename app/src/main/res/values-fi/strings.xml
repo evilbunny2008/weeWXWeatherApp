@@ -27,8 +27,6 @@
     <string name="bgColour">Widgetin taustavärin valitsin</string>
     <string name="indoor_readings">Näytä sisälukemat?</string>
     <string name="update_over_wifi">Päivitys vain wifin kautta?</string>
-    <string name="app_theme">Sovelluksen teema?</string>
-    <string name="use_icons">Näytä kuvakkeet?</string>
     <string name="this_months_stats">Tämän kuun tilastot</string>
     <string name="this_year_stats">Tämän vuoden tilastot</string>
     <string name="all_time_stats">Kaikkien aikojen tilastot</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Tutkan URL-osoitetta ei ole asetettu tai se latautuu edelleen. Voit siirtyä asetuksiin muuttaaksesi</string>
     <string name="wasnt_able_to_connect_or_download">Ennusteen muodostaminen tai lataaminen ei onnistunut</string>
     <string name="swipe_lock">Pyyhkäise lukitus</string>
+    <string name="widget_theme">Widget-teema</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Mukautetut värit</string>
+    <string name="app_theme">Sovelluksen teema</string>
+    <string name="use_icons">Näytä kuvakkeet</string>
 </resources>

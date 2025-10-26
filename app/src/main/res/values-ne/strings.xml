@@ -26,8 +26,6 @@
     <string name="bgColour">विजेट पृष्ठभूमि रङ चयनकर्ता</string>
     <string name="indoor_readings">भित्री पठनहरू देखाउने हो?</string>
     <string name="update_over_wifi">वाइफाइ मार्फत मात्र अपडेट गर्ने?</string>
-    <string name="app_theme">एप विषयवस्तु?</string>
-    <string name="use_icons">आइकनहरू देखाउने हो?</string>
     <string name="this_months_stats">यो महिनाको तथ्याङ्क</string>
     <string name="this_year_stats">यस वर्षको तथ्याङ्क</string>
     <string name="all_time_stats">सबै समय तथ्याङ्क</string>
@@ -68,4 +66,9 @@
     <string name="wasnt_able_to_connect_or_download">जडान गर्न वा पूर्वानुमान डाउनलोड गर्न सक्षम भएन।</string>
     <string name="stats2">तथ्याङ्क</string>
     <string name="swipe_lock">स्वाइप लक</string>
+    <string name="widget_theme">विजेट विषयवस्तु</string>
+    <string name="match_app">मिलान एप</string>
+    <string name="custom_setting">अनुकूलन रंगहरू</string>
+    <string name="app_theme">एप थिम</string>
+    <string name="use_icons">आइकनहरू देखाउनुहोस्</string>
 </resources>

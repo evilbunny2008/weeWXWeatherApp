@@ -27,8 +27,6 @@
     <string name="bgColour">Neach-togail dath cùl-raon widget</string>
     <string name="indoor_readings">Seall leughaidhean a-staigh?</string>
     <string name="update_over_wifi">Ùraich dìreach thairis air wifi?</string>
-    <string name="app_theme">Cuspair an aplacaid?</string>
-    <string name="use_icons">Seall na h-ìomhaighean?</string>
     <string name="this_months_stats">Staitistig na Mìosa seo</string>
     <string name="this_year_stats">Staitistig na bliadhna seo</string>
     <string name="all_time_stats">Staitistig Làn-ùine</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Chan eil URL radar stèidhichte no ga luchdachadh sìos fhathast. Faodaidh tu a dhol gu roghainnean airson atharrachadh</string>
     <string name="wasnt_able_to_connect_or_download">Cha b\' urrainn dhuinn an ro-aithris a cheangal no a luchdachadh sìos</string>
     <string name="swipe_lock">Glasadh Sguabaidh</string>
+    <string name="widget_theme">Cuspair widget</string>
+    <string name="match_app">App Match</string>
+    <string name="custom_setting">Dathan gnàthaichte</string>
+    <string name="app_theme">Cuspair an aplacaid</string>
+    <string name="use_icons">Seall Icons</string>
 </resources>

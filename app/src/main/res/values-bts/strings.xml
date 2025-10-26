@@ -27,8 +27,6 @@
     <string name="bgColour">Latarbelakang Batu Latar Belakang Picker</string>
     <string name="indoor_readings">Pataridahkon Bacaan Indoor?</string>
     <string name="update_over_wifi">Pitah lobih humbani wifi?</string>
-    <string name="app_theme">Aplikasi Tema?</string>
-    <string name="use_icons">Patuduhkon Ikon?</string>
     <string name="this_months_stats">Statistik ni Bulan on</string>
     <string name="this_year_stats">Statistik Tahun on</string>
     <string name="all_time_stats">Tiap Statistik Jam</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL lang iatur atap pe i- download ope. Boi do nasiam laho hu pengaturan laho mangubah</string>
     <string name="wasnt_able_to_connect_or_download">Lang boi marhubungan atap download ramalan ai</string>
     <string name="swipe_lock">Pasaunkon</string>
+    <string name="widget_theme">Tema Jejak</string>
+    <string name="match_app">Padomu Aplikasi</string>
+    <string name="custom_setting">Warna Adat</string>
+    <string name="app_theme">Aplikasi Tema</string>
+    <string name="use_icons">Patuduhkon Ikon</string>
 </resources>

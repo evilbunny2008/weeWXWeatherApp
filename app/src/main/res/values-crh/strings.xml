@@ -27,8 +27,6 @@
     <string name="bgColour">Виджет Фон Ренкли пикер</string>
     <string name="indoor_readings">Ички окъувларны косьтермек?</string>
     <string name="update_over_wifi">Тек wifi устюнде янъыланма?</string>
-    <string name="app_theme">Иляве мевзусы?</string>
-    <string name="use_icons">Иконсны косьтермек?</string>
     <string name="this_months_stats">Бу Айнынъ статистикасы</string>
     <string name="this_year_stats">Бу йыл статистикасы</string>
     <string name="all_time_stats">Бутюн вакъыт статистикасы</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Радар URL бельгилемей я да даа юклеп тура. Денъиштирмек ичюн параметрлерге бармакъ мумкюн</string>
     <string name="wasnt_able_to_connect_or_download">Прогнозны багълап я да юклеп оламады</string>
     <string name="swipe_lock">Свипрованный килит</string>
+    <string name="widget_theme">Виджет мевзусы</string>
+    <string name="match_app">Матч ярдымынен</string>
+    <string name="custom_setting">Герчилик ренклери</string>
+    <string name="app_theme">Къулланма мевзусы</string>
+    <string name="use_icons">Иконсны косьтермек</string>
 </resources>

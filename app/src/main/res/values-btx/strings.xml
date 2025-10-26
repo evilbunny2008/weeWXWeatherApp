@@ -27,8 +27,6 @@
     <string name="bgColour">Latar Belakang Latar Belakang Warna Picker</string>
     <string name="indoor_readings">Cidahken Ogen Indoor?</string>
     <string name="update_over_wifi">Baru saja update asangken wifi?</string>
-    <string name="app_theme">Tema Aplikasi?</string>
-    <string name="use_icons">Cidahken Ikon?</string>
     <string name="this_months_stats">Statistik Bulan enda</string>
     <string name="this_year_stats">Statistik Tahun enda</string>
     <string name="all_time_stats">Kerina Statistik Waktu</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL la set ntah pe sangana download. Banci kam lawes ku pengaturen guna berubah</string>
     <string name="wasnt_able_to_connect_or_download">Labo banci ihubungken ntah pe i-download ramalen</string>
     <string name="swipe_lock">Kunci Genggak</string>
+    <string name="widget_theme">Tema Widget</string>
+    <string name="match_app">Pertandingen Aplikasi</string>
+    <string name="custom_setting">Warna si khusus</string>
+    <string name="app_theme">Aplikasi Tema</string>
+    <string name="use_icons">Cidahken Ikon</string>
 </resources>

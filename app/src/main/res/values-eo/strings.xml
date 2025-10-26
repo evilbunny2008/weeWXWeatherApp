@@ -27,8 +27,6 @@
     <string name="bgColour">Fenestraĵo Fona Koloro Elektilo</string>
     <string name="indoor_readings">Montri Endomajn Legojn?</string>
     <string name="update_over_wifi">Ĉu nur ĝisdatigi per wifi?</string>
-    <string name="app_theme">Aplika temo?</string>
-    <string name="use_icons">Ĉu montri piktogramojn?</string>
     <string name="this_months_stats">Statistiko de ĉi tiu monato</string>
     <string name="this_year_stats">Ĉi-jara Statistiko</string>
     <string name="all_time_stats">Ĉiatempa Statistiko</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radara URL ne agordita aŭ ankoraŭ elŝutas. Vi povas iri al agordoj por ŝanĝi</string>
     <string name="wasnt_able_to_connect_or_download">Ne povis konekti aŭ elŝuti la prognozon</string>
     <string name="swipe_lock">Svingu Ŝlosu</string>
+    <string name="widget_theme">Fenestraĵa Temo</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Propraj Koloroj</string>
+    <string name="app_theme">Aplika Temo</string>
+    <string name="use_icons">Montru piktogramojn</string>
 </resources>

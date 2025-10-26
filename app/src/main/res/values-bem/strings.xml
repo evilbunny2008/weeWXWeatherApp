@@ -27,8 +27,6 @@
     <string name="bgColour">Icipe ca Kubweseshamo Amalangi</string>
     <string name="indoor_readings">Langisheni Ukubelenga Amalyashi?</string>
     <string name="update_over_wifi">Ukuwamya fye ukucila pa wifi?</string>
-    <string name="app_theme">Umutwe wa App?</string>
-    <string name="use_icons">Langisheni Indalama?</string>
     <string name="this_months_stats">Imibele ya Mweshi</string>
     <string name="this_year_stats">Imitantikile ya uno mwaka</string>
     <string name="all_time_stats">Imitantikile yonse iya Nshita</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL iya Rayar tayabikwa nangu ukukopa. Kuti waya ku fipekanyo ku kwaluka</string>
     <string name="wasnt_able_to_connect_or_download">Tacaali na maka ya kulundanya nelyo ukukopa ifya ku ntanshi</string>
     <string name="swipe_lock">Sewipeni</string>
+    <string name="widget_theme">Umutwe wa Cifulo</string>
+    <string name="match_app">Ukulinganisha Appp</string>
+    <string name="custom_setting">Amalangi ya Kupanga</string>
+    <string name="app_theme">Umutwe wa App</string>
+    <string name="use_icons">Langisheni Indalama</string>
 </resources>

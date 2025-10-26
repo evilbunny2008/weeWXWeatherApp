@@ -27,8 +27,6 @@
     <string name="bgColour">Widget-Hintergrundfarbauswahl</string>
     <string name="indoor_readings">Indoor-Messwerte anzeigen?</string>
     <string name="update_over_wifi">Nur über WLAN aktualisieren?</string>
-    <string name="app_theme">App-Theme?</string>
-    <string name="use_icons">Symbole anzeigen?</string>
     <string name="this_months_stats">Die Statistiken dieses Monats</string>
     <string name="this_year_stats">Die diesjährige Statistik</string>
     <string name="all_time_stats">Allzeitstatistiken</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Die Radar-URL ist nicht festgelegt oder wird noch heruntergeladen. Sie können zu den Einstellungen gehen, um sie zu ändern</string>
     <string name="wasnt_able_to_connect_or_download">Es konnte keine Verbindung hergestellt oder die Prognose heruntergeladen werden</string>
     <string name="swipe_lock">Wischsperre</string>
+    <string name="widget_theme">Widget-Thema</string>
+    <string name="match_app">Match-App</string>
+    <string name="custom_setting">Benutzerdefinierte Farben</string>
+    <string name="app_theme">App-Theme</string>
+    <string name="use_icons">Symbole anzeigen</string>
 </resources>

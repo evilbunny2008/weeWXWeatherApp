@@ -27,8 +27,6 @@
     <string name="bgColour">Widget fon rəng seçicisi</string>
     <string name="indoor_readings">Daxili oxunuşları göstərin?</string>
     <string name="update_over_wifi">Yalnız WiFi üzərində yeniləyin?</string>
-    <string name="app_theme">Tətbiq mövzusu?</string>
-    <string name="use_icons">Nişanlar göstərin?</string>
     <string name="this_months_stats">Bu ayın statistikası</string>
     <string name="this_year_stats">Bu ilki statistika</string>
     <string name="all_time_stats">Bütün vaxt statistikası</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL qurulmadı və ya hələ də yüklənmir. Dəyişdirmək üçün parametrlərə gedə bilərsiniz</string>
     <string name="wasnt_able_to_connect_or_download">Proqnozu bağlaya və ya yükləyə bilmədi</string>
     <string name="swipe_lock">Sürmək</string>
+    <string name="widget_theme">Vidjet mövzusu</string>
+    <string name="match_app">Matç tətbiqi</string>
+    <string name="custom_setting">Xüsusi rənglər</string>
+    <string name="app_theme">Tətbiq mövzusu</string>
+    <string name="use_icons">Nişanlar göstər</string>
 </resources>

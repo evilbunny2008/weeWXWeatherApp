@@ -27,8 +27,6 @@
     <string name="bgColour">القطعة لون الخلفية المنتقى</string>
     <string name="indoor_readings">عرض القراءات الداخلية؟</string>
     <string name="update_over_wifi">التحديث فقط عبر الواي فاي؟</string>
-    <string name="app_theme">موضوع التطبيق؟</string>
-    <string name="use_icons">إظهار الأيقونات؟</string>
     <string name="this_months_stats">إحصائيات هذا الشهر</string>
     <string name="this_year_stats">إحصائيات هذا العام</string>
     <string name="all_time_stats">جميع إحصائيات الوقت</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">لم يتم تعيين عنوان URL للرادار أو أنه لا يزال قيد التنزيل. يمكنك الذهاب إلى الإعدادات للتغيير</string>
     <string name="wasnt_able_to_connect_or_download">لم أتمكن من الاتصال أو تنزيل التوقعات</string>
     <string name="swipe_lock">انتقد قفل</string>
+    <string name="widget_theme">موضوع القطعة</string>
+    <string name="match_app">تطبيق المباراة</string>
+    <string name="custom_setting">ألوان مخصصة</string>
+    <string name="app_theme">موضوع التطبيق</string>
+    <string name="use_icons">إظهار الأيقونات</string>
 </resources>

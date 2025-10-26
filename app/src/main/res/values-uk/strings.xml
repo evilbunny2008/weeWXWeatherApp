@@ -27,8 +27,6 @@
     <string name="bgColour">Вибір кольору фону віджета</string>
     <string name="indoor_readings">Показувати показання в приміщенні?</string>
     <string name="update_over_wifi">Оновлювати лише через Wi-Fi?</string>
-    <string name="app_theme">Тема програми?</string>
-    <string name="use_icons">Показувати значки?</string>
     <string name="this_months_stats">Статистика цього місяця</string>
     <string name="this_year_stats">Статистика цього року</string>
     <string name="all_time_stats">Статистика за весь час</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL-адреса радара не встановлена ​​або все ще завантажується. Ви можете перейти до налаштувань, щоб змінити</string>
     <string name="wasnt_able_to_connect_or_download">Не вдалося підключитися чи завантажити прогноз</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Тема віджета</string>
+    <string name="match_app">Матч App</string>
+    <string name="custom_setting">Спеціальні кольори</string>
+    <string name="app_theme">Тема програми</string>
+    <string name="use_icons">Показати значки</string>
 </resources>

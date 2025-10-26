@@ -27,8 +27,6 @@
     <string name="bgColour">Picker di Koló di Antecedente di Widget</string>
     <string name="indoor_readings">Mustra Lecturanan Interior?</string>
     <string name="update_over_wifi">Solamente actualisa riba wifi?</string>
-    <string name="app_theme">App Tema?</string>
-    <string name="use_icons">Mustra Icononan?</string>
     <string name="this_months_stats">E Estadístika di e Luna di e Luna aki</string>
     <string name="this_year_stats">E Estadístika di Aña aki</string>
     <string name="all_time_stats">Tur Estadístika di Tempu</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL di Radar no ta set òf ainda ta download. Bo por bai na settings pa kambia</string>
     <string name="wasnt_able_to_connect_or_download">No tabata por a konektá òf download e pronóstiko</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Tema di Widget</string>
+    <string name="match_app">Partido App</string>
+    <string name="custom_setting">Kolónan Personalisa</string>
+    <string name="app_theme">App Tema</string>
+    <string name="use_icons">Mustra Iconnan</string>
 </resources>

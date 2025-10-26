@@ -27,8 +27,6 @@
     <string name="bgColour">Виджет фонĕ тĕсĕ Пикер</string>
     <string name="indoor_readings">Пÿлĕмри вулавсене кăтартăр?</string>
     <string name="update_over_wifi">wifi-ран ҫеҫ ҫӗнетӗр-и?</string>
-    <string name="app_theme">Приложени Тема?</string>
-    <string name="use_icons">Иконссене кăтартăр?</string>
     <string name="this_months_stats">Çак уйăх статистики</string>
     <string name="this_year_stats">Кăçалхи статистика</string>
     <string name="all_time_stats">Пур вăхăт статистики</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL-адрес мар е халĕ те скачать тăвать. Улшăнма настройкăсене кайма пулать</string>
     <string name="wasnt_able_to_connect_or_download">Прогноза çыхăнтарма е скачать тума пултарайман</string>
     <string name="swipe_lock">Швейцар лока</string>
+    <string name="widget_theme">Виджет теми</string>
+    <string name="match_app">Матч приложенийĕ</string>
+    <string name="custom_setting">Ятарлă тĕссем</string>
+    <string name="app_theme">Приложени теми</string>
+    <string name="use_icons">Иконсене кăтартăр</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">የጀርባ ትምህርት ቤት የቀለም መራጭ</string>
     <string name="indoor_readings">የቤት ውስጥ ንባቦችን አሳይ?</string>
     <string name="update_over_wifi">ከ WiFi በላይ ብቻ ያዘምኑ?</string>
-    <string name="app_theme">የመተግበሪያ ገጽታ?</string>
-    <string name="use_icons">አዶዎችን አሳይ?</string>
     <string name="this_months_stats">የዚህ ወር ስታቲስቲክስ</string>
     <string name="this_year_stats">የዚህ ዓመት ስታቲስቲክስ</string>
     <string name="all_time_stats">ሁሉም ጊዜ ስታቲስቲክስ</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">ራዳር ዩ አር ኤል አልተዋቀረም ወይም አሁንም እያወርድ ነው. ወደ ቅንብሮች ወደ ለውጦች መሄድ ይችላሉ</string>
     <string name="wasnt_able_to_connect_or_download">ትንበያውን ማገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="swipe_lock">መቆለፊያ</string>
+    <string name="widget_theme">ንዑስ ፕሮግራም ጭብጥ</string>
+    <string name="match_app">አወዳድሮ መተግበሪያ</string>
+    <string name="custom_setting">ብጁ ቀለሞች</string>
+    <string name="app_theme">የመተግበሪያ ገጽታ</string>
+    <string name="use_icons">አዶዎችን አሳይ</string>
 </resources>

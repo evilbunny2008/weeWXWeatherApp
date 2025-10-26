@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Asalka Asalka Midabka</string>
     <string name="indoor_readings">Muuji aqrinta gudaha?</string>
     <string name="update_over_wifi">Kaliya cusbooneysii WiFi?</string>
-    <string name="app_theme">App mawduuc?</string>
-    <string name="use_icons">Muuji calaamadaha?</string>
     <string name="this_months_stats">Tirakoobka bishaan</string>
     <string name="this_year_stats">Tirakoobka sanadkaan</string>
     <string name="all_time_stats">Tirakoobka waqtiga oo dhan</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL looma dejinin ama wali soo dejisan maayo. Waad aadi kartaa dejinta si aad u beddesho</string>
     <string name="wasnt_able_to_connect_or_download">Ma awoodin inuu isku xidho ama soo dejiyo saadaasha</string>
     <string name="swipe_lock">Qufulka Swipe</string>
+    <string name="widget_theme">Mawduuca widget</string>
+    <string name="match_app">Ciyaarta ciyaarta</string>
+    <string name="custom_setting">Midabbada caadiga ah</string>
+    <string name="app_theme">Mowduuca app</string>
+    <string name="use_icons">Muuji calaamadaha</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">เครื่องมือเลือกสีพื้นหลังวิดเจ็ต</string>
     <string name="indoor_readings">แสดงการอ่านในร่ม?</string>
     <string name="update_over_wifi">อัพเดตผ่าน wifi เท่านั้นเหรอ?</string>
-    <string name="app_theme">ธีมแอพ?</string>
-    <string name="use_icons">แสดงไอคอน?</string>
     <string name="this_months_stats">สถิติประจำเดือนนี้</string>
     <string name="this_year_stats">สถิติปีนี้</string>
     <string name="all_time_stats">สถิติเวลาทั้งหมด</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">ไม่ได้ตั้งค่า URL เรดาร์หรือยังคงดาวน์โหลดอยู่ คุณสามารถไปที่การตั้งค่าเพื่อเปลี่ยนแปลงได้</string>
     <string name="wasnt_able_to_connect_or_download">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดการคาดการณ์ได้</string>
     <string name="swipe_lock">ปัดล็อค</string>
+    <string name="widget_theme">ธีมวิดเจ็ต</string>
+    <string name="match_app">แอพจับคู่</string>
+    <string name="custom_setting">สีที่กำหนดเอง</string>
+    <string name="app_theme">ธีมแอป</string>
+    <string name="use_icons">แสดงไอคอน</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">Widget pro výběr barvy pozadí</string>
     <string name="indoor_readings">Zobrazit vnitřní čtení?</string>
     <string name="update_over_wifi">Aktualizovat pouze přes wifi?</string>
-    <string name="app_theme">Téma aplikace?</string>
-    <string name="use_icons">Zobrazit ikony?</string>
     <string name="this_months_stats">Statistiky tohoto měsíce</string>
     <string name="this_year_stats">Letošní statistiky</string>
     <string name="all_time_stats">Statistiky všech dob</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Adresa URL radaru není nastavena nebo se stále stahuje. Pro změnu můžete přejít do nastavení</string>
     <string name="wasnt_able_to_connect_or_download">Nepodařilo se připojit nebo stáhnout předpověď</string>
     <string name="swipe_lock">Zámek přejetím</string>
+    <string name="widget_theme">Téma widgetu</string>
+    <string name="match_app">Aplikace Match</string>
+    <string name="custom_setting">Vlastní barvy</string>
+    <string name="app_theme">Téma aplikace</string>
+    <string name="use_icons">Zobrazit ikony</string>
 </resources>

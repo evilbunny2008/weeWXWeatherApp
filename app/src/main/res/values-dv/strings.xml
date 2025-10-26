@@ -27,8 +27,6 @@
     <string name="bgColour">ވިޖެޓް ބެކްގްރައުންޑް ކުލަ ޕިކަރ</string>
     <string name="indoor_readings">އިންޑޯ ރީޑިންގްސް ދައްކާތަ؟</string>
     <string name="update_over_wifi">ހަމައެކަނި ވައިފައިގެ މައްޗަށް އަޕްޑޭޓް ކޮށްލަން ހެއްޔެވެ؟</string>
-    <string name="app_theme">އެޕް ތީމް؟</string>
-    <string name="use_icons">އައިކޮންތައް ދައްކާތަ؟</string>
     <string name="this_months_stats">މި މަހުގެ ތަފާސް ހިސާބުތައް</string>
     <string name="this_year_stats">މިއަހަރުގެ ތަފާސް ހިސާބުތައް</string>
     <string name="all_time_stats">ހުރިހާ ވަގުތެއްގައިވެސް ތަފާސްހިސާބު</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">ރާޑަރ ޔޫ.އާރ.އެލް ސެޓް ނުކޮށް ނުވަތަ އަދިވެސް ޑައުންލޯޑް ކުރަނީ. ބަދަލުވާން ސެޓިންގްސް އަށް ދެވޭނެ އެވެ</string>
     <string name="wasnt_able_to_connect_or_download">އަންޓް ނޮޓް އެބަލް ޓު ކަނެކްޓް ނުވަތަ ޑައުންލޯޑް ދަ ފޯކަސްޓް</string>
     <string name="swipe_lock">ސްވައިޕް ލޮކް</string>
+    <string name="widget_theme">ވިޖެޓް ތީމް</string>
+    <string name="match_app">މެޗް އެޕް</string>
+    <string name="custom_setting">ކަސްޓަމް ކުލަތައް</string>
+    <string name="app_theme">އެޕް ތީމް</string>
+    <string name="use_icons">އައިކޮންތައް ދައްކާ</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">ويجيٽ پس منظر رنگ چونڊيندڙ</string>
     <string name="indoor_readings">انڊور ريڊنگ ڏيکاريو؟</string>
     <string name="update_over_wifi">صرف وائي فائي تي تازه ڪاري؟</string>
-    <string name="app_theme">ايپ موضوع؟</string>
-    <string name="use_icons">شبیہیں ڏيکاريو؟</string>
     <string name="this_months_stats">هن مهيني جي شماريات</string>
     <string name="this_year_stats">هن سال جي شماريات</string>
     <string name="all_time_stats">سڀ وقت جي شماريات</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">رادر URL سيٽ نه ڪيو ويو آهي يا اڃا تائين ڊائون لوڊ ٿي رهيو آهي. توھان تبديل ڪرڻ لاء سيٽنگون ڏانھن وڃو</string>
     <string name="wasnt_able_to_connect_or_download">اڳڪٿي کي ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
     <string name="swipe_lock">سوائپ لاڪ</string>
+    <string name="widget_theme">وجيٽ موضوع</string>
+    <string name="match_app">ملائڻ ايپ</string>
+    <string name="custom_setting">حسب ضرورت رنگ</string>
+    <string name="app_theme">ايپ موضوع</string>
+    <string name="use_icons">شبیہیں ڏيکاريو</string>
 </resources>

@@ -23,6 +23,7 @@ import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
 import org.json.JSONObject;
@@ -53,6 +54,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
+
 import static com.github.evilbunny2008.colourpicker.Common.parseHexToColour;
 import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
@@ -62,30 +64,25 @@ public class MainActivity extends FragmentActivity
 {
 	private TabLayout tabLayout;
 	private DrawerLayout mDrawerLayout;
-	private TextInputEditText settingsURL;
-	private TextInputEditText customURL;
-	private CPEditText fgColour;
-	private CPEditText bgColour;
-	private MaterialButton b1;
-	private MaterialButton b2;
-	private MaterialButton b3;
-	private MaterialButton b4;
-	private AutoCompleteTextView s1;
-	private AutoCompleteTextView s2;
+	private TextInputLayout fgtil, bgtil;
+	private TextInputEditText settingsURL, customURL;
+	private CPEditText fgColour, bgColour;
+	private MaterialButton b1, b2, b3, b4;
+	private AutoCompleteTextView s1, s2, s3;
 	private MaterialSwitch show_indoor, metric_forecasts;
 	private static ViewPager2 mViewPager;
 
 	private AlertDialog dialog;
 
-	private LinearLayout settingLayout;
-	private LinearLayout aboutLayout;
+	private LinearLayout settingLayout, aboutLayout;
 
 	private ScrollView scrollView;
 
 	private SectionsStateAdapter mSectionsPagerAdapter;
 
-	private int UpdateFrequency;
-	private int DayNightMode;
+	private int UpdateFrequency, DayNightMode;
+
+	private String[] updateOptions, themeOptions, widgetThemeOptions;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -203,11 +200,9 @@ public class MainActivity extends FragmentActivity
 
 		settingsURL = findViewById(R.id.settings);
 		customURL = findViewById(R.id.customURL);
-		s1 = findViewById(R.id.spinner1);
 
 		metric_forecasts = findViewById(R.id.metric_forecasts);
 		show_indoor = findViewById(R.id.show_indoor);
-		s2 = findViewById(R.id.spinner2);
 
 		b1 = findViewById(R.id.saveButton);
 		b2 = findViewById(R.id.deleteData);
@@ -227,25 +222,34 @@ public class MainActivity extends FragmentActivity
 		Common.LogMessage("Line229 Setting bgColour to "+ to_ARGB_hex(hex));
 		bgColour.setText(hex);
 
-		String[] paths = new String[]
-		{
-			getString(R.string.manual_update),
-			getString(R.string.every_5_minutes),
-			getString(R.string.every_10_minutes),
-			getString(R.string.every_15_minutes),
-			getString(R.string.every_30_minutes),
-			getString(R.string.every_hour),
-		};
-
-		ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_layout, paths);
-		s1.setAdapter(adapter);
+		s1 = findViewById(R.id.spinner1);
 		s1.setOnItemClickListener((parent, view, position, id) ->
 		{
 			UpdateFrequency = position;
 			Common.LogMessage("New UpdateFrequency == " + UpdateFrequency);
 		});
-		UpdateFrequency = Common.GetIntPref("updateInterval", 1);
-		s1.setText(paths[UpdateFrequency], false);
+
+		s2 = findViewById(R.id.spinner2);
+		s2.setOnItemClickListener((parent, view, position, id) ->
+		{
+			DayNightMode = position;
+			Common.LogMessage("New DayNightMode == " + DayNightMode);
+		});
+
+		s3 = findViewById(R.id.spinner3);
+		s3.setOnItemClickListener((parent, view, position, id) ->
+		{
+			KeyValue.widget_theme_mode = position;
+			if(KeyValue.widget_theme_mode == 4)
+			{
+				fgtil.post(() -> fgtil.setVisibility(View.VISIBLE));
+				bgtil.post(() -> bgtil.setVisibility(View.VISIBLE));
+			} else {
+				fgtil.post(() -> fgtil.setVisibility(View.GONE));
+				bgtil.post(() -> bgtil.setVisibility(View.GONE));
+			}
+			Common.LogMessage("New KeyValue.widget_theme_mode == " + KeyValue.widget_theme_mode);
+		});
 
 		MaterialSwitch wifi_only = findViewById(R.id.wifi_only);
 		wifi_only.setChecked(Common.GetBoolPref("onlyWIFI", false));
@@ -254,28 +258,13 @@ public class MainActivity extends FragmentActivity
 		metric_forecasts.setChecked(Common.GetBoolPref("metric", true));
 		show_indoor.setChecked(Common.GetBoolPref("showIndoor", false));
 
-		String[] themeString = new String[]
-		{
-			getString(R.string.light_theme),
-			getString(R.string.dark_theme),
-			getString(R.string.system_default)
-		};
-
-		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_layout, themeString);
-		s2.setAdapter(adapter2);
-		s2.setOnItemClickListener((parent, view, position, id) ->
-		{
-			DayNightMode = position;
-			Common.LogMessage("New DayNightMode == " + DayNightMode);
-		});
-
-		DayNightMode = Common.GetIntPref("DayNightMode", 2);
-		s2.setText(themeString[DayNightMode], false);
-
 		MaterialRadioButton showRadar = findViewById(R.id.showRadar);
 		showRadar.setChecked(Common.GetBoolPref("radarforecast", true));
 		MaterialRadioButton showForecast = findViewById(R.id.showForecast);
 		showForecast.setChecked(!Common.GetBoolPref("radarforecast", true));
+
+		fgtil = findViewById(R.id.fgTextInputLayout);
+		bgtil = findViewById(R.id.bgTextInputLayout);
 
 		b1.setOnClickListener(arg0 ->
 		{
@@ -339,7 +328,74 @@ public class MainActivity extends FragmentActivity
 		tv.setText(HtmlCompat.fromHtml(Common.about_blurb, HtmlCompat.FROM_HTML_MODE_LEGACY));
 		tv.setMovementMethod(LinkMovementMethod.getInstance());
 
+		setStrings();
+		updateDropDowns();
 		Common.setAlarm("MainActivity.onCreate() has finished...");
+	}
+
+	private void setStrings()
+	{
+		updateOptions = new String[]
+		{
+			getString(R.string.manual_update),
+			getString(R.string.every_5_minutes),
+			getString(R.string.every_10_minutes),
+			getString(R.string.every_15_minutes),
+			getString(R.string.every_30_minutes),
+			getString(R.string.every_hour),
+		};
+
+		themeOptions = new String[]
+		{
+			getString(R.string.light_theme),
+			getString(R.string.dark_theme),
+			getString(R.string.system_default)
+		};
+
+		widgetThemeOptions = new String[]
+		{
+			getString(R.string.system_default),
+			getString(R.string.match_app),
+			getString(R.string.light_theme),
+			getString(R.string.dark_theme),
+			getString(R.string.custom_setting)
+		};
+	}
+
+	private void updateDropDowns()
+	{
+		UpdateFrequency = Common.GetIntPref("updateInterval", 1);
+		ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_layout, updateOptions);
+		s1.post(() ->
+		{
+			s1.setAdapter(adapter);
+			s1.setText(updateOptions[UpdateFrequency], false);
+		});
+
+		DayNightMode = Common.GetIntPref("DayNightMode", 2);
+		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_layout, themeOptions);
+		s2.post(() ->
+		{
+			s2.setAdapter(adapter2);
+			s2.setText(themeOptions[DayNightMode], false);
+		});
+
+		KeyValue.widget_theme_mode = Common.GetIntPref(Common.WIDGET_THEME_MODE, 0);
+		if(KeyValue.widget_theme_mode == 4)
+		{
+			fgtil.post(() -> fgtil.setVisibility(View.VISIBLE));
+			bgtil.post(() -> bgtil.setVisibility(View.VISIBLE));
+		} else {
+			fgtil.post(() -> fgtil.setVisibility(View.GONE));
+			bgtil.post(() -> bgtil.setVisibility(View.GONE));
+		}
+
+		ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this, R.layout.spinner_layout, widgetThemeOptions);
+		s3.post(() ->
+		{
+			s3.setAdapter(adapter3);
+			s3.setText(widgetThemeOptions[KeyValue.widget_theme_mode], false);
+		});
 	}
 
 	void closeKeyboard()
@@ -372,13 +428,12 @@ public class MainActivity extends FragmentActivity
 	private void resetActivity()
 	{
 		Common.LogMessage("Resetting mSectionsPagerAdapter");
+		Common.reload();
 		((weeWXApp)getApplication()).applyTheme();
 		closeKeyboard();
 		closeDrawer();
+		WidgetProvider.updateAppWidget();
 		this.recreate();
-		//Intent intent = getIntent();
-		//finish();
-		//startActivity(intent);
 	}
 
 	private void showUpdateAvailable()
@@ -825,16 +880,16 @@ public class MainActivity extends FragmentActivity
 			if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !Common.checkForImages() && !use_icons.isChecked())
 			{
 				Common.SetStringPref("lastError", String.format(getString(R.string.forecast_type_needs_icons), fctype));
-				runOnUiThread(() -> {
+				runOnUiThread(() ->
+				{
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
-							.setTitle(getString(R.string.wasnt_able_to_detect_forecast_icons))
-							.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
-							{
-							}).show();
+						.setTitle(getString(R.string.wasnt_able_to_detect_forecast_icons))
+						.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+						.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+						{}).show();
 				});
 
 				return;
@@ -987,6 +1042,8 @@ public class MainActivity extends FragmentActivity
 			Common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
 			Common.SetBoolPref("use_icons", use_icons.isChecked());
 
+			Common.SetIntPref(Common.WIDGET_THEME_MODE, KeyValue.widget_theme_mode);
+
 			Editable edit = fgColour.getText();
 			if(edit != null && edit.length() > 0)
 			{
@@ -1009,6 +1066,8 @@ public class MainActivity extends FragmentActivity
 				dialog.dismiss();
 				resetActivity();
 			});
+
+			updateDropDowns();
 		});
 
 		t.start();

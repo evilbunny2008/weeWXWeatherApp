@@ -27,9 +27,7 @@
     <string name="bgColour">Widget Background Color Picker</string>
     <string name="indoor_readings">Indoor lectionum ostende?</string>
     <string name="update_over_wifi">Tantum update in WiFi?</string>
-    <string name="app_theme">App Theme?</string>
-    <string name="use_icons">Ostende Icones?</string>
-    <string name="this_months_stats">Hoc mense Statistics</string>
+	<string name="this_months_stats">Hoc mense Statistics</string>
     <string name="this_year_stats">Hoc anno Statistics</string>
     <string name="all_time_stats">All Time Statistics</string>
     <string name="since">quoniam</string>

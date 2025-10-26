@@ -27,8 +27,6 @@
     <string name="bgColour">Umbala we-Widget wangemuva wangemuva</string>
     <string name="indoor_readings">Khombisa ukufundwa ngaphakathi?</string>
     <string name="update_over_wifi">Vuselela kuphela nge-WiFi?</string>
-    <string name="app_theme">I-App Theme?</string>
-    <string name="use_icons">Khombisa izithonjana?</string>
     <string name="this_months_stats">Izibalo zenyanga</string>
     <string name="this_year_stats">Izibalo zalo nyaka</string>
     <string name="all_time_stats">Zonke Izibalo</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">I-radar url ayisethiwe noma isalanda. Ungaya kuzilungiselelo zokushintsha</string>
     <string name="wasnt_able_to_connect_or_download">Ayikwazanga ukuxhuma noma ukulanda isibikezelo</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Indikimba ye-Widget</string>
+    <string name="match_app">Umdlalo wokulinganisa</string>
+    <string name="custom_setting">Imibala yangokwezifiso</string>
+    <string name="app_theme">Isihloko sohlelo lokusebenza</string>
+    <string name="use_icons">Khombisa izithonjana</string>
 </resources>

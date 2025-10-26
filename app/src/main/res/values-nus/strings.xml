@@ -27,8 +27,6 @@
     <string name="bgColour">Wi̱gɛn Bagrɔɔn mi̱ Di̱i̱t mi̱ cɔali̱ Paktɛr</string>
     <string name="indoor_readings">Nyuɔth Indour Readings?</string>
     <string name="update_over_wifi">Kä update kärɔa wi̱i̱wi?</string>
-    <string name="app_theme">Appthemɛn ɛmɛ?</string>
-    <string name="use_icons">Kä Icon?</string>
     <string name="this_months_stats">Ɛn Month\'ä Statistics ɛmɛ</string>
     <string name="this_year_stats">Ɛn ca̱p runä ɛmɛ</string>
     <string name="all_time_stats">Gua̱thni̱ diaal tin ca gɔ̱r piny</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radard URL /cɛ thɛt kiɛ ŋot thi̱n. Ji̱n deri jɛ la̱th lät kɛ ɣöö biɛ gɛr</string>
     <string name="wasnt_able_to_connect_or_download">/Cɛ luäŋ kɛ mat kiɛ bɛ min ca gɔ̱r piny kulɛ ka̱m raar</string>
     <string name="swipe_lock">Swise Lock</string>
+    <string name="widget_theme">Widget Theme</string>
+    <string name="match_app">Math App</string>
+    <string name="custom_setting">Käthtɔm Kɔŋä</string>
+    <string name="app_theme">App</string>
+    <string name="use_icons">nyur</string>
 </resources>

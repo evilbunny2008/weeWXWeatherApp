@@ -27,8 +27,6 @@
     <string name="bgColour">Selettore di culore di fondu di u widget</string>
     <string name="indoor_readings">Mostra letture interne?</string>
     <string name="update_over_wifi">Aghjurnà solu via wifi?</string>
-    <string name="app_theme">Tema di l\'app?</string>
-    <string name="use_icons">Mostra l\'icone?</string>
     <string name="this_months_stats">Statistiche di u mese</string>
     <string name="this_year_stats">Statistiche di quist\'annu</string>
     <string name="all_time_stats">Statistiche All Time</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">L\'URL di u radar ùn hè micca stabilitu o hè ancu scaricatu. Pudete andà à i paràmetri per cambià</string>
     <string name="wasnt_able_to_connect_or_download">Ùn hè statu capace di cunnette o di scaricà a previsione</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Tema Widget</string>
+    <string name="match_app">App Match</string>
+    <string name="custom_setting">Culori persunalizati</string>
+    <string name="app_theme">Tema di l\'app</string>
+    <string name="use_icons">Mostra l\'icone</string>
 </resources>

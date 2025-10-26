@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Background Kulɛri Picker</string>
     <string name="indoor_readings">A jira so kɔnɔ kalanw na?</string>
     <string name="update_over_wifi">Dɔrɔn update over wifi?</string>
-    <string name="app_theme">App barokun?</string>
-    <string name="use_icons">Icons jira wa?</string>
     <string name="this_months_stats">Nin kalo in ka jatebɔw</string>
     <string name="this_year_stats">Ɲinan ka jatebɔw</string>
     <string name="all_time_stats">Waati jatebɔ bɛɛ</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar url ma sigi walima a bɛ telesarse hali bi. Aw bɛ se ka taa settings la walasa ka fɛn caman Changer</string>
     <string name="wasnt_able_to_connect_or_download">Was\'t se ka connect walima ka telechargé ka fɔ</string>
     <string name="swipe_lock">Swipe lock</string>
+    <string name="widget_theme">Widget theme</string>
+    <string name="match_app">Match app</string>
+    <string name="custom_setting">Kulɛriw ka kɛɲɛ ni mɔgɔw sago ye</string>
+    <string name="app_theme">App barokun</string>
+    <string name="use_icons">A jira iko taamasiyɛnw</string>
 </resources>

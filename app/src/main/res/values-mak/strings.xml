@@ -27,8 +27,6 @@
     <string name="bgColour">Latar Belakang Latar Belakang</string>
     <string name="indoor_readings">Pappicinikang Pambacaang lalang ri balla\'nu?</string>
     <string name="update_over_wifi">Punna rie\' pa\'pau ri sesena wifi?</string>
-    <string name="app_theme">Appliki?</string>
-    <string name="use_icons">Pappicinikang Ikon?</string>
     <string name="this_months_stats">Anne Statistikna Bulang</string>
     <string name="this_year_stats">Statistik Taung anne</string>
     <string name="all_time_stats">Sikontu Statistik Time</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL le\'ba\'mi nipa\'jari yareka tuli nidownload. Akkullei a\'lampa mange ri setting-setting untu\' a\'jari beru</string>
     <string name="wasnt_able_to_connect_or_download">Tena nakkulle a\'lampa yareka a\'download anjo ramalanna</string>
     <string name="swipe_lock">Kacinnang Sway</string>
+    <string name="widget_theme">Jaga-jamang</string>
+    <string name="match_app">Pep</string>
+    <string name="custom_setting">Korban Kuas</string>
+    <string name="app_theme">appering</string>
+    <string name="use_icons">Pappicinikang Ikon</string>
 </resources>

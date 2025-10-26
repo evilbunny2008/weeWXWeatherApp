@@ -27,8 +27,6 @@
     <string name="bgColour">Виджет фон түсү Пикер</string>
     <string name="indoor_readings">Ички окууну көрсөтөсүзбү?</string>
     <string name="update_over_wifi">WiFi аркылуу гана жаңыртылабы?</string>
-    <string name="app_theme">Колдонмо темасы?</string>
-    <string name="use_icons">Көркөм сүрөтчөлөр?</string>
     <string name="this_months_stats">Ушул айдын статистикасы</string>
     <string name="this_year_stats">Быйыл статистика</string>
     <string name="all_time_stats">Бардык убакыт статистикасы</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL орнотулган эмес же дагы эле жүктөлүүдө. Жөндөөлөргө өзгөртүүгө бара аласыз</string>
     <string name="wasnt_able_to_connect_or_download">Алдын-ала туташа алган жок же жүктөп алууну алган жок</string>
     <string name="swipe_lock">Кулпулоо</string>
+    <string name="widget_theme">Виджет темасы</string>
+    <string name="match_app">Матч колдонмосу</string>
+    <string name="custom_setting">Өзгөчөлөштүрүлгөн түстөр</string>
+    <string name="app_theme">Колдонмо темасы</string>
+    <string name="use_icons">Көркөм сүрөтчөлөр</string>
 </resources>

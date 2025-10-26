@@ -27,8 +27,6 @@
     <string name="bgColour">Kule ning Kule ning Kule ning Kabaliktaran</string>
     <string name="indoor_readings">Pakit king Pabasang kilub?</string>
     <string name="update_over_wifi">update lang po keng wifi?</string>
-    <string name="app_theme">Tema ning App?</string>
-    <string name="use_icons">Magpalabas kang Icons?</string>
     <string name="this_months_stats">Estadistika ning Bulan</string>
     <string name="this_year_stats">Estadistika ning Banuang iti</string>
     <string name="all_time_stats">Estadistika ning Sab</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Ing Radar URL e ya mitakda o makadownload ya pa. Malyari kang munta kareng setting para magbayu</string>
     <string name="wasnt_able_to_connect_or_download">E ya mekapagkonekta o mag-download ing pauna</string>
     <string name="swipe_lock">Lakri ka Lock</string>
+    <string name="widget_theme">Tema ning Awis</string>
+    <string name="match_app">Malagung app</string>
+    <string name="custom_setting">Kulay ning Kagamitan</string>
+    <string name="app_theme">Tema ning App</string>
+    <string name="use_icons">Pakit ing Icons</string>
 </resources>

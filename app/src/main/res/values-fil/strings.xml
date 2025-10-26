@@ -27,9 +27,7 @@
     <string name="bgColour">Widget background color picker</string>
     <string name="indoor_readings">Magpakita ng panloob na pagbabasa?</string>
     <string name="update_over_wifi">I -update lamang ang WiFi?</string>
-    <string name="app_theme">Tema ng app?</string>
-    <string name="use_icons">Ipakita ang mga icon?</string>
-    <string name="this_months_stats">Istatistika ng buwang ito</string>
+	<string name="this_months_stats">Istatistika ng buwang ito</string>
     <string name="this_year_stats">Ang mga istatistika ng taong ito</string>
     <string name="all_time_stats">Lahat ng mga istatistika ng oras</string>
     <string name="since">mula pa</string>

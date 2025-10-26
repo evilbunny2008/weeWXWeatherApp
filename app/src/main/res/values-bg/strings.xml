@@ -27,8 +27,6 @@
     <string name="bgColour">Инструмент за избор на фонов цвят на джаджа</string>
     <string name="indoor_readings">Показване на показанията на закрито?</string>
     <string name="update_over_wifi">Актуализиране само през wifi?</string>
-    <string name="app_theme">Тема на приложението?</string>
-    <string name="use_icons">Показване на икони?</string>
     <string name="this_months_stats">Статистика за този месец</string>
     <string name="this_year_stats">Статистика за тази година</string>
     <string name="all_time_stats">Статистика за всички времена</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL адресът на радар не е зададен или все още се изтегля. Можете да отидете в настройките, за да промените</string>
     <string name="wasnt_able_to_connect_or_download">Не можах да се свържа или да изтегля прогнозата</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Widget тема</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Персонализирани цветове</string>
+    <string name="app_theme">Тема на приложението</string>
+    <string name="use_icons">Показване на икони</string>
 </resources>

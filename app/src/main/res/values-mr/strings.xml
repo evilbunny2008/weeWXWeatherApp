@@ -27,8 +27,6 @@
     <string name="bgColour">विजेट पार्श्वभूमी रंग निवडक</string>
     <string name="indoor_readings">इनडोअर रीडिंग दाखवायचे?</string>
     <string name="update_over_wifi">फक्त वायफाय वर अपडेट करायचे?</string>
-    <string name="app_theme">ॲप थीम?</string>
-    <string name="use_icons">चिन्ह दाखवायचे?</string>
     <string name="this_months_stats">या महिन्याची आकडेवारी</string>
     <string name="this_year_stats">या वर्षाची आकडेवारी</string>
     <string name="all_time_stats">सर्व वेळ आकडेवारी</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">रडार URL सेट नाही किंवा अद्याप डाउनलोड होत आहे. तुम्ही बदलण्यासाठी सेटिंग्जमध्ये जाऊ शकता</string>
     <string name="wasnt_able_to_connect_or_download">अंदाज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>
     <string name="swipe_lock">स्वाइप लॉक</string>
+    <string name="widget_theme">विजेट थीम</string>
+    <string name="match_app">मॅच ॲप</string>
+    <string name="custom_setting">सानुकूल रंग</string>
+    <string name="app_theme">ॲप थीम</string>
+    <string name="use_icons">चिन्ह दर्शवा</string>
 </resources>

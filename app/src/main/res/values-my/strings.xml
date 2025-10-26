@@ -27,8 +27,6 @@
     <string name="bgColour">ဝစ်ဂျက်နောက်ခံအရောင်ရွေးသူ</string>
     <string name="indoor_readings">မိုးလုံလေလုံစာကိုပြသသလား။</string>
     <string name="update_over_wifi">WiFi ကိုသာ update လုပ်ပါသလား။</string>
-    <string name="app_theme">အခင်းအကျင်း?</string>
-    <string name="use_icons">icon တွေကိုပြသလား</string>
     <string name="this_months_stats">ဒီလရဲ့စာရင်းအင်း</string>
     <string name="this_year_stats">ဒီနှစ်စာရင်းဇယား</string>
     <string name="all_time_stats">အားလုံးအချိန်စာရင်းအင်း</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL သည်မသတ်မှတ်ထားပါသို့မဟုတ်ဒေါင်းလုပ်လုပ်ခြင်းမရှိပါ။ ပြောင်းလဲရန်ချိန်ညှိချက်များသို့သွားနိုင်သည်။</string>
     <string name="wasnt_able_to_connect_or_download">ခန့်မှန်းချက်ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ခဲ့ပါ။</string>
     <string name="swipe_lock">သော့ခတ်ကိုပွတ်ဆွဲပါ</string>
+    <string name="widget_theme">ဝစ်ဂျက် Theme</string>
+    <string name="match_app">ပွဲစဉ် app</string>
+    <string name="custom_setting">စိတ်ကြိုက်အရောင်များ</string>
+    <string name="app_theme">app ကိုအခင်းအကျင်း</string>
+    <string name="use_icons">icon များကိုပြပါ</string>
 </resources>

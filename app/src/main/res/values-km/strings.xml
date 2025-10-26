@@ -27,8 +27,6 @@
     <string name="bgColour">ឧបករណ៍ជ្រើសរើសពណ៌ផ្ទៃខាងក្រោយធាតុក្រាហ្វិក</string>
     <string name="indoor_readings">បង្ហាញការអានក្នុងផ្ទះ?</string>
     <string name="update_over_wifi">ធ្វើបច្ចុប្បន្នភាពតែវ៉ាយហ្វាយទេ?</string>
-    <string name="app_theme">ស្បែកកម្មវិធី?</string>
-    <string name="use_icons">បង្ហាញរូបតំណាង?</string>
     <string name="this_months_stats">ស្ថិតិខែនេះ</string>
     <string name="this_year_stats">ស្ថិតិឆ្នាំនេះ</string>
     <string name="all_time_stats">ស្ថិតិគ្រប់ពេល</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL រ៉ាដាមិនបានកំណត់ឬកំពុងទាញយកនៅឡើយទេ។ អ្នកអាចទៅការកំណត់ដើម្បីផ្លាស់ប្តូរ។</string>
     <string name="wasnt_able_to_connect_or_download">មិនអាចភ្ជាប់ឬទាញយកការព្យាករណ៍បានទេ។</string>
     <string name="swipe_lock">ចាក់សោអូស</string>
+    <string name="widget_theme">ស្បែកធាតុក្រាហ្វិក</string>
+    <string name="match_app">កម្មវិធីប្រកួត</string>
+    <string name="custom_setting">ពណ៌ផ្ទាល់ខ្លួន</string>
+    <string name="app_theme">ស្បែកកម្មវិធី</string>
+    <string name="use_icons">បង្ហាញរូបតំណាង</string>
 </resources>

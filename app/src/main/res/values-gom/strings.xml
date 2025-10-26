@@ -27,8 +27,6 @@
     <string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
     <string name="indoor_readings">घरांतले वाचन दाखोवप?</string>
     <string name="update_over_wifi">फकत वायफायचेर अपडेट करप?</string>
-    <string name="app_theme">अॅप थीम?</string>
-    <string name="use_icons">चिन्नां दाखोवचीं?</string>
     <string name="this_months_stats">ह्या म्हयन्याची आंकडेवारी</string>
     <string name="this_year_stats">अंदूंची आंकडेवारी</string>
     <string name="all_time_stats">सगळी वेळ सांख्यिकी</string>
@@ -67,5 +65,10 @@
     <string name="url_was_default_or_empty">URL मुलभूताचेर सेट केल्लो वा रितो आशिल्लो</string>
     <string name="radar_url_not_set">रडार URL सेट ना वा अजूनय डाउनलोड करता. तुमी बदलपाक सेटिंग्जांत वचूंक शकतात</string>
     <string name="wasnt_able_to_connect_or_download">अदमासाक जोडपाक वा डाउनलोड करपाक मेळनाशिल्लें</string>
-    <string name="swipe_lock">स्वाइप लॉक 1</string>
+    <string name="swipe_lock">स्वाइप लॉक</string>
+    <string name="widget_theme">विजेट थीम 1</string>
+    <string name="match_app">मॅच अॅप 2019।</string>
+    <string name="custom_setting">सानुकूल रंग 1</string>
+    <string name="app_theme">अॅप थीम 1</string>
+    <string name="use_icons">दाखोवचें चिह्न</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">Виджет фон түсі</string>
     <string name="indoor_readings">Жабық оқуларды көрсету керек пе?</string>
     <string name="update_over_wifi">Тек WiFi арқылы жаңартыңыз ба?</string>
-    <string name="app_theme">Қолданба тақырыбы?</string>
-    <string name="use_icons">Белгішелерді көрсету керек пе?</string>
     <string name="this_months_stats">Осы айдағы статистика</string>
     <string name="this_year_stats">Биылғы статистика</string>
     <string name="all_time_stats">Барлық уақыттағы статистика</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Радар URL мекен-жайы орнатылмаған немесе әлі жүктелмейді. Өзгерту үшін параметрлерге баруға болады</string>
     <string name="wasnt_able_to_connect_or_download">Болжалды қосыла немесе жүктей алмады</string>
     <string name="swipe_lock">Саусақты құлыптау</string>
+    <string name="widget_theme">Виджет тақырыбы</string>
+    <string name="match_app">Сәйкестік қосымшасы</string>
+    <string name="custom_setting">Жеке түстер</string>
+    <string name="app_theme">Қолданба тақырыбы</string>
+    <string name="use_icons">Белгішелерді көрсету</string>
 </resources>

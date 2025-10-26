@@ -27,8 +27,6 @@
     <string name="bgColour">Андозаи фарогирии дуввум</string>
     <string name="indoor_readings">Хонишҳои даруниро нишон диҳед?</string>
     <string name="update_over_wifi">Танҳо навсозӣ дар WiFi?</string>
-    <string name="app_theme">Мавзӯи барнома?</string>
-    <string name="use_icons">Нишонҳо нишон диҳед?</string>
     <string name="this_months_stats">Омори ин моҳ</string>
     <string name="this_year_stats">Омори имсол</string>
     <string name="all_time_stats">Ҳама вақт омор</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL Radar насб намекунад ё ҳоло ҳам зеркашӣ аст. Шумо метавонед ба Танзимот муроҷиат кунед</string>
     <string name="wasnt_able_to_connect_or_download">Наметавонад пешгӯӣ ё зеркашӣ кунад</string>
     <string name="swipe_lock">Қулфи лағжанда</string>
+    <string name="widget_theme">Мавзӯъи виҷҷ</string>
+    <string name="match_app">Барномаи мувофиқ</string>
+    <string name="custom_setting">Рангҳои фармоишӣ</string>
+    <string name="app_theme">Мавзӯъи барнома</string>
+    <string name="use_icons">Нишон диҳед</string>
 </resources>

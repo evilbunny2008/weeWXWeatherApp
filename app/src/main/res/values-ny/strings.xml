@@ -27,8 +27,6 @@
     <string name="bgColour">Chingwe chojambula</string>
     <string name="indoor_readings">Onetsani zowerengera m\'nyumba?</string>
     <string name="update_over_wifi">Kungosintha kwa WiFi?</string>
-    <string name="app_theme">MUTU WOSAVUTA?</string>
-    <string name="use_icons">Onetsani zithunzi?</string>
     <string name="this_months_stats">Ziwerengero zamwezi</string>
     <string name="this_year_stats">Ziwerengero za chaka chino</string>
     <string name="all_time_stats">Nthawi zonse ziwerengero</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL ya Radar sinakhazikike kapena kutsitsa. Mutha kupita ku zofuna kusintha</string>
     <string name="wasnt_able_to_connect_or_download">Sanathe kulumikizana kapena kutsitsa zonena za kuneneratu</string>
     <string name="swipe_lock">Swipe loko</string>
+    <string name="widget_theme">Mutu wa Widget</string>
+    <string name="match_app">Gwirizanani ndi pulogalamu</string>
+    <string name="custom_setting">Mitundu yazochitika</string>
+    <string name="app_theme">Mutu wa App</string>
+    <string name="use_icons">Onetsani zithunzi</string>
 </resources>

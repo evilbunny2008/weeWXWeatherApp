@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Achtergroond Kleur Kies</string>
     <string name="indoor_readings">Toon de Indor Lees?</string>
     <string name="update_over_wifi">Allein update euver wifi?</string>
-    <string name="app_theme">App Thema?</string>
-    <string name="use_icons">Toon Icons toene?</string>
     <string name="this_months_stats">Deze maonte\'s statistiek</string>
     <string name="this_year_stats">Dit jaorstatistieke</string>
     <string name="all_time_stats">Alle tiedstatistieke</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL neet ingesjtèld of nog steeds downloadt. Je kint naor instellinge goon um te verandere</string>
     <string name="wasnt_able_to_connect_or_download">Zou de veurspelling neet kinne verbinde of downloade</string>
     <string name="swipe_lock">Zweet Lock</string>
+    <string name="widget_theme">Thema</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Aongepaste kleure</string>
+    <string name="app_theme">Apparaat ze</string>
+    <string name="use_icons">Icons toene</string>
 </resources>

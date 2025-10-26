@@ -27,8 +27,6 @@
     <string name="bgColour">Logrīku fona krāsu atlasītājs</string>
     <string name="indoor_readings">Vai rādīt iekštelpu lasījumus?</string>
     <string name="update_over_wifi">Atjaunināt tikai, izmantojot wifi?</string>
-    <string name="app_theme">Lietotnes motīvs?</string>
-    <string name="use_icons">Vai rādīt ikonas?</string>
     <string name="this_months_stats">Šī mēneša statistika</string>
     <string name="this_year_stats">Šī gada statistika</string>
     <string name="all_time_stats">Visu laiku statistika</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radara URL nav iestatīts vai joprojām notiek lejupielāde. Varat doties uz iestatījumiem, lai veiktu izmaiņas</string>
     <string name="wasnt_able_to_connect_or_download">Nevarēja izveidot savienojumu vai lejupielādēt prognozi</string>
     <string name="swipe_lock">Velciet Bloķēt</string>
+    <string name="widget_theme">Logrīku tēma</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Pielāgotas krāsas</string>
+    <string name="app_theme">Lietotnes motīvs</string>
+    <string name="use_icons">Rādīt ikonas</string>
 </resources>

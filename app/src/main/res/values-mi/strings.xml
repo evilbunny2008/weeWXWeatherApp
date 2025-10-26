@@ -27,8 +27,6 @@
     <string name="bgColour">Widget papamuri papamuri tae</string>
     <string name="indoor_readings">Whakaatuhia nga panui o roto?</string>
     <string name="update_over_wifi">Ko te whakahou anake mo te WiFi?</string>
-    <string name="app_theme">Kaupapa taupānga?</string>
-    <string name="use_icons">Whakaatuhia nga tohu?</string>
     <string name="this_months_stats">Tatauranga o tenei marama</string>
     <string name="this_year_stats">Tatauranga o tenei tau</string>
     <string name="all_time_stats">Tauanga Katoa</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Kāore i te tautuhia te URL URL, kei te tango tonu ranei. Ka taea e koe te haere ki nga tautuhinga ki te whakarereke</string>
     <string name="wasnt_able_to_connect_or_download">Kaore i taea te hono atu ranei ki te tango i te matapae</string>
     <string name="swipe_lock">Katihia te raka</string>
+    <string name="widget_theme">Kaupapa kaupapa widget</string>
+    <string name="match_app">Taupānga ōrite</string>
+    <string name="custom_setting">Tae Ritenga</string>
+    <string name="app_theme">Kaupapa taupānga</string>
+    <string name="use_icons">Whakaatuhia nga tohu</string>
 </resources>

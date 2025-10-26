@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Background Colora Pickera</string>
     <string name="indoor_readings">Show Indoor ôdczytōw?</string>
     <string name="update_over_wifi">Ino zaktualizować wifi?</string>
-    <string name="app_theme">App Them?</string>
-    <string name="use_icons">Pokaż Ikōny?</string>
     <string name="this_months_stats">Statystyka tego Mona</string>
     <string name="this_year_stats">Statystyki ôd tego roku</string>
     <string name="all_time_stats">Cołke Statystyki czasowe czasowe czasowe czasowe Time Statystyki czasowej Spodki Sowere</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL niy stawio abo durch sie ściyro. Możesz pojść do ustawiyń, coby sie zmiynić</string>
     <string name="wasnt_able_to_connect_or_download">Niy może sie łōnczyć ani pobrać prognozy</string>
     <string name="swipe_lock">Swipe Swipe</string>
+    <string name="widget_theme">Widgeter Tymtery</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Konople</string>
+    <string name="app_theme">Teryn</string>
+    <string name="use_icons">Pokaż Ikōny</string>
 </resources>

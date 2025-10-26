@@ -27,8 +27,6 @@
     <string name="bgColour">Виджет Ара үнгэ үнгэ шэлэхэ</string>
     <string name="indoor_readings">Гэрэй уншалгануудые харуулха гү?</string>
     <string name="update_over_wifi">Гансал wifi дээрэ шэнэлхэ?</string>
-    <string name="app_theme">Апп сэдэб гү?</string>
-    <string name="use_icons">Үзэгдэл харуулна гү?</string>
     <string name="this_months_stats">Энэ Һарын тоо баримтанууд [1]</string>
     <string name="this_year_stats">Энэ жэлэй тоо баримтанууд</string>
     <string name="all_time_stats">Бүхы сагай тоо баримтанууд</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Радар URL тогтоогдоогүй гү, али үшөөл татажа байна. Хубилха настройконуудта орожо болохо</string>
     <string name="wasnt_able_to_connect_or_download">Уридшалан мэдээсэл холбожо, татажа абаха аргагүй байгаа</string>
     <string name="swipe_lock">Свипе түрмэ</string>
+    <string name="widget_theme">Виджет сэдэб</string>
+    <string name="match_app">Таараха апп</string>
+    <string name="custom_setting">Захиалгаар үнгэнүүд</string>
+    <string name="app_theme">Апп сэдэб</string>
+    <string name="use_icons">Icons</string>
 </resources>

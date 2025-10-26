@@ -27,8 +27,6 @@
     <string name="bgColour">Kijitabu cha rangi ya msingi wa widget</string>
     <string name="indoor_readings">Onyesha usomaji wa ndani?</string>
     <string name="update_over_wifi">Sasisha tu juu ya wifi?</string>
-    <string name="app_theme">Mandhari ya programu?</string>
-    <string name="use_icons">Onyesha icons?</string>
     <string name="this_months_stats">Takwimu za mwezi huu</string>
     <string name="this_year_stats">Takwimu za mwaka huu</string>
     <string name="all_time_stats">Takwimu zote za wakati</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL ya rada haijawekwa au bado inapakua. Unaweza kwenda kwa Mipangilio ili ubadilike</string>
     <string name="wasnt_able_to_connect_or_download">Hakuweza kuunganisha au kupakua utabiri</string>
     <string name="swipe_lock">Swipe kufuli</string>
+    <string name="widget_theme">Mandhari ya widget</string>
+    <string name="match_app">Mechi ya programu</string>
+    <string name="custom_setting">Rangi za kawaida</string>
+    <string name="app_theme">Mandhari ya programu</string>
+    <string name="use_icons">Onyesha icons</string>
 </resources>

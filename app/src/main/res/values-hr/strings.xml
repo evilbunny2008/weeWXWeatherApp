@@ -27,8 +27,6 @@
     <string name="bgColour">Alat za odabir pozadinske boje widgeta</string>
     <string name="indoor_readings">Prikaži očitanja u zatvorenom?</string>
     <string name="update_over_wifi">Ažurirati samo putem WiFi-ja?</string>
-    <string name="app_theme">Tema aplikacije?</string>
-    <string name="use_icons">Prikaži ikone?</string>
     <string name="this_months_stats">Statistika ovog mjeseca</string>
     <string name="this_year_stats">Ovogodišnja statistika</string>
     <string name="all_time_stats">Statistika svih vremena</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL radara nije postavljen ili se još preuzima. Možete ići u postavke za promjenu</string>
     <string name="wasnt_able_to_connect_or_download">Nije bilo moguće povezati se ili preuzeti prognozu</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Tema widgeta</string>
+    <string name="match_app">Aplikacija podudaranja</string>
+    <string name="custom_setting">Prilagođene boje</string>
+    <string name="app_theme">Tema aplikacije</string>
+    <string name="use_icons">Prikaži ikone</string>
 </resources>

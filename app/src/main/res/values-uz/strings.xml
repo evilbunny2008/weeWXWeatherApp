@@ -27,8 +27,6 @@
     <string name="bgColour">Vidjet fon rangini tanlagan holda</string>
     <string name="indoor_readings">Yopiq o\'qishni ko\'rsatasizmi?</string>
     <string name="update_over_wifi">Faqat WiFi-ni yangilab turasizmi?</string>
-    <string name="app_theme">Ilova mavzusi?</string>
-    <string name="use_icons">Picons-ni ko\'rsatasizmi?</string>
     <string name="this_months_stats">Bu oy statistika</string>
     <string name="this_year_stats">Bu yil statistika</string>
     <string name="all_time_stats">Barcha vaqt statistika</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL o\'rnatilmaydi yoki hali ham yuklanmoqda. O\'zgartirish uchun siz sozlamalarga borishingiz mumkin</string>
     <string name="wasnt_able_to_connect_or_download">Prognozni ulash yoki yuklab olish mumkin emas edi</string>
     <string name="swipe_lock">Qulfni surish</string>
+    <string name="widget_theme">Vidjet mavzusi</string>
+    <string name="match_app">Uchrashuv ilovasi</string>
+    <string name="custom_setting">Maxsus ranglar</string>
+    <string name="app_theme">Ilova mavzusi</string>
+    <string name="use_icons">Piktogrammalarni ko\'rsatish</string>
 </resources>

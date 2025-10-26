@@ -27,8 +27,6 @@
     <string name="bgColour">Dewisydd Lliw Cefndir Teclyn</string>
     <string name="indoor_readings">Dangos Darlleniadau Dan Do?</string>
     <string name="update_over_wifi">Dim ond diweddaru dros wifi?</string>
-    <string name="app_theme">Thema Ap?</string>
-    <string name="use_icons">Dangos Eiconau?</string>
     <string name="this_months_stats">Ystadegau y Mis hwn</string>
     <string name="this_year_stats">Ystadegau eleni</string>
     <string name="all_time_stats">Ystadegau Pob Amser</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">URL Radar heb ei osod neu yn dal i gael ei lwytho i lawr. Gallwch fynd i\'r gosodiadau i newid</string>
     <string name="wasnt_able_to_connect_or_download">Methu â chysylltu na lawrlwytho\'r rhagolwg</string>
     <string name="swipe_lock">Clo Swipe</string>
+    <string name="widget_theme">Thema Teclyn</string>
+    <string name="match_app">Ap Match</string>
+    <string name="custom_setting">Lliwiau Custom</string>
+    <string name="app_theme">Thema Ap</string>
+    <string name="use_icons">Dangos Eiconau</string>
 </resources>

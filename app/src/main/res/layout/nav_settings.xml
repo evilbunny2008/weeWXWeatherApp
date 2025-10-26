@@ -4,7 +4,7 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="0dp"
+	android:layout_height="wrap_content"
 	android:layout_weight="1"
 	android:orientation="vertical"
 	tools:ignore="VisualLintBounds">
@@ -78,6 +78,32 @@
 			style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
+			android:labelFor="@id/spinner1"
+			android:hint="@string/refresh_time"
+			app:boxBackgroundMode="outline"
+			app:boxStrokeWidth="1dp"
+			android:textSize="20sp"
+			android:layout_marginTop="10dp"
+			app:boxStrokeColor="?attr/colorOutline"
+			tools:ignore="VisualLintBounds">
+
+			<AutoCompleteTextView
+				android:id="@+id/spinner1"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:clickable="true"
+				android:focusable="false"
+				android:importantForAutofill="no"
+				android:inputType="none"
+				android:textSize="20sp"
+				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
 			android:labelFor="@id/spinner2"
 			android:hint="@string/app_theme"
 			app:boxBackgroundMode="outline"
@@ -103,8 +129,8 @@
 			style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:labelFor="@id/spinner1"
-			android:hint="@string/refresh_time"
+			android:labelFor="@id/spinner2"
+			android:hint="@string/widget_theme"
 			app:boxBackgroundMode="outline"
 			app:boxStrokeWidth="1dp"
 			android:textSize="20sp"
@@ -113,7 +139,7 @@
 			tools:ignore="VisualLintBounds">
 
 			<AutoCompleteTextView
-				android:id="@+id/spinner1"
+				android:id="@+id/spinner3"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:clickable="true"
@@ -122,7 +148,47 @@
 				android:inputType="none"
 				android:textSize="20sp"
 				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+		</com.google.android.material.textfield.TextInputLayout>
 
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/fgTextInputLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:hint="@string/fgColour"
+			android:visibility="gone"
+			tools:ignore="VisualLintBounds">
+
+			<com.github.evilbunny2008.colourpicker.CPEditText
+				android:id="@+id/fg_Picker"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:autofillHints="@string/fgColour"
+				android:gravity="center_vertical"
+				android:clickable="true"
+				android:focusable="false"
+				android:minHeight="48dp"
+				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/bgTextInputLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:hint="@string/bgColour"
+			android:visibility="gone"
+			tools:ignore="VisualLintBounds">
+
+			<com.github.evilbunny2008.colourpicker.CPEditText
+				android:id="@+id/bg_Picker"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:clickable="true"
+				android:focusable="false"
+				android:gravity="center_vertical"
+				android:minHeight="48dp"
+				tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck" />
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.textview.MaterialTextView
@@ -182,43 +248,6 @@
 				android:inputType="textUri"
 				android:minHeight="48dp"
 				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize,TextContrastCheck" />
-		</com.google.android.material.textfield.TextInputLayout>
-
-		<com.google.android.material.textfield.TextInputLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="10dp"
-			android:hint="@string/fgColour"
-			tools:ignore="VisualLintBounds">
-
-			<com.github.evilbunny2008.colourpicker.CPEditText
-				android:id="@+id/fg_Picker"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:autofillHints="@string/fgColour"
-				android:gravity="center_vertical"
-				android:clickable="true"
-				android:focusable="false"
-				android:minHeight="48dp"
-				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
-		</com.google.android.material.textfield.TextInputLayout>
-
-		<com.google.android.material.textfield.TextInputLayout
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="10dp"
-			android:hint="@string/bgColour"
-			tools:ignore="VisualLintBounds">
-
-			<com.github.evilbunny2008.colourpicker.CPEditText
-				android:id="@+id/bg_Picker"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:clickable="true"
-				android:focusable="false"
-				android:gravity="center_vertical"
-				android:minHeight="48dp"
-				tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck" />
 		</com.google.android.material.textfield.TextInputLayout>
 	</LinearLayout>
 

@@ -27,8 +27,6 @@
     <string name="bgColour">Mpikambana miloko ivelany Widget</string>
     <string name="indoor_readings">Asehoy ny famakiana anatiny?</string>
     <string name="update_over_wifi">Fanavaozana fotsiny amin\'ny WiFi?</string>
-    <string name="app_theme">Lohahevitry ny fampiharana?</string>
-    <string name="use_icons">Asehoy ny kisary?</string>
     <string name="this_months_stats">Antontan\'ity volana ity</string>
     <string name="this_year_stats">Antontan\'ity taona ity</string>
     <string name="all_time_stats">Ny antontan\'isa rehetra</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL tsy napetraka na mbola misintona. Azonao atao ny mandeha amin\'ny toe-javatra hiova</string>
     <string name="wasnt_able_to_connect_or_download">Tsy afaka nampifandray na nandefa ny vinavina</string>
     <string name="swipe_lock">Swipe hidio</string>
+    <string name="widget_theme">Widget Theme</string>
+    <string name="match_app">Ampifandraiso amin\'ny fampiharana</string>
+    <string name="custom_setting">Loko mahazatra</string>
+    <string name="app_theme">Lohahevitra fampiharana</string>
+    <string name="use_icons">Asehoy ny kisary</string>
 </resources>

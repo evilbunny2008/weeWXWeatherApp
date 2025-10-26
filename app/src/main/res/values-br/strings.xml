@@ -27,8 +27,6 @@
     <string name="bgColour">Widget en-dro ar c\'hoari liv Widget</string>
     <string name="indoor_readings">Diskouez al lennadennoù diabarzh?</string>
     <string name="update_over_wifi">Hizivaat ar wifi hepken?</string>
-    <string name="app_theme">Tem an App?</string>
-    <string name="use_icons">Diskouez an Ikonoù?</string>
     <string name="this_months_stats">Stadegoù ar miz-mañ</string>
     <string name="this_year_stats">Stadegoù ar bloaz-mañ</string>
     <string name="all_time_stats">Stadegoù an amzer a-bezh</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL n\'eo ket bet lakaet pe emañ o pellgargañ c\'hoazh. Gallout a rit mont d\'an arventennoù evit cheñch</string>
     <string name="wasnt_able_to_connect_or_download">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ ar rakweled</string>
     <string name="swipe_lock">Swipe prennañ</string>
+    <string name="widget_theme">Tem ar widget</string>
+    <string name="match_app">Match app</string>
+    <string name="custom_setting">Livioù personelaet</string>
+    <string name="app_theme">Tem an app</string>
+    <string name="use_icons">Diskouez an Ikonoù</string>
 </resources>

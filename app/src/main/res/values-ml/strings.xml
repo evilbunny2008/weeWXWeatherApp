@@ -27,8 +27,6 @@
     <string name="bgColour">വിജറ്റ് പശ്ചാത്തല വർണ്ണ പിക്കർ</string>
     <string name="indoor_readings">ഇൻഡോർ വായനകൾ കാണിക്കണോ?</string>
     <string name="update_over_wifi">വൈഫൈ വഴി മാത്രം അപ്‌ഡേറ്റ് ചെയ്യണോ?</string>
-    <string name="app_theme">ആപ്പ് തീം?</string>
-    <string name="use_icons">ഐക്കണുകൾ കാണിക്കണോ?</string>
     <string name="this_months_stats">ഈ മാസത്തെ സ്ഥിതിവിവരക്കണക്കുകൾ</string>
     <string name="this_year_stats">ഈ വർഷത്തെ സ്ഥിതിവിവരക്കണക്കുകൾ</string>
     <string name="all_time_stats">എല്ലാ സമയ സ്ഥിതിവിവരക്കണക്കുകളും</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">റഡാർ URL സജ്ജീകരിച്ചിട്ടില്ല അല്ലെങ്കിൽ ഇപ്പോഴും ഡൗൺലോഡ് ചെയ്യുകയാണ്. മാറ്റാൻ നിങ്ങൾക്ക് ക്രമീകരണങ്ങളിലേക്ക് പോകാം</string>
     <string name="wasnt_able_to_connect_or_download">പ്രവചനം ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="swipe_lock">സ്വൈപ്പ് ലോക്ക്</string>
+    <string name="widget_theme">വിജറ്റ് തീം</string>
+    <string name="match_app">മാച്ച് ആപ്പ്</string>
+    <string name="custom_setting">ഇഷ്ടാനുസൃത നിറങ്ങൾ</string>
+    <string name="app_theme">ആപ്പ് തീം</string>
+    <string name="use_icons">ഐക്കണുകൾ കാണിക്കുക</string>
 </resources>

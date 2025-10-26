@@ -27,8 +27,6 @@
     <string name="bgColour">Widget background xifaniso xa mihlovo</string>
     <string name="indoor_readings">Kombisa ku hlaya ka le ndzeni ka yindlu?</string>
     <string name="update_over_wifi">Ntsena update over wifi?</string>
-    <string name="app_theme">APP Nhlokomhaka ya AP?</string>
-    <string name="use_icons">Kombisa swifaniso?</string>
     <string name="this_months_stats">Tinhlayo ta n\'hweti leyi</string>
     <string name="this_year_stats">Tinhlayo ta lembe leri</string>
     <string name="all_time_stats">Tinhlayo hinkwato ta nkarhi</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL a yi vekiwanga kumbe ya ha downloada. U nga ya eka Settings ku ya cinca</string>
     <string name="wasnt_able_to_connect_or_download">a nga swi kotanga ku hlanganisa kumbe ku kopa vuprofeta</string>
     <string name="swipe_lock">Swipe lock</string>
+    <string name="widget_theme">Nhlokomhaka ya Widget</string>
+    <string name="match_app">Xifaniso xa Match App</string>
+    <string name="custom_setting">Mihlovo ya ntolovelo</string>
+    <string name="app_theme">APP Nhlokomhaka ya APP</string>
+    <string name="use_icons">Kombisa swifaniso</string>
 </resources>

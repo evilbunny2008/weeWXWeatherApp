@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Background Color Picker</string>
     <string name="indoor_readings">Binnenlêzingen sjen litte?</string>
     <string name="update_over_wifi">Allinne update fia wifi?</string>
-    <string name="app_theme">App-tema?</string>
-    <string name="use_icons">Ikoanen sjen litte?</string>
     <string name="this_months_stats">Statistiken fan dizze moanne</string>
     <string name="this_year_stats">Dit jier Statistiken</string>
     <string name="all_time_stats">Alle tiid Statistics</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL net ynsteld of wurdt noch ynladen. Jo kinne nei ynstellings gean om te feroarjen</string>
     <string name="wasnt_able_to_connect_or_download">Koe de prognose net ferbine of downloade</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Widget Tema</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Oanpaste kleuren</string>
+    <string name="app_theme">App Tema</string>
+    <string name="use_icons">Ikoanen sjen litte</string>
 </resources>

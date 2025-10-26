@@ -27,8 +27,6 @@
     <string name="bgColour">Widget lanu lanu lanu piki</string>
     <string name="indoor_readings">Faaali atu le faitau i totonu?</string>
     <string name="update_over_wifi">Na o le toe faafou i luga o WiFi?</string>
-    <string name="app_theme">App autu?</string>
-    <string name="use_icons">Faaali atu aikona?</string>
     <string name="this_months_stats">O lenei masina o le masina</string>
     <string name="this_year_stats">O lenei tausaga o lenei tausaga</string>
     <string name="all_time_stats">Taimi uma fuainumera</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Raar herl le seti pe o loo download pea. E mafai ona e alu i tulaga e sui ai</string>
     <string name="wasnt_able_to_connect_or_download">Le mafai ona fesoʻotaʻi pe download le vaʻaiga</string>
     <string name="swipe_lock">Swipe loka</string>
+    <string name="widget_theme">Whiltget autu</string>
+    <string name="match_app">Fetaui polokalama</string>
+    <string name="custom_setting">Lanu masani</string>
+    <string name="app_theme">App autu</string>
+    <string name="use_icons">Faaali icons</string>
 </resources>

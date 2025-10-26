@@ -27,8 +27,6 @@
     <string name="bgColour">ເຄື່ອງເກັບສີພື້ນຫລັງຂອງ Widget</string>
     <string name="indoor_readings">ສະແດງການອ່ານພາຍໃນ?</string>
     <string name="update_over_wifi">ພຽງແຕ່ປັບປຸງຜ່ານ WiFi ເທົ່ານັ້ນບໍ?</string>
-    <string name="app_theme">ຫົວຂໍ້ App ບໍ?</string>
-    <string name="use_icons">ສະແດງຮູບສັນຍາລັກບໍ?</string>
     <string name="this_months_stats">ສະຖິຕິໃນເດືອນນີ້</string>
     <string name="this_year_stats">ສະຖິຕິປີນີ້</string>
     <string name="all_time_stats">ສະຖິຕິເວລາທັງຫມົດ</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">url radar ບໍ່ໄດ້ກໍານົດຫຼືຍັງຄົງດາວໂຫລດຢູ່. ທ່ານສາມາດເຂົ້າໄປທີ່ Settings ເພື່ອປ່ຽນແປງ</string>
     <string name="wasnt_able_to_connect_or_download">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດການຄາດຄະເນໄດ້</string>
     <string name="swipe_lock">ປຸ້ມ</string>
+    <string name="widget_theme">ຫົວຂໍ້ Widget</string>
+    <string name="match_app">match match</string>
+    <string name="custom_setting">ສີທີ່ກໍານົດເອງ</string>
+    <string name="app_theme">ຫົວຂໍ້ App</string>
+    <string name="use_icons">ສະແດງຮູບສັນຍາລັກ</string>
 </resources>

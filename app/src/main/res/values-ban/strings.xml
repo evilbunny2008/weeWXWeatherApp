@@ -27,8 +27,6 @@
     <string name="bgColour">Warna Latar Belakang Picker</string>
     <string name="indoor_readings">Show Bacaan ring jero?</string>
     <string name="update_over_wifi">Wantah update indik wifi?</string>
-    <string name="app_theme">Tema App?</string>
-    <string name="use_icons">Cihnayang Ikon?</string>
     <string name="this_months_stats">Statistik Bulan puniki</string>
     <string name="this_year_stats">Statistik warsa puniki</string>
     <string name="all_time_stats">Makasami Statistik Galah</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL nenten kagenahang utawi kantun ngunduh. Sameton dados ngranjing ka setélan jagi mauwah</string>
     <string name="wasnt_able_to_connect_or_download">Nenten prasida nyambung utawi ngunduh ramalan punika</string>
     <string name="swipe_lock">Kun Kebangan</string>
+    <string name="widget_theme">Tema Widget</string>
+    <string name="match_app">Aplikasi Cocok</string>
+    <string name="custom_setting">Warna Khusus</string>
+    <string name="app_theme">Tema Aplikasi</string>
+    <string name="use_icons">Tampilang Icons</string>
 </resources>

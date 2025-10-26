@@ -27,8 +27,6 @@
     <string name="bgColour">小部件背景颜色选择器</string>
     <string name="indoor_readings">显示室内读数？</string>
     <string name="update_over_wifi">只能通过wifi更新吗？</string>
-    <string name="app_theme">应用程序主题？</string>
-    <string name="use_icons">显示图标？</string>
     <string name="this_months_stats">本月统计数据</string>
     <string name="this_year_stats">今年的统计数据</string>
     <string name="all_time_stats">所有时间统计</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">雷达 URL 未设置或仍在下载。您可以前往设置进行更改。</string>
     <string name="wasnt_able_to_connect_or_download">无法连接或下载天气预报。</string>
     <string name="swipe_lock">滑动锁定</string>
+    <string name="widget_theme">小部件主题</string>
+    <string name="match_app">比赛应用程序</string>
+    <string name="custom_setting">定制颜色</string>
+    <string name="app_theme">应用主题</string>
+    <string name="use_icons">显示图标</string>
 </resources>

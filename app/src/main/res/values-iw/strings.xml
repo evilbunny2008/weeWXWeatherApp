@@ -27,8 +27,6 @@
     <string name="bgColour">בוחר צבעי רקע יישומון</string>
     <string name="indoor_readings">להראות קריאות מקורה?</string>
     <string name="update_over_wifi">לעדכן רק דרך wifi?</string>
-    <string name="app_theme">ערכת נושא לאפליקציה?</string>
-    <string name="use_icons">להציג אייקונים?</string>
     <string name="this_months_stats">סטטיסטיקות החודש</string>
     <string name="this_year_stats">סטטיסטיקות השנה</string>
     <string name="all_time_stats">סטטיסטיקות של כל הזמנים</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">כתובת ה-Radar לא מוגדרת או שעדיין מוריד. אתה יכול ללכת להגדרות כדי לשנות</string>
     <string name="wasnt_able_to_connect_or_download">לא הצליח להתחבר או להוריד את התחזית</string>
     <string name="swipe_lock">נעילת החלקה</string>
+    <string name="widget_theme">ערכת נושא של ווידג\'ט</string>
+    <string name="match_app">אפליקציית התאמה</string>
+    <string name="custom_setting">צבעים מותאמים אישית</string>
+    <string name="app_theme">ערכת נושא לאפליקציה</string>
+    <string name="use_icons">הצג אייקונים</string>
 </resources>

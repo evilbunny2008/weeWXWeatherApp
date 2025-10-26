@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Background Picker</string>
     <string name="indoor_readings">Hollitde Janngugol nder suudu?</string>
     <string name="update_over_wifi">Ko hesɗitinde tan e wifi?</string>
-    <string name="app_theme">App Theme?</string>
-    <string name="use_icons">Hollu Icons?</string>
     <string name="this_months_stats">Ngol Lewru</string>
     <string name="this_year_stats">Limlebbi hikka</string>
     <string name="all_time_stats">Denndaangal limtooji Waktu</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL settaaka walla ina jokki e ƴettude. Aɗa waawi yahde e settings ngam waylude</string>
     <string name="wasnt_able_to_connect_or_download">Waawaa jokkondirde walla ƴettude teskagol ngol</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Widget theme</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Nokkuuji kuutorteeɗi</string>
+    <string name="app_theme">App Theme</string>
+    <string name="use_icons">Hollu Ikons</string>
 </resources>

@@ -27,8 +27,6 @@
     <string name="bgColour">Mu 200</string>
     <string name="indoor_readings">Ino ncinzi ca 1</string>
     <string name="update_over_wifi">Ino ncinzi ciba buti?</string>
-    <string name="app_theme">1. Ino ncinzi nzi buti?</string>
-    <string name="use_icons">Ino mbuti kuti: \'Ino nzi?</string>
     <string name="this_months_stats">Kucinca-langa-langa</string>
     <string name="this_year_stats">Kuba 1</string>
     <string name="all_time_stats">1</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">1. Alimwi, kanji-kanji</string>
     <string name="wasnt_able_to_connect_or_download">Kucinca-langa-langa-langa</string>
     <string name="swipe_lock">1</string>
+    <string name="widget_theme">1</string>
+    <string name="match_app">1</string>
+    <string name="custom_setting">1</string>
+    <string name="app_theme">1</string>
+    <string name="use_icons">1</string>
 </resources>

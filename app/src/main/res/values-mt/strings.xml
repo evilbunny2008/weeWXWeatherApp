@@ -27,8 +27,6 @@
     <string name="bgColour">Picker tal-Kulur tal-Isfond tal-Widget</string>
     <string name="indoor_readings">Uri Qari fuq ġewwa?</string>
     <string name="update_over_wifi">Aġġorna biss permezz tal-wifi?</string>
-    <string name="app_theme">Tema App?</string>
-    <string name="use_icons">Uri l-Ikoni?</string>
     <string name="this_months_stats">L-Istatistika ta\' dan ix-Xahar</string>
     <string name="this_year_stats">L-Istatistika ta\' din is-Sena</string>
     <string name="all_time_stats">L-Istatistika tal-Ħin Kollha</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">L-URL tar-radar mhux issettjat jew għadu qed tniżżel. Tista \'tmur fis-settings biex tibdel</string>
     <string name="wasnt_able_to_connect_or_download">Ma setax jgħaqqad jew tniżżel it-tbassir</string>
     <string name="swipe_lock">Swipe Lock</string>
+    <string name="widget_theme">Widget Tema</string>
+    <string name="match_app">App taqbila</string>
+    <string name="custom_setting">Kuluri tad-dwana</string>
+    <string name="app_theme">Tema App</string>
+    <string name="use_icons">Uri Ikoni</string>
 </resources>

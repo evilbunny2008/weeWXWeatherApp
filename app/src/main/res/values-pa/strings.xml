@@ -27,8 +27,6 @@
     <string name="bgColour">ਵਿਜੇਟ ਬੈਕਗ੍ਰਾਊਂਡ ਰੰਗ ਚੋਣਕਾਰ</string>
     <string name="indoor_readings">ਕੀ ਅੰਦਰੂਨੀ ਰੀਡਿੰਗਾਂ ਦਿਖਾਓ?</string>
     <string name="update_over_wifi">ਸਿਰਫ਼ ਵਾਈ-ਫਾਈ \'ਤੇ ਅੱਪਡੇਟ ਕਰਨਾ ਹੈ?</string>
-    <string name="app_theme">ਐਪ ਥੀਮ?</string>
-    <string name="use_icons">ਆਈਕਾਨ ਦਿਖਾਓ?</string>
     <string name="this_months_stats">ਇਸ ਮਹੀਨੇ ਦੇ ਅੰਕੜੇ</string>
     <string name="this_year_stats">ਇਸ ਸਾਲ ਦੇ ਅੰਕੜੇ</string>
     <string name="all_time_stats">ਹਰ ਸਮੇਂ ਦੇ ਅੰਕੜੇ</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">ਰਾਡਾਰ URL ਸੈੱਟ ਨਹੀਂ ਹੈ ਜਾਂ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ। ਤੁਸੀਂ ਬਦਲਣ ਲਈ ਸੈਟਿੰਗਾਂ \'ਤੇ ਜਾ ਸਕਦੇ ਹੋ।</string>
     <string name="wasnt_able_to_connect_or_download">ਪੂਰਵ ਅਨੁਮਾਨ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ।</string>
     <string name="swipe_lock">ਸਵਾਈਪ ਲੌਕ</string>
+    <string name="widget_theme">ਵਿਜੇਟ ਥੀਮ</string>
+    <string name="match_app">ਮੈਚ ਐਪ</string>
+    <string name="custom_setting">ਕਸਟਮ ਰੰਗ</string>
+    <string name="app_theme">ਐਪ ਥੀਮ</string>
+    <string name="use_icons">ਆਈਕਾਨ ਦਿਖਾਓ</string>
 </resources>

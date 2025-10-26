@@ -27,8 +27,6 @@
     <string name="bgColour">Widget Lemorago la Mmala Picker</string>
     <string name="indoor_readings">Bontšha go balwa ga ka gare ga ntlo?</string>
     <string name="update_over_wifi">Update feela ka WiFi?</string>
-    <string name="app_theme">Sehlogo sa App?</string>
-    <string name="use_icons">Bontša diaekhone?</string>
     <string name="this_months_stats">Dipalopalo tša kgwedi ye</string>
     <string name="this_year_stats">Dipalopalo tša ngwaga wo</string>
     <string name="all_time_stats">Dipalopalo ka moka tša nako</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL ga se ya bewa goba e sa dutše e taonelouta. O ka ya go dipeakanyo go fetoga</string>
     <string name="wasnt_able_to_connect_or_download">wasn\'t able to connect goba go taonelouta ponelopele</string>
     <string name="swipe_lock">Senotlolo sa swipe</string>
+    <string name="widget_theme">Sehlogo sa Widget</string>
+    <string name="match_app">Match App</string>
+    <string name="custom_setting">Mebala ya tlwaelo</string>
+    <string name="app_theme">Sehlogo sa App</string>
+    <string name="use_icons">Bontša diaekhone</string>
 </resources>

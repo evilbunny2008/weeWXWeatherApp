@@ -27,8 +27,6 @@
     <string name="bgColour">উইজেট ব্যাকগ্রাউন্ড কালার পিকার</string>
     <string name="indoor_readings">ইনডোর রিডিং দেখাবেন?</string>
     <string name="update_over_wifi">শুধুমাত্র ওয়াইফাই এর মাধ্যমে আপডেট?</string>
-    <string name="app_theme">অ্যাপ থিম?</string>
-    <string name="use_icons">আইকন দেখাবেন?</string>
     <string name="this_months_stats">এই মাসের পরিসংখ্যান</string>
     <string name="this_year_stats">এই বছরের পরিসংখ্যান</string>
     <string name="all_time_stats">সর্বকালের পরিসংখ্যান</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">রাডার URL সেট করা হয়নি বা এখনও ডাউনলোড হচ্ছে। আপনি সেটিংসে গিয়ে পরিবর্তন করতে পারেন।</string>
     <string name="wasnt_able_to_connect_or_download">পূর্বাভাস সংযোগ বা ডাউনলোড করতে সক্ষম ছিল না</string>
     <string name="swipe_lock">সোয়াইপ লক</string>
+    <string name="widget_theme">উইজেট থিম</string>
+    <string name="match_app">ম্যাচ অ্যাপ</string>
+    <string name="custom_setting">কাস্টম রং</string>
+    <string name="app_theme">অ্যাপ থিম</string>
+    <string name="use_icons">আইকন দেখান</string>
 </resources>

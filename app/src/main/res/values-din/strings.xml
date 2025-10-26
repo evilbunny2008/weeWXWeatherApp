@@ -27,8 +27,6 @@
     <string name="bgColour">Wëdgätës Bäldng pëëd</string>
     <string name="indoor_readings">Nyuɔɔthë kuɛ̈n de ɣöt?</string>
     <string name="update_over_wifi">Ee kë cï rot waar në wifi yic yetök?</string>
-    <string name="app_theme">Apple Ye lueel?</string>
-    <string name="use_icons">Nyuɔɔthë Käk ë piath?</string>
     <string name="this_months_stats">Käke Pɛɛi käkë</string>
     <string name="this_year_stats">Yen piööc de ruɔ̈ɔ̈n kënë</string>
     <string name="all_time_stats">Käk ë thää ëbɛ̈n</string>
@@ -68,4 +66,9 @@
     <string name="radar_url_not_set">Radar URL acie tääu wala aŋot ke tɔ̈u. Yïn alëu ba lɔ në thäät yiic ba rot waar</string>
     <string name="wasnt_able_to_connect_or_download">Acïï lëu bï yök ka bï thööŋ de käŋ yök</string>
     <string name="swipe_lock">Kë cie yic</string>
+    <string name="widget_theme">Tiɛ̈ŋ de</string>
+    <string name="match_app">Mäth Yïn</string>
+    <string name="custom_setting">Kɔɔc ë wël</string>
+    <string name="app_theme">Kë ye luɔ̈i ke</string>
+    <string name="use_icons">Nyuɔɔthë mec de</string>
 </resources>
