@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ ਵੈਬਕੈਮ ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
     <string name="wasnt_able_to_connect_forecast">ਪੂਰਵ ਅਨੁਮਾਨ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ।</string>
     <string name="wasnt_able_to_detect_forecast_icons">ਪੂਰਵ ਅਨੁਮਾਨ ਪ੍ਰਤੀਕਾਂ ਦਾ ਪਤਾ ਲਗਾਉਣ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ।</string>
-    <string name="forecast_type_needs_icons">ਪੂਰਵ ਅਨੁਮਾਨ ਕਿਸਮ \'%1$s\' ਲਈ ਆਈਕਨ ਉਪਲਬਧ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਆਈਕਨਾਂ ਦੀ ਵਰਤੋਂ ਕਰਨ \'ਤੇ ਸਵਿਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
-    <string name="forecast_type_is_invalid">ਪੂਰਵ ਅਨੁਮਾਨ ਕਿਸਮ \'%1$s\' ਅਵੈਧ ਹੈ, ਆਪਣੀ ਸੈਟਿੰਗ ਫਾਈਲ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
+    <string name="forecast_type_needs_icons">ਪੂਰਵ ਅਨੁਮਾਨ ਕਿਸਮ \'%%1$ss\' ਲਈ ਆਈਕਨ ਉਪਲਬਧ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ, ਕਿਰਪਾ ਕਰਕੇ ਆਈਕਨਾਂ ਦੀ ਵਰਤੋਂ ਕਰਨ \'ਤੇ ਸਵਿਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
+    <string name="forecast_type_is_invalid">ਪੂਰਵ ਅਨੁਮਾਨ ਕਿਸਮ \'%%1$ss\' ਅਵੈਧ ਹੈ, ਆਪਣੀ ਸੈਟਿੰਗ ਫਾਈਲ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
     <string name="wasnt_able_to_connect_radar_image">ਇੰਟਰਨੈੱਟ ਤੋਂ radar= ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
     <string name="wasnt_able_to_connect_data_txt">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ data.txt ਨੂੰ ਕਨੈਕਟ ਕਰਨ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
     <string name="data_url_was_blank">ਡਾਟਾ URL ਖਾਲੀ ਸੀ</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL ਨੂੰ ਡਿਫੌਲਟ \'ਤੇ ਸੈੱਟ ਕੀਤਾ ਗਿਆ ਸੀ ਜਾਂ ਖਾਲੀ ਸੀ</string>
     <string name="radar_url_not_set">ਰਾਡਾਰ URL ਸੈੱਟ ਨਹੀਂ ਹੈ ਜਾਂ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ। ਤੁਸੀਂ ਬਦਲਣ ਲਈ ਸੈਟਿੰਗਾਂ \'ਤੇ ਜਾ ਸਕਦੇ ਹੋ।</string>
     <string name="wasnt_able_to_connect_or_download">ਪੂਰਵ ਅਨੁਮਾਨ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ।</string>
+    <string name="swipe_lock">ਸਵਾਈਪ ਲੌਕ</string>
 </resources>

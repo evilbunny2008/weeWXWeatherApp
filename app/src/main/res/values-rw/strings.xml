@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ntabwo yashoboye guhuza cyangwa gukuramo amashusho ya Webcam muri seriveri yawe</string>
     <string name="wasnt_able_to_connect_forecast">Ntabwo yashoboye guhuza cyangwa gukuramo ibyateganijwe</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ntabwo yashoboye kubona amashusho ateganya</string>
-    <string name="forecast_type_needs_icons">Ubwoko bwaho \'%1$s\' akeneye kugira amashusho aboneka, nyamuneka hindura ukoresheje amashusho hanyuma ugerageze</string>
-    <string name="forecast_type_is_invalid">Ubwoko bwaho \'%1$s\' ntabwo byemewe, reba dosiye yawe hanyuma ugerageze</string>
+    <string name="forecast_type_needs_icons">Ubwoko bwaho \'%%1$ss\' akeneye kugira amashusho aboneka, nyamuneka hindura ukoresheje amashusho hanyuma ugerageze</string>
+    <string name="forecast_type_is_invalid">Ubwoko bwaho \'%%1$ss\' ntabwo byemewe, reba dosiye yawe hanyuma ugerageze</string>
     <string name="wasnt_able_to_connect_radar_image">Ntabwo yashoboye guhuza cyangwa gukuramo radar = ishusho kuri enterineti</string>
     <string name="wasnt_able_to_connect_data_txt">Ntabwo yashoboye guhuza cyangwa gukuramo amakuru.txt uhereye kuri seriveri yawe</string>
     <string name="data_url_was_blank">URL yamakuru yari irimo ubusa</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL yashyizwe kumurongo cyangwa yari irimo ubusa</string>
     <string name="radar_url_not_set">Radar URL ntabwo ishyirwaho cyangwa iracyakuyemo. Urashobora kujya muri Igenamiterere kugirango uhindure</string>
     <string name="wasnt_able_to_connect_or_download">Ntabwo yashoboye guhuza cyangwa gukuramo ibyateganijwe</string>
+    <string name="swipe_lock">Guhanagura</string>
 </resources>

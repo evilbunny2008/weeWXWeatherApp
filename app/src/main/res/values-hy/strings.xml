@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Չհաջողվեց միացնել կամ ներբեռնել վեբ-տեսախցիկի պատկերը ձեր սերվերից</string>
     <string name="wasnt_able_to_connect_forecast">Չհաջողվեց միացնել կամ ներբեռնել կանխատեսումը:</string>
     <string name="wasnt_able_to_detect_forecast_icons">Չհաջողվեց հայտնաբերել կանխատեսման պատկերակները:</string>
-    <string name="forecast_type_needs_icons">\'%1$s\' կանխատեսման տեսակը պետք է ունենա պատկերակներ: Խնդրում ենք անցնել պատկերակների օգտագործմանը և նորից փորձել:</string>
-    <string name="forecast_type_is_invalid">\'%1$s\' կանխատեսման տեսակն անվավեր է, ստուգեք ձեր կարգավորումների ֆայլը և նորից փորձեք:</string>
+    <string name="forecast_type_needs_icons">\'%%1$ss\' կանխատեսման տեսակը պետք է ունենա պատկերակներ: Խնդրում ենք անցնել պատկերակների օգտագործմանը և նորից փորձել:</string>
+    <string name="forecast_type_is_invalid">\'%%1$ss\' կանխատեսման տեսակն անվավեր է, ստուգեք ձեր կարգավորումների ֆայլը և նորից փորձեք:</string>
     <string name="wasnt_able_to_connect_radar_image">Չհաջողվեց միացնել կամ ներբեռնել Radar= պատկերը ինտերնետից</string>
     <string name="wasnt_able_to_connect_data_txt">Չհաջողվեց միացնել կամ ներբեռնել data.txt-ը ձեր սերվերից</string>
     <string name="data_url_was_blank">Տվյալների URL-ը դատարկ էր</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL-ը սահմանվել էր լռելյայն կամ դատարկ էր</string>
     <string name="radar_url_not_set">Ռադարի URL-ը սահմանված չէ կամ դեռ ներբեռնվում է: Փոխելու համար կարող եք գնալ կարգավորումներ:</string>
     <string name="wasnt_able_to_connect_or_download">Չհաջողվեց միացնել կամ ներբեռնել կանխատեսումը:</string>
+    <string name="swipe_lock">Սահեցրեք կողպեքը</string>
 </resources>

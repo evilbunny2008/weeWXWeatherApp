@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Es konnte keine Verbindung zu Ihrem Server hergestellt oder ein Webcam-Bild von diesem heruntergeladen werden</string>
     <string name="wasnt_able_to_connect_forecast">Es konnte keine Verbindung hergestellt oder die Prognose heruntergeladen werden</string>
     <string name="wasnt_able_to_detect_forecast_icons">Es konnten keine Prognosesymbole erkannt werden</string>
-    <string name="forecast_type_needs_icons">Für den Prognosetyp \'%1$s\' müssen Symbole verfügbar sein. Bitte wechseln Sie zur Verwendung von Symbolen und versuchen Sie es erneut</string>
-    <string name="forecast_type_is_invalid">Der Prognosetyp \'%1$s\' ist ungültig. Überprüfen Sie Ihre Einstellungsdatei und versuchen Sie es erneut</string>
+    <string name="forecast_type_needs_icons">Für den Prognosetyp \'%%1$ss\' müssen Symbole verfügbar sein. Bitte wechseln Sie zur Verwendung von Symbolen und versuchen Sie es erneut</string>
+    <string name="forecast_type_is_invalid">Der Prognosetyp \'%%1$ss\' ist ungültig. Überprüfen Sie Ihre Einstellungsdatei und versuchen Sie es erneut</string>
     <string name="wasnt_able_to_connect_radar_image">Es konnte keine Verbindung hergestellt oder das Radar=Bild aus dem Internet heruntergeladen werden</string>
     <string name="wasnt_able_to_connect_data_txt">Es konnte keine Verbindung zu Ihrem Server hergestellt oder data.txt heruntergeladen werden</string>
     <string name="data_url_was_blank">Die Daten-URL war leer</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">Die URL wurde auf die Standardeinstellung gesetzt oder war leer</string>
     <string name="radar_url_not_set">Die Radar-URL ist nicht festgelegt oder wird noch heruntergeladen. Sie können zu den Einstellungen gehen, um sie zu ändern</string>
     <string name="wasnt_able_to_connect_or_download">Es konnte keine Verbindung hergestellt oder die Prognose heruntergeladen werden</string>
+    <string name="swipe_lock">Wischsperre</string>
 </resources>

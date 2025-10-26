@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Δεν ήταν δυνατή η σύνδεση ή η λήψη εικόνας κάμερας web από τον διακομιστή σας</string>
     <string name="wasnt_able_to_connect_forecast">Δεν ήταν δυνατή η σύνδεση ή η λήψη της πρόβλεψης</string>
     <string name="wasnt_able_to_detect_forecast_icons">Δεν ήταν δυνατός ο εντοπισμός εικονιδίων πρόβλεψης</string>
-    <string name="forecast_type_needs_icons">Ο τύπος πρόβλεψης \'%1$s\' πρέπει να έχει διαθέσιμα εικονίδια. Μεταβείτε στη χρήση εικονιδίων και δοκιμάστε ξανά</string>
-    <string name="forecast_type_is_invalid">Ο τύπος πρόβλεψης \'%1$s\' δεν είναι έγκυρος, ελέγξτε το αρχείο ρυθμίσεών σας και δοκιμάστε ξανά</string>
+    <string name="forecast_type_needs_icons">Ο τύπος πρόβλεψης \'%%1$ss\' πρέπει να έχει διαθέσιμα εικονίδια. Μεταβείτε στη χρήση εικονιδίων και δοκιμάστε ξανά</string>
+    <string name="forecast_type_is_invalid">Ο τύπος πρόβλεψης \'%%1$ss\' δεν είναι έγκυρος, ελέγξτε το αρχείο ρυθμίσεών σας και δοκιμάστε ξανά</string>
     <string name="wasnt_able_to_connect_radar_image">Δεν ήταν δυνατή η σύνδεση ή η λήψη εικόνας ραντάρ= από το διαδίκτυο</string>
     <string name="wasnt_able_to_connect_data_txt">Δεν ήταν δυνατή η σύνδεση ή η λήψη του data.txt από τον διακομιστή σας</string>
     <string name="data_url_was_blank">Η διεύθυνση URL δεδομένων ήταν κενή</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">Η διεύθυνση URL ορίστηκε ως προεπιλογή ή ήταν κενή</string>
     <string name="radar_url_not_set">Η διεύθυνση URL ραντάρ δεν έχει οριστεί ή εξακολουθεί να γίνεται λήψη. Μπορείτε να μεταβείτε στις ρυθμίσεις για αλλαγή</string>
     <string name="wasnt_able_to_connect_or_download">Δεν ήταν δυνατή η σύνδεση ή η λήψη της πρόβλεψης</string>
+    <string name="swipe_lock">Κλείδωμα ολίσθησης</string>
 </resources>

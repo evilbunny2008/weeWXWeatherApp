@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Haina kukwanisa kubatana kana kurodha wewebhu mufananidzo kubva kune yako server</string>
     <string name="wasnt_able_to_connect_forecast">Haina kukwanisa kubatanidza kana kurodha iyo fungidziro</string>
     <string name="wasnt_able_to_detect_forecast_icons">Haina kukwanisa kuona fungidziro yefungidziro</string>
-    <string name="forecast_type_needs_icons">Forecast Type \'%1$s\' inoda kuve ne icons inowanikwa, ndapota switch kushandisa mifananidzo uye edza zvakare</string>
-    <string name="forecast_type_is_invalid">Forecast Type \'%1$s\' haina basa, tarisa yako faira faira uye edza zvakare</string>
+    <string name="forecast_type_needs_icons">Forecast Type \'%%1$ss\' inoda kuve ne icons inowanikwa, ndapota switch kushandisa mifananidzo uye edza zvakare</string>
+    <string name="forecast_type_is_invalid">Forecast Type \'%%1$ss\' haina basa, tarisa yako faira faira uye edza zvakare</string>
     <string name="wasnt_able_to_connect_radar_image">Haina kukwanisa kubatana kana kurodha radar = mufananidzo kubva kuInternet</string>
     <string name="wasnt_able_to_connect_data_txt">Haina kukwanisa kubatana kana kurodha data.txt kubva kune yako server</string>
     <string name="data_url_was_blank">Data URL yaive isina</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL yakagadzirirwa kusarudzika kana isina chinhu</string>
     <string name="radar_url_not_set">Radar URL isina kuiswa kana ichiri kurodha pasi. Iwe unogona kuenda kune marongero ekuchinja</string>
     <string name="wasnt_able_to_connect_or_download">Haina kukwanisa kubatanidza kana kurodha iyo fungidziro</string>
+    <string name="swipe_lock">Swipe kukiya</string>
 </resources>

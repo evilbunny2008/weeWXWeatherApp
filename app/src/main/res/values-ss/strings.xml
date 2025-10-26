@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Akazange akwati kuxhuma nobe kulandza sitfombe se-webcam kuseva yakho</string>
     <string name="wasnt_able_to_connect_forecast">Akazange akwati kuxhumana nobe kulandza lesibiketelo</string>
     <string name="wasnt_able_to_detect_forecast_icons">Bekangakhoni kutfola timphawu tekubiketela</string>
-    <string name="forecast_type_needs_icons">Luhlobo lwekubiketela \'%1$s\' ludzinga kuba netimphawu letikhona, Sicela ushintshe usebentise timphawu bese uyazama futsi</string>
-    <string name="forecast_type_is_invalid">Luhlobo lwekubiketela \'%1$s\' alusebenti, hlola ifayela lakho letilungiselelo bese uyazama futsi</string>
+    <string name="forecast_type_needs_icons">Luhlobo lwekubiketela \'%%1$ss\' ludzinga kuba netimphawu letikhona, Sicela ushintshe usebentise timphawu bese uyazama futsi</string>
+    <string name="forecast_type_is_invalid">Luhlobo lwekubiketela \'%%1$ss\' alusebenti, hlola ifayela lakho letilungiselelo bese uyazama futsi</string>
     <string name="wasnt_able_to_connect_radar_image">Akazange akwati kuxhumana nobe kulandza i-radar= sitfombe kusuka ku-inthanethi</string>
     <string name="wasnt_able_to_connect_data_txt">Akazange akwati kuxhuma nobe kulandza idatha.txt kuseva yakho</string>
     <string name="data_url_was_blank">I-URL yedatha beyingenalutfo</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">I-URL beyibekwe kutsi ivele noma beyingenalutho</string>
     <string name="radar_url_not_set">Radar URL ayiseki nobe isalandvwa. Ungaya kumasethingi kute ushintje</string>
     <string name="wasnt_able_to_connect_or_download">Akazange akwati kuxhumana nobe kulandza lesibiketelo</string>
+    <string name="swipe_lock">Swapha Lukhiya</string>
 </resources>

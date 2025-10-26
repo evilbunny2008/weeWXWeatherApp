@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Kan geen verbinding maken met of een webcambeeld downloaden van uw server</string>
     <string name="wasnt_able_to_connect_forecast">Kon geen verbinding maken of de voorspelling downloaden</string>
     <string name="wasnt_able_to_detect_forecast_icons">Kan voorspellingspictogrammen niet detecteren</string>
-    <string name="forecast_type_needs_icons">Er moeten pictogrammen beschikbaar zijn voor het prognosetype \'%1$s\'. Schakel over naar het gebruik van pictogrammen en probeer het opnieuw</string>
-    <string name="forecast_type_is_invalid">Prognosetype \'%1$s\' is ongeldig. Controleer uw instellingenbestand en probeer het opnieuw</string>
+    <string name="forecast_type_needs_icons">Er moeten pictogrammen beschikbaar zijn voor het prognosetype \'%%1$ss\'. Schakel over naar het gebruik van pictogrammen en probeer het opnieuw</string>
+    <string name="forecast_type_is_invalid">Prognosetype \'%%1$ss\' is ongeldig. Controleer uw instellingenbestand en probeer het opnieuw</string>
     <string name="wasnt_able_to_connect_radar_image">Kon geen verbinding maken of radar=-afbeelding downloaden van internet</string>
     <string name="wasnt_able_to_connect_data_txt">Kon geen verbinding maken met of downloaden van data.txt van uw server</string>
     <string name="data_url_was_blank">Gegevens-URL was leeg</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL was ingesteld op de standaardwaarde of was leeg</string>
     <string name="radar_url_not_set">Radar-URL is niet ingesteld of wordt nog gedownload. U kunt naar de instellingen gaan om deze te wijzigen</string>
     <string name="wasnt_able_to_connect_or_download">Kon geen verbinding maken of de voorspelling downloaden</string>
+    <string name="swipe_lock">Veeg vergrendelen</string>
 </resources>

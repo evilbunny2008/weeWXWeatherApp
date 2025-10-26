@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Acïï lëu bï thöŋ ka yök në wɛbthait yic tënë raandu</string>
     <string name="wasnt_able_to_connect_forecast">Acïï lëu bï yök ka bï thööŋ de käŋ yök</string>
     <string name="wasnt_able_to_detect_forecast_icons">Acïï lëu bï kä cï röt looi ke thööŋ yök</string>
-    <string name="forecast_type_needs_icons">Kë tueŋ \'%1$s\' akɔɔr bï naŋ kä ye nyuɔɔth tɔ̈u, Yïn alëu ba waar në luɔɔi de kä ye nyuɔɔth ku them ba bɛɛr looi</string>
-    <string name="forecast_type_is_invalid">Tɛ̈n ë yök \'%1$s\' ee kë cie thɔ̈ɔ̈ŋ, tïŋ ë lööŋku ku them ba bɛɛr</string>
+    <string name="forecast_type_needs_icons">Kë tueŋ \'%%1$ss\' akɔɔr bï naŋ kä ye nyuɔɔth tɔ̈u, Yïn alëu ba waar në luɔɔi de kä ye nyuɔɔth ku them ba bɛɛr looi</string>
+    <string name="forecast_type_is_invalid">Tɛ̈n ë yök \'%%1$ss\' ee kë cie thɔ̈ɔ̈ŋ, tïŋ ë lööŋku ku them ba bɛɛr</string>
     <string name="wasnt_able_to_connect_radar_image">Acïn kë lëu bï yök wala bï radada= thura tääu në aliiric</string>
     <string name="wasnt_able_to_connect_data_txt">Acïï lëu bï yök ka yök wël.txt tënë raandu</string>
     <string name="data_url_was_blank">Kä cï yök URL acï bɛ̈n</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL acï tääu në kë cï tääu thïn yic wala acï thiäŋ</string>
     <string name="radar_url_not_set">Radar URL acie tääu wala aŋot ke tɔ̈u. Yïn alëu ba lɔ në thäät yiic ba rot waar</string>
     <string name="wasnt_able_to_connect_or_download">Acïï lëu bï yök ka bï thööŋ de käŋ yök</string>
+    <string name="swipe_lock">Kë cie yic</string>
 </resources>

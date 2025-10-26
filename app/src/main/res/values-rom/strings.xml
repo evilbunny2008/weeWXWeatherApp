@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Nashti te konektirinelpe vaj te lav tele jekh webcam image katar o server</string>
     <string name="wasnt_able_to_connect_forecast">Nashti te konektirinelpe vaj te lav tele e prognoza</string>
     <string name="wasnt_able_to_detect_forecast_icons">Nashti te detektirinel pe prognosa ikoni</string>
-    <string name="forecast_type_needs_icons">Prognoto tip \'%1$s\' trubul te avel len ikone, Mangen te paruven o ikoni thaj te zumaven pale</string>
-    <string name="forecast_type_is_invalid">O prognozako tipo \'%1$s\' si bivalido, kontrolisaren tumare settings file thaj zumaven pale</string>
+    <string name="forecast_type_needs_icons">Prognoto tip \'%%1$ss\' trubul te avel len ikone, Mangen te paruven o ikoni thaj te zumaven pale</string>
+    <string name="forecast_type_is_invalid">O prognozako tipo \'%%1$ss\' si bivalido, kontrolisaren tumare settings file thaj zumaven pale</string>
     <string name="wasnt_able_to_connect_radar_image">Nashti te konektirinel pes vaj te lav radar= image katar o interneto</string>
     <string name="wasnt_able_to_connect_data_txt">Nashti te konektirinel vaj te lel pe data.txt katar tumaro server</string>
     <string name="data_url_was_blank">Data URL sas blanko</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">O URL sas dino pe defaulto vaj sas pusto</string>
     <string name="radar_url_not_set">Radar URL na si shutino vaj si inke tele tele. Tu shaj zhas ande settingura te paruves</string>
     <string name="wasnt_able_to_connect_or_download">Nashti te konektirinelpe vaj te lav tele e prognoza</string>
+    <string name="swipe_lock">Swipe Lock</string>
 </resources>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Impossibile connettersi o scaricare un\'immagine della webcam dal tuo server</string>
     <string name="wasnt_able_to_connect_forecast">Impossibile connettersi o scaricare la previsione</string>
     <string name="wasnt_able_to_detect_forecast_icons">Impossibile rilevare le icone delle previsioni</string>
-    <string name="forecast_type_needs_icons">Il tipo di previsione \'%1$s\' deve avere icone disponibili. Passa all\'utilizzo delle icone e riprova</string>
-    <string name="forecast_type_is_invalid">Il tipo di previsione \'%1$s\' non è valido, controlla il file delle impostazioni e riprova</string>
+    <string name="forecast_type_needs_icons">Il tipo di previsione \'%%1$ss\' deve avere icone disponibili. Passa all\'utilizzo delle icone e riprova</string>
+    <string name="forecast_type_is_invalid">Il tipo di previsione \'%%1$ss\' non è valido, controlla il file delle impostazioni e riprova</string>
     <string name="wasnt_able_to_connect_radar_image">Impossibile connettersi o scaricare radar= image da Internet</string>
     <string name="wasnt_able_to_connect_data_txt">Impossibile connettersi o scaricare data.txt dal tuo server</string>
     <string name="data_url_was_blank">L\'URL dei dati era vuoto</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">L\'URL era impostato su quello predefinito o era vuoto</string>
     <string name="radar_url_not_set">L\'URL del radar non è impostato o è ancora in fase di download. Puoi andare alle impostazioni per modificare</string>
     <string name="wasnt_able_to_connect_or_download">Impossibile connettersi o scaricare la previsione</string>
+    <string name="swipe_lock">Blocco scorrimento</string>
 </resources>

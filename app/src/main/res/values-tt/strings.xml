@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Сезнең сервердан веб-камера образын тоташтыра яки йөкли алмады</string>
     <string name="wasnt_able_to_connect_forecast">Фаразны тоташтыра яки йөкли алмады</string>
     <string name="wasnt_able_to_detect_forecast_icons">Фаразлы иконаларны ачыклый алмады</string>
-    <string name="forecast_type_needs_icons">\'%1$s\' иконалары барлыгы кирәк булса, иконалар кулланып, кабатлап карагыз</string>
-    <string name="forecast_type_is_invalid">\'%1$s\' фаразлы тибы дөрес түгел, көйләүләр файлын тикшерегез һәм кабатлап карагыз</string>
+    <string name="forecast_type_needs_icons">\'%%1$ss\' иконалары барлыгы кирәк булса, иконалар кулланып, кабатлап карагыз</string>
+    <string name="forecast_type_is_invalid">\'%%1$ss\' фаразлы тибы дөрес түгел, көйләүләр файлын тикшерегез һәм кабатлап карагыз</string>
     <string name="wasnt_able_to_connect_radar_image">Радарны тоташтыра яки йөкли алмый = Интернеттан рәсем</string>
     <string name="wasnt_able_to_connect_data_txt">Сезнең сервердан мәгълүмат тотып ала алмадым</string>
     <string name="data_url_was_blank">Мәгълүмат URL буш иде</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL килешү төзегән яки буш булган</string>
     <string name="radar_url_not_set">Радар Урл көйләнми яки әле дә йөкләнми. Сез үзгәрү өчен көйләүләргә бара аласыз</string>
     <string name="wasnt_able_to_connect_or_download">Фаразны тоташтыра яки йөкли алмады</string>
+    <string name="swipe_lock">Сөртү йозак</string>
 </resources>

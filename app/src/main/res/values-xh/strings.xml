@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ayikwazanga ukuqhagamshela okanye ukhuphele umfanekiso wewebhu kwiseva yakho</string>
     <string name="wasnt_able_to_connect_forecast">Ayikwazanga ukuqhagamshela okanye ukhuphele uqikelelo</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ayikwazanga ukufumana i icons fundela</string>
-    <string name="forecast_type_needs_icons">Uhlobo lwe-promocal \'%1$s\' kufuneka ufumane ii icon, nceda utshintshe ukusebenzisa i icon kwaye uzame kwakhona</string>
-    <string name="forecast_type_is_invalid">\'%1$s\' Uhlobo lwePikelelo kwangaphambili</string>
+    <string name="forecast_type_needs_icons">Uhlobo lwe-promocal \'%%1$ss\' kufuneka ufumane ii icon, nceda utshintshe ukusebenzisa i icon kwaye uzame kwakhona</string>
+    <string name="forecast_type_is_invalid">\'%%1$ss\' Uhlobo lwePikelelo kwangaphambili</string>
     <string name="wasnt_able_to_connect_radar_image">Ayikwazanga ukuqhagamshela okanye ukukhuphela i-radar = umfanekiso ovela kwi-Intanethi</string>
     <string name="wasnt_able_to_connect_data_txt">Ayikwazanga ukudibanisa okanye ukukhuphela idatha.txt kwiseva yakho</string>
     <string name="data_url_was_blank">I-URL yedatha yayingenanto</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">I-URL icwangciselwe ukungagqibekanga okanye ayinanto</string>
     <string name="radar_url_not_set">I-URL ye-radar engaseti okanye isazikhuphela. Ungaya kwiisetingi ukutshintsha</string>
     <string name="wasnt_able_to_connect_or_download">Ayikwazanga ukuqhagamshela okanye ukhuphele uqikelelo</string>
+    <string name="swipe_lock">I-Swipe Tock</string>
 </resources>

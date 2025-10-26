@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">サーバーに接続できなかったり、サーバーから Web カメラ画像をダウンロードできませんでした</string>
     <string name="wasnt_able_to_connect_forecast">接続できなかった、または予測をダウンロードできませんでした。</string>
     <string name="wasnt_able_to_detect_forecast_icons">予測アイコンを検出できませんでした。</string>
-    <string name="forecast_type_needs_icons">予測タイプ \'%1$s\' にはアイコンを使用できる必要があります。アイコンの使用に切り替えて、再試行してください。</string>
-    <string name="forecast_type_is_invalid">予測タイプ \'%1$s\' は無効です。設定ファイルを確認して、再試行してください。</string>
+    <string name="forecast_type_needs_icons">予測タイプ \'%%1$ss\' にはアイコンを使用できる必要があります。アイコンの使用に切り替えて、再試行してください。</string>
+    <string name="forecast_type_is_invalid">予測タイプ \'%%1$ss\' は無効です。設定ファイルを確認して、再試行してください。</string>
     <string name="wasnt_able_to_connect_radar_image">インターネットに接続できなかった、またはレーダー=画像をインターネットからダウンロードできませんでした</string>
     <string name="wasnt_able_to_connect_data_txt">接続できなかった、またはサーバーから data.txt をダウンロードできませんでした</string>
     <string name="data_url_was_blank">データ URL が空白でした</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL がデフォルトに設定されているか、空でした</string>
     <string name="radar_url_not_set">レーダー URL が設定されていないか、まだダウンロード中です。設定に移動して変更できます。</string>
     <string name="wasnt_able_to_connect_or_download">接続できなかった、または予測をダウンロードできませんでした。</string>
+    <string name="swipe_lock">スワイプロック</string>
 </resources>

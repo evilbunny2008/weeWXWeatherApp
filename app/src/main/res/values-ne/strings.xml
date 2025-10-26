@@ -57,8 +57,8 @@
     <string name="wasnt_able_to_connect_webcam_url">तपाईंको सर्भरबाट वेबक्याम छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
     <string name="wasnt_able_to_connect_forecast">जडान गर्न वा पूर्वानुमान डाउनलोड गर्न सक्षम भएन।</string>
     <string name="wasnt_able_to_detect_forecast_icons">पूर्वानुमान आइकनहरू पत्ता लगाउन सक्षम भएन।</string>
-    <string name="forecast_type_needs_icons">पूर्वानुमान प्रकार \'%1$s\' मा आइकनहरू उपलब्ध हुन आवश्यक छ, कृपया आइकनहरू प्रयोग गर्न स्विच गर्नुहोस् र पुन: प्रयास गर्नुहोस्।</string>
-    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य छ, आफ्नो सेटिङ फाइल जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।</string>
+    <string name="forecast_type_needs_icons">पूर्वानुमान प्रकार \'%%1$ss\' मा आइकनहरू उपलब्ध हुन आवश्यक छ, कृपया आइकनहरू प्रयोग गर्न स्विच गर्नुहोस् र पुन: प्रयास गर्नुहोस्।</string>
+    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%%1$ss\' अमान्य छ, आफ्नो सेटिङ फाइल जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।</string>
     <string name="wasnt_able_to_connect_radar_image">इन्टरनेटबाट radar= छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
     <string name="wasnt_able_to_connect_data_txt">तपाईँको सर्भरबाट data.txt जडान गर्न वा डाउनलोड गर्न सकिएन</string>
     <string name="data_url_was_blank">डाटा URL खाली थियो</string>
@@ -67,4 +67,5 @@
     <string name="radar_url_not_set">Radar URL सेट गरिएको छैन वा अझै डाउनलोड भइरहेको छ। तपाईं परिवर्तन गर्न सेटिङहरूमा जान सक्नुहुन्छ।</string>
     <string name="wasnt_able_to_connect_or_download">जडान गर्न वा पूर्वानुमान डाउनलोड गर्न सक्षम भएन।</string>
     <string name="stats2">तथ्याङ्क</string>
+    <string name="swipe_lock">स्वाइप लक</string>
 </resources>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Nije bilo moguće povezati se ili preuzeti sliku web kamere sa vašeg servera</string>
     <string name="wasnt_able_to_connect_forecast">Nije bilo moguće povezati se ili preuzeti prognozu</string>
     <string name="wasnt_able_to_detect_forecast_icons">Nije bilo moguće otkriti ikone prognoze</string>
-    <string name="forecast_type_needs_icons">Tip predviđanja \'%1$s\' mora imati dostupne ikone. Molimo pređite na korištenje ikona i pokušajte ponovo</string>
-    <string name="forecast_type_is_invalid">Tip predviđanja \'%1$s\' je nevažeći, provjerite datoteku postavki i pokušajte ponovo</string>
+    <string name="forecast_type_needs_icons">Tip predviđanja \'%%1$ss\' mora imati dostupne ikone. Molimo pređite na korištenje ikona i pokušajte ponovo</string>
+    <string name="forecast_type_is_invalid">Tip predviđanja \'%%1$ss\' je nevažeći, provjerite datoteku postavki i pokušajte ponovo</string>
     <string name="wasnt_able_to_connect_radar_image">Nije bilo moguće povezati se ili preuzeti radar= sliku s interneta</string>
     <string name="wasnt_able_to_connect_data_txt">Nije bilo moguće povezati se ili preuzeti data.txt sa vašeg servera</string>
     <string name="data_url_was_blank">URL podataka je bio prazan</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL je postavljen na zadanu vrijednost ili je bio prazan</string>
     <string name="radar_url_not_set">URL radara nije postavljen ili se još uvijek preuzima. Možete otići u postavke da promijenite</string>
     <string name="wasnt_able_to_connect_or_download">Nije bilo moguće povezati se ili preuzeti prognozu</string>
+    <string name="swipe_lock">Swipe Lock</string>
 </resources>

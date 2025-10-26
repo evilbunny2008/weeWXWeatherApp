@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Yhteyden muodostaminen tai verkkokamerakuvan lataaminen palvelimeltasi ei onnistunut</string>
     <string name="wasnt_able_to_connect_forecast">Ennusteen muodostaminen tai lataaminen ei onnistunut</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ennustekuvakkeita ei voitu havaita</string>
-    <string name="forecast_type_needs_icons">Ennustetyypin \'%1$s\' on oltava käytettävissä. Vaihda kuvakkeiden käyttöön ja yritä uudelleen</string>
-    <string name="forecast_type_is_invalid">Ennustetyyppi \'%1$s\' on virheellinen, tarkista asetustiedostosi ja yritä uudelleen</string>
+    <string name="forecast_type_needs_icons">Ennustetyypin \'%%1$ss\' on oltava käytettävissä. Vaihda kuvakkeiden käyttöön ja yritä uudelleen</string>
+    <string name="forecast_type_is_invalid">Ennustetyyppi \'%%1$ss\' on virheellinen, tarkista asetustiedostosi ja yritä uudelleen</string>
     <string name="wasnt_able_to_connect_radar_image">Ei voinut muodostaa yhteyttä tai ladata tutkakuvaa Internetistä</string>
     <string name="wasnt_able_to_connect_data_txt">Data.txt-tiedostoa ei voitu muodostaa tai ladata palvelimeltasi</string>
     <string name="data_url_was_blank">Tietojen URL-osoite oli tyhjä</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL-osoite asetettiin oletusarvoon tai se oli tyhjä</string>
     <string name="radar_url_not_set">Tutkan URL-osoitetta ei ole asetettu tai se latautuu edelleen. Voit siirtyä asetuksiin muuttaaksesi</string>
     <string name="wasnt_able_to_connect_or_download">Ennusteen muodostaminen tai lataaminen ei onnistunut</string>
+    <string name="swipe_lock">Pyyhkäise lukitus</string>
 </resources>

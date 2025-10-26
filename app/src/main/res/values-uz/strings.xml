@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Sizning serveringizdan veb-kamera rasmini ulash yoki yuklay olmadi</string>
     <string name="wasnt_able_to_connect_forecast">Prognozni ulash yoki yuklab olish mumkin emas edi</string>
     <string name="wasnt_able_to_detect_forecast_icons">Prognoz piktogrammalarini aniqlay olmadi</string>
-    <string name="forecast_type_needs_icons">\'%1$s\' prognosi piktogrammalarga ega bo\'lishi kerak, iltimos, piktogrammalardan foydalanish va qayta urinib ko\'ring</string>
-    <string name="forecast_type_is_invalid">\'%1$s\' prognozi noto\'g\'ri, Sozlamalar faylingizni tekshiring va qaytadan urining</string>
+    <string name="forecast_type_needs_icons">\'%%1$ss\' prognosi piktogrammalarga ega bo\'lishi kerak, iltimos, piktogrammalardan foydalanish va qayta urinib ko\'ring</string>
+    <string name="forecast_type_is_invalid">\'%%1$ss\' prognozi noto\'g\'ri, Sozlamalar faylingizni tekshiring va qaytadan urining</string>
     <string name="wasnt_able_to_connect_radar_image">Internetdan ulanish yoki yuklab olishga qodir emas edi</string>
     <string name="wasnt_able_to_connect_data_txt">Ma\'lumotlarni serveringizdan ulash yoki yuklay olmadi</string>
     <string name="data_url_was_blank">Ma\'lumot URL manzili bo\'sh edi</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL standartga o\'rnatildi yoki bo\'sh edi</string>
     <string name="radar_url_not_set">Radar URL o\'rnatilmaydi yoki hali ham yuklanmoqda. O\'zgartirish uchun siz sozlamalarga borishingiz mumkin</string>
     <string name="wasnt_able_to_connect_or_download">Prognozni ulash yoki yuklab olish mumkin emas edi</string>
+    <string name="swipe_lock">Qulfni surish</string>
 </resources>

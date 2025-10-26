@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">មិនអាចភ្ជាប់ឬទាញយករូបភាពវេបខេមពីម៉ាស៊ីនមេរបស់អ្នកទេ</string>
     <string name="wasnt_able_to_connect_forecast">មិនអាចភ្ជាប់ឬទាញយកការព្យាករណ៍បានទេ។</string>
     <string name="wasnt_able_to_detect_forecast_icons">មិនអាចរកឃើញរូបតំណាងព្យាករណ៍ទេ។</string>
-    <string name="forecast_type_needs_icons">ប្រភេទព្យាករណ៍ប្រភេទ \'%1$s\' ត្រូវការមានរូបតំណាងមានសូមប្តូរទៅប្រើរូបតំណាងហើយព្យាយាមម្តងទៀត។</string>
-    <string name="forecast_type_is_invalid">ប្រភេទព្យាករណ៍ \'%1$s\' មិនត្រឹមត្រូវសូមពិនិត្យមើលឯកសារកំណត់របស់អ្នកហើយព្យាយាមម្តងទៀត។</string>
+    <string name="forecast_type_needs_icons">ប្រភេទព្យាករណ៍ប្រភេទ \'%%1$ss\' ត្រូវការមានរូបតំណាងមានសូមប្តូរទៅប្រើរូបតំណាងហើយព្យាយាមម្តងទៀត។</string>
+    <string name="forecast_type_is_invalid">ប្រភេទព្យាករណ៍ \'%%1$ss\' មិនត្រឹមត្រូវសូមពិនិត្យមើលឯកសារកំណត់របស់អ្នកហើយព្យាយាមម្តងទៀត។</string>
     <string name="wasnt_able_to_connect_radar_image">មិនអាចភ្ជាប់ឬទាញយករ៉ាដា = រូបភាពពីអ៊ីនធឺណិត</string>
     <string name="wasnt_able_to_connect_data_txt">មិនអាចភ្ជាប់ឬទាញយកទិន្នន័យពីម៉ាស៊ីនមេរបស់អ្នកទេ</string>
     <string name="data_url_was_blank">URL ទិន្នន័យគឺទទេ</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL ត្រូវបានកំណត់ទៅលំនាំដើមឬទទេ</string>
     <string name="radar_url_not_set">URL រ៉ាដាមិនបានកំណត់ឬកំពុងទាញយកនៅឡើយទេ។ អ្នកអាចទៅការកំណត់ដើម្បីផ្លាស់ប្តូរ។</string>
     <string name="wasnt_able_to_connect_or_download">មិនអាចភ្ជាប់ឬទាញយកការព្យាករណ៍បានទេ។</string>
+    <string name="swipe_lock">ចាក់សោអូស</string>
 </resources>

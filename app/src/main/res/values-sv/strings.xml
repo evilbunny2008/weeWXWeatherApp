@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Kunde inte ansluta eller ladda ner en webbkamerabild från din server</string>
     <string name="wasnt_able_to_connect_forecast">Det gick inte att ansluta eller ladda ner prognosen</string>
     <string name="wasnt_able_to_detect_forecast_icons">Kunde inte upptäcka prognosikoner</string>
-    <string name="forecast_type_needs_icons">Prognostypen \'%1$s\' måste ha ikoner tillgängliga. Byt till att använda ikoner och försök igen</string>
-    <string name="forecast_type_is_invalid">Prognostypen \'%1$s\' är ogiltig, kontrollera din inställningsfil och försök igen</string>
+    <string name="forecast_type_needs_icons">Prognostypen \'%%1$ss\' måste ha ikoner tillgängliga. Byt till att använda ikoner och försök igen</string>
+    <string name="forecast_type_is_invalid">Prognostypen \'%%1$ss\' är ogiltig, kontrollera din inställningsfil och försök igen</string>
     <string name="wasnt_able_to_connect_radar_image">Kunde inte ansluta eller ladda ner radar=-bild från internet</string>
     <string name="wasnt_able_to_connect_data_txt">Det gick inte att ansluta eller ladda ner data.txt från din server</string>
     <string name="data_url_was_blank">Data-URL var tom</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL var inställd på standard eller var tom</string>
     <string name="radar_url_not_set">Radar-URL inte inställd eller laddas fortfarande ned. Du kan gå till inställningar för att ändra</string>
     <string name="wasnt_able_to_connect_or_download">Det gick inte att ansluta eller ladda ner prognosen</string>
+    <string name="swipe_lock">Sveplås</string>
 </resources>

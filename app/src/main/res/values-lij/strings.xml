@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">No l\'ea bon de connettise ò scaricâ unn\'imagine webcam da-o seu server</string>
     <string name="wasnt_able_to_connect_forecast">No l\'ea bon de connettise ò scaricâ a previxon</string>
     <string name="wasnt_able_to_detect_forecast_icons">No l\'é stæto bon de relevâ e icòne de previxon</string>
-    <string name="forecast_type_needs_icons">O tipo de previxon \'%1$s\' o l\'à de beseugno d\'avei de icòne à dispoxiçion, pe favô, passâ pe deuviâ e icòne e provâ torna</string>
-    <string name="forecast_type_is_invalid">O tipo de previxon \'%1$s\' o l\'é invalido, controllâ o file de impostaçioin e provâ torna</string>
+    <string name="forecast_type_needs_icons">O tipo de previxon \'%%1$ss\' o l\'à de beseugno d\'avei de icòne à dispoxiçion, pe favô, passâ pe deuviâ e icòne e provâ torna</string>
+    <string name="forecast_type_is_invalid">O tipo de previxon \'%%1$ss\' o l\'é invalido, controllâ o file de impostaçioin e provâ torna</string>
     <string name="wasnt_able_to_connect_radar_image">No l\'ea bon de connettise ò scaricâ o radar= imagine da l\'Internet</string>
     <string name="wasnt_able_to_connect_data_txt">No l\'ea bon de connettise ò scaricâ di dæti.txt da-o seu server</string>
     <string name="data_url_was_blank">L\'URL di dæti o l\'ea veuo</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">L\'URL o l\'ea misso in sce l\'inadempimento ò o l\'ea veuo</string>
     <string name="radar_url_not_set">L\'URL Radar o no l\'é impostou ò o l\'é ancon o download. O peu anâ à de impostaçioin pe cangiâ</string>
     <string name="wasnt_able_to_connect_or_download">No l\'ea bon de connettise ò scaricâ a previxon</string>
+    <string name="swipe_lock">Cavallaia de sciortia</string>
 </resources>

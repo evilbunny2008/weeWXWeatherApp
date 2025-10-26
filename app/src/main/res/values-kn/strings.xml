@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರವನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="wasnt_able_to_connect_forecast">ಮುನ್ಸೂಚನೆಯನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="wasnt_able_to_detect_forecast_icons">ಮುನ್ಸೂಚನೆ ಐಕಾನ್‌ಗಳನ್ನು ಪತ್ತೆಹಚ್ಚಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
-    <string name="forecast_type_needs_icons">ಮುನ್ಸೂಚನೆ ಪ್ರಕಾರ \'%1$s\' ಗೆ ಐಕಾನ್‌ಗಳು ಲಭ್ಯವಿರಬೇಕು, ದಯವಿಟ್ಟು ಐಕಾನ್‌ಗಳನ್ನು ಬಳಸಲು ಬದಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
-    <string name="forecast_type_is_invalid">ಮುನ್ಸೂಚನೆ ಪ್ರಕಾರ \'%1$s\' ಅಮಾನ್ಯವಾಗಿದೆ, ನಿಮ್ಮ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಫೈಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
+    <string name="forecast_type_needs_icons">ಮುನ್ಸೂಚನೆ ಪ್ರಕಾರ \'%%1$ss\' ಗೆ ಐಕಾನ್‌ಗಳು ಲಭ್ಯವಿರಬೇಕು, ದಯವಿಟ್ಟು ಐಕಾನ್‌ಗಳನ್ನು ಬಳಸಲು ಬದಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
+    <string name="forecast_type_is_invalid">ಮುನ್ಸೂಚನೆ ಪ್ರಕಾರ \'%%1$ss\' ಅಮಾನ್ಯವಾಗಿದೆ, ನಿಮ್ಮ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಫೈಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
     <string name="wasnt_able_to_connect_radar_image">ಇಂಟರ್ನೆಟ್‌ನಿಂದ ರೇಡಾರ್= ಇಮೇಜ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="wasnt_able_to_connect_data_txt">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ data.txt ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="data_url_was_blank">ಡೇಟಾ URL ಖಾಲಿಯಾಗಿದೆ</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL ಅನ್ನು ಡೀಫಾಲ್ಟ್‌ಗೆ ಹೊಂದಿಸಲಾಗಿದೆ ಅಥವಾ ಖಾಲಿಯಾಗಿದೆ</string>
     <string name="radar_url_not_set">ರಾಡಾರ್ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ ಅಥವಾ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ. ಬದಲಾಯಿಸಲು ನೀವು ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಹೋಗಬಹುದು</string>
     <string name="wasnt_able_to_connect_or_download">ಮುನ್ಸೂಚನೆಯನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
+    <string name="swipe_lock">ಸ್ವೈಪ್ ಲಾಕ್</string>
 </resources>

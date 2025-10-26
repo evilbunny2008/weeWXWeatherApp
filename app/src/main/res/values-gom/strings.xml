@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">तुमच्या सर्वरा वयल्यान वेबकॅम प्रतिमा जोडपाक वा डाउनलोड करूंक शकली ना</string>
     <string name="wasnt_able_to_connect_forecast">अदमासाक जोडपाक वा डाउनलोड करपाक मेळनाशिल्लें</string>
     <string name="wasnt_able_to_detect_forecast_icons">अदमासाचे चिन्न सोदून काडपाक मेळनाशिल्लें</string>
-    <string name="forecast_type_needs_icons">अदमास प्रकार \'%1$s\' कडेन चिन्नां उपलब्ध आसपाक जाय, उपकार करून चिन्नां वापरपाचेर वचात आनी परतून यत्न करात</string>
-    <string name="forecast_type_is_invalid">अदमासाचो प्रकार \'%1$S\' अवैध आसा, तुमची मांडावळी फायल तपासात आनी परतून यत्न करात</string>
+    <string name="forecast_type_needs_icons">अदमास प्रकार \'%%1$ss\' कडेन चिन्नां उपलब्ध आसपाक जाय, उपकार करून चिन्नां वापरपाचेर वचात आनी परतून यत्न करात</string>
+    <string name="forecast_type_is_invalid">अदमासाचो प्रकार \'%1$sS\' अवैध आसा, तुमची मांडावळी फायल तपासात आनी परतून यत्न करात</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनॅटा वयल्यान Radar= प्रतिमा जोडपाक वा डाउनलोड करपाक शकलो ना</string>
     <string name="wasnt_able_to_connect_data_txt">तुमच्या सर्वरा वयल्यान data.txt कनॅक्ट वा डाउनलोड करूंक शकलो ना</string>
     <string name="data_url_was_blank">डेटा URL कोरीव आशिल्लो</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL मुलभूताचेर सेट केल्लो वा रितो आशिल्लो</string>
     <string name="radar_url_not_set">रडार URL सेट ना वा अजूनय डाउनलोड करता. तुमी बदलपाक सेटिंग्जांत वचूंक शकतात</string>
     <string name="wasnt_able_to_connect_or_download">अदमासाक जोडपाक वा डाउनलोड करपाक मेळनाशिल्लें</string>
+    <string name="swipe_lock">स्वाइप लॉक 1</string>
 </resources>

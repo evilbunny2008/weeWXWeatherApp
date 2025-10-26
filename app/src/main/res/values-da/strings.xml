@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Kunne ikke oprette forbindelse eller downloade et webcam-billede fra din server</string>
     <string name="wasnt_able_to_connect_forecast">Kunne ikke oprette forbindelse eller downloade prognosen</string>
     <string name="wasnt_able_to_detect_forecast_icons">Kunne ikke registrere prognoseikoner</string>
-    <string name="forecast_type_needs_icons">Prognosetypen \'%1$s\' skal have ikoner tilgængelige. Skift til at bruge ikoner og prøv igen</string>
-    <string name="forecast_type_is_invalid">Prognosetypen \'%1$s\' er ugyldig. Tjek din indstillingsfil, og prøv igen</string>
+    <string name="forecast_type_needs_icons">Prognosetypen \'%%1$ss\' skal have ikoner tilgængelige. Skift til at bruge ikoner og prøv igen</string>
+    <string name="forecast_type_is_invalid">Prognosetypen \'%%1$ss\' er ugyldig. Tjek din indstillingsfil, og prøv igen</string>
     <string name="wasnt_able_to_connect_radar_image">Kunne ikke oprette forbindelse eller downloade radar=-billede fra internettet</string>
     <string name="wasnt_able_to_connect_data_txt">Kunne ikke oprette forbindelse eller downloade data.txt fra din server</string>
     <string name="data_url_was_blank">Data-URL var tom</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL blev sat til standard eller var tom</string>
     <string name="radar_url_not_set">Radar-URL ikke angivet eller downloades stadig. Du kan gå til indstillinger for at ændre</string>
     <string name="wasnt_able_to_connect_or_download">Kunne ikke oprette forbindelse eller downloade prognosen</string>
+    <string name="swipe_lock">Swipe Lock</string>
 </resources>

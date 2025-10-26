@@ -27,7 +27,7 @@
     <string name="bgColour">Godete la g\'ha anca el sistema de l\'aria</string>
     <string name="indoor_readings">Tegni-l in de l\'audienza?</string>
     <string name="update_over_wifi">Sultant i noster dati?</string>
-    <string name="app_theme">EL\'O ?</string>
+    <string name="app_theme">EL\'O?</string>
     <string name="use_icons">Exemo?</string>
     <string name="this_months_stats">Chesta l\'è la politica</string>
     <string name="this_year_stats">Chestu l\'è el guverno</string>
@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">L\'è minga facil per i utent che g\'he vœut de duperà i file de la pagina</string>
     <string name="wasnt_able_to_connect_forecast">L\'è minga facil per i utent de la scheda</string>
     <string name="wasnt_able_to_detect_forecast_icons">G\'he sun di limitaziun de l\'inflaziun</string>
-    <string name="forecast_type_needs_icons">Per i impostaziun de \'%1$s\' g\'he vœur de vèss sicür che \'l\'è facil de vèss sicür che i client e i archivi sun</string>
-    <string name="forecast_type_is_invalid">Per i impostaziun de \'%1$s\' g\'he de vèss sicür che \'l\'è la tò posiziun e l\'è minga facil.\'</string>
+    <string name="forecast_type_needs_icons">Per i impostaziun de \'%%1$ss\' g\'he vœur de vèss sicür che \'l\'è facil de vèss sicür che i client e i archivi sun</string>
+    <string name="forecast_type_is_invalid">Per i impostaziun de \'%%1$ss\' g\'he de vèss sicür che \'l\'è la tò posiziun e l\'è minga facil.\'</string>
     <string name="wasnt_able_to_connect_radar_image">L\'installaziun de la fotocamera l\'è minga sultant un utent che g\'ha denter di dispusitif</string>
     <string name="wasnt_able_to_connect_data_txt">L\'installaziun de la scheda de credit l\'è minga dispunibel per la vòstra aplicaziun</string>
     <string name="data_url_was_blank">I analist g\'han cumincià a duperà i dati</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">L\'aprovaziun l\'è stada duperada per la prima volta in de la seziun</string>
     <string name="radar_url_not_set">El schermu l\'è minga el numer de la pagina 2….. Pœdet anca duperà el tò conto</string>
     <string name="wasnt_able_to_connect_or_download">L\'è minga facil per i utent de la scheda</string>
+    <string name="swipe_lock">Lar</string>
 </resources>

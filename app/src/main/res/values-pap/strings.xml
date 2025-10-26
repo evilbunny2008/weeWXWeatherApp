@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">No por a konektá òf download un imágen di webcam for di bo servidor</string>
     <string name="wasnt_able_to_connect_forecast">No tabata por a konektá òf download e pronóstiko</string>
     <string name="wasnt_able_to_detect_forecast_icons">No tabata por a detecta icononan di pronostico</string>
-    <string name="forecast_type_needs_icons">Tipo di pronostico \'%1$s\' mester tin icononan disponibel, Por fabor cambia pa uza icononan y purba atrobe</string>
-    <string name="forecast_type_is_invalid">Pronostico tipo \'%1$s\' ta invalido, check bo file di configuracion y purba atrobe</string>
+    <string name="forecast_type_needs_icons">Tipo di pronostico \'%%1$ss\' mester tin icononan disponibel, Por fabor cambia pa uza icononan y purba atrobe</string>
+    <string name="forecast_type_is_invalid">Pronostico tipo \'%%1$ss\' ta invalido, check bo file di configuracion y purba atrobe</string>
     <string name="wasnt_able_to_connect_radar_image">No tabata por a konektá òf download radar= imágen for di internet</string>
     <string name="wasnt_able_to_connect_data_txt">No por a konektá òf download di dato.txt for di bo servidor</string>
     <string name="data_url_was_blank">URL di dato tabata blanku</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL tabata pone riba e default òf tabata bashi</string>
     <string name="radar_url_not_set">URL di Radar no ta set òf ainda ta download. Bo por bai na settings pa kambia</string>
     <string name="wasnt_able_to_connect_or_download">No tabata por a konektá òf download e pronóstiko</string>
+    <string name="swipe_lock">Swipe Lock</string>
 </resources>

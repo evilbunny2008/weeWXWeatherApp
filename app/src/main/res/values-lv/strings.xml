@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Nevarēja izveidot savienojumu vai lejupielādēt tīmekļa kameras attēlu no jūsu servera</string>
     <string name="wasnt_able_to_connect_forecast">Nevarēja izveidot savienojumu vai lejupielādēt prognozi</string>
     <string name="wasnt_able_to_detect_forecast_icons">Nevarēja noteikt prognožu ikonas</string>
-    <string name="forecast_type_needs_icons">Prognozes veidam \'%1$s\' ir jābūt pieejamām ikonām. Lūdzu, pārejiet uz ikonu izmantošanu un mēģiniet vēlreiz</string>
-    <string name="forecast_type_is_invalid">Prognozes veids \'%1$s\' nav derīgs, pārbaudiet iestatījumu failu un mēģiniet vēlreiz</string>
+    <string name="forecast_type_needs_icons">Prognozes veidam \'%%1$ss\' ir jābūt pieejamām ikonām. Lūdzu, pārejiet uz ikonu izmantošanu un mēģiniet vēlreiz</string>
+    <string name="forecast_type_is_invalid">Prognozes veids \'%%1$ss\' nav derīgs, pārbaudiet iestatījumu failu un mēģiniet vēlreiz</string>
     <string name="wasnt_able_to_connect_radar_image">Nevarēja izveidot savienojumu vai lejupielādēt radar= attēlu no interneta</string>
     <string name="wasnt_able_to_connect_data_txt">Nevarēja izveidot savienojumu vai lejupielādēt failu data.txt no jūsu servera</string>
     <string name="data_url_was_blank">Datu URL lauks bija tukšs</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL tika iestatīts uz noklusējuma vai bija tukšs</string>
     <string name="radar_url_not_set">Radara URL nav iestatīts vai joprojām notiek lejupielāde. Varat doties uz iestatījumiem, lai veiktu izmaiņas</string>
     <string name="wasnt_able_to_connect_or_download">Nevarēja izveidot savienojumu vai lejupielādēt prognozi</string>
+    <string name="swipe_lock">Velciet Bloķēt</string>
 </resources>

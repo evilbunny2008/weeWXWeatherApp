@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Pe onongo atwero keto nyo keto cal me webcake ki i kom latic-ci</string>
     <string name="wasnt_able_to_connect_forecast">Pe onongo twero kubbe nyo twero kwanyo jami ma bitimme anyim</string>
     <string name="wasnt_able_to_detect_forecast_icons">Pe onongo twero neno kit ma kiyubo kwede cal</string>
-    <string name="forecast_type_needs_icons">Labol me%1$s\' mitte ni obed ki cal ma tye, tim ber ilok me tic ki cal dok item dok</string>
-    <string name="forecast_type_is_invalid">Labol me%1$s\' pe tiyo, nen ni file ma kiketo dok item dok</string>
+    <string name="forecast_type_needs_icons">Labol me%%1$ss\' mitte ni obed ki cal ma tye, tim ber ilok me tic ki cal dok item dok</string>
+    <string name="forecast_type_is_invalid">Labol me%%1$ss\' pe tiyo, nen ni file ma kiketo dok item dok</string>
     <string name="wasnt_able_to_connect_radar_image">Pe onongo atwero keto nyo kwanyo radar= ki i intanet</string>
     <string name="wasnt_able_to_connect_data_txt">Pe onongo twero keto nyo kwanyo ngec.trit ki bot latic ni</string>
     <string name="data_url_was_blank">URL me ngec onongo tye nono</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL onongo kiketo i tic nyo onongo tye nono</string>
     <string name="radar_url_not_set">Pe kiketo URL nyo pud tye ka keto jami. Itwero wot i yub me loko</string>
     <string name="wasnt_able_to_connect_or_download">Pe onongo twero kubbe nyo twero kwanyo jami ma bitimme anyim</string>
+    <string name="swipe_lock">Swit Lock</string>
 </resources>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Tsis muaj peev xwm txuas lossis rub tawm lub webcam duab los ntawm koj lub server</string>
     <string name="wasnt_able_to_connect_forecast">Tsis tau txuas lossis rub tawm kev twv</string>
     <string name="wasnt_able_to_detect_forecast_icons">Tsis muaj peev xwm kuaj pom cov cim duab</string>
-    <string name="forecast_type_needs_icons">Kev qhia hom \'%1$s\' yuav tsum muaj cov cim muaj, thov hloov mus siv cov cim thiab sim dua</string>
-    <string name="forecast_type_is_invalid">Huab cua hom \'%1$s\' tsis raug, xyuas koj cov ntaub ntawv chaw thiab sim dua</string>
+    <string name="forecast_type_needs_icons">Kev qhia hom \'%%1$ss\' yuav tsum muaj cov cim muaj, thov hloov mus siv cov cim thiab sim dua</string>
+    <string name="forecast_type_is_invalid">Huab cua hom \'%%1$ss\' tsis raug, xyuas koj cov ntaub ntawv chaw thiab sim dua</string>
     <string name="wasnt_able_to_connect_radar_image">Tsis muaj peev xwm txuas lossis rub tawm radar = duab los ntawm is taws nem</string>
     <string name="wasnt_able_to_connect_data_txt">Tsis muaj peev xwm txuas lossis rub tawm data.txt los ntawm koj lub server</string>
     <string name="data_url_was_blank">Cov ntaub ntawv URL yog dawb paug</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL tau teeb tsa rau lub neej ntawd lossis tsis muaj khoob</string>
     <string name="radar_url_not_set">Radar url tsis teeb tsa lossis tseem rub tawm. Koj tuaj yeem mus rau cov chaw pauv</string>
     <string name="wasnt_able_to_connect_or_download">Tsis tau txuas lossis rub tawm kev twv</string>
+    <string name="swipe_lock">Los so xauv</string>
 </resources>

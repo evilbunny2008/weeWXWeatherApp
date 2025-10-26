@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ඔබගේ සේවාදායකයෙන් වෙබ් කැමරා රූපයක් සම්බන්ධ කිරීමට හෝ බාගත කිරීමට නොහැකි විය</string>
     <string name="wasnt_able_to_connect_forecast">අනාවැකිය සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
     <string name="wasnt_able_to_detect_forecast_icons">අනාවැකි අයිකන අනාවරණය කර ගැනීමට නොහැකි විය</string>
-    <string name="forecast_type_needs_icons">පුරෝකථන වර්ගය \'%1$s\' හට අයිකන තිබිය යුතුය, කරුණාකර අයිකන භාවිතා කිරීමට මාරු වී නැවත උත්සාහ කරන්න</string>
-    <string name="forecast_type_is_invalid">අනාවැකි වර්ගය \'%1$s\' වලංගු නැත, ඔබගේ සැකසීම් ගොනුව පරීක්ෂා කර නැවත උත්සාහ කරන්න</string>
+    <string name="forecast_type_needs_icons">පුරෝකථන වර්ගය \'%%1$ss\' හට අයිකන තිබිය යුතුය, කරුණාකර අයිකන භාවිතා කිරීමට මාරු වී නැවත උත්සාහ කරන්න</string>
+    <string name="forecast_type_is_invalid">අනාවැකි වර්ගය \'%%1$ss\' වලංගු නැත, ඔබගේ සැකසීම් ගොනුව පරීක්ෂා කර නැවත උත්සාහ කරන්න</string>
     <string name="wasnt_able_to_connect_radar_image">අන්තර්ජාලයෙන් රේඩාර්= රූපය සම්බන්ධ කිරීමට හෝ බාගත කිරීමට නොහැකි විය</string>
     <string name="wasnt_able_to_connect_data_txt">ඔබගේ සේවාදායකයෙන් data.txt සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
     <string name="data_url_was_blank">දත්ත URL හිස් විය</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL එක පෙරනිමියට සකසා හෝ හිස් විය</string>
     <string name="radar_url_not_set">රේඩාර් URL සකසා නැත හෝ තවමත් බාගත වෙමින් පවතී. ඔබට වෙනස් කිරීමට සැකසීම් වෙත යා හැක</string>
     <string name="wasnt_able_to_connect_or_download">අනාවැකිය සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
+    <string name="swipe_lock">ස්වයිප් අගුල</string>
 </resources>

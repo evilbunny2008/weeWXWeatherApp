@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">మీ సర్వర్ నుండి వెబ్‌క్యామ్ చిత్రాన్ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="wasnt_able_to_connect_forecast">సూచనను కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="wasnt_able_to_detect_forecast_icons">సూచన చిహ్నాలను గుర్తించలేకపోయింది</string>
-    <string name="forecast_type_needs_icons">సూచన రకం \'%1$s\'కి చిహ్నాలు అందుబాటులో ఉండాలి, దయచేసి చిహ్నాలను ఉపయోగించేందుకు మారండి మరియు మళ్లీ ప్రయత్నించండి</string>
-    <string name="forecast_type_is_invalid">సూచన రకం \'%1$s\' చెల్లదు, మీ సెట్టింగ్‌ల ఫైల్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి</string>
+    <string name="forecast_type_needs_icons">సూచన రకం \'%%1$ss\'కి చిహ్నాలు అందుబాటులో ఉండాలి, దయచేసి చిహ్నాలను ఉపయోగించేందుకు మారండి మరియు మళ్లీ ప్రయత్నించండి</string>
+    <string name="forecast_type_is_invalid">సూచన రకం \'%%1$ss\' చెల్లదు, మీ సెట్టింగ్‌ల ఫైల్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి</string>
     <string name="wasnt_able_to_connect_radar_image">ఇంటర్నెట్ నుండి రాడార్= ఇమేజ్‌ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="wasnt_able_to_connect_data_txt">మీ సర్వర్ నుండి data.txtని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="data_url_was_blank">డేటా URL ఖాళీగా ఉంది</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL డిఫాల్ట్‌కి సెట్ చేయబడింది లేదా ఖాళీగా ఉంది</string>
     <string name="radar_url_not_set">రాడార్ URL సెట్ చేయబడలేదు లేదా డౌన్‌లోడ్ అవుతోంది. మీరు మార్చడానికి సెట్టింగ్‌లకు వెళ్లవచ్చు</string>
     <string name="wasnt_able_to_connect_or_download">సూచనను కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
+    <string name="swipe_lock">స్వైప్ లాక్</string>
 </resources>

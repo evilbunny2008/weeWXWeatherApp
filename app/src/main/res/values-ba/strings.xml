@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Һеҙҙең серверҙан веб-камера һүрәтен тоташтыра йәки скачать итә алманы</string>
     <string name="wasnt_able_to_connect_forecast">Прогнозды тоташтыра йәки скачать итә алманы</string>
     <string name="wasnt_able_to_detect_forecast_icons">Күҙаллау иконаларын асыҡлай алмаҫ ине</string>
-    <string name="forecast_type_needs_icons">Тип \'%1$s\' кәрәк, кәрәк, иконалар бар, Зинһар, иконалар ҡулланыу һәм яңынан һынап ҡарағыҙ</string>
-    <string name="forecast_type_is_invalid">Тип \'%1$s\' тип дөрөҫ түгел, һеҙҙең параметрҙар файлын тикшерергә һәм яңынан һынап ҡарағыҙ</string>
+    <string name="forecast_type_needs_icons">Тип \'%%1$ss\' кәрәк, кәрәк, иконалар бар, Зинһар, иконалар ҡулланыу һәм яңынан һынап ҡарағыҙ</string>
+    <string name="forecast_type_is_invalid">Тип \'%%1$ss\' тип дөрөҫ түгел, һеҙҙең параметрҙар файлын тикшерергә һәм яңынан һынап ҡарағыҙ</string>
     <string name="wasnt_able_to_connect_radar_image">Радар тоташтырыу йәки скачать мөмкин түгел ине радар= һүрәт интернеттан</string>
     <string name="wasnt_able_to_connect_data_txt">Һеҙҙең серверҙан тоташтырыу йәки скачать мөмкин түгел ине</string>
     <string name="data_url_was_blank">Мәғлүмәттәр URL буш булды</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL ғәҙәттәгесә ҡуйылған йәки буш ине</string>
     <string name="radar_url_not_set">Радар URL ҡуйылмаған йәки һаман да скачать. Һеҙ үҙгәрергә параметрҙарға барырға мөмкин</string>
     <string name="wasnt_able_to_connect_or_download">Прогнозды тоташтыра йәки скачать итә алманы</string>
+    <string name="swipe_lock">Свайп Блок</string>
 </resources>

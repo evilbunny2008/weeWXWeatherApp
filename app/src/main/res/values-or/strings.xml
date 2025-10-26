@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ଆପଣଙ୍କ ସର୍ଭରରୁ ଏକ ୱେବକ୍ୟାମ ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="wasnt_able_to_connect_forecast">ପୂର୍ବାନୁମାନକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="wasnt_able_to_detect_forecast_icons">ପୂର୍ବାନୁମାନ ଆଇକନ୍ ଚିହ୍ନଟ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
-    <string name="forecast_type_needs_icons">ପୂର୍ବାନୁମାନ ପ୍ରକାର \'%1$s\' ଆଇକନ୍ ଉପଲବ୍ଧ ହେବା ଆବଶ୍ୟକ, ଦୟାକରି ଆଇକନ୍ ବ୍ୟବହାର କରିବାକୁ ସୁଇଚ୍ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
-    <string name="forecast_type_is_invalid">ପୂର୍ବାନୁମାନ ପ୍ରକାର \'%1$s\' ଅବ alid ଧ, ଆପଣଙ୍କର ସେଟିଂସମୂହ ଫାଇଲକୁ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+    <string name="forecast_type_needs_icons">ପୂର୍ବାନୁମାନ ପ୍ରକାର \'%%1$ss\' ଆଇକନ୍ ଉପଲବ୍ଧ ହେବା ଆବଶ୍ୟକ, ଦୟାକରି ଆଇକନ୍ ବ୍ୟବହାର କରିବାକୁ ସୁଇଚ୍ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+    <string name="forecast_type_is_invalid">ପୂର୍ବାନୁମାନ ପ୍ରକାର \'%%1$ss\' ଅବ alid ଧ, ଆପଣଙ୍କର ସେଟିଂସମୂହ ଫାଇଲକୁ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
     <string name="wasnt_able_to_connect_radar_image">ଇଣ୍ଟରନେଟରୁ ରାଡାର = ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="wasnt_able_to_connect_data_txt">ଆପଣଙ୍କ ସର୍ଭରରୁ data.txt କୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="data_url_was_blank">ଡାଟା URL ଖାଲି ଥିଲା |</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL ଡିଫଲ୍ଟରେ ସେଟ୍ ହୋଇଥିଲା କିମ୍ବା ଖାଲି ଥିଲା |</string>
     <string name="radar_url_not_set">ରାଡାର URL ସେଟ୍ ହୋଇନାହିଁ କିମ୍ବା ତଥାପି ଡାଉନଲୋଡ୍ କରୁଛି | ଆପଣ ପରିବର୍ତ୍ତନ କରିବାକୁ ସେଟିଂକୁ ଯାଇପାରିବେ |</string>
     <string name="wasnt_able_to_connect_or_download">ପୂର୍ବାନୁମାନକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
+    <string name="swipe_lock">ସ୍ୱାଇପ୍ ଲକ୍ |</string>
 </resources>

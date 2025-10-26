@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Waawaa jokkondirde walla ƴettude natal webcam e serveer maa</string>
     <string name="wasnt_able_to_connect_forecast">Waawaa jokkondirde walla ƴettude teskagol ngol</string>
     <string name="wasnt_able_to_detect_forecast_icons">Waawaa yiytude ikoneeji teskaaɗi</string>
-    <string name="forecast_type_needs_icons">Ina haani sifaa \'%1$s\' ina foti jogaade ikonaaji gonɗi, Eɗen ñaagi maa waylu huutoraade ikoneeji e ƴeewde kadi</string>
-    <string name="forecast_type_is_invalid">Nokkuure nde fotaani wonde \'%1$s\' ina moƴƴi, ƴeewto fiilde dottaaɗe maa, ƴeewto-ɗaa kadi</string>
+    <string name="forecast_type_needs_icons">Ina haani sifaa \'%%1$ss\' ina foti jogaade ikonaaji gonɗi, Eɗen ñaagi maa waylu huutoraade ikoneeji e ƴeewde kadi</string>
+    <string name="forecast_type_is_invalid">Nokkuure nde fotaani wonde \'%%1$ss\' ina moƴƴi, ƴeewto fiilde dottaaɗe maa, ƴeewto-ɗaa kadi</string>
     <string name="wasnt_able_to_connect_radar_image">Wasaade jokkondirde walla ƴettude radar= natal e nder internet</string>
     <string name="wasnt_able_to_connect_data_txt">Waawaa jokkondirde walla ƴettude dokke.txt e serveer maa</string>
     <string name="data_url_was_blank">URL data wonnoo ko blank</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL waɗaama e default walla ko meere</string>
     <string name="radar_url_not_set">Radar URL settaaka walla ina jokki e ƴettude. Aɗa waawi yahde e settings ngam waylude</string>
     <string name="wasnt_able_to_connect_or_download">Waawaa jokkondirde walla ƴettude teskagol ngol</string>
+    <string name="swipe_lock">Swipe Lock</string>
 </resources>

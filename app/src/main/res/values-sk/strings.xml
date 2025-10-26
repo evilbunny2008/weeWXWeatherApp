@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Nepodarilo sa pripojiť alebo stiahnuť obrázok webovej kamery z vášho servera</string>
     <string name="wasnt_able_to_connect_forecast">Nepodarilo sa pripojiť alebo stiahnuť predpoveď</string>
     <string name="wasnt_able_to_detect_forecast_icons">Nepodarilo sa zistiť ikony prognózy</string>
-    <string name="forecast_type_needs_icons">Typ predpovede \'%1$s\' potrebuje mať k dispozícii ikony. Prepnite na používanie ikon a skúste to znova</string>
-    <string name="forecast_type_is_invalid">Typ predpovede \'%1$s\' je neplatný, skontrolujte súbor nastavení a skúste to znova</string>
+    <string name="forecast_type_needs_icons">Typ predpovede \'%%1$ss\' potrebuje mať k dispozícii ikony. Prepnite na používanie ikon a skúste to znova</string>
+    <string name="forecast_type_is_invalid">Typ predpovede \'%%1$ss\' je neplatný, skontrolujte súbor nastavení a skúste to znova</string>
     <string name="wasnt_able_to_connect_radar_image">Nepodarilo sa pripojiť alebo stiahnuť radar= obrázok z internetu</string>
     <string name="wasnt_able_to_connect_data_txt">Nepodarilo sa pripojiť alebo stiahnuť súbor data.txt z vášho servera</string>
     <string name="data_url_was_blank">Adresa URL údajov bola prázdna</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">Adresa URL bola nastavená na predvolenú hodnotu alebo bola prázdna</string>
     <string name="radar_url_not_set">Adresa URL radaru nie je nastavená alebo sa stále sťahuje. Ak chcete zmeniť, prejdite do nastavení</string>
     <string name="wasnt_able_to_connect_or_download">Nepodarilo sa pripojiť alebo stiahnuť predpoveď</string>
+    <string name="swipe_lock">Zámok potiahnutím prstom</string>
 </resources>

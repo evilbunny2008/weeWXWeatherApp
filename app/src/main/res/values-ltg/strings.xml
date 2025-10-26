@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">100 doc#1159 Nabeja spiejeiga savīnuot voi lejupluodēt škārsteikla kamerys attālu nu jūs servera</string>
     <string name="wasnt_able_to_connect_forecast">Nabeja prognoze, ni lejupluodēt, ni lejupluodēt</string>
     <string name="wasnt_able_to_detect_forecast_icons">Navarēja atkluot prognozis ikonys</string>
-    <string name="forecast_type_needs_icons">Prognožu tips \'%1$s\' vajag pīejamys ikonys, Lyudzu, puoreimūt iz ikonu izmontuošonu i raugi vēļreiz</string>
-    <string name="forecast_type_is_invalid">Prognožu tips \'%1$s\' ir nadereigs, puorbaudiet sovu īstatejumu failu i raugi vēļreiz</string>
+    <string name="forecast_type_needs_icons">Prognožu tips \'%%1$ss\' vajag pīejamys ikonys, Lyudzu, puoreimūt iz ikonu izmontuošonu i raugi vēļreiz</string>
+    <string name="forecast_type_is_invalid">Prognožu tips \'%%1$ss\' ir nadereigs, puorbaudiet sovu īstatejumu failu i raugi vēļreiz</string>
     <string name="wasnt_able_to_connect_radar_image">100 doc#1159 Nabeja spiejeigs savīnuot voi lejupluodēt radaru= attāls nu interneta</string>
     <string name="wasnt_able_to_connect_data_txt">Nabeja navarūt savīnuot voi lejupluodēt datus.txt nu jūs servera</string>
     <string name="data_url_was_blank">Datu URL beja tukša</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">100 doc#1159 URL tyka īstateits iz defaultu voi beja tukšs</string>
     <string name="radar_url_not_set">Radar URL nav īlykts voi vēļ lejupluodej. Var īt iz īstatejumim, kab maineitūs</string>
     <string name="wasnt_able_to_connect_or_download">Nabeja prognoze, ni lejupluodēt, ni lejupluodēt</string>
+    <string name="swipe_lock">Swipe Slēgšona</string>
 </resources>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดภาพเว็บแคมจากเซิร์ฟเวอร์ของคุณ</string>
     <string name="wasnt_able_to_connect_forecast">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดการคาดการณ์ได้</string>
     <string name="wasnt_able_to_detect_forecast_icons">ตรวจไม่พบไอคอนการคาดการณ์</string>
-    <string name="forecast_type_needs_icons">ประเภทการคาดการณ์ \'%1$s\' จำเป็นต้องมีไอคอน โปรดเปลี่ยนไปใช้ไอคอนแล้วลองอีกครั้ง</string>
-    <string name="forecast_type_is_invalid">ประเภทการคาดการณ์ \'%1$s\' ไม่ถูกต้อง โปรดตรวจสอบไฟล์การตั้งค่าของคุณแล้วลองอีกครั้ง</string>
+    <string name="forecast_type_needs_icons">ประเภทการคาดการณ์ \'%%1$ss\' จำเป็นต้องมีไอคอน โปรดเปลี่ยนไปใช้ไอคอนแล้วลองอีกครั้ง</string>
+    <string name="forecast_type_is_invalid">ประเภทการคาดการณ์ \'%%1$ss\' ไม่ถูกต้อง โปรดตรวจสอบไฟล์การตั้งค่าของคุณแล้วลองอีกครั้ง</string>
     <string name="wasnt_able_to_connect_radar_image">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดภาพเรดาร์= จากอินเทอร์เน็ตได้</string>
     <string name="wasnt_able_to_connect_data_txt">ไม่สามารถเชื่อมต่อหรือดาวน์โหลด data.txt จากเซิร์ฟเวอร์ของคุณ</string>
     <string name="data_url_was_blank">URL ข้อมูลว่างเปล่า</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL ถูกตั้งค่าเป็นค่าเริ่มต้นหรือว่างเปล่า</string>
     <string name="radar_url_not_set">ไม่ได้ตั้งค่า URL เรดาร์หรือยังคงดาวน์โหลดอยู่ คุณสามารถไปที่การตั้งค่าเพื่อเปลี่ยนแปลงได้</string>
     <string name="wasnt_able_to_connect_or_download">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดการคาดการณ์ได้</string>
+    <string name="swipe_lock">ปัดล็อค</string>
 </resources>

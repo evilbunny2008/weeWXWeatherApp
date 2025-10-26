@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ga ke a kgona go golaganya kgotsa go laisolola setshwantsho sa webcam mo sefareng ya gago</string>
     <string name="wasnt_able_to_connect_forecast">O ne a sa kgone go golaganya kgotsa go laisolola ponelopele</string>
     <string name="wasnt_able_to_detect_forecast_icons">O ne a sa kgone go lemoga diaekhone tsa go lemoga</string>
-    <string name="forecast_type_needs_icons">Mofuta wa go bonela pele \'%1$s\' o tlhoka go nna le diaekhone tse di leng teng, Tsweetswee fetogela go dirisa diaekhone mme o leke gape</string>
-    <string name="forecast_type_is_invalid">Mofuta wa ponelopele \'%1$s\' ga o dire, tlhola faele ya gago ya dipeakanyo mme o leke gape</string>
+    <string name="forecast_type_needs_icons">Mofuta wa go bonela pele \'%%1$ss\' o tlhoka go nna le diaekhone tse di leng teng, Tsweetswee fetogela go dirisa diaekhone mme o leke gape</string>
+    <string name="forecast_type_is_invalid">Mofuta wa ponelopele \'%%1$ss\' ga o dire, tlhola faele ya gago ya dipeakanyo mme o leke gape</string>
     <string name="wasnt_able_to_connect_radar_image">Ga a ka a kgona go golaganya kgotsa go laisolola setshwantsho sa radara= go tswa mo inthaneteng</string>
     <string name="wasnt_able_to_connect_data_txt">Ga e a kgona go golaganya kgotsa go laisolola tshedimosetso.txt go tswa mo sefareng ya gago</string>
     <string name="data_url_was_blank">URL ya tshedimosetso e ne e se na sepe</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL e ne e setilwe go ya kwa thulaganyetsoruri kgotsa e ne e le lolea</string>
     <string name="radar_url_not_set">Radar URL ga e a seta kgotsa e sa ntse e laisolola. O ka ya kwa diseting go fetoga</string>
     <string name="wasnt_able_to_connect_or_download">O ne a sa kgone go golaganya kgotsa go laisolola ponelopele</string>
+    <string name="swipe_lock">Swipe Lock</string>
 </resources>

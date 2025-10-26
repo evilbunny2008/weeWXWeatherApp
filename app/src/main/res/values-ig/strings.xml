@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Enweghị ike ijikọ ma ọ bụ budata onyonyo weebụ na sava gị</string>
     <string name="wasnt_able_to_connect_forecast">Enweghị ike ijikọ ma ọ bụ budata amụma ahụ</string>
     <string name="wasnt_able_to_detect_forecast_icons">Enweghị ike ịchọpụta akara ngosi</string>
-    <string name="forecast_type_needs_icons">Amụma dị iche iche \'%1$s\' S \'chọrọ ịnwe akara ngosi dịnụ, biko gbanwee iji akara ngosi ma nwaa ọzọ</string>
-    <string name="forecast_type_is_invalid">Amụma dị iche iche \'%1$s\' abaghị uru, lelee faịlụ ntọala gị wee nwaa ọzọ</string>
+    <string name="forecast_type_needs_icons">Amụma dị iche iche \'%%1$ss\' S \'chọrọ ịnwe akara ngosi dịnụ, biko gbanwee iji akara ngosi ma nwaa ọzọ</string>
+    <string name="forecast_type_is_invalid">Amụma dị iche iche \'%%1$ss\' abaghị uru, lelee faịlụ ntọala gị wee nwaa ọzọ</string>
     <string name="wasnt_able_to_connect_radar_image">Enweghị ike ijikọ ma ọ bụ budata Radar = onyonyo site na ịntanetị</string>
     <string name="wasnt_able_to_connect_data_txt">Enweghị ike ijikọ ma ọ bụ budata data.txt na sava gị</string>
     <string name="data_url_was_blank">URL data bụ oghere</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">A tọọrọ URL na ndabara ma ọ bụ tọgbọ chakoo</string>
     <string name="radar_url_not_set">Dradar Url setịpụrụ ma ọ bụ na-ebudata. Can nwere ike ịga ntọala ịgbanwe</string>
     <string name="wasnt_able_to_connect_or_download">Enweghị ike ijikọ ma ọ bụ budata amụma ahụ</string>
+    <string name="swipe_lock">Mkpọchi swipe</string>
 </resources>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">آپ کے سرور سے ویب کیم امیج سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
     <string name="wasnt_able_to_connect_forecast">پیشن گوئی سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا۔</string>
     <string name="wasnt_able_to_detect_forecast_icons">پیشن گوئی شبیہیں کا پتہ لگانے کے قابل نہیں تھا۔</string>
-    <string name="forecast_type_needs_icons">Forecast type \'%1$s\' needs to have icons available, Please switch to using icons and try again.</string>
-    <string name="forecast_type_is_invalid">Forecast type \'%1$s\' is invalid, check your settings file and try again.</string>
+    <string name="forecast_type_needs_icons">Forecast type \'%%1$ss\' needs to have icons available, Please switch to using icons and try again</string>
+    <string name="forecast_type_is_invalid">Forecast type \'%%1$ss\' is invalid, check your settings file and try again</string>
     <string name="wasnt_able_to_connect_radar_image">انٹرنیٹ سے ریڈار = امیج کو جوڑنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
     <string name="wasnt_able_to_connect_data_txt">آپ کے سرور سے ڈیٹا ڈاٹ ٹی ایکس ٹی کو مربوط کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
     <string name="data_url_was_blank">ڈیٹا یو آر ایل خالی تھا</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">یو آر ایل پہلے سے طے شدہ تھا یا خالی تھا</string>
     <string name="radar_url_not_set">ریڈار یو آر ایل سیٹ نہیں ہے یا اب بھی ڈاؤن لوڈ کررہا ہے۔ آپ تبدیل کرنے کے لئے ترتیبات پر جاسکتے ہیں۔</string>
     <string name="wasnt_able_to_connect_or_download">پیشن گوئی سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا۔</string>
+    <string name="swipe_lock">سوائپ لاک</string>
 </resources>

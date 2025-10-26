@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Serverinizdən bir veb-kamera şəklini bağlaya və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_connect_forecast">Proqnozu bağlaya və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_detect_forecast_icons">Proqnoz nişanlarını aşkar edə bilmədi</string>
-    <string name="forecast_type_needs_icons">Proqnoz növü \'%1$s\' nişanlar olmalıdır, xahiş edirəm nişanlar istifadə edərək yenidən cəhd edin və yenidən cəhd edin</string>
-    <string name="forecast_type_is_invalid">Proqnoz növü \'%1$s\' etibarsızdır, parametrlər faylını yoxlayın və yenidən cəhd edin</string>
+    <string name="forecast_type_needs_icons">Proqnoz növü \'%%1$ss\' nişanlar olmalıdır, xahiş edirəm nişanlar istifadə edərək yenidən cəhd edin və yenidən cəhd edin</string>
+    <string name="forecast_type_is_invalid">Proqnoz növü \'%%1$ss\' etibarsızdır, parametrlər faylını yoxlayın və yenidən cəhd edin</string>
     <string name="wasnt_able_to_connect_radar_image">Radar = şəkilləri internetdən birləşdirə və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_connect_data_txt">Serverinizdən məlumat.txt-a qoşula və ya yükləyə bilmədi</string>
     <string name="data_url_was_blank">Məlumat URL boş idi</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL standart olaraq təyin edildi və ya boş idi</string>
     <string name="radar_url_not_set">Radar URL qurulmadı və ya hələ də yüklənmir. Dəyişdirmək üçün parametrlərə gedə bilərsiniz</string>
     <string name="wasnt_able_to_connect_or_download">Proqnozu bağlaya və ya yükləyə bilmədi</string>
+    <string name="swipe_lock">Sürmək</string>
 </resources>

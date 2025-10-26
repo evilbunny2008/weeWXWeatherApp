@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Koe gjin ferbining meitsje of in webcamôfbylding fan jo tsjinner downloade</string>
     <string name="wasnt_able_to_connect_forecast">Koe de prognose net ferbine of downloade</string>
     <string name="wasnt_able_to_detect_forecast_icons">Koe prognose-ikoanen net ûntdekke</string>
-    <string name="forecast_type_needs_icons">Foarsizzingstype \'%1$s\' moat ikoanen beskikber hawwe, Wizigje asjebleaft nei it brûken fan ikoanen en besykje it nochris</string>
-    <string name="forecast_type_is_invalid">Foarsizzingstype \'%1$s\' is ûnjildich, kontrolearje jo ynstellingsbestân en besykje it nochris</string>
+    <string name="forecast_type_needs_icons">Foarsizzingstype \'%%1$ss\' moat ikoanen beskikber hawwe, Wizigje asjebleaft nei it brûken fan ikoanen en besykje it nochris</string>
+    <string name="forecast_type_is_invalid">Foarsizzingstype \'%%1$ss\' is ûnjildich, kontrolearje jo ynstellingsbestân en besykje it nochris</string>
     <string name="wasnt_able_to_connect_radar_image">Koe gjin ferbining meitsje of radar=-ôfbylding fan it ynternet downloade</string>
     <string name="wasnt_able_to_connect_data_txt">Koe data.txt net ferbine of downloade fan jo tsjinner</string>
     <string name="data_url_was_blank">Gegevens-URL wie leech</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL wie ynsteld op de standert of wie leech</string>
     <string name="radar_url_not_set">Radar URL net ynsteld of wurdt noch ynladen. Jo kinne nei ynstellings gean om te feroarjen</string>
     <string name="wasnt_able_to_connect_or_download">Koe de prognose net ferbine of downloade</string>
+    <string name="swipe_lock">Swipe Lock</string>
 </resources>

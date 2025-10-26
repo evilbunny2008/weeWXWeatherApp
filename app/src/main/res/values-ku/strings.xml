@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Nekarî wêneyek webcamê ji servera xwe ve girêbide an dakêşîne</string>
     <string name="wasnt_able_to_connect_forecast">Nekarî pêşbîniyê girêbide an dakêşîne</string>
     <string name="wasnt_able_to_detect_forecast_icons">Nekarî îkonên pêşbîniyê bibîne</string>
-    <string name="forecast_type_needs_icons">Pêdivî ye ku celebê pêşbîniya \'%1$s\' îkonan hebin, Ji kerema xwe veguherînin îkonan bikar bînin û dîsa biceribînin</string>
-    <string name="forecast_type_is_invalid">Cureya pêşbîniya \'%1$s\' nederbasdar e, pelê mîhengên xwe kontrol bikin û dîsa biceribînin</string>
+    <string name="forecast_type_needs_icons">Pêdivî ye ku celebê pêşbîniya \'%%1$ss\' îkonan hebin, Ji kerema xwe veguherînin îkonan bikar bînin û dîsa biceribînin</string>
+    <string name="forecast_type_is_invalid">Cureya pêşbîniya \'%%1$ss\' nederbasdar e, pelê mîhengên xwe kontrol bikin û dîsa biceribînin</string>
     <string name="wasnt_able_to_connect_radar_image">Nikaribû ku wêneyê radar= ji înternetê ve girêbide an dakêşîne</string>
     <string name="wasnt_able_to_connect_data_txt">Nekarî data.txt ji servera xwe ve girêbide an dakêşîne</string>
     <string name="data_url_was_blank">URLa daneyê vala bû</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL li ser xwerû hate danîn an vala bû</string>
     <string name="radar_url_not_set">URL-ya radarê nehatiye danîn an hîn jî tê dakêşandin. Hûn dikarin biçin mîhengan ku biguhezînin</string>
     <string name="wasnt_able_to_connect_or_download">Nekarî pêşbîniyê girêbide an dakêşîne</string>
+    <string name="swipe_lock">Swipe Lock</string>
 </resources>

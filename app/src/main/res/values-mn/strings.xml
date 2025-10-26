@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Таны серверээс вэбкамик зургийг холбох, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_forecast">Урьдчилсан мэдээг холбож, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_detect_forecast_icons">Урьдчилсан мэдээг илрүүлж чадаагүй</string>
-    <string name="forecast_type_needs_icons">Урьдчилан таамаглах \'%1$s\' нь дүрсийг ашиглах боломжтой байхын тулд ICONS ашиглах боломжтой, ICONS ашиглан дахин оролдоно уу</string>
-    <string name="forecast_type_is_invalid">Урьдчилан таамаглах \'%1$s\' буруу байна, Тохиргоо файлаа шалгаад дахин оролдоно уу</string>
+    <string name="forecast_type_needs_icons">Урьдчилан таамаглах \'%%1$ss\' нь дүрсийг ашиглах боломжтой байхын тулд ICONS ашиглах боломжтой, ICONS ашиглан дахин оролдоно уу</string>
+    <string name="forecast_type_is_invalid">Урьдчилан таамаглах \'%%1$ss\' буруу байна, Тохиргоо файлаа шалгаад дахин оролдоно уу</string>
     <string name="wasnt_able_to_connect_radar_image">Интернетээс холбогдож, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_data_txt">Data.txt-ийг татаж авах эсвэл татаж авах боломжгүй байсан</string>
     <string name="data_url_was_blank">Мэдээллийн URL хоосон байв</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL нь анхдагч эсвэл хоосон байсан</string>
     <string name="radar_url_not_set">RADAR URL тохируулаагүй эсвэл одоо ч татаж байгаа. Та өөрчлөлтийг тохируулахын тулд очиж болно</string>
     <string name="wasnt_able_to_connect_or_download">Урьдчилсан мэдээг холбож, татаж авах боломжгүй байсан</string>
+    <string name="swipe_lock">Батгаа дэлгэрүүл</string>
 </resources>

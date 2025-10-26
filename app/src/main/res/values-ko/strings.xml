@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">서버에서 웹캠 이미지를 연결하거나 다운로드할 수 없습니다</string>
     <string name="wasnt_able_to_connect_forecast">일기예보를 연결하거나 다운로드할 수 없습니다</string>
     <string name="wasnt_able_to_detect_forecast_icons">예측 아이콘을 감지할 수 없습니다</string>
-    <string name="forecast_type_needs_icons">예측 유형 \'%1$s\'에는 아이콘을 사용할 수 있어야 합니다. 아이콘 사용으로 전환한 후 다시 시도하십시오</string>
-    <string name="forecast_type_is_invalid">예측 유형 \'%1$s\'이(가) 잘못되었습니다. 설정 파일을 확인하고 다시 시도하세요</string>
+    <string name="forecast_type_needs_icons">예측 유형 \'%%1$ss\'에는 아이콘을 사용할 수 있어야 합니다. 아이콘 사용으로 전환한 후 다시 시도하십시오</string>
+    <string name="forecast_type_is_invalid">예측 유형 \'%%1$ss\'이(가) 잘못되었습니다. 설정 파일을 확인하고 다시 시도하세요</string>
     <string name="wasnt_able_to_connect_radar_image">인터넷에서 레이더= 이미지를 연결하거나 다운로드할 수 없습니다</string>
     <string name="wasnt_able_to_connect_data_txt">서버에서 data.txt를 연결하거나 다운로드할 수 없습니다</string>
     <string name="data_url_was_blank">데이터 URL이 비어 있습니다</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL이 기본값으로 설정되었거나 비어 있었습니다</string>
     <string name="radar_url_not_set">레이더 URL이 설정되지 않았거나 아직 다운로드 중입니다. 설정으로 이동하여 변경할 수 있습니다</string>
     <string name="wasnt_able_to_connect_or_download">일기예보를 연결하거나 다운로드할 수 없습니다</string>
+    <string name="swipe_lock">스와이프 잠금</string>
 </resources>

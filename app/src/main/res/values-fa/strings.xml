@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">قادر به اتصال یا دانلود تصویر وب کم از سرور شما نبود</string>
     <string name="wasnt_able_to_connect_forecast">امکان اتصال یا دانلود پیش‌بینی وجود نداشت</string>
     <string name="wasnt_able_to_detect_forecast_icons">قادر به شناسایی نمادهای پیش بینی نبود</string>
-    <string name="forecast_type_needs_icons">نوع پیش‌بینی \'%1$s\' باید نمادهایی در دسترس داشته باشد، لطفاً به استفاده از نمادها بروید و دوباره امتحان کنید</string>
-    <string name="forecast_type_is_invalid">نوع پیش‌بینی \'%1$s\' نامعتبر است، فایل تنظیمات خود را بررسی کنید و دوباره امتحان کنید</string>
+    <string name="forecast_type_needs_icons">نوع پیش‌بینی \'%%1$ss\' باید نمادهایی در دسترس داشته باشد، لطفاً به استفاده از نمادها بروید و دوباره امتحان کنید</string>
+    <string name="forecast_type_is_invalid">نوع پیش‌بینی \'%%1$ss\' نامعتبر است، فایل تنظیمات خود را بررسی کنید و دوباره امتحان کنید</string>
     <string name="wasnt_able_to_connect_radar_image">قادر به اتصال یا دانلود رادار= تصویر از اینترنت نبود</string>
     <string name="wasnt_able_to_connect_data_txt">قادر به اتصال یا دانلود data.txt از سرور شما نبود</string>
     <string name="data_url_was_blank">URL داده خالی بود</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL روی پیش فرض تنظیم شده بود یا خالی بود</string>
     <string name="radar_url_not_set">URL رادار تنظیم نشده است یا هنوز در حال دانلود است. برای تغییر می توانید به تنظیمات بروید</string>
     <string name="wasnt_able_to_connect_or_download">امکان اتصال یا دانلود پیش‌بینی وجود نداشت</string>
+    <string name="swipe_lock">قفل را بکشید</string>
 </resources>

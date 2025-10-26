@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Enyɛɛɛ okɛ wɛbkaam mfoniri ko atsa loo okɛ o-websaiti lɛ nɔ</string>
     <string name="wasnt_able_to_connect_forecast">Enyɛɛɛ ekɛ nɔ ni atsɔɔ mli lɛ abɔ he loo okɛwo nɔ</string>
     <string name="wasnt_able_to_detect_forecast_icons">Enyɛɛɛ ena nɔ ni atsɔɔ hiɛ atsɔɔ lɛ he okadii</string>
-    <string name="forecast_type_needs_icons">Ehe miihia ni \'%1$s\' ni atsɔɔ hiɛ atsɔɔ lɛ afee nɔ ni yɔɔ, Ofainɛ, tsakemɔ kɛya okadi ni akɛtsuɔ nii lɛ nɔ ni oka ekoŋŋ</string>
-    <string name="forecast_type_is_invalid">Nɔ ni atsɔɔ hiɛ atsɔɔ \'%1$s\' lɛ ejaaa, kwɛmɔ ogbɛjianɔtoo faili lɛ ni oka ekoŋŋ</string>
+    <string name="forecast_type_needs_icons">Ehe miihia ni \'%%1$ss\' ni atsɔɔ hiɛ atsɔɔ lɛ afee nɔ ni yɔɔ, Ofainɛ, tsakemɔ kɛya okadi ni akɛtsuɔ nii lɛ nɔ ni oka ekoŋŋ</string>
+    <string name="forecast_type_is_invalid">Nɔ ni atsɔɔ hiɛ atsɔɔ \'%%1$ss\' lɛ ejaaa, kwɛmɔ ogbɛjianɔtoo faili lɛ ni oka ekoŋŋ</string>
     <string name="wasnt_able_to_connect_radar_image">Enyɛɛɛ ekɛ rada= mfoniri lɛ abɔ loo ejie kɛjɛ intanɛt lɛ nɔ</string>
     <string name="wasnt_able_to_connect_data_txt">E nyɛ we nɛ o kɛ data.txt ɔ nɛ tsa loo e ngɔ</string>
     <string name="data_url_was_blank">Data URL lɛ bɛ nɔ ko</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">Akɛ URL to nɔ ni ato lɛ he loo nɔ ko bɛ mli</string>
     <string name="radar_url_not_set">Radar URL jeee loo eejie lolo. Obaanyɛ oya settings koni otsake</string>
     <string name="wasnt_able_to_connect_or_download">Enyɛɛɛ ekɛ nɔ ni atsɔɔ mli lɛ abɔ he loo okɛwo nɔ</string>
+    <string name="swipe_lock">Swipe Lock</string>
 </resources>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Не ўдалося падключыцца або спампаваць выяву вэб-камеры з вашага сервера</string>
     <string name="wasnt_able_to_connect_forecast">Не ўдалося падключыцца або спампаваць прагноз</string>
     <string name="wasnt_able_to_detect_forecast_icons">Не ўдалося выявіць значкі прагнозу</string>
-    <string name="forecast_type_needs_icons">Для тыпу прагнозу \'%1$s\' патрэбныя значкі. Пераключыцеся на выкарыстанне значкоў і паўтарыце спробу</string>
-    <string name="forecast_type_is_invalid">Тып прагнозу \'%1$s\' несапраўдны, праверце файл налад і паўтарыце спробу</string>
+    <string name="forecast_type_needs_icons">Для тыпу прагнозу \'%%1$ss\' патрэбныя значкі. Пераключыцеся на выкарыстанне значкоў і паўтарыце спробу</string>
+    <string name="forecast_type_is_invalid">Тып прагнозу \'%%1$ss\' несапраўдны, праверце файл налад і паўтарыце спробу</string>
     <string name="wasnt_able_to_connect_radar_image">Не ўдалося падключыцца або загрузіць radar= выяву з Інтэрнэту</string>
     <string name="wasnt_able_to_connect_data_txt">Не ўдалося падключыцца або загрузіць data.txt з вашага сервера</string>
     <string name="data_url_was_blank">URL даных быў пустым</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL быў усталяваны па змаўчанні або пусты</string>
     <string name="radar_url_not_set">URL радара не ўсталяваны або яшчэ спампоўваецца. Вы можаце перайсці ў налады, каб змяніць</string>
     <string name="wasnt_able_to_connect_or_download">Не ўдалося падключыцца або спампаваць прагноз</string>
+    <string name="swipe_lock">Блакаванне пальцам</string>
 </resources>

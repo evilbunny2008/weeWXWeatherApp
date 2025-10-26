@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ތިޔަ ސަރވަރ އިން ވެބްކެމް އިމޭޖެއް ގުޅުވައި ނުވަތަ ޑައުންލޯޑް ނުކުރެވުނު</string>
     <string name="wasnt_able_to_connect_forecast">އަންޓް ނޮޓް އެބަލް ޓު ކަނެކްޓް ނުވަތަ ޑައުންލޯޑް ދަ ފޯކަސްޓް</string>
     <string name="wasnt_able_to_detect_forecast_icons">ފޯކަސް ކޮށްފައިވާ އައިކޮންތައް ޑިޓެކްޓް ނުކުރެވުނު ކަމަށް ވެސް ވިދާޅުވި އެވެ</string>
-    <string name="forecast_type_needs_icons">ފޯކަސްޓް ޓައިޕް \'%1$S\' އަށް އައިކޮންތައް ލިބެން ހުންނަން ޖެހޭނެ، އައިކޮންތައް ބޭނުން ކުރުމަށް ބަދަލުވެ އަލުން މަސައްކަތް ކުރައްވާށެވެ</string>
-    <string name="forecast_type_is_invalid">ފޯކަސްޓް ޓައިޕް \'%1$S\' އަކީ ސައްހަ ނޫން އެއްޗެއް ކަމުން، ސެޓިންގސް ފައިލް ޗެކްކޮށް އަލުން މަސައްކަތް ކުރާށެވެ</string>
+    <string name="forecast_type_needs_icons">ފޯކަސްޓް ޓައިޕް \'%1$sS\' އަށް އައިކޮންތައް ލިބެން ހުންނަން ޖެހޭނެ، އައިކޮންތައް ބޭނުން ކުރުމަށް ބަދަލުވެ އަލުން މަސައްކަތް ކުރައްވާށެވެ</string>
+    <string name="forecast_type_is_invalid">ފޯކަސްޓް ޓައިޕް \'%1$sS\' އަކީ ސައްހަ ނޫން އެއްޗެއް ކަމުން، ސެޓިންގސް ފައިލް ޗެކްކޮށް އަލުން މަސައްކަތް ކުރާށެވެ</string>
     <string name="wasnt_able_to_connect_radar_image">އިންޓަނެޓުން ރަޑަރ= image ގުޅޭނެ ނުވަތަ ޑައުންލޯޑް ނުކުރެވުނު</string>
     <string name="wasnt_able_to_connect_data_txt">ތިޔަ ސަރވަރ އިން ޑޭޓާ.txt ކަނެކްޓް ނުވަތަ ޑައުންލޯޑް ނުކުރެވުނު</string>
     <string name="data_url_was_blank">ޑޭޓާ ޔޫއާރްއެލް ހުސްވީ</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">ޔޫ.އާރ.އެލް ސެޓް ކުރެވުނީ ޑިފޯލްޓް ނުވަތަ ހުސްކޮށް</string>
     <string name="radar_url_not_set">ރާޑަރ ޔޫ.އާރ.އެލް ސެޓް ނުކޮށް ނުވަތަ އަދިވެސް ޑައުންލޯޑް ކުރަނީ. ބަދަލުވާން ސެޓިންގްސް އަށް ދެވޭނެ އެވެ</string>
     <string name="wasnt_able_to_connect_or_download">އަންޓް ނޮޓް އެބަލް ޓު ކަނެކްޓް ނުވަތަ ޑައުންލޯޑް ދަ ފޯކަސްޓް</string>
+    <string name="swipe_lock">ސްވައިޕް ލޮކް</string>
 </resources>

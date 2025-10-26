@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Não foi possível conectar ou baixar uma imagem de webcam do seu servidor</string>
     <string name="wasnt_able_to_connect_forecast">Não foi possível conectar ou baixar a previsão</string>
     <string name="wasnt_able_to_detect_forecast_icons">Não foi possível detectar ícones de previsão</string>
-    <string name="forecast_type_needs_icons">O tipo de previsão \'%1$s\' precisa ter ícones disponíveis. Mude para o uso de ícones e tente novamente</string>
-    <string name="forecast_type_is_invalid">O tipo de previsão \'%1$s\' é inválido. Verifique seu arquivo de configurações e tente novamente</string>
+    <string name="forecast_type_needs_icons">O tipo de previsão \'%%1$ss\' precisa ter ícones disponíveis. Mude para o uso de ícones e tente novamente</string>
+    <string name="forecast_type_is_invalid">O tipo de previsão \'%%1$ss\' é inválido. Verifique seu arquivo de configurações e tente novamente</string>
     <string name="wasnt_able_to_connect_radar_image">Não foi possível conectar ou baixar a imagem radar= da internet</string>
     <string name="wasnt_able_to_connect_data_txt">Não foi possível conectar ou baixar data.txt do seu servidor</string>
     <string name="data_url_was_blank">O URL dos dados estava em branco</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">O URL foi definido como padrão ou estava vazio</string>
     <string name="radar_url_not_set">URL do radar não definido ou ainda está sendo baixado. Você pode ir para as configurações para alterar</string>
     <string name="wasnt_able_to_connect_or_download">Não foi possível conectar ou baixar a previsão</string>
+    <string name="swipe_lock">Deslizar bloqueio</string>
 </resources>

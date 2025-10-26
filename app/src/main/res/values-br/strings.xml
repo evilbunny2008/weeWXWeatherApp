@@ -26,7 +26,7 @@
     <string name="fgColour">Widget eo ar c\'hentañ plas evit al liv</string>
     <string name="bgColour">Widget en-dro ar c\'hoari liv Widget</string>
     <string name="indoor_readings">Diskouez al lennadennoù diabarzh?</string>
-    <string name="update_over_wifi">Hizivaat ar wifi hepken ?</string>
+    <string name="update_over_wifi">Hizivaat ar wifi hepken?</string>
     <string name="app_theme">Tem an App?</string>
     <string name="use_icons">Diskouez an Ikonoù?</string>
     <string name="this_months_stats">Stadegoù ar miz-mañ</string>
@@ -47,7 +47,7 @@
     <string name="inigo_needs_updating">Hizivaet eo bet an arload-mañ met ar servijer emaoc\'h o kevreañ outañ n\'en deus ket hizivaet ar Plugin Inigo evit weeWX. Marteze ne zeu ket war wel an dachennoù betek ma vo hizivaet weeWX</string>
     <string name="ok">Mat eo</string>
     <string name="please_wait_verify_url">Gortozit pa vo gwiriet an URL hoc\'h eus kinniget</string>
-    <string name="remove_all_data">Sur oc\'h e fell deoc\'h lemel an holl roadennoù ?</string>
+    <string name="remove_all_data">Sur oc\'h e fell deoc\'h lemel an holl roadennoù?</string>
     <string name="no">Ket</string>
     <string name="icons_failed_to_download">Ikonoù n\'eo ket deuet a-benn da bellgargañ a-bezh, ret e vo deoc\'h adklask</string>
     <string name="wasnt_able_to_detect_icons">N\'eo ket bet gouest da zizoleiñ ikonoù ar rakweled</string>
@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ ur skeudenn webcam diwar ho servijer</string>
     <string name="wasnt_able_to_connect_forecast">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ ar rakweled</string>
     <string name="wasnt_able_to_detect_forecast_icons">N\'eo ket bet gouest da zizoleiñ ikonoù ar rakweled</string>
-    <string name="forecast_type_needs_icons">Ar seurt rakwelet \'%1$s\' a rank kaout ikonennoù a c\'haller kaout, Mar plij, tremen d\'an arlunoù ha klaskit en-dro</string>
-    <string name="forecast_type_is_invalid">Didalvoudek eo ar seurt rakwelet \'%1$s\', gwiriit ho restr arventennoù ha klaskit en-dro</string>
+    <string name="forecast_type_needs_icons">Ar seurt rakwelet \'%%1$ss\' a rank kaout ikonennoù a c\'haller kaout, Mar plij, tremen d\'an arlunoù ha klaskit en-dro</string>
+    <string name="forecast_type_is_invalid">Didalvoudek eo ar seurt rakwelet \'%%1$ss\', gwiriit ho restr arventennoù ha klaskit en-dro</string>
     <string name="wasnt_able_to_connect_radar_image">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ skeudenn diwar internet</string>
     <string name="wasnt_able_to_connect_data_txt">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ roadennoù.txt diwar ho servijer</string>
     <string name="data_url_was_blank">Roadennoù URL war goullo</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL a oa bet lakaet war an difazier pe war goullo</string>
     <string name="radar_url_not_set">Radar URL n\'eo ket bet lakaet pe emañ o pellgargañ c\'hoazh. Gallout a rit mont d\'an arventennoù evit cheñch</string>
     <string name="wasnt_able_to_connect_or_download">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ ar rakweled</string>
+    <string name="swipe_lock">Swipe prennañ</string>
 </resources>

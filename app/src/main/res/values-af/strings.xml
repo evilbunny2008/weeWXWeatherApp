@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Kon nie \'n webkamera-beeld van jou bediener af koppel of aflaai nie</string>
     <string name="wasnt_able_to_connect_forecast">Kon nie die voorspelling koppel of aflaai nie</string>
     <string name="wasnt_able_to_detect_forecast_icons">Kon nie voorspelling-ikone bespeur nie</string>
-    <string name="forecast_type_needs_icons">Voorspelling tipe \'%1$s\' moet ikone beskikbaar hê. Skakel asseblief oor na die gebruik van ikone en probeer weer</string>
-    <string name="forecast_type_is_invalid">Voorspelling tipe \'%1$s\' is ongeldig, gaan jou instellingslêer na en probeer weer</string>
+    <string name="forecast_type_needs_icons">Voorspelling tipe \'%%1$ss\' moet ikone beskikbaar hê. Skakel asseblief oor na die gebruik van ikone en probeer weer</string>
+    <string name="forecast_type_is_invalid">Voorspelling tipe \'%%1$ss\' is ongeldig, gaan jou instellingslêer na en probeer weer</string>
     <string name="wasnt_able_to_connect_radar_image">Kon nie radar=-beeld van die internet af koppel of aflaai nie</string>
     <string name="wasnt_able_to_connect_data_txt">Kon nie data.txt van jou bediener af koppel of aflaai nie</string>
     <string name="data_url_was_blank">Data-URL was leeg</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL is op die verstek gestel of was leeg</string>
     <string name="radar_url_not_set">Radar-URL nie gestel nie of is nog besig om af te laai. Jy kan na instellings gaan om te verander</string>
     <string name="wasnt_able_to_connect_or_download">Kon nie die voorspelling koppel of aflaai nie</string>
+    <string name="swipe_lock">Swiep Lock</string>
 </resources>

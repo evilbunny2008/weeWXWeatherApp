@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Тендан сервер гыч веб-камер образым ушен але скачать лийын огыл</string>
     <string name="wasnt_able_to_connect_forecast">Прогнозым ушен але скачать ыштен кертын огыл</string>
     <string name="wasnt_able_to_detect_forecast_icons">Прогноз значокым пален налын кертын огыл</string>
-    <string name="forecast_type_needs_icons">Прогноз тип \'%1$s\' значок-влакым налаш кӱлеш, Пожалуйста, значок-влакым кучылташ да угыч тӧчен ончаш кӱлеш</string>
-    <string name="forecast_type_is_invalid">Прогноз тип \'%1$s\' чын огыл, шке настройкым файлым тергымаш да угыч тӧчен</string>
+    <string name="forecast_type_needs_icons">Прогноз тип \'%%1$ss\' значок-влакым налаш кӱлеш, Пожалуйста, значок-влакым кучылташ да угыч тӧчен ончаш кӱлеш</string>
+    <string name="forecast_type_is_invalid">Прогноз тип \'%%1$ss\' чын огыл, шке настройкым файлым тергымаш да угыч тӧчен</string>
     <string name="wasnt_able_to_connect_radar_image">Интернет гыч радар= образым ушен але скачать скачать лийын огыл</string>
     <string name="wasnt_able_to_connect_data_txt">Тендан сервер гыч данный-влакым ушен але скачать ыштен кертын огыл.txt</string>
     <string name="data_url_was_blank">Данный-влак URL-адрес яра лийын</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL-адрес умолчание шынденыт але яра лийын</string>
     <string name="radar_url_not_set">Радар УРЛ огыл шынден але эше скачать. Те вашталтен кертеш настройкыш вашталташ</string>
     <string name="wasnt_able_to_connect_or_download">Прогнозым ушен але скачать ыштен кертын огыл</string>
+    <string name="swipe_lock">Свайп локтылалтше</string>
 </resources>

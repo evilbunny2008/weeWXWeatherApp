@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Wasn\'t able kuyungako oba okuwanula webcam ekifaananyi okuva ku server yo</string>
     <string name="wasnt_able_to_connect_forecast">Wasn\'t able okuyunga oba okuwanula forecast</string>
     <string name="wasnt_able_to_detect_forecast_icons">yali tasobola kuzuula bifaananyi bya kuteebereza</string>
-    <string name="forecast_type_needs_icons">Ekika ky\'okuteebereza \'%1$S\' kyetaaga okuba n\'ebifaananyi ebisobola okubeerawo, nsaba okyuse ku kukozesa ebifaananyi era ogezeeko nate</string>
-    <string name="forecast_type_is_invalid">Ekika ky\'okuteebereza \'%1$S\' si kituufu, kebera fayiro yo ey\'okuteekawo era oddemu ogezeeko</string>
+    <string name="forecast_type_needs_icons">Ekika ky\'okuteebereza \'%1$sS\' kyetaaga okuba n\'ebifaananyi ebisobola okubeerawo, nsaba okyuse ku kukozesa ebifaananyi era ogezeeko nate</string>
+    <string name="forecast_type_is_invalid">Ekika ky\'okuteebereza \'%1$sS\' si kituufu, kebera fayiro yo ey\'okuteekawo era oddemu ogezeeko</string>
     <string name="wasnt_able_to_connect_radar_image">Wasn\'t able okuyunga oba okuwanula radar= ekifaananyi okuva ku yintaneeti</string>
     <string name="wasnt_able_to_connect_data_txt">Wasn\'t able okuyunga oba okuwanula data.txt okuva ku server yo</string>
     <string name="data_url_was_blank">Data URL yali etaliimu kintu kyonna</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL yateekebwa ku default oba yali njereere</string>
     <string name="radar_url_not_set">Radar URL teteekeddwa oba ekyawanula. Osobola okugenda mu settings okukyusa</string>
     <string name="wasnt_able_to_connect_or_download">Wasn\'t able okuyunga oba okuwanula forecast</string>
+    <string name="swipe_lock">Swipe kkufulu</string>
 </resources>

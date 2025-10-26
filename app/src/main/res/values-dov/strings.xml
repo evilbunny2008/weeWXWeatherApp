@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Kupa kuti tuzyibe kuti tukonzye kumugwasya</string>
     <string name="wasnt_able_to_connect_forecast">Kucinca-langa-langa-langa</string>
     <string name="wasnt_able_to_detect_forecast_icons">Kucinca-langa-langa</string>
-    <string name="forecast_type_needs_icons">Forecast type \'%1$s\' needs to have icons available, Please switch to using icons and try again.</string>
-    <string name="forecast_type_is_invalid">Forecast type \'%1$s\' is invalid, check your settings file and try again.</string>
+    <string name="forecast_type_needs_icons">Forecast type \'%%1$ss\' needs to have icons available, Please switch to using icons and try again</string>
+    <string name="forecast_type_is_invalid">Forecast type \'%%1$ss\' is invalid, check your settings file and try again</string>
     <string name="wasnt_able_to_connect_radar_image">Kucinca-langa-langa-langa-langa</string>
     <string name="wasnt_able_to_connect_data_txt">Kujana kuti tujane nzila ya digiliti</string>
     <string name="data_url_was_blank">20</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">1</string>
     <string name="radar_url_not_set">1. Alimwi, kanji-kanji</string>
     <string name="wasnt_able_to_connect_or_download">Kucinca-langa-langa-langa</string>
+    <string name="swipe_lock">1</string>
 </resources>

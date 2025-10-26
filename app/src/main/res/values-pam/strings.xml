@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">E ya mekapagkonekta o makadownload ing metung a larawan a webcam ibat king server mu</string>
     <string name="wasnt_able_to_connect_forecast">E ya mekapagkonekta o mag-download ing pauna</string>
     <string name="wasnt_able_to_detect_forecast_icons">E ya mekatuklas a icon a paunahan</string>
-    <string name="forecast_type_needs_icons">Kailangan lang mika icons \'%1$s\', Paki-switch ye pu ing pamangamit kareng icons at subukan pasibayu</string>
-    <string name="forecast_type_is_invalid">E ya valid \'%1$s\', lawan me ing kekang file at subukan meng pasibayu</string>
+    <string name="forecast_type_needs_icons">Kailangan lang mika icons \'%%1$ss\', Paki-switch ye pu ing pamangamit kareng icons at subukan pasibayu</string>
+    <string name="forecast_type_is_invalid">E ya valid \'%%1$ss\', lawan me ing kekang file at subukan meng pasibayu</string>
     <string name="wasnt_able_to_connect_radar_image">E ya mekapagkonekta o makababa ing radar= larawan ibat king internet</string>
     <string name="wasnt_able_to_connect_data_txt">E ya mekapagkonekta o makababa ing data.txt ibat king server mu</string>
     <string name="data_url_was_blank">Blank ya ing data URL</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">Ing URL mibili ya king default o alang laman</string>
     <string name="radar_url_not_set">Ing Radar URL e ya mitakda o makadownload ya pa. Malyari kang munta kareng setting para magbayu</string>
     <string name="wasnt_able_to_connect_or_download">E ya mekapagkonekta o mag-download ing pauna</string>
+    <string name="swipe_lock">Lakri ka Lock</string>
 </resources>

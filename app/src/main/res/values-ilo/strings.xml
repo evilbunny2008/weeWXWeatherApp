@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Saan a nakakonekta wenno naka-download iti webcam image manipud iti server-mo</string>
     <string name="wasnt_able_to_connect_forecast">saan a nakakonekta wenno mai-download ti forecast</string>
     <string name="wasnt_able_to_detect_forecast_icons">saan a nakaduktal kadagiti ikono ti panagpakpakauna</string>
-    <string name="forecast_type_needs_icons">Ti kita ti panagpakpakauna a \'%1$S\' ket kasapulan nga addaan kadagiti ikono a magun-od, pangngaasi nga agsubli iti panagusar kadagiti ikono ken padasem manen</string>
-    <string name="forecast_type_is_invalid">Ti kita ti panagpakpakauna a \'%1$S\' ket saan nga imbalido, kitaen ti file ti Settings-mo ken padasem manen</string>
+    <string name="forecast_type_needs_icons">Ti kita ti panagpakpakauna a \'%1$sS\' ket kasapulan nga addaan kadagiti ikono a magun-od, pangngaasi nga agsubli iti panagusar kadagiti ikono ken padasem manen</string>
+    <string name="forecast_type_is_invalid">Ti kita ti panagpakpakauna a \'%1$sS\' ket saan nga imbalido, kitaen ti file ti Settings-mo ken padasem manen</string>
     <string name="wasnt_able_to_connect_radar_image">Saan a nakakonekta wenno naka-download iti radar= image manipud iti Internet</string>
     <string name="wasnt_able_to_connect_data_txt">saan a nakakonekta wenno maka-download iti data.txt manipud iti server-mo</string>
     <string name="data_url_was_blank">Ti URL ti datos ket blangko</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">Ti URL ket naikabil iti default wenno awan ti kargana</string>
     <string name="radar_url_not_set">Radar URL Saan a naiset wenno ag-download pay laeng. Mabalinmo ti mapan iti Settings tapno agbaliw</string>
     <string name="wasnt_able_to_connect_or_download">saan a nakakonekta wenno mai-download ti forecast</string>
+    <string name="swipe_lock">I-swipe ti kandado</string>
 </resources>

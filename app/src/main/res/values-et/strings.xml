@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Teie serverist ei saanud ühendust luua ega veebikaamera pilti alla laadida</string>
     <string name="wasnt_able_to_connect_forecast">Ühendust ei saanud luua ega prognoosi alla laadida</string>
     <string name="wasnt_able_to_detect_forecast_icons">Prognoosiikoone ei õnnestunud tuvastada</string>
-    <string name="forecast_type_needs_icons">Prognoositüübil \'%1$s\' peavad olema saadaval ikoonid. Lülituge ikoonide kasutamisele ja proovige uuesti</string>
-    <string name="forecast_type_is_invalid">Prognoosi tüüp \'%1$s\' on kehtetu, kontrollige oma seadete faili ja proovige uuesti</string>
+    <string name="forecast_type_needs_icons">Prognoositüübil \'%%1$ss\' peavad olema saadaval ikoonid. Lülituge ikoonide kasutamisele ja proovige uuesti</string>
+    <string name="forecast_type_is_invalid">Prognoosi tüüp \'%%1$ss\' on kehtetu, kontrollige oma seadete faili ja proovige uuesti</string>
     <string name="wasnt_able_to_connect_radar_image">Ei saanud ühendust luua ega Internetist radar=pilti alla laadida</string>
     <string name="wasnt_able_to_connect_data_txt">Faili data.txt ei saanud teie serverist ühendust luua ega alla laadida</string>
     <string name="data_url_was_blank">Andmete URL oli tühi</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL määrati vaikeväärtusele või oli tühi</string>
     <string name="radar_url_not_set">Radari URL-i pole määratud või see on endiselt allalaadimisel. Muutmiseks võite minna seadetesse</string>
     <string name="wasnt_able_to_connect_or_download">Ühendust ei saanud luua ega prognoosi alla laadida</string>
+    <string name="swipe_lock">Pühkige lukustus</string>
 </resources>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ne ok anyal tudruok kata keto picha mar mbui e sava mari</string>
     <string name="wasnt_able_to_connect_forecast">Ne ok anyal tudruok kata ng\'ado paro ma ne oket</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ne ok nyal fwenyo irons mag paro ma ne oket</string>
-    <string name="forecast_type_needs_icons">\'%1$s\' Yie ni ng\'ato ka ng\'ato onego oket geno mare kuom Nyasaye, kendo onego oket geno mare kuom Nyasaye.</string>
-    <string name="forecast_type_is_invalid">\'%1$s\' Gima ng\'ato nyalo timo mondo oyud geno mar dak nyaka chieng\' en ng\'ado bura ne ng\'ato ka ng\'ato</string>
+    <string name="forecast_type_needs_icons">\'%%1$ss\' Yie ni ng\'ato ka ng\'ato onego oket geno mare kuom Nyasaye, kendo onego oket geno mare kuom Nyasaye</string>
+    <string name="forecast_type_is_invalid">\'%%1$ss\' Gima ng\'ato nyalo timo mondo oyud geno mar dak nyaka chieng\' en ng\'ado bura ne ng\'ato ka ng\'ato</string>
     <string name="wasnt_able_to_connect_radar_image">Ne ok anyal tudruok kata donjo e osimbo mar payo = picha mar badar kowuok e intanet</string>
     <string name="wasnt_able_to_connect_data_txt">Ne ok anyal tudruok kata dwoko weche ma ne oting\'o.txt kowuok e sava mari</string>
     <string name="data_url_was_blank">URL mar data ne en ma onge gimoro</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL ne oketi kaka gik ma ne otimre kata ne en mana ma nono</string>
     <string name="radar_url_not_set">URL mar radar ok oket kata pod oting\'o gik moko. Inyalo dhi e chenro mondo ilok</string>
     <string name="wasnt_able_to_connect_or_download">Ne ok anyal tudruok kata ng\'ado paro ma ne oket</string>
+    <string name="swipe_lock">Rito Loch mar Sowi</string>
 </resources>

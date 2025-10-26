@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ካብ ሰርቨርካ ናይ ዌብካም ምስሊ ከተራኽብ ወይ ከተውርዶ ኣይከኣለትን</string>
     <string name="wasnt_able_to_connect_forecast">ነቲ ትንበያ ከተራኽቦ ወይ ከተውርዶ ኣይከኣለን።</string>
     <string name="wasnt_able_to_detect_forecast_icons">ትንበያ ምልክታት ንምፍላጥ ኣይከኣልኩን።</string>
-    <string name="forecast_type_needs_icons">ትንበያ ዓይነት \'%1$s\' ምልክታት ክህልወካ ኣለዎ፣ በጃኹም ናብ ምጥቃም ምልክታት ቀይሮም እንደገና ፈትኑ።</string>
-    <string name="forecast_type_is_invalid">Type \'%1$s\' ትኽክል ኣይኮነን፣ ናይ ቅጥዕታት ፋይልካ መርምሮ እሞ እንደገና ፈትን።</string>
+    <string name="forecast_type_needs_icons">ትንበያ ዓይነት \'%%1$ss\' ምልክታት ክህልወካ ኣለዎ፣ በጃኹም ናብ ምጥቃም ምልክታት ቀይሮም እንደገና ፈትኑ።</string>
+    <string name="forecast_type_is_invalid">Type \'%%1$ss\' ትኽክል ኣይኮነን፣ ናይ ቅጥዕታት ፋይልካ መርምሮ እሞ እንደገና ፈትን።</string>
     <string name="wasnt_able_to_connect_radar_image">ራዳር= ምስሊ ካብ ኢንተርነት ንምትእስሳር ወይ ምውራድ ኣይከኣለን</string>
     <string name="wasnt_able_to_connect_data_txt">ካብ ሰርቨርካ ዳታ.txt ከራኽብ ወይ ከውርድ ኣይከኣለን</string>
     <string name="data_url_was_blank">ዳታ URL ባዶ እዩ ነይሩ።</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL ናብቲ ነባሪ ተቐሚጡ ወይ ባዶ እዩ ነይሩ።</string>
     <string name="radar_url_not_set">ራዳር URL ኣይተቐመጠን ወይ ሕጂ ውን ይወርድ ኣሎ። ናብ ቅጥዕታት ክትከይድ ትኽእል ኢኻ ክትቅየር ትኽእል ኢኻ።</string>
     <string name="wasnt_able_to_connect_or_download">ነቲ ትንበያ ከተራኽቦ ወይ ከተውርዶ ኣይከኣለን።</string>
+    <string name="swipe_lock">ስዋይፕ ሎክ</string>
 </resources>

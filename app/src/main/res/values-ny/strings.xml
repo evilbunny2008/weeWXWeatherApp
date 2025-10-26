@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Sanathe kulumikiza kapena kutsitsa chithunzi cha webusayiti kuchokera pa seva yanu</string>
     <string name="wasnt_able_to_connect_forecast">Sanathe kulumikizana kapena kutsitsa zonena za kuneneratu</string>
     <string name="wasnt_able_to_detect_forecast_icons">Sanathe kuzindikira zithunzi zamtsogolo</string>
-    <string name="forecast_type_needs_icons">Mtundu wolosera \'%1$s</string>
-    <string name="forecast_type_is_invalid">Mtundu wolosera \'%1$s\'ndi yosavomerezeka, onani fayilo yanu ndikuyesanso</string>
+    <string name="forecast_type_needs_icons">Mtundu wolosera \'%%1$ss</string>
+    <string name="forecast_type_is_invalid">Mtundu wolosera \'%%1$ss\'ndi yosavomerezeka, onani fayilo yanu ndikuyesanso</string>
     <string name="wasnt_able_to_connect_radar_image">Sanathe kulumikizana kapena kutsitsa radar = chithunzi kuchokera pa intaneti</string>
     <string name="wasnt_able_to_connect_data_txt">Sanathe kulumikizana kapena kutsitsa deta.txt kuchokera ku seva yanu</string>
     <string name="data_url_was_blank">Ulalo wa data unali wopanda kanthu</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">Ulalo udakhazikitsidwa kuti ukhale wopanda pake kapena ulibe kanthu</string>
     <string name="radar_url_not_set">URL ya Radar sinakhazikike kapena kutsitsa. Mutha kupita ku zofuna kusintha</string>
     <string name="wasnt_able_to_connect_or_download">Sanathe kulumikizana kapena kutsitsa zonena za kuneneratu</string>
+    <string name="swipe_lock">Swipe loko</string>
 </resources>

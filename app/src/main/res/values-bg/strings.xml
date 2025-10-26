@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Не можах да се свържа или да изтегля изображение на уеб камера от вашия сървър</string>
     <string name="wasnt_able_to_connect_forecast">Не можах да се свържа или да изтегля прогнозата</string>
     <string name="wasnt_able_to_detect_forecast_icons">Не успя да открие икони за прогноза</string>
-    <string name="forecast_type_needs_icons">Типът прогноза \'%1$s\' трябва да има налични икони. Моля, преминете към използване на икони и опитайте отново</string>
-    <string name="forecast_type_is_invalid">Типът прогноза \'%1$s\' е невалиден, проверете файла с настройки и опитайте отново</string>
+    <string name="forecast_type_needs_icons">Типът прогноза \'%%1$ss\' трябва да има налични икони. Моля, преминете към използване на икони и опитайте отново</string>
+    <string name="forecast_type_is_invalid">Типът прогноза \'%%1$ss\' е невалиден, проверете файла с настройки и опитайте отново</string>
     <string name="wasnt_able_to_connect_radar_image">Не можах да се свържа или да изтегля радар= изображение от интернет</string>
     <string name="wasnt_able_to_connect_data_txt">Не можах да се свържа или да изтегля data.txt от вашия сървър</string>
     <string name="data_url_was_blank">URL адресът на данните беше празен</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL адресът беше зададен по подразбиране или беше празен</string>
     <string name="radar_url_not_set">URL адресът на радар не е зададен или все още се изтегля. Можете да отидете в настройките, за да промените</string>
     <string name="wasnt_able_to_connect_or_download">Не можах да се свържа или да изтегля прогнозата</string>
+    <string name="swipe_lock">Swipe Lock</string>
 </resources>

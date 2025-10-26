@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Nu am putut să mă conectez sau să descărcați o imagine de cameră web de pe serverul dvs</string>
     <string name="wasnt_able_to_connect_forecast">Nu am putut să mă conectez sau să descărcați prognoza</string>
     <string name="wasnt_able_to_detect_forecast_icons">Nu am putut detecta pictogramele de prognoză</string>
-    <string name="forecast_type_needs_icons">Tipul de prognoză \'%1$s\' trebuie să aibă pictograme disponibile. Treceți la utilizarea pictogramelor și încercați din nou</string>
-    <string name="forecast_type_is_invalid">Tipul de prognoză \'%1$s\' este nevalid, verificați fișierul de setări și încercați din nou</string>
+    <string name="forecast_type_needs_icons">Tipul de prognoză \'%%1$ss\' trebuie să aibă pictograme disponibile. Treceți la utilizarea pictogramelor și încercați din nou</string>
+    <string name="forecast_type_is_invalid">Tipul de prognoză \'%%1$ss\' este nevalid, verificați fișierul de setări și încercați din nou</string>
     <string name="wasnt_able_to_connect_radar_image">Nu am putut să mă conectez sau să descărcați imaginea radar= de pe internet</string>
     <string name="wasnt_able_to_connect_data_txt">Nu am putut să mă conectez sau să descărcați data.txt de pe serverul dvs</string>
     <string name="data_url_was_blank">Adresa URL a datelor era goală</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">Adresa URL a fost setată la valoarea implicită sau era goală</string>
     <string name="radar_url_not_set">Adresa URL a radarului nu este setată sau încă se descarcă. Puteți merge la setări pentru a schimba</string>
     <string name="wasnt_able_to_connect_or_download">Nu am putut să mă conectez sau să descărcați prognoza</string>
+    <string name="swipe_lock">Glisați Blocarea</string>
 </resources>

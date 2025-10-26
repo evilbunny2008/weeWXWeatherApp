@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Hakuweza kuunganisha au kupakua picha ya wavuti kutoka kwa seva yako</string>
     <string name="wasnt_able_to_connect_forecast">Hakuweza kuunganisha au kupakua utabiri</string>
     <string name="wasnt_able_to_detect_forecast_icons">Hakuweza kugundua icons za utabiri</string>
-    <string name="forecast_type_needs_icons">Aina ya utabiri \'%1$s\' inahitaji kuwa na icons zinazopatikana, tafadhali badilisha kwa kutumia icons na ujaribu tena</string>
-    <string name="forecast_type_is_invalid">Aina ya utabiri \'%1$s\' sio sahihi, angalia faili yako ya mipangilio na ujaribu tena</string>
+    <string name="forecast_type_needs_icons">Aina ya utabiri \'%%1$ss\' inahitaji kuwa na icons zinazopatikana, tafadhali badilisha kwa kutumia icons na ujaribu tena</string>
+    <string name="forecast_type_is_invalid">Aina ya utabiri \'%%1$ss\' sio sahihi, angalia faili yako ya mipangilio na ujaribu tena</string>
     <string name="wasnt_able_to_connect_radar_image">Hakuweza kuunganisha au kupakua rada = picha kutoka kwa mtandao</string>
     <string name="wasnt_able_to_connect_data_txt">Hakuweza kuunganisha au kupakua data.txt kutoka kwa seva yako</string>
     <string name="data_url_was_blank">URL ya data ilikuwa tupu</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL iliwekwa kwa chaguo -msingi au ilikuwa tupu</string>
     <string name="radar_url_not_set">URL ya rada haijawekwa au bado inapakua. Unaweza kwenda kwa Mipangilio ili ubadilike</string>
     <string name="wasnt_able_to_connect_or_download">Hakuweza kuunganisha au kupakua utabiri</string>
+    <string name="swipe_lock">Swipe kufuli</string>
 </resources>

@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Не удалось подключиться или загрузить изображение веб-камеры с вашего сервера</string>
     <string name="wasnt_able_to_connect_forecast">Не удалось подключиться или скачать прогноз</string>
     <string name="wasnt_able_to_detect_forecast_icons">Не удалось обнаружить значки прогнозов</string>
-    <string name="forecast_type_needs_icons">Для типа прогноза \'%1$s\' должны быть доступны значки. Переключитесь на использование значков и повторите попытку</string>
-    <string name="forecast_type_is_invalid">Тип прогноза \'%1$s\' недействителен. Проверьте файл настроек и повторите попытку</string>
+    <string name="forecast_type_needs_icons">Для типа прогноза \'%%1$ss\' должны быть доступны значки. Переключитесь на использование значков и повторите попытку</string>
+    <string name="forecast_type_is_invalid">Тип прогноза \'%%1$ss\' недействителен. Проверьте файл настроек и повторите попытку</string>
     <string name="wasnt_able_to_connect_radar_image">Не удалось подключиться или загрузить изображение радара = из Интернета</string>
     <string name="wasnt_able_to_connect_data_txt">Не удалось подключиться или загрузить data.txt с вашего сервера</string>
     <string name="data_url_was_blank">URL-адрес данных был пустым</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL-адрес был установлен по умолчанию или был пустым</string>
     <string name="radar_url_not_set">URL-адрес радара не задан или все еще загружается. Вы можете зайти в настройки, чтобы изменить</string>
     <string name="wasnt_able_to_connect_or_download">Не удалось подключиться или скачать прогноз</string>
+    <string name="swipe_lock">Проведите блокировку</string>
 </resources>

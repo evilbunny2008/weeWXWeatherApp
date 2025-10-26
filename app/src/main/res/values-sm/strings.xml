@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Le mafai ona fesoʻotaʻi pe download se webcam ata mai lau server</string>
     <string name="wasnt_able_to_connect_forecast">Le mafai ona fesoʻotaʻi pe download le vaʻaiga</string>
     <string name="wasnt_able_to_detect_forecast_icons">E le mafai ona iloa le poto masani</string>
-    <string name="forecast_type_needs_icons">Foliga o le ITULAU \'%1$s\'Manaʻomia e maua ai ni ata maua, faʻamolemole ki le faʻaaogaina o aikona ma toe taumafai</string>
-    <string name="forecast_type_is_invalid">Foliga o le ITULA \'%1$s\' e le aoga, siaki lau faila faila ma toe taumafai</string>
+    <string name="forecast_type_needs_icons">Foliga o le ITULAU \'%%1$ss\'Manaʻomia e maua ai ni ata maua, faʻamolemole ki le faʻaaogaina o aikona ma toe taumafai</string>
+    <string name="forecast_type_is_invalid">Foliga o le ITULA \'%%1$ss\' e le aoga, siaki lau faila faila ma toe taumafai</string>
     <string name="wasnt_able_to_connect_radar_image">Le mafai ona fesoʻotaʻi pe download radar = ata mai le initaneti</string>
     <string name="wasnt_able_to_connect_data_txt">Le mafai ona fesoʻotaʻi pe download faʻamaumauga .txt mai lau server</string>
     <string name="data_url_was_blank">Na avanoa faamatalaga URL</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">Na sauni URL i le le mautonu pe gaogao</string>
     <string name="radar_url_not_set">Raar herl le seti pe o loo download pea. E mafai ona e alu i tulaga e sui ai</string>
     <string name="wasnt_able_to_connect_or_download">Le mafai ona fesoʻotaʻi pe download le vaʻaiga</string>
+    <string name="swipe_lock">Swipe loka</string>
 </resources>

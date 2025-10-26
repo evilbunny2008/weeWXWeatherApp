@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL niaki ri default yareka kosong</string>
     <string name="radar_url_not_set">Radar URL le\'ba\'mi nipa\'jari yareka tuli nidownload. Akkullei a\'lampa mange ri setting-setting untu\' a\'jari beru</string>
     <string name="wasnt_able_to_connect_or_download">Tena nakkulle a\'lampa yareka a\'download anjo ramalanna</string>
+    <string name="swipe_lock">Kacinnang Sway</string>
 </resources>

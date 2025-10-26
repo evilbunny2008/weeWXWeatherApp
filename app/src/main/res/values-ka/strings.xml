@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">ვერ მოხერხდა ვებკამერის სურათის დაკავშირება ან ჩამოტვირთვა თქვენი სერვერიდან</string>
     <string name="wasnt_able_to_connect_forecast">პროგნოზის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="wasnt_able_to_detect_forecast_icons">პროგნოზის ხატების აღმოჩენა ვერ მოხერხდა</string>
-    <string name="forecast_type_needs_icons">პროგნოზის ტიპს \'%1$s\' უნდა ჰქონდეს ხატები ხელმისაწვდომი. გთხოვთ, გადართოთ ხატულების გამოყენებაზე და სცადოთ ხელახლა</string>
-    <string name="forecast_type_is_invalid">პროგნოზის ტიპი \'%1$s\' არასწორია, შეამოწმეთ თქვენი პარამეტრების ფაილი და სცადეთ ხელახლა</string>
+    <string name="forecast_type_needs_icons">პროგნოზის ტიპს \'%%1$ss\' უნდა ჰქონდეს ხატები ხელმისაწვდომი. გთხოვთ, გადართოთ ხატულების გამოყენებაზე და სცადოთ ხელახლა</string>
+    <string name="forecast_type_is_invalid">პროგნოზის ტიპი \'%%1$ss\' არასწორია, შეამოწმეთ თქვენი პარამეტრების ფაილი და სცადეთ ხელახლა</string>
     <string name="wasnt_able_to_connect_radar_image">ვერ მოხერხდა რადარის= სურათის დაკავშირება ან ჩამოტვირთვა ინტერნეტიდან</string>
     <string name="wasnt_able_to_connect_data_txt">თქვენი სერვერიდან data.txt-ის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="data_url_was_blank">მონაცემთა URL ცარიელი იყო</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL დაყენებული იყო ნაგულისხმევად ან ცარიელი იყო</string>
     <string name="radar_url_not_set">რადარის URL არ არის დაყენებული ან ჯერ კიდევ იტვირთება. შესაცვლელად შეგიძლიათ გადახვიდეთ პარამეტრებზე</string>
     <string name="wasnt_able_to_connect_or_download">პროგნოზის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
+    <string name="swipe_lock">გადაფურცლეთ ჩაკეტვა</string>
 </resources>

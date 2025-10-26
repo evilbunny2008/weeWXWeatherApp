@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Ko ni anfani lati sopọ tabi ṣe igbasilẹ aworan wẹẹbu kan lati ọdọ olupin rẹ</string>
     <string name="wasnt_able_to_connect_forecast">Ko ni anfani lati sopọ tabi ṣe igbasilẹ asọtẹlẹ naa</string>
     <string name="wasnt_able_to_detect_forecast_icons">Ko ni anfani lati ṣe awari awọn aami asọtẹlẹ</string>
-    <string name="forecast_type_needs_icons">Asọtẹlẹ Tà \'%1$s\' nilo lati ni awọn aami wa, jọwọ yipada si lilo awọn aami ki o tun gbiyanju lẹẹkan si</string>
-    <string name="forecast_type_is_invalid">Awọn asọtẹlẹ asọtẹlẹ \'%1$s\' ko wulo, ṣayẹwo faili eto rẹ ki o tun gbiyanju lẹẹkan si</string>
+    <string name="forecast_type_needs_icons">Asọtẹlẹ Tà \'%%1$ss\' nilo lati ni awọn aami wa, jọwọ yipada si lilo awọn aami ki o tun gbiyanju lẹẹkan si</string>
+    <string name="forecast_type_is_invalid">Awọn asọtẹlẹ asọtẹlẹ \'%%1$ss\' ko wulo, ṣayẹwo faili eto rẹ ki o tun gbiyanju lẹẹkan si</string>
     <string name="wasnt_able_to_connect_radar_image">Ko ni anfani lati sopọ tabi igbasilẹ radar = aworan lati intanẹẹti</string>
     <string name="wasnt_able_to_connect_data_txt">Ko ni anfani lati sopọ tabi ṣe igbasilẹ data.txt lati ọdọ olupin rẹ</string>
     <string name="data_url_was_blank">URL URL ti ṣofo</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL ti ṣeto si aiyipada tabi ṣofo</string>
     <string name="radar_url_not_set">URL Redar ko ṣeto tabi tun n gbasilẹ. O le lọ si awọn eto lati yipada</string>
     <string name="wasnt_able_to_connect_or_download">Ko ni anfani lati sopọ tabi ṣe igbasilẹ asọtẹlẹ naa</string>
+    <string name="swipe_lock">Ra titiipa</string>
 </resources>

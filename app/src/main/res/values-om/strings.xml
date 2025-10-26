@@ -58,8 +58,8 @@
     <string name="wasnt_able_to_connect_webcam_url">Fakkii webcam server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="wasnt_able_to_connect_forecast">Raaga sana wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="wasnt_able_to_detect_forecast_icons">Mallattoolee tilmaama adda baasuu hin dandeenye</string>
-    <string name="forecast_type_needs_icons">Gosa tilmaama \'%1$s\' mallattoo qabaachuu qaba, maaloo mallattoo fayyadamuutti jijjiirii irra deebi\'ii yaali</string>
-    <string name="forecast_type_is_invalid">Raaga gosa \'%1$s\' sirrii miti, faayilii settings kee ilaalii irra deebi\'ii yaali</string>
+    <string name="forecast_type_needs_icons">Gosa tilmaama \'%%1$ss\' mallattoo qabaachuu qaba, maaloo mallattoo fayyadamuutti jijjiirii irra deebi\'ii yaali</string>
+    <string name="forecast_type_is_invalid">Raaga gosa \'%%1$ss\' sirrii miti, faayilii settings kee ilaalii irra deebi\'ii yaali</string>
     <string name="wasnt_able_to_connect_radar_image">Radar= image interneetii irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="wasnt_able_to_connect_data_txt">data.txt server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="data_url_was_blank">URL deetaa duwwaa ture</string>
@@ -67,4 +67,5 @@
     <string name="url_was_default_or_empty">URL gara durtiitti qindaa\'e ykn duwwaa ture</string>
     <string name="radar_url_not_set">Radar url hin saagitu ykn ammallee buufachaa jira. Jijjiiruuf gara settings deemuu dandeessa</string>
     <string name="wasnt_able_to_connect_or_download">Raaga sana wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
+    <string name="swipe_lock">Qulfii swipe</string>
 </resources>
