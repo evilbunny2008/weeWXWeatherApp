@@ -615,7 +615,7 @@ public class Stats extends Fragment
 
 			String html = sb.toString();
 
-			CustomDebug.writeDebug("stats_weewx.html", html);
+			//CustomDebug.writeDebug("stats_weewx.html", html);
 
 			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null));
 			stopRefreshing();

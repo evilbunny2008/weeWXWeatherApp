@@ -842,7 +842,7 @@ public class Common
 
 		String str = Common.current_html_headers + sb + Common.html_footer;
 
-		CustomDebug.writeDebug("top_weeWX.html", str);
+		//CustomDebug.writeDebug("top_weeWX.html", str);
 
 		return sb.toString();
 	}

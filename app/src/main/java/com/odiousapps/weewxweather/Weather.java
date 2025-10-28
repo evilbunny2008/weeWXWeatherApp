@@ -236,7 +236,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append(Common.html_footer);
 
-		CustomDebug.writeDebug("current_weewx.html", sb.toString());
+		//CustomDebug.writeDebug("current_weewx.html", sb.toString());
 
 		forceCurrentRefresh(sb.toString());
 	}
@@ -579,7 +579,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			sb.append(Common.html_footer);
 
 			String str = sb.toString();
-			CustomDebug.writeDebug("webview_weewx.html", str);
+			//CustomDebug.writeDebug("webview_weewx.html", str);
 
 			forceForecastRefresh(str);
 		});
