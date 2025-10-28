@@ -71,4 +71,5 @@
     <string name="custom_setting">কাস্টম রং</string>
     <string name="app_theme">অ্যাপ থিম</string>
     <string name="use_icons">আইকন দেখান</string>
+    <string name="today">আজ</string>
 </resources>

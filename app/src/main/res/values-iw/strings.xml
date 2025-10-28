@@ -71,4 +71,5 @@
     <string name="custom_setting">צבעים מותאמים אישית</string>
     <string name="app_theme">ערכת נושא לאפליקציה</string>
     <string name="use_icons">הצג אייקונים</string>
+    <string name="today">הַיוֹם</string>
 </resources>

@@ -71,4 +71,5 @@
     <string name="custom_setting">Couleurs personnalisées</string>
     <string name="app_theme">Thème de l\'application</string>
     <string name="use_icons">Afficher les icônes</string>
+    <string name="today">Aujourd\'hui</string>
 </resources>

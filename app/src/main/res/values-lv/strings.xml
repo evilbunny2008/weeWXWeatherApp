@@ -71,4 +71,5 @@
     <string name="custom_setting">Pielāgotas krāsas</string>
     <string name="app_theme">Lietotnes motīvs</string>
     <string name="use_icons">Rādīt ikonas</string>
+    <string name="today">Šodien</string>
 </resources>

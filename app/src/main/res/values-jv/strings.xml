@@ -65,4 +65,11 @@
     <string name="url_was_default_or_empty">URL disetel menyang standar utawa kosong</string>
     <string name="radar_url_not_set">URL Radar ora disetel utawa isih diunduh. Sampeyan bisa mbukak setelan kanggo ngganti</string>
     <string name="wasnt_able_to_connect_or_download">Ora bisa nyambung utawa ndownload ramalan kasebut</string>
+	<string name="app_theme">Tema Aplikasi</string>
+	<string name="use_icons">Gunakake Gambar</string>
+	<string name="today">Dina iki</string>
+	<string name="swipe_lock">Gesek Kunci</string>
+	<string name="widget_theme">Tema Widget</string>
+	<string name="match_app">Aplikasi Cocokan</string>
+	<string name="custom_setting">Werna Khusus</string>
 </resources>

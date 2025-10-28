@@ -71,4 +71,5 @@
     <string name="custom_setting">訂造顏色</string>
     <string name="app_theme">App 主題</string>
     <string name="use_icons">顯示圖示</string>
+    <string name="today">今日</string>
 </resources>

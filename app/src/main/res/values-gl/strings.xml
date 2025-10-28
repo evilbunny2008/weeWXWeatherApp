@@ -71,4 +71,5 @@
     <string name="custom_setting">Cores personalizadas</string>
     <string name="app_theme">Tema da aplicación</string>
     <string name="use_icons">Mostrar iconas</string>
+    <string name="today">Hoxe</string>
 </resources>

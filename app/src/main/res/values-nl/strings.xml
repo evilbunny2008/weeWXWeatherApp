@@ -71,4 +71,5 @@
     <string name="custom_setting">Aangepaste kleuren</string>
     <string name="app_theme">App-thema</string>
     <string name="use_icons">Pictogrammen weergeven</string>
+    <string name="today">Vandaag</string>
 </resources>

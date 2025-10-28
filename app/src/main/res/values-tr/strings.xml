@@ -71,4 +71,5 @@
     <string name="custom_setting">Özel Renkler</string>
     <string name="app_theme">Uygulama Teması</string>
     <string name="use_icons">Simgeleri Göster</string>
+    <string name="today">Bugün</string>
 </resources>

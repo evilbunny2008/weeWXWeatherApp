@@ -71,4 +71,5 @@
     <string name="custom_setting">Culori personalizate</string>
     <string name="app_theme">Tema aplicației</string>
     <string name="use_icons">Afișați pictograme</string>
+    <string name="today">Astăzi</string>
 </resources>

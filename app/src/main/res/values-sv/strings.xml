@@ -71,4 +71,5 @@
     <string name="custom_setting">Anpassade färger</string>
     <string name="app_theme">App-tema</string>
     <string name="use_icons">Visa ikoner</string>
+    <string name="today">I dag</string>
 </resources>

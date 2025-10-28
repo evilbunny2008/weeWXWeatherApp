@@ -71,4 +71,5 @@
     <string name="custom_setting">Barve po meri</string>
     <string name="app_theme">Tema aplikacije</string>
     <string name="use_icons">Prikaži ikone</string>
+    <string name="today">Danes</string>
 </resources>

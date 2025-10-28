@@ -71,4 +71,5 @@
     <string name="custom_setting">Mukautetut värit</string>
     <string name="app_theme">Sovelluksen teema</string>
     <string name="use_icons">Näytä kuvakkeet</string>
+    <string name="today">Tänään</string>
 </resources>

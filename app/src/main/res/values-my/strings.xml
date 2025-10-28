@@ -71,4 +71,5 @@
     <string name="custom_setting">စိတ်ကြိုက်အရောင်များ</string>
     <string name="app_theme">app ကိုအခင်းအကျင်း</string>
     <string name="use_icons">icon များကိုပြပါ</string>
+    <string name="today">ယနေ့တွင်</string>
 </resources>

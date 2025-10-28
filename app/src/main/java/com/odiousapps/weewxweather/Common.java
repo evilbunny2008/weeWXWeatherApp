@@ -19,6 +19,8 @@ import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
 import android.net.Uri;
+import android.os.Build;
+import android.os.LocaleList;
 import android.util.Base64;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +31,8 @@ import android.webkit.WebView;
 
 import com.github.evilbunny2008.colourpicker.CustomEditText;
 import com.github.evilbunny2008.xmltojson.XmlToJson;
+import com.ibm.icu.text.RuleBasedNumberFormat;
+import com.ibm.icu.util.ULocale;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -70,6 +74,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+
 import static java.lang.Math.round;
 
 @SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref",
@@ -101,54 +106,241 @@ public class Common
 
 	private static Typeface tf_bold = null;
 
+	static final float[] NEGATIVE = {
+			-1.0f, 0, 0, 0, 255, // red
+			0, -1.0f, 0, 0, 255, // green
+			0, 0, -1.0f, 0, 255, // blue
+			0, 0, 0, 1.0f, 0  // alpha
+	};
+
 	static Colours colours;
 	static String current_html_headers;
 
 	private static final String html_header = """
             <!DOCTYPE html>
-            <html lang="en">
+            <html lang="CURRENT_LANG">
             <head>
               <meta charset="utf-8">
-              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
               <meta name="color-scheme" content="light dark">
               <link rel='stylesheet' href='file:///android_asset/weathericons.css'>
               <link rel='stylesheet' href='file:///android_asset/weathericons_wind.css'>
               <link rel='stylesheet' type='text/css' href='file:///android_asset/flaticon.css'>
               <style>
-              html, body {
-                margin: 0;
-                padding: 0;
-              }
               :root {
-                color-scheme: light dark;
+                padding: 0;
+                margin: 0 0 15px 0;;
+                color: FG_HEX;
+                background-color: BG_HEX;
+                --font-icon-big: 1.5rem;
+                --font-smaller: 1rem;
+                --font-small: 1.1rem;
+                --font-average: 1.25rem;
+                --font-large: 1.35rem;
+                --font-larger: 2rem;
+                --font-big: 2rem;
+                --font-huge: 4rem;
+                text-size: var(--font-average);
+              }
+              a {
+                color: ACCENT_HEX;
+              }
+              hr {
+                border-color: GRAY_HEX;
+                width: 100%;
+                height: 1px;
+                margin: 15px;
+              }
+              html, body {
+                font-family: sans-serif;
+                font-size: var(--font-smaller);
+                text-align: left;
+                padding: 0;
+                margin: 0;
               }
               body {
-                background-color: WHITE_HEX;
-                color: BLACK_HEX;
+                overflow-x: hidden;
               }
-
-              @media (prefers-color-scheme: dark) {
-                body {
-                  background-color: BLACK_HEX;
-                  color: WHITE_HEX;
-                }
-
-                a {
-                  color: LIGHT_BLUE_ACCENT;
-                }
-
-                hr {
-                  border-color: DARK_GRAY;
-                }
-
-                img { filter: brightness(0.9) contrast(0.9); }
+              * { box-sizing: border-box; }
+              .header {
+                text-align: center;
+                font-size: var(--font-large);
               }
-            </style>
+              .today {
+                display: flex;
+                flex-direction: column;
+                margin: 0 10px 10px 10px;
+              }
+              .topRow {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+              }
+              .iconBig img, i {
+                width: 80px;
+                height: auto;
+                line-height: 1;
+                font-size: 5rem;
+                align-self: start;
+                margin-bottom: 4px;
+              }
+              .wordToday {
+                font-size: var(--font-larger);
+                font-weight: bold;
+                text-align: center;
+              }
+              .bigTemp {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                font-size: var(--font-big);
+                font-weight: bold;
+              }
+              .minTemp {
+                font-size: var(--font-large);
+              }
+              .maxTemp, .forecastMax {
+                color: #d32f2f;
+              }
+              .minTemp, .forecastMin {
+                color: #1976d2;
+              }
+              .forecastMax, .forecastMin {
+                font-size: var(--font-small);
+              }
+              .bigForecastText {
+                text-align: justify;
+                text-justify: inter-word;
+                font-size: var(--font-large);
+              }
+              .forecast {
+                display: flex;
+                flex-direction: column;
+                margin: 0 10px; 10px 10px;
+              }
+              .day {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                margin: 5px 0 10px 0;
+              }
+              .dayTopRow {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                align-items: center;
+                justify-content: space-between;
+                font-size: var(--font-average);
+                font-weight: bold;
+              }
+              .iconSmall img, i {
+                align-self: start;
+                font-size: var(--font-large);
+                width: 40px;
+                height: auto;
+                margin-right: 8px;
+              }
+              .dayTitle {
+                font-weight: bold;
+                font-size: var(--font-average);
+                margin: 0 0 2px 0;
+                text-align: center;
+                align-items: center;
+              }
+              .desc {
+                font-size: var(--font-smaller);
+                text-align: justify;
+                text-justify: inter-word;
+              }
+              .radarImage {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+                margin: 0;
+                padding: 0;
+                border: none;
+              }
+              .mainTemp {
+                font-size: var(--font-huge);
+              }
+              .apparentTemp {
+                font-size: var(--font-larger);
+                text-align: right;
+                margin: 0 10px 0 0;
+              }
+              .dataTable {
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+              }
+              .dataRow {
+                display: grid;
+                grid-template-columns: 1fr auto auto 1fr;
+                column-gap: 10px;
+                align-items: center;
+                font-size: var(--font-smaller);
+              }
+              .dataCell {
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+              }
+              .dataCell.right {
+                justify-content: flex-end;
+              }
+              .dataCell i {
+                margin-left: 10px;
+                margin-right: 10px;
+              }
+              .icon {
+                font-size: var(--font-average);
+                width: 20px;
+                text-align: center;
+                margin: 0 4px 0 4px;
+              }
+              .todayCurrent {
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+              }
+              .topRowCurrent {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0;
+                margin: 0;
+              }
+              .dataRowCurrent {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: var(--font-small);
+              }
+              .statsHeader {
+                display: flex;
+                flex-direction: row;
+                font-weight: bold;
+                font-size: var(--font-large);
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                padding: 0;
+                margin: 0 0 2px 0;
+              }
+              </style>
             </head>
             <body>
             """;
 
-	static final String html_footer = "\n</body>\n</html>";
+	static final String html_footer = "\n</body>\n</html>\n";
 
 	static final String about_blurb = "Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app " +
 		"wouldn't be possible otherwise.<br><br>" +
@@ -170,6 +362,11 @@ public class Common
 		current_html_headers = current_html_headers.replaceAll(html_tag, hex);
 	}
 
+	static void replaceHTMLString(String html_tag, String replacement)
+	{
+		current_html_headers = current_html_headers.replaceAll(html_tag, replacement);
+	}
+
 	static void reload()
 	{
 		Context context = getContext();
@@ -179,12 +376,28 @@ public class Common
 		current_html_headers = html_header;
 		colours = new Colours();
 		getDayNightMode();
-		replaceHex6String("WHITE_HEX", ContextCompat.getColor(context, R.color.White));
-		replaceHex6String("BLACK_HEX", ContextCompat.getColor(context, R.color.Black));
-		replaceHex6String("ALMOST_BLACK", colours.AlmostBlack);
-		replaceHex6String("LIGHT_BLUE_ACCENT", colours.LightBlueAccent);
-		replaceHex6String("DARK_GRAY", colours.DarkGray);
-		replaceHex6String("LIGHT_GRAY", colours.LightGray);
+		replaceHex6String("FG_HEX", KeyValue.fgColour);
+		replaceHex6String("BG_HEX", KeyValue.bgColour);
+		if(KeyValue.theme == R.style.AppTheme_weeWxWeatherApp_Dark_Common)
+		{
+			replaceHex6String("ACCENT_HEX", colours.DarkBlueAccent);
+			replaceHex6String("GRAY_HEX", colours.DarkGray);
+		} else {
+			replaceHex6String("ACCENT_HEX", colours.LightBlueAccent);
+			replaceHex6String("GRAY_HEX", colours.LightGray);
+		}
+
+		String lang = Locale.getDefault().getLanguage();
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+		{
+			LocaleList locales = context.getResources().getConfiguration().getLocales();
+			if(!locales.isEmpty())
+				lang = locales.get(0).toLanguageTag();
+		}
+
+		lang = lang.split("-")[0].trim();
+		replaceHTMLString("CURRENT_LANG", lang);
+		LogMessage("Current app language: " + lang, true);
 	}
 
 	static
@@ -495,6 +708,8 @@ public class Common
 		wv.getSettings().setBuiltInZoomControls(false);
 		wv.setVerticalScrollBarEnabled(false);
 		wv.setHorizontalScrollBarEnabled(false);
+		wv.getSettings().setLoadWithOverviewMode(true);
+		wv.getSettings().setUseWideViewPort(true);
 		wv.setWebChromeClient(new myWebChromeClient());
 	}
 
@@ -538,112 +753,97 @@ public class Common
 			return null;
 
 		StringBuilder sb = new StringBuilder();
-		String tmp;
+		int start = 0;
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm", Locale.getDefault());
 		String string_time = sdf.format(timestamp);
 
-		tmp = "\n<div style='font-size:12pt; text-align:center'>" + string_time + "</div>\n";
-		sb.append(tmp);
+		sb.append("\n<div class='header'>").append(string_time).append("</div>\n\n");
 
 		if(showHeader)
 		{
+			start = 1;
 			Day first = getFirstDay(days);
 
-			tmp = "\n<table style='width:100%;border:0px;'>";
-			sb.append(tmp);
-
-			if(first.max.equals("&deg;C") || first.max.equals("&deg;F"))
-				tmp = "<tr><td style='width:50%;font-size:48pt;'>&nbsp;</td>";
-			else
-				tmp = "<tr><td style='width:50%;font-size:48pt;'>" + first.max + "</td>";
-			sb.append(tmp);
-
+			sb.append("<div class='today'>\n\t<div class='topRow'>\n");
+			sb.append("\t\t<div class='iconBig'>\n");
 			if(!first.icon.startsWith("file:///") && !first.icon.startsWith("data:image"))
-				tmp = "<td style='width:50%;text-align:right;'><i style='font-size:80px;' class='" + first.icon + "'></i></td></tr>";
+				sb.append("\t\t\t<i class='").append(first.icon).append(" />\n");
 			else
-				tmp = "<td style='width:50%;text-align:right;'><img width='80px' src='" + first.icon + "'></td></tr>";
-			sb.append(tmp);
+				sb.append("\t\t\t<img alt='weather icon' src='").append(first.icon.replaceAll("\n", "").replaceAll("\r", "")).append("' />\n");
+			sb.append("\t\t</div>\n");
 
-			if(first.min.equals("&deg;C") || first.min.equals("&deg;F"))
-			{
-				tmp = "<tr><td style='text-align:right;font-size:16pt;' colspan='2'>" + first.text + "</td></tr></table><br />";
-			} else {
-				tmp = "<tr><td style='font-size:16pt;'>" + first.min + "</td>";
-				sb.append(tmp);
-				tmp = "<td style='text-align:right;font-size:16pt;'>" + first.text + "</td></tr></table><br />";
-			}
-			sb.append(tmp);
+			sb.append("\t\t<div class='wordToday'>").append(getString(R.string.today)).append("</div>\n");
 
-			tmp = "\n<table style='width:100%;border:0px;'>";
-			sb.append(tmp);
+			sb.append("\t\t<div class='bigTemp'>\n");
 
-			for(int i = 1; i < days.size(); i++)
-			{
-				Day day = days.get(i);
-				if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
-					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='" + day.icon + "'></i></td>";
-				else
-					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><img width='40px' src='" + day.icon + "'></td>";
-				sb.append(tmp);
+			sb.append("\t\t\t<div class='maxTemp'>");
+			if(first.max.isEmpty() || first.max.equals("&deg;C") || first.max.equals("&deg;F"))
+				sb.append("&nbsp;");
+			else
+				sb.append(first.max);
+			sb.append("</div>\n");
 
-				tmp = "<td style='width:65%;'><b>" + day.day + "</b></td>";
-				sb.append(tmp);
+			sb.append("\t\t\t<div class='minTemp'>");
+			if(first.min.isEmpty() || first.min.equals("&deg;C") || first.min.equals("&deg;F"))
+				sb.append("&nbsp;");
+			else
+				sb.append(first.min);
+			sb.append("</div>\n\t\t</div>\n\t</div>\n");
 
-				if(day.max.equals("&deg;C") || day.max.equals("&deg;F"))
-					tmp = "<td style='width:25%;text-align:right;vertical-align:top;'>&nbsp;</td></tr>";
-				else
-					tmp = "<td style='width:25%;text-align:right;vertical-align:top;'><b>" + day.max + "</b></td></tr>";
-				sb.append(tmp);
-
-				if(day.min.equals("&deg;C") || day.min.equals("&deg;F"))
-				{
-					tmp = "<tr><td colspan='2'>" + day.text + "</td></tr>";
-				} else {
-					tmp = "<tr><td>" + day.text + "</td>";
-					sb.append(tmp);
-					tmp = "<td style='width:10%;text-align:right;vertical-align:top;'>" + day.min + "</td></tr>";
-				}
-				sb.append(tmp);
-
-				tmp = "<tr><td style='font-size:4pt;' colspan='5'>&nbsp;</td></tr>";
-				sb.append(tmp);
-			}
-
-		} else {
-			tmp = "\n<table style='width:100%;'>\n";
-			sb.append(tmp);
-
-			for (Day day : days)
-			{
-				if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
-					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><i style='font-size:30px;' class='" + day.icon + "'></i></td>";
-				else
-					tmp = "<tr><td style='width:10%;vertical-align:top;' rowspan='2'><img width='40px' src='" + day.icon + "'></td>";
-				sb.append(tmp);
-
-				tmp = "<td style='width:80%;'><b>" + day.day + "</b></td>";
-				sb.append(tmp);
-
-				if(!day.max.equals("&deg;C") && !day.max.equals("&deg;F"))
-					tmp = "<td style='width:10%;text-align:right;vertical-align:top;'><b>" + day.max + "</b></td></tr>";
-				else
-					tmp = "<td style='width:10%;'><b>&nbsp;</b></td></tr>";
-				sb.append(tmp);
-
-				if(day.min.equals("&deg;C") || day.min.equals("&deg;F"))
-				{
-					tmp = "<tr><td colspan='2'>" + day.text + "</td></tr>";
-				} else {
-					tmp = "<tr><td>" + day.text + "</td>";
-					sb.append(tmp);
-					tmp = "<td style='width:10%;text-align:right;vertical-align:top;'>" + day.min + "</td></tr>";
-				}
-				sb.append(tmp);
-			}
-
+			sb.append("\t<div class='bigForecastText'>\n\t\t");
+			sb.append(first.text);
+			sb.append("\n\t</div>\n</div>\n\n");
 		}
-		sb.append("</table>");
+
+		sb.append("<div class='forecast'>\n\n");
+
+		for(int i = start; i < days.size(); i++)
+		{
+			Day day = days.get(i);
+
+			if(i > 0)
+				sb.append("\t<hr />\n\n");
+
+			sb.append("\t<div class='day'>\n\t\t<div class='dayTopRow'>\n");
+
+			sb.append("\t\t\t<div class='iconSmall'>\n");
+			if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
+				sb.append("\t\\t\tt<i class='").append(day.icon).append("'></i>\n");
+			else
+				sb.append("\t\t\t\t<img alt='weather icon' src='").append(day.icon.replaceAll("\n", "").replaceAll("\r", "")).append("' />\n");
+			sb.append("\t\t\t</div>\n");
+
+			sb.append("\t\t\t<div class='dayTitle'>");
+			sb.append(day.day).append("</div>\n");
+
+			sb.append("\t\t\t<div class='smallTemp'>\n");
+			sb.append("\t\t\t\t<div class='forecastMax'>");
+			if(day.max.equals("&deg;C") || day.max.equals("&deg;F"))
+				sb.append("N/A");
+			else
+				sb.append(day.max);
+			sb.append("</div>\n");
+
+			sb.append("\t\t\t\t<div class='forecastMin'>");
+			if(day.min.equals("&deg;C") || day.min.equals("&deg;F"))
+				sb.append("N/A");
+			else
+				sb.append(day.min);
+			sb.append("</div>\n\t\t\t</div>\n\t\t</div>\n");
+
+			sb.append("\t\t<div class='desc'>\n\t\t\t");
+			sb.append(day.text).append("\n\t\t</div>\n");
+
+			sb.append("\t</div>\n\n");
+		}
+
+		sb.append("</div>\n");
+
+		String str = Common.current_html_headers + sb + Common.html_footer;
+
+		CustomDebug.writeDebug("top_weeWX.html", str);
+
 		return sb.toString();
 	}
 
@@ -702,11 +902,11 @@ public class Common
 			if(df != null)
 				timestamp = df.getTime();
 
-			String[] bits = fcdiv.split("<dl class=\"forecast-summary\">");
+			String[] bits = fcdiv.split("<dl class='forecast-summary'>");
 			String bit = bits[1];
 			Day day = new Day();
 
-			day.day = bit.split("<a href=\"", 2)[1].split("\">", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
+			day.day = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
 			sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
 			day.timestamp = 0;
@@ -717,15 +917,15 @@ public class Common
 			sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			day.day = sdf.format(day.timestamp);
 
-			day.icon = "https://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
+			day.icon = "https://www.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].trim();
 
-			if(bit.contains("<dd class=\"max\">"))
-				day.max = bit.split("<dd class=\"max\">")[1].split("</dd>")[0].trim();
+			if(bit.contains("<dd class='max'>"))
+				day.max = bit.split("<dd class='max'>")[1].split("</dd>")[0].trim();
 
-			if(bit.contains("<dd class=\"min\">"))
-				day.min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
+			if(bit.contains("<dd class='min'>"))
+				day.min = bit.split("<dd class='min'>")[1].split("</dd>")[0].trim();
 
-			day.text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
+			day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].trim();
 
 			String fileName =  day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length() - 4);
 
@@ -776,7 +976,7 @@ public class Common
 			{
 				day = new Day();
 				bit = bits[i];
-				day.day = bit.split("<a href=\"", 2)[1].split("\">", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
+				day.day = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 				day.timestamp = 0;
 				df = sdf.parse(day.day);
@@ -786,10 +986,10 @@ public class Common
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
-				day.icon = "https://www.bom.gov.au" + bit.split("<img src=\"", 2)[1].split("\" alt=\"", 2)[0].trim();
-				day.max = bit.split("<dd class=\"max\">")[1].split("</dd>")[0].trim();
-				day.min = bit.split("<dd class=\"min\">")[1].split("</dd>")[0].trim();
-				day.text = bit.split("<dd class=\"summary\">")[1].split("</dd>")[0].trim();
+				day.icon = "https://www.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].trim();
+				day.max = bit.split("<dd class='max'>")[1].split("</dd>")[0].trim();
+				day.min = bit.split("<dd class='min'>")[1].split("</dd>")[0].trim();
+				day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].trim();
 
 				fileName = day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length() - 4);
 
@@ -960,15 +1160,14 @@ public class Common
 		icon = icon.replace("-", "_");
 
 		return switch (icon)
-				{
-					case "shower" -> "showers";
-					case "dusty" -> "dust";
-					case "mostly_sunny" -> "partly_cloudy";
-					case "light_shower" -> "light_showers";
-					case "windy" -> "wind";
-					default -> icon;
-				};
-
+		{
+			case "shower" -> "showers";
+			case "dusty" -> "dust";
+			case "mostly_sunny" -> "partly_cloudy";
+			case "light_shower" -> "light_showers";
+			case "windy" -> "wind";
+			default -> icon;
+		};
 	}
 
 	static String[] processMET(String data)
@@ -991,11 +1190,11 @@ public class Common
 		{
 			desc = data.split("<title>", 2)[1].split(" weather - Met Office</title>",2)[0].trim();
 
-			String[] forecasts = data.split("<ul id=\"dayNav\"", 2)[1].split("</ul>", 2)[0].split("<li");
+			String[] forecasts = data.split("<ul id='dayNav'", 2)[1].split("</ul>", 2)[0].split("<li");
 			for(int i = 1; i < forecasts.length; i++)
 			{
 				Day day = new Day();
-				String date = forecasts[i].split("data-tab-id=\"", 2)[1].split("\"")[0].trim();
+				String date = forecasts[i].split("data-tab-id='", 2)[1].split("'")[0].trim();
 
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
@@ -1007,11 +1206,11 @@ public class Common
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
-				String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class=\"icon\"")[1].split("src=\"")[1].split("\">")[0].trim();
+				String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class='icon'")[1].split("src='")[1].split("'>")[0].trim();
 				String fileName =  icon.substring(icon.lastIndexOf('/') + 1).replaceAll("\\.svg$", ".png");
-				day.min = forecasts[i].split("<span class=\"tab-temp-low\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
-				day.max = forecasts[i].split("<span class=\"tab-temp-high\"", 2)[1].split("\">")[1].split("</span>")[0].trim();
-				day.text = forecasts[i].split("<div class=\"summary-text", 2)[1].split("\">", 3)[2]
+				day.min = forecasts[i].split("<span class='tab-temp-low'", 2)[1].split("'>")[1].split("</span>")[0].trim();
+				day.max = forecasts[i].split("<span class='tab-temp-high'", 2)[1].split("'>")[1].split("</span>")[0].trim();
+				day.text = forecasts[i].split("<div class='summary-text", 2)[1].split("'>", 3)[2]
 									.split("</div>", 2)[0].replaceAll("</span>", "").replaceAll("<span>", "");
 
 				day.min = day.min.substring(0, day.min.length() - 5);
@@ -1109,13 +1308,13 @@ public class Common
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
-			desc = data.split("<dt>Observed at:</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
+			desc = data.split("<dt>Observed at:</dt>", 2)[1].split("<dd class='mrgn-bttm-0'>")[1].split("</dd>")[0].trim();
 
-			data = data.split("<div class=\"div-table\">", 2)[1].trim();
-			data = data.split("<section><details open=\"open\" class=\"wxo-detailedfore\">")[0].trim();
+			data = data.split("<div class='div-table'>", 2)[1].trim();
+			data = data.split("<section><details open='open' class='wxo-detailedfore'>")[0].trim();
 			data = data.substring(0, data.length() - 7).trim();
 
-			String[] bits = data.split("<div class=\"div-column\">");
+			String[] bits = data.split("<div class='div-column'>");
 
 			for(i = 1; i < bits.length; i++)
 			{
@@ -1142,7 +1341,7 @@ public class Common
 							date = "Night";
 							day.timestamp = lastTS;
 						} else {
-							date = div.get(j).html().split("<strong title=\"", 2)[1].split("\">", 2)[0].trim();
+							date = div.get(j).html().split("<strong title='", 2)[1].split("'>", 2)[0].trim();
 							day.timestamp = convertDaytoTS(date, Locale.CANADA, lastTS);
 						}
 					} else
@@ -1164,8 +1363,8 @@ public class Common
 								temp = div.get(j).select("div").select("span").html().split("<abbr")[0].trim() + "C";
 							else
 								temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].trim() + "F";
-							text = div.get(j).select("div").select("img").outerHtml().split("alt=\"", 2)[1].split("\"", 2)[0].trim();
-							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src=\"", 2)[1].split("\"", 2)[0].trim();
+							text = div.get(j).select("div").select("img").outerHtml().split("alt='", 2)[1].split("'", 2)[0].trim();
+							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src='", 2)[1].split("'", 2)[0].trim();
 							pop = div.get(j).select("div").select("small").html().trim();
 						}
 					} catch (Exception e) {
@@ -1256,13 +1455,13 @@ public class Common
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
-			desc = data.split("<dt>Enregistrées à :</dt>", 2)[1].split("<dd class=\"mrgn-bttm-0\">")[1].split("</dd>")[0].trim();
+			desc = data.split("<dt>Enregistrées à :</dt>", 2)[1].split("<dd class='mrgn-bttm-0'>")[1].split("</dd>")[0].trim();
 
-			data = data.split("<div class=\"div-table\">", 2)[1].trim();
-			data = data.split("<section><details open=\"open\" class=\"wxo-detailedfore\">")[0].trim();
+			data = data.split("<div class='div-table'>", 2)[1].trim();
+			data = data.split("<section><details open='open' class='wxo-detailedfore'>")[0].trim();
 			data = data.substring(0, data.length() - 7).trim();
 
-			bits = data.split("<div class=\"div-column\">");
+			bits = data.split("<div class='div-column'>");
 
 			for(i = 1; i < bits.length; i++)
 			{
@@ -1289,7 +1488,7 @@ public class Common
 							date = "Nuit";
 							day.timestamp = lastTS;
 						} else {
-							date = div.get(j).html().split("<strong title=\"", 2)[1].split("\">", 2)[0].trim();
+							date = div.get(j).html().split("<strong title='", 2)[1].split("'>", 2)[0].trim();
 							day.timestamp = convertDaytoTS(date, Locale.CANADA_FRENCH, lastTS);
 						}
 					} else
@@ -1311,8 +1510,8 @@ public class Common
 								temp = div.get(j).select("div").select("span").html().split("<abbr")[0].trim() + "C";
 							else
 								temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].trim() + "F";
-							text = div.get(j).select("div").select("img").outerHtml().split("alt=\"", 2)[1].split("\"", 2)[0].trim();
-							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src=\"", 2)[1].split("\"", 2)[0].trim();
+							text = div.get(j).select("div").select("img").outerHtml().split("alt='", 2)[1].split("'", 2)[0].trim();
+							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src='", 2)[1].split("'", 2)[0].trim();
 							pop = div.get(j).select("div").select("small").html().trim();
 						}
 					} catch (Exception e) {
@@ -1860,16 +2059,16 @@ public class Common
 			if(bits.length >= 2)
 				desc = bits[1].split("</title>")[0];
 			desc = desc.substring(desc.lastIndexOf(" - ") + 3).trim();
-			String string_time = data.split("<tr class=\"headRow\">", 2)[1].split("</tr>", 2)[0].trim();
-			String date = string_time.split("<td width=\"30%\" class=\"stattime\">", 2)[1].split("</td>", 2)[0].trim();
-			string_time = date + " " + string_time.split("<td width=\"40%\" class=\"stattime\">", 2)[1].split(" Uhr</td>", 2)[0].trim();
+			String string_time = data.split("<tr class='headRow'>", 2)[1].split("</tr>", 2)[0].trim();
+			String date = string_time.split("<td width='30%' class='stattime'>", 2)[1].split("</td>", 2)[0].trim();
+			string_time = date + " " + string_time.split("<td width='40%' class='stattime'>", 2)[1].split(" Uhr</td>", 2)[0].trim();
 
 			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy' 'HH", Locale.getDefault());
 			Date df = sdf.parse(string_time);
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
-			data = data.split("<td width=\"40%\" class=\"statwert\">Vorhersage</td>", 2)[1].split("</table>", 2)[0].trim();
+			data = data.split("<td width='40%' class='statwert'>Vorhersage</td>", 2)[1].split("</table>", 2)[0].trim();
 			bits = data.split("<tr");
 			for(int i = 1; i < bits.length; i++)
 			{
@@ -1889,15 +2088,15 @@ public class Common
 					day.day = sdf.format(day.timestamp) + " " + day.day.substring(day.day.lastIndexOf(" ") + 1);
 				}
 
-				if(bit.split("<td ><img name=\"piktogramm\" src=\"", 2).length > 1)
-					icon = bit.split("<td ><img name=\"piktogramm\" src=\"", 2)[1].split("\" width=\"50\" alt=\"", 2)[0].trim();
+				if(bit.split("<td ><img name='piktogramm' src='", 2).length > 1)
+					icon = bit.split("<td ><img name='piktogramm' src='", 2)[1].split("' width='50' alt='", 2)[0].trim();
 				else
-					icon = bit.split("<td><img name=\"piktogramm\" src=\"", 2)[1].split("\" width=\"50\" alt=\"", 2)[0].trim();
+					icon = bit.split("<td><img name='piktogramm' src='", 2)[1].split("' width='50' alt='", 2)[0].trim();
 
-				if(bit.split("\"></td>\r\n<td >", 2).length > 1)
-					temp = bit.split("\"></td>\r\n<td >", 2)[1].split("Grad <abbr title=\"Celsius\">C</abbr></td>\r\n", 2)[0].trim();
+				if(bit.split("'></td>\r\n<td >", 2).length > 1)
+					temp = bit.split("'></td>\r\n<td >", 2)[1].split("Grad <abbr title='Celsius'>C</abbr></td>\r\n", 2)[0].trim();
 				else
-					temp = bit.split("\"></td>\r\n<td>", 2)[1].split("Grad <abbr title=\"Celsius\">C</abbr></td>\r\n", 2)[0].trim();
+					temp = bit.split("'></td>\r\n<td>", 2)[1].split("Grad <abbr title='Celsius'>C</abbr></td>\r\n", 2)[0].trim();
 
 				icon = icon.replaceAll("/DE/wetter/_functions/piktos/vhs_", "").replaceAll("\\?__blob=normal", "").trim();
 				String fileName = "dwd_" + icon.replaceAll("-", "_");
@@ -1962,9 +2161,9 @@ public class Common
 
 		try
 		{
-			String stuff = data.split("<div id=\"weatherDayNavigator\">", 2)[1].trim();
+			String stuff = data.split("<div id='weatherDayNavigator'>", 2)[1].trim();
 			stuff = stuff.split("<h2>", 2)[1].trim();
-			desc = stuff.split(" <span class=\"day\">")[0].trim();
+			desc = stuff.split(" <span class='day'>")[0].trim();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String string_time = sdf.format(System.currentTimeMillis());
 			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
@@ -1979,7 +2178,7 @@ public class Common
 				Day day = new Day();
 				String bit = bits[i].trim();
 				String icon;
-				day.day = bit.split("<td class=\"timeweek\">")[1].split("\">")[1].split("</a></td>", 2)[0].trim();
+				day.day = bit.split("<td class='timeweek'>")[1].split("'>")[1].split("</a></td>", 2)[0].trim();
 
 				Locale locale = new Locale.Builder().setLanguage("it").setRegion("IT").build();
 				day.timestamp = convertDaytoTS(day.day, locale, lastTS);
@@ -1989,7 +2188,7 @@ public class Common
 					day.day = sdf.format(day.timestamp) + " " + day.day.substring(day.day.lastIndexOf(" ") + 1);
 				}
 
-				icon = bit.split("<td class=\"skyIcon\"><img src=\"", 2)[1].split("\" alt=\"",2)[0].trim();
+				icon = bit.split("<td class='skyIcon'><img src='", 2)[1].split("' alt='",2)[0].trim();
 				String[] ret = checkFilesIt(icon);
 				if(ret[0] != null)
 				{
@@ -2006,10 +2205,10 @@ public class Common
 					return ret;
 //				LogMessage("day.icon=" + day.icon);
 
-				day.max = bit.split("<td class=\"tempmax\">", 2)[1].split("°C</td>", 2)[0].trim();
-				day.min = bit.split("<td class=\"tempmin\">", 2)[1].split("°C</td>", 2)[0].trim();
+				day.max = bit.split("<td class='tempmax'>", 2)[1].split("°C</td>", 2)[0].trim();
+				day.min = bit.split("<td class='tempmin'>", 2)[1].split("°C</td>", 2)[0].trim();
 
-				day.text = bit.split("<td class=\"skyDesc\">")[1].split("</td>")[0].trim();
+				day.text = bit.split("<td class='skyDesc'>")[1].split("</td>")[0].trim();
 
 				if(!use_icons)
 				{
@@ -2780,8 +2979,8 @@ public class Common
 					continue;
 
 				String[] mybits = tmp[1].split("<br />");
-				String myimg = mybits[1].trim().replaceAll("<img src=\"https://www.weatherzone.com.au/images/icons/fcast_30/", "")
-									.replaceAll("\">", "").replaceAll(".gif", "").replaceAll("_", "-").trim();
+				String myimg = mybits[1].trim().replaceAll("<img src='https://www.weatherzone.com.au/images/icons/fcast_30/", "")
+									.replaceAll("'>", "").replaceAll(".gif", "").replaceAll("_", "-").trim();
 				String mydesc = mybits[2].trim();
 				String[] range = mybits[3].split(" - ", 2);
 
@@ -2906,11 +3105,11 @@ public class Common
 
 		try
 		{
-			String[] bits = data.split("data-reactid=\"7\">", 8);
+			String[] bits = data.split("data-reactid='7'>", 8);
 			String[] b = bits[7].split("</h1>", 2);
 			String town = b[0];
 			String rest = b[1];
-			b = rest.split("data-reactid=\"8\">", 2)[1].split("</div>", 2);
+			b = rest.split("data-reactid='8'>", 2)[1].split("</div>", 2);
 			String country = b[0];
 			rest = b[1];
 
@@ -2928,8 +3127,8 @@ public class Common
 				else
 					endid = startid + 19;
 
-				String tmpstr = rest.split("<span data-reactid=\"" + startid + "\">", 2)[1];
-				bits = tmpstr.split("data-reactid=\"" + endid + "\">", 2);
+				String tmpstr = rest.split("<span data-reactid='" + startid + "'>", 2)[1];
+				bits = tmpstr.split("data-reactid='" + endid + "'>", 2);
 				tmpstr = bits[0];
 				rest = bits[1];
 				String dow = tmpstr.split("</span>", 2)[0].trim();
@@ -2938,13 +3137,13 @@ public class Common
 				SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				myday.day = sdf.format(myday.timestamp);
 
-				myday.text = tmpstr.split("<img alt=\"", 2)[1].split("\"", 2)[0].trim();
-				myday.icon = tmpstr.split("<img alt=\"", 2)[1].split("\"", 2)[1];
-				myday.icon = myday.icon.split("src=\"", 2)[1].split("\"", 2)[0].trim();
+				myday.text = tmpstr.split("<img alt='", 2)[1].split("'", 2)[0].trim();
+				myday.icon = tmpstr.split("<img alt='", 2)[1].split("'", 2)[1];
+				myday.icon = myday.icon.split("src='", 2)[1].split("'", 2)[0].trim();
 
-				myday.max = tmpstr.split("data-reactid=\"" + (startid + 10) + "\">", 2)[1];
+				myday.max = tmpstr.split("data-reactid='" + (startid + 10) + "'>", 2)[1];
 				myday.max = myday.max.split("</span>", 2)[0].trim();
-				myday.min = tmpstr.split("data-reactid=\"" + (startid + 13) + "\">", 2)[1];
+				myday.min = tmpstr.split("data-reactid='" + (startid + 13) + "'>", 2)[1];
 				myday.min = myday.min.split("</span>", 2)[0].trim();
 
 				doc = Jsoup.parse(myday.max.trim());
@@ -3872,6 +4071,13 @@ public class Common
 		t.start();
 	}
 
+	public static String dayOfMonth(int day)
+	{
+		ULocale locale = ULocale.getDefault();
+		RuleBasedNumberFormat rbnf = new RuleBasedNumberFormat(locale, RuleBasedNumberFormat.ORDINAL);
+		return rbnf.format(day);
+	}
+
 	static void getDayNightMode()
 	{
 		Context context = getContext();
@@ -4013,6 +4219,7 @@ public class Common
 
 		public int AlmostBlack = 0xFF121212;
 		public int LightBlueAccent = 0xFF82B1FF;
+		public int DarkBlueAccent = 0xFF1E88E5;
 		public int DarkGray = 0xFF333333;
 		public int LightGray = 0xFFE0E0E0;
 
@@ -4029,6 +4236,7 @@ public class Common
 
 				AlmostBlack = ContextCompat.getColor(context, R.color.AlmostBlack);
 				LightBlueAccent = ContextCompat.getColor(context, R.color.LightBlueAccent);
+				DarkBlueAccent = ContextCompat.getColor(context, R.color.DarkBlueAccent);
 				DarkGray = ContextCompat.getColor(context, R.color.DarkGray);
 				LightGray = ContextCompat.getColor(context, R.color.LightGray);
 			}

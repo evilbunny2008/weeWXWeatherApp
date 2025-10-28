@@ -71,4 +71,5 @@
     <string name="custom_setting">Персонализирани цветове</string>
     <string name="app_theme">Тема на приложението</string>
     <string name="use_icons">Показване на икони</string>
+    <string name="today">Днес</string>
 </resources>

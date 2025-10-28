@@ -71,4 +71,5 @@
     <string name="custom_setting">Individualios spalvos</string>
     <string name="app_theme">Programos tema</string>
     <string name="use_icons">Rodyti piktogramas</string>
+    <string name="today">Šiandien</string>
 </resources>

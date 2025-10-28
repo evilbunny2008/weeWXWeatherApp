@@ -71,4 +71,5 @@
     <string name="custom_setting">Custom Colors</string>
     <string name="app_theme">App Theme</string>
     <string name="use_icons">Prikaži ikone</string>
+    <string name="today">Danas</string>
 </resources>

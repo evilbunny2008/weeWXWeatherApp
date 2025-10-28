@@ -71,4 +71,5 @@
     <string name="custom_setting">Niestandardowe kolory</string>
     <string name="app_theme">Motyw aplikacji</string>
     <string name="use_icons">Pokaż ikony</string>
+    <string name="today">Dzisiaj</string>
 </resources>

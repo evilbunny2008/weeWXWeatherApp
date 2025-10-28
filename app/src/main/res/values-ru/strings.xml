@@ -71,4 +71,5 @@
     <string name="custom_setting">Пользовательские цвета</string>
     <string name="app_theme">Тема приложения</string>
     <string name="use_icons">Показать значки</string>
+    <string name="today">Сегодня</string>
 </resources>

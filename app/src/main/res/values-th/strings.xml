@@ -71,4 +71,5 @@
     <string name="custom_setting">สีที่กำหนดเอง</string>
     <string name="app_theme">ธีมแอป</string>
     <string name="use_icons">แสดงไอคอน</string>
+    <string name="today">วันนี้</string>
 </resources>

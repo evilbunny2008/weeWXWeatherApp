@@ -71,4 +71,5 @@
     <string name="custom_setting">Benotzerdefinéiert Faarwen</string>
     <string name="app_theme">App Thema</string>
     <string name="use_icons">Ikonen weisen</string>
+    <string name="today">Haut</string>
 </resources>

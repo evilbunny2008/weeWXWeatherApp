@@ -71,4 +71,5 @@
     <string name="custom_setting">მორგებული ფერები</string>
     <string name="app_theme">აპლიკაციის თემა</string>
     <string name="use_icons">ხატების ჩვენება</string>
+    <string name="today">დღეს</string>
 </resources>

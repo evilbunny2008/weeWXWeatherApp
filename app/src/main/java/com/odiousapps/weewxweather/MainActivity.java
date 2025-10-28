@@ -96,9 +96,7 @@ public class MainActivity extends FragmentActivity
 
 		boolean isTablet = getResources().getConfiguration().smallestScreenWidthDp >= 720;
 
-		if(isTablet)
-			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-		else
+		if(!isTablet)
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		setContentView(R.layout.main_activity);

@@ -71,4 +71,5 @@
     <string name="custom_setting">Жеке түстер</string>
     <string name="app_theme">Қолданба тақырыбы</string>
     <string name="use_icons">Белгішелерді көрсету</string>
+    <string name="today">Бүгін</string>
 </resources>

@@ -33,7 +33,8 @@ public class Weather extends Fragment implements View.OnClickListener
 	private SwipeRefreshLayout swipeLayout;
 	private MaterialCheckBox floatingCheckBox;
 	private LinearLayout fll;
-	private boolean isVisible;
+	private boolean isVisible = false;
+	private boolean isRunning = false;
 	private boolean disableSwipeOnRadar;
 	private boolean disabledSwipe;
 	private MainActivity activity;
@@ -56,7 +57,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		tv2.setTextColor(KeyValue.fgColour);
 
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-		swipeLayout.setRefreshing(true);
 		swipeLayout.setBackgroundColor(KeyValue.bgColour);
 		fll.setBackgroundColor(KeyValue.bgColour);
 
@@ -94,7 +94,7 @@ public class Weather extends Fragment implements View.OnClickListener
 							current.getResources().getDisplayMetrics().density) +
 							tv1.getHeight() + tv2.getHeight();
 					ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
-					params.height = contentHeightPx - (int)(10 * current.getResources().getDisplayMetrics().density);
+					params.height = contentHeightPx; // - (int)(5 * current.getResources().getDisplayMetrics().density);
 					swipeLayout.setLayoutParams(params);
 					Common.LogMessage("New Height: " + contentHeightPx, true);
 					//view.setLayoutParams(params);
@@ -117,7 +117,6 @@ public class Weather extends Fragment implements View.OnClickListener
 	void drawEverything()
 	{
 		String[] bits;
-		int iw = 17;
 
 		Common.LogMessage("drawEverything()");
 
@@ -148,69 +147,96 @@ public class Weather extends Fragment implements View.OnClickListener
 		checkFields(tv1, bits[56]);
 		checkFields(tv2, bits[54] + " " + bits[55]);
 
-		String stmp;
 		final StringBuilder sb = new StringBuilder();
 
 		sb.append(Common.current_html_headers);
-		sb.append("<table style='width:100%;border:0px;'>");
 
-		stmp = "<tr><td style='font-size:36pt;text-align:right;'>" + bits[0] + bits[60] + "</td>";
+		sb.append("\n<div class='todayCurrent'>\n");
+		sb.append("\t<div class='topRowCurrent'>\n");
+		sb.append("\t\t<div class='mainTemp'>");
+		sb.append(bits[0]).append(bits[60]);
+		sb.append("</div>\n");
+
+		sb.append("\t\t<div class='apparentTemp'>AT: ");
 		if(bits.length > 203)
-			stmp += "<td style='font-size:18pt;text-align:right;vertical-align:bottom;'>AT: " + bits[203] + bits[60] +"</td></tr></table>\n";
+			sb.append(bits[203]).append(bits[60]);
 		else
-			stmp += "<td>&nbsp</td></tr></table>\n";
-		sb.append(stmp);
-		sb.append("<table style='width:100%;border:0px;'>\n");
+			sb.append("&nbsp;");
+		sb.append("</div>\n\t</div>\n\n");
 
-		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-windy'></i></td><td>" +
-				bits[25] + bits[61] + "</td>" + "<td style='text-align:right;'>" + bits[37] +
-				bits[63] + "</td><td><i style='font-size:" + iw + "px;' class='wi wi-barometer'></i></td></tr>\n";
-		sb.append(stmp);
+		sb.append("\t<div class='dataTable'>\n");
 
-		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-wind wi-towards-" +
-				bits[30].toLowerCase(Locale.ENGLISH) + "'></i></td><td>" + bits[30] + "</td>" +
-				"<td style='text-align:right;'>" + bits[6] + bits[64] + "</td><td><i style='font-size:" + iw +
-				"px;' class='wi wi-humidity'></i></td></tr>\n";
-		sb.append(stmp);
+		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		String rain = bits[20] + bits[62] + " " + Common.getString(R.string.since) + " mn";
+		sb.append("\t\t\t<div class='dataCell'><i class='flaticon-windy icon'></i>")
+				.append(bits[25]).append(bits[61]).append("</div>\n");
+		sb.append("\t\t\t<div class='dataCell right'>")
+				.append(bits[37]).append(bits[63]).append("<i class='wi wi-barometer icon'></i></div>\n");
+
+		sb.append("\t\t</div>\n");
+
+		sb.append("\t\t<div class='dataRowCurrent'>\n");
+
+		sb.append("\t\t\t<div class='dataCell'><i class='wi wi-wind wi-towards-").append(bits[30].toLowerCase(Locale.ENGLISH))
+				.append(" icon'></i>").append(bits[30]).append("</div>\n");
+		sb.append("\t\t\t<div class='dataCell right'>").append(bits[6]).append(bits[64])
+				.append("<i class='wi wi-humidity icon'></i></div>\n");
+
+		sb.append("\t\t</div>\n");
+
+		sb.append("\t\t<div class='dataRowCurrent'>\n");
+
+		String rain = bits[20] + bits[62] + " " + Common.getString(R.string.since) + " mm";
 		if(bits.length > 160 && !bits[160].isEmpty())
 			rain = bits[158] + bits[62] + " " + Common.getString(R.string.since) + " " + bits[160];
 
-		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='wi wi-umbrella'></i></td><td>" + rain + "</td>" +
-				"<td style='text-align:right;'>" + bits[12] + bits[60] + "</td><td><i style='font-size:" +
-				round(iw * 1.4) + "px;' class='wi wi-raindrop'></i></td></tr>\n";
-		sb.append(stmp);
+		sb.append("\t\t\t<div class='dataCell'><i class='wi wi-umbrella icon'></i>")
+				.append(rain).append("</div>\n");
+		sb.append("\t\t\t<div class='dataCell right'>").append(bits[12]).append(bits[60])
+				.append("<i class='wi wi-raindrop icon' style='font-size:24px;'></i></div>");
 
-		stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td><td>" +
-				bits[45] + "UVI</td>" + "<td style='text-align:right;'>" + bits[43] +
-				"W/m²</td><td><i style='font-size:" + iw + "px;' class='flaticon-women-sunglasses'></i></td></tr>\n";
-		sb.append(stmp);
+		sb.append("\t\t</div>\n");
+
+		sb.append("\t\t<div class='dataRowCurrent'>\n");
+
+		sb.append("\t\t\t<div class='dataCell'><i class='flaticon-women-sunglasses icon'></i>")
+				.append(bits[45]).append(" UVI</div>\n");
+		sb.append("\t\t\t<div class='dataCell right'>").append(bits[43])
+				.append(" W/m²<i class='flaticon-women-sunglasses icon'></i></div>");
+
+		sb.append("\t\t</div>\n");
 
 		if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
 		{
-			stmp = "<tr><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td><td>" +
-					bits[161] + bits[60] + "</td>" + "<td style='text-align:right;'>" + bits[166] + bits[64] +
-					"</td><td><i style='font-size:" + iw + "px;' class='flaticon-home-page'></i></td></tr>\n";
-			sb.append(stmp);
+			sb.append("\t\t<div class='dataRowCurrent'>\n");
+
+			sb.append("\t\t\t<div class='dataCell'><i class='flaticon-home-page icon'></i>")
+					.append(bits[161]).append(bits[60]).append("</div>\n");
+			sb.append("\t\t\t<div class='dataCell right'>").append(bits[166]).append(bits[64])
+					.append(" <i class='flaticon-home-page icon'></i></div>\n");
+
+			sb.append("\t\t</div>\n");
 		}
 
-		stmp = "</table>\n";
-		sb.append(stmp);
+		sb.append("\t</div>\n\n");
 
-		sb.append("<table style='width:100%;border:0px;'>");
+		sb.append("\t<div class='dataRowCurrent'>\n");
 
-		stmp = "<tr>" +
-				"<td><i style='font-size:" + iw + "px;' class='wi wi-sunrise'></i></td><td>" + bits[57] + "</td>" +
-				"<td><i style='font-size:" + iw + "px;' class='wi wi-sunset'></i></td><td>" + bits[58] + "</td>" +
-				"<td><i style='font-size:" + iw + "px;' class='wi wi-moonrise'></i></td><td>" + bits[47] + "</td>" +
-				"<td><i style='font-size:" + iw + "px;' class='wi wi-moonset'></i></td><td>" + bits[48] + "</td></tr>\n";
-		sb.append(stmp);
+		sb.append("\t\t<div class='dataCell'><i class='wi wi-sunrise icon'></i> ").append(bits[57]).append("</div>\n");
+		sb.append("\t\t<div class='dataCell right'>").append(bits[58]).append(" <i class='wi wi-sunset icon'></i></div>\n");
 
-		stmp = "</table>\n";
-		sb.append(stmp);
+		sb.append("\t</div>\n\n");
+
+		sb.append("\t<div class='dataRowCurrent'>\n");
+
+		sb.append("\t\t<div class='dataCell'><i class='wi wi-moonrise icon'></i> ").append(bits[47]).append("</div>\n");
+		sb.append("\t\t<div class='dataCell right'>").append(bits[48]).append(" <i class='wi wi-moonset icon'></i></div>\n");
+
+		sb.append("\t</div>\n</div>\n");
 
 		sb.append(Common.html_footer);
+
+		CustomDebug.writeDebug("current_weewx.html", sb.toString());
 
 		forceCurrentRefresh(sb.toString());
 	}
@@ -266,15 +292,20 @@ public class Weather extends Fragment implements View.OnClickListener
 			}
 
 			final StringBuilder sb = new StringBuilder();
+			sb.append(Common.current_html_headers);
 
 			if(Common.GetBoolPref("radarforecast", true))
 			{
 				if(fll.getVisibility() != View.VISIBLE)
 					fll.post(() -> fll.setVisibility(View.VISIBLE));
 				updateSwipe();
+
 				String radtype = Common.GetStringPref("radtype", "image");
 				if(radtype == null)
+				{
+					stopRefreshing();
 					return;
+				}
 
 				switch(radtype)
 				{
@@ -282,17 +313,24 @@ public class Weather extends Fragment implements View.OnClickListener
 					{
 						String radar_url = Common.GetStringPref("RADAR_URL", "");
 						if(radar_url == null)
+						{
+							stopRefreshing();
 							return;
+						}
 
 						Common.LogMessage("Loading RADAR_URL -> " + radar_url);
 						forecast.post(() -> forecast.loadUrl(radar_url));
+						stopRefreshing();
 						return;
 					}
 					case "image" ->
 					{
 						String radarURL = Common.GetStringPref("RADAR_URL", "");
 						if(radarURL == null)
+						{
+							stopRefreshing();
 							return;
+						}
 
 						String radar = Common.getFilesDir() + "/radar.gif";
 
@@ -302,12 +340,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 						if(!myFile.exists() || radarURL.isEmpty())
 						{
-							sb.append(Common.current_html_headers)
-									.append(getString(R.string.radar_url_not_set))
-									.append(Common.html_footer);
+							sb.append(getString(R.string.radar_url_not_set));
 						} else {
-							sb.append(Common.current_html_headers);
-
 							try
 							{
 								File f = new File(radar);
@@ -324,321 +358,230 @@ public class Weather extends Fragment implements View.OnClickListener
 								Common.doStackOutput(e);
 							}
 
-							sb.append("\t<img style='margin:0px;padding:0px;border:0px;text-align:center;")
-									.append("max-width:100%;width:auto;height:auto;'\n\tsrc='")
-									.append(radar).append("'>");
-							sb.append(Common.html_footer);
+							sb.append("\t<img class='radarImage' alt='Radar Image' src='").append(radar).append("' />\n\n");
 						}
 					}
-					default ->
-					{
-						sb.append(Common.current_html_headers);
-						sb.append("Radar URL not set or is still downloading. You can go to settings to change.");
-						sb.append(Common.html_footer);
-					}
+					default -> sb.append("Radar URL not set or is still downloading. You can go to settings to change.");
 				}
-
-				forceForecastRefresh(sb.toString());
-
-				return;
 			} else {
 				if(fll.getVisibility() != View.GONE)
 					fll.post(() -> fll.setVisibility(View.GONE));
 				updateSwipe();
 				String fctype = Common.GetStringPref("fctype", "Yahoo");
 				if(fctype == null || fctype.isEmpty())
+				{
+					stopRefreshing();
 					return;
+				}
 
 				String data = Common.GetStringPref("forecastData", "");
 
 				if(data == null || data.isEmpty())
 				{
-					sb.append(Common.current_html_headers);
 					sb.append("Forecast URL not set or is still downloading. You can go to settings to change.");
-					sb.append(Common.html_footer);
-					return;
-				}
-
-				switch(fctype.toLowerCase(Locale.ENGLISH))
+				} else
 				{
-					case "yahoo" ->
+					switch(fctype.toLowerCase(Locale.ENGLISH))
 					{
-						String[] content = Common.processYahoo(data);
-						if(content == null || content.length == 0)
+						case "yahoo" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processYahoo(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='purple.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "weatherzone" ->
-					{
-						String[] content = Common.processWZ(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='purple.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "weatherzone" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processWZ(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='wz.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "yr.no" ->
-					{
-						String[] content = Common.processYR(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='wz.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "yr.no" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processYR(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='yrno.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "met.no" ->
-					{
-						String[] content = Common.processMetNO(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='yrno.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "met.no" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processMetNO(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='met_no.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "bom.gov.au" ->
-					{
-						String[] content = Common.processBOM(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='met_no.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "wmo.int" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processWMO(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='bom.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "wmo.int" ->
-					{
-						String[] content = Common.processWMO(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='wmo.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "weather.gov" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processWGOV(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='wmo.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "weather.gov" ->
-					{
-						String[] content = Common.processWGOV(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='wgov.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "weather.gc.ca" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processWCA(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='wgov.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "weather.gc.ca" ->
-					{
-						String[] content = Common.processWCA(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='wca.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "weather.gc.ca-fr" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processWCAF(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='wca.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "weather.gc.ca-fr" ->
-					{
-						String[] content = Common.processWCAF(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='wca.png' height='29px'/>").append("</div><").append(content[0]);
+						}
+						case "metoffice.gov.uk" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processMET(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='wca.png' height='29px'/>")
-								.append("</div><").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "metoffice.gov.uk" ->
-					{
-						String[] content = Common.processMET(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='met.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "bom.gov.au", "bom2", "bom3" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processBOM3(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='met.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-					}
-					case "bom2" ->
-					{
-						String[] content = Common.processBOM2(data);
-						if(content == null || content.length == 0)
+							sb.append("\n<div style='text-align:center'>\n\t");
+							if(KeyValue.theme == R.style.AppTheme_weeWxWeatherApp_Dark_Common)
+								sb.append("<img src='bom.png' style='filter:invert(1);' height='29px' />");
+							else
+								sb.append("<img src='bom.png' height='29px' />");
+							sb.append("\n</div>\n").append(content[0]);
+						}
+						case "aemet.es" ->
 						{
-							stopRefreshing();
-							return;
+							String[] content = Common.processAEMET(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
+
+							sb.append("<div style='text-align:center'>").append("<img src='aemet.png' height='29px'/>").append("</div>\n").append(content[0]);
 						}
-
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='bom.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-
-					}
-					case "bom3" ->
-					{
-						String[] content = Common.processBOM3(data);
-						if(content == null || content.length == 0)
+						case "dwd.de" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processDWD(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='bom.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "aemet.es" ->
-					{
-						String[] content = Common.processAEMET(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='dwd.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "metservice.com" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processMetService(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='aemet.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "dwd.de" ->
-					{
-						String[] content = Common.processDWD(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='metservice.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "openweathermap.org" ->
 						{
-							stopRefreshing();
-							return;
-						}
+							String[] content = Common.processOWM(data);
+							if(content == null || content.length == 0)
+								return;
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='dwd.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "metservice.com" ->
-					{
-						String[] content = Common.processMetService(data);
-						if(content == null || content.length == 0)
+							sb.append("<div style='text-align:center'>").append("<img src='owm.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "weather.com" ->
 						{
-							stopRefreshing();
-							return;
+							String[] content = Common.processWCOM(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
+
+							sb.append("<div style='text-align:center'>").append("<img src='weather_com.png' height='29px'/>").append("</div>\n").append(content[0]);
 						}
+						case "met.ie" ->
+						{
+							String[] content = Common.processMETIE(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='metservice.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "openweathermap.org" ->
-					{
-						String[] content = Common.processOWM(data);
-						if(content == null || content.length == 0)
-							return;
+							sb.append("<div style='text-align:center'>").append("<img src='met_ie.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
+						case "tempoitalia.it" ->
+						{
+							String[] content = Common.processTempoItalia(data);
+							if(content == null || content.length == 0)
+							{
+								stopRefreshing();
+								return;
+							}
 
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='owm.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "weather.com" ->
-					{
-						String[] content = Common.processWCOM(data);
-						if(content == null || content.length == 0)
-							return;
-
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='weather_com.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "met.ie" ->
-					{
-						String[] content = Common.processMETIE(data);
-						if(content == null || content.length == 0)
-							return;
-
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='met_ie.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
-					}
-					case "tempoitalia.it" ->
-					{
-						String[] content = Common.processTempoItalia(data);
-						if(content == null || content.length == 0)
-							return;
-
-						sb.append(Common.current_html_headers);
-						sb.append("<div style='text-align:center'>")
-								.append("<img src='tempoitalia_it.png' height='29px'/>")
-								.append("</div>").append(content[0]);
-						sb.append(Common.html_footer);
+							sb.append("<div style='text-align:center'>").append("<img src='tempoitalia_it.png' height='29px'/>").append("</div>\n").append(content[0]);
+						}
 					}
 				}
 			}
 
-			CustomDebug.writeDebug(sb.toString());
-			forceForecastRefresh(sb.toString());
+			sb.append(Common.html_footer);
+
+			String str = sb.toString();
+			CustomDebug.writeDebug("webview_weewx.html", str);
+
+			forceForecastRefresh(str);
 		});
 
 		t.start();
@@ -782,6 +725,12 @@ public class Weather extends Fragment implements View.OnClickListener
 		disableSwipeOnRadar = Common.GetBoolPref("disableSwipeOnRadar", false);
 		floatingCheckBox.setChecked(disableSwipeOnRadar);
 		updateSwipe();
+
+		if(isRunning)
+			return;
+
+		isRunning = true;
+		swipeLayout.setRefreshing(true);
 	}
 
 	public void onPause()

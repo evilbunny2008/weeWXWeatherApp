@@ -71,4 +71,5 @@
     <string name="custom_setting">Culori persunalizati</string>
     <string name="app_theme">Tema di l\'app</string>
     <string name="use_icons">Mostra l\'icone</string>
+    <string name="today">Oghje</string>
 </resources>

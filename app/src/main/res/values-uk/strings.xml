@@ -71,4 +71,5 @@
     <string name="custom_setting">Спеціальні кольори</string>
     <string name="app_theme">Тема програми</string>
     <string name="use_icons">Показати значки</string>
+    <string name="today">Сьогодні</string>
 </resources>

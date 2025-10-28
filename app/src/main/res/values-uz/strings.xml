@@ -71,4 +71,5 @@
     <string name="custom_setting">Maxsus ranglar</string>
     <string name="app_theme">Ilova mavzusi</string>
     <string name="use_icons">Piktogrammalarni ko\'rsatish</string>
+    <string name="today">Bugun</string>
 </resources>

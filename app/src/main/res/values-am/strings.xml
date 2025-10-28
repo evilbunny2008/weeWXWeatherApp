@@ -71,4 +71,5 @@
     <string name="custom_setting">ብጁ ቀለሞች</string>
     <string name="app_theme">የመተግበሪያ ገጽታ</string>
     <string name="use_icons">አዶዎችን አሳይ</string>
+    <string name="today">ዛሬ</string>
 </resources>

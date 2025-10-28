@@ -65,5 +65,11 @@
     <string name="url_was_default_or_empty">Ang URL gitakda sa default o wala\'y sulod</string>
     <string name="radar_url_not_set">Ang radar URL wala magtakda o nag-download pa. Mahimo ka moadto sa mga setting aron mabag-o</string>
     <string name="wasnt_able_to_connect_or_download">Dili makonekta o i-download ang forecast</string>
-	<string name="swipe_lock">Swipe Lock</string>
+	<string name="swipe_lock">Hunonga ang Pag-swipe</string>
+	<string name="use_icons">Gamita ang mga Imahen</string>
+	<string name="today">Karon</string>
+	<string name="widget_theme">Tema sa Widget</string>
+	<string name="match_app">Aplikasyon sa Pagpares</string>
+	<string name="custom_setting">Mga Kolor nga Gipahaom</string>
+	<string name="app_theme">Tema sa Aplikasyon</string>
 </resources>

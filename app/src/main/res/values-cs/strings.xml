@@ -71,4 +71,5 @@
     <string name="custom_setting">Vlastní barvy</string>
     <string name="app_theme">Téma aplikace</string>
     <string name="use_icons">Zobrazit ikony</string>
+    <string name="today">Dnes</string>
 </resources>

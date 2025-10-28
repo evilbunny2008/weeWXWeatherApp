@@ -71,4 +71,5 @@
     <string name="custom_setting">Colors personalitzats</string>
     <string name="app_theme">Tema de l\'aplicació</string>
     <string name="use_icons">Mostra les icones</string>
+    <string name="today">Avui</string>
 </resources>

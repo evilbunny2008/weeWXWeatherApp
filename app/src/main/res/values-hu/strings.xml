@@ -71,4 +71,5 @@
     <string name="custom_setting">Egyedi színek</string>
     <string name="app_theme">App téma</string>
     <string name="use_icons">Ikonok megjelenítése</string>
+    <string name="today">Ma</string>
 </resources>

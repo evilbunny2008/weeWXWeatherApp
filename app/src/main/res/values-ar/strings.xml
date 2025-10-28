@@ -71,4 +71,5 @@
     <string name="custom_setting">ألوان مخصصة</string>
     <string name="app_theme">موضوع التطبيق</string>
     <string name="use_icons">إظهار الأيقونات</string>
+    <string name="today">اليوم</string>
 </resources>

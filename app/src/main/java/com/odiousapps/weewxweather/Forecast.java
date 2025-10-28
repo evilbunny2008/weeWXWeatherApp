@@ -1,6 +1,8 @@
 package com.odiousapps.weewxweather;
 
 import android.content.res.Resources;
+import android.graphics.ColorMatrixColorFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.LayoutInflater;
@@ -24,8 +26,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.webkit.WebSettingsCompat;
+import androidx.webkit.WebViewFeature;
 
-@SuppressWarnings({"SameParameterValue", "unused"})
+@SuppressWarnings({"SameParameterValue", "unused", "deprecation"})
 public class Forecast extends Fragment implements View.OnClickListener
 {
 	private View rootView;
@@ -35,7 +39,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private FrameLayout fl;
 	private RotateLayout rl;
 	private MaterialCheckBox floatingCheckBox;
-	private boolean isVisible;
+	private boolean isVisible = false;
+	private boolean isRunning = false;
 	private boolean disableSwipeOnRadar;
 	private boolean disabledSwipe;
 	private MainActivity activity;
@@ -129,6 +134,53 @@ public class Forecast extends Fragment implements View.OnClickListener
 					stopRefreshing();
 			}
 		});
+
+		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK))
+		{
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2)
+			{
+				if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+				{
+					try
+					{
+						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarWebView.getSettings(), true);
+						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarRotated.getSettings(), true);
+					} catch (Exception e) {
+						Common.doStackOutput(e);
+					}
+				}
+			} else {
+				if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY))
+				{
+					WebSettingsCompat.setForceDarkStrategy(forecastWebView.getSettings(),
+							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
+
+					if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+						WebSettingsCompat.setAlgorithmicDarkeningAllowed(forecastWebView.getSettings(), true);
+
+					WebSettingsCompat.setForceDarkStrategy(radarWebView.getSettings(),
+							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
+
+					if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarWebView.getSettings(), true);
+
+					WebSettingsCompat.setForceDarkStrategy(radarRotated.getSettings(),
+							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
+
+					if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarRotated.getSettings(), true);
+				}
+
+				int mode = WebSettingsCompat.FORCE_DARK_OFF;
+
+				if(KeyValue.mode == 1)
+					mode = WebSettingsCompat.FORCE_DARK_ON;
+
+				WebSettingsCompat.setForceDark(forecastWebView.getSettings(), mode);
+				WebSettingsCompat.setForceDark(radarWebView.getSettings(), mode);
+				WebSettingsCompat.setForceDark(radarRotated.getSettings(), mode);
+			}
+		}
 
 		radarRotated.setWebViewClient(new WebViewClient()
 		{
@@ -316,7 +368,13 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		swipeLayout2.post(() -> swipeLayout2.setEnabled(fl.getVisibility() == View.VISIBLE && !floatingCheckBox.isChecked()));
 
-		updateScreen();
+		if(!isRunning)
+		{
+			isRunning = true;
+			updateScreen(true);
+		} else {
+			updateScreen(false);
+		}
 		updateSwipe();
 		addListeners();
 	}
@@ -344,8 +402,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		Common.LogMessage("notificationObserver == " + s, true);
 
-//		if(s.equals(Common.UPDATE_INTENT) || s.equals(Common.REFRESH_INTENT))
-//			updateScreen();
+		if(s.equals(Common.UPDATE_INTENT) || s.equals(Common.REFRESH_INTENT))
+			updateScreen(true);
 
 		if(s.equals(Common.EXIT_INTENT))
 			onPause();
@@ -396,7 +454,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		stopRefreshing();
 	}
 
-	private void updateScreen()
+	private void updateScreen(boolean setRefreshing)
 	{
 		Common.LogMessage("Forecast.updateScreen()", true);
 
@@ -412,7 +470,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 			swipeLayout2.post(() -> swipeLayout2.setEnabled(false));
 			swipeLayout1.post(() ->
 			{
-				swipeLayout1.setRefreshing(true);
+				swipeLayout1.setBackgroundColor(KeyValue.bgColour);
+				swipeLayout1.setRefreshing(setRefreshing);
 				swipeLayout1.setEnabled(true);
 			});
 		} else {
@@ -426,7 +485,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			swipeLayout1.post(() -> swipeLayout1.setEnabled(false));
 			swipeLayout2.post(() ->
 			{
-				swipeLayout2.setRefreshing(true);
+				swipeLayout2.setRefreshing(setRefreshing);
 				swipeLayout2.setEnabled(!floatingCheckBox.isChecked());
 			});
 
@@ -670,7 +729,12 @@ public class Forecast extends Fragment implements View.OnClickListener
 		});
 
 		TextView tv1 = rootView.findViewById(R.id.forecast);
-		tv1.post(() -> tv1.setText(desc));
+		tv1.post(() ->
+		{
+			tv1.setTextColor(KeyValue.fgColour);
+			tv1.setBackgroundColor(KeyValue.bgColour);
+			tv1.setText(desc);
+		});
 
 		String fctype = Common.GetStringPref("fctype", "yahoo");
 		if(fctype == null)
@@ -682,19 +746,17 @@ public class Forecast extends Fragment implements View.OnClickListener
 			case "weatherzone" -> im.post(() -> im.setImageResource(R.drawable.wz));
 			case "yr.no" -> im.post(() -> im.setImageResource(R.drawable.yrno));
 			case "met.no" -> im.post(() -> im.setImageResource(R.drawable.met_no));
-			case "bom.gov.au" ->
-			{
-				im.post(() -> im.setImageResource(R.drawable.bom));
-				im.post(() -> im.setColorFilter(null));
-			}
 			case "wmo.int" -> im.post(() -> im.setImageResource(R.drawable.wmo));
 			case "weather.gov" -> im.post(() -> im.setImageResource(R.drawable.wgov));
 			case "weather.gc.ca", "weather.gc.ca-fr" -> im.post(() -> im.setImageResource(R.drawable.wca));
 			case "metoffice.gov.uk" -> im.post(() -> im.setImageResource(R.drawable.met));
-			case "bom2", "bom3" ->
+			case "bom.gov.au", "bom2", "bom3" ->
 			{
 				im.post(() -> im.setImageResource(R.drawable.bom));
-				im.post(() -> im.setColorFilter(null));
+				if(KeyValue.theme == R.style.AppTheme_weeWxWeatherApp_Dark_Common)
+					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE)));
+				else
+					im.post(() -> im.setColorFilter(null));
 			}
 			case "aemet.es" -> im.post(() -> im.setImageResource(R.drawable.aemet));
 			case "dwd.de" -> im.post(() -> im.setImageResource(R.drawable.dwd));
@@ -704,13 +766,19 @@ public class Forecast extends Fragment implements View.OnClickListener
 			case "apixu.com" ->
 			{
 				im.post(() -> im.setImageResource(R.drawable.apixu));
-				im.post(() -> im.setColorFilter(null));
+				if(KeyValue.theme == R.style.AppTheme_weeWxWeatherApp_Dark_Common)
+					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE)));
+				else
+					im.post(() -> im.setColorFilter(null));
 			}
 			case "weather.com" -> im.post(() -> im.setImageResource(R.drawable.weather_com));
 			case "met.ie" ->
 			{
 				im.post(() -> im.setImageResource(R.drawable.met_ie));
-				im.post(() -> im.setColorFilter(null));
+				if(KeyValue.theme == R.style.AppTheme_weeWxWeatherApp_Dark_Common)
+					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE)));
+				else
+					im.post(() -> im.setColorFilter(null));
 			}
 			case "ilmeteo.it" -> im.post(() -> im.setImageResource(R.drawable.ilmeteo_it));
 			case "tempoitalia.it" -> im.post(() -> im.setImageResource(R.drawable.tempoitalia_it));

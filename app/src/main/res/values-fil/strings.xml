@@ -65,4 +65,11 @@
     <string name="url_was_default_or_empty">Ang URL ay nakatakda sa default o walang laman</string>
     <string name="radar_url_not_set">Hindi nakatakda ang Radar URL o nag -download pa rin. Maaari kang pumunta sa mga setting upang magbago</string>
     <string name="wasnt_able_to_connect_or_download">Hindi nakakonekta o i -download ang forecast</string>
+	<string name="swipe_lock">" Itigil ang Pag-swipe"</string>
+	<string name="widget_theme">Tema ng Widget</string>
+	<string name="match_app">App ng Tugma</string>
+	<string name="custom_setting">Mga Pasadyang Kulay</string>
+	<string name="app_theme">Tema ng App</string>
+	<string name="use_icons">Gamitin ang mga Icon</string>
+	<string name="today">Ngayon</string>
 </resources>

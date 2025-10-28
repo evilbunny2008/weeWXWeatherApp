@@ -71,4 +71,5 @@
     <string name="custom_setting">Kolore pertsonalizatuak</string>
     <string name="app_theme">Aplikazioaren gaia</string>
     <string name="use_icons">Erakutsi ikonoak</string>
+    <string name="today">Gaur</string>
 </resources>

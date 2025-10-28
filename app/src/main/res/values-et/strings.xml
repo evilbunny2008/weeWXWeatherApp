@@ -71,4 +71,5 @@
     <string name="custom_setting">Kohandatud värvid</string>
     <string name="app_theme">Rakenduse teema</string>
     <string name="use_icons">Kuva ikoonid</string>
+    <string name="today">Täna</string>
 </resources>

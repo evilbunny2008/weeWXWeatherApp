@@ -8,7 +8,12 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@drawable/widget_bg"
-	android:baselineAligned="false">
+	android:baselineAligned="false"
+	tools:ignore="MissingConstraints,SmallSp,SpUsage"
+	tools:deviceIds="pixel_6"
+	tools:targetApi="36"
+	tools:layout_editor_absoluteX="0dp"
+	tools:layout_editor_absoluteY="0dp">
 
 	<LinearLayout
 		android:id="@+id/widget_container"
@@ -25,25 +30,25 @@
 			android:id="@+id/widget_location"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:gravity="center_horizontal"
-			android:text="My Place, My Country"
-			android:textStyle="bold"
-			android:textSize="11sp"
 			android:ellipsize="marquee"
+			android:gravity="center_horizontal"
 			android:singleLine="true"
-			tools:ignore="HardcodedText" />
+			android:text="My Place, My Country"
+			android:textSize="11dp"
+			android:textStyle="bold"
+			tools:ignore="HardcodedText,TextSizeCheck" />
 
 		<TextView
 			android:id="@+id/widget_time"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:gravity="center_horizontal"
-			android:text="12:00 EST"
-			android:textStyle="bold"
-			android:textSize="11sp"
 			android:ellipsize="marquee"
+			android:gravity="center_horizontal"
 			android:singleLine="true"
-			tools:ignore="HardcodedText,TextContrastCheck" />
+			android:text="12:00 EST"
+			android:textSize="11dp"
+			android:textStyle="bold"
+			tools:ignore="HardcodedText,TextContrastCheck,TextSizeCheck" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -58,28 +63,28 @@
 			android:id="@+id/widget_wind"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
-			android:layout_weight="1"
 			android:layout_gravity="center"
-			android:gravity="start"
-			android:text="23km/hr"
-			android:textStyle="bold"
-			android:textSize="11sp"
+			android:layout_weight="1"
 			android:ellipsize="marquee"
+			android:gravity="start"
 			android:singleLine="true"
-			tools:ignore="HardcodedText" />
+			android:text="23km/hr"
+			android:textSize="11dp"
+			android:textStyle="bold"
+			tools:ignore="HardcodedText,TextSizeCheck" />
 
 		<TextView
 			android:id="@+id/widget_rain"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
-			android:gravity="end"
-			android:text="0.0mm"
-			android:textStyle="bold"
-			android:textSize="11sp"
 			android:ellipsize="marquee"
+			android:gravity="end"
 			android:singleLine="true"
-			tools:ignore="HardcodedText" />
+			android:text="0.0mm"
+			android:textSize="11dp"
+			android:textStyle="bold"
+			tools:ignore="HardcodedText,TextSizeCheck" />
 
 	</LinearLayout>
 
@@ -90,7 +95,7 @@
 		android:layout_height="match_parent"
 		android:gravity="center"
 		android:text="35.5*C"
-		android:textSize="128sp"
+		android:textSize="128dp"
 		android:textStyle="bold"
 		android:layout_marginTop="15dp"
 		android:includeFontPadding="false"

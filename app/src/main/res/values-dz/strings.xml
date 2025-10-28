@@ -71,4 +71,5 @@
     <string name="custom_setting">སྲོལ་སྒྲིག་ཚོས་གཞི་ཚུ།</string>
     <string name="app_theme">App བརྗོད་གཞི།</string>
     <string name="use_icons">ངོས་དཔར་སྟོན།</string>
+    <string name="today">ད་རེས</string>
 </resources>

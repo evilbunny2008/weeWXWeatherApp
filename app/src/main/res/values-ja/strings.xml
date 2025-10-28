@@ -71,4 +71,5 @@
     <string name="custom_setting">カスタムカラー</string>
     <string name="app_theme">アプリのテーマ</string>
     <string name="use_icons">アイコンを表示</string>
+    <string name="today">今日</string>
 </resources>

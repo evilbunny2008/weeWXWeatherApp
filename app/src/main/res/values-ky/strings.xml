@@ -71,4 +71,5 @@
     <string name="custom_setting">Өзгөчөлөштүрүлгөн түстөр</string>
     <string name="app_theme">Колдонмо темасы</string>
     <string name="use_icons">Көркөм сүрөтчөлөр</string>
+    <string name="today">Бүгүн</string>
 </resources>

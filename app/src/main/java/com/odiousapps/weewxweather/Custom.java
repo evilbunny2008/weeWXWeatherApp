@@ -6,8 +6,6 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.ConsoleMessage;
-import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -21,6 +19,7 @@ import androidx.webkit.WebViewFeature;
 @SuppressWarnings("deprecation")
 public class Custom extends Fragment
 {
+	private boolean isRunning = false;
 	private WebView wv;
 	private SwipeRefreshLayout swipeLayout;
 
@@ -68,21 +67,14 @@ public class Custom extends Fragment
 		}
 
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
 		{
-			Common.LogMessage("wv.getScrollY() == " + wv.getScrollY());
 			swipeLayout.setRefreshing(true);
 			Common.LogMessage("onRefresh();");
 			reloadWebView();
-			swipeLayout.setRefreshing(false);
 		});
 
-		wv.getViewTreeObserver().addOnScrollChangedListener(() ->
-		{
-			Common.LogMessage("wv.getScrollY() == " + wv.getScrollY());
-			swipeLayout.setEnabled(wv.getScrollY() == 0);
-		});
+		wv.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv.getScrollY() == 0));
 
 		wv.setWebViewClient(new WebViewClient()
 		{
@@ -114,18 +106,6 @@ public class Custom extends Fragment
 			return false;
 		});
 
-		wv.setWebChromeClient(new WebChromeClient()
-		{
-			@Override
-			public boolean onConsoleMessage(ConsoleMessage cm)
-			{
-				Common.LogMessage("My Application: " + cm.message());
-				return super.onConsoleMessage(cm);
-			}
-		});
-
-		reloadWebView();
-
 		return rootView;
 	}
 
@@ -148,12 +128,19 @@ public class Custom extends Fragment
 	public void onResume()
 	{
 		super.onResume();
-		Common.LogMessage("custom.java -- registerReceiver");
+		Common.LogMessage("Custom.onResume()");
+
+		if(isRunning)
+			return;
+
+		isRunning = true;
+		swipeLayout.post(() -> swipeLayout.setRefreshing(true));
+		reloadWebView();
 	}
 
 	public void onPause()
 	{
 		super.onPause();
-		Common.LogMessage("custom.java -- unregisterReceiver");
+		Common.LogMessage("Custom.onPause()");
 	}
 }
