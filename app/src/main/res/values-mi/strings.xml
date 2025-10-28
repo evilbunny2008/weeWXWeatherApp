@@ -72,4 +72,5 @@
     <string name="app_theme">Kaupapa taupānga</string>
     <string name="use_icons">Whakaatuhia nga tohu</string>
     <string name="today">Tēnei rā</string>
+    <string name="last_year_stats">Tatauranga o te tau whakamutunga</string>
 </resources>

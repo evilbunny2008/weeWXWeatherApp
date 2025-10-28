@@ -72,7 +72,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		swipeLayout1.setOnRefreshListener(() ->
 		{
 			swipeLayout1.setRefreshing(true);
-			Common.LogMessage("swipeLayout1.onRefresh();", true);
+			Common.LogMessage("swipeLayout1.onRefresh();");
 			getForecast(true);
 		});
 
@@ -80,7 +80,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		swipeLayout2.setOnRefreshListener(() ->
 		{
 			swipeLayout2.setRefreshing(true);
-			Common.LogMessage("swipeLayout2.onRefresh();", true);
+			Common.LogMessage("swipeLayout2.onRefresh();");
 			reloadRadar(true);
 		});
 
@@ -210,7 +210,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void loadRadar()
 	{
-		Common.LogMessage("Forecast.loadRadar()", true);
+		Common.LogMessage("Forecast.loadRadar()");
 
 		if(Common.GetBoolPref("radarforecast", true))
 			return;
@@ -233,13 +233,13 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			if(!rf.exists() || radarURL.isEmpty())
 			{
-				Common.LogMessage("Loading radar image from URL: " + radarURL, true);
+				Common.LogMessage("Loading radar image from URL: " + radarURL);
 
 				final String html = Common.current_html_headers +
 						"Radar URL not set or is still downloading. You can go to settings to change." +
 						Common.html_footer;
 
-				Common.LogMessage("Loading radar page... html: " + html, true);
+				Common.LogMessage("Loading radar page... html: " + html);
 				radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null));
 				radarRotated.post(() -> radarRotated.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null));
 				stopRefreshing();
@@ -274,28 +274,28 @@ public class Forecast extends Fragment implements View.OnClickListener
 					"\t</div>" +
 					Common.html_footer;
 
-			Common.LogMessage("Loading radar page... html: " + html, true);
+			Common.LogMessage("Loading radar page... html: " + html);
 			radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/drawable/", html,
 					"text/html", "utf-8", null));
 			radarRotated.post(() -> radarRotated.loadDataWithBaseURL("file:///android_res/drawable/", html,
 					"text/html", "utf-8", null));
 		} else {
-			Common.LogMessage("Loading radar page... url: " + radarURL, true);
+			Common.LogMessage("Loading radar page... url: " + radarURL);
 
 			radarWebView.post(() -> radarWebView.loadUrl(radarURL));
 		}
 
-		Common.LogMessage("Forecast.loadRadar() finished...", true);
+		Common.LogMessage("Forecast.loadRadar() finished...");
 		stopRefreshing();
 	}
 
 	private void reloadRadar(boolean force)
 	{
-		Common.LogMessage("Forecast.reloadRadar()", true);
+		Common.LogMessage("Forecast.reloadRadar()");
 		if(Common.GetBoolPref("radarforecast", true))
 			return;
 
-		Common.LogMessage("reload radar...", true);
+		Common.LogMessage("reload radar...");
 		final String radar = Common.GetStringPref("RADAR_URL", "");
 		if(radar == null)
 			return;
@@ -312,7 +312,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(!Common.checkConnection() && !force)
 		{
-			Common.LogMessage("Not on wifi and not a forced refresh", true);
+			Common.LogMessage("Not on wifi and not a forced refresh");
 			stopRefreshing();
 			return;
 		}
@@ -321,16 +321,16 @@ public class Forecast extends Fragment implements View.OnClickListener
 		{
 			try
 			{
-				Common.LogMessage("Starting to download image from: " + radar, true);
+				Common.LogMessage("Starting to download image from: " + radar);
 				File file = new File(Common.getFilesDir(), "/radar.gif.tmp");
 				File f = Common.downloadJSOUP(file, radar);
 				String ftmp = f != null ? f.getAbsolutePath() : null;
 				if(ftmp != null)
 				{
-					Common.LogMessage("Done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie", true);
+					Common.LogMessage("Done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
 					File f2 = new File(Common.getFilesDir(), "/radar.gif");
 					if(!f.renameTo(f2))
-						Common.LogMessage("Failed to rename '"+ f.getAbsolutePath() + "' to '" + f2.getAbsolutePath() + "'", true);
+						Common.LogMessage("Failed to rename '"+ f.getAbsolutePath() + "' to '" + f2.getAbsolutePath() + "'");
 				}
 
 				if(radarWebView.getVisibility() == View.VISIBLE)
@@ -352,17 +352,17 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		super.onResume();
 
-		Common.LogMessage("Forecast.onResume()", true);
+		Common.LogMessage("Forecast.onResume()");
 
 		if(isVisible)
 			return;
 
 		isVisible = true;
 
-		Common.LogMessage("Forecast.onResume()-- adding notification manager...", true);
+		Common.LogMessage("Forecast.onResume()-- adding notification manager...");
 		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
-		Common.LogMessage("Forecast.onResume() -- updating the value of the floating checkbox...", true);
+		Common.LogMessage("Forecast.onResume() -- updating the value of the floating checkbox...");
 		disableSwipeOnRadar = Common.GetBoolPref("disableSwipeOnRadar", false);
 		floatingCheckBox.setChecked(disableSwipeOnRadar);
 
@@ -383,7 +383,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		super.onPause();
 
-		Common.LogMessage("Forecast.onPause()", true);
+		Common.LogMessage("Forecast.onPause()");
 
 		if(!isVisible)
 			return;
@@ -395,12 +395,12 @@ public class Forecast extends Fragment implements View.OnClickListener
 		doPause();
 		removeListeners();
 
-		Common.LogMessage("Forecast.onPause()-- removing notification manager...", true);
+		Common.LogMessage("Forecast.onPause()-- removing notification manager...");
 	}
 
 	private final Observer<String> notificationObserver = s ->
 	{
-		Common.LogMessage("notificationObserver == " + s, true);
+		Common.LogMessage("notificationObserver == " + s);
 
 		if(s.equals(Common.UPDATE_INTENT) || s.equals(Common.REFRESH_INTENT))
 			updateScreen(true);
@@ -456,11 +456,11 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void updateScreen(boolean setRefreshing)
 	{
-		Common.LogMessage("Forecast.updateScreen()", true);
+		Common.LogMessage("Forecast.updateScreen()");
 
 		if(Common.GetBoolPref("radarforecast", true))
 		{
-			Common.LogMessage("Displaying forecastWebView...", true);
+			Common.LogMessage("Displaying forecastWebView...");
 			if(fl.getVisibility() != View.GONE)
 				fl.post(() -> fl.setVisibility(View.GONE));
 
@@ -475,7 +475,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 				swipeLayout1.setEnabled(true);
 			});
 		} else {
-			Common.LogMessage("Displaying radar framelayout", true);
+			Common.LogMessage("Displaying radar framelayout");
 			if(swipeLayout1.getVisibility() != View.GONE)
 				swipeLayout1.post(() -> swipeLayout1.setVisibility(View.GONE));
 
@@ -494,11 +494,11 @@ public class Forecast extends Fragment implements View.OnClickListener
 			{
 				if(radtype.equals("image"))
 				{
-					Common.LogMessage("Hide radarWebView, show rotated layout...", true);
+					Common.LogMessage("Hide radarWebView, show rotated layout...");
 					radarWebView.post(() -> radarWebView.setVisibility(View.GONE));
 					rl.post(() -> rl.setVisibility(View.VISIBLE));
 				} else {
-					Common.LogMessage("Hide rotated layout, show radarWebView...", true);
+					Common.LogMessage("Hide rotated layout, show radarWebView...");
 					rl.post(() -> rl.setVisibility(View.GONE));
 					radarWebView.post(() -> radarWebView.setVisibility(View.VISIBLE));
 				}
@@ -507,7 +507,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		loadData();
 
-		Common.LogMessage("Forecast.updateScreen() finished...", true);
+		Common.LogMessage("Forecast.updateScreen() finished...");
 	}
 
 	private void getForecast(boolean force)
@@ -530,7 +530,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(!Common.checkConnection() && !force)
 		{
-			Common.LogMessage("Not on wifi and not a forced refresh", true);
+			Common.LogMessage("Not on wifi and not a forced refresh");
 			return;
 		}
 
@@ -549,11 +549,11 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 				if(forecastData.isEmpty() || Common.GetLongPref("rssCheck", 0) + 7190 < current_time || force)
 				{
-					Common.LogMessage("no forecast data or cache is more than 2 hour old or was forced", true);
+					Common.LogMessage("no forecast data or cache is more than 2 hour old or was forced");
 
 					String tmp = Common.downloadForecast();
 
-					Common.LogMessage("updating rss cache", true);
+					Common.LogMessage("updating rss cache");
 					Common.SetLongPref("rssCheck", current_time);
 					Common.SetStringPref("forecastData", tmp);
 
@@ -572,7 +572,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		Thread t = new Thread(() ->
 		{
-			Common.LogMessage("getting json data", true);
+			Common.LogMessage("getting json data");
 			String data;
 			String fctype = Common.GetStringPref("fctype", "Yahoo");
 			if(fctype == null)
@@ -792,7 +792,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(disabledSwipe)
 		{
 			disabledSwipe = false;
-			Common.LogMessage("Enabling swipe between screens...", true);
+			Common.LogMessage("Enabling swipe between screens...");
 			activity.setUserInputPager(true);
 		}
 	}
@@ -809,7 +809,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(!disabledSwipe && disableSwipeOnRadar && fl.getVisibility() == View.VISIBLE)
 		{
 			disabledSwipe = true;
-			Common.LogMessage("Disabling swipe between screens...", true);
+			Common.LogMessage("Disabling swipe between screens...");
 			activity.setUserInputPager(false);
 			return;
 		}
@@ -817,7 +817,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(disabledSwipe && !disableSwipeOnRadar)
 		{
 			disabledSwipe = false;
-			Common.LogMessage("Enabling swipe between screens...", true);
+			Common.LogMessage("Enabling swipe between screens...");
 			activity.setUserInputPager(true);
 		}
 	}
@@ -830,6 +830,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 		swipeLayout2.post(() -> swipeLayout2.setEnabled(fl.getVisibility() == View.VISIBLE && !floatingCheckBox.isChecked()));
 		updateListeners();
 		updateSwipe();
-		Common.LogMessage("Forecast.onClick() finished...", true);
+		Common.LogMessage("Forecast.onClick() finished...");
 	}
 }

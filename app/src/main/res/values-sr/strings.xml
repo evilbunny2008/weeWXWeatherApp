@@ -72,4 +72,5 @@
     <string name="app_theme">Апп Тхеме</string>
     <string name="use_icons">Прикажи иконе</string>
     <string name="today">данас</string>
+    <string name="last_year_stats">Прошлогодишња статистика</string>
 </resources>

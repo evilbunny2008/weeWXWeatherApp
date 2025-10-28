@@ -72,4 +72,5 @@
     <string name="app_theme">Téma aplikasi</string>
     <string name="use_icons">Ikon</string>
     <string name="today">Ayeuna</string>
+    <string name="last_year_stats">Statistik taun ka tukang</string>
 </resources>

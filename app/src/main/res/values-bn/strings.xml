@@ -72,4 +72,5 @@
     <string name="app_theme">অ্যাপ থিম</string>
     <string name="use_icons">আইকন দেখান</string>
     <string name="today">আজ</string>
+    <string name="last_year_stats">গত বছরের পরিসংখ্যান</string>
 </resources>

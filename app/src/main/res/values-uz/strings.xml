@@ -72,4 +72,5 @@
     <string name="app_theme">Ilova mavzusi</string>
     <string name="use_icons">Piktogrammalarni ko\'rsatish</string>
     <string name="today">Bugun</string>
+    <string name="last_year_stats">O\'tgan yil statistikasi</string>
 </resources>

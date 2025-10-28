@@ -72,4 +72,5 @@
     <string name="app_theme">Θέμα εφαρμογής</string>
     <string name="use_icons">Εμφάνιση εικονιδίων</string>
     <string name="today">Σήμερα</string>
+    <string name="last_year_stats">Στατιστικά στοιχεία του περασμένου έτους</string>
 </resources>

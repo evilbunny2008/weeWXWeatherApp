@@ -72,4 +72,5 @@
     <string name="app_theme">应用主题</string>
     <string name="use_icons">显示图标</string>
     <string name="today">今天</string>
+    <string name="last_year_stats">去年的统计数据</string>
 </resources>

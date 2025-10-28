@@ -72,4 +72,5 @@
     <string name="app_theme">App-thema</string>
     <string name="use_icons">Pictogrammen weergeven</string>
     <string name="today">Vandaag</string>
+    <string name="last_year_stats">Statistieken van vorig jaar</string>
 </resources>

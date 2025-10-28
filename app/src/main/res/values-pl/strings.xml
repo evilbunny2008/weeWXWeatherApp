@@ -72,4 +72,5 @@
     <string name="app_theme">Motyw aplikacji</string>
     <string name="use_icons">Pokaż ikony</string>
     <string name="today">Dzisiaj</string>
+    <string name="last_year_stats">Statystyki za ubiegły rok</string>
 </resources>

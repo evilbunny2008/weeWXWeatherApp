@@ -294,6 +294,9 @@ public class Common
               .dataCell.right {
                 justify-content: flex-end;
               }
+              .dataCell.since {
+                margin-right: 10px;
+              }
               .dataCell i {
                 margin-left: 10px;
                 margin-right: 10px;
@@ -397,7 +400,7 @@ public class Common
 
 		lang = lang.split("-")[0].trim();
 		replaceHTMLString("CURRENT_LANG", lang);
-		LogMessage("Current app language: " + lang, true);
+		LogMessage("Current app language: " + lang);
 	}
 
 	static

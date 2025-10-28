@@ -72,4 +72,5 @@
     <string name="app_theme">앱 테마</string>
     <string name="use_icons">아이콘 표시</string>
     <string name="today">오늘</string>
+    <string name="last_year_stats">작년 통계</string>
 </resources>

@@ -72,4 +72,5 @@
     <string name="app_theme">Sovelluksen teema</string>
     <string name="use_icons">Näytä kuvakkeet</string>
     <string name="today">Tänään</string>
+    <string name="last_year_stats">Viime vuoden tilastot</string>
 </resources>

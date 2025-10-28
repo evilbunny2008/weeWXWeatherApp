@@ -72,4 +72,5 @@
     <string name="app_theme">App-Theme</string>
     <string name="use_icons">Symbole anzeigen</string>
     <string name="today">Heute</string>
+    <string name="last_year_stats">Statistik des letzten Jahres</string>
 </resources>

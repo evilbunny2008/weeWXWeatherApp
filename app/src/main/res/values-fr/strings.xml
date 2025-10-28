@@ -72,4 +72,5 @@
     <string name="app_theme">Thème de l\'application</string>
     <string name="use_icons">Afficher les icônes</string>
     <string name="today">Aujourd\'hui</string>
+    <string name="last_year_stats">Statistiques de l\'année dernière</string>
 </resources>

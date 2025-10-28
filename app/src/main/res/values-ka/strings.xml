@@ -72,4 +72,5 @@
     <string name="app_theme">აპლიკაციის თემა</string>
     <string name="use_icons">ხატების ჩვენება</string>
     <string name="today">დღეს</string>
+    <string name="last_year_stats">გასული წლის სტატისტიკა</string>
 </resources>

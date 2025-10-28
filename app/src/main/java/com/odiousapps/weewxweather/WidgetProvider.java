@@ -16,7 +16,7 @@ public class WidgetProvider extends AppWidgetProvider
 	@Override
 	public void onReceive(Context context, Intent intent)
 	{
-		Common.LogMessage("WidgetProvider.onReceive() called.. intent.getAction()=" + intent.getAction(), true);
+		Common.LogMessage("WidgetProvider.onReceive() called.. intent.getAction()=" + intent.getAction());
 
 		AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
 		int[] appWidgetIds = intent.getIntArrayExtra("appWidgetIds");
@@ -27,7 +27,7 @@ public class WidgetProvider extends AppWidgetProvider
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
 	{
-		Common.LogMessage("WidgetProvider.onUpdate() called..", true);
+		Common.LogMessage("WidgetProvider.onUpdate() called..");
 		Common.setAlarm("WidgetProvider.onUpdate()");
 		updateAppWidget(context, appWidgetManager, appWidgetIds);
 	}
@@ -36,7 +36,7 @@ public class WidgetProvider extends AppWidgetProvider
 	public void onAppWidgetOptionsChanged(Context context, AppWidgetManager appWidgetManager, int appWidgetId, Bundle newOptions)
 	{
 		Common.setAlarm("WidgetProvider.onAppWidgetOptionsChanged()");
-		Common.LogMessage("onAppWidgetOptionsChanged() called..", true);
+		Common.LogMessage("onAppWidgetOptionsChanged() called..");
 
 		KeyValue.widgetMinWidth.put(appWidgetId, newOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH));
 		KeyValue.widgetMinHeight.put(appWidgetId, newOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT));
@@ -57,15 +57,15 @@ public class WidgetProvider extends AppWidgetProvider
 
 	public static void updateAppWidget(Context context, AppWidgetManager manager, int[] widgetIds)
 	{
-		Common.LogMessage("WidgetProvider.updateAppWidget() called..", true);
+		Common.LogMessage("WidgetProvider.updateAppWidget() called..");
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
 		Common.LogMessage("RemoteViews built: " + views);
 
 		int bgColour = KeyValue.widgetBG;
 		int fgColour = KeyValue.widgetFG;
 
-		Common.LogMessage("fgColour = " + to_ARGB_hex(fgColour), true);
-		Common.LogMessage("bgColour = " + to_ARGB_hex(bgColour), true);
+		Common.LogMessage("fgColour = " + to_ARGB_hex(fgColour));
+		Common.LogMessage("bgColour = " + to_ARGB_hex(bgColour));
 
 		views.setInt(R.id.widget_frame, "setBackgroundColor", bgColour);
 
@@ -98,12 +98,12 @@ public class WidgetProvider extends AppWidgetProvider
 				views.setTextViewText(R.id.widget_temperature, bits[0] + bits[60]);
 				views.setTextViewText(R.id.widget_wind, bits[25] + bits[61]);
 				views.setTextViewText(R.id.widget_rain, tmp);
-				Common.LogMessage("Temperature set to " + bits[0] + bits[60], true);
+				Common.LogMessage("Temperature set to " + bits[0] + bits[60]);
 			} else {
-				Common.LogMessage("Temperature set to Error!", true);
+				Common.LogMessage("Temperature set to Error!");
 			}
 		} else {
-			Common.LogMessage("Temperature set to Error!", true);
+			Common.LogMessage("Temperature set to Error!");
 		}
 
 		Intent launchActivity = new Intent(context, MainActivity.class);
@@ -115,7 +115,7 @@ public class WidgetProvider extends AppWidgetProvider
 		{
 			if(KeyValue.widgetMinHeight.isEmpty())
 			{
-				Common.LogMessage("weeWXApp.widgetMinHeight isEmpty adding an entry...", true);
+				Common.LogMessage("weeWXApp.widgetMinHeight isEmpty adding an entry...");
 				KeyValue.widgetMinHeight.put(widgetId, 128);
 			}
 
@@ -128,11 +128,11 @@ public class WidgetProvider extends AppWidgetProvider
 					textSize = rawHeight / 3f;
 
 				views.setFloat(R.id.widget_temperature, "setTextSize", textSize);
-				Common.LogMessage("Updating widgetId = " + widgetId + "'s textSize to " + textSize, true);
+				Common.LogMessage("Updating widgetId = " + widgetId + "'s textSize to " + textSize);
 
 				manager.updateAppWidget(widgetId, views);
 			} catch (Exception e) {
-				Common.LogMessage("Widget update failed for id=" + widgetId + ", e=" + e, true);
+				Common.LogMessage("Widget update failed for id=" + widgetId + ", e=" + e);
 				Common.doStackOutput(e);
 			}
 		}

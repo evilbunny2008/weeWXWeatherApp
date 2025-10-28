@@ -72,4 +72,5 @@
     <string name="app_theme">Колдонмо темасы</string>
     <string name="use_icons">Көркөм сүрөтчөлөр</string>
     <string name="today">Бүгүн</string>
+    <string name="last_year_stats">Былтыр статистика</string>
 </resources>

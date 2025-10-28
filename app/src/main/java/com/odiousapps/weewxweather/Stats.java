@@ -112,7 +112,7 @@ public class Stats extends Fragment
 
 		isVisible = true;
 
-		Common.LogMessage("Stats.onResume()-- adding notification manager...", true);
+		Common.LogMessage("Stats.onResume()-- adding notification manager...");
 		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		if(isRunning)
@@ -189,7 +189,7 @@ public class Stats extends Fragment
 
 		boolean pm = bits[1].trim().equalsIgnoreCase("pm");
 
-		Common.LogMessage("pm == '" + bits[1] + "'", true);
+		Common.LogMessage("pm == '" + bits[1] + "'");
 
 		if(!pm && hours == 12)
 			hours = 0;
@@ -208,7 +208,7 @@ public class Stats extends Fragment
 			{
 				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
 				String str = sdf.format(dt);
-				Common.LogMessage("str == '" + str + "'", true);
+				Common.LogMessage("str == '" + str + "'");
 				return str;
 			}
 		} catch(Exception ignored) {}
@@ -280,7 +280,7 @@ public class Stats extends Fragment
 	{
 		return "\t<div class='dataRow'>\n" +
 		       "\t\t<div></div><div></div><div></div>\n" +
-		       "\t\t<div class='dataCell right'>" + str2 + "</div>\n" +
+		       "\t\t<div class='dataCell right since'>" + str2 + "</div>\n" +
 		       "\t</div>\n\n";
 	}
 
@@ -498,6 +498,54 @@ public class Stats extends Fragment
 		return sb.toString();
 	}
 
+	private String generateLastYearsSection(int header, String[] bits)
+	{
+		StringBuilder sb = new StringBuilder();
+
+		sb.append("\t<div class='statsHeader'>\n\t\t");
+		sb.append(getString(header));
+		sb.append("\n\t</div>\n\n");
+
+		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
+				bits[228] + bits[60], getAllTime(bits[229]), getAllTime(bits[227]),
+				bits[226] + bits[60]));
+
+		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
+				bits[239] + bits[60], getAllTime(bits[240]), getAllTime(bits[238]),
+				bits[237] + bits[60]));
+
+		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
+				bits[243] + bits[64], getAllTime(bits[244]), getAllTime(bits[242]),
+				bits[241] + bits[64]));
+
+		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
+				bits[235] + bits[63], getAllTime(bits[236]), getAllTime(bits[234]),
+				bits[233] + bits[63]));
+
+		if(bits.length > 246 && Common.GetBoolPref("showIndoor", false))
+		{
+			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
+					bits[248] + bits[60], getAllTime(bits[249]), getAllTime(bits[247]),
+					bits[246] + bits[60]));
+
+			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
+					bits[252] + bits[64], getAllTime(bits[253]), getAllTime(bits[251]),
+					bits[250] + bits[64]));
+		}
+
+		if(bits.length > 254 && !bits[254].isEmpty())
+		{
+			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
+					bits[254] + "UVI", getAllTime(bits[255]), getAllTime(bits[257]),
+					bits[256] + "W/m²"));
+		}
+
+		sb.append(createRow(bits[245] + bits[61] + " " + bits[231] + " " + getAllTime(bits[232]),
+				bits[245] + bits[62]));
+
+		return sb.toString();
+	}
+
 	private String generateAllTimeSection(int header, String[] bits)
 	{
 		StringBuilder sb = new StringBuilder();
@@ -601,6 +649,12 @@ public class Stats extends Fragment
 			{
 				sb.append("\t<hr />\n\n");
 				sb.append(generateThisYearsSection(R.string.this_year_stats, bits));
+			}
+
+			if(bits.length > 226 && !bits[226].isEmpty())
+			{
+				sb.append("\t<hr />\n\n");
+				sb.append(generateLastYearsSection(R.string.last_year_stats, bits));
 			}
 
 			if(bits.length > 157 && !bits[157].isEmpty())

@@ -72,4 +72,5 @@
     <string name="app_theme">Tema ti App</string>
     <string name="use_icons">Ipakita dagiti ikono</string>
     <string name="today">Ita nga aldaw</string>
+    <string name="last_year_stats">Dagiti estadistika idi napan a tawen</string>
 </resources>

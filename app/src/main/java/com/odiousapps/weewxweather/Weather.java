@@ -96,7 +96,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
 					params.height = contentHeightPx; // - (int)(5 * current.getResources().getDisplayMetrics().density);
 					swipeLayout.setLayoutParams(params);
-					Common.LogMessage("New Height: " + contentHeightPx, true);
+					Common.LogMessage("New Height: " + contentHeightPx);
 					//view.setLayoutParams(params);
 				}, 100); // 100ms delay lets the page finish rendering
 			}
@@ -711,17 +711,17 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		super.onResume();
 
-		Common.LogMessage("Weather.onResume()", true);
+		Common.LogMessage("Weather.onResume()");
 
 		if(isVisible)
 			return;
 
 		isVisible = true;
 
-		Common.LogMessage("Weather.onResume()-- adding notification manager...", true);
+		Common.LogMessage("Weather.onResume()-- adding notification manager...");
 		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
-		Common.LogMessage("Weather.onResume() -- updating the value of the floating checkbox...", true);
+		Common.LogMessage("Weather.onResume() -- updating the value of the floating checkbox...");
 		disableSwipeOnRadar = Common.GetBoolPref("disableSwipeOnRadar", false);
 		floatingCheckBox.setChecked(disableSwipeOnRadar);
 		updateSwipe();
@@ -737,7 +737,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		super.onPause();
 
-		Common.LogMessage("Weather.onPause()", true);
+		Common.LogMessage("Weather.onPause()");
 
 		if(!isVisible)
 			return;
@@ -747,12 +747,12 @@ public class Weather extends Fragment implements View.OnClickListener
 		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 		doPause();
 
-		Common.LogMessage("Weather.onPause()-- removing notification manager...", true);
+		Common.LogMessage("Weather.onPause()-- removing notification manager...");
 	}
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		Common.LogMessage("notificationObserver == " + str, true);
+		Common.LogMessage("notificationObserver == " + str);
 
 		if(str.equals(Common.UPDATE_INTENT) || str.equals(Common.REFRESH_INTENT))
 		{
@@ -770,7 +770,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(disabledSwipe)
 		{
 			disabledSwipe = false;
-			Common.LogMessage("Enabling swipe between screens...", true);
+			Common.LogMessage("Enabling swipe between screens...");
 			activity.setUserInputPager(true);
 		}
 	}
@@ -787,7 +787,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(!disabledSwipe && disableSwipeOnRadar && fll.getVisibility() == View.VISIBLE)
 		{
 			disabledSwipe = true;
-			Common.LogMessage("Disabling swipe between screens...", true);
+			Common.LogMessage("Disabling swipe between screens...");
 			activity.setUserInputPager(false);
 			return;
 		}
@@ -795,7 +795,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(disabledSwipe && !disableSwipeOnRadar)
 		{
 			disabledSwipe = false;
-			Common.LogMessage("Enabling swipe between screens...", true);
+			Common.LogMessage("Enabling swipe between screens...");
 			activity.setUserInputPager(true);
 		}
 	}
@@ -806,6 +806,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		disableSwipeOnRadar = floatingCheckBox.isChecked();
 		Common.SetBoolPref("disableSwipeOnRadar", disableSwipeOnRadar);
 		updateSwipe();
-		Common.LogMessage("Forecast.onClick() finished...", true);
+		Common.LogMessage("Forecast.onClick() finished...");
 	}
 }

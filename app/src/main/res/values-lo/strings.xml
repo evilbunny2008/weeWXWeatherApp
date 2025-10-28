@@ -72,4 +72,5 @@
     <string name="app_theme">ຫົວຂໍ້ App</string>
     <string name="use_icons">ສະແດງຮູບສັນຍາລັກ</string>
     <string name="today">ມື້ນີ້</string>
+    <string name="last_year_stats">ສະຖິຕິປີສຸດທ້າຍ</string>
 </resources>

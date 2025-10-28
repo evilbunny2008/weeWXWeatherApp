@@ -72,4 +72,5 @@
     <string name="app_theme">アプリのテーマ</string>
     <string name="use_icons">アイコンを表示</string>
     <string name="today">今日</string>
+    <string name="last_year_stats">昨年の統計</string>
 </resources>

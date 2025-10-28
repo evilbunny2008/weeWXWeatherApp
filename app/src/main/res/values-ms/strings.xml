@@ -72,4 +72,5 @@
     <string name="app_theme">Tema aplikasi</string>
     <string name="use_icons">Tunjukkan ikon</string>
     <string name="today">Hari ini</string>
+    <string name="last_year_stats">Statistik tahun lepas</string>
 </resources>

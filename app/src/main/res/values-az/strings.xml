@@ -72,4 +72,5 @@
     <string name="app_theme">Tətbiq mövzusu</string>
     <string name="use_icons">Nişanlar göstər</string>
     <string name="today">Bu gün</string>
+    <string name="last_year_stats">Keçən il statistikası</string>
 </resources>
