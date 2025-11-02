@@ -73,4 +73,5 @@
     <string name="use_icons">Zobraziť ikony</string>
     <string name="today">Dnes</string>
     <string name="last_year_stats">Minuloročná štatistika</string>
+    <string name="last_month_stats">Štatistika za posledný mesiac</string>
 </resources>

@@ -73,4 +73,5 @@
     <string name="use_icons">Montru piktogramojn</string>
     <string name="today">Hodiaŭ</string>
     <string name="last_year_stats">Lastjara Statistiko</string>
+    <string name="last_month_stats">Statistiko de la lasta Monato</string>
 </resources>

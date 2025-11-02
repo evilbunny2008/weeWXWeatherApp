@@ -73,4 +73,5 @@
     <string name="use_icons">Иконалар шоу</string>
     <string name="today">Бүген</string>
     <string name="last_year_stats">Узган ел статистикасы</string>
+    <string name="last_month_stats">Узган ай статистика</string>
 </resources>

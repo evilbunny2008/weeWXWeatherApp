@@ -73,4 +73,5 @@
     <string name="use_icons">Erekana amashusho</string>
     <string name="today">Uyu munsi</string>
     <string name="last_year_stats">Imibare y\'umwaka ushize</string>
+    <string name="last_month_stats">Imibare yashize</string>
 </resources>

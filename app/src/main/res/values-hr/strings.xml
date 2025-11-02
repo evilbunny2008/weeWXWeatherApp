@@ -73,4 +73,5 @@
     <string name="use_icons">Prikaži ikone</string>
     <string name="today">Danas</string>
     <string name="last_year_stats">Prošlogodišnja statistika</string>
+    <string name="last_month_stats">Statistika prošlog mjeseca</string>
 </resources>

@@ -72,4 +72,6 @@
 	<string name="app_theme">Tema ng App</string>
 	<string name="use_icons">Gamitin ang mga Icon</string>
 	<string name="today">Ngayon</string>
+	<string name="last_year_stats">Mga Estadistika ng Nakaraang Taon</string>
+	<string name="last_month_stats">Mga Estadistika ng Nakaraang Buwan</string>
 </resources>

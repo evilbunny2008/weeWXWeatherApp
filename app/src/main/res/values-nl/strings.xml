@@ -73,4 +73,5 @@
     <string name="use_icons">Pictogrammen weergeven</string>
     <string name="today">Vandaag</string>
     <string name="last_year_stats">Statistieken van vorig jaar</string>
+    <string name="last_month_stats">Statistieken van de afgelopen maand</string>
 </resources>

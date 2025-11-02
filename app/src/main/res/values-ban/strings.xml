@@ -73,4 +73,5 @@
     <string name="use_icons">Tampilang Icons</string>
     <string name="today">Dina jani</string>
     <string name="last_year_stats">Statistik warsa sané lintang</string>
+    <string name="last_month_stats">Statistik Bulan sane lintang</string>
 </resources>

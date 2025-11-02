@@ -73,4 +73,5 @@
     <string name="use_icons">Показване на икони</string>
     <string name="today">Днес</string>
     <string name="last_year_stats">Статистика за миналата година</string>
+    <string name="last_month_stats">Статистика за последния месец</string>
 </resources>

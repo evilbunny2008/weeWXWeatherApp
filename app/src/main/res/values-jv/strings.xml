@@ -72,4 +72,6 @@
 	<string name="widget_theme">Tema Widget</string>
 	<string name="match_app">Aplikasi Cocokan</string>
 	<string name="custom_setting">Werna Khusus</string>
+	<string name="last_year_stats">Statistik Taun Kepungkur</string>
+	<string name="last_month_stats">Statistik Wulan Kepungkur</string>
 </resources>

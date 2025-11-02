@@ -73,4 +73,5 @@
     <string name="use_icons">icon များကိုပြပါ</string>
     <string name="today">ယနေ့တွင်</string>
     <string name="last_year_stats">ပြီးခဲ့သည့်နှစ်ကစာရင်းဇယား</string>
+    <string name="last_month_stats">ပြီးခဲ့သည့်လက၏စာရင်းအင်း</string>
 </resources>

@@ -73,4 +73,5 @@
     <string name="use_icons">Kuva ikoonid</string>
     <string name="today">Täna</string>
     <string name="last_year_stats">Eelmise aasta statistika</string>
+    <string name="last_month_stats">Eelmise kuu statistika</string>
 </resources>

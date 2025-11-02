@@ -73,4 +73,5 @@
     <string name="use_icons">Nyis Fweny</string>
     <string name="today">Kawuono</string>
     <string name="last_year_stats">Kwan mar Higa mokalo</string>
+    <string name="last_month_stats">Kwan mag Dwe mokalo</string>
 </resources>

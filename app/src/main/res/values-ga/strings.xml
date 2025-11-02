@@ -73,4 +73,5 @@
     <string name="use_icons">Taispeáin Deilbhíní</string>
     <string name="today">Inniu</string>
     <string name="last_year_stats">Staitisticí na bliana seo caite</string>
+    <string name="last_month_stats">Staitisticí na Míosa seo caite</string>
 </resources>

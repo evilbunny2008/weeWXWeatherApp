@@ -73,4 +73,5 @@
     <string name="use_icons">आइकनहरू देखाउनुहोस्</string>
     <string name="today">आज</string>
     <string name="last_year_stats">गत वर्षको तथ्याङ्क</string>
+    <string name="last_month_stats">गत महिनाको तथ्याङ्क</string>
 </resources>

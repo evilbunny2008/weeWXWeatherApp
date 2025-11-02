@@ -73,4 +73,5 @@
     <string name="use_icons">Ipahiling an mga Icon</string>
     <string name="today">Ngonyan</string>
     <string name="last_year_stats">Kan nakaaging Taon na Estadistika</string>
+    <string name="last_month_stats">Kan nakaaging Bulan nin Estadistika</string>
 </resources>

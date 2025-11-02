@@ -73,4 +73,5 @@
     <string name="use_icons">చిహ్నాలను చూపించు</string>
     <string name="today">ఈరోజు</string>
     <string name="last_year_stats">గత సంవత్సరం గణాంకాలు</string>
+    <string name="last_month_stats">గత నెల గణాంకాలు</string>
 </resources>

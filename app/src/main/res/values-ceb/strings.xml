@@ -72,4 +72,6 @@
 	<string name="match_app">Aplikasyon sa Pagpares</string>
 	<string name="custom_setting">Mga Kolor nga Gipahaom</string>
 	<string name="app_theme">Tema sa Aplikasyon</string>
+	<string name="last_year_stats">Mga Estadistika sa Miaging Tuig</string>
+	<string name="last_month_stats">Mga Estadistika sa Miaging Bulan</string>
 </resources>

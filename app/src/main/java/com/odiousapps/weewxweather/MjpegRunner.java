@@ -47,8 +47,10 @@ class MjpegRunner implements Runnable
 		isRunning = false;
 	}
 
-	public void run() {
-		while (isRunning) {
+	public void run()
+	{
+		while (isRunning)
+		{
 			try {
 				Common.LogMessage("waiting for an image.");
 				byte[] imageBytes = retrieveNextImage();
@@ -56,17 +58,19 @@ class MjpegRunner implements Runnable
 				bm = BitmapFactory.decodeStream(bais);
 				Common.LogMessage("got an image... wooo!");
 				isRunning = false;
-			} catch (Exception e) {
+			} catch(Exception e) {
 				Common.doStackOutput(e);
 				stop();
 			}
 		}
 
 		// close streams
-		try {
+		try
+		{
 			urlStream.close();
-		} catch (IOException e) {
-			Common.doStackOutput(e);		}
+		} catch(IOException e) {
+			Common.doStackOutput(e);
+		}
 	}
 
 	private byte[] retrieveNextImage() throws IOException
@@ -79,27 +83,30 @@ class MjpegRunner implements Runnable
 
 		int contentLength = 0;
 
-		while ((currByte = urlStream.read()) > -1) {
-			if (captureContentLength) {
-				if (currByte == 10 || currByte == 13) {
+		while ((currByte = urlStream.read()) > -1)
+		{
+			if(captureContentLength)
+			{
+				if(currByte == 10 || currByte == 13)
+				{
 					contentLength = Integer.parseInt(contentLengthStringWriter.toString());
 					break;
 				}
-				contentLengthStringWriter.write(currByte);
 
+				contentLengthStringWriter.write(currByte);
 			} else {
 				headerWriter.write(currByte);
 				String tempString = headerWriter.toString();
 				int indexOf = tempString.indexOf(CONTENT_LENGTH);
-				if (indexOf > 0) {
+				if(indexOf > 0)
 					captureContentLength = true;
-				}
 			}
 		}
 
 		// 255 indicates the start of the jpeg image
 		//noinspection StatementWithEmptyBody
-		while ((urlStream.read()) != 255) {}
+		while ((urlStream.read()) != 255)
+		{}
 
 		// rest is the buffer
 		byte[] imageBytes = new byte[contentLength + 1];
@@ -107,10 +114,8 @@ class MjpegRunner implements Runnable
 		imageBytes[0] = (byte) 255;
 		int offset = 1;
 		int numRead;
-		while (offset < imageBytes.length
-				&& (numRead = urlStream.read(imageBytes, offset, imageBytes.length - offset)) >= 0) {
+		while (offset < imageBytes.length && (numRead = urlStream.read(imageBytes, offset, imageBytes.length - offset)) >= 0)
 			offset += numRead;
-		}
 
 		return imageBytes;
 	}

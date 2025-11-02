@@ -73,4 +73,5 @@
     <string name="use_icons">Dangos Eiconau</string>
     <string name="today">Heddiw</string>
     <string name="last_year_stats">Ystadegau\'r llynedd</string>
+    <string name="last_month_stats">Ystadegau y Mis diweddaf</string>
 </resources>

@@ -4,39 +4,27 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent">
+	android:layout_height="match_parent"
+	tools:ignore="MergeRootFrame">
 
 	<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 		android:id="@+id/swipeToRefresh2"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
 
-		<LinearLayout
+		<!-- https://github.com/rongi/rotate-layout -->
+		<com.odiousapps.weewxweather.RotateLayout
+			android:id="@+id/rotateLayout"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
-			android:orientation="vertical">
+			app:angle="0">
 
-			<!-- https://github.com/rongi/rotate-layout -->
-			<com.odiousapps.weewxweather.RotateLayout
-				android:id="@+id/rotateLayout"
+			<FrameLayout
+				android:id="@+id/radarFrameLayout"
 				android:layout_width="match_parent"
 				android:layout_height="match_parent"
-				android:visibility="gone"
-				app:angle="-90">
-
-				<WebView
-					android:id="@+id/radarRotated"
-					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					tools:ignore="VisualLintBounds" />
-			</com.odiousapps.weewxweather.RotateLayout>
-
-			<WebView
-				android:id="@+id/radarWebView"
-				android:layout_width="match_parent"
-				android:layout_height="match_parent" />
-
-		</LinearLayout>
+				tools:ignore="VisualLintBounds" />
+		</com.odiousapps.weewxweather.RotateLayout>
 	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 	<LinearLayout

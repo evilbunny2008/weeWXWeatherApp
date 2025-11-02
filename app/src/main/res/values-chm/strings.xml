@@ -73,4 +73,5 @@
     <string name="use_icons">Иконка-влакым ончыкташ</string>
     <string name="today">Таче</string>
     <string name="last_year_stats">Кодшо ийын статистике</string>
+    <string name="last_month_stats">Пытартыш тылзе статистике</string>
 </resources>

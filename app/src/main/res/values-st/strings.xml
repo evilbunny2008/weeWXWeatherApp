@@ -73,4 +73,5 @@
     <string name="use_icons">Bontša Icons</string>
     <string name="today">Kajeno</string>
     <string name="last_year_stats">Lipalopalo tsa selemo se fetileng</string>
+    <string name="last_month_stats">Lipalo-palo tsa khoeli e fetileng</string>
 </resources>

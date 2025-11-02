@@ -73,4 +73,5 @@
     <string name="use_icons">Cidahken Ikon</string>
     <string name="today">Wari enda</string>
     <string name="last_year_stats">Statistik Tahun si lewat</string>
+    <string name="last_month_stats">Statistik Bulan Terakhir</string>
 </resources>

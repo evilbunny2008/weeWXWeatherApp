@@ -73,4 +73,5 @@
     <string name="use_icons">הצג אייקונים</string>
     <string name="today">הַיוֹם</string>
     <string name="last_year_stats">סטטיסטיקה של שנה שעברה</string>
+    <string name="last_month_stats">סטטיסטיקה של החודש שעבר</string>
 </resources>

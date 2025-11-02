@@ -12,6 +12,7 @@
 	    android:layout_height="300dp">
 
 		<LinearLayout
+			android:id="@+id/currentLinearLayout"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"
 			android:orientation="vertical">
@@ -34,11 +35,10 @@
 		        android:textSize="18sp"
 		        tools:ignore="HardcodedText" />
 
-		    <WebView
+		    <FrameLayout
 			    android:id="@+id/current"
 			    android:layout_width="match_parent"
-			    android:layout_height="match_parent"
-			    android:overScrollMode="never" />
+			    android:layout_height="match_parent" />
 		</LinearLayout>
 	</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
@@ -48,11 +48,10 @@
 		android:layout_height="0dp"
 		android:layout_weight="1">
 
-		<WebView
+		<FrameLayout
 			android:id="@+id/forecast"
 			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:overScrollMode="never" />
+			android:layout_height="match_parent" />
 
 		<LinearLayout
 			android:id="@+id/floating_linear_layout"

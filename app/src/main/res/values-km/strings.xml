@@ -73,4 +73,5 @@
     <string name="use_icons">បង្ហាញរូបតំណាង</string>
     <string name="today">ថៃនេហ</string>
     <string name="last_year_stats">ស្ថិតិកាលពីឆ្នាំមុន</string>
+    <string name="last_month_stats">ស្ថិតិកាលពីខែមុន</string>
 </resources>

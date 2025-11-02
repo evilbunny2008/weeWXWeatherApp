@@ -73,4 +73,5 @@
     <string name="use_icons">Sýna tákn</string>
     <string name="today">Í dag</string>
     <string name="last_year_stats">Tölfræði síðasta árs</string>
+    <string name="last_month_stats">Tölfræði síðasta mánaðar</string>
 </resources>

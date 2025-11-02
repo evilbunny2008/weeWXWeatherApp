@@ -73,4 +73,5 @@
     <string name="use_icons">Shfaq ikonat</string>
     <string name="today">Sot</string>
     <string name="last_year_stats">Statistikat e vitit të kaluar</string>
+    <string name="last_month_stats">Statistikat e muajit të kaluar</string>
 </resources>

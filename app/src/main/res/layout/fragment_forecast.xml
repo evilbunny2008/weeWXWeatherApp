@@ -9,5 +9,5 @@
 		android:id="@+id/swipeToRefresh1" />
 
 	<include layout="@layout/radar_layout"
-		android:id="@+id/radarFrameLayout" />
+		android:id="@+id/radar_layout" />
 </LinearLayout>

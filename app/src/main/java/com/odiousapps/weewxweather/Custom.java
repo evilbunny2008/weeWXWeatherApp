@@ -6,8 +6,11 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
+import android.view.ViewTreeObserver;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,9 +22,9 @@ import androidx.webkit.WebViewFeature;
 @SuppressWarnings("deprecation")
 public class Custom extends Fragment
 {
-	private boolean isRunning = false;
 	private WebView wv;
 	private SwipeRefreshLayout swipeLayout;
+	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
 
 	@Nullable
 	@Override
@@ -29,32 +32,58 @@ public class Custom extends Fragment
 	                         @Nullable ViewGroup container,
 	                         @Nullable Bundle savedInstanceState)
 	{
+		Common.LogMessage("Custom.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
 
-		View rootView = inflater.inflate(R.layout.fragment_custom, container, false);
+		View view = inflater.inflate(R.layout.fragment_custom, container, false);
 
-		wv = rootView.findViewById(R.id.custom);
-		Common.setWebview(wv);
+		swipeLayout = view.findViewById(R.id.swipeToRefresh);
+		swipeLayout.post(() -> swipeLayout.setRefreshing(true));
+		swipeLayout.setOnRefreshListener(() ->
+		{
+			swipeLayout.setRefreshing(true);
+			Common.LogMessage("onRefresh();");
+			reloadWebView();
+		});
+
+		return view;
+	}
+
+	@Override
+	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
+	{
+		Common.LogMessage("Custom.onViewCreated()");
+		super.onViewCreated(view, savedInstanceState);
+
+		if(wv == null)
+			wv = WebViewPreloader.getInstance().getWebView(requireContext());
+
+		if(wv.getParent() != null)
+			((ViewGroup)wv.getParent()).removeView(wv);
+
+		FrameLayout fl = view.findViewById(R.id.custom);
+		fl.removeAllViews();
+		fl.addView(wv);
 
 		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK))
 		{
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2)
 			{
-				if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+				if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
 				{
 					try
 					{
 						WebSettingsCompat.setAlgorithmicDarkeningAllowed(wv.getSettings(), true);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						Common.doStackOutput(e);
 					}
 				}
 			} else {
-				if (WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY))
+				if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY))
 					WebSettingsCompat.setForceDarkStrategy(wv.getSettings(),
 							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
 
-				if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+				if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
 					WebSettingsCompat.setAlgorithmicDarkeningAllowed(wv.getSettings(), true);
 
 				int mode = WebSettingsCompat.FORCE_DARK_OFF;
@@ -66,15 +95,7 @@ public class Custom extends Fragment
 			}
 		}
 
-		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-		swipeLayout.setOnRefreshListener(() ->
-		{
-			swipeLayout.setRefreshing(true);
-			Common.LogMessage("onRefresh();");
-			reloadWebView();
-		});
-
-		wv.getViewTreeObserver().addOnScrollChangedListener(() -> swipeLayout.setEnabled(wv.getScrollY() == 0));
+		wv.getViewTreeObserver().addOnScrollChangedListener(scl);
 
 		wv.setWebViewClient(new WebViewClient()
 		{
@@ -106,7 +127,40 @@ public class Custom extends Fragment
 			return false;
 		});
 
-		return rootView;
+		if(savedInstanceState != null)
+			wv.restoreState(savedInstanceState);
+
+		reloadWebView();
+	}
+
+	@Override
+	public void onSaveInstanceState(@NonNull Bundle outState)
+	{
+		Common.LogMessage("Custom.onSaveInstanceState()");
+		super.onSaveInstanceState(outState);
+
+		if(wv != null)
+			wv.saveState(outState);
+	}
+
+	@Override
+	public void onDestroyView()
+	{
+		Common.LogMessage("Custom.onDestroyView()");
+		super.onDestroyView();
+
+		if(wv != null)
+		{
+			ViewParent parent = wv.getParent();
+			if(parent instanceof ViewGroup)
+				((ViewGroup)parent).removeView(wv);
+
+			wv.getViewTreeObserver().removeOnScrollChangedListener(scl);
+
+			WebViewPreloader.getInstance().recycleWebView(wv);
+
+			Common.LogMessage("Custom.onDestroyView() recycled wv...");
+		}
 	}
 
 	private void reloadWebView()
@@ -116,12 +170,12 @@ public class Custom extends Fragment
 		String custom = Common.GetStringPref("CUSTOM_URL", "");
 		String custom_url = Common.GetStringPref("custom_url", "");
 
-		if((custom == null || custom.isEmpty()) && (custom_url == null || custom_url.isEmpty()))
+		if((custom == null || custom.isBlank()) && (custom_url == null || custom_url.isBlank()))
 			return;
 
-		if(custom_url != null && !custom_url.isEmpty())
+		if(custom_url != null && !custom_url.isBlank())
 			wv.loadUrl(custom_url);
-		else
+		else if(custom != null && !custom.isBlank())
 			wv.loadUrl(custom);
 	}
 
@@ -129,13 +183,6 @@ public class Custom extends Fragment
 	{
 		super.onResume();
 		Common.LogMessage("Custom.onResume()");
-
-		if(isRunning)
-			return;
-
-		isRunning = true;
-		swipeLayout.post(() -> swipeLayout.setRefreshing(true));
-		reloadWebView();
 	}
 
 	public void onPause()

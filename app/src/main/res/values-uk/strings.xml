@@ -73,4 +73,5 @@
     <string name="use_icons">Показати значки</string>
     <string name="today">Сьогодні</string>
     <string name="last_year_stats">Статистика минулого року</string>
+    <string name="last_month_stats">Статистика за останній місяць</string>
 </resources>

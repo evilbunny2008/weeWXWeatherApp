@@ -73,4 +73,5 @@
     <string name="use_icons">Mostrar iconas</string>
     <string name="today">Hoxe</string>
     <string name="last_year_stats">Estatística do ano pasado</string>
+    <string name="last_month_stats">Estatística do mes pasado</string>
 </resources>

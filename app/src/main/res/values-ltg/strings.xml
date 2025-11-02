@@ -73,4 +73,5 @@
     <string name="use_icons">100 doc#1163</string>
     <string name="today">Šudiņ</string>
     <string name="last_year_stats">Pādejuo goda statistika</string>
+    <string name="last_month_stats">Pādejuo mieneša statistika</string>
 </resources>

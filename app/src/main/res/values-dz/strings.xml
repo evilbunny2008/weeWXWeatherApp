@@ -73,4 +73,5 @@
     <string name="use_icons">ངོས་དཔར་སྟོན།</string>
     <string name="today">ད་རེས</string>
     <string name="last_year_stats">ལོ་མཇུག་གི་རྩིས་དཔྱད།</string>
+    <string name="last_month_stats">མཇུག་མཐའི་རྩིས་དཔྱད།</string>
 </resources>

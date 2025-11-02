@@ -73,4 +73,5 @@
     <string name="use_icons">ஐகான்களைக் காட்டு</string>
     <string name="today">இன்று</string>
     <string name="last_year_stats">கடந்த ஆண்டு புள்ளிவிவரங்கள்</string>
+    <string name="last_month_stats">கடந்த மாத புள்ளிவிவரங்கள்</string>
 </resources>

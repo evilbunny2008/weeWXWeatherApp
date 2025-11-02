@@ -73,4 +73,5 @@
     <string name="use_icons">Afișați pictograme</string>
     <string name="today">Astăzi</string>
     <string name="last_year_stats">Statistica de anul trecut</string>
+    <string name="last_month_stats">Statisticile lunii trecute</string>
 </resources>

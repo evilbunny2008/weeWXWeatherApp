@@ -57,13 +57,10 @@ public class RotateLayout extends ViewGroup
 		{
 			Common.LogMessage("Step 1 complete...");
 			angle = a.getInt(R.styleable.RotateLayout_angle, 0);
-			Common.LogMessage("Step 2 complete...");
-			a.recycle();
 			Common.LogMessage("Step 3 complete...");
-
 			setWillNotDraw(false);
 			Common.LogMessage("Step 4 complete...");
-		} catch (Exception e) {
+		} catch(Exception e) {
 			Common.LogMessage("Error: " + e);
 		}
 	}
@@ -114,7 +111,7 @@ public class RotateLayout extends ViewGroup
 				setMeasuredDimension(
 						resolveSize(child.getMeasuredHeight(), widthMeasureSpec),
 						resolveSize(child.getMeasuredWidth(), heightMeasureSpec));
-			} else if (abs(angle % 180) == 0) {
+			} else if(abs(angle % 180) == 0) {
 				measureChild(child, widthMeasureSpec, heightMeasureSpec);
 				setMeasuredDimension(
 						resolveSize(child.getMeasuredWidth(), widthMeasureSpec),

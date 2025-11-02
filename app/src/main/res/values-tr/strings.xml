@@ -73,4 +73,5 @@
     <string name="use_icons">Simgeleri Göster</string>
     <string name="today">Bugün</string>
     <string name="last_year_stats">Geçen Yılın İstatistikleri</string>
+    <string name="last_month_stats">Geçen Ayın İstatistikleri</string>
 </resources>

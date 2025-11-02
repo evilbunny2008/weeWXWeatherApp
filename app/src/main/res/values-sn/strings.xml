@@ -73,4 +73,5 @@
     <string name="use_icons">Ratidza zvidhori</string>
     <string name="today">Nhasi</string>
     <string name="last_year_stats">Nhamba dzegore rapfuura</string>
+    <string name="last_month_stats">Nhamba dzemwedzi wapfuura</string>
 </resources>

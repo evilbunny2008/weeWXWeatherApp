@@ -73,4 +73,5 @@
     <string name="use_icons">아이콘 표시</string>
     <string name="today">오늘</string>
     <string name="last_year_stats">작년 통계</string>
+    <string name="last_month_stats">지난달 통계</string>
 </resources>

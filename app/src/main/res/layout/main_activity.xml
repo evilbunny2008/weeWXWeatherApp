@@ -16,7 +16,7 @@
 		<include layout="@layout/activity_main" />
 	</FrameLayout>
 
-	<LinearLayout
+	<com.odiousapps.weewxweather.myLinearLayout
 		android:id="@+id/custom_drawer"
 		android:layout_width="320dp"
 		android:layout_height="match_parent"
@@ -28,8 +28,7 @@
         <ScrollView
 	        android:id="@+id/sv1"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-	        android:layout_weight="1"
+            android:layout_height="match_parent"
 	        android:fillViewport="true">
 
 	        <LinearLayout
@@ -41,17 +40,17 @@
 		        <include
 			        layout="@layout/nav_settings"
 			        android:id="@+id/settingLayout"
-			        android:layout_height="match_parent"
+			        android:layout_height="wrap_content"
 			        android:layout_width="match_parent"
 			        android:visibility="visible" />
 
 		        <include
 			        layout="@layout/nav_about"
 			        android:id="@+id/aboutLayout"
-			        android:layout_height="match_parent"
+			        android:layout_height="wrap_content"
 			        android:layout_width="match_parent"
 			        android:visibility="gone" />
 	        </LinearLayout>
         </ScrollView>
-	</LinearLayout>
+	</com.odiousapps.weewxweather.myLinearLayout>
 </androidx.drawerlayout.widget.DrawerLayout>

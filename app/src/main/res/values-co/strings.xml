@@ -73,4 +73,5 @@
     <string name="use_icons">Mostra l\'icone</string>
     <string name="today">Oghje</string>
     <string name="last_year_stats">Statistiche di l\'annu passatu</string>
+    <string name="last_month_stats">Statistiche di u mese passatu</string>
 </resources>

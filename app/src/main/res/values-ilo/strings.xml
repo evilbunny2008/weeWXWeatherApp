@@ -73,4 +73,5 @@
     <string name="use_icons">Ipakita dagiti ikono</string>
     <string name="today">Ita nga aldaw</string>
     <string name="last_year_stats">Dagiti estadistika idi napan a tawen</string>
+    <string name="last_month_stats">Dagiti estadistika idi napan a bulan</string>
 </resources>

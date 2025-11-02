@@ -73,4 +73,5 @@
     <string name="use_icons">Onyesha icons</string>
     <string name="today">Leo</string>
     <string name="last_year_stats">Takwimu za mwaka jana</string>
+    <string name="last_month_stats">Takwimu za mwezi uliopita</string>
 </resources>

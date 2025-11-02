@@ -73,4 +73,5 @@
     <string name="use_icons">Seall Icons</string>
     <string name="today">An-diugh</string>
     <string name="last_year_stats">Staitistig na bliadhna an-uiridh</string>
+    <string name="last_month_stats">Staitistig na mìos mu dheireadh</string>
 </resources>

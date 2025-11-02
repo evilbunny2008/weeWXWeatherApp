@@ -73,4 +73,5 @@
     <string name="use_icons">Нишон диҳед</string>
     <string name="today">Имрӯз</string>
     <string name="last_year_stats">Омори соли гузашта</string>
+    <string name="last_month_stats">Омори моҳи гузашта</string>
 </resources>

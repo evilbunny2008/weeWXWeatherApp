@@ -73,4 +73,5 @@
     <string name="use_icons">Patuduhkon Ikon</string>
     <string name="today">Sadarion</string>
     <string name="last_year_stats">Statistik Tahun na salpu</string>
+    <string name="last_month_stats">Statistik ni Bulan na salpu</string>
 </resources>

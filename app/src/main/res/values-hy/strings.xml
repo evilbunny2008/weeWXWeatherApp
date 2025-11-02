@@ -73,4 +73,5 @@
     <string name="use_icons">Ցույց տալ սրբապատկերները</string>
     <string name="today">Այսօր</string>
     <string name="last_year_stats">Անցյալ տարվա վիճակագրություն</string>
+    <string name="last_month_stats">Անցյալ ամսվա վիճակագրություն</string>
 </resources>

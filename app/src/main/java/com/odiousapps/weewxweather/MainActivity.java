@@ -16,7 +16,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
-import com.github.evilbunny2008.colourpicker.CustomEditText;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.radiobutton.MaterialRadioButton;
@@ -36,8 +35,8 @@ import java.util.Locale;
 import androidx.activity.OnBackPressedCallback;
 import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
-import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
+import androidx.core.splashscreen.SplashScreen;
 import androidx.core.text.HtmlCompat;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
@@ -62,6 +61,8 @@ import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 		"UnsafeIntentLaunch", "NotifyDataSetChanged", "SourceLockedOrientationActivity"})
 public class MainActivity extends FragmentActivity
 {
+	private boolean isVisible = false;
+	private boolean showSplash = true;
 	private TabLayout tabLayout;
 	private DrawerLayout mDrawerLayout;
 	private TextInputLayout fgtil, bgtil;
@@ -69,7 +70,8 @@ public class MainActivity extends FragmentActivity
 	private CPEditText fgColour, bgColour;
 	private MaterialButton b1, b2, b3, b4;
 	private AutoCompleteTextView s1, s2, s3;
-	private MaterialSwitch show_indoor, metric_forecasts;
+	private MaterialSwitch wifi_only, use_icons, show_indoor, metric_forecasts;
+	private MaterialRadioButton showRadar, showForecast;
 	private static ViewPager2 mViewPager;
 
 	private AlertDialog dialog;
@@ -80,23 +82,30 @@ public class MainActivity extends FragmentActivity
 
 	private SectionsStateAdapter mSectionsPagerAdapter;
 
-	private int UpdateFrequency, DayNightMode;
+	private static int UpdateFrequency, DayNightMode, widget_theme_mode;
 
 	private String[] updateOptions, themeOptions, widgetThemeOptions;
+
+	private int initialLeft, initialRight, initialTop, initialBottom;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
+		SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
 		setTheme(KeyValue.theme);
-		WidgetProvider.updateAppWidget();
+		splashScreen.setKeepOnScreenCondition(() -> showSplash);
 
 		super.onCreate(savedInstanceState);
 
+		Common.LogMessage("MainActivity.ocCreate() started...");
+
 		WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
-		boolean isTablet = getResources().getConfiguration().smallestScreenWidthDp >= 720;
+		Common.LogMessage("smallestScreenWidthDp: " + weeWXApp.smallestScreenWidth());
+		Common.LogMessage("minWidth=" + weeWXApp.getWidth() +
+		                  ", minHeight=" + weeWXApp.getHeight());
 
-		if(!isTablet)
+		if(!weeWXApp.isTablet())
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 		setContentView(R.layout.main_activity);
@@ -110,34 +119,53 @@ public class MainActivity extends FragmentActivity
 		mDrawerLayout = findViewById(R.id.drawer_layout);
 		mDrawerLayout.addDrawerListener(handleDrawerListener);
 
-		LinearLayout dl = findViewById(R.id.custom_drawer);
+		myLinearLayout dl = findViewById(R.id.custom_drawer);
 		dl.setBackgroundColor(KeyValue.bgColour);
+		dl.setOnTouchedListener((v) ->
+		{
+			Common.LogMessage("dl.TouchedListener()");
+
+			if(settingsURL.isFocused() || customURL.isFocused())
+			{
+				InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+				if(imm != null)
+					imm.hideSoftInputFromWindow(settingsURL.getWindowToken(), 0);
+
+				if(settingsURL.isFocused())
+					settingsURL.clearFocus();
+				else
+					customURL.clearFocus();
+			}
+		});
 
 		scrollView = findViewById(R.id.sv1);
 
-		final int initialLeft = scrollView.getPaddingLeft();
-		final int initialTop = scrollView.getPaddingTop();
-		final int initialRight = scrollView.getPaddingRight();
-		final int initialBottom = scrollView.getPaddingBottom();
+		initialLeft = scrollView.getPaddingLeft();
+		initialTop = scrollView.getPaddingTop();
+		initialRight = scrollView.getPaddingRight();
+		initialBottom = scrollView.getPaddingBottom();
 
 		ViewCompat.setOnApplyWindowInsetsListener(scrollView, (view, insets) ->
 		{
 			Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
 			Insets imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime());
 
+			int top = initialTop + systemInsets.top;
+			int right = initialRight + systemInsets.right;
 			int bottom = initialBottom + Math.max(systemInsets.bottom, imeInsets.bottom);
+			int left = initialLeft + systemInsets.left;
 
 			Common.LogMessage("Setting scrollView Insets Debug...");
+			Common.LogMessage("New Top Padding: " + top);
+			Common.LogMessage("New Right Padding: " + right);
+			Common.LogMessage("New Left Padding: " + left);
 			Common.LogMessage("SYS bottom: " + systemInsets.bottom);
 			Common.LogMessage("IME bottom: " + imeInsets.bottom);
 			Common.LogMessage("New Bottom Padding: " + bottom);
 
-			scrollView.setPadding(
-				initialLeft + systemInsets.left,
-				initialTop + systemInsets.top,
-				initialRight + systemInsets.right,
-				bottom
-			);
+			scrollView.setPadding(left, top, right,	bottom);
+
+			updateDropDowns();
 
 			return insets;
 		});
@@ -147,49 +175,75 @@ public class MainActivity extends FragmentActivity
 
 		tabLayout = findViewById(R.id.tabs);
 
-		mViewPager = findViewById(R.id.container);
-		mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
-		mSectionsPagerAdapter.addFragment(new Weather());
-		mSectionsPagerAdapter.addFragment(new Stats());
-		mSectionsPagerAdapter.addFragment(new Forecast());
-		mSectionsPagerAdapter.addFragment(new Webcam());
-		mSectionsPagerAdapter.addFragment(new Custom());
-
-		mViewPager.setOffscreenPageLimit(mSectionsPagerAdapter.getItemCount());
-		mViewPager.setAdapter(mSectionsPagerAdapter);
-
-		// Reduce swipe sensitivity
-		try
+		new Thread(() ->
 		{
-			Field recyclerViewField = ViewPager2.class.getDeclaredField("mRecyclerView");
-			recyclerViewField.setAccessible(true);
-			RecyclerView recyclerView = (RecyclerView) recyclerViewField.get(mViewPager);
+			mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
+			mSectionsPagerAdapter.addFragment(new Weather());
+			mSectionsPagerAdapter.addFragment(new Stats());
+			mSectionsPagerAdapter.addFragment(new Forecast());
+			mSectionsPagerAdapter.addFragment(new Webcam());
+			mSectionsPagerAdapter.addFragment(new Custom());
 
-			Field touchSlopField = RecyclerView.class.getDeclaredField("mTouchSlop");
-			touchSlopField.setAccessible(true);
-			Object tmp = touchSlopField.get(recyclerView);
-			if(tmp != null)
+			mViewPager = findViewById(R.id.container);
+			mViewPager.setOffscreenPageLimit(mSectionsPagerAdapter.getItemCount());
+			//mViewPager.setOffscreenPageLimit(ViewPager2.OFFSCREEN_PAGE_LIMIT_DEFAULT);
+			runOnUiThread(() ->
 			{
-				int touchSlop = (int)tmp;
-				touchSlopField.set(recyclerView, touchSlop * 3); // 3× less sensitive
-			}
-		} catch (Exception e) {
-			Common.doStackOutput(e);
-		}
+				mViewPager.setAdapter(mSectionsPagerAdapter);
+				new Thread(() ->
+				{
+					// Reduce swipe sensitivity
+					try
+					{
+						Field recyclerViewField = ViewPager2.class.getDeclaredField("mRecyclerView");
+						recyclerViewField.setAccessible(true);
+						RecyclerView recyclerView = (RecyclerView)recyclerViewField.get(mViewPager);
 
-		String[] tabTitles;
-		if(Common.GetBoolPref("radarforecast", true))
-			tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.forecast2), getString(R.string.webcam2), getString(R.string.custom2)};
-		else
-			tabTitles = new String[]{getString(R.string.weather2), getString(R.string.stats2), getString(R.string.radar), getString(R.string.webcam2), getString(R.string.custom2)};
-		new TabLayoutMediator(tabLayout, mViewPager, ((tab, position) -> tab.setText(tabTitles[position]))).attach();
+						Field touchSlopField = RecyclerView.class.getDeclaredField("mTouchSlop");
+						touchSlopField.setAccessible(true);
+						Object tmp = touchSlopField.get(recyclerView);
+						if(tmp != null)
+						{
+							int touchSlop = (int)tmp;
+							touchSlopField.set(recyclerView, touchSlop * 3); // 3× less sensitive
+						}
+					} catch(Exception e) {
+						Common.doStackOutput(e);
+					}
+
+					String[] tabTitles;
+					if(Common.GetBoolPref("radarforecast", true))
+						tabTitles = new String[]{weeWXApp.getAndroidString(R.string.weather2), weeWXApp.getAndroidString(R.string.stats2),
+						                         weeWXApp.getAndroidString(R.string.forecast2), weeWXApp.getAndroidString(R.string.webcam2),
+						                         weeWXApp.getAndroidString(R.string.custom2)};
+					else
+						tabTitles = new String[]{weeWXApp.getAndroidString(R.string.weather2), weeWXApp.getAndroidString(R.string.stats2),
+						                         weeWXApp.getAndroidString(R.string.radar), weeWXApp.getAndroidString(R.string.webcam2),
+						                         weeWXApp.getAndroidString(R.string.custom2)};
+					TabLayoutMediator tlm = new TabLayoutMediator(tabLayout, mViewPager, ((tab, position) ->
+							                                              tab.setText(tabTitles[position])));
+					runOnUiThread(() ->
+					{
+						tlm.attach();
+
+						if(savedInstanceState != null)
+						{
+							int page = savedInstanceState.getInt("page", 0);
+							mViewPager.setCurrentItem(page, false);
+						}
+
+						showSplash = false;
+					});
+				}).start();
+			});
+		}).start();
 
 		try
 		{
 			String baseURL = Common.GetStringPref("BASE_URL", "");
-			if(baseURL == null || baseURL.isEmpty())
+			if(baseURL == null || baseURL.isBlank())
 				mDrawerLayout.openDrawer(GravityCompat.START);
-		} catch (Exception e) {
+		} catch(Exception e) {
 			Common.doStackOutput(e);
 		}
 
@@ -207,38 +261,25 @@ public class MainActivity extends FragmentActivity
 		b3 = findViewById(R.id.aboutButton);
 		b4 = findViewById(R.id.settingsButton);
 
-		// https://github.com/Pes8/android-material-color-picker-dialog
-		fgColour = findViewById(R.id.fg_Picker);
-		int fg = Common.GetIntPref("fgColour", ContextCompat.getColor(this, R.color.Black));
-		String hex = CustomEditText.getFixedChar() + String.format("%08X", fg).toUpperCase();
-		Common.LogMessage("Line223 Setting fgColour to "+ to_ARGB_hex(hex));
-		fgColour.setText(hex);
-
-		bgColour = findViewById(R.id.bg_Picker);
-		int bg = Common.GetIntPref("bgColour", ContextCompat.getColor(this, R.color.White));
-		hex = CustomEditText.getFixedChar() + String.format("%08X", bg).toUpperCase();
-		Common.LogMessage("Line229 Setting bgColour to "+ to_ARGB_hex(hex));
-		bgColour.setText(hex);
-
 		s1 = findViewById(R.id.spinner1);
 		s1.setOnItemClickListener((parent, view, position, id) ->
 		{
 			UpdateFrequency = position;
-			Common.LogMessage("New UpdateFrequency == " + UpdateFrequency);
+			Common.LogMessage("New UpdateFrequency: " + UpdateFrequency);
 		});
 
 		s2 = findViewById(R.id.spinner2);
 		s2.setOnItemClickListener((parent, view, position, id) ->
 		{
 			DayNightMode = position;
-			Common.LogMessage("New DayNightMode == " + DayNightMode);
+			Common.LogMessage("New DayNightMode: " + DayNightMode);
 		});
 
 		s3 = findViewById(R.id.spinner3);
 		s3.setOnItemClickListener((parent, view, position, id) ->
 		{
-			KeyValue.widget_theme_mode = position;
-			if(KeyValue.widget_theme_mode == 4)
+			widget_theme_mode = position;
+			if(widget_theme_mode == 4)
 			{
 				fgtil.post(() -> fgtil.setVisibility(View.VISIBLE));
 				bgtil.post(() -> bgtil.setVisibility(View.VISIBLE));
@@ -246,23 +287,89 @@ public class MainActivity extends FragmentActivity
 				fgtil.post(() -> fgtil.setVisibility(View.GONE));
 				bgtil.post(() -> bgtil.setVisibility(View.GONE));
 			}
-			Common.LogMessage("New KeyValue.widget_theme_mode == " + KeyValue.widget_theme_mode);
+
+			Common.LogMessage("New widget_theme_mode: " + widget_theme_mode);
 		});
 
-		MaterialSwitch wifi_only = findViewById(R.id.wifi_only);
-		wifi_only.setChecked(Common.GetBoolPref("onlyWIFI", false));
-		MaterialSwitch use_icons = findViewById(R.id.use_icons);
-		use_icons.setChecked(Common.GetBoolPref("use_icons", false));
-		metric_forecasts.setChecked(Common.GetBoolPref("metric", true));
-		show_indoor.setChecked(Common.GetBoolPref("showIndoor", false));
+		fgColour = findViewById(R.id.fg_Picker);
+		bgColour = findViewById(R.id.bg_Picker);
 
-		MaterialRadioButton showRadar = findViewById(R.id.showRadar);
-		showRadar.setChecked(Common.GetBoolPref("radarforecast", true));
-		MaterialRadioButton showForecast = findViewById(R.id.showForecast);
-		showForecast.setChecked(!Common.GetBoolPref("radarforecast", true));
+		wifi_only = findViewById(R.id.wifi_only);
+		use_icons = findViewById(R.id.use_icons);
+
+		showRadar = findViewById(R.id.showRadar);
+		showForecast = findViewById(R.id.showForecast);
 
 		fgtil = findViewById(R.id.fgTextInputLayout);
 		bgtil = findViewById(R.id.bgTextInputLayout);
+
+		int fg, bg;
+		boolean wo, ui, met, si, sr, sf;
+
+		UpdateFrequency = Common.GetIntPref("updateInterval", 1);
+		DayNightMode = Common.GetIntPref("DayNightMode", 2);
+		KeyValue.widget_theme_mode = widget_theme_mode = Common.GetIntPref(Common.WIDGET_THEME_MODE, 0);
+
+		fg = Common.GetIntPref("fgColour", 0xFFFFFFFF);
+		bg = Common.GetIntPref("bgColour", 0x00000000);
+
+		wo = Common.GetBoolPref("onlyWIFI", false);
+		ui = Common.GetBoolPref("use_icons", false);
+		met = Common.GetBoolPref("metric", true);
+		si = Common.GetBoolPref("showIndoor", false);
+		sr = Common.GetBoolPref("radarforecast", true);
+
+		if(savedInstanceState != null)
+		{
+			Common.LogMessage("MainActivity.onCreate() Reading current settings that were saved in a bundle....");
+			UpdateFrequency = savedInstanceState.getInt("UpdateFrequency", UpdateFrequency);
+			DayNightMode = savedInstanceState.getInt("DayNightMode", DayNightMode);
+			widget_theme_mode = savedInstanceState.getInt("widget_theme_mode", widget_theme_mode);
+
+			Common.LogMessage("UpdateFrequency: " + UpdateFrequency);
+			Common.LogMessage("DayNightMode: " + DayNightMode);
+			Common.LogMessage("widget_theme_mode: " + widget_theme_mode);
+
+			fg = savedInstanceState.getInt("fg", fg);
+			bg = savedInstanceState.getInt("bg", bg);
+
+			wo = savedInstanceState.getBoolean("wo", wo);
+			ui = savedInstanceState.getBoolean("ui", ui);
+			met = savedInstanceState.getBoolean("met", met);
+			si = savedInstanceState.getBoolean("si", si);
+			sr = savedInstanceState.getBoolean("sr", sr);
+		}
+
+		// https://github.com/Pes8/android-material-color-picker-dialog
+		String hex = CPEditText.getFixedChar() + String.format("%08X", fg).toUpperCase();
+		Common.LogMessage("Line223 Setting fgColour to "+ to_ARGB_hex(hex));
+		final String fghex = hex;
+		fgColour.setText(fghex);
+
+		hex = CPEditText.getFixedChar() + String.format("%08X", bg).toUpperCase();
+		Common.LogMessage("Line229 Setting bgColour to "+ to_ARGB_hex(hex));
+		final String bghex = hex;
+		bgColour.setText(bghex);
+
+		wifi_only.setChecked(wo);
+		use_icons.setChecked(ui);
+		metric_forecasts.setChecked(met);
+		show_indoor.setChecked(si);
+
+		showRadar.setChecked(sr);
+		showForecast.setChecked(!sr);
+
+		settingLayout.setVisibility(View.VISIBLE);
+		aboutLayout.setVisibility(View.GONE);
+
+		MaterialTextView mtv1 = findViewById(R.id.header_needs_underlining);
+		String lines = "<b><u>" + weeWXApp.getAndroidString(R.string.nav_header_title) + "</u></b>";
+		mtv1.setText(HtmlCompat.fromHtml(lines, HtmlCompat.FROM_HTML_MODE_LEGACY));
+		mtv1.setMovementMethod(LinkMovementMethod.getInstance());
+
+		MaterialTextView tv = findViewById(R.id.aboutText);
+		tv.setText(HtmlCompat.fromHtml(Common.about_blurb, HtmlCompat.FROM_HTML_MODE_LEGACY));
+		tv.setMovementMethod(LinkMovementMethod.getInstance());
 
 		b1.setOnClickListener(arg0 ->
 		{
@@ -300,100 +407,139 @@ public class MainActivity extends FragmentActivity
 			scrollView.smoothScrollTo(0, 0);
 		});
 
-		settingsURL.setText(Common.GetStringPref("SETTINGS_URL", "https://example.com/weewx/inigo-settings.txt"));
+		settingsURL.setText(Common.GetStringPref("SETTINGS_URL",
+				"https://example.com/weewx/inigo-settings.txt"));
 		settingsURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
-			if (!hasFocus)
+			if(!hasFocus)
 				hideKeyboard(v);
 		});
 
 		customURL.setText(Common.GetStringPref("custom_url", ""));
 		customURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
-			if (!hasFocus)
+			if(!hasFocus)
 				hideKeyboard(v);
 		});
 
-		settingLayout.setVisibility(View.VISIBLE);
-		aboutLayout.setVisibility(View.GONE);
-
-		MaterialTextView mtv1 = findViewById(R.id.header_needs_underlining);
-		String lines = "<b><u>" + getString(R.string.nav_header_title) + "</u></b>";
-		mtv1.setText(HtmlCompat.fromHtml(lines, HtmlCompat.FROM_HTML_MODE_LEGACY));
-		mtv1.setMovementMethod(LinkMovementMethod.getInstance());
-
-		MaterialTextView tv = findViewById(R.id.aboutText);
-		tv.setText(HtmlCompat.fromHtml(Common.about_blurb, HtmlCompat.FROM_HTML_MODE_LEGACY));
-		tv.setMovementMethod(LinkMovementMethod.getInstance());
-
 		setStrings();
-		updateDropDowns();
-		Common.setAlarm("MainActivity.onCreate() has finished...");
+		//updateDropDowns();
+		WidgetProvider.updateAppWidget();
+
+		Common.LogMessage("MainActivity.onCreate() has finished...");
+		Common.setAlarm("MainActivity.onCreate()");
+	}
+
+	@Override
+	protected void onSaveInstanceState(@NonNull Bundle outState)
+	{
+		super.onSaveInstanceState(outState);
+
+		Common.LogMessage("MainActivity.onSaveInstanceState() Stashing current settings into a bundle....");
+		outState.putInt("page", mViewPager.getCurrentItem());
+		outState.putInt("UpdateFrequency", UpdateFrequency);
+		outState.putInt("DayNightMode", DayNightMode);
+		outState.putInt("widget_theme_mode", widget_theme_mode);
+
+		Common.LogMessage("UpdateFrequency: " + UpdateFrequency);
+		Common.LogMessage("DayNightMode: " + DayNightMode);
+		Common.LogMessage("widget_theme_mode: " + widget_theme_mode);
+
+		Editable edit = fgColour.getText();
+		if(edit != null && edit.length() > 0)
+		{
+			int fg = parseHexToColour(edit.toString());
+			outState.putInt("fg", fg);
+		} else {
+			outState.putInt("fg", 0xFFFFFFFF);
+		}
+
+		edit = bgColour.getText();
+		if(edit != null && edit.length() > 0)
+		{
+			int bg = parseHexToColour(edit.toString());
+			outState.putInt("bg", bg);
+		} else {
+			outState.putInt("fg", 0x00000000);
+		}
+
+		outState.putBoolean("wo", wifi_only.isChecked());
+		outState.putBoolean("ui", use_icons.isChecked());
+		outState.putBoolean("met", metric_forecasts.isChecked());
+		outState.putBoolean("si", show_indoor.isChecked());
+		outState.putBoolean("sr", showRadar.isChecked());
 	}
 
 	private void setStrings()
 	{
 		updateOptions = new String[]
 		{
-			getString(R.string.manual_update),
-			getString(R.string.every_5_minutes),
-			getString(R.string.every_10_minutes),
-			getString(R.string.every_15_minutes),
-			getString(R.string.every_30_minutes),
-			getString(R.string.every_hour),
+			weeWXApp.getAndroidString(R.string.manual_update),
+			weeWXApp.getAndroidString(R.string.every_5_minutes),
+			weeWXApp.getAndroidString(R.string.every_10_minutes),
+			weeWXApp.getAndroidString(R.string.every_15_minutes),
+			weeWXApp.getAndroidString(R.string.every_30_minutes),
+			weeWXApp.getAndroidString(R.string.every_hour),
 		};
 
 		themeOptions = new String[]
 		{
-			getString(R.string.light_theme),
-			getString(R.string.dark_theme),
-			getString(R.string.system_default)
+			weeWXApp.getAndroidString(R.string.light_theme),
+			weeWXApp.getAndroidString(R.string.dark_theme),
+			weeWXApp.getAndroidString(R.string.system_default)
 		};
 
 		widgetThemeOptions = new String[]
 		{
-			getString(R.string.system_default),
-			getString(R.string.match_app),
-			getString(R.string.light_theme),
-			getString(R.string.dark_theme),
-			getString(R.string.custom_setting)
+			weeWXApp.getAndroidString(R.string.system_default),
+			weeWXApp.getAndroidString(R.string.match_app),
+			weeWXApp.getAndroidString(R.string.light_theme),
+			weeWXApp.getAndroidString(R.string.dark_theme),
+			weeWXApp.getAndroidString(R.string.custom_setting)
 		};
 	}
 
 	private void updateDropDowns()
 	{
-		UpdateFrequency = Common.GetIntPref("updateInterval", 1);
-		ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinner_layout, updateOptions);
-		s1.post(() ->
-		{
-			s1.setAdapter(adapter);
-			s1.setText(updateOptions[UpdateFrequency], false);
-		});
-
-		DayNightMode = Common.GetIntPref("DayNightMode", 2);
+		ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, R.layout.spinner_layout, updateOptions);
 		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_layout, themeOptions);
-		s2.post(() ->
-		{
-			s2.setAdapter(adapter2);
-			s2.setText(themeOptions[DayNightMode], false);
-		});
-
-		KeyValue.widget_theme_mode = Common.GetIntPref(Common.WIDGET_THEME_MODE, 0);
-		if(KeyValue.widget_theme_mode == 4)
-		{
-			fgtil.post(() -> fgtil.setVisibility(View.VISIBLE));
-			bgtil.post(() -> bgtil.setVisibility(View.VISIBLE));
-		} else {
-			fgtil.post(() -> fgtil.setVisibility(View.GONE));
-			bgtil.post(() -> bgtil.setVisibility(View.GONE));
-		}
-
 		ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this, R.layout.spinner_layout, widgetThemeOptions);
-		s3.post(() ->
+
+		final int uf = UpdateFrequency;
+		final int dnm = DayNightMode;
+		final int wtm = widget_theme_mode;
+
+		runOnUiThread(() ->
 		{
+			Common.LogMessage("UpdateFrequency: " + uf);
+			Common.LogMessage("DayNightMode: " + dnm);
+			Common.LogMessage("widget_theme_mode: " + wtm);
+
+			s1.setAdapter(adapter1);
+			s1.setText(updateOptions[uf], false);
+
+			s2.setAdapter(adapter2);
+			s2.setText(themeOptions[dnm], false);
+
+			if(wtm == 4)
+			{
+				fgtil.setVisibility(View.VISIBLE);
+				bgtil.setVisibility(View.VISIBLE);
+			} else {
+				fgtil.setVisibility(View.GONE);
+				bgtil.setVisibility(View.GONE);
+			}
+
 			s3.setAdapter(adapter3);
-			s3.setText(widgetThemeOptions[KeyValue.widget_theme_mode], false);
+			s3.setText(widgetThemeOptions[wtm], false);
 		});
+	}
+
+	private void hideKeyboard(View view)
+	{
+		InputMethodManager inputMethodManager = (InputMethodManager)this.getSystemService(Activity.INPUT_METHOD_SERVICE);
+		if(inputMethodManager != null)
+			inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
 	}
 
 	void closeKeyboard()
@@ -432,30 +578,24 @@ public class MainActivity extends FragmentActivity
 		closeDrawer();
 		WidgetProvider.updateAppWidget();
 		this.recreate();
+		updateDropDowns();
 	}
 
 	private void showUpdateAvailable()
 	{
 		final AlertDialog.Builder d = new AlertDialog.Builder(this);
-		d.setTitle(getString(R.string.app_name));
-		d.setMessage(getString(R.string.inigo_needs_updating));
-		d.setPositiveButton(getString(R.string.ok), null);
+		d.setTitle(weeWXApp.getAndroidString(R.string.app_name));
+		d.setMessage(weeWXApp.getAndroidString(R.string.inigo_needs_updating));
+		d.setPositiveButton(weeWXApp.getAndroidString(R.string.ok), null);
 		d.setIcon(R.mipmap.ic_launcher_foreground);
 		d.show();
-	}
-
-	private void hideKeyboard(View view)
-	{
-		InputMethodManager inputMethodManager = (InputMethodManager)this.getSystemService(Activity.INPUT_METHOD_SERVICE);
-		if(inputMethodManager != null)
-			inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
 	}
 
 	private void checkReally()
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(getString(R.string.remove_all_data)).setCancelable(false)
-				.setPositiveButton(getString(R.string.ok), (dialog_interface, i) ->
+		builder.setMessage(weeWXApp.getAndroidString(R.string.remove_all_data)).setCancelable(false)
+				.setPositiveButton(weeWXApp.getAndroidString(R.string.ok), (dialog_interface, i) ->
 				{
 					Common.LogMessage("trash all data");
 
@@ -477,7 +617,7 @@ public class MainActivity extends FragmentActivity
 					dialog_interface.cancel();
 
 					System.exit(0);
-				}).setNegativeButton(getString(R.string.no), (dialog_interface, i) -> dialog_interface.cancel());
+				}).setNegativeButton(weeWXApp.getAndroidString(R.string.no), (dialog_interface, i) -> dialog_interface.cancel());
 
 		builder.create().show();
 	}
@@ -504,45 +644,39 @@ public class MainActivity extends FragmentActivity
 
 			String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "", metierev;
 
-			MaterialSwitch metric_forecasts = findViewById(R.id.metric_forecasts);
-			MaterialSwitch show_indoor = findViewById(R.id.show_indoor);
-			MaterialSwitch wifi_only = findViewById(R.id.wifi_only);
-			MaterialSwitch use_icons = findViewById(R.id.use_icons);
-
-			MaterialRadioButton showRadar = findViewById(R.id.showRadar);
 			long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
 			if(use_icons.isChecked() && (Common.GetLongPref("icon_version", 0) < Common.icon_version || !Common.checkForImages()))
 			{
 				try
 				{
-					if (!Common.downloadIcons())
+					if(!Common.downloadIcons())
 					{
-						Common.SetStringPref("lastError", getString(R.string.icons_failed_to_download));
+						Common.SetStringPref("lastError", weeWXApp.getAndroidString(R.string.icons_failed_to_download));
 						runOnUiThread(() ->
 						{
 							b1.setEnabled(true);
 							b2.setEnabled(true);
 							dialog.dismiss();
 							new AlertDialog.Builder(this)
-									.setTitle(getString(R.string.wasnt_able_to_detect_icons))
-									.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-									.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_detect_icons))
+									.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 									{
 									}).show();
 						});
 						return;
 					}
-				} catch (Exception e) {
+				} catch(Exception e) {
 					Common.SetStringPref("lastError", e.toString());
 					runOnUiThread(() -> {
 						b1.setEnabled(true);
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(this)
-								.setTitle(getString(R.string.wasnt_able_to_detect_icons))
-								.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_detect_icons))
+								.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
 					});
@@ -553,17 +687,17 @@ public class MainActivity extends FragmentActivity
 			}
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().trim() : "";
-			if(settings_url.isEmpty() || settings_url.equals("https://example.com/weewx/inigo-settings.txt"))
+			if(settings_url.isBlank() || settings_url.equals("https://example.com/weewx/inigo-settings.txt"))
 			{
-				Common.SetStringPref("lastError", getString(R.string.url_was_default_or_empty));
+				Common.SetStringPref("lastError", weeWXApp.getAndroidString(R.string.url_was_default_or_empty));
 				runOnUiThread(() -> {
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
-							.setTitle(getString(R.string.wasnt_able_to_connect_settings))
-							.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_settings))
+							.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
@@ -573,49 +707,53 @@ public class MainActivity extends FragmentActivity
 
 			try
 			{
-				String[] bits = Common.downloadSettings(settingsURL.getText().toString()).split("\\n");
+				String settingsData = Common.downloadSettings(settingsURL.getText().toString());
+				if(settingsData == null)
+					return;
+
+				String[] bits = settingsData.split("\\n");
 				for (String bit : bits)
 				{
 					String[] mb = bit.split("=", 2);
 					mb[0] = mb[0].trim().toLowerCase(Locale.ENGLISH);
-					if (mb[0].equals("data"))
+					if(mb[0].equals("data"))
 						data = mb[1];
-					if (mb[0].equals("radtype"))
+					if(mb[0].equals("radtype"))
 						radtype = mb[1].toLowerCase(Locale.ENGLISH);
-					if (mb[0].equals("radar"))
+					if(mb[0].equals("radar"))
 						radar = mb[1];
-					if (mb[0].equals("fctype"))
+					if(mb[0].equals("fctype"))
 						fctype = mb[1].toLowerCase(Locale.ENGLISH);
-					if (mb[0].equals("forecast"))
+					if(mb[0].equals("forecast"))
 						forecast = mb[1];
-					if (mb[0].equals("webcam"))
+					if(mb[0].equals("webcam"))
 						webcam = mb[1];
-					if (mb[0].equals("custom"))
+					if(mb[0].equals("custom"))
 						custom = mb[1];
 				}
 
-				if(fctype.isEmpty())
+				if(fctype.isBlank())
 					fctype = "Yahoo";
 
-				if(radtype.isEmpty())
+				if(radtype.isBlank())
 					radtype = "image";
 
 				validURL = true;
-			} catch (Exception e) {
+			} catch(Exception e) {
 				Common.SetStringPref("lastError", e.toString());
 				Common.doStackOutput(e);
 			}
 
-			if (!validURL)
+			if(!validURL)
 			{
 				runOnUiThread(() -> {
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
-							.setTitle(getString(R.string.wasnt_able_to_connect_settings))
-							.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_settings))
+							.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
@@ -624,17 +762,17 @@ public class MainActivity extends FragmentActivity
 
 			Common.LogMessage("data == " + data);
 
-			if (data.isEmpty())
+			if(data.isBlank())
 			{
-				Common.SetStringPref("lastError", getString(R.string.data_url_was_blank));
+				Common.SetStringPref("lastError", weeWXApp.getAndroidString(R.string.data_url_was_blank));
 				runOnUiThread(() -> {
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
-							.setTitle(getString(R.string.wasnt_able_to_connect_data_txt))
-							.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_data_txt))
+							.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
@@ -642,29 +780,29 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			if (!data.equals(olddata))
+			if(!data.equals(olddata))
 			{
 				try
 				{
 					Common.reallyGetWeather(data);
 					validURL1 = true;
-				} catch (Exception e) {
+				} catch(Exception e) {
 					Common.SetStringPref("lastError", e.toString());
 					Common.doStackOutput(e);
 				}
 			} else
 				validURL1 = true;
 
-			if (!validURL1)
+			if(!validURL1)
 			{
 				runOnUiThread(() -> {
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
-							.setTitle(getString(R.string.wasnt_able_to_connect_radar_image))
-							.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-							.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_radar_image))
+							.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 							{
 							}).show();
 				});
@@ -672,34 +810,34 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			if (!radar.isEmpty() && !radar.equals(oldradar))
+			if(!radar.isBlank() && !radar.equals(oldradar))
 			{
 				try
 				{
 					if(radtype.equals("image"))
 					{
 						File file = new File(getFilesDir(), "/radar.gif.tmp");
-						File f = Common.downloadJSOUP(file, radar);
+						File f = Common.downloadBinary(file, radar);
 						if(f != null)
 							validURL2 = f.exists();
 					} else if(radtype.equals("webpage")) {
 						validURL2 = Common.checkURL(radar);
 					}
-				} catch (Exception e) {
+				} catch(Exception e) {
 					Common.SetStringPref("lastError", e.toString());
 					Common.doStackOutput(e);
 				}
 
-				if (!validURL2)
+				if(!validURL2)
 				{
 					runOnUiThread(() -> {
 						b1.setEnabled(true);
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(this)
-								.setTitle(getString(R.string.wasnt_able_to_connect_radar_image))
-								.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_radar_image))
+								.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
 					});
@@ -708,7 +846,7 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			if(!forecast.isEmpty())
+			if(!forecast.isBlank())
 			{
 				try
 				{
@@ -727,9 +865,9 @@ public class MainActivity extends FragmentActivity
 									b2.setEnabled(true);
 									dialog.dismiss();
 									new AlertDialog.Builder(this)
-											.setTitle(getString(R.string.wasnt_able_to_connect_or_download))
-											.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-											.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+											.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_or_download))
+											.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+											.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 											{
 											}).show();
 								});
@@ -756,9 +894,9 @@ public class MainActivity extends FragmentActivity
 								b2.setEnabled(true);
 								dialog.dismiss();
 								new AlertDialog.Builder(this)
-										.setTitle(getString(R.string.wasnt_able_to_connect_forecast))
-										.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-										.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+										.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast))
+										.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+										.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 										{
 										}).show();
 							});
@@ -766,7 +904,7 @@ public class MainActivity extends FragmentActivity
 						}
 						case "wmo.int" ->
 						{
-							if (!forecast.startsWith("http"))
+							if(!forecast.startsWith("http"))
 								forecast = "https://worldweather.wmo.int/en/json/" + forecast.trim() + "_en.xml";
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
@@ -774,16 +912,16 @@ public class MainActivity extends FragmentActivity
 						case "weather.gov" ->
 						{
 							String lat = "", lon = "";
-							if (forecast.contains("?"))
+							if(forecast.contains("?"))
 								forecast = forecast.split("\\?", 2)[1].trim();
-							if (forecast.contains("lat") && forecast.contains("lon"))
+							if(forecast.contains("lat") && forecast.contains("lon"))
 							{
 								String[] tmp = forecast.split("&");
 								for (String line : tmp)
 								{
-									if (line.split("=", 2)[0].equals("lat"))
+									if(line.split("=", 2)[0].equals("lat"))
 										lat = line.split("=", 2)[1].trim();
-									if (line.split("=", 2)[0].equals("lon"))
+									if(line.split("=", 2)[0].equals("lon"))
 										lon = line.split("=", 2)[1].trim();
 								}
 							} else
@@ -809,7 +947,7 @@ public class MainActivity extends FragmentActivity
 						}
 						case "openweathermap.org" ->
 						{
-							if (metric_forecasts.isChecked())
+							if(metric_forecasts.isChecked())
 								forecast += "&units=metric";
 							else
 								forecast += "&units=imperial";
@@ -820,7 +958,7 @@ public class MainActivity extends FragmentActivity
 						case "weather.com" ->
 						{
 							forecast = "https://api.weather.com/v3/wx/forecast/daily/5day?geocode=" + forecast + "&format=json&apiKey=d522aa97197fd864d36b418f39ebb323";
-							if (metric_forecasts.isChecked())
+							if(metric_forecasts.isChecked())
 								forecast += "&units=m";
 							else
 								forecast += "&units=e";
@@ -837,9 +975,12 @@ public class MainActivity extends FragmentActivity
 							if(tmpStr == null)
 								return;
 
-							if(tmpStr.isEmpty() || !forecast.equals(oldforecast))
+							if(tmpStr.isBlank() || !forecast.equals(oldforecast))
 							{
 								metierev = Common.downloadForecast(fctype, metierev, null);
+								if(metierev == null)
+									return;
+
 								JSONObject jobj = new JSONObject(metierev);
 								metierev = jobj.getString("city") + ", Ireland";
 								Common.SetStringPref("metierev", metierev);
@@ -850,16 +991,16 @@ public class MainActivity extends FragmentActivity
 						}
 						default ->
 						{
-							Common.SetStringPref("lastError", String.format(getString(R.string.forecast_type_is_invalid), fctype));
+							Common.SetStringPref("lastError", String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype));
 							runOnUiThread(() ->
 							{
 								b1.setEnabled(true);
 								b2.setEnabled(true);
 								dialog.dismiss();
 								new AlertDialog.Builder(this)
-										.setTitle(getString(R.string.wasnt_able_to_connect_forecast))
-										.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-										.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+										.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast))
+										.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+										.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 										{
 										}).show();
 							});
@@ -867,7 +1008,7 @@ public class MainActivity extends FragmentActivity
 							return;
 						}
 					}
-				} catch (Exception e) {
+				} catch(Exception e) {
 					Common.SetStringPref("lastError", e.toString());
 					Common.doStackOutput(e);
 				}
@@ -877,23 +1018,23 @@ public class MainActivity extends FragmentActivity
 
 			if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !Common.checkForImages() && !use_icons.isChecked())
 			{
-				Common.SetStringPref("lastError", String.format(getString(R.string.forecast_type_needs_icons), fctype));
+				Common.SetStringPref("lastError", String.format(weeWXApp.getAndroidString(R.string.forecast_type_needs_icons), fctype));
 				runOnUiThread(() ->
 				{
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
-						.setTitle(getString(R.string.wasnt_able_to_detect_forecast_icons))
-						.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-						.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+						.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_detect_forecast_icons))
+						.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+						.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 						{}).show();
 				});
 
 				return;
 			}
 
-			if(!forecast.isEmpty() && oldforecast != null && !oldforecast.equals(forecast))
+			if(!forecast.isBlank() && oldforecast != null && !oldforecast.equals(forecast))
 			{
 				Common.LogMessage("forecast checking: " + forecast);
 
@@ -908,21 +1049,21 @@ public class MainActivity extends FragmentActivity
 						Common.SetLongPref("rssCheck", current_time);
 						Common.SetStringPref("forecastData", tmp);
 					}
-				} catch (Exception e) {
+				} catch(Exception e) {
 					Common.SetStringPref("lastError", e.toString());
 					Common.doStackOutput(e);
 				}
 
-				if (!validURL3)
+				if(!validURL3)
 				{
 					runOnUiThread(() -> {
 						b1.setEnabled(true);
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(this)
-								.setTitle(getString(R.string.wasnt_able_to_connect_forecast))
-								.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast))
+								.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
 					});
@@ -931,20 +1072,20 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			if (!webcam.isEmpty() && !webcam.equals(oldwebcam))
+			if(!webcam.isBlank() && !webcam.equals(oldwebcam))
 			{
 				Common.LogMessage("checking: " + webcam);
 
-				if (!Webcam.downloadWebcam(webcam, this.getFilesDir()))
+				if(!Webcam.downloadWebcam(webcam, this.getFilesDir()))
 				{
 					runOnUiThread(() -> {
 						b1.setEnabled(true);
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(this)
-								.setTitle(getString(R.string.wasnt_able_to_connect_webcam_url))
-								.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-								.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
+								.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 								{
 								}).show();
 					});
@@ -954,9 +1095,9 @@ public class MainActivity extends FragmentActivity
 			}
 
 			custom_url = customURL.getText() != null ? customURL.getText().toString().trim() : "";
-			if(custom_url.isEmpty())
+			if(custom_url.isBlank())
 			{
-				if (!custom.isEmpty() && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
+				if(!custom.isBlank() && !custom.equals("https://example.com/mobile.html") && !custom.equals(oldcustom))
 				{
 					try
 					{
@@ -964,21 +1105,21 @@ public class MainActivity extends FragmentActivity
 							validURL5 = true;
 						else
 							Common.RemovePref("custom_url");
-					} catch (Exception e) {
+					} catch(Exception e) {
 						Common.SetStringPref("lastError", e.toString());
 						Common.doStackOutput(e);
 					}
 
-					if (!validURL5)
+					if(!validURL5)
 					{
 						runOnUiThread(() -> {
 							b1.setEnabled(true);
 							b2.setEnabled(true);
 							dialog.dismiss();
 							new AlertDialog.Builder(this)
-									.setTitle(getString(R.string.wasnt_able_to_connect_custom_url))
-									.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-									.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_custom_url))
+									.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 									{
 									}).show();
 						});
@@ -986,27 +1127,27 @@ public class MainActivity extends FragmentActivity
 					}
 				}
 			} else {
-				if (!custom_url.equals(oldcustom_url))
+				if(!custom_url.equals(oldcustom_url))
 				{
 					try
 					{
 						if(Common.checkURL(custom_url))
 							validURL5 = true;
-					} catch (Exception e) {
+					} catch(Exception e) {
 						Common.SetStringPref("lastError", e.toString());
 						Common.doStackOutput(e);
 					}
 
-					if (!validURL5)
+					if(!validURL5)
 					{
 						runOnUiThread(() -> {
 							b1.setEnabled(true);
 							b2.setEnabled(true);
 							dialog.dismiss();
 							new AlertDialog.Builder(this)
-									.setTitle(getString(R.string.wasnt_able_to_connect_custom_url))
-									.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
-									.setPositiveButton(getString(R.string.ill_fix_and_try_again), (dialog, which) ->
+									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_custom_url))
+									.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
 									{
 									}).show();
 						});
@@ -1016,7 +1157,7 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			if(forecast.isEmpty())
+			if(forecast.isBlank())
 			{
 				Common.SetLongPref("rssCheck", 0);
 				Common.SetStringPref("forecastData", "");
@@ -1040,7 +1181,8 @@ public class MainActivity extends FragmentActivity
 			Common.SetBoolPref("onlyWIFI", wifi_only.isChecked());
 			Common.SetBoolPref("use_icons", use_icons.isChecked());
 
-			Common.SetIntPref(Common.WIDGET_THEME_MODE, KeyValue.widget_theme_mode);
+			Common.SetIntPref(Common.WIDGET_THEME_MODE, widget_theme_mode);
+			KeyValue.widget_theme_mode = widget_theme_mode;
 
 			Editable edit = fgColour.getText();
 			if(edit != null && edit.length() > 0)
@@ -1112,19 +1254,33 @@ public class MainActivity extends FragmentActivity
 	};
 
 	@Override
-	public void onPause()
+	protected void onResume()
 	{
-		Common.LogMessage("Stopping app updates");
-		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
-		super.onPause();
+		super.onResume();
+		Common.LogMessage("Resuming app updates");
+
+		updateDropDowns();
+
+		if(isVisible)
+			return;
+
+		isVisible = true;
+
+		Common.NotificationManager.getNotificationLiveData().observe(this, notificationObserver);
 	}
 
 	@Override
-	protected void onResume()
+	public void onPause()
 	{
-		Common.LogMessage("Resuming app updates");
-		super.onResume();
-		Common.NotificationManager.getNotificationLiveData().observe(this, notificationObserver);
+		super.onPause();
+		Common.LogMessage("MainActivity.onPause()");
+
+		if(!isVisible)
+			return;
+
+		isVisible = false;
+
+		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 	}
 
 	private final Observer<String> notificationObserver = str ->
@@ -1149,8 +1305,8 @@ public class MainActivity extends FragmentActivity
 		{
 			runOnUiThread(() -> new AlertDialog
 					.Builder(this)
-					.setTitle(getString(R.string.error_occurred_while_attempting_to_update))
-					.setMessage(Common.GetStringPref("lastError", getString(R.string.unknown_error_occurred)))
+					.setTitle(weeWXApp.getAndroidString(R.string.error_occurred_while_attempting_to_update))
+					.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
 					.setPositiveButton("Ok", (dialog, which) ->
 					{
 					}).show());
@@ -1164,7 +1320,7 @@ public class MainActivity extends FragmentActivity
 
 	public void setUserInputPager(boolean b)
 	{
-		Common.LogMessage("MainActivity.setUserInputPager()",true);
+		Common.LogMessage("MainActivity.setUserInputPager()");
 		if(isViewPagerNull())
 			return;
 

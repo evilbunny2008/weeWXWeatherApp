@@ -73,4 +73,5 @@
     <string name="use_icons">Тибс харуул</string>
     <string name="today">Оноо</string>
     <string name="last_year_stats">Өнгөрсөн жилийн статистик</string>
+    <string name="last_month_stats">Өнгөрсөн сарын статистик</string>
 </resources>

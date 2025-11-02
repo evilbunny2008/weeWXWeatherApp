@@ -73,4 +73,5 @@
     <string name="use_icons">Icons</string>
     <string name="today">Мүнөөдэр</string>
     <string name="last_year_stats">Үнгэрһэн жэлэй тоо баримта</string>
+    <string name="last_month_stats">Үнгэрһэн һарын статистика</string>
 </resources>

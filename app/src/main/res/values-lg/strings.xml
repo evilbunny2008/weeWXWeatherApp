@@ -73,4 +73,5 @@
     <string name="use_icons">Laga ebifaananyi</string>
     <string name="today">Leero</string>
     <string name="last_year_stats">Ebibalo by\'omwaka oguwedde</string>
+    <string name="last_month_stats">Ebibalo by\'omwezi oguwedde</string>
 </resources>

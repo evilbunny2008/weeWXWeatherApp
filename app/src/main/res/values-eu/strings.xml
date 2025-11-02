@@ -73,4 +73,5 @@
     <string name="use_icons">Erakutsi ikonoak</string>
     <string name="today">Gaur</string>
     <string name="last_year_stats">Iazko Estatistika</string>
+    <string name="last_month_stats">Azken hilabeteko estatistikak</string>
 </resources>

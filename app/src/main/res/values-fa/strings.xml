@@ -73,4 +73,5 @@
     <string name="use_icons">نمایش نمادها</string>
     <string name="today">امروز</string>
     <string name="last_year_stats">آمار سال گذشته</string>
+    <string name="last_month_stats">آمار ماه گذشته</string>
 </resources>

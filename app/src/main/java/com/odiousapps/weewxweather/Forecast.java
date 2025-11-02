@@ -1,6 +1,8 @@
 package com.odiousapps.weewxweather;
 
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.ColorMatrixColorFilter;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,6 +10,7 @@ import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.view.ViewTreeObserver;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -33,21 +36,25 @@ import androidx.webkit.WebViewFeature;
 public class Forecast extends Fragment implements View.OnClickListener
 {
 	private View rootView;
-	private WebView forecastWebView, radarRotated, radarWebView;
+	private WebView forecastWebView, radarWebView;
 	private SwipeRefreshLayout swipeLayout1, swipeLayout2;
 	private ImageView im;
-	private FrameLayout fl;
+	private FrameLayout rfl;
 	private RotateLayout rl;
 	private MaterialCheckBox floatingCheckBox;
 	private boolean isVisible = false;
-	private boolean isRunning = false;
 	private boolean disableSwipeOnRadar;
 	private boolean disabledSwipe;
 	private MainActivity activity;
-	private ViewTreeObserver.OnScrollChangedListener forecastScrollListener, radarScrollListener1, radarScrollListener2;
-	private boolean hasLoaded;
+	private final ViewTreeObserver.OnScrollChangedListener forecastScrollListener = () ->
+														swipeLayout1.setEnabled(forecastWebView.getScrollY() == 0);
+	private final ViewTreeObserver.OnScrollChangedListener radarScrollListener = () ->
+														swipeLayout2.setEnabled(!floatingCheckBox.isChecked() &&
+														                        radarWebView.getScrollY() == 0);
 
-	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	public View onCreateView(@NonNull LayoutInflater inflater,
+	                         @Nullable ViewGroup container,
+	                         @Nullable Bundle savedInstanceState)
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
@@ -55,17 +62,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		rootView = inflater.inflate(R.layout.fragment_forecast, container, false);
 
-		fl = rootView.findViewById(R.id.radarFrameLayout);
+		rfl = rootView.findViewById(R.id.radar_layout);
 		rl = rootView.findViewById(R.id.rotateLayout);
-
-		forecastWebView = rootView.findViewById(R.id.forecastWebView);
-		Common.setWebview(forecastWebView);
-
-		radarWebView = rootView.findViewById(R.id.radarWebView);
-		Common.setWebview(radarWebView);
-
-		radarRotated = rootView.findViewById(R.id.radarRotated);
-		Common.setWebview(radarRotated);
 
 		swipeLayout1 = rootView.findViewById(R.id.swipeToRefresh1);
 		swipeLayout1.setEnabled(true);
@@ -77,12 +75,46 @@ public class Forecast extends Fragment implements View.OnClickListener
 		});
 
 		swipeLayout2 = rootView.findViewById(R.id.swipeToRefresh2);
+		swipeLayout2.setRefreshing(false);
 		swipeLayout2.setOnRefreshListener(() ->
 		{
 			swipeLayout2.setRefreshing(true);
 			Common.LogMessage("swipeLayout2.onRefresh();");
 			reloadRadar(true);
 		});
+
+		im = rootView.findViewById(R.id.logo);
+
+		floatingCheckBox = rootView.findViewById(R.id.floatingCheckBox);
+		floatingCheckBox.setOnClickListener(this);
+
+		return rootView;
+	}
+
+	@Override
+	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
+	{
+		super.onViewCreated(view, savedInstanceState);
+
+		if(forecastWebView == null)
+			forecastWebView = WebViewPreloader.getInstance().getWebView(requireContext());
+
+		if(forecastWebView.getParent() != null)
+			((ViewGroup)forecastWebView.getParent()).removeView(forecastWebView);
+
+		FrameLayout forecastFL = rootView.findViewById(R.id.forecastWebView);
+		forecastFL.removeAllViews();
+		forecastFL.addView(forecastWebView);
+
+		if(radarWebView == null)
+			radarWebView = WebViewPreloader.getInstance().getWebView(requireContext());
+
+		if(radarWebView.getParent() != null)
+			((ViewGroup)radarWebView.getParent()).removeView(radarWebView);
+
+		FrameLayout fl = rootView.findViewById(R.id.radarFrameLayout);
+		fl.removeAllViews();
+		fl.addView(radarWebView);
 
 		forecastWebView.setWebViewClient(new WebViewClient()
 		{
@@ -95,42 +127,13 @@ public class Forecast extends Fragment implements View.OnClickListener
 			}
 		});
 
-		im = rootView.findViewById(R.id.logo);
-
-		File f2 = new File(Common.getFilesDir(), "/radar.gif");
-		long[] period = Common.getPeriod();
-
-		String radarURl = Common.GetStringPref("RADAR_URL", "");
-		String radtype = Common.GetStringPref("radtype", "");
-		if(radarURl != null && !radarURl.isEmpty() && radtype != null && radtype.equals("image") &&
-				f2.lastModified() + period[0] < System.currentTimeMillis())
-			reloadRadar(false);
-
-		if(radtype != null && !radtype.equals("image") && radarURl != null && !radarURl.isEmpty())
-			loadRadar();
-
-		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
-		if(!Common.GetBoolPref("radarforecast", true) && Common.GetLongPref("rssCheck", 0) + 7190 < current_time)
-			getForecast(false);
-
-		forecastScrollListener = () ->
-				swipeLayout1.setEnabled(forecastWebView.getScrollY() == 0);
-
-		radarScrollListener1 = () ->
-				swipeLayout2.setEnabled(rl.getVisibility() == View.GONE &&
-						!floatingCheckBox.isChecked() && radarWebView.getScrollY() == 0);
-
-		radarScrollListener2 = () ->
-				swipeLayout2.setEnabled(rl.getVisibility() == View.VISIBLE &&
-						!floatingCheckBox.isChecked() && radarWebView.getScrollY() == 0);
-
 		radarWebView.setWebViewClient(new WebViewClient()
 		{
 			@Override
 			public void onPageFinished(WebView view, String url)
 			{
 				super.onPageFinished(view, url);
-				if(fl.getVisibility() == View.VISIBLE && radarWebView.getVisibility() == View.VISIBLE)
+				if(swipeLayout1.getVisibility() != View.VISIBLE)
 					stopRefreshing();
 			}
 		});
@@ -139,13 +142,12 @@ public class Forecast extends Fragment implements View.OnClickListener
 		{
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2)
 			{
-				if (WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+				if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
 				{
 					try
 					{
-						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarWebView.getSettings(), true);
-						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarRotated.getSettings(), true);
-					} catch (Exception e) {
+						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarWebView.getSettings(),true);
+					} catch(Exception e) {
 						Common.doStackOutput(e);
 					}
 				}
@@ -156,19 +158,15 @@ public class Forecast extends Fragment implements View.OnClickListener
 							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
 
 					if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
-						WebSettingsCompat.setAlgorithmicDarkeningAllowed(forecastWebView.getSettings(), true);
+						WebSettingsCompat.setAlgorithmicDarkeningAllowed(forecastWebView.getSettings(),
+								true);
 
 					WebSettingsCompat.setForceDarkStrategy(radarWebView.getSettings(),
 							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
 
 					if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
-						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarWebView.getSettings(), true);
-
-					WebSettingsCompat.setForceDarkStrategy(radarRotated.getSettings(),
-							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
-
-					if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
-						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarRotated.getSettings(), true);
+						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarWebView.getSettings(),
+								true);
 				}
 
 				int mode = WebSettingsCompat.FORCE_DARK_OFF;
@@ -178,25 +176,67 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 				WebSettingsCompat.setForceDark(forecastWebView.getSettings(), mode);
 				WebSettingsCompat.setForceDark(radarWebView.getSettings(), mode);
-				WebSettingsCompat.setForceDark(radarRotated.getSettings(), mode);
 			}
 		}
 
-		radarRotated.setWebViewClient(new WebViewClient()
+		if(savedInstanceState != null)
 		{
-			@Override
-			public void onPageFinished(WebView view, String url)
-			{
-				super.onPageFinished(view, url);
-				if(fl.getVisibility() == View.VISIBLE && rl.getVisibility() == View.VISIBLE)
-					stopRefreshing();
-			}
-		});
+			forecastWebView.restoreState(savedInstanceState);
+			radarWebView.restoreState(savedInstanceState);
+		}
 
-		floatingCheckBox = rootView.findViewById(R.id.floatingCheckBox);
-		floatingCheckBox.setOnClickListener(this);
+		addListeners();
+		updateSwipe();
+		loadRadar();
+		getForecast(false);
 
-		return rootView;
+		updateScreen(true);
+
+		stopRefreshing();
+	}
+
+	@Override
+	public void onSaveInstanceState(@NonNull Bundle outState)
+	{
+		super.onSaveInstanceState(outState);
+
+		if(forecastWebView != null)
+			forecastWebView.saveState(outState);
+
+		if(radarWebView != null)
+			radarWebView.saveState(outState);
+	}
+
+	@Override
+	public void onDestroyView()
+	{
+		super.onDestroyView();
+
+		if(forecastWebView != null)
+		{
+			ViewParent parent = forecastWebView.getParent();
+			if(parent instanceof ViewGroup)
+				((ViewGroup)parent).removeView(forecastWebView);
+
+			forecastWebView.getViewTreeObserver().removeOnScrollChangedListener(forecastScrollListener);
+
+			WebViewPreloader.getInstance().recycleWebView(forecastWebView);
+
+			Common.LogMessage("Stats.onDestroyView() recycled forecastWebView...");
+		}
+
+		if(radarWebView != null)
+		{
+			ViewParent parent = radarWebView.getParent();
+			if(parent instanceof ViewGroup)
+				((ViewGroup)parent).removeView(radarWebView);
+
+			radarWebView.getViewTreeObserver().removeOnScrollChangedListener(radarScrollListener);
+
+			WebViewPreloader.getInstance().recycleWebView(radarWebView);
+
+			Common.LogMessage("Stats.onDestroyView() recycled radarWebView...");
+		}
 	}
 
 	private void stopRefreshing()
@@ -219,37 +259,43 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(radarURL == null)
 			return;
 
-		String str1 = Common.GetStringPref("radtype", "image");
-		if(str1 != null && str1.equals("image"))
+		String radtype = Common.GetStringPref("radtype", "image");
+		if(radtype != null && radtype.equals("image"))
 		{
 			String radar = Common.getFilesDir() + "/radar.gif";
 			File rf = new File(radar);
 
-			if(!rf.exists() && !radarURL.isEmpty() && Common.checkConnection())
+			if(!rf.exists() && !radarURL.isBlank() && Common.checkConnection())
 			{
 				reloadRadar(true);
 				return;
 			}
 
-			if(!rf.exists() || radarURL.isEmpty())
+			if(!rf.exists() || radarURL.isBlank())
 			{
 				Common.LogMessage("Loading radar image from URL: " + radarURL);
 
 				final String html = Common.current_html_headers +
-						"Radar URL not set or is still downloading. You can go to settings to change." +
+						"Radar URL not set or is still downloading. " +
+			            "You can go to settings to change." +
 						Common.html_footer;
 
 				Common.LogMessage("Loading radar page... html: " + html);
-				radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null));
-				radarRotated.post(() -> radarRotated.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null));
+				radarWebView.post(() -> radarWebView.loadDataWithBaseURL(
+						"file:///android_res/drawable/", html,
+						"text/html", "utf-8", null));
+
 				stopRefreshing();
+
 				return;
 			}
 
 			float sd = Resources.getSystem().getDisplayMetrics().density;
 
-			int height = Math.round((float) Resources.getSystem().getDisplayMetrics().widthPixels / sd * 0.955f);
-			int width = Math.round((float) Resources.getSystem().getDisplayMetrics().heightPixels / sd * 0.955f);
+			int height = Math.round((float)Resources.getSystem().getDisplayMetrics().widthPixels /
+			                        sd * 0.955f);
+			int width = Math.round((float)Resources.getSystem().getDisplayMetrics().heightPixels /
+			                       sd * 0.955f);
 
 			try
 			{
@@ -258,7 +304,15 @@ public class Forecast extends Fragment implements View.OnClickListener
 				{
 					byte[] imageData = new byte[(int) f.length()];
 					if(imageInFile.read(imageData) > 0)
-						radar = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					{
+						Bitmap bitmap = BitmapFactory.decodeByteArray(imageData,
+								0, imageData.length);
+						radar = "data:image/jpeg;base64," +
+						        Base64.encodeToString(imageData,
+								        Base64.DEFAULT).replaceAll("\n", "")
+								        .replaceAll("\r", "")
+								        .replaceAll("\t", "");
+					}
 				} catch(Exception e) {
 					Common.doStackOutput(e);
 				}
@@ -267,21 +321,17 @@ public class Forecast extends Fragment implements View.OnClickListener
 			}
 
 			final String html = Common.current_html_headers +
-					"\t<div style='text-align:center;'>\n" +
-					"\t<img style='margin:0px;padding:0px;border:0px;text-align:center;max-height:" +
-						height + "px;max-width:" + width + "px;width:auto;height:auto;'\n" +
-					"\tsrc='" + radar + "'>\n" +
-					"\t</div>" +
+					"\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
 					Common.html_footer;
 
+			//CustomDebug.writeDebug("radar_image.html", html);
+
 			Common.LogMessage("Loading radar page... html: " + html);
-			radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/drawable/", html,
-					"text/html", "utf-8", null));
-			radarRotated.post(() -> radarRotated.loadDataWithBaseURL("file:///android_res/drawable/", html,
+			radarWebView.post(() -> radarWebView.loadDataWithBaseURL(
+					"file:///android_res/drawable/", html,
 					"text/html", "utf-8", null));
 		} else {
 			Common.LogMessage("Loading radar page... url: " + radarURL);
-
 			radarWebView.post(() -> radarWebView.loadUrl(radarURL));
 		}
 
@@ -304,7 +354,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(fctype == null)
 			return;
 
-		if(radar.isEmpty() || fctype.equals("webpage"))
+		if(radar.isBlank() || fctype.equals("webpage"))
 		{
 			loadRadar();
 			return;
@@ -323,22 +373,19 @@ public class Forecast extends Fragment implements View.OnClickListener
 			{
 				Common.LogMessage("Starting to download image from: " + radar);
 				File file = new File(Common.getFilesDir(), "/radar.gif.tmp");
-				File f = Common.downloadJSOUP(file, radar);
+				File f = Common.downloadBinary(file, radar);
 				String ftmp = f != null ? f.getAbsolutePath() : null;
 				if(ftmp != null)
 				{
-					Common.LogMessage("Done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
+					Common.LogMessage("Done downloading " + f.getAbsolutePath() +
+					                  ", prompt handler to draw to movie");
 					File f2 = new File(Common.getFilesDir(), "/radar.gif");
 					if(!f.renameTo(f2))
-						Common.LogMessage("Failed to rename '"+ f.getAbsolutePath() + "' to '" + f2.getAbsolutePath() + "'");
+						Common.LogMessage("Failed to rename '"+ f.getAbsolutePath() +
+						                  "' to '" + f2.getAbsolutePath() + "'");
 				}
 
-				if(radarWebView.getVisibility() == View.VISIBLE)
-					radarWebView.post(() -> radarWebView.reload());
-				else
-					radarRotated.post(() -> radarRotated.reload());
-
-				stopRefreshing();
+				loadRadar();
 			} catch(Exception e) {
 				Common.doStackOutput(e);
 				stopRefreshing();
@@ -360,23 +407,17 @@ public class Forecast extends Fragment implements View.OnClickListener
 		isVisible = true;
 
 		Common.LogMessage("Forecast.onResume()-- adding notification manager...");
-		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
+		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(),
+				notificationObserver);
 
 		Common.LogMessage("Forecast.onResume() -- updating the value of the floating checkbox...");
 		disableSwipeOnRadar = Common.GetBoolPref("disableSwipeOnRadar", false);
 		floatingCheckBox.setChecked(disableSwipeOnRadar);
 
-		swipeLayout2.post(() -> swipeLayout2.setEnabled(fl.getVisibility() == View.VISIBLE && !floatingCheckBox.isChecked()));
+		swipeLayout2.post(() -> swipeLayout2.setEnabled(rfl.getVisibility() == View.VISIBLE &&
+		                                                !floatingCheckBox.isChecked()));
 
-		if(!isRunning)
-		{
-			isRunning = true;
-			updateScreen(true);
-		} else {
-			updateScreen(false);
-		}
-		updateSwipe();
-		addListeners();
+		updateScreen(false);
 	}
 
 	public void onPause()
@@ -411,47 +452,26 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	void removeListeners()
 	{
-		if(forecastWebView != null && forecastScrollListener != null && forecastWebView.getViewTreeObserver().isAlive())
+		if(forecastWebView != null && forecastWebView.getViewTreeObserver().isAlive())
 			forecastWebView.getViewTreeObserver().removeOnScrollChangedListener(forecastScrollListener);
 
-		if(radarWebView != null && radarScrollListener1 != null && radarWebView.getViewTreeObserver().isAlive())
-			radarWebView.getViewTreeObserver().removeOnScrollChangedListener(radarScrollListener1);
-
-		if(radarRotated != null && radarScrollListener2 != null && radarRotated.getViewTreeObserver().isAlive())
-			radarRotated.getViewTreeObserver().removeOnScrollChangedListener(radarScrollListener2);
+		if(radarWebView != null && radarWebView.getViewTreeObserver().isAlive())
+			radarWebView.getViewTreeObserver().removeOnScrollChangedListener(radarScrollListener);
 	}
 
 	void addListeners()
 	{
-		if(forecastWebView != null && forecastScrollListener != null && swipeLayout1.getVisibility() == View.VISIBLE)
+		if(forecastWebView != null)
 			forecastWebView.getViewTreeObserver().addOnScrollChangedListener(forecastScrollListener);
-		else
-			if(radarWebView != null && radarScrollListener1 != null && radarWebView.getVisibility() == View.VISIBLE)
-				radarWebView.getViewTreeObserver().addOnScrollChangedListener(radarScrollListener1);
-			else if(radarRotated != null && radarScrollListener2 != null)
-				radarRotated.getViewTreeObserver().addOnScrollChangedListener(radarScrollListener2);
+
+		if(radarWebView != null)
+			radarWebView.getViewTreeObserver().addOnScrollChangedListener(radarScrollListener);
 	}
 
 	void updateListeners()
 	{
 		removeListeners();
 		addListeners();
-	}
-
-	private void loadData()
-	{
-
-		updateSwipe();
-		updateListeners();
-
-		if(!hasLoaded)
-		{
-			hasLoaded = true;
-			loadRadar();
-			getForecast(false);
-		}
-
-		stopRefreshing();
 	}
 
 	private void updateScreen(boolean setRefreshing)
@@ -461,13 +481,18 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(Common.GetBoolPref("radarforecast", true))
 		{
 			Common.LogMessage("Displaying forecastWebView...");
-			if(fl.getVisibility() != View.GONE)
-				fl.post(() -> fl.setVisibility(View.GONE));
+			if(rfl.getVisibility() != View.GONE)
+				rfl.post(() -> rfl.setVisibility(View.GONE));
 
 			if(swipeLayout1.getVisibility() != View.VISIBLE)
 				swipeLayout1.post(() -> swipeLayout1.setVisibility(View.VISIBLE));
 
-			swipeLayout2.post(() -> swipeLayout2.setEnabled(false));
+			swipeLayout2.post(() ->
+			{
+				swipeLayout2.setRefreshing(false);
+				swipeLayout2.setEnabled(false);
+			});
+
 			swipeLayout1.post(() ->
 			{
 				swipeLayout1.setBackgroundColor(KeyValue.bgColour);
@@ -479,33 +504,57 @@ public class Forecast extends Fragment implements View.OnClickListener
 			if(swipeLayout1.getVisibility() != View.GONE)
 				swipeLayout1.post(() -> swipeLayout1.setVisibility(View.GONE));
 
-			if(fl.getVisibility() != View.VISIBLE)
-				fl.post(() -> fl.setVisibility(View.VISIBLE));
+			if(rfl.getVisibility() != View.VISIBLE)
+				rfl.post(() -> rfl.setVisibility(View.VISIBLE));
 
-			swipeLayout1.post(() -> swipeLayout1.setEnabled(false));
+			swipeLayout1.post(() ->
+			{
+				if(swipeLayout1.isRefreshing())
+					swipeLayout1.setRefreshing(false);
+				swipeLayout1.setEnabled(false);
+			});
+
 			swipeLayout2.post(() ->
 			{
-				swipeLayout2.setRefreshing(setRefreshing);
+				if(swipeLayout2.isRefreshing())
+					swipeLayout2.setRefreshing(setRefreshing);
 				swipeLayout2.setEnabled(!floatingCheckBox.isChecked());
 			});
+
+			boolean rotate = false;
 
 			String radtype = Common.GetStringPref("radtype", "image");
 			if(radtype != null)
 			{
 				if(radtype.equals("image"))
 				{
-					Common.LogMessage("Hide radarWebView, show rotated layout...");
-					radarWebView.post(() -> radarWebView.setVisibility(View.GONE));
-					rl.post(() -> rl.setVisibility(View.VISIBLE));
+					Common.LogMessage("Hiding the floating checkbox...");
+					if(floatingCheckBox.getVisibility() != View.GONE)
+						floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.GONE));
+
+					Bitmap bmp1 = Common.loadImage("/radar.gif");
+					if(bmp1 != null && bmp1.getWidth() > bmp1.getHeight() &&
+					   weeWXApp.getHeight() > weeWXApp.getWidth())
+					{
+						Common.LogMessage("Hide radarWebView, show rotated layout...");
+						rotate = true;
+						if(rl.getAngle() != -90)
+							rl.post(() -> rl.setAngle(-90));
+					}
 				} else {
-					Common.LogMessage("Hide rotated layout, show radarWebView...");
-					rl.post(() -> rl.setVisibility(View.GONE));
-					radarWebView.post(() -> radarWebView.setVisibility(View.VISIBLE));
+					Common.LogMessage("Showing the floating checkbox...");
+					//if(floatingCheckBox.getVisibility() != View.VISIBLE)
+					floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.VISIBLE));
+				}
+
+				if(!rotate)
+				{
+					Common.LogMessage("Set RotatedLayout angle to 0...");
+					if(rl.getAngle() != 0)
+						rl.post(() -> rl.setAngle(0));
 				}
 			}
 		}
-
-		loadData();
 
 		Common.LogMessage("Forecast.updateScreen() finished...");
 	}
@@ -516,12 +565,15 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 
 		final String forecast_url = Common.GetStringPref("FORECAST_URL", "");
-		if(forecast_url == null || forecast_url.isEmpty())
+		if(forecast_url == null || forecast_url.isBlank())
 		{
-			final String html = Common.current_html_headers + "Forecast URL not set. Edit inigo-settings.txt to change." + Common.html_footer;
+			final String html = Common.current_html_headers +
+			                    "Forecast URL not set. Edit inigo-settings.txt to change." +
+			                    Common.html_footer;
 
 			forecastWebView.post(() ->
-					forecastWebView.loadDataWithBaseURL(null, html, "text/html", "utf-8", null));
+					forecastWebView.loadDataWithBaseURL(null, html,
+							"text/html", "utf-8", null));
 
 			stopRefreshing();
 
@@ -538,7 +590,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(forecastData == null)
 			return;
 
-		if(!forecastData.isEmpty())
+		if(!forecastData.isBlank())
 			generateForecast();
 
 		Thread t = new Thread(() ->
@@ -547,9 +599,11 @@ public class Forecast extends Fragment implements View.OnClickListener
 			{
 				long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
-				if(forecastData.isEmpty() || Common.GetLongPref("rssCheck", 0) + 7190 < current_time || force)
+				if(forecastData.isBlank() || Common.GetLongPref("rssCheck", 0) +
+				                             7190 < current_time || force)
 				{
-					Common.LogMessage("no forecast data or cache is more than 2 hour old or was forced");
+					Common.LogMessage("no forecast data or cache is more than 2 hours old " +
+					                  "or was forced");
 
 					String tmp = Common.downloadForecast();
 
@@ -557,7 +611,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 					Common.SetLongPref("rssCheck", current_time);
 					Common.SetStringPref("forecastData", tmp);
 
-					forecastWebView.post(() -> forecastWebView.reload());
+					generateForecast();
 					stopRefreshing();
 				}
 			} catch(Exception e) {
@@ -582,12 +636,15 @@ public class Forecast extends Fragment implements View.OnClickListener
 			if(data == null)
 				return;
 
-			if(data.isEmpty())
+			if(data.isBlank())
 			{
-				final String html = Common.current_html_headers + getString(R.string.forecast_url_not_set) + Common.html_footer;
+				final String html = Common.current_html_headers +
+				                    weeWXApp.getAndroidString(R.string.forecast_url_not_set) +
+				                    Common.html_footer;
 
 				forecastWebView.post(() ->
-						forecastWebView.loadDataWithBaseURL(null, html, "text/html", "utf-8", null));
+						forecastWebView.loadDataWithBaseURL(null, html,
+								"text/html", "utf-8", null));
 				stopRefreshing();
 				return;
 			}
@@ -718,14 +775,17 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void updateForecast(final String bits, final String desc)
 	{
-		final String fc = Common.current_html_headers + "<div style='text-align:center'>" + bits + "</div>" + Common.html_footer;
+		final String fc = Common.current_html_headers + bits + Common.html_footer;
+
+		CustomDebug.writeDebug("forecast.html", fc);
 
 		forecastWebView.post(() ->
 		{
 			forecastWebView.clearFormData();
 			forecastWebView.clearHistory();
 			forecastWebView.clearCache(true);
-			forecastWebView.loadDataWithBaseURL("file:///android_res/drawable/", fc, "text/html", "utf-8", null);
+			forecastWebView.loadDataWithBaseURL("file:///android_res/drawable/", fc,
+					"text/html", "utf-8", null);
 		});
 
 		TextView tv1 = rootView.findViewById(R.id.forecast);
@@ -748,7 +808,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 			case "met.no" -> im.post(() -> im.setImageResource(R.drawable.met_no));
 			case "wmo.int" -> im.post(() -> im.setImageResource(R.drawable.wmo));
 			case "weather.gov" -> im.post(() -> im.setImageResource(R.drawable.wgov));
-			case "weather.gc.ca", "weather.gc.ca-fr" -> im.post(() -> im.setImageResource(R.drawable.wca));
+			case "weather.gc.ca", "weather.gc.ca-fr" -> im.post(() ->
+					im.setImageResource(R.drawable.wca));
 			case "metoffice.gov.uk" -> im.post(() -> im.setImageResource(R.drawable.met));
 			case "bom.gov.au", "bom2", "bom3" ->
 			{
@@ -806,7 +867,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if((disabledSwipe && disableSwipeOnRadar) || (!disabledSwipe && !disableSwipeOnRadar))
 			return;
 
-		if(!disabledSwipe && disableSwipeOnRadar && fl.getVisibility() == View.VISIBLE)
+		if(!disabledSwipe && disableSwipeOnRadar && rfl.getVisibility() == View.VISIBLE)
 		{
 			disabledSwipe = true;
 			Common.LogMessage("Disabling swipe between screens...");
@@ -827,7 +888,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		disableSwipeOnRadar = floatingCheckBox.isChecked();
 		Common.SetBoolPref("disableSwipeOnRadar", disableSwipeOnRadar);
-		swipeLayout2.post(() -> swipeLayout2.setEnabled(fl.getVisibility() == View.VISIBLE && !floatingCheckBox.isChecked()));
+		swipeLayout2.post(() -> swipeLayout2.setEnabled(rfl.getVisibility() == View.VISIBLE &&
+		                                                !floatingCheckBox.isChecked()));
 		updateListeners();
 		updateSwipe();
 		Common.LogMessage("Forecast.onClick() finished...");

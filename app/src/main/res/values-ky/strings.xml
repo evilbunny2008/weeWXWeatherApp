@@ -73,4 +73,5 @@
     <string name="use_icons">Көркөм сүрөтчөлөр</string>
     <string name="today">Бүгүн</string>
     <string name="last_year_stats">Былтыр статистика</string>
+    <string name="last_month_stats">Өткөн айдын статистикасы</string>
 </resources>

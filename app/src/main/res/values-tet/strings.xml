@@ -73,4 +73,5 @@
     <string name="use_icons">Hatudu Ikons</string>
     <string name="today">Ohin loron</string>
     <string name="last_year_stats">Estatístika Tinan kotuk nian</string>
+    <string name="last_month_stats">Estatístika Fulan kotuk nian</string>
 </resources>

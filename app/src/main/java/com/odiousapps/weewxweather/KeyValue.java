@@ -11,11 +11,6 @@ class KeyValue
 	static int mode;
 	static int bgColour;
 	static int fgColour;
-	static int UpdateFrequency;
-
-	final static int forecast = 1;
-	final static int radar = 2;
-	final static int rotated = 3;
 
 	static int widgetBG;
 	static int widgetFG;

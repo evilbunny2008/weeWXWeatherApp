@@ -73,4 +73,5 @@
     <string name="use_icons">आइकन के देखावल जाव</string>
     <string name="today">आजु</string>
     <string name="last_year_stats">पिछला साल के आँकड़ा</string>
+    <string name="last_month_stats">पिछला महीना के आँकड़ा</string>
 </resources>

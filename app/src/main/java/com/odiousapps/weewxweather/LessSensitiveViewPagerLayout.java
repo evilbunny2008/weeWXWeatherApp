@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
 
-@SuppressWarnings({"unused", "FieldCanBeLocal"})
+@SuppressWarnings({"unused"})
 public class LessSensitiveViewPagerLayout extends FrameLayout
 {
 	private float startX, startY;
@@ -38,7 +38,7 @@ public class LessSensitiveViewPagerLayout extends FrameLayout
 				//Common.LogMessage("dx=" + dx + " dy=" + dy + " intercept=" + (dx > SWIPE_SLOP && dx > dy));
 
 				// Only intercept if it's a strong horizontal gesture
-				if (dx > SWIPE_SLOP && dx > dy)
+				if(dx > SWIPE_SLOP && dx > dy)
 				{
 					// Pass event down to ViewPager2 normally
 					return super.onInterceptTouchEvent(ev);

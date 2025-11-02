@@ -73,4 +73,5 @@
     <string name="use_icons">Mostrar Icons</string>
     <string name="today">Uèi</string>
     <string name="last_year_stats">Estadísticas de l\'an passat</string>
+    <string name="last_month_stats">Estadísticas de la Última Mes</string>
 </resources>

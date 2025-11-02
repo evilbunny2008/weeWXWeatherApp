@@ -73,4 +73,5 @@
     <string name="use_icons">Ikonok megjelenítése</string>
     <string name="today">Ma</string>
     <string name="last_year_stats">Tavalyi statisztika</string>
+    <string name="last_month_stats">Múlt havi statisztika</string>
 </resources>

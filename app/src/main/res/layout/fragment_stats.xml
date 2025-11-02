@@ -24,12 +24,12 @@
 			android:layout_height="wrap_content"
 			android:gravity="center"/>
 
-		<com.github.evilbunny2008.colourpicker.CPSlider
-			style="@style/Widget.weeWXApp.CPSlider"
+		<com.google.android.material.slider.Slider
+			style="@style/Widget.weeWXApp.Slider"
 			android:id="@+id/pageZoom" />
 
-		<WebView
-			android:id="@+id/webView1"
+		<FrameLayout
+			android:id="@+id/webViewFrameLayout"
 			android:layout_width="match_parent"
 			android:layout_height="0dp"
 			android:layout_weight="1" />

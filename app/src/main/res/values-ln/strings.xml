@@ -73,4 +73,5 @@
     <string name="use_icons">kolakisa ba icônes</string>
     <string name="today">Lelo</string>
     <string name="last_year_stats">Statistiques ya mbula eleki</string>
+    <string name="last_month_stats">Statistiques ya sanza eleki</string>
 </resources>

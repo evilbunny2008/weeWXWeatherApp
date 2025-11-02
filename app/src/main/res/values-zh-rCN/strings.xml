@@ -73,4 +73,5 @@
     <string name="use_icons">显示图标</string>
     <string name="today">今天</string>
     <string name="last_year_stats">去年的统计数据</string>
+    <string name="last_month_stats">上个月的统计数据</string>
 </resources>

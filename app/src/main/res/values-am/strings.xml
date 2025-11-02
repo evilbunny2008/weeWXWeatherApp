@@ -73,4 +73,5 @@
     <string name="use_icons">አዶዎችን አሳይ</string>
     <string name="today">ዛሬ</string>
     <string name="last_year_stats">ያለፈው ዓመት ስታቲስቲክስ</string>
+    <string name="last_month_stats">ያለፈው ወር ስታቲስቲክስ</string>
 </resources>

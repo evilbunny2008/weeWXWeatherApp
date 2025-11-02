@@ -73,4 +73,5 @@
     <string name="use_icons">عکسونه ښکاره کړئ</string>
     <string name="today">نن</string>
     <string name="last_year_stats">د تیر کال احصایې</string>
+    <string name="last_month_stats">د تیرې میاشتې احصایې</string>
 </resources>

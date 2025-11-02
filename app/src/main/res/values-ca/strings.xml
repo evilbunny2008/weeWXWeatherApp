@@ -73,4 +73,5 @@
     <string name="use_icons">Mostra les icones</string>
     <string name="today">Avui</string>
     <string name="last_year_stats">Estadístiques de l\'any passat</string>
+    <string name="last_month_stats">Estadístiques del mes passat</string>
 </resources>

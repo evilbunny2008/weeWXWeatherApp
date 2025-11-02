@@ -73,4 +73,5 @@
     <string name="use_icons">Hiển thị biểu tượng</string>
     <string name="today">Hôm nay</string>
     <string name="last_year_stats">Thống kê năm ngoái</string>
+    <string name="last_month_stats">Thống kê của tháng trước</string>
 </resources>

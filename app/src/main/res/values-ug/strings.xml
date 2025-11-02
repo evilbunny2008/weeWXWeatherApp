@@ -73,4 +73,5 @@
     <string name="use_icons">سىنبەلگىلەرنى كۆرسىتىڭ</string>
     <string name="today">بۈگۈن</string>
     <string name="last_year_stats">ئۆتكەن يىلىنىڭ ستاتىستىكىسى</string>
+    <string name="last_month_stats">ئالدىنقى ئايدىكى ستاتىستىكا</string>
 </resources>

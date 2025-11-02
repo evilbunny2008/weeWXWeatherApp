@@ -73,4 +73,5 @@
     <string name="use_icons">चिह्न दिखाओ</string>
     <string name="today">अज्ज</string>
     <string name="last_year_stats">पिछले साल दे आंकड़े</string>
+    <string name="last_month_stats">पिछले महीने दे आंकड़े</string>
 </resources>

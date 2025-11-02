@@ -73,4 +73,5 @@
     <string name="use_icons">Ipakita ang mga icon</string>
     <string name="today">Ngayon</string>
     <string name="last_year_stats">Mga istatistika ng nakaraang taon</string>
+    <string name="last_month_stats">Mga istatistika ng nakaraang buwan</string>
 </resources>

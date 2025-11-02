@@ -73,4 +73,5 @@
     <string name="use_icons">प्रतीक दिखाएँ</string>
     <string name="today">आज</string>
     <string name="last_year_stats">पिछले वर्ष के आँकड़े</string>
+    <string name="last_month_stats">पिछले महीने के आँकड़े</string>
 </resources>

@@ -73,4 +73,5 @@
     <string name="use_icons">Onetsani zithunzi</string>
     <string name="today">Lero</string>
     <string name="last_year_stats">Ziwerengero za chaka chatha</string>
+    <string name="last_month_stats">Ziwerengero za mwezi</string>
 </resources>

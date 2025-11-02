@@ -73,4 +73,5 @@
     <string name="use_icons">Rodyti piktogramas</string>
     <string name="today">Šiandien</string>
     <string name="last_year_stats">Praėjusių metų statistika</string>
+    <string name="last_month_stats">Praėjusio mėnesio statistika</string>
 </resources>

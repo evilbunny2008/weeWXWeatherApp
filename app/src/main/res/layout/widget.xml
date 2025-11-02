@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:id="@+id/widget_frame"
 	android:minHeight="60dp"
@@ -21,35 +20,30 @@
 		android:layout_height="match_parent"
 		android:orientation="vertical" />
 
-	<LinearLayout
+	<TextView
+		android:id="@+id/widget_location"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:orientation="vertical">
+		android:ellipsize="marquee"
+		android:gravity="center_horizontal"
+		android:singleLine="true"
+		android:text="My Place, My Country"
+		android:textSize="11dp"
+		android:textStyle="bold"
+		tools:ignore="HardcodedText,TextSizeCheck" />
 
-		<TextView
-			android:id="@+id/widget_location"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:ellipsize="marquee"
-			android:gravity="center_horizontal"
-			android:singleLine="true"
-			android:text="My Place, My Country"
-			android:textSize="11dp"
-			android:textStyle="bold"
-			tools:ignore="HardcodedText,TextSizeCheck" />
-
-		<TextView
-			android:id="@+id/widget_time"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:ellipsize="marquee"
-			android:gravity="center_horizontal"
-			android:singleLine="true"
-			android:text="12:00 EST"
-			android:textSize="11dp"
-			android:textStyle="bold"
-			tools:ignore="HardcodedText,TextContrastCheck,TextSizeCheck" />
-	</LinearLayout>
+	<TextView
+		android:id="@+id/widget_time"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:ellipsize="marquee"
+		android:gravity="center_horizontal"
+		android:singleLine="true"
+		android:text="12:00 EST"
+		android:textSize="11dp"
+		android:layout_marginTop="10dp"
+		android:textStyle="bold"
+		tools:ignore="HardcodedText,TextContrastCheck,TextSizeCheck" />
 
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -95,14 +89,20 @@
 		android:layout_height="match_parent"
 		android:gravity="center"
 		android:text="35.5*C"
-		android:textSize="128dp"
+		android:textSize="128sp"
 		android:textStyle="bold"
-		android:layout_marginTop="15dp"
+		android:autoSizeTextType="uniform"
+		android:autoSizeMaxTextSize="128sp"
+		android:autoSizeMinTextSize="12sp"
+		android:autoSizeStepGranularity="1sp"
+		android:layout_marginTop="20dp"
+		android:layout_marginBottom="10dp"
 		android:includeFontPadding="false"
 		android:lineSpacingExtra="0dp"
 		android:lineSpacingMultiplier="1"
 		android:singleLine="true"
-		android:ellipsize="marquee"
+		android:ellipsize="none"
+		android:maxLines="1"
 		tools:ignore="HardcodedText" />
 
 </FrameLayout>

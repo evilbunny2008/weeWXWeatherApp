@@ -73,4 +73,5 @@
     <string name="use_icons">Visa ikoner</string>
     <string name="today">I dag</string>
     <string name="last_year_stats">Förra årets statistik</string>
+    <string name="last_month_stats">Förra månadens statistik</string>
 </resources>

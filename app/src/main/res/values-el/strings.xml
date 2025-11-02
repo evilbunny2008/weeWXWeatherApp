@@ -73,4 +73,5 @@
     <string name="use_icons">Εμφάνιση εικονιδίων</string>
     <string name="today">Σήμερα</string>
     <string name="last_year_stats">Στατιστικά στοιχεία του περασμένου έτους</string>
+    <string name="last_month_stats">Στατιστικά στοιχεία του περασμένου μήνα</string>
 </resources>

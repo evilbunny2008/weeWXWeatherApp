@@ -73,4 +73,5 @@
     <string name="use_icons">Piktogrammalarni ko\'rsatish</string>
     <string name="today">Bugun</string>
     <string name="last_year_stats">O\'tgan yil statistikasi</string>
+    <string name="last_month_stats">O\'tgan oy statistikasi</string>
 </resources>

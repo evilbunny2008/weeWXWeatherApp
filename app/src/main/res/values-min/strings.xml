@@ -73,4 +73,5 @@
     <string name="use_icons">Tunjuakkan Ikon</string>
     <string name="today">Hari iko</string>
     <string name="last_year_stats">Statistik Tahun nan lalu</string>
+    <string name="last_month_stats">Statistik Bulan nan lalu</string>
 </resources>

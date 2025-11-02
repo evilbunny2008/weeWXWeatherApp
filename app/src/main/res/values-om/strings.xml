@@ -73,4 +73,5 @@
     <string name="use_icons">Mallattoolee agarsiisi</string>
     <string name="today">Har\'a</string>
     <string name="last_year_stats">Istaatistiksii bara darbee</string>
+    <string name="last_month_stats">Istaatistiksii ji\'a darbee</string>
 </resources>

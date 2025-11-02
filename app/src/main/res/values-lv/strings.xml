@@ -73,4 +73,5 @@
     <string name="use_icons">Rādīt ikonas</string>
     <string name="today">Šodien</string>
     <string name="last_year_stats">Pagājušā gada statistika</string>
+    <string name="last_month_stats">Pagājušā mēneša statistika</string>
 </resources>

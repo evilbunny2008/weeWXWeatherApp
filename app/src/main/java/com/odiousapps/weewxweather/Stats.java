@@ -4,11 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
+import android.view.ViewTreeObserver;
 import android.webkit.WebView;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.github.evilbunny2008.colourpicker.CPSlider;
+import com.google.android.material.slider.Slider;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,14 +26,18 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 public class Stats extends Fragment
 {
 	private boolean isVisible = false;
-	private boolean isRunning = false;
-	private CPSlider mySlider;
+	private Slider mySlider;
 	private View rootView;
 	private WebView wv;
 	private SwipeRefreshLayout swipeLayout;
+	private final ViewTreeObserver.OnScrollChangedListener scl =
+			() -> swipeLayout.setEnabled(wv.getScrollY() == 0);
 
-	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
+	public View onCreateView(@NonNull LayoutInflater inflater,
+	                         @Nullable ViewGroup container,
+	                         @Nullable Bundle savedInstanceState)
 	{
+		Common.LogMessage("Stats.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
 
 		rootView = inflater.inflate(R.layout.fragment_stats, container, false);
@@ -40,8 +47,6 @@ public class Stats extends Fragment
 
 		mySlider = rootView.findViewById(R.id.pageZoom);
 		mySlider.setBackgroundColor(KeyValue.bgColour);
-		wv = rootView.findViewById(R.id.webView1);
-		Common.setWebview(wv);
 
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setOnRefreshListener(() ->
@@ -50,9 +55,6 @@ public class Stats extends Fragment
 			Common.LogMessage("onRefresh();");
 			forceRefresh();
 		});
-
-		wv.getViewTreeObserver().addOnScrollChangedListener(() ->
-				swipeLayout.setEnabled(wv.getScrollY() == 0));
 
 		int default_zoom = sanitiseZoom(Common.GetIntPref("mySlider", 100));
 		mySlider.setValue(default_zoom);
@@ -68,6 +70,58 @@ public class Stats extends Fragment
 		});
 
 		return rootView;
+	}
+
+	@Override
+	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
+	{
+		Common.LogMessage("Stats.onViewCreated()");
+		super.onViewCreated(view, savedInstanceState);
+
+		if(wv == null)
+			wv = WebViewPreloader.getInstance().getWebView(requireContext());
+
+		if(wv.getParent() != null)
+			((ViewGroup)wv.getParent()).removeView(wv);
+
+		FrameLayout fl = view.findViewById(R.id.webViewFrameLayout);
+		fl.removeAllViews();
+		fl.addView(wv);
+
+		wv.getViewTreeObserver().addOnScrollChangedListener(scl);
+
+		if(savedInstanceState != null)
+			wv.restoreState(savedInstanceState);
+	}
+
+	@Override
+	public void onSaveInstanceState(@NonNull Bundle outState)
+	{
+		Common.LogMessage("Stats.onSaveInstanceState()");
+		super.onSaveInstanceState(outState);
+
+		if(wv != null)
+			wv.saveState(outState);
+	}
+
+	@Override
+	public void onDestroyView()
+	{
+		Common.LogMessage("Stats.onDestroyView()");
+		super.onDestroyView();
+
+		if(wv != null)
+		{
+			ViewParent parent = wv.getParent();
+			if(parent instanceof ViewGroup)
+				((ViewGroup)parent).removeView(wv);
+
+			wv.getViewTreeObserver().removeOnScrollChangedListener(scl);
+
+			WebViewPreloader.getInstance().recycleWebView(wv);
+
+			Common.LogMessage("Stats.onDestroyView() recycled wv...");
+		}
 	}
 
 	void stopRefreshing()
@@ -115,10 +169,6 @@ public class Stats extends Fragment
 		Common.LogMessage("Stats.onResume()-- adding notification manager...");
 		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
-		if(isRunning)
-			return;
-
-		isRunning = true;
 		swipeLayout.setRefreshing(true);
 		updateFields();
 	}
@@ -126,8 +176,13 @@ public class Stats extends Fragment
 	public void onPause()
 	{
 		super.onPause();
+		Common.LogMessage("Stats.java -- unregisterReceiver");
+
+		if(!isVisible)
+			return;
+
+		isVisible = false;
 		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
-		Common.LogMessage("stats.java -- unregisterReceiver");
 	}
 
 	private final Observer<String> notificationObserver = str ->
@@ -149,57 +204,18 @@ public class Stats extends Fragment
 	private void checkFields(final TextView tv, final String txt)
 	{
 		if(!tv.getText().toString().equals(txt))
-			tv.post(() -> tv.setText(txt));
+			tv.post(() ->
+			{
+				tv.setBackgroundColor(KeyValue.bgColour);
+				tv.setTextColor(KeyValue.fgColour);
+				tv.setText(txt);
+			});
 	}
 
 	private String convert(String cur)
 	{
 		cur = cur.trim();
-/*
-		String[] bits = null;
 
-		if(!cur.contains(" "))
-			return cur;
-
-		try
-		{
-			//cur = "9:34:00 PM";
-			bits = cur.trim().split(" ");
-		} catch(Exception e) {
-			Common.doStackOutput(e);
-		}
-
-		if(bits == null || bits.length < 2)
-			return cur;
-
-		String[] time = null;
-		try
-		{
-			time = bits[0].trim().split(":");
-		} catch(Exception e) {
-			Common.doStackOutput(e);
-		}
-
-		if(time == null || time.length < 3)
-			return cur;
-
-		int hours = (int)Float.parseFloat(time[0]);
-		int mins = (int)Float.parseFloat(time[1]);
-		//int secs = (int)Float.parseFloat(time[2]);
-
-		boolean pm = bits[1].trim().equalsIgnoreCase("pm");
-
-		Common.LogMessage("pm == '" + bits[1] + "'");
-
-		if(!pm && hours == 12)
-			hours = 0;
-		else if(pm && hours != 12)
-			hours = hours + 12;
-
-		//return String.format(Locale.getDefault(), "%d:%02d:%02d", hours, mins, secs);
-		//return String.format(Locale.getDefault(), "%d:%02d", hours, mins);
-		//String str = String.format("%tR", hours, mins);
-*/
 		try
 		{
 			SimpleDateFormat sdf = new SimpleDateFormat("hh:mm", Locale.getDefault());
@@ -216,81 +232,67 @@ public class Stats extends Fragment
 		return cur;
 	}
 
-	private String getTime(String str)
-	{
-		str = str.trim();
-
-		if(!str.contains(" "))
-			return str;
-
-		try
-		{
-			return str.split(" ", 2)[0];
-		} catch(Exception e) {
-			Common.doStackOutput(e);
-		}
-
-		return str;
-	}
-
 	private String getTimeMonth(String str)
 	{
-		str = getTime(str);
-		str = Common.dayOfMonth((int)Float.parseFloat(str.substring(0, 2)));
-		return str;
+		int day = (int)Float.parseFloat(Common.getTime(str).substring(0, 2));
+		return Common.getDaySuffix(day);
 	}
 
 	private String getTimeYear(String str)
 	{
-		str = getTime(str);
-		if(str.startsWith("0"))
-			str = str.substring(1);
+		str = getAllTime(str);
 		str = str.substring(0, str.length() - 2);
 		return str;
 	}
 
 	private String getAllTime(String str)
 	{
-		str = getTime(str);
+		str = Common.getTime(str);
 		if(str.startsWith("0"))
 			str = str.substring(1);
 		return str;
 	}
 
-	private String createRow(String class1, String class2, String str1, String str2, String str3, String str4)
+	private String createRow(String class1, String class2, String str1,
+	                         String str2, String str3, String str4)
 	{
-		return "\t<div class='dataRow'>\n" +
-		       "\t\t<div class='dataCell'><i class='" + class1 + " icon'></i>" + str1 + "</div>\n" +
-	           "\t\t<div class='dataCell'>" + str2 + "</div>\n" +
-	           "\t\t<div class='datacell'>" + str3 + "</div>\n" +
-	           "\t\t<div class='dataCell right'>" + str4 + "<i class='" + class2 + " icon'></i></div>\n" +
-	           "\t</div>\n\n";
+		return "\t\t<div class='statsDataRow'>\n" +
+		       "\t\t\t<div class='statsDataCell left'><i class='" + class1 + " icon'></i>" +
+		       str1 + "</div>\n" +
+	           "\t\t\t<div class='statsDataCell midleft'>" + str2 + "</div>\n" +
+		       "\t\t\t<div class='statsSpacer'></div>\n" +
+	           "\t\t\t<div class='statsDataCell midright'>" + str3 + "</div>\n" +
+	           "\t\t\t<div class='statsDataCell right'>" + str4 + "<i class='" + class2 +
+	           " icon'></i></div>\n" +
+	           "\t\t</div>\n\n";
 	}
 
 	private String createRow(String str1, String str2)
 	{
-		return "\t<div class='dataRow'>\n" +
-		       "\t\t<div class='dataCell'><i class='flaticon-windy icon'></i>" + str1 + "</div>\n" +
-		       "\t\t<div></div><div></div>\n" +
-		       "\t\t<div class='dataCell right'>" + str2 +
-		       "<i class='wi wi-umbrella icon'></i></div>\n\t</div>\n\n";
+		return "\t\t<div class='statsDataRow'>\n" +
+		       "\t\t\t<div class='statsDataCell Wind'><i class='flaticon-windy icon'></i>" +
+		       str1 + "</div>\n" +
+		       "\t\t\t<div class='statsSpacer'></div>\n" +
+		       "\t\t\t<div class='statsDataCell Rain'>" + str2 +
+		       "<i class='wi wi-umbrella icon'></i></div>\n\t\t</div>\n\n";
 	}
 
-	private String createRow(String str2)
+	private String createRow2(String str1, String str2)
 	{
-		return "\t<div class='dataRow'>\n" +
-		       "\t\t<div></div><div></div><div></div>\n" +
-		       "\t\t<div class='dataCell right since'>" + str2 + "</div>\n" +
-		       "\t</div>\n\n";
+		return "\t\t<div class='statsDataRow'>\n" +
+		       "\t\t\t<div class='statsDataCell Wind2'><i class='flaticon-windy icon'></i>" +
+		       str1 + "</div>\n" +
+		       "\t\t\t<div class='statsDataCell Rain2'>" + str2 +
+		       "<i class='wi wi-umbrella icon'></i></div>\n\t\t</div>\n\n";
 	}
 
 	private String generateTodaysSection(int header, String[] bits)
 	{
 		StringBuilder sb = new StringBuilder();
 
-		sb.append("\t<div class='statsHeader'>\n\t\t");
-		sb.append(getString(header));
-		sb.append("\n\t</div>\n\n");
+		sb.append("\t\t<div class='statsHeader'>\n\t\t\t");
+		sb.append(weeWXApp.getAndroidString(header));
+		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
 				bits[3] + bits[60], convert(bits[4]), convert(bits[2]),
@@ -319,7 +321,7 @@ public class Stats extends Fragment
 					bits[167] + bits[64]));
 		}
 
-		if(bits.length > 205 && !bits[205].isEmpty())
+		if(bits.length > 205 && !bits[205].isBlank())
 		{
 			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
 					bits[205] + "UVI", convert(bits[206]), convert(bits[208]),
@@ -327,18 +329,16 @@ public class Stats extends Fragment
 		}
 
 		String rain = bits[20];
-		String since = getString(R.string.since) + " mm";
+		String since = weeWXApp.getAndroidString(R.string.since) + " mm";
 
-		if(bits.length > 160 && !bits[160].isEmpty())
+		if(bits.length > 160 && !bits[160].isBlank())
 			rain = bits[158];
 
-		if(bits.length > 160 && !bits[158].isEmpty() && !bits[160].isEmpty())
-			since = getString(R.string.since) + " " + bits[160];
+		if(bits.length > 160 && !bits[158].isBlank() && !bits[160].isBlank())
+			since = weeWXApp.getAndroidString(R.string.since) + " " + bits[160];
 
 		sb.append(createRow(bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]),
-				rain + bits[62]));
-
-		sb.append(createRow(since));
+				since + " " + rain + bits[62]));
 
 		return sb.toString();
 	}
@@ -347,9 +347,9 @@ public class Stats extends Fragment
 	{
 		StringBuilder sb = new StringBuilder();
 
-		sb.append("\t<div class='statsHeader'>\n\t\t");
-		sb.append(getString(header));
-		sb.append("\n\t</div>\n\n");
+		sb.append("\t\t<div class='statsHeader'>\n\t\t\t");
+		sb.append(weeWXApp.getAndroidString(header));
+		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
 				bits[67] + bits[60], convert(bits[68]), convert(bits[66]),
@@ -378,7 +378,7 @@ public class Stats extends Fragment
 					bits[175] + bits[64]));
 		}
 
-		if(bits.length > 209 && !bits[209].isEmpty())
+		if(bits.length > 209 && !bits[209].isBlank())
 		{
 			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
 					bits[209] + "UVI", convert(bits[210]), convert(bits[212]),
@@ -386,18 +386,16 @@ public class Stats extends Fragment
 		}
 
 		String rain = bits[21];
-		String before = getString(R.string.before) + " mm";
+		String before = weeWXApp.getAndroidString(R.string.before) + " mm";
 
-		if(bits.length > 160 && !bits[159].isEmpty())
+		if(bits.length > 160 && !bits[159].isBlank())
 			rain = bits[159];
 
+		if(bits.length > 160 && !bits[159].isBlank() && !bits[160].isBlank())
+			before = weeWXApp.getAndroidString(R.string.before) + " " + bits[160];
+
 		sb.append(createRow(bits[69] + bits[61] + " " + bits[70] + " " + convert(bits[71]),
-				rain + bits[62]));
-
-		if(bits.length > 160 && !bits[159].isEmpty() && !bits[160].isEmpty())
-			before = getString(R.string.before) + " " + bits[160];
-
-		sb.append(createRow(before));
+				before + " " + rain + bits[62]));
 
 		return sb.toString();
 	}
@@ -406,9 +404,9 @@ public class Stats extends Fragment
 	{
 		StringBuilder sb = new StringBuilder();
 
-		sb.append("\t<div class='statsHeader'>\n\t\t");
-		sb.append(getString(header));
-		sb.append("\n\t</div>\n\n");
+		sb.append("\t\t<div class='statsHeader'>\n\t\t\t");
+		sb.append(weeWXApp.getAndroidString(header));
+		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
 				bits[90] + bits[60], getTimeMonth(bits[91]), getTimeMonth(bits[89]),
@@ -437,14 +435,14 @@ public class Stats extends Fragment
 					bits[183] + bits[64]));
 		}
 
-		if(bits.length > 213 && !bits[213].isEmpty())
+		if(bits.length > 213 && !bits[213].isBlank())
 		{
 			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
 					bits[213] + "UVI", getTimeMonth(bits[214]), getTimeMonth(bits[216]),
 					bits[215] + "W/m²"));
 		}
 
-		sb.append(createRow(bits[92] + bits[61] + " " + bits[93] + " " + getTimeMonth(bits[94]),
+		sb.append(createRow2(bits[92] + bits[61] + " " + bits[93] + " " + getTimeMonth(bits[94]),
 				bits[22] + bits[62]));
 
 		return sb.toString();
@@ -454,9 +452,9 @@ public class Stats extends Fragment
 	{
 		StringBuilder sb = new StringBuilder();
 
-		sb.append("\t<div class='statsHeader'>\n\t\t");
-		sb.append(getString(header));
-		sb.append("\n\t</div>\n\n");
+		sb.append("\t\t<div class='statsHeader'>\n\t\t\t");
+		sb.append(weeWXApp.getAndroidString(header));
+		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
 				bits[113] + bits[60], getTimeYear(bits[114]), getTimeYear(bits[112]),
@@ -485,63 +483,76 @@ public class Stats extends Fragment
 					bits[191] + bits[64]));
 		}
 
-		if(bits.length > 217 && !bits[217].isEmpty())
+		if(bits.length > 217 && !bits[217].isBlank())
 		{
 			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
 					bits[217] + "UVI", getTimeYear(bits[218]), getTimeYear(bits[220]),
 					bits[219] + "W/m²"));
 		}
 
-		sb.append(createRow(bits[115] + bits[61] + " " + bits[116] + " " + getTimeYear(bits[117]),
+		sb.append(createRow2(bits[115] + bits[61] + " " + bits[116] + " " + getTimeYear(bits[117]),
 				bits[23] + bits[62]));
 
 		return sb.toString();
 	}
 
-	private String generateLastYearsSection(int header, String[] bits)
+	private String getTimeSection(String which, String str)
+	{
+		if(which.equals("Year"))
+			return getAllTime(str);
+
+		return getTimeYear(str);
+	}
+
+	private String generateLastSection(String[] bits, int start, String which)
 	{
 		StringBuilder sb = new StringBuilder();
 
-		sb.append("\t<div class='statsHeader'>\n\t\t");
-		sb.append(getString(header));
-		sb.append("\n\t</div>\n\n");
+		sb.append("\t\t<div class='statsHeader'>\n\t\t\t");
+
+		if(which.equals("Year"))
+			sb.append(weeWXApp.getAndroidString(R.string.last_year_stats));
+		else
+			sb.append(weeWXApp.getAndroidString(R.string.last_month_stats));
+
+		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
-				bits[228] + bits[60], getAllTime(bits[229]), getAllTime(bits[227]),
-				bits[226] + bits[60]));
+				bits[start + 2] + bits[60], getTimeSection(which, bits[start + 3]), getTimeSection(which, bits[start + 1]),
+				bits[start] + bits[60]));
 
 		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
-				bits[239] + bits[60], getAllTime(bits[240]), getAllTime(bits[238]),
-				bits[237] + bits[60]));
+				bits[start + 13] + bits[60], getTimeSection(which, bits[start + 14]), getTimeSection(which, bits[start + 12]),
+				bits[start + 11] + bits[60]));
 
 		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
-				bits[243] + bits[64], getAllTime(bits[244]), getAllTime(bits[242]),
-				bits[241] + bits[64]));
+				bits[start + 17] + bits[64], getTimeSection(which, bits[start + 18]), getTimeSection(which, bits[start + 16]),
+				bits[start + 15] + bits[64]));
 
 		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
-				bits[235] + bits[63], getAllTime(bits[236]), getAllTime(bits[234]),
-				bits[233] + bits[63]));
+				bits[start + 7] + bits[63], getTimeSection(which, bits[start + 8]), getTimeSection(which, bits[start + 10]),
+				bits[start + 9] + bits[63]));
 
-		if(bits.length > 246 && Common.GetBoolPref("showIndoor", false))
+		if(bits.length > start + 20 && Common.GetBoolPref("showIndoor", false))
 		{
 			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[248] + bits[60], getAllTime(bits[249]), getAllTime(bits[247]),
-					bits[246] + bits[60]));
+					bits[start + 22] + bits[60], getTimeSection(which, bits[start + 23]), getTimeSection(which, bits[start + 21]),
+					bits[start + 20] + bits[60]));
 
 			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[252] + bits[64], getAllTime(bits[253]), getAllTime(bits[251]),
-					bits[250] + bits[64]));
+					bits[start + 26] + bits[64], getTimeSection(which, bits[start + 27]), getTimeSection(which, bits[start + 25]),
+					bits[start + 24] + bits[64]));
 		}
 
-		if(bits.length > 254 && !bits[254].isEmpty())
+		if(bits.length > start + 28 && !bits[start + 28].isBlank())
 		{
 			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
-					bits[254] + "UVI", getAllTime(bits[255]), getAllTime(bits[257]),
-					bits[256] + "W/m²"));
+					bits[start + 28] + "UVI", getTimeSection(which, bits[start + 29]), getTimeSection(which, bits[start + 31]),
+					bits[start + 30] + "W/m²"));
 		}
 
-		sb.append(createRow(bits[245] + bits[61] + " " + bits[231] + " " + getAllTime(bits[232]),
-				bits[245] + bits[62]));
+		sb.append(createRow2(bits[start + 4] + bits[61] + " " + bits[start + 5] + " " + getTimeSection(which, bits[start + 6]),
+				bits[start + 19] + bits[62]));
 
 		return sb.toString();
 	}
@@ -550,9 +561,9 @@ public class Stats extends Fragment
 	{
 		StringBuilder sb = new StringBuilder();
 
-		sb.append("\t<div class='statsHeader'>\n\t\t");
-		sb.append(getString(header));
-		sb.append("\n\t</div>\n\n");
+		sb.append("\t\t<div class='statsHeader'>\n\t\t\t");
+		sb.append(weeWXApp.getAndroidString(header));
+		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
 				bits[136] + bits[60], getAllTime(bits[137]), getAllTime(bits[135]),
@@ -581,14 +592,14 @@ public class Stats extends Fragment
 					bits[199] + bits[64]));
 		}
 
-		if(bits.length > 221 && !bits[221].isEmpty())
+		if(bits.length > 221 && !bits[221].isBlank())
 		{
 			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
 					bits[221] + "UVI", getAllTime(bits[222]), getAllTime(bits[224]),
 					bits[223] + "W/m²"));
 		}
 
-		sb.append(createRow(bits[138] + bits[61] + " " + bits[139] + " " + getAllTime(bits[140]),
+		sb.append(createRow2(bits[138] + bits[61] + " " + bits[139] + " " + getAllTime(bits[140]),
 				bits[157] + bits[62]));
 
 		return sb.toString();
@@ -629,41 +640,96 @@ public class Stats extends Fragment
 
 			sb.append(Common.current_html_headers);
 
-			sb.append("\n<div class='todayCurrent'>\n\n");
+			sb.append("\n<div class='statsLayout'>\n\n");
 
+			// Show today's stats
+			sb.append("\t<div class='statsSection'>\n");
 			sb.append(generateTodaysSection(R.string.todayStats, bits));
+			sb.append("\t\t<hr />\n\n");
+			sb.append("\t</div>\n\n");
 
-			if(bits.length > 87 && !bits[87].isEmpty())
+			if(bits.length > 87 && !bits[87].isBlank())
 			{
-				sb.append("\t<hr />\n\n");
+				// Do stats for yesterday...
+				sb.append("\t<div class='statsSection'>\n");
 				sb.append(generateYesterdaysSection(R.string.yesterdayStats, bits));
+				sb.append("\t<hr />\n\n");
+				sb.append("\t\t</div>\n\n");
 			}
 
-			if(bits.length > 110 && !bits[110].isEmpty())
+			if(bits.length > 110 && !bits[110].isBlank())
 			{
-				sb.append("\t<hr />\n\n");
+				// Do stats for this month
+				sb.append("\t<div class='statsSection'>\n");
 				sb.append(generateThisMonthsSection(R.string.this_months_stats, bits));
+				sb.append("\t\t<hr />\n\n");
+				sb.append("\t</div>\n\n");
 			}
 
-			if(bits.length > 133 && !bits[133].isEmpty())
+			if(bits.length > 258 && !bits[258].isBlank())
 			{
-				sb.append("\t<hr />\n\n");
+				// Do last month's stats
+				sb.append("\t<div class='statsSection'>\n");
+				sb.append(generateLastSection(bits, 258, "Month"));
+				sb.append("\t\t<hr />\n\n");
+				sb.append("\t</div>\n\n");
+			}
+
+			if(bits.length > 133 && !bits[133].isBlank())
+			{
+				// Do stats for this year
+				sb.append("\t<div class='statsSection'>\n");
 				sb.append(generateThisYearsSection(R.string.this_year_stats, bits));
+				sb.append("\t\t<hr />\n\n");
+				sb.append("\t</div>\n\n");
 			}
 
-			if(bits.length > 226 && !bits[226].isEmpty())
+			if(bits.length > 226 && !bits[226].isBlank())
 			{
-				sb.append("\t<hr />\n\n");
-				sb.append(generateLastYearsSection(R.string.last_year_stats, bits));
+				// Do last year's stats
+				sb.append("\t<div class='statsSection'>\n");
+				sb.append(generateLastSection(bits, 226, "Year"));
+				sb.append("\t\t<hr />\n\n");
+				sb.append("\t</div>\n\n");
 			}
 
-			if(bits.length > 157 && !bits[157].isEmpty())
+			if(bits.length > 157 && !bits[157].isBlank())
 			{
-				sb.append("\t<hr />\n\n");
+				// Do all time stats
+				sb.append("\t<div class='statsSection'>\n");
 				sb.append(generateAllTimeSection(R.string.all_time_stats, bits));
+				sb.append("\t</div>\n\n");
 			}
 
 			sb.append("</div>\n\n<div style='margin-bottom:5px'></div>\n");
+
+			if(Common.debug_on || Common.web_debug_on)
+			{
+				String tmpstr = """
+                                <div id="widthDisplay"
+                                     style="position: fixed; top: 10px; right: 10px;
+                                            background: rgba(0,0,0,0.7); color: #fff;
+                                            padding: 5px 10px; border-radius: 5px;
+                                            font-family: monospace; z-index: 9999;">
+                                </div>
+				                
+                                <script>
+                                  const display = document.getElementById("widthDisplay");
+				                
+                                  function updateWidth() {
+                                    display.textContent = "Width: " + window.innerWidth + "px " +
+                                    "x Height: " + window.innerHeight + "px";
+                                  }
+				                
+                                  // Update immediately
+                                  updateWidth();
+				                
+                                  // Update on resize
+                                  window.addEventListener("resize", updateWidth);
+                                </script>
+                                """;
+				sb.append(tmpstr);
+			}
 
 			sb.append(Common.html_footer);
 

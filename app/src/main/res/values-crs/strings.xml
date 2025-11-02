@@ -73,4 +73,5 @@
     <string name="use_icons">Montre bann Ikon</string>
     <string name="today">Ozordi</string>
     <string name="last_year_stats">Statistik lannen pase</string>
+    <string name="last_month_stats">Statistik mwan dernyen</string>
 </resources>

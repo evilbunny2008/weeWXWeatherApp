@@ -73,4 +73,5 @@
     <string name="use_icons">Icons toene</string>
     <string name="today">Vandaag</string>
     <string name="last_year_stats">Afgeloupe jaor</string>
+    <string name="last_month_stats">Afgeloupe Month\'s Statistiek</string>
 </resources>

@@ -73,4 +73,5 @@
     <string name="use_icons">Pakit ing Icons</string>
     <string name="today">Ngeni</string>
     <string name="last_year_stats">Estadistika ning milabas a banwa</string>
+    <string name="last_month_stats">Estadistika ning milabas a Bulan</string>
 </resources>

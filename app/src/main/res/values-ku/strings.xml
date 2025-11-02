@@ -73,4 +73,5 @@
     <string name="use_icons">Îkonan nîşan bide</string>
     <string name="today">Îro</string>
     <string name="last_year_stats">Statîstîkên sala borî</string>
+    <string name="last_month_stats">Statîstîkên meha borî</string>
 </resources>

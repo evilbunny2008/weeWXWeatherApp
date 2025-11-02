@@ -73,4 +73,5 @@
     <string name="use_icons">އައިކޮންތައް ދައްކާ</string>
     <string name="today">މިއަދު</string>
     <string name="last_year_stats">މިދިޔަ އަހަރުގެ ތަފާސް ހިސާބުތައް</string>
+    <string name="last_month_stats">މިދިޔަ މަހުގެ ތަފާސް ހިސާބުތައް</string>
 </resources>

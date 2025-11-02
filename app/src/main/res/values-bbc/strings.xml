@@ -73,4 +73,5 @@
     <string name="use_icons">Patuduhon Ikon</string>
     <string name="today">Ari on</string>
     <string name="last_year_stats">Statistik Taon na salpu</string>
+    <string name="last_month_stats">Statistik Bulan Terakhir</string>
 </resources>

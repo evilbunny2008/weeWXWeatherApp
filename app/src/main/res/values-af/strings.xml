@@ -73,4 +73,5 @@
     <string name="use_icons">Wys ikone</string>
     <string name="today">Vandag</string>
     <string name="last_year_stats">Verlede jaar se statistieke</string>
+    <string name="last_month_stats">Verlede maand se statistieke</string>
 </resources>

@@ -22,17 +22,11 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.LocaleList;
 import android.util.Base64;
-import android.util.Log;
-import android.view.View;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
 
-import com.github.evilbunny2008.colourpicker.CustomEditText;
+import com.github.evilbunny2008.colourpicker.CPEditText;
 import com.github.evilbunny2008.xmltojson.XmlToJson;
-import com.ibm.icu.text.RuleBasedNumberFormat;
-import com.ibm.icu.util.ULocale;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,7 +41,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.io.InterruptedIOException;
 import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
@@ -74,16 +67,14 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-
-import static java.lang.Math.round;
-
 @SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref",
-		"SameReturnValue", "WeakerAccess", "BooleanMethodIsAlwaysInverted",
-		"SetJavaScriptEnabled", "SetTextI18n"})
+		"SameReturnValue", "BooleanMethodIsAlwaysInverted",
+		"SetTextI18n"})
 public class Common
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
-	private final static boolean debug_on = false;
+	final static boolean debug_on = false;
+	final static boolean web_debug_on = false;
 
 	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36";
 
@@ -100,6 +91,8 @@ public class Common
 	private static final long inigo_version = 4000;
 	public static final long icon_version = 12;
 	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/1.0.3/icons.zip";
+
+	private static final BitmapFactory.Options options = new BitmapFactory.Options();
 
 	private static Thread t = null;
 	private static JSONObject nws = null;
@@ -146,20 +139,22 @@ public class Common
                 color: ACCENT_HEX;
               }
               hr {
-                border-color: GRAY_HEX;
-                width: 100%;
-                height: 1px;
-                margin: 15px;
+                border: 1px solid GRAY_HEX;
+                width: 90%;
+                margin: 15px auto;
               }
               html, body {
                 font-family: sans-serif;
                 font-size: var(--font-smaller);
-                text-align: left;
                 padding: 0;
                 margin: 0;
-              }
-              body {
+                width: 100%;
+                max-width: 100%;
                 overflow-x: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
               }
               * { box-sizing: border-box; }
               .header {
@@ -193,9 +188,12 @@ public class Common
               .bigTemp {
                 display: flex;
                 flex-direction: column;
+                padding-left: 5px;
                 align-items: flex-end;
                 font-size: var(--font-big);
                 font-weight: bold;
+                text-align: center;
+                justify-self: center;
               }
               .minTemp {
                 font-size: var(--font-large);
@@ -212,19 +210,26 @@ public class Common
               .bigForecastText {
                 text-align: justify;
                 text-justify: inter-word;
+                text-align-last: left;
                 font-size: var(--font-large);
+                max-width: 1000px;
               }
               .forecast {
                 display: flex;
-                flex-direction: column;
-                margin: 0 10px; 10px 10px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: 0 5px 10px 5px;
+                justify-content: center;
+                column-gap: 100px;
               }
               .day {
                 display: flex;
+                flex: 1 1 500px;
                 flex-direction: column;
-                align-items: center;
-                justify-content: space-between;
+                justify-content: space-evenly;
                 margin: 5px 0 10px 0;
+                max-width: 500px;
               }
               .dayTopRow {
                 display: flex;
@@ -255,51 +260,26 @@ public class Common
                 text-justify: inter-word;
               }
               .radarImage {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                object-fit: cover;
+                display: block;
+                background: transparent;
+                max-width: 100vw;
+                max-height: 100vh;
+                width: 100%;
+                height: auto;
+                object-fit: contain;
                 margin: 0;
                 padding: 0;
                 border: none;
               }
               .mainTemp {
                 font-size: var(--font-huge);
+                text-align: left;
+                margin: 0 0 0 10px;
               }
               .apparentTemp {
                 font-size: var(--font-larger);
                 text-align: right;
                 margin: 0 10px 0 0;
-              }
-              .dataTable {
-                display: flex;
-                flex-direction: column;
-                padding: 0;
-                margin: 0;
-              }
-              .dataRow {
-                display: grid;
-                grid-template-columns: 1fr auto auto 1fr;
-                column-gap: 10px;
-                align-items: center;
-                font-size: var(--font-smaller);
-              }
-              .dataCell {
-                display: flex;
-                align-items: center;
-                white-space: nowrap;
-              }
-              .dataCell.right {
-                justify-content: flex-end;
-              }
-              .dataCell.since {
-                margin-right: 10px;
-              }
-              .dataCell i {
-                margin-left: 10px;
-                margin-right: 10px;
               }
               .icon {
                 font-size: var(--font-average);
@@ -310,6 +290,8 @@ public class Common
               .todayCurrent {
                 display: flex;
                 flex-direction: column;
+                width: 100%;
+                max-width: 500px;
                 padding: 0;
                 margin: 0;
               }
@@ -318,25 +300,88 @@ public class Common
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-                padding: 0;
+              }
+              .dataTableCurrent {
+                display: flex;
+                flex-direction: column;
+                padding: 0 5px 0 5px;
                 margin: 0;
+                width: 100%;
               }
               .dataRowCurrent {
+                width: 100%;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 font-size: var(--font-small);
               }
-              .statsHeader {
+              .dataCellCurrent {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+              }
+              .dataCellCurrent.right {
+                justify-content: flex-end;
+              }
+              .statsLayout {
                 display: flex;
                 flex-direction: row;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                column-gap: 2px;
+                justify-content: space-evenly;
+                padding: 0 5px 0 5px;
+              }
+              .statsHeader {
                 font-weight: bold;
                 font-size: var(--font-large);
-                justify-content: center;
                 text-align: center;
-                align-items: center;
-                padding: 0;
-                margin: 0 0 2px 0;
+              }
+              .statsSection {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                max-width: 500px;
+              }
+              .statsDataRow {
+                display: grid;
+                grid-template-columns: minmax(100px, 2fr)
+                                       minmax(55px, 1fr)
+                                       minmax(3px, 5px)
+                                       minmax(55px, 1fr)
+                                       minmax(100px, 2fr);
+              }
+              .statsDataCell {
+                align-self: center;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+              .statsDataCell.left, .statsDataCell.midleft,
+               .statsDataCell.Wind, .statsDataCell.Wind2 {
+                text-align: left;
+                justify-self: start;
+              }
+              .statsDataCell.right, .statsDataCell.midright,
+               .statsDataCell.Rain, .statsDataCell.Rain2 {
+                text-align: right;
+                justify-self: end;
+              }
+              .statsDataCell.Wind, .statsDataCell.Rain {
+                grid-column: span 2;
+              }
+              .statsDataCell.Wind2 {
+                grid-column: span 4;
+              }
+              .statsDataCell.Rain2 {
+                grid-column: span 1;
+              }
+              .statsSpacer {
+                width: 1px;
+                height: 100%;
+                margin-left: 2px;
+                margin-right: 2px;
               }
               </style>
             </head>
@@ -355,13 +400,13 @@ public class Common
 
 	static void replaceHex6String(String html_tag, int colour)
 	{
-		String hex = String.format(CustomEditText.getFixedChar() + "%06X", 0xFFFFFF & colour);
+		String hex = String.format(CPEditText.getFixedChar() + "%06X", 0xFFFFFF & colour);
 		current_html_headers = current_html_headers.replaceAll(html_tag, hex);
 	}
 
 	static void replaceHex8String(String html_tag, int colour)
 	{
-		String hex = CustomEditText.getFixedChar() + String.format("%08X", colour);
+		String hex = CPEditText.getFixedChar() + String.format("%08X", colour);
 		current_html_headers = current_html_headers.replaceAll(html_tag, hex);
 	}
 
@@ -393,7 +438,7 @@ public class Common
 		String lang = Locale.getDefault().getLanguage();
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
 		{
-			LocaleList locales = context.getResources().getConfiguration().getLocales();
+			LocaleList locales = weeWXApp.getLocales();
 			if(!locales.isEmpty())
 				lang = locales.get(0).toLanguageTag();
 		}
@@ -418,6 +463,9 @@ public class Common
 		}
 
 		reload();
+
+		options.inJustDecodeBounds = false;
+		options.inPreferredConfig = Bitmap.Config.ARGB_8888;
 
 		LogMessage("app_version=" + getAppVersion());
 	}
@@ -471,7 +519,7 @@ public class Common
 		if(period <= 0)
 			return;
 
-		long start = round((double)System.currentTimeMillis() / (double)period) * period + wait;
+		long start = Math.round((double)System.currentTimeMillis() / (double)period) * period + wait;
 
 		if(start < System.currentTimeMillis())
 			start += period;
@@ -495,9 +543,9 @@ public class Common
 
 	static void LogMessage(String value)
 	{
-		LogMessage(value, false);
+		//LogMessage(value, false);
 	}
-
+/*
 	static void LogMessage(String value, boolean showAnyway)
 	{
 		if(debug_on || showAnyway)
@@ -508,7 +556,7 @@ public class Common
 			Log.i("weeWX App", "message='" + value.substring(0, len) + "'");
 		}
 	}
-
+*/
 	static void SetStringPref(String name, String value)
 	{
 		Context context = getContext();
@@ -582,7 +630,7 @@ public class Common
 				LogMessage("Pref '" + name + "'was set to '" + value + "'.");
 				return true;
 			}
-		} catch (Exception ignored) {
+		} catch(Exception ignored) {
 		}
 
 		//LogMessage("Pref '" + name + "'was not set.");
@@ -602,10 +650,10 @@ public class Common
 		{
 			settings = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 			value = settings.getString(name, default_value);
-		} catch (ClassCastException cce) {
+		} catch(ClassCastException cce) {
 			doStackOutput(cce);
 			return default_value;
-		} catch (Exception e) {
+		} catch(Exception e) {
 			//LogMessage("GetStringPref(" + name + ", " + default_value + ") Err: " + e);
 			doStackOutput(e);
 			return default_value;
@@ -642,7 +690,7 @@ public class Common
 			return default_value;
 
 		String val = str.trim();
-		if(val.isEmpty())
+		if(val.isBlank())
 			return 0.0f;
 
 		return Float.parseFloat(val);
@@ -690,39 +738,6 @@ public class Common
 			return null;
 
 		return context.getFilesDir();
-	}
-
-	static void setWebview(WebView wv)
-	{
-		wv.getSettings().setUserAgentString(UA);
-		wv.getSettings().setJavaScriptEnabled(true);
-		wv.setOverScrollMode(View.OVER_SCROLL_NEVER);
-		wv.setNestedScrollingEnabled(true);
-		wv.clearCache(true);
-		wv.clearHistory();
-		wv.clearFormData();
-		wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
-		wv.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
-		wv.getSettings().setLoadWithOverviewMode(true);
-		wv.getSettings().setUseWideViewPort(true);
-		//wv.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-		wv.setScrollContainer(true);
-		wv.getSettings().setDisplayZoomControls(false);
-		wv.getSettings().setBuiltInZoomControls(false);
-		wv.setVerticalScrollBarEnabled(false);
-		wv.setHorizontalScrollBarEnabled(false);
-		wv.getSettings().setLoadWithOverviewMode(true);
-		wv.getSettings().setUseWideViewPort(true);
-		wv.setWebChromeClient(new myWebChromeClient());
-	}
-
-	public static String getString(int str)
-	{
-		Context context = getContext();
-		if(context == null)
-			return String.valueOf(str);
-
-		return context.getString(str);
 	}
 
 	static final class myWebChromeClient extends WebChromeClient
@@ -776,19 +791,19 @@ public class Common
 				sb.append("\t\t\t<img alt='weather icon' src='").append(first.icon.replaceAll("\n", "").replaceAll("\r", "")).append("' />\n");
 			sb.append("\t\t</div>\n");
 
-			sb.append("\t\t<div class='wordToday'>").append(getString(R.string.today)).append("</div>\n");
+			sb.append("\t\t<div class='wordToday'>").append(weeWXApp.getAndroidString(R.string.today)).append("</div>\n");
 
 			sb.append("\t\t<div class='bigTemp'>\n");
 
 			sb.append("\t\t\t<div class='maxTemp'>");
-			if(first.max.isEmpty() || first.max.equals("&deg;C") || first.max.equals("&deg;F"))
+			if(first.max.isBlank() || first.max.equals("&deg;C") || first.max.equals("&deg;F"))
 				sb.append("&nbsp;");
 			else
 				sb.append(first.max);
 			sb.append("</div>\n");
 
 			sb.append("\t\t\t<div class='minTemp'>");
-			if(first.min.isEmpty() || first.min.equals("&deg;C") || first.min.equals("&deg;F"))
+			if(first.min.isBlank() || first.min.equals("&deg;C") || first.min.equals("&deg;F"))
 				sb.append("&nbsp;");
 			else
 				sb.append(first.min);
@@ -797,6 +812,8 @@ public class Common
 			sb.append("\t<div class='bigForecastText'>\n\t\t");
 			sb.append(first.text);
 			sb.append("\n\t</div>\n</div>\n\n");
+
+			sb.append("<hr />\n\n");
 		}
 
 		sb.append("<div class='forecast'>\n\n");
@@ -805,20 +822,29 @@ public class Common
 		{
 			Day day = days.get(i);
 
-			if(i > 0)
-				sb.append("\t<hr />\n\n");
-
 			sb.append("\t<div class='day'>\n\t\t<div class='dayTopRow'>\n");
+
+			String tmpstr = day.icon.replaceAll("\n", "")
+					.replaceAll("\r", "")
+					.replaceAll("\t", "");
 
 			sb.append("\t\t\t<div class='iconSmall'>\n");
 			if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
-				sb.append("\t\\t\tt<i class='").append(day.icon).append("'></i>\n");
+				sb.append("\t\t\t\t<i class='").append(day.icon).append("'></i>\n");
 			else
-				sb.append("\t\t\t\t<img alt='weather icon' src='").append(day.icon.replaceAll("\n", "").replaceAll("\r", "")).append("' />\n");
+				sb.append("\t\t\t\t<img alt='weather icon' src='")
+						.append(tmpstr).append("' />\n");
 			sb.append("\t\t\t</div>\n");
 
 			sb.append("\t\t\t<div class='dayTitle'>");
-			sb.append(day.day).append("</div>\n");
+
+			if(i == 0)
+				sb.append(weeWXApp.getAndroidString(R.string.today));
+
+			if(i != 0)
+				sb.append(day.day);
+
+			sb.append("</div>\n");
 
 			sb.append("\t\t\t<div class='smallTemp'>\n");
 			sb.append("\t\t\t\t<div class='forecastMax'>");
@@ -838,14 +864,17 @@ public class Common
 			sb.append("\t\t<div class='desc'>\n\t\t\t");
 			sb.append(day.text).append("\n\t\t</div>\n");
 
+			if(i < days.size() - 1)
+				sb.append("\t\t<hr />\n");
+
 			sb.append("\t</div>\n\n");
 		}
 
+		if((days.size() - start) % 2 == 1)
+			sb.append("<div class='day'></div>\n\n");
+
+
 		sb.append("</div>\n");
-
-		String str = Common.current_html_headers + sb + Common.html_footer;
-
-		//CustomDebug.writeDebug("top_weeWX.html", str);
 
 		return sb.toString();
 	}
@@ -858,7 +887,7 @@ public class Common
 	static String[] processBOM2(String data, boolean showHeader)
 	{
 
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -950,7 +979,7 @@ public class Common
 					byte[] imageData = new byte[(int) f.length()];
 					if(imageInFile.read(imageData) > 0)
 						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-				} catch (Exception e) {
+				} catch(Exception e) {
 					doStackOutput(e);
 					doStackOutput(e);
 				}
@@ -964,13 +993,13 @@ public class Common
 				day.max += "&deg;C";
 				day.min += "&deg;C";
 			} else {
-				if(!day.max.isEmpty())
-					day.max += round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-				if(!day.min.isEmpty())
-					day.min += round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				if(!day.max.isBlank())
+					day.max += Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				if(!day.min.isBlank())
+					day.min += Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 			}
 
-			if(day.max.isEmpty() || day.max.startsWith("&deg;"))
+			if(day.max.isBlank() || day.max.startsWith("&deg;"))
 				day.max = "N/A";
 
 			days.add(day);
@@ -1014,7 +1043,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				}
@@ -1027,13 +1056,13 @@ public class Common
 					day.max = day.max + "&deg;C";
 					day.min = day.min + "&deg;C";
 				} else {
-					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -1050,7 +1079,7 @@ public class Common
 	{
 		LogMessage("Starting processBOM3()");
 
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1093,28 +1122,28 @@ public class Common
 					try
 					{
 						day.max = mydays.getJSONObject(i).getInt("temp_max") + "&deg;C";
-					} catch (Exception e) {
+					} catch(Exception e) {
 						// ignore errors
 					}
 
 					try
 					{
 						day.min = mydays.getJSONObject(i).getInt("temp_min") + "&deg;C";
-					} catch (Exception e) {
+					} catch(Exception e) {
 						// ignore errors
 					}
 				} else {
 					try
 					{
-						day.max = round((mydays.getJSONObject(i).getInt("temp_max") * 9.0 / 5.0) + 32.0) + "&deg;F";
-					} catch (Exception e) {
+						day.max = Math.round((mydays.getJSONObject(i).getInt("temp_max") * 9.0 / 5.0) + 32.0) + "&deg;F";
+					} catch(Exception e) {
 						// ignore errors
 					}
 
 					try
 					{
-						day.min = round((mydays.getJSONObject(i).getInt("temp_min") * 9.0 / 5.0) + 32.0) + "&deg;F";
-					} catch (Exception e) {
+						day.min = Math.round((mydays.getJSONObject(i).getInt("temp_min") * 9.0 / 5.0) + 32.0) + "&deg;F";
+					} catch(Exception e) {
 						// ignore errors
 					}
 				}
@@ -1142,7 +1171,7 @@ public class Common
 							byte[] imageData = new byte[(int) f.length()];
 							if(imageInFile.read(imageData) > 0)
 								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						} catch (Exception e) {
+						} catch(Exception e) {
 							doStackOutput(e);
 						}
 					}
@@ -1150,7 +1179,7 @@ public class Common
 
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -1180,7 +1209,7 @@ public class Common
 
 	static String[] processMET(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1233,7 +1262,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				}
@@ -1243,13 +1272,13 @@ public class Common
 					day.max += "&deg;C";
 					day.min += "&deg;C";
 				} else {
-					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -1264,7 +1293,7 @@ public class Common
 
 	static String[] processWCA(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1370,7 +1399,7 @@ public class Common
 							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src='", 2)[1].split("'", 2)[0].trim();
 							pop = div.get(j).select("div").select("small").html().trim();
 						}
-					} catch (Exception e) {
+					} catch(Exception e) {
 						LogMessage("hmmm 2 == " + div.html());
 						doStackOutput(e);
 					}
@@ -1394,7 +1423,7 @@ public class Common
 							byte[] imageData = new byte[(int) f.length()];
 							if(imageInFile.read(imageData) > 0)
 								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						} catch (Exception e) {
+						} catch(Exception e) {
 							doStackOutput(e);
 						}
 					}
@@ -1409,7 +1438,7 @@ public class Common
 					lastTS = day.timestamp;
 				}
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -1424,7 +1453,7 @@ public class Common
 
 	static String[] processWCAF(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1517,7 +1546,7 @@ public class Common
 							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src='", 2)[1].split("'", 2)[0].trim();
 							pop = div.get(j).select("div").select("small").html().trim();
 						}
-					} catch (Exception e) {
+					} catch(Exception e) {
 						LogMessage("hmmm 2 == " + div.html());
 						doStackOutput(e);
 					}
@@ -1541,7 +1570,7 @@ public class Common
 							byte[] imageData = new byte[(int) f.length()];
 							if(imageInFile.read(imageData) > 0)
 								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						} catch (Exception e) {
+						} catch(Exception e) {
 							doStackOutput(e);
 						}
 					}
@@ -1556,7 +1585,7 @@ public class Common
 				}
 			}
 
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -1573,7 +1602,7 @@ public class Common
 
 	static String[] processWGOV(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1670,7 +1699,7 @@ public class Common
 				} else {
 					Pattern p = Pattern.compile("\\d");
 					number = p.matcher(fn).replaceAll("");
-					if(!number.isEmpty())
+					if(!number.isBlank())
 					{
 						fn = fn.replaceAll("\\d{2,3}\\.jpg$", ".jpg");
 						Bitmap bmp3 = loadImage(fn);
@@ -1712,7 +1741,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				} else {
@@ -1731,11 +1760,11 @@ public class Common
 				if(!metric)
 					day.max = temperature.getString(i) + "&deg;F";
 				else
-					day.max = round((Double.parseDouble(temperature.getString(i)) - 32.0) * 5.0 / 9.0)  + "&deg;C";
+					day.max = Math.round((Double.parseDouble(temperature.getString(i)) - 32.0) * 5.0 / 9.0)  + "&deg;C";
 				day.text = weather.getString(i);
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -1750,7 +1779,7 @@ public class Common
 
 	static String[] processWMO(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1817,7 +1846,7 @@ public class Common
 				day.day = date;
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -1832,7 +1861,7 @@ public class Common
 
 	static String[] processBOM(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -1885,7 +1914,7 @@ public class Common
 						if(jarr2.getJSONObject(x).getString("type").equals("air_temperature_maximum"))
 							day.max = jarr2.getJSONObject(x).getString("content");
 					}
-				} catch (JSONException e) {
+				} catch(JSONException e) {
 					code = j.getJSONObject("element").getString("content");
 				}
 
@@ -1917,7 +1946,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				}
@@ -1927,8 +1956,8 @@ public class Common
 					day.max += "&deg;C";
 					day.min += "&deg;C";
 				} else {
-					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
 				if(day.max.equals("&deg;C") || day.max.equals("&deg;F"))
@@ -1936,7 +1965,7 @@ public class Common
 
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -1951,7 +1980,7 @@ public class Common
 
 	static String[] processMetService(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2015,7 +2044,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				}
@@ -2025,13 +2054,13 @@ public class Common
 					day.max += "&deg;C";
 					day.min += "&deg;C";
 				} else {
-					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -2046,7 +2075,7 @@ public class Common
 
 	static String[] processDWD(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2123,7 +2152,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				}
@@ -2132,12 +2161,12 @@ public class Common
 				if(metric)
 					day.max = temp + "&deg;C";
 				else
-					day.max = round((Double.parseDouble(temp) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = Math.round((Double.parseDouble(temp) * 9.0 / 5.0) + 32.0) + "&deg;F";
 
 				days.add(day);
 				lastTS = day.timestamp;
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -2152,7 +2181,7 @@ public class Common
 
 	static String[] processTempoItalia(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2201,7 +2230,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				} else
@@ -2226,14 +2255,14 @@ public class Common
 					day.max += "&deg;C";
 					day.min += "&deg;C";
 				} else {
-					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
 				days.add(day);
 				lastTS = day.timestamp;
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -2248,7 +2277,7 @@ public class Common
 
 	static String[] processAEMET(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2300,7 +2329,7 @@ public class Common
 					JSONArray jarr = jtmp.getJSONArray("estado_cielo");
 					for (int j = 0; j < jarr.length(); j++)
 					{
-						if(!jarr.getJSONObject(j).getString("descripcion").isEmpty())
+						if(!jarr.getJSONObject(j).getString("descripcion").isBlank())
 						{
 							estado_cielo = jarr.getJSONObject(j);
 							break;
@@ -2334,7 +2363,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				}
@@ -2346,14 +2375,14 @@ public class Common
 					day.max += "&deg;C";
 					day.min += "&deg;C";
 				} else {
-					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 
 				day.text = estado_cielo.getString("descripcion");
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -2368,7 +2397,7 @@ public class Common
 
 	static String[] processWCOM(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2421,7 +2450,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				}
@@ -2437,7 +2466,7 @@ public class Common
 
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -2452,7 +2481,7 @@ public class Common
 
 	static String[] processMETIE(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2497,7 +2526,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				}
@@ -2507,11 +2536,11 @@ public class Common
 				if(metric)
 					day.max += "&deg;C";
 				else
-					day.max = round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
 
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -2523,7 +2552,7 @@ public class Common
 
 	static String[] processOWM(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		List<Day> days = new ArrayList<>();
@@ -2546,8 +2575,8 @@ public class Common
 				day.day = sdf.format(day.timestamp);
 
 				JSONObject temp = j.getJSONObject("temp");
-				int min = (int)round(Double.parseDouble(temp.getString("min")));
-				int max = (int)round(Double.parseDouble(temp.getString("max")));
+				int min = (int)Math.round(Double.parseDouble(temp.getString("min")));
+				int max = (int)Math.round(Double.parseDouble(temp.getString("max")));
 				JSONObject weather = j.getJSONArray("weather").getJSONObject(0);
 
 				int id = weather.getInt("id");
@@ -2571,7 +2600,7 @@ public class Common
 					day.min = min + "&deg;F";
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -2586,7 +2615,7 @@ public class Common
 
 	static String[] processYR(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean use_icons = GetBoolPref("use_icons", false);
@@ -2661,7 +2690,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				}
@@ -2671,7 +2700,7 @@ public class Common
 				day.text = windSpeed.getString("name") + ", " + windSpeed.get("mps") + "m/s from the " + windDirection.getString("name");
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -2686,7 +2715,7 @@ public class Common
 
 	static String[] processMetNO(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -2724,9 +2753,9 @@ public class Common
 				JSONObject tsdata = jarr.getJSONObject(i).getJSONObject("data");
 				double temp = tsdata.getJSONObject("instant").getJSONObject("details").getDouble("air_temperature");
 				if(metric)
-					day.max = round(temp) + "&deg;C";
+					day.max = Math.round(temp) + "&deg;C";
 				else
-					day.max = round((temp * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = Math.round((temp * 9.0 / 5.0) + 32.0) + "&deg;F";
 
 				String icon;
 
@@ -2738,19 +2767,19 @@ public class Common
 						if(metric)
 							day.min = precip + "mm";
 						else
-							day.min = (round(precip / 25.4 * 1000.0) / 1000.0) + "in";
+							day.min = (Math.round(precip / 25.4 * 1000.0) / 1000.0) + "in";
 
 						icon = tsdata.getJSONObject("next_1_hours").getJSONObject("summary").getString("symbol_code");
-					} catch (Exception e) {
+					} catch(Exception e) {
 						double precip = tsdata.getJSONObject("next_6_hours").getJSONObject("details").getDouble("precipitation_amount");
 						if(metric)
 							day.min = precip + "mm";
 						else
-							day.min = (round(precip / 25.4 * 1000.0) / 1000.0) + "in";
+							day.min = (Math.round(precip / 25.4 * 1000.0) / 1000.0) + "in";
 
 						icon = tsdata.getJSONObject("next_6_hours").getJSONObject("summary").getString("symbol_code");
 					}
-				} catch (Exception e) {
+				} catch(Exception e) {
 					continue;
 				}
 
@@ -2759,7 +2788,7 @@ public class Common
 				if(metric)
 					day.text = windSpeed + "m/s from the " + degtoname(windDir);
 				else
-					day.text = (round(windSpeed * 22.36936) / 10.0) + "mph from the " + degtoname(windDir);
+					day.text = (Math.round(windSpeed * 22.36936) / 10.0) + "mph from the " + degtoname(windDir);
 
 				SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE d, HH:mm", Locale.getDefault());
 				day.day = sdf2.format(day.timestamp);
@@ -2782,14 +2811,14 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				}
 
 				days.add(day);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -2937,7 +2966,7 @@ public class Common
 
 	static String[] processWZ(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean use_icons = GetBoolPref("use_icons", false);
@@ -3005,7 +3034,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				}
@@ -3014,14 +3043,14 @@ public class Common
 				day.min = range[0];
 				if(!metric)
 				{
-					day.max = round(Double.parseDouble(range[1].substring(0, range[1].length() - 7)) * 9.0 / 5.0 + 32.0) + "&deg;F";
-					day.min = round((Double.parseDouble(range[0].substring(0, range[0].length() - 7)) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = Math.round(Double.parseDouble(range[1].substring(0, range[1].length() - 7)) * 9.0 / 5.0 + 32.0) + "&deg;F";
+					day.min = Math.round((Double.parseDouble(range[0].substring(0, range[0].length() - 7)) * 9.0 / 5.0) + 32.0) + "&deg;F";
 				}
 				day.text = mydesc;
 				days.add(day);
 				lastTS = day.timestamp;
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -3096,7 +3125,7 @@ public class Common
 
 	static String[] processYahoo(String data, boolean showHeader)
 	{
-		if(data.isEmpty())
+		if(data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", true);
@@ -3160,8 +3189,8 @@ public class Common
 
 				if(metric)
 				{
-					myday.max = round((Double.parseDouble(myday.max) - 32.0) * 5.0 / 9.0) + "&deg;C";
-					myday.min = round((Double.parseDouble(myday.min) - 32.0) * 5.0 / 9.0) + "&deg;C";
+					myday.max = Math.round((Double.parseDouble(myday.max) - 32.0) * 5.0 / 9.0) + "&deg;C";
+					myday.min = Math.round((Double.parseDouble(myday.min) - 32.0) * 5.0 / 9.0) + "&deg;C";
 				} else
 				{
 					myday.max += "&deg;F";
@@ -3177,7 +3206,7 @@ public class Common
 						byte[] imageData = new byte[(int) f.length()];
 						if(imageInFile.read(imageData) > 0)
 							myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch (Exception e) {
+					} catch(Exception e) {
 						doStackOutput(e);
 					}
 				} else
@@ -3186,7 +3215,7 @@ public class Common
 				LogMessage(myday.toString());
 				days.add(myday);
 			}
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
@@ -3194,26 +3223,18 @@ public class Common
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	static void buildUpdate()
-	{
-		WidgetProvider.updateAppWidget();
-	}
-
 	static void SendIntents()
 	{
 		getWeather();
 		getForecast();
-
-		buildUpdate();
-
+		WidgetProvider.updateAppWidget();
 		NotificationManager.updateNotificationMessage(UPDATE_INTENT);
 		LogMessage("update intent broadcasted");
 	}
 
 	private static void SendRefresh()
 	{
-		buildUpdate();
-
+		WidgetProvider.updateAppWidget();
 		NotificationManager.updateNotificationMessage(REFRESH_INTENT);
 		LogMessage("refresh intent broadcasted");
 	}
@@ -3232,14 +3253,12 @@ public class Common
 			try
 			{
 				String fromURL = GetStringPref("BASE_URL", "");
-				if(fromURL == null || fromURL.isEmpty())
+				if(fromURL == null || fromURL.isBlank())
 					return;
 
 				reallyGetWeather(fromURL);
 				SendRefresh();
-			} catch (InterruptedException | InterruptedIOException ie) {
-				doStackOutput(ie);
-			} catch (Exception e) {
+			} catch(Exception e) {
 				doStackOutput(e);
 				SetStringPref("lastError", e.toString());
 				SendFailedIntent();
@@ -3249,10 +3268,10 @@ public class Common
 		t.start();
 	}
 
-	static void reallyGetWeather(String fromURL) throws Exception
+	static void reallyGetWeather(String fromURL)
 	{
 		String line = downloadString(fromURL);
-		if(!line.isEmpty())
+		if(line != null && !line.isBlank())
 		{
 			String[] bits = line.split("\\|");
 			if(Double.parseDouble(bits[0]) < inigo_version)
@@ -3278,7 +3297,7 @@ public class Common
 			}
 
 			SetStringPref("LastDownload", line);
-			SetLongPref("LastDownloadTime", round(System.currentTimeMillis() / 1000.0));
+			SetLongPref("LastDownloadTime", Math.round(System.currentTimeMillis() / 1000.0));
 		}
 	}
 
@@ -3318,7 +3337,7 @@ public class Common
 
 	// https://stackoverflow.com/questions/8710515/reading-an-image-file-into-bitmap-from-sdcard-why-am-i-getting-a-nullpointerexc
 
-	private static Bitmap loadImage(String fileName)
+	static Bitmap loadImage(String fileName)
 	{
 		Context context = getContext();
 		if(context == null)
@@ -3328,10 +3347,12 @@ public class Common
 		f = new File(f, "icons");
 		f = new File(f, fileName);
 
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inJustDecodeBounds = false;
-		options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-		return BitmapFactory.decodeFile(f.getAbsolutePath(), options);
+		return loadImage(f);
+	}
+
+	static Bitmap loadImage(File file)
+	{
+		return BitmapFactory.decodeFile(file.getAbsolutePath(), options);
 	}
 
 	private static String checkImage(String fileName, String icon)
@@ -3362,7 +3383,7 @@ public class Common
 
 		Thread t = new Thread(() ->
 		{
-			if(fileName.isEmpty() || imageURL.isEmpty())
+			if(fileName.isBlank() || imageURL.isBlank())
 				return;
 
 			LogMessage("checking: " + imageURL);
@@ -3384,7 +3405,7 @@ public class Common
 				LogMessage("imageURL == " + imageURL);
 
 				downloadJSOUP(f, imageURL);
-			} catch (Exception e) {
+			} catch(Exception e) {
 				doStackOutput(e);
 			}
 		});
@@ -3429,9 +3450,9 @@ public class Common
 				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setStyle(Paint.Style.STROKE);
 				paint.setStrokeWidth(1);
-				comboImage.drawLine( round(x1 / 2.0) + 5, y1 - 9, round(x1 / 2.0) + 10, y1 - 7, paint);
-				comboImage.drawLine( round(x1 / 2.0) - 10, y1 - 7, round(x1 / 2.0) + 10, y1 - 7, paint);
-				comboImage.drawLine( round(x1 / 2.0) + 5, y1 - 5, round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 9, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) - 10, y1 - 7, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 5, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
 			}
 
 			if(!fnum.equals("%"))
@@ -3461,7 +3482,7 @@ public class Common
 			}
 
 			return bmp;
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 		}
 
@@ -3511,22 +3532,20 @@ public class Common
 			paint.setAntiAlias(true);
 			Canvas comboImage = new Canvas(bmp);
 			comboImage.drawBitmap(bmp1, 0f, 0f, null);
-			comboImage.drawBitmap(bmp2, round(x1 / 2.0), 0f, null);
+			comboImage.drawBitmap(bmp2, Math.round(x1 / 2.0), 0f, null);
 
 			paint.setColor(ContextCompat.getColor(context, R.color.Black));
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeWidth(4);
-			comboImage.drawLine( round(x1 / 2.0), 0, round(x1 / 2.0), y1, paint);
+			comboImage.drawLine( Math.round(x1 / 2.0), 0, Math.round(x1 / 2.0), y1, paint);
 
 			paint.setColor(ContextCompat.getColor(context, R.color.White));
 			paint.setStyle(Paint.Style.STROKE);
 			paint.setStrokeWidth(2);
-			comboImage.drawLine( round(x1 / 2.0), 0, round(x1 / 2.0), y1, paint);
+			comboImage.drawLine( Math.round(x1 / 2.0), 0, Math.round(x1 / 2.0), y1, paint);
 
 			if(!fnum.equals("%") || !snum.equals("%"))
 			{
-				BitmapFactory.Options options = new BitmapFactory.Options();
-				options.inJustDecodeBounds = false;
 				Bitmap bmp4 = loadImage("wgovoverlay.jpg");
 				if(bmp4 == null)
 					return null;
@@ -3544,9 +3563,9 @@ public class Common
 				paint.setColor(ContextCompat.getColor(context, R.color.LightPrussianBlue));
 				paint.setStyle(Paint.Style.STROKE);
 				paint.setStrokeWidth(1);
-				comboImage.drawLine( round(x1 / 2.0) + 5, y1 - 9, round(x1 / 2.0) + 10, y1 - 7, paint);
-				comboImage.drawLine( round(x1 / 2.0) - 10, y1 - 7, round(x1 / 2.0) + 10, y1 - 7, paint);
-				comboImage.drawLine( round(x1 / 2.0) + 5, y1 - 5, round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 9, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) - 10, y1 - 7, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
+				comboImage.drawLine( Math.round(x1 / 2.0) + 5, y1 - 5, Math.round(x1 / 2.0) + 10, y1 - 7, paint);
 			}
 
 			if(!fnum.equals("%"))
@@ -3576,7 +3595,7 @@ public class Common
 			}
 
 			return bmp;
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 		}
 
@@ -3625,25 +3644,31 @@ public class Common
 
 		try
 		{
-			InputStream is = context.getResources().openRawResource(R.raw.nws);
+			InputStream is = weeWXApp.openRawResource(R.raw.nws);
 			int size = is.available();
 			byte[] buffer = new byte[size];
 			if(is.read(buffer) > 0)
 				nws = new JSONObject(new String(buffer, StandardCharsets.UTF_8));
 			is.close();
-		} catch (Exception e) {
+		} catch(Exception e) {
 			doStackOutput(e);
 		}
 	}
 
-	static String downloadSettings(String url) throws Exception
+	static String downloadSettings(String url)
 	{
 		String UTF8_BOM = "\uFEFF";
 
 		SetStringPref("SETTINGS_URL", url);
-		String cfg = downloadString(url).trim();
+
+		String cfg = downloadString(url);
+
+		if(cfg == null)
+			return null;
+
 		if(cfg.startsWith(UTF8_BOM))
 			cfg = cfg.substring(1).trim();
+
 		return cfg;
 	}
 
@@ -3693,6 +3718,9 @@ public class Common
 			tmp = downloadString(forecast);
 		else
 			tmp = downloadString2(forecast);
+
+		if(tmp == null)
+			return null;
 
 		if(fctype.equals("bom.gov.au"))
 		{
@@ -3753,7 +3781,7 @@ public class Common
 		return result;
 	}
 
-	private static String downloadString(String fromURL) throws Exception
+	private static String downloadString(String fromURL)
 	{
 		OkHttpClient client;
 		Request request;
@@ -3792,12 +3820,14 @@ public class Common
 				.addHeader("User-Agent", UA)
 				.build();
 
-		try (Response response = client.newCall(request).execute())
+		try(Response response = client.newCall(request).execute())
 		{
 			String rb = response.body().string().trim();
 			LogMessage(rb);
 			return rb;
-		}
+		} catch(Exception ignored) {}
+
+		return null;
 	}
 
 	private static void writeFile(String fileName, String data) throws Exception
@@ -3839,7 +3869,7 @@ public class Common
 		return f;
 	}
 
-	private static File downloadBinary(File f, String fromURL) throws Exception
+	static File downloadBinary(File f, String fromURL) throws Exception
 	{
 		File dir = f.getParentFile();
 		assert dir != null;
@@ -4027,7 +4057,7 @@ public class Common
 		}
 
 		final String forecast_url = GetStringPref("FORECAST_URL", "");
-		if(forecast_url == null || forecast_url.isEmpty())
+		if(forecast_url == null || forecast_url.isBlank())
 			return;
 
 		if(!checkConnection() && !force)
@@ -4036,11 +4066,11 @@ public class Common
 			return;
 		}
 
-		final long current_time = round(System.currentTimeMillis() / 1000.0);
+		final long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 		String str1 = GetStringPref("forecastData", "");
 		long long1 = GetLongPref("rssCheck", 0);
 
-		if(str1 == null || str1.isEmpty() || long1 + 7190 < current_time)
+		if(str1 == null || str1.isBlank() || long1 + 7190 < current_time)
 		{
 			LogMessage("no forecast data or cache is more than 2 hour old");
 		} else {
@@ -4066,7 +4096,7 @@ public class Common
 					SetLongPref("rssCheck", current_time);
 					SetStringPref("forecastData", tmp);
 				}
-			} catch (Exception e) {
+			} catch(Exception e) {
 				doStackOutput(e);
 			}
 		});
@@ -4074,11 +4104,40 @@ public class Common
 		t.start();
 	}
 
-	public static String dayOfMonth(int day)
+	static String getTime(String str)
 	{
-		ULocale locale = ULocale.getDefault();
-		RuleBasedNumberFormat rbnf = new RuleBasedNumberFormat(locale, RuleBasedNumberFormat.ORDINAL);
-		return rbnf.format(day);
+		str = str.trim();
+
+		if(!str.contains(" "))
+			return str;
+
+		try
+		{
+			return str.split(" ", 2)[0];
+		} catch(Exception e) {
+			Common.doStackOutput(e);
+		}
+
+		return str;
+	}
+
+	static String getDaySuffix(int day)
+	{
+		String suffix;
+		if(day >= 11 && day <= 13)
+		{
+			suffix = "th";
+		} else {
+			suffix = switch(day % 10)
+			{
+				case 1 -> "st";
+				case 2 -> "nd";
+				case 3 -> "rd";
+				default -> "th";
+			};
+		}
+
+		return day + suffix;
 	}
 
 	static void getDayNightMode()
@@ -4091,7 +4150,7 @@ public class Common
 		boolean isWidgetSet = false;
 		boolean prefSet = Common.isPrefSet("DayNightMode");
 		int nightDaySetting = getAppDayNightSetting();
-		int nightModeFlags = context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+		int nightModeFlags = weeWXApp.getUImode() & Configuration.UI_MODE_NIGHT_MASK;
 		KeyValue.widget_theme_mode = GetIntPref(WIDGET_THEME_MODE, 0);
 
 		current_mode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
@@ -4156,8 +4215,8 @@ public class Common
 
 		if(KeyValue.widget_theme_mode == 4 || !isWidgetSet)
 		{
-			KeyValue.widgetBG = Common.GetIntPref("bgColour", ContextCompat.getColor(context, R.color.White));
-			KeyValue.widgetFG = Common.GetIntPref("fgColour", ContextCompat.getColor(context, R.color.Black));
+			KeyValue.widgetBG = Common.GetIntPref("bgColour", 0x00000000);
+			KeyValue.widgetFG = Common.GetIntPref("fgColour", 0xFFFFFFFF);
 		}
 
 		KeyValue.theme = current_theme;

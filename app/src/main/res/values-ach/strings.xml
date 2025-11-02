@@ -73,4 +73,5 @@
     <string name="use_icons">Nyut</string>
     <string name="today">Tin</string>
     <string name="last_year_stats">Wel me mwaka ma okato ni</string>
+    <string name="last_month_stats">Wel dwe ma okato ni</string>
 </resources>

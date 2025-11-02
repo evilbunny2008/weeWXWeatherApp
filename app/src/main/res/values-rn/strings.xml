@@ -73,4 +73,5 @@
     <string name="use_icons">Ivyerekanwa</string>
     <string name="today">Uno musi</string>
     <string name="last_year_stats">Imibare y\'umwaka wa nyuma</string>
+    <string name="last_month_stats">Imibare y\'ukwezi kwa nyuma</string>
 </resources>

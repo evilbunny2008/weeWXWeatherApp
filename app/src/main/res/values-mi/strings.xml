@@ -73,4 +73,5 @@
     <string name="use_icons">Whakaatuhia nga tohu</string>
     <string name="today">Tēnei rā</string>
     <string name="last_year_stats">Tatauranga o te tau whakamutunga</string>
+    <string name="last_month_stats">Tatauranga o te marama kua hipa</string>
 </resources>
