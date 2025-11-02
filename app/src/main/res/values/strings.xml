@@ -75,4 +75,6 @@
 	<string name="today">Today</string>
 	<string name="last_year_stats">Last Year\'s Statistics</string>
 	<string name="last_month_stats">Last Month\'s Statistics</string>
+	<string name="drawer_open">Open</string>
+	<string name="drawer_close">Close</string>
 </resources>

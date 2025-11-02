@@ -234,21 +234,26 @@ public class Stats extends Fragment
 
 	private String getTimeMonth(String str)
 	{
-		int day = (int)Float.parseFloat(Common.getTime(str).substring(0, 2));
-		return Common.getDaySuffix(day);
+		if(str.length() >= 2)
+			return Common.getDaySuffix((int)Float.parseFloat(Common.getTime(str).substring(0, 2)));
+
+		return str;
 	}
 
 	private String getTimeYear(String str)
 	{
 		str = getAllTime(str);
-		str = str.substring(0, str.length() - 2);
+
+		if(str.length() > 2)
+			return str.substring(0, str.length() - 2);
+
 		return str;
 	}
 
 	private String getAllTime(String str)
 	{
 		str = Common.getTime(str);
-		if(str.startsWith("0"))
+		if(str.length() >= 1 && str.startsWith("0"))
 			str = str.substring(1);
 		return str;
 	}

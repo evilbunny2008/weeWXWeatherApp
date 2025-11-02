@@ -22,6 +22,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.LocaleList;
 import android.util.Base64;
+import android.util.Log;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 
@@ -383,6 +384,16 @@ public class Common
                 margin-left: 2px;
                 margin-right: 2px;
               }
+              @media (min-width: 500px) {
+                .statsDataRow {
+                  display: grid;
+                  grid-template-columns: minmax(100px, 2fr)
+                                         minmax(55px, 1fr)
+                                         minmax(3px, 1fr)
+                                         minmax(55px, 1fr)
+                                         minmax(100px, 2fr);
+                }
+              }
               </style>
             </head>
             <body>
@@ -543,9 +554,9 @@ public class Common
 
 	static void LogMessage(String value)
 	{
-		//LogMessage(value, false);
+		LogMessage(value, false);
 	}
-/*
+
 	static void LogMessage(String value, boolean showAnyway)
 	{
 		if(debug_on || showAnyway)
@@ -553,10 +564,10 @@ public class Common
 			int len = value.indexOf("\n");
 			if(len <= 0)
 				len = value.length();
-			Log.i("weeWX App", "message='" + value.substring(0, len) + "'");
+			Log.i("weeWXApp", "message='" + value.substring(0, len) + "'");
 		}
 	}
-*/
+
 	static void SetStringPref(String name, String value)
 	{
 		Context context = getContext();
@@ -1239,7 +1250,7 @@ public class Common
 				day.day = sdf.format(day.timestamp);
 
 				String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class='icon'")[1].split("src='")[1].split("'>")[0].trim();
-				String fileName =  icon.substring(icon.lastIndexOf('/') + 1).replaceAll("\\.svg$", ".png");
+				String fileName = icon.substring(icon.lastIndexOf('/') + 1).replaceAll("\\.svg$", ".png");
 				day.min = forecasts[i].split("<span class='tab-temp-low'", 2)[1].split("'>")[1].split("</span>")[0].trim();
 				day.max = forecasts[i].split("<span class='tab-temp-high'", 2)[1].split("'>")[1].split("</span>")[0].trim();
 				day.text = forecasts[i].split("<div class='summary-text", 2)[1].split("'>", 3)[2]

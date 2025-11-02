@@ -12,8 +12,10 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.window.OnBackInvokedCallback;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
 import com.google.android.material.button.MaterialButton;
@@ -33,10 +35,8 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import androidx.activity.OnBackPressedCallback;
-import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.core.graphics.Insets;
-import androidx.core.splashscreen.SplashScreen;
 import androidx.core.text.HtmlCompat;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
@@ -65,6 +65,7 @@ public class MainActivity extends FragmentActivity
 	private boolean showSplash = true;
 	private TabLayout tabLayout;
 	private DrawerLayout mDrawerLayout;
+	private OnBackInvokedCallback backCallback;
 	private TextInputLayout fgtil, bgtil;
 	private TextInputEditText settingsURL, customURL;
 	private CPEditText fgColour, bgColour;
@@ -88,12 +89,14 @@ public class MainActivity extends FragmentActivity
 
 	private int initialLeft, initialRight, initialTop, initialBottom;
 
+	private ImageButton ib;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
+		//SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
 		setTheme(KeyValue.theme);
-		splashScreen.setKeepOnScreenCondition(() -> showSplash);
+		//splashScreen.setKeepOnScreenCondition(() -> showSplash);
 
 		super.onCreate(savedInstanceState);
 
@@ -118,6 +121,17 @@ public class MainActivity extends FragmentActivity
 
 		mDrawerLayout = findViewById(R.id.drawer_layout);
 		mDrawerLayout.addDrawerListener(handleDrawerListener);
+
+		ib = findViewById(R.id.hamburger);
+		ib.setOnClickListener(arg0 ->
+		{
+			if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
+				mDrawerLayout.closeDrawer(GravityCompat.START);
+			else
+				mDrawerLayout.openDrawer(GravityCompat.START);
+		});
+
+		setupBackHandling();
 
 		myLinearLayout dl = findViewById(R.id.custom_drawer);
 		dl.setBackgroundColor(KeyValue.bgColour);
@@ -165,13 +179,11 @@ public class MainActivity extends FragmentActivity
 
 			scrollView.setPadding(left, top, right,	bottom);
 
+			updateHamburger();
 			updateDropDowns();
 
 			return insets;
 		});
-
-		OnBackPressedDispatcher onBackPressedDispatcher = getOnBackPressedDispatcher();
-		onBackPressedDispatcher.addCallback(this, onBackPressedCallback);
 
 		tabLayout = findViewById(R.id.tabs);
 
@@ -362,13 +374,8 @@ public class MainActivity extends FragmentActivity
 		settingLayout.setVisibility(View.VISIBLE);
 		aboutLayout.setVisibility(View.GONE);
 
-		MaterialTextView mtv1 = findViewById(R.id.header_needs_underlining);
-		String lines = "<b><u>" + weeWXApp.getAndroidString(R.string.nav_header_title) + "</u></b>";
-		mtv1.setText(HtmlCompat.fromHtml(lines, HtmlCompat.FROM_HTML_MODE_LEGACY));
-		mtv1.setMovementMethod(LinkMovementMethod.getInstance());
-
 		MaterialTextView tv = findViewById(R.id.aboutText);
-		tv.setText(HtmlCompat.fromHtml(Common.about_blurb, HtmlCompat.FROM_HTML_MODE_LEGACY));
+		tv.setText(HtmlCompat.fromHtml(Common.about_blurb, HtmlCompat.FROM_HTML_MODE_COMPACT));
 		tv.setMovementMethod(LinkMovementMethod.getInstance());
 
 		b1.setOnClickListener(arg0 ->
@@ -423,11 +430,110 @@ public class MainActivity extends FragmentActivity
 		});
 
 		setStrings();
-		//updateDropDowns();
+		updateHamburger();
 		WidgetProvider.updateAppWidget();
 
 		Common.LogMessage("MainActivity.onCreate() has finished...");
 		Common.setAlarm("MainActivity.onCreate()");
+	}
+
+	private void updateHamburger()
+	{
+		if(weeWXApp.getWidth() >= 600)
+		{
+			if(ib.getVisibility() != View.VISIBLE)
+				ib.setVisibility(View.VISIBLE);
+		} else {
+			ib.setVisibility(View.GONE);
+		}
+	}
+
+	DrawerLayout.SimpleDrawerListener handleDrawerListener = new DrawerLayout.SimpleDrawerListener()
+	{
+		@Override
+		public void onDrawerOpened(@NonNull View drawerView)
+		{
+			Common.LogMessage("Detected a back press in the DrawerLayout...");
+
+			InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+			View focus = getCurrentFocus();
+			if(imm != null && focus != null)
+			{
+				imm.hideSoftInputFromWindow(focus.getWindowToken(), 0);
+				focus.clearFocus();
+			}
+		}
+
+
+		@Override
+		public void onDrawerClosed(@NonNull View drawerView)
+		{
+			// Drawer closed — you can re-enable gestures or update UI here
+			Common.LogMessage("Drawer closed");
+		}
+
+		@Override
+		public void onDrawerStateChanged(int newState)
+		{
+			// Optional: detect dragging or settling if you want
+			Common.LogMessage("Drawer state: " + newState);
+		}
+	};
+
+	private void setupBackHandling()
+	{
+		// Legacy back handling for Android < 13
+		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
+		{
+			Common.LogMessage("setupBackHandling() setting getOnBackPressedDispatcher() SDK < TIRAMISU");
+			getOnBackPressedDispatcher().addCallback(this, obpc);
+		} else {
+			// Android 13+ predictive back gestures
+			// Only intercept the back if keyboard is visible or drawer is open
+			Common.LogMessage("setupBackHandling() setting getOnBackInvokedDispatcher() SDK >= TIRAMISU");
+			//getOnBackInvokedDispatcher().registerOnBackInvokedCallback(
+			//		OnBackInvokedDispatcher.PRIORITY_DEFAULT, this::handleBack);
+		}
+	}
+
+	OnBackPressedCallback obpc = new OnBackPressedCallback(true)
+	{
+		@Override
+		public void handleOnBackPressed()
+		{
+			Common.LogMessage("handleOnBackPressed()");
+			handleBack();
+		}
+	};
+
+	private void handleBack()
+	{
+		Common.LogMessage("Detected an application back press...");
+		View focus = getCurrentFocus();
+		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+		if(focus != null && imm != null && imm.isAcceptingText())
+		{
+			Common.LogMessage("Let's hide the on screen keyboard...");
+			closeKeyboard(focus, imm);
+			return;
+		}
+
+		if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
+		{
+			Common.LogMessage("Let's shut the drawer...");
+			closeDrawer();
+			return;
+		}
+
+		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
+		{
+			Common.LogMessage("Let's end now... SDK < TIRAMISU");
+			obpc.setEnabled(false);
+			finish();
+		} else {
+			Common.LogMessage("SDK >= TIRAMISU... Let the system do it's thing...");
+			//mDrawerLayout.openDrawer(GravityCompat.START, true);
+		}
 	}
 
 	@Override
@@ -573,11 +679,17 @@ public class MainActivity extends FragmentActivity
 	{
 		Common.LogMessage("Resetting mSectionsPagerAdapter");
 		Common.reload();
+
 		((weeWXApp)getApplication()).applyTheme();
+
+		recreate();
+
 		closeKeyboard();
 		closeDrawer();
+
 		WidgetProvider.updateAppWidget();
-		this.recreate();
+
+		updateHamburger();
 		updateDropDowns();
 	}
 
@@ -1207,51 +1319,12 @@ public class MainActivity extends FragmentActivity
 				resetActivity();
 			});
 
+			updateHamburger();
 			updateDropDowns();
 		});
 
 		t.start();
 	}
-
-	final DrawerLayout.SimpleDrawerListener handleDrawerListener = new DrawerLayout.SimpleDrawerListener()
-	{
-		@Override
-		public void onDrawerOpened(@NonNull View drawerView)
-		{
-			InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-			View focus = getCurrentFocus();
-			if(imm != null && focus != null)
-			{
-				Common.LogMessage("Detected a back press in the DrawerLayout...");
-				imm.hideSoftInputFromWindow(focus.getWindowToken(), 0);
-				focus.clearFocus();
-			}
-		}
-	};
-
-	final OnBackPressedCallback onBackPressedCallback = new OnBackPressedCallback(true)
-	{
-		@Override
-		public void handleOnBackPressed()
-		{
-			Common.LogMessage("Detected an application back press...");
-			View focus = getCurrentFocus();
-			InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-			if(focus != null && imm != null && imm.isAcceptingText())
-			{
-				Common.LogMessage("Let's hide the on screen keyboard...");
-				closeKeyboard(focus, imm);
-			} else if(mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
-				Common.LogMessage("Let's shut the draw...");
-				closeDrawer();
-			} else {
-				Common.LogMessage("Let's finish up...");
-				setEnabled(false);
-				getOnBackPressedDispatcher().onBackPressed();
-				finish();
-			}
-		}
-	};
 
 	@Override
 	protected void onResume()
@@ -1259,6 +1332,7 @@ public class MainActivity extends FragmentActivity
 		super.onResume();
 		Common.LogMessage("Resuming app updates");
 
+		updateHamburger();
 		updateDropDowns();
 
 		if(isVisible)
