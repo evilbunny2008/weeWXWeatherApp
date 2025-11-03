@@ -83,4 +83,10 @@
 		    android:layout_height="match_parent"
 	        android:orientation="horizontal" />
 	</com.odiousapps.weewxweather.LessSensitiveViewPagerLayout>
+
+	<View
+		android:id="@+id/navBarSpacer"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:background="@color/MyAppNavBarColour" />
 </LinearLayout>

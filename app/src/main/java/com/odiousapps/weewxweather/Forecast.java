@@ -96,6 +96,10 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		super.onViewCreated(view, savedInstanceState);
 
+		Common.LogMessage("Forecast.java -- adding notification manager...");
+		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(),
+				notificationObserver);
+
 		if(forecastWebView == null)
 			forecastWebView = WebViewPreloader.getInstance().getWebView(requireContext());
 
@@ -185,13 +189,9 @@ public class Forecast extends Fragment implements View.OnClickListener
 			radarWebView.restoreState(savedInstanceState);
 		}
 
-		addListeners();
-		updateSwipe();
 		loadRadar();
 		getForecast(false);
-
 		updateScreen(true);
-
 		stopRefreshing();
 	}
 
@@ -211,6 +211,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 	public void onDestroyView()
 	{
 		super.onDestroyView();
+
+		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 
 		if(forecastWebView != null)
 		{
@@ -401,22 +403,20 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		Common.LogMessage("Forecast.onResume()");
 
+		disableSwipeOnRadar = Common.GetBoolPref("disableSwipeOnRadar", false);
+		floatingCheckBox.setChecked(disableSwipeOnRadar);
+		updateSwipe();
+
 		if(isVisible)
 			return;
 
 		isVisible = true;
 
-		Common.LogMessage("Forecast.onResume()-- adding notification manager...");
-		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(),
-				notificationObserver);
-
 		Common.LogMessage("Forecast.onResume() -- updating the value of the floating checkbox...");
-		disableSwipeOnRadar = Common.GetBoolPref("disableSwipeOnRadar", false);
-		floatingCheckBox.setChecked(disableSwipeOnRadar);
-
 		swipeLayout2.post(() -> swipeLayout2.setEnabled(rfl.getVisibility() == View.VISIBLE &&
 		                                                !floatingCheckBox.isChecked()));
-
+		updateListeners();
+		updateSwipe();
 		updateScreen(false);
 	}
 
@@ -430,8 +430,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 
 		isVisible = false;
-
-		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 
 		doPause();
 		removeListeners();
@@ -870,7 +868,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(!disabledSwipe && disableSwipeOnRadar && rfl.getVisibility() == View.VISIBLE)
 		{
 			disabledSwipe = true;
-			Common.LogMessage("Disabling swipe between screens...");
+			Common.LogMessage("Disabling swipe between screens...", true);
 			activity.setUserInputPager(false);
 			return;
 		}
@@ -878,7 +876,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(disabledSwipe && !disableSwipeOnRadar)
 		{
 			disabledSwipe = false;
-			Common.LogMessage("Enabling swipe between screens...");
+			Common.LogMessage("Enabling swipe between screens...", true);
 			activity.setUserInputPager(true);
 		}
 	}

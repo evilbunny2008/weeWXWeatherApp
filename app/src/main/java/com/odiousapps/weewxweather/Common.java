@@ -384,6 +384,15 @@ public class Common
                 margin-left: 2px;
                 margin-right: 2px;
               }
+              .currentSpacer {
+                width: 7px;
+                height: 100%;
+                margin-left: 2px;
+                margin-right: 2px;
+              }
+              .currentSpacer.right {
+                width: 3px;
+              }
               @media (min-width: 500px) {
                 .statsDataRow {
                   display: grid;
@@ -4115,7 +4124,7 @@ public class Common
 		t.start();
 	}
 
-	static String getTime(String str)
+	static String getDateFromString(String str)
 	{
 		str = str.trim();
 

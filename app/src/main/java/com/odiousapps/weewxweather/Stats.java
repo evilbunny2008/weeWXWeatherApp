@@ -224,6 +224,8 @@ public class Stats extends Fragment
 			{
 				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
 				String str = sdf.format(dt);
+				if(str.length() > 1 && str.startsWith("0"))
+					str = str.substring(1);
 				Common.LogMessage("str == '" + str + "'");
 				return str;
 			}
@@ -234,8 +236,8 @@ public class Stats extends Fragment
 
 	private String getTimeMonth(String str)
 	{
-		if(str.length() >= 2)
-			return Common.getDaySuffix((int)Float.parseFloat(Common.getTime(str).substring(0, 2)));
+		if(str.length() > 2)
+			return Common.getDaySuffix((int)Float.parseFloat(Common.getDateFromString(str).substring(0, 2)));
 
 		return str;
 	}
@@ -252,8 +254,8 @@ public class Stats extends Fragment
 
 	private String getAllTime(String str)
 	{
-		str = Common.getTime(str);
-		if(str.length() >= 1 && str.startsWith("0"))
+		str = Common.getDateFromString(str);
+		if(str.length() > 1 && str.startsWith("0"))
 			str = str.substring(1);
 		return str;
 	}
@@ -334,7 +336,7 @@ public class Stats extends Fragment
 		}
 
 		String rain = bits[20];
-		String since = weeWXApp.getAndroidString(R.string.since) + " mm";
+		String since = weeWXApp.getAndroidString(R.string.since) + " mn";
 
 		if(bits.length > 160 && !bits[160].isBlank())
 			rain = bits[158];
@@ -391,7 +393,7 @@ public class Stats extends Fragment
 		}
 
 		String rain = bits[21];
-		String before = weeWXApp.getAndroidString(R.string.before) + " mm";
+		String before = weeWXApp.getAndroidString(R.string.before) + " mn";
 
 		if(bits.length > 160 && !bits[159].isBlank())
 			rain = bits[159];

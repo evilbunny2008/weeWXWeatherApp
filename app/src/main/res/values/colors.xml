@@ -12,10 +12,10 @@
 
 	<!-- Day Colours -->
 	<color name="colorPrimary" tools:ignore="UnusedResources">@color/Black</color>
-	<color name="colorPrimaryDark" tools:ignore="UnusedResources">@color/LightPrussianBlue</color>
+	<color name="colorPrimaryDark" tools:ignore="UnusedResources">@color/MyAppNavBarColour</color>
 	<color name="colorAccent" tools:ignore="UnusedResources">@color/LightBlueAccent</color>
 	<color name="colorSecondary" tools:ignore="UnusedResources">@color/Black</color>
-	<color name="colorSecondaryDark" tools:ignore="UnusedResources">@color/LightPrussianBlue</color>
+	<color name="colorSecondaryDark" tools:ignore="UnusedResources">@color/MyAppNavBarColour</color>
 	<color name="splash_background">@color/White</color>
 	<color name="splash_foreground" tools:ignore="UnusedResources">@color/Black</color>
 	<color name="widgetBackgroundColour">@color/White</color>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">weeWX Weather App</string>
+    <string name="app_name" translatable="false">weeWX App</string>
 	<string name="fileURL">Enter the URL to your settings.txt</string>
     <string name="refresh_time">Choose Refresh Time</string>
     <string name="save_settings">Save Settings</string>
@@ -75,6 +75,4 @@
 	<string name="today">Today</string>
 	<string name="last_year_stats">Last Year\'s Statistics</string>
 	<string name="last_month_stats">Last Month\'s Statistics</string>
-	<string name="drawer_open">Open</string>
-	<string name="drawer_close">Close</string>
 </resources>

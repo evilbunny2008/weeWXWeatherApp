@@ -263,10 +263,11 @@ public class Weather extends Fragment implements View.OnClickListener
 		checkFields(tv1, bits[56]);
 		checkFields(tv2, bits[54] + " " + bits[55]);
 
+		final String currentSpacerLeft = "<span class='currentSpacer left'></span>";
+		final String currentSpacerRight = "<span class='currentSpacer right'></span>";
+
 		final StringBuilder sb = new StringBuilder();
-
 		sb.append(Common.current_html_headers);
-
 		sb.append("\n<div class='todayCurrent'>\n");
 		sb.append("\t<div class='topRowCurrent'>\n");
 		sb.append("\t\t<div class='mainTemp'>");
@@ -285,9 +286,11 @@ public class Weather extends Fragment implements View.OnClickListener
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
 		sb.append("\t\t\t<div class='dataCellCurrent'><i class='flaticon-windy icon'></i>")
+				.append(currentSpacerLeft)
 				.append(bits[25]).append(bits[61]).append("</div>\n");
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
 				.append(bits[37]).append(bits[63])
+				.append(currentSpacerRight)
 				.append("<i class='wi wi-barometer icon'></i></div>\n");
 
 		sb.append("\t\t</div>\n");
@@ -296,32 +299,43 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-wind wi-towards-")
 				.append(bits[30].toLowerCase(Locale.ENGLISH))
-				.append(" icon'></i>").append(bits[30]).append("</div>\n");
+				.append(" icon'></i>")
+				.append(currentSpacerLeft)
+				.append(bits[30]).append("</div>\n");
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
 				.append(bits[6]).append(bits[64])
+				.append(currentSpacerRight)
 				.append("<i class='wi wi-humidity icon'></i></div>\n");
 
 		sb.append("\t\t</div>\n");
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		String rain = bits[20] + bits[62] + " " + weeWXApp.getAndroidString(R.string.since) + " mm";
+		String rain = bits[20] + bits[62] + " " +
+		              weeWXApp.getAndroidString(R.string.since) + " mn";
 		if(bits.length > 160 && !bits[160].isBlank())
-			rain = bits[158] + bits[62] + " " + weeWXApp.getAndroidString(R.string.since) + " " + bits[160];
+			rain = bits[158] + bits[62] + " " +
+			       weeWXApp.getAndroidString(R.string.since) + " " + bits[160];
 
 		sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-umbrella icon'></i>")
+				.append(currentSpacerLeft)
 				.append(rain).append("</div>\n");
-		sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[12]).append(bits[60])
+		sb.append("\t\t\t<div class='dataCellCurrent right'>")
+				.append(bits[12]).append(bits[60])
+				.append(currentSpacerRight)
 				.append("<i class='wi wi-raindrop icon' style='font-size:24px;'></i></div>");
 
 		sb.append("\t\t</div>\n");
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		sb.append("\t\t\t<div class='dataCellCurrent'><i class='flaticon-women-sunglasses icon'></i>")
+		sb.append("\t\t\t<div class='dataCellCurrent'>")
+				.append("<i class='flaticon-women-sunglasses icon'></i>")
+				.append(currentSpacerLeft)
 				.append(bits[45]).append(" UVI</div>\n");
-		sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[43])
-				.append(" W/m²<i class='flaticon-women-sunglasses icon'></i></div>");
+		sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[43]).append(" W/m²")
+				.append(currentSpacerRight)
+				.append("<i class='flaticon-women-sunglasses icon'></i></div>");
 
 		sb.append("\t\t</div>\n");
 
@@ -329,25 +343,37 @@ public class Weather extends Fragment implements View.OnClickListener
 		{
 			sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-			sb.append("\t\t\t<div class='dataCellCurrent'><i class='flaticon-home-page icon'></i>")
+			sb.append("\t\t\t<div class='dataCellCurrent'>")
+					.append("<i class='flaticon-home-page icon'></i>")
+					.append(currentSpacerLeft)
 					.append(bits[161]).append(bits[60]).append("</div>\n");
-			sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[166]).append(bits[64])
-					.append(" <i class='flaticon-home-page icon'></i></div>\n");
+			sb.append("\t\t\t<div class='dataCellCurrent right'>")
+					.append(bits[166]).append(bits[64])
+					.append(currentSpacerRight)
+					.append("<i class='flaticon-home-page icon'></i></div>\n");
 
 			sb.append("\t\t</div>\n");
 		}
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-sunrise icon'></i> ").append(bits[57]).append("</div>\n");
-		sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[58]).append(" <i class='wi wi-sunset icon'></i></div>\n");
+		sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-sunrise icon'></i>")
+				.append(currentSpacerLeft)
+				.append(bits[57]).append("</div>\n");
+		sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[58])
+				.append(currentSpacerRight)
+				.append("<i class='wi wi-sunset icon'></i></div>\n");
 
 		sb.append("\t\t</div>\n");
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-moonrise icon'></i> ").append(bits[47]).append("</div>\n");
-		sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[48]).append(" <i class='wi wi-moonset icon'></i></div>\n");
+		sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-moonrise icon'></i>")
+				.append(currentSpacerLeft)
+				.append(bits[47]).append("</div>\n");
+		sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[48])
+				.append(currentSpacerRight)
+				.append("<i class='wi wi-moonset icon'></i></div>\n");
 
 		sb.append("\t\t</div>\n\n");
 

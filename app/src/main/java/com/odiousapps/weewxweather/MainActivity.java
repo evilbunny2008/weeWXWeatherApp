@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.method.LinkMovementMethod;
 import android.view.View;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -54,6 +55,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter;
 import androidx.viewpager2.widget.ViewPager2;
 
 
+import static androidx.core.view.WindowCompat.enableEdgeToEdge;
 import static com.github.evilbunny2008.colourpicker.Common.parseHexToColour;
 import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
@@ -89,14 +91,12 @@ public class MainActivity extends FragmentActivity
 
 	private int initialLeft, initialRight, initialTop, initialBottom;
 
-	private ImageButton ib;
+	private ImageButton hamburger;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		//SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
 		setTheme(KeyValue.theme);
-		//splashScreen.setKeepOnScreenCondition(() -> showSplash);
 
 		super.onCreate(savedInstanceState);
 
@@ -113,17 +113,26 @@ public class MainActivity extends FragmentActivity
 
 		setContentView(R.layout.main_activity);
 
+		Window window = getWindow();
+		WindowInsetsControllerCompat controller =
+				WindowCompat.getInsetsController(window, window.getDecorView());
+
+		controller.setAppearanceLightStatusBars(false);
+		controller.setAppearanceLightNavigationBars(false);
+
+		// Show the status bar...
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
 		{
-			WindowInsetsControllerCompat insetsController = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+			WindowInsetsControllerCompat insetsController =
+					WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
 			insetsController.show(WindowInsetsCompat.Type.systemBars());
 		}
 
 		mDrawerLayout = findViewById(R.id.drawer_layout);
 		mDrawerLayout.addDrawerListener(handleDrawerListener);
 
-		ib = findViewById(R.id.hamburger);
-		ib.setOnClickListener(arg0 ->
+		hamburger = findViewById(R.id.hamburger);
+		hamburger.setOnClickListener(arg0 ->
 		{
 			if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
 				mDrawerLayout.closeDrawer(GravityCompat.START);
@@ -159,28 +168,65 @@ public class MainActivity extends FragmentActivity
 		initialRight = scrollView.getPaddingRight();
 		initialBottom = scrollView.getPaddingBottom();
 
+		ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.appbar), (v, insets) ->
+		{
+			Insets sb = insets.getInsets(WindowInsetsCompat.Type.statusBars());
+			v.setPadding(0, sb.top, 0, 0);
+			return insets;
+		});
+/*
 		ViewCompat.setOnApplyWindowInsetsListener(scrollView, (view, insets) ->
 		{
 			Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
 			Insets imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime());
 
-			int top = initialTop + systemInsets.top;
+			int top = initialTop;
 			int right = initialRight + systemInsets.right;
 			int bottom = initialBottom + Math.max(systemInsets.bottom, imeInsets.bottom);
 			int left = initialLeft + systemInsets.left;
 
-			Common.LogMessage("Setting scrollView Insets Debug...");
-			Common.LogMessage("New Top Padding: " + top);
-			Common.LogMessage("New Right Padding: " + right);
-			Common.LogMessage("New Left Padding: " + left);
-			Common.LogMessage("SYS bottom: " + systemInsets.bottom);
-			Common.LogMessage("IME bottom: " + imeInsets.bottom);
-			Common.LogMessage("New Bottom Padding: " + bottom);
+			Common.LogMessage("sv Setting scrollView Insets Debug...");
+			Common.LogMessage("sv New Top Padding: " + top);
+			Common.LogMessage("sv New Right Padding: " + right);
+			Common.LogMessage("sv New Left Padding: " + left);
+			Common.LogMessage("sv SYS bottom: " + systemInsets.bottom, true);
+			Common.LogMessage("sv IME bottom: " + imeInsets.bottom, true);
+			Common.LogMessage("sv New Bottom Padding: " + bottom, true);
 
-			scrollView.setPadding(left, top, right,	bottom);
+			view.setPadding(left, top, right, bottom);
 
 			updateHamburger();
 			updateDropDowns();
+
+			return insets;
+		});
+*/
+/*
+		ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content), (view, insets) ->
+		{
+			Insets navbar = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
+			//view.setBackgroundColor(weeWXApp.getColour(android.R.color.white));
+			//view.setPadding(0, 0, 0, navbar.bottom);
+
+			return insets;
+		});
+*/
+		ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.root_view), (view, insets) ->
+		{
+			Insets navbar = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
+			view.setBackgroundColor(weeWXApp.getColour(R.color.MyAppNavBarColour));
+			view.setPadding(0, 0, 0, navbar.bottom);
+
+			return insets;
+		});
+
+		ViewCompat.setOnApplyWindowInsetsListener(mDrawerLayout, (view, insets) ->
+		{
+			Insets sb = insets.getInsets(WindowInsetsCompat.Type.statusBars());
+			Insets navbar = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
+
+			view.setBackgroundColor(weeWXApp.getColour(R.color.MyAppNavBarColour));
+			view.setPadding(0, sb.top, 0, 0);
 
 			return insets;
 		});
@@ -429,6 +475,8 @@ public class MainActivity extends FragmentActivity
 				hideKeyboard(v);
 		});
 
+		enableEdgeToEdge(window);
+
 		setStrings();
 		updateHamburger();
 		WidgetProvider.updateAppWidget();
@@ -441,10 +489,10 @@ public class MainActivity extends FragmentActivity
 	{
 		if(weeWXApp.getWidth() >= 600)
 		{
-			if(ib.getVisibility() != View.VISIBLE)
-				ib.setVisibility(View.VISIBLE);
+			if(hamburger.getVisibility() != View.VISIBLE)
+				hamburger.setVisibility(View.VISIBLE);
 		} else {
-			ib.setVisibility(View.GONE);
+			hamburger.setVisibility(View.GONE);
 		}
 	}
 

@@ -110,7 +110,7 @@ public class Webcam extends Fragment
 			File file1 = new File(Common.getFilesDir(), filename);
 
 			Common.LogMessage("current_time = " + current_time + ", file.lastModified() == " +
-			                  round(file1.lastModified() / 1000.0));
+			                  round(file1.lastModified() / 1000.0), true);
 
 			if(!force)
 			{
@@ -128,15 +128,20 @@ public class Webcam extends Fragment
 			if(force || !file1.exists() || round(file1.lastModified() / 1000.0) + period < current_time)
 			{
 				downloadWebcam(webURL, context.getFilesDir());
-				Common.LogMessage("Finished downloading from webURL: " + webURL);
+				Common.LogMessage("Finished downloading from webURL: " + webURL, true);
 			}
 
-			Common.LogMessage("Prompt iv to redraw...");
+			Common.LogMessage("Prompt iv to redraw...", true);
 
 			File newFile = new File(Common.getFilesDir(), filename);
 			if(newFile.exists() && newFile.canRead())
 			{
 				bm = Common.loadImage(newFile);
+				if(bm == null)
+				{
+					stopRefreshing();
+					return;
+				}
 
 				Common.LogMessage("rl.getAngle()=" + rl.getAngle());
 				Common.LogMessage("screenHeightDp=" + weeWXApp.getHeight());

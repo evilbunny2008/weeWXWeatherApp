@@ -103,4 +103,9 @@ public class weeWXApp extends Application
 	{
 		return instance.getResources().getDisplayMetrics().density;
 	}
+
+	static int getColour(int res)
+	{
+		return instance.getColor(res);
+	}
 }

@@ -8,8 +8,8 @@ android {
         applicationId = "com.odiousapps.weewxweather"
         minSdk = 26
         targetSdk = 36
-	    versionName = "1.99.8"
-        versionCode = 1099008
+	    versionName = "1.99.9"
+        versionCode = 1099009
     }
 
 	buildFeatures {
@@ -43,9 +43,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-	//implementation("androidx.activity:activity:1.11.0")
 	implementation("androidx.core:core:1.17.0")
-	//implementation("androidx.core:core-splashscreen:1.0.1")
 	implementation("androidx.fragment:fragment:1.8.9")
 	implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
 	implementation("androidx.webkit:webkit:1.14.0")

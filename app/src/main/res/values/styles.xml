@@ -4,45 +4,60 @@
 		<item name="windowActionBar">true</item>
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowNoTitle">true</item>
-		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:windowLightStatusBar">false</item>
+		<item name="android:windowTranslucentStatus">false</item>
+		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
 		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:windowLightNavigationBar">false</item>
+		<item name="android:windowTranslucentNavigation">false</item>
 	</style>
 
 	<style name="AppTheme.weeWxWeatherApp.Dark.Common" parent="AppTheme.weeWxWeatherApp.Dark">
 		<item name="windowActionBar">true</item>
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowNoTitle">true</item>
-		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:windowLightStatusBar">false</item>
+		<item name="android:windowTranslucentStatus">false</item>
+		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
 		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:windowLightNavigationBar">false</item>
+		<item name="android:windowTranslucentNavigation">false</item>
 	</style>
 
 	<style name="AppTheme.weeWxWeatherApp.Common" parent="AppTheme.weeWxWeatherApp">
 		<item name="windowActionBar">true</item>
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowNoTitle">true</item>
-		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:windowLightStatusBar">false</item>
+		<item name="android:windowTranslucentStatus">false</item>
+		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
 		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:windowLightNavigationBar">false</item>
+		<item name="android:windowTranslucentNavigation">false</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.Light.ViewPager" parent="AppTheme.weeWxWeatherApp.Light.Common" tools:ignore="UnusedResources">
+	<style name="AppTheme.weeWxWeatherApp.Light.ViewPager" parent="AppTheme.weeWxWeatherApp.Light.Common">
 		<item name="android:background">@color/White</item>
 		<item name="android:textColor">@color/Black</item>
 		<item name="android:textSize">20sp</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.Dark.ViewPager" parent="AppTheme.weeWxWeatherApp.Dark.Common" tools:ignore="UnusedResources">
+	<style name="AppTheme.weeWxWeatherApp.Dark.ViewPager" parent="AppTheme.weeWxWeatherApp.Dark.Common">
 		<item name="android:background">@color/Black</item>
 		<item name="android:textColor">@color/White</item>
 		<item name="android:textSize">20sp</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.ViewPager" parent="AppTheme.weeWxWeatherApp.Common" tools:ignore="UnusedResources">
+	<style name="AppTheme.weeWxWeatherApp.ViewPager" parent="AppTheme.weeWxWeatherApp.Common">
 		<item name="android:background">@color/splash_background</item>
 		<item name="android:textColor">@color/splash_foreground</item>
 		<item name="android:textSize">20sp</item>
 	</style>
 
-	<style name="Widget.weeWXApp" tools:ignore="UnusedResources">
+	<style name="Widget.weeWXApp">
 
 	</style>
 
@@ -94,7 +109,7 @@
 		<item name="backgroundTint">@color/MyAppNavBarColour</item>
 	</style>
 
-	<style name="Widget.weeWXApp.Switch" parent="AppTheme.weeWxWeatherApp.Common" tools:ignore="UnusedResources">
+	<style name="Widget.weeWXApp.Switch" parent="AppTheme.weeWxWeatherApp.Common">
 		<item name="thumbTint">@color/MyAppNavBarColour</item>
 		<item name="trackTint">@color/MyTintColour</item>
 	</style>
@@ -117,4 +132,15 @@
 	<declare-styleable name="MaxWidthLinearLayout">
 		<attr name="maxWidth" format="dimension" />
 	</declare-styleable>
+
+	<style name="Widget.weeWXApp.TextView">
+		<item name="android:textSize">11sp</item>
+		<item name="android:letterSpacing">-0.08</item>
+		<item name="android:includeFontPadding">false</item>
+		<item name="android:lineSpacingExtra">0dp</item>
+		<item name="android:lineSpacingMultiplier">1</item>
+		<item name="android:singleLine">true</item>
+		<item name="android:ellipsize">none</item>
+		<item name="android:maxLines">1</item>
+	</style>
 </resources>
