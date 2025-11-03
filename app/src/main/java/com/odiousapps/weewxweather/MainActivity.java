@@ -20,6 +20,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.window.OnBackInvokedCallback;
+import android.window.OnBackInvokedDispatcher;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
 import com.google.android.material.appbar.AppBarLayout;
@@ -64,7 +65,8 @@ import static com.github.evilbunny2008.colourpicker.Common.parseHexToColour;
 import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
 @SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag",
-		"UnsafeIntentLaunch", "NotifyDataSetChanged", "SourceLockedOrientationActivity"})
+		"UnsafeIntentLaunch", "NotifyDataSetChanged", "SourceLockedOrientationActivity",
+		"ConstantConditions"})
 public class MainActivity extends FragmentActivity
 {
 	private boolean showSplash = true;
@@ -135,10 +137,6 @@ public class MainActivity extends FragmentActivity
 		super.onCreate(savedInstanceState);
 
 		Common.LogMessage("MainActivity.ocCreate() started...");
-
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-			gestureNav = Settings.Secure.getInt(getContentResolver(),
-									"navigation_mode",0) == 2;
 
 		WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
@@ -233,6 +231,15 @@ public class MainActivity extends FragmentActivity
 		rvInitialRight = rv.getPaddingRight();
 		rvInitialBottom = rv.getPaddingBottom();
 
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+		{
+			try
+			{
+				gestureNav = Settings.Secure.getInt(getContentResolver(),
+						"navigation_mode", 0) == 2;
+			} catch(Exception ignored) {}
+		}
+
 		ViewCompat.setOnApplyWindowInsetsListener(abl, (v, insets) ->
 		{
 			Insets sb = insets.getInsets(WindowInsetsCompat.Type.statusBars());
@@ -272,6 +279,18 @@ public class MainActivity extends FragmentActivity
 			int bottom = rvInitialBottom + Math.max(nb.bottom, ime.bottom);
 			view.setBackgroundColor(weeWXApp.getColour(R.color.MyAppNavBarColour));
 			view.setPadding(rvInitialLeft, rvInitialTop, rvInitialRight, bottom);
+
+			if(!gestureNav)
+			{
+				boolean oldNav = gestureNav;
+
+				Insets gestureInsets = insets.getInsets(WindowInsetsCompat.Type.systemGestures());
+
+				gestureNav = gestureInsets.left > 0 || gestureInsets.right > 0;
+
+				if(oldNav != gestureNav)
+					updateHamburger();
+			}
 
 			return insets;
 		});
@@ -487,12 +506,7 @@ public class MainActivity extends FragmentActivity
 		{
 			b1.setEnabled(false);
 			b2.setEnabled(false);
-			InputMethodManager mgr = (InputMethodManager)this.getSystemService(Context.INPUT_METHOD_SERVICE);
-			if(mgr != null)
-			{
-				mgr.hideSoftInputFromWindow(settingsURL.getWindowToken(), 0);
-				mgr.hideSoftInputFromWindow(customURL.getWindowToken(), 0);
-			}
+			closeKeyboard();
 
 			Common.LogMessage("show dialog");
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -524,14 +538,14 @@ public class MainActivity extends FragmentActivity
 		settingsURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
 			if(!hasFocus)
-				closeKeyboard();
+				closeKeyboard(v);
 		});
 
 		customURL.setText(Common.GetStringPref("custom_url", ""));
 		customURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
 			if(!hasFocus)
-				closeKeyboard();
+				closeKeyboard(v);
 		});
 
 		enableEdgeToEdge(window);
@@ -569,6 +583,11 @@ public class MainActivity extends FragmentActivity
 					v.setPlaceholderTextColor(strokeColors);
 					v.setHintTextColor(strokeColors);
 					v.setHelperTextColor(strokeColors);
+				}
+				case MaterialTextView v ->
+				{
+					v.setTextColor(KeyValue.fgColour);
+					v.setHintTextColor(KeyValue.fgColour);
 				}
 				case TextInputEditText v ->
 				{
@@ -615,15 +634,12 @@ public class MainActivity extends FragmentActivity
 		@Override
 		public void onDrawerOpened(@NonNull View drawerView)
 		{
-			Common.LogMessage("Detected a back press in the DrawerLayout...");
+			Common.LogMessage("Detected a back press in the DrawerLayout...", true);
 
 			InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 			View focus = getCurrentFocus();
-			if(imm != null && focus != null)
-			{
-				imm.hideSoftInputFromWindow(focus.getWindowToken(), 0);
-				focus.clearFocus();
-			}
+			if(imm != null && focus != null && imm.isAcceptingText())
+				closeKeyboard(drawerView, imm);
 		}
 
 
@@ -631,14 +647,14 @@ public class MainActivity extends FragmentActivity
 		public void onDrawerClosed(@NonNull View drawerView)
 		{
 			// Drawer closed — you can re-enable gestures or update UI here
-			Common.LogMessage("Drawer closed");
+			Common.LogMessage("Drawer closed", true);
 		}
 
 		@Override
 		public void onDrawerStateChanged(int newState)
 		{
 			// Optional: detect dragging or settling if you want
-			Common.LogMessage("Drawer state: " + newState);
+			Common.LogMessage("Drawer state: " + newState, true);
 		}
 	};
 
@@ -647,14 +663,14 @@ public class MainActivity extends FragmentActivity
 		// Legacy back handling for Android < 13
 		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
 		{
-			Common.LogMessage("setupBackHandling() setting getOnBackPressedDispatcher() SDK < TIRAMISU");
+			Common.LogMessage("setupBackHandling() setting getOnBackPressedDispatcher() SDK < TIRAMISU", true);
 			getOnBackPressedDispatcher().addCallback(this, obpc);
 		} else {
 			// Android 13+ predictive back gestures
 			// Only intercept the back if keyboard is visible or drawer is open
-			Common.LogMessage("setupBackHandling() setting getOnBackInvokedDispatcher() SDK >= TIRAMISU");
-			//getOnBackInvokedDispatcher().registerOnBackInvokedCallback(
-			//		OnBackInvokedDispatcher.PRIORITY_DEFAULT, this::handleBack);
+			Common.LogMessage("setupBackHandling() setting getOnBackInvokedDispatcher() SDK >= TIRAMISU", true);
+			getOnBackInvokedDispatcher().registerOnBackInvokedCallback(
+					OnBackInvokedDispatcher.PRIORITY_DEFAULT, this::handleBack);
 		}
 	}
 
@@ -663,38 +679,46 @@ public class MainActivity extends FragmentActivity
 		@Override
 		public void handleOnBackPressed()
 		{
-			Common.LogMessage("handleOnBackPressed()");
+			Common.LogMessage("handleOnBackPressed()", true);
 			handleBack();
 		}
 	};
 
 	private void handleBack()
 	{
-		Common.LogMessage("Detected an application back press...");
+		Common.LogMessage("Line 694 handleBack() Detected an application back press...", true);
 		View focus = getCurrentFocus();
 		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 		if(focus != null && imm != null && imm.isAcceptingText())
 		{
-			Common.LogMessage("Let's hide the on screen keyboard...");
+			Common.LogMessage("Line 699 handleBack() Let's hide the on screen keyboard and clearFocus()...", true);
 			closeKeyboard(focus, imm);
 			return;
 		}
 
 		if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
 		{
-			Common.LogMessage("Let's shut the drawer...");
+			Common.LogMessage("Line 713 handleBack() Let's shut the drawer...", true);
 			closeDrawer();
 			return;
 		}
 
+		if(mViewPager.getCurrentItem() > 0)
+		{
+			Common.LogMessage("Line 708 handleBack() Cycle through tabs until we hit tab 0", true);
+			mViewPager.post(() -> mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1));
+			return;
+		}
+
+
 		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
 		{
-			Common.LogMessage("Let's end now... SDK < TIRAMISU");
+			Common.LogMessage("Line 716 handleBack() Let's end now... SDK < TIRAMISU", true);
 			obpc.setEnabled(false);
 			finish();
 		} else {
-			Common.LogMessage("SDK >= TIRAMISU... Let the system do it's thing...");
-			//mDrawerLayout.openDrawer(GravityCompat.START, true);
+			Common.LogMessage("Line 720 handleBack() SDK >= TIRAMISU... Let the system do it's thing...", true);
+			getOnBackPressedDispatcher().onBackPressed();
 		}
 	}
 
@@ -841,19 +865,23 @@ public class MainActivity extends FragmentActivity
 	void closeKeyboard()
 	{
 		View focus = getCurrentFocus();
+		closeKeyboard(focus);
+	}
+
+	void closeKeyboard(View view)
+	{
 		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-		if(focus != null && imm != null)
-			closeKeyboard(focus, imm);
+		if(view != null && imm != null && imm.isAcceptingText())
+			closeKeyboard(view, imm);
 	}
 
 	void closeKeyboard(View focus, InputMethodManager imm)
 	{
 		if(focus != null && imm != null && imm.isAcceptingText())
 		{
-			Common.LogMessage("Let's hide the on screen keyboard...");
-
+			Common.LogMessage("Line 886 closeKeyboard() Let's hide the on screen keyboard...", true);
 			imm.hideSoftInputFromWindow(focus.getWindowToken(), 0);
-			focus.postDelayed(focus::clearFocus, 100);
+			focus.clearFocus();
 		}
 	}
 

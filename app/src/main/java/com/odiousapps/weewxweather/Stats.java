@@ -711,32 +711,7 @@ public class Stats extends Fragment
 			sb.append("</div>\n\n<div style='margin-bottom:5px'></div>\n");
 
 			if(Common.debug_on || Common.web_debug_on)
-			{
-				String tmpstr = """
-                                <div id="widthDisplay"
-                                     style="position: fixed; top: 10px; right: 10px;
-                                            background: rgba(0,0,0,0.7); color: #fff;
-                                            padding: 5px 10px; border-radius: 5px;
-                                            font-family: monospace; z-index: 9999;">
-                                </div>
-				                
-                                <script>
-                                  const display = document.getElementById("widthDisplay");
-				                
-                                  function updateWidth() {
-                                    display.textContent = "Width: " + window.innerWidth + "px " +
-                                    "x Height: " + window.innerHeight + "px";
-                                  }
-				                
-                                  // Update immediately
-                                  updateWidth();
-				                
-                                  // Update on resize
-                                  window.addEventListener("resize", updateWidth);
-                                </script>
-                                """;
-				sb.append(tmpstr);
-			}
+				sb.append(Common.debug_html);
 
 			sb.append(Common.html_footer);
 

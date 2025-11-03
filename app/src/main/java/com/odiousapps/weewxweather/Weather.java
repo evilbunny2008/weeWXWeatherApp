@@ -267,7 +267,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		final String currentSpacerRight = "<span class='currentSpacer right'></span>";
 
 		final StringBuilder sb = new StringBuilder();
-		sb.append(Common.current_html_headers);
 		sb.append("\n<div class='todayCurrent'>\n");
 		sb.append("\t<div class='topRowCurrent'>\n");
 		sb.append("\t\t<div class='mainTemp'>");
@@ -379,8 +378,6 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t</div>\n</div>\n");
 
-		sb.append(Common.html_footer);
-
 		CustomDebug.writeDebug("current_weewx.html", sb.toString());
 
 		forceCurrentRefresh(sb.toString());
@@ -404,7 +401,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		});
 	}
 
-	void forceCurrentRefresh(String str)
+	void forceCurrentRefresh(String body)
 	{
 		if(current == null)
 		{
@@ -414,13 +411,22 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		Common.LogMessage("forceCurrentRefresh()");
 
+		String str = Common.current_html_headers + body;
+
+		if(Common.debug_on || Common.web_debug_on)
+			str += Common.debug_html;
+
+		str += Common.html_footer;
+
+		final String html_str = str;
+
 		current.post(() ->
 		{
 			Common.LogMessage("current.post()");
 			current.clearFormData();
 			current.clearHistory();
 			current.clearCache(true);
-			current.loadDataWithBaseURL("file:///android_res/drawable/", str,
+			current.loadDataWithBaseURL("file:///android_res/drawable/", html_str,
 					"text/html", "utf-8", null);
 		});
 	}

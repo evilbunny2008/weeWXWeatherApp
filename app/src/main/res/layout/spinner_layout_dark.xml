@@ -9,5 +9,6 @@
 	android:padding="8dp"
 	android:text="Test"
 	android:textColor="@color/White"
+	android:background="@color/Black"
 	android:textSize="20sp"
 	tools:ignore="HardcodedText,TextContrastCheck" />
