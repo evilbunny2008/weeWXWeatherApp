@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<style name="AppTheme.weeWxWeatherApp.Light" parent="Theme.Material3.Light.NoActionBar">
+	<style name="AppTheme.weeWXApp.Light" parent="Theme.Material3.Light.NoActionBar">
 		<!-- Base Style, everything is in Common -->
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.Dark" parent="Theme.Material3.Dark.NoActionBar">
+	<style name="AppTheme.weeWXApp.Dark" parent="Theme.Material3.Dark.NoActionBar">
 		<!-- Base Style, everything is in Common -->
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp" parent="Theme.Material3.DayNight.NoActionBar">
+	<style name="AppTheme.weeWXApp" parent="Theme.Material3.DayNight.NoActionBar">
 		<!-- Base Style, everything is in Common -->
 	</style>
 </resources>

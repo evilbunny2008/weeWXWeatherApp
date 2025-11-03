@@ -11,7 +11,7 @@
     <application
 	    android:name=".weeWXApp"
 	    android:enableOnBackInvokedCallback="true"
-	    android:theme="@style/AppTheme.weeWxWeatherApp.Common"
+	    android:theme="@style/AppTheme.weeWXApp.Common"
 	    android:resizeableActivity="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

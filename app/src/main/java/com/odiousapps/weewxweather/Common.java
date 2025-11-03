@@ -91,7 +91,7 @@ public class Common
 
 	private static final long inigo_version = 4000;
 	public static final long icon_version = 12;
-	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/1.0.3/icons.zip";
+	private static final String icon_url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/download/1.99.7beta/icons.zip";
 
 	private static final BitmapFactory.Options options = new BitmapFactory.Options();
 
@@ -410,7 +410,7 @@ public class Common
 
 	static final String html_footer = "\n</body>\n</html>\n";
 
-	static final String about_blurb = "Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app " +
+	final static String about_blurb = "Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app " +
 		"wouldn't be possible otherwise.<br><br>" +
 		"Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
 		"is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and " +
@@ -446,7 +446,7 @@ public class Common
 		getDayNightMode();
 		replaceHex6String("FG_HEX", KeyValue.fgColour);
 		replaceHex6String("BG_HEX", KeyValue.bgColour);
-		if(KeyValue.theme == R.style.AppTheme_weeWxWeatherApp_Dark_Common)
+		if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 		{
 			replaceHex6String("ACCENT_HEX", colours.DarkBlueAccent);
 			replaceHex6String("GRAY_HEX", colours.DarkGray);
@@ -969,7 +969,7 @@ public class Common
 			sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			day.day = sdf.format(day.timestamp);
 
-			day.icon = "https://www.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].trim();
+			day.icon = "https://reg.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].trim();
 
 			if(bit.contains("<dd class='max'>"))
 				day.max = bit.split("<dd class='max'>")[1].split("</dd>")[0].trim();
@@ -1038,7 +1038,7 @@ public class Common
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
-				day.icon = "https://www.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].trim();
+				day.icon = "https://reg.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].trim();
 				day.max = bit.split("<dd class='max'>")[1].split("</dd>")[0].trim();
 				day.min = bit.split("<dd class='min'>")[1].split("</dd>")[0].trim();
 				day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].trim();
@@ -3781,7 +3781,7 @@ public class Common
 	{
 		Connection.Response resultResponse = Jsoup.connect(fromURL)
 													.userAgent(UA)
-													.referrer("https://www.bom.gov.au")
+													.referrer("https://reg.bom.gov.au")
 													.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
 													.header("Cache-Control", "max-age=0")
 													.header("Accept-Language", "en-au")
@@ -4174,7 +4174,7 @@ public class Common
 		KeyValue.widget_theme_mode = GetIntPref(WIDGET_THEME_MODE, 0);
 
 		current_mode = AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM;
-		current_theme = R.style.AppTheme_weeWxWeatherApp_Light_Common;
+		current_theme = R.style.AppTheme_weeWXApp_Light_Common;
 		bgColour = ContextCompat.getColor(context, R.color.White);
 		fgColour = ContextCompat.getColor(context, R.color.Black);
 
@@ -4184,13 +4184,13 @@ public class Common
 			{
 				LogMessage("Night mode off...");
 				current_mode = AppCompatDelegate.MODE_NIGHT_NO;
-				current_theme = R.style.AppTheme_weeWxWeatherApp_Light_Common;
+				current_theme = R.style.AppTheme_weeWXApp_Light_Common;
 				bgColour = ContextCompat.getColor(context, R.color.White);
 				fgColour = ContextCompat.getColor(context, R.color.Black);
 			} else if(nightDaySetting == 1) {
 				LogMessage("Night mode on...");
 				current_mode = AppCompatDelegate.MODE_NIGHT_NO;
-				current_theme = R.style.AppTheme_weeWxWeatherApp_Dark_Common;
+				current_theme = R.style.AppTheme_weeWXApp_Dark_Common;
 				bgColour = ContextCompat.getColor(context, R.color.Black);
 				fgColour = ContextCompat.getColor(context, R.color.White);
 			}
@@ -4210,12 +4210,12 @@ public class Common
 				LogMessage("Night mode off...");
 				bgColour = ContextCompat.getColor(context, R.color.White);
 				fgColour = ContextCompat.getColor(context, R.color.Black);
-				current_theme = R.style.AppTheme_weeWxWeatherApp_Light_Common;
+				current_theme = R.style.AppTheme_weeWXApp_Light_Common;
 			} else {
 				LogMessage("Night mode on...");
 				bgColour = ContextCompat.getColor(context, R.color.Black);
 				fgColour = ContextCompat.getColor(context, R.color.White);
-				current_theme = R.style.AppTheme_weeWxWeatherApp_Dark_Common;
+				current_theme = R.style.AppTheme_weeWXApp_Dark_Common;
 			}
 		}
 

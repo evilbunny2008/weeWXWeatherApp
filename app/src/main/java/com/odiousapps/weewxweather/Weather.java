@@ -687,7 +687,7 @@ public class Weather extends Fragment implements View.OnClickListener
 							}
 
 							sb.append("\n<div style='text-align:center'>\n\t");
-							if(KeyValue.theme == R.style.AppTheme_weeWxWeatherApp_Dark_Common)
+							if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 								sb.append("<img src='bom.png' style='filter:invert(1);' height='29px' />");
 							else
 								sb.append("<img src='bom.png' height='29px' />");

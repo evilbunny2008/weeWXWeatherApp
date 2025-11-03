@@ -1,24 +1,28 @@
 package com.odiousapps.weewxweather;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
+import android.content.res.ColorStateList;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.text.Editable;
 import android.text.method.LinkMovementMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.window.OnBackInvokedCallback;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
+import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.radiobutton.MaterialRadioButton;
@@ -63,7 +67,6 @@ import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 		"UnsafeIntentLaunch", "NotifyDataSetChanged", "SourceLockedOrientationActivity"})
 public class MainActivity extends FragmentActivity
 {
-	private boolean isVisible = false;
 	private boolean showSplash = true;
 	private TabLayout tabLayout;
 	private DrawerLayout mDrawerLayout;
@@ -89,9 +92,40 @@ public class MainActivity extends FragmentActivity
 
 	private String[] updateOptions, themeOptions, widgetThemeOptions;
 
-	private int initialLeft, initialRight, initialTop, initialBottom;
+	private int appInitialLeft, appInitialRight, appInitialTop, appInitialBottom;
+	private int cdInitialLeft, cdInitialRight, cdInitialTop, cdInitialBottom;
+	private int dlInitialLeft, dlInitialRight, dlInitialTop, dlInitialBottom;
+	private int rvInitialLeft, rvInitialRight, rvInitialTop, rvInitialBottom;
 
 	private ImageButton hamburger;
+	private boolean gestureNav = false;
+
+	private static final int[] screen_elements = new int[]
+	{
+		R.id.til1,
+		R.id.settings,
+		R.id.show_indoor,
+		R.id.metric_forecasts,
+		R.id.wifi_only,
+		R.id.use_icons,
+		R.id.til2,
+		R.id.spinner1,
+		R.id.til3,
+		R.id.spinner2,
+		R.id.til4,
+		R.id.spinner3,
+		R.id.fgTextInputLayout,
+		R.id.fg_Picker,
+		R.id.bgTextInputLayout,
+		R.id.bg_Picker,
+		R.id.mtv1,
+		R.id.showRadar,
+		R.id.showForecast,
+		R.id.til5,
+		R.id.customURL
+	};
+
+	ColorStateList strokeColors;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -101,6 +135,10 @@ public class MainActivity extends FragmentActivity
 		super.onCreate(savedInstanceState);
 
 		Common.LogMessage("MainActivity.ocCreate() started...");
+
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+			gestureNav = Settings.Secure.getInt(getContentResolver(),
+									"navigation_mode",0) == 2;
 
 		WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
@@ -142,91 +180,98 @@ public class MainActivity extends FragmentActivity
 
 		setupBackHandling();
 
-		myLinearLayout dl = findViewById(R.id.custom_drawer);
-		dl.setBackgroundColor(KeyValue.bgColour);
-		dl.setOnTouchedListener((v) ->
+		myLinearLayout cd = findViewById(R.id.custom_drawer);
+		cd.setBackgroundColor(KeyValue.bgColour);
+		cd.setOnTouchedListener((v) ->
 		{
-			Common.LogMessage("dl.TouchedListener()");
+			Common.LogMessage("cd.TouchedListener()");
+			handleTouch();
+		});
 
-			if(settingsURL.isFocused() || customURL.isFocused())
+		AppBarLayout abl = findViewById(R.id.appbar);
+		FrameLayout rv = findViewById(R.id.root_view);
+		scrollView = findViewById(R.id.sv1);
+
+		scrollView.getViewTreeObserver().addOnGlobalLayoutListener(() ->
+		{
+			View focus = getCurrentFocus();
+			if(focus != null)
 			{
-				InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-				if(imm != null)
-					imm.hideSoftInputFromWindow(settingsURL.getWindowToken(), 0);
+				int extraDp = 33;
+				float density = scrollView.getResources().getDisplayMetrics().density;
+				int extraPx = (int)(extraDp * density + 0.5f);
 
-				if(settingsURL.isFocused())
-					settingsURL.clearFocus();
+				Common.LogMessage("scrollView.getScrollY(): " + scrollView.getScrollY(), true);
+
+				int scrollY = scrollView.getScrollY() + extraPx;
+				Common.LogMessage("new scrollY: " + scrollY, true);
+
+				if(focus.getId() == R.id.settings)
+					scrollView.post(() -> scrollView.smoothScrollTo(0, 0));
 				else
-					customURL.clearFocus();
+					scrollView.post(() -> scrollView.smoothScrollTo(0, scrollY));
 			}
 		});
 
-		scrollView = findViewById(R.id.sv1);
+		appInitialLeft = abl.getPaddingLeft();
+		appInitialTop = abl.getPaddingTop();
+		appInitialRight = abl.getPaddingRight();
+		appInitialBottom = abl.getPaddingBottom();
 
-		initialLeft = scrollView.getPaddingLeft();
-		initialTop = scrollView.getPaddingTop();
-		initialRight = scrollView.getPaddingRight();
-		initialBottom = scrollView.getPaddingBottom();
+		cdInitialLeft = cd.getPaddingLeft();
+		cdInitialTop = cd.getPaddingTop();
+		cdInitialRight = cd.getPaddingRight();
+		cdInitialBottom = cd.getPaddingBottom();
 
-		ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.appbar), (v, insets) ->
+		dlInitialLeft = mDrawerLayout.getPaddingLeft();
+		dlInitialTop = mDrawerLayout.getPaddingTop();
+		dlInitialRight = mDrawerLayout.getPaddingRight();
+		dlInitialBottom = mDrawerLayout.getPaddingBottom();
+
+		rvInitialLeft = rv.getPaddingLeft();
+		rvInitialTop = rv.getPaddingTop();
+		rvInitialRight = rv.getPaddingRight();
+		rvInitialBottom = rv.getPaddingBottom();
+
+		ViewCompat.setOnApplyWindowInsetsListener(abl, (v, insets) ->
 		{
 			Insets sb = insets.getInsets(WindowInsetsCompat.Type.statusBars());
-			v.setPadding(0, sb.top, 0, 0);
+			int top = appInitialTop + sb.top;
+			v.setPadding(appInitialLeft, top, appInitialRight, appInitialBottom);
 			return insets;
 		});
-/*
-		ViewCompat.setOnApplyWindowInsetsListener(scrollView, (view, insets) ->
+
+		ViewCompat.setOnApplyWindowInsetsListener(cd, (v, insets) ->
 		{
-			Insets systemInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-			Insets imeInsets = insets.getInsets(WindowInsetsCompat.Type.ime());
-
-			int top = initialTop;
-			int right = initialRight + systemInsets.right;
-			int bottom = initialBottom + Math.max(systemInsets.bottom, imeInsets.bottom);
-			int left = initialLeft + systemInsets.left;
-
-			Common.LogMessage("sv Setting scrollView Insets Debug...");
-			Common.LogMessage("sv New Top Padding: " + top);
-			Common.LogMessage("sv New Right Padding: " + right);
-			Common.LogMessage("sv New Left Padding: " + left);
-			Common.LogMessage("sv SYS bottom: " + systemInsets.bottom, true);
-			Common.LogMessage("sv IME bottom: " + imeInsets.bottom, true);
-			Common.LogMessage("sv New Bottom Padding: " + bottom, true);
-
-			view.setPadding(left, top, right, bottom);
-
-			updateHamburger();
-			updateDropDowns();
-
-			return insets;
-		});
-*/
-/*
-		ViewCompat.setOnApplyWindowInsetsListener(findViewById(android.R.id.content), (view, insets) ->
-		{
-			Insets navbar = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
-			//view.setBackgroundColor(weeWXApp.getColour(android.R.color.white));
-			//view.setPadding(0, 0, 0, navbar.bottom);
-
-			return insets;
-		});
-*/
-		ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.root_view), (view, insets) ->
-		{
-			Insets navbar = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
-			view.setBackgroundColor(weeWXApp.getColour(R.color.MyAppNavBarColour));
-			view.setPadding(0, 0, 0, navbar.bottom);
-
+			Insets sb = insets.getInsets(WindowInsetsCompat.Type.statusBars());
+			Insets nb = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
+			Insets ime = insets.getInsets(WindowInsetsCompat.Type.ime());
+			int top = cdInitialTop + sb.top;
+			int bottom = cdInitialBottom + Math.max(nb.bottom, ime.bottom);
+			v.setPadding(cdInitialLeft, top, cdInitialRight, bottom);
 			return insets;
 		});
 
 		ViewCompat.setOnApplyWindowInsetsListener(mDrawerLayout, (view, insets) ->
 		{
 			Insets sb = insets.getInsets(WindowInsetsCompat.Type.statusBars());
-			Insets navbar = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
+			Insets nb = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
+			Insets ime = insets.getInsets(WindowInsetsCompat.Type.ime());
 
+			int top = dlInitialTop + sb.top;
+			int bottom = dlInitialBottom + Math.max(nb.bottom, ime.bottom);
 			view.setBackgroundColor(weeWXApp.getColour(R.color.MyAppNavBarColour));
-			view.setPadding(0, sb.top, 0, 0);
+			view.setPadding(dlInitialLeft, top, dlInitialRight, bottom);
+			return insets;
+		});
+
+		ViewCompat.setOnApplyWindowInsetsListener(rv, (view, insets) ->
+		{
+			Insets nb = insets.getInsets(WindowInsetsCompat.Type.navigationBars());
+			Insets ime = insets.getInsets(WindowInsetsCompat.Type.ime());
+			int bottom = rvInitialBottom + Math.max(nb.bottom, ime.bottom);
+			view.setBackgroundColor(weeWXApp.getColour(R.color.MyAppNavBarColour));
+			view.setPadding(rvInitialLeft, rvInitialTop, rvInitialRight, bottom);
 
 			return insets;
 		});
@@ -403,11 +448,25 @@ public class MainActivity extends FragmentActivity
 		Common.LogMessage("Line223 Setting fgColour to "+ to_ARGB_hex(hex));
 		final String fghex = hex;
 		fgColour.setText(fghex);
+		fgColour.setOnTouchListener((v, event) ->
+		{
+			if(event.getAction() == MotionEvent.ACTION_UP)
+				handleTouch();
+
+			return false;
+		});
 
 		hex = CPEditText.getFixedChar() + String.format("%08X", bg).toUpperCase();
 		Common.LogMessage("Line229 Setting bgColour to "+ to_ARGB_hex(hex));
 		final String bghex = hex;
 		bgColour.setText(bghex);
+		bgColour.setOnTouchListener((v, event) ->
+		{
+			if(event.getAction() == MotionEvent.ACTION_UP)
+				handleTouch();
+
+			return false;
+		});
 
 		wifi_only.setChecked(wo);
 		use_icons.setChecked(ui);
@@ -420,9 +479,9 @@ public class MainActivity extends FragmentActivity
 		settingLayout.setVisibility(View.VISIBLE);
 		aboutLayout.setVisibility(View.GONE);
 
-		MaterialTextView tv = findViewById(R.id.aboutText);
-		tv.setText(HtmlCompat.fromHtml(Common.about_blurb, HtmlCompat.FROM_HTML_MODE_COMPACT));
-		tv.setMovementMethod(LinkMovementMethod.getInstance());
+		MaterialTextView tv1 = findViewById(R.id.aboutText);
+		tv1.setText(HtmlCompat.fromHtml(Common.about_blurb, HtmlCompat.FROM_HTML_MODE_COMPACT));
+		tv1.setMovementMethod(LinkMovementMethod.getInstance());
 
 		b1.setOnClickListener(arg0 ->
 		{
@@ -465,14 +524,14 @@ public class MainActivity extends FragmentActivity
 		settingsURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
 			if(!hasFocus)
-				hideKeyboard(v);
+				closeKeyboard();
 		});
 
 		customURL.setText(Common.GetStringPref("custom_url", ""));
 		customURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
 			if(!hasFocus)
-				hideKeyboard(v);
+				closeKeyboard();
 		});
 
 		enableEdgeToEdge(window);
@@ -481,18 +540,73 @@ public class MainActivity extends FragmentActivity
 		updateHamburger();
 		WidgetProvider.updateAppWidget();
 
+		Common.NotificationManager.getNotificationLiveData().observe(this, notificationObserver);
+
 		Common.LogMessage("MainActivity.onCreate() has finished...");
 		Common.setAlarm("MainActivity.onCreate()");
 	}
 
+	@Override
+	public void onDestroy()
+	{
+		Common.LogMessage("MainActivity.onDestroy()");
+		super.onDestroy();
+
+		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
+	}
+
+	private void updateColours()
+	{
+		for(int i : screen_elements)
+		{
+			View view = findViewById(i);
+			switch(view)
+			{
+				case TextInputLayout v ->
+				{
+					v.setBoxStrokeColorStateList(strokeColors);
+					v.setDefaultHintTextColor(strokeColors);
+					v.setPlaceholderTextColor(strokeColors);
+					v.setHintTextColor(strokeColors);
+					v.setHelperTextColor(strokeColors);
+				}
+				case TextInputEditText v ->
+				{
+					v.setTextColor(KeyValue.fgColour);
+					v.setHintTextColor(KeyValue.fgColour);
+				}
+				case MaterialSwitch v ->
+				{
+					v.setTextColor(KeyValue.fgColour);
+					v.setHintTextColor(KeyValue.fgColour);
+				}
+				case AutoCompleteTextView v ->
+				{
+					v.setTextColor(KeyValue.fgColour);
+					v.setHintTextColor(KeyValue.fgColour);
+				}
+				case MaterialRadioButton v ->
+				{
+					v.setTextColor(KeyValue.fgColour);
+					v.setHintTextColor(KeyValue.fgColour);
+				}
+				default -> Common.LogMessage("Uncaught view type: " + view, true);
+			}
+		}
+
+	}
+
 	private void updateHamburger()
 	{
-		if(weeWXApp.getWidth() >= 600)
+		if(gestureNav)
 		{
+			Common.LogMessage("gestureNav == true, show the hamburger menu...",true);
 			if(hamburger.getVisibility() != View.VISIBLE)
 				hamburger.setVisibility(View.VISIBLE);
 		} else {
-			hamburger.setVisibility(View.GONE);
+			Common.LogMessage("gestureNav == false, hide the hamburger menu...", true);
+			if(hamburger.getVisibility() != View.GONE)
+				hamburger.setVisibility(View.GONE);
 		}
 	}
 
@@ -584,6 +698,23 @@ public class MainActivity extends FragmentActivity
 		}
 	}
 
+	void handleTouch()
+	{
+		if(settingsURL != null && settingsURL.isFocused())
+		{
+			closeKeyboard();
+			if(settingsURL.isFocused())
+				settingsURL.clearFocus();
+		}
+
+		if(customURL != null && customURL.isFocused())
+		{
+			closeKeyboard();
+			if(customURL.isFocused())
+				customURL.clearFocus();
+		}
+	}
+
 	@Override
 	protected void onSaveInstanceState(@NonNull Bundle outState)
 	{
@@ -651,13 +782,31 @@ public class MainActivity extends FragmentActivity
 			weeWXApp.getAndroidString(R.string.dark_theme),
 			weeWXApp.getAndroidString(R.string.custom_setting)
 		};
+
+		int disabled = Common.colours.LightGray;
+		if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
+			disabled = Common.colours.DarkGray;
+
+		strokeColors = new ColorStateList(new int[][]{new int[]{android.R.attr.state_enabled},      // default enabled
+		                                              new int[]{-android.R.attr.state_enabled},     // disabled
+		                                              new int[]{android.R.attr.state_focused},      // focused
+		                                              new int[]{-android.R.attr.state_focused},     // not focused
+		}, new int[]{KeyValue.fgColour,  // default
+		             disabled,  // disabled
+		             KeyValue.fgColour,  // focused
+		             KeyValue.fgColour   // unfocused
+		});
 	}
 
 	private void updateDropDowns()
 	{
-		ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, R.layout.spinner_layout, updateOptions);
-		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, R.layout.spinner_layout, themeOptions);
-		ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this, R.layout.spinner_layout, widgetThemeOptions);
+		int theme = R.layout.spinner_layout_light;
+		if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
+			theme = R.layout.spinner_layout_dark;
+
+		ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, theme, updateOptions);
+		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, theme, themeOptions);
+		ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this, theme, widgetThemeOptions);
 
 		final int uf = UpdateFrequency;
 		final int dnm = DayNightMode;
@@ -689,18 +838,12 @@ public class MainActivity extends FragmentActivity
 		});
 	}
 
-	private void hideKeyboard(View view)
-	{
-		InputMethodManager inputMethodManager = (InputMethodManager)this.getSystemService(Activity.INPUT_METHOD_SERVICE);
-		if(inputMethodManager != null)
-			inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
-	}
-
 	void closeKeyboard()
 	{
 		View focus = getCurrentFocus();
 		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-		closeKeyboard(focus, imm);
+		if(focus != null && imm != null)
+			closeKeyboard(focus, imm);
 	}
 
 	void closeKeyboard(View focus, InputMethodManager imm)
@@ -1363,6 +1506,7 @@ public class MainActivity extends FragmentActivity
 			runOnUiThread(() ->
 			{
 				Common.LogMessage("Do some stuff here...");
+				scrollView.scrollTo(0, 0);
 				dialog.dismiss();
 				resetActivity();
 			});
@@ -1382,27 +1526,7 @@ public class MainActivity extends FragmentActivity
 
 		updateHamburger();
 		updateDropDowns();
-
-		if(isVisible)
-			return;
-
-		isVisible = true;
-
-		Common.NotificationManager.getNotificationLiveData().observe(this, notificationObserver);
-	}
-
-	@Override
-	public void onPause()
-	{
-		super.onPause();
-		Common.LogMessage("MainActivity.onPause()");
-
-		if(!isVisible)
-			return;
-
-		isVisible = false;
-
-		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
+		updateColours();
 	}
 
 	private final Observer<String> notificationObserver = str ->

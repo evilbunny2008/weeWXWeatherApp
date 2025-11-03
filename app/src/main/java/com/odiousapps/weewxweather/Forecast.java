@@ -812,7 +812,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			case "bom.gov.au", "bom2", "bom3" ->
 			{
 				im.post(() -> im.setImageResource(R.drawable.bom));
-				if(KeyValue.theme == R.style.AppTheme_weeWxWeatherApp_Dark_Common)
+				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE)));
 				else
 					im.post(() -> im.setColorFilter(null));
@@ -825,7 +825,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			case "apixu.com" ->
 			{
 				im.post(() -> im.setImageResource(R.drawable.apixu));
-				if(KeyValue.theme == R.style.AppTheme_weeWxWeatherApp_Dark_Common)
+				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE)));
 				else
 					im.post(() -> im.setColorFilter(null));
@@ -834,7 +834,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			case "met.ie" ->
 			{
 				im.post(() -> im.setImageResource(R.drawable.met_ie));
-				if(KeyValue.theme == R.style.AppTheme_weeWxWeatherApp_Dark_Common)
+				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE)));
 				else
 					im.post(() -> im.setColorFilter(null));

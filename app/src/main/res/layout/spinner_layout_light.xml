@@ -6,7 +6,9 @@
 	android:layout_height="wrap_content"
 	android:padding="8dp"
 	android:minHeight="?attr/listPreferredItemHeightSmall"
+	android:layout_gravity="start"
 	android:gravity="center_vertical"
 	android:textSize="20sp"
 	android:text="Test"
+	android:textColor="@color/Black"
 	tools:ignore="HardcodedText" />

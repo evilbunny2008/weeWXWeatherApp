@@ -11,18 +11,18 @@
 	<color name="LightGray">#FFE0E0E0</color>
 
 	<!-- Day Colours -->
-	<color name="colorPrimary" tools:ignore="UnusedResources">@color/Black</color>
-	<color name="colorPrimaryDark" tools:ignore="UnusedResources">@color/MyAppNavBarColour</color>
-	<color name="colorAccent" tools:ignore="UnusedResources">@color/LightBlueAccent</color>
-	<color name="colorSecondary" tools:ignore="UnusedResources">@color/Black</color>
-	<color name="colorSecondaryDark" tools:ignore="UnusedResources">@color/MyAppNavBarColour</color>
+	<color name="colorPrimary">@color/Black</color>
+	<color name="colorPrimaryDark">@color/MyAppNavBarColour</color>
+	<color name="colorAccent">@color/LightBlueAccent</color>
+	<color name="colorSecondary">@color/Black</color>
+	<color name="colorSecondaryDark">@color/MyAppNavBarColour</color>
 	<color name="splash_background">@color/White</color>
-	<color name="splash_foreground" tools:ignore="UnusedResources">@color/Black</color>
+	<color name="splash_foreground">@color/Black</color>
 	<color name="widgetBackgroundColour">@color/White</color>
 	<color name="widgetTextColour">@color/Black</color>
 	<color name="MyAppNavBarColour">#FF3F51B5</color>
 	<color name="MyAppNavBarTextColour">@color/White</color>
-	<color name="MyTintColour" tools:ignore="UnusedResources">#C5CAE9</color>
+	<color name="MyTintColour">#C5CAE9</color>
 	<color name="tabIndicatorColor">#FF03A9F4</color>
 	<color name="tabSelectedTextColor">@color/White</color>
 </resources>

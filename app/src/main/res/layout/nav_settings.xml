@@ -16,6 +16,7 @@
 		android:orientation="vertical">
 
 		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/til1"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="20dp"
@@ -75,16 +76,16 @@
 			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
 
 		<com.google.android.material.textfield.TextInputLayout
-			style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+			style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"			android:id="@+id/til2"
+			android:labelFor="@id/spinner1"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:labelFor="@id/spinner1"
 			android:hint="@string/refresh_time"
-			app:boxBackgroundMode="outline"
-			app:boxStrokeWidth="1dp"
 			android:textSize="20sp"
 			android:layout_marginTop="10dp"
-			app:boxStrokeColor="?attr/colorOutline"
+			app:boxBackgroundMode="outline"
+			app:boxStrokeColor="@color/Black"
+			app:boxStrokeWidth="1dp"
 			tools:ignore="VisualLintBounds">
 
 			<AutoCompleteTextView
@@ -96,21 +97,22 @@
 				android:importantForAutofill="no"
 				android:inputType="none"
 				android:textSize="20sp"
-				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize,TouchTargetSizeCheck" />
 
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.textfield.TextInputLayout
 			style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+			android:id="@+id/til3"
+			android:labelFor="@id/spinner2"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:labelFor="@id/spinner2"
 			android:hint="@string/app_theme"
-			app:boxBackgroundMode="outline"
-			app:boxStrokeWidth="1dp"
 			android:textSize="20sp"
 			android:layout_marginTop="10dp"
-			app:boxStrokeColor="?attr/colorOutline"
+			app:boxBackgroundMode="outline"
+			app:boxStrokeColor="@color/Black"
+			app:boxStrokeWidth="1dp"
 			tools:ignore="VisualLintBounds">
 
 			<AutoCompleteTextView
@@ -126,16 +128,16 @@
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.textfield.TextInputLayout
-			style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+			style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"			android:id="@+id/til4"
+			android:labelFor="@id/spinner2"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:labelFor="@id/spinner2"
 			android:hint="@string/widget_theme"
-			app:boxBackgroundMode="outline"
-			app:boxStrokeWidth="1dp"
 			android:textSize="20sp"
 			android:layout_marginTop="10dp"
-			app:boxStrokeColor="?attr/colorOutline"
+			app:boxBackgroundMode="outline"
+			app:boxStrokeColor="@color/Black"
+			app:boxStrokeWidth="1dp"
 			tools:ignore="VisualLintBounds">
 
 			<AutoCompleteTextView
@@ -192,6 +194,7 @@
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.textview.MaterialTextView
+			android:id="@+id/mtv1"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:ellipsize="none"
@@ -234,6 +237,7 @@
 		</RadioGroup>
 
 		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/til5"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:layout_marginTop="10dp"
@@ -282,12 +286,12 @@
 	</LinearLayout>
 
 	<com.google.android.material.button.MaterialButton
-		style="@style/Widget.weeWXApp.Button"
 		android:id="@+id/deleteData"
+		style="@style/Widget.weeWXApp.Button"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
+		android:layout_marginVertical="10dp"
 		android:text="@string/delete_all_data"
 		android:textSize="18sp"
-		android:layout_marginVertical="10dp"
-		tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+		tools:ignore="VisualLintButtonSize,VisualLintBounds,TextContrastCheck" />
 </LinearLayout>

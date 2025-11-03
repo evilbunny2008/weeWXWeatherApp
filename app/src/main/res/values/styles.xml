@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
-	<style name="AppTheme.weeWxWeatherApp.Light.Common" parent="AppTheme.weeWxWeatherApp.Light">
+<resources>
+	<style name="AppTheme.weeWXApp.Light.Common" parent="AppTheme.weeWXApp.Light">
 		<item name="windowActionBar">true</item>
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowNoTitle">true</item>
@@ -13,7 +13,7 @@
 		<item name="android:windowTranslucentNavigation">false</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.Dark.Common" parent="AppTheme.weeWxWeatherApp.Dark">
+	<style name="AppTheme.weeWXApp.Dark.Common" parent="AppTheme.weeWXApp.Dark">
 		<item name="windowActionBar">true</item>
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowNoTitle">true</item>
@@ -26,7 +26,7 @@
 		<item name="android:windowTranslucentNavigation">false</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.Common" parent="AppTheme.weeWxWeatherApp">
+	<style name="AppTheme.weeWXApp.Common" parent="AppTheme.weeWXApp">
 		<item name="windowActionBar">true</item>
 		<item name="windowNoTitle">true</item>
 		<item name="android:windowNoTitle">true</item>
@@ -39,19 +39,19 @@
 		<item name="android:windowTranslucentNavigation">false</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.Light.ViewPager" parent="AppTheme.weeWxWeatherApp.Light.Common">
+	<style name="AppTheme.weeWXApp.Light.ViewPager" parent="AppTheme.weeWXApp.Light.Common">
 		<item name="android:background">@color/White</item>
 		<item name="android:textColor">@color/Black</item>
 		<item name="android:textSize">20sp</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.Dark.ViewPager" parent="AppTheme.weeWxWeatherApp.Dark.Common">
+	<style name="AppTheme.weeWXApp.Dark.ViewPager" parent="AppTheme.weeWXApp.Dark.Common">
 		<item name="android:background">@color/Black</item>
 		<item name="android:textColor">@color/White</item>
 		<item name="android:textSize">20sp</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.ViewPager" parent="AppTheme.weeWxWeatherApp.Common">
+	<style name="AppTheme.weeWXApp.ViewPager" parent="AppTheme.weeWXApp.Common">
 		<item name="android:background">@color/splash_background</item>
 		<item name="android:textColor">@color/splash_foreground</item>
 		<item name="android:textSize">20sp</item>
@@ -61,7 +61,7 @@
 
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.NavBar" parent="AppTheme.weeWxWeatherApp.Common">
+	<style name="Widget.weeWXApp.NavBar" parent="AppTheme.weeWXApp.Common">
 		<item name="android:windowBackground">@color/MyAppNavBarColour</item>
 		<item name="android:background">@color/MyAppNavBarColour</item>
 		<item name="android:textColorPrimary">@color/MyAppNavBarTextColour</item>
@@ -70,7 +70,7 @@
 		<item name="android:textSize">20sp</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.AppBarLayout" parent="AppTheme.weeWxWeatherApp.Common">
+	<style name="Widget.weeWXApp.AppBarLayout" parent="AppTheme.weeWXApp.Common">
 		<item name="android:background">@color/MyAppNavBarColour</item>
 		<item name="android:textColorPrimary">@color/MyAppNavBarTextColour</item>
 		<item name="android:textColorSecondary">@color/MyAppNavBarTextColour</item>
@@ -78,7 +78,7 @@
 		<item name="android:textSize">20sp</item>
 	</style>
 
-	<style name="AppTheme.weeWxWeatherApp.TabBarLayout" parent="AppTheme.weeWxWeatherApp.Common">
+	<style name="Widget.weeWXApp.TabBarLayout" parent="AppTheme.weeWXApp.Common">
 		<item name="android:background">@color/MyAppNavBarColour</item>
 		<item name="android:textColorPrimary">@color/MyAppNavBarTextColour</item>
 		<item name="android:textColorSecondary">@color/MyAppNavBarTextColour</item>
@@ -93,12 +93,12 @@
 		<item name="tabMode">scrollable</item>
 	</style>
 
-	<style name="Widget.weeWXApp.RadioButtons" parent="AppTheme.weeWxWeatherApp.Common">
+	<style name="Widget.weeWXApp.RadioButtons" parent="AppTheme.weeWXApp.Common">
 		<item name="android:textSize">20sp</item>
 		<item name="buttonTint">@color/MyAppNavBarColour</item>
 	</style>
 
-	<style name="Widget.weeWXApp.Button" parent="AppTheme.weeWxWeatherApp.Common">
+	<style name="Widget.weeWXApp.Button" parent="AppTheme.weeWXApp.Common">
 		<item name="android:textSize">16sp</item>
 		<item name="android:insetTop">8dp</item>
 		<item name="android:insetBottom">8dp</item>
@@ -109,12 +109,12 @@
 		<item name="backgroundTint">@color/MyAppNavBarColour</item>
 	</style>
 
-	<style name="Widget.weeWXApp.Switch" parent="AppTheme.weeWxWeatherApp.Common">
+	<style name="Widget.weeWXApp.Switch" parent="AppTheme.weeWXApp.Common">
 		<item name="thumbTint">@color/MyAppNavBarColour</item>
 		<item name="trackTint">@color/MyTintColour</item>
 	</style>
 
-	<style name="Widget.weeWXApp.Slider" parent="AppTheme.weeWxWeatherApp.Common">
+	<style name="Widget.weeWXApp.Slider" parent="AppTheme.weeWXApp.Common">
 		<item name="android:layout_width">match_parent</item>
 		<item name="android:layout_height">wrap_content</item>
 		<item name="android:layout_marginStart">10dp</item>

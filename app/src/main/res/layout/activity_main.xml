@@ -10,7 +10,7 @@
 	tools:ignore="VisualLintBounds">
 
     <com.google.android.material.appbar.AppBarLayout
-	    style="@style/AppTheme.weeWxWeatherApp.AppBarLayout"
+	    style="@style/Widget.weeWXApp.AppBarLayout"
 	    android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -30,7 +30,7 @@
 			    android:visibility="gone"/>
 
 		    <com.google.android.material.tabs.TabLayout
-			    style="@style/AppTheme.weeWxWeatherApp.TabBarLayout"
+			    style="@style/Widget.weeWXApp.TabBarLayout"
 			    android:id="@+id/tabs"
 			    android:layout_width="0dp"
 			    android:layout_height="wrap_content"
