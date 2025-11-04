@@ -623,7 +623,7 @@ public class MainActivity extends FragmentActivity
 			if(hamburger.getVisibility() != View.VISIBLE)
 				hamburger.setVisibility(View.VISIBLE);
 		} else {
-			Common.LogMessage("gestureNav == false, hide the hamburger menu...", true);
+			Common.LogMessage("gestureNav == false, hide the hamburger menu...");
 			if(hamburger.getVisibility() != View.GONE)
 				hamburger.setVisibility(View.GONE);
 		}
@@ -634,7 +634,7 @@ public class MainActivity extends FragmentActivity
 		@Override
 		public void onDrawerOpened(@NonNull View drawerView)
 		{
-			Common.LogMessage("Detected a back press in the DrawerLayout...", true);
+			Common.LogMessage("Detected a back press in the DrawerLayout...");
 
 			InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 			View focus = getCurrentFocus();
@@ -647,7 +647,7 @@ public class MainActivity extends FragmentActivity
 		public void onDrawerClosed(@NonNull View drawerView)
 		{
 			// Drawer closed — you can re-enable gestures or update UI here
-			Common.LogMessage("Drawer closed", true);
+			Common.LogMessage("Drawer closed");
 		}
 
 		@Override
@@ -663,12 +663,12 @@ public class MainActivity extends FragmentActivity
 		// Legacy back handling for Android < 13
 		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
 		{
-			Common.LogMessage("setupBackHandling() setting getOnBackPressedDispatcher() SDK < TIRAMISU", true);
+			Common.LogMessage("setupBackHandling() setting getOnBackPressedDispatcher() SDK < TIRAMISU");
 			getOnBackPressedDispatcher().addCallback(this, obpc);
 		} else {
 			// Android 13+ predictive back gestures
 			// Only intercept the back if keyboard is visible or drawer is open
-			Common.LogMessage("setupBackHandling() setting getOnBackInvokedDispatcher() SDK >= TIRAMISU", true);
+			Common.LogMessage("setupBackHandling() setting getOnBackInvokedDispatcher() SDK >= TIRAMISU");
 			getOnBackInvokedDispatcher().registerOnBackInvokedCallback(
 					OnBackInvokedDispatcher.PRIORITY_DEFAULT, this::handleBack);
 		}
@@ -679,33 +679,33 @@ public class MainActivity extends FragmentActivity
 		@Override
 		public void handleOnBackPressed()
 		{
-			Common.LogMessage("handleOnBackPressed()", true);
+			Common.LogMessage("handleOnBackPressed()");
 			handleBack();
 		}
 	};
 
 	private void handleBack()
 	{
-		Common.LogMessage("Line 694 handleBack() Detected an application back press...", true);
+		Common.LogMessage("Line 694 handleBack() Detected an application back press...");
 		View focus = getCurrentFocus();
 		InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
 		if(focus != null && imm != null && imm.isAcceptingText())
 		{
-			Common.LogMessage("Line 699 handleBack() Let's hide the on screen keyboard and clearFocus()...", true);
+			Common.LogMessage("Line 699 handleBack() Let's hide the on screen keyboard and clearFocus()...");
 			closeKeyboard(focus, imm);
 			return;
 		}
 
 		if(mDrawerLayout.isDrawerOpen(GravityCompat.START))
 		{
-			Common.LogMessage("Line 713 handleBack() Let's shut the drawer...", true);
+			Common.LogMessage("Line 713 handleBack() Let's shut the drawer...");
 			closeDrawer();
 			return;
 		}
 
 		if(mViewPager.getCurrentItem() > 0)
 		{
-			Common.LogMessage("Line 708 handleBack() Cycle through tabs until we hit tab 0", true);
+			Common.LogMessage("Line 708 handleBack() Cycle through tabs until we hit tab 0");
 			mViewPager.post(() -> mViewPager.setCurrentItem(mViewPager.getCurrentItem() - 1));
 			return;
 		}
@@ -713,11 +713,11 @@ public class MainActivity extends FragmentActivity
 
 		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
 		{
-			Common.LogMessage("Line 716 handleBack() Let's end now... SDK < TIRAMISU", true);
+			Common.LogMessage("Line 716 handleBack() Let's end now... SDK < TIRAMISU");
 			obpc.setEnabled(false);
 			finish();
 		} else {
-			Common.LogMessage("Line 720 handleBack() SDK >= TIRAMISU... Let the system do it's thing...", true);
+			Common.LogMessage("Line 720 handleBack() SDK >= TIRAMISU... Let the system do it's thing...");
 			getOnBackPressedDispatcher().onBackPressed();
 		}
 	}
@@ -879,7 +879,7 @@ public class MainActivity extends FragmentActivity
 	{
 		if(focus != null && imm != null && imm.isAcceptingText())
 		{
-			Common.LogMessage("Line 886 closeKeyboard() Let's hide the on screen keyboard...", true);
+			Common.LogMessage("Line 886 closeKeyboard() Let's hide the on screen keyboard...");
 			imm.hideSoftInputFromWindow(focus.getWindowToken(), 0);
 			focus.clearFocus();
 		}

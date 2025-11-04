@@ -868,7 +868,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(!disabledSwipe && disableSwipeOnRadar && rfl.getVisibility() == View.VISIBLE)
 		{
 			disabledSwipe = true;
-			Common.LogMessage("Disabling swipe between screens...", true);
+			Common.LogMessage("Disabling swipe between screens...");
 			activity.setUserInputPager(false);
 			return;
 		}
@@ -876,7 +876,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(disabledSwipe && !disableSwipeOnRadar)
 		{
 			disabledSwipe = false;
-			Common.LogMessage("Enabling swipe between screens...", true);
+			Common.LogMessage("Enabling swipe between screens...");
 			activity.setUserInputPager(true);
 		}
 	}

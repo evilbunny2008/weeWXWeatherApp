@@ -131,7 +131,7 @@ public class Webcam extends Fragment
 				Common.LogMessage("Finished downloading from webURL: " + webURL, true);
 			}
 
-			Common.LogMessage("Prompt iv to redraw...", true);
+			Common.LogMessage("Prompt iv to redraw...");
 
 			File newFile = new File(Common.getFilesDir(), filename);
 			if(newFile.exists() && newFile.canRead())

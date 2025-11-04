@@ -442,6 +442,8 @@ public class Common
                                       </script>
                                       """;
 
+	final static String emptyField = "<span class='field'></span>";
+
     static void replaceHex6String(String html_tag, int colour)
     {
         String hex = String.format(CPEditText.getFixedChar() + "%06X", 0xFFFFFF & colour);

@@ -444,14 +444,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		Common.LogMessage("loadWebView()");
 		Thread t = new Thread(() ->
 		{
-			try
-			{
-				// Sleep needed to stop frames dropping while loading
-				Thread.sleep(500);
-			} catch(Exception e) {
-				Common.doStackOutput(e);
-			}
-
 			final StringBuilder sb = new StringBuilder();
 			sb.append(Common.current_html_headers);
 

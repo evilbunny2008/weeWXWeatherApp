@@ -260,37 +260,157 @@ public class Stats extends Fragment
 		return str;
 	}
 
-	private String createRow(String class1, String class2, String str1,
-	                         String str2, String str3, String str4)
+	private String createRowLeft(String class1)
+	{
+		return createRowLeft(class1, Common.emptyField, Common.emptyField);
+	}
+
+	private String createRowLeft(String class1, String str1, String str2)
 	{
 		return "\t\t<div class='statsDataRow'>\n" +
 		       "\t\t\t<div class='statsDataCell left'><i class='" + class1 + " icon'></i>" +
 		       str1 + "</div>\n" +
-	           "\t\t\t<div class='statsDataCell midleft'>" + str2 + "</div>\n" +
-		       "\t\t\t<div class='statsSpacer'></div>\n" +
-	           "\t\t\t<div class='statsDataCell midright'>" + str3 + "</div>\n" +
-	           "\t\t\t<div class='statsDataCell right'>" + str4 + "<i class='" + class2 +
-	           " icon'></i></div>\n" +
-	           "\t\t</div>\n\n";
+		       "\t\t\t<div class='statsDataCell midleft'>" + str2 + "</div>\n";
+	}
+
+	private String createRowMiddle()
+	{
+		return "\t\t\t<div class='statsSpacer'>" + Common.emptyField + "</div>\n";
+	}
+
+	private String createRowRight(String class2)
+	{
+		return createRowRight(class2, Common.emptyField, Common.emptyField);
+	}
+
+	private String createRowRight(String class2, String str3, String str4)
+	{
+		return "\t\t\t<div class='statsDataCell midright'>" + str3 + "</div>\n" +
+		       "\t\t\t<div class='statsDataCell right'>" + str4 + "<i class='" + class2 +
+		       " icon'></i></div>\n" +
+		       "\t\t</div>\n\n";
+	}
+
+	private String createRow(String class1, String class2, String str1,
+	                         String str2, String str3, String str4)
+	{
+		return createRowLeft(class1, str1, str2) +
+		       createRowMiddle() +
+		       createRowRight(class2, str3, str4);
+	}
+
+	private String createRowLeft(String class1, String str1)
+	{
+		return "\t\t<div class='statsDataRow'>\n" +
+		       "\t\t\t<div class='statsDataCell " +
+		       class1 + "'><i class='flaticon-windy icon'></i>" +
+		       str1 + "</div>\n";
+	}
+
+	private String createRowRight(String class2, String str2)
+	{
+		return "\t\t\t<div class='statsDataCell " +
+		       class2 + "'>" + str2 +
+		       "<i class='wi wi-umbrella icon'></i></div>\n\t\t</div>\n\n";
 	}
 
 	private String createRow(String str1, String str2)
 	{
-		return "\t\t<div class='statsDataRow'>\n" +
-		       "\t\t\t<div class='statsDataCell Wind'><i class='flaticon-windy icon'></i>" +
-		       str1 + "</div>\n" +
-		       "\t\t\t<div class='statsSpacer'></div>\n" +
-		       "\t\t\t<div class='statsDataCell Rain'>" + str2 +
-		       "<i class='wi wi-umbrella icon'></i></div>\n\t\t</div>\n\n";
+		return createRowLeft("Wind", str1) + createRowMiddle() + createRowRight("Rain", str2);
 	}
 
 	private String createRow2(String str1, String str2)
 	{
-		return "\t\t<div class='statsDataRow'>\n" +
-		       "\t\t\t<div class='statsDataCell Wind2'><i class='flaticon-windy icon'></i>" +
-		       str1 + "</div>\n" +
-		       "\t\t\t<div class='statsDataCell Rain2'>" + str2 +
-		       "<i class='wi wi-umbrella icon'></i></div>\n\t\t</div>\n\n";
+		return createRowLeft("Wind2", str1) + createRowRight("Rain2", str2);
+	}
+
+	private String getElement(String[] bits, int element)
+	{
+		try
+		{
+			if(bits.length >= element)
+				return bits[element];
+		} catch(Exception ignored) {}
+
+		return "";
+	}	
+
+	private String showSolarUV(String[] bits, int uv, int uvWhen, int solar, int solarWhen, int timeMode, String which)
+	{
+		String className = "flaticon-women-sunglasses";
+		String out = "";
+
+		int minUV = Math.min(uv, uvWhen);
+		int minSolar = Math.min(solar, solarWhen);
+
+		if(bits.length < minUV && bits.length < minSolar)
+			return null;
+
+		if(bits.length >= uvWhen && !bits[uvWhen].isBlank())
+		{
+			String dateTimeStr = getDateTimeStr(bits, uvWhen, timeMode, which);
+			out += createRowLeft(className, getElement(bits, uv) + "UVI", dateTimeStr);
+		} else {
+			out += createRowLeft(className);
+		}
+
+		out += createRowMiddle();
+
+		if(bits.length >= solarWhen && !bits[solarWhen].isBlank())
+		{
+			String dateTimeStr = getDateTimeStr(bits, solarWhen, timeMode, which);
+			out += createRowRight(className, dateTimeStr, getElement(bits, solar) + "W/m²");
+		} else {
+			out += createRowRight(className);
+		}
+
+		return out;
+	}
+
+	private String showIndoor(int appendId, String[] bits, int max,
+	                          int maxWhen, int min, int minWhen,
+	                          int timeMode, String which)
+	{
+		if(bits.length >= maxWhen && !bits[maxWhen].isBlank() && !bits[minWhen].isBlank())
+		{
+			String maxDateTimeStr = getDateTimeStr(bits, maxWhen, timeMode, which);
+			String minDateTimeStr = getDateTimeStr(bits, minWhen, timeMode, which);
+			if((maxDateTimeStr == null || maxDateTimeStr.isBlank()) && (minDateTimeStr == null || minDateTimeStr.isBlank()))
+				return null;
+
+			return createRow("flaticon-home-page", "flaticon-home-page",
+					getElement(bits, max) + getElement(bits, appendId),
+					maxDateTimeStr, minDateTimeStr,
+					getElement(bits, min) + getElement(bits, appendId));
+		}
+
+		return null;
+	}
+
+	private String getDateTimeStr(String[] bits, int when, int timeMode, String which)
+	{
+		String dateTimeStr = "";
+
+		if(timeMode == 0)
+			dateTimeStr = convert(getElement(bits, when));
+		else if(timeMode == 1)
+			dateTimeStr = getTimeMonth(getElement(bits, when));
+		else if(timeMode == 2)
+			dateTimeStr = getTimeYear(getElement(bits, when));
+		else if(timeMode == 3)
+			dateTimeStr = getTimeSection(which, getElement(bits, when));
+		else if(timeMode == 4)
+			dateTimeStr = getAllTime(getElement(bits, when));
+
+		return dateTimeStr;
+	}
+
+	private String getTimeSection(String which, String str)
+	{
+		if(which.equals("Year"))
+			return getAllTime(str);
+
+		return getTimeYear(str);
 	}
 
 	private String generateTodaysSection(int header, String[] bits)
@@ -302,50 +422,54 @@ public class Stats extends Fragment
 		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
-				bits[3] + bits[60], convert(bits[4]), convert(bits[2]),
-				bits[1] + bits[60]));
+				getElement(bits, 3) + getElement(bits, 60),
+				convert(getElement(bits, 4)),
+				convert(getElement(bits, 2)),
+				getElement(bits, 1) + getElement(bits, 60)));
 
 		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
-				bits[15] + bits[60], convert(bits[16]), convert(bits[14]),
-				bits[13] + bits[60]));
+				getElement(bits, 15) + getElement(bits, 60),
+				convert(getElement(bits, 16)),
+				convert(getElement(bits, 14)),
+				getElement(bits, 13) + getElement(bits, 60)));
 
 		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
-				bits[9] + bits[64], convert(bits[10]), convert(bits[8]),
-				bits[6] + bits[64]));
+				getElement(bits, 9) + getElement(bits, 64),
+				convert(getElement(bits, 10)),
+				convert(getElement(bits, 8)),
+				getElement(bits, 6) + getElement(bits, 64)));
 
 		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
-				bits[39] + bits[63], convert(bits[40]), convert(bits[42]),
-				bits[41] + bits[63]));
+				getElement(bits, 39) + getElement(bits, 63),
+				convert(getElement(bits, 40)),
+				convert(getElement(bits, 42)),
+				getElement(bits, 41) + getElement(bits, 63)));
 
-		if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
+		if(Common.GetBoolPref("showIndoor", false))
 		{
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[164] + bits[60], convert(bits[165]), convert(bits[163]),
-					bits[162] + bits[60]));
+			if(bits.length > 165 && !bits[163].isBlank() && !bits[165].isBlank())
+				sb.append(showIndoor(60, bits, 164, 165, 162, 163, 0, null));
 
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[169] + bits[64], convert(bits[170]), convert(bits[168]),
-					bits[167] + bits[64]));
+			if(bits.length > 170 && !bits[170].isBlank() && !bits[168].isBlank())
+				sb.append(showIndoor(64, bits, 169, 170, 167, 168, 0, null));
 		}
 
-		if(bits.length > 205 && !bits[205].isBlank())
-		{
-			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
-					bits[205] + "UVI", convert(bits[206]), convert(bits[208]),
-					bits[207] + "W/m²"));
-		}
+		sb.append(showSolarUV(bits, 205, 206, 207, 208, 0, null));
 
-		String rain = bits[20];
+		String rain = getElement(bits, 20);
 		String since = weeWXApp.getAndroidString(R.string.since) + " mn";
 
-		if(bits.length > 160 && !bits[160].isBlank())
+		if(bits.length > 158 && !bits[158].isBlank())
+		{
 			rain = bits[158];
 
-		if(bits.length > 160 && !bits[158].isBlank() && !bits[160].isBlank())
-			since = weeWXApp.getAndroidString(R.string.since) + " " + bits[160];
+			if(bits.length > 160 && !bits[160].isBlank())
+				since = weeWXApp.getAndroidString(R.string.since) + " " + getElement(bits, 160);
+		}
 
-		sb.append(createRow(bits[19] + bits[61] + " " + bits[32] + " " + convert(bits[33]),
-				since + " " + rain + bits[62]));
+		sb.append(createRow(getElement(bits, 19) + getElement(bits, 61) +
+                " " + getElement(bits, 32) + " " + convert(getElement(bits, 33)),
+				since + " " + rain + getElement(bits, 62)));
 
 		return sb.toString();
 	}
@@ -359,50 +483,54 @@ public class Stats extends Fragment
 		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
-				bits[67] + bits[60], convert(bits[68]), convert(bits[66]),
-				bits[65] + bits[60]));
+				getElement(bits, 67) + getElement(bits, 60),
+				convert(getElement(bits, 68)),
+				convert(getElement(bits, 66)),
+				getElement(bits, 65) + getElement(bits, 60)));
 
 		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
-				bits[78] + bits[60], convert(bits[79]), convert(bits[77]),
-				bits[76] + bits[64]));
+				getElement(bits, 78) + getElement(bits, 60),
+				convert(getElement(bits, 79)),
+				convert(getElement(bits, 77)),
+				getElement(bits, 76) + getElement(bits, 64)));
 
 		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
-				bits[82] + bits[64], convert(bits[83]), convert(bits[81]),
-				bits[80] + bits[64]));
+				getElement(bits, 82) + getElement(bits, 64),
+				convert(getElement(bits, 83)),
+				convert(getElement(bits, 81)),
+				getElement(bits, 80) + getElement(bits, 64)));
 
 		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
-				bits[84] + bits[63], convert(bits[85]), convert(bits[87]),
-				bits[86] + bits[63]));
+				getElement(bits, 84) + getElement(bits, 63),
+				convert(getElement(bits, 85)),
+				convert(getElement(bits, 87)),
+				getElement(bits, 86) + getElement(bits, 63)));
 
-		if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
+		if(Common.GetBoolPref("showIndoor", false))
 		{
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[173] + bits[60], convert(bits[174]), convert(bits[172]),
-					bits[171] + bits[60]));
+			if(bits.length > 174 && !bits[174].isBlank() && !bits[172].isBlank())
+				sb.append(showIndoor(60, bits, 173, 174, 171, 172, 0, null));
 
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[177] + bits[64], convert(bits[178]), convert(bits[176]),
-					bits[175] + bits[64]));
+			if(bits.length > 178 && !bits[178].isBlank() && !bits[176].isBlank())
+				sb.append(showIndoor(64, bits, 177, 178, 175, 176, 0, null));
 		}
 
-		if(bits.length > 209 && !bits[209].isBlank())
-		{
-			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
-					bits[209] + "UVI", convert(bits[210]), convert(bits[212]),
-					bits[211] + "W/m²"));
-		}
+		sb.append(showSolarUV(bits, 209, 210, 211, 212, 0, null));
 
 		String rain = bits[21];
 		String before = weeWXApp.getAndroidString(R.string.before) + " mn";
 
-		if(bits.length > 160 && !bits[159].isBlank())
+		if(bits.length > 159 && !bits[159].isBlank())
+		{
 			rain = bits[159];
 
-		if(bits.length > 160 && !bits[159].isBlank() && !bits[160].isBlank())
-			before = weeWXApp.getAndroidString(R.string.before) + " " + bits[160];
+			if(bits.length > 160 && !bits[160].isBlank())
+				before = weeWXApp.getAndroidString(R.string.before) + " " + getElement(bits, 160);
+		}
 
-		sb.append(createRow(bits[69] + bits[61] + " " + bits[70] + " " + convert(bits[71]),
-				before + " " + rain + bits[62]));
+		sb.append(createRow(getElement(bits, 69) + getElement(bits, 61) + " " +
+		                    getElement(bits, 70) + " " + convert(getElement(bits, 71)),
+							before + " " + rain + getElement(bits, 62)));
 
 		return sb.toString();
 	}
@@ -416,41 +544,43 @@ public class Stats extends Fragment
 		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
-				bits[90] + bits[60], getTimeMonth(bits[91]), getTimeMonth(bits[89]),
-				bits[88] + bits[60]));
+				getElement(bits, 90) + getElement(bits, 60),
+				getTimeMonth(getElement(bits, 91)),
+				getTimeMonth(getElement(bits, 89)),
+				getElement(bits, 88) + getElement(bits, 60)));
 
 		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
-				bits[101] + bits[60], getTimeMonth(bits[102]), getTimeMonth(bits[100]),
-				bits[99] + bits[64]));
+				getElement(bits, 101) + getElement(bits, 60),
+				getTimeMonth(getElement(bits, 102)),
+				getTimeMonth(getElement(bits, 100)),
+				getElement(bits, 99) + getElement(bits, 64)));
 
 		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
-				bits[105] + bits[64], getTimeMonth(bits[106]), getTimeMonth(bits[104]),
-				bits[103] + bits[64]));
+				getElement(bits, 105) + getElement(bits, 64),
+				getTimeMonth(getElement(bits, 106)),
+				getTimeMonth(getElement(bits, 104)),
+				getElement(bits, 103) + getElement(bits, 64)));
 
 		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
-				bits[107] + bits[63], getTimeMonth(bits[108]), getTimeMonth(bits[110]),
-				bits[109] + bits[63]));
+				getElement(bits, 107) + getElement(bits, 63),
+				getTimeMonth(getElement(bits, 108)),
+				getTimeMonth(getElement(bits, 110)),
+				getElement(bits, 109) + getElement(bits, 63)));
 
-		if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
+		if(Common.GetBoolPref("showIndoor", false))
 		{
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[181] + bits[60], getTimeMonth(bits[182]), getTimeMonth(bits[180]),
-					bits[179] + bits[60]));
+			if(bits.length > 182 && !bits[182].isBlank() && !bits[180].isBlank())
+				sb.append(showIndoor(60, bits, 181, 182, 179, 180, 1, null));
 
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[185] + bits[64], getTimeMonth(bits[186]), getTimeMonth(bits[184]),
-					bits[183] + bits[64]));
+			if(bits.length > 186 && !bits[186].isBlank() && !bits[184].isBlank())
+				sb.append(showIndoor(64, bits, 185, 186, 183, 184, 1, null));
 		}
 
-		if(bits.length > 213 && !bits[213].isBlank())
-		{
-			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
-					bits[213] + "UVI", getTimeMonth(bits[214]), getTimeMonth(bits[216]),
-					bits[215] + "W/m²"));
-		}
+		sb.append(showSolarUV(bits, 213, 214, 215, 216, 1, null));
 
-		sb.append(createRow2(bits[92] + bits[61] + " " + bits[93] + " " + getTimeMonth(bits[94]),
-				bits[22] + bits[62]));
+		sb.append(createRow2(getElement(bits, 92) + getElement(bits, 61) + " " +
+		                     getElement(bits, 93) + " " + getTimeMonth(getElement(bits, 94)),
+							 getElement(bits, 22) + getElement(bits, 62)));
 
 		return sb.toString();
 	}
@@ -464,51 +594,45 @@ public class Stats extends Fragment
 		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
-				bits[113] + bits[60], getTimeYear(bits[114]), getTimeYear(bits[112]),
-				bits[111] + bits[60]));
+				getElement(bits, 113) + getElement(bits, 60),
+				getTimeYear(getElement(bits, 114)),
+				getTimeYear(getElement(bits, 112)),
+				getElement(bits, 111) + getElement(bits, 60)));
 
 		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
-				bits[124] + bits[60], getTimeYear(bits[125]), getTimeYear(bits[123]),
-				bits[122] + bits[60]));
+				getElement(bits, 124) + getElement(bits, 60),
+				getTimeYear(getElement(bits, 125)),
+				getTimeYear(getElement(bits, 123)),
+				getElement(bits, 122) + getElement(bits, 60)));
 
 		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
-				bits[128] + bits[64], getTimeYear(bits[129]), getTimeYear(bits[127]),
-				bits[126] + bits[64]));
+				getElement(bits, 128) + getElement(bits, 64),
+				getTimeYear(getElement(bits, 129)),
+				getTimeYear(getElement(bits, 127)),
+				getElement(bits, 126) + getElement(bits, 64)));
 
 		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
-				bits[130] + bits[63], getTimeYear(bits[131]), getTimeYear(bits[133]),
-				bits[132] + bits[63]));
+				getElement(bits, 130) + getElement(bits, 63),
+				getTimeYear(getElement(bits, 131)),
+				getTimeYear(getElement(bits, 133)),
+				getElement(bits, 132) + getElement(bits, 63)));
 
-		if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
+		if(Common.GetBoolPref("showIndoor", false))
 		{
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[189] + bits[60], getTimeYear(bits[190]), getTimeYear(bits[188]),
-					bits[187] + bits[60]));
+			if(bits.length > 190 && !bits[190].isBlank() && !bits[188].isBlank())
+				sb.append(showIndoor(60, bits, 189, 190, 187, 188, 2, null));
 
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[193] + bits[64], getTimeYear(bits[194]), getTimeYear(bits[192]),
-					bits[191] + bits[64]));
+			if(bits.length > 194 && !bits[194].isBlank() && !bits[192].isBlank())
+				sb.append(showIndoor(64, bits, 193, 194, 191, 192, 2, null));
 		}
 
-		if(bits.length > 217 && !bits[217].isBlank())
-		{
-			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
-					bits[217] + "UVI", getTimeYear(bits[218]), getTimeYear(bits[220]),
-					bits[219] + "W/m²"));
-		}
+		sb.append(showSolarUV(bits, 217, 218, 219, 220, 2, null));
 
-		sb.append(createRow2(bits[115] + bits[61] + " " + bits[116] + " " + getTimeYear(bits[117]),
-				bits[23] + bits[62]));
+		sb.append(createRow2(getElement(bits, 115) + getElement(bits, 61) + " " +
+		                     getElement(bits, 116) + " " + getTimeYear(getElement(bits, 117)),
+							 getElement(bits, 23) + getElement(bits, 62)));
 
 		return sb.toString();
-	}
-
-	private String getTimeSection(String which, String str)
-	{
-		if(which.equals("Year"))
-			return getAllTime(str);
-
-		return getTimeYear(str);
 	}
 
 	private String generateLastSection(String[] bits, int start, String which)
@@ -525,41 +649,45 @@ public class Stats extends Fragment
 		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
-				bits[start + 2] + bits[60], getTimeSection(which, bits[start + 3]), getTimeSection(which, bits[start + 1]),
-				bits[start] + bits[60]));
+				bits[start + 2] + getElement(bits, 60),
+				getTimeSection(which, bits[start + 3]),
+				getTimeSection(which, bits[start + 1]),
+				bits[start] + getElement(bits, 60)));
 
 		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
-				bits[start + 13] + bits[60], getTimeSection(which, bits[start + 14]), getTimeSection(which, bits[start + 12]),
-				bits[start + 11] + bits[60]));
+				bits[start + 13] + getElement(bits, 60),
+				getTimeSection(which, bits[start + 14]),
+				getTimeSection(which, bits[start + 12]),
+				bits[start + 11] + getElement(bits, 60)));
 
 		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
-				bits[start + 17] + bits[64], getTimeSection(which, bits[start + 18]), getTimeSection(which, bits[start + 16]),
-				bits[start + 15] + bits[64]));
+				bits[start + 17] + getElement(bits, 64),
+				getTimeSection(which, bits[start + 18]),
+				getTimeSection(which, bits[start + 16]),
+				bits[start + 15] + getElement(bits, 64)));
 
 		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
-				bits[start + 7] + bits[63], getTimeSection(which, bits[start + 8]), getTimeSection(which, bits[start + 10]),
-				bits[start + 9] + bits[63]));
+				bits[start + 7] + getElement(bits, 63),
+				getTimeSection(which, bits[start + 8]),
+				getTimeSection(which, bits[start + 10]),
+				bits[start + 9] + getElement(bits, 63)));
 
-		if(bits.length > start + 20 && Common.GetBoolPref("showIndoor", false))
+		if(Common.GetBoolPref("showIndoor", false))
 		{
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[start + 22] + bits[60], getTimeSection(which, bits[start + 23]), getTimeSection(which, bits[start + 21]),
-					bits[start + 20] + bits[60]));
+			if(bits.length > start + 23 && !bits[start + 23].isBlank() && !bits[start + 21].isBlank())
+				sb.append(showIndoor(60, bits,
+						start + 22, start + 23, start + 20, start + 21, 3, which));
 
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[start + 26] + bits[64], getTimeSection(which, bits[start + 27]), getTimeSection(which, bits[start + 25]),
-					bits[start + 24] + bits[64]));
+			if(bits.length > start + 27 && !bits[start + 27].isBlank() && !bits[start + 25].isBlank())
+				sb.append(showIndoor(64, bits,
+						start + 26, start + 27, start + 24, start + 25, 3, which));
 		}
 
-		if(bits.length > start + 28 && !bits[start + 28].isBlank())
-		{
-			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
-					bits[start + 28] + "UVI", getTimeSection(which, bits[start + 29]), getTimeSection(which, bits[start + 31]),
-					bits[start + 30] + "W/m²"));
-		}
+		sb.append(showSolarUV(bits, start + 28, start + 29, start + 30, start + 31, 3, which));
 
-		sb.append(createRow2(bits[start + 4] + bits[61] + " " + bits[start + 5] + " " + getTimeSection(which, bits[start + 6]),
-				bits[start + 19] + bits[62]));
+		sb.append(createRow2(bits[start + 4] + getElement(bits, 61) + " " +
+		                     bits[start + 5] + " " + getTimeSection(which, bits[start + 6]),
+							 bits[start + 19] + getElement(bits, 62)));
 
 		return sb.toString();
 	}
@@ -573,41 +701,45 @@ public class Stats extends Fragment
 		sb.append("\n\t\t</div>\n\n");
 
 		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
-				bits[136] + bits[60], getAllTime(bits[137]), getAllTime(bits[135]),
-				bits[134] + bits[60]));
+				getElement(bits, 136) + getElement(bits, 60),
+				getAllTime(getElement(bits, 137)),
+				getAllTime(getElement(bits, 135)),
+				getElement(bits, 134) + getElement(bits, 60)));
 
 		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
-				bits[147] + bits[60], getAllTime(bits[148]), getAllTime(bits[146]),
-				bits[145] + bits[60]));
+				getElement(bits, 147) + getElement(bits, 60),
+				getAllTime(getElement(bits, 148)),
+				getAllTime(getElement(bits, 146)),
+				getElement(bits, 145) + getElement(bits, 60)));
 
 		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
-				bits[151] + bits[64], getAllTime(bits[152]), getAllTime(bits[150]),
-				bits[149] + bits[64]));
+				getElement(bits, 151) + getElement(bits, 64),
+				getAllTime(getElement(bits, 152)),
+				getAllTime(getElement(bits, 150)),
+				getElement(bits, 149) + getElement(bits, 64)));
 
 		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
-				bits[153] + bits[63], getAllTime(bits[154]), getAllTime(bits[156]),
-				bits[155] + bits[63]));
+				getElement(bits, 153) + getElement(bits, 63),
+				getAllTime(getElement(bits, 154)),
+				getAllTime(getElement(bits, 156)),
+				getElement(bits, 155) + getElement(bits, 63)));
 
-		if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
+		if(Common.GetBoolPref("showIndoor", false))
 		{
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[197] + bits[60], getAllTime(bits[198]), getAllTime(bits[196]),
-					bits[195] + bits[60]));
+			if(bits.length > 198 && !bits[198].isBlank() && !bits[196].isBlank())
+				sb.append(showIndoor(60, bits,
+						197, 198, 195, 196, 4, null));
 
-			sb.append(createRow("flaticon-home-page", "flaticon-home-page",
-					bits[201] + bits[64], getAllTime(bits[202]), getAllTime(bits[200]),
-					bits[199] + bits[64]));
+			if(bits.length > 202 && !bits[202].isBlank() && !bits[200].isBlank())
+				sb.append(showIndoor(64, bits,
+						201, 202, 199, 200, 4, null));
 		}
 
-		if(bits.length > 221 && !bits[221].isBlank())
-		{
-			sb.append(createRow("flaticon-women-sunglasses", "flaticon-women-sunglasses",
-					bits[221] + "UVI", getAllTime(bits[222]), getAllTime(bits[224]),
-					bits[223] + "W/m²"));
-		}
+		sb.append(showSolarUV(bits, 221, 222, 223, 224, 4, null));
 
-		sb.append(createRow2(bits[138] + bits[61] + " " + bits[139] + " " + getAllTime(bits[140]),
-				bits[157] + bits[62]));
+		sb.append(createRow2(getElement(bits, 138) + getElement(bits, 61) + " " +
+		                     getElement(bits, 139) + " " + getAllTime(getElement(bits, 140)),
+							 getElement(bits, 157) + getElement(bits, 62)));
 
 		return sb.toString();
 	}
@@ -616,14 +748,6 @@ public class Stats extends Fragment
 	{
 		Thread t = new Thread(() ->
 		{
-			try
-			{
-				// Sleep needed to stop frames dropping while loading
-				Thread.sleep(500);
-			} catch(Exception e) {
-				Common.doStackOutput(e);
-			}
-
 			String tmpStr = Common.GetStringPref("LastDownload", "");
 			if(tmpStr == null)
 			{
@@ -640,8 +764,8 @@ public class Stats extends Fragment
 			}
 
 			// Today Stats
-			checkFields(rootView.findViewById(R.id.textView), bits[56]);
-			checkFields(rootView.findViewById(R.id.textView2), bits[54] + " " + bits[55]);
+			checkFields(rootView.findViewById(R.id.textView), getElement(bits, 56));
+			checkFields(rootView.findViewById(R.id.textView2), getElement(bits, 54) + " " + getElement(bits, 55));
 
 			final StringBuilder sb = new StringBuilder();
 
@@ -673,7 +797,7 @@ public class Stats extends Fragment
 				sb.append("\t</div>\n\n");
 			}
 
-			if(bits.length > 258 && !bits[258].isBlank())
+			if(bits.length > 268 && !bits[267].isBlank())
 			{
 				// Do last month's stats
 				sb.append("\t<div class='statsSection'>\n");
@@ -691,7 +815,7 @@ public class Stats extends Fragment
 				sb.append("\t</div>\n\n");
 			}
 
-			if(bits.length > 226 && !bits[226].isBlank())
+			if(bits.length > 236 && !bits[236].isBlank())
 			{
 				// Do last year's stats
 				sb.append("\t<div class='statsSection'>\n");
@@ -700,7 +824,7 @@ public class Stats extends Fragment
 				sb.append("\t</div>\n\n");
 			}
 
-			if(bits.length > 157 && !bits[157].isBlank())
+			if(bits.length > 156 && !bits[156].isBlank())
 			{
 				// Do all time stats
 				sb.append("\t<div class='statsSection'>\n");
