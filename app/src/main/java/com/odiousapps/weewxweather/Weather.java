@@ -108,7 +108,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 				if(dynamicSizing)
 				{
-					Common.LogMessage("dynamicSizing is true...", true);
+					Common.LogMessage("dynamicSizing is true...");
 					// Post a Runnable to make sure contentHeight is available
 					view.postDelayed(() ->
 					{
@@ -118,7 +118,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
 						params.height = contentHeightPx; // - (int)(5 * density);
 						swipeLayout.setLayoutParams(params);
-						Common.LogMessage("New Height: " + contentHeightPx, true);
+						Common.LogMessage("New Height: " + contentHeightPx);
 					}, 100); // 100ms delay lets the page finish rendering
 				}
 
@@ -136,7 +136,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	void doInitialLoad(View view, Bundle savedInstanceState)
 	{
-		Common.LogMessage("Weather.doInitialLoad()", true);
+		Common.LogMessage("Weather.doInitialLoad()");
 
 		boolean dynamicSizing = weeWXApp.getHeight() > weeWXApp.getWidth() && weeWXApp.getWidth() < 1100;
 
@@ -152,7 +152,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(savedInstanceState != null)
 		{
-			Common.LogMessage("Weather.doInitialLoad() loading from savedInstanceState...", true);
+			Common.LogMessage("Weather.doInitialLoad() loading from savedInstanceState...");
 			current.restoreState(savedInstanceState);
 			forecast.restoreState(savedInstanceState);
 		}
@@ -397,21 +397,21 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	void loadWebViewURL(String url, boolean force)
 	{
-		Common.LogMessage("Line 413 loadWebViewURL()  url: " + url, true);
+		Common.LogMessage("Line 413 loadWebViewURL()  url: " + url);
 
 		if(forecast == null)
 		{
-			Common.LogMessage("Line 417 loadWebViewURL() forecast == null, skipping...", true);
+			Common.LogMessage("Line 417 loadWebViewURL() forecast == null, skipping...");
 			return;
 		}
 
 		if(url.equals(lastURL))
 		{
-			Common.LogMessage("Line 432 loadWebViewURL() url == lastURL...", true);
+			Common.LogMessage("Line 432 loadWebViewURL() url == lastURL...");
 			if(force)
 			{
 				forecast.post(() -> forecast.reload());
-				Common.LogMessage("Line 444 loadWebViewURL() loadWebViewURL() forecast.reload()", true);
+				Common.LogMessage("Line 444 loadWebViewURL() loadWebViewURL() forecast.reload()");
 			}
 
 			return;
@@ -419,10 +419,10 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		lastURL = url;
 
-		Common.LogMessage("Line 455 loadWebViewURL() post lastURL check...", true);
+		Common.LogMessage("Line 455 loadWebViewURL() post lastURL check...");
 
 		forecast.post(() -> forecast.loadUrl(url));
-		Common.LogMessage("Line 469 loadWebViewURL() url: " + url + " should have loaded...", true);
+		Common.LogMessage("Line 469 loadWebViewURL() url: " + url + " should have loaded...");
 		stopRefreshing();
 	}
 
@@ -433,7 +433,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(forecast == null)
 			return;
 
-		Common.LogMessage("loadWebviewContent()", true);
+		Common.LogMessage("loadWebviewContent()");
 
 		forecast.post(() -> forecast.loadDataWithBaseURL("file:///android_res/drawable/", str,
 					"text/html", "utf-8", null));
@@ -498,7 +498,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private void loadWebView()
 	{
-		Common.LogMessage("loadWebView()", true);
+		Common.LogMessage("loadWebView()");
 
 		final StringBuilder sb = new StringBuilder();
 
@@ -532,7 +532,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				case "webpage" ->
 				{
 					updateFLL(View.VISIBLE);
-					Common.LogMessage("Loading RADAR_URL -> " + radarURL, true);
+					Common.LogMessage("Loading RADAR_URL -> " + radarURL);
 
 					loadWebViewURL(radarURL, false);
 
@@ -550,7 +550,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						{
 							if(rtStart + 30 > current_time)
 							{
-								Common.LogMessage("rtStart is less than 30s old, we'll skip this attempt...", true);
+								Common.LogMessage("rtStart is less than 30s old, we'll skip this attempt...");
 
 								sb.append(weeWXApp.getAndroidString(R.string.radar_still_downloading));
 								sb.append(Common.html_footer);
@@ -560,7 +560,7 @@ public class Weather extends Fragment implements View.OnClickListener
 								return;
 							}
 
-							Common.LogMessage("rtStart is 30+s old, we'll interrupt it...", true);
+							Common.LogMessage("rtStart is 30+s old, we'll interrupt it...");
 							radarThread.interrupt();
 						}
 
@@ -977,14 +977,14 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(Common.GetBoolPref("radarforecast", true))
 		{
-			Common.LogMessage("reloadForecast() radarforecast is true, skipping... This line shouldn't be hit...", true);
+			Common.LogMessage("reloadForecast() radarforecast is true, skipping... This line shouldn't be hit...");
 			stopRefreshing();
 			return;
 		}
 
 		if(!Common.checkConnection() && !force)
 		{
-			Common.LogMessage("Not on wifi and not a forced refresh", true);
+			Common.LogMessage("Not on wifi and not a forced refresh");
 			stopRefreshing();
 			return;
 		}
@@ -1001,7 +1001,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		Common.LogMessage("forecast checking: " + forecast_url, true);
+		Common.LogMessage("forecast checking: " + forecast_url);
 
 		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
@@ -1011,11 +1011,11 @@ public class Weather extends Fragment implements View.OnClickListener
 			{
 				if(ftStart + 30 > current_time)
 				{
-					Common.LogMessage("ftStart is less than 30s old, we'll skip this attempt...", true);
+					Common.LogMessage("ftStart is less than 30s old, we'll skip this attempt...");
 					return;
 				}
 
-				Common.LogMessage("ftStart is 30+s old, we'll interrupt it...", true);
+				Common.LogMessage("ftStart is 30+s old, we'll interrupt it...");
 				forecastThread.interrupt();
 			}
 
@@ -1033,12 +1033,12 @@ public class Weather extends Fragment implements View.OnClickListener
 				if(force || forecastData == null || forecastData.isBlank() ||
 						Common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 				{
-					Common.LogMessage("no forecast data or cache is more than 2 hour old or was forced...", true);
+					Common.LogMessage("no forecast data or cache is more than 2 hour old or was forced...");
 
 					String data = Common.downloadForecast();
 					if(data != null && !data.isBlank())
 					{
-						Common.LogMessage("updating rss cache", true);
+						Common.LogMessage("updating rss cache");
 						Common.SetLongPref("rssCheck", current_time);
 						Common.SetStringPref("forecastData", data);
 
@@ -1047,7 +1047,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					Common.LogMessage("Forecast is null or blank, spitting out error to the webview...", true);
+					Common.LogMessage("Forecast is null or blank, spitting out error to the webview...");
 					String html = Common.current_html_headers +
 					              weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_or_download) +
 					              Common.html_footer;
@@ -1073,28 +1073,28 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(!Common.GetBoolPref("radarforecast", true))
 		{
-			Common.LogMessage("This shouldn't have happened!", true);
+			Common.LogMessage("This shouldn't have happened!");
 			return;
 		}
 
 		if(!Common.checkConnection() && !force)
 		{
-			Common.LogMessage("Not on wifi and not a forced refresh", true);
+			Common.LogMessage("Not on wifi and not a forced refresh");
 			return;
 		}
 
-		Common.LogMessage("Reload radar...", true);
+		Common.LogMessage("Reload radar...");
 		final String radar = Common.GetStringPref("RADAR_URL", "");
 		if(radar == null || radar.isBlank())
 		{
-			Common.LogMessage("radar_url is null or blank...", true);
+			Common.LogMessage("radar_url is null or blank...");
 			return;
 		}
 
 		String radtype = Common.GetStringPref("radtype", "image");
 		if(radtype == null || !radtype.equals("image"))
 		{
-			Common.LogMessage("This shouldn't have happened! radtype is null or blank...", true);
+			Common.LogMessage("This shouldn't have happened! radtype is null or blank...");
 			return;
 		}
 
@@ -1108,11 +1108,11 @@ public class Weather extends Fragment implements View.OnClickListener
 			{
 				if(rtStart + 30 > current_time)
 				{
-					Common.LogMessage("ftStart is less than 30s old, we'll skip this attempt...", true);
+					Common.LogMessage("ftStart is less than 30s old, we'll skip this attempt...");
 					return;
 				}
 
-				Common.LogMessage("ftStart is 30+s old, we'll interrupt it...", true);
+				Common.LogMessage("ftStart is 30+s old, we'll interrupt it...");
 				radarThread.interrupt();
 			}
 
@@ -1125,7 +1125,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		{
 			try
 			{
-				Common.LogMessage("Starting to download image from: " + radar, true);
+				Common.LogMessage("Starting to download image from: " + radar);
 
 				File file = Common.getFile("radar.gif");
 
@@ -1134,13 +1134,13 @@ public class Weather extends Fragment implements View.OnClickListener
 					String html = Common.current_html_headers +
 					              weeWXApp.getAndroidString(R.string.radar_download_failed) +
 					              Common.html_footer;
-					Common.LogMessage("Failed to download radar image", true);
+					Common.LogMessage("Failed to download radar image");
 					loadWebViewContent(html);
 					rtStart = 0;
 					return;
 				}
 
-				Common.LogMessage("done downloading " + file.getAbsolutePath() + ", prompt handler to draw to movie", true);
+				Common.LogMessage("done downloading " + file.getAbsolutePath() + ", prompt handler to draw to movie");
 				loadWebView();
 			} catch(Exception e) {
 				Common.doStackOutput(e);
@@ -1163,7 +1163,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		isVisible = true;
 
-		Common.LogMessage("Weather.onResume() -- updating the value of the floating checkbox...", true);
+		Common.LogMessage("Weather.onResume() -- updating the value of the floating checkbox...");
 		disableSwipeOnRadar = Common.GetBoolPref("disableSwipeOnRadar", false);
 		floatingCheckBox.post(() -> floatingCheckBox.setChecked(disableSwipeOnRadar));
 

@@ -4285,7 +4285,7 @@ class Common
 	{
 		if(url == null || url.isBlank())
 		{
-			Common.LogMessage("url is null or blank, bailing out...", true);
+			Common.LogMessage("url is null or blank, bailing out...");
 			throw new myIOException("url is null or blank, bailing out...");
 		}
 
@@ -4314,7 +4314,7 @@ class Common
 
 		if(tmpfile.exists() && !tmpfile.delete())
 		{
-			Common.LogMessage("tmpfile " + tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...", true);
+			Common.LogMessage("tmpfile " + tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...");
 			throw new IOException(tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...");
 		}
 
@@ -4368,7 +4368,7 @@ class Common
 
 			ByteArrayInputStream bais = new ByteArrayInputStream(imageBytes);
 			bm = BitmapFactory.decodeStream(bais);
-			Common.LogMessage("Got an image... wooo!", true);
+			Common.LogMessage("Got an image... wooo!");
 		} finally {
 			if(urlStream != null)
 				urlStream.close();
@@ -4394,7 +4394,7 @@ class Common
 				throw new IOException("HTTP error " + response);
 
 			output = response.body().string();
-			Common.LogMessage("Got text data... wooo!", true);
+			Common.LogMessage("Got text data... wooo!");
 			if(!output.isBlank())
 				return output;
 		}

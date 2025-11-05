@@ -257,7 +257,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(Common.GetBoolPref("radarforecast", true))
 		{
-			Common.LogMessage("This line in loadRadar() shouldn't be hit...", true);
+			Common.LogMessage("This line in loadRadar() shouldn't be hit...");
 			return;
 		}
 

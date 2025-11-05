@@ -147,7 +147,7 @@ public class Stats extends Fragment
 
 		final int finalZoom = sanitiseZoom(zoom);
 
-		Common.LogMessage("new zoom value = " + finalZoom + "%", true);
+		Common.LogMessage("new zoom value = " + finalZoom + "%");
 
 		mySlider.post(() -> mySlider.setValue(finalZoom));
 		wv.post(() -> wv.getSettings().setTextZoom(finalZoom));
@@ -169,7 +169,7 @@ public class Stats extends Fragment
 		if(default_zoom != (int)mySlider.getValue())
 		{
 			setZoom(default_zoom);
-			Common.LogMessage("default_zoom: " + default_zoom + "%", true);
+			Common.LogMessage("default_zoom: " + default_zoom + "%");
 		}
 
 		updateFields();
@@ -206,7 +206,7 @@ public class Stats extends Fragment
 	{
 		cur = cur.trim();
 
-		Common.LogMessage("Old cur: " + cur, true);
+		Common.LogMessage("Old cur: " + cur);
 
 		String[] time = cur.split(":");
 		cur = time[0];
@@ -215,7 +215,7 @@ public class Stats extends Fragment
 		if(cur.length() > 1 && cur.startsWith("0"))
 			cur = cur.substring(1);
 
-		Common.LogMessage("New cur: " + cur, true);
+		Common.LogMessage("New cur: " + cur);
 
 		return cur;
 	}
@@ -751,11 +751,11 @@ public class Stats extends Fragment
 			{
 				if(stStart + 30 > current_time)
 				{
-					Common.LogMessage("stStart is less than 30s old, we'll skip this attempt...", true);
+					Common.LogMessage("stStart is less than 30s old, we'll skip this attempt...");
 					return;
 				}
 
-				Common.LogMessage("rtStart is 30+s old, we'll interrupt it...", true);
+				Common.LogMessage("rtStart is 30+s old, we'll interrupt it...");
 				statsThread.interrupt();
 			}
 

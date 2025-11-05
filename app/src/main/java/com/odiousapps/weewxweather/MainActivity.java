@@ -502,16 +502,16 @@ public class MainActivity extends FragmentActivity
 		customURL.setText(Common.GetStringPref("custom_url", ""));
 		customURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
-			Common.LogMessage("CustomURL has a focus change event...", true);
+			Common.LogMessage("CustomURL has a focus change event...");
 
 			if(!hasFocus)
 			{
-				Common.LogMessage("CustomURL lost focus change event...", true);
+				Common.LogMessage("CustomURL lost focus change event...");
 				closeKeyboard(v);
 				return;
 			}
 
-			Common.LogMessage("CustomURL gained focus change event...", true);
+			Common.LogMessage("CustomURL gained focus change event...");
 
 			final View root = getWindow().getDecorView().getRootView();
 			final ViewTreeObserver.OnGlobalLayoutListener listener = new ViewTreeObserver.OnGlobalLayoutListener()
@@ -525,9 +525,9 @@ public class MainActivity extends FragmentActivity
 					// Now the layout has resized, scroll to the EditText
 					scrollView.postDelayed(() ->
 					{
-						Common.LogMessage("Old scrollY: " + scrollView.getScrollY(), true);
+						Common.LogMessage("Old scrollY: " + scrollView.getScrollY());
 						int scrollY = scrollView.getScrollY() + extraPx;
-						Common.LogMessage("New scrollY: " + scrollY, true);
+						Common.LogMessage("New scrollY: " + scrollY);
 						scrollView.smoothScrollTo(0, Math.max(scrollY, 0));
 					}, 200);
 				}
@@ -614,7 +614,7 @@ public class MainActivity extends FragmentActivity
 					v.setTextColor(KeyValue.fgColour);
 					v.setHintTextColor(KeyValue.fgColour);
 				}
-				default -> Common.LogMessage("Uncaught view type: " + view, true);
+				default -> Common.LogMessage("Uncaught view type: " + view);
 			}
 		}
 
@@ -624,7 +624,7 @@ public class MainActivity extends FragmentActivity
 	{
 		if(gestureNav)
 		{
-			Common.LogMessage("gestureNav == true, show the hamburger menu...",true);
+			Common.LogMessage("gestureNav == true, show the hamburger menu...");
 			if(hamburger.getVisibility() != View.VISIBLE)
 				hamburger.setVisibility(View.VISIBLE);
 		} else {
@@ -659,7 +659,7 @@ public class MainActivity extends FragmentActivity
 		public void onDrawerStateChanged(int newState)
 		{
 			// Optional: detect dragging or settling if you want
-			Common.LogMessage("Drawer state: " + newState, true);
+			Common.LogMessage("Drawer state: " + newState);
 		}
 	};
 
