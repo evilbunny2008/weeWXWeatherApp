@@ -20,8 +20,7 @@
     <string name="show_radar">ရေဒါပြတယ်</string>
     <string name="show_forecast">ခန့်မှန်းချက်ကိုပြသပါ</string>
     <string name="radarforecast">ပင်မမျက်နှာပြင်တွင် -</string>
-    <string name="nav_header_title">Wewx app</string>
-    <string name="radar">ရေဒါ</string>
+	<string name="radar">ရေဒါ</string>
     <string name="custom_url">optional ကို: Custom URL</string>
     <string name="fgColour">ဝစ်ဂျက် foreground အရောင်ကောက်ယူ</string>
     <string name="bgColour">ဝစ်ဂျက်နောက်ခံအရောင်ရွေးသူ</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">ဒေတာ URL သည်ကွက်လပ်ဖြစ်သည်</string>
     <string name="wasnt_able_to_connect_settings">သင်၏ဆာဗာမှ settings ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ပါ</string>
     <string name="url_was_default_or_empty">URL ကို default မှသတ်မှတ်ထားခြင်းသို့မဟုတ်ဗလာဖြစ်သည်</string>
-    <string name="radar_url_not_set">Radar URL သည်မသတ်မှတ်ထားပါသို့မဟုတ်ဒေါင်းလုပ်လုပ်ခြင်းမရှိပါ။ ပြောင်းလဲရန်ချိန်ညှိချက်များသို့သွားနိုင်သည်။</string>
     <string name="wasnt_able_to_connect_or_download">ခန့်မှန်းချက်ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ခဲ့ပါ။</string>
     <string name="swipe_lock">သော့ခတ်ကိုပွတ်ဆွဲပါ</string>
     <string name="widget_theme">ဝစ်ဂျက် Theme</string>
@@ -74,4 +72,7 @@
     <string name="today">ယနေ့တွင်</string>
     <string name="last_year_stats">ပြီးခဲ့သည့်နှစ်ကစာရင်းဇယား</string>
     <string name="last_month_stats">ပြီးခဲ့သည့်လက၏စာရင်းအင်း</string>
+    <string name="radar_url_not_set">radar URL မသတ်မှတ်ပါ ပြောင်းလဲရန်ချိန်ညှိချက်များသို့သွားနိုင်သည်။</string>
+    <string name="radar_still_downloading">ရေဒါပုံရိပ်နေဆဲဒေါင်းလုပ်လုပ်နေသည်။</string>
+    <string name="radar_download_failed">ရေဒါပုံရိပ်ကိုဒေါင်းလုပ်ဆွဲရန်မအောင်မြင်ပါ</string>
 </resources>

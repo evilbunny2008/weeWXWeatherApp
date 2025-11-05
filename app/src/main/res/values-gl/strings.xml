@@ -20,8 +20,7 @@
     <string name="show_radar">Mostrar radar</string>
     <string name="show_forecast">Mostrar previsión</string>
     <string name="radarforecast">Na pantalla principal:</string>
-    <string name="nav_header_title">Aplicación weeWX</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opcional: URL personalizado</string>
     <string name="fgColour">Selector de cores de primeiro plano do widget</string>
     <string name="bgColour">Selector de cor de fondo do widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">O URL dos datos estaba en branco</string>
     <string name="wasnt_able_to_connect_settings">Non se puido conectar nin descargar a configuración do teu servidor</string>
     <string name="url_was_default_or_empty">O URL definiuse como predeterminado ou estaba baleiro</string>
-    <string name="radar_url_not_set">O URL do radar non está definido ou aínda se está descargando. Podes ir á configuración para cambiar</string>
     <string name="wasnt_able_to_connect_or_download">Non se puido conectar nin descargar a previsión</string>
     <string name="swipe_lock">Deslizar o bloqueo</string>
     <string name="widget_theme">Tema do widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Hoxe</string>
     <string name="last_year_stats">Estatística do ano pasado</string>
     <string name="last_month_stats">Estatística do mes pasado</string>
+    <string name="radar_url_not_set">O URL do radar non está definido. Podes ir á configuración para cambiar</string>
+    <string name="radar_still_downloading">A imaxe do radar aínda está descargando</string>
+    <string name="radar_download_failed">Produciuse un erro ao descargar a imaxe do radar</string>
 </resources>

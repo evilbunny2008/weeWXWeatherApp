@@ -20,8 +20,7 @@
     <string name="show_radar">Tampilkan Radar</string>
     <string name="show_forecast">Tampilkan Prakiraan</string>
     <string name="radarforecast">Di layar Utama:</string>
-    <string name="nav_header_title">Aplikasi weeWX</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opsional: URL Khusus</string>
     <string name="fgColour">Pemilih Warna Latar Depan Widget</string>
     <string name="bgColour">Pemilih Warna Latar Belakang Widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL data kosong</string>
     <string name="wasnt_able_to_connect_settings">Tidak dapat menghubungkan atau mengunduh pengaturan dari server Anda</string>
     <string name="url_was_default_or_empty">URL disetel ke default atau kosong</string>
-    <string name="radar_url_not_set">URL radar tidak disetel atau masih diunduh. Anda dapat pergi ke pengaturan untuk mengubahnya</string>
     <string name="wasnt_able_to_connect_or_download">Tidak dapat menghubungkan atau mengunduh ramalan cuaca</string>
     <string name="swipe_lock">Gesek Kunci</string>
     <string name="widget_theme">Tema Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Hari ini</string>
     <string name="last_year_stats">Statistik Tahun Lalu</string>
     <string name="last_month_stats">Statistik Bulan Lalu</string>
+    <string name="radar_url_not_set">URL radar tidak disetel. Anda dapat pergi ke pengaturan untuk mengubahnya</string>
+    <string name="radar_still_downloading">Gambar radar masih diunduh</string>
+    <string name="radar_download_failed">Gagal mengunduh gambar radar</string>
 </resources>

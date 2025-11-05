@@ -20,8 +20,7 @@
     <string name="show_radar">Montre Radaar</string>
     <string name="show_forecast">Montre Previzyon</string>
     <string name="radarforecast">Lo lekran Prensipal:</string>
-    <string name="nav_header_title">wade App</string>
-    <string name="radar">Radat</string>
+	<string name="radar">Radat</string>
     <string name="custom_url">Opsyonnel: URL personnalize</string>
     <string name="fgColour">Pikater avan plan lo kouler</string>
     <string name="bgColour">Pikater Kouler Par deryer</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL lenformasyon ti vid</string>
     <string name="wasnt_able_to_connect_settings">Pa ti kapab konekte oubyen telesarz bann paramet avek ou server</string>
     <string name="url_was_default_or_empty">URL ti ganny mete lo defo oubyen ti vid</string>
-    <string name="radar_url_not_set">URL radar pa met oubyen i ankor pe telesarze. Ou kapab al dan bann paramet pour sanze</string>
     <string name="wasnt_able_to_connect_or_download">Pa ti kapab konekte oubyen telesarz previzyon</string>
     <string name="swipe_lock">Lakors glise</string>
     <string name="widget_theme">Tenm Dezespere</string>
@@ -74,4 +72,7 @@
     <string name="today">Ozordi</string>
     <string name="last_year_stats">Statistik lannen pase</string>
     <string name="last_month_stats">Statistik mwan dernyen</string>
+    <string name="radar_url_not_set">URL radar pa met. Ou kapab al dan bann paramet pour sanze</string>
+    <string name="radar_still_downloading">Zimaz radar i ankor pe telesarz</string>
+    <string name="radar_download_failed">Pa reisi telesarz zimaz radar</string>
 </resources>

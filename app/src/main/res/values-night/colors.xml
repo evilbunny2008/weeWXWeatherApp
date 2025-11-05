@@ -11,18 +11,10 @@
 	<color name="LightGray">#FFE0E0E0</color>
 
 	<!-- Night Colours -->
-	<color name="colorPrimary">@color/White</color>
-	<color name="colorPrimaryDark">@color/MyAppNavBarColour</color>
-	<color name="colorAccent">@color/LightPrussianBlue</color>
-	<color name="colorSecondary">@color/White</color>
-	<color name="colorSecondaryDark">@color/MyAppNavBarColour</color>
-	<color name="splash_background">@color/Black</color>
-	<color name="splash_foreground">@color/White</color>
 	<color name="widgetBackgroundColour">@color/Black</color>
 	<color name="widgetTextColour">@color/White</color>
 	<color name="MyAppNavBarColour">#FF3F51B5</color>
 	<color name="MyAppNavBarTextColour">@color/White</color>
-	<color name="MyTintColour">#C5CAE9</color>
 	<color name="tabIndicatorColor">#FF03A9F4</color>
 	<color name="tabSelectedTextColor">@color/White</color>
 </resources>

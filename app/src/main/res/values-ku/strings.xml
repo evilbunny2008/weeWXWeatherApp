@@ -20,8 +20,7 @@
     <string name="show_radar">Radar nîşan bide</string>
     <string name="show_forecast">Pêşbîniyê nîşan bide</string>
     <string name="radarforecast">Li ser ekrana sereke:</string>
-    <string name="nav_header_title">WeeWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Bijarî: URL-ya xwerû</string>
     <string name="fgColour">Widget Hilbijêra Rengê Pêşî</string>
     <string name="bgColour">Hilbijêra Rengê Paşgira Wîdgetê</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URLa daneyê vala bû</string>
     <string name="wasnt_able_to_connect_settings">Nekarî mîhengan ji servera xwe ve girêbide an dakêşîne</string>
     <string name="url_was_default_or_empty">URL li ser xwerû hate danîn an vala bû</string>
-    <string name="radar_url_not_set">URL-ya radarê nehatiye danîn an hîn jî tê dakêşandin. Hûn dikarin biçin mîhengan ku biguhezînin</string>
     <string name="wasnt_able_to_connect_or_download">Nekarî pêşbîniyê girêbide an dakêşîne</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="widget_theme">Mijara Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Îro</string>
     <string name="last_year_stats">Statîstîkên sala borî</string>
     <string name="last_month_stats">Statîstîkên meha borî</string>
+    <string name="radar_url_not_set">URL-ya radarê nehatiye danîn. Hûn dikarin biçin mîhengan ku biguhezînin</string>
+    <string name="radar_still_downloading">Wêneyê radarê hîna tê daxistin</string>
+    <string name="radar_download_failed">Daxistina wêneya radarê bi ser neket</string>
 </resources>

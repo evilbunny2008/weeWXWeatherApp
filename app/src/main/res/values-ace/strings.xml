@@ -20,8 +20,7 @@
     <string name="show_radar">Peuleumah Radar</string>
     <string name="show_forecast">Peuleumah Peuneugah</string>
     <string name="radarforecast">Bak layar Utama:</string>
-    <string name="nav_header_title">weeWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opsional: URL Reusam</string>
     <string name="fgColour">Widget Pencuri Warna Lintas</string>
     <string name="bgColour">Widget Belakang Warna Warna</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL Data nyan kosong</string>
     <string name="wasnt_able_to_connect_settings">Hana jeuet meuhubong atawa download pengaturan dari server droeneuh</string>
     <string name="url_was_default_or_empty">URL nyan geu-set keu default atawa hana</string>
-    <string name="radar_url_not_set">URL Radar hana set atawa mantong download. Kamoe jeut jak bak setting untuk meu ubah</string>
     <string name="wasnt_able_to_connect_or_download">Hana jeuet meuhubong atawa download ramalan</string>
     <string name="swipe_lock">kunci</string>
     <string name="widget_theme">Tema Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Uronyo</string>
     <string name="last_year_stats">Statistik Thon baroe</string>
     <string name="last_month_stats">Statistik Buleuen nyang keuneulheueh</string>
+    <string name="radar_url_not_set">URL Radar hana set. Kamoe jeut jak bak setting untuk meu ubah</string>
+    <string name="radar_still_downloading">Gambar radar mantong download</string>
+    <string name="radar_download_failed">Digagal download gamba radar</string>
 </resources>

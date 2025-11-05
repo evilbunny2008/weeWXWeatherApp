@@ -20,8 +20,7 @@
     <string name="show_radar">បង្ហាញរ៉ាដា</string>
     <string name="show_forecast">បង្ហាញការព្យាករណ៍</string>
     <string name="radarforecast">នៅលើអេក្រង់មេ:</string>
-    <string name="nav_header_title">កម្មវិធី Weewx</string>
-    <string name="radar">រ៉ាដារ</string>
+	<string name="radar">រ៉ាដារ</string>
     <string name="custom_url">ជម្រើស: URL ផ្ទាល់ខ្លួន</string>
     <string name="fgColour">អ្នករើសពណ៌ផ្ទៃខាងមុខធាតុក្រាហ្វិក</string>
     <string name="bgColour">ឧបករណ៍ជ្រើសរើសពណ៌ផ្ទៃខាងក្រោយធាតុក្រាហ្វិក</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL ទិន្នន័យគឺទទេ</string>
     <string name="wasnt_able_to_connect_settings">មិនអាចភ្ជាប់ឬទាញយកការកំណត់ពីម៉ាស៊ីនមេរបស់អ្នកបានទេ</string>
     <string name="url_was_default_or_empty">URL ត្រូវបានកំណត់ទៅលំនាំដើមឬទទេ</string>
-    <string name="radar_url_not_set">URL រ៉ាដាមិនបានកំណត់ឬកំពុងទាញយកនៅឡើយទេ។ អ្នកអាចទៅការកំណត់ដើម្បីផ្លាស់ប្តូរ។</string>
     <string name="wasnt_able_to_connect_or_download">មិនអាចភ្ជាប់ឬទាញយកការព្យាករណ៍បានទេ។</string>
     <string name="swipe_lock">ចាក់សោអូស</string>
     <string name="widget_theme">ស្បែកធាតុក្រាហ្វិក</string>
@@ -74,4 +72,7 @@
     <string name="today">ថៃនេហ</string>
     <string name="last_year_stats">ស្ថិតិកាលពីឆ្នាំមុន</string>
     <string name="last_month_stats">ស្ថិតិកាលពីខែមុន</string>
+    <string name="radar_url_not_set">URL រ៉ាដាមិនបានកំណត់ទេ។ អ្នកអាចទៅការកំណត់ដើម្បីផ្លាស់ប្តូរ។</string>
+    <string name="radar_still_downloading">រូបភាពរ៉ាដានៅតែកំពុងទាញយក។</string>
+    <string name="radar_download_failed">បានបរាជ័យក្នុងការទាញយករូបភាពរ៉ាដា</string>
 </resources>

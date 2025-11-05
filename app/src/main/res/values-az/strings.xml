@@ -20,8 +20,7 @@
     <string name="show_radar">Radar göstərmək</string>
     <string name="show_forecast">Proqnozu göstərmək</string>
     <string name="radarforecast">Əsas ekranda:</string>
-    <string name="nav_header_title">weewx tətbiqi</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">İsteğe bağlı: Xüsusi URL</string>
     <string name="fgColour">Widget ön rəng seçici</string>
     <string name="bgColour">Widget fon rəng seçicisi</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Məlumat URL boş idi</string>
     <string name="wasnt_able_to_connect_settings">Parametrləri serverinizdən qoşmaq və ya yükləyə bilmədi</string>
     <string name="url_was_default_or_empty">URL standart olaraq təyin edildi və ya boş idi</string>
-    <string name="radar_url_not_set">Radar URL qurulmadı və ya hələ də yüklənmir. Dəyişdirmək üçün parametrlərə gedə bilərsiniz</string>
     <string name="wasnt_able_to_connect_or_download">Proqnozu bağlaya və ya yükləyə bilmədi</string>
     <string name="swipe_lock">Sürmək</string>
     <string name="widget_theme">Vidjet mövzusu</string>
@@ -74,4 +72,7 @@
     <string name="today">Bu gün</string>
     <string name="last_year_stats">Keçən il statistikası</string>
     <string name="last_month_stats">Keçən ay statistikası</string>
+    <string name="radar_url_not_set">Radar URL qurulmadı. Dəyişdirmək üçün parametrlərə gedə bilərsiniz</string>
+    <string name="radar_still_downloading">Radar görüntüsü hələ də yüklənir</string>
+    <string name="radar_download_failed">Radar görüntüsünü yükləyə bilmədi</string>
 </resources>

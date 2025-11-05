@@ -1,7 +1,7 @@
 package com.odiousapps.weewxweather;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +17,6 @@ import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.util.Locale;
 
 import androidx.annotation.NonNull;
@@ -26,14 +25,12 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-
-import static java.lang.Math.round;
-
-@SuppressWarnings("ResultOfMethodCallIgnored")
 public class Weather extends Fragment implements View.OnClickListener
 {
-	private boolean isVisible = false;
-	private boolean isRunning = false;
+	private boolean isVisible;
+	private String lastURL;
+	private Thread forecastThread, radarThread;
+	private long ftStart, rtStart;
 	private WebView current, forecast;
 	private SwipeRefreshLayout swipeLayout;
 	private MaterialCheckBox floatingCheckBox;
@@ -85,8 +82,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	}
 
 	private WebView loadWebview(WebView webView, View view, int viewid,
-	                            boolean doSwipe, boolean setOnPageFinished,
-	                            boolean dynamicSizing)
+	                            boolean doSwipe, boolean dynamicSizing)
 	{
 		boolean wasNull = webView == null;
 
@@ -103,36 +99,34 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(doSwipe)
 			webView.getViewTreeObserver().addOnScrollChangedListener(scl);
 
-		if(setOnPageFinished)
+		webView.setWebViewClient(new WebViewClient()
 		{
-			webView.setWebViewClient(new WebViewClient()
+			@Override
+			public void onPageFinished(WebView wv, String url)
 			{
-				@Override
-				public void onPageFinished(WebView wv, String url)
-				{
-					super.onPageFinished(wv, url);
-					Common.LogMessage(wv.getTitle() + " onPageFinished()");
-					stopRefreshing();
+				super.onPageFinished(wv, url);
 
-					if(dynamicSizing)
+				if(dynamicSizing)
+				{
+					Common.LogMessage("dynamicSizing is true...", true);
+					// Post a Runnable to make sure contentHeight is available
+					view.postDelayed(() ->
 					{
-						Common.LogMessage("dynamicSizing is true...");
-						// Post a Runnable to make sure contentHeight is available
-						view.postDelayed(() ->
-						{
-							float density =  weeWXApp.getDensity();
-							int contentHeightPx = tv1.getHeight() + tv2.getHeight() +
-							                      (int)(wv.getContentHeight() * density);
-							ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
-							params.height = contentHeightPx; // - (int)(5 * density);
-							swipeLayout.setLayoutParams(params);
-							Common.LogMessage("New Height: " + contentHeightPx);
-							//current.setLayoutParams(params);
-						}, 100); // 100ms delay lets the page finish rendering
-					}
+						float density =  weeWXApp.getDensity();
+						int contentHeightPx = tv1.getHeight() + tv2.getHeight() +
+						                      (int)(wv.getContentHeight() * density);
+						ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
+						params.height = contentHeightPx; // - (int)(5 * density);
+						swipeLayout.setLayoutParams(params);
+						Common.LogMessage("New Height: " + contentHeightPx, true);
+					}, 100); // 100ms delay lets the page finish rendering
 				}
-			});
-		}
+
+				rtStart = ftStart = 0;
+
+				stopRefreshing();
+			}
+		});
 
 		if(wasNull)
 			return webView;
@@ -142,29 +136,28 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	void doInitialLoad(View view, Bundle savedInstanceState)
 	{
-		Common.LogMessage("Weather.doInitialLoad()");
+		Common.LogMessage("Weather.doInitialLoad()", true);
 
 		boolean dynamicSizing = weeWXApp.getHeight() > weeWXApp.getWidth() && weeWXApp.getWidth() < 1100;
 
 		if(current == null)
-			current = loadWebview(null, view, R.id.current, true, true, dynamicSizing);
+			current = loadWebview(null, view, R.id.current, true, dynamicSizing);
 		else
-			loadWebview(current, view, R.id.current, true, true, dynamicSizing);
+			loadWebview(current, view, R.id.current, true, dynamicSizing);
 
 		if(forecast == null)
-			forecast = loadWebview(null, view, R.id.forecast, false, false, false);
+			forecast = loadWebview(null, view, R.id.forecast, false, false);
 		else
-			loadWebview(forecast, view, R.id.forecast, false, false, false);
+			loadWebview(forecast, view, R.id.forecast, false, false);
 
 		if(savedInstanceState != null)
 		{
-			Common.LogMessage("Weather.doInitialLoad() loading from savedInstanceState...");
+			Common.LogMessage("Weather.doInitialLoad() loading from savedInstanceState...", true);
 			current.restoreState(savedInstanceState);
 			forecast.restoreState(savedInstanceState);
 		}
 
 		Common.LogMessage("Weather.doInitialLoad() doing full load...");
-		loadWebView();
 		drawEverything();
 	}
 
@@ -175,6 +168,10 @@ public class Weather extends Fragment implements View.OnClickListener
 		super.onViewCreated(view, savedInstanceState);
 
 		swipeLayout.setRefreshing(true);
+
+		Common.LogMessage("Weather.onViewCreated()-- adding notification manager...");
+		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
+
 		doInitialLoad(view, savedInstanceState);
 	}
 
@@ -196,6 +193,9 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		Common.LogMessage("Weather.onDestroyView()");
 		super.onDestroyView();
+
+		Common.LogMessage("Weather.onDestroyView()-- removing notification manager...");
+		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 
 		if(current != null)
 		{
@@ -220,8 +220,6 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			Common.LogMessage("Weather.onDestroyView() recycled forecast...");
 		}
-
-		isRunning = false;
 	}
 
 	private void checkFields(TextView tv, String txt)
@@ -232,32 +230,48 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	void drawEverything()
 	{
-		String[] bits;
+		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
 		Common.LogMessage("drawEverything()");
 
-		File f2 = new File(Common.getFilesDir(), "/radar.gif");
-		long[] period = Common.getPeriod();
+		if(Common.GetBoolPref("radarforecast", true))
+		{
+			String radarURL = Common.GetStringPref("RADAR_URL", "");
+			if(radarURL == null || radarURL.isBlank())
+				return;
 
-		String radarURL = Common.GetStringPref("RADAR_URL", "");
-		if(radarURL == null)
-			return;
+			String radtype = Common.GetStringPref("radtype", "image");
+			if(radtype == null || radtype.isBlank())
+				return;
 
-		if(!radarURL.isBlank() && f2.lastModified() + period[0] < System.currentTimeMillis())
-			reloadWebView(false);
+			if(radtype.equals("image"))
+			{
+				Common.LogMessage("Update the radar image...");
+				long[] perioda = Common.getPeriod();
+				long period = Math.round(perioda[0] / 1000.0);
 
-		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
-		if(!Common.GetBoolPref("radarforecast", true) && Common.GetLongPref("rssCheck", 0) + 7190 < current_time)
+				int pos = Common.GetIntPref("updateInterval", 1);
+				if(pos < 0)
+					return;
+
+				File f2 = Common.getFile("radar.gif");
+				reloadWebView(Common.getModifiedTime(f2) + period < current_time);
+			} else {
+				Common.LogMessage("Update the radar webview page...");
+				loadWebViewURL(radarURL, false);
+			}
+		} else {
+			Common.LogMessage("Update and/or show the forecast...");
 			reloadForecast(false);
+		}
 
 		Common.LogMessage("updateFields()");
 		String lastDownload = Common.GetStringPref("LastDownload","");
-		if(lastDownload != null && !lastDownload.isBlank())
-		{
-			bits = lastDownload.split("\\|");
-			if(bits.length < 65)
-				return;
-		} else
+		if(lastDownload == null || lastDownload.isBlank())
+			return;
+
+		String[] bits = lastDownload.split("\\|");
+		if(bits.length < 65)
 			return;
 
 		checkFields(tv1, bits[56]);
@@ -338,7 +352,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t</div>\n");
 
-		if(bits.length > 202 && Common.GetBoolPref("showIndoor", false))
+		if(bits.length > 166 && Common.GetBoolPref("showIndoor", false))
 		{
 			sb.append("\t\t<div class='dataRowCurrent'>\n");
 
@@ -378,27 +392,52 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t</div>\n</div>\n");
 
-		CustomDebug.writeDebug("current_weewx.html", sb.toString());
-
 		forceCurrentRefresh(sb.toString());
 	}
 
-	void forceForecastRefresh(String str)
+	void loadWebViewURL(String url, boolean force)
 	{
+		Common.LogMessage("Line 413 loadWebViewURL()  url: " + url, true);
+
+		if(forecast == null)
+		{
+			Common.LogMessage("Line 417 loadWebViewURL() forecast == null, skipping...", true);
+			return;
+		}
+
+		if(url.equals(lastURL))
+		{
+			Common.LogMessage("Line 432 loadWebViewURL() url == lastURL...", true);
+			if(force)
+			{
+				forecast.post(() -> forecast.reload());
+				Common.LogMessage("Line 444 loadWebViewURL() loadWebViewURL() forecast.reload()", true);
+			}
+
+			return;
+		}
+
+		lastURL = url;
+
+		Common.LogMessage("Line 455 loadWebViewURL() post lastURL check...", true);
+
+		forecast.post(() -> forecast.loadUrl(url));
+		Common.LogMessage("Line 469 loadWebViewURL() url: " + url + " should have loaded...", true);
+		stopRefreshing();
+	}
+
+	void loadWebViewContent(String str)
+	{
+		Common.LogMessage("str == " + str);
+
 		if(forecast == null)
 			return;
 
-		Common.LogMessage("forceForecastRefresh()");
+		Common.LogMessage("loadWebviewContent()", true);
 
-		forecast.post(() ->
-		{
-			Common.LogMessage("forecast.post()");
-			forecast.clearFormData();
-			forecast.clearHistory();
-			forecast.clearCache(true);
-			forecast.loadDataWithBaseURL("file:///android_res/drawable/", str,
-					"text/html", "utf-8", null);
-		});
+		forecast.post(() -> forecast.loadDataWithBaseURL("file:///android_res/drawable/", str,
+					"text/html", "utf-8", null));
+		stopRefreshing();
 	}
 
 	void forceCurrentRefresh(String body)
@@ -413,7 +452,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		String str = Common.current_html_headers + body;
 
-		if(Common.debug_on || Common.web_debug_on)
+		if(Common.web_debug_on)
 			str += Common.debug_html;
 
 		str += Common.html_footer;
@@ -423,9 +462,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		current.post(() ->
 		{
 			Common.LogMessage("current.post()");
-			current.clearFormData();
-			current.clearHistory();
-			current.clearCache(true);
 			current.loadDataWithBaseURL("file:///android_res/drawable/", html_str,
 					"text/html", "utf-8", null);
 		});
@@ -435,363 +471,495 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		Common.LogMessage("forceRefresh()");
 		Common.getWeather();
-		reloadWebView(true);
-		reloadForecast(true);
+
+		if(Common.GetBoolPref("radarforecast", true))
+		{
+			String radtype = Common.GetStringPref("radtype", "image");
+			if(radtype != null && radtype.equals("image"))
+			{
+				reloadWebView(true);
+			} else {
+				String radarURL = Common.GetStringPref("RADAR_URL", "image");
+				if(radarURL == null || radarURL.isBlank())
+				{
+					String html = Common.current_html_headers +
+					              weeWXApp.getAndroidString(R.string.radar_url_not_set) +
+					              Common.html_footer;
+					loadWebViewContent(html);
+					return;
+				}
+
+				loadWebViewURL(radarURL, true);
+			}
+		} else {
+			reloadForecast(true);
+		}
 	}
 
 	private void loadWebView()
 	{
-		Common.LogMessage("loadWebView()");
-		Thread t = new Thread(() ->
-		{
-			final StringBuilder sb = new StringBuilder();
-			sb.append(Common.current_html_headers);
+		Common.LogMessage("loadWebView()", true);
 
-			if(Common.GetBoolPref("radarforecast", true))
+		final StringBuilder sb = new StringBuilder();
+
+		sb.append(Common.current_html_headers);
+
+		String radtype = Common.GetStringPref("radtype", "image");
+		if(radtype == null || radtype.isBlank())
+		{
+			sb.append(weeWXApp.getAndroidString(R.string.radar_url_not_set));
+			sb.append(Common.html_footer);
+			loadWebViewContent(sb.toString());
+
+			return;
+		}
+
+		if(Common.GetBoolPref("radarforecast", true))
+		{
+			String radarURL = Common.GetStringPref("RADAR_URL", "");
+			if(radarURL == null || radarURL.isBlank())
 			{
-				String radtype = Common.GetStringPref("radtype", "image");
-				if(radtype == null)
+				sb.append(weeWXApp.getAndroidString(R.string.radar_url_not_set));
+				sb.append(Common.html_footer);
+
+				loadWebViewContent(sb.toString());
+
+				return;
+			}
+
+			switch(radtype)
+			{
+				case "webpage" ->
 				{
-					stopRefreshing();
+					updateFLL(View.VISIBLE);
+					Common.LogMessage("Loading RADAR_URL -> " + radarURL, true);
+
+					loadWebViewURL(radarURL, false);
+
 					return;
 				}
-
-				updateSwipe();
-
-				switch(radtype)
+				case "image" ->
 				{
-					case "webpage" ->
-					{
-						if(fll.getVisibility() != View.VISIBLE)
-							fll.post(() -> fll.setVisibility(View.VISIBLE));
+					updateFLL(View.GONE);
 
-						String radar_url = Common.GetStringPref("RADAR_URL", "");
-						if(radar_url == null)
+					long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+
+					if(radarThread != null)
+					{
+						if(radarThread.isAlive())
 						{
-							stopRefreshing();
-							return;
+							if(rtStart + 30 > current_time)
+							{
+								Common.LogMessage("rtStart is less than 30s old, we'll skip this attempt...", true);
+
+								sb.append(weeWXApp.getAndroidString(R.string.radar_still_downloading));
+								sb.append(Common.html_footer);
+
+								loadWebViewContent(sb.toString());
+
+								return;
+							}
+
+							Common.LogMessage("rtStart is 30+s old, we'll interrupt it...", true);
+							radarThread.interrupt();
 						}
 
-						Common.LogMessage("Loading RADAR_URL -> " + radar_url);
-						if(forecast != null)
-							forecast.post(() -> forecast.loadUrl(radar_url));
-
-						stopRefreshing();
-						return;
+						radarThread = null;
 					}
-					case "image" ->
+
+					rtStart = current_time;
+
+					radarThread = new Thread(() ->
 					{
-						if(fll.getVisibility() != View.GONE)
-							fll.post(() -> fll.setVisibility(View.GONE));
+						File myFile = Common.getFile("radar.gif");
 
-						String radarURL = Common.GetStringPref("RADAR_URL", "");
-						if(radarURL == null)
-						{
-							stopRefreshing();
-							return;
-						}
-
-						String radar = Common.getFilesDir() + "/radar.gif";
-
-						File myFile = new File(radar);
 						Common.LogMessage("myFile == " + myFile.getAbsolutePath());
 						Common.LogMessage("myFile.exists() == " + myFile.exists());
 
-						if(!myFile.exists() || radarURL.isBlank())
+						Bitmap bm = null;
+
+						try
 						{
-							sb.append(getString(R.string.radar_url_not_set));
-						} else {
-							try
-							{
-								File f = new File(radar);
-								try (FileInputStream imageInFile = new FileInputStream(f))
-								{
-									byte[] imageData = new byte[(int) f.length()];
-									if(imageInFile.read(imageData) > 0)
-										radar = "data:image/jpeg;base64," +
-										        Base64.encodeToString(imageData, Base64.DEFAULT)
-												        .replaceAll("\n", "")
-												        .replaceAll("\r", "")
-												        .replaceAll("\t", "");
-								} catch(Exception e) {
-									Common.doStackOutput(e);
-								}
-							} catch(Exception e)
-							{
-								Common.doStackOutput(e);
-							}
-
-							sb.append("\n\t<img class='radarImage' alt='Radar Image' src='")
-									.append(radar).append("' />\n\n");
+							bm = Common.loadOrDownloadImage(radarURL, "radar.gif", false);
+						} catch(Exception e) {
+							Common.doStackOutput(e);
 						}
-					}
-					default -> sb.append("Radar URL not set or is still downloading. You can go to settings to change.");
-				}
-			} else {
-				if(fll.getVisibility() != View.GONE)
-					fll.post(() -> fll.setVisibility(View.GONE));
 
-				updateSwipe();
+						if(bm != null)
+							sb.append("\n\t<img class='radarImage' alt='Radar Image' src='")
+									.append(Common.toBase64(Common.bitmapToBytes(bm)))
+									.append("' />\n\n");
+						else
+							sb.append("\n\t").append(weeWXApp.getAndroidString(R.string.radar_download_failed)).append("\n\n");
 
-				String fctype = Common.GetStringPref("fctype", "Yahoo");
-				if(fctype == null || fctype.isBlank())
-				{
-					stopRefreshing();
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+						rtStart = 0;
+					});
+
+					radarThread.start();
+
 					return;
 				}
-
-				String data = Common.GetStringPref("forecastData", "");
-
-				if(weeWXApp.getWidth() > weeWXApp.getHeight())
-					sb.append("\n<div style='margin-top:10px'></div>\n\n");
-
-				if(data == null || data.isBlank())
-				{
-					sb.append("Forecast URL not set or is still downloading. You can go to settings to change.");
-				} else {
-					switch(fctype.toLowerCase(Locale.ENGLISH))
-					{
-						case "yahoo" ->
-						{
-							String[] content = Common.processYahoo(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='purple.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "weatherzone" ->
-						{
-							String[] content = Common.processWZ(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='wz.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "yr.no" ->
-						{
-							String[] content = Common.processYR(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='yrno.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "met.no" ->
-						{
-							String[] content = Common.processMetNO(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='met_no.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "wmo.int" ->
-						{
-							String[] content = Common.processWMO(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='wmo.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "weather.gov" ->
-						{
-							String[] content = Common.processWGOV(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='wgov.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "weather.gc.ca" ->
-						{
-							String[] content = Common.processWCA(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='wca.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "weather.gc.ca-fr" ->
-						{
-							String[] content = Common.processWCAF(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='wca.png' height='29px'/>")
-									.append("</div><").append(content[0]);
-						}
-						case "metoffice.gov.uk" ->
-						{
-							String[] content = Common.processMET(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='met.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "bom.gov.au", "bom2", "bom3" ->
-						{
-							String[] content;
-							if(fctype.toLowerCase(Locale.ENGLISH).equals("bom3"))
-								content = Common.processBOM3(data);
-							else if(fctype.toLowerCase(Locale.ENGLISH).equals("bom2"))
-								content = Common.processBOM2(data);
-							else
-								content = Common.processBOM(data);
-
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("\n<div style='text-align:center'>\n\t");
-							if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
-								sb.append("<img src='bom.png' style='filter:invert(1);' height='29px' />");
-							else
-								sb.append("<img src='bom.png' height='29px' />");
-							sb.append("\n</div>\n").append(content[0]);
-						}
-						case "aemet.es" ->
-						{
-							String[] content = Common.processAEMET(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='aemet.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "dwd.de" ->
-						{
-							String[] content = Common.processDWD(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='dwd.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "metservice.com" ->
-						{
-							String[] content = Common.processMetService(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='metservice.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "openweathermap.org" ->
-						{
-							String[] content = Common.processOWM(data);
-							if(content == null || content.length == 0)
-								return;
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='owm.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "weather.com" ->
-						{
-							String[] content = Common.processWCOM(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='weather_com.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "met.ie" ->
-						{
-							String[] content = Common.processMETIE(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='met_ie.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-						case "tempoitalia.it" ->
-						{
-							String[] content = Common.processTempoItalia(data);
-							if(content == null || content.length == 0)
-							{
-								stopRefreshing();
-								return;
-							}
-
-							sb.append("<div style='text-align:center'>")
-									.append("<img src='tempoitalia_it.png' height='29px'/>")
-									.append("</div>\n").append(content[0]);
-						}
-					}
-				}
+				default -> sb.append(weeWXApp.getAndroidString(R.string.radar_download_failed));
 			}
 
 			sb.append(Common.html_footer);
 
-			String str = sb.toString();
-			//CustomDebug.writeDebug("webview_weewx.html", str);
+			loadWebViewContent(sb.toString());
 
-			forceForecastRefresh(str);
-		});
+		} else {
 
-		t.start();
+			updateFLL(View.GONE);
+
+			String fctype = Common.GetStringPref("fctype", "Yahoo");
+			if(fctype == null || fctype.isBlank())
+			{
+				sb.append(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid));
+				sb.append(Common.html_footer);
+
+				loadWebViewContent(sb.toString());
+
+				return;
+			}
+
+			String data = Common.GetStringPref("forecastData", "");
+
+			if(weeWXApp.getWidth() > weeWXApp.getHeight())
+				sb.append("\n<div style='margin-top:10px'></div>\n\n");
+
+			if(data == null || data.isBlank())
+			{
+				sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+				sb.append(Common.html_footer);
+
+				loadWebViewContent(sb.toString());
+
+				return;
+			}
+
+			switch(fctype.toLowerCase(Locale.ENGLISH))
+			{
+				case "yahoo" ->
+				{
+					String[] content = Common.processYahoo(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='purple.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "weatherzone" ->
+				{
+					String[] content = Common.processWZ(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='wz.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "yr.no" ->
+				{
+					String[] content = Common.processYR(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='yrno.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "met.no" ->
+				{
+					String[] content = Common.processMetNO(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='met_no.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "wmo.int" ->
+				{
+					String[] content = Common.processWMO(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='wmo.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "weather.gov" ->
+				{
+					String[] content = Common.processWGOV(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='wgov.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "weather.gc.ca" ->
+				{
+					String[] content = Common.processWCA(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='wca.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "weather.gc.ca-fr" ->
+				{
+					String[] content = Common.processWCAF(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='wca.png' height='29px'/>")
+							.append("</div><")
+							.append(content[0]);
+				}
+				case "metoffice.gov.uk" ->
+				{
+					String[] content = Common.processMET(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='met.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "bom2", "bom3" ->
+				{
+					String[] content = null;
+					if(fctype.toLowerCase(Locale.ENGLISH).equals("bom3"))
+						content = Common.processBOM3(data);
+					else if(fctype.toLowerCase(Locale.ENGLISH).equals("bom2"))
+						content = Common.processBOM2(data);
+
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("\n<div style='text-align:center'>\n\t");
+					if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
+						sb.append("<img src='bom.png' style='filter:invert(1);' height='29px' />");
+					else
+						sb.append("<img src='bom.png' height='29px' />");
+					sb.append("\n</div>\n").append(content[0]);
+				}
+				case "aemet.es" ->
+				{
+					String[] content = Common.processAEMET(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='aemet.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "dwd.de" ->
+				{
+					String[] content = Common.processDWD(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='dwd.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "metservice.com" ->
+				{
+					String[] content = Common.processMetService(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='metservice.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "openweathermap.org" ->
+				{
+					String[] content = Common.processOWM(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='owm.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "weather.com" ->
+				{
+					String[] content = Common.processWCOM(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='weather_com.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "met.ie" ->
+				{
+					String[] content = Common.processMETIE(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='met_ie.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+				case "tempoitalia.it" ->
+				{
+					String[] content = Common.processTempoItalia(data);
+					if(content == null || content.length == 0)
+					{
+						sb.append(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast));
+						sb.append(Common.html_footer);
+
+						loadWebViewContent(sb.toString());
+
+						return;
+					}
+
+					sb.append("<div style='text-align:center'>")
+							.append("<img src='tempoitalia_it.png' height='29px'/>")
+							.append("</div>\n")
+							.append(content[0]);
+				}
+			}
+		}
+
+		sb.append(Common.html_footer);
+
+		loadWebViewContent(sb.toString());
 	}
 
 	private void stopRefreshing()
@@ -800,12 +968,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(!swipeLayout.isRefreshing())
 			return;
 
-		if(current != null)
-			current.post(() -> current.reload());
-
-		if(forecast != null)
-			forecast.post(() -> forecast.reload());
-
 		swipeLayout.post(() -> swipeLayout.setRefreshing(false));
 	}
 
@@ -813,54 +975,96 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		Common.LogMessage("reloadForecast()");
 
-		if(Common.GetBoolPref("radarforecast", true) || (!Common.checkConnection() && !force))
+		if(Common.GetBoolPref("radarforecast", true))
 		{
+			Common.LogMessage("reloadForecast() radarforecast is true, skipping... This line shouldn't be hit...", true);
 			stopRefreshing();
 			return;
 		}
 
-		final String forecast_url = Common.GetStringPref("FORECAST_URL", "");
+		if(!Common.checkConnection() && !force)
+		{
+			Common.LogMessage("Not on wifi and not a forced refresh", true);
+			stopRefreshing();
+			return;
+		}
 
+		String forecast_url = Common.GetStringPref("FORECAST_URL", "");
 		if(forecast_url == null || forecast_url.isBlank())
 		{
-			final String html = Common.current_html_headers + "Forecast URL not set. Edit inigo-settings.txt to change." + Common.html_footer;
-			forceForecastRefresh(html);
+			String html = Common.current_html_headers +
+			              weeWXApp.getAndroidString(R.string.forecast_url_not_set) +
+			              Common.html_footer;
+
+			loadWebViewContent(html);
 
 			return;
 		}
 
-		Common.LogMessage("forecast checking: " + forecast_url);
+		Common.LogMessage("forecast checking: " + forecast_url, true);
 
-		Thread t = new Thread(() ->
+		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+
+		if(forecastThread != null)
+		{
+			if(forecastThread.isAlive())
+			{
+				if(ftStart + 30 > current_time)
+				{
+					Common.LogMessage("ftStart is less than 30s old, we'll skip this attempt...", true);
+					return;
+				}
+
+				Common.LogMessage("ftStart is 30+s old, we'll interrupt it...", true);
+				forecastThread.interrupt();
+			}
+
+			forecastThread = null;
+		}
+
+		ftStart = current_time;
+
+		forecastThread = new Thread(() ->
 		{
 			try
 			{
 				String forecastData = Common.GetStringPref("forecastData", "");
 
-				long current_time = round(System.currentTimeMillis() / 1000.0);
-
-				if(forecastData == null || forecastData.isBlank() ||
-						Common.GetLongPref("rssCheck", 0) + 7190 < current_time ||
-						force)
+				if(force || forecastData == null || forecastData.isBlank() ||
+						Common.GetLongPref("rssCheck", 0) + 7190 < current_time)
 				{
-					Common.LogMessage("no forecast data or cache is more than 2 hour old or was forced...");
+					Common.LogMessage("no forecast data or cache is more than 2 hour old or was forced...", true);
 
-					String tmp = Common.downloadForecast();
-					if(tmp != null)
+					String data = Common.downloadForecast();
+					if(data != null && !data.isBlank())
 					{
-						Common.LogMessage("updating rss cache");
+						Common.LogMessage("updating rss cache", true);
 						Common.SetLongPref("rssCheck", current_time);
-						Common.SetStringPref("forecastData", tmp);
+						Common.SetStringPref("forecastData", data);
 
 						loadWebView();
+
+						return;
 					}
+
+					Common.LogMessage("Forecast is null or blank, spitting out error to the webview...", true);
+					String html = Common.current_html_headers +
+					              weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_or_download) +
+					              Common.html_footer;
+					loadWebViewContent(html);
+					ftStart = 0;
+					return;
 				}
+
+				loadWebView();
 			} catch(Exception e) {
 				Common.doStackOutput(e);
 			}
+
+			ftStart = 0;
 		});
 
-		t.start();
+		forecastThread.start();
 	}
 
 	private void reloadWebView(boolean force)
@@ -869,55 +1073,83 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(!Common.GetBoolPref("radarforecast", true))
 		{
-			stopRefreshing();
+			Common.LogMessage("This shouldn't have happened!", true);
 			return;
 		}
 
 		if(!Common.checkConnection() && !force)
 		{
-			Common.LogMessage("Not on wifi and not a forced refresh");
-			stopRefreshing();
+			Common.LogMessage("Not on wifi and not a forced refresh", true);
 			return;
 		}
 
-		Common.LogMessage("reload radar...");
+		Common.LogMessage("Reload radar...", true);
 		final String radar = Common.GetStringPref("RADAR_URL", "");
-
 		if(radar == null || radar.isBlank())
 		{
-			loadWebView();
+			Common.LogMessage("radar_url is null or blank...", true);
 			return;
 		}
 
-		Thread t = new Thread(() ->
+		String radtype = Common.GetStringPref("radtype", "image");
+		if(radtype == null || !radtype.equals("image"))
 		{
-			String radtype = Common.GetStringPref("radtype", "image");
-			if(radtype != null && radtype.equals("webpage") && fll.getVisibility() != View.VISIBLE)
-				fll.post(() -> fll.setVisibility(View.VISIBLE));
+			Common.LogMessage("This shouldn't have happened! radtype is null or blank...", true);
+			return;
+		}
 
-			updateSwipe();
+		updateFLL(View.GONE);
 
-			try
+		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+
+		if(radarThread != null)
+		{
+			if(radarThread.isAlive())
 			{
-				Common.LogMessage("starting to download image from: " + radar);
-				File f = Common.downloadRADAR(radar);
-				if(f == null || f.length() == 0)
+				if(rtStart + 30 > current_time)
 				{
-					Common.LogMessage("failed to download radar image");
-					stopRefreshing();
+					Common.LogMessage("ftStart is less than 30s old, we'll skip this attempt...", true);
 					return;
 				}
 
-				Common.LogMessage("done downloading " + f.getAbsolutePath() + ", prompt handler to draw to movie");
-				File f2 = new File(Common.getFilesDir(), "/radar.gif");
-				f.renameTo(f2);
-				stopRefreshing();
+				Common.LogMessage("ftStart is 30+s old, we'll interrupt it...", true);
+				radarThread.interrupt();
+			}
+
+			radarThread = null;
+		}
+
+		rtStart = current_time;
+
+		radarThread = new Thread(() ->
+		{
+			try
+			{
+				Common.LogMessage("Starting to download image from: " + radar, true);
+
+				File file = Common.getFile("radar.gif");
+
+				if(!Common.downloadToFile(file, radar))
+				{
+					String html = Common.current_html_headers +
+					              weeWXApp.getAndroidString(R.string.radar_download_failed) +
+					              Common.html_footer;
+					Common.LogMessage("Failed to download radar image", true);
+					loadWebViewContent(html);
+					rtStart = 0;
+					return;
+				}
+
+				Common.LogMessage("done downloading " + file.getAbsolutePath() + ", prompt handler to draw to movie", true);
+				loadWebView();
 			} catch(Exception e) {
 				Common.doStackOutput(e);
 			}
+
+			rtStart = 0;
 		});
 
-		t.start();
+		radarThread.start();
 	}
 
 	public void onResume()
@@ -931,18 +1163,20 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		isVisible = true;
 
-		Common.LogMessage("Weather.onResume()-- adding notification manager...");
-		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
-
-		Common.LogMessage("Weather.onResume() -- updating the value of the floating checkbox...");
+		Common.LogMessage("Weather.onResume() -- updating the value of the floating checkbox...", true);
 		disableSwipeOnRadar = Common.GetBoolPref("disableSwipeOnRadar", false);
-		floatingCheckBox.setChecked(disableSwipeOnRadar);
-		updateSwipe();
+		floatingCheckBox.post(() -> floatingCheckBox.setChecked(disableSwipeOnRadar));
 
-		if(isRunning)
-			return;
-
-		isRunning = true;
+		if(Common.GetBoolPref("radarforecast", true))
+		{
+			String radtype = Common.GetStringPref("radtype", "image");
+			if(radtype == null || !radtype.equals("image"))
+				loadWebView();
+			else
+				reloadWebView(false);
+		} else {
+			reloadForecast(false);
+		}
 	}
 
 	public void onPause()
@@ -956,10 +1190,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		isVisible = false;
 
-		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 		doPause();
-
-		Common.LogMessage("Weather.onPause()-- removing notification manager...");
 	}
 
 	private final Observer<String> notificationObserver = str ->
@@ -967,11 +1198,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		Common.LogMessage("notificationObserver == " + str);
 
 		if(str.equals(Common.UPDATE_INTENT) || str.equals(Common.REFRESH_INTENT))
-		{
-			reloadWebView(false);
-			reloadForecast(false);
 			drawEverything();
-		}
 
 		if(str.equals(Common.EXIT_INTENT))
 			onPause();
@@ -987,37 +1214,26 @@ public class Weather extends Fragment implements View.OnClickListener
 		}
 	}
 
-	@SuppressWarnings("ConstantConditions")
-	void updateSwipe()
-	{
-		if(!isVisible)
-			return;
-
-		if((disabledSwipe && disableSwipeOnRadar) || (!disabledSwipe && !disableSwipeOnRadar))
-			return;
-
-		if(!disabledSwipe && disableSwipeOnRadar && fll.getVisibility() == View.VISIBLE)
-		{
-			disabledSwipe = true;
-			Common.LogMessage("Disabling swipe between screens...");
-			activity.setUserInputPager(false);
-			return;
-		}
-
-		if(disabledSwipe && !disableSwipeOnRadar)
-		{
-			disabledSwipe = false;
-			Common.LogMessage("Enabling swipe between screens...");
-			activity.setUserInputPager(true);
-		}
-	}
-
 	@Override
 	public void onClick(View view)
 	{
 		disableSwipeOnRadar = floatingCheckBox.isChecked();
 		Common.SetBoolPref("disableSwipeOnRadar", disableSwipeOnRadar);
-		updateSwipe();
+		updateFLL();
 		Common.LogMessage("Forecast.onClick() finished...");
+	}
+
+	private void updateFLL()
+	{
+		activity.setUserInputPager(fll.getVisibility() != View.VISIBLE || !disableSwipeOnRadar);
+	}
+
+	private void updateFLL(int visibility)
+	{
+		if(fll.getVisibility() != visibility)
+		{
+			requireActivity().runOnUiThread(() -> fll.setVisibility(visibility));
+			updateFLL();
+		}
 	}
 }

@@ -20,8 +20,7 @@
     <string name="show_radar">Ohechauka radar</string>
     <string name="show_forecast">Ohechauka pronóstico</string>
     <string name="radarforecast">Pantalla Principal-pe:</string>
-    <string name="nav_header_title">WEEWX app</string>
-    <string name="radar">Radar rehegua</string>
+	<string name="radar">Radar rehegua</string>
     <string name="custom_url">Opcional: URL personalizado</string>
     <string name="fgColour">Widget primer plano color picker</string>
     <string name="bgColour">widget fondo de color rehegua</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL de datos ha\'e kuri en blanco</string>
     <string name="wasnt_able_to_connect_settings">Ndaikatúikuri ombojoaju térã omboguejy umi ñemboheko nde servidor-gui</string>
     <string name="url_was_default_or_empty">URL oñemohendava\'ekue pe default-pe térã oĩ vacío</string>
-    <string name="radar_url_not_set">RADAR URL noñemohendapái térã omboguejy gueteri. Ikatu reho Configuración-pe remoambue hag̃ua</string>
     <string name="wasnt_able_to_connect_or_download">Ndaikatúikuri oñembojoaju térã omboguejy pe pronóstico</string>
     <string name="swipe_lock">Cerradura de swipe</string>
     <string name="widget_theme">Tema de Widget rehegua</string>
@@ -74,4 +72,7 @@
     <string name="today">Ko árape</string>
     <string name="last_year_stats">Estadística ary ohasava\'ekuépe</string>
     <string name="last_month_stats">Estadística jasy ohasava\'ekuépe</string>
+    <string name="radar_url_not_set">RADAR URL NO SET. Ikatu reho Configuración-pe remoambue hag̃ua</string>
+    <string name="radar_still_downloading">Ta\'anga radar omboguejy gueteri</string>
+    <string name="radar_download_failed">Ndohupytýi ojegueru haguã radar ta\'angamýi</string>
 </resources>

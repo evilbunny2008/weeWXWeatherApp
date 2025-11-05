@@ -20,8 +20,7 @@
     <string name="show_radar">Sýna Radar</string>
     <string name="show_forecast">Sýna spá</string>
     <string name="radarforecast">Á aðalskjá:</string>
-    <string name="nav_header_title">weWX app</string>
-    <string name="radar">Ratsjá</string>
+	<string name="radar">Ratsjá</string>
     <string name="custom_url">Valfrjálst: Sérsniðin vefslóð</string>
     <string name="fgColour">Græja forgrunnslitavali</string>
     <string name="bgColour">Bakgrunnslitaval búnaðar</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Gagnaslóð var auð</string>
     <string name="wasnt_able_to_connect_settings">Gat ekki tengst eða hlaðið niður stillingum af þjóninum þínum</string>
     <string name="url_was_default_or_empty">URL var stillt á sjálfgefið eða var tómt</string>
-    <string name="radar_url_not_set">Ratsjárslóð ekki stillt eða er enn að hlaðast niður. Þú getur farið í stillingar til að breyta</string>
     <string name="wasnt_able_to_connect_or_download">Gat ekki tengst eða hlaðið niður spánni</string>
     <string name="swipe_lock">Strjúktu læsingu</string>
     <string name="widget_theme">Græjuþema</string>
@@ -74,4 +72,7 @@
     <string name="today">Í dag</string>
     <string name="last_year_stats">Tölfræði síðasta árs</string>
     <string name="last_month_stats">Tölfræði síðasta mánaðar</string>
+    <string name="radar_url_not_set">Ratsjárslóð ekki stillt. Þú getur farið í stillingar til að breyta</string>
+    <string name="radar_still_downloading">Ratsjármynd er enn að hlaðast niður</string>
+    <string name="radar_download_failed">Mistókst að hlaða niður ratsjármyndinni</string>
 </resources>

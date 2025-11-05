@@ -20,8 +20,7 @@
     <string name="show_radar">Шоу радар</string>
     <string name="show_forecast">Болжолдоо көрсөт</string>
     <string name="radarforecast">Негизги экран жөнүндө:</string>
-    <string name="nav_header_title">Weewx колдонмосу</string>
-    <string name="radar">Радар</string>
+	<string name="radar">Радар</string>
     <string name="custom_url">Кошумча: Custom URL</string>
     <string name="fgColour">Виджет алдыңкы орус Picker</string>
     <string name="bgColour">Виджет фон түсү Пикер</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Маалыматтар URL бош болчу</string>
     <string name="wasnt_able_to_connect_settings">Сервериңизден орнотууларды туташтыра алган жок же жүктөп алган жок</string>
     <string name="url_was_default_or_empty">URL демейки жерге коюлган же бош калган</string>
-    <string name="radar_url_not_set">Radar URL орнотулган эмес же дагы эле жүктөлүүдө. Жөндөөлөргө өзгөртүүгө бара аласыз</string>
     <string name="wasnt_able_to_connect_or_download">Алдын-ала туташа алган жок же жүктөп алууну алган жок</string>
     <string name="swipe_lock">Кулпулоо</string>
     <string name="widget_theme">Виджет темасы</string>
@@ -74,4 +72,7 @@
     <string name="today">Бүгүн</string>
     <string name="last_year_stats">Былтыр статистика</string>
     <string name="last_month_stats">Өткөн айдын статистикасы</string>
+    <string name="radar_url_not_set">Radar URL орнотулган жок. Жөндөөлөргө өзгөртүүгө бара аласыз</string>
+    <string name="radar_still_downloading">Радар сүрөтү дагы эле жүктөлүүдө</string>
+    <string name="radar_download_failed">Радар сүрөтүн жүктөп алган жок</string>
 </resources>

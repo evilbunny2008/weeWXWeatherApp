@@ -20,8 +20,7 @@
     <string name="show_radar">Faaali radar</string>
     <string name="show_forecast">Faaalia vavalo</string>
     <string name="radarforecast">I luga o le lau:</string>
-    <string name="nav_header_title">Weewx app</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Filifiliga: Tiute URL</string>
     <string name="fgColour">Whiteget i luma mai lanu lanu piki</string>
     <string name="bgColour">Widget lanu lanu lanu piki</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Na avanoa faamatalaga URL</string>
     <string name="wasnt_able_to_connect_settings">Le mafai ona fesoʻotaʻi pe download le seti mai lau server</string>
     <string name="url_was_default_or_empty">Na sauni URL i le le mautonu pe gaogao</string>
-    <string name="radar_url_not_set">Raar herl le seti pe o loo download pea. E mafai ona e alu i tulaga e sui ai</string>
     <string name="wasnt_able_to_connect_or_download">Le mafai ona fesoʻotaʻi pe download le vaʻaiga</string>
     <string name="swipe_lock">Swipe loka</string>
     <string name="widget_theme">Whiltget autu</string>
@@ -74,4 +72,7 @@
     <string name="today">Le asō</string>
     <string name="last_year_stats">O le tausaga talu ai</string>
     <string name="last_month_stats">O le masina mulimuli o le masina talu ai</string>
+    <string name="radar_url_not_set">Radar url le seti. E mafai ona e alu i tulaga e sui ai</string>
+    <string name="radar_still_downloading">Ralar ata o loo download pea</string>
+    <string name="radar_download_failed">Le mafai ona download le radar ata</string>
 </resources>

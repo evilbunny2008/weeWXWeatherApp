@@ -2,11 +2,9 @@ package com.odiousapps.weewxweather;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.ColorMatrixColorFilter;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +18,6 @@ import android.widget.TextView;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.util.Locale;
 
 import androidx.annotation.NonNull;
@@ -43,6 +39,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private RotateLayout rl;
 	private MaterialCheckBox floatingCheckBox;
 	private boolean isVisible = false;
+	private Thread t;
 	private boolean disableSwipeOnRadar;
 	private boolean disabledSwipe;
 	private MainActivity activity;
@@ -80,7 +77,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		{
 			swipeLayout2.setRefreshing(true);
 			Common.LogMessage("swipeLayout2.onRefresh();");
-			reloadRadar(true);
+			loadRadar(true);
 		});
 
 		im = rootView.findViewById(R.id.logo);
@@ -189,9 +186,10 @@ public class Forecast extends Fragment implements View.OnClickListener
 			radarWebView.restoreState(savedInstanceState);
 		}
 
-		loadRadar();
+		loadRadar(false);
 		getForecast(false);
 		updateScreen(true);
+		addListeners();
 		stopRefreshing();
 	}
 
@@ -213,6 +211,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		super.onDestroyView();
 
 		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
+		removeListeners();
 
 		if(forecastWebView != null)
 		{
@@ -250,151 +249,81 @@ public class Forecast extends Fragment implements View.OnClickListener
 			swipeLayout2.post(() -> swipeLayout2.setRefreshing(false));
 	}
 
-	private void loadRadar()
+	private void loadRadar(boolean forceDownload)
 	{
+		Bitmap bm;
+		String radar;
 		Common.LogMessage("Forecast.loadRadar()");
 
 		if(Common.GetBoolPref("radarforecast", true))
+		{
+			Common.LogMessage("This line in loadRadar() shouldn't be hit...", true);
 			return;
+		}
 
 		String radarURL = Common.GetStringPref("RADAR_URL", "");
-		if(radarURL == null)
+		if(radarURL == null || radarURL.isBlank())
+		{
+			failedRadarWebViewDownload(R.string.radar_url_not_set, null);
 			return;
+		}
 
 		String radtype = Common.GetStringPref("radtype", "image");
-		if(radtype != null && radtype.equals("image"))
+		if(radtype == null || radtype.isBlank())
 		{
-			String radar = Common.getFilesDir() + "/radar.gif";
-			File rf = new File(radar);
+			failedRadarWebViewDownload(R.string.radar_url_not_set, null);
+			return;
+		}
 
-			if(!rf.exists() && !radarURL.isBlank() && Common.checkConnection())
-			{
-				reloadRadar(true);
-				return;
-			}
-
-			if(!rf.exists() || radarURL.isBlank())
-			{
-				Common.LogMessage("Loading radar image from URL: " + radarURL);
-
-				final String html = Common.current_html_headers +
-						"Radar URL not set or is still downloading. " +
-			            "You can go to settings to change." +
-						Common.html_footer;
-
-				Common.LogMessage("Loading radar page... html: " + html);
-				radarWebView.post(() -> radarWebView.loadDataWithBaseURL(
-						"file:///android_res/drawable/", html,
-						"text/html", "utf-8", null));
-
-				stopRefreshing();
-
-				return;
-			}
-
-			float sd = Resources.getSystem().getDisplayMetrics().density;
-
-			int height = Math.round((float)Resources.getSystem().getDisplayMetrics().widthPixels /
-			                        sd * 0.955f);
-			int width = Math.round((float)Resources.getSystem().getDisplayMetrics().heightPixels /
-			                       sd * 0.955f);
-
+		if(radtype.equals("image"))
+		{
 			try
 			{
-				File f = new File(radar);
-				try(FileInputStream imageInFile = new FileInputStream(f))
+				bm = Common.loadOrDownloadImage(radarURL, "radar.gif", forceDownload);
+				if(bm == null)
 				{
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
-					{
-						Bitmap bitmap = BitmapFactory.decodeByteArray(imageData,
-								0, imageData.length);
-						radar = "data:image/jpeg;base64," +
-						        Base64.encodeToString(imageData,
-								        Base64.DEFAULT).replaceAll("\n", "")
-								        .replaceAll("\r", "")
-								        .replaceAll("\t", "");
-					}
-				} catch(Exception e) {
-					Common.doStackOutput(e);
+					failedRadarWebViewDownload(R.string.radar_download_failed, radarURL);
+					return;
 				}
-			} catch(Exception e) {
-				Common.doStackOutput(e);
-			}
 
-			final String html = Common.current_html_headers +
-					"\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
-					Common.html_footer;
+				float sd = weeWXApp.getDensity();
+				int height = Math.round((float)Resources.getSystem().getDisplayMetrics().widthPixels / sd * 0.955f);
+				int width = Math.round((float)Resources.getSystem().getDisplayMetrics().heightPixels / sd * 0.955f);
 
-			//CustomDebug.writeDebug("radar_image.html", html);
+				radar = "data:image/jpeg;base64," + Common.toBase64(Common.bitmapToBytes(bm));
 
-			Common.LogMessage("Loading radar page... html: " + html);
-			radarWebView.post(() -> radarWebView.loadDataWithBaseURL(
-					"file:///android_res/drawable/", html,
-					"text/html", "utf-8", null));
+				final String html = Common.current_html_headers +
+				                    "\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
+				                    Common.html_footer;
+
+				radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/drawable/", html,
+							"text/html", "utf-8", null));
+				stopRefreshing();
+				return;
+			} catch(Exception ignored) {}
+
+			failedRadarWebViewDownload(R.string.radar_download_failed, radarURL);
 		} else {
 			Common.LogMessage("Loading radar page... url: " + radarURL);
 			radarWebView.post(() -> radarWebView.loadUrl(radarURL));
+			stopRefreshing();
 		}
 
 		Common.LogMessage("Forecast.loadRadar() finished...");
-		stopRefreshing();
 	}
 
-	private void reloadRadar(boolean force)
+	private void failedRadarWebViewDownload(int resId, String url)
 	{
-		Common.LogMessage("Forecast.reloadRadar()");
-		if(Common.GetBoolPref("radarforecast", true))
-			return;
+		Common.LogMessage("Loading radar image from URL: " + url + " failed...");
 
-		Common.LogMessage("reload radar...");
-		final String radar = Common.GetStringPref("RADAR_URL", "");
-		if(radar == null)
-			return;
+		final String html = Common.current_html_headers +
+		                    weeWXApp.getAndroidString(resId) +
+		                    Common.html_footer;
 
-		String fctype = Common.GetStringPref("radtype", "image");
-		if(fctype == null)
-			return;
+		radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/drawable/", html,
+					"text/html", "utf-8", null));
 
-		if(radar.isBlank() || fctype.equals("webpage"))
-		{
-			loadRadar();
-			return;
-		}
-
-		if(!Common.checkConnection() && !force)
-		{
-			Common.LogMessage("Not on wifi and not a forced refresh");
-			stopRefreshing();
-			return;
-		}
-
-		Thread t = new Thread(() ->
-		{
-			try
-			{
-				Common.LogMessage("Starting to download image from: " + radar);
-				File file = new File(Common.getFilesDir(), "/radar.gif.tmp");
-				File f = Common.downloadBinary(file, radar);
-				String ftmp = f != null ? f.getAbsolutePath() : null;
-				if(ftmp != null)
-				{
-					Common.LogMessage("Done downloading " + f.getAbsolutePath() +
-					                  ", prompt handler to draw to movie");
-					File f2 = new File(Common.getFilesDir(), "/radar.gif");
-					if(!f.renameTo(f2))
-						Common.LogMessage("Failed to rename '"+ f.getAbsolutePath() +
-						                  "' to '" + f2.getAbsolutePath() + "'");
-				}
-
-				loadRadar();
-			} catch(Exception e) {
-				Common.doStackOutput(e);
-				stopRefreshing();
-			}
-		});
-
-		t.start();
+		stopRefreshing();
 	}
 
 	public void onResume()
@@ -415,7 +344,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 		Common.LogMessage("Forecast.onResume() -- updating the value of the floating checkbox...");
 		swipeLayout2.post(() -> swipeLayout2.setEnabled(rfl.getVisibility() == View.VISIBLE &&
 		                                                !floatingCheckBox.isChecked()));
-		updateListeners();
 		updateSwipe();
 		updateScreen(false);
 	}
@@ -432,8 +360,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 		isVisible = false;
 
 		doPause();
-		removeListeners();
-
 		Common.LogMessage("Forecast.onPause()-- removing notification manager...");
 	}
 
@@ -570,8 +496,10 @@ public class Forecast extends Fragment implements View.OnClickListener
 			                    Common.html_footer;
 
 			forecastWebView.post(() ->
-					forecastWebView.loadDataWithBaseURL(null, html,
-							"text/html", "utf-8", null));
+			{
+				WebViewPreloader.wipeCache(forecastWebView);
+				forecastWebView.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+			});
 
 			stopRefreshing();
 
@@ -591,7 +519,14 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(!forecastData.isBlank())
 			generateForecast();
 
-		Thread t = new Thread(() ->
+		if(t != null)
+		{
+			if(t.isAlive())
+				t.interrupt();
+			t = null;
+		}
+
+		t = new Thread(() ->
 		{
 			try
 			{
@@ -622,7 +557,14 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void generateForecast()
 	{
-		Thread t = new Thread(() ->
+		if(t != null)
+		{
+			if(t.isAlive())
+				t.interrupt();
+			t = null;
+		}
+
+		t = new Thread(() ->
 		{
 			Common.LogMessage("getting json data");
 			String data;
@@ -641,8 +583,10 @@ public class Forecast extends Fragment implements View.OnClickListener
 				                    Common.html_footer;
 
 				forecastWebView.post(() ->
-						forecastWebView.loadDataWithBaseURL(null, html,
-								"text/html", "utf-8", null));
+				{
+					WebViewPreloader.wipeCache((forecastWebView));
+					forecastWebView.loadDataWithBaseURL(null, html, "text/html", "utf-8", null);
+				});
 				stopRefreshing();
 				return;
 			}
@@ -670,12 +614,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 				case "met.no" ->
 				{
 					String[] content = Common.processMetNO(data, true);
-					if(content != null && content.length >= 2)
-						updateForecast(content[0], content[1]);
-				}
-				case "bom.gov.au" ->
-				{
-					String[] content = Common.processBOM(data, true);
 					if(content != null && content.length >= 2)
 						updateForecast(content[0], content[1]);
 				}
@@ -779,9 +717,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		forecastWebView.post(() ->
 		{
-			forecastWebView.clearFormData();
-			forecastWebView.clearHistory();
-			forecastWebView.clearCache(true);
+			WebViewPreloader.wipeCache(forecastWebView);
 			forecastWebView.loadDataWithBaseURL("file:///android_res/drawable/", fc,
 					"text/html", "utf-8", null);
 		});
@@ -809,7 +745,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			case "weather.gc.ca", "weather.gc.ca-fr" -> im.post(() ->
 					im.setImageResource(R.drawable.wca));
 			case "metoffice.gov.uk" -> im.post(() -> im.setImageResource(R.drawable.met));
-			case "bom.gov.au", "bom2", "bom3" ->
+			case "bom2", "bom3" ->
 			{
 				im.post(() -> im.setImageResource(R.drawable.bom));
 				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)

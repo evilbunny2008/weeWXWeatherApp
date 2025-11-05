@@ -10,6 +10,4 @@
 	android:gravity="center_vertical"
 	android:textSize="20sp"
 	android:text="Test"
-	android:textColor="@color/Black"
-	android:background="@color/White"
 	tools:ignore="HardcodedText" />

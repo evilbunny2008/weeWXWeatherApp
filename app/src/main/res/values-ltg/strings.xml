@@ -20,8 +20,7 @@
     <string name="show_radar">paruodit radaru</string>
     <string name="show_forecast">Paruodeit prognoze</string>
     <string name="radarforecast">Iz Golvonuo ekrana:</string>
-    <string name="nav_header_title">weeWX App</string>
-    <string name="radar">radars</string>
+	<string name="radar">radars</string>
     <string name="custom_url">Papyldu: Pīlāguotuo URL</string>
     <string name="fgColour">Vidžetu prīškgola laukuma krāsa pikers</string>
     <string name="bgColour">Ploša fona krāsa Pikers</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Datu URL beja tukša</string>
     <string name="wasnt_able_to_connect_settings">100 doc#1159 Nabeja spiejeiga savīnuot voi lejupluodēt īstatejumus nu jūs servera</string>
     <string name="url_was_default_or_empty">100 doc#1159 URL tyka īstateits iz defaultu voi beja tukšs</string>
-    <string name="radar_url_not_set">Radar URL nav īlykts voi vēļ lejupluodej. Var īt iz īstatejumim, kab maineitūs</string>
     <string name="wasnt_able_to_connect_or_download">Nabeja prognoze, ni lejupluodēt, ni lejupluodēt</string>
     <string name="swipe_lock">Swipe Slēgšona</string>
     <string name="widget_theme">Widget Tema</string>
@@ -74,4 +72,7 @@
     <string name="today">Šudiņ</string>
     <string name="last_year_stats">Pādejuo goda statistika</string>
     <string name="last_month_stats">Pādejuo mieneša statistika</string>
+    <string name="radar_url_not_set">Radars URL nav īkuortuots. Var īt iz īstatejumim, kab maineitūs</string>
+    <string name="radar_still_downloading">Radara attāls vēļ lejupluodej</string>
+    <string name="radar_download_failed">100 doc#1159 Naizadeve lejupluodēt radara attālu</string>
 </resources>

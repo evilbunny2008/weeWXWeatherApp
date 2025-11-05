@@ -20,8 +20,7 @@
     <string name="show_radar">Mustra Radar</string>
     <string name="show_forecast">Mustra Privisioni</string>
     <string name="radarforecast">Supra a schermata Principali:</string>
-    <string name="nav_header_title">Appweum</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Facultativu: URL pirsunalizzatu</string>
     <string name="fgColour">Picker di culuri dû widget</string>
     <string name="bgColour">Picker di culura di sfondo</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">L\'URL dî dati era vacanti</string>
     <string name="wasnt_able_to_connect_settings">Non putìa cunnetti o scaricari li paràmitri dû server</string>
     <string name="url_was_default_or_empty">L\'URL fu misa a lu difault o era vacanti</string>
-    <string name="radar_url_not_set">URL Radar nun è misa o sta ancora scaricannu. Pudete iri a li paràmitri pi canciari</string>
     <string name="wasnt_able_to_connect_or_download">Non putìa cunnèttiri o scaricari li privisioni</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="widget_theme">Tema di Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Oji</string>
     <string name="last_year_stats">Li Statistichi di l\'Annu passatu</string>
     <string name="last_month_stats">Statìstica dû misi di l\'ùrtimu misi</string>
+    <string name="radar_url_not_set">URL Radar nun stabbilitu. Pudete iri a li paràmitri pi canciari</string>
+    <string name="radar_still_downloading">L\'immaggini di Radar sta ancora scaricannu</string>
+    <string name="radar_download_failed">Nun c\'è rinfurzatu pi scaricari la mmàggini radar</string>
 </resources>

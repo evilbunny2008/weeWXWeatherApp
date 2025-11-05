@@ -20,8 +20,7 @@
     <string name="show_radar">Ipakita ang radar</string>
     <string name="show_forecast">Ipakita ang forecast</string>
     <string name="radarforecast">Sa pangunahing screen:</string>
-    <string name="nav_header_title">Weewx app</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opsyonal: Pasadyang URL</string>
     <string name="fgColour">Widget foreground color picker</string>
     <string name="bgColour">Widget background color picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Ang Data URL ay blangko</string>
     <string name="wasnt_able_to_connect_settings">Hindi nakakonekta o i -download ang mga setting mula sa iyong server</string>
     <string name="url_was_default_or_empty">Ang URL ay nakatakda sa default o walang laman</string>
-    <string name="radar_url_not_set">Hindi nakatakda ang Radar URL o nag -download pa rin. Maaari kang pumunta sa mga setting upang magbago</string>
     <string name="wasnt_able_to_connect_or_download">Hindi nakakonekta o i -download ang forecast</string>
     <string name="swipe_lock">Mag -swipe lock</string>
     <string name="widget_theme">Tema ng widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Ngayon</string>
     <string name="last_year_stats">Mga istatistika ng nakaraang taon</string>
     <string name="last_month_stats">Mga istatistika ng nakaraang buwan</string>
+    <string name="radar_url_not_set">Hindi nakatakda ang Radar URL. Maaari kang pumunta sa mga setting upang magbago</string>
+    <string name="radar_still_downloading">Ang imahe ng radar ay nag -download pa rin</string>
+    <string name="radar_download_failed">Nabigong i -download ang imahe ng radar</string>
 </resources>

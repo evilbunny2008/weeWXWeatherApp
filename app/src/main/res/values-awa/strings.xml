@@ -20,8 +20,7 @@
     <string name="show_radar">राडार देखा जाय ।</string>
     <string name="show_forecast">शो</string>
     <string name="radarforecast">मेन स्क्रीन पर:</string>
-    <string name="nav_header_title">weWX ऐप</string>
-    <string name="radar">रडार</string>
+	<string name="radar">रडार</string>
     <string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
     <string name="fgColour">विजेट फोरग्राउंड कलर पिकर</string>
     <string name="bgColour">विजेट बैकग्राउंड कलर पिकर</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">डेटा यूआरएल खाली रहा</string>
     <string name="wasnt_able_to_connect_settings">अपने सर्वर से सेटिंग्स कनेक्ट या डाउनलोड नहीं कर पाए</string>
     <string name="url_was_default_or_empty">यूआरएल डिफ़ॉल्ट पर सेट किया गया था या खाली रहा</string>
-    <string name="radar_url_not_set">रडार यूआरएल सेट नहीं है या अभी भी डाउनलोड कर रहा है। आप बदलाव के लिए सेटिंग्स मा जा सकत हैं।</string>
     <string name="wasnt_able_to_connect_or_download">पूर्वानुमान का कनेक्ट या डाउनलोड करै मा सक्षम नाहीं रहा।</string>
     <string name="swipe_lock">स्वाइप लॉक</string>
     <string name="widget_theme">विजेट थीम</string>
@@ -74,4 +72,7 @@
     <string name="today">आजु</string>
     <string name="last_year_stats">पिछले साल के आंकड़े</string>
     <string name="last_month_stats">अंतिम महीना के आंकड़े</string>
+    <string name="radar_url_not_set">रडार यूआरएल सेट नहीं है। आप बदलाव के लिए सेटिंग्स मा जा सकत हैं।</string>
+    <string name="radar_still_downloading">रडार छवि अब भी डाउनलोड कर रहा है।</string>
+    <string name="radar_download_failed">रडार छवि डाउनलोड करै मा असफल रहा</string>
 </resources>

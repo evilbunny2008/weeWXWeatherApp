@@ -20,8 +20,7 @@
     <string name="show_radar">Taispeáin Radar</string>
     <string name="show_forecast">Taispeáin Réamhaisnéis</string>
     <string name="radarforecast">Ar an bPríomhscáileán:</string>
-    <string name="nav_header_title">Aip weeWX</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Roghnach: URL saincheaptha</string>
     <string name="fgColour">Roghnóir Dathanna Tulra Giuirléid</string>
     <string name="bgColour">Roghnóir Dath Cúlra Giuirléid</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Bhí an URL sonraí bán</string>
     <string name="wasnt_able_to_connect_settings">Níorbh fhéidir na socruithe a nascadh nó a íoslódáil ó do fhreastalaí</string>
     <string name="url_was_default_or_empty">Socraíodh an URL mar réamhshocrú nó bhí sé folamh</string>
-    <string name="radar_url_not_set">Níl an URL Radar socraithe nó tá sé fós á íoslódáil. Is féidir leat dul go dtí socruithe a athrú</string>
     <string name="wasnt_able_to_connect_or_download">Níorbh fhéidir an réamhaisnéis a nascadh ná a íoslódáil</string>
     <string name="swipe_lock">Glais Swipe</string>
     <string name="widget_theme">Téama Giuirléid</string>
@@ -74,4 +72,7 @@
     <string name="today">Inniu</string>
     <string name="last_year_stats">Staitisticí na bliana seo caite</string>
     <string name="last_month_stats">Staitisticí na Míosa seo caite</string>
+    <string name="radar_url_not_set">URL Radar gan socraithe. Is féidir leat dul go dtí socruithe a athrú</string>
+    <string name="radar_still_downloading">Tá íomhá radar á íoslódáil go fóill</string>
+    <string name="radar_download_failed">Theip ar an íomhá radar a íoslódáil</string>
 </resources>

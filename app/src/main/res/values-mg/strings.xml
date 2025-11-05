@@ -20,8 +20,7 @@
     <string name="show_radar">Asehoy ny radar</string>
     <string name="show_forecast">Asehoy ny Forecast</string>
     <string name="radarforecast">Amin\'ny efijery lehibe:</string>
-    <string name="nav_header_title">Weewx App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Safidy: URL mahazatra</string>
     <string name="fgColour">Mpisambotra loko miloko Widget mialoha</string>
     <string name="bgColour">Mpikambana miloko ivelany Widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Blank ny URL data</string>
     <string name="wasnt_able_to_connect_settings">Tsy afaka nampifandray na nandefa ny toe-javatra avy amin\'ny mpizara</string>
     <string name="url_was_default_or_empty">Ny URL dia napetraka tamin\'ny default na tsy misy na inona na inona</string>
-    <string name="radar_url_not_set">Radar URL tsy napetraka na mbola misintona. Azonao atao ny mandeha amin\'ny toe-javatra hiova</string>
     <string name="wasnt_able_to_connect_or_download">Tsy afaka nampifandray na nandefa ny vinavina</string>
     <string name="swipe_lock">Swipe hidio</string>
     <string name="widget_theme">Widget Theme</string>
@@ -74,4 +72,7 @@
     <string name="today">ankehitriny</string>
     <string name="last_year_stats">Antontan\'isa tamin\'ny taon-dasa</string>
     <string name="last_month_stats">Antontan\'isa tamin\'ny volana lasa teo</string>
+    <string name="radar_url_not_set">Tsy napetraka ny Radar URL. Azonao atao ny mandeha amin\'ny toe-javatra hiova</string>
+    <string name="radar_still_downloading">Ny sary radar dia mbola misintona</string>
+    <string name="radar_download_failed">Tsy nahavita nampiditra ny sary radar</string>
 </resources>

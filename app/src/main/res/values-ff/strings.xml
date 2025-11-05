@@ -20,8 +20,7 @@
     <string name="show_radar">Hollu Radar</string>
     <string name="show_forecast">Hollit Forecast</string>
     <string name="radarforecast">E ekran Main:</string>
-    <string name="nav_header_title">weeWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Cuɓal: URL Anndu</string>
     <string name="fgColour">Widget Color Color Color</string>
     <string name="bgColour">Widget Background Picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL data wonnoo ko blank</string>
     <string name="wasnt_able_to_connect_settings">Waawaa jokkondirde walla ƴettude dottaaɗe ɗee e serveer maa</string>
     <string name="url_was_default_or_empty">URL waɗaama e default walla ko meere</string>
-    <string name="radar_url_not_set">Radar URL settaaka walla ina jokki e ƴettude. Aɗa waawi yahde e settings ngam waylude</string>
     <string name="wasnt_able_to_connect_or_download">Waawaa jokkondirde walla ƴettude teskagol ngol</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="widget_theme">Widget theme</string>
@@ -74,4 +72,7 @@
     <string name="today">Hande</string>
     <string name="last_year_stats">Limlebbi hitaande yawtunde ndee</string>
     <string name="last_month_stats">Limlebbi lewru cakkitiiɗi ɗii</string>
+    <string name="radar_url_not_set">Radar URL settaaka. Aɗa waawi yahde e settings ngam waylude</string>
+    <string name="radar_still_downloading">Natal Radar ina ƴetta haa jooni</string>
+    <string name="radar_download_failed">Feewniraa ko ƴettude natal radar</string>
 </resources>

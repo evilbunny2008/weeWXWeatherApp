@@ -20,8 +20,7 @@
     <string name="show_radar">Visa radar</string>
     <string name="show_forecast">Visa prognos</string>
     <string name="radarforecast">På huvudskärmen:</string>
-    <string name="nav_header_title">weWX-appen</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Valfritt: Anpassad webbadress</string>
     <string name="fgColour">Widget Förgrundsfärgväljare</string>
     <string name="bgColour">Widget bakgrundsfärgväljare</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Data-URL var tom</string>
     <string name="wasnt_able_to_connect_settings">Kunde inte ansluta eller ladda ner inställningarna från din server</string>
     <string name="url_was_default_or_empty">URL var inställd på standard eller var tom</string>
-    <string name="radar_url_not_set">Radar-URL inte inställd eller laddas fortfarande ned. Du kan gå till inställningar för att ändra</string>
     <string name="wasnt_able_to_connect_or_download">Det gick inte att ansluta eller ladda ner prognosen</string>
     <string name="swipe_lock">Sveplås</string>
     <string name="widget_theme">Widget-tema</string>
@@ -74,4 +72,7 @@
     <string name="today">I dag</string>
     <string name="last_year_stats">Förra årets statistik</string>
     <string name="last_month_stats">Förra månadens statistik</string>
+    <string name="radar_url_not_set">Radar-URL inte inställd. Du kan gå till inställningar för att ändra</string>
+    <string name="radar_still_downloading">Radarbilden laddas fortfarande ned</string>
+    <string name="radar_download_failed">Det gick inte att ladda ner radarbilden</string>
 </resources>

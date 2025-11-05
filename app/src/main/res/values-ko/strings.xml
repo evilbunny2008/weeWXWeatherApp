@@ -20,8 +20,7 @@
     <string name="show_radar">레이더 표시</string>
     <string name="show_forecast">예측 표시</string>
     <string name="radarforecast">메인 화면에서:</string>
-    <string name="nav_header_title">weeWX 앱</string>
-    <string name="radar">레이더</string>
+	<string name="radar">레이더</string>
     <string name="custom_url">선택사항: 맞춤 URL</string>
     <string name="fgColour">위젯 전경색 선택기</string>
     <string name="bgColour">위젯 배경색 선택기</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">데이터 URL이 비어 있습니다</string>
     <string name="wasnt_able_to_connect_settings">서버에 연결하거나 설정을 다운로드할 수 없습니다</string>
     <string name="url_was_default_or_empty">URL이 기본값으로 설정되었거나 비어 있었습니다</string>
-    <string name="radar_url_not_set">레이더 URL이 설정되지 않았거나 아직 다운로드 중입니다. 설정으로 이동하여 변경할 수 있습니다</string>
     <string name="wasnt_able_to_connect_or_download">일기예보를 연결하거나 다운로드할 수 없습니다</string>
     <string name="swipe_lock">스와이프 잠금</string>
     <string name="widget_theme">위젯 테마</string>
@@ -74,4 +72,7 @@
     <string name="today">오늘</string>
     <string name="last_year_stats">작년 통계</string>
     <string name="last_month_stats">지난달 통계</string>
+    <string name="radar_url_not_set">레이더 URL이 설정되지 않았습니다. 설정으로 이동하여 변경할 수 있습니다</string>
+    <string name="radar_still_downloading">레이더 이미지가 아직 다운로드 중입니다</string>
+    <string name="radar_download_failed">레이더 이미지를 다운로드하지 못했습니다</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">Nyis Radar</string>
     <string name="show_forecast">Nyis Jaloch</string>
     <string name="radarforecast">E skrin madongo:</string>
-    <string name="nav_header_title">AWX ApX ApX ApX Aporo</string>
-    <string name="radar">raboar</string>
+	<string name="radar">raboar</string>
     <string name="custom_url">Gima dwarore: URL mar ng\'ato</string>
     <string name="fgColour">Rangi mag bungu ma ni e piny ma oko mar Rangi</string>
     <string name="bgColour">Rangi mar Yach mar Loch mar Piny</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL mar data ne en ma onge gimoro</string>
     <string name="wasnt_able_to_connect_settings">Ne ok anyal tudruok kata donjo e chenro ma wuok e sava mari</string>
     <string name="url_was_default_or_empty">URL ne oketi kaka gik ma ne otimre kata ne en mana ma nono</string>
-    <string name="radar_url_not_set">URL mar radar ok oket kata pod oting\'o gik moko. Inyalo dhi e chenro mondo ilok</string>
     <string name="wasnt_able_to_connect_or_download">Ne ok anyal tudruok kata ng\'ado paro ma ne oket</string>
     <string name="swipe_lock">Rito Loch mar Sowi</string>
     <string name="widget_theme">Thuolo mar dhao</string>
@@ -74,4 +72,7 @@
     <string name="today">Kawuono</string>
     <string name="last_year_stats">Kwan mar Higa mokalo</string>
     <string name="last_month_stats">Kwan mag Dwe mokalo</string>
+    <string name="radar_url_not_set">URL mar radar to ok oket. Inyalo dhi e chenro mondo ilok</string>
+    <string name="radar_still_downloading">Picha mar Radar pod ng\'eny</string>
+    <string name="radar_download_failed">Oherore mondo ochop e picha mar radir</string>
 </resources>

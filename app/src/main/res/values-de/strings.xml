@@ -20,8 +20,7 @@
     <string name="show_radar">Radar anzeigen</string>
     <string name="show_forecast">Prognose anzeigen</string>
     <string name="radarforecast">Auf dem Hauptbildschirm:</string>
-    <string name="nav_header_title">weeWX-App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Optional: Benutzerdefinierte URL</string>
     <string name="fgColour">Widget-Vordergrundfarbauswahl</string>
     <string name="bgColour">Widget-Hintergrundfarbauswahl</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Die Daten-URL war leer</string>
     <string name="wasnt_able_to_connect_settings">Es konnte keine Verbindung zu Ihrem Server hergestellt oder die Einstellungen von diesem heruntergeladen werden</string>
     <string name="url_was_default_or_empty">Die URL wurde auf die Standardeinstellung gesetzt oder war leer</string>
-    <string name="radar_url_not_set">Die Radar-URL ist nicht festgelegt oder wird noch heruntergeladen. Sie können zu den Einstellungen gehen, um sie zu ändern</string>
     <string name="wasnt_able_to_connect_or_download">Es konnte keine Verbindung hergestellt oder die Prognose heruntergeladen werden</string>
     <string name="swipe_lock">Wischsperre</string>
     <string name="widget_theme">Widget-Thema</string>
@@ -74,4 +72,7 @@
     <string name="today">Heute</string>
     <string name="last_year_stats">Statistik des letzten Jahres</string>
     <string name="last_month_stats">Statistiken des letzten Monats</string>
+    <string name="radar_url_not_set">Radar-URL nicht festgelegt. Sie können zu den Einstellungen gehen, um sie zu ändern</string>
+    <string name="radar_still_downloading">Das Radarbild wird noch heruntergeladen</string>
+    <string name="radar_download_failed">Das Radarbild konnte nicht heruntergeladen werden</string>
 </resources>

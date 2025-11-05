@@ -20,8 +20,7 @@
     <string name="show_radar">Radar jira</string>
     <string name="show_forecast">A jira ko a bɛ fɔ</string>
     <string name="radarforecast">Écran principal kan:</string>
-    <string name="nav_header_title">Weewx app</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">A bɛ se ka kɛ: URL ladamulen</string>
     <string name="fgColour">Widget Foreground Color Picker</string>
     <string name="bgColour">Widget Background Kulɛri Picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Data URL tun ye blank ye</string>
     <string name="wasnt_able_to_connect_settings">tun tɛ se ka fɛnw don ɲɔgɔn na walima ka u telesarse ka bɔ i ka sèrwɛri la</string>
     <string name="url_was_default_or_empty">URL tun sigilen bɛ a daminɛ na walima a tun lankolon don</string>
-    <string name="radar_url_not_set">Radar url ma sigi walima a bɛ telesarse hali bi. Aw bɛ se ka taa settings la walasa ka fɛn caman Changer</string>
     <string name="wasnt_able_to_connect_or_download">Was\'t se ka connect walima ka telechargé ka fɔ</string>
     <string name="swipe_lock">Swipe lock</string>
     <string name="widget_theme">Widget theme</string>
@@ -74,4 +72,7 @@
     <string name="today">Bi</string>
     <string name="last_year_stats">Salon jatebɔw</string>
     <string name="last_month_stats">Kalo tɛmɛnen ka jatebɔw</string>
+    <string name="radar_url_not_set">Radar URL ma sigi. Aw bɛ se ka taa settings la walasa ka fɛn caman Changer</string>
+    <string name="radar_still_downloading">Radar ja bɛ ka telesarse hali bi</string>
+    <string name="radar_download_failed">A ma se ka rada ja telesarse</string>
 </resources>

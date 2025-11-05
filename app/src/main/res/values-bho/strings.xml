@@ -20,8 +20,7 @@
     <string name="show_radar">रडार के देखावल जाव</string>
     <string name="show_forecast">पूर्वानुमान के देखावल जाव</string>
     <string name="radarforecast">मेन स्क्रीन पर बा:</string>
-    <string name="nav_header_title">वेवक्स के एप्प 2019 के बा।</string>
-    <string name="radar">रडार के बा</string>
+	<string name="radar">रडार के बा</string>
     <string name="custom_url">वैकल्पिक: कस्टम यूआरएल बा।</string>
     <string name="fgColour">विजेट अग्रभूमि रंग पिकर 2019 के बा।</string>
     <string name="bgColour">विजेट पृष्ठभूमि रंग पिकर 2019 के बा।</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">डेटा यूआरएल खाली रहे</string>
     <string name="wasnt_able_to_connect_settings">अपना सर्वर से सेटिंग्स के कनेक्ट भा डाउनलोड ना कर पवले रहले</string>
     <string name="url_was_default_or_empty">यूआरएल डिफ़ॉल्ट पर सेट कइल गइल रहे भा खाली रहे</string>
-    <string name="radar_url_not_set">रडार यूआरएल सेट ना भइल भा अबहियो डाउनलोड हो रहल बा. बदले खातिर रउरा सेटिंग में जा सकेनी</string>
     <string name="wasnt_able_to_connect_or_download">पूर्वानुमान के कनेक्ट भा डाउनलोड ना कर पवले</string>
     <string name="swipe_lock">स्वाइप लॉक 100 बा।</string>
     <string name="widget_theme">विजेट के विषय बा</string>
@@ -74,4 +72,7 @@
     <string name="today">आजु</string>
     <string name="last_year_stats">पिछला साल के आँकड़ा</string>
     <string name="last_month_stats">पिछला महीना के आँकड़ा</string>
+    <string name="radar_url_not_set">रडार यूआरएल सेट ना भइल। बदले खातिर रउरा सेटिंग में जा सकेनी</string>
+    <string name="radar_still_downloading">रडार के इमेज अभी भी डाउनलोड कर रहल बा।</string>
+    <string name="radar_download_failed">रडार के छवि डाउनलोड करे में विफल रहल बानी</string>
 </resources>

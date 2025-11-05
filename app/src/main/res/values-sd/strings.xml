@@ -20,8 +20,7 @@
     <string name="show_radar">ريڊار ڏيکاريو</string>
     <string name="show_forecast">اڳڪٿي ڏيکاريو</string>
     <string name="radarforecast">مکيه اسڪرين تي:</string>
-    <string name="nav_header_title">weeWX ايپ</string>
-    <string name="radar">ريڊار</string>
+	<string name="radar">ريڊار</string>
     <string name="custom_url">اختياري: ڪسٽم URL</string>
     <string name="fgColour">Widget Foreround Color Picker</string>
     <string name="bgColour">ويجيٽ پس منظر رنگ چونڊيندڙ</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">ڊيٽا URL خالي هو</string>
     <string name="wasnt_able_to_connect_settings">توهان جي سرور مان سيٽنگون ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هئي</string>
     <string name="url_was_default_or_empty">URL ڊفالٽ تي سيٽ ڪيو ويو يا خالي هو</string>
-    <string name="radar_url_not_set">رادر URL سيٽ نه ڪيو ويو آهي يا اڃا تائين ڊائون لوڊ ٿي رهيو آهي. توھان تبديل ڪرڻ لاء سيٽنگون ڏانھن وڃو</string>
     <string name="wasnt_able_to_connect_or_download">اڳڪٿي کي ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
     <string name="swipe_lock">سوائپ لاڪ</string>
     <string name="widget_theme">وجيٽ موضوع</string>
@@ -74,4 +72,7 @@
     <string name="today">اڄ</string>
     <string name="last_year_stats">گذريل سال جا انگ اکر</string>
     <string name="last_month_stats">گذريل مهيني جا انگ اکر</string>
+    <string name="radar_url_not_set">رادر URL مقرر نه ڪيو ويو آهي. توھان تبديل ڪرڻ لاء سيٽنگون ڏانھن وڃو</string>
+    <string name="radar_still_downloading">رادار تصوير اڃا تائين ڊائون لوڊ ڪري رهيو آهي</string>
+    <string name="radar_download_failed">رادار تصوير ڊائون لوڊ ڪرڻ ۾ ناڪام ٿيو</string>
 </resources>

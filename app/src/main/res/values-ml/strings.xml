@@ -20,8 +20,7 @@
     <string name="show_radar">റഡാർ കാണിക്കുക</string>
     <string name="show_forecast">പ്രവചനം കാണിക്കുക</string>
     <string name="radarforecast">പ്രധാന സ്ക്രീനിൽ:</string>
-    <string name="nav_header_title">weeWX ആപ്പ്</string>
-    <string name="radar">റഡാർ</string>
+	<string name="radar">റഡാർ</string>
     <string name="custom_url">ഓപ്ഷണൽ: ഇഷ്‌ടാനുസൃത URL</string>
     <string name="fgColour">വിജറ്റ് ഫോർഗ്രൗണ്ട് കളർ പിക്കർ</string>
     <string name="bgColour">വിജറ്റ് പശ്ചാത്തല വർണ്ണ പിക്കർ</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">ഡാറ്റ URL ശൂന്യമായിരുന്നു</string>
     <string name="wasnt_able_to_connect_settings">നിങ്ങളുടെ സെർവറിൽ നിന്ന് ക്രമീകരണങ്ങൾ ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="url_was_default_or_empty">URL സ്ഥിരസ്ഥിതിയായി സജ്ജമാക്കി അല്ലെങ്കിൽ ശൂന്യമായിരുന്നു</string>
-    <string name="radar_url_not_set">റഡാർ URL സജ്ജീകരിച്ചിട്ടില്ല അല്ലെങ്കിൽ ഇപ്പോഴും ഡൗൺലോഡ് ചെയ്യുകയാണ്. മാറ്റാൻ നിങ്ങൾക്ക് ക്രമീകരണങ്ങളിലേക്ക് പോകാം</string>
     <string name="wasnt_able_to_connect_or_download">പ്രവചനം ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="swipe_lock">സ്വൈപ്പ് ലോക്ക്</string>
     <string name="widget_theme">വിജറ്റ് തീം</string>
@@ -74,4 +72,7 @@
     <string name="today">ഇന്ന്</string>
     <string name="last_year_stats">കഴിഞ്ഞ വർഷത്തെ സ്ഥിതിവിവരക്കണക്കുകൾ</string>
     <string name="last_month_stats">കഴിഞ്ഞ മാസത്തെ സ്ഥിതിവിവരക്കണക്കുകൾ</string>
+    <string name="radar_url_not_set">റഡാർ URL സജ്ജീകരിച്ചിട്ടില്ല. മാറ്റാൻ നിങ്ങൾക്ക് ക്രമീകരണങ്ങളിലേക്ക് പോകാം</string>
+    <string name="radar_still_downloading">റഡാർ ചിത്രം ഇപ്പോഴും ഡൗൺലോഡ് ചെയ്യുന്നു</string>
+    <string name="radar_download_failed">റഡാർ ചിത്രം ഡൗൺലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു</string>
 </resources>

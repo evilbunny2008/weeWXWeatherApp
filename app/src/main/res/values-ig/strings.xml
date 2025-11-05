@@ -20,8 +20,7 @@
     <string name="show_radar">Gosi igwe</string>
     <string name="show_forecast">Gosi Amụma</string>
     <string name="radarforecast">Na isi ihuenyo:</string>
-    <string name="nav_header_title">ewx App</string>
-    <string name="radar">Igwe na-aza eluigwe</string>
+	<string name="radar">Igwe na-aza eluigwe</string>
     <string name="custom_url">Nhọrọ: URL omenala</string>
     <string name="fgColour">Wijetị Chargen For na-ahọrọ</string>
     <string name="bgColour">Wijetị na-ahụ maka egwuregwu</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL data bụ oghere</string>
     <string name="wasnt_able_to_connect_settings">Enweghị ike ijikọ ma ọ bụ budata ntọala na sava gị</string>
     <string name="url_was_default_or_empty">A tọọrọ URL na ndabara ma ọ bụ tọgbọ chakoo</string>
-    <string name="radar_url_not_set">Dradar Url setịpụrụ ma ọ bụ na-ebudata. Can nwere ike ịga ntọala ịgbanwe</string>
     <string name="wasnt_able_to_connect_or_download">Enweghị ike ijikọ ma ọ bụ budata amụma ahụ</string>
     <string name="swipe_lock">Mkpọchi swipe</string>
     <string name="widget_theme">Isiokwu Wijetị</string>
@@ -74,4 +72,7 @@
     <string name="today">Taa</string>
     <string name="last_year_stats">Ọnụ ọgụgụ nke afọ gara aga</string>
     <string name="last_month_stats">Ọnụ ọgụgụ ọnwa gara aga</string>
+    <string name="radar_url_not_set">Dradar Url esetịghị. Can nwere ike ịga ntọala ịgbanwe</string>
+    <string name="radar_still_downloading">Ihe onyonyo radar ka na-ebudata</string>
+    <string name="radar_download_failed">Emeghị ka ibudata ihe ngosi Radar</string>
 </resources>

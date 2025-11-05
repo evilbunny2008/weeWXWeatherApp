@@ -20,8 +20,7 @@
     <string name="show_radar">Bonts\'a radar</string>
     <string name="show_forecast">Bontša Bonolo</string>
     <string name="radarforecast">Ka skrineng sa sehlooho:</string>
-    <string name="nav_header_title">WeeWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Boikhethelo: URL ea tloaelo</string>
     <string name="fgColour">Widget bokaholimo ba \'mala</string>
     <string name="bgColour">Redget Photo ea \'mala oa motlakase</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL ea data e ne e se na letho</string>
     <string name="wasnt_able_to_connect_settings">E ne e sa khone ho hokela kapa ho jarolla litlhophiso ho seva ea hau</string>
     <string name="url_was_default_or_empty">URL e ne e behiloe ho sa feleng kapa e ne e se na letho</string>
-    <string name="radar_url_not_set">Ratar url ha e behe kapa e ntse e jarolla. U ka ea litlhophiso ho fetoha</string>
     <string name="wasnt_able_to_connect_or_download">E ne e sa khone ho hokela kapa ho jarolla poloko</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="widget_theme">Sehlooho sa Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Kajeno</string>
     <string name="last_year_stats">Lipalopalo tsa selemo se fetileng</string>
     <string name="last_month_stats">Lipalo-palo tsa khoeli e fetileng</string>
+    <string name="radar_url_not_set">Ratar url ha e behe. U ka ea litlhophiso ho fetoha</string>
+    <string name="radar_still_downloading">Setšoantšo sa radiar se ntse se jarolla</string>
+    <string name="radar_download_failed">Ha rea ​​atleha ho jarolla setšoantšo sa radar</string>
 </resources>

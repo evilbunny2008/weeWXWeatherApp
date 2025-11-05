@@ -20,8 +20,7 @@
     <string name="show_radar">Pokaż Radar</string>
     <string name="show_forecast">Pokoż</string>
     <string name="radarforecast">Na Głōwnym ekranie:</string>
-    <string name="nav_header_title">wieWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opcjōnalny: Kliyntno URL</string>
     <string name="fgColour">Widget Fore grŏfowy Picker</string>
     <string name="bgColour">Widget Background Colora Pickera</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Dane URL było prōzne</string>
     <string name="wasnt_able_to_connect_settings">Niy poradzić połōnczyć ani pobiyrać ustawiynia ze swojigo serwera</string>
     <string name="url_was_default_or_empty">URL bōł ustawiōny na domyślnie abo bōł prōzny</string>
-    <string name="radar_url_not_set">Radar URL niy stawio abo durch sie ściyro. Możesz pojść do ustawiyń, coby sie zmiynić</string>
     <string name="wasnt_able_to_connect_or_download">Niy może sie łōnczyć ani pobrać prognozy</string>
     <string name="swipe_lock">Swipe Swipe</string>
     <string name="widget_theme">Widgeter Tymtery</string>
@@ -74,4 +72,7 @@
     <string name="today">Dzisiej</string>
     <string name="last_year_stats">Ôstatni Rok Statystyki</string>
     <string name="last_month_stats">Ôstatniōm statystykōm ôstatnigo miesiōnca</string>
+    <string name="radar_url_not_set">Radar URL niy je ustawiōny. Możesz pojść do ustawiyń, coby sie zmiynić</string>
+    <string name="radar_still_downloading">Ôbraz raddarōw durch sie ściōngo</string>
+    <string name="radar_download_failed">Niy ôddany do pobranio ôbrazu radaru</string>
 </resources>

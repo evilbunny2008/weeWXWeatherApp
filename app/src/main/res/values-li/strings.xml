@@ -20,8 +20,7 @@
     <string name="show_radar">Toon Radar</string>
     <string name="show_forecast">Voorspelling</string>
     <string name="radarforecast">Op \'t sjerm vaan \'t hoof:</string>
-    <string name="nav_header_title">eenWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Optioneel: Aongepas URL</string>
     <string name="fgColour">Widget Voorgrond Kleur Kies</string>
     <string name="bgColour">Widget Achtergroond Kleur Kies</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Data URL waor leeg</string>
     <string name="wasnt_able_to_connect_settings">Zou de instellinge neet kinne verbinde of downloade vaan uw server</string>
     <string name="url_was_default_or_empty">URL woort op de standaard ingesjtèld of waor leeg</string>
-    <string name="radar_url_not_set">Radar URL neet ingesjtèld of nog steeds downloadt. Je kint naor instellinge goon um te verandere</string>
     <string name="wasnt_able_to_connect_or_download">Zou de veurspelling neet kinne verbinde of downloade</string>
     <string name="swipe_lock">Zweet Lock</string>
     <string name="widget_theme">Thema</string>
@@ -74,4 +72,7 @@
     <string name="today">Vandaag</string>
     <string name="last_year_stats">Afgeloupe jaor</string>
     <string name="last_month_stats">Afgeloupe Month\'s Statistiek</string>
+    <string name="radar_url_not_set">Radar URL neet ingesjtèld. Je kint naor instellinge goon um te verandere</string>
+    <string name="radar_still_downloading">Radar-afbeelding download nog steeds</string>
+    <string name="radar_download_failed">Verwaarloos um de radar-afbeelding te downloade</string>
 </resources>

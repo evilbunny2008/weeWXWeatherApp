@@ -62,6 +62,7 @@ public class WebViewPreloader
 		if(webView == null)
 			return;
 
+		wipeCache(webView);
 		setWebview(webView);
 
 		synchronized(preloadedWebViews)
@@ -107,5 +108,12 @@ public class WebViewPreloader
 		wv.getSettings().setUseWideViewPort(true);
 		//wv.setLayerType(View.LAYER_TYPE_HARDWARE, null);
 		wv.setWebChromeClient(new Common.myWebChromeClient());
+	}
+
+	static void wipeCache(WebView webView)
+	{
+		webView.clearFormData();
+		webView.clearHistory();
+		webView.clearCache(true);
 	}
 }

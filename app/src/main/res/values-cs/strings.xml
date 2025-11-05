@@ -20,8 +20,7 @@
     <string name="show_radar">Zobrazit radar</string>
     <string name="show_forecast">Zobrazit předpověď</string>
     <string name="radarforecast">Na hlavní obrazovce:</string>
-    <string name="nav_header_title">aplikace weeWX</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Volitelné: Vlastní adresa URL</string>
     <string name="fgColour">Widget pro výběr barvy popředí</string>
     <string name="bgColour">Widget pro výběr barvy pozadí</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Adresa URL dat byla prázdná</string>
     <string name="wasnt_able_to_connect_settings">Nepodařilo se připojit nebo stáhnout nastavení z vašeho serveru</string>
     <string name="url_was_default_or_empty">Adresa URL byla nastavena na výchozí nebo byla prázdná</string>
-    <string name="radar_url_not_set">Adresa URL radaru není nastavena nebo se stále stahuje. Pro změnu můžete přejít do nastavení</string>
     <string name="wasnt_able_to_connect_or_download">Nepodařilo se připojit nebo stáhnout předpověď</string>
     <string name="swipe_lock">Zámek přejetím</string>
     <string name="widget_theme">Téma widgetu</string>
@@ -74,4 +72,7 @@
     <string name="today">Dnes</string>
     <string name="last_year_stats">Loňské statistiky</string>
     <string name="last_month_stats">Statistiky za minulý měsíc</string>
+    <string name="radar_url_not_set">Adresa URL radaru není nastavena. Pro změnu můžete přejít do nastavení</string>
+    <string name="radar_still_downloading">Radarový snímek se stále stahuje</string>
+    <string name="radar_download_failed">Stažení radarového snímku se nezdařilo</string>
 </resources>

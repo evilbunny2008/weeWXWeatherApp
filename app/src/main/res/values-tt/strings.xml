@@ -20,8 +20,7 @@
     <string name="show_radar">Радар шоу</string>
     <string name="show_forecast">Прогнозны күрсәтү</string>
     <string name="radarforecast">Төп экранда:</string>
-    <string name="nav_header_title">WeWX кушымтасы</string>
-    <string name="radar">Радар</string>
+	<string name="radar">Радар</string>
     <string name="custom_url">Ихтимал: махсус URL</string>
     <string name="fgColour">Виджетның алгы төс сайлаучысы</string>
     <string name="bgColour">Виджет фон төсе</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Мәгълүмат URL буш иде</string>
     <string name="wasnt_able_to_connect_settings">Сезнең сервердан көйләүләрне тоташтыра яки йөкли алмый</string>
     <string name="url_was_default_or_empty">URL килешү төзегән яки буш булган</string>
-    <string name="radar_url_not_set">Радар Урл көйләнми яки әле дә йөкләнми. Сез үзгәрү өчен көйләүләргә бара аласыз</string>
     <string name="wasnt_able_to_connect_or_download">Фаразны тоташтыра яки йөкли алмады</string>
     <string name="swipe_lock">Сөртү йозак</string>
     <string name="widget_theme">Виджет темасы</string>
@@ -74,4 +72,7 @@
     <string name="today">Бүген</string>
     <string name="last_year_stats">Узган ел статистикасы</string>
     <string name="last_month_stats">Узган ай статистика</string>
+    <string name="radar_url_not_set">Радар Урл көйләнми. Сез үзгәрү өчен көйләүләргә бара аласыз</string>
+    <string name="radar_still_downloading">Радар образы әле дә йөкләнә</string>
+    <string name="radar_download_failed">Радар образын йөкли алмады</string>
 </resources>

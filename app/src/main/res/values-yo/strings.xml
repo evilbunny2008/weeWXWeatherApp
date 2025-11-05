@@ -20,8 +20,7 @@
     <string name="show_radar">Fihan Reda</string>
     <string name="show_forecast">Fihan asọtẹlẹ</string>
     <string name="radarforecast">Lori iboju akọkọ:</string>
-    <string name="nav_header_title">app wiwx</string>
-    <string name="radar">Afiweye</string>
+	<string name="radar">Afiweye</string>
     <string name="custom_url">Iyan: URL aṣa</string>
     <string name="fgColour">Ẹrọ ailorukọ forteund awọ</string>
     <string name="bgColour">Ẹrọ ailorukọ Ayanfẹ</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL URL ti ṣofo</string>
     <string name="wasnt_able_to_connect_settings">Ko ni anfani lati sopọ tabi gba awọn eto lati ọdọ olupin rẹ</string>
     <string name="url_was_default_or_empty">URL ti ṣeto si aiyipada tabi ṣofo</string>
-    <string name="radar_url_not_set">URL Redar ko ṣeto tabi tun n gbasilẹ. O le lọ si awọn eto lati yipada</string>
     <string name="wasnt_able_to_connect_or_download">Ko ni anfani lati sopọ tabi ṣe igbasilẹ asọtẹlẹ naa</string>
     <string name="swipe_lock">Ra titiipa</string>
     <string name="widget_theme">Ẹrọ ẹrọ ẹrọ ailorukọ</string>
@@ -74,4 +72,7 @@
     <string name="today">Loni</string>
     <string name="last_year_stats">Awọn iṣiro ti ọdun to kọja</string>
     <string name="last_month_stats">Awọn iṣiro oṣu ti o kọja</string>
+    <string name="radar_url_not_set">Unch Redar ko ṣeto. O le lọ si awọn eto lati yipada</string>
+    <string name="radar_still_downloading">Aworan Reda nla tun n gba lati ayelujara</string>
+    <string name="radar_download_failed">O kuna lati ṣe igbasilẹ aworan Reda</string>
 </resources>

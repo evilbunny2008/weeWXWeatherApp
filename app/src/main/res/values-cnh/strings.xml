@@ -20,8 +20,7 @@
     <string name="show_radar">Radar hmuhsak tuah</string>
     <string name="show_forecast">Forecast kha hmuhsak</string>
     <string name="radarforecast">Screen nganpi cungah:</string>
-    <string name="nav_header_title">weeWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Thim khawhmi: Custom URL</string>
     <string name="fgColour">Widget Foreground Color Picker</string>
     <string name="bgColour">Widget Background Color Picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Data URL cu a thiang lo</string>
     <string name="wasnt_able_to_connect_settings">Na server chungin settings pawl kha pehtlaihnak le download tuah khawh a si lo maw</string>
     <string name="url_was_default_or_empty">URL cu default ah an chiah asiloah a lawngmi a si</string>
-    <string name="radar_url_not_set">Radar URL cu set lo asiloah download a si rih. Thlennak caah settings ah na kal khawh</string>
     <string name="wasnt_able_to_connect_or_download">Forecast pehtlaihnak le download tuah khawh a si lo</string>
     <string name="swipe_lock">Swipe</string>
     <string name="widget_theme">Widget Theme</string>
@@ -74,4 +72,7 @@
     <string name="today">Nihin</string>
     <string name="last_year_stats">A luan ciami kum 2019 nak in a si</string>
     <string name="last_month_stats">A luan ciami thla hna ah Statistics</string>
+    <string name="radar_url_not_set">Radar URL cu set lo. Thlennak caah settings ah na kal khawh</string>
+    <string name="radar_still_downloading">Radar hmanthlak cu download a si rih</string>
+    <string name="radar_download_failed">Radar hmanthlak download tuah khawh a si lo</string>
 </resources>

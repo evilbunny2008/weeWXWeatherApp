@@ -20,8 +20,7 @@
     <string name="show_radar">Erakutsi Radar</string>
     <string name="show_forecast">Erakutsi iragarpena</string>
     <string name="radarforecast">Pantaila nagusian:</string>
-    <string name="nav_header_title">weeWX aplikazioa</string>
-    <string name="radar">Radarra</string>
+	<string name="radar">Radarra</string>
     <string name="custom_url">Aukerakoa: URL pertsonalizatua</string>
     <string name="fgColour">Widgetaren lehen planoko kolore-hautatzailea</string>
     <string name="bgColour">Widgetaren atzeko planoko kolore-hautatzailea</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Datuen URLa hutsik zegoen</string>
     <string name="wasnt_able_to_connect_settings">Ezin izan dira zure zerbitzaritik konektatu edo deskargatu ezarpenak</string>
     <string name="url_was_default_or_empty">URL lehenetsia ezarri zen edo hutsik zegoen</string>
-    <string name="radar_url_not_set">Radar URLa ez da ezarri edo oraindik deskargatzen ari da. Ezarpenetara joan zaitezke aldatzeko</string>
     <string name="wasnt_able_to_connect_or_download">Ezin izan da iragarpena konektatu edo deskargatu</string>
     <string name="swipe_lock">Irristatu blokeoa</string>
     <string name="widget_theme">Widget Gaia</string>
@@ -74,4 +72,7 @@
     <string name="today">Gaur</string>
     <string name="last_year_stats">Iazko Estatistika</string>
     <string name="last_month_stats">Azken hilabeteko estatistikak</string>
+    <string name="radar_url_not_set">Radar URLa ez da ezarri. Ezarpenetara joan zaitezke aldatzeko</string>
+    <string name="radar_still_downloading">Radar irudia deskargatzen ari da oraindik</string>
+    <string name="radar_download_failed">Ezin izan da deskargatu radar-irudia</string>
 </resources>

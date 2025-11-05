@@ -20,8 +20,7 @@
     <string name="show_radar">ରାଡାର ଦେଖାନ୍ତୁ |</string>
     <string name="show_forecast">ପୂର୍ବାନୁମାନ ଦେଖାନ୍ତୁ |</string>
     <string name="radarforecast">ମୁଖ୍ୟ ପରଦାରେ:</string>
-    <string name="nav_header_title">weeWX ଆପ୍ |</string>
-    <string name="radar">ରାଡାର |</string>
+	<string name="radar">ରାଡାର |</string>
     <string name="custom_url">ବ tion କଳ୍ପିକ: କଷ୍ଟମ୍ URL |</string>
     <string name="fgColour">ୱିଜେଟ୍ ଫରଗ୍ରାଉଣ୍ଡ୍ ରଙ୍ଗ ପିକର୍ |</string>
     <string name="bgColour">ୱିଜେଟ୍ ପୃଷ୍ଠଭୂମି ରଙ୍ଗ ପିକର୍ |</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">ଡାଟା URL ଖାଲି ଥିଲା |</string>
     <string name="wasnt_able_to_connect_settings">ଆପଣଙ୍କ ସର୍ଭରରୁ ସେଟିଂସମୂହକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="url_was_default_or_empty">URL ଡିଫଲ୍ଟରେ ସେଟ୍ ହୋଇଥିଲା କିମ୍ବା ଖାଲି ଥିଲା |</string>
-    <string name="radar_url_not_set">ରାଡାର URL ସେଟ୍ ହୋଇନାହିଁ କିମ୍ବା ତଥାପି ଡାଉନଲୋଡ୍ କରୁଛି | ଆପଣ ପରିବର୍ତ୍ତନ କରିବାକୁ ସେଟିଂକୁ ଯାଇପାରିବେ |</string>
     <string name="wasnt_able_to_connect_or_download">ପୂର୍ବାନୁମାନକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="swipe_lock">ସ୍ୱାଇପ୍ ଲକ୍ |</string>
     <string name="widget_theme">ୱିଜେଟ୍ ଥିମ୍ |</string>
@@ -74,4 +72,7 @@
     <string name="today">ଆଜି |</string>
     <string name="last_year_stats">ଗତ ବର୍ଷର ପରିସଂଖ୍ୟାନ |</string>
     <string name="last_month_stats">ଗତ ମାସର ପରିସଂଖ୍ୟାନ |</string>
+    <string name="radar_url_not_set">ରାଡାର URL ସେଟ୍ ହୋଇନାହିଁ | ଆପଣ ପରିବର୍ତ୍ତନ କରିବାକୁ ସେଟିଂକୁ ଯାଇପାରିବେ |</string>
+    <string name="radar_still_downloading">ରାଡାର ପ୍ରତିଛବି ଏପର୍ଯ୍ୟନ୍ତ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
+    <string name="radar_download_failed">ରାଡାର ପ୍ରତିଛବି ଡାଉନଲୋଡ୍ କରିବାରେ ବିଫଳ |</string>
 </resources>

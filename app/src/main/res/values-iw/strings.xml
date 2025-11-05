@@ -20,8 +20,7 @@
     <string name="show_radar">הצג רדאר</string>
     <string name="show_forecast">הצג תחזית</string>
     <string name="radarforecast">במסך הראשי:</string>
-    <string name="nav_header_title">אפליקציית weWX</string>
-    <string name="radar">מכ\'ם</string>
+	<string name="radar">מכ\'ם</string>
     <string name="custom_url">אופציונלי: כתובת אתר מותאמת אישית</string>
     <string name="fgColour">בוחר צבעי חזית יישומון</string>
     <string name="bgColour">בוחר צבעי רקע יישומון</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">כתובת האתר של הנתונים הייתה ריקה</string>
     <string name="wasnt_able_to_connect_settings">לא הצליח להתחבר או להוריד את ההגדרות מהשרת שלך</string>
     <string name="url_was_default_or_empty">כתובת האתר הוגדרה כברירת מחדל או שהייתה ריקה</string>
-    <string name="radar_url_not_set">כתובת ה-Radar לא מוגדרת או שעדיין מוריד. אתה יכול ללכת להגדרות כדי לשנות</string>
     <string name="wasnt_able_to_connect_or_download">לא הצליח להתחבר או להוריד את התחזית</string>
     <string name="swipe_lock">נעילת החלקה</string>
     <string name="widget_theme">ערכת נושא של ווידג\'ט</string>
@@ -74,4 +72,7 @@
     <string name="today">הַיוֹם</string>
     <string name="last_year_stats">סטטיסטיקה של שנה שעברה</string>
     <string name="last_month_stats">סטטיסטיקה של החודש שעבר</string>
+    <string name="radar_url_not_set">כתובת ה-Radar לא מוגדרת. אתה יכול לעבור להגדרות כדי לשנות</string>
+    <string name="radar_still_downloading">תמונת הרדאר עדיין יורדת</string>
+    <string name="radar_download_failed">הורדת תמונת הרדאר נכשלה</string>
 </resources>

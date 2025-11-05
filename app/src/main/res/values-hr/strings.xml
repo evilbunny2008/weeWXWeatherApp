@@ -20,8 +20,7 @@
     <string name="show_radar">Prikaži Radar</string>
     <string name="show_forecast">Prikaži prognozu</string>
     <string name="radarforecast">Na glavnom ekranu:</string>
-    <string name="nav_header_title">aplikacija weeWX</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Izborno: prilagođeni URL</string>
     <string name="fgColour">Alat za odabir boja prednjeg plana widgeta</string>
     <string name="bgColour">Alat za odabir pozadinske boje widgeta</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL podataka bio je prazan</string>
     <string name="wasnt_able_to_connect_settings">Nije bilo moguće povezati se ili preuzeti postavke s vašeg poslužitelja</string>
     <string name="url_was_default_or_empty">URL je postavljen na zadani ili je prazan</string>
-    <string name="radar_url_not_set">URL radara nije postavljen ili se još preuzima. Možete ići u postavke za promjenu</string>
     <string name="wasnt_able_to_connect_or_download">Nije bilo moguće povezati se ili preuzeti prognozu</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="widget_theme">Tema widgeta</string>
@@ -74,4 +72,7 @@
     <string name="today">Danas</string>
     <string name="last_year_stats">Prošlogodišnja statistika</string>
     <string name="last_month_stats">Statistika prošlog mjeseca</string>
+    <string name="radar_url_not_set">URL radara nije postavljen. Možete ići u postavke za promjenu</string>
+    <string name="radar_still_downloading">Radarska slika se još preuzima</string>
+    <string name="radar_download_failed">Preuzimanje radarske slike nije uspjelo</string>
 </resources>

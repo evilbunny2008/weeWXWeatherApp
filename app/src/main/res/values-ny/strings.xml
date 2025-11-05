@@ -20,8 +20,7 @@
     <string name="show_radar">Onetsani radar</string>
     <string name="show_forecast">Onetsani zamtsogolo</string>
     <string name="radarforecast">Pazenera lalikulu:</string>
-    <string name="nav_header_title">Pulogalamu ya Weewx</string>
-    <string name="radar">Makina amlengalenga</string>
+	<string name="radar">Makina amlengalenga</string>
     <string name="custom_url">Zosankha: URL yamasewera</string>
     <string name="fgColour">Gicker kutsogolo</string>
     <string name="bgColour">Chingwe chojambula</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Ulalo wa data unali wopanda kanthu</string>
     <string name="wasnt_able_to_connect_settings">Sanathe kulumikizana kapena kutsitsa makonda kuchokera ku seva yanu</string>
     <string name="url_was_default_or_empty">Ulalo udakhazikitsidwa kuti ukhale wopanda pake kapena ulibe kanthu</string>
-    <string name="radar_url_not_set">URL ya Radar sinakhazikike kapena kutsitsa. Mutha kupita ku zofuna kusintha</string>
     <string name="wasnt_able_to_connect_or_download">Sanathe kulumikizana kapena kutsitsa zonena za kuneneratu</string>
     <string name="swipe_lock">Swipe loko</string>
     <string name="widget_theme">Mutu wa Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Lero</string>
     <string name="last_year_stats">Ziwerengero za chaka chatha</string>
     <string name="last_month_stats">Ziwerengero za mwezi</string>
+    <string name="radar_url_not_set">Url url sunakhazikike. Mutha kupita ku zofuna kusintha</string>
+    <string name="radar_still_downloading">Chithunzi cha Radar chidatsitsabe</string>
+    <string name="radar_download_failed">Talephera kutsitsa chithunzi cha radar</string>
 </resources>

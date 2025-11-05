@@ -20,8 +20,7 @@
     <string name="show_radar">Nyuan</string>
     <string name="show_forecast">Tik nhïïm</string>
     <string name="radarforecast">Në screen yic:</string>
-    <string name="nav_header_title">ɣokeWX App</string>
-    <string name="radar">Röl</string>
+	<string name="radar">Röl</string>
     <string name="custom_url">Kë lëu bï ya lɔc: URL ë thëm ë thëm</string>
     <string name="fgColour">Wëdgk Sürë Pänd Pickër</string>
     <string name="bgColour">Wëdgätës Bäldng pëëd</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Kä cï yök URL acï bɛ̈n</string>
     <string name="wasnt_able_to_connect_settings">Acïï lëu bï yök wala bï kä cïke tääu thïn yök tënë raandu</string>
     <string name="url_was_default_or_empty">URL acï tääu në kë cï tääu thïn yic wala acï thiäŋ</string>
-    <string name="radar_url_not_set">Radar URL acie tääu wala aŋot ke tɔ̈u. Yïn alëu ba lɔ në thäät yiic ba rot waar</string>
     <string name="wasnt_able_to_connect_or_download">Acïï lëu bï yök ka bï thööŋ de käŋ yök</string>
     <string name="swipe_lock">Kë cie yic</string>
     <string name="widget_theme">Tiɛ̈ŋ de</string>
@@ -74,4 +72,7 @@
     <string name="today">Akölë</string>
     <string name="last_year_stats">Kä ye kueen në ruön wäär cï lɔ</string>
     <string name="last_month_stats">Kä cï kek kueen në pɛɛi de rou yic</string>
+    <string name="radar_url_not_set">Radyür URL akëc tääm. Yïn alëu ba lɔ në thäät yiic ba rot waar</string>
+    <string name="radar_still_downloading">Radar thura aŋot ke cë yök</string>
+    <string name="radar_download_failed">Acï wïc ba thura de radar yök</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">رادار ښکاره کړئ</string>
     <string name="show_forecast">وړاندوینه ښکاره کړئ</string>
     <string name="radarforecast">په اصلي سکرین کې:</string>
-    <string name="nav_header_title">weeWX اپلیکیشن</string>
-    <string name="radar">رادار</string>
+	<string name="radar">رادار</string>
     <string name="custom_url">اختیاري: دودیز URL</string>
     <string name="fgColour">د ویجټ مخکینۍ رنګ غوره کونکی</string>
     <string name="bgColour">د ویجټ شالید رنګ غوره کونکی</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">د معلوماتو URL خالي و</string>
     <string name="wasnt_able_to_connect_settings">ستاسو د سرور څخه تنظیمات وصل یا ډاونلوډ کولو توان نه درلود</string>
     <string name="url_was_default_or_empty">URL ډیفالټ ته ټاکل شوی یا خالي و</string>
-    <string name="radar_url_not_set">د رادار URL نه دی ټاکل شوی یا لاهم ډاونلوډ دی. تاسو کولی شئ د بدلون لپاره تنظیماتو ته لاړ شئ</string>
     <string name="wasnt_able_to_connect_or_download">وړاندوینه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="swipe_lock">سوائپ لاک</string>
     <string name="widget_theme">د ویجټ موضوع</string>
@@ -74,4 +72,7 @@
     <string name="today">نن</string>
     <string name="last_year_stats">د تیر کال احصایې</string>
     <string name="last_month_stats">د تیرې میاشتې احصایې</string>
+    <string name="radar_url_not_set">د رادار URL نه دی ټاکل شوی. تاسو کولی شئ د بدلون لپاره تنظیماتو ته لاړ شئ</string>
+    <string name="radar_still_downloading">د رادار عکس لاهم ډاونلوډ دی</string>
+    <string name="radar_download_failed">د رادار عکس ډاونلوډ کولو کې پاتې راغلی</string>
 </resources>

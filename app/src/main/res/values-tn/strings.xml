@@ -20,8 +20,7 @@
     <string name="show_radar">Bontsha Radara</string>
     <string name="show_forecast">Bontsha Ponelopele</string>
     <string name="radarforecast">Mo sekirining se Segolo:</string>
-    <string name="nav_header_title">App ya weeWX</string>
-    <string name="radar">Radara</string>
+	<string name="radar">Radara</string>
     <string name="custom_url">Ga go tlhokege: URL e e Tlwaelegileng</string>
     <string name="fgColour">Motlhopi wa Mmala wa Mebala ya Dilo Tse di Kwa Tsamalatsa</string>
     <string name="bgColour">Motlhopi wa Mmala wa Lemorago la Widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL ya tshedimosetso e ne e se na sepe</string>
     <string name="wasnt_able_to_connect_settings">Ga e a kgona go golaganya kgotsa go laisolola diseting go tswa mo sefareng ya gago</string>
     <string name="url_was_default_or_empty">URL e ne e setilwe go ya kwa thulaganyetsoruri kgotsa e ne e le lolea</string>
-    <string name="radar_url_not_set">Radar URL ga e a seta kgotsa e sa ntse e laisolola. O ka ya kwa diseting go fetoga</string>
     <string name="wasnt_able_to_connect_or_download">O ne a sa kgone go golaganya kgotsa go laisolola ponelopele</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="widget_theme">Setlhogo sa Morero wa Sediriswa</string>
@@ -74,4 +72,7 @@
     <string name="today">Gompieno</string>
     <string name="last_year_stats">Dipalopalo tsa Ngwaga o o fetileng</string>
     <string name="last_month_stats">Dipalopalo tsa Kgwedi ya Bofelo</string>
+    <string name="radar_url_not_set">URL ya radara ga e a setiwa. O ka ya kwa diseting go fetoga</string>
+    <string name="radar_still_downloading">Setshwantsho sa radara se sa ntse se laisolola</string>
+    <string name="radar_download_failed">O paletswe ke go laisolola setshwantsho sa radara</string>
 </resources>

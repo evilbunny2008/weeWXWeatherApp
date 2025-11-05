@@ -20,8 +20,7 @@
     <string name="show_radar">显示雷达</string>
     <string name="show_forecast">展会预测</string>
     <string name="radarforecast">在主屏幕上：</string>
-    <string name="nav_header_title">weeWX应用程序</string>
-    <string name="radar">雷达</string>
+	<string name="radar">雷达</string>
     <string name="custom_url">可选：自定义 URL</string>
     <string name="fgColour">小部件前景色选择器</string>
     <string name="bgColour">小部件背景颜色选择器</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">数据 URL 为空</string>
     <string name="wasnt_able_to_connect_settings">无法连接您的服务器或从您的服务器下载设置</string>
     <string name="url_was_default_or_empty">URL 已设置为默认值或为空</string>
-    <string name="radar_url_not_set">雷达 URL 未设置或仍在下载。您可以前往设置进行更改。</string>
     <string name="wasnt_able_to_connect_or_download">无法连接或下载天气预报。</string>
     <string name="swipe_lock">滑动锁定</string>
     <string name="widget_theme">小部件主题</string>
@@ -74,4 +72,7 @@
     <string name="today">今天</string>
     <string name="last_year_stats">去年的统计数据</string>
     <string name="last_month_stats">上个月的统计数据</string>
+    <string name="radar_url_not_set">未设置雷达 URL。您可以前往设置进行更改。</string>
+    <string name="radar_still_downloading">雷达图像仍在下载中。</string>
+    <string name="radar_download_failed">雷达图像下载失败</string>
 </resources>

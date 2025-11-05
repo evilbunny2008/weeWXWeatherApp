@@ -20,8 +20,7 @@
     <string name="show_radar">ራዳር ምርኢት</string>
     <string name="show_forecast">ትንበያ የርኢ</string>
     <string name="radarforecast">ኣብ ቀንዲ ስክሪን፤</string>
-    <string name="nav_header_title">ዊውክስ ኣፕ</string>
-    <string name="radar">ራዳር</string>
+	<string name="radar">ራዳር</string>
     <string name="custom_url">ኣማራጺ: ብሕታዊ URL</string>
     <string name="fgColour">ዊጀት ቅድሚት መሬት ሕብሪ ምልቃም</string>
     <string name="bgColour">ዊጀት ድሕረ ባይታ ሕብሪ ምልቃም</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">ዳታ URL ባዶ እዩ ነይሩ።</string>
     <string name="wasnt_able_to_connect_settings">ካብ ሰርቨርካ ነቲ ቅጥዕታት ከተራኽቦ ወይ ከተውርዶ ኣይከኣለን ።</string>
     <string name="url_was_default_or_empty">URL ናብቲ ነባሪ ተቐሚጡ ወይ ባዶ እዩ ነይሩ።</string>
-    <string name="radar_url_not_set">ራዳር URL ኣይተቐመጠን ወይ ሕጂ ውን ይወርድ ኣሎ። ናብ ቅጥዕታት ክትከይድ ትኽእል ኢኻ ክትቅየር ትኽእል ኢኻ።</string>
     <string name="wasnt_able_to_connect_or_download">ነቲ ትንበያ ከተራኽቦ ወይ ከተውርዶ ኣይከኣለን።</string>
     <string name="swipe_lock">ስዋይፕ ሎክ</string>
     <string name="widget_theme">ዊጀት ቴማ</string>
@@ -74,4 +72,7 @@
     <string name="today">ሎምዓንቲ</string>
     <string name="last_year_stats">ናይ ዝሓለፈ ዓመት ስታቲስቲክስ</string>
     <string name="last_month_stats">ናይ ዝሓለፈ ወርሒ ስታቲስቲክስ</string>
+    <string name="radar_url_not_set">ራዳር URL ኣይተቐመጠን። ናብ ቅጥዕታት ክትከይድ ትኽእል ኢኻ ክትቅየር ትኽእል ኢኻ።</string>
+    <string name="radar_still_downloading">ራዳር ምስሊ ገና ይወርድ ኣሎ።</string>
+    <string name="radar_download_failed">ናይ ራዳር ምስሊ ምውራድ ኣይከኣለን</string>
 </resources>

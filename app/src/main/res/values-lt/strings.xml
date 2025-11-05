@@ -20,8 +20,7 @@
     <string name="show_radar">Rodyti radarą</string>
     <string name="show_forecast">Rodyti prognozę</string>
     <string name="radarforecast">Pagrindiniame ekrane:</string>
-    <string name="nav_header_title">weeWX programa</string>
-    <string name="radar">Radaras</string>
+	<string name="radar">Radaras</string>
     <string name="custom_url">Pasirenkama: tinkintas URL</string>
     <string name="fgColour">Valdiklio priekinio plano spalvų parinkiklis</string>
     <string name="bgColour">Valdiklio fono spalvos parinkiklis</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Duomenų URL laukas buvo tuščias</string>
     <string name="wasnt_able_to_connect_settings">Nepavyko prisijungti arba atsisiųsti nustatymų iš jūsų serverio</string>
     <string name="url_was_default_or_empty">URL buvo nustatytas kaip numatytasis arba buvo tuščias</string>
-    <string name="radar_url_not_set">Radaro URL nenustatytas arba vis dar atsisiunčiamas. Norėdami pakeisti, galite eiti į nustatymus</string>
     <string name="wasnt_able_to_connect_or_download">Nepavyko prisijungti arba atsisiųsti prognozės</string>
     <string name="swipe_lock">Perbraukite užraktas</string>
     <string name="widget_theme">Valdiklio tema</string>
@@ -74,4 +72,7 @@
     <string name="today">Šiandien</string>
     <string name="last_year_stats">Praėjusių metų statistika</string>
     <string name="last_month_stats">Praėjusio mėnesio statistika</string>
+    <string name="radar_url_not_set">Radaro URL nenustatytas. Norėdami pakeisti, galite eiti į nustatymus</string>
+    <string name="radar_still_downloading">Radaro vaizdas vis dar atsisiunčiamas</string>
+    <string name="radar_download_failed">Nepavyko atsisiųsti radaro vaizdo</string>
 </resources>

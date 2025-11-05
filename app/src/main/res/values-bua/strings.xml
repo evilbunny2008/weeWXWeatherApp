@@ -20,8 +20,7 @@
     <string name="show_radar">Радар харуулха</string>
     <string name="show_forecast">Уридшалан мэдээсэл харуулха</string>
     <string name="radarforecast">Гол дэлгэс дээрэ:</string>
-    <string name="nav_header_title">weeWX Апп</string>
-    <string name="radar">Радар</string>
+	<string name="radar">Радар</string>
     <string name="custom_url">Нэмэлтэ: Захиалгаар URL</string>
     <string name="fgColour">Виджет Уридшалан үнгын шэлэгдэмэл</string>
     <string name="bgColour">Виджет Ара үнгэ үнгэ шэлэхэ</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Мэдээсэлэй URL хооһон байгаа</string>
     <string name="wasnt_able_to_connect_settings">Танай серверһээ тохиргоонуудые холбохо гү, али татажа абаха аргагүй байгаа</string>
     <string name="url_was_default_or_empty">URL стандартда табигдаһан гү, али хооһон байгаа</string>
-    <string name="radar_url_not_set">Радар URL тогтоогдоогүй гү, али үшөөл татажа байна. Хубилха настройконуудта орожо болохо</string>
     <string name="wasnt_able_to_connect_or_download">Уридшалан мэдээсэл холбожо, татажа абаха аргагүй байгаа</string>
     <string name="swipe_lock">Свипе түрмэ</string>
     <string name="widget_theme">Виджет сэдэб</string>
@@ -74,4 +72,7 @@
     <string name="today">Мүнөөдэр</string>
     <string name="last_year_stats">Үнгэрһэн жэлэй тоо баримта</string>
     <string name="last_month_stats">Үнгэрһэн һарын статистика</string>
+    <string name="radar_url_not_set">Радарай URL табигдаагүй. Хубилха настройконуудта орожо болохо</string>
+    <string name="radar_still_downloading">Радар зураг үшөөл татажа байна</string>
+    <string name="radar_download_failed">Радарай зураг татажа абаха аргагүй болоһон</string>
 </resources>

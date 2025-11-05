@@ -20,8 +20,7 @@
     <string name="show_radar">Tsaych Radar</string>
     <string name="show_forecast">Forke</string>
     <string name="radarforecast">In Haupt Screen:</string>
-    <string name="nav_header_title">weeWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opsioneel: Persoon URL</string>
     <string name="fgColour">Widget Feel Farbe Picker</string>
     <string name="bgColour">Wurset Hintergrund Farbe Picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Data URL waar leetich</string>
     <string name="wasnt_able_to_connect_settings">Waar net in kontitsioon fer ti instellunge fon tayn serwer se ferklayche orer download mache</string>
     <string name="url_was_default_or_empty">URL waar in te standard kextëlt kep orer waar leere</string>
-    <string name="radar_url_not_set">Radar URL net in setse orer noch am download mache. Tuu khanst in ti instëlunge keen fer se ënere</string>
     <string name="wasnt_able_to_connect_or_download">Waar nët in kontitsioon fer ti prokramatsioon se ferklayche orer se download mache</string>
     <string name="swipe_lock">Xeen xlus</string>
     <string name="widget_theme">Wedget Theema</string>
@@ -74,4 +72,7 @@
     <string name="today">Hayt</string>
     <string name="last_year_stats">Tas letste yoer fon te Statistike</string>
     <string name="last_month_stats">Ti Statistiks fon te Moonat fon te Moonat</string>
+    <string name="radar_url_not_set">Radar URL is net set. Tuu khanst in ti instëlunge keen fer se ënere</string>
+    <string name="radar_still_downloading">Radar pilt is noch am download mache</string>
+    <string name="radar_download_failed">Fer nët tas radar pilt download mache</string>
 </resources>

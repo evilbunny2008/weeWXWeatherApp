@@ -20,8 +20,7 @@
     <string name="show_radar">ራዳር አሳይ</string>
     <string name="show_forecast">ትንበያ አሳይ</string>
     <string name="radarforecast">በዋናው ማያ ገጽ ላይ</string>
-    <string name="nav_header_title">ዌብክስ መተግበሪያ</string>
-    <string name="radar">ራዳር</string>
+	<string name="radar">ራዳር</string>
     <string name="custom_url">ከተፈለገ: - ብጁ ዩ አር ኤል</string>
     <string name="fgColour">የግርጌ ማስታወሻዎች የፊት ቀለም</string>
     <string name="bgColour">የጀርባ ትምህርት ቤት የቀለም መራጭ</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">የውሂብ ዩ አር ኤል ባዶ ነበር</string>
     <string name="wasnt_able_to_connect_settings">ቅንብሮቹን ከአገልጋይዎ ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="url_was_default_or_empty">ዩ አር ኤል ወደ ነባሪው ተዘጋጅቷል ወይም ባዶ ነበር</string>
-    <string name="radar_url_not_set">ራዳር ዩ አር ኤል አልተዋቀረም ወይም አሁንም እያወርድ ነው. ወደ ቅንብሮች ወደ ለውጦች መሄድ ይችላሉ</string>
     <string name="wasnt_able_to_connect_or_download">ትንበያውን ማገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="swipe_lock">መቆለፊያ</string>
     <string name="widget_theme">ንዑስ ፕሮግራም ጭብጥ</string>
@@ -74,4 +72,7 @@
     <string name="today">ዛሬ</string>
     <string name="last_year_stats">ያለፈው ዓመት ስታቲስቲክስ</string>
     <string name="last_month_stats">ያለፈው ወር ስታቲስቲክስ</string>
+    <string name="radar_url_not_set">ራዳር ዩ አር ኤል አልተዋቀረም. ወደ ቅንብሮች ወደ ለውጦች መሄድ ይችላሉ</string>
+    <string name="radar_still_downloading">የራዳር ምስል አሁንም እያወርድ ነው</string>
+    <string name="radar_download_failed">የራዳውን ምስል ማውረድ አልተሳካም</string>
 </resources>

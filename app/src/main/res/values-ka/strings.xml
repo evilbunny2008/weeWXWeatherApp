@@ -20,8 +20,7 @@
     <string name="show_radar">რადარის ჩვენება</string>
     <string name="show_forecast">პროგნოზის ჩვენება</string>
     <string name="radarforecast">მთავარ ეკრანზე:</string>
-    <string name="nav_header_title">weeWX აპლიკაცია</string>
-    <string name="radar">რადარი</string>
+	<string name="radar">რადარი</string>
     <string name="custom_url">სურვილისამებრ: მორგებული URL</string>
     <string name="fgColour">ვიჯეტის წინა პლანზე ფერის ამომრჩევი</string>
     <string name="bgColour">ვიჯეტის ფონის ფერის ამომრჩევი</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">მონაცემთა URL ცარიელი იყო</string>
     <string name="wasnt_able_to_connect_settings">თქვენი სერვერიდან პარამეტრების დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="url_was_default_or_empty">URL დაყენებული იყო ნაგულისხმევად ან ცარიელი იყო</string>
-    <string name="radar_url_not_set">რადარის URL არ არის დაყენებული ან ჯერ კიდევ იტვირთება. შესაცვლელად შეგიძლიათ გადახვიდეთ პარამეტრებზე</string>
     <string name="wasnt_able_to_connect_or_download">პროგნოზის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="swipe_lock">გადაფურცლეთ ჩაკეტვა</string>
     <string name="widget_theme">ვიჯეტის თემა</string>
@@ -74,4 +72,7 @@
     <string name="today">დღეს</string>
     <string name="last_year_stats">გასული წლის სტატისტიკა</string>
     <string name="last_month_stats">გასული თვის სტატისტიკა</string>
+    <string name="radar_url_not_set">რადარის URL არ არის დაყენებული. შესაცვლელად შეგიძლიათ გადახვიდეთ პარამეტრებზე</string>
+    <string name="radar_still_downloading">რადარის სურათი ჯერ კიდევ იტვირთება</string>
+    <string name="radar_download_failed">რადარის სურათის ჩამოტვირთვა ვერ მოხერხდა</string>
 </resources>

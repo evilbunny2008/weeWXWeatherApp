@@ -13,10 +13,6 @@ import android.widget.TextView;
 
 import com.google.android.material.slider.Slider;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -26,16 +22,15 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 public class Stats extends Fragment
 {
 	private boolean isVisible = false;
+	private Thread statsThread = null;
+	private long stStart;
 	private Slider mySlider;
 	private View rootView;
 	private WebView wv;
 	private SwipeRefreshLayout swipeLayout;
-	private final ViewTreeObserver.OnScrollChangedListener scl =
-			() -> swipeLayout.setEnabled(wv.getScrollY() == 0);
+	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
 
-	public View onCreateView(@NonNull LayoutInflater inflater,
-	                         @Nullable ViewGroup container,
-	                         @Nullable Bundle savedInstanceState)
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
 		Common.LogMessage("Stats.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
@@ -45,9 +40,6 @@ public class Stats extends Fragment
 		LinearLayout ll = rootView.findViewById(R.id.stats_ll);
 		ll.setBackgroundColor(KeyValue.bgColour);
 
-		mySlider = rootView.findViewById(R.id.pageZoom);
-		mySlider.setBackgroundColor(KeyValue.bgColour);
-
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setOnRefreshListener(() ->
 		{
@@ -56,13 +48,13 @@ public class Stats extends Fragment
 			forceRefresh();
 		});
 
-		int default_zoom = sanitiseZoom(Common.GetIntPref("mySlider", 100));
-		mySlider.setValue(default_zoom);
+		mySlider = rootView.findViewById(R.id.pageZoom);
+		mySlider.setBackgroundColor(KeyValue.bgColour);
 		mySlider.addOnChangeListener((slider, value, fromUser) ->
 		{
 			Common.LogMessage("Slider zoom =" + value + "%");
 
-			if(fromUser)
+			if(fromUser && (int)mySlider.getValue() != (int)value)
 			{
 				Common.SetIntPref("mySlider", (int)value);
 				setZoom((int)value);
@@ -92,6 +84,9 @@ public class Stats extends Fragment
 
 		if(savedInstanceState != null)
 			wv.restoreState(savedInstanceState);
+
+		Common.LogMessage("Stats.onViewCreated()-- adding notification manager...");
+		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 	}
 
 	@Override
@@ -147,9 +142,12 @@ public class Stats extends Fragment
 
 	void setZoom(int zoom)
 	{
+		if(mySlider == null || wv == null)
+			return;
+
 		final int finalZoom = sanitiseZoom(zoom);
 
-		Common.LogMessage("new zoom value = " + finalZoom + "%");
+		Common.LogMessage("new zoom value = " + finalZoom + "%", true);
 
 		mySlider.post(() -> mySlider.setValue(finalZoom));
 		wv.post(() -> wv.getSettings().setTextZoom(finalZoom));
@@ -166,23 +164,15 @@ public class Stats extends Fragment
 
 		isVisible = true;
 
-		Common.LogMessage("Stats.onResume()-- adding notification manager...");
-		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
-
 		swipeLayout.setRefreshing(true);
+		int default_zoom = sanitiseZoom(Common.GetIntPref("mySlider", 100));
+		if(default_zoom != (int)mySlider.getValue())
+		{
+			setZoom(default_zoom);
+			Common.LogMessage("default_zoom: " + default_zoom + "%", true);
+		}
+
 		updateFields();
-	}
-
-	public void onPause()
-	{
-		super.onPause();
-		Common.LogMessage("Stats.java -- unregisterReceiver");
-
-		if(!isVisible)
-			return;
-
-		isVisible = false;
-		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 	}
 
 	private final Observer<String> notificationObserver = str ->
@@ -216,20 +206,16 @@ public class Stats extends Fragment
 	{
 		cur = cur.trim();
 
-		try
-		{
-			SimpleDateFormat sdf = new SimpleDateFormat("hh:mm", Locale.getDefault());
-			Date dt = sdf.parse(cur);
-			if(dt != null)
-			{
-				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
-				String str = sdf.format(dt);
-				if(str.length() > 1 && str.startsWith("0"))
-					str = str.substring(1);
-				Common.LogMessage("str == '" + str + "'");
-				return str;
-			}
-		} catch(Exception ignored) {}
+		Common.LogMessage("Old cur: " + cur, true);
+
+		String[] time = cur.split(":");
+		cur = time[0];
+		if(time.length > 1)
+			cur += ":" + time[1];
+		if(cur.length() > 1 && cur.startsWith("0"))
+			cur = cur.substring(1);
+
+		Common.LogMessage("New cur: " + cur, true);
 
 		return cur;
 	}
@@ -260,16 +246,19 @@ public class Stats extends Fragment
 		return str;
 	}
 
-	private String createRowLeft(String class1)
+	private String createRowLeft()
 	{
-		return createRowLeft(class1, Common.emptyField, Common.emptyField);
+		return createRowLeft(null, Common.emptyField, Common.emptyField);
 	}
 
 	private String createRowLeft(String class1, String str1, String str2)
 	{
+		String icon = "";
+		if(class1 != null && !class1.isBlank())
+			icon = "<i class='" + class1 + " icon'></i>";
+
 		return "\t\t<div class='statsDataRow'>\n" +
-		       "\t\t\t<div class='statsDataCell left'><i class='" + class1 + " icon'></i>" +
-		       str1 + "</div>\n" +
+		       "\t\t\t<div class='statsDataCell left'>" + icon + str1 + "</div>\n" +
 		       "\t\t\t<div class='statsDataCell midleft'>" + str2 + "</div>\n";
 	}
 
@@ -278,22 +267,31 @@ public class Stats extends Fragment
 		return "\t\t\t<div class='statsSpacer'>" + Common.emptyField + "</div>\n";
 	}
 
-	private String createRowRight(String class2)
+	private String createRowRight()
 	{
-		return createRowRight(class2, Common.emptyField, Common.emptyField);
+		return createRowRight(null, Common.emptyField, Common.emptyField);
 	}
 
 	private String createRowRight(String class2, String str3, String str4)
 	{
+		String icon = "";
+		if(class2 != null && !class2.isBlank())
+			icon = "<i class='" + class2 + " icon'></i>";
+
 		return "\t\t\t<div class='statsDataCell midright'>" + str3 + "</div>\n" +
-		       "\t\t\t<div class='statsDataCell right'>" + str4 + "<i class='" + class2 +
-		       " icon'></i></div>\n" +
+		       "\t\t\t<div class='statsDataCell right'>" + str4 + icon + "</div>\n" +
 		       "\t\t</div>\n\n";
 	}
 
 	private String createRow(String class1, String class2, String str1,
 	                         String str2, String str3, String str4)
 	{
+		if((str1 == null || str1.isBlank()) &&
+		   (str2 == null || str2.isBlank()) &&
+		   (str3 == null || str3.isBlank()) &&
+		   (str4 == null || str4.isBlank()))
+			return "";
+
 		return createRowLeft(class1, str1, str2) +
 		       createRowMiddle() +
 		       createRowRight(class2, str3, str4);
@@ -328,30 +326,31 @@ public class Stats extends Fragment
 	{
 		try
 		{
-			if(bits.length >= element)
-				return bits[element];
+			if(bits.length > element)
+				return bits[element].trim();
 		} catch(Exception ignored) {}
 
 		return "";
 	}	
 
-	private String showSolarUV(String[] bits, int uv, int uvWhen, int solar, int solarWhen, int timeMode, String which)
+	private String createSolarUV(String[] bits, int uv, int uvWhen, int solar, int solarWhen, int timeMode, String which)
 	{
+		if(bits.length < Math.min(Math.min(uv, uvWhen), Math.min(solar, solarWhen)) ||
+		   (getElement(bits, uvWhen).isBlank() && getElement(bits, solarWhen).isBlank()))
+		{
+			Common.LogMessage("No solar or UV data, skipping...");
+			return "";
+		}
+
 		String className = "flaticon-women-sunglasses";
 		String out = "";
-
-		int minUV = Math.min(uv, uvWhen);
-		int minSolar = Math.min(solar, solarWhen);
-
-		if(bits.length < minUV && bits.length < minSolar)
-			return null;
 
 		if(bits.length >= uvWhen && !bits[uvWhen].isBlank())
 		{
 			String dateTimeStr = getDateTimeStr(bits, uvWhen, timeMode, which);
 			out += createRowLeft(className, getElement(bits, uv) + "UVI", dateTimeStr);
 		} else {
-			out += createRowLeft(className);
+			out += createRowLeft();
 		}
 
 		out += createRowMiddle();
@@ -361,7 +360,7 @@ public class Stats extends Fragment
 			String dateTimeStr = getDateTimeStr(bits, solarWhen, timeMode, which);
 			out += createRowRight(className, dateTimeStr, getElement(bits, solar) + "W/m²");
 		} else {
-			out += createRowRight(className);
+			out += createRowRight();
 		}
 
 		return out;
@@ -371,20 +370,18 @@ public class Stats extends Fragment
 	                          int maxWhen, int min, int minWhen,
 	                          int timeMode, String which)
 	{
-		if(bits.length >= maxWhen && !bits[maxWhen].isBlank() && !bits[minWhen].isBlank())
-		{
-			String maxDateTimeStr = getDateTimeStr(bits, maxWhen, timeMode, which);
-			String minDateTimeStr = getDateTimeStr(bits, minWhen, timeMode, which);
-			if((maxDateTimeStr == null || maxDateTimeStr.isBlank()) && (minDateTimeStr == null || minDateTimeStr.isBlank()))
-				return null;
+		if(bits.length < maxWhen || getElement(bits, maxWhen).isBlank() || getElement(bits, minWhen).isBlank())
+			return "";
 
-			return createRow("flaticon-home-page", "flaticon-home-page",
-					getElement(bits, max) + getElement(bits, appendId),
-					maxDateTimeStr, minDateTimeStr,
-					getElement(bits, min) + getElement(bits, appendId));
-		}
+		String maxDateTimeStr = getDateTimeStr(bits, maxWhen, timeMode, which);
+		String minDateTimeStr = getDateTimeStr(bits, minWhen, timeMode, which);
+		if((maxDateTimeStr == null || maxDateTimeStr.isBlank()) && (minDateTimeStr == null || minDateTimeStr.isBlank()))
+			return "";
 
-		return null;
+		return createRow("flaticon-home-page", "flaticon-home-page",
+				getElement(bits, max) + getElement(bits, appendId),
+				maxDateTimeStr, minDateTimeStr,
+				getElement(bits, min) + getElement(bits, appendId));
 	}
 
 	private String getDateTimeStr(String[] bits, int when, int timeMode, String which)
@@ -454,7 +451,7 @@ public class Stats extends Fragment
 				sb.append(showIndoor(64, bits, 169, 170, 167, 168, 0, null));
 		}
 
-		sb.append(showSolarUV(bits, 205, 206, 207, 208, 0, null));
+		sb.append(createSolarUV(bits, 205, 206, 207, 208, 0, null));
 
 		String rain = getElement(bits, 20);
 		String since = weeWXApp.getAndroidString(R.string.since) + " mn";
@@ -515,7 +512,7 @@ public class Stats extends Fragment
 				sb.append(showIndoor(64, bits, 177, 178, 175, 176, 0, null));
 		}
 
-		sb.append(showSolarUV(bits, 209, 210, 211, 212, 0, null));
+		sb.append(createSolarUV(bits, 209, 210, 211, 212, 0, null));
 
 		String rain = bits[21];
 		String before = weeWXApp.getAndroidString(R.string.before) + " mn";
@@ -576,7 +573,7 @@ public class Stats extends Fragment
 				sb.append(showIndoor(64, bits, 185, 186, 183, 184, 1, null));
 		}
 
-		sb.append(showSolarUV(bits, 213, 214, 215, 216, 1, null));
+		sb.append(createSolarUV(bits, 213, 214, 215, 216, 1, null));
 
 		sb.append(createRow2(getElement(bits, 92) + getElement(bits, 61) + " " +
 		                     getElement(bits, 93) + " " + getTimeMonth(getElement(bits, 94)),
@@ -626,7 +623,7 @@ public class Stats extends Fragment
 				sb.append(showIndoor(64, bits, 193, 194, 191, 192, 2, null));
 		}
 
-		sb.append(showSolarUV(bits, 217, 218, 219, 220, 2, null));
+		sb.append(createSolarUV(bits, 217, 218, 219, 220, 2, null));
 
 		sb.append(createRow2(getElement(bits, 115) + getElement(bits, 61) + " " +
 		                     getElement(bits, 116) + " " + getTimeYear(getElement(bits, 117)),
@@ -683,7 +680,7 @@ public class Stats extends Fragment
 						start + 26, start + 27, start + 24, start + 25, 3, which));
 		}
 
-		sb.append(showSolarUV(bits, start + 28, start + 29, start + 30, start + 31, 3, which));
+		sb.append(createSolarUV(bits, start + 28, start + 29, start + 30, start + 31, 3, which));
 
 		sb.append(createRow2(bits[start + 4] + getElement(bits, 61) + " " +
 		                     bits[start + 5] + " " + getTimeSection(which, bits[start + 6]),
@@ -735,7 +732,7 @@ public class Stats extends Fragment
 						201, 202, 199, 200, 4, null));
 		}
 
-		sb.append(showSolarUV(bits, 221, 222, 223, 224, 4, null));
+		sb.append(createSolarUV(bits, 221, 222, 223, 224, 4, null));
 
 		sb.append(createRow2(getElement(bits, 138) + getElement(bits, 61) + " " +
 		                     getElement(bits, 139) + " " + getAllTime(getElement(bits, 140)),
@@ -746,7 +743,28 @@ public class Stats extends Fragment
 
 	private void updateFields()
 	{
-		Thread t = new Thread(() ->
+		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+
+		if(statsThread != null)
+		{
+			if(statsThread.isAlive())
+			{
+				if(stStart + 30 > current_time)
+				{
+					Common.LogMessage("stStart is less than 30s old, we'll skip this attempt...", true);
+					return;
+				}
+
+				Common.LogMessage("rtStart is 30+s old, we'll interrupt it...", true);
+				statsThread.interrupt();
+			}
+
+			statsThread = null;
+		}
+
+		stStart = current_time;
+
+		statsThread = new Thread(() ->
 		{
 			String tmpStr = Common.GetStringPref("LastDownload", "");
 			if(tmpStr == null)
@@ -764,8 +782,10 @@ public class Stats extends Fragment
 			}
 
 			// Today Stats
-			checkFields(rootView.findViewById(R.id.textView), getElement(bits, 56));
-			checkFields(rootView.findViewById(R.id.textView2), getElement(bits, 54) + " " + getElement(bits, 55));
+			checkFields(rootView.findViewById(R.id.textView),
+					getElement(bits, 56));
+			checkFields(rootView.findViewById(R.id.textView2),
+					getElement(bits, 54) + " " + getElement(bits, 55));
 
 			final StringBuilder sb = new StringBuilder();
 
@@ -834,19 +854,19 @@ public class Stats extends Fragment
 
 			sb.append("</div>\n\n<div style='margin-bottom:5px'></div>\n");
 
-			if(Common.debug_on || Common.web_debug_on)
+			if(Common.web_debug_on)
 				sb.append(Common.debug_html);
 
 			sb.append(Common.html_footer);
 
-			String html = sb.toString();
+			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/drawable/",
+					sb.toString(), "text/html", "utf-8", null));
 
-			//CustomDebug.writeDebug("stats_weewx.html", html);
-
-			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/drawable/", html, "text/html", "utf-8", null));
 			stopRefreshing();
+
+			stStart = 0;
 		});
 
-		t.start();
+		statsThread.start();
 	}
 }

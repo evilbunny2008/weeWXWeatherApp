@@ -20,8 +20,7 @@
     <string name="show_radar">Mustra Radar</string>
     <string name="show_forecast">Mustra Pronostico</string>
     <string name="radarforecast">Riba pantaya Principal:</string>
-    <string name="nav_header_title">weeWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opshonal: URL Personalisa</string>
     <string name="fgColour">Picker di Koló di Koló di dilanti di Widget</string>
     <string name="bgColour">Picker di Koló di Antecedente di Widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL di dato tabata blanku</string>
     <string name="wasnt_able_to_connect_settings">No por a konektá òf download e settings di bo servidor</string>
     <string name="url_was_default_or_empty">URL tabata pone riba e default òf tabata bashi</string>
-    <string name="radar_url_not_set">URL di Radar no ta set òf ainda ta download. Bo por bai na settings pa kambia</string>
     <string name="wasnt_able_to_connect_or_download">No tabata por a konektá òf download e pronóstiko</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="widget_theme">Tema di Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Awe</string>
     <string name="last_year_stats">Estadístika di Aña pasá</string>
     <string name="last_month_stats">Estadístika di Ultimo Luna</string>
+    <string name="radar_url_not_set">URL di Radar no ta set. Bo por bai na settings pa kambia</string>
+    <string name="radar_still_downloading">Imagen di radar ainda ta download</string>
+    <string name="radar_download_failed">Falta di download e imagen di radar</string>
 </resources>

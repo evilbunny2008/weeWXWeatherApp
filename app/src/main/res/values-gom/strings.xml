@@ -20,8 +20,7 @@
     <string name="show_radar">शो रडार 1</string>
     <string name="show_forecast">दाखवा अदमास</string>
     <string name="radarforecast">मुखेल पडद्याचेर: १</string>
-    <string name="nav_header_title">WEEWX अॅप 1000</string>
-    <string name="radar">रडार 1</string>
+	<string name="radar">रडार 1</string>
     <string name="custom_url">पर्यायी: सानुकूल URL</string>
     <string name="fgColour">विजेट अग्रभूमि रंग पिकर</string>
     <string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">डेटा URL कोरीव आशिल्लो</string>
     <string name="wasnt_able_to_connect_settings">तुमच्या सर्वरा वयल्यान सेटिंग्ज जोडपाक वा डाउनलोड करूंक शकलो ना</string>
     <string name="url_was_default_or_empty">URL मुलभूताचेर सेट केल्लो वा रितो आशिल्लो</string>
-    <string name="radar_url_not_set">रडार URL सेट ना वा अजूनय डाउनलोड करता. तुमी बदलपाक सेटिंग्जांत वचूंक शकतात</string>
     <string name="wasnt_able_to_connect_or_download">अदमासाक जोडपाक वा डाउनलोड करपाक मेळनाशिल्लें</string>
     <string name="swipe_lock">स्वाइप लॉक</string>
     <string name="widget_theme">विजेट थीम 1</string>
@@ -74,4 +72,7 @@
     <string name="today">आयज</string>
     <string name="last_year_stats">फाटल्या वर्साची आंकडेवारी</string>
     <string name="last_month_stats">फाटल्या म्हयन्याची आंकडेवारी</string>
+    <string name="radar_url_not_set">रडार URL सेट ना. तुमी बदलपाक सेटिंग्जांत वचूंक शकतात</string>
+    <string name="radar_still_downloading">रडाराची प्रतिमा अजूनय डाउनलोड करपाक लागल्या</string>
+    <string name="radar_download_failed">रडाराची प्रतिमा डाउनलोड करपाक अपेस आयलें</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">Qhia txog radar</string>
     <string name="show_forecast">Qhia kev kwv yees</string>
     <string name="radarforecast">Ntawm lub vijtsam loj:</string>
-    <string name="nav_header_title">Weewx app</string>
-    <string name="radar">Khoom uas muaj radar</string>
+	<string name="radar">Khoom uas muaj radar</string>
     <string name="custom_url">Yeem: URL Nchuav</string>
     <string name="fgColour">Widget foreground xim picker</string>
     <string name="bgColour">Ntsis keeb kwm xim picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Cov ntaub ntawv URL yog dawb paug</string>
     <string name="wasnt_able_to_connect_settings">Tsis muaj peev xwm txuas lossis rub tawm cov chaw ntawm koj lub server</string>
     <string name="url_was_default_or_empty">URL tau teeb tsa rau lub neej ntawd lossis tsis muaj khoob</string>
-    <string name="radar_url_not_set">Radar url tsis teeb tsa lossis tseem rub tawm. Koj tuaj yeem mus rau cov chaw pauv</string>
     <string name="wasnt_able_to_connect_or_download">Tsis tau txuas lossis rub tawm kev twv</string>
     <string name="swipe_lock">Los so xauv</string>
     <string name="widget_theme">Cov ntsiab lus widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Niaj hnub no</string>
     <string name="last_year_stats">Xyoo tas los txheeb cais</string>
     <string name="last_month_stats">Lub hli dhau los txheeb cais</string>
+    <string name="radar_url_not_set">Radar url tsis teeb tsa. Koj tuaj yeem mus rau cov chaw pauv</string>
+    <string name="radar_still_downloading">Cov duab radar tseem rub tawm</string>
+    <string name="radar_download_failed">Ua tsis tiav download lub radar duab</string>
 </resources>

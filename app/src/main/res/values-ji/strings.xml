@@ -20,8 +20,7 @@
     <string name="show_radar">ווייַזן ראַדאַר</string>
     <string name="show_forecast">ווייַזן פאָרעקאַסט</string>
     <string name="radarforecast">אויף די הויפּט פאַרשטעלן:</string>
-    <string name="nav_header_title">WeeWX אַפּ</string>
-    <string name="radar">ראַדאַר</string>
+	<string name="radar">ראַדאַר</string>
     <string name="custom_url">אָפּטיאָנאַל: מנהג URL</string>
     <string name="fgColour">ווידזשיט פאָרגראַונד קאָליר פּיקער</string>
     <string name="bgColour">ווידזשיט הינטערגרונט קאָליר פּיקער</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">דאַטן URL איז ליידיק</string>
     <string name="wasnt_able_to_connect_settings">קען נישט פאַרבינדן אָדער אראפקאפיע די סעטטינגס פון דיין סערווער</string>
     <string name="url_was_default_or_empty">URL איז באַשטימט צו די פעליקייַט אָדער איז געווען ליידיק</string>
-    <string name="radar_url_not_set">ראַדאַר URL איז נישט באַשטימט אָדער איז נאָך דאַונלאָודינג. איר קענט גיין צו סעטטינגס צו טוישן</string>
     <string name="wasnt_able_to_connect_or_download">קען נישט פאַרבינדן אָדער אראפקאפיע די פאָרויסזאָגן</string>
     <string name="swipe_lock">לאַקכענען לאַק</string>
     <string name="widget_theme">ווידגעט טים</string>
@@ -74,4 +72,7 @@
     <string name="today">היינט</string>
     <string name="last_year_stats">לעצטע יאָר ס סטאַטיסטיק</string>
     <string name="last_month_stats">לעצטע חודש ס סטאַטיסטיק</string>
+    <string name="radar_url_not_set">ראַדאַר URL איז נישט באַשטימט. איר קענט גיין צו סעטטינגס צו טוישן</string>
+    <string name="radar_still_downloading">ראַדאַר בילד איז נאָך דאַונלאָודינג</string>
+    <string name="radar_download_failed">ניט אַנדערש צו אָפּלאָדירן די ראַדאַר בילד</string>
 </resources>

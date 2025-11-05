@@ -20,8 +20,7 @@
     <string name="show_radar">ರಾಡಾರ್ ತೋರಿಸಿ</string>
     <string name="show_forecast">ಮುನ್ಸೂಚನೆಯನ್ನು ತೋರಿಸಿ</string>
     <string name="radarforecast">ಮುಖ್ಯ ಪರದೆಯಲ್ಲಿ:</string>
-    <string name="nav_header_title">weeWX ಅಪ್ಲಿಕೇಶನ್</string>
-    <string name="radar">ರಾಡಾರ್</string>
+	<string name="radar">ರಾಡಾರ್</string>
     <string name="custom_url">ಐಚ್ಛಿಕ: ಕಸ್ಟಮ್ URL</string>
     <string name="fgColour">ವಿಜೆಟ್ ಫೋರ್ಗ್ರೌಂಡ್ ಕಲರ್ ಪಿಕ್ಕರ್</string>
     <string name="bgColour">ವಿಜೆಟ್ ಹಿನ್ನೆಲೆ ಬಣ್ಣ ಪಿಕ್ಕರ್</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">ಡೇಟಾ URL ಖಾಲಿಯಾಗಿದೆ</string>
     <string name="wasnt_able_to_connect_settings">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="url_was_default_or_empty">URL ಅನ್ನು ಡೀಫಾಲ್ಟ್‌ಗೆ ಹೊಂದಿಸಲಾಗಿದೆ ಅಥವಾ ಖಾಲಿಯಾಗಿದೆ</string>
-    <string name="radar_url_not_set">ರಾಡಾರ್ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ ಅಥವಾ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ. ಬದಲಾಯಿಸಲು ನೀವು ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಹೋಗಬಹುದು</string>
     <string name="wasnt_able_to_connect_or_download">ಮುನ್ಸೂಚನೆಯನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="swipe_lock">ಸ್ವೈಪ್ ಲಾಕ್</string>
     <string name="widget_theme">ವಿಜೆಟ್ ಥೀಮ್</string>
@@ -74,4 +72,7 @@
     <string name="today">ಇಂದು</string>
     <string name="last_year_stats">ಕಳೆದ ವರ್ಷದ ಅಂಕಿಅಂಶಗಳು</string>
     <string name="last_month_stats">ಕಳೆದ ತಿಂಗಳ ಅಂಕಿಅಂಶಗಳು</string>
+    <string name="radar_url_not_set">ರಾಡಾರ್ URL ಹೊಂದಿಸಲಾಗಿಲ್ಲ. ಬದಲಾಯಿಸಲು ನೀವು ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಹೋಗಬಹುದು</string>
+    <string name="radar_still_downloading">ರಾಡಾರ್ ಚಿತ್ರ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ</string>
+    <string name="radar_download_failed">ರಾಡಾರ್ ಚಿತ್ರವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ</string>
 </resources>

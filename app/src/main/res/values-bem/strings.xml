@@ -20,8 +20,7 @@
     <string name="show_radar">Langisheni Randa</string>
     <string name="show_forecast">Langisheni Inte</string>
     <string name="radarforecast">Pa cimonwa cikalamba:</string>
-    <string name="nav_header_title">B App App</string>
-    <string name="radar">Rakara</string>
+	<string name="radar">Rakara</string>
     <string name="custom_url">Icakusalapo: Ukucingililwa URL</string>
     <string name="fgColour">Icipe ca ku ntanshi ica Makumbi ya pa Muulu</string>
     <string name="bgColour">Icipe ca Kubweseshamo Amalangi</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL ya fyebo yali iya fye</string>
     <string name="wasnt_able_to_connect_settings">Tacaali na maka ya kulundanya nelyo ukukopa ifyo mulepanga</string>
     <string name="url_was_default_or_empty">URL yalibikwe ku ca kubalilapo nelyo yali fye iya fye</string>
-    <string name="radar_url_not_set">URL iya Rayar tayabikwa nangu ukukopa. Kuti waya ku fipekanyo ku kwaluka</string>
     <string name="wasnt_able_to_connect_or_download">Tacaali na maka ya kulundanya nelyo ukukopa ifya ku ntanshi</string>
     <string name="swipe_lock">Sewipeni</string>
     <string name="widget_theme">Umutwe wa Cifulo</string>
@@ -74,4 +72,7 @@
     <string name="today">Ilelo</string>
     <string name="last_year_stats">Imibele ya Mwaka Umwaka</string>
     <string name="last_month_stats">Imitantikile ya Mweshi iyapitapo</string>
+    <string name="radar_url_not_set">URL ya Rayar tayabikwa. Kuti waya ku fipekanyo ku kwaluka</string>
+    <string name="radar_still_downloading">Icikope ca cikope cicili cilekopololwa</string>
+    <string name="radar_download_failed">Ukufilwa ukukopa icikope ca radar</string>
 </resources>

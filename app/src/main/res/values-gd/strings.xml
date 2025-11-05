@@ -20,8 +20,7 @@
     <string name="show_radar">Seall radar</string>
     <string name="show_forecast">Seall Ro-shealladh</string>
     <string name="radarforecast">Air a\' phrìomh sgrion:</string>
-    <string name="nav_header_title">App weeWX</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Roghainneil: URL gnàthaichte</string>
     <string name="fgColour">Neach-togail dath aghaidh widget</string>
     <string name="bgColour">Neach-togail dath cùl-raon widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Bha URL an dàta falamh</string>
     <string name="wasnt_able_to_connect_settings">Cha b\' urrainn dhuinn na roghainnean a cheangal no a luchdachadh sìos bhon t-seirbheisiche agad</string>
     <string name="url_was_default_or_empty">Chaidh URL a shuidheachadh mar an àbhaist no bha e falamh</string>
-    <string name="radar_url_not_set">Chan eil URL radar stèidhichte no ga luchdachadh sìos fhathast. Faodaidh tu a dhol gu roghainnean airson atharrachadh</string>
     <string name="wasnt_able_to_connect_or_download">Cha b\' urrainn dhuinn an ro-aithris a cheangal no a luchdachadh sìos</string>
     <string name="swipe_lock">Glasadh Sguabaidh</string>
     <string name="widget_theme">Cuspair widget</string>
@@ -74,4 +72,7 @@
     <string name="today">An-diugh</string>
     <string name="last_year_stats">Staitistig na bliadhna an-uiridh</string>
     <string name="last_month_stats">Staitistig na mìos mu dheireadh</string>
+    <string name="radar_url_not_set">URL radar nach deach a shuidheachadh. Faodaidh tu a dhol gu roghainnean airson atharrachadh</string>
+    <string name="radar_still_downloading">Tha an dealbh radar ga luchdachadh sìos</string>
+    <string name="radar_download_failed">Dh\'fhàillig luchdadh a-nuas an dealbh radar</string>
 </resources>

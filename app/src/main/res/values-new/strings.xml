@@ -20,8 +20,7 @@
     <string name="show_radar">राडार</string>
     <string name="show_forecast">पूर्वानुमान क्यनादिसँ</string>
     <string name="radarforecast">मू स्क्रिनय् :</string>
-    <string name="nav_header_title">वीडब्लूएक्स एप</string>
-    <string name="radar">राडार</string>
+	<string name="radar">राडार</string>
     <string name="custom_url">विकल्प : कस्टम युआरएल</string>
     <string name="fgColour">विजेट फोरग्राउण्ड कलर पिकर</string>
     <string name="bgColour">विजेट पृष्ठभूमि कलर पिकर</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">डाटा यूआरएल खाली जुल</string>
     <string name="wasnt_able_to_connect_settings">छिगु सर्भरं सेटिङ्गयात स्वाये मफुत बाय् डाउनलोड याये मफुत ।</string>
     <string name="url_was_default_or_empty">यूआरएल डिफल्टय् सेट यात बाय् खाली जुल ।</string>
-    <string name="radar_url_not_set">राडार युआरएल सेट मजूनि बाय् आःतकं डाउनलोड यानाच्वंगु दु । छिं हिलेत सेटिङ्गय् वनेफइ ।</string>
     <string name="wasnt_able_to_connect_or_download">पूर्वानुमानयात स्वायेत बाय् डाउनलोड याये मफुत ।</string>
     <string name="swipe_lock">स्वीप लक</string>
     <string name="widget_theme">विजेट थीम</string>
@@ -74,4 +72,7 @@
     <string name="today">थौं</string>
     <string name="last_year_stats">वंगु दँया तथ्यांक</string>
     <string name="last_month_stats">लिपांगु महिनाया तथ्यांक</string>
+    <string name="radar_url_not_set">राडार यूआरएल सेट मजू । छिं हिलेत सेटिङ्गय् वनेफइ ।</string>
+    <string name="radar_still_downloading">रडार इमेज आःतकं डाउनलोड यानाच्वंगु दु ।</string>
+    <string name="radar_download_failed">रडार इमेज डाउनलोड यायेत ताःलात ।</string>
 </resources>

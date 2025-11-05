@@ -20,8 +20,7 @@
     <string name="show_radar">Arată radar</string>
     <string name="show_forecast">Arată Prognoza</string>
     <string name="radarforecast">Pe ecranul principal:</string>
-    <string name="nav_header_title">aplicația weeWX</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opțional: URL personalizată</string>
     <string name="fgColour">Selector de culori din prim-plan pentru widget</string>
     <string name="bgColour">Selector de culori de fundal widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Adresa URL a datelor era goală</string>
     <string name="wasnt_able_to_connect_settings">Nu am putut să mă conectez sau să descărcați setările de pe serverul dvs</string>
     <string name="url_was_default_or_empty">Adresa URL a fost setată la valoarea implicită sau era goală</string>
-    <string name="radar_url_not_set">Adresa URL a radarului nu este setată sau încă se descarcă. Puteți merge la setări pentru a schimba</string>
     <string name="wasnt_able_to_connect_or_download">Nu am putut să mă conectez sau să descărcați prognoza</string>
     <string name="swipe_lock">Glisați Blocarea</string>
     <string name="widget_theme">Tema widgetului</string>
@@ -74,4 +72,7 @@
     <string name="today">Astăzi</string>
     <string name="last_year_stats">Statistica de anul trecut</string>
     <string name="last_month_stats">Statisticile lunii trecute</string>
+    <string name="radar_url_not_set">Adresa URL a radarului nu este setată. Puteți merge la setări pentru a schimba</string>
+    <string name="radar_still_downloading">Imaginea radar încă se descarcă</string>
+    <string name="radar_download_failed">Nu s-a putut descărca imaginea radar</string>
 </resources>

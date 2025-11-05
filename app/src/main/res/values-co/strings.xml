@@ -20,8 +20,7 @@
     <string name="show_radar">Mostra Radar</string>
     <string name="show_forecast">Mostra Previsioni</string>
     <string name="radarforecast">À u screnu principale:</string>
-    <string name="nav_header_title">WeeWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opcional: URL persunalizatu</string>
     <string name="fgColour">Selettore di culori di primu pianu di u widget</string>
     <string name="bgColour">Selettore di culore di fondu di u widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">L\'URL di dati era viotu</string>
     <string name="wasnt_able_to_connect_settings">Ùn pudia micca cunnette o scaricà i paràmetri da u vostru servitore</string>
     <string name="url_was_default_or_empty">L\'URL hè stata impostata à u predeterminatu o era viota</string>
-    <string name="radar_url_not_set">L\'URL di u radar ùn hè micca stabilitu o hè ancu scaricatu. Pudete andà à i paràmetri per cambià</string>
     <string name="wasnt_able_to_connect_or_download">Ùn hè statu capace di cunnette o di scaricà a previsione</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="widget_theme">Tema Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Oghje</string>
     <string name="last_year_stats">Statistiche di l\'annu passatu</string>
     <string name="last_month_stats">Statistiche di u mese passatu</string>
+    <string name="radar_url_not_set">L\'URL di u radar ùn hè micca stabilitu. Pudete andà à i paràmetri per cambià</string>
+    <string name="radar_still_downloading">L\'immagine radar hè sempre scaricata</string>
+    <string name="radar_download_failed">Fallu di scaricà l\'imaghjini radar</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">ਰਾਡਾਰ ਦਿਖਾਓ</string>
     <string name="show_forecast">ਪੂਰਵ ਅਨੁਮਾਨ ਦਿਖਾਓ</string>
     <string name="radarforecast">ਮੁੱਖ ਸਕ੍ਰੀਨ \'ਤੇ:</string>
-    <string name="nav_header_title">weeWX ਐਪ</string>
-    <string name="radar">ਰਾਡਾਰ</string>
+	<string name="radar">ਰਾਡਾਰ</string>
     <string name="custom_url">ਵਿਕਲਪਿਕ: ਕਸਟਮ URL</string>
     <string name="fgColour">ਵਿਜੇਟ ਫੋਰਗਰਾਉਂਡ ਰੰਗ ਚੋਣਕਾਰ</string>
     <string name="bgColour">ਵਿਜੇਟ ਬੈਕਗ੍ਰਾਊਂਡ ਰੰਗ ਚੋਣਕਾਰ</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">ਡਾਟਾ URL ਖਾਲੀ ਸੀ</string>
     <string name="wasnt_able_to_connect_settings">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ ਸੈਟਿੰਗਾਂ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
     <string name="url_was_default_or_empty">URL ਨੂੰ ਡਿਫੌਲਟ \'ਤੇ ਸੈੱਟ ਕੀਤਾ ਗਿਆ ਸੀ ਜਾਂ ਖਾਲੀ ਸੀ</string>
-    <string name="radar_url_not_set">ਰਾਡਾਰ URL ਸੈੱਟ ਨਹੀਂ ਹੈ ਜਾਂ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ। ਤੁਸੀਂ ਬਦਲਣ ਲਈ ਸੈਟਿੰਗਾਂ \'ਤੇ ਜਾ ਸਕਦੇ ਹੋ।</string>
     <string name="wasnt_able_to_connect_or_download">ਪੂਰਵ ਅਨੁਮਾਨ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ।</string>
     <string name="swipe_lock">ਸਵਾਈਪ ਲੌਕ</string>
     <string name="widget_theme">ਵਿਜੇਟ ਥੀਮ</string>
@@ -74,4 +72,7 @@
     <string name="today">ਅੱਜ</string>
     <string name="last_year_stats">ਪਿਛਲੇ ਸਾਲ ਦੇ ਅੰਕੜੇ</string>
     <string name="last_month_stats">ਪਿਛਲੇ ਮਹੀਨੇ ਦੇ ਅੰਕੜੇ</string>
+    <string name="radar_url_not_set">ਰਾਡਾਰ URL ਸੈੱਟ ਨਹੀਂ ਹੈ। ਤੁਸੀਂ ਬਦਲਣ ਲਈ ਸੈਟਿੰਗਾਂ \'ਤੇ ਜਾ ਸਕਦੇ ਹੋ।</string>
+    <string name="radar_still_downloading">ਰਾਡਾਰ ਚਿੱਤਰ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ।</string>
+    <string name="radar_download_failed">ਰਾਡਾਰ ਚਿੱਤਰ ਨੂੰ ਡਾਊਨਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
 </resources>

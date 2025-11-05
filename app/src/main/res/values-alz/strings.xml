@@ -20,8 +20,7 @@
     <string name="show_radar">Nyuth</string>
     <string name="show_forecast">Nyuth</string>
     <string name="radarforecast">I skrin peri mi skrin:</string>
-    <string name="nav_header_title">ng\'atu m\'utimo tic kude</string>
-    <string name="radar">oloyo</string>
+	<string name="radar">oloyo</string>
     <string name="custom_url">Optional: Cubu mi UL</string>
     <string name="fgColour">Jadit mi ot yath mi ng\'om zoo</string>
     <string name="bgColour">Ng\'atu m\'utimo lembe m\'urombo ku cik mi ng\'om maeni</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Data U URuda ma ng\'ato nyalo ng\'eyo maber</string>
     <string name="wasnt_able_to_connect_settings">Ne ok nyal tudruok kata keto gik ma ne itiyogo e server mari</string>
     <string name="url_was_default_or_empty">URL ne oketo e default kata ma onge gimoro</string>
-    <string name="radar_url_not_set">Radar URL ok owegi kata pod download. Icopo cidho i settings pi niloko</string>
     <string name="wasnt_able_to_connect_or_download">Ne ok nyal tudruok kata ng\'ado bura</string>
     <string name="swipe_lock">Somep</string>
     <string name="widget_theme">Winye</string>
@@ -74,4 +72,7 @@
     <string name="today">Tin</string>
     <string name="last_year_stats">I oro m\'ukadhu, Stastic mi oro m\'ukadhu</string>
     <string name="last_month_stats">I ng\'eye, edok etimo tic mi lembanyong\'a i adhura mi Month</string>
+    <string name="radar_url_not_set">Radar URL ma juketho. Icopo cidho i settings pi niloko</string>
+    <string name="radar_still_downloading">Radal picha pod odong\'</string>
+    <string name="radar_download_failed">Ka ng\'ato odhi ng\'iewo picha mar rad</string>
 </resources>

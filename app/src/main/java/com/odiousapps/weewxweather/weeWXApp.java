@@ -2,12 +2,14 @@ package com.odiousapps.weewxweather;
 
 import android.app.Application;
 import android.content.res.Configuration;
+import android.graphics.drawable.Drawable;
 import android.os.LocaleList;
 
 import java.io.InputStream;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.content.res.AppCompatResources;
 
 @SuppressWarnings({"unused"})
 public class weeWXApp extends Application
@@ -79,14 +81,14 @@ public class weeWXApp extends Application
 		return instance.getResources().getConfiguration().getLocales();
 	}
 
-	static InputStream openRawResource(int res)
+	static InputStream openRawResource(int resId)
 	{
-		return instance.getResources().openRawResource(res);
+		return instance.getResources().openRawResource(resId);
 	}
 
-	static String getAndroidString(int res)
+	static String getAndroidString(int resId)
 	{
-		return instance.getString(res);
+		return instance.getString(resId);
 	}
 
 	static int smallestScreenWidth()
@@ -104,8 +106,13 @@ public class weeWXApp extends Application
 		return instance.getResources().getDisplayMetrics().density;
 	}
 
-	static int getColour(int res)
+	static int getColour(int resId)
 	{
-		return instance.getColor(res);
+		return instance.getColor(resId);
+	}
+
+	static Drawable getAndroidDrawable(int resId)
+	{
+		return AppCompatResources.getDrawable(instance, resId);
 	}
 }

@@ -20,8 +20,7 @@
     <string name="show_radar">Ipakita ti radar</string>
     <string name="show_forecast">Ipakita ti panagpakpakauna</string>
     <string name="radarforecast">Iti kangrunaan nga iskrin:</string>
-    <string name="nav_header_title">Weewx nga app</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opsional: Kostumbre nga URL</string>
     <string name="fgColour">Widget nga foreground nga picker sa kolor</string>
     <string name="bgColour">widget background nga kolor picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Ti URL ti datos ket blangko</string>
     <string name="wasnt_able_to_connect_settings">saan a nakakonekta wenno mai-download dagiti settings manipud iti server-mo</string>
     <string name="url_was_default_or_empty">Ti URL ket naikabil iti default wenno awan ti kargana</string>
-    <string name="radar_url_not_set">Radar URL Saan a naiset wenno ag-download pay laeng. Mabalinmo ti mapan iti Settings tapno agbaliw</string>
     <string name="wasnt_able_to_connect_or_download">saan a nakakonekta wenno mai-download ti forecast</string>
     <string name="swipe_lock">I-swipe ti kandado</string>
     <string name="widget_theme">Tema ti widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Ita nga aldaw</string>
     <string name="last_year_stats">Dagiti estadistika idi napan a tawen</string>
     <string name="last_month_stats">Dagiti estadistika idi napan a bulan</string>
+    <string name="radar_url_not_set">URL ti radar saan a naikabil. Mabalinmo ti mapan iti Settings tapno agbaliw</string>
+    <string name="radar_still_downloading">Ti ladawan ti radar ket ag-download pay laeng</string>
+    <string name="radar_download_failed">Nalpasen a nai-download ti ladawan ti radar</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">Ratidza Radar</string>
     <string name="show_forecast">Ratidza Forecast</string>
     <string name="radarforecast">Pane main skrini:</string>
-    <string name="nav_header_title">Weewx App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Inesarudzo: Tsika URL</string>
     <string name="fgColour">Weigge Fortlow Ruvara Mutengesi</string>
     <string name="bgColour">Widget Background Color Portker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Data URL yaive isina</string>
     <string name="wasnt_able_to_connect_settings">Haina kukwanisa kubatana kana kurodha iyo marongero kubva kune yako server</string>
     <string name="url_was_default_or_empty">URL yakagadzirirwa kusarudzika kana isina chinhu</string>
-    <string name="radar_url_not_set">Radar URL isina kuiswa kana ichiri kurodha pasi. Iwe unogona kuenda kune marongero ekuchinja</string>
     <string name="wasnt_able_to_connect_or_download">Haina kukwanisa kubatanidza kana kurodha iyo fungidziro</string>
     <string name="swipe_lock">Swipe kukiya</string>
     <string name="widget_theme">Widget theme</string>
@@ -74,4 +72,7 @@
     <string name="today">Nhasi</string>
     <string name="last_year_stats">Nhamba dzegore rapfuura</string>
     <string name="last_month_stats">Nhamba dzemwedzi wapfuura</string>
+    <string name="radar_url_not_set">Radar URL isina kuiswa. Iwe unogona kuenda kune marongero ekuchinja</string>
+    <string name="radar_still_downloading">Radar mufananidzo achiri kurodha</string>
+    <string name="radar_download_failed">Kukundikana kutora iyo radar mufananidzo</string>
 </resources>

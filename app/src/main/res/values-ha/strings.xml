@@ -20,8 +20,7 @@
     <string name="show_radar">Nuna radar</string>
     <string name="show_forecast">Nuna hasashen</string>
     <string name="radarforecast">A kan babban allo:</string>
-    <string name="nav_header_title">Weewx app</string>
-    <string name="radar">Injin radar</string>
+	<string name="radar">Injin radar</string>
     <string name="custom_url">Zabi: URL na al\'ada</string>
     <string name="fgColour">Mai wasan Widget mai haske</string>
     <string name="bgColour">Widget na Farko na Farko</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL ɗin bayanai ba komai</string>
     <string name="wasnt_able_to_connect_settings">Bai iya haɗa ko saukar da saitunan daga sabar ku ba</string>
     <string name="url_was_default_or_empty">An saita URL zuwa tsoho ko fanko</string>
-    <string name="radar_url_not_set">Radar URL ba saita ko har yanzu zazzagewa ba. Kuna iya zuwa saiti don canzawa</string>
     <string name="wasnt_able_to_connect_or_download">Bai iya haɗi ba ko sauke hasashen</string>
     <string name="swipe_lock">Kulle swipe</string>
     <string name="widget_theme">Taron Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Yau</string>
     <string name="last_year_stats">Statisticsididdigar bara</string>
     <string name="last_month_stats">Statisticdiddigar watan da ya gabata</string>
+    <string name="radar_url_not_set">Radar URL ba saita. Kuna iya zuwa saiti don canzawa</string>
+    <string name="radar_still_downloading">Hoton Radar har yanzu download</string>
+    <string name="radar_download_failed">Ba a yi nasarar saukar da hoton Radar</string>
 </resources>

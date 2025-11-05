@@ -20,8 +20,7 @@
     <string name="show_radar">Pokaż Radar</string>
     <string name="show_forecast">Pokaż prognozę</string>
     <string name="radarforecast">Na ekranie głównym:</string>
-    <string name="nav_header_title">aplikacja weeWX</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opcjonalnie: niestandardowy adres URL</string>
     <string name="fgColour">Widżet Próbnik kolorów pierwszego planu</string>
     <string name="bgColour">Próbnik koloru tła widgetu</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Adres URL danych był pusty</string>
     <string name="wasnt_able_to_connect_settings">Nie udało się połączyć lub pobrać ustawień z Twojego serwera</string>
     <string name="url_was_default_or_empty">Adres URL został ustawiony na domyślny lub był pusty</string>
-    <string name="radar_url_not_set">Adres URL radaru nie jest ustawiony lub nadal trwa pobieranie. Możesz przejść do ustawień, aby je zmienić</string>
     <string name="wasnt_able_to_connect_or_download">Nie udało się połączyć ani pobrać prognozy</string>
     <string name="swipe_lock">Przesuń blokadę</string>
     <string name="widget_theme">Motyw widgetu</string>
@@ -74,4 +72,7 @@
     <string name="today">Dzisiaj</string>
     <string name="last_year_stats">Statystyki za ubiegły rok</string>
     <string name="last_month_stats">Statystyki z ostatniego miesiąca</string>
+    <string name="radar_url_not_set">Nie ustawiono adresu URL radaru. Możesz przejść do ustawień, aby je zmienić</string>
+    <string name="radar_still_downloading">Obraz radarowy nadal się pobiera</string>
+    <string name="radar_download_failed">Nie udało się pobrać obrazu radarowego</string>
 </resources>

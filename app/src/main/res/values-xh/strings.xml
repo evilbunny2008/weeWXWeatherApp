@@ -20,8 +20,7 @@
     <string name="show_radar">Bonisa i-radar</string>
     <string name="show_forecast">Veza uqikelelo</string>
     <string name="radarforecast">Kwisikrini esikhulu:</string>
-    <string name="nav_header_title">I-DeeWx App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Inketho: i-URL yesiko</string>
     <string name="fgColour">I-Poipget Shicial Picker Picker</string>
     <string name="bgColour">Umzobo ongemva wewijethi</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">I-URL yedatha yayingenanto</string>
     <string name="wasnt_able_to_connect_settings">Ayikwazanga ukuqhagamshela okanye ukhuphele useto kwiseva yakho</string>
     <string name="url_was_default_or_empty">I-URL icwangciselwe ukungagqibekanga okanye ayinanto</string>
-    <string name="radar_url_not_set">I-URL ye-radar engaseti okanye isazikhuphela. Ungaya kwiisetingi ukutshintsha</string>
     <string name="wasnt_able_to_connect_or_download">Ayikwazanga ukuqhagamshela okanye ukhuphele uqikelelo</string>
     <string name="swipe_lock">I-Swipe Tock</string>
     <string name="widget_theme">Umxholo we-Word</string>
@@ -74,4 +72,7 @@
     <string name="today">Namhlanje</string>
     <string name="last_year_stats">Inani lonyaka ophelileyo</string>
     <string name="last_month_stats">Iinombolo zenyanga ezidlulileyo</string>
+    <string name="radar_url_not_set">I-URL RL engaseti. Ungaya kwiisetingi ukutshintsha</string>
+    <string name="radar_still_downloading">Umfanekiso we-radar usazikhuphela</string>
+    <string name="radar_download_failed">Ayiphumelelanga ukukhuphela umfanekiso we-radar</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">Mostra Radar</string>
     <string name="show_forecast">Mostra de previxon</string>
     <string name="radarforecast">In sciô schermo prinçipâ:</string>
-    <string name="nav_header_title">App weeWX</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Facoltäio: URL personalizzou</string>
     <string name="fgColour">Piccin de cô in antiçipo</string>
     <string name="bgColour">Piccin de sfondo de widget Colore</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">L\'URL di dæti o l\'ea veuo</string>
     <string name="wasnt_able_to_connect_settings">No l\'ea bon de connettise ò scaricâ e impostaçioin da-o seu server</string>
     <string name="url_was_default_or_empty">L\'URL o l\'ea misso in sce l\'inadempimento ò o l\'ea veuo</string>
-    <string name="radar_url_not_set">L\'URL Radar o no l\'é impostou ò o l\'é ancon o download. O peu anâ à de impostaçioin pe cangiâ</string>
     <string name="wasnt_able_to_connect_or_download">No l\'ea bon de connettise ò scaricâ a previxon</string>
     <string name="swipe_lock">Cavallaia de sciortia</string>
     <string name="widget_theme">Tema de widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Ancheu</string>
     <string name="last_year_stats">E statistiche de l\'anno passou</string>
     <string name="last_month_stats">E statistiche de l\'urtimo Mesci</string>
+    <string name="radar_url_not_set">URL Radar no set. O peu anâ à de impostaçioin pe cangiâ</string>
+    <string name="radar_still_downloading">L\'imagine Radar a l\'é ancon o download</string>
+    <string name="radar_download_failed">Fallio de scaricâ l\'imagine do radar</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">Uñacht\'ayaña radar</string>
     <string name="show_forecast">Uñacht\'ayaña pronóstico</string>
     <string name="radarforecast">Jilïr pantallanxa:</string>
-    <string name="nav_header_title">Weewx ukax mä app ukhamawa</string>
-    <string name="radar">radar ukax</string>
+	<string name="radar">radar ukax</string>
     <string name="custom_url">Ukax akham sañ muni: URL costumbre</string>
     <string name="fgColour">Widget Foreground Color Picker ukax mä jach\'a uñacht\'äwiwa</string>
     <string name="bgColour">Widget ukax mä color picker ukhamawa</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Datos url ukax ch\'usawjawa</string>
     <string name="wasnt_able_to_connect_settings">janiw servidor ukan configuración ukar conectar jan ukax apkatañjamäkänti</string>
     <string name="url_was_default_or_empty">URL ukax default ukar uñt\'ayatawa jan ukax ch\'usa</string>
-    <string name="radar_url_not_set">URL radar ukax janiw utjkiti jan ukax wali apkatatawa. Mayjt\'ayañatakix configuración ukar sarañamawa</string>
     <string name="wasnt_able_to_connect_or_download">janiw conectar jan ukax pronóstico ukar apkatañjamäkänti</string>
     <string name="swipe_lock">Ukax mä swipe llawintatawa</string>
     <string name="widget_theme">Widget ukax mä temawa</string>
@@ -74,4 +72,7 @@
     <string name="today">Jichhüru</string>
     <string name="last_year_stats">Nayra marax Estadísticas</string>
     <string name="last_month_stats">Qhipa phaxsinx Estadísticas ukanakaw utji</string>
+    <string name="radar_url_not_set">URL radar ukax janiw utjkiti. Mayjt\'ayañatakix configuración ukar sarañamawa</string>
+    <string name="radar_still_downloading">Radar ukan uñacht\'äwipax wali ch\'amawa</string>
+    <string name="radar_download_failed">Radar ukan uñacht\'äwipax janiw apkatañjamäkiti</string>
 </resources>

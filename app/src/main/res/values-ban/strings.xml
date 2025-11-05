@@ -20,8 +20,7 @@
     <string name="show_radar">Tampilang Radar</string>
     <string name="show_forecast">Cemak Jempah</string>
     <string name="radarforecast">Ring layar Utama:</string>
-    <string name="nav_header_title">weeWX Aplikasi</string>
-    <string name="radar">Basa Radar</string>
+	<string name="radar">Basa Radar</string>
     <string name="custom_url">Opsional: URL khusus</string>
     <string name="fgColour">Banja Ajeg Widget</string>
     <string name="bgColour">Warna Latar Belakang Picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL data sampun puyung</string>
     <string name="wasnt_able_to_connect_settings">Nénten prasida nyambung utawi ngunduh setélan saking server Sametoné</string>
     <string name="url_was_default_or_empty">URL sampun kagenahang ring default utawi kosong</string>
-    <string name="radar_url_not_set">Radar URL nenten kagenahang utawi kantun ngunduh. Sameton dados ngranjing ka setélan jagi mauwah</string>
     <string name="wasnt_able_to_connect_or_download">Nenten prasida nyambung utawi ngunduh ramalan punika</string>
     <string name="swipe_lock">Kun Kebangan</string>
     <string name="widget_theme">Tema Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Dina jani</string>
     <string name="last_year_stats">Statistik warsa sané lintang</string>
     <string name="last_month_stats">Statistik Bulan sane lintang</string>
+    <string name="radar_url_not_set">Radar URL nenten kagenahang. Sameton dados ngranjing ka setélan jagi mauwah</string>
+    <string name="radar_still_downloading">Gambar radar puniki kantun ngunduh</string>
+    <string name="radar_download_failed">Gagal ngunduh gambar radar punika</string>
 </resources>

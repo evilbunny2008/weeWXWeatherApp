@@ -20,8 +20,7 @@
     <string name="show_radar">Onyesha rada</string>
     <string name="show_forecast">Onyesha utabiri</string>
     <string name="radarforecast">Kwenye skrini kuu:</string>
-    <string name="nav_header_title">programu ya weewx</string>
-    <string name="radar">Rada</string>
+	<string name="radar">Rada</string>
     <string name="custom_url">Hiari: URL ya kawaida</string>
     <string name="fgColour">Mchanganyiko wa rangi ya mbele</string>
     <string name="bgColour">Kijitabu cha rangi ya msingi wa widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL ya data ilikuwa tupu</string>
     <string name="wasnt_able_to_connect_settings">Hakuweza kuunganisha au kupakua mipangilio kutoka kwa seva yako</string>
     <string name="url_was_default_or_empty">URL iliwekwa kwa chaguo -msingi au ilikuwa tupu</string>
-    <string name="radar_url_not_set">URL ya rada haijawekwa au bado inapakua. Unaweza kwenda kwa Mipangilio ili ubadilike</string>
     <string name="wasnt_able_to_connect_or_download">Hakuweza kuunganisha au kupakua utabiri</string>
     <string name="swipe_lock">Swipe kufuli</string>
     <string name="widget_theme">Mandhari ya widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Leo</string>
     <string name="last_year_stats">Takwimu za mwaka jana</string>
     <string name="last_month_stats">Takwimu za mwezi uliopita</string>
+    <string name="radar_url_not_set">URL ya rada haijawekwa. Unaweza kwenda kwa Mipangilio ili ubadilike</string>
+    <string name="radar_still_downloading">Picha ya Radar bado inapakua</string>
+    <string name="radar_download_failed">Imeshindwa kupakua picha ya rada</string>
 </resources>

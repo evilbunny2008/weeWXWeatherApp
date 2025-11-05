@@ -20,8 +20,7 @@
     <string name="show_radar">Sho Radar</string>
     <string name="show_forecast">Show fɔkɔs</string>
     <string name="radarforecast">Na di men skrin:</string>
-    <string name="nav_header_title">Weewx app yu gi oh</string>
-    <string name="radar">Reda we dɛn de yuz fɔ mek reda</string>
+	<string name="radar">Reda we dɛn de yuz fɔ mek reda</string>
     <string name="custom_url">Opshɔnal: Kɔstɔm URL</string>
     <string name="fgColour">Widget forreground color picker</string>
     <string name="bgColour">Widget bakgrunn color picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Data URL bin blank</string>
     <string name="wasnt_able_to_connect_settings">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod di sɛtin dɛn frɔm yu sava</string>
     <string name="url_was_default_or_empty">URL bin set to di difɔlt ɔ bin ɛmti</string>
-    <string name="radar_url_not_set">Radar url nɔ sɛt ɔ stil de dawnlod. Yu kin go na sɛtin dɛn fɔ chenj</string>
     <string name="wasnt_able_to_connect_or_download">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod di fɔkɔs</string>
     <string name="swipe_lock">Swip lok we yu de swip</string>
     <string name="widget_theme">Di tim fɔ widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Tide</string>
     <string name="last_year_stats">Las ia in statystiks</string>
     <string name="last_month_stats">Las mɔnt in statystik dɛn</string>
+    <string name="radar_url_not_set">Radar url nɔ sɛt. Yu kin go na sɛtin dɛn fɔ chenj</string>
+    <string name="radar_still_downloading">Radar Image stil de dawnlod</string>
+    <string name="radar_download_failed">Failed fɔ dawnlod di reda imej</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">Εμφάνιση ραντάρ</string>
     <string name="show_forecast">Εμφάνιση Πρόβλεψης</string>
     <string name="radarforecast">Στην κύρια οθόνη:</string>
-    <string name="nav_header_title">Εφαρμογή weeWX</string>
-    <string name="radar">Ραντάρ</string>
+	<string name="radar">Ραντάρ</string>
     <string name="custom_url">Προαιρετικά: Προσαρμοσμένη διεύθυνση URL</string>
     <string name="fgColour">Εργαλείο επιλογής χρώματος προσκηνίου</string>
     <string name="bgColour">Επιλογέας χρώματος φόντου widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Η διεύθυνση URL δεδομένων ήταν κενή</string>
     <string name="wasnt_able_to_connect_settings">Δεν ήταν δυνατή η σύνδεση ή η λήψη των ρυθμίσεων από τον διακομιστή σας</string>
     <string name="url_was_default_or_empty">Η διεύθυνση URL ορίστηκε ως προεπιλογή ή ήταν κενή</string>
-    <string name="radar_url_not_set">Η διεύθυνση URL ραντάρ δεν έχει οριστεί ή εξακολουθεί να γίνεται λήψη. Μπορείτε να μεταβείτε στις ρυθμίσεις για αλλαγή</string>
     <string name="wasnt_able_to_connect_or_download">Δεν ήταν δυνατή η σύνδεση ή η λήψη της πρόβλεψης</string>
     <string name="swipe_lock">Κλείδωμα ολίσθησης</string>
     <string name="widget_theme">Θέμα widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Σήμερα</string>
     <string name="last_year_stats">Στατιστικά στοιχεία του περασμένου έτους</string>
     <string name="last_month_stats">Στατιστικά στοιχεία του περασμένου μήνα</string>
+    <string name="radar_url_not_set">Το URL ραντάρ δεν έχει οριστεί. Μπορείτε να μεταβείτε στις ρυθμίσεις για αλλαγή</string>
+    <string name="radar_still_downloading">Η εικόνα ραντάρ εξακολουθεί να γίνεται λήψη</string>
+    <string name="radar_download_failed">Αποτυχία λήψης της εικόνας ραντάρ</string>
 </resources>

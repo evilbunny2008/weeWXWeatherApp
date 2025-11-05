@@ -21,7 +21,6 @@
     <string name="show_radar">Show Radar</string>
     <string name="show_forecast">Show Forecast</string>
     <string name="radarforecast">On Main screen:</string>
-	<string name="nav_header_title">weeWX App</string>
 	<string name="radar">Radar</string>
     <string name="custom_url">Optional: Custom URL</string>
     <string name="fgColour">Widget Foreground Colour Picker</string>
@@ -64,7 +63,6 @@
     <string name="data_url_was_blank">Data URL was blank</string>
     <string name="wasnt_able_to_connect_settings">Wasn\'t able to connect or download the settings from your server</string>
     <string name="url_was_default_or_empty">URL was set to the default or was empty</string>
-    <string name="radar_url_not_set">Radar URL not set or is still downloading. You can go to settings to change.</string>
 	<string name="wasnt_able_to_connect_or_download">Wasn\'t able to connect or download the forecast.</string>
 	<string name="swipe_lock">Swipe Lock</string>
 	<string name="widget_theme">Widget Theme</string>
@@ -75,4 +73,7 @@
 	<string name="today">Today</string>
 	<string name="last_year_stats">Last Year\'s Statistics</string>
 	<string name="last_month_stats">Last Month\'s Statistics</string>
+	<string name="radar_url_not_set">Radar URL not set. You can go to settings to change.</string>
+	<string name="radar_still_downloading">Radar image is still downloading.</string>
+	<string name="radar_download_failed">Failed to download the radar image</string>
 </resources>

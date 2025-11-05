@@ -20,8 +20,7 @@
     <string name="show_radar">রাডার দেখান</string>
     <string name="show_forecast">পূর্বাভাস দেখান</string>
     <string name="radarforecast">প্রধান পর্দায়:</string>
-    <string name="nav_header_title">weeWX অ্যাপ</string>
-    <string name="radar">রাডার</string>
+	<string name="radar">রাডার</string>
     <string name="custom_url">ঐচ্ছিক: কাস্টম URL</string>
     <string name="fgColour">উইজেট ফোরগ্রাউন্ড কালার পিকার</string>
     <string name="bgColour">উইজেট ব্যাকগ্রাউন্ড কালার পিকার</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">ডেটা URL ফাঁকা ছিল</string>
     <string name="wasnt_able_to_connect_settings">আপনার সার্ভার থেকে সেটিংস সংযোগ বা ডাউনলোড করতে সক্ষম ছিল না</string>
     <string name="url_was_default_or_empty">URL ডিফল্টে সেট করা ছিল বা খালি ছিল৷</string>
-    <string name="radar_url_not_set">রাডার URL সেট করা হয়নি বা এখনও ডাউনলোড হচ্ছে। আপনি সেটিংসে গিয়ে পরিবর্তন করতে পারেন।</string>
     <string name="wasnt_able_to_connect_or_download">পূর্বাভাস সংযোগ বা ডাউনলোড করতে সক্ষম ছিল না</string>
     <string name="swipe_lock">সোয়াইপ লক</string>
     <string name="widget_theme">উইজেট থিম</string>
@@ -74,4 +72,7 @@
     <string name="today">আজ</string>
     <string name="last_year_stats">গত বছরের পরিসংখ্যান</string>
     <string name="last_month_stats">গত মাসের পরিসংখ্যান</string>
+    <string name="radar_url_not_set">রাডার URL সেট করা হয়নি। আপনি সেটিংসে গিয়ে পরিবর্তন করতে পারেন।</string>
+    <string name="radar_still_downloading">রাডার ইমেজ এখনও ডাউনলোড হচ্ছে</string>
+    <string name="radar_download_failed">রাডার ইমেজ ডাউনলোড করতে ব্যর্থ হয়েছে</string>
 </resources>

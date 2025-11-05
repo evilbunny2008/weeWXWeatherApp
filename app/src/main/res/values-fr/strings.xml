@@ -20,8 +20,7 @@
     <string name="show_radar">Afficher le radar</string>
     <string name="show_forecast">Afficher les prévisions</string>
     <string name="radarforecast">Sur l\'écran principal :</string>
-    <string name="nav_header_title">Application weeWX</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Facultatif : URL personnalisée</string>
     <string name="fgColour">Sélecteur de couleurs de premier plan du widget</string>
     <string name="bgColour">Sélecteur de couleur d\'arrière-plan du widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">L\'URL des données était vide</string>
     <string name="wasnt_able_to_connect_settings">Je n\'ai pas pu me connecter ou télécharger les paramètres depuis votre serveur</string>
     <string name="url_was_default_or_empty">L\'URL était définie par défaut ou était vide</string>
-    <string name="radar_url_not_set">L\'URL du radar n\'est pas définie ou est en cours de téléchargement. Vous pouvez accéder aux paramètres pour modifier</string>
     <string name="wasnt_able_to_connect_or_download">Je n\'ai pas pu me connecter ou télécharger les prévisions</string>
     <string name="swipe_lock">Verrouillage par balayage</string>
     <string name="widget_theme">Thème des widgets</string>
@@ -74,4 +72,7 @@
     <string name="today">Aujourd\'hui</string>
     <string name="last_year_stats">Statistiques de l\'année dernière</string>
     <string name="last_month_stats">Statistiques du mois dernier</string>
+    <string name="radar_url_not_set">URL du radar non définie. Vous pouvez accéder aux paramètres pour modifier</string>
+    <string name="radar_still_downloading">L\'image radar est toujours en cours de téléchargement</string>
+    <string name="radar_download_failed">Échec du téléchargement de l\'image radar</string>
 </resources>

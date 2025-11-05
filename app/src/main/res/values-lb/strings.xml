@@ -20,8 +20,7 @@
     <string name="show_radar">Show Radar</string>
     <string name="show_forecast">Show Prognosen</string>
     <string name="radarforecast">Am Haaptbildschierm:</string>
-    <string name="nav_header_title">WeeWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Optional: Benotzerdefinéiert URL</string>
     <string name="fgColour">Widget Virdergrond Faarf Picker</string>
     <string name="bgColour">Widget Hannergrondfaarf Picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Donnéeën URL war eidel</string>
     <string name="wasnt_able_to_connect_settings">Konnt d\'Astellunge vun Ärem Server net konnektéieren oder eroflueden</string>
     <string name="url_was_default_or_empty">D\'URL gouf op de Standard gesat oder war eidel</string>
-    <string name="radar_url_not_set">Radar URL net agestallt oder gëtt nach erofgelueden. Dir kënnt op d\'Astellunge goen fir ze änneren</string>
     <string name="wasnt_able_to_connect_or_download">Konnt d\'Prognose net konnektéieren oder eroflueden</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="widget_theme">Widget Thema</string>
@@ -74,4 +72,7 @@
     <string name="today">Haut</string>
     <string name="last_year_stats">D\'lescht Joer Statistiken</string>
     <string name="last_month_stats">Statistike vum leschte Mount</string>
+    <string name="radar_url_not_set">Radar URL net agestallt. Dir kënnt op d\'Astellunge goen fir ze änneren</string>
+    <string name="radar_still_downloading">Radarbild gëtt nach ëmmer erofgelueden</string>
+    <string name="radar_download_failed">Ausgefall fir d\'Radarbild erofzelueden</string>
 </resources>

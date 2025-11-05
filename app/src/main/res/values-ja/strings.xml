@@ -20,8 +20,7 @@
     <string name="show_radar">レーダーを表示する</string>
     <string name="show_forecast">天気予報を表示</string>
     <string name="radarforecast">メイン画面で:</string>
-    <string name="nav_header_title">weeWXアプリ</string>
-    <string name="radar">レーダー</string>
+	<string name="radar">レーダー</string>
     <string name="custom_url">オプション: カスタム URL</string>
     <string name="fgColour">ウィジェットの前景色ピッカー</string>
     <string name="bgColour">ウィジェットの背景カラーピッカー</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">データ URL が空白でした</string>
     <string name="wasnt_able_to_connect_settings">サーバーに接続できなかったり、サーバーから設定をダウンロードできませんでした</string>
     <string name="url_was_default_or_empty">URL がデフォルトに設定されているか、空でした</string>
-    <string name="radar_url_not_set">レーダー URL が設定されていないか、まだダウンロード中です。設定に移動して変更できます。</string>
     <string name="wasnt_able_to_connect_or_download">接続できなかった、または予測をダウンロードできませんでした。</string>
     <string name="swipe_lock">スワイプロック</string>
     <string name="widget_theme">ウィジェットのテーマ</string>
@@ -74,4 +72,7 @@
     <string name="today">今日</string>
     <string name="last_year_stats">昨年の統計</string>
     <string name="last_month_stats">先月の統計</string>
+    <string name="radar_url_not_set">レーダー URL が設定されていません。設定に移動して変更できます。</string>
+    <string name="radar_still_downloading">レーダー画像はまだダウンロード中です。</string>
+    <string name="radar_download_failed">レーダー画像のダウンロードに失敗しました</string>
 </resources>

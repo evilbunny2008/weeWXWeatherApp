@@ -20,8 +20,7 @@
     <string name="show_radar">Show radar</string>
     <string name="show_forecast">Show forecast</string>
     <string name="radarforecast">Main screen-ah chuan:</string>
-    <string name="nav_header_title">weewx app a ni a</string>
-    <string name="radar">Radar 100 a ni</string>
+	<string name="radar">Radar 100 a ni</string>
     <string name="custom_url">A duh duh: Custom URL</string>
     <string name="fgColour">widget foreground rawng picker</string>
     <string name="bgColour">widget background rawng chi hrang hrang a awm bawk</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Data URL chu a blank a</string>
     <string name="wasnt_able_to_connect_settings">i server atanga settings connect emaw download emaw theih a ni lo</string>
     <string name="url_was_default_or_empty">URL chu default ah set a ni a, a nih loh leh empty</string>
-    <string name="radar_url_not_set">radar url set a ni lo emaw a la download reng bawk. Settings ah kal in thlak theih a ni</string>
     <string name="wasnt_able_to_connect_or_download">Forecast chu a connect thei lo va, a download thei lo bawk</string>
     <string name="swipe_lock">Swipe lock a ni a, lock a ni</string>
     <string name="widget_theme">widget theme</string>
@@ -74,4 +72,7 @@
     <string name="today">Vawiin</string>
     <string name="last_year_stats">Nikum khan statistics</string>
     <string name="last_month_stats">Thla hmasa khan statistics</string>
+    <string name="radar_url_not_set">radar url a ni lo. Settings ah kal in thlak theih a ni</string>
+    <string name="radar_still_downloading">Radar image chu a la download zel a</string>
+    <string name="radar_download_failed">Radar download theih loh a ni</string>
 </resources>

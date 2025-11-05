@@ -20,8 +20,7 @@
     <string name="show_radar">Tampilkeun radar</string>
     <string name="show_forecast">Nunjukkeun ramalan</string>
     <string name="radarforecast">Dina layar utama:</string>
-    <string name="nav_header_title">Aplikasi WeWX</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Goréng: URL adat</string>
     <string name="fgColour">Pengingak warna warna</string>
     <string name="bgColour">Pengingak warna latar</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL data kosong</string>
     <string name="wasnt_able_to_connect_settings">Henteu tiasa nyambung atanapi unduh setélan tina server anjeun</string>
     <string name="url_was_default_or_empty">URL disetel ka standar atanapi kosong</string>
-    <string name="radar_url_not_set">Radar URL teu dipasang atanapi masih diunduh. Anjeun tiasa angkat kana setélan pikeun robih</string>
     <string name="wasnt_able_to_connect_or_download">Henteu tiasa nyambung atanapi unduh ramalan</string>
     <string name="swipe_lock">Konci konci</string>
     <string name="widget_theme">Téma widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Ayeuna</string>
     <string name="last_year_stats">Statistik taun ka tukang</string>
     <string name="last_month_stats">Statistik bulan kamari</string>
+    <string name="radar_url_not_set">Radar URL teu diatur. Anjeun tiasa angkat kana setélan pikeun robih</string>
+    <string name="radar_still_downloading">Gambar Radar masih diunduh</string>
+    <string name="radar_download_failed">Gagal ngundeur gambar Radar</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">Ցույց տալ Ռադարը</string>
     <string name="show_forecast">Ցույց տալ կանխատեսումը</string>
     <string name="radarforecast">Հիմնական էկրանին</string>
-    <string name="nav_header_title">weeWX հավելված</string>
-    <string name="radar">Ռադար</string>
+	<string name="radar">Ռադար</string>
     <string name="custom_url">Լրացուցիչ՝ հատուկ URL</string>
     <string name="fgColour">Վիդջեթի առաջին պլանի գույնի ընտրիչ</string>
     <string name="bgColour">Վիջեթի ֆոնի գույնի ընտրիչ</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Տվյալների URL-ը դատարկ էր</string>
     <string name="wasnt_able_to_connect_settings">Չհաջողվեց միացնել կամ ներբեռնել կարգավորումները ձեր սերվերից</string>
     <string name="url_was_default_or_empty">URL-ը սահմանվել էր լռելյայն կամ դատարկ էր</string>
-    <string name="radar_url_not_set">Ռադարի URL-ը սահմանված չէ կամ դեռ ներբեռնվում է: Փոխելու համար կարող եք գնալ կարգավորումներ:</string>
     <string name="wasnt_able_to_connect_or_download">Չհաջողվեց միացնել կամ ներբեռնել կանխատեսումը:</string>
     <string name="swipe_lock">Սահեցրեք կողպեքը</string>
     <string name="widget_theme">Վիջեթի թեմա</string>
@@ -74,4 +72,7 @@
     <string name="today">Այսօր</string>
     <string name="last_year_stats">Անցյալ տարվա վիճակագրություն</string>
     <string name="last_month_stats">Անցյալ ամսվա վիճակագրություն</string>
+    <string name="radar_url_not_set">Ռադարի URL-ը սահմանված չէ: Փոխելու համար կարող եք գնալ կարգավորումներ:</string>
+    <string name="radar_still_downloading">Ռադարի պատկերը դեռ ներբեռնվում է:</string>
+    <string name="radar_download_failed">Չհաջողվեց ներբեռնել ռադարի պատկերը</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">Ирба Радар</string>
     <string name="show_forecast">Аԥхьагәаҭара</string>
     <string name="radarforecast">Аекран хадаҿы:</string>
-    <string name="nav_header_title">weeWX Апрограмма</string>
-    <string name="radar">Арадар</string>
+	<string name="radar">Арадар</string>
     <string name="custom_url">Иаҭахым: URL ҷыда</string>
     <string name="fgColour">Авиджет Ԥасатәи Аԥштәы апикер</string>
     <string name="bgColour">Авиджет Аҵыхәтәа Аԥштәы апикер</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Адыррақәа URL ҭацәын</string>
     <string name="wasnt_able_to_connect_settings">Усервер аҟынтәи архиарақәа реимадара ма рыхәыҵаҵара алшара амамызт</string>
     <string name="url_was_default_or_empty">URL еиқәыршәан стандартла мамзаргьы иҭацәын</string>
-    <string name="radar_url_not_set">Радар URL еиқәыршәам, мамзаргьы ихәымгара. Аԥсахразы архиарақәа рахь шәцар шәылшоит</string>
     <string name="wasnt_able_to_connect_or_download">Аԥхьарбара аидҳәалара ма ахәыҵахра алшара амамызт</string>
     <string name="swipe_lock">Исвип Алок</string>
     <string name="widget_theme">Авиджет атема</string>
@@ -74,4 +72,7 @@
     <string name="today">Иахьа</string>
     <string name="last_year_stats">Иҳаҩсыз ашықәс астатистика</string>
     <string name="last_month_stats">Иҳаҩсыз амза астатистика</string>
+    <string name="radar_url_not_set">Радар URL еиқәыршәам. Аԥсахразы архиарақәа рахь шәцар шәылшоит</string>
+    <string name="radar_still_downloading">Арадартә сахьа уажәгьы ихәыҵгоит</string>
+    <string name="radar_download_failed">Арадартә сахьа ахәыҵагалатәӡам</string>
 </resources>

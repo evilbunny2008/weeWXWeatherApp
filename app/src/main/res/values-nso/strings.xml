@@ -20,8 +20,7 @@
     <string name="show_radar">Radar ya Bontša</string>
     <string name="show_forecast">Bontšha ponelopele</string>
     <string name="radarforecast">Ka skrine se seholo:</string>
-    <string name="nav_header_title">App ya Weewx</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Kgetho: URL ya tlwaelo</string>
     <string name="fgColour">Widget foreground mmala picker</string>
     <string name="bgColour">Widget Lemorago la Mmala Picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL ya data e be e se na selo</string>
     <string name="wasnt_able_to_connect_settings">E be e sa kgone go kgokaganya goba go taonelouta dipeakanyo go tšwa go seva ya gago</string>
     <string name="url_was_default_or_empty">URL e be e beilwe go default goba e be e se na selo</string>
-    <string name="radar_url_not_set">Radar URL ga se ya bewa goba e sa dutše e taonelouta. O ka ya go dipeakanyo go fetoga</string>
     <string name="wasnt_able_to_connect_or_download">wasn\'t able to connect goba go taonelouta ponelopele</string>
     <string name="swipe_lock">Senotlolo sa swipe</string>
     <string name="widget_theme">Sehlogo sa Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Lehono</string>
     <string name="last_year_stats">Dipalopalo tša ngwagola</string>
     <string name="last_month_stats">Dipalopalo tša kgwedi ya go feta</string>
+    <string name="radar_url_not_set">URL ya radar ga se ya bewa. O ka ya go dipeakanyo go fetoga</string>
+    <string name="radar_still_downloading">Radar setšoantšo e ntse e thowuni</string>
+    <string name="radar_download_failed">E paletšwe ke go taonelouta seswantšho sa radar</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">Erekana Radar</string>
     <string name="show_forecast">Erekana</string>
     <string name="radarforecast">Ku rubuga nyamukuru:</string>
-    <string name="nav_header_title">weeWX App</string>
-    <string name="radar">Radari</string>
+	<string name="radar">Radari</string>
     <string name="custom_url">Ihitamwo: URL y\'Ivyiyumviro</string>
     <string name="fgColour">Igipfukisho c\'Ibumba</string>
     <string name="bgColour">Igisubizo c\'Ibara ry\'Ibara</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL y\'amakuru yari ubusa</string>
     <string name="wasnt_able_to_connect_settings">Ntiyashoboye guhuza canke gukuraho ivyagezwe kuri server yawe</string>
     <string name="url_was_default_or_empty">URL yashizwe ku rugero canke yari ubusa</string>
-    <string name="radar_url_not_set">Radar URL ntiyishiraho canke iracariko irakura. Ushobora kuja mu ma settings kugira ngo uhindure</string>
     <string name="wasnt_able_to_connect_or_download">Ntiyashoboye guhuza canke gukuraho ivy\'imbere y\'igihe</string>
     <string name="swipe_lock">Gusuka</string>
     <string name="widget_theme">Insiguro y\'Ingengo y\'Imari</string>
@@ -74,4 +72,7 @@
     <string name="today">Uno musi</string>
     <string name="last_year_stats">Imibare y\'umwaka wa nyuma</string>
     <string name="last_month_stats">Imibare y\'ukwezi kwa nyuma</string>
+    <string name="radar_url_not_set">Radar URL ntiyishizweho. Ushobora kuja mu ma settings kugira ngo uhindure</string>
+    <string name="radar_still_downloading">Ishusho ya Radar iracariko irakura</string>
+    <string name="radar_download_failed">Utanguriye gukura ishusho ya radar</string>
 </resources>

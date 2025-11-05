@@ -20,8 +20,7 @@
     <string name="show_radar">རེ་ཌར་སྟོན།</string>
     <string name="show_forecast">སྔོན་བཤད་སྟོན་པའི་སྔོན་བཤད་སྟོན།</string>
     <string name="radarforecast">གསལ་གཞིའི་ནང་།</string>
-    <string name="nav_header_title">weeWX ཨེཔ།</string>
-    <string name="radar">ར་ཌར་</string>
+	<string name="radar">ར་ཌར་</string>
     <string name="custom_url">གདམ་ཁ་ཅན་: སྲོལ་སྒྲིག་ཡུ་ཨར་ཨེལ།</string>
     <string name="fgColour">ཝིཌི་གེཊ་གདོང་ཚོའི་ཚོས་གཞི།</string>
     <string name="bgColour">Widget རྒྱབ་ལྗོངས་ཚོས་གཞི།</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">གནད་སྡུད་ཡུ་ཨར་ཨེལ་འདི་སྟོངམ་སྦེ་འདུག</string>
     <string name="wasnt_able_to_connect_settings">ཁྱོད་རའི་སར་བར་ལས་ སྒྲིག་སྟངས་ཚུ་ མཐུད་མ་ཚུགསཔ་ ཡང་ན་ ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="url_was_default_or_empty">ཡུ་ཨར་ཨེལ་འདི་ སྔོན་སྒྲིག་ལུ་གཞི་སྒྲིག་འབད་ཡོདཔ་ ཡང་ཅིན་ སྟོངམ་ཨིན་པས།</string>
-    <string name="radar_url_not_set">རེ་ཌར་ཡུ་ཨར་ཨེལ་འདི་གཞི་སྒྲིག་མ་འབདཝ་མ་ཚད་ ད་ལྟོ་ཡང་ཕབ་ལེན་འབད་དོ་ཡོདཔ་ཨིན། ཁྱོད་ཀྱིས་ སྒྲིག་སྟངས་ཚུ་བསྒྱུར་བཅོས་འབད་ནི་ལུ་འགྱོ་ཚུགས།</string>
     <string name="wasnt_able_to_connect_or_download">མཐུད་མ་ཚུགསཔ་ཡང་ན་ སྔོན་བཤད་ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="swipe_lock">ལྡེ་མིག་བཤུད་འབད།</string>
     <string name="widget_theme">ཝིཌི་གེཊ་བརྗོད་དོན་།</string>
@@ -74,4 +72,7 @@
     <string name="today">ད་རེས</string>
     <string name="last_year_stats">ལོ་མཇུག་གི་རྩིས་དཔྱད།</string>
     <string name="last_month_stats">མཇུག་མཐའི་རྩིས་དཔྱད།</string>
+    <string name="radar_url_not_set">རེ་ཌར་ཡུ་ཨར་ཨེལ་འདི་གཞི་སྒྲིག་མ་འབད་བས། ཁྱོད་ཀྱིས་ སྒྲིག་སྟངས་ཚུ་བསྒྱུར་བཅོས་འབད་ནི་ལུ་འགྱོ་ཚུགས།</string>
+    <string name="radar_still_downloading">རེ་ཌར་གཟུགས་བརྙན་འདི་ད་ལྟོ་ཡང་ཕབ་ལེན་འབད་དོ་ཡོདཔ་ཨིན།</string>
+    <string name="radar_download_failed">རེ་ཌར་གཟུགས་བརྙན་ཕབ་ལེན་འབད་མ་ཚུགས་པས།</string>
 </resources>

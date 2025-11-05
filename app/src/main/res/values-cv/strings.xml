@@ -20,8 +20,7 @@
     <string name="show_radar">Радар кăтартăр</string>
     <string name="show_forecast">Прогноз кăтартăр</string>
     <string name="radarforecast">Тĕп экран çинче:</string>
-    <string name="nav_header_title">weWX App</string>
-    <string name="radar">Радарла</string>
+	<string name="radar">Радарла</string>
     <string name="custom_url">Опционаллă: Ятарлă URL</string>
     <string name="fgColour">Тĕлĕкĕмĕн малти планĕн тĕсĕ Пикер</string>
     <string name="bgColour">Виджет фонĕ тĕсĕ Пикер</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Даннăйсен URL-адресĕ пушă пулнă</string>
     <string name="wasnt_able_to_connect_settings">Настройкăсене сирĕн сервертан çыхăнтарма е скачать тума пултарайман</string>
     <string name="url_was_default_or_empty">URL-адреса стандартлă е пушă пулнă</string>
-    <string name="radar_url_not_set">Radar URL-адрес мар е халĕ те скачать тăвать. Улшăнма настройкăсене кайма пулать</string>
     <string name="wasnt_able_to_connect_or_download">Прогноза çыхăнтарма е скачать тума пултарайман</string>
     <string name="swipe_lock">Швейцар лока</string>
     <string name="widget_theme">Виджет теми</string>
@@ -74,4 +72,7 @@
     <string name="today">Паян</string>
     <string name="last_year_stats">Иртнĕ çулхи статистика</string>
     <string name="last_month_stats">Юлашки уйăх статистики</string>
+    <string name="radar_url_not_set">Радар URL-адрес мар. Улшăнма настройкăсене кайма пулать</string>
+    <string name="radar_still_downloading">Радар ÿкерчĕкĕ халĕ те скачать тăвать</string>
+    <string name="radar_download_failed">Радар ÿкерчĕкне скачать тума май килмен</string>
 </resources>

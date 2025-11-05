@@ -9,6 +9,7 @@
 		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
 		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
 		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:windowLightNavigationBar">false</item>
 		<item name="android:windowTranslucentNavigation">false</item>
 	</style>
 
@@ -21,6 +22,7 @@
 		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
 		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
 		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:windowLightNavigationBar">false</item>
 		<item name="android:windowTranslucentNavigation">false</item>
 	</style>
 
@@ -33,6 +35,7 @@
 		<item name="android:windowDrawsSystemBarBackgrounds">true</item>
 		<item name="android:statusBarColor">@color/MyAppNavBarColour</item>
 		<item name="android:navigationBarColor">@color/MyAppNavBarColour</item>
+		<item name="android:windowLightNavigationBar">false</item>
 		<item name="android:windowTranslucentNavigation">false</item>
 	</style>
 

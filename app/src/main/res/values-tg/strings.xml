@@ -20,8 +20,7 @@
     <string name="show_radar">Нишон додани радар</string>
     <string name="show_forecast">Намоиш пешгӯӣ</string>
     <string name="radarforecast">Дар экрани асосӣ:</string>
-    <string name="nav_header_title">Wewx App</string>
-    <string name="radar">Радар</string>
+	<string name="radar">Радар</string>
     <string name="custom_url">Ихтиёрӣ: URL-и фармоишӣ</string>
     <string name="fgColour">Робитаи ранги пӯшида</string>
     <string name="bgColour">Андозаи фарогирии дуввум</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL маълумот холӣ буд</string>
     <string name="wasnt_able_to_connect_settings">Наметавонад каналҳоро аз сервери худ зеркашӣ кунад ё зеркашӣ кунад</string>
     <string name="url_was_default_or_empty">URL ба пешфарз гузошта шуда буд ё холӣ буд</string>
-    <string name="radar_url_not_set">URL Radar насб намекунад ё ҳоло ҳам зеркашӣ аст. Шумо метавонед ба Танзимот муроҷиат кунед</string>
     <string name="wasnt_able_to_connect_or_download">Наметавонад пешгӯӣ ё зеркашӣ кунад</string>
     <string name="swipe_lock">Қулфи лағжанда</string>
     <string name="widget_theme">Мавзӯъи виҷҷ</string>
@@ -74,4 +72,7 @@
     <string name="today">Имрӯз</string>
     <string name="last_year_stats">Омори соли гузашта</string>
     <string name="last_month_stats">Омори моҳи гузашта</string>
+    <string name="radar_url_not_set">URL Radar насб нашудааст. Шумо метавонед ба Танзимот муроҷиат кунед</string>
+    <string name="radar_still_downloading">Тасвири радаркорӣ ҳоло ҳам зеркашӣ аст</string>
+    <string name="radar_download_failed">Тасвири радариро зеркашӣ кард</string>
 </resources>

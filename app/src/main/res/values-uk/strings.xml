@@ -20,8 +20,7 @@
     <string name="show_radar">Показати радар</string>
     <string name="show_forecast">Показати прогноз</string>
     <string name="radarforecast">На головному екрані:</string>
-    <string name="nav_header_title">Додаток weeWX</string>
-    <string name="radar">радар</string>
+	<string name="radar">радар</string>
     <string name="custom_url">Необов\'язково: спеціальна URL-адреса</string>
     <string name="fgColour">Вибір кольору переднього плану віджета</string>
     <string name="bgColour">Вибір кольору фону віджета</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL-адреса даних була пустою</string>
     <string name="wasnt_able_to_connect_settings">Не вдалося підключитися або завантажити налаштування з вашого сервера</string>
     <string name="url_was_default_or_empty">URL-адресу встановлено за замовчуванням або вона була порожньою</string>
-    <string name="radar_url_not_set">URL-адреса радара не встановлена ​​або все ще завантажується. Ви можете перейти до налаштувань, щоб змінити</string>
     <string name="wasnt_able_to_connect_or_download">Не вдалося підключитися чи завантажити прогноз</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="widget_theme">Тема віджета</string>
@@ -74,4 +72,7 @@
     <string name="today">Сьогодні</string>
     <string name="last_year_stats">Статистика минулого року</string>
     <string name="last_month_stats">Статистика за останній місяць</string>
+    <string name="radar_url_not_set">URL радара не встановлено. Ви можете перейти до налаштувань, щоб змінити</string>
+    <string name="radar_still_downloading">Радарне зображення ще завантажується</string>
+    <string name="radar_download_failed">Не вдалося завантажити радіолокаційне зображення</string>
 </resources>

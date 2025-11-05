@@ -20,8 +20,7 @@
     <string name="show_radar">Радар шоу</string>
     <string name="show_forecast">Захиагаа харуул</string>
     <string name="radarforecast">Үндсэн дэлгэц дээр:</string>
-    <string name="nav_header_title">weewx програм</string>
-    <string name="radar">Радиолокац</string>
+	<string name="radar">Радиолокац</string>
     <string name="custom_url">Заавал биш: Захиалгат URL</string>
     <string name="fgColour">Урд талын өнгөт өнгөт сонгогч</string>
     <string name="bgColour">Виджет арын өнгөний зураг сонгогч</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Мэдээллийн URL хоосон байв</string>
     <string name="wasnt_able_to_connect_settings">Таны серверээс тохиргоог холбож, татаж авах боломжгүй байсан</string>
     <string name="url_was_default_or_empty">URL нь анхдагч эсвэл хоосон байсан</string>
-    <string name="radar_url_not_set">RADAR URL тохируулаагүй эсвэл одоо ч татаж байгаа. Та өөрчлөлтийг тохируулахын тулд очиж болно</string>
     <string name="wasnt_able_to_connect_or_download">Урьдчилсан мэдээг холбож, татаж авах боломжгүй байсан</string>
     <string name="swipe_lock">Батгаа дэлгэрүүл</string>
     <string name="widget_theme">Виджет сэдэв</string>
@@ -74,4 +72,7 @@
     <string name="today">Оноо</string>
     <string name="last_year_stats">Өнгөрсөн жилийн статистик</string>
     <string name="last_month_stats">Өнгөрсөн сарын статистик</string>
+    <string name="radar_url_not_set">RADAR URL тохируулаагүй байна. Та өөрчлөлтийг тохируулахын тулд очиж болно</string>
+    <string name="radar_still_downloading">RADAR зураг татаж байгаа хэвээр байна</string>
+    <string name="radar_download_failed">Радарын зургийг татаж авч чадсангүй</string>
 </resources>

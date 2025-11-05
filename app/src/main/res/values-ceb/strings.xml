@@ -20,8 +20,7 @@
     <string name="show_radar">Ipakita ang radar</string>
     <string name="show_forecast">Ipakita ang forecast</string>
     <string name="radarforecast">Sa main screen:</string>
-    <string name="nav_header_title">weeewx app</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opsyonal: Custom URL</string>
     <string name="fgColour">Ang Widget Foreground Color Picker</string>
     <string name="bgColour">Widget Background Color Picker</string>
@@ -63,8 +62,7 @@
     <string name="data_url_was_blank">Blangko ang Data URL</string>
     <string name="wasnt_able_to_connect_settings">Wala makonekta o i-download ang mga setting gikan sa imong server</string>
     <string name="url_was_default_or_empty">Ang URL gitakda sa default o wala\'y sulod</string>
-    <string name="radar_url_not_set">Ang radar URL wala magtakda o nag-download pa. Mahimo ka moadto sa mga setting aron mabag-o</string>
-    <string name="wasnt_able_to_connect_or_download">Dili makonekta o i-download ang forecast</string>
+	<string name="wasnt_able_to_connect_or_download">Dili makonekta o i-download ang forecast</string>
 	<string name="swipe_lock">Hunonga ang Pag-swipe</string>
 	<string name="use_icons">Gamita ang mga Imahen</string>
 	<string name="today">Karon</string>
@@ -74,4 +72,7 @@
 	<string name="app_theme">Tema sa Aplikasyon</string>
 	<string name="last_year_stats">Mga Estadistika sa Miaging Tuig</string>
 	<string name="last_month_stats">Mga Estadistika sa Miaging Bulan</string>
+	<string name="radar_url_not_set">Wala ma-set ang Radar URL. Mahimo kang moadto sa mga setting aron usbon.</string>
+	<string name="radar_still_downloading">Ang imahe sa radar gi-download pa.</string>
+	<string name="radar_download_failed">Napakyas sa pag-download sa imahe sa radar</string>
 </resources>

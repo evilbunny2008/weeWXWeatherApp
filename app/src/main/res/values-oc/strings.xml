@@ -20,8 +20,7 @@
     <string name="show_radar">Mostrar lo radar</string>
     <string name="show_forecast">Mostrar Prevision</string>
     <string name="radarforecast">En la pantalla Principal:</string>
-    <string name="nav_header_title">App weeWX</string>
-    <string name="radar">radar</string>
+	<string name="radar">radar</string>
     <string name="custom_url">Opcional: URL personalizada</string>
     <string name="fgColour">Picker de Color de Primo Esterro</string>
     <string name="bgColour">Recogist de Color de fons de Widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">L\'URL de donadas foguèt en blanc</string>
     <string name="wasnt_able_to_connect_settings">Era pas capable de connectar o de telecargar los paramètres de vòstre servidor</string>
     <string name="url_was_default_or_empty">URL foguèt definit al defaut o èra vuèg</string>
-    <string name="radar_url_not_set">Radar URL pas definit o es encara en telecargament. Podètz anar als paramètres per cambiar</string>
     <string name="wasnt_able_to_connect_or_download">Era pas capable de connectar o de telecargar la prevision</string>
     <string name="swipe_lock">Bloquejament de vestits</string>
     <string name="widget_theme">Tema de Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Uèi</string>
     <string name="last_year_stats">Estadísticas de l\'an passat</string>
     <string name="last_month_stats">Estadísticas de la Última Mes</string>
+    <string name="radar_url_not_set">URL de radar pas definit. Podètz anar als paramètres per cambiar</string>
+    <string name="radar_still_downloading">Imagen de radar es encara en descarga</string>
+    <string name="radar_download_failed">Fracàs de descargar l\'imatge radar</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">Radar tonen</string>
     <string name="show_forecast">Toon voorspelling</string>
     <string name="radarforecast">Op het hoofdscherm:</string>
-    <string name="nav_header_title">weeWX-app</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Optioneel: aangepaste URL</string>
     <string name="fgColour">Widget-voorgrondkleurkiezer</string>
     <string name="bgColour">Achtergrondkleurkiezer voor widgets</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Gegevens-URL was leeg</string>
     <string name="wasnt_able_to_connect_settings">Kan geen verbinding maken of de instellingen downloaden van uw server</string>
     <string name="url_was_default_or_empty">URL was ingesteld op de standaardwaarde of was leeg</string>
-    <string name="radar_url_not_set">Radar-URL is niet ingesteld of wordt nog gedownload. U kunt naar de instellingen gaan om deze te wijzigen</string>
     <string name="wasnt_able_to_connect_or_download">Kon geen verbinding maken of de voorspelling downloaden</string>
     <string name="swipe_lock">Veeg vergrendelen</string>
     <string name="widget_theme">Widget-thema</string>
@@ -74,4 +72,7 @@
     <string name="today">Vandaag</string>
     <string name="last_year_stats">Statistieken van vorig jaar</string>
     <string name="last_month_stats">Statistieken van de afgelopen maand</string>
+    <string name="radar_url_not_set">Radar-URL niet ingesteld. U kunt naar de instellingen gaan om deze te wijzigen</string>
+    <string name="radar_still_downloading">Het radarbeeld wordt nog steeds gedownload</string>
+    <string name="radar_download_failed">Kan het radarbeeld niet downloaden</string>
 </resources>

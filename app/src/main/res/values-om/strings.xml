@@ -20,8 +20,7 @@
     <string name="show_radar">Raadaara agarsiisi</string>
     <string name="show_forecast">Raaga agarsiisi</string>
     <string name="radarforecast">Iskiriinii guddaa irratti:</string>
-    <string name="nav_header_title">Appii Weewx</string>
-    <string name="radar">Raadaara</string>
+	<string name="radar">Raadaara</string>
     <string name="custom_url">Filannoo: URL amala</string>
     <string name="fgColour">Widget halluu fuulduraa kan fudhatu</string>
     <string name="bgColour">Widget Duubbee Halluu Filannoo</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL deetaa duwwaa ture</string>
     <string name="wasnt_able_to_connect_settings">settings server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="url_was_default_or_empty">URL gara durtiitti qindaa\'e ykn duwwaa ture</string>
-    <string name="radar_url_not_set">Radar url hin saagitu ykn ammallee buufachaa jira. Jijjiiruuf gara settings deemuu dandeessa</string>
     <string name="wasnt_able_to_connect_or_download">Raaga sana wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="swipe_lock">Qulfii swipe</string>
     <string name="widget_theme">Mata duree Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Har\'a</string>
     <string name="last_year_stats">Istaatistiksii bara darbee</string>
     <string name="last_month_stats">Istaatistiksii ji\'a darbee</string>
+    <string name="radar_url_not_set">URL raadaraa hin saagamne. Jijjiiruuf gara settings deemuu dandeessa</string>
+    <string name="radar_still_downloading">Fakkiin raadaraa ammallee buufachaa jira</string>
+    <string name="radar_download_failed">Fakkii raadaraa buufachuu dadhabe</string>
 </resources>

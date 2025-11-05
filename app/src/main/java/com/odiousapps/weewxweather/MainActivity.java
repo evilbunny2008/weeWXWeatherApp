@@ -11,6 +11,8 @@ import android.text.Editable;
 import android.text.method.LinkMovementMethod;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
@@ -69,7 +71,6 @@ import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 		"ConstantConditions"})
 public class MainActivity extends FragmentActivity
 {
-	private boolean showSplash = true;
 	private TabLayout tabLayout;
 	private DrawerLayout mDrawerLayout;
 	private OnBackInvokedCallback backCallback;
@@ -101,6 +102,11 @@ public class MainActivity extends FragmentActivity
 
 	private ImageButton hamburger;
 	private boolean gestureNav = false;
+
+	private Thread mainactivityThread;
+	private long maStart;
+
+	private int extraPx;
 
 	private static final int[] screen_elements = new int[]
 	{
@@ -143,6 +149,8 @@ public class MainActivity extends FragmentActivity
 		Common.LogMessage("smallestScreenWidthDp: " + weeWXApp.smallestScreenWidth());
 		Common.LogMessage("minWidth=" + weeWXApp.getWidth() +
 		                  ", minHeight=" + weeWXApp.getHeight());
+
+		extraPx = (int)(75 * weeWXApp.getInstance().getResources().getDisplayMetrics().density + 0.5f);
 
 		if(!weeWXApp.isTablet())
 			setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -189,27 +197,6 @@ public class MainActivity extends FragmentActivity
 		AppBarLayout abl = findViewById(R.id.appbar);
 		FrameLayout rv = findViewById(R.id.root_view);
 		scrollView = findViewById(R.id.sv1);
-
-		scrollView.getViewTreeObserver().addOnGlobalLayoutListener(() ->
-		{
-			View focus = getCurrentFocus();
-			if(focus != null)
-			{
-				int extraDp = 33;
-				float density = scrollView.getResources().getDisplayMetrics().density;
-				int extraPx = (int)(extraDp * density + 0.5f);
-
-				Common.LogMessage("scrollView.getScrollY(): " + scrollView.getScrollY(), true);
-
-				int scrollY = scrollView.getScrollY() + extraPx;
-				Common.LogMessage("new scrollY: " + scrollY, true);
-
-				if(focus.getId() == R.id.settings)
-					scrollView.post(() -> scrollView.smoothScrollTo(0, 0));
-				else
-					scrollView.post(() -> scrollView.smoothScrollTo(0, scrollY));
-			}
-		});
 
 		appInitialLeft = abl.getPaddingLeft();
 		appInitialTop = abl.getPaddingTop();
@@ -297,68 +284,39 @@ public class MainActivity extends FragmentActivity
 
 		tabLayout = findViewById(R.id.tabs);
 
-		new Thread(() ->
+		mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
+		mSectionsPagerAdapter.addFragment(new Weather());
+		mSectionsPagerAdapter.addFragment(new Stats());
+		mSectionsPagerAdapter.addFragment(new Forecast());
+		mSectionsPagerAdapter.addFragment(new Webcam());
+		mSectionsPagerAdapter.addFragment(new Custom());
+
+		mViewPager = findViewById(R.id.container);
+		mViewPager.setOffscreenPageLimit(mSectionsPagerAdapter.getItemCount());
+		mViewPager.setAdapter(mSectionsPagerAdapter);
+		reduceViewPagerSwipeSensitivity(mViewPager);
+
+		String[] tabTitles;
+		if(Common.GetBoolPref("radarforecast", true))
+			tabTitles = new String[]{weeWXApp.getAndroidString(R.string.weather2),
+			                         weeWXApp.getAndroidString(R.string.stats2),
+			                         weeWXApp.getAndroidString(R.string.forecast2),
+			                         weeWXApp.getAndroidString(R.string.webcam2),
+			                         weeWXApp.getAndroidString(R.string.custom2)};
+		else
+			tabTitles = new String[]{weeWXApp.getAndroidString(R.string.weather2),
+			                         weeWXApp.getAndroidString(R.string.stats2),
+			                         weeWXApp.getAndroidString(R.string.radar),
+			                         weeWXApp.getAndroidString(R.string.webcam2),
+			                         weeWXApp.getAndroidString(R.string.custom2)};
+		new TabLayoutMediator(tabLayout, mViewPager,
+				((tab, position) -> tab.setText(tabTitles[position]))).attach();
+
+		if(savedInstanceState != null)
 		{
-			mSectionsPagerAdapter = new SectionsStateAdapter(getSupportFragmentManager(), getLifecycle());
-			mSectionsPagerAdapter.addFragment(new Weather());
-			mSectionsPagerAdapter.addFragment(new Stats());
-			mSectionsPagerAdapter.addFragment(new Forecast());
-			mSectionsPagerAdapter.addFragment(new Webcam());
-			mSectionsPagerAdapter.addFragment(new Custom());
-
-			mViewPager = findViewById(R.id.container);
-			mViewPager.setOffscreenPageLimit(mSectionsPagerAdapter.getItemCount());
-			//mViewPager.setOffscreenPageLimit(ViewPager2.OFFSCREEN_PAGE_LIMIT_DEFAULT);
-			runOnUiThread(() ->
-			{
-				mViewPager.setAdapter(mSectionsPagerAdapter);
-				new Thread(() ->
-				{
-					// Reduce swipe sensitivity
-					try
-					{
-						Field recyclerViewField = ViewPager2.class.getDeclaredField("mRecyclerView");
-						recyclerViewField.setAccessible(true);
-						RecyclerView recyclerView = (RecyclerView)recyclerViewField.get(mViewPager);
-
-						Field touchSlopField = RecyclerView.class.getDeclaredField("mTouchSlop");
-						touchSlopField.setAccessible(true);
-						Object tmp = touchSlopField.get(recyclerView);
-						if(tmp != null)
-						{
-							int touchSlop = (int)tmp;
-							touchSlopField.set(recyclerView, touchSlop * 3); // 3× less sensitive
-						}
-					} catch(Exception e) {
-						Common.doStackOutput(e);
-					}
-
-					String[] tabTitles;
-					if(Common.GetBoolPref("radarforecast", true))
-						tabTitles = new String[]{weeWXApp.getAndroidString(R.string.weather2), weeWXApp.getAndroidString(R.string.stats2),
-						                         weeWXApp.getAndroidString(R.string.forecast2), weeWXApp.getAndroidString(R.string.webcam2),
-						                         weeWXApp.getAndroidString(R.string.custom2)};
-					else
-						tabTitles = new String[]{weeWXApp.getAndroidString(R.string.weather2), weeWXApp.getAndroidString(R.string.stats2),
-						                         weeWXApp.getAndroidString(R.string.radar), weeWXApp.getAndroidString(R.string.webcam2),
-						                         weeWXApp.getAndroidString(R.string.custom2)};
-					TabLayoutMediator tlm = new TabLayoutMediator(tabLayout, mViewPager, ((tab, position) ->
-							                                              tab.setText(tabTitles[position])));
-					runOnUiThread(() ->
-					{
-						tlm.attach();
-
-						if(savedInstanceState != null)
-						{
-							int page = savedInstanceState.getInt("page", 0);
-							mViewPager.setCurrentItem(page, false);
-						}
-
-						showSplash = false;
-					});
-				}).start();
-			});
-		}).start();
+			int page = savedInstanceState.getInt("page", 0);
+			mViewPager.setCurrentItem(page, false);
+		}
 
 		try
 		{
@@ -544,8 +502,38 @@ public class MainActivity extends FragmentActivity
 		customURL.setText(Common.GetStringPref("custom_url", ""));
 		customURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
+			Common.LogMessage("CustomURL has a focus change event...", true);
+
 			if(!hasFocus)
+			{
+				Common.LogMessage("CustomURL lost focus change event...", true);
 				closeKeyboard(v);
+				return;
+			}
+
+			Common.LogMessage("CustomURL gained focus change event...", true);
+
+			final View root = getWindow().getDecorView().getRootView();
+			final ViewTreeObserver.OnGlobalLayoutListener listener = new ViewTreeObserver.OnGlobalLayoutListener()
+			{
+				@Override
+				public void onGlobalLayout()
+				{
+					// Remove listener immediately — only want to run once
+					root.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+
+					// Now the layout has resized, scroll to the EditText
+					scrollView.postDelayed(() ->
+					{
+						Common.LogMessage("Old scrollY: " + scrollView.getScrollY(), true);
+						int scrollY = scrollView.getScrollY() + extraPx;
+						Common.LogMessage("New scrollY: " + scrollY, true);
+						scrollView.smoothScrollTo(0, Math.max(scrollY, 0));
+					}, 200);
+				}
+			};
+
+			root.getViewTreeObserver().addOnGlobalLayoutListener(listener);
 		});
 
 		enableEdgeToEdge(window);
@@ -558,6 +546,23 @@ public class MainActivity extends FragmentActivity
 
 		Common.LogMessage("MainActivity.onCreate() has finished...");
 		Common.setAlarm("MainActivity.onCreate()");
+	}
+
+	private void reduceViewPagerSwipeSensitivity(ViewPager2 viewPager)
+	{
+		try
+		{
+			Field recyclerViewField = ViewPager2.class.getDeclaredField("mRecyclerView");
+			recyclerViewField.setAccessible(true);
+			RecyclerView recyclerView = (RecyclerView) recyclerViewField.get(viewPager);
+
+			Field touchSlopField = RecyclerView.class.getDeclaredField("mTouchSlop");
+			touchSlopField.setAccessible(true);
+			int touchSlop = (int) touchSlopField.get(recyclerView);
+			touchSlopField.set(recyclerView, touchSlop * 3);
+		} catch (Exception e) {
+			Common.doStackOutput(e);
+		}
 	}
 
 	@Override
@@ -629,7 +634,7 @@ public class MainActivity extends FragmentActivity
 		}
 	}
 
-	DrawerLayout.SimpleDrawerListener handleDrawerListener = new DrawerLayout.SimpleDrawerListener()
+	final DrawerLayout.SimpleDrawerListener handleDrawerListener = new DrawerLayout.SimpleDrawerListener()
 	{
 		@Override
 		public void onDrawerOpened(@NonNull View drawerView)
@@ -674,7 +679,7 @@ public class MainActivity extends FragmentActivity
 		}
 	}
 
-	OnBackPressedCallback obpc = new OnBackPressedCallback(true)
+	final OnBackPressedCallback obpc = new OnBackPressedCallback(true)
 	{
 		@Override
 		public void handleOnBackPressed()
@@ -822,15 +827,40 @@ public class MainActivity extends FragmentActivity
 		});
 	}
 
+	private ArrayAdapter<String> newArrayAdapter(int resId, String[] strings)
+	{
+		return new ArrayAdapter<>(this, resId, strings)
+		{
+			@NonNull
+			@Override
+			public View getView(int position, View convertView, @NonNull ViewGroup parent)
+			{
+				MaterialTextView view = (MaterialTextView)super.getView(position, convertView, parent);
+				view.setBackgroundColor(KeyValue.bgColour);
+				view.setTextColor(KeyValue.fgColour);
+				return view;
+			}
+
+			@Override
+			public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent)
+			{
+				MaterialTextView view = (MaterialTextView)super.getDropDownView(position, convertView, parent);
+				view.setBackgroundColor(KeyValue.bgColour);
+				view.setTextColor(KeyValue.fgColour);
+				return view;
+			}
+		};
+	}
+
 	private void updateDropDowns()
 	{
-		int theme = R.layout.spinner_layout_light;
-		if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
-			theme = R.layout.spinner_layout_dark;
+		//int bgColour = R.layout.spinner_dropdown_item_light;
+		//if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
+		//	theme = R.layout.spinner_dropdown_item_dark;
 
-		ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this, theme, updateOptions);
-		ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this, theme, themeOptions);
-		ArrayAdapter<String> adapter3 = new ArrayAdapter<>(this, theme, widgetThemeOptions);
+		ArrayAdapter<String> adapter1 = newArrayAdapter(R.layout.spinner_layout, updateOptions);
+		ArrayAdapter<String> adapter2 = newArrayAdapter(R.layout.spinner_layout, themeOptions);
+		ArrayAdapter<String> adapter3 = newArrayAdapter(R.layout.spinner_layout, widgetThemeOptions);
 
 		final int uf = UpdateFrequency;
 		final int dnm = DayNightMode;
@@ -933,15 +963,11 @@ public class MainActivity extends FragmentActivity
 					Common.clearPref();
 					Common.commitPref();
 
-					File file = new File(this.getFilesDir(), "webcam.jpg");
-					if(file.exists() && file.canWrite())
-						if(!file.delete())
-							Common.LogMessage("couldn't delete webcam.jpg");
+					if(!Common.deleteFile("webcam.jpg"))
+						Common.LogMessage("Failed to delete webcam.jpg, or it no longer exists...");
 
-					file = new File(this.getFilesDir(), "radar.gif");
-					if(file.exists() && file.canWrite())
-						if(!file.delete())
-							Common.LogMessage("couldn't delete radar.gif");
+					if(!Common.deleteFile("radar.gif"))
+						Common.LogMessage("Failed to delete radar.gif, or it no longer exists...");
 
 					WidgetProvider.updateAppWidget();
 
@@ -955,7 +981,14 @@ public class MainActivity extends FragmentActivity
 
 	private void processSettings()
 	{
-		Thread t = new Thread(() ->
+		if(mainactivityThread != null)
+		{
+			if(mainactivityThread.isAlive())
+				mainactivityThread.interrupt();
+			mainactivityThread = null;
+		}
+
+		mainactivityThread = new Thread(() ->
 		{
 			String tmpStr;
 			boolean validURL = false;
@@ -1216,23 +1249,6 @@ public class MainActivity extends FragmentActivity
 							Common.LogMessage("forecast=" + forecast);
 							Common.LogMessage("fctype=" + fctype);
 						}
-						case "bom.gov.au" ->
-						{
-							Common.SetStringPref("lastError", "Forecast type " + fctype + " is no longer supported due to ftp support being dropped in Android. Use bom2 forecasts instead, check the wiki for details.");
-							runOnUiThread(() ->
-							{
-								b1.setEnabled(true);
-								b2.setEnabled(true);
-								dialog.dismiss();
-								new AlertDialog.Builder(this)
-										.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast))
-										.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-										.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-										{
-										}).show();
-							});
-							return;
-						}
 						case "wmo.int" ->
 						{
 							if(!forecast.startsWith("http"))
@@ -1308,7 +1324,7 @@ public class MainActivity extends FragmentActivity
 
 							if(tmpStr.isBlank() || !forecast.equals(oldforecast))
 							{
-								metierev = Common.downloadForecast(fctype, metierev, null);
+								metierev = Common.downloadForecast(fctype, metierev);
 								if(metierev == null)
 									return;
 
@@ -1372,7 +1388,7 @@ public class MainActivity extends FragmentActivity
 				try
 				{
 					Common.LogMessage("checking: " + forecast);
-					String tmp = Common.downloadForecast(fctype, forecast, bomtown);
+					String tmp = Common.downloadForecast(fctype, forecast);
 					if(tmp != null)
 					{
 						validURL3 = true;
@@ -1407,21 +1423,26 @@ public class MainActivity extends FragmentActivity
 			{
 				Common.LogMessage("checking: " + webcam);
 
-				if(!Webcam.downloadWebcam(webcam, this.getFilesDir()))
+				try
 				{
-					runOnUiThread(() -> {
-						b1.setEnabled(true);
-						b2.setEnabled(true);
-						dialog.dismiss();
-						new AlertDialog.Builder(this)
-								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
-								.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-								{
-								}).show();
-					});
+					if(Common.loadOrDownloadImage(webcam, "webcam.jpg", true) == null)
+					{
+						runOnUiThread(() -> {
+							b1.setEnabled(true);
+							b2.setEnabled(true);
+							dialog.dismiss();
+							new AlertDialog.Builder(this)
+									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
+									.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
+									{
+									}).show();
+						});
 
-					return;
+						return;
+					}
+				} catch(Exception e) {
+					Common.doStackOutput(e);
 				}
 			}
 
@@ -1543,7 +1564,7 @@ public class MainActivity extends FragmentActivity
 			updateDropDowns();
 		});
 
-		t.start();
+		mainactivityThread.start();
 	}
 
 	@Override

@@ -20,8 +20,7 @@
     <string name="show_radar">රේඩාර් පෙන්වන්න</string>
     <string name="show_forecast">අනාවැකි පෙන්වන්න</string>
     <string name="radarforecast">ප්රධාන තිරය මත:</string>
-    <string name="nav_header_title">weeWX යෙදුම</string>
-    <string name="radar">රේඩාර්</string>
+	<string name="radar">රේඩාර්</string>
     <string name="custom_url">විකල්ප: අභිරුචි URL</string>
     <string name="fgColour">විජට් පෙරබිම් වර්ණ තෝරකය</string>
     <string name="bgColour">විජට් පසුබිම් වර්ණ තේරීම</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">දත්ත URL හිස් විය</string>
     <string name="wasnt_able_to_connect_settings">ඔබගේ සේවාදායකයෙන් සැකසීම් සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
     <string name="url_was_default_or_empty">URL එක පෙරනිමියට සකසා හෝ හිස් විය</string>
-    <string name="radar_url_not_set">රේඩාර් URL සකසා නැත හෝ තවමත් බාගත වෙමින් පවතී. ඔබට වෙනස් කිරීමට සැකසීම් වෙත යා හැක</string>
     <string name="wasnt_able_to_connect_or_download">අනාවැකිය සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
     <string name="swipe_lock">ස්වයිප් අගුල</string>
     <string name="widget_theme">විජට් තේමාව</string>
@@ -74,4 +72,7 @@
     <string name="today">අද</string>
     <string name="last_year_stats">පසුගිය වසරේ සංඛ්යා ලේඛන</string>
     <string name="last_month_stats">පසුගිය මාසයේ සංඛ්යා ලේඛන</string>
+    <string name="radar_url_not_set">රේඩාර් URL සකසා නැත. ඔබට වෙනස් කිරීමට සැකසීම් වෙත යා හැක</string>
+    <string name="radar_still_downloading">රේඩාර් රූපය තවමත් බාගත වෙමින් පවතී</string>
+    <string name="radar_download_failed">රේඩාර් රූපය බාගැනීම අසාර්ථක විය</string>
 </resources>

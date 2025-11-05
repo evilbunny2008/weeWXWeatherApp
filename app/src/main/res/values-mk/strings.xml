@@ -20,8 +20,7 @@
     <string name="show_radar">Прикажи радар</string>
     <string name="show_forecast">Прикажи прогноза</string>
     <string name="radarforecast">На главниот екран:</string>
-    <string name="nav_header_title">Апликација weeWX</string>
-    <string name="radar">Радар</string>
+	<string name="radar">Радар</string>
     <string name="custom_url">Изборно: Прилагодено URL</string>
     <string name="fgColour">Виџети Избирач на бои во преден план</string>
     <string name="bgColour">Избирач на боја на заднина на виџети</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL-адресата на податоците беше празна</string>
     <string name="wasnt_able_to_connect_settings">Не можеше да се поврзе или преземе поставките од вашиот сервер</string>
     <string name="url_was_default_or_empty">URL-то беше поставено на стандардно или беше празно</string>
-    <string name="radar_url_not_set">URL-то на радарот не е поставено или сè уште се презема. Можете да отидете во поставките за да ги промените</string>
     <string name="wasnt_able_to_connect_or_download">Не можеше да се поврзе или преземе прогнозата</string>
     <string name="swipe_lock">Заклучување со лизгање</string>
     <string name="widget_theme">Тема за виџети</string>
@@ -74,4 +72,7 @@
     <string name="today">Денес</string>
     <string name="last_year_stats">Минатогодишната статистика</string>
     <string name="last_month_stats">Статистика од минатиот месец</string>
+    <string name="radar_url_not_set">URL-адресата на радарот не е поставена. Може да отидете во поставките за да промените</string>
+    <string name="radar_still_downloading">Сликата од радарот сè уште се презема</string>
+    <string name="radar_download_failed">Не успеа да се преземе сликата на радарот</string>
 </resources>

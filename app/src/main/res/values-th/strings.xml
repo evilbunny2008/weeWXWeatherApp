@@ -20,8 +20,7 @@
     <string name="show_radar">แสดงเรดาร์</string>
     <string name="show_forecast">แสดงการพยากรณ์</string>
     <string name="radarforecast">บนหน้าจอหลัก:</string>
-    <string name="nav_header_title">แอป weeWX</string>
-    <string name="radar">เรดาร์</string>
+	<string name="radar">เรดาร์</string>
     <string name="custom_url">ทางเลือก: URL ที่กำหนดเอง</string>
     <string name="fgColour">เครื่องมือเลือกสีพื้นหน้าวิดเจ็ต</string>
     <string name="bgColour">เครื่องมือเลือกสีพื้นหลังวิดเจ็ต</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL ข้อมูลว่างเปล่า</string>
     <string name="wasnt_able_to_connect_settings">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดการตั้งค่าจากเซิร์ฟเวอร์ของคุณได้</string>
     <string name="url_was_default_or_empty">URL ถูกตั้งค่าเป็นค่าเริ่มต้นหรือว่างเปล่า</string>
-    <string name="radar_url_not_set">ไม่ได้ตั้งค่า URL เรดาร์หรือยังคงดาวน์โหลดอยู่ คุณสามารถไปที่การตั้งค่าเพื่อเปลี่ยนแปลงได้</string>
     <string name="wasnt_able_to_connect_or_download">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดการคาดการณ์ได้</string>
     <string name="swipe_lock">ปัดล็อค</string>
     <string name="widget_theme">ธีมวิดเจ็ต</string>
@@ -74,4 +72,7 @@
     <string name="today">วันนี้</string>
     <string name="last_year_stats">สถิติปีที่แล้ว</string>
     <string name="last_month_stats">สถิติของเดือนที่แล้ว</string>
+    <string name="radar_url_not_set">ไม่ได้ตั้งค่า URL เรดาร์ คุณสามารถไปที่การตั้งค่าเพื่อเปลี่ยนแปลงได้</string>
+    <string name="radar_still_downloading">ภาพเรดาร์ยังคงดาวน์โหลดอยู่</string>
+    <string name="radar_download_failed">ดาวน์โหลดภาพเรดาร์ไม่สำเร็จ</string>
 </resources>

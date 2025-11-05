@@ -20,8 +20,7 @@
     <string name="show_radar">Ipanengneng so Radar</string>
     <string name="show_forecast">Ipatnag so Ipasakbay</string>
     <string name="radarforecast">On Pansulat:</string>
-    <string name="nav_header_title">WeeWAY App</string>
-    <string name="radar">Radrar</string>
+	<string name="radar">Radrar</string>
     <string name="custom_url">Opsyonal: Suston URL</string>
     <string name="fgColour">Saray Kolor ed Dalan na Liket ed Dalan</string>
     <string name="bgColour">Kalsaso ed Likod na Paraan Liket</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Data URL ay blangko</string>
     <string name="wasnt_able_to_connect_settings">Ag to sarag ya ikonekta odino i-download iray set server ed server yo</string>
     <string name="url_was_default_or_empty">Say URL so niletneg ed ag-inkayadyari odino anggapoy karga to</string>
-    <string name="radar_url_not_set">Radar URL ag-ise-set odino man-dow-download. Sarag moy onlad saray set ya manguman</string>
     <string name="wasnt_able_to_connect_or_download">Ag to sarag ya ikonekta odino i-download so ipapasakbay</string>
     <string name="swipe_lock">Sulo Kaket</string>
     <string name="widget_theme">Say Tema</string>
@@ -74,4 +72,7 @@
     <string name="today">Natan</string>
     <string name="last_year_stats">Estadistika ed Kasumpalan na Taon</string>
     <string name="last_month_stats">Say Estadistis na Kaunoran ya Bulan</string>
+    <string name="radar_url_not_set">Bida ya URL ag-aka-set. Sarag moy onlad saray set ya manguman</string>
+    <string name="radar_still_downloading">Say maples ya imahen so man-download</string>
+    <string name="radar_download_failed">Ag-indownload so radar ya imahen</string>
 </resources>

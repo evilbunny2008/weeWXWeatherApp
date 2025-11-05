@@ -20,8 +20,7 @@
     <string name="show_radar">Näita radarit</string>
     <string name="show_forecast">Näita prognoosi</string>
     <string name="radarforecast">Peaekraanil:</string>
-    <string name="nav_header_title">weeWX rakendus</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Valikuline: kohandatud URL</string>
     <string name="fgColour">Vidina esiplaani värvivalija</string>
     <string name="bgColour">Vidina taustavärvi valija</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Andmete URL oli tühi</string>
     <string name="wasnt_able_to_connect_settings">Teie serverist ei saanud ühendust luua ega seadeid alla laadida</string>
     <string name="url_was_default_or_empty">URL määrati vaikeväärtusele või oli tühi</string>
-    <string name="radar_url_not_set">Radari URL-i pole määratud või see on endiselt allalaadimisel. Muutmiseks võite minna seadetesse</string>
     <string name="wasnt_able_to_connect_or_download">Ühendust ei saanud luua ega prognoosi alla laadida</string>
     <string name="swipe_lock">Pühkige lukustus</string>
     <string name="widget_theme">Vidinateema</string>
@@ -74,4 +72,7 @@
     <string name="today">Täna</string>
     <string name="last_year_stats">Eelmise aasta statistika</string>
     <string name="last_month_stats">Eelmise kuu statistika</string>
+    <string name="radar_url_not_set">Radari URL-i pole määratud. Muutmiseks võite minna seadetesse</string>
+    <string name="radar_still_downloading">Radari kujutist laetakse endiselt alla</string>
+    <string name="radar_download_failed">Radari kujutise allalaadimine ebaõnnestus</string>
 </resources>

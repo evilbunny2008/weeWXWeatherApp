@@ -20,8 +20,7 @@
     <string name="show_radar">Fia radar</string>
     <string name="show_forecast">Fia nyagblɔɖi</string>
     <string name="radarforecast">Le screen gã la dzi:</string>
-    <string name="nav_header_title">Weewx ƒe dɔwɔnua</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Tiatiawɔblɔɖe: URL si wowɔ ɖe ɖoɖo nu</string>
     <string name="fgColour">Widget ƒe ŋgɔgbekpa ƒe amadede tiatia</string>
     <string name="bgColour">Widget ƒe megbenyawo ƒe amadede tiatia</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Data URL nɔ ƒuƒlu</string>
     <string name="wasnt_able_to_connect_settings">Mete ŋu do ka alo wɔ ɖoɖoawo tso wò server dzi o</string>
     <string name="url_was_default_or_empty">Woɖo URL ɖe default la dzi alo nɔ ƒuƒlu</string>
-    <string name="radar_url_not_set">Radar URL meɖoe o alo egakpɔtɔ le eƒe kɔpi wɔm. Àte ŋu ayi Settings be nàtrɔ</string>
     <string name="wasnt_able_to_connect_or_download">Mete ŋu do ka alo wɔ nyagblɔɖia ƒe kɔpi o</string>
     <string name="swipe_lock">Swipe ƒe ʋuƒo</string>
     <string name="widget_theme">Widget ƒe tanya</string>
@@ -74,4 +72,7 @@
     <string name="today">Egbe</string>
     <string name="last_year_stats">Ƒe si va yi ƒe akɔntabubuwo</string>
     <string name="last_month_stats">Ɣleti si va yi ƒe akɔntabubuwo</string>
+    <string name="radar_url_not_set">Radar URL meɖoe o. Àte ŋu ayi Settings be nàtrɔ</string>
+    <string name="radar_still_downloading">Radar ƒe nɔnɔmetata gakpɔtɔ le eƒe kɔpi wɔm</string>
+    <string name="radar_download_failed">Do kpo radar ƒe nɔnɔmetata la ƒe kɔpi wɔwɔ</string>
 </resources>

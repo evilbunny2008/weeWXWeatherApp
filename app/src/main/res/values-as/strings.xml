@@ -20,8 +20,7 @@
     <string name="show_radar">ৰাডাৰ দেখুৱাওক</string>
     <string name="show_forecast">পূৰ্বাভাস দেখুৱাওক</string>
     <string name="radarforecast">মূল পৰ্দাত:</string>
-    <string name="nav_header_title">Weewx App</string>
-    <string name="radar">ৰাডাৰ</string>
+	<string name="radar">ৰাডাৰ</string>
     <string name="custom_url">ঐচ্ছিক: স্বনিৰ্বাচিত URL</string>
     <string name="fgColour">ৱিজেট ফ\'ৰগ্ৰাউণ্ড ৰং পিকাৰ</string>
     <string name="bgColour">ৱিজেট পটভূমিৰ ৰং পিকাৰ</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">ডাটা URL খালী আছিল</string>
     <string name="wasnt_able_to_connect_settings">আপোনাৰ চাৰ্ভাৰৰ পৰা সংহতিসমূহ সংযোগ বা ডাউনল\'ড কৰিব পৰা নাছিল</string>
     <string name="url_was_default_or_empty">URL অবিকল্পিতলৈ সংহতি কৰা হৈছিল বা খালী আছিল</string>
-    <string name="radar_url_not_set">ৰাডাৰ URL ছেট কৰা হোৱা নাই বা এতিয়াও ডাউনলোড কৰি আছে। সলনি কৰিবলৈ আপুনি ছেটিংছলৈ যাব পাৰে।</string>
     <string name="wasnt_able_to_connect_or_download">পূৰ্বাভাস সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল।</string>
     <string name="swipe_lock">চুইপ লক</string>
     <string name="widget_theme">ৱিজেট থিম</string>
@@ -74,4 +72,7 @@
     <string name="today">আজি</string>
     <string name="last_year_stats">যোৱা বছৰৰ পৰিসংখ্যা</string>
     <string name="last_month_stats">যোৱা মাহৰ পৰিসংখ্যা</string>
+    <string name="radar_url_not_set">ৰাডাৰৰ URL ছেট কৰা হোৱা নাই। সলনি কৰিবলৈ আপুনি ছেটিংছলৈ যাব পাৰে।</string>
+    <string name="radar_still_downloading">ৰাডাৰৰ ছবি এতিয়াও ডাউনলোড কৰি আছে।</string>
+    <string name="radar_download_failed">ৰাডাৰৰ ছবিখন ডাউনলোড কৰাত ব্যৰ্থ</string>
 </resources>

@@ -20,8 +20,7 @@
     <string name="show_radar">ສະແດງ radar</string>
     <string name="show_forecast">ສະແດງການຄາດຄະເນ</string>
     <string name="radarforecast">ໃນຫນ້າຈໍຫຼັກ:</string>
-    <string name="nav_header_title">WeWEX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">ທາງເລືອກ: URL ທີ່ກໍາຫນົດເອງ</string>
     <string name="fgColour">ເຄື່ອງເກັບສີ</string>
     <string name="bgColour">ເຄື່ອງເກັບສີພື້ນຫລັງຂອງ Widget</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">url ຂໍ້ມູນແມ່ນຫວ່າງເປົ່າ</string>
     <string name="wasnt_able_to_connect_settings">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດການຕັ້ງຄ່າຈາກເຊີບເວີຂອງທ່ານ</string>
     <string name="url_was_default_or_empty">URL ໄດ້ຖືກກໍານົດໃຫ້ເປັນຄ່າເລີ່ມຕົ້ນຫຼືຫວ່າງເປົ່າ</string>
-    <string name="radar_url_not_set">url radar ບໍ່ໄດ້ກໍານົດຫຼືຍັງຄົງດາວໂຫລດຢູ່. ທ່ານສາມາດເຂົ້າໄປທີ່ Settings ເພື່ອປ່ຽນແປງ</string>
     <string name="wasnt_able_to_connect_or_download">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດການຄາດຄະເນໄດ້</string>
     <string name="swipe_lock">ປຸ້ມ</string>
     <string name="widget_theme">ຫົວຂໍ້ Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">ມື້ນີ້</string>
     <string name="last_year_stats">ສະຖິຕິປີສຸດທ້າຍ</string>
     <string name="last_month_stats">ສະຖິຕິເດືອນທີ່ຜ່ານມາ</string>
+    <string name="radar_url_not_set">url radar ບໍ່ໄດ້ກໍານົດ. ທ່ານສາມາດເຂົ້າໄປທີ່ Settings ເພື່ອປ່ຽນແປງ</string>
+    <string name="radar_still_downloading">ຮູບພາບ Radar ຍັງຄົງດາວໂຫລດຢູ່</string>
+    <string name="radar_download_failed">ລົ້ມເຫລວໃນການດາວໂຫລດຮູບ radar</string>
 </resources>

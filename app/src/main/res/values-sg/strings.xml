@@ -20,8 +20,7 @@
     <string name="show_radar">Fa Radar</string>
     <string name="show_forecast">Fa tënë ti fango tënë</string>
     <string name="radarforecast">Na ndo ti écran ti Kota:</string>
-    <string name="nav_header_title">weeWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Ye so mo lingbi ti sara: URL ti mo wani</string>
     <string name="fgColour">Widget Couleur Picker</string>
     <string name="bgColour">A yeke na lege ni ti tene e sara kua na ni</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">URL ti asango ayeke senge</string>
     <string name="wasnt_able_to_connect_settings">A yeke pëpe ti tene e sara kua na a-paramètre ti serveur ti e</string>
     <string name="url_was_default_or_empty">URL ni ayeke na defaut wala a yeke senge</string>
-    <string name="radar_url_not_set">Radar URL ni ayeke dä pëpe wala lo ngbâ ti téléchargé ni. Mo lingbi ti gue na a-paramètre ti changé</string>
     <string name="wasnt_able_to_connect_or_download">A lingbi ti sara connexion wala ti téléchargé ni</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="widget_theme">Tënë ti Widget</string>
@@ -74,4 +72,7 @@
     <string name="today">Laso</string>
     <string name="last_year_stats">Statistique ti ngu so ahon</string>
     <string name="last_month_stats">A-étude ti nze ti ndangba nze</string>
+    <string name="radar_url_not_set">Radar URL ni ayeke dä pëpe. Mo lingbi ti gue na a-paramètre ti changé</string>
+    <string name="radar_still_downloading">Image ti radio ni angbâ ti téléchargé</string>
+    <string name="radar_download_failed">A yeke pëpe ti téléchargé image ti radar</string>
 </resources>

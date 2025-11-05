@@ -20,8 +20,7 @@
     <string name="show_radar">Ipakita si Radar</string>
     <string name="show_forecast">Ipakita ang Pagtagna</string>
     <string name="radarforecast">Sa Panguna nga screen:</string>
-    <string name="nav_header_title">WeeWX App</string>
-    <string name="radar">Radar</string>
+	<string name="radar">Radar</string>
     <string name="custom_url">Opsyonal: Kustombre nga URL</string>
     <string name="fgColour">Widget sa Dughan nga Kolor nga Picker</string>
     <string name="bgColour">Widdet sa Background nga Kolor nga Picker</string>
@@ -63,7 +62,6 @@
     <string name="data_url_was_blank">Blangko ang Data URL</string>
     <string name="wasnt_able_to_connect_settings">Indi makahimo sa pagkonektar ukon pag-download sang mga setting gikan sa imo server</string>
     <string name="url_was_default_or_empty">Ang URL ginbutang sa default ukon wala sing unod</string>
-    <string name="radar_url_not_set">Ang Radar URL wala set or naga-download pa. Mahimo ka magkadto sa mga setting sa pagbag-o</string>
     <string name="wasnt_able_to_connect_or_download">Wala\'y mahimo nga magkonektar o mag-download sa forecast</string>
     <string name="swipe_lock">Pag-swipe Lock</string>
     <string name="widget_theme">Tema sa Widdet</string>
@@ -74,4 +72,7 @@
     <string name="today">Subong nga adlaw</string>
     <string name="last_year_stats">Mga Estadistika sa Katapusan nga Tuig</string>
     <string name="last_month_stats">Katapusan nga Estadistika sang Bulan</string>
+    <string name="radar_url_not_set">Radar URL wala gibutang. Mahimo ka magkadto sa mga setting sa pagbag-o</string>
+    <string name="radar_still_downloading">Ang radar nga imahe naga-download pa</string>
+    <string name="radar_download_failed">Napakyas sa pag-download sa radar nga imahe</string>
 </resources>
