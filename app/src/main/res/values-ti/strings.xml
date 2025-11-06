@@ -20,7 +20,7 @@
     <string name="show_radar">ራዳር ምርኢት</string>
     <string name="show_forecast">ትንበያ የርኢ</string>
     <string name="radarforecast">ኣብ ቀንዲ ስክሪን፤</string>
-	<string name="radar">ራዳር</string>
+    <string name="radar">ራዳር</string>
     <string name="custom_url">ኣማራጺ: ብሕታዊ URL</string>
     <string name="fgColour">ዊጀት ቅድሚት መሬት ሕብሪ ምልቃም</string>
     <string name="bgColour">ዊጀት ድሕረ ባይታ ሕብሪ ምልቃም</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ራዳር URL ኣይተቐመጠን። ናብ ቅጥዕታት ክትከይድ ትኽእል ኢኻ ክትቅየር ትኽእል ኢኻ።</string>
     <string name="radar_still_downloading">ራዳር ምስሊ ገና ይወርድ ኣሎ።</string>
     <string name="radar_download_failed">ናይ ራዳር ምስሊ ምውራድ ኣይከኣለን</string>
+    <string name="failed_to_process_forecast_data">ትንበያ ዳታ ምምስራሕ ኣይተኻእለን ።</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Nyis Radar</string>
     <string name="show_forecast">Nyis Jaloch</string>
     <string name="radarforecast">E skrin madongo:</string>
-	<string name="radar">raboar</string>
+    <string name="radar">raboar</string>
     <string name="custom_url">Gima dwarore: URL mar ng\'ato</string>
     <string name="fgColour">Rangi mag bungu ma ni e piny ma oko mar Rangi</string>
     <string name="bgColour">Rangi mar Yach mar Loch mar Piny</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL mar radar to ok oket. Inyalo dhi e chenro mondo ilok</string>
     <string name="radar_still_downloading">Picha mar Radar pod ng\'eny</string>
     <string name="radar_download_failed">Oherore mondo ochop e picha mar radir</string>
+    <string name="failed_to_process_forecast_data">Ka ok otiyo gi weche ma ng\'ato nyalo ng\'eyogo</string>
 </resources>

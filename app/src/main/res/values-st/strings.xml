@@ -20,7 +20,7 @@
     <string name="show_radar">Bonts\'a radar</string>
     <string name="show_forecast">Bontša Bonolo</string>
     <string name="radarforecast">Ka skrineng sa sehlooho:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Boikhethelo: URL ea tloaelo</string>
     <string name="fgColour">Widget bokaholimo ba \'mala</string>
     <string name="bgColour">Redget Photo ea \'mala oa motlakase</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Ratar url ha e behe. U ka ea litlhophiso ho fetoha</string>
     <string name="radar_still_downloading">Setšoantšo sa radiar se ntse se jarolla</string>
     <string name="radar_download_failed">Ha rea ​​atleha ho jarolla setšoantšo sa radar</string>
+    <string name="failed_to_process_forecast_data">Ha rea ​​atleha ho sebetsana le data ea bolepi</string>
 </resources>

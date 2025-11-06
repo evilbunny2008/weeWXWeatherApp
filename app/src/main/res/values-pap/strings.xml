@@ -20,7 +20,7 @@
     <string name="show_radar">Mustra Radar</string>
     <string name="show_forecast">Mustra Pronostico</string>
     <string name="radarforecast">Riba pantaya Principal:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opshonal: URL Personalisa</string>
     <string name="fgColour">Picker di Koló di Koló di dilanti di Widget</string>
     <string name="bgColour">Picker di Koló di Antecedente di Widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL di Radar no ta set. Bo por bai na settings pa kambia</string>
     <string name="radar_still_downloading">Imagen di radar ainda ta download</string>
     <string name="radar_download_failed">Falta di download e imagen di radar</string>
+    <string name="failed_to_process_forecast_data">Falta di procesa datonan di pronostico</string>
 </resources>

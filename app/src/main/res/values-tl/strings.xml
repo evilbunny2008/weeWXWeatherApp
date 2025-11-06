@@ -20,7 +20,7 @@
     <string name="show_radar">Ipakita ang radar</string>
     <string name="show_forecast">Ipakita ang forecast</string>
     <string name="radarforecast">Sa pangunahing screen:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opsyonal: Pasadyang URL</string>
     <string name="fgColour">Widget foreground color picker</string>
     <string name="bgColour">Widget background color picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Hindi nakatakda ang Radar URL. Maaari kang pumunta sa mga setting upang magbago</string>
     <string name="radar_still_downloading">Ang imahe ng radar ay nag -download pa rin</string>
     <string name="radar_download_failed">Nabigong i -download ang imahe ng radar</string>
+    <string name="failed_to_process_forecast_data">Nabigong iproseso ang data ng pagtataya</string>
 </resources>

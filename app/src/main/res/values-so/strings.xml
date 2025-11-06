@@ -20,7 +20,7 @@
     <string name="show_radar">Muuji rar</string>
     <string name="show_forecast">Muuji saadaasha</string>
     <string name="radarforecast">Shaashadda ugu weyn:</string>
-	<string name="radar">Raadaar</string>
+    <string name="radar">Raadaar</string>
     <string name="custom_url">Ikhtiyaar ah: caadada url</string>
     <string name="fgColour">Qalabka faddaxa hore ee widget</string>
     <string name="bgColour">Widget Asalka Asalka Midabka</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL aan dejin. Waad aadi kartaa dejinta si aad u beddesho</string>
     <string name="radar_still_downloading">Sawirka Radar ayaa wali soo dejinaya</string>
     <string name="radar_download_failed">Ku guuldareystay soo dejisashada muuqaalka radar</string>
+    <string name="failed_to_process_forecast_data">Ku guuldareystay in la socodsiiyo xogta saadaasha</string>
 </resources>

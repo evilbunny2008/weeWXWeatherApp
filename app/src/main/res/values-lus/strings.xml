@@ -20,7 +20,7 @@
     <string name="show_radar">Show radar</string>
     <string name="show_forecast">Show forecast</string>
     <string name="radarforecast">Main screen-ah chuan:</string>
-	<string name="radar">Radar 100 a ni</string>
+    <string name="radar">Radar 100 a ni</string>
     <string name="custom_url">A duh duh: Custom URL</string>
     <string name="fgColour">widget foreground rawng picker</string>
     <string name="bgColour">widget background rawng chi hrang hrang a awm bawk</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">radar url a ni lo. Settings ah kal in thlak theih a ni</string>
     <string name="radar_still_downloading">Radar image chu a la download zel a</string>
     <string name="radar_download_failed">Radar download theih loh a ni</string>
+    <string name="failed_to_process_forecast_data">Forecast data a process theih loh</string>
 </resources>

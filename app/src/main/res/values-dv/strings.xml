@@ -20,7 +20,7 @@
     <string name="show_radar">ރާޑަރ ދައްކާ</string>
     <string name="show_forecast">ދައްކާނެ ކަމަށް ލަފާކުރުން</string>
     <string name="radarforecast">މައި ސްކްރީނުގައި:</string>
-	<string name="radar">ރަޑަރ</string>
+    <string name="radar">ރަޑަރ</string>
     <string name="custom_url">އިޚްތިޔާރީ: ކަސްޓަމް ޔޫއާރްއެލް</string>
     <string name="fgColour">ވިޖެޓް ފޯގްރައުންޑް ކަލަރ ޕިކަރ</string>
     <string name="bgColour">ވިޖެޓް ބެކްގްރައުންޑް ކުލަ ޕިކަރ</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ރާޑަރ ޔޫ.އާރ.އެލް ސެޓް ނުކުރެއެވެ. ބަދަލުވާން ސެޓިންގްސް އަށް ދެވޭނެ އެވެ</string>
     <string name="radar_still_downloading">ރާޑަރ އިމޭޖް އަދިވެސް ޑައުންލޯޑް ކުރަމުން އެބަދެއެވެ</string>
     <string name="radar_download_failed">ރާޑަރުގެ ފޮޓޯ ޑައުންލޯޑް ކުރަން ފެއިލްވެއްޖެ</string>
+    <string name="failed_to_process_forecast_data">ފޯކަސްޓް ޑޭޓާ ޕްރޮސެސް ކުރަން ނާކާމިޔާބު</string>
 </resources>

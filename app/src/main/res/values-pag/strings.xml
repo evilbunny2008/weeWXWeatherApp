@@ -20,7 +20,7 @@
     <string name="show_radar">Ipanengneng so Radar</string>
     <string name="show_forecast">Ipatnag so Ipasakbay</string>
     <string name="radarforecast">On Pansulat:</string>
-	<string name="radar">Radrar</string>
+    <string name="radar">Radrar</string>
     <string name="custom_url">Opsyonal: Suston URL</string>
     <string name="fgColour">Saray Kolor ed Dalan na Liket ed Dalan</string>
     <string name="bgColour">Kalsaso ed Likod na Paraan Liket</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Bida ya URL ag-aka-set. Sarag moy onlad saray set ya manguman</string>
     <string name="radar_still_downloading">Say maples ya imahen so man-download</string>
     <string name="radar_download_failed">Ag-indownload so radar ya imahen</string>
+    <string name="failed_to_process_forecast_data">Ag-improseso pian ipasakbay iray data</string>
 </resources>

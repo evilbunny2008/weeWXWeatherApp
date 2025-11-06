@@ -20,7 +20,7 @@
     <string name="show_radar">Radar görkeziň</string>
     <string name="show_forecast">Çaklamasy görkez</string>
     <string name="radarforecast">Esasy ekranda:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Meýletin: Customörite URL</string>
     <string name="fgColour">Widgetiň öňdäki reňk saýlaýjy</string>
     <string name="bgColour">Widjetiň açyk reňk saýlaýjy</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL toplumy kesgitlenmedi. Üýtgetmek üçin sazlamalara gidip bilersiňiz</string>
     <string name="radar_still_downloading">Radar suraty henizem göçürip alýarlar</string>
     <string name="radar_download_failed">Radar suratyny göçürip alyp bilmedi</string>
+    <string name="failed_to_process_forecast_data">Çaklamany çaklamak şowsuz boldy</string>
 </resources>

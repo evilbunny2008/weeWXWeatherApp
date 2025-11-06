@@ -76,4 +76,5 @@
 	<string name="radar_url_not_set">Radar URL not set. You can go to settings to change.</string>
 	<string name="radar_still_downloading">Radar image is still downloading.</string>
 	<string name="radar_download_failed">Failed to download the radar image</string>
+	<string name="failed_to_process_forecast_data">Failed to process forecast data</string>
 </resources>

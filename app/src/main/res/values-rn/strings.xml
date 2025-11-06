@@ -20,7 +20,7 @@
     <string name="show_radar">Erekana Radar</string>
     <string name="show_forecast">Erekana</string>
     <string name="radarforecast">Ku rubuga nyamukuru:</string>
-	<string name="radar">Radari</string>
+    <string name="radar">Radari</string>
     <string name="custom_url">Ihitamwo: URL y\'Ivyiyumviro</string>
     <string name="fgColour">Igipfukisho c\'Ibumba</string>
     <string name="bgColour">Igisubizo c\'Ibara ry\'Ibara</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL ntiyishizweho. Ushobora kuja mu ma settings kugira ngo uhindure</string>
     <string name="radar_still_downloading">Ishusho ya Radar iracariko irakura</string>
     <string name="radar_download_failed">Utanguriye gukura ishusho ya radar</string>
+    <string name="failed_to_process_forecast_data">Yananiwe gukora amakuru y\'ivyaha</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Arată radar</string>
     <string name="show_forecast">Arată Prognoza</string>
     <string name="radarforecast">Pe ecranul principal:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opțional: URL personalizată</string>
     <string name="fgColour">Selector de culori din prim-plan pentru widget</string>
     <string name="bgColour">Selector de culori de fundal widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Adresa URL a radarului nu este setată. Puteți merge la setări pentru a schimba</string>
     <string name="radar_still_downloading">Imaginea radar încă se descarcă</string>
     <string name="radar_download_failed">Nu s-a putut descărca imaginea radar</string>
+    <string name="failed_to_process_forecast_data">Nu s-au procesat datele de prognoză</string>
 </resources>

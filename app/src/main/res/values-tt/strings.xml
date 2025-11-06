@@ -20,7 +20,7 @@
     <string name="show_radar">Радар шоу</string>
     <string name="show_forecast">Прогнозны күрсәтү</string>
     <string name="radarforecast">Төп экранда:</string>
-	<string name="radar">Радар</string>
+    <string name="radar">Радар</string>
     <string name="custom_url">Ихтимал: махсус URL</string>
     <string name="fgColour">Виджетның алгы төс сайлаучысы</string>
     <string name="bgColour">Виджет фон төсе</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Радар Урл көйләнми. Сез үзгәрү өчен көйләүләргә бара аласыз</string>
     <string name="radar_still_downloading">Радар образы әле дә йөкләнә</string>
     <string name="radar_download_failed">Радар образын йөкли алмады</string>
+    <string name="failed_to_process_forecast_data">Прогноз мәгълүматларын эшкәртә алмады</string>
 </resources>

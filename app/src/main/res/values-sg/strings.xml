@@ -20,7 +20,7 @@
     <string name="show_radar">Fa Radar</string>
     <string name="show_forecast">Fa tënë ti fango tënë</string>
     <string name="radarforecast">Na ndo ti écran ti Kota:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Ye so mo lingbi ti sara: URL ti mo wani</string>
     <string name="fgColour">Widget Couleur Picker</string>
     <string name="bgColour">A yeke na lege ni ti tene e sara kua na ni</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL ni ayeke dä pëpe. Mo lingbi ti gue na a-paramètre ti changé</string>
     <string name="radar_still_downloading">Image ti radio ni angbâ ti téléchargé</string>
     <string name="radar_download_failed">A yeke pëpe ti téléchargé image ti radar</string>
+    <string name="failed_to_process_forecast_data">A yeke pëpe ti sara kua na asango ti prévision</string>
 </resources>

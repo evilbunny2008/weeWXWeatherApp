@@ -20,7 +20,7 @@
     <string name="show_radar">Tunjukin Radar</string>
     <string name="show_forecast">Ramalan Tampilkan</string>
     <string name="radarforecast">Di layar Utama:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opsional: URL gue adat</string>
     <string name="fgColour">Pemilih Warna Tanah Widget Widget</string>
     <string name="bgColour">Pemegangan Warna Latar Belakang Widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL kagak diatur. Lo bisa ke pengaturan buat berubah</string>
     <string name="radar_still_downloading">Radar gambar masih aja download</string>
     <string name="radar_download_failed">Gagal buat ngunduh gambar radar</string>
+    <string name="failed_to_process_forecast_data">Gagal buat ngolah data ramalan</string>
 </resources>

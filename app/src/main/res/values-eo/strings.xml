@@ -20,7 +20,7 @@
     <string name="show_radar">Montru Radaron</string>
     <string name="show_forecast">Montru Prognozon</string>
     <string name="radarforecast">Sur Ĉefa ekrano:</string>
-	<string name="radar">Radaro</string>
+    <string name="radar">Radaro</string>
     <string name="custom_url">Laŭvola: Propra URL</string>
     <string name="fgColour">Fenestraĵo Malfono Koloro Picker</string>
     <string name="bgColour">Fenestraĵo Fona Koloro Elektilo</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radara URL ne fiksita. Vi povas iri al agordoj por ŝanĝi</string>
     <string name="radar_still_downloading">Radara bildo ankoraŭ elŝutas</string>
     <string name="radar_download_failed">Malsukcesis elŝuti la radarbildon</string>
+    <string name="failed_to_process_forecast_data">Malsukcesis prilabori prognozajn datumojn</string>
 </resources>

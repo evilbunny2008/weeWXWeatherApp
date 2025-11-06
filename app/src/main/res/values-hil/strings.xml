@@ -20,7 +20,7 @@
     <string name="show_radar">Ipakita si Radar</string>
     <string name="show_forecast">Ipakita ang Pagtagna</string>
     <string name="radarforecast">Sa Panguna nga screen:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opsyonal: Kustombre nga URL</string>
     <string name="fgColour">Widget sa Dughan nga Kolor nga Picker</string>
     <string name="bgColour">Widdet sa Background nga Kolor nga Picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL wala gibutang. Mahimo ka magkadto sa mga setting sa pagbag-o</string>
     <string name="radar_still_downloading">Ang radar nga imahe naga-download pa</string>
     <string name="radar_download_failed">Napakyas sa pag-download sa radar nga imahe</string>
+    <string name="failed_to_process_forecast_data">Napakyas sa pagproseso sa datos sa forecast</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Khombisa i-radar</string>
     <string name="show_forecast">Khombisa Isimo sezulu</string>
     <string name="radarforecast">Esikrinini esikhulu:</string>
-	<string name="radar">Ireda</string>
+    <string name="radar">Ireda</string>
     <string name="custom_url">Ongakukhetha: Url wangokwezifiso</string>
     <string name="fgColour">Umbala we-Widget ongaphambili</string>
     <string name="bgColour">Umbala we-Widget wangemuva wangemuva</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">I-radar url ayisethiwe. Ungaya kuzilungiselelo zokushintsha</string>
     <string name="radar_still_downloading">Izithombe ze-radar zisalanda</string>
     <string name="radar_download_failed">Yehlulekile ukulanda isithombe se-radar</string>
+    <string name="failed_to_process_forecast_data">Yehlulekile ukucubungula idatha yesimo sezulu</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Seall radar</string>
     <string name="show_forecast">Seall Ro-shealladh</string>
     <string name="radarforecast">Air a\' phrìomh sgrion:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Roghainneil: URL gnàthaichte</string>
     <string name="fgColour">Neach-togail dath aghaidh widget</string>
     <string name="bgColour">Neach-togail dath cùl-raon widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL radar nach deach a shuidheachadh. Faodaidh tu a dhol gu roghainnean airson atharrachadh</string>
     <string name="radar_still_downloading">Tha an dealbh radar ga luchdachadh sìos</string>
     <string name="radar_download_failed">Dh\'fhàillig luchdadh a-nuas an dealbh radar</string>
+    <string name="failed_to_process_forecast_data">Dh\'fhàillig làimhseachadh dàta ro-aithris</string>
 </resources>

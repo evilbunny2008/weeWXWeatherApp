@@ -20,7 +20,7 @@
     <string name="show_radar">ريڊار ڏيکاريو</string>
     <string name="show_forecast">اڳڪٿي ڏيکاريو</string>
     <string name="radarforecast">مکيه اسڪرين تي:</string>
-	<string name="radar">ريڊار</string>
+    <string name="radar">ريڊار</string>
     <string name="custom_url">اختياري: ڪسٽم URL</string>
     <string name="fgColour">Widget Foreround Color Picker</string>
     <string name="bgColour">ويجيٽ پس منظر رنگ چونڊيندڙ</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">رادر URL مقرر نه ڪيو ويو آهي. توھان تبديل ڪرڻ لاء سيٽنگون ڏانھن وڃو</string>
     <string name="radar_still_downloading">رادار تصوير اڃا تائين ڊائون لوڊ ڪري رهيو آهي</string>
     <string name="radar_download_failed">رادار تصوير ڊائون لوڊ ڪرڻ ۾ ناڪام ٿيو</string>
+    <string name="failed_to_process_forecast_data">اڳڪٿي ڊيٽا کي پروسيس ڪرڻ ۾ ناڪام ٿيو</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Veedì</string>
     <string name="show_forecast">Sent</string>
     <string name="radarforecast">In de la pagina:</string>
-	<string name="radar">emad</string>
+    <string name="radar">emad</string>
     <string name="custom_url">Osserva::</string>
     <string name="fgColour">Godeta un\'ocasional de la zona de l\'aeroport</string>
     <string name="bgColour">Godete la g\'ha anca el sistema de l\'aria</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">El CPU l\'è minga el numer. Pœdet anca duperà el tò conto</string>
     <string name="radar_still_downloading">El giœugh l\'è el punt püsee volt de la fotocamera</string>
     <string name="radar_download_failed">Impara i foto de la fotocamera de la fotocamera</string>
+    <string name="failed_to_process_forecast_data">Avità i dats de l\'aprovazion del sistema</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Erakutsi Radar</string>
     <string name="show_forecast">Erakutsi iragarpena</string>
     <string name="radarforecast">Pantaila nagusian:</string>
-	<string name="radar">Radarra</string>
+    <string name="radar">Radarra</string>
     <string name="custom_url">Aukerakoa: URL pertsonalizatua</string>
     <string name="fgColour">Widgetaren lehen planoko kolore-hautatzailea</string>
     <string name="bgColour">Widgetaren atzeko planoko kolore-hautatzailea</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URLa ez da ezarri. Ezarpenetara joan zaitezke aldatzeko</string>
     <string name="radar_still_downloading">Radar irudia deskargatzen ari da oraindik</string>
     <string name="radar_download_failed">Ezin izan da deskargatu radar-irudia</string>
+    <string name="failed_to_process_forecast_data">Ezin izan dira prozesatu iragarpen-datuak</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Zobrazit radar</string>
     <string name="show_forecast">Zobrazit předpověď</string>
     <string name="radarforecast">Na hlavní obrazovce:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Volitelné: Vlastní adresa URL</string>
     <string name="fgColour">Widget pro výběr barvy popředí</string>
     <string name="bgColour">Widget pro výběr barvy pozadí</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Adresa URL radaru není nastavena. Pro změnu můžete přejít do nastavení</string>
     <string name="radar_still_downloading">Radarový snímek se stále stahuje</string>
     <string name="radar_download_failed">Stažení radarového snímku se nezdařilo</string>
+    <string name="failed_to_process_forecast_data">Data prognózy se nepodařilo zpracovat</string>
 </resources>

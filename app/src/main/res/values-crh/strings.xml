@@ -20,7 +20,7 @@
     <string name="show_radar">Радарны косьтеринъиз</string>
     <string name="show_forecast">Прогнозны косьтеринъиз</string>
     <string name="radarforecast">Эсас экранда:</string>
-	<string name="radar">Радар</string>
+    <string name="radar">Радар</string>
     <string name="custom_url">Ихтиярий: Герчилик УРЛ</string>
     <string name="fgColour">Виджетнинъ форварды Ренъкни сечип алмакъ</string>
     <string name="bgColour">Виджет Фон Ренкли пикер</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Радар УРЛ ерлештирильмеген. Денъиштирмек ичюн параметрлерге бармакъ мумкюн</string>
     <string name="radar_still_downloading">Радар образы даа юклей</string>
     <string name="radar_download_failed">Радар ресимини юклемек мумкюн олмады</string>
+    <string name="failed_to_process_forecast_data">Прогноз малюматларыны ишлемеге мумкюн олмады</string>
 </resources>

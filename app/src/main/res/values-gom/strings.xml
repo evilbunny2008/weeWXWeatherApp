@@ -20,7 +20,7 @@
     <string name="show_radar">शो रडार 1</string>
     <string name="show_forecast">दाखवा अदमास</string>
     <string name="radarforecast">मुखेल पडद्याचेर: १</string>
-	<string name="radar">रडार 1</string>
+    <string name="radar">रडार 1</string>
     <string name="custom_url">पर्यायी: सानुकूल URL</string>
     <string name="fgColour">विजेट अग्रभूमि रंग पिकर</string>
     <string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">रडार URL सेट ना. तुमी बदलपाक सेटिंग्जांत वचूंक शकतात</string>
     <string name="radar_still_downloading">रडाराची प्रतिमा अजूनय डाउनलोड करपाक लागल्या</string>
     <string name="radar_download_failed">रडाराची प्रतिमा डाउनलोड करपाक अपेस आयलें</string>
+    <string name="failed_to_process_forecast_data">अदमास डेटाचेर प्रक्रिया करपाक अपेस आयलें</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Patuduhon tu Radar</string>
     <string name="show_forecast">Patuduhon Ramalan</string>
     <string name="radarforecast">Di layar Utama:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opsional: URL Khusus</string>
     <string name="fgColour">Warna Latar Mula Depan Pemilihan</string>
     <string name="bgColour">Warna Latar Belakang Pilihan</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL dang diatur. Boi do hamu laho tu pengaturan asa muba</string>
     <string name="radar_still_downloading">Gombaran Radar dope download</string>
     <string name="radar_download_failed">Gagal do diunduh gambar radar</string>
+    <string name="failed_to_process_forecast_data">Gagal mangolah data ramalan</string>
 </resources>

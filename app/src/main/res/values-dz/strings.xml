@@ -20,7 +20,7 @@
     <string name="show_radar">རེ་ཌར་སྟོན།</string>
     <string name="show_forecast">སྔོན་བཤད་སྟོན་པའི་སྔོན་བཤད་སྟོན།</string>
     <string name="radarforecast">གསལ་གཞིའི་ནང་།</string>
-	<string name="radar">ར་ཌར་</string>
+    <string name="radar">ར་ཌར་</string>
     <string name="custom_url">གདམ་ཁ་ཅན་: སྲོལ་སྒྲིག་ཡུ་ཨར་ཨེལ།</string>
     <string name="fgColour">ཝིཌི་གེཊ་གདོང་ཚོའི་ཚོས་གཞི།</string>
     <string name="bgColour">Widget རྒྱབ་ལྗོངས་ཚོས་གཞི།</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">རེ་ཌར་ཡུ་ཨར་ཨེལ་འདི་གཞི་སྒྲིག་མ་འབད་བས། ཁྱོད་ཀྱིས་ སྒྲིག་སྟངས་ཚུ་བསྒྱུར་བཅོས་འབད་ནི་ལུ་འགྱོ་ཚུགས།</string>
     <string name="radar_still_downloading">རེ་ཌར་གཟུགས་བརྙན་འདི་ད་ལྟོ་ཡང་ཕབ་ལེན་འབད་དོ་ཡོདཔ་ཨིན།</string>
     <string name="radar_download_failed">རེ་ཌར་གཟུགས་བརྙན་ཕབ་ལེན་འབད་མ་ཚུགས་པས།</string>
+    <string name="failed_to_process_forecast_data">སྔོན་བཤད་གནས་སྡུད་ལས་སྦྱོར་འབད་ནི་ལུ་འཐུས་ཤོར་བྱུང་ཡོདཔ།</string>
 </resources>

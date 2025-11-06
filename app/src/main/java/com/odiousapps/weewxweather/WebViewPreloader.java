@@ -2,6 +2,8 @@ package com.odiousapps.weewxweather;
 
 import android.content.Context;
 import android.view.View;
+import android.webkit.ConsoleMessage;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
@@ -107,7 +109,7 @@ public class WebViewPreloader
 		wv.getSettings().setLoadWithOverviewMode(true);
 		wv.getSettings().setUseWideViewPort(true);
 		//wv.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-		wv.setWebChromeClient(new Common.myWebChromeClient());
+		wv.setWebChromeClient(new myWebChromeClient());
 	}
 
 	static void wipeCache(WebView webView)
@@ -115,5 +117,14 @@ public class WebViewPreloader
 		webView.clearFormData();
 		webView.clearHistory();
 		webView.clearCache(true);
+	}
+
+	static final class myWebChromeClient extends WebChromeClient
+	{
+		@Override
+		public boolean onConsoleMessage(ConsoleMessage cm)
+		{
+			return true;
+		}
 	}
 }

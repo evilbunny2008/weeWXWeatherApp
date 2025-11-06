@@ -20,7 +20,7 @@
     <string name="show_radar">Näytä tutka</string>
     <string name="show_forecast">Näytä ennuste</string>
     <string name="radarforecast">Päänäytöllä:</string>
-	<string name="radar">Tutka</string>
+    <string name="radar">Tutka</string>
     <string name="custom_url">Valinnainen: Muokattu URL-osoite</string>
     <string name="fgColour">Widgetin etualan värinvalitsin</string>
     <string name="bgColour">Widgetin taustavärin valitsin</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Tutkan URL-osoitetta ei ole asetettu. Voit siirtyä asetuksiin muuttaaksesi</string>
     <string name="radar_still_downloading">Tutkakuvaa ladataan edelleen</string>
     <string name="radar_download_failed">Tutkakuvan lataaminen epäonnistui</string>
+    <string name="failed_to_process_forecast_data">Ennustetietojen käsittely epäonnistui</string>
 </resources>

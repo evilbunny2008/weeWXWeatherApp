@@ -20,7 +20,7 @@
     <string name="show_radar">Показать радар</string>
     <string name="show_forecast">Показать прогноз</string>
     <string name="radarforecast">На главном экране:</string>
-	<string name="radar">Радар</string>
+    <string name="radar">Радар</string>
     <string name="custom_url">Необязательно: собственный URL-адрес</string>
     <string name="fgColour">Выбор цвета переднего плана виджета</string>
     <string name="bgColour">Выбор цвета фона виджета</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL-адрес радара не задан. Вы можете зайти в настройки, чтобы изменить</string>
     <string name="radar_still_downloading">Радарное изображение все еще загружается</string>
     <string name="radar_download_failed">Не удалось загрузить радарное изображение</string>
+    <string name="failed_to_process_forecast_data">Не удалось обработать данные прогноза</string>
 </resources>

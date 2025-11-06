@@ -20,7 +20,7 @@
     <string name="show_radar">Show radar</string>
     <string name="show_forecast">Show forecast</string>
     <string name="radarforecast">Eka xikirini lexikulu:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Hi ku hlawula: URL ya ntolovelo</string>
     <string name="fgColour">Widget Foreground Muhlayisi wa Mihlovo</string>
     <string name="bgColour">Widget background xifaniso xa mihlovo</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL ya radar a yi vekiwanga. U nga ya eka Settings ku ya cinca</string>
     <string name="radar_still_downloading">Radar image ya ha downloada</string>
     <string name="radar_download_failed">Ku tsandzekile ku kopa xifaniso xa radar</string>
+    <string name="failed_to_process_forecast_data">Ku tsandzekile ku tirhisa datha ya vuprofeta</string>
 </resources>

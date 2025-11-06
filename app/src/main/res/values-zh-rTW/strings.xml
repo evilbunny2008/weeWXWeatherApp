@@ -20,7 +20,7 @@
     <string name="show_radar">顯示雷達</string>
     <string name="show_forecast">展會預測</string>
     <string name="radarforecast">在主屏幕上：</string>
-	<string name="radar">雷達</string>
+    <string name="radar">雷達</string>
     <string name="custom_url">可選：自定義 URL</string>
     <string name="fgColour">小部件前景色選擇器</string>
     <string name="bgColour">小部件背景顏色選擇器</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">未設置雷達 URL。您可以前往設置進行更改。</string>
     <string name="radar_still_downloading">雷達圖像仍在下載中。</string>
     <string name="radar_download_failed">雷達圖像下載失敗</string>
+    <string name="failed_to_process_forecast_data">處理預測數據失敗</string>
 </resources>

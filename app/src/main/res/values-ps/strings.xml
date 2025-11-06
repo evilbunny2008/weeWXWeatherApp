@@ -20,7 +20,7 @@
     <string name="show_radar">رادار ښکاره کړئ</string>
     <string name="show_forecast">وړاندوینه ښکاره کړئ</string>
     <string name="radarforecast">په اصلي سکرین کې:</string>
-	<string name="radar">رادار</string>
+    <string name="radar">رادار</string>
     <string name="custom_url">اختیاري: دودیز URL</string>
     <string name="fgColour">د ویجټ مخکینۍ رنګ غوره کونکی</string>
     <string name="bgColour">د ویجټ شالید رنګ غوره کونکی</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">د رادار URL نه دی ټاکل شوی. تاسو کولی شئ د بدلون لپاره تنظیماتو ته لاړ شئ</string>
     <string name="radar_still_downloading">د رادار عکس لاهم ډاونلوډ دی</string>
     <string name="radar_download_failed">د رادار عکس ډاونلوډ کولو کې پاتې راغلی</string>
+    <string name="failed_to_process_forecast_data">د وړاندوینې ډاټا پروسس کولو کې پاتې راغلی</string>
 </resources>

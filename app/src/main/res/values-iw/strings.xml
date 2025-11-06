@@ -20,7 +20,7 @@
     <string name="show_radar">הצג רדאר</string>
     <string name="show_forecast">הצג תחזית</string>
     <string name="radarforecast">במסך הראשי:</string>
-	<string name="radar">מכ\'ם</string>
+    <string name="radar">מכ\'ם</string>
     <string name="custom_url">אופציונלי: כתובת אתר מותאמת אישית</string>
     <string name="fgColour">בוחר צבעי חזית יישומון</string>
     <string name="bgColour">בוחר צבעי רקע יישומון</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">כתובת ה-Radar לא מוגדרת. אתה יכול לעבור להגדרות כדי לשנות</string>
     <string name="radar_still_downloading">תמונת הרדאר עדיין יורדת</string>
     <string name="radar_download_failed">הורדת תמונת הרדאר נכשלה</string>
+    <string name="failed_to_process_forecast_data">עיבוד נתוני התחזית נכשל</string>
 </resources>

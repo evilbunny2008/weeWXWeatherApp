@@ -20,7 +20,7 @@
     <string name="show_radar">Toon Radar</string>
     <string name="show_forecast">Voorspelling</string>
     <string name="radarforecast">Op \'t sjerm vaan \'t hoof:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Optioneel: Aongepas URL</string>
     <string name="fgColour">Widget Voorgrond Kleur Kies</string>
     <string name="bgColour">Widget Achtergroond Kleur Kies</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL neet ingesjtèld. Je kint naor instellinge goon um te verandere</string>
     <string name="radar_still_downloading">Radar-afbeelding download nog steeds</string>
     <string name="radar_download_failed">Verwaarloos um de radar-afbeelding te downloade</string>
+    <string name="failed_to_process_forecast_data">Vergeleke um veurspelde gegeves te verwèrke</string>
 </resources>

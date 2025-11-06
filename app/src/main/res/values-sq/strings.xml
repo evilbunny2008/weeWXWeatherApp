@@ -20,7 +20,7 @@
     <string name="show_radar">Shfaq Radarin</string>
     <string name="show_forecast">Shfaq parashikimin</string>
     <string name="radarforecast">Në ekranin kryesor:</string>
-	<string name="radar">Radari</string>
+    <string name="radar">Radari</string>
     <string name="custom_url">Opsionale: URL e personalizuar</string>
     <string name="fgColour">Zgjedhësi i ngjyrës së planit të parë të miniaplikacionit</string>
     <string name="bgColour">Zgjedhësi i ngjyrës së sfondit të miniaplikacionit</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL-ja e radarit nuk është caktuar. Mund të shkoni te cilësimet për të ndryshuar</string>
     <string name="radar_still_downloading">Imazhi i radarit është ende duke u shkarkuar</string>
     <string name="radar_download_failed">Shkarkimi i imazhit të radarit dështoi</string>
+    <string name="failed_to_process_forecast_data">Përpunimi i të dhënave të parashikimit dështoi</string>
 </resources>

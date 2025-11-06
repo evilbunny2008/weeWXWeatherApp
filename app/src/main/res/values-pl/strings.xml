@@ -20,7 +20,7 @@
     <string name="show_radar">Pokaż Radar</string>
     <string name="show_forecast">Pokaż prognozę</string>
     <string name="radarforecast">Na ekranie głównym:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opcjonalnie: niestandardowy adres URL</string>
     <string name="fgColour">Widżet Próbnik kolorów pierwszego planu</string>
     <string name="bgColour">Próbnik koloru tła widgetu</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Nie ustawiono adresu URL radaru. Możesz przejść do ustawień, aby je zmienić</string>
     <string name="radar_still_downloading">Obraz radarowy nadal się pobiera</string>
     <string name="radar_download_failed">Nie udało się pobrać obrazu radarowego</string>
+    <string name="failed_to_process_forecast_data">Nie udało się przetworzyć danych prognozy</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">แสดงเรดาร์</string>
     <string name="show_forecast">แสดงการพยากรณ์</string>
     <string name="radarforecast">บนหน้าจอหลัก:</string>
-	<string name="radar">เรดาร์</string>
+    <string name="radar">เรดาร์</string>
     <string name="custom_url">ทางเลือก: URL ที่กำหนดเอง</string>
     <string name="fgColour">เครื่องมือเลือกสีพื้นหน้าวิดเจ็ต</string>
     <string name="bgColour">เครื่องมือเลือกสีพื้นหลังวิดเจ็ต</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ไม่ได้ตั้งค่า URL เรดาร์ คุณสามารถไปที่การตั้งค่าเพื่อเปลี่ยนแปลงได้</string>
     <string name="radar_still_downloading">ภาพเรดาร์ยังคงดาวน์โหลดอยู่</string>
     <string name="radar_download_failed">ดาวน์โหลดภาพเรดาร์ไม่สำเร็จ</string>
+    <string name="failed_to_process_forecast_data">ล้มเหลวในการประมวลผลข้อมูลการคาดการณ์</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">राडार दिखाएँ</string>
     <string name="show_forecast">पूर्वानुमान दिखाएँ</string>
     <string name="radarforecast">मुख्य स्क्रीन पर:</string>
-	<string name="radar">राडार</string>
+    <string name="radar">राडार</string>
     <string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
     <string name="fgColour">विजेट अग्रभूमि रंग चयनकर्ता</string>
     <string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">रडार यूआरएल सेट नहीं है. बदलने के लिए आप सेटिंग में जा सकते हैं</string>
     <string name="radar_still_downloading">रडार छवि अभी भी डाउनलोड हो रही है</string>
     <string name="radar_download_failed">रडार छवि डाउनलोड करने में विफल</string>
+    <string name="failed_to_process_forecast_data">पूर्वानुमान डेटा संसाधित करने में विफल</string>
 </resources>

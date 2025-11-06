@@ -20,7 +20,7 @@
     <string name="show_radar">Εμφάνιση ραντάρ</string>
     <string name="show_forecast">Εμφάνιση Πρόβλεψης</string>
     <string name="radarforecast">Στην κύρια οθόνη:</string>
-	<string name="radar">Ραντάρ</string>
+    <string name="radar">Ραντάρ</string>
     <string name="custom_url">Προαιρετικά: Προσαρμοσμένη διεύθυνση URL</string>
     <string name="fgColour">Εργαλείο επιλογής χρώματος προσκηνίου</string>
     <string name="bgColour">Επιλογέας χρώματος φόντου widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Το URL ραντάρ δεν έχει οριστεί. Μπορείτε να μεταβείτε στις ρυθμίσεις για αλλαγή</string>
     <string name="radar_still_downloading">Η εικόνα ραντάρ εξακολουθεί να γίνεται λήψη</string>
     <string name="radar_download_failed">Αποτυχία λήψης της εικόνας ραντάρ</string>
+    <string name="failed_to_process_forecast_data">Απέτυχε η επεξεργασία των δεδομένων πρόβλεψης</string>
 </resources>

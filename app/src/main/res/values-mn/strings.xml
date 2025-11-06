@@ -20,7 +20,7 @@
     <string name="show_radar">Радар шоу</string>
     <string name="show_forecast">Захиагаа харуул</string>
     <string name="radarforecast">Үндсэн дэлгэц дээр:</string>
-	<string name="radar">Радиолокац</string>
+    <string name="radar">Радиолокац</string>
     <string name="custom_url">Заавал биш: Захиалгат URL</string>
     <string name="fgColour">Урд талын өнгөт өнгөт сонгогч</string>
     <string name="bgColour">Виджет арын өнгөний зураг сонгогч</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">RADAR URL тохируулаагүй байна. Та өөрчлөлтийг тохируулахын тулд очиж болно</string>
     <string name="radar_still_downloading">RADAR зураг татаж байгаа хэвээр байна</string>
     <string name="radar_download_failed">Радарын зургийг татаж авч чадсангүй</string>
+    <string name="failed_to_process_forecast_data">Урьдчилан тооцоолох өгөгдлийг боловсруулж чадсангүй</string>
 </resources>

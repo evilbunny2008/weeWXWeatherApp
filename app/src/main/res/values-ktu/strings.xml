@@ -20,7 +20,7 @@
     <string name="show_radar">Monisa Radar</string>
     <string name="show_forecast">Monisa Ntwala</string>
     <string name="radarforecast">Na écran ya nene:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Kupona: URL ya mutindu mosi</string>
     <string name="fgColour">Mukubu ya Nsi ya Widger ya Ntwala</string>
     <string name="bgColour">Widgeur de la Cuvers</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL me tulama ve. Nge lenda kwenda na baparametre sambu na kusoba</string>
     <string name="radar_still_downloading">Kifwanisu ya radar kele kaka na kubaka</string>
     <string name="radar_download_failed">Kukonda kubaka kifwanisu ya radar</string>
+    <string name="failed_to_process_forecast_data">Kukonda kusadila bansangu ya ke kwisa na ntwala</string>
 </resources>

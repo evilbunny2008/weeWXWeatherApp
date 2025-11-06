@@ -20,7 +20,7 @@
     <string name="show_radar">Khombisa Radar</string>
     <string name="show_forecast">Khombisa Kubiketela</string>
     <string name="radarforecast">Ngesikrini lesiyinhloko:</string>
-	<string name="radar">Radari</string>
+    <string name="radar">Radari</string>
     <string name="custom_url">Kukhetsa: I-URL Yemkhuba</string>
     <string name="fgColour">I-Widget Foreground Color Picker</string>
     <string name="bgColour">Widget Imvelaphi Yembala Picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL ayikabeki. Ungaya kumasethingi kute ushintje</string>
     <string name="radar_still_downloading">Sitfombe se-Radar sisalayisha</string>
     <string name="radar_download_failed">Kwehlulekile kulandza sitfombe se-radar</string>
+    <string name="failed_to_process_forecast_data">Kwehlulekile kucubungula idatha yekubiketela</string>
 </resources>

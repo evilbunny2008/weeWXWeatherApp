@@ -20,7 +20,7 @@
     <string name="show_radar">Dangos Radar</string>
     <string name="show_forecast">Dangos Rhagolwg</string>
     <string name="radarforecast">Ar y brif sgrin:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Dewisol: URL personol</string>
     <string name="fgColour">Dewisydd Lliw Blaendir Widget</string>
     <string name="bgColour">Dewisydd Lliw Cefndir Teclyn</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL radar heb ei osod. Gallwch fynd i\'r gosodiadau i newid</string>
     <string name="radar_still_downloading">Mae delwedd radar yn dal i gael ei lawrlwytho</string>
     <string name="radar_download_failed">Wedi methu lawrlwytho\'r ddelwedd radar</string>
+    <string name="failed_to_process_forecast_data">Wedi methu prosesu data rhagolwg</string>
 </resources>

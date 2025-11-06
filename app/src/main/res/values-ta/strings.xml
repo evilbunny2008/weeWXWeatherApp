@@ -20,7 +20,7 @@
     <string name="show_radar">ரேடார் காட்டு</string>
     <string name="show_forecast">முன்னறிவிப்பைக் காட்டு</string>
     <string name="radarforecast">முதன்மைத் திரையில்:</string>
-	<string name="radar">ரேடார்</string>
+    <string name="radar">ரேடார்</string>
     <string name="custom_url">விருப்பத்தேர்வு: தனிப்பயன் URL</string>
     <string name="fgColour">விட்ஜெட் முன்புற வண்ணத் தேர்வி</string>
     <string name="bgColour">விட்ஜெட் பின்னணி வண்ணத் தேர்வி</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ரேடார் URL அமைக்கப்படவில்லை. மாற்றுவதற்கு நீங்கள் அமைப்புகளுக்குச் செல்லலாம்</string>
     <string name="radar_still_downloading">ராடார் படம் இன்னும் பதிவிறக்கம் செய்யப்படுகிறது</string>
     <string name="radar_download_failed">ரேடார் படத்தைப் பதிவிறக்குவதில் தோல்வி</string>
+    <string name="failed_to_process_forecast_data">முன்னறிவிப்புத் தரவைச் செயலாக்க முடியவில்லை</string>
 </resources>

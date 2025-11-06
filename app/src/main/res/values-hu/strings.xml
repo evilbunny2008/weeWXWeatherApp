@@ -20,7 +20,7 @@
     <string name="show_radar">Radar megjelenítése</string>
     <string name="show_forecast">Előrejelzés megjelenítése</string>
     <string name="radarforecast">A főképernyőn:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Nem kötelező: Egyéni URL</string>
     <string name="fgColour">Widget előtér színválasztója</string>
     <string name="bgColour">Widget háttérszínválasztó</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">A radar URL-je nincs beállítva. A beállításokhoz léphet a módosításhoz</string>
     <string name="radar_still_downloading">A radarkép letöltése még folyamatban van</string>
     <string name="radar_download_failed">Nem sikerült letölteni a radarképet</string>
+    <string name="failed_to_process_forecast_data">Nem sikerült feldolgozni az előrejelzési adatokat</string>
 </resources>

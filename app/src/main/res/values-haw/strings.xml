@@ -20,7 +20,7 @@
     <string name="show_radar">Hōʻike\'Oida</string>
     <string name="show_forecast">Hōʻike i ka wanana</string>
     <string name="radarforecast">Ma kaʻaoʻao nui:</string>
-	<string name="radar">ʻO Radar</string>
+    <string name="radar">ʻO Radar</string>
     <string name="custom_url">Ke koho: URL Kūʻai Kūʻai</string>
     <string name="fgColour">Hoʻihoʻiʻia ka pā\'ālua kala kala</string>
     <string name="bgColour">ʻO ke kāʻei kelepona helu kelepona</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ʻAʻole hoʻonohonohoʻo Radar url. Hiki iāʻoe ke hele i nā hoʻonohonoho e hoʻololi</string>
     <string name="radar_still_downloading">Ke kiʻi neiʻo Radar kiʻi</string>
     <string name="radar_download_failed">ʻAʻole hikiʻole ke kiʻi i ke kiʻi radar</string>
+    <string name="failed_to_process_forecast_data">ʻAʻole hikiʻole ke hoʻokō i nāʻikepili</string>
 </resources>

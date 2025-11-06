@@ -20,7 +20,7 @@
     <string name="show_radar">Nyuth</string>
     <string name="show_forecast">Nyuth</string>
     <string name="radarforecast">I skrin peri mi skrin:</string>
-	<string name="radar">oloyo</string>
+    <string name="radar">oloyo</string>
     <string name="custom_url">Optional: Cubu mi UL</string>
     <string name="fgColour">Jadit mi ot yath mi ng\'om zoo</string>
     <string name="bgColour">Ng\'atu m\'utimo lembe m\'urombo ku cik mi ng\'om maeni</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL ma juketho. Icopo cidho i settings pi niloko</string>
     <string name="radar_still_downloading">Radal picha pod odong\'</string>
     <string name="radar_download_failed">Ka ng\'ato odhi ng\'iewo picha mar rad</string>
+    <string name="failed_to_process_forecast_data">Ka wawinjo lembe ma jukiewo i lembe maeni</string>
 </resources>

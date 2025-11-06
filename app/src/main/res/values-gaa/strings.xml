@@ -20,7 +20,7 @@
     <string name="show_radar">tsɔɔmɔ Radar</string>
     <string name="show_forecast">Tsɔɔmɔ gbalɛ</string>
     <string name="radarforecast">Yɛ skrin nɔ:</string>
-	<string name="radar">Rada</string>
+    <string name="radar">Rada</string>
     <string name="custom_url">Nɔ ni abaanyɛ ahala: Kusum URL</string>
     <string name="fgColour">Widget Foreund su picker</string>
     <string name="bgColour">Kɔɔyɔɔ ni yɔɔ sɛɛgbɛ Su Picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL jeee. Obaanyɛ oya settings koni otsake</string>
     <string name="radar_still_downloading">Radar mfoniri lɛ miiba lolo</string>
     <string name="radar_download_failed">Ebɛ hewalɛ ni okɛ rada mfoniri lɛ aba</string>
+    <string name="failed_to_process_forecast_data">Efeee nɔ ko ni tsɔɔ saji ni atsɔɔ mli</string>
 </resources>

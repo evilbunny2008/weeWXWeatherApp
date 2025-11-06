@@ -20,7 +20,7 @@
     <string name="show_radar">Радар харуулха</string>
     <string name="show_forecast">Уридшалан мэдээсэл харуулха</string>
     <string name="radarforecast">Гол дэлгэс дээрэ:</string>
-	<string name="radar">Радар</string>
+    <string name="radar">Радар</string>
     <string name="custom_url">Нэмэлтэ: Захиалгаар URL</string>
     <string name="fgColour">Виджет Уридшалан үнгын шэлэгдэмэл</string>
     <string name="bgColour">Виджет Ара үнгэ үнгэ шэлэхэ</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Радарай URL табигдаагүй. Хубилха настройконуудта орожо болохо</string>
     <string name="radar_still_downloading">Радар зураг үшөөл татажа байна</string>
     <string name="radar_download_failed">Радарай зураг татажа абаха аргагүй болоһон</string>
+    <string name="failed_to_process_forecast_data">Уридшалан уридшалан мэдэхэ мэдээсэл болбосоруулхагүй</string>
 </resources>

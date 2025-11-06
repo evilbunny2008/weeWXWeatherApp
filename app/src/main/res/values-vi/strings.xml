@@ -20,7 +20,7 @@
     <string name="show_radar">Hiển thị Ra-đa</string>
     <string name="show_forecast">Hiển thị dự báo</string>
     <string name="radarforecast">Trên màn hình chính:</string>
-	<string name="radar">ra đa</string>
+    <string name="radar">ra đa</string>
     <string name="custom_url">Tùy chọn: URL tùy chỉnh</string>
     <string name="fgColour">Bộ chọn màu nền trước của widget</string>
     <string name="bgColour">Bộ chọn màu nền của widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL radar chưa được đặt. Bạn có thể vào cài đặt để thay đổi</string>
     <string name="radar_still_downloading">Hình ảnh radar vẫn đang được tải xuống</string>
     <string name="radar_download_failed">Không tải được hình ảnh radar</string>
+    <string name="failed_to_process_forecast_data">Không thể xử lý dữ liệu dự báo</string>
 </resources>

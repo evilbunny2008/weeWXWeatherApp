@@ -20,7 +20,7 @@
     <string name="show_radar">Tsaych Radar</string>
     <string name="show_forecast">Forke</string>
     <string name="radarforecast">In Haupt Screen:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opsioneel: Persoon URL</string>
     <string name="fgColour">Widget Feel Farbe Picker</string>
     <string name="bgColour">Wurset Hintergrund Farbe Picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL is net set. Tuu khanst in ti instëlunge keen fer se ënere</string>
     <string name="radar_still_downloading">Radar pilt is noch am download mache</string>
     <string name="radar_download_failed">Fer nët tas radar pilt download mache</string>
+    <string name="failed_to_process_forecast_data">Ferkheerte fer ti protuktsioon fon te data</string>
 </resources>

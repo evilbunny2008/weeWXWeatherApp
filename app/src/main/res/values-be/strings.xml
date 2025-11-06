@@ -20,7 +20,7 @@
     <string name="show_radar">Паказаць радар</string>
     <string name="show_forecast">Паказаць прагноз</string>
     <string name="radarforecast">На галоўным экране:</string>
-	<string name="radar">Радар</string>
+    <string name="radar">Радар</string>
     <string name="custom_url">Дадаткова: карыстальніцкі URL</string>
     <string name="fgColour">Выбар колеру пярэдняга плана віджэта</string>
     <string name="bgColour">Выбар колеру фону віджэта</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL радара не зададзены. Вы можаце перайсці ў налады, каб змяніць</string>
     <string name="radar_still_downloading">Радарная выява ўсё яшчэ спампоўваецца</string>
     <string name="radar_download_failed">Не ўдалося спампаваць радыёлакацыйную выяву</string>
+    <string name="failed_to_process_forecast_data">Не ўдалося апрацаваць даныя прагнозу</string>
 </resources>

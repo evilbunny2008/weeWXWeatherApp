@@ -20,7 +20,7 @@
     <string name="show_radar">Diskouez Radar</string>
     <string name="show_forecast">Rakweled an diskouezadeg</string>
     <string name="radarforecast">Ar skramm pennañ :</string>
-	<string name="radar">radar</string>
+    <string name="radar">radar</string>
     <string name="custom_url">Dibarzh : URL personelaet</string>
     <string name="fgColour">Widget eo ar c\'hentañ plas evit al liv</string>
     <string name="bgColour">Widget en-dro ar c\'hoari liv Widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL n\'eo ket bet lakaet. Gallout a rit mont d\'an arventennoù evit cheñch</string>
     <string name="radar_still_downloading">Emañ skeudenn Radar o pellgargañ c\'hoazh</string>
     <string name="radar_download_failed">C\'hwitet e voe da bellgargañ ar skeudenn radar</string>
+    <string name="failed_to_process_forecast_data">C\'hwitet en deus da dreuzfurmiñ roadennoù ar rakweled</string>
 </resources>

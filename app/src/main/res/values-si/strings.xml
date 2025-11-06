@@ -20,7 +20,7 @@
     <string name="show_radar">රේඩාර් පෙන්වන්න</string>
     <string name="show_forecast">අනාවැකි පෙන්වන්න</string>
     <string name="radarforecast">ප්රධාන තිරය මත:</string>
-	<string name="radar">රේඩාර්</string>
+    <string name="radar">රේඩාර්</string>
     <string name="custom_url">විකල්ප: අභිරුචි URL</string>
     <string name="fgColour">විජට් පෙරබිම් වර්ණ තෝරකය</string>
     <string name="bgColour">විජට් පසුබිම් වර්ණ තේරීම</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">රේඩාර් URL සකසා නැත. ඔබට වෙනස් කිරීමට සැකසීම් වෙත යා හැක</string>
     <string name="radar_still_downloading">රේඩාර් රූපය තවමත් බාගත වෙමින් පවතී</string>
     <string name="radar_download_failed">රේඩාර් රූපය බාගැනීම අසාර්ථක විය</string>
+    <string name="failed_to_process_forecast_data">පුරෝකථන දත්ත සැකසීමට අසමත් විය</string>
 </resources>

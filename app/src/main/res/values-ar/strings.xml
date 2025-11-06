@@ -20,7 +20,7 @@
     <string name="show_radar">عرض الرادار</string>
     <string name="show_forecast">عرض التوقعات</string>
     <string name="radarforecast">على الشاشة الرئيسية:</string>
-	<string name="radar">رادار</string>
+    <string name="radar">رادار</string>
     <string name="custom_url">اختياري: عنوان URL مخصص</string>
     <string name="fgColour">القطعة منتقي الألوان الأمامية</string>
     <string name="bgColour">القطعة لون الخلفية المنتقى</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">لم يتم تعيين عنوان URL للرادار. يمكنك الذهاب إلى الإعدادات للتغيير</string>
     <string name="radar_still_downloading">لا تزال صورة الرادار قيد التنزيل</string>
     <string name="radar_download_failed">فشل في تنزيل صورة الرادار</string>
+    <string name="failed_to_process_forecast_data">فشل في معالجة بيانات التنبؤ</string>
 </resources>

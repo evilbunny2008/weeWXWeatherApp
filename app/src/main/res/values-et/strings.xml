@@ -20,7 +20,7 @@
     <string name="show_radar">Näita radarit</string>
     <string name="show_forecast">Näita prognoosi</string>
     <string name="radarforecast">Peaekraanil:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Valikuline: kohandatud URL</string>
     <string name="fgColour">Vidina esiplaani värvivalija</string>
     <string name="bgColour">Vidina taustavärvi valija</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radari URL-i pole määratud. Muutmiseks võite minna seadetesse</string>
     <string name="radar_still_downloading">Radari kujutist laetakse endiselt alla</string>
     <string name="radar_download_failed">Radari kujutise allalaadimine ebaõnnestus</string>
+    <string name="failed_to_process_forecast_data">Prognoosiandmete töötlemine ebaõnnestus</string>
 </resources>

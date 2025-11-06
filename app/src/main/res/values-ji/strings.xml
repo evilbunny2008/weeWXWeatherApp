@@ -20,7 +20,7 @@
     <string name="show_radar">ווייַזן ראַדאַר</string>
     <string name="show_forecast">ווייַזן פאָרעקאַסט</string>
     <string name="radarforecast">אויף די הויפּט פאַרשטעלן:</string>
-	<string name="radar">ראַדאַר</string>
+    <string name="radar">ראַדאַר</string>
     <string name="custom_url">אָפּטיאָנאַל: מנהג URL</string>
     <string name="fgColour">ווידזשיט פאָרגראַונד קאָליר פּיקער</string>
     <string name="bgColour">ווידזשיט הינטערגרונט קאָליר פּיקער</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ראַדאַר URL איז נישט באַשטימט. איר קענט גיין צו סעטטינגס צו טוישן</string>
     <string name="radar_still_downloading">ראַדאַר בילד איז נאָך דאַונלאָודינג</string>
     <string name="radar_download_failed">ניט אַנדערש צו אָפּלאָדירן די ראַדאַר בילד</string>
+    <string name="failed_to_process_forecast_data">ניט אַנדערש צו פּראָצעס פאָרויסזאָגן דאַטן</string>
 </resources>

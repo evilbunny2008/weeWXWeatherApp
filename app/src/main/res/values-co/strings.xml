@@ -20,7 +20,7 @@
     <string name="show_radar">Mostra Radar</string>
     <string name="show_forecast">Mostra Previsioni</string>
     <string name="radarforecast">À u screnu principale:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opcional: URL persunalizatu</string>
     <string name="fgColour">Selettore di culori di primu pianu di u widget</string>
     <string name="bgColour">Selettore di culore di fondu di u widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">L\'URL di u radar ùn hè micca stabilitu. Pudete andà à i paràmetri per cambià</string>
     <string name="radar_still_downloading">L\'immagine radar hè sempre scaricata</string>
     <string name="radar_download_failed">Fallu di scaricà l\'imaghjini radar</string>
+    <string name="failed_to_process_forecast_data">Impossibile processà i dati di previsione</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Faaali radar</string>
     <string name="show_forecast">Faaalia vavalo</string>
     <string name="radarforecast">I luga o le lau:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Filifiliga: Tiute URL</string>
     <string name="fgColour">Whiteget i luma mai lanu lanu piki</string>
     <string name="bgColour">Widget lanu lanu lanu piki</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar url le seti. E mafai ona e alu i tulaga e sui ai</string>
     <string name="radar_still_downloading">Ralar ata o loo download pea</string>
     <string name="radar_download_failed">Le mafai ona download le radar ata</string>
+    <string name="failed_to_process_forecast_data">Ua le mafai ona faʻagasologa faʻamatalaga faʻamatalaga</string>
 </resources>

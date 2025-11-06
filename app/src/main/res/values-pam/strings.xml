@@ -20,7 +20,7 @@
     <string name="show_radar">Pakit ing Radar</string>
     <string name="show_forecast">Pakit Mu Pauna</string>
     <string name="radarforecast">Ing Main screen:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Optional: URL ning Kabiasnan</string>
     <string name="fgColour">Awit ning Paunang Pigpupul</string>
     <string name="bgColour">Kule ning Kule ning Kule ning Kabaliktaran</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">E ya mitakda ing Radar URL. Malyari kang munta kareng setting para magbayu</string>
     <string name="radar_still_downloading">Ing imahen ning radar makababa ya pa rin</string>
     <string name="radar_download_failed">Bigo yang mag-download ing larawan ning radar</string>
+    <string name="failed_to_process_forecast_data">Bigo yang magprosesu king pamaghula kareng datos</string>
 </resources>

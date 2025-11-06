@@ -20,7 +20,7 @@
     <string name="show_radar">Onetsani radar</string>
     <string name="show_forecast">Onetsani zamtsogolo</string>
     <string name="radarforecast">Pazenera lalikulu:</string>
-	<string name="radar">Makina amlengalenga</string>
+    <string name="radar">Makina amlengalenga</string>
     <string name="custom_url">Zosankha: URL yamasewera</string>
     <string name="fgColour">Gicker kutsogolo</string>
     <string name="bgColour">Chingwe chojambula</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Url url sunakhazikike. Mutha kupita ku zofuna kusintha</string>
     <string name="radar_still_downloading">Chithunzi cha Radar chidatsitsabe</string>
     <string name="radar_download_failed">Talephera kutsitsa chithunzi cha radar</string>
+    <string name="failed_to_process_forecast_data">Talephera kukonza deta yachizolowezi</string>
 </resources>

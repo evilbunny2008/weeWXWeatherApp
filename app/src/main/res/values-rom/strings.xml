@@ -20,7 +20,7 @@
     <string name="show_radar">Sikav Radar</string>
     <string name="show_forecast">Sićuke</string>
     <string name="radarforecast">Pe ekran Main:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opcionalno: URL Opruno</string>
     <string name="fgColour">O Picker foreuj Color Picker</string>
     <string name="bgColour">O Picker pe widget Color</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL na si phanglo. Tu shaj zhas ande settingura te paruves</string>
     <string name="radar_still_downloading">Radar image si inke tele tele</string>
     <string name="radar_download_failed">Nashtig te lel tele o radar-image</string>
+    <string name="failed_to_process_forecast_data">Nashti te procesirinel pe prognozake data</string>
 </resources>

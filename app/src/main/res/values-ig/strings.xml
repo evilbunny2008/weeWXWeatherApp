@@ -20,7 +20,7 @@
     <string name="show_radar">Gosi igwe</string>
     <string name="show_forecast">Gosi Amụma</string>
     <string name="radarforecast">Na isi ihuenyo:</string>
-	<string name="radar">Igwe na-aza eluigwe</string>
+    <string name="radar">Igwe na-aza eluigwe</string>
     <string name="custom_url">Nhọrọ: URL omenala</string>
     <string name="fgColour">Wijetị Chargen For na-ahọrọ</string>
     <string name="bgColour">Wijetị na-ahụ maka egwuregwu</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Dradar Url esetịghị. Can nwere ike ịga ntọala ịgbanwe</string>
     <string name="radar_still_downloading">Ihe onyonyo radar ka na-ebudata</string>
     <string name="radar_download_failed">Emeghị ka ibudata ihe ngosi Radar</string>
+    <string name="failed_to_process_forecast_data">Emeghị ka ịhazi data</string>
 </resources>

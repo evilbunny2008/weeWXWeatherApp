@@ -20,7 +20,7 @@
     <string name="show_radar">Pataridahkon Radar</string>
     <string name="show_forecast">Pataridahkon Terapar</string>
     <string name="radarforecast">Bani layar Utama:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opsional: URL Khusus</string>
     <string name="fgColour">Picker Warna Lebih Dasar</string>
     <string name="bgColour">Latarbelakang Batu Latar Belakang Picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL lang ibahen. Boi do nasiam laho hu pengaturan laho mangubah</string>
     <string name="radar_still_downloading">Gambar radar ai ope na mandownload</string>
     <string name="radar_download_failed">Gagal laho mandownload gambar radar</string>
+    <string name="failed_to_process_forecast_data">Gagal laho mangolah data laho mangolah data</string>
 </resources>

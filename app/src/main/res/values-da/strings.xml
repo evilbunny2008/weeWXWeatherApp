@@ -20,7 +20,7 @@
     <string name="show_radar">Vis radar</string>
     <string name="show_forecast">Vis vejrudsigt</string>
     <string name="radarforecast">På hovedskærmen:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Valgfrit: Tilpasset webadresse</string>
     <string name="fgColour">Widget Forgrundsfarvevælger</string>
     <string name="bgColour">Widget Baggrundsfarvevælger</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar-URL ikke angivet. Du kan gå til indstillinger for at ændre</string>
     <string name="radar_still_downloading">Radarbilledet downloades stadig</string>
     <string name="radar_download_failed">Kunne ikke downloade radarbilledet</string>
+    <string name="failed_to_process_forecast_data">Kunne ikke behandle prognosedata</string>
 </resources>

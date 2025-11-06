@@ -20,7 +20,7 @@
     <string name="show_radar">បង្ហាញរ៉ាដា</string>
     <string name="show_forecast">បង្ហាញការព្យាករណ៍</string>
     <string name="radarforecast">នៅលើអេក្រង់មេ:</string>
-	<string name="radar">រ៉ាដារ</string>
+    <string name="radar">រ៉ាដារ</string>
     <string name="custom_url">ជម្រើស: URL ផ្ទាល់ខ្លួន</string>
     <string name="fgColour">អ្នករើសពណ៌ផ្ទៃខាងមុខធាតុក្រាហ្វិក</string>
     <string name="bgColour">ឧបករណ៍ជ្រើសរើសពណ៌ផ្ទៃខាងក្រោយធាតុក្រាហ្វិក</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL រ៉ាដាមិនបានកំណត់ទេ។ អ្នកអាចទៅការកំណត់ដើម្បីផ្លាស់ប្តូរ។</string>
     <string name="radar_still_downloading">រូបភាពរ៉ាដានៅតែកំពុងទាញយក។</string>
     <string name="radar_download_failed">បានបរាជ័យក្នុងការទាញយករូបភាពរ៉ាដា</string>
+    <string name="failed_to_process_forecast_data">បានបរាជ័យក្នុងការដំណើរការទិន្នន័យព្យាករណ៍</string>
 </resources>

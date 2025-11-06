@@ -20,7 +20,7 @@
     <string name="show_radar">Hatudu Radar</string>
     <string name="show_forecast">Hatudu Previzaun</string>
     <string name="radarforecast">Iha ekran Prinsipal:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opsional: URL Personalizadu</string>
     <string name="fgColour">Widget Foreground Color Picker</string>
     <string name="bgColour">Widget Antesedente Kór Picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL la tau. Ita bele ba iha setting hodi muda</string>
     <string name="radar_still_downloading">Imajen radar sei download hela</string>
     <string name="radar_download_failed">La konsege atu download imajen radar</string>
+    <string name="failed_to_process_forecast_data">La konsege prosesa dadus previzaun</string>
 </resources>

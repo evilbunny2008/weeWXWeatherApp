@@ -20,7 +20,7 @@
     <string name="show_radar">Tampilang Radar</string>
     <string name="show_forecast">Cemak Jempah</string>
     <string name="radarforecast">Ring layar Utama:</string>
-	<string name="radar">Basa Radar</string>
+    <string name="radar">Basa Radar</string>
     <string name="custom_url">Opsional: URL khusus</string>
     <string name="fgColour">Banja Ajeg Widget</string>
     <string name="bgColour">Warna Latar Belakang Picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL nenten kagenahang. Sameton dados ngranjing ka setélan jagi mauwah</string>
     <string name="radar_still_downloading">Gambar radar puniki kantun ngunduh</string>
     <string name="radar_download_failed">Gagal ngunduh gambar radar punika</string>
+    <string name="failed_to_process_forecast_data">Gagal ring data ramalan proses</string>
 </resources>

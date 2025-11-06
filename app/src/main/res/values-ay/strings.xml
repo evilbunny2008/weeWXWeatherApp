@@ -20,7 +20,7 @@
     <string name="show_radar">Uñacht\'ayaña radar</string>
     <string name="show_forecast">Uñacht\'ayaña pronóstico</string>
     <string name="radarforecast">Jilïr pantallanxa:</string>
-	<string name="radar">radar ukax</string>
+    <string name="radar">radar ukax</string>
     <string name="custom_url">Ukax akham sañ muni: URL costumbre</string>
     <string name="fgColour">Widget Foreground Color Picker ukax mä jach\'a uñacht\'äwiwa</string>
     <string name="bgColour">Widget ukax mä color picker ukhamawa</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL radar ukax janiw utjkiti. Mayjt\'ayañatakix configuración ukar sarañamawa</string>
     <string name="radar_still_downloading">Radar ukan uñacht\'äwipax wali ch\'amawa</string>
     <string name="radar_download_failed">Radar ukan uñacht\'äwipax janiw apkatañjamäkiti</string>
+    <string name="failed_to_process_forecast_data">Janiwa pronóstico de datos ukanaka phuqhañakiti</string>
 </resources>

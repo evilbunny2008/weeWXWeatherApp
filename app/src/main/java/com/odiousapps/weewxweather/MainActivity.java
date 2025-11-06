@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -37,7 +38,6 @@ import com.google.android.material.textview.MaterialTextView;
 
 import org.json.JSONObject;
 
-import java.io.File;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -646,21 +646,6 @@ public class MainActivity extends FragmentActivity
 			if(imm != null && focus != null && imm.isAcceptingText())
 				closeKeyboard(drawerView, imm);
 		}
-
-
-		@Override
-		public void onDrawerClosed(@NonNull View drawerView)
-		{
-			// Drawer closed — you can re-enable gestures or update UI here
-			Common.LogMessage("Drawer closed");
-		}
-
-		@Override
-		public void onDrawerStateChanged(int newState)
-		{
-			// Optional: detect dragging or settling if you want
-			Common.LogMessage("Drawer state: " + newState);
-		}
 	};
 
 	private void setupBackHandling()
@@ -854,10 +839,6 @@ public class MainActivity extends FragmentActivity
 
 	private void updateDropDowns()
 	{
-		//int bgColour = R.layout.spinner_dropdown_item_light;
-		//if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
-		//	theme = R.layout.spinner_dropdown_item_dark;
-
 		ArrayAdapter<String> adapter1 = newArrayAdapter(R.layout.spinner_layout, updateOptions);
 		ArrayAdapter<String> adapter2 = newArrayAdapter(R.layout.spinner_layout, themeOptions);
 		ArrayAdapter<String> adapter3 = newArrayAdapter(R.layout.spinner_layout, widgetThemeOptions);
@@ -956,45 +937,61 @@ public class MainActivity extends FragmentActivity
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
 		builder.setMessage(weeWXApp.getAndroidString(R.string.remove_all_data)).setCancelable(false)
-				.setPositiveButton(weeWXApp.getAndroidString(R.string.ok), (dialog_interface, i) ->
-				{
-					Common.LogMessage("trash all data");
+		.setPositiveButton(weeWXApp.getAndroidString(R.string.ok), (dialog_interface, i) ->
+		{
+			Common.LogMessage("trash all data");
 
-					Common.clearPref();
-					Common.commitPref();
+			Common.clearPref();
+			Common.commitPref();
 
-					if(!Common.deleteFile("webcam.jpg"))
-						Common.LogMessage("Failed to delete webcam.jpg, or it no longer exists...");
+			if(!Common.deleteFile("webcam.jpg"))
+				Common.LogMessage("Failed to delete webcam.jpg, or it no longer exists...");
 
-					if(!Common.deleteFile("radar.gif"))
-						Common.LogMessage("Failed to delete radar.gif, or it no longer exists...");
+			if(!Common.deleteFile("radar.gif"))
+				Common.LogMessage("Failed to delete radar.gif, or it no longer exists...");
 
-					WidgetProvider.updateAppWidget();
+			WidgetProvider.updateAppWidget();
 
-					dialog_interface.cancel();
+			dialog_interface.cancel();
 
-					System.exit(0);
-				}).setNegativeButton(weeWXApp.getAndroidString(R.string.no), (dialog_interface, i) -> dialog_interface.cancel());
+			System.exit(0);
+		}).setNegativeButton(weeWXApp.getAndroidString(R.string.no), (dialog_interface, i) -> dialog_interface.cancel());
 
 		builder.create().show();
 	}
 
 	private void processSettings()
 	{
+		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+
 		if(mainactivityThread != null)
 		{
 			if(mainactivityThread.isAlive())
+			{
+				if(maStart + 30 > current_time)
+				{
+					Common.LogMessage("rtStart is less than 30s old, we'll skip this attempt...");
+					return;
+				}
+
+				Common.LogMessage("rtStart is 30+s old, we'll interrupt it...");
 				mainactivityThread.interrupt();
+			}
+
 			mainactivityThread = null;
 		}
 
+		maStart = current_time;
+
 		mainactivityThread = new Thread(() ->
 		{
+			Common.LogMessage("mainactivityThread started...");
+
 			String tmpStr;
-			boolean validURL = false;
+			boolean validURL;
 			boolean validURL1 = false;
 			boolean validURL2 = false;
-			boolean validURL3 = false;
+			boolean validURL3;
 			boolean validURL5 = false;
 
 			Common.SetStringPref("lastError", "");
@@ -1006,17 +1003,20 @@ public class MainActivity extends FragmentActivity
 			String oldcustom = Common.GetStringPref("CUSTOM_URL", "");
 			String oldcustom_url = Common.GetStringPref("custom_url", "");
 
-			String data = "", radtype = "", radar = "", forecast = "", webcam = "", custom = "", custom_url, fctype = "", bomtown = "", metierev;
+			String data = "", radtype = "", radar = "", forecast = "", webcam = "",
+					custom = "", custom_url, fctype = "", bomtown = "", metierev;
 
-			long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+			boolean icons_exist = Common.checkForImages();
 
-			if(use_icons.isChecked() && (Common.GetLongPref("icon_version", 0) < Common.icon_version || !Common.checkForImages()))
+			if(use_icons.isChecked() && (Common.GetLongPref("icon_version",
+					0) < Common.icon_version || !icons_exist))
 			{
 				try
 				{
 					if(!Common.downloadIcons())
 					{
-						Common.SetStringPref("lastError", weeWXApp.getAndroidString(R.string.icons_failed_to_download));
+						Common.SetStringPref("lastError",
+								weeWXApp.getAndroidString(R.string.icons_failed_to_download));
 						runOnUiThread(() ->
 						{
 							b1.setEnabled(true);
@@ -1024,26 +1024,31 @@ public class MainActivity extends FragmentActivity
 							dialog.dismiss();
 							new AlertDialog.Builder(this)
 									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_detect_icons))
-									.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-									{
-									}).show();
+									.setMessage(Common.GetStringPref("lastError",
+											weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+											(dialog, which) -> {}).show();
 						});
+
+						maStart = 0;
 						return;
 					}
 				} catch(Exception e) {
 					Common.SetStringPref("lastError", e.toString());
-					runOnUiThread(() -> {
+					runOnUiThread(() ->
+					{
 						b1.setEnabled(true);
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(this)
 								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_detect_icons))
-								.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-								{
-								}).show();
+								.setMessage(Common.GetStringPref("lastError",
+										weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+										(dialog, which) -> {}).show();
 					});
+
+					maStart = 0;
 					return;
 				}
 
@@ -1053,30 +1058,36 @@ public class MainActivity extends FragmentActivity
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().trim() : "";
 			if(settings_url.isBlank() || settings_url.equals("https://example.com/weewx/inigo-settings.txt"))
 			{
-				Common.SetStringPref("lastError", weeWXApp.getAndroidString(R.string.url_was_default_or_empty));
-				runOnUiThread(() -> {
+				Common.SetStringPref("lastError",
+						weeWXApp.getAndroidString(R.string.url_was_default_or_empty));
+				runOnUiThread(() ->
+				{
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
 							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_settings))
-							.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-							{
-							}).show();
+							.setMessage(Common.GetStringPref("lastError",
+									weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+									(dialog, which) -> {}).show();
 				});
 
+				maStart = 0;
 				return;
 			}
 
 			try
 			{
-				String settingsData = Common.downloadSettings(settingsURL.getText().toString());
-				if(settingsData == null)
+				String settingsData = Common.downloadSettings(settingsURL.getText().toString()).trim();
+				if(settingsData == null || settingsData.isBlank())
+				{
+					maStart = 0;
 					return;
+				}
 
 				String[] bits = settingsData.split("\\n");
-				for (String bit : bits)
+				for(String bit : bits)
 				{
 					String[] mb = bit.split("=", 2);
 					mb[0] = mb[0].trim().toLowerCase(Locale.ENGLISH);
@@ -1106,21 +1117,25 @@ public class MainActivity extends FragmentActivity
 			} catch(Exception e) {
 				Common.SetStringPref("lastError", e.toString());
 				Common.doStackOutput(e);
+				validURL = false;
 			}
 
 			if(!validURL)
 			{
-				runOnUiThread(() -> {
+				runOnUiThread(() ->
+				{
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
 							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_settings))
-							.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-							{
-							}).show();
+							.setMessage(Common.GetStringPref("lastError",
+									weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+									(dialog, which) -> {}).show();
 				});
+
+				maStart = 0;
 				return;
 			}
 
@@ -1128,19 +1143,22 @@ public class MainActivity extends FragmentActivity
 
 			if(data.isBlank())
 			{
-				Common.SetStringPref("lastError", weeWXApp.getAndroidString(R.string.data_url_was_blank));
-				runOnUiThread(() -> {
+				Common.SetStringPref("lastError",
+						weeWXApp.getAndroidString(R.string.data_url_was_blank));
+				runOnUiThread(() ->
+				{
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
 							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_data_txt))
-							.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-							{
-							}).show();
+							.setMessage(Common.GetStringPref("lastError",
+									weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+									(dialog, which) -> {}).show();
 				});
 
+				maStart = 0;
 				return;
 			}
 
@@ -1159,18 +1177,20 @@ public class MainActivity extends FragmentActivity
 
 			if(!validURL1)
 			{
-				runOnUiThread(() -> {
+				runOnUiThread(() ->
+				{
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
 							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_radar_image))
-							.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-							{
-							}).show();
+							.setMessage(Common.GetStringPref("lastError",
+									weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+									(dialog, which) -> {}).show();
 				});
 
+				maStart = 0;
 				return;
 			}
 
@@ -1180,10 +1200,7 @@ public class MainActivity extends FragmentActivity
 				{
 					if(radtype.equals("image"))
 					{
-						File file = new File(getFilesDir(), "/radar.gif.tmp");
-						File f = Common.downloadBinary(file, radar);
-						if(f != null)
-							validURL2 = f.exists();
+						validURL2 = Common.downloadToFile("radar.gif", radar);
 					} else if(radtype.equals("webpage")) {
 						validURL2 = Common.checkURL(radar);
 					}
@@ -1194,18 +1211,20 @@ public class MainActivity extends FragmentActivity
 
 				if(!validURL2)
 				{
-					runOnUiThread(() -> {
+					runOnUiThread(() ->
+					{
 						b1.setEnabled(true);
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(this)
 								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_radar_image))
-								.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-								{
-								}).show();
+								.setMessage(Common.GetStringPref("lastError",
+										weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+										(dialog, which) -> {}).show();
 					});
 
+					maStart = 0;
 					return;
 				}
 			}
@@ -1230,11 +1249,13 @@ public class MainActivity extends FragmentActivity
 									dialog.dismiss();
 									new AlertDialog.Builder(this)
 											.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_or_download))
-											.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-											.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-											{
-											}).show();
+											.setMessage(Common.GetStringPref("lastError",
+													weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+											.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+													(dialog, which) -> {}).show();
 								});
+
+								maStart = 0;
 								return;
 							}
 						}
@@ -1320,13 +1341,19 @@ public class MainActivity extends FragmentActivity
 
 							tmpStr = Common.GetStringPref("metierev", "");
 							if(tmpStr == null)
+							{
+								maStart = 0;
 								return;
+							}
 
 							if(tmpStr.isBlank() || !forecast.equals(oldforecast))
 							{
-								metierev = Common.downloadForecast(fctype, metierev);
+								metierev = Common.downloadString(metierev);
 								if(metierev == null)
+								{
+									maStart = 0;
 									return;
+								}
 
 								JSONObject jobj = new JSONObject(metierev);
 								metierev = jobj.getString("city") + ", Ireland";
@@ -1352,6 +1379,7 @@ public class MainActivity extends FragmentActivity
 										}).show();
 							});
 
+							maStart = 0;
 							return;
 						}
 					}
@@ -1361,23 +1389,27 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			Common.LogMessage("line 742");
+			Common.LogMessage("line 1380");
 
-			if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !Common.checkForImages() && !use_icons.isChecked())
+			if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && !icons_exist && !use_icons.isChecked())
 			{
-				Common.SetStringPref("lastError", String.format(weeWXApp.getAndroidString(R.string.forecast_type_needs_icons), fctype));
+				Common.SetStringPref("lastError",
+						String.format(weeWXApp.getAndroidString(R.string.forecast_type_needs_icons), fctype));
 				runOnUiThread(() ->
 				{
+					use_icons.setChecked(true);
 					b1.setEnabled(true);
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
 						.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_detect_forecast_icons))
-						.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-						.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-						{}).show();
+						.setMessage(Common.GetStringPref("lastError",
+								weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+						.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+								(dialog, which) -> {}).show();
 				});
 
+				maStart = 0;
 				return;
 			}
 
@@ -1385,36 +1417,24 @@ public class MainActivity extends FragmentActivity
 			{
 				Common.LogMessage("forecast checking: " + forecast);
 
-				try
-				{
-					Common.LogMessage("checking: " + forecast);
-					String tmp = Common.downloadForecast(fctype, forecast);
-					if(tmp != null)
-					{
-						validURL3 = true;
-						Common.LogMessage("updating rss cache");
-						Common.SetLongPref("rssCheck", current_time);
-						Common.SetStringPref("forecastData", tmp);
-					}
-				} catch(Exception e) {
-					Common.SetStringPref("lastError", e.toString());
-					Common.doStackOutput(e);
-				}
+				validURL3 = Common.reallyGetForecast(forecast) != null;
 
 				if(!validURL3)
 				{
-					runOnUiThread(() -> {
+					runOnUiThread(() ->
+					{
 						b1.setEnabled(true);
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(this)
 								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast))
-								.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-								{
-								}).show();
+								.setMessage(Common.GetStringPref("lastError",
+										weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+										(dialog, which) -> {}).show();
 					});
 
+					maStart = 0;
 					return;
 				}
 			}
@@ -1425,20 +1445,33 @@ public class MainActivity extends FragmentActivity
 
 				try
 				{
-					if(Common.loadOrDownloadImage(webcam, "webcam.jpg", true) == null)
+					Bitmap bm = null;
+
+					try
 					{
-						runOnUiThread(() -> {
+						bm = Common.loadOrDownloadImage(webcam, "webcam.jpg", true);
+					} catch(Exception e) {
+						Common.LogMessage("Error! " + e);
+					}
+
+					if(bm == null)
+					{
+						Common.LogMessage("bm is null!");
+
+						runOnUiThread(() ->
+						{
 							b1.setEnabled(true);
 							b2.setEnabled(true);
 							dialog.dismiss();
 							new AlertDialog.Builder(this)
 									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
-									.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-									{
-									}).show();
+									.setMessage(Common.GetStringPref("lastError",
+											weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+											(dialog, which) -> {}).show();
 						});
 
+						maStart = 0;
 						return;
 					}
 				} catch(Exception e) {
@@ -1464,17 +1497,20 @@ public class MainActivity extends FragmentActivity
 
 					if(!validURL5)
 					{
-						runOnUiThread(() -> {
+						runOnUiThread(() ->
+						{
 							b1.setEnabled(true);
 							b2.setEnabled(true);
 							dialog.dismiss();
 							new AlertDialog.Builder(this)
 									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_custom_url))
-									.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-									{
-									}).show();
+									.setMessage(Common.GetStringPref("lastError",
+											weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+											(dialog, which) -> {}).show();
 						});
+
+						maStart = 0;
 						return;
 					}
 				}
@@ -1492,27 +1528,29 @@ public class MainActivity extends FragmentActivity
 
 					if(!validURL5)
 					{
-						runOnUiThread(() -> {
+						runOnUiThread(() ->
+						{
 							b1.setEnabled(true);
 							b2.setEnabled(true);
 							dialog.dismiss();
 							new AlertDialog.Builder(this)
 									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_custom_url))
-									.setMessage(Common.GetStringPref("lastError", weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
-									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-									{
-									}).show();
+									.setMessage(Common.GetStringPref("lastError",
+											weeWXApp.getAndroidString(R.string.unknown_error_occurred)))
+									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+											(dialog, which) -> {}).show();
 						});
 
+						maStart = 0;
 						return;
 					}
 				}
 			}
 
-			if(forecast.isBlank())
+			if(forecast == null || forecast.isBlank())
 			{
 				Common.SetLongPref("rssCheck", 0);
-				Common.SetStringPref("forecastData", "");
+				Common.SetStringPref("forecastData", null);
 			}
 
 			Common.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
@@ -1562,6 +1600,7 @@ public class MainActivity extends FragmentActivity
 
 			updateHamburger();
 			updateDropDowns();
+			maStart = 0;
 		});
 
 		mainactivityThread.start();

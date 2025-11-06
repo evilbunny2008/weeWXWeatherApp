@@ -20,7 +20,7 @@
     <string name="show_radar">ራዳር አሳይ</string>
     <string name="show_forecast">ትንበያ አሳይ</string>
     <string name="radarforecast">በዋናው ማያ ገጽ ላይ</string>
-	<string name="radar">ራዳር</string>
+    <string name="radar">ራዳር</string>
     <string name="custom_url">ከተፈለገ: - ብጁ ዩ አር ኤል</string>
     <string name="fgColour">የግርጌ ማስታወሻዎች የፊት ቀለም</string>
     <string name="bgColour">የጀርባ ትምህርት ቤት የቀለም መራጭ</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ራዳር ዩ አር ኤል አልተዋቀረም. ወደ ቅንብሮች ወደ ለውጦች መሄድ ይችላሉ</string>
     <string name="radar_still_downloading">የራዳር ምስል አሁንም እያወርድ ነው</string>
     <string name="radar_download_failed">የራዳውን ምስል ማውረድ አልተሳካም</string>
+    <string name="failed_to_process_forecast_data">ትንበያ ውሂብን ማከናወን አልተሳካም</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Radar nîşan bide</string>
     <string name="show_forecast">Pêşbîniyê nîşan bide</string>
     <string name="radarforecast">Li ser ekrana sereke:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Bijarî: URL-ya xwerû</string>
     <string name="fgColour">Widget Hilbijêra Rengê Pêşî</string>
     <string name="bgColour">Hilbijêra Rengê Paşgira Wîdgetê</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL-ya radarê nehatiye danîn. Hûn dikarin biçin mîhengan ku biguhezînin</string>
     <string name="radar_still_downloading">Wêneyê radarê hîna tê daxistin</string>
     <string name="radar_download_failed">Daxistina wêneya radarê bi ser neket</string>
+    <string name="failed_to_process_forecast_data">Pêvajoya daneyên pêşbîniyê bi ser neket</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">ၼႄလွင်ႈရႃႇတႃႇ</string>
     <string name="show_forecast">ပၢင်ပိုၼ်ၽၢဝ်ႇ</string>
     <string name="radarforecast">တီႈၼိူဝ်ၽႅၼ်ႇတူၺ်း Main ၊</string>
-	<string name="radar">ရႃႇတႃႇ</string>
+    <string name="radar">ရႃႇတႃႇ</string>
     <string name="custom_url">တၢင်းလိူၵ်ႈ: URL ဢၼ်ၶႂ်ႈလႆႈၶႂ်ႈပဵၼ်</string>
     <string name="fgColour">သီၽွၼ်ႉၽွၼ်ႉ ပိၵ်ႉၵႃႇ</string>
     <string name="bgColour">သီၽၢႆႇလင်သီ ပိၵ်ႉၵႃႇ</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ရေႇတႃႇ URL ဢမ်ႇလႆႈတင်ႈ။ ၵႂႃႇလႅၵ်ႈလႆၢႈၵေႃႈလႆႈ၊</string>
     <string name="radar_still_downloading">ၶႅပ်းႁၢင်ႈ Radar ၵေႃႈ တိုၵ်ႉလူင်းဝႆႉယူႇ။</string>
     <string name="radar_download_failed">ဢမ်ႇလူင်းဢဝ်ၶႅပ်းႁၢင်ႈ ရေႇတႃႇ</string>
+    <string name="failed_to_process_forecast_data">ဢမ်ႇႁဵတ်းၵၢၼ်ၶေႃႈမုၼ်း ဢၼ်လၢမ်းၶၢတ်ႈဝႆႉ</string>
 </resources>

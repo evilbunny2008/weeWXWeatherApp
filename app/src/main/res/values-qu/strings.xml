@@ -20,7 +20,7 @@
     <string name="show_radar">Radar rikuchiy</string>
     <string name="show_forecast">Pronóstico nisqapi qhaway</string>
     <string name="radarforecast">Pantalla Principal nisqapi:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opcional: URL personalizado</string>
     <string name="fgColour">Widget Ñawpaq kaq llimp\'i picker</string>
     <string name="bgColour">Widget Fondo de Color Picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar url mana churasqachu. cambianaykipaqmi churanakunaman riyta atinki</string>
     <string name="radar_still_downloading">Radarpa rikchayninqa kunankamapas uraykachichkanraqmi</string>
     <string name="radar_download_failed">Radarpa siq\'inta mana uraykachiyta atirqanchu</string>
+    <string name="failed_to_process_forecast_data">Mana atirqanchu willakuy willakuykunata ruwayta</string>
 </resources>

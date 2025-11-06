@@ -18,13 +18,10 @@ import android.media.MediaScannerConnection;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
-import android.net.Uri;
 import android.os.Build;
 import android.os.LocaleList;
 import android.util.Base64;
 import android.util.Log;
-import android.webkit.ConsoleMessage;
-import android.webkit.WebChromeClient;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
 import com.github.evilbunny2008.xmltojson.XmlToJson;
@@ -32,7 +29,6 @@ import com.github.evilbunny2008.xmltojson.XmlToJson;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -50,14 +46,13 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
-import java.util.concurrent.TimeUnit;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
@@ -66,8 +61,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
 import androidx.lifecycle.LiveData;
-import okhttp3.ConnectionSpec;
-import okhttp3.Credentials;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -129,7 +122,7 @@ class Common
 														:root
 														{
 															padding: 0;
-															margin: 0 0 15px 0;;
+															margin: 0 0 15px 0;
 															color: FG_HEX;
 															background-color: BG_HEX;
 															--font-icon-big: 1.5rem;
@@ -836,15 +829,6 @@ class Common
 		return val.equals("1");
 	}
 
-	static final class myWebChromeClient extends WebChromeClient
-	{
-		@Override
-		public boolean onConsoleMessage(ConsoleMessage cm)
-		{
-			return true;
-		}
-	}
-
 	private static Day getFirstDay(List<Day> days)
 	{
 		Day first = null;
@@ -893,14 +877,14 @@ class Common
 
 			sb.append("\t\t\t<div class='maxTemp'>");
 			if(first.max.isBlank() || first.max.equals("&deg;C") || first.max.equals("&deg;F"))
-				sb.append("&nbsp;");
+				sb.append(emptyField);
 			else
 				sb.append(first.max);
 			sb.append("</div>\n");
 
 			sb.append("\t\t\t<div class='minTemp'>");
 			if(first.min.isBlank() || first.min.equals("&deg;C") || first.min.equals("&deg;F"))
-				sb.append("&nbsp;");
+				sb.append(emptyField);
 			else
 				sb.append(first.min);
 			sb.append("</div>\n\t\t</div>\n\t</div>\n");
@@ -971,6 +955,8 @@ class Common
 
 
 		sb.append("</div>\n");
+
+		CustomDebug.writeDebug("common.html", sb.toString());
 
 		return sb.toString();
 	}
@@ -1176,42 +1162,51 @@ class Common
 		LogMessage("Starting processBOM3()");
 
 		if(data.isBlank())
+		{
+			LogMessage("data is blank, skipping...");
 			return null;
+		}
 
 		boolean metric = GetBoolPref("metric", true);
 		boolean use_icons = GetBoolPref("use_icons", false);
-		String desc;
+		String desc = "";
 		List<Day> days = new ArrayList<>();
-		long timestamp;
+		long timestamp = 0;
 
 		try
 		{
+			LogMessage("Line 1178");
+
 			JSONObject jobj = new JSONObject(data);
 
 			desc = jobj.getJSONObject("metadata").getString("forecast_region");
 			String tmp = jobj.getJSONObject("metadata").getString("issue_time");
 
-			SimpleDateFormat sdf;
-			sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+			LogMessage("Line 1185");
 
-			timestamp = 0;
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+
 			Date df = sdf.parse(tmp);
 			if(df != null)
 				timestamp = df.getTime();
+
+			LogMessage("Line 1192");
 
 			JSONArray mydays = jobj.getJSONArray("data");
 			for(int i = 0; i < mydays.length(); i++)
 			{
 				Day day = new Day();
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 
 				day.timestamp = 0;
+				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 				df = sdf.parse(mydays.getJSONObject(i).getString("date"));
 				if(df != null)
 					day.timestamp = df.getTime();
 
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
+
+				LogMessage("Line 1207");
 
 				if(metric)
 				{
@@ -1244,42 +1239,57 @@ class Common
 					}
 				}
 
+				LogMessage("Line 1240");
+
 				if(!mydays.getJSONObject(i).getString("extended_text").equals("null"))
 					day.text = mydays.getJSONObject(i).getString("extended_text");
+
+				LogMessage("Line 1246");
 
 				String fileName = bomlookup(mydays.getJSONObject(i).getString("icon_descriptor"));
 				if(!fileName.equals("null"))
 				{
 					if(!use_icons)
 					{
+						LogMessage("Line 1254");
+
 						if(!fileName.equals("frost"))
 							day.icon = "wi wi-bom-" + fileName;
 						else
 							day.icon = "flaticon-thermometer";
 					} else {
-						fileName = checkImage("bom2" + fileName + ".png", null);
-						if(fileName == null)
-							return null;
+						LogMessage("Line 1260");
 
-						File f = new File(fileName);
-						try(FileInputStream imageInFile = new FileInputStream(f))
+						fileName = checkImage("bom2" + fileName + ".png", null);
+						if(fileName != null)
 						{
-							byte[] imageData = new byte[(int) f.length()];
-							if(imageInFile.read(imageData) > 0)
-								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						} catch(Exception e) {
-							doStackOutput(e);
+							File f = new File(fileName);
+							try(FileInputStream imageInFile = new FileInputStream(f))
+							{
+								byte[] imageData = new byte[(int)f.length()];
+								if(imageInFile.read(imageData) > 0)
+									day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							} catch(Exception e) {
+								doStackOutput(e);
+							}
 						}
 					}
 				}
 
 				days.add(day);
+
+				LogMessage("Line 1273");
 			}
 		} catch(Exception e) {
-			doStackOutput(e);
-			return null;
+			LogMessage("Error! " + e);
+			Activity act = getActivity();
+			if(act == null)
+				return new String[]{"Error!", e.toString()};
+
+			act.finish();
 		}
 
+		LogMessage("Forecast data has been processed, sending for layout...");
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
@@ -1287,7 +1297,7 @@ class Common
 	{
 		icon = icon.replace("-", "_");
 
-		return switch (icon)
+		return switch(icon)
 		{
 			case "shower" -> "showers";
 			case "dusty" -> "dust";
@@ -3155,7 +3165,7 @@ class Common
 			return new String[]{null, "Failed to load or download icon from url: " + url};
 
 		String filename = "yahoo-" + new File(url).getName();
-		File f = getFile(getDir("icons"), filename);
+		File f = new File(getExtDir("icons"), filename);
 		if(!f.exists())
 		{
 			LogMessage("File not found: " + "yahoo-" + filename);
@@ -3182,17 +3192,14 @@ class Common
 			return new String[]{null, "Failed to load or download from url: " + url};
 
 		String filename = "tempoitalia-" + new File(url).getName();
-		File f = new File(context.getExternalFilesDir(""), "weeWX");
-		f = new File(f,"icons");
-		f = new File(f, filename);
+		File f = new File(getExtDir("icons"), filename);
 		if(!f.exists())
 		{
 			LogMessage("File not found: " + "tempoitalia-" + filename);
 			LogMessage("downloading...");
 
 			String new_url = "https://delungra.com/weewx/TempoItalia-missing.php?filename=" + filename;
-			f = downloadBinary(f, new_url);
-			if(f == null)
+			if(!downloadToFile(f, new_url))
 				return new String[]{null, "f is invalid."};
 
 			if(f.exists())
@@ -3356,10 +3363,29 @@ class Common
 		getWeather.start();
 	}
 
-	static void reallyGetWeather(String fromURL)
+	static String reallyGetForecast(String url)
+	{
+		try
+		{
+			String data = Common.downloadString(url);
+			if(!data.isBlank())
+			{
+				long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+
+				Common.LogMessage("updating rss cache");
+				Common.SetLongPref("rssCheck", current_time);
+				Common.SetStringPref("forecastData", data);
+				return data;
+			}
+		} catch(IOException ignored) {}
+
+		return null;
+	}
+
+	static void reallyGetWeather(String fromURL) throws IOException
 	{
 		String line = downloadString(fromURL);
-		if(line != null && !line.isBlank())
+		if(!line.isBlank())
 		{
 			String[] bits = line.split("\\|");
 			if(Double.parseDouble(bits[0]) < inigo_version)
@@ -3425,34 +3451,10 @@ class Common
 
 	// https://stackoverflow.com/questions/8710515/reading-an-image-file-into-bitmap-from-sdcard-why-am-i-getting-a-nullpointerexc
 
-	static Bitmap loadImage(String fileName)
+	private static String checkImage(String fileName, String icon) throws IOException
 	{
-		Context context = getContext();
-		if(context == null)
-			return null;
-
-		File f = new File(context.getExternalFilesDir(""), "weeWX");
-		f = new File(f, "icons");
-		f = new File(f, fileName);
-
-		return loadImage(f);
-	}
-
-	static Bitmap loadImage(File file)
-	{
-		return BitmapFactory.decodeFile(file.getAbsolutePath(), options);
-	}
-
-	private static String checkImage(String fileName, String icon) throws IOException, myIOException
-	{
-		Context context = getContext();
-		if(context == null)
-			return null;
-
-		File f = new File(context.getExternalFilesDir(""), "weeWX");
-		f = new File(f, "icons");
-		f = new File(f, fileName);
-		//LogMessage("f = " + f.getAbsolutePath());
+		File f = new File(getExtDir("icons"), fileName);
+		LogMessage("f = " + f.getAbsolutePath());
 		if(f.exists() && f.isFile() && f.canRead() && f.length() > 0)
 			return f.getAbsolutePath();
 
@@ -3706,16 +3708,13 @@ class Common
 		}
 	}
 
-	static String downloadSettings(String url)
+	static String downloadSettings(String url) throws IOException
 	{
 		String UTF8_BOM = "\uFEFF";
 
 		SetStringPref("SETTINGS_URL", url);
 
 		String cfg = downloadString(url);
-
-		if(cfg == null)
-			return null;
 
 		if(cfg.startsWith(UTF8_BOM))
 			cfg = cfg.substring(1).trim();
@@ -3729,8 +3728,8 @@ class Common
 		if(url == null || url.isBlank())
 			return false;
 
-		OkHttpClient client = new OkHttpClient();
-		Request request = newRequest(url).head().build();
+		OkHttpClient client = NetworkClient.getInstance();
+		Request request = NetworkClient.newRequest(true, url);
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -3738,67 +3737,28 @@ class Common
 		}
 	}
 
-	static String downloadForecast() throws IOException
+	static String downloadForecast()
 	{
-		String str1 = GetStringPref("fctype", "Yahoo");
-		if(str1 == null || str1.isBlank())
+		String forecastURL = GetStringPref("FORECAST_URL", "");
+		if(forecastURL == null || forecastURL.isBlank())
 			return null;
 
-		String str2 = GetStringPref("FORECAST_URL", "");
-		if(str2 == null || str2.isBlank())
-			return null;
-
-		return downloadForecast(str1, str2);
+		return reallyGetForecast(forecastURL);
 	}
 
-	static String downloadForecast(String fctype, String forecast) throws IOException
+	static String downloadString(String url) throws IOException
 	{
-		String tmp;
+		LogMessage("downloading text from " + url);
+		OkHttpClient client = NetworkClient.getInstance();
+		Request request = NetworkClient.newRequest(url);
 
-		if(!fctype.equals("bom2"))
-			tmp = downloadString(forecast);
-		else
-			tmp = downloadString2(forecast);
-
-		return tmp;
-	}
-
-	private static String downloadString2(String fromURL) throws IOException
-	{
-		Connection.Response resultResponse = Jsoup.connect(fromURL)
-													.userAgent(UA)
-													.referrer("https://reg.bom.gov.au")
-													.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
-													.header("Cache-Control", "max-age=0")
-													.header("Accept-Language", "en-au")
-													.header("Upgrade-Insecure-Requests", "1")
-													.header("Accept-Encoding", "deflate")
-													.header("Connection", "keep-alive")
-													.maxBodySize(Integer.MAX_VALUE)
-													.ignoreContentType(true).execute();
-		return resultResponse.body();
-	}
-
-	private static int responseCount(Response response)
-	{
-		int result = 1;
-		while((response = response.priorResponse()) != null)
-			result++;
-		return result;
-	}
-
-	private static String downloadString(String fromURL)
-	{
-		try(Response response = newClient(fromURL, true)
-				.newCall(newRequest(fromURL).build())
-				.execute())
+		try(Response response = client.newCall(request).execute())
 		{
-			String rb = response.body().string().trim();
-			LogMessage(rb);
-			return rb;
-		} catch(Exception ignored) {}
+			if(!response.isSuccessful())
+				throw new IOException("HTTP error " + response);
 
-		return null;
+			return response.body().string();
+		}
 	}
 
 	private static void writeFile(String fileName, String data) throws Exception
@@ -3818,77 +3778,6 @@ class Common
 		publish(f);
 	}
 
-	static File downloadJSOUP(File f, String fromURL) throws Exception
-	{
-		File dir = f.getParentFile();
-		assert dir != null;
-		if(!dir.exists())
-			if(!dir.mkdirs())
-				return null;
-
-		Connection.Response resultResponse = Jsoup.connect(fromURL).userAgent(UA).maxBodySize(Integer.MAX_VALUE).ignoreContentType(true).execute();
-		FileOutputStream out = new FileOutputStream(f);
-		out.write(resultResponse.bodyAsBytes());
-		out.flush();
-		out.close();
-		publish(f);
-
-		return f;
-	}
-
-	static File downloadBinary(File f, String fromURL) throws Exception
-	{
-		File dir = f.getParentFile();
-		assert dir != null;
-		if(!dir.exists())
-			if(!dir.mkdirs())
-				return null;
-
-		OkHttpClient client;
-		Request request;
-		OutputStream outputStream = new FileOutputStream(f);
-
-		Uri uri = Uri.parse(fromURL);
-		if(uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
-		{
-			String[] UC = uri.getUserInfo().split(":");
-			LogMessage("uri username = " + UC[0]);
-
-			client = new OkHttpClient.Builder()
-					.connectTimeout(60, TimeUnit.SECONDS)
-					.writeTimeout(60, TimeUnit.SECONDS)
-					.readTimeout(60, TimeUnit.SECONDS)
-					.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS))
-					.authenticator((route, response) ->
-					{
-						if(responseCount(response) >= 3)
-							return null;
-
-						String credential = Credentials.basic(UC[0], UC[1]);
-						return response.request().newBuilder().header("Authorization", credential).build();
-					})
-					.build();
-		} else {
-			client = new OkHttpClient.Builder()
-					.connectTimeout(60, TimeUnit.SECONDS)
-					.writeTimeout(60, TimeUnit.SECONDS)
-					.readTimeout(60, TimeUnit.SECONDS)
-					.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS))
-					.build();
-		}
-
-		request = newRequest(fromURL).build();
-
-		try(Response response = client.newCall(request).execute())
-		{
-			outputStream.write(response.body().bytes());
-			outputStream.flush();
-			outputStream.close();
-			publish(f);
-			return f;
-		}
-	}
-
 	private static void publish(File f)
 	{
 		Context context = getContext();
@@ -3897,7 +3786,8 @@ class Common
 
 		LogMessage("wrote to " + f.getAbsolutePath());
 		if(f.exists())
-			MediaScannerConnection.scanFile(context, new String[]{f.getAbsolutePath()}, null, null);
+			MediaScannerConnection.scanFile(context,
+					new String[]{f.getAbsolutePath()}, null, null);
 	}
 
 	static boolean downloadIcons() throws Exception
@@ -3916,10 +3806,10 @@ class Common
 			publish(dir);
 
 		f = new File(f, "icon.zip");
-		if(downloadJSOUP(f, icon_url) == null)
+		if(!downloadToFile(f, icon_url))
 			throw new Exception("There was a problem downloading icons, you will need to try again.");
 
-		dir = new File(dir, "icons");
+		dir = getExtDir("icons");
 		if(!dir.exists() && dir.mkdirs())
 			publish(dir);
 
@@ -3978,26 +3868,25 @@ class Common
 
 	static boolean checkForImages()
 	{
-		Context context = getContext();
-		if(context == null)
-			return false;
-
-		File dir = new File(context.getExternalFilesDir(""), "weeWX");
-		dir = new File(dir, "icons");
-		if(!dir.exists() || !dir.isDirectory())
-			return false;
-
 		String[] files = new String[]{"aemet_11_g.png", "apixu_113.png", "bom1.png", "bom2clear.png", "dwd_pic_0_8.png",
 										"i1.png", "ilmeteo_ss1.png", "met0.png", "mf_j_w1_0_n_2.png", "ms_cloudy.png",
 										"wca00.png", "wgovbkn.jpg", "wzclear.png", "y01d.png", "yahoo0.gif", "yrno01d.png"};
-		for(String file : files)
-		{
-			File f = new File(dir, file);
-			if(!f.exists() || !f.isFile())
-				return false;
-		}
 
-		return true;
+		try
+		{
+			File dir = getExtDir("icons");
+
+			for(String file: files)
+			{
+				File f = new File(dir, file);
+				if(!f.exists() || !f.isFile() || !f.canRead())
+					return false;
+			}
+
+			return true;
+		} catch(Exception ignored) {}
+
+		return false;
 	}
 
 	static Context getContext()
@@ -4031,10 +3920,10 @@ class Common
 		}
 
 		final long current_time = Math.round(System.currentTimeMillis() / 1000.0);
-		String str1 = GetStringPref("forecastData", "");
-		long long1 = GetLongPref("rssCheck", 0);
+		String forecastData = GetStringPref("forecastData", null);
+		long rssCheckTime = GetLongPref("rssCheck", 0);
 
-		if(str1 == null || str1.isBlank() || long1 + 7190 < current_time)
+		if(forecastData == null || forecastData.isBlank() || rssCheckTime + 7190 < current_time)
 		{
 			LogMessage("no forecast data or cache is more than 2 hour old");
 		} else {
@@ -4149,7 +4038,7 @@ class Common
 		if(newdir.exists() && !newdir.isDirectory())
 			throw new IOException(newdir.getAbsolutePath() + " isn't a directory...");
 
-		if(!newdir.exists() && !newdir.mkdir())
+		if(!newdir.exists() && !newdir.mkdirs())
 			throw new IOException("Can't create the requested directory " + newdir.getAbsolutePath());
 
 		return newdir;
@@ -4163,6 +4052,26 @@ class Common
 	static File getDir(String dir)
 	{
 		return new File(getFilesDir(), dir);
+	}
+
+	static boolean renameTo(File oldfile, File newfile) throws IOException
+	{
+		try
+		{
+			Files.move(oldfile.toPath(), newfile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+			return true;
+		} catch(IOException ignored) {
+			try(InputStream in = new FileInputStream(oldfile);
+				OutputStream out = new FileOutputStream(newfile))
+			{
+				byte[] buf = new byte[8192];
+				int len;
+				while((len = in.read(buf)) > 0)
+					out.write(buf, 0, len);
+
+				return oldfile.delete();
+			}
+		}
 	}
 
 	static boolean deleteFile(String filename)
@@ -4222,8 +4131,20 @@ class Common
 		return new File(dir, filename);
 	}
 
-	static Bitmap loadOrDownloadImage(String webURL, String filename, boolean forceDownload)
-										throws IOException, myIOException
+	static Bitmap loadImage(String fileName) throws IOException
+	{
+		File f = getExtDir("icons");
+		f = new File(f, fileName);
+
+		return loadImage(f);
+	}
+
+	static Bitmap loadImage(File file)
+	{
+		return BitmapFactory.decodeFile(file.getAbsolutePath(), options);
+	}
+
+	static Bitmap loadOrDownloadImage(String webURL, String filename, boolean forceDownload) throws IOException
 	{
 		Bitmap bm = null;
 		File file = getFile(filename);
@@ -4261,6 +4182,18 @@ class Common
 			{
 				LogMessage("Trying to get a frame from a MJPEG stream and set bm to it...");
 				bm = grabMjpegFrame(webURL);
+				LogMessage("Saving frame to storage...");
+				try(FileOutputStream out = new FileOutputStream(file))
+				{
+					LogMessage("Attempting to save to " + file.getAbsoluteFile());
+					bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
+					LogMessage("Got past the save... ");
+				} catch(Exception e) {
+					LogMessage("Error! " + e);
+					throw new IOException(e);
+				}
+
+				LogMessage("Frame saved successfully to storage...");
 			} else {
 				LogMessage("Trying to download a JPEG file and set bm to it...");
 				if(downloadToFile(file, webURL))
@@ -4281,16 +4214,18 @@ class Common
 		return null;
 	}
 
-	static byte[] downloadContent(String url) throws myIOException, IOException
+	static byte[] downloadContent(String url) throws IOException
 	{
 		if(url == null || url.isBlank())
 		{
 			Common.LogMessage("url is null or blank, bailing out...");
-			throw new myIOException("url is null or blank, bailing out...");
+			throw new IOException("url is null or blank, bailing out...");
 		}
 
-		try(Response response = newClient(url, true)
-				.newCall(newRequest(url).build()).execute())
+		OkHttpClient client = NetworkClient.getInstance();
+		Request request = NetworkClient.newRequest(url);
+
+		try(Response response = client.newCall(request).execute())
 		{
 			if(!response.isSuccessful())
 				throw new IOException("HTTP error " + response);
@@ -4299,12 +4234,12 @@ class Common
 		}
 	}
 
-	static boolean downloadToFile(String filename, String url) throws myIOException, IOException
+	static boolean downloadToFile(String filename, String url) throws IOException
 	{
 		return downloadToFile(getFile(filename), url);
 	}
 
-	static boolean downloadToFile(File file, String url) throws myIOException, IOException
+	static boolean downloadToFile(File file, String url) throws IOException
 	{
 		byte[] body = downloadContent(url);
 		if(body == null || body.length == 0)
@@ -4322,7 +4257,7 @@ class Common
 		fos.write(body);
 		fos.close();
 
-		if(!tmpfile.renameTo(file))
+		if(!renameTo(tmpfile, file))
 			throw new IOException("Failed to rename tmpfile " + tmpfile.getAbsolutePath() + " to desination file " +
 								  file.getAbsolutePath() + ", bailing out...");
 
@@ -4336,119 +4271,69 @@ class Common
 		Bitmap bm;
 		InputStream urlStream = null;
 
-		try(Response response = newClient(url, true).newCall(newRequest(url).build()).execute())
+		OkHttpClient client = NetworkClient.getStream(url);
+		Request request = NetworkClient.newRequest(url);
+
+		try(Response response = client.newCall(request).execute())
 		{
 			if(!response.isSuccessful())
+			{
+				LogMessage("Error! " + response);
 				throw new IOException("HTTP error " + response);
+			}
+
+			Common.LogMessage("Successfully connected to server, now to grab a frame...");
 
 			urlStream = response.body().byteStream();
 
 			BufferedReader reader = new BufferedReader(new InputStreamReader(urlStream, StandardCharsets.US_ASCII));
-			String line;
-			int contentLength = -1;
 
-			while((line = reader.readLine()) != null)
+			while(true)
 			{
-				if(line.isEmpty())
+
+				String line;
+				int contentLength = -1;
+
+				while((line = reader.readLine()) != null)
+				{
+					if(line.isEmpty() && contentLength > 0)
+						break;
+
+					if(line.startsWith("Content-Length:"))
+						contentLength = Integer.parseInt(line.substring(15).trim());
+				}
+
+				LogMessage("contentLength: " + contentLength);
+
+				byte[] imageBytes = new byte[contentLength];
+				int offset = 0;
+				while(offset < contentLength)
+				{
+					int read = urlStream.read(imageBytes, offset, contentLength - offset);
+					if(read == -1)
+					{
+						LogMessage("Stream ended prematurely");
+						throw new EOFException("Stream ended prematurely");
+					}
+					offset += read;
+				}
+
+				BitmapFactory.Options options = new BitmapFactory.Options();
+				bm = BitmapFactory.decodeStream(new ByteArrayInputStream(imageBytes), null, options);
+				if(bm != null)
+				{
+					Common.LogMessage("Got an image... wooo!");
 					break;
-
-				if(line.startsWith("Content-Length:"))
-					contentLength = Integer.parseInt(line.substring(15).trim());
+				} else {
+					Common.LogMessage("bm is null, let's go again...");
+				}
 			}
-
-			byte[] imageBytes = new byte[contentLength];
-			int offset = 0;
-			while(offset < contentLength)
-			{
-				int read = urlStream.read(imageBytes, offset, contentLength - offset);
-				if(read == -1)
-					throw new EOFException("Stream ended prematurely");
-				offset += read;
-			}
-
-			ByteArrayInputStream bais = new ByteArrayInputStream(imageBytes);
-			bm = BitmapFactory.decodeStream(bais);
-			Common.LogMessage("Got an image... wooo!");
 		} finally {
 			if(urlStream != null)
 				urlStream.close();
 		}
 
 		return bm;
-	}
-
-	public static String downloadText(String url) throws IOException
-	{
-		Common.LogMessage("Requesting data from " + url);
-
-		String output;
-
-		OkHttpClient client = new OkHttpClient.Builder()
-				.connectTimeout(60, TimeUnit.SECONDS)
-				.readTimeout(0, TimeUnit.MILLISECONDS)
-				.build();
-
-		try(Response response = client.newCall(newRequest(url).build()).execute())
-		{
-			if(!response.isSuccessful())
-				throw new IOException("HTTP error " + response);
-
-			output = response.body().string();
-			Common.LogMessage("Got text data... wooo!");
-			if(!output.isBlank())
-				return output;
-		}
-
-		return null;
-	}
-
-	static Request.Builder newRequest(String url)
-	{
-		return new Request.Builder().url(url)
-				.addHeader("Referer", url)
-				.addHeader("User-Agent", UA);
-	}
-
-	static OkHttpClient newClient(String url, boolean timeout)
-	{
-		OkHttpClient client;
-
-		Uri uri = Uri.parse(url);
-		if(uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
-		{
-			String[] UC = uri.getUserInfo().split(":");
-			LogMessage("uri username = " + UC[0]);
-
-			client = newClient(true, Credentials.basic(UC[0], UC[1]));
-		} else {
-			client = newClient(true, null);
-		}
-
-		return client;
-	}
-
-	static OkHttpClient newClient(boolean timeout, String credential)
-	{
-		OkHttpClient.Builder builder = new OkHttpClient.Builder()
-				.connectTimeout(60, TimeUnit.SECONDS)
-				.writeTimeout(60, TimeUnit.SECONDS)
-				.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS));
-
-		if(timeout)
-			builder.readTimeout(60, TimeUnit.SECONDS);
-		else
-			builder.readTimeout(0, TimeUnit.MILLISECONDS);
-
-		if(credential != null)
-			builder.authenticator((route, response) ->
-			{
-				if(responseCount(response) >= 3)
-					return null;
-
-				return response.request().newBuilder().header("Authorization", credential).build();
-			});
-
-		return builder.build();
 	}
 
 	static void getDayNightMode()

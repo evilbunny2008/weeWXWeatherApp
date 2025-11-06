@@ -20,7 +20,7 @@
     <string name="show_radar">Nyuan</string>
     <string name="show_forecast">Tik nhïïm</string>
     <string name="radarforecast">Në screen yic:</string>
-	<string name="radar">Röl</string>
+    <string name="radar">Röl</string>
     <string name="custom_url">Kë lëu bï ya lɔc: URL ë thëm ë thëm</string>
     <string name="fgColour">Wëdgk Sürë Pänd Pickër</string>
     <string name="bgColour">Wëdgätës Bäldng pëëd</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radyür URL akëc tääm. Yïn alëu ba lɔ në thäät yiic ba rot waar</string>
     <string name="radar_still_downloading">Radar thura aŋot ke cë yök</string>
     <string name="radar_download_failed">Acï wïc ba thura de radar yök</string>
+    <string name="failed_to_process_forecast_data">Ke kë cï looi bï kä cï yök looi</string>
 </resources>

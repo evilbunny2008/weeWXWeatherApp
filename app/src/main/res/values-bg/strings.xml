@@ -20,7 +20,7 @@
     <string name="show_radar">Покажи радар</string>
     <string name="show_forecast">Показване на прогноза</string>
     <string name="radarforecast">На главния екран:</string>
-	<string name="radar">Радар</string>
+    <string name="radar">Радар</string>
     <string name="custom_url">По избор: Персонализиран URL адрес</string>
     <string name="fgColour">Избор на цвят на преден план на джаджа</string>
     <string name="bgColour">Инструмент за избор на фонов цвят на джаджа</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL адресът на радар не е зададен. Можете да отидете в настройките, за да промените</string>
     <string name="radar_still_downloading">Радарното изображение все още се изтегля</string>
     <string name="radar_download_failed">Неуспешно изтегляне на радарното изображение</string>
+    <string name="failed_to_process_forecast_data">Неуспешна обработка на прогнозни данни</string>
 </resources>

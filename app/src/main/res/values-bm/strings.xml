@@ -20,7 +20,7 @@
     <string name="show_radar">Radar jira</string>
     <string name="show_forecast">A jira ko a bɛ fɔ</string>
     <string name="radarforecast">Écran principal kan:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">A bɛ se ka kɛ: URL ladamulen</string>
     <string name="fgColour">Widget Foreground Color Picker</string>
     <string name="bgColour">Widget Background Kulɛri Picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL ma sigi. Aw bɛ se ka taa settings la walasa ka fɛn caman Changer</string>
     <string name="radar_still_downloading">Radar ja bɛ ka telesarse hali bi</string>
     <string name="radar_download_failed">A ma se ka rada ja telesarse</string>
+    <string name="failed_to_process_forecast_data">A ma se ka kunnafoniw baara</string>
 </resources>

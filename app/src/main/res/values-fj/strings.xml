@@ -20,7 +20,7 @@
     <string name="show_radar">Vakaraitaka vei Ra</string>
     <string name="show_forecast">Digia na Iu</string>
     <string name="radarforecast">vi koya na vakarau ni duidui</string>
-	<string name="radar">rara</string>
+    <string name="radar">rara</string>
     <string name="custom_url">Digidigi: Na iVurevure ni URIL</string>
     <string name="fgColour">Dauvanua vinaka |</string>
     <string name="bgColour">Rai vakaveitaravi kei na colo ni Cocker Cocketr Pecker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Rada URL. Sa rawa mo lako ki na ituvatuva mo veisau</string>
     <string name="radar_still_downloading">Se lavetaka tiko ga na iyaloyalo ni kena lavetaki</string>
     <string name="radar_download_failed">Vauci me lavetaki na iyaloyalo ni radar</string>
+    <string name="failed_to_process_forecast_data">Maqosa na kena cakacakataki na itukutuku</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">রাডার দেখান</string>
     <string name="show_forecast">পূর্বাভাস দেখান</string>
     <string name="radarforecast">প্রধান পর্দায়:</string>
-	<string name="radar">রাডার</string>
+    <string name="radar">রাডার</string>
     <string name="custom_url">ঐচ্ছিক: কাস্টম URL</string>
     <string name="fgColour">উইজেট ফোরগ্রাউন্ড কালার পিকার</string>
     <string name="bgColour">উইজেট ব্যাকগ্রাউন্ড কালার পিকার</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">রাডার URL সেট করা হয়নি। আপনি সেটিংসে গিয়ে পরিবর্তন করতে পারেন।</string>
     <string name="radar_still_downloading">রাডার ইমেজ এখনও ডাউনলোড হচ্ছে</string>
     <string name="radar_download_failed">রাডার ইমেজ ডাউনলোড করতে ব্যর্থ হয়েছে</string>
+    <string name="failed_to_process_forecast_data">পূর্বাভাস তথ্য প্রক্রিয়া করতে ব্যর্থ</string>
 </resources>

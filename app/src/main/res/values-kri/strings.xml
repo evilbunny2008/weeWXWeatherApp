@@ -20,7 +20,7 @@
     <string name="show_radar">Sho Radar</string>
     <string name="show_forecast">Show fɔkɔs</string>
     <string name="radarforecast">Na di men skrin:</string>
-	<string name="radar">Reda we dɛn de yuz fɔ mek reda</string>
+    <string name="radar">Reda we dɛn de yuz fɔ mek reda</string>
     <string name="custom_url">Opshɔnal: Kɔstɔm URL</string>
     <string name="fgColour">Widget forreground color picker</string>
     <string name="bgColour">Widget bakgrunn color picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar url nɔ sɛt. Yu kin go na sɛtin dɛn fɔ chenj</string>
     <string name="radar_still_downloading">Radar Image stil de dawnlod</string>
     <string name="radar_download_failed">Failed fɔ dawnlod di reda imej</string>
+    <string name="failed_to_process_forecast_data">Failed fɔ prosɛs fɔkɔs data</string>
 </resources>

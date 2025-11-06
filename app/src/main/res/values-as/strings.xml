@@ -20,7 +20,7 @@
     <string name="show_radar">ৰাডাৰ দেখুৱাওক</string>
     <string name="show_forecast">পূৰ্বাভাস দেখুৱাওক</string>
     <string name="radarforecast">মূল পৰ্দাত:</string>
-	<string name="radar">ৰাডাৰ</string>
+    <string name="radar">ৰাডাৰ</string>
     <string name="custom_url">ঐচ্ছিক: স্বনিৰ্বাচিত URL</string>
     <string name="fgColour">ৱিজেট ফ\'ৰগ্ৰাউণ্ড ৰং পিকাৰ</string>
     <string name="bgColour">ৱিজেট পটভূমিৰ ৰং পিকাৰ</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ৰাডাৰৰ URL ছেট কৰা হোৱা নাই। সলনি কৰিবলৈ আপুনি ছেটিংছলৈ যাব পাৰে।</string>
     <string name="radar_still_downloading">ৰাডাৰৰ ছবি এতিয়াও ডাউনলোড কৰি আছে।</string>
     <string name="radar_download_failed">ৰাডাৰৰ ছবিখন ডাউনলোড কৰাত ব্যৰ্থ</string>
+    <string name="failed_to_process_forecast_data">পূৰ্বাভাস তথ্য প্ৰক্ৰিয়াকৰণ কৰাত ব্যৰ্থ</string>
 </resources>

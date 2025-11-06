@@ -20,7 +20,7 @@
     <string name="show_radar">రాడార్ చూపించు</string>
     <string name="show_forecast">సూచనను చూపు</string>
     <string name="radarforecast">ప్రధాన తెరపై:</string>
-	<string name="radar">రాడార్</string>
+    <string name="radar">రాడార్</string>
     <string name="custom_url">ఐచ్ఛికం: అనుకూల URL</string>
     <string name="fgColour">విడ్జెట్ ముందుభాగం రంగు ఎంపిక</string>
     <string name="bgColour">విడ్జెట్ బ్యాక్‌గ్రౌండ్ కలర్ పిక్కర్</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">రాడార్ URL సెట్ చేయబడలేదు. మీరు మార్చడానికి సెట్టింగ్‌లకు వెళ్లవచ్చు</string>
     <string name="radar_still_downloading">రాడార్ చిత్రం ఇప్పటికీ డౌన్‌లోడ్ అవుతోంది</string>
     <string name="radar_download_failed">రాడార్ చిత్రాన్ని డౌన్‌లోడ్ చేయడంలో విఫలమైంది</string>
+    <string name="failed_to_process_forecast_data">సూచన డేటాను ప్రాసెస్ చేయడంలో విఫలమైంది</string>
 </resources>

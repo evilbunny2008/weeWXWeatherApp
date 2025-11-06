@@ -20,7 +20,7 @@
     <string name="show_radar">Nuna radar</string>
     <string name="show_forecast">Nuna hasashen</string>
     <string name="radarforecast">A kan babban allo:</string>
-	<string name="radar">Injin radar</string>
+    <string name="radar">Injin radar</string>
     <string name="custom_url">Zabi: URL na al\'ada</string>
     <string name="fgColour">Mai wasan Widget mai haske</string>
     <string name="bgColour">Widget na Farko na Farko</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL ba saita. Kuna iya zuwa saiti don canzawa</string>
     <string name="radar_still_downloading">Hoton Radar har yanzu download</string>
     <string name="radar_download_failed">Ba a yi nasarar saukar da hoton Radar</string>
+    <string name="failed_to_process_forecast_data">Ba a yi nasarar adana bayanan hasashe ba</string>
 </resources>

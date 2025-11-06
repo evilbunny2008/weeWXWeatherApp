@@ -20,7 +20,7 @@
     <string name="show_radar">Asehoy ny radar</string>
     <string name="show_forecast">Asehoy ny Forecast</string>
     <string name="radarforecast">Amin\'ny efijery lehibe:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Safidy: URL mahazatra</string>
     <string name="fgColour">Mpisambotra loko miloko Widget mialoha</string>
     <string name="bgColour">Mpikambana miloko ivelany Widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Tsy napetraka ny Radar URL. Azonao atao ny mandeha amin\'ny toe-javatra hiova</string>
     <string name="radar_still_downloading">Ny sary radar dia mbola misintona</string>
     <string name="radar_download_failed">Tsy nahavita nampiditra ny sary radar</string>
+    <string name="failed_to_process_forecast_data">Tsy nahomby ny fizotran\'ny angon-drakitra</string>
 </resources>

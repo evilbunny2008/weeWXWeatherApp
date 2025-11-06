@@ -20,7 +20,7 @@
     <string name="show_radar">Sýna Radar</string>
     <string name="show_forecast">Sýna spá</string>
     <string name="radarforecast">Á aðalskjá:</string>
-	<string name="radar">Ratsjá</string>
+    <string name="radar">Ratsjá</string>
     <string name="custom_url">Valfrjálst: Sérsniðin vefslóð</string>
     <string name="fgColour">Græja forgrunnslitavali</string>
     <string name="bgColour">Bakgrunnslitaval búnaðar</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Ratsjárslóð ekki stillt. Þú getur farið í stillingar til að breyta</string>
     <string name="radar_still_downloading">Ratsjármynd er enn að hlaðast niður</string>
     <string name="radar_download_failed">Mistókst að hlaða niður ratsjármyndinni</string>
+    <string name="failed_to_process_forecast_data">Mistókst að vinna úr spágögnum</string>
 </resources>

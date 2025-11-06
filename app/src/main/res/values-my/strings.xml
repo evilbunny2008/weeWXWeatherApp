@@ -20,7 +20,7 @@
     <string name="show_radar">ရေဒါပြတယ်</string>
     <string name="show_forecast">ခန့်မှန်းချက်ကိုပြသပါ</string>
     <string name="radarforecast">ပင်မမျက်နှာပြင်တွင် -</string>
-	<string name="radar">ရေဒါ</string>
+    <string name="radar">ရေဒါ</string>
     <string name="custom_url">optional ကို: Custom URL</string>
     <string name="fgColour">ဝစ်ဂျက် foreground အရောင်ကောက်ယူ</string>
     <string name="bgColour">ဝစ်ဂျက်နောက်ခံအရောင်ရွေးသူ</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">radar URL မသတ်မှတ်ပါ ပြောင်းလဲရန်ချိန်ညှိချက်များသို့သွားနိုင်သည်။</string>
     <string name="radar_still_downloading">ရေဒါပုံရိပ်နေဆဲဒေါင်းလုပ်လုပ်နေသည်။</string>
     <string name="radar_download_failed">ရေဒါပုံရိပ်ကိုဒေါင်းလုပ်ဆွဲရန်မအောင်မြင်ပါ</string>
+    <string name="failed_to_process_forecast_data">ခန့်မှန်းချက်ဒေတာလုပ်ငန်းစဉ်မအောင်မြင်ပါ</string>
 </resources>

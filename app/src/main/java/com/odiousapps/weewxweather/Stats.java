@@ -859,7 +859,7 @@ public class Stats extends Fragment
 
 			sb.append(Common.html_footer);
 
-			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/drawable/",
+			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/",
 					sb.toString(), "text/html", "utf-8", null));
 
 			stopRefreshing();

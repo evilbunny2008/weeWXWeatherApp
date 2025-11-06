@@ -20,7 +20,7 @@
     <string name="show_radar">Taispeáin Radar</string>
     <string name="show_forecast">Taispeáin Réamhaisnéis</string>
     <string name="radarforecast">Ar an bPríomhscáileán:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Roghnach: URL saincheaptha</string>
     <string name="fgColour">Roghnóir Dathanna Tulra Giuirléid</string>
     <string name="bgColour">Roghnóir Dath Cúlra Giuirléid</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL Radar gan socraithe. Is féidir leat dul go dtí socruithe a athrú</string>
     <string name="radar_still_downloading">Tá íomhá radar á íoslódáil go fóill</string>
     <string name="radar_download_failed">Theip ar an íomhá radar a íoslódáil</string>
+    <string name="failed_to_process_forecast_data">Theip ar phróiseáil sonraí réamhaisnéise</string>
 </resources>

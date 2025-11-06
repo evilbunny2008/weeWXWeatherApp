@@ -20,7 +20,7 @@
     <string name="show_radar">ರಾಡಾರ್ ತೋರಿಸಿ</string>
     <string name="show_forecast">ಮುನ್ಸೂಚನೆಯನ್ನು ತೋರಿಸಿ</string>
     <string name="radarforecast">ಮುಖ್ಯ ಪರದೆಯಲ್ಲಿ:</string>
-	<string name="radar">ರಾಡಾರ್</string>
+    <string name="radar">ರಾಡಾರ್</string>
     <string name="custom_url">ಐಚ್ಛಿಕ: ಕಸ್ಟಮ್ URL</string>
     <string name="fgColour">ವಿಜೆಟ್ ಫೋರ್ಗ್ರೌಂಡ್ ಕಲರ್ ಪಿಕ್ಕರ್</string>
     <string name="bgColour">ವಿಜೆಟ್ ಹಿನ್ನೆಲೆ ಬಣ್ಣ ಪಿಕ್ಕರ್</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ರಾಡಾರ್ URL ಹೊಂದಿಸಲಾಗಿಲ್ಲ. ಬದಲಾಯಿಸಲು ನೀವು ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಹೋಗಬಹುದು</string>
     <string name="radar_still_downloading">ರಾಡಾರ್ ಚಿತ್ರ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ</string>
     <string name="radar_download_failed">ರಾಡಾರ್ ಚಿತ್ರವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ</string>
+    <string name="failed_to_process_forecast_data">ಮುನ್ಸೂಚನೆ ಡೇಟಾವನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ವಿಫಲವಾಗಿದೆ</string>
 </resources>

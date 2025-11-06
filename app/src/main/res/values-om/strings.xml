@@ -20,7 +20,7 @@
     <string name="show_radar">Raadaara agarsiisi</string>
     <string name="show_forecast">Raaga agarsiisi</string>
     <string name="radarforecast">Iskiriinii guddaa irratti:</string>
-	<string name="radar">Raadaara</string>
+    <string name="radar">Raadaara</string>
     <string name="custom_url">Filannoo: URL amala</string>
     <string name="fgColour">Widget halluu fuulduraa kan fudhatu</string>
     <string name="bgColour">Widget Duubbee Halluu Filannoo</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL raadaraa hin saagamne. Jijjiiruuf gara settings deemuu dandeessa</string>
     <string name="radar_still_downloading">Fakkiin raadaraa ammallee buufachaa jira</string>
     <string name="radar_download_failed">Fakkii raadaraa buufachuu dadhabe</string>
+    <string name="failed_to_process_forecast_data">Daataa tilmaama adeemsisuu hin dandeenye</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Pappicinikang Radar</string>
     <string name="show_forecast">Pappicinikang Pappicinikang</string>
     <string name="radarforecast">Ri layara\'na Main:</string>
-	<string name="radar">Baju</string>
+    <string name="radar">Baju</string>
     <string name="custom_url">Opsional: URL Kiasa</string>
     <string name="fgColour">Pa\'baeng-baeng Warna Angkatan Latar Belakang</string>
     <string name="bgColour">Latar Belakang Latar Belakang</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL radar teai set. Akkullei a\'lampa mange ri setting-setting untu\' a\'jari beru</string>
     <string name="radar_still_downloading">Gambara\'na radar nia\' ija nidownload</string>
     <string name="radar_download_failed">Punna nia\' tau a\'lampa mange ri gambara\' radar</string>
+    <string name="failed_to_process_forecast_data">Punna nia\' tau a\'lampa mange ri prosesna</string>
 </resources>

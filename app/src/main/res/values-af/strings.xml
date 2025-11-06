@@ -20,7 +20,7 @@
     <string name="show_radar">Wys Radar</string>
     <string name="show_forecast">Wys voorspelling</string>
     <string name="radarforecast">Op hoofskerm:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opsioneel: Gepasmaakte URL</string>
     <string name="fgColour">Widget Voorgrond Kleur Kieser</string>
     <string name="bgColour">Widget agtergrondkleurkieser</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar-URL nie gestel nie. Jy kan na instellings gaan om te verander</string>
     <string name="radar_still_downloading">Radarbeeld word steeds afgelaai</string>
     <string name="radar_download_failed">Kon nie die radarprent aflaai nie</string>
+    <string name="failed_to_process_forecast_data">Kon nie voorspellingsdata verwerk nie</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Montre Radaar</string>
     <string name="show_forecast">Montre Previzyon</string>
     <string name="radarforecast">Lo lekran Prensipal:</string>
-	<string name="radar">Radat</string>
+    <string name="radar">Radat</string>
     <string name="custom_url">Opsyonnel: URL personnalize</string>
     <string name="fgColour">Pikater avan plan lo kouler</string>
     <string name="bgColour">Pikater Kouler Par deryer</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL radar pa met. Ou kapab al dan bann paramet pour sanze</string>
     <string name="radar_still_downloading">Zimaz radar i ankor pe telesarz</string>
     <string name="radar_download_failed">Pa reisi telesarz zimaz radar</string>
+    <string name="failed_to_process_forecast_data">Pa reisi pou proses lenformasyon</string>
 </resources>

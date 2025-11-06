@@ -20,7 +20,7 @@
     <string name="show_radar">Ratidza Radar</string>
     <string name="show_forecast">Ratidza Forecast</string>
     <string name="radarforecast">Pane main skrini:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Inesarudzo: Tsika URL</string>
     <string name="fgColour">Weigge Fortlow Ruvara Mutengesi</string>
     <string name="bgColour">Widget Background Color Portker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL isina kuiswa. Iwe unogona kuenda kune marongero ekuchinja</string>
     <string name="radar_still_downloading">Radar mufananidzo achiri kurodha</string>
     <string name="radar_download_failed">Kukundikana kutora iyo radar mufananidzo</string>
+    <string name="failed_to_process_forecast_data">Yakundikana kugadzirisa data rekufunga</string>
 </resources>

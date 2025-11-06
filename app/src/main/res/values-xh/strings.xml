@@ -20,7 +20,7 @@
     <string name="show_radar">Bonisa i-radar</string>
     <string name="show_forecast">Veza uqikelelo</string>
     <string name="radarforecast">Kwisikrini esikhulu:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Inketho: i-URL yesiko</string>
     <string name="fgColour">I-Poipget Shicial Picker Picker</string>
     <string name="bgColour">Umzobo ongemva wewijethi</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">I-URL RL engaseti. Ungaya kwiisetingi ukutshintsha</string>
     <string name="radar_still_downloading">Umfanekiso we-radar usazikhuphela</string>
     <string name="radar_download_failed">Ayiphumelelanga ukukhuphela umfanekiso we-radar</string>
+    <string name="failed_to_process_forecast_data">Ayiphumelelanga ukuqhuba idatha yemo</string>
 </resources>

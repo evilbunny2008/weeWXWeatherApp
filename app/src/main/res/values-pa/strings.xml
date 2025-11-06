@@ -20,7 +20,7 @@
     <string name="show_radar">ਰਾਡਾਰ ਦਿਖਾਓ</string>
     <string name="show_forecast">ਪੂਰਵ ਅਨੁਮਾਨ ਦਿਖਾਓ</string>
     <string name="radarforecast">ਮੁੱਖ ਸਕ੍ਰੀਨ \'ਤੇ:</string>
-	<string name="radar">ਰਾਡਾਰ</string>
+    <string name="radar">ਰਾਡਾਰ</string>
     <string name="custom_url">ਵਿਕਲਪਿਕ: ਕਸਟਮ URL</string>
     <string name="fgColour">ਵਿਜੇਟ ਫੋਰਗਰਾਉਂਡ ਰੰਗ ਚੋਣਕਾਰ</string>
     <string name="bgColour">ਵਿਜੇਟ ਬੈਕਗ੍ਰਾਊਂਡ ਰੰਗ ਚੋਣਕਾਰ</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ਰਾਡਾਰ URL ਸੈੱਟ ਨਹੀਂ ਹੈ। ਤੁਸੀਂ ਬਦਲਣ ਲਈ ਸੈਟਿੰਗਾਂ \'ਤੇ ਜਾ ਸਕਦੇ ਹੋ।</string>
     <string name="radar_still_downloading">ਰਾਡਾਰ ਚਿੱਤਰ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ।</string>
     <string name="radar_download_failed">ਰਾਡਾਰ ਚਿੱਤਰ ਨੂੰ ਡਾਊਨਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="failed_to_process_forecast_data">ਪੂਰਵ ਅਨੁਮਾਨ ਡੇਟਾ ਦੀ ਪ੍ਰਕਿਰਿਆ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
 </resources>

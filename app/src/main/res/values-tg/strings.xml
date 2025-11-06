@@ -20,7 +20,7 @@
     <string name="show_radar">Нишон додани радар</string>
     <string name="show_forecast">Намоиш пешгӯӣ</string>
     <string name="radarforecast">Дар экрани асосӣ:</string>
-	<string name="radar">Радар</string>
+    <string name="radar">Радар</string>
     <string name="custom_url">Ихтиёрӣ: URL-и фармоишӣ</string>
     <string name="fgColour">Робитаи ранги пӯшида</string>
     <string name="bgColour">Андозаи фарогирии дуввум</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL Radar насб нашудааст. Шумо метавонед ба Танзимот муроҷиат кунед</string>
     <string name="radar_still_downloading">Тасвири радаркорӣ ҳоло ҳам зеркашӣ аст</string>
     <string name="radar_download_failed">Тасвири радариро зеркашӣ кард</string>
+    <string name="failed_to_process_forecast_data">Маълумоти пешакии маълумотро иҷро накард</string>
 </resources>

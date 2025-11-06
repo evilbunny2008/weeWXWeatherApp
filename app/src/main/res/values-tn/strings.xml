@@ -20,7 +20,7 @@
     <string name="show_radar">Bontsha Radara</string>
     <string name="show_forecast">Bontsha Ponelopele</string>
     <string name="radarforecast">Mo sekirining se Segolo:</string>
-	<string name="radar">Radara</string>
+    <string name="radar">Radara</string>
     <string name="custom_url">Ga go tlhokege: URL e e Tlwaelegileng</string>
     <string name="fgColour">Motlhopi wa Mmala wa Mebala ya Dilo Tse di Kwa Tsamalatsa</string>
     <string name="bgColour">Motlhopi wa Mmala wa Lemorago la Widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL ya radara ga e a setiwa. O ka ya kwa diseting go fetoga</string>
     <string name="radar_still_downloading">Setshwantsho sa radara se sa ntse se laisolola</string>
     <string name="radar_download_failed">O paletswe ke go laisolola setshwantsho sa radara</string>
+    <string name="failed_to_process_forecast_data">Go palelwa ke go dirisa tshedimosetso e e bonelwang pele</string>
 </resources>

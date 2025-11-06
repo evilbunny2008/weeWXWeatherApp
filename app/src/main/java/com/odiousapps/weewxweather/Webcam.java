@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,9 +17,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 public class Webcam extends Fragment
 {
-	private boolean isVisible = false;
-	private Thread t = null;
-	private long tStart;
+	private Thread webcamThread = null;
+	private long wcStart;
 	private RotateLayout rl;
 	private ImageView iv;
 	private SwipeRefreshLayout swipeLayout;
@@ -40,12 +38,20 @@ public class Webcam extends Fragment
 		{
 			swipeLayout.setRefreshing(true);
 			Common.LogMessage("onRefresh();");
-			loadWebcamImage(true);
+			loadWebcamImage();
 		});
+
+		return rootView;
+	}
+
+	@Override
+	public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
+	{
+		super.onViewCreated(view, savedInstanceState);
 
 		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
-		return rootView;
+		loadWebcamImage();
 	}
 
 	@Override
@@ -62,13 +68,9 @@ public class Webcam extends Fragment
 			swipeLayout.post(() -> swipeLayout.setRefreshing(false));
 	}
 
-	private void loadWebcamImage(final boolean forceDownload)
+	private void loadWebcamImage()
 	{
 		Common.LogMessage("loadWebcamImage...");
-
-		Context context = weeWXApp.getInstance();
-		if(context == null)
-			return;
 
 		final String webURL = Common.GetStringPref("WEBCAM_URL", "");
 		if(webURL == null || webURL.isBlank())
@@ -81,35 +83,31 @@ public class Webcam extends Fragment
 
 		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
 
-		if(t != null)
+		if(webcamThread != null)
 		{
-			if(tStart + 30 > current_time)
-				return;
+			if(webcamThread.isAlive())
+			{
+				if(wcStart + 30 > current_time)
+					return;
 
-			tStart = current_time;
+				webcamThread.interrupt();
+			}
 
-			if(t.isAlive())
-				t.interrupt();
-
-			t = null;
+			webcamThread = null;
 		}
 
-		t = new Thread(() ->
+		wcStart = current_time;
+
+		webcamThread = new Thread(() ->
 		{
 			try
 			{
-				Bitmap bm = Common.loadOrDownloadImage(webURL, "webcam.jpg", forceDownload);
-
+				Bitmap bm = Common.loadOrDownloadImage(webURL, "webcam.jpg", true);
 				if(bm == null)
 				{
-					iv.post(() ->
-					{
-						iv.setImageDrawable(weeWXApp.getAndroidDrawable(R.drawable.nowebcam));
-						iv.invalidate();
-					});
-
+					noImageToShow("There was a problem with the webcam URL");
 					stopRefreshing();
-
+					wcStart = 0;
 					return;
 				}
 
@@ -136,39 +134,18 @@ public class Webcam extends Fragment
 
 				Common.LogMessage("Finished reading webcam.jpg into memory and iv should have updated...");
 
-			} catch(InterruptedIOException ignored) {
+			} catch(InterruptedIOException e) {
+				noImageToShow("Error: " + e);
 			} catch(Exception e) {
-				Common.doStackOutput(e);
+				noImageToShow("Error: " + e);
+				//Common.doStackOutput(e);
 			}
 
 			stopRefreshing();
+			wcStart = 0;
 		});
 
-		t.start();
-	}
-
-	public void onResume()
-	{
-		super.onResume();
-		Common.LogMessage("webcam.java -- registerReceiver");
-
-		if(isVisible)
-			return;
-
-		isVisible = true;
-
-		loadWebcamImage(false);
-	}
-
-	public void onPause()
-	{
-		super.onPause();
-		Common.LogMessage("webcam.java -- unregisterReceiver");
-
-		if(!isVisible)
-			return;
-
-		isVisible = false;
+		webcamThread.start();
 	}
 
 	private final Observer<String> notificationObserver = str ->
@@ -176,9 +153,19 @@ public class Webcam extends Fragment
 		Common.LogMessage("notificationObserver == " + str);
 
 		if(str.equals(Common.UPDATE_INTENT) || str.equals(Common.REFRESH_INTENT))
-			loadWebcamImage(true);
+			loadWebcamImage();
 
 		if(str.equals(Common.EXIT_INTENT))
 			onPause();
 	};
+
+	private void noImageToShow(String text)
+	{
+		Bitmap bm = weeWXApp.textToBitmap(text);
+		iv.post(() ->
+		{
+			iv.setImageBitmap(bm);
+			iv.invalidate();
+		});
+	}
 }

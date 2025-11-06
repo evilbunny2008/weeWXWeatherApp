@@ -20,7 +20,7 @@
     <string name="show_radar">Erekana Radar</string>
     <string name="show_forecast">Kwerekana ibyateganijwe</string>
     <string name="radarforecast">Kuri Mugaragaza:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Bidashoboka: URL yihariye</string>
     <string name="fgColour">Widget Ibara ryatoranijwe</string>
     <string name="bgColour">Widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL ntabwo yashyizweho. Urashobora kujya muri Igenamiterere kugirango uhindure</string>
     <string name="radar_still_downloading">Ishusho ya radar iracyakuramo</string>
     <string name="radar_download_failed">Kunanirwa gukuramo ishusho ya radar</string>
+    <string name="failed_to_process_forecast_data">Kunanirwa gutunganya amakuru yimitaza</string>
 </resources>

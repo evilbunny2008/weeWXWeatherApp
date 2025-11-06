@@ -20,7 +20,7 @@
     <string name="show_radar">Whakaatuhia te radar</string>
     <string name="show_forecast">Whakaatuhia te matapae</string>
     <string name="radarforecast">I te mata matua:</string>
-	<string name="radar">Irirangi whakaata</string>
+    <string name="radar">Irirangi whakaata</string>
     <string name="custom_url">Kōwhiringa: URL ritenga</string>
     <string name="fgColour">Te papa perehana papaa</string>
     <string name="bgColour">Widget papamuri papamuri tae</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Kaore i whakaritea te URL URL. Ka taea e koe te haere ki nga tautuhinga ki te whakarereke</string>
     <string name="radar_still_downloading">Kei te tango tonu te whakaahua radar</string>
     <string name="radar_download_failed">I rahua te tango i te ahua radar</string>
+    <string name="failed_to_process_forecast_data">I rahua te tukatuka i nga raraunga tohu</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Ирба Радар</string>
     <string name="show_forecast">Аԥхьагәаҭара</string>
     <string name="radarforecast">Аекран хадаҿы:</string>
-	<string name="radar">Арадар</string>
+    <string name="radar">Арадар</string>
     <string name="custom_url">Иаҭахым: URL ҷыда</string>
     <string name="fgColour">Авиджет Ԥасатәи Аԥштәы апикер</string>
     <string name="bgColour">Авиджет Аҵыхәтәа Аԥштәы апикер</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Радар URL еиқәыршәам. Аԥсахразы архиарақәа рахь шәцар шәылшоит</string>
     <string name="radar_still_downloading">Арадартә сахьа уажәгьы ихәыҵгоит</string>
     <string name="radar_download_failed">Арадартә сахьа ахәыҵагалатәӡам</string>
+    <string name="failed_to_process_forecast_data">Аԥхьагәаҭаратә дыррақәа аус рыдулара алыршахеит</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Ցույց տալ Ռադարը</string>
     <string name="show_forecast">Ցույց տալ կանխատեսումը</string>
     <string name="radarforecast">Հիմնական էկրանին</string>
-	<string name="radar">Ռադար</string>
+    <string name="radar">Ռադար</string>
     <string name="custom_url">Լրացուցիչ՝ հատուկ URL</string>
     <string name="fgColour">Վիդջեթի առաջին պլանի գույնի ընտրիչ</string>
     <string name="bgColour">Վիջեթի ֆոնի գույնի ընտրիչ</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Ռադարի URL-ը սահմանված չէ: Փոխելու համար կարող եք գնալ կարգավորումներ:</string>
     <string name="radar_still_downloading">Ռադարի պատկերը դեռ ներբեռնվում է:</string>
     <string name="radar_download_failed">Չհաջողվեց ներբեռնել ռադարի պատկերը</string>
+    <string name="failed_to_process_forecast_data">Չհաջողվեց մշակել կանխատեսման տվյալները</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Laga Radar</string>
     <string name="show_forecast">Show Okuteebereza</string>
     <string name="radarforecast">Ku ssirini enkulu:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Okwesalirawo: URL eya bulijjo</string>
     <string name="fgColour">Widget foreground langi elonda langi</string>
     <string name="bgColour">Widget Background Langi Picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">radar URL teteekeddwa. Osobola okugenda mu settings okukyusa</string>
     <string name="radar_still_downloading">Ekifaananyi kya radar kikyawanula</string>
     <string name="radar_download_failed">Kiremeddwa okuwanula ekifaananyi kya radar</string>
+    <string name="failed_to_process_forecast_data">eremereddwa okukola ku bikwata ku kuteebereza</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">ڕادار پیشان بدە</string>
     <string name="show_forecast">پێشبینی پێشبینی بکە</string>
     <string name="radarforecast">لەسەر شاشەی سەرەکی:</string>
-	<string name="radar">ڕادار</string>
+    <string name="radar">ڕادار</string>
     <string name="custom_url">ئیختیاری: URLی تایبەت</string>
     <string name="fgColour">ڕەنگی پێشەوەی ویجت</string>
     <string name="bgColour">ویجت باکگراوند ڕەنگ هەڵگر</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ڕادار URL دانەنراوە. دەتوانیت بچیتە سەر ڕێکخستنەکان بۆ گۆڕانکاری</string>
     <string name="radar_still_downloading">وێنەی ڕادار هێشتا دابەزاندن</string>
     <string name="radar_download_failed">شکستی هێنا لە دابەزاندنی وێنەی ڕادار</string>
+    <string name="failed_to_process_forecast_data">شکستی هێنا لە پرۆسێسکردنی داتاکانی پێشبینی</string>
 </resources>

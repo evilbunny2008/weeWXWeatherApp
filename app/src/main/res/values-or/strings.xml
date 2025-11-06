@@ -20,7 +20,7 @@
     <string name="show_radar">ରାଡାର ଦେଖାନ୍ତୁ |</string>
     <string name="show_forecast">ପୂର୍ବାନୁମାନ ଦେଖାନ୍ତୁ |</string>
     <string name="radarforecast">ମୁଖ୍ୟ ପରଦାରେ:</string>
-	<string name="radar">ରାଡାର |</string>
+    <string name="radar">ରାଡାର |</string>
     <string name="custom_url">ବ tion କଳ୍ପିକ: କଷ୍ଟମ୍ URL |</string>
     <string name="fgColour">ୱିଜେଟ୍ ଫରଗ୍ରାଉଣ୍ଡ୍ ରଙ୍ଗ ପିକର୍ |</string>
     <string name="bgColour">ୱିଜେଟ୍ ପୃଷ୍ଠଭୂମି ରଙ୍ଗ ପିକର୍ |</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">ରାଡାର URL ସେଟ୍ ହୋଇନାହିଁ | ଆପଣ ପରିବର୍ତ୍ତନ କରିବାକୁ ସେଟିଂକୁ ଯାଇପାରିବେ |</string>
     <string name="radar_still_downloading">ରାଡାର ପ୍ରତିଛବି ଏପର୍ଯ୍ୟନ୍ତ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
     <string name="radar_download_failed">ରାଡାର ପ୍ରତିଛବି ଡାଉନଲୋଡ୍ କରିବାରେ ବିଫଳ |</string>
+    <string name="failed_to_process_forecast_data">ପୂର୍ବାନୁମାନ ତଥ୍ୟ ପ୍ରକ୍ରିୟାକରଣ କରିବାରେ ବିଫଳ |</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Nyua̱n</string>
     <string name="show_forecast">kä ta̱a̱ in lät kɛ naath</string>
     <string name="radarforecast">Kä i̱thkri̱i̱n:</string>
-	<string name="radar">thok Radard</string>
+    <string name="radar">thok Radard</string>
     <string name="custom_url">Kä tin görkɛ: Kä Courstent URL</string>
     <string name="fgColour">Wi̱gɛnɛgi̱rɔɔn Kɔör Picker</string>
     <string name="bgColour">Wi̱gɛn Bagrɔɔn mi̱ Di̱i̱t mi̱ cɔali̱ Paktɛr</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radard URL /cɛ te thi̱n. Ji̱n deri jɛ la̱th lät kɛ ɣöö biɛ gɛr</string>
     <string name="radar_still_downloading">Kä thurɛ Radar ŋotdɛ ka̱nkɛ</string>
     <string name="radar_download_failed">/Cɛ rɔ moc kɛ ɣöö bɛ thurɛ radar</string>
+    <string name="failed_to_process_forecast_data">Mi ci thiɛl luɔt kɛ läth data ni̱ tin ca lar i̱ ba lar</string>
 </resources>

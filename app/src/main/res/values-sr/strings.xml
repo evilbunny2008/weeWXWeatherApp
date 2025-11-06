@@ -20,7 +20,7 @@
     <string name="show_radar">Схов Радар</string>
     <string name="show_forecast">Прикажи прогнозу</string>
     <string name="radarforecast">На главном екрану:</string>
-	<string name="radar">Радар</string>
+    <string name="radar">Радар</string>
     <string name="custom_url">Опционално: прилагођени УРЛ</string>
     <string name="fgColour">Бирач боја предњег плана виџета</string>
     <string name="bgColour">Бирач боја позадине виџета</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">УРЛ радара није подешен. Можете да одете у подешавања да промените</string>
     <string name="radar_still_downloading">Радарска слика се још увек преузима</string>
     <string name="radar_download_failed">Преузимање радарске слике није успело</string>
+    <string name="failed_to_process_forecast_data">Обрада података прогнозе није успела</string>
 </resources>

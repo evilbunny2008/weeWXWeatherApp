@@ -20,7 +20,7 @@
     <string name="show_radar">Peuleumah Radar</string>
     <string name="show_forecast">Peuleumah Peuneugah</string>
     <string name="radarforecast">Bak layar Utama:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opsional: URL Reusam</string>
     <string name="fgColour">Widget Pencuri Warna Lintas</string>
     <string name="bgColour">Widget Belakang Warna Warna</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL Radar hana set. Kamoe jeut jak bak setting untuk meu ubah</string>
     <string name="radar_still_downloading">Gambar radar mantong download</string>
     <string name="radar_download_failed">Digagal download gamba radar</string>
+    <string name="failed_to_process_forecast_data">Gagal keu geuproses data ramalan</string>
 </resources>

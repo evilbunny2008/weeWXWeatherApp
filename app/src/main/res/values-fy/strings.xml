@@ -20,7 +20,7 @@
     <string name="show_radar">Radar sjen litte</string>
     <string name="show_forecast">Lit Prognose sjen</string>
     <string name="radarforecast">Op haadskerm:</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opsjoneel: Oanpaste URL</string>
     <string name="fgColour">Widget Foargrûn Color Picker</string>
     <string name="bgColour">Widget Background Color Picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar URL net ynsteld. Jo kinne nei ynstellings gean om te feroarjen</string>
     <string name="radar_still_downloading">Radarôfbylding wurdt noch ynladen</string>
     <string name="radar_download_failed">It downloaden fan de radarôfbylding is mislearre</string>
+    <string name="failed_to_process_forecast_data">It ferwurkjen fan prognosegegevens is net slagge</string>
 </resources>

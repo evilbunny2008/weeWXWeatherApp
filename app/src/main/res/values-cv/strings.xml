@@ -20,7 +20,7 @@
     <string name="show_radar">Радар кăтартăр</string>
     <string name="show_forecast">Прогноз кăтартăр</string>
     <string name="radarforecast">Тĕп экран çинче:</string>
-	<string name="radar">Радарла</string>
+    <string name="radar">Радарла</string>
     <string name="custom_url">Опционаллă: Ятарлă URL</string>
     <string name="fgColour">Тĕлĕкĕмĕн малти планĕн тĕсĕ Пикер</string>
     <string name="bgColour">Виджет фонĕ тĕсĕ Пикер</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Радар URL-адрес мар. Улшăнма настройкăсене кайма пулать</string>
     <string name="radar_still_downloading">Радар ÿкерчĕкĕ халĕ те скачать тăвать</string>
     <string name="radar_download_failed">Радар ÿкерчĕкне скачать тума май килмен</string>
+    <string name="failed_to_process_forecast_data">Прогноз даннăйĕсене ĕçлесе хатĕрлеме май килмен</string>
 </resources>

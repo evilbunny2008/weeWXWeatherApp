@@ -20,7 +20,7 @@
     <string name="show_radar">რადარის ჩვენება</string>
     <string name="show_forecast">პროგნოზის ჩვენება</string>
     <string name="radarforecast">მთავარ ეკრანზე:</string>
-	<string name="radar">რადარი</string>
+    <string name="radar">რადარი</string>
     <string name="custom_url">სურვილისამებრ: მორგებული URL</string>
     <string name="fgColour">ვიჯეტის წინა პლანზე ფერის ამომრჩევი</string>
     <string name="bgColour">ვიჯეტის ფონის ფერის ამომრჩევი</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">რადარის URL არ არის დაყენებული. შესაცვლელად შეგიძლიათ გადახვიდეთ პარამეტრებზე</string>
     <string name="radar_still_downloading">რადარის სურათი ჯერ კიდევ იტვირთება</string>
     <string name="radar_download_failed">რადარის სურათის ჩამოტვირთვა ვერ მოხერხდა</string>
+    <string name="failed_to_process_forecast_data">პროგნოზის მონაცემების დამუშავება ვერ მოხერხდა</string>
 </resources>

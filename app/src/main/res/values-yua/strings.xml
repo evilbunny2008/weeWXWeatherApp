@@ -20,7 +20,7 @@
     <string name="show_radar">Weʼesik Radar</string>
     <string name="show_forecast">Weʼesik tsʼoʼok u máan kʼiin</string>
     <string name="radarforecast">Ti\' le pantalla noj bejo\':</string>
-	<string name="radar">Radar</string>
+    <string name="radar">Radar</string>
     <string name="custom_url">Opcional: URL personalizado</string>
     <string name="fgColour">Widget yáax plano u boonil Picker</string>
     <string name="bgColour">Pixan u boonil u ju\'unil tu\'ux yaan u widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL Radar ma\' u ts\'áabal. Je\'el u páajtal u bin u ajustes utia\'al k\'ex</string>
     <string name="radar_still_downloading">wíimbala\' Radar láayli\' táan u descargando</string>
     <string name="radar_download_failed">Falló u descargar le wíimbala\' radar</string>
+    <string name="failed_to_process_forecast_data">Falló ti\' procesar datos pronósticos</string>
 </resources>

@@ -20,7 +20,7 @@
     <string name="show_radar">Qhia txog radar</string>
     <string name="show_forecast">Qhia kev kwv yees</string>
     <string name="radarforecast">Ntawm lub vijtsam loj:</string>
-	<string name="radar">Khoom uas muaj radar</string>
+    <string name="radar">Khoom uas muaj radar</string>
     <string name="custom_url">Yeem: URL Nchuav</string>
     <string name="fgColour">Widget foreground xim picker</string>
     <string name="bgColour">Ntsis keeb kwm xim picker</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radar url tsis teeb tsa. Koj tuaj yeem mus rau cov chaw pauv</string>
     <string name="radar_still_downloading">Cov duab radar tseem rub tawm</string>
     <string name="radar_download_failed">Ua tsis tiav download lub radar duab</string>
+    <string name="failed_to_process_forecast_data">Ua tsis tiav cov ntaub ntawv qhia txog cov ntaub ntawv</string>
 </resources>

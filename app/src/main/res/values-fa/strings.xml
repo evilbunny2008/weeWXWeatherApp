@@ -20,7 +20,7 @@
     <string name="show_radar">نمایش رادار</string>
     <string name="show_forecast">نمایش پیش بینی</string>
     <string name="radarforecast">در صفحه اصلی:</string>
-	<string name="radar">رادار</string>
+    <string name="radar">رادار</string>
     <string name="custom_url">اختیاری: URL سفارشی</string>
     <string name="fgColour">انتخابگر رنگ پیش زمینه ویجت</string>
     <string name="bgColour">انتخابگر رنگ پس زمینه ویجت</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL رادار تنظیم نشده است. برای تغییر می توانید به تنظیمات بروید</string>
     <string name="radar_still_downloading">تصویر رادار همچنان در حال دانلود است</string>
     <string name="radar_download_failed">تصویر رادار دانلود نشد</string>
+    <string name="failed_to_process_forecast_data">پردازش داده های پیش بینی انجام نشد</string>
 </resources>

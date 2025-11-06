@@ -20,7 +20,7 @@
     <string name="show_radar">paruodit radaru</string>
     <string name="show_forecast">Paruodeit prognoze</string>
     <string name="radarforecast">Iz Golvonuo ekrana:</string>
-	<string name="radar">radars</string>
+    <string name="radar">radars</string>
     <string name="custom_url">Papyldu: Pīlāguotuo URL</string>
     <string name="fgColour">Vidžetu prīškgola laukuma krāsa pikers</string>
     <string name="bgColour">Ploša fona krāsa Pikers</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">Radars URL nav īkuortuots. Var īt iz īstatejumim, kab maineitūs</string>
     <string name="radar_still_downloading">Radara attāls vēļ lejupluodej</string>
     <string name="radar_download_failed">100 doc#1159 Naizadeve lejupluodēt radara attālu</string>
+    <string name="failed_to_process_forecast_data">100 doc#1281 Naizadeve apstruoduot prognozis datus</string>
 </resources>

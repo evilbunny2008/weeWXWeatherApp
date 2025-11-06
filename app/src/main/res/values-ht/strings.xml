@@ -20,7 +20,7 @@
     <string name="show_radar">Montre rada</string>
     <string name="show_forecast">Montre pwevwa</string>
     <string name="radarforecast">Sou ekran prensipal la:</string>
-	<string name="radar">Rada</string>
+    <string name="radar">Rada</string>
     <string name="custom_url">Si ou vle: URL Custom</string>
     <string name="fgColour">Widget premye plan koulè picker</string>
     <string name="bgColour">Widget Background Koulè Seleksyon</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL rada pa mete. Ou ka ale nan paramèt chanje</string>
     <string name="radar_still_downloading">Imaj rada toujou ap telechaje</string>
     <string name="radar_download_failed">Echwe pou telechaje imaj rada a</string>
+    <string name="failed_to_process_forecast_data">Echwe pou trete done previzyon yo</string>
 </resources>

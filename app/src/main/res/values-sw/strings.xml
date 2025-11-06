@@ -20,7 +20,7 @@
     <string name="show_radar">Onyesha rada</string>
     <string name="show_forecast">Onyesha utabiri</string>
     <string name="radarforecast">Kwenye skrini kuu:</string>
-	<string name="radar">Rada</string>
+    <string name="radar">Rada</string>
     <string name="custom_url">Hiari: URL ya kawaida</string>
     <string name="fgColour">Mchanganyiko wa rangi ya mbele</string>
     <string name="bgColour">Kijitabu cha rangi ya msingi wa widget</string>
@@ -75,4 +75,5 @@
     <string name="radar_url_not_set">URL ya rada haijawekwa. Unaweza kwenda kwa Mipangilio ili ubadilike</string>
     <string name="radar_still_downloading">Picha ya Radar bado inapakua</string>
     <string name="radar_download_failed">Imeshindwa kupakua picha ya rada</string>
+    <string name="failed_to_process_forecast_data">Imeshindwa kusindika data ya utabiri</string>
 </resources>
