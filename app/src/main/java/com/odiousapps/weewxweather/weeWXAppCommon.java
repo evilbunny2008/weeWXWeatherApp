@@ -374,7 +374,17 @@ class weeWXAppCommon
 
 	static boolean GetBoolPref(String name, boolean default_value)
 	{
-		return getPrefSettings().getBoolean(name, default_value);
+		try
+		{
+			return getPrefSettings().getBoolean(name, default_value);
+		} catch(ClassCastException e) {
+			int def = 0;
+			if(default_value)
+				def = 1;
+
+			int i = getPrefSettings().getInt(name, def);
+			return i == 1;
+		}
 	}
 
 	private static Day getFirstDay(List<Day> days)
