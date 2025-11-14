@@ -47,6 +47,7 @@ import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -189,6 +190,11 @@ class weeWXAppCommon
 		return getApplicationContext().getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
 	}
 
+	private static SharedPreferences getPrefSettings(Context context)
+	{
+		return context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+	}
+
 	static void SetStringPref(String name, String value)
 	{
 		SharedPreferences.Editor editor = getPrefSettings().edit();
@@ -218,6 +224,99 @@ class weeWXAppCommon
 	static boolean isPrefSet(String name)
 	{
 		return getPrefSettings().contains(name);
+	}
+
+	static boolean fixTypes(Context context)
+	{
+		SharedPreferences prefs = getPrefSettings(context);
+
+		Map<String, ?> all = prefs.getAll();
+		SharedPreferences.Editor editor = prefs.edit();
+		boolean changed = false;
+
+		for(Map.Entry<String, ?> entry : all.entrySet())
+		{
+			String key = entry.getKey();
+			Object value = entry.getValue();
+
+			if(!(value instanceof String))
+				continue; // only convert strings
+
+			String s = ((String)value).trim();
+			Number parsed = parseNumber(s);
+
+			if(parsed == null)
+				continue; // not numeric
+
+			// Choose best numeric type
+			Object newValue = compressNumber(parsed);
+
+			// If re-writing as exact same type/string, skip
+			if(value.equals(newValue))
+				continue;
+
+			// Persist as correct numeric type
+			switch(newValue)
+			{
+				case Integer i -> editor.putInt(key, i);
+				case Long l -> editor.putLong(key, l);
+				case Float v -> editor.putFloat(key, v);
+				case Double v -> editor.putString(key, Double.toString(v));
+				case null, default ->
+				{
+					continue;
+				}
+			}
+
+			changed = true;
+		}
+
+		if(changed)
+			editor.apply();
+
+		return changed;
+	}
+
+	static Number parseNumber(String s)
+	{
+		if(s == null || s.isEmpty())
+			return null;
+
+		try
+		{
+			if(s.contains("."))
+				return Double.parseDouble(s);
+			else
+				return Long.parseLong(s);
+		} catch (Exception e) {
+			return null;
+		}
+	}
+
+	static Object compressNumber(Number number)
+	{
+		if(number instanceof Long)
+		{
+			long l = number.longValue();
+			if (l >= Integer.MIN_VALUE && l <= Integer.MAX_VALUE)
+				return (int)l;
+			return l;
+		}
+
+		if(number instanceof Double)
+		{
+			double d = number.doubleValue();
+			float f = (float)d;
+
+			// If float is lossless, use float
+			if((double)f == d)
+				return f;
+
+			// Otherwise keep double, stored as string
+			return d;
+		}
+
+		return number;
 	}
 
 	static String GetStringPref(String name, String default_value)

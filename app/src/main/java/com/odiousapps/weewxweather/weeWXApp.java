@@ -470,6 +470,11 @@ public class weeWXApp extends Application
 
 		weeWXAppCommon.LogMessage("weeWXApp.java app_version: " + BuildConfig.VERSION_NAME);
 
+		if(weeWXAppCommon.fixTypes(this))
+			weeWXAppCommon.LogMessage("weeWXApp.java successfully converted preference object types...", true);
+		else
+			weeWXAppCommon.LogMessage("weeWXApp.java didn't need to convert preference object types...", true);
+
 		instance = this;
 		colours = new Colours(this);
 		WebViewPreloader.getInstance().init(this, 6);
