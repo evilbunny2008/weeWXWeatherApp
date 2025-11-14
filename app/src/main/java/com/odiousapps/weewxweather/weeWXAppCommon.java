@@ -333,7 +333,12 @@ class weeWXAppCommon
 
 	static long GetLongPref(String name, long default_value)
 	{
-		return getPrefSettings().getLong(name, default_value);
+		try
+		{
+			return getPrefSettings().getLong(name, default_value);
+		} catch(ClassCastException e) {
+			return getPrefSettings().getInt(name, (int)default_value);
+		}
 	}
 
 	static void SetFloatPref(String name, float value)
@@ -3458,7 +3463,7 @@ class weeWXAppCommon
 		if(!force && rssCheckTime + weeWXApp.RSSCache_period_default > current_time && forecastData != null && !forecastData.isBlank())
 		{
 			LogMessage("Cache isn't more than " + weeWXApp.RSSCache_period_default + " seconds old (" +
-			           (rssCheckTime + weeWXApp.RSSCache_period_default) + "s)");
+			           (rssCheckTime + weeWXApp.RSSCache_period_default) + "s)", true);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String date = sdf.format(GetLongPref("rssCheck", 0) * 1_000L);
 			LogMessage("rsscheck: " + date);
@@ -3471,7 +3476,7 @@ class weeWXAppCommon
 		{
 			if(ftStart + 30 > current_time)
 			{
-				LogMessage("forecastTask is less than 30s old, we'll skip this attempt...");
+				LogMessage("forecastTask is less than 30s old, we'll skip this attempt...", true);
 				return new String[]{"ok", forecastData, fctype};
 			}
 
@@ -3479,13 +3484,13 @@ class weeWXAppCommon
 		}
 
 		LogMessage("Was forced or no forecast data or cache is more than " + weeWXApp.RSSCache_period_default +
-		           " seconds old (" + (current_time - rssCheckTime) + "s)");
+		           " seconds old (" + (current_time - rssCheckTime) + "s)", true);
 
 		ftStart = current_time;
 
 		forecastTask = executor.submit(() ->
 		{
-			LogMessage("Forecast checking: " + forecast_url);
+			LogMessage("Forecast checking: " + forecast_url, true);
 
 			String tmpForecastData = null;
 
