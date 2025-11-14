@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радар һүрәте һаман да скачать</string>
     <string name="radar_download_failed">Радар һүрәтен скачать итеү мөмкинлеге булмаған</string>
     <string name="failed_to_process_forecast_data">Прогноз мәғлүмәттәрен эшкәртергә өлгөрмәгән</string>
+    <string name="wifi_not_available">Яңыртылған булыр ине, әммә WiFi тоташыу мөмкин булмаған</string>
+    <string name="invalid_update_interval">Яңыртыу интервалы дөрөҫ түгел, яңыртыу параметрҙары, ә һуңынан ҡайта</string>
+    <string name="attempting_to_download_data_txt">Һеҙҙең серверҙан скачать cavic</string>
+    <string name="radar_type_is_invalid">Радар тип \'%1$s\' дөрөҫ түгел, һеҙҙең параметрҙар файлын тикшерергә һәм яңынан һынап ҡарағыҙ</string>
 </resources>

@@ -17,8 +17,8 @@ public class WidgetProvider extends AppWidgetProvider
 	@Override
 	public void onReceive(Context context, Intent intent)
 	{
-		Common.LogMessage("WidgetProvider.onReceive() called.. intent.getAction()=" +
-		                  intent.getAction());
+		weeWXAppCommon.LogMessage("WidgetProvider.onReceive() called.. intent.getAction()=" +
+		                          intent.getAction());
 
 		AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
 		int[] appWidgetIds = intent.getIntArrayExtra("appWidgetIds");
@@ -30,8 +30,7 @@ public class WidgetProvider extends AppWidgetProvider
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 	                     int[] appWidgetIds)
 	{
-		Common.LogMessage("WidgetProvider.onUpdate() called..");
-		Common.setAlarm("WidgetProvider.onUpdate()");
+		weeWXAppCommon.LogMessage("WidgetProvider.onUpdate() called..");
 		updateAppWidget(context, appWidgetManager, appWidgetIds);
 	}
 
@@ -40,8 +39,7 @@ public class WidgetProvider extends AppWidgetProvider
 	                                      AppWidgetManager appWidgetManager,
 	                                      int appWidgetId, Bundle newOptions)
 	{
-		Common.setAlarm("WidgetProvider.onAppWidgetOptionsChanged()");
-		Common.LogMessage("onAppWidgetOptionsChanged() called..");
+		weeWXAppCommon.LogMessage("onAppWidgetOptionsChanged() called..");
 
 		KeyValue.widgetMinWidth.put(appWidgetId,
 				newOptions.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH));
@@ -55,30 +53,10 @@ public class WidgetProvider extends AppWidgetProvider
 		updateAppWidget(context, appWidgetManager, new int[]{appWidgetId});
 	}
 
-	static void updateAppWidget()
+	static void setDefaultColoursAndText(Context context, RemoteViews views, int bgColour, int fgColour)
 	{
-		Context context = weeWXApp.getInstance().getApplicationContext();
-		AppWidgetManager manager = AppWidgetManager.getInstance(context);
-		ComponentName widgets = new ComponentName(context, WidgetProvider.class);
-		int[] widgetIds = manager.getAppWidgetIds(widgets);
-		updateAppWidget(context, manager, widgetIds);
-	}
-
-	public static void updateAppWidget(Context context, AppWidgetManager manager,
-	                                   int[] widgetIds)
-	{
-		Common.LogMessage("WidgetProvider.updateAppWidget() called..");
-		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
-		Common.LogMessage("RemoteViews built: " + views);
-
-		int bgColour = KeyValue.widgetBG;
-		int fgColour = KeyValue.widgetFG;
-
-		String tempText;
-		//float approxCharWidthDp = 8f;
-
-		Common.LogMessage("fgColour = " + to_ARGB_hex(fgColour));
-		Common.LogMessage("bgColour = " + to_ARGB_hex(bgColour));
+		weeWXAppCommon.LogMessage("fgColour = " + to_ARGB_hex(fgColour));
+		weeWXAppCommon.LogMessage("bgColour = " + to_ARGB_hex(bgColour));
 
 		views.setInt(R.id.widget_frame, "setBackgroundColor", bgColour);
 
@@ -92,8 +70,66 @@ public class WidgetProvider extends AppWidgetProvider
 		views.setTextViewText(R.id.widget_time, "");
 		views.setTextViewText(R.id.widget_wind, "");
 		views.setTextViewText(R.id.widget_rain, "");
+		views.setTextViewText(R.id.widget_temperature, "");
 
-		String lastDownload = Common.GetStringPref("LastDownload", "");
+		Intent launchActivity = new Intent(context, MainActivity.class);
+		launchActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
+		                        Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		PendingIntent pendingIntent = PendingIntent.getActivity(context,
+				0, launchActivity, PendingIntent.FLAG_IMMUTABLE);
+		views.setOnClickPendingIntent(R.id.widget_frame, pendingIntent);
+	}
+
+	static void resetAppWidget()
+	{
+		Context context = weeWXApp.getInstance();
+		AppWidgetManager manager = AppWidgetManager.getInstance(context);
+		ComponentName widgets = new ComponentName(context, WidgetProvider.class);
+		int[] widgetIds = manager.getAppWidgetIds(widgets);
+		resetAppWidget(context, manager, widgetIds);
+	}
+
+	static void resetAppWidget(Context context, AppWidgetManager manager, int[] widgetIds)
+	{
+		weeWXAppCommon.LogMessage("WidgetProvider.resetAppWidget() called..");
+
+		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
+
+		int bgColour = weeWXApp.bgColour_default;
+		int fgColour = weeWXApp.fgColour_default;
+
+		setDefaultColoursAndText(context, views, bgColour, fgColour);
+
+		views.setTextViewText(R.id.widget_temperature, "Error!");
+
+		for(int widgetId : widgetIds)
+			manager.updateAppWidget(widgetId, views);
+	}
+
+	static void updateAppWidget()
+	{
+		Context context = weeWXApp.getInstance();
+		AppWidgetManager manager = AppWidgetManager.getInstance(context);
+		ComponentName widgets = new ComponentName(context, WidgetProvider.class);
+		int[] widgetIds = manager.getAppWidgetIds(widgets);
+		updateAppWidget(context, manager, widgetIds);
+	}
+
+	static void updateAppWidget(Context context, AppWidgetManager manager, int[] widgetIds)
+	{
+		weeWXAppCommon.LogMessage("WidgetProvider.updateAppWidget() called..");
+		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
+		weeWXAppCommon.LogMessage("RemoteViews built: " + views);
+
+		int bgColour = KeyValue.widgetBG;
+		int fgColour = KeyValue.widgetFG;
+
+		setDefaultColoursAndText(context, views, bgColour, fgColour);
+
+		String tempText;
+		//float approxCharWidthDp = 8f;
+
+		String lastDownload = weeWXAppCommon.GetStringPref("LastDownload", weeWXApp.LastDownload_default);
 		if(lastDownload != null && !lastDownload.isBlank())
 		{
 			String[] bits = lastDownload.split("\\|");
@@ -104,25 +140,18 @@ public class WidgetProvider extends AppWidgetProvider
 			rain += bits[62];
 
 			tempText = bits[0] + bits[60];
-			Common.LogMessage("Temperature set to " + tempText);
+			weeWXAppCommon.LogMessage("Temperature set to " + tempText);
 
 			views.setTextViewText(R.id.widget_location, bits[56]);
 			views.setTextViewText(R.id.widget_time, bits[55]);
 			views.setTextViewText(R.id.widget_wind, bits[25] + bits[61]);
 			views.setTextViewText(R.id.widget_rain, rain);
 		} else {
-			Common.LogMessage("Temperature set to Error!");
+			weeWXAppCommon.LogMessage("Temperature set to Error!");
 			tempText = "Error!";
 		}
 
 		views.setTextViewText(R.id.widget_temperature, tempText);
-
-		Intent launchActivity = new Intent(context, MainActivity.class);
-		launchActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK |
-		                        Intent.FLAG_ACTIVITY_CLEAR_TASK);
-		PendingIntent pendingIntent = PendingIntent.getActivity(context,
-				0, launchActivity, PendingIntent.FLAG_IMMUTABLE);
-		views.setOnClickPendingIntent(R.id.widget_frame, pendingIntent);
 
 		for(int widgetId : widgetIds)
 			manager.updateAppWidget(widgetId, views);

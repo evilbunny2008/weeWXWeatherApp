@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Imagen de radar es encara en descarga</string>
     <string name="radar_download_failed">Fracàs de descargar l\'imatge radar</string>
     <string name="failed_to_process_forecast_data">Fracassat a tractar las donadas de prevision</string>
+    <string name="wifi_not_available">Auria actualizada mas no disponible la conexion WiFi</string>
+    <string name="invalid_update_interval">L\'interval de mesa a jorn es invalid, actualizatz los paramètres e puèi tornatz ensajar</string>
+    <string name="attempting_to_download_data_txt">Ensajant de donadas de descarga.txt de vòstre servidor</string>
+    <string name="radar_type_is_invalid">Lo tipe radar \'%1$s\' es invalid, verificatz vòstre fichièr de paramètres e ensajatz tornarmai</string>
 </resources>

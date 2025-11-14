@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радар ÿкерчĕкĕ халĕ те скачать тăвать</string>
     <string name="radar_download_failed">Радар ÿкерчĕкне скачать тума май килмен</string>
     <string name="failed_to_process_forecast_data">Прогноз даннăйĕсене ĕçлесе хатĕрлеме май килмен</string>
+    <string name="wifi_not_available">Çĕнетнĕ пулĕччĕ, анчах WiFi çыхăнăвĕ çук</string>
+    <string name="invalid_update_interval">Çĕнетÿ интервалĕ тĕрĕс мар, настройкăсене çĕнетме тата унтан тепĕр хут тăвăр</string>
+    <string name="attempting_to_download_data_txt">Хăтланăр скачать даннăйĕсем.txt сирĕн сервертан</string>
+    <string name="radar_type_is_invalid">Радар типĕ \'%1$s\' тĕрĕс мар, настройкăсен файла тĕрĕслесе пăхăр та тепĕр хут хăтланса пăхăр</string>
 </resources>

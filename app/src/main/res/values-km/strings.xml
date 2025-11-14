@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">រូបភាពរ៉ាដានៅតែកំពុងទាញយក។</string>
     <string name="radar_download_failed">បានបរាជ័យក្នុងការទាញយករូបភាពរ៉ាដា</string>
     <string name="failed_to_process_forecast_data">បានបរាជ័យក្នុងការដំណើរការទិន្នន័យព្យាករណ៍</string>
+    <string name="wifi_not_available">នឹងត្រូវបានធ្វើបច្ចុប្បន្នភាពប៉ុន្តែការតភ្ជាប់វ៉ាយហ្វាយមិនមានទេ</string>
+    <string name="invalid_update_interval">ចន្លោះពេលធ្វើបច្ចុប្បន្នភាពគឺមិនត្រឹមត្រូវធ្វើបច្ចុប្បន្នភាពការកំណត់ហើយបន្ទាប់មកព្យាយាមម្តងទៀត</string>
+    <string name="attempting_to_download_data_txt">ការប៉ុនប៉ងទាញយកទិន្នន័យ .txt ពីម៉ាស៊ីនមេរបស់អ្នក</string>
+    <string name="radar_type_is_invalid">ប្រភេទរ៉ាដាប្រភេទ \'%1$s\' មិនត្រឹមត្រូវសូមពិនិត្យមើលឯកសារកំណត់របស់អ្នកហើយព្យាយាមម្តងទៀត។</string>
 </resources>

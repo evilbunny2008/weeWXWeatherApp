@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">রাডার ইমেজ এখনও ডাউনলোড হচ্ছে</string>
     <string name="radar_download_failed">রাডার ইমেজ ডাউনলোড করতে ব্যর্থ হয়েছে</string>
     <string name="failed_to_process_forecast_data">পূর্বাভাস তথ্য প্রক্রিয়া করতে ব্যর্থ</string>
+    <string name="wifi_not_available">আপডেট করা হবে কিন্তু ওয়াইফাই সংযোগ অনুপলব্ধ</string>
+    <string name="invalid_update_interval">আপডেটের ব্যবধান অবৈধ, সেটিংস আপডেট করুন এবং তারপরে আবার চেষ্টা করুন</string>
+    <string name="attempting_to_download_data_txt">আপনার সার্ভার থেকে data.txt ডাউনলোড করার চেষ্টা করা হচ্ছে</string>
+    <string name="radar_type_is_invalid">রাডার প্রকার \'%1$s\' অবৈধ, আপনার সেটিংস ফাইল চেক করুন এবং আবার চেষ্টা করুন৷</string>
 </resources>

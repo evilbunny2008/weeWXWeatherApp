@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 
-import java.io.IOException;
 import java.util.Locale;
 
 import androidx.annotation.NonNull;
@@ -40,15 +39,13 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private RotateLayout rl;
 	private MaterialCheckBox floatingCheckBox;
 	private boolean isVisible = false;
-	private Thread forecastThread;
-	private long fcStart;
-	private boolean disableSwipeOnRadar;
-	private boolean disabledSwipe;
 	private MainActivity activity;
 	private final ViewTreeObserver.OnScrollChangedListener forecastScrollListener = () ->
-														swipeLayout1.setEnabled(forecastWebView.getScrollY() == 0);
+														swipeLayout1.setEnabled(floatingCheckBox.getVisibility() != View.VISIBLE &&
+																				forecastWebView.getScrollY() == 0);
 	private final ViewTreeObserver.OnScrollChangedListener radarScrollListener = () ->
-														swipeLayout2.setEnabled(!floatingCheckBox.isChecked() &&
+														swipeLayout2.setEnabled(floatingCheckBox.getVisibility() == View.VISIBLE &&
+														                        !floatingCheckBox.isChecked() &&
 														                        radarWebView.getScrollY() == 0);
 
 	public View onCreateView(@NonNull LayoutInflater inflater,
@@ -65,21 +62,19 @@ public class Forecast extends Fragment implements View.OnClickListener
 		rl = rootView.findViewById(R.id.rotateLayout);
 
 		swipeLayout1 = rootView.findViewById(R.id.swipeToRefresh1);
-		swipeLayout1.setEnabled(true);
 		swipeLayout1.setOnRefreshListener(() ->
 		{
 			swipeLayout1.setRefreshing(true);
-			Common.LogMessage("swipeLayout1.onRefresh();");
-			getForecast(true);
+			weeWXAppCommon.LogMessage("swipeLayout1.onRefresh();");
+			getForecast();
 		});
 
 		swipeLayout2 = rootView.findViewById(R.id.swipeToRefresh2);
-		swipeLayout2.setRefreshing(false);
 		swipeLayout2.setOnRefreshListener(() ->
 		{
 			swipeLayout2.setRefreshing(true);
-			Common.LogMessage("swipeLayout2.onRefresh();");
-			loadRadar(true);
+			weeWXAppCommon.LogMessage("swipeLayout2.onRefresh();");
+			loadRadar();
 		});
 
 		im = rootView.findViewById(R.id.logo);
@@ -95,9 +90,9 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		super.onViewCreated(view, savedInstanceState);
 
-		Common.LogMessage("Forecast.java -- adding notification manager...");
-		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(),
-				notificationObserver);
+		weeWXAppCommon.LogMessage("Forecast.java -- adding notification manager...");
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(getViewLifecycleOwner());
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		if(forecastWebView == null)
 			forecastWebView = WebViewPreloader.getInstance().getWebView(requireContext());
@@ -151,7 +146,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 					{
 						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarWebView.getSettings(),true);
 					} catch(Exception e) {
-						Common.doStackOutput(e);
+						weeWXAppCommon.doStackOutput(e);
 					}
 				}
 			} else {
@@ -188,10 +183,22 @@ public class Forecast extends Fragment implements View.OnClickListener
 			radarWebView.restoreState(savedInstanceState);
 		}
 
-		loadRadar(false);
-		getForecast(false);
-		updateScreen(true);
-		addListeners();
+		if(weeWXAppCommon.isPrefSet("radarforecast"))
+		{
+			if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen)
+				loadRadar();
+			else
+				getForecast();
+
+			boolean disableSwipeOnRadar = weeWXAppCommon.GetBoolPref("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
+			floatingCheckBox.setChecked(disableSwipeOnRadar);
+
+			updateSwipe();
+			updateScreen(true);
+
+			addListeners();
+		}
+
 		stopRefreshing();
 	}
 
@@ -212,7 +219,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		super.onDestroyView();
 
-		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
 		removeListeners();
 
 		if(forecastWebView != null)
@@ -225,7 +231,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			WebViewPreloader.getInstance().recycleWebView(forecastWebView);
 
-			Common.LogMessage("Stats.onDestroyView() recycled forecastWebView...");
+			weeWXAppCommon.LogMessage("Forecast.onDestroyView() recycled forecastWebView...");
 		}
 
 		if(radarWebView != null)
@@ -238,7 +244,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			WebViewPreloader.getInstance().recycleWebView(radarWebView);
 
-			Common.LogMessage("Stats.onDestroyView() recycled radarWebView...");
+			weeWXAppCommon.LogMessage("Forecast.onDestroyView() recycled radarWebView...");
 		}
 	}
 
@@ -251,76 +257,63 @@ public class Forecast extends Fragment implements View.OnClickListener
 			swipeLayout2.post(() -> swipeLayout2.setRefreshing(false));
 	}
 
-	private void loadRadar(boolean forceDownload)
+	private void loadRadar()
 	{
-		Bitmap bm;
-		String radar;
-		Common.LogMessage("Forecast.loadRadar()");
+		weeWXAppCommon.LogMessage("Forecast.java loadRadar()");
 
-		if(Common.GetBoolPref("radarforecast", true))
-		{
-			Common.LogMessage("This line in loadRadar() shouldn't be hit...");
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnForecastScreen)
 			return;
-		}
 
-		String radarURL = Common.GetStringPref("RADAR_URL", "");
+		String radarURL = weeWXAppCommon.GetStringPref("RADAR_URL", weeWXApp.RADAR_URL_default);
 		if(radarURL == null || radarURL.isBlank())
 		{
-			failedRadarWebViewDownload(R.string.radar_url_not_set, null);
+			failedRadarWebViewDownload(R.string.radar_url_not_set);
 			return;
 		}
 
-		String radtype = Common.GetStringPref("radtype", "image");
+		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 		if(radtype == null || radtype.isBlank())
 		{
-			failedRadarWebViewDownload(R.string.radar_url_not_set, null);
+			failedRadarWebViewDownload(R.string.radar_type_is_invalid);
 			return;
 		}
 
 		if(radtype.equals("image"))
 		{
-			try
+			Bitmap bm = weeWXAppCommon.getRadarImage(false);
+			if(bm == null)
 			{
-				bm = Common.loadOrDownloadImage(radarURL, "radar.gif", forceDownload);
-				if(bm == null)
-				{
-					failedRadarWebViewDownload(R.string.radar_download_failed, radarURL);
-					return;
-				}
-
-				float sd = weeWXApp.getDensity();
-				int height = Math.round((float)Resources.getSystem().getDisplayMetrics().widthPixels / sd * 0.955f);
-				int width = Math.round((float)Resources.getSystem().getDisplayMetrics().heightPixels / sd * 0.955f);
-
-				radar = "data:image/jpeg;base64," + Common.toBase64(Common.bitmapToBytes(bm));
-
-				final String html = Common.current_html_headers +
-				                    "\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
-				                    Common.html_footer;
-
-				radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/", html,
-							"text/html", "utf-8", null));
+				failedRadarWebViewDownload(R.string.radar_download_failed);
 				stopRefreshing();
 				return;
-			} catch(Exception ignored) {}
+			}
 
-			failedRadarWebViewDownload(R.string.radar_download_failed, radarURL);
+			float sd = weeWXApp.getDensity();
+			int height = Math.round((float)Resources.getSystem().getDisplayMetrics().widthPixels / sd * 0.955f);
+			int width = Math.round((float)Resources.getSystem().getDisplayMetrics().heightPixels / sd * 0.955f);
+
+			weeWXAppCommon.LogMessage("Loading radar image... url: " + radarURL);
+			String radar = "data:image/jpeg;base64," + weeWXAppCommon.toBase64(weeWXAppCommon.bitmapToBytes(bm));
+
+			String html = weeWXApp.current_html_headers +
+		                       "\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
+			                    weeWXApp.html_footer;
+
+			radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/", html,
+						"text/html", "utf-8", null));
 		} else {
-			Common.LogMessage("Loading radar page... url: " + radarURL);
+			weeWXAppCommon.LogMessage("Loading radar page... url: " + radarURL);
 			radarWebView.post(() -> radarWebView.loadUrl(radarURL));
-			stopRefreshing();
 		}
 
-		Common.LogMessage("Forecast.loadRadar() finished...");
+		stopRefreshing();
 	}
 
-	private void failedRadarWebViewDownload(int resId, String url)
+	private void failedRadarWebViewDownload(int resId)
 	{
-		Common.LogMessage("Loading radar image from URL: " + url + " failed...");
-
-		final String html = Common.current_html_headers +
+		final String html = weeWXApp.current_html_headers +
 		                    weeWXApp.getAndroidString(resId) +
-		                    Common.html_footer;
+		                    weeWXApp.html_footer;
 
 		radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/", html,
 					"text/html", "utf-8", null));
@@ -332,47 +325,47 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		super.onResume();
 
-		Common.LogMessage("Forecast.onResume()");
-
-		disableSwipeOnRadar = Common.GetBoolPref("disableSwipeOnRadar", false);
-		floatingCheckBox.setChecked(disableSwipeOnRadar);
-		updateSwipe();
+		weeWXAppCommon.LogMessage("Forecast.onResume()");
 
 		if(isVisible)
 			return;
 
 		isVisible = true;
 
-		Common.LogMessage("Forecast.onResume() -- updating the value of the floating checkbox...");
-		swipeLayout2.post(() -> swipeLayout2.setEnabled(rfl.getVisibility() == View.VISIBLE &&
-		                                                !floatingCheckBox.isChecked()));
+		boolean disableSwipeOnRadar = weeWXAppCommon.GetBoolPref("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
+		floatingCheckBox.setChecked(disableSwipeOnRadar);
+
+		updateScreen(true);
 		updateSwipe();
-		updateScreen(false);
+		stopRefreshing();
 	}
 
 	public void onPause()
 	{
 		super.onPause();
 
-		Common.LogMessage("Forecast.onPause()");
+		weeWXAppCommon.LogMessage("Forecast.java onPause()");
 
 		if(!isVisible)
 			return;
 
 		isVisible = false;
 
-		doPause();
-		Common.LogMessage("Forecast.onPause()-- removing notification manager...");
+		weeWXAppCommon.LogMessage("Enabling swipe between screens...");
+		activity.setUserInputPager(true);
 	}
 
 	private final Observer<String> notificationObserver = s ->
 	{
-		Common.LogMessage("notificationObserver == " + s);
+		weeWXAppCommon.LogMessage("notificationObserver: " + s);
 
-		if(s.equals(Common.UPDATE_INTENT) || s.equals(Common.REFRESH_INTENT))
-			updateScreen(true);
+		if(s.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
+			getForecast();
 
-		if(s.equals(Common.EXIT_INTENT))
+		if(s.equals(weeWXAppCommon.REFRESH_RADAR_INTENT))
+			loadRadar();
+
+		if(s.equals(weeWXAppCommon.EXIT_INTENT))
 			onPause();
 	};
 
@@ -396,184 +389,148 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void updateScreen(boolean setRefreshing)
 	{
-		Common.LogMessage("Forecast.updateScreen()");
+		weeWXAppCommon.LogMessage("Forecast.java updateScreen()");
 
-		if(Common.GetBoolPref("radarforecast", true))
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.ForecastOnForecastScreen)
 		{
-			Common.LogMessage("Displaying forecastWebView...");
+			weeWXAppCommon.LogMessage("Displaying forecastWebView...");
 			if(rfl.getVisibility() != View.GONE)
 				rfl.post(() -> rfl.setVisibility(View.GONE));
 
 			if(swipeLayout1.getVisibility() != View.VISIBLE)
 				swipeLayout1.post(() -> swipeLayout1.setVisibility(View.VISIBLE));
 
-			swipeLayout2.post(() ->
-			{
-				swipeLayout2.setRefreshing(false);
-				swipeLayout2.setEnabled(false);
-			});
+			if(swipeLayout2.isEnabled())
+				swipeLayout2.post(() ->
+				{
+					swipeLayout2.setRefreshing(false);
+					swipeLayout2.setEnabled(false);
+				});
 
-			swipeLayout1.post(() ->
-			{
-				swipeLayout1.setBackgroundColor(KeyValue.bgColour);
-				swipeLayout1.setRefreshing(setRefreshing);
-				swipeLayout1.setEnabled(true);
-			});
+			if(!swipeLayout1.isEnabled())
+				swipeLayout1.post(() ->
+				{
+					swipeLayout1.setBackgroundColor(KeyValue.bgColour);
+					swipeLayout1.setRefreshing(setRefreshing);
+					swipeLayout1.setEnabled(true);
+				});
 		} else {
-			Common.LogMessage("Displaying radar framelayout");
+			weeWXAppCommon.LogMessage("Displaying radar framelayout");
 			if(swipeLayout1.getVisibility() != View.GONE)
 				swipeLayout1.post(() -> swipeLayout1.setVisibility(View.GONE));
 
 			if(rfl.getVisibility() != View.VISIBLE)
 				rfl.post(() -> rfl.setVisibility(View.VISIBLE));
 
-			swipeLayout1.post(() ->
-			{
-				if(swipeLayout1.isRefreshing())
-					swipeLayout1.setRefreshing(false);
-				swipeLayout1.setEnabled(false);
-			});
+			if(swipeLayout1.isEnabled())
+				swipeLayout1.post(() ->
+				{
+					if(swipeLayout1.isRefreshing())
+						swipeLayout1.setRefreshing(false);
+					swipeLayout1.setEnabled(false);
+				});
 
-			swipeLayout2.post(() ->
-			{
-				if(swipeLayout2.isRefreshing())
-					swipeLayout2.setRefreshing(setRefreshing);
-				swipeLayout2.setEnabled(!floatingCheckBox.isChecked());
-			});
+			if(!swipeLayout2.isEnabled())
+				swipeLayout2.post(() ->
+				{
+					if(swipeLayout2.isRefreshing())
+						swipeLayout2.setRefreshing(setRefreshing);
+					swipeLayout2.setEnabled(!floatingCheckBox.isChecked());
+				});
 
 			boolean rotate = false;
 
-			String radtype = Common.GetStringPref("radtype", "image");
-			if(radtype != null)
+			String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+			if(radtype != null && !radtype.isBlank())
 			{
 				if(radtype.equals("image"))
 				{
-					Common.LogMessage("Hiding the floating checkbox...");
+					weeWXAppCommon.LogMessage("Hiding the floating checkbox...");
 					if(floatingCheckBox.getVisibility() != View.GONE)
 						floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.GONE));
 
-					try
+					Bitmap bmp1 = weeWXAppCommon.getImage(weeWXApp.radarFilename);
+					if(bmp1 != null && bmp1.getWidth() > bmp1.getHeight() &&
+					   weeWXApp.getHeight() > weeWXApp.getWidth())
 					{
-						Bitmap bmp1 = Common.loadImage("radar.gif");
-						if(bmp1 != null && bmp1.getWidth() > bmp1.getHeight() &&
-						   weeWXApp.getHeight() > weeWXApp.getWidth())
-						{
-							Common.LogMessage("Hide radarWebView, show rotated layout...");
-							rotate = true;
-							if(rl.getAngle() != -90)
-								rl.post(() -> rl.setAngle(-90));
-						}
-					} catch(IOException ignored) {}
+						weeWXAppCommon.LogMessage("Hide radarWebView, show rotated layout...");
+						rotate = true;
+						if(rl.getAngle() != -90)
+							rl.post(() -> rl.setAngle(-90));
+					}
 				} else {
-					Common.LogMessage("Showing the floating checkbox...");
-					//if(floatingCheckBox.getVisibility() != View.VISIBLE)
-					floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.VISIBLE));
+					weeWXAppCommon.LogMessage("Showing the floating checkbox...");
+					if(floatingCheckBox.getVisibility() != View.VISIBLE)
+						floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.VISIBLE));
 				}
 
 				if(!rotate)
 				{
-					Common.LogMessage("Set RotatedLayout angle to 0...");
+					weeWXAppCommon.LogMessage("Set RotatedLayout angle to 0...");
 					if(rl.getAngle() != 0)
 						rl.post(() -> rl.setAngle(0));
 				}
 			}
 		}
 
-		Common.LogMessage("Forecast.updateScreen() finished...");
+		weeWXAppCommon.LogMessage("Forecast.updateScreen() finished...");
 	}
 
-	private void getForecast(boolean force)
+	private void getForecast()
 	{
-		if(!Common.GetBoolPref("radarforecast", true))
-			return;
-
-		String forecast_url = Common.GetStringPref("FORECAST_URL", "");
-		if(forecast_url == null || forecast_url.isBlank())
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnForecastScreen)
 		{
-			showTextFC("Forecast url is blank...");
+			weeWXAppCommon.LogMessage("Forecast.java getForecast() this line shouldn't be hit... weeWXApp.ForecastOnForecastScreen is false...");
 			stopRefreshing();
 			return;
 		}
 
-		if(!Common.checkConnection() && !force)
+		String[] ret = weeWXAppCommon.getForecast(false);
+		String forecastData = ret[1];
+
+		if(ret[0].equals("error"))
 		{
-			Common.LogMessage("Not on wifi and not a forced refresh");
-			return;
+			if(forecastData != null && !forecastData.isBlank())
+			{
+				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData);
+				showTextFC(forecastData);
+			} else {
+				weeWXAppCommon.LogMessage("getForecast returned an unknown error...");
+				showTextFC(weeWXApp.getAndroidString(R.string.unknown_error_occurred));
+			}
 		}
 
-		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+		weeWXAppCommon.LogMessage("getForecast returned some content...");
+		generateForecast(forecastData);
 
-		if(forecastThread != null)
-		{
-			if(forecastThread.isAlive())
-			{
-				if(fcStart + 30 > current_time)
-				{
-					Common.LogMessage("rtStart is less than 30s old, we'll skip this attempt...");
-					return;
-				}
-
-				Common.LogMessage("rtStart is 30+s old, we'll interrupt it...");
-				forecastThread.interrupt();
-			}
-
-			forecastThread = null;
-		}
-
-		fcStart = current_time;
-
-
-		forecastThread = new Thread(() ->
-		{
-			String data = null;
-			String forecastData = Common.GetStringPref("forecastData", null);
-
-			try
-			{
-				if(force || forecastData == null || forecastData.isBlank() ||
-				   Common.GetLongPref("rssCheck", 0) + 7190 < current_time)
-				{
-					Common.LogMessage("No forecast data or cache is more than 2 hours old or was forced");
-
-					data = Common.reallyGetForecast(forecast_url);
-				}
-			} catch(Exception e) {
-				Common.doStackOutput(e);
-			}
-
-			generateForecast(data);
-			stopRefreshing();
-			fcStart = 0;
-		});
-
-		forecastThread.start();
+		stopRefreshing();
 	}
 
 	private void generateForecast()
 	{
-		Common.LogMessage("Getting forecast data from shared prefs...");
-		String data = Common.GetStringPref("forecastData", null);
-		if(data == null || data.isBlank())
+		weeWXAppCommon.LogMessage("Getting forecast forecastData from shared prefs...");
+		String forecastData = weeWXAppCommon.GetStringPref("forecastData", weeWXApp.forecastData_default);
+		if(forecastData == null || forecastData.isBlank())
 		{
-			showTextFC("Forecast data is blank...");
+			showTextFC("Forecast forecastData is blank...");
 			stopRefreshing();
 			return;
 		}
 
-		generateForecast(data);
+		generateForecast(forecastData);
 	}
 
-	private void generateForecast(String data)
+	private void generateForecast(String forecastData)
 	{
-		if(data == null || data.isBlank())
+		if(forecastData == null || forecastData.isBlank())
 		{
 			showTextFC("Forecast data is blank...");
 			stopRefreshing();
 			return;
 		}
 
-		Common.LogMessage("Getting fctype from shared prefs...");
-		String fctype = Common.GetStringPref("fctype", "Yahoo");
+		weeWXAppCommon.LogMessage("Getting fctype from shared prefs...");
+		String fctype = weeWXAppCommon.GetStringPref("fctype", weeWXApp.fctype_default);
 		if(fctype == null || fctype.isBlank())
 		{
 			showTextFC("Forecast type is blank...");
@@ -581,12 +538,12 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		generateForecast(fctype, data);
+		generateForecast(fctype, forecastData);
 	}
 
-	private void generateForecast(String fctype, String data)
+	private void generateForecast(String fctype, String forecastData)
 	{
-		if(fctype == null || fctype.isBlank() || data == null || data.isBlank())
+		if(fctype == null || fctype.isBlank() || forecastData == null || forecastData.isBlank())
 		{
 			showTextFC("Forecast type is blank or forecast data is blank...");
 			stopRefreshing();
@@ -597,109 +554,109 @@ public class Forecast extends Fragment implements View.OnClickListener
 		{
 			case "yahoo" ->
 			{
-				String[] content = Common.processYahoo(data, true);
+				String[] content = weeWXAppCommon.processYahoo(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "weatherzone" ->
 			{
-				String[] content = Common.processWZ(data, true);
+				String[] content = weeWXAppCommon.processWZ(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "yr.no" ->
 			{
-				String[] content = Common.processYR(data, true);
+				String[] content = weeWXAppCommon.processYR(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "met.no" ->
 			{
-				String[] content = Common.processMetNO(data, true);
+				String[] content = weeWXAppCommon.processMetNO(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "wmo.int" ->
 			{
-				String[] content = Common.processWMO(data, true);
+				String[] content = weeWXAppCommon.processWMO(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "weather.gov" ->
 			{
-				String[] content = Common.processWGOV(data, true);
+				String[] content = weeWXAppCommon.processWGOV(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "weather.gc.ca" ->
 			{
-				String[] content = Common.processWCA(data, true);
+				String[] content = weeWXAppCommon.processWCA(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "weather.gc.ca-fr" ->
 			{
-				String[] content = Common.processWCAF(data, true);
+				String[] content = weeWXAppCommon.processWCAF(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "metoffice.gov.uk" ->
 			{
-				String[] content = Common.processMET(data, true);
+				String[] content = weeWXAppCommon.processMET(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "bom2" ->
 			{
-				String[] content = Common.processBOM2(data, true);
+				String[] content = weeWXAppCommon.processBOM2(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "bom3" ->
 			{
-				String[] content = Common.processBOM3(data, true);
+				String[] content = weeWXAppCommon.processBOM3(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "aemet.es" ->
 			{
-				String[] content = Common.processAEMET(data, true);
+				String[] content = weeWXAppCommon.processAEMET(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "dwd.de" ->
 			{
-				String[] content = Common.processDWD(data, true);
+				String[] content = weeWXAppCommon.processDWD(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "metservice.com" ->
 			{
-				String[] content = Common.processMetService(data, true);
+				String[] content = weeWXAppCommon.processMetService(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "openweathermap.org" ->
 			{
-				String[] content = Common.processOWM(data, true);
+				String[] content = weeWXAppCommon.processOWM(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "weather.com" ->
 			{
-				String[] content = Common.processWCOM(data, true);
+				String[] content = weeWXAppCommon.processWCOM(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "met.ie" ->
 			{
-				String[] content = Common.processMETIE(data, true);
+				String[] content = weeWXAppCommon.processMETIE(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
 			case "tempoitalia.it" ->
 			{
-				String[] content = Common.processTempoItalia(data, true);
+				String[] content = weeWXAppCommon.processTempoItalia(forecastData, true);
 				if(content != null && content.length >= 2)
 					updateForecast(fctype, content[0], content[1]);
 			}
@@ -711,7 +668,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(text == null || text.isBlank())
 			text = weeWXApp.getAndroidString(R.string.forecast_url_not_set);
 
-		String html = Common.current_html_headers + text + Common.html_footer;
+		String html = weeWXApp.current_html_headers + text + weeWXApp.html_footer;
 
 		forecastWebView.post(() -> forecastWebView.loadDataWithBaseURL(null, html,
 				"text/html", "utf-8", null));
@@ -722,7 +679,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(fctype == null || fctype.isBlank())
 			return;
 
-		final String fc = Common.current_html_headers + bits + Common.html_footer;
+		final String fc = weeWXApp.current_html_headers + bits + weeWXApp.html_footer;
 
 		forecastWebView.post(() -> forecastWebView.loadDataWithBaseURL("file:///android_res/", fc,
 					"text/html", "utf-8", null));
@@ -750,7 +707,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			{
 				im.post(() -> im.setImageResource(R.drawable.bom));
 				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
-					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE)));
+					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(weeWXAppCommon.NEGATIVE)));
 				else
 					im.post(() -> im.setColorFilter(null));
 			}
@@ -763,7 +720,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			{
 				im.post(() -> im.setImageResource(R.drawable.apixu));
 				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
-					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE)));
+					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(weeWXAppCommon.NEGATIVE)));
 				else
 					im.post(() -> im.setColorFilter(null));
 			}
@@ -772,7 +729,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			{
 				im.post(() -> im.setImageResource(R.drawable.met_ie));
 				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
-					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(Common.NEGATIVE)));
+					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(weeWXAppCommon.NEGATIVE)));
 				else
 					im.post(() -> im.setColorFilter(null));
 			}
@@ -781,49 +738,27 @@ public class Forecast extends Fragment implements View.OnClickListener
 		}
 	}
 
-	void doPause()
-	{
-		if(disabledSwipe)
-		{
-			disabledSwipe = false;
-			Common.LogMessage("Enabling swipe between screens...");
-			activity.setUserInputPager(true);
-		}
-	}
-
 	@SuppressWarnings("ConstantConditions")
 	public void updateSwipe()
 	{
-		if(!isVisible)
-			return;
-
-		if((disabledSwipe && disableSwipeOnRadar) || (!disabledSwipe && !disableSwipeOnRadar))
-			return;
-
-		if(!disabledSwipe && disableSwipeOnRadar && rfl.getVisibility() == View.VISIBLE)
+		if(rfl.getVisibility() == View.VISIBLE && floatingCheckBox.isChecked() && isVisible())
 		{
-			disabledSwipe = true;
-			Common.LogMessage("Disabling swipe between screens...");
+			weeWXAppCommon.LogMessage("Disabling swipe between screens...");
 			activity.setUserInputPager(false);
+			swipeLayout2.setEnabled(false);
 			return;
 		}
 
-		if(disabledSwipe && !disableSwipeOnRadar)
-		{
-			disabledSwipe = false;
-			Common.LogMessage("Enabling swipe between screens...");
-			activity.setUserInputPager(true);
-		}
+		weeWXAppCommon.LogMessage("Enabling swipe between screens...");
+		activity.setUserInputPager(true);
+		swipeLayout2.setEnabled(true);
 	}
 
 	@Override
 	public void onClick(View view)
 	{
-		disableSwipeOnRadar = floatingCheckBox.isChecked();
-		Common.SetBoolPref("disableSwipeOnRadar", disableSwipeOnRadar);
-		swipeLayout2.post(() -> swipeLayout2.setEnabled(rfl.getVisibility() == View.VISIBLE &&
-		                                                !floatingCheckBox.isChecked()));
+		weeWXAppCommon.SetBoolPref("disableSwipeOnRadar", floatingCheckBox.isChecked());
 		updateSwipe();
-		Common.LogMessage("Forecast.onClick() finished...");
+		weeWXAppCommon.LogMessage("Forecast.onClick() finished...");
 	}
 }

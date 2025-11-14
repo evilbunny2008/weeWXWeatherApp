@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радарная выява ўсё яшчэ спампоўваецца</string>
     <string name="radar_download_failed">Не ўдалося спампаваць радыёлакацыйную выяву</string>
     <string name="failed_to_process_forecast_data">Не ўдалося апрацаваць даныя прагнозу</string>
+    <string name="wifi_not_available">Хацелася б абнавіць, але злучэнне Wi-Fi недаступнае</string>
+    <string name="invalid_update_interval">Інтэрвал абнаўлення несапраўдны, абнавіце налады і паўтарыце спробу</string>
+    <string name="attempting_to_download_data_txt">Спроба спампаваць data.txt з вашага сервера</string>
+    <string name="radar_type_is_invalid">Тып радара \'%1$s\' несапраўдны, праверце файл налад і паўтарыце спробу</string>
 </resources>

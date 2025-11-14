@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Se lavetaka tiko ga na iyaloyalo ni kena lavetaki</string>
     <string name="radar_download_failed">Vauci me lavetaki na iyaloyalo ni radar</string>
     <string name="failed_to_process_forecast_data">Maqosa na kena cakacakataki na itukutuku</string>
+    <string name="wifi_not_available">E sa na vakavoui ia na WiFi na isema ni univaiula</string>
+    <string name="invalid_update_interval">Update e sa tiko na kena revurevu, na kena vakavoui ka qai retry […]</string>
+    <string name="attempting_to_download_data_txt">Tabaka ni lavetaki</string>
+    <string name="radar_type_is_invalid">Na mataqali%1$s\' e tawayalani, raica na nomu ituvatuva ni ituvatuva ka tovolea tale</string>
 </resources>

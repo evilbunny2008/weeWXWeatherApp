@@ -77,4 +77,9 @@
 	<string name="radar_still_downloading">Radar image is still downloading.</string>
 	<string name="radar_download_failed">Failed to download the radar image</string>
 	<string name="failed_to_process_forecast_data">Failed to process forecast data</string>
+	<string name="wifi_not_available">Would have updated but WiFi connection unavailable</string>
+	<string name="invalid_update_interval">Update interval is invalid, update settings and then retry</string>
+	<string name="attempting_to_download_data_txt">Attempting download data.txt from your server</string>
+	<string name="radar_type_is_invalid">Radar type \'%1$s\' is invalid, check your settings file and try again.</string>
+	<string name="webcam_still_downloading">Webcam image is still downloading.</string>
 </resources>

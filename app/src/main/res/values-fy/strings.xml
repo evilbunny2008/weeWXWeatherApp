@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radarôfbylding wurdt noch ynladen</string>
     <string name="radar_download_failed">It downloaden fan de radarôfbylding is mislearre</string>
     <string name="failed_to_process_forecast_data">It ferwurkjen fan prognosegegevens is net slagge</string>
+    <string name="wifi_not_available">Soe bywurke hawwe, mar WiFi-ferbining net beskikber</string>
+    <string name="invalid_update_interval">Update-ynterval is ûnjildich, bywurkje ynstellings en besykje dan nochris</string>
+    <string name="attempting_to_download_data_txt">Besiket te downloaden data.txt fan jo tsjinner</string>
+    <string name="radar_type_is_invalid">Radartype \'%1$s\' is ûnjildich, kontrolearje jo ynstellingsbestân en besykje it nochris</string>
 </resources>

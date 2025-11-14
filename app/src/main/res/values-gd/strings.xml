@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Tha an dealbh radar ga luchdachadh sìos</string>
     <string name="radar_download_failed">Dh\'fhàillig luchdadh a-nuas an dealbh radar</string>
     <string name="failed_to_process_forecast_data">Dh\'fhàillig làimhseachadh dàta ro-aithris</string>
+    <string name="wifi_not_available">Bhiodh e air ùrachadh ach chan eil ceangal WiFi ri fhaighinn</string>
+    <string name="invalid_update_interval">Tha an eadar-ama ùrachadh neo-dhligheach, ùraich na roghainnean agus an uairsin feuch a-rithist</string>
+    <string name="attempting_to_download_data_txt">A\' feuchainn ri data.txt a luchdachadh sìos bhon t-seirbheisiche agad</string>
+    <string name="radar_type_is_invalid">Tha an seòrsa radar \'%1$s\' mì-dhligheach, thoir sùil air an fhaidhle roghainnean agad is feuch ris a-rithist</string>
 </resources>

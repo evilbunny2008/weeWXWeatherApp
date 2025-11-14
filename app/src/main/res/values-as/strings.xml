@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">ৰাডাৰৰ ছবি এতিয়াও ডাউনলোড কৰি আছে।</string>
     <string name="radar_download_failed">ৰাডাৰৰ ছবিখন ডাউনলোড কৰাত ব্যৰ্থ</string>
     <string name="failed_to_process_forecast_data">পূৰ্বাভাস তথ্য প্ৰক্ৰিয়াকৰণ কৰাত ব্যৰ্থ</string>
+    <string name="wifi_not_available">আপডেট কৰা হ\'লহেঁতেন কিন্তু ৱাইফাই সংযোগ অনুপলব্ধ</string>
+    <string name="invalid_update_interval">আপডেইট ব্যৱধান অবৈধ, ছেটিংছ আপডেইট আৰু তাৰ পিছত পুনৰ চেষ্টা কৰক</string>
+    <string name="attempting_to_download_data_txt">আপোনাৰ চাৰ্ভাৰৰ পৰা Data.txt ডাউনলোড কৰাৰ চেষ্টা কৰা</string>
+    <string name="radar_type_is_invalid">ৰাডাৰৰ ধৰণ \'%1$s\' অবৈধ, আপোনাৰ ছেটিংছ ফাইল পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
 </resources>

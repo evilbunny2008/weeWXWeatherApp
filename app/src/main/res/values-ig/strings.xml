@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ihe onyonyo radar ka na-ebudata</string>
     <string name="radar_download_failed">Emeghị ka ibudata ihe ngosi Radar</string>
     <string name="failed_to_process_forecast_data">Emeghị ka ịhazi data</string>
+    <string name="wifi_not_available">Ga-emelite ma ọ bụrụ na njikọ WiFi adịghị</string>
+    <string name="invalid_update_interval">Mmelite na-emelite etiti ezighi ezi, melite ntọala wee laghachi</string>
+    <string name="attempting_to_download_data_txt">Ịnwa ibudata data.txt na sava gị</string>
+    <string name="radar_type_is_invalid">Delur pịnye \'%1$s\' abaghị uru, lelee faịlụ ntọala gị wee nwaa ọzọ</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">ராடார் படம் இன்னும் பதிவிறக்கம் செய்யப்படுகிறது</string>
     <string name="radar_download_failed">ரேடார் படத்தைப் பதிவிறக்குவதில் தோல்வி</string>
     <string name="failed_to_process_forecast_data">முன்னறிவிப்புத் தரவைச் செயலாக்க முடியவில்லை</string>
+    <string name="wifi_not_available">புதுப்பிக்கப்பட்டிருக்கும் ஆனால் வைஃபை இணைப்பு கிடைக்கவில்லை</string>
+    <string name="invalid_update_interval">புதுப்பிப்பு இடைவெளி தவறானது, அமைப்புகளைப் புதுப்பித்து, மீண்டும் முயற்சிக்கவும்</string>
+    <string name="attempting_to_download_data_txt">உங்கள் சர்வரிலிருந்து data.txtஐப் பதிவிறக்க முயற்சிக்கிறோம்</string>
+    <string name="radar_type_is_invalid">ரேடார் வகை \'%1$s\' தவறானது, உங்கள் அமைப்புக் கோப்பைச் சரிபார்த்து மீண்டும் முயலவும்</string>
 </resources>

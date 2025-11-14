@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радарне зображення ще завантажується</string>
     <string name="radar_download_failed">Не вдалося завантажити радіолокаційне зображення</string>
     <string name="failed_to_process_forecast_data">Не вдалося обробити дані прогнозу</string>
+    <string name="wifi_not_available">Оновився б, але з\'єднання Wi-Fi недоступне</string>
+    <string name="invalid_update_interval">Інтервал оновлення недійсний, оновіть налаштування та повторіть спробу</string>
+    <string name="attempting_to_download_data_txt">Спроба завантажити data.txt із вашого сервера</string>
+    <string name="radar_type_is_invalid">Тип радара \'%1$s\' недійсний, перевірте файл налаштувань і повторіть спробу</string>
 </resources>

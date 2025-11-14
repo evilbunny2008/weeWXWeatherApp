@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Icikope ca cikope cicili cilekopololwa</string>
     <string name="radar_download_failed">Ukufilwa ukukopa icikope ca radar</string>
     <string name="failed_to_process_forecast_data">Ukufilwa ukubomba amashiwi ya kusesema</string>
+    <string name="wifi_not_available">Nga cakuti ukuwamya kwa WiFi ukwabula ukufikilishiwa</string>
+    <string name="invalid_update_interval">Iciputulwa ca nshita tacilinga, ukubwekeshapo ukubika kabili lyene ukwesha</string>
+    <string name="attempting_to_download_data_txt">Esheniko ukukopa amashiwi.txt ukufuma kuli umubomfi wenu</string>
+    <string name="radar_type_is_invalid">Umusango wa radar \'%1$s\'s\'s taulinga, moneni failo yenu iya fipekanyo no kwesha na kabili</string>
 </resources>

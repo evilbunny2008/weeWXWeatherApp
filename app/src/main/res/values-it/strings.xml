@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">È ancora in corso il download dell\'immagine radar</string>
     <string name="radar_download_failed">Impossibile scaricare l\'immagine radar</string>
     <string name="failed_to_process_forecast_data">Impossibile elaborare i dati di previsione</string>
+    <string name="wifi_not_available">Avrei aggiornato ma la connessione WiFi non era disponibile</string>
+    <string name="invalid_update_interval">L\'intervallo di aggiornamento non è valido, aggiornare le impostazioni e riprovare</string>
+    <string name="attempting_to_download_data_txt">Tentativo di scaricare data.txt dal tuo server</string>
+    <string name="radar_type_is_invalid">Il tipo di radar \'%1$s\' non è valido, controlla il file delle impostazioni e riprova</string>
 </resources>

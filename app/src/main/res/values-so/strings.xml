@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Sawirka Radar ayaa wali soo dejinaya</string>
     <string name="radar_download_failed">Ku guuldareystay soo dejisashada muuqaalka radar</string>
     <string name="failed_to_process_forecast_data">Ku guuldareystay in la socodsiiyo xogta saadaasha</string>
+    <string name="wifi_not_available">La cusbooneysiin lahaa laakiin xiriirkii WiFi lama heli karo</string>
+    <string name="invalid_update_interval">Cusboonaysiinta Up-ka waa mid aan shaqeynaynin, nidaamyada cusboonaysiinta ka dibna dib u tijaabiso</string>
+    <string name="attempting_to_download_data_txt">Iskuday ka soo dejiso xogta.txt server-kaaga</string>
+    <string name="radar_type_is_invalid">Nooca Radar \'%1$s\' waa mid aan shaqeynaynin, hubi faylkaaga dejinta oo isku day mar labaad</string>
 </resources>

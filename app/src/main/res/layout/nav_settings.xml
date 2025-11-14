@@ -97,6 +97,7 @@
 				android:importantForAutofill="no"
 				android:inputType="none"
 				android:textSize="20sp"
+				android:saveEnabled="false"
 				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize,TouchTargetSizeCheck" />
 
 		</com.google.android.material.textfield.TextInputLayout>
@@ -124,6 +125,7 @@
 				android:importantForAutofill="no"
 				android:inputType="none"
 				android:textSize="20sp"
+				android:saveEnabled="false"
 				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
 		</com.google.android.material.textfield.TextInputLayout>
 
@@ -149,6 +151,7 @@
 				android:importantForAutofill="no"
 				android:inputType="none"
 				android:textSize="20sp"
+				android:saveEnabled="false"
 				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
 		</com.google.android.material.textfield.TextInputLayout>
 

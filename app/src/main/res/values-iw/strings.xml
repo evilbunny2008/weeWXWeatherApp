@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">תמונת הרדאר עדיין יורדת</string>
     <string name="radar_download_failed">הורדת תמונת הרדאר נכשלה</string>
     <string name="failed_to_process_forecast_data">עיבוד נתוני התחזית נכשל</string>
+    <string name="wifi_not_available">היה מתעדכן אבל חיבור WiFi לא זמין</string>
+    <string name="invalid_update_interval">מרווח העדכון אינו חוקי, עדכן את ההגדרות ולאחר מכן נסה שוב</string>
+    <string name="attempting_to_download_data_txt">מנסה להוריד data.txt מהשרת שלך</string>
+    <string name="radar_type_is_invalid">סוג הרדאר \'%1$s\' אינו חוקי, בדוק את קובץ ההגדרות ונסה שוב</string>
 </resources>

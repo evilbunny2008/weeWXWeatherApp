@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar Image stil de dawnlod</string>
     <string name="radar_download_failed">Failed fɔ dawnlod di reda imej</string>
     <string name="failed_to_process_forecast_data">Failed fɔ prosɛs fɔkɔs data</string>
+    <string name="wifi_not_available">bin fɔ dɔn ɔpdet bɔt WiFi kɔnɛkshɔn nɔ de</string>
+    <string name="invalid_update_interval">Update Interval nɔ go wok, ɔpdet sɛtin dɛn ɛn afta dat, yu fɔ tray bak</string>
+    <string name="attempting_to_download_data_txt">Attempting Download Data.txt frɔm yu sava</string>
+    <string name="radar_type_is_invalid">Radar type \'%1$s\' na invalid, chɛk yu sɛtin fayl ɛn tray bak</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radara bildo ankoraŭ elŝutas</string>
     <string name="radar_download_failed">Malsukcesis elŝuti la radarbildon</string>
     <string name="failed_to_process_forecast_data">Malsukcesis prilabori prognozajn datumojn</string>
+    <string name="wifi_not_available">Ĝisdatigus sed WiFi-konekto nedisponebla</string>
+    <string name="invalid_update_interval">Ĝisdatigintervalo estas nevalida, ĝisdatigu agordojn kaj poste reprovu</string>
+    <string name="attempting_to_download_data_txt">Provante elŝuti data.txt de via servilo</string>
+    <string name="radar_type_is_invalid">Radara tipo \'%1$s\' estas nevalida, kontrolu vian agordan dosieron kaj provu denove</string>
 </resources>

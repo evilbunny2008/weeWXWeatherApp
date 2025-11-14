@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">रडार इमेज आःतकं डाउनलोड यानाच्वंगु दु ।</string>
     <string name="radar_download_failed">रडार इमेज डाउनलोड यायेत ताःलात ।</string>
     <string name="failed_to_process_forecast_data">पूर्वानुमान डाटायात प्रोसेस यायेत ताःलात ।</string>
+    <string name="wifi_not_available">अपडेट जूगु जुइ तर वाइफाइ कनेक्सनयात छ्यले मफइगु जुइ ।</string>
+    <string name="invalid_update_interval">अपडेट अन्तराल अमान्य खः, सेटिङ्ग सेटिङ्ग अले हानं हानं कुतः या ।</string>
+    <string name="attempting_to_download_data_txt">छिगु सर्भरं डाउनलोड डाटा.टिएक्सट या ।</string>
+    <string name="radar_type_is_invalid">राडार टाइप \'%1$s\' अमान्य जुइ, थःगु सेटिङ फाइल जाँच यानादिसँ अले हाकनं कुतः यानादिसँ ।</string>
 </resources>

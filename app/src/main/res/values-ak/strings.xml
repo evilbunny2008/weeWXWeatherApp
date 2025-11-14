@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar mfonini no da so ara retwe</string>
     <string name="radar_download_failed">antumi antwe radar mfonini no</string>
     <string name="failed_to_process_forecast_data">antumi anni nsɛm a wɔahyɛ ho nkɔm ho dwuma ho dwuma</string>
+    <string name="wifi_not_available">Anka updated nanso wifi connection no nni hɔ</string>
+    <string name="invalid_update_interval">Update interval no nyɛ adwuma, update nhyehyɛe na afei san sɔ hwɛ</string>
+    <string name="attempting_to_download_data_txt">a worebɔ mmɔden sɛ wobɛtwe data.txt afi wo server so</string>
+    <string name="radar_type_is_invalid">Radar type \'%1$s\' nyɛ adwuma, hwɛ wo settings fael no na sɔ hwɛ bio</string>
 </resources>

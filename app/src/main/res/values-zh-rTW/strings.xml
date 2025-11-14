@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">雷達圖像仍在下載中。</string>
     <string name="radar_download_failed">雷達圖像下載失敗</string>
     <string name="failed_to_process_forecast_data">處理預測數據失敗</string>
+    <string name="wifi_not_available">本來可以更新，但 WiFi 連接不可用</string>
+    <string name="invalid_update_interval">更新間隔無效，更新設置然後重試</string>
+    <string name="attempting_to_download_data_txt">嘗試從您的服務器下載 data.txt</string>
+    <string name="radar_type_is_invalid">雷達類型\'%1$s\'無效，請檢查您的設置文件並重試。</string>
 </resources>

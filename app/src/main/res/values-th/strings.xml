@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">ภาพเรดาร์ยังคงดาวน์โหลดอยู่</string>
     <string name="radar_download_failed">ดาวน์โหลดภาพเรดาร์ไม่สำเร็จ</string>
     <string name="failed_to_process_forecast_data">ล้มเหลวในการประมวลผลข้อมูลการคาดการณ์</string>
+    <string name="wifi_not_available">คงจะอัปเดตแล้ว แต่การเชื่อมต่อ WiFi ไม่พร้อมใช้งาน</string>
+    <string name="invalid_update_interval">ช่วงเวลาการอัปเดตไม่ถูกต้อง อัปเดตการตั้งค่าแล้วลองอีกครั้ง</string>
+    <string name="attempting_to_download_data_txt">กำลังพยายามดาวน์โหลด data.txt จากเซิร์ฟเวอร์ของคุณ</string>
+    <string name="radar_type_is_invalid">ประเภทเรดาร์ \'%1$s\' ไม่ถูกต้อง โปรดตรวจสอบไฟล์การตั้งค่าของคุณแล้วลองอีกครั้ง</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Cal ma pe nen maber pud tye ka nen</string>
     <string name="radar_download_failed">Ka onongo pe atwero kwanyo cal me jadar meno</string>
     <string name="failed_to_process_forecast_data">Ka pe kitiyo ki ngec me byeko ngec</string>
+    <string name="wifi_not_available">Tika onongo bibedo ki wat manyen ento WiFi pe tye</string>
+    <string name="invalid_update_interval">Kare ma ki loko ni pe tiyo, loko kit ma ki keto kwede ki dong temo</string>
+    <string name="attempting_to_download_data_txt">Temo keto ngec i kom jami ma kikwanyo ki bot ladit tic-ci</string>
+    <string name="radar_type_is_invalid">Radar ma tye ki 1$\' pe tiyo, nen file ma kiketo dok item dok</string>
 </resources>

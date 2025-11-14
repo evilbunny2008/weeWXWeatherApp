@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Kei te tango tonu te whakaahua radar</string>
     <string name="radar_download_failed">I rahua te tango i te ahua radar</string>
     <string name="failed_to_process_forecast_data">I rahua te tukatuka i nga raraunga tohu</string>
+    <string name="wifi_not_available">Kua whakahoutia engari kaore i te waatea te hononga WiFi</string>
+    <string name="invalid_update_interval">He muhu te whakaurunga, te whakahou i nga tautuhinga ka hoki whakamuri</string>
+    <string name="attempting_to_download_data_txt">Te ngana i te tango raraunga.txt mai i to kaituku</string>
+    <string name="radar_type_is_invalid">Ko te momo radar \'%1$s\'he muhu, tirohia to kōnae tautuhinga ka ngana ano</string>
 </resources>

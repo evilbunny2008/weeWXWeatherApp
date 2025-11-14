@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Het radarbeeld wordt nog steeds gedownload</string>
     <string name="radar_download_failed">Kan het radarbeeld niet downloaden</string>
     <string name="failed_to_process_forecast_data">Kan prognosegegevens niet verwerken</string>
+    <string name="wifi_not_available">Zou bijgewerkt zijn, maar WiFi-verbinding is niet beschikbaar</string>
+    <string name="invalid_update_interval">Update-interval is ongeldig, update de instellingen en probeer het opnieuw</string>
+    <string name="attempting_to_download_data_txt">Er wordt geprobeerd data.txt van uw server te downloaden</string>
+    <string name="radar_type_is_invalid">Radartype \'%1$s\' is ongeldig, controleer uw instellingenbestand en probeer het opnieuw</string>
 </resources>

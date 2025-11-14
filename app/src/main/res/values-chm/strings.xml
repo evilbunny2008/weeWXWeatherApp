@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радар образым эше скачать</string>
     <string name="radar_download_failed">Радар образым скачать ыштен кертдыме</string>
     <string name="failed_to_process_forecast_data">Прогноз данныйым обрабатыватлаш лийдыме</string>
+    <string name="wifi_not_available">Уэмдыме ыле но WiFi подключение недоступен</string>
+    <string name="invalid_update_interval">Уэмдыме интервал чын огыл, уэмдаш параметр-влак да вара угыч тӧчен</string>
+    <string name="attempting_to_download_data_txt">Тендан сервер гыч скачать данный.txt</string>
+    <string name="radar_type_is_invalid">Радар тип \'%1$s\' чын огыл, шке настройкым файлым тергымаш да угыч тӧчен</string>
 </resources>

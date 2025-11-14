@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar görüntüsü hâlâ indiriliyor</string>
     <string name="radar_download_failed">Radar görüntüsü indirilemedi</string>
     <string name="failed_to_process_forecast_data">Tahmin verileri işlenemedi</string>
+    <string name="wifi_not_available">Güncellenecekti ancak Wi-Fi bağlantısı kullanılamıyor</string>
+    <string name="invalid_update_interval">Güncelleme aralığı geçersiz, ayarları güncelleyip yeniden deneyin</string>
+    <string name="attempting_to_download_data_txt">Sunucunuzdan data.txt indirilmeye çalışılıyor</string>
+    <string name="radar_type_is_invalid">\'%1$s\' radar türü geçersiz, ayarlar dosyanızı kontrol edip tekrar deneyin</string>
 </resources>

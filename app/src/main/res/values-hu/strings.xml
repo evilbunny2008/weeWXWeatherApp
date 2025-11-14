@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">A radarkép letöltése még folyamatban van</string>
     <string name="radar_download_failed">Nem sikerült letölteni a radarképet</string>
     <string name="failed_to_process_forecast_data">Nem sikerült feldolgozni az előrejelzési adatokat</string>
+    <string name="wifi_not_available">Frissült volna, de a WiFi kapcsolat nem elérhető</string>
+    <string name="invalid_update_interval">A frissítési időköz érvénytelen, frissítse a beállításokat, majd próbálkozzon újra</string>
+    <string name="attempting_to_download_data_txt">A data.txt fájl letöltése a szerverről</string>
+    <string name="radar_type_is_invalid">A \'%1$s\' radartípus érvénytelen, ellenőrizze a beállításokat, és próbálja újra</string>
 </resources>

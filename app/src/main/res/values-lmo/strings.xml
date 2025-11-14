@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">El giœugh l\'è el punt püsee volt de la fotocamera</string>
     <string name="radar_download_failed">Impara i foto de la fotocamera de la fotocamera</string>
     <string name="failed_to_process_forecast_data">Avità i dats de l\'aprovazion del sistema</string>
+    <string name="wifi_not_available">El g\'ha minga un\'aplicaziun de la pagina de la lista di dat</string>
+    <string name="invalid_update_interval">Seleziuna el cuntrol de la velocità, l\'è necesaria e l\'è necesaria</string>
+    <string name="attempting_to_download_data_txt">Indipendentement de la vòstra pagina di dat per la vòstra aplicaziun</string>
+    <string name="radar_type_is_invalid">El 2015 l\'è \'sült\', che l\'è drée a duperà el tò sistèm de cuntrol e l\'è minga facil.\'</string>
 </resources>

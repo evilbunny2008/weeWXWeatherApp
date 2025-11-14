@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Gambar radar isih diunduh</string>
     <string name="radar_download_failed">Gagal download gambar radar</string>
     <string name="failed_to_process_forecast_data">Gagal ngolah data ramalan</string>
+    <string name="wifi_not_available">Apa wis nganyari nanging Sambungan WiFi ora kasedhiya</string>
+    <string name="invalid_update_interval">Nganyari Interval ora sah, nganyari setelan banjur coba maneh</string>
+    <string name="attempting_to_download_data_txt">Nyoba download data.txt saka server sampeyan</string>
+    <string name="radar_type_is_invalid">Jenis Radar \'%1$s\' ora bener, priksa file setelan banjur coba maneh</string>
 </resources>

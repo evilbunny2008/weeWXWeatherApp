@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radarska slika se še nalaga</string>
     <string name="radar_download_failed">Prenos radarske slike ni uspel</string>
     <string name="failed_to_process_forecast_data">Podatkov napovedi ni bilo mogoče obdelati</string>
+    <string name="wifi_not_available">Posodobili bi ga, vendar povezava WiFi ni na voljo</string>
+    <string name="invalid_update_interval">Interval posodabljanja ni veljaven, posodobite nastavitve in poskusite znova</string>
+    <string name="attempting_to_download_data_txt">Poskus prenosa data.txt iz vašega strežnika</string>
+    <string name="radar_type_is_invalid">Vrsta radarja \'%1$s\' ni veljavna, preverite datoteko z nastavitvami in poskusite znova</string>
 </resources>

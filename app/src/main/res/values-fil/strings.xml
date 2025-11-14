@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Dina-download pa rin ang imahe ng radar</string>
     <string name="radar_download_failed">Nabigong i-download ang imahe ng radar</string>
     <string name="failed_to_process_forecast_data">Nabigong iproseso ang data ng pagtataya</string>
+    <string name="wifi_not_available">Ay mai -update ngunit hindi magagamit ang koneksyon sa WiFi</string>
+    <string name="invalid_update_interval">Ang agwat ng pag -update ay hindi wasto, i -update ang mga setting at pagkatapos ay muling subukan</string>
+    <string name="attempting_to_download_data_txt">Sinusubukan ang pag -download ng data.txt mula sa iyong server</string>
+    <string name="radar_type_is_invalid">Ang uri ng radar \'%1$s\' ay hindi wasto, suriin ang iyong file ng mga setting at subukang muli</string>
 </resources>

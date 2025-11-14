@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радарното изображение все още се изтегля</string>
     <string name="radar_download_failed">Неуспешно изтегляне на радарното изображение</string>
     <string name="failed_to_process_forecast_data">Неуспешна обработка на прогнозни данни</string>
+    <string name="wifi_not_available">Щеше да се актуализира, но WiFi връзката не е налична</string>
+    <string name="invalid_update_interval">Интервалът на актуализиране е невалиден, актуализирайте настройките и опитайте отново</string>
+    <string name="attempting_to_download_data_txt">Опит за изтегляне на data.txt от вашия сървър</string>
+    <string name="radar_type_is_invalid">Типът радар \'%1$s\' е невалиден, проверете файла с настройки и опитайте отново</string>
 </resources>

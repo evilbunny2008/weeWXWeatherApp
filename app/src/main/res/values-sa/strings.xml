@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">रडार इमेज अद्यापि डाउनलोड् करोति।</string>
     <string name="radar_download_failed">रडार-चित्रं डाउनलोड् कर्तुं असफलः अभवत् ।</string>
     <string name="failed_to_process_forecast_data">पूर्वानुमानदत्तांशं संसाधितुं विफलम्</string>
+    <string name="wifi_not_available">अद्यतनं स्यात् किन्तु WiFi Connection Unavailable</string>
+    <string name="invalid_update_interval">अद्यतनं अन्तरालम् अमान्यम्, अद्यतनं सेटिंग्स् ततः पुनःस्वप्नम् अस्ति ।</string>
+    <string name="attempting_to_download_data_txt">भवतः सर्वरतः data.txt डाउनलोड् कर्तुं प्रयतमाना</string>
+    <string name="radar_type_is_invalid">Radar प्रकार \'%1$s\' अमान्य है, अपनी सेटिंग्स फाइल जाँच करें और पुनः प्रयास करें।</string>
 </resources>

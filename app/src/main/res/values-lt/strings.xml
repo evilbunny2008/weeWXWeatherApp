@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radaro vaizdas vis dar atsisiunčiamas</string>
     <string name="radar_download_failed">Nepavyko atsisiųsti radaro vaizdo</string>
     <string name="failed_to_process_forecast_data">Nepavyko apdoroti prognozės duomenų</string>
+    <string name="wifi_not_available">Būtų atnaujintas, bet WiFi ryšys nepasiekiamas</string>
+    <string name="invalid_update_interval">Atnaujinimo intervalas netinkamas, atnaujinkite nustatymus ir bandykite dar kartą</string>
+    <string name="attempting_to_download_data_txt">Bandoma atsisiųsti data.txt iš jūsų serverio</string>
+    <string name="radar_type_is_invalid">Radaro tipas \'%1$s\' netinkamas, patikrinkite nustatymų failą ir bandykite dar kartą</string>
 </resources>

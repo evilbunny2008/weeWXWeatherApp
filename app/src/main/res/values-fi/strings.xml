@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Tutkakuvaa ladataan edelleen</string>
     <string name="radar_download_failed">Tutkakuvan lataaminen epäonnistui</string>
     <string name="failed_to_process_forecast_data">Ennustetietojen käsittely epäonnistui</string>
+    <string name="wifi_not_available">Olisi päivitetty, mutta WiFi-yhteys ei ole käytettävissä</string>
+    <string name="invalid_update_interval">Päivitysväli on virheellinen, päivitä asetukset ja yritä sitten uudelleen</string>
+    <string name="attempting_to_download_data_txt">Yritetään ladata data.txt palvelimeltasi</string>
+    <string name="radar_type_is_invalid">Tutkatyyppi \'%1$s\' on virheellinen, tarkista asetustiedostosi ja yritä uudelleen</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +15,6 @@ import android.widget.TextView;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
 
-import java.io.File;
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -30,18 +28,16 @@ public class Weather extends Fragment implements View.OnClickListener
 {
 	private boolean isVisible;
 	private String lastURL;
-	private Thread forecastThread, radarThread;
-	private long ftStart, rtStart;
 	private WebView current, forecast;
 	private SwipeRefreshLayout swipeLayout;
 	private MaterialCheckBox floatingCheckBox;
 	private LinearLayout fll;
-	private boolean disableSwipeOnRadar;
-	private boolean disabledSwipe;
 	private MainActivity activity;
 	private MaterialTextView tv1, tv2;
 	private final ViewTreeObserver.OnScrollChangedListener scl =
 			() -> swipeLayout.setEnabled(current.getScrollY() == 0);
+
+	private long lastRunForecast, lastRunRadar; //, lastRunWeather;
 
 	public View onCreateView(@NonNull LayoutInflater inflater,
 	                         @Nullable ViewGroup container,
@@ -49,7 +45,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		super.onCreateView(inflater, container, savedInstanceState);
 
-		Common.LogMessage("Weather.onCreateView()");
+		weeWXAppCommon.LogMessage("Weather.onCreateView()");
 
 		activity = (MainActivity)getActivity();
 
@@ -72,14 +68,105 @@ public class Weather extends Fragment implements View.OnClickListener
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
-			Common.LogMessage("onRefresh();");
+			weeWXAppCommon.LogMessage("onRefresh();");
 			forceRefresh();
 		});
 
 		floatingCheckBox = rootView.findViewById(R.id.floatingCheckBoxMain);
 		floatingCheckBox.setOnClickListener(this);
 
+		boolean disableSwipeOnRadar = weeWXAppCommon.GetBoolPref("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
+		floatingCheckBox.setChecked(disableSwipeOnRadar);
+
 		return rootView;
+	}
+
+	@Override
+	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
+	{
+		weeWXAppCommon.LogMessage("Weather.onViewCreated()");
+		super.onViewCreated(view, savedInstanceState);
+
+		swipeLayout.setRefreshing(true);
+
+		weeWXAppCommon.LogMessage("Weather.onViewCreated()-- adding notification manager...");
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
+
+		boolean dynamicSizing = weeWXApp.getHeight() > weeWXApp.getWidth() && weeWXApp.getWidth() < 1100;
+
+		if(current == null)
+			current = loadWebview(null, view, R.id.current, true, dynamicSizing);
+		else
+			loadWebview(current, view, R.id.current, true, dynamicSizing);
+
+		if(forecast == null)
+			forecast = loadWebview(null, view, R.id.forecast, false, false);
+		else
+			loadWebview(forecast, view, R.id.forecast, false, false);
+
+		if(savedInstanceState != null)
+		{
+			weeWXAppCommon.LogMessage("Weather.onViewCreated() loading from savedInstanceState...");
+			current.restoreState(savedInstanceState);
+			forecast.restoreState(savedInstanceState);
+		}
+
+		if(weeWXAppCommon.isPrefSet("radarforecast"))
+		{
+			weeWXAppCommon.LogMessage("Weather.onViewCreated() doing full load...");
+			if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen)
+				drawRadar();
+			else
+				drawForecast();
+
+			drawWeather();
+
+			loadWebView();
+		}
+	}
+
+	@Override
+	public void onSaveInstanceState(@NonNull Bundle outState)
+	{
+		weeWXAppCommon.LogMessage("Weather.onSaveInstanceState()");
+		super.onSaveInstanceState(outState);
+
+		if(current != null)
+			current.saveState(outState);
+
+		if(forecast != null)
+			forecast.saveState(outState);
+	}
+
+	@Override
+	public void onDestroyView()
+	{
+		weeWXAppCommon.LogMessage("Weather.onDestroyView()");
+		super.onDestroyView();
+
+		if(current != null)
+		{
+			ViewParent parent = current.getParent();
+			if(parent instanceof ViewGroup)
+				((ViewGroup)parent).removeView(current);
+
+			current.getViewTreeObserver().removeOnScrollChangedListener(scl);
+
+			WebViewPreloader.getInstance().recycleWebView(current);
+
+			weeWXAppCommon.LogMessage("Weather.onDestroyView() recycled current...");
+		}
+
+		if(forecast != null)
+		{
+			ViewParent parent = forecast.getParent();
+			if(parent instanceof ViewGroup)
+				((ViewGroup)parent).removeView(forecast);
+
+			WebViewPreloader.getInstance().recycleWebView(forecast);
+
+			weeWXAppCommon.LogMessage("Weather.onDestroyView() recycled forecast...");
+		}
 	}
 
 	private WebView loadWebview(WebView webView, View view, int viewid,
@@ -109,7 +196,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 				if(dynamicSizing)
 				{
-					Common.LogMessage("dynamicSizing is true...");
+					weeWXAppCommon.LogMessage("dynamicSizing is true...");
 					// Post a Runnable to make sure contentHeight is available
 					view.postDelayed(() ->
 					{
@@ -119,11 +206,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
 						params.height = contentHeightPx; // - (int)(5 * density);
 						swipeLayout.setLayoutParams(params);
-						Common.LogMessage("New Height: " + contentHeightPx);
+						weeWXAppCommon.LogMessage("New Height: " + contentHeightPx);
 					}, 100); // 100ms delay lets the page finish rendering
 				}
-
-				rtStart = ftStart = 0;
 
 				stopRefreshing();
 			}
@@ -135,158 +220,111 @@ public class Weather extends Fragment implements View.OnClickListener
 		return null;
 	}
 
-	void doInitialLoad(View view, Bundle savedInstanceState)
-	{
-		Common.LogMessage("Weather.doInitialLoad()");
-
-		boolean dynamicSizing = weeWXApp.getHeight() > weeWXApp.getWidth() && weeWXApp.getWidth() < 1100;
-
-		if(current == null)
-			current = loadWebview(null, view, R.id.current, true, dynamicSizing);
-		else
-			loadWebview(current, view, R.id.current, true, dynamicSizing);
-
-		if(forecast == null)
-			forecast = loadWebview(null, view, R.id.forecast, false, false);
-		else
-			loadWebview(forecast, view, R.id.forecast, false, false);
-
-		if(savedInstanceState != null)
-		{
-			Common.LogMessage("Weather.doInitialLoad() loading from savedInstanceState...");
-			current.restoreState(savedInstanceState);
-			forecast.restoreState(savedInstanceState);
-		}
-
-		Common.LogMessage("Weather.doInitialLoad() doing full load...");
-		drawEverything();
-	}
-
-	@Override
-	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
-	{
-		Common.LogMessage("Weather.onViewCreated()");
-		super.onViewCreated(view, savedInstanceState);
-
-		swipeLayout.setRefreshing(true);
-
-		Common.LogMessage("Weather.onViewCreated()-- adding notification manager...");
-		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
-
-		doInitialLoad(view, savedInstanceState);
-	}
-
-	@Override
-	public void onSaveInstanceState(@NonNull Bundle outState)
-	{
-		Common.LogMessage("Weather.onSaveInstanceState()");
-		super.onSaveInstanceState(outState);
-
-		if(current != null)
-			current.saveState(outState);
-
-		if(forecast != null)
-			forecast.saveState(outState);
-	}
-
-	@Override
-	public void onDestroyView()
-	{
-		Common.LogMessage("Weather.onDestroyView()");
-		super.onDestroyView();
-
-		Common.LogMessage("Weather.onDestroyView()-- removing notification manager...");
-		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
-
-		if(current != null)
-		{
-			ViewParent parent = current.getParent();
-			if(parent instanceof ViewGroup)
-				((ViewGroup)parent).removeView(current);
-
-			current.getViewTreeObserver().removeOnScrollChangedListener(scl);
-
-			WebViewPreloader.getInstance().recycleWebView(current);
-
-			Common.LogMessage("Weather.onDestroyView() recycled current...");
-		}
-
-		if(forecast != null)
-		{
-			ViewParent parent = forecast.getParent();
-			if(parent instanceof ViewGroup)
-				((ViewGroup)parent).removeView(forecast);
-
-			WebViewPreloader.getInstance().recycleWebView(forecast);
-
-			Common.LogMessage("Weather.onDestroyView() recycled forecast...");
-		}
-	}
-
 	private void checkFields(TextView tv, String txt)
 	{
 		if(!tv.getText().toString().equals(txt))
 			tv.post(() -> tv.setText(txt));
 	}
 
-	void drawEverything()
+	private void drawRadar()
 	{
-		Common.LogMessage("drawEverything()");
+		weeWXAppCommon.LogMessage("drawRadar()");
 
-		if(Common.GetBoolPref("radarforecast", true))
+		long current_time = weeWXAppCommon.getCurrTime();
+
+		if(lastRunRadar + 5 > current_time)
 		{
-			String radtype = Common.GetStringPref("radtype", "image");
-			String radarURL = Common.GetStringPref("RADAR_URL", "");
-			if(radarURL == null || radarURL.isBlank() || radtype == null || radtype.isBlank())
+			weeWXAppCommon.LogMessage("We already ran less than 5s ago, skipping...");
+			stopRefreshing();
+			return;
+		}
+
+		lastRunRadar = current_time;
+
+		if(!weeWXAppCommon.isPrefSet("radarforecast") ||
+		   weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnHomeScreen)
+		{
+			stopRefreshing();
+			return;
+		}
+
+		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+		if(radtype == null || radtype.isBlank())
+		{
+			weeWXAppCommon.LogMessage("radtype: " + radtype);
+			loadWebViewContent(R.string.radar_type_is_invalid);
+			return;
+		}
+
+		if(radtype.equals("image"))
+		{
+			weeWXAppCommon.LogMessage("Update the radar iamge from cache...");
+			loadOrReloadRadarImage();
+		} else {
+			String radarURL = weeWXAppCommon.GetStringPref("RADAR_URL", weeWXApp.RADAR_URL_default);
+			if(radarURL == null || radarURL.isBlank())
 			{
-				Common.LogMessage("radarURL: " + radarURL + ", radtype: " + radtype);
+				weeWXAppCommon.LogMessage("radarURL: " + radarURL);
+				loadWebViewContent(R.string.radar_url_not_set);
 				return;
 			}
 
-			if(radtype.equals("image"))
-			{
-				Common.LogMessage("Update the radar image...");
-				long[] perioda = Common.getPeriod();
-				long period = Math.round(perioda[0] / 1000.0);
+			weeWXAppCommon.LogMessage("Update the radar webview page...");
+			loadWebViewURL(radarURL);
+		}
+	}
 
-				int pos = Common.GetIntPref("updateInterval", 1);
-				if(pos < 0)
-					return;
+	void drawForecast()
+	{
+		weeWXAppCommon.LogMessage("drawForecast()");
 
-				File f2 = Common.getFile("radar.gif");
-				long current_time = Math.round(System.currentTimeMillis() / 1000.0);
-				reloadWebView(Common.getModifiedTime(f2) + period < current_time);
-			} else {
-				Common.LogMessage("Update the radar webview page...");
-				loadWebViewURL(radarURL, false);
-			}
-		} else {
-			Common.LogMessage("Show the forecast...");
-			reloadForecast(false);
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
+			return;
+
+		weeWXAppCommon.LogMessage("Show the forecast...");
+		reloadForecast();
+	}
+
+	void drawWeather()
+	{
+		weeWXAppCommon.LogMessage("drawWeather()");
+/*
+		long current_time = weeWXAppCommon.getCurrTime();
+
+		if(lastRunWeather + 5 > current_time)
+		{
+			weeWXAppCommon.LogMessage("We already ran less than 5s ago, skipping...");
+			stopRefreshing();
+			return;
 		}
 
-		Common.LogMessage("updateFields()", true);
-		String lastDownload = Common.GetStringPref("LastDownload",null);
+		lastRunWeather = current_time;
+*/
+		String lastDownload = weeWXAppCommon.GetStringPref("LastDownload", weeWXApp.LastDownload_default);
 		if(lastDownload == null || lastDownload.isBlank())
 		{
-			Common.LogMessage("lastDownload is null or blank...", true);
+			forceCurrentRefresh(R.string.attempting_to_download_data_txt);
+			stopRefreshing();
 			return;
 		}
 
 		String[] bits = lastDownload.split("\\|");
+
+		weeWXAppCommon.LogMessage("bits.length: " + bits.length);
+
 		if(bits.length < 65)
 		{
-			Common.LogMessage("bits.length < 65");
+			weeWXAppCommon.LogMessage("bits.length < 65");
+			forceCurrentRefresh(R.string.error_occurred_while_attempting_to_update);
+			stopRefreshing();
 			return;
 		}
-
-		Common.LogMessage("bits.length: " + bits.length, true);
 
 		checkFields(tv1, bits[56]);
 		checkFields(tv2, bits[54] + " " + bits[55]);
 
-		final String currentSpacerLeft = "<span class='currentSpacer left'></span>";
-		final String currentSpacerRight = "<span class='currentSpacer right'></span>";
+		String currentSpacerLeft = "<span class='currentSpacer left'></span>";
+		String currentSpacerRight = "<span class='currentSpacer right'></span>";
 
 		final StringBuilder sb = new StringBuilder();
 		sb.append("\n<div class='todayCurrent'>\n");
@@ -299,7 +337,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(bits.length > 203)
 			sb.append(bits[203]).append(bits[60]);
 		else
-			sb.append(Common.emptyField);
+			sb.append(weeWXApp.emptyField);
 		sb.append("</div>\n\t</div>\n\n");
 
 		sb.append("\t<div class='dataTableCurrent'>\n");
@@ -360,7 +398,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						.append(bits[45])
 						.append(" UVI");
 			} else {
-				sb.append(Common.emptyField);
+				sb.append(weeWXApp.emptyField);
 			}
 
 			sb.append("\n\t\t\t</div>\n\t\t\t<div class='dataCellCurrent right'>\n\t\t\t\t");
@@ -371,14 +409,14 @@ public class Weather extends Fragment implements View.OnClickListener
 						.append(currentSpacerRight)
 						.append("<i class='flaticon-women-sunglasses icon'></i>");
 			} else {
-				sb.append(Common.emptyField);
+				sb.append(weeWXApp.emptyField);
 			}
 
 			sb.append("\n\t\t\t</div>\n\t\t</div>\n");
 		}
 
 		if(bits.length > 166 && (!bits[161].isBlank() || !bits[166].isBlank()) &&
-		   Common.GetBoolPref("showIndoor", false))
+		   weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
 		{
 			sb.append("\t\t<div class='dataRowCurrent'>\n")
 					.append("\t\t\t<div class='dataCellCurrent'>");
@@ -390,7 +428,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						.append(bits[161])
 						.append(bits[60]);
 			} else {
-				sb.append(Common.emptyField);
+				sb.append(weeWXApp.emptyField);
 			}
 
 			sb.append("</div>\n\t\t\t<div class='dataCellCurrent right'>");
@@ -402,7 +440,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						.append(currentSpacerRight)
 						.append("<i class='flaticon-home-page icon'></i>");
 			} else {
-				sb.append(Common.emptyField);
+				sb.append(weeWXApp.emptyField);
 			}
 
 			sb.append("</div>\n\t\t</div>\n");
@@ -432,233 +470,214 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t</div>\n</div>\n");
 
-		CustomDebug.writeDebug("current.html",
-				Common.current_html_headers + sb + Common.html_footer);
-
 		forceCurrentRefresh(sb.toString());
 	}
 
-	void loadWebViewURL(String url, boolean force)
+	private void loadAndShowWebView(WebView wv, String text, String url)
 	{
-		Common.LogMessage("Line 413 loadWebViewURL()  url: " + url);
+		if(text != null && url != null)
+			return;
+
+		wv.post(() ->
+		{
+			if(text != null)
+				wv.loadDataWithBaseURL("file:///android_res/", text,
+						"text/html", "utf-8", null);
+			else if(url != null)
+				wv.loadUrl(url);
+			else
+				wv.reload();
+
+			//wv.invalidate();
+		});
+	}
+
+	void loadWebViewURL(String url)
+	{
+		long current_time = weeWXAppCommon.getCurrTime();
+
+		weeWXAppCommon.LogMessage("Line 464 loadWebViewURL() url: " + url);
 
 		if(forecast == null)
 		{
-			Common.LogMessage("Line 417 loadWebViewURL() forecast == null, skipping...");
+			weeWXAppCommon.LogMessage("Line 468 loadWebViewURL() forecast == null, skipping...");
+			stopRefreshing();
 			return;
 		}
 
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnHomeScreen ||
+		   weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default).equals("image"))
+		{
+			weeWXAppCommon.LogMessage("Line 474 loadWebViewURL() loadWebViewURL() " +
+			                          "radarforecast != weeWXApp.RadarOnHomeScreen or " +
+			                          "radtype == image...");
+			stopRefreshing();
+			return;
+		}
+
+
+		if(lastRunForecast + 5 > current_time)
+		{
+			weeWXAppCommon.LogMessage("Line 474 loadWebViewURL() loadWebViewURL() ran less than 5s ago, skipping...");
+			stopRefreshing();
+			return;
+		}
+
+		lastRunForecast = current_time;
+
 		if(url.equals(lastURL))
 		{
-			Common.LogMessage("Line 432 loadWebViewURL() url == lastURL...");
-			if(force)
-			{
-				forecast.post(() -> forecast.reload());
-				Common.LogMessage("Line 444 loadWebViewURL() loadWebViewURL() forecast.reload()");
-			}
-
+			weeWXAppCommon.LogMessage("Line 474 loadWebViewURL() loadWebViewURL() forecast.reload()");
+			loadAndShowWebView(forecast, null, null);
 			return;
 		}
 
 		lastURL = url;
 
-		Common.LogMessage("Line 455 loadWebViewURL() post lastURL check...");
+		weeWXAppCommon.LogMessage("Line 481 loadWebViewURL() post lastURL check...");
 
-		forecast.post(() -> forecast.loadUrl(url));
-		Common.LogMessage("Line 469 loadWebViewURL() url: " + url + " should have loaded...");
+		loadAndShowWebView(forecast, null, url);
+		weeWXAppCommon.LogMessage("Line 484 loadWebViewURL() url: " + url + " should have loaded...");
 		stopRefreshing();
 	}
 
 	void loadWebViewContent(int resId)
 	{
-		Common.LogMessage("loadWebViewContent() resId: " + resId);
+		weeWXAppCommon.LogMessage("loadWebViewContent() resId: " + resId);
 
-		loadWebViewContent(Common.current_html_headers +
+		loadWebViewContent(weeWXApp.current_html_headers +
 								weeWXApp.getAndroidString(resId) +
-								Common.html_footer);
+								weeWXApp.html_footer);
 	}
 
 	void loadWebViewContent(String text)
 	{
-		Common.LogMessage("text: " + text.replaceAll("\n", "")
-				.replaceAll("\r", ""));
-
 		if(forecast == null)
 		{
 			stopRefreshing();
 			return;
 		}
 
-		Common.LogMessage("loadWebviewContent()");
+		weeWXAppCommon.LogMessage("loadWebviewContent()");
 
-		forecast.post(() -> forecast.loadDataWithBaseURL("file:///android_res/", text,
-					"text/html", "utf-8", null));
+		loadAndShowWebView(forecast, text, null);
 		stopRefreshing();
+	}
+
+	void forceCurrentRefresh(int resId)
+	{
+		forceCurrentRefresh(weeWXApp.getAndroidString(resId));
 	}
 
 	void forceCurrentRefresh(String body)
 	{
-		Common.LogMessage("Line 463 forceCurrentRefresh() body: " + body.replaceAll("\n", "")
-				.replaceAll("\r", ""));
-
 		if(current == null)
 		{
-			Common.LogMessage("Weather.forceCurrentRefresh() current == null", true);
+			weeWXAppCommon.LogMessage("Weather.forceCurrentRefresh() current == null");
 			return;
 		}
 
-		Common.LogMessage("Line 472 forceCurrentRefresh()", true);
+		weeWXAppCommon.LogMessage("Line 472 forceCurrentRefresh()");
 
-		String str = Common.current_html_headers + body;
+		String str = weeWXApp.current_html_headers + body;
 
-		if(Common.web_debug_on)
-			str += Common.debug_html;
+		if(weeWXAppCommon.web_debug_on)
+			str += weeWXApp.debug_html;
 
-		str += Common.html_footer;
+		str += weeWXApp.html_footer;
 
-		String html_str = str;
-
-		current.post(() ->
-		{
-			current.loadDataWithBaseURL("file:///android_res/", html_str,
-					"text/html", "utf-8", null);
-			current.invalidate();
-			Common.LogMessage("Line 493 forceCurrentRefresh() current.post()", true);
-		});
+		loadAndShowWebView(current, str, null);
+		weeWXAppCommon.LogMessage("Line 493 forceCurrentRefresh() calling loadAndShowWebView()");
 	}
 
 	private void forceRefresh()
 	{
-		Common.LogMessage("forceRefresh()");
-		Common.getWeather();
+		weeWXAppCommon.LogMessage("forceRefresh()");
 
-		if(Common.GetBoolPref("radarforecast", true))
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen)
 		{
-			String radtype = Common.GetStringPref("radtype", "image");
+			String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
 			{
-				reloadWebView(true);
+				loadOrReloadRadarImage();
 			} else {
-				String radarURL = Common.GetStringPref("RADAR_URL", "image");
+				String radarURL = weeWXAppCommon.GetStringPref("RADAR_URL", weeWXApp.RADAR_URL_default);
 				if(radarURL == null || radarURL.isBlank())
 				{
-					String html = Common.current_html_headers +
+					String html = weeWXApp.current_html_headers +
 					              weeWXApp.getAndroidString(R.string.radar_url_not_set) +
-					              Common.html_footer;
+					              weeWXApp.html_footer;
 					loadWebViewContent(html);
 					return;
 				}
 
-				loadWebViewURL(radarURL, true);
+				loadWebViewURL(radarURL);
 			}
 		} else {
-			reloadForecast(true);
+			weeWXAppCommon.LogMessage("Let's force download of fresh forecast data...");
+			reloadForecast();
 		}
 	}
 
 	private void loadWebView()
 	{
-		Common.LogMessage("loadWebView()");
+		weeWXAppCommon.LogMessage("loadWebView()");
 
-		String fctype = Common.GetStringPref("fctype", "Yahoo");
+		String fctype = weeWXAppCommon.GetStringPref("fctype", weeWXApp.fctype_default);
 
-		String forecastData = Common.GetStringPref("forecastData", null);
+		String forecastData = weeWXAppCommon.GetStringPref("forecastData", weeWXApp.forecastData_default);
 
-		loadWebView(fctype, forecastData);
+		if(forecastData != null && !forecastData.isBlank())
+			loadWebView(fctype, forecastData);
 	}
-
 
 	private void loadWebView(String fctype, String forecastData)
 	{
-		Common.LogMessage("loadWebView(fctype, forecastData)");
+		weeWXAppCommon.LogMessage("loadWebView(fctype, forecastData)");
 
-		boolean radarForecast = Common.GetBoolPref("radarforecast", true);
-		String radtype = Common.GetStringPref("radtype", "image");
-		String radarURL = Common.GetStringPref("RADAR_URL", "");
+		boolean radarForecast = weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default);
+		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+		String radarURL = weeWXAppCommon.GetStringPref("RADAR_URL", weeWXApp.RADAR_URL_default);
 
 		loadWebView(radarForecast, radtype, radarURL, fctype, forecastData);
 	}
 
 	private void loadWebView(boolean radarForecast, String radtype, String radarURL, String fctype, String forecastData)
 	{
-		Common.LogMessage("loadWebView(forecast)");
+		weeWXAppCommon.LogMessage("loadWebView(forecast)");
 
 		final StringBuilder sb = new StringBuilder();
 
-		sb.append(Common.current_html_headers);
+		sb.append(weeWXApp.current_html_headers);
 
-		if(radarForecast)
+		if(radarForecast == weeWXApp.RadarOnHomeScreen)
 		{
-			if(radtype == null || radtype.isBlank() || radarURL == null || radarURL.isBlank())
+			if(radtype == null || radtype.isBlank())
 			{
-				updateFLL(View.VISIBLE);
+				updateFLL(View.GONE);
+				loadWebViewContent(R.string.radar_type_is_invalid);
+				stopRefreshing();
+				return;
+			}
+
+			if(radarURL == null || radarURL.isBlank())
+			{
+				updateFLL(View.GONE);
 				loadWebViewContent(R.string.radar_url_not_set);
+				stopRefreshing();
 				return;
 			}
 
 			if(radtype.equals("webpage"))
 			{
 				updateFLL(View.VISIBLE);
-				Common.LogMessage("Loading RADAR_URL -> " + radarURL);
-				loadWebViewURL(radarURL, false);
+				weeWXAppCommon.LogMessage("Loading RADAR_URL -> " + radarURL);
+				loadWebViewURL(radarURL);
 			} else {
-				updateFLL(View.GONE);
-
-				long current_time = Math.round(System.currentTimeMillis() / 1000.0);
-
-				if(radarThread != null)
-				{
-					if(radarThread.isAlive())
-					{
-						if(rtStart + 30 > current_time)
-						{
-							Common.LogMessage("rtStart is less than 30s old, we'll skip this attempt...");
-							loadWebViewContent(R.string.radar_still_downloading);
-							return;
-						}
-
-						Common.LogMessage("rtStart is 30+s old, we'll interrupt it...");
-						radarThread.interrupt();
-					}
-
-					radarThread = null;
-				}
-
-				rtStart = current_time;
-
-				radarThread = new Thread(() ->
-				{
-					File myFile = Common.getFile("radar.gif");
-
-					Common.LogMessage("myFile == " + myFile.getAbsolutePath());
-					Common.LogMessage("myFile.exists() == " + myFile.exists());
-
-					Bitmap bm = null;
-
-					try
-					{
-						bm = Common.loadOrDownloadImage(radarURL, "radar.gif", false);
-					} catch(Exception ignored) {}
-
-					if(bm == null)
-					{
-						loadWebViewContent(R.string.radar_download_failed);
-						rtStart = 0;
-						return;
-					}
-
-					sb.append("\n\t<img class='radarImage' alt='Radar Image' src='")
-							.append(Common.toBase64(Common.bitmapToBytes(bm)))
-							.append("' />\n\n");
-					sb.append(Common.html_footer);
-					loadWebViewContent(sb.toString());
-					rtStart = 0;
-				});
-
-				radarThread.start();
+				loadOrReloadRadarImage();
 			}
 
-			return;
+			stopRefreshing();
 		} else {
 			updateFLL(View.GONE);
 
@@ -667,16 +686,17 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			if(fctype == null || fctype.isBlank())
 			{
-				loadWebViewContent(R.string.forecast_type_is_invalid);
+				String finalErrorStr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
+				loadWebViewContent(finalErrorStr);
 				return;
 			}
 
 			if(forecastData == null || forecastData.isBlank())
 			{
-				String forecastURL = Common.GetStringPref("FORECAST_URL", null);
-				forecastURL = Common.reallyGetForecast(forecastURL);
-				if(forecastURL == null || forecastURL.isBlank())
+				forecastData = weeWXAppCommon.GetStringPref("forecastData", weeWXApp.forecastData_default);
+				if(forecastData == null || forecastData.isBlank())
 				{
+
 					loadWebViewContent(R.string.wasnt_able_to_connect_forecast);
 					return;
 				}
@@ -688,7 +708,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			{
 				case "yahoo" ->
 				{
-					String[] content = Common.processYahoo(forecastData);
+					String[] content = weeWXAppCommon.processYahoo(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -702,7 +722,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "weatherzone" ->
 				{
-					String[] content = Common.processWZ(forecastData);
+					String[] content = weeWXAppCommon.processWZ(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -716,7 +736,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "yr.no" ->
 				{
-					String[] content = Common.processYR(forecastData);
+					String[] content = weeWXAppCommon.processYR(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -730,7 +750,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "met.no" ->
 				{
-					String[] content = Common.processMetNO(forecastData);
+					String[] content = weeWXAppCommon.processMetNO(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -744,7 +764,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "wmo.int" ->
 				{
-					String[] content = Common.processWMO(forecastData);
+					String[] content = weeWXAppCommon.processWMO(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -758,7 +778,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "weather.gov" ->
 				{
-					String[] content = Common.processWGOV(forecastData);
+					String[] content = weeWXAppCommon.processWGOV(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -772,7 +792,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "weather.gc.ca" ->
 				{
-					String[] content = Common.processWCA(forecastData);
+					String[] content = weeWXAppCommon.processWCA(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -786,7 +806,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "weather.gc.ca-fr" ->
 				{
-					String[] content = Common.processWCAF(forecastData);
+					String[] content = weeWXAppCommon.processWCAF(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -800,7 +820,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "metoffice.gov.uk" ->
 				{
-					String[] content = Common.processMET(forecastData);
+					String[] content = weeWXAppCommon.processMET(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -816,16 +836,16 @@ public class Weather extends Fragment implements View.OnClickListener
 				{
 					String[] content;
 
-					Common.LogMessage("doing bom2/bom3...");
+					weeWXAppCommon.LogMessage("doing bom2/bom3...");
 
 					if(fctype.toLowerCase(Locale.ENGLISH).equals("bom3"))
-						content = Common.processBOM3(forecastData);
+						content = weeWXAppCommon.processBOM3(forecastData);
 					else if(fctype.toLowerCase(Locale.ENGLISH).equals("bom2"))
-						content = Common.processBOM2(forecastData);
+						content = weeWXAppCommon.processBOM2(forecastData);
 					else
 						return;
 
-					Common.LogMessage("content: " + Arrays.toString(content));
+					weeWXAppCommon.LogMessage("content: " + Arrays.toString(content));
 
 					if(content == null || content.length == 0)
 					{
@@ -842,7 +862,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "aemet.es" ->
 				{
-					String[] content = Common.processAEMET(forecastData);
+					String[] content = weeWXAppCommon.processAEMET(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -856,7 +876,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "dwd.de" ->
 				{
-					String[] content = Common.processDWD(forecastData);
+					String[] content = weeWXAppCommon.processDWD(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -870,7 +890,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "metservice.com" ->
 				{
-					String[] content = Common.processMetService(forecastData);
+					String[] content = weeWXAppCommon.processMetService(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -884,7 +904,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "openweathermap.org" ->
 				{
-					String[] content = Common.processOWM(forecastData);
+					String[] content = weeWXAppCommon.processOWM(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -898,7 +918,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "weather.com" ->
 				{
-					String[] content = Common.processWCOM(forecastData);
+					String[] content = weeWXAppCommon.processWCOM(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -912,7 +932,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "met.ie" ->
 				{
-					String[] content = Common.processMETIE(forecastData);
+					String[] content = weeWXAppCommon.processMETIE(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -926,7 +946,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "tempoitalia.it" ->
 				{
-					String[] content = Common.processTempoItalia(forecastData);
+					String[] content = weeWXAppCommon.processTempoItalia(forecastData);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -938,274 +958,156 @@ public class Weather extends Fragment implements View.OnClickListener
 							.append("</div>\n")
 							.append(content[0]);
 				}
+				default ->
+				{
+					String finalErrorStr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
+					loadWebViewContent(finalErrorStr);
+					return;
+				}
 			}
+
+			sb.append(weeWXApp.html_footer);
+
+			loadWebViewContent(sb.toString());
+			stopRefreshing();
 		}
-
-		sb.append(Common.html_footer);
-
-		CustomDebug.writeDebug("loadWebView.html", sb.toString());
-
-
-		loadWebViewContent(sb.toString());
 	}
 
 	private void stopRefreshing()
 	{
-		Common.LogMessage("stopRefreshing()");
+		weeWXAppCommon.LogMessage("stopRefreshing()");
 		if(!swipeLayout.isRefreshing())
 			return;
 
 		swipeLayout.post(() -> swipeLayout.setRefreshing(false));
 	}
 
-	private void reloadForecast(boolean force)
+	private void reloadForecast()
 	{
-		Common.LogMessage("reloadForecast()");
-
-		if(Common.GetBoolPref("radarforecast", true))
-		{
-			Common.LogMessage("reloadForecast() radarforecast is true, skipping... This line shouldn't be hit...");
-			stopRefreshing();
-			return;
-		}
-
-		if(!Common.checkConnection() && !force)
-		{
-			Common.LogMessage("Not on wifi and not a forced refresh");
-			stopRefreshing();
-			return;
-		}
-
-		String forecast_url = Common.GetStringPref("FORECAST_URL", null);
-		if(forecast_url == null || forecast_url.isBlank())
-		{
-			loadWebViewContent(R.string.forecast_url_not_set);
-			return;
-		}
-
-		Common.LogMessage("forecast checking: " + forecast_url);
-
-		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
-
-		if(forecastThread != null)
-		{
-			if(forecastThread.isAlive())
-			{
-				if(ftStart + 30 > current_time)
-				{
-					Common.LogMessage("forecastThread is less than 30s old, we'll skip this attempt...");
-					return;
-				}
-
-				Common.LogMessage("forecastThread is 30+s old or not alive, we'll interrupt it...");
-				forecastThread.interrupt();
-			}
-
-			forecastThread = null;
-		}
-
-		ftStart = current_time;
-
-		forecastThread = new Thread(() ->
-		{
-			try
-			{
-				String forecastData = Common.GetStringPref("forecastData", null);
-
-				Common.LogMessage("forecastData: " + forecastData);
-
-				if(force || forecastData == null || forecastData.isBlank() ||
-						Common.GetLongPref("rssCheck", 0) + 7190 < current_time)
-				{
-					Common.LogMessage("No forecast data or cache is more than 2 hour old or was forced...");
-
-					forecastData = Common.reallyGetForecast(forecast_url);
-					if(forecastData != null && !forecastData.isBlank())
-					{
-						String fctype = Common.GetStringPref("fctype", null);
-						if(fctype == null || fctype.isBlank())
-						{
-							loadWebViewContent(R.string.forecast_type_is_invalid);
-							ftStart = 0;
-							return;
-						}
-
-						loadWebView(fctype, forecastData);
-						ftStart = 0;
-						return;
-					}
-
-					Common.LogMessage("Forecast is null or blank, spitting out error to the webview...");
-					loadWebViewContent(R.string.wasnt_able_to_connect_or_download);
-					ftStart = 0;
-					return;
-				}
-
-				Common.LogMessage("forecastThread is about to call loadWebView()...");
-				loadWebView();
-			} catch(Exception e) {
-				Common.doStackOutput(e);
-			}
-
-			ftStart = 0;
-		});
-
-		forecastThread.start();
-	}
-
-	private void reloadWebView(boolean force)
-	{
-		Common.LogMessage("reloadWebView()");
-
-		if(!Common.GetBoolPref("radarforecast", true))
-		{
-			Common.LogMessage("This shouldn't have happened!");
-			return;
-		}
-
-		if(!Common.checkConnection() && !force)
-		{
-			Common.LogMessage("Not on wifi and not a forced refresh");
-			return;
-		}
-
-		Common.LogMessage("Reload radar...");
-		final String radar = Common.GetStringPref("RADAR_URL", "");
-		if(radar == null || radar.isBlank())
-		{
-			Common.LogMessage("radar_url is null or blank...");
-			return;
-		}
-
-		String radtype = Common.GetStringPref("radtype", "image");
-		if(radtype == null || !radtype.equals("image"))
-		{
-			Common.LogMessage("This shouldn't have happened! radtype is null or blank...");
-			return;
-		}
+		weeWXAppCommon.LogMessage("reloadForecast()");
 
 		updateFLL(View.GONE);
 
-		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
-
-		if(radarThread != null)
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
 		{
-			if(radarThread.isAlive())
-			{
-				if(rtStart + 30 > current_time)
-				{
-					Common.LogMessage("ftStart is less than 30s old, we'll skip this attempt...");
-					return;
-				}
-
-				Common.LogMessage("ftStart is 30+s old, we'll interrupt it...");
-				radarThread.interrupt();
-			}
-
-			radarThread = null;
+			weeWXAppCommon.LogMessage("Weather.java reloadForecast() weeWXApp.ForecastOnHomeScreenis not true, skipping... " +
+			                          "This line shouldn't be hit ever...",true);
+			loadWebViewContent(R.string.unknown_error_occurred);
+			stopRefreshing();
+			return;
 		}
 
-		rtStart = current_time;
+		String[] ret = weeWXAppCommon.getForecast(false);
+		String forecastData = ret[1];
+		String fctype = ret[2];
 
-		radarThread = new Thread(() ->
+		if(ret[0].equals("error"))
 		{
-			try
+			if(forecastData != null && !forecastData.isBlank())
 			{
-				Common.LogMessage("Starting to download image from: " + radar);
-
-				File file = Common.getFile("radar.gif");
-
-				if(!Common.downloadToFile(file, radar))
-				{
-					String html = Common.current_html_headers +
-					              weeWXApp.getAndroidString(R.string.radar_download_failed) +
-					              Common.html_footer;
-					Common.LogMessage("Failed to download radar image");
-					loadWebViewContent(html);
-					rtStart = 0;
-					return;
-				}
-
-				Common.LogMessage("done downloading " + file.getAbsolutePath() + ", prompt handler to draw to movie");
-				loadWebView();
-			} catch(Exception e) {
-				Common.doStackOutput(e);
+				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData);
+				loadWebViewContent(weeWXApp.current_html_headers + forecastData + weeWXApp.html_footer);
+			} else {
+				weeWXAppCommon.LogMessage("getForecast returned an unknown error...");
+				loadWebViewContent(weeWXApp.current_html_headers +
+				                   weeWXApp.getAndroidString(R.string.unknown_error_occurred) +
+				                   weeWXApp.html_footer);
 			}
+		}
 
-			rtStart = 0;
-		});
+		weeWXAppCommon.LogMessage("getForecast returned some content...");
+		loadWebView(fctype, forecastData);
+	}
 
-		radarThread.start();
+	private void loadOrReloadRadarImage()
+	{
+		weeWXAppCommon.LogMessage("loadOrReloadRadarImage()");
+
+		updateFLL(View.GONE);
+
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnHomeScreen)
+		{
+			weeWXAppCommon.LogMessage("This shouldn't have happened! weeWXApp.RadarOnHomeScreen is false...");
+			stopRefreshing();
+			return;
+		}
+
+		String html;
+
+		if(weeWXAppCommon.getRadarImage(false) != null)
+		{
+			weeWXAppCommon.LogMessage("done downloading radar.gif, prompt to show");
+			loadWebView();
+			stopRefreshing();
+			return;
+		}
+
+		html = weeWXApp.current_html_headers +
+		       weeWXApp.getAndroidString(R.string.radar_still_downloading) +
+		       weeWXApp.html_footer;
+		weeWXAppCommon.LogMessage("Failed to download radar image");
+		loadWebViewContent(html);
+		stopRefreshing();
 	}
 
 	public void onResume()
 	{
 		super.onResume();
 
-		Common.LogMessage("Weather.onResume()");
+		weeWXAppCommon.LogMessage("Weather.onResume()");
 
 		if(isVisible)
 			return;
 
 		isVisible = true;
 
-		Common.LogMessage("Weather.onResume() -- updating the value of the floating checkbox...");
+		weeWXAppCommon.LogMessage("Weather.onResume() -- updating the value of the floating checkbox...");
 		updateFLL();
-
-		if(Common.GetBoolPref("radarforecast", true))
-		{
-			String radtype = Common.GetStringPref("radtype", "image");
-			if(radtype == null || !radtype.equals("image"))
-				loadWebView();
-			else
-				reloadWebView(false);
-		} else {
-			reloadForecast(false);
-		}
 	}
 
 	public void onPause()
 	{
 		super.onPause();
 
-		Common.LogMessage("Weather.onPause()");
+		weeWXAppCommon.LogMessage("Weather.onPause()");
 
 		if(!isVisible)
 			return;
 
 		isVisible = false;
 
-		if(disabledSwipe)
-		{
-			disabledSwipe = false;
-			Common.LogMessage("Enabling swipe between screens...");
-			activity.setUserInputPager(true);
-		}
+		weeWXAppCommon.LogMessage("Enabling swipe between screens...");
+		activity.setUserInputPager(true);
 	}
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		Common.LogMessage("notificationObserver == " + str);
+		weeWXAppCommon.LogMessage("Weather.java notificationObserver: " + str, true);
 
-		if(str.equals(Common.UPDATE_INTENT) || str.equals(Common.REFRESH_INTENT))
-			drawEverything();
+		if(str.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
+			drawForecast();
 
-		if(str.equals(Common.EXIT_INTENT))
+		if(str.equals(weeWXAppCommon.REFRESH_RADAR_INTENT))
+			drawRadar();
+
+		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
+			drawWeather();
+
+		if(str.equals(weeWXAppCommon.EXIT_INTENT))
 			onPause();
 	};
 
 	@Override
 	public void onClick(View view)
 	{
-		disableSwipeOnRadar = floatingCheckBox.isChecked();
-		Common.SetBoolPref("disableSwipeOnRadar", disableSwipeOnRadar);
+		weeWXAppCommon.SetBoolPref("disableSwipeOnRadar", floatingCheckBox.isChecked());
 		updateFLL();
-		Common.LogMessage("Forecast.onClick() finished...");
+		weeWXAppCommon.LogMessage("Forecast.onClick() finished...");
 	}
 
 	private void updateFLL()
 	{
-		activity.setUserInputPager(fll.getVisibility() != View.VISIBLE || !disableSwipeOnRadar);
+		activity.setUserInputPager(fll.getVisibility() != View.VISIBLE || !floatingCheckBox.isChecked() || !isVisible());
 	}
 
 	private void updateFLL(int visibility)

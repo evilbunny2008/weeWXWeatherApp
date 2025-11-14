@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радар зураг үшөөл татажа байна</string>
     <string name="radar_download_failed">Радарай зураг татажа абаха аргагүй болоһон</string>
     <string name="failed_to_process_forecast_data">Уридшалан уридшалан мэдэхэ мэдээсэл болбосоруулхагүй</string>
+    <string name="wifi_not_available">Шэнэлэгдэһэн байгаа, харин WiFi холболто үгы байгаа</string>
+    <string name="invalid_update_interval">Шэнэлэлтэ забһаргүй, шэнэлэлтэнүүдые шэнэлжэ, удаань дахин туршаха</string>
+    <string name="attempting_to_download_data_txt">data data.txt-ые өөрынгөө серверһээ туршаха</string>
+    <string name="radar_type_is_invalid">Радарай түхэл \'%1$s\' хүсэнгүй, өөрынгөө тохиргоонуудай файл шалгаад, дахин туршагты</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar image ya ha downloada</string>
     <string name="radar_download_failed">Ku tsandzekile ku kopa xifaniso xa radar</string>
     <string name="failed_to_process_forecast_data">Ku tsandzekile ku tirhisa datha ya vuprofeta</string>
+    <string name="wifi_not_available">a swi ta va swi updated kambe WiFi connection a yi kumeki</string>
+    <string name="invalid_update_interval">Nkarhi wo pfuxeta a wu tirhi, u pfuxeta swiyimiso ivi u ringeta nakambe</string>
+    <string name="attempting_to_download_data_txt">Ku ringeta ku download data.txt eka sevha ya wena</string>
+    <string name="radar_type_is_invalid">Muxaka wa radar \'%1$s\' a wu tirhi, languta fayili ya wena ya swiyimiso ivi u ringeta nakambe</string>
 </resources>

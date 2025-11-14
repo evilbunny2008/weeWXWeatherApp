@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">L-immaġni tar-radar għadha qed titniżżel</string>
     <string name="radar_download_failed">Naqas milli tniżżel l-immaġni tar-radar</string>
     <string name="failed_to_process_forecast_data">Naqas milli jipproċessa d-dejta tat-tbassir</string>
+    <string name="wifi_not_available">Kieku aġġornat iżda l-konnessjoni WiFi mhix disponibbli</string>
+    <string name="invalid_update_interval">L-intervall tal-aġġornament huwa invalidu, aġġorna s-settings u mbagħad erġa\' pprova</string>
+    <string name="attempting_to_download_data_txt">Jippruvaw tniżżel data.txt mis-server tiegħek</string>
+    <string name="radar_type_is_invalid">It-tip tar-radar \'%1$s\' mhuwiex validu, iċċekkja l-fajl tas-settings tiegħek u erġa\' pprova</string>
 </resources>

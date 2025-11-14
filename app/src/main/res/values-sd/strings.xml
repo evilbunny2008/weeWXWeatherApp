@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">رادار تصوير اڃا تائين ڊائون لوڊ ڪري رهيو آهي</string>
     <string name="radar_download_failed">رادار تصوير ڊائون لوڊ ڪرڻ ۾ ناڪام ٿيو</string>
     <string name="failed_to_process_forecast_data">اڳڪٿي ڊيٽا کي پروسيس ڪرڻ ۾ ناڪام ٿيو</string>
+    <string name="wifi_not_available">اپڊيٽ ڪيو ها پر وائي فائي ڪنيڪشن دستياب ناهي</string>
+    <string name="invalid_update_interval">اپڊيٽ وقفو غلط آهي، سيٽنگون تازه ڪاري ڪريو ۽ پوء ٻيهر ڪوشش ڪريو</string>
+    <string name="attempting_to_download_data_txt">توهان جي سرور مان data.txt ڊائون لوڊ ڪرڻ جي ڪوشش</string>
+    <string name="radar_type_is_invalid">رادر جو قسم \'%1$s\' غلط آهي، پنهنجي سيٽنگ فائل چيڪ ڪريو ۽ ٻيهر ڪوشش ڪريو</string>
 </resources>

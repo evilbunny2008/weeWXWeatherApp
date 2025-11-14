@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ôbraz raddarōw durch sie ściōngo</string>
     <string name="radar_download_failed">Niy ôddany do pobranio ôbrazu radaru</string>
     <string name="failed_to_process_forecast_data">Niy podarzi sie przetworzić dane prognozujōnce</string>
+    <string name="wifi_not_available">Czy by zaktualizowoł, ale połōnczynie WiFi niedostympne</string>
+    <string name="invalid_update_interval">Ôdstymp w Aktualizacyji je niyważny, aktualizacyje ustawiyń, a potym powtōrz</string>
+    <string name="attempting_to_download_data_txt">Prōbowanie danych pobiyranio.txt ze swojigo serwera</string>
+    <string name="radar_type_is_invalid">Typ typ Radar \'%1$s\' je nieważny, sprawdź plik ustawiyń i sprōbuj ôd nowa</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радарска слика се још увек преузима</string>
     <string name="radar_download_failed">Преузимање радарске слике није успело</string>
     <string name="failed_to_process_forecast_data">Обрада података прогнозе није успела</string>
+    <string name="wifi_not_available">Били би ажурирани, али ВиФи веза није доступна</string>
+    <string name="invalid_update_interval">Интервал ажурирања је неважећи, ажурирајте подешавања и покушајте поново</string>
+    <string name="attempting_to_download_data_txt">Покушај преузимања дата.ткт са вашег сервера</string>
+    <string name="radar_type_is_invalid">Тип радара \'%1$s\' је неважећи, проверите датотеку са подешавањима и покушајте поново</string>
 </resources>

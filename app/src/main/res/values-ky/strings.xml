@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радар сүрөтү дагы эле жүктөлүүдө</string>
     <string name="radar_download_failed">Радар сүрөтүн жүктөп алган жок</string>
     <string name="failed_to_process_forecast_data">Болжолдонгон маалыматтарды иштеп чыга алган жок</string>
+    <string name="wifi_not_available">Жаңыртылган, бирок WiFi туташуусу жеткиликтүү эмес</string>
+    <string name="invalid_update_interval">Жаңыртуунун интервалы жараксыз, жөндөөлөрдү жаңыртып, андан кийин кайталаңыз</string>
+    <string name="attempting_to_download_data_txt">Сервериңизден Data.txt жүктөө аракети</string>
+    <string name="radar_type_is_invalid">\'%1$s\'радар тиби жараксыз, жөндөөлөрүңүздүн файлыңызды текшерип, дагы бир жолу аракет кылып көрүңүз</string>
 </resources>

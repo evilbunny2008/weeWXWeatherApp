@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Gambara\'na radar nia\' ija nidownload</string>
     <string name="radar_download_failed">Punna nia\' tau a\'lampa mange ri gambara\' radar</string>
     <string name="failed_to_process_forecast_data">Punna nia\' tau a\'lampa mange ri prosesna</string>
+    <string name="wifi_not_available">Punna nia\' tau a\'lampa mange ri WiFi, tena na\'jari baji\'</string>
+    <string name="invalid_update_interval">Interval update tenaya na\'jari, pa\'baeng-baeng pa\'baeng-baeng nampa a\'lampa mange ri</string>
+    <string name="attempting_to_download_data_txt">Nampa nasuromi ke\'nanga a\'lampa mange ri servernu</string>
+    <string name="radar_type_is_invalid">Radar tipe \'%1$s\' tena nasala, paressai file settingnu nampa nucoba pole</string>
 </resources>

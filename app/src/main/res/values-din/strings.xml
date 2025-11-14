@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar thura aŋot ke cë yök</string>
     <string name="radar_download_failed">Acï wïc ba thura de radar yök</string>
     <string name="failed_to_process_forecast_data">Ke kë cï looi bï kä cï yök looi</string>
+    <string name="wifi_not_available">Alëu bï naŋ kë cï waar ku thöŋ de WiFi acïï lëu bï ya yök</string>
+    <string name="invalid_update_interval">Kë tɔ̈u nhial ee kë cïï lui, ye käŋ waar ku jal yaa dhukciëën</string>
+    <string name="attempting_to_download_data_txt">Tɛ̈m de wël ë yök.txt tënë server du</string>
+    <string name="radar_type_is_invalid">Tääu ë \'%1$s\' ee kë ril, tïŋ ë athör ë tɛ̈ɛ̈u ë käŋ ku them ba bɛɛr</string>
 </resources>

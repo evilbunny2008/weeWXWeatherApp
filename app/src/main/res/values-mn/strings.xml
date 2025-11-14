@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">RADAR зураг татаж байгаа хэвээр байна</string>
     <string name="radar_download_failed">Радарын зургийг татаж авч чадсангүй</string>
     <string name="failed_to_process_forecast_data">Урьдчилан тооцоолох өгөгдлийг боловсруулж чадсангүй</string>
+    <string name="wifi_not_available">Шинэчлэгдэх байсан ч wifi холболт боломжгүй байна</string>
+    <string name="invalid_update_interval">Шинэчлэх интервал буруу байна, тохиргоог шинэчлэх, дараа нь дахин оролдоно уу</string>
+    <string name="attempting_to_download_data_txt">Дата татаж авах.txt-ыг серверээс татаж авах</string>
+    <string name="radar_type_is_invalid">RADAR \'%1$s 1 $ S\' буруу байна, Тохиргоо файлаа шалгаад дахин оролдоно уу</string>
 </resources>

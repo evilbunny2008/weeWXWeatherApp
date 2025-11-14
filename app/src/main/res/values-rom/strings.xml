@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar image si inke tele tele</string>
     <string name="radar_download_failed">Nashtig te lel tele o radar-image</string>
     <string name="failed_to_process_forecast_data">Nashti te procesirinel pe prognozake data</string>
+    <string name="wifi_not_available">Bi te avel aktualizime numa WiFi konekcia na-i disponibilno</string>
+    <string name="invalid_update_interval">O intervalo le aktualizaciako si invalidno, aktualizime settingura thaj pala kodo te zumaven</string>
+    <string name="attempting_to_download_data_txt">Te zumaven te len data.txt katar tumaro servero</string>
+    <string name="radar_type_is_invalid">Radar tipo \'%1$s\' si bivalido, kontrolisaren tumare settings file thaj zumaven pale</string>
 </resources>

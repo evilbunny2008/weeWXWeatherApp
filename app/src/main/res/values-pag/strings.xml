@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Say maples ya imahen so man-download</string>
     <string name="radar_download_failed">Ag-indownload so radar ya imahen</string>
     <string name="failed_to_process_forecast_data">Ag-improseso pian ipasakbay iray data</string>
+    <string name="wifi_not_available">Na-update lang pero ang koneksyon na WiFi wala</string>
+    <string name="invalid_update_interval">Say ontatken a pankakasakey so ag-onkana, saray akaparaan lan pasen insan ipawil lamet</string>
+    <string name="attempting_to_download_data_txt">Pagsasali ya man-download data. text ed server yo</string>
+    <string name="radar_type_is_invalid">Say ted klase na klase \'%1$s\'s so ag-akadepende, nengnengen so file na saray pasen mo tan salien mo lamet</string>
 </resources>

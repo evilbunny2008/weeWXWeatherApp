@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">ਰਾਡਾਰ ਚਿੱਤਰ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ।</string>
     <string name="radar_download_failed">ਰਾਡਾਰ ਚਿੱਤਰ ਨੂੰ ਡਾਊਨਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
     <string name="failed_to_process_forecast_data">ਪੂਰਵ ਅਨੁਮਾਨ ਡੇਟਾ ਦੀ ਪ੍ਰਕਿਰਿਆ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
+    <string name="wifi_not_available">ਅੱਪਡੇਟ ਕੀਤਾ ਹੋਵੇਗਾ ਪਰ WiFi ਕਨੈਕਸ਼ਨ ਉਪਲਬਧ ਨਹੀਂ ਹੈ</string>
+    <string name="invalid_update_interval">ਅੱਪਡੇਟ ਅੰਤਰਾਲ ਅਵੈਧ ਹੈ, ਸੈਟਿੰਗਾਂ ਅੱਪਡੇਟ ਕਰੋ ਅਤੇ ਫਿਰ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="attempting_to_download_data_txt">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ data.txt ਡਾਊਨਲੋਡ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ</string>
+    <string name="radar_type_is_invalid">ਰਾਡਾਰ ਕਿਸਮ \'%1$s\' ਅਵੈਧ ਹੈ, ਆਪਣੀ ਸੈਟਿੰਗ ਫਾਈਲ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
 </resources>

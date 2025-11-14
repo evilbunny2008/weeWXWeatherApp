@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Picha mar Radar pod ng\'eny</string>
     <string name="radar_download_failed">Oherore mondo ochop e picha mar radir</string>
     <string name="failed_to_process_forecast_data">Ka ok otiyo gi weche ma ng\'ato nyalo ng\'eyogo</string>
+    <string name="wifi_not_available">Ne dhi keto tudruok mar tudruok to WiFi ne ok yudre</string>
+    <string name="invalid_update_interval">Okang\' ma ibiro tiekogo ok owinjore, ng\'ato nyalo ng\'eyo ni ng\'ato nigi nyalo mar timo gik moko</string>
+    <string name="attempting_to_download_data_txt">Kuong\'o data mar donjo.txt kowuok kuom sava mari</string>
+    <string name="radar_type_is_invalid">Radar mar kit \'%1$s\'s ok owinjore, ng\'i fail mar gik ma iketo kendo tem kendo</string>
 </resources>

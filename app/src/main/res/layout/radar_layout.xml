@@ -41,7 +41,7 @@
 			android:layout_height="wrap_content"
 			android:checked="true"
 			android:text="@string/swipe_lock"
-			android:textColor="#000000"
+			android:textColor="@color/Black"
 			android:background="#AA82B1FF"
 			tools:ignore="RtlSymmetry,VisualLintBounds" />
 	</LinearLayout>

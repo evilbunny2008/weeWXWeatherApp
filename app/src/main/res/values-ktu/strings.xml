@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Kifwanisu ya radar kele kaka na kubaka</string>
     <string name="radar_download_failed">Kukonda kubaka kifwanisu ya radar</string>
     <string name="failed_to_process_forecast_data">Kukonda kusadila bansangu ya ke kwisa na ntwala</string>
+    <string name="wifi_not_available">Yo zolaka kuvanda ti kuwakana kansi WiFi kele ve</string>
+    <string name="invalid_update_interval">Ntangu ya kutula na zulu kele ya kukonda mfunu, tula baparametre ya mpa mpi na nima kuvutukila</string>
+    <string name="attempting_to_download_data_txt">Meka kubaka bansangu.txt ya serveur na nge</string>
+    <string name="radar_type_is_invalid">Mutindu ya radar \'%1$s\' kele ya kukonda mfunu, tala fichier ya baparametre na nge mpi meka diaka</string>
 </resources>

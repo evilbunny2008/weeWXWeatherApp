@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">රේඩාර් රූපය තවමත් බාගත වෙමින් පවතී</string>
     <string name="radar_download_failed">රේඩාර් රූපය බාගැනීම අසාර්ථක විය</string>
     <string name="failed_to_process_forecast_data">පුරෝකථන දත්ත සැකසීමට අසමත් විය</string>
+    <string name="wifi_not_available">යාවත්කාලීන කළ හැකි නමුත් WiFi සම්බන්ධතාව නොමැත</string>
+    <string name="invalid_update_interval">යාවත්කාලීන කාල පරතරය වලංගු නැත, සැකසීම් යාවත්කාලීන කර නැවත උත්සාහ කරන්න</string>
+    <string name="attempting_to_download_data_txt">ඔබගේ සේවාදායකයෙන් data.txt බාගැනීමට උත්සාහ කරමින්</string>
+    <string name="radar_type_is_invalid">රේඩාර් වර්ගය \'%1$s\' වලංගු නැත, ඔබගේ සැකසීම් ගොනුව පරීක්ෂා කර නැවත උත්සාහ කරන්න</string>
 </resources>

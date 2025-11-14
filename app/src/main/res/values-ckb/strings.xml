@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">وێنەی ڕادار هێشتا دابەزاندن</string>
     <string name="radar_download_failed">شکستی هێنا لە دابەزاندنی وێنەی ڕادار</string>
     <string name="failed_to_process_forecast_data">شکستی هێنا لە پرۆسێسکردنی داتاکانی پێشبینی</string>
+    <string name="wifi_not_available">دەبوو نوێکرایەوە بەڵام وایفای پەیوەندی بەردەست نەبوو</string>
+    <string name="invalid_update_interval">update interval is invalid، ڕێکخستنەکانی نوێکردنەوە و پاشان هەوڵدان</string>
+    <string name="attempting_to_download_data_txt">هەوڵدان بۆ داگرتنی Data.txt لە سێرڤەرەکەتەوە</string>
+    <string name="radar_type_is_invalid">جۆری ڕادار \'%1$sS\' نادروستە، فایلە ڕێکخستنەکانت بپشکنە و دووبارە هەوڵبدەرەوە</string>
 </resources>

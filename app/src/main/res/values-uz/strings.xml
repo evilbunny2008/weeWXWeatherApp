@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar tasviri hali ham yuklab olinmoqda</string>
     <string name="radar_download_failed">Radar rasmini yuklab olmadi</string>
     <string name="failed_to_process_forecast_data">Prognoz ma\'lumotlarini qayta ishlay olmadi</string>
+    <string name="wifi_not_available">Yangilangan, ammo WiFi ulanish mavjud emas edi</string>
+    <string name="invalid_update_interval">Yangilash oralig\'i yaroqsiz, sozlamalarni yangilash va keyin qayta urinib ko\'ring</string>
+    <string name="attempting_to_download_data_txt">Serverdan ma\'lumotlarni yuklab olishga urinish</string>
+    <string name="radar_type_is_invalid">\'%1$s\' radar turi yaroqsiz, Sozlamalar faylingizni tekshiring va qaytadan urining</string>
 </resources>

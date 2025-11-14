@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar setšoantšo e ntse e thowuni</string>
     <string name="radar_download_failed">E paletšwe ke go taonelouta seswantšho sa radar</string>
     <string name="failed_to_process_forecast_data">E paletšwe ke go šoma ka datha ya ponelopele</string>
+    <string name="wifi_not_available">Would have updated but kgokagano ya WiFi e sa hwetšagale</string>
+    <string name="invalid_update_interval">Update karohano ke sa nepahala, ntjhafatsa di-setting ebe o leke hape</string>
+    <string name="attempting_to_download_data_txt">Go leka go taonelouta data.txt go tšwa go seva ya gago</string>
+    <string name="radar_type_is_invalid">Mohuta wa radar \'%1$s\' ga o šome, hlahloba faele ya gago ya dipeakanyo gomme o leke gape</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ny sary radar dia mbola misintona</string>
     <string name="radar_download_failed">Tsy nahavita nampiditra ny sary radar</string>
     <string name="failed_to_process_forecast_data">Tsy nahomby ny fizotran\'ny angon-drakitra</string>
+    <string name="wifi_not_available">Dia havaozina fa ny fifandraisana WiFi tsy azo ampiasaina</string>
+    <string name="invalid_update_interval">Ny fanavaozana ny elanelana dia tsy manan-kery, fanavaozana ny fanavaozana ary avy eo miverina</string>
+    <string name="attempting_to_download_data_txt">Manandrana misintona data.txt avy amin\'ny mpizara</string>
+    <string name="radar_type_is_invalid">Ny karazana radar \'%1$s\' dia tsy manan-kery, jereo ny rakitrao ary andramo indray</string>
 </resources>

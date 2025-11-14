@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ta\'anga radar omboguejy gueteri</string>
     <string name="radar_download_failed">Ndohupytýi ojegueru haguã radar ta\'angamýi</string>
     <string name="failed_to_process_forecast_data">Ndojejapói umi dato pronóstico rehegua</string>
+    <string name="wifi_not_available">ha\'e va\'erãmo\'ã actualizado pero WiFi conexión ndojeguerekóiva</string>
+    <string name="invalid_update_interval">Intervalo de actualización ndovaléi, oñembopyahu ha upéi oñeha\'ã jey</string>
+    <string name="attempting_to_download_data_txt">Oñeha\'ãvo ojegueru data.txt nde servidor-gui</string>
+    <string name="radar_type_is_invalid">RADAR Tipo \'%1$sS\' ndovaléi, ehecha nde archivo ñemboheko ha eñeha\'ã jey</string>
 </resources>

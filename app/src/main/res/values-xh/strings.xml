@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Umfanekiso we-radar usazikhuphela</string>
     <string name="radar_download_failed">Ayiphumelelanga ukukhuphela umfanekiso we-radar</string>
     <string name="failed_to_process_forecast_data">Ayiphumelelanga ukuqhuba idatha yemo</string>
+    <string name="wifi_not_available">Ngewayehlaziye kodwa wifi uqhagamshelo olungafumanekiyo</string>
+    <string name="invalid_update_interval">Ukuhlaziya ixesha lokuphumla akuvumelekanga, hlaziya useto kwaye uzame kwakhona</string>
+    <string name="attempting_to_download_data_txt">Ukuzama idatha yokukhuphela.txt kwiseva yakho</string>
+    <string name="radar_type_is_invalid">Uhlobo lwe-radar \'%1$s\' ayisebenzi, jonga iifayile zakho zefayile kwaye uzame kwakhona</string>
 </resources>

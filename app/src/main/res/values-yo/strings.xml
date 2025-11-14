@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Aworan Reda nla tun n gba lati ayelujara</string>
     <string name="radar_download_failed">O kuna lati ṣe igbasilẹ aworan Reda</string>
     <string name="failed_to_process_forecast_data">Kuna lati ṣe ilana data asọtẹlẹ</string>
+    <string name="wifi_not_available">Yoo ti imudojuiwọn ṣugbọn asopọ wifi ko si</string>
+    <string name="invalid_update_interval">AKIYESI ITAN TI O NI IBI, Awọn Eto imudojuiwọn ati lẹhinna Tun gbiyanju</string>
+    <string name="attempting_to_download_data_txt">Igbiyanju lati download data.txt lati ọdọ olupin rẹ</string>
+    <string name="radar_type_is_invalid">Iru Reda \'%1$s\' ko wulo, ṣayẹwo faili eto rẹ ki o tun gbiyanju lẹẹkan si</string>
 </resources>

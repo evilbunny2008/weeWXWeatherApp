@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import java.io.InterruptedIOException;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -17,8 +15,6 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 public class Webcam extends Fragment
 {
-	private Thread webcamThread = null;
-	private long wcStart;
 	private RotateLayout rl;
 	private ImageView iv;
 	private SwipeRefreshLayout swipeLayout;
@@ -36,9 +32,9 @@ public class Webcam extends Fragment
 		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
 		{
+			weeWXAppCommon.LogMessage("Webcam.java onRefresh();");
 			swipeLayout.setRefreshing(true);
-			Common.LogMessage("onRefresh();");
-			loadWebcamImage();
+			loadWebcamImage(true);
 		});
 
 		return rootView;
@@ -49,17 +45,9 @@ public class Webcam extends Fragment
 	{
 		super.onViewCreated(view, savedInstanceState);
 
-		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
-		loadWebcamImage();
-	}
-
-	@Override
-	public void onDestroyView()
-	{
-		super.onDestroyView();
-
-		Common.NotificationManager.getNotificationLiveData().removeObserver(notificationObserver);
+		loadWebcamImage(true);
 	}
 
 	void stopRefreshing()
@@ -68,94 +56,69 @@ public class Webcam extends Fragment
 			swipeLayout.post(() -> swipeLayout.setRefreshing(false));
 	}
 
-	private void loadWebcamImage()
+	private void showWebcamImage(Bitmap bm)
 	{
-		Common.LogMessage("loadWebcamImage...");
+		if(iv == null)
+			return;
 
-		final String webURL = Common.GetStringPref("WEBCAM_URL", "");
-		if(webURL == null || webURL.isBlank())
+		if(bm == null)
 		{
-			iv.setImageDrawable(weeWXApp.getAndroidDrawable(R.drawable.nowebcam));
-			iv.invalidate();
+			noImageToShow(weeWXApp.getAndroidString(R.string.webcam_still_downloading));
 			stopRefreshing();
 			return;
 		}
 
-		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+		weeWXAppCommon.LogMessage("rl.getAngle()=" + rl.getAngle());
+		weeWXAppCommon.LogMessage("screenHeightDp=" + weeWXApp.getHeight());
+		weeWXAppCommon.LogMessage("screenWidthDp=" + weeWXApp.getWidth());
+		weeWXAppCommon.LogMessage("bm.getWidth()=" + bm.getWidth());
+		weeWXAppCommon.LogMessage("bm.getHeight()=" + bm.getHeight());
 
-		if(webcamThread != null)
+		if(weeWXApp.getHeight() > weeWXApp.getWidth() && bm.getWidth() > bm.getHeight())
 		{
-			if(webcamThread.isAlive())
-			{
-				if(wcStart + 30 > current_time)
-					return;
-
-				webcamThread.interrupt();
-			}
-
-			webcamThread = null;
+			if(rl.getAngle() != -90)
+				rl.post(() -> rl.setAngle(-90));
+		} else {
+			if(rl.getAngle() != 0)
+				rl.post(() -> rl.setAngle(0));
 		}
 
-		wcStart = current_time;
-
-		webcamThread = new Thread(() ->
+		iv.post(() ->
 		{
-			try
-			{
-				Bitmap bm = Common.loadOrDownloadImage(webURL, "webcam.jpg", true);
-				if(bm == null)
-				{
-					noImageToShow("There was a problem with the webcam URL");
-					stopRefreshing();
-					wcStart = 0;
-					return;
-				}
-
-				Common.LogMessage("rl.getAngle()=" + rl.getAngle());
-				Common.LogMessage("screenHeightDp=" + weeWXApp.getHeight());
-				Common.LogMessage("screenWidthDp=" + weeWXApp.getWidth());
-				Common.LogMessage("bm.getWidth()=" + bm.getWidth());
-				Common.LogMessage("bm.getHeight()=" + bm.getHeight());
-
-				if(weeWXApp.getHeight() > weeWXApp.getWidth() && bm.getWidth() > bm.getHeight())
-				{
-					if(rl.getAngle() != -90)
-						rl.post(() -> rl.setAngle(-90));
-				} else {
-					if(rl.getAngle() != 0)
-						rl.post(() -> rl.setAngle(0));
-				}
-
-				iv.post(() ->
-				{
-					iv.setImageBitmap(bm);
-					iv.invalidate();
-				});
-
-				Common.LogMessage("Finished reading webcam.jpg into memory and iv should have updated...");
-
-			} catch(InterruptedIOException e) {
-				noImageToShow("Error: " + e);
-			} catch(Exception e) {
-				noImageToShow("Error: " + e);
-				//Common.doStackOutput(e);
-			}
-
-			stopRefreshing();
-			wcStart = 0;
+			iv.setImageBitmap(bm);
+			iv.invalidate();
 		});
 
-		webcamThread.start();
+		weeWXAppCommon.LogMessage("Finished reading webcam.jpg into memory and iv should have updated...");
+	}
+
+	private void loadWebcamImage(boolean forced)
+	{
+		weeWXAppCommon.LogMessage("loadWebcamImage...");
+
+		try
+		{
+			Bitmap bm = weeWXAppCommon.getWebcamImage(forced);
+			if(bm != null)
+				showWebcamImage(bm);
+			else
+				noImageToShow(weeWXApp.getAndroidString(R.string.webcam_still_downloading));
+		} catch(Exception e) {
+			weeWXAppCommon.LogMessage("Error! " + e);
+			noImageToShow("Error: " + e);
+		}
+
+		stopRefreshing();
 	}
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		Common.LogMessage("notificationObserver == " + str);
+		weeWXAppCommon.LogMessage("Webcam.java notificationObserver: " + str);
 
-		if(str.equals(Common.UPDATE_INTENT) || str.equals(Common.REFRESH_INTENT))
-			loadWebcamImage();
+		if(str.equals(weeWXAppCommon.REFRESH_WEBCAM_INTENT))
+			loadWebcamImage(false);
 
-		if(str.equals(Common.EXIT_INTENT))
+		if(str.equals(weeWXAppCommon.EXIT_INTENT))
 			onPause();
 	};
 

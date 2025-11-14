@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">ରାଡାର ପ୍ରତିଛବି ଏପର୍ଯ୍ୟନ୍ତ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
     <string name="radar_download_failed">ରାଡାର ପ୍ରତିଛବି ଡାଉନଲୋଡ୍ କରିବାରେ ବିଫଳ |</string>
     <string name="failed_to_process_forecast_data">ପୂର୍ବାନୁମାନ ତଥ୍ୟ ପ୍ରକ୍ରିୟାକରଣ କରିବାରେ ବିଫଳ |</string>
+    <string name="wifi_not_available">ଅପଡେଟ୍ ହୋଇଥାନ୍ତା କିନ୍ତୁ ୱାଇଫାଇ ସଂଯୋଗ ଉପଲବ୍ଧ ନାହିଁ |</string>
+    <string name="invalid_update_interval">ଅଦ୍ୟତନ ବ୍ୟବଧାନ ଅବ alid ଧ, ସେଟିଂସମୂହ ଅଦ୍ୟତନ କରନ୍ତୁ ଏବଂ ତାପରେ ପୁନ ry ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+    <string name="attempting_to_download_data_txt">ଆପଣଙ୍କ ସର୍ଭରରୁ data.txt ଡାଉନଲୋଡ୍ କରିବାକୁ ଚେଷ୍ଟା କରୁଛି |</string>
+    <string name="radar_type_is_invalid">ରାଡାର ପ୍ରକାର \'%1$s\' ଅବ alid ଧ, ଆପଣଙ୍କର ସେଟିଂସମୂହ ଫାଇଲକୁ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
 </resources>

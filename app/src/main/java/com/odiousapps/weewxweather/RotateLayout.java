@@ -52,16 +52,16 @@ public class RotateLayout extends ViewGroup
 	{
 		super(context, attrs);
 
-		Common.LogMessage("About to act on a typedArray!");
+		weeWXAppCommon.LogMessage("About to act on a typedArray!");
 		try(TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RotateLayout))
 		{
-			Common.LogMessage("Step 1 complete...");
+			weeWXAppCommon.LogMessage("Step 1 complete...");
 			angle = a.getInt(R.styleable.RotateLayout_angle, 0);
-			Common.LogMessage("Step 3 complete...");
+			weeWXAppCommon.LogMessage("Step 3 complete...");
 			setWillNotDraw(false);
-			Common.LogMessage("Step 4 complete...");
+			weeWXAppCommon.LogMessage("Step 4 complete...");
 		} catch(Exception e) {
-			Common.LogMessage("Error: " + e);
+			weeWXAppCommon.LogMessage("Error: " + e);
 		}
 	}
 

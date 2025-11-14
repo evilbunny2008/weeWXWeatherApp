@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Imazhi i radarit është ende duke u shkarkuar</string>
     <string name="radar_download_failed">Shkarkimi i imazhit të radarit dështoi</string>
     <string name="failed_to_process_forecast_data">Përpunimi i të dhënave të parashikimit dështoi</string>
+    <string name="wifi_not_available">Do të ishte përditësuar, por lidhja WiFi nuk ofrohet</string>
+    <string name="invalid_update_interval">Intervali i përditësimit është i pavlefshëm, përditëso cilësimet dhe më pas provo sërish</string>
+    <string name="attempting_to_download_data_txt">Po tentoni të shkarkoni data.txt nga serveri juaj</string>
+    <string name="radar_type_is_invalid">Lloji i radarit \'%1$s\' është i pavlefshëm, kontrollo skedarin e cilësimeve dhe provo sërish</string>
 </resources>

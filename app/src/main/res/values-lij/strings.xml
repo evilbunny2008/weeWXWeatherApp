@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">L\'imagine Radar a l\'é ancon o download</string>
     <string name="radar_download_failed">Fallio de scaricâ l\'imagine do radar</string>
     <string name="failed_to_process_forecast_data">Falli à elaborâ i dæti de previxon</string>
+    <string name="wifi_not_available">Avieiva aggiornou ma a connescion WiFi indisponibile</string>
+    <string name="invalid_update_interval">L\'intervallo d\'aggiornamento o l\'é invalido, e impostaçioin d\'aggiornamento e dapeu o se repiggia</string>
+    <string name="attempting_to_download_data_txt">Tentando i dæti de download.txt da-o seu server</string>
+    <string name="radar_type_is_invalid">Tipo de radar \'%1$s\' o l\'é invalido, controllâ o file de impostaçioin e provâ torna</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radara attāls vēļ lejupluodej</string>
     <string name="radar_download_failed">100 doc#1159 Naizadeve lejupluodēt radara attālu</string>
     <string name="failed_to_process_forecast_data">100 doc#1281 Naizadeve apstruoduot prognozis datus</string>
+    <string name="wifi_not_available">100 doc#1159 Byutu atjaunuots bet WiFi savīnuojums napīejams</string>
+    <string name="invalid_update_interval">Atjaunuojums intervals ir nadereigs, atjaunuošonys īstatejumi i tod raugi</string>
+    <string name="attempting_to_download_data_txt">100 doc#1159 Mieginuojuma lejupluodiešonys dati.txt nu jūs servera</string>
+    <string name="radar_type_is_invalid">Radara tips \'%1$s\' ir nadereigs, puorbaudiet sovu īstatejumu failu i raugi vēļreiz</string>
 </resources>

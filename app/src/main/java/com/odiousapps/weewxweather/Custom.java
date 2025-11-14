@@ -32,7 +32,7 @@ public class Custom extends Fragment
 	                         @Nullable ViewGroup container,
 	                         @Nullable Bundle savedInstanceState)
 	{
-		Common.LogMessage("Custom.onCreateView()");
+		weeWXAppCommon.LogMessage("Custom.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
 
 		View view = inflater.inflate(R.layout.fragment_custom, container, false);
@@ -42,8 +42,8 @@ public class Custom extends Fragment
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
-			Common.LogMessage("onRefresh();");
-			reloadWebView();
+			weeWXAppCommon.LogMessage("onRefresh();");
+			wv.post(() -> wv.reload());
 		});
 
 		return view;
@@ -52,7 +52,7 @@ public class Custom extends Fragment
 	@Override
 	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
 	{
-		Common.LogMessage("Custom.onViewCreated()");
+		weeWXAppCommon.LogMessage("Custom.onViewCreated()");
 		super.onViewCreated(view, savedInstanceState);
 
 		if(wv == null)
@@ -75,7 +75,7 @@ public class Custom extends Fragment
 					{
 						WebSettingsCompat.setAlgorithmicDarkeningAllowed(wv.getSettings(), true);
 					} catch(Exception e) {
-						Common.doStackOutput(e);
+						weeWXAppCommon.doStackOutput(e);
 					}
 				}
 			} else {
@@ -130,13 +130,22 @@ public class Custom extends Fragment
 		if(savedInstanceState != null)
 			wv.restoreState(savedInstanceState);
 
-		reloadWebView();
+		String custom = weeWXAppCommon.GetStringPref("CUSTOM_URL", weeWXApp.CUSTOM_URL_default);
+		String custom_url = weeWXAppCommon.GetStringPref("custom_url", weeWXApp.custom_url_default);
+
+		if((custom == null || custom.isBlank()) && (custom_url == null || custom_url.isBlank()))
+			return;
+
+		if(custom_url != null && !custom_url.isBlank())
+			wv.loadUrl(custom_url);
+		else if(custom != null && !custom.isBlank())
+			wv.loadUrl(custom);
 	}
 
 	@Override
 	public void onSaveInstanceState(@NonNull Bundle outState)
 	{
-		Common.LogMessage("Custom.onSaveInstanceState()");
+		weeWXAppCommon.LogMessage("Custom.onSaveInstanceState()");
 		super.onSaveInstanceState(outState);
 
 		if(wv != null)
@@ -146,7 +155,7 @@ public class Custom extends Fragment
 	@Override
 	public void onDestroyView()
 	{
-		Common.LogMessage("Custom.onDestroyView()");
+		weeWXAppCommon.LogMessage("Custom.onDestroyView()");
 		super.onDestroyView();
 
 		if(wv != null)
@@ -159,35 +168,7 @@ public class Custom extends Fragment
 
 			WebViewPreloader.getInstance().recycleWebView(wv);
 
-			Common.LogMessage("Custom.onDestroyView() recycled wv...");
+			weeWXAppCommon.LogMessage("Custom.onDestroyView() recycled wv...");
 		}
-	}
-
-	private void reloadWebView()
-	{
-		Common.LogMessage("reload custom...");
-
-		String custom = Common.GetStringPref("CUSTOM_URL", "");
-		String custom_url = Common.GetStringPref("custom_url", "");
-
-		if((custom == null || custom.isBlank()) && (custom_url == null || custom_url.isBlank()))
-			return;
-
-		if(custom_url != null && !custom_url.isBlank())
-			wv.loadUrl(custom_url);
-		else if(custom != null && !custom.isBlank())
-			wv.loadUrl(custom);
-	}
-
-	public void onResume()
-	{
-		super.onResume();
-		Common.LogMessage("Custom.onResume()");
-	}
-
-	public void onPause()
-	{
-		super.onPause();
-		Common.LogMessage("Custom.onPause()");
 	}
 }

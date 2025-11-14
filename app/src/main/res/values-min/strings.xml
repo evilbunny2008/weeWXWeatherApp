@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Gambar radar masih mangunduakan</string>
     <string name="radar_download_failed">Gagal untuak mangunduakan gambar radarnyo</string>
     <string name="failed_to_process_forecast_data">Digagalan jo data ramalan proses</string>
+    <string name="wifi_not_available">Akan memperbarui tapi koneksi WiFi indak tasadio</string>
+    <string name="invalid_update_interval">Interval update indak sah, pangaturan pambaruan dan kamudian mancubo baliak</string>
+    <string name="attempting_to_download_data_txt">Mancubo data unduhan.txt dari server Sanak</string>
+    <string name="radar_type_is_invalid">Radar tipe \'%1$s\' indak sah, pareso file pangaturan Sanak dan cubo baliak</string>
 </resources>

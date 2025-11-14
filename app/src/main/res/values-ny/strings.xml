@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Chithunzi cha Radar chidatsitsabe</string>
     <string name="radar_download_failed">Talephera kutsitsa chithunzi cha radar</string>
     <string name="failed_to_process_forecast_data">Talephera kukonza deta yachizolowezi</string>
+    <string name="wifi_not_available">Akanakhala kuti adasinthiratu komaliza</string>
+    <string name="invalid_update_interval">Sinthani nthawi yayitali ndi yosavomerezeka, kusintha makonda kenako ndikuyesanso</string>
+    <string name="attempting_to_download_data_txt">Kuyesa kutsitsa deta.txt kuchokera ku seva yanu</string>
+    <string name="radar_type_is_invalid">Radiar lembani \'%1$s\' sizabwino, yang\'anani fayilo yanu ndikuyesanso</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Арадартә сахьа уажәгьы ихәыҵгоит</string>
     <string name="radar_download_failed">Арадартә сахьа ахәыҵагалатәӡам</string>
     <string name="failed_to_process_forecast_data">Аԥхьагәаҭаратә дыррақәа аус рыдулара алыршахеит</string>
+    <string name="wifi_not_available">Иҿыцхон, аха WiFi аимадара ыҟам</string>
+    <string name="invalid_update_interval">Арҿыцра абжьаӡара иашам, абжьаҵарақәа рырхиарақәа, нас еиҭаҿактәуп</string>
+    <string name="attempting_to_download_data_txt">Аҭагалара аҽазышәара data.txt усервер аҟынтәи</string>
+    <string name="radar_type_is_invalid">Радар тип \'%1$s\' ҵабыргуп, урхиарақәа рфаил гәаҭаны, еиҭа уҽазышәа</string>
 </resources>

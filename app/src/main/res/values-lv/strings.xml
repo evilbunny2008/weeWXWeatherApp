@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Joprojām notiek radara attēla lejupielāde</string>
     <string name="radar_download_failed">Neizdevās lejupielādēt radara attēlu</string>
     <string name="failed_to_process_forecast_data">Neizdevās apstrādāt prognožu datus</string>
+    <string name="wifi_not_available">Būtu atjaunināts, bet WiFi savienojums nav pieejams</string>
+    <string name="invalid_update_interval">Atjaunināšanas intervāls nav derīgs, atjauniniet iestatījumus un pēc tam mēģiniet vēlreiz</string>
+    <string name="attempting_to_download_data_txt">No jūsu servera tiek mēģināts lejupielādēt failu data.txt</string>
+    <string name="radar_type_is_invalid">Radara veids \'%1$s\' nav derīgs, pārbaudiet iestatījumu failu un mēģiniet vēlreiz</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">레이더 이미지가 아직 다운로드 중입니다</string>
     <string name="radar_download_failed">레이더 이미지를 다운로드하지 못했습니다</string>
     <string name="failed_to_process_forecast_data">예측 데이터를 처리하지 못했습니다</string>
+    <string name="wifi_not_available">업데이트되었으나 Wi-Fi 연결을 사용할 수 없습니다</string>
+    <string name="invalid_update_interval">업데이트 간격이 잘못되었습니다. 설정을 업데이트한 후 다시 시도하세요</string>
+    <string name="attempting_to_download_data_txt">서버에서 data.txt 다운로드를 시도하는 중입니다</string>
+    <string name="radar_type_is_invalid">레이더 유형 \'%1$s\'이(가) 잘못되었습니다. 설정 파일을 확인하고 다시 시도하세요</string>
 </resources>

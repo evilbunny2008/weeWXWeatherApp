@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ke kiʻi neiʻo Radar kiʻi</string>
     <string name="radar_download_failed">ʻAʻole hikiʻole ke kiʻi i ke kiʻi radar</string>
     <string name="failed_to_process_forecast_data">ʻAʻole hikiʻole ke hoʻokō i nāʻikepili</string>
+    <string name="wifi_not_available">E hoʻonui houʻia akā loaʻa ka pilina wifi</string>
+    <string name="invalid_update_interval">ʻAʻole kūpono ka hōʻano houʻana i ka interval, hōʻano hou i nā hoʻonohonoho a laila hoʻihoʻi</string>
+    <string name="attempting_to_download_data_txt">Ka ho\'āʻoʻana i kaʻikepili download data.Txt mai kāu kikowaena</string>
+    <string name="radar_type_is_invalid">ʻAʻole pololeiʻo Radar Type \'%1$s\' iʻole, e nānā i kāu faila hoʻonohonoho a ho\'āʻo hou</string>
 </resources>

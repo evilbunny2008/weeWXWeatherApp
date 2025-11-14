@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">የራዳር ምስል አሁንም እያወርድ ነው</string>
     <string name="radar_download_failed">የራዳውን ምስል ማውረድ አልተሳካም</string>
     <string name="failed_to_process_forecast_data">ትንበያ ውሂብን ማከናወን አልተሳካም</string>
+    <string name="wifi_not_available">ዘምኗል ግን የ WiFi ግንኙነት አይገኝም</string>
+    <string name="invalid_update_interval">የዘመናችን የጊዜ ልዩነት ልክ ያልሆነ, ቅንብሮች ያዘምኑ እና ከዚያ እንደገና እንደገና ይሞክሩ</string>
+    <string name="attempting_to_download_data_txt">ከአገልጋይዎ ጋር የውሂብ .txt ን ማውረድ በመሞከር ላይ</string>
+    <string name="radar_type_is_invalid">የራዳር ዓይነት \'%1$s\' ልክ ያልሆነ ነው, የቅንብሮች ፋይልዎን ይፈትሹ እና እንደገና ይሞክሩ</string>
 </resources>

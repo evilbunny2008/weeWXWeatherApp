@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar image chu a la download zel a</string>
     <string name="radar_download_failed">Radar download theih loh a ni</string>
     <string name="failed_to_process_forecast_data">Forecast data a process theih loh</string>
+    <string name="wifi_not_available">would have updated but wifi connection a awm lo</string>
+    <string name="invalid_update_interval">Update interval chu a dik lo a, Update settings a awm a, chutah chuan retry leh rawh</string>
+    <string name="attempting_to_download_data_txt">I server atanga download data.txt tih tum</string>
+    <string name="radar_type_is_invalid">Radar type \'%1$s\' a dik lo a, i settings file kha check la, han try leh teh</string>
 </resources>

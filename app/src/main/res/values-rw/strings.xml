@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ishusho ya radar iracyakuramo</string>
     <string name="radar_download_failed">Kunanirwa gukuramo ishusho ya radar</string>
     <string name="failed_to_process_forecast_data">Kunanirwa gutunganya amakuru yimitaza</string>
+    <string name="wifi_not_available">Yaba yaravuguruye ariko wifi ihuza ntishoboka</string>
+    <string name="invalid_update_interval">Kuvugurura intera ntabwo byemewe, kuvugurura igenamiterere hanyuma ugerageze</string>
+    <string name="attempting_to_download_data_txt">Kugerageza gukuramo amakuru.txt uhereye kuri seriveri yawe</string>
+    <string name="radar_type_is_invalid">Ubwoko bwa radar \'%1$s\' ntabwo byemewe, reba dosiye yawe igenamiterere hanyuma ugerageze</string>
 </resources>

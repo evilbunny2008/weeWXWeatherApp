@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радар кескіні әлі де жүктеледі</string>
     <string name="radar_download_failed">Радар кескінін жүктеу сәтсіз аяқталды</string>
     <string name="failed_to_process_forecast_data">Болжамдық деректерді өңдей алмады</string>
+    <string name="wifi_not_available">Жаңартылған болар еді, бірақ WiFi қосылымы қол жетімді емес</string>
+    <string name="invalid_update_interval">Жаңарту аралығы жарамсыз, параметрлерді жаңартыңыз, содан кейін қайталаңыз</string>
+    <string name="attempting_to_download_data_txt">Деректерді жүктеу әрекеті, серверден</string>
+    <string name="radar_type_is_invalid">\'%1$s\' радар типі жарамсыз, параметрлер файлын тексеріп, әрекетті қайталаңыз</string>
 </resources>

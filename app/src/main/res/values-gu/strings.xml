@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">રડાર ઇમેજ હજી ડાઉનલોડ થઈ રહી છે</string>
     <string name="radar_download_failed">રડાર છબી ડાઉનલોડ કરવામાં નિષ્ફળ</string>
     <string name="failed_to_process_forecast_data">આગાહી ડેટા પર પ્રક્રિયા કરવામાં નિષ્ફળ</string>
+    <string name="wifi_not_available">અપડેટ કર્યું હશે પરંતુ WiFi કનેક્શન અનુપલબ્ધ છે</string>
+    <string name="invalid_update_interval">અપડેટ અંતરાલ અમાન્ય છે, સેટિંગ્સ અપડેટ કરો અને પછી ફરી પ્રયાસ કરો</string>
+    <string name="attempting_to_download_data_txt">તમારા સર્વર પરથી data.txt ડાઉનલોડ કરવાનો પ્રયાસ કરી રહ્યાં છીએ</string>
+    <string name="radar_type_is_invalid">રડાર પ્રકાર \'%1$s\' અમાન્ય છે, તમારી સેટિંગ્સ ફાઇલ તપાસો અને ફરી પ્રયાસ કરો</string>
 </resources>

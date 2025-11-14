@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Gambar radar puniki kantun ngunduh</string>
     <string name="radar_download_failed">Gagal ngunduh gambar radar punika</string>
     <string name="failed_to_process_forecast_data">Gagal ring data ramalan proses</string>
+    <string name="wifi_not_available">Pacang sampun update nanging koneksi WiFi nenten wenten</string>
+    <string name="invalid_update_interval">Interval update nénten sah, setélan update lan raris kacoba malih</string>
+    <string name="attempting_to_download_data_txt">Ngrereh data download.txt saking server Sametoné</string>
+    <string name="radar_type_is_invalid">Jenis Radar \'%1$s\' nenten sah, tureksain file pengaturan ragane lan indayang malih</string>
 </resources>

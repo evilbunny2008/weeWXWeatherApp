@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Fakkiin raadaraa ammallee buufachaa jira</string>
     <string name="radar_download_failed">Fakkii raadaraa buufachuu dadhabe</string>
     <string name="failed_to_process_forecast_data">Daataa tilmaama adeemsisuu hin dandeenye</string>
+    <string name="wifi_not_available">Silaa update ta\'a ture garuu wifi connection hin argamu</string>
+    <string name="invalid_update_interval">Update interval sirrii miti, qindaa\'inoota update fi sana booda irra deebi\'ii yaali</string>
+    <string name="attempting_to_download_data_txt">Data download data.txt server keessan irraa yaaluu</string>
+    <string name="radar_type_is_invalid">Gosa Raadaar \'%1$s\' sirrii miti, faayila settings kee ilaalii irra deebi\'ii yaali</string>
 </resources>

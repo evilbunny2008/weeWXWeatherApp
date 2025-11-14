@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">لا تزال صورة الرادار قيد التنزيل</string>
     <string name="radar_download_failed">فشل في تنزيل صورة الرادار</string>
     <string name="failed_to_process_forecast_data">فشل في معالجة بيانات التنبؤ</string>
+    <string name="wifi_not_available">كان من الممكن أن يتم تحديثه ولكن اتصال WiFi غير متاح</string>
+    <string name="invalid_update_interval">الفاصل الزمني للتحديث غير صالح، قم بتحديث الإعدادات ثم أعد المحاولة</string>
+    <string name="attempting_to_download_data_txt">محاولة تنزيل data.txt من الخادم الخاص بك</string>
+    <string name="radar_type_is_invalid">نوع الرادار \'%1$s\' غير صالح، تحقق من ملف الإعدادات وحاول مرة أخرى</string>
 </resources>

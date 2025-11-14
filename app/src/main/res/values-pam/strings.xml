@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ing imahen ning radar makababa ya pa rin</string>
     <string name="radar_download_failed">Bigo yang mag-download ing larawan ning radar</string>
     <string name="failed_to_process_forecast_data">Bigo yang magprosesu king pamaghula kareng datos</string>
+    <string name="wifi_not_available">Maging update ya sana pero e malyaring akwa ing koneksyun ning WFi</string>
+    <string name="invalid_update_interval">Ing agwat ning update e ya valid, updateng setting at kaybat mibalik</string>
+    <string name="attempting_to_download_data_txt">Tanggapan me ing data ning download.txt ibat keng server mu</string>
+    <string name="radar_type_is_invalid">Ing uri ning radar \'%1$s\' e ya valid, lawan me ing kekang file ning setting at subukan meng pasibayu</string>
 </resources>

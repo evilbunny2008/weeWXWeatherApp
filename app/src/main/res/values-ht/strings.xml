@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Imaj rada toujou ap telechaje</string>
     <string name="radar_download_failed">Echwe pou telechaje imaj rada a</string>
     <string name="failed_to_process_forecast_data">Echwe pou trete done previzyon yo</string>
+    <string name="wifi_not_available">Ta mete ajou men koneksyon WiFi pa disponib</string>
+    <string name="invalid_update_interval">Entèval aktyalizasyon a pa valab, mete ajou paramèt ak Lè sa a, reesye</string>
+    <string name="attempting_to_download_data_txt">Eseye telechaje data.txt sou sèvè w la</string>
+    <string name="radar_type_is_invalid">Kalite rada \'%1$s\' pa valab, tcheke dosye paramèt ou a epi eseye ankò</string>
 </resources>

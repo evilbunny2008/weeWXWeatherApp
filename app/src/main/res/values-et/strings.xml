@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radari kujutist laetakse endiselt alla</string>
     <string name="radar_download_failed">Radari kujutise allalaadimine ebaõnnestus</string>
     <string name="failed_to_process_forecast_data">Prognoosiandmete töötlemine ebaõnnestus</string>
+    <string name="wifi_not_available">Oleks värskendatud, kuid WiFi-ühendus pole saadaval</string>
+    <string name="invalid_update_interval">Värskendusintervall on kehtetu, värskendage sätteid ja proovige uuesti</string>
+    <string name="attempting_to_download_data_txt">Püütakse faili data.txt teie serverist alla laadida</string>
+    <string name="radar_type_is_invalid">Radari tüüp \'%1$s\' on kehtetu, kontrollige oma seadete faili ja proovige uuesti</string>
 </resources>

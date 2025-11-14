@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar mfoniri lɛ miiba lolo</string>
     <string name="radar_download_failed">Ebɛ hewalɛ ni okɛ rada mfoniri lɛ aba</string>
     <string name="failed_to_process_forecast_data">Efeee nɔ ko ni tsɔɔ saji ni atsɔɔ mli</string>
+    <string name="wifi_not_available">Kulɛ esa akɛ atsake shi WiFi bɛ</string>
+    <string name="invalid_update_interval">Nɔ ni atsake lɛ ejaaa, tsakemɔi ni ato ni no sɛɛ lɛ aka ekoŋŋ</string>
+    <string name="attempting_to_download_data_txt">Mɔdɛŋ ni okɛ data aba.txt kɛjɛ osɛɛva</string>
+    <string name="radar_type_is_invalid">Radar henɔ \'%1$s\' lɛ ejaaa, kwɛmɔ ogbɛjianɔtoo faili lɛ ni oka ekoŋŋ</string>
 </resources>

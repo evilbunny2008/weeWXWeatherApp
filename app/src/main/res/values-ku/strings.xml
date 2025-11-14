@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Wêneyê radarê hîna tê daxistin</string>
     <string name="radar_download_failed">Daxistina wêneya radarê bi ser neket</string>
     <string name="failed_to_process_forecast_data">Pêvajoya daneyên pêşbîniyê bi ser neket</string>
+    <string name="wifi_not_available">Dê were nûve kirin lê pêwendiya WiFi ne berdest e</string>
+    <string name="invalid_update_interval">Navbera nûvekirinê nederbasdar e, mîhengan nûve bikin û dûv re dîsa biceribînin</string>
+    <string name="attempting_to_download_data_txt">Hewl didin data.txt ji servera we dakêşin</string>
+    <string name="radar_type_is_invalid">Tîpa radarê \'%1$s\' nederbasdar e, pelê mîhengan kontrol bike û dîsa biceribîne</string>
 </resources>

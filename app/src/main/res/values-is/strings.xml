@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ratsjármynd er enn að hlaðast niður</string>
     <string name="radar_download_failed">Mistókst að hlaða niður ratsjármyndinni</string>
     <string name="failed_to_process_forecast_data">Mistókst að vinna úr spágögnum</string>
+    <string name="wifi_not_available">Hefði uppfært en WiFi tenging ekki tiltæk</string>
+    <string name="invalid_update_interval">Uppfærslubil er ógilt, uppfærðu stillingar og reyndu svo aftur</string>
+    <string name="attempting_to_download_data_txt">Reynir að hlaða niður data.txt af þjóninum þínum</string>
+    <string name="radar_type_is_invalid">Ratsjárgerð \'%1$s\' er ógild, athugaðu stillingaskrána þína og reyndu aftur</string>
 </resources>

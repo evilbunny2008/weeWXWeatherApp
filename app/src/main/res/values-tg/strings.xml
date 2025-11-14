@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Тасвири радаркорӣ ҳоло ҳам зеркашӣ аст</string>
     <string name="radar_download_failed">Тасвири радариро зеркашӣ кард</string>
     <string name="failed_to_process_forecast_data">Маълумоти пешакии маълумотро иҷро накард</string>
+    <string name="wifi_not_available">Метавонист навсозӣ мешуд, аммо WiFi пайвасти WiFi дастнорас аст</string>
+    <string name="invalid_update_interval">Фосилаи навсозӣ нодуруст аст, танзимоти навсозӣ ва сипас такрор кунед</string>
+    <string name="attempting_to_download_data_txt">Кӯшиши Download Download.txt аз сервери шумо</string>
+    <string name="radar_type_is_invalid">Навъи радар \'%1$s\' нодуруст аст, файли танзимоти худро санҷед ва бори дигар кӯшиш кунед</string>
 </resources>

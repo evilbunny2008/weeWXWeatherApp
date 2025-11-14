@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ռադարի պատկերը դեռ ներբեռնվում է:</string>
     <string name="radar_download_failed">Չհաջողվեց ներբեռնել ռադարի պատկերը</string>
     <string name="failed_to_process_forecast_data">Չհաջողվեց մշակել կանխատեսման տվյալները</string>
+    <string name="wifi_not_available">Կթարմացվեր, բայց WiFi կապն անհասանելի է</string>
+    <string name="invalid_update_interval">Թարմացման ընդմիջումն անվավեր է, թարմացրեք կարգավորումները և նորից փորձեք</string>
+    <string name="attempting_to_download_data_txt">Ձեր սերվերից data.txt-ը ներբեռնելու փորձ է կատարվում</string>
+    <string name="radar_type_is_invalid">\'%1$s\' ռադարի տեսակն անվավեր է, ստուգեք ձեր կարգավորումների ֆայլը և նորից փորձեք:</string>
 </resources>

@@ -12,10 +12,10 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "SameParameterValue"})
 class NetworkClient
 {
-	private static String URL = "";
+	private static String URL;
 
 	private NetworkClient()
 	{
@@ -31,23 +31,12 @@ class NetworkClient
 				.build();
 	}
 
-	static OkHttpClient getInstance()
-	{
-		if(URL.length() > 0)
-			return Holder.INSTANCE
-					.newBuilder()
-					.addInterceptor(myInterceptor)
-					.build();
-
-		return Holder.INSTANCE.newBuilder().build();
-	}
-
 	static OkHttpClient getInstance(String url)
 	{
-		OkHttpClient instance = getInstance();
-
 		if(url == null || url.isBlank())
-			return instance;
+			return Holder.INSTANCE
+					.newBuilder()
+					.build();
 
 		URL = url;
 
@@ -56,7 +45,7 @@ class NetworkClient
 		{
 			String[] UC = uri.getUserInfo().split(":");
 			String credentials = Credentials.basic(UC[0], UC[1]);
-			return instance.newBuilder()
+			return Holder.INSTANCE.newBuilder()
 					.addInterceptor(myInterceptor)
 					.authenticator((route, response) ->
 					{
@@ -66,22 +55,13 @@ class NetworkClient
 					}).build();
 		}
 
-		return instance;
-	}
-
-	public static OkHttpClient getStream()
-	{
-		return getInstance().newBuilder()
-				.readTimeout(0, TimeUnit.MILLISECONDS)
-				.build();
+		return Holder.INSTANCE.newBuilder().addInterceptor(myInterceptor).build();
 	}
 
 	public static OkHttpClient getStream(String url)
 	{
-		OkHttpClient instance = getInstance();
-
 		if(url == null || url.isBlank())
-			return instance;
+			return Holder.INSTANCE.newBuilder().build();
 
 		URL = url;
 
@@ -90,7 +70,7 @@ class NetworkClient
 		{
 			String[] UC = uri.getUserInfo().split(":");
 			String credentials = Credentials.basic(UC[0], UC[1]);
-			return instance.newBuilder()
+			return Holder.INSTANCE.newBuilder()
 					.readTimeout(0, TimeUnit.MILLISECONDS)
 					.addInterceptor(myInterceptor)
 					.authenticator((route, response) ->
@@ -101,14 +81,16 @@ class NetworkClient
 					}).build();
 		}
 
-		return instance;
+		return Holder.INSTANCE.newBuilder().build();
 	}
 
 	private static int responseCount(Response response)
 	{
 		int result = 1;
+
 		while((response = response.priorResponse()) != null)
 			result++;
+
 		return result;
 	}
 
@@ -116,27 +98,17 @@ class NetworkClient
 	{
 		Request.Builder builder = chain.request()
 				.newBuilder()
-				.header("User-Agent", Common.UA)
+				.header("User-Agent", weeWXAppCommon.UA)
 				.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
 				.header("Cache-Control", "max-age=0")
 				.header("Accept-Language", "en-au")
-				.header("Upgrade-Insecure-Requests", "1")
-				.header("Accept-Encoding", "deflate")
-				.header("Connection", "keep-alive");
+				.header("Upgrade-Insecure-Requests", "1");
 
 		if(URL.length() > 0)
 			builder.header("Referer", URL);
 
 		return chain.proceed(builder.build());
 	};
-
-	static Request newRequest()
-	{
-		if(URL.length() == 0)
-			return null;
-
-		return newRequest(URL);
-	}
 
 	static Request newRequest(String url)
 	{

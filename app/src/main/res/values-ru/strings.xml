@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радарное изображение все еще загружается</string>
     <string name="radar_download_failed">Не удалось загрузить радарное изображение</string>
     <string name="failed_to_process_forecast_data">Не удалось обработать данные прогноза</string>
+    <string name="wifi_not_available">Обновил бы, но подключение к Wi-Fi недоступно</string>
+    <string name="invalid_update_interval">Недопустимый интервал обновления, обновите настройки и повторите попытку</string>
+    <string name="attempting_to_download_data_txt">Попытка загрузить data.txt с вашего сервера</string>
+    <string name="radar_type_is_invalid">Тип радара \'%1$s\' недействителен. Проверьте файл настроек и повторите попытку</string>
 </resources>

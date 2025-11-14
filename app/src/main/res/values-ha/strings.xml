@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Hoton Radar har yanzu download</string>
     <string name="radar_download_failed">Ba a yi nasarar saukar da hoton Radar</string>
     <string name="failed_to_process_forecast_data">Ba a yi nasarar adana bayanan hasashe ba</string>
+    <string name="wifi_not_available">Da za a sabunta amma haɗin WiFi ba a ciki ba</string>
+    <string name="invalid_update_interval">Sabuntawa tazara ba ta dace ba, saitunan ɗaukaka sannan kuma sake gwadawa</string>
+    <string name="attempting_to_download_data_txt">Yunƙurin saukar da bayanai.txt daga sabar ku</string>
+    <string name="radar_type_is_invalid">Radar nau\'in \'%1$s\' ba shi da inganci, duba fayil ɗin saitunan ku kuma sake gwadawa</string>
 </resources>

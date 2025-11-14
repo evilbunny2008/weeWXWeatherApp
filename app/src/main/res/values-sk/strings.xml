@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radarový obraz sa stále sťahuje</string>
     <string name="radar_download_failed">Stiahnutie radarovej snímky zlyhalo</string>
     <string name="failed_to_process_forecast_data">Údaje prognózy sa nepodarilo spracovať</string>
+    <string name="wifi_not_available">Aktualizoval by sa, ale pripojenie WiFi nie je k dispozícii</string>
+    <string name="invalid_update_interval">Interval aktualizácie je neplatný, aktualizujte nastavenia a skúste to znova</string>
+    <string name="attempting_to_download_data_txt">Prebieha pokus o stiahnutie súboru data.txt z vášho servera</string>
+    <string name="radar_type_is_invalid">Typ radaru \'%1$s\' je neplatný, skontrolujte súbor nastavení a skúste to znova</string>
 </resources>

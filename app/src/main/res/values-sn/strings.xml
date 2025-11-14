@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar mufananidzo achiri kurodha</string>
     <string name="radar_download_failed">Kukundikana kutora iyo radar mufananidzo</string>
     <string name="failed_to_process_forecast_data">Yakundikana kugadzirisa data rekufunga</string>
+    <string name="wifi_not_available">Ndingadai ndakavandudza asi wifi yekubatanidza isingawanikwe</string>
+    <string name="invalid_update_interval">Gadziridza nguva isingaonekwe, gadziriso yekugadzirisa uye wozoregedza</string>
+    <string name="attempting_to_download_data_txt">Kuedza kurodha data.txt kubva kune yako server</string>
+    <string name="radar_type_is_invalid">Radar Type \'%1$s\' haina basa, tarisa yako faira faira uye edza zvakare</string>
 </resources>

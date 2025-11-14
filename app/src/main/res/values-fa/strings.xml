@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">تصویر رادار همچنان در حال دانلود است</string>
     <string name="radar_download_failed">تصویر رادار دانلود نشد</string>
     <string name="failed_to_process_forecast_data">پردازش داده های پیش بینی انجام نشد</string>
+    <string name="wifi_not_available">به روز شده بود اما اتصال WiFi در دسترس نیست</string>
+    <string name="invalid_update_interval">فاصله زمانی به‌روزرسانی نامعتبر است، تنظیمات را به‌روزرسانی کنید و دوباره امتحان کنید</string>
+    <string name="attempting_to_download_data_txt">در حال تلاش برای دانلود data.txt از سرور شما</string>
+    <string name="radar_type_is_invalid">نوع رادار \'%1$s\' نامعتبر است، فایل تنظیمات خود را بررسی کرده و دوباره امتحان کنید</string>
 </resources>

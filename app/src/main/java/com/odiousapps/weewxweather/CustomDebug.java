@@ -46,13 +46,13 @@ class CustomDebug
 			outFile = new File(outFile, dir);
 			if(outFile.exists() && !outFile.isDirectory())
 			{
-				Common.LogMessage("'" + dir + "' already exist, but it isn't a directory...");
+				weeWXAppCommon.LogMessage("'" + dir + "' already exist, but it isn't a directory...");
 				return;
 			}
 
 			if(!outFile.exists() && !outFile.mkdirs())
 			{
-				Common.LogMessage("Can't make '" + dir + "' dir...");
+				weeWXAppCommon.LogMessage("Can't make '" + dir + "' dir...");
 				return;
 			}
 
@@ -80,7 +80,7 @@ class CustomDebug
 		if(depth > 20)
 			return;
 
-		Context context = Common.getContext();
+		Context context = weeWXApp.getInstance();
 		if(context == null)
 			return;
 
@@ -90,13 +90,13 @@ class CustomDebug
 			outFile = new File(outFile, dir);
 			if(outFile.exists() && !outFile.isDirectory())
 			{
-				Common.LogMessage("'" + dir + "' already exist, but it isn't a directory...");
+				weeWXAppCommon.LogMessage("'" + dir + "' already exist, but it isn't a directory...");
 				return;
 			}
 
 			if(!outFile.exists() && !outFile.mkdirs())
 			{
-				Common.LogMessage("Can't make '" + dir + "' dir...");
+				weeWXAppCommon.LogMessage("Can't make '" + dir + "' dir...");
 				return;
 			}
 
@@ -110,9 +110,9 @@ class CustomDebug
 				while((length = in.read(buffer)) > 0)
 					out.write(buffer, 0, length);
 
-				Common.LogMessage("File saved to " + context.getFileStreamPath(outFile.getAbsolutePath()));
+				weeWXAppCommon.LogMessage("File saved to " + context.getFileStreamPath(outFile.getAbsolutePath()));
 			} catch(IOException e) {
-				Common.doStackOutput(e);
+				weeWXAppCommon.doStackOutput(e);
 			}
 		} catch(Exception e) {
 			//Common.doStackOutput(e);

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">रडाराची प्रतिमा अजूनय डाउनलोड करपाक लागल्या</string>
     <string name="radar_download_failed">रडाराची प्रतिमा डाउनलोड करपाक अपेस आयलें</string>
     <string name="failed_to_process_forecast_data">अदमास डेटाचेर प्रक्रिया करपाक अपेस आयलें</string>
+    <string name="wifi_not_available">would would updated but wifi connection उपलब्ध ना</string>
+    <string name="invalid_update_interval">अपडेट अंतर अवैध, अद्ययावत करप आनी मागीर परतून यत्न करप</string>
+    <string name="attempting_to_download_data_txt">तुमच्या सर्वरा वयल्यान data.txt डाउनलोड करपाचो यत्न करप</string>
+    <string name="radar_type_is_invalid">रडार प्रकार \'%1$s\' अवैध आसा, तुमची मांडावळी फायल तपासात आनी परतून यत्न करात</string>
 </resources>

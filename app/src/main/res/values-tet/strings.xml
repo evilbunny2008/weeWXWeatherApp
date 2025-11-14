@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Imajen radar sei download hela</string>
     <string name="radar_download_failed">La konsege atu download imajen radar</string>
     <string name="failed_to_process_forecast_data">La konsege prosesa dadus previzaun</string>
+    <string name="wifi_not_available">Sei atualiza maibé ligasaun WiFi la disponivel</string>
+    <string name="invalid_update_interval">Intervalu atualizasaun la válidu, atualiza konfigurasaun no depois koko fali</string>
+    <string name="attempting_to_download_data_txt">Tentativa download dadus.txt husi ita nia servidor</string>
+    <string name="radar_type_is_invalid">Radar tipu \'%1$s\' la válidu, verifika ita-nia file settings no koko fali</string>
 </resources>

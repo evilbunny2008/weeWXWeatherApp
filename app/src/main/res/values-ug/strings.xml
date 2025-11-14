@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">رادار سۈرىتى يەنىلا چۈشۈرۈۋاتىدۇ</string>
     <string name="radar_download_failed">رادار رەسىمنى چۈشۈرەلمىدى</string>
     <string name="failed_to_process_forecast_data">تەكشۈرۈش سانلىق مەلۇماتلىرىنى بىر تەرەپ قىلالمىدى</string>
+    <string name="wifi_not_available">يېڭىلانغان, ئەمما WiFi ئۇلىنىشى يوق</string>
+    <string name="invalid_update_interval">ئالاقىلىشىش ئارىلىقى ئىناۋەتسىز, تەڭشەكلەرنى يېڭىلاش, ئاندىن قايتا سىناڭ</string>
+    <string name="attempting_to_download_data_txt">مۇلازىمېتىردىن چۈشۈرمەكچى. مۇلازىمېتىرىڭىزدىن</string>
+    <string name="radar_type_is_invalid">رادار تىپى \'%1$s\'ئىناۋەتسىز, تەڭشەكلىرى ھۆججىتىڭىزنى تەكشۈرۈپ قايتا سىناڭ</string>
 </resources>

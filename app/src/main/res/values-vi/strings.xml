@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Hình ảnh radar vẫn đang được tải xuống</string>
     <string name="radar_download_failed">Không tải được hình ảnh radar</string>
     <string name="failed_to_process_forecast_data">Không thể xử lý dữ liệu dự báo</string>
+    <string name="wifi_not_available">Đã cập nhật nhưng không có kết nối WiFi</string>
+    <string name="invalid_update_interval">Khoảng thời gian cập nhật không hợp lệ, hãy cập nhật cài đặt rồi thử lại</string>
+    <string name="attempting_to_download_data_txt">Đang cố tải xuống data.txt từ máy chủ của bạn</string>
+    <string name="radar_type_is_invalid">Loại radar \'%1$s\' không hợp lệ, hãy kiểm tra tệp cài đặt của bạn và thử lại</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">wíimbala\' Radar láayli\' táan u descargando</string>
     <string name="radar_download_failed">Falló u descargar le wíimbala\' radar</string>
     <string name="failed_to_process_forecast_data">Falló ti\' procesar datos pronósticos</string>
+    <string name="wifi_not_available">Habría actualizado Ba\'ale\' conexión WiFi ma\' disponible</string>
+    <string name="invalid_update_interval">Intervalo u ka\' jach inválido, ka\' configuración ka tu láak\' k\'a\' intentar</string>
+    <string name="attempting_to_download_data_txt">Intentar data.txt descargar tak u servidor</string>
+    <string name="radar_type_is_invalid">Radar bin yano\'ob \'%1$s\' jach inválido, compruebe u archivo configuración yéetel k\'aax u tu ka\'atéen</string>
 </resources>

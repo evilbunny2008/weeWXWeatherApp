@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ralar ata o loo download pea</string>
     <string name="radar_download_failed">Le mafai ona download le radar ata</string>
     <string name="failed_to_process_forecast_data">Ua le mafai ona faʻagasologa faʻamatalaga faʻamatalaga</string>
+    <string name="wifi_not_available">Semanu e faafouina ae o le WiFi sootaga le avanoa</string>
+    <string name="invalid_update_interval">Faʻafou le taimi o le Interval e le aoga, faʻafouga nofoaga ona toe taumafai lea</string>
+    <string name="attempting_to_download_data_txt">Taumafai Download Data.txt mai lau server</string>
+    <string name="radar_type_is_invalid">Radar ituaiga \'%1$s\' e le aoga, siaki lau faila faila ma toe taumafai</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">རེ་ཌར་གཟུགས་བརྙན་འདི་ད་ལྟོ་ཡང་ཕབ་ལེན་འབད་དོ་ཡོདཔ་ཨིན།</string>
     <string name="radar_download_failed">རེ་ཌར་གཟུགས་བརྙན་ཕབ་ལེན་འབད་མ་ཚུགས་པས།</string>
     <string name="failed_to_process_forecast_data">སྔོན་བཤད་གནས་སྡུད་ལས་སྦྱོར་འབད་ནི་ལུ་འཐུས་ཤོར་བྱུང་ཡོདཔ།</string>
+    <string name="wifi_not_available">དུས་མཐུན་བཟོ་ནི་ཨིན་རུང་ ཝའི་ཕའི་མཐུད་ལམ་མེད་པས།</string>
+    <string name="invalid_update_interval">དུས་མཐུན་བར་མཚམས་འདི་ ནུས་མེད་ཨིནམ་དང་ དུས་མཐུན་སྒྲིག་སྟངས་ཚུ་དང་ དེ་ལས་ ལོག་འབད་རྩོལ་བསྐྱེད།</string>
+    <string name="attempting_to_download_data_txt">ཁྱོད་རའི་སར་བར་ལས་ ཕབ་ལེན་འབད་མི་ གནད་སྡུད་.txt འབད་རྩོལ་བསྐྱེད་དོ།</string>
+    <string name="radar_type_is_invalid">རེ་ཌར་དབྱེ་བ་ \'%1$s\' ནུས་མེད་ཨིན་ ཁྱོད་རའི་སྒྲིག་སྟངས་ཡིག་སྣོད་ཞིབ་དཔྱད་འབད་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད།</string>
 </resources>

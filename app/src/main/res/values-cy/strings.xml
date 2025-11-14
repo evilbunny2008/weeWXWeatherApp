@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Mae delwedd radar yn dal i gael ei lawrlwytho</string>
     <string name="radar_download_failed">Wedi methu lawrlwytho\'r ddelwedd radar</string>
     <string name="failed_to_process_forecast_data">Wedi methu prosesu data rhagolwg</string>
+    <string name="wifi_not_available">Byddai wedi diweddaru ond cysylltiad WiFi ddim ar gael</string>
+    <string name="invalid_update_interval">Mae cyfwng diweddaru yn annilys, diweddarwch y gosodiadau ac yna rhowch gynnig arall arni</string>
+    <string name="attempting_to_download_data_txt">Ceisio lawrlwytho data.txt o\'ch gweinydd</string>
+    <string name="radar_type_is_invalid">Mae\'r math radar \'%1$s\' yn annilys, gwiriwch eich ffeil gosodiadau a cheisiwch eto</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">ရေဒါပုံရိပ်နေဆဲဒေါင်းလုပ်လုပ်နေသည်။</string>
     <string name="radar_download_failed">ရေဒါပုံရိပ်ကိုဒေါင်းလုပ်ဆွဲရန်မအောင်မြင်ပါ</string>
     <string name="failed_to_process_forecast_data">ခန့်မှန်းချက်ဒေတာလုပ်ငန်းစဉ်မအောင်မြင်ပါ</string>
+    <string name="wifi_not_available">updated ပေမယ့် wifi connection ကိုမရနိုင်ပါလိမ့်မယ်</string>
+    <string name="invalid_update_interval">UPDATE Interval သည်မမှန်ကန်ပါ, ချိန်ညှိချက်များအသစ်ပြောင်းခြင်းနှင့်ပြန်ကြိုးစားပါ</string>
+    <string name="attempting_to_download_data_txt">သင်၏ဆာဗာမှဒေတာကိုဒေါင်းလုပ်ဆွဲရန်ကြိုးစားခြင်း</string>
+    <string name="radar_type_is_invalid">Radar အမျိုးအစား \'%1$s\' သည်မမှန်ကန်ပါ, သင်၏ချိန်ညှိချက်များဖိုင်ကိုစစ်ဆေးပြီးထပ်မံကြိုးစားပါ။</string>
 </resources>

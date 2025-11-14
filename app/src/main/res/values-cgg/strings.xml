@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ekishushani kya radar nikikikwata</string>
     <string name="radar_download_failed">Okuremwa kutunga ekishushani kya radar</string>
     <string name="failed_to_process_forecast_data">Okuremwa kukora aha makuru</string>
+    <string name="wifi_not_available">Nikibaasa kuba kyagarukiremu kwonka WiFi okutaaha</string>
+    <string name="invalid_update_interval">Okugaruka omu mwanya tikuriho, okugarura busya reero okagaruka okagyezaho</string>
+    <string name="attempting_to_download_data_txt">Okugyezaho data.txt kuruga aha server yaawe</string>
+    <string name="radar_type_is_invalid">Radar type \'%1$s\' teriho, reeba fairo yaawe y\'okutebeekanisa kandi ogyezeho</string>
 </resources>

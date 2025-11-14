@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Η εικόνα ραντάρ εξακολουθεί να γίνεται λήψη</string>
     <string name="radar_download_failed">Αποτυχία λήψης της εικόνας ραντάρ</string>
     <string name="failed_to_process_forecast_data">Απέτυχε η επεξεργασία των δεδομένων πρόβλεψης</string>
+    <string name="wifi_not_available">Θα είχε ενημερωθεί αλλά η σύνδεση WiFi δεν είναι διαθέσιμη</string>
+    <string name="invalid_update_interval">Το διάστημα ενημέρωσης δεν είναι έγκυρο, ενημερώστε τις ρυθμίσεις και, στη συνέχεια, δοκιμάστε ξανά</string>
+    <string name="attempting_to_download_data_txt">Προσπάθεια λήψης του data.txt από τον διακομιστή σας</string>
+    <string name="radar_type_is_invalid">Ο τύπος ραντάρ \'%1$s\' δεν είναι έγκυρος, ελέγξτε το αρχείο ρυθμίσεών σας και δοκιμάστε ξανά</string>
 </resources>

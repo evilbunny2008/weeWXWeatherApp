@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Радар образы даа юклей</string>
     <string name="radar_download_failed">Радар ресимини юклемек мумкюн олмады</string>
     <string name="failed_to_process_forecast_data">Прогноз малюматларыны ишлемеге мумкюн олмады</string>
+    <string name="wifi_not_available">Янъыланаджакъ эди, амма WiFi багълантысы тапылмай</string>
+    <string name="invalid_update_interval">Янъыланув аралыгъы догъру дегиль, янъыланув параметрлери ве сонъра янъыдан чалышмакъ</string>
+    <string name="attempting_to_download_data_txt">Серверинъизден data.txt dest.txt</string>
+    <string name="radar_type_is_invalid">\'%1$s\' радар типи догъру дегиль, параметрлер файлынъызны тешкеринъиз ве кене тырышынъыз</string>
 </resources>

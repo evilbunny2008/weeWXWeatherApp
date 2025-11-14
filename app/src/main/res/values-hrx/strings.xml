@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radar pilt is noch am download mache</string>
     <string name="radar_download_failed">Fer nët tas radar pilt download mache</string>
     <string name="failed_to_process_forecast_data">Ferkheerte fer ti protuktsioon fon te data</string>
+    <string name="wifi_not_available">Wolt sich aktualisiert awer WiFi ferpintung unferkënglich</string>
+    <string name="invalid_update_interval">Aktualisiire interwaal is inwaliteet, aktualisiirunge instellunge un tan noch moolry</string>
+    <string name="attempting_to_download_data_txt">Fersuuche ti data.txt fon tayn serwer download mache</string>
+    <string name="radar_type_is_invalid">Radar tip \'%1$s\' is inwalit, kontroliire tayn instëlunge file un proope noch mool</string>
 </resources>

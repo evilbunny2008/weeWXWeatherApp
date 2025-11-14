@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">रडार छवि एखनो डाउनलोड क रहल अछि।</string>
     <string name="radar_download_failed">रडार छवि डाउनलोड करबा मे असफल रहल</string>
     <string name="failed_to_process_forecast_data">पूर्वानुमानित आंकड़ा के संसाधित करय मे विफल</string>
+    <string name="wifi_not_available">अपडेट होइत मुदा वाईफाई कनेक्शन अनुपलब्ध</string>
+    <string name="invalid_update_interval">अद्यतन अंतराल अमान्य, अपडेट सेटिंग्स आ फेर RETRY अछि</string>
+    <string name="attempting_to_download_data_txt">अपन सर्वर सँ Download data.txt के प्रयास करब</string>
+    <string name="radar_type_is_invalid">रडार टाइप \'%1$s\' अमान्य अछि, अपन सेटिंग्स फाइल चेक करू आ फेरसँ प्रयास करू।</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Ang radar nga imahe naga-download pa</string>
     <string name="radar_download_failed">Napakyas sa pag-download sa radar nga imahe</string>
     <string name="failed_to_process_forecast_data">Napakyas sa pagproseso sa datos sa forecast</string>
+    <string name="wifi_not_available">Mahimo kuntani nga wala na sang update apang indi matigayon ang koneksyon sang WiFi</string>
+    <string name="invalid_update_interval">Ang update interval indi balido, mga setting sa pag-update kag dayon tilawi liwat</string>
+    <string name="attempting_to_download_data_txt">Pagtinguha sa pag-download sang data.txt gikan sa imo server</string>
+    <string name="radar_type_is_invalid">Ang radar type nga \'% %1$s\' indi balido, tan-awa ang imo file sang mga setting kag tilawi liwat</string>
 </resources>

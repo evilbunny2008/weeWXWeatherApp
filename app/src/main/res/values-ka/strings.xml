@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">რადარის სურათი ჯერ კიდევ იტვირთება</string>
     <string name="radar_download_failed">რადარის სურათის ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="failed_to_process_forecast_data">პროგნოზის მონაცემების დამუშავება ვერ მოხერხდა</string>
+    <string name="wifi_not_available">განახლებული იქნებოდა, მაგრამ WiFi კავშირი მიუწვდომელია</string>
+    <string name="invalid_update_interval">განახლების ინტერვალი არასწორია, განაახლეთ პარამეტრები და შემდეგ სცადეთ ხელახლა</string>
+    <string name="attempting_to_download_data_txt">თქვენი სერვერიდან data.txt-ის ჩამოტვირთვის მცდელობა</string>
+    <string name="radar_type_is_invalid">რადარის ტიპი \'%1$s\' არასწორია, შეამოწმეთ თქვენი პარამეტრების ფაილი და სცადეთ ხელახლა</string>
 </resources>

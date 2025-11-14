@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">ၶႅပ်းႁၢင်ႈ Radar ၵေႃႈ တိုၵ်ႉလူင်းဝႆႉယူႇ။</string>
     <string name="radar_download_failed">ဢမ်ႇလူင်းဢဝ်ၶႅပ်းႁၢင်ႈ ရေႇတႃႇ</string>
     <string name="failed_to_process_forecast_data">ဢမ်ႇႁဵတ်းၵၢၼ်ၶေႃႈမုၼ်း ဢၼ်လၢမ်းၶၢတ်ႈဝႆႉ</string>
+    <string name="wifi_not_available">တေႁဵတ်း Update ဝႆႉယူႇ ၵူၺ်းၵႃႈ လွင်ႈၵပ်းသိုပ်ႇ WiFi ဢမ်ႇမီး</string>
+    <string name="invalid_update_interval">ၵႄႈၵၢင် Update ၼႆႉ ဢမ်ႇၸႂ်ႈ ဢၼ်မၢၼ်ႇမႅၼ်ႈ၊ ႁဵတ်း Update သေ ၶိုၼ်းၸၢမ်းတူၺ်း</string>
+    <string name="attempting_to_download_data_txt">ၶတ်းၸႂ်ႁႃ Download data.txt တီႈ Server ၸဝ်ႈၵဝ်ႇ</string>
+    <string name="radar_type_is_invalid">ရေႇတႃႇ မဵဝ်း \'%1$s\' ၼႆႉ ဢမ်ႇၸႂ်ႈ ဢၼ်မၢၼ်ႇမႅၼ်ႈ ထတ်းတူၺ်း ၾၢႆႇ settings ၸဝ်ႈၵဝ်ႇသေ ၶိုၼ်းၸၢမ်းတူၺ်း။</string>
 </resources>

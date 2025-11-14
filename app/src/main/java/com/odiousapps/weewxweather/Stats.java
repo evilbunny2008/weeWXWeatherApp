@@ -21,10 +21,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 public class Stats extends Fragment
 {
-	private boolean isVisible = false;
-	private Thread statsThread = null;
-	private long stStart;
 	private Slider mySlider;
+	private int currZoom;
 	private View rootView;
 	private WebView wv;
 	private SwipeRefreshLayout swipeLayout;
@@ -32,7 +30,7 @@ public class Stats extends Fragment
 
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
-		Common.LogMessage("Stats.onCreateView()");
+		weeWXAppCommon.LogMessage("Stats.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
 
 		rootView = inflater.inflate(R.layout.fragment_stats, container, false);
@@ -44,20 +42,22 @@ public class Stats extends Fragment
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
-			Common.LogMessage("onRefresh();");
-			forceRefresh();
+			weeWXAppCommon.LogMessage("onRefresh();");
+			updateFields(true);
 		});
 
 		mySlider = rootView.findViewById(R.id.pageZoom);
 		mySlider.setBackgroundColor(KeyValue.bgColour);
 		mySlider.addOnChangeListener((slider, value, fromUser) ->
 		{
-			Common.LogMessage("Slider zoom =" + value + "%");
+			weeWXAppCommon.LogMessage("Current Slider zoom =" + (int)mySlider.getValue() + "%");
+			weeWXAppCommon.LogMessage("New Slider zoom =" + value + "%");
 
-			if(fromUser && (int)mySlider.getValue() != (int)value)
+			if(fromUser && currZoom != (int)value)
 			{
-				Common.SetIntPref("mySlider", (int)value);
-				setZoom((int)value);
+				currZoom = (int)value;
+				weeWXAppCommon.SetIntPref("mySlider", currZoom);
+				setZoom(currZoom);
 			}
 		});
 
@@ -67,7 +67,7 @@ public class Stats extends Fragment
 	@Override
 	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
 	{
-		Common.LogMessage("Stats.onViewCreated()");
+		weeWXAppCommon.LogMessage("Stats.onViewCreated()");
 		super.onViewCreated(view, savedInstanceState);
 
 		if(wv == null)
@@ -85,14 +85,24 @@ public class Stats extends Fragment
 		if(savedInstanceState != null)
 			wv.restoreState(savedInstanceState);
 
-		Common.LogMessage("Stats.onViewCreated()-- adding notification manager...");
-		Common.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
+		swipeLayout.setRefreshing(true);
+		currZoom = sanitiseZoom(weeWXAppCommon.GetIntPref("mySlider", weeWXApp.mySlider_default));
+		if(currZoom != (int)mySlider.getValue())
+		{
+			setZoom(currZoom);
+			weeWXAppCommon.LogMessage("currZoom: " + currZoom + "%");
+		}
+
+		updateFields(true);
+
+		weeWXAppCommon.LogMessage("Stats.onViewCreated()-- adding notification manager...");
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 	}
 
 	@Override
 	public void onSaveInstanceState(@NonNull Bundle outState)
 	{
-		Common.LogMessage("Stats.onSaveInstanceState()");
+		weeWXAppCommon.LogMessage("Stats.onSaveInstanceState()");
 		super.onSaveInstanceState(outState);
 
 		if(wv != null)
@@ -102,7 +112,7 @@ public class Stats extends Fragment
 	@Override
 	public void onDestroyView()
 	{
-		Common.LogMessage("Stats.onDestroyView()");
+		weeWXAppCommon.LogMessage("Stats.onDestroyView()");
 		super.onDestroyView();
 
 		if(wv != null)
@@ -115,7 +125,7 @@ public class Stats extends Fragment
 
 			WebViewPreloader.getInstance().recycleWebView(wv);
 
-			Common.LogMessage("Stats.onDestroyView() recycled wv...");
+			weeWXAppCommon.LogMessage("Stats.onDestroyView() recycled wv...");
 		}
 	}
 
@@ -147,49 +157,19 @@ public class Stats extends Fragment
 
 		final int finalZoom = sanitiseZoom(zoom);
 
-		Common.LogMessage("new zoom value = " + finalZoom + "%");
+		weeWXAppCommon.LogMessage("new zoom value = " + finalZoom + "%");
 
 		mySlider.post(() -> mySlider.setValue(finalZoom));
 		wv.post(() -> wv.getSettings().setTextZoom(finalZoom));
 	}
 
-	public void onResume()
-	{
-		super.onResume();
-
-		Common.LogMessage("Stats.onResume()");
-
-		if(isVisible)
-			return;
-
-		isVisible = true;
-
-		swipeLayout.setRefreshing(true);
-		int default_zoom = sanitiseZoom(Common.GetIntPref("mySlider", 100));
-		if(default_zoom != (int)mySlider.getValue())
-		{
-			setZoom(default_zoom);
-			Common.LogMessage("default_zoom: " + default_zoom + "%");
-		}
-
-		updateFields();
-	}
-
 	private final Observer<String> notificationObserver = str ->
 	{
-		Common.LogMessage("notificationObserver == " + str);
+		weeWXAppCommon.LogMessage("notificationObserver: " + str);
 
-		if(str.equals(Common.UPDATE_INTENT) || str.equals(Common.REFRESH_INTENT))
-			updateFields();
-
-		if(str.equals(Common.EXIT_INTENT))
-			onPause();
+		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
+			updateFields(false);
 	};
-
-	private void forceRefresh()
-	{
-		Common.getWeather();
-	}
 
 	private void checkFields(final TextView tv, final String txt)
 	{
@@ -206,7 +186,7 @@ public class Stats extends Fragment
 	{
 		cur = cur.trim();
 
-		Common.LogMessage("Old cur: " + cur);
+		weeWXAppCommon.LogMessage("Old cur: " + cur);
 
 		String[] time = cur.split(":");
 		cur = time[0];
@@ -215,7 +195,7 @@ public class Stats extends Fragment
 		if(cur.length() > 1 && cur.startsWith("0"))
 			cur = cur.substring(1);
 
-		Common.LogMessage("New cur: " + cur);
+		weeWXAppCommon.LogMessage("New cur: " + cur);
 
 		return cur;
 	}
@@ -223,7 +203,7 @@ public class Stats extends Fragment
 	private String getTimeMonth(String str)
 	{
 		if(str.length() > 2)
-			return Common.getDaySuffix((int)Float.parseFloat(Common.getDateFromString(str).substring(0, 2)));
+			return weeWXAppCommon.getDaySuffix((int)Float.parseFloat(weeWXAppCommon.getDateFromString(str).substring(0, 2)));
 
 		return str;
 	}
@@ -240,7 +220,7 @@ public class Stats extends Fragment
 
 	private String getAllTime(String str)
 	{
-		str = Common.getDateFromString(str);
+		str = weeWXAppCommon.getDateFromString(str);
 		if(str.length() > 1 && str.startsWith("0"))
 			str = str.substring(1);
 		return str;
@@ -248,7 +228,7 @@ public class Stats extends Fragment
 
 	private String createRowLeft()
 	{
-		return createRowLeft(null, Common.emptyField, Common.emptyField);
+		return createRowLeft(null, weeWXApp.emptyField, weeWXApp.emptyField);
 	}
 
 	private String createRowLeft(String class1, String str1, String str2)
@@ -264,12 +244,12 @@ public class Stats extends Fragment
 
 	private String createRowMiddle()
 	{
-		return "\t\t\t<div class='statsSpacer'>" + Common.emptyField + "</div>\n";
+		return "\t\t\t<div class='statsSpacer'>" + weeWXApp.emptyField + "</div>\n";
 	}
 
 	private String createRowRight()
 	{
-		return createRowRight(null, Common.emptyField, Common.emptyField);
+		return createRowRight(null, weeWXApp.emptyField, weeWXApp.emptyField);
 	}
 
 	private String createRowRight(String class2, String str3, String str4)
@@ -338,7 +318,7 @@ public class Stats extends Fragment
 		if(bits.length < Math.min(Math.min(uv, uvWhen), Math.min(solar, solarWhen)) ||
 		   (getElement(bits, uvWhen).isBlank() && getElement(bits, solarWhen).isBlank()))
 		{
-			Common.LogMessage("No solar or UV data, skipping...");
+			weeWXAppCommon.LogMessage("No solar or UV data, skipping...");
 			return "";
 		}
 
@@ -442,7 +422,7 @@ public class Stats extends Fragment
 				convert(getElement(bits, 42)),
 				getElement(bits, 41) + getElement(bits, 63)));
 
-		if(Common.GetBoolPref("showIndoor", false))
+		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > 165 && !bits[163].isBlank() && !bits[165].isBlank())
 				sb.append(showIndoor(60, bits, 164, 165, 162, 163, 0, null));
@@ -503,7 +483,7 @@ public class Stats extends Fragment
 				convert(getElement(bits, 87)),
 				getElement(bits, 86) + getElement(bits, 63)));
 
-		if(Common.GetBoolPref("showIndoor", false))
+		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > 174 && !bits[174].isBlank() && !bits[172].isBlank())
 				sb.append(showIndoor(60, bits, 173, 174, 171, 172, 0, null));
@@ -564,7 +544,7 @@ public class Stats extends Fragment
 				getTimeMonth(getElement(bits, 110)),
 				getElement(bits, 109) + getElement(bits, 63)));
 
-		if(Common.GetBoolPref("showIndoor", false))
+		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > 182 && !bits[182].isBlank() && !bits[180].isBlank())
 				sb.append(showIndoor(60, bits, 181, 182, 179, 180, 1, null));
@@ -614,7 +594,7 @@ public class Stats extends Fragment
 				getTimeYear(getElement(bits, 133)),
 				getElement(bits, 132) + getElement(bits, 63)));
 
-		if(Common.GetBoolPref("showIndoor", false))
+		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > 190 && !bits[190].isBlank() && !bits[188].isBlank())
 				sb.append(showIndoor(60, bits, 189, 190, 187, 188, 2, null));
@@ -669,7 +649,7 @@ public class Stats extends Fragment
 				getTimeSection(which, bits[start + 10]),
 				bits[start + 9] + getElement(bits, 63)));
 
-		if(Common.GetBoolPref("showIndoor", false))
+		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > start + 23 && !bits[start + 23].isBlank() && !bits[start + 21].isBlank())
 				sb.append(showIndoor(60, bits,
@@ -721,7 +701,7 @@ public class Stats extends Fragment
 				getAllTime(getElement(bits, 156)),
 				getElement(bits, 155) + getElement(bits, 63)));
 
-		if(Common.GetBoolPref("showIndoor", false))
+		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > 198 && !bits[198].isBlank() && !bits[196].isBlank())
 				sb.append(showIndoor(60, bits,
@@ -741,132 +721,118 @@ public class Stats extends Fragment
 		return sb.toString();
 	}
 
-	private void updateFields()
+	private void updateFields(boolean forced)
 	{
-		long current_time = Math.round(System.currentTimeMillis() / 1000.0);
+		weeWXAppCommon.LogMessage("Stats.java updateFields()");
+		String[] ret = weeWXAppCommon.getWeather(forced);
+		String lastDownload = ret[1];
 
-		if(statsThread != null)
+		if(ret[0].equals("error"))
 		{
-			if(statsThread.isAlive())
-			{
-				if(stStart + 30 > current_time)
-				{
-					Common.LogMessage("stStart is less than 30s old, we'll skip this attempt...");
-					return;
-				}
-
-				Common.LogMessage("rtStart is 30+s old, we'll interrupt it...");
-				statsThread.interrupt();
-			}
-
-			statsThread = null;
-		}
-
-		stStart = current_time;
-
-		statsThread = new Thread(() ->
-		{
-			String tmpStr = Common.GetStringPref("LastDownload", "");
-			if(tmpStr == null)
-			{
-				stopRefreshing();
-				return;
-			}
-
-			String[] bits = tmpStr.split("\\|");
-
-			if(bits.length < 65)
-			{
-				stopRefreshing();
-				return;
-			}
-
-			// Today Stats
-			checkFields(rootView.findViewById(R.id.textView),
-					getElement(bits, 56));
-			checkFields(rootView.findViewById(R.id.textView2),
-					getElement(bits, 54) + " " + getElement(bits, 55));
-
-			final StringBuilder sb = new StringBuilder();
-
-			sb.append(Common.current_html_headers);
-
-			sb.append("\n<div class='statsLayout'>\n\n");
-
-			// Show today's stats
-			sb.append("\t<div class='statsSection'>\n");
-			sb.append(generateTodaysSection(R.string.todayStats, bits));
-			sb.append("\t\t<hr />\n\n");
-			sb.append("\t</div>\n\n");
-
-			if(bits.length > 87 && !bits[87].isBlank())
-			{
-				// Do stats for yesterday...
-				sb.append("\t<div class='statsSection'>\n");
-				sb.append(generateYesterdaysSection(R.string.yesterdayStats, bits));
-				sb.append("\t<hr />\n\n");
-				sb.append("\t\t</div>\n\n");
-			}
-
-			if(bits.length > 110 && !bits[110].isBlank())
-			{
-				// Do stats for this month
-				sb.append("\t<div class='statsSection'>\n");
-				sb.append(generateThisMonthsSection(R.string.this_months_stats, bits));
-				sb.append("\t\t<hr />\n\n");
-				sb.append("\t</div>\n\n");
-			}
-
-			if(bits.length > 268 && !bits[267].isBlank())
-			{
-				// Do last month's stats
-				sb.append("\t<div class='statsSection'>\n");
-				sb.append(generateLastSection(bits, 258, "Month"));
-				sb.append("\t\t<hr />\n\n");
-				sb.append("\t</div>\n\n");
-			}
-
-			if(bits.length > 133 && !bits[133].isBlank())
-			{
-				// Do stats for this year
-				sb.append("\t<div class='statsSection'>\n");
-				sb.append(generateThisYearsSection(R.string.this_year_stats, bits));
-				sb.append("\t\t<hr />\n\n");
-				sb.append("\t</div>\n\n");
-			}
-
-			if(bits.length > 236 && !bits[236].isBlank())
-			{
-				// Do last year's stats
-				sb.append("\t<div class='statsSection'>\n");
-				sb.append(generateLastSection(bits, 226, "Year"));
-				sb.append("\t\t<hr />\n\n");
-				sb.append("\t</div>\n\n");
-			}
-
-			if(bits.length > 156 && !bits[156].isBlank())
-			{
-				// Do all time stats
-				sb.append("\t<div class='statsSection'>\n");
-				sb.append(generateAllTimeSection(R.string.all_time_stats, bits));
-				sb.append("\t</div>\n\n");
-			}
-
-			sb.append("</div>\n\n<div style='margin-bottom:5px'></div>\n");
-
-			if(Common.web_debug_on)
-				sb.append(Common.debug_html);
-
-			sb.append(Common.html_footer);
-
-			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/",
-					sb.toString(), "text/html", "utf-8", null));
+			if(lastDownload != null && !lastDownload.isBlank())
+				wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/",
+						lastDownload, "text/html", "utf-8", null));
+			else
+				wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/",
+						weeWXApp.getAndroidString(R.string.unknown_error_occurred),
+						"text/html", "utf-8", null));
 
 			stopRefreshing();
+			return;
+		}
 
-			stStart = 0;
-		});
+		String[] bits = lastDownload.split("\\|");
 
-		statsThread.start();
+		if(bits.length < 65)
+		{
+			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/",
+					weeWXApp.getAndroidString(R.string.unknown_error_occurred),
+					"text/html", "utf-8", null));
+			stopRefreshing();
+			return;
+		}
+
+		// Today Stats
+		checkFields(rootView.findViewById(R.id.textView),
+				getElement(bits, 56));
+		checkFields(rootView.findViewById(R.id.textView2),
+				getElement(bits, 54) + " " + getElement(bits, 55));
+
+		final StringBuilder sb = new StringBuilder();
+
+		sb.append(weeWXApp.current_html_headers);
+
+		sb.append("\n<div class='statsLayout'>\n\n");
+
+		// Show today's stats
+		sb.append("\t<div class='statsSection'>\n");
+		sb.append(generateTodaysSection(R.string.todayStats, bits));
+		sb.append("\t\t<hr />\n\n");
+		sb.append("\t</div>\n\n");
+
+		if(bits.length > 87 && !bits[87].isBlank())
+		{
+			// Do stats for yesterday...
+			sb.append("\t<div class='statsSection'>\n");
+			sb.append(generateYesterdaysSection(R.string.yesterdayStats, bits));
+			sb.append("\t<hr />\n\n");
+			sb.append("\t\t</div>\n\n");
+		}
+
+		if(bits.length > 110 && !bits[110].isBlank())
+		{
+			// Do stats for this month
+			sb.append("\t<div class='statsSection'>\n");
+			sb.append(generateThisMonthsSection(R.string.this_months_stats, bits));
+			sb.append("\t\t<hr />\n\n");
+			sb.append("\t</div>\n\n");
+		}
+
+		if(bits.length > 268 && !bits[267].isBlank())
+		{
+			// Do last month's stats
+			sb.append("\t<div class='statsSection'>\n");
+			sb.append(generateLastSection(bits, 258, "Month"));
+			sb.append("\t\t<hr />\n\n");
+			sb.append("\t</div>\n\n");
+		}
+
+		if(bits.length > 133 && !bits[133].isBlank())
+		{
+			// Do stats for this year
+			sb.append("\t<div class='statsSection'>\n");
+			sb.append(generateThisYearsSection(R.string.this_year_stats, bits));
+			sb.append("\t\t<hr />\n\n");
+			sb.append("\t</div>\n\n");
+		}
+
+		if(bits.length > 236 && !bits[236].isBlank())
+		{
+			// Do last year's stats
+			sb.append("\t<div class='statsSection'>\n");
+			sb.append(generateLastSection(bits, 226, "Year"));
+			sb.append("\t\t<hr />\n\n");
+			sb.append("\t</div>\n\n");
+		}
+
+		if(bits.length > 156 && !bits[156].isBlank())
+		{
+			// Do all time stats
+			sb.append("\t<div class='statsSection'>\n");
+			sb.append(generateAllTimeSection(R.string.all_time_stats, bits));
+			sb.append("\t</div>\n\n");
+		}
+
+		sb.append("</div>\n\n<div style='margin-bottom:5px'></div>\n");
+
+		if(weeWXAppCommon.web_debug_on)
+			sb.append(weeWXApp.debug_html);
+
+		sb.append(weeWXApp.html_footer);
+
+		wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/",
+				sb.toString(), "text/html", "utf-8", null));
+
+		stopRefreshing();
 	}
 }

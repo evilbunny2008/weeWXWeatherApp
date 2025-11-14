@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Tá íomhá radar á íoslódáil go fóill</string>
     <string name="radar_download_failed">Theip ar an íomhá radar a íoslódáil</string>
     <string name="failed_to_process_forecast_data">Theip ar phróiseáil sonraí réamhaisnéise</string>
+    <string name="wifi_not_available">Bheadh ​​sé nuashonraithe ach níl nasc wifi ar fáil</string>
+    <string name="invalid_update_interval">Tá an t-eatramh nuashonraithe neamhbhailí, nuashonraigh socruithe agus ansin bain triail eile as</string>
+    <string name="attempting_to_download_data_txt">Ag iarraidh data.txt a íoslódáil ó do fhreastalaí</string>
+    <string name="radar_type_is_invalid">Tá cineál radar \'%1$s\' neamhbhailí, seiceáil do chomhad socruithe agus bain triail eile as</string>
 </resources>

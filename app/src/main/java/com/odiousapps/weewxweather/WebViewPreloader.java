@@ -1,20 +1,29 @@
 package com.odiousapps.weewxweather;
 
+import android.app.Activity;
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
-@SuppressWarnings({"unused", "SetJavaScriptEnabled", "SameParameterValue"})
+@SuppressWarnings({"unused", "SetJavaScriptEnabled", "SameParameterValue", "all"})
 public class WebViewPreloader
 {
 	private static WebViewPreloader instance;
 	private final Queue<WebView> preloadedWebViews = new LinkedList<>();
+	private boolean isRunning = false;
 
 	WebViewPreloader()
 	{
@@ -41,82 +50,113 @@ public class WebViewPreloader
 		return instance;
 	}
 
-	WebView generateWebView(Context context)
+	private WebView generateWebView(Context context)
 	{
-		WebView webView = new WebView(context.getApplicationContext());
-		setWebview(webView);
-		return webView;
+		WebView wv = new WebView(context.getApplicationContext());
+		return wv;
 	}
 
 	WebView getWebView(Context context)
 	{
-		if(preloadedWebViews.isEmpty())
-			return generateWebView(context);
-
 		synchronized(preloadedWebViews)
 		{
-			return preloadedWebViews.poll();
+			WebView wv;
+
+			if(!preloadedWebViews.isEmpty())
+			{
+				wv = preloadedWebViews.poll();
+				if(wv != null)
+				{
+					setWebview(wv);
+					wv.onResume();
+					wv.resumeTimers();
+					return wv;
+				}
+			}
+
+			wv = generateWebView(context);
+			setWebview(wv);
+			return wv;
 		}
 	}
 
-	void recycleWebView(WebView webView)
+	void recycleWebView(WebView wv)
 	{
-		if(webView == null)
+		if(wv == null)
 			return;
 
-		wipeCache(webView);
-		setWebview(webView);
+		wv.loadData("", "text/html", "utf-8");
+		wv.stopLoading();
+		wv.pauseTimers();
+		wv.onPause();
+		wv.removeAllViews();
+		wv.clearCache(false);
+		wv.clearHistory();
+		wv.clearFormData();
+		wv.removeJavascriptInterface("AndroidBridge");
+
+		ViewGroup parent = (ViewGroup)wv.getParent();
+		if(parent != null)
+			parent.removeView(wv);
 
 		synchronized(preloadedWebViews)
 		{
-			preloadedWebViews.add(webView);
+			preloadedWebViews.add(wv);
 		}
+	}
+
+	void destroyWebView(WebView wv)
+	{
+		if(wv == null)
+			return;
+
+		wv.loadData("", "text/html", "utf-8");
+		wv.stopLoading();
+		wv.pauseTimers();
+		wv.onPause();
+		wv.removeAllViews();
+		wv.clearCache(false);
+		wv.clearHistory();
+		wv.clearFormData();
+		wv.removeJavascriptInterface("AndroidBridge");
+
+		ViewGroup parent = (ViewGroup)wv.getParent();
+		if(parent != null)
+			parent.removeView(wv);
+		wv.destroy();
+		wv = null;
 	}
 
 	void destroyAll()
 	{
 		synchronized(preloadedWebViews)
 		{
-			for(WebView webView : preloadedWebViews)
-				webView.destroy();
+			for(WebView wv : preloadedWebViews)
+				wv.destroy();
 
 			preloadedWebViews.clear();
 		}
 	}
 
-	private void setWebview(WebView wv)
+	private static void setWebview(WebView wv)
 	{
-		wv.loadUrl("about:blank");
-		wv.stopLoading();
-		wv.removeAllViews();
-		wv.getSettings().setUserAgentString(Common.UA);
+		wv.loadData("", "text/html", "utf-8");
+		wv.getSettings().setUserAgentString(weeWXAppCommon.UA);
 		wv.getSettings().setJavaScriptEnabled(true);
-		wv.setOverScrollMode(View.OVER_SCROLL_NEVER);
-		wv.setNestedScrollingEnabled(true);
-		wv.clearCache(true);
-		wv.clearHistory();
-		wv.clearFormData();
-		wv.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+		wv.getSettings().setDomStorageEnabled(true);
+		wv.getSettings().setLoadsImagesAutomatically(true);
+		wv.getSettings().setAllowFileAccess(true);
 		wv.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
 		wv.getSettings().setLoadWithOverviewMode(true);
 		wv.getSettings().setUseWideViewPort(true);
-		//wv.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
-		wv.setScrollContainer(true);
 		wv.getSettings().setDisplayZoomControls(false);
 		wv.getSettings().setBuiltInZoomControls(false);
+
+		wv.setOverScrollMode(View.OVER_SCROLL_NEVER);
+		wv.setNestedScrollingEnabled(true);
 		wv.setVerticalScrollBarEnabled(false);
 		wv.setHorizontalScrollBarEnabled(false);
-		wv.getSettings().setLoadWithOverviewMode(true);
-		wv.getSettings().setUseWideViewPort(true);
-		//wv.setLayerType(View.LAYER_TYPE_HARDWARE, null);
 		wv.setWebChromeClient(new myWebChromeClient());
-	}
-
-	static void wipeCache(WebView webView)
-	{
-		webView.clearFormData();
-		webView.clearHistory();
-		webView.clearCache(true);
 	}
 
 	static final class myWebChromeClient extends WebChromeClient
@@ -124,7 +164,74 @@ public class WebViewPreloader
 		@Override
 		public boolean onConsoleMessage(ConsoleMessage cm)
 		{
+			weeWXAppCommon.LogMessage("ConsoleMessage: " + cm.message());
 			return true;
 		}
+	}
+
+	static String getHTML(Context context, String url, int timeoutMs)
+	{
+		if(instance.isRunning)
+			return null;
+
+		instance.isRunning = true;
+
+		CountDownLatch latch = new CountDownLatch(1);
+		final String[] htmlHolder = new String[1];
+		String html = "";
+
+		// Optionally remove bridge + cleanup on UI thread
+		new Handler(Looper.getMainLooper()).post(() ->
+		{
+			WebView wv = new WebView(context);
+			setWebview(wv);
+			wv.onResume();
+			wv.resumeTimers();
+
+			FrameLayout container = new FrameLayout(context);
+			container.setAlpha(0f);
+			container.addView(wv, new FrameLayout.LayoutParams(
+					ViewGroup.LayoutParams.MATCH_PARENT,
+					ViewGroup.LayoutParams.WRAP_CONTENT));
+
+			ViewGroup root = (ViewGroup)((Activity)context).getWindow().getDecorView();
+			root.addView(container, new FrameLayout.LayoutParams(
+					ViewGroup.LayoutParams.MATCH_PARENT,
+					ViewGroup.LayoutParams.MATCH_PARENT));
+
+			JsBridge bridge = new JsBridge(latch, htmlHolder, wv);
+			wv.addJavascriptInterface(bridge, "AndroidBridge");
+
+			wv.setWebViewClient(new WebViewClient()
+			{
+				@Override
+				public void onPageFinished(WebView view, String url)
+				{
+					weeWXAppCommon.LogMessage("Page has finished loading, just need to wait for JS to finish running now...");
+					view.evaluateJavascript(bridge.javascript, null);
+
+					try
+					{
+						root.removeView(container);
+						container.removeAllViews();
+
+						//instance.destroyWebView(wv);
+					} catch(Exception ignored) {}
+				}
+			});
+
+			wv.post(() -> wv.loadUrl(url));
+		});
+
+		try
+		{
+			// wait on background thread (not UI)
+			boolean ok = latch.await(timeoutMs, TimeUnit.MILLISECONDS);
+			html = ok ? htmlHolder[0] : null;
+		} catch(InterruptedException ignored) {}
+
+		instance.isRunning = false;
+
+		return html;
 	}
 }

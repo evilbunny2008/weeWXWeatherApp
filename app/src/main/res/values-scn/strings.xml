@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">L\'immaggini di Radar sta ancora scaricannu</string>
     <string name="radar_download_failed">Nun c\'è rinfurzatu pi scaricari la mmàggini radar</string>
     <string name="failed_to_process_forecast_data">Fallitu pi prucissari li dati di privisioni</string>
+    <string name="wifi_not_available">Avissi agghiurnatu ma la cunnissioni WiFi nun dispunìbbili</string>
+    <string name="invalid_update_interval">L\'agghiurnamentu di ntirbaḍḍu è nun validu, l\'agghiurnari li mpustazzioni e poi raffurzari</string>
+    <string name="attempting_to_download_data_txt">Tentativi di scaricari dati.Txt dû sò server</string>
+    <string name="radar_type_is_invalid">Lu tipu di radar \'%1$s\' è nun validu, cuntrolla lu file di paràmitri e pruva n\'autra vota</string>
 </resources>

@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">Radarpa rikchayninqa kunankamapas uraykachichkanraqmi</string>
     <string name="radar_download_failed">Radarpa siq\'inta mana uraykachiyta atirqanchu</string>
     <string name="failed_to_process_forecast_data">Mana atirqanchu willakuy willakuykunata ruwayta</string>
+    <string name="wifi_not_available">había actualizado pero WiFi conexión no disponible</string>
+    <string name="invalid_update_interval">Kunanchay chawpiqa mana allinchu, musuqchay churanakuna chaymanta wakmanta kallpachakuy</string>
+    <string name="attempting_to_download_data_txt">Servidorniykimanta data.txt uraykachiyta munachkanki</string>
+    <string name="radar_type_is_invalid">Radar Tipo \'%1$s\' mana allinchu, churaykuna willañiqiyki qhaway chaymanta wakmanta ruway</string>
 </resources>

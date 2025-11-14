@@ -76,4 +76,8 @@
     <string name="radar_still_downloading">रडार प्रतिमा अद्याप डाउनलोड होत आहे</string>
     <string name="radar_download_failed">रडार प्रतिमा डाउनलोड करण्यात अयशस्वी</string>
     <string name="failed_to_process_forecast_data">अंदाज डेटावर प्रक्रिया करण्यात अयशस्वी</string>
+    <string name="wifi_not_available">अपडेट केले असते पण वायफाय कनेक्शन उपलब्ध नाही</string>
+    <string name="invalid_update_interval">अपडेट मध्यांतर अवैध आहे, सेटिंग्ज अपडेट करा आणि नंतर पुन्हा प्रयत्न करा</string>
+    <string name="attempting_to_download_data_txt">तुमच्या सर्व्हरवरून data.txt डाउनलोड करण्याचा प्रयत्न करत आहे</string>
+    <string name="radar_type_is_invalid">रडार प्रकार \'%1$s\' अवैध आहे, तुमची सेटिंग फाइल तपासा आणि पुन्हा प्रयत्न करा</string>
 </resources>
