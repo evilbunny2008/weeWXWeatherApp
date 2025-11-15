@@ -242,7 +242,7 @@ class weeWXAppCommon
 			if(!(value instanceof String))
 				continue; // only convert strings
 
-			String s = ((String)value).trim();
+			String s = ((String)value).strip();
 			Number parsed = parseNumber(s);
 
 			if(parsed == null)
@@ -557,9 +557,9 @@ class weeWXAppCommon
 		try
 		{
 			Document doc = Jsoup.parse(data);
-			desc = doc.title().split(" - Bureau of Meteorology")[0].trim();
+			desc = doc.title().split(" - Bureau of Meteorology")[0].strip();
 			String fcdiv = doc.select("div.forecasts").html();
-			String obs = doc.select("span").html().split("issued at ")[1].split("\\.", 2)[0].trim();
+			String obs = doc.select("span").html().split("issued at ")[1].split("\\.", 2)[0].strip();
 
 			int i = 0, j = obs.indexOf(":");
 			String hour = obs.substring(i, j);
@@ -596,7 +596,7 @@ class weeWXAppCommon
 			String bit = bits[1];
 			Day day = new Day();
 
-			day.day = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
+			day.day = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].strip();
 			sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
 			day.timestamp = 0;
@@ -607,15 +607,15 @@ class weeWXAppCommon
 			sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			day.day = sdf.format(day.timestamp);
 
-			day.icon = "https://reg.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].trim();
+			day.icon = "https://reg.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].strip();
 
 			if(bit.contains("<dd class='max'>"))
-				day.max = bit.split("<dd class='max'>")[1].split("</dd>")[0].trim();
+				day.max = bit.split("<dd class='max'>")[1].split("</dd>")[0].strip();
 
 			if(bit.contains("<dd class='min'>"))
-				day.min = bit.split("<dd class='min'>")[1].split("</dd>")[0].trim();
+				day.min = bit.split("<dd class='min'>")[1].split("</dd>")[0].strip();
 
-			day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].trim();
+			day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].strip();
 
 			String fileName =  day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length() - 4);
 
@@ -643,8 +643,8 @@ class weeWXAppCommon
 				}
 			}
 
-			day.max = day.max.replaceAll("°C", "").trim();
-			day.min = day.min.replaceAll("°C", "").trim();
+			day.max = day.max.replaceAll("°C", "").strip();
+			day.min = day.min.replaceAll("°C", "").strip();
 
 			if(metric)
 			{
@@ -666,7 +666,7 @@ class weeWXAppCommon
 			{
 				day = new Day();
 				bit = bits[i];
-				day.day = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].trim();
+				day.day = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].strip();
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 				day.timestamp = 0;
 				df = sdf.parse(day.day);
@@ -676,10 +676,10 @@ class weeWXAppCommon
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
 
-				day.icon = "https://reg.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].trim();
-				day.max = bit.split("<dd class='max'>")[1].split("</dd>")[0].trim();
-				day.min = bit.split("<dd class='min'>")[1].split("</dd>")[0].trim();
-				day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].trim();
+				day.icon = "https://reg.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].strip();
+				day.max = bit.split("<dd class='max'>")[1].split("</dd>")[0].strip();
+				day.min = bit.split("<dd class='min'>")[1].split("</dd>")[0].strip();
+				day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].strip();
 
 				fileName = day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length() - 4);
 
@@ -706,8 +706,8 @@ class weeWXAppCommon
 					}
 				}
 
-				day.max = day.max.replaceAll("°C", "").trim();
-				day.min = day.min.replaceAll("°C", "").trim();
+				day.max = day.max.replaceAll("°C", "").strip();
+				day.min = day.min.replaceAll("°C", "").strip();
 
 				if(metric)
 				{
@@ -916,13 +916,13 @@ class weeWXAppCommon
 		String desc;
 		List<Day> days = new ArrayList<>();
 
-		desc = data.split("<title>", 2)[1].split(" weather - Met Office</title>",2)[0].trim();
+		desc = data.split("<title>", 2)[1].split(" weather - Met Office</title>",2)[0].strip();
 
 		String[] forecasts = data.split("<ul id='dayNav'", 2)[1].split("</ul>", 2)[0].split("<li");
 		for(int i = 1; i < forecasts.length; i++)
 		{
 			Day day = new Day();
-			String date = forecasts[i].split("data-tab-id='", 2)[1].split("'")[0].trim();
+			String date = forecasts[i].split("data-tab-id='", 2)[1].split("'")[0].strip();
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
@@ -934,10 +934,10 @@ class weeWXAppCommon
 			sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			day.day = sdf.format(day.timestamp);
 
-			String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class='icon'")[1].split("src='")[1].split("'>")[0].trim();
+			String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class='icon'")[1].split("src='")[1].split("'>")[0].strip();
 			String fileName = icon.substring(icon.lastIndexOf('/') + 1).replaceAll("\\.svg$", ".png");
-			day.min = forecasts[i].split("<span class='tab-temp-low'", 2)[1].split("'>")[1].split("</span>")[0].trim();
-			day.max = forecasts[i].split("<span class='tab-temp-high'", 2)[1].split("'>")[1].split("</span>")[0].trim();
+			day.min = forecasts[i].split("<span class='tab-temp-low'", 2)[1].split("'>")[1].split("</span>")[0].strip();
+			day.max = forecasts[i].split("<span class='tab-temp-high'", 2)[1].split("'>")[1].split("</span>")[0].strip();
 			day.text = forecasts[i].split("<div class='summary-text", 2)[1].split("'>", 3)[2]
 								.split("</div>", 2)[0].replaceAll("</span>", "").replaceAll("<span>", "");
 
@@ -996,8 +996,8 @@ class weeWXAppCommon
 
 		try
 		{
-			String obs = data.split("Forecast issued: ", 2)[1].trim();
-			obs = obs.split("</span>", 2)[0].trim();
+			String obs = data.split("Forecast issued: ", 2)[1].strip();
+			obs = obs.split("</span>", 2)[0].strip();
 
 			int i = 0, j = obs.indexOf(":");
 			String hour = obs.substring(i, j);
@@ -1032,17 +1032,17 @@ class weeWXAppCommon
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
-			desc = data.split("<dt>Observed at:</dt>", 2)[1].split("<dd class='mrgn-bttm-0'>")[1].split("</dd>")[0].trim();
+			desc = data.split("<dt>Observed at:</dt>", 2)[1].split("<dd class='mrgn-bttm-0'>")[1].split("</dd>")[0].strip();
 
-			data = data.split("<div class='div-table'>", 2)[1].trim();
-			data = data.split("<section><details open='open' class='wxo-detailedfore'>")[0].trim();
-			data = data.substring(0, data.length() - 7).trim();
+			data = data.split("<div class='div-table'>", 2)[1].strip();
+			data = data.split("<section><details open='open' class='wxo-detailedfore'>")[0].strip();
+			data = data.substring(0, data.length() - 7).strip();
 
 			String[] bits = data.split("<div class='div-column'>");
 
 			for(i = 1; i < bits.length; i++)
 			{
-				Document doc = Jsoup.parse(bits[i].trim());
+				Document doc = Jsoup.parse(bits[i].strip());
 				Elements div = doc.select("div");
 				for (j = 0; j < div.size(); j++)
 				{
@@ -1065,7 +1065,7 @@ class weeWXAppCommon
 							date = "Night";
 							day.timestamp = lastTS;
 						} else {
-							date = div.get(j).html().split("<strong title='", 2)[1].split("'>", 2)[0].trim();
+							date = div.get(j).html().split("<strong title='", 2)[1].split("'>", 2)[0].strip();
 							day.timestamp = convertDaytoTS(date, Locale.CANADA, lastTS);
 						}
 					} else
@@ -1084,12 +1084,12 @@ class weeWXAppCommon
 						if(div.outerHtml().contains("div-row-data"))
 						{
 							if(metric)
-								temp = div.get(j).select("div").select("span").html().split("<abbr")[0].trim() + "C";
+								temp = div.get(j).select("div").select("span").html().split("<abbr")[0].strip() + "C";
 							else
-								temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].trim() + "F";
-							text = div.get(j).select("div").select("img").outerHtml().split("alt='", 2)[1].split("'", 2)[0].trim();
-							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src='", 2)[1].split("'", 2)[0].trim();
-							pop = div.get(j).select("div").select("small").html().trim();
+								temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].strip() + "F";
+							text = div.get(j).select("div").select("img").outerHtml().split("alt='", 2)[1].split("'", 2)[0].strip();
+							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src='", 2)[1].split("'", 2)[0].strip();
+							pop = div.get(j).select("div").select("small").html().strip();
 						}
 					} catch(Exception e) {
 						LogMessage("hmmm 2 == " + div.html());
@@ -1156,8 +1156,8 @@ class weeWXAppCommon
 
 		try
 		{
-			String obs = data.split("Prévisions émises à : ", 2)[1].trim();
-			obs = obs.split("</span>", 2)[0].trim();
+			String obs = data.split("Prévisions émises à : ", 2)[1].strip();
+			obs = obs.split("</span>", 2)[0].strip();
 
 			int i = 0, j = obs.indexOf("h");
 			String hour = obs.substring(i, j);
@@ -1179,17 +1179,17 @@ class weeWXAppCommon
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
-			desc = data.split("<dt>Enregistrées à :</dt>", 2)[1].split("<dd class='mrgn-bttm-0'>")[1].split("</dd>")[0].trim();
+			desc = data.split("<dt>Enregistrées à :</dt>", 2)[1].split("<dd class='mrgn-bttm-0'>")[1].split("</dd>")[0].strip();
 
-			data = data.split("<div class='div-table'>", 2)[1].trim();
-			data = data.split("<section><details open='open' class='wxo-detailedfore'>")[0].trim();
-			data = data.substring(0, data.length() - 7).trim();
+			data = data.split("<div class='div-table'>", 2)[1].strip();
+			data = data.split("<section><details open='open' class='wxo-detailedfore'>")[0].strip();
+			data = data.substring(0, data.length() - 7).strip();
 
 			bits = data.split("<div class='div-column'>");
 
 			for(i = 1; i < bits.length; i++)
 			{
-				Document doc = Jsoup.parse(bits[i].trim());
+				Document doc = Jsoup.parse(bits[i].strip());
 				Elements div = doc.select("div");
 				for (j = 0; j < div.size(); j++)
 				{
@@ -1212,7 +1212,7 @@ class weeWXAppCommon
 							date = "Nuit";
 							day.timestamp = lastTS;
 						} else {
-							date = div.get(j).html().split("<strong title='", 2)[1].split("'>", 2)[0].trim();
+							date = div.get(j).html().split("<strong title='", 2)[1].split("'>", 2)[0].strip();
 							day.timestamp = convertDaytoTS(date, Locale.CANADA_FRENCH, lastTS);
 						}
 					} else
@@ -1231,12 +1231,12 @@ class weeWXAppCommon
 						if(div.outerHtml().contains("div-row-data"))
 						{
 							if(metric)
-								temp = div.get(j).select("div").select("span").html().split("<abbr")[0].trim() + "C";
+								temp = div.get(j).select("div").select("span").html().split("<abbr")[0].strip() + "C";
 							else
-								temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].trim() + "F";
-							text = div.get(j).select("div").select("img").outerHtml().split("alt='", 2)[1].split("'", 2)[0].trim();
-							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src='", 2)[1].split("'", 2)[0].trim();
-							pop = div.get(j).select("div").select("small").html().trim();
+								temp = div.get(j).select("div").select("span").html().split("</abbr>")[1].split("<abbr")[0].strip() + "F";
+							text = div.get(j).select("div").select("img").outerHtml().split("alt='", 2)[1].split("'", 2)[0].strip();
+							img_url = "https://www.weather.gc.ca" + div.get(j).select("div").select("img").outerHtml().split("src='", 2)[1].split("'", 2)[0].strip();
+							pop = div.get(j).select("div").select("small").html().strip();
 						}
 					} catch(Exception e) {
 						LogMessage("hmmm 2 == " + div.html());
@@ -1332,20 +1332,20 @@ class weeWXAppCommon
 				String fn = "wgov" + url.substring(url.lastIndexOf('/') + 1).replace(".png", ".jpg");
 				if(fn.startsWith("wgovDualImage.php"))
 				{
-					tmp = url.split("\\?", 2)[1].trim();
+					tmp = url.split("\\?", 2)[1].strip();
 					String[] lines = tmp.split("&");
 					for(String line : lines)
 					{
-						String trim_line = line.trim();
+						String trim_line = line.strip();
 						String[] bits = trim_line.split("=", 2);
-						if(bits[0].trim().equals("i"))
-							fimg = "wgov" + bits[1].trim();
-						if(bits[0].trim().equals("j"))
-							simg = "wgov" + bits[1].trim();
-						if(bits[0].trim().equals("ip"))
-							fper = bits[1].trim();
-						if(bits[0].trim().equals("jp"))
-							sper = bits[1].trim();
+						if(bits[0].strip().equals("i"))
+							fimg = "wgov" + bits[1].strip();
+						if(bits[0].strip().equals("j"))
+							simg = "wgov" + bits[1].strip();
+						if(bits[0].strip().equals("ip"))
+							fper = bits[1].strip();
+						if(bits[0].strip().equals("jp"))
+							sper = bits[1].strip();
 					}
 
 					Bitmap bmp1 = loadImage(fimg + ".jpg");
@@ -1414,7 +1414,7 @@ class weeWXAppCommon
 
 				if(iconLink.getString(i).toLowerCase(Locale.ENGLISH).startsWith("http"))
 				{
-					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).trim().replaceAll("\\.png$", ".jpg");
+					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).strip().replaceAll("\\.png$", ".jpg");
 					fileName = checkImage(fileName, iconLink.getString(i));
 					if(fileName == null)
 						return null;
@@ -1491,7 +1491,7 @@ class weeWXAppCommon
 				Day day = new Day();
 				JSONObject j = jarr.getJSONObject(i);
 
-				String date = j.getString("forecastDate").trim();
+				String date = j.getString("forecastDate").strip();
 				sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
 				day.timestamp = 0;
@@ -1602,7 +1602,7 @@ class weeWXAppCommon
 					code = j.getJSONObject("element").getString("content");
 				}
 
-				String date = j.getString("start-time-local").trim();
+				String date = j.getString("start-time-local").strip();
 				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 
 				day.timestamp = 0;
@@ -1708,7 +1708,7 @@ class weeWXAppCommon
 				else
 					day.icon = jtmp.getString("forecastWord");
 
-				day.icon = day.icon.toLowerCase(Locale.ENGLISH).replaceAll(" ", "-").trim();
+				day.icon = day.icon.toLowerCase(Locale.ENGLISH).replaceAll(" ", "-").strip();
 
 				if(!use_icons)
 				{
@@ -1774,17 +1774,17 @@ class weeWXAppCommon
 			String[] bits = data.split("<title>");
 			if(bits.length >= 2)
 				desc = bits[1].split("</title>")[0];
-			desc = desc.substring(desc.lastIndexOf(" - ") + 3).trim();
-			String string_time = data.split("<tr class='headRow'>", 2)[1].split("</tr>", 2)[0].trim();
-			String date = string_time.split("<td width='30%' class='stattime'>", 2)[1].split("</td>", 2)[0].trim();
-			string_time = date + " " + string_time.split("<td width='40%' class='stattime'>", 2)[1].split(" Uhr</td>", 2)[0].trim();
+			desc = desc.substring(desc.lastIndexOf(" - ") + 3).strip();
+			String string_time = data.split("<tr class='headRow'>", 2)[1].split("</tr>", 2)[0].strip();
+			String date = string_time.split("<td width='30%' class='stattime'>", 2)[1].split("</td>", 2)[0].strip();
+			string_time = date + " " + string_time.split("<td width='40%' class='stattime'>", 2)[1].split(" Uhr</td>", 2)[0].strip();
 
 			SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy' 'HH", Locale.getDefault());
 			Date df = sdf.parse(string_time);
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
-			data = data.split("<td width='40%' class='statwert'>Vorhersage</td>", 2)[1].split("</table>", 2)[0].trim();
+			data = data.split("<td width='40%' class='statwert'>Vorhersage</td>", 2)[1].split("</table>", 2)[0].strip();
 			bits = data.split("<tr");
 			for(int i = 1; i < bits.length; i++)
 			{
@@ -1792,9 +1792,9 @@ class weeWXAppCommon
 				String bit = bits[i];
 				String icon, temp;
 				if(bit.split("<td ><b>", 2).length > 1)
-					day.day = bit.split("<td ><b>", 2)[1].split("</b></td>", 2)[0].trim();
+					day.day = bit.split("<td ><b>", 2)[1].split("</b></td>", 2)[0].strip();
 				else
-					day.day = bit.split("<td><b>", 2)[1].split("</b></td>", 2)[0].trim();
+					day.day = bit.split("<td><b>", 2)[1].split("</b></td>", 2)[0].strip();
 
 				Locale locale = new Locale.Builder().setLanguage("de").setRegion("DE").build();
 				day.timestamp = convertDaytoTS(day.day, locale, lastTS);
@@ -1805,16 +1805,16 @@ class weeWXAppCommon
 				}
 
 				if(bit.split("<td ><img name='piktogramm' src='", 2).length > 1)
-					icon = bit.split("<td ><img name='piktogramm' src='", 2)[1].split("' width='50' alt='", 2)[0].trim();
+					icon = bit.split("<td ><img name='piktogramm' src='", 2)[1].split("' width='50' alt='", 2)[0].strip();
 				else
-					icon = bit.split("<td><img name='piktogramm' src='", 2)[1].split("' width='50' alt='", 2)[0].trim();
+					icon = bit.split("<td><img name='piktogramm' src='", 2)[1].split("' width='50' alt='", 2)[0].strip();
 
 				if(bit.split("'></td>\r\n<td >", 2).length > 1)
-					temp = bit.split("'></td>\r\n<td >", 2)[1].split("Grad <abbr title='Celsius'>C</abbr></td>\r\n", 2)[0].trim();
+					temp = bit.split("'></td>\r\n<td >", 2)[1].split("Grad <abbr title='Celsius'>C</abbr></td>\r\n", 2)[0].strip();
 				else
-					temp = bit.split("'></td>\r\n<td>", 2)[1].split("Grad <abbr title='Celsius'>C</abbr></td>\r\n", 2)[0].trim();
+					temp = bit.split("'></td>\r\n<td>", 2)[1].split("Grad <abbr title='Celsius'>C</abbr></td>\r\n", 2)[0].strip();
 
-				icon = icon.replaceAll("/DE/wetter/_functions/piktos/vhs_", "").replaceAll("\\?__blob=normal", "").trim();
+				icon = icon.replaceAll("/DE/wetter/_functions/piktos/vhs_", "").replaceAll("\\?__blob=normal", "").strip();
 				String fileName = "dwd_" + icon.replaceAll("-", "_");
 				String url = "https://www.dwd.de/DE/wetter/_functions/piktos/" + icon + "?__blob=normal";
 				fileName = checkImage(fileName, url);
@@ -1877,9 +1877,9 @@ class weeWXAppCommon
 
 		try
 		{
-			String stuff = data.split("<div id='weatherDayNavigator'>", 2)[1].trim();
-			stuff = stuff.split("<h2>", 2)[1].trim();
-			desc = stuff.split(" <span class='day'>")[0].trim();
+			String stuff = data.split("<div id='weatherDayNavigator'>", 2)[1].strip();
+			stuff = stuff.split("<h2>", 2)[1].strip();
+			desc = stuff.split(" <span class='day'>")[0].strip();
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String string_time = sdf.format(System.currentTimeMillis());
 			sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
@@ -1887,14 +1887,14 @@ class weeWXAppCommon
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
-			data = data.split("<tbody>")[1].trim();
+			data = data.split("<tbody>")[1].strip();
 			String[] bits = data.split("<tr>");
 			for(int i = 1; i < bits.length; i++)
 			{
 				Day day = new Day();
-				String bit = bits[i].trim();
+				String bit = bits[i].strip();
 				String icon;
-				day.day = bit.split("<td class='timeweek'>")[1].split("'>")[1].split("</a></td>", 2)[0].trim();
+				day.day = bit.split("<td class='timeweek'>")[1].split("'>")[1].split("</a></td>", 2)[0].strip();
 
 				Locale locale = new Locale.Builder().setLanguage("it").setRegion("IT").build();
 				day.timestamp = convertDaytoTS(day.day, locale, lastTS);
@@ -1904,7 +1904,7 @@ class weeWXAppCommon
 					day.day = sdf.format(day.timestamp) + " " + day.day.substring(day.day.lastIndexOf(" ") + 1);
 				}
 
-				icon = bit.split("<td class='skyIcon'><img src='", 2)[1].split("' alt='",2)[0].trim();
+				icon = bit.split("<td class='skyIcon'><img src='", 2)[1].split("' alt='",2)[0].strip();
 				String[] ret = checkFilesIt(icon);
 				if(ret[0] != null)
 				{
@@ -1921,10 +1921,10 @@ class weeWXAppCommon
 					return ret;
 //                LogMessage("day.icon=" + day.icon);
 
-				day.max = bit.split("<td class='tempmax'>", 2)[1].split("°C</td>", 2)[0].trim();
-				day.min = bit.split("<td class='tempmin'>", 2)[1].split("°C</td>", 2)[0].trim();
+				day.max = bit.split("<td class='tempmax'>", 2)[1].split("°C</td>", 2)[0].strip();
+				day.min = bit.split("<td class='tempmin'>", 2)[1].split("°C</td>", 2)[0].strip();
 
-				day.text = bit.split("<td class='skyDesc'>")[1].split("</td>")[0].trim();
+				day.text = bit.split("<td class='skyDesc'>")[1].split("</td>")[0].strip();
 
 				if(!use_icons)
 				{
@@ -2674,7 +2674,7 @@ class weeWXAppCommon
 				lastTS = timestamp = df.getTime();
 
 			JSONObject item = jobj.getJSONArray("item").getJSONObject(0);
-			String[] items = item.getString("description").trim().split("<b>");
+			String[] items = item.getString("description").strip().split("<b>");
 			for (String i : items)
 			{
 				Day day = new Day();
@@ -2693,9 +2693,9 @@ class weeWXAppCommon
 					continue;
 
 				String[] mybits = tmp[1].split("<br />");
-				String myimg = mybits[1].trim().replaceAll("<img src='https://www.weatherzone.com.au/images/icons/fcast_30/", "")
-									.replaceAll("'>", "").replaceAll(".gif", "").replaceAll("_", "-").trim();
-				String mydesc = mybits[2].trim();
+				String myimg = mybits[1].strip().replaceAll("<img src='https://www.weatherzone.com.au/images/icons/fcast_30/", "")
+									.replaceAll("'>", "").replaceAll(".gif", "").replaceAll("_", "-").strip();
+				String mydesc = mybits[2].strip();
 				String[] range = mybits[3].split(" - ", 2);
 
 				if(!use_icons)
@@ -2813,7 +2813,7 @@ class weeWXAppCommon
 			String country = b[0];
 			rest = b[1];
 
-			desc = town.trim() + ", " + country.trim();
+			desc = town.strip() + ", " + country.strip();
 			int[] daynums = new int[]{196, 221, 241, 261, 281, 301, 321, 341, 361, 381};
 			for (int startid : daynums)
 			{
@@ -2831,25 +2831,25 @@ class weeWXAppCommon
 				bits = tmpstr.split("data-reactid='" + endid + "'>", 2);
 				tmpstr = bits[0];
 				rest = bits[1];
-				String dow = tmpstr.split("</span>", 2)[0].trim();
+				String dow = tmpstr.split("</span>", 2)[0].strip();
 				Locale locale = new Locale.Builder().setLanguage("en").setRegion("US").build();
 				myday.timestamp = convertDaytoTS(dow, locale, last_ts);
 				SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
 				myday.day = sdf.format(myday.timestamp);
 
-				myday.text = tmpstr.split("<img alt='", 2)[1].split("'", 2)[0].trim();
+				myday.text = tmpstr.split("<img alt='", 2)[1].split("'", 2)[0].strip();
 				myday.icon = tmpstr.split("<img alt='", 2)[1].split("'", 2)[1];
-				myday.icon = myday.icon.split("src='", 2)[1].split("'", 2)[0].trim();
+				myday.icon = myday.icon.split("src='", 2)[1].split("'", 2)[0].strip();
 
 				myday.max = tmpstr.split("data-reactid='" + (startid + 10) + "'>", 2)[1];
-				myday.max = myday.max.split("</span>", 2)[0].trim();
+				myday.max = myday.max.split("</span>", 2)[0].strip();
 				myday.min = tmpstr.split("data-reactid='" + (startid + 13) + "'>", 2)[1];
-				myday.min = myday.min.split("</span>", 2)[0].trim();
+				myday.min = myday.min.split("</span>", 2)[0].strip();
 
-				doc = Jsoup.parse(myday.max.trim());
+				doc = Jsoup.parse(myday.max.strip());
 				myday.max = doc.text();
 
-				doc = Jsoup.parse(myday.min.trim());
+				doc = Jsoup.parse(myday.min.strip());
 				myday.min = doc.text();
 
 				myday.max = myday.max.substring(0, myday.max.length() - 1);
@@ -3155,7 +3155,7 @@ class weeWXAppCommon
 			}
 
 			String[] bits = nws.getString(fimg).split("\\|");
-			switch (bits[1].trim())
+			switch (bits[1].strip())
 			{
 				case "L" -> bmp1 = Bitmap.createBitmap(bmp1, 0, 0, x1 / 2, y1);
 				case "R" -> bmp1 = Bitmap.createBitmap(bmp1, x1 / 2, 0, x1, y1);
@@ -3163,7 +3163,7 @@ class weeWXAppCommon
 			}
 
 			bits = nws.getString(simg).split("\\|");
-			switch (bits[1].trim())
+			switch (bits[1].strip())
 			{
 				case "L" -> bmp2 = Bitmap.createBitmap(bmp2, 0, 0, x2 / 2, y2);
 				case "R" -> bmp2 = Bitmap.createBitmap(bmp2, x2 / 2, 0, x2, y2);
@@ -3301,7 +3301,7 @@ class weeWXAppCommon
 		String cfg = downloadString(url);
 
 		if(cfg.startsWith(UTF8_BOM))
-			cfg = cfg.substring(1).trim();
+			cfg = cfg.substring(1).strip();
 
 		return cfg;
 	}
@@ -3718,7 +3718,7 @@ class weeWXAppCommon
 
 	static String getDateFromString(String str)
 	{
-		str = str.trim();
+		str = str.strip();
 
 		if(!str.contains(" "))
 			return str;
@@ -4022,7 +4022,7 @@ class weeWXAppCommon
 						break;
 
 					if(line.startsWith("Content-Length:"))
-						contentLength = Integer.parseInt(line.substring(15).trim());
+						contentLength = Integer.parseInt(line.substring(15).strip());
 				}
 
 				LogMessage("contentLength: " + contentLength);

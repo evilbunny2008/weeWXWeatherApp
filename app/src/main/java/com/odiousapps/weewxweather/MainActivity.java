@@ -1035,7 +1035,7 @@ public class MainActivity extends FragmentActivity
 				weeWXAppCommon.SetLongPref("icon_version", weeWXAppCommon.icon_version);
 			}
 
-			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().trim() : "";
+			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
 			if(settings_url.isBlank() || settings_url.equals(weeWXApp.SETTINGS_URL_default))
 			{
 				runOnUiThread(() ->
@@ -1056,7 +1056,7 @@ public class MainActivity extends FragmentActivity
 
 			try
 			{
-				String settingsData = weeWXAppCommon.downloadSettings(settings_url).trim();
+				String settingsData = weeWXAppCommon.downloadSettings(settings_url).strip();
 				if(settingsData == null || settingsData.isBlank())
 				{
 					validURL = false;
@@ -1070,8 +1070,8 @@ public class MainActivity extends FragmentActivity
 								continue;
 
 							String[] mb = bit.split("=", 2);
-							mb[0] = mb[0].toLowerCase(Locale.ENGLISH).trim();
-							mb[1] = mb[1].trim();
+							mb[0] = mb[0].toLowerCase(Locale.ENGLISH).strip();
+							mb[1] = mb[1].strip();
 
 							weeWXAppCommon.LogMessage("mb[0]: " + mb[0]);
 							weeWXAppCommon.LogMessage("mb[1]: " + mb[1]);
@@ -1277,7 +1277,7 @@ public class MainActivity extends FragmentActivity
 						case "wmo.int" ->
 						{
 							if(!forecastURL.startsWith("http"))
-								forecastURL = "https://worldweather.wmo.int/en/json/" + forecastURL.trim() + "_en.xml";
+								forecastURL = "https://worldweather.wmo.int/en/json/" + forecastURL.strip() + "_en.xml";
 							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 						}
@@ -1285,20 +1285,20 @@ public class MainActivity extends FragmentActivity
 						{
 							String lat = "", lon = "";
 							if(forecastURL.contains("?"))
-								forecastURL = forecastURL.split("\\?", 2)[1].trim();
+								forecastURL = forecastURL.split("\\?", 2)[1].strip();
 							if(forecastURL.contains("lat") && forecastURL.contains("lon"))
 							{
 								String[] tmp = forecastURL.split("&");
 								for (String line : tmp)
 								{
 									if(line.split("=", 2)[0].equals("lat"))
-										lat = line.split("=", 2)[1].trim();
+										lat = line.split("=", 2)[1].strip();
 									if(line.split("=", 2)[0].equals("lon"))
-										lon = line.split("=", 2)[1].trim();
+										lon = line.split("=", 2)[1].strip();
 								}
 							} else {
-								lat = forecastURL.split(",")[0].trim();
-								lon = forecastURL.split(",")[1].trim();
+								lat = forecastURL.split(",")[0].strip();
+								lon = forecastURL.split(",")[1].strip();
 							}
 
 							forecastURL = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon=" + lon + "&unit=0&lg=english&FcstType=json";
@@ -1307,7 +1307,7 @@ public class MainActivity extends FragmentActivity
 						}
 						case "bom3" ->
 						{
-							forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.trim() + "/forecasts/daily";
+							forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip() + "/forecasts/daily";
 							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 						}
@@ -1483,7 +1483,7 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			appCustomURL = customURL.getText() != null ? customURL.getText().toString().trim() : "";
+			appCustomURL = customURL.getText() != null ? customURL.getText().toString().strip() : "";
 			if(appCustomURL.isBlank())
 			{
 				if(!CustomURL.isBlank() && !CustomURL.equals(weeWXApp.CustomURL_default) && !CustomURL.equals(oldCustomURL))

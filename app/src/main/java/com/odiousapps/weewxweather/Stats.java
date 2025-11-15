@@ -184,7 +184,7 @@ public class Stats extends Fragment
 
 	private String convert(String cur)
 	{
-		cur = cur.trim();
+		cur = cur.strip();
 
 		weeWXAppCommon.LogMessage("Old cur: " + cur);
 
@@ -307,7 +307,7 @@ public class Stats extends Fragment
 		try
 		{
 			if(bits.length > element)
-				return bits[element].trim();
+				return bits[element].strip();
 		} catch(Exception ignored) {}
 
 		return "";

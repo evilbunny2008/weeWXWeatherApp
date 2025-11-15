@@ -103,14 +103,14 @@ public class Weather extends Fragment implements View.OnClickListener
 			forecast = loadWebview(null, view, R.id.forecast, false, false);
 		else
 			loadWebview(forecast, view, R.id.forecast, false, false);
-
+/*
 		if(savedInstanceState != null)
 		{
 			weeWXAppCommon.LogMessage("Weather.onViewCreated() loading from savedInstanceState...");
 			current.restoreState(savedInstanceState);
 			forecast.restoreState(savedInstanceState);
 		}
-
+*/
 		if(weeWXAppCommon.isPrefSet("radarforecast"))
 		{
 			weeWXAppCommon.LogMessage("Weather.onViewCreated() doing full load...");
@@ -124,7 +124,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			loadWebView();
 		}
 	}
-
+/*
 	@Override
 	public void onSaveInstanceState(@NonNull Bundle outState)
 	{
@@ -137,7 +137,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(forecast != null)
 			forecast.saveState(outState);
 	}
-
+*/
 	@Override
 	public void onDestroyView()
 	{

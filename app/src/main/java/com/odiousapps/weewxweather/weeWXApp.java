@@ -559,7 +559,7 @@ public class weeWXApp extends Application
 				lang = locales.get(0).toLanguageTag();
 		}
 
-		lang = lang.split("-")[0].trim();
+		lang = lang.split("-")[0].strip();
 		replaceHTMLString("CURRENT_LANG", lang);
 		weeWXAppCommon.LogMessage("Current app language: " + lang);
 	}
