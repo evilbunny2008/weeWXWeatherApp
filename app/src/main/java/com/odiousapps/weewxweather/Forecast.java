@@ -280,7 +280,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 		if(radtype == null || radtype.isBlank())
 		{
-			failedRadarWebViewDownload(R.string.radar_type_is_invalid);
+			String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
+			failedRadarWebViewDownload(tmp);
 			return;
 		}
 
@@ -322,7 +323,17 @@ public class Forecast extends Fragment implements View.OnClickListener
 		                    weeWXApp.html_footer;
 
 		radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/", html,
-					"text/html", "utf-8", null));
+				"text/html", "utf-8", null));
+
+		stopRefreshing();
+	}
+
+	private void failedRadarWebViewDownload(String str)
+	{
+		final String html = weeWXApp.current_html_headers + str + weeWXApp.html_footer;
+
+		radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/", html,
+				"text/html", "utf-8", null));
 
 		stopRefreshing();
 	}

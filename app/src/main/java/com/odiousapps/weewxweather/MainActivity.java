@@ -1410,7 +1410,7 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			if(!forecastURL.isBlank() && oldForecastURL != null && !oldForecastURL.equals(forecastURL))
+			if(!forecastURL.isBlank() && !forecastURL.equals(oldForecastURL))
 			{
 				weeWXAppCommon.LogMessage("forecast checking: " + forecastURL);
 
@@ -1555,29 +1555,50 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
+			weeWXAppCommon.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
+			weeWXAppCommon.SetIntPref("updateInterval", UpdateFrequency);
+			weeWXAppCommon.SetStringPref("BASE_URL", baseURL);
+
 			if(forecastURL == null || forecastURL.isBlank())
 			{
 				weeWXAppCommon.RemovePref("rssCheck");
 				weeWXAppCommon.RemovePref("forecastData");
+				weeWXAppCommon.RemovePref("fctype");
+			} else {
+				weeWXAppCommon.SetStringPref("FORECAST_URL", forecastURL);
+				weeWXAppCommon.SetStringPref("fctype", fctype);
 			}
 
-			weeWXAppCommon.SetStringPref("SETTINGS_URL", settingsURL.getText().toString());
-			weeWXAppCommon.SetIntPref("updateInterval", UpdateFrequency);
-			weeWXAppCommon.SetStringPref("BASE_URL", baseURL);
-			weeWXAppCommon.SetStringPref("radtype", radtype);
-			weeWXAppCommon.SetStringPref("RADAR_URL", radarURL);
-			weeWXAppCommon.SetStringPref("FORECAST_URL", forecastURL);
-			weeWXAppCommon.SetStringPref("fctype", fctype);
-			weeWXAppCommon.SetStringPref("WEBCAM_URL", webcamURL);
-			weeWXAppCommon.SetStringPref("CUSTOM_URL", CustomURL);
-			weeWXAppCommon.SetStringPref("custom_url", appCustomURL);
-			weeWXAppCommon.SetBoolPref("radarforecast", showRadar.isChecked());
+			if(radarURL == null || radarURL.isBlank())
+			{
+				weeWXAppCommon.RemovePref("radtype");
+				weeWXAppCommon.RemovePref("RADAR_URL");
+			} else {
+				weeWXAppCommon.SetStringPref("radtype", radtype);
+				weeWXAppCommon.SetStringPref("RADAR_URL", radarURL);
+			}
+
+			if(webcamURL == null || webcamURL.isBlank())
+				weeWXAppCommon.RemovePref("WEBCAM_URL");
+			else
+				weeWXAppCommon.SetStringPref("WEBCAM_URL", webcamURL);
+
+			if(CustomURL == null || CustomURL.isBlank())
+				weeWXAppCommon.RemovePref("CUSTOM_URL");
+			else
+				weeWXAppCommon.SetStringPref("CUSTOM_URL", CustomURL);
+
+			if(appCustomURL == null || appCustomURL.isBlank())
+				weeWXAppCommon.RemovePref("custom_url");
+			else
+				weeWXAppCommon.SetStringPref("custom_url", appCustomURL);
 
 			weeWXAppCommon.SetBoolPref("metric", metric_forecasts.isChecked());
 			weeWXAppCommon.SetBoolPref("showIndoor", show_indoor.isChecked());
 			weeWXAppCommon.SetIntPref("DayNightMode", DayNightMode);
 			weeWXAppCommon.SetBoolPref("onlyWIFI", wifi_only.isChecked());
 			weeWXAppCommon.SetBoolPref("useIcons", use_icons.isChecked());
+			weeWXAppCommon.SetBoolPref("radarforecast", showRadar.isChecked());
 
 			weeWXAppCommon.SetIntPref(weeWXAppCommon.WIDGET_THEME_MODE, widget_theme_mode);
 			KeyValue.widget_theme_mode = widget_theme_mode;

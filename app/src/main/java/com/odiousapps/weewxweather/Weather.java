@@ -252,7 +252,8 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(radtype == null || radtype.isBlank())
 		{
 			weeWXAppCommon.LogMessage("radtype: " + radtype);
-			loadWebViewContent(R.string.radar_type_is_invalid);
+			String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
+			loadWebViewContent(tmp);
 			return;
 		}
 
@@ -375,12 +376,22 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\n\t\t</div>\n");
 
-		if((!bits[45].isBlank() && !bits[45].equals("N/A")) || (!bits[43].isBlank() && !bits[43].equals("N/A")))
+		bits[43] = bits[43].strip();
+
+		if(bits[43].contains("N/A"))
+			bits[43] = "";
+
+		bits[45] = bits[45].strip();
+
+		if(bits[45].contains("N/A"))
+			bits[45] = "";
+
+		if(!bits[43].isBlank() || !bits[45].isBlank())
 		{
 			sb.append("\t\t<div class='dataRowCurrent'>\n")
 					.append("\t\t\t<div class='dataCellCurrent'>\n\t\t\t\t");
 
-			if(!bits[45].isBlank() && !bits[45].equals("N/A"))
+			if(!bits[45].isBlank())
 			{
 				sb.append("<i class='flaticon-women-sunglasses icon'></i>")
 						.append(currentSpacerLeft)
@@ -392,7 +403,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			sb.append("\n\t\t\t</div>\n\t\t\t<div class='dataCellCurrent right'>\n\t\t\t\t");
 
-			if(!bits[43].isBlank() && !bits[43].equals("N/A"))
+			if(!bits[43].isBlank())
 			{
 				sb.append(bits[43]).append(" W/m²")
 						.append(currentSpacerRight)
@@ -645,7 +656,8 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(radtype == null || radtype.isBlank())
 			{
 				updateFLL(View.GONE);
-				loadWebViewContent(R.string.radar_type_is_invalid);
+				String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
+				loadWebViewContent(tmp);
 				stopRefreshing();
 				return;
 			}

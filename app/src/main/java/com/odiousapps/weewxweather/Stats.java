@@ -315,30 +315,50 @@ public class Stats extends Fragment
 
 	private String createSolarUV(String[] bits, int uv, int uvWhen, int solar, int solarWhen, int timeMode, String which)
 	{
-		if(bits.length < Math.min(Math.min(uv, uvWhen), Math.min(solar, solarWhen)) ||
-		   (getElement(bits, uvWhen).isBlank() && getElement(bits, solarWhen).isBlank()))
+		if(bits.length <= Math.max(Math.max(uv, uvWhen), Math.max(solar, solarWhen)))
 		{
 			weeWXAppCommon.LogMessage("No solar or UV data, skipping...");
+			return "";
+		}
+
+		String UV = getElement(bits, uv).strip();
+		if(UV.contains("N/A"))
+			UV = "";
+
+		if(getElement(bits, uvWhen).strip().isBlank())
+			UV = "";
+
+		String SOLAR = getElement(bits, solar).strip();
+		if(SOLAR.contains("N/A"))
+			SOLAR = "";
+
+		if(getElement(bits, solarWhen).strip().isBlank())
+			SOLAR = "";
+
+
+		if(UV.isBlank() && SOLAR.isBlank())
+		{
+			weeWXAppCommon.LogMessage("No solar and UV data, skipping...");
 			return "";
 		}
 
 		String className = "flaticon-women-sunglasses";
 		String out = "";
 
-		if(bits.length >= uvWhen && !bits[uvWhen].isBlank() && !bits[uv].equals("N/A"))
+		if(!UV.isBlank())
 		{
 			String dateTimeStr = getDateTimeStr(bits, uvWhen, timeMode, which);
-			out += createRowLeft(className, getElement(bits, uv) + "UVI", dateTimeStr);
+			out += createRowLeft(className, UV + "UVI", dateTimeStr);
 		} else {
 			out += createRowLeft();
 		}
 
 		out += createRowMiddle();
 
-		if(bits.length >= solarWhen && !bits[solarWhen].isBlank() && !bits[solar].equals("N/A"))
+		if(!SOLAR.isBlank())
 		{
 			String dateTimeStr = getDateTimeStr(bits, solarWhen, timeMode, which);
-			out += createRowRight(className, dateTimeStr, getElement(bits, solar) + "W/m²");
+			out += createRowRight(className, dateTimeStr, SOLAR + "W/m²");
 		} else {
 			out += createRowRight();
 		}

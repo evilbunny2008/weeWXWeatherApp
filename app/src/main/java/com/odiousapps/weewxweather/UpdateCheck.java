@@ -324,6 +324,10 @@ public class UpdateCheck extends BroadcastReceiver
 				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getWeather(" + forced +
 				                          ");...", true);
 				weeWXAppCommon.getWeather(forced, onAppStart);
+
+				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getWebcam(" + forced +
+				                          ");...", true);
+				weeWXAppCommon.getWebcamImage(forced, onAppStart);
 			} catch(Exception ignored) {}
 
 			if(onAppStart)

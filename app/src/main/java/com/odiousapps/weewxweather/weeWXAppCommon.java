@@ -3598,8 +3598,11 @@ class weeWXAppCommon
 			return weeWXApp.textToBitmap(R.string.radar_url_not_set);
 
 		String radtype = GetStringPref("radtype", weeWXApp.radtype_default);
-		if(radtype == null || radtype.equals("image"))
-			return weeWXApp.textToBitmap(R.string.radar_type_is_invalid);
+		if(radtype == null || (!radtype.equals("image") && !radtype.equals("webpage")))
+		{
+			String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
+			return weeWXApp.textToBitmap(tmp);
+		}
 
 		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp)
 		{
@@ -3646,7 +3649,7 @@ class weeWXAppCommon
 		return bm;
 	}
 
-	static Bitmap getWebcamImage(boolean forced)
+	static Bitmap getWebcamImage(boolean forced, boolean calledFromweeWXApp)
 	{
 		Bitmap bm = null;
 		long current_time = getCurrTime();
@@ -3673,6 +3676,14 @@ class weeWXAppCommon
 
 		if(!forced && wcStart + 60 > current_time && bm != null)
 			return bm;
+
+		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp)
+		{
+			if(bm != null)
+				return bm;
+			else
+				return weeWXApp.textToBitmap(R.string.webcam_still_downloading);
+		}
 
 		LogMessage("Reload webcam...");
 

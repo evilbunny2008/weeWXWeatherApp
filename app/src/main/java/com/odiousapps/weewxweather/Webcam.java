@@ -34,7 +34,7 @@ public class Webcam extends Fragment
 		{
 			weeWXAppCommon.LogMessage("Webcam.java onRefresh();");
 			swipeLayout.setRefreshing(true);
-			loadWebcamImage(true);
+			weeWXAppCommon.getWebcamImage(true, false);
 		});
 
 		return rootView;
@@ -98,7 +98,7 @@ public class Webcam extends Fragment
 
 		try
 		{
-			Bitmap bm = weeWXAppCommon.getWebcamImage(forced);
+			Bitmap bm = weeWXAppCommon.getWebcamImage(forced, false);
 			if(bm != null)
 				showWebcamImage(bm);
 			else
