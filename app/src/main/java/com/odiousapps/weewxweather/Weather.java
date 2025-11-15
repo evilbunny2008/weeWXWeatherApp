@@ -587,7 +587,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
 			{
-				weeWXAppCommon.getRadarImage(true);
+				weeWXAppCommon.getRadarImage(true, false);
 			} else {
 				String radarURL = weeWXAppCommon.GetStringPref("RADAR_URL", weeWXApp.RADAR_URL_default);
 				if(radarURL == null || radarURL.isBlank())
@@ -603,10 +603,10 @@ public class Weather extends Fragment implements View.OnClickListener
 			}
 		} else {
 			weeWXAppCommon.LogMessage("Let's force download of fresh forecast data...");
-			weeWXAppCommon.getForecast(true);
+			weeWXAppCommon.getForecast(true, false);
 		}
 
-		UpdateCheck.runInTheBackground(true);
+		UpdateCheck.runInTheBackground(true, false, false);
 	}
 
 	private void loadWebView()
@@ -987,7 +987,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		String[] ret = weeWXAppCommon.getForecast(false);
+		String[] ret = weeWXAppCommon.getForecast(false, false);
 		String forecastData = ret[1];
 		String fctype = ret[2];
 
@@ -1024,7 +1024,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		String html;
 
-		if(weeWXAppCommon.getRadarImage(false) != null)
+		if(weeWXAppCommon.getRadarImage(false, false) != null)
 		{
 			weeWXAppCommon.LogMessage("done downloading radar.gif, prompt to show");
 			loadWebView();

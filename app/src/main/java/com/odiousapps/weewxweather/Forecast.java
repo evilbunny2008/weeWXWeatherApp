@@ -66,7 +66,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		{
 			swipeLayout1.setRefreshing(true);
 			weeWXAppCommon.LogMessage("swipeLayout1.onRefresh();");
-			weeWXAppCommon.getForecast(true);
+			weeWXAppCommon.getForecast(true, false);
 		});
 
 		swipeLayout2 = rootView.findViewById(R.id.swipeToRefresh2);
@@ -78,7 +78,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
-				weeWXAppCommon.getRadarImage(true);
+				weeWXAppCommon.getRadarImage(true, false);
 			else
 				loadRadar();
 		});
@@ -286,7 +286,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(radtype.equals("image"))
 		{
-			Bitmap bm = weeWXAppCommon.getRadarImage(false);
+			Bitmap bm = weeWXAppCommon.getRadarImage(false, false);
 			if(bm == null)
 			{
 				failedRadarWebViewDownload(R.string.radar_download_failed);
@@ -491,7 +491,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		String[] ret = weeWXAppCommon.getForecast(false);
+		String[] ret = weeWXAppCommon.getForecast(false, false);
 		String forecastData = ret[1];
 
 		if(ret[0].equals("error"))

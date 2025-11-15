@@ -463,6 +463,8 @@ public class weeWXApp extends Application
 	final static boolean RadarOnForecastScreen = !RadarOnHomeScreen;
 	final static boolean ForecastOnForecastScreen = RadarOnHomeScreen;
 
+	static boolean hasBootedFully = false;
+
 	@Override
 	public void onCreate()
 	{
@@ -478,12 +480,12 @@ public class weeWXApp extends Application
 		instance = this;
 		colours = new Colours(this);
 		WebViewPreloader.getInstance().init(this, 6);
-		applyTheme();
+		applyTheme(false);
 
 		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.setAlarm(this);");
 		UpdateCheck.cancelAlarm();
 		UpdateCheck.setAlarm();
-		UpdateCheck.runInTheBackground(false);
+		UpdateCheck.runInTheBackground(false, false, true);
 	}
 
 	@Override
@@ -499,11 +501,11 @@ public class weeWXApp extends Application
 		if(isModeChanged)
 		{
 			weeWXAppCommon.LogMessage("newConfig.uiMode changed, update the theme and mode!");
-			applyTheme();
+			applyTheme(true);
 		}
 	}
 
-	static void applyTheme()
+	static void applyTheme(boolean forced)
 	{
 		//if(DynamicColors.isDynamicColorAvailable())
 		//	DynamicColors.applyToActivitiesIfAvailable(this);
@@ -521,8 +523,14 @@ public class weeWXApp extends Application
 
 		weeWXAppCommon.LogMessage("DayNightMode == " + AppCompatDelegate.getDefaultNightMode());
 
-		weeWXAppCommon.SendForecastRefreshIntent();
-		weeWXAppCommon.SendWeatherRefreshIntent();
+		if(forced)
+		{
+			weeWXAppCommon.SendForecastRefreshIntent();
+			weeWXAppCommon.SendRadarRefreshIntent();
+			weeWXAppCommon.SendWeatherRefreshIntent();
+			weeWXAppCommon.SendWebcamRefreshIntent();
+		}
+
 		weeWXAppCommon.LogMessage("Theme should have updated!");
 	}
 

@@ -2891,41 +2891,43 @@ class weeWXAppCommon
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	static void SendWeatherForecastRefreshIntent()
-	{
-		NotificationManager.updateNotificationMessage(REFRESH_WEATHER_FORECAST_INTENT);
-		LogMessage("SendWeatherForecastRefreshIntent() Broadcasted");
-	}
-
 	static void SendForecastRefreshIntent()
 	{
-		String caller = new Exception().getStackTrace()[1].getClassName();
+		StackTraceElement caller = new Exception().getStackTrace()[1];
+		String callerClass  = caller.getClassName();
+		String callerMethod = caller.getMethodName();
+		LogMessage("SendForecastRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod, true);
 		NotificationManager.updateNotificationMessage(REFRESH_FORECAST_INTENT);
-		LogMessage("Refresh forecast intent broadcasted by " + caller, true);
 	}
 
 	static void SendRadarRefreshIntent()
 	{
-		WidgetProvider.updateAppWidget();
+		StackTraceElement caller = new Exception().getStackTrace()[1];
+		String callerClass  = caller.getClassName();
+		String callerMethod = caller.getMethodName();
+		LogMessage("SendRadarRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod, true);
 		NotificationManager.updateNotificationMessage(REFRESH_RADAR_INTENT);
-		LogMessage("Refresh radar intent broadcasted");
 	}
 
 	static void SendWeatherRefreshIntent()
 	{
-		WidgetProvider.updateAppWidget();
+		StackTraceElement caller = new Exception().getStackTrace()[1];
+		String callerClass  = caller.getClassName();
+		String callerMethod = caller.getMethodName();
+		LogMessage("SendWeatherRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod, true);
 		NotificationManager.updateNotificationMessage(REFRESH_WEATHER_INTENT);
-		LogMessage("Refresh weather intent broadcasted");
 	}
 
 	static void SendWebcamRefreshIntent()
 	{
-		WidgetProvider.updateAppWidget();
+		StackTraceElement caller = new Exception().getStackTrace()[1];
+		String callerClass  = caller.getClassName();
+		String callerMethod = caller.getMethodName();
+		LogMessage("SendWebcamRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod, true);
 		NotificationManager.updateNotificationMessage(REFRESH_WEBCAM_INTENT);
-		LogMessage("Refresh weather intent broadcasted");
 	}
 
-	static String[] getWeather(boolean forced)
+	static String[] getWeather(boolean forced, boolean calledFromweeWXApp)
 	{
 		long current_time = getCurrTime();
 
@@ -2948,6 +2950,14 @@ class weeWXAppCommon
 
 		if(!forced && current_time < lastDownloadTime + period && lastDownload != null && !lastDownload.isBlank())
 			return new String[]{"ok", lastDownload};
+
+		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp)
+		{
+			if(lastDownload != null && !lastDownload.isBlank())
+				return new String[]{"ok", lastDownload};
+			else
+				return new String[]{"error", weeWXApp.getAndroidString(R.string.attempting_to_download_data_txt)};
+		}
 
 		if(weatherTask != null && !weatherTask.isDone())
 		{
@@ -3453,12 +3463,7 @@ class weeWXAppCommon
 		return false;
 	}
 
-	static String[] getForecast()
-	{
-		return getForecast(false);
-	}
-
-	static String[] getForecast(boolean force)
+	static String[] getForecast(boolean force, boolean calledFromweeWXApp)
 	{
 		String fctype = GetStringPref("fctype", weeWXApp.fctype_default);
 		if(fctype == null || fctype.isBlank())
@@ -3489,14 +3494,23 @@ class weeWXAppCommon
 
 		if(!force && rssCheckTime + weeWXApp.RSSCache_period_default > current_time && forecastData != null && !forecastData.isBlank())
 		{
-			LogMessage("Cache isn't more than " + weeWXApp.RSSCache_period_default + " seconds old (" +
-			           (rssCheckTime + weeWXApp.RSSCache_period_default - current_time) + "s)", true);
+			LogMessage("Cache isn't more than " + weeWXApp.RSSCache_period_default + "s old (" +
+			           (current_time - rssCheckTime) +
+			           "s old)", true);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String date = sdf.format(rssCheckTime * 1_000L);
 			LogMessage("rsscheck: " + date);
 			date = sdf.format(current_time);
 			LogMessage("current_time: " + date);
 			return new String[]{"ok", forecastData, fctype};
+		}
+
+		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp)
+		{
+			if(forecastData == null || forecastData.isBlank())
+				return new String[]{"ok", forecastData, fctype};
+			else
+				return new String[]{"error", weeWXApp.getAndroidString(R.string.attempting_to_download_data_txt), fctype};
 		}
 
 		if(forecastTask != null && !forecastTask.isDone())
@@ -3512,7 +3526,7 @@ class weeWXAppCommon
 		}
 
 		LogMessage("Was forced or no forecast data or cache is more than " + weeWXApp.RSSCache_period_default +
-		           " seconds old (" + (current_time - rssCheckTime) + "s)", true);
+		           "s old (" + (current_time - rssCheckTime) + "s)", true);
 
 		ftStart = current_time;
 
@@ -3559,7 +3573,7 @@ class weeWXAppCommon
 		return forecastData;
 	}
 
-	static Bitmap getRadarImage(boolean forced)
+	static Bitmap getRadarImage(boolean forced, boolean calledFromweeWXApp)
 	{
 		Bitmap bm = null;
 
@@ -3586,6 +3600,14 @@ class weeWXAppCommon
 		String radtype = GetStringPref("radtype", weeWXApp.radtype_default);
 		if(radtype == null || radtype.equals("image"))
 			return weeWXApp.textToBitmap(R.string.radar_type_is_invalid);
+
+		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp)
+		{
+			if(bm != null)
+				return bm;
+			else
+				return weeWXApp.textToBitmap(R.string.radar_still_downloading);
+		}
 
 		LogMessage("Reload radar...");
 

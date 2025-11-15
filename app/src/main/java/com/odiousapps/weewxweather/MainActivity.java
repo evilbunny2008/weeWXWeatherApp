@@ -1138,7 +1138,7 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			if(baseURL != null && !baseURL.isBlank() && !baseURL.equals(oldBaseURL))
+			if(!baseURL.equals(oldBaseURL))
 			{
 				try
 				{
@@ -1577,7 +1577,7 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.SetBoolPref("showIndoor", show_indoor.isChecked());
 			weeWXAppCommon.SetIntPref("DayNightMode", DayNightMode);
 			weeWXAppCommon.SetBoolPref("onlyWIFI", wifi_only.isChecked());
-			weeWXAppCommon.SetBoolPref("use_icons", use_icons.isChecked());
+			weeWXAppCommon.SetBoolPref("useIcons", use_icons.isChecked());
 
 			weeWXAppCommon.SetIntPref(weeWXAppCommon.WIDGET_THEME_MODE, widget_theme_mode);
 			KeyValue.widget_theme_mode = widget_theme_mode;
@@ -1605,7 +1605,7 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.LogMessage("Restart the alarm...");
 			UpdateCheck.cancelAlarm();
 			UpdateCheck.setAlarm();
-			UpdateCheck.runInTheBackground(false);
+			UpdateCheck.runInTheBackground(false, false, false);
 
 			try
 			{
@@ -1629,7 +1629,7 @@ public class MainActivity extends FragmentActivity
 				mViewPager.setAdapter(null);
 
 				weeWXAppCommon.LogMessage("Apply the new themes");
-				weeWXApp.applyTheme();
+				weeWXApp.applyTheme(false);
 				WidgetProvider.updateAppWidget();
 
 				weeWXAppCommon.LogMessage("Recreate the activity...");

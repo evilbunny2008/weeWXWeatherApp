@@ -724,7 +724,7 @@ public class Stats extends Fragment
 	private void updateFields(boolean forced)
 	{
 		weeWXAppCommon.LogMessage("Stats.java updateFields()");
-		String[] ret = weeWXAppCommon.getWeather(forced);
+		String[] ret = weeWXAppCommon.getWeather(forced, false);
 		String lastDownload = ret[1];
 
 		if(ret[0].equals("error"))
