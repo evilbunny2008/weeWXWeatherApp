@@ -39,6 +39,10 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
+		int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		if(pos <= 0)
+			return;
+
 		long current_time = weeWXAppCommon.getCurrTime();
 
 		long lastDownloadTime = weeWXAppCommon.GetLongPref("LastDownloadTime", weeWXApp.LastDownloadTime_default);
@@ -61,7 +65,7 @@ public class UpdateCheck extends BroadcastReceiver
 */
 		weeWXAppCommon.LogMessage("UpdateCheck.java started.");
 
-		runInTheBackground(context, true);
+		runInTheBackground(true);
 
 		weeWXAppCommon.LogMessage("UpdateCheck.java finished.");
 	}
@@ -84,13 +88,24 @@ public class UpdateCheck extends BroadcastReceiver
 		return PendingIntent.getBroadcast(context, 0, intent, flags);
 	}
 
-	static void setAlarm(Context context)
+	static void setAlarm()
 	{
 		weeWXAppCommon.LogMessage("UpdateCheck.java Attempting to set the reoccurring alarm...");
 
+		Context context = weeWXApp.getInstance();
 		if(context == null)
 		{
 			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null");
+			return;
+		}
+
+		int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		if(pos <= 0)
+			return;
+
+		if(getPendingIntent(context, true) != null)
+		{
+			weeWXAppCommon.LogMessage("UpdateCheck.java Reoccurring alarm already set, did you forget to call cancel first? Skipping...");
 			return;
 		}
 
@@ -98,12 +113,6 @@ public class UpdateCheck extends BroadcastReceiver
 		if(lastDownloadTime == 0)
 		{
 			weeWXAppCommon.LogMessage("UpdateCheck.java failed, lastDownloadTime == 0");
-			return;
-		}
-
-		if(getPendingIntent(context, true) != null)
-		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java Reoccurring alarm already set, skipping...");
 			return;
 		}
 
@@ -141,13 +150,18 @@ public class UpdateCheck extends BroadcastReceiver
 		alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, start, period, getPendingIntent(context));
 
 		weeWXAppCommon.LogMessage("UpdateCheck.java Successfully set the reoccurring alarm...");
-
-		runInTheBackground(context, false);
 	}
 
-	static void cancelAlarm(Context context)
+	static void cancelAlarm()
 	{
 		weeWXAppCommon.LogMessage("UpdateCheck.java Attempting to cancel the reoccurring alarm...");
+
+		Context context = weeWXApp.getInstance();
+		if(context == null)
+		{
+			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null");
+			return;
+		}
 
 		PendingIntent pi = getPendingIntent(context, true);
 
@@ -169,9 +183,23 @@ public class UpdateCheck extends BroadcastReceiver
 		weeWXAppCommon.LogMessage("UpdateCheck.java Successfully cancelled the reoccurring alarm...");
 	}
 
-	private static void runInTheBackground(Context context, boolean forced)
+	static void runInTheBackground(boolean forced)
 	{
 		weeWXAppCommon.LogMessage("UpdateCheck.java runInTheBackground() running the background updates...", true);
+
+		Context context = weeWXApp.getInstance();
+		if(context == null)
+		{
+			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null");
+			return;
+		}
+
+		if(!forced)
+		{
+			int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+			if(pos <= 0)
+				return;
+		}
 
 		long current_time = weeWXAppCommon.getCurrTime();
 

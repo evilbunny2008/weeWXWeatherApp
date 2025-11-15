@@ -481,8 +481,9 @@ public class weeWXApp extends Application
 		applyTheme();
 
 		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.setAlarm(this);");
-		UpdateCheck.cancelAlarm(this);
-		UpdateCheck.setAlarm(this);
+		UpdateCheck.cancelAlarm();
+		UpdateCheck.setAlarm();
+		UpdateCheck.runInTheBackground(false);
 	}
 
 	@Override

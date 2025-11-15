@@ -288,18 +288,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	void drawWeather()
 	{
 		weeWXAppCommon.LogMessage("drawWeather()");
-/*
-		long current_time = weeWXAppCommon.getCurrTime();
 
-		if(lastRunWeather + 5 > current_time)
-		{
-			weeWXAppCommon.LogMessage("We already ran less than 5s ago, skipping...");
-			stopRefreshing();
-			return;
-		}
-
-		lastRunWeather = current_time;
-*/
 		String lastDownload = weeWXAppCommon.GetStringPref("LastDownload", weeWXApp.LastDownload_default);
 		if(lastDownload == null || lastDownload.isBlank())
 		{
@@ -616,6 +605,8 @@ public class Weather extends Fragment implements View.OnClickListener
 			weeWXAppCommon.LogMessage("Let's force download of fresh forecast data...");
 			reloadForecast();
 		}
+
+		UpdateCheck.runInTheBackground(true);
 	}
 
 	private void loadWebView()
