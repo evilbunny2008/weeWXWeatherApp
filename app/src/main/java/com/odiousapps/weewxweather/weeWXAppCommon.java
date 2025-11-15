@@ -396,6 +396,15 @@ class weeWXAppCommon
 		return rssTime;
 	}
 
+	static long getRSSsecs()
+	{
+		long rssTime = GetLongPref("rssCheck", 0);
+		if(rssTime > 10_000_000_000L)
+			rssTime = Math.round(rssTime / 1_000D);
+
+		return rssTime;
+	}
+
 	private static Day getFirstDay(List<Day> days)
 	{
 		Day first = null;
@@ -3476,12 +3485,12 @@ class weeWXAppCommon
 		}
 
 		final long current_time = getCurrTime();
-		long rssCheckTime = GetLongPref("rssCheck", 0);
+		long rssCheckTime = getRSSsecs();
 
 		if(!force && rssCheckTime + weeWXApp.RSSCache_period_default > current_time && forecastData != null && !forecastData.isBlank())
 		{
 			LogMessage("Cache isn't more than " + weeWXApp.RSSCache_period_default + " seconds old (" +
-			           (rssCheckTime + weeWXApp.RSSCache_period_default) + "s)", true);
+			           (rssCheckTime + weeWXApp.RSSCache_period_default - current_time) + "s)", true);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String date = sdf.format(rssCheckTime * 1_000L);
 			LogMessage("rsscheck: " + date);

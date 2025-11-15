@@ -236,7 +236,6 @@ public class UpdateCheck extends BroadcastReceiver
 
 				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getForecast(false);...", true);
 				weeWXAppCommon.getForecast(false);
-				weeWXAppCommon.SendForecastRefreshIntent();
 
 				String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 				if(radtype != null && !radtype.isBlank() && radtype.equals("image"))
@@ -246,13 +245,11 @@ public class UpdateCheck extends BroadcastReceiver
 					{
 						weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getRadarImage(false);...", true);
 						weeWXAppCommon.getRadarImage(false);
-						weeWXAppCommon.SendRadarRefreshIntent();
 					}
 				}
 
 				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getWeather(" + forced + ");...", true);
 				weeWXAppCommon.getWeather(forced);
-				weeWXAppCommon.SendWeatherRefreshIntent();
 			} catch(Exception ignored) {}
 
 			weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() finished running the background updates, " +
