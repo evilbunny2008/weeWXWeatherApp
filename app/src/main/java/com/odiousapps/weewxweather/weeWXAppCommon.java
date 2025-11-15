@@ -387,6 +387,15 @@ class weeWXAppCommon
 		}
 	}
 
+	static long getRSSms()
+	{
+		long rssTime = GetLongPref("rssCheck", 0);
+		if(rssTime < 10_000_000_000L)
+			rssTime *= 1_000L;
+
+		return rssTime;
+	}
+
 	private static Day getFirstDay(List<Day> days)
 	{
 		Day first = null;
@@ -893,7 +902,8 @@ class weeWXAppCommon
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
 		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
-		long timestamp = GetLongPref("rssCheck", 0) * 1_000L;
+		long timestamp = getRSSms();
+
 		String desc;
 		List<Day> days = new ArrayList<>();
 
@@ -2067,8 +2077,7 @@ class weeWXAppCommon
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
 		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
-		long timestamp = GetLongPref("rssCheck", 0) * 1_000L;
-
+		long timestamp = getRSSms();
 		List<Day> days = new ArrayList<>();
 		String desc;
 
@@ -2151,8 +2160,7 @@ class weeWXAppCommon
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
 		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
-		long timestamp = GetLongPref("rssCheck", 0) * 1_000L;
-
+		long timestamp = getRSSms();
 		List<Day> days = new ArrayList<>();
 		String desc;
 
@@ -2224,7 +2232,7 @@ class weeWXAppCommon
 		String desc;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		long timestamp = GetLongPref("rssCheck", 0) * 1_000L;
+		long timestamp = getRSSms();
 
 		try
 		{
@@ -2298,7 +2306,7 @@ class weeWXAppCommon
 			JSONObject location = jobj.getJSONObject("location");
 			desc = location.getString("name") + ", " + location.getString("country");
 
-			timestamp = GetLongPref("rssCheck", 0) * 1_000L;
+			timestamp = getRSSms();
 
 			JSONArray jarr = jobj.getJSONObject("forecast")
 					.getJSONObject("tabular")
@@ -2782,7 +2790,7 @@ class weeWXAppCommon
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
 
 		List<Day> days = new ArrayList<>();
-		long timestamp = GetLongPref("rssCheck", 0) * 1_000L;
+		long timestamp = getRSSms();
 		String desc;
 		Document doc;
 
@@ -3468,16 +3476,16 @@ class weeWXAppCommon
 		}
 
 		final long current_time = getCurrTime();
-		long rssCheckTime = Math.round(GetLongPref("rssCheck", 0) / 1_000D);
+		long rssCheckTime = GetLongPref("rssCheck", 0);
 
 		if(!force && rssCheckTime + weeWXApp.RSSCache_period_default > current_time && forecastData != null && !forecastData.isBlank())
 		{
 			LogMessage("Cache isn't more than " + weeWXApp.RSSCache_period_default + " seconds old (" +
 			           (rssCheckTime + weeWXApp.RSSCache_period_default) + "s)", true);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
-			String date = sdf.format(GetLongPref("rssCheck", 0) * 1_000L);
+			String date = sdf.format(rssCheckTime * 1_000L);
 			LogMessage("rsscheck: " + date);
-			date = sdf.format(current_time * 1_000L);
+			date = sdf.format(current_time);
 			LogMessage("current_time: " + date);
 			return new String[]{"ok", forecastData, fctype};
 		}
