@@ -386,12 +386,12 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\n\t\t</div>\n");
 
-		if(!bits[45].isBlank() || !bits[43].isBlank())
+		if((!bits[45].isBlank() && !bits[45].equals("N/A")) || (!bits[43].isBlank() && !bits[43].equals("N/A")))
 		{
 			sb.append("\t\t<div class='dataRowCurrent'>\n")
 					.append("\t\t\t<div class='dataCellCurrent'>\n\t\t\t\t");
 
-			if(!bits[45].isBlank())
+			if(!bits[45].isBlank() && !bits[45].equals("N/A"))
 			{
 				sb.append("<i class='flaticon-women-sunglasses icon'></i>")
 						.append(currentSpacerLeft)
@@ -403,7 +403,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			sb.append("\n\t\t\t</div>\n\t\t\t<div class='dataCellCurrent right'>\n\t\t\t\t");
 
-			if(!bits[43].isBlank())
+			if(!bits[43].isBlank() && !bits[43].equals("N/A"))
 			{
 				sb.append(bits[43]).append(" W/m²")
 						.append(currentSpacerRight)
@@ -514,7 +514,6 @@ public class Weather extends Fragment implements View.OnClickListener
 			stopRefreshing();
 			return;
 		}
-
 
 		if(lastRunForecast + 5 > current_time)
 		{

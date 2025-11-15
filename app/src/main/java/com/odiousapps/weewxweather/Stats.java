@@ -325,7 +325,7 @@ public class Stats extends Fragment
 		String className = "flaticon-women-sunglasses";
 		String out = "";
 
-		if(bits.length >= uvWhen && !bits[uvWhen].isBlank())
+		if(bits.length >= uvWhen && !bits[uvWhen].isBlank() && !bits[uv].equals("N/A"))
 		{
 			String dateTimeStr = getDateTimeStr(bits, uvWhen, timeMode, which);
 			out += createRowLeft(className, getElement(bits, uv) + "UVI", dateTimeStr);
@@ -335,7 +335,7 @@ public class Stats extends Fragment
 
 		out += createRowMiddle();
 
-		if(bits.length >= solarWhen && !bits[solarWhen].isBlank())
+		if(bits.length >= solarWhen && !bits[solarWhen].isBlank() && !bits[solar].equals("N/A"))
 		{
 			String dateTimeStr = getDateTimeStr(bits, solarWhen, timeMode, which);
 			out += createRowRight(className, dateTimeStr, getElement(bits, solar) + "W/m²");
