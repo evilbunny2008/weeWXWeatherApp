@@ -8,8 +8,8 @@ android {
         applicationId = "com.odiousapps.weewxweather"
         minSdk = 26
         targetSdk = 36
-	    versionName = "1.99.22beta"
-        versionCode = 1099022
+	    versionName = "1.99.23beta"
+        versionCode = 1099023
     }
 
 	buildFeatures {
@@ -39,6 +39,16 @@ android {
 	}
 
 	namespace = 'com.odiousapps.weewxweather'
+}
+
+androidComponents {
+	onVariants(selector().withBuildType("release")) { variant ->
+		variant.outputs.forEach { output ->
+			def appName = "weeWXApp"
+			def versionName = variant.outputs.first().versionName.get()
+			output.outputFileName.set("${appName}-${versionName}.apk")
+		}
+	}
 }
 
 dependencies {

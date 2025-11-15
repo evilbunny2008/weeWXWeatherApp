@@ -587,7 +587,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
 			{
-				loadOrReloadRadarImage();
+				weeWXAppCommon.getRadarImage(true);
 			} else {
 				String radarURL = weeWXAppCommon.GetStringPref("RADAR_URL", weeWXApp.RADAR_URL_default);
 				if(radarURL == null || radarURL.isBlank())
@@ -603,7 +603,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			}
 		} else {
 			weeWXAppCommon.LogMessage("Let's force download of fresh forecast data...");
-			reloadForecast();
+			weeWXAppCommon.getForecast(true);
 		}
 
 		UpdateCheck.runInTheBackground(true);
