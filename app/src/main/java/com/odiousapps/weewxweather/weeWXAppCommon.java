@@ -2884,7 +2884,7 @@ class weeWXAppCommon
 	{
 		String caller = new Exception().getStackTrace()[1].getClassName();
 		NotificationManager.updateNotificationMessage(REFRESH_FORECAST_INTENT);
-		LogMessage("Refresh forecast intent broadcasted by " + caller);
+		LogMessage("Refresh forecast intent broadcasted by " + caller, true);
 	}
 
 	static void SendRadarRefreshIntent()
@@ -3468,7 +3468,7 @@ class weeWXAppCommon
 		}
 
 		final long current_time = getCurrTime();
-		long rssCheckTime = GetLongPref("rssCheck", 0);
+		long rssCheckTime = Math.round(GetLongPref("rssCheck", 0) / 1_000D);
 
 		if(!force && rssCheckTime + weeWXApp.RSSCache_period_default > current_time && forecastData != null && !forecastData.isBlank())
 		{
@@ -3486,7 +3486,8 @@ class weeWXAppCommon
 		{
 			if(ftStart + 30 > current_time)
 			{
-				LogMessage("forecastTask is less than 30s old, we'll skip this attempt...", true);
+				LogMessage("forecastTask is less than 30s old (" + (current_time - ftStart) +
+				           "s), we'll skip this attempt...", true);
 				return new String[]{"ok", forecastData, fctype};
 			}
 
@@ -3510,7 +3511,12 @@ class weeWXAppCommon
 			} catch(Exception ignored) {}
 
 			if(tmpForecastData != null && !tmpForecastData.isBlank())
+			{
+				LogMessage("Successfully updated forecast data, will send a refresh intent...", true);
 				SendForecastRefreshIntent();
+			} else {
+				LogMessage("Failed to successfully update forecast data, won't send a refresh intent...", true);
+			}
 
 			ftStart = 0;
 		});
