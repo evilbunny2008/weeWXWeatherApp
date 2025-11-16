@@ -579,16 +579,51 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		weeWXAppCommon.LogMessage("Line 472 forceCurrentRefresh()");
 
-		String str = weeWXApp.current_html_headers + weeWXApp.script_header +
-		             weeWXApp.html_header_rest + weeWXApp.inline_arrow + body;
+		body = weeWXAppCommon.indentNonBlankLines(body, 2) + "\n\n";
+
+		String str = weeWXApp.current_html_headers + weeWXApp.html_header_rest + body;
 
 		if(weeWXAppCommon.web_debug_on)
 			str += weeWXApp.debug_html;
 
 		str += weeWXApp.html_footer;
+/*
+		String filename = "weeWX_current_conditions_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) + ".html";
 
+		File outFile = null;
+
+		try
+		{
+			outFile = weeWXAppCommon.getExtFile("weeWX", filename);
+			CustomDebug.writeDebug(outFile, str);
+			String theOutFile = outFile.getAbsolutePath();
+
+			weeWXAppCommon.LogMessage("Wrote debug html to " + theOutFile, true);
+
+			if(isAdded())
+			{
+				requireActivity().runOnUiThread(() ->
+						Toast.makeText(requireContext(), "Wrote debug html to " + theOutFile, Toast.LENGTH_LONG).show());
+			}
+		} catch(Exception e) {
+			weeWXAppCommon.LogMessage("Attempted to write to " + filename + " but failed with the following error: " + e, true);
+
+			if(isAdded())
+			{
+				if(outFile != null)
+				{
+					String theOutFile = outFile.getAbsolutePath();
+					requireActivity().runOnUiThread(() ->
+							Toast.makeText(requireContext(), "Failed to output debug html to " + theOutFile, Toast.LENGTH_LONG).show());
+				} else {
+					requireActivity().runOnUiThread(() ->
+							Toast.makeText(requireContext(), "Failed to output debug html to " + filename, Toast.LENGTH_LONG).show());
+				}
+			}
+		}
+*/
 		loadAndShowWebView(current, str, null);
-		weeWXAppCommon.LogMessage("Line 493 forceCurrentRefresh() calling loadAndShowWebView()");
+		weeWXAppCommon.LogMessage("Line 426 forceCurrentRefresh() calling loadAndShowWebView()");
 	}
 
 	private void forceRefresh()

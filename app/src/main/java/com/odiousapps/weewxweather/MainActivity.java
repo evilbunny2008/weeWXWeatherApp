@@ -1224,7 +1224,7 @@ public class MainActivity extends FragmentActivity
 										new Document.OutputSettings().indentAmount(2).prettyPrint(true)
 								).outerHtml();
 
-								CustomDebug.writeDebug("metservice.com.7day.html", pretty);
+								CustomDebug.writeDebug("weeWX", "metservice.com.7day.html", pretty);
 								weeWXAppCommon.LogMessage("wrote content to metservice.com.7day.html");
 							}
 

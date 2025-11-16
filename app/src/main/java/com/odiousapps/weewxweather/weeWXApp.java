@@ -27,8 +27,7 @@ import androidx.core.content.ContextCompat;
 @SuppressWarnings({"unused", "SameParameterValue"})
 public class weeWXApp extends Application
 {
-	private static final String html_header =
-			"""
+	private static final String html_header = """
 			<!DOCTYPE html>
 			<html lang='CURRENT_LANG'>
 				<head>
@@ -401,7 +400,8 @@ public class weeWXApp extends Application
 							height: 24px;
 							fill: #fff;
 						}
-					</style>""";
+					</style>
+			""";
 
 	static final String script_header =
 					"""
@@ -425,15 +425,15 @@ public class weeWXApp extends Application
 								behavior: "smooth"
 							});
 						});
-					</script>""";
+					</script>
+			""";
 
-	static final String html_header_rest =
-			"""
+	static final String html_header_rest = """
 				</head>
-				<body>""";
+				<body>
+			""";
 
-	static final String inline_arrow =
-			"""
+	static final String inline_arrow = """
 					<!-- Floating scroll-to-top button -->
 					<div id="scrollToTop">
 						<svg viewBox="0 0 24 24">
@@ -442,43 +442,45 @@ public class weeWXApp extends Application
 					</div>
 			""";
 
-	static final String html_footer = "\n</body>\n</html>\n";
+	static final String html_footer = """
+				</body>
+			</html>
+			""";
 
-	static final String about_blurb =
-			"""
-			Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app
-			wouldn't be possible otherwise.<br><br>
-			Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and
-			is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and
-			<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers
-			<br><br>
-			weeWX Weather App v""" + BuildConfig.VERSION_NAME + """
-									is by <a href='https://odiousapps.com'>OdiousApps</a>.
-									""";
+	static final String about_blurb = """
+					Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app
+					wouldn't be possible otherwise.<br><br>
+					Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and
+					is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and
+					<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers
+					<br><br>
+					weeWX Weather App v
+			""" + BuildConfig.VERSION_NAME + """
+					is by <a href='https://odiousapps.com'>OdiousApps</a>.
+			""";
 
-	final static String debug_html =
-			"""
-			<div id='widthDisplay'
-				style='position: fixed; top: 10px; right: 10px;
-				background: rgba(0,0,0,0.7); color: #fff;
-				padding: 5px 10px; border-radius: 5px;
-				font-family: monospace; z-index: 9999;'>
-			</div>
+	final static String debug_html = """
+					<div id='widthDisplay'
+						style='position: fixed; top: 10px; right: 10px;
+						background: rgba(0,0,0,0.7); color: #fff;
+						padding: 5px 10px; border-radius: 5px;
+						font-family: monospace; z-index: 9999;'>
+					</div>
 
-			<script>
-				const display = document.getElementById('widthDisplay');
-
-				function updateWidth() {
-					display.textContent = 'Width: ' + window.innerWidth + 'px ' +
-					'x Height: ' + window.innerHeight + 'px';
-				}
-
-				// Update immediately
-				updateWidth();
-
-				// Update on resize
-				window.addEventListener('resize', updateWidth);
-			</script>
+					<script>
+						const display = document.getElementById('widthDisplay');
+		
+						function updateWidth() {
+							display.textContent = 'Width: ' + window.innerWidth + 'px ' +
+							'x Height: ' + window.innerHeight + 'px';
+						}
+		
+						// Update immediately
+						updateWidth();
+		
+						// Update on resize
+						window.addEventListener('resize', updateWidth);
+					</script>
 			""";
 
 	static String current_html_headers;

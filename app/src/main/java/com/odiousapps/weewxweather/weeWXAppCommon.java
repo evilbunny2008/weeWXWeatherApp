@@ -14,6 +14,7 @@ import android.media.MediaScannerConnection;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import android.os.Environment;
 import android.util.Base64;
 import android.util.Log;
 
@@ -37,12 +38,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.StringReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -3768,6 +3771,49 @@ class weeWXAppCommon
 				.replaceAll("\n", "")
 				.replaceAll("\r", "")
 				.replaceAll("\t", "");
+	}
+
+	static String indentNonBlankLines(String s, int numberOfTabs)
+	{
+		String indents = String.join("", Collections.nCopies(numberOfTabs, "\t"));
+		StringBuilder out = new StringBuilder();
+		try(BufferedReader br = new BufferedReader(new StringReader(s)))
+		{
+			String line;
+			boolean first = true;
+			while((line = br.readLine()) != null)
+			{
+				if (!first) out.append('\n');
+				first = false;
+
+				if(line.trim().isEmpty())
+					out.append(line);  // keep empty lines unchanged
+				else
+					out.append(indents).append(line);
+			}
+		} catch (IOException ignored) {}
+
+		return out.toString();
+	}
+
+	static File getExtFile(String finalDir, String filename) throws IOException
+	{
+		File dir = new File(Environment.getExternalStorageDirectory(), "Download");
+		dir = new File(dir, finalDir);
+
+		if(dir.exists() && !dir.isDirectory())
+		{
+			weeWXAppCommon.LogMessage("Something called '" + finalDir + "' already exist, but it isn't a directory...");
+			throw new IOException("There is already something named " + finalDir + " but it's not a directory");
+		}
+
+		if(!dir.exists() && !dir.mkdirs())
+		{
+			weeWXAppCommon.LogMessage("Can't make '" + dir.getAbsoluteFile() + "' dir...");
+			throw new IOException("Tried to create " + dir.getAbsoluteFile() + " but failed to create the directory");
+		}
+
+		return new File(dir, filename);
 	}
 
 	static File getExtDir(String dir) throws IOException

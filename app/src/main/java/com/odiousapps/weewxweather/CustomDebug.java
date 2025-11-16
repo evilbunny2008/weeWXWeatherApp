@@ -12,58 +12,36 @@ import java.io.OutputStream;
 @SuppressWarnings({"unused", "SameParameterValue"})
 class CustomDebug
 {
-	static void writeDebug(String text)
+	static void writeDebug(String dir, String filename, String text) throws IOException
 	{
-		Context context = weeWXApp.getInstance();
-		if(context == null)
-			return;
-
-		String fn = context.getApplicationInfo().loadLabel(weeWXApp.getInstance().getPackageManager()) + ".txt";
-		writeDebug(fn, text);
+		File file = weeWXAppCommon.getExtFile(dir, filename);
+		writeDebug(file, text, 0);
 	}
 
-	static void writeDebug(String filename, String text)
+	static void writeDebug(File file, String text) throws IOException
 	{
-		String dir = "weeWX";
-		writeDebug(dir, filename, text);
+		writeDebug(file, text, 0);
 	}
 
-	static void writeDebug(String dir, String filename, String text)
+	private static void writeDebug(File file, String text, int depth)
 	{
-		writeDebug(dir, filename, text, 0);
-	}
-
-	private static void writeDebug(String dir, String filename, String text, int depth)
-	{
-		File outFile;
-
 		if(depth > 20)
 			return;
 
 		try
 		{
-			outFile = new File(Environment.getExternalStorageDirectory(), "Download");
-			outFile = new File(outFile, dir);
-			if(outFile.exists() && !outFile.isDirectory())
+			if(file.exists() && !file.delete())
 			{
-				weeWXAppCommon.LogMessage("'" + dir + "' already exist, but it isn't a directory...");
-				return;
+				weeWXAppCommon.LogMessage("Failed to remove existing file " + file.getAbsoluteFile(), true);
+				throw new IOException("Failed to remove existing file " + file.getAbsoluteFile());
 			}
 
-			if(!outFile.exists() && !outFile.mkdirs())
-			{
-				weeWXAppCommon.LogMessage("Can't make '" + dir + "' dir...");
-				return;
-			}
-
-			outFile = new File(outFile, filename);
-
-			FileOutputStream FOS = new FileOutputStream(outFile);
+			FileOutputStream FOS = new FileOutputStream(file);
 			FOS.write(text.getBytes());
 			FOS.close();
 		} catch(Exception e) {
-			//Common.doStackOutput(e);
-			writeDebug(dir, filename, text, depth + 1);
+			weeWXAppCommon.doStackOutput(e);
+			writeDebug(file, text, depth + 1);
 		}
 	}
 
