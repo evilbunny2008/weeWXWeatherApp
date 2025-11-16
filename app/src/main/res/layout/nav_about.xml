@@ -5,24 +5,26 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:padding="16dp"
+	android:layout_gravity="center"
+	android:gravity="center"
+	android:orientation="vertical"
 	app:maxWidth="286dp"
-	android:padding="16dp">
-
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:orientation="vertical"
-		android:gravity="center"
-		tools:ignore="UselessParent">
+	tools:theme="@style/Theme.Material3.DayNight.NoActionBar">
 
 	<com.google.android.material.textview.MaterialTextView
 		android:id="@+id/about_the_app"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_height="80dp"
 		android:gravity="center_horizontal"
+		android:layout_marginBottom="10sp"
 		android:text="@string/about_app"
-		android:layout_marginBottom="25sp"
-		android:textSize="24sp"
+		android:textStyle="bold"
+		android:autoSizeTextType="uniform"
+		android:autoSizeMaxTextSize="128sp"
+		android:autoSizeMinTextSize="12sp"
+		android:autoSizeStepGranularity="0.1sp"
+		android:ellipsize="none"
 		tools:ignore="VisualLintBounds" />
 
 	<com.google.android.material.textview.MaterialTextView
@@ -34,14 +36,14 @@
 		android:textSize="18sp"
 		tools:ignore="VisualLintBounds" />
 
-		<com.google.android.material.button.MaterialButton
-			style="@style/Widget.weeWXApp.Button"
-			android:id="@+id/settingsButton"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:text="@string/settings2"
-			tools:ignore="VisualLintBounds,TextContrastCheck" />
-
-	</LinearLayout>
+	<com.google.android.material.button.MaterialButton
+		style="@style/Widget.weeWXApp.Button"
+		android:id="@+id/settingsButton"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:minHeight="48dp"
+		android:text="@string/settings2"
+		android:textSize="18sp"
+		tools:ignore="VisualLintBounds,TextContrastCheck" />
 </com.odiousapps.weewxweather.MaxWidthLinearLayout>

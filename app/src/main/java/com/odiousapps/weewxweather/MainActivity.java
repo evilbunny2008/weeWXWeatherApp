@@ -122,6 +122,8 @@ public class MainActivity extends FragmentActivity
 
 	private final int[] screen_elements = new int[]
 	{
+		R.id.about_the_app,
+		R.id.aboutText,
 		R.id.til1,
 		R.id.settings,
 		R.id.show_indoor,
@@ -993,7 +995,7 @@ public class MainActivity extends FragmentActivity
 			boolean icons_exist = weeWXAppCommon.checkForIcons();
 
 			if(use_icons.isChecked() && (!icons_exist ||
-			   weeWXAppCommon.GetLongPref("icon_version", 0) < weeWXAppCommon.icon_version))
+			   weeWXAppCommon.GetIntPref("icon_version", 0) < weeWXAppCommon.icon_version))
 			{
 				try
 				{
@@ -1032,7 +1034,7 @@ public class MainActivity extends FragmentActivity
 					return;
 				}
 
-				weeWXAppCommon.SetLongPref("icon_version", weeWXAppCommon.icon_version);
+				weeWXAppCommon.SetIntPref("icon_version", weeWXAppCommon.icon_version);
 			}
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";

@@ -72,6 +72,7 @@ class weeWXAppCommon
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	final static boolean debug_on = false;
+	final static boolean debug_html = true;
 	final static boolean web_debug_on = false;
 
 	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36";
@@ -90,7 +91,7 @@ class weeWXAppCommon
 
 	static final String WIDGET_THEME_MODE = "widget_theme_mode";
 
-	public static final long icon_version = 12;
+	public static final int icon_version = 12;
 	private static final String icon_url = "https://github.com/evilbunny2008/InigoPlugin/releases/download/1.0.0/icons.zip";
 
 	private static final BitmapFactory.Options options = new BitmapFactory.Options();
@@ -143,21 +144,21 @@ class weeWXAppCommon
 
 	static long[] getPeriod()
 	{
-		long[] def = {0, 0};
+		long[] def = new long[]{0L, 0L};
 
 		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
-		if(pos < 0)
+		if(pos <= 0)
 			return def;
 
-		long period;
+		long period = 60_000L;
 
 		switch(pos)
 		{
-			case 1 -> period = 5 * 60_000L;
-			case 2 -> period = 10 * 60_000L;
-			case 3 -> period = 15 * 60_000L;
-			case 4 -> period = 30 * 60_000L;
-			case 5 -> period = 60 * 60_000L;
+			case 1 -> period *= 5;
+			case 2 -> period *= 10;
+			case 3 -> period *= 15;
+			case 4 -> period *= 30;
+			case 5 -> period *= 60;
 			default ->
 			{
 				return def;
@@ -365,7 +366,12 @@ class weeWXAppCommon
 
 	static int GetIntPref(String name, int default_value)
 	{
-		return getPrefSettings().getInt(name, default_value);
+		try
+		{
+			return getPrefSettings().getInt(name, default_value);
+		} catch(ClassCastException e) {
+			return (int)getPrefSettings().getLong(name, default_value);
+		}
 	}
 
 	static void SetBoolPref(String name, boolean value)
@@ -2989,8 +2995,8 @@ class weeWXAppCommon
 
 			try
 			{
-				if(reallyGetWeather(baseURL))
-					SendWeatherRefreshIntent();
+				reallyGetWeather(baseURL);
+				SendWeatherRefreshIntent();
 			} catch(Exception ignored) {}
 
 			wtStart = 0;
@@ -3326,16 +3332,22 @@ class weeWXAppCommon
 
 	static String downloadString(String url) throws IOException
 	{
-		LogMessage("downloading text from " + url);
+		LogMessage("downloading text from " + url, true);
 		OkHttpClient client = NetworkClient.getInstance(url);
 		Request request = NetworkClient.newRequest(url);
 
 		try(Response response = client.newCall(request).execute())
 		{
 			if(!response.isSuccessful())
+			{
+				LogMessage("response: " + response, true);
 				throw new IOException("HTTP error " + response);
+			}
 
-			return response.body().string();
+			LogMessage("response: " + response, true);
+			String tmpStr = response.body().string();
+			LogMessage("Returned string: " + tmpStr, true);
+			return tmpStr;
 		}
 	}
 
@@ -3481,6 +3493,8 @@ class weeWXAppCommon
 		if(forecast_url == null || forecast_url.isBlank())
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.forecast_url_not_set), fctype};
 
+		LogMessage("ForecastURL: " + forecast_url, true);
+
 		String forecastData = GetStringPref("forecastData", weeWXApp.forecastData_default);
 
 		if(!checkConnection() && !force)
@@ -3545,13 +3559,11 @@ class weeWXAppCommon
 			} catch(Exception ignored) {}
 
 			if(tmpForecastData != null && !tmpForecastData.isBlank())
-			{
 				LogMessage("Successfully updated forecast data, will send a refresh intent...", true);
-				SendForecastRefreshIntent();
-			} else {
+			else
 				LogMessage("Failed to successfully update forecast data, won't send a refresh intent...", true);
-			}
 
+			SendForecastRefreshIntent();
 			ftStart = 0;
 		});
 
@@ -3560,6 +3572,8 @@ class weeWXAppCommon
 
 	static String reallyGetForecast(String url) throws IOException
 	{
+		LogMessage("reallyGetForecast() forcecastURL: " + url, true);
+
 		if(url == null || url.isBlank())
 			return null;
 
@@ -3567,10 +3581,8 @@ class weeWXAppCommon
 		if(forecastData.isBlank())
 			return null;
 
-		long current_time = getCurrTime();
-
 		LogMessage("updating rss cache");
-		SetLongPref("rssCheck", current_time);
+		SetLongPref("rssCheck", getCurrTime());
 		SetStringPref("forecastData", forecastData);
 
 		return forecastData;
@@ -3642,8 +3654,8 @@ class weeWXAppCommon
 			try
 			{
 				LogMessage("Starting to download radar image from: " + radarURL);
-				if(loadOrDownloadImage(radarURL, weeWXApp.radarFilename) != null)
-					SendRadarRefreshIntent();
+				loadOrDownloadImage(radarURL, weeWXApp.radarFilename);
+				SendRadarRefreshIntent();
 			} catch(Exception ignored) {}
 
 			rtStart = 0;
@@ -3671,7 +3683,7 @@ class weeWXAppCommon
 			return bm;
 		}
 
-		LogMessage("Reloading webcam...");
+		LogMessage("Reloading webcam...", true);
 
 		String webcamURL = GetStringPref("WEBCAM_URL", weeWXApp.WEBCAM_URL_default);
 		if(webcamURL == null || webcamURL.isBlank())
@@ -3688,14 +3700,14 @@ class weeWXAppCommon
 				return weeWXApp.textToBitmap(R.string.webcam_still_downloading);
 		}
 
-		LogMessage("Reload webcam...");
+		LogMessage("Reload webcam...", true);
 
 		if(webcamTask != null && !webcamTask.isDone())
 		{
 			if(wcStart + 30 > current_time)
 			{
 				LogMessage("webcamTask is less than 30s old (" + (current_time - wcStart) +
-				                          "s), we'll skip this attempt...");
+				                          "s), we'll skip this attempt...", true);
 				return bm;
 			}
 
@@ -3706,13 +3718,13 @@ class weeWXAppCommon
 
 		webcamTask = executor.submit(() ->
 		{
-			LogMessage("Webcam checking: " + webcamURL);
+			LogMessage("Webcam checking: " + webcamURL, true);
 
 			try
 			{
-				LogMessage("Starting to download webcam image from: " + webcamURL);
-				if(loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename) != null)
-					SendWebcamRefreshIntent();
+				LogMessage("Starting to download webcam image from: " + webcamURL, true);
+				loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename);
+				SendWebcamRefreshIntent();
 			} catch(Exception ignored) {}
 		});
 
@@ -3954,13 +3966,13 @@ class weeWXAppCommon
 		Bitmap bm = null;
 		File file = getFile(filename);
 
-		LogMessage("Starting to download image from: " + url);
+		LogMessage("Starting to download image from: " + url, true);
 		if(url.toLowerCase(Locale.ENGLISH).endsWith(".mjpeg") ||
 		   url.toLowerCase(Locale.ENGLISH).endsWith(".mjpg"))
 		{
-			LogMessage("Trying to get a frame from a MJPEG stream and set bm to it...");
+			LogMessage("Trying to get a frame from a MJPEG stream and set bm to it...", true);
 			bm = grabMjpegFrame(url);
-			LogMessage("Saving frame to storage...");
+			LogMessage("Saving frame to storage...", true);
 			try(FileOutputStream out = new FileOutputStream(file))
 			{
 				LogMessage("Attempting to save to " + file.getAbsoluteFile());
@@ -3971,14 +3983,14 @@ class weeWXAppCommon
 				throw new IOException(e);
 			}
 
-			LogMessage("Frame saved successfully to storage...");
+			LogMessage("Frame saved successfully to storage...", true);
 		} else {
-			LogMessage("Trying to download a JPEG file and set bm to it...");
+			LogMessage("Trying to download a JPEG file and set bm to it...", true);
 			if(downloadToFile(file, url))
 				bm = loadImage(file);
 		}
 
-		LogMessage("Finished downloading from webURL: " + url);
+		LogMessage("Finished downloading from webURL: " + url, true);
 		return bm;
 	}
 
@@ -4017,7 +4029,7 @@ class weeWXAppCommon
 
 		if(tmpfile.exists() && !tmpfile.delete())
 		{
-			LogMessage("tmpfile " + tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...");
+			LogMessage("tmpfile " + tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...", true);
 			throw new IOException(tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...");
 		}
 
@@ -4028,6 +4040,8 @@ class weeWXAppCommon
 		if(!renameTo(tmpfile, file))
 			throw new IOException("Failed to rename tmpfile " + tmpfile.getAbsolutePath() + " to desination file " +
 								  file.getAbsolutePath() + ", bailing out...");
+
+		LogMessage("Renamed " + tmpfile.getAbsolutePath() + " to " + file.getAbsoluteFile() + "...", true);
 
 		return true;
 	}

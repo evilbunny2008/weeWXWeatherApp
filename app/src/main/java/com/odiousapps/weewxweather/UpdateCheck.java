@@ -256,7 +256,7 @@ public class UpdateCheck extends BroadcastReceiver
 					if(delayms >= 540_000L || tmp == null || tmp.isBlank())
 					{
 						weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() can't delay for more " +
-						                          "than about 10minutes or no current data, skipping sleep...", true);
+						                          "than 10 minutes or no current data, skipping sleep...", true);
 					} else {
 						weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() Executor started... Next Start: " +
 						                          string_time + ", delay: " + Math.round(delayms / 1_000D) + "s", true);

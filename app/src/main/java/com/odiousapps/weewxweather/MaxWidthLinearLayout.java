@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 		"SameReturnValue", "WeakerAccess", "BooleanMethodIsAlwaysInverted",
 		"SetJavaScriptEnabled", "SetTextI18n", "FieldCanBeLocal", "FieldMayBeFinal",
 		"CanBeFinal"})
-class MaxWidthLinearLayout extends LinearLayout
+public class MaxWidthLinearLayout extends LinearLayout
 {
 	private int maxWidth = Integer.MAX_VALUE;
 
@@ -32,6 +32,12 @@ class MaxWidthLinearLayout extends LinearLayout
 	@Override
 	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
 	{
+		if(isInEditMode())
+		{
+			super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+			return;
+		}
+
 		int width = MeasureSpec.getSize(widthMeasureSpec);
 		if(width > maxWidth)
 			widthMeasureSpec = MeasureSpec.makeMeasureSpec(maxWidth, MeasureSpec.AT_MOST);

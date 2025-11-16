@@ -11,10 +11,14 @@ import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
 
+import java.io.File;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -103,17 +107,10 @@ public class Weather extends Fragment implements View.OnClickListener
 			forecast = loadWebview(null, view, R.id.forecast, false, false);
 		else
 			loadWebview(forecast, view, R.id.forecast, false, false);
-/*
-		if(savedInstanceState != null)
-		{
-			weeWXAppCommon.LogMessage("Weather.onViewCreated() loading from savedInstanceState...");
-			current.restoreState(savedInstanceState);
-			forecast.restoreState(savedInstanceState);
-		}
-*/
+
 		if(weeWXAppCommon.isPrefSet("radarforecast"))
 		{
-			weeWXAppCommon.LogMessage("Weather.onViewCreated() doing full load...");
+			weeWXAppCommon.LogMessage("Weather.onViewCreated() doing full load...", true);
 			if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen)
 				drawRadar();
 			else
@@ -124,20 +121,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			loadWebView();
 		}
 	}
-/*
-	@Override
-	public void onSaveInstanceState(@NonNull Bundle outState)
-	{
-		weeWXAppCommon.LogMessage("Weather.onSaveInstanceState()");
-		super.onSaveInstanceState(outState);
 
-		if(current != null)
-			current.saveState(outState);
-
-		if(forecast != null)
-			forecast.saveState(outState);
-	}
-*/
 	@Override
 	public void onDestroyView()
 	{
@@ -277,7 +261,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	void drawForecast()
 	{
-		weeWXAppCommon.LogMessage("drawForecast()");
+		weeWXAppCommon.LogMessage("drawForecast()", true);
 
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
 			return;
@@ -587,41 +571,44 @@ public class Weather extends Fragment implements View.OnClickListener
 			str += weeWXApp.debug_html;
 
 		str += weeWXApp.html_footer;
-/*
-		String filename = "weeWX_current_conditions_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) + ".html";
 
-		File outFile = null;
-
-		try
+		if(weeWXAppCommon.debug_html)
 		{
-			outFile = weeWXAppCommon.getExtFile("weeWX", filename);
-			CustomDebug.writeDebug(outFile, str);
-			String theOutFile = outFile.getAbsolutePath();
+			String filename = "weeWX_current_conditions_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) + ".html";
 
-			weeWXAppCommon.LogMessage("Wrote debug html to " + theOutFile, true);
+			File outFile = null;
 
-			if(isAdded())
+			try
 			{
-				requireActivity().runOnUiThread(() ->
-						Toast.makeText(requireContext(), "Wrote debug html to " + theOutFile, Toast.LENGTH_LONG).show());
-			}
-		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Attempted to write to " + filename + " but failed with the following error: " + e, true);
+				outFile = weeWXAppCommon.getExtFile("weeWX", filename);
+				CustomDebug.writeDebug(outFile, str);
+				String theOutFile = outFile.getAbsolutePath();
 
-			if(isAdded())
-			{
-				if(outFile != null)
+				weeWXAppCommon.LogMessage("Wrote debug html to " + theOutFile, true);
+
+				if(isAdded())
 				{
-					String theOutFile = outFile.getAbsolutePath();
 					requireActivity().runOnUiThread(() ->
-							Toast.makeText(requireContext(), "Failed to output debug html to " + theOutFile, Toast.LENGTH_LONG).show());
-				} else {
-					requireActivity().runOnUiThread(() ->
-							Toast.makeText(requireContext(), "Failed to output debug html to " + filename, Toast.LENGTH_LONG).show());
+							Toast.makeText(requireContext(), "Wrote debug html to " + theOutFile, Toast.LENGTH_LONG).show());
+				}
+			} catch(Exception e) {
+				weeWXAppCommon.LogMessage("Attempted to write to " + filename + " but failed with the following error: " + e, true);
+
+				if(isAdded())
+				{
+					if(outFile != null)
+					{
+						String theOutFile = outFile.getAbsolutePath();
+						requireActivity().runOnUiThread(() ->
+								Toast.makeText(requireContext(), "Failed to output debug html to " + theOutFile, Toast.LENGTH_LONG).show());
+					} else {
+						requireActivity().runOnUiThread(() ->
+								Toast.makeText(requireContext(), "Failed to output debug html to " + filename, Toast.LENGTH_LONG).show());
+					}
 				}
 			}
 		}
-*/
+
 		loadAndShowWebView(current, str, null);
 		weeWXAppCommon.LogMessage("Line 426 forceCurrentRefresh() calling loadAndShowWebView()");
 	}
@@ -1026,7 +1013,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private void reloadForecast()
 	{
-		weeWXAppCommon.LogMessage("reloadForecast()");
+		weeWXAppCommon.LogMessage("reloadForecast()", true);
 
 		updateFLL(View.GONE);
 
@@ -1043,21 +1030,24 @@ public class Weather extends Fragment implements View.OnClickListener
 		String forecastData = ret[1];
 		String fctype = ret[2];
 
+		weeWXAppCommon.LogMessage("fctype: " + fctype, true);
+		weeWXAppCommon.LogMessage("forecastData: " + forecastData, true);
+
 		if(ret[0].equals("error"))
 		{
 			if(forecastData != null && !forecastData.isBlank())
 			{
-				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData);
+				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData, true);
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest + forecastData + weeWXApp.html_footer);
 			} else {
-				weeWXAppCommon.LogMessage("getForecast returned an unknown error...");
+				weeWXAppCommon.LogMessage("getForecast returned an unknown error...", true);
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
 				                   weeWXApp.getAndroidString(R.string.unknown_error_occurred) +
 				                   weeWXApp.html_footer);
 			}
 		}
 
-		weeWXAppCommon.LogMessage("getForecast returned some content...");
+		weeWXAppCommon.LogMessage("getForecast returned some content...", true);
 		loadWebView(fctype, forecastData);
 	}
 
