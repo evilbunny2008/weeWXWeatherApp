@@ -781,6 +781,9 @@ public class Stats extends Fragment
 		final StringBuilder sb = new StringBuilder();
 
 		sb.append(weeWXApp.current_html_headers);
+		sb.append(weeWXApp.script_header);
+		sb.append(weeWXApp.html_header_rest);
+		sb.append(weeWXApp.inline_arrow);
 
 		sb.append("\n<div class='statsLayout'>\n\n");
 

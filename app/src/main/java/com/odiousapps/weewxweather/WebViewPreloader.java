@@ -52,7 +52,7 @@ public class WebViewPreloader
 
 	private WebView generateWebView(Context context)
 	{
-		WebView wv = new WebView(context.getApplicationContext());
+		WebView wv = new WebView(context);
 		return wv;
 	}
 

@@ -370,14 +370,81 @@ public class weeWXApp extends Application
 								minmax(100px, 2fr);
 							}
 						}
-					</style>
+						/* Scroll-to-top button */
+						#scrollToTop
+						{
+							position: fixed;
+							bottom: 20px;
+							right: 20px;
+							width: 48px;
+							height: 48px;
+							background: #333;
+							color: #fff;
+							border-radius: 50%;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							cursor: pointer;
+							opacity: 0;
+							pointer-events: none;
+							transition: opacity 0.25s ease;
+							z-index: 999;
+						}
+						#scrollToTop.show
+						{
+							opacity: 0.9;
+							pointer-events: auto;
+						}
+						#scrollToTop svg
+						{
+							width: 24px;
+							height: 24px;
+							fill: #fff;
+						}
+					</style>""";
+
+	static final String script_header =
+					"""
+					<script>
+						const btn = document.getElementById("scrollToTop");
+
+						window.addEventListener("scroll", () =>
+						{
+							// At the top? Hide the button
+							if(document.documentElement.scrollTop > 100)
+								btn.classList.add("show");
+							else
+								btn.classList.remove("show");
+						});
+
+						btn.addEventListener("click", () =>
+						{
+							window.scrollTo(
+							{
+								top: 0,
+								behavior: "smooth"
+							});
+						});
+					</script>""";
+
+	static final String html_header_rest =
+			"""
 				</head>
-				<body>
+				<body>""";
+
+	static final String inline_arrow =
+			"""
+					<!-- Floating scroll-to-top button -->
+					<div id="scrollToTop">
+						<svg viewBox="0 0 24 24">
+							<path d="M12 4l-7 8h4v8h6v-8h4z"/>
+						</svg>
+					</div>
 			""";
 
 	static final String html_footer = "\n</body>\n</html>\n";
 
-	final static String about_blurb =
+	static final String about_blurb =
 			"""
 			Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app
 			wouldn't be possible otherwise.<br><br>
@@ -566,13 +633,13 @@ public class weeWXApp extends Application
 
 	static void replaceHex6String(String html_tag, int colour)
 	{
-		String hex = String.format(CPEditText.getFixedChar() + "%06X", 0xFFFFFF & colour);
+		String hex = java.lang.String.format(CPEditText.getFixedChar() + "%06X", 0xFFFFFF & colour);
 		current_html_headers = current_html_headers.replaceAll(html_tag, hex);
 	}
 
 	static void replaceHex8String(String html_tag, int colour)
 	{
-		String hex = CPEditText.getFixedChar() + String.format("%08X", colour);
+		String hex = CPEditText.getFixedChar() + java.lang.String.format("%08X", colour);
 		current_html_headers = current_html_headers.replaceAll(html_tag, hex);
 	}
 
@@ -718,7 +785,7 @@ public class weeWXApp extends Application
 
 	static void getDayNightMode()
 	{
-		Context context = instance.getApplicationContext();
+		Context context = instance;
 
 		int current_mode, current_theme, bgColour, fgColour;
 		boolean isWidgetSet = false;
