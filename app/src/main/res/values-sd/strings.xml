@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">اپڊيٽ وقفو غلط آهي، سيٽنگون تازه ڪاري ڪريو ۽ پوء ٻيهر ڪوشش ڪريو</string>
     <string name="attempting_to_download_data_txt">توهان جي سرور مان data.txt ڊائون لوڊ ڪرڻ جي ڪوشش</string>
     <string name="radar_type_is_invalid">رادر جو قسم \'%1$s\' غلط آهي، پنهنجي سيٽنگ فائل چيڪ ڪريو ۽ ٻيهر ڪوشش ڪريو</string>
+    <string name="webcam_still_downloading">ويب ڪيم تصوير اڃا ڊائون لوڊ ٿي رهي آهي</string>
 </resources>

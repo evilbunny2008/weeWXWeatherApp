@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Yangilash oralig\'i yaroqsiz, sozlamalarni yangilash va keyin qayta urinib ko\'ring</string>
     <string name="attempting_to_download_data_txt">Serverdan ma\'lumotlarni yuklab olishga urinish</string>
     <string name="radar_type_is_invalid">\'%1$s\' radar turi yaroqsiz, Sozlamalar faylingizni tekshiring va qaytadan urining</string>
+    <string name="webcam_still_downloading">WebCam tasviri hali ham yuklab olinmoqda</string>
 </resources>

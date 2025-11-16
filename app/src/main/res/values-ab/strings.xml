@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Арҿыцра абжьаӡара иашам, абжьаҵарақәа рырхиарақәа, нас еиҭаҿактәуп</string>
     <string name="attempting_to_download_data_txt">Аҭагалара аҽазышәара data.txt усервер аҟынтәи</string>
     <string name="radar_type_is_invalid">Радар тип \'%1$s\' ҵабыргуп, урхиарақәа рфаил гәаҭаны, еиҭа уҽазышәа</string>
+    <string name="webcam_still_downloading">Webcam асахьа уажәгьы ихәыҵгоит</string>
 </resources>

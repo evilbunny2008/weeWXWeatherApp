@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Opdateringsinterval is ongeldig, dateer instellings op en probeer dan weer</string>
     <string name="attempting_to_download_data_txt">Probeer tans om data.txt van jou bediener af te laai</string>
     <string name="radar_type_is_invalid">Radartipe \'%1$s\' is ongeldig, gaan jou instellingslêer na en probeer weer</string>
+    <string name="webcam_still_downloading">Webkamera-prent word steeds afgelaai</string>
 </resources>

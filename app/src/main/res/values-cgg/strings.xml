@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Okugaruka omu mwanya tikuriho, okugarura busya reero okagaruka okagyezaho</string>
     <string name="attempting_to_download_data_txt">Okugyezaho data.txt kuruga aha server yaawe</string>
     <string name="radar_type_is_invalid">Radar type \'%1$s\' teriho, reeba fairo yaawe y\'okutebeekanisa kandi ogyezeho</string>
+    <string name="webcam_still_downloading">Ekishushani kya Webcam kikiine</string>
 </resources>

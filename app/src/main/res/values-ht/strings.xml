@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Entèval aktyalizasyon a pa valab, mete ajou paramèt ak Lè sa a, reesye</string>
     <string name="attempting_to_download_data_txt">Eseye telechaje data.txt sou sèvè w la</string>
     <string name="radar_type_is_invalid">Kalite rada \'%1$s\' pa valab, tcheke dosye paramèt ou a epi eseye ankò</string>
+    <string name="webcam_still_downloading">Imaj webcam toujou ap telechaje</string>
 </resources>

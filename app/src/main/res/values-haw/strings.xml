@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">ʻAʻole kūpono ka hōʻano houʻana i ka interval, hōʻano hou i nā hoʻonohonoho a laila hoʻihoʻi</string>
     <string name="attempting_to_download_data_txt">Ka ho\'āʻoʻana i kaʻikepili download data.Txt mai kāu kikowaena</string>
     <string name="radar_type_is_invalid">ʻAʻole pololeiʻo Radar Type \'%1$s\' iʻole, e nānā i kāu faila hoʻonohonoho a ho\'āʻo hou</string>
+    <string name="webcam_still_downloading">Ke kiʻi nei i ke kiʻi WebCam</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Update interval is ongeldig, update instellinge en probeer vervolgens opnuuj</string>
     <string name="attempting_to_download_data_txt">\'t Probere vaan downloadgegeves.txt vaan uw server</string>
     <string name="radar_type_is_invalid">Radar-soort \'%1$s\' is ongeldig, controleer dien instellinge bestand en probeer \'t nog \'ns</string>
+    <string name="webcam_still_downloading">Webcam-beeld downloadt nog steeds</string>
 </resources>

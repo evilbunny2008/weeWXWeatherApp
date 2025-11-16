@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Say ontatken a pankakasakey so ag-onkana, saray akaparaan lan pasen insan ipawil lamet</string>
     <string name="attempting_to_download_data_txt">Pagsasali ya man-download data. text ed server yo</string>
     <string name="radar_type_is_invalid">Say ted klase na klase \'%1$s\'s so ag-akadepende, nengnengen so file na saray pasen mo tan salien mo lamet</string>
+    <string name="webcam_still_downloading">Say imahen na websim so siansia nin man-uulat</string>
 </resources>

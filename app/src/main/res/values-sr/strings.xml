@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Интервал ажурирања је неважећи, ажурирајте подешавања и покушајте поново</string>
     <string name="attempting_to_download_data_txt">Покушај преузимања дата.ткт са вашег сервера</string>
     <string name="radar_type_is_invalid">Тип радара \'%1$s\' је неважећи, проверите датотеку са подешавањима и покушајте поново</string>
+    <string name="webcam_still_downloading">Слика са веб камере се још увек преузима</string>
 </resources>

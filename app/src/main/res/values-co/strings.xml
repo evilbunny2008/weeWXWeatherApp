@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">L\'intervallu di l\'aghjurnamenti ùn hè micca validu, aghjurnà i paràmetri è poi riprova</string>
     <string name="attempting_to_download_data_txt">Tentativu di scaricà data.txt da u vostru servitore</string>
     <string name="radar_type_is_invalid">U tipu di radar \'%1$s\' ùn hè micca validu, verificate u vostru schedariu di paràmetri è pruvate di novu</string>
+    <string name="webcam_still_downloading">L\'immagine di a webcam hè sempre in scaricamentu</string>
 </resources>

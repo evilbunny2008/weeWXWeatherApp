@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Ntšhwafatsa kgaotso ga e dire, go tlhabolola diseting mme morago ga moo o leke gape</string>
     <string name="attempting_to_download_data_txt">Go leka go laisolola tshedimosetso.txt go tswa mo sefareng ya gago</string>
     <string name="radar_type_is_invalid">Mofuta wa radara \'%1$s\' ga o dire, tlhola faele ya gago ya dipeakanyo mme o leke gape</string>
+    <string name="webcam_still_downloading">Webcam setshwantsho se ntse se jarolla</string>
 </resources>

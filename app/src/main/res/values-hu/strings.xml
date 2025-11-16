@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">A frissítési időköz érvénytelen, frissítse a beállításokat, majd próbálkozzon újra</string>
     <string name="attempting_to_download_data_txt">A data.txt fájl letöltése a szerverről</string>
     <string name="radar_type_is_invalid">A \'%1$s\' radartípus érvénytelen, ellenőrizze a beállításokat, és próbálja újra</string>
+    <string name="webcam_still_downloading">A webkamera képének letöltése még folyamatban van</string>
 </resources>

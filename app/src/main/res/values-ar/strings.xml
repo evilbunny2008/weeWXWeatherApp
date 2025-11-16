@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">الفاصل الزمني للتحديث غير صالح، قم بتحديث الإعدادات ثم أعد المحاولة</string>
     <string name="attempting_to_download_data_txt">محاولة تنزيل data.txt من الخادم الخاص بك</string>
     <string name="radar_type_is_invalid">نوع الرادار \'%1$s\' غير صالح، تحقق من ملف الإعدادات وحاول مرة أخرى</string>
+    <string name="webcam_still_downloading">لا تزال صورة كاميرا الويب قيد التنزيل</string>
 </resources>

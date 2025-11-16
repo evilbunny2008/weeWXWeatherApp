@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Інтэрвал абнаўлення несапраўдны, абнавіце налады і паўтарыце спробу</string>
     <string name="attempting_to_download_data_txt">Спроба спампаваць data.txt з вашага сервера</string>
     <string name="radar_type_is_invalid">Тып радара \'%1$s\' несапраўдны, праверце файл налад і паўтарыце спробу</string>
+    <string name="webcam_still_downloading">Выява з вэб-камеры ўсё яшчэ спампоўваецца</string>
 </resources>

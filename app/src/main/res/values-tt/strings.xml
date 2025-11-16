@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Яңарту интервалы дөрес түгел, көйләүләрне яңарту, аннары кабатлап карагыз</string>
     <string name="attempting_to_download_data_txt">Сезнең сервердан мәгълүматны йөкләү омтылышы</string>
     <string name="radar_type_is_invalid">Радар тибы \'%1$s\' дөрес түгел, көйләүләр файлын тикшерегез һәм кабатлап карагыз</string>
+    <string name="webcam_still_downloading">Веб-камера рәсеме әле дә йөкләнә</string>
 </resources>

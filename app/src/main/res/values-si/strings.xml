@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">යාවත්කාලීන කාල පරතරය වලංගු නැත, සැකසීම් යාවත්කාලීන කර නැවත උත්සාහ කරන්න</string>
     <string name="attempting_to_download_data_txt">ඔබගේ සේවාදායකයෙන් data.txt බාගැනීමට උත්සාහ කරමින්</string>
     <string name="radar_type_is_invalid">රේඩාර් වර්ගය \'%1$s\' වලංගු නැත, ඔබගේ සැකසීම් ගොනුව පරීක්ෂා කර නැවත උත්සාහ කරන්න</string>
+    <string name="webcam_still_downloading">වෙබ් කැමරාවේ රූපය තවමත් බාගත වෙමින් පවතී</string>
 </resources>

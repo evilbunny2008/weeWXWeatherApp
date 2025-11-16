@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Фосилаи навсозӣ нодуруст аст, танзимоти навсозӣ ва сипас такрор кунед</string>
     <string name="attempting_to_download_data_txt">Кӯшиши Download Download.txt аз сервери шумо</string>
     <string name="radar_type_is_invalid">Навъи радар \'%1$s\' нодуруст аст, файли танзимоти худро санҷед ва бори дигар кӯшиш кунед</string>
+    <string name="webcam_still_downloading">Веб-камера ҳоло ҳам зеркашӣ шудааст</string>
 </resources>

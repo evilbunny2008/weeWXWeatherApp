@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">L\'intervallo d\'aggiornamento o l\'é invalido, e impostaçioin d\'aggiornamento e dapeu o se repiggia</string>
     <string name="attempting_to_download_data_txt">Tentando i dæti de download.txt da-o seu server</string>
     <string name="radar_type_is_invalid">Tipo de radar \'%1$s\' o l\'é invalido, controllâ o file de impostaçioin e provâ torna</string>
+    <string name="webcam_still_downloading">L\'imagine webcam a l\'é ancon o download</string>
 </resources>

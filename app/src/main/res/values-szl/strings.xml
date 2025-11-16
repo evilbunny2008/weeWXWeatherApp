@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Ôdstymp w Aktualizacyji je niyważny, aktualizacyje ustawiyń, a potym powtōrz</string>
     <string name="attempting_to_download_data_txt">Prōbowanie danych pobiyranio.txt ze swojigo serwera</string>
     <string name="radar_type_is_invalid">Typ typ Radar \'%1$s\' je nieważny, sprawdź plik ustawiyń i sprōbuj ôd nowa</string>
+    <string name="webcam_still_downloading">Ôbraz internetowy durch sie ściyro</string>
 </resources>

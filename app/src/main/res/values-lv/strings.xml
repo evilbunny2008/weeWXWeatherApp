@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Atjaunināšanas intervāls nav derīgs, atjauniniet iestatījumus un pēc tam mēģiniet vēlreiz</string>
     <string name="attempting_to_download_data_txt">No jūsu servera tiek mēģināts lejupielādēt failu data.txt</string>
     <string name="radar_type_is_invalid">Radara veids \'%1$s\' nav derīgs, pārbaudiet iestatījumu failu un mēģiniet vēlreiz</string>
+    <string name="webcam_still_downloading">Tīmekļa kameras attēls joprojām tiek lejupielādēts</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Nganyari Interval ora sah, nganyari setelan banjur coba maneh</string>
     <string name="attempting_to_download_data_txt">Nyoba download data.txt saka server sampeyan</string>
     <string name="radar_type_is_invalid">Jenis Radar \'%1$s\' ora bener, priksa file setelan banjur coba maneh</string>
+    <string name="webcam_still_downloading">Gambar Webcam isih download</string>
 </resources>

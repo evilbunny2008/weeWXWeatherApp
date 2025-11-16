@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Värskendusintervall on kehtetu, värskendage sätteid ja proovige uuesti</string>
     <string name="attempting_to_download_data_txt">Püütakse faili data.txt teie serverist alla laadida</string>
     <string name="radar_type_is_invalid">Radari tüüp \'%1$s\' on kehtetu, kontrollige oma seadete faili ja proovige uuesti</string>
+    <string name="webcam_still_downloading">Veebikaamera pilti laaditakse endiselt alla</string>
 </resources>

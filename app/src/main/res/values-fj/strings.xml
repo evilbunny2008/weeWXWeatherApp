@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Update e sa tiko na kena revurevu, na kena vakavoui ka qai retry […]</string>
     <string name="attempting_to_download_data_txt">Tabaka ni lavetaki</string>
     <string name="radar_type_is_invalid">Na mataqali%1$s\' e tawayalani, raica na nomu ituvatuva ni ituvatuva ka tovolea tale</string>
+    <string name="webcam_still_downloading">Sa lavetaki tiko ga na iyaloyalo ni kena lavetaki</string>
 </resources>

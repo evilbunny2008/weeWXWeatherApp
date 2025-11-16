@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">L\'intervallo di aggiornamento non è valido, aggiornare le impostazioni e riprovare</string>
     <string name="attempting_to_download_data_txt">Tentativo di scaricare data.txt dal tuo server</string>
     <string name="radar_type_is_invalid">Il tipo di radar \'%1$s\' non è valido, controlla il file delle impostazioni e riprova</string>
+    <string name="webcam_still_downloading">È ancora in corso il download dell\'immagine della webcam</string>
 </resources>

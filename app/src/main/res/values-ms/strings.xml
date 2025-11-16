@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Selang kemas kini tidak sah, kemas kini tetapan dan kemudian mencuba</string>
     <string name="attempting_to_download_data_txt">Cuba memuat turun data.txt dari pelayan anda</string>
     <string name="radar_type_is_invalid">Jenis radar \'%1$s\' tidak sah, periksa fail tetapan anda dan cuba lagi</string>
+    <string name="webcam_still_downloading">Imej webcam masih dimuat turun</string>
 </resources>

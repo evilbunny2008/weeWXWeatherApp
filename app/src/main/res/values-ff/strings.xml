@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Hesɗitin hakkundeeji ina moƴƴi, kesɗitin dottaaɗe, caggal ɗuum retry</string>
     <string name="attempting_to_download_data_txt">Etaade ƴettude dokke.txt e serveer maa</string>
     <string name="radar_type_is_invalid">Radar type \'%1$s\' ina moƴƴi, ƴeewto fiilde dottaaɗe maa, ƴeewto kadi</string>
+    <string name="webcam_still_downloading">Natal webcam ina jokki e ƴettude haa jooni</string>
 </resources>

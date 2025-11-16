@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Sikhatsi sekuvuselela asisebenti, tilungiselelo tekuvuselela bese tiphindze tizame</string>
     <string name="attempting_to_download_data_txt">Kuzama kulayisha idatha.txt kusuka kuseva yakho</string>
     <string name="radar_type_is_invalid">Radar uhlobo \'%1$s\' alusebenti, hlola ifayela lakho letilungiselelo bese uzama futsi</string>
+    <string name="webcam_still_downloading">Sitfombe se-Webcam sisalandvwa</string>
 </resources>

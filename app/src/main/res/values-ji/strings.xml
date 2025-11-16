@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">דער דערהייַנטיקן מעהאַלעך איז פאַרקריפּלט, דערהייַנטיקן סעטטינגס און פּרובירן ווידער</string>
     <string name="attempting_to_download_data_txt">פּרוּווט אראפקאפיע דאַטאַ.טקסט פון דיין סערווער</string>
     <string name="radar_type_is_invalid">ראַדאַר טיפּ \'%1$s\' איז פאַרקריפּלט, טשעק דיין סעטטינגס טעקע און פּרובירן ווידער</string>
+    <string name="webcam_still_downloading">וועבקאַם בילד איז נאָך דאַונלאָודינג</string>
 </resources>

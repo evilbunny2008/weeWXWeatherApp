@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">અપડેટ અંતરાલ અમાન્ય છે, સેટિંગ્સ અપડેટ કરો અને પછી ફરી પ્રયાસ કરો</string>
     <string name="attempting_to_download_data_txt">તમારા સર્વર પરથી data.txt ડાઉનલોડ કરવાનો પ્રયાસ કરી રહ્યાં છીએ</string>
     <string name="radar_type_is_invalid">રડાર પ્રકાર \'%1$s\' અમાન્ય છે, તમારી સેટિંગ્સ ફાઇલ તપાસો અને ફરી પ્રયાસ કરો</string>
+    <string name="webcam_still_downloading">વેબકેમ ઇમેજ હજી ડાઉનલોડ થઈ રહી છે</string>
 </resources>

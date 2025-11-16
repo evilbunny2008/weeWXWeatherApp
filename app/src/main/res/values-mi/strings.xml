@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">He muhu te whakaurunga, te whakahou i nga tautuhinga ka hoki whakamuri</string>
     <string name="attempting_to_download_data_txt">Te ngana i te tango raraunga.txt mai i to kaituku</string>
     <string name="radar_type_is_invalid">Ko te momo radar \'%1$s\'he muhu, tirohia to kōnae tautuhinga ka ngana ano</string>
+    <string name="webcam_still_downloading">Ko te whakaahua Webcam kei te tango tonu</string>
 </resources>

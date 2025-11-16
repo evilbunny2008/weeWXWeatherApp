@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">ចន្លោះពេលធ្វើបច្ចុប្បន្នភាពគឺមិនត្រឹមត្រូវធ្វើបច្ចុប្បន្នភាពការកំណត់ហើយបន្ទាប់មកព្យាយាមម្តងទៀត</string>
     <string name="attempting_to_download_data_txt">ការប៉ុនប៉ងទាញយកទិន្នន័យ .txt ពីម៉ាស៊ីនមេរបស់អ្នក</string>
     <string name="radar_type_is_invalid">ប្រភេទរ៉ាដាប្រភេទ \'%1$s\' មិនត្រឹមត្រូវសូមពិនិត្យមើលឯកសារកំណត់របស់អ្នកហើយព្យាយាមម្តងទៀត។</string>
+    <string name="webcam_still_downloading">រូបភាពវិបខេមកំពុងទាញយក។</string>
 </resources>

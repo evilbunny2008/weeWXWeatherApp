@@ -2973,23 +2973,23 @@ class weeWXAppCommon
 			if(wtStart + 30 > current_time)
 			{
 				LogMessage("weatherTask is less than 30s old (" + (current_time - wtStart) +
-				                          "s), we'll skip this attempt...");
+				                          "s), we'll skip this attempt...", true);
 				return new String[]{"ok", lastDownload};
 			}
 
 			LogMessage("weatherTask was more than 30s old (" +
-			           (current_time - wtStart) + "s) cancelling and restarting...");
+			           (current_time - wtStart) + "s) cancelling and restarting...", true);
 
 			weatherTask.cancel(true);
 		}
 
-		LogMessage("Creating a weatherTask...");
+		LogMessage("Creating a weatherTask...", true);
 
 		wtStart = current_time;
 
 		weatherTask = executor.submit(() ->
 		{
-			LogMessage("Weather checking: " + baseURL);
+			LogMessage("Weather checking: " + baseURL, true);
 
 			String tmpForecastData = null;
 
@@ -3007,9 +3007,9 @@ class weeWXAppCommon
 
 	static boolean reallyGetWeather(String url) throws IOException
 	{
-		weeWXAppCommon.LogMessage("url: " + url);
+		LogMessage("url: " + url, true);
 		String line = downloadString(url);
-		weeWXAppCommon.LogMessage("Got output, line: " + line);
+		LogMessage("Got output, line: " + line);
 		if(!line.isBlank() && line.contains("|"))
 		{
 			String[] parts = line.split("\\|", 2);
@@ -3487,7 +3487,7 @@ class weeWXAppCommon
 			return new String[]{"error", finalErrorStr, fctype};
 		}
 
-		LogMessage("weeWXAppCommon.getForecast() fctype: " + fctype);
+		LogMessage("getForecast() fctype: " + fctype);
 
 		String forecast_url = GetStringPref("FORECAST_URL", weeWXApp.FORECAST_URL_default);
 		if(forecast_url == null || forecast_url.isBlank())
@@ -3813,13 +3813,13 @@ class weeWXAppCommon
 
 		if(dir.exists() && !dir.isDirectory())
 		{
-			weeWXAppCommon.LogMessage("Something called '" + finalDir + "' already exist, but it isn't a directory...");
+			LogMessage("Something called '" + finalDir + "' already exist, but it isn't a directory...");
 			throw new IOException("There is already something named " + finalDir + " but it's not a directory");
 		}
 
 		if(!dir.exists() && !dir.mkdirs())
 		{
-			weeWXAppCommon.LogMessage("Can't make '" + dir.getAbsoluteFile() + "' dir...");
+			LogMessage("Can't make '" + dir.getAbsoluteFile() + "' dir...");
 			throw new IOException("Tried to create " + dir.getAbsoluteFile() + " but failed to create the directory");
 		}
 

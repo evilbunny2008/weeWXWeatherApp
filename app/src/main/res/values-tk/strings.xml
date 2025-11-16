@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Täzelenme wersiýasy nädogry, sazlamalary täzeläň we gaýtadan synanyşyň</string>
     <string name="attempting_to_download_data_txt">Maglumatlary göçürip almaga synanyşmak. Serweriňizden</string>
     <string name="radar_type_is_invalid">Radar görnüşi \'%1$s\' nädogry, Sazlamalar faýlyňyzy barlaň we gaýtadan synanyşyň</string>
+    <string name="webcam_still_downloading">Webcam şekili henizem göçürip alýar</string>
 </resources>

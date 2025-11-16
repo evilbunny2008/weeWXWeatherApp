@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Interval pembaruan tidak valid, perbarui pengaturan lalu coba lagi</string>
     <string name="attempting_to_download_data_txt">Mencoba mengunduh data.txt dari server Anda</string>
     <string name="radar_type_is_invalid">Jenis radar \'%1$s\' tidak valid, periksa file pengaturan Anda dan coba lagi</string>
+    <string name="webcam_still_downloading">Gambar webcam masih diunduh</string>
 </resources>

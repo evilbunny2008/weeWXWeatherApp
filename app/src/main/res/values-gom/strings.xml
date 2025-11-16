@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">अपडेट अंतर अवैध, अद्ययावत करप आनी मागीर परतून यत्न करप</string>
     <string name="attempting_to_download_data_txt">तुमच्या सर्वरा वयल्यान data.txt डाउनलोड करपाचो यत्न करप</string>
     <string name="radar_type_is_invalid">रडार प्रकार \'%1$s\' अवैध आसा, तुमची मांडावळी फायल तपासात आनी परतून यत्न करात</string>
+    <string name="webcam_still_downloading">वेबकॅम इमेज अजूनय डाउनलोड करपाक लागल्या</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">اپ ڈیٹ وقفہ غلط ہے ، ترتیبات کو اپ ڈیٹ کریں اور پھر دوبارہ کوشش کریں</string>
     <string name="attempting_to_download_data_txt">آپ کے سرور سے ڈاؤن لوڈ ڈیٹا ڈاٹ ٹی ایکس ٹی کی کوشش کر رہے ہیں</string>
     <string name="radar_type_is_invalid">ریڈار کی قسم \'%1$s\' غلط ہے ، اپنی ترتیبات کی فائل کو چیک کریں اور دوبارہ کوشش کریں۔</string>
+    <string name="webcam_still_downloading">ویب کیم امیج ابھی بھی ڈاؤن لوڈ ہورہا ہے۔</string>
 </resources>

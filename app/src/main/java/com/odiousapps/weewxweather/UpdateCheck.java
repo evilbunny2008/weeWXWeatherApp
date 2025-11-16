@@ -289,17 +289,21 @@ public class UpdateCheck extends BroadcastReceiver
 
 					long delayms = nextstart - now;
 
-					long lastDownloadTime = weeWXAppCommon.GetLongPref("LastDownloadTime", weeWXApp.LastDownloadTime_default);
+					long lastDownloadTime = weeWXAppCommon.GetLongPref("LastDownloadTime", weeWXApp.LastDownloadTime_default) * 1_000L;
 
-					weeWXAppCommon.LogMessage("delayms: " + delayms + "ms");
-					weeWXAppCommon.LogMessage("lastDownloadTime: " + lastDownloadTime + "ms");
-					weeWXAppCommon.LogMessage("laststart: " + laststart + "ms");
+					weeWXAppCommon.LogMessage("delayms: " + delayms + "ms", true);
+					weeWXAppCommon.LogMessage("lastDownloadTime: " + lastDownloadTime + "ms", true);
+					weeWXAppCommon.LogMessage("laststart: " + laststart + "ms", true);
 
 					if(delayms < 5_000L || delayms > 180_000L || (lastDownloadTime * 1_000L) < laststart)
 						delayms = 5_000L;
 
 					weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() Executor started... onAppStart adding " +
-					                          Math.round(delayms / 1_000D) + "s sleep so fragments can start listening for updates...");
+					                          Math.round(delayms / 1_000D) + "s sleep so fragments can start listening for updates...", true);
+
+					if(delayms > 5_000L && !weeWXApp.hasBootedFully)
+						weeWXApp.hasBootedFully = true;
+
 					try
 					{
 						Thread.sleep(delayms);
@@ -309,7 +313,7 @@ public class UpdateCheck extends BroadcastReceiver
 				}
 
 				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getForecast(" +
-				                          (forced && !onReceivedUpdate) + ")...");
+				                          (forced && !onReceivedUpdate) + ")...", true);
 				weeWXAppCommon.getForecast(forced && !onReceivedUpdate, onAppStart);
 
 				String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
@@ -331,7 +335,7 @@ public class UpdateCheck extends BroadcastReceiver
 				weeWXAppCommon.getWebcamImage(forced, onAppStart);
 			} catch(Exception ignored) {}
 
-			if(onAppStart)
+			if(onAppStart && !weeWXApp.hasBootedFully)
 				weeWXApp.hasBootedFully = true;
 
 			weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() finished running the background updates, " +

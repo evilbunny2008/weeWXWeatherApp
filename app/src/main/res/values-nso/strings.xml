@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Update karohano ke sa nepahala, ntjhafatsa di-setting ebe o leke hape</string>
     <string name="attempting_to_download_data_txt">Go leka go taonelouta data.txt go tšwa go seva ya gago</string>
     <string name="radar_type_is_invalid">Mohuta wa radar \'%1$s\' ga o šome, hlahloba faele ya gago ya dipeakanyo gomme o leke gape</string>
+    <string name="webcam_still_downloading">Webcam setšoantšo e ntse e thowuni</string>
 </resources>

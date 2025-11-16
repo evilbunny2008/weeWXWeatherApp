@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Interval peubarô hana sah, peubarô setting dan lheuëh nyan neucuba trô</string>
     <string name="attempting_to_download_data_txt">Meuuseuha download data.txt dari server droeneuh</string>
     <string name="radar_type_is_invalid">Tipe radar \'%1$s\' hana sah, neupareksa file setting droeneuh dan neucuba lom</string>
+    <string name="webcam_still_downloading">Gambar Webcam mantong download</string>
 </resources>

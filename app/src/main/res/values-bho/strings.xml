@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">अपडेट अंतराल अमान्य बा, सेटिंग अपडेट करीं आ ओकरा बाद दोबारा कोशिश करीं</string>
     <string name="attempting_to_download_data_txt">अपना सर्वर से डाउनलोड डेटा.txt के प्रयास कइल जा रहल बा</string>
     <string name="radar_type_is_invalid">रडार टाइप \'%1$s\' अमान्य बा, आपन सेटिंग्स फाइल के जांच करीं आ फेर से कोशिश करीं।</string>
+    <string name="webcam_still_downloading">वेबकैम के छवि अबहियो डाउनलोड हो रहल बा</string>
 </resources>

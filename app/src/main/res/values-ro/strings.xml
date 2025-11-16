@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Intervalul de actualizare este nevalid, actualizați setările și apoi reîncercați</string>
     <string name="attempting_to_download_data_txt">Se încearcă descărcarea data.txt de pe serverul dvs</string>
     <string name="radar_type_is_invalid">Tipul de radar \'%1$s\' este nevalid, verificați fișierul de setări și încercați din nou</string>
+    <string name="webcam_still_downloading">Imaginea camerei web încă se descarcă</string>
 </resources>

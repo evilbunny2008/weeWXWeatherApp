@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Intervalle ya mise à jour ezali invalide, mise à jour ya ba paramètres mpe na sima komeka lisusu</string>
     <string name="attempting_to_download_data_txt">Komeka kozwa data.txt na serveur na yo</string>
     <string name="radar_type_is_invalid">Radar Type \'%1$s\' ezali invalide, tala fichier ya paramètres na yo mpe meka lisusu</string>
+    <string name="webcam_still_downloading">Webcam image ezali kaka ko télécharger</string>
 </resources>

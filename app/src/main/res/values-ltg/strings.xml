@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Atjaunuojums intervals ir nadereigs, atjaunuošonys īstatejumi i tod raugi</string>
     <string name="attempting_to_download_data_txt">100 doc#1159 Mieginuojuma lejupluodiešonys dati.txt nu jūs servera</string>
     <string name="radar_type_is_invalid">Radara tips \'%1$s\' ir nadereigs, puorbaudiet sovu īstatejumu failu i raugi vēļreiz</string>
+    <string name="webcam_still_downloading">Tīšsaistis attāls vēļ lejupluodej</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">अपडेट मध्यांतर अवैध आहे, सेटिंग्ज अपडेट करा आणि नंतर पुन्हा प्रयत्न करा</string>
     <string name="attempting_to_download_data_txt">तुमच्या सर्व्हरवरून data.txt डाउनलोड करण्याचा प्रयत्न करत आहे</string>
     <string name="radar_type_is_invalid">रडार प्रकार \'%1$s\' अवैध आहे, तुमची सेटिंग फाइल तपासा आणि पुन्हा प्रयत्न करा</string>
+    <string name="webcam_still_downloading">वेबकॅम प्रतिमा अद्याप डाउनलोड होत आहे</string>
 </resources>

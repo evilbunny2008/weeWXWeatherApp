@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">अद्यतन अंतराल अमान्य है, सेटिंग्स अद्यतन करें और फिर पुनः प्रयास करें</string>
     <string name="attempting_to_download_data_txt">आपके सर्वर से data.txt डाउनलोड करने का प्रयास किया जा रहा है</string>
     <string name="radar_type_is_invalid">रडार प्रकार \'%1$s\' अमान्य है, अपनी सेटिंग फ़ाइल जांचें और पुनः प्रयास करें।</string>
+    <string name="webcam_still_downloading">वेबकैम छवि अभी भी डाउनलोड हो रही है</string>
 </resources>

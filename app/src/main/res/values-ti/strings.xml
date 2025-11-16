@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">ናይ ምዕባለ ፍልልይ ትኽክል ኣይኮነን፣ ቅጥዕታት ኣዘምኖ ድሕሪኡ ዳግማይ ፈትኖ</string>
     <string name="attempting_to_download_data_txt">ካብ ሰርቨርካ Data.txt download data.txt</string>
     <string name="radar_type_is_invalid">ራዳር ዓይነት \'%1$s\' ትኽክል ኣይኮነን፣ ናይ ቅጥዕታት ፋይልካ መርምሮ እሞ እንደገና ፈትን።</string>
+    <string name="webcam_still_downloading">ናይ ዌብካም ምስሊ ገና ይወርድ ኣሎ።</string>
 </resources>

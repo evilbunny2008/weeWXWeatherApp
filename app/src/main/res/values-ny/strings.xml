@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Sinthani nthawi yayitali ndi yosavomerezeka, kusintha makonda kenako ndikuyesanso</string>
     <string name="attempting_to_download_data_txt">Kuyesa kutsitsa deta.txt kuchokera ku seva yanu</string>
     <string name="radar_type_is_invalid">Radiar lembani \'%1$s\' sizabwino, yang\'anani fayilo yanu ndikuyesanso</string>
+    <string name="webcam_still_downloading">Chithunzi cha Webcam chikutsitsa</string>
 </resources>

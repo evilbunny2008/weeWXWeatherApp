@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Aktualisiire interwaal is inwaliteet, aktualisiirunge instellunge un tan noch moolry</string>
     <string name="attempting_to_download_data_txt">Fersuuche ti data.txt fon tayn serwer download mache</string>
     <string name="radar_type_is_invalid">Radar tip \'%1$s\' is inwalit, kontroliire tayn instëlunge file un proope noch mool</string>
+    <string name="webcam_still_downloading">Webcam pilt is noch am download mache</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Sasisha muda ni batili, sasisha mipangilio na kisha ujaribu tena</string>
     <string name="attempting_to_download_data_txt">Kujaribu kupakua data.txt kutoka kwa seva yako</string>
     <string name="radar_type_is_invalid">Aina ya Radar \'%1$s\' sio sahihi, angalia faili yako ya mipangilio na ujaribu tena</string>
+    <string name="webcam_still_downloading">Picha ya Webcam bado inapakua</string>
 </resources>

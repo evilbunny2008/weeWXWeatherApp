@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Interval update nénten sah, setélan update lan raris kacoba malih</string>
     <string name="attempting_to_download_data_txt">Ngrereh data download.txt saking server Sametoné</string>
     <string name="radar_type_is_invalid">Jenis Radar \'%1$s\' nenten sah, tureksain file pengaturan ragane lan indayang malih</string>
+    <string name="webcam_still_downloading">Gambar Webcam kantun ngunduh</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">განახლების ინტერვალი არასწორია, განაახლეთ პარამეტრები და შემდეგ სცადეთ ხელახლა</string>
     <string name="attempting_to_download_data_txt">თქვენი სერვერიდან data.txt-ის ჩამოტვირთვის მცდელობა</string>
     <string name="radar_type_is_invalid">რადარის ტიპი \'%1$s\' არასწორია, შეამოწმეთ თქვენი პარამეტრების ფაილი და სცადეთ ხელახლა</string>
+    <string name="webcam_still_downloading">ვებკამერის სურათი ჯერ კიდევ იტვირთება</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">更新間隔係無效嘅，更新設定然後重試</string>
     <string name="attempting_to_download_data_txt">嘗試從伺服器下載資料 . txt</string>
     <string name="radar_type_is_invalid">雷達類型「%1$s」係無效嘅，檢查你嘅設定檔案，然後再試。</string>
+    <string name="webcam_still_downloading">網絡攝影機圖片仲係下載緊。</string>
 </resources>

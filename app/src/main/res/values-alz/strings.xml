@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">I kind kare ma nok, lembe ma nyen ma juketho i tic man i ng\'eye</string>
     <string name="attempting_to_download_data_txt">Temo lembe ma juketho i ie lembe ma juketho i server</string>
     <string name="radar_type_is_invalid">Radar \'%1$s\' ok en adier, ng\'i file mag settings kendo item kendo</string>
+    <string name="webcam_still_downloading">Kite ma watio ko ku kusika mwa mir Internet ubekadhu kud i ie</string>
 </resources>

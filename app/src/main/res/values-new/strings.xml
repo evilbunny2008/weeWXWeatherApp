@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">अपडेट अन्तराल अमान्य खः, सेटिङ्ग सेटिङ्ग अले हानं हानं कुतः या ।</string>
     <string name="attempting_to_download_data_txt">छिगु सर्भरं डाउनलोड डाटा.टिएक्सट या ।</string>
     <string name="radar_type_is_invalid">राडार टाइप \'%1$s\' अमान्य जुइ, थःगु सेटिङ फाइल जाँच यानादिसँ अले हाकनं कुतः यानादिसँ ।</string>
+    <string name="webcam_still_downloading">वेबक्याम इमेज आः नं डाउनलोड यानाच्वंगु दु ।</string>
 </resources>

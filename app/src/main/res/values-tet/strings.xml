@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Intervalu atualizasaun la válidu, atualiza konfigurasaun no depois koko fali</string>
     <string name="attempting_to_download_data_txt">Tentativa download dadus.txt husi ita nia servidor</string>
     <string name="radar_type_is_invalid">Radar tipu \'%1$s\' la válidu, verifika ita-nia file settings no koko fali</string>
+    <string name="webcam_still_downloading">Imajen Webcam sei download hela</string>
 </resources>

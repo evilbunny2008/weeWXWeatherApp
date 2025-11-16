@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">D\'Aktualiséierungsintervall ass ongëlteg, aktualiséieren Astellungen a probéiert dann erëm</string>
     <string name="attempting_to_download_data_txt">Probéiert d\'Data.txt vun Ärem Server erofzelueden</string>
     <string name="radar_type_is_invalid">Radartyp \'%1$s\' ass ongëlteg, kontrolléiert Är Astellungsdatei a probéiert nach eng Kéier</string>
+    <string name="webcam_still_downloading">Webcam Bild gëtt nach ëmmer erofgelueden</string>
 </resources>

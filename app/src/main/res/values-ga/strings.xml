@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Tá an t-eatramh nuashonraithe neamhbhailí, nuashonraigh socruithe agus ansin bain triail eile as</string>
     <string name="attempting_to_download_data_txt">Ag iarraidh data.txt a íoslódáil ó do fhreastalaí</string>
     <string name="radar_type_is_invalid">Tá cineál radar \'%1$s\' neamhbhailí, seiceáil do chomhad socruithe agus bain triail eile as</string>
+    <string name="webcam_still_downloading">Tá íomhá ceamara gréasáin á íoslódáil go fóill</string>
 </resources>

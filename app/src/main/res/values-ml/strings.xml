@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">അപ്‌ഡേറ്റ് ഇടവേള അസാധുവാണ്, ക്രമീകരണങ്ങൾ അപ്‌ഡേറ്റ് ചെയ്‌തതിന് ശേഷം വീണ്ടും ശ്രമിക്കുക</string>
     <string name="attempting_to_download_data_txt">നിങ്ങളുടെ സെർവറിൽ നിന്ന് data.txt ഡൗൺലോഡ് ചെയ്യാൻ ശ്രമിക്കുന്നു</string>
     <string name="radar_type_is_invalid">റഡാർ തരം \'%1$s\' അസാധുവാണ്, നിങ്ങളുടെ ക്രമീകരണ ഫയൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക</string>
+    <string name="webcam_still_downloading">വെബ്‌ക്യാം ചിത്രം ഇപ്പോഴും ഡൗൺലോഡ് ചെയ്യുന്നു</string>
 </resources>

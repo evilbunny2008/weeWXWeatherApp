@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Жаңарту аралығы жарамсыз, параметрлерді жаңартыңыз, содан кейін қайталаңыз</string>
     <string name="attempting_to_download_data_txt">Деректерді жүктеу әрекеті, серверден</string>
     <string name="radar_type_is_invalid">\'%1$s\' радар типі жарамсыз, параметрлер файлын тексеріп, әрекетті қайталаңыз</string>
+    <string name="webcam_still_downloading">Веб-камера кескіні әлі де жүктеледі</string>
 </resources>

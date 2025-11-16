@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">དུས་མཐུན་བར་མཚམས་འདི་ ནུས་མེད་ཨིནམ་དང་ དུས་མཐུན་སྒྲིག་སྟངས་ཚུ་དང་ དེ་ལས་ ལོག་འབད་རྩོལ་བསྐྱེད།</string>
     <string name="attempting_to_download_data_txt">ཁྱོད་རའི་སར་བར་ལས་ ཕབ་ལེན་འབད་མི་ གནད་སྡུད་.txt འབད་རྩོལ་བསྐྱེད་དོ།</string>
     <string name="radar_type_is_invalid">རེ་ཌར་དབྱེ་བ་ \'%1$s\' ནུས་མེད་ཨིན་ ཁྱོད་རའི་སྒྲིག་སྟངས་ཡིག་སྣོད་ཞིབ་དཔྱད་འབད་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད།</string>
+    <string name="webcam_still_downloading">ཝེབ་ཀེམ་གྱི་པར་རིས་ད་ལྟོ་ཡང་ཕབ་ལེན་འབད་དོ།</string>
 </resources>

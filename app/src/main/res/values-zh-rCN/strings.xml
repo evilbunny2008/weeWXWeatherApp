@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">更新间隔无效，更新设置然后重试</string>
     <string name="attempting_to_download_data_txt">尝试从您的服务器下载 data.txt</string>
     <string name="radar_type_is_invalid">雷达类型\'%1$s\'无效，请检查您的设置文件并重试。</string>
+    <string name="webcam_still_downloading">网络摄像头图像仍在下载。</string>
 </resources>

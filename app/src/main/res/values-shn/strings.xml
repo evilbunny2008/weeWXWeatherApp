@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">ၵႄႈၵၢင် Update ၼႆႉ ဢမ်ႇၸႂ်ႈ ဢၼ်မၢၼ်ႇမႅၼ်ႈ၊ ႁဵတ်း Update သေ ၶိုၼ်းၸၢမ်းတူၺ်း</string>
     <string name="attempting_to_download_data_txt">ၶတ်းၸႂ်ႁႃ Download data.txt တီႈ Server ၸဝ်ႈၵဝ်ႇ</string>
     <string name="radar_type_is_invalid">ရေႇတႃႇ မဵဝ်း \'%1$s\' ၼႆႉ ဢမ်ႇၸႂ်ႈ ဢၼ်မၢၼ်ႇမႅၼ်ႈ ထတ်းတူၺ်း ၾၢႆႇ settings ၸဝ်ႈၵဝ်ႇသေ ၶိုၼ်းၸၢမ်းတူၺ်း။</string>
+    <string name="webcam_still_downloading">ၶႅပ်းႁၢင်ႈ Webcam တိုၵ်ႉလူင်းဝႆႉယူႇၶႃႈ</string>
 </resources>

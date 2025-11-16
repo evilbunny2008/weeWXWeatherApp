@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Lenterval azour i pa valab, bann paramet azour e apre re-esey</string>
     <string name="attempting_to_download_data_txt">Esey download lenformasyon.Tart dan ou server</string>
     <string name="radar_type_is_invalid">Kalite radar \'%1$s\' i pa valab, tyek ou dosye laranzman e esey ankor</string>
+    <string name="webcam_still_downloading">Zimaz web i ankor telesarz</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">የዘመናችን የጊዜ ልዩነት ልክ ያልሆነ, ቅንብሮች ያዘምኑ እና ከዚያ እንደገና እንደገና ይሞክሩ</string>
     <string name="attempting_to_download_data_txt">ከአገልጋይዎ ጋር የውሂብ .txt ን ማውረድ በመሞከር ላይ</string>
     <string name="radar_type_is_invalid">የራዳር ዓይነት \'%1$s\' ልክ ያልሆነ ነው, የቅንብሮች ፋይልዎን ይፈትሹ እና እንደገና ይሞክሩ</string>
+    <string name="webcam_still_downloading">የድር ካሜራ ምስል አሁንም ያውርዱ</string>
 </resources>

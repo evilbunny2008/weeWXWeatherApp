@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">An update na agwat bakong balido, mga kamugtakan na update dangan pagprobaran giraray</string>
     <string name="attempting_to_download_data_txt">Pagprobar na mag-download datos sa saindong serbidor</string>
     <string name="radar_type_is_invalid">Tipo nin radar \'%$\' bakong balido, hilingon an saindong mga setting file asin purbaran giraray</string>
+    <string name="webcam_still_downloading">Nag-dodownload pa an imahen sa Webcam</string>
 </resources>

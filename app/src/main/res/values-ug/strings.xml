@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">ئالاقىلىشىش ئارىلىقى ئىناۋەتسىز, تەڭشەكلەرنى يېڭىلاش, ئاندىن قايتا سىناڭ</string>
     <string name="attempting_to_download_data_txt">مۇلازىمېتىردىن چۈشۈرمەكچى. مۇلازىمېتىرىڭىزدىن</string>
     <string name="radar_type_is_invalid">رادار تىپى \'%1$s\'ئىناۋەتسىز, تەڭشەكلىرى ھۆججىتىڭىزنى تەكشۈرۈپ قايتا سىناڭ</string>
+    <string name="webcam_still_downloading">تور كامېراسى يەنىلا چۈشۈرۈۋاتىدۇ</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Çĕнетÿ интервалĕ тĕрĕс мар, настройкăсене çĕнетме тата унтан тепĕр хут тăвăр</string>
     <string name="attempting_to_download_data_txt">Хăтланăр скачать даннăйĕсем.txt сирĕн сервертан</string>
     <string name="radar_type_is_invalid">Радар типĕ \'%1$s\' тĕрĕс мар, настройкăсен файла тĕрĕслесе пăхăр та тепĕр хут хăтланса пăхăр</string>
+    <string name="webcam_still_downloading">Веб-камерăн ÿкерчĕкĕ халĕ те скачать тăвать</string>
 </resources>

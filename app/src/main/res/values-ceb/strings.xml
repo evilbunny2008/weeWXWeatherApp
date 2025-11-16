@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Ang pag-update sa interval dili husto, pag-update sa mga setting ug dayon pag-usab</string>
     <string name="attempting_to_download_data_txt">Pagsulay sa pag-download sa datos.txt gikan sa imong server</string>
     <string name="radar_type_is_invalid">Ang radar type nga \'%1$s\' dili husto, susihon ang imong file sa setting ug pagsulay pag-usab</string>
+    <string name="webcam_still_downloading">Ang imahe sa webcam nag-download gihapon</string>
 </resources>

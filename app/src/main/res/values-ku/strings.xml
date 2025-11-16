@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Navbera nûvekirinê nederbasdar e, mîhengan nûve bikin û dûv re dîsa biceribînin</string>
     <string name="attempting_to_download_data_txt">Hewl didin data.txt ji servera we dakêşin</string>
     <string name="radar_type_is_invalid">Tîpa radarê \'%1$s\' nederbasdar e, pelê mîhengan kontrol bike û dîsa biceribîne</string>
+    <string name="webcam_still_downloading">Wêneyê Webkamera hê jî tê daxistin</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Жаңыртуунун интервалы жараксыз, жөндөөлөрдү жаңыртып, андан кийин кайталаңыз</string>
     <string name="attempting_to_download_data_txt">Сервериңизден Data.txt жүктөө аракети</string>
     <string name="radar_type_is_invalid">\'%1$s\'радар тиби жараксыз, жөндөөлөрүңүздүн файлыңызды текшерип, дагы бир жолу аракет кылып көрүңүз</string>
+    <string name="webcam_still_downloading">Веб-камера сүрөтү дагы эле жүктөлүүдө</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">புதுப்பிப்பு இடைவெளி தவறானது, அமைப்புகளைப் புதுப்பித்து, மீண்டும் முயற்சிக்கவும்</string>
     <string name="attempting_to_download_data_txt">உங்கள் சர்வரிலிருந்து data.txtஐப் பதிவிறக்க முயற்சிக்கிறோம்</string>
     <string name="radar_type_is_invalid">ரேடார் வகை \'%1$s\' தவறானது, உங்கள் அமைப்புக் கோப்பைச் சரிபார்த்து மீண்டும் முயலவும்</string>
+    <string name="webcam_still_downloading">வெப்கேம் படம் இன்னும் பதிவிறக்கம் செய்யப்படுகிறது</string>
 </resources>

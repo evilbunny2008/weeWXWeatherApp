@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Intervali i përditësimit është i pavlefshëm, përditëso cilësimet dhe më pas provo sërish</string>
     <string name="attempting_to_download_data_txt">Po tentoni të shkarkoni data.txt nga serveri juaj</string>
     <string name="radar_type_is_invalid">Lloji i radarit \'%1$s\' është i pavlefshëm, kontrollo skedarin e cilësimeve dhe provo sërish</string>
+    <string name="webcam_still_downloading">Imazhi i kamerës së uebit është ende duke u shkarkuar</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">update interval is invalid، ڕێکخستنەکانی نوێکردنەوە و پاشان هەوڵدان</string>
     <string name="attempting_to_download_data_txt">هەوڵدان بۆ داگرتنی Data.txt لە سێرڤەرەکەتەوە</string>
     <string name="radar_type_is_invalid">جۆری ڕادار \'%1$sS\' نادروستە، فایلە ڕێکخستنەکانت بپشکنە و دووبارە هەوڵبدەرەوە</string>
+    <string name="webcam_still_downloading">وێنەی وێبکام هێشتا دابەزاندن</string>
 </resources>

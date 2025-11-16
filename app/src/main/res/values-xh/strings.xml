@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Ukuhlaziya ixesha lokuphumla akuvumelekanga, hlaziya useto kwaye uzame kwakhona</string>
     <string name="attempting_to_download_data_txt">Ukuzama idatha yokukhuphela.txt kwiseva yakho</string>
     <string name="radar_type_is_invalid">Uhlobo lwe-radar \'%1$s\' ayisebenzi, jonga iifayile zakho zefayile kwaye uzame kwakhona</string>
+    <string name="webcam_still_downloading">Umfanekiso wewebhu weWebcam usazikhuphela</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Selang waktu perbarui ga sah, pengaturan update trus coba ulang</string>
     <string name="attempting_to_download_data_txt">Coba data download.txt dari server lo</string>
     <string name="radar_type_is_invalid">Tipe radar \'%1$s\' itu ga sah, cek file pengaturan lo dan coba lagi</string>
+    <string name="webcam_still_downloading">gambar Webcam masih download</string>
 </resources>

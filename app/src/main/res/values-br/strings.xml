@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Didalvoudek eo an etrefas hizivaat, an arventennoù hizivaat ha goude-se adklask</string>
     <string name="attempting_to_download_data_txt">Klask pellgargañ roadennoù.txt diwar ho servijer</string>
     <string name="radar_type_is_invalid">Didalvoudek eo ar seurt radar \'%1$s\', gwiriit ho restr arventennoù ha klaskit en-dro</string>
+    <string name="webcam_still_downloading">Pellgargañ a ra skeudenn Webcam c\'hoazh</string>
 </resources>

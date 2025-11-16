@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Nɔ ni atsake lɛ ejaaa, tsakemɔi ni ato ni no sɛɛ lɛ aka ekoŋŋ</string>
     <string name="attempting_to_download_data_txt">Mɔdɛŋ ni okɛ data aba.txt kɛjɛ osɛɛva</string>
     <string name="radar_type_is_invalid">Radar henɔ \'%1$s\' lɛ ejaaa, kwɛmɔ ogbɛjianɔtoo faili lɛ ni oka ekoŋŋ</string>
+    <string name="webcam_still_downloading">Webcam mfoniri lɛ miijie lolo</string>
 </resources>

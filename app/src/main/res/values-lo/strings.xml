@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">ໄລຍະຫ່າງການອັບເດດແມ່ນບໍ່ຖືກຕ້ອງ, ການປັບປຸງການຕັ້ງຄ່າແລະຫຼັງຈາກນັ້ນລອງໃຫມ່</string>
     <string name="attempting_to_download_data_txt">ການພະຍາຍາມດາວໂຫລດຂໍ້ມູນ .txt ຈາກ server ຂອງທ່ານ</string>
     <string name="radar_type_is_invalid">Radar Type \'%1$s\' ບໍ່ຖືກຕ້ອງ, ກວດເບິ່ງເອກະສານການຕັ້ງຄ່າຂອງທ່ານແລະລອງໃຫມ່ອີກຄັ້ງ</string>
+    <string name="webcam_still_downloading">ຮູບພາບ webcam ຍັງຄົງດາວໂຫລດຢູ່</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">އަޕްޑޭޓް އިންޓަވަލް ސައްހަ ނޫން، އަޕްޑޭޓް ސެޓިންގސް އަދި ދެން ރީޓްރައި</string>
     <string name="attempting_to_download_data_txt">ތިމާގެ ސަރވަރ އިން DATO.TXT ޑައުންލޯޑް ކުރަން އުޅުން</string>
     <string name="radar_type_is_invalid">ރެޑާ ޓައިޕް \'%1$s\' އަކީ ސައްހަ ނޫން އެއްޗެއް، ސެޓިންގސް ފައިލް ޗެކްކޮށް އަލުން ޓްރައި ކުރާށެވެ</string>
+    <string name="webcam_still_downloading">ވެބްކެމް އިމޭޖް އަދިވެސް ޑައުންލޯޑް ކުރަމުން އެބަދެއެވެ</string>
 </resources>

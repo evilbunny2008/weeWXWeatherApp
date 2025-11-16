@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">ನವೀಕರಣ ಮಧ್ಯಂತರವು ಅಮಾನ್ಯವಾಗಿದೆ, ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ನವೀಕರಿಸಿ ಮತ್ತು ನಂತರ ಮರುಪ್ರಯತ್ನಿಸಿ</string>
     <string name="attempting_to_download_data_txt">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ data.txt ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಲಾಗುತ್ತಿದೆ</string>
     <string name="radar_type_is_invalid">ರಾಡಾರ್ ಪ್ರಕಾರ \'%1$s\' ಅಮಾನ್ಯವಾಗಿದೆ, ನಿಮ್ಮ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಫೈಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
+    <string name="webcam_still_downloading">ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ</string>
 </resources>

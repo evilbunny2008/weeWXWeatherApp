@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Tha an eadar-ama ùrachadh neo-dhligheach, ùraich na roghainnean agus an uairsin feuch a-rithist</string>
     <string name="attempting_to_download_data_txt">A\' feuchainn ri data.txt a luchdachadh sìos bhon t-seirbheisiche agad</string>
     <string name="radar_type_is_invalid">Tha an seòrsa radar \'%1$s\' mì-dhligheach, thoir sùil air an fhaidhle roghainnean agad is feuch ris a-rithist</string>
+    <string name="webcam_still_downloading">Tha dealbh camara-lìn fhathast ga luchdachadh sìos</string>
 </resources>

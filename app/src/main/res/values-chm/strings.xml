@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Уэмдыме интервал чын огыл, уэмдаш параметр-влак да вара угыч тӧчен</string>
     <string name="attempting_to_download_data_txt">Тендан сервер гыч скачать данный.txt</string>
     <string name="radar_type_is_invalid">Радар тип \'%1$s\' чын огыл, шке настройкым файлым тергымаш да угыч тӧчен</string>
+    <string name="webcam_still_downloading">Веб-камер образ эше скачать</string>
 </resources>

@@ -79,5 +79,6 @@
     <string name="wifi_not_available">Mahimo kuntani nga wala na sang update apang indi matigayon ang koneksyon sang WiFi</string>
     <string name="invalid_update_interval">Ang update interval indi balido, mga setting sa pag-update kag dayon tilawi liwat</string>
     <string name="attempting_to_download_data_txt">Pagtinguha sa pag-download sang data.txt gikan sa imo server</string>
-    <string name="radar_type_is_invalid">Ang radar type nga \'% %1$s\' indi balido, tan-awa ang imo file sang mga setting kag tilawi liwat</string>
+    <string name="radar_type_is_invalid">Ang radar type nga \'%%1$s\' indi balido, tan-awa ang imo file sang mga setting kag tilawi liwat</string>
+    <string name="webcam_still_downloading">Naga-download pa ang imahe sang webcam</string>
 </resources>

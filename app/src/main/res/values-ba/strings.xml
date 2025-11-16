@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Яңыртыу интервалы дөрөҫ түгел, яңыртыу параметрҙары, ә һуңынан ҡайта</string>
     <string name="attempting_to_download_data_txt">Һеҙҙең серверҙан скачать cavic</string>
     <string name="radar_type_is_invalid">Радар тип \'%1$s\' дөрөҫ түгел, һеҙҙең параметрҙар файлын тикшерергә һәм яңынан һынап ҡарағыҙ</string>
+    <string name="webcam_still_downloading">Веб-камера һүрәте әле лә скачать</string>
 </resources>

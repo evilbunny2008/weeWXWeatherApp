@@ -42,8 +42,9 @@ public class Stats extends Fragment
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
-			weeWXAppCommon.LogMessage("onRefresh();");
-			updateFields(true);
+			weeWXAppCommon.LogMessage("weeWXAppCommon.getWeather(true, false)...", true);
+			weeWXAppCommon.getWeather(true, false);
+
 		});
 
 		mySlider = rootView.findViewById(R.id.pageZoom);

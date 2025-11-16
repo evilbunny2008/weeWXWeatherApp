@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Ĝisdatigintervalo estas nevalida, ĝisdatigu agordojn kaj poste reprovu</string>
     <string name="attempting_to_download_data_txt">Provante elŝuti data.txt de via servilo</string>
     <string name="radar_type_is_invalid">Radara tipo \'%1$s\' estas nevalida, kontrolu vian agordan dosieron kaj provu denove</string>
+    <string name="webcam_still_downloading">Retkamera bildo ankoraŭ elŝutas</string>
 </resources>

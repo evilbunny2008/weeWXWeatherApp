@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Khoảng thời gian cập nhật không hợp lệ, hãy cập nhật cài đặt rồi thử lại</string>
     <string name="attempting_to_download_data_txt">Đang cố tải xuống data.txt từ máy chủ của bạn</string>
     <string name="radar_type_is_invalid">Loại radar \'%1$s\' không hợp lệ, hãy kiểm tra tệp cài đặt của bạn và thử lại</string>
+    <string name="webcam_still_downloading">Hình ảnh webcam vẫn đang được tải xuống</string>
 </resources>

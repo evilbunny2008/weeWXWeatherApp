@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Uppfærslubil er ógilt, uppfærðu stillingar og reyndu svo aftur</string>
     <string name="attempting_to_download_data_txt">Reynir að hlaða niður data.txt af þjóninum þínum</string>
     <string name="radar_type_is_invalid">Ratsjárgerð \'%1$s\' er ógild, athugaðu stillingaskrána þína og reyndu aftur</string>
+    <string name="webcam_still_downloading">Myndavél er enn að hlaðast niður</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Ntlafatsa nako ha e sebetse, e ntlafatsa li-setting ebe o leka hape</string>
     <string name="attempting_to_download_data_txt">Ho leka ho jarolla data.txt ho tsoa ho seva ea hau</string>
     <string name="radar_type_is_invalid">Mofuta oa Radar \'%1$s\' ha e sebetse, sheba file ea hau ea litlhokahalo ebe u leka hape</string>
+    <string name="webcam_still_downloading">Setšoantšo sa Webcam se ntse se jarolla</string>
 </resources>

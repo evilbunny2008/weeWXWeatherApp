@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Недопустимый интервал обновления, обновите настройки и повторите попытку</string>
     <string name="attempting_to_download_data_txt">Попытка загрузить data.txt с вашего сервера</string>
     <string name="radar_type_is_invalid">Тип радара \'%1$s\' недействителен. Проверьте файл настроек и повторите попытку</string>
+    <string name="webcam_still_downloading">Изображение с веб-камеры все еще загружается</string>
 </resources>

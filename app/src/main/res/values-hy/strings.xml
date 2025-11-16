@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Թարմացման ընդմիջումն անվավեր է, թարմացրեք կարգավորումները և նորից փորձեք</string>
     <string name="attempting_to_download_data_txt">Ձեր սերվերից data.txt-ը ներբեռնելու փորձ է կատարվում</string>
     <string name="radar_type_is_invalid">\'%1$s\' ռադարի տեսակն անվավեր է, ստուգեք ձեր կարգավորումների ֆայլը և նորից փորձեք:</string>
+    <string name="webcam_still_downloading">Տեսախցիկի պատկերը դեռ ներբեռնվում է:</string>
 </resources>

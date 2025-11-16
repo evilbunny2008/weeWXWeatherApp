@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Das Aktualisierungsintervall ist ungültig. Aktualisieren Sie die Einstellungen und versuchen Sie es erneut</string>
     <string name="attempting_to_download_data_txt">Ich versuche, data.txt von Ihrem Server herunterzuladen</string>
     <string name="radar_type_is_invalid">Der Radartyp \'%1$s\' ist ungültig. Überprüfen Sie Ihre Einstellungsdatei und versuchen Sie es erneut</string>
+    <string name="webcam_still_downloading">Das Webcam-Bild wird noch heruntergeladen</string>
 </resources>

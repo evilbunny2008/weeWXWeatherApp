@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Kë tɔ̈u nhial ee kë cïï lui, ye käŋ waar ku jal yaa dhukciëën</string>
     <string name="attempting_to_download_data_txt">Tɛ̈m de wël ë yök.txt tënë server du</string>
     <string name="radar_type_is_invalid">Tääu ë \'%1$s\' ee kë ril, tïŋ ë athör ë tɛ̈ɛ̈u ë käŋ ku them ba bɛɛr</string>
+    <string name="webcam_still_downloading">Thura de wɛbthait aŋot ke ye tääu piny</string>
 </resources>

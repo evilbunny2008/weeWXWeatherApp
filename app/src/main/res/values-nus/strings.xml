@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Updatate bɛth bɛl ɛ mi̱ /thiɛl luɔt, update thɛttiŋni̱ kä kɛ kɔrɛ ba nyɔk kɛ thëm</string>
     <string name="attempting_to_download_data_txt">Käp data ni̱ tin caa ka̱m raar</string>
     <string name="radar_type_is_invalid">Radard type \'%1$s\' ɛ mi̱ /ci̱ päär, guic thɛttiŋni̱ku kɛ file kä ɣɔ̱nɛ nyɔk</string>
+    <string name="webcam_still_downloading">Thurɛ min ca la̱t ɛ Webma ŋotdɛ la jɛ laa ka̱mkɛ raar</string>
 </resources>

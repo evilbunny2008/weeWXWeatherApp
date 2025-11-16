@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Update interval sirrii miti, qindaa\'inoota update fi sana booda irra deebi\'ii yaali</string>
     <string name="attempting_to_download_data_txt">Data download data.txt server keessan irraa yaaluu</string>
     <string name="radar_type_is_invalid">Gosa Raadaar \'%1$s\' sirrii miti, faayila settings kee ilaalii irra deebi\'ii yaali</string>
+    <string name="webcam_still_downloading">Fakkiin webcam ammallee buufachaa jira</string>
 </resources>

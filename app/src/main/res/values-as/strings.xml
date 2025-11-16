@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">আপডেইট ব্যৱধান অবৈধ, ছেটিংছ আপডেইট আৰু তাৰ পিছত পুনৰ চেষ্টা কৰক</string>
     <string name="attempting_to_download_data_txt">আপোনাৰ চাৰ্ভাৰৰ পৰা Data.txt ডাউনলোড কৰাৰ চেষ্টা কৰা</string>
     <string name="radar_type_is_invalid">ৰাডাৰৰ ধৰণ \'%1$s\' অবৈধ, আপোনাৰ ছেটিংছ ফাইল পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
+    <string name="webcam_still_downloading">WebCam image এতিয়াও ডাউনলোড কৰি আছে।</string>
 </resources>

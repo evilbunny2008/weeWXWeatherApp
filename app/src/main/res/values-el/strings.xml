@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Το διάστημα ενημέρωσης δεν είναι έγκυρο, ενημερώστε τις ρυθμίσεις και, στη συνέχεια, δοκιμάστε ξανά</string>
     <string name="attempting_to_download_data_txt">Προσπάθεια λήψης του data.txt από τον διακομιστή σας</string>
     <string name="radar_type_is_invalid">Ο τύπος ραντάρ \'%1$s\' δεν είναι έγκυρος, ελέγξτε το αρχείο ρυθμίσεών σας και δοκιμάστε ξανά</string>
+    <string name="webcam_still_downloading">Η λήψη της εικόνας της κάμερας web εξακολουθεί να γίνεται</string>
 </resources>

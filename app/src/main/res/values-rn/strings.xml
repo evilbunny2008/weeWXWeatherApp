@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Igihe co guhindura ntikitagira akamaro, uguhindura amategeko hanyuma ugasubira kugerageza</string>
     <string name="attempting_to_download_data_txt">Kugerageza gukuraho amakuru.txt kuri server yawe</string>
     <string name="radar_type_is_invalid">Radar ubwoko bwa \'%1$s\' ntaco bimaze, suzuma dosiye yawe y\'imiterere maze ugerageze kandi</string>
+    <string name="webcam_still_downloading">Ishusho ya Webcam iracariko irakura</string>
 </resources>

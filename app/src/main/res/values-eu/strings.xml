@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Eguneratzeko tartea baliogabea da, eguneratu ezarpenak eta saiatu berriro</string>
     <string name="attempting_to_download_data_txt">Data.txt zure zerbitzaritik deskargatzen saiatzen</string>
     <string name="radar_type_is_invalid">\'%1$s\' radar mota ez da baliozkoa, egiaztatu ezarpenen fitxategia eta saiatu berriro</string>
+    <string name="webcam_still_downloading">Webkameraren irudia deskargatzen ari da oraindik</string>
 </resources>

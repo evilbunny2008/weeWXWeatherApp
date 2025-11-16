@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Intervalo di actualisacion ta invalido, configuracionnan di actualisacion y despues bolbe purba</string>
     <string name="attempting_to_download_data_txt">Intento di download di datonan.txt for di bo servidor</string>
     <string name="radar_type_is_invalid">Radar tipo \'%1$s\' ta inválido, kontrolá bo archivo di configuracion i purba atrobe</string>
+    <string name="webcam_still_downloading">Imagen di webcam ainda ta download</string>
 </resources>

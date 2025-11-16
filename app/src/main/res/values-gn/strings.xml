@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Intervalo de actualización ndovaléi, oñembopyahu ha upéi oñeha\'ã jey</string>
     <string name="attempting_to_download_data_txt">Oñeha\'ãvo ojegueru data.txt nde servidor-gui</string>
     <string name="radar_type_is_invalid">RADAR Tipo \'%1$sS\' ndovaléi, ehecha nde archivo ñemboheko ha eñeha\'ã jey</string>
+    <string name="webcam_still_downloading">Ta\'ãnga webcam omboguejy gueteri</string>
 </resources>

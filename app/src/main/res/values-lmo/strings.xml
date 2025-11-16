@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Seleziuna el cuntrol de la velocità, l\'è necesaria e l\'è necesaria</string>
     <string name="attempting_to_download_data_txt">Indipendentement de la vòstra pagina di dat per la vòstra aplicaziun</string>
     <string name="radar_type_is_invalid">El 2015 l\'è \'sült\', che l\'è drée a duperà el tò sistèm de cuntrol e l\'è minga facil.\'</string>
+    <string name="webcam_still_downloading">Clicca sü la fotocamera che g\'he sun</string>
 </resources>

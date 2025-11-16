@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Ti update interval ket saan nga imbalido, update settings ken kalpasanna padasen manen</string>
     <string name="attempting_to_download_data_txt">Panagpadas ti Download Data.txt manipud iti servermo</string>
     <string name="radar_type_is_invalid">Ti kita ti radar a \'%1$sS\' ket saan nga imbalido, kitaen ti file ti Settings-mo ken padasem manen</string>
+    <string name="webcam_still_downloading">Ti ladawan ti webcam ket ag-download pay laeng</string>
 </resources>

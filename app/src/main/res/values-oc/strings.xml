@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">L\'interval de mesa a jorn es invalid, actualizatz los paramètres e puèi tornatz ensajar</string>
     <string name="attempting_to_download_data_txt">Ensajant de donadas de descarga.txt de vòstre servidor</string>
     <string name="radar_type_is_invalid">Lo tipe radar \'%1$s\' es invalid, verificatz vòstre fichièr de paramètres e ensajatz tornarmai</string>
+    <string name="webcam_still_downloading">La imagen Webcam es todavia descargar</string>
 </resources>

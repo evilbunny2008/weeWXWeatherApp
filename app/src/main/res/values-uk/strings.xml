@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Інтервал оновлення недійсний, оновіть налаштування та повторіть спробу</string>
     <string name="attempting_to_download_data_txt">Спроба завантажити data.txt із вашого сервера</string>
     <string name="radar_type_is_invalid">Тип радара \'%1$s\' недійсний, перевірте файл налаштувань і повторіть спробу</string>
+    <string name="webcam_still_downloading">Зображення веб-камери все ще завантажується</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">更新間隔が無効です。設定を更新してから再試行してください。</string>
     <string name="attempting_to_download_data_txt">サーバーから data.txt をダウンロードしようとしています</string>
     <string name="radar_type_is_invalid">レーダー タイプ \'%1$s\' が無効です。設定ファイルを確認して、再試行してください。</string>
+    <string name="webcam_still_downloading">ウェブカメラの画像はまだダウンロード中です。</string>
 </resources>

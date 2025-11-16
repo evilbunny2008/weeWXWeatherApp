@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Interval update indak sah, pangaturan pambaruan dan kamudian mancubo baliak</string>
     <string name="attempting_to_download_data_txt">Mancubo data unduhan.txt dari server Sanak</string>
     <string name="radar_type_is_invalid">Radar tipe \'%1$s\' indak sah, pareso file pangaturan Sanak dan cubo baliak</string>
+    <string name="webcam_still_downloading">Gambar webcam masih mangunduakan</string>
 </resources>

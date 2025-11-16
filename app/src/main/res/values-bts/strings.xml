@@ -79,5 +79,6 @@
     <string name="wifi_not_available">Anggo sonai, ra do lang dong be hubungan WiFi</string>
     <string name="invalid_update_interval">Pembaruan interval lang sah, pengaturan pembaruan dob ai mundur</string>
     <string name="attempting_to_download_data_txt">Marusaha ma download data.txt humbani server nasiam</string>
-    <string name="radar_type_is_invalid">Radar tipe \'1%1$s\' lang sah, pareksa ma file pengaturanmu janah uji ma use</string>
+    <string name="radar_type_is_invalid">Radar tipe \'%1$s\' lang sah, pareksa ma file pengaturanmu janah uji ma use</string>
+    <string name="webcam_still_downloading">Gambar Webcam totap do i- download</string>
 </resources>

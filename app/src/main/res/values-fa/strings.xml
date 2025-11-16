@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">فاصله زمانی به‌روزرسانی نامعتبر است، تنظیمات را به‌روزرسانی کنید و دوباره امتحان کنید</string>
     <string name="attempting_to_download_data_txt">در حال تلاش برای دانلود data.txt از سرور شما</string>
     <string name="radar_type_is_invalid">نوع رادار \'%1$s\' نامعتبر است، فایل تنظیمات خود را بررسی کرده و دوباره امتحان کنید</string>
+    <string name="webcam_still_downloading">تصویر وب کم هنوز در حال دانلود است</string>
 </resources>

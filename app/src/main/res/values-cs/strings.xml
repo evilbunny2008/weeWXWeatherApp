@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Interval aktualizace je neplatný, aktualizujte nastavení a zkuste to znovu</string>
     <string name="attempting_to_download_data_txt">Pokus o stažení souboru data.txt z vašeho serveru</string>
     <string name="radar_type_is_invalid">Typ radaru \'%1$s\' je neplatný, zkontrolujte soubor nastavení a zkuste to znovu</string>
+    <string name="webcam_still_downloading">Obrázek webové kamery se stále stahuje</string>
 </resources>

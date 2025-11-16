@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">अपडेट अंतराल अवैध ऐ, सेटिंग्स गी अपडेट करो ते फिर रिट्राई करो</string>
     <string name="attempting_to_download_data_txt">अपने सर्वर थमां Data.txt डाउनलोड करने दी कोशश करना</string>
     <string name="radar_type_is_invalid">रडार प्रकार \'%1$s\' अवैध ऐ, अपनी सेटिंग्स फाइल दी जांच करो ते दुबारा कोशश करो</string>
+    <string name="webcam_still_downloading">वेबकैम छवि अजें बी डाउनलोड होआ करदी ऐ।</string>
 </resources>

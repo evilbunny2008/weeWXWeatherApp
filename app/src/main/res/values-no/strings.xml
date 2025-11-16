@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Oppdateringsintervallet er ugyldig, oppdater innstillingene og prøv på nytt</string>
     <string name="attempting_to_download_data_txt">Forsøker å laste ned data.txt fra serveren din</string>
     <string name="radar_type_is_invalid">Radartypen \'%1$s\' er ugyldig, sjekk innstillingsfilen og prøv igjen</string>
+    <string name="webcam_still_downloading">Webkamerabildet lastes fortsatt ned</string>
 </resources>

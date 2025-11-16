@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">ਅੱਪਡੇਟ ਅੰਤਰਾਲ ਅਵੈਧ ਹੈ, ਸੈਟਿੰਗਾਂ ਅੱਪਡੇਟ ਕਰੋ ਅਤੇ ਫਿਰ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
     <string name="attempting_to_download_data_txt">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ data.txt ਡਾਊਨਲੋਡ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ</string>
     <string name="radar_type_is_invalid">ਰਾਡਾਰ ਕਿਸਮ \'%1$s\' ਅਵੈਧ ਹੈ, ਆਪਣੀ ਸੈਟਿੰਗ ਫਾਈਲ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
+    <string name="webcam_still_downloading">ਵੈਬਕੈਮ ਚਿੱਤਰ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ।</string>
 </resources>

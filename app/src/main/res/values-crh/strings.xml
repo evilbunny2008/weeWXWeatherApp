@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Янъыланув аралыгъы догъру дегиль, янъыланув параметрлери ве сонъра янъыдан чалышмакъ</string>
     <string name="attempting_to_download_data_txt">Серверинъизден data.txt dest.txt</string>
     <string name="radar_type_is_invalid">\'%1$s\' радар типи догъру дегиль, параметрлер файлынъызны тешкеринъиз ве кене тырышынъыз</string>
+    <string name="webcam_still_downloading">Веб-камера ресими шимди де юклей</string>
 </resources>

@@ -80,4 +80,5 @@
     <string name="invalid_update_interval">Faʻafou le taimi o le Interval e le aoga, faʻafouga nofoaga ona toe taumafai lea</string>
     <string name="attempting_to_download_data_txt">Taumafai Download Data.txt mai lau server</string>
     <string name="radar_type_is_invalid">Radar ituaiga \'%1$s\' e le aoga, siaki lau faila faila ma toe taumafai</string>
+    <string name="webcam_still_downloading">O loʻo tuʻuina atu pea le ata o Webcam</string>
 </resources>
