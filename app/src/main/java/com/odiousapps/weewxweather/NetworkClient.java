@@ -16,21 +16,22 @@ import okhttp3.Response;
 class NetworkClient
 {
 	private static String URL;
-	private final static OkHttpClient INSTANCE = new OkHttpClient.Builder()
-			.connectTimeout(60, TimeUnit.SECONDS)
-			.writeTimeout(60, TimeUnit.SECONDS)
-			.readTimeout(60, TimeUnit.SECONDS)
-			.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS))
-			.build();
+
+	static OkHttpClient.Builder newInstance()
+	{
+		return new OkHttpClient.Builder()
+				.connectTimeout(60, TimeUnit.SECONDS)
+				.writeTimeout(60, TimeUnit.SECONDS)
+				.readTimeout(60, TimeUnit.SECONDS)
+				.connectionSpecs(Arrays.asList(ConnectionSpec.CLEARTEXT, ConnectionSpec.MODERN_TLS));
+	}
 
 	static OkHttpClient getInstance(String url)
 	{
 		if(url == null || url.isBlank())
-			return INSTANCE
-					.newBuilder()
-					.build();
+			return newInstance().build();
 
-		weeWXAppCommon.LogMessage("getInstance(), url: " + url, true);
+		weeWXAppCommon.LogMessage("getInstance(), url: " + url);
 
 		URL = url;
 
@@ -39,7 +40,7 @@ class NetworkClient
 		{
 			String[] UC = uri.getUserInfo().split(":");
 			String credentials = Credentials.basic(UC[0], UC[1]);
-			return INSTANCE.newBuilder()
+			return newInstance()
 					.addInterceptor(myInterceptor)
 					.authenticator((route, response) ->
 					{
@@ -49,17 +50,15 @@ class NetworkClient
 					}).build();
 		}
 
-		return INSTANCE.newBuilder().addInterceptor(myInterceptor).build();
+		return newInstance().addInterceptor(myInterceptor).build();
 	}
 
 	static OkHttpClient getStream(String url)
 	{
 		if(url == null || url.isBlank())
-			return INSTANCE
-					.newBuilder()
-					.build();
+			return newInstance().build();
 
-		weeWXAppCommon.LogMessage("getStream(), url: " + url, true);
+		weeWXAppCommon.LogMessage("getStream(), url: " + url);
 
 		URL = url;
 
@@ -68,7 +67,7 @@ class NetworkClient
 		{
 			String[] UC = uri.getUserInfo().split(":");
 			String credentials = Credentials.basic(UC[0], UC[1]);
-			return INSTANCE.newBuilder()
+			return newInstance()
 					.readTimeout(0, TimeUnit.MILLISECONDS)
 					.addInterceptor(myInterceptor)
 					.authenticator((route, response) ->
@@ -79,7 +78,7 @@ class NetworkClient
 					}).build();
 		}
 
-		return INSTANCE.newBuilder().build();
+		return newInstance().build();
 	}
 
 	private static int responseCount(Response response)
@@ -113,7 +112,7 @@ class NetworkClient
 		if(url == null || url.isBlank())
 			return null;
 
-		weeWXAppCommon.LogMessage("newRequest(), url: " + url, true);
+		weeWXAppCommon.LogMessage("newRequest(), url: " + url);
 
 		URL = url;
 
@@ -127,7 +126,7 @@ class NetworkClient
 		if(url == null || url.isBlank())
 			return null;
 
-		weeWXAppCommon.LogMessage("newRequest(), url: " + url, true);
+		weeWXAppCommon.LogMessage("newRequest(), url: " + url);
 
 		URL = url;
 

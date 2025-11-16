@@ -72,7 +72,7 @@ class weeWXAppCommon
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	final static boolean debug_on = false;
-	final static boolean debug_html = true;
+	final static boolean debug_html = false;
 	final static boolean web_debug_on = false;
 
 	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36";
@@ -2905,7 +2905,7 @@ class weeWXAppCommon
 		StackTraceElement caller = new Exception().getStackTrace()[1];
 		String callerClass  = caller.getClassName();
 		String callerMethod = caller.getMethodName();
-		LogMessage("SendForecastRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod, true);
+		LogMessage("SendForecastRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod);
 		NotificationManager.updateNotificationMessage(REFRESH_FORECAST_INTENT);
 	}
 
@@ -2914,7 +2914,7 @@ class weeWXAppCommon
 		StackTraceElement caller = new Exception().getStackTrace()[1];
 		String callerClass  = caller.getClassName();
 		String callerMethod = caller.getMethodName();
-		LogMessage("SendRadarRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod, true);
+		LogMessage("SendRadarRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod);
 		NotificationManager.updateNotificationMessage(REFRESH_RADAR_INTENT);
 	}
 
@@ -2923,7 +2923,7 @@ class weeWXAppCommon
 		StackTraceElement caller = new Exception().getStackTrace()[1];
 		String callerClass  = caller.getClassName();
 		String callerMethod = caller.getMethodName();
-		LogMessage("SendWeatherRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod, true);
+		LogMessage("SendWeatherRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod);
 		NotificationManager.updateNotificationMessage(REFRESH_WEATHER_INTENT);
 	}
 
@@ -2932,7 +2932,7 @@ class weeWXAppCommon
 		StackTraceElement caller = new Exception().getStackTrace()[1];
 		String callerClass  = caller.getClassName();
 		String callerMethod = caller.getMethodName();
-		LogMessage("SendWebcamRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod, true);
+		LogMessage("SendWebcamRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod);
 		NotificationManager.updateNotificationMessage(REFRESH_WEBCAM_INTENT);
 	}
 
@@ -3332,7 +3332,7 @@ class weeWXAppCommon
 
 	static String downloadString(String url) throws IOException
 	{
-		LogMessage("downloading text from " + url, true);
+		LogMessage("downloading text from " + url);
 		OkHttpClient client = NetworkClient.getInstance(url);
 		Request request = NetworkClient.newRequest(url);
 
@@ -3340,13 +3340,13 @@ class weeWXAppCommon
 		{
 			if(!response.isSuccessful())
 			{
-				LogMessage("response: " + response, true);
+				LogMessage("response: " + response);
 				throw new IOException("HTTP error " + response);
 			}
 
-			LogMessage("response: " + response, true);
+			LogMessage("response: " + response);
 			String tmpStr = response.body().string();
-			LogMessage("Returned string: " + tmpStr, true);
+			LogMessage("Returned string: " + tmpStr);
 			return tmpStr;
 		}
 	}
@@ -3493,7 +3493,7 @@ class weeWXAppCommon
 		if(forecast_url == null || forecast_url.isBlank())
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.forecast_url_not_set), fctype};
 
-		LogMessage("ForecastURL: " + forecast_url, true);
+		LogMessage("ForecastURL: " + forecast_url);
 
 		String forecastData = GetStringPref("forecastData", weeWXApp.forecastData_default);
 
@@ -3512,8 +3512,7 @@ class weeWXAppCommon
 		if(!force && rssCheckTime + weeWXApp.RSSCache_period_default > current_time && forecastData != null && !forecastData.isBlank())
 		{
 			LogMessage("Cache isn't more than " + weeWXApp.RSSCache_period_default + "s old (" +
-			           (current_time - rssCheckTime) +
-			           "s old)", true);
+			           (current_time - rssCheckTime) + "s old)");
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String date = sdf.format(rssCheckTime * 1_000L);
 			LogMessage("rsscheck: " + date);
@@ -3535,7 +3534,7 @@ class weeWXAppCommon
 			if(ftStart + 30 > current_time)
 			{
 				LogMessage("forecastTask is less than 30s old (" + (current_time - ftStart) +
-				           "s), we'll skip this attempt...", true);
+				           "s), we'll skip this attempt...");
 				return new String[]{"ok", forecastData, fctype};
 			}
 
@@ -3543,13 +3542,13 @@ class weeWXAppCommon
 		}
 
 		LogMessage("Was forced or no forecast data or cache is more than " + weeWXApp.RSSCache_period_default +
-		           "s old (" + (current_time - rssCheckTime) + "s)", true);
+		           "s old (" + (current_time - rssCheckTime) + "s)");
 
 		ftStart = current_time;
 
 		forecastTask = executor.submit(() ->
 		{
-			LogMessage("Forecast checking: " + forecast_url, true);
+			LogMessage("Forecast checking: " + forecast_url);
 
 			String tmpForecastData = null;
 
@@ -3559,9 +3558,9 @@ class weeWXAppCommon
 			} catch(Exception ignored) {}
 
 			if(tmpForecastData != null && !tmpForecastData.isBlank())
-				LogMessage("Successfully updated forecast data, will send a refresh intent...", true);
+				LogMessage("Successfully updated forecast data, will send a refresh intent...");
 			else
-				LogMessage("Failed to successfully update forecast data, won't send a refresh intent...", true);
+				LogMessage("Failed to successfully update forecast data, won't send a refresh intent...");
 
 			SendForecastRefreshIntent();
 			ftStart = 0;
@@ -3572,7 +3571,7 @@ class weeWXAppCommon
 
 	static String reallyGetForecast(String url) throws IOException
 	{
-		LogMessage("reallyGetForecast() forcecastURL: " + url, true);
+		LogMessage("reallyGetForecast() forcecastURL: " + url);
 
 		if(url == null || url.isBlank())
 			return null;
@@ -3683,7 +3682,7 @@ class weeWXAppCommon
 			return bm;
 		}
 
-		LogMessage("Reloading webcam...", true);
+		LogMessage("Reloading webcam...");
 
 		String webcamURL = GetStringPref("WEBCAM_URL", weeWXApp.WEBCAM_URL_default);
 		if(webcamURL == null || webcamURL.isBlank())
@@ -3700,14 +3699,13 @@ class weeWXAppCommon
 				return weeWXApp.textToBitmap(R.string.webcam_still_downloading);
 		}
 
-		LogMessage("Reload webcam...", true);
+		LogMessage("Reload webcam...");
 
 		if(webcamTask != null && !webcamTask.isDone())
 		{
 			if(wcStart + 30 > current_time)
 			{
-				LogMessage("webcamTask is less than 30s old (" + (current_time - wcStart) +
-				                          "s), we'll skip this attempt...", true);
+				LogMessage("webcamTask is less than 30s old (" + (current_time - wcStart) + "s), we'll skip this attempt...");
 				return bm;
 			}
 
@@ -3718,11 +3716,11 @@ class weeWXAppCommon
 
 		webcamTask = executor.submit(() ->
 		{
-			LogMessage("Webcam checking: " + webcamURL, true);
+			LogMessage("Webcam checking: " + webcamURL);
 
 			try
 			{
-				LogMessage("Starting to download webcam image from: " + webcamURL, true);
+				LogMessage("Starting to download webcam image from: " + webcamURL);
 				loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename);
 				SendWebcamRefreshIntent();
 			} catch(Exception ignored) {}
@@ -3966,13 +3964,13 @@ class weeWXAppCommon
 		Bitmap bm = null;
 		File file = getFile(filename);
 
-		LogMessage("Starting to download image from: " + url, true);
+		LogMessage("Starting to download image from: " + url);
 		if(url.toLowerCase(Locale.ENGLISH).endsWith(".mjpeg") ||
 		   url.toLowerCase(Locale.ENGLISH).endsWith(".mjpg"))
 		{
-			LogMessage("Trying to get a frame from a MJPEG stream and set bm to it...", true);
+			LogMessage("Trying to get a frame from a MJPEG stream and set bm to it...");
 			bm = grabMjpegFrame(url);
-			LogMessage("Saving frame to storage...", true);
+			LogMessage("Saving frame to storage...");
 			try(FileOutputStream out = new FileOutputStream(file))
 			{
 				LogMessage("Attempting to save to " + file.getAbsoluteFile());
@@ -3983,14 +3981,14 @@ class weeWXAppCommon
 				throw new IOException(e);
 			}
 
-			LogMessage("Frame saved successfully to storage...", true);
+			LogMessage("Frame saved successfully to storage...");
 		} else {
-			LogMessage("Trying to download a JPEG file and set bm to it...", true);
+			LogMessage("Trying to download a JPEG file and set bm to it...");
 			if(downloadToFile(file, url))
 				bm = loadImage(file);
 		}
 
-		LogMessage("Finished downloading from webURL: " + url, true);
+		LogMessage("Finished downloading from webURL: " + url);
 		return bm;
 	}
 
@@ -4029,7 +4027,7 @@ class weeWXAppCommon
 
 		if(tmpfile.exists() && !tmpfile.delete())
 		{
-			LogMessage("tmpfile " + tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...", true);
+			LogMessage("tmpfile " + tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...");
 			throw new IOException(tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...");
 		}
 
@@ -4041,7 +4039,7 @@ class weeWXAppCommon
 			throw new IOException("Failed to rename tmpfile " + tmpfile.getAbsolutePath() + " to desination file " +
 								  file.getAbsolutePath() + ", bailing out...");
 
-		LogMessage("Renamed " + tmpfile.getAbsolutePath() + " to " + file.getAbsoluteFile() + "...", true);
+		LogMessage("Renamed " + tmpfile.getAbsolutePath() + " to " + file.getAbsoluteFile() + "...");
 
 		return true;
 	}

@@ -145,12 +145,12 @@ public class UpdateCheck extends BroadcastReceiver
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
 		String string_time = sdf.format(now);
 
-		weeWXAppCommon.LogMessage("UpdateCheck.java now: " + string_time, true);
+		weeWXAppCommon.LogMessage("UpdateCheck.java now: " + string_time);
 
 		string_time = sdf.format(start);
-		weeWXAppCommon.LogMessage("UpdateCheck.java start: " + string_time, true);
-		weeWXAppCommon.LogMessage("UpdateCheck.java period: " + Math.round(period / 1_000D) + "s", true);
-		weeWXAppCommon.LogMessage("UpdateCheck.java wait: " + Math.round(wait / 1_000D) + "s", true);
+		weeWXAppCommon.LogMessage("UpdateCheck.java start: " + string_time);
+		weeWXAppCommon.LogMessage("UpdateCheck.java period: " + Math.round(period / 1_000D) + "s");
+		weeWXAppCommon.LogMessage("UpdateCheck.java wait: " + Math.round(wait / 1_000D) + "s");
 
 		AlarmManager alarm = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
 		alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, start, period, getPendingIntent(context));
@@ -191,7 +191,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 	static void runInTheBackground(boolean forced, boolean onReceivedUpdate, boolean onAppStart)
 	{
-		weeWXAppCommon.LogMessage("UpdateCheck.java runInTheBackground() running the background updates...", true);
+		weeWXAppCommon.LogMessage("UpdateCheck.java runInTheBackground() running the background updates...");
 
 		Context context = weeWXApp.getInstance();
 		if(context == null)
@@ -256,10 +256,10 @@ public class UpdateCheck extends BroadcastReceiver
 					if(delayms >= 540_000L || tmp == null || tmp.isBlank())
 					{
 						weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() can't delay for more " +
-						                          "than 10 minutes or no current data, skipping sleep...", true);
+						                          "than 10 minutes or no current data, skipping sleep...");
 					} else {
 						weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() Executor started... Next Start: " +
-						                          string_time + ", delay: " + Math.round(delayms / 1_000D) + "s", true);
+						                          string_time + ", delay: " + Math.round(delayms / 1_000D) + "s");
 						try
 						{
 							Thread.sleep(delayms);
@@ -291,12 +291,15 @@ public class UpdateCheck extends BroadcastReceiver
 
 					long lastDownloadTime = weeWXAppCommon.GetLongPref("LastDownloadTime", weeWXApp.LastDownloadTime_default);
 
-					if(delayms < 5_000L || delayms > 180_000L || lastDownloadTime < laststart)
+					weeWXAppCommon.LogMessage("delayms: " + delayms + "ms");
+					weeWXAppCommon.LogMessage("lastDownloadTime: " + lastDownloadTime + "ms");
+					weeWXAppCommon.LogMessage("laststart: " + laststart + "ms");
+
+					if(delayms < 5_000L || delayms > 180_000L || (lastDownloadTime * 1_000L) < laststart)
 						delayms = 5_000L;
 
 					weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() Executor started... onAppStart adding " +
-					                          Math.round(delayms / 1_000D) + "s sleep so fragments can start listening for " +
-					                          "updates...", true);
+					                          Math.round(delayms / 1_000D) + "s sleep so fragments can start listening for updates...");
 					try
 					{
 						Thread.sleep(delayms);
@@ -306,7 +309,7 @@ public class UpdateCheck extends BroadcastReceiver
 				}
 
 				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getForecast(" +
-				                          (forced && !onReceivedUpdate) + ");...", true);
+				                          (forced && !onReceivedUpdate) + ")...");
 				weeWXAppCommon.getForecast(forced && !onReceivedUpdate, onAppStart);
 
 				String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
@@ -316,17 +319,15 @@ public class UpdateCheck extends BroadcastReceiver
 					if(radarURL != null && !radarURL.isBlank())
 					{
 						weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getRadarImage(" +
-						                          (forced && !onReceivedUpdate) + ");...", true);
+						                          (forced && !onReceivedUpdate) + ")...");
 						weeWXAppCommon.getRadarImage(forced && !onReceivedUpdate, onAppStart);
 					}
 				}
 
-				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getWeather(" + forced +
-				                          ");...", true);
+				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getWeather(" + forced + ")...");
 				weeWXAppCommon.getWeather(forced, onAppStart);
 
-				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getWebcam(" + forced +
-				                          ");...", true);
+				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getWebcam(" + forced + ")...");
 				weeWXAppCommon.getWebcamImage(forced, onAppStart);
 			} catch(Exception ignored) {}
 
@@ -334,7 +335,7 @@ public class UpdateCheck extends BroadcastReceiver
 				weeWXApp.hasBootedFully = true;
 
 			weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() finished running the background updates, " +
-			                          "about to release the wake lock...", true);
+			                          "about to release the wake lock...");
 
 			wl.release();
 		});

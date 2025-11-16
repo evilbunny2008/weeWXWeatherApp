@@ -96,21 +96,19 @@ public class Weather extends Fragment implements View.OnClickListener
 		weeWXAppCommon.LogMessage("Weather.onViewCreated()-- adding notification manager...");
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
-		boolean dynamicSizing = weeWXApp.getHeight() > weeWXApp.getWidth() && weeWXApp.getWidth() < 1100;
-
 		if(current == null)
-			current = loadWebview(null, view, R.id.current, true, dynamicSizing);
+			current = loadWebview(null, view, R.id.current, true);
 		else
-			loadWebview(current, view, R.id.current, true, dynamicSizing);
+			loadWebview(current, view, R.id.current, true);
 
 		if(forecast == null)
-			forecast = loadWebview(null, view, R.id.forecast, false, false);
+			forecast = loadWebview(null, view, R.id.forecast, false);
 		else
-			loadWebview(forecast, view, R.id.forecast, false, false);
+			loadWebview(forecast, view, R.id.forecast, false);
 
 		if(weeWXAppCommon.isPrefSet("radarforecast"))
 		{
-			weeWXAppCommon.LogMessage("Weather.onViewCreated() doing full load...", true);
+			weeWXAppCommon.LogMessage("Weather.onViewCreated() doing full load...");
 			if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen)
 				drawRadar();
 			else
@@ -153,9 +151,19 @@ public class Weather extends Fragment implements View.OnClickListener
 		}
 	}
 
-	private WebView loadWebview(WebView webView, View view, int viewid,
-	                            boolean doSwipe, boolean dynamicSizing)
+	private WebView loadWebview(WebView webView, View view, int viewid, boolean doSwipe)
 	{
+		StackTraceElement caller = new Exception().getStackTrace()[1];
+		String callerClass  = caller.getClassName();
+		String callerMethod = caller.getMethodName();
+		weeWXAppCommon.LogMessage("Weather.java loadWebview() " + callerClass + "." + callerMethod);
+
+		boolean dynamicSizing = viewid == R.id.current && weeWXApp.getWidth() < 1100;
+
+		//weeWXAppCommon.LogMessage("Weather.java onViewCreated() height: " + weeWXApp.getHeight());
+		//weeWXAppCommon.LogMessage("Weather.java onViewCreated() width: " + weeWXApp.getWidth());
+		//weeWXAppCommon.LogMessage("Weather.java onViewCreated() density: " + weeWXApp.getDensity());
+
 		boolean wasNull = webView == null;
 
 		if(wasNull)
@@ -192,6 +200,8 @@ public class Weather extends Fragment implements View.OnClickListener
 						swipeLayout.setLayoutParams(params);
 						weeWXAppCommon.LogMessage("New Height: " + contentHeightPx);
 					}, 100); // 100ms delay lets the page finish rendering
+				} else if(viewid == R.id.current) {
+					weeWXAppCommon.LogMessage("dynamicSizing is false...");
 				}
 
 				stopRefreshing();
@@ -261,7 +271,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	void drawForecast()
 	{
-		weeWXAppCommon.LogMessage("drawForecast()", true);
+		weeWXAppCommon.LogMessage("drawForecast()");
 
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
 			return;
@@ -584,7 +594,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				CustomDebug.writeDebug(outFile, str);
 				String theOutFile = outFile.getAbsolutePath();
 
-				weeWXAppCommon.LogMessage("Wrote debug html to " + theOutFile, true);
+				weeWXAppCommon.LogMessage("Wrote debug html to " + theOutFile);
 
 				if(isAdded())
 				{
@@ -592,7 +602,7 @@ public class Weather extends Fragment implements View.OnClickListener
 							Toast.makeText(requireContext(), "Wrote debug html to " + theOutFile, Toast.LENGTH_LONG).show());
 				}
 			} catch(Exception e) {
-				weeWXAppCommon.LogMessage("Attempted to write to " + filename + " but failed with the following error: " + e, true);
+				weeWXAppCommon.LogMessage("Attempted to write to " + filename + " but failed with the following error: " + e);
 
 				if(isAdded())
 				{
@@ -1013,7 +1023,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private void reloadForecast()
 	{
-		weeWXAppCommon.LogMessage("reloadForecast()", true);
+		weeWXAppCommon.LogMessage("reloadForecast()");
 
 		updateFLL(View.GONE);
 
@@ -1030,24 +1040,24 @@ public class Weather extends Fragment implements View.OnClickListener
 		String forecastData = ret[1];
 		String fctype = ret[2];
 
-		weeWXAppCommon.LogMessage("fctype: " + fctype, true);
-		weeWXAppCommon.LogMessage("forecastData: " + forecastData, true);
+		weeWXAppCommon.LogMessage("fctype: " + fctype);
+		weeWXAppCommon.LogMessage("forecastData: " + forecastData);
 
 		if(ret[0].equals("error"))
 		{
 			if(forecastData != null && !forecastData.isBlank())
 			{
-				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData, true);
+				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData);
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest + forecastData + weeWXApp.html_footer);
 			} else {
-				weeWXAppCommon.LogMessage("getForecast returned an unknown error...", true);
+				weeWXAppCommon.LogMessage("getForecast returned an unknown error...");
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
 				                   weeWXApp.getAndroidString(R.string.unknown_error_occurred) +
 				                   weeWXApp.html_footer);
 			}
 		}
 
-		weeWXAppCommon.LogMessage("getForecast returned some content...", true);
+		weeWXAppCommon.LogMessage("getForecast returned some content...");
 		loadWebView(fctype, forecastData);
 	}
 
@@ -1114,7 +1124,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		weeWXAppCommon.LogMessage("Weather.java notificationObserver: " + str, true);
+		weeWXAppCommon.LogMessage("Weather.java notificationObserver: " + str);
 
 		if(str.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
 			drawForecast();

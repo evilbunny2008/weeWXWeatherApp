@@ -32,7 +32,7 @@ class CustomDebug
 		{
 			if(file.exists() && !file.delete())
 			{
-				weeWXAppCommon.LogMessage("Failed to remove existing file " + file.getAbsoluteFile(), true);
+				weeWXAppCommon.LogMessage("Failed to remove existing file " + file.getAbsoluteFile());
 				throw new IOException("Failed to remove existing file " + file.getAbsoluteFile());
 			}
 
