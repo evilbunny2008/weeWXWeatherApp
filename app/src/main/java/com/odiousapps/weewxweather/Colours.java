@@ -21,9 +21,9 @@ class Colours
 	public int DarkGray = 0xFF333333;
 	public int LightGray = 0xFFE0E0E0;
 
-	public Colours(Context context)
+	public Colours()
 	{
-		this.context = context;
+		context = weeWXApp.getInstance();
 	}
 
 	void initOrReinit()

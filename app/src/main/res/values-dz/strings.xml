@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">ཁྱོད་རའི་སར་བར་ལས་ ཕབ་ལེན་འབད་མི་ གནད་སྡུད་.txt འབད་རྩོལ་བསྐྱེད་དོ།</string>
     <string name="radar_type_is_invalid">རེ་ཌར་དབྱེ་བ་ \'%1$s\' ནུས་མེད་ཨིན་ ཁྱོད་རའི་སྒྲིག་སྟངས་ཡིག་སྣོད་ཞིབ་དཔྱད་འབད་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད།</string>
     <string name="webcam_still_downloading">ཝེབ་ཀེམ་གྱི་པར་རིས་ད་ལྟོ་ཡང་ཕབ་ལེན་འབད་དོ།</string>
+    <string name="webcam_url_url_not_set">ཝེབ་ཀེམ་ཡུ་ཨར་ཨེལ་འདི་གཞི་སྒྲིག་འབད་མེདཔ་ཨིན་ན་ ཡང་ན་ སྟོངམ་ཨིན།</string>
+    <string name="update_set_to_manual_but_no_content_cached">ལག་དེབ་དུས་མཐུན་ཚུ་ལུ་གཞི་སྒྲིག་འབད་ དེ་འབདཝ་ད་ ནང་དོན་ཚུ་ད་ལྟོ་ཡང་ འདྲ་མཛོད་མ་འབད་བས།</string>
+    <string name="still_downloading_forecast_data">ད་དུང་སྔོན་དཔག་གི་གནས་སྡུད་ཕབ་ལེན་འབད་དོ།</string>
 </resources>

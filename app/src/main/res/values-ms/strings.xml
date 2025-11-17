@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Cuba memuat turun data.txt dari pelayan anda</string>
     <string name="radar_type_is_invalid">Jenis radar \'%1$s\' tidak sah, periksa fail tetapan anda dan cuba lagi</string>
     <string name="webcam_still_downloading">Imej webcam masih dimuat turun</string>
+    <string name="webcam_url_url_not_set">URL webcam tidak ditetapkan atau kosong</string>
+    <string name="update_set_to_manual_but_no_content_cached">Tetapkan kepada kemas kini manual, tetapi belum ada kandungan yang cache</string>
+    <string name="still_downloading_forecast_data">Masih memuat turun data ramalan</string>
 </resources>

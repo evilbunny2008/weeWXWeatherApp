@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Prōbowanie danych pobiyranio.txt ze swojigo serwera</string>
     <string name="radar_type_is_invalid">Typ typ Radar \'%1$s\' je nieważny, sprawdź plik ustawiyń i sprōbuj ôd nowa</string>
     <string name="webcam_still_downloading">Ôbraz internetowy durch sie ściyro</string>
+    <string name="webcam_url_url_not_set">URL webcam niy ma ustawiōny abo je prōzny</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ustawij sie z manualnymi aktualizacyjami, ale niy ma jeszcze niy przechowywanego</string>
+    <string name="still_downloading_forecast_data">Durch pobiyranie danych prognozujōncych</string>
 </resources>

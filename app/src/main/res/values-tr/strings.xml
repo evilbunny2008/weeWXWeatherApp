@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Sunucunuzdan data.txt indirilmeye çalışılıyor</string>
     <string name="radar_type_is_invalid">\'%1$s\' radar türü geçersiz, ayarlar dosyanızı kontrol edip tekrar deneyin</string>
     <string name="webcam_still_downloading">Web kamerası görüntüsü hâlâ indiriliyor</string>
+    <string name="webcam_url_url_not_set">Web kamerası URL\'si ayarlanmamış veya boş</string>
+    <string name="update_set_to_manual_but_no_content_cached">Manuel güncellemelere ayarlandı ancak henüz önbelleğe alınmış içerik yok</string>
+    <string name="still_downloading_forecast_data">Tahmin verileri hâlâ indiriliyor</string>
 </resources>

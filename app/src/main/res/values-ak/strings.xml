@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">a worebɔ mmɔden sɛ wobɛtwe data.txt afi wo server so</string>
     <string name="radar_type_is_invalid">Radar type \'%1$s\' nyɛ adwuma, hwɛ wo settings fael no na sɔ hwɛ bio</string>
     <string name="webcam_still_downloading">Webcam mfonini no da so ara retwe</string>
+    <string name="webcam_url_url_not_set">Webcam URL no nyɛ nea wɔahyehyɛ anaasɛ ɛnyɛ hwee</string>
+    <string name="update_set_to_manual_but_no_content_cached">Set to manual updates, nanso content cache biara nni hɔ de besi nnɛ</string>
+    <string name="still_downloading_forecast_data">Da so ara retwe nkɔmhyɛ data</string>
 </resources>

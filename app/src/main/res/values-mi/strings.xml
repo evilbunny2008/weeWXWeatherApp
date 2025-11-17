@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Te ngana i te tango raraunga.txt mai i to kaituku</string>
     <string name="radar_type_is_invalid">Ko te momo radar \'%1$s\'he muhu, tirohia to kōnae tautuhinga ka ngana ano</string>
     <string name="webcam_still_downloading">Ko te whakaahua Webcam kei te tango tonu</string>
+    <string name="webcam_url_url_not_set">Kaore i te tautuhia te URL WebCam ranei</string>
+    <string name="update_set_to_manual_but_no_content_cached">Whakatakotoria ki nga whakahoutanga ā-ringa, engari kaore ano kia whakakikihia te ihirangi</string>
+    <string name="still_downloading_forecast_data">Ka tango tonu i nga raraunga matapae</string>
 </resources>

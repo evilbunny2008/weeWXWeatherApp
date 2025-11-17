@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Igbiyanju lati download data.txt lati ọdọ olupin rẹ</string>
     <string name="radar_type_is_invalid">Iru Reda \'%1$s\' ko wulo, ṣayẹwo faili eto rẹ ki o tun gbiyanju lẹẹkan si</string>
     <string name="webcam_still_downloading">Aworan Webcam aworan tun nṣe igbasilẹ</string>
+    <string name="webcam_url_url_not_set">A ko ṣeto Well URL ko ni ṣeto tabi jẹ ofifo</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ṣeto si awọn imudojuiwọn Afowoyi, ṣugbọn ko si akoonu ti o kọ sibẹsibẹ</string>
+    <string name="still_downloading_forecast_data">Tun gbigba data asọtẹlẹ</string>
 </resources>

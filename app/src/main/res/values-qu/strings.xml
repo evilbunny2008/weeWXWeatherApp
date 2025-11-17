@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Servidorniykimanta data.txt uraykachiyta munachkanki</string>
     <string name="radar_type_is_invalid">Radar Tipo \'%1$s\' mana allinchu, churaykuna willañiqiyki qhaway chaymanta wakmanta ruway</string>
     <string name="webcam_still_downloading">Webcam siq\'iqa kunankamapas uraykachichkanraqmi</string>
+    <string name="webcam_url_url_not_set">Webcam URL mana churasqachu utaq ch\'usaqchu kachkan</string>
+    <string name="update_set_to_manual_but_no_content_cached">Manual actualizaciones kaqpi churasqa, ichaqa mana contenido caché kaqwanraqchu</string>
+    <string name="still_downloading_forecast_data">Kunankamapas willakuy willakuykunata uraykachispa</string>
 </resources>

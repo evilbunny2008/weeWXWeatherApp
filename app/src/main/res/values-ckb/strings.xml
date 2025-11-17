@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">هەوڵدان بۆ داگرتنی Data.txt لە سێرڤەرەکەتەوە</string>
     <string name="radar_type_is_invalid">جۆری ڕادار \'%1$sS\' نادروستە، فایلە ڕێکخستنەکانت بپشکنە و دووبارە هەوڵبدەرەوە</string>
     <string name="webcam_still_downloading">وێنەی وێبکام هێشتا دابەزاندن</string>
+    <string name="webcam_url_url_not_set">وێبکام URL دانەنراوە یان سپییە</string>
+    <string name="update_set_to_manual_but_no_content_cached">لەسەر نوێکارییە دەستییەکان ڕێکبخە، بەڵام هێشتا هیچ ناوەڕۆکێک لە کاشدا نەگیراوە</string>
+    <string name="still_downloading_forecast_data">هێشتا داتای پێشبینیکردن دابەزێنە</string>
 </resources>

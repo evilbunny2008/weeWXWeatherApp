@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Mempercobaan data.txs sian server muna</string>
     <string name="radar_type_is_invalid">Radar jenis \'%1$s\' ndang sah, pareso ma file pengaturanmuna jala coba ma muse</string>
     <string name="webcam_still_downloading">Gambar Webm tong do diunduh</string>
+    <string name="webcam_url_url_not_set">URL Webm ndang diatur manang na kosong</string>
+    <string name="update_set_to_manual_but_no_content_cached">Atur ma pembaruan tudu</string>
+    <string name="still_downloading_forecast_data">Tong mangunduh data ramalan</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Klask pellgargañ roadennoù.txt diwar ho servijer</string>
     <string name="radar_type_is_invalid">Didalvoudek eo ar seurt radar \'%1$s\', gwiriit ho restr arventennoù ha klaskit en-dro</string>
     <string name="webcam_still_downloading">Pellgargañ a ra skeudenn Webcam c\'hoazh</string>
+    <string name="webcam_url_url_not_set">N\'eo ket lakaet URL Webcam pe n\'eo ket goullo</string>
+    <string name="update_set_to_manual_but_no_content_cached">Lakaat war hizivadennoù dre zorn, met n\'eus endalc\'had ebet cachet c\'hoazh</string>
+    <string name="still_downloading_forecast_data">Pellgargañ roadennoù rakwelet c\'hoazh</string>
 </resources>

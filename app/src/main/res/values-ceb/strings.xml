@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Pagsulay sa pag-download sa datos.txt gikan sa imong server</string>
     <string name="radar_type_is_invalid">Ang radar type nga \'%1$s\' dili husto, susihon ang imong file sa setting ug pagsulay pag-usab</string>
     <string name="webcam_still_downloading">Ang imahe sa webcam nag-download gihapon</string>
+    <string name="webcam_url_url_not_set">Ang URL sa Webcam wala gitakda o blangko</string>
+    <string name="update_set_to_manual_but_no_content_cached">Nga gitakda sa manual nga pag-update, apan wala\'y sulud nga sulud</string>
+    <string name="still_downloading_forecast_data">Pag-download gihapon sa datos sa forecast</string>
 </resources>

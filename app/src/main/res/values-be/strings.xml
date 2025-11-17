@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Спроба спампаваць data.txt з вашага сервера</string>
     <string name="radar_type_is_invalid">Тып радара \'%1$s\' несапраўдны, праверце файл налад і паўтарыце спробу</string>
     <string name="webcam_still_downloading">Выява з вэб-камеры ўсё яшчэ спампоўваецца</string>
+    <string name="webcam_url_url_not_set">URL вэб-камеры не зададзены або пусты</string>
+    <string name="update_set_to_manual_but_no_content_cached">Усталяваны ручныя абнаўленні, але змесціва пакуль не захоўваецца ў кэшы</string>
+    <string name="still_downloading_forecast_data">Ідзе спампоўка прагнозных даных</string>
 </resources>

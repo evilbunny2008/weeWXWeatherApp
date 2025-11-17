@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">توهان جي سرور مان data.txt ڊائون لوڊ ڪرڻ جي ڪوشش</string>
     <string name="radar_type_is_invalid">رادر جو قسم \'%1$s\' غلط آهي، پنهنجي سيٽنگ فائل چيڪ ڪريو ۽ ٻيهر ڪوشش ڪريو</string>
     <string name="webcam_still_downloading">ويب ڪيم تصوير اڃا ڊائون لوڊ ٿي رهي آهي</string>
+    <string name="webcam_url_url_not_set">ويب ڪيم URL سيٽ نه آهي يا خالي آهي</string>
+    <string name="update_set_to_manual_but_no_content_cached">مينوئل اپڊيٽس تي سيٽ ڪريو، پر اڃا تائين ڪو به مواد محفوظ نه ڪيو ويو آهي</string>
+    <string name="still_downloading_forecast_data">اڃا تائين اڳڪٿي ڊيٽا ڊائون لوڊ ڪري رهيو آهي</string>
 </resources>

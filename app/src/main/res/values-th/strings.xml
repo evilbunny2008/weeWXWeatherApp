@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">กำลังพยายามดาวน์โหลด data.txt จากเซิร์ฟเวอร์ของคุณ</string>
     <string name="radar_type_is_invalid">ประเภทเรดาร์ \'%1$s\' ไม่ถูกต้อง โปรดตรวจสอบไฟล์การตั้งค่าของคุณแล้วลองอีกครั้ง</string>
     <string name="webcam_still_downloading">รูปภาพเว็บแคมยังคงดาวน์โหลดอยู่</string>
+    <string name="webcam_url_url_not_set">ไม่ได้ตั้งค่า URL ของเว็บแคมหรือว่างเปล่า</string>
+    <string name="update_set_to_manual_but_no_content_cached">ตั้งค่าเป็นการอัปเดตด้วยตนเอง แต่ยังไม่มีการแคชเนื้อหา</string>
+    <string name="still_downloading_forecast_data">ยังคงดาวน์โหลดข้อมูลการคาดการณ์</string>
 </resources>

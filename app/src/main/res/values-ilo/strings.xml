@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Panagpadas ti Download Data.txt manipud iti servermo</string>
     <string name="radar_type_is_invalid">Ti kita ti radar a \'%1$sS\' ket saan nga imbalido, kitaen ti file ti Settings-mo ken padasem manen</string>
     <string name="webcam_still_downloading">Ti ladawan ti webcam ket ag-download pay laeng</string>
+    <string name="webcam_url_url_not_set">Ti webcam URL ket saan a naikabil wenno blangko</string>
+    <string name="update_set_to_manual_but_no_content_cached">Naisaad kadagiti manual nga update, ngem awan pay ti linaonna a nai-cache</string>
+    <string name="still_downloading_forecast_data">Ag-download pay laeng iti datos ti panagpakpakauna</string>
 </resources>

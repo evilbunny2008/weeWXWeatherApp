@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">\'t Probere vaan downloadgegeves.txt vaan uw server</string>
     <string name="radar_type_is_invalid">Radar-soort \'%1$s\' is ongeldig, controleer dien instellinge bestand en probeer \'t nog \'ns</string>
     <string name="webcam_still_downloading">Webcam-beeld downloadt nog steeds</string>
+    <string name="webcam_url_url_not_set">Webcam URL is neet ingesjtèld of is leeg</string>
+    <string name="update_set_to_manual_but_no_content_cached">Stel veur manuele updates in, maar nog gein content in cache</string>
+    <string name="still_downloading_forecast_data">Nog steeds downloade vaan veurspelde gegeves</string>
 </resources>

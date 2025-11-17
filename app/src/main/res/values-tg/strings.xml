@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Кӯшиши Download Download.txt аз сервери шумо</string>
     <string name="radar_type_is_invalid">Навъи радар \'%1$s\' нодуруст аст, файли танзимоти худро санҷед ва бори дигар кӯшиш кунед</string>
     <string name="webcam_still_downloading">Веб-камера ҳоло ҳам зеркашӣ шудааст</string>
+    <string name="webcam_url_url_not_set">Urlam URL насб карда нашудааст ё холӣ аст</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ба навигариҳои дастӣ таъин кунед, аммо мундариҷа ба таври қатъӣ</string>
+    <string name="still_downloading_forecast_data">Ҳанӯз зеркашии маълумоти пешгӯӣ</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Серверинъизден data.txt dest.txt</string>
     <string name="radar_type_is_invalid">\'%1$s\' радар типи догъру дегиль, параметрлер файлынъызны тешкеринъиз ве кене тырышынъыз</string>
     <string name="webcam_still_downloading">Веб-камера ресими шимди де юклей</string>
+    <string name="webcam_url_url_not_set">Веб-камералы URL къоюлмай я да бош</string>
+    <string name="update_set_to_manual_but_no_content_cached">Къолнен япылгъан янъыланмаларгъа къоюнъ, амма даа контентни кешкен</string>
+    <string name="still_downloading_forecast_data">Даа прогноз малюматларыны юклемек</string>
 </resources>

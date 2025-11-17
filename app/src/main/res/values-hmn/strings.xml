@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Sim rub tawm data.txt los ntawm koj lub server</string>
     <string name="radar_type_is_invalid">Radar Hom \'%1$s\' tsis raug, xyuas koj cov ntaub ntawv chaw thiab sim dua</string>
     <string name="webcam_still_downloading">Webcam duab tseem rub tawm</string>
+    <string name="webcam_url_url_not_set">Webcam URL tsis yog teeb lossis yog seem</string>
+    <string name="update_set_to_manual_but_no_content_cached">Teem rau phau ntawv hloov tshiab, tab sis tsis muaj cov ntsiab lus cached tsis tau</string>
+    <string name="still_downloading_forecast_data">Tseem rub tawm cov ntaub ntawv kwv yees</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Pokus o stažení souboru data.txt z vašeho serveru</string>
     <string name="radar_type_is_invalid">Typ radaru \'%1$s\' je neplatný, zkontrolujte soubor nastavení a zkuste to znovu</string>
     <string name="webcam_still_downloading">Obrázek webové kamery se stále stahuje</string>
+    <string name="webcam_url_url_not_set">Adresa URL webové kamery není nastavena nebo je prázdná</string>
+    <string name="update_set_to_manual_but_no_content_cached">Nastaveno na ruční aktualizace, ale obsah zatím není uložen do mezipaměti</string>
+    <string name="still_downloading_forecast_data">Stále se stahují data prognózy</string>
 </resources>

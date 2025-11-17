@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Go leka go laisolola tshedimosetso.txt go tswa mo sefareng ya gago</string>
     <string name="radar_type_is_invalid">Mofuta wa radara \'%1$s\' ga o dire, tlhola faele ya gago ya dipeakanyo mme o leke gape</string>
     <string name="webcam_still_downloading">Webcam setshwantsho se ntse se jarolla</string>
+    <string name="webcam_url_url_not_set">URL ya Webcam ga e a bewa kgotsa ga e na sepe</string>
+    <string name="update_set_to_manual_but_no_content_cached">Seta dintšhwafatso tsa diatla, mme ga go na diteng tse di bolokilweng jaanong</string>
+    <string name="still_downloading_forecast_data">Go sa ntse go laisolola tshedimosetso ya ponelopele</string>
 </resources>

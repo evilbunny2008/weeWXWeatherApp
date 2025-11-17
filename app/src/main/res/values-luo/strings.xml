@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Kuong\'o data mar donjo.txt kowuok kuom sava mari</string>
     <string name="radar_type_is_invalid">Radar mar kit \'%1$s\'s ok owinjore, ng\'i fail mar gik ma iketo kendo tem kendo</string>
     <string name="webcam_still_downloading">Picha mar mbui pod oting\'o</string>
+    <string name="webcam_url_url_not_set">URL mar websait ok oket kata onge gimoro</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ket weche ma manyien mag lwedo, kata kamano pok inyalo ng\'eyo</string>
+    <string name="still_downloading_forecast_data">Podi keto weche ma ji ng\'ado e wi gik ma ng\'ato nyalo timo</string>
 </resources>

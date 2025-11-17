@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Һеҙҙең серверҙан скачать cavic</string>
     <string name="radar_type_is_invalid">Радар тип \'%1$s\' дөрөҫ түгел, һеҙҙең параметрҙар файлын тикшерергә һәм яңынан һынап ҡарағыҙ</string>
     <string name="webcam_still_downloading">Веб-камера һүрәте әле лә скачать</string>
+    <string name="webcam_url_url_not_set">Веб-камера URL ҡуйылмаған йәки буш тора</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ҡул менән яңыртыу өсөн ҡуйылған, әммә бер ниндәй ҙә контент кэш</string>
+    <string name="still_downloading_forecast_data">Әле лә скачать прогноз мәғлүмәттәре</string>
 </resources>

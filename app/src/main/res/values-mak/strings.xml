@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Nampa nasuromi ke\'nanga a\'lampa mange ri servernu</string>
     <string name="radar_type_is_invalid">Radar tipe \'%1$s\' tena nasala, paressai file settingnu nampa nucoba pole</string>
     <string name="webcam_still_downloading">Anjo gambara\'na Webcam tuli niaki ri ampi\'na</string>
+    <string name="webcam_url_url_not_set">Webcam URL tena na\'jari yareka kosong</string>
+    <string name="update_set_to_manual_but_no_content_cached">Nampa nasuromi ke\'nanga a\'lampa mange ri update manual, mingka tena kontenna nicak</string>
+    <string name="still_downloading_forecast_data">Mingka ramalanna a\'download</string>
 </resources>

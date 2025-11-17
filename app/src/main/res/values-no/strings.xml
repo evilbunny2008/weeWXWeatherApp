@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Forsøker å laste ned data.txt fra serveren din</string>
     <string name="radar_type_is_invalid">Radartypen \'%1$s\' er ugyldig, sjekk innstillingsfilen og prøv igjen</string>
     <string name="webcam_still_downloading">Webkamerabildet lastes fortsatt ned</string>
+    <string name="webcam_url_url_not_set">Webkamera-URL er ikke angitt eller er tom</string>
+    <string name="update_set_to_manual_but_no_content_cached">Sett til manuelle oppdateringer, men intet innhold er bufret ennå</string>
+    <string name="still_downloading_forecast_data">Laster fortsatt ned prognosedata</string>
 </resources>

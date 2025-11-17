@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Ich versuche, data.txt von Ihrem Server herunterzuladen</string>
     <string name="radar_type_is_invalid">Der Radartyp \'%1$s\' ist ungültig. Überprüfen Sie Ihre Einstellungsdatei und versuchen Sie es erneut</string>
     <string name="webcam_still_downloading">Das Webcam-Bild wird noch heruntergeladen</string>
+    <string name="webcam_url_url_not_set">Die Webcam-URL ist nicht festgelegt oder leer</string>
+    <string name="update_set_to_manual_but_no_content_cached">Auf manuelle Updates eingestellt, aber noch kein Inhalt zwischengespeichert</string>
+    <string name="still_downloading_forecast_data">Es werden immer noch Prognosedaten heruntergeladen</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Ag iarraidh data.txt a íoslódáil ó do fhreastalaí</string>
     <string name="radar_type_is_invalid">Tá cineál radar \'%1$s\' neamhbhailí, seiceáil do chomhad socruithe agus bain triail eile as</string>
     <string name="webcam_still_downloading">Tá íomhá ceamara gréasáin á íoslódáil go fóill</string>
+    <string name="webcam_url_url_not_set">Níl URL ceamara gréasáin socraithe nó bán</string>
+    <string name="update_set_to_manual_but_no_content_cached">Socraigh go nuashonruithe láimhe, ach níl aon ábhar i dtaisce fós</string>
+    <string name="still_downloading_forecast_data">Tá sonraí réamhaisnéise á n-íoslódáil go fóill</string>
 </resources>

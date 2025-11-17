@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Jippruvaw tniżżel data.txt mis-server tiegħek</string>
     <string name="radar_type_is_invalid">It-tip tar-radar \'%1$s\' mhuwiex validu, iċċekkja l-fajl tas-settings tiegħek u erġa\' pprova</string>
     <string name="webcam_still_downloading">L-immaġni tal-webcam għadha qed titniżżel</string>
+    <string name="webcam_url_url_not_set">Il-URL tal-webcam mhuwiex issettjat jew huwa vojt</string>
+    <string name="update_set_to_manual_but_no_content_cached">Issettjat għal aġġornamenti manwali, iżda l-ebda kontenut ma ġie mdaħħal fil-cache</string>
+    <string name="still_downloading_forecast_data">Għadu qed iniżżel id-dejta tat-tbassir</string>
 </resources>

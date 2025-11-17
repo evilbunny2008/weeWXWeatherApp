@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Er wordt geprobeerd data.txt van uw server te downloaden</string>
     <string name="radar_type_is_invalid">Radartype \'%1$s\' is ongeldig, controleer uw instellingenbestand en probeer het opnieuw</string>
     <string name="webcam_still_downloading">Het webcambeeld wordt nog steeds gedownload</string>
+    <string name="webcam_url_url_not_set">Webcam-URL is niet ingesteld of is leeg</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ingesteld op handmatige updates, maar er is nog geen inhoud in de cache opgeslagen</string>
+    <string name="still_downloading_forecast_data">Er worden nog steeds prognosegegevens gedownload</string>
 </resources>

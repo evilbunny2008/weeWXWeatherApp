@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Tanggapan me ing data ning download.txt ibat keng server mu</string>
     <string name="radar_type_is_invalid">Ing uri ning radar \'%1$s\' e ya valid, lawan me ing kekang file ning setting at subukan meng pasibayu</string>
     <string name="webcam_still_downloading">Ing larawan ning Webcam pa rin ing pamagdownload</string>
+    <string name="webcam_url_url_not_set">Ing webcam URL e ya mitakda o blanku</string>
+    <string name="update_set_to_manual_but_no_content_cached">Magtakda ka kareng manual update, pero ala pang me-catch</string>
+    <string name="still_downloading_forecast_data">Pakadlang pa rin ing data</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ data.txt ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಲಾಗುತ್ತಿದೆ</string>
     <string name="radar_type_is_invalid">ರಾಡಾರ್ ಪ್ರಕಾರ \'%1$s\' ಅಮಾನ್ಯವಾಗಿದೆ, ನಿಮ್ಮ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಫೈಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
     <string name="webcam_still_downloading">ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ</string>
+    <string name="webcam_url_url_not_set">ವೆಬ್‌ಕ್ಯಾಮ್ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ ಅಥವಾ ಖಾಲಿಯಾಗಿದೆ</string>
+    <string name="update_set_to_manual_but_no_content_cached">ಹಸ್ತಚಾಲಿತ ನವೀಕರಣಗಳಿಗೆ ಹೊಂದಿಸಿ, ಆದರೆ ಯಾವುದೇ ವಿಷಯವನ್ನು ಇನ್ನೂ ಸಂಗ್ರಹಿಸಲಾಗಿಲ್ಲ</string>
+    <string name="still_downloading_forecast_data">ಇನ್ನೂ ಮುನ್ಸೂಚನೆ ಡೇಟಾವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ</string>
 </resources>

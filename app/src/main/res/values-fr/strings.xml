@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Tentative de téléchargement data.txt depuis votre serveur</string>
     <string name="radar_type_is_invalid">Le type de radar \'%1$s\' n\'est pas valide, vérifiez votre fichier de paramètres et réessayez</string>
     <string name="webcam_still_downloading">L\'image de la webcam est toujours en cours de téléchargement</string>
+    <string name="webcam_url_url_not_set">L\'URL de la webcam n\'est pas définie ou est vide</string>
+    <string name="update_set_to_manual_but_no_content_cached">Réglé sur les mises à jour manuelles, mais aucun contenu n\'est encore mis en cache</string>
+    <string name="still_downloading_forecast_data">Je télécharge toujours les données de prévision</string>
 </resources>

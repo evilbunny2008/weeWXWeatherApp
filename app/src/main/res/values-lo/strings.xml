@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">ການພະຍາຍາມດາວໂຫລດຂໍ້ມູນ .txt ຈາກ server ຂອງທ່ານ</string>
     <string name="radar_type_is_invalid">Radar Type \'%1$s\' ບໍ່ຖືກຕ້ອງ, ກວດເບິ່ງເອກະສານການຕັ້ງຄ່າຂອງທ່ານແລະລອງໃຫມ່ອີກຄັ້ງ</string>
     <string name="webcam_still_downloading">ຮູບພາບ webcam ຍັງຄົງດາວໂຫລດຢູ່</string>
+    <string name="webcam_url_url_not_set">URL WebCam ບໍ່ໄດ້ຖືກກໍານົດຫຼືວ່າງເປົ່າ</string>
+    <string name="update_set_to_manual_but_no_content_cached">ກໍານົດໃຫ້ມີການປັບປຸງຄູ່ມື, ແຕ່ບໍ່ມີເນື້ອຫາໃດໆ</string>
+    <string name="still_downloading_forecast_data">ຍັງດາວໂຫລດຂໍ້ມູນການຄາດຄະເນ</string>
 </resources>

@@ -102,8 +102,6 @@ public class MainActivity extends FragmentActivity
 
 	private static int UpdateFrequency, DayNightMode, widget_theme_mode;
 
-	private String[] updateOptions, themeOptions, widgetThemeOptions;
-
 	private int appInitialLeft, appInitialRight, appInitialTop, appInitialBottom;
 	private int cdInitialLeft, cdInitialRight, cdInitialTop, cdInitialBottom;
 	private int dlInitialLeft, dlInitialRight, dlInitialTop, dlInitialBottom;
@@ -402,7 +400,7 @@ public class MainActivity extends FragmentActivity
 		int fg, bg;
 		boolean wo, ui, met, si, sr, sf;
 
-		UpdateFrequency = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		UpdateFrequency = weeWXAppCommon.GetIntPref("updateInterval", 1);
 		DayNightMode = weeWXAppCommon.GetIntPref("DayNightMode", weeWXApp.DayNightMode_default);
 		KeyValue.widget_theme_mode = widget_theme_mode = weeWXAppCommon.GetIntPref(weeWXAppCommon.WIDGET_THEME_MODE, weeWXApp.widget_theme_mode_dfault);
 
@@ -786,32 +784,6 @@ public class MainActivity extends FragmentActivity
 
 	private void setStrings()
 	{
-		updateOptions = new String[]
-		{
-			weeWXApp.getAndroidString(R.string.manual_update),
-			weeWXApp.getAndroidString(R.string.every_5_minutes),
-			weeWXApp.getAndroidString(R.string.every_10_minutes),
-			weeWXApp.getAndroidString(R.string.every_15_minutes),
-			weeWXApp.getAndroidString(R.string.every_30_minutes),
-			weeWXApp.getAndroidString(R.string.every_hour),
-		};
-
-		themeOptions = new String[]
-		{
-			weeWXApp.getAndroidString(R.string.light_theme),
-			weeWXApp.getAndroidString(R.string.dark_theme),
-			weeWXApp.getAndroidString(R.string.system_default)
-		};
-
-		widgetThemeOptions = new String[]
-		{
-			weeWXApp.getAndroidString(R.string.system_default),
-			weeWXApp.getAndroidString(R.string.match_app),
-			weeWXApp.getAndroidString(R.string.light_theme),
-			weeWXApp.getAndroidString(R.string.dark_theme),
-			weeWXApp.getAndroidString(R.string.custom_setting)
-		};
-
 		int disabled = weeWXApp.getColours().LightGray;
 		if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 			disabled = weeWXApp.getColours().DarkGray;
@@ -854,9 +826,9 @@ public class MainActivity extends FragmentActivity
 
 	private void updateDropDowns()
 	{
-		ArrayAdapter<String> adapter1 = newArrayAdapter(R.layout.spinner_layout, updateOptions);
-		ArrayAdapter<String> adapter2 = newArrayAdapter(R.layout.spinner_layout, themeOptions);
-		ArrayAdapter<String> adapter3 = newArrayAdapter(R.layout.spinner_layout, widgetThemeOptions);
+		ArrayAdapter<String> adapter1 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.updateOptions);
+		ArrayAdapter<String> adapter2 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.themeOptions);
+		ArrayAdapter<String> adapter3 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.widgetThemeOptions);
 
 		adapter1.notifyDataSetChanged();
 		adapter2.notifyDataSetChanged();
@@ -873,10 +845,10 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.LogMessage("widget_theme_mode: " + wtm);
 
 			s1.setAdapter(adapter1);
-			s1.setText(updateOptions[uf], false);
+			s1.setText(weeWXApp.updateOptions[uf], false);
 
 			s2.setAdapter(adapter2);
-			s2.setText(themeOptions[dnm], false);
+			s2.setText(weeWXApp.themeOptions[dnm], false);
 
 			if(wtm == 4)
 			{
@@ -888,7 +860,7 @@ public class MainActivity extends FragmentActivity
 			}
 
 			s3.setAdapter(adapter3);
-			s3.setText(widgetThemeOptions[wtm], false);
+			s3.setText(weeWXApp.widgetThemeOptions[wtm], false);
 		});
 	}
 
@@ -967,6 +939,7 @@ public class MainActivity extends FragmentActivity
 
 			weeWXAppCommon.LogMessage("MainActivity.java processSettings() Cancelling the current background executor...");
 			backgroundTask.cancel(true);
+			backgroundTask = null;
 		}
 
 		bgStart = current_time;
@@ -1219,7 +1192,7 @@ public class MainActivity extends FragmentActivity
 						{
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 							weeWXAppCommon.LogMessage("forecast:" + forecastURL);
-							String metService = WebViewPreloader.getHTML(this, forecastURL, 10_000);
+							String metService = WebViewPreloader.getHTML(forecastURL, 10_000);
 							if(metService != null && metService.length() > 1024)
 							{
 								String pretty = Jsoup.parse(metService).outputSettings(
@@ -1628,7 +1601,7 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.LogMessage("Restart the alarm...");
 			UpdateCheck.cancelAlarm();
 			UpdateCheck.setAlarm();
-			UpdateCheck.runInTheBackground(false, false, false);
+			UpdateCheck.runInTheBackground(false, false);
 
 			try
 			{

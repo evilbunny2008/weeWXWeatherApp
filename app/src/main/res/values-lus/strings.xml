@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">I server atanga download data.txt tih tum</string>
     <string name="radar_type_is_invalid">Radar type \'%1$s\' a dik lo a, i settings file kha check la, han try leh teh</string>
     <string name="webcam_still_downloading">Webcam image chu a la download zel a</string>
+    <string name="webcam_url_url_not_set">Webcam URL hi a set loh emaw a blank emaw a ni</string>
+    <string name="update_set_to_manual_but_no_content_cached">Manual updates ah set a ni a, mahse content cached a la ni lo</string>
+    <string name="still_downloading_forecast_data">Forecast data a la download reng a ni</string>
 </resources>

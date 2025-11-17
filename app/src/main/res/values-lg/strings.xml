@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Okugezaako okuwanula data.txt okuva ku seva yo</string>
     <string name="radar_type_is_invalid">Radar type \'%1$sS\' si ntuufu, kebera fayiro yo ey\'okuteekawo era ogezeeko nate</string>
     <string name="webcam_still_downloading">Webcam ekifaananyi kikyawanula</string>
+    <string name="webcam_url_url_not_set">Webcam URL teteekeddwa oba nga ya bwereere</string>
+    <string name="update_set_to_manual_but_no_content_cached">teeka ku updates za manual, naye nga tewali content cached yet</string>
+    <string name="still_downloading_forecast_data">Akyawanula ebikwata ku kuteebereza</string>
 </resources>

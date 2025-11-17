@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ data.txt ਡਾਊਨਲੋਡ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ</string>
     <string name="radar_type_is_invalid">ਰਾਡਾਰ ਕਿਸਮ \'%1$s\' ਅਵੈਧ ਹੈ, ਆਪਣੀ ਸੈਟਿੰਗ ਫਾਈਲ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
     <string name="webcam_still_downloading">ਵੈਬਕੈਮ ਚਿੱਤਰ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ।</string>
+    <string name="webcam_url_url_not_set">ਵੈਬਕੈਮ URL ਸੈੱਟ ਨਹੀਂ ਹੈ ਜਾਂ ਖਾਲੀ ਹੈ</string>
+    <string name="update_set_to_manual_but_no_content_cached">ਮੈਨੂਅਲ ਅੱਪਡੇਟ \'ਤੇ ਸੈੱਟ ਕਰੋ, ਪਰ ਹਾਲੇ ਤੱਕ ਕੋਈ ਸਮੱਗਰੀ ਕੈਸ਼ ਨਹੀਂ ਕੀਤੀ ਗਈ</string>
+    <string name="still_downloading_forecast_data">ਹਾਲੇ ਵੀ ਪੂਰਵ ਅਨੁਮਾਨ ਡਾਟਾ ਡਾਊਨਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</string>
 </resources>

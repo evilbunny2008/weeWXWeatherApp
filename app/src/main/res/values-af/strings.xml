@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Probeer tans om data.txt van jou bediener af te laai</string>
     <string name="radar_type_is_invalid">Radartipe \'%1$s\' is ongeldig, gaan jou instellingslêer na en probeer weer</string>
     <string name="webcam_still_downloading">Webkamera-prent word steeds afgelaai</string>
+    <string name="webcam_url_url_not_set">Webkamera-URL is nie gestel nie of is leeg</string>
+    <string name="update_set_to_manual_but_no_content_cached">Stel op handmatige opdaterings, maar geen inhoud is nog gekas nie</string>
+    <string name="still_downloading_forecast_data">Laai nog voorspellingdata af</string>
 </resources>

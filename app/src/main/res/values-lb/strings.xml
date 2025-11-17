@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Probéiert d\'Data.txt vun Ärem Server erofzelueden</string>
     <string name="radar_type_is_invalid">Radartyp \'%1$s\' ass ongëlteg, kontrolléiert Är Astellungsdatei a probéiert nach eng Kéier</string>
     <string name="webcam_still_downloading">Webcam Bild gëtt nach ëmmer erofgelueden</string>
+    <string name="webcam_url_url_not_set">Webcam URL ass net gesat oder ass eidel</string>
+    <string name="update_set_to_manual_but_no_content_cached">Setzt op manuell Aktualiséierungen, awer nach keen Inhalt cache</string>
+    <string name="still_downloading_forecast_data">Nach ëmmer Prognosendaten eroflueden</string>
 </resources>

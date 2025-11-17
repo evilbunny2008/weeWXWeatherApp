@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Go leka go taonelouta data.txt go tšwa go seva ya gago</string>
     <string name="radar_type_is_invalid">Mohuta wa radar \'%1$s\' ga o šome, hlahloba faele ya gago ya dipeakanyo gomme o leke gape</string>
     <string name="webcam_still_downloading">Webcam setšoantšo e ntse e thowuni</string>
+    <string name="webcam_url_url_not_set">Webcam URL ga se ya bewa goba ga e na selo</string>
+    <string name="update_set_to_manual_but_no_content_cached">Beha ho diapdeite pukwanana, empa ha ho dikahare cached hot</string>
+    <string name="still_downloading_forecast_data">Still downloading ya data ya ponelopele</string>
 </resources>

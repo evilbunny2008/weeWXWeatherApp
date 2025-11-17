@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Ku ringeta ku download data.txt eka sevha ya wena</string>
     <string name="radar_type_is_invalid">Muxaka wa radar \'%1$s\' a wu tirhi, languta fayili ya wena ya swiyimiso ivi u ringeta nakambe</string>
     <string name="webcam_still_downloading">Xifaniso xa webcam xa ha downloada</string>
+    <string name="webcam_url_url_not_set">URL ya webcam a yi vekiwanga kumbe yi nga ri na nchumu</string>
+    <string name="update_set_to_manual_but_no_content_cached">Seta eka ku pfuxetiwa ka manual, kambe ku hava nhundzu leyi hlayisiweke ku fikela sweswi</string>
+    <string name="still_downloading_forecast_data">Still downloading data ya vuprofeta</string>
 </resources>

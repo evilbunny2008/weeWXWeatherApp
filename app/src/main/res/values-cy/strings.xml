@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Ceisio lawrlwytho data.txt o\'ch gweinydd</string>
     <string name="radar_type_is_invalid">Mae\'r math radar \'%1$s\' yn annilys, gwiriwch eich ffeil gosodiadau a cheisiwch eto</string>
     <string name="webcam_still_downloading">Mae delwedd gwe-gamera yn dal i gael ei lawrlwytho</string>
+    <string name="webcam_url_url_not_set">Nid yw URL gwegamera wedi\'i osod neu mae\'n wag</string>
+    <string name="update_set_to_manual_but_no_content_cached">Wedi\'i osod i ddiweddariadau llaw, ond dim cynnwys wedi\'i storio eto</string>
+    <string name="still_downloading_forecast_data">Yn dal i lawrlwytho data rhagolygon</string>
 </resources>

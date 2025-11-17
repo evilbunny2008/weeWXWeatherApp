@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">No jūsu servera tiek mēģināts lejupielādēt failu data.txt</string>
     <string name="radar_type_is_invalid">Radara veids \'%1$s\' nav derīgs, pārbaudiet iestatījumu failu un mēģiniet vēlreiz</string>
     <string name="webcam_still_downloading">Tīmekļa kameras attēls joprojām tiek lejupielādēts</string>
+    <string name="webcam_url_url_not_set">Tīmekļa kameras URL nav iestatīts vai ir tukšs</string>
+    <string name="update_set_to_manual_but_no_content_cached">Iestatīts manuāla atjaunināšana, bet kešatmiņā vēl nav saglabāts saturs</string>
+    <string name="still_downloading_forecast_data">Joprojām notiek prognožu datu lejupielāde</string>
 </resources>

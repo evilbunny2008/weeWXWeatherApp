@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Tentativa download dadus.txt husi ita nia servidor</string>
     <string name="radar_type_is_invalid">Radar tipu \'%1$s\' la válidu, verifika ita-nia file settings no koko fali</string>
     <string name="webcam_still_downloading">Imajen Webcam sei download hela</string>
+    <string name="webcam_url_url_not_set">Webcam URL la tau ka mamuk</string>
+    <string name="update_set_to_manual_but_no_content_cached">Hatur ba atualizasaun manual, maibe laiha konteudu ne\'ebe cached</string>
+    <string name="still_downloading_forecast_data">Nafatin download dadus previzaun</string>
 </resources>

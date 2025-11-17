@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Hewl didin data.txt ji servera we dakêşin</string>
     <string name="radar_type_is_invalid">Tîpa radarê \'%1$s\' nederbasdar e, pelê mîhengan kontrol bike û dîsa biceribîne</string>
     <string name="webcam_still_downloading">Wêneyê Webkamera hê jî tê daxistin</string>
+    <string name="webcam_url_url_not_set">URL-ya Webkamera nehatiye danîn an jî vala ye</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ji nûvekirinên bi destan re were danîn, lê hêj naverok nehatiye cache</string>
+    <string name="still_downloading_forecast_data">Hê jî daneyên pêşbîniyê dakêşin</string>
 </resources>

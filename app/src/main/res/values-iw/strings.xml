@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">מנסה להוריד data.txt מהשרת שלך</string>
     <string name="radar_type_is_invalid">סוג הרדאר \'%1$s\' אינו חוקי, בדוק את קובץ ההגדרות ונסה שוב</string>
     <string name="webcam_still_downloading">תמונת מצלמת האינטרנט עדיין מורידה</string>
+    <string name="webcam_url_url_not_set">כתובת האתר של מצלמת האינטרנט לא מוגדרת או שהיא ריקה</string>
+    <string name="update_set_to_manual_but_no_content_cached">מוגדר לעדכונים ידניים, אך עדיין אין תוכן במטמון</string>
+    <string name="still_downloading_forecast_data">עדיין מוריד נתוני תחזית</string>
 </resources>

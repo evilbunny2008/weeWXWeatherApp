@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">ការប៉ុនប៉ងទាញយកទិន្នន័យ .txt ពីម៉ាស៊ីនមេរបស់អ្នក</string>
     <string name="radar_type_is_invalid">ប្រភេទរ៉ាដាប្រភេទ \'%1$s\' មិនត្រឹមត្រូវសូមពិនិត្យមើលឯកសារកំណត់របស់អ្នកហើយព្យាយាមម្តងទៀត។</string>
     <string name="webcam_still_downloading">រូបភាពវិបខេមកំពុងទាញយក។</string>
+    <string name="webcam_url_url_not_set">URL វិបខេមមិនត្រូវបានកំណត់ឬទទេ</string>
+    <string name="update_set_to_manual_but_no_content_cached">កំណត់ទៅដោយដៃការធ្វើបច្ចុប្បន្នភាពដោយដៃប៉ុន្តែមិនមានឃ្លាំងសម្ងាត់មាតិកានៅឡើយទេ</string>
+    <string name="still_downloading_forecast_data">នៅតែទាញយកទិន្នន័យព្យាករណ៍</string>
 </resources>

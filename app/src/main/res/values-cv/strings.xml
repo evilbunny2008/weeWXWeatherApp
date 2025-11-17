@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Хăтланăр скачать даннăйĕсем.txt сирĕн сервертан</string>
     <string name="radar_type_is_invalid">Радар типĕ \'%1$s\' тĕрĕс мар, настройкăсен файла тĕрĕслесе пăхăр та тепĕр хут хăтланса пăхăр</string>
     <string name="webcam_still_downloading">Веб-камерăн ÿкерчĕкĕ халĕ те скачать тăвать</string>
+    <string name="webcam_url_url_not_set">Webcam URL-адресĕ лартман е пушă</string>
+    <string name="update_set_to_manual_but_no_content_cached">Алăпа çĕнетÿсем тума лартăр, анчах та нимĕнле контент кенчĕ те çук-ха</string>
+    <string name="still_downloading_forecast_data">Халĕ те прогноз даннăйĕсене скачать тăвасси</string>
 </resources>

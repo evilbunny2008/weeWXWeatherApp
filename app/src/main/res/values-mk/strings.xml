@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Обид за преземање data.txt од вашиот сервер</string>
     <string name="radar_type_is_invalid">Типот на радар \'%1$s\' е неважечки, проверете ја датотеката со поставки и обидете се повторно</string>
     <string name="webcam_still_downloading">Сликата од веб-камера сè уште се презема</string>
+    <string name="webcam_url_url_not_set">URL-адресата на веб-камерата не е поставена или е празна</string>
+    <string name="update_set_to_manual_but_no_content_cached">Поставено на рачни ажурирања, но сè уште нема кеширана содржина</string>
+    <string name="still_downloading_forecast_data">Сè уште се преземаат прогнозните податоци</string>
 </resources>

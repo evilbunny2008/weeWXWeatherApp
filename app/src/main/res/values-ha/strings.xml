@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Yunƙurin saukar da bayanai.txt daga sabar ku</string>
     <string name="radar_type_is_invalid">Radar nau\'in \'%1$s\' ba shi da inganci, duba fayil ɗin saitunan ku kuma sake gwadawa</string>
     <string name="webcam_still_downloading">Hoton Webcam har yanzu download</string>
+    <string name="webcam_url_url_not_set">Ba a saita URCAM URCAM ko ba komai</string>
+    <string name="update_set_to_manual_but_no_content_cached">Saita zuwa Sabuntawa Manual, amma babu abun ciki</string>
+    <string name="still_downloading_forecast_data">Har yanzu zazzage bayanan hasashen</string>
 </resources>

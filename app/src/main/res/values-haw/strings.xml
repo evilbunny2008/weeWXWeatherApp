@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Ka ho\'āʻoʻana i kaʻikepili download data.Txt mai kāu kikowaena</string>
     <string name="radar_type_is_invalid">ʻAʻole pololeiʻo Radar Type \'%1$s\' iʻole, e nānā i kāu faila hoʻonohonoho a ho\'āʻo hou</string>
     <string name="webcam_still_downloading">Ke kiʻi nei i ke kiʻi WebCam</string>
+    <string name="webcam_url_url_not_set">ʻAʻole paʻa a paʻaʻole ka URCAM URL</string>
+    <string name="update_set_to_manual_but_no_content_cached">E hoʻonohonoho i nā hōʻano hou, akāʻaʻoleʻike</string>
+    <string name="still_downloading_forecast_data">Ke hoʻoiho nei i kaʻikepili wānana</string>
 </resources>

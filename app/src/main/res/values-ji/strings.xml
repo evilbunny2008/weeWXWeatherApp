@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">פּרוּווט אראפקאפיע דאַטאַ.טקסט פון דיין סערווער</string>
     <string name="radar_type_is_invalid">ראַדאַר טיפּ \'%1$s\' איז פאַרקריפּלט, טשעק דיין סעטטינגס טעקע און פּרובירן ווידער</string>
     <string name="webcam_still_downloading">וועבקאַם בילד איז נאָך דאַונלאָודינג</string>
+    <string name="webcam_url_url_not_set">וועבקאַם URL איז נישט באַשטימט אָדער איז ליידיק</string>
+    <string name="update_set_to_manual_but_no_content_cached">שטעלן צו מאַנואַל דערהייַנטיקונגען, אָבער קיין אינהאַלט קאַשט נאָך</string>
+    <string name="still_downloading_forecast_data">נאָך דאַונלאָודינג פאָרויסזאָגן דאַטן</string>
 </resources>

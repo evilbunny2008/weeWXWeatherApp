@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">در حال تلاش برای دانلود data.txt از سرور شما</string>
     <string name="radar_type_is_invalid">نوع رادار \'%1$s\' نامعتبر است، فایل تنظیمات خود را بررسی کرده و دوباره امتحان کنید</string>
     <string name="webcam_still_downloading">تصویر وب کم هنوز در حال دانلود است</string>
+    <string name="webcam_url_url_not_set">URL وب کم تنظیم نشده یا خالی است</string>
+    <string name="update_set_to_manual_but_no_content_cached">روی به‌روزرسانی‌های دستی تنظیم کنید، اما هنوز محتوایی در حافظه پنهان ذخیره نشده است</string>
+    <string name="still_downloading_forecast_data">هنوز در حال دانلود داده های پیش بینی است</string>
 </resources>

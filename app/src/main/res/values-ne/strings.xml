@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">तपाईंको सर्भरबाट data.txt डाउनलोड गर्ने प्रयास गर्दै</string>
     <string name="radar_type_is_invalid">राडार प्रकार \'%1$s\' अमान्य छ, आफ्नो सेटिङ फाइल जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।</string>
     <string name="webcam_still_downloading">वेबक्याम छवि अझै डाउनलोड भइरहेको छ।</string>
+    <string name="webcam_url_url_not_set">वेबक्याम URL सेट गरिएको छैन वा खाली छ</string>
+    <string name="update_set_to_manual_but_no_content_cached">म्यानुअल अपडेटहरूमा सेट गर्नुहोस्, तर कुनै सामग्री अझै क्यास गरिएको छैन</string>
+    <string name="still_downloading_forecast_data">अझै पनि पूर्वानुमान डेटा डाउनलोड गर्दै</string>
 </resources>

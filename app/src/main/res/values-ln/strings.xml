@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Komeka kozwa data.txt na serveur na yo</string>
     <string name="radar_type_is_invalid">Radar Type \'%1$s\' ezali invalide, tala fichier ya paramètres na yo mpe meka lisusu</string>
     <string name="webcam_still_downloading">Webcam image ezali kaka ko télécharger</string>
+    <string name="webcam_url_url_not_set">URL ya webcam etiamaki te to ezali ya pamba</string>
+    <string name="update_set_to_manual_but_no_content_cached">Bobongisa na ba mises à jour manuelles, kasi nanu contenus te cached</string>
+    <string name="still_downloading_forecast_data">Encore télécharger ba données ya prévision</string>
 </resources>

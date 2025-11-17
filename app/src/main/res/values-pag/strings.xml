@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Pagsasali ya man-download data. text ed server yo</string>
     <string name="radar_type_is_invalid">Say ted klase na klase \'%1$s\'s so ag-akadepende, nengnengen so file na saray pasen mo tan salien mo lamet</string>
     <string name="webcam_still_downloading">Say imahen na websim so siansia nin man-uulat</string>
+    <string name="webcam_url_url_not_set">Say Webcam URL et ag-aka-set odino blangko</string>
+    <string name="update_set_to_manual_but_no_content_cached">I-set so manuman upda, balet wala ni so aka-cacer ya</string>
+    <string name="still_downloading_forecast_data">Siansia nin i-download so data ya ipasakbay</string>
 </resources>

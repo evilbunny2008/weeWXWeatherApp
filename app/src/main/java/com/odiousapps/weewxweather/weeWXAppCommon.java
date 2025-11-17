@@ -230,8 +230,9 @@ class weeWXAppCommon
 		return getPrefSettings().contains(name);
 	}
 
-	static boolean fixTypes(Context context)
+	static boolean fixTypes()
 	{
+		Context context = weeWXApp.getInstance();
 		SharedPreferences prefs = getPrefSettings(context);
 
 		Map<String, ?> all = prefs.getAll();
@@ -2945,12 +2946,37 @@ class weeWXAppCommon
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.data_url_was_blank)};
 
 		String lastDownload = GetStringPref("LastDownload", weeWXApp.LastDownload_default);
-		if(!forced && (lastDownload == null || lastDownload.isBlank()))
+		if(!forced && !checkConnection())
 		{
-			LogMessage("lastDownload is null or blank...");
-
-			if(!checkConnection())
+			if(lastDownload == null || lastDownload.isBlank())
+			{
+				LogMessage("lastDownload is null or blank...", true);
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available)};
+			} else {
+				LogMessage("Not forced and WiFi needed but not available", true);
+				return new String[]{"ok", lastDownload};
+			}
+		}
+
+		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		LogMessage("getWeather() pos: " + pos + ", update interval set to: " + weeWXApp.updateOptions[pos] + ", forced set to: " + forced, true);
+
+		if(pos < 0)
+		{
+			LogMessage("Invalid update frequency...", true);
+			return new String[]{"error", weeWXApp.getAndroidString(R.string.invalid_update_interval)};
+		}
+
+		if(!forced && pos == 0)
+		{
+			if(lastDownload == null || lastDownload.isBlank())
+			{
+				LogMessage("lastDownload is null or blank...", true);
+				return new String[]{"error", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached)};
+			} else {
+				LogMessage("Not forced and set to manual updates...", true);
+				return new String[]{"ok", lastDownload};
+			}
 		}
 
 		long lastDownloadTime = GetLongPref("LastDownloadTime", weeWXApp.LastDownloadTime_default);
@@ -2960,7 +2986,7 @@ class weeWXAppCommon
 		if(!forced && current_time < lastDownloadTime + period && lastDownload != null && !lastDownload.isBlank())
 			return new String[]{"ok", lastDownload};
 
-		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp)
+		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp && !forced)
 		{
 			if(lastDownload != null && !lastDownload.isBlank())
 				return new String[]{"ok", lastDownload};
@@ -2981,6 +3007,7 @@ class weeWXAppCommon
 			           (current_time - wtStart) + "s) cancelling and restarting...", true);
 
 			weatherTask.cancel(true);
+			weatherTask = null;
 		}
 
 		LogMessage("Creating a weatherTask...", true);
@@ -3478,7 +3505,7 @@ class weeWXAppCommon
 		return false;
 	}
 
-	static String[] getForecast(boolean force, boolean calledFromweeWXApp)
+	static String[] getForecast(boolean forced, boolean calledFromweeWXApp)
 	{
 		String fctype = GetStringPref("fctype", weeWXApp.fctype_default);
 		if(fctype == null || fctype.isBlank())
@@ -3493,13 +3520,29 @@ class weeWXAppCommon
 		if(forecast_url == null || forecast_url.isBlank())
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.forecast_url_not_set), fctype};
 
-		LogMessage("ForecastURL: " + forecast_url);
+		LogMessage("forecast_url: " + forecast_url, true);
 
 		String forecastData = GetStringPref("forecastData", weeWXApp.forecastData_default);
 
-		if(!checkConnection() && !force)
+		if(!checkConnection() && !forced)
 		{
 			LogMessage("Not on wifi and not a forced refresh");
+			if(forecastData == null || forecastData.isBlank())
+				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available), fctype};
+
+			return new String[]{"ok", forecastData, fctype};
+		}
+
+		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		LogMessage("getForecast() pos: " + pos + ", update interval set to: " + weeWXApp.updateOptions[pos] + ", forced set to: " + forced, true);
+		if(pos < 0)
+		{
+			LogMessage("Invalid update frequency...", true);
+			return new String[]{"error", weeWXApp.getAndroidString(R.string.invalid_update_interval), fctype};
+		}
+
+		if(!forced && pos == 0)
+		{
 			if(forecastData == null || forecastData.isBlank())
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available), fctype};
 
@@ -3509,24 +3552,24 @@ class weeWXAppCommon
 		final long current_time = getCurrTime();
 		long rssCheckTime = getRSSsecs();
 
-		if(!force && rssCheckTime + weeWXApp.RSSCache_period_default > current_time && forecastData != null && !forecastData.isBlank())
+		if(!forced && rssCheckTime + weeWXApp.RSSCache_period_default > current_time && forecastData != null && !forecastData.isBlank())
 		{
 			LogMessage("Cache isn't more than " + weeWXApp.RSSCache_period_default + "s old (" +
-			           (current_time - rssCheckTime) + "s old)");
+			           (current_time - rssCheckTime) + "s old)", true);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String date = sdf.format(rssCheckTime * 1_000L);
-			LogMessage("rsscheck: " + date);
+			LogMessage("rsscheck: " + date, true);
 			date = sdf.format(current_time);
-			LogMessage("current_time: " + date);
+			LogMessage("current_time: " + date, true);
 			return new String[]{"ok", forecastData, fctype};
 		}
 
-		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp)
+		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp && !forced)
 		{
 			if(forecastData == null || forecastData.isBlank())
 				return new String[]{"ok", forecastData, fctype};
-			else
-				return new String[]{"error", weeWXApp.getAndroidString(R.string.attempting_to_download_data_txt), fctype};
+
+			return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
 		}
 
 		if(forecastTask != null && !forecastTask.isDone())
@@ -3534,21 +3577,22 @@ class weeWXAppCommon
 			if(ftStart + 30 > current_time)
 			{
 				LogMessage("forecastTask is less than 30s old (" + (current_time - ftStart) +
-				           "s), we'll skip this attempt...");
+				           "s), we'll skip this attempt...", true);
 				return new String[]{"ok", forecastData, fctype};
 			}
 
 			forecastTask.cancel(true);
+			forecastTask = null;
 		}
 
 		LogMessage("Was forced or no forecast data or cache is more than " + weeWXApp.RSSCache_period_default +
-		           "s old (" + (current_time - rssCheckTime) + "s)");
+		           "s old (" + (current_time - rssCheckTime) + "s)", true);
 
 		ftStart = current_time;
 
 		forecastTask = executor.submit(() ->
 		{
-			LogMessage("Forecast checking: " + forecast_url);
+			LogMessage("Forecast checking: " + forecast_url, true);
 
 			String tmpForecastData = null;
 
@@ -3558,20 +3602,23 @@ class weeWXAppCommon
 			} catch(Exception ignored) {}
 
 			if(tmpForecastData != null && !tmpForecastData.isBlank())
-				LogMessage("Successfully updated forecast data, will send a refresh intent...");
+				LogMessage("Successfully updated forecast data...", true);
 			else
-				LogMessage("Failed to successfully update forecast data, won't send a refresh intent...");
+				LogMessage("Failed to successfully update forecast data...", true);
 
 			SendForecastRefreshIntent();
 			ftStart = 0;
 		});
 
-		return new String[]{"ok", forecastData, fctype};
+		if(forecastData != null && !forecastData.isBlank())
+			return new String[]{"ok", forecastData, fctype};
+
+		return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
 	}
 
 	static String reallyGetForecast(String url) throws IOException
 	{
-		LogMessage("reallyGetForecast() forcecastURL: " + url);
+		LogMessage("reallyGetForecast() forcecastURL: " + url, true);
 
 		if(url == null || url.isBlank())
 			return null;
@@ -3580,7 +3627,7 @@ class weeWXAppCommon
 		if(forecastData.isBlank())
 			return null;
 
-		LogMessage("updating rss cache");
+		LogMessage("updating rss cache", true);
 		SetLongPref("rssCheck", getCurrTime());
 		SetStringPref("forecastData", forecastData);
 
@@ -3605,7 +3652,23 @@ class weeWXAppCommon
 			return bm;
 		}
 
-		LogMessage("Reloading radar...");
+		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		LogMessage("getRadarImage() pos: " + pos + ", update interval set to: " + weeWXApp.updateOptions[pos] + ", forced set to: " + forced, true);
+		if(pos < 0)
+		{
+			LogMessage("Invalid update frequency...", true);
+			return weeWXApp.textToBitmap(R.string.invalid_update_interval);
+		}
+
+		if(!forced && pos == 0)
+		{
+			if(bm == null)
+				return weeWXApp.textToBitmap(R.string.update_set_to_manual_but_no_content_cached);
+
+			return bm;
+		}
+
+		LogMessage("Reloading radar image...", true);
 
 		String radarURL = GetStringPref("RADAR_URL", weeWXApp.RADAR_URL_default);
 		if(radarURL == null || radarURL.isBlank())
@@ -3618,7 +3681,7 @@ class weeWXAppCommon
 			return weeWXApp.textToBitmap(tmp);
 		}
 
-		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp)
+		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp && !forced)
 		{
 			if(bm != null)
 				return bm;
@@ -3635,12 +3698,15 @@ class weeWXAppCommon
 			if(rtStart + 30 > current_time)
 			{
 				LogMessage("radarTask is less than 30s old (" + (current_time - rtStart) +
-				                          "s), we'll skip this attempt...");
+				                          "s), we'll skip this attempt...", true);
 				return bm;
 			}
 
 			radarTask.cancel(true);
+			radarTask = null;
 		}
+
+		LogMessage("Staring attempt to get a new radar image...", true);
 
 		rtStart = current_time;
 
@@ -3652,7 +3718,7 @@ class weeWXAppCommon
 
 			try
 			{
-				LogMessage("Starting to download radar image from: " + radarURL);
+				LogMessage("Starting to download radar image from: " + radarURL, true);
 				loadOrDownloadImage(radarURL, weeWXApp.radarFilename);
 				SendRadarRefreshIntent();
 			} catch(Exception ignored) {}
@@ -3682,49 +3748,80 @@ class weeWXAppCommon
 			return bm;
 		}
 
-		LogMessage("Reloading webcam...");
+		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		LogMessage("getWebcamImage() pos: " + pos + ", update interval set to: " + weeWXApp.updateOptions[pos] +
+		           ", forced set to: " + forced, true);
+		if(pos < 0)
+		{
+			LogMessage("Invalid update frequency...", true);
+			return weeWXApp.textToBitmap(R.string.invalid_update_interval);
+		}
+
+		if(!forced && pos == 0)
+		{
+			LogMessage("Not forced and set to manual updates...", true);
+
+			if(bm == null)
+				return weeWXApp.textToBitmap(R.string.update_set_to_manual_but_no_content_cached);
+
+			return bm;
+		}
+
+		LogMessage("Reloading webcam...", true);
 
 		String webcamURL = GetStringPref("WEBCAM_URL", weeWXApp.WEBCAM_URL_default);
 		if(webcamURL == null || webcamURL.isBlank())
-			return weeWXApp.textToBitmap(R.string.wasnt_able_to_connect_webcam_url);
+		{
+			LogMessage("Webcam URL not set...", true);
+			return weeWXApp.textToBitmap(R.string.webcam_url_url_not_set);
+		}
 
 		if(!forced && wcStart + 60 > current_time && bm != null)
+		{
+			LogMessage("Not forced and wcStart + 60 > current_time and bm != null...", true);
 			return bm;
+		}
 
 		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp)
 		{
+			LogMessage("hasBootedFully is false and calledFromweeWXApp is false...", true);
+
 			if(bm != null)
 				return bm;
 			else
 				return weeWXApp.textToBitmap(R.string.webcam_still_downloading);
 		}
 
-		LogMessage("Reload webcam...");
+		LogMessage("Reload webcam...", true);
 
 		if(webcamTask != null && !webcamTask.isDone())
 		{
 			if(wcStart + 30 > current_time)
 			{
-				LogMessage("webcamTask is less than 30s old (" + (current_time - wcStart) + "s), we'll skip this attempt...");
+				LogMessage("webcamTask is less than 30s old (" + (current_time - wcStart) + "s), we'll skip this attempt...", true);
 				return bm;
 			}
 
 			webcamTask.cancel(true);
+			webcamTask = null;
 		}
 
 		wcStart = current_time;
 
 		webcamTask = executor.submit(() ->
 		{
-			LogMessage("Webcam checking: " + webcamURL);
+			LogMessage("Webcam checking: " + webcamURL, true);
 
 			try
 			{
-				LogMessage("Starting to download webcam image from: " + webcamURL);
+				LogMessage("Starting to download webcam image from: " + webcamURL, true);
 				loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename);
 				SendWebcamRefreshIntent();
 			} catch(Exception ignored) {}
 		});
+
+		if(bm == null)
+			return weeWXApp.textToBitmap(R.string.webcam_still_downloading);
 
 		return bm;
 	}
@@ -3964,31 +4061,31 @@ class weeWXAppCommon
 		Bitmap bm = null;
 		File file = getFile(filename);
 
-		LogMessage("Starting to download image from: " + url);
+		LogMessage("Starting to download image from: " + url, true);
 		if(url.toLowerCase(Locale.ENGLISH).endsWith(".mjpeg") ||
 		   url.toLowerCase(Locale.ENGLISH).endsWith(".mjpg"))
 		{
-			LogMessage("Trying to get a frame from a MJPEG stream and set bm to it...");
+			LogMessage("Trying to get a frame from a MJPEG stream and set bm to it...", true);
 			bm = grabMjpegFrame(url);
-			LogMessage("Saving frame to storage...");
+			LogMessage("Saving frame to storage...", true);
 			try(FileOutputStream out = new FileOutputStream(file))
 			{
-				LogMessage("Attempting to save to " + file.getAbsoluteFile());
+				LogMessage("Attempting to save to " + file.getAbsoluteFile(), true);
 				bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
-				LogMessage("Got past the save... ");
+				LogMessage("Got past the save... ", true);
 			} catch(Exception e) {
-				LogMessage("Error! " + e);
+				LogMessage("Error! " + e, true);
 				throw new IOException(e);
 			}
 
-			LogMessage("Frame saved successfully to storage...");
+			LogMessage("Frame saved successfully to storage...", true);
 		} else {
-			LogMessage("Trying to download a JPEG file and set bm to it...");
+			LogMessage("Trying to download a JPEG file and set bm to it...", true);
 			if(downloadToFile(file, url))
 				bm = loadImage(file);
 		}
 
-		LogMessage("Finished downloading from webURL: " + url);
+		LogMessage("Finished downloading from webURL: " + url, true);
 		return bm;
 	}
 

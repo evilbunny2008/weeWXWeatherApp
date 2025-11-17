@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Esey download lenformasyon.Tart dan ou server</string>
     <string name="radar_type_is_invalid">Kalite radar \'%1$s\' i pa valab, tyek ou dosye laranzman e esey ankor</string>
     <string name="webcam_still_downloading">Zimaz web i ankor telesarz</string>
+    <string name="webcam_url_url_not_set">URL web pa ganny mete oubyen i vid</string>
+    <string name="update_set_to_manual_but_no_content_cached">Met lo bann mizazour manyel, me napa okenn konteni ki ganny kache</string>
+    <string name="still_downloading_forecast_data">Ankor lenformasyon previzyon telesarz</string>
 </resources>

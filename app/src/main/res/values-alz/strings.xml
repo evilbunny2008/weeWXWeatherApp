@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Temo lembe ma juketho i ie lembe ma juketho i server</string>
     <string name="radar_type_is_invalid">Radar \'%1$s\' ok en adier, ng\'i file mag settings kendo item kendo</string>
     <string name="webcam_still_downloading">Kite ma watio ko ku kusika mwa mir Internet ubekadhu kud i ie</string>
+    <string name="webcam_url_url_not_set">Webcam URL utie ngo ma juketho kunoke ma ng\'ic</string>
+    <string name="update_set_to_manual_but_no_content_cached">Keth cing\'i i kum lembe ma nyen, ento ng\'atu moko mbe ma copo</string>
+    <string name="still_downloading_forecast_data">Kadok kumeno de, fodi asu lembe ma jukiewo i kum lembe mi ng\'eyo lembe</string>
 </resources>

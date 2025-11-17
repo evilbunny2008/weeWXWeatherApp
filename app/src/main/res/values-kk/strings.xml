@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Деректерді жүктеу әрекеті, серверден</string>
     <string name="radar_type_is_invalid">\'%1$s\' радар типі жарамсыз, параметрлер файлын тексеріп, әрекетті қайталаңыз</string>
     <string name="webcam_still_downloading">Веб-камера кескіні әлі де жүктеледі</string>
+    <string name="webcam_url_url_not_set">Веб-камера URL мекенжайы орнатылмаған немесе бос емес</string>
+    <string name="update_set_to_manual_but_no_content_cached">Қолмен жаңартуларға орнатыңыз, бірақ мазмұн әлі кэштелген жоқ</string>
+    <string name="still_downloading_forecast_data">Әлі де болжамды деректерді жүктеу</string>
 </resources>

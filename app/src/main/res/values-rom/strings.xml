@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Te zumaven te len data.txt katar tumaro servero</string>
     <string name="radar_type_is_invalid">Radar tipo \'%1$s\' si bivalido, kontrolisaren tumare settings file thaj zumaven pale</string>
     <string name="webcam_still_downloading">Webcam-imago si inke tele tele</string>
+    <string name="webcam_url_url_not_set">Webcam URL na si phanglo vaj si blanko</string>
+    <string name="update_set_to_manual_but_no_content_cached">Set pe manualno aktualizaciji, numa chi jekh sadržajo cache inke</string>
+    <string name="still_downloading_forecast_data">Inke tele line prognosake dati</string>
 </resources>

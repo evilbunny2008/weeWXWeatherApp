@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Meuuseuha download data.txt dari server droeneuh</string>
     <string name="radar_type_is_invalid">Tipe radar \'%1$s\' hana sah, neupareksa file setting droeneuh dan neucuba lom</string>
     <string name="webcam_still_downloading">Gambar Webcam mantong download</string>
+    <string name="webcam_url_url_not_set">URL Webcam hana set atawa hana</string>
+    <string name="update_set_to_manual_but_no_content_cached">Setel keu update manual, tapi hana konten cache lom</string>
+    <string name="still_downloading_forecast_data">Mantong geu-download data ramalan</string>
 </resources>

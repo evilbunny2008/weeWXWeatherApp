@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Data download data.txt server keessan irraa yaaluu</string>
     <string name="radar_type_is_invalid">Gosa Raadaar \'%1$s\' sirrii miti, faayila settings kee ilaalii irra deebi\'ii yaali</string>
     <string name="webcam_still_downloading">Fakkiin webcam ammallee buufachaa jira</string>
+    <string name="webcam_url_url_not_set">URL webcam hin qindaa\'u ykn duwwaa dha</string>
+    <string name="update_set_to_manual_but_no_content_cached">Gara fooyya\'iinsa harkaatti saagi, garuu qabiyyeen hanga ammaatti hin kaa\'amne</string>
+    <string name="still_downloading_forecast_data">Ammallee daataa tilmaama buufachuu</string>
 </resources>

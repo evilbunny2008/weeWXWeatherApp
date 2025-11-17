@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Provante elŝuti data.txt de via servilo</string>
     <string name="radar_type_is_invalid">Radara tipo \'%1$s\' estas nevalida, kontrolu vian agordan dosieron kaj provu denove</string>
     <string name="webcam_still_downloading">Retkamera bildo ankoraŭ elŝutas</string>
+    <string name="webcam_url_url_not_set">Retkamera URL ne estas agordita aŭ estas malplena</string>
+    <string name="update_set_to_manual_but_no_content_cached">Agordita al manaj ĝisdatigoj, sed ankoraŭ neniu enhavo konservita en kaŝmemoro</string>
+    <string name="still_downloading_forecast_data">Ankoraŭ elŝutas prognozajn datumojn</string>
 </resources>

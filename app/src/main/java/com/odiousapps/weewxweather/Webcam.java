@@ -32,7 +32,7 @@ public class Webcam extends Fragment
 		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
 		{
-			weeWXAppCommon.LogMessage("Webcam.java onRefresh();");
+			weeWXAppCommon.LogMessage("Webcam.java onRefresh();", true);
 			swipeLayout.setRefreshing(true);
 			weeWXAppCommon.getWebcamImage(true, false);
 		});
@@ -47,7 +47,7 @@ public class Webcam extends Fragment
 
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
-		loadWebcamImage(true);
+		loadWebcamImage();
 	}
 
 	void stopRefreshing()
@@ -92,13 +92,13 @@ public class Webcam extends Fragment
 		weeWXAppCommon.LogMessage("Finished reading webcam.jpg into memory and iv should have updated...");
 	}
 
-	private void loadWebcamImage(boolean forced)
+	private void loadWebcamImage()
 	{
 		weeWXAppCommon.LogMessage("loadWebcamImage...");
 
 		try
 		{
-			Bitmap bm = weeWXAppCommon.getWebcamImage(forced, false);
+			Bitmap bm = weeWXAppCommon.getWebcamImage(false, false);
 			if(bm != null)
 				showWebcamImage(bm);
 			else
@@ -116,7 +116,7 @@ public class Webcam extends Fragment
 		weeWXAppCommon.LogMessage("Webcam.java notificationObserver: " + str);
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEBCAM_INTENT))
-			loadWebcamImage(false);
+			loadWebcamImage();
 
 		if(str.equals(weeWXAppCommon.EXIT_INTENT))
 			onPause();

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Intentar data.txt descargar tak u servidor</string>
     <string name="radar_type_is_invalid">Radar bin yano\'ob \'%1$s\' jach inválido, compruebe u archivo configuración yéetel k\'aax u tu ka\'atéen</string>
     <string name="webcam_still_downloading">Webcam wíimbala\' láayli\' táan u descargando</string>
+    <string name="webcam_url_url_not_set">URL Webcam ma\' táan establecido wa táan ti\' sak</string>
+    <string name="update_set_to_manual_but_no_content_cached">Establecer ti\' actualizaciones manuales, ba\'ale\' ma\' concejanza ti\' caché láayli\'</string>
+    <string name="still_downloading_forecast_data">Láayli\' descarga datos pronóstico</string>
 </resources>

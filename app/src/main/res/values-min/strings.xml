@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Mancubo data unduhan.txt dari server Sanak</string>
     <string name="radar_type_is_invalid">Radar tipe \'%1$s\' indak sah, pareso file pangaturan Sanak dan cubo baliak</string>
     <string name="webcam_still_downloading">Gambar webcam masih mangunduakan</string>
+    <string name="webcam_url_url_not_set">Webcam URL indak diatur atau kosong</string>
+    <string name="update_set_to_manual_but_no_content_cached">Atur ka pembaruan manual, tapi indak ado konten nan dicucuak lai</string>
+    <string name="still_downloading_forecast_data">Masih mangunduakan data ramalan</string>
 </resources>

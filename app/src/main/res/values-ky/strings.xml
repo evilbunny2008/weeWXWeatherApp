@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Сервериңизден Data.txt жүктөө аракети</string>
     <string name="radar_type_is_invalid">\'%1$s\'радар тиби жараксыз, жөндөөлөрүңүздүн файлыңызды текшерип, дагы бир жолу аракет кылып көрүңүз</string>
     <string name="webcam_still_downloading">Веб-камера сүрөтү дагы эле жүктөлүүдө</string>
+    <string name="webcam_url_url_not_set">Веб-камера URL орнотулган эмес же бош эмес</string>
+    <string name="update_set_to_manual_but_no_content_cached">Кол менен жаңыртууларды орнотуу, бирок эч кандай мазмун жок</string>
+    <string name="still_downloading_forecast_data">Дагы эле болжолдонгон маалыматтарды жүктөп алуу</string>
 </resources>

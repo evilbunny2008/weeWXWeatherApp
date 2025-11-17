@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">S\'està intentant baixar data.txt del vostre servidor</string>
     <string name="radar_type_is_invalid">El tipus de radar \'%1$s\' no és vàlid, comproveu el fitxer de configuració i torneu-ho a provar</string>
     <string name="webcam_still_downloading">La imatge de la càmera web encara s\'està baixant</string>
+    <string name="webcam_url_url_not_set">L\'URL de la càmera web no està definit o està en blanc</string>
+    <string name="update_set_to_manual_but_no_content_cached">S\'estableixen actualitzacions manuals, però encara no s\'ha guardat cap contingut a la memòria cau</string>
+    <string name="still_downloading_forecast_data">Encara s\'estan baixant dades de previsió</string>
 </resources>

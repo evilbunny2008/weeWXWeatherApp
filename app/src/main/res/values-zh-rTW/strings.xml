@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">嘗試從您的服務器下載 data.txt</string>
     <string name="radar_type_is_invalid">雷達類型\'%1$s\'無效，請檢查您的設置文件並重試。</string>
     <string name="webcam_still_downloading">網絡攝像頭圖像仍在下載。</string>
+    <string name="webcam_url_url_not_set">網絡攝像頭 URL 未設置或為空</string>
+    <string name="update_set_to_manual_but_no_content_cached">設置為手動更新，但尚未緩存任何內容</string>
+    <string name="still_downloading_forecast_data">仍在下載預測數據</string>
 </resources>

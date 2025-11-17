@@ -127,9 +127,6 @@ public class Custom extends Fragment
 			return false;
 		});
 
-		if(savedInstanceState != null)
-			wv.restoreState(savedInstanceState);
-
 		String custom = weeWXAppCommon.GetStringPref("CUSTOM_URL", weeWXApp.CUSTOM_URL_default);
 		String custom_url = weeWXAppCommon.GetStringPref("custom_url", weeWXApp.custom_url_default);
 
@@ -140,16 +137,6 @@ public class Custom extends Fragment
 			wv.loadUrl(custom_url);
 		else if(custom != null && !custom.isBlank())
 			wv.loadUrl(custom);
-	}
-
-	@Override
-	public void onSaveInstanceState(@NonNull Bundle outState)
-	{
-		weeWXAppCommon.LogMessage("Custom.onSaveInstanceState()");
-		super.onSaveInstanceState(outState);
-
-		if(wv != null)
-			wv.saveState(outState);
 	}
 
 	@Override

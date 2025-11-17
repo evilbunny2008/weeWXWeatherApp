@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Na server chungin data.txt download tuah i zuam</string>
     <string name="radar_type_is_invalid">Radar phun \'%1$s\' cu a hman lo, na settings file kha zoh law i zuam than</string>
     <string name="webcam_still_downloading">Webcam hmanthlak cu download a si rih</string>
+    <string name="webcam_url_url_not_set">Webcam URL cu set a si lo asiloah a thiang lo</string>
+    <string name="update_set_to_manual_but_no_content_cached">Manual updates ah chiah, asinain a chunglei thilri a um rih lo</string>
+    <string name="still_downloading_forecast_data">Hmuhchungnak data download tuah rih</string>
 </resources>

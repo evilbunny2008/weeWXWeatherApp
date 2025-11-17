@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Besiket te downloaden data.txt fan jo tsjinner</string>
     <string name="radar_type_is_invalid">Radartype \'%1$s\' is ûnjildich, kontrolearje jo ynstellingsbestân en besykje it nochris</string>
     <string name="webcam_still_downloading">Webcam-ôfbylding wurdt noch ynladen</string>
+    <string name="webcam_url_url_not_set">Webcam-URL is net ynsteld of is leech</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ynsteld op hânmjittige updates, mar noch gjin ynhâld yn it cache</string>
+    <string name="still_downloading_forecast_data">Noch ynladen prognosegegevens</string>
 </resources>

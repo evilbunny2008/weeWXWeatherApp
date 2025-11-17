@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">ތިމާގެ ސަރވަރ އިން DATO.TXT ޑައުންލޯޑް ކުރަން އުޅުން</string>
     <string name="radar_type_is_invalid">ރެޑާ ޓައިޕް \'%1$s\' އަކީ ސައްހަ ނޫން އެއްޗެއް، ސެޓިންގސް ފައިލް ޗެކްކޮށް އަލުން ޓްރައި ކުރާށެވެ</string>
     <string name="webcam_still_downloading">ވެބްކެމް އިމޭޖް އަދިވެސް ޑައުންލޯޑް ކުރަމުން އެބަދެއެވެ</string>
+    <string name="webcam_url_url_not_set">ވެބްކެމް ޔޫ.އާރ.އެލް ސެޓް ނުކުރެވި ނުވަތަ ހުސްކޮށް</string>
+    <string name="update_set_to_manual_but_no_content_cached">މެނުއަލް އަޕްޑޭޓްތަކަށް ސެޓްކޮށްފައި، އެކަމަކު އަދި އެއްވެސް ކޮންޓެންޓެއް ކެޝްކޮށްފައެއް ނުވޭ</string>
+    <string name="still_downloading_forecast_data">އަދިވެސް ޑައުންލޯޑް ކުރާ ފޯކަސް ޑޭޓާ</string>
 </resources>

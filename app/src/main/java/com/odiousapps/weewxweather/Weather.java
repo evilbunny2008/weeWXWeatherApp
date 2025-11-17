@@ -647,11 +647,11 @@ public class Weather extends Fragment implements View.OnClickListener
 				loadWebViewURL(radarURL);
 			}
 		} else {
-			weeWXAppCommon.LogMessage("Let's force download of fresh forecast data...", true);
+			weeWXAppCommon.LogMessage("Let's force download fresh forecast data...", true);
 			weeWXAppCommon.getForecast(true, false);
 		}
 
-		weeWXAppCommon.LogMessage("Let's force download of fresh weather data...", true);
+		weeWXAppCommon.LogMessage("Let's force download fresh weather data...", true);
 		weeWXAppCommon.getWeather(true, false);
 	}
 

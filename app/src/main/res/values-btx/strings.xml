@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Unduh data download.txt ibas serverndu nari</string>
     <string name="radar_type_is_invalid">Radar tipe \'%1$s\' la sah, periksa file pengaturenndu ras cubaken mulihi</string>
     <string name="webcam_still_downloading">Gambar Webcam enda tetap download</string>
+    <string name="webcam_url_url_not_set">URL Webcam enda enggo itetapken ntah pe kosong</string>
+    <string name="update_set_to_manual_but_no_content_cached">Aturken ku update manual, tapi la lit isi si i cache lenga</string>
+    <string name="still_downloading_forecast_data">Tetap download data ramalen</string>
 </resources>

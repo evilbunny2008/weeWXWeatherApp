@@ -82,4 +82,7 @@
 	<string name="attempting_to_download_data_txt">Attempting download data.txt from your server</string>
 	<string name="radar_type_is_invalid">Radar type \'%1$s\' is invalid, check your settings file and try again.</string>
 	<string name="webcam_still_downloading">Webcam image is still downloading.</string>
+	<string name="webcam_url_url_not_set">Webcam URL is not set or is blank</string>
+	<string name="update_set_to_manual_but_no_content_cached">Set to manual updates, but no content cached yet</string>
+	<string name="still_downloading_forecast_data">Still downloading forecast data</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Tabaka ni lavetaki</string>
     <string name="radar_type_is_invalid">Na mataqali%1$s\' e tawayalani, raica na nomu ituvatuva ni ituvatuva ka tovolea tale</string>
     <string name="webcam_still_downloading">Sa lavetaki tiko ga na iyaloyalo ni kena lavetaki</string>
+    <string name="webcam_url_url_not_set">Na Webcam URL e sega ni sevu se e bela</string>
+    <string name="update_set_to_manual_but_no_content_cached">Tuvanaka na ivolalailai ni ivolalailai, ia e sega ni dua na ka e rawa ni caka</string>
+    <string name="still_downloading_forecast_data">Stivenivolai ni itukutuku ni itukutuku</string>
 </resources>

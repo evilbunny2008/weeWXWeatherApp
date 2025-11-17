@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Опит за изтегляне на data.txt от вашия сървър</string>
     <string name="radar_type_is_invalid">Типът радар \'%1$s\' е невалиден, проверете файла с настройки и опитайте отново</string>
     <string name="webcam_still_downloading">Изображението на уеб камерата все още се изтегля</string>
+    <string name="webcam_url_url_not_set">URL адресът на уеб камерата не е зададен или е празен</string>
+    <string name="update_set_to_manual_but_no_content_cached">Задайте ръчни актуализации, но все още няма кеширано съдържание</string>
+    <string name="still_downloading_forecast_data">Прогнозните данни все още се изтеглят</string>
 </resources>

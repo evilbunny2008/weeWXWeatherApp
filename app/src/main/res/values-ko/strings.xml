@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">서버에서 data.txt 다운로드를 시도하는 중입니다</string>
     <string name="radar_type_is_invalid">레이더 유형 \'%1$s\'이(가) 잘못되었습니다. 설정 파일을 확인하고 다시 시도하세요</string>
     <string name="webcam_still_downloading">웹캠 이미지가 아직 다운로드 중입니다</string>
+    <string name="webcam_url_url_not_set">웹캠 URL이 설정되지 않았거나 비어 있습니다</string>
+    <string name="update_set_to_manual_but_no_content_cached">수동 업데이트로 설정되었지만 아직 캐시된 콘텐츠가 없습니다</string>
+    <string name="still_downloading_forecast_data">아직 예측 데이터를 다운로드하는 중입니다</string>
 </resources>

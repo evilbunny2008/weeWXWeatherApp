@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Kugerageza gukuraho amakuru.txt kuri server yawe</string>
     <string name="radar_type_is_invalid">Radar ubwoko bwa \'%1$s\' ntaco bimaze, suzuma dosiye yawe y\'imiterere maze ugerageze kandi</string>
     <string name="webcam_still_downloading">Ishusho ya Webcam iracariko irakura</string>
+    <string name="webcam_url_url_not_set">Webcam URL ntabwo ishizweho canke ni ubusa</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ushireho ivyahinduwe n\'amaboko, ariko nta kintu na kimwe cari carashizweko</string>
+    <string name="still_downloading_forecast_data">Uca ugikura amakuru y\'ivyaha</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">100 doc#1159 Mieginuojuma lejupluodiešonys dati.txt nu jūs servera</string>
     <string name="radar_type_is_invalid">Radara tips \'%1$s\' ir nadereigs, puorbaudiet sovu īstatejumu failu i raugi vēļreiz</string>
     <string name="webcam_still_downloading">Tīšsaistis attāls vēļ lejupluodej</string>
+    <string name="webcam_url_url_not_set">100 doc#1159 Webcam URL nav īstateits voi ir tukšs</string>
+    <string name="update_set_to_manual_but_no_content_cached">100 doc#1159 Īstateit manualūs atjaunuojumus, bet nikaida satura kešatmiņa vēļ</string>
+    <string name="still_downloading_forecast_data">100 doc#1281 Vēļ lejupluodēt prognozis datus</string>
 </resources>

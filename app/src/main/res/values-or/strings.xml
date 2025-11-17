@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">ଆପଣଙ୍କ ସର୍ଭରରୁ data.txt ଡାଉନଲୋଡ୍ କରିବାକୁ ଚେଷ୍ଟା କରୁଛି |</string>
     <string name="radar_type_is_invalid">ରାଡାର ପ୍ରକାର \'%1$s\' ଅବ alid ଧ, ଆପଣଙ୍କର ସେଟିଂସମୂହ ଫାଇଲକୁ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
     <string name="webcam_still_downloading">ୱେବକ୍ୟାମ ପ୍ରତିଛବି ଏପର୍ଯ୍ୟନ୍ତ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
+    <string name="webcam_url_url_not_set">ୱେବକ୍ୟାମ URL ସେଟ୍ ହୋଇନାହିଁ କିମ୍ବା ଖାଲି ଅଛି |</string>
+    <string name="update_set_to_manual_but_no_content_cached">ମାନୁଆଲ୍ ଅପଡେଟ୍ କୁ ସେଟ୍ କରନ୍ତୁ, କିନ୍ତୁ ଏପର୍ଯ୍ୟନ୍ତ କ content ଣସି ବିଷୟବସ୍ତୁ କ୍ୟାଚ୍ ହୋଇନାହିଁ |</string>
+    <string name="still_downloading_forecast_data">ତଥାପି ପୂର୍ବାନୁମାନ ତଥ୍ୟ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
 </resources>

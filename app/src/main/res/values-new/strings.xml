@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">छिगु सर्भरं डाउनलोड डाटा.टिएक्सट या ।</string>
     <string name="radar_type_is_invalid">राडार टाइप \'%1$s\' अमान्य जुइ, थःगु सेटिङ फाइल जाँच यानादिसँ अले हाकनं कुतः यानादिसँ ।</string>
     <string name="webcam_still_downloading">वेबक्याम इमेज आः नं डाउनलोड यानाच्वंगु दु ।</string>
+    <string name="webcam_url_url_not_set">वेबक्याम यूआरएल सेट मजू बाय् खाली खः ।</string>
+    <string name="update_set_to_manual_but_no_content_cached">म्यानुअल अपडेटय् सेट या, तर आःतकं कन्टेन्ट क्याच मदु</string>
+    <string name="still_downloading_forecast_data">अझ नं पूर्वानुमान डाटा डाउनलोड या ।</string>
 </resources>

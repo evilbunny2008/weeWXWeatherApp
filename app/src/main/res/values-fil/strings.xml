@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Sinusubukan ang pag -download ng data.txt mula sa iyong server</string>
     <string name="radar_type_is_invalid">Ang uri ng radar \'%1$s\' ay hindi wasto, suriin ang iyong file ng mga setting at subukang muli</string>
     <string name="webcam_still_downloading">Ang imahe ng webcam ay nag -download pa rin</string>
+    <string name="webcam_url_url_not_set">Ang Webcam URL ay hindi nakatakda o blangko</string>
+    <string name="update_set_to_manual_but_no_content_cached">Itakda sa manu -manong mga pag -update, ngunit wala pang nilalaman na naka -cache</string>
+    <string name="still_downloading_forecast_data">Nag -download pa rin ng data ng forecast</string>
 </resources>

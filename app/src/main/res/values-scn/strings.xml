@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Tentativi di scaricari dati.Txt dû sò server</string>
     <string name="radar_type_is_invalid">Lu tipu di radar \'%1$s\' è nun validu, cuntrolla lu file di paràmitri e pruva n\'autra vota</string>
     <string name="webcam_still_downloading">L\'immaggini Webcam sta ancora scaricannu</string>
+    <string name="webcam_url_url_not_set">L\'URL web nun eni misa o bivu</string>
+    <string name="update_set_to_manual_but_no_content_cached">Mpustari a l\'agghiurnamenti manuali, ma nuḍḍu cuntinutu ancoratu</string>
+    <string name="still_downloading_forecast_data">Ancora scaricamentu di dati di privisioni</string>
 </resources>

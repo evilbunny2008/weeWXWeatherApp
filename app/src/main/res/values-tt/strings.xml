@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Сезнең сервердан мәгълүматны йөкләү омтылышы</string>
     <string name="radar_type_is_invalid">Радар тибы \'%1$s\' дөрес түгел, көйләүләр файлын тикшерегез һәм кабатлап карагыз</string>
     <string name="webcam_still_downloading">Веб-камера рәсеме әле дә йөкләнә</string>
+    <string name="webcam_url_url_not_set">Веб-камера URL яки буш түгел</string>
+    <string name="update_set_to_manual_but_no_content_cached">Кул белән яңартулар куйган, ләкин әле эчемлекләр юк</string>
+    <string name="still_downloading_forecast_data">Һаман да фаразлау мәгълүматларын йөкләү</string>
 </resources>

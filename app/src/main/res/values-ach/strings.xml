@@ -79,6 +79,9 @@
     <string name="wifi_not_available">Tika onongo bibedo ki wat manyen ento WiFi pe tye</string>
     <string name="invalid_update_interval">Kare ma ki loko ni pe tiyo, loko kit ma ki keto kwede ki dong temo</string>
     <string name="attempting_to_download_data_txt">Temo keto ngec i kom jami ma kikwanyo ki bot ladit tic-ci</string>
-    <string name="radar_type_is_invalid">Radar ma tye ki 1$\' pe tiyo, nen file ma kiketo dok item dok</string>
+    <string name="radar_type_is_invalid">Radar ma tye ki \'%1$s\' pe tiyo, nen file ma kiketo dok item dok</string>
     <string name="webcam_still_downloading">Cal me webcaam pud tye ka kwanyo</string>
+    <string name="webcam_url_url_not_set">Yube me webka pe ki keto onyo pe ki coyo</string>
+    <string name="update_set_to_manual_but_no_content_cached">Kiketo me loko jami manyen, ento pe tye gin mo ma kiyubo ki cing</string>
+    <string name="still_downloading_forecast_data">Pud tye ka nongo ngec ma ki nongo ki i anyim</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Etaade ƴettude dokke.txt e serveer maa</string>
     <string name="radar_type_is_invalid">Radar type \'%1$s\' ina moƴƴi, ƴeewto fiilde dottaaɗe maa, ƴeewto kadi</string>
     <string name="webcam_still_downloading">Natal webcam ina jokki e ƴettude haa jooni</string>
+    <string name="webcam_url_url_not_set">Webcam URL settaaka walla ko ɓuuɓɗo</string>
+    <string name="update_set_to_manual_but_no_content_cached">Set to kesɗitingol junngo, kono alaa ko woni e lowre ndee</string>
+    <string name="still_downloading_forecast_data">Haa jooni ƴettude dokke teskaaɗe</string>
 </resources>

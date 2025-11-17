@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">আপনার সার্ভার থেকে data.txt ডাউনলোড করার চেষ্টা করা হচ্ছে</string>
     <string name="radar_type_is_invalid">রাডার প্রকার \'%1$s\' অবৈধ, আপনার সেটিংস ফাইল চেক করুন এবং আবার চেষ্টা করুন৷</string>
     <string name="webcam_still_downloading">ওয়েবক্যামের ছবি এখনও ডাউনলোড হচ্ছে।</string>
+    <string name="webcam_url_url_not_set">ওয়েবক্যাম URL সেট করা নেই বা ফাঁকা</string>
+    <string name="update_set_to_manual_but_no_content_cached">ম্যানুয়াল আপডেটে সেট করুন, কিন্তু এখনও কোনো সামগ্রী ক্যাশে করা হয়নি৷</string>
+    <string name="still_downloading_forecast_data">এখনও পূর্বাভাসের ডেটা ডাউনলোড করা হচ্ছে</string>
 </resources>

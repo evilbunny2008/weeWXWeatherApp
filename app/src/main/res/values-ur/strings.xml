@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">آپ کے سرور سے ڈاؤن لوڈ ڈیٹا ڈاٹ ٹی ایکس ٹی کی کوشش کر رہے ہیں</string>
     <string name="radar_type_is_invalid">ریڈار کی قسم \'%1$s\' غلط ہے ، اپنی ترتیبات کی فائل کو چیک کریں اور دوبارہ کوشش کریں۔</string>
     <string name="webcam_still_downloading">ویب کیم امیج ابھی بھی ڈاؤن لوڈ ہورہا ہے۔</string>
+    <string name="webcam_url_url_not_set">ویب کیم یو آر ایل سیٹ نہیں ہے یا خالی ہے</string>
+    <string name="update_set_to_manual_but_no_content_cached">دستی تازہ کاریوں پر سیٹ کریں ، لیکن ابھی تک کوئی مواد نہیں ہے</string>
+    <string name="still_downloading_forecast_data">اب بھی پیش گوئی کا ڈیٹا ڈاؤن لوڈ کرنا</string>
 </resources>

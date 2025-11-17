@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">مۇلازىمېتىردىن چۈشۈرمەكچى. مۇلازىمېتىرىڭىزدىن</string>
     <string name="radar_type_is_invalid">رادار تىپى \'%1$s\'ئىناۋەتسىز, تەڭشەكلىرى ھۆججىتىڭىزنى تەكشۈرۈپ قايتا سىناڭ</string>
     <string name="webcam_still_downloading">تور كامېراسى يەنىلا چۈشۈرۈۋاتىدۇ</string>
+    <string name="webcam_url_url_not_set">WebCam URL تەڭشەلمىگەن ياكى قۇرۇق ئەمەس</string>
+    <string name="update_set_to_manual_but_no_content_cached">قولايلىق يېڭىلاشنى بەلگىلىدى, ئەمما ھېچقانداق مەزمۇن يوق</string>
+    <string name="still_downloading_forecast_data">مۆلچەردىكى سانلىق مەلۇماتلارنى چۈشۈرۈش</string>
 </resources>

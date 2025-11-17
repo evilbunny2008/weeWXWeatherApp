@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Ti tara ti téléchargé asango.txt na yâ ti serveur ti mo</string>
     <string name="radar_type_is_invalid">Radar type \'%1$s\' ayeke na lege ni pëpe, bâ fichier ti a-paramètre ti mo na tara ni encore</string>
     <string name="webcam_still_downloading">Image ti Webcam angbâ ti téléchargé</string>
+    <string name="webcam_url_url_not_set">Webcam URL ni ayeke pëpe wala a yeke senge</string>
+    <string name="update_set_to_manual_but_no_content_cached">Zia na maboko ti mo afini ye, me mbeni ye so ayeke na yâ ni ade ti si pëpe</string>
+    <string name="still_downloading_forecast_data">En ti téléchargé asango ti prévision</string>
 </resources>

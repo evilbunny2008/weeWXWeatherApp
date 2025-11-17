@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">A\' feuchainn ri data.txt a luchdachadh sìos bhon t-seirbheisiche agad</string>
     <string name="radar_type_is_invalid">Tha an seòrsa radar \'%1$s\' mì-dhligheach, thoir sùil air an fhaidhle roghainnean agad is feuch ris a-rithist</string>
     <string name="webcam_still_downloading">Tha dealbh camara-lìn fhathast ga luchdachadh sìos</string>
+    <string name="webcam_url_url_not_set">Chan eil URL camara-lìn air a shuidheachadh no falamh</string>
+    <string name="update_set_to_manual_but_no_content_cached">Suidhich gu ùrachaidhean làimhe, ach chan eil susbaint air a thasgadh fhathast</string>
+    <string name="still_downloading_forecast_data">Luchdaich sìos dàta ro-aithris fhathast</string>
 </resources>

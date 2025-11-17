@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">サーバーから data.txt をダウンロードしようとしています</string>
     <string name="radar_type_is_invalid">レーダー タイプ \'%1$s\' が無効です。設定ファイルを確認して、再試行してください。</string>
     <string name="webcam_still_downloading">ウェブカメラの画像はまだダウンロード中です。</string>
+    <string name="webcam_url_url_not_set">WebカメラのURLが設定されていないか空白です</string>
+    <string name="update_set_to_manual_but_no_content_cached">手動更新に設定されていますが、コンテンツはまだキャッシュされていません</string>
+    <string name="still_downloading_forecast_data">予測データをダウンロード中</string>
 </resources>

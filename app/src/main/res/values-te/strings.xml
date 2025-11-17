@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">మీ సర్వర్ నుండి data.txtని డౌన్‌లోడ్ చేయడానికి ప్రయత్నిస్తోంది</string>
     <string name="radar_type_is_invalid">రాడార్ రకం \'%1$s\' చెల్లదు, మీ సెట్టింగ్‌ల ఫైల్‌ని తనిఖీ చేసి, మళ్లీ ప్రయత్నించండి</string>
     <string name="webcam_still_downloading">వెబ్‌క్యామ్ చిత్రం ఇప్పటికీ డౌన్‌లోడ్ అవుతోంది</string>
+    <string name="webcam_url_url_not_set">వెబ్‌క్యామ్ URL సెట్ చేయబడలేదు లేదా ఖాళీగా ఉంది</string>
+    <string name="update_set_to_manual_but_no_content_cached">మాన్యువల్ అప్‌డేట్‌లకు సెట్ చేయబడింది, కానీ ఇంకా కంటెంట్ కాష్ చేయబడలేదు</string>
+    <string name="still_downloading_forecast_data">సూచన డేటాను ఇంకా డౌన్‌లోడ్ చేస్తోంది</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Se încearcă descărcarea data.txt de pe serverul dvs</string>
     <string name="radar_type_is_invalid">Tipul de radar \'%1$s\' este nevalid, verificați fișierul de setări și încercați din nou</string>
     <string name="webcam_still_downloading">Imaginea camerei web încă se descarcă</string>
+    <string name="webcam_url_url_not_set">Adresa URL a camerei web nu este setată sau este goală</string>
+    <string name="update_set_to_manual_but_no_content_cached">Setați la actualizări manuale, dar nu a fost încă stocat conținut în cache</string>
+    <string name="still_downloading_forecast_data">Încă se descarcă datele de prognoză</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Tɛ̈m de wël ë yök.txt tënë server du</string>
     <string name="radar_type_is_invalid">Tääu ë \'%1$s\' ee kë ril, tïŋ ë athör ë tɛ̈ɛ̈u ë käŋ ku them ba bɛɛr</string>
     <string name="webcam_still_downloading">Thura de wɛbthait aŋot ke ye tääu piny</string>
+    <string name="webcam_url_url_not_set">URL de kompiöta acie tɔ̈ ke cë tääu piny ka cë thök</string>
+    <string name="update_set_to_manual_but_no_content_cached">Tääu ë wël yam, ku ka cïn kë tɔ̈ thïn cï tɔ̈ɔ̈u</string>
+    <string name="still_downloading_forecast_data">Ku ŋoot ke yök wël cï kek yök</string>
 </resources>

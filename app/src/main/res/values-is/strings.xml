@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Reynir að hlaða niður data.txt af þjóninum þínum</string>
     <string name="radar_type_is_invalid">Ratsjárgerð \'%1$s\' er ógild, athugaðu stillingaskrána þína og reyndu aftur</string>
     <string name="webcam_still_downloading">Myndavél er enn að hlaðast niður</string>
+    <string name="webcam_url_url_not_set">Vefslóð vefmyndavélar er ekki stillt eða er auð</string>
+    <string name="update_set_to_manual_but_no_content_cached">Stillt á handvirkar uppfærslur, en ekkert efni í skyndiminni ennþá</string>
+    <string name="still_downloading_forecast_data">Enn að hlaða niður spágögnum</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Tentando i dæti de download.txt da-o seu server</string>
     <string name="radar_type_is_invalid">Tipo de radar \'%1$s\' o l\'é invalido, controllâ o file de impostaçioin e provâ torna</string>
     <string name="webcam_still_downloading">L\'imagine webcam a l\'é ancon o download</string>
+    <string name="webcam_url_url_not_set">L\'URL do Webcam o no l\'é impostou ò o l\'é veuo</string>
+    <string name="update_set_to_manual_but_no_content_cached">Imposta a-i aggiornamenti manuali, ma nisciun contegnuo o l\'é ancon incantou</string>
+    <string name="still_downloading_forecast_data">Ancon o scarico di dæti de previxon</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Próba pobrania pliku data.txt z Twojego serwera</string>
     <string name="radar_type_is_invalid">Typ radaru \'%1$s\' jest nieprawidłowy. Sprawdź plik ustawień i spróbuj ponownie</string>
     <string name="webcam_still_downloading">Obraz z kamery internetowej jest nadal pobierany</string>
+    <string name="webcam_url_url_not_set">Adres URL kamery internetowej nie jest ustawiony lub jest pusty</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ustaw na aktualizacje ręczne, ale nie ma jeszcze zawartości w pamięci podręcznej</string>
+    <string name="still_downloading_forecast_data">Nadal pobieram dane prognozy</string>
 </resources>

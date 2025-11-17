@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Kuedza kurodha data.txt kubva kune yako server</string>
     <string name="radar_type_is_invalid">Radar Type \'%1$s\' haina basa, tarisa yako faira faira uye edza zvakare</string>
     <string name="webcam_still_downloading">Webcam mufananidzo uchiri kurodha pasi</string>
+    <string name="webcam_url_url_not_set">Webcam URL haina kuiswa kana isina chinhu</string>
+    <string name="update_set_to_manual_but_no_content_cached">Gara kune zvinyorwa zvinyorwa, asi hapana zvirimo zvakachengetwa zvakadaro</string>
+    <string name="still_downloading_forecast_data">Ndichiri kudhanilodha data rekufanotaura</string>
 </resources>

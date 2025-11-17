@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">A ɲini ka data.txt telesarse ka bɔ i ka sèrwɛri la</string>
     <string name="radar_type_is_invalid">Radar suguya \'%1$s\' tɛ baara la, i ka settings file lajɛ ani ka segin k\'a lajɛ</string>
     <string name="webcam_still_downloading">Webcam ja bɛ ka telesarse hali bi</string>
+    <string name="webcam_url_url_not_set">Webcam URL tɛ sigi walima a bɛ kɛ fɛn ye min tɛ se ka kɛ</string>
+    <string name="update_set_to_manual_but_no_content_cached">Aw bɛ se ka kunnafoni kuraw di u ma, nka kunnafoni si ma sɔrɔ hali bi</string>
+    <string name="still_downloading_forecast_data">Hali bi ka kunnafoniw telesarse minnu bɛ fɔ ka ɲɛ</string>
 </resources>

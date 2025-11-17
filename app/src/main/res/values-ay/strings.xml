@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Data.txt ukax servidor ukan apkatatawa</string>
     <string name="radar_type_is_invalid">Radar Tipo \'%1$s\' ukax janiw askïkiti, configuración de configuración ukar uñakipt\'añamawa ukat mayamp yant\'añamawa</string>
     <string name="webcam_still_downloading">Webcam ukan uñacht\'äwipax wali askipuniwa</string>
+    <string name="webcam_url_url_not_set">Webcam URL ukax janiw utt\'ayatäkiti jan ukax ch\'usawjawa</string>
+    <string name="update_set_to_manual_but_no_content_cached">Manual actualizaciones ukar uñt\'ayata, ukampis janiw kuna contenidos ukanakas caché</string>
+    <string name="still_downloading_forecast_data">Wali aski pronóstico datos ukanaka apsuñataki</string>
 </resources>

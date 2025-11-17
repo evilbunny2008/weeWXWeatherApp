@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">هڅه کول ستاسو له سرور څخه data.txt ډاونلوډ کړئ</string>
     <string name="radar_type_is_invalid">د رادار ډول \'%1$s\' ناسم دی، د خپل ترتیباتو فایل وګورئ او بیا هڅه وکړئ</string>
     <string name="webcam_still_downloading">د ویب کیم عکس لاهم ډاونلوډ کیږي</string>
+    <string name="webcam_url_url_not_set">د ویب کیم URL نه دی ټاکل شوی یا خالي دی</string>
+    <string name="update_set_to_manual_but_no_content_cached">د لاسي تازه معلوماتو لپاره تنظیم کړئ ، مګر هیڅ مینځپانګه لاهم زیرمه شوې</string>
+    <string name="still_downloading_forecast_data">لاهم د وړاندوینې ډاټا ډاونلوډ کول</string>
 </resources>

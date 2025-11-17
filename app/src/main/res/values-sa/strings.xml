@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">भवतः सर्वरतः data.txt डाउनलोड् कर्तुं प्रयतमाना</string>
     <string name="radar_type_is_invalid">Radar प्रकार \'%1$s\' अमान्य है, अपनी सेटिंग्स फाइल जाँच करें और पुनः प्रयास करें।</string>
     <string name="webcam_still_downloading">WebCam इमेज अद्यापि डाउनलोड् भवति।</string>
+    <string name="webcam_url_url_not_set">WebCam URL सेट् न भवति अथवा रिक्तं भवति ।</string>
+    <string name="update_set_to_manual_but_no_content_cached">Manual Updates इत्यत्र सेट् कुर्वन्तु, परन्तु अद्यापि सामग्री cached न कृता</string>
+    <string name="still_downloading_forecast_data">अद्यापि पूर्वानुमानदत्तांशं डाउनलोड् करणम्</string>
 </resources>

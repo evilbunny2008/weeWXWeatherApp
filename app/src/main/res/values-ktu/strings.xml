@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Meka kubaka bansangu.txt ya serveur na nge</string>
     <string name="radar_type_is_invalid">Mutindu ya radar \'%1$s\' kele ya kukonda mfunu, tala fichier ya baparametre na nge mpi meka diaka</string>
     <string name="webcam_still_downloading">Kifwanisu ya web kele kaka na kubaka</string>
+    <string name="webcam_url_url_not_set">URL ya Webcam kele ve ya kuyidika to ya mpamba</string>
+    <string name="update_set_to_manual_but_no_content_cached">Tula na zulu ya bima ya mpa, kansi ata kima mosi ve ya bo me bumba kansi</string>
+    <string name="still_downloading_forecast_data">Kubaka bansangu na ntwala</string>
 </resources>

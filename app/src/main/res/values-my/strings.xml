@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">သင်၏ဆာဗာမှဒေတာကိုဒေါင်းလုပ်ဆွဲရန်ကြိုးစားခြင်း</string>
     <string name="radar_type_is_invalid">Radar အမျိုးအစား \'%1$s\' သည်မမှန်ကန်ပါ, သင်၏ချိန်ညှိချက်များဖိုင်ကိုစစ်ဆေးပြီးထပ်မံကြိုးစားပါ။</string>
     <string name="webcam_still_downloading">Webcam ပုံသည်ဒေါင်းလုပ်လုပ်နေသည်။</string>
+    <string name="webcam_url_url_not_set">Webcam URL သည်သတ်မှတ်ထားခြင်းမရှိပါ</string>
+    <string name="update_set_to_manual_but_no_content_cached">လက်စွဲနောက်ဆုံးသတင်းများကိုသတ်မှတ်ပါ,</string>
+    <string name="still_downloading_forecast_data">နေဆဲခန့်မှန်းချက်ဒေတာ download လုပ်ခြင်း</string>
 </resources>

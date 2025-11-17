@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">अपना सर्वर से डाउनलोड डेटा.txt के प्रयास कइल जा रहल बा</string>
     <string name="radar_type_is_invalid">रडार टाइप \'%1$s\' अमान्य बा, आपन सेटिंग्स फाइल के जांच करीं आ फेर से कोशिश करीं।</string>
     <string name="webcam_still_downloading">वेबकैम के छवि अबहियो डाउनलोड हो रहल बा</string>
+    <string name="webcam_url_url_not_set">वेबकैम यूआरएल सेट नइखे भइल भा खाली बा</string>
+    <string name="update_set_to_manual_but_no_content_cached">मैनुअल अपडेट पर सेट करीं, बाकिर अबहीं ले कवनो सामग्री कैश कइल गइल बा</string>
+    <string name="still_downloading_forecast_data">अभी भी पूर्वानुमान के आंकड़ा डाउनलोड कर रहल बानी</string>
 </resources>

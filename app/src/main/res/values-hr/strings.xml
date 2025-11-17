@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Pokušaj preuzimanja data.txt s vašeg poslužitelja</string>
     <string name="radar_type_is_invalid">Vrsta radara \'%1$s\' nije važeća, provjerite datoteku s postavkama i pokušajte ponovno</string>
     <string name="webcam_still_downloading">Slika s web kamere još uvijek se preuzima</string>
+    <string name="webcam_url_url_not_set">URL web kamere nije postavljen ili je prazan</string>
+    <string name="update_set_to_manual_but_no_content_cached">Postavljeno na ručna ažuriranja, ali još nema sadržaja u predmemoriji</string>
+    <string name="still_downloading_forecast_data">Još uvijek se preuzimaju podaci predviđanja</string>
 </resources>

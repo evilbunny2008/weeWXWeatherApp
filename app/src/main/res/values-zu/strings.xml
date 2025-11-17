@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Ukuzama ukulanda idatha.txt kusuka kuseva yakho</string>
     <string name="radar_type_is_invalid">Uhlobo lwe-radar \'%1$s\' alulungile, hlola ifayela lakho lezilungiselelo bese uzama futhi</string>
     <string name="webcam_still_downloading">Izithombe ze-webcam zisalanda</string>
+    <string name="webcam_url_url_not_set">I-URL yeWebcam ayisethiwe noma ayinalutho</string>
+    <string name="update_set_to_manual_but_no_content_cached">Setha izibuyekezo ze-Manual, kepha akukho okuqukethwe okulondoloziwe okwamanje</string>
+    <string name="still_downloading_forecast_data">Usalanda idatha yesimo sezulu</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Yritetään ladata data.txt palvelimeltasi</string>
     <string name="radar_type_is_invalid">Tutkatyyppi \'%1$s\' on virheellinen, tarkista asetustiedostosi ja yritä uudelleen</string>
     <string name="webcam_still_downloading">Verkkokameran kuvaa ladataan edelleen</string>
+    <string name="webcam_url_url_not_set">Verkkokameran URL-osoitetta ei ole asetettu tai se on tyhjä</string>
+    <string name="update_set_to_manual_but_no_content_cached">Määritetty manuaalisiin päivityksiin, mutta sisältöä ei ole vielä tallennettu välimuistiin</string>
+    <string name="still_downloading_forecast_data">Ennustetietoja ladataan edelleen</string>
 </resources>

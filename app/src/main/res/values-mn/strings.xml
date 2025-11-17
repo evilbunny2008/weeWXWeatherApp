@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Дата татаж авах.txt-ыг серверээс татаж авах</string>
     <string name="radar_type_is_invalid">RADAR \'%1$s1 $ S\' буруу байна, Тохиргоо файлаа шалгаад дахин оролдоно уу</string>
     <string name="webcam_still_downloading">WebCAM зураг татаж байна</string>
+    <string name="webcam_url_url_not_set">WebCam URL тохируулагдаагүй эсвэл хоосон байна</string>
+    <string name="update_set_to_manual_but_no_content_cached">Гарын авлагын шинэчлэлтийг тохируулах боловч агуулга хараахан кэш байхгүй байна</string>
+    <string name="still_downloading_forecast_data">Урьдчилсан мэдээллийг татаж авсаар л байна</string>
 </resources>

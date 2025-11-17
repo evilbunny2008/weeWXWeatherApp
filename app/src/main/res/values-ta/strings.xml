@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">உங்கள் சர்வரிலிருந்து data.txtஐப் பதிவிறக்க முயற்சிக்கிறோம்</string>
     <string name="radar_type_is_invalid">ரேடார் வகை \'%1$s\' தவறானது, உங்கள் அமைப்புக் கோப்பைச் சரிபார்த்து மீண்டும் முயலவும்</string>
     <string name="webcam_still_downloading">வெப்கேம் படம் இன்னும் பதிவிறக்கம் செய்யப்படுகிறது</string>
+    <string name="webcam_url_url_not_set">வெப்கேம் URL அமைக்கப்படவில்லை அல்லது காலியாக உள்ளது</string>
+    <string name="update_set_to_manual_but_no_content_cached">கைமுறை புதுப்பிப்புகளுக்கு அமைக்கவும், ஆனால் இதுவரை எந்த உள்ளடக்கமும் தற்காலிகமாக சேமிக்கப்படவில்லை</string>
+    <string name="still_downloading_forecast_data">முன்னறிவிப்புத் தரவை இன்னும் பதிவிறக்குகிறது</string>
 </resources>

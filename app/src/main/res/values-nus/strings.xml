@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Käp data ni̱ tin caa ka̱m raar</string>
     <string name="radar_type_is_invalid">Radard type \'%1$s\' ɛ mi̱ /ci̱ päär, guic thɛttiŋni̱ku kɛ file kä ɣɔ̱nɛ nyɔk</string>
     <string name="webcam_still_downloading">Thurɛ min ca la̱t ɛ Webma ŋotdɛ la jɛ laa ka̱mkɛ raar</string>
+    <string name="webcam_url_url_not_set">Webma URL /cɛ te thi̱n kiɛ ɛ mi̱ /thiɛl luɔt</string>
+    <string name="update_set_to_manual_but_no_content_cached">Kämni jɛ raar kɛ tet kɛ ɣöö ba manual nyɔk kɛ lätni̱, duŋni̱ ɣöö /thiɛlɛ mi̱ ca la̱th rɛydɛ mi̱ cɔali̱</string>
+    <string name="still_downloading_forecast_data">Kä ŋotdɛ tekɛ data mi ca lar ŋotdɛ</string>
 </resources>

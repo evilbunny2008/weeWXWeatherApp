@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Kujaribu kupakua data.txt kutoka kwa seva yako</string>
     <string name="radar_type_is_invalid">Aina ya Radar \'%1$s\' sio sahihi, angalia faili yako ya mipangilio na ujaribu tena</string>
     <string name="webcam_still_downloading">Picha ya Webcam bado inapakua</string>
+    <string name="webcam_url_url_not_set">URL ya Webcam haijawekwa au iko wazi</string>
+    <string name="update_set_to_manual_but_no_content_cached">Weka kwa sasisho za mwongozo, lakini hakuna yaliyomo</string>
+    <string name="still_downloading_forecast_data">Bado kupakua data ya utabiri</string>
 </resources>

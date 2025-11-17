@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">ከአገልጋይዎ ጋር የውሂብ .txt ን ማውረድ በመሞከር ላይ</string>
     <string name="radar_type_is_invalid">የራዳር ዓይነት \'%1$s\' ልክ ያልሆነ ነው, የቅንብሮች ፋይልዎን ይፈትሹ እና እንደገና ይሞክሩ</string>
     <string name="webcam_still_downloading">የድር ካሜራ ምስል አሁንም ያውርዱ</string>
+    <string name="webcam_url_url_not_set">የድር ካሜራ ዩ አር ኤል አልተዋቀረም ወይም ባዶ ነው</string>
+    <string name="update_set_to_manual_but_no_content_cached">ወደ መመሪያው ዝመናዎች ያዘጋጁ, ግን ገና ምንም ይዘት የለም</string>
+    <string name="still_downloading_forecast_data">አሁንም ትንበያ ውሂብን በማውረድ ላይ</string>
 </resources>

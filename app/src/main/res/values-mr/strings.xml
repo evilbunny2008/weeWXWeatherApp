@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">तुमच्या सर्व्हरवरून data.txt डाउनलोड करण्याचा प्रयत्न करत आहे</string>
     <string name="radar_type_is_invalid">रडार प्रकार \'%1$s\' अवैध आहे, तुमची सेटिंग फाइल तपासा आणि पुन्हा प्रयत्न करा</string>
     <string name="webcam_still_downloading">वेबकॅम प्रतिमा अद्याप डाउनलोड होत आहे</string>
+    <string name="webcam_url_url_not_set">वेबकॅम URL सेट केलेली नाही किंवा रिक्त आहे</string>
+    <string name="update_set_to_manual_but_no_content_cached">मॅन्युअल अद्यतनांवर सेट करा, परंतु अद्याप कोणतीही सामग्री कॅश केलेली नाही</string>
+    <string name="still_downloading_forecast_data">अद्याप अंदाज डेटा डाउनलोड करत आहे</string>
 </resources>

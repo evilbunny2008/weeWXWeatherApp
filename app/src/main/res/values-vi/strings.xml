@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Đang cố tải xuống data.txt từ máy chủ của bạn</string>
     <string name="radar_type_is_invalid">Loại radar \'%1$s\' không hợp lệ, hãy kiểm tra tệp cài đặt của bạn và thử lại</string>
     <string name="webcam_still_downloading">Hình ảnh webcam vẫn đang được tải xuống</string>
+    <string name="webcam_url_url_not_set">URL webcam chưa được đặt hoặc trống</string>
+    <string name="update_set_to_manual_but_no_content_cached">Đặt thành cập nhật thủ công nhưng chưa có nội dung nào được lưu vào bộ nhớ đệm</string>
+    <string name="still_downloading_forecast_data">Vẫn đang tải xuống dữ liệu dự báo</string>
 </resources>

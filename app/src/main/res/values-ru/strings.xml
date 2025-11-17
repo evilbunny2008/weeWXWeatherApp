@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Попытка загрузить data.txt с вашего сервера</string>
     <string name="radar_type_is_invalid">Тип радара \'%1$s\' недействителен. Проверьте файл настроек и повторите попытку</string>
     <string name="webcam_still_downloading">Изображение с веб-камеры все еще загружается</string>
+    <string name="webcam_url_url_not_set">URL-адрес веб-камеры не указан или пуст</string>
+    <string name="update_set_to_manual_but_no_content_cached">Установлено обновление вручную, но содержимое еще не кэшировано</string>
+    <string name="still_downloading_forecast_data">Все еще загружаются данные прогноза</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Püütakse faili data.txt teie serverist alla laadida</string>
     <string name="radar_type_is_invalid">Radari tüüp \'%1$s\' on kehtetu, kontrollige oma seadete faili ja proovige uuesti</string>
     <string name="webcam_still_downloading">Veebikaamera pilti laaditakse endiselt alla</string>
+    <string name="webcam_url_url_not_set">Veebikaamera URL ei ole määratud või on tühi</string>
+    <string name="update_set_to_manual_but_no_content_cached">Määratud käsitsi värskendustele, kuid sisu pole veel vahemällu salvestatud</string>
+    <string name="still_downloading_forecast_data">Prognoosiandmeid laaditakse endiselt alla</string>
 </resources>

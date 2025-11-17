@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">A data.txt fájl letöltése a szerverről</string>
     <string name="radar_type_is_invalid">A \'%1$s\' radartípus érvénytelen, ellenőrizze a beállításokat, és próbálja újra</string>
     <string name="webcam_still_downloading">A webkamera képének letöltése még folyamatban van</string>
+    <string name="webcam_url_url_not_set">A webkamera URL-je nincs beállítva, vagy üres</string>
+    <string name="update_set_to_manual_but_no_content_cached">Kézi frissítésre van állítva, de a tartalom még nincs gyorsítótárban</string>
+    <string name="still_downloading_forecast_data">Az előrejelzési adatok letöltése még folyamatban van</string>
 </resources>

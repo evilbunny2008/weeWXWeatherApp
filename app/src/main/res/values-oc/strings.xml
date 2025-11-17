@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Ensajant de donadas de descarga.txt de vòstre servidor</string>
     <string name="radar_type_is_invalid">Lo tipe radar \'%1$s\' es invalid, verificatz vòstre fichièr de paramètres e ensajatz tornarmai</string>
     <string name="webcam_still_downloading">La imagen Webcam es todavia descargar</string>
+    <string name="webcam_url_url_not_set">L\'URL Webcam es pas fixat o es en blanc</string>
+    <string name="update_set_to_manual_but_no_content_cached">Definissètz a las mesas a jorn manualas, mas pas de contengut en cache encara</string>
+    <string name="still_downloading_forecast_data">Encara descargar las donadas de prevision</string>
 </resources>

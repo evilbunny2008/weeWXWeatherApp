@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">तुमच्या सर्वरा वयल्यान data.txt डाउनलोड करपाचो यत्न करप</string>
     <string name="radar_type_is_invalid">रडार प्रकार \'%1$s\' अवैध आसा, तुमची मांडावळी फायल तपासात आनी परतून यत्न करात</string>
     <string name="webcam_still_downloading">वेबकॅम इमेज अजूनय डाउनलोड करपाक लागल्या</string>
+    <string name="webcam_url_url_not_set">वेबकॅम URL सेट ना वा रिकामे आसा</string>
+    <string name="update_set_to_manual_but_no_content_cached">मॅन्युअल अपडेटांचेर सेट करात, पूण अजून मेरेन सामुग्री कॅश केल्ली ना</string>
+    <string name="still_downloading_forecast_data">अजुनूय डावनलोड करपाचो अदमास डेटा</string>
 </resources>

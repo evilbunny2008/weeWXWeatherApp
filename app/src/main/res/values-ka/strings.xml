@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">თქვენი სერვერიდან data.txt-ის ჩამოტვირთვის მცდელობა</string>
     <string name="radar_type_is_invalid">რადარის ტიპი \'%1$s\' არასწორია, შეამოწმეთ თქვენი პარამეტრების ფაილი და სცადეთ ხელახლა</string>
     <string name="webcam_still_downloading">ვებკამერის სურათი ჯერ კიდევ იტვირთება</string>
+    <string name="webcam_url_url_not_set">ვებკამერის URL არ არის დაყენებული ან ცარიელია</string>
+    <string name="update_set_to_manual_but_no_content_cached">დაყენებულია ხელით განახლებებზე, მაგრამ კონტენტი ჯერ არ არის ქეშირებული</string>
+    <string name="still_downloading_forecast_data">ჯერ კიდევ მიმდინარეობს პროგნოზის მონაცემების ჩამოტვირთვა</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Fersuuche ti data.txt fon tayn serwer download mache</string>
     <string name="radar_type_is_invalid">Radar tip \'%1$s\' is inwalit, kontroliire tayn instëlunge file un proope noch mool</string>
     <string name="webcam_still_downloading">Webcam pilt is noch am download mache</string>
+    <string name="webcam_url_url_not_set">Webcam URL is niet of is leen</string>
+    <string name="update_set_to_manual_but_no_content_cached">Set in manual aktualisiirunge, awer khee inhalt hot noch mool kexrip</string>
+    <string name="still_downloading_forecast_data">Noch download fer ti prokramatsioons data</string>
 </resources>

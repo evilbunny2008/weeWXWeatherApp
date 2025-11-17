@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Аҭагалара аҽазышәара data.txt усервер аҟынтәи</string>
     <string name="radar_type_is_invalid">Радар тип \'%1$s\' ҵабыргуп, урхиарақәа рфаил гәаҭаны, еиҭа уҽазышәа</string>
     <string name="webcam_still_downloading">Webcam асахьа уажәгьы ихәыҵгоит</string>
+    <string name="webcam_url_url_not_set">Webcam URL еиқәыршәам, мамзаргьы иҭацәуп</string>
+    <string name="update_set_to_manual_but_no_content_cached">Иқәыргылатәуп напыла абжьаҵарақәа, аха макьана аҵакы ҵәахым</string>
+    <string name="still_downloading_forecast_data">Аԥхьагәаҭаратә данноқәа раагара</string>
 </resources>

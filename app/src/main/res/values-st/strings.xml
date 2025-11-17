@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Ho leka ho jarolla data.txt ho tsoa ho seva ea hau</string>
     <string name="radar_type_is_invalid">Mofuta oa Radar \'%1$s\' ha e sebetse, sheba file ea hau ea litlhokahalo ebe u leka hape</string>
     <string name="webcam_still_downloading">Setšoantšo sa Webcam se ntse se jarolla</string>
+    <string name="webcam_url_url_not_set">Webcam URL ha e beoe kapa e se na letho</string>
+    <string name="update_set_to_manual_but_no_content_cached">E hlophiselitsoe litlhahiso tsa buka, empa ha ho na litaba tse kileng tsa etsoa</string>
+    <string name="still_downloading_forecast_data">E ntse e jarolla data ea Books</string>
 </resources>

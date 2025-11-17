@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Intento di download di datonan.txt for di bo servidor</string>
     <string name="radar_type_is_invalid">Radar tipo \'%1$s\' ta inválido, kontrolá bo archivo di configuracion i purba atrobe</string>
     <string name="webcam_still_downloading">Imagen di webcam ainda ta download</string>
+    <string name="webcam_url_url_not_set">URL di webcam no ta set òf ta blanku</string>
+    <string name="update_set_to_manual_but_no_content_cached">Set riba actualisacionnan manual, pero no tin contenido cache ainda</string>
+    <string name="still_downloading_forecast_data">Ainda ta download datonan di pronóstiko</string>
 </resources>

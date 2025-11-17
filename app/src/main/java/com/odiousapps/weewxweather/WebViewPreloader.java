@@ -29,8 +29,13 @@ public class WebViewPreloader
 	{
 	}
 
-	void init(Context context, int count)
+	void init(int count)
 	{
+		Context context = weeWXApp.getInstance();
+
+		if(context == null)
+			return;
+
 		for(int i = 0; i < count; i++)
 		{
 			WebView webView = generateWebView(context);
@@ -169,8 +174,13 @@ public class WebViewPreloader
 		}
 	}
 
-	static String getHTML(Context context, String url, int timeoutMs)
+	static String getHTML(String url, int timeoutMs)
 	{
+		Context context = weeWXApp.getInstance();
+
+		if(context == null)
+			return null;
+
 		if(instance.isRunning)
 			return null;
 

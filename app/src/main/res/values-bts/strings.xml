@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Marusaha ma download data.txt humbani server nasiam</string>
     <string name="radar_type_is_invalid">Radar tipe \'%1$s\' lang sah, pareksa ma file pengaturanmu janah uji ma use</string>
     <string name="webcam_still_downloading">Gambar Webcam totap do i- download</string>
+    <string name="webcam_url_url_not_set">URL Webcam lang ibahen atap kosong</string>
+    <string name="update_set_to_manual_but_no_content_cached">Atur ma update manual, tapi lang dong isi na icache ope</string>
+    <string name="still_downloading_forecast_data">Tongon, i-download nasiam ma data ramalan</string>
 </resources>

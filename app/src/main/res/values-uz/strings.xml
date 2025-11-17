@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Serverdan ma\'lumotlarni yuklab olishga urinish</string>
     <string name="radar_type_is_invalid">\'%1$s\' radar turi yaroqsiz, Sozlamalar faylingizni tekshiring va qaytadan urining</string>
     <string name="webcam_still_downloading">WebCam tasviri hali ham yuklab olinmoqda</string>
+    <string name="webcam_url_url_not_set">WebCam URL manzillari o\'rnatilmagan yoki bo\'sh</string>
+    <string name="update_set_to_manual_but_no_content_cached">Qo\'lda yangilanishlarga sozlangan, ammo hech qanday tarkibni hali ham</string>
+    <string name="still_downloading_forecast_data">Hali ham prognoz ma\'lumotlarini yuklab olish</string>
 </resources>

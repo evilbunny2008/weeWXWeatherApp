@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Esheniko ukukopa amashiwi.txt ukufuma kuli umubomfi wenu</string>
     <string name="radar_type_is_invalid">Umusango wa radar \'%1$s\'s\'s taulinga, moneni failo yenu iya fipekanyo no kwesha na kabili</string>
     <string name="webcam_still_downloading">Icikope ca pa Intaneti cicili cilekopololwa</string>
+    <string name="webcam_url_url_not_set">URL iya pa webu tayabikwa nangu nimba</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ukubika pa fya kupangapanga, lelo tapali ifyabamo ifyashingulwikwa nomba</string>
+    <string name="still_downloading_forecast_data">Ukukonkanyapo ukukopa amashiwi ya kusesema</string>
 </resources>

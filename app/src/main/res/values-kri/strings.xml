@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Attempting Download Data.txt frɔm yu sava</string>
     <string name="radar_type_is_invalid">Radar type \'%1$s\' na invalid, chɛk yu sɛtin fayl ɛn tray bak</string>
     <string name="webcam_still_downloading">Webcam pikchɔ stil de dawnlod</string>
+    <string name="webcam_url_url_not_set">Webcam URL nɔ sɛt ɔ na blank</string>
+    <string name="update_set_to_manual_but_no_content_cached">Set to manual apdet, bot no konten cached yet</string>
+    <string name="still_downloading_forecast_data">Still fɔ dawnlod fɔkɔs data</string>
 </resources>

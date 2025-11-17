@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Oñeha\'ãvo ojegueru data.txt nde servidor-gui</string>
     <string name="radar_type_is_invalid">RADAR Tipo \'%1$sS\' ndovaléi, ehecha nde archivo ñemboheko ha eñeha\'ã jey</string>
     <string name="webcam_still_downloading">Ta\'ãnga webcam omboguejy gueteri</string>
+    <string name="webcam_url_url_not_set">URL webcam noñemohendai térã oĩ en blanco</string>
+    <string name="update_set_to_manual_but_no_content_cached">Oñemohenda umi actualización manual-pe, ha katu ndaipóri contenido caché gueteri</string>
+    <string name="still_downloading_forecast_data">Omboguejy gueteri umi dato pronóstico rehegua</string>
 </resources>

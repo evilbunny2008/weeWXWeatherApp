@@ -79,6 +79,9 @@
     <string name="wifi_not_available">Gusto daw na updated pero an koneksyon kan WiFi dai makukua</string>
     <string name="invalid_update_interval">An update na agwat bakong balido, mga kamugtakan na update dangan pagprobaran giraray</string>
     <string name="attempting_to_download_data_txt">Pagprobar na mag-download datos sa saindong serbidor</string>
-    <string name="radar_type_is_invalid">Tipo nin radar \'%$\' bakong balido, hilingon an saindong mga setting file asin purbaran giraray</string>
+    <string name="radar_type_is_invalid">Tipo nin radar \'%1$s\' bakong balido, hilingon an saindong mga setting file asin purbaran giraray</string>
     <string name="webcam_still_downloading">Nag-dodownload pa an imahen sa Webcam</string>
+    <string name="webcam_url_url_not_set">Dai nakabugtak an webcam na URL o blangko</string>
+    <string name="update_set_to_manual_but_no_content_cached">Nakatakda sa mga manwal na update, pero mayo pa nin laog</string>
+    <string name="still_downloading_forecast_data">Pag-download pa gihapon sa datos sa paghula</string>
 </resources>

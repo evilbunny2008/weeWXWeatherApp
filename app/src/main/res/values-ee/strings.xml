@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Agbagbadzedze be nàɖe nyatakakawo.txt tso wò server dzi</string>
     <string name="radar_type_is_invalid">Radar type \'%1$s\' mele eteƒe o, lé ŋku ɖe wò settings file ŋu eye nàgadze agbagba ake</string>
     <string name="webcam_still_downloading">Webcam ƒe nɔnɔmetata la gakpɔtɔ le eƒe kɔpi wɔm</string>
+    <string name="webcam_url_url_not_set">Webcam URL mele ɖoɖo nu o alo le ƒuƒlu</string>
+    <string name="update_set_to_manual_but_no_content_cached">Woɖoe ɖe asi me nya yeyewo, gake nya aɖeke mele eme haɖe o</string>
+    <string name="still_downloading_forecast_data">Nyagblɔɖi ƒe nyatakakawo ƒe kɔpi wɔwɔ gakpɔtɔ</string>
 </resources>

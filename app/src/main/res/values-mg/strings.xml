@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Manandrana misintona data.txt avy amin\'ny mpizara</string>
     <string name="radar_type_is_invalid">Ny karazana radar \'%1$s\' dia tsy manan-kery, jereo ny rakitrao ary andramo indray</string>
     <string name="webcam_still_downloading">Ny sary Webcam dia mbola misintona</string>
+    <string name="webcam_url_url_not_set">Webcam URL tsy napetraka na tsy misy banga</string>
+    <string name="update_set_to_manual_but_no_content_cached">Napetraka amin\'ny fanavaozana manual, fa tsy misy votoaty cache</string>
+    <string name="still_downloading_forecast_data">Mbola misintona data data forecast</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Data.txt zure zerbitzaritik deskargatzen saiatzen</string>
     <string name="radar_type_is_invalid">\'%1$s\' radar mota ez da baliozkoa, egiaztatu ezarpenen fitxategia eta saiatu berriro</string>
     <string name="webcam_still_downloading">Webkameraren irudia deskargatzen ari da oraindik</string>
+    <string name="webcam_url_url_not_set">Webkameraren URLa ez dago ezarrita edo hutsik dago</string>
+    <string name="update_set_to_manual_but_no_content_cached">Ezarri eskuzko eguneraketak, baina oraindik ez dago edukirik cachean</string>
+    <string name="still_downloading_forecast_data">Oraindik iragarpen datuak deskargatzen</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Tentativu di scaricà data.txt da u vostru servitore</string>
     <string name="radar_type_is_invalid">U tipu di radar \'%1$s\' ùn hè micca validu, verificate u vostru schedariu di paràmetri è pruvate di novu</string>
     <string name="webcam_still_downloading">L\'immagine di a webcam hè sempre in scaricamentu</string>
+    <string name="webcam_url_url_not_set">L\'URL di a webcam ùn hè micca stabilitu o hè viotu</string>
+    <string name="update_set_to_manual_but_no_content_cached">Set à l\'aghjurnamenti manuali, ma ùn ci hè ancu micca cuntenutu in cache</string>
+    <string name="still_downloading_forecast_data">Sempre scaricatu dati di previsione</string>
 </resources>

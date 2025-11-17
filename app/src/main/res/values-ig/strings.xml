@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Ịnwa ibudata data.txt na sava gị</string>
     <string name="radar_type_is_invalid">Delur pịnye \'%1$s\' abaghị uru, lelee faịlụ ntọala gị wee nwaa ọzọ</string>
     <string name="webcam_still_downloading">Imagemam webcam ka na-ebudata</string>
+    <string name="webcam_url_url_not_set">Edeghị URL URL ma ọ bụ tọgbọ chakoo</string>
+    <string name="update_set_to_manual_but_no_content_cached">Tọọ na mmelite ntuziaka, mana ọdịnaya enweghị aha</string>
+    <string name="still_downloading_forecast_data">Ka na-ebubata data amụma</string>
 </resources>

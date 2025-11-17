@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Coba data download.txt dari server lo</string>
     <string name="radar_type_is_invalid">Tipe radar \'%1$s\' itu ga sah, cek file pengaturan lo dan coba lagi</string>
     <string name="webcam_still_downloading">gambar Webcam masih download</string>
+    <string name="webcam_url_url_not_set">URL webcam kagak diatur atau lagi kosong</string>
+    <string name="update_set_to_manual_but_no_content_cached">Atur ke pembaruan manual, tapi belom ada isi isi</string>
+    <string name="still_downloading_forecast_data">Masih aja download data ramalan</string>
 </resources>

@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Ngusahakeun unduh data.txt ti server anjeun</string>
     <string name="radar_type_is_invalid">Radar Jenis \'%1$s\' henteu leres, pariksa file setélan anjeun sareng cobian deui</string>
     <string name="webcam_still_downloading">Gambar Webcam masih diunduh</string>
+    <string name="webcam_url_url_not_set">URL URL henteu nyetél atanapi kosong</string>
+    <string name="update_set_to_manual_but_no_content_cached">Diatur pikeun apdet manual, tapi henteu aya eusi cucuk</string>
+    <string name="still_downloading_forecast_data">Masih ngunduh data ramalan</string>
 </resources>

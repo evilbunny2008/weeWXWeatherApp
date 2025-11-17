@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">ၶတ်းၸႂ်ႁႃ Download data.txt တီႈ Server ၸဝ်ႈၵဝ်ႇ</string>
     <string name="radar_type_is_invalid">ရေႇတႃႇ မဵဝ်း \'%1$s\' ၼႆႉ ဢမ်ႇၸႂ်ႈ ဢၼ်မၢၼ်ႇမႅၼ်ႈ ထတ်းတူၺ်း ၾၢႆႇ settings ၸဝ်ႈၵဝ်ႇသေ ၶိုၼ်းၸၢမ်းတူၺ်း။</string>
     <string name="webcam_still_downloading">ၶႅပ်းႁၢင်ႈ Webcam တိုၵ်ႉလူင်းဝႆႉယူႇၶႃႈ</string>
+    <string name="webcam_url_url_not_set">Webcam URL ဢမ်ႇလႆႈတမ်းဝၢင်းဝႆႉ ဢမ်ႇၼၼ် ပဵၼ်ပဝ်ႇ</string>
+    <string name="update_set_to_manual_but_no_content_cached">တမ်းဝၢင်းပၼ် လွင်ႈမႂ်ႇသုင် လူၺ်ႈမိုဝ်း ၵူၺ်းၵႃႈ ဢမ်ႇမီးၶေႃႈမုၼ်း ဢၼ်ၵဵပ်းႁွမ်ဝႆႉ</string>
+    <string name="still_downloading_forecast_data">တိုၵ်ႉလူင်းဢဝ်ၶေႃႈမုၼ်းဢၼ်လၢမ်းၶၢတ်ႈဝႆႉ</string>
 </resources>

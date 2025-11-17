@@ -83,9 +83,6 @@ public class Stats extends Fragment
 
 		wv.getViewTreeObserver().addOnScrollChangedListener(scl);
 
-		if(savedInstanceState != null)
-			wv.restoreState(savedInstanceState);
-
 		swipeLayout.setRefreshing(true);
 		currZoom = sanitiseZoom(weeWXAppCommon.GetIntPref("mySlider", weeWXApp.mySlider_default));
 		if(currZoom != (int)mySlider.getValue())
@@ -98,16 +95,6 @@ public class Stats extends Fragment
 
 		weeWXAppCommon.LogMessage("Stats.onViewCreated()-- adding notification manager...");
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
-	}
-
-	@Override
-	public void onSaveInstanceState(@NonNull Bundle outState)
-	{
-		weeWXAppCommon.LogMessage("Stats.onSaveInstanceState()");
-		super.onSaveInstanceState(outState);
-
-		if(wv != null)
-			wv.saveState(outState);
 	}
 
 	@Override
@@ -745,7 +732,7 @@ public class Stats extends Fragment
 	private void updateFields(boolean forced)
 	{
 		weeWXAppCommon.LogMessage("Stats.java updateFields()");
-		String[] ret = weeWXAppCommon.getWeather(forced, false);
+		String[] ret = weeWXAppCommon.getWeather(false, false);
 		String lastDownload = ret[1];
 
 		if(ret[0].equals("error"))

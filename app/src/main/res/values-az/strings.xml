@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Serverinizdən Data.txt yükləməsinə cəhd edin</string>
     <string name="radar_type_is_invalid">Radar tipi \'%1$s\' etibarsızdır, parametrlər faylını yoxlayın və yenidən cəhd edin</string>
     <string name="webcam_still_downloading">Veb kamera görüntüsü hələ də yüklənir</string>
+    <string name="webcam_url_url_not_set">WebCam URL qurulmur və ya boş deyil</string>
+    <string name="update_set_to_manual_but_no_content_cached">Əl yeniləmələrinə təyin olun, lakin heç bir məzmun hələ önbelleğində saxlanılmadı</string>
+    <string name="still_downloading_forecast_data">Hələ proqnoz məlumatlarını yükləyir</string>
 </resources>

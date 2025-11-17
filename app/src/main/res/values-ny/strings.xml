@@ -81,4 +81,7 @@
     <string name="attempting_to_download_data_txt">Kuyesa kutsitsa deta.txt kuchokera ku seva yanu</string>
     <string name="radar_type_is_invalid">Radiar lembani \'%1$s\' sizabwino, yang\'anani fayilo yanu ndikuyesanso</string>
     <string name="webcam_still_downloading">Chithunzi cha Webcam chikutsitsa</string>
+    <string name="webcam_url_url_not_set">Ulalo wa Webcam sunakhazikike kapena wopanda kanthu</string>
+    <string name="update_set_to_manual_but_no_content_cached">Kukhazikitsidwa ku zosintha zamanja, koma palibe zomwe zidapezekabe</string>
+    <string name="still_downloading_forecast_data">Kutsitsanso deta yakuneneratu</string>
 </resources>

@@ -79,6 +79,9 @@
     <string name="wifi_not_available">El g\'ha minga un\'aplicaziun de la pagina de la lista di dat</string>
     <string name="invalid_update_interval">Seleziuna el cuntrol de la velocità, l\'è necesaria e l\'è necesaria</string>
     <string name="attempting_to_download_data_txt">Indipendentement de la vòstra pagina di dat per la vòstra aplicaziun</string>
-    <string name="radar_type_is_invalid">El 2015 l\'è \'sült\', che l\'è drée a duperà el tò sistèm de cuntrol e l\'è minga facil.\'</string>
+    <string name="radar_type_is_invalid">El 2015 l\'è \'%1$s\' che l\'è drée a duperà el tò sistèm de cuntrol e l\'è minga facil.\'</string>
     <string name="webcam_still_downloading">Clicca sü la fotocamera che g\'he sun</string>
+    <string name="webcam_url_url_not_set">El schermu l\'è minga el nomm de la seziun</string>
+    <string name="update_set_to_manual_but_no_content_cached">Certo, g\'he minga bisogn de duperà un file di dat</string>
+    <string name="still_downloading_forecast_data">Menter el noster sistèm de gestiun del noster sistèm</string>
 </resources>
