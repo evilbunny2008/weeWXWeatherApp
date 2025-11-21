@@ -25,7 +25,7 @@ public class UpdateCheck extends BroadcastReceiver
 	@Override
 	public void onReceive(Context context, Intent i)
 	{
-		weeWXAppCommon.LogMessage("UpdateCheck.java onReceive() intent.getAction(): " + i.getAction());
+		weeWXAppCommon.LogMessage("UpdateCheck.java onReceive() intent.getAction(): " + i.getAction(), true);
 
 		if(context == null)
 		{
@@ -141,12 +141,12 @@ public class UpdateCheck extends BroadcastReceiver
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
 		String string_time = sdf.format(now);
 
-		weeWXAppCommon.LogMessage("UpdateCheck.java now: " + string_time);
+		weeWXAppCommon.LogMessage("UpdateCheck.java now: " + string_time, true);
 
 		string_time = sdf.format(start);
-		weeWXAppCommon.LogMessage("UpdateCheck.java start: " + string_time);
-		weeWXAppCommon.LogMessage("UpdateCheck.java period: " + Math.round(period / 1_000D) + "s");
-		weeWXAppCommon.LogMessage("UpdateCheck.java wait: " + Math.round(wait / 1_000D) + "s");
+		weeWXAppCommon.LogMessage("UpdateCheck.java start: " + string_time, true);
+		weeWXAppCommon.LogMessage("UpdateCheck.java period: " + Math.round(period / 1_000D) + "s", true);
+		weeWXAppCommon.LogMessage("UpdateCheck.java wait: " + Math.round(wait / 1_000D) + "s", true);
 
 		AlarmManager alarm = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
 		alarm.setInexactRepeating(AlarmManager.RTC_WAKEUP, start, period, getPendingIntent(context));
@@ -190,12 +190,12 @@ public class UpdateCheck extends BroadcastReceiver
 
 	static void runInTheBackground(boolean onReceivedUpdate, boolean onAppStart)
 	{
-		weeWXAppCommon.LogMessage("UpdateCheck.java runInTheBackground() running the background updates...");
+		weeWXAppCommon.LogMessage("UpdateCheck.java runInTheBackground() running the background updates...", true);
 
 		Context context = weeWXApp.getInstance();
 		if(context == null)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null");
+			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null", true);
 			if(!weeWXApp.hasBootedFully)
 				weeWXApp.hasBootedFully = true;
 			return;
@@ -246,7 +246,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 		bgStart = current_time;
 
-		PowerManager pm = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
+		PowerManager pm = (PowerManager)context.getSystemService(Context.POWER_SERVICE);
 		PowerManager.WakeLock wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "weeWXApp::MyWakelockTag");
 		wl.acquire(600_000L);
 
@@ -266,7 +266,8 @@ public class UpdateCheck extends BroadcastReceiver
 
 					long nextstart = Math.round((double)now / (double)period) * period;
 					nextstart += wait;
-					if(nextstart < now)
+
+					while(nextstart < now)
 						nextstart += period;
 
 					SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
@@ -353,19 +354,21 @@ public class UpdateCheck extends BroadcastReceiver
 					if(radarURL != null && !radarURL.isBlank())
 					{
 						weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getRadarImage(false, " +
-						                          onAppStart + ")...");
+						                          onAppStart + ")...", true);
 						weeWXAppCommon.getRadarImage(false, onAppStart);
 					}
 				}
 
 				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getWeather(false, " +
-				                          onAppStart + ")...");
+				                          onAppStart + ")...", true);
 				weeWXAppCommon.getWeather(false, onAppStart);
 
 				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getWebcam(false, " +
-				                          onAppStart + ")...");
+				                          onAppStart + ")...", true);
 				weeWXAppCommon.getWebcamImage(false, onAppStart);
-			} catch(Exception ignored) {}
+			} catch(Exception e) {
+				weeWXAppCommon.LogMessage("Error! e: " + e, true);
+			}
 
 			if(onAppStart && !weeWXApp.hasBootedFully)
 			{
@@ -374,7 +377,7 @@ public class UpdateCheck extends BroadcastReceiver
 			}
 
 			weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() finished running the background updates, " +
-			                          "about to release the wake lock...");
+			                          "about to release the wake lock...", true);
 
 			wl.release();
 		});

@@ -1026,12 +1026,13 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		weeWXAppCommon.LogMessage("reloadForecast()");
 
-		updateFLL(View.GONE);
+		if(fll.getVisibility() != View.GONE)
+			updateFLL(View.GONE);
 
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
 		{
 			weeWXAppCommon.LogMessage("Weather.java reloadForecast() weeWXApp.ForecastOnHomeScreenis not true, skipping... " +
-			                          "This line shouldn't be hit ever...",true);
+			                          "This line shouldn't be hit...",true);
 			loadWebViewContent(R.string.unknown_error_occurred);
 			stopRefreshing();
 			return;

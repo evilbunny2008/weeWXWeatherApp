@@ -236,7 +236,9 @@ public class MainActivity extends FragmentActivity
 			{
 				gestureNav = Settings.Secure.getInt(getContentResolver(),
 						"navigation_mode", 0) == 2;
-			} catch(Exception ignored) {}
+			} catch(Exception e) {
+				weeWXAppCommon.LogMessage("Error! e: " + e, true);
+			}
 		}
 
 		ViewCompat.setOnApplyWindowInsetsListener(abl, (v, insets) ->

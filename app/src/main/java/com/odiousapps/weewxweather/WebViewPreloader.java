@@ -146,7 +146,7 @@ public class WebViewPreloader
 	private static void setWebview(WebView wv)
 	{
 		wv.loadData("", "text/html", "utf-8");
-		wv.getSettings().setUserAgentString(weeWXAppCommon.UA);
+		wv.getSettings().setUserAgentString(NetworkClient.UA);
 		wv.getSettings().setJavaScriptEnabled(true);
 		wv.getSettings().setDomStorageEnabled(true);
 		wv.getSettings().setLoadsImagesAutomatically(true);
@@ -226,7 +226,9 @@ public class WebViewPreloader
 						container.removeAllViews();
 
 						//instance.destroyWebView(wv);
-					} catch(Exception ignored) {}
+					} catch(Exception e) {
+						weeWXAppCommon.LogMessage("Error! e: " + e, true);
+					}
 				}
 			});
 
@@ -238,7 +240,9 @@ public class WebViewPreloader
 			// wait on background thread (not UI)
 			boolean ok = latch.await(timeoutMs, TimeUnit.MILLISECONDS);
 			html = ok ? htmlHolder[0] : null;
-		} catch(InterruptedException ignored) {}
+		} catch(InterruptedException e) {
+			weeWXAppCommon.LogMessage("Error! e: " + e, true);
+		}
 
 		instance.isRunning = false;
 

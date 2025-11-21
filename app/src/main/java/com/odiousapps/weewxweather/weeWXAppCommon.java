@@ -75,8 +75,6 @@ class weeWXAppCommon
 	final static boolean debug_html = false;
 	final static boolean web_debug_on = false;
 
-	final static String UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36";
-
 	static final String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 	static final String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
@@ -101,6 +99,7 @@ class weeWXAppCommon
 	private static Typeface tf_bold = null;
 
 	private final static ExecutorService executor = Executors.newFixedThreadPool(4);
+	private static final ExecutorService prefsExec = Executors.newSingleThreadExecutor();
 
 	private static Future<?> forecastTask, radarTask, weatherTask, webcamTask;
 
@@ -117,14 +116,16 @@ class weeWXAppCommon
 	{
 		try
 		{
-			System.setProperty("http.agent", UA);
-		} catch(Exception ignored) {
+			System.setProperty("http.agent", NetworkClient.UA);
+		} catch(Exception e) {
+			LogMessage("Error! e: " + e, true);
 		}
 
 		try
 		{
 			tf_bold = Typeface.create("sans-serif", Typeface.BOLD);
-		} catch(Exception ignored) {
+		} catch(Exception e) {
+			LogMessage("Error! e: " + e, true);
 		}
 
 		options.inJustDecodeBounds = false;
@@ -201,28 +202,28 @@ class weeWXAppCommon
 
 	static void SetStringPref(String name, String value)
 	{
-		SharedPreferences.Editor editor = getPrefSettings().edit();
-		editor.putString(name, value);
-		editor.apply();
+		prefsExec.execute(() ->
+		{
+			SharedPreferences.Editor editor = getPrefSettings().edit();
+			editor.putString(name, value);
+			editor.commit();
+		});
 	}
 
 	static void RemovePref(String name)
 	{
-		SharedPreferences.Editor editor = getPrefSettings().edit();
-		editor.putString(name, "");
-		editor.remove(name);
-		editor.apply();
+		prefsExec.execute(() ->
+		{
+			SharedPreferences.Editor editor = getPrefSettings().edit();
+			editor.putString(name, "");
+			editor.remove(name);
+			editor.commit();
+		});
 	}
 
 	static void clearPref()
 	{
-		getPrefSettings().edit().clear().apply();
-	}
-
-	static void commitPref()
-	{
-		SharedPreferences.Editor editor = getPrefSettings().edit();
-		editor.commit();
+		prefsExec.execute(() -> getPrefSettings().edit().clear().commit());
 	}
 
 	static boolean isPrefSet(String name)
@@ -277,7 +278,7 @@ class weeWXAppCommon
 		}
 
 		if(changed)
-			editor.apply();
+			editor.commit();
 
 		return changed;
 	}
@@ -331,9 +332,12 @@ class weeWXAppCommon
 
 	static void SetLongPref(String name, long value)
 	{
-		SharedPreferences.Editor editor = getPrefSettings().edit();
-		editor.putLong(name, value);
-		editor.apply();
+		prefsExec.execute(() ->
+		{
+			SharedPreferences.Editor editor = getPrefSettings().edit();
+			editor.putLong(name, value);
+			editor.commit();
+		});
 	}
 
 	static long GetLongPref(String name, long default_value)
@@ -348,9 +352,12 @@ class weeWXAppCommon
 
 	static void SetFloatPref(String name, float value)
 	{
-		SharedPreferences.Editor editor = getPrefSettings().edit();
-		editor.putFloat(name, value);
-		editor.apply();
+		prefsExec.execute(() ->
+		{
+			SharedPreferences.Editor editor = getPrefSettings().edit();
+			editor.putFloat(name, value);
+			editor.commit();
+		});
 	}
 
 	static float GetFloatPref(String name, float default_value)
@@ -360,9 +367,12 @@ class weeWXAppCommon
 
 	static void SetIntPref(String name, int value)
 	{
-		SharedPreferences.Editor editor = getPrefSettings().edit();
-		editor.putInt(name, value);
-		editor.apply();
+		prefsExec.execute(() ->
+		{
+			SharedPreferences.Editor editor = getPrefSettings().edit();
+			editor.putInt(name, value);
+			editor.commit();
+		});
 	}
 
 	static int GetIntPref(String name, int default_value)
@@ -377,9 +387,12 @@ class weeWXAppCommon
 
 	static void SetBoolPref(String name, boolean value)
 	{
-		SharedPreferences.Editor editor = getPrefSettings().edit();
-		editor.putBoolean(name, value);
-		editor.apply();
+		prefsExec.execute(() ->
+		{
+			SharedPreferences.Editor editor = getPrefSettings().edit();
+			editor.putBoolean(name, value);
+			editor.commit();
+		});
 	}
 
 	static boolean GetBoolPref(String name, boolean default_value)
@@ -400,7 +413,7 @@ class weeWXAppCommon
 	static long getRSSms()
 	{
 		long rssTime = GetLongPref("rssCheck", 0);
-		if(rssTime < 10_000_000_000L)
+		while(rssTime < 10_000_000_000L)
 			rssTime *= 1_000L;
 
 		return rssTime;
@@ -409,7 +422,7 @@ class weeWXAppCommon
 	static long getRSSsecs()
 	{
 		long rssTime = GetLongPref("rssCheck", 0);
-		if(rssTime > 10_000_000_000L)
+		while(rssTime > 10_000_000_000L)
 			rssTime = Math.round(rssTime / 1_000D);
 
 		return rssTime;
@@ -745,13 +758,15 @@ class weeWXAppCommon
 
 	static String[] processBOM3(String data, boolean showHeader)
 	{
-		LogMessage("Starting processBOM3()");
+		LogMessage("Starting processBOM3()", true);
 
 		if(data.isBlank())
 		{
-			LogMessage("data is blank, skipping...");
+			LogMessage("data is blank, skipping...", true);
 			return null;
 		}
+
+		LogMessage("data: " + data, true);
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
 		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
@@ -867,7 +882,7 @@ class weeWXAppCommon
 				LogMessage("Line 1273");
 			}
 		} catch(Exception e) {
-			LogMessage("Error! " + e);
+			LogMessage("Error! " + e, true);
 			Activity act = getActivity();
 			if(act == null)
 				return new String[]{"Error!", e.toString()};
@@ -3023,9 +3038,12 @@ class weeWXAppCommon
 			try
 			{
 				reallyGetWeather(baseURL);
-				SendWeatherRefreshIntent();
-			} catch(Exception ignored) {}
+			} catch(Exception e) {
+				LogMessage("Error! e: " + e, true);
+			}
 
+			WidgetProvider.updateAppWidget();
+			SendWeatherRefreshIntent();
 			wtStart = 0;
 		});
 
@@ -3344,12 +3362,12 @@ class weeWXAppCommon
 
 	static boolean checkURL(String url) throws IOException
 	{
-		LogMessage("checking if url  " + url + " is valid...");
+		LogMessage("checking if url  " + url + " is valid...", true);
 		if(url == null || url.isBlank())
 			return false;
 
 		OkHttpClient client = NetworkClient.getInstance(url);
-		Request request = NetworkClient.newRequest(true, url);
+		Request request = NetworkClient.getRequest(true, url);
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -3359,21 +3377,21 @@ class weeWXAppCommon
 
 	static String downloadString(String url) throws IOException
 	{
-		LogMessage("downloading text from " + url);
+		LogMessage("downloading text from " + url, true);
 		OkHttpClient client = NetworkClient.getInstance(url);
-		Request request = NetworkClient.newRequest(url);
+		Request request = NetworkClient.getRequest(false, url);
 
 		try(Response response = client.newCall(request).execute())
 		{
 			if(!response.isSuccessful())
 			{
-				LogMessage("response: " + response);
+				LogMessage("response: " + response, true);
 				throw new IOException("HTTP error " + response);
 			}
 
-			LogMessage("response: " + response);
+			LogMessage("response: " + response, true);
 			String tmpStr = response.body().string();
-			LogMessage("Returned string: " + tmpStr);
+			LogMessage("Returned string: " + tmpStr, true);
 			return tmpStr;
 		}
 	}
@@ -3477,7 +3495,9 @@ class weeWXAppCommon
 			File dir = getFilesDir();
 			File f = new File(dir, filename);
 			return f.exists() && f.isFile() && f.canRead();
-		} catch(Exception ignored) {}
+		} catch(Exception e) {
+			LogMessage("Error! e: " + e, true);
+		}
 
 		return false;
 	}
@@ -3500,7 +3520,9 @@ class weeWXAppCommon
 			}
 
 			return true;
-		} catch(Exception ignored) {}
+		} catch(Exception e) {
+			LogMessage("Error! e: " + e, true);
+		}
 
 		return false;
 	}
@@ -3514,7 +3536,7 @@ class weeWXAppCommon
 			return new String[]{"error", finalErrorStr, fctype};
 		}
 
-		LogMessage("getForecast() fctype: " + fctype);
+		LogMessage("getForecast() fctype: " + fctype, true);
 
 		String forecast_url = GetStringPref("FORECAST_URL", weeWXApp.FORECAST_URL_default);
 		if(forecast_url == null || forecast_url.isBlank())
@@ -3526,7 +3548,7 @@ class weeWXAppCommon
 
 		if(!checkConnection() && !forced)
 		{
-			LogMessage("Not on wifi and not a forced refresh");
+			LogMessage("Not on wifi and not a forced refresh", true);
 			if(forecastData == null || forecastData.isBlank())
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available), fctype};
 
@@ -3534,7 +3556,8 @@ class weeWXAppCommon
 		}
 
 		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
-		LogMessage("getForecast() pos: " + pos + ", update interval set to: " + weeWXApp.updateOptions[pos] + ", forced set to: " + forced, true);
+		LogMessage("getForecast() pos: " + pos + ", update interval set to: " + weeWXApp.RSSCache_period_default +
+		           "s, forced set to: " + forced, true);
 		if(pos < 0)
 		{
 			LogMessage("Invalid update frequency...", true);
@@ -3543,14 +3566,24 @@ class weeWXAppCommon
 
 		if(!forced && pos == 0)
 		{
+			LogMessage("Set to manual update and not forced...", true);
+
 			if(forecastData == null || forecastData.isBlank())
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available), fctype};
 
 			return new String[]{"ok", forecastData, fctype};
 		}
 
-		final long current_time = getCurrTime();
+		long current_time = getCurrTime();
 		long rssCheckTime = getRSSsecs();
+		if(rssCheckTime == 0)
+		{
+			LogMessage("Bad rssCheckTime, skipping...", true);
+			if(forecastData == null || forecastData.isBlank())
+				return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
+
+			return new String[]{"ok", forecastData, fctype};
+		}
 
 		if(!forced && rssCheckTime + weeWXApp.RSSCache_period_default > current_time && forecastData != null && !forecastData.isBlank())
 		{
@@ -3559,14 +3592,16 @@ class weeWXAppCommon
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String date = sdf.format(rssCheckTime * 1_000L);
 			LogMessage("rsscheck: " + date, true);
-			date = sdf.format(current_time);
+			date = sdf.format(current_time * 1_000L);
 			LogMessage("current_time: " + date, true);
 			return new String[]{"ok", forecastData, fctype};
 		}
 
 		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp && !forced)
 		{
-			if(forecastData == null || forecastData.isBlank())
+			LogMessage("not fully booted or not called from weeWX App class or not forced...", true);
+
+			if(forecastData != null && !forecastData.isBlank())
 				return new String[]{"ok", forecastData, fctype};
 
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
@@ -3585,6 +3620,9 @@ class weeWXAppCommon
 			forecastTask = null;
 		}
 
+		LogMessage("RSSCache_period_default: " + weeWXApp.RSSCache_period_default, true);
+		LogMessage("current_time: " + current_time, true);
+		LogMessage("rssCheckTime: " + rssCheckTime, true);
 		LogMessage("Was forced or no forecast data or cache is more than " + weeWXApp.RSSCache_period_default +
 		           "s old (" + (current_time - rssCheckTime) + "s)", true);
 
@@ -3594,12 +3632,15 @@ class weeWXAppCommon
 		{
 			LogMessage("Forecast checking: " + forecast_url, true);
 
-			String tmpForecastData = null;
+			String tmpForecastData;
 
 			try
 			{
 				tmpForecastData = reallyGetForecast(forecast_url);
-			} catch(Exception ignored) {}
+			} catch(Exception e) {
+				LogMessage("Error! e: " + e, true);
+				return;
+			}
 
 			if(tmpForecastData != null && !tmpForecastData.isBlank())
 				LogMessage("Successfully updated forecast data...", true);
@@ -3627,8 +3668,12 @@ class weeWXAppCommon
 		if(forecastData.isBlank())
 			return null;
 
+		LogMessage("reallyGetForecast() forcecastData: " + forecastData, true);
+
 		LogMessage("updating rss cache", true);
+		RemovePref("rssCheck");
 		SetLongPref("rssCheck", getCurrTime());
+		RemovePref("forecastData");
 		SetStringPref("forecastData", forecastData);
 
 		return forecastData;
@@ -3642,7 +3687,9 @@ class weeWXAppCommon
 		{
 			if(checkForImages(weeWXApp.radarFilename))
 				bm = getImage(weeWXApp.radarFilename);
-		} catch(Exception ignored) {}
+		} catch(Exception e) {
+			LogMessage("Error! e: " + e, true);
+		}
 
 		if(!checkConnection() && !forced)
 		{
@@ -3721,7 +3768,9 @@ class weeWXAppCommon
 				LogMessage("Starting to download radar image from: " + radarURL, true);
 				loadOrDownloadImage(radarURL, weeWXApp.radarFilename);
 				SendRadarRefreshIntent();
-			} catch(Exception ignored) {}
+			} catch(Exception e) {
+				LogMessage("Error! e: " + e, true);
+			}
 
 			rtStart = 0;
 		});
@@ -3738,7 +3787,9 @@ class weeWXAppCommon
 		{
 			if(checkForImages(weeWXApp.webcamFilename))
 				bm = getImage(weeWXApp.webcamFilename);
-		} catch(Exception ignored) {}
+		} catch(Exception e) {
+			LogMessage("Error! e: " + e, true);
+		}
 
 		if(!checkConnection() && !forced)
 		{
@@ -3817,7 +3868,9 @@ class weeWXAppCommon
 				LogMessage("Starting to download webcam image from: " + webcamURL, true);
 				loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename);
 				SendWebcamRefreshIntent();
-			} catch(Exception ignored) {}
+			} catch(Exception e) {
+				LogMessage("Error! e: " + e, true);
+			}
 		});
 
 		if(bm == null)
@@ -3898,7 +3951,9 @@ class weeWXAppCommon
 				else
 					out.append(indents).append(line);
 			}
-		} catch (IOException ignored) {}
+		} catch (IOException e) {
+			LogMessage("Error! e: " + e, true);
+		}
 
 		return out.toString();
 	}
@@ -3965,7 +4020,9 @@ class weeWXAppCommon
 		{
 			Files.move(oldfile.toPath(), newfile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			return true;
-		} catch(IOException ignored) {
+		} catch(IOException e) {
+			LogMessage("Error! e: " + e, true);
+
 			try(InputStream in = new FileInputStream(oldfile);
 				OutputStream out = new FileOutputStream(newfile))
 			{
@@ -4010,7 +4067,9 @@ class weeWXAppCommon
 				LogMessage(file.getAbsolutePath() + " doesn't exist, skipping...");
 				return true;
 			}
-		} catch(Exception ignored) {}
+		} catch(Exception e) {
+			LogMessage("Error! e: " + e, true);
+		}
 
 		return false;
 	}
@@ -4021,7 +4080,9 @@ class weeWXAppCommon
 		{
 			if(file.exists())
 				return Math.round(file.lastModified() / 1_000D);
-		} catch(Exception ignored) {}
+		} catch(Exception e) {
+			LogMessage("Error! e: " + e, true);
+		}
 
 		return 0;
 	}
@@ -4093,12 +4154,12 @@ class weeWXAppCommon
 	{
 		if(url == null || url.isBlank())
 		{
-			LogMessage("url is null or blank, bailing out...");
+			LogMessage("url is null or blank, bailing out...", true);
 			throw new IOException("url is null or blank, bailing out...");
 		}
 
 		OkHttpClient client = NetworkClient.getInstance(url);
-		Request request = NetworkClient.newRequest(url);
+		Request request = NetworkClient.getRequest(false, url);
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -4149,7 +4210,7 @@ class weeWXAppCommon
 		InputStream urlStream = null;
 
 		OkHttpClient client = NetworkClient.getStream(url);
-		Request request = NetworkClient.newRequest(url);
+		Request request = NetworkClient.getRequest(false, url);
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -4159,7 +4220,7 @@ class weeWXAppCommon
 				throw new IOException("HTTP error " + response);
 			}
 
-			LogMessage("Successfully connected to server, now to grab a frame...");
+			LogMessage("Successfully connected to server, now to grab a frame...", true);
 
 			urlStream = response.body().byteStream();
 
@@ -4189,7 +4250,7 @@ class weeWXAppCommon
 					int read = urlStream.read(imageBytes, offset, contentLength - offset);
 					if(read == -1)
 					{
-						LogMessage("Stream ended prematurely");
+						LogMessage("Stream ended prematurely", true);
 						throw new EOFException("Stream ended prematurely");
 					}
 					offset += read;
@@ -4199,10 +4260,10 @@ class weeWXAppCommon
 				bm = BitmapFactory.decodeStream(new ByteArrayInputStream(imageBytes), null, options);
 				if(bm != null)
 				{
-					LogMessage("Got an image... wooo!");
+					LogMessage("Got an image... wooo!", true);
 					break;
 				} else {
-					LogMessage("bm is null, let's go again...");
+					LogMessage("bm is null, let's go again...", true);
 				}
 			}
 		} finally {

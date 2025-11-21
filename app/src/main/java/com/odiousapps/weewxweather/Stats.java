@@ -296,7 +296,9 @@ public class Stats extends Fragment
 		{
 			if(bits.length > element)
 				return bits[element].strip();
-		} catch(Exception ignored) {}
+		} catch(Exception e) {
+			weeWXAppCommon.LogMessage("Error! e: " + e, true);
+		}
 
 		return "";
 	}	
