@@ -126,7 +126,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			public void onPageFinished(WebView view, String url)
 			{
 				super.onPageFinished(view, url);
-				weeWXAppCommon.LogMessage("forecastWebView.onPageFinished()", true);
+				weeWXAppCommon.LogMessage("forecastWebView.onPageFinished()");
 				stopRefreshing();
 			}
 		});
@@ -137,7 +137,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			public void onPageFinished(WebView view, String url)
 			{
 				super.onPageFinished(view, url);
-				weeWXAppCommon.LogMessage("radarWebView.onPageFinished()", true);
+				weeWXAppCommon.LogMessage("radarWebView.onPageFinished()");
 				stopRefreshing();
 			}
 		});
@@ -395,7 +395,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.ForecastOnForecastScreen)
 		{
-			weeWXAppCommon.LogMessage("Displaying forecastWebView...", true);
+			weeWXAppCommon.LogMessage("Displaying forecastWebView...");
 			if(rfl.getVisibility() != View.GONE)
 				rfl.post(() -> rfl.setVisibility(View.GONE));
 
@@ -416,7 +416,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 				swipeLayout1.setEnabled(true);
 			});
 		} else {
-			weeWXAppCommon.LogMessage("Displaying radar framelayout", true);
+			weeWXAppCommon.LogMessage("Displaying radar framelayout");
 			if(swipeLayout1.getVisibility() != View.GONE)
 				swipeLayout1.post(() -> swipeLayout1.setVisibility(View.GONE));
 

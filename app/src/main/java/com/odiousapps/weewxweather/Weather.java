@@ -176,6 +176,9 @@ public class Weather extends Fragment implements View.OnClickListener
 		frameLayout.removeAllViews();
 		frameLayout.addView(webView);
 
+		if(viewid == R.id.current)
+			webView.getSettings().setTextZoom(100);
+
 		if(doSwipe)
 			webView.getViewTreeObserver().addOnScrollChangedListener(scl);
 
@@ -188,18 +191,9 @@ public class Weather extends Fragment implements View.OnClickListener
 
 				if(dynamicSizing)
 				{
-					weeWXAppCommon.LogMessage("dynamicSizing is true...");
-					// Post a Runnable to make sure contentHeight is available
-					view.postDelayed(() ->
-					{
-						float density =  weeWXApp.getDensity();
-						int contentHeightPx = tv1.getHeight() + tv2.getHeight() +
-						                      (int)(wv.getContentHeight() * density);
-						ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
-						params.height = contentHeightPx; // - (int)(5 * density);
-						swipeLayout.setLayoutParams(params);
-						weeWXAppCommon.LogMessage("New Height: " + contentHeightPx);
-					}, 100); // 100ms delay lets the page finish rendering
+					current.postDelayed(() -> adjustHeight(current), 50);
+					current.postDelayed(() -> adjustHeight(current), 150);
+					current.postDelayed(() -> adjustHeight(current), 300);
 				} else if(viewid == R.id.current) {
 					weeWXAppCommon.LogMessage("dynamicSizing is false...");
 				}
@@ -212,6 +206,28 @@ public class Weather extends Fragment implements View.OnClickListener
 			return webView;
 
 		return null;
+	}
+
+	private void adjustHeight(WebView webView)
+	{
+		webView.evaluateJavascript(
+				"(function() { return Math.max(" +
+				"document.body.scrollHeight, document.documentElement.scrollHeight);" +
+				"})();",
+				value -> {
+					try {
+						weeWXAppCommon.LogMessage("dynamicSizing is true...");
+						// Post a Runnable to make sure contentHeight is available
+						float density =  weeWXApp.getDensity();
+						int height = Math.round(Float.parseFloat(value) * density);
+						int contentHeightPx = tv1.getHeight() + tv2.getHeight() + height;
+						ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
+						params.height = contentHeightPx; // - (int)(5 * density);
+						swipeLayout.setLayoutParams(params);
+						weeWXAppCommon.LogMessage("New Height: " + contentHeightPx);
+					} catch (Exception ignored) {}
+				}
+		);
 	}
 
 	private void checkFields(TextView tv, String txt)
@@ -647,11 +663,11 @@ public class Weather extends Fragment implements View.OnClickListener
 				loadWebViewURL(radarURL);
 			}
 		} else {
-			weeWXAppCommon.LogMessage("Let's force download fresh forecast data...", true);
+			weeWXAppCommon.LogMessage("Let's force download fresh forecast data...");
 			weeWXAppCommon.getForecast(true, false);
 		}
 
-		weeWXAppCommon.LogMessage("Let's force download fresh weather data...", true);
+		weeWXAppCommon.LogMessage("Let's force download fresh weather data...");
 		weeWXAppCommon.getWeather(true, false);
 	}
 

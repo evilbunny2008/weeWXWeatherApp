@@ -32,7 +32,7 @@ public class Webcam extends Fragment
 		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
 		{
-			weeWXAppCommon.LogMessage("Webcam.java onRefresh();", true);
+			weeWXAppCommon.LogMessage("Webcam.java onRefresh();");
 			swipeLayout.setRefreshing(true);
 			weeWXAppCommon.getWebcamImage(true, false);
 		});
@@ -104,7 +104,7 @@ public class Webcam extends Fragment
 			else
 				noImageToShow(weeWXApp.getAndroidString(R.string.webcam_still_downloading));
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Error! " + e);
+			weeWXAppCommon.LogMessage("Error! e: " + e);
 			noImageToShow("Error: " + e);
 		}
 

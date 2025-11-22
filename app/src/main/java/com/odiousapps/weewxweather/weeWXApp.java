@@ -540,7 +540,7 @@ public class weeWXApp extends Application
 
 		setStrings();
 
-		weeWXAppCommon.LogMessage("weeWXApp.java app_version: " + BuildConfig.VERSION_NAME, true);
+		weeWXAppCommon.LogMessage("weeWXApp.java app_version: " + BuildConfig.VERSION_NAME + " starting...", true);
 
 		if(weeWXAppCommon.fixTypes())
 			weeWXAppCommon.LogMessage("weeWXApp.java successfully converted preference object types...");

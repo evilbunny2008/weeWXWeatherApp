@@ -35,7 +35,7 @@ class NetworkClient
 		if(url == null || url.isBlank())
 			return newClient.build();
 
-		weeWXAppCommon.LogMessage("getInstance(), url: " + url, true);
+		weeWXAppCommon.LogMessage("getInstance(), url: " + url);
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
@@ -60,7 +60,7 @@ class NetworkClient
 		if(url == null || url.isBlank())
 			return newClient.build();
 
-		weeWXAppCommon.LogMessage("getStream(), url: " + url, true);
+		weeWXAppCommon.LogMessage("getStream(), url: " + url);
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
@@ -94,7 +94,7 @@ class NetworkClient
 		if(url == null || url.isBlank())
 			return null;
 
-		weeWXAppCommon.LogMessage("newRequest(), url: " + url, true);
+		weeWXAppCommon.LogMessage("newRequest(), url: " + url);
 
 		Request.Builder req = new Request.Builder()
 				.header("User-Agent", UA)

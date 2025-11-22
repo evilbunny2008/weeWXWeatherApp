@@ -42,7 +42,7 @@ public class Stats extends Fragment
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
-			weeWXAppCommon.LogMessage("weeWXAppCommon.getWeather(true, false)...", true);
+			weeWXAppCommon.LogMessage("weeWXAppCommon.getWeather(true, false)...");
 			weeWXAppCommon.getWeather(true, false);
 
 		});
