@@ -1601,7 +1601,7 @@ public class MainActivity extends FragmentActivity
 
 			weeWXAppCommon.LogMessage("Restart the alarm...");
 			UpdateCheck.cancelAlarm();
-			UpdateCheck.setAlarm();
+			UpdateCheck.setNextAlarm();
 			//UpdateCheck.runInTheBackground(false, false);
 
 			runOnUiThread(() ->

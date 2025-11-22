@@ -6,8 +6,13 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 	<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+	<uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"
+		android:maxSdkVersion="32" />
+	<uses-permission android:name="android.permission.USE_EXACT_ALARM"
+		tools:ignore="ExactAlarmPolicy" />
 
     <application
 	    android:name=".weeWXApp"

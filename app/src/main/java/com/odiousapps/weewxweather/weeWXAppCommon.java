@@ -80,10 +80,11 @@ class weeWXAppCommon
 	static final String REFRESH_RADAR_INTENT = "com.odiousapps.weewxweather.REFRESH_RADAR_INTENT";
 	static final String REFRESH_WEATHER_INTENT = "com.odiousapps.weewxweather.REFRESH_WEATHER_INTENT";
 	static final String REFRESH_WEBCAM_INTENT = "com.odiousapps.weewxweather.REFRESH_WEBCAM_INTENT";
+	static final String UPDATECHECK = "com.odiousapps.weewxweather.UPDATECHECK";
 
 	static final String WIDGET_THEME_MODE = "widget_theme_mode";
 
-	public static final int icon_version = 12;
+	static final int icon_version = 12;
 	private static final String icon_url = "https://github.com/evilbunny2008/InigoPlugin/releases/download/1.0.0/icons.zip";
 
 	private static final BitmapFactory.Options options = new BitmapFactory.Options();
