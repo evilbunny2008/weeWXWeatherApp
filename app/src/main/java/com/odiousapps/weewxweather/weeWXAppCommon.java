@@ -21,7 +21,6 @@ import android.util.Log;
 import com.github.evilbunny2008.xmltojson.XmlToJson;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -42,7 +41,6 @@ import java.io.StringReader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -66,26 +64,22 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 @SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref", "ConstantConditions",
-		"SameReturnValue", "BooleanMethodIsAlwaysInverted",
-		"SetTextI18n"})
+		"SameReturnValue", "BooleanMethodIsAlwaysInverted", "SetTextI18n"})
 class weeWXAppCommon
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	final static boolean debug_on = false;
 	final static boolean debug_html = false;
 	final static boolean web_debug_on = false;
+	private final static int maxLogLength = 5_000;
 
 	static final String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
-	static final String FAILED_INTENT = "com.odiousapps.weewxweather.FAILED_INTENT";
 	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
 
-	static final String REFRESH_WEATHER_FORECAST_INTENT = "com.odiousapps.weewxweather.REFRESH_WEATHER_FORECAST_INTENT";
 	static final String REFRESH_FORECAST_INTENT = "com.odiousapps.weewxweather.REFRESH_FORECAST_INTENT";
 	static final String REFRESH_RADAR_INTENT = "com.odiousapps.weewxweather.REFRESH_RADAR_INTENT";
 	static final String REFRESH_WEATHER_INTENT = "com.odiousapps.weewxweather.REFRESH_WEATHER_INTENT";
 	static final String REFRESH_WEBCAM_INTENT = "com.odiousapps.weewxweather.REFRESH_WEBCAM_INTENT";
-
-	static final String WIDGET_UPDATE = "com.odiousapps.weewxweather.WIDGET_UPDATE";
 
 	static final String WIDGET_THEME_MODE = "widget_theme_mode";
 
@@ -138,11 +132,6 @@ class weeWXAppCommon
 		e.printStackTrace();
 	}
 
-	public static boolean isEmpty(StringBuilder sb)
-	{
-		return sb == null || sb.length() == 0;
-	}
-
 	static long[] getPeriod()
 	{
 		long[] def = new long[]{0L, 0L};
@@ -178,10 +167,11 @@ class weeWXAppCommon
 	{
 		if(debug_on || showAnyway)
 		{
-			int len = value.indexOf("\n");
-			if(len <= 0)
-				len = value.length();
-			Log.i("weeWXApp", "message='" + value.substring(0, len) + "'");
+			value = removeWS(value);
+			if(value.length() > maxLogLength)
+				value = "[String truncated to " + maxLogLength + " bytes] " + value.substring(0, maxLogLength);
+
+			Log.i("weeWXApp", "message='" + value + "'");
 		}
 	}
 
@@ -467,7 +457,7 @@ class weeWXAppCommon
 			if(!first.icon.startsWith("file:///") && !first.icon.startsWith("data:image"))
 				sb.append("\t\t\t<i class='").append(first.icon).append(" />\n");
 			else
-				sb.append("\t\t\t<img alt='weather icon' src='").append(first.icon.replaceAll("\n", "").replaceAll("\r", "")).append("' />\n");
+				sb.append("\t\t\t<img alt='weather icon' src='").append(removeWS(first.icon)).append("' />\n");
 			sb.append("\t\t</div>\n");
 
 			sb.append("\t\t<div class='wordToday'>").append(weeWXApp.getAndroidString(R.string.today)).append("</div>\n");
@@ -503,9 +493,7 @@ class weeWXAppCommon
 
 			sb.append("\t<div class='day'>\n\t\t<div class='dayTopRow'>\n");
 
-			String tmpstr = day.icon.replaceAll("\n", "")
-					.replaceAll("\r", "")
-					.replaceAll("\t", "");
+			String tmpstr = removeWS(day.icon);
 
 			sb.append("\t\t\t<div class='iconSmall'>\n");
 			if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
@@ -650,18 +638,16 @@ class weeWXAppCommon
 					day.icon = "flaticon-thermometer";
 			} else {
 				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
-				fileName = checkImage(fileName, day.icon);
-				if(fileName == null)
-					return null;
 
-				File f = new File(fileName);
-				try(FileInputStream imageInFile = new FileInputStream(f))
+				try
 				{
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
+					byte[] imageData = iconToBytes(fileName, day.icon);
+					if(imageData != null)
 						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					else
+						day.icon = "";
 				} catch(Exception e) {
-					doStackOutput(e);
+					LogMessage("processBOM2() Error! e: " + e, true);
 					doStackOutput(e);
 				}
 			}
@@ -714,17 +700,16 @@ class weeWXAppCommon
 						day.icon = "flaticon-thermometer";
 				} else {
 					fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
-					fileName = checkImage(fileName, day.icon);
-					if(fileName == null)
-						return null;
 
-					File f = new File(fileName);
-					try(FileInputStream imageInFile = new FileInputStream(f))
+					try
 					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
+						byte[] imageData = iconToBytes(fileName, day.icon);
+						if(imageData != null)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
 					} catch(Exception e) {
+						LogMessage("processBOM2() Error! e: " + e, true);
 						doStackOutput(e);
 					}
 				}
@@ -848,7 +833,7 @@ class weeWXAppCommon
 				LogMessage("Line 1246");
 
 				String fileName = bomlookup(mydays.getJSONObject(i).getString("icon_descriptor"));
-				if(!fileName.equals("null"))
+				if(fileName != null && !fileName.equals("null") && !fileName.isBlank())
 				{
 					if(!use_icons)
 					{
@@ -861,18 +846,18 @@ class weeWXAppCommon
 					} else {
 						LogMessage("Line 1260");
 
-						fileName = checkImage("bom2" + fileName + ".png", null);
-						if(fileName != null)
+						fileName = "bom2" + fileName + ".png";
+
+						try
 						{
-							File f = new File(fileName);
-							try(FileInputStream imageInFile = new FileInputStream(f))
-							{
-								byte[] imageData = new byte[(int)f.length()];
-								if(imageInFile.read(imageData) > 0)
-									day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-							} catch(Exception e) {
-								doStackOutput(e);
-							}
+							byte[] imageData = iconToBytes(fileName, day.icon);
+							if(imageData != null)
+								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							else
+								day.icon = "";
+						} catch(Exception e) {
+							LogMessage("processBOM3() Error! e: " + e, true);
+							doStackOutput(e);
 						}
 					}
 				}
@@ -909,29 +894,9 @@ class weeWXAppCommon
 		};
 	}
 
-	static String[] processMET(String data)
-	{
-		return processMET(data, false);
-	}
-
 	static String[] processMET(String data, boolean showHeader)
 	{
-		if(data.isBlank())
-			return null;
-
-		try
-		{
-			return processMET(data, showHeader);
-		} catch(Exception e) {
-			doStackOutput(e);
-		}
-
-		return null;
-	}
-
-	private static String[] reallyProcessMET(String data, boolean showHeader) throws IOException, ParseException
-	{
-		if(data.isBlank())
+		if(data == null || data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
@@ -952,9 +917,12 @@ class weeWXAppCommon
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
 			day.timestamp = 0;
-			Date df = sdf.parse(date);
-			if(df != null)
-				day.timestamp = df.getTime();
+			try
+			{
+				Date df = sdf.parse(date);
+				if(df != null)
+					day.timestamp = df.getTime();
+			} catch(Exception ignored) {}
 
 			sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			day.day = sdf.format(day.timestamp);
@@ -964,7 +932,7 @@ class weeWXAppCommon
 			day.min = forecasts[i].split("<span class='tab-temp-low'", 2)[1].split("'>")[1].split("</span>")[0].strip();
 			day.max = forecasts[i].split("<span class='tab-temp-high'", 2)[1].split("'>")[1].split("</span>")[0].strip();
 			day.text = forecasts[i].split("<div class='summary-text", 2)[1].split("'>", 3)[2]
-								.split("</div>", 2)[0].replaceAll("</span>", "").replaceAll("<span>", "");
+					.split("</div>", 2)[0].replaceAll("</span>", "").replaceAll("<span>", "");
 
 			day.min = day.min.substring(0, day.min.length() - 5);
 			day.max = day.max.substring(0, day.max.length() - 5);
@@ -973,17 +941,17 @@ class weeWXAppCommon
 			{
 				day.icon = "wi wi-metoffice-" + fileName.substring(0, fileName.lastIndexOf("."));
 			} else {
-				fileName = checkImage("met" + fileName, null);
-				if(fileName == null)
-					return null;
+				fileName = "met" + fileName;
 
-				File f = new File(fileName);
-				try(FileInputStream imageInFile = new FileInputStream(f))
+				try
 				{
-					byte[] imageData = new byte[(int) f.length()];
-					if(imageInFile.read(imageData) > 0)
+					byte[] imageData = iconToBytes(fileName, null);
+					if(imageData != null)
 						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					else
+						day.icon = "";
 				} catch(Exception e) {
+					LogMessage("processWCA() Error! e: " + e, true);
 					doStackOutput(e);
 				}
 			}
@@ -1130,17 +1098,17 @@ class weeWXAppCommon
 						else
 							day.icon = "flaticon-thermometer";
 					} else {
-						fileName = checkImage("wca" + fileName + ".png", null);
-						if(fileName == null)
-							return null;
+						fileName = "wca" + fileName + ".png";
 
-						File f = new File(fileName);
-						try(FileInputStream imageInFile = new FileInputStream(f))
+						try
 						{
-							byte[] imageData = new byte[(int) f.length()];
-							if(imageInFile.read(imageData) > 0)
+							byte[] imageData = iconToBytes(fileName, null);
+							if(imageData != null)
 								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							else
+								day.icon = "";
 						} catch(Exception e) {
+							LogMessage("processWCA() Error! e: " + e, true);
 							doStackOutput(e);
 						}
 					}
@@ -1277,17 +1245,17 @@ class weeWXAppCommon
 						else
 							day.icon = "flaticon-thermometer";
 					} else {
-						fileName = checkImage("wca" + fileName + ".png", null);
-						if(fileName == null)
-							return null;
+						fileName = "wca" + fileName + ".png";
 
-						File f = new File(fileName);
-						try(FileInputStream imageInFile = new FileInputStream(f))
+						try
 						{
-							byte[] imageData = new byte[(int) f.length()];
-							if(imageInFile.read(imageData) > 0)
+							byte[] imageData = iconToBytes(fileName, null);
+							if(imageData != null)
 								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							else
+								day.icon = "";
 						} catch(Exception e) {
+							LogMessage("processWCAF() Error! e: " + e, true);
 							doStackOutput(e);
 						}
 					}
@@ -1440,17 +1408,16 @@ class weeWXAppCommon
 				if(iconLink.getString(i).toLowerCase(Locale.ENGLISH).startsWith("http"))
 				{
 					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).strip().replaceAll("\\.png$", ".jpg");
-					fileName = checkImage(fileName, iconLink.getString(i));
-					if(fileName == null)
-						return null;
 
-					File f = new File(fileName);
-					try(FileInputStream imageInFile = new FileInputStream(f))
+					try
 					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
+						byte[] imageData = iconToBytes(fileName, iconLink.getString(i));
+						if(imageData != null)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
 					} catch(Exception e) {
+						LogMessage("processWGOV() Error! e: " + e, true);
 						doStackOutput(e);
 					}
 				} else {
@@ -1563,133 +1530,9 @@ class weeWXAppCommon
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	static String[] processBOM(String data)
-	{
-		return processBOM(data, false);
-	}
-
-	static String[] processBOM(String data, boolean showHeader)
-	{
-		if(data.isBlank())
-			return null;
-
-		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
-		String desc;
-		long timestamp;
-		List<Day> days = new ArrayList<>();
-
-		try
-		{
-			JSONObject jobj = new JSONObject(data);
-			desc = jobj.getString("description") + ", Australia";
-
-			String tmp = jobj.getString("content");
-			SimpleDateFormat sdf;
-			sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-
-			timestamp = 0;
-			Date df = sdf.parse(tmp);
-			if(df != null)
-				timestamp = df.getTime();
-
-			JSONArray jarr = jobj.getJSONArray("forecast-period");
-			for(int i = 0; i < jarr.length(); i++)
-			{
-				Day day = new Day();
-				String code = "";
-
-				JSONObject j = jarr.getJSONObject(i);
-				for(int x = 0; x < j.getJSONArray("text").length(); x++)
-				{
-					if(j.getJSONArray("text").getJSONObject(x).getString("type").equals("precis"))
-					{
-						day.text = j.getJSONArray("text").getJSONObject(x).getString("content");
-						break;
-					}
-				}
-
-				try
-				{
-					JSONArray jarr2 = j.getJSONArray("element");
-					for (int x = 0; x < jarr2.length(); x++)
-					{
-						if(jarr2.getJSONObject(x).getString("type").equals("forecast_icon_code"))
-							code = jarr2.getJSONObject(x).getString("content");
-
-						if(jarr2.getJSONObject(x).getString("type").equals("air_temperature_minimum"))
-							day.min = jarr2.getJSONObject(x).getString("content");
-
-						if(jarr2.getJSONObject(x).getString("type").equals("air_temperature_maximum"))
-							day.max = jarr2.getJSONObject(x).getString("content");
-					}
-				} catch(JSONException e) {
-					code = j.getJSONObject("element").getString("content");
-				}
-
-				String date = j.getString("start-time-local").strip();
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
-
-				day.timestamp = 0;
-				df = sdf.parse(date);
-				if(df != null)
-					day.timestamp = df.getTime();
-
-				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
-				day.day = sdf.format(day.timestamp);
-
-				if(!use_icons)
-				{
-					if(!code.equals("14"))
-						day.icon = "wi wi-bom-ftp-" + code;
-					else
-						day.icon = "flaticon-thermometer";
-				} else {
-					String fileName = checkImage("bom" + code + ".png", null);
-					if(fileName == null)
-						return null;
-
-					File f = new File(fileName);
-					try(FileInputStream imageInFile = new FileInputStream(f))
-					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch(Exception e) {
-						doStackOutput(e);
-					}
-				}
-
-				if(metric)
-				{
-					day.max += "&deg;C";
-					day.min += "&deg;C";
-				} else {
-					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
-				}
-
-				if(day.max.equals("&deg;C") || day.max.equals("&deg;F"))
-					day.max = "N/A";
-
-				days.add(day);
-			}
-		} catch(Exception e) {
-			doStackOutput(e);
-			return null;
-		}
-
-		return new String[]{generateForecast(days, timestamp, showHeader), desc};
-	}
-
-	static String[] processMetService(String data)
-	{
-		return processMetService(data, false);
-	}
-
 	static String[] processMetService(String data, boolean showHeader)
 	{
-		if(data.isBlank())
+		if(data == null || data.isBlank())
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
@@ -1701,7 +1544,7 @@ class weeWXAppCommon
 
 		try
 		{
-			LogMessage(data);
+			LogMessage("processMetService() data: " + data);
 			JSONObject jobj = new JSONObject(data);
 			JSONArray loop = jobj.getJSONArray("days");
 			String string_time = loop.getJSONObject(0).getString("issuedAtISO");
@@ -1743,18 +1586,24 @@ class weeWXAppCommon
 						day.icon = "flaticon-thermometer";
 				} else {
 					day.icon = day.icon.replaceAll("-", "_");
-					String fileName = checkImage("ms_" + day.icon + ".png", null);
-					if(fileName == null)
-						return null;
 
-					File f = new File(fileName);
-					try(FileInputStream imageInFile = new FileInputStream(f))
+					String fileName = "ms_" + day.icon + ".png";
+					if(fileName.equals("ms_wind_rain.png"))
+						fileName = "ms_wind_and_rain.png";
+
+					if(fileName != null && !fileName.isBlank())
 					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch(Exception e) {
-						doStackOutput(e);
+						try
+						{
+							byte[] imageData = iconToBytes(fileName, null);
+							if(imageData != null)
+								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							else
+								day.icon = "";
+						} catch(Exception e) {
+							LogMessage("processMetService() Error! e: " + e, true);
+							doStackOutput(e);
+						}
 					}
 				}
 
@@ -1840,11 +1689,6 @@ class weeWXAppCommon
 					temp = bit.split("'></td>\r\n<td>", 2)[1].split("Grad <abbr title='Celsius'>C</abbr></td>\r\n", 2)[0].strip();
 
 				icon = icon.replaceAll("/DE/wetter/_functions/piktos/vhs_", "").replaceAll("\\?__blob=normal", "").strip();
-				String fileName = "dwd_" + icon.replaceAll("-", "_");
-				String url = "https://www.dwd.de/DE/wetter/_functions/piktos/" + icon + "?__blob=normal";
-				fileName = checkImage(fileName, url);
-				if(fileName == null)
-					return null;
 
 				if(!use_icons)
 				{
@@ -1855,14 +1699,22 @@ class weeWXAppCommon
 					else
 						day.icon = "flaticon-thermometer";
 				} else {
-					File f = new File(fileName);
-					try(FileInputStream imageInFile = new FileInputStream(f))
+					String fileName = "dwd_" + icon.replaceAll("-", "_");
+					String url = "https://www.dwd.de/DE/wetter/_functions/piktos/" + icon + "?__blob=normal";
+
+					if(fileName != null && !fileName.isBlank())
 					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch(Exception e) {
-						doStackOutput(e);
+						try
+						{
+							byte[] imageData = iconToBytes(fileName, url);
+							if(imageData != null)
+								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							else
+								day.icon = "";
+						} catch(Exception e) {
+							LogMessage("processDWD() Error! e: " + e, true);
+							doStackOutput(e);
+						}
 					}
 				}
 
@@ -1918,7 +1770,6 @@ class weeWXAppCommon
 			{
 				Day day = new Day();
 				String bit = bits[i].strip();
-				String icon;
 				day.day = bit.split("<td class='timeweek'>")[1].split("'>")[1].split("</a></td>", 2)[0].strip();
 
 				Locale locale = new Locale.Builder().setLanguage("it").setRegion("IT").build();
@@ -1929,33 +1780,32 @@ class weeWXAppCommon
 					day.day = sdf.format(day.timestamp) + " " + day.day.substring(day.day.lastIndexOf(" ") + 1);
 				}
 
-				icon = bit.split("<td class='skyIcon'><img src='", 2)[1].split("' alt='",2)[0].strip();
-				String[] ret = checkFilesIt(icon);
-				if(ret[0] != null)
+				String url = bit.split("<td class='skyIcon'><img src='", 2)[1].split("' alt='",2)[0].strip();
+				String icon = new File(url).getName();
+
+				if(!use_icons)
 				{
-					File f = new File(ret[1]);
-					try(FileInputStream imageInFile = new FileInputStream(f))
+					day.icon = "wi wi-" + icon.substring(0, icon.length() - 4);
+				} else {
+					String fileName = "tempoitalia-" + icon;
+
+					try
 					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
+						byte[] imageData = iconToBytes(fileName, null);
+						if(imageData != null)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
 					} catch(Exception e) {
+						LogMessage("processTempoItalia() Error! e: " + e, true);
 						doStackOutput(e);
 					}
-				} else
-					return ret;
-//                LogMessage("day.icon=" + day.icon);
+				}
 
 				day.max = bit.split("<td class='tempmax'>", 2)[1].split("°C</td>", 2)[0].strip();
 				day.min = bit.split("<td class='tempmin'>", 2)[1].split("°C</td>", 2)[0].strip();
 
 				day.text = bit.split("<td class='skyDesc'>")[1].split("</td>")[0].strip();
-
-				if(!use_icons)
-				{
-					String filename = new File(icon).getName();
-					day.icon = "wi wi-tempoitalia-" + filename.substring(0, filename.length() - 4);
-				}
 
 				LogMessage("day.icon=" + day.icon);
 
@@ -2058,21 +1908,18 @@ class weeWXAppCommon
 						day.icon = "wi wi-aemet-" + code;
 					else
 						day.icon = "flaticon-thermometer";
-				} else
-				{
+				} else {
 					String url = "https://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
 					String fileName = "aemet_" + code + "_g.png";
-					fileName = checkImage(fileName, url);
-					if(fileName == null)
-						return null;
-
-					File f = new File(fileName);
-					try(FileInputStream imageInFile = new FileInputStream(f))
+					try
 					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
+						byte[] imageData = iconToBytes(fileName, url);
+						if(imageData != null)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
 					} catch(Exception e) {
+						LogMessage("processAEMET() Error! e: " + e, true);
 						doStackOutput(e);
 					}
 				}
@@ -2146,19 +1993,17 @@ class weeWXAppCommon
 				{
 					day.icon = "wi wi-yahoo-" + day.icon;
 				} else {
-					String fileName = checkImage(day.icon + ".png", null);
-					if(fileName == null)
-						return null;
+					String fileName = day.icon + ".png";
 
-					LogMessage("yahoo filename = " + fileName);
-
-					File f = new File(fileName);
-					try(FileInputStream imageInFile = new FileInputStream(f))
+					try
 					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
+						byte[] imageData = iconToBytes(fileName, null);
+						if(imageData != null)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
 					} catch(Exception e) {
+						LogMessage("processWCOM() Error! e: " + e, true);
 						doStackOutput(e);
 					}
 				}
@@ -2223,17 +2068,16 @@ class weeWXAppCommon
 				{
 					day.icon = "wi wi-met-ie-" + day.icon;
 				} else {
-					String fileName = checkImage("y" + day.icon + ".png", null);
-					if(fileName == null)
-						return null;
-
-					File f = new File(fileName);
-					try(FileInputStream imageInFile = new FileInputStream(f))
+					String fileName = "y" + day.icon + ".png";
+					try
 					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
+						byte[] imageData = iconToBytes(fileName, null);
+						if(imageData != null)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
 					} catch(Exception e) {
+						LogMessage("processMETIE() Error! e: " + e, true);
 						doStackOutput(e);
 					}
 				}
@@ -2387,17 +2231,16 @@ class weeWXAppCommon
 				{
 					day.icon = "wi wi-yrno-" + code;
 				} else {
-					String fileName = checkImage("yrno" + code + ".png", null);
-					if(fileName == null)
-						return null;
-
-					File f = new File(fileName);
-					try(FileInputStream imageInFile = new FileInputStream(f))
+					String fileName = "yrno" + code + ".png";
+					try
 					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
+						byte[] imageData = iconToBytes(fileName, null);
+						if(imageData != null)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
 					} catch(Exception e) {
+						LogMessage("processYR() Error! e: " + e, true);
 						doStackOutput(e);
 					}
 				}
@@ -2508,17 +2351,18 @@ class weeWXAppCommon
 				{
 					day.icon = "wi wi-yrno-" + code;
 				} else {
-					String fileName = checkImage("yrno" + code + ".png", null);
-					if(fileName == null)
-						return null;
+					String fileName = "yrno" + code + ".png";
 
-					File f = new File(fileName);
-					try(FileInputStream imageInFile = new FileInputStream(f))
+					try
 					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
+						byte[] imageData = iconToBytes(fileName, null);
+						if(imageData != null)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch(Exception e) {
+						else
+							day.icon = "";
+					} catch(Exception e)
+					{
+						LogMessage("processMetNO() Error! e: " + e, true);
 						doStackOutput(e);
 					}
 				}
@@ -2731,17 +2575,16 @@ class weeWXAppCommon
 						day.icon = "flaticon-thermometer";
 				} else {
 					String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
-					fileName = checkImage(fileName, null);
-					if(fileName == null)
-						return null;
 
-					File f = new File(fileName);
-					try(FileInputStream imageInFile = new FileInputStream(f))
+					try
 					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
+						byte[] imageData = iconToBytes(fileName, null);
+						if(imageData != null)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
 					} catch(Exception e) {
+						LogMessage("processWZ() Error! e: " + e, true);
 						doStackOutput(e);
 					}
 				}
@@ -2763,52 +2606,6 @@ class weeWXAppCommon
 		}
 
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
-	}
-
-	private static String[] checkFiles(String url) throws Exception
-	{
-		String filename = "yahoo-" + new File(url).getName();
-		File f = new File(getExtDir("icons"), filename);
-		if(!f.exists())
-		{
-			LogMessage("File not found: " + "yahoo-" + filename);
-			LogMessage("downloading...");
-
-			String new_url = "https://delungra.com/weewx/yahoo-missing.php?filename=" + filename;
-			if(!downloadToFile(f, new_url))
-				return new String[]{null, "f is invalid."};
-
-			if(f.exists())
-				return new String[]{"", f.getAbsolutePath()};
-		} else {
-			LogMessage(filename);
-			return new String[]{"", f.getAbsolutePath()};
-		}
-
-		return new String[]{null, "Failed to load or download icon: " + filename};
-	}
-
-	private static String[] checkFilesIt(String url) throws Exception
-	{
-		String filename = "tempoitalia-" + new File(url).getName();
-		File f = new File(getExtDir("icons"), filename);
-		if(!f.exists())
-		{
-			LogMessage("File not found: " + "tempoitalia-" + filename);
-			LogMessage("downloading...");
-
-			String new_url = "https://delungra.com/weewx/TempoItalia-missing.php?filename=" + filename;
-			if(!downloadToFile(f, new_url))
-				return new String[]{null, "f is invalid."};
-
-			if(f.exists())
-				return new String[]{"", f.getAbsolutePath()};
-		} else {
-			//LogMessage(filename);
-			return new String[]{"", f.getAbsolutePath()};
-		}
-
-		return new String[]{null, "Failed to load or download icon: " + filename};
 	}
 
 	static String[] processYahoo(String data)
@@ -2890,20 +2687,17 @@ class weeWXAppCommon
 					myday.min += "&deg;F";
 				}
 
-				String[] ret = checkFiles(myday.icon);
-				if(ret[0] != null)
+				try
 				{
-					File f = new File(ret[1]);
-					try(FileInputStream imageInFile = new FileInputStream(f))
-					{
-						byte[] imageData = new byte[(int) f.length()];
-						if(imageInFile.read(imageData) > 0)
-							myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					} catch(Exception e) {
-						doStackOutput(e);
-					}
-				} else
-					return ret;
+					byte[] imageData = iconToBytes(myday.icon, null);
+					if(imageData != null)
+						myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					else
+						myday.icon = "";
+				} catch(Exception e) {
+					LogMessage("processYahoo() Error! e: " + e, true);
+					doStackOutput(e);
+				}
 
 				LogMessage(myday.toString());
 				days.add(myday);
@@ -3033,8 +2827,6 @@ class weeWXAppCommon
 		{
 			LogMessage("Weather checking: " + baseURL);
 
-			String tmpForecastData = null;
-
 			try
 			{
 				reallyGetWeather(baseURL);
@@ -3100,21 +2892,6 @@ class weeWXAppCommon
 	}
 
 	// https://stackoverflow.com/questions/8710515/reading-an-image-file-into-bitmap-from-sdcard-why-am-i-getting-a-nullpointerexc
-
-	private static String checkImage(String fileName, String icon) throws IOException
-	{
-		File f = new File(getExtDir("icons"), fileName);
-		LogMessage("f = " + f.getAbsolutePath());
-		if(f.exists() && f.isFile() && f.canRead() && f.length() > 0)
-			return f.getAbsolutePath();
-
-		// Icon is missing we should probably ask to send information as feedback
-		if(icon != null)
-			if(!downloadToFile(fileName, icon))
-				throw new IOException("Failed to download " + fileName);
-
-		return icon;
-	}
 
 	private static Bitmap combineImage(Bitmap bmp1, String fnum, String snum)
 	{
@@ -3396,23 +3173,6 @@ class weeWXAppCommon
 		}
 	}
 
-	private static void writeFile(String fileName, String data) throws Exception
-	{
-		File dir = getDir("weeWX");
-		if(!dir.exists())
-			if(!dir.mkdirs())
-				return;
-
-		File f = new File(dir, fileName);
-
-		OutputStream outputStream = new FileOutputStream(f);
-		outputStream.write(data.getBytes());
-		outputStream.flush();
-		outputStream.close();
-
-		publish(f);
-	}
-
 	private static void publish(File f)
 	{
 		LogMessage("wrote to " + f.getAbsolutePath());
@@ -3423,20 +3183,22 @@ class weeWXAppCommon
 
 	static boolean downloadIcons() throws IOException
 	{
-		File dir = getExtDir("icons");
+		File dir = getDir("icons");
 
-		if(!dir.exists() && !dir.mkdirs())
-			throw new IOException("There was a problem making the icons directory, you will need to try again.");
-
-		if(!dir.exists() && dir.mkdirs())
-			publish(dir);
-
-		File f = new File(dir, "icon.zip");
-		if(!downloadToFile(f, icon_url))
-			throw new IOException("There was a problem downloading icons, you will need to try again.");
+		if(dir.exists() && !dir.isDirectory() && !dir.delete())
+			throw new IOException("There was a problem deleting what should be a directory, you will need to try again.");
 
 		if(!dir.exists())
-			throw new IOException("There was a problem making the icons directory, you will need to try again.");
+		{
+			if(!dir.mkdirs())
+				throw new IOException("There was a problem making the icons directory, you will need to try again.");
+			else
+				publish(dir);
+		}
+
+		File f = new File(dir, "icon.zip");
+		if(!downloadToFile(f, icon_url) || !f.exists())
+			throw new IOException("There was a problem downloading icons, you will need to try again.");
 
 		unzip(f, dir);
 		if(!f.delete())
@@ -3447,7 +3209,9 @@ class weeWXAppCommon
 
 	private static void unzip(File zipFilePath, File destDir) throws IOException
 	{
-		LogMessage("dsetDir: " + destDir.getAbsolutePath());
+		LogMessage("zipFilePath: " + zipFilePath.getAbsolutePath(), true);
+		LogMessage("dsetDir: " + destDir.getAbsolutePath(), true);
+
 		byte[] buffer = new byte[1024];
 		FileInputStream fis = new FileInputStream(zipFilePath);
 		ZipInputStream zis = new ZipInputStream(fis);
@@ -3456,13 +3220,19 @@ class weeWXAppCommon
 		{
 			String fileName = ze.getName();
 			File newFile = new File(destDir, fileName);
-			String canonicalPath = newFile.getCanonicalPath();
-			if(!canonicalPath.startsWith(destDir.toString()))
+			String absolutePath = newFile.getAbsolutePath();
+
+			LogMessage("absolutePath: " + absolutePath);
+			LogMessage("destDir: " + destDir);
+
+			if(!absolutePath.startsWith(destDir.toString()))
 			{
-				LogMessage("File '" + canonicalPath + "' is a security problem, skipping.");
-				continue;
+				LogMessage("File '" + absolutePath + "' is a security problem, skipping.");
+				return;
 			}
+
 			LogMessage("Unzipping to " + newFile.getAbsolutePath());
+
 			if(newFile.getParent() != null)
 			{
 				File dir = new File(newFile.getParent());
@@ -3473,6 +3243,7 @@ class weeWXAppCommon
 				int len;
 				while((len = zis.read(buffer)) > 0)
 					fos.write(buffer, 0, len);
+
 				fos.flush();
 				fos.close();
 
@@ -3492,7 +3263,7 @@ class weeWXAppCommon
 	{
 		try
 		{
-			File dir = getFilesDir();
+			File dir = getDataDir();
 			File f = new File(dir, filename);
 			return f.exists() && f.isFile() && f.canRead();
 		} catch(Exception e) {
@@ -3510,7 +3281,7 @@ class weeWXAppCommon
 
 		try
 		{
-			File dir = getExtDir("icons");
+			File dir = getDir("icons");
 
 			for(String file: files)
 			{
@@ -3761,8 +3532,6 @@ class weeWXAppCommon
 		{
 			LogMessage("Radar checking: " + radarURL);
 
-			String tmpForecastData = null;
-
 			try
 			{
 				LogMessage("Starting to download radar image from: " + radarURL);
@@ -3925,12 +3694,46 @@ class weeWXAppCommon
 		return byteArray;
 	}
 
+	static byte[] iconToBytes(String fileName, String URL) throws IOException
+	{
+		File f = new File(getDir("icons"), fileName);
+		LogMessage("f = " + f.getAbsolutePath());
+		if(f.exists() && (!f.isFile() || !f.canRead()))
+			throw new IOException("Problem with " + f.getAbsoluteFile());
+
+		if((!f.exists() || f.length() <= 0) && URL != null && !URL.isBlank())
+		{
+			// Icon is missing we should probably ask to send information as feedback
+			if(!downloadToFile(f, URL) || f.length() <= 0)
+				throw new IOException("Failed to download " + f.getAbsoluteFile());
+		}
+
+		if(f.exists() && f.canRead() && f.length() > 0)
+		{
+			try(FileInputStream imageInFile = new FileInputStream(f))
+			{
+				byte[] imageData = new byte[(int)f.length()];
+				if(imageInFile.read(imageData) > 0)
+					return imageData;
+			}
+
+		}
+
+		throw new IOException("Failed to download " + f.getAbsoluteFile());
+	}
+
 	static String toBase64(byte[] in)
 	{
-		return "data:image/jpeg;base64," + Base64.encodeToString(in, Base64.DEFAULT)
+		return "data:image/jpeg;base64," + removeWS(Base64.encodeToString(in, Base64.DEFAULT));
+	}
+
+	static String removeWS(String str)
+	{
+		return str
 				.replaceAll("\n", "")
 				.replaceAll("\r", "")
-				.replaceAll("\t", "");
+				.replaceAll("\t", "")
+				.strip();
 	}
 
 	static String indentNonBlankLines(String s, int numberOfTabs)
@@ -4004,14 +3807,15 @@ class weeWXAppCommon
 		return newdir;
 	}
 
-	static File getFilesDir()
+	static File getDataDir()
 	{
+		LogMessage("filesDir: " + weeWXApp.getInstance().getFilesDir().getAbsolutePath());
 		return weeWXApp.getInstance().getFilesDir();
 	}
 
 	static File getDir(String dir)
 	{
-		return new File(getFilesDir(), dir);
+		return new File(getDataDir(), dir);
 	}
 
 	static boolean renameTo(File oldfile, File newfile) throws IOException
@@ -4036,60 +3840,9 @@ class weeWXAppCommon
 		}
 	}
 
-	static boolean deleteFile(String filename)
-	{
-		return deleteFile(getFilesDir(), filename);
-	}
-
-	static boolean deleteFile(String directory, String filename)
-	{
-		File dir = getDir(directory);
-		return deleteFile(dir, filename);
-	}
-
-	static boolean deleteFile(File dir, String filename)
-	{
-		try
-		{
-			File file = new File(dir, filename);
-			if(file.exists() && file.canWrite())
-			{
-				if(!file.delete())
-				{
-					LogMessage("Couldn't delete " + file.getAbsolutePath());
-					return false;
-				} else {
-					LogMessage("Deleted " + file.getAbsolutePath());
-					return true;
-
-				}
-			} else {
-				LogMessage(file.getAbsolutePath() + " doesn't exist, skipping...");
-				return true;
-			}
-		} catch(Exception e) {
-			LogMessage("Error! e: " + e, true);
-		}
-
-		return false;
-	}
-
-	static long getModifiedTime(File file)
-	{
-		try
-		{
-			if(file.exists())
-				return Math.round(file.lastModified() / 1_000D);
-		} catch(Exception e) {
-			LogMessage("Error! e: " + e, true);
-		}
-
-		return 0;
-	}
-
 	static File getFile(String filename)
 	{
-		return getFile(getFilesDir(), filename);
+		return getFile(getDataDir(), filename);
 	}
 
 	static File getFile(File dir, String filename)
@@ -4097,10 +3850,9 @@ class weeWXAppCommon
 		return new File(dir, filename);
 	}
 
-	static Bitmap loadImage(String fileName) throws IOException
+	static Bitmap loadImage(String fileName)
 	{
-		File f = getExtDir("icons");
-		f = new File(f, fileName);
+		File f = new File(getDir("icons"), fileName);
 
 		return loadImage(f);
 	}
@@ -4112,7 +3864,7 @@ class weeWXAppCommon
 
 	static Bitmap getImage(String filename)
 	{
-		File file = getFilesDir();
+		File file = getDataDir();
 		file = new File(file, filename);
 		return BitmapFactory.decodeFile(file.getAbsolutePath(), options);
 	}
@@ -4170,13 +3922,9 @@ class weeWXAppCommon
 		}
 	}
 
-	static boolean downloadToFile(String filename, String url) throws IOException
-	{
-		return downloadToFile(getFile(filename), url);
-	}
-
 	static boolean downloadToFile(File file, String url) throws IOException
 	{
+		LogMessage("Downloading from url: " + url);
 		byte[] body = downloadContent(url);
 		if(body == null || body.length == 0)
 			throw new IOException("Download content was null or empty");
@@ -4184,20 +3932,19 @@ class weeWXAppCommon
 		File tmpfile = Files.createTempFile("weeWXApp_", ".tmp").toFile();
 
 		if(tmpfile.exists() && !tmpfile.delete())
-		{
-			LogMessage("tmpfile " + tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...");
 			throw new IOException(tmpfile.getAbsolutePath() + " exists, but can't be deleted, bailing out...");
-		}
 
 		FileOutputStream fos = new FileOutputStream(tmpfile);
 		fos.write(body);
 		fos.close();
 
+		LogMessage("Successfully saved " + body.length + " bytes of data to: " + tmpfile.getAbsoluteFile());
+
 		if(!renameTo(tmpfile, file))
 			throw new IOException("Failed to rename tmpfile " + tmpfile.getAbsolutePath() + " to desination file " +
 								  file.getAbsolutePath() + ", bailing out...");
 
-		LogMessage("Renamed " + tmpfile.getAbsolutePath() + " to " + file.getAbsoluteFile() + "...");
+		LogMessage("Renamed " + tmpfile.getAbsolutePath() + " to " + file.getAbsoluteFile() + " successfully...");
 
 		return true;
 	}

@@ -153,7 +153,6 @@ public class JsBridge
 
 		// This runs on the UI thread internally, but be careful with heavy work
 		htmlHolder[0] = cleanReturnedHtml(html);
-		//String newhtml = html.replaceAll("\n", "").replaceAll("\r", "");
 		//Common.LogMessage("Got the following HTML: " + newhtml);
 
 		latch.countDown();
@@ -161,10 +160,10 @@ public class JsBridge
 
 	static String cleanReturnedHtml(String jsonEncodedHtml)
 	{
-		if (jsonEncodedHtml == null)
+		if (jsonEncodedHtml == null || jsonEncodedHtml.isBlank())
 			return null;
 
-		String s = jsonEncodedHtml;
+		String s = jsonEncodedHtml.strip();
 
 		// remove surrounding quotes if present
 		if(s.startsWith("\"") && s.endsWith("\"") && s.length() >= 2)

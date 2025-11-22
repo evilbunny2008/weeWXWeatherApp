@@ -503,7 +503,7 @@ public class weeWXApp extends Application
 	final static int widget_theme_mode_dfault = 4;
 
 	final static long LastDownloadTime_default = 0;
-	final static long RSSCache_period_default = 7170;
+	final static long RSSCache_period_default = 270;
 
 	final static String LastDownload_default = null;
 	final static String BASE_URL_default = null;

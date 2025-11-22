@@ -18,7 +18,7 @@ class CustomDebug
 		writeDebug(file, text, 0);
 	}
 
-	static void writeDebug(File file, String text) throws IOException
+	static void writeDebug(File file, String text)
 	{
 		writeDebug(file, text, 0);
 	}
@@ -96,5 +96,45 @@ class CustomDebug
 			//Common.doStackOutput(e);
 			copyFile(inFile, filename, depth + 1);
 		}
+	}
+
+	static boolean deleteFile(File dir, String filename)
+	{
+		try
+		{
+			File file = new File(dir, filename);
+			if(file.exists() && file.canWrite())
+			{
+				if(!file.delete())
+				{
+					weeWXAppCommon.LogMessage("Couldn't delete " + file.getAbsolutePath());
+					return false;
+				} else {
+					weeWXAppCommon.LogMessage("Deleted " + file.getAbsolutePath());
+					return true;
+
+				}
+			} else {
+				weeWXAppCommon.LogMessage(file.getAbsolutePath() + " doesn't exist, skipping...");
+				return true;
+			}
+		} catch(Exception e) {
+			weeWXAppCommon.LogMessage("Error! e: " + e, true);
+		}
+
+		return false;
+	}
+
+	static long getModifiedTime(File file)
+	{
+		try
+		{
+			if(file.exists())
+				return Math.round(file.lastModified() / 1_000D);
+		} catch(Exception e) {
+			weeWXAppCommon.LogMessage("Error! e: " + e, true);
+		}
+
+		return 0;
 	}
 }

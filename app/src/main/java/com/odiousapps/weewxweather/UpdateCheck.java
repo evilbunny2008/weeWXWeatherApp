@@ -25,7 +25,7 @@ public class UpdateCheck extends BroadcastReceiver
 	@Override
 	public void onReceive(Context context, Intent i)
 	{
-		weeWXAppCommon.LogMessage("UpdateCheck.java onReceive() intent.getAction(): " + i.getAction());
+		weeWXAppCommon.LogMessage("UpdateCheck.java onReceive() intent.getAction(): " + i.getAction(), true);
 
 		if(context == null)
 		{
@@ -287,7 +287,8 @@ public class UpdateCheck extends BroadcastReceiver
 						{
 							Thread.sleep(delayms);
 						} catch(InterruptedException e) {
-							weeWXAppCommon.doStackOutput(e);
+							//weeWXAppCommon.doStackOutput(e);
+							return;
 						}
 					}
 				}
@@ -339,13 +340,15 @@ public class UpdateCheck extends BroadcastReceiver
 					{
 						Thread.sleep(delayms);
 					} catch(InterruptedException e) {
-						weeWXAppCommon.doStackOutput(e);
+						//weeWXAppCommon.doStackOutput(e);
+						return;
 					}
 				}
 
 				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getForecast(false, " +
 				                          onAppStart + ")...");
 				weeWXAppCommon.getForecast(false, onAppStart);
+				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getForecast() succeeded...");
 
 				String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 				if(radtype != null && radtype.equals("image"))

@@ -876,7 +876,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "metoffice.gov.uk" ->
 				{
-					String[] content = weeWXAppCommon.processMET(forecastData);
+					String[] content = weeWXAppCommon.processMET(forecastData, false);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
@@ -946,7 +946,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 				case "metservice.com" ->
 				{
-					String[] content = weeWXAppCommon.processMetService(forecastData);
+					String[] content = weeWXAppCommon.processMetService(forecastData, false);
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);

@@ -957,13 +957,6 @@ public class MainActivity extends FragmentActivity
 			boolean validURL3;
 			boolean validURL5;
 
-			String oldBaseURL = weeWXAppCommon.GetStringPref("BASE_URL", weeWXApp.BASE_URL_default);
-			String oldRadarURL = weeWXAppCommon.GetStringPref("RADAR_URL", weeWXApp.RADAR_URL_default);
-			String oldForecastURL = weeWXAppCommon.GetStringPref("FORECAST_URL", weeWXApp.FORECAST_URL_default);
-			String oldWebcamURL = weeWXAppCommon.GetStringPref("WEBCAM_URL", weeWXApp.WEBCAM_URL_default);
-			String oldCustomURL = weeWXAppCommon.GetStringPref("CUSTOM_URL", weeWXApp.CUSTOM_URL_default);
-			String oldAppCustomURL = weeWXAppCommon.GetStringPref("custom_url", weeWXApp.custom_url_default);
-
 			String baseURL = "", radtype = "", radarURL = "", forecastURL = "", webcamURL = "",
 					CustomURL = "", appCustomURL, fctype = "", bomtown = "", metierev;
 
@@ -1115,19 +1108,15 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			if(!baseURL.equals(oldBaseURL))
+			try
 			{
-				try
-				{
-					weeWXAppCommon.LogMessage("Checking baseURL: " + baseURL);
-					validURL1 = weeWXAppCommon.reallyGetWeather(baseURL);
-				} catch(Exception e) {
-					weeWXAppCommon.doStackOutput(e);
-					errorStr = e.toString();
-					validURL1 = false;
-				}
-			} else
-				validURL1 = true;
+				weeWXAppCommon.LogMessage("Checking baseURL: " + baseURL);
+				validURL1 = weeWXAppCommon.reallyGetWeather(baseURL);
+			} catch(Exception e) {
+				weeWXAppCommon.doStackOutput(e);
+				errorStr = e.toString();
+				validURL1 = false;
+			}
 
 			if(!validURL1)
 			{
@@ -1148,7 +1137,7 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			if(!radarURL.isBlank() && !radarURL.equals(oldRadarURL))
+			if(!radarURL.isBlank())
 			{
 				try
 				{
@@ -1322,7 +1311,7 @@ public class MainActivity extends FragmentActivity
 							forecastURL = "https://prodapi.metweb.ie/weather/daily/" + forecastURL.replaceAll(",", "/") + "/10";
 
 							tmpStr = weeWXAppCommon.GetStringPref("metierev", weeWXApp.metierev_default);
-							if(tmpStr == null || tmpStr.isBlank() || !forecastURL.equals(oldForecastURL))
+							if(tmpStr == null || tmpStr.isBlank())
 							{
 								metierev = weeWXAppCommon.downloadString(metierev);
 								if(metierev == null)
@@ -1387,13 +1376,14 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			if(!forecastURL.isBlank() && !forecastURL.equals(oldForecastURL))
+			if(!forecastURL.isBlank())
 			{
 				weeWXAppCommon.LogMessage("forecast checking: " + forecastURL);
 
 				try
 				{
 					tmpStr = weeWXAppCommon.reallyGetForecast(forecastURL);
+					weeWXAppCommon.LogMessage("tmpStr: " + tmpStr);
 					validURL3 = tmpStr != null && !tmpStr.isBlank();
 				} catch(IOException e) {
 					weeWXAppCommon.doStackOutput(e);
@@ -1421,7 +1411,7 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			if(!webcamURL.isBlank() && !webcamURL.equals(oldWebcamURL))
+			if(!webcamURL.isBlank())
 			{
 				weeWXAppCommon.LogMessage("checking: " + webcamURL);
 
@@ -1463,7 +1453,7 @@ public class MainActivity extends FragmentActivity
 			appCustomURL = customURL.getText() != null ? customURL.getText().toString().strip() : "";
 			if(appCustomURL.isBlank())
 			{
-				if(!CustomURL.isBlank() && !CustomURL.equals(weeWXApp.CustomURL_default) && !CustomURL.equals(oldCustomURL))
+				if(!CustomURL.isBlank() && !CustomURL.equals(weeWXApp.CustomURL_default))
 				{
 					try
 					{
@@ -1500,35 +1490,32 @@ public class MainActivity extends FragmentActivity
 					}
 				}
 			} else {
-				if(!appCustomURL.equals(oldAppCustomURL))
+				try
 				{
-					try
-					{
-						validURL5 = weeWXAppCommon.checkURL(appCustomURL);
-					} catch(Exception e) {
-						weeWXAppCommon.doStackOutput(e);
-						errorStr = e.toString();
-						validURL5 = false;
-					}
+					validURL5 = weeWXAppCommon.checkURL(appCustomURL);
+				} catch(Exception e) {
+					weeWXAppCommon.doStackOutput(e);
+					errorStr = e.toString();
+					validURL5 = false;
+				}
 
-					if(!validURL5)
+				if(!validURL5)
+				{
+					String finalErrorStr = errorStr;
+					runOnUiThread(() ->
 					{
-						String finalErrorStr = errorStr;
-						runOnUiThread(() ->
-						{
-							b1.setEnabled(true);
-							b2.setEnabled(true);
-							dialog.dismiss();
-							new AlertDialog.Builder(this)
-									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_custom_url))
-									.setMessage(finalErrorStr)
-									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
-											(dialog, which) -> {}).show();
-						});
+						b1.setEnabled(true);
+						b2.setEnabled(true);
+						dialog.dismiss();
+						new AlertDialog.Builder(this)
+								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_custom_url))
+								.setMessage(finalErrorStr)
+								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+										(dialog, which) -> {}).show();
+					});
 
-						bgStart = 0;
-						return;
-					}
+					bgStart = 0;
+					return;
 				}
 			}
 
@@ -1600,18 +1587,22 @@ public class MainActivity extends FragmentActivity
 				weeWXAppCommon.RemovePref("bgColour");
 			}
 
-			weeWXAppCommon.LogMessage("Restart the alarm...");
-			UpdateCheck.cancelAlarm();
-			UpdateCheck.setAlarm();
-			UpdateCheck.runInTheBackground(false, false);
+			weeWXAppCommon.LogMessage("Refresh widgets if at least one exists...");
+			WidgetProvider.updateAppWidget();
 
 			try
 			{
 				weeWXAppCommon.LogMessage("Sleeping for 0.5s...");
 				Thread.sleep(500L);
 			} catch(InterruptedException e) {
-				weeWXAppCommon.doStackOutput(e);
+				//weeWXAppCommon.doStackOutput(e);
+				return;
 			}
+
+			weeWXAppCommon.LogMessage("Restart the alarm...");
+			UpdateCheck.cancelAlarm();
+			UpdateCheck.setAlarm();
+			//UpdateCheck.runInTheBackground(false, false);
 
 			runOnUiThread(() ->
 			{
@@ -1648,8 +1639,6 @@ public class MainActivity extends FragmentActivity
 					updateHamburger();
 					updateDropDowns();
 					updateColours();
-
-					WidgetProvider.updateAppWidget();
 
 					bgStart = 0;
 				});

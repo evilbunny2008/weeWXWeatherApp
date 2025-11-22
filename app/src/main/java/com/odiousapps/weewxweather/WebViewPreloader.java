@@ -241,7 +241,7 @@ public class WebViewPreloader
 			boolean ok = latch.await(timeoutMs, TimeUnit.MILLISECONDS);
 			html = ok ? htmlHolder[0] : null;
 		} catch(InterruptedException e) {
-			weeWXAppCommon.LogMessage("Error! e: " + e, true);
+			//weeWXAppCommon.LogMessage("Error! e: " + e, true);
 		}
 
 		instance.isRunning = false;
