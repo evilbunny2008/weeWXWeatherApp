@@ -16,6 +16,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
+
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
 @SuppressWarnings("unused")
 public class UpdateCheck extends BroadcastReceiver
 {
@@ -148,6 +151,7 @@ public class UpdateCheck extends BroadcastReceiver
 				if(!alarm.canScheduleExactAlarms())
 				{
 					Intent intent = new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
+					intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
 					intent.setData(Uri.parse("package:" + context.getPackageName()));
 					context.startActivity(intent);
 				} else {
@@ -158,6 +162,7 @@ public class UpdateCheck extends BroadcastReceiver
 				if(!alarm.canScheduleExactAlarms())
 				{
 					Intent intent = new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
+					intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
 					context.startActivity(intent);
 				} else {
 					alarm.setExact(AlarmManager.RTC_WAKEUP, start, getPendingIntent(context, false));
