@@ -7,6 +7,7 @@
 
 # Java class files
 *.class
+java_pid*
 
 # Generated files
 bin/
