@@ -43,7 +43,7 @@ public class LessSensitiveViewPagerLayout extends FrameLayout
 					// Pass event down to ViewPager2 normally
 					return super.onInterceptTouchEvent(ev);
 				} else {
-					// Let child (e.g. WebView or ScrollView) handle
+					// Let child (e.g. SafeWebView or ScrollView) handle
 					return false;
 				}
 		}

@@ -20,13 +20,12 @@ import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
-import android.widget.AutoCompleteTextView;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 import android.window.OnBackInvokedCallback;
-import android.window.OnBackInvokedDispatcher;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
 import com.google.android.material.appbar.AppBarLayout;
@@ -35,6 +34,7 @@ import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.radiobutton.MaterialRadioButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.google.android.material.textfield.MaterialAutoCompleteTextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
@@ -87,7 +87,7 @@ public class MainActivity extends FragmentActivity
 	private TextInputEditText settingsURL, customURL;
 	private CPEditText fgColour, bgColour;
 	private MaterialButton b1, b2, b3, b4;
-	private AutoCompleteTextView s1, s2, s3;
+	private MaterialAutoCompleteTextView s1, s2, s3;
 	private MaterialSwitch wifi_only, use_icons, show_indoor, metric_forecasts;
 	private MaterialRadioButton showRadar, showForecast;
 	private static ViewPager2 mViewPager;
@@ -196,7 +196,17 @@ public class MainActivity extends FragmentActivity
 				mDrawerLayout.openDrawer(GravityCompat.START);
 		});
 
-		setupBackHandling();
+		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
+		{
+			// Legacy back handling for Android < 13
+			weeWXAppCommon.LogMessage("setupBackHandling() setting getOnBackPressedDispatcher() SDK < TIRAMISU");
+			getOnBackPressedDispatcher().addCallback(this, obpc);
+		} else {
+			// Android 13+ predictive back gestures
+			// Only intercept the back if keyboard is visible or drawer is open
+			weeWXAppCommon.LogMessage("setupBackHandling() setting getOnBackInvokedDispatcher() SDK >= TIRAMISU");
+			Api33BackHandler.setup(this);
+		}
 
 		myLinearLayout cd = findViewById(R.id.custom_drawer);
 		cd.setBackgroundColor(KeyValue.bgColour);
@@ -590,6 +600,17 @@ public class MainActivity extends FragmentActivity
 		super.onDestroy();
 	}
 
+	@Override
+	protected void onResume()
+	{
+		super.onResume();
+
+		UpdateCheck.cancelAlarm();
+
+		if(UpdateCheck.canSetExact(this))
+			UpdateCheck.setNextAlarm();
+	}
+
 	private void updateColours()
 	{
 		for(int i : screen_elements)
@@ -620,7 +641,7 @@ public class MainActivity extends FragmentActivity
 					v.setTextColor(KeyValue.fgColour);
 					v.setHintTextColor(KeyValue.fgColour);
 				}
-				case AutoCompleteTextView v ->
+				case MaterialAutoCompleteTextView v ->
 				{
 					v.setTextColor(KeyValue.fgColour);
 					v.setHintTextColor(KeyValue.fgColour);
@@ -630,10 +651,14 @@ public class MainActivity extends FragmentActivity
 					v.setTextColor(KeyValue.fgColour);
 					v.setHintTextColor(KeyValue.fgColour);
 				}
+				case TextView v ->
+				{
+					v.setTextColor(KeyValue.fgColour);
+					v.setHintTextColor(KeyValue.fgColour);
+				}
 				default -> weeWXAppCommon.LogMessage("Uncaught view type: " + view);
 			}
 		}
-
 	}
 
 	private void updateHamburger()
@@ -664,22 +689,6 @@ public class MainActivity extends FragmentActivity
 		}
 	};
 
-	private void setupBackHandling()
-	{
-		// Legacy back handling for Android < 13
-		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
-		{
-			weeWXAppCommon.LogMessage("setupBackHandling() setting getOnBackPressedDispatcher() SDK < TIRAMISU");
-			getOnBackPressedDispatcher().addCallback(this, obpc);
-		} else {
-			// Android 13+ predictive back gestures
-			// Only intercept the back if keyboard is visible or drawer is open
-			weeWXAppCommon.LogMessage("setupBackHandling() setting getOnBackInvokedDispatcher() SDK >= TIRAMISU");
-			getOnBackInvokedDispatcher().registerOnBackInvokedCallback(
-					OnBackInvokedDispatcher.PRIORITY_DEFAULT, this::handleBack);
-		}
-	}
-
 	final OnBackPressedCallback obpc = new OnBackPressedCallback(true)
 	{
 		@Override
@@ -690,7 +699,7 @@ public class MainActivity extends FragmentActivity
 		}
 	};
 
-	private void handleBack()
+	void handleBack()
 	{
 		weeWXAppCommon.LogMessage("Line 694 handleBack() Detected an application back press...");
 		View focus = getCurrentFocus();
@@ -1600,8 +1609,12 @@ public class MainActivity extends FragmentActivity
 			}
 
 			weeWXAppCommon.LogMessage("Restart the alarm...");
+
 			UpdateCheck.cancelAlarm();
-			UpdateCheck.setNextAlarm();
+
+			if(UpdateCheck.canSetExact(this))
+				UpdateCheck.setNextAlarm();
+
 			//UpdateCheck.runInTheBackground(false, false);
 
 			runOnUiThread(() ->

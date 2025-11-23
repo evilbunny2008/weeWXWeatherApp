@@ -88,7 +88,7 @@
 			app:boxStrokeWidth="1dp"
 			tools:ignore="VisualLintBounds">
 
-			<AutoCompleteTextView
+			<com.google.android.material.textfield.MaterialAutoCompleteTextView
 				android:id="@+id/spinner1"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -116,7 +116,7 @@
 			app:boxStrokeWidth="1dp"
 			tools:ignore="VisualLintBounds">
 
-			<AutoCompleteTextView
+			<com.google.android.material.textfield.MaterialAutoCompleteTextView
 				android:id="@+id/spinner2"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
@@ -142,7 +142,7 @@
 			app:boxStrokeWidth="1dp"
 			tools:ignore="VisualLintBounds">
 
-			<AutoCompleteTextView
+			<com.google.android.material.textfield.MaterialAutoCompleteTextView
 				android:id="@+id/spinner3"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"

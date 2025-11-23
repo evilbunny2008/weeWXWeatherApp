@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.ViewTreeObserver;
-import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -24,7 +23,7 @@ public class Stats extends Fragment
 	private Slider mySlider;
 	private int currZoom;
 	private View rootView;
-	private WebView wv;
+	private SafeWebView wv;
 	private SwipeRefreshLayout swipeLayout;
 	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
 
@@ -91,7 +90,7 @@ public class Stats extends Fragment
 			weeWXAppCommon.LogMessage("currZoom: " + currZoom + "%");
 		}
 
-		updateFields(true);
+		updateFields();
 
 		weeWXAppCommon.LogMessage("Stats.onViewCreated()-- adding notification manager...");
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
@@ -156,7 +155,7 @@ public class Stats extends Fragment
 		weeWXAppCommon.LogMessage("notificationObserver: " + str);
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
-			updateFields(false);
+			updateFields();
 	};
 
 	private void checkFields(final TextView tv, final String txt)
@@ -731,7 +730,7 @@ public class Stats extends Fragment
 		return sb.toString();
 	}
 
-	private void updateFields(boolean forced)
+	private void updateFields()
 	{
 		weeWXAppCommon.LogMessage("Stats.java updateFields()");
 		String[] ret = weeWXAppCommon.getWeather(false, false);

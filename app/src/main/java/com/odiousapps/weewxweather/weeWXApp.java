@@ -530,7 +530,14 @@ public class weeWXApp extends Application
 	static String[] updateOptions, themeOptions, widgetThemeOptions;
 
 	static boolean hasBootedFully = false;
-
+/*
+	private static final String[] classList = new String[]
+		{
+			"Api33BackHandler", "Colours", "Custom", "CustomDebug", "Day", "Forecast", "JsBridge", "KeyValue", "LessSensitiveViewPagerLayout",
+			"MainActivity", "MaxWidthLinearLayout", "myLinearLayout", "NetworkClient", "RotateLayout", "Stats", "UpdateCheck", "Weather",
+			"Webcam", "WebViewPreloader", "weeWXAppCommon", "WidgetProvider"
+		};
+*/
 	@Override
 	public void onCreate()
 	{
@@ -548,16 +555,20 @@ public class weeWXApp extends Application
 			weeWXAppCommon.LogMessage("weeWXApp.java didn't need to convert preference object types...");
 
 		colours = new Colours();
-		WebViewPreloader.getInstance().init(6);
+
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+			WebViewPreloader.getInstance().init(6);
+
 		applyTheme(false);
 
-		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.cancelAlarm();");
+		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.cancelAlarm();", true);
 		UpdateCheck.cancelAlarm();
 
-		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.setAlarm();");
-		UpdateCheck.setNextAlarm();
+		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.setNextAlarm(true);", true);
+		if(UpdateCheck.canSetExact(this))
+			UpdateCheck.setNextAlarm();
 
-		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.runInTheBackground();");
+		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.runInTheBackground(false, true);", true);
 		UpdateCheck.runInTheBackground(false, true);
 	}
 

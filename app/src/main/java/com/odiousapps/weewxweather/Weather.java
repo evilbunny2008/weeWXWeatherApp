@@ -6,8 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.ViewTreeObserver;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -32,7 +30,7 @@ public class Weather extends Fragment implements View.OnClickListener
 {
 	private boolean isVisible;
 	private String lastURL;
-	private WebView current, forecast;
+	private SafeWebView current, forecast;
 	private SwipeRefreshLayout swipeLayout;
 	private MaterialCheckBox floatingCheckBox;
 	private LinearLayout fll;
@@ -151,7 +149,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		}
 	}
 
-	private WebView loadWebview(WebView webView, View view, int viewid, boolean doSwipe)
+	private SafeWebView loadWebview(SafeWebView webView, View view, int viewid, boolean doSwipe)
 	{
 		StackTraceElement caller = new Exception().getStackTrace()[1];
 		String callerClass  = caller.getClassName();
@@ -182,24 +180,18 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(doSwipe)
 			webView.getViewTreeObserver().addOnScrollChangedListener(scl);
 
-		webView.setWebViewClient(new WebViewClient()
+		webView.setOnPageFinishedListener((v, url) ->
 		{
-			@Override
-			public void onPageFinished(WebView wv, String url)
+			if(dynamicSizing)
 			{
-				super.onPageFinished(wv, url);
-
-				if(dynamicSizing)
-				{
-					current.postDelayed(() -> adjustHeight(current), 50);
-					current.postDelayed(() -> adjustHeight(current), 150);
-					current.postDelayed(() -> adjustHeight(current), 300);
-				} else if(viewid == R.id.current) {
-					weeWXAppCommon.LogMessage("dynamicSizing is false...");
-				}
-
-				stopRefreshing();
+				current.postDelayed(() -> adjustHeight(current), 50);
+				current.postDelayed(() -> adjustHeight(current), 150);
+				current.postDelayed(() -> adjustHeight(current), 300);
+			} else if(viewid == R.id.current) {
+				weeWXAppCommon.LogMessage("dynamicSizing is false...");
 			}
+
+			stopRefreshing();
 		});
 
 		if(wasNull)
@@ -208,7 +200,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		return null;
 	}
 
-	private void adjustHeight(WebView webView)
+	private void adjustHeight(SafeWebView webView)
 	{
 		webView.evaluateJavascript(
 				"(function() { return Math.max(" +
@@ -483,7 +475,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		forceCurrentRefresh(sb.toString());
 	}
 
-	private void loadAndShowWebView(WebView wv, String text, String url)
+	private void loadAndShowWebView(SafeWebView wv, String text, String url)
 	{
 		if(text != null && url != null)
 			return;

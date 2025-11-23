@@ -2,15 +2,10 @@ package com.odiousapps.weewxweather;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.ConsoleMessage;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 
 import java.util.LinkedList;
@@ -18,11 +13,11 @@ import java.util.Queue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-@SuppressWarnings({"unused", "SetJavaScriptEnabled", "SameParameterValue", "all"})
+@SuppressWarnings({"unused", "SameParameterValue", "all"})
 public class WebViewPreloader
 {
 	private static WebViewPreloader instance;
-	private final Queue<WebView> preloadedWebViews = new LinkedList<>();
+	private final Queue<SafeWebView> preloadedWebViews = new LinkedList<>();
 	private boolean isRunning = false;
 
 	WebViewPreloader()
@@ -31,19 +26,27 @@ public class WebViewPreloader
 
 	void init(int count)
 	{
-		Context context = weeWXApp.getInstance();
-
-		if(context == null)
+		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.Q)
 			return;
 
-		for(int i = 0; i < count; i++)
+		try
 		{
-			WebView webView = generateWebView(context);
+			Context context = weeWXApp.getInstance();
 
-			synchronized(preloadedWebViews)
+			if(context == null)
+				return;
+
+			for(int i = 0; i < count; i++)
 			{
-				preloadedWebViews.add(webView);
+				SafeWebView webView = generateWebView(context);
+
+				synchronized(preloadedWebViews)
+				{
+					preloadedWebViews.add(webView);
+				}
 			}
+		} catch (Throwable t) {
+			weeWXAppCommon.doStackOutput(t);
 		}
 	}
 
@@ -55,122 +58,103 @@ public class WebViewPreloader
 		return instance;
 	}
 
-	private WebView generateWebView(Context context)
+	private SafeWebView generateWebView(Context context)
 	{
-		WebView wv = new WebView(context);
-		return wv;
+		try
+		{
+			return new SafeWebView(context);
+		} catch(Throwable t) {
+			weeWXAppCommon.doStackOutput(t);
+		}
+
+		return null;
 	}
 
-	WebView getWebView(Context context)
+	SafeWebView getWebView(Context context)
 	{
-		synchronized(preloadedWebViews)
+		try
 		{
-			WebView wv;
-
-			if(!preloadedWebViews.isEmpty())
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 			{
-				wv = preloadedWebViews.poll();
-				if(wv != null)
+				synchronized(preloadedWebViews)
 				{
-					setWebview(wv);
-					wv.onResume();
-					wv.resumeTimers();
+					SafeWebView wv;
+
+					if(!preloadedWebViews.isEmpty())
+					{
+						wv = preloadedWebViews.poll();
+						if(wv != null)
+						{
+							wv.initSettings();
+							wv.onResume();
+							wv.resumeTimers();
+							return wv;
+						}
+					}
+
+					wv = generateWebView(context);
 					return wv;
 				}
+			} else {
+				return generateWebView(context);
 			}
-
-			wv = generateWebView(context);
-			setWebview(wv);
-			return wv;
+		} catch(Throwable t) {
+			weeWXAppCommon.doStackOutput(t);
 		}
+
+		return null;
 	}
 
-	void recycleWebView(WebView wv)
+	void recycleWebView(SafeWebView wv)
 	{
 		if(wv == null)
 			return;
 
-		wv.loadData("", "text/html", "utf-8");
-		wv.stopLoading();
-		wv.pauseTimers();
-		wv.onPause();
-		wv.removeAllViews();
-		wv.clearCache(false);
-		wv.clearHistory();
-		wv.clearFormData();
-		wv.removeJavascriptInterface("AndroidBridge");
-
-		ViewGroup parent = (ViewGroup)wv.getParent();
-		if(parent != null)
-			parent.removeView(wv);
-
-		synchronized(preloadedWebViews)
+		try
 		{
-			preloadedWebViews.add(wv);
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+			{
+				wv.onPause();
+				synchronized(preloadedWebViews)
+				{
+					preloadedWebViews.add(wv);
+				}
+			} else {
+				destroyWebView(wv);
+			}
+		} catch(Throwable t) {
+			weeWXAppCommon.doStackOutput(t);
 		}
 	}
 
-	void destroyWebView(WebView wv)
+	void destroyWebView(SafeWebView wv)
 	{
 		if(wv == null)
 			return;
 
-		wv.loadData("", "text/html", "utf-8");
-		wv.stopLoading();
-		wv.pauseTimers();
-		wv.onPause();
-		wv.removeAllViews();
-		wv.clearCache(false);
-		wv.clearHistory();
-		wv.clearFormData();
-		wv.removeJavascriptInterface("AndroidBridge");
-
-		ViewGroup parent = (ViewGroup)wv.getParent();
-		if(parent != null)
-			parent.removeView(wv);
-		wv.destroy();
-		wv = null;
+		try
+		{
+			wv.onPause();
+			wv.destroy();
+			wv = null;
+		} catch (Throwable t) {
+			weeWXAppCommon.doStackOutput(t);
+		}
 	}
 
 	void destroyAll()
 	{
-		synchronized(preloadedWebViews)
+		try
 		{
-			for(WebView wv : preloadedWebViews)
-				wv.destroy();
+			synchronized(preloadedWebViews)
+			{
+				for(SafeWebView wv : preloadedWebViews)
+					destroyWebView(wv);
 
-			preloadedWebViews.clear();
-		}
-	}
-
-	private static void setWebview(WebView wv)
-	{
-		wv.loadData("", "text/html", "utf-8");
-		wv.getSettings().setUserAgentString(NetworkClient.UA);
-		wv.getSettings().setJavaScriptEnabled(true);
-		wv.getSettings().setDomStorageEnabled(true);
-		wv.getSettings().setLoadsImagesAutomatically(true);
-		wv.getSettings().setAllowFileAccess(true);
-		wv.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_COMPATIBILITY_MODE);
-		wv.getSettings().setLoadWithOverviewMode(true);
-		wv.getSettings().setUseWideViewPort(true);
-		wv.getSettings().setDisplayZoomControls(false);
-		wv.getSettings().setBuiltInZoomControls(false);
-
-		wv.setOverScrollMode(View.OVER_SCROLL_NEVER);
-		wv.setNestedScrollingEnabled(true);
-		wv.setVerticalScrollBarEnabled(false);
-		wv.setHorizontalScrollBarEnabled(false);
-		wv.setWebChromeClient(new myWebChromeClient());
-	}
-
-	static final class myWebChromeClient extends WebChromeClient
-	{
-		@Override
-		public boolean onConsoleMessage(ConsoleMessage cm)
-		{
-			weeWXAppCommon.LogMessage("ConsoleMessage: " + cm.message());
-			return true;
+				preloadedWebViews.clear();
+			}
+		} catch (Throwable t) {
+			weeWXAppCommon.doStackOutput(t);
 		}
 	}
 
@@ -190,32 +174,30 @@ public class WebViewPreloader
 		final String[] htmlHolder = new String[1];
 		String html = "";
 
-		// Optionally remove bridge + cleanup on UI thread
-		new Handler(Looper.getMainLooper()).post(() ->
+		try
 		{
-			WebView wv = new WebView(context);
-			setWebview(wv);
-			wv.onResume();
-			wv.resumeTimers();
-
-			FrameLayout container = new FrameLayout(context);
-			container.setAlpha(0f);
-			container.addView(wv, new FrameLayout.LayoutParams(
-					ViewGroup.LayoutParams.MATCH_PARENT,
-					ViewGroup.LayoutParams.WRAP_CONTENT));
-
-			ViewGroup root = (ViewGroup)((Activity)context).getWindow().getDecorView();
-			root.addView(container, new FrameLayout.LayoutParams(
-					ViewGroup.LayoutParams.MATCH_PARENT,
-					ViewGroup.LayoutParams.MATCH_PARENT));
-
-			JsBridge bridge = new JsBridge(latch, htmlHolder, wv);
-			wv.addJavascriptInterface(bridge, "AndroidBridge");
-
-			wv.setWebViewClient(new WebViewClient()
+			// Optionally remove bridge + cleanup on UI thread
+			new Handler(Looper.getMainLooper()).post(() ->
 			{
-				@Override
-				public void onPageFinished(WebView view, String url)
+				SafeWebView wv = new SafeWebView(context);
+				wv.onResume();
+				wv.resumeTimers();
+
+				FrameLayout container = new FrameLayout(context);
+				container.setAlpha(0f);
+				container.addView(wv, new FrameLayout.LayoutParams(
+						ViewGroup.LayoutParams.MATCH_PARENT,
+						ViewGroup.LayoutParams.WRAP_CONTENT));
+
+				ViewGroup root = (ViewGroup)((Activity)context).getWindow().getDecorView();
+				root.addView(container, new FrameLayout.LayoutParams(
+						ViewGroup.LayoutParams.MATCH_PARENT,
+						ViewGroup.LayoutParams.MATCH_PARENT));
+
+				JsBridge bridge = new JsBridge(latch, htmlHolder, wv);
+				wv.addJavascriptInterface(bridge, "AndroidBridge");
+
+				wv.setOnPageFinishedListener((view, URL) ->
 				{
 					weeWXAppCommon.LogMessage("Page has finished loading, just need to wait for JS to finish running now...");
 					view.evaluateJavascript(bridge.javascript, null);
@@ -229,11 +211,13 @@ public class WebViewPreloader
 					} catch(Exception e) {
 						weeWXAppCommon.LogMessage("Error! e: " + e, true);
 					}
-				}
-			});
+				});
 
-			wv.post(() -> wv.loadUrl(url));
-		});
+				wv.post(() -> wv.loadUrl(url));
+			});
+		} catch (Throwable t) {
+			weeWXAppCommon.doStackOutput(t);
+		}
 
 		try
 		{

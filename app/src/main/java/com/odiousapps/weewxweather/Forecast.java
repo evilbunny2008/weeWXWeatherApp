@@ -10,8 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.ViewTreeObserver;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -32,7 +30,7 @@ import androidx.webkit.WebViewFeature;
 public class Forecast extends Fragment implements View.OnClickListener
 {
 	private View rootView;
-	private WebView forecastWebView, radarWebView;
+	private SafeWebView forecastWebView, radarWebView;
 	private SwipeRefreshLayout swipeLayout1, swipeLayout2;
 	private ImageView im;
 	private FrameLayout rfl;
@@ -120,26 +118,16 @@ public class Forecast extends Fragment implements View.OnClickListener
 		fl.removeAllViews();
 		fl.addView(radarWebView);
 
-		forecastWebView.setWebViewClient(new WebViewClient()
+		forecastWebView.setOnPageFinishedListener((v, url) ->
 		{
-			@Override
-			public void onPageFinished(WebView view, String url)
-			{
-				super.onPageFinished(view, url);
 				weeWXAppCommon.LogMessage("forecastWebView.onPageFinished()");
 				stopRefreshing();
-			}
 		});
 
-		radarWebView.setWebViewClient(new WebViewClient()
+		radarWebView.setOnPageFinishedListener((v, url) ->
 		{
-			@Override
-			public void onPageFinished(WebView view, String url)
-			{
-				super.onPageFinished(view, url);
-				weeWXAppCommon.LogMessage("radarWebView.onPageFinished()");
-				stopRefreshing();
-			}
+			weeWXAppCommon.LogMessage("radarWebView.onPageFinished()");
+			stopRefreshing();
 		});
 
 		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK))
@@ -821,7 +809,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 		}
 	}
 
-	@SuppressWarnings("ConstantConditions")
 	public void updateSwipe()
 	{
 		if(rfl.getVisibility() == View.VISIBLE && floatingCheckBox.isChecked() && isVisible())

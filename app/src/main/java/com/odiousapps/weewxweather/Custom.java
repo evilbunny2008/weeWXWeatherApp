@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.ViewTreeObserver;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.FrameLayout;
 
 import androidx.annotation.NonNull;
@@ -22,7 +20,7 @@ import androidx.webkit.WebViewFeature;
 @SuppressWarnings("deprecation")
 public class Custom extends Fragment
 {
-	private WebView wv;
+	private SafeWebView wv;
 	private SwipeRefreshLayout swipeLayout;
 	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
 
@@ -97,15 +95,7 @@ public class Custom extends Fragment
 
 		wv.getViewTreeObserver().addOnScrollChangedListener(scl);
 
-		wv.setWebViewClient(new WebViewClient()
-		{
-			@Override
-			public void onPageFinished(WebView view, String url)
-			{
-				super.onPageFinished(view, url);
-				swipeLayout.setRefreshing(false);
-			}
-		});
+		wv.setOnPageFinishedListener((v, url) -> swipeLayout.setRefreshing(false));
 
 		wv.setOnKeyListener((v, keyCode, event) ->
 		{

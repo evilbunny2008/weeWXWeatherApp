@@ -1,7 +1,6 @@
 package com.odiousapps.weewxweather;
 
 import android.webkit.JavascriptInterface;
-import android.webkit.WebView;
 
 import java.util.concurrent.CountDownLatch;
 
@@ -10,7 +9,7 @@ public class JsBridge
 {
 	private final CountDownLatch latch;
 	private final String[] htmlHolder;
-	private final WebView webView;
+	private final SafeWebView webView;
 
 	static final String javascript = """
 (function(){
@@ -139,7 +138,7 @@ public class JsBridge
   }
 })();""";
 
-	public JsBridge(CountDownLatch latch, String[] htmlHolder, WebView webView)
+	public JsBridge(CountDownLatch latch, String[] htmlHolder, SafeWebView webView)
 	{
 		this.latch = latch;
 		this.htmlHolder = htmlHolder;
