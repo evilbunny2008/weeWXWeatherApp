@@ -9,20 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import java.io.ByteArrayInputStream;
-import java.net.UnknownHostException;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
 @SuppressWarnings("unused")
 public class SafeWebView extends WebView
@@ -123,7 +115,7 @@ public class SafeWebView extends WebView
 					super.onPageFinished(view, url);
 					listener.onPageFinished(SafeWebView.this, url);
 				}
-
+/*
 				@Override
 				public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request)
 				{
@@ -172,6 +164,7 @@ public class SafeWebView extends WebView
 
 					return null;
 				}
+*/
 			});
 		} else {
 			setWebViewClient(new WebViewClient()
