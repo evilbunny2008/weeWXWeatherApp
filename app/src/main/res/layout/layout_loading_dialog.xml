@@ -16,11 +16,12 @@
 		tools:ignore="UselessParent">
 
 	<com.google.android.material.progressindicator.CircularProgressIndicator
+		style="@style/Widget.Material3.CircularProgressIndicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+		android:indeterminate="true"
 		app:indicatorSize="48dp"
-		app:trackThickness="4dp"
-		app:indicatorColor="@color/Black"/>
+		app:trackThickness="4dp" />
 
     <com.google.android.material.textview.MaterialTextView
         android:layout_width="0dp"
