@@ -85,4 +85,7 @@
 	<string name="webcam_url_url_not_set">Webcam URL is not set or is blank</string>
 	<string name="update_set_to_manual_but_no_content_cached">Set to manual updates, but no content cached yet</string>
 	<string name="still_downloading_forecast_data">Still downloading forecast data</string>
+	<string name="use_exact_alarm">Use exact update times</string>
+	<string name="battery_warning">Warning: Enabling the above option may drain your battery faster than usual</string>
+	<string name="save_app_debug_logs">Save app debug logs</string>
 </resources>

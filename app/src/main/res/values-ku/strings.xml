@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL-ya Webkamera nehatiye danîn an jî vala ye</string>
     <string name="update_set_to_manual_but_no_content_cached">Ji nûvekirinên bi destan re were danîn, lê hêj naverok nehatiye cache</string>
     <string name="still_downloading_forecast_data">Hê jî daneyên pêşbîniyê dakêşin</string>
+    <string name="use_exact_alarm">Demên nûvekirina rastîn bikar bînin</string>
+    <string name="battery_warning">Hişyarî: Çalakkirina vebijarka jorîn dibe ku battera we ji ya berê zûtir zuha bike</string>
+    <string name="save_app_debug_logs">Têketinên debugkirina sepanê hilînin</string>
 </resources>

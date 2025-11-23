@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">ዌብካም URL ኣይተቐመጠን ወይ ባዶ እዩ</string>
     <string name="update_set_to_manual_but_no_content_cached">ናብ ማንዋል እዋናዊ ሓበሬታ ኣቐምጥ፣ ግን ክሳብ ሕጂ ዝተዓቀበ ትሕዝቶ</string>
     <string name="still_downloading_forecast_data">ሕጂ ውን ትንበያ ዳታ</string>
+    <string name="use_exact_alarm">ልክዕ ናይ ምዕባለ ግዜታት ንጥቀም</string>
+    <string name="battery_warning">መጠንቀቕታ: ነዚ ኣብ ላዕሊ ዘሎ ኣማራጺ ምኽኣል ካብቲ ልሙድ ንላዕሊ ንባትሪኻ ከጥፍኦ ይኽእል እዩ</string>
+    <string name="save_app_debug_logs">ናይ ኣፕ ዲባግ ሎግስ ምዕቃብ</string>
 </resources>

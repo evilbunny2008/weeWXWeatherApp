@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL вэб-камеры не зададзены або пусты</string>
     <string name="update_set_to_manual_but_no_content_cached">Усталяваны ручныя абнаўленні, але змесціва пакуль не захоўваецца ў кэшы</string>
     <string name="still_downloading_forecast_data">Ідзе спампоўка прагнозных даных</string>
+    <string name="use_exact_alarm">Выкарыстоўвайце дакладны час абнаўлення</string>
+    <string name="battery_warning">Папярэджанне: уключэнне вышэйзгаданай опцыі можа разрадзіць акумулятар хутчэй, чым звычайна</string>
+    <string name="save_app_debug_logs">Захаваць журналы адладкі праграмы</string>
 </resources>

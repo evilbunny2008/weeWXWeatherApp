@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL utie ngo ma juketho kunoke ma ng\'ic</string>
     <string name="update_set_to_manual_but_no_content_cached">Keth cing\'i i kum lembe ma nyen, ento ng\'atu moko mbe ma copo</string>
     <string name="still_downloading_forecast_data">Kadok kumeno de, fodi asu lembe ma jukiewo i kum lembe mi ng\'eyo lembe</string>
+    <string name="use_exact_alarm">Ti ku saa mi tio ku lembe maeni</string>
+    <string name="battery_warning">Warning: Ketho lembe ma malu i thenge maeni copo ketho battery peri ubed maleng\' nisagu ma con</string>
+    <string name="save_app_debug_logs">Kwan app mi app</string>
 </resources>

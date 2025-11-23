@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL indak diatur atau kosong</string>
     <string name="update_set_to_manual_but_no_content_cached">Atur ka pembaruan manual, tapi indak ado konten nan dicucuak lai</string>
     <string name="still_downloading_forecast_data">Masih mangunduakan data ramalan</string>
+    <string name="use_exact_alarm">Gunoan wakatu pambaruan nan tapek</string>
+    <string name="battery_warning">Peringatan: Mamungkinkan pilihan di ateh dapek manguras baterai labiah capek dari biaso</string>
+    <string name="save_app_debug_logs">Simpan app log debug</string>
 </resources>

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">ไม่ได้ตั้งค่า URL ของเว็บแคมหรือว่างเปล่า</string>
     <string name="update_set_to_manual_but_no_content_cached">ตั้งค่าเป็นการอัปเดตด้วยตนเอง แต่ยังไม่มีการแคชเนื้อหา</string>
     <string name="still_downloading_forecast_data">ยังคงดาวน์โหลดข้อมูลการคาดการณ์</string>
+    <string name="use_exact_alarm">ใช้เวลาอัปเดตที่แน่นอน</string>
+    <string name="battery_warning">คำเตือน: การเปิดใช้งานตัวเลือกข้างต้นอาจทำให้แบตเตอรี่หมดเร็วกว่าปกติ</string>
+    <string name="save_app_debug_logs">บันทึกบันทึกการแก้ไขข้อบกพร่องของแอป</string>
 </resources>

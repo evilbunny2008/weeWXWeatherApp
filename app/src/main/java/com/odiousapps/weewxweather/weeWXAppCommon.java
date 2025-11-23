@@ -167,6 +167,26 @@ class weeWXAppCommon
 
 	static void LogMessage(String value, boolean showAnyway)
 	{
+		Context context = weeWXApp.getInstance();
+		if(context == null)
+			return;
+
+		if(KeyValue.save_app_debug_logs)
+		{
+			try
+			{
+				SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
+				String string_time = sdf.format(System.currentTimeMillis());
+
+				String tmpStr = string_time + ": " + value + "\n";
+
+				File file = weeWXAppCommon.getExtFile("weeWX", weeWXApp.debug_filename);
+				FileOutputStream fos = new FileOutputStream(file, true);
+				fos.write(tmpStr.getBytes(StandardCharsets.UTF_8));
+				fos.close();
+			} catch(IOException ignored) {}
+		}
+
 		if(debug_on || showAnyway)
 		{
 			value = removeWS(value);

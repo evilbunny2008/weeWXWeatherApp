@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL еиқәыршәам, мамзаргьы иҭацәуп</string>
     <string name="update_set_to_manual_but_no_content_cached">Иқәыргылатәуп напыла абжьаҵарақәа, аха макьана аҵакы ҵәахым</string>
     <string name="still_downloading_forecast_data">Аԥхьагәаҭаратә данноқәа раагара</string>
+    <string name="use_exact_alarm">Аҿыцра аамҭаҵәҟьа ахархәара</string>
+    <string name="battery_warning">Агәҽанҵара: Хыхь зыӡбахә ҳәоу авариант аус арура убатареиа еиҳа ирласны иҭнахуеит</string>
+    <string name="save_app_debug_logs">Апрограмма ариашаратә журналқәа еиқәырхатәуп</string>
 </resources>

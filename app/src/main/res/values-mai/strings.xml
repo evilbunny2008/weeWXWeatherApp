@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">वेबकैम यूआरएल सेट नहि अछि या खाली अछि</string>
     <string name="update_set_to_manual_but_no_content_cached">मैनुअल अपडेट पर सेट करू, मुदा कोनो सामग्री एखन धरि कैश नहि केलक</string>
     <string name="still_downloading_forecast_data">अभी भी पूर्वानुमानित आँकड़ा डाउनलोड कर रहे हैं</string>
+    <string name="use_exact_alarm">सटीक अपडेट समय का उपयोग करें</string>
+    <string name="battery_warning">चेतावनी: उपरोक्त विकल्प कें सक्षम बनानाय अहां कें बैटरी कें सामान्य सं बेसि तेजी सं निकाल सकएय छै</string>
+    <string name="save_app_debug_logs">ऐप डिबग लॉग सहेजें</string>
 </resources>

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL spletne kamere ni nastavljen ali je prazen</string>
     <string name="update_set_to_manual_but_no_content_cached">Nastavljeno na ročne posodobitve, vendar vsebina še ni predpomnjena</string>
     <string name="still_downloading_forecast_data">Podatki napovedi še potekajo</string>
+    <string name="use_exact_alarm">Uporabite točen čas posodobitve</string>
+    <string name="battery_warning">Opozorilo: Če omogočite zgornjo možnost, se lahko baterija izprazni hitreje kot običajno</string>
+    <string name="save_app_debug_logs">Shranite dnevnike odpravljanja napak aplikacije</string>
 </resources>

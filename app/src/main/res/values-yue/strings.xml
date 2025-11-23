@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">網絡攝影機網址唔係設定或者係空白</string>
     <string name="update_set_to_manual_but_no_content_cached">設定為人手更新，但係仲未有內容緩存</string>
     <string name="still_downloading_forecast_data">仍然下載預測資料</string>
+    <string name="use_exact_alarm">使用確切嘅更新時間</string>
+    <string name="battery_warning">警告：啟用上述選項，可能會比平時更快排出電池</string>
+    <string name="save_app_debug_logs">儲存應用程式調試記錄</string>
 </resources>

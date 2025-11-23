@@ -494,6 +494,8 @@ public class weeWXApp extends Application
 	final static boolean useIcons_default = true;
 	final static boolean metric_default = true;
 	final static boolean showIndoor_default = true;
+	final static boolean use_exact_alarm_default = false;
+	final static boolean save_app_debug_logs = false;
 
 	final static int fgColour_default = 0xFFFFFFFF;
 	final static int bgColour_default = 0x00000000;
@@ -521,6 +523,7 @@ public class weeWXApp extends Application
 
 	final static String radarFilename = "radar.gif";
 	final static String webcamFilename = "webcam.jpg";
+	final static String debug_filename = "weeWXApp_Debug.log";
 
 	final static boolean RadarOnHomeScreen = true;
 	final static boolean ForecastOnHomeScreen = !RadarOnHomeScreen;
@@ -530,14 +533,7 @@ public class weeWXApp extends Application
 	static String[] updateOptions, themeOptions, widgetThemeOptions;
 
 	static boolean hasBootedFully = false;
-/*
-	private static final String[] classList = new String[]
-		{
-			"Api33BackHandler", "Colours", "Custom", "CustomDebug", "Day", "Forecast", "JsBridge", "KeyValue", "LessSensitiveViewPagerLayout",
-			"MainActivity", "MaxWidthLinearLayout", "myLinearLayout", "NetworkClient", "RotateLayout", "Stats", "UpdateCheck", "Weather",
-			"Webcam", "WebViewPreloader", "weeWXAppCommon", "WidgetProvider"
-		};
-*/
+
 	@Override
 	public void onCreate()
 	{
@@ -546,6 +542,13 @@ public class weeWXApp extends Application
 		super.onCreate();
 
 		setStrings();
+
+		KeyValue.save_app_debug_logs = weeWXAppCommon.GetBoolPref("save_app_debug_logs", weeWXApp.save_app_debug_logs);
+
+		if(KeyValue.save_app_debug_logs)
+			weeWXAppCommon.LogMessage("Debug logging enabled...", true);
+		else
+			weeWXAppCommon.LogMessage("Debug logging disabled...", true);
 
 		weeWXAppCommon.LogMessage("weeWXApp.java app_version: " + BuildConfig.VERSION_NAME + " starting...", true);
 
@@ -564,9 +567,8 @@ public class weeWXApp extends Application
 		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.cancelAlarm();", true);
 		UpdateCheck.cancelAlarm();
 
-		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.setNextAlarm(true);", true);
-		if(UpdateCheck.canSetExact(this))
-			UpdateCheck.setNextAlarm();
+		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.setNextAlarm();", true);
+		UpdateCheck.setNextAlarm();
 
 		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.runInTheBackground(false, true);", true);
 		UpdateCheck.runInTheBackground(false, true);

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">УРЛ веб камере није подешен или је празан</string>
     <string name="update_set_to_manual_but_no_content_cached">Постављено на ручна ажурирања, али садржај још увек није кеширан</string>
     <string name="still_downloading_forecast_data">И даље се преузимају подаци прогнозе</string>
+    <string name="use_exact_alarm">Користите тачна времена ажурирања</string>
+    <string name="battery_warning">Упозорење: Омогућавање горње опције може да испразни батерију брже него иначе</string>
+    <string name="save_app_debug_logs">Сачувајте евиденцију отклањања грешака у апликацији</string>
 </resources>

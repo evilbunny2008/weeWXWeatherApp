@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL gurulmaýar ýa-da boş</string>
     <string name="update_set_to_manual_but_no_content_cached">El bilen täzelenmeler üçin düzülen, ýöne entek mazmuny ýok</string>
     <string name="still_downloading_forecast_data">Çaltlyk maglumatlaryny göçürip almak</string>
+    <string name="use_exact_alarm">Takyk täzeleniş wagtlaryny ulanyň</string>
+    <string name="battery_warning">DUNDURYŞ: ýokardaky opsiýany açmak, batareýaňyzy adatdakysyndan has çalt zaýalap biler</string>
+    <string name="save_app_debug_logs">Programma düzediş gündeligini ýazdyryň</string>
 </resources>

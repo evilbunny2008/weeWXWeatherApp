@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Веб-камералы URL къоюлмай я да бош</string>
     <string name="update_set_to_manual_but_no_content_cached">Къолнен япылгъан янъыланмаларгъа къоюнъ, амма даа контентни кешкен</string>
     <string name="still_downloading_forecast_data">Даа прогноз малюматларыны юклемек</string>
+    <string name="use_exact_alarm">Янъыланув вакъытларыны догъру къулланынъыз</string>
+    <string name="battery_warning">Дикъкъат: Юкъарыдаки вариантны чалыштырмакъ батареяны адеттекиден тездже сувсыз ала биле</string>
+    <string name="save_app_debug_logs">Къулланманынъ хатасыны сакъламакъ</string>
 </resources>

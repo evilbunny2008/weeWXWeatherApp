@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL hi a set loh emaw a blank emaw a ni</string>
     <string name="update_set_to_manual_but_no_content_cached">Manual updates ah set a ni a, mahse content cached a la ni lo</string>
     <string name="still_downloading_forecast_data">Forecast data a la download reng a ni</string>
+    <string name="use_exact_alarm">Update hun dik tak hmang rawh</string>
+    <string name="battery_warning">Warning: A chunga option hi enable la, i battery chu a tlangpui aia rangin a drain thei</string>
+    <string name="save_app_debug_logs">Save app debug logs</string>
 </resources>

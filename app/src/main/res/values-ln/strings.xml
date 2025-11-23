@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL ya webcam etiamaki te to ezali ya pamba</string>
     <string name="update_set_to_manual_but_no_content_cached">Bobongisa na ba mises à jour manuelles, kasi nanu contenus te cached</string>
     <string name="still_downloading_forecast_data">Encore télécharger ba données ya prévision</string>
+    <string name="use_exact_alarm">Salelá bantango ya sika ya sika</string>
+    <string name="battery_warning">KEKELE: Kofungola option oyo ezali likolo ekoki ko drainer pile na yo noki koleka ndenge omesanaka</string>
+    <string name="save_app_debug_logs">Bomba ba logs ya débogage ya app</string>
 </resources>

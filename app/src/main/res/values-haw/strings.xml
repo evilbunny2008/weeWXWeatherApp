@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">ʻAʻole paʻa a paʻaʻole ka URCAM URL</string>
     <string name="update_set_to_manual_but_no_content_cached">E hoʻonohonoho i nā hōʻano hou, akāʻaʻoleʻike</string>
     <string name="still_downloading_forecast_data">Ke hoʻoiho nei i kaʻikepili wānana</string>
+    <string name="use_exact_alarm">E hoʻohana i nā manawa hou</string>
+    <string name="battery_warning">ʻO ka\'ōleloʻana: E hana i ka koho ma luna aʻe e wikiwiki i kāu pākeke ma mua o ka mea maʻamau</string>
+    <string name="save_app_debug_logs">Mālama i nā lāʻau debug debug</string>
 </resources>

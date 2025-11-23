@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL mar websait ok oket kata onge gimoro</string>
     <string name="update_set_to_manual_but_no_content_cached">Ket weche ma manyien mag lwedo, kata kamano pok inyalo ng\'eyo</string>
     <string name="still_downloading_forecast_data">Podi keto weche ma ji ng\'ado e wi gik ma ng\'ato nyalo timo</string>
+    <string name="use_exact_alarm">Ti kod thuolo ma kare mag loso</string>
+    <string name="battery_warning">Chiwo Sign: Tiyo gi yo ma owach malo kanyo nyalo miyo betri obed mapiyo moloyo kaka pile</string>
+    <string name="save_app_debug_logs">Ket logs mag mbui mag program mag app</string>
 </resources>

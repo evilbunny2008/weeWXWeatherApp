@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Urlam URL насб карда нашудааст ё холӣ аст</string>
     <string name="update_set_to_manual_but_no_content_cached">Ба навигариҳои дастӣ таъин кунед, аммо мундариҷа ба таври қатъӣ</string>
     <string name="still_downloading_forecast_data">Ҳанӯз зеркашии маълумоти пешгӯӣ</string>
+    <string name="use_exact_alarm">Вақтҳои дақиқро истифода баред</string>
+    <string name="battery_warning">Огоҳӣ: Ин имкон медиҳад, ки варианти дар боло зикршуда батареяро тезтар аз маъмулӣ холӣ кунад</string>
+    <string name="save_app_debug_logs">Сабтҳои Debug-ро захира кунед</string>
 </resources>

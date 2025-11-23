@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL tena na\'jari yareka kosong</string>
     <string name="update_set_to_manual_but_no_content_cached">Nampa nasuromi ke\'nanga a\'lampa mange ri update manual, mingka tena kontenna nicak</string>
     <string name="still_downloading_forecast_data">Mingka ramalanna a\'download</string>
+    <string name="use_exact_alarm">Pakei cara tepat</string>
+    <string name="battery_warning">Pappiu\'rangi: A\'jari pa\'baeng-baeng irateanganna akkullei a\'jari la\'bi linta\' batena a\'batere\' na biasaya</string>
+    <string name="save_app_debug_logs">Simpanji ap apps log</string>
 </resources>

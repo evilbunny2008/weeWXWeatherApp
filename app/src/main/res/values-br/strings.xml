@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">N\'eo ket lakaet URL Webcam pe n\'eo ket goullo</string>
     <string name="update_set_to_manual_but_no_content_cached">Lakaat war hizivadennoù dre zorn, met n\'eus endalc\'had ebet cachet c\'hoazh</string>
     <string name="still_downloading_forecast_data">Pellgargañ roadennoù rakwelet c\'hoazh</string>
+    <string name="use_exact_alarm">Implijit an eurioù hizivaat rik</string>
+    <string name="battery_warning">Diwallit : Gweredekaat an dibab a-us a c\'hell dreiñ ho pilenn buanoc\'h eget ar c\'hiz</string>
+    <string name="save_app_debug_logs">Enrollañ rolloù diverkañ an app</string>
 </resources>

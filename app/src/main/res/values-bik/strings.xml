@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Dai nakabugtak an webcam na URL o blangko</string>
     <string name="update_set_to_manual_but_no_content_cached">Nakatakda sa mga manwal na update, pero mayo pa nin laog</string>
     <string name="still_downloading_forecast_data">Pag-download pa gihapon sa datos sa paghula</string>
+    <string name="use_exact_alarm">Gamiton an eksaktong mga oras nin update</string>
+    <string name="battery_warning">Patanid: An pagpangyari sa opsyon sa itaas puedeng mag-ubos kan saindong baterya nin mas marikas kisa dati</string>
+    <string name="save_app_debug_logs">I-save app debug logs</string>
 </resources>

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL ha e beoe kapa e se na letho</string>
     <string name="update_set_to_manual_but_no_content_cached">E hlophiselitsoe litlhahiso tsa buka, empa ha ho na litaba tse kileng tsa etsoa</string>
     <string name="still_downloading_forecast_data">E ntse e jarolla data ea Books</string>
+    <string name="use_exact_alarm">Sebelisa makhetlo a ntlafatso ea ntlafatso</string>
+    <string name="battery_warning">Temoso: Ho thusa khetho e kaholimo ho ka ntša betri ea hau kapele ho feta e tloaelehileng</string>
+    <string name="save_app_debug_logs">Boloka App Deag Logs</string>
 </resources>

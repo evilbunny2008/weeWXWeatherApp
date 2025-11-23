@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL-адреса веб-камери не встановлена ​​або пуста</string>
     <string name="update_set_to_manual_but_no_content_cached">Налаштуйте оновлення вручну, але вміст ще не кешовано</string>
     <string name="still_downloading_forecast_data">Триває завантаження прогнозних даних</string>
+    <string name="use_exact_alarm">Використовуйте точний час оновлення</string>
+    <string name="battery_warning">Попередження: увімкнення вищезазначеної опції може розряджати акумулятор швидше, ніж зазвичай</string>
+    <string name="save_app_debug_logs">Зберігайте журнали налагодження програми</string>
 </resources>

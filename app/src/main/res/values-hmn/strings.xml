@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL tsis yog teeb lossis yog seem</string>
     <string name="update_set_to_manual_but_no_content_cached">Teem rau phau ntawv hloov tshiab, tab sis tsis muaj cov ntsiab lus cached tsis tau</string>
     <string name="still_downloading_forecast_data">Tseem rub tawm cov ntaub ntawv kwv yees</string>
+    <string name="use_exact_alarm">Siv lub sijhawm hloov tshiab</string>
+    <string name="battery_warning">CEEB TOOM: Ua kom cov kev xaiv saum toj no yuav tso koj cov roj teeb sai dua li ib txwm</string>
+    <string name="save_app_debug_logs">Txuag app debug cav</string>
 </resources>

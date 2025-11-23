@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Ba a saita URCAM URCAM ko ba komai</string>
     <string name="update_set_to_manual_but_no_content_cached">Saita zuwa Sabuntawa Manual, amma babu abun ciki</string>
     <string name="still_downloading_forecast_data">Har yanzu zazzage bayanan hasashen</string>
+    <string name="use_exact_alarm">Yi amfani da ainihin lokacin sabuntawa</string>
+    <string name="battery_warning">GARGADI: Yawo ga zaɓi na sama na iya magudana batirinku da sauri fiye da yadda aka saba</string>
+    <string name="save_app_debug_logs">Ajiye rajistan ayyukan debug</string>
 </resources>

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">La URL de la cámara web no está configurada o está en blanco</string>
     <string name="update_set_to_manual_but_no_content_cached">Configurado para actualizaciones manuales, pero aún no hay contenido almacenado en caché</string>
     <string name="still_downloading_forecast_data">Todavía descargando datos de pronóstico</string>
+    <string name="use_exact_alarm">Utilice tiempos de actualización exactos</string>
+    <string name="battery_warning">Advertencia: Habilitar la opción anterior puede agotar la batería más rápido de lo habitual</string>
+    <string name="save_app_debug_logs">Guardar registros de depuración de aplicaciones</string>
 </resources>

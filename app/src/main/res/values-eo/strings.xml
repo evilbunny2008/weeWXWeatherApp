@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Retkamera URL ne estas agordita aŭ estas malplena</string>
     <string name="update_set_to_manual_but_no_content_cached">Agordita al manaj ĝisdatigoj, sed ankoraŭ neniu enhavo konservita en kaŝmemoro</string>
     <string name="still_downloading_forecast_data">Ankoraŭ elŝutas prognozajn datumojn</string>
+    <string name="use_exact_alarm">Uzu precizajn ĝisdatigajn tempojn</string>
+    <string name="battery_warning">Averto: Ebligi la ĉi-supran opcion povas malplenigi vian kuirilaron pli rapide ol kutime</string>
+    <string name="save_app_debug_logs">Konservu protokolojn pri sencimiga aplikaĵo</string>
 </resources>

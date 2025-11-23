@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Veebikaamera URL ei ole määratud või on tühi</string>
     <string name="update_set_to_manual_but_no_content_cached">Määratud käsitsi värskendustele, kuid sisu pole veel vahemällu salvestatud</string>
     <string name="still_downloading_forecast_data">Prognoosiandmeid laaditakse endiselt alla</string>
+    <string name="use_exact_alarm">Kasutage täpseid värskendusaegu</string>
+    <string name="battery_warning">Hoiatus. Ülaltoodud valiku lubamine võib aku tavapärasest kiiremini tühjendada</string>
+    <string name="save_app_debug_logs">Salvestage rakenduse silumislogid</string>
 </resources>

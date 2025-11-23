@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">ویب کیم یو آر ایل سیٹ نہیں ہے یا خالی ہے</string>
     <string name="update_set_to_manual_but_no_content_cached">دستی تازہ کاریوں پر سیٹ کریں ، لیکن ابھی تک کوئی مواد نہیں ہے</string>
     <string name="still_downloading_forecast_data">اب بھی پیش گوئی کا ڈیٹا ڈاؤن لوڈ کرنا</string>
+    <string name="use_exact_alarm">درست اپ ڈیٹ کے اوقات استعمال کریں</string>
+    <string name="battery_warning">انتباہ: مذکورہ بالا آپشن کو چالو کرنے سے آپ کی بیٹری معمول سے زیادہ تیزی سے ختم ہوسکتی ہے</string>
+    <string name="save_app_debug_logs">ایپ ڈیبگ لاگز کو محفوظ کریں</string>
 </resources>

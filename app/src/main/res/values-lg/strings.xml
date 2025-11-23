@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL teteekeddwa oba nga ya bwereere</string>
     <string name="update_set_to_manual_but_no_content_cached">teeka ku updates za manual, naye nga tewali content cached yet</string>
     <string name="still_downloading_forecast_data">Akyawanula ebikwata ku kuteebereza</string>
+    <string name="use_exact_alarm">Kozesa ebiseera ebituufu eby\'okulongoosa</string>
+    <string name="battery_warning">OKULABULA: Okusobozesa eky\'okukola ekyo waggulu kiyinza okufulumya bbaatule yo amangu okusinga bulijjo</string>
+    <string name="save_app_debug_logs">Teeka App Debug Logs</string>
 </resources>

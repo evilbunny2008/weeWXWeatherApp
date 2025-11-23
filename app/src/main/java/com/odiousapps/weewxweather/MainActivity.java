@@ -88,7 +88,7 @@ public class MainActivity extends FragmentActivity
 	private CPEditText fgColour, bgColour;
 	private MaterialButton b1, b2, b3, b4;
 	private MaterialAutoCompleteTextView s1, s2, s3;
-	private MaterialSwitch wifi_only, use_icons, show_indoor, metric_forecasts;
+	private MaterialSwitch wifi_only, use_icons, show_indoor, metric_forecasts, use_exact_alarm, save_app_debug_logs;
 	private MaterialRadioButton showRadar, showForecast;
 	private static ViewPager2 mViewPager;
 
@@ -139,10 +139,13 @@ public class MainActivity extends FragmentActivity
 		R.id.bgTextInputLayout,
 		R.id.bg_Picker,
 		R.id.mtv1,
+		R.id.mtv2,
 		R.id.showRadar,
 		R.id.showForecast,
 		R.id.til5,
-		R.id.customURL
+		R.id.customURL,
+		R.id.use_exact_alarm,
+		R.id.save_app_debug_logs,
 	};
 
 	ColorStateList strokeColors;
@@ -362,6 +365,9 @@ public class MainActivity extends FragmentActivity
 		metric_forecasts = findViewById(R.id.metric_forecasts);
 		show_indoor = findViewById(R.id.show_indoor);
 
+		use_exact_alarm = findViewById(R.id.use_exact_alarm);
+		save_app_debug_logs = findViewById(R.id.save_app_debug_logs);
+
 		b1 = findViewById(R.id.saveButton);
 		b2 = findViewById(R.id.deleteData);
 		b3 = findViewById(R.id.aboutButton);
@@ -410,7 +416,7 @@ public class MainActivity extends FragmentActivity
 		bgtil = findViewById(R.id.bgTextInputLayout);
 
 		int fg, bg;
-		boolean wo, ui, met, si, sr, sf;
+		boolean wo, ui, met, si, sr, sf, uea, sadl;
 
 		UpdateFrequency = weeWXAppCommon.GetIntPref("updateInterval", 1);
 		DayNightMode = weeWXAppCommon.GetIntPref("DayNightMode", weeWXApp.DayNightMode_default);
@@ -424,6 +430,9 @@ public class MainActivity extends FragmentActivity
 		met = weeWXAppCommon.GetBoolPref("metric", weeWXApp.metric_default);
 		si = weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default);
 		sr = weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default);
+
+		uea = weeWXAppCommon.GetBoolPref("use_exact_alarm", weeWXApp.use_exact_alarm_default);
+		sadl = KeyValue.save_app_debug_logs;
 
 		if(savedInstanceState != null)
 		{
@@ -444,6 +453,8 @@ public class MainActivity extends FragmentActivity
 			met = savedInstanceState.getBoolean("met", met);
 			si = savedInstanceState.getBoolean("si", si);
 			sr = savedInstanceState.getBoolean("sr", sr);
+			uea = savedInstanceState.getBoolean("uea", uea);
+			sadl = savedInstanceState.getBoolean("sadl", sadl);
 		}
 
 		// https://github.com/Pes8/android-material-color-picker-dialog
@@ -475,6 +486,8 @@ public class MainActivity extends FragmentActivity
 		use_icons.setChecked(ui);
 		metric_forecasts.setChecked(met);
 		show_indoor.setChecked(si);
+		use_exact_alarm.setChecked(uea);
+		save_app_debug_logs.setChecked(sadl);
 
 		showRadar.setChecked(sr);
 		showForecast.setChecked(!sr);
@@ -607,8 +620,7 @@ public class MainActivity extends FragmentActivity
 
 		UpdateCheck.cancelAlarm();
 
-		if(UpdateCheck.canSetExact(this))
-			UpdateCheck.setNextAlarm();
+		UpdateCheck.setNextAlarm();
 	}
 
 	private void updateColours()
@@ -791,6 +803,8 @@ public class MainActivity extends FragmentActivity
 		outState.putBoolean("met", metric_forecasts.isChecked());
 		outState.putBoolean("si", show_indoor.isChecked());
 		outState.putBoolean("sr", showRadar.isChecked());
+		outState.putBoolean("uea", use_exact_alarm.isChecked());
+		outState.putBoolean("sadl", save_app_debug_logs.isChecked());
 	}
 
 	private void setStrings()
@@ -933,11 +947,45 @@ public class MainActivity extends FragmentActivity
 		builder.create().show();
 	}
 
+	private void resetScreen()
+	{
+		weeWXAppCommon.LogMessage("Do some stuff here...");
+
+		closeKeyboard();
+		closeDrawer();
+
+		scrollView.scrollTo(0, 0);
+		dialog.dismiss();
+	}
+
 	private void processSettings()
 	{
 		weeWXAppCommon.LogMessage("MainActivity.java processSettings() running the background updates...");
 
+		if(use_exact_alarm.isChecked() && !UpdateCheck.canSetExact(this))
+		{
+			weeWXAppCommon.LogMessage("Need to prompt user to allow exact alarms...", true);
+
+			UpdateCheck.promptForExact(this);
+
+			//resetScreen();
+			b1.setEnabled(true);
+			b2.setEnabled(true);
+			b3.setEnabled(true);
+			b4.setEnabled(true);
+
+			dialog.dismiss();
+
+			return;
+		}
+
 		long current_time = weeWXAppCommon.getCurrTime();
+
+		UpdateCheck.cancelAlarm();
+
+		UpdateCheck.setNextAlarm();
+
+		//UpdateCheck.runInTheBackground(false, false);
 
 		if(backgroundTask != null && !backgroundTask.isDone())
 		{
@@ -1566,12 +1614,16 @@ public class MainActivity extends FragmentActivity
 			else
 				weeWXAppCommon.SetStringPref("custom_url", appCustomURL);
 
+			KeyValue.save_app_debug_logs = save_app_debug_logs.isChecked();
+
 			weeWXAppCommon.SetBoolPref("metric", metric_forecasts.isChecked());
 			weeWXAppCommon.SetBoolPref("showIndoor", show_indoor.isChecked());
 			weeWXAppCommon.SetIntPref("DayNightMode", DayNightMode);
 			weeWXAppCommon.SetBoolPref("onlyWIFI", wifi_only.isChecked());
 			weeWXAppCommon.SetBoolPref("useIcons", use_icons.isChecked());
 			weeWXAppCommon.SetBoolPref("radarforecast", showRadar.isChecked());
+			weeWXAppCommon.SetBoolPref("use_exact_alarm", use_exact_alarm.isChecked());
+			weeWXAppCommon.SetBoolPref("save_app_debug_logs", KeyValue.save_app_debug_logs);
 
 			weeWXAppCommon.SetIntPref(weeWXAppCommon.WIDGET_THEME_MODE, widget_theme_mode);
 			KeyValue.widget_theme_mode = widget_theme_mode;
@@ -1610,22 +1662,9 @@ public class MainActivity extends FragmentActivity
 
 			weeWXAppCommon.LogMessage("Restart the alarm...");
 
-			UpdateCheck.cancelAlarm();
-
-			if(UpdateCheck.canSetExact(this))
-				UpdateCheck.setNextAlarm();
-
-			//UpdateCheck.runInTheBackground(false, false);
-
 			runOnUiThread(() ->
 			{
-				weeWXAppCommon.LogMessage("Do some stuff here...");
-
-				closeKeyboard();
-				closeDrawer();
-
-				scrollView.scrollTo(0, 0);
-				dialog.dismiss();
+				resetScreen();
 
 				weeWXAppCommon.LogMessage("Resetting mSectionsPagerAdapter");
 				mViewPager.setAdapter(null);

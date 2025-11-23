@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">E le setiina Webcam Url pe leai</string>
     <string name="update_set_to_manual_but_no_content_cached">Faatulaga i tusi faʻamaonia, ae leai se mea na palu</string>
     <string name="still_downloading_forecast_data">O loʻo faʻapipiʻiina pea faʻamatalaga</string>
+    <string name="use_exact_alarm">Faʻaaoga taimi saʻo</string>
+    <string name="battery_warning">Lapataiga: Faʻaputuputu le filifiliga i luga e mafai ona faʻalautele lau maa saoasaoa nai lo masani</string>
+    <string name="save_app_debug_logs">Sefe le App Debug Logs</string>
 </resources>

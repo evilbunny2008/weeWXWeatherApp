@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL haina kuiswa kana isina chinhu</string>
     <string name="update_set_to_manual_but_no_content_cached">Gara kune zvinyorwa zvinyorwa, asi hapana zvirimo zvakachengetwa zvakadaro</string>
     <string name="still_downloading_forecast_data">Ndichiri kudhanilodha data rekufanotaura</string>
+    <string name="use_exact_alarm">Shandisa nguva chaiyo yekugadzirisa</string>
+    <string name="battery_warning">Yambiro: Kugonesa iyo iri pamusoro sarudzo inogona kudhirowa bhatiri rako nekukurumidza kupfuura nguva dzose</string>
+    <string name="save_app_debug_logs">Sevha App Cebug Logs</string>
 </resources>

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">ويب ڪيم URL سيٽ نه آهي يا خالي آهي</string>
     <string name="update_set_to_manual_but_no_content_cached">مينوئل اپڊيٽس تي سيٽ ڪريو، پر اڃا تائين ڪو به مواد محفوظ نه ڪيو ويو آهي</string>
     <string name="still_downloading_forecast_data">اڃا تائين اڳڪٿي ڊيٽا ڊائون لوڊ ڪري رهيو آهي</string>
+    <string name="use_exact_alarm">درست اپڊيٽ وقت استعمال ڪريو</string>
+    <string name="battery_warning">خبردار: مٿي ڏنل آپشن کي فعال ڪرڻ سان توهان جي بيٽري معمول کان وڌيڪ تيز ٿي سگهي ٿي</string>
+    <string name="save_app_debug_logs">ايپ ڊيبگ لاگ محفوظ ڪريو</string>
 </resources>

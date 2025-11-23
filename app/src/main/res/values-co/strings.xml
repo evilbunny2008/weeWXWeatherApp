@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">L\'URL di a webcam ùn hè micca stabilitu o hè viotu</string>
     <string name="update_set_to_manual_but_no_content_cached">Set à l\'aghjurnamenti manuali, ma ùn ci hè ancu micca cuntenutu in cache</string>
     <string name="still_downloading_forecast_data">Sempre scaricatu dati di previsione</string>
+    <string name="use_exact_alarm">Aduprate i tempi d\'aghjurnamentu precisi</string>
+    <string name="battery_warning">Attenzione: L\'attivazione di l\'opzione sopra pò drenu a vostra bateria più veloce di u solitu</string>
+    <string name="save_app_debug_logs">Salvà i logs di debug di l\'app</string>
 </resources>

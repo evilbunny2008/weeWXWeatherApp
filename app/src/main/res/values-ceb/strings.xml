@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Ang URL sa Webcam wala gitakda o blangko</string>
     <string name="update_set_to_manual_but_no_content_cached">Nga gitakda sa manual nga pag-update, apan wala\'y sulud nga sulud</string>
     <string name="still_downloading_forecast_data">Pag-download gihapon sa datos sa forecast</string>
+    <string name="use_exact_alarm">Paggamit eksaktong mga oras sa pag-update</string>
+    <string name="battery_warning">Pasidaan: Ang pagtuman sa Opsyon sa ibabaw mahimo nga mag-agas sa imong baterya nga mas paspas kaysa sa naandan</string>
+    <string name="save_app_debug_logs">I-save ang App Debug Troso</string>
 </resources>

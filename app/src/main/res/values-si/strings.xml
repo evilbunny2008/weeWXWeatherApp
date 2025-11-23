@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">වෙබ් කැමරා URL සකසා නැත හෝ හිස් ය</string>
     <string name="update_set_to_manual_but_no_content_cached">අතින් යාවත්කාලීන වෙත සකසන්න, නමුත් තවමත් කිසිදු අන්තර්ගතයක් හැඹිලිගත කර නොමැත</string>
     <string name="still_downloading_forecast_data">තවමත් අනාවැකි දත්ත බාගනිමින්</string>
+    <string name="use_exact_alarm">නිවැරදි යාවත්කාලීන වේලාවන් භාවිතා කරන්න</string>
+    <string name="battery_warning">අවවාදයයි: ඉහත විකල්පය සබල කිරීමෙන් ඔබේ බැටරිය වෙනදාට වඩා වේගයෙන් බැස යා හැක</string>
+    <string name="save_app_debug_logs">යෙදුම් දෝශ නිරාකරණ ලොග සුරකින්න</string>
 </resources>

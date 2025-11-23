@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Na Webcam URL e sega ni sevu se e bela</string>
     <string name="update_set_to_manual_but_no_content_cached">Tuvanaka na ivolalailai ni ivolalailai, ia e sega ni dua na ka e rawa ni caka</string>
     <string name="still_downloading_forecast_data">Stivenivolai ni itukutuku ni itukutuku</string>
+    <string name="use_exact_alarm">Vakayagataka vinaka na gauna ni vakavoui na gauna</string>
+    <string name="battery_warning">Vakasala: Na digidigi e toka e cake e rawa ni vakadrodroi kina na nomu battery mai na kena ivakarau</string>
+    <string name="save_app_debug_logs">Sa vakayagataki na apolo ni dovu</string>
 </resources>

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">L\'URL de la càmera web no està definit o està en blanc</string>
     <string name="update_set_to_manual_but_no_content_cached">S\'estableixen actualitzacions manuals, però encara no s\'ha guardat cap contingut a la memòria cau</string>
     <string name="still_downloading_forecast_data">Encara s\'estan baixant dades de previsió</string>
+    <string name="use_exact_alarm">Utilitzeu temps d\'actualització exactes</string>
+    <string name="battery_warning">Avís: activar l\'opció anterior pot esgotar la bateria més ràpidament de l\'habitual</string>
+    <string name="save_app_debug_logs">Desa els registres de depuració de l\'aplicació</string>
 </resources>

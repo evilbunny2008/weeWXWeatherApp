@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Tīmekļa kameras URL nav iestatīts vai ir tukšs</string>
     <string name="update_set_to_manual_but_no_content_cached">Iestatīts manuāla atjaunināšana, bet kešatmiņā vēl nav saglabāts saturs</string>
     <string name="still_downloading_forecast_data">Joprojām notiek prognožu datu lejupielāde</string>
+    <string name="use_exact_alarm">Izmantojiet precīzus atjaunināšanas laikus</string>
+    <string name="battery_warning">Brīdinājums. Iespējojot iepriekš minēto opciju, akumulators var izlādēties ātrāk nekā parasti</string>
+    <string name="save_app_debug_logs">Saglabājiet lietotņu atkļūdošanas žurnālus</string>
 </resources>

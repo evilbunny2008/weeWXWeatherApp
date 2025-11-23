@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">وێبکام URL دانەنراوە یان سپییە</string>
     <string name="update_set_to_manual_but_no_content_cached">لەسەر نوێکارییە دەستییەکان ڕێکبخە، بەڵام هێشتا هیچ ناوەڕۆکێک لە کاشدا نەگیراوە</string>
     <string name="still_downloading_forecast_data">هێشتا داتای پێشبینیکردن دابەزێنە</string>
+    <string name="use_exact_alarm">کاتەکانی نوێکردنەوەی ورد بەکاربهێنە</string>
+    <string name="battery_warning">ئاگادارکردنەوە: چالاککردنی بژاردەی سەرەوە لەوانەیە پاترییەکەت خێراتر لە ئاسایی دەربهێنێت</string>
+    <string name="save_app_debug_logs">پاشەکەوتکردنی ئەپی دیباگ</string>
 </resources>

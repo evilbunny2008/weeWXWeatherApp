@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL وب کم تنظیم نشده یا خالی است</string>
     <string name="update_set_to_manual_but_no_content_cached">روی به‌روزرسانی‌های دستی تنظیم کنید، اما هنوز محتوایی در حافظه پنهان ذخیره نشده است</string>
     <string name="still_downloading_forecast_data">هنوز در حال دانلود داده های پیش بینی است</string>
+    <string name="use_exact_alarm">از زمان های دقیق به روز رسانی استفاده کنید</string>
+    <string name="battery_warning">هشدار: فعال کردن گزینه بالا ممکن است باتری شما را سریعتر از حد معمول تخلیه کند</string>
+    <string name="save_app_debug_logs">گزارش‌های اشکال‌زدایی برنامه را ذخیره کنید</string>
 </resources>

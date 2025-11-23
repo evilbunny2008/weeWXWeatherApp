@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">WebCam URL सेट् न भवति अथवा रिक्तं भवति ।</string>
     <string name="update_set_to_manual_but_no_content_cached">Manual Updates इत्यत्र सेट् कुर्वन्तु, परन्तु अद्यापि सामग्री cached न कृता</string>
     <string name="still_downloading_forecast_data">अद्यापि पूर्वानुमानदत्तांशं डाउनलोड् करणम्</string>
+    <string name="use_exact_alarm">सटीक अद्यतन समय का उपयोग करें</string>
+    <string name="battery_warning">चेतावनी: उपर्युक्त विकल्प को सक्षम करना भवतः बैटरी को सामान्यतः शीघ्रता से शीघ्रता दे सकता है</string>
+    <string name="save_app_debug_logs">App debug लॉगं रक्षन्तु</string>
 </resources>

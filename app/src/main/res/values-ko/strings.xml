@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">웹캠 URL이 설정되지 않았거나 비어 있습니다</string>
     <string name="update_set_to_manual_but_no_content_cached">수동 업데이트로 설정되었지만 아직 캐시된 콘텐츠가 없습니다</string>
     <string name="still_downloading_forecast_data">아직 예측 데이터를 다운로드하는 중입니다</string>
+    <string name="use_exact_alarm">정확한 업데이트 시간 사용</string>
+    <string name="battery_warning">경고: 위 옵션을 활성화하면 평소보다 배터리가 더 빨리 소모될 수 있습니다</string>
+    <string name="save_app_debug_logs">앱 디버그 로그 저장</string>
 </resources>

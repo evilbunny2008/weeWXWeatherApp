@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Ti webcam URL ket saan a naikabil wenno blangko</string>
     <string name="update_set_to_manual_but_no_content_cached">Naisaad kadagiti manual nga update, ngem awan pay ti linaonna a nai-cache</string>
     <string name="still_downloading_forecast_data">Ag-download pay laeng iti datos ti panagpakpakauna</string>
+    <string name="use_exact_alarm">Usaren dagiti eksakto nga oras ti panagpabaro</string>
+    <string name="battery_warning">Pakdaar: Ti panangipalubos iti pagpilian iti ngato ket mabalin a naparpartak a mang-drain iti bateriam ngem iti gagangay</string>
+    <string name="save_app_debug_logs">Idulin dagiti log ti debug</string>
 </resources>

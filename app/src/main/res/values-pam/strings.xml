@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Ing webcam URL e ya mitakda o blanku</string>
     <string name="update_set_to_manual_but_no_content_cached">Magtakda ka kareng manual update, pero ala pang me-catch</string>
     <string name="still_downloading_forecast_data">Pakadlang pa rin ing data</string>
+    <string name="use_exact_alarm">Gamitan ing eksaktung oras ning update</string>
+    <string name="battery_warning">Babala: Ing pamagpabilis king opsyun king babo malyari yang mas mabilis i-drain ing baterya kesa king karaniwan</string>
+    <string name="save_app_debug_logs">Iligtas ing app a debug de trosu</string>
 </resources>

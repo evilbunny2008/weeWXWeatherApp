@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL ntabwo ishizweho canke ni ubusa</string>
     <string name="update_set_to_manual_but_no_content_cached">Ushireho ivyahinduwe n\'amaboko, ariko nta kintu na kimwe cari carashizweko</string>
     <string name="still_downloading_forecast_data">Uca ugikura amakuru y\'ivyaha</string>
+    <string name="use_exact_alarm">Koresha ibihe vy\'ukuri</string>
+    <string name="battery_warning">Imburi: Gukoresha iyo nzira iri hejuru birashobora gutuma bateri yawe igenda vuba kuruta uko bisanzwe</string>
+    <string name="save_app_debug_logs">Zigama porogarama za porogaramu</string>
 </resources>

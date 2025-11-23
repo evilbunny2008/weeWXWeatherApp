@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webma URL /cɛ te thi̱n kiɛ ɛ mi̱ /thiɛl luɔt</string>
     <string name="update_set_to_manual_but_no_content_cached">Kämni jɛ raar kɛ tet kɛ ɣöö ba manual nyɔk kɛ lätni̱, duŋni̱ ɣöö /thiɛlɛ mi̱ ca la̱th rɛydɛ mi̱ cɔali̱</string>
     <string name="still_downloading_forecast_data">Kä ŋotdɛ tekɛ data mi ca lar ŋotdɛ</string>
+    <string name="use_exact_alarm">La̱tdɛ kɛ gua̱a̱th mi̱ pay tuɔɔk</string>
+    <string name="battery_warning">Warning: Ɛn Enangling min ca lat nhial derɛ bɛtteri̱du woc kɛ pɛ̈th mi̱ läny ni̱ min la tuɔɔk</string>
+    <string name="save_app_debug_logs">Kä app badbug logs</string>
 </resources>

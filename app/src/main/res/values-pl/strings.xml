@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Adres URL kamery internetowej nie jest ustawiony lub jest pusty</string>
     <string name="update_set_to_manual_but_no_content_cached">Ustaw na aktualizacje ręczne, ale nie ma jeszcze zawartości w pamięci podręcznej</string>
     <string name="still_downloading_forecast_data">Nadal pobieram dane prognozy</string>
+    <string name="use_exact_alarm">Użyj dokładnych czasów aktualizacji</string>
+    <string name="battery_warning">Ostrzeżenie: włączenie powyższej opcji może spowodować szybsze niż zwykle zużycie baterii</string>
+    <string name="save_app_debug_logs">Zapisz dzienniki debugowania aplikacji</string>
 </resources>

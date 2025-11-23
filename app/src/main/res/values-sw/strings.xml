@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL ya Webcam haijawekwa au iko wazi</string>
     <string name="update_set_to_manual_but_no_content_cached">Weka kwa sasisho za mwongozo, lakini hakuna yaliyomo</string>
     <string name="still_downloading_forecast_data">Bado kupakua data ya utabiri</string>
+    <string name="use_exact_alarm">Tumia nyakati halisi za sasisho</string>
+    <string name="battery_warning">Onyo: kuwezesha chaguo hapo juu kunaweza kufuta betri yako haraka kuliko kawaida</string>
+    <string name="save_app_debug_logs">Hifadhi magogo ya utatuaji wa programu</string>
 </resources>

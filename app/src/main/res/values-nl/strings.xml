@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam-URL is niet ingesteld of is leeg</string>
     <string name="update_set_to_manual_but_no_content_cached">Ingesteld op handmatige updates, maar er is nog geen inhoud in de cache opgeslagen</string>
     <string name="still_downloading_forecast_data">Er worden nog steeds prognosegegevens gedownload</string>
+    <string name="use_exact_alarm">Gebruik exacte updatetijden</string>
+    <string name="battery_warning">Waarschuwing: als u de bovenstaande optie inschakelt, kan uw batterij sneller leeglopen dan normaal</string>
+    <string name="save_app_debug_logs">Bewaar app-foutopsporingslogboeken</string>
 </resources>

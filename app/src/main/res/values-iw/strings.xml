@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">כתובת האתר של מצלמת האינטרנט לא מוגדרת או שהיא ריקה</string>
     <string name="update_set_to_manual_but_no_content_cached">מוגדר לעדכונים ידניים, אך עדיין אין תוכן במטמון</string>
     <string name="still_downloading_forecast_data">עדיין מוריד נתוני תחזית</string>
+    <string name="use_exact_alarm">השתמש בזמני עדכון מדויקים</string>
+    <string name="battery_warning">אזהרה: הפעלת האפשרות לעיל עלולה לרוקן את הסוללה מהר מהרגיל</string>
+    <string name="save_app_debug_logs">שמור יומני ניפוי באגים באפליקציה</string>
 </resources>

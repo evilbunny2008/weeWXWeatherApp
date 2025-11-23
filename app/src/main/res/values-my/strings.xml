@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL သည်သတ်မှတ်ထားခြင်းမရှိပါ</string>
     <string name="update_set_to_manual_but_no_content_cached">လက်စွဲနောက်ဆုံးသတင်းများကိုသတ်မှတ်ပါ,</string>
     <string name="still_downloading_forecast_data">နေဆဲခန့်မှန်းချက်ဒေတာ download လုပ်ခြင်း</string>
+    <string name="use_exact_alarm">အတိအကျ Update Times ကိုသုံးပါ</string>
+    <string name="battery_warning">သတိပေးချက် - အထက်ဖော်ပြပါရွေးချယ်မှုကိုပုံမှန်ထက်သင့်ဘက်ထရီကိုမြန်မြန်ဆန်ဆန်လျော့နည်းစေနိုင်သည်</string>
+    <string name="save_app_debug_logs">App Debug Logs ကိုသိမ်းပါ</string>
 </resources>

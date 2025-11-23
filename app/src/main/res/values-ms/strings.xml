@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL webcam tidak ditetapkan atau kosong</string>
     <string name="update_set_to_manual_but_no_content_cached">Tetapkan kepada kemas kini manual, tetapi belum ada kandungan yang cache</string>
     <string name="still_downloading_forecast_data">Masih memuat turun data ramalan</string>
+    <string name="use_exact_alarm">Gunakan masa kemas kini yang tepat</string>
+    <string name="battery_warning">Amaran: Membolehkan pilihan di atas boleh mengalirkan bateri anda lebih cepat daripada biasa</string>
+    <string name="save_app_debug_logs">Simpan Log Debug App</string>
 </resources>

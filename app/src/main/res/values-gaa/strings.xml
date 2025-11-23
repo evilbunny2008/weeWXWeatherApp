@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL lɛ jeee nɔ ni atooo loo ebɛ nɔ ko</string>
     <string name="update_set_to_manual_but_no_content_cached">Too nibii heei, shi nɔ ko bɛ ni ato he gbɛjianɔ lolo</string>
     <string name="still_downloading_forecast_data">Kɛji oojie saji ni atsɔɔ hiɛ atsɔɔ lɛ lolo</string>
+    <string name="use_exact_alarm">Kɛ tsakemɔ bei pɔtɛɛ atsu nii</string>
+    <string name="battery_warning">Kɔkɔbɔɔ: Kɛ́ okɛ nɔ ni yɔɔ ŋwɛi nɛɛ tsu nii lɛ, ebaanyɛ ekɛ batri lɛ atsu nii oya fe bɔ ni ofeɔ daa lɛ</string>
+    <string name="save_app_debug_logs">Kɛ app debug logs ato</string>
 </resources>

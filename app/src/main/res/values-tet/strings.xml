@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL la tau ka mamuk</string>
     <string name="update_set_to_manual_but_no_content_cached">Hatur ba atualizasaun manual, maibe laiha konteudu ne\'ebe cached</string>
     <string name="still_downloading_forecast_data">Nafatin download dadus previzaun</string>
+    <string name="use_exact_alarm">Uza tempu atualizasaun loloos</string>
+    <string name="battery_warning">Avisu: Hakbiit opsaun iha leten bele halakon ita-nia bateria lalais liu fali baibain</string>
+    <string name="save_app_debug_logs">Salva app debug logs</string>
 </resources>

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL Webcam lang ibahen atap kosong</string>
     <string name="update_set_to_manual_but_no_content_cached">Atur ma update manual, tapi lang dong isi na icache ope</string>
     <string name="still_downloading_forecast_data">Tongon, i-download nasiam ma data ramalan</string>
+    <string name="use_exact_alarm">Pakei ma panorang update update</string>
+    <string name="battery_warning">Sipasingat: Anggo lang dong pilihan na i atas in, ra do lambin podas baterimu mambahen baterimu marimbangkon na somal</string>
+    <string name="save_app_debug_logs">Hemat ma log debug ni app</string>
 </resources>

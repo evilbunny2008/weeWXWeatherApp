@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">El schermu l\'è minga el nomm de la seziun</string>
     <string name="update_set_to_manual_but_no_content_cached">Certo, g\'he minga bisogn de duperà un file di dat</string>
     <string name="still_downloading_forecast_data">Menter el noster sistèm de gestiun del noster sistèm</string>
+    <string name="use_exact_alarm">Spero che l\'è la noster analista de la noster tecnologia de la noster lista</string>
+    <string name="battery_warning">Clicca sü la bas de la bateria: l\'è pusibel che l\'è la velocità de la velocità de la vòstra red</string>
+    <string name="save_app_debug_logs">Impara i impostaziun de la scheda</string>
 </resources>

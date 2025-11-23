@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">د ویب کیم URL نه دی ټاکل شوی یا خالي دی</string>
     <string name="update_set_to_manual_but_no_content_cached">د لاسي تازه معلوماتو لپاره تنظیم کړئ ، مګر هیڅ مینځپانګه لاهم زیرمه شوې</string>
     <string name="still_downloading_forecast_data">لاهم د وړاندوینې ډاټا ډاونلوډ کول</string>
+    <string name="use_exact_alarm">دقیق تازه وختونه وکاروئ</string>
+    <string name="battery_warning">خبرداری: د پورتني اختیار فعالول ممکن ستاسو بیټرۍ د معمول په پرتله ګړندي وچوي</string>
+    <string name="save_app_debug_logs">د ایپ ډیبګ لاګونه خوندي کړئ</string>
 </resources>

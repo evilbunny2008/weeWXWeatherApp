@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">வெப்கேம் URL அமைக்கப்படவில்லை அல்லது காலியாக உள்ளது</string>
     <string name="update_set_to_manual_but_no_content_cached">கைமுறை புதுப்பிப்புகளுக்கு அமைக்கவும், ஆனால் இதுவரை எந்த உள்ளடக்கமும் தற்காலிகமாக சேமிக்கப்படவில்லை</string>
     <string name="still_downloading_forecast_data">முன்னறிவிப்புத் தரவை இன்னும் பதிவிறக்குகிறது</string>
+    <string name="use_exact_alarm">சரியான புதுப்பிப்பு நேரங்களைப் பயன்படுத்தவும்</string>
+    <string name="battery_warning">எச்சரிக்கை: மேலே உள்ள விருப்பத்தை இயக்குவது உங்கள் பேட்டரி வழக்கத்தை விட வேகமாக வெளியேறக்கூடும்</string>
+    <string name="save_app_debug_logs">பயன்பாட்டு பிழைத்திருத்தப் பதிவுகளைச் சேமிக்கவும்</string>
 </resources>

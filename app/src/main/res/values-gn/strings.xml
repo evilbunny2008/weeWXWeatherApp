@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL webcam noñemohendai térã oĩ en blanco</string>
     <string name="update_set_to_manual_but_no_content_cached">Oñemohenda umi actualización manual-pe, ha katu ndaipóri contenido caché gueteri</string>
     <string name="still_downloading_forecast_data">Omboguejy gueteri umi dato pronóstico rehegua</string>
+    <string name="use_exact_alarm">Eipuru umi tiempo de actualización exacta</string>
+    <string name="battery_warning">Advertencia: Ojehejávo pe opción yvategua ikatu omosẽ pya\'eve nde batería jepiveguágui</string>
+    <string name="save_app_debug_logs">Eñongatu App Debug registrokuéra</string>
 </resources>

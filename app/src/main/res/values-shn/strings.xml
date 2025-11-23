@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL ဢမ်ႇလႆႈတမ်းဝၢင်းဝႆႉ ဢမ်ႇၼၼ် ပဵၼ်ပဝ်ႇ</string>
     <string name="update_set_to_manual_but_no_content_cached">တမ်းဝၢင်းပၼ် လွင်ႈမႂ်ႇသုင် လူၺ်ႈမိုဝ်း ၵူၺ်းၵႃႈ ဢမ်ႇမီးၶေႃႈမုၼ်း ဢၼ်ၵဵပ်းႁွမ်ဝႆႉ</string>
     <string name="still_downloading_forecast_data">တိုၵ်ႉလူင်းဢဝ်ၶေႃႈမုၼ်းဢၼ်လၢမ်းၶၢတ်ႈဝႆႉ</string>
+    <string name="use_exact_alarm">ၸႂ်ႉၶၢဝ်းယၢမ်းမႂ်ႇတႅတ်ႈတေႃး</string>
+    <string name="battery_warning">ၶေႃႈပၼ်ၾၢင်ႉ - ပိုတ်ႇပၼ် တၢင်းလိူၵ်ႈပႃႈၼိူဝ်ၼႆႉ ၸၢင်ႈႁဵတ်းႁႂ်ႈ ပႅတ်ႉထီးရီးယႃး ၸဝ်ႈၵဝ်ႇ ဝႆးလိူဝ် မိူဝ်ႈၵူႈပွၵ်ႈ</string>
+    <string name="save_app_debug_logs">သိမ်းပႅင်း ဢႅပ်ႉ debug</string>
 </resources>

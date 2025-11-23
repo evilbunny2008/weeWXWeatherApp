@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Ulalo wa Webcam sunakhazikike kapena wopanda kanthu</string>
     <string name="update_set_to_manual_but_no_content_cached">Kukhazikitsidwa ku zosintha zamanja, koma palibe zomwe zidapezekabe</string>
     <string name="still_downloading_forecast_data">Kutsitsanso deta yakuneneratu</string>
+    <string name="use_exact_alarm">Gwiritsani ntchito nthawi yeniyeni</string>
+    <string name="battery_warning">CHENJEZO: KUTHANDIZA KUTI MUZINTHA KWAULERE KWAULERE KWAULERE KWAULERE KWAULERE KWAULERE</string>
+    <string name="save_app_debug_logs">Sungani pulogalamu ya App Debug</string>
 </resources>

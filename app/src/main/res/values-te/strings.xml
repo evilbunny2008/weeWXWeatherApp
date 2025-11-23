@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">వెబ్‌క్యామ్ URL సెట్ చేయబడలేదు లేదా ఖాళీగా ఉంది</string>
     <string name="update_set_to_manual_but_no_content_cached">మాన్యువల్ అప్‌డేట్‌లకు సెట్ చేయబడింది, కానీ ఇంకా కంటెంట్ కాష్ చేయబడలేదు</string>
     <string name="still_downloading_forecast_data">సూచన డేటాను ఇంకా డౌన్‌లోడ్ చేస్తోంది</string>
+    <string name="use_exact_alarm">ఖచ్చితమైన నవీకరణ సమయాలను ఉపయోగించండి</string>
+    <string name="battery_warning">హెచ్చరిక: పై ఎంపికను ప్రారంభించడం వలన మీ బ్యాటరీ సాధారణం కంటే వేగంగా డ్రెయిన్ కావచ్చు</string>
+    <string name="save_app_debug_logs">యాప్ డీబగ్ లాగ్‌లను సేవ్ చేయండి</string>
 </resources>

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">वेबक्याम यूआरएल सेट मजू बाय् खाली खः ।</string>
     <string name="update_set_to_manual_but_no_content_cached">म्यानुअल अपडेटय् सेट या, तर आःतकं कन्टेन्ट क्याच मदु</string>
     <string name="still_downloading_forecast_data">अझ नं पूर्वानुमान डाटा डाउनलोड या ।</string>
+    <string name="use_exact_alarm">पाय् छिगु अपडेट ई छ्य ।</string>
+    <string name="battery_warning">चेतावनी : च्वय् बियातःगु विकल्पयात सक्षम यायेबलय् छिगु ब्याट्री सामान्य स्वयां याकनं ड्रेन जुइफु ।</string>
+    <string name="save_app_debug_logs">एप डिबग लग बचे या ।</string>
 </resources>

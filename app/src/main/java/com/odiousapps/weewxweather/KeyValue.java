@@ -19,4 +19,6 @@ class KeyValue
 	final static Map<Integer, Integer> widgetMinWidth = new HashMap<>();
 	final static Map<Integer, Integer> widgetMaxHeight = new HashMap<>();
 	final static Map<Integer, Integer> widgetMaxWidth = new HashMap<>();
+
+	static boolean save_app_debug_logs = false;
 }

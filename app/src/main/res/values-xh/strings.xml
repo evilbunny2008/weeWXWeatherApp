@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">I-webcam ye-webcam ayibekwanga okanye ayinanto</string>
     <string name="update_set_to_manual_but_no_content_cached">Cwangcisa uhlaziyo lwenkundla, kodwa akukho mxholo ugciniwe</string>
     <string name="still_downloading_forecast_data">Ukukhuphela idatha yemozulu</string>
+    <string name="use_exact_alarm">Sebenzisa amaxesha okuhlaziya ngqo</string>
+    <string name="battery_warning">Isilumkiso: Ukwenza ukuba ukhetho olungentla lunokuphambukisa ibhetri yakho ngokukhawuleza kunesiqhelo</string>
+    <string name="save_app_debug_logs">Gcina izixhobo ze-App Debug</string>
 </resources>

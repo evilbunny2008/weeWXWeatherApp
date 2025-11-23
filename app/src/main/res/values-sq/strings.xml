@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL-ja e kamerës së uebit nuk është vendosur ose është bosh</string>
     <string name="update_set_to_manual_but_no_content_cached">Vendosur në përditësime manuale, por asnjë përmbajtje nuk është ruajtur ende në memorien specifike</string>
     <string name="still_downloading_forecast_data">Ende po shkarkohen të dhënat e parashikimit</string>
+    <string name="use_exact_alarm">Përdorni kohën e saktë të përditësimit</string>
+    <string name="battery_warning">Paralajmërim: Aktivizimi i opsionit të mësipërm mund ta shkarkojë baterinë tuaj më shpejt se zakonisht</string>
+    <string name="save_app_debug_logs">Ruani regjistrat e korrigjimit të aplikacioneve</string>
 </resources>

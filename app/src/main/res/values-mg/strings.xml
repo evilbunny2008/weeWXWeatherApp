@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL tsy napetraka na tsy misy banga</string>
     <string name="update_set_to_manual_but_no_content_cached">Napetraka amin\'ny fanavaozana manual, fa tsy misy votoaty cache</string>
     <string name="still_downloading_forecast_data">Mbola misintona data data forecast</string>
+    <string name="use_exact_alarm">Ampiasao ny fotoana fanavaozana marina</string>
+    <string name="battery_warning">FANDROSOANA: Ny fahazoana ny safidy etsy ambony dia mety hanarona haingana ny baterinao noho ny mahazatra</string>
+    <string name="save_app_debug_logs">Tehirizo ny hazo debug debug</string>
 </resources>

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL de kompiöta acie tɔ̈ ke cë tääu piny ka cë thök</string>
     <string name="update_set_to_manual_but_no_content_cached">Tääu ë wël yam, ku ka cïn kë tɔ̈ thïn cï tɔ̈ɔ̈u</string>
     <string name="still_downloading_forecast_data">Ku ŋoot ke yök wël cï kek yök</string>
+    <string name="use_exact_alarm">Luɔ̈ɔ̈i ë thɛɛr ë yam ë yic</string>
+    <string name="battery_warning">Wël ë lëk: Luɔi de kë tɔ̈ nhial alëu bï battery du lac thök awär thɛɛr</string>
+    <string name="save_app_debug_logs">Tääu ë käŋ cï riääk në app yic</string>
 </resources>

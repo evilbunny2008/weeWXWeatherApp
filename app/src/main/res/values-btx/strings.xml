@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL Webcam enda enggo itetapken ntah pe kosong</string>
     <string name="update_set_to_manual_but_no_content_cached">Aturken ku update manual, tapi la lit isi si i cache lenga</string>
     <string name="still_downloading_forecast_data">Tetap download data ramalen</string>
+    <string name="use_exact_alarm">Gunaken waktu update si tepat</string>
+    <string name="battery_warning">Persinget: Ngaktifken pilihen si idatas banci erban bateraindu reh pedasna asangken biasana</string>
+    <string name="save_app_debug_logs">Simpan log debug aplikasi</string>
 </resources>

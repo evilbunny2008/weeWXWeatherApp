@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Веб-камера URL мекенжайы орнатылмаған немесе бос емес</string>
     <string name="update_set_to_manual_but_no_content_cached">Қолмен жаңартуларға орнатыңыз, бірақ мазмұн әлі кэштелген жоқ</string>
     <string name="still_downloading_forecast_data">Әлі де болжамды деректерді жүктеу</string>
+    <string name="use_exact_alarm">Нақты жаңарту уақытын қолданыңыз</string>
+    <string name="battery_warning">ЕСКЕРТУ: Жоғарыда көрсетілген опцияны қосу батареяны әдеттегіден тезірек ағызуы мүмкін</string>
+    <string name="save_app_debug_logs">Қолданбаларды жою журналдарын сақтаңыз</string>
 </resources>

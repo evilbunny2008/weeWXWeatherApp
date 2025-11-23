@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">100 doc#1159 Webcam URL nav īstateits voi ir tukšs</string>
     <string name="update_set_to_manual_but_no_content_cached">100 doc#1159 Īstateit manualūs atjaunuojumus, bet nikaida satura kešatmiņa vēļ</string>
     <string name="still_downloading_forecast_data">100 doc#1281 Vēļ lejupluodēt prognozis datus</string>
+    <string name="use_exact_alarm">Izmontojit precizus atjaunuošonys laikus</string>
+    <string name="battery_warning">100 doc#1159 Breidynuojums: Īspiejams, ka īprīkš pīmynātuo opceja var izsvīst jūs akumulatoru dreižuok kai parosti</string>
+    <string name="save_app_debug_logs">Saglabāt lītuotnis žurnalus</string>
 </resources>

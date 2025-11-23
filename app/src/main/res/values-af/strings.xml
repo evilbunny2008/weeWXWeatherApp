@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webkamera-URL is nie gestel nie of is leeg</string>
     <string name="update_set_to_manual_but_no_content_cached">Stel op handmatige opdaterings, maar geen inhoud is nog gekas nie</string>
     <string name="still_downloading_forecast_data">Laai nog voorspellingdata af</string>
+    <string name="use_exact_alarm">Gebruik presiese opdateringstye</string>
+    <string name="battery_warning">Waarskuwing: As u bogenoemde opsie aktiveer, kan u battery vinniger as gewoonlik leegmaak</string>
+    <string name="save_app_debug_logs">Stoor app ontfout logs</string>
 </resources>

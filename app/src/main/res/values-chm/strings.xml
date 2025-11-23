@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Веб-камер URL-адрес шындыме огыл але яра</string>
     <string name="update_set_to_manual_but_no_content_cached">Кид дене уэмдымашым шындаш, но нимогай контент кэшировать эше</string>
     <string name="still_downloading_forecast_data">Эше скачать прогноз данный</string>
+    <string name="use_exact_alarm">Лач уэмдыме жапыште кучылташ</string>
+    <string name="battery_warning">Шарналташ: Ӱлнӧ вариант-влак йӧным ыштен кертеш тендан батарейышке мӧҥгешла деч писын</string>
+    <string name="save_app_debug_logs">Приложений отладочный журнал-влакым аралаш</string>
 </resources>

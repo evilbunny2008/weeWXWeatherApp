@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL ukax janiw utt\'ayatäkiti jan ukax ch\'usawjawa</string>
     <string name="update_set_to_manual_but_no_content_cached">Manual actualizaciones ukar uñt\'ayata, ukampis janiw kuna contenidos ukanakas caché</string>
     <string name="still_downloading_forecast_data">Wali aski pronóstico datos ukanaka apsuñataki</string>
+    <string name="use_exact_alarm">Chiqapa actualización pacha apnaqaña</string>
+    <string name="battery_warning">AKHAM LURASMA: Aka patat opción ukar yanaptʼañax sapa kutit sipansa jukʼamp jankʼakiw pilax chhaqtaspa</string>
+    <string name="save_app_debug_logs">App debug ukax qillqt\'atawa</string>
 </resources>

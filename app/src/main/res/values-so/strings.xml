@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL lama dejinayo ama madhnaan</string>
     <string name="update_set_to_manual_but_no_content_cached">U dejiso cusbooneysiinta buugga, laakiin wax ka kooban ma jiraan weli</string>
     <string name="still_downloading_forecast_data">Wali soo dejinta xogta saadaasha</string>
+    <string name="use_exact_alarm">Adeegso waqtiyada casriyeynta saxda ah</string>
+    <string name="battery_warning">DIGNIIN: Awood u yeelashada ikhtiyaarka kore wuxuu ka daadin karaa batteriga si ka dhakhso badan sidii caadiga ahayd</string>
+    <string name="save_app_debug_logs">Badbaadi app-ka Diiwaanka</string>
 </resources>

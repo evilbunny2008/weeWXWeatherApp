@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Verkkokameran URL-osoitetta ei ole asetettu tai se on tyhjä</string>
     <string name="update_set_to_manual_but_no_content_cached">Määritetty manuaalisiin päivityksiin, mutta sisältöä ei ole vielä tallennettu välimuistiin</string>
     <string name="still_downloading_forecast_data">Ennustetietoja ladataan edelleen</string>
+    <string name="use_exact_alarm">Käytä tarkkoja päivitysaikoja</string>
+    <string name="battery_warning">Varoitus: Yllä olevan vaihtoehdon ottaminen käyttöön voi tyhjentää akun normaalia nopeammin</string>
+    <string name="save_app_debug_logs">Tallenna sovellusten virheenkorjauslokit</string>
 </resources>

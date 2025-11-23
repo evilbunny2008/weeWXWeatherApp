@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Chan eil URL camara-lìn air a shuidheachadh no falamh</string>
     <string name="update_set_to_manual_but_no_content_cached">Suidhich gu ùrachaidhean làimhe, ach chan eil susbaint air a thasgadh fhathast</string>
     <string name="still_downloading_forecast_data">Luchdaich sìos dàta ro-aithris fhathast</string>
+    <string name="use_exact_alarm">Cleachd amannan ùrachadh mionaideach</string>
+    <string name="battery_warning">Rabhadh: Le bhith a\' comasachadh an roghainn gu h-àrd faodaidh e do bhataraidh a dhrèanadh nas luaithe na an àbhaist</string>
+    <string name="save_app_debug_logs">Sàbhail logaichean deasbaid app</string>
 </resources>

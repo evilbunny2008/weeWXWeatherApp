@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL nɔ sɛt ɔ na blank</string>
     <string name="update_set_to_manual_but_no_content_cached">Set to manual apdet, bot no konten cached yet</string>
     <string name="still_downloading_forecast_data">Still fɔ dawnlod fɔkɔs data</string>
+    <string name="use_exact_alarm">Yuz di rayt tɛm fɔ ɔpdet di tɛm</string>
+    <string name="battery_warning">WƆNIN: Fɔ mek yu ebul fɔ yuz di opshɔn we wi dɔn tɔk bɔt kin mek yu batri kɔmɔt kwik kwik wan pas aw yu kin pul am pas aw yu kin du am</string>
+    <string name="save_app_debug_logs">Sev ap dibɔg lɔg dɛn</string>
 </resources>

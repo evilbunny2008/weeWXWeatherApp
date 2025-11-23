@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Yube me webka pe ki keto onyo pe ki coyo</string>
     <string name="update_set_to_manual_but_no_content_cached">Kiketo me loko jami manyen, ento pe tye gin mo ma kiyubo ki cing</string>
     <string name="still_downloading_forecast_data">Pud tye ka nongo ngec ma ki nongo ki i anyim</string>
+    <string name="use_exact_alarm">Ti ki kare me alokaloka ma tye</string>
+    <string name="battery_warning">Jami: Weko ki yo ma malo-ni twero weko mac me mac bot mac-ni bedo yot loyo kit ma onongo tye kwede con</string>
+    <string name="save_app_debug_logs">Gwok jami ma ki coyo i cim</string>
 </resources>

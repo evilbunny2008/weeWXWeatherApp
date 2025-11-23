@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL ya webcam a yi vekiwanga kumbe yi nga ri na nchumu</string>
     <string name="update_set_to_manual_but_no_content_cached">Seta eka ku pfuxetiwa ka manual, kambe ku hava nhundzu leyi hlayisiweke ku fikela sweswi</string>
     <string name="still_downloading_forecast_data">Still downloading data ya vuprofeta</string>
+    <string name="use_exact_alarm">Tirhisa minkarhi leyi kongomeke ya ku pfuxetiwa</string>
+    <string name="battery_warning">XILERISO: Ku pfumelela ndlela leyi nga laha henhla swi nga ha heta betri ya wena hi ku hatlisa ku tlula leswi tolovelekeke</string>
+    <string name="save_app_debug_logs">Save App Debug Logs</string>
 </resources>

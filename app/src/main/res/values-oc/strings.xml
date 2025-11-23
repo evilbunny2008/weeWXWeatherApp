@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">L\'URL Webcam es pas fixat o es en blanc</string>
     <string name="update_set_to_manual_but_no_content_cached">Definissètz a las mesas a jorn manualas, mas pas de contengut en cache encara</string>
     <string name="still_downloading_forecast_data">Encara descargar las donadas de prevision</string>
+    <string name="use_exact_alarm">Utilizar de temps d\'actualizacion exactes</string>
+    <string name="battery_warning">Avertiment: Permetre l\'opcion susmencionada pòt drenar vòstra batariá mai rapidament que d\'acostuma</string>
+    <string name="save_app_debug_logs">Enregistrar los registres de depuracion</string>
 </resources>

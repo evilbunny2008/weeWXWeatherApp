@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">WebカメラのURLが設定されていないか空白です</string>
     <string name="update_set_to_manual_but_no_content_cached">手動更新に設定されていますが、コンテンツはまだキャッシュされていません</string>
     <string name="still_downloading_forecast_data">予測データをダウンロード中</string>
+    <string name="use_exact_alarm">正確な更新時間を使用する</string>
+    <string name="battery_warning">警告: 上記のオプションを有効にすると、バッテリーの消耗が通常より早くなる可能性があります</string>
+    <string name="save_app_debug_logs">アプリのデバッグログを保存する</string>
 </resources>

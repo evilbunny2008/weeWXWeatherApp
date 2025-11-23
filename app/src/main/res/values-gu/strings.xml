@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">વેબકેમ URL સેટ કરેલ નથી અથવા ખાલી છે</string>
     <string name="update_set_to_manual_but_no_content_cached">મેન્યુઅલ અપડેટ્સ પર સેટ કરો, પરંતુ હજી સુધી કોઈ સામગ્રી કેશ કરવામાં આવી નથી</string>
     <string name="still_downloading_forecast_data">હજુ પણ આગાહીનો ડેટા ડાઉનલોડ કરી રહ્યાં છીએ</string>
+    <string name="use_exact_alarm">ચોક્કસ અપડેટ સમયનો ઉપયોગ કરો</string>
+    <string name="battery_warning">ચેતવણી: ઉપરોક્ત વિકલ્પ સક્ષમ કરવાથી તમારી બેટરી સામાન્ય કરતાં વધુ ઝડપથી નીકળી શકે છે</string>
+    <string name="save_app_debug_logs">એપ્લિકેશન ડીબગ લોગ સાચવો</string>
 </resources>

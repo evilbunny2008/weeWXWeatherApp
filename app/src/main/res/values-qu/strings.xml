@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL mana churasqachu utaq ch\'usaqchu kachkan</string>
     <string name="update_set_to_manual_but_no_content_cached">Manual actualizaciones kaqpi churasqa, ichaqa mana contenido caché kaqwanraqchu</string>
     <string name="still_downloading_forecast_data">Kunankamapas willakuy willakuykunata uraykachispa</string>
+    <string name="use_exact_alarm">Utilizar tiempos de actualización exacta</string>
+    <string name="battery_warning">Advertencia: Habilitar la opción anterior puede drenar tu batería más rápida que habitual</string>
+    <string name="save_app_debug_logs">Waqaychay App Debug registrokuna</string>
 </resources>

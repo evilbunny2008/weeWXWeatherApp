@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL-адрес веб-камеры не указан или пуст</string>
     <string name="update_set_to_manual_but_no_content_cached">Установлено обновление вручную, но содержимое еще не кэшировано</string>
     <string name="still_downloading_forecast_data">Все еще загружаются данные прогноза</string>
+    <string name="use_exact_alarm">Используйте точное время обновления</string>
+    <string name="battery_warning">Предупреждение: включение вышеуказанной опции может привести к разрядке аккумулятора быстрее, чем обычно</string>
+    <string name="save_app_debug_logs">Сохранять журналы отладки приложений</string>
 </resources>

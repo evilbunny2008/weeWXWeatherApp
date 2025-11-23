@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">I-URL yeWebcam ayisethiwe noma ayinalutho</string>
     <string name="update_set_to_manual_but_no_content_cached">Setha izibuyekezo ze-Manual, kepha akukho okuqukethwe okulondoloziwe okwamanje</string>
     <string name="still_downloading_forecast_data">Usalanda idatha yesimo sezulu</string>
+    <string name="use_exact_alarm">Sebenzisa izikhathi zokuvuselela ngqo</string>
+    <string name="battery_warning">ISEXWAYISO: Ukunika amandla i-Over Option kungadonsa ibhethri lakho ngokushesha kunokujwayelekile</string>
+    <string name="save_app_debug_logs">Gcina izingodo zokulungisa ama-debug</string>
 </resources>

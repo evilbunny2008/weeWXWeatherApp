@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Վեբ-տեսախցիկի URL-ը սահմանված չէ կամ դատարկ է</string>
     <string name="update_set_to_manual_but_no_content_cached">Սահմանված է ձեռքով թարմացումների, բայց բովանդակություն դեռ պահված չէ</string>
     <string name="still_downloading_forecast_data">Դեռևս ներբեռնվում են կանխատեսումների տվյալները</string>
+    <string name="use_exact_alarm">Օգտագործեք թարմացման ճշգրիտ ժամանակները</string>
+    <string name="battery_warning">Զգուշացում. վերը նշված տարբերակը միացնելը կարող է սովորականից ավելի արագ սպառել ձեր մարտկոցը</string>
+    <string name="save_app_debug_logs">Պահպանեք հավելվածների վրիպազերծման մատյանները</string>
 </resources>

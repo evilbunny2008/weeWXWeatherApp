@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Web kamerası URL\'si ayarlanmamış veya boş</string>
     <string name="update_set_to_manual_but_no_content_cached">Manuel güncellemelere ayarlandı ancak henüz önbelleğe alınmış içerik yok</string>
     <string name="still_downloading_forecast_data">Tahmin verileri hâlâ indiriliyor</string>
+    <string name="use_exact_alarm">Tam güncelleme zamanlarını kullanın</string>
+    <string name="battery_warning">Uyarı: Yukarıdaki seçeneğin etkinleştirilmesi pilinizin normalden daha hızlı tükenmesine neden olabilir</string>
+    <string name="save_app_debug_logs">Uygulama hata ayıklama günlüklerini kaydedin</string>
 </resources>

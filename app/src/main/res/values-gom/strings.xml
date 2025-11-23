@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">वेबकॅम URL सेट ना वा रिकामे आसा</string>
     <string name="update_set_to_manual_but_no_content_cached">मॅन्युअल अपडेटांचेर सेट करात, पूण अजून मेरेन सामुग्री कॅश केल्ली ना</string>
     <string name="still_downloading_forecast_data">अजुनूय डावनलोड करपाचो अदमास डेटा</string>
+    <string name="use_exact_alarm">अचूक अद्ययावत वेळ वापरात</string>
+    <string name="battery_warning">चेतावणी: वयलो पर्याय सक्षम केल्यार तुमची बॅटरी सदचे परस बेगीन काडून उडोवंक शकता</string>
+    <string name="save_app_debug_logs">एप डिबग लॉग जतन करात</string>
 </resources>

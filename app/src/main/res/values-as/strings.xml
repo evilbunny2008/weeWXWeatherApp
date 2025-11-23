@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">WebCam URL ছেট কৰা হোৱা নাই বা খালী কৰা হৈছে</string>
     <string name="update_set_to_manual_but_no_content_cached">মেনুৱেল আপডেইটসমূহলে সংহতি কৰক, কিন্তু এতিয়াও কোনো বিষয়বস্তু কেশ্ব কৰা নহয়</string>
     <string name="still_downloading_forecast_data">এতিয়াও পূৰ্বাভাস তথ্য ডাউনলোড কৰি আছে</string>
+    <string name="use_exact_alarm">সঠিক আপডেইট সময় ব্যৱহাৰ কৰক</string>
+    <string name="battery_warning">সতৰ্কবাণী: ওপৰৰ বিকল্প সামৰ্থবান কৰিলে আপোনাৰ বেটাৰী সাধাৰণতকৈ দ্ৰুতভাৱে ড্ৰেইন কৰিব পাৰে</string>
+    <string name="save_app_debug_logs">এপ ডিবাগ লগসমূহ সংৰক্ষণ কৰক</string>
 </resources>

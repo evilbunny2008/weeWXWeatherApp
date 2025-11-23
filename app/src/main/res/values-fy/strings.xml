@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam-URL is net ynsteld of is leech</string>
     <string name="update_set_to_manual_but_no_content_cached">Ynsteld op hânmjittige updates, mar noch gjin ynhâld yn it cache</string>
     <string name="still_downloading_forecast_data">Noch ynladen prognosegegevens</string>
+    <string name="use_exact_alarm">Brûk krekte update tiden</string>
+    <string name="battery_warning">Warskôging: It ynskeakeljen fan de boppesteande opsje kin jo batterij rapper leegje dan normaal</string>
+    <string name="save_app_debug_logs">Bewarje app-debug-logs</string>
 </resources>

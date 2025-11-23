@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">വെബ്‌ക്യാം URL സജ്ജമാക്കിയിട്ടില്ല അല്ലെങ്കിൽ ശൂന്യമാണ്</string>
     <string name="update_set_to_manual_but_no_content_cached">സ്വമേധയാലുള്ള അപ്‌ഡേറ്റുകളിലേക്ക് സജ്ജമാക്കുക, എന്നാൽ ഇതുവരെ ഉള്ളടക്കമൊന്നും കാഷെ ചെയ്‌തിട്ടില്ല</string>
     <string name="still_downloading_forecast_data">പ്രവചന ഡാറ്റ ഇപ്പോഴും ഡൗൺലോഡ് ചെയ്യുന്നു</string>
+    <string name="use_exact_alarm">കൃത്യമായ അപ്ഡേറ്റ് സമയം ഉപയോഗിക്കുക</string>
+    <string name="battery_warning">മുന്നറിയിപ്പ്: മുകളിലെ ഓപ്‌ഷൻ പ്രവർത്തനക്ഷമമാക്കുന്നത് നിങ്ങളുടെ ബാറ്ററി പതിവിലും വേഗത്തിൽ തീർന്നേക്കാം</string>
+    <string name="save_app_debug_logs">ആപ്പ് ഡീബഗ് ലോഗുകൾ സംരക്ഷിക്കുക</string>
 </resources>

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">L\'URL web nun eni misa o bivu</string>
     <string name="update_set_to_manual_but_no_content_cached">Mpustari a l\'agghiurnamenti manuali, ma nuḍḍu cuntinutu ancoratu</string>
     <string name="still_downloading_forecast_data">Ancora scaricamentu di dati di privisioni</string>
+    <string name="use_exact_alarm">Usa li tempi di agghiurnamentu esatti</string>
+    <string name="battery_warning">Attenzioni: Attivari l\'upzzioni supra pò scaricari cchiù velocimenti la battirìa</string>
+    <string name="save_app_debug_logs">Risparmi li registri di dibbug di l\'app</string>
 </resources>

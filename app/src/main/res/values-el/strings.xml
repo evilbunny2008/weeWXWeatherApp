@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Η διεύθυνση URL της κάμερας web δεν έχει οριστεί ή είναι κενή</string>
     <string name="update_set_to_manual_but_no_content_cached">Ορίστηκε σε μη αυτόματες ενημερώσεις, αλλά δεν έχει αποθηκευτεί ακόμα περιεχόμενο στην κρυφή μνήμη</string>
     <string name="still_downloading_forecast_data">Γίνεται ακόμα λήψη δεδομένων πρόβλεψης</string>
+    <string name="use_exact_alarm">Χρησιμοποιήστε τους ακριβείς χρόνους ενημέρωσης</string>
+    <string name="battery_warning">Προειδοποίηση: Η ενεργοποίηση της παραπάνω επιλογής μπορεί να εξαντλήσει την μπαταρία σας πιο γρήγορα από το συνηθισμένο</string>
+    <string name="save_app_debug_logs">Αποθήκευση αρχείων καταγραφής εντοπισμού σφαλμάτων εφαρμογών</string>
 </resources>

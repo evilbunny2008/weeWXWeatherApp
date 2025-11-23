@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam-URL er ikke angivet eller er tom</string>
     <string name="update_set_to_manual_but_no_content_cached">Indstil til manuelle opdateringer, men intet indhold i cache endnu</string>
     <string name="still_downloading_forecast_data">Downloader stadig prognosedata</string>
+    <string name="use_exact_alarm">Brug nøjagtige opdateringstider</string>
+    <string name="battery_warning">Advarsel: Aktivering af ovenstående mulighed kan aflade dit batteri hurtigere end normalt</string>
+    <string name="save_app_debug_logs">Gem app-fejlretningslogfiler</string>
 </resources>

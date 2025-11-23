@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Веб-камера URL яки буш түгел</string>
     <string name="update_set_to_manual_but_no_content_cached">Кул белән яңартулар куйган, ләкин әле эчемлекләр юк</string>
     <string name="still_downloading_forecast_data">Һаман да фаразлау мәгълүматларын йөкләү</string>
+    <string name="use_exact_alarm">Төгәл яңартуны кулланыгыз</string>
+    <string name="battery_warning">Кисәтү: aboveгарыдагы вариантны ачу сезнең батареяны гадәттәгедән тизрәк агызырга мөмкин</string>
+    <string name="save_app_debug_logs">Кушымталарны саклагыз Дебуг бүрәнәләре</string>
 </resources>

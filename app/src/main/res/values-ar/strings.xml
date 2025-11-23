@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">لم يتم تعيين عنوان URL لكاميرا الويب أو أنه فارغ</string>
     <string name="update_set_to_manual_but_no_content_cached">قم بالتعيين على التحديثات اليدوية، ولكن لا يوجد محتوى مخزن مؤقتًا حتى الآن</string>
     <string name="still_downloading_forecast_data">لا يزال تنزيل بيانات التوقعات مستمرًا</string>
+    <string name="use_exact_alarm">استخدم أوقات التحديث المحددة</string>
+    <string name="battery_warning">تحذير: قد يؤدي تمكين الخيار أعلاه إلى استنزاف البطارية بشكل أسرع من المعتاد</string>
+    <string name="save_app_debug_logs">حفظ سجلات تصحيح التطبيق</string>
 </resources>

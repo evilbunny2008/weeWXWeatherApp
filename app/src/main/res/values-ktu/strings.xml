@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL ya Webcam kele ve ya kuyidika to ya mpamba</string>
     <string name="update_set_to_manual_but_no_content_cached">Tula na zulu ya bima ya mpa, kansi ata kima mosi ve ya bo me bumba kansi</string>
     <string name="still_downloading_forecast_data">Kubaka bansangu na ntwala</string>
+    <string name="use_exact_alarm">Sadila ntangu ya sikisiki ya kutula na zulu</string>
+    <string name="battery_warning">Lukebisu: Kupesa nzila na mutindu yina beto me tubila awa na zulu lenda katula bateri na nge nswalu kuluta mutindu nge ke salaka mbala na mbala</string>
+    <string name="save_app_debug_logs">Save ba-application ya appli</string>
 </resources>

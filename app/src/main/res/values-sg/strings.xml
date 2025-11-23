@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL ni ayeke pëpe wala a yeke senge</string>
     <string name="update_set_to_manual_but_no_content_cached">Zia na maboko ti mo afini ye, me mbeni ye so ayeke na yâ ni ade ti si pëpe</string>
     <string name="still_downloading_forecast_data">En ti téléchargé asango ti prévision</string>
+    <string name="use_exact_alarm">Lo sara kua na ambilimbili ngoi ti sarango na update</string>
+    <string name="battery_warning">Gboto mê: Ti sala si option so ayeke na nduzu ge alingbi ti hunzi batterie ti mo hio ahon ti kozo</string>
+    <string name="save_app_debug_logs">Bata a-application ti debug</string>
 </resources>

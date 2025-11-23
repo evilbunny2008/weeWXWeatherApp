@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">וועבקאַם URL איז נישט באַשטימט אָדער איז ליידיק</string>
     <string name="update_set_to_manual_but_no_content_cached">שטעלן צו מאַנואַל דערהייַנטיקונגען, אָבער קיין אינהאַלט קאַשט נאָך</string>
     <string name="still_downloading_forecast_data">נאָך דאַונלאָודינג פאָרויסזאָגן דאַטן</string>
+    <string name="use_exact_alarm">ניצן פּינטלעך דערהייַנטיקן צייט</string>
+    <string name="battery_warning">ווארענונג: געבן די אויבן אָפּציע קען פליסן דיין באַטאַרייע פאַסטער ווי געוויינטלעך</string>
+    <string name="save_app_debug_logs">היט אַפּ דיבאַג לאָגס</string>
 </resources>

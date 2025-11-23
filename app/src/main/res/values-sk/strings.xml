@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webová adresa webovej kamery nie je nastavená alebo je prázdna</string>
     <string name="update_set_to_manual_but_no_content_cached">Nastavené na manuálne aktualizácie, ale zatiaľ nie je uložený žiadny obsah do vyrovnávacej pamäte</string>
     <string name="still_downloading_forecast_data">Stále sa sťahujú údaje prognózy</string>
+    <string name="use_exact_alarm">Použite presné časy aktualizácie</string>
+    <string name="battery_warning">Upozornenie: Povolenie vyššie uvedenej možnosti môže vybiť batériu rýchlejšie ako zvyčajne</string>
+    <string name="save_app_debug_logs">Uložte denníky ladenia aplikácie</string>
 </resources>

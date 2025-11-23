@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">A webkamera URL-je nincs beállítva, vagy üres</string>
     <string name="update_set_to_manual_but_no_content_cached">Kézi frissítésre van állítva, de a tartalom még nincs gyorsítótárban</string>
     <string name="still_downloading_forecast_data">Az előrejelzési adatok letöltése még folyamatban van</string>
+    <string name="use_exact_alarm">Pontos frissítési időket használjon</string>
+    <string name="battery_warning">Figyelmeztetés: A fenti opció engedélyezése a szokásosnál gyorsabban lemerítheti az akkumulátort</string>
+    <string name="save_app_debug_logs">Mentse el az alkalmazás hibakeresési naplóit</string>
 </resources>

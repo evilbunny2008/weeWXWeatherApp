@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL cu set a si lo asiloah a thiang lo</string>
     <string name="update_set_to_manual_but_no_content_cached">Manual updates ah chiah, asinain a chunglei thilri a um rih lo</string>
     <string name="still_downloading_forecast_data">Hmuhchungnak data download tuah rih</string>
+    <string name="use_exact_alarm">Update caan taktak kha hmang</string>
+    <string name="battery_warning">Ralrin peknak: A cunglei thimnak tuah khawhnak nih na battery kha a hlan nakin rang deuh in a zorter khawh</string>
+    <string name="save_app_debug_logs">App debug logs kha chiah</string>
 </resources>

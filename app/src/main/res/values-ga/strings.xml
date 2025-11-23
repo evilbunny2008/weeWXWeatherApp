@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Níl URL ceamara gréasáin socraithe nó bán</string>
     <string name="update_set_to_manual_but_no_content_cached">Socraigh go nuashonruithe láimhe, ach níl aon ábhar i dtaisce fós</string>
     <string name="still_downloading_forecast_data">Tá sonraí réamhaisnéise á n-íoslódáil go fóill</string>
+    <string name="use_exact_alarm">Bain úsáid as amanna nuashonraithe cruinne</string>
+    <string name="battery_warning">Rabhadh: Má chuirtear an rogha thuas ar chumas, d\'fhéadfaí do cheallraí a dhraenáil níos tapúla ná mar is gnách</string>
+    <string name="save_app_debug_logs">Sábháil logaí dífhabhtaithe app</string>
 </resources>

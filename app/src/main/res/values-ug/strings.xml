@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">WebCam URL تەڭشەلمىگەن ياكى قۇرۇق ئەمەس</string>
     <string name="update_set_to_manual_but_no_content_cached">قولايلىق يېڭىلاشنى بەلگىلىدى, ئەمما ھېچقانداق مەزمۇن يوق</string>
     <string name="still_downloading_forecast_data">مۆلچەردىكى سانلىق مەلۇماتلارنى چۈشۈرۈش</string>
+    <string name="use_exact_alarm">ئېنىق يېڭىلاش ۋاقتىنى ئىشلىتىڭ</string>
+    <string name="battery_warning">ئاگاھلاندۇرۇش: يۇقارقى تاللاشنى قوزغىتىش باتارېيەڭىزنى ئادەتتىكىدىن تېزلىكتە سۈرۈشى مۇمكىن</string>
+    <string name="save_app_debug_logs">ئەپنى ساقلاش خاتىرىسىنى ساقلاڭ</string>
 </resources>

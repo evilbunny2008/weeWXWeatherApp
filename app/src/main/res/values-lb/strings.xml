@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL ass net gesat oder ass eidel</string>
     <string name="update_set_to_manual_but_no_content_cached">Setzt op manuell Aktualiséierungen, awer nach keen Inhalt cache</string>
     <string name="still_downloading_forecast_data">Nach ëmmer Prognosendaten eroflueden</string>
+    <string name="use_exact_alarm">Benotzt genee Update Zäiten</string>
+    <string name="battery_warning">Opgepasst: Wann Dir déi uewe genannte Optioun aktivéiert, kann Är Batterie méi séier wéi soss entlaaschten</string>
+    <string name="save_app_debug_logs">Späichert App Debug Logbicher</string>
 </resources>

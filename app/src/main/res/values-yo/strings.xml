@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">A ko ṣeto Well URL ko ni ṣeto tabi jẹ ofifo</string>
     <string name="update_set_to_manual_but_no_content_cached">Ṣeto si awọn imudojuiwọn Afowoyi, ṣugbọn ko si akoonu ti o kọ sibẹsibẹ</string>
     <string name="still_downloading_forecast_data">Tun gbigba data asọtẹlẹ</string>
+    <string name="use_exact_alarm">Lo awọn akoko imudojuiwọn gangan</string>
+    <string name="battery_warning">IKILỌ: Ṣiṣẹda aṣayan loke le fa iyara rẹ yiyara ju ti lọ</string>
+    <string name="save_app_debug_logs">Fipamọ Ohun elo App</string>
 </resources>

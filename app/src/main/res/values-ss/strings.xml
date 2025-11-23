@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">I-URL yeWebcam ayikho noma ayinalutho</string>
     <string name="update_set_to_manual_but_no_content_cached">Bese kuvuselelwa ngesandla, kepha kute lokucuketfwe lokugcinwe kwanyalo</string>
     <string name="still_downloading_forecast_data">Solo lalandza idatha yekubiketela</string>
+    <string name="use_exact_alarm">Sebentisa tikhatsi leticondzile tekuvuselela</string>
+    <string name="battery_warning">Secwayiso: Kunika emandla lenketho lengenhla kungakhipha ibhethri yakho ngekushesha kunalokuvamile</string>
+    <string name="save_app_debug_logs">Gcina emalogi e-app</string>
 </resources>

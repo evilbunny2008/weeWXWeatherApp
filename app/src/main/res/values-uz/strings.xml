@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">WebCam URL manzillari o\'rnatilmagan yoki bo\'sh</string>
     <string name="update_set_to_manual_but_no_content_cached">Qo\'lda yangilanishlarga sozlangan, ammo hech qanday tarkibni hali ham</string>
     <string name="still_downloading_forecast_data">Hali ham prognoz ma\'lumotlarini yuklab olish</string>
+    <string name="use_exact_alarm">Aniq yangilanish vaqtlaridan foydalaning</string>
+    <string name="battery_warning">Ogohlantirish: Yuqoridagi variantni yoqish, odatdagidan ko\'ra batareyangizni tezroq chiqarishi mumkin</string>
+    <string name="save_app_debug_logs">Ilova disklarini saqlash tizimlarini saqlang</string>
 </resources>

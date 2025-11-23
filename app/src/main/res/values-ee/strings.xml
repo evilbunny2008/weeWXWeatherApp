@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL mele ɖoɖo nu o alo le ƒuƒlu</string>
     <string name="update_set_to_manual_but_no_content_cached">Woɖoe ɖe asi me nya yeyewo, gake nya aɖeke mele eme haɖe o</string>
     <string name="still_downloading_forecast_data">Nyagblɔɖi ƒe nyatakakawo ƒe kɔpi wɔwɔ gakpɔtɔ</string>
+    <string name="use_exact_alarm">Zã ɣeyiɣi siwo sɔ pɛpɛpɛ</string>
+    <string name="battery_warning">Nuxlɔ̃ame: Ne èna tiatia si le etame la nate ŋu ana wò batri nakɔ kabakaba wu alesi wònɔna ɖaa</string>
+    <string name="save_app_debug_logs">Dzra App Debug ƒe nuŋlɔɖiwo ɖo</string>
 </resources>

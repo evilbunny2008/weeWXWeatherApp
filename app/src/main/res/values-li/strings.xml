@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL is neet ingesjtèld of is leeg</string>
     <string name="update_set_to_manual_but_no_content_cached">Stel veur manuele updates in, maar nog gein content in cache</string>
     <string name="still_downloading_forecast_data">Nog steeds downloade vaan veurspelde gegeves</string>
+    <string name="use_exact_alarm">Gebruuk exacte updatetieje</string>
+    <string name="battery_warning">Waarsjchuwing: \'t Instelle vaan de bovestaonde optie kin uw batterie sneller drainere daan normaal</string>
+    <string name="save_app_debug_logs">Opslaon app-debuglogs op</string>
 </resources>

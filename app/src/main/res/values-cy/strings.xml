@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Nid yw URL gwegamera wedi\'i osod neu mae\'n wag</string>
     <string name="update_set_to_manual_but_no_content_cached">Wedi\'i osod i ddiweddariadau llaw, ond dim cynnwys wedi\'i storio eto</string>
     <string name="still_downloading_forecast_data">Yn dal i lawrlwytho data rhagolygon</string>
+    <string name="use_exact_alarm">Defnyddiwch yr union amseroedd diweddaru</string>
+    <string name="battery_warning">Rhybudd: Gall galluogi\'r opsiwn uchod ddraenio\'ch batri yn gyflymach nag arfer</string>
+    <string name="save_app_debug_logs">Arbed logiau dadfygio app</string>
 </resources>

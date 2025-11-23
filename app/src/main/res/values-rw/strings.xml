@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Urubuga rwa interineti ntirushyirwaho cyangwa ni ubusa</string>
     <string name="update_set_to_manual_but_no_content_cached">Shyira kuri mpimbano, ariko ntakintu cyarangiye</string>
     <string name="still_downloading_forecast_data">Uracyakuramo amakuru yimitaza</string>
+    <string name="use_exact_alarm">Koresha ibihe byiza</string>
+    <string name="battery_warning">UMUBURO: Gushoboza amahitamo yavuzwe haruguru birashobora kuvoma bateri yawe vuba kuruta ibisanzwe</string>
+    <string name="save_app_debug_logs">Kubika Porogaramu</string>
 </resources>

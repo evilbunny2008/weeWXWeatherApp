@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL settaaka walla ko ɓuuɓɗo</string>
     <string name="update_set_to_manual_but_no_content_cached">Set to kesɗitingol junngo, kono alaa ko woni e lowre ndee</string>
     <string name="still_downloading_forecast_data">Haa jooni ƴettude dokke teskaaɗe</string>
+    <string name="use_exact_alarm">Huutoro waktuuji kesi laaɓtuɗi</string>
+    <string name="battery_warning">Jeertinaango: Sobar cuɓal dow ngal ina waawi ustude batte maa ko ɓuri yaawde e ko woowaa</string>
+    <string name="save_app_debug_logs">Hisnu logs debug</string>
 </resources>

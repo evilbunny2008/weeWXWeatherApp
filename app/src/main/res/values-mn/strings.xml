@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">WebCam URL тохируулагдаагүй эсвэл хоосон байна</string>
     <string name="update_set_to_manual_but_no_content_cached">Гарын авлагын шинэчлэлтийг тохируулах боловч агуулга хараахан кэш байхгүй байна</string>
     <string name="still_downloading_forecast_data">Урьдчилсан мэдээллийг татаж авсаар л байна</string>
+    <string name="use_exact_alarm">Шинэчлэлтийн цагийг ашиглана уу</string>
+    <string name="battery_warning">АНХААРУУЛГА: Дээрх сонголтыг идэвхжүүлэх нь таны зайг ердийнхөөс илүү хурдан урсаж болно</string>
+    <string name="save_app_debug_logs">Апп-ын дибаг хийх бүртгэлийг хадгалах</string>
 </resources>

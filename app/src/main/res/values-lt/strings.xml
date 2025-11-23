@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Interneto kameros URL nenustatytas arba yra tuščias</string>
     <string name="update_set_to_manual_but_no_content_cached">Nustatyti rankiniai naujinimai, bet talpykloje dar nėra turinio</string>
     <string name="still_downloading_forecast_data">Vis dar atsisiunčiami prognozių duomenys</string>
+    <string name="use_exact_alarm">Naudokite tikslius atnaujinimo laikus</string>
+    <string name="battery_warning">Įspėjimas: įjungus pirmiau nurodytą parinktį, baterija gali išeikvoti greičiau nei įprastai</string>
+    <string name="save_app_debug_logs">Išsaugokite programos derinimo žurnalus</string>
 </resources>

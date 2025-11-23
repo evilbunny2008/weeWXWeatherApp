@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL is niet of is leen</string>
     <string name="update_set_to_manual_but_no_content_cached">Set in manual aktualisiirunge, awer khee inhalt hot noch mool kexrip</string>
     <string name="still_downloading_forecast_data">Noch download fer ti prokramatsioons data</string>
+    <string name="use_exact_alarm">Penuts eksakte aktualisiirunge</string>
+    <string name="battery_warning">Warnung: ti optsioon woo too trin xteet, khan tayn bateria xnël wii es normal is</string>
+    <string name="save_app_debug_logs">Reserve app debug logs</string>
 </resources>

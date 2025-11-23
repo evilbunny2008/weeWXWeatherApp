@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">L\'URL do Webcam o no l\'é impostou ò o l\'é veuo</string>
     <string name="update_set_to_manual_but_no_content_cached">Imposta a-i aggiornamenti manuali, ma nisciun contegnuo o l\'é ancon incantou</string>
     <string name="still_downloading_forecast_data">Ancon o scarico di dæti de previxon</string>
+    <string name="use_exact_alarm">Utilizzâ i tempi d\'aggiornamento esatto</string>
+    <string name="battery_warning">Avvertimento: Attivâ l\'opçion stæta mensunâ de d\'ato o peu drenâ a batteria ciù a-a spedia che pe commun</string>
+    <string name="save_app_debug_logs">Salvâ i registri de debug app</string>
 </resources>

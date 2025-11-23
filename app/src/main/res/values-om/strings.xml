@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL webcam hin qindaa\'u ykn duwwaa dha</string>
     <string name="update_set_to_manual_but_no_content_cached">Gara fooyya\'iinsa harkaatti saagi, garuu qabiyyeen hanga ammaatti hin kaa\'amne</string>
     <string name="still_downloading_forecast_data">Ammallee daataa tilmaama buufachuu</string>
+    <string name="use_exact_alarm">Yeroo fooyya\'iinsa sirrii fayyadamaa</string>
+    <string name="battery_warning">HUBACHIISA: Filannoo armaan olii dandeessisuun baatirii keessan yeroo biraa caalaa saffisaan dhangalaasuu danda\'a</string>
+    <string name="save_app_debug_logs">Save App Debug Galmeewwan</string>
 </resources>

@@ -65,8 +65,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 		cancelAlarm();
 
-		if(canSetExact(context))
-			setNextAlarm();
+		setNextAlarm();
 
 		runInTheBackground(true, false);
 
@@ -141,35 +140,47 @@ public class UpdateCheck extends BroadcastReceiver
 		weeWXAppCommon.LogMessage("UpdateCheck.java secs to next start: " + Math.round((npwsll[3] - npwsll[0]) / 1_000D) + "s", true);
 
 		AlarmManager alarm = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+
+		if(canSetExact(context))
+			setExactAlarm(context, alarm, npwsll[3]);
+		else
+			setInexactAlarm(context, alarm, npwsll[3]);
+	}
+
+	static void promptForExact(Context context)
+	{
+		AlarmManager alarm = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
 		if(alarm != null)
 		{
-			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU && !alarm.canScheduleExactAlarms())
 			{
-				if(!alarm.canScheduleExactAlarms())
-				{
-					Intent intent = new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
-					intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
-					intent.setData(Uri.parse("package:" + context.getPackageName()));
-					context.startActivity(intent);
-				} else {
-					alarm.setExact(AlarmManager.RTC_WAKEUP, npwsll[3], getPendingIntent(context, false));
-					weeWXAppCommon.LogMessage("UpdateCheck.java Successfully set the alarm...", true);
-				}
-			} else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-				if(!alarm.canScheduleExactAlarms())
-				{
-					Intent intent = new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
-					intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
-					context.startActivity(intent);
-				} else {
-					alarm.setExact(AlarmManager.RTC_WAKEUP, npwsll[3], getPendingIntent(context, false));
-					weeWXAppCommon.LogMessage("UpdateCheck.java Successfully set the alarm...", true);
-				}
-			} else {
-				alarm.setExact(AlarmManager.RTC_WAKEUP, npwsll[3], getPendingIntent(context, false));
-				weeWXAppCommon.LogMessage("UpdateCheck.java Successfully set the alarm...", true);
+				Intent intent = new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
+				intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+				intent.setData(Uri.parse("package:" + context.getPackageName()));
+				context.startActivity(intent);
+			} else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S && !alarm.canScheduleExactAlarms()) {
+				Intent intent = new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
+				intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
+				context.startActivity(intent);
 			}
 		}
+
+	}
+
+	private static void setExactAlarm(Context context, AlarmManager alarm, long start)
+	{
+		long current_time = weeWXAppCommon.getCurrTime();
+		alarm.setExact(AlarmManager.RTC_WAKEUP, start, getPendingIntent(context, false));
+		weeWXAppCommon.LogMessage("UpdateCheck.java Successfully set the exact alarm for " +
+		                          (Math.round(start / 1_000D) - current_time) + "s time...", true);
+	}
+
+	private static void setInexactAlarm(Context context, AlarmManager alarm, long start)
+	{
+		long current_time = weeWXAppCommon.getCurrTime();
+		alarm.set(AlarmManager.RTC_WAKEUP, start, getPendingIntent(context, false));
+		weeWXAppCommon.LogMessage("UpdateCheck.java Successfully set the inexact alarm for " +
+		                          (Math.round(start / 1_000D) - current_time) + "s time...", true);
 	}
 
 	static boolean canSetExact(Context context)

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Edeghị URL URL ma ọ bụ tọgbọ chakoo</string>
     <string name="update_set_to_manual_but_no_content_cached">Tọọ na mmelite ntuziaka, mana ọdịnaya enweghị aha</string>
     <string name="still_downloading_forecast_data">Ka na-ebubata data amụma</string>
+    <string name="use_exact_alarm">Jiri oge mmelite ziri ezi</string>
+    <string name="battery_warning">Warndọ aka na ntị: na-enyere gị aka ịhọrọ batrị gị karịa ka ọ dị na mbụ</string>
+    <string name="save_app_debug_logs">Chekwaa mpempe akwụkwọ ndekọ</string>
 </resources>

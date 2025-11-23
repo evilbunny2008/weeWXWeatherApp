@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL Webcam ma\' táan establecido wa táan ti\' sak</string>
     <string name="update_set_to_manual_but_no_content_cached">Establecer ti\' actualizaciones manuales, ba\'ale\' ma\' concejanza ti\' caché láayli\'</string>
     <string name="still_downloading_forecast_data">Láayli\' descarga datos pronóstico</string>
+    <string name="use_exact_alarm">Utilizar k\'iinil ka\' exacto</string>
+    <string name="battery_warning">Advertencia: Habilitar le opción anterior je\'el drenar u batería asab séeba\'an u le suukbenilo\'obo\'</string>
+    <string name="save_app_debug_logs">Ahorre registros depuración app</string>
 </resources>

@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webbkamera-URL är inte inställd eller är tom</string>
     <string name="update_set_to_manual_but_no_content_cached">Ställ in på manuella uppdateringar, men inget innehåll har cachats ännu</string>
     <string name="still_downloading_forecast_data">Laddar fortfarande ned prognosdata</string>
+    <string name="use_exact_alarm">Använd exakta uppdateringstider</string>
+    <string name="battery_warning">Varning: Aktivering av ovanstående alternativ kan ta ur batteriet snabbare än vanligt</string>
+    <string name="save_app_debug_logs">Spara appfelsökningsloggar</string>
 </resources>

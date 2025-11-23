@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL WebCam ບໍ່ໄດ້ຖືກກໍານົດຫຼືວ່າງເປົ່າ</string>
     <string name="update_set_to_manual_but_no_content_cached">ກໍານົດໃຫ້ມີການປັບປຸງຄູ່ມື, ແຕ່ບໍ່ມີເນື້ອຫາໃດໆ</string>
     <string name="still_downloading_forecast_data">ຍັງດາວໂຫລດຂໍ້ມູນການຄາດຄະເນ</string>
+    <string name="use_exact_alarm">ໃຊ້ເວລາປັບປຸງທີ່ແນ່ນອນ</string>
+    <string name="battery_warning">ຄໍາເຕືອນ: ເຮັດໃຫ້ຕົວເລືອກທີ່ກ່າວມາຂ້າງເທິງອາດຈະຖອກແບັດເຕີຣີຂອງທ່ານໃຫ້ໄວກ່ວາປົກກະຕິ</string>
+    <string name="save_app_debug_logs">ບັນທຶກໄມ້ທ່ອນ debug</string>
 </resources>

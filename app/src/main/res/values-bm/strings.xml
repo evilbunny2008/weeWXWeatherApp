@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL tɛ sigi walima a bɛ kɛ fɛn ye min tɛ se ka kɛ</string>
     <string name="update_set_to_manual_but_no_content_cached">Aw bɛ se ka kunnafoni kuraw di u ma, nka kunnafoni si ma sɔrɔ hali bi</string>
     <string name="still_downloading_forecast_data">Hali bi ka kunnafoniw telesarse minnu bɛ fɔ ka ɲɛ</string>
+    <string name="use_exact_alarm">Baara kɛ ni kunnafoni kura waati tigitigiw ye</string>
+    <string name="battery_warning">Ladilikan: Ni aw bɛ se ka sanfɛla sugandi, o bɛ se ka aw ka batiri bɔ joona ka tɛmɛ a cogo kɔrɔ kan</string>
+    <string name="save_app_debug_logs">Save app debug logs</string>
 </resources>

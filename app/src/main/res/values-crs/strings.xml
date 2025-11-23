@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">URL web pa ganny mete oubyen i vid</string>
     <string name="update_set_to_manual_but_no_content_cached">Met lo bann mizazour manyel, me napa okenn konteni ki ganny kache</string>
     <string name="still_downloading_forecast_data">Ankor lenformasyon previzyon telesarz</string>
+    <string name="use_exact_alarm">Servi bann ler egzakt</string>
+    <string name="battery_warning">Avertisman: Aktiv sa opsyon anler i kapab drenn ou batri pli vit ki labitid</string>
+    <string name="save_app_debug_logs">Ekonomiz app app lo bann bout dibwa</string>
 </resources>

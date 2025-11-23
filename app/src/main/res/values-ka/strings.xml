@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">ვებკამერის URL არ არის დაყენებული ან ცარიელია</string>
     <string name="update_set_to_manual_but_no_content_cached">დაყენებულია ხელით განახლებებზე, მაგრამ კონტენტი ჯერ არ არის ქეშირებული</string>
     <string name="still_downloading_forecast_data">ჯერ კიდევ მიმდინარეობს პროგნოზის მონაცემების ჩამოტვირთვა</string>
+    <string name="use_exact_alarm">გამოიყენეთ განახლების ზუსტი დრო</string>
+    <string name="battery_warning">გაფრთხილება: ზემოაღნიშნული პარამეტრის ჩართვამ შესაძლოა თქვენი ბატარეა ჩვეულებრივზე უფრო სწრაფად დაასვენოს</string>
+    <string name="save_app_debug_logs">შეინახეთ აპის გამართვის ჟურნალები</string>
 </resources>

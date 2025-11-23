@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Webcam URL табигдаагүй гү, али хооһон байна</string>
     <string name="update_set_to_manual_but_no_content_cached">Гараар шэнэлгэнүүдтэ табиха, харин үшөө агуулга кэшээр кэшэлһэнгүй</string>
     <string name="still_downloading_forecast_data">Уридшалан мэдээсэл татажа абахадаа, үшөөл</string>
+    <string name="use_exact_alarm">Нарин шэнэлхэ сагые хэрэглэхэ</string>
+    <string name="battery_warning">Һэргылэмжэ: Дээрэхи арга боломжо олгохо гээшэ батарейн батарейнгаа ерээдүйһээ түргэн шүүжэ болохо</string>
+    <string name="save_app_debug_logs">Апп-кретарь логуудые хадагалха</string>
 </resources>

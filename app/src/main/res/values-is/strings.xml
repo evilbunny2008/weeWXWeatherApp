@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Vefslóð vefmyndavélar er ekki stillt eða er auð</string>
     <string name="update_set_to_manual_but_no_content_cached">Stillt á handvirkar uppfærslur, en ekkert efni í skyndiminni ennþá</string>
     <string name="still_downloading_forecast_data">Enn að hlaða niður spágögnum</string>
+    <string name="use_exact_alarm">Notaðu nákvæma uppfærslutíma</string>
+    <string name="battery_warning">Viðvörun: Ef valkosturinn hér að ofan er virkur gæti rafhlaðan tæmdst hraðar en venjulega</string>
+    <string name="save_app_debug_logs">Vistaðu villuleitarskrár forrita</string>
 </resources>

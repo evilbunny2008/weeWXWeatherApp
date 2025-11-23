@@ -84,4 +84,7 @@
     <string name="webcam_url_url_not_set">Веб-камера URL ҡуйылмаған йәки буш тора</string>
     <string name="update_set_to_manual_but_no_content_cached">Ҡул менән яңыртыу өсөн ҡуйылған, әммә бер ниндәй ҙә контент кэш</string>
     <string name="still_downloading_forecast_data">Әле лә скачать прогноз мәғлүмәттәре</string>
+    <string name="use_exact_alarm">Теүәл яңыртыу ваҡыты ҡулланыу</string>
+    <string name="battery_warning">Иҫкәртмә: өҫтәге вариантты индереү һеҙҙең батарея тиҙ генә ғәҙәттәгенән тиҙерәк дренировать мөмкин</string>
+    <string name="save_app_debug_logs">Һаҡлау ҡушымтаһы отладка журналдар</string>
 </resources>

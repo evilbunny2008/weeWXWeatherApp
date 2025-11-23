@@ -75,6 +75,38 @@
 			android:layout_marginTop="10dp"
 			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
 
+		<com.google.android.material.materialswitch.MaterialSwitch
+			android:id="@+id/use_exact_alarm"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="48dp"
+			android:text="@string/use_exact_alarm"
+			android:textSize="20sp"
+			android:layout_marginTop="10dp"
+			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+
+		<com.google.android.material.textview.MaterialTextView
+			android:id="@+id/mtv1"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:ellipsize="none"
+			android:gravity="bottom"
+			android:scrollHorizontally="false"
+			android:singleLine="false"
+			android:text="@string/battery_warning"
+			android:textSize="18sp"
+			tools:ignore="VisualLintBounds" />
+
+		<com.google.android.material.materialswitch.MaterialSwitch
+			android:id="@+id/save_app_debug_logs"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="48dp"
+			android:text="@string/save_app_debug_logs"
+			android:textSize="20sp"
+			android:layout_marginTop="10dp"
+			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+
 		<com.google.android.material.textfield.TextInputLayout
 			style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"			android:id="@+id/til2"
 			android:labelFor="@id/spinner1"
@@ -197,7 +229,7 @@
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.textview.MaterialTextView
-			android:id="@+id/mtv1"
+			android:id="@+id/mtv2"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:ellipsize="none"
