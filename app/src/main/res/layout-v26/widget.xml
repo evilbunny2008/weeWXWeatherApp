@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/widget_frame"
 	android:minHeight="60dp"
 	android:minWidth="120dp"
@@ -47,11 +46,11 @@
 			android:layout_gravity="center"
 			android:gravity="center"
 			android:text="35.5*C"
+			android:autoSizeTextType="uniform"
+			android:autoSizeMaxTextSize="128sp"
+			android:autoSizeMinTextSize="12sp"
+			android:autoSizeStepGranularity="1sp"
 			android:textStyle="bold"
-			app:autoSizeTextType="uniform"
-			app:autoSizeMaxTextSize="128sp"
-			app:autoSizeMinTextSize="12sp"
-			app:autoSizeStepGranularity="1sp"
 			tools:ignore="HardcodedText" />
 
 		<LinearLayout

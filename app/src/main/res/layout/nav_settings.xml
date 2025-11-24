@@ -94,7 +94,7 @@
 			android:scrollHorizontally="false"
 			android:singleLine="false"
 			android:text="@string/battery_warning"
-			android:textSize="18sp"
+			android:textSize="15sp"
 			tools:ignore="VisualLintBounds" />
 
 		<com.google.android.material.materialswitch.MaterialSwitch

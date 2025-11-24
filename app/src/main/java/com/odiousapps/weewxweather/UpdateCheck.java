@@ -53,11 +53,14 @@ public class UpdateCheck extends BroadcastReceiver
 
 		long[] npwsll = weeWXAppCommon.getNPWSLL();
 		if(npwsll[1] <= 0)
+		{
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, period is invalid or set to manual refresh only...", true);
 			return;
+		}
 
 		if(npwsll[5] == 0)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java failed, lastDownloadTime == 0", true);
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, lastDownloadTime == 0, app hasn't been setup...", true);
 			return;
 		}
 
@@ -102,30 +105,36 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		if(getPendingIntent(context, true) != null)
-		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java An alarm is already set, did you forget to call cancel first? Skipping...", true);
-			return;
-		}
-
 		long[] npwsll = weeWXAppCommon.getNPWSLL();
-		if(npwsll[4] == 0)
+		if(npwsll[1] <= 0)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java failed, lastDownloadTime == 0");
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, period is invalid " +
+			                          "or set to manual refresh only...", true);
 			return;
 		}
 
+		if(npwsll[5] == 0)
+		{
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, lastDownloadTime == 0, " +
+			                          "app hasn't been setup...", true);
+			return;
+		}
+
+/*
 		if(BuildConfig.DEBUG)
 		{
 			npwsll[1] = 60_000L;
 			npwsll[3] = Math.round((double)npwsll[0] / (double)npwsll[1]) * npwsll[1];
 			npwsll[2] = 5_000L;
 		}
+*/
 
-		while(npwsll[3] <= npwsll[0])
-			npwsll[3] += npwsll[1];
-
-		npwsll[3] += npwsll[2];
+		if(getPendingIntent(context, true) != null)
+		{
+			weeWXAppCommon.LogMessage("UpdateCheck.java An alarm is already set, did you forget " +
+			                          "to call cancel first? Skipping...", true);
+			return;
+		}
 
 		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
 		String string_time = sdf.format(npwsll[0]);
@@ -133,11 +142,15 @@ public class UpdateCheck extends BroadcastReceiver
 		weeWXAppCommon.LogMessage("UpdateCheck.java now: " + string_time, true);
 
 		string_time = sdf.format(npwsll[3]);
-		weeWXAppCommon.LogMessage("UpdateCheck.java start: " + string_time, true);
-		weeWXAppCommon.LogMessage("UpdateCheck.java period: " + Math.round(npwsll[1] / 1_000D) + "s", true);
-		weeWXAppCommon.LogMessage("UpdateCheck.java wait: " + Math.round(npwsll[2] / 1_000D) + "s", true);
+		weeWXAppCommon.LogMessage("UpdateCheck.java start: " +
+		                          string_time, true);
+		weeWXAppCommon.LogMessage("UpdateCheck.java period: " +
+		                          Math.round(npwsll[1] / 1_000D) + "s", true);
+		weeWXAppCommon.LogMessage("UpdateCheck.java wait: " +
+		                          Math.round(npwsll[2] / 1_000D) + "s", true);
 
-		weeWXAppCommon.LogMessage("UpdateCheck.java secs to next start: " + Math.round((npwsll[3] - npwsll[0]) / 1_000D) + "s", true);
+		weeWXAppCommon.LogMessage("UpdateCheck.java secs to next start: " +
+		                          Math.round((npwsll[3] - npwsll[0]) / 1_000D) + "s", true);
 
 		AlarmManager alarm = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
 
@@ -187,7 +200,8 @@ public class UpdateCheck extends BroadcastReceiver
 	{
 		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.S)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java Build.VERSION.SDK_INT < Build.VERSION_CODES.S so allowed...", true);
+			weeWXAppCommon.LogMessage("UpdateCheck.java Build.VERSION.SDK_INT < Build.VERSION_CODES.S " +
+			                          "so setting exact alarm allowed...", true);
 			return true;
 		}
 
