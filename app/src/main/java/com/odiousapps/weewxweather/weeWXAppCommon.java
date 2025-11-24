@@ -1,9 +1,12 @@
 package com.odiousapps.weewxweather;
 
 import android.app.Activity;
+import android.content.ContentUris;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -14,8 +17,10 @@ import android.media.MediaScannerConnection;
 import android.net.ConnectivityManager;
 import android.net.Network;
 import android.net.NetworkCapabilities;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
 
@@ -57,6 +62,7 @@ import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
 import androidx.lifecycle.LiveData;
@@ -73,6 +79,8 @@ class weeWXAppCommon
 	final static boolean debug_html = false;
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
+
+	private static Uri logFileUri = null;
 
 	static final String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
@@ -101,6 +109,8 @@ class weeWXAppCommon
 
 	private static long ftStart, rtStart, wcStart, wtStart;
 
+	private static final SimpleDateFormat logsdf;
+
 	static final float[] NEGATIVE = {
 			-1.0f, 0, 0, 0, 255, // red
 			0, -1.0f, 0, 0, 255, // green
@@ -110,6 +120,8 @@ class weeWXAppCommon
 
 	static
 	{
+		logsdf = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSS", Locale.getDefault());
+
 		try
 		{
 			System.setProperty("http.agent", NetworkClient.UA);
@@ -165,41 +177,116 @@ class weeWXAppCommon
 		LogMessage(value, false);
 	}
 
-	static void LogMessage(String value, boolean showAnyway)
+	static void LogMessage(String text, boolean showAnyway)
 	{
 		Context context = weeWXApp.getInstance();
 		if(context == null)
 			return;
 
+		if(text == null || text.isBlank())
+			return;
+
 		if(KeyValue.save_app_debug_logs)
 		{
-			try
-			{
-				SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
-				String string_time = sdf.format(System.currentTimeMillis());
-
-				String tmpStr = string_time + ": " + value + "\n";
-
-				File file = weeWXAppCommon.getExtFile("weeWX", weeWXApp.debug_filename);
-				boolean needsPublishing = !file.exists();
-				FileOutputStream fos = new FileOutputStream(file, true);
-				fos.write(tmpStr.getBytes(StandardCharsets.UTF_8));
-				fos.close();
-
-				if(needsPublishing)
-					publish(file);
-
-			} catch(IOException ignored) {}
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
+				appendWithMediaStore(context, text);
+			else
+				appendLegacy(text);
 		}
 
 		if(debug_on || showAnyway)
 		{
-			value = removeWS(value);
-			if(value.length() > maxLogLength)
-				value = "[String truncated to " + maxLogLength + " bytes] " + value.substring(0, maxLogLength);
+			text = removeWS(text);
+			if(text.length() > maxLogLength)
+				text = "[String truncated to " + maxLogLength + " bytes] " + text.substring(0, maxLogLength);
 
-			Log.i("weeWXApp", "message='" + value + "'");
+			Log.i("weeWXApp", "message='" + text + "'");
 		}
+	}
+
+	private static void appendLegacy(String text)
+	{
+		try
+		{
+			String string_time = logsdf.format(System.currentTimeMillis());
+
+			String tmpStr = string_time + ": " + text + "\n";
+
+			File file = weeWXAppCommon.getExtFile("weeWX", weeWXApp.debug_filename);
+			boolean needsPublishing = !file.exists();
+			FileOutputStream fos = new FileOutputStream(file, true);
+			fos.write(tmpStr.getBytes(StandardCharsets.UTF_8));
+			fos.close();
+
+			if(needsPublishing)
+				publish(file);
+		} catch (IOException e) {
+			doStackOutput(e);
+		}
+	}
+
+	@RequiresApi(api = Build.VERSION_CODES.Q)
+	private static void appendWithMediaStore(Context context, String text)
+	{
+		String folderName = Environment.DIRECTORY_DOWNLOADS + "/weeWX/";
+
+		if(logFileUri == null)
+		{
+			// ================
+			// 1. Ensure weeWX folder exists
+			// ================
+			Uri filesCollection = MediaStore.Files.getContentUri("external");
+
+			// First try to find it
+			String[] projection = { MediaStore.Files.FileColumns._ID };
+			String selection = MediaStore.Files.FileColumns.DISPLAY_NAME + "=? AND " +
+			                   MediaStore.Files.FileColumns.RELATIVE_PATH + "=?";
+			String[] args = { weeWXApp.debug_filename, folderName };
+
+			try(Cursor cursor = context.getContentResolver().query(filesCollection, projection, selection, args, null))
+			{
+				if(cursor != null && cursor.moveToFirst())
+				{
+					long id = cursor.getLong(cursor.getColumnIndexOrThrow(MediaStore.Files.FileColumns._ID));
+					logFileUri = ContentUris.withAppendedId(filesCollection, id);
+				}
+			} catch (Exception e) {
+				doStackOutput(e);
+			}
+
+			// If not found, create it
+			if(logFileUri == null)
+			{
+				ContentValues values = new ContentValues();
+				values.put(MediaStore.Files.FileColumns.DISPLAY_NAME, weeWXApp.debug_filename);
+				values.put(MediaStore.Files.FileColumns.MIME_TYPE, "text/plain");
+				values.put(MediaStore.Files.FileColumns.RELATIVE_PATH, folderName);
+
+				logFileUri = context.getContentResolver().insert(filesCollection, values);
+				if (logFileUri == null)
+					throw new RuntimeException("Failed to create log file in MediaStore.Files");
+			}
+		}
+
+		//Log.d("weeWXApp", "Appending to file: " + logFileUri);
+
+		// ================
+		// 3. Append text to the log file
+		// ================
+		String timestamp = logsdf.format(System.currentTimeMillis());
+
+		String line = timestamp + ": " + text + "\n";
+
+		//Log.d("weeWXApp", "line: " + line);
+
+		try (OutputStream os = context.getContentResolver().openOutputStream(logFileUri, "wa"))
+		{
+			os.write(line.getBytes(StandardCharsets.UTF_8));
+		} catch (IOException e) {
+			doStackOutput(e);
+		}
+
+		//Log.d("weeWXApp", "Line 311");
 	}
 
 	private static Context getApplicationContext()
