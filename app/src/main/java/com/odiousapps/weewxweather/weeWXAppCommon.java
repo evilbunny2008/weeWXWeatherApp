@@ -85,11 +85,17 @@ class weeWXAppCommon
 	static final String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
 
+	static final String UPDATECHECK = "com.odiousapps.weewxweather.UPDATECHECK";
+
 	static final String REFRESH_FORECAST_INTENT = "com.odiousapps.weewxweather.REFRESH_FORECAST_INTENT";
 	static final String REFRESH_RADAR_INTENT = "com.odiousapps.weewxweather.REFRESH_RADAR_INTENT";
 	static final String REFRESH_WEATHER_INTENT = "com.odiousapps.weewxweather.REFRESH_WEATHER_INTENT";
 	static final String REFRESH_WEBCAM_INTENT = "com.odiousapps.weewxweather.REFRESH_WEBCAM_INTENT";
-	static final String UPDATECHECK = "com.odiousapps.weewxweather.UPDATECHECK";
+
+	static final String STOP_FORECAST_INTENT = "com.odiousapps.weewxweather.STOP_FORECAST_INTENT";
+	static final String STOP_RADAR_INTENT = "com.odiousapps.weewxweather.STOP_RADAR_INTENT";
+	static final String STOP_WEATHER_INTENT = "com.odiousapps.weewxweather.STOP_WEATHER_INTENT";
+	static final String STOP_WEBCAM_INTENT = "com.odiousapps.weewxweather.STOP_WEBCAM_INTENT";
 
 	static final String WIDGET_THEME_MODE = "widget_theme_mode";
 
@@ -2824,40 +2830,13 @@ class weeWXAppCommon
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
-	static void SendForecastRefreshIntent()
+	static void SendIntent(String action)
 	{
 		StackTraceElement caller = new Exception().getStackTrace()[1];
 		String callerClass  = caller.getClassName();
 		String callerMethod = caller.getMethodName();
-		LogMessage("SendForecastRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod);
-		NotificationManager.updateNotificationMessage(REFRESH_FORECAST_INTENT);
-	}
-
-	static void SendRadarRefreshIntent()
-	{
-		StackTraceElement caller = new Exception().getStackTrace()[1];
-		String callerClass  = caller.getClassName();
-		String callerMethod = caller.getMethodName();
-		LogMessage("SendRadarRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod);
-		NotificationManager.updateNotificationMessage(REFRESH_RADAR_INTENT);
-	}
-
-	static void SendWeatherRefreshIntent()
-	{
-		StackTraceElement caller = new Exception().getStackTrace()[1];
-		String callerClass  = caller.getClassName();
-		String callerMethod = caller.getMethodName();
-		LogMessage("SendWeatherRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod);
-		NotificationManager.updateNotificationMessage(REFRESH_WEATHER_INTENT);
-	}
-
-	static void SendWebcamRefreshIntent()
-	{
-		StackTraceElement caller = new Exception().getStackTrace()[1];
-		String callerClass  = caller.getClassName();
-		String callerMethod = caller.getMethodName();
-		LogMessage("SendWebcamRefreshIntent() Broadcasted by " + callerClass + "." + callerMethod);
-		NotificationManager.updateNotificationMessage(REFRESH_WEBCAM_INTENT);
+		LogMessage("SendIntent(" + action + ") Broadcasted by " + callerClass + "." + callerMethod);
+		NotificationManager.updateNotificationMessage(action);
 	}
 
 	static String[] getWeather(boolean forced, boolean calledFromweeWXApp)
@@ -2866,27 +2845,30 @@ class weeWXAppCommon
 
 		String baseURL = GetStringPref("BASE_URL", weeWXApp.BASE_URL_default);
 		if(baseURL == null || baseURL.isBlank())
+		{
+			LogMessage("baseURL == null || baseURL.isBlank()...", true);
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.data_url_was_blank)};
+		}
 
 		String lastDownload = GetStringPref("LastDownload", weeWXApp.LastDownload_default);
 		if(!forced && !checkConnection())
 		{
 			if(lastDownload == null || lastDownload.isBlank())
 			{
-				LogMessage("lastDownload is null or blank...");
+				LogMessage("lastDownload is null or blank...", true);
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available)};
 			} else {
-				LogMessage("Not forced and WiFi needed but not available");
+				LogMessage("Not forced and WiFi needed but not available", true);
 				return new String[]{"ok", lastDownload};
 			}
 		}
 
 		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
-		LogMessage("getWeather() pos: " + pos + ", update interval set to: " + weeWXApp.updateOptions[pos] + ", forced set to: " + forced);
+		LogMessage("getWeather() pos: " + pos + ", update interval set to: " + weeWXApp.updateOptions[pos] + ", forced set to: " + forced, true);
 
 		if(pos < 0)
 		{
-			LogMessage("Invalid update frequency...");
+			LogMessage("Invalid update frequency...", true);
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.invalid_update_interval)};
 		}
 
@@ -2894,23 +2876,52 @@ class weeWXAppCommon
 		{
 			if(lastDownload == null || lastDownload.isBlank())
 			{
-				LogMessage("lastDownload is null or blank...");
+				LogMessage("lastDownload is null or blank...", true);
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached)};
 			} else {
-				LogMessage("Not forced and set to manual updates...");
+				LogMessage("Not forced and set to manual updates...", true);
 				return new String[]{"ok", lastDownload};
 			}
 		}
 
-		long lastDownloadTime = GetLongPref("LastDownloadTime", weeWXApp.LastDownloadTime_default);
-		long[] ret = getPeriod();
-		long period = Math.round(ret[0] / 1_000D);
+		long[] npwsll = weeWXAppCommon.getNPWSLL();
+		if(npwsll[1] <= 0)
+		{
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, period is invalid " +
+			                          "or set to manual refresh only...", true);
 
-		if(!forced && current_time < lastDownloadTime + period && lastDownload != null && !lastDownload.isBlank())
-			return new String[]{"ok", lastDownload};
+			if(lastDownload == null || lastDownload.isBlank())
+				return new String[]{"error", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached)};
+			else
+				return new String[]{"ok", lastDownload};
+		}
+
+		if(npwsll[5] == 0)
+		{
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, lastDownloadTime == 0, " +
+			                          "app hasn't been setup...", true);
+
+			if(lastDownload == null || lastDownload.isBlank())
+				return new String[]{"error", "UpdateCheck.java Skipping, lastDownloadTime == 0, app hasn't been setup..."};
+			else
+				return new String[]{"ok", lastDownload};
+		}
+
+		if(!forced && Math.round((npwsll[5] + npwsll[1]) / 1_000D) > current_time)
+		{
+			LogMessage("!forced && " + Math.round((npwsll[5] + npwsll[1]) / 1_000D) +
+			           " > " + current_time + "...", true);
+			if(lastDownload != null && !lastDownload.isBlank())
+			{
+				LogMessage("lastDownload != null && !lastDownload.isBlank()... Skipping...", true);
+				return new String[]{"ok", lastDownload};
+			}
+		}
 
 		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp && !forced)
 		{
+			LogMessage("Hasn't booted fully and wasn't called by weeWXApp and wasn't forced, skipping...", true);
+
 			if(lastDownload != null && !lastDownload.isBlank())
 				return new String[]{"ok", lastDownload};
 			else
@@ -2922,34 +2933,43 @@ class weeWXAppCommon
 			if(wtStart + 30 > current_time)
 			{
 				LogMessage("weatherTask is less than 30s old (" + (current_time - wtStart) +
-				                          "s), we'll skip this attempt...");
+				                          "s), we'll skip this attempt...", true);
 				return new String[]{"ok", lastDownload};
 			}
 
-			LogMessage("weatherTask was more than 30s old (" +
-			           (current_time - wtStart) + "s) cancelling and restarting...");
+			LogMessage("weatherTask was more than 30s old (" + (current_time - wtStart) +
+			           "s) cancelling and restarting...", true);
 
 			weatherTask.cancel(true);
 			weatherTask = null;
 		}
 
-		LogMessage("Creating a weatherTask...");
+		LogMessage("Creating a weatherTask...", true);
 
 		wtStart = current_time;
 
 		weatherTask = executor.submit(() ->
 		{
-			LogMessage("Weather checking: " + baseURL);
+			LogMessage("Weather checking: " + baseURL, true);
 
 			try
 			{
-				reallyGetWeather(baseURL);
+				if(reallyGetWeather(baseURL))
+				{
+					LogMessage("Update the widget", true);
+					WidgetProvider.updateAppWidget();
+
+					LogMessage("weatherTask.SendIntent(REFRESH_WEATHER_INTENT);", true);
+					SendIntent(REFRESH_WEATHER_INTENT);
+					wtStart = 0;
+					return;
+				}
 			} catch(Exception e) {
 				LogMessage("Error! e: " + e, true);
 			}
 
-			WidgetProvider.updateAppWidget();
-			SendWeatherRefreshIntent();
+			LogMessage("weatherTask.SendIntent(STOP_WEATHER_INTENT);", true);
+			SendIntent(STOP_WEATHER_INTENT);
 			wtStart = 0;
 		});
 
@@ -2972,9 +2992,10 @@ class weeWXAppCommon
 			}
 
 			line = parts[1];
+			String[] bits = line.split("\\|");
 
 			SetStringPref("LastDownload", line);
-			SetLongPref("LastDownloadTime", getCurrTime());
+			SetLongPref("LastDownloadTime", (long)Double.parseDouble(bits[225]));
 			return true;
 		}
 
@@ -3542,11 +3563,15 @@ class weeWXAppCommon
 			}
 
 			if(tmpForecastData != null && !tmpForecastData.isBlank())
+			{
 				LogMessage("Successfully updated forecast data...", true);
-			else
-				LogMessage("Failed to successfully update forecast data...");
+				SendIntent(REFRESH_FORECAST_INTENT);
+				ftStart = 0;
+				return;
+			}
 
-			SendForecastRefreshIntent();
+			LogMessage("Failed to successfully update forecast data...");
+			SendIntent(STOP_FORECAST_INTENT);
 			ftStart = 0;
 		});
 
@@ -3663,12 +3688,17 @@ class weeWXAppCommon
 			try
 			{
 				LogMessage("Starting to download radar image from: " + radarURL);
-				loadOrDownloadImage(radarURL, weeWXApp.radarFilename);
-				SendRadarRefreshIntent();
+				if(loadOrDownloadImage(radarURL, weeWXApp.radarFilename) != null)
+				{
+					SendIntent(REFRESH_RADAR_INTENT);
+					rtStart = 0;
+					return;
+				}
 			} catch(Exception e) {
 				LogMessage("Error! e: " + e, true);
 			}
 
+			SendIntent(STOP_RADAR_INTENT);
 			rtStart = 0;
 		});
 
@@ -3774,11 +3804,18 @@ class weeWXAppCommon
 			try
 			{
 				LogMessage("Starting to download webcam image from: " + webcamURL, true);
-				loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename);
-				SendWebcamRefreshIntent();
+				if(loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename) != null)
+				{
+					LogMessage("Webcam image downloaded successfully...", true);
+					SendIntent(REFRESH_WEBCAM_INTENT);
+					return;
+				}
 			} catch(Exception e) {
 				LogMessage("Error! e: " + e, true);
 			}
+
+			LogMessage("Webcam image failed to download successfully...", true);
+			SendIntent(STOP_WEBCAM_INTENT);
 		});
 
 		if(bm == null)
@@ -4234,7 +4271,19 @@ class weeWXAppCommon
 
 		string_time = sdf.format(lastStart);
 		weeWXAppCommon.LogMessage("UpdateCheck.java lastStart: " + string_time, true);
+/*
+		if(BuildConfig.DEBUG)
+		{
+			period = 60_000L;
+			start = Math.round((double)now / (double)period) * period;
+			wait = 10_000L;
 
+			while(start < now)
+				start += period;
+
+			start += wait;
+		}
+*/
 		return new long[]{now, period, wait, start, lastStart, lastDownloadTime};
 	}
 

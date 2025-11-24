@@ -640,10 +640,10 @@ public class weeWXApp extends Application
 
 		if(forced)
 		{
-			weeWXAppCommon.SendForecastRefreshIntent();
-			weeWXAppCommon.SendRadarRefreshIntent();
-			weeWXAppCommon.SendWeatherRefreshIntent();
-			weeWXAppCommon.SendWebcamRefreshIntent();
+			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_FORECAST_INTENT);
+			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_RADAR_INTENT);
+			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_WEATHER_INTENT);
+			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_WEBCAM_INTENT);
 		}
 
 		weeWXAppCommon.LogMessage("Theme should have updated!");

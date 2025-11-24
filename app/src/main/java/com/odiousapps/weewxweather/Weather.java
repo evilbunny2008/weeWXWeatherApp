@@ -1145,6 +1145,18 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
 			drawWeather();
 
+		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen &&
+		   str.equals(weeWXAppCommon.STOP_RADAR_INTENT) && radtype != null && radtype.equals("image"))
+			stopRefreshing();
+
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.ForecastOnHomeScreen &&
+		   str.equals(weeWXAppCommon.STOP_FORECAST_INTENT))
+			stopRefreshing();
+
+		if(str.equals(weeWXAppCommon.STOP_WEATHER_INTENT))
+			stopRefreshing();
+
 		if(str.equals(weeWXAppCommon.EXIT_INTENT))
 			onPause();
 	};

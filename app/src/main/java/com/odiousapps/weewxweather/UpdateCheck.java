@@ -120,15 +120,6 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-/*
-		if(BuildConfig.DEBUG)
-		{
-			npwsll[1] = 60_000L;
-			npwsll[3] = Math.round((double)npwsll[0] / (double)npwsll[1]) * npwsll[1];
-			npwsll[2] = 5_000L;
-		}
-*/
-
 		if(getPendingIntent(context, true) != null)
 		{
 			weeWXAppCommon.LogMessage("UpdateCheck.java An alarm is already set, did you forget " +

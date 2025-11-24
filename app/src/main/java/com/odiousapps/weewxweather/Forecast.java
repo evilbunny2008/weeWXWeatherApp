@@ -345,17 +345,26 @@ public class Forecast extends Fragment implements View.OnClickListener
 		stopRefreshing();
 	}
 
-	private final Observer<String> notificationObserver = s ->
+	private final Observer<String> notificationObserver = str ->
 	{
-		weeWXAppCommon.LogMessage("notificationObserver: " + s);
+		weeWXAppCommon.LogMessage("notificationObserver: " + str);
 
-		if(s.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
+		if(str.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
 			getForecast();
 
-		if(s.equals(weeWXAppCommon.REFRESH_RADAR_INTENT))
+		if(str.equals(weeWXAppCommon.REFRESH_RADAR_INTENT))
 			loadRadar();
 
-		if(s.equals(weeWXAppCommon.EXIT_INTENT))
+		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen &&
+		   str.equals(weeWXAppCommon.STOP_RADAR_INTENT) && radtype != null && radtype.equals("image"))
+			stopRefreshing();
+
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.ForecastOnForecastScreen &&
+		   str.equals(weeWXAppCommon.STOP_FORECAST_INTENT))
+			stopRefreshing();
+
+		if(str.equals(weeWXAppCommon.EXIT_INTENT))
 			onPause();
 	};
 
