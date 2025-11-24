@@ -181,9 +181,14 @@ class weeWXAppCommon
 				String tmpStr = string_time + ": " + value + "\n";
 
 				File file = weeWXAppCommon.getExtFile("weeWX", weeWXApp.debug_filename);
+				boolean needsPublishing = !file.exists();
 				FileOutputStream fos = new FileOutputStream(file, true);
 				fos.write(tmpStr.getBytes(StandardCharsets.UTF_8));
 				fos.close();
+
+				if(needsPublishing)
+					publish(file);
+
 			} catch(IOException ignored) {}
 		}
 
@@ -3200,7 +3205,7 @@ class weeWXAppCommon
 		return null;
 	}
 
-	private static void publish(File f)
+	static void publish(File f)
 	{
 		LogMessage("wrote to " + f.getAbsolutePath());
 		if(f.exists())
@@ -3219,8 +3224,8 @@ class weeWXAppCommon
 		{
 			if(!dir.mkdirs())
 				throw new IOException("There was a problem making the icons directory, you will need to try again.");
-			else
-				publish(dir);
+
+			publish(dir);
 		}
 
 		File f = new File(dir, "icon.zip");
@@ -3247,6 +3252,7 @@ class weeWXAppCommon
 		{
 			String fileName = ze.getName();
 			File newFile = new File(destDir, fileName);
+			boolean needsPublishing = !newFile.exists();
 			String absolutePath = newFile.getAbsolutePath();
 
 			LogMessage("absolutePath: " + absolutePath);
@@ -3263,8 +3269,13 @@ class weeWXAppCommon
 			if(newFile.getParent() != null)
 			{
 				File dir = new File(newFile.getParent());
-				if(!dir.exists() && !dir.mkdirs())
-					throw new IOException("There was a problem creating 1 or more directories on external storage");
+				if(!dir.exists())
+				{
+					if(!dir.mkdirs())
+						throw new IOException("There was a problem creating 1 or more directories on external storage");
+
+					publish(dir);
+				}
 
 				FileOutputStream fos = new FileOutputStream(newFile);
 				int len;
@@ -3274,7 +3285,9 @@ class weeWXAppCommon
 				fos.flush();
 				fos.close();
 
-				publish(newFile);
+				if(needsPublishing)
+					publish(newFile);
+
 				//close this ZipEntry
 				zis.closeEntry();
 				ze = zis.getNextEntry();
@@ -3811,10 +3824,15 @@ class weeWXAppCommon
 			throw new IOException("There is already something named " + finalDir + " but it's not a directory");
 		}
 
-		if(!dir.exists() && !dir.mkdirs())
+		if(!dir.exists())
 		{
-			LogMessage("Can't make '" + dir.getAbsoluteFile() + "' dir...");
-			throw new IOException("Tried to create " + dir.getAbsoluteFile() + " but failed to create the directory");
+			if(!dir.mkdirs())
+			{
+				LogMessage("Can't make '" + dir.getAbsoluteFile() + "' dir...");
+				throw new IOException("Tried to create " + dir.getAbsoluteFile() + " but failed to create the directory");
+			}
+
+			publish(dir);
 		}
 
 		return new File(dir, filename);
@@ -3840,8 +3858,13 @@ class weeWXAppCommon
 		if(newdir.exists() && !newdir.isDirectory())
 			throw new IOException(newdir.getAbsolutePath() + " isn't a directory...");
 
-		if(!newdir.exists() && !newdir.mkdirs())
-			throw new IOException("Can't create the requested directory " + newdir.getAbsolutePath());
+		if(!newdir.exists())
+		{
+			if(!newdir.mkdirs())
+				throw new IOException("Can't create the requested directory " + newdir.getAbsolutePath());
+
+			publish(newdir);
+		}
 
 		return newdir;
 	}

@@ -72,13 +72,20 @@ class CustomDebug
 				return;
 			}
 
-			if(!outFile.exists() && !outFile.mkdirs())
+			if(!outFile.exists())
 			{
-				weeWXAppCommon.LogMessage("Can't make '" + dir + "' dir...");
-				return;
+				if(!outFile.mkdirs())
+				{
+					weeWXAppCommon.LogMessage("Can't make '" + dir + "' dir...");
+					return;
+				}
+
+				weeWXAppCommon.publish(outFile);
 			}
 
 			outFile = new File(outFile, filename);
+			boolean needsPublishing = !outFile.exists();
+
 			try(InputStream in = context.getAssets().open(inFile);
 			    OutputStream out = context.openFileOutput(outFile.getAbsolutePath(), Context.MODE_PRIVATE))
 			{
@@ -89,6 +96,9 @@ class CustomDebug
 					out.write(buffer, 0, length);
 
 				weeWXAppCommon.LogMessage("File saved to " + context.getFileStreamPath(outFile.getAbsolutePath()));
+
+				if(needsPublishing)
+					weeWXAppCommon.publish(outFile);
 			} catch(IOException e) {
 				weeWXAppCommon.doStackOutput(e);
 			}
