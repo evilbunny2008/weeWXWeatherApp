@@ -478,7 +478,215 @@ public class weeWXApp extends Application
 					</script>
 			""";
 
+	private static final String dialog_html = """
+           <!doctype html>
+           <html lang="REPLACE_WITH_LANG">
+           <head>
+           <meta charset="utf-8" />
+           <meta name="viewport" content="width=device-width,initial-scale=1" />
+           <title>Warning UI Mock</title>
+           <style>
+             :root{
+               --bg: BG_HEX;
+               --panel: #fff;
+               --text: FG_HEX;
+               --muted: #586069;
+               --accent: #b45309; /* amber-700 */
+               --danger: #b91c1c;
+               --shadow: 0 12px 30px rgba(16,24,40,0.12);
+               --radius: 14px;
+               --glass: rgba(255,255,255,0.6);
+               --maxw: 520px;
+             }
+             @media (prefers-color-scheme: dark){
+               :root{
+                 --bg: #0b0b0c;
+                 --panel: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+                 --text: #e6edf3;
+                 --muted: #9aa4b2;
+                 --accent: #f59e0b;
+                 --danger: #ef4444;
+                 --shadow: 0 16px 40px rgba(2,6,23,0.6);
+                 --glass: rgba(255,255,255,0.03);
+               }
+             }
+             /* page background (useful when loaded full-screen in WebView) */
+             html,body{
+               height:100%;
+               margin:0;
+               font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+               background: linear-gradient(180deg,var(--bg), color-mix(in srgb, var(--bg) 85%, black 15%));
+               color:var(--text);
+               -webkit-font-smoothing:antialiased;
+               -moz-osx-font-smoothing:grayscale;
+               display:flex;
+               align-items:center;
+               justify-content:center;
+               padding:24px;
+             }
+             /* container that looks like a dialog */
+             .warn-wrap{
+               width:100%;
+               max-width:var(--maxw);
+               background: var(--panel);
+               border-radius:var(--radius);
+               box-shadow:var(--shadow);
+               padding:20px;
+               display:flex;
+               gap:16px;
+               align-items:flex-start;
+               position:relative;
+               overflow:hidden;
+               border: 1px solid color-mix(in srgb, var(--text) 6%, transparent);
+               animation: drop-in .28s cubic-bezier(.16,.84,.34,1);
+             }
+             /* small visual accent bar (left) */
+             .warn-accent{
+               width:6px;
+               border-radius:6px;
+               background: linear-gradient(180deg,var(--accent), color-mix(in srgb, var(--accent) 70%, black 30%));
+               flex:0 0 6px;
+             }
+             /* icon & content layout */
+             .warn-icon{
+               flex:0 0 48px;
+               height:48px;
+               display:flex;
+               align-items:center;
+               justify-content:center;
+               border-radius:10px;
+               background:var(--glass);
+               margin-top:2px;
+               box-shadow: inset 0 -2px 6px rgba(0,0,0,0.06);
+             }
+             .warn-body{
+               flex:1 1 auto;
+               min-width:0;
+             }
+             .warn-title{
+               font-size:1.05rem;
+               font-weight:700;
+               margin:0 0 6px 0;
+               display:flex;
+               gap:8px;
+               align-items:center;
+             }
+             .warn-desc{
+               margin:0;
+               color:var(--muted);
+               font-size:0.95rem;
+               line-height:1.45;
+               word-break:break-word;
+             }
+             .warn-actions{
+               display:flex;
+               gap:10px;
+               margin-top:14px;
+               flex-wrap:wrap;
+             }
+             .btn{
+               border:0;
+               padding:8px 12px;
+               border-radius:10px;
+               font-weight:600;
+               font-size:0.95rem;
+               cursor:pointer;
+               min-height:38px;
+               display:inline-flex;
+               align-items:center;
+               gap:8px;
+             }
+             .btn-primary{
+               background: linear-gradient(180deg,var(--accent), color-mix(in srgb, var(--accent) 60%, black 20%));
+               color:white;
+               box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+             }
+             .btn-ghost{
+               background:transparent;
+               color:var(--muted);
+               border:1px solid color-mix(in srgb, var(--text) 6%, transparent);
+             }
+             .btn-danger{
+               background: linear-gradient(180deg,var(--danger), color-mix(in srgb, var(--danger) 60%, black 20%));
+               color:white;
+             }
+             /* close button top-right (small 'x') */
+             .close-btn{
+               position:absolute;
+               top:10px;
+               right:10px;
+               width:36px;
+               height:36px;
+               display:inline-flex;
+               align-items:center;
+               justify-content:center;
+               border-radius:9px;
+               border:0;
+               background:transparent;
+               color:var(--muted);
+               cursor:pointer;
+               font-weight:700;
+               font-size:14px;
+             }
+             .close-btn:active{ transform:scale(.98) }
+             /* subtle "pill" badge for severity */
+             .severity{
+               font-size:0.8rem;
+               padding:4px 8px;
+               border-radius:999px;
+               background: color-mix(in srgb, var(--accent) 12%, transparent);
+               color: color-mix(in srgb, var(--accent) 95%, white 5%);
+               display:inline-block;
+               margin-left:auto;
+             }
+             /* compact variant (useful for inline banners) */
+             .warn-compact{
+               max-width:100%;
+               border-radius:10px;
+               padding:12px;
+               gap:12px;
+             }
+             /* small animation */
+             @keyframes drop-in {
+               from{ transform: translateY(14px) scale(.995); opacity:0 }
+               to{ transform: translateY(0) scale(1); opacity:1 }
+             }
+             /* responsiveness */
+             @media (max-width:420px){
+               .warn-wrap{ padding:14px; gap:12px; border-radius:12px; }
+               .warn-icon{ flex-basis:40px; height:40px; }
+               .btn{ min-height:36px; padding:8px 10px; font-size:0.9rem }
+             }
+             /* subtle focus styles for keyboard nav (accessible in WebView if focusable) */
+             .btn:focus, .close-btn:focus { outline: 3px solid color-mix(in srgb, var(--accent) 28%, transparent); outline-offset:2px }
+           </style>
+           </head>
+           <body>
+             <!-- Example: full "modal-like" warning -->
+             <div class="warn-wrap" role="alertdialog" aria-labelledby="w-title" aria-describedby="w-desc" tabindex="0">
+               <div class="warn-accent" aria-hidden="true"></div>
+
+               <div class="warn-icon" aria-hidden="true">
+                 <!-- inline SVG warning icon -->
+                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                   <path d="M11.03 3.5c.37-.9 1.64-.9 2.01 0l7.04 17.06A1.5 1.5 0 0 1 19.67 22H4.33a1.5 1.5 0 0 1-1.41-1.44L10 3.5z" fill="currentColor" opacity="0.12"/>
+                   <path d="M12 8.25c-.41 0-.75.34-.75.75v4.5c0 .41.34.75.75.75s.75-.34.75-.75v-4.5c0-.41-.34-.75-.75-.75zm0 8.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z" fill="currentColor"/>
+                 </svg>
+               </div>
+
+               <div class="warn-body">
+                 <p id="w-desc" class="warn-desc">
+                   WARNING_BODY
+                 </p>
+               </div>
+             </div>
+           </body>
+           </html>
+           """;
+
 	static String current_html_headers;
+
+	static String current_dialog_html;
 
 	final static String emptyField = "<span class='field'>\u00A0</span>";
 
@@ -683,7 +891,8 @@ public class weeWXApp extends Application
 		if(lang.isEmpty())
 			lang = "en";
 
-		replaceHTMLString("CURRENT_LANG", lang);
+		current_html_headers = replaceHTMLString(current_html_headers, "CURRENT_LANG", lang);
+		current_dialog_html = replaceHTMLString(dialog_html, "CURRENT_LANG", lang);
 		weeWXAppCommon.LogMessage("Current app language: " + lang);
 	}
 
@@ -699,9 +908,9 @@ public class weeWXApp extends Application
 		current_html_headers = current_html_headers.replaceAll(html_tag, hex);
 	}
 
-	static void replaceHTMLString(String html_tag, String replacement)
+	static String replaceHTMLString(String base_html, String html_tag, String replacement)
 	{
-		current_html_headers = current_html_headers.replaceAll(html_tag, replacement);
+		return base_html.replaceAll(html_tag, replacement);
 	}
 
 	static weeWXApp getInstance()

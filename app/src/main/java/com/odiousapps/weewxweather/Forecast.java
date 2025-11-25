@@ -299,8 +299,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void failedRadarWebViewDownload(int resId)
 	{
-		final String html = weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-		                    weeWXApp.getAndroidString(resId) + weeWXApp.html_footer;
+		String html = weeWXApp.current_dialog_html.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(resId));
 
 		radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/", html,
 				"text/html", "utf-8", null));

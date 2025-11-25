@@ -284,7 +284,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			}
 
 			weeWXAppCommon.LogMessage("Update the radar webview page...");
-			loadWebViewURL(radarURL);
+			loadWebViewURL(false, radarURL);
 		}
 	}
 
@@ -505,7 +505,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		});
 	}
 
-	void loadWebViewURL(String url)
+	void loadWebViewURL(boolean forced, String url)
 	{
 		long current_time = weeWXAppCommon.getCurrTime();
 
@@ -520,7 +520,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnHomeScreen ||
-		   radtype != null && radtype.equals("image"))
+		   (radtype != null && radtype.equals("image")))
 		{
 			weeWXAppCommon.LogMessage("Line 474 loadWebViewURL() loadWebViewURL() " +
 			                          "radarforecast != weeWXApp.RadarOnHomeScreen or " +
@@ -533,6 +533,14 @@ public class Weather extends Fragment implements View.OnClickListener
 		{
 			weeWXAppCommon.LogMessage("Line 474 loadWebViewURL() loadWebViewURL() ran less than 5s ago, skipping...");
 			stopRefreshing();
+			return;
+		}
+
+		long[] npwsll = weeWXAppCommon.getNPWSLL();
+		if(!forced && npwsll[1] <= 0)
+		{
+			weeWXAppCommon.LogMessage("Manual updating set, don't autoload the radar webpage...");
+			loadWebViewContent(R.string.manual_update_set_refresh_screen_to_load);
 			return;
 		}
 
@@ -558,10 +566,10 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		weeWXAppCommon.LogMessage("loadWebViewContent() resId: " + resId);
 
-		loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.script_header +
-		                   weeWXApp.html_header_rest + weeWXApp.inline_arrow +
-		                   weeWXApp.getAndroidString(resId) +
-		                   weeWXApp.html_footer);
+		String html = weeWXApp.current_dialog_html.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(resId));
+
+		loadAndShowWebView(forecast, html, null);
+		stopRefreshing();
 	}
 
 	void loadWebViewContent(String text)
@@ -664,7 +672,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					return;
 				}
 
-				loadWebViewURL(radarURL);
+				loadWebViewURL(true, radarURL);
 			}
 		} else {
 			weeWXAppCommon.LogMessage("Let's force download fresh forecast data...");
@@ -732,7 +740,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			{
 				updateFLL(View.VISIBLE);
 				weeWXAppCommon.LogMessage("Loading RADAR_URL -> " + radarURL);
-				loadWebViewURL(radarURL);
+				loadWebViewURL(false, radarURL);
 			} else {
 				loadOrReloadRadarImage();
 			}

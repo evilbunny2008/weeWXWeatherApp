@@ -145,9 +145,8 @@ public class Custom extends Fragment
 		long[] npwsll = weeWXAppCommon.getNPWSLL();
 		if(!forced && npwsll[1] <= 0)
 		{
-			String tmpStr = weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-			                weeWXApp.getAndroidString(R.string.manual_update_set_refresh_screen_to_load) +
-			                weeWXApp.html_footer;
+			String tmpStr = weeWXApp.current_dialog_html
+					.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(R.string.manual_update_set_refresh_screen_to_load));
 
 			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/", tmpStr,
 					"text/html", "utf-8", null));
@@ -165,9 +164,8 @@ public class Custom extends Fragment
 
 		if((custom == null || custom.isBlank()) && (custom_url == null || custom_url.isBlank()))
 		{
-			String tmpStr = weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-			                weeWXApp.getAndroidString(R.string.custom_url_not_set_or_blank) +
-			                weeWXApp.html_footer;
+			String tmpStr = weeWXApp.current_dialog_html
+					.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(R.string.custom_url_not_set_or_blank));
 
 			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/", tmpStr,
 					"text/html", "utf-8", null));
