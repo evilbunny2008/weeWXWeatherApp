@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Përdorni kohën e saktë të përditësimit</string>
     <string name="battery_warning">Paralajmërim: Aktivizimi i opsionit të mësipërm mund ta shkarkojë baterinë tuaj më shpejt se zakonisht</string>
     <string name="save_app_debug_logs">Ruani regjistrat e korrigjimit të aplikacioneve</string>
+    <string name="manual_update_set_refresh_screen_to_load">Caktimi i përditësimit manual, rrëshqitni ekranin e rifreskimit për t\'u ngarkuar</string>
+    <string name="custom_url_not_set_or_blank">URL-ja e personalizuar nuk është caktuar ose është bosh. Mund të shkoni te cilësimet për të shtuar një URL të personalizuar</string>
 </resources>

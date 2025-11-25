@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Ampiasao ny fotoana fanavaozana marina</string>
     <string name="battery_warning">FANDROSOANA: Ny fahazoana ny safidy etsy ambony dia mety hanarona haingana ny baterinao noho ny mahazatra</string>
     <string name="save_app_debug_logs">Tehirizo ny hazo debug debug</string>
+    <string name="manual_update_set_refresh_screen_to_load">Fanavaozana ny fanavaozana, ny efijery swipe refresh</string>
+    <string name="custom_url_not_set_or_blank">Tsy napetraka ny URL mahazatra, na tsy misy banga. Afaka miditra ao anaty filaharana ianao hampiditra URL mahazatra</string>
 </resources>

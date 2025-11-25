@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">استخدم أوقات التحديث المحددة</string>
     <string name="battery_warning">تحذير: قد يؤدي تمكين الخيار أعلاه إلى استنزاف البطارية بشكل أسرع من المعتاد</string>
     <string name="save_app_debug_logs">حفظ سجلات تصحيح التطبيق</string>
+    <string name="manual_update_set_refresh_screen_to_load">مجموعة التحديث اليدوي، اسحب شاشة التحديث للتحميل</string>
+    <string name="custom_url_not_set_or_blank">لم يتم تعيين عنوان URL المخصص، أو أنه فارغ. يمكنك الدخول إلى الإعدادات لإضافة عنوان URL مخصص</string>
 </resources>

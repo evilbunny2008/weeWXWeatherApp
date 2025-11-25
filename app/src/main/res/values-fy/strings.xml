@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Brûk krekte update tiden</string>
     <string name="battery_warning">Warskôging: It ynskeakeljen fan de boppesteande opsje kin jo batterij rapper leegje dan normaal</string>
     <string name="save_app_debug_logs">Bewarje app-debug-logs</string>
+    <string name="manual_update_set_refresh_screen_to_load">Hânlieding bywurke set, swipe ferfarsk skerm om te laden</string>
+    <string name="custom_url_not_set_or_blank">Oanpaste URL is net ynsteld, of is leech. Jo kinne yn ynstellings gean om in oanpaste URL ta te foegjen</string>
 </resources>

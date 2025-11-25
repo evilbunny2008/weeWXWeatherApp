@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Koristite tačna vremena ažuriranja</string>
     <string name="battery_warning">Upozorenje: Omogućavanje gornje opcije može vam isprazniti bateriju brže nego inače</string>
     <string name="save_app_debug_logs">Sačuvajte dnevnike otklanjanja grešaka aplikacije</string>
+    <string name="manual_update_set_refresh_screen_to_load">Postavljeno ručno ažuriranje, prevucite ekran za osvježavanje za učitavanje</string>
+    <string name="custom_url_not_set_or_blank">Prilagođeni URL nije postavljen ili je prazan. Možete ići u postavke da dodate prilagođeni URL</string>
 </resources>

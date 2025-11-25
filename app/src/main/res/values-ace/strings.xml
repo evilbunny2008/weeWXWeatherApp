@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Pakèk watee update nyang tepat</string>
     <string name="battery_warning">Peringatan: Meumungkenkan opsi di ateuh mungken leubeh bagah menguras baterai droeneuh dari biasa</string>
     <string name="save_app_debug_logs">Simpan app log debug app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Set update manual, gesper layar refresh keu beban</string>
+    <string name="custom_url_not_set_or_blank">URL Adat hana set, atawa kosong. Kamoe jeut neujak lam setting untuk neu tamah URL custom</string>
 </resources>

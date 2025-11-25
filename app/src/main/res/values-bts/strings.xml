@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Pakei ma panorang update update</string>
     <string name="battery_warning">Sipasingat: Anggo lang dong pilihan na i atas in, ra do lambin podas baterimu mambahen baterimu marimbangkon na somal</string>
     <string name="save_app_debug_logs">Hemat ma log debug ni app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Ibahen ma update update, swipe refresh layar laho mamuat</string>
+    <string name="custom_url_not_set_or_blank">URL Cukai lang itetapkon, atap kosong. Boi do nasiam masuk hu pengaturan laho manambahkon URL khusus</string>
 </resources>

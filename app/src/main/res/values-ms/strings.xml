@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Gunakan masa kemas kini yang tepat</string>
     <string name="battery_warning">Amaran: Membolehkan pilihan di atas boleh mengalirkan bateri anda lebih cepat daripada biasa</string>
     <string name="save_app_debug_logs">Simpan Log Debug App</string>
+    <string name="manual_update_set_refresh_screen_to_load">Tetapkan Kemas Kini Manual, Leret Skrin Refresh Untuk Muat</string>
+    <string name="custom_url_not_set_or_blank">URL tersuai tidak ditetapkan, atau kosong. Anda boleh masuk ke tetapan untuk menambah url tersuai</string>
 </resources>

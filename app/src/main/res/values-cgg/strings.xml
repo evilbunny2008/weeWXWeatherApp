@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Koresa obwire bwenyini</string>
     <string name="battery_warning">Warning: Okurabura okutoorana oku aharuguru nikibaasa kusheesha battery yaawe juba kukira obwire bwona</string>
     <string name="save_app_debug_logs">Biika za app debig</string>
+    <string name="manual_update_set_refresh_screen_to_load">Okugaruza busya omu ngaro, swipe refix reck to</string>
+    <string name="custom_url_not_set_or_blank">URL ya Custom terikuteebwaho, nari eri busha. Noobaasa kuza omu myanya y\'okwongeraho URL y\'omurembe</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Dirisa dinako tse di tlhomameng tsa go tlhabolola</string>
     <string name="battery_warning">Tlhagiso: Go kgontsha tlhopho e e fa godimo go ka nna ga ntsha beteri ya gago ka bonako go feta ka fa go tlwaelegileng ka teng</string>
     <string name="save_app_debug_logs">Boloka dikutu tsa go baakanya di-app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Sete ya ntšhwafatso ya diatla, sekerini sa go tsosolosa go laisa</string>
+    <string name="custom_url_not_set_or_blank">URL e e tlwaelegileng ga e a bewa, kgotsa ga e na sepe. O ka tsena mo diseting go tsenya URL e e tlwaelegileng</string>
 </resources>

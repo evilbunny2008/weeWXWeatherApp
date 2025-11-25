@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">使用確切嘅更新時間</string>
     <string name="battery_warning">警告：啟用上述選項，可能會比平時更快排出電池</string>
     <string name="save_app_debug_logs">儲存應用程式調試記錄</string>
+    <string name="manual_update_set_refresh_screen_to_load">手動更新集，滑動刷新畫面即可載入</string>
+    <string name="custom_url_not_set_or_blank">自訂網址唔係設定，或者係空白。你可以去設定加入自訂網址</string>
 </resources>

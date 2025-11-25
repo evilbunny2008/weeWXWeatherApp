@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Gunakake wektu nganyari sing tepat</string>
     <string name="battery_warning">PARNNGET: Ngaktifake pilihan ing ndhuwur bisa uga luwih cepet baterei luwih cepet tinimbang biasane</string>
     <string name="save_app_debug_logs">Simpen log debug app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Set nganyari manual, Swipe Refresh layar kanggo mbukak</string>
+    <string name="custom_url_not_set_or_blank">URL adat ora disetel, utawa kosong. Sampeyan bisa pindhah menyang Setelan kanggo nambah URL khusus</string>
 </resources>

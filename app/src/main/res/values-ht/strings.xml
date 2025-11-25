@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Sèvi ak tan aktyalizasyon egzak</string>
     <string name="battery_warning">Avètisman: Pèmèt opsyon ki anwo a ka vide batri ou pi vit pase nòmal</string>
     <string name="save_app_debug_logs">Sove mòso bwa debogaj aplikasyon yo</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manyèl mete ajou, glise ekran rafrechi pou chaje</string>
+    <string name="custom_url_not_set_or_blank">URL Custom pa mete, oswa li vid. Ou ka ale nan anviwònman yo ajoute yon URL koutim</string>
 </resources>

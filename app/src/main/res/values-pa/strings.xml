@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ਸਹੀ ਅੱਪਡੇਟ ਸਮੇਂ ਦੀ ਵਰਤੋਂ ਕਰੋ</string>
     <string name="battery_warning">ਚੇਤਾਵਨੀ: ਉਪਰੋਕਤ ਵਿਕਲਪ ਨੂੰ ਸਮਰੱਥ ਕਰਨ ਨਾਲ ਤੁਹਾਡੀ ਬੈਟਰੀ ਆਮ ਨਾਲੋਂ ਤੇਜ਼ੀ ਨਾਲ ਖਤਮ ਹੋ ਸਕਦੀ ਹੈ</string>
     <string name="save_app_debug_logs">ਐਪ ਡੀਬੱਗ ਲੌਗਸ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰੋ</string>
+    <string name="manual_update_set_refresh_screen_to_load">ਮੈਨੁਅਲ ਅੱਪਡੇਟ ਸੈੱਟ, ਲੋਡ ਕਰਨ ਲਈ ਰਿਫ੍ਰੈਸ਼ ਸਕ੍ਰੀਨ ਨੂੰ ਸਵਾਈਪ ਕਰੋ</string>
+    <string name="custom_url_not_set_or_blank">ਕਸਟਮ URL ਸੈੱਟ ਨਹੀਂ ਹੈ, ਜਾਂ ਖਾਲੀ ਹੈ। ਤੁਸੀਂ ਇੱਕ ਕਸਟਮ URL ਜੋੜਨ ਲਈ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜਾ ਸਕਦੇ ਹੋ</string>
 </resources>

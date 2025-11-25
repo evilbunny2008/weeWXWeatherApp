@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">சரியான புதுப்பிப்பு நேரங்களைப் பயன்படுத்தவும்</string>
     <string name="battery_warning">எச்சரிக்கை: மேலே உள்ள விருப்பத்தை இயக்குவது உங்கள் பேட்டரி வழக்கத்தை விட வேகமாக வெளியேறக்கூடும்</string>
     <string name="save_app_debug_logs">பயன்பாட்டு பிழைத்திருத்தப் பதிவுகளைச் சேமிக்கவும்</string>
+    <string name="manual_update_set_refresh_screen_to_load">கைமுறைப் புதுப்பிப்புத் தொகுப்பு, ஏற்றுவதற்கு புதுப்பித்தல் திரையை ஸ்வைப் செய்யவும்</string>
+    <string name="custom_url_not_set_or_blank">தனிப்பயன் URL அமைக்கப்படவில்லை அல்லது காலியாக உள்ளது. தனிப்பயன் URL ஐச் சேர்க்க நீங்கள் அமைப்புகளுக்குச் செல்லலாம்</string>
 </resources>

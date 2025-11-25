@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Paggamit eksaktong mga oras sa pag-update</string>
     <string name="battery_warning">Pasidaan: Ang pagtuman sa Opsyon sa ibabaw mahimo nga mag-agas sa imong baterya nga mas paspas kaysa sa naandan</string>
     <string name="save_app_debug_logs">I-save ang App Debug Troso</string>
+    <string name="manual_update_set_refresh_screen_to_load">TINUOD NGA PAG-UPPLET, SWEPE REFRESH SCREENT SA LOAD</string>
+    <string name="custom_url_not_set_or_blank">Ang naandan nga URL wala gitakda, o blangko. Mahimo ka makasulod sa mga setting aron makadugang usa ka naandan nga URL</string>
 </resources>

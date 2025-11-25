@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Uza e tempu di aktualisashon eksakto</string>
     <string name="battery_warning">Advertencia: Habilitá e opcion ariba por drena bo bateria mas lihé cu normal</string>
     <string name="save_app_debug_logs">Salba app debug logs</string>
+    <string name="manual_update_set_refresh_screen_to_load">Set di actualisacion manual, pantaya di refresco di swipe pa carga</string>
+    <string name="custom_url_not_set_or_blank">URL personalisá no ta set, òf ta blanku. Bo por bai den settings pa añadí un URL personalisá</string>
 </resources>

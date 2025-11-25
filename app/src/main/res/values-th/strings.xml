@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ใช้เวลาอัปเดตที่แน่นอน</string>
     <string name="battery_warning">คำเตือน: การเปิดใช้งานตัวเลือกข้างต้นอาจทำให้แบตเตอรี่หมดเร็วกว่าปกติ</string>
     <string name="save_app_debug_logs">บันทึกบันทึกการแก้ไขข้อบกพร่องของแอป</string>
+    <string name="manual_update_set_refresh_screen_to_load">ชุดอัปเดตด้วยตนเอง ปัดหน้าจอรีเฟรชเพื่อโหลด</string>
+    <string name="custom_url_not_set_or_blank">ไม่ได้ตั้งค่า URL ที่กำหนดเองหรือว่างเปล่า คุณสามารถเข้าไปที่การตั้งค่าเพื่อเพิ่ม URL ที่กำหนดเองได้</string>
 </resources>

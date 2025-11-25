@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ልክዕ ናይ ምዕባለ ግዜታት ንጥቀም</string>
     <string name="battery_warning">መጠንቀቕታ: ነዚ ኣብ ላዕሊ ዘሎ ኣማራጺ ምኽኣል ካብቲ ልሙድ ንላዕሊ ንባትሪኻ ከጥፍኦ ይኽእል እዩ</string>
     <string name="save_app_debug_logs">ናይ ኣፕ ዲባግ ሎግስ ምዕቃብ</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manual Update Set, ንኽጽዕን ናይ ምሕዳስ ስክሪን ስዋይፕ</string>
+    <string name="custom_url_not_set_or_blank">ብሕታዊ URL ኣይተቐመጠን፣ ወይ ባዶ እዩ። ብሕታዊ URL ንምውሳኽ ናብ ቅጥዕታት ክትኣቱ ትኽእል ኢኻ ።</string>
 </resources>

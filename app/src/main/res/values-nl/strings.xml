@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Gebruik exacte updatetijden</string>
     <string name="battery_warning">Waarschuwing: als u de bovenstaande optie inschakelt, kan uw batterij sneller leeglopen dan normaal</string>
     <string name="save_app_debug_logs">Bewaar app-foutopsporingslogboeken</string>
+    <string name="manual_update_set_refresh_screen_to_load">Handmatige update ingesteld, veeg over het vernieuwingsscherm om te laden</string>
+    <string name="custom_url_not_set_or_blank">Aangepaste URL is niet ingesteld of is leeg. U kunt naar de instellingen gaan om een ​​aangepaste URL toe te voegen</string>
 </resources>

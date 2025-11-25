@@ -41,7 +41,7 @@ public class Stats extends Fragment
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
-			weeWXAppCommon.LogMessage("weeWXAppCommon.getWeather(true, false)...");
+			weeWXAppCommon.LogMessage("weeWXAppCommon.getWeather(true, false)...", true);
 			weeWXAppCommon.getWeather(true, false);
 
 		});
@@ -156,6 +156,9 @@ public class Stats extends Fragment
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
 			updateFields();
+
+		if(str.equals(weeWXAppCommon.STOP_WEATHER_INTENT))
+			stopRefreshing();
 	};
 
 	private void checkFields(final TextView tv, final String txt)

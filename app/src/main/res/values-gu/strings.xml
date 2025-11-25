@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ચોક્કસ અપડેટ સમયનો ઉપયોગ કરો</string>
     <string name="battery_warning">ચેતવણી: ઉપરોક્ત વિકલ્પ સક્ષમ કરવાથી તમારી બેટરી સામાન્ય કરતાં વધુ ઝડપથી નીકળી શકે છે</string>
     <string name="save_app_debug_logs">એપ્લિકેશન ડીબગ લોગ સાચવો</string>
+    <string name="manual_update_set_refresh_screen_to_load">મેન્યુઅલ અપડેટ સેટ, લોડ કરવા માટે રિફ્રેશ સ્ક્રીનને સ્વાઇપ કરો</string>
+    <string name="custom_url_not_set_or_blank">કસ્ટમ URL સેટ કરેલ નથી અથવા ખાલી છે. તમે કસ્ટમ URL ઉમેરવા માટે સેટિંગ્સમાં જઈ શકો છો</string>
 </resources>

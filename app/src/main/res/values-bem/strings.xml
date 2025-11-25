@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Bomfyeni inshita shakubwekeshapo isha cine cine</string>
     <string name="battery_warning">Icebo: Ukufumyapo ifyakusalapo pamulu kuti kwafumyapo amabatiri yenu bwangu ukucila ifyo lyonse</string>
     <string name="save_app_debug_logs">Sunga ifyakulembapo ifyakubomfya</string>
+    <string name="manual_update_set_refresh_screen_to_load">Ukubwekeshapo kwaciko, suleni icikope icakubwekeshapo ukubika</string>
+    <string name="custom_url_not_set_or_blank">URL ya cisenshi tayabikwa, nangu ni iyabulamo. Kuti waya mu fifulo pakuti ulenge URL iyalinga</string>
 </resources>

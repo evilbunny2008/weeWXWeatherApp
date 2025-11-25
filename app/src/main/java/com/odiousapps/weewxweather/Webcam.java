@@ -118,6 +118,9 @@ public class Webcam extends Fragment
 		if(str.equals(weeWXAppCommon.REFRESH_WEBCAM_INTENT))
 			loadWebcamImage();
 
+		if(str.equals(weeWXAppCommon.STOP_WEBCAM_INTENT))
+			stopRefreshing();
+
 		if(str.equals(weeWXAppCommon.EXIT_INTENT))
 			onPause();
 	};

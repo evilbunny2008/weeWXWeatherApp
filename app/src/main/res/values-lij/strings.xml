@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Utilizzâ i tempi d\'aggiornamento esatto</string>
     <string name="battery_warning">Avvertimento: Attivâ l\'opçion stæta mensunâ de d\'ato o peu drenâ a batteria ciù a-a spedia che pe commun</string>
     <string name="save_app_debug_logs">Salvâ i registri de debug app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Insemme à l\'aggiornamento manuâ, o schermo de rinfresco pe carregâ</string>
+    <string name="custom_url_not_set_or_blank">L\'URL personalizzou o no l\'é misso, ò o l\'é veuo. O peu anâ inte impostaçioin pe azzonze un URL personalizzou</string>
 </resources>

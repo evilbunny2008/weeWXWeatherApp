@@ -256,6 +256,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			weeWXAppCommon.LogMessage("radtype: " + radtype);
 			String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
 			loadWebViewContent(tmp);
+			stopRefreshing();
 			return;
 		}
 
@@ -269,6 +270,16 @@ public class Weather extends Fragment implements View.OnClickListener
 			{
 				weeWXAppCommon.LogMessage("radarURL: " + radarURL);
 				loadWebViewContent(R.string.radar_url_not_set);
+				stopRefreshing();
+				return;
+			}
+
+			long[] npwsll = weeWXAppCommon.getNPWSLL();
+			if(npwsll[1] <= 0)
+			{
+				weeWXAppCommon.LogMessage("Manual updating set, don't autoload the radar webpage...");
+				loadWebViewContent(R.string.manual_update_set_refresh_screen_to_load);
+				stopRefreshing();
 				return;
 			}
 
@@ -507,8 +518,9 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 		}
 
+		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnHomeScreen ||
-		   weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default).equals("image"))
+		   radtype != null && radtype.equals("image"))
 		{
 			weeWXAppCommon.LogMessage("Line 474 loadWebViewURL() loadWebViewURL() " +
 			                          "radarforecast != weeWXApp.RadarOnHomeScreen or " +

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Koresha ibihe vy\'ukuri</string>
     <string name="battery_warning">Imburi: Gukoresha iyo nzira iri hejuru birashobora gutuma bateri yawe igenda vuba kuruta uko bisanzwe</string>
     <string name="save_app_debug_logs">Zigama porogarama za porogaramu</string>
+    <string name="manual_update_set_refresh_screen_to_load">Ivyo guhindura, swipe refresh screen kugira ngo ushireho</string>
+    <string name="custom_url_not_set_or_blank">Custom URL ntiyishirwaho, canke ni ubusa. Ushobora kuja mu ma setting kugira ngo wongereko URL y\'umugenzo</string>
 </resources>

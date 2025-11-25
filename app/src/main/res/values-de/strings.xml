@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Verwenden Sie genaue Aktualisierungszeiten</string>
     <string name="battery_warning">Warnung: Wenn Sie die obige Option aktivieren, wird Ihr Akku möglicherweise schneller als gewöhnlich entladen</string>
     <string name="save_app_debug_logs">Speichern Sie App-Debug-Protokolle</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manuelles Update-Set, wischen Sie zum Laden über den Aktualisierungsbildschirm</string>
+    <string name="custom_url_not_set_or_blank">Die benutzerdefinierte URL ist nicht festgelegt oder leer. Sie können in den Einstellungen eine benutzerdefinierte URL hinzufügen</string>
 </resources>

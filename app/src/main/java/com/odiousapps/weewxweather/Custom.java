@@ -41,7 +41,7 @@ public class Custom extends Fragment
 		{
 			swipeLayout.setRefreshing(true);
 			weeWXAppCommon.LogMessage("onRefresh();");
-			wv.post(() -> wv.reload());
+			loadCustom(true);
 		});
 
 		return view;
@@ -117,16 +117,7 @@ public class Custom extends Fragment
 			return false;
 		});
 
-		String custom = weeWXAppCommon.GetStringPref("CUSTOM_URL", weeWXApp.CUSTOM_URL_default);
-		String custom_url = weeWXAppCommon.GetStringPref("custom_url", weeWXApp.custom_url_default);
-
-		if((custom == null || custom.isBlank()) && (custom_url == null || custom_url.isBlank()))
-			return;
-
-		if(custom_url != null && !custom_url.isBlank())
-			wv.loadUrl(custom_url);
-		else if(custom != null && !custom.isBlank())
-			wv.loadUrl(custom);
+		loadCustom(false);
 	}
 
 	@Override
@@ -147,5 +138,45 @@ public class Custom extends Fragment
 
 			weeWXAppCommon.LogMessage("Custom.onDestroyView() recycled wv...");
 		}
+	}
+
+	private void loadCustom(boolean forced)
+	{
+		long[] npwsll = weeWXAppCommon.getNPWSLL();
+		if(!forced && npwsll[1] <= 0)
+		{
+			String tmpStr = weeWXApp.current_html_headers + weeWXApp.html_header_rest +
+			                weeWXApp.getAndroidString(R.string.manual_update_set_refresh_screen_to_load) +
+			                weeWXApp.html_footer;
+
+			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/", tmpStr,
+					"text/html", "utf-8", null));
+			return;
+		}
+
+		if(forced && npwsll[1] > 0)
+		{
+			wv.post(() -> wv.reload());
+			return;
+		}
+
+		String custom = weeWXAppCommon.GetStringPref("CUSTOM_URL", weeWXApp.CUSTOM_URL_default);
+		String custom_url = weeWXAppCommon.GetStringPref("custom_url", weeWXApp.custom_url_default);
+
+		if((custom == null || custom.isBlank()) && (custom_url == null || custom_url.isBlank()))
+		{
+			String tmpStr = weeWXApp.current_html_headers + weeWXApp.html_header_rest +
+			                weeWXApp.getAndroidString(R.string.custom_url_not_set_or_blank) +
+			                weeWXApp.html_footer;
+
+			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/", tmpStr,
+					"text/html", "utf-8", null));
+			return;
+		}
+
+		if(custom_url != null && !custom_url.isBlank())
+			wv.post(() -> wv.loadUrl(custom_url));
+		else if(custom != null && !custom.isBlank())
+			wv.post(() -> wv.loadUrl(custom));
 	}
 }

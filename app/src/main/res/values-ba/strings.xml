@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Теүәл яңыртыу ваҡыты ҡулланыу</string>
     <string name="battery_warning">Иҫкәртмә: өҫтәге вариантты индереү һеҙҙең батарея тиҙ генә ғәҙәттәгенән тиҙерәк дренировать мөмкин</string>
     <string name="save_app_debug_logs">Һаҡлау ҡушымтаһы отладка журналдар</string>
+    <string name="manual_update_set_refresh_screen_to_load">Ҡул менән яңыртыу комплекты, swipe яңыртыу экран йөкләү өсөн</string>
+    <string name="custom_url_not_set_or_blank">Ҡулланыусылар URL-адрес ҡуйылмай, йәки буш. Һеҙ параметрҙарға инә ала, өҫтәү өсөн ҡулланыусылар URL</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Kasutage täpseid värskendusaegu</string>
     <string name="battery_warning">Hoiatus. Ülaltoodud valiku lubamine võib aku tavapärasest kiiremini tühjendada</string>
     <string name="save_app_debug_logs">Salvestage rakenduse silumislogid</string>
+    <string name="manual_update_set_refresh_screen_to_load">Käsitsi värskendus on määratud, laadimiseks pühkige värskenduskuva</string>
+    <string name="custom_url_not_set_or_blank">Kohandatud URL pole määratud või on tühi. Kohandatud URL-i lisamiseks võite minna seadetesse</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">درست اپڊيٽ وقت استعمال ڪريو</string>
     <string name="battery_warning">خبردار: مٿي ڏنل آپشن کي فعال ڪرڻ سان توهان جي بيٽري معمول کان وڌيڪ تيز ٿي سگهي ٿي</string>
     <string name="save_app_debug_logs">ايپ ڊيبگ لاگ محفوظ ڪريو</string>
+    <string name="manual_update_set_refresh_screen_to_load">دستي اپڊيٽ سيٽ، سوائپ ڪريو ريفريش اسڪرين لوڊ ڪرڻ لاءِ</string>
+    <string name="custom_url_not_set_or_blank">ڪسٽم URL سيٽ نه آهي، يا خالي آهي. توھان سيٽنگون ڏانھن وڃو ڪسٽم URL شامل ڪرڻ لاءِ</string>
 </resources>

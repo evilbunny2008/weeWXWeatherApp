@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ఖచ్చితమైన నవీకరణ సమయాలను ఉపయోగించండి</string>
     <string name="battery_warning">హెచ్చరిక: పై ఎంపికను ప్రారంభించడం వలన మీ బ్యాటరీ సాధారణం కంటే వేగంగా డ్రెయిన్ కావచ్చు</string>
     <string name="save_app_debug_logs">యాప్ డీబగ్ లాగ్‌లను సేవ్ చేయండి</string>
+    <string name="manual_update_set_refresh_screen_to_load">మాన్యువల్ అప్‌డేట్ సెట్ చేయబడింది, లోడ్ చేయడానికి రిఫ్రెష్ స్క్రీన్‌ను స్వైప్ చేయండి</string>
+    <string name="custom_url_not_set_or_blank">అనుకూల URL సెట్ చేయబడలేదు లేదా ఖాళీగా ఉంది. అనుకూల URLని జోడించడానికి మీరు సెట్టింగ్‌లకు వెళ్లవచ్చు</string>
 </resources>

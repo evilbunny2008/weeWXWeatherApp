@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">정확한 업데이트 시간 사용</string>
     <string name="battery_warning">경고: 위 옵션을 활성화하면 평소보다 배터리가 더 빨리 소모될 수 있습니다</string>
     <string name="save_app_debug_logs">앱 디버그 로그 저장</string>
+    <string name="manual_update_set_refresh_screen_to_load">수동 업데이트 설정, 새로고침 화면을 스와이프하여 로드</string>
+    <string name="custom_url_not_set_or_blank">맞춤 URL이 설정되지 않았거나 비어 있습니다. 설정으로 이동하여 맞춤 URL을 추가할 수 있습니다</string>
 </resources>

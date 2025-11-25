@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ئېنىق يېڭىلاش ۋاقتىنى ئىشلىتىڭ</string>
     <string name="battery_warning">ئاگاھلاندۇرۇش: يۇقارقى تاللاشنى قوزغىتىش باتارېيەڭىزنى ئادەتتىكىدىن تېزلىكتە سۈرۈشى مۇمكىن</string>
     <string name="save_app_debug_logs">ئەپنى ساقلاش خاتىرىسىنى ساقلاڭ</string>
+    <string name="manual_update_set_refresh_screen_to_load">قولدا يېڭىلاش يۈرۈشلۈكىنى يېڭىلاش, سۈرتۈش ئېكرانىنى يېڭىلاش</string>
+    <string name="custom_url_not_set_or_blank">خاس URL بېكىتىلمىگەن, ياكى قۇرۇق. تەڭشەكنى قوشۇش ئۈچۈن تەڭشەكلەرگە كىرەلەيسىز</string>
 </resources>

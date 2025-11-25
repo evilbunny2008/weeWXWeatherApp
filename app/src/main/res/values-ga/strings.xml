@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Bain úsáid as amanna nuashonraithe cruinne</string>
     <string name="battery_warning">Rabhadh: Má chuirtear an rogha thuas ar chumas, d\'fhéadfaí do cheallraí a dhraenáil níos tapúla ná mar is gnách</string>
     <string name="save_app_debug_logs">Sábháil logaí dífhabhtaithe app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Socrú nuashonraithe láimhe, svaidhpeáil an scáileán athnuachana le luchtú</string>
+    <string name="custom_url_not_set_or_blank">Níl URL saincheaptha socraithe, nó tá sé bán. Is féidir leat dul isteach i socruithe chun URL saincheaptha a chur leis</string>
 </resources>

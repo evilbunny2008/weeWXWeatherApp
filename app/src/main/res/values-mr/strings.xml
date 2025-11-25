@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">अचूक अपडेट वेळा वापरा</string>
     <string name="battery_warning">चेतावणी: वरील पर्याय सक्षम केल्याने तुमची बॅटरी नेहमीपेक्षा वेगाने संपू शकते</string>
     <string name="save_app_debug_logs">ॲप डीबग लॉग जतन करा</string>
+    <string name="manual_update_set_refresh_screen_to_load">मॅन्युअल अपडेट सेट, लोड करण्यासाठी स्क्रीन रिफ्रेश करा</string>
+    <string name="custom_url_not_set_or_blank">सानुकूल URL सेट केलेली नाही किंवा रिक्त आहे. सानुकूल URL जोडण्यासाठी तुम्ही सेटिंग्जमध्ये जाऊ शकता</string>
 </resources>

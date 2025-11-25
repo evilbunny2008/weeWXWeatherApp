@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Usaren so eksakton oras na update</string>
     <string name="battery_warning">Pasakbay: Say pangipaalagey ed opsyon ed tagey so nayarin mamakapuy ed baterya mo nen say dati</string>
     <string name="save_app_debug_logs">I-save iray troso na debug na app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Mantutumbokan ya set, maples ya panrepresso ya ikarga</string>
+    <string name="custom_url_not_set_or_blank">Say kustombren URL et aliwan aka-set, odino blangko. Sarag mo so onloob ed saray pasen pian makadagdag na kustombre ya URL</string>
 </resources>

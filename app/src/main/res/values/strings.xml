@@ -88,4 +88,6 @@
 	<string name="use_exact_alarm">Use exact update times</string>
 	<string name="battery_warning">Warning: Enabling the above option may drain your battery faster than usual</string>
 	<string name="save_app_debug_logs">Save app debug logs</string>
+	<string name="manual_update_set_refresh_screen_to_load">Manual update set, swipe refresh screen to load</string>
+	<string name="custom_url_not_set_or_blank">Custom URL isn\'t set, or is blank. You can go into settings to add a custom URL</string>
 </resources>

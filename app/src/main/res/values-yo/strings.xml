@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Lo awọn akoko imudojuiwọn gangan</string>
     <string name="battery_warning">IKILỌ: Ṣiṣẹda aṣayan loke le fa iyara rẹ yiyara ju ti lọ</string>
     <string name="save_app_debug_logs">Fipamọ Ohun elo App</string>
+    <string name="manual_update_set_refresh_screen_to_load">Eto Imudojuiwọn Afowoyi, Speed ​​iboju iboju lati fifuye</string>
+    <string name="custom_url_not_set_or_blank">A ko ṣeto aṣa aṣa, tabi ṣofo. O le lọ sinu awọn eto lati ṣafikun URL aṣa</string>
 </resources>

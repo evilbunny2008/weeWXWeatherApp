@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Dəqiq yeniləmə vaxtlarından istifadə edin</string>
     <string name="battery_warning">Xəbərdarlıq: Yuxarıdakı seçimi aktivləşdirmək batareyanı adi haldan daha sürətli qurtara bilər</string>
     <string name="save_app_debug_logs">Tətbiq Debug qeydlərini qeyd edin</string>
+    <string name="manual_update_set_refresh_screen_to_load">Əl ilə yeniləmə dəsti, yükləmək üçün yeniləmə ekranı çalın</string>
+    <string name="custom_url_not_set_or_blank">Xüsusi URL qurulmamış və ya boş deyil. Xüsusi URL əlavə etmək üçün parametrlərə daxil ola bilərsiniz</string>
 </resources>

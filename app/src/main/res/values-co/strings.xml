@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Aduprate i tempi d\'aghjurnamentu precisi</string>
     <string name="battery_warning">Attenzione: L\'attivazione di l\'opzione sopra pò drenu a vostra bateria più veloce di u solitu</string>
     <string name="save_app_debug_logs">Salvà i logs di debug di l\'app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Set di aghjurnamentu manuale, scorri u screnu di rinfrescante per carica</string>
+    <string name="custom_url_not_set_or_blank">L\'URL persunalizatu ùn hè micca stabilitu, o hè viotu. Pudete andà in i paràmetri per aghjunghje un URL persunalizatu</string>
 </resources>

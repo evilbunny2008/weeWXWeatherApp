@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Cleachd amannan ùrachadh mionaideach</string>
     <string name="battery_warning">Rabhadh: Le bhith a\' comasachadh an roghainn gu h-àrd faodaidh e do bhataraidh a dhrèanadh nas luaithe na an àbhaist</string>
     <string name="save_app_debug_logs">Sàbhail logaichean deasbaid app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Seata ùrachadh làimhe, swipe an scrion ath-nuadhachaidh airson a luchdachadh</string>
+    <string name="custom_url_not_set_or_blank">Chan eil URL gnàthaichte air a shuidheachadh, no tha e bàn. Faodaidh tu a dhol a-steach do roghainnean gus URL gnàthaichte a chuir ris</string>
 </resources>

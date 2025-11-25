@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Jiri oge mmelite ziri ezi</string>
     <string name="battery_warning">Warndọ aka na ntị: na-enyere gị aka ịhọrọ batrị gị karịa ka ọ dị na mbụ</string>
     <string name="save_app_debug_logs">Chekwaa mpempe akwụkwọ ndekọ</string>
+    <string name="manual_update_set_refresh_screen_to_load">Mmelite mmelite ntuziaka, swipe na-eme ka ihuenyo</string>
+    <string name="custom_url_not_set_or_blank">URL ọdịnala anaghị edobe, ma ọ bụ na-enweghị oghere. Can nwere ike ịbanye na ntọala iji tinye URL omenala</string>
 </resources>

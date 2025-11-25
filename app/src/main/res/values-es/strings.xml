@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Utilice tiempos de actualización exactos</string>
     <string name="battery_warning">Advertencia: Habilitar la opción anterior puede agotar la batería más rápido de lo habitual</string>
     <string name="save_app_debug_logs">Guardar registros de depuración de aplicaciones</string>
+    <string name="manual_update_set_refresh_screen_to_load">Conjunto de actualización manual, deslice la pantalla de actualización para cargar</string>
+    <string name="custom_url_not_set_or_blank">La URL personalizada no está configurada o está en blanco. Puede ingresar a la configuración para agregar una URL personalizada</string>
 </resources>

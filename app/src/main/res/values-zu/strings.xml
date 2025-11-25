@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Sebenzisa izikhathi zokuvuselela ngqo</string>
     <string name="battery_warning">ISEXWAYISO: Ukunika amandla i-Over Option kungadonsa ibhethri lakho ngokushesha kunokujwayelekile</string>
     <string name="save_app_debug_logs">Gcina izingodo zokulungisa ama-debug</string>
+    <string name="manual_update_set_refresh_screen_to_load">Ukuvuselelwa Kwesandla Setha, Swipe Ukuvuselela Isikrini ukulayisha</string>
+    <string name="custom_url_not_set_or_blank">I-URL yangokwezifiso ayisethiwe, noma ingenalutho. Ungangena kuzilungiselelo ukwengeza i-URL yangokwezifiso</string>
 </resources>

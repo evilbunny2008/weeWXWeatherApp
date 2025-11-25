@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ၸႂ်ႉၶၢဝ်းယၢမ်းမႂ်ႇတႅတ်ႈတေႃး</string>
     <string name="battery_warning">ၶေႃႈပၼ်ၾၢင်ႉ - ပိုတ်ႇပၼ် တၢင်းလိူၵ်ႈပႃႈၼိူဝ်ၼႆႉ ၸၢင်ႈႁဵတ်းႁႂ်ႈ ပႅတ်ႉထီးရီးယႃး ၸဝ်ႈၵဝ်ႇ ဝႆးလိူဝ် မိူဝ်ႈၵူႈပွၵ်ႈ</string>
     <string name="save_app_debug_logs">သိမ်းပႅင်း ဢႅပ်ႉ debug</string>
+    <string name="manual_update_set_refresh_screen_to_load">ၶိူင်ႈႁဵတ်း Update ဢၼ်ၸႂ်ႉမိုဝ်း ၊</string>
+    <string name="custom_url_not_set_or_blank">URL ဢၼ်ႁဵတ်း Custom ၼၼ်ႉ ဢမ်ႇလႆႈတမ်းဝၢင်းဝႆႉ ဢမ်ႇၼၼ် ပဵၼ်ဢၼ်ပဝ်ႇ။ ၶဝ်ႈၵႂႃႇၼႂ်း Settings သေ သႂ်ႇ URL ဢၼ်ၶိုၵ်ႉၶႅမ်ႉ</string>
 </resources>

@@ -59,6 +59,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.regex.Pattern;
+import java.util.zip.GZIPOutputStream;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -210,18 +211,31 @@ class weeWXAppCommon
 		}
 	}
 
+	public static byte[] gzipToBytes(String text) throws IOException
+	{
+		if(text == null || text.isBlank())
+			return null;
+
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		GZIPOutputStream gzip = new GZIPOutputStream(baos);
+		gzip.write(text.getBytes(StandardCharsets.UTF_8));
+		gzip.close(); // flush + finish
+
+		return baos.toByteArray();
+	}
+
 	private static void appendLegacy(String text)
 	{
 		try
 		{
 			String string_time = logsdf.format(System.currentTimeMillis());
 
-			String tmpStr = string_time + ": " + text + "\n";
+			String tmpStr = string_time + ": " + text.strip() + "\n";
 
 			File file = weeWXAppCommon.getExtFile("weeWX", weeWXApp.debug_filename);
 			boolean needsPublishing = !file.exists();
 			FileOutputStream fos = new FileOutputStream(file, true);
-			fos.write(tmpStr.getBytes(StandardCharsets.UTF_8));
+			fos.write(gzipToBytes(text));
 			fos.close();
 
 			if(needsPublishing)
@@ -236,13 +250,33 @@ class weeWXAppCommon
 	{
 		String folderName = Environment.DIRECTORY_DOWNLOADS + "/weeWX/";
 
+		// ================
+		// 1. Ensure weeWX folder exists
+		// ================
+		Uri filesCollection = MediaStore.Files.getContentUri("external");
+
+		// --- 1. Verify that cached URI still exists ---
+		if(logFileUri != null)
+		{
+			try(Cursor c = context.getContentResolver().query(
+					logFileUri,
+					new String[]{ MediaStore.Files.FileColumns._ID },
+					null, null, null))
+			{
+				if(c == null || !c.moveToFirst())
+				{
+					// The file was deleted -> reset cached URI
+					logFileUri = null;
+				}
+			} catch (Exception e) {
+				// If any error occurs, assume file is gone
+				logFileUri = null;
+			}
+		}
+
+		// --- 2. If logFileUri is null, attempt to find or create it ---
 		if(logFileUri == null)
 		{
-			// ================
-			// 1. Ensure weeWX folder exists
-			// ================
-			Uri filesCollection = MediaStore.Files.getContentUri("external");
-
 			// First try to find it
 			String[] projection = { MediaStore.Files.FileColumns._ID };
 			String selection = MediaStore.Files.FileColumns.DISPLAY_NAME + "=? AND " +
@@ -265,7 +299,7 @@ class weeWXAppCommon
 			{
 				ContentValues values = new ContentValues();
 				values.put(MediaStore.Files.FileColumns.DISPLAY_NAME, weeWXApp.debug_filename);
-				values.put(MediaStore.Files.FileColumns.MIME_TYPE, "text/plain");
+				values.put(MediaStore.Files.FileColumns.MIME_TYPE, "application/gzip");
 				values.put(MediaStore.Files.FileColumns.RELATIVE_PATH, folderName);
 
 				logFileUri = context.getContentResolver().insert(filesCollection, values);
@@ -281,13 +315,13 @@ class weeWXAppCommon
 		// ================
 		String timestamp = logsdf.format(System.currentTimeMillis());
 
-		String line = timestamp + ": " + text + "\n";
+		String line = timestamp + ": " + text.strip() + "\n";
 
 		//Log.d("weeWXApp", "line: " + line);
 
-		try (OutputStream os = context.getContentResolver().openOutputStream(logFileUri, "wa"))
+		try(OutputStream os = context.getContentResolver().openOutputStream(logFileUri, "wa"))
 		{
-			os.write(line.getBytes(StandardCharsets.UTF_8));
+			os.write(gzipToBytes(line));
 		} catch (IOException e) {
 			doStackOutput(e);
 		}
@@ -2885,7 +2919,7 @@ class weeWXAppCommon
 		}
 
 		long[] npwsll = weeWXAppCommon.getNPWSLL();
-		if(npwsll[1] <= 0)
+		if(!forced && npwsll[1] <= 0)
 		{
 			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, period is invalid " +
 			                          "or set to manual refresh only...", true);
@@ -2896,7 +2930,7 @@ class weeWXAppCommon
 				return new String[]{"ok", lastDownload};
 		}
 
-		if(npwsll[5] == 0)
+		if(!forced && npwsll[5] == 0)
 		{
 			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, lastDownloadTime == 0, " +
 			                          "app hasn't been setup...", true);
@@ -2918,7 +2952,7 @@ class weeWXAppCommon
 			}
 		}
 
-		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp && !forced)
+		if(!forced && !weeWXApp.hasBootedFully && !calledFromweeWXApp)
 		{
 			LogMessage("Hasn't booted fully and wasn't called by weeWXApp and wasn't forced, skipping...", true);
 

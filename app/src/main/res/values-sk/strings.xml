@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Použite presné časy aktualizácie</string>
     <string name="battery_warning">Upozornenie: Povolenie vyššie uvedenej možnosti môže vybiť batériu rýchlejšie ako zvyčajne</string>
     <string name="save_app_debug_logs">Uložte denníky ladenia aplikácie</string>
+    <string name="manual_update_set_refresh_screen_to_load">Nastavená manuálna aktualizácia, potiahnutím obnovovacej obrazovky načítajte</string>
+    <string name="custom_url_not_set_or_blank">Vlastná adresa URL nie je nastavená alebo je prázdna. Môžete prejsť do nastavení a pridať vlastnú adresu URL</string>
 </resources>

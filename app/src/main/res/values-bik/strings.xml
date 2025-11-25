@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Gamiton an eksaktong mga oras nin update</string>
     <string name="battery_warning">Patanid: An pagpangyari sa opsyon sa itaas puedeng mag-ubos kan saindong baterya nin mas marikas kisa dati</string>
     <string name="save_app_debug_logs">I-save app debug logs</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manwal na set nin update, mag-swipe nin panrepresko sa pagkarga</string>
+    <string name="custom_url_not_set_or_blank">An URL kan pasadya dai nakabugtak, o blangko. Pwede kamong maglaog sa mga setting para magdagdag nin pasadyang URL</string>
 </resources>

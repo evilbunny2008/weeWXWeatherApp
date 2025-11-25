@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Uzu precizajn ĝisdatigajn tempojn</string>
     <string name="battery_warning">Averto: Ebligi la ĉi-supran opcion povas malplenigi vian kuirilaron pli rapide ol kutime</string>
     <string name="save_app_debug_logs">Konservu protokolojn pri sencimiga aplikaĵo</string>
+    <string name="manual_update_set_refresh_screen_to_load">Mana ĝisdatigo aro, glitu refreŝigi ekranon por ŝargi</string>
+    <string name="custom_url_not_set_or_blank">Propra URL ne estas agordita aŭ estas malplena. Vi povas iri en agordojn por aldoni kutiman URL</string>
 </resources>

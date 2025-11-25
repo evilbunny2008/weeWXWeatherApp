@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Тĕрĕс çĕнетÿ вăхăчĕсемпе усă курăр</string>
     <string name="battery_warning">Асăрхаттару: Çÿлерехри опцие ĕçе кĕртни батарейăна ытти чухнехинчен хăвăртрах сирсе яма пултарать</string>
     <string name="save_app_debug_logs">Приложени отладки журналĕсене перекетлĕр</string>
+    <string name="manual_update_set_refresh_screen_to_load">Алă çĕнетĕвĕн наборĕ, çĕнетÿ экранĕ нагрузка</string>
+    <string name="custom_url_not_set_or_blank">Ятарлă URL-адрес мар, е пушă. Ятарлă URL-адрес хушма настройкăсене кĕме пулать</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Takyk täzeleniş wagtlaryny ulanyň</string>
     <string name="battery_warning">DUNDURYŞ: ýokardaky opsiýany açmak, batareýaňyzy adatdakysyndan has çalt zaýalap biler</string>
     <string name="save_app_debug_logs">Programma düzediş gündeligini ýazdyryň</string>
+    <string name="manual_update_set_refresh_screen_to_load">El bilen täzelenme toplumy, süpürmek üçin süpüriň</string>
+    <string name="custom_url_not_set_or_blank">Customörite URL toplumy kesgitlenmeýär ýa-da boş. Customörite URL-ni goşmak üçin sazlamalaryňyza girip bilersiňiz</string>
 </resources>

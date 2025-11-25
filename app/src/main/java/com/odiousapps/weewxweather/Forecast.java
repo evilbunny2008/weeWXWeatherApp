@@ -78,7 +78,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			if(radtype != null && radtype.equals("image"))
 				weeWXAppCommon.getRadarImage(true, false);
 			else
-				loadRadar();
+				loadRadar(true);
 		});
 
 		im = rootView.findViewById(R.id.logo);
@@ -181,8 +181,9 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			addListeners();
 
+
 			if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen)
-				loadRadar();
+				loadRadar(false);
 			else
 				getForecast();
 		}
@@ -231,7 +232,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			swipeLayout2.post(() -> swipeLayout2.setRefreshing(false));
 	}
 
-	private void loadRadar()
+	private void loadRadar(boolean forced)
 	{
 		weeWXAppCommon.LogMessage("Forecast.java loadRadar()");
 
@@ -276,11 +277,22 @@ public class Forecast extends Fragment implements View.OnClickListener
 			              weeWXApp.html_footer;
 
 			radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/", html,
-						"text/html", "utf-8", null));
-		} else {
-			weeWXAppCommon.LogMessage("Loading radar page... url: " + radarURL);
-			radarWebView.post(() -> radarWebView.loadUrl(radarURL));
+					"text/html", "utf-8", null));
+			stopRefreshing();
+			return;
 		}
+
+		long[] npwsll = weeWXAppCommon.getNPWSLL();
+		if(!forced && npwsll[1] <= 0)
+		{
+			weeWXAppCommon.LogMessage("Manual updating set, don't autoload the radar webpage...");
+			failedRadarWebViewDownload(R.string.manual_update_set_refresh_screen_to_load);
+			stopRefreshing();
+			return;
+		}
+
+		weeWXAppCommon.LogMessage("Loading radar page... url: " + radarURL);
+		radarWebView.post(() -> radarWebView.loadUrl(radarURL));
 
 		stopRefreshing();
 	}
@@ -353,7 +365,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			getForecast();
 
 		if(str.equals(weeWXAppCommon.REFRESH_RADAR_INTENT))
-			loadRadar();
+			loadRadar(false);
 
 		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen &&

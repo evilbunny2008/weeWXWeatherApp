@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ניצן פּינטלעך דערהייַנטיקן צייט</string>
     <string name="battery_warning">ווארענונג: געבן די אויבן אָפּציע קען פליסן דיין באַטאַרייע פאַסטער ווי געוויינטלעך</string>
     <string name="save_app_debug_logs">היט אַפּ דיבאַג לאָגס</string>
+    <string name="manual_update_set_refresh_screen_to_load">מאַנואַל דערהייַנטיקן שטעלן, לאַקכענען דערפרישן פאַרשטעלן צו מאַסע</string>
+    <string name="custom_url_not_set_or_blank">מנהג URL איז נישט באַשטימט, אָדער איז ליידיק. איר קענט גיין צו סעטטינגס צו לייגן אַ מנהג URL</string>
 </resources>

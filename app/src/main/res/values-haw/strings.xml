@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">E hoʻohana i nā manawa hou</string>
     <string name="battery_warning">ʻO ka\'ōleloʻana: E hana i ka koho ma luna aʻe e wikiwiki i kāu pākeke ma mua o ka mea maʻamau</string>
     <string name="save_app_debug_logs">Mālama i nā lāʻau debug debug</string>
+    <string name="manual_update_set_refresh_screen_to_load">Hoʻopau i ka hoʻonohonohoʻana o ka pākuhi</string>
+    <string name="custom_url_not_set_or_blank">ʻAʻole hoʻonohonohoʻiaʻo URL URL, a iʻole he palaka. Hiki iāʻoe ke hele i nā hoʻonohonoho e hoʻohui i kahi URL maʻamau</string>
 </resources>

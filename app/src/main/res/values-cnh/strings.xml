@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Update caan taktak kha hmang</string>
     <string name="battery_warning">Ralrin peknak: A cunglei thimnak tuah khawhnak nih na battery kha a hlan nakin rang deuh in a zorter khawh</string>
     <string name="save_app_debug_logs">App debug logs kha chiah</string>
+    <string name="manual_update_set_refresh_screen_to_load">Kut in update set, a thar in thlen khawhnak ding caah a thar in thlen khawh a si</string>
+    <string name="custom_url_not_set_or_blank">Custom URL cu set a si lo, asiloah a thiang lo. Custom URL chap awkah settings ah na lut kho</string>
 </resources>

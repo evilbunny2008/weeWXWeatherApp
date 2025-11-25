@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Naudokite tikslius atnaujinimo laikus</string>
     <string name="battery_warning">Įspėjimas: įjungus pirmiau nurodytą parinktį, baterija gali išeikvoti greičiau nei įprastai</string>
     <string name="save_app_debug_logs">Išsaugokite programos derinimo žurnalus</string>
+    <string name="manual_update_set_refresh_screen_to_load">Neautomatinis naujinimas nustatytas, perbraukite atnaujinimo ekraną, kad įkeltumėte</string>
+    <string name="custom_url_not_set_or_blank">Tinkintas URL nenustatytas arba yra tuščias. Galite pereiti į nustatymus, kad pridėtumėte tinkintą URL</string>
 </resources>

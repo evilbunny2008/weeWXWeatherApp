@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ប្រើពេលវេលាធ្វើបច្ចុប្បន្នភាពពិតប្រាកដ</string>
     <string name="battery_warning">ការព្រមាន: ការបើកជម្រើសខាងលើអាចបង្ហូរថ្មរបស់អ្នកលឿនជាងធម្មតា</string>
     <string name="save_app_debug_logs">រក្សាទុកកំណត់ហេតុកម្មវិធី DEBUG</string>
+    <string name="manual_update_set_refresh_screen_to_load">សំណុំធ្វើឱ្យទាន់សម័យដោយដៃ, អូសអេក្រង់ស្រស់ដើម្បីផ្ទុក</string>
+    <string name="custom_url_not_set_or_blank">URL ផ្ទាល់ខ្លួនមិនត្រូវបានកំណត់ទេឬនៅទទេ។ អ្នកអាចចូលទៅក្នុងការកំណត់ដើម្បីបន្ថែម URL ផ្ទាល់ខ្លួន</string>
 </resources>

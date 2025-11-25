@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Använd exakta uppdateringstider</string>
     <string name="battery_warning">Varning: Aktivering av ovanstående alternativ kan ta ur batteriet snabbare än vanligt</string>
     <string name="save_app_debug_logs">Spara appfelsökningsloggar</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manuell uppdatering set, svep uppdateringsskärmen för att ladda</string>
+    <string name="custom_url_not_set_or_blank">Anpassad webbadress är inte angiven eller är tom. Du kan gå in i inställningarna för att lägga till en anpassad URL</string>
 </resources>

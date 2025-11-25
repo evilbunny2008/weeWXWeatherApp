@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Użyj dokładnych czasów aktualizacji</string>
     <string name="battery_warning">Ostrzeżenie: włączenie powyższej opcji może spowodować szybsze niż zwykle zużycie baterii</string>
     <string name="save_app_debug_logs">Zapisz dzienniki debugowania aplikacji</string>
+    <string name="manual_update_set_refresh_screen_to_load">Ustawiono aktualizację ręczną. Przesuń ekran odświeżania, aby załadować</string>
+    <string name="custom_url_not_set_or_blank">Niestandardowy adres URL nie jest ustawiony lub jest pusty. Możesz przejść do ustawień, aby dodać niestandardowy adres URL</string>
 </resources>

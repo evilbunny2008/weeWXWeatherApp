@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Используйте точное время обновления</string>
     <string name="battery_warning">Предупреждение: включение вышеуказанной опции может привести к разрядке аккумулятора быстрее, чем обычно</string>
     <string name="save_app_debug_logs">Сохранять журналы отладки приложений</string>
+    <string name="manual_update_set_refresh_screen_to_load">Обновление установлено вручную. Для загрузки проведите пальцем по экрану обновления</string>
+    <string name="custom_url_not_set_or_blank">Пользовательский URL-адрес не задан или пуст. Вы можете зайти в настройки, чтобы добавить собственный URL-адрес</string>
 </resources>

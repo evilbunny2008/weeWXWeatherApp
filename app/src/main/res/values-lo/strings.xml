@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ໃຊ້ເວລາປັບປຸງທີ່ແນ່ນອນ</string>
     <string name="battery_warning">ຄໍາເຕືອນ: ເຮັດໃຫ້ຕົວເລືອກທີ່ກ່າວມາຂ້າງເທິງອາດຈະຖອກແບັດເຕີຣີຂອງທ່ານໃຫ້ໄວກ່ວາປົກກະຕິ</string>
     <string name="save_app_debug_logs">ບັນທຶກໄມ້ທ່ອນ debug</string>
+    <string name="manual_update_set_refresh_screen_to_load">ຊຸດປັບປຸງຄູ່ມື, ເລື່ອນຫນ້າຈໍສົດຊື່ນທີ່ຈະໂຫລດ</string>
+    <string name="custom_url_not_set_or_blank">URL ທີ່ກໍານົດເອງບໍ່ໄດ້ຖືກກໍານົດ, ຫຼືຫວ່າງເປົ່າ. ທ່ານສາມາດເຂົ້າໄປໃນການຕັ້ງຄ່າເພື່ອເພີ່ມ URL ທີ່ກໍານົດເອງ</string>
 </resources>

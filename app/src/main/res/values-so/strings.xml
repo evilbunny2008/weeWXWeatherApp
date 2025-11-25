@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Adeegso waqtiyada casriyeynta saxda ah</string>
     <string name="battery_warning">DIGNIIN: Awood u yeelashada ikhtiyaarka kore wuxuu ka daadin karaa batteriga si ka dhakhso badan sidii caadiga ahayd</string>
     <string name="save_app_debug_logs">Badbaadi app-ka Diiwaanka</string>
+    <string name="manual_update_set_refresh_screen_to_load">SETEMPET SETED SET, SCART CLIPES CLIPES SCARO</string>
+    <string name="custom_url_not_set_or_blank">URL caadada ah lama dejin, ama madhan yahay. Waxaad aadi kartaa dejinta si aad ugu darto URL caadada ah</string>
 </resources>

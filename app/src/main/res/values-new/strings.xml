@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">पाय् छिगु अपडेट ई छ्य ।</string>
     <string name="battery_warning">चेतावनी : च्वय् बियातःगु विकल्पयात सक्षम यायेबलय् छिगु ब्याट्री सामान्य स्वयां याकनं ड्रेन जुइफु ।</string>
     <string name="save_app_debug_logs">एप डिबग लग बचे या ।</string>
+    <string name="manual_update_set_refresh_screen_to_load">म्यानुअल अपडेट सेट, लोड यायेत स्वाइप रिफ्रेस स्क्रिन</string>
+    <string name="custom_url_not_set_or_blank">कस्टम युआरएल सेट मजू, बाय् खाली खः । छि कस्टम यूआरएल तनातयेत सेटिङ्गय् वनेफै ।</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Izmontojit precizus atjaunuošonys laikus</string>
     <string name="battery_warning">100 doc#1159 Breidynuojums: Īspiejams, ka īprīkš pīmynātuo opceja var izsvīst jūs akumulatoru dreižuok kai parosti</string>
     <string name="save_app_debug_logs">Saglabāt lītuotnis žurnalus</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manual atjaunuošonys komplekts, svīst atsvaidzynuošonys ekrans, lai īluodātu</string>
+    <string name="custom_url_not_set_or_blank">Pīlāguotuo URL nav īstateits, voi ir tukšs. 100 doc#1159 Var īt īstatejumūs , lai pīvīnuotu pīlāguotu URL</string>
 </resources>

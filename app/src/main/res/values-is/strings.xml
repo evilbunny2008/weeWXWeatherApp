@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Notaðu nákvæma uppfærslutíma</string>
     <string name="battery_warning">Viðvörun: Ef valkosturinn hér að ofan er virkur gæti rafhlaðan tæmdst hraðar en venjulega</string>
     <string name="save_app_debug_logs">Vistaðu villuleitarskrár forrita</string>
+    <string name="manual_update_set_refresh_screen_to_load">Handvirkt uppfærslusett, strjúktu uppfærsluskjánum til að hlaða</string>
+    <string name="custom_url_not_set_or_blank">Sérsniðin vefslóð er ekki stillt eða hún er auð. Þú getur farið í stillingar til að bæta við sérsniðinni vefslóð</string>
 </resources>

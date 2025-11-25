@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Użyj akuratnych czasōw aktualizacyje</string>
     <string name="battery_warning">Ôstrzeżynie: Umożliwiynie powyższyj ôpcyje może wyczerpać bateria warcij aniżeli zwykle</string>
     <string name="save_app_debug_logs">Zachowuj źrōdła ôd debugōw ôd debugōw</string>
+    <string name="manual_update_set_refresh_screen_to_load">Zestaw rynczny aktualizacyjo, ekran ôdświeżanio przegōrzynie, coby załadować</string>
+    <string name="custom_url_not_set_or_blank">Niy ma ustawiōny URL niy ma ustawiōny, abo je prōzny. Możesz przejść do ustawiyń, coby przidać niysztandardowy URL</string>
 </resources>

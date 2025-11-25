@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">使用准确的更新时间</string>
     <string name="battery_warning">警告：启用上述选项可能会比平时更快地耗尽电池电量</string>
     <string name="save_app_debug_logs">保存应用程序调试日志</string>
+    <string name="manual_update_set_refresh_screen_to_load">手动更新设置，滑动刷新屏幕加载</string>
+    <string name="custom_url_not_set_or_blank">自定义 URL 未设置或为空。您可以进入设置添加自定义 URL</string>
 </resources>

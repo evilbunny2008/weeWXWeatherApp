@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Користете точно време на ажурирање</string>
     <string name="battery_warning">Предупредување: Овозможувањето на горната опција може да ја испразни батеријата побрзо од вообичаеното</string>
     <string name="save_app_debug_logs">Зачувајте дневници за отстранување грешки на апликациите</string>
+    <string name="manual_update_set_refresh_screen_to_load">Поставете рачно ажурирање, повлечете го екранот за освежување за да се вчита</string>
+    <string name="custom_url_not_set_or_blank">Приспособената URL-адреса не е поставена или е празна. Може да отидете во поставките за да додадете сопствена URL-адреса</string>
 </resources>

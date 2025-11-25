@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Uza tempu atualizasaun loloos</string>
     <string name="battery_warning">Avisu: Hakbiit opsaun iha leten bele halakon ita-nia bateria lalais liu fali baibain</string>
     <string name="save_app_debug_logs">Salva app debug logs</string>
+    <string name="manual_update_set_refresh_screen_to_load">Konjuntu atualizasaun manuál, swipe screen refresh hodi karrega</string>
+    <string name="custom_url_not_set_or_blank">URL personalizadu la tau, ka mamuk. Ita bele tama iha setting hodi aumenta URL personalizadu</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Baara kɛ ni kunnafoni kura waati tigitigiw ye</string>
     <string name="battery_warning">Ladilikan: Ni aw bɛ se ka sanfɛla sugandi, o bɛ se ka aw ka batiri bɔ joona ka tɛmɛ a cogo kɔrɔ kan</string>
     <string name="save_app_debug_logs">Save app debug logs</string>
+    <string name="manual_update_set_refresh_screen_to_load">Set update manuel, swipe refresh screen ka doni</string>
+    <string name="custom_url_not_set_or_blank">Custom URL tɛ set, walima a ye blank ye. Aw bɛ se ka don settings kɔnɔ walasa ka URL ladamulen dɔ fara a kan</string>
 </resources>

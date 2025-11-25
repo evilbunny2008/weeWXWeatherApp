@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Usa li tempi di agghiurnamentu esatti</string>
     <string name="battery_warning">Attenzioni: Attivari l\'upzzioni supra pò scaricari cchiù velocimenti la battirìa</string>
     <string name="save_app_debug_logs">Risparmi li registri di dibbug di l\'app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Sit di l\'agghiurnamentu manuali, schermu a rinfriscamentu</string>
+    <string name="custom_url_not_set_or_blank">L\'URL pirsunalizzatu nun è stabbilitu, o è vacanti. Pudete trasiri nta l\'ambienti pi junciri n\'URL pirsunalizzatu</string>
 </resources>

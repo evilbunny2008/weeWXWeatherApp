@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">השתמש בזמני עדכון מדויקים</string>
     <string name="battery_warning">אזהרה: הפעלת האפשרות לעיל עלולה לרוקן את הסוללה מהר מהרגיל</string>
     <string name="save_app_debug_logs">שמור יומני ניפוי באגים באפליקציה</string>
+    <string name="manual_update_set_refresh_screen_to_load">ערכת עדכונים ידנית, החלק את מסך הרענון כדי לטעון</string>
+    <string name="custom_url_not_set_or_blank">כתובת אתר מותאמת אישית לא מוגדרת, או שהיא ריקה. אתה יכול להיכנס להגדרות כדי להוסיף כתובת אתר מותאמת אישית</string>
 </resources>

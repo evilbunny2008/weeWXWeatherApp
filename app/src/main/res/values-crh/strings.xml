@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Янъыланув вакъытларыны догъру къулланынъыз</string>
     <string name="battery_warning">Дикъкъат: Юкъарыдаки вариантны чалыштырмакъ батареяны адеттекиден тездже сувсыз ала биле</string>
     <string name="save_app_debug_logs">Къулланманынъ хатасыны сакъламакъ</string>
+    <string name="manual_update_set_refresh_screen_to_load">Къолнен янъыланув комплекти, юклемек ичюн swipe refresh экран</string>
+    <string name="custom_url_not_set_or_blank">Хусусан URL къоюлмай, я да бош. Сиз махсус URL къошмакъ ичюн параметрлерге кирмек мумкюнсинъиз</string>
 </resources>

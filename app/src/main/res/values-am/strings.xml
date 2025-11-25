@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ትክክለኛውን የዝምፅ ጊዜያት ይጠቀሙ</string>
     <string name="battery_warning">ማስጠንቀቂያ ከላይ የተጠቀሰውን አማራጭ ማንቃት ከተለመደው የበለጠ ባትሪዎን በፍጥነት ሊያስደስት ይችላል</string>
     <string name="save_app_debug_logs">የመረጃ አሰጣጥ ምዝግብ ማስታወሻዎችን ያስቀምጡ</string>
+    <string name="manual_update_set_refresh_screen_to_load">ማኑዋዊ ዝመና ስብስብ, ለመጫን የሚንሸራተት ማሳያ ማንሻ</string>
+    <string name="custom_url_not_set_or_blank">ብጁ ዩ.አር.ኤል. አልተዋቀረም ወይም ባዶ ነው. ብጁ ዩ.አር.ኤል. ለማከል ወደ ቅንብሮች መሄድ ይችላሉ</string>
 </resources>

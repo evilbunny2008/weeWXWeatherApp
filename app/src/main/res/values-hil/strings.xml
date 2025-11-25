@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Gamita ang eksakto nga mga oras sa pag-update</string>
     <string name="battery_warning">Paandam: Ang pag-enable sang opsyon sa ibabaw mahimo nga mas madasig ang pag-ubos sang imo baterya sangsa kinaandan</string>
     <string name="save_app_debug_logs">Luwasa ang mga troso sa debug sa app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manwal nga update set, i-swipe ang refresh screen sa pag-load</string>
+    <string name="custom_url_not_set_or_blank">Ang Custom URL wala ginbutang, ukon blangko. Mahimo ka magsulod sa mga setting sa pagdugang sa custom nga URL</string>
 </resources>

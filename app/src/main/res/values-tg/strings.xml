@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Вақтҳои дақиқро истифода баред</string>
     <string name="battery_warning">Огоҳӣ: Ин имкон медиҳад, ки варианти дар боло зикршуда батареяро тезтар аз маъмулӣ холӣ кунад</string>
     <string name="save_app_debug_logs">Сабтҳои Debug-ро захира кунед</string>
+    <string name="manual_update_set_refresh_screen_to_load">Маҷмӯи дастӣ маҷмӯи навсозӣ, экрани такмили швати</string>
+    <string name="custom_url_not_set_or_blank">URL-и фармоишӣ муқаррар карда намешавад ё холӣ аст. Шумо метавонед ба Танзимот ворид шавед, то URL-и фармоишӣ</string>
 </resources>

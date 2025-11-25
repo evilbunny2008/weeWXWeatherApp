@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Whakamahia nga wa whakahou tika</string>
     <string name="battery_warning">Whakatupato: Ka taea e te whiringa i runga ake nei ka tere te rere o to pākahiko i te waa</string>
     <string name="save_app_debug_logs">Tiakina nga Raarangi Whakatakotoranga App</string>
+    <string name="manual_update_set_refresh_screen_to_load">Whakahou-a-ringa Whakahōu, ka rewa te mata whakahou kia utaina</string>
+    <string name="custom_url_not_set_or_blank">Kaore i te tautuhia te URL ritenga, he waatea ranei. Ka taea e koe te haere ki nga tautuhinga ki te taapiri i tetahi URL ritenga</string>
 </resources>

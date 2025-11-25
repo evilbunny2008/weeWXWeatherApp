@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">सटीक अपडेट समय के इस्तेमाल करीं</string>
     <string name="battery_warning">चेतावनी: उपरोक्त विकल्प के सक्षम कईला से आपके बैटरी सामान्य से तेज पानी से तेजी से पानी निकाल सकता</string>
     <string name="save_app_debug_logs">एप्प के डिबग लॉग के सहेज लीं</string>
+    <string name="manual_update_set_refresh_screen_to_load">मैनुअल अपडेट सेट, लोड करे खातिर रिफ्रेश स्क्रीन स्वाइप करीं</string>
+    <string name="custom_url_not_set_or_blank">कस्टम यूआरएल सेट नइखे, भा खाली बा. कस्टम यूआरएल जोड़े खातिर रउआ सेटिंग में जा सकत बानी</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Servi bann ler egzakt</string>
     <string name="battery_warning">Avertisman: Aktiv sa opsyon anler i kapab drenn ou batri pli vit ki labitid</string>
     <string name="save_app_debug_logs">Ekonomiz app app lo bann bout dibwa</string>
+    <string name="manual_update_set_refresh_screen_to_load">Set mizazour manyel, glis lekran rasi pour sarz</string>
+    <string name="custom_url_not_set_or_blank">URL personnalize pa ganny mete, oubyen i vid. Ou kapab al dan bann laranzman pour azout en URL personnalize</string>
 </resources>

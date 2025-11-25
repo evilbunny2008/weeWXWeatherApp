@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ನಿಖರವಾದ ನವೀಕರಣ ಸಮಯವನ್ನು ಬಳಸಿ</string>
     <string name="battery_warning">ಎಚ್ಚರಿಕೆ: ಮೇಲಿನ ಆಯ್ಕೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವುದರಿಂದ ನಿಮ್ಮ ಬ್ಯಾಟರಿಯು ಸಾಮಾನ್ಯಕ್ಕಿಂತ ವೇಗವಾಗಿ ಖಾಲಿಯಾಗಬಹುದು</string>
     <string name="save_app_debug_logs">ಅಪ್ಲಿಕೇಶನ್ ಡೀಬಗ್ ಲಾಗ್‌ಗಳನ್ನು ಉಳಿಸಿ</string>
+    <string name="manual_update_set_refresh_screen_to_load">ಹಸ್ತಚಾಲಿತ ಅಪ್‌ಡೇಟ್ ಸೆಟ್, ಲೋಡ್ ಮಾಡಲು ರಿಫ್ರೆಶ್ ಸ್ಕ್ರೀನ್ ಅನ್ನು ಸ್ವೈಪ್ ಮಾಡಿ</string>
+    <string name="custom_url_not_set_or_blank">ಕಸ್ಟಮ್ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ ಅಥವಾ ಖಾಲಿಯಾಗಿದೆ. ಕಸ್ಟಮ್ URL ಅನ್ನು ಸೇರಿಸಲು ನೀವು ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಹೋಗಬಹುದು</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">सटीक अद्यतन समय का उपयोग करें</string>
     <string name="battery_warning">चेतावनी: उपरोक्त विकल्प को सक्षम करने से आपकी बैटरी सामान्य से अधिक तेजी से खत्म हो सकती है</string>
     <string name="save_app_debug_logs">ऐप डिबग लॉग सहेजें</string>
+    <string name="manual_update_set_refresh_screen_to_load">मैनुअल अपडेट सेट, लोड करने के लिए रिफ्रेश स्क्रीन को स्वाइप करें</string>
+    <string name="custom_url_not_set_or_blank">कस्टम URL सेट नहीं है, या रिक्त है. कस्टम यूआरएल जोड़ने के लिए आप सेटिंग्स में जा सकते हैं</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Demên nûvekirina rastîn bikar bînin</string>
     <string name="battery_warning">Hişyarî: Çalakkirina vebijarka jorîn dibe ku battera we ji ya berê zûtir zuha bike</string>
     <string name="save_app_debug_logs">Têketinên debugkirina sepanê hilînin</string>
+    <string name="manual_update_set_refresh_screen_to_load">Danasîna nûvekirina destan, ji bo barkirinê dîmendera nûvekirinê bihejînin</string>
+    <string name="custom_url_not_set_or_blank">URL-ya xwerû nehatiye danîn, an jî vala ye. Hûn dikarin biçin mîhengan da ku URLek xwerû lê zêde bikin</string>
 </resources>

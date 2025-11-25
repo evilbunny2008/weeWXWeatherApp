@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Так жаңыртуу убактысын колдонуңуз</string>
     <string name="battery_warning">Эскертүү: Жогорудагы опцияны көздөгөн вариант батарейкаңызды адаттагыдан тезирээк тазалашы мүмкүн</string>
     <string name="save_app_debug_logs">Колдонмо оңдоо журналдарын сактаңыз</string>
+    <string name="manual_update_set_refresh_screen_to_load">Кол менен жаңыртуу топтому, жүктөө үчүн сергиңизди серпүү экраны</string>
+    <string name="custom_url_not_set_or_blank">Ыңгайлаштырылган URL орнотулган жок же бош эмес. Ыңгайлаштырылган URL кошуу үчүн жөндөөлөргө кире аласыз</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Benotzt genee Update Zäiten</string>
     <string name="battery_warning">Opgepasst: Wann Dir déi uewe genannte Optioun aktivéiert, kann Är Batterie méi séier wéi soss entlaaschten</string>
     <string name="save_app_debug_logs">Späichert App Debug Logbicher</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manuell Update Set, swipt den Erfrëschungsbildschierm fir ze lueden</string>
+    <string name="custom_url_not_set_or_blank">Benotzerdefinéiert URL ass net gesat oder ass eidel. Dir kënnt an d\'Astellunge goen fir eng personaliséiert URL ze addéieren</string>
 </resources>

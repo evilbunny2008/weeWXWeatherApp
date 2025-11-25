@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Pake waktu update yang tepat</string>
     <string name="battery_warning">Peringatan: Memungkinkan opsi di atas mungkin bisa nguras batere lo lebih cepet dari biasanya</string>
     <string name="save_app_debug_logs">Simpan aja balak debug aplikasi</string>
+    <string name="manual_update_set_refresh_screen_to_load">Update manual set, swipe refresh layar buat muat</string>
+    <string name="custom_url_not_set_or_blank">URL adat belom diatur, atau lagi kosong. Lo bisa masuk ke pengaturan buat nambahin URL khusus</string>
 </resources>

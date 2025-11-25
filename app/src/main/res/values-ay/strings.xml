@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Chiqapa actualización pacha apnaqaña</string>
     <string name="battery_warning">AKHAM LURASMA: Aka patat opción ukar yanaptʼañax sapa kutit sipansa jukʼamp jankʼakiw pilax chhaqtaspa</string>
     <string name="save_app_debug_logs">App debug ukax qillqt\'atawa</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manual actualización conjunto, pantalla de refresco swipe ukax carga ukatakiw</string>
+    <string name="custom_url_not_set_or_blank">URL costumbre ukax janiw utt\'ayatakiti, jan ukax ch\'usawjawa. Mä URL costumbre ukar yapxatañatakix configuración ukar mantasmawa</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Шинэчлэлтийн цагийг ашиглана уу</string>
     <string name="battery_warning">АНХААРУУЛГА: Дээрх сонголтыг идэвхжүүлэх нь таны зайг ердийнхөөс илүү хурдан урсаж болно</string>
     <string name="save_app_debug_logs">Апп-ын дибаг хийх бүртгэлийг хадгалах</string>
+    <string name="manual_update_set_refresh_screen_to_load">Гараар шинэчлэх багц багц багц, ачааллыг ачаалахын тулд SCESERING SCEPING</string>
+    <string name="custom_url_not_set_or_blank">Захиалгат URL нь тохируулагдаагүй, эсвэл хоосон байна. Та Custom URL нэмэх тохиргоонд орж болно</string>
 </resources>

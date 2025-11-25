@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Gunakan waktu pembaruan yang tepat</string>
     <string name="battery_warning">Peringatan: Mengaktifkan opsi di atas dapat menguras baterai Anda lebih cepat dari biasanya</string>
     <string name="save_app_debug_logs">Simpan log debug aplikasi</string>
+    <string name="manual_update_set_refresh_screen_to_load">Pembaruan manual diatur, geser layar segarkan untuk memuat</string>
+    <string name="custom_url_not_set_or_blank">URL khusus tidak disetel, atau kosong. Anda dapat masuk ke pengaturan untuk menambahkan URL khusus</string>
 </resources>

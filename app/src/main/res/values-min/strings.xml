@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Gunoan wakatu pambaruan nan tapek</string>
     <string name="battery_warning">Peringatan: Mamungkinkan pilihan di ateh dapek manguras baterai labiah capek dari biaso</string>
     <string name="save_app_debug_logs">Simpan app log debug</string>
+    <string name="manual_update_set_refresh_screen_to_load">Set update manual, swip refresh untuak dimuek</string>
+    <string name="custom_url_not_set_or_blank">URL Adat indak diatur, atau kosong. Sanak dapek masuak ka dalam pangaturan untuak manambah URL khusus</string>
 </resources>

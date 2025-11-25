@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Ti kod thuolo ma kare mag loso</string>
     <string name="battery_warning">Chiwo Sign: Tiyo gi yo ma owach malo kanyo nyalo miyo betri obed mapiyo moloyo kaka pile</string>
     <string name="save_app_debug_logs">Ket logs mag mbui mag program mag app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Skrin mar loso gik moko kaka pile, skrin ma dwoko piny</string>
+    <string name="custom_url_not_set_or_blank">URL mar ng\'ato ok oket, kata onge gimoro. Inyalo donjo e chenro mondo imed URL ma idwaro</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Нақты жаңарту уақытын қолданыңыз</string>
     <string name="battery_warning">ЕСКЕРТУ: Жоғарыда көрсетілген опцияны қосу батареяны әдеттегіден тезірек ағызуы мүмкін</string>
     <string name="save_app_debug_logs">Қолданбаларды жою журналдарын сақтаңыз</string>
+    <string name="manual_update_set_refresh_screen_to_load">Қолмен жаңартуды орнатыңыз, Жаңарту экранын жалғаңыз</string>
+    <string name="custom_url_not_set_or_blank">Реттелетін URL мекенжайы орнатылмаған немесе бос емес. Жеке URL мекенжайын қосу үшін параметрлерге кіре аласыз</string>
 </resources>

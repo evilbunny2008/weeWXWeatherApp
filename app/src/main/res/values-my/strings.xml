@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">အတိအကျ Update Times ကိုသုံးပါ</string>
     <string name="battery_warning">သတိပေးချက် - အထက်ဖော်ပြပါရွေးချယ်မှုကိုပုံမှန်ထက်သင့်ဘက်ထရီကိုမြန်မြန်ဆန်ဆန်လျော့နည်းစေနိုင်သည်</string>
     <string name="save_app_debug_logs">App Debug Logs ကိုသိမ်းပါ</string>
+    <string name="manual_update_set_refresh_screen_to_load">လက်စွဲမွမ်းမံခြင်း SET, Swip Refresh မျက်နှာပြင်ကိုတင်ရန်</string>
+    <string name="custom_url_not_set_or_blank">Custom URL ကိုမသတ်မှတ်, သင်စိတ်ကြိုက် URL ကိုထည့်ရန် settings သို့သွားနိုင်သည်</string>
 </resources>

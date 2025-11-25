@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Anggo waktos apdet</string>
     <string name="battery_warning">Peringatan: Ngaktifkeun pilihan di luhur tiasa solokan batré anjeun langkung gancang tibatan biasa</string>
     <string name="save_app_debug_logs">Simpen log debug</string>
+    <string name="manual_update_set_refresh_screen_to_load">Nyimpen pamutahiran manual, swores Screes Screes pikeun muka</string>
+    <string name="custom_url_not_set_or_blank">URL adat henteu diatur, atanapi kosong. Anjeun tiasa angkat kana setélan pikeun nambihan URL khusus</string>
 </resources>

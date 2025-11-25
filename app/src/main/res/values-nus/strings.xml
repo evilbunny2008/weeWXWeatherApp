@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">La̱tdɛ kɛ gua̱a̱th mi̱ pay tuɔɔk</string>
     <string name="battery_warning">Warning: Ɛn Enangling min ca lat nhial derɛ bɛtteri̱du woc kɛ pɛ̈th mi̱ läny ni̱ min la tuɔɔk</string>
     <string name="save_app_debug_logs">Kä app badbug logs</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manual up state set, swape refresh screen min ca la̱th</string>
+    <string name="custom_url_not_set_or_blank">Käthtɔm URL /cɛ te thi̱n, kiɛ /thiɛlɛ jɛ luɔt. Ji̱n deri wä rɛy lätni kɛ ɣöö bi URL min ca rialikä mat thi̱n</string>
 </resources>

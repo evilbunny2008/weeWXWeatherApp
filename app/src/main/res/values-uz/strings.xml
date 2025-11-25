@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Aniq yangilanish vaqtlaridan foydalaning</string>
     <string name="battery_warning">Ogohlantirish: Yuqoridagi variantni yoqish, odatdagidan ko\'ra batareyangizni tezroq chiqarishi mumkin</string>
     <string name="save_app_debug_logs">Ilova disklarini saqlash tizimlarini saqlang</string>
+    <string name="manual_update_set_refresh_screen_to_load">Qo\'lda yangilash to\'plami, Yuklash uchun Ekranni yangilang</string>
+    <string name="custom_url_not_set_or_blank">Shaxsiy URL URL o\'rnatilmagan yoki bo\'sh. Maxsus URL-ni qo\'shish uchun siz sozlamalarga kirishingiz mumkin</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">ସଠିକ୍ ଅଦ୍ୟତନ ସମୟ ବ୍ୟବହାର କରନ୍ତୁ |</string>
     <string name="battery_warning">ଚେତାବନୀ: ଉପରୋକ୍ତ ବିକଳ୍ପକୁ ସକ୍ଷମ କରିବା ଆପଣଙ୍କ ବ୍ୟାଟେରୀକୁ ସାଧାରଣ ଅପେକ୍ଷା ଶୀଘ୍ର ନିଷ୍କାସନ କରିପାରେ |</string>
     <string name="save_app_debug_logs">ଆପ୍ ଡିବଗ୍ ଲଗ୍ ସେଭ୍ କରନ୍ତୁ |</string>
+    <string name="manual_update_set_refresh_screen_to_load">ମାନୁଆଲ୍ ଅପଡେଟ୍ ସେଟ୍, ଲୋଡ୍ କରିବାକୁ ରିଫ୍ରେସ୍ ସ୍କ୍ରିନ୍ ସ୍ୱାଇପ୍ କରନ୍ତୁ |</string>
+    <string name="custom_url_not_set_or_blank">କଷ୍ଟମ୍ URL ସେଟ୍ ହୋଇନାହିଁ, କିମ୍ବା ଖାଲି ଅଛି | ଏକ କଷ୍ଟମ୍ URL ଯୋଡିବାକୁ ଆପଣ ସେଟିଂସମୂହକୁ ଯାଇପାରିବେ |</string>
 </resources>

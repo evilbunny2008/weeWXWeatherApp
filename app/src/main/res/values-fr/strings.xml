@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Utiliser des heures de mise à jour exactes</string>
     <string name="battery_warning">Attention : l\'activation de l\'option ci-dessus peut vider votre batterie plus rapidement que d\'habitude</string>
     <string name="save_app_debug_logs">Enregistrer les journaux de débogage de l\'application</string>
+    <string name="manual_update_set_refresh_screen_to_load">Ensemble de mise à jour manuelle, faites glisser l\'écran d\'actualisation pour charger</string>
+    <string name="custom_url_not_set_or_blank">L\'URL personnalisée n\'est pas définie ou est vide. Vous pouvez accéder aux paramètres pour ajouter une URL personnalisée</string>
 </resources>

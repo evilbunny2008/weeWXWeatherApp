@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">সঠিক আপডেট সময় ব্যবহার করুন</string>
     <string name="battery_warning">সতর্কতা: উপরের বিকল্পটি সক্ষম করলে আপনার ব্যাটারি স্বাভাবিকের চেয়ে দ্রুত নিষ্কাশন হতে পারে</string>
     <string name="save_app_debug_logs">অ্যাপ ডিবাগ লগ সংরক্ষণ করুন</string>
+    <string name="manual_update_set_refresh_screen_to_load">ম্যানুয়াল আপডেট সেট, লোড করতে রিফ্রেশ স্ক্রীন সোয়াইপ করুন</string>
+    <string name="custom_url_not_set_or_blank">কাস্টম URL সেট করা নেই, বা ফাঁকা। আপনি একটি কাস্টম URL যোগ করতে সেটিংসে যেতে পারেন৷</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Lo sara kua na ambilimbili ngoi ti sarango na update</string>
     <string name="battery_warning">Gboto mê: Ti sala si option so ayeke na nduzu ge alingbi ti hunzi batterie ti mo hio ahon ti kozo</string>
     <string name="save_app_debug_logs">Bata a-application ti debug</string>
+    <string name="manual_update_set_refresh_screen_to_load">A-update ti manuel, swipe écran ti charge</string>
+    <string name="custom_url_not_set_or_blank">URL ti personnalisé ayeke pëpe, wala a yeke senge. Lo lingbi ti lï na yâ ti a-paramètre ti zia mbeni URL so a leke ni nde</string>
 </resources>

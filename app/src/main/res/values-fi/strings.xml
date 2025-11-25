@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Käytä tarkkoja päivitysaikoja</string>
     <string name="battery_warning">Varoitus: Yllä olevan vaihtoehdon ottaminen käyttöön voi tyhjentää akun normaalia nopeammin</string>
     <string name="save_app_debug_logs">Tallenna sovellusten virheenkorjauslokit</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manuaalinen päivitys asetettu, pyyhkäise päivitysnäyttö ladataksesi</string>
+    <string name="custom_url_not_set_or_blank">Muokattua URL-osoitetta ei ole asetettu tai se on tyhjä. Voit lisätä mukautetun URL-osoitteen siirtymällä asetuksiin</string>
 </resources>

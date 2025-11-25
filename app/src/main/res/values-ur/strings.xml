@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">درست اپ ڈیٹ کے اوقات استعمال کریں</string>
     <string name="battery_warning">انتباہ: مذکورہ بالا آپشن کو چالو کرنے سے آپ کی بیٹری معمول سے زیادہ تیزی سے ختم ہوسکتی ہے</string>
     <string name="save_app_debug_logs">ایپ ڈیبگ لاگز کو محفوظ کریں</string>
+    <string name="manual_update_set_refresh_screen_to_load">دستی اپ ڈیٹ سیٹ ، لوڈ کرنے کے لئے ریفریش اسکرین کو سوائپ کریں</string>
+    <string name="custom_url_not_set_or_blank">کسٹم یو آر ایل سیٹ نہیں ہے ، یا خالی ہے۔ آپ کسٹم یو آر ایل کو شامل کرنے کے لئے ترتیبات میں جاسکتے ہیں</string>
 </resources>

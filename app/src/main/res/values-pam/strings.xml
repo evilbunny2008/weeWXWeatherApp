@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Gamitan ing eksaktung oras ning update</string>
     <string name="battery_warning">Babala: Ing pamagpabilis king opsyun king babo malyari yang mas mabilis i-drain ing baterya kesa king karaniwan</string>
     <string name="save_app_debug_logs">Iligtas ing app a debug de trosu</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manual updateng set set, swipe re screen refresh para mag load</string>
+    <string name="custom_url_not_set_or_blank">E ya mitakda ing URL ning Custom, o blanku ya. Malyari kang munta kareng setting para dagdagan ing URL</string>
 </resources>

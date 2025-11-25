@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Օգտագործեք թարմացման ճշգրիտ ժամանակները</string>
     <string name="battery_warning">Զգուշացում. վերը նշված տարբերակը միացնելը կարող է սովորականից ավելի արագ սպառել ձեր մարտկոցը</string>
     <string name="save_app_debug_logs">Պահպանեք հավելվածների վրիպազերծման մատյանները</string>
+    <string name="manual_update_set_refresh_screen_to_load">Ձեռքով թարմացման հավաքածու, սահեցրեք թարմացման էկրանը՝ բեռնելու համար</string>
+    <string name="custom_url_not_set_or_blank">Հատուկ URL-ը սահմանված չէ կամ դատարկ է: Դուք կարող եք մտնել կարգավորումներ՝ հատուկ URL ավելացնելու համար</string>
 </resources>

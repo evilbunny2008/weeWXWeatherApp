@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Utilizar k\'iinil ka\' exacto</string>
     <string name="battery_warning">Advertencia: Habilitar le opción anterior je\'el drenar u batería asab séeba\'an u le suukbenilo\'obo\'</string>
     <string name="save_app_debug_logs">Ahorre registros depuración app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Conjunto u ka\' manual, deslice pantalla actualizar utia\'al u kuuch</string>
+    <string name="custom_url_not_set_or_blank">URL personalizado ma\' táan establecido, wa táan ti\' sak. Je\'el bin ti\' ajustes utia\'al u ts\'áabal jump\'éel URL personalizada</string>
 </resources>

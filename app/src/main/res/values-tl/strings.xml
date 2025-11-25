@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Gumamit ng eksaktong mga oras ng pag -update</string>
     <string name="battery_warning">Babala: Ang pagpapagana sa pagpipilian sa itaas ay maaaring maubos ang iyong baterya nang mas mabilis kaysa sa dati</string>
     <string name="save_app_debug_logs">I -save ang mga log ng debug ng app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manu -manong set ng pag -update, mag -swipe ng screen ng pag -refresh upang mai -load</string>
+    <string name="custom_url_not_set_or_blank">Ang pasadyang URL ay hindi nakatakda, o blangko. Maaari kang pumunta sa mga setting upang magdagdag ng isang pasadyang URL</string>
 </resources>

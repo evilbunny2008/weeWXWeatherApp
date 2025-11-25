@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Implijit an eurioù hizivaat rik</string>
     <string name="battery_warning">Diwallit : Gweredekaat an dibab a-us a c\'hell dreiñ ho pilenn buanoc\'h eget ar c\'hiz</string>
     <string name="save_app_debug_logs">Enrollañ rolloù diverkañ an app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Ensavadur hizivaat dre zorn, skramm freskaat swipe evit kargañ</string>
+    <string name="custom_url_not_set_or_blank">N\'eo ket lakaet URL personelaet, pe goullo eo. Gallout a rit mont e-barzh arventennoù evit ouzhpennañ un URL personelaet</string>
 </resources>

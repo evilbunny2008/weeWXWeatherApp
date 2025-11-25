@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Zã ɣeyiɣi siwo sɔ pɛpɛpɛ</string>
     <string name="battery_warning">Nuxlɔ̃ame: Ne èna tiatia si le etame la nate ŋu ana wò batri nakɔ kabakaba wu alesi wònɔna ɖaa</string>
     <string name="save_app_debug_logs">Dzra App Debug ƒe nuŋlɔɖiwo ɖo</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manual Update Set, Swipe Refresh Screen to Load</string>
+    <string name="custom_url_not_set_or_blank">URL si wowɔ ɖe ɖoɖo nu la menye esi woɖo o, alo le ƒuƒlu. Àte ŋu ayi ɖe ɖoɖowo me atsɔ URL si wowɔ ɖe ɖoɖo nu akpe ɖe eŋu</string>
 </resources>

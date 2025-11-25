@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Gebruuk exacte updatetieje</string>
     <string name="battery_warning">Waarsjchuwing: \'t Instelle vaan de bovestaonde optie kin uw batterie sneller drainere daan normaal</string>
     <string name="save_app_debug_logs">Opslaon app-debuglogs op</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manueel update set, veeg verfrissingssjerm um te lade</string>
+    <string name="custom_url_not_set_or_blank">Aangepaste URL is neet ingesjtèld, of is leeg. U kin in instellinge goon um \'n aonpasde URL touw te voge</string>
 </resources>

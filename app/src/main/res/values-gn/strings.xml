@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Eipuru umi tiempo de actualización exacta</string>
     <string name="battery_warning">Advertencia: Ojehejávo pe opción yvategua ikatu omosẽ pya\'eve nde batería jepiveguágui</string>
     <string name="save_app_debug_logs">Eñongatu App Debug registrokuéra</string>
+    <string name="manual_update_set_refresh_screen_to_load">Conjunto de actualización manual, pantalla de refresco de swipe ojekarga hag̃ua</string>
+    <string name="custom_url_not_set_or_blank">URL personalizado noñemohendapái, térã oĩ en blanco. Ikatu reike ñembohekorãme remoĩ hag̃ua peteĩ URL jeporupyre</string>
 </resources>

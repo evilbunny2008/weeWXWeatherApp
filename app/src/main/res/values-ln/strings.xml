@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Salelá bantango ya sika ya sika</string>
     <string name="battery_warning">KEKELE: Kofungola option oyo ezali likolo ekoki ko drainer pile na yo noki koleka ndenge omesanaka</string>
     <string name="save_app_debug_logs">Bomba ba logs ya débogage ya app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Ensemble de mise à jour manuelle, écran de refresh swipe à charger</string>
+    <string name="custom_url_not_set_or_blank">URL personnalisé ezali te, to ezali ya pamba. Okoki kokɔta na ba paramètres mpo na kobakisa URL oyo esalemi na kolanda bamposa ya moto</string>
 </resources>

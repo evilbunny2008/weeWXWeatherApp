@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Ti ku saa mi tio ku lembe maeni</string>
     <string name="battery_warning">Warning: Ketho lembe ma malu i thenge maeni copo ketho battery peri ubed maleng\' nisagu ma con</string>
     <string name="save_app_debug_logs">Kwan app mi app</string>
+    <string name="manual_update_set_refresh_screen_to_load">Set ma nyen ma ng\'ato nyalo ng\'eyo, ng\'ad screen mar dwoko piny</string>
+    <string name="custom_url_not_set_or_blank">Custom URL epe, nyo epe. Icopo cidho i settings mi medo UL</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Fa update times a ɛyɛ pɛpɛɛpɛ di dwuma</string>
     <string name="battery_warning">Kɔkɔbɔ: Sɛ wobɛma atifi hɔ nhyehyɛe no atumi ayɛ adwuma a, ebetumi ama wo batere no ayow ntɛmntɛm sen sɛnea ɛtaa yɛ no</string>
     <string name="save_app_debug_logs">Sie App Debug Nsɛm a Wɔakyerɛw</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manual Update Set, Swipe Refresh Screen no na fa wo ho hyɛ mu</string>
+    <string name="custom_url_not_set_or_blank">Custom URL no nnyɛ set, anaasɛ ɛyɛ blank. Wubetumi akɔ nhyehyɛe mu de URL a wɔahyɛ da ayɛ aka ho</string>
 </resources>

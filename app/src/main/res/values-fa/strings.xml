@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">از زمان های دقیق به روز رسانی استفاده کنید</string>
     <string name="battery_warning">هشدار: فعال کردن گزینه بالا ممکن است باتری شما را سریعتر از حد معمول تخلیه کند</string>
     <string name="save_app_debug_logs">گزارش‌های اشکال‌زدایی برنامه را ذخیره کنید</string>
+    <string name="manual_update_set_refresh_screen_to_load">مجموعه به‌روزرسانی دستی، صفحه نمایش را به‌روزرسانی کنید تا بارگذاری شود</string>
+    <string name="custom_url_not_set_or_blank">URL سفارشی تنظیم نشده است یا خالی است. برای افزودن یک URL سفارشی می توانید به تنظیمات بروید</string>
 </resources>

@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Pontos frissítési időket használjon</string>
     <string name="battery_warning">Figyelmeztetés: A fenti opció engedélyezése a szokásosnál gyorsabban lemerítheti az akkumulátort</string>
     <string name="save_app_debug_logs">Mentse el az alkalmazás hibakeresési naplóit</string>
+    <string name="manual_update_set_refresh_screen_to_load">Kézi frissítés beállítva, a betöltéshez húzza az ujját a frissítési képernyőn</string>
+    <string name="custom_url_not_set_or_blank">Az egyéni URL nincs beállítva, vagy üres. Egyéni URL hozzáadásához lépjen a beállításokba</string>
 </resources>

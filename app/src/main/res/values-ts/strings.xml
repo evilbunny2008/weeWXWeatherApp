@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Tirhisa minkarhi leyi kongomeke ya ku pfuxetiwa</string>
     <string name="battery_warning">XILERISO: Ku pfumelela ndlela leyi nga laha henhla swi nga ha heta betri ya wena hi ku hatlisa ku tlula leswi tolovelekeke</string>
     <string name="save_app_debug_logs">Save App Debug Logs</string>
+    <string name="manual_update_set_refresh_screen_to_load">Manual Update Set, Swipe Refresh Screen Ku Layicha</string>
+    <string name="custom_url_not_set_or_blank">URL ya ntolovelo a yi vekiwanga, kumbe yi nga ri na nchumu. U nga nghena eka swiyimiso ku engetela URL ya ntolovelo</string>
 </resources>

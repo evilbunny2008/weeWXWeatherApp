@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Huutoro waktuuji kesi laaɓtuɗi</string>
     <string name="battery_warning">Jeertinaango: Sobar cuɓal dow ngal ina waawi ustude batte maa ko ɓuri yaawde e ko woowaa</string>
     <string name="save_app_debug_logs">Hisnu logs debug</string>
+    <string name="manual_update_set_refresh_screen_to_load">Seto keso keso, ekran refresh swipe ngam loowde</string>
+    <string name="custom_url_not_set_or_blank">URL custom settaaka, walla ko ɓuuɓɗo. Aɗa waawi naatde e dottaaɗe ngam ɓeydude URL keeriiɗo</string>
 </resources>

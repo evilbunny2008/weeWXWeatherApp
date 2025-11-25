@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Gwiritsani ntchito nthawi yeniyeni</string>
     <string name="battery_warning">CHENJEZO: KUTHANDIZA KUTI MUZINTHA KWAULERE KWAULERE KWAULERE KWAULERE KWAULERE KWAULERE</string>
     <string name="save_app_debug_logs">Sungani pulogalamu ya App Debug</string>
+    <string name="manual_update_set_refresh_screen_to_load">Kusintha kwa Manja Kukhazikitsidwa, Swipe Yotsitsimutsa</string>
+    <string name="custom_url_not_set_or_blank">Ulalo wa makonda sukhazikitsidwa, kapena wopanda kanthu. Mutha kupita ku zoikamo kuti muwonjezere url ya chizolowezi</string>
 </resources>

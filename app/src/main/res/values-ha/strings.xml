@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Yi amfani da ainihin lokacin sabuntawa</string>
     <string name="battery_warning">GARGADI: Yawo ga zaɓi na sama na iya magudana batirinku da sauri fiye da yadda aka saba</string>
     <string name="save_app_debug_logs">Ajiye rajistan ayyukan debug</string>
+    <string name="manual_update_set_refresh_screen_to_load">An sabunta Adireshin Adireshin, Sripe mai musayar allo don kaya</string>
+    <string name="custom_url_not_set_or_blank">Ba a saita URL na al\'ada ba, ko kuma babu komai. Kuna iya shiga cikin saiti don ƙara URL na al\'ada</string>
 </resources>

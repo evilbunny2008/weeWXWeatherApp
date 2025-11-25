@@ -87,4 +87,6 @@
     <string name="use_exact_alarm">Utilizar de temps d\'actualizacion exactes</string>
     <string name="battery_warning">Avertiment: Permetre l\'opcion susmencionada pòt drenar vòstra batariá mai rapidament que d\'acostuma</string>
     <string name="save_app_debug_logs">Enregistrar los registres de depuracion</string>
+    <string name="manual_update_set_refresh_screen_to_load">Conjunto de actualizacion manual, pantalla de refresco de glissar para cargar</string>
+    <string name="custom_url_not_set_or_blank">URL personalizada no es definida, o es en blanco. Podètz anar dins los paramètres per apondre una URL personalizada</string>
 </resources>
