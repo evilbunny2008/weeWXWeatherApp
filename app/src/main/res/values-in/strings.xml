@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Simpan log debug aplikasi</string>
     <string name="manual_update_set_refresh_screen_to_load">Pembaruan manual diatur, geser layar segarkan untuk memuat</string>
     <string name="custom_url_not_set_or_blank">URL khusus tidak disetel, atau kosong. Anda dapat masuk ke pengaturan untuk menambahkan URL khusus</string>
+    <string name="next_moon">Peristiwa bulan depan?</string>
 </resources>

@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Simpanji ap apps log</string>
     <string name="manual_update_set_refresh_screen_to_load">Pa\'baeng-baeng manual, pa\'baeng-baeng layar sembrono untu\' a\'lampa</string>
     <string name="custom_url_not_set_or_blank">URL kuas teai set, yareka kosong. Ikatte akkullei antama\' ri setting untu\' a\'tambai URL adat</string>
+    <string name="next_moon">Acara bulang ribokoanganna?</string>
 </resources>

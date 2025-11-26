@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">حفظ سجلات تصحيح التطبيق</string>
     <string name="manual_update_set_refresh_screen_to_load">مجموعة التحديث اليدوي، اسحب شاشة التحديث للتحميل</string>
     <string name="custom_url_not_set_or_blank">لم يتم تعيين عنوان URL المخصص، أو أنه فارغ. يمكنك الدخول إلى الإعدادات لإضافة عنوان URL مخصص</string>
+    <string name="next_moon">أحداث القمر القادمة؟</string>
 </resources>

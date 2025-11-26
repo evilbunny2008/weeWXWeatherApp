@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Hifadhi magogo ya utatuaji wa programu</string>
     <string name="manual_update_set_refresh_screen_to_load">Sasisha Sasisho la Mwongozo, Swipe Refresh Screen kupakia</string>
     <string name="custom_url_not_set_or_blank">URL ya kawaida haijawekwa, au ni tupu. Unaweza kwenda kwenye mipangilio ili kuongeza URL ya kawaida</string>
+    <string name="next_moon">Matukio ya mwezi ujao?</string>
 </resources>

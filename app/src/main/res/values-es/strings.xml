@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Guardar registros de depuración de aplicaciones</string>
     <string name="manual_update_set_refresh_screen_to_load">Conjunto de actualización manual, deslice la pantalla de actualización para cargar</string>
     <string name="custom_url_not_set_or_blank">La URL personalizada no está configurada o está en blanco. Puede ingresar a la configuración para agregar una URL personalizada</string>
+    <string name="next_moon">¿Próximos eventos lunares?</string>
 </resources>

@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Salvați jurnalele de depanare a aplicației</string>
     <string name="manual_update_set_refresh_screen_to_load">Set de actualizare manuală, glisați ecranul de reîmprospătare pentru a încărca</string>
     <string name="custom_url_not_set_or_blank">Adresa URL personalizată nu este setată sau este goală. Puteți accesa setări pentru a adăuga o adresă URL personalizată</string>
+    <string name="next_moon">Evenimente de pe luna viitoare?</string>
 </resources>

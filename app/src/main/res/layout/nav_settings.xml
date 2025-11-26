@@ -76,6 +76,16 @@
 			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
 
 		<com.google.android.material.materialswitch.MaterialSwitch
+			android:id="@+id/next_moon"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="48dp"
+			android:text="@string/next_moon"
+			android:textSize="20sp"
+			android:layout_marginTop="10dp"
+			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+
+		<com.google.android.material.materialswitch.MaterialSwitch
 			android:id="@+id/use_exact_alarm"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"

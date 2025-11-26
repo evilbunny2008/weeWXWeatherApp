@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Зберігайте журнали налагодження програми</string>
     <string name="manual_update_set_refresh_screen_to_load">Встановлено оновлення вручну, проведіть пальцем по екрану, щоб завантажити</string>
     <string name="custom_url_not_set_or_blank">Спеціальна URL-адреса не встановлена ​​або пуста. Ви можете зайти в налаштування, щоб додати спеціальну URL-адресу</string>
+    <string name="next_moon">Події наступного місяця?</string>
 </resources>

@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Idulin dagiti log ti debug</string>
     <string name="manual_update_set_refresh_screen_to_load">Manual nga Update Set, I-swipe ti Refresh screen tapno maikarga</string>
     <string name="custom_url_not_set_or_blank">Ti kostumbre nga URL ket saan a naikeddeng, wenno blangko. Mabalinmo ti mapan kadagiti setting tapno mangnayon iti custom URL</string>
+    <string name="next_moon">Sumaruno a bulan a pasamak?</string>
 </resources>

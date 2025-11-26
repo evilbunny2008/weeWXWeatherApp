@@ -99,6 +99,9 @@ public class Weather extends Fragment implements View.OnClickListener
 		else
 			loadWebview(current, view, R.id.current, true);
 
+		if(current != null)
+			weeWXAppCommon.LogMessage("current.getHeight(): " + current.getHeight(), true);
+
 		if(forecast == null)
 			forecast = loadWebview(null, view, R.id.forecast, false);
 		else
@@ -186,7 +189,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			{
 				current.postDelayed(() -> adjustHeight(current), 50);
 				current.postDelayed(() -> adjustHeight(current), 150);
-				current.postDelayed(() -> adjustHeight(current), 300);
+				current.postDelayed(() -> recheckHeight(current), 300);
 			} else if(viewid == R.id.current) {
 				weeWXAppCommon.LogMessage("dynamicSizing is false...");
 			}
@@ -220,6 +223,15 @@ public class Weather extends Fragment implements View.OnClickListener
 					} catch (Exception ignored) {}
 				}
 		);
+	}
+
+	private void recheckHeight(SafeWebView webView)
+	{
+		weeWXAppCommon.LogMessage("webView.getHeight(): " + webView.getHeight(), true);
+		if(webView.getHeight() <= 300)
+		{
+			webView.post(webView::reload);
+		}
 	}
 
 	private void checkFields(TextView tv, String txt)
@@ -472,12 +484,24 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-moonrise icon'></i>")
-				.append(currentSpacerLeft)
-				.append(bits[47]).append("</div>\n");
-		sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[48])
-				.append(currentSpacerRight)
-				.append("<i class='wi wi-moonset icon'></i></div>\n");
+		boolean next_moon = weeWXAppCommon.GetBoolPref("next_moon", weeWXApp.next_moon_default);
+
+		if(next_moon && bits.length >= 292 && !bits[209].isBlank() && !bits[291].isBlank())
+		{
+			sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-moonrise icon'></i>")
+					.append(currentSpacerLeft)
+					.append(weeWXAppCommon.doMoon(bits[290])).append("</div>\n");
+			sb.append("\t\t\t<div class='dataCellCurrent right'>").append(weeWXAppCommon.doMoon(bits[291]))
+					.append(currentSpacerRight)
+					.append("<i class='wi wi-moonset icon'></i></div>\n");
+		} else {
+			sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-moonrise icon'></i>")
+					.append(currentSpacerLeft)
+					.append(bits[47]).append("</div>\n");
+			sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[48])
+					.append(currentSpacerRight)
+					.append("<i class='wi wi-moonset icon'></i></div>\n");
+		}
 
 		sb.append("\t\t</div>\n\n");
 

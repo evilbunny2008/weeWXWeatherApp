@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Boloka App Deag Logs</string>
     <string name="manual_update_set_refresh_screen_to_load">Seteishene sa Tlhahiso ea Manual, Swipe Screen Screen</string>
     <string name="custom_url_not_set_or_blank">URL ea moetlo ha e behe, kapa ha e na letho. O ka ea litlhophiso ho eketsa URL ea tloaelo</string>
+    <string name="next_moon">Liketsahalo tse latelang tsa khoeli?</string>
 </resources>

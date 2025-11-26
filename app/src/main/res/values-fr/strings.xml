@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Enregistrer les journaux de débogage de l\'application</string>
     <string name="manual_update_set_refresh_screen_to_load">Ensemble de mise à jour manuelle, faites glisser l\'écran d\'actualisation pour charger</string>
     <string name="custom_url_not_set_or_blank">L\'URL personnalisée n\'est pas définie ou est vide. Vous pouvez accéder aux paramètres pour ajouter une URL personnalisée</string>
+    <string name="next_moon">Les événements de la prochaine lune?</string>
 </resources>

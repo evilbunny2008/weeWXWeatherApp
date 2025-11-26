@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Lưu nhật ký gỡ lỗi ứng dụng</string>
     <string name="manual_update_set_refresh_screen_to_load">Đã cài đặt cập nhật thủ công, vuốt màn hình làm mới để tải</string>
     <string name="custom_url_not_set_or_blank">URL tùy chỉnh chưa được đặt hoặc trống. Bạn có thể vào cài đặt để thêm URL tùy chỉnh</string>
+    <string name="next_moon">Sự kiện trăng tiếp theo?</string>
 </resources>

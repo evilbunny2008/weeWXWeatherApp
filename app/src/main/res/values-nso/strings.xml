@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Boloka dilog tša go lokiša diphošo tša tirišo</string>
     <string name="manual_update_set_refresh_screen_to_load">Sete ya Ntšhwafatšo ya Manual, Swipe Refresh Skrine sa go Laetša</string>
     <string name="custom_url_not_set_or_blank">URL ya tlwaelo ga se ya bewa, goba ga e na selo. O ka tsena ka gare ga dipeakanyo go oketša URL ya tlwaelo</string>
+    <string name="next_moon">Ditiragalo tše di latelago tša Ngwedi?</string>
 </resources>

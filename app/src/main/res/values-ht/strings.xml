@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Sove mòso bwa debogaj aplikasyon yo</string>
     <string name="manual_update_set_refresh_screen_to_load">Manyèl mete ajou, glise ekran rafrechi pou chaje</string>
     <string name="custom_url_not_set_or_blank">URL Custom pa mete, oswa li vid. Ou ka ale nan anviwònman yo ajoute yon URL koutim</string>
+    <string name="next_moon">Evènman pwochen lalin?</string>
 </resources>

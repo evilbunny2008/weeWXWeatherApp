@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Gcina izixhobo ze-App Debug</string>
     <string name="manual_update_set_refresh_screen_to_load">Ukuhlaziywa kwezandla, isikrini sokuhlaziya iSwien ukuze silayishe</string>
     <string name="custom_url_not_set_or_blank">I-URL yesiko ayibeki, okanye ayinanto. Ungaya kwiitoti ukongeza i-URL yesiqhelo</string>
+    <string name="next_moon">Iziganeko zeNyanga ezayo?</string>
 </resources>

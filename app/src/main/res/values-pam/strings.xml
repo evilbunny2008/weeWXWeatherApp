@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Iligtas ing app a debug de trosu</string>
     <string name="manual_update_set_refresh_screen_to_load">Manual updateng set set, swipe re screen refresh para mag load</string>
     <string name="custom_url_not_set_or_blank">E ya mitakda ing URL ning Custom, o blanku ya. Malyari kang munta kareng setting para dagdagan ing URL</string>
+    <string name="next_moon">Susunod a bulan ing malilyari?</string>
 </resources>

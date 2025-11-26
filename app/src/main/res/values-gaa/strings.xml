@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Kɛ app debug logs ato</string>
     <string name="manual_update_set_refresh_screen_to_load">Hanual tsakemɔ, swipe refle screen ni okɛwo mli</string>
     <string name="custom_url_not_set_or_blank">Custom URL lɛ jeee nɔ ni ato, loo ebɛ nɔ ko nɔ ko. Obaanyɛ oya gbɛjianɔtoo mli koni okɛ URL ni afee lɛ diɛŋtsɛ afata he</string>
+    <string name="next_moon">Nyɔŋtsere lɛ nifeemɔi ni nyiɛ sɛɛ lɛ?</string>
 </resources>

@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">アプリのデバッグログを保存する</string>
     <string name="manual_update_set_refresh_screen_to_load">手動更新セット、画面をスワイプして更新します</string>
     <string name="custom_url_not_set_or_blank">カスタム URL が設定されていないか、空白です。設定に移動してカスタム URL を追加できます</string>
+    <string name="next_moon">来月のイベントは？</string>
 </resources>

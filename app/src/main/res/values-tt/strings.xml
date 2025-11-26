@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Кушымталарны саклагыз Дебуг бүрәнәләре</string>
     <string name="manual_update_set_refresh_screen_to_load">Кул белән яңарту җыелмасы, Swepe PreePresh-ны йөкләү өчен</string>
     <string name="custom_url_not_set_or_blank">Codomгары URL куелмаган, яисә буш түгел. Сез махсус URL өстәр өчен көйләүләргә керә аласыз</string>
+    <string name="next_moon">Киләсе ай вакыйгалары?</string>
 </resources>

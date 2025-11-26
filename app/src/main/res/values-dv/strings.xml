@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">އެޕް ޑީބަގް ލޮގްސް ސޭވް ކުރާށެވެ</string>
     <string name="manual_update_set_refresh_screen_to_load">މެނުއަލް އަޕްޑޭޓް ސެޓް، ސްވައިޕް ރިފްރެޝް ސްކްރީން ލޯޑް ކުރުމަށް</string>
     <string name="custom_url_not_set_or_blank">ކަސްޓަމް ޔޫ.އާރ.އެލް ސެޓް ނުކޮށް، ނުވަތަ ހުސްކޮށް. ކަސްޓަމް ޔޫ.އާރ.އެލް އެއް އިތުރު ކުރުމަށް ސެޓިންގސް އަށް ވަދެވޭނެއެވެ</string>
+    <string name="next_moon">ދެން ހަނދުގެ އިވެންޓްތައް؟</string>
 </resources>

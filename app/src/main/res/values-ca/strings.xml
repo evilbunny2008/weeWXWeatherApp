@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Desa els registres de depuració de l\'aplicació</string>
     <string name="manual_update_set_refresh_screen_to_load">Conjunt d\'actualització manual, llisca la pantalla d\'actualització per carregar</string>
     <string name="custom_url_not_set_or_blank">L\'URL personalitzat no està definit o està en blanc. Podeu anar a la configuració per afegir un URL personalitzat</string>
+    <string name="next_moon">Esdeveniments de la propera lluna?</string>
 </resources>

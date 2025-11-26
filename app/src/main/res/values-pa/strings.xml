@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">ਐਪ ਡੀਬੱਗ ਲੌਗਸ ਨੂੰ ਸੁਰੱਖਿਅਤ ਕਰੋ</string>
     <string name="manual_update_set_refresh_screen_to_load">ਮੈਨੁਅਲ ਅੱਪਡੇਟ ਸੈੱਟ, ਲੋਡ ਕਰਨ ਲਈ ਰਿਫ੍ਰੈਸ਼ ਸਕ੍ਰੀਨ ਨੂੰ ਸਵਾਈਪ ਕਰੋ</string>
     <string name="custom_url_not_set_or_blank">ਕਸਟਮ URL ਸੈੱਟ ਨਹੀਂ ਹੈ, ਜਾਂ ਖਾਲੀ ਹੈ। ਤੁਸੀਂ ਇੱਕ ਕਸਟਮ URL ਜੋੜਨ ਲਈ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜਾ ਸਕਦੇ ਹੋ</string>
+    <string name="next_moon">ਅਗਲੇ ਚੰਦਰਮਾ ਦੀਆਂ ਘਟਨਾਵਾਂ?</string>
 </resources>

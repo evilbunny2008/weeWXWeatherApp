@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Захаваць журналы адладкі праграмы</string>
     <string name="manual_update_set_refresh_screen_to_load">Усталявана абнаўленне ўручную, правядзіце пальцам па экране, каб загрузіць яго</string>
     <string name="custom_url_not_set_or_blank">Карыстальніцкі URL-адрас не зададзены або пусты. Вы можаце зайсці ў налады, каб дадаць уласны URL</string>
+    <string name="next_moon">Наступныя месячныя падзеі?</string>
 </resources>

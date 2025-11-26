@@ -3875,6 +3875,34 @@ class weeWXAppCommon
 		return str;
 	}
 
+	static String doMoon(String str)
+	{
+		str = str.strip();
+
+		if(!str.contains(" "))
+			return str;
+
+		if(str.length() > 0 && str.startsWith("0"))
+			str = str.substring(1);
+
+		try
+		{
+			String[] bits = str.split(" ", 3);
+			if(bits.length < 2 || bits[1].isBlank())
+				return str;
+
+			int day = (int)Float.parseFloat(bits[1].strip());
+			if(day > 31 || day < 1)
+				return str;
+
+			return bits[0] + " " + getDaySuffix(day);
+		} catch(Exception e) {
+			doStackOutput(e);
+		}
+
+		return str;
+	}
+
 	static String getDaySuffix(int day)
 	{
 		String suffix;

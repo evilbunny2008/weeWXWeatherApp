@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Bata a-application ti debug</string>
     <string name="manual_update_set_refresh_screen_to_load">A-update ti manuel, swipe écran ti charge</string>
     <string name="custom_url_not_set_or_blank">URL ti personnalisé ayeke pëpe, wala a yeke senge. Lo lingbi ti lï na yâ ti a-paramètre ti zia mbeni URL so a leke ni nde</string>
+    <string name="next_moon">Na peko ti aye so ayeke si na yâ ti nze?</string>
 </resources>

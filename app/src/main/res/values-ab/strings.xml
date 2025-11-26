@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Апрограмма ариашаратә журналқәа еиқәырхатәуп</string>
     <string name="manual_update_set_refresh_screen_to_load">Напыла арҿыцра акомплект, аҭагаларазы арҿыцра аекран еиҭага</string>
     <string name="custom_url_not_set_or_blank">Ахатә URL еиқәыршәаӡам, мамзаргьы иҭацәуп. Уара архиарақәа рахь унеир улшоит еиқәыршәоу URL ацҵаразы</string>
+    <string name="next_moon">Анаҩстәи амза ахҭысқәа?</string>
 </resources>

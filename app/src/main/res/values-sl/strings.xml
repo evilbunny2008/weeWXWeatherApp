@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Shranite dnevnike odpravljanja napak aplikacije</string>
     <string name="manual_update_set_refresh_screen_to_load">Ročna posodobitev je nastavljena, povlecite po zaslonu za nalaganje</string>
     <string name="custom_url_not_set_or_blank">URL po meri ni nastavljen ali pa je prazen. Lahko greste v nastavitve in dodate URL po meri</string>
+    <string name="next_moon">Dogodki na naslednji luni?</string>
 </resources>

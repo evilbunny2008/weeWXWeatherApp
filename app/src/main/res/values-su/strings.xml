@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Simpen log debug</string>
     <string name="manual_update_set_refresh_screen_to_load">Nyimpen pamutahiran manual, swores Screes Screes pikeun muka</string>
     <string name="custom_url_not_set_or_blank">URL adat henteu diatur, atanapi kosong. Anjeun tiasa angkat kana setélan pikeun nambihan URL khusus</string>
+    <string name="next_moon">Acara bulan salajengna?</string>
 </resources>

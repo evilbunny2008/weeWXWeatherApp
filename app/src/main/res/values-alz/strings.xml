@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Kwan app mi app</string>
     <string name="manual_update_set_refresh_screen_to_load">Set ma nyen ma ng\'ato nyalo ng\'eyo, ng\'ad screen mar dwoko piny</string>
     <string name="custom_url_not_set_or_blank">Custom URL epe, nyo epe. Icopo cidho i settings mi medo UL</string>
+    <string name="next_moon">I ng\'eye, lembe m\'utimere?</string>
 </resources>

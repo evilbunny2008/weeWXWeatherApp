@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Gem app-fejlretningslogfiler</string>
     <string name="manual_update_set_refresh_screen_to_load">Manuel opdateringssæt, stryg opdateringsskærmen for at indlæse</string>
     <string name="custom_url_not_set_or_blank">Tilpasset webadresse er ikke angivet eller er tom. Du kan gå ind i indstillinger for at tilføje en brugerdefineret URL</string>
+    <string name="next_moon">Næste månebegivenheder?</string>
 </resources>

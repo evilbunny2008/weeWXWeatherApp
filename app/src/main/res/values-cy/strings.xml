@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Arbed logiau dadfygio app</string>
     <string name="manual_update_set_refresh_screen_to_load">Set diweddariad â llaw, swipe adnewyddu sgrin i\'w llwytho</string>
     <string name="custom_url_not_set_or_blank">Nid yw URL personol wedi\'i osod, neu mae\'n wag. Gallwch chi fynd i mewn i leoliadau i ychwanegu URL personol</string>
+    <string name="next_moon">Digwyddiadau lleuad nesaf?</string>
 </resources>

@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">অ্যাপ ডিবাগ লগ সংরক্ষণ করুন</string>
     <string name="manual_update_set_refresh_screen_to_load">ম্যানুয়াল আপডেট সেট, লোড করতে রিফ্রেশ স্ক্রীন সোয়াইপ করুন</string>
     <string name="custom_url_not_set_or_blank">কাস্টম URL সেট করা নেই, বা ফাঁকা। আপনি একটি কাস্টম URL যোগ করতে সেটিংসে যেতে পারেন৷</string>
+    <string name="next_moon">পরবর্তী চাঁদের ঘটনা?</string>
 </resources>

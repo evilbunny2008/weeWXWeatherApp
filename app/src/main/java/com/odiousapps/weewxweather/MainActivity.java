@@ -88,7 +88,7 @@ public class MainActivity extends FragmentActivity
 	private CPEditText fgColour, bgColour;
 	private MaterialButton b1, b2, b3, b4;
 	private MaterialAutoCompleteTextView s1, s2, s3;
-	private MaterialSwitch wifi_only, use_icons, show_indoor, metric_forecasts, use_exact_alarm, save_app_debug_logs;
+	private MaterialSwitch wifi_only, use_icons, show_indoor, metric_forecasts, use_exact_alarm, save_app_debug_logs, next_moon;
 	private MaterialRadioButton showRadar, showForecast;
 	private static ViewPager2 mViewPager;
 
@@ -146,6 +146,7 @@ public class MainActivity extends FragmentActivity
 		R.id.customURL,
 		R.id.use_exact_alarm,
 		R.id.save_app_debug_logs,
+		R.id.next_moon,
 	};
 
 	ColorStateList strokeColors;
@@ -367,6 +368,7 @@ public class MainActivity extends FragmentActivity
 
 		use_exact_alarm = findViewById(R.id.use_exact_alarm);
 		save_app_debug_logs = findViewById(R.id.save_app_debug_logs);
+		next_moon = findViewById(R.id.next_moon);
 
 		b1 = findViewById(R.id.saveButton);
 		b2 = findViewById(R.id.deleteData);
@@ -416,7 +418,7 @@ public class MainActivity extends FragmentActivity
 		bgtil = findViewById(R.id.bgTextInputLayout);
 
 		int fg, bg;
-		boolean wo, ui, met, si, sr, sf, uea, sadl;
+		boolean wo, ui, met, si, sr, sf, uea, sadl, nm;
 
 		UpdateFrequency = weeWXAppCommon.GetIntPref("updateInterval", 1);
 		DayNightMode = weeWXAppCommon.GetIntPref("DayNightMode", weeWXApp.DayNightMode_default);
@@ -433,6 +435,7 @@ public class MainActivity extends FragmentActivity
 
 		uea = weeWXAppCommon.GetBoolPref("use_exact_alarm", weeWXApp.use_exact_alarm_default);
 		sadl = KeyValue.save_app_debug_logs;
+		nm = weeWXAppCommon.GetBoolPref("next_moon", weeWXApp.next_moon_default);
 
 		if(savedInstanceState != null)
 		{
@@ -455,6 +458,7 @@ public class MainActivity extends FragmentActivity
 			sr = savedInstanceState.getBoolean("sr", sr);
 			uea = savedInstanceState.getBoolean("uea", uea);
 			sadl = savedInstanceState.getBoolean("sadl", sadl);
+			nm = savedInstanceState.getBoolean("nm", nm);
 		}
 
 		// https://github.com/Pes8/android-material-color-picker-dialog
@@ -488,6 +492,7 @@ public class MainActivity extends FragmentActivity
 		show_indoor.setChecked(si);
 		use_exact_alarm.setChecked(uea);
 		save_app_debug_logs.setChecked(sadl);
+		next_moon.setChecked(nm);
 
 		showRadar.setChecked(sr);
 		showForecast.setChecked(!sr);
@@ -805,6 +810,7 @@ public class MainActivity extends FragmentActivity
 		outState.putBoolean("sr", showRadar.isChecked());
 		outState.putBoolean("uea", use_exact_alarm.isChecked());
 		outState.putBoolean("sadl", save_app_debug_logs.isChecked());
+		outState.putBoolean("nm", next_moon.isChecked());
 	}
 
 	private void setStrings()
@@ -1624,6 +1630,7 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.SetBoolPref("radarforecast", showRadar.isChecked());
 			weeWXAppCommon.SetBoolPref("use_exact_alarm", use_exact_alarm.isChecked());
 			weeWXAppCommon.SetBoolPref("save_app_debug_logs", KeyValue.save_app_debug_logs);
+			weeWXAppCommon.SetBoolPref("next_moon", next_moon.isChecked());
 
 			weeWXAppCommon.SetIntPref(weeWXAppCommon.WIDGET_THEME_MODE, widget_theme_mode);
 			KeyValue.widget_theme_mode = widget_theme_mode;
@@ -1651,40 +1658,22 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.LogMessage("Refresh widgets if at least one exists...");
 			WidgetProvider.updateAppWidget();
 
-			try
-			{
-				weeWXAppCommon.LogMessage("Sleeping for 0.5s...");
-				Thread.sleep(500L);
-			} catch(InterruptedException e) {
-				//weeWXAppCommon.doStackOutput(e);
-				return;
-			}
-
 			weeWXAppCommon.LogMessage("Restart the alarm...");
 
 			runOnUiThread(() ->
 			{
 				resetScreen();
 
-				weeWXAppCommon.LogMessage("Resetting mSectionsPagerAdapter");
-				mViewPager.setAdapter(null);
-
 				weeWXAppCommon.LogMessage("Apply the new themes");
 				weeWXApp.applyTheme(false);
 				WidgetProvider.updateAppWidget();
 
-				weeWXAppCommon.LogMessage("Recreate the activity...");
-				recreate();
-
-				weeWXAppCommon.LogMessage("Sleeping for 0.5 seconds to make sure recreate() finishes...");
-
 				runDelayed(500L, () ->
 				{
-					weeWXAppCommon.LogMessage("Make sure the hamburger and dropdowns etc are remade...");
+					weeWXAppCommon.LogMessage("Recreate the activity...");
+					recreate();
 
-					s1.setText(null, false);
-					s2.setText(null, false);
-					s3.setText(null, false);
+					weeWXAppCommon.LogMessage("Make sure the hamburger and dropdowns etc are remade...");
 
 					setStrings();
 

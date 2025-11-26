@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Mentse el az alkalmazás hibakeresési naplóit</string>
     <string name="manual_update_set_refresh_screen_to_load">Kézi frissítés beállítva, a betöltéshez húzza az ujját a frissítési képernyőn</string>
     <string name="custom_url_not_set_or_blank">Az egyéni URL nincs beállítva, vagy üres. Egyéni URL hozzáadásához lépjen a beállításokba</string>
+    <string name="next_moon">Következő hold eseményei?</string>
 </resources>

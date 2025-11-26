@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Simpan log debug aplikasi</string>
     <string name="manual_update_set_refresh_screen_to_load">Kumpulen pembaruan manual, gesek layar refresh guna muat</string>
     <string name="custom_url_not_set_or_blank">URL khusus la itetapken, ntah pe kosong. Banci kam masuk ku pengaturen guna nambahi URL khusus</string>
+    <string name="next_moon">Peristiwa bulan selanjutna?</string>
 </resources>

@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Save app debug registri</string>
     <string name="manual_update_set_refresh_screen_to_load">Manualno aktualizacia, swipe fresh ekran te charges</string>
     <string name="custom_url_not_set_or_blank">URL pe personali nu este, sau este blanco. Tu shaj zhas ande settingura te shaj shuves jekh personalizovano URL</string>
+    <string name="next_moon">Palal e eventura e lunaqe?</string>
 </resources>

@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Приложений отладочный журнал-влакым аралаш</string>
     <string name="manual_update_set_refresh_screen_to_load">Кид дене уэмдыме набор, прокрутка уэмдыме экраныште загрузка</string>
     <string name="custom_url_not_set_or_blank">Йӧндартыш URL-адрес огеш лий, але яра. Те каен кертыда настройкыш ешарен шкешотан URL-адрес</string>
+    <string name="next_moon">Вес тылзе событий-влак?</string>
 </resources>

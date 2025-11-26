@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">ऐप डिबग लॉग सहेजें</string>
     <string name="manual_update_set_refresh_screen_to_load">मैनुअल अपडेट सेट, लोड करय लेल रिफ्रेश स्क्रीन स्वाइप करू</string>
     <string name="custom_url_not_set_or_blank">कस्टम यूआरएल सेट नहि अछि, वा खाली अछि. अहाँ एकटा कस्टम यूआरएल जोड़बाक लेल सेटिंग मे जा सकैत छी</string>
+    <string name="next_moon">अगिला चन्द्रमाक आयोजन?</string>
 </resources>

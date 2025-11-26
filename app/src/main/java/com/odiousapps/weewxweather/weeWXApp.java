@@ -704,6 +704,7 @@ public class weeWXApp extends Application
 	final static boolean showIndoor_default = true;
 	final static boolean use_exact_alarm_default = false;
 	final static boolean save_app_debug_logs = false;
+	final static boolean next_moon_default = false;
 
 	final static int fgColour_default = 0xFFFFFFFF;
 	final static int bgColour_default = 0x00000000;

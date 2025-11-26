@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Luwasa ang mga troso sa debug sa app</string>
     <string name="manual_update_set_refresh_screen_to_load">Manwal nga update set, i-swipe ang refresh screen sa pag-load</string>
     <string name="custom_url_not_set_or_blank">Ang Custom URL wala ginbutang, ukon blangko. Mahimo ka magsulod sa mga setting sa pagdugang sa custom nga URL</string>
+    <string name="next_moon">Sunod nga mga hitabo sa bulan?</string>
 </resources>

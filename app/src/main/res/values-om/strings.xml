@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Save App Debug Galmeewwan</string>
     <string name="manual_update_set_refresh_screen_to_load">Saagi fooyya\'iinsa harkaa, iskiriinii haaromsaa swipe fe\'uuf</string>
     <string name="custom_url_not_set_or_blank">URL amala hin saagamu, ykn duwwaa dha. URL amala itti dabaluuf gara qindaa\'inootaatti deemuu dandeessa</string>
+    <string name="next_moon">Taateewwan Ji\'aa itti aanan?</string>
 </resources>

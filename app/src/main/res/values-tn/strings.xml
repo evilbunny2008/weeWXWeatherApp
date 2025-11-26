@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Boloka dikutu tsa go baakanya di-app</string>
     <string name="manual_update_set_refresh_screen_to_load">Sete ya ntšhwafatso ya diatla, sekerini sa go tsosolosa go laisa</string>
     <string name="custom_url_not_set_or_blank">URL e e tlwaelegileng ga e a bewa, kgotsa ga e na sepe. O ka tsena mo diseting go tsenya URL e e tlwaelegileng</string>
+    <string name="next_moon">Ditiragalo tse di latelang tsa ngwedi?</string>
 </resources>

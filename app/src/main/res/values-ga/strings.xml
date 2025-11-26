@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Sábháil logaí dífhabhtaithe app</string>
     <string name="manual_update_set_refresh_screen_to_load">Socrú nuashonraithe láimhe, svaidhpeáil an scáileán athnuachana le luchtú</string>
     <string name="custom_url_not_set_or_blank">Níl URL saincheaptha socraithe, nó tá sé bán. Is féidir leat dul isteach i socruithe chun URL saincheaptha a chur leis</string>
+    <string name="next_moon">Imeachtaí na gealaí seo chugainn?</string>
 </resources>

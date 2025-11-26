@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">යෙදුම් දෝශ නිරාකරණ ලොග සුරකින්න</string>
     <string name="manual_update_set_refresh_screen_to_load">අතින් යාවත්කාලීන කට්ටලය, පූරණය කිරීමට නැවුම් තිරය ස්වයිප් කරන්න</string>
     <string name="custom_url_not_set_or_blank">අභිරුචි URL සකසා නැත, නැතහොත් හිස් ය. අභිරුචි URL එකක් එක් කිරීමට ඔබට සැකසීම් වෙත යා හැක</string>
+    <string name="next_moon">ඊළඟ සඳ සිදුවීම්?</string>
 </resources>

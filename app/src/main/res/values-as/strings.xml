@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">এপ ডিবাগ লগসমূহ সংৰক্ষণ কৰক</string>
     <string name="manual_update_set_refresh_screen_to_load">Manual Update Set, ল\'ড কৰিবলৈ Swipe Refresh Screen</string>
     <string name="custom_url_not_set_or_blank">কাষ্টম URL ছেট কৰা হোৱা নাই, বা খালী। আপুনি এটা স্বনিৰ্বাচিত URL যোগ কৰিবলৈ ছেটিংছলৈ যাব পাৰে</string>
+    <string name="next_moon">নেক্সট মুন ইভেন্ট?</string>
 </resources>

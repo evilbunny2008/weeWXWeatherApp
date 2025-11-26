@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Hisnu logs debug</string>
     <string name="manual_update_set_refresh_screen_to_load">Seto keso keso, ekran refresh swipe ngam loowde</string>
     <string name="custom_url_not_set_or_blank">URL custom settaaka, walla ko ɓuuɓɗo. Aɗa waawi naatde e dottaaɗe ngam ɓeydude URL keeriiɗo</string>
+    <string name="next_moon">Kewuuji lewru garooji?</string>
 </resources>

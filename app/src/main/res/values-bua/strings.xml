@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Апп-кретарь логуудые хадагалха</string>
     <string name="manual_update_set_refresh_screen_to_load">Гараар шэнэлхэ набор, һэргээлтын дэлгэсые ашаглахын тулада һэргээнэ</string>
     <string name="custom_url_not_set_or_blank">Захиалгаар URL тогтоогдоогүй, али хооһон. Та захиалгаар URL нэмэжэ, настройконуудта орожо болохо</string>
+    <string name="next_moon">Удаадахи һарын үйлэ хэрэгүүд?</string>
 </resources>

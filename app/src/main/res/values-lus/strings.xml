@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Save app debug logs</string>
     <string name="manual_update_set_refresh_screen_to_load">Manual update set, swipe refresh screen a load theih</string>
     <string name="custom_url_not_set_or_blank">Custom URL hi a set lo a, a blank pawh a ni. Settings ah i lut thei ang a, custom URL 1000 add theih ang</string>
+    <string name="next_moon">Next Moon events?</string>
 </resources>

@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Αποθήκευση αρχείων καταγραφής εντοπισμού σφαλμάτων εφαρμογών</string>
     <string name="manual_update_set_refresh_screen_to_load">Σύνολο μη αυτόματης ενημέρωσης, σύρετε την οθόνη ανανέωσης για φόρτωση</string>
     <string name="custom_url_not_set_or_blank">Η προσαρμοσμένη διεύθυνση URL δεν έχει οριστεί ή είναι κενή. Μπορείτε να μεταβείτε στις ρυθμίσεις για να προσθέσετε μια προσαρμοσμένη διεύθυνση URL</string>
+    <string name="next_moon">Γεγονότα του επόμενου φεγγαριού;</string>
 </resources>

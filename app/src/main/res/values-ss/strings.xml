@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Gcina emalogi e-app</string>
     <string name="manual_update_set_refresh_screen_to_load">Isethi yekuvuselela ngesandla, swipe refup screen kute ulayishe</string>
     <string name="custom_url_not_set_or_blank">I-URL ye-Custom ayikho, noma ayikho lutfo. Ungangena etindzaweni tekwengeta i-URL yesiko</string>
+    <string name="next_moon">Tigameko letilandzelako tenyanga?</string>
 </resources>

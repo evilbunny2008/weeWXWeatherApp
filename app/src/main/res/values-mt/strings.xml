@@ -89,4 +89,5 @@
     <string name="save_app_debug_logs">Issejvja r-reġistri tad-debug tal-app</string>
     <string name="manual_update_set_refresh_screen_to_load">Sett ta \'aġġornament manwali, swipe aġġorna l-iskrin biex tagħbija</string>
     <string name="custom_url_not_set_or_blank">Il-URL personalizzat mhuwiex issettjat, jew huwa vojt. Tista\' tidħol fis-settings biex iżżid URL personalizzat</string>
+    <string name="next_moon">Avvenimenti tal-qamar li jmiss?</string>
 </resources>
