@@ -693,10 +693,9 @@ public class Weather extends Fragment implements View.OnClickListener
 					              weeWXApp.getAndroidString(R.string.radar_url_not_set) +
 					              weeWXApp.html_footer;
 					loadWebViewContent(html);
-					return;
+				} else {
+					loadWebViewURL(true, radarURL);
 				}
-
-				loadWebViewURL(true, radarURL);
 			}
 		} else {
 			weeWXAppCommon.LogMessage("Let's force download fresh forecast data...");
