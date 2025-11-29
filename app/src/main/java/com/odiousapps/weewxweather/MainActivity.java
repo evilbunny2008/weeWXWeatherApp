@@ -626,6 +626,8 @@ public class MainActivity extends FragmentActivity
 		UpdateCheck.cancelAlarm();
 
 		UpdateCheck.setNextAlarm();
+
+		UpdateCheck.runInTheBackground(false, false);
 	}
 
 	private void updateColours()

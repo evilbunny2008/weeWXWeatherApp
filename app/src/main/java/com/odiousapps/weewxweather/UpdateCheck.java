@@ -174,7 +174,7 @@ public class UpdateCheck extends BroadcastReceiver
 	private static void setExactAlarm(Context context, AlarmManager alarm, long start)
 	{
 		long current_time = weeWXAppCommon.getCurrTime();
-		alarm.setExact(AlarmManager.RTC_WAKEUP, start, getPendingIntent(context, false));
+		alarm.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, start, getPendingIntent(context, false));
 		weeWXAppCommon.LogMessage("UpdateCheck.java Successfully set the exact alarm for " +
 		                          (Math.round(start / 1_000D) - current_time) + "s time...", true);
 	}
