@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Fanavaozana ny fanavaozana, ny efijery swipe refresh</string>
     <string name="custom_url_not_set_or_blank">Tsy napetraka ny URL mahazatra, na tsy misy banga. Afaka miditra ao anaty filaharana ianao hampiditra URL mahazatra</string>
     <string name="next_moon">Hetsika manaraka ny volana?</string>
+    <string name="update_on_resume">Hanavao ny fampiharana amin\'ny fanombohana</string>
 </resources>

@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Neautomatinis naujinimas nustatytas, perbraukite atnaujinimo ekraną, kad įkeltumėte</string>
     <string name="custom_url_not_set_or_blank">Tinkintas URL nenustatytas arba yra tuščias. Galite pereiti į nustatymus, kad pridėtumėte tinkintą URL</string>
     <string name="next_moon">Kito mėnulio įvykiai?</string>
+    <string name="update_on_resume">Pradėjus atnaujinti programą</string>
 </resources>

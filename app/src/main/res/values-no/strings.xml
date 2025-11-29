@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manuell oppdateringssett, sveip oppdateringsskjermen for å laste</string>
     <string name="custom_url_not_set_or_blank">Egendefinert nettadresse er ikke angitt, eller den er tom. Du kan gå inn i innstillingene for å legge til en egendefinert URL</string>
     <string name="next_moon">Neste månebegivenheter?</string>
+    <string name="update_on_resume">Oppdater appen ved start</string>
 </resources>

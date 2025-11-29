@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">मॅन्युअल अपडेट सेट, लोड करण्यासाठी स्क्रीन रिफ्रेश करा</string>
     <string name="custom_url_not_set_or_blank">सानुकूल URL सेट केलेली नाही किंवा रिक्त आहे. सानुकूल URL जोडण्यासाठी तुम्ही सेटिंग्जमध्ये जाऊ शकता</string>
     <string name="next_moon">पुढील चंद्र घटना?</string>
+    <string name="update_on_resume">ॲप सुरू झाल्यावर अपडेट करा</string>
 </resources>

@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Seata ùrachadh làimhe, swipe an scrion ath-nuadhachaidh airson a luchdachadh</string>
     <string name="custom_url_not_set_or_blank">Chan eil URL gnàthaichte air a shuidheachadh, no tha e bàn. Faodaidh tu a dhol a-steach do roghainnean gus URL gnàthaichte a chuir ris</string>
     <string name="next_moon">Tachartasan an ath ghealach?</string>
+    <string name="update_on_resume">Luchdaich a-nuas an app aig an toiseach</string>
 </resources>

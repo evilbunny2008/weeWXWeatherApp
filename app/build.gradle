@@ -8,8 +8,8 @@ android {
         applicationId = "com.odiousapps.weewxweather"
         minSdk = 24
         targetSdk = 36
-	    versionName = "1.99.48beta"
-        versionCode = 1099048
+	    versionName = "1.99.49beta"
+        versionCode = 1099049
     }
 
 	buildFeatures {

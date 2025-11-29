@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">SETEMPET SETED SET, SCART CLIPES CLIPES SCARO</string>
     <string name="custom_url_not_set_or_blank">URL caadada ah lama dejin, ama madhan yahay. Waxaad aadi kartaa dejinta si aad ugu darto URL caadada ah</string>
     <string name="next_moon">Dhacdooyinka Dayaxa ee xigta?</string>
+    <string name="update_on_resume">Cusboonaysiinta App-ka bilowga</string>
 </resources>

@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">مجموعه به‌روزرسانی دستی، صفحه نمایش را به‌روزرسانی کنید تا بارگذاری شود</string>
     <string name="custom_url_not_set_or_blank">URL سفارشی تنظیم نشده است یا خالی است. برای افزودن یک URL سفارشی می توانید به تنظیمات بروید</string>
     <string name="next_moon">رویدادهای ماه بعدی؟</string>
+    <string name="update_on_resume">به روز رسانی برنامه در شروع</string>
 </resources>

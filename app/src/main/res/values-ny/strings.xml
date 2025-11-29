@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Kusintha kwa Manja Kukhazikitsidwa, Swipe Yotsitsimutsa</string>
     <string name="custom_url_not_set_or_blank">Ulalo wa makonda sukhazikitsidwa, kapena wopanda kanthu. Mutha kupita ku zoikamo kuti muwonjezere url ya chizolowezi</string>
     <string name="next_moon">Zochitika pamwezi?</string>
+    <string name="update_on_resume">Sinthani pulogalamu yoyambira</string>
 </resources>

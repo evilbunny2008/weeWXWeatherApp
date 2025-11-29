@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manual Update Set, Swipe Refresh screen okutikka</string>
     <string name="custom_url_not_set_or_blank">URL eya custom teteekeddwa, oba eba njereere. Osobola okugenda mu Settings okugattako URL eya custom</string>
     <string name="next_moon">Ebibaddewo mu mwezi oguddako?</string>
+    <string name="update_on_resume">Update app ku ntandikwa</string>
 </resources>

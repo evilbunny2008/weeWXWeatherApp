@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Set mizazour manyel, glis lekran rasi pour sarz</string>
     <string name="custom_url_not_set_or_blank">URL personnalize pa ganny mete, oubyen i vid. Ou kapab al dan bann laranzman pour azout en URL personnalize</string>
     <string name="next_moon">Bann prosen levennman lalinn?</string>
+    <string name="update_on_resume">Aplikasyon azour lo komansman</string>
 </resources>

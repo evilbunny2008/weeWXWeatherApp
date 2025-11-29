@@ -217,9 +217,12 @@ public class Weather extends Fragment implements View.OnClickListener
 						int height = Math.round(Float.parseFloat(value) * density);
 						int contentHeightPx = tv1.getHeight() + tv2.getHeight() + height;
 						ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
-						params.height = contentHeightPx; // - (int)(5 * density);
-						swipeLayout.setLayoutParams(params);
-						weeWXAppCommon.LogMessage("New Height: " + contentHeightPx);
+						if(params.height != contentHeightPx)
+						{
+							params.height = contentHeightPx; // - (int)(5 * density);
+							swipeLayout.setLayoutParams(params);
+							weeWXAppCommon.LogMessage("New Height: " + contentHeightPx);
+						}
 					} catch (Exception ignored) {}
 				}
 		);
@@ -1177,7 +1180,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		weeWXAppCommon.LogMessage("Weather.java notificationObserver: " + str);
+		weeWXAppCommon.LogMessage("Weather.java notificationObserver: " + str, true);
 
 		if(str.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
 			drawForecast();

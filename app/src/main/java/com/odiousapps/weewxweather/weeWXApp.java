@@ -705,6 +705,7 @@ public class weeWXApp extends Application
 	final static boolean use_exact_alarm_default = false;
 	final static boolean save_app_debug_logs = false;
 	final static boolean next_moon_default = false;
+	final static boolean update_on_resume_default = true;
 
 	final static int fgColour_default = 0xFFFFFFFF;
 	final static int bgColour_default = 0x00000000;
@@ -780,7 +781,7 @@ public class weeWXApp extends Application
 		UpdateCheck.setNextAlarm();
 
 		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.runInTheBackground(false, true);", true);
-		UpdateCheck.runInTheBackground(false, true);
+		UpdateCheck.runInTheBackground(false, true, false);
 	}
 
 	@Override

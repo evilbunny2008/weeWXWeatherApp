@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Set update manual, gesper layar refresh keu beban</string>
     <string name="custom_url_not_set_or_blank">URL Adat hana set, atawa kosong. Kamoe jeut neujak lam setting untuk neu tamah URL custom</string>
     <string name="next_moon">Acara buleun selanjut jih?</string>
+    <string name="update_on_resume">Update app bak start</string>
 </resources>

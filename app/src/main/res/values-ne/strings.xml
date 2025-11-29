@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">म्यानुअल अपडेट सेट, लोड गर्न रिफ्रेस स्क्रिन स्वाइप गर्नुहोस्</string>
     <string name="custom_url_not_set_or_blank">आफू अनुकूल URL सेट गरिएको छैन, वा खाली छ। तपाईं आफू अनुकूल URL थप्न सेटिङहरूमा जान सक्नुहुन्छ</string>
     <string name="next_moon">अर्को चन्द्रमा घटनाहरू?</string>
+    <string name="update_on_resume">सुरुमा एप अपडेट गर्नुहोस्</string>
 </resources>

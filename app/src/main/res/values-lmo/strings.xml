@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Tant de la buttega, i impostaziun de la buttiglia sun stà duperà per l\'utente</string>
     <string name="custom_url_not_set_or_blank">El schermu l\'è minga el nomm de la scherma: Pœu duperà un\'aplicaziun per un\'aplicaziun per el voster sit web</string>
     <string name="next_moon">L\'è el me corp?</string>
+    <string name="update_on_resume">Seleziuna el noster prugrama</string>
 </resources>

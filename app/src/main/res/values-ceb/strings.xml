@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">TINUOD NGA PAG-UPPLET, SWEPE REFRESH SCREENT SA LOAD</string>
     <string name="custom_url_not_set_or_blank">Ang naandan nga URL wala gitakda, o blangko. Mahimo ka makasulod sa mga setting aron makadugang usa ka naandan nga URL</string>
     <string name="next_moon">Sunod nga mga panghitabo sa bulan?</string>
+    <string name="update_on_resume">Pag-update sa app sa pagsugod</string>
 </resources>

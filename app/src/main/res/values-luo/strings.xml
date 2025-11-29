@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Skrin mar loso gik moko kaka pile, skrin ma dwoko piny</string>
     <string name="custom_url_not_set_or_blank">URL mar ng\'ato ok oket, kata onge gimoro. Inyalo donjo e chenro mondo imed URL ma idwaro</string>
     <string name="next_moon">Gik ma biro timore e dwe mabiro?</string>
+    <string name="update_on_resume">Program mar loso gikmoko bang\' chako</string>
 </resources>

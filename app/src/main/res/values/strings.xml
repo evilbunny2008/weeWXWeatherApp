@@ -91,4 +91,5 @@
 	<string name="manual_update_set_refresh_screen_to_load">Manual update set, swipe refresh screen to load</string>
 	<string name="custom_url_not_set_or_blank">Custom URL isn\'t set, or is blank. You can go into settings to add a custom URL</string>
 	<string name="next_moon">Next moon events?</string>
+	<string name="update_on_resume">Update app on start</string>
 </resources>

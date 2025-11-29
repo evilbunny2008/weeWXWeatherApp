@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Na vakavoui ni iVoladusidusi e biu, sikirini ni sikirini me damoriti kina</string>
     <string name="custom_url_not_set_or_blank">E sega ni tauyavutaki, se me lagalagati. E rawa ni o lako ki na ituvatuva mo vakuria kina e dua na URL</string>
     <string name="next_moon">E yaco na vula qo?</string>
+    <string name="update_on_resume">Ia, e Viti e na kena tekivu</string>
 </resources>

@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Ukubwekeshapo kwaciko, suleni icikope icakubwekeshapo ukubika</string>
     <string name="custom_url_not_set_or_blank">URL ya cisenshi tayabikwa, nangu ni iyabulamo. Kuti waya mu fifulo pakuti ulenge URL iyalinga</string>
     <string name="next_moon">Ificitika fya mweshi ifyakonkapo?</string>
+    <string name="update_on_resume">Ukubwekeshapo app pa kutendeka</string>
 </resources>

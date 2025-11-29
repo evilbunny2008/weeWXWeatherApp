@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manueel update set, veeg verfrissingssjerm um te lade</string>
     <string name="custom_url_not_set_or_blank">Aangepaste URL is neet ingesjtèld, of is leeg. U kin in instellinge goon um \'n aonpasde URL touw te voge</string>
     <string name="next_moon">Volgende maongebeurtenisse?</string>
+    <string name="update_on_resume">Bijwerk app bij \'t begin</string>
 </resources>

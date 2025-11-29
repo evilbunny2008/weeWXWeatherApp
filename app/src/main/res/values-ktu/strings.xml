@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Kuyidika ya mpa, ecran ya kuvutukila sambu na kutula</string>
     <string name="custom_url_not_set_or_blank">URL ya kuyidika me tulama ve, to kele mpamba. Nge lenda kota na baparametre sambu na kuyika URL ya bo me yidika</string>
     <string name="next_moon">Bafeti ya ngonda ke landa?</string>
+    <string name="update_on_resume">App ya mpa na luyantiku</string>
 </resources>

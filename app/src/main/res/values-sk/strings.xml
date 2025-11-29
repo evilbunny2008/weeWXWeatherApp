@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Nastavená manuálna aktualizácia, potiahnutím obnovovacej obrazovky načítajte</string>
     <string name="custom_url_not_set_or_blank">Vlastná adresa URL nie je nastavená alebo je prázdna. Môžete prejsť do nastavení a pridať vlastnú adresu URL</string>
     <string name="next_moon">Ďalšie udalosti na Mesiaci?</string>
+    <string name="update_on_resume">Aktualizujte aplikáciu pri spustení</string>
 </resources>

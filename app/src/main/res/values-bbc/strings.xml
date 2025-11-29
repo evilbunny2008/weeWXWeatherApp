@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Set pembaruan manual set, layar ref refah</string>
     <string name="custom_url_not_set_or_blank">URL Adat ndang diatur, manang kosong. Boi do hamu masuk tu pengaturan laho manambai URL khusus</string>
     <string name="next_moon">Acara bulan selanjutna?</string>
+    <string name="update_on_resume">Aplikasi pembaruan di mulai</string>
 </resources>

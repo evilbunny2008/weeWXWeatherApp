@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Set nganyari manual, Swipe Refresh layar kanggo mbukak</string>
     <string name="custom_url_not_set_or_blank">URL adat ora disetel, utawa kosong. Sampeyan bisa pindhah menyang Setelan kanggo nambah URL khusus</string>
     <string name="next_moon">Sabanjure acara?</string>
+    <string name="update_on_resume">Nganyari app ing wiwitan</string>
 </resources>

@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manuāla atjaunināšana ir iestatīta, velciet atsvaidzināšanas ekrānu, lai ielādētu</string>
     <string name="custom_url_not_set_or_blank">Pielāgotais URL nav iestatīts vai ir tukšs. Varat atvērt iestatījumus, lai pievienotu pielāgotu URL</string>
     <string name="next_moon">Nākamā mēness notikumi?</string>
+    <string name="update_on_resume">Atjauniniet lietotni startēšanas laikā</string>
 </resources>

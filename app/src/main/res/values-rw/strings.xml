@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Ivugurura ryashyizweho, rihanagura refresh ecran</string>
     <string name="custom_url_not_set_or_blank">URL yihariye ntabwo yashyizweho, cyangwa irimo ubusa. Urashobora kujya muri Igenamiterere kugirango wongere url yihariye</string>
     <string name="next_moon">Ukwezi kuzakurikira?</string>
+    <string name="update_on_resume">Kuvugurura porogaramu mugitangira</string>
 </resources>

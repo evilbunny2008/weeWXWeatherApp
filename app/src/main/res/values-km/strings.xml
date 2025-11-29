@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">សំណុំធ្វើឱ្យទាន់សម័យដោយដៃ, អូសអេក្រង់ស្រស់ដើម្បីផ្ទុក</string>
     <string name="custom_url_not_set_or_blank">URL ផ្ទាល់ខ្លួនមិនត្រូវបានកំណត់ទេឬនៅទទេ។ អ្នកអាចចូលទៅក្នុងការកំណត់ដើម្បីបន្ថែម URL ផ្ទាល់ខ្លួន</string>
     <string name="next_moon">ព្រឹត្តិការណ៍ព្រះច័ន្ទបន្ទាប់?</string>
+    <string name="update_on_resume">ធ្វើបច្ចុប្បន្នភាពកម្មវិធីនៅពេលចាប់ផ្តើម</string>
 </resources>

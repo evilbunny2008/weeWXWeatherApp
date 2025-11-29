@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manual Update Set, Swipe Refresh Screen to Load</string>
     <string name="custom_url_not_set_or_blank">URL si wowɔ ɖe ɖoɖo nu la menye esi woɖo o, alo le ƒuƒlu. Àte ŋu ayi ɖe ɖoɖowo me atsɔ URL si wowɔ ɖe ɖoɖo nu akpe ɖe eŋu</string>
     <string name="next_moon">Ɣleti ƒe nudzɔdzɔ siwo kplɔe ɖo?</string>
+    <string name="update_on_resume">Update app le START</string>
 </resources>

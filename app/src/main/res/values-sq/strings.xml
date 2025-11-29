@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Caktimi i përditësimit manual, rrëshqitni ekranin e rifreskimit për t\'u ngarkuar</string>
     <string name="custom_url_not_set_or_blank">URL-ja e personalizuar nuk është caktuar ose është bosh. Mund të shkoni te cilësimet për të shtuar një URL të personalizuar</string>
     <string name="next_moon">Ngjarjet e hënës së ardhshme?</string>
+    <string name="update_on_resume">Përditëso aplikacionin në fillim</string>
 </resources>

@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Konjuntu atualizasaun manuál, swipe screen refresh hodi karrega</string>
     <string name="custom_url_not_set_or_blank">URL personalizadu la tau, ka mamuk. Ita bele tama iha setting hodi aumenta URL personalizadu</string>
     <string name="next_moon">Eventu fulan tuir mai?</string>
+    <string name="update_on_resume">Atualizasaun app iha inísiu</string>
 </resources>

@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">دستي اپڊيٽ سيٽ، سوائپ ڪريو ريفريش اسڪرين لوڊ ڪرڻ لاءِ</string>
     <string name="custom_url_not_set_or_blank">ڪسٽم URL سيٽ نه آهي، يا خالي آهي. توھان سيٽنگون ڏانھن وڃو ڪسٽم URL شامل ڪرڻ لاءِ</string>
     <string name="next_moon">ايندڙ چنڊ واقعا؟</string>
+    <string name="update_on_resume">ايپ کي شروع ڪرڻ تي تازه ڪاري ڪريو</string>
 </resources>

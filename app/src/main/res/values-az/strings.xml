@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Əl ilə yeniləmə dəsti, yükləmək üçün yeniləmə ekranı çalın</string>
     <string name="custom_url_not_set_or_blank">Xüsusi URL qurulmamış və ya boş deyil. Xüsusi URL əlavə etmək üçün parametrlərə daxil ola bilərsiniz</string>
     <string name="next_moon">Növbəti ay hadisələri?</string>
+    <string name="update_on_resume">Başlanğıcda tətbiq yeniləyin</string>
 </resources>

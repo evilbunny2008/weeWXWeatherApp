@@ -3485,23 +3485,24 @@ class weeWXAppCommon
 		String fctype = GetStringPref("fctype", weeWXApp.fctype_default);
 		if(fctype == null || fctype.isBlank())
 		{
+			LogMessage("fctype == null || fctype.isBlank(), skipping...", true);
 			String finalErrorStr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
 			return new String[]{"error", finalErrorStr, fctype};
 		}
 
-		LogMessage("getForecast() fctype: " + fctype);
+		LogMessage("getForecast() fctype: " + fctype, true);
 
 		String forecast_url = GetStringPref("FORECAST_URL", weeWXApp.FORECAST_URL_default);
 		if(forecast_url == null || forecast_url.isBlank())
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.forecast_url_not_set), fctype};
 
-		LogMessage("forecast_url: " + forecast_url);
+		LogMessage("forecast_url: " + forecast_url, true);
 
 		String forecastData = GetStringPref("forecastData", weeWXApp.forecastData_default);
 
 		if(!checkConnection() && !forced)
 		{
-			LogMessage("Not on wifi and not a forced refresh");
+			LogMessage("Not on wifi and not a forced refresh", true);
 			if(forecastData == null || forecastData.isBlank())
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available), fctype};
 
@@ -3513,13 +3514,13 @@ class weeWXAppCommon
 		           "s, forced set to: " + forced, true);
 		if(pos < 0)
 		{
-			LogMessage("Invalid update frequency...");
+			LogMessage("Invalid update frequency...", true);
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.invalid_update_interval), fctype};
 		}
 
 		if(!forced && pos == 0)
 		{
-			LogMessage("Set to manual update and not forced...");
+			LogMessage("Set to manual update and not forced...", true);
 
 			if(forecastData == null || forecastData.isBlank())
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available), fctype};
@@ -3531,7 +3532,7 @@ class weeWXAppCommon
 		long rssCheckTime = getRSSsecs();
 		if(rssCheckTime == 0)
 		{
-			LogMessage("Bad rssCheckTime, skipping...");
+			LogMessage("Bad rssCheckTime, skipping...", true);
 			if(forecastData == null || forecastData.isBlank())
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
 
@@ -3542,18 +3543,18 @@ class weeWXAppCommon
 		   forecastData != null && !forecastData.isBlank())
 		{
 			LogMessage("Cache isn't more than " + weeWXApp.RSSCache_period_default + "s old (" +
-			           (current_time - rssCheckTime) + "s old)");
+			           (current_time - rssCheckTime) + "s old)", true);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String date = sdf.format(rssCheckTime * 1_000L);
-			LogMessage("rsscheck: " + date);
+			LogMessage("rsscheck: " + date, true);
 			date = sdf.format(current_time * 1_000L);
-			LogMessage("current_time: " + date);
+			LogMessage("current_time: " + date, true);
 			return new String[]{"ok", forecastData, fctype};
 		}
 
 		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp && !forced)
 		{
-			LogMessage("not fully booted or not called from weeWX App class or not forced...");
+			LogMessage("not fully booted or not called from weeWX App class or not forced...", true);
 
 			if(forecastData != null && !forecastData.isBlank())
 				return new String[]{"ok", forecastData, fctype};
@@ -3566,7 +3567,7 @@ class weeWXAppCommon
 			if(ftStart + 30 > current_time)
 			{
 				LogMessage("forecastTask is less than 30s old (" + (current_time - ftStart) +
-				           "s), we'll skip this attempt...");
+				           "s), we'll skip this attempt...", true);
 				return new String[]{"ok", forecastData, fctype};
 			}
 
@@ -3574,17 +3575,17 @@ class weeWXAppCommon
 			forecastTask = null;
 		}
 
-		LogMessage("RSSCache_period_default: " + weeWXApp.RSSCache_period_default);
-		LogMessage("current_time: " + current_time);
-		LogMessage("rssCheckTime: " + rssCheckTime);
+		LogMessage("RSSCache_period_default: " + weeWXApp.RSSCache_period_default, true);
+		LogMessage("current_time: " + current_time, true);
+		LogMessage("rssCheckTime: " + rssCheckTime, true);
 		LogMessage("Was forced or no forecast data or cache is more than " + weeWXApp.RSSCache_period_default +
-		           "s old (" + (current_time - rssCheckTime) + "s)");
+		           "s old (" + (current_time - rssCheckTime) + "s)", true);
 
 		ftStart = current_time;
 
 		forecastTask = executor.submit(() ->
 		{
-			LogMessage("Forecast checking: " + forecast_url);
+			LogMessage("Forecast checking: " + forecast_url, true);
 
 			String tmpForecastData;
 
@@ -3592,7 +3593,7 @@ class weeWXAppCommon
 			{
 				tmpForecastData = reallyGetForecast(forecast_url);
 			} catch(Exception e) {
-				LogMessage("Error! e: " + e);
+				LogMessage("Error! e: " + e, true);
 				return;
 			}
 
@@ -3604,7 +3605,7 @@ class weeWXAppCommon
 				return;
 			}
 
-			LogMessage("Failed to successfully update forecast data...");
+			LogMessage("Failed to successfully update forecast data...", true);
 			SendIntent(STOP_FORECAST_INTENT);
 			ftStart = 0;
 		});

@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">מאַנואַל דערהייַנטיקן שטעלן, לאַקכענען דערפרישן פאַרשטעלן צו מאַסע</string>
     <string name="custom_url_not_set_or_blank">מנהג URL איז נישט באַשטימט, אָדער איז ליידיק. איר קענט גיין צו סעטטינגס צו לייגן אַ מנהג URL</string>
     <string name="next_moon">קומענדיקע לבנה געשעענישן?</string>
+    <string name="update_on_resume">דערהייַנטיקן אַפּ אויף אָנהייב</string>
 </resources>

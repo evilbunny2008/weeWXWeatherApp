@@ -90,4 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Mmelite mmelite ntuziaka, swipe na-eme ka ihuenyo</string>
     <string name="custom_url_not_set_or_blank">URL ọdịnala anaghị edobe, ma ọ bụ na-enweghị oghere. Can nwere ike ịbanye na ntọala iji tinye URL omenala</string>
     <string name="next_moon">Ọ na-esote ọnwa?</string>
+    <string name="update_on_resume">Mmelite ngwa na mmalite</string>
 </resources>
