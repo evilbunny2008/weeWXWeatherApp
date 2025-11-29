@@ -244,7 +244,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 	static void runInTheBackground(boolean onReceivedUpdate, boolean onAppStart, boolean onResume)
 	{
-		boolean forced = weeWXAppCommon.isPrefSet("update_on_resume") && onResume &&
+		boolean forced = weeWXAppCommon.isPrefSet("radarforecast") && onResume &&
 		                 weeWXAppCommon.GetBoolPref("update_on_resume", weeWXApp.update_on_resume_default);
 
 		weeWXAppCommon.LogMessage("UpdateCheck.java runInTheBackground() running the background updates...", true);
