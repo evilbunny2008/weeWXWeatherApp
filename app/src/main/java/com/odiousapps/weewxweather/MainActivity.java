@@ -643,6 +643,8 @@ public class MainActivity extends FragmentActivity
 	protected void onPause()
 	{
 		KeyValue.isVisible = false;
+
+		super.onPause();
 	}
 
 	private void updateColours()
