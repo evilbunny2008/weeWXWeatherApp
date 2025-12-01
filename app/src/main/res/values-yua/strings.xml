@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL personalizado ma\' táan establecido, wa táan ti\' sak. Je\'el bin ti\' ajustes utia\'al u ts\'áabal jump\'éel URL personalizada</string>
     <string name="next_moon">Tu láak\' k\'inbesajo\'ob luna?</string>
     <string name="update_on_resume">Actualizar ka\'anatako\'ob ti\' le Chúunul</string>
+    <string name="update_while_visible">Actualizar ka\' jo\'op\' u app abierta</string>
 </resources>

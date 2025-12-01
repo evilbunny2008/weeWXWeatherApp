@@ -21,4 +21,6 @@ class KeyValue
 	final static Map<Integer, Integer> widgetMaxWidth = new HashMap<>();
 
 	static boolean save_app_debug_logs = false;
+
+	static boolean isVisible = false;
 }

@@ -102,6 +102,8 @@ public class Stats extends Fragment
 		weeWXAppCommon.LogMessage("Stats.onDestroyView()");
 		super.onDestroyView();
 
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(getViewLifecycleOwner());
+
 		if(wv != null)
 		{
 			ViewParent parent = wv.getParent();

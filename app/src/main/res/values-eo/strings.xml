@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Propra URL ne estas agordita aŭ estas malplena. Vi povas iri en agordojn por aldoni kutiman URL</string>
     <string name="next_moon">Okazaĵoj de la venonta luno?</string>
     <string name="update_on_resume">Ĝisdatigu la apon ĉe la komenco</string>
+    <string name="update_while_visible">Ĝisdatigu dum aplikaĵo malfermita</string>
 </resources>

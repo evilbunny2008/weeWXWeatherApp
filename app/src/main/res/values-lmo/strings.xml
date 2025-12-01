@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">El schermu l\'è minga el nomm de la scherma: Pœu duperà un\'aplicaziun per un\'aplicaziun per el voster sit web</string>
     <string name="next_moon">L\'è el me corp?</string>
     <string name="update_on_resume">Seleziuna el noster prugrama</string>
+    <string name="update_while_visible">Seleziuna el cuntrol de la buttega</string>
 </resources>

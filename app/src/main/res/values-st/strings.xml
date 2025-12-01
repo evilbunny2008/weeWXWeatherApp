@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL ea moetlo ha e behe, kapa ha e na letho. O ka ea litlhophiso ho eketsa URL ea tloaelo</string>
     <string name="next_moon">Liketsahalo tse latelang tsa khoeli?</string>
     <string name="update_on_resume">Ntlafatsa App ka Qalo</string>
+    <string name="update_while_visible">Ntlafatso ha a bula</string>
 </resources>

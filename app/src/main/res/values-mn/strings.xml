@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Захиалгат URL нь тохируулагдаагүй, эсвэл хоосон байна. Та Custom URL нэмэх тохиргоонд орж болно</string>
     <string name="next_moon">Дараагийн сарны арга хэмжээ?</string>
     <string name="update_on_resume">Эхлэх програмыг шинэчлэх</string>
+    <string name="update_while_visible">Апп нээлттэй байхад шинэчлэх</string>
 </resources>

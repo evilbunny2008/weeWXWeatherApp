@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">מנהג URL איז נישט באַשטימט, אָדער איז ליידיק. איר קענט גיין צו סעטטינגס צו לייגן אַ מנהג URL</string>
     <string name="next_moon">קומענדיקע לבנה געשעענישן?</string>
     <string name="update_on_resume">דערהייַנטיקן אַפּ אויף אָנהייב</string>
+    <string name="update_while_visible">דערהייַנטיקן בשעת די אַפּלאַקיישאַן איז עפענען</string>
 </resources>

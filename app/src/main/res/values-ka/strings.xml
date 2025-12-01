@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">მორგებული URL არ არის დაყენებული ან ცარიელია. შეგიძლიათ შეხვიდეთ პარამეტრებში მორგებული URL-ის დასამატებლად</string>
     <string name="next_moon">შემდეგი მთვარის მოვლენები?</string>
     <string name="update_on_resume">განაახლეთ აპლიკაცია დაწყებისას</string>
+    <string name="update_while_visible">განაახლეთ აპის გახსნისას</string>
 </resources>

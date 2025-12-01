@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">सानुकूल URL सेट केलेली नाही किंवा रिक्त आहे. सानुकूल URL जोडण्यासाठी तुम्ही सेटिंग्जमध्ये जाऊ शकता</string>
     <string name="next_moon">पुढील चंद्र घटना?</string>
     <string name="update_on_resume">ॲप सुरू झाल्यावर अपडेट करा</string>
+    <string name="update_while_visible">ॲप उघडताना अपडेट करा</string>
 </resources>

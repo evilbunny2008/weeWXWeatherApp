@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Benotzerdefinéiert URL ass net gesat oder ass eidel. Dir kënnt an d\'Astellunge goen fir eng personaliséiert URL ze addéieren</string>
     <string name="next_moon">Nächste Mound Evenementer?</string>
     <string name="update_on_resume">Update App beim Start</string>
+    <string name="update_while_visible">Update wärend d\'App opmaacht</string>
 </resources>

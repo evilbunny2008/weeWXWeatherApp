@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Codomгары URL куелмаган, яисә буш түгел. Сез махсус URL өстәр өчен көйләүләргә керә аласыз</string>
     <string name="next_moon">Киләсе ай вакыйгалары?</string>
     <string name="update_on_resume">Стартта кушымтаны яңарту</string>
+    <string name="update_while_visible">Кушымта булганда яңарту</string>
 </resources>

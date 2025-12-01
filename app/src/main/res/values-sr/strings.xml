@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Прилагођени УРЛ није подешен или је празан. Можете да одете у подешавања да додате прилагођени УРЛ</string>
     <string name="next_moon">Догађаји следећег месеца?</string>
     <string name="update_on_resume">Ажурирајте апликацију на почетку</string>
+    <string name="update_while_visible">Ажурирајте док је апликација отворена</string>
 </resources>

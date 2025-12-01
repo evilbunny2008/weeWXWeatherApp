@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL ma tye ki ngec pe kiketo, nyo tye nono. Itwero donyo i yub me medo URL ma rwate</string>
     <string name="next_moon">I kare me dwe ma lubo meno?</string>
     <string name="update_on_resume">Lok app i acaki</string>
+    <string name="update_while_visible">Medo ka app tye ka yabo</string>
 </resources>

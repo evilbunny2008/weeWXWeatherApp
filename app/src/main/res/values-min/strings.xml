@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL Adat indak diatur, atau kosong. Sanak dapek masuak ka dalam pangaturan untuak manambah URL khusus</string>
     <string name="next_moon">Kajadian bulan barikuiknyo?</string>
     <string name="update_on_resume">Aplikasi Pembaruan pado awal</string>
+    <string name="update_while_visible">Perbarui katiko app bukak</string>
 </resources>

@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Kohandatud URL pole määratud või on tühi. Kohandatud URL-i lisamiseks võite minna seadetesse</string>
     <string name="next_moon">Järgmise kuu sündmused?</string>
     <string name="update_on_resume">Värskendage rakendust käivitamisel</string>
+    <string name="update_while_visible">Värskenda, kui rakendus on avatud</string>
 </resources>

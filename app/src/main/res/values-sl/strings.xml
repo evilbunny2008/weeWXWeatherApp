@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL po meri ni nastavljen ali pa je prazen. Lahko greste v nastavitve in dodate URL po meri</string>
     <string name="next_moon">Dogodki na naslednji luni?</string>
     <string name="update_on_resume">Posodobite aplikacijo ob zagonu</string>
+    <string name="update_while_visible">Posodobite med odprto aplikacijo</string>
 </resources>

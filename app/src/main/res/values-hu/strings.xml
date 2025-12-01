@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Az egyéni URL nincs beállítva, vagy üres. Egyéni URL hozzáadásához lépjen a beállításokba</string>
     <string name="next_moon">Következő hold eseményei?</string>
     <string name="update_on_resume">Frissítse az alkalmazást indításkor</string>
+    <string name="update_while_visible">Frissítés az alkalmazás megnyitásakor</string>
 </resources>

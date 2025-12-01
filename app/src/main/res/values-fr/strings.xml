@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">L\'URL personnalisée n\'est pas définie ou est vide. Vous pouvez accéder aux paramètres pour ajouter une URL personnalisée</string>
     <string name="next_moon">Les événements de la prochaine lune?</string>
     <string name="update_on_resume">Mettre à jour l\'application au démarrage</string>
+    <string name="update_while_visible">Mettre à jour pendant l\'ouverture de l\'application</string>
 </resources>

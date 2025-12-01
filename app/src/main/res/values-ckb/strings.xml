@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URLی تایبەت بەخۆی دانەنراوە، یان سپییە. دەتوانیت بچیتە ناو ڕێکخستنەکان بۆ زیادکردنی URLی تایبەت</string>
     <string name="next_moon">ڕووداوەکانی مانگی داهاتوو؟</string>
     <string name="update_on_resume">نوێکردنەوەی ئەپەکە لەسەر دەستپێکردن</string>
+    <string name="update_while_visible">نوێ بکەرەوە لەکاتێکدا ئەپەکە کراوە دەبێت</string>
 </resources>

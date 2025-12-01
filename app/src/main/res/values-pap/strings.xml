@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL personalisá no ta set, òf ta blanku. Bo por bai den settings pa añadí un URL personalisá</string>
     <string name="next_moon">Susesonan di siguiente luna?</string>
     <string name="update_on_resume">Aktualisashon di app na kuminsamentu</string>
+    <string name="update_while_visible">Update mientras app ta habri</string>
 </resources>

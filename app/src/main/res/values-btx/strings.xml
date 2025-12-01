@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL khusus la itetapken, ntah pe kosong. Banci kam masuk ku pengaturen guna nambahi URL khusus</string>
     <string name="next_moon">Peristiwa bulan selanjutna?</string>
     <string name="update_on_resume">Update aplikasi i bas awal</string>
+    <string name="update_while_visible">Update sanga aplikasi buka</string>
 </resources>

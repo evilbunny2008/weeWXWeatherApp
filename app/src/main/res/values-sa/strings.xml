@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Custom URL सेट् न भवति, अथवा रिक्तम् अस्ति । भवान् कस्टम् URL योजयितुं सेटिङ्ग्स् मध्ये गन्तुं शक्नोति ।</string>
     <string name="next_moon">अगला चन्द्र events?</string>
     <string name="update_on_resume">प्रारम्भ पर एप् अपडेट करें</string>
+    <string name="update_while_visible">App उद्घाटने जबकि अपडेट करें</string>
 </resources>

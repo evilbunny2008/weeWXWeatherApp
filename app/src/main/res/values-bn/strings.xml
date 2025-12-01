@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">কাস্টম URL সেট করা নেই, বা ফাঁকা। আপনি একটি কাস্টম URL যোগ করতে সেটিংসে যেতে পারেন৷</string>
     <string name="next_moon">পরবর্তী চাঁদের ঘটনা?</string>
     <string name="update_on_resume">শুরুতে অ্যাপ আপডেট করুন</string>
+    <string name="update_while_visible">অ্যাপ খোলার সময় আপডেট করুন</string>
 </resources>

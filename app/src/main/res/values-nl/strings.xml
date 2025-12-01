@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Aangepaste URL is niet ingesteld of is leeg. U kunt naar de instellingen gaan om een ​​aangepaste URL toe te voegen</string>
     <string name="next_moon">Volgende maanevenementen?</string>
     <string name="update_on_resume">App bijwerken bij opstarten</string>
+    <string name="update_while_visible">Update terwijl de app geopend is</string>
 </resources>

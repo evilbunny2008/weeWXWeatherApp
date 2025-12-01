@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Приспособената URL-адреса не е поставена или е празна. Може да отидете во поставките за да додадете сопствена URL-адреса</string>
     <string name="next_moon">Следни настани на месечината?</string>
     <string name="update_on_resume">Ажурирајте ја апликацијата при стартување</string>
+    <string name="update_while_visible">Ажурирајте додека е отворена апликацијата</string>
 </resources>

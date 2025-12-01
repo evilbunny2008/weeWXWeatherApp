@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Custom URL lɛ jeee nɔ ni ato, loo ebɛ nɔ ko nɔ ko. Obaanyɛ oya gbɛjianɔtoo mli koni okɛ URL ni afee lɛ diɛŋtsɛ afata he</string>
     <string name="next_moon">Nyɔŋtsere lɛ nifeemɔi ni nyiɛ sɛɛ lɛ?</string>
     <string name="update_on_resume">Tsakemɔ app yɛ shishijee</string>
+    <string name="update_while_visible">Tsakemɔ be mli ni app lɛ gbeleɔ</string>
 </resources>

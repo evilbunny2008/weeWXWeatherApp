@@ -810,7 +810,8 @@ public class weeWXApp extends Application
 			getAndroidString(R.string.every_10_minutes),
 			getAndroidString(R.string.every_15_minutes),
 			getAndroidString(R.string.every_30_minutes),
-			getAndroidString(R.string.every_hour)
+			getAndroidString(R.string.every_hour),
+			getAndroidString(R.string.update_while_visible)
 		};
 
 		themeOptions = new String[]

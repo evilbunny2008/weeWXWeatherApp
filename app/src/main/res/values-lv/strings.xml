@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Pielāgotais URL nav iestatīts vai ir tukšs. Varat atvērt iestatījumus, lai pievienotu pielāgotu URL</string>
     <string name="next_moon">Nākamā mēness notikumi?</string>
     <string name="update_on_resume">Atjauniniet lietotni startēšanas laikā</string>
+    <string name="update_while_visible">Atjauniniet, kamēr lietotne ir atvērta</string>
 </resources>

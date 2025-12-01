@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL ທີ່ກໍານົດເອງບໍ່ໄດ້ຖືກກໍານົດ, ຫຼືຫວ່າງເປົ່າ. ທ່ານສາມາດເຂົ້າໄປໃນການຕັ້ງຄ່າເພື່ອເພີ່ມ URL ທີ່ກໍານົດເອງ</string>
     <string name="next_moon">ເຫດການດວງເດືອນຕໍ່ໄປ?</string>
     <string name="update_on_resume">ປັບປຸງ App ໃນຕອນເລີ່ມຕົ້ນ</string>
+    <string name="update_while_visible">ອັບເດດໃນຂະນະທີ່ app ເປີດ</string>
 </resources>

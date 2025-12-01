@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Реттелетін URL мекенжайы орнатылмаған немесе бос емес. Жеке URL мекенжайын қосу үшін параметрлерге кіре аласыз</string>
     <string name="next_moon">Келесі ай оқиғалары?</string>
     <string name="update_on_resume">Бағдарламаны іске қосу</string>
+    <string name="update_while_visible">Бағдарлама ашылған кезде жаңартыңыз</string>
 </resources>

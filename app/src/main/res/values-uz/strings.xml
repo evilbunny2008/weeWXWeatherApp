@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Shaxsiy URL URL o\'rnatilmagan yoki bo\'sh. Maxsus URL-ni qo\'shish uchun siz sozlamalarga kirishingiz mumkin</string>
     <string name="next_moon">Keyingi oy voqealari?</string>
     <string name="update_on_resume">Boshlash dasturini yangilang</string>
+    <string name="update_while_visible">Ilova ochganda yangilang</string>
 </resources>

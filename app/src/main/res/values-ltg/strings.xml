@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Pīlāguotuo URL nav īstateits, voi ir tukšs. 100 doc#1159 Var īt īstatejumūs , lai pīvīnuotu pīlāguotu URL</string>
     <string name="next_moon">Nuokušais mieness nūtykumi?</string>
     <string name="update_on_resume">Atjaunuojums lītuotne iz suokuma</string>
+    <string name="update_while_visible">100 doc#1159 Atjaunoj , cikom līta atvārta</string>
 </resources>

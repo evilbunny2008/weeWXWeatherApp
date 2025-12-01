@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Kunde URL is net set, of is leen. Tuu khanst in instellunge keen fer een personalisiirt URL hiner lose</string>
     <string name="next_moon">Next moonat ewënte?</string>
     <string name="update_on_resume">Aktualisierungs app in aanfang</string>
+    <string name="update_while_visible">Aktualisierung wëns tuu app uf mache</string>
 </resources>

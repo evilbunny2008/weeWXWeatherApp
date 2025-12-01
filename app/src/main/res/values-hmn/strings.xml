@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Kev cai URL tsis yog teeb tsa, lossis yog seem. Koj tuaj yeem mus rau hauv cov chaw teeb tsa los ntxiv qhov kev cai URL</string>
     <string name="next_moon">Lub hli tom ntej no?</string>
     <string name="update_on_resume">Hloov tshiab App rau pib</string>
+    <string name="update_while_visible">Hloov kho thaum lub sijhawm qhib</string>
 </resources>

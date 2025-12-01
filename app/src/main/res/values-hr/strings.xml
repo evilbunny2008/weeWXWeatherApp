@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Prilagođeni URL nije postavljen ili je prazan. Možete otići u postavke da dodate prilagođeni URL</string>
     <string name="next_moon">Događaji na sljedećem mjesecu?</string>
     <string name="update_on_resume">Ažurirajte aplikaciju pri pokretanju</string>
+    <string name="update_while_visible">Ažurirajte dok je aplikacija otvorena</string>
 </resources>

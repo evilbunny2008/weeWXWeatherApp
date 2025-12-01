@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL ọdịnala anaghị edobe, ma ọ bụ na-enweghị oghere. Can nwere ike ịbanye na ntọala iji tinye URL omenala</string>
     <string name="next_moon">Ọ na-esote ọnwa?</string>
     <string name="update_on_resume">Mmelite ngwa na mmalite</string>
+    <string name="update_while_visible">Mmelite ebe a na-emeghe</string>
 </resources>

@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL personalizadu la tau, ka mamuk. Ita bele tama iha setting hodi aumenta URL personalizadu</string>
     <string name="next_moon">Eventu fulan tuir mai?</string>
     <string name="update_on_resume">Atualizasaun app iha inísiu</string>
+    <string name="update_while_visible">Atualiza enkuantu app loke</string>
 </resources>

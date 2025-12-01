@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Say kustombren URL et aliwan aka-set, odino blangko. Sarag mo so onloob ed saray pasen pian makadagdag na kustombre ya URL</string>
     <string name="next_moon">Diad ontumbok iran ebento na bulan?</string>
     <string name="update_on_resume">Uptap ya apps diad gapo</string>
+    <string name="update_while_visible">Umdate legan ya lukas so app</string>
 </resources>

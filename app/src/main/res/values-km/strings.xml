@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL ផ្ទាល់ខ្លួនមិនត្រូវបានកំណត់ទេឬនៅទទេ។ អ្នកអាចចូលទៅក្នុងការកំណត់ដើម្បីបន្ថែម URL ផ្ទាល់ខ្លួន</string>
     <string name="next_moon">ព្រឹត្តិការណ៍ព្រះច័ន្ទបន្ទាប់?</string>
     <string name="update_on_resume">ធ្វើបច្ចុប្បន្នភាពកម្មវិធីនៅពេលចាប់ផ្តើម</string>
+    <string name="update_while_visible">ធ្វើឱ្យទាន់សម័យខណៈពេលដែលកម្មវិធីបើក</string>
 </resources>

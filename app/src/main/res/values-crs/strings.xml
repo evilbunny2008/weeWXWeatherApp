@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL personnalize pa ganny mete, oubyen i vid. Ou kapab al dan bann laranzman pour azout en URL personnalize</string>
     <string name="next_moon">Bann prosen levennman lalinn?</string>
     <string name="update_on_resume">Aplikasyon azour lo komansman</string>
+    <string name="update_while_visible">Miz a zour pandan ki app i ouver</string>
 </resources>

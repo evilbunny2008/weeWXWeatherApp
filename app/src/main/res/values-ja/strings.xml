@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">カスタム URL が設定されていないか、空白です。設定に移動してカスタム URL を追加できます</string>
     <string name="next_moon">来月のイベントは？</string>
     <string name="update_on_resume">起動時にアプリを更新する</string>
+    <string name="update_while_visible">アプリを開いたまま更新する</string>
 </resources>

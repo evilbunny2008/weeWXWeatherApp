@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">لم يتم تعيين عنوان URL المخصص، أو أنه فارغ. يمكنك الدخول إلى الإعدادات لإضافة عنوان URL مخصص</string>
     <string name="next_moon">أحداث القمر القادمة؟</string>
     <string name="update_on_resume">تحديث التطبيق في البداية</string>
+    <string name="update_while_visible">التحديث أثناء فتح التطبيق</string>
 </resources>

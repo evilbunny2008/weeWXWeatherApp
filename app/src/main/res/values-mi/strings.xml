@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Kaore i te tautuhia te URL ritenga, he waatea ranei. Ka taea e koe te haere ki nga tautuhinga ki te taapiri i tetahi URL ritenga</string>
     <string name="next_moon">Nga huihuinga o te marama e whai ake nei?</string>
     <string name="update_on_resume">Whakahoutia App i te tiimata</string>
+    <string name="update_while_visible">Whakahoutanga i te wa e tuwhera ana te taupānga</string>
 </resources>

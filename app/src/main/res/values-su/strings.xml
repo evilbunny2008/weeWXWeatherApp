@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL adat henteu diatur, atanapi kosong. Anjeun tiasa angkat kana setélan pikeun nambihan URL khusus</string>
     <string name="next_moon">Acara bulan salajengna?</string>
     <string name="update_on_resume">Update aplikasi dina ngamimitian</string>
+    <string name="update_while_visible">Update nalika aplikasi kabuka</string>
 </resources>

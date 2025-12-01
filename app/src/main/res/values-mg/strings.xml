@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Tsy napetraka ny URL mahazatra, na tsy misy banga. Afaka miditra ao anaty filaharana ianao hampiditra URL mahazatra</string>
     <string name="next_moon">Hetsika manaraka ny volana?</string>
     <string name="update_on_resume">Hanavao ny fampiharana amin\'ny fanombohana</string>
+    <string name="update_while_visible">Fanavaozana raha misokatra ny fampiharana</string>
 </resources>

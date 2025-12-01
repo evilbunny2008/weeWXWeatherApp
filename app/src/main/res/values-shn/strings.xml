@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL ဢၼ်ႁဵတ်း Custom ၼၼ်ႉ ဢမ်ႇလႆႈတမ်းဝၢင်းဝႆႉ ဢမ်ႇၼၼ် ပဵၼ်ဢၼ်ပဝ်ႇ။ ၶဝ်ႈၵႂႃႇၼႂ်း Settings သေ သႂ်ႇ URL ဢၼ်ၶိုၵ်ႉၶႅမ်ႉ</string>
     <string name="next_moon">ပၢင်ပွႆးလိူၼ်ၼႃႈထႅင်ႈႁႃႉ?</string>
     <string name="update_on_resume">Update app မိူဝ်ႈတႄႇ</string>
+    <string name="update_while_visible">Update ၽွင်းဢႅပ်ႉပိုတ်ႇ</string>
 </resources>

@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Tilpasset webadresse er ikke angivet eller er tom. Du kan gå ind i indstillinger for at tilføje en brugerdefineret URL</string>
     <string name="next_moon">Næste månebegivenheder?</string>
     <string name="update_on_resume">Opdater app ved start</string>
+    <string name="update_while_visible">Opdater, mens appen er åben</string>
 </resources>

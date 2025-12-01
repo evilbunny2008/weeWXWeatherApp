@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">आफू अनुकूल URL सेट गरिएको छैन, वा खाली छ। तपाईं आफू अनुकूल URL थप्न सेटिङहरूमा जान सक्नुहुन्छ</string>
     <string name="next_moon">अर्को चन्द्रमा घटनाहरू?</string>
     <string name="update_on_resume">सुरुमा एप अपडेट गर्नुहोस्</string>
+    <string name="update_while_visible">एप खोल्दा अपडेट गर्नुहोस्</string>
 </resources>

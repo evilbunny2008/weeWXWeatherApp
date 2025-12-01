@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">I-URL yesiko ayibeki, okanye ayinanto. Ungaya kwiitoti ukongeza i-URL yesiqhelo</string>
     <string name="next_moon">Iziganeko zeNyanga ezayo?</string>
     <string name="update_on_resume">Hlaziya i-App ukuqala</string>
+    <string name="update_while_visible">Hlaziya ngelixa i-app ivulekile</string>
 </resources>

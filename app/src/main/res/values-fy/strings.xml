@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Oanpaste URL is net ynsteld, of is leech. Jo kinne yn ynstellings gean om in oanpaste URL ta te foegjen</string>
     <string name="next_moon">Folgjende moanne eveneminten?</string>
     <string name="update_on_resume">Update app by start</string>
+    <string name="update_while_visible">Update wylst app iepen is</string>
 </resources>

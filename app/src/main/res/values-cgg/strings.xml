@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL ya Custom terikuteebwaho, nari eri busha. Noobaasa kuza omu myanya y\'okwongeraho URL y\'omurembe</string>
     <string name="next_moon">Eby\'okwezi ebirikukurataho?</string>
     <string name="update_on_resume">Update app aha kutandika</string>
+    <string name="update_while_visible">Ogarukeho app eigukire</string>
 </resources>

@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL-ja e personalizuar nuk është caktuar ose është bosh. Mund të shkoni te cilësimet për të shtuar një URL të personalizuar</string>
     <string name="next_moon">Ngjarjet e hënës së ardhshme?</string>
     <string name="update_on_resume">Përditëso aplikacionin në fillim</string>
+    <string name="update_while_visible">Përditëso ndërsa aplikacioni është i hapur</string>
 </resources>

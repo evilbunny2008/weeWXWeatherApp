@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL acie tɔ̈u, wala ee kë cïn kë tɔ̈u thïn. Yïn alëu ba lɔ në thëm yic ba URL ë thäät ë thäät mat thïn</string>
     <string name="next_moon">Kä kɔ̈k ke pɛ̈i ke pɛɛi?</string>
     <string name="update_on_resume">Ee app tɔ̈ nhial në jɔ̈k</string>
+    <string name="update_while_visible">Ku ëya dɛ̈t ke app liep</string>
 </resources>

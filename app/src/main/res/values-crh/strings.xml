@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Хусусан URL къоюлмай, я да бош. Сиз махсус URL къошмакъ ичюн параметрлерге кирмек мумкюнсинъиз</string>
     <string name="next_moon">Невбеттеки ай вакъиалары?</string>
     <string name="update_on_resume">Башлангъычта къулланманы янъыландырынъыз</string>
+    <string name="update_while_visible">Япыштырынъыз, къулланма ачылгъанда</string>
 </resources>

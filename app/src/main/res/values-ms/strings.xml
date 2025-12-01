@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL tersuai tidak ditetapkan, atau kosong. Anda boleh masuk ke tetapan untuk menambah url tersuai</string>
     <string name="next_moon">Acara Bulan Seterusnya?</string>
     <string name="update_on_resume">Kemas kini aplikasi semasa permulaan</string>
+    <string name="update_while_visible">Kemas kini semasa aplikasi dibuka</string>
 </resources>

@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Die benutzerdefinierte URL ist nicht festgelegt oder leer. Sie können in den Einstellungen eine benutzerdefinierte URL hinzufügen</string>
     <string name="next_moon">Nächste Mondereignisse?</string>
     <string name="update_on_resume">App beim Start aktualisieren</string>
+    <string name="update_while_visible">Aktualisieren Sie, während die App geöffnet ist</string>
 </resources>

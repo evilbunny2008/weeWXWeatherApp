@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL amala hin saagamu, ykn duwwaa dha. URL amala itti dabaluuf gara qindaa\'inootaatti deemuu dandeessa</string>
     <string name="next_moon">Taateewwan Ji\'aa itti aanan?</string>
     <string name="update_on_resume">Appii update on start</string>
+    <string name="update_while_visible">Utuu appii banaa ta\'ee update</string>
 </resources>

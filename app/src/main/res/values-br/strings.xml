@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">N\'eo ket lakaet URL personelaet, pe goullo eo. Gallout a rit mont e-barzh arventennoù evit ouzhpennañ un URL personelaet</string>
     <string name="next_moon">Darvoudoù al loar da heul?</string>
     <string name="update_on_resume">Hizivaat an arload war ar penn-kentañ</string>
+    <string name="update_while_visible">Hizivaat e-pad ma vo digor an arload</string>
 </resources>

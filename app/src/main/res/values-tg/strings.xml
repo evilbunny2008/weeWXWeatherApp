@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL-и фармоишӣ муқаррар карда намешавад ё холӣ аст. Шумо метавонед ба Танзимот ворид шавед, то URL-и фармоишӣ</string>
     <string name="next_moon">Муваффақиятҳои моҳи оянда?</string>
     <string name="update_on_resume">Барномаро навсозӣ кунед</string>
+    <string name="update_while_visible">Навсозӣ ҳангоми кушодани барнома</string>
 </resources>

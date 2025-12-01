@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">دودیز URL نه دی ټاکل شوی، یا خالي دی. تاسو کولی شئ د دودیز URL اضافه کولو لپاره تنظیماتو ته لاړ شئ</string>
     <string name="next_moon">د راتلونکي سپوږمۍ پیښې؟</string>
     <string name="update_on_resume">په پیل کې اپلیکیشن تازه کړئ</string>
+    <string name="update_while_visible">د اپلیکیشن خلاصیدو پرمهال تازه کړئ</string>
 </resources>

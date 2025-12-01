@@ -170,6 +170,7 @@ class weeWXAppCommon
 			case 3 -> period *= 15;
 			case 4 -> period *= 30;
 			case 5 -> period *= 60;
+			case 6 -> period *= 5;
 			default ->
 			{
 				return def;

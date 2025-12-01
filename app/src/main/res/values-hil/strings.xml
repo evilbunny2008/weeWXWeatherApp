@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Ang Custom URL wala ginbutang, ukon blangko. Mahimo ka magsulod sa mga setting sa pagdugang sa custom nga URL</string>
     <string name="next_moon">Sunod nga mga hitabo sa bulan?</string>
     <string name="update_on_resume">Update app sa pagsugod</string>
+    <string name="update_while_visible">Update samtang bukas ang app</string>
 </resources>

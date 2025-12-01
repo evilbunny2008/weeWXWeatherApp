@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Muokattua URL-osoitetta ei ole asetettu tai se on tyhjä. Voit lisätä mukautetun URL-osoitteen siirtymällä asetuksiin</string>
     <string name="next_moon">Ensi kuun tapahtumat?</string>
     <string name="update_on_resume">Päivitä sovellus käynnistyksen yhteydessä</string>
+    <string name="update_while_visible">Päivitä sovelluksen ollessa auki</string>
 </resources>

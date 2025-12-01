@@ -64,6 +64,13 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
+		int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		if(pos == 6 && !KeyValue.isVisible)
+		{
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, pos == 6 but app isn't visible...", true);
+			return;
+		}
+
 		weeWXAppCommon.LogMessage("UpdateCheck.java started.", true);
 
 		cancelAlarm();
@@ -120,6 +127,13 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
+		int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		if(pos == 6 && !KeyValue.isVisible)
+		{
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, pos == 6 but app isn't visible...", true);
+			return;
+		}
+
 		if(getPendingIntent(context, true) != null)
 		{
 			weeWXAppCommon.LogMessage("UpdateCheck.java An alarm is already set, did you forget " +
@@ -168,7 +182,6 @@ public class UpdateCheck extends BroadcastReceiver
 				context.startActivity(intent);
 			}
 		}
-
 	}
 
 	private static void setExactAlarm(Context context, AlarmManager alarm, long start)
@@ -270,6 +283,14 @@ public class UpdateCheck extends BroadcastReceiver
 		if(pos == 0 && !forced)
 		{
 			weeWXAppCommon.LogMessage("update interval set to manual update and not set to update on start... skipping...", true);
+			if(!weeWXApp.hasBootedFully)
+				weeWXApp.hasBootedFully = true;
+			return;
+		}
+
+		if(pos == 6 && !KeyValue.isVisible)
+		{
+			weeWXAppCommon.LogMessage("update interval set to manual update and app not visible... skipping...", true);
 			if(!weeWXApp.hasBootedFully)
 				weeWXApp.hasBootedFully = true;
 			return;

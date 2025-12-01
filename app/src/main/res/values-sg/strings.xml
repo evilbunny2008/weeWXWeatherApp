@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL ti personnalisé ayeke pëpe, wala a yeke senge. Lo lingbi ti lï na yâ ti a-paramètre ti zia mbeni URL so a leke ni nde</string>
     <string name="next_moon">Na peko ti aye so ayeke si na yâ ti nze?</string>
     <string name="update_on_resume">Mise à jour app na tongo nda ni</string>
+    <string name="update_while_visible">Mise à jour na ngoi so a zi application</string>
 </resources>

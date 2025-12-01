@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">کسٹم یو آر ایل سیٹ نہیں ہے ، یا خالی ہے۔ آپ کسٹم یو آر ایل کو شامل کرنے کے لئے ترتیبات میں جاسکتے ہیں</string>
     <string name="next_moon">اگلے چاند کے واقعات؟</string>
     <string name="update_on_resume">اسٹارٹ پر ایپ کو اپ ڈیٹ کریں</string>
+    <string name="update_while_visible">اپ ڈیٹ کے دوران اپ ڈیٹ کریں</string>
 </resources>

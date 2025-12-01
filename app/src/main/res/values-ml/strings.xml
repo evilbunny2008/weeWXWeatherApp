@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">ഇഷ്‌ടാനുസൃത URL സജ്ജമാക്കിയിട്ടില്ല, അല്ലെങ്കിൽ ശൂന്യമാണ്. ഒരു ഇഷ്‌ടാനുസൃത URL ചേർക്കാൻ നിങ്ങൾക്ക് ക്രമീകരണത്തിലേക്ക് പോകാം</string>
     <string name="next_moon">അടുത്ത ചാന്ദ്ര സംഭവങ്ങൾ?</string>
     <string name="update_on_resume">ആരംഭത്തിൽ തന്നെ ആപ്പ് അപ്ഡേറ്റ് ചെയ്യുക</string>
+    <string name="update_while_visible">ആപ്പ് തുറക്കുമ്പോൾ അപ്ഡേറ്റ് ചെയ്യുക</string>
 </resources>

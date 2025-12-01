@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Customörite URL toplumy kesgitlenmeýär ýa-da boş. Customörite URL-ni goşmak üçin sazlamalaryňyza girip bilersiňiz</string>
     <string name="next_moon">Indiki Aý wakalary?</string>
     <string name="update_on_resume">Başlamak üçin programma täzelenmesini täzeläň</string>
+    <string name="update_while_visible">Programma açyk wagty täzeleniň</string>
 </resources>

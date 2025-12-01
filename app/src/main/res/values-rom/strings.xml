@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL pe personali nu este, sau este blanco. Tu shaj zhas ande settingura te shaj shuves jekh personalizovano URL</string>
     <string name="next_moon">Palal e eventura e lunaqe?</string>
     <string name="update_on_resume">Aktualizat app pe starto</string>
+    <string name="update_while_visible">Aktualizate atunci atunci</string>
 </resources>

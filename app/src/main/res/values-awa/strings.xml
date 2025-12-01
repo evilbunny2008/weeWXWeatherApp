@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">कस्टम यूआरएल सेट नहीं है, या खाली है। आप एक कस्टम यूआरएल जोड़ने के लिए सेटिंग्स म जा सकत हैं</string>
     <string name="next_moon">अगले चाँद के आयोजन का?</string>
     <string name="update_on_resume">शुरुआत पर ऐप अपडेट करे</string>
+    <string name="update_while_visible">ऐप खुला रहते हुए अपडेट करें</string>
 </resources>

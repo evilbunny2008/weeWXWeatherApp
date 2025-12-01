@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Ятарлă URL-адрес мар, е пушă. Ятарлă URL-адрес хушма настройкăсене кĕме пулать</string>
     <string name="next_moon">Çитес уйăх пулăмĕсем-и?</string>
     <string name="update_on_resume">Çĕнетÿ приложенине пуçламăшĕнче</string>
+    <string name="update_while_visible">Приложение уçнă вăхăтра çĕнетĕр</string>
 </resources>

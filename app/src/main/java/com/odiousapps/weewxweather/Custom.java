@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
@@ -52,6 +53,8 @@ public class Custom extends Fragment
 	{
 		weeWXAppCommon.LogMessage("Custom.onViewCreated()");
 		super.onViewCreated(view, savedInstanceState);
+
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		if(wv == null)
 			wv = WebViewPreloader.getInstance().getWebView(requireContext());
@@ -126,6 +129,8 @@ public class Custom extends Fragment
 		weeWXAppCommon.LogMessage("Custom.onDestroyView()");
 		super.onDestroyView();
 
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(getViewLifecycleOwner());
+
 		if(wv != null)
 		{
 			ViewParent parent = wv.getParent();
@@ -177,4 +182,16 @@ public class Custom extends Fragment
 		else if(custom != null && !custom.isBlank())
 			wv.post(() -> wv.loadUrl(custom));
 	}
+
+	private final Observer<String> notificationObserver = str ->
+	{
+		weeWXAppCommon.LogMessage("Custom.java notificationObserver: " + str, true);
+
+		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
+		{
+			int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+			if(pos == 6 && KeyValue.isVisible)
+				loadCustom(true);
+		}
+	};
 }

@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL ya tlwaelo ga se ya bewa, goba ga e na selo. O ka tsena ka gare ga dipeakanyo go oketša URL ya tlwaelo</string>
     <string name="next_moon">Ditiragalo tše di latelago tša Ngwedi?</string>
     <string name="update_on_resume">Update App go Thoma</string>
+    <string name="update_while_visible">Ntšhatša ge app e butšwe</string>
 </resources>

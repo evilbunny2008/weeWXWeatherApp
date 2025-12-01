@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">自定義 URL 未設置或為空。您可以進入設置添加自定義 URL</string>
     <string name="next_moon">下一次月球事件？</string>
     <string name="update_on_resume">啟動時更新應用程序</string>
+    <string name="update_while_visible">應用程序打開時更新</string>
 </resources>

@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">कस्टम युआरएल सेट मजू, बाय् खाली खः । छि कस्टम यूआरएल तनातयेत सेटिङ्गय् वनेफै ।</string>
     <string name="next_moon">मेगु चन्द्रमाया घटना?</string>
     <string name="update_on_resume">शुरुइ एप अपडेट या</string>
+    <string name="update_while_visible">एप चालीबलय् अपडेट या ।</string>
 </resources>

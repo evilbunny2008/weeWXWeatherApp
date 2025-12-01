@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL personalizada no es definida, o es en blanco. Podètz anar dins los paramètres per apondre una URL personalizada</string>
     <string name="next_moon">Los eveniments de la luna que venon?</string>
     <string name="update_on_resume">Actualizar aplicacion en començament</string>
+    <string name="update_while_visible">Actualizatz mentre que l\'aplicacion dobèrta</string>
 </resources>

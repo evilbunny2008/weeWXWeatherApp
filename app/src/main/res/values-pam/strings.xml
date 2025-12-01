@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">E ya mitakda ing URL ning Custom, o blanku ya. Malyari kang munta kareng setting para dagdagan ing URL</string>
     <string name="next_moon">Susunod a bulan ing malilyari?</string>
     <string name="update_on_resume">Update app nung stat</string>
+    <string name="update_while_visible">Update kabang magbukas</string>
 </resources>

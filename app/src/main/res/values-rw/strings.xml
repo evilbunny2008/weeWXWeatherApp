@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL yihariye ntabwo yashyizweho, cyangwa irimo ubusa. Urashobora kujya muri Igenamiterere kugirango wongere url yihariye</string>
     <string name="next_moon">Ukwezi kuzakurikira?</string>
     <string name="update_on_resume">Kuvugurura porogaramu mugitangira</string>
+    <string name="update_while_visible">Kuvugurura mugihe porogaramu ifunguye</string>
 </resources>

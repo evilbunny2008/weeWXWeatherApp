@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Tsika URL haina kuiswa, kana isina chinhu. Iwe unogona kuenda mune zvigadziriso kuti uwedzere tsika yeTLL</string>
     <string name="next_moon">Zviitiko zvemwedzi zvinotevera?</string>
     <string name="update_on_resume">Gadziridza app pane kutanga</string>
+    <string name="update_while_visible">Gadzirisa apo App Yakavhurika</string>
 </resources>

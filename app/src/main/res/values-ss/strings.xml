@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">I-URL ye-Custom ayikho, noma ayikho lutfo. Ungangena etindzaweni tekwengeta i-URL yesiko</string>
     <string name="next_moon">Tigameko letilandzelako tenyanga?</string>
     <string name="update_on_resume">Buyeketa i-app ekucaleni</string>
+    <string name="update_while_visible">Vuselela ngesikhatsi i-app ivulekile</string>
 </resources>

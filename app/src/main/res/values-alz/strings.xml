@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Custom URL epe, nyo epe. Icopo cidho i settings mi medo UL</string>
     <string name="next_moon">I ng\'eye, lembe m\'utimere?</string>
     <string name="update_on_resume">Updada i acaki</string>
+    <string name="update_while_visible">Iromo ketho lembe peri</string>
 </resources>

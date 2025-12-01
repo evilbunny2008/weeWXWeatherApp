@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Kastom URL nɔ sɛt, ɔ i blank. Yu kin go insay sɛtin dɛn fɔ ad wan kɔstɔm URL</string>
     <string name="next_moon">Neks mun ivent dɛn?</string>
     <string name="update_on_resume">Update app on Start</string>
+    <string name="update_while_visible">Update we yu de ap Opin</string>
 </resources>

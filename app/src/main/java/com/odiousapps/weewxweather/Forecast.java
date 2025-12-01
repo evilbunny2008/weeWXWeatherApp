@@ -95,7 +95,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 		super.onViewCreated(view, savedInstanceState);
 
 		weeWXAppCommon.LogMessage("Forecast.java -- adding notification manager...");
-		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(getViewLifecycleOwner());
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		if(forecastWebView == null)
@@ -103,6 +102,12 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(forecastWebView.getParent() != null)
 			((ViewGroup)forecastWebView.getParent()).removeView(forecastWebView);
+
+		if(forecastWebView != null)
+			forecastWebView.getViewTreeObserver().addOnScrollChangedListener(forecastScrollListener);
+
+		if(radarWebView != null)
+			radarWebView.getViewTreeObserver().addOnScrollChangedListener(radarScrollListener);
 
 		FrameLayout forecastFL = rootView.findViewById(R.id.forecastWebView);
 		forecastFL.removeAllViews();
@@ -120,8 +125,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		forecastWebView.setOnPageFinishedListener((v, url) ->
 		{
-				weeWXAppCommon.LogMessage("forecastWebView.onPageFinished()");
-				stopRefreshing();
+			weeWXAppCommon.LogMessage("forecastWebView.onPageFinished()");
+			stopRefreshing();
 		});
 
 		radarWebView.setOnPageFinishedListener((v, url) ->
@@ -179,9 +184,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 			updateSwipe();
 			updateScreen(true);
 
-			addListeners();
-
-
 			if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen)
 				loadRadar(false);
 			else
@@ -194,7 +196,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		super.onDestroyView();
 
-		removeListeners();
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(getViewLifecycleOwner());
 
 		if(forecastWebView != null)
 		{
@@ -358,7 +360,11 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		weeWXAppCommon.LogMessage("notificationObserver: " + str);
+		weeWXAppCommon.LogMessage("Forecast.java notificationObserver: " + str, true);
+
+		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+		if(radtype == null)
+			radtype = "";
 
 		if(str.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
 			getForecast();
@@ -366,9 +372,16 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(str.equals(weeWXAppCommon.REFRESH_RADAR_INTENT))
 			loadRadar(false);
 
-		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
+		{
+			int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+			if(pos == 6 && KeyValue.isVisible && radtype.equals("webpage") &&
+			   weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen)
+				radarWebView.post(() -> radarWebView.reload());
+		}
+
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen &&
-		   str.equals(weeWXAppCommon.STOP_RADAR_INTENT) && radtype != null && radtype.equals("image"))
+		   str.equals(weeWXAppCommon.STOP_RADAR_INTENT) && radtype.equals("image"))
 			stopRefreshing();
 
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.ForecastOnForecastScreen &&
@@ -378,24 +391,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(str.equals(weeWXAppCommon.EXIT_INTENT))
 			onPause();
 	};
-
-	void removeListeners()
-	{
-		if(forecastWebView != null && forecastWebView.getViewTreeObserver().isAlive())
-			forecastWebView.getViewTreeObserver().removeOnScrollChangedListener(forecastScrollListener);
-
-		if(radarWebView != null && radarWebView.getViewTreeObserver().isAlive())
-			radarWebView.getViewTreeObserver().removeOnScrollChangedListener(radarScrollListener);
-	}
-
-	void addListeners()
-	{
-		if(forecastWebView != null)
-			forecastWebView.getViewTreeObserver().addOnScrollChangedListener(forecastScrollListener);
-
-		if(radarWebView != null)
-			radarWebView.getViewTreeObserver().addOnScrollChangedListener(radarScrollListener);
-	}
 
 	private void updateScreen(boolean setRefreshing)
 	{

@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Η προσαρμοσμένη διεύθυνση URL δεν έχει οριστεί ή είναι κενή. Μπορείτε να μεταβείτε στις ρυθμίσεις για να προσθέσετε μια προσαρμοσμένη διεύθυνση URL</string>
     <string name="next_moon">Γεγονότα του επόμενου φεγγαριού;</string>
     <string name="update_on_resume">Ενημερώστε την εφαρμογή κατά την έναρξη</string>
+    <string name="update_while_visible">Ενημέρωση ενώ η εφαρμογή είναι ανοιχτή</string>
 </resources>

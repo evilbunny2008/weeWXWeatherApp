@@ -127,6 +127,8 @@ public class Weather extends Fragment implements View.OnClickListener
 		weeWXAppCommon.LogMessage("Weather.onDestroyView()");
 		super.onDestroyView();
 
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(getViewLifecycleOwner());
+
 		if(current != null)
 		{
 			ViewParent parent = current.getParent();
@@ -1181,6 +1183,9 @@ public class Weather extends Fragment implements View.OnClickListener
 	private final Observer<String> notificationObserver = str ->
 	{
 		weeWXAppCommon.LogMessage("Weather.java notificationObserver: " + str, true);
+		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+		if(radtype == null)
+			radtype = "";
 
 		if(str.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
 			drawForecast();
@@ -1189,11 +1194,17 @@ public class Weather extends Fragment implements View.OnClickListener
 			drawRadar();
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
-			drawWeather();
+		{
+			int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+			if(pos == 6 && KeyValue.isVisible && radtype.equals("webpage") &&
+			   weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen)
+				loadAndShowWebView(forecast, null, null);
 
-		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+			drawWeather();
+		}
+
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen &&
-		   str.equals(weeWXAppCommon.STOP_RADAR_INTENT) && radtype != null && radtype.equals("image"))
+		   str.equals(weeWXAppCommon.STOP_RADAR_INTENT) && radtype.equals("image"))
 			stopRefreshing();
 
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.ForecastOnHomeScreen &&

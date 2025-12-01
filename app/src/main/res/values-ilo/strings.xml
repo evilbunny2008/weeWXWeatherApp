@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Ti kostumbre nga URL ket saan a naikeddeng, wenno blangko. Mabalinmo ti mapan kadagiti setting tapno mangnayon iti custom URL</string>
     <string name="next_moon">Sumaruno a bulan a pasamak?</string>
     <string name="update_on_resume">Update app iti rugi</string>
+    <string name="update_while_visible">Update bayat nga ti app ket nakalukat</string>
 </resources>

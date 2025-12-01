@@ -38,6 +38,7 @@
     <string name="every_15_minutes">Every 15 Minutes</string>
     <string name="every_30_minutes">Every 30 Minutes</string>
     <string name="every_hour">Every Hour</string>
+	<string name="update_while_visible">Update while app open</string>
     <string name="light_theme">Light Theme</string>
     <string name="dark_theme">Dark Theme</string>
     <string name="system_default">System Default</string>

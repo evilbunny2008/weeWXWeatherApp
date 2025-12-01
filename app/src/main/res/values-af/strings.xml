@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Gepasmaakte URL is nie gestel nie, of is leeg. Jy kan na instellings gaan om \'n pasgemaakte URL by te voeg</string>
     <string name="next_moon">Volgende maan gebeure?</string>
     <string name="update_on_resume">Dateer app op met aanvang</string>
+    <string name="update_while_visible">Dateer op terwyl program oop is</string>
 </resources>

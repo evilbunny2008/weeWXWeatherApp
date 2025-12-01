@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Özel URL ayarlanmamış veya boş. Özel bir URL eklemek için ayarlara gidebilirsiniz</string>
     <string name="next_moon">Sonraki ay etkinlikleri?</string>
     <string name="update_on_resume">Uygulamayı başlangıçta güncelle</string>
+    <string name="update_while_visible">Uygulama açıkken güncelle</string>
 </resources>

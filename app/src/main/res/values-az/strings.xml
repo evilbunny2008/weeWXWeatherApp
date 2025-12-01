@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Xüsusi URL qurulmamış və ya boş deyil. Xüsusi URL əlavə etmək üçün parametrlərə daxil ola bilərsiniz</string>
     <string name="next_moon">Növbəti ay hadisələri?</string>
     <string name="update_on_resume">Başlanğıcda tətbiq yeniləyin</string>
+    <string name="update_while_visible">Tətbiq açarkən yeniləyin</string>
 </resources>

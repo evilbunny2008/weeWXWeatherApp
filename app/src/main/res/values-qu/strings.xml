@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Sapanchasqa URL mana churasqachu, utaq ch\'usaq. Ajustes kaqman yaykuyta atikunki huk ruwasqa URL yapanaykipaq</string>
     <string name="next_moon">Qatiq Killa ruwaykuna?</string>
     <string name="update_on_resume">Aplicación actualización en inicio</string>
+    <string name="update_while_visible">App Open kachkaptin musuqchay</string>
 </resources>

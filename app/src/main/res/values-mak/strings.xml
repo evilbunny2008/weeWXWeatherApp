@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL kuas teai set, yareka kosong. Ikatte akkullei antama\' ri setting untu\' a\'tambai URL adat</string>
     <string name="next_moon">Acara bulang ribokoanganna?</string>
     <string name="update_on_resume">Pa\'barui app ri wattu</string>
+    <string name="update_while_visible">Nampa niupdate ri wattu ap</string>
 </resources>

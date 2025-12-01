@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">କଷ୍ଟମ୍ URL ସେଟ୍ ହୋଇନାହିଁ, କିମ୍ବା ଖାଲି ଅଛି | ଏକ କଷ୍ଟମ୍ URL ଯୋଡିବାକୁ ଆପଣ ସେଟିଂସମୂହକୁ ଯାଇପାରିବେ |</string>
     <string name="next_moon">ପରବର୍ତ୍ତୀ ଚନ୍ଦ୍ର ଘଟଣା?</string>
     <string name="update_on_resume">ଆରମ୍ଭରେ ଆପ୍ ଅପଡେଟ୍ କରନ୍ତୁ |</string>
+    <string name="update_while_visible">ଆପ୍ ଖୋଲିବା ସମୟରେ ଅଦ୍ୟତନ କରନ୍ତୁ |</string>
 </resources>

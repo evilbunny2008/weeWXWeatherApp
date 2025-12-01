@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL-ya xwerû nehatiye danîn, an jî vala ye. Hûn dikarin biçin mîhengan da ku URLek xwerû lê zêde bikin</string>
     <string name="next_moon">Bûyerên din ên heyvê?</string>
     <string name="update_on_resume">Di destpêkê de sepanê nûve bikin</string>
+    <string name="update_while_visible">Dema ku sepan vekirî ye nûve bikin</string>
 </resources>

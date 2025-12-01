@@ -621,6 +621,8 @@ public class MainActivity extends FragmentActivity
 	{
 		weeWXAppCommon.LogMessage("MainActivity.onDestroy()");
 		super.onDestroy();
+
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(this);
 	}
 
 	@Override
@@ -628,11 +630,19 @@ public class MainActivity extends FragmentActivity
 	{
 		super.onResume();
 
+		KeyValue.isVisible = true;
+
 		UpdateCheck.cancelAlarm();
 
 		UpdateCheck.setNextAlarm();
 
 		UpdateCheck.runInTheBackground(false, false, true);
+	}
+
+	@Override
+	protected void onPause()
+	{
+		KeyValue.isVisible = false;
 	}
 
 	private void updateColours()

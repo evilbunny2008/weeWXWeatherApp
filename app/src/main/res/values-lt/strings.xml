@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">Tinkintas URL nenustatytas arba yra tuščias. Galite pereiti į nustatymus, kad pridėtumėte tinkintą URL</string>
     <string name="next_moon">Kito mėnulio įvykiai?</string>
     <string name="update_on_resume">Pradėjus atnaujinti programą</string>
+    <string name="update_while_visible">Atnaujinkite, kol programa atidaryta</string>
 </resources>

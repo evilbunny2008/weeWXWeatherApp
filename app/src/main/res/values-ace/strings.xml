@@ -91,4 +91,5 @@
     <string name="custom_url_not_set_or_blank">URL Adat hana set, atawa kosong. Kamoe jeut neujak lam setting untuk neu tamah URL custom</string>
     <string name="next_moon">Acara buleun selanjut jih?</string>
     <string name="update_on_resume">Update app bak start</string>
+    <string name="update_while_visible">Update seudangkan app buka</string>
 </resources>
