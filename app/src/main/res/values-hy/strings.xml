@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Ձեռքով թարմացման հավաքածու, սահեցրեք թարմացման էկրանը՝ բեռնելու համար</string>
     <string name="custom_url_not_set_or_blank">Հատուկ URL-ը սահմանված չէ կամ դատարկ է: Դուք կարող եք մտնել կարգավորումներ՝ հատուկ URL ավելացնելու համար</string>
     <string name="next_moon">Հաջորդ լուսնի իրադարձությունները</string>
-    <string name="update_on_resume">Թարմացրեք հավելվածը մեկնարկին</string>
-    <string name="update_while_visible">Թարմացրեք հավելվածը բացելու ժամանակ</string>
+    <string name="update_while_running">Թարմացրեք գործարկման ընթացքում</string>
 </resources>

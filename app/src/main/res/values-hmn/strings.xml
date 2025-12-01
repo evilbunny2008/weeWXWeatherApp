@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Kev tuav hloov tshiab teeb tsa, los so tshiab tshiab refresch screen kom thauj khoom</string>
     <string name="custom_url_not_set_or_blank">Kev cai URL tsis yog teeb tsa, lossis yog seem. Koj tuaj yeem mus rau hauv cov chaw teeb tsa los ntxiv qhov kev cai URL</string>
     <string name="next_moon">Lub hli tom ntej no?</string>
-    <string name="update_on_resume">Hloov tshiab App rau pib</string>
-    <string name="update_while_visible">Hloov kho thaum lub sijhawm qhib</string>
+    <string name="update_while_running">Hloov kho thaum khiav</string>
 </resources>

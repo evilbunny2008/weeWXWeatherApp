@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Handvirkt uppfærslusett, strjúktu uppfærsluskjánum til að hlaða</string>
     <string name="custom_url_not_set_or_blank">Sérsniðin vefslóð er ekki stillt eða hún er auð. Þú getur farið í stillingar til að bæta við sérsniðinni vefslóð</string>
     <string name="next_moon">Næstu tunglviðburðir?</string>
-    <string name="update_on_resume">Uppfærðu appið við upphaf</string>
-    <string name="update_while_visible">Uppfærðu á meðan app er opið</string>
+    <string name="update_while_running">Uppfærðu meðan á gangi stendur</string>
 </resources>

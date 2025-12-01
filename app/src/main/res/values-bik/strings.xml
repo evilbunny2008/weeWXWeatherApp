@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manwal na set nin update, mag-swipe nin panrepresko sa pagkarga</string>
     <string name="custom_url_not_set_or_blank">An URL kan pasadya dai nakabugtak, o blangko. Pwede kamong maglaog sa mga setting para magdagdag nin pasadyang URL</string>
     <string name="next_moon">Sunod na bulan mga pangyayari?</string>
-    <string name="update_on_resume">Update app sa pagsugod</string>
-    <string name="update_while_visible">Update habang nagbukas app</string>
+    <string name="update_while_running">Update habang nagdadalagan</string>
 </resources>

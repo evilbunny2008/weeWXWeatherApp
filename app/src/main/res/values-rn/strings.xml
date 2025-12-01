@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Ivyo guhindura, swipe refresh screen kugira ngo ushireho</string>
     <string name="custom_url_not_set_or_blank">Custom URL ntiyishirwaho, canke ni ubusa. Ushobora kuja mu ma setting kugira ngo wongereko URL y\'umugenzo</string>
     <string name="next_moon">Ibirori vy\'ukwezi bikurikira?</string>
-    <string name="update_on_resume">Update app ku ntango</string>
-    <string name="update_while_visible">Update mu gihe app yuguruye</string>
+    <string name="update_while_running">Ivyanditswe mu gihe uriko uriruka</string>
 </resources>

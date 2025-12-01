@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Обновление установлено вручную. Для загрузки проведите пальцем по экрану обновления</string>
     <string name="custom_url_not_set_or_blank">Пользовательский URL-адрес не задан или пуст. Вы можете зайти в настройки, чтобы добавить собственный URL-адрес</string>
     <string name="next_moon">События следующей луны?</string>
-    <string name="update_on_resume">Обновить приложение при запуске</string>
-    <string name="update_while_visible">Обновление при открытом приложении</string>
+    <string name="update_while_running">Обновление во время работы</string>
 </resources>

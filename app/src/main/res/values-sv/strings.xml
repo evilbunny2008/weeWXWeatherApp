@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manuell uppdatering set, svep uppdateringsskärmen för att ladda</string>
     <string name="custom_url_not_set_or_blank">Anpassad webbadress är inte angiven eller är tom. Du kan gå in i inställningarna för att lägga till en anpassad URL</string>
     <string name="next_moon">Nästa månhändelser?</string>
-    <string name="update_on_resume">Uppdatera appen vid start</string>
-    <string name="update_while_visible">Uppdatera medan appen är öppen</string>
+    <string name="update_while_running">Uppdatera under körning</string>
 </resources>

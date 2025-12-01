@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Set di aghjurnamentu manuale, scorri u screnu di rinfrescante per carica</string>
     <string name="custom_url_not_set_or_blank">L\'URL persunalizatu ùn hè micca stabilitu, o hè viotu. Pudete andà in i paràmetri per aghjunghje un URL persunalizatu</string>
     <string name="next_moon">Avvenimenti di a prossima luna?</string>
-    <string name="update_on_resume">Aghjurnate l\'app à u principiu</string>
-    <string name="update_while_visible">Aghjurnate mentre l\'app hè aperta</string>
+    <string name="update_while_running">Aghjurnate mentre corre</string>
 </resources>

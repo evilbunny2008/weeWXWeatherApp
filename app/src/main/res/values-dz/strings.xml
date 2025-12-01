@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">ལག་ཐོག་དུས་མཐུན་བཟོ་ནི་ ཆ་ཚན་, མངོན་གསལ་འབད་ནི་ལུ་ གསར་བསྐྲུན་གསལ་གཞི་ བསྒྱིར་ཚད།</string>
     <string name="custom_url_not_set_or_blank">སྲོལ་སྒྲིག་ཡུ་ཨར་ཨེལ་འདི་གཞི་སྒྲིག་མ་འབད་ ཡང་ན་ སྟོངམ་ཨིན། ཁྱོད་ཀྱིས་ སྲོལ་སྒྲིག་ཡུ་ཨར་ཨེལ་ཁ་སྐོང་བརྐྱབ་ནིའི་དོན་ལུ་ སྒྲིག་སྟངས་ཚུ་ནང་འགྱོ་ཚུགས།</string>
     <string name="next_moon">ཤུལ་མམ་གྱི་ཟླ་བའི་བྱུང་རིམ་ཚུ་?</string>
-    <string name="update_on_resume">འགོ་བཙུགས་གུ་ གློག་རིམ་དུས་མཐུན་བཟོ་ནི།</string>
-    <string name="update_while_visible">གློག་རིམ་ཁ་ཕྱེ་བའི་སྐབས་ དུས་མཐུན་བཟོ།</string>
+    <string name="update_while_running">གཡོག་བཀོལ་བའི་སྐབས་ དུས་མཐུན་བཟོ།</string>
 </resources>

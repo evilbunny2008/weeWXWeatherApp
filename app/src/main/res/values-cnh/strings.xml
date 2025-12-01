@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Kut in update set, a thar in thlen khawhnak ding caah a thar in thlen khawh a si</string>
     <string name="custom_url_not_set_or_blank">Custom URL cu set a si lo, asiloah a thiang lo. Custom URL chap awkah settings ah na lut kho</string>
     <string name="next_moon">A hnu thlapa thil cangmi hna?</string>
-    <string name="update_on_resume">A hramthawknak ah app kha tharchuah</string>
-    <string name="update_while_visible">App on lio ah update tuah</string>
+    <string name="update_while_running">Tlik lio ah update tuah</string>
 </resources>

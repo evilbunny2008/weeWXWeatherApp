@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manuel güncelleme ayarlandı, yüklemek için yenileme ekranını kaydırın</string>
     <string name="custom_url_not_set_or_blank">Özel URL ayarlanmamış veya boş. Özel bir URL eklemek için ayarlara gidebilirsiniz</string>
     <string name="next_moon">Sonraki ay etkinlikleri?</string>
-    <string name="update_on_resume">Uygulamayı başlangıçta güncelle</string>
-    <string name="update_while_visible">Uygulama açıkken güncelle</string>
+    <string name="update_while_running">Çalıştırırken güncelleme</string>
 </resources>

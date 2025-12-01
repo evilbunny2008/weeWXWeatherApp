@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">لاسي تازه سیټ ، د بارولو لپاره سکرین ریفریش کړئ</string>
     <string name="custom_url_not_set_or_blank">دودیز URL نه دی ټاکل شوی، یا خالي دی. تاسو کولی شئ د دودیز URL اضافه کولو لپاره تنظیماتو ته لاړ شئ</string>
     <string name="next_moon">د راتلونکي سپوږمۍ پیښې؟</string>
-    <string name="update_on_resume">په پیل کې اپلیکیشن تازه کړئ</string>
-    <string name="update_while_visible">د اپلیکیشن خلاصیدو پرمهال تازه کړئ</string>
+    <string name="update_while_running">د چلولو پرمهال تازه کړئ</string>
 </resources>

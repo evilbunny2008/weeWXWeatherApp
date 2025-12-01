@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">ಹಸ್ತಚಾಲಿತ ಅಪ್‌ಡೇಟ್ ಸೆಟ್, ಲೋಡ್ ಮಾಡಲು ರಿಫ್ರೆಶ್ ಸ್ಕ್ರೀನ್ ಅನ್ನು ಸ್ವೈಪ್ ಮಾಡಿ</string>
     <string name="custom_url_not_set_or_blank">ಕಸ್ಟಮ್ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ ಅಥವಾ ಖಾಲಿಯಾಗಿದೆ. ಕಸ್ಟಮ್ URL ಅನ್ನು ಸೇರಿಸಲು ನೀವು ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಹೋಗಬಹುದು</string>
     <string name="next_moon">ಮುಂದಿನ ಚಂದ್ರನ ಘಟನೆಗಳು?</string>
-    <string name="update_on_resume">ಪ್ರಾರಂಭದಲ್ಲಿ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ನವೀಕರಿಸಿ</string>
-    <string name="update_while_visible">ಅಪ್ಲಿಕೇಶನ್ ತೆರೆದಾಗ ನವೀಕರಿಸಿ</string>
+    <string name="update_while_running">ಚಾಲನೆಯಲ್ಲಿರುವಾಗ ನವೀಕರಿಸಿ</string>
 </resources>

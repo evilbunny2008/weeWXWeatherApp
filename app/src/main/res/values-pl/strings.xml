@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Ustawiono aktualizację ręczną. Przesuń ekran odświeżania, aby załadować</string>
     <string name="custom_url_not_set_or_blank">Niestandardowy adres URL nie jest ustawiony lub jest pusty. Możesz przejść do ustawień, aby dodać niestandardowy adres URL</string>
     <string name="next_moon">Następne wydarzenia na Księżycu?</string>
-    <string name="update_on_resume">Zaktualizuj aplikację na początku</string>
-    <string name="update_while_visible">Aktualizuj przy otwartej aplikacji</string>
+    <string name="update_while_running">Aktualizuj podczas biegu</string>
 </resources>

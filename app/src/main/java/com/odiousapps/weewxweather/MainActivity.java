@@ -88,7 +88,7 @@ public class MainActivity extends FragmentActivity
 	private CPEditText fgColour, bgColour;
 	private MaterialButton b1, b2, b3, b4;
 	private MaterialAutoCompleteTextView s1, s2, s3;
-	private MaterialSwitch wifi_only, use_icons, show_indoor, metric_forecasts, use_exact_alarm, save_app_debug_logs, next_moon, update_on_resume;
+	private MaterialSwitch wifi_only, use_icons, show_indoor, metric_forecasts, use_exact_alarm, save_app_debug_logs, next_moon;
 	private MaterialRadioButton showRadar, showForecast;
 	private static ViewPager2 mViewPager;
 
@@ -147,7 +147,6 @@ public class MainActivity extends FragmentActivity
 		R.id.use_exact_alarm,
 		R.id.save_app_debug_logs,
 		R.id.next_moon,
-		R.id.update_on_resume,
 	};
 
 	ColorStateList strokeColors;
@@ -370,7 +369,6 @@ public class MainActivity extends FragmentActivity
 		use_exact_alarm = findViewById(R.id.use_exact_alarm);
 		save_app_debug_logs = findViewById(R.id.save_app_debug_logs);
 		next_moon = findViewById(R.id.next_moon);
-		update_on_resume = findViewById(R.id.update_on_resume);
 
 		b1 = findViewById(R.id.saveButton);
 		b2 = findViewById(R.id.deleteData);
@@ -438,7 +436,6 @@ public class MainActivity extends FragmentActivity
 		uea = weeWXAppCommon.GetBoolPref("use_exact_alarm", weeWXApp.use_exact_alarm_default);
 		sadl = KeyValue.save_app_debug_logs;
 		nm = weeWXAppCommon.GetBoolPref("next_moon", weeWXApp.next_moon_default);
-		uob = weeWXAppCommon.GetBoolPref("update_on_resume", weeWXApp.update_on_resume_default);
 
 		if(savedInstanceState != null)
 		{
@@ -462,7 +459,6 @@ public class MainActivity extends FragmentActivity
 			uea = savedInstanceState.getBoolean("uea", uea);
 			sadl = savedInstanceState.getBoolean("sadl", sadl);
 			nm = savedInstanceState.getBoolean("nm", nm);
-			uob = savedInstanceState.getBoolean("uob", uob);
 		}
 
 		// https://github.com/Pes8/android-material-color-picker-dialog
@@ -497,7 +493,6 @@ public class MainActivity extends FragmentActivity
 		use_exact_alarm.setChecked(uea);
 		save_app_debug_logs.setChecked(sadl);
 		next_moon.setChecked(nm);
-		update_on_resume.setChecked(uob);
 
 		showRadar.setChecked(sr);
 		showForecast.setChecked(!sr);
@@ -636,7 +631,7 @@ public class MainActivity extends FragmentActivity
 
 		UpdateCheck.setNextAlarm();
 
-		UpdateCheck.runInTheBackground(false, false, true);
+		UpdateCheck.runInTheBackground(false, false);
 	}
 
 	@Override
@@ -830,7 +825,6 @@ public class MainActivity extends FragmentActivity
 		outState.putBoolean("uea", use_exact_alarm.isChecked());
 		outState.putBoolean("sadl", save_app_debug_logs.isChecked());
 		outState.putBoolean("nm", next_moon.isChecked());
-		outState.putBoolean("uob", update_on_resume.isChecked());
 	}
 
 	private void setStrings()
@@ -1651,7 +1645,6 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.SetBoolPref("use_exact_alarm", use_exact_alarm.isChecked());
 			weeWXAppCommon.SetBoolPref("save_app_debug_logs", KeyValue.save_app_debug_logs);
 			weeWXAppCommon.SetBoolPref("next_moon", next_moon.isChecked());
-			weeWXAppCommon.SetBoolPref("update_on_resume", update_on_resume.isChecked());
 
 			weeWXAppCommon.SetIntPref(weeWXAppCommon.WIDGET_THEME_MODE, widget_theme_mode);
 			KeyValue.widget_theme_mode = widget_theme_mode;

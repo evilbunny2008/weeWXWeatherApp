@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">ערכת עדכונים ידנית, החלק את מסך הרענון כדי לטעון</string>
     <string name="custom_url_not_set_or_blank">כתובת אתר מותאמת אישית לא מוגדרת, או שהיא ריקה. אתה יכול להיכנס להגדרות כדי להוסיף כתובת אתר מותאמת אישית</string>
     <string name="next_moon">אירועי הירח הבא?</string>
-    <string name="update_on_resume">עדכן את האפליקציה בהתחלה</string>
-    <string name="update_while_visible">עדכן בזמן פתיחת האפליקציה</string>
+    <string name="update_while_running">עדכן תוך כדי ריצה</string>
 </resources>

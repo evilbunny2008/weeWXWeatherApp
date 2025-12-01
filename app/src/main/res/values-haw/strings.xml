@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Hoʻopau i ka hoʻonohonohoʻana o ka pākuhi</string>
     <string name="custom_url_not_set_or_blank">ʻAʻole hoʻonohonohoʻiaʻo URL URL, a iʻole he palaka. Hiki iāʻoe ke hele i nā hoʻonohonoho e hoʻohui i kahi URL maʻamau</string>
     <string name="next_moon">Nā Kūlana Kūlana Ord?</string>
-    <string name="update_on_resume">Hoʻohou i ka polokalamu ma ka hoʻomaka</string>
-    <string name="update_while_visible">Hoʻouka i ka weheʻana</string>
+    <string name="update_while_running">Hoʻouka i ka holoʻana</string>
 </resources>

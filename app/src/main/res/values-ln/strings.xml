@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Ensemble de mise à jour manuelle, écran de refresh swipe à charger</string>
     <string name="custom_url_not_set_or_blank">URL personnalisé ezali te, to ezali ya pamba. Okoki kokɔta na ba paramètres mpo na kobakisa URL oyo esalemi na kolanda bamposa ya moto</string>
     <string name="next_moon">Makambo ya sanza oyo ekolanda?</string>
-    <string name="update_on_resume">Bobongisa appli na ebandeli</string>
-    <string name="update_while_visible">Mikolo oyo ntango App Efungolaki</string>
+    <string name="update_while_running">Mikolo oyo ntango ozali kosala</string>
 </resources>

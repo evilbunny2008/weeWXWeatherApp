@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">ຊຸດປັບປຸງຄູ່ມື, ເລື່ອນຫນ້າຈໍສົດຊື່ນທີ່ຈະໂຫລດ</string>
     <string name="custom_url_not_set_or_blank">URL ທີ່ກໍານົດເອງບໍ່ໄດ້ຖືກກໍານົດ, ຫຼືຫວ່າງເປົ່າ. ທ່ານສາມາດເຂົ້າໄປໃນການຕັ້ງຄ່າເພື່ອເພີ່ມ URL ທີ່ກໍານົດເອງ</string>
     <string name="next_moon">ເຫດການດວງເດືອນຕໍ່ໄປ?</string>
-    <string name="update_on_resume">ປັບປຸງ App ໃນຕອນເລີ່ມຕົ້ນ</string>
-    <string name="update_while_visible">ອັບເດດໃນຂະນະທີ່ app ເປີດ</string>
+    <string name="update_while_running">ປັບປຸງໃນຂະນະທີ່ກໍາລັງແລ່ນ</string>
 </resources>

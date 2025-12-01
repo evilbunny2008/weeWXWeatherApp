@@ -77,7 +77,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 		setNextAlarm();
 
-		runInTheBackground(true, false, false);
+		runInTheBackground(true, false);
 
 		weeWXAppCommon.LogMessage("UpdateCheck.java finished.", true);
 	}
@@ -255,11 +255,8 @@ public class UpdateCheck extends BroadcastReceiver
 		weeWXAppCommon.LogMessage("UpdateCheck.java Successfully cancelled the reoccurring alarm...");
 	}
 
-	static void runInTheBackground(boolean onReceivedUpdate, boolean onAppStart, boolean onResume)
+	static void runInTheBackground(boolean onReceivedUpdate, boolean onAppStart)
 	{
-		boolean forced = weeWXAppCommon.isPrefSet("radarforecast") && onResume &&
-		                 weeWXAppCommon.GetBoolPref("update_on_resume", weeWXApp.update_on_resume_default);
-
 		weeWXAppCommon.LogMessage("UpdateCheck.java runInTheBackground() running the background updates...", true);
 
 		Context context = weeWXApp.getInstance();
@@ -280,9 +277,9 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		if(pos == 0 && !forced)
+		if(pos == 0)
 		{
-			weeWXAppCommon.LogMessage("update interval set to manual update and not set to update on start... skipping...", true);
+			weeWXAppCommon.LogMessage("update interval set to manual update... skipping...", true);
 			if(!weeWXApp.hasBootedFully)
 				weeWXApp.hasBootedFully = true;
 			return;
@@ -376,8 +373,8 @@ public class UpdateCheck extends BroadcastReceiver
 				}
 
 				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getForecast(" +
-				                          forced + ", " + onAppStart + ")...", true);
-				weeWXAppCommon.getForecast(forced, onAppStart);
+				                          "false, " + onAppStart + ")...", true);
+				weeWXAppCommon.getForecast(false, onAppStart);
 
 				String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 				if(radtype != null && radtype.equals("image"))
@@ -386,18 +383,18 @@ public class UpdateCheck extends BroadcastReceiver
 					if(radarURL != null && !radarURL.isBlank())
 					{
 						weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getRadarImage(" +
-						                          forced + ", " + onAppStart + ")...", true);
-						weeWXAppCommon.getRadarImage(forced, onAppStart);
+						                          "false, " + onAppStart + ")...", true);
+						weeWXAppCommon.getRadarImage(false, onAppStart);
 					}
 				}
 
 				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getWeather(" +
-				                          forced + ", " + onAppStart + ")...", true);
-				weeWXAppCommon.getWeather(forced, onAppStart);
+				                          "false, " + onAppStart + ")...", true);
+				weeWXAppCommon.getWeather(false, onAppStart);
 
 				weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getWebcam(" +
-				                          forced + ", " + onAppStart + ")...", true);
-				weeWXAppCommon.getWebcamImage(forced, onAppStart);
+				                          "false, " + onAppStart + ")...", true);
+				weeWXAppCommon.getWebcamImage(false, onAppStart);
 			} catch(Exception e) {
 				weeWXAppCommon.LogMessage("Error! e: " + e, true);
 			}

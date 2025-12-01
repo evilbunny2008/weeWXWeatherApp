@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manual actualización conjunto, pantalla de refresco swipe ukax carga ukatakiw</string>
     <string name="custom_url_not_set_or_blank">URL costumbre ukax janiw utt\'ayatakiti, jan ukax ch\'usawjawa. Mä URL costumbre ukar yapxatañatakix configuración ukar mantasmawa</string>
     <string name="next_moon">Jutïr Phaxsi Eventos?</string>
-    <string name="update_on_resume">Appnation app ukax qalltañapawa</string>
-    <string name="update_while_visible">App jist\'arañkamax machaqar tukuyaña</string>
+    <string name="update_while_running">Aktualisäwi T\'ijt\'añanxa</string>
 </resources>

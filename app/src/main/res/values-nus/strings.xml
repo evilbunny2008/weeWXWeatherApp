@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manual up state set, swape refresh screen min ca la̱th</string>
     <string name="custom_url_not_set_or_blank">Käthtɔm URL /cɛ te thi̱n, kiɛ /thiɛlɛ jɛ luɔt. Ji̱n deri wä rɛy lätni kɛ ɣöö bi URL min ca rialikä mat thi̱n</string>
     <string name="next_moon">Kä tin bi ben kɛ kɔr kä tin bëë?</string>
-    <string name="update_on_resume">Updata app kɛ tukdɛ</string>
-    <string name="update_while_visible">Updatɛ gua̱th in tekɛ app</string>
+    <string name="update_while_running">Updatdat gua̱a̱th in riŋni</string>
 </resources>

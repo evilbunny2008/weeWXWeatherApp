@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Ibahen ma update update, swipe refresh layar laho mamuat</string>
     <string name="custom_url_not_set_or_blank">URL Cukai lang itetapkon, atap kosong. Boi do nasiam masuk hu pengaturan laho manambahkon URL khusus</string>
     <string name="next_moon">Selanjutni acara bulan?</string>
-    <string name="update_on_resume">Aplikasi update bani mungkahni</string>
-    <string name="update_while_visible">Pembaruan sanggah buka app</string>
+    <string name="update_while_running">Pembaruan sanggah marlintun</string>
 </resources>

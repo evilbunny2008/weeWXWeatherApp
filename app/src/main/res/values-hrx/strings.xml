@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manueel aktualisiirungs sets, swipeffrischen screen fer se laate</string>
     <string name="custom_url_not_set_or_blank">Kunde URL is net set, of is leen. Tuu khanst in instellunge keen fer een personalisiirt URL hiner lose</string>
     <string name="next_moon">Next moonat ewënte?</string>
-    <string name="update_on_resume">Aktualisierungs app in aanfang</string>
-    <string name="update_while_visible">Aktualisierung wëns tuu app uf mache</string>
+    <string name="update_while_running">Aktualisierung wëns tuu laafe tuust</string>
 </resources>

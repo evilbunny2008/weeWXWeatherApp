@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">मैनुअल अपडेट सेट, स्वाइप रिफ्रेश स्क्रीन लोड करने लेई</string>
     <string name="custom_url_not_set_or_blank">कस्टम URL सेट नेईं ऐ, जां खाली ऐ। तुस इक कस्टम URL जोड़ने लेई सेटिंग्स च जाई सकदे ओ</string>
     <string name="next_moon">अगला चंद्रमा दी घटनाएं?</string>
-    <string name="update_on_resume">शुरू पर ऐप अपडेट करो</string>
-    <string name="update_while_visible">ऐप खुलने दे दौरान अपडेट करो</string>
+    <string name="update_while_running">चलांदे वक्त अपडेट</string>
 </resources>

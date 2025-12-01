@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Sete ya Ntšhwafatšo ya Manual, Swipe Refresh Skrine sa go Laetša</string>
     <string name="custom_url_not_set_or_blank">URL ya tlwaelo ga se ya bewa, goba ga e na selo. O ka tsena ka gare ga dipeakanyo go oketša URL ya tlwaelo</string>
     <string name="next_moon">Ditiragalo tše di latelago tša Ngwedi?</string>
-    <string name="update_on_resume">Update App go Thoma</string>
-    <string name="update_while_visible">Ntšhatša ge app e butšwe</string>
+    <string name="update_while_running">Update o sa matha</string>
 </resources>

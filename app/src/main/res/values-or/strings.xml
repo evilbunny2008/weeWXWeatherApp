@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">ମାନୁଆଲ୍ ଅପଡେଟ୍ ସେଟ୍, ଲୋଡ୍ କରିବାକୁ ରିଫ୍ରେସ୍ ସ୍କ୍ରିନ୍ ସ୍ୱାଇପ୍ କରନ୍ତୁ |</string>
     <string name="custom_url_not_set_or_blank">କଷ୍ଟମ୍ URL ସେଟ୍ ହୋଇନାହିଁ, କିମ୍ବା ଖାଲି ଅଛି | ଏକ କଷ୍ଟମ୍ URL ଯୋଡିବାକୁ ଆପଣ ସେଟିଂସମୂହକୁ ଯାଇପାରିବେ |</string>
     <string name="next_moon">ପରବର୍ତ୍ତୀ ଚନ୍ଦ୍ର ଘଟଣା?</string>
-    <string name="update_on_resume">ଆରମ୍ଭରେ ଆପ୍ ଅପଡେଟ୍ କରନ୍ତୁ |</string>
-    <string name="update_while_visible">ଆପ୍ ଖୋଲିବା ସମୟରେ ଅଦ୍ୟତନ କରନ୍ତୁ |</string>
+    <string name="update_while_running">ଚାଲିବା ସମୟରେ ଅଦ୍ୟତନ କରନ୍ତୁ |</string>
 </resources>

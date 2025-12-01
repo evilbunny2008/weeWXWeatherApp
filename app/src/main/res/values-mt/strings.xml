@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Sett ta \'aġġornament manwali, swipe aġġorna l-iskrin biex tagħbija</string>
     <string name="custom_url_not_set_or_blank">Il-URL personalizzat mhuwiex issettjat, jew huwa vojt. Tista\' tidħol fis-settings biex iżżid URL personalizzat</string>
     <string name="next_moon">Avvenimenti tal-qamar li jmiss?</string>
-    <string name="update_on_resume">Aġġorna l-app mal-bidu</string>
-    <string name="update_while_visible">Aġġorna waqt li l-app tkun miftuħa</string>
+    <string name="update_while_running">Aġġorna waqt li tkun qed taħdem</string>
 </resources>

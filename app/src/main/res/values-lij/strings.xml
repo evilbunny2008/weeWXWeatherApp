@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Insemme à l\'aggiornamento manuâ, o schermo de rinfresco pe carregâ</string>
     <string name="custom_url_not_set_or_blank">L\'URL personalizzou o no l\'é misso, ò o l\'é veuo. O peu anâ inte impostaçioin pe azzonze un URL personalizzou</string>
     <string name="next_moon">I eventi da luña apreuvo?</string>
-    <string name="update_on_resume">Aggiornamento app a-o comenso</string>
-    <string name="update_while_visible">Aggiornamento tanto ch\'o l\'app o l\'é averto</string>
+    <string name="update_while_running">Aggiornamento tanto ch\'o corre</string>
 </resources>

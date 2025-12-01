@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Гараар шэнэлхэ набор, һэргээлтын дэлгэсые ашаглахын тулада һэргээнэ</string>
     <string name="custom_url_not_set_or_blank">Захиалгаар URL тогтоогдоогүй, али хооһон. Та захиалгаар URL нэмэжэ, настройконуудта орожо болохо</string>
     <string name="next_moon">Удаадахи һарын үйлэ хэрэгүүд?</string>
-    <string name="update_on_resume">Эхиндээ шэнэлхэ апп</string>
-    <string name="update_while_visible">Апп нээлтэтэй байхадаа шэнэлхэ</string>
+    <string name="update_while_running">Гүйжэ байхадаа шэнэлхэ</string>
 </resources>

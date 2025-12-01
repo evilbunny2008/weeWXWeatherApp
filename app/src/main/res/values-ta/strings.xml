@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">கைமுறைப் புதுப்பிப்புத் தொகுப்பு, ஏற்றுவதற்கு புதுப்பித்தல் திரையை ஸ்வைப் செய்யவும்</string>
     <string name="custom_url_not_set_or_blank">தனிப்பயன் URL அமைக்கப்படவில்லை அல்லது காலியாக உள்ளது. தனிப்பயன் URL ஐச் சேர்க்க நீங்கள் அமைப்புகளுக்குச் செல்லலாம்</string>
     <string name="next_moon">அடுத்த நிலவு நிகழ்வுகள்?</string>
-    <string name="update_on_resume">தொடக்கத்தில் பயன்பாட்டைப் புதுப்பிக்கவும்</string>
-    <string name="update_while_visible">ஆப்ஸ் திறக்கும் போது புதுப்பிக்கவும்</string>
+    <string name="update_while_running">இயங்கும் போது புதுப்பிக்கவும்</string>
 </resources>

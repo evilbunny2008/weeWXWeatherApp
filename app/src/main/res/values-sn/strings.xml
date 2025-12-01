@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manual Upment Set, Swipe Refresh Screen kuti utore</string>
     <string name="custom_url_not_set_or_blank">Tsika URL haina kuiswa, kana isina chinhu. Iwe unogona kuenda mune zvigadziriso kuti uwedzere tsika yeTLL</string>
     <string name="next_moon">Zviitiko zvemwedzi zvinotevera?</string>
-    <string name="update_on_resume">Gadziridza app pane kutanga</string>
-    <string name="update_while_visible">Gadzirisa apo App Yakavhurika</string>
+    <string name="update_while_running">Gadziridza uchimhanya</string>
 </resources>

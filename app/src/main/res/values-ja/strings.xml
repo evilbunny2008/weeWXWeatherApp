@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">手動更新セット、画面をスワイプして更新します</string>
     <string name="custom_url_not_set_or_blank">カスタム URL が設定されていないか、空白です。設定に移動してカスタム URL を追加できます</string>
     <string name="next_moon">来月のイベントは？</string>
-    <string name="update_on_resume">起動時にアプリを更新する</string>
-    <string name="update_while_visible">アプリを開いたまま更新する</string>
+    <string name="update_while_running">実行中に更新する</string>
 </resources>

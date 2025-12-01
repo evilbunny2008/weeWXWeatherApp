@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manyèl mete ajou, glise ekran rafrechi pou chaje</string>
     <string name="custom_url_not_set_or_blank">URL Custom pa mete, oswa li vid. Ou ka ale nan anviwònman yo ajoute yon URL koutim</string>
     <string name="next_moon">Evènman pwochen lalin?</string>
-    <string name="update_on_resume">Mete ajou app sou kòmansman an</string>
-    <string name="update_while_visible">Mete ajou pandan aplikasyon an louvri</string>
+    <string name="update_while_running">Mete ajou pandan w ap kouri</string>
 </resources>

@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">手動更新集，滑動刷新畫面即可載入</string>
     <string name="custom_url_not_set_or_blank">自訂網址唔係設定，或者係空白。你可以去設定加入自訂網址</string>
     <string name="next_moon">下一個月亮事件？</string>
-    <string name="update_on_resume">開始更新應用程式</string>
-    <string name="update_while_visible">應用程式開啟時更新</string>
+    <string name="update_while_running">跑步時更新</string>
 </resources>

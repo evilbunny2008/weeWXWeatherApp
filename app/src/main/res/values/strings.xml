@@ -38,7 +38,7 @@
     <string name="every_15_minutes">Every 15 Minutes</string>
     <string name="every_30_minutes">Every 30 Minutes</string>
     <string name="every_hour">Every Hour</string>
-	<string name="update_while_visible">Update while app open</string>
+	<string name="update_while_running">Update while running</string>
     <string name="light_theme">Light Theme</string>
     <string name="dark_theme">Dark Theme</string>
     <string name="system_default">System Default</string>
@@ -92,5 +92,4 @@
 	<string name="manual_update_set_refresh_screen_to_load">Manual update set, swipe refresh screen to load</string>
 	<string name="custom_url_not_set_or_blank">Custom URL isn\'t set, or is blank. You can go into settings to add a custom URL</string>
 	<string name="next_moon">Next moon events?</string>
-	<string name="update_on_resume">Update app on start</string>
 </resources>

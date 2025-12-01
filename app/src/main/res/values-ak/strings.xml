@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Manual Update Set, Swipe Refresh Screen no na fa wo ho hyɛ mu</string>
     <string name="custom_url_not_set_or_blank">Custom URL no nnyɛ set, anaasɛ ɛyɛ blank. Wubetumi akɔ nhyehyɛe mu de URL a wɔahyɛ da ayɛ aka ho</string>
     <string name="next_moon">Ɔsram a edi hɔ no mu nsɛm a esisi?</string>
-    <string name="update_on_resume">Update App wɔ Start so</string>
-    <string name="update_while_visible">Update bere a app no ​​abue</string>
+    <string name="update_while_running">Update bere a woreyɛ adwuma</string>
 </resources>

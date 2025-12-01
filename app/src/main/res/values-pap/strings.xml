@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Set di actualisacion manual, pantaya di refresco di swipe pa carga</string>
     <string name="custom_url_not_set_or_blank">URL personalisá no ta set, òf ta blanku. Bo por bai den settings pa añadí un URL personalisá</string>
     <string name="next_moon">Susesonan di siguiente luna?</string>
-    <string name="update_on_resume">Aktualisashon di app na kuminsamentu</string>
-    <string name="update_while_visible">Update mientras app ta habri</string>
+    <string name="update_while_running">Update mientras ta core</string>
 </resources>

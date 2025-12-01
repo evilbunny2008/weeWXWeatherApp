@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">मॅन्युअल अपडेट सेट, लोड करपाक ताजें स्क्रीन स्वाइप करचें</string>
     <string name="custom_url_not_set_or_blank">सानुकूल URL सेट जायना, वा रिकामे आसा. सानुकूल URL जोडपाक तुमी सेटिंग्जांत वचूंक शकतात</string>
     <string name="next_moon">फुडले चंद्र घडणुको?</string>
-    <string name="update_on_resume">START 2019 चेर अॅप अपडेट करात</string>
-    <string name="update_while_visible">अॅप उगडटना अद्ययावत करात</string>
+    <string name="update_while_running">चालू आसतना अपडेट</string>
 </resources>

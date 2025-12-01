@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Напыла арҿыцра акомплект, аҭагаларазы арҿыцра аекран еиҭага</string>
     <string name="custom_url_not_set_or_blank">Ахатә URL еиқәыршәаӡам, мамзаргьы иҭацәуп. Уара архиарақәа рахь унеир улшоит еиқәыршәоу URL ацҵаразы</string>
     <string name="next_moon">Анаҩстәи амза ахҭысқәа?</string>
-    <string name="update_on_resume">Апрограмма ралагараҿы арҿыцра</string>
-    <string name="update_while_visible">Апрограмма аартны ианыҟоу арҿыцра</string>
+    <string name="update_while_running">Арҿыцра аҩраан</string>
 </resources>

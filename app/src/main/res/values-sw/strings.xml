@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Sasisha Sasisho la Mwongozo, Swipe Refresh Screen kupakia</string>
     <string name="custom_url_not_set_or_blank">URL ya kawaida haijawekwa, au ni tupu. Unaweza kwenda kwenye mipangilio ili kuongeza URL ya kawaida</string>
     <string name="next_moon">Matukio ya mwezi ujao?</string>
-    <string name="update_on_resume">Sasisha programu wakati wa kuanza</string>
-    <string name="update_while_visible">Sasisha wakati programu inafunguliwa</string>
+    <string name="update_while_running">Sasisha wakati unaendesha</string>
 </resources>

@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Ruční aktualizace nastavena, přejetím prstem po obnovovací obrazovce se načte</string>
     <string name="custom_url_not_set_or_blank">Vlastní adresa URL není nastavena nebo je prázdná. Můžete přejít do nastavení a přidat vlastní adresu URL</string>
     <string name="next_moon">Další události na Měsíci?</string>
-    <string name="update_on_resume">Aktualizujte aplikaci při spuštění</string>
-    <string name="update_while_visible">Aktualizujte při otevřené aplikaci</string>
+    <string name="update_while_running">Aktualizace za běhu</string>
 </resources>

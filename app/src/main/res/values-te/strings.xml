@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">మాన్యువల్ అప్‌డేట్ సెట్ చేయబడింది, లోడ్ చేయడానికి రిఫ్రెష్ స్క్రీన్‌ను స్వైప్ చేయండి</string>
     <string name="custom_url_not_set_or_blank">అనుకూల URL సెట్ చేయబడలేదు లేదా ఖాళీగా ఉంది. అనుకూల URLని జోడించడానికి మీరు సెట్టింగ్‌లకు వెళ్లవచ్చు</string>
     <string name="next_moon">తదుపరి చంద్రుని సంఘటనలు?</string>
-    <string name="update_on_resume">ప్రారంభంలో యాప్‌ను నవీకరించండి</string>
-    <string name="update_while_visible">యాప్ తెరిచినప్పుడు అప్‌డేట్ చేయండి</string>
+    <string name="update_while_running">నడుస్తున్నప్పుడు నవీకరించండి</string>
 </resources>

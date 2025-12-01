@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Set update manuel, swipe refresh screen ka doni</string>
     <string name="custom_url_not_set_or_blank">Custom URL tɛ set, walima a ye blank ye. Aw bɛ se ka don settings kɔnɔ walasa ka URL ladamulen dɔ fara a kan</string>
     <string name="next_moon">Kalo nata ko kɛlenw?</string>
-    <string name="update_on_resume">Application update on start</string>
-    <string name="update_while_visible">Update while app da wulilen</string>
+    <string name="update_while_running">Update ka baara kɛ</string>
 </resources>

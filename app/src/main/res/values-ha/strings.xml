@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">An sabunta Adireshin Adireshin, Sripe mai musayar allo don kaya</string>
     <string name="custom_url_not_set_or_blank">Ba a saita URL na al\'ada ba, ko kuma babu komai. Kuna iya shiga cikin saiti don ƙara URL na al\'ada</string>
     <string name="next_moon">Abubuwan da suka faru na gaba?</string>
-    <string name="update_on_resume">Sabunta app akan farawa</string>
-    <string name="update_while_visible">Sabuntawa yayin da app bude</string>
+    <string name="update_while_running">Sabuntawa yayin gudana</string>
 </resources>

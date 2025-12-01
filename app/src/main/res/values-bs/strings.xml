@@ -90,6 +90,5 @@
     <string name="manual_update_set_refresh_screen_to_load">Postavljeno ručno ažuriranje, prevucite ekran za osvježavanje za učitavanje</string>
     <string name="custom_url_not_set_or_blank">Prilagođeni URL nije postavljen ili je prazan. Možete ići u postavke da dodate prilagođeni URL</string>
     <string name="next_moon">Događaji sljedećeg mjeseca?</string>
-    <string name="update_on_resume">Ažurirajte aplikaciju na početku</string>
-    <string name="update_while_visible">Ažurirajte dok je aplikacija otvorena</string>
+    <string name="update_while_running">Ažurirajte dok radite</string>
 </resources>
