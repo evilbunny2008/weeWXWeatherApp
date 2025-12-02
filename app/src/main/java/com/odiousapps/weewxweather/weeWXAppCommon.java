@@ -165,12 +165,11 @@ class weeWXAppCommon
 
 		switch(pos)
 		{
-			case 1 -> period *= 5;
+			case 1, 6 -> period *= 5;
 			case 2 -> period *= 10;
 			case 3 -> period *= 15;
 			case 4 -> period *= 30;
 			case 5 -> period *= 60;
-			case 6 -> period *= 5;
 			default ->
 			{
 				return def;
@@ -326,8 +325,6 @@ class weeWXAppCommon
 		} catch (IOException e) {
 			doStackOutput(e);
 		}
-
-		//Log.d("weeWXApp", "Line 311");
 	}
 
 	private static Context getApplicationContext()
@@ -703,6 +700,15 @@ class weeWXAppCommon
 		return sb.toString();
 	}
 
+	private static void updateCacheTime(long timestamp)
+	{
+		long last_update = Math.round(timestamp / 1_000D);
+		long rssCheck = getRSSsecs();
+
+		if(last_update != 0 && last_update != rssCheck)
+			SetLongPref("rssCheck", last_update);
+	}
+
 	static String[] processBOM2(String data)
 	{
 		return processBOM2(data, false);
@@ -757,6 +763,9 @@ class weeWXAppCommon
 			Date df = sdf.parse(obs);
 			if(df != null)
 				timestamp = df.getTime();
+
+			if(timestamp > 0)
+				updateCacheTime(timestamp);
 
 			String[] bits = fcdiv.split("<dl class='forecast-summary'>");
 			String bit = bits[1];
@@ -916,14 +925,10 @@ class weeWXAppCommon
 
 		try
 		{
-			LogMessage("Line 1178");
-
 			JSONObject jobj = new JSONObject(data);
 
 			desc = jobj.getJSONObject("metadata").getString("forecast_region");
 			String tmp = jobj.getJSONObject("metadata").getString("issue_time");
-
-			LogMessage("Line 1185");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 
@@ -931,7 +936,8 @@ class weeWXAppCommon
 			if(df != null)
 				timestamp = df.getTime();
 
-			LogMessage("Line 1192");
+			if(timestamp > 0)
+				updateCacheTime(timestamp);
 
 			JSONArray mydays = jobj.getJSONArray("data");
 			for(int i = 0; i < mydays.length(); i++)
@@ -946,8 +952,6 @@ class weeWXAppCommon
 
 				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 				day.day = sdf.format(day.timestamp);
-
-				LogMessage("Line 1207");
 
 				if(metric)
 				{
@@ -980,27 +984,19 @@ class weeWXAppCommon
 					}
 				}
 
-				LogMessage("Line 1240");
-
 				if(!mydays.getJSONObject(i).getString("extended_text").equals("null"))
 					day.text = mydays.getJSONObject(i).getString("extended_text");
-
-				LogMessage("Line 1246");
 
 				String fileName = bomlookup(mydays.getJSONObject(i).getString("icon_descriptor"));
 				if(fileName != null && !fileName.equals("null") && !fileName.isBlank())
 				{
 					if(!use_icons)
 					{
-						LogMessage("Line 1254");
-
 						if(!fileName.equals("frost"))
 							day.icon = "wi wi-bom-" + fileName;
 						else
 							day.icon = "flaticon-thermometer";
 					} else {
-						LogMessage("Line 1260");
-
 						fileName = "bom2" + fileName + ".png";
 
 						try
@@ -1018,8 +1014,6 @@ class weeWXAppCommon
 				}
 
 				days.add(day);
-
-				LogMessage("Line 1273");
 			}
 		} catch(Exception e) {
 			LogMessage("Error! e: " + e, true);
@@ -1180,6 +1174,9 @@ class weeWXAppCommon
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
+			if(timestamp > 0)
+				updateCacheTime(timestamp);
+
 			desc = data.split("<dt>Observed at:</dt>", 2)[1].split("<dd class='mrgn-bttm-0'>")[1].split("</dd>")[0].strip();
 
 			data = data.split("<div class='div-table'>", 2)[1].strip();
@@ -1327,6 +1324,9 @@ class weeWXAppCommon
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
+			if(timestamp > 0)
+				updateCacheTime(timestamp);
+
 			desc = data.split("<dt>Enregistrées à :</dt>", 2)[1].split("<dd class='mrgn-bttm-0'>")[1].split("</dd>")[0].strip();
 
 			data = data.split("<div class='div-table'>", 2)[1].strip();
@@ -1464,6 +1464,9 @@ class weeWXAppCommon
 			Date df =sdf.parse(tmp);
 			if(df != null)
 				timestamp = df.getTime();
+
+			if(timestamp > 0)
+				updateCacheTime(timestamp);
 
 			JSONArray periodName = jobj.getJSONObject("time").getJSONArray("startPeriodName");
 			JSONArray validTime = jobj.getJSONObject("time").getJSONArray("startValidTime");
@@ -1632,6 +1635,9 @@ class weeWXAppCommon
 			if(df != null)
 				timestamp = df.getTime();
 
+			if(timestamp > 0)
+				updateCacheTime(timestamp);
+
 			JSONArray jarr = jobj.getJSONObject("city").getJSONObject("forecast").getJSONArray("forecastDay");
 			for(int i = 0; i < jarr.length(); i++)
 			{
@@ -1710,6 +1716,9 @@ class weeWXAppCommon
 			Date df = sdf.parse(string_time);
 			if(df != null)
 				timestamp = df.getTime();
+
+			if(timestamp > 0)
+				updateCacheTime(timestamp);
 
 			for(int i = 0; i < loop.length(); i++)
 			{
@@ -1812,6 +1821,9 @@ class weeWXAppCommon
 			Date df = sdf.parse(string_time);
 			if(df != null)
 				lastTS = timestamp = df.getTime();
+
+			if(timestamp > 0)
+				updateCacheTime(timestamp);
 
 			data = data.split("<td width='40%' class='statwert'>Vorhersage</td>", 2)[1].split("</table>", 2)[0].strip();
 			bits = data.split("<tr");
@@ -1919,6 +1931,9 @@ class weeWXAppCommon
 			if(df != null)
 				lastTS = timestamp = df.getTime();
 
+			if(timestamp > 0)
+				updateCacheTime(timestamp);
+
 			data = data.split("<tbody>")[1].strip();
 			String[] bits = data.split("<tr>");
 			for(int i = 1; i < bits.length; i++)
@@ -2015,6 +2030,9 @@ class weeWXAppCommon
 			Date df = sdf.parse(elaborado);
 			if(df != null)
 				timestamp = df.getTime();
+
+			if(timestamp > 0)
+				updateCacheTime(timestamp);
 
 			JSONArray dates = jobj.getJSONObject("prediccion").getJSONArray("dia");
 			for(int i = 0; i < dates.length(); i++)
@@ -3631,9 +3649,9 @@ class weeWXAppCommon
 		LogMessage("reallyGetForecast() forcecastData: " + forecastData);
 
 		LogMessage("updating rss cache");
-		RemovePref("rssCheck");
+		//RemovePref("rssCheck");
 		SetLongPref("rssCheck", getCurrTime());
-		RemovePref("forecastData");
+		//RemovePref("forecastData");
 		SetStringPref("forecastData", forecastData);
 
 		return forecastData;
