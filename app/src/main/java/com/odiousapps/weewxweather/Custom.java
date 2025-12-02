@@ -190,7 +190,7 @@ public class Custom extends Fragment
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
 		{
 			int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
-			if(pos == 6 && KeyValue.isVisible)
+			if(pos > 0 && KeyValue.isVisible)
 				loadCustom(true);
 		}
 	};
