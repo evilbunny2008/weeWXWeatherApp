@@ -113,7 +113,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen)
 				drawRadar();
 			else
-				drawForecast();
+				reloadForecast();
 
 			drawWeather();
 
@@ -303,17 +303,6 @@ public class Weather extends Fragment implements View.OnClickListener
 			weeWXAppCommon.LogMessage("Update the radar webview page...");
 			loadWebViewURL(false, radarURL);
 		}
-	}
-
-	void drawForecast()
-	{
-		weeWXAppCommon.LogMessage("drawForecast()");
-
-		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
-			return;
-
-		weeWXAppCommon.LogMessage("Show the forecast...");
-		reloadForecast();
 	}
 
 	void drawWeather()
@@ -530,7 +519,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			else
 				wv.reload();
 
-			//wv.invalidate();
+			wv.invalidate();
 		});
 	}
 
@@ -736,7 +725,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private void loadWebView(boolean radarForecast, String radtype, String radarURL, String fctype, String forecastData)
 	{
-		weeWXAppCommon.LogMessage("loadWebView(forecast)");
+		weeWXAppCommon.LogMessage("loadWebView(forecast)", true);
 
 		final StringBuilder sb = new StringBuilder();
 
@@ -1087,8 +1076,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
 		{
-			weeWXAppCommon.LogMessage("Weather.java reloadForecast() weeWXApp.ForecastOnHomeScreenis not true, skipping... " +
-			                          "This line shouldn't be hit...",true);
+			weeWXAppCommon.LogMessage("Weather.java reloadForecast() weeWXApp.ForecastOnHomeScreenis not true, skipping...",true);
 			loadWebViewContent(R.string.unknown_error_occurred);
 			stopRefreshing();
 			return;
@@ -1098,24 +1086,24 @@ public class Weather extends Fragment implements View.OnClickListener
 		String forecastData = ret[1];
 		String fctype = ret[2];
 
-		weeWXAppCommon.LogMessage("fctype: " + fctype);
+		weeWXAppCommon.LogMessage("fctype: " + fctype, true);
 		weeWXAppCommon.LogMessage("forecastData: " + forecastData);
 
 		if(ret[0].equals("error"))
 		{
 			if(forecastData != null && !forecastData.isBlank())
 			{
-				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData);
+				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData, true);
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest + forecastData + weeWXApp.html_footer);
 			} else {
-				weeWXAppCommon.LogMessage("getForecast returned an unknown error...");
+				weeWXAppCommon.LogMessage("getForecast returned an unknown error...", true);
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
 				                   weeWXApp.getAndroidString(R.string.unknown_error_occurred) +
 				                   weeWXApp.html_footer);
 			}
 		}
 
-		weeWXAppCommon.LogMessage("getForecast returned some content...");
+		weeWXAppCommon.LogMessage("getForecast returned some content...", true);
 		loadWebView(fctype, forecastData);
 	}
 
@@ -1188,7 +1176,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			radtype = "";
 
 		if(str.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
-			drawForecast();
+			reloadForecast();
 
 		if(str.equals(weeWXAppCommon.REFRESH_RADAR_INTENT))
 			drawRadar();

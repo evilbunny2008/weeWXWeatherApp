@@ -25,7 +25,6 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.window.OnBackInvokedCallback;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
 import com.google.android.material.appbar.AppBarLayout;
@@ -82,7 +81,6 @@ public class MainActivity extends FragmentActivity
 {
 	private TabLayout tabLayout;
 	private DrawerLayout mDrawerLayout;
-	private OnBackInvokedCallback backCallback;
 	private TextInputLayout fgtil, bgtil;
 	private TextInputEditText settingsURL, customURL;
 	private CPEditText fgColour, bgColour;

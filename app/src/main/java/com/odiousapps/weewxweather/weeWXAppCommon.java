@@ -705,6 +705,9 @@ class weeWXAppCommon
 		long last_update = Math.round(timestamp / 1_000D);
 		long rssCheck = getRSSsecs();
 
+		LogMessage("rssCheck: " + rssCheck, true);
+		LogMessage("last_update: " + last_update, true);
+
 		if(last_update != 0 && last_update != rssCheck)
 			SetLongPref("rssCheck", last_update);
 	}
@@ -911,7 +914,7 @@ class weeWXAppCommon
 
 		if(data.isBlank())
 		{
-			LogMessage("data is blank, skipping...");
+			LogMessage("data is blank, skipping...", true);
 			return null;
 		}
 
@@ -3635,7 +3638,7 @@ class weeWXAppCommon
 		return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
 	}
 
-	static String reallyGetForecast(String url) throws IOException
+	static String reallyGetForecast(String url)
 	{
 		LogMessage("reallyGetForecast() forcecastURL: " + url);
 
@@ -3648,11 +3651,13 @@ class weeWXAppCommon
 
 		LogMessage("reallyGetForecast() forcecastData: " + forecastData);
 
-		LogMessage("updating rss cache");
+		LogMessage("updating rss cache", true);
 		//RemovePref("rssCheck");
 		SetLongPref("rssCheck", getCurrTime());
 		//RemovePref("forecastData");
 		SetStringPref("forecastData", forecastData);
+
+		LogMessage("forecastData: " + forecastData);
 
 		return forecastData;
 	}
