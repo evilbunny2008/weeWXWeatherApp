@@ -42,7 +42,6 @@ import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Locale;
@@ -1455,16 +1454,9 @@ public class MainActivity extends FragmentActivity
 			{
 				weeWXAppCommon.LogMessage("forecast checking: " + forecastURL);
 
-				try
-				{
-					tmpStr = weeWXAppCommon.reallyGetForecast(forecastURL);
-					weeWXAppCommon.LogMessage("tmpStr: " + tmpStr);
-					validURL3 = tmpStr != null && !tmpStr.isBlank();
-				} catch(IOException e) {
-					weeWXAppCommon.doStackOutput(e);
-					errorStr = e.toString();
-					validURL3 = false;
-				}
+				tmpStr = weeWXAppCommon.reallyGetForecast(forecastURL);
+				weeWXAppCommon.LogMessage("tmpStr: " + tmpStr);
+				validURL3 = tmpStr != null && !tmpStr.isBlank();
 
 				if(!validURL3 && errorStr != null && !errorStr.isBlank())
 				{
