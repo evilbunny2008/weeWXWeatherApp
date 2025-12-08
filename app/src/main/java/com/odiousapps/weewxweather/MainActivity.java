@@ -180,8 +180,7 @@ public class MainActivity extends FragmentActivity
 		// Show the status bar...
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.R)
 		{
-			WindowInsetsControllerCompat insetsController =
-					WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
+			WindowInsetsControllerCompat insetsController = WindowCompat.getInsetsController(getWindow(), getWindow().getDecorView());
 			insetsController.show(WindowInsetsCompat.Type.systemBars());
 		}
 

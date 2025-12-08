@@ -158,12 +158,6 @@ public class Custom extends Fragment
 			return;
 		}
 
-		if(forced && npwsll[1] > 0)
-		{
-			wv.post(() -> wv.reload());
-			return;
-		}
-
 		String custom = weeWXAppCommon.GetStringPref("CUSTOM_URL", weeWXApp.CUSTOM_URL_default);
 		String custom_url = weeWXAppCommon.GetStringPref("custom_url", weeWXApp.custom_url_default);
 

@@ -372,14 +372,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(str.equals(weeWXAppCommon.REFRESH_RADAR_INTENT))
 			loadRadar(false);
 
-		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
-		{
-			int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
-			if(pos > 0 && KeyValue.isVisible && radtype.equals("webpage") &&
-			   weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen)
-				radarWebView.post(() -> radarWebView.reload());
-		}
-
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen &&
 		   str.equals(weeWXAppCommon.STOP_RADAR_INTENT) && radtype.equals("image"))
 			stopRefreshing();
