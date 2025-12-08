@@ -58,6 +58,8 @@ public class SafeWebView extends WebView
 			ws.setDisplayZoomControls(false);
 			ws.setBuiltInZoomControls(false);
 
+			setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+
 			setOverScrollMode(View.OVER_SCROLL_NEVER);
 			setNestedScrollingEnabled(true);
 			setVerticalScrollBarEnabled(false);
