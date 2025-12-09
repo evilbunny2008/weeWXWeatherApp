@@ -9,8 +9,13 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.slider.Slider;
+
+import java.io.File;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -149,7 +154,10 @@ public class Stats extends Fragment
 		weeWXAppCommon.LogMessage("new zoom value = " + finalZoom + "%");
 
 		mySlider.post(() -> mySlider.setValue(finalZoom));
-		wv.post(() -> wv.getSettings().setTextZoom(finalZoom));
+		//wv.post(() -> wv.getSettings().setTextZoom(finalZoom));
+		String js = "document.body.style.zoom = " + (finalZoom / 100.0) + ";";
+		weeWXAppCommon.LogMessage("Set Zoom: " + js, true);
+		wv.evaluateJavascript(js, null);
 	}
 
 	private final Observer<String> notificationObserver = str ->
@@ -227,7 +235,7 @@ public class Stats extends Fragment
 	{
 		String icon = "";
 		if(class1 != null && !class1.isBlank())
-			icon = "<i class='" + class1 + " icon'></i>";
+			icon = weeWXAppCommon.cssToSVG(class1, null);
 
 		return "\t\t<div class='statsDataRow'>\n" +
 		       "\t\t\t<div class='statsDataCell left'>" + icon + str1 + "</div>\n" +
@@ -248,7 +256,7 @@ public class Stats extends Fragment
 	{
 		String icon = "";
 		if(class2 != null && !class2.isBlank())
-			icon = "<i class='" + class2 + " icon'></i>";
+			icon = weeWXAppCommon.cssToSVG(class2, null);
 
 		return "\t\t\t<div class='statsDataCell midright'>" + str3 + "</div>\n" +
 		       "\t\t\t<div class='statsDataCell right'>" + str4 + icon + "</div>\n" +
@@ -273,7 +281,7 @@ public class Stats extends Fragment
 	{
 		return "\t\t<div class='statsDataRow'>\n" +
 		       "\t\t\t<div class='statsDataCell " +
-		       class1 + "'><i class='flaticon-windy icon'></i>" +
+		       class1 + "'>" + weeWXAppCommon.fiToSVG("flaticon-windy") +
 		       str1 + "</div>\n";
 	}
 
@@ -281,7 +289,7 @@ public class Stats extends Fragment
 	{
 		return "\t\t\t<div class='statsDataCell " +
 		       class2 + "'>" + str2 +
-		       "<i class='wi wi-umbrella icon'></i></div>\n\t\t</div>\n\n";
+		       weeWXAppCommon.cssToSVG("wi-umbrella", null) + "</div>\n\t\t</div>\n\n";
 	}
 
 	private String createRow(String str1, String str2)
@@ -336,7 +344,7 @@ public class Stats extends Fragment
 			return "";
 		}
 
-		String className = "flaticon-women-sunglasses";
+		String className = weeWXAppCommon.fiToSVG("flaticon-women-sunglasses");
 		String out = "";
 
 		if(!UV.isBlank())
@@ -372,7 +380,8 @@ public class Stats extends Fragment
 		if((maxDateTimeStr == null || maxDateTimeStr.isBlank()) && (minDateTimeStr == null || minDateTimeStr.isBlank()))
 			return "";
 
-		return createRow("flaticon-home-page", "flaticon-home-page",
+		return createRow(weeWXAppCommon.fiToSVG("flaticon-home-page"),
+				weeWXAppCommon.fiToSVG("flaticon-home-page"),
 				getElement(bits, max) + getElement(bits, appendId),
 				maxDateTimeStr, minDateTimeStr,
 				getElement(bits, min) + getElement(bits, appendId));
@@ -412,25 +421,26 @@ public class Stats extends Fragment
 		sb.append(weeWXApp.getAndroidString(header));
 		sb.append("\n\t\t</div>\n\n");
 
-		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
+		sb.append(createRow(weeWXAppCommon.fiToSVG("flaticon-temperature"),
+				weeWXAppCommon.fiToSVG("flaticon-temperature"),
 				getElement(bits, 3) + getElement(bits, 60),
 				convert(getElement(bits, 4)),
 				convert(getElement(bits, 2)),
 				getElement(bits, 1) + getElement(bits, 60)));
 
-		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-raindrop", null), weeWXAppCommon.cssToSVG("wi-raindrop", null),
 				getElement(bits, 15) + getElement(bits, 60),
 				convert(getElement(bits, 16)),
 				convert(getElement(bits, 14)),
 				getElement(bits, 13) + getElement(bits, 60)));
 
-		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-humidity", null), weeWXAppCommon.cssToSVG("wi-humidity", null),
 				getElement(bits, 9) + getElement(bits, 64),
 				convert(getElement(bits, 10)),
 				convert(getElement(bits, 8)),
 				getElement(bits, 6) + getElement(bits, 64)));
 
-		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-barometer", null), weeWXAppCommon.cssToSVG("wi-barometer", null),
 				getElement(bits, 39) + getElement(bits, 63),
 				convert(getElement(bits, 40)),
 				convert(getElement(bits, 42)),
@@ -473,25 +483,26 @@ public class Stats extends Fragment
 		sb.append(weeWXApp.getAndroidString(header));
 		sb.append("\n\t\t</div>\n\n");
 
-		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
+		sb.append(createRow(weeWXAppCommon.fiToSVG("flaticon-temperature"),
+				weeWXAppCommon.fiToSVG("flaticon-temperature"),
 				getElement(bits, 67) + getElement(bits, 60),
 				convert(getElement(bits, 68)),
 				convert(getElement(bits, 66)),
 				getElement(bits, 65) + getElement(bits, 60)));
 
-		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-raindrop", null), weeWXAppCommon.cssToSVG("wi-raindrop", null),
 				getElement(bits, 78) + getElement(bits, 60),
 				convert(getElement(bits, 79)),
 				convert(getElement(bits, 77)),
 				getElement(bits, 76) + getElement(bits, 64)));
 
-		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-humidity", null), weeWXAppCommon.cssToSVG("wi-humidity", null),
 				getElement(bits, 82) + getElement(bits, 64),
 				convert(getElement(bits, 83)),
 				convert(getElement(bits, 81)),
 				getElement(bits, 80) + getElement(bits, 64)));
 
-		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-barometer", null), weeWXAppCommon.cssToSVG("wi-barometer", null),
 				getElement(bits, 84) + getElement(bits, 63),
 				convert(getElement(bits, 85)),
 				convert(getElement(bits, 87)),
@@ -534,25 +545,26 @@ public class Stats extends Fragment
 		sb.append(weeWXApp.getAndroidString(header));
 		sb.append("\n\t\t</div>\n\n");
 
-		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
+		sb.append(createRow(weeWXAppCommon.fiToSVG("flaticon-temperature"),
+				weeWXAppCommon.fiToSVG("flaticon-temperature"),
 				getElement(bits, 90) + getElement(bits, 60),
 				getTimeMonth(getElement(bits, 91)),
 				getTimeMonth(getElement(bits, 89)),
 				getElement(bits, 88) + getElement(bits, 60)));
 
-		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-raindrop", null), weeWXAppCommon.cssToSVG("wi-raindrop", null),
 				getElement(bits, 101) + getElement(bits, 60),
 				getTimeMonth(getElement(bits, 102)),
 				getTimeMonth(getElement(bits, 100)),
 				getElement(bits, 99) + getElement(bits, 64)));
 
-		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-humidity", null), weeWXAppCommon.cssToSVG("wi-humidity", null),
 				getElement(bits, 105) + getElement(bits, 64),
 				getTimeMonth(getElement(bits, 106)),
 				getTimeMonth(getElement(bits, 104)),
 				getElement(bits, 103) + getElement(bits, 64)));
 
-		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-barometer", null), weeWXAppCommon.cssToSVG("wi-barometer", null),
 				getElement(bits, 107) + getElement(bits, 63),
 				getTimeMonth(getElement(bits, 108)),
 				getTimeMonth(getElement(bits, 110)),
@@ -584,25 +596,26 @@ public class Stats extends Fragment
 		sb.append(weeWXApp.getAndroidString(header));
 		sb.append("\n\t\t</div>\n\n");
 
-		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
+		sb.append(createRow(weeWXAppCommon.fiToSVG("flaticon-temperature"),
+				weeWXAppCommon.fiToSVG("flaticon-temperature"),
 				getElement(bits, 113) + getElement(bits, 60),
 				getTimeYear(getElement(bits, 114)),
 				getTimeYear(getElement(bits, 112)),
 				getElement(bits, 111) + getElement(bits, 60)));
 
-		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-raindrop", null), weeWXAppCommon.cssToSVG("wi-raindrop", null),
 				getElement(bits, 124) + getElement(bits, 60),
 				getTimeYear(getElement(bits, 125)),
 				getTimeYear(getElement(bits, 123)),
 				getElement(bits, 122) + getElement(bits, 60)));
 
-		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-humidity", null), weeWXAppCommon.cssToSVG("wi-humidity", null),
 				getElement(bits, 128) + getElement(bits, 64),
 				getTimeYear(getElement(bits, 129)),
 				getTimeYear(getElement(bits, 127)),
 				getElement(bits, 126) + getElement(bits, 64)));
 
-		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-barometer", null), weeWXAppCommon.cssToSVG("wi-barometer", null),
 				getElement(bits, 130) + getElement(bits, 63),
 				getTimeYear(getElement(bits, 131)),
 				getTimeYear(getElement(bits, 133)),
@@ -639,25 +652,26 @@ public class Stats extends Fragment
 
 		sb.append("\n\t\t</div>\n\n");
 
-		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
+		sb.append(createRow(weeWXAppCommon.fiToSVG("flaticon-temperature"),
+				weeWXAppCommon.fiToSVG("flaticon-temperature"),
 				bits[start + 2] + getElement(bits, 60),
 				getTimeSection(which, bits[start + 3]),
 				getTimeSection(which, bits[start + 1]),
 				bits[start] + getElement(bits, 60)));
 
-		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-raindrop", null), weeWXAppCommon.cssToSVG("wi-raindrop", null),
 				bits[start + 13] + getElement(bits, 60),
 				getTimeSection(which, bits[start + 14]),
 				getTimeSection(which, bits[start + 12]),
 				bits[start + 11] + getElement(bits, 60)));
 
-		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-humidity", null), weeWXAppCommon.cssToSVG("wi-humidity", null),
 				bits[start + 17] + getElement(bits, 64),
 				getTimeSection(which, bits[start + 18]),
 				getTimeSection(which, bits[start + 16]),
 				bits[start + 15] + getElement(bits, 64)));
 
-		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-barometer", null), weeWXAppCommon.cssToSVG("wi-barometer", null),
 				bits[start + 7] + getElement(bits, 63),
 				getTimeSection(which, bits[start + 8]),
 				getTimeSection(which, bits[start + 10]),
@@ -691,25 +705,29 @@ public class Stats extends Fragment
 		sb.append(weeWXApp.getAndroidString(header));
 		sb.append("\n\t\t</div>\n\n");
 
-		sb.append(createRow("flaticon-temperature", "flaticon-temperature",
+		sb.append(createRow(weeWXAppCommon.fiToSVG("flaticon-temperature"),
+				weeWXAppCommon.fiToSVG("flaticon-temperature"),
 				getElement(bits, 136) + getElement(bits, 60),
 				getAllTime(getElement(bits, 137)),
 				getAllTime(getElement(bits, 135)),
 				getElement(bits, 134) + getElement(bits, 60)));
 
-		sb.append(createRow("wi wi-raindrop", "wi wi-raindrop",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-raindrop", null),
+				weeWXAppCommon.cssToSVG("wi-raindrop", null),
 				getElement(bits, 147) + getElement(bits, 60),
 				getAllTime(getElement(bits, 148)),
 				getAllTime(getElement(bits, 146)),
 				getElement(bits, 145) + getElement(bits, 60)));
 
-		sb.append(createRow("wi wi-humidity", "wi wi-humidity",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-humidity", null),
+				weeWXAppCommon.cssToSVG("wi-humidity", null),
 				getElement(bits, 151) + getElement(bits, 64),
 				getAllTime(getElement(bits, 152)),
 				getAllTime(getElement(bits, 150)),
 				getElement(bits, 149) + getElement(bits, 64)));
 
-		sb.append(createRow("wi wi-barometer", "wi wi-barometer",
+		sb.append(createRow(weeWXAppCommon.cssToSVG("wi-barometer", null),
+				weeWXAppCommon.cssToSVG("wi-barometer", null),
 				getElement(bits, 153) + getElement(bits, 63),
 				getAllTime(getElement(bits, 154)),
 				getAllTime(getElement(bits, 156)),
@@ -846,6 +864,45 @@ public class Stats extends Fragment
 			sb.append(weeWXApp.debug_html);
 
 		sb.append(weeWXApp.html_footer);
+
+		if(weeWXAppCommon.debug_html)
+		{
+			String filename = "weeWX_stats_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) + ".html";
+
+			File outFile = null;
+
+			String str = sb.toString();
+
+			try
+			{
+				outFile = weeWXAppCommon.getExtFile("weeWX", filename);
+				CustomDebug.writeDebug(outFile, str);
+				String theOutFile = outFile.getAbsolutePath();
+
+				weeWXAppCommon.LogMessage("Wrote debug html to " + theOutFile);
+
+				if(isAdded())
+				{
+					requireActivity().runOnUiThread(() ->
+							Toast.makeText(requireContext(), "Wrote debug html to " + theOutFile, Toast.LENGTH_LONG).show());
+				}
+			} catch(Exception e) {
+				weeWXAppCommon.LogMessage("Attempted to write to " + filename + " but failed with the following error: " + e);
+
+				if(isAdded())
+				{
+					if(outFile != null)
+					{
+						String theOutFile = outFile.getAbsolutePath();
+						requireActivity().runOnUiThread(() ->
+								Toast.makeText(requireContext(), "Failed to output debug html to " + theOutFile, Toast.LENGTH_LONG).show());
+					} else {
+						requireActivity().runOnUiThread(() ->
+								Toast.makeText(requireContext(), "Failed to output debug html to " + filename, Toast.LENGTH_LONG).show());
+					}
+				}
+			}
+		}
 
 		wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/",
 				sb.toString(), "text/html", "utf-8", null));

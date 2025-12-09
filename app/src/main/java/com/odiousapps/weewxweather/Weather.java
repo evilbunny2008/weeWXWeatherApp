@@ -353,27 +353,33 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		sb.append("\t\t\t<div class='dataCellCurrent'><i class='flaticon-windy icon'></i>")
+		sb.append("\t\t\t<div class='dataCellCurrent'>")
+				.append(weeWXAppCommon.fiToSVG("flaticon-windy"))
 				.append(currentSpacerLeft)
 				.append(bits[25]).append(bits[61]).append("</div>\n");
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
 				.append(bits[37]).append(bits[63])
 				.append(currentSpacerRight)
-				.append("<i class='wi wi-barometer icon'></i></div>\n");
+				.append(weeWXAppCommon.cssToSVG("wi-barometer", null))
+				.append("</div>\n");
 
 		sb.append("\t\t</div>\n");
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-wind wi-towards-")
-				.append(bits[30].toLowerCase(Locale.ENGLISH))
-				.append(" icon'></i>")
+		String dir = bits[30].toLowerCase(Locale.ENGLISH);
+		if(dir.equals("n/a"))
+			dir = "n";
+
+		sb.append("\t\t\t<div class='dataCellCurrent'>")
+				.append(weeWXAppCommon.cssToSVG("wi-wind-deg", "wi-towards-" + dir))
 				.append(currentSpacerLeft)
 				.append(bits[30]).append("</div>\n");
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
 				.append(bits[6]).append(bits[64])
 				.append(currentSpacerRight)
-				.append("<i class='wi wi-humidity icon'></i></div>\n");
+				.append(weeWXAppCommon.cssToSVG("wi-humidity", null))
+				.append("</div>\n");
 
 		sb.append("\t\t</div>\n");
 
@@ -385,13 +391,15 @@ public class Weather extends Fragment implements View.OnClickListener
 			rain = bits[158] + bits[62] + " " +
 			       weeWXApp.getAndroidString(R.string.since) + " " + bits[160];
 
-		sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-umbrella icon'></i>")
+		sb.append("\t\t\t<div class='dataCellCurrent'>")
+				.append(weeWXAppCommon.cssToSVG("wi-umbrella", null))
 				.append(currentSpacerLeft)
 				.append(rain).append("</div>\n");
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
 				.append(bits[12]).append(bits[60])
 				.append(currentSpacerRight)
-				.append("<i class='wi wi-raindrop icon' style='font-size:24px;'></i></div>");
+				.append(weeWXAppCommon.cssToSVG("wi-raindrop", null))
+				.append("</div>");
 
 		sb.append("\n\t\t</div>\n");
 
@@ -412,7 +420,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			if(!bits[45].isBlank())
 			{
-				sb.append("<i class='flaticon-women-sunglasses icon'></i>")
+				sb.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"))
 						.append(currentSpacerLeft)
 						.append(bits[45])
 						.append(" UVI");
@@ -426,7 +434,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			{
 				sb.append(bits[43]).append(" W/m²")
 						.append(currentSpacerRight)
-						.append("<i class='flaticon-women-sunglasses icon'></i>");
+						.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"));
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
@@ -442,7 +450,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			if(!bits[161].isBlank())
 			{
-				sb.append("<i class='flaticon-home-page icon'></i>")
+				sb.append(weeWXAppCommon.fiToSVG("flaticon-home-page"))
 						.append(currentSpacerLeft)
 						.append(bits[161])
 						.append(bits[60]);
@@ -457,7 +465,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				sb.append(bits[166])
 						.append(bits[64])
 						.append(currentSpacerRight)
-						.append("<i class='flaticon-home-page icon'></i>");
+						.append(weeWXAppCommon.fiToSVG("flaticon-home-page"));
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
@@ -467,12 +475,14 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-sunrise icon'></i>")
+		sb.append("\t\t\t<div class='dataCellCurrent'>")
+				.append(weeWXAppCommon.cssToSVG("wi-sunrise", null))
 				.append(currentSpacerLeft)
 				.append(bits[57]).append("</div>\n");
 		sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[58])
 				.append(currentSpacerRight)
-				.append("<i class='wi wi-sunset icon'></i></div>\n");
+				.append(weeWXAppCommon.cssToSVG("wi-sunset", null))
+				.append("</div>\n");
 
 		sb.append("\t\t</div>\n");
 
@@ -482,19 +492,25 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(next_moon && bits.length >= 292 && !bits[209].isBlank() && !bits[291].isBlank())
 		{
-			sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-moonrise icon'></i>")
+			sb.append("\t\t\t<div class='dataCellCurrent'>")
+					.append(weeWXAppCommon.cssToSVG("wi-moonrise", null))
 					.append(currentSpacerLeft)
-					.append(weeWXAppCommon.doMoon(bits[290])).append("</div>\n");
-			sb.append("\t\t\t<div class='dataCellCurrent right'>").append(weeWXAppCommon.doMoon(bits[291]))
+					.append(weeWXAppCommon.doMoon(bits[290]))
+					.append("</div>\n");
+			sb.append("\t\t\t<div class='dataCellCurrent right'>")
+					.append(weeWXAppCommon.doMoon(bits[291]))
 					.append(currentSpacerRight)
-					.append("<i class='wi wi-moonset icon'></i></div>\n");
+					.append(weeWXAppCommon.cssToSVG("wi-moonset", null))
+					.append("</div>\n");
 		} else {
-			sb.append("\t\t\t<div class='dataCellCurrent'><i class='wi wi-moonrise icon'></i>")
+			sb.append("\t\t\t<div class='dataCellCurrent'>")
+					.append(weeWXAppCommon.cssToSVG("wi-moonrise", null))
 					.append(currentSpacerLeft)
 					.append(bits[47]).append("</div>\n");
 			sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[48])
 					.append(currentSpacerRight)
-					.append("<i class='wi wi-moonset icon'></i></div>\n");
+					.append(weeWXAppCommon.cssToSVG("wi-moonset", null))
+					.append("</div>\n");
 		}
 
 		sb.append("\t\t</div>\n\n");

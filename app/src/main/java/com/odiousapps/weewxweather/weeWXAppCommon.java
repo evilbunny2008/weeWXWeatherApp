@@ -607,7 +607,7 @@ class weeWXAppCommon
 			sb.append("<div class='today'>\n\t<div class='topRow'>\n");
 			sb.append("\t\t<div class='iconBig'>\n");
 			if(!first.icon.startsWith("file:///") && !first.icon.startsWith("data:image"))
-				sb.append("\t\t\t<i class='").append(first.icon).append(" />\n");
+				sb.append("\t\t\t").append(cssToSVG(first.icon, null)).append("\n");
 			else
 				sb.append("\t\t\t<img alt='weather icon' src='").append(removeWS(first.icon)).append("' />\n");
 			sb.append("\t\t</div>\n");
@@ -649,7 +649,7 @@ class weeWXAppCommon
 
 			sb.append("\t\t\t<div class='iconSmall'>\n");
 			if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
-				sb.append("\t\t\t\t<i class='").append(day.icon).append("'></i>\n");
+				sb.append("\t\t\t\t").append(cssToSVG(day.icon, null)).append("\n");
 			else
 				sb.append("\t\t\t\t<img alt='weather icon' src='")
 						.append(tmpstr).append("' />\n");
@@ -800,9 +800,9 @@ class weeWXAppCommon
 			if(!use_icons)
 			{
 				if(!fileName.equals("frost"))
-					day.icon = "wi wi-bom-" + fileName;
+					day.icon = cssToSVG("wi-bom-" + fileName, null);
 				else
-					day.icon = "flaticon-thermometer";
+					day.icon = fiToSVG("flaticon-thermometer");
 			} else {
 				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 
@@ -862,9 +862,9 @@ class weeWXAppCommon
 				if(!use_icons)
 				{
 					if(!fileName.equals("frost"))
-						day.icon = "wi wi-bom-" + fileName;
+						day.icon = cssToSVG("wi-bom-" + fileName, null);
 					else
-						day.icon = "flaticon-thermometer";
+						day.icon = fiToSVG("flaticon-thermometer");
 				} else {
 					fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 
@@ -996,9 +996,9 @@ class weeWXAppCommon
 					if(!use_icons)
 					{
 						if(!fileName.equals("frost"))
-							day.icon = "wi wi-bom-" + fileName;
+							day.icon = cssToSVG("wi-bom-" + fileName, null);
 						else
-							day.icon = "flaticon-thermometer";
+							day.icon = fiToSVG("flaticon-thermometer");
 					} else {
 						fileName = "bom2" + fileName + ".png";
 
@@ -1091,7 +1091,7 @@ class weeWXAppCommon
 
 			if(!use_icons)
 			{
-				day.icon = "wi wi-metoffice-" + fileName.substring(0, fileName.lastIndexOf("."));
+				day.icon = cssToSVG("wi-metoffice-" + fileName.substring(0, fileName.lastIndexOf(".")), null);
 			} else {
 				fileName = "met" + fileName;
 
@@ -1249,9 +1249,9 @@ class weeWXAppCommon
 					if(!use_icons)
 					{
 						if(!fileName.equals("26"))
-							day.icon = "wi wi-weather-gc-ca-" + fileName;
+							day.icon = cssToSVG("wi-weather-gc-ca-" + fileName, null);
 						else
-							day.icon = "flaticon-thermometer";
+							day.icon = fiToSVG("flaticon-thermometer");
 					} else {
 						fileName = "wca" + fileName + ".png";
 
@@ -1399,9 +1399,9 @@ class weeWXAppCommon
 					if(!use_icons)
 					{
 						if(!fileName.equals("26"))
-							day.icon = "wi wi-weather-gc-ca-" + fileName;
+							day.icon = cssToSVG("wi-weather-gc-ca-" + fileName, null);
 						else
-							day.icon = "flaticon-thermometer";
+							day.icon = fiToSVG("flaticon-thermometer");
 					} else {
 						fileName = "wca" + fileName + ".png";
 
@@ -1671,17 +1671,17 @@ class weeWXAppCommon
 				code = code.substring(0, code.length() - 2);
 
 				if((Integer.parseInt(code) >= 1 && Integer.parseInt(code) <= 27) || code.equals("31") || code.equals("35"))
-					day.icon = "wi wi-wmo-" + code;
+					day.icon = cssToSVG("wi-wmo-" + code, null);
 				else if(code.equals("28"))
-					day.icon = "flaticon-cactus";
+					day.icon = fiToSVG("flaticon-cactus");
 				else if(code.equals("29") || code.equals("30"))
-					day.icon = "flaticon-thermometer";
+					day.icon = fiToSVG("flaticon-thermometer");
 				else if(code.equals("32"))
-					day.icon = "flaticon-cold";
+					day.icon = fiToSVG("flaticon-cold");
 				else if(code.equals("33"))
-					day.icon = "flaticon-warm";
+					day.icon = fiToSVG("flaticon-warm");
 				else if(code.equals("34"))
-					day.icon = "flaticon-cool";
+					day.icon = fiToSVG("flaticon-cool");
 
 				day.day = date;
 				days.add(day);
@@ -1748,9 +1748,9 @@ class weeWXAppCommon
 				if(!use_icons)
 				{
 					if(!day.icon.equals("frost"))
-						day.icon = "wi wi-metservice-" + day.icon;
+						day.icon = cssToSVG("wi-metservice-" + day.icon, null);
 					else
-						day.icon = "flaticon-thermometer";
+						day.icon = fiToSVG("flaticon-thermometer");
 				} else {
 					day.icon = day.icon.replaceAll("-", "_");
 
@@ -1865,9 +1865,9 @@ class weeWXAppCommon
 					icon = icon.replaceAll("_", "-");
 					icon = icon.substring(0, icon.lastIndexOf("."));
 					if(!icon.equals("pic-48") && !icon.equals("pic-66") && !icon.equals("pic67"))
-						day.icon = "wi wi-dwd-" + icon;
+						day.icon = cssToSVG("wi-dwd-" + icon, null);
 					else
-						day.icon = "flaticon-thermometer";
+						day.icon = fiToSVG("flaticon-thermometer");
 				} else {
 					String fileName = "dwd_" + icon.replaceAll("-", "_");
 					String url = "https://www.dwd.de/DE/wetter/_functions/piktos/" + icon + "?__blob=normal";
@@ -1958,9 +1958,9 @@ class weeWXAppCommon
 
 				if(!use_icons)
 				{
-					day.icon = "wi wi-" + icon.substring(0, icon.length() - 4);
+					day.icon = cssToSVG("wi-" + icon.substring(0, icon.length() - 4), null);
 				} else {
-					String fileName = "tempoitalia-" + icon;
+					String fileName = cssToSVG("wi-tempoitalia-" + icon, null);
 
 					try
 					{
@@ -2081,9 +2081,9 @@ class weeWXAppCommon
 				if(!use_icons)
 				{
 					if(!code.startsWith("7"))
-						day.icon = "wi wi-aemet-" + code;
+						day.icon = cssToSVG("wi-aemet-" + code, null);
 					else
-						day.icon = "flaticon-thermometer";
+						day.icon = fiToSVG("flaticon-thermometer");
 				} else {
 					String url = "https://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
 					String fileName = "aemet_" + code + "_g.png";
@@ -2167,7 +2167,7 @@ class weeWXAppCommon
 
 				if(!use_icons)
 				{
-					day.icon = "wi wi-yahoo-" + day.icon;
+					day.icon = cssToSVG("wi-yahoo-" + day.icon, null);
 				} else {
 					String fileName = day.icon + ".png";
 
@@ -2242,7 +2242,7 @@ class weeWXAppCommon
 
 				if(!use_icons)
 				{
-					day.icon = "wi wi-met-ie-" + day.icon;
+					day.icon = cssToSVG("wi-met-ie-" + day.icon, null);
 				} else {
 					String fileName = "y" + day.icon + ".png";
 					try
@@ -2311,9 +2311,9 @@ class weeWXAppCommon
 				String icon = weather.getString("icon");
 
 				if(!icon.endsWith("n"))
-					day.icon = "wi wi-owm-day-" + id;
+					day.icon = cssToSVG("wi-owm-day-" + id, null);
 				else
-					day.icon = "wi wi-owm-night-" + id;
+					day.icon = cssToSVG("wi-owm-night-" + id, null);
 
 				if(metric)
 					day.max = max + "&deg;C";
@@ -2405,7 +2405,7 @@ class weeWXAppCommon
 
 				if(!use_icons)
 				{
-					day.icon = "wi wi-yrno-" + code;
+					day.icon = cssToSVG("wi-yrno-" + code, null);
 				} else {
 					String fileName = "yrno" + code + ".png";
 					try
@@ -2525,7 +2525,7 @@ class weeWXAppCommon
 
 				if(!use_icons)
 				{
-					day.icon = "wi wi-yrno-" + code;
+					day.icon = cssToSVG("wi-yrno-" + code, null);
 				} else {
 					String fileName = "yrno" + code + ".png";
 
@@ -2746,9 +2746,9 @@ class weeWXAppCommon
 				if(!use_icons)
 				{
 					if(!myimg.equals("frost-then-sunny"))
-						day.icon = "wi wi-weatherzone-" + myimg;
+						day.icon = cssToSVG("wi-weatherzone-" + myimg, null);
 					else
-						day.icon = "flaticon-thermometer";
+						day.icon = fiToSVG("flaticon-thermometer");
 				} else {
 					String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
 
@@ -4315,6 +4315,47 @@ class weeWXAppCommon
 		}
 
 		return null;
+	}
+
+	static String fiToSVG(String cssname)
+	{
+		if(cssname.startsWith("<img "))
+			return cssname;
+
+		String tmpStr = "<img style='width:1em;height:1em;'";
+
+		tmpStr += " src='file:///android_asset/glyphs/";
+
+		switch(cssname)
+		{
+			case "flaticon-temperature" -> tmpStr += "uniF100.svg";
+			case "flaticon-home-page" -> tmpStr += "uniF101.svg";
+			case "flaticon-women-sunglasses" -> tmpStr += "uniF102.svg";
+			case "flaticon-windy" -> tmpStr += "uniF103.svg";
+			case "flaticon-thermometer" -> tmpStr += "uniF104.svg";
+			case "flaticon-cactus" -> tmpStr += "uniF105.svg";
+			case "flaticon-cool" -> tmpStr += "uniF106.svg";
+			case "flaticon-cold" -> tmpStr += "uniF107.svg";
+			case "flaticon-warm" -> tmpStr += "uniF108.svg";
+			default -> LogMessage("Invalid FlatIcon String: " + cssname, true);
+		}
+
+		return tmpStr + "'/>";
+	}
+
+	static String cssToSVG(String cssname, String htmlclass)
+	{
+		if(cssname.startsWith("<img "))
+			return cssname;
+
+		String tmpStr = "<img style='width:1.5em;height:1.5em;'";
+
+		if(htmlclass != null && !htmlclass.isBlank())
+			tmpStr += " class='" + htmlclass + "'";
+
+		tmpStr += " src='file:///android_asset/glyphs/" + cssname;
+
+		return tmpStr + ".svg'/>";
 	}
 
 	static long[] getNPWSLL()
