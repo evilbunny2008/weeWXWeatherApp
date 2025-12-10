@@ -57,7 +57,7 @@ html, body
 {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	text-align: center;
 	justify-content: space-between;
 }
 .iconBig img, i
@@ -134,7 +134,7 @@ html, body
 	display: flex;
 	flex-direction: row;
 	width: 100%;
-	align-items: center;
+	text-align: center;
 	justify-content: space-between;
 	font-size: var(--font-average);
 	font-weight: bold;
@@ -152,8 +152,8 @@ html, body
 	font-weight: bold;
 	font-size: var(--font-average);
 	margin: 0 0 2px 0;
+	justify-content: center;
 	text-align: center;
-	align-items: center;
 }
 .desc
 {
@@ -206,7 +206,7 @@ html, body
 {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	text-align: center;
 	justify-content: space-between;
 }
 .dataTableCurrent
@@ -219,21 +219,29 @@ html, body
 }
 .dataRowCurrent
 {
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+    width: 100%;
+	text-align: center;
 	font-size: var(--font-small);
+	display: grid;
+	grid-template-columns:
+	    1em
+	    5px
+	    minmax(90px, 1fr)
+	    minmax(90px, 1fr)
+	    5px
+	    1em;
 }
 .dataCellCurrent
 {
+    display: flex;
 	width: 100%;
-	display: flex;
-	align-items: center;
 	white-space: nowrap;
+	text-align: left;
+	justify-content: flex-start;
 }
 .dataCellCurrent.right
 {
+	text-align: right;
 	justify-content: flex-end;
 }
 .statsLayout
@@ -262,38 +270,64 @@ html, body
 .statsDataRow
 {
 	display: grid;
-	grid-template-columns: minmax(100px, 2fr)
-	minmax(55px, 1fr)
-	minmax(3px, 5px)
-	minmax(55px, 1fr)
-	minmax(100px, 2fr);
+	grid-template-columns:
+	    1em
+	    5px
+	    minmax(90px, 1fr)
+	    5px
+	    minmax(55px, 1fr)
+
+        minmax(5px, 1fr)
+
+	    minmax(55px, 1fr)
+	    5px
+	    minmax(90px, 1fr)
+	    5px
+	    1em;
+    align-items: center;
 }
 .statsDataCell
 {
-	align-self: center;
+    display: flex;
 	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
-.statsDataCell.left, .statsDataCell.midleft,
-.statsDataCell.Wind, .statsDataCell.Wind2
-{
+	align-items: start;
 	text-align: left;
-	justify-self: start;
+	justify-content: start;
+	margin: 0;
+}
+.wi {
+    display: inline-block;
+    vertical-align: middle;
+    horizontal-align: left;
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fi {
+    display: inline-block;
+    vertical-align: middle;
+    horizontal-align: left;
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
 }
 .statsDataCell.right, .statsDataCell.midright,
 .statsDataCell.Rain, .statsDataCell.Rain2
 {
 	text-align: right;
-	justify-self: end;
+	justify-content: flex-end;
 }
 .statsDataCell.Wind, .statsDataCell.Rain
 {
-	grid-column: span 2;
+	grid-column: span 3;
 }
 .statsDataCell.Wind2
 {
-	grid-column: span 4;
+	grid-column: span 6;
 }
 .statsDataCell.Rain2
 {
@@ -313,20 +347,26 @@ html, body
 	margin-left: 2px;
 	margin-right: 2px;
 }
-.currentSpacer.right
-{
-	width: 3px;
-}
 @media (min-width: 500px)
 {
 	.statsDataRow
 	{
-		display: grid;
-		grid-template-columns: minmax(100px, 2fr)
-		minmax(55px, 1fr)
-		minmax(3px, 1fr)
-		minmax(55px, 1fr)
-		minmax(100px, 2fr);
+        display: grid;
+        grid-template-columns:
+            1em
+            5px
+            minmax(90px, 1fr)
+            5px
+            minmax(55px, 1fr)
+
+            minmax(5px, 1fr)
+
+            minmax(55px, 1fr)
+            5px
+            minmax(90px, 1fr)
+            5px
+            1em;
+        align-items: center;
 	}
 }
 /* Scroll-to-top button */

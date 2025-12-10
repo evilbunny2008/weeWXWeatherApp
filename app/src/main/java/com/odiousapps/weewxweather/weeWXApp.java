@@ -16,7 +16,9 @@ import android.text.TextPaint;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
 
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
 import androidx.annotation.NonNull;
@@ -32,8 +34,6 @@ public class weeWXApp extends Application
 			<html lang='CURRENT_LANG'>
 				<head>
 					<meta charset='utf-8'>
-					<link rel='stylesheet' href='file:///android_asset/main.css'>
-					<link rel='stylesheet' href='file:///android_asset/rotate_wind.css'>
 					<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
 					<meta name='color-scheme' content='light dark'>
 			""";
@@ -113,43 +113,44 @@ public class weeWXApp extends Application
 					</script>
 			""";
 
-	private static final String dialog_html = """
-           <!doctype html>
-           <html lang="REPLACE_WITH_LANG">
-           <head>
-             <link rel='stylesheet' href='file:///android_asset/secondary.css'>
-             <meta charset="utf-8" />
-             <meta name="viewport" content="width=device-width,initial-scale=1" />
-             <title>Warning UI Mock</title>
-           </head>
-           <body>
-             <!-- Example: full "modal-like" warning -->
-             <div class="warn-wrap" role="alertdialog" aria-labelledby="w-title" aria-describedby="w-desc" tabindex="0">
-               <div class="warn-accent" aria-hidden="true"></div>
+	private static final String dialog_html_header = """
+		<!doctype html>
+		<html lang="REPLACE_WITH_LANG">
+		<head>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width,initial-scale=1" />
+			<title>Warning UI Mock</title>
+		""";
 
-               <div class="warn-icon" aria-hidden="true">
-                 <!-- inline SVG warning icon -->
-                 <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-                   <path d="M11.03 3.5c.37-.9 1.64-.9 2.01 0l7.04 17.06A1.5 1.5 0 0 1 19.67 22H4.33a1.5 1.5 0 0 1-1.41-1.44L10 3.5z" fill="currentColor" opacity="0.12"/>
-                   <path d="M12 8.25c-.41 0-.75.34-.75.75v4.5c0 .41.34.75.75.75s.75-.34.75-.75v-4.5c0-.41-.34-.75-.75-.75zm0 8.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z" fill="currentColor"/>
-                 </svg>
-               </div>
-
-               <div class="warn-body">
-                 <p id="w-desc" class="warn-desc">
-                   WARNING_BODY
-                 </p>
-               </div>
-             </div>
-           </body>
-           </html>
-           """;
+	private static final String dialog_html_header_rest = """
+		</head>
+		<body>
+			<!-- Example: full "modal-like" warning -->
+			<div class="warn-wrap" role="alertdialog" aria-labelledby="w-title" aria-describedby="w-desc" tabindex="0">
+				<div class="warn-accent" aria-hidden="true"></div>
+				<div class="warn-icon" aria-hidden="true">
+					<!-- inline SVG warning icon -->
+					<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+						<path d="M11.03 3.5c.37-.9 1.64-.9 2.01 0l7.04 17.06A1.5 1.5 0 0 1 19.67 22H4.33a1.5 1.5 0 0 1-1.41-1.44L10 3.5z" fill="currentColor" opacity="0.12"/>
+						<path d="M12 8.25c-.41 0-.75.34-.75.75v4.5c0 .41.34.75.75.75s.75-.34.75-.75v-4.5c0-.41-.34-.75-.75-.75zm0 8.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z" fill="currentColor"/>
+					</svg>
+				</div>
+				<div class="warn-body">
+				<p id="w-desc" class="warn-desc">
+					WARNING_BODY
+				</p>
+				</div>
+			</div>
+		</body>
+		</html>
+		""";
 
 	static String current_html_headers;
 
 	static String current_dialog_html;
 
-	final static String emptyField = "<span class='field'>\u00A0</span>";
+	final static String emptyField = "<div style='span:3;'>\u00A0</div>\n";
+	final static String currentSpacer = "\t\t\t<div class='currentSpacer'>\u00A0</div>\n";
 
 	private static weeWXApp instance = null;
 	private Colours colours;
@@ -160,7 +161,6 @@ public class weeWXApp extends Application
 	final static boolean radarforecast_default = false;
 	final static boolean disableSwipeOnRadar_default = false;
 	final static boolean onlyWIFI_default = false;
-	final static boolean useIcons_default = true;
 	final static boolean metric_default = true;
 	final static boolean showIndoor_default = true;
 	final static boolean use_exact_alarm_default = false;
@@ -291,6 +291,52 @@ public class weeWXApp extends Application
 		};
 	}
 
+	static byte[] loadBinaryFromAssets(String filename)
+	{
+		try
+		{
+			InputStream is = instance.getAssets().open("icons/" + filename);
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+			byte[] buffer = new byte[1024];
+			int len;
+
+			while((len = is.read(buffer)) != -1)
+				baos.write(buffer, 0, len);
+
+			is.close();
+
+			return baos.toByteArray();
+		} catch (Exception e) {
+			weeWXAppCommon.doStackOutput(e);
+			return null;
+		}
+	}
+
+	static String loadFileFromAssets(String filename)
+	{
+		try
+		{
+			InputStream is = instance.getAssets().open(filename);
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+			byte[] buffer = new byte[1024];
+			int len;
+
+			while((len = is.read(buffer)) != -1)
+				baos.write(buffer, 0, len);
+
+			is.close();
+
+			String charset = StandardCharsets.UTF_8.toString();
+
+			return baos.toString(charset);
+		} catch (Exception e) {
+			weeWXAppCommon.doStackOutput(e);
+			return "";
+		}
+	}
+
 	static void applyTheme(boolean forced)
 	{
 		//if(DynamicColors.isDynamicColorAvailable())
@@ -300,31 +346,19 @@ public class weeWXApp extends Application
 
 		getDayNightMode();
 
-		loadOrReload();
-
 		if(AppCompatDelegate.getDefaultNightMode() != KeyValue.mode)
 			AppCompatDelegate.setDefaultNightMode(KeyValue.mode);
 
-		instance.setTheme(KeyValue.theme);
+		current_html_headers = html_header +
+		                       "<style>\n" +
+		                       loadFileFromAssets("main.css") +
+		                       "\n</style>\n";
 
-		weeWXAppCommon.LogMessage("DayNightMode == " + AppCompatDelegate.getDefaultNightMode());
-
-		if(forced)
-		{
-			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_FORECAST_INTENT);
-			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_RADAR_INTENT);
-			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_WEATHER_INTENT);
-			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_WEBCAM_INTENT);
-		}
-
-		weeWXAppCommon.LogMessage("Theme should have updated!");
-	}
-
-	private static void loadOrReload()
-	{
-		current_html_headers = html_header;
-
-		getDayNightMode();
+		current_dialog_html = dialog_html_header +
+		                      "<style>\n" +
+		                      loadFileFromAssets("secondary.css") +
+		                      "\n</style>\n" +
+		                      dialog_html_header_rest;
 
 		replaceHex6String("FG_HEX", KeyValue.fgColour);
 		replaceHex6String("BG_HEX", KeyValue.bgColour);
@@ -355,8 +389,22 @@ public class weeWXApp extends Application
 			lang = "en";
 
 		current_html_headers = replaceHTMLString(current_html_headers, "CURRENT_LANG", lang);
-		current_dialog_html = replaceHTMLString(dialog_html, "CURRENT_LANG", lang);
+		current_dialog_html = replaceHTMLString(current_dialog_html, "CURRENT_LANG", lang);
 		weeWXAppCommon.LogMessage("Current app language: " + lang);
+
+		instance.setTheme(KeyValue.theme);
+
+		weeWXAppCommon.LogMessage("DayNightMode == " + AppCompatDelegate.getDefaultNightMode());
+
+		if(forced)
+		{
+			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_FORECAST_INTENT);
+			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_RADAR_INTENT);
+			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_WEATHER_INTENT);
+			weeWXAppCommon.SendIntent(weeWXAppCommon.STOP_WEBCAM_INTENT);
+		}
+
+		weeWXAppCommon.LogMessage("Theme should have updated!");
 	}
 
 	static void replaceHex6String(String html_tag, int colour)

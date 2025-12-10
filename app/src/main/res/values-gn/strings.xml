@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Eha\'arõmi romoañete aja URL remondova\'ekue</string>
     <string name="remove_all_data">¿Ere seguro reipe\'aseha opaite dato?</string>
     <string name="no">nahániri</string>
-    <string name="icons_failed_to_download">Iconos ndohupytýi omboguejy haguã hekopete, tekotevẽta reñeha\'ã jey</string>
-    <string name="wasnt_able_to_detect_icons">Ndaikatúikuri ojehechakuaa umi icono pronóstico rehegua</string>
-    <string name="ill_fix_and_try_again">Amyatyrõta ha añeha\'ã jeýta</string>
+	<string name="ill_fix_and_try_again">Amyatyrõta ha añeha\'ã jeýta</string>
     <string name="error_occurred_while_attempting_to_update">Oiko peteĩ jejavy oñeha\'ãvo ombopyahu jepuru</string>
     <string name="unknown_error_occurred">Ojekuaa\'ỹre ojejavy</string>
     <string name="wasnt_able_to_connect_custom_url">Ndaikatúikuri oñembojoaju térã ojegueru URL jeporupyre oje\'évagui</string>
     <string name="wasnt_able_to_connect_webcam_url">Ndaikatúikuri oñembojoaju térã omboguejy peteĩ webcam ra\'ãnga nde servidor-gui</string>
     <string name="wasnt_able_to_connect_forecast">Ndaikatúikuri oñembojoaju térã omboguejy pe pronóstico</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Ndaikatúikuri ojehechakuaa umi icono pronóstico rehegua</string>
-    <string name="forecast_type_needs_icons">Tipo de pronóstico \'%1$sS\' oikotevẽ oreko iconos disponibles, por favor, eike eipuru hag̃ua umi icono ha eñeha\'ã jey</string>
-    <string name="forecast_type_is_invalid">Previsión Tipo \'%1$s\' ndovaléi, ehecha ne archivo ñemboheko ha eñeha\'ã jey</string>
+	<string name="forecast_type_is_invalid">Previsión Tipo \'%1$s\' ndovaléi, ehecha ne archivo ñemboheko ha eñeha\'ã jey</string>
     <string name="wasnt_able_to_connect_radar_image">Ndaikatúikuri oñembojoaju térã omboguejy radar= ta\'ãnga internet-gui</string>
     <string name="wasnt_able_to_connect_data_txt">Ndaikatúikuri oñembojoaju térã omboguejy data.txt nde servidor-gui</string>
     <string name="data_url_was_blank">URL de datos ha\'e kuri en blanco</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Ombojoaju App</string>
     <string name="custom_setting">Colores personalizados rehegua</string>
     <string name="app_theme">App Tema</string>
-    <string name="use_icons">Ohechauka umi icono</string>
-    <string name="today">Ko árape</string>
+	<string name="today">Ko árape</string>
     <string name="last_year_stats">Estadística ary ohasava\'ekuépe</string>
     <string name="last_month_stats">Estadística jasy ohasava\'ekuépe</string>
     <string name="radar_url_not_set">RADAR URL NO SET. Ikatu reho Configuración-pe remoambue hag̃ua</string>

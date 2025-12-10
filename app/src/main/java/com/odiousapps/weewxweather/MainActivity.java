@@ -85,7 +85,7 @@ public class MainActivity extends FragmentActivity
 	private CPEditText fgColour, bgColour;
 	private MaterialButton b1, b2, b3, b4;
 	private MaterialAutoCompleteTextView s1, s2, s3;
-	private MaterialSwitch wifi_only, use_icons, show_indoor, metric_forecasts, use_exact_alarm, save_app_debug_logs, next_moon;
+	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, use_exact_alarm, save_app_debug_logs, next_moon;
 	private MaterialRadioButton showRadar, showForecast;
 	private static ViewPager2 mViewPager;
 
@@ -124,7 +124,6 @@ public class MainActivity extends FragmentActivity
 		R.id.show_indoor,
 		R.id.metric_forecasts,
 		R.id.wifi_only,
-		R.id.use_icons,
 		R.id.til2,
 		R.id.spinner1,
 		R.id.til3,
@@ -405,7 +404,6 @@ public class MainActivity extends FragmentActivity
 		bgColour = findViewById(R.id.bg_Picker);
 
 		wifi_only = findViewById(R.id.wifi_only);
-		use_icons = findViewById(R.id.use_icons);
 
 		showRadar = findViewById(R.id.showRadar);
 		showForecast = findViewById(R.id.showForecast);
@@ -414,7 +412,7 @@ public class MainActivity extends FragmentActivity
 		bgtil = findViewById(R.id.bgTextInputLayout);
 
 		int fg, bg;
-		boolean wo, ui, met, si, sr, sf, uea, sadl, nm, uob;
+		boolean wo, met, si, sr, sf, uea, sadl, nm, uob;
 
 		UpdateFrequency = weeWXAppCommon.GetIntPref("updateInterval", 1);
 		DayNightMode = weeWXAppCommon.GetIntPref("DayNightMode", weeWXApp.DayNightMode_default);
@@ -424,7 +422,6 @@ public class MainActivity extends FragmentActivity
 		bg = weeWXAppCommon.GetIntPref("bgColour", weeWXApp.bgColour_default);
 
 		wo = weeWXAppCommon.GetBoolPref("onlyWIFI", weeWXApp.onlyWIFI_default);
-		ui = weeWXAppCommon.GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		met = weeWXAppCommon.GetBoolPref("metric", weeWXApp.metric_default);
 		si = weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default);
 		sr = weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default);
@@ -448,7 +445,6 @@ public class MainActivity extends FragmentActivity
 			bg = savedInstanceState.getInt("bg", bg);
 
 			wo = savedInstanceState.getBoolean("wo", wo);
-			ui = savedInstanceState.getBoolean("ui", ui);
 			met = savedInstanceState.getBoolean("met", met);
 			si = savedInstanceState.getBoolean("si", si);
 			sr = savedInstanceState.getBoolean("sr", sr);
@@ -483,7 +479,6 @@ public class MainActivity extends FragmentActivity
 		});
 
 		wifi_only.setChecked(wo);
-		use_icons.setChecked(ui);
 		metric_forecasts.setChecked(met);
 		show_indoor.setChecked(si);
 		use_exact_alarm.setChecked(uea);
@@ -814,7 +809,6 @@ public class MainActivity extends FragmentActivity
 		}
 
 		outState.putBoolean("wo", wifi_only.isChecked());
-		outState.putBoolean("ui", use_icons.isChecked());
 		outState.putBoolean("met", metric_forecasts.isChecked());
 		outState.putBoolean("si", show_indoor.isChecked());
 		outState.putBoolean("sr", showRadar.isChecked());
@@ -1032,51 +1026,6 @@ public class MainActivity extends FragmentActivity
 
 			String baseURL = "", radtype = "", radarURL = "", forecastURL = "", webcamURL = "",
 					CustomURL = "", appCustomURL, fctype = "", bomtown = "", metierev;
-
-			boolean icons_exist = weeWXAppCommon.checkForIcons();
-
-			if(use_icons.isChecked() && (!icons_exist ||
-			   weeWXAppCommon.GetIntPref("icon_version", 0) < weeWXAppCommon.icon_version))
-			{
-				try
-				{
-					if(!weeWXAppCommon.downloadIcons())
-					{
-						runOnUiThread(() ->
-						{
-							b1.setEnabled(true);
-							b2.setEnabled(true);
-							dialog.dismiss();
-							new AlertDialog.Builder(this)
-									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_detect_icons))
-									.setMessage(weeWXApp.getAndroidString(R.string.icons_failed_to_download))
-									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
-											(dialog, which) -> {}).show();
-						});
-
-						bgStart = 0;
-						return;
-					}
-				} catch(Exception e) {
-					weeWXAppCommon.doStackOutput(e);
-					runOnUiThread(() ->
-					{
-						b1.setEnabled(true);
-						b2.setEnabled(true);
-						dialog.dismiss();
-						new AlertDialog.Builder(this)
-								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_detect_icons))
-								.setMessage(e.toString())
-								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
-										(dialog, which) -> {}).show();
-					});
-
-					bgStart = 0;
-					return;
-				}
-
-				weeWXAppCommon.SetIntPref("icon_version", weeWXAppCommon.icon_version);
-			}
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
 			if(settings_url.isBlank() || settings_url.equals(weeWXApp.SETTINGS_URL_default))
@@ -1427,28 +1376,6 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			weeWXAppCommon.LogMessage("line 1380");
-
-			if((fctype.equals("weather.gov") || fctype.equals("yahoo")) && (!icons_exist || !use_icons.isChecked()))
-			{
-				String finalErrorStr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_needs_icons), fctype);
-				runOnUiThread(() ->
-				{
-					use_icons.setChecked(true);
-					b1.setEnabled(true);
-					b2.setEnabled(true);
-					dialog.dismiss();
-					new AlertDialog.Builder(this)
-						.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_detect_forecast_icons))
-						.setMessage(finalErrorStr)
-						.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
-								(dialog, which) -> {}).show();
-				});
-
-				bgStart = 0;
-				return;
-			}
-
 			if(!forecastURL.isBlank())
 			{
 				weeWXAppCommon.LogMessage("forecast checking: " + forecastURL);
@@ -1629,7 +1556,6 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.SetBoolPref("showIndoor", show_indoor.isChecked());
 			weeWXAppCommon.SetIntPref("DayNightMode", DayNightMode);
 			weeWXAppCommon.SetBoolPref("onlyWIFI", wifi_only.isChecked());
-			weeWXAppCommon.SetBoolPref("useIcons", use_icons.isChecked());
 			weeWXAppCommon.SetBoolPref("radarforecast", showRadar.isChecked());
 			weeWXAppCommon.SetBoolPref("use_exact_alarm", use_exact_alarm.isChecked());
 			weeWXAppCommon.SetBoolPref("save_app_debug_logs", KeyValue.save_app_debug_logs);

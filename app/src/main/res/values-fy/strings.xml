@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Wachtsje asjebleaft wylst wy de URL dy\'t jo yntsjinne hawwe ferifiearje</string>
     <string name="remove_all_data">Binne jo wis dat jo alle gegevens fuortsmite wolle?</string>
     <string name="no">Nee</string>
-    <string name="icons_failed_to_download">Ikoanen koenen net folslein downloade, jo moatte it opnij besykje</string>
-    <string name="wasnt_able_to_detect_icons">Koe prognose-ikoanen net ûntdekke</string>
-    <string name="ill_fix_and_try_again">Ik reparearje it en besykje it nochris</string>
+	<string name="ill_fix_and_try_again">Ik reparearje it en besykje it nochris</string>
     <string name="error_occurred_while_attempting_to_update">Der barde in flater by it besykjen om gebrûk te aktualisearjen</string>
     <string name="unknown_error_occurred">Unbekende flater barde</string>
     <string name="wasnt_able_to_connect_custom_url">Koe net ferbine of downloade fan de oantsjutte oanpaste URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Koe gjin ferbining meitsje of in webcamôfbylding fan jo tsjinner downloade</string>
     <string name="wasnt_able_to_connect_forecast">Koe de prognose net ferbine of downloade</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Koe prognose-ikoanen net ûntdekke</string>
-    <string name="forecast_type_needs_icons">Foarsizzingstype \'%1$s\' moat ikoanen beskikber hawwe, Wizigje asjebleaft nei it brûken fan ikoanen en besykje it nochris</string>
-    <string name="forecast_type_is_invalid">Foarsizzingstype \'%1$s\' is ûnjildich, kontrolearje jo ynstellingsbestân en besykje it nochris</string>
+	<string name="forecast_type_is_invalid">Foarsizzingstype \'%1$s\' is ûnjildich, kontrolearje jo ynstellingsbestân en besykje it nochris</string>
     <string name="wasnt_able_to_connect_radar_image">Koe gjin ferbining meitsje of radar=-ôfbylding fan it ynternet downloade</string>
     <string name="wasnt_able_to_connect_data_txt">Koe data.txt net ferbine of downloade fan jo tsjinner</string>
     <string name="data_url_was_blank">Gegevens-URL wie leech</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Oanpaste kleuren</string>
     <string name="app_theme">App Tema</string>
-    <string name="use_icons">Ikoanen sjen litte</string>
-    <string name="today">Hjoed</string>
+	<string name="today">Hjoed</string>
     <string name="last_year_stats">Ferline jier Statistics</string>
     <string name="last_month_stats">Statistiken fan ferline moanne</string>
     <string name="radar_url_not_set">Radar URL net ynsteld. Jo kinne nei ynstellings gean om te feroarjen</string>

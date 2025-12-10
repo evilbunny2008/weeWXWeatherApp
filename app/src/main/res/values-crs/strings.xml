@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Silvouple espere pandan ki nou verifye URL ki ou\'n soumet</string>
     <string name="remove_all_data">Eski ou sir ou anvi retir tou lenformasyon?</string>
     <string name="no">Non</string>
-    <string name="icons_failed_to_download">Bann ikon pa\'n reisi download plennman, ou pou bezwen re-esey</string>
-    <string name="wasnt_able_to_detect_icons">Pa ti kapab detekte bann ikonn previzyon</string>
-    <string name="ill_fix_and_try_again">Mon pou aranz li e esey ankor</string>
+	<string name="ill_fix_and_try_again">Mon pou aranz li e esey ankor</string>
     <string name="error_occurred_while_attempting_to_update">En lerer ti arive pandan ki i ti pe esey met li azour</string>
     <string name="unknown_error_occurred">Lerer enkoni ti arive</string>
     <string name="wasnt_able_to_connect_custom_url">Pa ti kapab konekte oubyen telesarze sorti kot URL personnalize ki ti ganny spesifye</string>
     <string name="wasnt_able_to_connect_webcam_url">Pa ti kapab konekte oubyen telesarz en zimaz web avek ou server</string>
     <string name="wasnt_able_to_connect_forecast">Pa ti kapab konekte oubyen telesarz previzyon</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Pa ti kapab detekte bann ikonn previzyon</string>
-    <string name="forecast_type_needs_icons">Kalite previzyon \'%1$s\' i bezwen annan bann ikon ki disponib, Silvouple sanz pour servi bann ikon e esey ankor</string>
-    <string name="forecast_type_is_invalid">Kalite previzyon \'%1$s\' i pa valab, tyek ou dosye laranzman e esey ankor</string>
+	<string name="forecast_type_is_invalid">Kalite previzyon \'%1$s\' i pa valab, tyek ou dosye laranzman e esey ankor</string>
     <string name="wasnt_able_to_connect_radar_image">Pa ti kapab konekte oubyen telesarz radar= zimaz sorti dan internet</string>
     <string name="wasnt_able_to_connect_data_txt">Pa ti kapab konekte oubyen telesarz lenformasyon.etks sorti kot ou server</string>
     <string name="data_url_was_blank">URL lenformasyon ti vid</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Aplik ki koresponn</string>
     <string name="custom_setting">Kouler personnalize</string>
     <string name="app_theme">Tenm App</string>
-    <string name="use_icons">Montre bann Ikon</string>
-    <string name="today">Ozordi</string>
+	<string name="today">Ozordi</string>
     <string name="last_year_stats">Statistik lannen pase</string>
     <string name="last_month_stats">Statistik mwan dernyen</string>
     <string name="radar_url_not_set">URL radar pa met. Ou kapab al dan bann paramet pour sanze</string>

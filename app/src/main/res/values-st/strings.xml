@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Ka kopo emela ha re ntse re netefatsa url eo u e romelletseng</string>
     <string name="remove_all_data">Na u na le bonnete ba hore u batla ho tlosa data eohle?</string>
     <string name="no">Che</string>
-    <string name="icons_failed_to_download">Litšoantšo li ile tsa atleha ho jarolla ka botlalo, u tla hloka ho leka hape</string>
-    <string name="wasnt_able_to_detect_icons">Ke ne ke khona ho bona litšoantšo tsa polao li bolela esale pele</string>
-    <string name="ill_fix_and_try_again">Ke tla e lokisa ebe ke leka hape</string>
+	<string name="ill_fix_and_try_again">Ke tla e lokisa ebe ke leka hape</string>
     <string name="error_occurred_while_attempting_to_update">Phoso e etsahetse ha u ntse u leka ho ntlafatsa ts\'ebeliso</string>
     <string name="unknown_error_occurred">Phoso e sa tsejoeng e etsahetse</string>
     <string name="wasnt_able_to_connect_custom_url">E ne e sa khone ho hokela kapa ho jarolla ho tsoa ho URL ea moetlo e boletsoeng</string>
     <string name="wasnt_able_to_connect_webcam_url">E ne e sa khone ho hokela kapa ho jarolla setšoantšo sa webcam ho tsoa ho seva ea hau</string>
     <string name="wasnt_able_to_connect_forecast">E ne e sa khone ho hokela kapa ho jarolla poloko</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Ke ne ke khona ho bona litšoantšo tsa polao li bolela esale pele</string>
-    <string name="forecast_type_needs_icons">Ho hlokahala mofuta oa \'%1$s\'</string>
-    <string name="forecast_type_is_invalid">Tsebiso ea \'%1$s\'e sa nepahala, sheba file ea hau ea litlhokahalo ebe u leka hape</string>
+	<string name="forecast_type_is_invalid">Tsebiso ea \'%1$s\'e sa nepahala, sheba file ea hau ea litlhokahalo ebe u leka hape</string>
     <string name="wasnt_able_to_connect_radar_image">E ne e sa khone ho hokela kapa ho jarolla radar = setšoantšo se tsoang inthaneteng</string>
     <string name="wasnt_able_to_connect_data_txt">E ne e sa khone ho hokela kapa ho jarolla data.txt ho tsoa ho seva ea hau</string>
     <string name="data_url_was_blank">URL ea data e ne e se na letho</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match APP</string>
     <string name="custom_setting">Mebala ea setso</string>
     <string name="app_theme">Sehlooho sa app</string>
-    <string name="use_icons">Bontša Icons</string>
-    <string name="today">Kajeno</string>
+	<string name="today">Kajeno</string>
     <string name="last_year_stats">Lipalopalo tsa selemo se fetileng</string>
     <string name="last_month_stats">Lipalo-palo tsa khoeli e fetileng</string>
     <string name="radar_url_not_set">Ratar url ha e behe. U ka ea litlhophiso ho fetoha</string>

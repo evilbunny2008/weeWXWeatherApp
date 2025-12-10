@@ -1,7 +1,6 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-10 0 532 512">
-   <path fill="currentColor"
-d="M70 471v-198l189 -158l178 158v195q0 14 -14 14h-126v-105q0 -2 -0.5 -5t-5 -8t-13.5 -5h-53q-8 0 -11.5 4.5t-3.5 9.5v4l-1 106h-129q-5 0 -7.5 -3t-2.5 -6v-3zM0 258l260 -229l252 228q-2 4 -5.5 8t-18 4.5t-32.5 -12.5l-196 -176l-209 177q-16 14 -28.5 14t-17.5 -7z
-M452 81v104l-51 -43v-61h51z" />
-</svg>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns2="http://www.inkscape.org/namespaces/inkscape" version="1.1" viewBox="-10 0 512 454" id="svg1" ns1:docname="uniF101.svg" width="577" height="512">
+  <ns0:defs id="defs1" />
+  <ns1:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#111111" borderopacity="1" ns2:showpageshadow="0" ns2:pageopacity="0" ns2:pagecheckerboard="1" ns2:deskcolor="#d1d1d1" />
+  <ns0:path fill="currentColor" d="M 60,442 V 244 L 249,86 427,244 v 195 q 0,14 -14,14 H 287 V 348 q 0,-2 -0.5,-5 -0.5,-3 -5,-8 -4.5,-5 -13.5,-5 h -53 q -8,0 -11.5,4.5 -3.5,4.5 -3.5,9.5 v 4 l -1,106 H 70 q -5,0 -7.5,-3 Q 60,448 60,445 Z M -10,229 250,0 502,228 q -2,4 -5.5,8 -3.5,4 -18,4.5 Q 464,241 446,228 L 250,52 41,229 Q 25,243 12.5,243 0,243 -5,236 Z M 442,52 V 156 L 391,113 V 52 Z" id="path1" />
+</ns0:svg>

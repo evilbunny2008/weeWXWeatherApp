@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Wach aub terwijl v\'r de URL verifiëre die u heet ingediend</string>
     <string name="remove_all_data">Zien jullie zeker dat u alle gegeves wilt verwijdere?</string>
     <string name="no">Nei</string>
-    <string name="icons_failed_to_download">Icons is neet gans gedownload, je moet nog probere</string>
-    <string name="wasnt_able_to_detect_icons">Zou gein veurspellingsicone kinne detectere</string>
-    <string name="ill_fix_and_try_again">Ich zal \'t vinde en Probeer weer</string>
+	<string name="ill_fix_and_try_again">Ich zal \'t vinde en Probeer weer</string>
     <string name="error_occurred_while_attempting_to_update">\'n Fout plaotste tijdens \'t gebruuk vaan \'t gebruuk te update</string>
     <string name="unknown_error_occurred">Onbekinde fout plaotsvoonde</string>
     <string name="wasnt_able_to_connect_custom_url">Zou neet kinne verbinde of downloade vaan de aongepaste URL opgegeve</string>
     <string name="wasnt_able_to_connect_webcam_url">Zou neet in staot zien um \'n webcam-afbeelding te verbinde of downloade vaan uw server</string>
     <string name="wasnt_able_to_connect_forecast">Zou de veurspelling neet kinne verbinde of downloade</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Zou gein veurspellingsicone kinne detectere</string>
-    <string name="forecast_type_needs_icons">Voorbaoke \'%1$s\' moet icone besjikbaar höbbe, schakelaar euver op \'t gebruuk vaan pictogramme en probeer \'t nog \'ns</string>
-    <string name="forecast_type_is_invalid">Voorbaoke type \'%1$s\' is ongeldig, controleer uw instellinge bestand en probeer \'t nog \'ns</string>
+	<string name="forecast_type_is_invalid">Voorbaoke type \'%1$s\' is ongeldig, controleer uw instellinge bestand en probeer \'t nog \'ns</string>
     <string name="wasnt_able_to_connect_radar_image">Zou neet in staot zien um radar= afbeelding vaan \'t internet te verbinde of te downloade</string>
     <string name="wasnt_able_to_connect_data_txt">Waor neet in staot gegeves te verbinde of downloade vaan uw server</string>
     <string name="data_url_was_blank">Data URL waor leeg</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Aongepaste kleure</string>
     <string name="app_theme">Apparaat ze</string>
-    <string name="use_icons">Icons toene</string>
-    <string name="today">Vandaag</string>
+	<string name="today">Vandaag</string>
     <string name="last_year_stats">Afgeloupe jaor</string>
     <string name="last_month_stats">Afgeloupe Month\'s Statistiek</string>
     <string name="radar_url_not_set">Radar URL neet ingesjtèld. Je kint naor instellinge goon um te verandere</string>

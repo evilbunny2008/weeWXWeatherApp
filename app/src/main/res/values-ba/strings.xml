@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Зинһар, көтөгөҙ, ә беҙ һеҙ тапшырған URL-адресты раҫлайбыҙ</string>
     <string name="remove_all_data">Һеҙ ышанаһығыҙмы, һеҙ бөтә мәғлүмәттәрҙе юйырға теләйһегеҙме?</string>
     <string name="no">Юҡ</string>
-    <string name="icons_failed_to_download">Иконалар тулыһынса скачать булманы, һеҙгә яңынан эшләргә кәрәк буласаҡ</string>
-    <string name="wasnt_able_to_detect_icons">Күҙаллау иконаларын асыҡлай алмаҫ ине</string>
-    <string name="ill_fix_and_try_again">Мин уны төҙәтергә һәм тағы ла һынап ҡарайым</string>
+	<string name="ill_fix_and_try_again">Мин уны төҙәтергә һәм тағы ла һынап ҡарайым</string>
     <string name="error_occurred_while_attempting_to_update">Яңыртырға тырышҡанда хата килеп сыҡты</string>
     <string name="unknown_error_occurred">Билдәһеҙ хата булды</string>
     <string name="wasnt_able_to_connect_custom_url">Ҡулланыусы URL-адрестан тоташтырыу йәки скачать мөмкин түгел ине</string>
     <string name="wasnt_able_to_connect_webcam_url">Һеҙҙең серверҙан веб-камера һүрәтен тоташтыра йәки скачать итә алманы</string>
     <string name="wasnt_able_to_connect_forecast">Прогнозды тоташтыра йәки скачать итә алманы</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Күҙаллау иконаларын асыҡлай алмаҫ ине</string>
-    <string name="forecast_type_needs_icons">Тип \'%1$s\' кәрәк, кәрәк, иконалар бар, Зинһар, иконалар ҡулланыу һәм яңынан һынап ҡарағыҙ</string>
-    <string name="forecast_type_is_invalid">Тип \'%1$s\' тип дөрөҫ түгел, һеҙҙең параметрҙар файлын тикшерергә һәм яңынан һынап ҡарағыҙ</string>
+	<string name="forecast_type_is_invalid">Тип \'%1$s\' тип дөрөҫ түгел, һеҙҙең параметрҙар файлын тикшерергә һәм яңынан һынап ҡарағыҙ</string>
     <string name="wasnt_able_to_connect_radar_image">Радар тоташтырыу йәки скачать мөмкин түгел ине радар= һүрәт интернеттан</string>
     <string name="wasnt_able_to_connect_data_txt">Һеҙҙең серверҙан тоташтырыу йәки скачать мөмкин түгел ине</string>
     <string name="data_url_was_blank">Мәғлүмәттәр URL буш булды</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Матч App</string>
     <string name="custom_setting">Ҡулланыусы төҫтәре</string>
     <string name="app_theme">App Teme</string>
-    <string name="use_icons">Иконалар күрһәтеү</string>
-    <string name="today">Бөгөн</string>
+	<string name="today">Бөгөн</string>
     <string name="last_year_stats">Уҙған йыл статистикаһы</string>
     <string name="last_month_stats">Һуңғы Ай статистикаһы</string>
     <string name="radar_url_not_set">Радар URL ҡуйылмаған. Һеҙ үҙгәрергә параметрҙарға барырға мөмкин</string>

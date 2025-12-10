@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Nyabura we rinda obwo turikuhamya URL ei waahayo</string>
     <string name="remove_all_data">Noohamya ngu nooyenda kwihaho data yoona?</string>
     <string name="no">Tikirabasika</string>
-    <string name="icons_failed_to_download">Icons ekaremwa kutunga omu bwijwire, noija kwetenga kugaruka kugyezaho</string>
-    <string name="wasnt_able_to_detect_icons">Tikabaasa kumanya ebishushani ebirikuteberezibwa</string>
-    <string name="ill_fix_and_try_again">Ndaza Kugitamu kandi Nyiga</string>
+	<string name="ill_fix_and_try_again">Ndaza Kugitamu kandi Nyiga</string>
     <string name="error_occurred_while_attempting_to_update">Enshobi ekabaho obwo arikugyezaho kugaruza busya okukozesa</string>
     <string name="unknown_error_occurred">Enshobi etakamanyirwe ekabaho</string>
     <string name="wasnt_able_to_connect_custom_url">Tikabaasa kukwatanisa nari okutunga kuruga omu URL y\'omugyenzo erikworekwa</string>
     <string name="wasnt_able_to_connect_webcam_url">Tikabaasa kukwatanisa nari okutunga ekishushani kya weebu kuruga aha server yaawe</string>
     <string name="wasnt_able_to_connect_forecast">Tikabaasa kukwatanisa nari kutunga okutebereza</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Tikabaasa kumanya ebishushani ebirikuteberezibwa</string>
-    <string name="forecast_type_needs_icons">Ekika kya f \'%1$s\'s\'s kugira ebishushani ebiriho, Nyabura we hindura omu kukozesa ebishushani kandi ogyezeho</string>
-    <string name="forecast_type_is_invalid">Ekika kya f \'%1$s\' tikiine nshonga, reeba fairo yaawe y\'okutebeekanisa kandi ogarukye ogyezeho</string>
+	<string name="forecast_type_is_invalid">Ekika kya f \'%1$s\' tikiine nshonga, reeba fairo yaawe y\'okutebeekanisa kandi ogarukye ogyezeho</string>
     <string name="wasnt_able_to_connect_radar_image">Tikabaasa kukwatanisa nari okutunga ekishushani kya radar= kuruga aha intaneeti</string>
     <string name="wasnt_able_to_connect_data_txt">Tikirikubaasa kukwatiraine nari okutunga amakuru.txt kuruga aha server yaawe</string>
     <string name="data_url_was_blank">URL ya data ekaba etariho</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Tamu app</string>
     <string name="custom_setting">Endagaano z\'okugura</string>
     <string name="app_theme">App Omutwe</string>
-    <string name="use_icons">Yoreka Icos</string>
-    <string name="today">Eirizoba</string>
+	<string name="today">Eirizoba</string>
     <string name="last_year_stats">Ebibaro by\'omwaka oguhwaire</string>
     <string name="last_month_stats">Ebibaro by\'okwezi okuhweire</string>
     <string name="radar_url_not_set">URL ya Radar terikuteebwaho. Noobaasa kuza omu ntebeekanisa kuhindura</string>

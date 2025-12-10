@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Palun oodake, kuni kinnitame teie esitatud URL-i</string>
     <string name="remove_all_data">Kas olete kindel, et soovite kõik andmed eemaldada?</string>
     <string name="no">Ei</string>
-    <string name="icons_failed_to_download">Ikoonide täielik allalaadimine ebaõnnestus, peate uuesti proovima</string>
-    <string name="wasnt_able_to_detect_icons">Prognoosiikoone ei õnnestunud tuvastada</string>
-    <string name="ill_fix_and_try_again">Ma parandan selle ja proovin uuesti</string>
+	<string name="ill_fix_and_try_again">Ma parandan selle ja proovin uuesti</string>
     <string name="error_occurred_while_attempting_to_update">Kasutuse värskendamise katsel ilmnes viga</string>
     <string name="unknown_error_occurred">Ilmnes tundmatu viga</string>
     <string name="wasnt_able_to_connect_custom_url">Määratud kohandatud URL-ilt ei saanud ühendust luua ega alla laadida</string>
     <string name="wasnt_able_to_connect_webcam_url">Teie serverist ei saanud ühendust luua ega veebikaamera pilti alla laadida</string>
     <string name="wasnt_able_to_connect_forecast">Ühendust ei saanud luua ega prognoosi alla laadida</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Prognoosiikoone ei õnnestunud tuvastada</string>
-    <string name="forecast_type_needs_icons">Prognoositüübil \'%1$s\' peavad olema saadaval ikoonid. Lülituge ikoonide kasutamisele ja proovige uuesti</string>
-    <string name="forecast_type_is_invalid">Prognoosi tüüp \'%1$s\' on kehtetu, kontrollige oma seadete faili ja proovige uuesti</string>
+	<string name="forecast_type_is_invalid">Prognoosi tüüp \'%1$s\' on kehtetu, kontrollige oma seadete faili ja proovige uuesti</string>
     <string name="wasnt_able_to_connect_radar_image">Ei saanud ühendust luua ega Internetist radar=pilti alla laadida</string>
     <string name="wasnt_able_to_connect_data_txt">Faili data.txt ei saanud teie serverist ühendust luua ega alla laadida</string>
     <string name="data_url_was_blank">Andmete URL oli tühi</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Kohandatud värvid</string>
     <string name="app_theme">Rakenduse teema</string>
-    <string name="use_icons">Kuva ikoonid</string>
-    <string name="today">Täna</string>
+	<string name="today">Täna</string>
     <string name="last_year_stats">Eelmise aasta statistika</string>
     <string name="last_month_stats">Eelmise kuu statistika</string>
     <string name="radar_url_not_set">Radari URL-i pole määratud. Muutmiseks võite minna seadetesse</string>

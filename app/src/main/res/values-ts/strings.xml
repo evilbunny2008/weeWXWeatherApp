@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Hi kombela mi yimela loko hi ri karhi hi tiyisisa URL leyi mi yi rhumeleke</string>
     <string name="remove_all_data">Xana u tiyisile leswaku u lava ku susa data hinkwayo?</string>
     <string name="no">E-e</string>
-    <string name="icons_failed_to_download">Swifaniso swi tsandzekile ku downloada hi ku helela, u ta lava ku ringeta nakambe</string>
-    <string name="wasnt_able_to_detect_icons">A nga swi kotanga ku vona swifaniso swa vuprofeta</string>
-    <string name="ill_fix_and_try_again">Ndzi ta swi lunghisa ndzi ringeta nakambe</string>
+	<string name="ill_fix_and_try_again">Ndzi ta swi lunghisa ndzi ringeta nakambe</string>
     <string name="error_occurred_while_attempting_to_update">Xihoxo xi humelerile loko ku ri karhi ku ringetiwa ku pfuxeta matirhiselo</string>
     <string name="unknown_error_occurred">Xihoxo lexi nga tiviwiki xi humelerile</string>
     <string name="wasnt_able_to_connect_custom_url">a nga swi kotanga ku hlanganisa kumbe ku dawuniloda eka URL ya ntolovelo leyi boxiweke</string>
     <string name="wasnt_able_to_connect_webcam_url">A nga swi kotanga ku hlanganisa kumbe ku kopa xifaniso xa webcam eka sevha ya wena</string>
     <string name="wasnt_able_to_connect_forecast">a nga swi kotanga ku hlanganisa kumbe ku kopa vuprofeta</string>
-    <string name="wasnt_able_to_detect_forecast_icons">A nga swi kotanga ku vona swifaniso swa vuprofeta</string>
-    <string name="forecast_type_needs_icons">Muxaka wa vuprofeta \'%1$s\' wu lava ku va na swifaniso leswi kumekaka, hi kombela u cincela eka ku tirhisa swifaniso ivi u ringeta nakambe</string>
-    <string name="forecast_type_is_invalid">Muxaka wa vuprofeta \'%1$s\' a wu tirhi, languta fayili ya wena ya swiyimiso ivi u ringeta nakambe</string>
+	<string name="forecast_type_is_invalid">Muxaka wa vuprofeta \'%1$s\' a wu tirhi, languta fayili ya wena ya swiyimiso ivi u ringeta nakambe</string>
     <string name="wasnt_able_to_connect_radar_image">a nga swi kotanga ku hlanganisa kumbe ku kopa xifaniso xa radar= ku suka eka inthanete</string>
     <string name="wasnt_able_to_connect_data_txt">a nga swi kotanga ku hlanganisa kumbe ku kopa data.txt ku suka eka sevha ya wena</string>
     <string name="data_url_was_blank">URL ya data a yi nga ri na nchumu</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Xifaniso xa Match App</string>
     <string name="custom_setting">Mihlovo ya ntolovelo</string>
     <string name="app_theme">APP Nhlokomhaka ya APP</string>
-    <string name="use_icons">Kombisa swifaniso</string>
-    <string name="today">Namuntlha</string>
+	<string name="today">Namuntlha</string>
     <string name="last_year_stats">Tinhlayo ta lembe leri nga hundza</string>
     <string name="last_month_stats">Tinhlayo ta n\'hweti leyi hundzeke</string>
     <string name="radar_url_not_set">URL ya radar a yi vekiwanga. U nga ya eka Settings ku ya cinca</string>

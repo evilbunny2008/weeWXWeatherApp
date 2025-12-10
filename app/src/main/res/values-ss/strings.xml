@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Sicela ulindze ngesikhatsi sicinisekisa i-URL loyifakile</string>
     <string name="remove_all_data">Uciniseka kutsi ufuna kususa yonkhe idatha?</string>
     <string name="no">Cha</string>
-    <string name="icons_failed_to_download">Tikhonti tehlulekile kutilandza ngalokugcwele, kutawudzingeka kutsi uphindze uzame</string>
-    <string name="wasnt_able_to_detect_icons">Bekangakhoni kutfola timphawu tekubiketela</string>
-    <string name="ill_fix_and_try_again">Ngitawulungisa futsi Ngizame futsi</string>
+	<string name="ill_fix_and_try_again">Ngitawulungisa futsi Ngizame futsi</string>
     <string name="error_occurred_while_attempting_to_update">Kwenteka liphutsa ngesikhatsi uzama kuvuselela kusetjentiswa</string>
     <string name="unknown_error_occurred">Kwenteka liphutsa lelingatiwa</string>
     <string name="wasnt_able_to_connect_custom_url">Akazange akwati kuxhumana nobe kulandza ku-URL yesiko lecacisiwe</string>
     <string name="wasnt_able_to_connect_webcam_url">Akazange akwati kuxhuma nobe kulandza sitfombe se-webcam kuseva yakho</string>
     <string name="wasnt_able_to_connect_forecast">Akazange akwati kuxhumana nobe kulandza lesibiketelo</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Bekangakhoni kutfola timphawu tekubiketela</string>
-    <string name="forecast_type_needs_icons">Luhlobo lwekubiketela \'%1$s\' ludzinga kuba netimphawu letikhona, Sicela ushintshe usebentise timphawu bese uyazama futsi</string>
-    <string name="forecast_type_is_invalid">Luhlobo lwekubiketela \'%1$s\' alusebenti, hlola ifayela lakho letilungiselelo bese uyazama futsi</string>
+	<string name="forecast_type_is_invalid">Luhlobo lwekubiketela \'%1$s\' alusebenti, hlola ifayela lakho letilungiselelo bese uyazama futsi</string>
     <string name="wasnt_able_to_connect_radar_image">Akazange akwati kuxhumana nobe kulandza i-radar= sitfombe kusuka ku-inthanethi</string>
     <string name="wasnt_able_to_connect_data_txt">Akazange akwati kuxhuma nobe kulandza idatha.txt kuseva yakho</string>
     <string name="data_url_was_blank">I-URL yedatha beyingenalutfo</string>
@@ -68,8 +64,7 @@
     <string name="match_app">I-App Yemdlalo</string>
     <string name="custom_setting">Imibala Yemasiko</string>
     <string name="app_theme">Ingcikitsi Yekusebenta</string>
-    <string name="use_icons">Khombisa Timo</string>
-    <string name="today">Lamuhla</string>
+	<string name="today">Lamuhla</string>
     <string name="last_year_stats">Tibalo Temnyaka lophelile</string>
     <string name="last_month_stats">Tibalo Tenyanga Tekugcina</string>
     <string name="radar_url_not_set">Radar URL ayikabeki. Ungaya kumasethingi kute ushintje</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Palihug maghulat samtang gipamatud-an namon ang URL nga imong gisumite</string>
     <string name="remove_all_data">Sigurado ka nga gusto nimo nga kuhaon ang tanan nga datos?</string>
     <string name="no">Wala</string>
-    <string name="icons_failed_to_download">Ang mga icon napakyas sa pag-download sa hingpit, kinahanglan nimo nga sublion</string>
-    <string name="wasnt_able_to_detect_icons">Wala makamatikod sa mga imahen sa forecast</string>
-    <string name="ill_fix_and_try_again">Akong ayohon kini ug sulayan pag-usab</string>
+	<string name="ill_fix_and_try_again">Akong ayohon kini ug sulayan pag-usab</string>
     <string name="error_occurred_while_attempting_to_update">Usa ka sayup ang nahitabo samtang misulay sa pag-update sa paggamit</string>
     <string name="unknown_error_occurred">Ang wala mailhi nga sayup nahitabo</string>
     <string name="wasnt_able_to_connect_custom_url">Wala makonekta o pag-download gikan sa naandan nga URL nga gitino</string>
     <string name="wasnt_able_to_connect_webcam_url">Wala makonekta o mag-download sa usa ka imahe sa webcam gikan sa imong server</string>
     <string name="wasnt_able_to_connect_forecast">Dili makonekta o i-download ang forecast</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Wala makamatikod sa mga imahen sa forecast</string>
-    <string name="forecast_type_needs_icons">Ang mga kinahanglan nga forecast type \'%1$s\' kinahanglan nga adunay mga imahen nga magamit, palihug pagbalhin sa mga icon ug pagsulay pag-usab</string>
-    <string name="forecast_type_is_invalid">Ang Forecast Type \'%1$s\' dili husto, susihon ang imong file sa setting ug pagsulay pag-usab</string>
+	<string name="forecast_type_is_invalid">Ang Forecast Type \'%1$s\' dili husto, susihon ang imong file sa setting ug pagsulay pag-usab</string>
     <string name="wasnt_able_to_connect_radar_image">Wala makonekta o download radar = imahe gikan sa internet</string>
     <string name="wasnt_able_to_connect_data_txt">Wala makonektar o mag-download sa data.txt gikan sa imong server</string>
     <string name="data_url_was_blank">Blangko ang Data URL</string>
@@ -64,8 +60,7 @@
     <string name="url_was_default_or_empty">Ang URL gitakda sa default o wala\'y sulod</string>
     <string name="wasnt_able_to_connect_or_download">Dili makonekta o i-download ang forecast</string>
     <string name="swipe_lock">Hunonga ang Pag-swipe</string>
-    <string name="use_icons">Gamita ang mga Imahen</string>
-    <string name="today">Karon</string>
+	<string name="today">Karon</string>
     <string name="widget_theme">Tema sa Widget</string>
     <string name="match_app">Aplikasyon sa Pagpares</string>
     <string name="custom_setting">Mga Kolor nga Gipahaom</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Mesedez, itxaron bidali duzun URLa egiaztatzen dugun bitartean</string>
     <string name="remove_all_data">Ziur datu guztiak kendu nahi dituzula?</string>
     <string name="no">Ez</string>
-    <string name="icons_failed_to_download">Ikonoak ezin izan dira guztiz deskargatu, berriro saiatu beharko duzu</string>
-    <string name="wasnt_able_to_detect_icons">Ezin izan dira iragarpen ikonoak hauteman</string>
-    <string name="ill_fix_and_try_again">Konpondu eta berriro saiatuko naiz</string>
+	<string name="ill_fix_and_try_again">Konpondu eta berriro saiatuko naiz</string>
     <string name="error_occurred_while_attempting_to_update">Errore bat gertatu da erabilera eguneratzen saiatzean</string>
     <string name="unknown_error_occurred">Errore ezezaguna gertatu da</string>
     <string name="wasnt_able_to_connect_custom_url">Ezin izan da zehaztutako URL pertsonalizatutik konektatu edo deskargatu</string>
     <string name="wasnt_able_to_connect_webcam_url">Ezin izan da zure zerbitzaritik konektatu edo deskargatu webcam irudi bat</string>
     <string name="wasnt_able_to_connect_forecast">Ezin izan da iragarpena konektatu edo deskargatu</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Ezin izan dira iragarpen ikonoak hauteman</string>
-    <string name="forecast_type_needs_icons">\'%1$s\' iragarpen motak ikonoak erabilgarri izan behar ditu. Aldatu ikonoak erabiltzera eta saiatu berriro</string>
-    <string name="forecast_type_is_invalid">\'%1$s\' iragarpen mota ez da baliozkoa, egiaztatu ezarpenen fitxategia eta saiatu berriro</string>
+	<string name="forecast_type_is_invalid">\'%1$s\' iragarpen mota ez da baliozkoa, egiaztatu ezarpenen fitxategia eta saiatu berriro</string>
     <string name="wasnt_able_to_connect_radar_image">Ezin izan da konektatu edo deskargatu radar= irudia Internetetik</string>
     <string name="wasnt_able_to_connect_data_txt">Ezin izan da data.txt zure zerbitzaritik konektatu edo deskargatu</string>
     <string name="data_url_was_blank">Datuen URLa hutsik zegoen</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match aplikazioa</string>
     <string name="custom_setting">Kolore pertsonalizatuak</string>
     <string name="app_theme">Aplikazioaren gaia</string>
-    <string name="use_icons">Erakutsi ikonoak</string>
-    <string name="today">Gaur</string>
+	<string name="today">Gaur</string>
     <string name="last_year_stats">Iazko Estatistika</string>
     <string name="last_month_stats">Azken hilabeteko estatistikak</string>
     <string name="radar_url_not_set">Radar URLa ez da ezarri. Ezarpenetara joan zaitezke aldatzeko</string>

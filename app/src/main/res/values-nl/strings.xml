@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Een ogenblik geduld terwijl we de door u ingediende URL verifiëren</string>
     <string name="remove_all_data">Weet u zeker dat u alle gegevens wilt verwijderen?</string>
     <string name="no">Nee</string>
-    <string name="icons_failed_to_download">Pictogrammen zijn niet volledig gedownload. U moet het opnieuw proberen</string>
-    <string name="wasnt_able_to_detect_icons">Kan voorspellingspictogrammen niet detecteren</string>
-    <string name="ill_fix_and_try_again">Ik zal het oplossen en het opnieuw proberen</string>
+	<string name="ill_fix_and_try_again">Ik zal het oplossen en het opnieuw proberen</string>
     <string name="error_occurred_while_attempting_to_update">Er is een fout opgetreden tijdens een poging het gebruik bij te werken</string>
     <string name="unknown_error_occurred">Er is een onbekende fout opgetreden</string>
     <string name="wasnt_able_to_connect_custom_url">Kan geen verbinding maken of downloaden vanaf de opgegeven aangepaste URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Kan geen verbinding maken met of een webcambeeld downloaden van uw server</string>
     <string name="wasnt_able_to_connect_forecast">Kon geen verbinding maken of de voorspelling downloaden</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Kan voorspellingspictogrammen niet detecteren</string>
-    <string name="forecast_type_needs_icons">Er moeten pictogrammen beschikbaar zijn voor het prognosetype \'%1$s\'. Schakel over naar het gebruik van pictogrammen en probeer het opnieuw</string>
-    <string name="forecast_type_is_invalid">Prognosetype \'%1$s\' is ongeldig. Controleer uw instellingenbestand en probeer het opnieuw</string>
+	<string name="forecast_type_is_invalid">Prognosetype \'%1$s\' is ongeldig. Controleer uw instellingenbestand en probeer het opnieuw</string>
     <string name="wasnt_able_to_connect_radar_image">Kon geen verbinding maken of radar=-afbeelding downloaden van internet</string>
     <string name="wasnt_able_to_connect_data_txt">Kon geen verbinding maken met of downloaden van data.txt van uw server</string>
     <string name="data_url_was_blank">Gegevens-URL was leeg</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match-app</string>
     <string name="custom_setting">Aangepaste kleuren</string>
     <string name="app_theme">App-thema</string>
-    <string name="use_icons">Pictogrammen weergeven</string>
-    <string name="today">Vandaag</string>
+	<string name="today">Vandaag</string>
     <string name="last_year_stats">Statistieken van vorig jaar</string>
     <string name="last_month_stats">Statistieken van de afgelopen maand</string>
     <string name="radar_url_not_set">Radar-URL niet ingesteld. U kunt naar de instellingen gaan om deze te wijzigen</string>

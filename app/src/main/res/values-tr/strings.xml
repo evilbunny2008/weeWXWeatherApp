@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Gönderdiğiniz URL doğrulanırken lütfen bekleyin</string>
     <string name="remove_all_data">Tüm verileri kaldırmak istediğinizden emin misiniz?</string>
     <string name="no">HAYIR</string>
-    <string name="icons_failed_to_download">Simgeler tam olarak indirilemedi; yeniden denemeniz gerekecek</string>
-    <string name="wasnt_able_to_detect_icons">Tahmin simgeleri algılanamadı</string>
-    <string name="ill_fix_and_try_again">Düzeltip Tekrar Deneyeceğim</string>
+	<string name="ill_fix_and_try_again">Düzeltip Tekrar Deneyeceğim</string>
     <string name="error_occurred_while_attempting_to_update">Kullanımı güncellemeye çalışırken bir hata oluştu</string>
     <string name="unknown_error_occurred">Bilinmeyen hata oluştu</string>
     <string name="wasnt_able_to_connect_custom_url">Belirtilen özel URL\'den bağlanılamadı veya indirilemedi</string>
     <string name="wasnt_able_to_connect_webcam_url">Sunucunuza bağlanılamadı veya web kamerası görüntüsü indirilemedi</string>
     <string name="wasnt_able_to_connect_forecast">Tahmin bağlanamadı veya indirilemedi</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Tahmin simgeleri algılanamadı</string>
-    <string name="forecast_type_needs_icons">\'%1$s\' tahmin türünün kullanılabilir simgelere sahip olması gerekiyor. Lütfen simgeleri kullanmaya geçin ve tekrar deneyin</string>
-    <string name="forecast_type_is_invalid">Tahmin türü \'%1$s\' geçersiz, ayarlar dosyanızı kontrol edip tekrar deneyin</string>
+	<string name="forecast_type_is_invalid">Tahmin türü \'%1$s\' geçersiz, ayarlar dosyanızı kontrol edip tekrar deneyin</string>
     <string name="wasnt_able_to_connect_radar_image">İnternetten radar= resmi bağlanamadı veya indirilemedi</string>
     <string name="wasnt_able_to_connect_data_txt">Sunucunuza bağlanılamadı veya data.txt dosyası indirilemedi</string>
     <string name="data_url_was_blank">Veri URL\'si boştu</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Maç Uygulaması</string>
     <string name="custom_setting">Özel Renkler</string>
     <string name="app_theme">Uygulama Teması</string>
-    <string name="use_icons">Simgeleri Göster</string>
-    <string name="today">Bugün</string>
+	<string name="today">Bugün</string>
     <string name="last_year_stats">Geçen Yılın İstatistikleri</string>
     <string name="last_month_stats">Geçen Ayın İstatistikleri</string>
     <string name="radar_url_not_set">Radar URL\'si ayarlanmadı. Değiştirmek için ayarlara gidebilirsiniz</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">ଆପଣ ଦାଖଲ କରିଥିବା URL ଯାଞ୍ଚ କରିବାବେଳେ ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ |</string>
     <string name="remove_all_data">ଆପଣ ନିଶ୍ଚିତ କି ଆପଣ ସମସ୍ତ ତଥ୍ୟ ଅପସାରଣ କରିବାକୁ ଚାହୁଁଛନ୍ତି କି?</string>
     <string name="no">ନା</string>
-    <string name="icons_failed_to_download">ଆଇକନ୍ ଗୁଡିକ ସମ୍ପୂର୍ଣ୍ଣ ଡାଉନଲୋଡ୍ କରିବାରେ ବିଫଳ ହେଲା, ଆପଣଙ୍କୁ ପୁନ ry ଚେଷ୍ଟା କରିବାକୁ ପଡିବ |</string>
-    <string name="wasnt_able_to_detect_icons">ପୂର୍ବାନୁମାନ ଆଇକନ୍ ଚିହ୍ନଟ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
-    <string name="ill_fix_and_try_again">ମୁଁ ଏହାକୁ ଠିକ୍ କରି ପୁନର୍ବାର ଚେଷ୍ଟା କରିବି |</string>
+	<string name="ill_fix_and_try_again">ମୁଁ ଏହାକୁ ଠିକ୍ କରି ପୁନର୍ବାର ଚେଷ୍ଟା କରିବି |</string>
     <string name="error_occurred_while_attempting_to_update">ବ୍ୟବହାର ଅପଡେଟ୍ କରିବାକୁ ଚେଷ୍ଟା କରିବାବେଳେ ଏକ ତ୍ରୁଟି ଘଟିଗଲା |</string>
     <string name="unknown_error_occurred">ଅଜ୍ଞାତ ତ୍ରୁଟି ଘଟିଗଲା |</string>
     <string name="wasnt_able_to_connect_custom_url">ନିର୍ଦ୍ଦିଷ୍ଟ କଷ୍ଟମ୍ URL ରୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="wasnt_able_to_connect_webcam_url">ଆପଣଙ୍କ ସର୍ଭରରୁ ଏକ ୱେବକ୍ୟାମ ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="wasnt_able_to_connect_forecast">ପୂର୍ବାନୁମାନକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
-    <string name="wasnt_able_to_detect_forecast_icons">ପୂର୍ବାନୁମାନ ଆଇକନ୍ ଚିହ୍ନଟ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
-    <string name="forecast_type_needs_icons">ପୂର୍ବାନୁମାନ ପ୍ରକାର \'%1$s\' ଆଇକନ୍ ଉପଲବ୍ଧ ହେବା ଆବଶ୍ୟକ, ଦୟାକରି ଆଇକନ୍ ବ୍ୟବହାର କରିବାକୁ ସୁଇଚ୍ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
-    <string name="forecast_type_is_invalid">ପୂର୍ବାନୁମାନ ପ୍ରକାର \'%1$s\' ଅବ alid ଧ, ଆପଣଙ୍କର ସେଟିଂସମୂହ ଫାଇଲକୁ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+	<string name="forecast_type_is_invalid">ପୂର୍ବାନୁମାନ ପ୍ରକାର \'%1$s\' ଅବ alid ଧ, ଆପଣଙ୍କର ସେଟିଂସମୂହ ଫାଇଲକୁ ଯାଞ୍ଚ କରନ୍ତୁ ଏବଂ ପୁନର୍ବାର ଚେଷ୍ଟା କରନ୍ତୁ |</string>
     <string name="wasnt_able_to_connect_radar_image">ଇଣ୍ଟରନେଟରୁ ରାଡାର = ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="wasnt_able_to_connect_data_txt">ଆପଣଙ୍କ ସର୍ଭରରୁ data.txt କୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="data_url_was_blank">ଡାଟା URL ଖାଲି ଥିଲା |</string>
@@ -68,8 +64,7 @@
     <string name="match_app">ମ୍ୟାଚ୍ ଆପ୍ |</string>
     <string name="custom_setting">କଷ୍ଟମ୍ ରଙ୍ଗ |</string>
     <string name="app_theme">ଆପ୍ ଥିମ୍ |</string>
-    <string name="use_icons">ଆଇକନ୍ ଦେଖାନ୍ତୁ |</string>
-    <string name="today">ଆଜି |</string>
+	<string name="today">ଆଜି |</string>
     <string name="last_year_stats">ଗତ ବର୍ଷର ପରିସଂଖ୍ୟାନ |</string>
     <string name="last_month_stats">ଗତ ମାସର ପରିସଂଖ୍ୟାନ |</string>
     <string name="radar_url_not_set">ରାଡାର URL ସେଟ୍ ହୋଇନାହିଁ | ଆପଣ ପରିବର୍ତ୍ତନ କରିବାକୁ ସେଟିଂକୁ ଯାଇପାରିବେ |</string>

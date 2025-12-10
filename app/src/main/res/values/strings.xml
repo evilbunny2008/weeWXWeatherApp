@@ -48,17 +48,13 @@
 	<string name="please_wait_verify_url">Please wait while we verify the URL you submitted.</string>
     <string name="remove_all_data">Are you sure you want to remove all data?</string>
     <string name="no">No</string>
-    <string name="icons_failed_to_download">Icons failed to download fully, you will need to retry.</string>
-    <string name="wasnt_able_to_detect_icons">Wasn\'t able to detect forecast icons.</string>
-    <string name="ill_fix_and_try_again">I\'ll Fix It and Try Again</string>
+	<string name="ill_fix_and_try_again">I\'ll Fix It and Try Again</string>
     <string name="error_occurred_while_attempting_to_update">An error occurred while attempting to update usage</string>
     <string name="unknown_error_occurred">Unknown error occurred</string>
     <string name="wasnt_able_to_connect_custom_url">Wasn\'t able to connect or download from the custom URL specified</string>
     <string name="wasnt_able_to_connect_webcam_url">Wasn\'t able to connect or download a webcam image from your server</string>
     <string name="wasnt_able_to_connect_forecast">Wasn\'t able to connect or download the forecast.</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Wasn\'t able to detect forecast icons.</string>
-    <string name="forecast_type_needs_icons">Forecast type \'%1$s\' needs to have icons available, Please switch to using icons and try again.</string>
-    <string name="forecast_type_is_invalid">Forecast type \'%1$s\' is invalid, check your settings file and try again.</string>
+	<string name="forecast_type_is_invalid">Forecast type \'%1$s\' is invalid, check your settings file and try again.</string>
     <string name="wasnt_able_to_connect_radar_image">Wasn\'t able to connect or download radar= image from the internet</string>
     <string name="wasnt_able_to_connect_data_txt">Wasn\'t able to connect or download data.txt from your server</string>
     <string name="data_url_was_blank">Data URL was blank</string>
@@ -70,7 +66,6 @@
 	<string name="match_app">Match App</string>
 	<string name="custom_setting">Custom Colours</string>
 	<string name="app_theme">App Theme</string>
-	<string name="use_icons">Show Icons</string>
 	<string name="today">Today</string>
 	<string name="last_year_stats">Last Year\'s Statistics</string>
 	<string name="last_month_stats">Last Month\'s Statistics</string>

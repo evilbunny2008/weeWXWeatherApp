@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">कृपया इंतजार करौ जबकि हम अपने द्वारा जमा यूआरएल का सत्यापन करत हैं।</string>
     <string name="remove_all_data">का आपका यकीन है कि आप सब डेटा हटावै चाहत हैं?</string>
     <string name="no">नै</string>
-    <string name="icons_failed_to_download">आइकन पूरी तरह से डाउनलोड करै मा असफल रहे, आपका रिट्रीट करै के जरूरत परी।</string>
-    <string name="wasnt_able_to_detect_icons">पूर्वानुमान आइकन का पता लगावै मा सक्षम नाहीं रहा।</string>
-    <string name="ill_fix_and_try_again">म इसे ठीक करूँगा और फिर से ट्राई करूँगा</string>
+	<string name="ill_fix_and_try_again">म इसे ठीक करूँगा और फिर से ट्राई करूँगा</string>
     <string name="error_occurred_while_attempting_to_update">उपयोग अपडेट करै कै कोशिश करत समय एक त्रुटि भै</string>
     <string name="unknown_error_occurred">अनजान त्रुटि हुई</string>
     <string name="wasnt_able_to_connect_custom_url">कस्टम यूआरएल निर्दिष्ट से कनेक्ट या डाउनलोड करै मा सक्षम नाहीं रहा</string>
     <string name="wasnt_able_to_connect_webcam_url">अपने सर्वर से वेबकैम छवि को कनेक्ट या डाउनलोड नहीं कर पाए</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमान का कनेक्ट या डाउनलोड करै मा सक्षम नाहीं रहा।</string>
-    <string name="wasnt_able_to_detect_forecast_icons">पूर्वानुमान आइकन का पता लगावै मा सक्षम नाहीं रहा।</string>
-    <string name="forecast_type_needs_icons">पूर्वानुमान प्रकार \'%1$s\' के लिए आइकन उपलब्ध करै के जरूरत है, कृपया आइकन का उपयोग करै मा बदलौ अऊर फिर से कोशिश करौ।</string>
-    <string name="forecast_type_is_invalid">पूर्वानुमान टाइप \'%1$s\' अमान्य है, अपनी सेटिंग फाइल का जांच करौ अउर फिर से कोशिश करौ।</string>
+	<string name="forecast_type_is_invalid">पूर्वानुमान टाइप \'%1$s\' अमान्य है, अपनी सेटिंग फाइल का जांच करौ अउर फिर से कोशिश करौ।</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेट से radar= छवि का कनेक्ट या डाउनलोड करै मा सक्षम नाहीं रहा</string>
     <string name="wasnt_able_to_connect_data_txt">अपने सर्वर से डेटा.txt कनेक्ट या डाउनलोड करै मा सक्षम नाहीं रहा</string>
     <string name="data_url_was_blank">डेटा यूआरएल खाली रहा</string>
@@ -68,8 +64,7 @@
     <string name="match_app">मिलान ऐप</string>
     <string name="custom_setting">कस्टम रंग</string>
     <string name="app_theme">ऐप थीम</string>
-    <string name="use_icons">आइकन देखावा</string>
-    <string name="today">आजु</string>
+	<string name="today">आजु</string>
     <string name="last_year_stats">पिछले साल के आंकड़े</string>
     <string name="last_month_stats">अंतिम महीना के आंकड़े</string>
     <string name="radar_url_not_set">रडार यूआरएल सेट नहीं है। आप बदलाव के लिए सेटिंग्स मा जा सकत हैं।</string>

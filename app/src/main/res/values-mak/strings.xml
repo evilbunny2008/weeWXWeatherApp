@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Punna rie\' pa\'pau, a\'kulle to\'ko a\'pa\'nassaang URL nu\'pa\'sareanga</string>
     <string name="remove_all_data">Apaka musti nupasuluki sikontu dataya?</string>
     <string name="no">Tena</string>
-    <string name="icons_failed_to_download">Ikonna tena nakkulle nidownload baji\'-baji\', parallui a\'lampa a\'boya</string>
-    <string name="wasnt_able_to_detect_icons">Tena nakkulle nadeteksi ikon ramalanna</string>
-    <string name="ill_fix_and_try_again">Kupasangkammai siagang siagang Kucobai pole</string>
+	<string name="ill_fix_and_try_again">Kupasangkammai siagang siagang Kucobai pole</string>
     <string name="error_occurred_while_attempting_to_update">Se\'re kasalang kajariang ri wattu a\'boyana cara untu\' ampakabajiki pa\'gunang</string>
     <string name="unknown_error_occurred">Tena salana</string>
     <string name="wasnt_able_to_connect_custom_url">Tena nakkulle a\'lampa yareka a\'download battu ri URL adat le\'baka nipattantu</string>
     <string name="wasnt_able_to_connect_webcam_url">Tena nakkulle a\'lampa yareka a\'download gambara\' webcam battu ri servernu</string>
     <string name="wasnt_able_to_connect_forecast">Tena nakkulle a\'lampa yareka a\'download anjo ramalanna</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Tena nakkulle nadeteksi ikon ramalanna</string>
-    <string name="forecast_type_needs_icons">Ruang tipe \'%1$s\' parallui nia\' ikonna, Kipinrai a\'pake ikon siagang coba pole</string>
-    <string name="forecast_type_is_invalid">Rute tipe \'%1$s\' anre\' na\'kulle nisala, paressai file settingnu nampa nucoba pole</string>
+	<string name="forecast_type_is_invalid">Rute tipe \'%1$s\' anre\' na\'kulle nisala, paressai file settingnu nampa nucoba pole</string>
     <string name="wasnt_able_to_connect_radar_image">Tena nakkulle a\'lampa yareka a\'download radar= gambara\' battu ri internet</string>
     <string name="wasnt_able_to_connect_data_txt">Tena nakkulle a\'lampa mange ri data.txt battu ri servernu</string>
     <string name="data_url_was_blank">Data URL kosong</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Pep</string>
     <string name="custom_setting">Korban Kuas</string>
     <string name="app_theme">appering</string>
-    <string name="use_icons">Pappicinikang Ikon</string>
-    <string name="today">Anne alloa</string>
+	<string name="today">Anne alloa</string>
     <string name="last_year_stats">Statistik Taung allaloa</string>
     <string name="last_month_stats">Statistikna Bulang rioloa</string>
     <string name="radar_url_not_set">URL radar teai set. Akkullei a\'lampa mange ri setting-setting untu\' a\'jari beru</string>

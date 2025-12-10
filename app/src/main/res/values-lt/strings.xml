@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Palaukite, kol patvirtinsime jūsų pateiktą URL</string>
     <string name="remove_all_data">Ar tikrai norite pašalinti visus duomenis?</string>
     <string name="no">Nr</string>
-    <string name="icons_failed_to_download">Nepavyko visiškai atsisiųsti piktogramų, turėsite pabandyti dar kartą</string>
-    <string name="wasnt_able_to_detect_icons">Nepavyko aptikti prognozių piktogramų</string>
-    <string name="ill_fix_and_try_again">Pataisysiu ir bandysiu dar kartą</string>
+	<string name="ill_fix_and_try_again">Pataisysiu ir bandysiu dar kartą</string>
     <string name="error_occurred_while_attempting_to_update">Bandant atnaujinti naudojimą įvyko klaida</string>
     <string name="unknown_error_occurred">Įvyko nežinoma klaida</string>
     <string name="wasnt_able_to_connect_custom_url">Nepavyko prisijungti arba atsisiųsti iš nurodyto tinkinto URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Nepavyko prisijungti arba atsisiųsti žiniatinklio kameros vaizdo iš jūsų serverio</string>
     <string name="wasnt_able_to_connect_forecast">Nepavyko prisijungti arba atsisiųsti prognozės</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Nepavyko aptikti prognozių piktogramų</string>
-    <string name="forecast_type_needs_icons">Prognozės tipui \'%1$s\' turi būti prieinamos piktogramos. Perjunkite į piktogramų naudojimą ir bandykite dar kartą</string>
-    <string name="forecast_type_is_invalid">Prognozės tipas \'%1$s\' netinkamas, patikrinkite nustatymų failą ir bandykite dar kartą</string>
+	<string name="forecast_type_is_invalid">Prognozės tipas \'%1$s\' netinkamas, patikrinkite nustatymų failą ir bandykite dar kartą</string>
     <string name="wasnt_able_to_connect_radar_image">Nepavyko prisijungti arba atsisiųsti radar= vaizdo iš interneto</string>
     <string name="wasnt_able_to_connect_data_txt">Nepavyko prisijungti arba atsisiųsti data.txt iš jūsų serverio</string>
     <string name="data_url_was_blank">Duomenų URL laukas buvo tuščias</string>
@@ -68,8 +64,7 @@
     <string name="match_app">\'Match\' programa</string>
     <string name="custom_setting">Individualios spalvos</string>
     <string name="app_theme">Programos tema</string>
-    <string name="use_icons">Rodyti piktogramas</string>
-    <string name="today">Šiandien</string>
+	<string name="today">Šiandien</string>
     <string name="last_year_stats">Praėjusių metų statistika</string>
     <string name="last_month_stats">Praėjusio mėnesio statistika</string>
     <string name="radar_url_not_set">Radaro URL nenustatytas. Norėdami pakeisti, galite eiti į nustatymus</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Počkajte, kým overíme adresu URL, ktorú ste odoslali</string>
     <string name="remove_all_data">Naozaj chcete odstrániť všetky údaje?</string>
     <string name="no">Nie</string>
-    <string name="icons_failed_to_download">Ikony sa nepodarilo úplne stiahnuť, budete to musieť skúsiť znova</string>
-    <string name="wasnt_able_to_detect_icons">Nepodarilo sa zistiť ikony prognózy</string>
-    <string name="ill_fix_and_try_again">Opravím to a skúsim to znova</string>
+	<string name="ill_fix_and_try_again">Opravím to a skúsim to znova</string>
     <string name="error_occurred_while_attempting_to_update">Pri pokuse o aktualizáciu využitia sa vyskytla chyba</string>
     <string name="unknown_error_occurred">Vyskytla sa neznáma chyba</string>
     <string name="wasnt_able_to_connect_custom_url">Nepodarilo sa pripojiť alebo stiahnuť zo zadanej vlastnej adresy URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Nepodarilo sa pripojiť alebo stiahnuť obrázok webovej kamery z vášho servera</string>
     <string name="wasnt_able_to_connect_forecast">Nepodarilo sa pripojiť alebo stiahnuť predpoveď</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Nepodarilo sa zistiť ikony prognózy</string>
-    <string name="forecast_type_needs_icons">Typ predpovede \'%1$s\' potrebuje mať k dispozícii ikony. Prepnite na používanie ikon a skúste to znova</string>
-    <string name="forecast_type_is_invalid">Typ predpovede \'%1$s\' je neplatný, skontrolujte súbor nastavení a skúste to znova</string>
+	<string name="forecast_type_is_invalid">Typ predpovede \'%1$s\' je neplatný, skontrolujte súbor nastavení a skúste to znova</string>
     <string name="wasnt_able_to_connect_radar_image">Nepodarilo sa pripojiť alebo stiahnuť radar= obrázok z internetu</string>
     <string name="wasnt_able_to_connect_data_txt">Nepodarilo sa pripojiť alebo stiahnuť súbor data.txt z vášho servera</string>
     <string name="data_url_was_blank">Adresa URL údajov bola prázdna</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Aplikácia Match</string>
     <string name="custom_setting">Vlastné farby</string>
     <string name="app_theme">Téma aplikácie</string>
-    <string name="use_icons">Zobraziť ikony</string>
-    <string name="today">Dnes</string>
+	<string name="today">Dnes</string>
     <string name="last_year_stats">Minuloročná štatistika</string>
     <string name="last_month_stats">Štatistika za posledný mesiac</string>
     <string name="radar_url_not_set">Adresa URL radaru nie je nastavená. Ak chcete zmeniť, prejdite do nastavení</string>

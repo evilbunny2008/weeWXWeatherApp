@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Ndapota mirira isu tinosimbisa iyo URL yawakatumira</string>
     <string name="remove_all_data">Iwe une chokwadi here kuti unoda kubvisa zvese data?</string>
     <string name="no">Aihwa</string>
-    <string name="icons_failed_to_download">Icons dzakatadza kurodha zvizere, iwe uchafanirwa kudzokorora</string>
-    <string name="wasnt_able_to_detect_icons">Haina kukwanisa kuona fungidziro yefungidziro</string>
-    <string name="ill_fix_and_try_again">Ndichagadzirisa uye ndoyedza zvakare</string>
+	<string name="ill_fix_and_try_again">Ndichagadzirisa uye ndoyedza zvakare</string>
     <string name="error_occurred_while_attempting_to_update">Kanganiso yakaitika panguva yekuedza kugadzirisa kushandiswa</string>
     <string name="unknown_error_occurred">Kanganiso isingazivikanwe yakaitika</string>
     <string name="wasnt_able_to_connect_custom_url">Haina kukwanisa kubatana kana kurodha kubva kune iyo tsika URL yakataurwa</string>
     <string name="wasnt_able_to_connect_webcam_url">Haina kukwanisa kubatana kana kurodha wewebhu mufananidzo kubva kune yako server</string>
     <string name="wasnt_able_to_connect_forecast">Haina kukwanisa kubatanidza kana kurodha iyo fungidziro</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Haina kukwanisa kuona fungidziro yefungidziro</string>
-    <string name="forecast_type_needs_icons">Forecast Type \'%1$s\' inoda kuve ne icons inowanikwa, ndapota switch kushandisa mifananidzo uye edza zvakare</string>
-    <string name="forecast_type_is_invalid">Forecast Type \'%1$s\' haina basa, tarisa yako faira faira uye edza zvakare</string>
+	<string name="forecast_type_is_invalid">Forecast Type \'%1$s\' haina basa, tarisa yako faira faira uye edza zvakare</string>
     <string name="wasnt_able_to_connect_radar_image">Haina kukwanisa kubatana kana kurodha radar = mufananidzo kubva kuInternet</string>
     <string name="wasnt_able_to_connect_data_txt">Haina kukwanisa kubatana kana kurodha data.txt kubva kune yako server</string>
     <string name="data_url_was_blank">Data URL yaive isina</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match app</string>
     <string name="custom_setting">Tsika mavara</string>
     <string name="app_theme">Theme dingindira</string>
-    <string name="use_icons">Ratidza zvidhori</string>
-    <string name="today">Nhasi</string>
+	<string name="today">Nhasi</string>
     <string name="last_year_stats">Nhamba dzegore rapfuura</string>
     <string name="last_month_stats">Nhamba dzemwedzi wapfuura</string>
     <string name="radar_url_not_set">Radar URL isina kuiswa. Iwe unogona kuenda kune marongero ekuchinja</string>

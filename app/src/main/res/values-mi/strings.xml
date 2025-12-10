@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Tēnā tatari ka tirohia e mātou te URL i tukuna e koe</string>
     <string name="remove_all_data">Kei te hiahia koe ki te tango i nga raraunga katoa?</string>
     <string name="no">Kāo</string>
-    <string name="icons_failed_to_download">I rahua te tohu ki te tango i te katoa, me whakahoki ano e koe</string>
-    <string name="wasnt_able_to_detect_icons">Kaore i taea te kite i nga tohu tohu</string>
-    <string name="ill_fix_and_try_again">Ka whakatika ahau ka ngana ano</string>
+	<string name="ill_fix_and_try_again">Ka whakatika ahau ka ngana ano</string>
     <string name="error_occurred_while_attempting_to_update">Kua puta he hapa i te ngana ki te whakahou i te whakamahinga</string>
     <string name="unknown_error_occurred">Kua puta he hapa kaore e mohiotia</string>
     <string name="wasnt_able_to_connect_custom_url">Kaore i taea te hono atu ranei ki te tango mai i te URL ritenga kua tohua</string>
     <string name="wasnt_able_to_connect_webcam_url">Kaore i taea te hono atu ranei ki te tango i tetahi whakaahua Webcam mai i to kaituku</string>
     <string name="wasnt_able_to_connect_forecast">Kaore i taea te hono atu ranei ki te tango i te matapae</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Kaore i taea te kite i nga tohu tohu</string>
-    <string name="forecast_type_needs_icons">Momo matapae \'%1$s\' me whai waahi nga tohu, me huri ki te whakamahi i nga tohu me te ngana ano</string>
-    <string name="forecast_type_is_invalid">Momo matapae \'%1$s\' he muhu, tirohia to kōnae tautuhinga ka ngana ano</string>
+	<string name="forecast_type_is_invalid">Momo matapae \'%1$s\' he muhu, tirohia to kōnae tautuhinga ka ngana ano</string>
     <string name="wasnt_able_to_connect_radar_image">Kaore i taea te hono atu ranei ki te tango i te radar = whakaahua mai i te Ipurangi</string>
     <string name="wasnt_able_to_connect_data_txt">Kaore i taea te hono atu ranei ki te tango raraunga.txt mai i to kaitono</string>
     <string name="data_url_was_blank">Ko te URL Raraunga he waatea</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Taupānga ōrite</string>
     <string name="custom_setting">Tae Ritenga</string>
     <string name="app_theme">Kaupapa taupānga</string>
-    <string name="use_icons">Whakaatuhia nga tohu</string>
-    <string name="today">Tēnei rā</string>
+	<string name="today">Tēnei rā</string>
     <string name="last_year_stats">Tatauranga o te tau whakamutunga</string>
     <string name="last_month_stats">Tatauranga o te marama kua hipa</string>
     <string name="radar_url_not_set">Kaore i whakaritea te URL URL. Ka taea e koe te haere ki nga tautuhinga ki te whakarereke</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Tsweetswee leta fa re ntse re netefatsa URL e o e rometseng</string>
     <string name="remove_all_data">A o tlhomamisa gore o batla go tlosa tshedimosetso yotlhe?</string>
     <string name="no">nnyaa</string>
-    <string name="icons_failed_to_download">Diaekhone di paletswe ke go laisolola ka botlalo, o tla tlhoka go leka gape</string>
-    <string name="wasnt_able_to_detect_icons">O ne a sa kgone go lemoga diaekhone tsa go lemoga</string>
-    <string name="ill_fix_and_try_again">Ke tla E Baakanya le go Leka Gape</string>
+	<string name="ill_fix_and_try_again">Ke tla E Baakanya le go Leka Gape</string>
     <string name="error_occurred_while_attempting_to_update">Go ne ga nna le phoso fa go ntse go leka go tlhabolola tiriso</string>
     <string name="unknown_error_occurred">Go diragetse phoso e e sa itsiweng</string>
     <string name="wasnt_able_to_connect_custom_url">Ga e a kgona go golaganya kgotsa go laisolola go tswa mo URL e e tlwaelegileng e e tlhalositsweng</string>
     <string name="wasnt_able_to_connect_webcam_url">Ga ke a kgona go golaganya kgotsa go laisolola setshwantsho sa webcam mo sefareng ya gago</string>
     <string name="wasnt_able_to_connect_forecast">O ne a sa kgone go golaganya kgotsa go laisolola ponelopele</string>
-    <string name="wasnt_able_to_detect_forecast_icons">O ne a sa kgone go lemoga diaekhone tsa go lemoga</string>
-    <string name="forecast_type_needs_icons">Mofuta wa go bonela pele \'%1$s\' o tlhoka go nna le diaekhone tse di leng teng, Tsweetswee fetogela go dirisa diaekhone mme o leke gape</string>
-    <string name="forecast_type_is_invalid">Mofuta wa ponelopele \'%1$s\' ga o dire, tlhola faele ya gago ya dipeakanyo mme o leke gape</string>
+	<string name="forecast_type_is_invalid">Mofuta wa ponelopele \'%1$s\' ga o dire, tlhola faele ya gago ya dipeakanyo mme o leke gape</string>
     <string name="wasnt_able_to_connect_radar_image">Ga a ka a kgona go golaganya kgotsa go laisolola setshwantsho sa radara= go tswa mo inthaneteng</string>
     <string name="wasnt_able_to_connect_data_txt">Ga e a kgona go golaganya kgotsa go laisolola tshedimosetso.txt go tswa mo sefareng ya gago</string>
     <string name="data_url_was_blank">URL ya tshedimosetso e ne e se na sepe</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Tshwantshanya Tiriswa</string>
     <string name="custom_setting">Mebala e e Tlwaelegileng</string>
     <string name="app_theme">Setlhogo sa Tiriswa</string>
-    <string name="use_icons">Diaekhone tsa Pontsho</string>
-    <string name="today">Gompieno</string>
+	<string name="today">Gompieno</string>
     <string name="last_year_stats">Dipalopalo tsa Ngwaga o o fetileng</string>
     <string name="last_month_stats">Dipalopalo tsa Kgwedi ya Bofelo</string>
     <string name="radar_url_not_set">URL ya radara ga e a setiwa. O ka ya kwa diseting go fetoga</string>

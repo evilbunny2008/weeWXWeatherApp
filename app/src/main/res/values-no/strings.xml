@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Vent mens vi bekrefter nettadressen du sendte inn</string>
     <string name="remove_all_data">Er du sikker på at du vil fjerne alle data?</string>
     <string name="no">Ingen</string>
-    <string name="icons_failed_to_download">Ikoner kunne ikke lastes ned fullstendig, du må prøve på nytt</string>
-    <string name="wasnt_able_to_detect_icons">Kunne ikke oppdage prognoseikoner</string>
-    <string name="ill_fix_and_try_again">Jeg fikser det og prøver på nytt</string>
+	<string name="ill_fix_and_try_again">Jeg fikser det og prøver på nytt</string>
     <string name="error_occurred_while_attempting_to_update">Det oppsto en feil under forsøk på å oppdatere bruk</string>
     <string name="unknown_error_occurred">Ukjent feil oppstod</string>
     <string name="wasnt_able_to_connect_custom_url">Kunne ikke koble til eller laste ned fra den spesifiserte nettadressen</string>
     <string name="wasnt_able_to_connect_webcam_url">Kunne ikke koble til eller laste ned et webkamerabilde fra serveren din</string>
     <string name="wasnt_able_to_connect_forecast">Kunne ikke koble til eller laste ned prognosen</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Kunne ikke oppdage prognoseikoner</string>
-    <string name="forecast_type_needs_icons">Prognosetypen \'%1$s\' må ha ikoner tilgjengelig. Bytt til å bruke ikoner og prøv igjen</string>
-    <string name="forecast_type_is_invalid">Prognosetypen \'%1$s\' er ugyldig, sjekk innstillingsfilen og prøv igjen</string>
+	<string name="forecast_type_is_invalid">Prognosetypen \'%1$s\' er ugyldig, sjekk innstillingsfilen og prøv igjen</string>
     <string name="wasnt_able_to_connect_radar_image">Kunne ikke koble til eller laste ned radar=-bilde fra internett</string>
     <string name="wasnt_able_to_connect_data_txt">Kunne ikke koble til eller laste ned data.txt fra serveren din</string>
     <string name="data_url_was_blank">Datanettadressen var tom</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match app</string>
     <string name="custom_setting">Egendefinerte farger</string>
     <string name="app_theme">App-tema</string>
-    <string name="use_icons">Vis ikoner</string>
-    <string name="today">I dag</string>
+	<string name="today">I dag</string>
     <string name="last_year_stats">Fjorårets statistikk</string>
     <string name="last_month_stats">Siste måneds statistikk</string>
     <string name="radar_url_not_set">Radar-URL ikke angitt. Du kan gå til innstillinger for å endre</string>

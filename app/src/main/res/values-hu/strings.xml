@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Kérjük, várjon, amíg ellenőrizzük a beküldött URL-t</string>
     <string name="remove_all_data">Biztosan eltávolítja az összes adatot?</string>
     <string name="no">Nem</string>
-    <string name="icons_failed_to_download">Az ikonok letöltése nem sikerült teljesen, újra kell próbálkoznia</string>
-    <string name="wasnt_able_to_detect_icons">Nem sikerült észlelni az előrejelzési ikonokat</string>
-    <string name="ill_fix_and_try_again">Megjavítom, és megpróbálom újra</string>
+	<string name="ill_fix_and_try_again">Megjavítom, és megpróbálom újra</string>
     <string name="error_occurred_while_attempting_to_update">Hiba történt a használat frissítésének kísérlete közben</string>
     <string name="unknown_error_occurred">Ismeretlen hiba történt</string>
     <string name="wasnt_able_to_connect_custom_url">Nem sikerült csatlakozni vagy letölteni a megadott egyéni URL-ről</string>
     <string name="wasnt_able_to_connect_webcam_url">Nem sikerült csatlakozni vagy letölteni a webkamera képét a szerverről</string>
     <string name="wasnt_able_to_connect_forecast">Nem sikerült csatlakozni vagy letölteni az előrejelzést</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Nem sikerült észlelni az előrejelzési ikonokat</string>
-    <string name="forecast_type_needs_icons">A \'%1$s\' előrejelzéstípusnak rendelkeznie kell elérhető ikonokkal. Kérjük, váltson át ikonok használatára, és próbálja újra</string>
-    <string name="forecast_type_is_invalid">A \'%1$s\' előrejelzéstípus érvénytelen, ellenőrizze a beállításfájlt, és próbálkozzon újra</string>
+	<string name="forecast_type_is_invalid">A \'%1$s\' előrejelzéstípus érvénytelen, ellenőrizze a beállításfájlt, és próbálkozzon újra</string>
     <string name="wasnt_able_to_connect_radar_image">Nem sikerült csatlakozni vagy letölteni a radar=képet az internetről</string>
     <string name="wasnt_able_to_connect_data_txt">Nem sikerült csatlakozni vagy letölteni a data.txt fájlt a szerveréről</string>
     <string name="data_url_was_blank">Az adatok URL-címe üres volt</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Egyedi színek</string>
     <string name="app_theme">App téma</string>
-    <string name="use_icons">Ikonok megjelenítése</string>
-    <string name="today">Ma</string>
+	<string name="today">Ma</string>
     <string name="last_year_stats">Tavalyi statisztika</string>
     <string name="last_month_stats">Múlt havi statisztika</string>
     <string name="radar_url_not_set">A radar URL-je nincs beállítva. A beállításokhoz léphet a módosításhoz</string>

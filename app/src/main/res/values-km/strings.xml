@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">សូមរង់ចាំខណៈពេលដែលយើងផ្ទៀងផ្ទាត់ URL ដែលអ្នកបានដាក់ស្នើ។</string>
     <string name="remove_all_data">តើអ្នកពិតជាចង់លុបទិន្នន័យទាំងអស់ចេញមែនទេ?</string>
     <string name="no">ដេលក្ផាន</string>
-    <string name="icons_failed_to_download">រូបតំណាងបានបរាជ័យក្នុងការទាញយកយ៉ាងពេញលេញអ្នកនឹងត្រូវព្យាយាមម្តងទៀត។</string>
-    <string name="wasnt_able_to_detect_icons">មិនអាចរកឃើញរូបតំណាងព្យាករណ៍ទេ។</string>
-    <string name="ill_fix_and_try_again">ខ្ញុំនឹងជួសជុលវាហើយព្យាយាមម្តងទៀត</string>
+	<string name="ill_fix_and_try_again">ខ្ញុំនឹងជួសជុលវាហើយព្យាយាមម្តងទៀត</string>
     <string name="error_occurred_while_attempting_to_update">កំហុសមួយបានកើតឡើងខណៈពេលប៉ុនប៉ងធ្វើបច្ចុប្បន្នភាពការប្រើប្រាស់</string>
     <string name="unknown_error_occurred">កំហុសមិនស្គាល់បានកើតឡើង</string>
     <string name="wasnt_able_to_connect_custom_url">មិនអាចភ្ជាប់ឬទាញយកពី URL ផ្ទាល់ខ្លួនដែលបានបញ្ជាក់</string>
     <string name="wasnt_able_to_connect_webcam_url">មិនអាចភ្ជាប់ឬទាញយករូបភាពវេបខេមពីម៉ាស៊ីនមេរបស់អ្នកទេ</string>
     <string name="wasnt_able_to_connect_forecast">មិនអាចភ្ជាប់ឬទាញយកការព្យាករណ៍បានទេ។</string>
-    <string name="wasnt_able_to_detect_forecast_icons">មិនអាចរកឃើញរូបតំណាងព្យាករណ៍ទេ។</string>
-    <string name="forecast_type_needs_icons">ប្រភេទព្យាករណ៍ប្រភេទ \'%1$s\' ត្រូវការមានរូបតំណាងមានសូមប្តូរទៅប្រើរូបតំណាងហើយព្យាយាមម្តងទៀត។</string>
-    <string name="forecast_type_is_invalid">ប្រភេទព្យាករណ៍ \'%1$s\' មិនត្រឹមត្រូវសូមពិនិត្យមើលឯកសារកំណត់របស់អ្នកហើយព្យាយាមម្តងទៀត។</string>
+	<string name="forecast_type_is_invalid">ប្រភេទព្យាករណ៍ \'%1$s\' មិនត្រឹមត្រូវសូមពិនិត្យមើលឯកសារកំណត់របស់អ្នកហើយព្យាយាមម្តងទៀត។</string>
     <string name="wasnt_able_to_connect_radar_image">មិនអាចភ្ជាប់ឬទាញយករ៉ាដា = រូបភាពពីអ៊ីនធឺណិត</string>
     <string name="wasnt_able_to_connect_data_txt">មិនអាចភ្ជាប់ឬទាញយកទិន្នន័យពីម៉ាស៊ីនមេរបស់អ្នកទេ</string>
     <string name="data_url_was_blank">URL ទិន្នន័យគឺទទេ</string>
@@ -68,8 +64,7 @@
     <string name="match_app">កម្មវិធីប្រកួត</string>
     <string name="custom_setting">ពណ៌ផ្ទាល់ខ្លួន</string>
     <string name="app_theme">ស្បែកកម្មវិធី</string>
-    <string name="use_icons">បង្ហាញរូបតំណាង</string>
-    <string name="today">ថៃនេហ</string>
+	<string name="today">ថៃនេហ</string>
     <string name="last_year_stats">ស្ថិតិកាលពីឆ្នាំមុន</string>
     <string name="last_month_stats">ស្ថិតិកាលពីខែមុន</string>
     <string name="radar_url_not_set">URL រ៉ាដាមិនបានកំណត់ទេ។ អ្នកអាចទៅការកំណត់ដើម្បីផ្លាស់ប្តូរ។</string>

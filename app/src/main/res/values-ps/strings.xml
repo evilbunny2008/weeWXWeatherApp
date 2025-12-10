@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">مهرباني وکړئ انتظار وکړئ تر هغه چې موږ هغه URL تایید کړو چې تاسو یې سپارلی</string>
     <string name="remove_all_data">ایا تاسو ډاډه یاست چې تاسو ټول معلومات لرې کول غواړئ؟</string>
     <string name="no">نه</string>
-    <string name="icons_failed_to_download">عکسونه په بشپړ ډول ډاونلوډ کولو کې پاتې راغلل ، تاسو به بیا هڅه وکړئ</string>
-    <string name="wasnt_able_to_detect_icons">د وړاندوینې شبیهونو موندلو توان نه درلود</string>
-    <string name="ill_fix_and_try_again">زه به یې حل کړم او بیا به هڅه وکړم</string>
+	<string name="ill_fix_and_try_again">زه به یې حل کړم او بیا به هڅه وکړم</string>
     <string name="error_occurred_while_attempting_to_update">د کارونې تازه کولو په هڅه کې یوه تېروتنه رامنځته شوه</string>
     <string name="unknown_error_occurred">نامعلومه تېروتنه رامنځته شوه</string>
     <string name="wasnt_able_to_connect_custom_url">د مشخص شوي دودیز URL څخه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_connect_webcam_url">ستاسو د سرور څخه د ویب کیم عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_connect_forecast">وړاندوینه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
-    <string name="wasnt_able_to_detect_forecast_icons">د وړاندوینې شبیهونو موندلو توان نه درلود</string>
-    <string name="forecast_type_needs_icons">د وړاندوینې ډول \'%1$s\' ته اړتیا ده چې شبیه شتون ولري، مهرباني وکړئ د عکسونو کارولو ته لاړ شئ او بیا هڅه وکړئ</string>
-    <string name="forecast_type_is_invalid">د وړاندوینې ډول \'%1$s\' ناسم دی، د خپل ترتیباتو فایل وګورئ او بیا هڅه وکړئ</string>
+	<string name="forecast_type_is_invalid">د وړاندوینې ډول \'%1$s\' ناسم دی، د خپل ترتیباتو فایل وګورئ او بیا هڅه وکړئ</string>
     <string name="wasnt_able_to_connect_radar_image">د انټرنیټ څخه د رادار = عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_connect_data_txt">ستاسو د سرور څخه د data.txt د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="data_url_was_blank">د معلوماتو URL خالي و</string>
@@ -68,8 +64,7 @@
     <string name="match_app">د میچ ایپ</string>
     <string name="custom_setting">دودیز رنګونه</string>
     <string name="app_theme">د اپلیکیشن موضوع</string>
-    <string name="use_icons">عکسونه ښکاره کړئ</string>
-    <string name="today">نن</string>
+	<string name="today">نن</string>
     <string name="last_year_stats">د تیر کال احصایې</string>
     <string name="last_month_stats">د تیرې میاشتې احصایې</string>
     <string name="radar_url_not_set">د رادار URL نه دی ټاکل شوی. تاسو کولی شئ د بدلون لپاره تنظیماتو ته لاړ شئ</string>

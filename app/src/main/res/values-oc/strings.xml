@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Esperatz mentre que verificam l\'URL que presentatz</string>
     <string name="remove_all_data">Sètz segur que volètz suprimir totas las donadas?</string>
     <string name="no">Non</string>
-    <string name="icons_failed_to_download">Icons manquèron de telecargar plenament, vos caldrà tornar ensajar</string>
-    <string name="wasnt_able_to_detect_icons">Era pas capable de detectar d\'icònas de prevision</string>
-    <string name="ill_fix_and_try_again">Lo arreglaré y Ensayaré</string>
+	<string name="ill_fix_and_try_again">Lo arreglaré y Ensayaré</string>
     <string name="error_occurred_while_attempting_to_update">Una error s\'es produsida al moment de l\'ensag d\'actualizar l\'utilizacion</string>
     <string name="unknown_error_occurred">Error desconeguda s\'es produsida</string>
     <string name="wasnt_able_to_connect_custom_url">Non èra capable de se connectar o de telecargar de l\'URL personalizat especificat</string>
     <string name="wasnt_able_to_connect_webcam_url">Era pas capable de connectar o de telecargar una imatge webcam dempuèi vòstre servidor</string>
     <string name="wasnt_able_to_connect_forecast">Era pas capable de connectar o de telecargar la prevision</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Era pas capable de detectar d\'icònas de prevision</string>
-    <string name="forecast_type_needs_icons">Lo tipe de prevision \'%1$s\' a besonh d\'aver d\'icònas disponiblas, Mercés de cambiar a l\'utilizacion d\'icònas e tornatz ensajar</string>
-    <string name="forecast_type_is_invalid">Lo tipe de prevision \'%1$s\' es invalid, verificatz vòstre fichièr de paramètres e ensajatz tornarmai</string>
+	<string name="forecast_type_is_invalid">Lo tipe de prevision \'%1$s\' es invalid, verificatz vòstre fichièr de paramètres e ensajatz tornarmai</string>
     <string name="wasnt_able_to_connect_radar_image">Era pas capable de connectar o de telecargar radar= imatge d\'internet</string>
     <string name="wasnt_able_to_connect_data_txt">Era pas capable de connectar o de telecargar de donadas.txt de vòstre servidor</string>
     <string name="data_url_was_blank">L\'URL de donadas foguèt en blanc</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Aplicacion de partida</string>
     <string name="custom_setting">Colors personalizadas</string>
     <string name="app_theme">Tema de App</string>
-    <string name="use_icons">Mostrar Icons</string>
-    <string name="today">Uèi</string>
+	<string name="today">Uèi</string>
     <string name="last_year_stats">Estadísticas de l\'an passat</string>
     <string name="last_month_stats">Estadísticas de la Última Mes</string>
     <string name="radar_url_not_set">URL de radar pas definit. Podètz anar als paramètres per cambiar</string>

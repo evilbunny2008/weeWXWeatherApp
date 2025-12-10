@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Mangyaring maghintay habang pinatunayan namin ang URL na iyong isinumite</string>
     <string name="remove_all_data">Sigurado ka bang nais mong alisin ang lahat ng data?</string>
     <string name="no">Hindi</string>
-    <string name="icons_failed_to_download">Nabigo ang mga icon na ganap na mag -download, kakailanganin mong muling sumubok</string>
-    <string name="wasnt_able_to_detect_icons">Hindi nakakakita ng mga icon ng forecast</string>
-    <string name="ill_fix_and_try_again">Aayusin ko ito at subukang muli</string>
+	<string name="ill_fix_and_try_again">Aayusin ko ito at subukang muli</string>
     <string name="error_occurred_while_attempting_to_update">May naganap na error habang sinusubukang i -update ang paggamit</string>
     <string name="unknown_error_occurred">Hindi kilalang error ang naganap</string>
     <string name="wasnt_able_to_connect_custom_url">Hindi nakakonekta o mag -download mula sa tinukoy na pasadyang URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Hindi nakakonekta o mag -download ng isang imahe ng webcam mula sa iyong server</string>
     <string name="wasnt_able_to_connect_forecast">Hindi nakakonekta o i -download ang forecast</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Hindi nakakakita ng mga icon ng forecast</string>
-    <string name="forecast_type_needs_icons">Ang uri ng forecast \'%1$s\' ay kailangang magkaroon ng magagamit na mga icon, mangyaring lumipat sa paggamit ng mga icon at subukang muli</string>
-    <string name="forecast_type_is_invalid">Ang uri ng forecast \'%1$s\' ay hindi wasto, suriin ang iyong file ng mga setting at subukang muli</string>
+	<string name="forecast_type_is_invalid">Ang uri ng forecast \'%1$s\' ay hindi wasto, suriin ang iyong file ng mga setting at subukang muli</string>
     <string name="wasnt_able_to_connect_radar_image">Hindi nakakonekta o mag -download ng radar = imahe mula sa internet</string>
     <string name="wasnt_able_to_connect_data_txt">Hindi nakakonekta o mag -download ng data.txt mula sa iyong server</string>
     <string name="data_url_was_blank">Ang Data URL ay blangko</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Itugma ang app</string>
     <string name="custom_setting">Pasadyang mga kulay</string>
     <string name="app_theme">Tema ng app</string>
-    <string name="use_icons">Ipakita ang mga icon</string>
-    <string name="today">Ngayon</string>
+	<string name="today">Ngayon</string>
     <string name="last_year_stats">Mga istatistika ng nakaraang taon</string>
     <string name="last_month_stats">Mga istatistika ng nakaraang buwan</string>
     <string name="radar_url_not_set">Hindi nakatakda ang Radar URL. Maaari kang pumunta sa mga setting upang magbago</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Nsaba mulinde nga tukakasa URL gyewawaayo</string>
     <string name="remove_all_data">Okakasa nti oyagala kuggyawo data yonna?</string>
     <string name="no">Nedda</string>
-    <string name="icons_failed_to_download">Ebifaananyi biremeddwa okuwanula mu bujjuvu, ojja kwetaaga okuddamu okugezaako</string>
-    <string name="wasnt_able_to_detect_icons">yali tasobola kuzuula bifaananyi bya kuteebereza</string>
-    <string name="ill_fix_and_try_again">Nja kugitereeza era nzigezeeko nate</string>
+	<string name="ill_fix_and_try_again">Nja kugitereeza era nzigezeeko nate</string>
     <string name="error_occurred_while_attempting_to_update">Ensobi yabaddewo nga agezaako okuzza obuggya enkozesa</string>
     <string name="unknown_error_occurred">Ensobi etamanyiddwa yabaddewo</string>
     <string name="wasnt_able_to_connect_custom_url">Wasn\'t able to connect oba download okuva ku custom URL eragiddwa</string>
     <string name="wasnt_able_to_connect_webcam_url">Wasn\'t able kuyungako oba okuwanula webcam ekifaananyi okuva ku server yo</string>
     <string name="wasnt_able_to_connect_forecast">Wasn\'t able okuyunga oba okuwanula forecast</string>
-    <string name="wasnt_able_to_detect_forecast_icons">yali tasobola kuzuula bifaananyi bya kuteebereza</string>
-    <string name="forecast_type_needs_icons">Ekika ky\'okuteebereza \'%1$sS\' kyetaaga okuba n\'ebifaananyi ebisobola okubeerawo, nsaba okyuse ku kukozesa ebifaananyi era ogezeeko nate</string>
-    <string name="forecast_type_is_invalid">Ekika ky\'okuteebereza \'%1$sS\' si kituufu, kebera fayiro yo ey\'okuteekawo era oddemu ogezeeko</string>
+	<string name="forecast_type_is_invalid">Ekika ky\'okuteebereza \'%1$sS\' si kituufu, kebera fayiro yo ey\'okuteekawo era oddemu ogezeeko</string>
     <string name="wasnt_able_to_connect_radar_image">Wasn\'t able okuyunga oba okuwanula radar= ekifaananyi okuva ku yintaneeti</string>
     <string name="wasnt_able_to_connect_data_txt">Wasn\'t able okuyunga oba okuwanula data.txt okuva ku server yo</string>
     <string name="data_url_was_blank">Data URL yali etaliimu kintu kyonna</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Langi za custom</string>
     <string name="app_theme">Omulamwa gwa App</string>
-    <string name="use_icons">Laga ebifaananyi</string>
-    <string name="today">Leero</string>
+	<string name="today">Leero</string>
     <string name="last_year_stats">Ebibalo by\'omwaka oguwedde</string>
     <string name="last_month_stats">Ebibalo by\'omwezi oguwedde</string>
     <string name="radar_url_not_set">radar URL teteekeddwa. Osobola okugenda mu settings okukyusa</string>

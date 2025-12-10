@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Na pekmi URL kan verify lio ah rak hngak rih</string>
     <string name="remove_all_data">Data vialte hloh dih na duh ti kha na zumh maw?</string>
     <string name="no">A silo</string>
-    <string name="icons_failed_to_download">Icons nih tling tein download an tuah kho lo, na retry a hau lai</string>
-    <string name="wasnt_able_to_detect_icons">Forecast icons pawl cu an rak hngalh khawh lo caah a si</string>
-    <string name="ill_fix_and_try_again">Ka Fix lai i, i zuam ṭhan</string>
+	<string name="ill_fix_and_try_again">Ka Fix lai i, i zuam ṭhan</string>
     <string name="error_occurred_while_attempting_to_update">Hmannak update tuah aa zuam lio ah palhnak a um</string>
     <string name="unknown_error_occurred">Hngalh lomi palhnak a chuak</string>
     <string name="wasnt_able_to_connect_custom_url">Custom URL in a langhtermi custom URL in pehtlaihnak le download tuah khawh a si lo maw</string>
     <string name="wasnt_able_to_connect_webcam_url">Na server chungin webcam hmanthlak pakhat kha a pehtlaih khawh lo asiloah download khawh a si lo maw</string>
     <string name="wasnt_able_to_connect_forecast">Forecast pehtlaihnak le download tuah khawh a si lo</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Forecast icons pawl cu an rak hngalh khawh lo caah a si</string>
-    <string name="forecast_type_needs_icons">Forecast phun \'%1$s\' nih icons a ngeih a herh, Icon hmannak ah thlen law i zuam than</string>
-    <string name="forecast_type_is_invalid">Forecast type \'%1$s\' cu a hman lo, na settings file kha zoh law i zuam ṭhan</string>
+	<string name="forecast_type_is_invalid">Forecast type \'%1$s\' cu a hman lo, na settings file kha zoh law i zuam ṭhan</string>
     <string name="wasnt_able_to_connect_radar_image">Internet in radar= hmanthlak pawl kha pehtlaihnak le download tuahnak in download khawh a si lo caah</string>
     <string name="wasnt_able_to_connect_data_txt">Na server chungin data.txt pehtlaihnak le download tuah khawh a si lo maw</string>
     <string name="data_url_was_blank">Data URL cu a thiang lo</string>
@@ -68,8 +64,7 @@
     <string name="match_app">App</string>
     <string name="custom_setting">Custom rong</string>
     <string name="app_theme">App Theme</string>
-    <string name="use_icons">Icons kha hmuhsak</string>
-    <string name="today">Nihin</string>
+	<string name="today">Nihin</string>
     <string name="last_year_stats">A luan ciami kum 2019 nak in a si</string>
     <string name="last_month_stats">A luan ciami thla hna ah Statistics</string>
     <string name="radar_url_not_set">Radar URL cu set lo. Thlennak caah settings ah na kal khawh</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Ji kerema xwe li bendê bimînin dema ku em URL-ya ku we şandiye rast bikin</string>
     <string name="remove_all_data">Ma tu bi rastî dixwazî ​​​​hemû daneyan jê bikî?</string>
     <string name="no">Na</string>
-    <string name="icons_failed_to_download">Îkonan bi tevahî nehatin dakêşandin, hûn ê hewce bikin ku ji nû ve biceribînin</string>
-    <string name="wasnt_able_to_detect_icons">Nekarî îkonên pêşbîniyê bibîne</string>
-    <string name="ill_fix_and_try_again">Ez ê wê rast bikim û dîsa biceribînim</string>
+	<string name="ill_fix_and_try_again">Ez ê wê rast bikim û dîsa biceribînim</string>
     <string name="error_occurred_while_attempting_to_update">Di dema hewldana nûvekirina bikaranînê de çewtiyek derket</string>
     <string name="unknown_error_occurred">Çewtiya nenas derket</string>
     <string name="wasnt_able_to_connect_custom_url">Nekarî ji URL-ya xwerû ya ku hatî destnîşan kirin were girêdan an dakêşîne</string>
     <string name="wasnt_able_to_connect_webcam_url">Nekarî wêneyek webcamê ji servera xwe ve girêbide an dakêşîne</string>
     <string name="wasnt_able_to_connect_forecast">Nekarî pêşbîniyê girêbide an dakêşîne</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Nekarî îkonên pêşbîniyê bibîne</string>
-    <string name="forecast_type_needs_icons">Pêdivî ye ku celebê pêşbîniya \'%1$s\' îkonan hebin, Ji kerema xwe veguherînin îkonan bikar bînin û dîsa biceribînin</string>
-    <string name="forecast_type_is_invalid">Cureya pêşbîniya \'%1$s\' nederbasdar e, pelê mîhengên xwe kontrol bikin û dîsa biceribînin</string>
+	<string name="forecast_type_is_invalid">Cureya pêşbîniya \'%1$s\' nederbasdar e, pelê mîhengên xwe kontrol bikin û dîsa biceribînin</string>
     <string name="wasnt_able_to_connect_radar_image">Nikaribû ku wêneyê radar= ji înternetê ve girêbide an dakêşîne</string>
     <string name="wasnt_able_to_connect_data_txt">Nekarî data.txt ji servera xwe ve girêbide an dakêşîne</string>
     <string name="data_url_was_blank">URLa daneyê vala bû</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Rengên Custom</string>
     <string name="app_theme">Mijara App</string>
-    <string name="use_icons">Îkonan nîşan bide</string>
-    <string name="today">Îro</string>
+	<string name="today">Îro</string>
     <string name="last_year_stats">Statîstîkên sala borî</string>
     <string name="last_month_stats">Statîstîkên meha borî</string>
     <string name="radar_url_not_set">URL-ya radarê nehatiye danîn. Hûn dikarin biçin mîhengan ku biguhezînin</string>

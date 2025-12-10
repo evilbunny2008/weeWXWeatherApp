@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Fuirich ort fhad \'s a dhearbhas sinn an URL a chuir thu a-steach</string>
     <string name="remove_all_data">A bheil thu cinnteach gu bheil thu airson an dàta gu lèir a thoirt air falbh?</string>
     <string name="no">Chan eil</string>
-    <string name="icons_failed_to_download">Cha deach na h-ìomhaighean a luchdachadh sìos gu h-iomlan, feumaidh tu feuchainn a-rithist</string>
-    <string name="wasnt_able_to_detect_icons">Cha b\' urrainn dhuinn ìomhaighean ro-aithris a lorg</string>
-    <string name="ill_fix_and_try_again">Ceartaichidh mi e agus feuchaidh mi a-rithist e</string>
+	<string name="ill_fix_and_try_again">Ceartaichidh mi e agus feuchaidh mi a-rithist e</string>
     <string name="error_occurred_while_attempting_to_update">Thachair mearachd fhad \'s a bha sinn a\' feuchainn ri cleachdadh ùrachadh</string>
     <string name="unknown_error_occurred">Thachair mearachd neo-aithnichte</string>
     <string name="wasnt_able_to_connect_custom_url">Cha b\' urrainn dhuinn ceangal no luchdachadh a-nuas bhon URL gnàthaichte a chaidh a shònrachadh</string>
     <string name="wasnt_able_to_connect_webcam_url">Cha b\' urrainn dhuinn dealbh camara-lìn a cheangal no a luchdachadh sìos bhon t-seirbheisiche agad</string>
     <string name="wasnt_able_to_connect_forecast">Cha b\' urrainn dhuinn an ro-aithris a cheangal no a luchdachadh sìos</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Cha b\' urrainn dhuinn ìomhaighean ro-aithris a lorg</string>
-    <string name="forecast_type_needs_icons">Feumaidh ìomhaigheagan a bhith ri làimh aig an t-seòrsa ro-shealladh \'%1$s\', feuch an atharraich thu gu bhith a\' cleachdadh ìomhaighean is feuch ris a-rithist</string>
-    <string name="forecast_type_is_invalid">Tha an seòrsa ro-shealladh \'%1$s\' mì-dhligheach, thoir sùil air an fhaidhle roghainnean agad is feuch ris a-rithist</string>
+	<string name="forecast_type_is_invalid">Tha an seòrsa ro-shealladh \'%1$s\' mì-dhligheach, thoir sùil air an fhaidhle roghainnean agad is feuch ris a-rithist</string>
     <string name="wasnt_able_to_connect_radar_image">Cha b\' urrainn dhuinn radar=image a cheangal no a luchdachadh sìos bhon eadar-lìon</string>
     <string name="wasnt_able_to_connect_data_txt">Cha b\' urrainn dhuinn data.txt a cheangal no a luchdachadh sìos bhon fhrithealaiche agad</string>
     <string name="data_url_was_blank">Bha URL an dàta falamh</string>
@@ -68,8 +64,7 @@
     <string name="match_app">App Match</string>
     <string name="custom_setting">Dathan gnàthaichte</string>
     <string name="app_theme">Cuspair an aplacaid</string>
-    <string name="use_icons">Seall Icons</string>
-    <string name="today">An-diugh</string>
+	<string name="today">An-diugh</string>
     <string name="last_year_stats">Staitistig na bliadhna an-uiridh</string>
     <string name="last_month_stats">Staitistig na mìos mu dheireadh</string>
     <string name="radar_url_not_set">URL radar nach deach a shuidheachadh. Faodaidh tu a dhol gu roghainnean airson atharrachadh</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">ביטע וואַרטן בשעת מיר באַשטעטיקן די URL וואָס איר האָט דערלאנגט</string>
     <string name="remove_all_data">זענט איר זיכער אַז איר ווילן צו באַזייַטיקן אַלע דאַטן?</string>
     <string name="no">ניין</string>
-    <string name="icons_failed_to_download">ייקאַנז ניט אַנדערש צו אָפּלאָדירן גאָר, איר דאַרפֿן צו פּרובירן ווידער</string>
-    <string name="wasnt_able_to_detect_icons">איז נישט ביכולת צו דעטעקט פאָרויסזאָגן ייקאַנז</string>
-    <string name="ill_fix_and_try_again">איך וועט פאַרריכטן עס און פּרובירן ווידער</string>
+	<string name="ill_fix_and_try_again">איך וועט פאַרריכטן עס און פּרובירן ווידער</string>
     <string name="error_occurred_while_attempting_to_update">א טעות איז פארגעקומען בשעת פּרווון צו דערהייַנטיקן באַניץ</string>
     <string name="unknown_error_occurred">אומבאַקאַנט טעות פארגעקומען</string>
     <string name="wasnt_able_to_connect_custom_url">קען נישט פאַרבינדן אָדער אראפקאפיע פֿון די ספּעסיפיעד מנהג URL</string>
     <string name="wasnt_able_to_connect_webcam_url">קען נישט פאַרבינדן אָדער אראפקאפיע אַ וועבקאַם בילד פֿון דיין סערווער</string>
     <string name="wasnt_able_to_connect_forecast">קען נישט פאַרבינדן אָדער אראפקאפיע די פאָרויסזאָגן</string>
-    <string name="wasnt_able_to_detect_forecast_icons">איז נישט ביכולת צו דעטעקט פאָרויסזאָגן ייקאַנז</string>
-    <string name="forecast_type_needs_icons">פאָרויסזאָגן טיפּ \'%1$s\' דאַרף האָבן ייקאַנז בנימצא, ביטע באַשטימען צו ניצן ייקאַנז און פּרובירן ווידער</string>
-    <string name="forecast_type_is_invalid">פאָרויסזאָגן טיפּ \'%1$s\' איז פאַרקריפּלט, טשעק דיין סעטטינגס טעקע און פּרובירן ווידער</string>
+	<string name="forecast_type_is_invalid">פאָרויסזאָגן טיפּ \'%1$s\' איז פאַרקריפּלט, טשעק דיין סעטטינגס טעקע און פּרובירן ווידער</string>
     <string name="wasnt_able_to_connect_radar_image">קען נישט פאַרבינדן אָדער אראפקאפיע ראַדאַר= בילד פֿון דער אינטערנעץ</string>
     <string name="wasnt_able_to_connect_data_txt">קען נישט פאַרבינדן אָדער אראפקאפיע דאַטאַ.טקסט פון דיין סערווער</string>
     <string name="data_url_was_blank">דאַטן URL איז ליידיק</string>
@@ -68,8 +64,7 @@
     <string name="match_app">גלייַכן אַפּ</string>
     <string name="custom_setting">מנהג קאָלאָרס</string>
     <string name="app_theme">אַפּ טעמע</string>
-    <string name="use_icons">ווייַזן יקאָנס</string>
-    <string name="today">היינט</string>
+	<string name="today">היינט</string>
     <string name="last_year_stats">לעצטע יאָר ס סטאַטיסטיק</string>
     <string name="last_month_stats">לעצטע חודש ס סטאַטיסטיק</string>
     <string name="radar_url_not_set">ראַדאַר URL איז נישט באַשטימט. איר קענט גיין צו סעטטינגס צו טוישן</string>

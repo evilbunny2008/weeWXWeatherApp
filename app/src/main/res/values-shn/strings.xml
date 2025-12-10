@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">ၶႅၼ်းတေႃႈပႂ်ႉယၢမ်းၽွင်းႁဝ်းမၵ်းမၼ်ႈ URL ဢၼ်ၸဝ်ႈၵဝ်ႇတၢင်ႇယိုၼ်ႈဝႆႉၼၼ်ႉ။</string>
     <string name="remove_all_data">ၶႂ်ႈဢဝ်ဢွၵ်ႇပႅတ်ႈ ၶေႃႈမုၼ်းတင်းမူတ်းႁႃႉ?</string>
     <string name="no">ဢမ်ႇ</string>
-    <string name="icons_failed_to_download">Icons ဢမ်ႇလူင်းလႆႈတဵမ်ထူၼ်ႈ တေလႆႈၶိုၼ်းၸၢမ်းတူၺ်း။</string>
-    <string name="wasnt_able_to_detect_icons">ဢမ်ႇႁူႉလႆႈ ႁၢင်ႈၽၢင် ဢၼ်လၢမ်းၶၢတ်ႈဝႆႉၼၼ်ႉ။</string>
-    <string name="ill_fix_and_try_again">တေမႄးသေ ၸၢမ်းၶိုၼ်း</string>
+	<string name="ill_fix_and_try_again">တေမႄးသေ ၸၢမ်းၶိုၼ်း</string>
     <string name="error_occurred_while_attempting_to_update">လွင်ႈၽိတ်းပိူင်ႈ ဢၼ်ပဵၼ်မႃး ၽွင်းမိူဝ်ႈ ၶတ်းၸႂ် တႃႇတေ ႁဵတ်းႁႂ်ႈ လွင်ႈၸႂ်ႉတိုဝ်း မႂ်ႇ</string>
     <string name="unknown_error_occurred">လွင်ႈၽိတ်းပိူင်ႈဢၼ်ဢမ်ႇႁူႉၼၼ်ႉ ပဵၼ်မႃး</string>
     <string name="wasnt_able_to_connect_custom_url">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈတီႈ URL ဢၼ်ႁဵတ်းဝႆႉ ၸွမ်းၼင်ႇ ၶေႃႈမၵ်းမၼ်ႈဝႆႉၼၼ်ႉ</string>
     <string name="wasnt_able_to_connect_webcam_url">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈ ၶႅပ်းႁၢင်ႈ ဝႅပ်ႉသၢႆႉ တီႈၼႂ်း Server ၸဝ်ႈၵဝ်ႇ</string>
     <string name="wasnt_able_to_connect_forecast">ဢမ်ႇတၼ်းလႆႈ ၵွင်ႉ ဢမ်ႇၼၼ် လူင်းဢဝ် ၶၢဝ်ႇလၢမ်းၶၢတ်ႈ။</string>
-    <string name="wasnt_able_to_detect_forecast_icons">ဢမ်ႇႁူႉလႆႈ ႁၢင်ႈၽၢင် ဢၼ်လၢမ်းၶၢတ်ႈဝႆႉၼၼ်ႉ။</string>
-    <string name="forecast_type_needs_icons">မဵဝ်း Forecast \'%1$s\' လူဝ်ႇလႆႈမီး ႁၢင်ႈၽၢင် ဢၼ်မီးဝႆႉ, လႅၵ်ႈလၢႆႈၸႂ်ႉတိုဝ်း ဢၢႆႇၵူဝ်ႇသေ ၸၢမ်းတူၺ်းၶိုၼ်း။</string>
-    <string name="forecast_type_is_invalid">မဵဝ်း Forecast \'%1$s\' ၼႆႉ ဢမ်ႇၸႂ်ႈ ဢၼ်မၢၼ်ႇမႅၼ်ႈသေ တူၺ်းတီႈ ၾၢႆႇ settings ၸဝ်ႈၵဝ်ႇသေ ၶိုၼ်းၶတ်းၸႂ်တူၺ်း။</string>
+	<string name="forecast_type_is_invalid">မဵဝ်း Forecast \'%1$s\' ၼႆႉ ဢမ်ႇၸႂ်ႈ ဢၼ်မၢၼ်ႇမႅၼ်ႈသေ တူၺ်းတီႈ ၾၢႆႇ settings ၸဝ်ႈၵဝ်ႇသေ ၶိုၼ်းၶတ်းၸႂ်တူၺ်း။</string>
     <string name="wasnt_able_to_connect_radar_image">ဢမ်ႇမေႃၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈ radar= ၶႅပ်းႁၢင်ႈ တီႈၼႂ်းဢိၼ်ႇတႃႇၼႅတ်ႉ</string>
     <string name="wasnt_able_to_connect_data_txt">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းၶေႃႈမုၼ်း.txt တီႈ Server ၸဝ်ႈၵဝ်ႇ</string>
     <string name="data_url_was_blank">Data URL ပဵၼ်ပဝ်ႇ</string>
@@ -68,8 +64,7 @@
     <string name="match_app">App</string>
     <string name="custom_setting">ၶိုတ်းၶၢၼ်း</string>
     <string name="app_theme">App Theme</string>
-    <string name="use_icons">ၼႄ Icons</string>
-    <string name="today">မိူဝ်ႈၼႆႉ</string>
+	<string name="today">မိူဝ်ႈၼႆႉ</string>
     <string name="last_year_stats">သဵၼ်ႈမၢႆပီၵၢႆ</string>
     <string name="last_month_stats">သဵၼ်ႈမၢႆလိူၼ်ၵၢပ်ႈလိူၼ်ပူၼ်ႉမႃး</string>
     <string name="radar_url_not_set">ရေႇတႃႇ URL ဢမ်ႇလႆႈတင်ႈ။ ၵႂႃႇလႅၵ်ႈလႆၢႈၵေႃႈလႆႈ၊</string>

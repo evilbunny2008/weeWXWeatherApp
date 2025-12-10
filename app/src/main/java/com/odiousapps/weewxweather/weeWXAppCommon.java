@@ -60,8 +60,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPOutputStream;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
@@ -99,9 +97,6 @@ class weeWXAppCommon
 	static final String STOP_WEBCAM_INTENT = "com.odiousapps.weewxweather.STOP_WEBCAM_INTENT";
 
 	static final String WIDGET_THEME_MODE = "widget_theme_mode";
-
-	static final int icon_version = 12;
-	private static final String icon_url = "https://github.com/evilbunny2008/InigoPlugin/releases/download/1.0.0/icons.zip";
 
 	private static final BitmapFactory.Options options = new BitmapFactory.Options();
 
@@ -607,7 +602,7 @@ class weeWXAppCommon
 			sb.append("<div class='today'>\n\t<div class='topRow'>\n");
 			sb.append("\t\t<div class='iconBig'>\n");
 			if(!first.icon.startsWith("file:///") && !first.icon.startsWith("data:image"))
-				sb.append("\t\t\t").append(cssToSVG(first.icon, null)).append("\n");
+				sb.append("\t\t\t").append(cssToSVG(first.icon)).append("\n");
 			else
 				sb.append("\t\t\t<img alt='weather icon' src='").append(removeWS(first.icon)).append("' />\n");
 			sb.append("\t\t</div>\n");
@@ -649,7 +644,7 @@ class weeWXAppCommon
 
 			sb.append("\t\t\t<div class='iconSmall'>\n");
 			if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
-				sb.append("\t\t\t\t").append(cssToSVG(day.icon, null)).append("\n");
+				sb.append("\t\t\t\t").append(cssToSVG(day.icon)).append("\n");
 			else
 				sb.append("\t\t\t\t<img alt='weather icon' src='")
 						.append(tmpstr).append("' />\n");
@@ -724,7 +719,6 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		String desc;
 		List<Day> days = new ArrayList<>();
 		long timestamp = 0;
@@ -795,28 +789,18 @@ class weeWXAppCommon
 
 			day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].strip();
 
-			String fileName =  day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length() - 4);
+			String fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 
-			if(!use_icons)
+			try
 			{
-				if(!fileName.equals("frost"))
-					day.icon = cssToSVG("wi-bom-" + fileName, null);
+				byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+				if(imageData != null)
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 				else
-					day.icon = fiToSVG("flaticon-thermometer");
-			} else {
-				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
-
-				try
-				{
-					byte[] imageData = iconToBytes(fileName, day.icon);
-					if(imageData != null)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					else
-						day.icon = "";
-				} catch(Exception e) {
-					LogMessage("processBOM2() Error! e: " + e, true);
-					doStackOutput(e);
-				}
+					day.icon = "";
+			} catch(Exception e) {
+				LogMessage("processBOM2() Error! e: " + e, true);
+				doStackOutput(e);
 			}
 
 			day.max = day.max.replaceAll("°C", "").strip();
@@ -857,28 +841,18 @@ class weeWXAppCommon
 				day.min = bit.split("<dd class='min'>")[1].split("</dd>")[0].strip();
 				day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].strip();
 
-				fileName = day.icon.substring(day.icon.lastIndexOf('/') + 1, day.icon.length() - 4);
+				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 
-				if(!use_icons)
+				try
 				{
-					if(!fileName.equals("frost"))
-						day.icon = cssToSVG("wi-bom-" + fileName, null);
+					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					if(imageData != null)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					else
-						day.icon = fiToSVG("flaticon-thermometer");
-				} else {
-					fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
-
-					try
-					{
-						byte[] imageData = iconToBytes(fileName, day.icon);
-						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						else
-							day.icon = "";
-					} catch(Exception e) {
-						LogMessage("processBOM2() Error! e: " + e, true);
-						doStackOutput(e);
-					}
+						day.icon = "";
+				} catch(Exception e) {
+					LogMessage("processBOM2() Error! e: " + e, true);
+					doStackOutput(e);
 				}
 
 				day.max = day.max.replaceAll("°C", "").strip();
@@ -921,7 +895,6 @@ class weeWXAppCommon
 		LogMessage("data: " + data);
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		String desc = "";
 		List<Day> days = new ArrayList<>();
 		long timestamp = 0;
@@ -993,26 +966,18 @@ class weeWXAppCommon
 				String fileName = bomlookup(mydays.getJSONObject(i).getString("icon_descriptor"));
 				if(fileName != null && !fileName.equals("null") && !fileName.isBlank())
 				{
-					if(!use_icons)
-					{
-						if(!fileName.equals("frost"))
-							day.icon = cssToSVG("wi-bom-" + fileName, null);
-						else
-							day.icon = fiToSVG("flaticon-thermometer");
-					} else {
-						fileName = "bom2" + fileName + ".png";
+					fileName = "bom2" + fileName + ".png";
 
-						try
-						{
-							byte[] imageData = iconToBytes(fileName, day.icon);
-							if(imageData != null)
-								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-							else
-								day.icon = "";
-						} catch(Exception e) {
-							LogMessage("processBOM3() Error! e: " + e, true);
-							doStackOutput(e);
-						}
+					try
+					{
+						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+						if(imageData != null)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
+					} catch(Exception e) {
+						LogMessage("processBOM3() Error! e: " + e, true);
+						doStackOutput(e);
 					}
 				}
 
@@ -1052,7 +1017,6 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		long timestamp = getRSSms();
 
 		String desc;
@@ -1089,23 +1053,18 @@ class weeWXAppCommon
 			day.min = day.min.substring(0, day.min.length() - 5);
 			day.max = day.max.substring(0, day.max.length() - 5);
 
-			if(!use_icons)
-			{
-				day.icon = cssToSVG("wi-metoffice-" + fileName.substring(0, fileName.lastIndexOf(".")), null);
-			} else {
-				fileName = "met" + fileName;
+			fileName = "met" + fileName;
 
-				try
-				{
-					byte[] imageData = iconToBytes(fileName, null);
-					if(imageData != null)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-					else
-						day.icon = "";
-				} catch(Exception e) {
-					LogMessage("processWCA() Error! e: " + e, true);
-					doStackOutput(e);
-				}
+			try
+			{
+				byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+				if(imageData != null)
+					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+				else
+					day.icon = "";
+			} catch(Exception e) {
+				LogMessage("processWCA() Error! e: " + e, true);
+				doStackOutput(e);
 			}
 
 			if(metric)
@@ -1134,7 +1093,6 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		String desc;
 		List<Day> days = new ArrayList<>();
 		long timestamp, lastTS;
@@ -1246,26 +1204,18 @@ class weeWXAppCommon
 
 					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1).replaceAll("\\.gif$", "");
 
-					if(!use_icons)
-					{
-						if(!fileName.equals("26"))
-							day.icon = cssToSVG("wi-weather-gc-ca-" + fileName, null);
-						else
-							day.icon = fiToSVG("flaticon-thermometer");
-					} else {
-						fileName = "wca" + fileName + ".png";
+					fileName = "wca" + fileName + ".png";
 
-						try
-						{
-							byte[] imageData = iconToBytes(fileName, null);
-							if(imageData != null)
-								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-							else
-								day.icon = "";
-						} catch(Exception e) {
-							LogMessage("processWCA() Error! e: " + e, true);
-							doStackOutput(e);
-						}
+					try
+					{
+						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+						if(imageData != null)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
+					} catch(Exception e) {
+						LogMessage("processWCA() Error! e: " + e, true);
+						doStackOutput(e);
 					}
 
 					day.day = date;
@@ -1297,7 +1247,6 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		String desc;
 		List<Day> days = new ArrayList<>();
 		long timestamp, lastTS;
@@ -1394,28 +1343,19 @@ class weeWXAppCommon
 						doStackOutput(e);
 					}
 
-					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1).replaceAll("\\.gif$", "");
+					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1)
+							.replaceAll("\\.gif$", "") + ".png";
 
-					if(!use_icons)
+					try
 					{
-						if(!fileName.equals("26"))
-							day.icon = cssToSVG("wi-weather-gc-ca-" + fileName, null);
+						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+						if(imageData != null)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 						else
-							day.icon = fiToSVG("flaticon-thermometer");
-					} else {
-						fileName = "wca" + fileName + ".png";
-
-						try
-						{
-							byte[] imageData = iconToBytes(fileName, null);
-							if(imageData != null)
-								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-							else
-								day.icon = "";
-						} catch(Exception e) {
-							LogMessage("processWCAF() Error! e: " + e, true);
-							doStackOutput(e);
-						}
+							day.icon = "";
+					} catch(Exception e) {
+						LogMessage("processWCAF() Error! e: " + e, true);
+						doStackOutput(e);
 					}
 
 					day.day = date;
@@ -1572,7 +1512,7 @@ class weeWXAppCommon
 
 					try
 					{
-						byte[] imageData = iconToBytes(fileName, iconLink.getString(i));
+						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
 						if(imageData != null)
 							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 						else
@@ -1671,7 +1611,7 @@ class weeWXAppCommon
 				code = code.substring(0, code.length() - 2);
 
 				if((Integer.parseInt(code) >= 1 && Integer.parseInt(code) <= 27) || code.equals("31") || code.equals("35"))
-					day.icon = cssToSVG("wi-wmo-" + code, null);
+					day.icon = cssToSVG("wi-wmo-" + code);
 				else if(code.equals("28"))
 					day.icon = fiToSVG("flaticon-cactus");
 				else if(code.equals("29") || code.equals("30"))
@@ -1700,7 +1640,6 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		List<Day> days = new ArrayList<>();
 		String desc;
 		long timestamp = 0;
@@ -1745,32 +1684,24 @@ class weeWXAppCommon
 
 				day.icon = day.icon.toLowerCase(Locale.ENGLISH).replaceAll(" ", "-").strip();
 
-				if(!use_icons)
+				day.icon = day.icon.replaceAll("-", "_");
+
+				String fileName = "ms_" + day.icon + ".png";
+				if(fileName.equals("ms_wind_rain.png"))
+					fileName = "ms_wind_and_rain.png";
+
+				if(fileName != null && !fileName.isBlank())
 				{
-					if(!day.icon.equals("frost"))
-						day.icon = cssToSVG("wi-metservice-" + day.icon, null);
-					else
-						day.icon = fiToSVG("flaticon-thermometer");
-				} else {
-					day.icon = day.icon.replaceAll("-", "_");
-
-					String fileName = "ms_" + day.icon + ".png";
-					if(fileName.equals("ms_wind_rain.png"))
-						fileName = "ms_wind_and_rain.png";
-
-					if(fileName != null && !fileName.isBlank())
+					try
 					{
-						try
-						{
-							byte[] imageData = iconToBytes(fileName, null);
-							if(imageData != null)
-								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-							else
-								day.icon = "";
-						} catch(Exception e) {
-							LogMessage("processMetService() Error! e: " + e, true);
-							doStackOutput(e);
-						}
+						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+						if(imageData != null)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
+					} catch(Exception e) {
+						LogMessage("processMetService() Error! e: " + e, true);
+						doStackOutput(e);
 					}
 				}
 
@@ -1804,7 +1735,6 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		List<Day> days = new ArrayList<>();
 		String desc = "";
 		long timestamp = 0;
@@ -1860,31 +1790,21 @@ class weeWXAppCommon
 
 				icon = icon.replaceAll("/DE/wetter/_functions/piktos/vhs_", "").replaceAll("\\?__blob=normal", "").strip();
 
-				if(!use_icons)
-				{
-					icon = icon.replaceAll("_", "-");
-					icon = icon.substring(0, icon.lastIndexOf("."));
-					if(!icon.equals("pic-48") && !icon.equals("pic-66") && !icon.equals("pic67"))
-						day.icon = cssToSVG("wi-dwd-" + icon, null);
-					else
-						day.icon = fiToSVG("flaticon-thermometer");
-				} else {
-					String fileName = "dwd_" + icon.replaceAll("-", "_");
-					String url = "https://www.dwd.de/DE/wetter/_functions/piktos/" + icon + "?__blob=normal";
+				String fileName = "dwd_" + icon.replaceAll("-", "_");
+				String url = "https://www.dwd.de/DE/wetter/_functions/piktos/" + icon + "?__blob=normal";
 
-					if(fileName != null && !fileName.isBlank())
+				if(fileName != null && !fileName.isBlank())
+				{
+					try
 					{
-						try
-						{
-							byte[] imageData = iconToBytes(fileName, url);
-							if(imageData != null)
-								day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-							else
-								day.icon = "";
-						} catch(Exception e) {
-							LogMessage("processDWD() Error! e: " + e, true);
-							doStackOutput(e);
-						}
+						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+						if(imageData != null)
+							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						else
+							day.icon = "";
+					} catch(Exception e) {
+						LogMessage("processDWD() Error! e: " + e, true);
+						doStackOutput(e);
 					}
 				}
 
@@ -1916,7 +1836,6 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		List<Day> days = new ArrayList<>();
 		String desc;
 		long timestamp = 0;
@@ -1956,23 +1875,18 @@ class weeWXAppCommon
 				String url = bit.split("<td class='skyIcon'><img src='", 2)[1].split("' alt='",2)[0].strip();
 				String icon = new File(url).getName();
 
-				if(!use_icons)
-				{
-					day.icon = cssToSVG("wi-" + icon.substring(0, icon.length() - 4), null);
-				} else {
-					String fileName = cssToSVG("wi-tempoitalia-" + icon, null);
+				String fileName = cssToSVG("wi-tempoitalia-" + icon);
 
-					try
-					{
-						byte[] imageData = iconToBytes(fileName, null);
-						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						else
-							day.icon = "";
-					} catch(Exception e) {
-						LogMessage("processTempoItalia() Error! e: " + e, true);
-						doStackOutput(e);
-					}
+				try
+				{
+					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					if(imageData != null)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					else
+						day.icon = "";
+				} catch(Exception e) {
+					LogMessage("processTempoItalia() Error! e: " + e, true);
+					doStackOutput(e);
 				}
 
 				day.max = bit.split("<td class='tempmax'>", 2)[1].split("°C</td>", 2)[0].strip();
@@ -2013,7 +1927,6 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		List<Day> days = new ArrayList<>();
 		String desc;
 		long timestamp = 0;
@@ -2078,26 +1991,18 @@ class weeWXAppCommon
 				JSONObject temperatura = jtmp.getJSONObject("temperatura");
 
 				String code = estado_cielo.getString("content");
-				if(!use_icons)
+				String url = "https://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
+				String fileName = "aemet_" + code + "_g.png";
+				try
 				{
-					if(!code.startsWith("7"))
-						day.icon = cssToSVG("wi-aemet-" + code, null);
+					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					if(imageData != null)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					else
-						day.icon = fiToSVG("flaticon-thermometer");
-				} else {
-					String url = "https://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
-					String fileName = "aemet_" + code + "_g.png";
-					try
-					{
-						byte[] imageData = iconToBytes(fileName, url);
-						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						else
-							day.icon = "";
-					} catch(Exception e) {
-						LogMessage("processAEMET() Error! e: " + e, true);
-						doStackOutput(e);
-					}
+						day.icon = "";
+				} catch(Exception e) {
+					LogMessage("processAEMET() Error! e: " + e, true);
+					doStackOutput(e);
 				}
 
 				day.max = temperatura.getString("maxima");
@@ -2133,7 +2038,6 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		long timestamp = getRSSms();
 		List<Day> days = new ArrayList<>();
 		String desc;
@@ -2165,23 +2069,18 @@ class weeWXAppCommon
 				day.max = day_temp.getString(i);
 				day.min = night_temp.getString(i);
 
-				if(!use_icons)
-				{
-					day.icon = cssToSVG("wi-yahoo-" + day.icon, null);
-				} else {
-					String fileName = day.icon + ".png";
+				String fileName = day.icon + ".png";
 
-					try
-					{
-						byte[] imageData = iconToBytes(fileName, null);
-						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						else
-							day.icon = "";
-					} catch(Exception e) {
-						LogMessage("processWCOM() Error! e: " + e, true);
-						doStackOutput(e);
-					}
+				try
+				{
+					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					if(imageData != null)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					else
+						day.icon = "";
+				} catch(Exception e) {
+					LogMessage("processWCOM() Error! e: " + e, true);
+					doStackOutput(e);
 				}
 
 				if(metric)
@@ -2214,7 +2113,6 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		long timestamp = getRSSms();
 		List<Day> days = new ArrayList<>();
 		String desc;
@@ -2240,22 +2138,17 @@ class weeWXAppCommon
 				day.max = jobj.getString("temperature");
 				day.icon = jobj.getString("weatherNumber");
 
-				if(!use_icons)
+				String fileName = "y" + day.icon + ".png";
+				try
 				{
-					day.icon = cssToSVG("wi-met-ie-" + day.icon, null);
-				} else {
-					String fileName = "y" + day.icon + ".png";
-					try
-					{
-						byte[] imageData = iconToBytes(fileName, null);
-						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						else
-							day.icon = "";
-					} catch(Exception e) {
-						LogMessage("processMETIE() Error! e: " + e, true);
-						doStackOutput(e);
-					}
+					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					if(imageData != null)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					else
+						day.icon = "";
+				} catch(Exception e) {
+					LogMessage("processMETIE() Error! e: " + e, true);
+					doStackOutput(e);
 				}
 
 				day.text = jobj.getString("weatherDescription");
@@ -2311,9 +2204,9 @@ class weeWXAppCommon
 				String icon = weather.getString("icon");
 
 				if(!icon.endsWith("n"))
-					day.icon = cssToSVG("wi-owm-day-" + id, null);
+					day.icon = cssToSVG("wi-owm-day-" + id);
 				else
-					day.icon = cssToSVG("wi-owm-night-" + id, null);
+					day.icon = cssToSVG("wi-owm-night-" + id);
 
 				if(metric)
 					day.max = max + "&deg;C";
@@ -2345,7 +2238,6 @@ class weeWXAppCommon
 		if(data.isBlank())
 			return null;
 
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		List<Day> days = new ArrayList<>();
 		String desc;
 		long timestamp;
@@ -2403,22 +2295,17 @@ class weeWXAppCommon
 
 				String code = symbol.getString("var");
 
-				if(!use_icons)
+				String fileName = "yrno" + code + ".png";
+				try
 				{
-					day.icon = cssToSVG("wi-yrno-" + code, null);
-				} else {
-					String fileName = "yrno" + code + ".png";
-					try
-					{
-						byte[] imageData = iconToBytes(fileName, null);
-						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						else
-							day.icon = "";
-					} catch(Exception e) {
-						LogMessage("processYR() Error! e: " + e, true);
-						doStackOutput(e);
-					}
+					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					if(imageData != null)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					else
+						day.icon = "";
+				} catch(Exception e) {
+					LogMessage("processYR() Error! e: " + e, true);
+					doStackOutput(e);
 				}
 
 				day.max = temperature.getString("value") + "&deg;C";
@@ -2445,7 +2332,6 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		List<Day> days = new ArrayList<>();
 		String desc = "";
 		long timestamp;
@@ -2523,24 +2409,18 @@ class weeWXAppCommon
 				LogMessage("icon == " + icon);
 				String code = getCode(icon);
 
-				if(!use_icons)
-				{
-					day.icon = cssToSVG("wi-yrno-" + code, null);
-				} else {
-					String fileName = "yrno" + code + ".png";
+				String fileName = "yrno" + code + ".png";
 
-					try
-					{
-						byte[] imageData = iconToBytes(fileName, null);
-						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						else
-							day.icon = "";
-					} catch(Exception e)
-					{
-						LogMessage("processMetNO() Error! e: " + e, true);
-						doStackOutput(e);
-					}
+				try
+				{
+					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					if(imageData != null)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					else
+						day.icon = "";
+				} catch(Exception e) {
+					LogMessage("processMetNO() Error! e: " + e, true);
+					doStackOutput(e);
 				}
 
 				days.add(day);
@@ -2696,7 +2576,6 @@ class weeWXAppCommon
 		if(data.isBlank())
 			return null;
 
-		boolean use_icons = GetBoolPref("useIcons", weeWXApp.useIcons_default);
 		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
 		List<Day> days = new ArrayList<>();
 		long timestamp = 0;
@@ -2743,26 +2622,18 @@ class weeWXAppCommon
 				String mydesc = mybits[2].strip();
 				String[] range = mybits[3].split(" - ", 2);
 
-				if(!use_icons)
-				{
-					if(!myimg.equals("frost-then-sunny"))
-						day.icon = cssToSVG("wi-weatherzone-" + myimg, null);
-					else
-						day.icon = fiToSVG("flaticon-thermometer");
-				} else {
-					String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
+				String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
 
-					try
-					{
-						byte[] imageData = iconToBytes(fileName, null);
-						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
-						else
-							day.icon = "";
-					} catch(Exception e) {
-						LogMessage("processWZ() Error! e: " + e, true);
-						doStackOutput(e);
-					}
+				try
+				{
+					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					if(imageData != null)
+						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					else
+						day.icon = "";
+				} catch(Exception e) {
+					LogMessage("processWZ() Error! e: " + e, true);
+					doStackOutput(e);
 				}
 
 				day.max = range[1];
@@ -2865,7 +2736,7 @@ class weeWXAppCommon
 
 				try
 				{
-					byte[] imageData = iconToBytes(myday.icon, null);
+					byte[] imageData = weeWXApp.loadBinaryFromAssets(myday.icon);
 					if(imageData != null)
 						myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
 					else
@@ -3377,124 +3248,13 @@ class weeWXAppCommon
 					new String[]{f.getAbsolutePath()}, null, null);
 	}
 
-	static boolean downloadIcons() throws IOException
-	{
-		File dir = getDir("icons");
-
-		if(dir.exists() && !dir.isDirectory() && !dir.delete())
-			throw new IOException("There was a problem deleting what should be a directory, you will need to try again.");
-
-		if(!dir.exists())
-		{
-			if(!dir.mkdirs())
-				throw new IOException("There was a problem making the icons directory, you will need to try again.");
-
-			publish(dir);
-		}
-
-		File f = new File(dir, "icon.zip");
-		if(!downloadToFile(f, icon_url) || !f.exists())
-			throw new IOException("There was a problem downloading icons, you will need to try again.");
-
-		unzip(f, dir);
-		if(!f.delete())
-			throw new IOException("There was a problem cleaning up the zip file.");
-
-		return true;
-	}
-
-	private static void unzip(File zipFilePath, File destDir) throws IOException
-	{
-		LogMessage("zipFilePath: " + zipFilePath.getAbsolutePath(), true);
-		LogMessage("dsetDir: " + destDir.getAbsolutePath(), true);
-
-		byte[] buffer = new byte[1024];
-		FileInputStream fis = new FileInputStream(zipFilePath);
-		ZipInputStream zis = new ZipInputStream(fis);
-		ZipEntry ze = zis.getNextEntry();
-		while(ze != null)
-		{
-			String fileName = ze.getName();
-			File newFile = new File(destDir, fileName);
-			boolean needsPublishing = !newFile.exists();
-			String absolutePath = newFile.getAbsolutePath();
-
-			LogMessage("absolutePath: " + absolutePath);
-			LogMessage("destDir: " + destDir);
-
-			if(!absolutePath.startsWith(destDir.toString()))
-			{
-				LogMessage("File '" + absolutePath + "' is a security problem, skipping.");
-				return;
-			}
-
-			LogMessage("Unzipping to " + newFile.getAbsolutePath());
-
-			if(newFile.getParent() != null)
-			{
-				File dir = new File(newFile.getParent());
-				if(!dir.exists())
-				{
-					if(!dir.mkdirs())
-						throw new IOException("There was a problem creating 1 or more directories on external storage");
-
-					publish(dir);
-				}
-
-				FileOutputStream fos = new FileOutputStream(newFile);
-				int len;
-				while((len = zis.read(buffer)) > 0)
-					fos.write(buffer, 0, len);
-
-				fos.flush();
-				fos.close();
-
-				if(needsPublishing)
-					publish(newFile);
-
-				//close this ZipEntry
-				zis.closeEntry();
-				ze = zis.getNextEntry();
-			}
-		}
-
-		zis.closeEntry();
-		zis.close();
-		fis.close();
-	}
-
-	static boolean checkForImages(String filename)
+	static boolean checkForImage(String filename)
 	{
 		try
 		{
 			File dir = getDataDir();
 			File f = new File(dir, filename);
 			return f.exists() && f.isFile() && f.canRead();
-		} catch(Exception e) {
-			LogMessage("Error! e: " + e, true);
-		}
-
-		return false;
-	}
-
-	static boolean checkForIcons()
-	{
-		String[] files = new String[]{"aemet_11_g.png", "apixu_113.png", "bom1.png", "bom2clear.png", "dwd_pic_0_8.png",
-										"i1.png", "ilmeteo_ss1.png", "met0.png", "mf_j_w1_0_n_2.png", "ms_cloudy.png",
-										"wca00.png", "wgovbkn.jpg", "wzclear.png", "y01d.png", "yahoo0.gif", "yrno01d.png"};
-
-		try
-		{
-			File dir = getDir("icons");
-
-			for(String file: files)
-			{
-				File f = new File(dir, file);
-				if(!f.exists() || !f.isFile() || !f.canRead())
-					return false;
-			}
-
-			return true;
 		} catch(Exception e) {
 			LogMessage("Error! e: " + e, true);
 		}
@@ -3668,7 +3428,7 @@ class weeWXAppCommon
 
 		try
 		{
-			if(checkForImages(weeWXApp.radarFilename))
+			if(checkForImage(weeWXApp.radarFilename))
 				bm = getImage(weeWXApp.radarFilename);
 		} catch(Exception e) {
 			LogMessage("Error! e: " + e, true);
@@ -3771,7 +3531,7 @@ class weeWXAppCommon
 
 		try
 		{
-			if(checkForImages(weeWXApp.webcamFilename))
+			if(checkForImage(weeWXApp.webcamFilename))
 				bm = getImage(weeWXApp.webcamFilename);
 		} catch(Exception e) {
 			LogMessage("Error! e: " + e, true);
@@ -3955,34 +3715,6 @@ class weeWXAppCommon
 		bm.recycle();
 
 		return byteArray;
-	}
-
-	static byte[] iconToBytes(String fileName, String URL) throws IOException
-	{
-		File f = new File(getDir("icons"), fileName);
-		LogMessage("f = " + f.getAbsolutePath());
-		if(f.exists() && (!f.isFile() || !f.canRead()))
-			throw new IOException("Problem with " + f.getAbsoluteFile());
-
-		if((!f.exists() || f.length() <= 0) && URL != null && !URL.isBlank())
-		{
-			// Icon is missing we should probably ask to send information as feedback
-			if(!downloadToFile(f, URL) || f.length() <= 0)
-				throw new IOException("Failed to download " + f.getAbsoluteFile());
-		}
-
-		if(f.exists() && f.canRead() && f.length() > 0)
-		{
-			try(FileInputStream imageInFile = new FileInputStream(f))
-			{
-				byte[] imageData = new byte[(int)f.length()];
-				if(imageInFile.read(imageData) > 0)
-					return imageData;
-			}
-
-		}
-
-		throw new IOException("Failed to download " + f.getAbsoluteFile());
 	}
 
 	static String toBase64(byte[] in)
@@ -4322,7 +4054,10 @@ class weeWXAppCommon
 		if(cssname.startsWith("<img "))
 			return cssname;
 
-		String tmpStr = "<img style='width:1em;height:1em;'";
+		String tmpStr = "<img class='wi'";
+
+		if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
+			tmpStr += " style='filter:invert(1);'";
 
 		tmpStr += " src='file:///android_asset/glyphs/";
 
@@ -4343,15 +4078,68 @@ class weeWXAppCommon
 		return tmpStr + "'/>";
 	}
 
-	static String cssToSVG(String cssname, String htmlclass)
+	static int getDirection(String direction)
 	{
+		int dir;
+
+		switch(direction)
+		{
+			case "nne" -> dir = 23;
+			case "ne" -> dir = 45;
+			case "ene" -> dir = 68;
+			case "e" -> dir = 90;
+			case "ese" -> dir = 113;
+			case "se" -> dir = 135;
+			case "sse" -> dir = 158;
+			case "s" -> dir = 180;
+			case "ssw" -> dir = 203;
+			case "sw" -> dir = 225;
+			case "wsw" -> dir = 248;
+			case "w" -> dir = 270;
+			case "wnw" -> dir = 293;
+			case "nw" -> dir = 313;
+			case "nnw" -> dir = 336;
+			default -> dir = 0;
+		}
+
+		return dir;
+	}
+
+	static String cssToSVG(String cssname)
+	{
+		return cssToSVG(cssname, null);
+	}
+
+	static String cssToSVG(String cssname, Integer Angle)
+	{
+		int dir;
+
 		if(cssname.startsWith("<img "))
 			return cssname;
 
-		String tmpStr = "<img style='width:1.5em;height:1.5em;'";
+		String tmpStr = "<img class='wi'";
 
-		if(htmlclass != null && !htmlclass.isBlank())
-			tmpStr += " class='" + htmlclass + "'";
+		tmpStr += " class='wi'";
+
+		if((cssname.equals("wi-wind-deg") && Angle != null) || KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
+		{
+			tmpStr += " style='";
+
+			if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
+				tmpStr += "filter:invert(1);";
+
+			if(cssname.equals("wi-wind-deg") && Angle instanceof Integer angle)
+			{
+				dir = angle;
+
+				if(dir < 0 || dir > 359)
+					dir = 0;
+
+				tmpStr += "transform:rotate(" + dir + "deg);display: inline-block;";
+			}
+
+			tmpStr += "'";
+		}
 
 		tmpStr += " src='file:///android_asset/glyphs/" + cssname;
 

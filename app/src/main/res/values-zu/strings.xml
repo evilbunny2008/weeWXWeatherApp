@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Sicela ulinde ngenkathi siqinisekisa i-URL oyithumele</string>
     <string name="remove_all_data">Uqinisekile ukuthi ufuna ukususa yonke imininingwane?</string>
     <string name="no">-Nokuba</string>
-    <string name="icons_failed_to_download">Izithonjana zehlulekile ukulanda ngokugcwele, kuzodingeka uzame futhi</string>
-    <string name="wasnt_able_to_detect_icons">Ayikwazanga ukuthola izithonjana zesimo sezulu</string>
-    <string name="ill_fix_and_try_again">Ngizoyilungisa bese ngizama futhi</string>
+	<string name="ill_fix_and_try_again">Ngizoyilungisa bese ngizama futhi</string>
     <string name="error_occurred_while_attempting_to_update">Kuvele iphutha ngenkathi izama ukubuyekeza ukusetshenziswa</string>
     <string name="unknown_error_occurred">Kwenzeke iphutha elingaziwa</string>
     <string name="wasnt_able_to_connect_custom_url">Ayikwazanga ukuxhuma noma ukulanda kusuka ku-URL yangokwezifiso echaziwe</string>
     <string name="wasnt_able_to_connect_webcam_url">Ayikwazanga ukuxhuma noma ukulanda isithombe se-webcam kusuka kuseva yakho</string>
     <string name="wasnt_able_to_connect_forecast">Ayikwazanga ukuxhuma noma ukulanda isibikezelo</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Ayikwazanga ukuthola izithonjana zesimo sezulu</string>
-    <string name="forecast_type_needs_icons">Uhlobo lwesimo sezulu \'%1$s\' ludinga ukuba nezimpawu ezitholakalayo, sicela ushintshele ekusebenziseni izithonjana bese uzama futhi</string>
-    <string name="forecast_type_is_invalid">Uhlobo lwesimo sezulu \'%1$s\' alulungile, hlola ifayela lakho lezilungiselelo bese uzama futhi</string>
+	<string name="forecast_type_is_invalid">Uhlobo lwesimo sezulu \'%1$s\' alulungile, hlola ifayela lakho lezilungiselelo bese uzama futhi</string>
     <string name="wasnt_able_to_connect_radar_image">Ayikwazanga ukuxhuma noma ukulanda i-radar = isithombe kusuka kwi-Intanethi</string>
     <string name="wasnt_able_to_connect_data_txt">Ayikwazanga ukuxhuma noma ukulanda idatha.txt kusuka kuseva yakho</string>
     <string name="data_url_was_blank">I-URL yedatha yayingenalutho</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Umdlalo wokulinganisa</string>
     <string name="custom_setting">Imibala yangokwezifiso</string>
     <string name="app_theme">Isihloko sohlelo lokusebenza</string>
-    <string name="use_icons">Khombisa izithonjana</string>
-    <string name="today">Namhlanje</string>
+	<string name="today">Namhlanje</string>
     <string name="last_year_stats">Izibalo zonyaka odlule</string>
     <string name="last_month_stats">Izibalo zenyanga edlule</string>
     <string name="radar_url_not_set">I-radar url ayisethiwe. Ungaya kuzilungiselelo zokushintsha</string>

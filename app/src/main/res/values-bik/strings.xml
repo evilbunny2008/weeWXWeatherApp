@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Maghalat po kamo habang pigbeverify mi ang URL na saindong pigsumiter</string>
     <string name="remove_all_data">Sigurado ka na gusto mong halion an gabos na datos?</string>
     <string name="no">Dai</string>
-    <string name="icons_failed_to_download">Dai lubos na naka-download an mga Icon, kaipuhan mong magprobar giraray</string>
-    <string name="wasnt_able_to_detect_icons">Dai nakarisa nin mga icon nin paghula</string>
-    <string name="ill_fix_and_try_again">I-aayos Ko Ini asin Magprobar giraray</string>
+	<string name="ill_fix_and_try_again">I-aayos Ko Ini asin Magprobar giraray</string>
     <string name="error_occurred_while_attempting_to_update">Sarong sala an nangyari mantang nagpoprobar na i-update an paggamit</string>
     <string name="unknown_error_occurred">An dai aram na sala nangyari</string>
     <string name="wasnt_able_to_connect_custom_url">Dai nakakonekta o naka-download gikan sa pasadyang URL na pig-espesipikar</string>
     <string name="wasnt_able_to_connect_webcam_url">Dai nakakonekta o naka-download nin webcam na imahe hale sa saindong server</string>
     <string name="wasnt_able_to_connect_forecast">Dai nakakonekta o naka-download kan hula</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Dai nakarisa nin mga icon nin paghula</string>
-    <string name="forecast_type_needs_icons">\'%1$s\' An tipo nin paghula kaipuhan na igwa nin mga icon na makukua, Magbalyo tabi sa paggamit nin mga icon asin purbaran giraray</string>
-    <string name="forecast_type_is_invalid">An tipo nin paghula \'%1$s\' bakong balido, helingon an saindong mga setting file asin purbaran giraray</string>
+	<string name="forecast_type_is_invalid">An tipo nin paghula \'%1$s\' bakong balido, helingon an saindong mga setting file asin purbaran giraray</string>
     <string name="wasnt_able_to_connect_radar_image">Dai nakakonekta o nakaka-download radar= imahe hale sa internet</string>
     <string name="wasnt_able_to_connect_data_txt">Dai nakapagkonektar o naka-download nin datos.txt hale sa saindong serbidor</string>
     <string name="data_url_was_blank">Blangko an URL kan datos</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Tugma App App</string>
     <string name="custom_setting">Mga Kolor sa Pasadya</string>
     <string name="app_theme">Tema sa Apela</string>
-    <string name="use_icons">Ipahiling an mga Icon</string>
-    <string name="today">Ngonyan</string>
+	<string name="today">Ngonyan</string>
     <string name="last_year_stats">Kan nakaaging Taon na Estadistika</string>
     <string name="last_month_stats">Kan nakaaging Bulan nin Estadistika</string>
     <string name="radar_url_not_set">Radar URL dai nakatalaan. Pwede kamong magduman sa mga setting na dapat baguhon</string>

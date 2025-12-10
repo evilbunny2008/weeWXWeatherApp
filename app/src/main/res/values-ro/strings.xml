@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Vă rugăm să așteptați până când verificăm adresa URL pe care ați trimis-o</string>
     <string name="remove_all_data">Sigur doriți să eliminați toate datele?</string>
     <string name="no">Nu</string>
-    <string name="icons_failed_to_download">Pictogramele nu s-au descărcat complet, va trebui să reîncercați</string>
-    <string name="wasnt_able_to_detect_icons">Nu am putut detecta pictogramele de prognoză</string>
-    <string name="ill_fix_and_try_again">O voi repara și voi încerca din nou</string>
+	<string name="ill_fix_and_try_again">O voi repara și voi încerca din nou</string>
     <string name="error_occurred_while_attempting_to_update">A apărut o eroare la încercarea de a actualiza utilizarea</string>
     <string name="unknown_error_occurred">A apărut o eroare necunoscută</string>
     <string name="wasnt_able_to_connect_custom_url">Nu s-a putut conecta sau descărca de la adresa URL personalizată specificată</string>
     <string name="wasnt_able_to_connect_webcam_url">Nu am putut să mă conectez sau să descărcați o imagine de cameră web de pe serverul dvs</string>
     <string name="wasnt_able_to_connect_forecast">Nu am putut să mă conectez sau să descărcați prognoza</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Nu am putut detecta pictogramele de prognoză</string>
-    <string name="forecast_type_needs_icons">Tipul de prognoză \'%1$s\' trebuie să aibă pictograme disponibile. Treceți la utilizarea pictogramelor și încercați din nou</string>
-    <string name="forecast_type_is_invalid">Tipul de prognoză \'%1$s\' este nevalid, verificați fișierul de setări și încercați din nou</string>
+	<string name="forecast_type_is_invalid">Tipul de prognoză \'%1$s\' este nevalid, verificați fișierul de setări și încercați din nou</string>
     <string name="wasnt_able_to_connect_radar_image">Nu am putut să mă conectez sau să descărcați imaginea radar= de pe internet</string>
     <string name="wasnt_able_to_connect_data_txt">Nu am putut să mă conectez sau să descărcați data.txt de pe serverul dvs</string>
     <string name="data_url_was_blank">Adresa URL a datelor era goală</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Aplicația de potrivire</string>
     <string name="custom_setting">Culori personalizate</string>
     <string name="app_theme">Tema aplicației</string>
-    <string name="use_icons">Afișați pictograme</string>
-    <string name="today">Astăzi</string>
+	<string name="today">Astăzi</string>
     <string name="last_year_stats">Statistica de anul trecut</string>
     <string name="last_month_stats">Statisticile lunii trecute</string>
     <string name="radar_url_not_set">Adresa URL a radarului nu este setată. Puteți merge la setări pentru a schimba</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Chonde dikirani pomwe tikutsimikizira URL yomwe mudapereka</string>
     <string name="remove_all_data">Mukutsimikiza kuti mukufuna kuchotsa zonse?</string>
     <string name="no">Ayi</string>
-    <string name="icons_failed_to_download">Zizindikiro zalephera kutsitsa kwathunthu, mudzafunika kuyesanso</string>
-    <string name="wasnt_able_to_detect_icons">Sanathe kuzindikira zithunzi zamtsogolo</string>
-    <string name="ill_fix_and_try_again">Ndikonza ndikuyesanso</string>
+	<string name="ill_fix_and_try_again">Ndikonza ndikuyesanso</string>
     <string name="error_occurred_while_attempting_to_update">Vuto linachitika poyesa kusintha kugwiritsa ntchito</string>
     <string name="unknown_error_occurred">Vuto losadziwika lidachitika</string>
     <string name="wasnt_able_to_connect_custom_url">Sanathe kulumikiza kapena kutsitsa kuchokera ku URL yomwe yatchulidwa</string>
     <string name="wasnt_able_to_connect_webcam_url">Sanathe kulumikiza kapena kutsitsa chithunzi cha webusayiti kuchokera pa seva yanu</string>
     <string name="wasnt_able_to_connect_forecast">Sanathe kulumikizana kapena kutsitsa zonena za kuneneratu</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Sanathe kuzindikira zithunzi zamtsogolo</string>
-    <string name="forecast_type_needs_icons">Mtundu wolosera \'%1$s</string>
-    <string name="forecast_type_is_invalid">Mtundu wolosera \'%1$s\'ndi yosavomerezeka, onani fayilo yanu ndikuyesanso</string>
+	<string name="forecast_type_is_invalid">Mtundu wolosera \'%1$s\'ndi yosavomerezeka, onani fayilo yanu ndikuyesanso</string>
     <string name="wasnt_able_to_connect_radar_image">Sanathe kulumikizana kapena kutsitsa radar = chithunzi kuchokera pa intaneti</string>
     <string name="wasnt_able_to_connect_data_txt">Sanathe kulumikizana kapena kutsitsa deta.txt kuchokera ku seva yanu</string>
     <string name="data_url_was_blank">Ulalo wa data unali wopanda kanthu</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Gwirizanani ndi pulogalamu</string>
     <string name="custom_setting">Mitundu yazochitika</string>
     <string name="app_theme">Mutu wa App</string>
-    <string name="use_icons">Onetsani zithunzi</string>
-    <string name="today">Lero</string>
+	<string name="today">Lero</string>
     <string name="last_year_stats">Ziwerengero za chaka chatha</string>
     <string name="last_month_stats">Ziwerengero za mwezi</string>
     <string name="radar_url_not_set">Url url sunakhazikike. Mutha kupita ku zofuna kusintha</string>

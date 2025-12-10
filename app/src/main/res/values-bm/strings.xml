@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Aw ye kɔnɔni kɛ k\'a sɔrɔ an bɛ URL min di, aw bɛ o sɛgɛsɛgɛ</string>
     <string name="remove_all_data">Yala i b\'a fɛ ka kunnafoniw bɛɛ bɔ yen wa?</string>
     <string name="no">Ayi</string>
-    <string name="icons_failed_to_download">Icons ma se ka telesarse ka dafa, i bɛna a ɲini ka segin a kan</string>
-    <string name="wasnt_able_to_detect_icons">Was\'t se ka detection pronostic icons</string>
-    <string name="ill_fix_and_try_again">N b\'a labɛn ka a lajɛ kokura</string>
+	<string name="ill_fix_and_try_again">N b\'a labɛn ka a lajɛ kokura</string>
     <string name="error_occurred_while_attempting_to_update">fili dɔ kɛra k\' a sɔrɔ a b\' a ɲini ka baarakɛcogo kura</string>
     <string name="unknown_error_occurred">fili dɔnbali kɛra</string>
     <string name="wasnt_able_to_connect_custom_url">Was\'t se ka connect walima download ka bɔ custom url kofɔlen na</string>
     <string name="wasnt_able_to_connect_webcam_url">tun tɛ se ka webcam ja dɔ don walima ka a telesarse ka bɔ i ka sèrwɛri la</string>
     <string name="wasnt_able_to_connect_forecast">Was\'t se ka connect walima ka telechargé ka fɔ</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Was\'t se ka detection pronostic icons</string>
-    <string name="forecast_type_needs_icons">Forecast type \'%1$s\' mago bɛ taamasiyɛnw na minnu bɛ sɔrɔ, aw bɛ se ka wuli ka baara kɛ ni taamasiyɛnw ye ani ka segin ka a lajɛ</string>
-    <string name="forecast_type_is_invalid">Forecast type \'%1$s\' tɛ baara la, i ka settings file lajɛ ani ka segin a kan</string>
+	<string name="forecast_type_is_invalid">Forecast type \'%1$s\' tɛ baara la, i ka settings file lajɛ ani ka segin a kan</string>
     <string name="wasnt_able_to_connect_radar_image">tun tɛ se ka radari= ja bɔ ɛntɛrinɛti kan</string>
     <string name="wasnt_able_to_connect_data_txt">tun tɛ se ka data.txt ɲɔgɔn sɔrɔ walima ka telesarse ka bɔ i ka sèrwɛri la</string>
     <string name="data_url_was_blank">Data URL tun ye blank ye</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match app</string>
     <string name="custom_setting">Kulɛriw ka kɛɲɛ ni mɔgɔw sago ye</string>
     <string name="app_theme">App barokun</string>
-    <string name="use_icons">A jira iko taamasiyɛnw</string>
-    <string name="today">Bi</string>
+	<string name="today">Bi</string>
     <string name="last_year_stats">Salon jatebɔw</string>
     <string name="last_month_stats">Kalo tɛmɛnen ka jatebɔw</string>
     <string name="radar_url_not_set">Radar URL ma sigi. Aw bɛ se ka taa settings la walasa ka fɛn caman Changer</string>

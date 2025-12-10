@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Paima hamu ma huhut hami mamastihon URL na pinasahatmuna</string>
     <string name="remove_all_data">Pos do rohamuna naeng padaohon sude data?</string>
     <string name="no">Daong</string>
-    <string name="icons_failed_to_download">Ikon gagal mangunduh lengkap, porlu do hamu mancoba ulang</string>
-    <string name="wasnt_able_to_detect_icons">Ndang boi deteksi ikon ramalan</string>
-    <string name="ill_fix_and_try_again">Hupature ma jala Coba ma muse</string>
+	<string name="ill_fix_and_try_again">Hupature ma jala Coba ma muse</string>
     <string name="error_occurred_while_attempting_to_update">Sada kesalahan terjadi huhut marusaha memperbarui penggunaan</string>
     <string name="unknown_error_occurred">Kesalahan na so binoto masa</string>
     <string name="wasnt_able_to_connect_custom_url">Ndang boi mardomu manang mangunduh sian adat na ditontuhon</string>
     <string name="wasnt_able_to_connect_webcam_url">Ndang boi dihubungkon manang diunduh hamu gambar webcam sian server muna</string>
     <string name="wasnt_able_to_connect_forecast">Ndang boi dihubungkon manang diunduh ramalan i</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Ndang boi deteksi ikon ramalan</string>
-    <string name="forecast_type_needs_icons">Jenis ramalan \'%1$s\' porlu adong ikon na adong, Mohon beralih tu mamangke ikon jala mancoba muse</string>
-    <string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' ndang sah, pareso ma file pengaturanmuna jala coba ma muse</string>
+	<string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' ndang sah, pareso ma file pengaturanmuna jala coba ma muse</string>
     <string name="wasnt_able_to_connect_radar_image">Dang boi sambung manang mangunduh radar= gambar sian internet</string>
     <string name="wasnt_able_to_connect_data_txt">Ndang boi dihubungkon manang diunduh data.txxt sian server muna</string>
     <string name="data_url_was_blank">URL Data kosong</string>
@@ -68,8 +64,7 @@
     <string name="match_app">App Jodoh</string>
     <string name="custom_setting">Warna Adat</string>
     <string name="app_theme">Aplikasi Tema</string>
-    <string name="use_icons">Patuduhon Ikon</string>
-    <string name="today">Ari on</string>
+	<string name="today">Ari on</string>
     <string name="last_year_stats">Statistik Taon na salpu</string>
     <string name="last_month_stats">Statistik Bulan Terakhir</string>
     <string name="radar_url_not_set">Radar URL dang diatur. Boi do hamu laho tu pengaturan asa muba</string>

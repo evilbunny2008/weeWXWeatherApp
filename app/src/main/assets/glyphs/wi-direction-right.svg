@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
-<path d="M9.94,14.36c0,0.22,0.08,0.42,0.23,0.57s0.34,0.22,0.56,0.2h6.58l-1.03,1.08c-0.16,0.16-0.24,0.35-0.24,0.55
-	c0,0.22,0.08,0.42,0.24,0.57c0.16,0.16,0.35,0.23,0.58,0.23c0.21-0.01,0.39-0.1,0.53-0.27l2.45-2.41c0.16-0.16,0.23-0.35,0.23-0.58
-	c-0.01-0.24-0.09-0.43-0.24-0.58l-2.47-2.39c-0.15-0.16-0.33-0.24-0.54-0.23c-0.23,0-0.42,0.07-0.57,0.22
-	c-0.16,0.15-0.23,0.34-0.23,0.56c0,0.23,0.08,0.42,0.23,0.57l1.06,1.08h-6.59c-0.23,0.01-0.41,0.09-0.56,0.25
-	C10.01,13.95,9.94,14.14,9.94,14.36z"/>
-</svg>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns2="http://www.inkscape.org/namespaces/inkscape" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 10.13 6.460835" xml:space="preserve" ns1:docname="wi-direction-right.svg" width="802" height="512"><ns0:defs id="defs1" /><ns1:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#111111" borderopacity="1" ns2:showpageshadow="0" ns2:pageopacity="0" ns2:pagecheckerboard="1" ns2:deskcolor="#d1d1d1" />
+<ns0:path d="m 0,3.2608351 c 0,0.22 0.08,0.42 0.23,0.57 0.15,0.15 0.34,0.22 0.56,0.2 h 6.58 l -1.03,1.08 c -0.16,0.16 -0.24,0.35 -0.24,0.55 0,0.22 0.08,0.42 0.24,0.57 0.16,0.16 0.35,0.23 0.58,0.23 0.21,-0.01 0.39,-0.1 0.53,-0.27 l 2.45,-2.41 c 0.16,-0.16 0.23,-0.35 0.23,-0.58 -0.01,-0.24 -0.09,-0.43 -0.24,-0.58 L 7.42,0.23083506 c -0.15,-0.16 -0.33,-0.24 -0.54,-0.230000004 -0.23,0 -0.42,0.070000004 -0.57,0.220000004 -0.16,0.15 -0.23,0.34 -0.23,0.56 0,0.23000004 0.08,0.42000004 0.23,0.57000004 l 1.06,1.08 H 0.78 c -0.23,0.01 -0.41,0.09 -0.56,0.25 -0.15,0.17 -0.22,0.36 -0.22,0.58 z" id="path1" />
+</ns0:svg>

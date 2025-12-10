@@ -1,9 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
-<path d="M7.96,24.51h0.39l6.88-10.18c0.09-0.18,0.04-0.27-0.15-0.27h-2.84l2.99-5.45c0.09-0.18,0.02-0.27-0.2-0.27h-3.81
-	c-0.11,0-0.2,0.06-0.29,0.18l-2.78,7.4c-0.02,0.18,0.04,0.27,0.19,0.27h2.75L7.96,24.51z M16.46,18.18h0.27l5.22-7.67
-	c0.05-0.08,0.06-0.15,0.04-0.2s-0.08-0.07-0.17-0.07h-2.1l2.18-4.03c0.12-0.2,0.06-0.3-0.18-0.3h-2.74c-0.13,0-0.23,0.06-0.3,0.19
-	l-2.08,5.48c-0.03,0.09-0.03,0.16,0.01,0.21c0.04,0.05,0.1,0.07,0.19,0.07h2.04L16.46,18.18z"/>
-</svg>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns2="http://www.inkscape.org/namespaces/inkscape" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 14.039658 18.6" xml:space="preserve" ns1:docname="wi-lightning.svg" width="386" height="512"><ns0:defs id="defs1" /><ns1:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#111111" borderopacity="1" ns2:showpageshadow="0" ns2:pageopacity="0" ns2:pagecheckerboard="1" ns2:deskcolor="#d1d1d1" />
+<ns0:path d="M 0,18.6 H 0.39 L 7.27,8.42 C 7.36,8.24 7.31,8.15 7.12,8.15 H 4.28 L 7.27,2.7 C 7.36,2.52 7.29,2.43 7.07,2.43 H 3.26 c -0.11,0 -0.2,0.06 -0.29,0.18 l -2.78,7.4 c -0.02,0.18 0.04,0.27 0.19,0.27 H 3.13 Z M 8.5,12.27 H 8.77 L 13.99,4.6 C 14.04,4.52 14.05,4.45 14.03,4.4 14.01,4.35 13.95,4.33 13.86,4.33 h -2.1 L 13.94,0.3 C 14.06,0.1 14,0 13.76,0 h -2.74 c -0.13,0 -0.23,0.06 -0.3,0.19 L 8.64,5.67 C 8.61,5.76 8.61,5.83 8.65,5.88 8.69,5.93 8.75,5.95 8.84,5.95 h 2.04 z" id="path1" />
+</ns0:svg>

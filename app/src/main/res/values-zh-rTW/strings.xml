@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">我們正在驗證您提交的網址，請稍候。</string>
     <string name="remove_all_data">您確定要刪除所有數據嗎？</string>
     <string name="no">不</string>
-    <string name="icons_failed_to_download">圖標無法完全下載，您需要重試。</string>
-    <string name="wasnt_able_to_detect_icons">無法檢測到預測圖標。</string>
-    <string name="ill_fix_and_try_again">我會修復它並重試</string>
+	<string name="ill_fix_and_try_again">我會修復它並重試</string>
     <string name="error_occurred_while_attempting_to_update">嘗試更新使用情況時發生錯誤</string>
     <string name="unknown_error_occurred">發生未知錯誤</string>
     <string name="wasnt_able_to_connect_custom_url">無法從指定的自定義 URL 連接或下載</string>
     <string name="wasnt_able_to_connect_webcam_url">無法連接或從您的服務器下載網絡攝像頭圖像</string>
     <string name="wasnt_able_to_connect_forecast">無法連接或下載天氣預報。</string>
-    <string name="wasnt_able_to_detect_forecast_icons">無法檢測到預測圖標。</string>
-    <string name="forecast_type_needs_icons">預測類型\'%1$s\'需要有可用的圖標，請切換到使用圖標並重試。</string>
-    <string name="forecast_type_is_invalid">預測類型\'%1$s\'無效，請檢查您的設置文件並重試。</string>
+	<string name="forecast_type_is_invalid">預測類型\'%1$s\'無效，請檢查您的設置文件並重試。</string>
     <string name="wasnt_able_to_connect_radar_image">無法從互聯網連接或下載雷達=圖像</string>
     <string name="wasnt_able_to_connect_data_txt">無法連接或從您的服務器下載 data.txt</string>
     <string name="data_url_was_blank">數據 URL 為空</string>
@@ -68,8 +64,7 @@
     <string name="match_app">比賽應用程序</string>
     <string name="custom_setting">定制顏色</string>
     <string name="app_theme">應用主題</string>
-    <string name="use_icons">顯示圖標</string>
-    <string name="today">今天</string>
+	<string name="today">今天</string>
     <string name="last_year_stats">去年的統計數據</string>
     <string name="last_month_stats">上個月的統計數據</string>
     <string name="radar_url_not_set">未設置雷達 URL。您可以前往設置進行更改。</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Jọwọ duro lakoko ti a mọ daju URL ti o fi silẹ</string>
     <string name="remove_all_data">Ṣe o da ọ loju pe o fẹ lati yọ gbogbo data kuro?</string>
     <string name="no">Kọ</string>
-    <string name="icons_failed_to_download">Awọn aami kuna lati gba lati ayelujara ni kikun, iwọ yoo nilo lati tun gbiyanju</string>
-    <string name="wasnt_able_to_detect_icons">Ko ni anfani lati ṣe awari awọn aami asọtẹlẹ</string>
-    <string name="ill_fix_and_try_again">Emi yoo tunṣe ati gbiyanju lẹẹkan si</string>
+	<string name="ill_fix_and_try_again">Emi yoo tunṣe ati gbiyanju lẹẹkan si</string>
     <string name="error_occurred_while_attempting_to_update">Aṣiṣe kan waye lakoko igbiyanju lati ṣe imudojuiwọn lilo</string>
     <string name="unknown_error_occurred">Aṣiṣe Aimọ waye</string>
     <string name="wasnt_able_to_connect_custom_url">Ko ni anfani lati sopọ tabi gba lati ayelujara lati URL aṣa ti o sọ</string>
     <string name="wasnt_able_to_connect_webcam_url">Ko ni anfani lati sopọ tabi ṣe igbasilẹ aworan wẹẹbu kan lati ọdọ olupin rẹ</string>
     <string name="wasnt_able_to_connect_forecast">Ko ni anfani lati sopọ tabi ṣe igbasilẹ asọtẹlẹ naa</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Ko ni anfani lati ṣe awari awọn aami asọtẹlẹ</string>
-    <string name="forecast_type_needs_icons">Asọtẹlẹ Tà \'%1$s\' nilo lati ni awọn aami wa, jọwọ yipada si lilo awọn aami ki o tun gbiyanju lẹẹkan si</string>
-    <string name="forecast_type_is_invalid">Awọn asọtẹlẹ asọtẹlẹ \'%1$s\' ko wulo, ṣayẹwo faili eto rẹ ki o tun gbiyanju lẹẹkan si</string>
+	<string name="forecast_type_is_invalid">Awọn asọtẹlẹ asọtẹlẹ \'%1$s\' ko wulo, ṣayẹwo faili eto rẹ ki o tun gbiyanju lẹẹkan si</string>
     <string name="wasnt_able_to_connect_radar_image">Ko ni anfani lati sopọ tabi igbasilẹ radar = aworan lati intanẹẹti</string>
     <string name="wasnt_able_to_connect_data_txt">Ko ni anfani lati sopọ tabi ṣe igbasilẹ data.txt lati ọdọ olupin rẹ</string>
     <string name="data_url_was_blank">URL URL ti ṣofo</string>
@@ -68,8 +64,7 @@
     <string name="match_app">App</string>
     <string name="custom_setting">Awọn awọ aṣa</string>
     <string name="app_theme">Akori app</string>
-    <string name="use_icons">Fihan awọn aami</string>
-    <string name="today">Loni</string>
+	<string name="today">Loni</string>
     <string name="last_year_stats">Awọn iṣiro ti ọdun to kọja</string>
     <string name="last_month_stats">Awọn iṣiro oṣu ti o kọja</string>
     <string name="radar_url_not_set">Unch Redar ko ṣeto. O le lọ si awọn eto lati yipada</string>

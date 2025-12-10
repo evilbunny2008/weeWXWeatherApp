@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Svp bozela tango tozali ko vérifier URL oyo botindaki</string>
     <string name="remove_all_data">Ozali sûr que olingi olongola ba données nionso?</string>
     <string name="no">Te</string>
-    <string name="icons_failed_to_download">Ba icons elongi te ko télécharger mobimba, ekosenga omeka lisusu</string>
-    <string name="wasnt_able_to_detect_icons">azalaki na makoki te ya koyeba ba icônes ya prévision</string>
-    <string name="ill_fix_and_try_again">Nako bongisa yango pe nako meka lisusu</string>
+	<string name="ill_fix_and_try_again">Nako bongisa yango pe nako meka lisusu</string>
     <string name="error_occurred_while_attempting_to_update">Erreur esalemaki tango ya koluka ko mettre à jour usage</string>
     <string name="unknown_error_occurred">Libunga oyo eyebani te esalemaki</string>
     <string name="wasnt_able_to_connect_custom_url">azalaki na makoki te ya ko connecter to ko télécharger na URL personnalisé oyo elakisami</string>
     <string name="wasnt_able_to_connect_webcam_url">azalaki na makoki te ya ko connecter to ko télécharger image ya webcam na serveur na yo</string>
     <string name="wasnt_able_to_connect_forecast">azalaki na makoki te ya ko connecter to ko télécharger prévision</string>
-    <string name="wasnt_able_to_detect_forecast_icons">azalaki na makoki te ya koyeba ba icônes ya prévision</string>
-    <string name="forecast_type_needs_icons">Lolenge ya pronostic \'%1$s\' esengeli kozala na ba icônes oyo ezali, svp changer na kosalela ba icônes mpe meka lisusu</string>
-    <string name="forecast_type_is_invalid">Lolenge ya pronostic \'%1$s\' ezali ya malamu te, tala fichier ya ba paramètres na yo mpe meka lisusu</string>
+	<string name="forecast_type_is_invalid">Lolenge ya pronostic \'%1$s\' ezali ya malamu te, tala fichier ya ba paramètres na yo mpe meka lisusu</string>
     <string name="wasnt_able_to_connect_radar_image">azalaki na makoki te ya ko connecter to ko télécharger radar= image na internet</string>
     <string name="wasnt_able_to_connect_data_txt">azalaki na makoki te ya ko connecter to ko télécharger data.txt na serveur na yo</string>
     <string name="data_url_was_blank">URL ya ba données ezalaki ya pamba</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Application ya match</string>
     <string name="custom_setting">Ba couleurs personnalisées</string>
     <string name="app_theme">Motó ya likambo ya APP</string>
-    <string name="use_icons">kolakisa ba icônes</string>
-    <string name="today">Lelo</string>
+	<string name="today">Lelo</string>
     <string name="last_year_stats">Statistiques ya mbula eleki</string>
     <string name="last_month_stats">Statistiques ya sanza eleki</string>
     <string name="radar_url_not_set">URL ya radar Ezali te. Okoki kokende na Paramètres mpo na kobongola</string>

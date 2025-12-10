@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Manaya kayu pu kabang ating patutuanan ing URL a pepasakup yu</string>
     <string name="remove_all_data">Siguradu ka bang buri meng ilako ing sablang data?</string>
     <string name="no">Ali</string>
-    <string name="icons_failed_to_download">Bigo lang lubus mag-download deng icon, kailangan mu ing mibalik</string>
-    <string name="wasnt_able_to_detect_icons">E ya mekatuklas a icon a paunahan</string>
-    <string name="ill_fix_and_try_again">Aayusan Ku Ya at Subukan Kung Pasibayu</string>
+	<string name="ill_fix_and_try_again">Aayusan Ku Ya at Subukan Kung Pasibayu</string>
     <string name="error_occurred_while_attempting_to_update">Metung a kamalian ing milyari kabang pagsikapan nang i-update ing pamangamit</string>
     <string name="unknown_error_occurred">E balu ing kamalian ing milyari</string>
     <string name="wasnt_able_to_connect_custom_url">E ya mekapagkonekta o makadownload ibat king kaugalian a URL</string>
     <string name="wasnt_able_to_connect_webcam_url">E ya mekapagkonekta o makadownload ing metung a larawan a webcam ibat king server mu</string>
     <string name="wasnt_able_to_connect_forecast">E ya mekapagkonekta o mag-download ing pauna</string>
-    <string name="wasnt_able_to_detect_forecast_icons">E ya mekatuklas a icon a paunahan</string>
-    <string name="forecast_type_needs_icons">Kailangan lang mika icons \'%1$s\', Paki-switch ye pu ing pamangamit kareng icons at subukan pasibayu</string>
-    <string name="forecast_type_is_invalid">E ya valid \'%1$s\', lawan me ing kekang file at subukan meng pasibayu</string>
+	<string name="forecast_type_is_invalid">E ya valid \'%1$s\', lawan me ing kekang file at subukan meng pasibayu</string>
     <string name="wasnt_able_to_connect_radar_image">E ya mekapagkonekta o makababa ing radar= larawan ibat king internet</string>
     <string name="wasnt_able_to_connect_data_txt">E ya mekapagkonekta o makababa ing data.txt ibat king server mu</string>
     <string name="data_url_was_blank">Blank ya ing data URL</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Malagung app</string>
     <string name="custom_setting">Kulay ning Kagamitan</string>
     <string name="app_theme">Tema ning App</string>
-    <string name="use_icons">Pakit ing Icons</string>
-    <string name="today">Ngeni</string>
+	<string name="today">Ngeni</string>
     <string name="last_year_stats">Estadistika ning milabas a banwa</string>
     <string name="last_month_stats">Estadistika ning milabas a Bulan</string>
     <string name="radar_url_not_set">E ya mitakda ing Radar URL. Malyari kang munta kareng setting para magbayu</string>

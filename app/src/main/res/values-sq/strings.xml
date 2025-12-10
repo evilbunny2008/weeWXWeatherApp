@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Ju lutemi prisni derisa të verifikojmë URL-në që keni dorëzuar</string>
     <string name="remove_all_data">Jeni i sigurt që dëshironi të hiqni të gjitha të dhënat?</string>
     <string name="no">Nr</string>
-    <string name="icons_failed_to_download">Ikonat nuk arritën të shkarkoheshin plotësisht, do t\'ju duhet të provoni përsëri</string>
-    <string name="wasnt_able_to_detect_icons">Nuk ishte në gjendje të zbulonte ikonat e parashikimit</string>
-    <string name="ill_fix_and_try_again">Do ta rregulloj dhe do ta provoj përsëri</string>
+	<string name="ill_fix_and_try_again">Do ta rregulloj dhe do ta provoj përsëri</string>
     <string name="error_occurred_while_attempting_to_update">Ndodhi një gabim gjatë përpjekjes për të përditësuar përdorimin</string>
     <string name="unknown_error_occurred">Ndodhi një gabim i panjohur</string>
     <string name="wasnt_able_to_connect_custom_url">Nuk mund të lidhej ose shkarkohej nga URL-ja e personalizuar e specifikuar</string>
     <string name="wasnt_able_to_connect_webcam_url">Nuk mund të lidhej ose të shkarkohej një imazh i kamerës së internetit nga serveri yt</string>
     <string name="wasnt_able_to_connect_forecast">Nuk mund të lidhej ose shkarkohej parashikimi</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Nuk ishte në gjendje të zbulonte ikonat e parashikimit</string>
-    <string name="forecast_type_needs_icons">Lloji i parashikimit \'%1$s\' duhet të ketë ikona të disponueshme. Ju lutemi, kaloni te përdorimi i ikonave dhe provoni përsëri</string>
-    <string name="forecast_type_is_invalid">Lloji i parashikimit \'%1$s\' është i pavlefshëm, kontrollo skedarin e cilësimeve dhe provo sërish</string>
+	<string name="forecast_type_is_invalid">Lloji i parashikimit \'%1$s\' është i pavlefshëm, kontrollo skedarin e cilësimeve dhe provo sërish</string>
     <string name="wasnt_able_to_connect_radar_image">Nuk mund të lidhej ose të shkarkohej imazhi i radarit= nga interneti</string>
     <string name="wasnt_able_to_connect_data_txt">Nuk mund të lidhej ose shkarkohej data.txt nga serveri yt</string>
     <string name="data_url_was_blank">URL-ja e të dhënave ishte bosh</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Aplikacioni i ndeshjes</string>
     <string name="custom_setting">Ngjyrat e personalizuara</string>
     <string name="app_theme">Tema e aplikacionit</string>
-    <string name="use_icons">Shfaq ikonat</string>
-    <string name="today">Sot</string>
+	<string name="today">Sot</string>
     <string name="last_year_stats">Statistikat e vitit të kaluar</string>
     <string name="last_month_stats">Statistikat e muajit të kaluar</string>
     <string name="radar_url_not_set">URL-ja e radarit nuk është caktuar. Mund të shkoni te cilësimet për të ndryshuar</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Vent venligst, mens vi bekræfter den URL, du har indsendt</string>
     <string name="remove_all_data">Er du sikker på, at du vil fjerne alle data?</string>
     <string name="no">Ingen</string>
-    <string name="icons_failed_to_download">Ikoner kunne ikke downloades fuldt ud, du skal prøve igen</string>
-    <string name="wasnt_able_to_detect_icons">Kunne ikke registrere prognoseikoner</string>
-    <string name="ill_fix_and_try_again">Jeg ordner det og prøver igen</string>
+	<string name="ill_fix_and_try_again">Jeg ordner det og prøver igen</string>
     <string name="error_occurred_while_attempting_to_update">Der opstod en fejl under forsøg på at opdatere brug</string>
     <string name="unknown_error_occurred">Der opstod en ukendt fejl</string>
     <string name="wasnt_able_to_connect_custom_url">Kunne ikke oprette forbindelse eller downloade fra den angivne tilpassede URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Kunne ikke oprette forbindelse eller downloade et webcam-billede fra din server</string>
     <string name="wasnt_able_to_connect_forecast">Kunne ikke oprette forbindelse eller downloade prognosen</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Kunne ikke registrere prognoseikoner</string>
-    <string name="forecast_type_needs_icons">Prognosetypen \'%1$s\' skal have ikoner tilgængelige. Skift til at bruge ikoner og prøv igen</string>
-    <string name="forecast_type_is_invalid">Prognosetypen \'%1$s\' er ugyldig. Tjek din indstillingsfil, og prøv igen</string>
+	<string name="forecast_type_is_invalid">Prognosetypen \'%1$s\' er ugyldig. Tjek din indstillingsfil, og prøv igen</string>
     <string name="wasnt_able_to_connect_radar_image">Kunne ikke oprette forbindelse eller downloade radar=-billede fra internettet</string>
     <string name="wasnt_able_to_connect_data_txt">Kunne ikke oprette forbindelse eller downloade data.txt fra din server</string>
     <string name="data_url_was_blank">Data-URL var tom</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match app</string>
     <string name="custom_setting">Brugerdefinerede farver</string>
     <string name="app_theme">App-tema</string>
-    <string name="use_icons">Vis ikoner</string>
-    <string name="today">I dag</string>
+	<string name="today">I dag</string>
     <string name="last_year_stats">Sidste års statistik</string>
     <string name="last_month_stats">Sidste måneds statistik</string>
     <string name="radar_url_not_set">Radar-URL ikke angivet. Du kan gå til indstillinger for at ændre</string>

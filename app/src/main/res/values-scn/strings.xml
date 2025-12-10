@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Aspitta mentri virìfica l\'URL ca prisintasti</string>
     <string name="remove_all_data">Sicuru ca voli livari tutti li dati?</string>
     <string name="no">no</string>
-    <string name="icons_failed_to_download">L\'iconi nun arrinisceru a scaricari completamenti, ti servirà ripruvari</string>
-    <string name="wasnt_able_to_detect_icons">Non putìa rilevari icuni di privisioni</string>
-    <string name="ill_fix_and_try_again">Ficilu e pruvu n\'àutra vota</string>
+	<string name="ill_fix_and_try_again">Ficilu e pruvu n\'àutra vota</string>
     <string name="error_occurred_while_attempting_to_update">N\'erruri ci fu n\'erruri mentri circava di agghiurnari l\'usu</string>
     <string name="unknown_error_occurred">S\'happi n\'erruri scanusciutu</string>
     <string name="wasnt_able_to_connect_custom_url">Nun era capaci di cunnetti o scaricamentu di l\'URL su misura spicifica</string>
     <string name="wasnt_able_to_connect_webcam_url">Non putìa cunnetti o scaricari n\'immaggini dâ webcam dû to sirver</string>
     <string name="wasnt_able_to_connect_forecast">Non putìa cunnèttiri o scaricari li privisioni</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Non putìa rilevari icuni di privisioni</string>
-    <string name="forecast_type_needs_icons">Prufustari tipi \'%1$s\' havi a aviri icuni disponìbbili, si prega di passari a usari icuni e pruvari n\'autra vota</string>
-    <string name="forecast_type_is_invalid">Lu tipu di privisioni \'%1$s\' è nun validu, cuntrolla lu file di paràmitri e pruva n\'autra vota</string>
+	<string name="forecast_type_is_invalid">Lu tipu di privisioni \'%1$s\' è nun validu, cuntrolla lu file di paràmitri e pruva n\'autra vota</string>
     <string name="wasnt_able_to_connect_radar_image">Nun putìa cunnèttiri o scaricari radar= mmàggini di internet</string>
     <string name="wasnt_able_to_connect_data_txt">Nun era capaci di cunnèttiri o scaricari dati.txt dû server</string>
     <string name="data_url_was_blank">L\'URL dî dati era vacanti</string>
@@ -68,8 +64,7 @@
     <string name="match_app">App</string>
     <string name="custom_setting">Culura su misura</string>
     <string name="app_theme">Tema di l\'App</string>
-    <string name="use_icons">Mustra l\'iconi</string>
-    <string name="today">Oji</string>
+	<string name="today">Oji</string>
     <string name="last_year_stats">Li Statistichi di l\'Annu passatu</string>
     <string name="last_month_stats">Statìstica dû misi di l\'ùrtimu misi</string>
     <string name="radar_url_not_set">URL Radar nun stabbilitu. Pudete iri a li paràmitri pi canciari</string>

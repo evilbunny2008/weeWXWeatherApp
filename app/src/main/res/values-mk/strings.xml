@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Ве молиме почекајте додека ја потврдиме URL-адресата што ја испративте</string>
     <string name="remove_all_data">Дали сте сигурни дека сакате да ги отстраните сите податоци?</string>
     <string name="no">бр</string>
-    <string name="icons_failed_to_download">Иконите не успеаја целосно да се преземат, ќе треба да се обидете повторно</string>
-    <string name="wasnt_able_to_detect_icons">Не можеше да ги открие иконите за прогноза</string>
-    <string name="ill_fix_and_try_again">Ќе го поправам и ќе пробам повторно</string>
+	<string name="ill_fix_and_try_again">Ќе го поправам и ќе пробам повторно</string>
     <string name="error_occurred_while_attempting_to_update">Настана грешка при обидот да се ажурира употребата</string>
     <string name="unknown_error_occurred">Настана непозната грешка</string>
     <string name="wasnt_able_to_connect_custom_url">Не можеше да се поврзе или преземе од наведената приспособена URL-адреса</string>
     <string name="wasnt_able_to_connect_webcam_url">Не можеше да се поврзе или преземе слика од веб-камера од вашиот сервер</string>
     <string name="wasnt_able_to_connect_forecast">Не можеше да се поврзе или преземе прогнозата</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Не можеше да ги открие иконите за прогноза</string>
-    <string name="forecast_type_needs_icons">Типот на прогноза \'%1$s\' треба да има достапни икони, префрлете се на користење икони и обидете се повторно</string>
-    <string name="forecast_type_is_invalid">Типот на прогноза \'%1$s\' е неважечки, проверете ја датотеката со поставки и обидете се повторно</string>
+	<string name="forecast_type_is_invalid">Типот на прогноза \'%1$s\' е неважечки, проверете ја датотеката со поставки и обидете се повторно</string>
     <string name="wasnt_able_to_connect_radar_image">Не можеше да се поврзе или преземе радар= слика од интернет</string>
     <string name="wasnt_able_to_connect_data_txt">Не можеше да се поврзе или преземе data.txt од вашиот сервер</string>
     <string name="data_url_was_blank">URL-адресата на податоците беше празна</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Апликација за натпревар</string>
     <string name="custom_setting">Прилагодени бои</string>
     <string name="app_theme">Тема на апликацијата</string>
-    <string name="use_icons">Прикажи икони</string>
-    <string name="today">Денес</string>
+	<string name="today">Денес</string>
     <string name="last_year_stats">Минатогодишната статистика</string>
     <string name="last_month_stats">Статистика од минатиот месец</string>
     <string name="radar_url_not_set">URL-адресата на радарот не е поставена. Може да отидете во поставките за да промените</string>

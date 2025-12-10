@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Lyudzu, pagaidit, cikom mes puorbaudom īsnīgtū URL</string>
     <string name="remove_all_data">Voi esi drūss, ka gribi izjimt vysus datus?</string>
     <string name="no">nā</string>
-    <string name="icons_failed_to_download">Icons naspēja piļneibā lejupluodēt, vajadzēs atkuortuot</string>
-    <string name="wasnt_able_to_detect_icons">Navarēja atkluot prognozis ikonys</string>
-    <string name="ill_fix_and_try_again">100 doc#1159 Es tū Fix I i Raugi otkon</string>
+	<string name="ill_fix_and_try_again">100 doc#1159 Es tū Fix I i Raugi otkon</string>
     <string name="error_occurred_while_attempting_to_update">100 doc#1281 Raugūt , raugūt atjaunuot lītuošonu</string>
     <string name="unknown_error_occurred">100 doc#1159 Nazynoms klaida nūtyka</string>
     <string name="wasnt_able_to_connect_custom_url">100 doc#1159 Nabeja spiejeiga savīnuot voi lejupluodēt nu nūruodeituo parostuo URL</string>
     <string name="wasnt_able_to_connect_webcam_url">100 doc#1159 Nabeja spiejeiga savīnuot voi lejupluodēt škārsteikla kamerys attālu nu jūs servera</string>
     <string name="wasnt_able_to_connect_forecast">Nabeja prognoze, ni lejupluodēt, ni lejupluodēt</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Navarēja atkluot prognozis ikonys</string>
-    <string name="forecast_type_needs_icons">Prognožu tips \'%1$s\' vajag pīejamys ikonys, Lyudzu, puoreimūt iz ikonu izmontuošonu i raugi vēļreiz</string>
-    <string name="forecast_type_is_invalid">Prognožu tips \'%1$s\' ir nadereigs, puorbaudiet sovu īstatejumu failu i raugi vēļreiz</string>
+	<string name="forecast_type_is_invalid">Prognožu tips \'%1$s\' ir nadereigs, puorbaudiet sovu īstatejumu failu i raugi vēļreiz</string>
     <string name="wasnt_able_to_connect_radar_image">100 doc#1159 Nabeja spiejeigs savīnuot voi lejupluodēt radaru= attāls nu interneta</string>
     <string name="wasnt_able_to_connect_data_txt">Nabeja navarūt savīnuot voi lejupluodēt datus.txt nu jūs servera</string>
     <string name="data_url_was_blank">Datu URL beja tukša</string>
@@ -68,8 +64,7 @@
     <string name="match_app">100 doc#1159 Saskaņa</string>
     <string name="custom_setting">Pīlāguotys kruosys</string>
     <string name="app_theme">App tema</string>
-    <string name="use_icons">100 doc#1163</string>
-    <string name="today">Šudiņ</string>
+	<string name="today">Šudiņ</string>
     <string name="last_year_stats">Pādejuo goda statistika</string>
     <string name="last_month_stats">Pādejuo mieneša statistika</string>
     <string name="radar_url_not_set">Radars URL nav īkuortuots. Var īt iz īstatejumim, kab maineitūs</string>

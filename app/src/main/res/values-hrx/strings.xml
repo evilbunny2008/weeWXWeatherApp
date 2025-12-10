@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Bitte waart wën mer ti URL woos tuu kexikt host se ferxteen</string>
     <string name="remove_all_data">Sin se sicher tas tuu al ti data wëch xafe wilst?</string>
     <string name="no">Nee</string>
-    <string name="icons_failed_to_download">Ikone hon net kans download kemacht, tuu prauchst noch mool proope</string>
-    <string name="wasnt_able_to_detect_icons">Waar nët in kontitsioon fer ti protuktsioons ikone se fine</string>
-    <string name="ill_fix_and_try_again">Ich tuun Fix It un Probeer noch mool</string>
+	<string name="ill_fix_and_try_again">Ich tuun Fix It un Probeer noch mool</string>
     <string name="error_occurred_while_attempting_to_update">Een feeler is pasiirt wën mer fersuucht hon ti penutsung aktualisiire</string>
     <string name="unknown_error_occurred">Unkeweenliche feeler is pasiirt</string>
     <string name="wasnt_able_to_connect_custom_url">Waar net in kontitsioon fer se ferklayche orer download mache fon te personaliseerte URL woo pextimt is</string>
     <string name="wasnt_able_to_connect_webcam_url">Waar nët in kontitsioon fer een webcam pilt fon tayn serwer se ferklayche orer download mache</string>
     <string name="wasnt_able_to_connect_forecast">Waar nët in kontitsioon fer ti prokramatsioon se ferklayche orer se download mache</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Waar nët in kontitsioon fer ti protuktsioons ikone se fine</string>
-    <string name="forecast_type_needs_icons">Forecast type \'%1$s\' praucht ikone hon, Bitte wech xafe fer ikone penutse un noch mool proope</string>
-    <string name="forecast_type_is_invalid">Forecast tip \'%1$s\' is inwaliteet, kontroliire tayn instëlunge file un proope noch mool</string>
+	<string name="forecast_type_is_invalid">Forecast tip \'%1$s\' is inwaliteet, kontroliire tayn instëlunge file un proope noch mool</string>
     <string name="wasnt_able_to_connect_radar_image">Waar nët in kontitsioon fer radar= pilt fon te internet se ferklayche orer download mache</string>
     <string name="wasnt_able_to_connect_data_txt">Waar nët in kontitsioon fer ti data.txt fon tayn serwer se ferklayche orer download mache</string>
     <string name="data_url_was_blank">Data URL waar leetich</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Kunde Farbe</string>
     <string name="app_theme">App Theema</string>
-    <string name="use_icons">Tsaych Ikon</string>
-    <string name="today">Hayt</string>
+	<string name="today">Hayt</string>
     <string name="last_year_stats">Tas letste yoer fon te Statistike</string>
     <string name="last_month_stats">Ti Statistiks fon te Moonat fon te Moonat</string>
     <string name="radar_url_not_set">Radar URL is net set. Tuu khanst in ti instëlunge keen fer se ënere</string>

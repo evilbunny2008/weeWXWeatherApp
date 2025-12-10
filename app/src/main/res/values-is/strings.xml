@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Vinsamlegast bíddu á meðan við staðfestum vefslóðina sem þú sendir inn</string>
     <string name="remove_all_data">Ertu viss um að þú viljir fjarlægja öll gögn?</string>
     <string name="no">Nei</string>
-    <string name="icons_failed_to_download">Ekki tókst að hlaða niður táknum að fullu, þú verður að reyna aftur</string>
-    <string name="wasnt_able_to_detect_icons">Gat ekki greint spátákn</string>
-    <string name="ill_fix_and_try_again">Ég laga það og reyni aftur</string>
+	<string name="ill_fix_and_try_again">Ég laga það og reyni aftur</string>
     <string name="error_occurred_while_attempting_to_update">Villa kom upp þegar reynt var að uppfæra notkun</string>
     <string name="unknown_error_occurred">Óþekkt villa kom upp</string>
     <string name="wasnt_able_to_connect_custom_url">Gat ekki tengst eða hlaðið niður af sérsniðnu vefslóðinni sem tilgreind er</string>
     <string name="wasnt_able_to_connect_webcam_url">Gat ekki tengst eða hlaðið niður vefmyndavélarmynd af þjóninum þínum</string>
     <string name="wasnt_able_to_connect_forecast">Gat ekki tengst eða hlaðið niður spánni</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Gat ekki greint spátákn</string>
-    <string name="forecast_type_needs_icons">Spágerðin \'%1$s\' þarf að hafa tákn tiltæk, vinsamlega skiptu yfir í að nota tákn og reyndu aftur</string>
-    <string name="forecast_type_is_invalid">Spágerðin \'%1$s\' er ógild, athugaðu stillingaskrána þína og reyndu aftur</string>
+	<string name="forecast_type_is_invalid">Spágerðin \'%1$s\' er ógild, athugaðu stillingaskrána þína og reyndu aftur</string>
     <string name="wasnt_able_to_connect_radar_image">Gat ekki tengst eða hlaðið niður radar= mynd af netinu</string>
     <string name="wasnt_able_to_connect_data_txt">Gat ekki tengst eða hlaðið niður data.txt af þjóninum þínum</string>
     <string name="data_url_was_blank">Gagnaslóð var auð</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match app</string>
     <string name="custom_setting">Sérsniðnir litir</string>
     <string name="app_theme">App þema</string>
-    <string name="use_icons">Sýna tákn</string>
-    <string name="today">Í dag</string>
+	<string name="today">Í dag</string>
     <string name="last_year_stats">Tölfræði síðasta árs</string>
     <string name="last_month_stats">Tölfræði síðasta mánaðar</string>
     <string name="radar_url_not_set">Ratsjárslóð ekki stillt. Þú getur farið í stillingar til að breyta</string>

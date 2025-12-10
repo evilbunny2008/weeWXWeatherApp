@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Molimo pričekajte dok potvrdimo URL koji ste poslali</string>
     <string name="remove_all_data">Jeste li sigurni da želite ukloniti sve podatke?</string>
     <string name="no">br</string>
-    <string name="icons_failed_to_download">Preuzimanje ikona nije uspjelo u potpunosti, morat ćete pokušati ponovo</string>
-    <string name="wasnt_able_to_detect_icons">Nije bilo moguće otkriti ikone prognoze</string>
-    <string name="ill_fix_and_try_again">Popravit ću to i pokušati ponovo</string>
+	<string name="ill_fix_and_try_again">Popravit ću to i pokušati ponovo</string>
     <string name="error_occurred_while_attempting_to_update">Došlo je do greške prilikom pokušaja ažuriranja upotrebe</string>
     <string name="unknown_error_occurred">Došlo je do nepoznate greške</string>
     <string name="wasnt_able_to_connect_custom_url">Nije bilo moguće povezati se ili preuzeti sa specificiranog prilagođenog URL-a</string>
     <string name="wasnt_able_to_connect_webcam_url">Nije bilo moguće povezati se ili preuzeti sliku web kamere sa vašeg servera</string>
     <string name="wasnt_able_to_connect_forecast">Nije bilo moguće povezati se ili preuzeti prognozu</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Nije bilo moguće otkriti ikone prognoze</string>
-    <string name="forecast_type_needs_icons">Tip predviđanja \'%1$s\' mora imati dostupne ikone. Molimo pređite na korištenje ikona i pokušajte ponovo</string>
-    <string name="forecast_type_is_invalid">Tip predviđanja \'%1$s\' je nevažeći, provjerite datoteku postavki i pokušajte ponovo</string>
+	<string name="forecast_type_is_invalid">Tip predviđanja \'%1$s\' je nevažeći, provjerite datoteku postavki i pokušajte ponovo</string>
     <string name="wasnt_able_to_connect_radar_image">Nije bilo moguće povezati se ili preuzeti radar= sliku s interneta</string>
     <string name="wasnt_able_to_connect_data_txt">Nije bilo moguće povezati se ili preuzeti data.txt sa vašeg servera</string>
     <string name="data_url_was_blank">URL podataka je bio prazan</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Custom Colors</string>
     <string name="app_theme">App Theme</string>
-    <string name="use_icons">Prikaži ikone</string>
-    <string name="today">Danas</string>
+	<string name="today">Danas</string>
     <string name="last_year_stats">Prošlogodišnja statistika</string>
     <string name="last_month_stats">Statistika prošlog mjeseca</string>
     <string name="radar_url_not_set">URL radara nije postavljen. Možete otići u postavke da promijenite</string>

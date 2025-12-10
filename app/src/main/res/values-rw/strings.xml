@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Nyamuneka tegereza mugihe tugenzura URL watanze</string>
     <string name="remove_all_data">Uzi neza ko ushaka gukuraho amakuru yose?</string>
     <string name="no">Oya</string>
-    <string name="icons_failed_to_download">Udushushondanga twananiwe gukuramo byuzuye, uzakenera kongera kugerageza</string>
-    <string name="wasnt_able_to_detect_icons">Ntabwo yashoboye kubona amashusho ateganya</string>
-    <string name="ill_fix_and_try_again">Nzabikosora kandi ngerageze</string>
+	<string name="ill_fix_and_try_again">Nzabikosora kandi ngerageze</string>
     <string name="error_occurred_while_attempting_to_update">Ikosa ryabaye mugihe ugerageza kuvugurura imikoreshereze</string>
     <string name="unknown_error_occurred">Ikosa ritazwi ryabaye</string>
     <string name="wasnt_able_to_connect_custom_url">Ntabwo yashoboye guhuza cyangwa gukuramo kuva kuri URL yagenwe</string>
     <string name="wasnt_able_to_connect_webcam_url">Ntabwo yashoboye guhuza cyangwa gukuramo amashusho ya Webcam muri seriveri yawe</string>
     <string name="wasnt_able_to_connect_forecast">Ntabwo yashoboye guhuza cyangwa gukuramo ibyateganijwe</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Ntabwo yashoboye kubona amashusho ateganya</string>
-    <string name="forecast_type_needs_icons">Ubwoko bwaho \'%1$s\' akeneye kugira amashusho aboneka, nyamuneka hindura ukoresheje amashusho hanyuma ugerageze</string>
-    <string name="forecast_type_is_invalid">Ubwoko bwaho \'%1$s\' ntabwo byemewe, reba dosiye yawe hanyuma ugerageze</string>
+	<string name="forecast_type_is_invalid">Ubwoko bwaho \'%1$s\' ntabwo byemewe, reba dosiye yawe hanyuma ugerageze</string>
     <string name="wasnt_able_to_connect_radar_image">Ntabwo yashoboye guhuza cyangwa gukuramo radar = ishusho kuri enterineti</string>
     <string name="wasnt_able_to_connect_data_txt">Ntabwo yashoboye guhuza cyangwa gukuramo amakuru.txt uhereye kuri seriveri yawe</string>
     <string name="data_url_was_blank">URL yamakuru yari irimo ubusa</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Guhuza porogaramu</string>
     <string name="custom_setting">Amabara yihariye</string>
     <string name="app_theme">Insanganyamatsiko ya App</string>
-    <string name="use_icons">Erekana amashusho</string>
-    <string name="today">Uyu munsi</string>
+	<string name="today">Uyu munsi</string>
     <string name="last_year_stats">Imibare y\'umwaka ushize</string>
     <string name="last_month_stats">Imibare yashize</string>
     <string name="radar_url_not_set">Radar URL ntabwo yashyizweho. Urashobora kujya muri Igenamiterere kugirango uhindure</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Tafadhali subiri wakati tunathibitisha URL uliyowasilisha</string>
     <string name="remove_all_data">Je! Una uhakika unataka kuondoa data zote?</string>
     <string name="no">Hapana</string>
-    <string name="icons_failed_to_download">Icons zilishindwa kupakua kikamilifu, utahitaji kujaribu tena</string>
-    <string name="wasnt_able_to_detect_icons">Hakuweza kugundua icons za utabiri</string>
-    <string name="ill_fix_and_try_again">Nitairekebisha na kujaribu tena</string>
+	<string name="ill_fix_and_try_again">Nitairekebisha na kujaribu tena</string>
     <string name="error_occurred_while_attempting_to_update">Hitilafu ilitokea wakati wa kujaribu kusasisha matumizi</string>
     <string name="unknown_error_occurred">Hitilafu isiyojulikana ilitokea</string>
     <string name="wasnt_able_to_connect_custom_url">Hakuweza kuunganisha au kupakua kutoka kwa URL ya kawaida iliyoainishwa</string>
     <string name="wasnt_able_to_connect_webcam_url">Hakuweza kuunganisha au kupakua picha ya wavuti kutoka kwa seva yako</string>
     <string name="wasnt_able_to_connect_forecast">Hakuweza kuunganisha au kupakua utabiri</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Hakuweza kugundua icons za utabiri</string>
-    <string name="forecast_type_needs_icons">Aina ya utabiri \'%1$s\' inahitaji kuwa na icons zinazopatikana, tafadhali badilisha kwa kutumia icons na ujaribu tena</string>
-    <string name="forecast_type_is_invalid">Aina ya utabiri \'%1$s\' sio sahihi, angalia faili yako ya mipangilio na ujaribu tena</string>
+	<string name="forecast_type_is_invalid">Aina ya utabiri \'%1$s\' sio sahihi, angalia faili yako ya mipangilio na ujaribu tena</string>
     <string name="wasnt_able_to_connect_radar_image">Hakuweza kuunganisha au kupakua rada = picha kutoka kwa mtandao</string>
     <string name="wasnt_able_to_connect_data_txt">Hakuweza kuunganisha au kupakua data.txt kutoka kwa seva yako</string>
     <string name="data_url_was_blank">URL ya data ilikuwa tupu</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Mechi ya programu</string>
     <string name="custom_setting">Rangi za kawaida</string>
     <string name="app_theme">Mandhari ya programu</string>
-    <string name="use_icons">Onyesha icons</string>
-    <string name="today">Leo</string>
+	<string name="today">Leo</string>
     <string name="last_year_stats">Takwimu za mwaka jana</string>
     <string name="last_month_stats">Takwimu za mwezi uliopita</string>
     <string name="radar_url_not_set">URL ya rada haijawekwa. Unaweza kwenda kwa Mipangilio ili ubadilike</string>

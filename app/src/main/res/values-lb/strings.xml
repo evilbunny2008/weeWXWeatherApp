@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Waart w.e.g. wärend mir d\'URL verifizéieren déi Dir aginn hutt</string>
     <string name="remove_all_data">Sidd Dir sécher datt Dir all Daten ewechhuele wëllt?</string>
     <string name="no">Nee</string>
-    <string name="icons_failed_to_download">D\'Ikonen konnten net komplett erofgeluede ginn, Dir musst nei probéieren</string>
-    <string name="wasnt_able_to_detect_icons">War net fäeg Prognoseikonen z\'entdecken</string>
-    <string name="ill_fix_and_try_again">Ech fixéieren et a probéieren nach eng Kéier</string>
+	<string name="ill_fix_and_try_again">Ech fixéieren et a probéieren nach eng Kéier</string>
     <string name="error_occurred_while_attempting_to_update">E Feeler ass geschitt beim Versuch d\'Benotzung ze aktualiséieren</string>
     <string name="unknown_error_occurred">Onbekannte Feeler ass geschitt</string>
     <string name="wasnt_able_to_connect_custom_url">Konnt net konnektéieren oder eroflueden vun der spezifizéierter personaliséierter URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Konnt net e Webcambild vun Ärem Server verbannen oder eroflueden</string>
     <string name="wasnt_able_to_connect_forecast">Konnt d\'Prognose net konnektéieren oder eroflueden</string>
-    <string name="wasnt_able_to_detect_forecast_icons">War net fäeg Prognoseikonen z\'entdecken</string>
-    <string name="forecast_type_needs_icons">Prognosetyp \'%1$s\' muss Symboler verfügbar hunn, wiesselt w.e.g. op d\'Ikonen ze benotzen a probéiert nach eng Kéier</string>
-    <string name="forecast_type_is_invalid">Prognosetyp \'%1$s\' ass ongëlteg, kontrolléiert Är Astellungsdatei a probéiert nach eng Kéier</string>
+	<string name="forecast_type_is_invalid">Prognosetyp \'%1$s\' ass ongëlteg, kontrolléiert Är Astellungsdatei a probéiert nach eng Kéier</string>
     <string name="wasnt_able_to_connect_radar_image">Konnt net konnektéieren oder Radar= Bild vum Internet eroflueden</string>
     <string name="wasnt_able_to_connect_data_txt">Konnt net konnektéieren oder data.txt vun Ärem Server eroflueden</string>
     <string name="data_url_was_blank">Donnéeën URL war eidel</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Benotzerdefinéiert Faarwen</string>
     <string name="app_theme">App Thema</string>
-    <string name="use_icons">Ikonen weisen</string>
-    <string name="today">Haut</string>
+	<string name="today">Haut</string>
     <string name="last_year_stats">D\'lescht Joer Statistiken</string>
     <string name="last_month_stats">Statistike vum leschte Mount</string>
     <string name="radar_url_not_set">Radar URL net agestallt. Dir kënnt op d\'Astellunge goen fir ze änneren</string>

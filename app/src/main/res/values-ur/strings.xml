@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">براہ کرم انتظار کریں جب ہم آپ کے جمع کردہ یو آر ایل کی تصدیق کرتے ہیں۔</string>
     <string name="remove_all_data">کیا آپ واقعی تمام ڈیٹا کو ہٹانا چاہتے ہیں؟</string>
     <string name="no">نہیں</string>
-    <string name="icons_failed_to_download">شبیہیں مکمل طور پر ڈاؤن لوڈ کرنے میں ناکام ، آپ کو دوبارہ کوشش کرنے کی ضرورت ہوگی۔</string>
-    <string name="wasnt_able_to_detect_icons">پیشن گوئی شبیہیں کا پتہ لگانے کے قابل نہیں تھا۔</string>
-    <string name="ill_fix_and_try_again">میں اسے ٹھیک کروں گا اور دوبارہ کوشش کروں گا</string>
+	<string name="ill_fix_and_try_again">میں اسے ٹھیک کروں گا اور دوبارہ کوشش کروں گا</string>
     <string name="error_occurred_while_attempting_to_update">استعمال کو اپ ڈیٹ کرنے کی کوشش کرتے وقت ایک خرابی پیش آگئی</string>
     <string name="unknown_error_occurred">نامعلوم غلطی واقع ہوئی ہے</string>
     <string name="wasnt_able_to_connect_custom_url">مخصوص کردہ کسٹم یو آر ایل سے رابطہ یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
     <string name="wasnt_able_to_connect_webcam_url">آپ کے سرور سے ویب کیم امیج سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
     <string name="wasnt_able_to_connect_forecast">پیشن گوئی سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا۔</string>
-    <string name="wasnt_able_to_detect_forecast_icons">پیشن گوئی شبیہیں کا پتہ لگانے کے قابل نہیں تھا۔</string>
-    <string name="forecast_type_needs_icons">Forecast type \'%1$s\' needs to have icons available, Please switch to using icons and try again</string>
-    <string name="forecast_type_is_invalid">Forecast type \'%1$s\' is invalid, check your settings file and try again</string>
+	<string name="forecast_type_is_invalid">Forecast type \'%1$s\' is invalid, check your settings file and try again</string>
     <string name="wasnt_able_to_connect_radar_image">انٹرنیٹ سے ریڈار = امیج کو جوڑنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
     <string name="wasnt_able_to_connect_data_txt">آپ کے سرور سے ڈیٹا ڈاٹ ٹی ایکس ٹی کو مربوط کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
     <string name="data_url_was_blank">ڈیٹا یو آر ایل خالی تھا</string>
@@ -68,8 +64,7 @@
     <string name="match_app">میچ ایپ</string>
     <string name="custom_setting">کسٹم رنگ</string>
     <string name="app_theme">ایپ تھیم</string>
-    <string name="use_icons">شبیہیں دکھائیں</string>
-    <string name="today">آج</string>
+	<string name="today">آج</string>
     <string name="last_year_stats">پچھلے سال کے اعدادوشمار</string>
     <string name="last_month_stats">پچھلے مہینے کے اعدادوشمار</string>
     <string name="radar_url_not_set">ریڈار یو آر ایل سیٹ نہیں ہے۔ آپ تبدیل کرنے کے لئے ترتیبات پر جاسکتے ہیں۔</string>

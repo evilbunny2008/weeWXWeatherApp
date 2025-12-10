@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Zəhmət olmasa, təqdim etdiyiniz URL-i yoxlayarkən gözləyin</string>
     <string name="remove_all_data">Bütün məlumatları silmək istədiyinizə əminsiniz?</string>
     <string name="no">Yox</string>
-    <string name="icons_failed_to_download">Nişanlar tam yüklənə bilmədi, yenidən cəhd etməlisiniz</string>
-    <string name="wasnt_able_to_detect_icons">Proqnoz nişanlarını aşkar edə bilmədi</string>
-    <string name="ill_fix_and_try_again">Mən düzəldəcəyəm və yenidən cəhd edəcəm</string>
+	<string name="ill_fix_and_try_again">Mən düzəldəcəyəm və yenidən cəhd edəcəm</string>
     <string name="error_occurred_while_attempting_to_update">İstifadəni yeniləməyə cəhd edərkən xəta baş verdi</string>
     <string name="unknown_error_occurred">Naməlum səhv baş verdi</string>
     <string name="wasnt_able_to_connect_custom_url">Müəyyən edilmiş xüsusi URL-dən qoşula və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_connect_webcam_url">Serverinizdən bir veb-kamera şəklini bağlaya və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_connect_forecast">Proqnozu bağlaya və ya yükləyə bilmədi</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Proqnoz nişanlarını aşkar edə bilmədi</string>
-    <string name="forecast_type_needs_icons">Proqnoz növü \'%1$s\' nişanlar olmalıdır, xahiş edirəm nişanlar istifadə edərək yenidən cəhd edin və yenidən cəhd edin</string>
-    <string name="forecast_type_is_invalid">Proqnoz növü \'%1$s\' etibarsızdır, parametrlər faylını yoxlayın və yenidən cəhd edin</string>
+	<string name="forecast_type_is_invalid">Proqnoz növü \'%1$s\' etibarsızdır, parametrlər faylını yoxlayın və yenidən cəhd edin</string>
     <string name="wasnt_able_to_connect_radar_image">Radar = şəkilləri internetdən birləşdirə və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_connect_data_txt">Serverinizdən məlumat.txt-a qoşula və ya yükləyə bilmədi</string>
     <string name="data_url_was_blank">Məlumat URL boş idi</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Matç tətbiqi</string>
     <string name="custom_setting">Xüsusi rənglər</string>
     <string name="app_theme">Tətbiq mövzusu</string>
-    <string name="use_icons">Nişanlar göstər</string>
-    <string name="today">Bu gün</string>
+	<string name="today">Bu gün</string>
     <string name="last_year_stats">Keçən il statistikası</string>
     <string name="last_month_stats">Keçən ay statistikası</string>
     <string name="radar_url_not_set">Radar URL qurulmadı. Dəyişdirmək üçün parametrlərə gedə bilərsiniz</string>

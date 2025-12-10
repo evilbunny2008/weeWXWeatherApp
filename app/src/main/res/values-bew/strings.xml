@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Tolong tungguin pas kita verifikasi URL yang lo ajuin</string>
     <string name="remove_all_data">Yakin mau ngilangin semua data?</string>
     <string name="no">Kagak</string>
-    <string name="icons_failed_to_download">Ikon gagal diunduh sepenuhnya, lo bakal perlu coba ulang</string>
-    <string name="wasnt_able_to_detect_icons">Gak bisa deteksi ikon ramalan</string>
-    <string name="ill_fix_and_try_again">Gue bakal benerin dan coba Lagi</string>
+	<string name="ill_fix_and_try_again">Gue bakal benerin dan coba Lagi</string>
     <string name="error_occurred_while_attempting_to_update">Sebuah kesalahan terjadi saat nyoba update pemakaian</string>
     <string name="unknown_error_occurred">Kesalahan yang kagak diketahui terjadi</string>
     <string name="wasnt_able_to_connect_custom_url">Gak bisa nyambung atau download dari URL khusus yang ditentuin</string>
     <string name="wasnt_able_to_connect_webcam_url">Gak bisa nyambung atau ngunduh gambar webcam dari pelayan lo</string>
     <string name="wasnt_able_to_connect_forecast">Gak bisa nyambung atau ngunduh ramalan</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Gak bisa deteksi ikon ramalan</string>
-    <string name="forecast_type_needs_icons">Jenis ramalan \'%1$s\' perlu punya ikon yang tersedia, Tolong beralih ke pake ikon dan coba lagi</string>
-    <string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' itu ga sah, cek file pengaturan lo dan coba lagi</string>
+	<string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' itu ga sah, cek file pengaturan lo dan coba lagi</string>
     <string name="wasnt_able_to_connect_radar_image">Bukannya kagak bisa nyambung atau download radar= gambar dari internet</string>
     <string name="wasnt_able_to_connect_data_txt">Gak bisa nyambung atau download data.txt dari server lo</string>
     <string name="data_url_was_blank">URL data udah kosong</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Cocokin Aplikasi</string>
     <string name="custom_setting">Warna khusus</string>
     <string name="app_theme">Tema App</string>
-    <string name="use_icons">Tunjukin Ikon</string>
-    <string name="today">Hari nih</string>
+	<string name="today">Hari nih</string>
     <string name="last_year_stats">Statistik taun kemaren</string>
     <string name="last_month_stats">Statistik Bulan kemaren</string>
     <string name="radar_url_not_set">Radar URL kagak diatur. Lo bisa ke pengaturan buat berubah</string>

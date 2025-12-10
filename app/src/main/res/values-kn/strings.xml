@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">ನೀವು ಸಲ್ಲಿಸಿದ URL ಅನ್ನು ನಾವು ಪರಿಶೀಲಿಸುವವರೆಗೆ ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ</string>
     <string name="remove_all_data">ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ತೆಗೆದುಹಾಕಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?</string>
     <string name="no">ಸಂ</string>
-    <string name="icons_failed_to_download">ಐಕಾನ್‌ಗಳನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ, ನೀವು ಮರುಪ್ರಯತ್ನಿಸುವ ಅಗತ್ಯವಿದೆ</string>
-    <string name="wasnt_able_to_detect_icons">ಮುನ್ಸೂಚನೆ ಐಕಾನ್‌ಗಳನ್ನು ಪತ್ತೆಹಚ್ಚಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
-    <string name="ill_fix_and_try_again">ನಾನು ಅದನ್ನು ಸರಿಪಡಿಸುತ್ತೇನೆ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸುತ್ತೇನೆ</string>
+	<string name="ill_fix_and_try_again">ನಾನು ಅದನ್ನು ಸರಿಪಡಿಸುತ್ತೇನೆ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸುತ್ತೇನೆ</string>
     <string name="error_occurred_while_attempting_to_update">ಬಳಕೆಯನ್ನು ನವೀಕರಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿರುವಾಗ ದೋಷ ಸಂಭವಿಸಿದೆ</string>
     <string name="unknown_error_occurred">ಅಜ್ಞಾತ ದೋಷ ಸಂಭವಿಸಿದೆ</string>
     <string name="wasnt_able_to_connect_custom_url">ನಿರ್ದಿಷ್ಟಪಡಿಸಿದ ಕಸ್ಟಮ್ URL ನಿಂದ ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="wasnt_able_to_connect_webcam_url">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರವನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="wasnt_able_to_connect_forecast">ಮುನ್ಸೂಚನೆಯನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
-    <string name="wasnt_able_to_detect_forecast_icons">ಮುನ್ಸೂಚನೆ ಐಕಾನ್‌ಗಳನ್ನು ಪತ್ತೆಹಚ್ಚಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
-    <string name="forecast_type_needs_icons">ಮುನ್ಸೂಚನೆ ಪ್ರಕಾರ \'%1$s\' ಗೆ ಐಕಾನ್‌ಗಳು ಲಭ್ಯವಿರಬೇಕು, ದಯವಿಟ್ಟು ಐಕಾನ್‌ಗಳನ್ನು ಬಳಸಲು ಬದಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
-    <string name="forecast_type_is_invalid">ಮುನ್ಸೂಚನೆ ಪ್ರಕಾರ \'%1$s\' ಅಮಾನ್ಯವಾಗಿದೆ, ನಿಮ್ಮ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಫೈಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
+	<string name="forecast_type_is_invalid">ಮುನ್ಸೂಚನೆ ಪ್ರಕಾರ \'%1$s\' ಅಮಾನ್ಯವಾಗಿದೆ, ನಿಮ್ಮ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಫೈಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
     <string name="wasnt_able_to_connect_radar_image">ಇಂಟರ್ನೆಟ್‌ನಿಂದ ರೇಡಾರ್= ಇಮೇಜ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="wasnt_able_to_connect_data_txt">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ data.txt ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="data_url_was_blank">ಡೇಟಾ URL ಖಾಲಿಯಾಗಿದೆ</string>
@@ -68,8 +64,7 @@
     <string name="match_app">ಹೊಂದಾಣಿಕೆ ಅಪ್ಲಿಕೇಶನ್</string>
     <string name="custom_setting">ಕಸ್ಟಮ್ ಬಣ್ಣಗಳು</string>
     <string name="app_theme">ಅಪ್ಲಿಕೇಶನ್ ಥೀಮ್</string>
-    <string name="use_icons">ಐಕಾನ್‌ಗಳನ್ನು ತೋರಿಸಿ</string>
-    <string name="today">ಇಂದು</string>
+	<string name="today">ಇಂದು</string>
     <string name="last_year_stats">ಕಳೆದ ವರ್ಷದ ಅಂಕಿಅಂಶಗಳು</string>
     <string name="last_month_stats">ಕಳೆದ ತಿಂಗಳ ಅಂಕಿಅಂಶಗಳು</string>
     <string name="radar_url_not_set">ರಾಡಾರ್ URL ಹೊಂದಿಸಲಾಗಿಲ್ಲ. ಬದಲಾಯಿಸಲು ನೀವು ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಹೋಗಬಹುದು</string>

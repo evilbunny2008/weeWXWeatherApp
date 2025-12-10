@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
-<path d="M11.8,14.43c0,2.39,0.24,4.52,0.71,6.39s1.31,3.5,2.51,4.89c1.52,0,2.98-0.3,4.37-0.89s2.59-1.4,3.6-2.4s1.81-2.2,2.4-3.6
-	s0.89-2.85,0.89-4.39s-0.3-2.99-0.89-4.38s-1.4-2.58-2.4-3.59s-2.2-1.81-3.6-2.4s-2.85-0.89-4.37-0.89
-	c-1.02,1.46-1.81,3.16-2.37,5.13S11.8,12.3,11.8,14.43z"/>
-</svg>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns2="http://www.inkscape.org/namespaces/inkscape" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 14.48 22.540001" xml:space="preserve" ns1:docname="wi-moon-waxing-gibbous-3.svg" width="328" height="512"><ns0:defs id="defs1" /><ns1:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#111111" borderopacity="1" ns2:showpageshadow="0" ns2:pageopacity="0" ns2:pagecheckerboard="1" ns2:deskcolor="#d1d1d1" />
+<ns0:path d="m 0,11.26 c 0,2.39 0.24,4.52 0.71,6.39 0.47,1.87 1.31,3.5 2.51,4.89 1.52,0 2.98,-0.3 4.37,-0.89 1.39,-0.59 2.59,-1.4 3.6,-2.4 1.01,-1 1.81,-2.2 2.4,-3.6 0.59,-1.4 0.89,-2.85 0.89,-4.39 0,-1.54 -0.3,-2.99 -0.89,-4.38 C 13,5.49 12.19,4.3 11.19,3.29 10.19,2.28 8.99,1.48 7.59,0.89 6.19,0.3 4.74,0 3.22,0 2.2,1.46 1.41,3.16 0.85,5.13 0.29,7.1 0,9.13 0,11.26 Z" id="path1" />
+</ns0:svg>

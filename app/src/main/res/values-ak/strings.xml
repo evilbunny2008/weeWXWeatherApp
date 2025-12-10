@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Yɛsrɛ sɛ twɛn bere a yɛrehwɛ sɛ URL a wode kɔe no yɛ nokware no</string>
     <string name="remove_all_data">Wogye di sɛ wopɛ sɛ wuyi data nyinaa fi hɔ?</string>
     <string name="no">Daabi</string>
-    <string name="icons_failed_to_download">Icons antumi antwe koraa, ɛho behia sɛ wosan sɔ hwɛ</string>
-    <string name="wasnt_able_to_detect_icons">Na ontumi nhu nkɔmhyɛ ahyɛnsode ahorow</string>
-    <string name="ill_fix_and_try_again">Mebɛsiesie na mabɔ mmɔden bio</string>
+	<string name="ill_fix_and_try_again">Mebɛsiesie na mabɔ mmɔden bio</string>
     <string name="error_occurred_while_attempting_to_update">Mfomso bi sii bere a na wɔrebɔ mmɔden sɛ wɔbɛma dwuma a wɔde di no ayɛ foforo</string>
     <string name="unknown_error_occurred">Mfomso a wonnim bae</string>
     <string name="wasnt_able_to_connect_custom_url">Na ontumi nkɔ anaasɛ woantwe amfi custom URL a wɔakyerɛ no mu</string>
     <string name="wasnt_able_to_connect_webcam_url">Na ontumi mfa webcam mfonini bi nkɔ anaasɛ ɔntwe mfi wo server so</string>
     <string name="wasnt_able_to_connect_forecast">Na ontumi nkɔka anaasɛ ɔntwe nkɔmhyɛ no</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Na ontumi nhu nkɔmhyɛ ahyɛnsode ahorow</string>
-    <string name="forecast_type_needs_icons">Nkɔmhyɛ Type \'%1$s\' hia sɛ wonya icons a ɛwɔ hɔ, yɛsrɛ wo dan kɔ icons a wode bedi dwuma so na sɔ hwɛ bio</string>
-    <string name="forecast_type_is_invalid">Forecast Type \'%1$s\' no nyɛ adwuma, hwɛ wo settings fael no na sɔ hwɛ bio</string>
+	<string name="forecast_type_is_invalid">Forecast Type \'%1$s\' no nyɛ adwuma, hwɛ wo settings fael no na sɔ hwɛ bio</string>
     <string name="wasnt_able_to_connect_radar_image">Na ontumi mfa radar= mfonini mfi Intanɛt so anaasɛ ɔntwe</string>
     <string name="wasnt_able_to_connect_data_txt">wantumi ankɔ so ankɔfa data.txt amfi wo server so anaa antwe</string>
     <string name="data_url_was_blank">Data URL no yɛ blank</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match app</string>
     <string name="custom_setting">Nneɛma a Wɔde Yɛ Nneɛma a Wɔahyɛ Da Ayɛ</string>
     <string name="app_theme">App asɛmti</string>
-    <string name="use_icons">Kyerɛ ahyɛnsode ahorow</string>
-    <string name="today">Ɛnnɛ</string>
+	<string name="today">Ɛnnɛ</string>
     <string name="last_year_stats">Afe a etwaam no akontaabu</string>
     <string name="last_month_stats">Ɔsram a etwaam no akontaabu</string>
     <string name="radar_url_not_set">Radar URL no nyɛ nea wɔde asi hɔ. Wubetumi akɔ nhyehyɛe ahorow mu akɔsesa</string>

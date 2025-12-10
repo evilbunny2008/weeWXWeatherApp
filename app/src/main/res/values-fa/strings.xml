@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">لطفاً صبر کنید تا URL ارسالی شما را تأیید کنیم</string>
     <string name="remove_all_data">آیا مطمئن هستید که می خواهید همه داده ها را حذف کنید؟</string>
     <string name="no">خیر</string>
-    <string name="icons_failed_to_download">نمادها به طور کامل دانلود نشدند، باید دوباره امتحان کنید</string>
-    <string name="wasnt_able_to_detect_icons">قادر به شناسایی نمادهای پیش بینی نبود</string>
-    <string name="ill_fix_and_try_again">درستش میکنم و دوباره امتحان میکنم</string>
+	<string name="ill_fix_and_try_again">درستش میکنم و دوباره امتحان میکنم</string>
     <string name="error_occurred_while_attempting_to_update">هنگام تلاش برای به‌روزرسانی استفاده، خطایی روی داد</string>
     <string name="unknown_error_occurred">خطای ناشناخته رخ داد</string>
     <string name="wasnt_able_to_connect_custom_url">اتصال یا دانلود از URL سفارشی مشخص شده امکان پذیر نیست</string>
     <string name="wasnt_able_to_connect_webcam_url">قادر به اتصال یا دانلود تصویر وب کم از سرور شما نبود</string>
     <string name="wasnt_able_to_connect_forecast">امکان اتصال یا دانلود پیش‌بینی وجود نداشت</string>
-    <string name="wasnt_able_to_detect_forecast_icons">قادر به شناسایی نمادهای پیش بینی نبود</string>
-    <string name="forecast_type_needs_icons">نوع پیش‌بینی \'%1$s\' باید نمادهایی در دسترس داشته باشد، لطفاً به استفاده از نمادها بروید و دوباره امتحان کنید</string>
-    <string name="forecast_type_is_invalid">نوع پیش‌بینی \'%1$s\' نامعتبر است، فایل تنظیمات خود را بررسی کنید و دوباره امتحان کنید</string>
+	<string name="forecast_type_is_invalid">نوع پیش‌بینی \'%1$s\' نامعتبر است، فایل تنظیمات خود را بررسی کنید و دوباره امتحان کنید</string>
     <string name="wasnt_able_to_connect_radar_image">قادر به اتصال یا دانلود رادار= تصویر از اینترنت نبود</string>
     <string name="wasnt_able_to_connect_data_txt">قادر به اتصال یا دانلود data.txt از سرور شما نبود</string>
     <string name="data_url_was_blank">URL داده خالی بود</string>
@@ -68,8 +64,7 @@
     <string name="match_app">برنامه مطابقت</string>
     <string name="custom_setting">رنگ های سفارشی</string>
     <string name="app_theme">تم برنامه</string>
-    <string name="use_icons">نمایش نمادها</string>
-    <string name="today">امروز</string>
+	<string name="today">امروز</string>
     <string name="last_year_stats">آمار سال گذشته</string>
     <string name="last_month_stats">آمار ماه گذشته</string>
     <string name="radar_url_not_set">URL رادار تنظیم نشده است. برای تغییر می توانید به تنظیمات بروید</string>

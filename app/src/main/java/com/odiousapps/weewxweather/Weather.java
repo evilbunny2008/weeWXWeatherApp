@@ -332,9 +332,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		checkFields(tv1, bits[56]);
 		checkFields(tv2, bits[54] + " " + bits[55]);
 
-		String currentSpacerLeft = "<span class='currentSpacer left'></span>";
-		String currentSpacerRight = "<span class='currentSpacer right'></span>";
-
 		final StringBuilder sb = new StringBuilder();
 		sb.append("\n<div class='todayCurrent'>\n");
 		sb.append("\t<div class='topRowCurrent'>\n");
@@ -353,37 +350,79 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		sb.append("\t\t\t<div class='dataCellCurrent'>")
+		sb.append("\t\t\t<div class='dataCellCurrent left'>")
 				.append(weeWXAppCommon.fiToSVG("flaticon-windy"))
-				.append(currentSpacerLeft)
-				.append(bits[25]).append(bits[61]).append("</div>\n");
+				.append("</div>\n")
+				.append(weeWXApp.currentSpacer)
+				.append("\t\t\t<div class='dataCellCurrent left'>")
+				.append(bits[25])
+				.append(bits[61])
+				.append("</div>\n");
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(bits[37]).append(bits[63])
-				.append(currentSpacerRight)
-				.append(weeWXAppCommon.cssToSVG("wi-barometer", null))
+				.append(bits[37])
+				.append(bits[63])
+				.append("</div>\n")
+				.append(weeWXApp.currentSpacer)
+				.append("\t\t\t<div class='dataCellCurrent right'>")
+				.append(weeWXAppCommon.cssToSVG("wi-barometer"))
 				.append("</div>\n");
 
-		sb.append("\t\t</div>\n");
+		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
-		sb.append("\t\t<div class='dataRowCurrent'>\n");
+		weeWXAppCommon.LogMessage("bits[25]: " + bits[25], true);
+		weeWXAppCommon.LogMessage("bits[26]: " + bits[26], true);
+		weeWXAppCommon.LogMessage("bits[27]: " + bits[27], true);
+		weeWXAppCommon.LogMessage("bits[28]: " + bits[28], true);
+		weeWXAppCommon.LogMessage("bits[29]: " + bits[29], true);
+		weeWXAppCommon.LogMessage("bits[30]: " + bits[30], true);
 
-		String dir = bits[30].toLowerCase(Locale.ENGLISH);
-		if(dir.equals("n/a"))
-			dir = "n";
+		if(bits[27] != null)
+			bits[27] = bits[27].strip();
+		else
+			bits[27] = "";
 
-		sb.append("\t\t\t<div class='dataCellCurrent'>")
-				.append(weeWXAppCommon.cssToSVG("wi-wind-deg", "wi-towards-" + dir))
-				.append(currentSpacerLeft)
-				.append(bits[30]).append("</div>\n");
-		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(bits[6]).append(bits[64])
-				.append(currentSpacerRight)
-				.append(weeWXAppCommon.cssToSVG("wi-humidity", null))
+		if(bits[30] != null)
+			bits[30] = bits[30].strip();
+		else
+			bits[30] = "N/A";
+
+		String dir = bits[30];
+		int direction = weeWXAppCommon.getDirection(dir);
+
+		try
+		{
+			if(!bits[27].isBlank() && !bits[27].equals("N/A"))
+				direction = (int)Float.parseFloat(bits[27]);
+		} catch(NumberFormatException ignored) {}
+
+		weeWXAppCommon.LogMessage("bits.length: " + bits.length, true);
+
+		if(bits.length >= 293)
+		{
+			weeWXAppCommon.LogMessage("bits[292]: " + bits[292], true);
+			weeWXAppCommon.LogMessage("bits[293]: " + bits[293], true);
+			dir = bits[293];
+			direction = (int)Float.parseFloat(bits[292]);
+		}
+
+		sb.append("\t\t\t<div class='dataCellCurrent left'>")
+				.append(weeWXAppCommon.cssToSVG("wi-wind-deg", direction))
+				.append("</div>\n")
+				.append(weeWXApp.currentSpacer)
+				.append("\t\t\t<div class='dataCellCurrent left'>")
+				.append(dir)
 				.append("</div>\n");
 
-		sb.append("\t\t</div>\n");
+		sb.append("\t\t\t<div class='dataCellCurrent right'>")
+				.append(bits[6])
+				.append(bits[64])
+				.append("</div>\n")
+				.append(weeWXApp.currentSpacer)
+				.append("\t\t\t<div class='dataCellCurrent right'>")
+				.append(weeWXAppCommon.cssToSVG("wi-humidity"))
+				.append("</div>\n");
 
-		sb.append("\t\t<div class='dataRowCurrent'>\n");
+		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
 		String rain = bits[20] + bits[62] + " " +
 		              weeWXApp.getAndroidString(R.string.since) + " mn";
@@ -391,17 +430,23 @@ public class Weather extends Fragment implements View.OnClickListener
 			rain = bits[158] + bits[62] + " " +
 			       weeWXApp.getAndroidString(R.string.since) + " " + bits[160];
 
-		sb.append("\t\t\t<div class='dataCellCurrent'>")
-				.append(weeWXAppCommon.cssToSVG("wi-umbrella", null))
-				.append(currentSpacerLeft)
-				.append(rain).append("</div>\n");
+		sb.append("\t\t\t<div class='dataCellCurrent left'>")
+				.append(weeWXAppCommon.cssToSVG("wi-umbrella"))
+				.append("</div>\n")
+				.append(weeWXApp.currentSpacer)
+				.append("\t\t\t<div class='dataCellCurrent left'>")
+				.append(rain)
+				.append("</div>\n");
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(bits[12]).append(bits[60])
-				.append(currentSpacerRight)
-				.append(weeWXAppCommon.cssToSVG("wi-raindrop", null))
-				.append("</div>");
+				.append(bits[12])
+				.append(bits[60])
+				.append("</div>\n")
+				.append(weeWXApp.currentSpacer)
+				.append("\t\t\t<div class='dataCellCurrent right'>")
+				.append(weeWXAppCommon.cssToSVG("wi-raindrop"))
+				.append("</div>\n");
 
-		sb.append("\n\t\t</div>\n");
+		sb.append("\t\t</div>\n");
 
 		bits[43] = bits[43].strip();
 
@@ -415,101 +460,124 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(!bits[43].isBlank() || !bits[45].isBlank())
 		{
-			sb.append("\t\t<div class='dataRowCurrent'>\n")
-					.append("\t\t\t<div class='dataCellCurrent'>\n\t\t\t\t");
+			sb.append("\t\t<div class='dataRowCurrent'>\n");
 
 			if(!bits[45].isBlank())
 			{
-				sb.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"))
-						.append(currentSpacerLeft)
+				sb.append("\t\t\t<div class='dataCellCurrent left'>")
+						.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"))
+						.append("</div>\n")
+						.append(weeWXApp.currentSpacer)
+						.append("\t\t\t<div class='dataCellCurrent left'>")
 						.append(bits[45])
-						.append(" UVI");
+						.append(" UVI</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
-
-			sb.append("\n\t\t\t</div>\n\t\t\t<div class='dataCellCurrent right'>\n\t\t\t\t");
 
 			if(!bits[43].isBlank())
 			{
-				sb.append(bits[43]).append(" W/m²")
-						.append(currentSpacerRight)
-						.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"));
+				sb.append("\t\t\t<div class='dataCellCurrent right'>")
+						.append(bits[43]).append(" W/m²</div>\n")
+						.append(weeWXApp.currentSpacer)
+						.append("\t\t\t<div class='dataCellCurrent right'>")
+						.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"))
+						.append("</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
 
-			sb.append("\n\t\t\t</div>\n\t\t</div>\n");
+			sb.append("\t\t</div>\n");
 		}
 
 		if(bits.length > 166 && (!bits[161].isBlank() || !bits[166].isBlank()) &&
 		   weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
 		{
-			sb.append("\t\t<div class='dataRowCurrent'>\n")
-					.append("\t\t\t<div class='dataCellCurrent'>");
+			sb.append("\t\t<div class='dataRowCurrent'>\n");
 
 			if(!bits[161].isBlank())
 			{
-				sb.append(weeWXAppCommon.fiToSVG("flaticon-home-page"))
-						.append(currentSpacerLeft)
+				sb.append("\t\t\t<div class='dataCellCurrent left'>")
+						.append(weeWXAppCommon.fiToSVG("flaticon-home-page"))
+						.append("</div>\n")
+						.append(weeWXApp.currentSpacer)
+						.append("\t\t\t<div class='dataCellCurrent left'>")
 						.append(bits[161])
-						.append(bits[60]);
+						.append(bits[60])
+						.append("</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
-
-			sb.append("</div>\n\t\t\t<div class='dataCellCurrent right'>");
 
 			if(!bits[166].isBlank())
 			{
-				sb.append(bits[166])
+				sb.append("\t\t\t<div class='dataCellCurrent right'>")
+						.append(bits[166])
 						.append(bits[64])
-						.append(currentSpacerRight)
-						.append(weeWXAppCommon.fiToSVG("flaticon-home-page"));
+						.append("</div>\n")
+						.append(weeWXApp.currentSpacer)
+						.append("\t\t\t<div class='dataCellCurrent right'>")
+						.append(weeWXAppCommon.fiToSVG("flaticon-home-page"))
+						.append("</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
 
-			sb.append("</div>\n\t\t</div>\n");
+			sb.append("\t\t</div>\n");
 		}
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		sb.append("\t\t\t<div class='dataCellCurrent'>")
-				.append(weeWXAppCommon.cssToSVG("wi-sunrise", null))
-				.append(currentSpacerLeft)
-				.append(bits[57]).append("</div>\n");
-		sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[58])
-				.append(currentSpacerRight)
-				.append(weeWXAppCommon.cssToSVG("wi-sunset", null))
+		sb.append("\t\t\t<div class='dataCellCurrent left'>")
+				.append(weeWXAppCommon.cssToSVG("wi-sunrise"))
+				.append("</div>\n")
+				.append(weeWXApp.currentSpacer)
+				.append("\t\t\t<div class='dataCellCurrent left'>")
+				.append(bits[57])
 				.append("</div>\n");
 
-		sb.append("\t\t</div>\n");
+		sb.append("\t\t\t<div class='dataCellCurrent right'>")
+				.append(bits[58])
+				.append("</div>\n")
+				.append(weeWXApp.currentSpacer)
+				.append("\t\t\t<div class='dataCellCurrent right'>")
+				.append(weeWXAppCommon.cssToSVG("wi-sunset"))
+				.append("</div>\n");
 
-		sb.append("\t\t<div class='dataRowCurrent'>\n");
+		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
 		boolean next_moon = weeWXAppCommon.GetBoolPref("next_moon", weeWXApp.next_moon_default);
 
 		if(next_moon && bits.length >= 292 && !bits[209].isBlank() && !bits[291].isBlank())
 		{
-			sb.append("\t\t\t<div class='dataCellCurrent'>")
-					.append(weeWXAppCommon.cssToSVG("wi-moonrise", null))
-					.append(currentSpacerLeft)
+			sb.append("\t\t\t<div class='dataCellCurrent left'>")
+					.append(weeWXAppCommon.cssToSVG("wi-moonrise"))
+					.append("</div>\n")
+					.append(weeWXApp.currentSpacer)
+					.append("\t\t\t<div class='dataCellCurrent left'>")
 					.append(weeWXAppCommon.doMoon(bits[290]))
 					.append("</div>\n");
 			sb.append("\t\t\t<div class='dataCellCurrent right'>")
 					.append(weeWXAppCommon.doMoon(bits[291]))
-					.append(currentSpacerRight)
-					.append(weeWXAppCommon.cssToSVG("wi-moonset", null))
+					.append("</div>\n")
+					.append(weeWXApp.currentSpacer)
+					.append("\t\t\t<div class='dataCellCurrent right'>")
+					.append(weeWXAppCommon.cssToSVG("wi-moonset"))
 					.append("</div>\n");
 		} else {
-			sb.append("\t\t\t<div class='dataCellCurrent'>")
-					.append(weeWXAppCommon.cssToSVG("wi-moonrise", null))
-					.append(currentSpacerLeft)
-					.append(bits[47]).append("</div>\n");
-			sb.append("\t\t\t<div class='dataCellCurrent right'>").append(bits[48])
-					.append(currentSpacerRight)
-					.append(weeWXAppCommon.cssToSVG("wi-moonset", null))
+			sb.append("\t\t\t<div class='dataCellCurrent left'>")
+					.append(weeWXAppCommon.cssToSVG("wi-moonrise"))
+					.append("</div>\n")
+					.append(weeWXApp.currentSpacer)
+					.append("\t\t\t<div class='dataCellCurrent left'>")
+					.append(bits[47])
+					.append("</div>\n");
+			sb.append("\t\t\t<div class='dataCellCurrent right'>")
+					.append(bits[48])
+					.append("</div>\n")
+					.append(weeWXApp.currentSpacer)
+					.append("\t\t\t<div class='dataCellCurrent right'>")
+					.append(weeWXAppCommon.cssToSVG("wi-moonset"))
 					.append("</div>\n");
 		}
 

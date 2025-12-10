@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">நீங்கள் சமர்ப்பித்த URL ஐ நாங்கள் சரிபார்க்கும் வரை காத்திருக்கவும்</string>
     <string name="remove_all_data">எல்லா தரவையும் அகற்ற விரும்புகிறீர்களா?</string>
     <string name="no">இல்லை</string>
-    <string name="icons_failed_to_download">ஐகான்களை முழுமையாகப் பதிவிறக்க முடியவில்லை, நீங்கள் மீண்டும் முயற்சிக்க வேண்டும்</string>
-    <string name="wasnt_able_to_detect_icons">முன்னறிவிப்பு ஐகான்களைக் கண்டறிய முடியவில்லை</string>
-    <string name="ill_fix_and_try_again">நான் அதை சரி செய்துவிட்டு மீண்டும் முயற்சிக்கிறேன்</string>
+	<string name="ill_fix_and_try_again">நான் அதை சரி செய்துவிட்டு மீண்டும் முயற்சிக்கிறேன்</string>
     <string name="error_occurred_while_attempting_to_update">பயன்பாட்டைப் புதுப்பிக்க முயற்சிக்கும்போது பிழை ஏற்பட்டது</string>
     <string name="unknown_error_occurred">அறியப்படாத பிழை ஏற்பட்டது</string>
     <string name="wasnt_able_to_connect_custom_url">குறிப்பிடப்பட்ட தனிப்பயன் URL இலிருந்து இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="wasnt_able_to_connect_webcam_url">உங்கள் சர்வரிலிருந்து வெப்கேம் படத்தை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="wasnt_able_to_connect_forecast">முன்னறிவிப்பை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
-    <string name="wasnt_able_to_detect_forecast_icons">முன்னறிவிப்பு ஐகான்களைக் கண்டறிய முடியவில்லை</string>
-    <string name="forecast_type_needs_icons">முன்னறிவிப்பு வகை \'%1$s\' இல் ஐகான்கள் இருக்க வேண்டும், ஐகான்களைப் பயன்படுத்துவதற்கு மாற்றி மீண்டும் முயற்சிக்கவும்</string>
-    <string name="forecast_type_is_invalid">முன்னறிவிப்பு வகை \'%1$s\' தவறானது, உங்கள் அமைப்புக் கோப்பைச் சரிபார்த்து மீண்டும் முயலவும்</string>
+	<string name="forecast_type_is_invalid">முன்னறிவிப்பு வகை \'%1$s\' தவறானது, உங்கள் அமைப்புக் கோப்பைச் சரிபார்த்து மீண்டும் முயலவும்</string>
     <string name="wasnt_able_to_connect_radar_image">இணையத்திலிருந்து ரேடார்= படத்தை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="wasnt_able_to_connect_data_txt">உங்கள் சர்வரிலிருந்து data.txtஐ இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="data_url_was_blank">தரவு URL காலியாக இருந்தது</string>
@@ -68,8 +64,7 @@
     <string name="match_app">பொருத்த ஆப்</string>
     <string name="custom_setting">விருப்ப நிறங்கள்</string>
     <string name="app_theme">பயன்பாட்டு தீம்</string>
-    <string name="use_icons">ஐகான்களைக் காட்டு</string>
-    <string name="today">இன்று</string>
+	<string name="today">இன்று</string>
     <string name="last_year_stats">கடந்த ஆண்டு புள்ளிவிவரங்கள்</string>
     <string name="last_month_stats">கடந்த மாத புள்ளிவிவரங்கள்</string>
     <string name="radar_url_not_set">ரேடார் URL அமைக்கப்படவில்லை. மாற்றுவதற்கு நீங்கள் அமைப்புகளுக்குச் செல்லலாம்</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">אנא המתן בזמן שאנו מאמתים את כתובת האתר ששלחת</string>
     <string name="remove_all_data">האם אתה בטוח שברצונך להסיר את כל הנתונים?</string>
     <string name="no">לֹא</string>
-    <string name="icons_failed_to_download">ההורדה המלאה של אייקונים נכשלה, תצטרך לנסות שוב</string>
-    <string name="wasnt_able_to_detect_icons">לא הצליח לזהות סמלי תחזית</string>
-    <string name="ill_fix_and_try_again">אני אתקן ואנסה שוב</string>
+	<string name="ill_fix_and_try_again">אני אתקן ואנסה שוב</string>
     <string name="error_occurred_while_attempting_to_update">אירעה שגיאה בעת ניסיון לעדכן את השימוש</string>
     <string name="unknown_error_occurred">אירעה שגיאה לא ידועה</string>
     <string name="wasnt_able_to_connect_custom_url">לא הייתה אפשרות להתחבר או להוריד מכתובת האתר המותאמת אישית שצוינה</string>
     <string name="wasnt_able_to_connect_webcam_url">לא הצליח להתחבר או להוריד תמונת מצלמת אינטרנט מהשרת שלך</string>
     <string name="wasnt_able_to_connect_forecast">לא הצליח להתחבר או להוריד את התחזית</string>
-    <string name="wasnt_able_to_detect_forecast_icons">לא הצליח לזהות סמלי תחזית</string>
-    <string name="forecast_type_needs_icons">סוג התחזית \'%1$s\' צריך להיות עם סמלים זמינים, אנא עבור לשימוש בסמלים ונסה שוב</string>
-    <string name="forecast_type_is_invalid">סוג התחזית \'%1$s\' אינו חוקי, בדוק את קובץ ההגדרות ונסה שוב</string>
+	<string name="forecast_type_is_invalid">סוג התחזית \'%1$s\' אינו חוקי, בדוק את קובץ ההגדרות ונסה שוב</string>
     <string name="wasnt_able_to_connect_radar_image">לא הצליח להתחבר או להוריד תמונת radar= מהאינטרנט</string>
     <string name="wasnt_able_to_connect_data_txt">לא הצליח להתחבר או להוריד את data.txt מהשרת שלך</string>
     <string name="data_url_was_blank">כתובת האתר של הנתונים הייתה ריקה</string>
@@ -68,8 +64,7 @@
     <string name="match_app">אפליקציית התאמה</string>
     <string name="custom_setting">צבעים מותאמים אישית</string>
     <string name="app_theme">ערכת נושא לאפליקציה</string>
-    <string name="use_icons">הצג אייקונים</string>
-    <string name="today">הַיוֹם</string>
+	<string name="today">הַיוֹם</string>
     <string name="last_year_stats">סטטיסטיקה של שנה שעברה</string>
     <string name="last_month_stats">סטטיסטיקה של החודש שעבר</string>
     <string name="radar_url_not_set">כתובת ה-Radar לא מוגדרת. אתה יכול לעבור להגדרות כדי לשנות</string>

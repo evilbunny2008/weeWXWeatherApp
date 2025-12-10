@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Attendi mentre verifichiamo l\'URL che hai inviato</string>
     <string name="remove_all_data">Sei sicuro di voler rimuovere tutti i dati?</string>
     <string name="no">NO</string>
-    <string name="icons_failed_to_download">Impossibile scaricare completamente le icone. Dovrai riprovare</string>
-    <string name="wasnt_able_to_detect_icons">Impossibile rilevare le icone delle previsioni</string>
-    <string name="ill_fix_and_try_again">Risolverò il problema e riproverò</string>
+	<string name="ill_fix_and_try_again">Risolverò il problema e riproverò</string>
     <string name="error_occurred_while_attempting_to_update">Si è verificato un errore durante il tentativo di aggiornare l\'utilizzo</string>
     <string name="unknown_error_occurred">Si è verificato un errore sconosciuto</string>
     <string name="wasnt_able_to_connect_custom_url">Impossibile connettersi o scaricare dall\'URL personalizzato specificato</string>
     <string name="wasnt_able_to_connect_webcam_url">Impossibile connettersi o scaricare un\'immagine della webcam dal tuo server</string>
     <string name="wasnt_able_to_connect_forecast">Impossibile connettersi o scaricare la previsione</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Impossibile rilevare le icone delle previsioni</string>
-    <string name="forecast_type_needs_icons">Il tipo di previsione \'%1$s\' deve avere icone disponibili. Passa all\'utilizzo delle icone e riprova</string>
-    <string name="forecast_type_is_invalid">Il tipo di previsione \'%1$s\' non è valido, controlla il file delle impostazioni e riprova</string>
+	<string name="forecast_type_is_invalid">Il tipo di previsione \'%1$s\' non è valido, controlla il file delle impostazioni e riprova</string>
     <string name="wasnt_able_to_connect_radar_image">Impossibile connettersi o scaricare radar= image da Internet</string>
     <string name="wasnt_able_to_connect_data_txt">Impossibile connettersi o scaricare data.txt dal tuo server</string>
     <string name="data_url_was_blank">L\'URL dei dati era vuoto</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Applicazione Partita</string>
     <string name="custom_setting">Colori personalizzati</string>
     <string name="app_theme">Tema dell\'app</string>
-    <string name="use_icons">Mostra icone</string>
-    <string name="today">Oggi</string>
+	<string name="today">Oggi</string>
     <string name="last_year_stats">Statistiche dell\'anno scorso</string>
     <string name="last_month_stats">Statistiche del mese scorso</string>
     <string name="radar_url_not_set">URL radar non impostato. Puoi andare alle impostazioni per modificare</string>

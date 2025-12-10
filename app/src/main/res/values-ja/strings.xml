@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">送信された URL を確認するまでお待ちください。</string>
     <string name="remove_all_data">すべてのデータを削除してもよろしいですか?</string>
     <string name="no">いいえ</string>
-    <string name="icons_failed_to_download">アイコンを完全にダウンロードできませんでした。再試行する必要があります。</string>
-    <string name="wasnt_able_to_detect_icons">予測アイコンを検出できませんでした。</string>
-    <string name="ill_fix_and_try_again">修正してやり直します</string>
+	<string name="ill_fix_and_try_again">修正してやり直します</string>
     <string name="error_occurred_while_attempting_to_update">使用状況を更新しようとしたときにエラーが発生しました</string>
     <string name="unknown_error_occurred">不明なエラーが発生しました</string>
     <string name="wasnt_able_to_connect_custom_url">指定されたカスタム URL に接続またはダウンロードできませんでした</string>
     <string name="wasnt_able_to_connect_webcam_url">サーバーに接続できなかったり、サーバーから Web カメラ画像をダウンロードできませんでした</string>
     <string name="wasnt_able_to_connect_forecast">接続できなかった、または予測をダウンロードできませんでした。</string>
-    <string name="wasnt_able_to_detect_forecast_icons">予測アイコンを検出できませんでした。</string>
-    <string name="forecast_type_needs_icons">予測タイプ \'%1$s\' にはアイコンを使用できる必要があります。アイコンの使用に切り替えて、再試行してください。</string>
-    <string name="forecast_type_is_invalid">予測タイプ \'%1$s\' は無効です。設定ファイルを確認して、再試行してください。</string>
+	<string name="forecast_type_is_invalid">予測タイプ \'%1$s\' は無効です。設定ファイルを確認して、再試行してください。</string>
     <string name="wasnt_able_to_connect_radar_image">インターネットに接続できなかった、またはレーダー=画像をインターネットからダウンロードできませんでした</string>
     <string name="wasnt_able_to_connect_data_txt">接続できなかった、またはサーバーから data.txt をダウンロードできませんでした</string>
     <string name="data_url_was_blank">データ URL が空白でした</string>
@@ -68,8 +64,7 @@
     <string name="match_app">マッチングアプリ</string>
     <string name="custom_setting">カスタムカラー</string>
     <string name="app_theme">アプリのテーマ</string>
-    <string name="use_icons">アイコンを表示</string>
-    <string name="today">今日</string>
+	<string name="today">今日</string>
     <string name="last_year_stats">昨年の統計</string>
     <string name="last_month_stats">先月の統計</string>
     <string name="radar_url_not_set">レーダー URL が設定されていません。設定に移動して変更できます。</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">ཁྱོད་ཀྱིས་ཕུལ་མི་ ཡུ་ཨར་ཨེལ་འདི་ བདེན་དཔྱད་འབད་བའི་སྐབས་ བསྒུག་གནང་།</string>
     <string name="remove_all_data">ཁྱོད་ཀྱིས་ གནད་སྡུད་ཆ་མཉམ་རྩ་བསྐྲད་གཏང་ནི་ ངེས་ཏིག་ཨིན་ན?</string>
     <string name="no">མིང༌དགོ༌</string>
-    <string name="icons_failed_to_download">ངོས་དཔར་ཚུ་ ཆ་ཚང་སྦེ་ ཕབ་ལེན་འབད་མ་ཚུགསཔ་ལས་ ཁྱོད་ཀྱིས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད་དགོ།</string>
-    <string name="wasnt_able_to_detect_icons">སྔོན་དཔག་ངོས་དཔར་ཚུ་ ཤེས་རྟོགས་འབད་མ་ཚུགས།</string>
-    <string name="ill_fix_and_try_again">ང་གིས་ བཅོ་ཁ་རྐྱབ་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད་འོང་།</string>
+	<string name="ill_fix_and_try_again">ང་གིས་ བཅོ་ཁ་རྐྱབ་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད་འོང་།</string>
     <string name="error_occurred_while_attempting_to_update">ལག་ལེན་དུས་མཐུན་བཟོ་ནིའི་དཔའ་བཅམ་པའི་སྐབས་ འཛོལ་བ་ཅིག་བྱུང་ཡོདཔ།</string>
     <string name="unknown_error_occurred">མ་ཤེས་པའི་འཛོལ་བ།</string>
     <string name="wasnt_able_to_connect_custom_url">གསལ་བཀོད་འབད་ཡོད་པའི་སྲོལ་སྒྲིག་ཡུ་ཨར་ཨེལ་ལས་ མཐུད་ནི་ཡང་ན་ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="wasnt_able_to_connect_webcam_url">ཁྱོད་རའི་སར་བར་ལས་ ཝེབ་ཀེམ་གྱི་གཟུགས་བརྙན་ཅིག་ མཐུད་མ་ཚུགསཔ་ ཡང་ན་ ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="wasnt_able_to_connect_forecast">མཐུད་མ་ཚུགསཔ་ཡང་ན་ སྔོན་བཤད་ཕབ་ལེན་འབད་མ་ཚུགས།</string>
-    <string name="wasnt_able_to_detect_forecast_icons">སྔོན་དཔག་ངོས་དཔར་ཚུ་ ཤེས་རྟོགས་འབད་མ་ཚུགས།</string>
-    <string name="forecast_type_needs_icons">དབྱེ་བ་ \'%1$s\' གི་ ངོས་དཔར་ཚུ་ འཐོབ་ཚུགསཔ་ཨིན་ ངོས་དཔར་ཚུ་ ལག་ལེན་འཐབ་ནི་ལུ་ སོར་བསྒྱུར་འབད་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད་གནང་།</string>
-    <string name="forecast_type_is_invalid">སྔོན་བཤད་དབྱེ་བ་ \'%1$s\' ནུས་མེད་ཨིན་ ཁྱོད་ཀྱི་སྒྲིག་སྟངས་ཡིག་སྣོད་ཞིབ་དཔྱད་འབད་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད།</string>
+	<string name="forecast_type_is_invalid">སྔོན་བཤད་དབྱེ་བ་ \'%1$s\' ནུས་མེད་ཨིན་ ཁྱོད་ཀྱི་སྒྲིག་སྟངས་ཡིག་སྣོད་ཞིབ་དཔྱད་འབད་ཞིནམ་ལས་ ལོག་སྟེ་འབད་རྩོལ་བསྐྱེད།</string>
     <string name="wasnt_able_to_connect_radar_image">ཡོངས་འབྲེལ་ནང་ལས་ ར་ཌར་= གཟུགས་བརྙན་ཕབ་ལེན་འབད་མ་ཚུགསཔ་ཨིན་ན།</string>
     <string name="wasnt_able_to_connect_data_txt">ཁྱོད་རའི་སར་བར་ལས་ མཐུད་མ་ཚུགསཔ་ཡང་ན་ data.txt ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="data_url_was_blank">གནད་སྡུད་ཡུ་ཨར་ཨེལ་འདི་སྟོངམ་སྦེ་འདུག</string>
@@ -68,8 +64,7 @@
     <string name="match_app">མཐུན་འགྲན་ App</string>
     <string name="custom_setting">སྲོལ་སྒྲིག་ཚོས་གཞི་ཚུ།</string>
     <string name="app_theme">App བརྗོད་གཞི།</string>
-    <string name="use_icons">ངོས་དཔར་སྟོན།</string>
-    <string name="today">ད་རེས</string>
+	<string name="today">ད་རེས</string>
     <string name="last_year_stats">ལོ་མཇུག་གི་རྩིས་དཔྱད།</string>
     <string name="last_month_stats">མཇུག་མཐའི་རྩིས་དཔྱད།</string>
     <string name="radar_url_not_set">རེ་ཌར་ཡུ་ཨར་ཨེལ་འདི་གཞི་སྒྲིག་མ་འབད་བས། ཁྱོད་ཀྱིས་ སྒྲིག་སྟངས་ཚུ་བསྒྱུར་བཅོས་འབད་ནི་ལུ་འགྱོ་ཚུགས།</string>

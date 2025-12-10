@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Agarde mentres verificamos o URL que enviou</string>
     <string name="remove_all_data">Estás seguro de que queres eliminar todos os datos?</string>
     <string name="no">Non</string>
-    <string name="icons_failed_to_download">As iconas non se puideron descargar completamente, terás que tentalo de novo</string>
-    <string name="wasnt_able_to_detect_icons">Non se puido detectar iconas de predición</string>
-    <string name="ill_fix_and_try_again">Resolverei e tentarei de novo</string>
+	<string name="ill_fix_and_try_again">Resolverei e tentarei de novo</string>
     <string name="error_occurred_while_attempting_to_update">Produciuse un erro ao tentar actualizar o uso</string>
     <string name="unknown_error_occurred">Produciuse un erro descoñecido</string>
     <string name="wasnt_able_to_connect_custom_url">Non se puido conectar nin descargar desde o URL personalizado especificado</string>
     <string name="wasnt_able_to_connect_webcam_url">Non se puido conectar nin descargar unha imaxe da cámara web do teu servidor</string>
     <string name="wasnt_able_to_connect_forecast">Non se puido conectar nin descargar a previsión</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Non se puido detectar iconas de predición</string>
-    <string name="forecast_type_needs_icons">O tipo de previsión \'%1$s\' precisa ter iconas dispoñibles. Cambia a usar iconas e téntao de novo</string>
-    <string name="forecast_type_is_invalid">O tipo de previsión \'%1$s\' non é válido. Comproba o teu ficheiro de configuración e téntao de novo</string>
+	<string name="forecast_type_is_invalid">O tipo de previsión \'%1$s\' non é válido. Comproba o teu ficheiro de configuración e téntao de novo</string>
     <string name="wasnt_able_to_connect_radar_image">Non se puido conectar nin descargar a imaxe radar= de Internet</string>
     <string name="wasnt_able_to_connect_data_txt">Non se puido conectar nin descargar data.txt do teu servidor</string>
     <string name="data_url_was_blank">O URL dos datos estaba en branco</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Aplicación Match</string>
     <string name="custom_setting">Cores personalizadas</string>
     <string name="app_theme">Tema da aplicación</string>
-    <string name="use_icons">Mostrar iconas</string>
-    <string name="today">Hoxe</string>
+	<string name="today">Hoxe</string>
     <string name="last_year_stats">Estatística do ano pasado</string>
     <string name="last_month_stats">Estatística do mes pasado</string>
     <string name="radar_url_not_set">O URL do radar non está definido. Podes ir á configuración para cambiar</string>

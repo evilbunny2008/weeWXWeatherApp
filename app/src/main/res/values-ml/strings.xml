@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">നിങ്ങൾ സമർപ്പിച്ച URL ഞങ്ങൾ പരിശോധിക്കുമ്പോൾ ദയവായി കാത്തിരിക്കുക</string>
     <string name="remove_all_data">എല്ലാ ഡാറ്റയും നീക്കം ചെയ്യണമെന്ന് തീർച്ചയാണോ?</string>
     <string name="no">ഇല്ല</string>
-    <string name="icons_failed_to_download">ഐക്കണുകൾ പൂർണ്ണമായി ഡൗൺലോഡ് ചെയ്യാനായില്ല, നിങ്ങൾ വീണ്ടും ശ്രമിക്കേണ്ടതുണ്ട്</string>
-    <string name="wasnt_able_to_detect_icons">പ്രവചന ഐക്കണുകൾ കണ്ടെത്താനായില്ല</string>
-    <string name="ill_fix_and_try_again">ഞാൻ അത് ശരിയാക്കി വീണ്ടും ശ്രമിക്കാം</string>
+	<string name="ill_fix_and_try_again">ഞാൻ അത് ശരിയാക്കി വീണ്ടും ശ്രമിക്കാം</string>
     <string name="error_occurred_while_attempting_to_update">ഉപയോഗം അപ്ഡേറ്റ് ചെയ്യാൻ ശ്രമിക്കുന്നതിനിടെ ഒരു പിശക് സംഭവിച്ചു</string>
     <string name="unknown_error_occurred">അജ്ഞാത പിശക് സംഭവിച്ചു</string>
     <string name="wasnt_able_to_connect_custom_url">വ്യക്തമാക്കിയ ഇഷ്‌ടാനുസൃത URL-ൽ നിന്ന് കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_webcam_url">നിങ്ങളുടെ സെർവറിൽ നിന്ന് ഒരു വെബ്‌ക്യാം ഇമേജ് കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_forecast">പ്രവചനം ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
-    <string name="wasnt_able_to_detect_forecast_icons">പ്രവചന ഐക്കണുകൾ കണ്ടെത്താനായില്ല</string>
-    <string name="forecast_type_needs_icons">\'%1$s\' എന്ന പ്രവചന തരത്തിന് ഐക്കണുകൾ ലഭ്യമാകേണ്ടതുണ്ട്, ദയവായി ഐക്കണുകൾ ഉപയോഗിക്കുന്നതിലേക്ക് മാറി വീണ്ടും ശ്രമിക്കുക</string>
-    <string name="forecast_type_is_invalid">പ്രവചന തരം \'%1$s\' അസാധുവാണ്, നിങ്ങളുടെ ക്രമീകരണ ഫയൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക</string>
+	<string name="forecast_type_is_invalid">പ്രവചന തരം \'%1$s\' അസാധുവാണ്, നിങ്ങളുടെ ക്രമീകരണ ഫയൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക</string>
     <string name="wasnt_able_to_connect_radar_image">ഇൻ്റർനെറ്റിൽ നിന്ന് റഡാർ= ഇമേജ് ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_data_txt">നിങ്ങളുടെ സെർവറിൽ നിന്ന് data.txt കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="data_url_was_blank">ഡാറ്റ URL ശൂന്യമായിരുന്നു</string>
@@ -68,8 +64,7 @@
     <string name="match_app">മാച്ച് ആപ്പ്</string>
     <string name="custom_setting">ഇഷ്ടാനുസൃത നിറങ്ങൾ</string>
     <string name="app_theme">ആപ്പ് തീം</string>
-    <string name="use_icons">ഐക്കണുകൾ കാണിക്കുക</string>
-    <string name="today">ഇന്ന്</string>
+	<string name="today">ഇന്ന്</string>
     <string name="last_year_stats">കഴിഞ്ഞ വർഷത്തെ സ്ഥിതിവിവരക്കണക്കുകൾ</string>
     <string name="last_month_stats">കഴിഞ്ഞ മാസത്തെ സ്ഥിതിവിവരക്കണക്കുകൾ</string>
     <string name="radar_url_not_set">റഡാർ URL സജ്ജീകരിച്ചിട്ടില്ല. മാറ്റാൻ നിങ്ങൾക്ക് ക്രമീകരണങ്ങളിലേക്ക് പോകാം</string>

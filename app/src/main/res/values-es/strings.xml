@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Espere mientras verificamos la URL que envió</string>
     <string name="remove_all_data">¿Estás seguro de que deseas eliminar todos los datos?</string>
     <string name="no">No</string>
-    <string name="icons_failed_to_download">Los íconos no se pudieron descargar completamente; deberá volver a intentarlo</string>
-    <string name="wasnt_able_to_detect_icons">No se pudieron detectar los íconos de pronóstico</string>
-    <string name="ill_fix_and_try_again">Lo arreglaré y lo intentaré de nuevo</string>
+	<string name="ill_fix_and_try_again">Lo arreglaré y lo intentaré de nuevo</string>
     <string name="error_occurred_while_attempting_to_update">Se produjo un error al intentar actualizar el uso</string>
     <string name="unknown_error_occurred">Se produjo un error desconocido</string>
     <string name="wasnt_able_to_connect_custom_url">No pude conectarme ni descargar desde la URL personalizada especificada</string>
     <string name="wasnt_able_to_connect_webcam_url">No pude conectarme ni descargar una imagen de cámara web desde su servidor</string>
     <string name="wasnt_able_to_connect_forecast">No pude conectarme ni descargar el pronóstico</string>
-    <string name="wasnt_able_to_detect_forecast_icons">No se pudieron detectar los íconos de pronóstico</string>
-    <string name="forecast_type_needs_icons">El tipo de pronóstico \'%1$s\' debe tener íconos disponibles. Cambie a usar íconos e inténtelo nuevamente</string>
-    <string name="forecast_type_is_invalid">El tipo de pronóstico \'%1$s\' no es válido. Verifique su archivo de configuración e inténtelo nuevamente</string>
+	<string name="forecast_type_is_invalid">El tipo de pronóstico \'%1$s\' no es válido. Verifique su archivo de configuración e inténtelo nuevamente</string>
     <string name="wasnt_able_to_connect_radar_image">No pude conectarme ni descargar la imagen radar= de Internet</string>
     <string name="wasnt_able_to_connect_data_txt">No pude conectarme ni descargar data.txt desde su servidor</string>
     <string name="data_url_was_blank">La URL de datos estaba en blanco</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Aplicación de partidos</string>
     <string name="custom_setting">Colores personalizados</string>
     <string name="app_theme">Tema de la aplicación</string>
-    <string name="use_icons">Mostrar iconos</string>
-    <string name="today">Hoy</string>
+	<string name="today">Hoy</string>
     <string name="last_year_stats">Estadísticas del año pasado</string>
     <string name="last_month_stats">Estadísticas del último mes</string>
     <string name="radar_url_not_set">URL del radar no configurada. Puedes ir a la configuración para cambiar</string>

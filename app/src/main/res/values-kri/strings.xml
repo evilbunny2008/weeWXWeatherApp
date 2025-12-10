@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Duya wet we wi de chɛk di URL we yu sɛn</string>
     <string name="remove_all_data">Yu shɔ se yu want fɔ pul ɔl di data?</string>
     <string name="no">Nɔ</string>
-    <string name="icons_failed_to_download">Icons failed to download fuli, yu go nid fɔ tray bak</string>
-    <string name="wasnt_able_to_detect_icons">Was no bin ebul fɔ detekt fɔkɔs aykɔn dɛn</string>
-    <string name="ill_fix_and_try_again">A go fiks am ɛn tray bak</string>
+	<string name="ill_fix_and_try_again">A go fiks am ɛn tray bak</string>
     <string name="error_occurred_while_attempting_to_update">Wan mistek bin apin we dɛn bin de tray fɔ ɔpdet usay dɛn de yuz am</string>
     <string name="unknown_error_occurred">mistek we dɛn nɔ no bin apin</string>
     <string name="wasnt_able_to_connect_custom_url">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod frɔm di kɔstɔm URL we dɛn spɛsifa</string>
     <string name="wasnt_able_to_connect_webcam_url">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod wan wɛbkam imej frɔm yu sava</string>
     <string name="wasnt_able_to_connect_forecast">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod di fɔkɔs</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Was no bin ebul fɔ detekt fɔkɔs aykɔn dɛn</string>
-    <string name="forecast_type_needs_icons">Fɔkas tayp \'%1$s\' nid fɔ gɛt aykɔn dɛn we de, duya chenj to yuz aykɔn dɛn ɛn tray bak</string>
-    <string name="forecast_type_is_invalid">Fɔkas Tayp \'%1$sS\' nɔ valid, chɛk yu sɛtin fayl ɛn tray bak</string>
+	<string name="forecast_type_is_invalid">Fɔkas Tayp \'%1$sS\' nɔ valid, chɛk yu sɛtin fayl ɛn tray bak</string>
     <string name="wasnt_able_to_connect_radar_image">No bin ebul fɔ kɔnɛkt ɔ dawnlod reda= imej frɔm di intanɛt</string>
     <string name="wasnt_able_to_connect_data_txt">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod data.txt frɔm yu sava</string>
     <string name="data_url_was_blank">Data URL bin blank</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match app fɔ mek yu mach</string>
     <string name="custom_setting">Kastom Kɔlɔ dɛn</string>
     <string name="app_theme">APP TƐM</string>
-    <string name="use_icons">Sho aykɔn dɛn</string>
-    <string name="today">Tide</string>
+	<string name="today">Tide</string>
     <string name="last_year_stats">Las ia in statystiks</string>
     <string name="last_month_stats">Las mɔnt in statystik dɛn</string>
     <string name="radar_url_not_set">Radar url nɔ sɛt. Yu kin go na sɛtin dɛn fɔ chenj</string>

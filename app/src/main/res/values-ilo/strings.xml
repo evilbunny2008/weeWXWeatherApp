@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Pangngaasiyo ta urayenyo bayat a paneknekanmi ti URL nga insubmitiryo</string>
     <string name="remove_all_data">Siguradoka kadi a kayatmo nga ikkaten amin a datos?</string>
     <string name="no">Saan</string>
-    <string name="icons_failed_to_download">Napaay dagiti icon a naan-anay a mai-download, masapul a padasem manen</string>
-    <string name="wasnt_able_to_detect_icons">saan a nakaduktal kadagiti ikono ti panagpakpakauna</string>
-    <string name="ill_fix_and_try_again">Ilintegko dayta ket padasek manen</string>
+	<string name="ill_fix_and_try_again">Ilintegko dayta ket padasek manen</string>
     <string name="error_occurred_while_attempting_to_update">Napasamak ti biddut bayat ti panangpadas a mangpabaro iti pannakausar</string>
     <string name="unknown_error_occurred">Di ammo a biddut ti napasamak</string>
     <string name="wasnt_able_to_connect_custom_url">saan a nakakonekta wenno mai-download manipud iti custom URL a naikeddeng</string>
     <string name="wasnt_able_to_connect_webcam_url">Saan a nakakonekta wenno naka-download iti webcam image manipud iti server-mo</string>
     <string name="wasnt_able_to_connect_forecast">saan a nakakonekta wenno mai-download ti forecast</string>
-    <string name="wasnt_able_to_detect_forecast_icons">saan a nakaduktal kadagiti ikono ti panagpakpakauna</string>
-    <string name="forecast_type_needs_icons">Ti kita ti panagpakpakauna a \'%1$sS\' ket kasapulan nga addaan kadagiti ikono a magun-od, pangngaasi nga agsubli iti panagusar kadagiti ikono ken padasem manen</string>
-    <string name="forecast_type_is_invalid">Ti kita ti panagpakpakauna a \'%1$sS\' ket saan nga imbalido, kitaen ti file ti Settings-mo ken padasem manen</string>
+	<string name="forecast_type_is_invalid">Ti kita ti panagpakpakauna a \'%1$sS\' ket saan nga imbalido, kitaen ti file ti Settings-mo ken padasem manen</string>
     <string name="wasnt_able_to_connect_radar_image">Saan a nakakonekta wenno naka-download iti radar= image manipud iti Internet</string>
     <string name="wasnt_able_to_connect_data_txt">saan a nakakonekta wenno maka-download iti data.txt manipud iti server-mo</string>
     <string name="data_url_was_blank">Ti URL ti datos ket blangko</string>
@@ -68,8 +64,7 @@
     <string name="match_app">App ti Panagtunos</string>
     <string name="custom_setting">Dagiti kostumbre a kolor</string>
     <string name="app_theme">Tema ti App</string>
-    <string name="use_icons">Ipakita dagiti ikono</string>
-    <string name="today">Ita nga aldaw</string>
+	<string name="today">Ita nga aldaw</string>
     <string name="last_year_stats">Dagiti estadistika idi napan a tawen</string>
     <string name="last_month_stats">Dagiti estadistika idi napan a bulan</string>
     <string name="radar_url_not_set">URL ti radar saan a naikabil. Mabalinmo ti mapan iti Settings tapno agbaliw</string>

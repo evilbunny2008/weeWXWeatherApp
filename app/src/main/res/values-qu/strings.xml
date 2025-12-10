@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Ama hina kaspa, suyay URL nisqa apachisqayki chiqaqchakuchkaptinchik</string>
     <string name="remove_all_data">¿Segurochu kanki llapa willakuykunata hurquyta munanki?</string>
     <string name="no">Manam</string>
-    <string name="icons_failed_to_download">Iconokuna mana hunt\'asqata uraykachiyta atirqankuchu, wakmanta ruwayta munanki</string>
-    <string name="wasnt_able_to_detect_icons">mana pronóstico iconokunata riqsiyta atirqanchu</string>
-    <string name="ill_fix_and_try_again">Chayta allichaspa hukmanta kallpachakusaq</string>
+	<string name="ill_fix_and_try_again">Chayta allichaspa hukmanta kallpachakusaq</string>
     <string name="error_occurred_while_attempting_to_update">Huk pantaymi karqan, llamk\'achiyta musuqchayta munachkaspa</string>
     <string name="unknown_error_occurred">Mana riqsisqa pantaymi rikurirqa</string>
     <string name="wasnt_able_to_connect_custom_url">mana atirqanchu tinkiyta utaq uraykachiyta sapanchasqa URL nisqamanta</string>
     <string name="wasnt_able_to_connect_webcam_url">mana atirqanchu huk webcam siq\'ita sirwiqniykimanta tinkiyta utaq uraykachiyta</string>
     <string name="wasnt_able_to_connect_forecast">mana atirqanchu chay pronóstico nisqa t\'inkiyta nitaq uraykachiytapas</string>
-    <string name="wasnt_able_to_detect_forecast_icons">mana pronóstico iconokunata riqsiyta atirqanchu</string>
-    <string name="forecast_type_needs_icons">Tipo de pronóstico \'%1$s\' iconokunayuq kanan tiyan, ama hina kaspa iconokuna llamk\'achiyta tikray chaymanta wakmanta ruway</string>
-    <string name="forecast_type_is_invalid">Tipo de pronóstico \'%1$s\' mana allinchu, qhaway ajustes willañiqiykita chaymanta wakmanta ruway</string>
+	<string name="forecast_type_is_invalid">Tipo de pronóstico \'%1$s\' mana allinchu, qhaway ajustes willañiqiykita chaymanta wakmanta ruway</string>
     <string name="wasnt_able_to_connect_radar_image">mana atirqanchu t\'inkiyta utaq uraykachiyta radar= siq\'ita internetmanta</string>
     <string name="wasnt_able_to_connect_data_txt">mana atirqanchu data.txt , sirwiqniykimanta t\'inkiyta utaq uraykachiyta</string>
     <string name="data_url_was_blank">Willay URL ch\'usaqmi karqan</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Sapanchasqa llimp\'ikuna</string>
     <string name="app_theme">App Tema</string>
-    <string name="use_icons">Iconokunata rikuchiy</string>
-    <string name="today">Kunan</string>
+	<string name="today">Kunan</string>
     <string name="last_year_stats">Qayna wata estadísticas</string>
     <string name="last_month_stats">Qayna killa Estadísticas</string>
     <string name="radar_url_not_set">Radar url mana churasqachu. cambianaykipaqmi churanakunaman riyta atinki</string>

@@ -1,10 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
-<path d="M11.83,16.77c0,0.19,0.06,0.35,0.19,0.48c0.13,0.13,0.29,0.19,0.47,0.19h2.87c0.19,0,0.35-0.06,0.47-0.19
-	c0.13-0.13,0.19-0.29,0.19-0.48c0-0.19-0.06-0.34-0.19-0.46c-0.13-0.12-0.29-0.18-0.47-0.18h-1.24L18,12.24
-	c0.12-0.14,0.18-0.3,0.18-0.5c0-0.18-0.06-0.33-0.18-0.46c-0.12-0.12-0.29-0.18-0.5-0.18c-0.2,0-0.36,0.06-0.48,0.18l-3.86,3.87
-	v-1.25c0-0.19-0.06-0.35-0.19-0.48c-0.13-0.13-0.29-0.19-0.48-0.19c-0.19,0-0.35,0.07-0.47,0.2c-0.13,0.13-0.19,0.29-0.19,0.48
-	V16.77z"/>
-</svg>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns2="http://www.inkscape.org/namespaces/inkscape" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 6.3499999 6.3400002" xml:space="preserve" ns1:docname="wi-direction-down-left.svg" width="512" height="512"><ns0:defs id="defs1" /><ns1:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#111111" borderopacity="1" ns2:showpageshadow="0" ns2:pageopacity="0" ns2:pagecheckerboard="1" ns2:deskcolor="#d1d1d1" />
+<ns0:path d="M 0,5.67 C 0,5.86 0.06,6.02 0.19,6.15 0.32,6.28 0.48,6.34 0.66,6.34 H 3.53 C 3.72,6.34 3.88,6.28 4,6.15 4.13,6.02 4.19,5.86 4.19,5.67 4.19,5.48 4.13,5.33 4,5.21 3.87,5.09 3.71,5.03 3.53,5.03 H 2.29 L 6.17,1.14 C 6.29,1 6.35,0.84 6.35,0.64 6.35,0.46 6.29,0.31 6.17,0.18 6.05,0.06 5.88,0 5.67,0 5.47,0 5.31,0.06 5.19,0.18 L 1.33,4.05 V 2.8 C 1.33,2.61 1.27,2.45 1.14,2.32 1.01,2.19 0.85,2.13 0.66,2.13 0.47,2.13 0.31,2.2 0.19,2.33 0.06,2.46 0,2.62 0,2.81 Z" id="path1" />
+</ns0:svg>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">छिं पेश यानादीगु यूआरएलयात प्रमाणित यायेगु झ्वलय् पियादिसँ ।</string>
     <string name="remove_all_data">छं पक्का खः ला कि छं दक्वं डाटा लिकाये मास्ति वः ला?</string>
     <string name="no">मज्यु</string>
-    <string name="icons_failed_to_download">आइकनं पूवंक डाउनलोड यायेमफुत, छिं हानं कुतः यायेमाली ।</string>
-    <string name="wasnt_able_to_detect_icons">पूर्वानुमान आइकन लुइके मफुत ।</string>
-    <string name="ill_fix_and_try_again">जिं थ्वयात फिक्स याये अले हानं कुतः याये ।</string>
+	<string name="ill_fix_and_try_again">जिं थ्वयात फिक्स याये अले हानं कुतः याये ।</string>
     <string name="error_occurred_while_attempting_to_update">छ्यलाबुला अपडेट यायेगु कुतः यायेबलय् छगू त्रुटि जुल ।</string>
     <string name="unknown_error_occurred">मसिउगु त्रुटि जुल</string>
     <string name="wasnt_able_to_connect_custom_url">कस्टम यूआरएलं न्ह्यथना त:गु कस्टम यूआरएलपाखें स्वायेत बाय् डाउनलोड याये मफुत ।</string>
     <string name="wasnt_able_to_connect_webcam_url">छिगु सर्भरं वेबक्यामया किपा स्वाये मफुत बाय् डाउनलोड याये मफुत ।</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमानयात स्वायेत बाय् डाउनलोड याये मफुत ।</string>
-    <string name="wasnt_able_to_detect_forecast_icons">पूर्वानुमान आइकन लुइके मफुत ।</string>
-    <string name="forecast_type_needs_icons">पूर्वानुमान टाइपया \'%1$s\' माः आइकन उपलब्ध दु, कृपया आइकन छ्यलेगु व हाकनं कुतः यानादिसँ ।</string>
-    <string name="forecast_type_is_invalid">पूर्वानुमान ताजिया \'%1$s\' अमान्य जुइ, छिगु सेटिङ फाइल जाँच यानादिसँ अले हानं कुतः यानादिसँ ।</string>
+	<string name="forecast_type_is_invalid">पूर्वानुमान ताजिया \'%1$s\' अमान्य जुइ, छिगु सेटिङ फाइल जाँच यानादिसँ अले हानं कुतः यानादिसँ ।</string>
     <string name="wasnt_able_to_connect_radar_image">इन्टरनेटं राडार= किपा स्वाये बाय् डाउनलोड याये मफुत ।</string>
     <string name="wasnt_able_to_connect_data_txt">छिगु सर्भरं डाटालिसे स्वाये बाय् डाउनलोड याये मफुत ।</string>
     <string name="data_url_was_blank">डाटा यूआरएल खाली जुल</string>
@@ -68,8 +64,7 @@
     <string name="match_app">म्याच एप</string>
     <string name="custom_setting">कस्टम कलर</string>
     <string name="app_theme">आय् पं</string>
-    <string name="use_icons">आइकन क्यनादिसँ</string>
-    <string name="today">थौं</string>
+	<string name="today">थौं</string>
     <string name="last_year_stats">वंगु दँया तथ्यांक</string>
     <string name="last_month_stats">लिपांगु महिनाया तथ्यांक</string>
     <string name="radar_url_not_set">राडार यूआरएल सेट मजू । छिं हिलेत सेटिङ्गय् वनेफइ ।</string>

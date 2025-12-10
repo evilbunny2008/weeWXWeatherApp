@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Lūdzu, uzgaidiet, kamēr mēs pārbaudīsim jūsu iesniegto URL</string>
     <string name="remove_all_data">Vai tiešām vēlaties noņemt visus datus?</string>
     <string name="no">Nē</string>
-    <string name="icons_failed_to_download">Ikonas neizdevās pilnībā lejupielādēt, jums būs jāmēģina vēlreiz</string>
-    <string name="wasnt_able_to_detect_icons">Nevarēja noteikt prognožu ikonas</string>
-    <string name="ill_fix_and_try_again">Es to izlabošu un mēģināšu vēlreiz</string>
+	<string name="ill_fix_and_try_again">Es to izlabošu un mēģināšu vēlreiz</string>
     <string name="error_occurred_while_attempting_to_update">Mēģinot atjaunināt lietojumu, radās kļūda</string>
     <string name="unknown_error_occurred">Radās nezināma kļūda</string>
     <string name="wasnt_able_to_connect_custom_url">Nevarēja izveidot savienojumu vai lejupielādēt no norādītā pielāgotā URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Nevarēja izveidot savienojumu vai lejupielādēt tīmekļa kameras attēlu no jūsu servera</string>
     <string name="wasnt_able_to_connect_forecast">Nevarēja izveidot savienojumu vai lejupielādēt prognozi</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Nevarēja noteikt prognožu ikonas</string>
-    <string name="forecast_type_needs_icons">Prognozes veidam \'%1$s\' ir jābūt pieejamām ikonām. Lūdzu, pārejiet uz ikonu izmantošanu un mēģiniet vēlreiz</string>
-    <string name="forecast_type_is_invalid">Prognozes veids \'%1$s\' nav derīgs, pārbaudiet iestatījumu failu un mēģiniet vēlreiz</string>
+	<string name="forecast_type_is_invalid">Prognozes veids \'%1$s\' nav derīgs, pārbaudiet iestatījumu failu un mēģiniet vēlreiz</string>
     <string name="wasnt_able_to_connect_radar_image">Nevarēja izveidot savienojumu vai lejupielādēt radar= attēlu no interneta</string>
     <string name="wasnt_able_to_connect_data_txt">Nevarēja izveidot savienojumu vai lejupielādēt failu data.txt no jūsu servera</string>
     <string name="data_url_was_blank">Datu URL lauks bija tukšs</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Pielāgotas krāsas</string>
     <string name="app_theme">Lietotnes motīvs</string>
-    <string name="use_icons">Rādīt ikonas</string>
-    <string name="today">Šodien</string>
+	<string name="today">Šodien</string>
     <string name="last_year_stats">Pagājušā gada statistika</string>
     <string name="last_month_stats">Pagājušā mēneša statistika</string>
     <string name="radar_url_not_set">Radara URL nav iestatīts. Varat doties uz iestatījumiem, lai veiktu izmaiņas</string>

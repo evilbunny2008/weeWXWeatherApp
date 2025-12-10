@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Эсир ярса панă URL-адреса тĕрĕсленĕ вăхăтра кĕтмелле</string>
     <string name="remove_all_data">Эсир пур даннăйсене те кăларасшăн-и?</string>
     <string name="no">Çук</string>
-    <string name="icons_failed_to_download">Иконăсен туллин скачать тума май килмен, сирĕн тепĕр хут ĕçлемелле пулать</string>
-    <string name="wasnt_able_to_detect_icons">Прогноз значокĕсене тупса палăртма пултарайман</string>
-    <string name="ill_fix_and_try_again">Эпĕ ăна тÿрлетĕп тата тепĕр хут тăрăшăп</string>
+	<string name="ill_fix_and_try_again">Эпĕ ăна тÿрлетĕп тата тепĕр хут тăрăшăп</string>
     <string name="error_occurred_while_attempting_to_update">Усă курма çĕнетме хăтланнă чухне йăнăш пулнă</string>
     <string name="unknown_error_occurred">Паллă мар йăнăш пулнă</string>
     <string name="wasnt_able_to_connect_custom_url">Ятарлă URL-адресран çыхăнтарма е скачать тума пултарайман</string>
     <string name="wasnt_able_to_connect_webcam_url">Сирĕн сервертан веб-камера ÿкерчĕкне çыхăнтарма е скачать тума пултарайман</string>
     <string name="wasnt_able_to_connect_forecast">Прогноза çыхăнтарма е скачать тума пултарайман</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Прогноз значокĕсене тупса палăртма пултарайман</string>
-    <string name="forecast_type_needs_icons">Прогноз типĕ \'%1$s\' кирлĕ значоксем пулмалла, значоксемпе усă курса тепĕр хут хăтланса пăхăр</string>
-    <string name="forecast_type_is_invalid">Прогноз типĕ \'%1$s\' тĕрĕс мар, настройкăсен файла тĕрĕслесе пăхăр та тепĕр хут хăтланса пăхăр</string>
+	<string name="forecast_type_is_invalid">Прогноз типĕ \'%1$s\' тĕрĕс мар, настройкăсен файла тĕрĕслесе пăхăр та тепĕр хут хăтланса пăхăр</string>
     <string name="wasnt_able_to_connect_radar_image">Интернетран радар= радар= ӳкерчӗке ҫыхӑнтарма е скачать тума пултарайман</string>
     <string name="wasnt_able_to_connect_data_txt">Хăвăрăн сервертан даннăйсене çыхăнтарма е скачать тума пултарайман</string>
     <string name="data_url_was_blank">Даннăйсен URL-адресĕ пушă пулнă</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Матч приложенийĕ</string>
     <string name="custom_setting">Ятарлă тĕссем</string>
     <string name="app_theme">Приложени теми</string>
-    <string name="use_icons">Иконсене кăтартăр</string>
-    <string name="today">Паян</string>
+	<string name="today">Паян</string>
     <string name="last_year_stats">Иртнĕ çулхи статистика</string>
     <string name="last_month_stats">Юлашки уйăх статистики</string>
     <string name="radar_url_not_set">Радар URL-адрес мар. Улшăнма настройкăсене кайма пулать</string>

@@ -46,17 +46,13 @@
     <string name="please_wait_verify_url">Ejowo e je ki n n ṣe ati rẹ ṣe ṣe ṣe ṣe ṣẹ́ ṣẹ̀</string>
     <string name="remove_all_data">Mbele aɗa sikki aɗa yiɗi ittude denndaangal dokke?</string>
     <string name="no">Kay</string>
-    <string name="icons_failed_to_download">Icons waawaano ƴettude haa timma, maa aɗa foti retry</string>
-    <string name="wasnt_able_to_detect_icons">Waawaa yiytude ikoneeji teskaaɗi</string>
-    <string name="ill_fix_and_try_again">Mi Fix It mi etoo kadi</string>
+	<string name="ill_fix_and_try_again">Mi Fix It mi etoo kadi</string>
     <string name="error_occurred_while_attempting_to_update">Juumre waɗi ko e etaade hesɗitinde kuutoragol</string>
     <string name="unknown_error_occurred">Juumre nde anndaaka waɗii</string>
     <string name="wasnt_able_to_connect_custom_url">Waawaa jokkondirde walla ƴettude e URL keeriiɗo toɗɗaaɗo</string>
     <string name="wasnt_able_to_connect_webcam_url">Waawaa jokkondirde walla ƴettude natal webcam e serveer maa</string>
     <string name="wasnt_able_to_connect_forecast">Waawaa jokkondirde walla ƴettude teskagol ngol</string>
-    <string name="wasnt_able_to_detect_forecast_icons">Waawaa yiytude ikoneeji teskaaɗi</string>
-    <string name="forecast_type_needs_icons">Ina haani sifaa \'%1$s\' ina foti jogaade ikonaaji gonɗi, Eɗen ñaagi maa waylu huutoraade ikoneeji e ƴeewde kadi</string>
-    <string name="forecast_type_is_invalid">Nokkuure nde fotaani wonde \'%1$s\' ina moƴƴi, ƴeewto fiilde dottaaɗe maa, ƴeewto-ɗaa kadi</string>
+	<string name="forecast_type_is_invalid">Nokkuure nde fotaani wonde \'%1$s\' ina moƴƴi, ƴeewto fiilde dottaaɗe maa, ƴeewto-ɗaa kadi</string>
     <string name="wasnt_able_to_connect_radar_image">Wasaade jokkondirde walla ƴettude radar= natal e nder internet</string>
     <string name="wasnt_able_to_connect_data_txt">Waawaa jokkondirde walla ƴettude dokke.txt e serveer maa</string>
     <string name="data_url_was_blank">URL data wonnoo ko blank</string>
@@ -68,8 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Nokkuuji kuutorteeɗi</string>
     <string name="app_theme">App Theme</string>
-    <string name="use_icons">Hollu Ikons</string>
-    <string name="today">Hande</string>
+	<string name="today">Hande</string>
     <string name="last_year_stats">Limlebbi hitaande yawtunde ndee</string>
     <string name="last_month_stats">Limlebbi lewru cakkitiiɗi ɗii</string>
     <string name="radar_url_not_set">Radar URL settaaka. Aɗa waawi yahde e settings ngam waylude</string>
