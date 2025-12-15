@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Лутфан мунтазир шавед, агар мо URL-ро пешниҳод мекунем</string>
     <string name="remove_all_data">Оё мутмаинед, ки шумо ҳама маълумотро нест кардан мехоҳед?</string>
     <string name="no">Нест</string>
-	<string name="ill_fix_and_try_again">Ман онро ислоҳ мекунам ва бори дигар кӯшиш мекунам</string>
+    <string name="ill_fix_and_try_again">Ман онро ислоҳ мекунам ва бори дигар кӯшиш мекунам</string>
     <string name="error_occurred_while_attempting_to_update">Ҳангоми кӯшиши истифодаи истифодабарӣ хато рӯй дод</string>
     <string name="unknown_error_occurred">Хатогии номаълум рух дод</string>
     <string name="wasnt_able_to_connect_custom_url">Наметавонад аз URL-и фармоишӣ пайваст ё зеркашӣ кунад</string>
     <string name="wasnt_able_to_connect_webcam_url">Натавонист, ки тасвири веб-камераро аз сервери худ зеркашӣ кунад ё зеркашӣ кунад</string>
     <string name="wasnt_able_to_connect_forecast">Наметавонад пешгӯӣ ё зеркашӣ кунад</string>
-	<string name="forecast_type_is_invalid">Намуди дурнамои \'%1$s\' нодуруст аст, файли танзимоти худро санҷед ва бори дигар кӯшиш кунед</string>
+    <string name="forecast_type_is_invalid">Намуди дурнамои \'%1$s\' нодуруст аст, файли танзимоти худро санҷед ва бори дигар кӯшиш кунед</string>
     <string name="wasnt_able_to_connect_radar_image">Натавонистанд Радар = Тасвирро аз Интернет</string>
     <string name="wasnt_able_to_connect_data_txt">Наметавонад васл ё зеркашии маълумотро аз сервери худ пайваст кунад ё зеркашӣ кунад</string>
     <string name="data_url_was_blank">URL маълумот холӣ буд</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Барномаи мувофиқ</string>
     <string name="custom_setting">Рангҳои фармоишӣ</string>
     <string name="app_theme">Мавзӯъи барнома</string>
-	<string name="today">Имрӯз</string>
+    <string name="today">Имрӯз</string>
     <string name="last_year_stats">Омори соли гузашта</string>
     <string name="last_month_stats">Омори моҳи гузашта</string>
     <string name="radar_url_not_set">URL Radar насб нашудааст. Шумо метавонед ба Танзимот муроҷиат кунед</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL-и фармоишӣ муқаррар карда намешавад ё холӣ аст. Шумо метавонед ба Танзимот ворид шавед, то URL-и фармоишӣ</string>
     <string name="next_moon">Муваффақиятҳои моҳи оянда?</string>
     <string name="update_while_running">Навсозӣ ҳангоми кор</string>
+    <string name="force_dark_mode">Қувваи торик</string>
 </resources>

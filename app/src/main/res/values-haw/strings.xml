@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">E kali e kali i ka wā e hōʻoia ai mākou i ka URL āu i hāʻawi ai</string>
     <string name="remove_all_data">ʻIke pahaʻoe e haʻalele i nāʻikepili āpau?</string>
     <string name="no">ʻAʻole</string>
-	<string name="ill_fix_and_try_again">E hoʻoponopono wau iā ia a ho\'āʻo hou</string>
+    <string name="ill_fix_and_try_again">E hoʻoponopono wau iā ia a ho\'āʻo hou</string>
     <string name="error_occurred_while_attempting_to_update">Ua hala kekahi hewa i ka wā e ho\'āʻo ana e hoʻoponopono i ka hoʻohanaʻana</string>
     <string name="unknown_error_occurred">Ua loaʻaʻole ka hewaʻikeʻole</string>
     <string name="wasnt_able_to_connect_custom_url">ʻAʻole i hiki ke hoʻopili a hoʻoihoʻia paha mai ka URL maʻamau i kuhikuhiʻia</string>
     <string name="wasnt_able_to_connect_webcam_url">ʻAʻole hiki iā ia ke hoʻopili a hoʻoiho i kahi kiʻi pūnaewele pūnaewele mai kāu kikowaena</string>
     <string name="wasnt_able_to_connect_forecast">ʻAʻole hiki ke hoʻopili a hoʻoiho i ka wānana</string>
-	<string name="forecast_type_is_invalid">ʻAʻole pololei ka\'ōlelo huna \'%1$s\' iʻole, e nānā i kāu faila hoʻonohonoho a ho\'āʻo hou</string>
+    <string name="forecast_type_is_invalid">ʻAʻole pololei ka\'ōlelo huna \'%1$s\' iʻole, e nānā i kāu faila hoʻonohonoho a ho\'āʻo hou</string>
     <string name="wasnt_able_to_connect_radar_image">ʻAʻole i hiki ke hoʻopili a hoʻoiho i ka radar = kiʻi mai ka pūnaewele</string>
     <string name="wasnt_able_to_connect_data_txt">ʻAʻole i hiki ke hoʻopili a hoʻoiho i ka\'ikepili.Txt mai kāu kikowaena</string>
     <string name="data_url_was_blank">ʻAʻole paʻa kaʻikepili o URL</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match app</string>
     <string name="custom_setting">Kino kala</string>
     <string name="app_theme">KAMEHI</string>
-	<string name="today">I kēia mau lā</string>
+    <string name="today">I kēia mau lā</string>
     <string name="last_year_stats">ʻO nā helu kālā i hala</string>
     <string name="last_month_stats">ʻO nā helu helu i hala</string>
     <string name="radar_url_not_set">ʻAʻole hoʻonohonohoʻo Radar url. Hiki iāʻoe ke hele i nā hoʻonohonoho e hoʻololi</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">ʻAʻole hoʻonohonohoʻiaʻo URL URL, a iʻole he palaka. Hiki iāʻoe ke hele i nā hoʻonohonoho e hoʻohui i kahi URL maʻamau</string>
     <string name="next_moon">Nā Kūlana Kūlana Ord?</string>
     <string name="update_while_running">Hoʻouka i ka holoʻana</string>
+    <string name="force_dark_mode">Hoʻoikaika i keʻanoʻeleʻele</string>
 </resources>

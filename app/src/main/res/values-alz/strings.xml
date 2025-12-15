@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Wakwayu nia ibed ikur saa ma wubiketho URL m\'ioro iri</string>
     <string name="remove_all_data">Be ing\'eyo ni idwaro ni ibed gi data duto?</string>
     <string name="no">Ungo</string>
-	<string name="ill_fix_and_try_again">I\'bi Flik It man Tom</string>
+    <string name="ill_fix_and_try_again">I\'bi Flik It man Tom</string>
     <string name="error_occurred_while_attempting_to_update">Error moko ne otimore ka otemo loso</string>
     <string name="unknown_error_occurred">Ne ok ong\'ere ma ne okwongo notimore notimore notimore notimore notimore notimore notimore notimore nonenore ni notimore nonenore ni ne otimore</string>
     <string name="wasnt_able_to_connect_custom_url">Ne ok nyal tudruok kata ng\'ado bura kuom URL ma ne ochung\'ne</string>
     <string name="wasnt_able_to_connect_webcam_url">Ne ok nyal tudruok kata keto picha mar webcam kuom server mari</string>
     <string name="wasnt_able_to_connect_forecast">Ne ok nyal tudruok kata ng\'ado bura</string>
-	<string name="forecast_type_is_invalid">Forecast \'%1$s\' utie lembe ma pire tek, nen file peri mi settings man tem kendo</string>
+    <string name="forecast_type_is_invalid">Forecast \'%1$s\' utie lembe ma pire tek, nen file peri mi settings man tem kendo</string>
     <string name="wasnt_able_to_connect_radar_image">Ne ok nyal tudruok kata ng\'ado rad= cal ma wuok e intanet</string>
     <string name="wasnt_able_to_connect_data_txt">Ne ok nyal tudruok kata download data.txt kuom server mari</string>
     <string name="data_url_was_blank">Data U URuda ma ng\'ato nyalo ng\'eyo maber</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Jam tic peri mir AP application peri</string>
     <string name="custom_setting">Custristo</string>
     <string name="app_theme">neno wi lembe</string>
-	<string name="today">Tin</string>
+    <string name="today">Tin</string>
     <string name="last_year_stats">I oro m\'ukadhu, Stastic mi oro m\'ukadhu</string>
     <string name="last_month_stats">I ng\'eye, edok etimo tic mi lembanyong\'a i adhura mi Month</string>
     <string name="radar_url_not_set">Radar URL ma juketho. Icopo cidho i settings pi niloko</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Custom URL epe, nyo epe. Icopo cidho i settings mi medo UL</string>
     <string name="next_moon">I ng\'eye, lembe m\'utimere?</string>
     <string name="update_while_running">Ubimo ngo tic mi ng\'wec</string>
+    <string name="force_dark_mode">Ka ng\'ato otimo kamano, obiro bedo gi geno mar timo kamano</string>
 </resources>

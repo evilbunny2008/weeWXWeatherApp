@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Poczekaj, aż zweryfikujemy przesłany adres URL</string>
     <string name="remove_all_data">Czy na pewno chcesz usunąć wszystkie dane?</string>
     <string name="no">NIE</string>
-	<string name="ill_fix_and_try_again">Naprawię to i spróbuję ponownie</string>
+    <string name="ill_fix_and_try_again">Naprawię to i spróbuję ponownie</string>
     <string name="error_occurred_while_attempting_to_update">Wystąpił błąd podczas próby aktualizacji użycia</string>
     <string name="unknown_error_occurred">Wystąpił nieznany błąd</string>
     <string name="wasnt_able_to_connect_custom_url">Nie udało się połączyć lub pobrać z określonego niestandardowego adresu URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Nie udało się połączyć lub pobrać obrazu z kamery internetowej z Twojego serwera</string>
     <string name="wasnt_able_to_connect_forecast">Nie udało się połączyć ani pobrać prognozy</string>
-	<string name="forecast_type_is_invalid">Typ prognozy \'%1$s\' jest nieprawidłowy. Sprawdź plik ustawień i spróbuj ponownie</string>
+    <string name="forecast_type_is_invalid">Typ prognozy \'%1$s\' jest nieprawidłowy. Sprawdź plik ustawień i spróbuj ponownie</string>
     <string name="wasnt_able_to_connect_radar_image">Nie udało się połączyć ani pobrać obrazu radar= z Internetu</string>
     <string name="wasnt_able_to_connect_data_txt">Nie udało się połączyć lub pobrać pliku data.txt z Twojego serwera</string>
     <string name="data_url_was_blank">Adres URL danych był pusty</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Dopasuj aplikację</string>
     <string name="custom_setting">Niestandardowe kolory</string>
     <string name="app_theme">Motyw aplikacji</string>
-	<string name="today">Dzisiaj</string>
+    <string name="today">Dzisiaj</string>
     <string name="last_year_stats">Statystyki za ubiegły rok</string>
     <string name="last_month_stats">Statystyki z ostatniego miesiąca</string>
     <string name="radar_url_not_set">Nie ustawiono adresu URL radaru. Możesz przejść do ustawień, aby je zmienić</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Niestandardowy adres URL nie jest ustawiony lub jest pusty. Możesz przejść do ustawień, aby dodać niestandardowy adres URL</string>
     <string name="next_moon">Następne wydarzenia na Księżycu?</string>
     <string name="update_while_running">Aktualizuj podczas biegu</string>
+    <string name="force_dark_mode">Wymuś tryb ciemny</string>
 </resources>

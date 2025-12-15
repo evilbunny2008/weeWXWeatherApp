@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Thov tos thaum peb txheeb xyuas qhov URL uas koj xa mus</string>
     <string name="remove_all_data">Koj puas paub tseeb tias koj xav tshem tag nrho cov ntaub ntawv?</string>
     <string name="no">Tsis muaj</string>
-	<string name="ill_fix_and_try_again">Kuv mam kho nws thiab sim dua</string>
+    <string name="ill_fix_and_try_again">Kuv mam kho nws thiab sim dua</string>
     <string name="error_occurred_while_attempting_to_update">Ib qho yuam kev tshwm sim thaum sim hloov kho kev siv</string>
     <string name="unknown_error_occurred">Tsis paub ua yuam kev tshwm sim</string>
     <string name="wasnt_able_to_connect_custom_url">Tsis muaj peev xwm txuas lossis rub tawm los ntawm kev cai URL teev</string>
     <string name="wasnt_able_to_connect_webcam_url">Tsis muaj peev xwm txuas lossis rub tawm lub webcam duab los ntawm koj lub server</string>
     <string name="wasnt_able_to_connect_forecast">Tsis tau txuas lossis rub tawm kev twv</string>
-	<string name="forecast_type_is_invalid">Huab cua hom \'%1$s\' tsis raug, xyuas koj cov ntaub ntawv chaw thiab sim dua</string>
+    <string name="forecast_type_is_invalid">Huab cua hom \'%1$s\' tsis raug, xyuas koj cov ntaub ntawv chaw thiab sim dua</string>
     <string name="wasnt_able_to_connect_radar_image">Tsis muaj peev xwm txuas lossis rub tawm radar = duab los ntawm is taws nem</string>
     <string name="wasnt_able_to_connect_data_txt">Tsis muaj peev xwm txuas lossis rub tawm data.txt los ntawm koj lub server</string>
     <string name="data_url_was_blank">Cov ntaub ntawv URL yog dawb paug</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match app</string>
     <string name="custom_setting">Kev Cai Xim</string>
     <string name="app_theme">App ntsiab</string>
-	<string name="today">Niaj hnub no</string>
+    <string name="today">Niaj hnub no</string>
     <string name="last_year_stats">Xyoo tas los txheeb cais</string>
     <string name="last_month_stats">Lub hli dhau los txheeb cais</string>
     <string name="radar_url_not_set">Radar url tsis teeb tsa. Koj tuaj yeem mus rau cov chaw pauv</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Kev cai URL tsis yog teeb tsa, lossis yog seem. Koj tuaj yeem mus rau hauv cov chaw teeb tsa los ntxiv qhov kev cai URL</string>
     <string name="next_moon">Lub hli tom ntej no?</string>
     <string name="update_while_running">Hloov kho thaum khiav</string>
+    <string name="force_dark_mode">Yuam kev tsaus nti</string>
 </resources>

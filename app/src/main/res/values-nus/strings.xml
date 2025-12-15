@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Ɣän göörä ɣöö bä ŋot kɛ mi̱ guic nɛy URL min ci̱ ji̱ la̱r lär</string>
     <string name="remove_all_data">Kä ji̱n go̱o̱ri ɣöö bi data ni̱ diaal woc?</string>
     <string name="no">Ɣe̱c</string>
-	<string name="ill_fix_and_try_again">Ɣän bä Fix I kɛnɛ Try kulɛ la̱t</string>
+    <string name="ill_fix_and_try_again">Ɣän bä Fix I kɛnɛ Try kulɛ la̱t</string>
     <string name="error_occurred_while_attempting_to_update">Ɛn riɛk mi̱ ci̱ tuɔɔk mi̱ caa ɣɔ̱n i̱ ba la̱t kɛ ɣöö ba la̱tdɛ nyɔk kɛ lätni̱</string>
     <string name="unknown_error_occurred">/Thiɛlɛ mi̱ cua ŋa̱c</string>
     <string name="wasnt_able_to_connect_custom_url">/Cɛ rɔ luäŋ kɛ mat kiɛ ba ka̱m raar kä URL ëë ca la̱th lät</string>
     <string name="wasnt_able_to_connect_webcam_url">/Cɛ rɔ luäŋ kɛ mat kiɛ deri thurɛ min ca gɔ̱r kä webcam ka̱m raar kä thärberdu</string>
     <string name="wasnt_able_to_connect_forecast">/Cɛ luäŋ kɛ mat kiɛ bɛ min ca gɔ̱r piny kulɛ ka̱m raar</string>
-	<string name="forecast_type_is_invalid">Forecast \'%1$s\' ɛ mi ci jiäk, guic ca̱p in ca la̱th lät kä nyɔk kɛ ɣɔ̱n</string>
+    <string name="forecast_type_is_invalid">Forecast \'%1$s\' ɛ mi ci jiäk, guic ca̱p in ca la̱th lät kä nyɔk kɛ ɣɔ̱n</string>
     <string name="wasnt_able_to_connect_radar_image">/Cɛ rɔ luäŋ kɛ mat kiɛ deri radar= thurɛ min bä kä intɛrnɛt</string>
     <string name="wasnt_able_to_connect_data_txt">/Cɛ rɔ luäŋ kɛ mat kiɛ deri data.txt ka̱m raar kä thärbädu</string>
     <string name="data_url_was_blank">Data URL ɛ baŋ</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Math App</string>
     <string name="custom_setting">Käthtɔm Kɔŋä</string>
     <string name="app_theme">App</string>
-	<string name="today">Ɛnwa̱lɛ</string>
+    <string name="today">Ɛnwa̱lɛ</string>
     <string name="last_year_stats">I̱thtati̱thtikni̱ tëë ci̱ wɔ̱</string>
     <string name="last_month_stats">Month\'ä Month\'ä I̱thtati̱thtikni̱</string>
     <string name="radar_url_not_set">Radard URL /cɛ te thi̱n. Ji̱n deri jɛ la̱th lät kɛ ɣöö biɛ gɛr</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Käthtɔm URL /cɛ te thi̱n, kiɛ /thiɛlɛ jɛ luɔt. Ji̱n deri wä rɛy lätni kɛ ɣöö bi URL min ca rialikä mat thi̱n</string>
     <string name="next_moon">Kä tin bi ben kɛ kɔr kä tin bëë?</string>
     <string name="update_while_running">Updatdat gua̱a̱th in riŋni</string>
+    <string name="force_dark_mode">Cua Force Dark Mode</string>
 </resources>

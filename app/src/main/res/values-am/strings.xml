@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">ያስገቡትን ዩአርኤንኤን እያናረጋግጥን ሳለን እባክዎ ይጠብቁ</string>
     <string name="remove_all_data">እርግጠኛ ነዎት ሁሉንም ውሂብ ለማስወገድ ይፈልጋሉ?</string>
     <string name="no">አይ</string>
-	<string name="ill_fix_and_try_again">አስተካክለዋለሁ እና እንደገና እሞክራለሁ</string>
+    <string name="ill_fix_and_try_again">አስተካክለዋለሁ እና እንደገና እሞክራለሁ</string>
     <string name="error_occurred_while_attempting_to_update">አጠቃቀምን ለማዘመን በመሞከር ላይ ስህተት ተከስቷል</string>
     <string name="unknown_error_occurred">ያልታወቀ ስህተት ተከስቷል</string>
     <string name="wasnt_able_to_connect_custom_url">ከተጠቀሰው ብጁ ዩ.አር.ኤል. ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_connect_webcam_url">የድር ካሜራዎን ከአገልጋይዎ ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_connect_forecast">ትንበያውን ማገናኘት ወይም ማውረድ አልተቻለም</string>
-	<string name="forecast_type_is_invalid">ትንበያ አይነት \'%1$sልክ ያልሆነ ነው, የቅንብሮች ፋይልዎን ይፈትሹ እና እንደገና ይሞክሩ</string>
+    <string name="forecast_type_is_invalid">ትንበያ አይነት \'%1$sልክ ያልሆነ ነው, የቅንብሮች ፋይልዎን ይፈትሹ እና እንደገና ይሞክሩ</string>
     <string name="wasnt_able_to_connect_radar_image">የራአር = ምስል ከበይነመረቡ ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_connect_data_txt">ከአገልጋይዎ ጋር የመረጃ ማገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="data_url_was_blank">የውሂብ ዩ አር ኤል ባዶ ነበር</string>
@@ -64,7 +64,7 @@
     <string name="match_app">አወዳድሮ መተግበሪያ</string>
     <string name="custom_setting">ብጁ ቀለሞች</string>
     <string name="app_theme">የመተግበሪያ ገጽታ</string>
-	<string name="today">ዛሬ</string>
+    <string name="today">ዛሬ</string>
     <string name="last_year_stats">ያለፈው ዓመት ስታቲስቲክስ</string>
     <string name="last_month_stats">ያለፈው ወር ስታቲስቲክስ</string>
     <string name="radar_url_not_set">ራዳር ዩ አር ኤል አልተዋቀረም. ወደ ቅንብሮች ወደ ለውጦች መሄድ ይችላሉ</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">ብጁ ዩ.አር.ኤል. አልተዋቀረም ወይም ባዶ ነው. ብጁ ዩ.አር.ኤል. ለማከል ወደ ቅንብሮች መሄድ ይችላሉ</string>
     <string name="next_moon">የሚቀጥለው ጨረቃ ክስተቶች?</string>
     <string name="update_while_running">በሚሮጡበት ጊዜ ዝመና</string>
+    <string name="force_dark_mode">ጨካኝ ሁነታን ያስገድዱ</string>
 </resources>

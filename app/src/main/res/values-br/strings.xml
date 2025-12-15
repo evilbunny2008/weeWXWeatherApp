@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Gortozit pa vo gwiriet an URL hoc\'h eus kinniget</string>
     <string name="remove_all_data">Sur oc\'h e fell deoc\'h lemel an holl roadennoù?</string>
     <string name="no">Ket</string>
-	<string name="ill_fix_and_try_again">Me \'ra Fix it et Clasc a-nevez</string>
+    <string name="ill_fix_and_try_again">Me \'ra Fix it et Clasc a-nevez</string>
     <string name="error_occurred_while_attempting_to_update">Ur fazi a c\'hoarvezas pa oa o klask hizivaat an implij</string>
     <string name="unknown_error_occurred">Fazi dianav a zo c\'hoarvezet</string>
     <string name="wasnt_able_to_connect_custom_url">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ diwar an URL personelaet spisaet</string>
     <string name="wasnt_able_to_connect_webcam_url">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ ur skeudenn webcam diwar ho servijer</string>
     <string name="wasnt_able_to_connect_forecast">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ ar rakweled</string>
-	<string name="forecast_type_is_invalid">Didalvoudek eo ar seurt rakwelet \'%1$s\', gwiriit ho restr arventennoù ha klaskit en-dro</string>
+    <string name="forecast_type_is_invalid">Didalvoudek eo ar seurt rakwelet \'%1$s\', gwiriit ho restr arventennoù ha klaskit en-dro</string>
     <string name="wasnt_able_to_connect_radar_image">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ skeudenn diwar internet</string>
     <string name="wasnt_able_to_connect_data_txt">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ roadennoù.txt diwar ho servijer</string>
     <string name="data_url_was_blank">Roadennoù URL war goullo</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match app</string>
     <string name="custom_setting">Livioù personelaet</string>
     <string name="app_theme">Tem an app</string>
-	<string name="today">Hiziv</string>
+    <string name="today">Hiziv</string>
     <string name="last_year_stats">Stadegoù ar bloaz paseet</string>
     <string name="last_month_stats">Stadegoù miz tremenet</string>
     <string name="radar_url_not_set">Radar URL n\'eo ket bet lakaet. Gallout a rit mont d\'an arventennoù evit cheñch</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">N\'eo ket lakaet URL personelaet, pe goullo eo. Gallout a rit mont e-barzh arventennoù evit ouzhpennañ un URL personelaet</string>
     <string name="next_moon">Darvoudoù al loar da heul?</string>
     <string name="update_while_running">Hizivaat e-pad ma vez o vont en-dro</string>
+    <string name="force_dark_mode">Mod teñval an nerzh</string>
 </resources>

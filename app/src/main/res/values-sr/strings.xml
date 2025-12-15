@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Сачекајте док верификујемо УРЛ који сте послали</string>
     <string name="remove_all_data">Да ли сте сигурни да желите да уклоните све податке?</string>
     <string name="no">бр</string>
-	<string name="ill_fix_and_try_again">Поправићу то и покушати поново</string>
+    <string name="ill_fix_and_try_again">Поправићу то и покушати поново</string>
     <string name="error_occurred_while_attempting_to_update">Дошло је до грешке при покушају ажурирања употребе</string>
     <string name="unknown_error_occurred">Дошло је до непознате грешке</string>
     <string name="wasnt_able_to_connect_custom_url">Нисам могао да се повежем или преузмем са наведеног прилагођеног УРЛ-а</string>
     <string name="wasnt_able_to_connect_webcam_url">Нисам могао да се повежем или преузмем слику веб камере са вашег сервера</string>
     <string name="wasnt_able_to_connect_forecast">Нисам могао да се повежем или преузмем прогнозу</string>
-	<string name="forecast_type_is_invalid">Тип предвиђања \'%1$s\' је неважећи, проверите датотеку са подешавањима и покушајте поново</string>
+    <string name="forecast_type_is_invalid">Тип предвиђања \'%1$s\' је неважећи, проверите датотеку са подешавањима и покушајте поново</string>
     <string name="wasnt_able_to_connect_radar_image">Нисам могао да се повежем или преузмем радар= слику са интернета</string>
     <string name="wasnt_able_to_connect_data_txt">Нисам могао да се повежем или преузмем дата.ткт са вашег сервера</string>
     <string name="data_url_was_blank">УРЛ података је био празан</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Матцх Апп</string>
     <string name="custom_setting">Цустом Цолорс</string>
     <string name="app_theme">Апп Тхеме</string>
-	<string name="today">данас</string>
+    <string name="today">данас</string>
     <string name="last_year_stats">Прошлогодишња статистика</string>
     <string name="last_month_stats">Статистика прошлог месеца</string>
     <string name="radar_url_not_set">УРЛ радара није подешен. Можете да одете у подешавања да промените</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Прилагођени УРЛ није подешен или је празан. Можете да одете у подешавања да додате прилагођени УРЛ</string>
     <string name="next_moon">Догађаји следећег месеца?</string>
     <string name="update_while_running">Ажурирајте док радите</string>
+    <string name="force_dark_mode">Форце Дарк Моде</string>
 </resources>

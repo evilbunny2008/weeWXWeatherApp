@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Te rughiv tut, azhukaras, kana ame verifikulisaras o URL so dine avri</string>
     <string name="remove_all_data">Si tu sigurno ke kames te lel pe sa e data?</string>
     <string name="no">Na</string>
-	<string name="ill_fix_and_try_again">Me ka lav les</string>
+    <string name="ill_fix_and_try_again">Me ka lav les</string>
     <string name="error_occurred_while_attempting_to_update">Jekh greško kerdas pes kana zumavel pes te aktualizirinel pes o utilisaripe</string>
     <string name="unknown_error_occurred">Na džanelas pes o greś;</string>
     <string name="wasnt_able_to_connect_custom_url">Nashti te konektirinel pes vaj te tele lel katar o URL personalizirime</string>
     <string name="wasnt_able_to_connect_webcam_url">Nashti te konektirinelpe vaj te lav tele jekh webcam image katar o server</string>
     <string name="wasnt_able_to_connect_forecast">Nashti te konektirinelpe vaj te lav tele e prognoza</string>
-	<string name="forecast_type_is_invalid">O prognozako tipo \'%1$s\' si bivalido, kontrolisaren tumare settings file thaj zumaven pale</string>
+    <string name="forecast_type_is_invalid">O prognozako tipo \'%1$s\' si bivalido, kontrolisaren tumare settings file thaj zumaven pale</string>
     <string name="wasnt_able_to_connect_radar_image">Nashti te konektirinel pes vaj te lav radar= image katar o interneto</string>
     <string name="wasnt_able_to_connect_data_txt">Nashti te konektirinel vaj te lel pe data.txt katar tumaro server</string>
     <string name="data_url_was_blank">Data URL sas blanko</string>
@@ -64,7 +64,7 @@
     <string name="match_app">App App</string>
     <string name="custom_setting">Kolovură and-o śero</string>
     <string name="app_theme">App tema</string>
-	<string name="today">Avdĭves</string>
+    <string name="today">Avdĭves</string>
     <string name="last_year_stats">O paluno bersh si e Statistika</string>
     <string name="last_month_stats">E statistike e palune ćhonesko</string>
     <string name="radar_url_not_set">Radar URL na si phanglo. Tu shaj zhas ande settingura te paruves</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL pe personali nu este, sau este blanco. Tu shaj zhas ande settingura te shaj shuves jekh personalizovano URL</string>
     <string name="next_moon">Palal e eventura e lunaqe?</string>
     <string name="update_while_running">Aktualizacia kana phiren</string>
+    <string name="force_dark_mode">Modo Mode</string>
 </resources>

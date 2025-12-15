@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Ишәышьҭыз URL ҳгәаҭо аамҭазы шәазыԥшыз</string>
     <string name="remove_all_data">Адыррақәа зегьы раԥыхра шуҭаху агәра ганы уҟоума?</string>
     <string name="no">Мамоу</string>
-	<string name="ill_fix_and_try_again">Сара Исзыҟасҵоит, насгьы даҽазнык сҽазысшәоит</string>
+    <string name="ill_fix_and_try_again">Сара Исзыҟасҵоит, насгьы даҽазнык сҽазысшәоит</string>
     <string name="error_occurred_while_attempting_to_update">Ахархәара арҿыцра аҽазышәараан агха ҟалеит</string>
     <string name="unknown_error_occurred">Идырым агха ҟалеит</string>
     <string name="wasnt_able_to_connect_custom_url">Иарбоу URL аҟынтәи аидҳәалара ма ахәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_webcam_url">Усервер аҟынтәи ауеб-камера асахьа аидҳәалара ма ахәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_forecast">Аԥхьарбара аидҳәалара ма ахәыҵахра алшара амамызт</string>
-	<string name="forecast_type_is_invalid">Аԥхьагәаҭара \'%1$s\' иашам, шәеиқәыршәарақәа рфаил гәаҭаны, даҽазнык шәҽазышәшәа</string>
+    <string name="forecast_type_is_invalid">Аԥхьагәаҭара \'%1$s\' иашам, шәеиқәыршәарақәа рфаил гәаҭаны, даҽазнык шәҽазышәшәа</string>
     <string name="wasnt_able_to_connect_radar_image">Интернет аҟынтәи радар=исахьа аҿаҳәара ма ахәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_data_txt">Усервер аҟынтәи data.txt еидызкыло ма ихәыҵаҳәҳәар алымшеит</string>
     <string name="data_url_was_blank">Адыррақәа URL ҭацәын</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Апрограмма аиқәшәара</string>
     <string name="custom_setting">Аԥштәқәа</string>
     <string name="app_theme">Апрограмма атема</string>
-	<string name="today">Иахьа</string>
+    <string name="today">Иахьа</string>
     <string name="last_year_stats">Иҳаҩсыз ашықәс астатистика</string>
     <string name="last_month_stats">Иҳаҩсыз амза астатистика</string>
     <string name="radar_url_not_set">Радар URL еиқәыршәам. Аԥсахразы архиарақәа рахь шәцар шәылшоит</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Ахатә URL еиқәыршәаӡам, мамзаргьы иҭацәуп. Уара архиарақәа рахь унеир улшоит еиқәыршәоу URL ацҵаразы</string>
     <string name="next_moon">Анаҩстәи амза ахҭысқәа?</string>
     <string name="update_while_running">Арҿыцра аҩраан</string>
+    <string name="force_dark_mode">Амчхаратә режим амч</string>
 </resources>

@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">သင်တင်သွင်းထားသော URL ကိုကျွန်ုပ်တို့အတည်ပြုနေစဉ်ခဏစောင့်ပါ။</string>
     <string name="remove_all_data">ဒေတာအားလုံးကိုဖယ်ရှားချင်တာသေချာလား။</string>
     <string name="no">မဟုတ်</string>
-	<string name="ill_fix_and_try_again">ငါက fix နှင့်ထပ်ကြိုးစားပါလိမ့်မယ်</string>
+    <string name="ill_fix_and_try_again">ငါက fix နှင့်ထပ်ကြိုးစားပါလိမ့်မယ်</string>
     <string name="error_occurred_while_attempting_to_update">အသုံးပြုမှုကိုမွမ်းမံရန်ကြိုးစားစဉ်အမှားတစ်ခုဖြစ်ပွားခဲ့သည်</string>
     <string name="unknown_error_occurred">အမည်မသိအမှားဖြစ်ပွားခဲ့သည်</string>
     <string name="wasnt_able_to_connect_custom_url">သတ်မှတ်ထားသော Custom URL မှချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
     <string name="wasnt_able_to_connect_webcam_url">သင်၏ဆာဗာမှဝက်ဘ်ကင်မရာပုံရိပ်ကိုချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
     <string name="wasnt_able_to_connect_forecast">ခန့်မှန်းချက်ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ခဲ့ပါ။</string>
-	<string name="forecast_type_is_invalid">ခန့်မှန်းချက် \'%1$s\' သည်မမှန်ကန်ပါ, သင်၏ချိန်ညှိချက်များဖိုင်ကိုစစ်ဆေးပြီးထပ်မံကြိုးစားပါ။</string>
+    <string name="forecast_type_is_invalid">ခန့်မှန်းချက် \'%1$s\' သည်မမှန်ကန်ပါ, သင်၏ချိန်ညှိချက်များဖိုင်ကိုစစ်ဆေးပြီးထပ်မံကြိုးစားပါ။</string>
     <string name="wasnt_able_to_connect_radar_image">ရေဒါနှင့်ချိတ်ဆက်ရန် (သို့) ဒေါင်းလုပ်ဆွဲယူနိုင်ခဲ့သည်</string>
     <string name="wasnt_able_to_connect_data_txt">သင်၏ဆာဗာမှဒေတာများကိုချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
     <string name="data_url_was_blank">ဒေတာ URL သည်ကွက်လပ်ဖြစ်သည်</string>
@@ -64,7 +64,7 @@
     <string name="match_app">ပွဲစဉ် app</string>
     <string name="custom_setting">စိတ်ကြိုက်အရောင်များ</string>
     <string name="app_theme">app ကိုအခင်းအကျင်း</string>
-	<string name="today">ယနေ့တွင်</string>
+    <string name="today">ယနေ့တွင်</string>
     <string name="last_year_stats">ပြီးခဲ့သည့်နှစ်ကစာရင်းဇယား</string>
     <string name="last_month_stats">ပြီးခဲ့သည့်လက၏စာရင်းအင်း</string>
     <string name="radar_url_not_set">radar URL မသတ်မှတ်ပါ ပြောင်းလဲရန်ချိန်ညှိချက်များသို့သွားနိုင်သည်။</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Custom URL ကိုမသတ်မှတ်, သင်စိတ်ကြိုက် URL ကိုထည့်ရန် settings သို့သွားနိုင်သည်</string>
     <string name="next_moon">နောက်လာမည့်ဖြစ်ရပ်များ?</string>
     <string name="update_while_running">run နေစဉ် update ကို</string>
+    <string name="force_dark_mode">force dark mode ကို</string>
 </resources>

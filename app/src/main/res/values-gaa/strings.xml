@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Ofainɛ, mɛ be mli ni wɔkwɛɔ URL ni okɛha lɛ</string>
     <string name="remove_all_data">Ani oyɛ nɔmimaa akɛ oosumɔ ni ojie data fɛɛ?</string>
     <string name="no">daabi</string>
-	<string name="ill_fix_and_try_again">Mibaasaa Mi ni oka ekoŋŋ</string>
+    <string name="ill_fix_and_try_again">Mibaasaa Mi ni oka ekoŋŋ</string>
     <string name="error_occurred_while_attempting_to_update">Tɔmɔ ko ba be mli ni abɔɔ mɔdɛŋ ni atsake bɔ ni akɛtsuɔ nii ahaa lɛ</string>
     <string name="unknown_error_occurred">Tɔmɔ ni aleee ba</string>
     <string name="wasnt_able_to_connect_custom_url">E nyɛ we nɛ e kɛ ngmɛɛ a URL nɛ tsɔɔ mi ɔ he</string>
     <string name="wasnt_able_to_connect_webcam_url">Enyɛɛɛ okɛ wɛbkaam mfoniri ko atsa loo okɛ o-websaiti lɛ nɔ</string>
     <string name="wasnt_able_to_connect_forecast">Enyɛɛɛ ekɛ nɔ ni atsɔɔ mli lɛ abɔ he loo okɛwo nɔ</string>
-	<string name="forecast_type_is_invalid">Nɔ ni atsɔɔ hiɛ atsɔɔ \'%1$s\' lɛ ejaaa, kwɛmɔ ogbɛjianɔtoo faili lɛ ni oka ekoŋŋ</string>
+    <string name="forecast_type_is_invalid">Nɔ ni atsɔɔ hiɛ atsɔɔ \'%1$s\' lɛ ejaaa, kwɛmɔ ogbɛjianɔtoo faili lɛ ni oka ekoŋŋ</string>
     <string name="wasnt_able_to_connect_radar_image">Enyɛɛɛ ekɛ rada= mfoniri lɛ abɔ loo ejie kɛjɛ intanɛt lɛ nɔ</string>
     <string name="wasnt_able_to_connect_data_txt">E nyɛ we nɛ o kɛ data.txt ɔ nɛ tsa loo e ngɔ</string>
     <string name="data_url_was_blank">Data URL lɛ bɛ nɔ ko</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Teemɔ app</string>
     <string name="custom_setting">Kusum sui</string>
     <string name="app_theme">app Yitso</string>
-	<string name="today">Ŋmene</string>
+    <string name="today">Ŋmene</string>
     <string name="last_year_stats">Naagbee Afi Akɔntaabuu</string>
     <string name="last_month_stats">Nyɔji lɛ akɔntaabuu</string>
     <string name="radar_url_not_set">Radar URL jeee. Obaanyɛ oya settings koni otsake</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Custom URL lɛ jeee nɔ ni ato, loo ebɛ nɔ ko nɔ ko. Obaanyɛ oya gbɛjianɔtoo mli koni okɛ URL ni afee lɛ diɛŋtsɛ afata he</string>
     <string name="next_moon">Nyɔŋtsere lɛ nifeemɔi ni nyiɛ sɛɛ lɛ?</string>
     <string name="update_while_running">Tsakemɔ be mli ni ojoɔ foi</string>
+    <string name="force_dark_mode">Hewalɛ Dade Mode</string>
 </resources>

@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Сез тапшырган URL-ны тикшергәндә көтегез</string>
     <string name="remove_all_data">Сез барлык мәгълүматны бетерергә телисезме?</string>
     <string name="no">Юк</string>
-	<string name="ill_fix_and_try_again">Мин аны төзәтермен һәм кабатлап карагыз</string>
+    <string name="ill_fix_and_try_again">Мин аны төзәтермен һәм кабатлап карагыз</string>
     <string name="error_occurred_while_attempting_to_update">Куллануны яңартырга тырышканда хата килеп чыкты</string>
     <string name="unknown_error_occurred">Билгесез хата килеп чыкты</string>
     <string name="wasnt_able_to_connect_custom_url">Күрсәтелгән махсус URL-тан йөкләнә алмадым</string>
     <string name="wasnt_able_to_connect_webcam_url">Сезнең сервердан веб-камера образын тоташтыра яки йөкли алмады</string>
     <string name="wasnt_able_to_connect_forecast">Фаразны тоташтыра яки йөкли алмады</string>
-	<string name="forecast_type_is_invalid">\'%1$s\' фаразлы тибы дөрес түгел, көйләүләр файлын тикшерегез һәм кабатлап карагыз</string>
+    <string name="forecast_type_is_invalid">\'%1$s\' фаразлы тибы дөрес түгел, көйләүләр файлын тикшерегез һәм кабатлап карагыз</string>
     <string name="wasnt_able_to_connect_radar_image">Радарны тоташтыра яки йөкли алмый = Интернеттан рәсем</string>
     <string name="wasnt_able_to_connect_data_txt">Сезнең сервердан мәгълүмат тотып ала алмадым</string>
     <string name="data_url_was_blank">Мәгълүмат URL буш иде</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Матч кушымтасы</string>
     <string name="custom_setting">Махсус төсләр</string>
     <string name="app_theme">Кушымта темасы</string>
-	<string name="today">Бүген</string>
+    <string name="today">Бүген</string>
     <string name="last_year_stats">Узган ел статистикасы</string>
     <string name="last_month_stats">Узган ай статистика</string>
     <string name="radar_url_not_set">Радар Урл көйләнми. Сез үзгәрү өчен көйләүләргә бара аласыз</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Codomгары URL куелмаган, яисә буш түгел. Сез махсус URL өстәр өчен көйләүләргә керә аласыз</string>
     <string name="next_moon">Киләсе ай вакыйгалары?</string>
     <string name="update_while_running">Йөгерүдә яңарту</string>
+    <string name="force_dark_mode">Көчле режим</string>
 </resources>

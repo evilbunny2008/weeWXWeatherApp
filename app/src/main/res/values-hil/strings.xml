@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Palihog hulata samtang gina verify namon ang URL nga inyo ginsumiter</string>
     <string name="remove_all_data">Sigurado ka bala nga gusto mo kuhaon ang tanan nga data?</string>
     <string name="no">Indi</string>
-	<string name="ill_fix_and_try_again">I-ayos Ko kag Tilawan ko Liwat</string>
+    <string name="ill_fix_and_try_again">I-ayos Ko kag Tilawan ko Liwat</string>
     <string name="error_occurred_while_attempting_to_update">Nahitabo ang isa ka sayop samtang ginatinguhaan nga i-update ang paggamit</string>
     <string name="unknown_error_occurred">Wala mahibal-an nga sayop nga nahitabo</string>
     <string name="wasnt_able_to_connect_custom_url">Indi makahimo sa pagkonektar ukon pag-download gikan sa custom URL nga gintumod</string>
     <string name="wasnt_able_to_connect_webcam_url">Indi makahimo sa pagkonektar ukon pag-download sang isa ka imahe sang webcam gikan sa imo server</string>
     <string name="wasnt_able_to_connect_forecast">Wala\'y mahimo nga magkonektar o mag-download sa forecast</string>
-	<string name="forecast_type_is_invalid">Ang sahi sang forecast nga \'%1$s\' indi balido, tan-awa ang imo mga setting file kag tilawi liwat</string>
+    <string name="forecast_type_is_invalid">Ang sahi sang forecast nga \'%1$s\' indi balido, tan-awa ang imo mga setting file kag tilawi liwat</string>
     <string name="wasnt_able_to_connect_radar_image">Indi makahimo sa pagkonektar ukon pag-download sang radar= imahe gikan sa internet</string>
     <string name="wasnt_able_to_connect_data_txt">Indi makahimo sa pagkonektar ukon pag-download sang data.txt gikan sa imo server</string>
     <string name="data_url_was_blank">Blangko ang Data URL</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Katumbas nga App</string>
     <string name="custom_setting">Mga Kolor sa Kustombre</string>
     <string name="app_theme">Tema sa App</string>
-	<string name="today">Subong nga adlaw</string>
+    <string name="today">Subong nga adlaw</string>
     <string name="last_year_stats">Mga Estadistika sa Katapusan nga Tuig</string>
     <string name="last_month_stats">Katapusan nga Estadistika sang Bulan</string>
     <string name="radar_url_not_set">Radar URL wala gibutang. Mahimo ka magkadto sa mga setting sa pagbag-o</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Ang Custom URL wala ginbutang, ukon blangko. Mahimo ka magsulod sa mga setting sa pagdugang sa custom nga URL</string>
     <string name="next_moon">Sunod nga mga hitabo sa bulan?</string>
     <string name="update_while_running">Update samtang nagdagan</string>
+    <string name="force_dark_mode">Pwersa nga Madulom nga Mode</string>
 </resources>

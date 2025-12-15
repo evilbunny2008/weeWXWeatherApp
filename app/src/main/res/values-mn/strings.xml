@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Бид таны оруулсан URL-г шалгаж байгаарай</string>
     <string name="remove_all_data">Та бүх өгөгдлийг арилгахыг хүсч байна уу?</string>
     <string name="no">-Гүй / -битгий</string>
-	<string name="ill_fix_and_try_again">Би үүнийг засах, дахин оролдоно уу</string>
+    <string name="ill_fix_and_try_again">Би үүнийг засах, дахин оролдоно уу</string>
     <string name="error_occurred_while_attempting_to_update">Хэрэглээг шинэчлэхийг оролдож байх үед алдаа гарлаа</string>
     <string name="unknown_error_occurred">Үл мэдэгдэх алдаа гарсан байна</string>
     <string name="wasnt_able_to_connect_custom_url">Заасан захиалгын URL-ээс холбогдож, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_webcam_url">Таны серверээс вэбкамик зургийг холбох, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_forecast">Урьдчилсан мэдээг холбож, татаж авах боломжгүй байсан</string>
-	<string name="forecast_type_is_invalid">Урьдчилан таамаглах \'%1$s\' буруу байна, Тохиргоо файлаа шалгаад дахин оролдоно уу</string>
+    <string name="forecast_type_is_invalid">Урьдчилан таамаглах \'%1$s\' буруу байна, Тохиргоо файлаа шалгаад дахин оролдоно уу</string>
     <string name="wasnt_able_to_connect_radar_image">Интернетээс холбогдож, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_data_txt">Data.txt-ийг татаж авах эсвэл татаж авах боломжгүй байсан</string>
     <string name="data_url_was_blank">Мэдээллийн URL хоосон байв</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Тохирон бүхий дамжуулагч</string>
     <string name="custom_setting">Тусгай өнгө</string>
     <string name="app_theme">Програмын сэдэв</string>
-	<string name="today">Оноо</string>
+    <string name="today">Оноо</string>
     <string name="last_year_stats">Өнгөрсөн жилийн статистик</string>
     <string name="last_month_stats">Өнгөрсөн сарын статистик</string>
     <string name="radar_url_not_set">RADAR URL тохируулаагүй байна. Та өөрчлөлтийг тохируулахын тулд очиж болно</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Захиалгат URL нь тохируулагдаагүй, эсвэл хоосон байна. Та Custom URL нэмэх тохиргоонд орж болно</string>
     <string name="next_moon">Дараагийн сарны арга хэмжээ?</string>
     <string name="update_while_running">Ажиллаж байх үед шинэчлэх</string>
+    <string name="force_dark_mode">Харанхуй горимыг хүчээр</string>
 </resources>

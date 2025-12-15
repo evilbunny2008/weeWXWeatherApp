@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Miandrasa azafady rehefa manamarina ny URL ianao izay natolotrao</string>
     <string name="remove_all_data">Azo antoka ve fa te hanaisotra ny data rehetra ianao?</string>
     <string name="no">tsy misy</string>
-	<string name="ill_fix_and_try_again">Hanamboatra azy aho ary hanandrana indray</string>
+    <string name="ill_fix_and_try_again">Hanamboatra azy aho ary hanandrana indray</string>
     <string name="error_occurred_while_attempting_to_update">Nisy hadisoana nitranga raha nanandrana nanavao ny fampiasana</string>
     <string name="unknown_error_occurred">Nisy hadisoana tsy fantatra</string>
     <string name="wasnt_able_to_connect_custom_url">Tsy afaka nampifandray na nisintona avy amin\'ny URL mahazatra voafaritra</string>
     <string name="wasnt_able_to_connect_webcam_url">Tsy afaka nifandray na nandefa sary webcam tamin\'ny mpizara</string>
     <string name="wasnt_able_to_connect_forecast">Tsy afaka nampifandray na nandefa ny vinavina</string>
-	<string name="forecast_type_is_invalid">Ny karazana vinavina \'%1$s\' dia tsy manan-kery, jereo ny rakitrao ary andramo indray</string>
+    <string name="forecast_type_is_invalid">Ny karazana vinavina \'%1$s\' dia tsy manan-kery, jereo ny rakitrao ary andramo indray</string>
     <string name="wasnt_able_to_connect_radar_image">Tsy afaka nifandray na nisintona radar = sary avy amin\'ny Internet</string>
     <string name="wasnt_able_to_connect_data_txt">Tsy afaka nampifandray na nandefa data.txt avy amin\'ny mpizara</string>
     <string name="data_url_was_blank">Blank ny URL data</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Ampifandraiso amin\'ny fampiharana</string>
     <string name="custom_setting">Loko mahazatra</string>
     <string name="app_theme">Lohahevitra fampiharana</string>
-	<string name="today">ankehitriny</string>
+    <string name="today">ankehitriny</string>
     <string name="last_year_stats">Antontan\'isa tamin\'ny taon-dasa</string>
     <string name="last_month_stats">Antontan\'isa tamin\'ny volana lasa teo</string>
     <string name="radar_url_not_set">Tsy napetraka ny Radar URL. Azonao atao ny mandeha amin\'ny toe-javatra hiova</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Tsy napetraka ny URL mahazatra, na tsy misy banga. Afaka miditra ao anaty filaharana ianao hampiditra URL mahazatra</string>
     <string name="next_moon">Hetsika manaraka ny volana?</string>
     <string name="update_while_running">Fanavaozana raha mihazakazaka</string>
+    <string name="force_dark_mode">Terena ny maoderina maizina</string>
 </resources>

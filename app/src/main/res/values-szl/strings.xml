@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Proszymy ôczekać, w czasie kej zweryfikujymy URL, co ś nich przedstawiysz</string>
     <string name="remove_all_data">Jesz pewny, iże chcesz usuniynć wszyske dane?</string>
     <string name="no">Niy</string>
-	<string name="ill_fix_and_try_again">Bydōm Fix It i Sprōbuj Again</string>
+    <string name="ill_fix_and_try_again">Bydōm Fix It i Sprōbuj Again</string>
     <string name="error_occurred_while_attempting_to_update">Ukozoł sie błōnd przi prōbiyniu zaktualizowanio używanio</string>
     <string name="unknown_error_occurred">Niyznōmy błōnd wystōmpiōł</string>
     <string name="wasnt_able_to_connect_custom_url">Niy może sie łōnczyć ani pobrać ze niysztandardowego URL ôkryślōnego</string>
     <string name="wasnt_able_to_connect_webcam_url">Niy może sie łōnczyć ani pobrać ôbrazu kamery internetowego ze swojigo serwera</string>
     <string name="wasnt_able_to_connect_forecast">Niy może sie łōnczyć ani pobrać prognozy</string>
-	<string name="forecast_type_is_invalid">Zorta Forcacast \'%1$s\' je nieważno, sprawdź plik ustawiyń i sprōbuj ôd nowa</string>
+    <string name="forecast_type_is_invalid">Zorta Forcacast \'%1$s\' je nieważno, sprawdź plik ustawiyń i sprōbuj ôd nowa</string>
     <string name="wasnt_able_to_connect_radar_image">Niy można połōnczyć ani pobiyrać ôbraz radar=</string>
     <string name="wasnt_able_to_connect_data_txt">Niy można połōnczyć ani pobiyrać dane.txt ze swojigo serwera</string>
     <string name="data_url_was_blank">Dane URL było prōzne</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Konople</string>
     <string name="app_theme">Teryn</string>
-	<string name="today">Dzisiej</string>
+    <string name="today">Dzisiej</string>
     <string name="last_year_stats">Ôstatni Rok Statystyki</string>
     <string name="last_month_stats">Ôstatniōm statystykōm ôstatnigo miesiōnca</string>
     <string name="radar_url_not_set">Radar URL niy je ustawiōny. Możesz pojść do ustawiyń, coby sie zmiynić</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Niy ma ustawiōny URL niy ma ustawiōny, abo je prōzny. Możesz przejść do ustawiyń, coby przidać niysztandardowy URL</string>
     <string name="next_moon">Dalij wydarzenia miesiōnczka?</string>
     <string name="update_while_running">Aktualizacyjo przi bieganiu</string>
+    <string name="force_dark_mode">Barzo modernizacyjo Modes</string>
 </resources>

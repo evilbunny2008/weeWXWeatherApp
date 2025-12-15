@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">उपकार करून तुमी सादर केल्लो URL आमी सत्यापीत करतना वाट पळयात</string>
     <string name="remove_all_data">तुमकां सगळो डेटा काडपाचो आसा हाची खात्री आसा?</string>
     <string name="no">ना</string>
-	<string name="ill_fix_and_try_again">हांव तें दुरुस्त करतलों आनी परतून प्रयत्न करतलों</string>
+    <string name="ill_fix_and_try_again">हांव तें दुरुस्त करतलों आनी परतून प्रयत्न करतलों</string>
     <string name="error_occurred_while_attempting_to_update">वापर अपडेट करपाचो यत्न करतना एक चूक जाली</string>
     <string name="unknown_error_occurred">अज्ञात चूक जाली</string>
     <string name="wasnt_able_to_connect_custom_url">निर्दिश्ट केल्ल्या सानुकूल URL वयल्यान जोडपाक वा डाउनलोड करपाक शकलो ना</string>
     <string name="wasnt_able_to_connect_webcam_url">तुमच्या सर्वरा वयल्यान वेबकॅम प्रतिमा जोडपाक वा डाउनलोड करूंक शकली ना</string>
     <string name="wasnt_able_to_connect_forecast">अदमासाक जोडपाक वा डाउनलोड करपाक मेळनाशिल्लें</string>
-	<string name="forecast_type_is_invalid">अदमासाचो प्रकार \'%1$sS\' अवैध आसा, तुमची मांडावळी फायल तपासात आनी परतून यत्न करात</string>
+    <string name="forecast_type_is_invalid">अदमासाचो प्रकार \'%1$sS\' अवैध आसा, तुमची मांडावळी फायल तपासात आनी परतून यत्न करात</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनॅटा वयल्यान Radar= प्रतिमा जोडपाक वा डाउनलोड करपाक शकलो ना</string>
     <string name="wasnt_able_to_connect_data_txt">तुमच्या सर्वरा वयल्यान data.txt कनॅक्ट वा डाउनलोड करूंक शकलो ना</string>
     <string name="data_url_was_blank">डेटा URL कोरीव आशिल्लो</string>
@@ -64,7 +64,7 @@
     <string name="match_app">मॅच अॅप 2019।</string>
     <string name="custom_setting">सानुकूल रंग 1</string>
     <string name="app_theme">अॅप थीम 1</string>
-	<string name="today">आयज</string>
+    <string name="today">आयज</string>
     <string name="last_year_stats">फाटल्या वर्साची आंकडेवारी</string>
     <string name="last_month_stats">फाटल्या म्हयन्याची आंकडेवारी</string>
     <string name="radar_url_not_set">रडार URL सेट ना. तुमी बदलपाक सेटिंग्जांत वचूंक शकतात</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">सानुकूल URL सेट जायना, वा रिकामे आसा. सानुकूल URL जोडपाक तुमी सेटिंग्जांत वचूंक शकतात</string>
     <string name="next_moon">फुडले चंद्र घडणुको?</string>
     <string name="update_while_running">चालू आसतना अपडेट</string>
+    <string name="force_dark_mode">जबरदस्ती काळो मोड</string>
 </resources>

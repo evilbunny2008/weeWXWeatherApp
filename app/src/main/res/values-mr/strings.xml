@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">तुम्ही सबमिट केलेली URL आम्ही सत्यापित करेपर्यंत कृपया प्रतीक्षा करा</string>
     <string name="remove_all_data">तुमची खात्री आहे की तुम्ही सर्व डेटा काढू इच्छिता?</string>
     <string name="no">नाही</string>
-	<string name="ill_fix_and_try_again">मी त्याचे निराकरण करीन आणि पुन्हा प्रयत्न करेन</string>
+    <string name="ill_fix_and_try_again">मी त्याचे निराकरण करीन आणि पुन्हा प्रयत्न करेन</string>
     <string name="error_occurred_while_attempting_to_update">वापर अद्यतनित करण्याचा प्रयत्न करताना एक त्रुटी आली</string>
     <string name="unknown_error_occurred">अज्ञात त्रुटी आली</string>
     <string name="wasnt_able_to_connect_custom_url">निर्दिष्ट केलेल्या सानुकूल URL वरून कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
     <string name="wasnt_able_to_connect_webcam_url">तुमच्या सर्व्हरवरून वेबकॅम इमेज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>
     <string name="wasnt_able_to_connect_forecast">अंदाज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>
-	<string name="forecast_type_is_invalid">अंदाज प्रकार \'%1$s\' अवैध आहे, तुमची सेटिंग फाइल तपासा आणि पुन्हा प्रयत्न करा</string>
+    <string name="forecast_type_is_invalid">अंदाज प्रकार \'%1$s\' अवैध आहे, तुमची सेटिंग फाइल तपासा आणि पुन्हा प्रयत्न करा</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेटवरून radar= प्रतिमा कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
     <string name="wasnt_able_to_connect_data_txt">तुमच्या सर्व्हरवरून data.txt कनेक्ट करण्यात किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
     <string name="data_url_was_blank">डेटा URL रिक्त होती</string>
@@ -64,7 +64,7 @@
     <string name="match_app">मॅच ॲप</string>
     <string name="custom_setting">सानुकूल रंग</string>
     <string name="app_theme">ॲप थीम</string>
-	<string name="today">आज</string>
+    <string name="today">आज</string>
     <string name="last_year_stats">गेल्या वर्षीची आकडेवारी</string>
     <string name="last_month_stats">गेल्या महिन्याची आकडेवारी</string>
     <string name="radar_url_not_set">रडार URL सेट नाही. तुम्ही बदलण्यासाठी सेटिंग्जमध्ये जाऊ शकता</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">सानुकूल URL सेट केलेली नाही किंवा रिक्त आहे. सानुकूल URL जोडण्यासाठी तुम्ही सेटिंग्जमध्ये जाऊ शकता</string>
     <string name="next_moon">पुढील चंद्र घटना?</string>
     <string name="update_while_running">चालू असताना अपडेट करा</string>
+    <string name="force_dark_mode">गडद मोड सक्ती करा</string>
 </resources>

@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">โปรดรอในขณะที่เราตรวจสอบ URL ที่คุณส่งมา</string>
     <string name="remove_all_data">คุณแน่ใจหรือไม่ว่าต้องการลบข้อมูลทั้งหมด</string>
     <string name="no">เลขที่</string>
-	<string name="ill_fix_and_try_again">ฉันจะแก้ไขแล้วลองอีกครั้ง</string>
+    <string name="ill_fix_and_try_again">ฉันจะแก้ไขแล้วลองอีกครั้ง</string>
     <string name="error_occurred_while_attempting_to_update">เกิดข้อผิดพลาดขณะพยายามอัปเดตการใช้งาน</string>
     <string name="unknown_error_occurred">เกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ</string>
     <string name="wasnt_able_to_connect_custom_url">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดจาก URL ที่กำหนดเองที่ระบุ</string>
     <string name="wasnt_able_to_connect_webcam_url">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดภาพเว็บแคมจากเซิร์ฟเวอร์ของคุณ</string>
     <string name="wasnt_able_to_connect_forecast">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดการคาดการณ์ได้</string>
-	<string name="forecast_type_is_invalid">ประเภทการคาดการณ์ \'%1$s\' ไม่ถูกต้อง โปรดตรวจสอบไฟล์การตั้งค่าของคุณแล้วลองอีกครั้ง</string>
+    <string name="forecast_type_is_invalid">ประเภทการคาดการณ์ \'%1$s\' ไม่ถูกต้อง โปรดตรวจสอบไฟล์การตั้งค่าของคุณแล้วลองอีกครั้ง</string>
     <string name="wasnt_able_to_connect_radar_image">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดภาพเรดาร์= จากอินเทอร์เน็ตได้</string>
     <string name="wasnt_able_to_connect_data_txt">ไม่สามารถเชื่อมต่อหรือดาวน์โหลด data.txt จากเซิร์ฟเวอร์ของคุณ</string>
     <string name="data_url_was_blank">URL ข้อมูลว่างเปล่า</string>
@@ -64,7 +64,7 @@
     <string name="match_app">แอพจับคู่</string>
     <string name="custom_setting">สีที่กำหนดเอง</string>
     <string name="app_theme">ธีมแอป</string>
-	<string name="today">วันนี้</string>
+    <string name="today">วันนี้</string>
     <string name="last_year_stats">สถิติปีที่แล้ว</string>
     <string name="last_month_stats">สถิติของเดือนที่แล้ว</string>
     <string name="radar_url_not_set">ไม่ได้ตั้งค่า URL เรดาร์ คุณสามารถไปที่การตั้งค่าเพื่อเปลี่ยนแปลงได้</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">ไม่ได้ตั้งค่า URL ที่กำหนดเองหรือว่างเปล่า คุณสามารถเข้าไปที่การตั้งค่าเพื่อเพิ่ม URL ที่กำหนดเองได้</string>
     <string name="next_moon">เหตุการณ์พระจันทร์หน้า?</string>
     <string name="update_while_running">อัปเดตในขณะที่ทำงาน</string>
+    <string name="force_dark_mode">บังคับโหมดมืด</string>
 </resources>

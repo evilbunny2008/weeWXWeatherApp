@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Ke kgopela le eme ge re dutše re netefatša URL yeo o e rometšego</string>
     <string name="remove_all_data">Na o na le bonnete bja gore o nyaka go tloša data ka moka?</string>
     <string name="no">Aowa</string>
-	<string name="ill_fix_and_try_again">Ke tla e lokiša gomme ka leka gape</string>
+    <string name="ill_fix_and_try_again">Ke tla e lokiša gomme ka leka gape</string>
     <string name="error_occurred_while_attempting_to_update">Phošo e diregile ge a be a leka go mpshafatša tšhomišo</string>
     <string name="unknown_error_occurred">Phošo ye e sa tsebjego e diregile</string>
     <string name="wasnt_able_to_connect_custom_url">ga se ya kgona go kgokagana goba go taonelouta go tšwa go URL ya tlwaelo yeo e laeditšwego</string>
     <string name="wasnt_able_to_connect_webcam_url">E be e sa kgone go kgokaganya goba go taonelouta seswantšho sa webcam go tšwa go seva ya gago</string>
     <string name="wasnt_able_to_connect_forecast">wasn\'t able to connect goba go taonelouta ponelopele</string>
-	<string name="forecast_type_is_invalid">Mohuta wa ponelopele \'%1$s\' ga o šome, hlahloba faele ya gago ya dipeakanyo gomme o leke gape</string>
+    <string name="forecast_type_is_invalid">Mohuta wa ponelopele \'%1$s\' ga o šome, hlahloba faele ya gago ya dipeakanyo gomme o leke gape</string>
     <string name="wasnt_able_to_connect_radar_image">ga se a kgona go kgokaganya goba go taonelouta radar= seswantšho go tšwa Inthaneteng</string>
     <string name="wasnt_able_to_connect_data_txt">ga se ya kgona go kgokaganya goba go taonelouta data.txt go tšwa go seva ya gago</string>
     <string name="data_url_was_blank">URL ya data e be e se na selo</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Mebala ya tlwaelo</string>
     <string name="app_theme">Sehlogo sa App</string>
-	<string name="today">Lehono</string>
+    <string name="today">Lehono</string>
     <string name="last_year_stats">Dipalopalo tša ngwagola</string>
     <string name="last_month_stats">Dipalopalo tša kgwedi ya go feta</string>
     <string name="radar_url_not_set">URL ya radar ga se ya bewa. O ka ya go dipeakanyo go fetoga</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL ya tlwaelo ga se ya bewa, goba ga e na selo. O ka tsena ka gare ga dipeakanyo go oketša URL ya tlwaelo</string>
     <string name="next_moon">Ditiragalo tše di latelago tša Ngwedi?</string>
     <string name="update_while_running">Update o sa matha</string>
+    <string name="force_dark_mode">qobella mokgwa wa lefifi</string>
 </resources>

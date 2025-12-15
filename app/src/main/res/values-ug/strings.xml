@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">سىز تاپشۇرغان URL نى دەلىللەۋاتقاندا ساقلاڭ</string>
     <string name="remove_all_data">بارلىق سانلىق مەلۇماتلارنى ئۆچۈرمەكچىمۇ?</string>
     <string name="no">ياق</string>
-	<string name="ill_fix_and_try_again">مەن ئۇنى ئوڭشىپ قايتا سىناڭ</string>
+    <string name="ill_fix_and_try_again">مەن ئۇنى ئوڭشىپ قايتا سىناڭ</string>
     <string name="error_occurred_while_attempting_to_update">ئىشلىتىشنى يېڭىلىماقچى بولغاندا خاتالىق كۆرۈلدى</string>
     <string name="unknown_error_occurred">نامەلۇم خاتالىق كۆرۈلدى</string>
     <string name="wasnt_able_to_connect_custom_url">كۆرسىتىلگەن ئىختىيارى URL دىن ئۇلانماسلىق ياكى چۈشۈرگىلى بولمىدى</string>
     <string name="wasnt_able_to_connect_webcam_url">مۇلازىمېتىردىن تور كامېراسى سۈرىتىنى ئۇلىيالمىدى ياكى چۈشۈرگىلى بولمايدۇ</string>
     <string name="wasnt_able_to_connect_forecast">بۇ پەرەزنى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
-	<string name="forecast_type_is_invalid">مۆلچەر تىپى \'%1$s\'ئىناۋەتسىز, تەڭشەكلىرى ھۆججىتىڭىزنى تەكشۈرۈڭ ۋە قايتا سىناڭ</string>
+    <string name="forecast_type_is_invalid">مۆلچەر تىپى \'%1$s\'ئىناۋەتسىز, تەڭشەكلىرى ھۆججىتىڭىزنى تەكشۈرۈڭ ۋە قايتا سىناڭ</string>
     <string name="wasnt_able_to_connect_radar_image">رادار = توردىن رادار = رەسىمنى ئۇلىيالمىدى</string>
     <string name="wasnt_able_to_connect_data_txt">مۇلازىمېتىردىن ئۇلىنىش ياكى چۈشۈرگىلى بولمىدى. مۇلازىمېتىرىڭىزدىن</string>
     <string name="data_url_was_blank">سانلىق مەلۇمات URLلىرى قۇرۇق ئىدى</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match دېتالى</string>
     <string name="custom_setting">ئىختىيارى رەڭ</string>
     <string name="app_theme">ئەپ تېمىسى</string>
-	<string name="today">بۈگۈن</string>
+    <string name="today">بۈگۈن</string>
     <string name="last_year_stats">ئۆتكەن يىلىنىڭ ستاتىستىكىسى</string>
     <string name="last_month_stats">ئالدىنقى ئايدىكى ستاتىستىكا</string>
     <string name="radar_url_not_set">رادار URL تەڭشەلمىدى. تەڭشەكلەرگە بارسىڭىز بولىدۇ</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">خاس URL بېكىتىلمىگەن, ياكى قۇرۇق. تەڭشەكنى قوشۇش ئۈچۈن تەڭشەكلەرگە كىرەلەيسىز</string>
     <string name="next_moon">كېيىنكى ئاي پائالىيەتلىرى?</string>
     <string name="update_while_running">ئىجرا بولغاندا يېڭىلاش</string>
+    <string name="force_dark_mode">قېنىق ھالەت</string>
 </resources>

@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Wakwayi ni ikur kun wa moko ni URL ma icwalo</string>
     <string name="remove_all_data">Tika itye ki gen ni imito kwanyo ngec ducu?</string>
     <string name="no">Ku</string>
-	<string name="ill_fix_and_try_again">Abiketo ne dok abitemo doki</string>
+    <string name="ill_fix_and_try_again">Abiketo ne dok abitemo doki</string>
     <string name="error_occurred_while_attempting_to_update">Bal mo otimme i kare ma tye ka temo loko kit me tic kwede</string>
     <string name="unknown_error_occurred">Bal ma pe ki ngeyo otimme</string>
     <string name="wasnt_able_to_connect_custom_url">Pe onongo twero keto nyo nongo ki i URL ma kiyubo ki yat</string>
     <string name="wasnt_able_to_connect_webcam_url">Pe onongo atwero keto nyo keto cal me webcake ki i kom latic-ci</string>
     <string name="wasnt_able_to_connect_forecast">Pe onongo twero kubbe nyo twero kwanyo jami ma bitimme anyim</string>
-	<string name="forecast_type_is_invalid">Labol me%1$s\' pe tiyo, nen ni file ma kiketo dok item dok</string>
+    <string name="forecast_type_is_invalid">Labol me%1$s\' pe tiyo, nen ni file ma kiketo dok item dok</string>
     <string name="wasnt_able_to_connect_radar_image">Pe onongo atwero keto nyo kwanyo radar= ki i intanet</string>
     <string name="wasnt_able_to_connect_data_txt">Pe onongo twero keto nyo kwanyo ngec.trit ki bot latic ni</string>
     <string name="data_url_was_blank">URL me ngec onongo tye nono</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Apc ma ki yubu ki mac</string>
     <string name="custom_setting">Kala me tekwaro</string>
     <string name="app_theme">Pwony me lwongo</string>
-	<string name="today">Tin</string>
+    <string name="today">Tin</string>
     <string name="last_year_stats">Wel me mwaka ma okato ni</string>
     <string name="last_month_stats">Wel dwe ma okato ni</string>
     <string name="radar_url_not_set">Pe kiketo URL. Itwero wot i yub me loko</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL ma tye ki ngec pe kiketo, nyo tye nono. Itwero donyo i yub me medo URL ma rwate</string>
     <string name="next_moon">I kare me dwe ma lubo meno?</string>
     <string name="update_while_running">Lok manyen</string>
+    <string name="force_dark_mode">Lami dic</string>
 </resources>

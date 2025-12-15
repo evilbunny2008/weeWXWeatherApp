@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Paima hamu ma huhut hami mamastihon URL na pinasahatmuna</string>
     <string name="remove_all_data">Pos do rohamuna naeng padaohon sude data?</string>
     <string name="no">Daong</string>
-	<string name="ill_fix_and_try_again">Hupature ma jala Coba ma muse</string>
+    <string name="ill_fix_and_try_again">Hupature ma jala Coba ma muse</string>
     <string name="error_occurred_while_attempting_to_update">Sada kesalahan terjadi huhut marusaha memperbarui penggunaan</string>
     <string name="unknown_error_occurred">Kesalahan na so binoto masa</string>
     <string name="wasnt_able_to_connect_custom_url">Ndang boi mardomu manang mangunduh sian adat na ditontuhon</string>
     <string name="wasnt_able_to_connect_webcam_url">Ndang boi dihubungkon manang diunduh hamu gambar webcam sian server muna</string>
     <string name="wasnt_able_to_connect_forecast">Ndang boi dihubungkon manang diunduh ramalan i</string>
-	<string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' ndang sah, pareso ma file pengaturanmuna jala coba ma muse</string>
+    <string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' ndang sah, pareso ma file pengaturanmuna jala coba ma muse</string>
     <string name="wasnt_able_to_connect_radar_image">Dang boi sambung manang mangunduh radar= gambar sian internet</string>
     <string name="wasnt_able_to_connect_data_txt">Ndang boi dihubungkon manang diunduh data.txxt sian server muna</string>
     <string name="data_url_was_blank">URL Data kosong</string>
@@ -64,7 +64,7 @@
     <string name="match_app">App Jodoh</string>
     <string name="custom_setting">Warna Adat</string>
     <string name="app_theme">Aplikasi Tema</string>
-	<string name="today">Ari on</string>
+    <string name="today">Ari on</string>
     <string name="last_year_stats">Statistik Taon na salpu</string>
     <string name="last_month_stats">Statistik Bulan Terakhir</string>
     <string name="radar_url_not_set">Radar URL dang diatur. Boi do hamu laho tu pengaturan asa muba</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL Adat ndang diatur, manang kosong. Boi do hamu masuk tu pengaturan laho manambai URL khusus</string>
     <string name="next_moon">Acara bulan selanjutna?</string>
     <string name="update_while_running">Pembaruan tingki marlojong</string>
+    <string name="force_dark_mode">Paksa Mode Gelap</string>
 </resources>

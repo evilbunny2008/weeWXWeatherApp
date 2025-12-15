@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Fan le do thoil agus an URL a chuir tú isteach á fhíorú againn</string>
     <string name="remove_all_data">An bhfuil tú cinnte gur mhaith leat na sonraí go léir a bhaint?</string>
     <string name="no">Níl</string>
-	<string name="ill_fix_and_try_again">Deisigh mé é agus Bain triail eile as</string>
+    <string name="ill_fix_and_try_again">Deisigh mé é agus Bain triail eile as</string>
     <string name="error_occurred_while_attempting_to_update">Tharla earráid agus iarracht á déanamh úsáid a nuashonrú</string>
     <string name="unknown_error_occurred">Tharla earráid anaithnid</string>
     <string name="wasnt_able_to_connect_custom_url">Níorbh fhéidir ceangal nó íoslódáil ón URL saincheaptha</string>
     <string name="wasnt_able_to_connect_webcam_url">Níorbh fhéidir íomhá ceamara gréasáin a nascadh nó a íoslódáil ó do fhreastalaí</string>
     <string name="wasnt_able_to_connect_forecast">Níorbh fhéidir an réamhaisnéis a nascadh ná a íoslódáil</string>
-	<string name="forecast_type_is_invalid">Tá an cineál réamhaisnéise \'%1$s\' neamhbhailí, seiceáil do chomhad socruithe agus bain triail eile as</string>
+    <string name="forecast_type_is_invalid">Tá an cineál réamhaisnéise \'%1$s\' neamhbhailí, seiceáil do chomhad socruithe agus bain triail eile as</string>
     <string name="wasnt_able_to_connect_radar_image">Níorbh fhéidir íomhá radar= a nascadh ná a íoslódáil ón Idirlíon</string>
     <string name="wasnt_able_to_connect_data_txt">Níorbh fhéidir data.txt a nascadh nó a íoslódáil ó do fhreastalaí</string>
     <string name="data_url_was_blank">Bhí an URL sonraí bán</string>
@@ -64,7 +64,7 @@
     <string name="match_app">App Match</string>
     <string name="custom_setting">Dathanna an Chustaim</string>
     <string name="app_theme">Téama App</string>
-	<string name="today">Inniu</string>
+    <string name="today">Inniu</string>
     <string name="last_year_stats">Staitisticí na bliana seo caite</string>
     <string name="last_month_stats">Staitisticí na Míosa seo caite</string>
     <string name="radar_url_not_set">URL Radar gan socraithe. Is féidir leat dul go dtí socruithe a athrú</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Níl URL saincheaptha socraithe, nó tá sé bán. Is féidir leat dul isteach i socruithe chun URL saincheaptha a chur leis</string>
     <string name="next_moon">Imeachtaí na gealaí seo chugainn?</string>
     <string name="update_while_running">Nuashonraigh agus tú ag rith</string>
+    <string name="force_dark_mode">Fórsa Mód Dark</string>
 </resources>

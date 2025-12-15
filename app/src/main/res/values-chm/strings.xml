@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Пожалуйста, вучаш, кунам ме тергыме URL-адресым тергыме</string>
     <string name="remove_all_data">Те ӱшанеда, те чыла данныйым кораҥдаш шонеда?</string>
     <string name="no">Жок</string>
-	<string name="ill_fix_and_try_again">Мый тудым тӧрлаташ да угыч тыршен</string>
+    <string name="ill_fix_and_try_again">Мый тудым тӧрлаташ да угыч тыршен</string>
     <string name="error_occurred_while_attempting_to_update">Йоҥылыш лийын, кучылтмо годым уэмдаш тӧчен</string>
     <string name="unknown_error_occurred">Палыдыме йоҥылыш лийын</string>
     <string name="wasnt_able_to_connect_custom_url">Ончалаш ок лий але скачать гыч скачать шкешотан URL-адрес палемдыме</string>
     <string name="wasnt_able_to_connect_webcam_url">Тендан сервер гыч веб-камер образым ушен але скачать лийын огыл</string>
     <string name="wasnt_able_to_connect_forecast">Прогнозым ушен але скачать ыштен кертын огыл</string>
-	<string name="forecast_type_is_invalid">Прогноз тип \'%1$s\' чын огыл, шке настройкым файлым тергымаш да угыч тӧчен</string>
+    <string name="forecast_type_is_invalid">Прогноз тип \'%1$s\' чын огыл, шке настройкым файлым тергымаш да угыч тӧчен</string>
     <string name="wasnt_able_to_connect_radar_image">Интернет гыч радар= образым ушен але скачать скачать лийын огыл</string>
     <string name="wasnt_able_to_connect_data_txt">Тендан сервер гыч данный-влакым ушен але скачать ыштен кертын огыл.txt</string>
     <string name="data_url_was_blank">Данный-влак URL-адрес яра лийын</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Матч-ан приложений</string>
     <string name="custom_setting">Йӱла тӱс</string>
     <string name="app_theme">Приложений теме</string>
-	<string name="today">Таче</string>
+    <string name="today">Таче</string>
     <string name="last_year_stats">Кодшо ийын статистике</string>
     <string name="last_month_stats">Пытартыш тылзе статистике</string>
     <string name="radar_url_not_set">Радар УРЛ огыл шынден. Те вашталтен кертеш настройкыш вашталташ</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Йӧндартыш URL-адрес огеш лий, але яра. Те каен кертыда настройкыш ешарен шкешотан URL-адрес</string>
     <string name="next_moon">Вес тылзе событий-влак?</string>
     <string name="update_while_running">Куржмо годым уэмдыме</string>
+    <string name="force_dark_mode">Вий Пычкемыш Режим</string>
 </resources>

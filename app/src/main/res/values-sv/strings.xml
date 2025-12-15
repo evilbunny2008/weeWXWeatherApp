@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Vänta medan vi verifierar webbadressen du skickade in</string>
     <string name="remove_all_data">Är du säker på att du vill ta bort all data?</string>
     <string name="no">Inga</string>
-	<string name="ill_fix_and_try_again">Jag fixar det och försöker igen</string>
+    <string name="ill_fix_and_try_again">Jag fixar det och försöker igen</string>
     <string name="error_occurred_while_attempting_to_update">Ett fel uppstod vid försök att uppdatera användningen</string>
     <string name="unknown_error_occurred">Okänt fel uppstod</string>
     <string name="wasnt_able_to_connect_custom_url">Det gick inte att ansluta eller ladda ner från den angivna anpassade webbadressen</string>
     <string name="wasnt_able_to_connect_webcam_url">Kunde inte ansluta eller ladda ner en webbkamerabild från din server</string>
     <string name="wasnt_able_to_connect_forecast">Det gick inte att ansluta eller ladda ner prognosen</string>
-	<string name="forecast_type_is_invalid">Prognostypen \'%1$s\' är ogiltig, kontrollera din inställningsfil och försök igen</string>
+    <string name="forecast_type_is_invalid">Prognostypen \'%1$s\' är ogiltig, kontrollera din inställningsfil och försök igen</string>
     <string name="wasnt_able_to_connect_radar_image">Kunde inte ansluta eller ladda ner radar=-bild från internet</string>
     <string name="wasnt_able_to_connect_data_txt">Det gick inte att ansluta eller ladda ner data.txt från din server</string>
     <string name="data_url_was_blank">Data-URL var tom</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match app</string>
     <string name="custom_setting">Anpassade färger</string>
     <string name="app_theme">App-tema</string>
-	<string name="today">I dag</string>
+    <string name="today">I dag</string>
     <string name="last_year_stats">Förra årets statistik</string>
     <string name="last_month_stats">Förra månadens statistik</string>
     <string name="radar_url_not_set">Radar-URL inte inställd. Du kan gå till inställningar för att ändra</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Anpassad webbadress är inte angiven eller är tom. Du kan gå in i inställningarna för att lägga till en anpassad URL</string>
     <string name="next_moon">Nästa månhändelser?</string>
     <string name="update_while_running">Uppdatera under körning</string>
+    <string name="force_dark_mode"/>
 </resources>

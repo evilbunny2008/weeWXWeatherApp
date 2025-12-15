@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Jekk jogħġbok stenna waqt li nivverifikaw il-URL li ssottomettijt</string>
     <string name="remove_all_data">Int żgur li trid tneħħi d-dejta kollha?</string>
     <string name="no">Nru</string>
-	<string name="ill_fix_and_try_again">Ser Nirranġaha u Erġa\' Ipprova</string>
+    <string name="ill_fix_and_try_again">Ser Nirranġaha u Erġa\' Ipprova</string>
     <string name="error_occurred_while_attempting_to_update">Sar żball waqt li ppruvat taġġorna l-użu</string>
     <string name="unknown_error_occurred">Żball mhux magħruf seħħ</string>
     <string name="wasnt_able_to_connect_custom_url">Ma setgħetx tikkonnettja jew tniżżel mill-URL personalizzat speċifikat</string>
     <string name="wasnt_able_to_connect_webcam_url">Ma setgħetx tikkonnettja jew tniżżel immaġni tal-webcam mis-server tiegħek</string>
     <string name="wasnt_able_to_connect_forecast">Ma setax jgħaqqad jew tniżżel it-tbassir</string>
-	<string name="forecast_type_is_invalid">It-tip ta\' tbassir \'%1$s\' mhuwiex validu, iċċekkja l-fajl tas-settings tiegħek u erġa\' pprova</string>
+    <string name="forecast_type_is_invalid">It-tip ta\' tbassir \'%1$s\' mhuwiex validu, iċċekkja l-fajl tas-settings tiegħek u erġa\' pprova</string>
     <string name="wasnt_able_to_connect_radar_image">Ma setgħetx tikkonnettja jew tniżżel ir-radar= immaġini mill-internet</string>
     <string name="wasnt_able_to_connect_data_txt">Ma setgħetx tikkonnettja jew tniżżel data.txt mis-server tiegħek</string>
     <string name="data_url_was_blank">L-URL tad-dejta kien vojt</string>
@@ -64,7 +64,7 @@
     <string name="match_app">App taqbila</string>
     <string name="custom_setting">Kuluri tad-dwana</string>
     <string name="app_theme">Tema App</string>
-	<string name="today">Illum</string>
+    <string name="today">Illum</string>
     <string name="last_year_stats">Statistika tas-Sena li għaddiet</string>
     <string name="last_month_stats">Statistika tax-Xahar li għadda</string>
     <string name="radar_url_not_set">URL tar-radar mhux issettjat. Tista \'tmur fis-settings biex tibdel</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Il-URL personalizzat mhuwiex issettjat, jew huwa vojt. Tista\' tidħol fis-settings biex iżżid URL personalizzat</string>
     <string name="next_moon">Avvenimenti tal-qamar li jmiss?</string>
     <string name="update_while_running">Aġġorna waqt li tkun qed taħdem</string>
+    <string name="force_dark_mode">Force Dark Mode</string>
 </resources>

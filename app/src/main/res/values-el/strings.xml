@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Περιμένετε μέχρι να επαληθεύσουμε τη διεύθυνση URL που υποβάλατε</string>
     <string name="remove_all_data">Είστε βέβαιοι ότι θέλετε να καταργήσετε όλα τα δεδομένα;</string>
     <string name="no">Οχι</string>
-	<string name="ill_fix_and_try_again">Θα το διορθώσω και θα προσπαθήσω ξανά</string>
+    <string name="ill_fix_and_try_again">Θα το διορθώσω και θα προσπαθήσω ξανά</string>
     <string name="error_occurred_while_attempting_to_update">Παρουσιάστηκε σφάλμα κατά την προσπάθεια ενημέρωσης της χρήσης</string>
     <string name="unknown_error_occurred">Παρουσιάστηκε άγνωστο σφάλμα</string>
     <string name="wasnt_able_to_connect_custom_url">Δεν ήταν δυνατή η σύνδεση ή η λήψη από την προσαρμοσμένη διεύθυνση URL που καθορίσατε</string>
     <string name="wasnt_able_to_connect_webcam_url">Δεν ήταν δυνατή η σύνδεση ή η λήψη εικόνας κάμερας web από τον διακομιστή σας</string>
     <string name="wasnt_able_to_connect_forecast">Δεν ήταν δυνατή η σύνδεση ή η λήψη της πρόβλεψης</string>
-	<string name="forecast_type_is_invalid">Ο τύπος πρόβλεψης \'%1$s\' δεν είναι έγκυρος, ελέγξτε το αρχείο ρυθμίσεών σας και δοκιμάστε ξανά</string>
+    <string name="forecast_type_is_invalid">Ο τύπος πρόβλεψης \'%1$s\' δεν είναι έγκυρος, ελέγξτε το αρχείο ρυθμίσεών σας και δοκιμάστε ξανά</string>
     <string name="wasnt_able_to_connect_radar_image">Δεν ήταν δυνατή η σύνδεση ή η λήψη εικόνας ραντάρ= από το διαδίκτυο</string>
     <string name="wasnt_able_to_connect_data_txt">Δεν ήταν δυνατή η σύνδεση ή η λήψη του data.txt από τον διακομιστή σας</string>
     <string name="data_url_was_blank">Η διεύθυνση URL δεδομένων ήταν κενή</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Προσαρμοσμένα χρώματα</string>
     <string name="app_theme">Θέμα εφαρμογής</string>
-	<string name="today">Σήμερα</string>
+    <string name="today">Σήμερα</string>
     <string name="last_year_stats">Στατιστικά στοιχεία του περασμένου έτους</string>
     <string name="last_month_stats">Στατιστικά στοιχεία του περασμένου μήνα</string>
     <string name="radar_url_not_set">Το URL ραντάρ δεν έχει οριστεί. Μπορείτε να μεταβείτε στις ρυθμίσεις για αλλαγή</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Η προσαρμοσμένη διεύθυνση URL δεν έχει οριστεί ή είναι κενή. Μπορείτε να μεταβείτε στις ρυθμίσεις για να προσθέσετε μια προσαρμοσμένη διεύθυνση URL</string>
     <string name="next_moon">Γεγονότα του επόμενου φεγγαριού;</string>
     <string name="update_while_running">Ενημέρωση κατά την εκτέλεση</string>
+    <string name="force_dark_mode">Αναγκαστική σκοτεινή λειτουργία</string>
 </resources>

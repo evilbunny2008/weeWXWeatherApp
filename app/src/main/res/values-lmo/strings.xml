@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Per piasér, g\'he de vèss sicür che g\'he stà descrivü el tò nomm</string>
     <string name="remove_all_data">G\'he stà minga bisogn de duperà el voster prudut?</string>
     <string name="no">No</string>
-	<string name="ill_fix_and_try_again">Mi pias tant per mi e l\'hotel;</string>
+    <string name="ill_fix_and_try_again">Mi pias tant per mi e l\'hotel;</string>
     <string name="error_occurred_while_attempting_to_update">Un\'idea l\'è stada fada per la prima volta in del prucess de test</string>
     <string name="unknown_error_occurred">Tegnimo de la magiur part di cas</string>
     <string name="wasnt_able_to_connect_custom_url">L\'è minga facil per i utent de la scheda de la pagina del telefonin de la scheda</string>
     <string name="wasnt_able_to_connect_webcam_url">L\'è minga facil per i utent che g\'he vœut de duperà i file de la pagina</string>
     <string name="wasnt_able_to_connect_forecast">L\'è minga facil per i utent de la scheda</string>
-	<string name="forecast_type_is_invalid">Per i impostaziun de \'%1$s\' g\'he de vèss sicür che \'l\'è la tò posiziun e l\'è minga facil.\'</string>
+    <string name="forecast_type_is_invalid">Per i impostaziun de \'%1$s\' g\'he de vèss sicür che \'l\'è la tò posiziun e l\'è minga facil.\'</string>
     <string name="wasnt_able_to_connect_radar_image">L\'installaziun de la fotocamera l\'è minga sultant un utent che g\'ha denter di dispusitif</string>
     <string name="wasnt_able_to_connect_data_txt">L\'installaziun de la scheda de credit l\'è minga dispunibel per la vòstra aplicaziun</string>
     <string name="data_url_was_blank">I analist g\'han cumincià a duperà i dati</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Sì</string>
     <string name="custom_setting">Lar</string>
     <string name="app_theme">Sì</string>
-	<string name="today">Incœ</string>
+    <string name="today">Incœ</string>
     <string name="last_year_stats">Volar a l\'inflamazion</string>
     <string name="last_month_stats">El Sit l\'è el post püsee bon</string>
     <string name="radar_url_not_set">El CPU l\'è minga el numer. Pœdet anca duperà el tò conto</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">El schermu l\'è minga el nomm de la scherma: Pœu duperà un\'aplicaziun per un\'aplicaziun per el voster sit web</string>
     <string name="next_moon">L\'è el me corp?</string>
     <string name="update_while_running">Intra i haver-g</string>
+    <string name="force_dark_mode">se</string>
 </resources>

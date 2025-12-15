@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">URL ukan uñt\'ayat ukar chiqanchañkamax suyt\'apxañamawa</string>
     <string name="remove_all_data">¿Jumaxa taqi datos ukanaka apsuña munasmati?</string>
     <string name="no">Janiwa</string>
-	<string name="ill_fix_and_try_again">Nayax askichä ukat mayamp yant\'ä</string>
+    <string name="ill_fix_and_try_again">Nayax askichä ukat mayamp yant\'ä</string>
     <string name="error_occurred_while_attempting_to_update">Mä pantjasiwiw utjawayi, apnaqañ yant\'añkama</string>
     <string name="unknown_error_occurred">Jan uñt\'at pantjasiwix utjawayi</string>
     <string name="wasnt_able_to_connect_custom_url">janiw URL costumbre ukan uñt\'ayat ukanx conectar jan ukax descargarjamäkänti</string>
     <string name="wasnt_able_to_connect_webcam_url">janiw mä webcam uñacht\'äwi servidor ukan conectar jan ukax apkatañjamäkänti</string>
     <string name="wasnt_able_to_connect_forecast">janiw conectar jan ukax pronóstico ukar apkatañjamäkänti</string>
-	<string name="forecast_type_is_invalid">Pronóstico Tipo \'%1$s\' ukax janiw askïkiti, configuración de configuración ukar uñakipt\'añamawa ukat mayamp yant\'añamawa</string>
+    <string name="forecast_type_is_invalid">Pronóstico Tipo \'%1$s\' ukax janiw askïkiti, configuración de configuración ukar uñakipt\'añamawa ukat mayamp yant\'añamawa</string>
     <string name="wasnt_able_to_connect_radar_image">janiw Radar= uñacht\'äwix internet tuqit uñt\'ayasiñjamäkänti jan ukax apkatañjamäkänti</string>
     <string name="wasnt_able_to_connect_data_txt">janiw dates.txt ukax servidor ukan conectar jan ukax apkatañjamäkänti</string>
     <string name="data_url_was_blank">Datos url ukax ch\'usawjawa</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Mä app</string>
     <string name="custom_setting">Ukax mä juk\'a ch\'amanchatawa</string>
     <string name="app_theme">App ukax tema ukawa</string>
-	<string name="today">Jichhüru</string>
+    <string name="today">Jichhüru</string>
     <string name="last_year_stats">Nayra marax Estadísticas</string>
     <string name="last_month_stats">Qhipa phaxsinx Estadísticas ukanakaw utji</string>
     <string name="radar_url_not_set">URL radar ukax janiw utjkiti. Mayjt\'ayañatakix configuración ukar sarañamawa</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL costumbre ukax janiw utt\'ayatakiti, jan ukax ch\'usawjawa. Mä URL costumbre ukar yapxatañatakix configuración ukar mantasmawa</string>
     <string name="next_moon">Jutïr Phaxsi Eventos?</string>
     <string name="update_while_running">Aktualisäwi T\'ijt\'añanxa</string>
+    <string name="force_dark_mode">Ch\'amaka Modo ukar ch\'amanchaña</string>
 </resources>

@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Taflatse lala esime míele URL si nèɖo ɖa la dzi ɖom</string>
     <string name="remove_all_data">Èka ɖe edzi be yedi be yeaɖe nyatakakawo katã ɖaa?</string>
     <string name="no">Ao</string>
-	<string name="ill_fix_and_try_again">Maɖɔe ɖo eye magadze agbagba ake</string>
+    <string name="ill_fix_and_try_again">Maɖɔe ɖo eye magadze agbagba ake</string>
     <string name="error_occurred_while_attempting_to_update">Vodada aɖe dzɔ esime wonɔ agbagba dzem be yewoatrɔ asi le wo zazã ŋu</string>
     <string name="unknown_error_occurred">Vodada si womenya o la dzɔ</string>
     <string name="wasnt_able_to_connect_custom_url">wasn\'t able to connect alo download tso custom URL si woɖo la me</string>
     <string name="wasnt_able_to_connect_webcam_url">Mete ŋu do ka alo wɔ webcam nɔnɔmetata aɖe tso wò server dzi o</string>
     <string name="wasnt_able_to_connect_forecast">Mete ŋu do ka alo wɔ nyagblɔɖia ƒe kɔpi o</string>
-	<string name="forecast_type_is_invalid">Nyagblɔɖi ƒe ƒomevi \'%1$s\' mele eteƒe o, lé ŋku ɖe wò settings file ŋu eye nàgadze agbagba ake</string>
+    <string name="forecast_type_is_invalid">Nyagblɔɖi ƒe ƒomevi \'%1$s\' mele eteƒe o, lé ŋku ɖe wò settings file ŋu eye nàgadze agbagba ake</string>
     <string name="wasnt_able_to_connect_radar_image">Mete ŋu do ka alo wɔ radar= nɔnɔmetata tso internet dzi o</string>
     <string name="wasnt_able_to_connect_data_txt">Mete ŋu do ka alo wɔ data.txt tso wò server dzi o</string>
     <string name="data_url_was_blank">Data URL nɔ ƒuƒlu</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match app</string>
     <string name="custom_setting">Amadede siwo wowɔ ɖe ɖoɖo nu</string>
     <string name="app_theme">App ƒe tanya</string>
-	<string name="today">Egbe</string>
+    <string name="today">Egbe</string>
     <string name="last_year_stats">Ƒe si va yi ƒe akɔntabubuwo</string>
     <string name="last_month_stats">Ɣleti si va yi ƒe akɔntabubuwo</string>
     <string name="radar_url_not_set">Radar URL meɖoe o. Àte ŋu ayi Settings be nàtrɔ</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL si wowɔ ɖe ɖoɖo nu la menye esi woɖo o, alo le ƒuƒlu. Àte ŋu ayi ɖe ɖoɖowo me atsɔ URL si wowɔ ɖe ɖoɖo nu akpe ɖe eŋu</string>
     <string name="next_moon">Ɣleti ƒe nudzɔdzɔ siwo kplɔe ɖo?</string>
     <string name="update_while_running">Update esime nèle du dzi</string>
+    <string name="force_dark_mode">Ŋusẽ Viviti ƒe Nɔnɔme</string>
 </resources>

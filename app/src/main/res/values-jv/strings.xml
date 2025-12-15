@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Mangga ngenteni nalika kita verifikasi URL sing dikirim</string>
     <string name="remove_all_data">Apa sampeyan pengin mbusak kabeh data?</string>
     <string name="no">Ora</string>
-	<string name="ill_fix_and_try_again">Aku bakal ndandani lan coba maneh</string>
+    <string name="ill_fix_and_try_again">Aku bakal ndandani lan coba maneh</string>
     <string name="error_occurred_while_attempting_to_update">Ana kesalahan nalika nyoba nganyari panggunaan</string>
     <string name="unknown_error_occurred">Kesalahan sing ora dingerteni kedadeyan</string>
     <string name="wasnt_able_to_connect_custom_url">Ora bisa nyambung utawa download saka URL adat sing ditemtokake</string>
     <string name="wasnt_able_to_connect_webcam_url">Ora bisa nyambung utawa ndownload gambar webcam saka server sampeyan</string>
     <string name="wasnt_able_to_connect_forecast">Ora bisa nyambung utawa ndownload ramalan kasebut</string>
-	<string name="forecast_type_is_invalid">Tipe jinis \'%1$s\' ora bener, priksa file setelan banjur coba maneh</string>
+    <string name="forecast_type_is_invalid">Tipe jinis \'%1$s\' ora bener, priksa file setelan banjur coba maneh</string>
     <string name="wasnt_able_to_connect_radar_image">Ora bisa nyambung utawa ndownload radar = gambar saka internet</string>
     <string name="wasnt_able_to_connect_data_txt">Ora bisa nyambung utawa ndownload data.txt saka server sampeyan</string>
     <string name="data_url_was_blank">URL data kosong</string>
@@ -60,7 +60,7 @@
     <string name="url_was_default_or_empty">URL disetel menyang standar utawa kosong</string>
     <string name="wasnt_able_to_connect_or_download">Ora bisa nyambung utawa ndownload ramalan kasebut</string>
     <string name="app_theme">Tema Aplikasi</string>
-	<string name="today">Dina iki</string>
+    <string name="today">Dina iki</string>
     <string name="swipe_lock">Gesek Kunci</string>
     <string name="widget_theme">Tema Widget</string>
     <string name="match_app">Aplikasi Cocokan</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL adat ora disetel, utawa kosong. Sampeyan bisa pindhah menyang Setelan kanggo nambah URL khusus</string>
     <string name="next_moon">Sabanjure acara?</string>
     <string name="update_while_running">Nganyari nalika mlaku</string>
+    <string name="force_dark_mode">Meksa mode peteng</string>
 </resources>

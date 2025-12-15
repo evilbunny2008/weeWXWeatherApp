@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Ngiring antosang ritatkala Google ngeverifikasi URL sané sampun kaajuang</string>
     <string name="remove_all_data">Napiké Sameton pastika jagi ngicalang makasami data?</string>
     <string name="no">Ten</string>
-	<string name="ill_fix_and_try_again">Tiang jagi Mecikang lan Indayang malih</string>
+    <string name="ill_fix_and_try_again">Tiang jagi Mecikang lan Indayang malih</string>
     <string name="error_occurred_while_attempting_to_update">Kaiwangan punika mamargi rikala mautsaha ngapdet kawigunan</string>
     <string name="unknown_error_occurred">Kaiwangan sané durung kauningin mamargi</string>
     <string name="wasnt_able_to_connect_custom_url">Nenten prasida nyambung utawi ngunduh saking URL adat sane sampun katentuang</string>
     <string name="wasnt_able_to_connect_webcam_url">Nénten prasida nyambung utawi ngunduh gambar webcam saking server Sametoné</string>
     <string name="wasnt_able_to_connect_forecast">Nenten prasida nyambung utawi ngunduh ramalan punika</string>
-	<string name="forecast_type_is_invalid">Jenis fonecast \'%1$s\' nénten sah, tureksain file setélan Sametoné lan indayang malih</string>
+    <string name="forecast_type_is_invalid">Jenis fonecast \'%1$s\' nénten sah, tureksain file setélan Sametoné lan indayang malih</string>
     <string name="wasnt_able_to_connect_radar_image">Nenten prasida nyambung utawi ngunduh radar= gambar saking internet</string>
     <string name="wasnt_able_to_connect_data_txt">Nénten prasida nyambung utawi ngunduh data.txt saking server Sametoné</string>
     <string name="data_url_was_blank">URL data sampun puyung</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Aplikasi Cocok</string>
     <string name="custom_setting">Warna Khusus</string>
     <string name="app_theme">Tema Aplikasi</string>
-	<string name="today">Dina jani</string>
+    <string name="today">Dina jani</string>
     <string name="last_year_stats">Statistik warsa sané lintang</string>
     <string name="last_month_stats">Statistik Bulan sane lintang</string>
     <string name="radar_url_not_set">Radar URL nenten kagenahang. Sameton dados ngranjing ka setélan jagi mauwah</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL khusus nenten kaatur, utawi puyung. Sameton dados ngranjing ring setélan jagi ngawewehin URL khusus</string>
     <string name="next_moon">Acara bulan selanturnyane?</string>
     <string name="update_while_running">Update rikala malaib</string>
+    <string name="force_dark_mode">saking Mode Gelap</string>
 </resources>

@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">გთხოვთ, დაელოდოთ სანამ ჩვენ დავადასტურებთ თქვენ მიერ გაგზავნილ URL-ს</string>
     <string name="remove_all_data">დარწმუნებული ხართ, რომ გსურთ წაშალოთ ყველა მონაცემი?</string>
     <string name="no">არა</string>
-	<string name="ill_fix_and_try_again">გამოვასწორებ და ხელახლა ვცდი</string>
+    <string name="ill_fix_and_try_again">გამოვასწორებ და ხელახლა ვცდი</string>
     <string name="error_occurred_while_attempting_to_update">გამოყენების განახლების მცდელობისას მოხდა შეცდომა</string>
     <string name="unknown_error_occurred">მოხდა უცნობი შეცდომა</string>
     <string name="wasnt_able_to_connect_custom_url">მითითებული მორგებული URL-დან დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="wasnt_able_to_connect_webcam_url">ვერ მოხერხდა ვებკამერის სურათის დაკავშირება ან ჩამოტვირთვა თქვენი სერვერიდან</string>
     <string name="wasnt_able_to_connect_forecast">პროგნოზის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
-	<string name="forecast_type_is_invalid">პროგნოზის ტიპი \'%1$s\' არასწორია, შეამოწმეთ თქვენი პარამეტრების ფაილი და სცადეთ ხელახლა</string>
+    <string name="forecast_type_is_invalid">პროგნოზის ტიპი \'%1$s\' არასწორია, შეამოწმეთ თქვენი პარამეტრების ფაილი და სცადეთ ხელახლა</string>
     <string name="wasnt_able_to_connect_radar_image">ვერ მოხერხდა რადარის= სურათის დაკავშირება ან ჩამოტვირთვა ინტერნეტიდან</string>
     <string name="wasnt_able_to_connect_data_txt">თქვენი სერვერიდან data.txt-ის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="data_url_was_blank">მონაცემთა URL ცარიელი იყო</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">მორგებული ფერები</string>
     <string name="app_theme">აპლიკაციის თემა</string>
-	<string name="today">დღეს</string>
+    <string name="today">დღეს</string>
     <string name="last_year_stats">გასული წლის სტატისტიკა</string>
     <string name="last_month_stats">გასული თვის სტატისტიკა</string>
     <string name="radar_url_not_set">რადარის URL არ არის დაყენებული. შესაცვლელად შეგიძლიათ გადახვიდეთ პარამეტრებზე</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">მორგებული URL არ არის დაყენებული ან ცარიელია. შეგიძლიათ შეხვიდეთ პარამეტრებში მორგებული URL-ის დასამატებლად</string>
     <string name="next_moon">შემდეგი მთვარის მოვლენები?</string>
     <string name="update_while_running">განახლება გაშვებისას</string>
+    <string name="force_dark_mode">იძულებითი მუქი რეჟიმი</string>
 </resources>

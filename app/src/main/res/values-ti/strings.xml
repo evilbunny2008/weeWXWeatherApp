@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">በጃኹም ነቲ ዘቕረብኩሞ URL ከነረጋግጽ ከለና ተጸበዩ።</string>
     <string name="remove_all_data">ኩሉ ዳታ ከተውጽእ ከም እትደሊ ርግጸኛ ዲኻ?</string>
     <string name="no">አይኮንን</string>
-	<string name="ill_fix_and_try_again">ክእርሞ እየ ዳግማይ ክፍትን እየ</string>
+    <string name="ill_fix_and_try_again">ክእርሞ እየ ዳግማይ ክፍትን እየ</string>
     <string name="error_occurred_while_attempting_to_update">ኣጠቓቕማ ንምዕራፍ ኣብ ዝፈተነሉ እዋን ጌጋ ኣጋጢሙ ።</string>
     <string name="unknown_error_occurred">ዘይተፈልጠ ጌጋ ኣጋጢሙ</string>
     <string name="wasnt_able_to_connect_custom_url">ካብቲ ዝተነጸረ ብሕታዊ URL ንምትእስሳር ወይ ምውራድ ኣይከኣለን</string>
     <string name="wasnt_able_to_connect_webcam_url">ካብ ሰርቨርካ ናይ ዌብካም ምስሊ ከተራኽብ ወይ ከተውርዶ ኣይከኣለትን</string>
     <string name="wasnt_able_to_connect_forecast">ነቲ ትንበያ ከተራኽቦ ወይ ከተውርዶ ኣይከኣለን።</string>
-	<string name="forecast_type_is_invalid">Type \'%1$s\' ትኽክል ኣይኮነን፣ ናይ ቅጥዕታት ፋይልካ መርምሮ እሞ እንደገና ፈትን።</string>
+    <string name="forecast_type_is_invalid">Type \'%1$s\' ትኽክል ኣይኮነን፣ ናይ ቅጥዕታት ፋይልካ መርምሮ እሞ እንደገና ፈትን።</string>
     <string name="wasnt_able_to_connect_radar_image">ራዳር= ምስሊ ካብ ኢንተርነት ንምትእስሳር ወይ ምውራድ ኣይከኣለን</string>
     <string name="wasnt_able_to_connect_data_txt">ካብ ሰርቨርካ ዳታ.txt ከራኽብ ወይ ከውርድ ኣይከኣለን</string>
     <string name="data_url_was_blank">ዳታ URL ባዶ እዩ ነይሩ።</string>
@@ -64,7 +64,7 @@
     <string name="match_app">ናይ ምትእስሳር ኣፕ</string>
     <string name="custom_setting">ብሕታዊ ሕብርታት</string>
     <string name="app_theme">ኣፕ ቴማ</string>
-	<string name="today">ሎምዓንቲ</string>
+    <string name="today">ሎምዓንቲ</string>
     <string name="last_year_stats">ናይ ዝሓለፈ ዓመት ስታቲስቲክስ</string>
     <string name="last_month_stats">ናይ ዝሓለፈ ወርሒ ስታቲስቲክስ</string>
     <string name="radar_url_not_set">ራዳር URL ኣይተቐመጠን። ናብ ቅጥዕታት ክትከይድ ትኽእል ኢኻ ክትቅየር ትኽእል ኢኻ።</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">ብሕታዊ URL ኣይተቐመጠን፣ ወይ ባዶ እዩ። ብሕታዊ URL ንምውሳኽ ናብ ቅጥዕታት ክትኣቱ ትኽእል ኢኻ ።</string>
     <string name="next_moon">ዝቕጽል ናይ ወርሒ ፍጻመታት?</string>
     <string name="update_while_running">ኣብ እትሰርሓሉ እዋን update</string>
+    <string name="force_dark_mode">ሓይሊ ጸሊም ሞድ</string>
 </resources>

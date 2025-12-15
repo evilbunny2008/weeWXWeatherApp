@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">تکایە چاوەڕوان بن لە کاتێکدا ئێمە ئەو URL ەی کە تۆ پێشکەشت کردووە پشتڕاستی دەکەینەوە</string>
     <string name="remove_all_data">ئایا دڵنیای کە دەتەوێت هەموو داتاکان لابەریت؟</string>
     <string name="no">نەخێر</string>
-	<string name="ill_fix_and_try_again">چاکی دەکەمەوە و دووبارە هەوڵ دەدەمەوە</string>
+    <string name="ill_fix_and_try_again">چاکی دەکەمەوە و دووبارە هەوڵ دەدەمەوە</string>
     <string name="error_occurred_while_attempting_to_update">هەڵەیەک ڕوویدا لەکاتی هەوڵدان بۆ نوێکردنەوەی بەکارهێنان</string>
     <string name="unknown_error_occurred">هەڵەی نەزانراو ڕوویدا</string>
     <string name="wasnt_able_to_connect_custom_url">نەیتوانی پەیوەندی بکات یان دایبگرێت لە URLی تایبەت بەخۆت دیاری کراوە</string>
     <string name="wasnt_able_to_connect_webcam_url">نەیتوانی وێنەیەکی وێبکام لە سێرڤەرەکەتەوە ببەستێتەوە یان دابەزێنرێت</string>
     <string name="wasnt_able_to_connect_forecast">نەیتوانی پەیوەندی بکات یان پێشبینیەکە دابەزێنرێت</string>
-	<string name="forecast_type_is_invalid">جۆری پێشبینی \'%1$s\' نادروستە، فایلە ڕێکخستنەکانت بپشکنە و دووبارە هەوڵبدەرەوە</string>
+    <string name="forecast_type_is_invalid">جۆری پێشبینی \'%1$s\' نادروستە، فایلە ڕێکخستنەکانت بپشکنە و دووبارە هەوڵبدەرەوە</string>
     <string name="wasnt_able_to_connect_radar_image">نەیتوانیوە پەیوەندی بکات یان دابەزێنرێت Radar= لە ئینتەرنێتەوە</string>
     <string name="wasnt_able_to_connect_data_txt">نەیتوانی لە سێرڤەرەکەتەوە پەیوەندی بکات یان Data.txt دابەزێنیت</string>
     <string name="data_url_was_blank">URLی داتا بە بەتاڵی بوو</string>
@@ -64,7 +64,7 @@
     <string name="match_app">ئەپی یاری</string>
     <string name="custom_setting">ڕەنگە تایبەتەکان</string>
     <string name="app_theme">تەوەری ئەپ</string>
-	<string name="today">ئەمڕۆ</string>
+    <string name="today">ئەمڕۆ</string>
     <string name="last_year_stats">ئاماری ساڵی ڕابردوو</string>
     <string name="last_month_stats">ئاماری مانگی ڕابردوو</string>
     <string name="radar_url_not_set">ڕادار URL دانەنراوە. دەتوانیت بچیتە سەر ڕێکخستنەکان بۆ گۆڕانکاری</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URLی تایبەت بەخۆی دانەنراوە، یان سپییە. دەتوانیت بچیتە ناو ڕێکخستنەکان بۆ زیادکردنی URLی تایبەت</string>
     <string name="next_moon">ڕووداوەکانی مانگی داهاتوو؟</string>
     <string name="update_while_running">نوێکردنەوە لە کاتی کارکردندا</string>
+    <string name="force_dark_mode">دۆخی Dark Force</string>
 </resources>

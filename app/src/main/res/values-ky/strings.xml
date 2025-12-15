@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Сиз берген URL\'ди текшерип жатканда күтө туруңуз</string>
     <string name="remove_all_data">Бардык маалыматтарды жок кылгыңыз келеби?</string>
     <string name="no">Жок</string>
-	<string name="ill_fix_and_try_again">Мен аны оңдоп, дагы бир жолу аракет кылам</string>
+    <string name="ill_fix_and_try_again">Мен аны оңдоп, дагы бир жолу аракет кылам</string>
     <string name="error_occurred_while_attempting_to_update">Тез жаңыртуу учурунда ката кетти</string>
     <string name="unknown_error_occurred">Белгисиз ката кетти</string>
     <string name="wasnt_able_to_connect_custom_url">Көрсөтүлгөн Custom URL\'ден туташа алган жок же жүктөп алган жок</string>
     <string name="wasnt_able_to_connect_webcam_url">Сервериңизден веб-камеранын сүрөтүн туташа алган жок же жүктөп алган жок</string>
     <string name="wasnt_able_to_connect_forecast">Алдын-ала туташа алган жок же жүктөп алууну алган жок</string>
-	<string name="forecast_type_is_invalid">\'%1$s\'болжолдоолору жараксыз, жөндөөлөрүңүздүн файлыңызды текшерип, дагы бир жолу аракет кылып көрүңүз</string>
+    <string name="forecast_type_is_invalid">\'%1$s\'болжолдоолору жараксыз, жөндөөлөрүңүздүн файлыңызды текшерип, дагы бир жолу аракет кылып көрүңүз</string>
     <string name="wasnt_able_to_connect_radar_image">Туташа алган жок же жүктөп ала алган жок</string>
     <string name="wasnt_able_to_connect_data_txt">Сервериңизден туташа албайсыз же жүктөп ала алган жок</string>
     <string name="data_url_was_blank">Маалыматтар URL бош болчу</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Матч колдонмосу</string>
     <string name="custom_setting">Өзгөчөлөштүрүлгөн түстөр</string>
     <string name="app_theme">Колдонмо темасы</string>
-	<string name="today">Бүгүн</string>
+    <string name="today">Бүгүн</string>
     <string name="last_year_stats">Былтыр статистика</string>
     <string name="last_month_stats">Өткөн айдын статистикасы</string>
     <string name="radar_url_not_set">Radar URL орнотулган жок. Жөндөөлөргө өзгөртүүгө бара аласыз</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Ыңгайлаштырылган URL орнотулган жок же бош эмес. Ыңгайлаштырылган URL кошуу үчүн жөндөөлөргө кире аласыз</string>
     <string name="next_moon">Кийинки ай?</string>
     <string name="update_while_running">Иштеп жатканда жаңыртыңыз</string>
+    <string name="force_dark_mode">Күчтүү караңгы режим</string>
 </resources>

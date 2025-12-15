@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Kerei me da wawa ni da vakadeitaka na URL o sa vakamalumalumu</string>
     <string name="remove_all_data">O sa vakadeitaka beka ni o vinakata mo kauta laivi na itukutuku kece?</string>
     <string name="no">Sega</string>
-	<string name="ill_fix_and_try_again">Au na Marau Kina Sa Vakatovotovo</string>
+    <string name="ill_fix_and_try_again">Au na Marau Kina Sa Vakatovotovo</string>
     <string name="error_occurred_while_attempting_to_update">E dua na cala e yaco ena nona tovolea me vakavoui na vakayagataki</string>
     <string name="unknown_error_occurred">sa sega ni cala</string>
     <string name="wasnt_able_to_connect_custom_url">Sa sega ni rawa ni semata se lavetaka mai na ivakarau ni kena ivakarau na URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Sa sega ni rawa me ra semata se lavetaka e dua na iyaloyalo ni webcam mai na nomu cakacaka ni cakacaka</string>
     <string name="wasnt_able_to_connect_forecast">Sa sega ni rawa me ra semata se lavetaka na itukutuku</string>
-	<string name="forecast_type_is_invalid">Na mataqali \'%1$s\' e tawayalani, raica na nomu ituvatuva ni ituvatuva ka tovolea tale</string>
+    <string name="forecast_type_is_invalid">Na mataqali \'%1$s\' e tawayalani, raica na nomu ituvatuva ni ituvatuva ka tovolea tale</string>
     <string name="wasnt_able_to_connect_radar_image">E sega ni rawa ni semata se lavetaka na iyaloyalo mai na internet</string>
     <string name="wasnt_able_to_connect_data_txt">E sega ni rawa ni semata se lavetaka na itukutuku.txt mai na nomu cakacaka ni veiqaravi</string>
     <string name="data_url_was_blank">Ea nunu vinaka o Data URL</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Wilika na iVura</string>
     <string name="custom_setting">Bibi sara</string>
     <string name="app_theme">vakalawa e</string>
-	<string name="today">Nikua</string>
+    <string name="today">Nikua</string>
     <string name="last_year_stats">Na imatai ni siga e kena 1</string>
     <string name="last_month_stats">Na veikatu ni galala</string>
     <string name="radar_url_not_set">Rada URL. Sa rawa mo lako ki na ituvatuva mo veisau</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">E sega ni tauyavutaki, se me lagalagati. E rawa ni o lako ki na ituvatuva mo vakuria kina e dua na URL</string>
     <string name="next_moon">E yaco na vula qo?</string>
     <string name="update_while_running">wa eso tale na cici</string>
+    <string name="force_dark_mode">iTi ki na tutu ni mataka</string>
 </resources>

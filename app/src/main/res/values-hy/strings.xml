@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Խնդրում ենք սպասել, մինչև մենք հաստատենք ձեր ուղարկած URL-ը:</string>
     <string name="remove_all_data">Իսկապե՞ս ուզում եք հեռացնել բոլոր տվյալները:</string>
     <string name="no">Ոչ</string>
-	<string name="ill_fix_and_try_again">Ես կուղղեմ այն ​​և նորից կփորձեմ</string>
+    <string name="ill_fix_and_try_again">Ես կուղղեմ այն ​​և նորից կփորձեմ</string>
     <string name="error_occurred_while_attempting_to_update">Օգտագործումը թարմացնելու փորձի ժամանակ սխալ առաջացավ</string>
     <string name="unknown_error_occurred">Անհայտ սխալ է տեղի ունեցել</string>
     <string name="wasnt_able_to_connect_custom_url">Չհաջողվեց միանալ կամ ներբեռնել նշված հատուկ URL-ից</string>
     <string name="wasnt_able_to_connect_webcam_url">Չհաջողվեց միացնել կամ ներբեռնել վեբ-տեսախցիկի պատկերը ձեր սերվերից</string>
     <string name="wasnt_able_to_connect_forecast">Չհաջողվեց միացնել կամ ներբեռնել կանխատեսումը:</string>
-	<string name="forecast_type_is_invalid">\'%1$s\' կանխատեսման տեսակն անվավեր է, ստուգեք ձեր կարգավորումների ֆայլը և նորից փորձեք:</string>
+    <string name="forecast_type_is_invalid">\'%1$s\' կանխատեսման տեսակն անվավեր է, ստուգեք ձեր կարգավորումների ֆայլը և նորից փորձեք:</string>
     <string name="wasnt_able_to_connect_radar_image">Չհաջողվեց միացնել կամ ներբեռնել Radar= պատկերը ինտերնետից</string>
     <string name="wasnt_able_to_connect_data_txt">Չհաջողվեց միացնել կամ ներբեռնել data.txt-ը ձեր սերվերից</string>
     <string name="data_url_was_blank">Տվյալների URL-ը դատարկ էր</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Համապատասխան հավելված</string>
     <string name="custom_setting">Պատվերով Գույներ</string>
     <string name="app_theme">Հավելվածի թեմա</string>
-	<string name="today">Այսօր</string>
+    <string name="today">Այսօր</string>
     <string name="last_year_stats">Անցյալ տարվա վիճակագրություն</string>
     <string name="last_month_stats">Անցյալ ամսվա վիճակագրություն</string>
     <string name="radar_url_not_set">Ռադարի URL-ը սահմանված չէ: Փոխելու համար կարող եք գնալ կարգավորումներ:</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Հատուկ URL-ը սահմանված չէ կամ դատարկ է: Դուք կարող եք մտնել կարգավորումներ՝ հատուկ URL ավելացնելու համար</string>
     <string name="next_moon">Հաջորդ լուսնի իրադարձությունները</string>
     <string name="update_while_running">Թարմացրեք գործարկման ընթացքում</string>
+    <string name="force_dark_mode">Ստիպել մութ ռեժիմը</string>
 </resources>

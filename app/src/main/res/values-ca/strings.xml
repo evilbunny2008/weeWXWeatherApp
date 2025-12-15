@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Espereu mentre verifiquem l\'URL que heu enviat</string>
     <string name="remove_all_data">Esteu segur que voleu eliminar totes les dades?</string>
     <string name="no">No</string>
-	<string name="ill_fix_and_try_again">Ho arreglaré i ho tornaré a provar</string>
+    <string name="ill_fix_and_try_again">Ho arreglaré i ho tornaré a provar</string>
     <string name="error_occurred_while_attempting_to_update">S\'ha produït un error en intentar actualitzar l\'ús</string>
     <string name="unknown_error_occurred">S\'ha produït un error desconegut</string>
     <string name="wasnt_able_to_connect_custom_url">No s\'ha pogut connectar ni baixar des de l\'URL personalitzat especificat</string>
     <string name="wasnt_able_to_connect_webcam_url">No s\'ha pogut connectar ni baixar una imatge de càmera web del vostre servidor</string>
     <string name="wasnt_able_to_connect_forecast">No s\'ha pogut connectar ni baixar la previsió</string>
-	<string name="forecast_type_is_invalid">El tipus de previsió \'%1$s\' no és vàlid, comproveu el fitxer de configuració i torneu-ho a provar</string>
+    <string name="forecast_type_is_invalid">El tipus de previsió \'%1$s\' no és vàlid, comproveu el fitxer de configuració i torneu-ho a provar</string>
     <string name="wasnt_able_to_connect_radar_image">No s\'ha pogut connectar ni baixar la imatge radar= d\'Internet</string>
     <string name="wasnt_able_to_connect_data_txt">No s\'ha pogut connectar ni baixar data.txt del vostre servidor</string>
     <string name="data_url_was_blank">L\'URL de les dades estava en blanc</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Aplicació Match</string>
     <string name="custom_setting">Colors personalitzats</string>
     <string name="app_theme">Tema de l\'aplicació</string>
-	<string name="today">Avui</string>
+    <string name="today">Avui</string>
     <string name="last_year_stats">Estadístiques de l\'any passat</string>
     <string name="last_month_stats">Estadístiques del mes passat</string>
     <string name="radar_url_not_set">URL del radar no definit. Podeu anar a la configuració per canviar</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">L\'URL personalitzat no està definit o està en blanc. Podeu anar a la configuració per afegir un URL personalitzat</string>
     <string name="next_moon">Esdeveniments de la propera lluna?</string>
     <string name="update_while_running">Actualitza mentre s\'executa</string>
+    <string name="force_dark_mode">Força el mode fosc</string>
 </resources>

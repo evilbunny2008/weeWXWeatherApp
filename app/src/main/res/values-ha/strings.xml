@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Da fatan za a jira yayin da muke tabbatar da URL ɗin da kuka ƙaddamar</string>
     <string name="remove_all_data">Kuna da tabbas kuna son cire duk bayanan?</string>
     <string name="no">A\'a</string>
-	<string name="ill_fix_and_try_again">Zan gyara shi kuma a sake gwadawa</string>
+    <string name="ill_fix_and_try_again">Zan gyara shi kuma a sake gwadawa</string>
     <string name="error_occurred_while_attempting_to_update">Kuskure ya faru yayin ƙoƙarin sabunta amfani</string>
     <string name="unknown_error_occurred">Kuskuren da ba a sani ba ya faru</string>
     <string name="wasnt_able_to_connect_custom_url">Bai sami damar haɗi ko saukarwa daga URL na al\'ada da aka ƙayyade ba</string>
     <string name="wasnt_able_to_connect_webcam_url">Bai iya haɗi ko saukar da hoton gidan yanar gizo daga sabar ku ba</string>
     <string name="wasnt_able_to_connect_forecast">Bai iya haɗi ba ko sauke hasashen</string>
-	<string name="forecast_type_is_invalid">Nau\'in hasashe \'%1$s\' ba shi da inganci, duba fayil ɗin saitunan ku kuma sake gwadawa</string>
+    <string name="forecast_type_is_invalid">Nau\'in hasashe \'%1$s\' ba shi da inganci, duba fayil ɗin saitunan ku kuma sake gwadawa</string>
     <string name="wasnt_able_to_connect_radar_image">Bai iya haɗi ko saukar da rad = hoto daga Intanet ba</string>
     <string name="wasnt_able_to_connect_data_txt">Bai sami damar haɗi ko sauke bayanai ba .txt daga sabar ku</string>
     <string name="data_url_was_blank">URL ɗin bayanai ba komai</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Dace da app</string>
     <string name="custom_setting">Launuka masu al\'ada</string>
     <string name="app_theme">Takardar App</string>
-	<string name="today">Yau</string>
+    <string name="today">Yau</string>
     <string name="last_year_stats">Statisticsididdigar bara</string>
     <string name="last_month_stats">Statisticdiddigar watan da ya gabata</string>
     <string name="radar_url_not_set">Radar URL ba saita. Kuna iya zuwa saiti don canzawa</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Ba a saita URL na al\'ada ba, ko kuma babu komai. Kuna iya shiga cikin saiti don ƙara URL na al\'ada</string>
     <string name="next_moon">Abubuwan da suka faru na gaba?</string>
     <string name="update_while_running">Sabuntawa yayin gudana</string>
+    <string name="force_dark_mode">Karfi da duhu</string>
 </resources>

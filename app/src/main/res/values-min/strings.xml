@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Silahkan tunggu sambia kami verifikasi URL nan Sanak ajukan</string>
     <string name="remove_all_data">Lai yakin sanak nio maapuih sado data?</string>
     <string name="no">Indak</string>
-	<string name="ill_fix_and_try_again">Ambo Ka Perbaiki dan Cubolah Baliak</string>
+    <string name="ill_fix_and_try_again">Ambo Ka Perbaiki dan Cubolah Baliak</string>
     <string name="error_occurred_while_attempting_to_update">Kasalahan tajadi katiko mancubo mampabarui pamakaian</string>
     <string name="unknown_error_occurred">Kasalahan nan indak dikatahui tajadi</string>
     <string name="wasnt_able_to_connect_custom_url">Indak dapek mahubuangkan atau mangunduakan dari URL adat nan ditantukan</string>
     <string name="wasnt_able_to_connect_webcam_url">Indak dapek mahubuangkan atau mangunduakan gambar webcam dari server Sanak</string>
     <string name="wasnt_able_to_connect_forecast">Indak dapek mahubuangkan atau mangunduakan ramalan</string>
-	<string name="forecast_type_is_invalid">Tipu tipe \'%1$s\' indak sah, pareso file pangaturan Sanak dan cubo baliak</string>
+    <string name="forecast_type_is_invalid">Tipu tipe \'%1$s\' indak sah, pareso file pangaturan Sanak dan cubo baliak</string>
     <string name="wasnt_able_to_connect_radar_image">Indak mampu manyambuang atau mandownload radar= gambar dari internet</string>
     <string name="wasnt_able_to_connect_data_txt">Indak dapek manyambuang atau mangunduakan data.txt dari server Sanak</string>
     <string name="data_url_was_blank">URL Data pun kosong</string>
@@ -64,7 +64,7 @@
     <string name="match_app">App</string>
     <string name="custom_setting">Warna</string>
     <string name="app_theme">Tema Aplikasi</string>
-	<string name="today">Hari iko</string>
+    <string name="today">Hari iko</string>
     <string name="last_year_stats">Statistik Tahun nan lalu</string>
     <string name="last_month_stats">Statistik Bulan nan lalu</string>
     <string name="radar_url_not_set">Radar URL indak diatur. Sanak bisa pai ka pangaturan untuak barubah</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL Adat indak diatur, atau kosong. Sanak dapek masuak ka dalam pangaturan untuak manambah URL khusus</string>
     <string name="next_moon">Kajadian bulan barikuiknyo?</string>
     <string name="update_while_running">Perbarui sambia balari</string>
+    <string name="force_dark_mode">Mode Gelap Angkatan</string>
 </resources>

@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Per piacè aspettate mentre verificamu l\'URL chì avete inviatu</string>
     <string name="remove_all_data">Sò sicuru chì vulete sguassà tutte e dati?</string>
     <string name="no">Innò</string>
-	<string name="ill_fix_and_try_again">Ripararaghju è pruvà di novu</string>
+    <string name="ill_fix_and_try_again">Ripararaghju è pruvà di novu</string>
     <string name="error_occurred_while_attempting_to_update">Un errore hè accadutu mentre pruvate d\'aghjurnà l\'usu</string>
     <string name="unknown_error_occurred">Un errore scunnisciutu hè accadutu</string>
     <string name="wasnt_able_to_connect_custom_url">Ùn hè statu capace di cunnette o scaricate da l\'URL persunalizata specificata</string>
     <string name="wasnt_able_to_connect_webcam_url">Ùn hè statu capace di cunnette o scaricà una maghjina di webcam da u vostru servitore</string>
     <string name="wasnt_able_to_connect_forecast">Ùn hè statu capace di cunnette o di scaricà a previsione</string>
-	<string name="forecast_type_is_invalid">U tipu di previsione \'%1$s\' ùn hè micca validu, verificate u vostru schedariu di paràmetri è pruvate di novu</string>
+    <string name="forecast_type_is_invalid">U tipu di previsione \'%1$s\' ùn hè micca validu, verificate u vostru schedariu di paràmetri è pruvate di novu</string>
     <string name="wasnt_able_to_connect_radar_image">Ùn hè statu capace di cunnette o di scaricà radar = imagine da Internet</string>
     <string name="wasnt_able_to_connect_data_txt">Ùn hè statu capace di cunnette o di scaricà data.txt da u vostru servitore</string>
     <string name="data_url_was_blank">L\'URL di dati era viotu</string>
@@ -64,7 +64,7 @@
     <string name="match_app">App Match</string>
     <string name="custom_setting">Culori persunalizati</string>
     <string name="app_theme">Tema di l\'app</string>
-	<string name="today">Oghje</string>
+    <string name="today">Oghje</string>
     <string name="last_year_stats">Statistiche di l\'annu passatu</string>
     <string name="last_month_stats">Statistiche di u mese passatu</string>
     <string name="radar_url_not_set">L\'URL di u radar ùn hè micca stabilitu. Pudete andà à i paràmetri per cambià</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">L\'URL persunalizatu ùn hè micca stabilitu, o hè viotu. Pudete andà in i paràmetri per aghjunghje un URL persunalizatu</string>
     <string name="next_moon">Avvenimenti di a prossima luna?</string>
     <string name="update_while_running">Aghjurnate mentre corre</string>
+    <string name="force_dark_mode">Force Dark Mode</string>
 </resources>

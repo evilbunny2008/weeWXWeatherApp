@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Počkejte prosím, než ověříme vámi odeslanou adresu URL</string>
     <string name="remove_all_data">Opravdu chcete odstranit všechna data?</string>
     <string name="no">Žádný</string>
-	<string name="ill_fix_and_try_again">Opravím to a zkusím to znovu</string>
+    <string name="ill_fix_and_try_again">Opravím to a zkusím to znovu</string>
     <string name="error_occurred_while_attempting_to_update">Při pokusu o aktualizaci využití došlo k chybě</string>
     <string name="unknown_error_occurred">Došlo k neznámé chybě</string>
     <string name="wasnt_able_to_connect_custom_url">Nebylo možné se připojit nebo stáhnout ze zadané vlastní adresy URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Nepodařilo se připojit nebo stáhnout obrázek webové kamery z vašeho serveru</string>
     <string name="wasnt_able_to_connect_forecast">Nepodařilo se připojit nebo stáhnout předpověď</string>
-	<string name="forecast_type_is_invalid">Typ předpovědi \'%1$s\' je neplatný, zkontrolujte soubor nastavení a zkuste to znovu</string>
+    <string name="forecast_type_is_invalid">Typ předpovědi \'%1$s\' je neplatný, zkontrolujte soubor nastavení a zkuste to znovu</string>
     <string name="wasnt_able_to_connect_radar_image">Nebylo možné se připojit nebo stáhnout radar= obrázek z internetu</string>
     <string name="wasnt_able_to_connect_data_txt">Nepodařilo se připojit nebo stáhnout data.txt z vašeho serveru</string>
     <string name="data_url_was_blank">Adresa URL dat byla prázdná</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Aplikace Match</string>
     <string name="custom_setting">Vlastní barvy</string>
     <string name="app_theme">Téma aplikace</string>
-	<string name="today">Dnes</string>
+    <string name="today">Dnes</string>
     <string name="last_year_stats">Loňské statistiky</string>
     <string name="last_month_stats">Statistiky za minulý měsíc</string>
     <string name="radar_url_not_set">Adresa URL radaru není nastavena. Pro změnu můžete přejít do nastavení</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Vlastní adresa URL není nastavena nebo je prázdná. Můžete přejít do nastavení a přidat vlastní adresu URL</string>
     <string name="next_moon">Další události na Měsíci?</string>
     <string name="update_while_running">Aktualizace za běhu</string>
+    <string name="force_dark_mode">Vynutit tmavý režim</string>
 </resources>

@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">URL i submit kha kan verify lai hian lo nghak rih rawh</string>
     <string name="remove_all_data">Data zawng zawng remove vek i duh em?</string>
     <string name="no">Aih</string>
-	<string name="ill_fix_and_try_again">Ka siam tha ang a, ka tum leh ang</string>
+    <string name="ill_fix_and_try_again">Ka siam tha ang a, ka tum leh ang</string>
     <string name="error_occurred_while_attempting_to_update">Update hman tum laiin tihsual a awm</string>
     <string name="unknown_error_occurred">Hriat loh tihsual a awm</string>
     <string name="wasnt_able_to_connect_custom_url">Custom URL tarlan atang khan connect leh download theih a ni lo</string>
     <string name="wasnt_able_to_connect_webcam_url">I server atanga webcam image connect emaw download emaw theih a ni lo</string>
     <string name="wasnt_able_to_connect_forecast">Forecast chu a connect thei lo va, a download thei lo bawk</string>
-	<string name="forecast_type_is_invalid">Forecast type \'%1$s\' a dik lo a, i settings file kha check la, han try leh teh</string>
+    <string name="forecast_type_is_invalid">Forecast type \'%1$s\' a dik lo a, i settings file kha check la, han try leh teh</string>
     <string name="wasnt_able_to_connect_radar_image">Radar= a inzawm thei lo va, a download thei lo bawk</string>
     <string name="wasnt_able_to_connect_data_txt">i server atang chuan data.txt a connect thei lo va, a download thei lo bawk</string>
     <string name="data_url_was_blank">Data URL chu a blank a</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match app a ni a, app 100 a ni</string>
     <string name="custom_setting">Custom rawng hrang hrang</string>
     <string name="app_theme">App Theme 100 a ni</string>
-	<string name="today">Vawiin</string>
+    <string name="today">Vawiin</string>
     <string name="last_year_stats">Nikum khan statistics</string>
     <string name="last_month_stats">Thla hmasa khan statistics</string>
     <string name="radar_url_not_set">radar url a ni lo. Settings ah kal in thlak theih a ni</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Custom URL hi a set lo a, a blank pawh a ni. Settings ah i lut thei ang a, custom URL 1000 add theih ang</string>
     <string name="next_moon">Next Moon events?</string>
     <string name="update_while_running">Update a kal laiin</string>
+    <string name="force_dark_mode">Force Dark Mode</string>
 </resources>

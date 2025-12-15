@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">ਕਿਰਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ ਜਦੋਂ ਤੱਕ ਅਸੀਂ ਤੁਹਾਡੇ ਦੁਆਰਾ ਸਪੁਰਦ ਕੀਤੇ URL ਦੀ ਪੁਸ਼ਟੀ ਕਰਦੇ ਹਾਂ।</string>
     <string name="remove_all_data">ਕੀ ਤੁਸੀਂ ਯਕੀਨੀ ਤੌਰ \'ਤੇ ਸਾਰਾ ਡਾਟਾ ਹਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?</string>
     <string name="no">ਨੰ</string>
-	<string name="ill_fix_and_try_again">ਮੈਂ ਇਸਨੂੰ ਠੀਕ ਕਰਾਂਗਾ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰਾਂਗਾ</string>
+    <string name="ill_fix_and_try_again">ਮੈਂ ਇਸਨੂੰ ਠੀਕ ਕਰਾਂਗਾ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰਾਂਗਾ</string>
     <string name="error_occurred_while_attempting_to_update">ਵਰਤੋਂ ਨੂੰ ਅੱਪਡੇਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਸਮੇਂ ਇੱਕ ਤਰੁੱਟੀ ਉਤਪੰਨ ਹੋਈ</string>
     <string name="unknown_error_occurred">ਅਗਿਆਤ ਤਰੁੱਟੀ ਆਈ ਹੈ</string>
     <string name="wasnt_able_to_connect_custom_url">ਨਿਰਦਿਸ਼ਟ ਕਸਟਮ URL ਤੋਂ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
     <string name="wasnt_able_to_connect_webcam_url">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ ਵੈਬਕੈਮ ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
     <string name="wasnt_able_to_connect_forecast">ਪੂਰਵ ਅਨੁਮਾਨ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ।</string>
-	<string name="forecast_type_is_invalid">ਪੂਰਵ ਅਨੁਮਾਨ ਕਿਸਮ \'%1$s\' ਅਵੈਧ ਹੈ, ਆਪਣੀ ਸੈਟਿੰਗ ਫਾਈਲ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
+    <string name="forecast_type_is_invalid">ਪੂਰਵ ਅਨੁਮਾਨ ਕਿਸਮ \'%1$s\' ਅਵੈਧ ਹੈ, ਆਪਣੀ ਸੈਟਿੰਗ ਫਾਈਲ ਦੀ ਜਾਂਚ ਕਰੋ ਅਤੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।</string>
     <string name="wasnt_able_to_connect_radar_image">ਇੰਟਰਨੈੱਟ ਤੋਂ radar= ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
     <string name="wasnt_able_to_connect_data_txt">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ data.txt ਨੂੰ ਕਨੈਕਟ ਕਰਨ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
     <string name="data_url_was_blank">ਡਾਟਾ URL ਖਾਲੀ ਸੀ</string>
@@ -64,7 +64,7 @@
     <string name="match_app">ਮੈਚ ਐਪ</string>
     <string name="custom_setting">ਕਸਟਮ ਰੰਗ</string>
     <string name="app_theme">ਐਪ ਥੀਮ</string>
-	<string name="today">ਅੱਜ</string>
+    <string name="today">ਅੱਜ</string>
     <string name="last_year_stats">ਪਿਛਲੇ ਸਾਲ ਦੇ ਅੰਕੜੇ</string>
     <string name="last_month_stats">ਪਿਛਲੇ ਮਹੀਨੇ ਦੇ ਅੰਕੜੇ</string>
     <string name="radar_url_not_set">ਰਾਡਾਰ URL ਸੈੱਟ ਨਹੀਂ ਹੈ। ਤੁਸੀਂ ਬਦਲਣ ਲਈ ਸੈਟਿੰਗਾਂ \'ਤੇ ਜਾ ਸਕਦੇ ਹੋ।</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">ਕਸਟਮ URL ਸੈੱਟ ਨਹੀਂ ਹੈ, ਜਾਂ ਖਾਲੀ ਹੈ। ਤੁਸੀਂ ਇੱਕ ਕਸਟਮ URL ਜੋੜਨ ਲਈ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਜਾ ਸਕਦੇ ਹੋ</string>
     <string name="next_moon">ਅਗਲੇ ਚੰਦਰਮਾ ਦੀਆਂ ਘਟਨਾਵਾਂ?</string>
     <string name="update_while_running">ਚੱਲਦੇ ਸਮੇਂ ਅੱਪਡੇਟ ਕਰੋ</string>
+    <string name="force_dark_mode">ਡਾਰਕ ਮੋਡ ਨੂੰ ਜ਼ੋਰ ਦਿਓ</string>
 </resources>

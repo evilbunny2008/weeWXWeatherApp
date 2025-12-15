@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Punten antosan bari kami pariksa URL anu anjeun kirimkeun</string>
     <string name="remove_all_data">Naha anjeun badé ngahapus sadaya data?</string>
     <string name="no">Henteu</string>
-	<string name="ill_fix_and_try_again">Abdi badé ngabenerkeun deui</string>
+    <string name="ill_fix_and_try_again">Abdi badé ngabenerkeun deui</string>
     <string name="error_occurred_while_attempting_to_update">Aya kasalahan nalika nyobian ngapdet panggunaan</string>
     <string name="unknown_error_occurred">Aya kasalahan anu teu dipikanyaho</string>
     <string name="wasnt_able_to_connect_custom_url">Teu tiasa nyambung atanapi undeuran ti URL khusus anu dieusian</string>
     <string name="wasnt_able_to_connect_webcam_url">Teu tiasa nyambung atanapi ngundeur gambar webcam tina server anjeun</string>
     <string name="wasnt_able_to_connect_forecast">Henteu tiasa nyambung atanapi unduh ramalan</string>
-	<string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' henteu leres, pariksa file setélan anjeun sareng cobian deui</string>
+    <string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' henteu leres, pariksa file setélan anjeun sareng cobian deui</string>
     <string name="wasnt_able_to_connect_radar_image">Henteu tiasa nyambungkeun atanapi unduh radar = gambar tina internét</string>
     <string name="wasnt_able_to_connect_data_txt">Teu tiasa nyambung atanapi ngundeur data.txt ti server anjeun</string>
     <string name="data_url_was_blank">URL data kosong</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Patandingan aplikasi</string>
     <string name="custom_setting">Warna adat</string>
     <string name="app_theme">Téma aplikasi</string>
-	<string name="today">Ayeuna</string>
+    <string name="today">Ayeuna</string>
     <string name="last_year_stats">Statistik taun ka tukang</string>
     <string name="last_month_stats">Statistik bulan kamari</string>
     <string name="radar_url_not_set">Radar URL teu diatur. Anjeun tiasa angkat kana setélan pikeun robih</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL adat henteu diatur, atanapi kosong. Anjeun tiasa angkat kana setélan pikeun nambihan URL khusus</string>
     <string name="next_moon">Acara bulan salajengna?</string>
     <string name="update_while_running">Update bari ngajalankeun</string>
+    <string name="force_dark_mode">Maksa modeu poék</string>
 </resources>

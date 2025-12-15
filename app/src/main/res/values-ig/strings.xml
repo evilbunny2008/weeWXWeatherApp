@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Biko chere ka anyị nyochaa URL ị nyefere</string>
     <string name="remove_all_data">Ì ji n\'aka na ịchọrọ iwepu data niile?</string>
     <string name="no">Mba</string>
-	<string name="ill_fix_and_try_again">M ga-edozi ya ma nwaa ọzọ</string>
+    <string name="ill_fix_and_try_again">M ga-edozi ya ma nwaa ọzọ</string>
     <string name="error_occurred_while_attempting_to_update">Njehie mere mgbe ị na-anwa imelite ojiji</string>
     <string name="unknown_error_occurred">Njehie amaghi ama mere</string>
     <string name="wasnt_able_to_connect_custom_url">Enweghị ike ijikọ ma ọ bụ budata site na URL omenala akọwapụtara</string>
     <string name="wasnt_able_to_connect_webcam_url">Enweghị ike ijikọ ma ọ bụ budata onyonyo weebụ na sava gị</string>
     <string name="wasnt_able_to_connect_forecast">Enweghị ike ijikọ ma ọ bụ budata amụma ahụ</string>
-	<string name="forecast_type_is_invalid">Amụma dị iche iche \'%1$s\' abaghị uru, lelee faịlụ ntọala gị wee nwaa ọzọ</string>
+    <string name="forecast_type_is_invalid">Amụma dị iche iche \'%1$s\' abaghị uru, lelee faịlụ ntọala gị wee nwaa ọzọ</string>
     <string name="wasnt_able_to_connect_radar_image">Enweghị ike ijikọ ma ọ bụ budata Radar = onyonyo site na ịntanetị</string>
     <string name="wasnt_able_to_connect_data_txt">Enweghị ike ijikọ ma ọ bụ budata data.txt na sava gị</string>
     <string name="data_url_was_blank">URL data bụ oghere</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Ngwakọta ngwa</string>
     <string name="custom_setting">Agba omenala</string>
     <string name="app_theme">Okwu</string>
-	<string name="today">Taa</string>
+    <string name="today">Taa</string>
     <string name="last_year_stats">Ọnụ ọgụgụ nke afọ gara aga</string>
     <string name="last_month_stats">Ọnụ ọgụgụ ọnwa gara aga</string>
     <string name="radar_url_not_set">Dradar Url esetịghị. Can nwere ike ịga ntọala ịgbanwe</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL ọdịnala anaghị edobe, ma ọ bụ na-enweghị oghere. Can nwere ike ịbanye na ntọala iji tinye URL omenala</string>
     <string name="next_moon">Ọ na-esote ọnwa?</string>
     <string name="update_while_running">Mmelite mgbe ị na-agba ọsọ</string>
+    <string name="force_dark_mode">Ike ọchịchịrị</string>
 </resources>

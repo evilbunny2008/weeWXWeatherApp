@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Tanpri tann pandan n ap verifye URL ou te voye a</string>
     <string name="remove_all_data">Èske w sèten ou vle retire tout done yo?</string>
     <string name="no">Non</string>
-	<string name="ill_fix_and_try_again">Mwen pral ranje li epi eseye ankò</string>
+    <string name="ill_fix_and_try_again">Mwen pral ranje li epi eseye ankò</string>
     <string name="error_occurred_while_attempting_to_update">Yon erè te fèt pandan y ap eseye mete ajou itilizasyon</string>
     <string name="unknown_error_occurred">Erè enkoni te fèt</string>
     <string name="wasnt_able_to_connect_custom_url">Pa t \'kapab konekte oswa telechaje soti nan URL la koutim espesifye</string>
     <string name="wasnt_able_to_connect_webcam_url">Pa t \'kapab konekte oswa telechaje yon imaj webcam nan sèvè ou a</string>
     <string name="wasnt_able_to_connect_forecast">Pa t \'kapab konekte oswa telechaje pwevwa a</string>
-	<string name="forecast_type_is_invalid">Kalite previzyon \'%1$s\' pa valab, tcheke dosye paramèt ou a epi eseye ankò</string>
+    <string name="forecast_type_is_invalid">Kalite previzyon \'%1$s\' pa valab, tcheke dosye paramèt ou a epi eseye ankò</string>
     <string name="wasnt_able_to_connect_radar_image">Pa t \'kapab konekte oswa telechaje rada = imaj soti nan entènèt la</string>
     <string name="wasnt_able_to_connect_data_txt">Pa t \'kapab konekte oswa telechaje data.txt soti nan sèvè ou a</string>
     <string name="data_url_was_blank">URL done yo te vid</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Koulè Custom</string>
     <string name="app_theme">Tèm aplikasyon an</string>
-	<string name="today">Jodi a</string>
+    <string name="today">Jodi a</string>
     <string name="last_year_stats">Estatistik ane pase a</string>
     <string name="last_month_stats">Estatistik mwa pase a</string>
     <string name="radar_url_not_set">URL rada pa mete. Ou ka ale nan paramèt chanje</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL Custom pa mete, oswa li vid. Ou ka ale nan anviwònman yo ajoute yon URL koutim</string>
     <string name="next_moon">Evènman pwochen lalin?</string>
     <string name="update_while_running">Mete ajou pandan w ap kouri</string>
+    <string name="force_dark_mode">Fòs mòd nwa</string>
 </resources>

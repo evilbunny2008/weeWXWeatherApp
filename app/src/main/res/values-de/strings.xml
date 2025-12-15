@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Bitte warten Sie, während wir die von Ihnen übermittelte URL überprüfen</string>
     <string name="remove_all_data">Sind Sie sicher, dass Sie alle Daten entfernen möchten?</string>
     <string name="no">NEIN</string>
-	<string name="ill_fix_and_try_again">Ich werde es reparieren und es erneut versuchen</string>
+    <string name="ill_fix_and_try_again">Ich werde es reparieren und es erneut versuchen</string>
     <string name="error_occurred_while_attempting_to_update">Beim Versuch, die Nutzung zu aktualisieren, ist ein Fehler aufgetreten</string>
     <string name="unknown_error_occurred">Es ist ein unbekannter Fehler aufgetreten</string>
     <string name="wasnt_able_to_connect_custom_url">Es konnte keine Verbindung hergestellt oder von der angegebenen benutzerdefinierten URL heruntergeladen werden</string>
     <string name="wasnt_able_to_connect_webcam_url">Es konnte keine Verbindung zu Ihrem Server hergestellt oder ein Webcam-Bild von diesem heruntergeladen werden</string>
     <string name="wasnt_able_to_connect_forecast">Es konnte keine Verbindung hergestellt oder die Prognose heruntergeladen werden</string>
-	<string name="forecast_type_is_invalid">Der Prognosetyp \'%1$s\' ist ungültig. Überprüfen Sie Ihre Einstellungsdatei und versuchen Sie es erneut</string>
+    <string name="forecast_type_is_invalid">Der Prognosetyp \'%1$s\' ist ungültig. Überprüfen Sie Ihre Einstellungsdatei und versuchen Sie es erneut</string>
     <string name="wasnt_able_to_connect_radar_image">Es konnte keine Verbindung hergestellt oder das Radar=Bild aus dem Internet heruntergeladen werden</string>
     <string name="wasnt_able_to_connect_data_txt">Es konnte keine Verbindung zu Ihrem Server hergestellt oder data.txt heruntergeladen werden</string>
     <string name="data_url_was_blank">Die Daten-URL war leer</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match-App</string>
     <string name="custom_setting">Benutzerdefinierte Farben</string>
     <string name="app_theme">App-Theme</string>
-	<string name="today">Heute</string>
+    <string name="today">Heute</string>
     <string name="last_year_stats">Statistik des letzten Jahres</string>
     <string name="last_month_stats">Statistiken des letzten Monats</string>
     <string name="radar_url_not_set">Radar-URL nicht festgelegt. Sie können zu den Einstellungen gehen, um sie zu ändern</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Die benutzerdefinierte URL ist nicht festgelegt oder leer. Sie können in den Einstellungen eine benutzerdefinierte URL hinzufügen</string>
     <string name="next_moon">Nächste Mondereignisse?</string>
     <string name="update_while_running">Update während der Ausführung</string>
+    <string name="force_dark_mode">Dunklen Modus erzwingen</string>
 </resources>

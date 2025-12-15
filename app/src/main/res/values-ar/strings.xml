@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">يرجى الانتظار حتى نتحقق من عنوان URL الذي أرسلته</string>
     <string name="remove_all_data">هل أنت متأكد أنك تريد إزالة كافة البيانات؟</string>
     <string name="no">لا</string>
-	<string name="ill_fix_and_try_again">سأصلح الأمر وأحاول مرة أخرى</string>
+    <string name="ill_fix_and_try_again">سأصلح الأمر وأحاول مرة أخرى</string>
     <string name="error_occurred_while_attempting_to_update">حدث خطأ أثناء محاولة تحديث الاستخدام</string>
     <string name="unknown_error_occurred">حدث خطأ غير معروف</string>
     <string name="wasnt_able_to_connect_custom_url">تعذر الاتصال أو التنزيل من عنوان URL المخصص المحدد</string>
     <string name="wasnt_able_to_connect_webcam_url">تعذر الاتصال أو تنزيل صورة كاميرا الويب من الخادم الخاص بك</string>
     <string name="wasnt_able_to_connect_forecast">لم أتمكن من الاتصال أو تنزيل التوقعات</string>
-	<string name="forecast_type_is_invalid">نوع التوقع \'%1$s\' غير صالح، تحقق من ملف الإعدادات وحاول مرة أخرى</string>
+    <string name="forecast_type_is_invalid">نوع التوقع \'%1$s\' غير صالح، تحقق من ملف الإعدادات وحاول مرة أخرى</string>
     <string name="wasnt_able_to_connect_radar_image">لم أتمكن من الاتصال أو تنزيل صورة الرادار من الإنترنت</string>
     <string name="wasnt_able_to_connect_data_txt">تعذر الاتصال بملف data.txt أو تنزيله من خادمك</string>
     <string name="data_url_was_blank">عنوان URL للبيانات كان فارغًا</string>
@@ -64,7 +64,7 @@
     <string name="match_app">تطبيق المباراة</string>
     <string name="custom_setting">ألوان مخصصة</string>
     <string name="app_theme">موضوع التطبيق</string>
-	<string name="today">اليوم</string>
+    <string name="today">اليوم</string>
     <string name="last_year_stats">إحصائيات العام الماضي</string>
     <string name="last_month_stats">إحصائيات الشهر الماضي</string>
     <string name="radar_url_not_set">لم يتم تعيين عنوان URL للرادار. يمكنك الذهاب إلى الإعدادات للتغيير</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">لم يتم تعيين عنوان URL المخصص، أو أنه فارغ. يمكنك الدخول إلى الإعدادات لإضافة عنوان URL مخصص</string>
     <string name="next_moon">أحداث القمر القادمة؟</string>
     <string name="update_while_running">التحديث أثناء التشغيل</string>
+    <string name="force_dark_mode">فرض الوضع المظلم</string>
 </resources>

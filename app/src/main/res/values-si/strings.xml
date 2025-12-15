@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">අපි ඔබ ඉදිරිපත් කළ URL එක සත්‍යාපනය කරන තෙක් කරුණාකර රැඳී සිටින්න</string>
     <string name="remove_all_data">ඔබට සියලු දත්ත ඉවත් කිරීමට අවශ්‍ය බව විශ්වාසද?</string>
     <string name="no">නැත</string>
-	<string name="ill_fix_and_try_again">මම එය නිවැරදි කර නැවත උත්සාහ කරන්නම්</string>
+    <string name="ill_fix_and_try_again">මම එය නිවැරදි කර නැවත උත්සාහ කරන්නම්</string>
     <string name="error_occurred_while_attempting_to_update">භාවිතය යාවත්කාලීන කිරීමට උත්සාහ කිරීමේදී දෝෂයක් ඇති විය</string>
     <string name="unknown_error_occurred">නොදන්නා දෝෂයක් සිදු විය</string>
     <string name="wasnt_able_to_connect_custom_url">නිශ්චිතව දක්වා ඇති අභිරුචි URL වෙත සම්බන්ධ වීමට හෝ බාගැනීමට නොහැකි විය</string>
     <string name="wasnt_able_to_connect_webcam_url">ඔබගේ සේවාදායකයෙන් වෙබ් කැමරා රූපයක් සම්බන්ධ කිරීමට හෝ බාගත කිරීමට නොහැකි විය</string>
     <string name="wasnt_able_to_connect_forecast">අනාවැකිය සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
-	<string name="forecast_type_is_invalid">අනාවැකි වර්ගය \'%1$s\' වලංගු නැත, ඔබගේ සැකසීම් ගොනුව පරීක්ෂා කර නැවත උත්සාහ කරන්න</string>
+    <string name="forecast_type_is_invalid">අනාවැකි වර්ගය \'%1$s\' වලංගු නැත, ඔබගේ සැකසීම් ගොනුව පරීක්ෂා කර නැවත උත්සාහ කරන්න</string>
     <string name="wasnt_able_to_connect_radar_image">අන්තර්ජාලයෙන් රේඩාර්= රූපය සම්බන්ධ කිරීමට හෝ බාගත කිරීමට නොහැකි විය</string>
     <string name="wasnt_able_to_connect_data_txt">ඔබගේ සේවාදායකයෙන් data.txt සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
     <string name="data_url_was_blank">දත්ත URL හිස් විය</string>
@@ -64,7 +64,7 @@
     <string name="match_app">ගැලපෙන යෙදුම</string>
     <string name="custom_setting">අභිරුචි වර්ණ</string>
     <string name="app_theme">යෙදුම් තේමාව</string>
-	<string name="today">අද</string>
+    <string name="today">අද</string>
     <string name="last_year_stats">පසුගිය වසරේ සංඛ්යා ලේඛන</string>
     <string name="last_month_stats">පසුගිය මාසයේ සංඛ්යා ලේඛන</string>
     <string name="radar_url_not_set">රේඩාර් URL සකසා නැත. ඔබට වෙනස් කිරීමට සැකසීම් වෙත යා හැක</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">අභිරුචි URL සකසා නැත, නැතහොත් හිස් ය. අභිරුචි URL එකක් එක් කිරීමට ඔබට සැකසීම් වෙත යා හැක</string>
     <string name="next_moon">ඊළඟ සඳ සිදුවීම්?</string>
     <string name="update_while_running">ධාවනය අතරතුර යාවත්කාලීන කරන්න</string>
+    <string name="force_dark_mode">අඳුරු මාදිලිය බල කරන්න</string>
 </resources>

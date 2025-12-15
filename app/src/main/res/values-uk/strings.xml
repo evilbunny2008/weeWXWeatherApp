@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Будь ласка, зачекайте, поки ми перевіримо URL-адресу, яку ви надали</string>
     <string name="remove_all_data">Ви впевнені, що хочете видалити всі дані?</string>
     <string name="no">немає</string>
-	<string name="ill_fix_and_try_again">Я виправлю це та спробую ще раз</string>
+    <string name="ill_fix_and_try_again">Я виправлю це та спробую ще раз</string>
     <string name="error_occurred_while_attempting_to_update">Під час спроби оновити дані про використання сталася помилка</string>
     <string name="unknown_error_occurred">Сталася невідома помилка</string>
     <string name="wasnt_able_to_connect_custom_url">Не вдалося підключитися або завантажити за вказаною спеціальною URL-адресою</string>
     <string name="wasnt_able_to_connect_webcam_url">Не вдалося підключитися або завантажити зображення веб-камери з вашого сервера</string>
     <string name="wasnt_able_to_connect_forecast">Не вдалося підключитися чи завантажити прогноз</string>
-	<string name="forecast_type_is_invalid">Тип прогнозу \'%1$s\' недійсний, перевірте файл налаштувань і повторіть спробу</string>
+    <string name="forecast_type_is_invalid">Тип прогнозу \'%1$s\' недійсний, перевірте файл налаштувань і повторіть спробу</string>
     <string name="wasnt_able_to_connect_radar_image">Не вдалося підключитися або завантажити радар = зображення з Інтернету</string>
     <string name="wasnt_able_to_connect_data_txt">Не вдалося підключитися або завантажити файл data.txt із вашого сервера</string>
     <string name="data_url_was_blank">URL-адреса даних була пустою</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Матч App</string>
     <string name="custom_setting">Спеціальні кольори</string>
     <string name="app_theme">Тема програми</string>
-	<string name="today">Сьогодні</string>
+    <string name="today">Сьогодні</string>
     <string name="last_year_stats">Статистика минулого року</string>
     <string name="last_month_stats">Статистика за останній місяць</string>
     <string name="radar_url_not_set">URL радара не встановлено. Ви можете перейти до налаштувань, щоб змінити</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Спеціальна URL-адреса не встановлена ​​або пуста. Ви можете зайти в налаштування, щоб додати спеціальну URL-адресу</string>
     <string name="next_moon">Події наступного місяця?</string>
     <string name="update_while_running">Оновлення під час роботи</string>
+    <string name="force_dark_mode">Примусовий темний режим</string>
 </resources>

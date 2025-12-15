@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">E hunda na mo ti ku na ngoi so e yeke bâ wala URL so mo tokua ni ayeke tâ tënë</string>
     <string name="remove_all_data">Mo hinga biani so mo ye ti zi asango kue?</string>
     <string name="no">En-en</string>
-	<string name="ill_fix_and_try_again">Mo yeke hunzi ti sara ni na mo yeke kiri ti tara ni</string>
+    <string name="ill_fix_and_try_again">Mo yeke hunzi ti sara ni na mo yeke kiri ti tara ni</string>
     <string name="error_occurred_while_attempting_to_update">Mbeni faute asi na ngoi so lo yeke tara ti sara si a sara kua na ni</string>
     <string name="unknown_error_occurred">Erreur so a hinga ni pëpe asi</string>
     <string name="wasnt_able_to_connect_custom_url">A yeke pëpe ti tene e sara kua na URL so e leke ni wala e téléchargé ni</string>
     <string name="wasnt_able_to_connect_webcam_url">A yeke pëpe ti tene mo sara kua na mbeni image ti webcam na ndö ti serveur ti mo</string>
     <string name="wasnt_able_to_connect_forecast">A lingbi ti sara connexion wala ti téléchargé ni</string>
-	<string name="forecast_type_is_invalid">A yeke nzoni ti tene mo sara kua na type \'%1$s\', bâ fichier ti a-paramètre ti mo na mo kiri mo tara ni</string>
+    <string name="forecast_type_is_invalid">A yeke nzoni ti tene mo sara kua na type \'%1$s\', bâ fichier ti a-paramètre ti mo na mo kiri mo tara ni</string>
     <string name="wasnt_able_to_connect_radar_image">A yeke pëpe ti tene e sara kua na radar= image na ndö ti internet</string>
     <string name="wasnt_able_to_connect_data_txt">A yeke pëpe ti tene e sara kua na asango.txt na ndö ti serveur ti e</string>
     <string name="data_url_was_blank">URL ti asango ayeke senge</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Couleur ti personnalisé</string>
     <string name="app_theme">Application theme</string>
-	<string name="today">Laso</string>
+    <string name="today">Laso</string>
     <string name="last_year_stats">Statistique ti ngu so ahon</string>
     <string name="last_month_stats">A-étude ti nze ti ndangba nze</string>
     <string name="radar_url_not_set">Radar URL ni ayeke dä pëpe. Mo lingbi ti gue na a-paramètre ti changé</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL ti personnalisé ayeke pëpe, wala a yeke senge. Lo lingbi ti lï na yâ ti a-paramètre ti zia mbeni URL so a leke ni nde</string>
     <string name="next_moon">Na peko ti aye so ayeke si na yâ ti nze?</string>
     <string name="update_while_running">Mise à jour na ngoi so lo yeke kpe</string>
+    <string name="force_dark_mode">Force Mode ti bingo</string>
 </resources>

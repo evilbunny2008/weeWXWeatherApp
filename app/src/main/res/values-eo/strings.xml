@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Bonvolu atendi dum ni kontrolas la URL kiun vi sendis</string>
     <string name="remove_all_data">Ĉu vi certas, ke vi volas forigi ĉiujn datumojn?</string>
     <string name="no">Ne</string>
-	<string name="ill_fix_and_try_again">Mi Riparos Ĝin kaj Provos Denove</string>
+    <string name="ill_fix_and_try_again">Mi Riparos Ĝin kaj Provos Denove</string>
     <string name="error_occurred_while_attempting_to_update">Okazis eraro dum provo ĝisdatigi uzadon</string>
     <string name="unknown_error_occurred">Nekonata eraro okazis</string>
     <string name="wasnt_able_to_connect_custom_url">Ne povis konekti aŭ elŝuti de la kutima URL specifita</string>
     <string name="wasnt_able_to_connect_webcam_url">Ne povis konekti aŭ elŝuti retkameraan bildon de via servilo</string>
     <string name="wasnt_able_to_connect_forecast">Ne povis konekti aŭ elŝuti la prognozon</string>
-	<string name="forecast_type_is_invalid">Prognoza tipo \'%1$s\' estas nevalida, kontrolu vian agordan dosieron kaj provu denove</string>
+    <string name="forecast_type_is_invalid">Prognoza tipo \'%1$s\' estas nevalida, kontrolu vian agordan dosieron kaj provu denove</string>
     <string name="wasnt_able_to_connect_radar_image">Ne povis konekti aŭ elŝuti radar= bildon de la interreto</string>
     <string name="wasnt_able_to_connect_data_txt">Ne povis konekti aŭ elŝuti data.txt de via servilo</string>
     <string name="data_url_was_blank">Datuma URL estis malplena</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Propraj Koloroj</string>
     <string name="app_theme">Aplika Temo</string>
-	<string name="today">Hodiaŭ</string>
+    <string name="today">Hodiaŭ</string>
     <string name="last_year_stats">Lastjara Statistiko</string>
     <string name="last_month_stats">Statistiko de la lasta Monato</string>
     <string name="radar_url_not_set">Radara URL ne fiksita. Vi povas iri al agordoj por ŝanĝi</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Propra URL ne estas agordita aŭ estas malplena. Vi povas iri en agordojn por aldoni kutiman URL</string>
     <string name="next_moon">Okazaĵoj de la venonta luno?</string>
     <string name="update_while_running">Ĝisdatigu dum kurado</string>
+    <string name="force_dark_mode">Forto Malhela Reĝimo</string>
 </resources>

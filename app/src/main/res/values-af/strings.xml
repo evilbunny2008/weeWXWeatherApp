@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Wag asseblief terwyl ons die URL wat jy ingedien het, verifieer</string>
     <string name="remove_all_data">Is jy seker jy wil alle data verwyder?</string>
     <string name="no">Nee</string>
-	<string name="ill_fix_and_try_again">Ek sal dit regmaak en weer probeer</string>
+    <string name="ill_fix_and_try_again">Ek sal dit regmaak en weer probeer</string>
     <string name="error_occurred_while_attempting_to_update">\'n Fout het voorgekom tydens die poging om gebruik op te dateer</string>
     <string name="unknown_error_occurred">Onbekende fout het voorgekom</string>
     <string name="wasnt_able_to_connect_custom_url">Kon nie koppel of aflaai vanaf die gepasmaakte URL wat gespesifiseer is nie</string>
     <string name="wasnt_able_to_connect_webcam_url">Kon nie \'n webkamera-beeld van jou bediener af koppel of aflaai nie</string>
     <string name="wasnt_able_to_connect_forecast">Kon nie die voorspelling koppel of aflaai nie</string>
-	<string name="forecast_type_is_invalid">Voorspelling tipe \'%1$s\' is ongeldig, gaan jou instellingslêer na en probeer weer</string>
+    <string name="forecast_type_is_invalid">Voorspelling tipe \'%1$s\' is ongeldig, gaan jou instellingslêer na en probeer weer</string>
     <string name="wasnt_able_to_connect_radar_image">Kon nie radar=-beeld van die internet af koppel of aflaai nie</string>
     <string name="wasnt_able_to_connect_data_txt">Kon nie data.txt van jou bediener af koppel of aflaai nie</string>
     <string name="data_url_was_blank">Data-URL was leeg</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Pas App</string>
     <string name="custom_setting">Pasgemaakte kleure</string>
     <string name="app_theme">App Tema</string>
-	<string name="today">Vandag</string>
+    <string name="today">Vandag</string>
     <string name="last_year_stats">Verlede jaar se statistieke</string>
     <string name="last_month_stats">Verlede maand se statistieke</string>
     <string name="radar_url_not_set">Radar-URL nie gestel nie. Jy kan na instellings gaan om te verander</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Gepasmaakte URL is nie gestel nie, of is leeg. Jy kan na instellings gaan om \'n pasgemaakte URL by te voeg</string>
     <string name="next_moon">Volgende maan gebeure?</string>
     <string name="update_while_running">Dateer op terwyl dit hardloop</string>
+    <string name="force_dark_mode">Dwing donker modus</string>
 </resources>

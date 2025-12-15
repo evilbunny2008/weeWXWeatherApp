@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">مھرباني ڪري انتظار ڪريو جيستائين اسان توھان جي ڏنل URL جي تصديق ڪريون</string>
     <string name="remove_all_data">ڇا توهان پڪ سان سڀ ڊيٽا هٽائڻ چاهيو ٿا؟</string>
     <string name="no">نه</string>
-	<string name="ill_fix_and_try_again">مان ان کي درست ڪندس ۽ ٻيهر ڪوشش ڪندس</string>
+    <string name="ill_fix_and_try_again">مان ان کي درست ڪندس ۽ ٻيهر ڪوشش ڪندس</string>
     <string name="error_occurred_while_attempting_to_update">استعمال کي اپڊيٽ ڪرڻ جي ڪوشش دوران هڪ نقص پيدا ٿيو</string>
     <string name="unknown_error_occurred">اڻڄاتل غلطي ٿي وئي</string>
     <string name="wasnt_able_to_connect_custom_url">بيان ڪيل ڪسٽم URL مان ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
     <string name="wasnt_able_to_connect_webcam_url">توهان جي سرور مان ويب ڪيم تصوير ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
     <string name="wasnt_able_to_connect_forecast">اڳڪٿي کي ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
-	<string name="forecast_type_is_invalid">اڳڪٿي جو قسم \'%1$s\' غلط آهي، پنهنجي سيٽنگ فائل چيڪ ڪريو ۽ ٻيهر ڪوشش ڪريو</string>
+    <string name="forecast_type_is_invalid">اڳڪٿي جو قسم \'%1$s\' غلط آهي، پنهنجي سيٽنگ فائل چيڪ ڪريو ۽ ٻيهر ڪوشش ڪريو</string>
     <string name="wasnt_able_to_connect_radar_image">ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو radar= انٽرنيٽ تان تصوير</string>
     <string name="wasnt_able_to_connect_data_txt">توهان جي سرور مان data.txt ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
     <string name="data_url_was_blank">ڊيٽا URL خالي هو</string>
@@ -64,7 +64,7 @@
     <string name="match_app">ملائڻ ايپ</string>
     <string name="custom_setting">حسب ضرورت رنگ</string>
     <string name="app_theme">ايپ موضوع</string>
-	<string name="today">اڄ</string>
+    <string name="today">اڄ</string>
     <string name="last_year_stats">گذريل سال جا انگ اکر</string>
     <string name="last_month_stats">گذريل مهيني جا انگ اکر</string>
     <string name="radar_url_not_set">رادر URL مقرر نه ڪيو ويو آهي. توھان تبديل ڪرڻ لاء سيٽنگون ڏانھن وڃو</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">ڪسٽم URL سيٽ نه آهي، يا خالي آهي. توھان سيٽنگون ڏانھن وڃو ڪسٽم URL شامل ڪرڻ لاءِ</string>
     <string name="next_moon">ايندڙ چنڊ واقعا؟</string>
     <string name="update_while_running">هلائڻ دوران تازه ڪاري ڪريو</string>
+    <string name="force_dark_mode">ڊارڪ موڊ کي زور ڏيو</string>
 </resources>

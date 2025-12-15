@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Mee URL isin galchitan yeroo mirkaneessinu eegaa</string>
     <string name="remove_all_data">Daataa hunda haquu akka barbaaddu mirkaneeffatteettaa?</string>
     <string name="no">Lakki</string>
-	<string name="ill_fix_and_try_again">Sirreessitee irra deebi\'ee yaali</string>
+    <string name="ill_fix_and_try_again">Sirreessitee irra deebi\'ee yaali</string>
     <string name="error_occurred_while_attempting_to_update">Fayyadama haaromsuuf yeroo yaaltan dogongorri uumame</string>
     <string name="unknown_error_occurred">Dogoggorri hin beekamne uumame</string>
     <string name="wasnt_able_to_connect_custom_url">URL amala ibsame irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="wasnt_able_to_connect_webcam_url">Fakkii webcam server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="wasnt_able_to_connect_forecast">Raaga sana wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
-	<string name="forecast_type_is_invalid">Raaga gosa \'%1$s\' sirrii miti, faayilii settings kee ilaalii irra deebi\'ii yaali</string>
+    <string name="forecast_type_is_invalid">Raaga gosa \'%1$s\' sirrii miti, faayilii settings kee ilaalii irra deebi\'ii yaali</string>
     <string name="wasnt_able_to_connect_radar_image">Radar= image interneetii irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="wasnt_able_to_connect_data_txt">data.txt server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="data_url_was_blank">URL deetaa duwwaa ture</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Appii Walsimsiisaa</string>
     <string name="custom_setting">Halluuwwan aadaa</string>
     <string name="app_theme">Mata duree appii</string>
-	<string name="today">Har\'a</string>
+    <string name="today">Har\'a</string>
     <string name="last_year_stats">Istaatistiksii bara darbee</string>
     <string name="last_month_stats">Istaatistiksii ji\'a darbee</string>
     <string name="radar_url_not_set">URL raadaraa hin saagamne. Jijjiiruuf gara settings deemuu dandeessa</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL amala hin saagamu, ykn duwwaa dha. URL amala itti dabaluuf gara qindaa\'inootaatti deemuu dandeessa</string>
     <string name="next_moon">Taateewwan Ji\'aa itti aanan?</string>
     <string name="update_while_running">Utuu hojjechaa jirtuu haaromsuu</string>
+    <string name="force_dark_mode">Haala Dukkana Humnaa</string>
 </resources>

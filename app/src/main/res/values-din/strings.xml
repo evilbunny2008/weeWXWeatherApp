@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Tïŋ ë thää wën cï ɣok URL cï yïn tääu thïn yök</string>
     <string name="remove_all_data">Ye ŋic lɔn wïc yïn ba käŋ ëbɛ̈n nyaai?</string>
     <string name="no">jai</string>
-	<string name="ill_fix_and_try_again">Ɣɛn bï Fix I ku them ba bɛ̈n bei</string>
+    <string name="ill_fix_and_try_again">Ɣɛn bï Fix I ku them ba bɛ̈n bei</string>
     <string name="error_occurred_while_attempting_to_update">Kä cï röt wuɔ̈ɔ̈c aacï röt looi ke them bïk luɔɔi de käŋ ya cɔ̈kpiny</string>
     <string name="unknown_error_occurred">Kä kuc keek cï röt looi aacï röt looi</string>
     <string name="wasnt_able_to_connect_custom_url">Acïï lëu bï yök wala bï yök tënë URL ë thäät cï lueel cï lueel</string>
     <string name="wasnt_able_to_connect_webcam_url">Acïï lëu bï thöŋ ka yök në wɛbthait yic tënë raandu</string>
     <string name="wasnt_able_to_connect_forecast">Acïï lëu bï yök ka bï thööŋ de käŋ yök</string>
-	<string name="forecast_type_is_invalid">Tɛ̈n ë yök \'%1$s\' ee kë cie thɔ̈ɔ̈ŋ, tïŋ ë lööŋku ku them ba bɛɛr</string>
+    <string name="forecast_type_is_invalid">Tɛ̈n ë yök \'%1$s\' ee kë cie thɔ̈ɔ̈ŋ, tïŋ ë lööŋku ku them ba bɛɛr</string>
     <string name="wasnt_able_to_connect_radar_image">Acïn kë lëu bï yök wala bï radada= thura tääu në aliiric</string>
     <string name="wasnt_able_to_connect_data_txt">Acïï lëu bï yök ka yök wël.txt tënë raandu</string>
     <string name="data_url_was_blank">Kä cï yök URL acï bɛ̈n</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Mäth Yïn</string>
     <string name="custom_setting">Kɔɔc ë wël</string>
     <string name="app_theme">Kë ye luɔ̈i ke</string>
-	<string name="today">Akölë</string>
+    <string name="today">Akölë</string>
     <string name="last_year_stats">Kä ye kueen në ruön wäär cï lɔ</string>
     <string name="last_month_stats">Kä cï kek kueen në pɛɛi de rou yic</string>
     <string name="radar_url_not_set">Radyür URL akëc tääm. Yïn alëu ba lɔ në thäät yiic ba rot waar</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL acie tɔ̈u, wala ee kë cïn kë tɔ̈u thïn. Yïn alëu ba lɔ në thëm yic ba URL ë thäät ë thäät mat thïn</string>
     <string name="next_moon">Kä kɔ̈k ke pɛ̈i ke pɛɛi?</string>
     <string name="update_while_running">Ku ë yic, ke yïn ë kat</string>
+    <string name="force_dark_mode">Thöl ë jäl ë pïu ë pïu ë pïu</string>
 </resources>

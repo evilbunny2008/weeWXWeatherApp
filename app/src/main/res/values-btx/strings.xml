@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Tolong timai sanga kami verifikasi URL si enggo iberekenndu</string>
     <string name="remove_all_data">Pasti kam atendu mbuang kerina data?</string>
     <string name="no">lang</string>
-	<string name="ill_fix_and_try_again">Kutamaken Ia janah Cobaken Mulihi</string>
+    <string name="ill_fix_and_try_again">Kutamaken Ia janah Cobaken Mulihi</string>
     <string name="error_occurred_while_attempting_to_update">Sada kesalahen terjadi sanga iusahakenna mpelimbarui penggunaan</string>
     <string name="unknown_error_occurred">terjadi kesalahen si la iteh</string>
     <string name="wasnt_able_to_connect_custom_url">Labo banci ihubungken ntah pe i download ibas URL khusus si itentuken</string>
     <string name="wasnt_able_to_connect_webcam_url">Labo banci ihubungken ntah pe i-downloadndu gambar webcam i bas serverndu nari</string>
     <string name="wasnt_able_to_connect_forecast">Labo banci ihubungken ntah pe i-download ramalen</string>
-	<string name="forecast_type_is_invalid">Ramalan tipe \'%1$s\' la sah, periksa file pengaturenndu janah cubaken mulihi</string>
+    <string name="forecast_type_is_invalid">Ramalan tipe \'%1$s\' la sah, periksa file pengaturenndu janah cubaken mulihi</string>
     <string name="wasnt_able_to_connect_radar_image">Labo ngasup menyambungken ntah pe download radar= gambar ibas internet</string>
     <string name="wasnt_able_to_connect_data_txt">Labo ngasup menyambungken ntah pe download data.txt ibas serverndu nari</string>
     <string name="data_url_was_blank">URL data enggo kosong</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Pertandingen Aplikasi</string>
     <string name="custom_setting">Warna si khusus</string>
     <string name="app_theme">Aplikasi Tema</string>
-	<string name="today">Wari enda</string>
+    <string name="today">Wari enda</string>
     <string name="last_year_stats">Statistik Tahun si lewat</string>
     <string name="last_month_stats">Statistik Bulan Terakhir</string>
     <string name="radar_url_not_set">Radar URL la set. Banci kam lawes ku pengaturen guna berubah</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL khusus la itetapken, ntah pe kosong. Banci kam masuk ku pengaturen guna nambahi URL khusus</string>
     <string name="next_moon">Peristiwa bulan selanjutna?</string>
     <string name="update_while_running">Update sanga erdalan</string>
+    <string name="force_dark_mode">Mode Gelap</string>
 </resources>

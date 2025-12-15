@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Aguarde enquanto verificamos o URL que você enviou</string>
     <string name="remove_all_data">Tem certeza de que deseja remover todos os dados?</string>
     <string name="no">Não</string>
-	<string name="ill_fix_and_try_again">Vou consertar e tentar novamente</string>
+    <string name="ill_fix_and_try_again">Vou consertar e tentar novamente</string>
     <string name="error_occurred_while_attempting_to_update">Ocorreu um erro ao tentar atualizar o uso</string>
     <string name="unknown_error_occurred">Ocorreu um erro desconhecido</string>
     <string name="wasnt_able_to_connect_custom_url">Não foi possível conectar ou fazer download do URL personalizado especificado</string>
     <string name="wasnt_able_to_connect_webcam_url">Não foi possível conectar ou baixar uma imagem de webcam do seu servidor</string>
     <string name="wasnt_able_to_connect_forecast">Não foi possível conectar ou baixar a previsão</string>
-	<string name="forecast_type_is_invalid">O tipo de previsão \'%1$s\' é inválido. Verifique seu arquivo de configurações e tente novamente</string>
+    <string name="forecast_type_is_invalid">O tipo de previsão \'%1$s\' é inválido. Verifique seu arquivo de configurações e tente novamente</string>
     <string name="wasnt_able_to_connect_radar_image">Não foi possível conectar ou baixar a imagem radar= da internet</string>
     <string name="wasnt_able_to_connect_data_txt">Não foi possível conectar ou baixar data.txt do seu servidor</string>
     <string name="data_url_was_blank">O URL dos dados estava em branco</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Aplicativo de correspondência</string>
     <string name="custom_setting">Cores personalizadas</string>
     <string name="app_theme">Tema do aplicativo</string>
-	<string name="today">Hoje</string>
+    <string name="today">Hoje</string>
     <string name="last_year_stats">Estatísticas do ano passado</string>
     <string name="last_month_stats">Estatísticas do último mês</string>
     <string name="radar_url_not_set">URL do radar não definido. Você pode ir para as configurações para alterar</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">O URL personalizado não está definido ou está em branco. Você pode acessar as configurações para adicionar um URL personalizado</string>
     <string name="next_moon">Próximos eventos lunares?</string>
     <string name="update_while_running">Atualizar durante a execução</string>
+    <string name="force_dark_mode">Forçar modo escuro</string>
 </resources>

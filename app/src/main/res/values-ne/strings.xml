@@ -45,13 +45,13 @@
     <string name="please_wait_verify_url">हामीले तपाईंले पेस गर्नुभएको URL प्रमाणीकरण गर्दा कृपया पर्खनुहोस्।</string>
     <string name="remove_all_data">के तपाइँ निश्चित हुनुहुन्छ कि तपाइँ सबै डेटा हटाउन चाहनुहुन्छ?</string>
     <string name="no">छैन</string>
-	<string name="ill_fix_and_try_again">म यसलाई ठीक गर्छु र फेरि प्रयास गर्छु</string>
+    <string name="ill_fix_and_try_again">म यसलाई ठीक गर्छु र फेरि प्रयास गर्छु</string>
     <string name="error_occurred_while_attempting_to_update">प्रयोग अपडेट गर्ने प्रयास गर्दा एउटा त्रुटि भयो</string>
     <string name="unknown_error_occurred">अज्ञात त्रुटि भयो</string>
     <string name="wasnt_able_to_connect_custom_url">निर्दिष्ट गरिएको अनुकूलन URL बाट जडान वा डाउनलोड गर्न सक्षम भएन</string>
     <string name="wasnt_able_to_connect_webcam_url">तपाईंको सर्भरबाट वेबक्याम छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
     <string name="wasnt_able_to_connect_forecast">जडान गर्न वा पूर्वानुमान डाउनलोड गर्न सक्षम भएन।</string>
-	<string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य छ, आफ्नो सेटिङ फाइल जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।</string>
+    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य छ, आफ्नो सेटिङ फाइल जाँच गर्नुहोस् र फेरि प्रयास गर्नुहोस्।</string>
     <string name="wasnt_able_to_connect_radar_image">इन्टरनेटबाट radar= छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
     <string name="wasnt_able_to_connect_data_txt">तपाईँको सर्भरबाट data.txt जडान गर्न वा डाउनलोड गर्न सकिएन</string>
     <string name="data_url_was_blank">डाटा URL खाली थियो</string>
@@ -64,7 +64,7 @@
     <string name="match_app">मिलान एप</string>
     <string name="custom_setting">अनुकूलन रंगहरू</string>
     <string name="app_theme">एप थिम</string>
-	<string name="today">आज</string>
+    <string name="today">आज</string>
     <string name="last_year_stats">गत वर्षको तथ्याङ्क</string>
     <string name="last_month_stats">गत महिनाको तथ्याङ्क</string>
     <string name="radar_url_not_set">रडार URL सेट गरिएको छैन। तपाईं परिवर्तन गर्न सेटिङहरूमा जान सक्नुहुन्छ।</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">आफू अनुकूल URL सेट गरिएको छैन, वा खाली छ। तपाईं आफू अनुकूल URL थप्न सेटिङहरूमा जान सक्नुहुन्छ</string>
     <string name="next_moon">अर्को चन्द्रमा घटनाहरू?</string>
     <string name="update_while_running">चलिरहेको बेला अपडेट गर्नुहोस्</string>
+    <string name="force_dark_mode">गाढा मोड बल गर्नुहोस्</string>
 </resources>

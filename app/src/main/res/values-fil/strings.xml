@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Mangyaring maghintay habang pinatunayan namin ang URL na iyong isinumite</string>
     <string name="remove_all_data">Sigurado ka bang nais mong alisin ang lahat ng data?</string>
     <string name="no">Hindi</string>
-	<string name="ill_fix_and_try_again">Aayusin ko ito at subukang muli</string>
+    <string name="ill_fix_and_try_again">Aayusin ko ito at subukang muli</string>
     <string name="error_occurred_while_attempting_to_update">May naganap na error habang sinusubukang i -update ang paggamit</string>
     <string name="unknown_error_occurred">Hindi kilalang error ang naganap</string>
     <string name="wasnt_able_to_connect_custom_url">Hindi nakakonekta o mag -download mula sa tinukoy na pasadyang URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Hindi nakakonekta o mag -download ng isang imahe ng webcam mula sa iyong server</string>
     <string name="wasnt_able_to_connect_forecast">Hindi nakakonekta o i -download ang forecast</string>
-	<string name="forecast_type_is_invalid">Ang uri ng forecast \'%1$s\' ay hindi wasto, suriin ang iyong file ng mga setting at subukang muli</string>
+    <string name="forecast_type_is_invalid">Ang uri ng forecast \'%1$s\' ay hindi wasto, suriin ang iyong file ng mga setting at subukang muli</string>
     <string name="wasnt_able_to_connect_radar_image">Hindi nakakonekta o mag -download ng radar = imahe mula sa internet</string>
     <string name="wasnt_able_to_connect_data_txt">Hindi nakakonekta o mag -download ng data.txt mula sa iyong server</string>
     <string name="data_url_was_blank">Ang Data URL ay blangko</string>
@@ -64,7 +64,7 @@
     <string name="match_app">App ng Tugma</string>
     <string name="custom_setting">Mga Pasadyang Kulay</string>
     <string name="app_theme">Tema ng App</string>
-	<string name="today">Ngayon</string>
+    <string name="today">Ngayon</string>
     <string name="last_year_stats">Mga Estadistika ng Nakaraang Taon</string>
     <string name="last_month_stats">Mga Estadistika ng Nakaraang Buwan</string>
     <string name="radar_url_not_set">Hindi nakatakda ang URL ng radar. Maaari kang pumunta sa mga setting para magbago</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Ang pasadyang URL ay hindi nakatakda, o blangko. Maaari kang pumunta sa mga setting upang magdagdag ng isang pasadyang URL</string>
     <string name="next_moon">Susunod na mga kaganapan sa buwan?</string>
     <string name="update_while_running">I -update habang tumatakbo</string>
+    <string name="force_dark_mode">Pilitin ang madilim na mode</string>
 </resources>

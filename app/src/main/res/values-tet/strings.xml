@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Favor ida hein enkuantu ami verifika URL ne\'ebé ita-boot hatama</string>
     <string name="remove_all_data">Ita iha serteza katak ita hakarak hasai dadus hotu?</string>
     <string name="no">Lae</string>
-	<string name="ill_fix_and_try_again">Hau sei Hadi\'a no Koko Fali</string>
+    <string name="ill_fix_and_try_again">Hau sei Hadi\'a no Koko Fali</string>
     <string name="error_occurred_while_attempting_to_update">Erru ida akontese bainhira tenta atu atualiza utilizasaun</string>
     <string name="unknown_error_occurred">Erru deskoñesidu akontese</string>
     <string name="wasnt_able_to_connect_custom_url">La konsege liga ka download husi URL personalizadu ne\'ebé espesifika</string>
     <string name="wasnt_able_to_connect_webcam_url">La konsege liga ka download imajen webcam ida husi ita nia servidor</string>
     <string name="wasnt_able_to_connect_forecast">La konsege liga ka download previzaun</string>
-	<string name="forecast_type_is_invalid">Tipu previzaun \'%1$s\' la válidu, verifika ita-nia file settings no koko fali</string>
+    <string name="forecast_type_is_invalid">Tipu previzaun \'%1$s\' la válidu, verifika ita-nia file settings no koko fali</string>
     <string name="wasnt_able_to_connect_radar_image">La konsege liga ka download radar= imajen husi internet</string>
     <string name="wasnt_able_to_connect_data_txt">La konsege liga ka download dadus.txt husi ita nia servidor</string>
     <string name="data_url_was_blank">URL dadus mamuk</string>
@@ -64,7 +64,7 @@
     <string name="match_app">App Match App</string>
     <string name="custom_setting">Kór sira iha Alfándega</string>
     <string name="app_theme">Tema App</string>
-	<string name="today">Ohin loron</string>
+    <string name="today">Ohin loron</string>
     <string name="last_year_stats">Estatístika Tinan kotuk nian</string>
     <string name="last_month_stats">Estatístika Fulan kotuk nian</string>
     <string name="radar_url_not_set">Radar URL la tau. Ita bele ba iha setting hodi muda</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL personalizadu la tau, ka mamuk. Ita bele tama iha setting hodi aumenta URL personalizadu</string>
     <string name="next_moon">Eventu fulan tuir mai?</string>
     <string name="update_while_running">Atualizasaun bainhira hala\'o</string>
+    <string name="force_dark_mode">Forsa Modu Nakukun</string>
 </resources>

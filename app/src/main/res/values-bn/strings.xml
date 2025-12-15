@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">আমরা আপনার জমা দেওয়া URL যাচাই করা পর্যন্ত অপেক্ষা করুন।</string>
     <string name="remove_all_data">আপনি কি নিশ্চিত যে আপনি সমস্ত ডেটা সরাতে চান?</string>
     <string name="no">না</string>
-	<string name="ill_fix_and_try_again">আমি এটা ঠিক করব এবং আবার চেষ্টা করব</string>
+    <string name="ill_fix_and_try_again">আমি এটা ঠিক করব এবং আবার চেষ্টা করব</string>
     <string name="error_occurred_while_attempting_to_update">ব্যবহার আপডেট করার চেষ্টা করার সময় একটি ত্রুটি ঘটেছে৷</string>
     <string name="unknown_error_occurred">অজানা ত্রুটি ঘটেছে</string>
     <string name="wasnt_able_to_connect_custom_url">নির্দিষ্ট করা কাস্টম URL থেকে সংযোগ বা ডাউনলোড করতে সক্ষম হয়নি৷</string>
     <string name="wasnt_able_to_connect_webcam_url">আপনার সার্ভার থেকে একটি ওয়েবক্যাম ছবি সংযোগ বা ডাউনলোড করতে সক্ষম হয়নি৷</string>
     <string name="wasnt_able_to_connect_forecast">পূর্বাভাস সংযোগ বা ডাউনলোড করতে সক্ষম ছিল না</string>
-	<string name="forecast_type_is_invalid">পূর্বাভাসের ধরন \'%1$s\' অবৈধ, আপনার সেটিংস ফাইল চেক করুন এবং আবার চেষ্টা করুন।</string>
+    <string name="forecast_type_is_invalid">পূর্বাভাসের ধরন \'%1$s\' অবৈধ, আপনার সেটিংস ফাইল চেক করুন এবং আবার চেষ্টা করুন।</string>
     <string name="wasnt_able_to_connect_radar_image">ইন্টারনেট থেকে রাডার = ইমেজ সংযোগ বা ডাউনলোড করতে সক্ষম হয়নি</string>
     <string name="wasnt_able_to_connect_data_txt">আপনার সার্ভার থেকে data.txt সংযোগ বা ডাউনলোড করতে সক্ষম হয়নি৷</string>
     <string name="data_url_was_blank">ডেটা URL ফাঁকা ছিল</string>
@@ -64,7 +64,7 @@
     <string name="match_app">ম্যাচ অ্যাপ</string>
     <string name="custom_setting">কাস্টম রং</string>
     <string name="app_theme">অ্যাপ থিম</string>
-	<string name="today">আজ</string>
+    <string name="today">আজ</string>
     <string name="last_year_stats">গত বছরের পরিসংখ্যান</string>
     <string name="last_month_stats">গত মাসের পরিসংখ্যান</string>
     <string name="radar_url_not_set">রাডার URL সেট করা হয়নি। আপনি সেটিংসে গিয়ে পরিবর্তন করতে পারেন।</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">কাস্টম URL সেট করা নেই, বা ফাঁকা। আপনি একটি কাস্টম URL যোগ করতে সেটিংসে যেতে পারেন৷</string>
     <string name="next_moon">পরবর্তী চাঁদের ঘটনা?</string>
     <string name="update_while_running">চলাকালীন আপডেট করুন</string>
+    <string name="force_dark_mode">ফোর্স ডার্ক মোড</string>
 </resources>

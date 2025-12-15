@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Harap tunggu sementara kami memverifikasi URL yang Anda kirimkan</string>
     <string name="remove_all_data">Apakah Anda yakin ingin menghapus semua data?</string>
     <string name="no">TIDAK</string>
-	<string name="ill_fix_and_try_again">Saya akan Memperbaikinya dan Mencoba Lagi</string>
+    <string name="ill_fix_and_try_again">Saya akan Memperbaikinya dan Mencoba Lagi</string>
     <string name="error_occurred_while_attempting_to_update">Terjadi kesalahan saat mencoba memperbarui penggunaan</string>
     <string name="unknown_error_occurred">Terjadi kesalahan yang tidak diketahui</string>
     <string name="wasnt_able_to_connect_custom_url">Tidak dapat terhubung atau mengunduh dari URL khusus yang ditentukan</string>
     <string name="wasnt_able_to_connect_webcam_url">Tidak dapat menyambungkan atau mengunduh gambar webcam dari server Anda</string>
     <string name="wasnt_able_to_connect_forecast">Tidak dapat menghubungkan atau mengunduh ramalan cuaca</string>
-	<string name="forecast_type_is_invalid">Jenis perkiraan \'%1$s\' tidak valid, periksa file pengaturan Anda dan coba lagi</string>
+    <string name="forecast_type_is_invalid">Jenis perkiraan \'%1$s\' tidak valid, periksa file pengaturan Anda dan coba lagi</string>
     <string name="wasnt_able_to_connect_radar_image">Tidak dapat menghubungkan atau mengunduh radar= gambar dari internet</string>
     <string name="wasnt_able_to_connect_data_txt">Tidak dapat menyambungkan atau mengunduh data.txt dari server Anda</string>
     <string name="data_url_was_blank">URL data kosong</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Aplikasi Pertandingan</string>
     <string name="custom_setting">Warna Khusus</string>
     <string name="app_theme">Tema Aplikasi</string>
-	<string name="today">Hari ini</string>
+    <string name="today">Hari ini</string>
     <string name="last_year_stats">Statistik Tahun Lalu</string>
     <string name="last_month_stats">Statistik Bulan Lalu</string>
     <string name="radar_url_not_set">URL radar tidak disetel. Anda dapat pergi ke pengaturan untuk mengubahnya</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL khusus tidak disetel, atau kosong. Anda dapat masuk ke pengaturan untuk menambahkan URL khusus</string>
     <string name="next_moon">Peristiwa bulan depan?</string>
     <string name="update_while_running">Perbarui saat berjalan</string>
+    <string name="force_dark_mode">Paksa Mode Gelap</string>
 </resources>

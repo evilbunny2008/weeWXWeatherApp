@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Mukwai lindilila ilyo tuleshininkisha URL iyo mwatumine</string>
     <string name="remove_all_data">Bushe nashininkisha ukuti mulefwaya ukufumyapo amashiwi yonse?</string>
     <string name="no">Awe</string>
-	<string name="ill_fix_and_try_again">Nkacilungika kabili Ndeesha Na kabili</string>
+    <string name="ill_fix_and_try_again">Nkacilungika kabili Ndeesha Na kabili</string>
     <string name="error_occurred_while_attempting_to_update">Ubwafya bwacitike ilyo uleesha ukubwekeshapo ukubomfya</string>
     <string name="unknown_error_occurred">Ubwafya ubushiishibikwe bwacitikile</string>
     <string name="wasnt_able_to_connect_custom_url">Tacaali na maka yakusuntinkanya nangu ukukopolola ukufuma ku URL iyalinga iyalumbulwa</string>
     <string name="wasnt_able_to_connect_webcam_url">Tacaali na maka yakusuntinkanya nangu ukukopa icikope ca webu ukufuma kuli server wenu</string>
     <string name="wasnt_able_to_connect_forecast">Tacaali na maka ya kulundanya nelyo ukukopa ifya ku ntanshi</string>
-	<string name="forecast_type_is_invalid">Umusango wa kusesema \'%1$s\'s\'s taulinga, moneni failo yenu iya fipekanyo no kwesha na kabili</string>
+    <string name="forecast_type_is_invalid">Umusango wa kusesema \'%1$s\'s\'s taulinga, moneni failo yenu iya fipekanyo no kwesha na kabili</string>
     <string name="wasnt_able_to_connect_radar_image">Tacaali na maka yakusuntinkanya nangu ukukopa radar= icikope ukufuma pali intaneti</string>
     <string name="wasnt_able_to_connect_data_txt">Tacaali na maka yakusuntinkanya nangu ukukopa amashiwi.txt ukufuma ku cibombelo cenu</string>
     <string name="data_url_was_blank">URL ya fyebo yali iya fye</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Ukulinganisha Appp</string>
     <string name="custom_setting">Amalangi ya Kupanga</string>
     <string name="app_theme">Umutwe wa App</string>
-	<string name="today">Ilelo</string>
+    <string name="today">Ilelo</string>
     <string name="last_year_stats">Imibele ya Mwaka Umwaka</string>
     <string name="last_month_stats">Imitantikile ya Mweshi iyapitapo</string>
     <string name="radar_url_not_set">URL ya Rayar tayabikwa. Kuti waya ku fipekanyo ku kwaluka</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL ya cisenshi tayabikwa, nangu ni iyabulamo. Kuti waya mu fifulo pakuti ulenge URL iyalinga</string>
     <string name="next_moon">Ificitika fya mweshi ifyakonkapo?</string>
     <string name="update_while_running">Ukubwekeshapo ilyo ulebutuka</string>
+    <string name="force_dark_mode">Inkondo yafiita</string>
 </resources>

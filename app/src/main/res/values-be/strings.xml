@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Калі ласка, пачакайце, пакуль мы праверым дасланы вамі URL</string>
     <string name="remove_all_data">Вы ўпэўнены, што хочаце выдаліць усе даныя?</string>
     <string name="no">няма</string>
-	<string name="ill_fix_and_try_again">Я выпраўлю гэта і паспрабую яшчэ раз</string>
+    <string name="ill_fix_and_try_again">Я выпраўлю гэта і паспрабую яшчэ раз</string>
     <string name="error_occurred_while_attempting_to_update">Пры спробе абнавіць выкарыстанне адбылася памылка</string>
     <string name="unknown_error_occurred">Адбылася невядомая памылка</string>
     <string name="wasnt_able_to_connect_custom_url">Не ўдалося падключыцца або спампаваць з указанага карыстальніцкага URL</string>
     <string name="wasnt_able_to_connect_webcam_url">Не ўдалося падключыцца або спампаваць выяву вэб-камеры з вашага сервера</string>
     <string name="wasnt_able_to_connect_forecast">Не ўдалося падключыцца або спампаваць прагноз</string>
-	<string name="forecast_type_is_invalid">Тып прагнозу \'%1$s\' несапраўдны, праверце файл налад і паўтарыце спробу</string>
+    <string name="forecast_type_is_invalid">Тып прагнозу \'%1$s\' несапраўдны, праверце файл налад і паўтарыце спробу</string>
     <string name="wasnt_able_to_connect_radar_image">Не ўдалося падключыцца або загрузіць radar= выяву з Інтэрнэту</string>
     <string name="wasnt_able_to_connect_data_txt">Не ўдалося падключыцца або загрузіць data.txt з вашага сервера</string>
     <string name="data_url_was_blank">URL даных быў пустым</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Прыкладанне для матчаў</string>
     <string name="custom_setting">Карыстальніцкія колеры</string>
     <string name="app_theme">Тэма прыкладання</string>
-	<string name="today">сёння</string>
+    <string name="today">сёння</string>
     <string name="last_year_stats">Статыстыка за мінулы год</string>
     <string name="last_month_stats">Статыстыка за апошні месяц</string>
     <string name="radar_url_not_set">URL радара не зададзены. Вы можаце перайсці ў налады, каб змяніць</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Карыстальніцкі URL-адрас не зададзены або пусты. Вы можаце зайсці ў налады, каб дадаць уласны URL</string>
     <string name="next_moon">Наступныя месячныя падзеі?</string>
     <string name="update_while_running">Абнаўленне падчас працы</string>
+    <string name="force_dark_mode">Уключыць цёмны рэжым</string>
 </resources>

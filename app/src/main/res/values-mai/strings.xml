@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">कृपया प्रतीक्षा करू जखन कि हम अहाँक द्वारा प्रस्तुत यूआरएल के सत्यापन करू।</string>
     <string name="remove_all_data">की अहां निश्चित छी जे अहां सभ डाटा हटाबय चाहय छी?</string>
     <string name="no">नहि</string>
-	<string name="ill_fix_and_try_again">हम एकरा ठीक करब आ फेर प्रयास करब</string>
+    <string name="ill_fix_and_try_again">हम एकरा ठीक करब आ फेर प्रयास करब</string>
     <string name="error_occurred_while_attempting_to_update">उपयोग अपडेट करबाक प्रयास करैत काल एकटा त्रुटि भेल</string>
     <string name="unknown_error_occurred">अज्ञात त्रुटि भेल</string>
     <string name="wasnt_able_to_connect_custom_url">कस्टम यूआरएल निर्दिष्ट स कनेक्ट अथवा डाउनलोड नहि कए सकैत छी निर्दिष्ट</string>
     <string name="wasnt_able_to_connect_webcam_url">की अहाँक सर्वर सँ कोनो वेबकैम छवि कनेक्ट वा डाउनलोड नहि क\' सकैत छल</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमान के कनेक्ट या डाउनलोड नै क सकलौं।</string>
-	<string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य अछि, अपन सेटिंग्स फाइल चेक करू आ फेरसँ प्रयास करू</string>
+    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य अछि, अपन सेटिंग्स फाइल चेक करू आ फेरसँ प्रयास करू</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेट 2019 स राडार= छवि कनेक्ट या डाउनलोड नै क सकलौं छल।</string>
     <string name="wasnt_able_to_connect_data_txt">अहाँक सर्वर सँ डाटा.txt केँ कनेक्ट वा डाउनलोड नहि क\' सकल छल</string>
     <string name="data_url_was_blank">डाटा यूआरएल खाली छल</string>
@@ -64,7 +64,7 @@
     <string name="match_app">मैच एप्प 2019।</string>
     <string name="custom_setting">कस्टम रंग 2019।</string>
     <string name="app_theme">ऐप थीम 2019।</string>
-	<string name="today">आइ</string>
+    <string name="today">आइ</string>
     <string name="last_year_stats">पिछला साल के आंकड़ा</string>
     <string name="last_month_stats">पिछला महीना के आंकड़ा</string>
     <string name="radar_url_not_set">रडार यूआरएल सेट नहि। बदलय लेल अहां सेटिंग मे जा सकय छी</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">कस्टम यूआरएल सेट नहि अछि, वा खाली अछि. अहाँ एकटा कस्टम यूआरएल जोड़बाक लेल सेटिंग मे जा सकैत छी</string>
     <string name="next_moon">अगिला चन्द्रमाक आयोजन?</string>
     <string name="update_while_running">दौड़ैत काल अपडेट करू</string>
+    <string name="force_dark_mode">बल डार्क मोड 1।</string>
 </resources>

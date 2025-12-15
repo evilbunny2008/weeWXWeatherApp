@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Berlen URL-ni tassyklaýarys diýip garaşyň</string>
     <string name="remove_all_data">Ähli maglumatlary aýyrmak isleýändigiňize ynanýarsyňyzmy?</string>
     <string name="no">Ýok</string>
-	<string name="ill_fix_and_try_again">Düzederin we gaýtadan synanyşaryn</string>
+    <string name="ill_fix_and_try_again">Düzederin we gaýtadan synanyşaryn</string>
     <string name="error_occurred_while_attempting_to_update">Ulanyşy täzelemäge synanyşanda säwlik ýüze çykdy</string>
     <string name="unknown_error_occurred">Näbelli säwlik ýüze çykdy</string>
     <string name="wasnt_able_to_connect_custom_url">Görkezilen URL-den birikdirip ýa-da göçürip alyp bolmaýardy</string>
     <string name="wasnt_able_to_connect_webcam_url">Serweriňizden web kamerasyny birleşdirip ýa-da göçürip alyp bilmedi</string>
     <string name="wasnt_able_to_connect_forecast">Çaklamany birleşdirip ýa-da göçürip alyp bilmedi</string>
-	<string name="forecast_type_is_invalid">Çaklama görnüşi \'%1$s\' nädogry, Sazlamalar faýlyňyzy barlaň we gaýtadan synanyşyň</string>
+    <string name="forecast_type_is_invalid">Çaklama görnüşi \'%1$s\' nädogry, Sazlamalar faýlyňyzy barlaň we gaýtadan synanyşyň</string>
     <string name="wasnt_able_to_connect_radar_image">\'Radar =\' -den birigip ýa-da göçürip alyp bolmaýardy ýa-da göçürip alyp bilmedi</string>
     <string name="wasnt_able_to_connect_data_txt">Maglumatlary birleşdirip ýa-da göçürip alyp bilmedi</string>
     <string name="data_url_was_blank">Maglumat url boşdy</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Programma bilen deňeşdiriň</string>
     <string name="custom_setting">Ýörite reňkler</string>
     <string name="app_theme">Programmam mowzugy</string>
-	<string name="today">Bu gün</string>
+    <string name="today">Bu gün</string>
     <string name="last_year_stats">Geçen ýylky statistika</string>
     <string name="last_month_stats">Geçen aýyň statistikasy</string>
     <string name="radar_url_not_set">Radar URL toplumy kesgitlenmedi. Üýtgetmek üçin sazlamalara gidip bilersiňiz</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Customörite URL toplumy kesgitlenmeýär ýa-da boş. Customörite URL-ni goşmak üçin sazlamalaryňyza girip bilersiňiz</string>
     <string name="next_moon">Indiki Aý wakalary?</string>
     <string name="update_while_running">Işleýän wagtyňyz täzelenme</string>
+    <string name="force_dark_mode">Garaňky re modeim bilen mejbur ediň</string>
 </resources>

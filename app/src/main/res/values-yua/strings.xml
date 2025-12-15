@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Béet pa\'atik ka\' jo\'op\' u verificar le URL tu túuxtaj yaal</string>
     <string name="remove_all_data">Ba\'ax táan seguro u k\'áato\' luk\'ul Teeche\' tuláakal le datos?</string>
     <string name="no">Ma\'</string>
-	<string name="ill_fix_and_try_again">Yaan in Fix leti\' yéetel intentar tu ka\'atéen</string>
+    <string name="ill_fix_and_try_again">Yaan in Fix leti\' yéetel intentar tu ka\'atéen</string>
     <string name="error_occurred_while_attempting_to_update">Ocurrió jump\'éel ba\'alo\' mientras u intenta actualizar búukinta\'al</string>
     <string name="unknown_error_occurred">Ba\'alo\' desconocido ocurrió</string>
     <string name="wasnt_able_to_connect_custom_url">Ma\' bin capaz u conectar wa descargar ti\' le URL personalizada especificada</string>
     <string name="wasnt_able_to_connect_webcam_url">Ma\' bin capaz u conectar wa descargar jump\'éel wíimbala\' webcam tak u servidor</string>
     <string name="wasnt_able_to_connect_forecast">Ma\' bin capaz u conectar wa descargar le pronóstico</string>
-	<string name="forecast_type_is_invalid">Bin yano\'ob Forecast \'%1$s\' jach inválido, compruebe u archivo configuración yéetel k\'aax u tu ka\'atéen</string>
+    <string name="forecast_type_is_invalid">Bin yano\'ob Forecast \'%1$s\' jach inválido, compruebe u archivo configuración yéetel k\'aax u tu ka\'atéen</string>
     <string name="wasnt_able_to_connect_radar_image">Ma\' bin capaz u conectar wa descargar radar = wíimbala\' tak internet</string>
     <string name="wasnt_able_to_connect_data_txt">Ma\' bin capaz u conectar wa descargar datos.txt tak u servidor</string>
     <string name="data_url_was_blank">URL datos ka\'ach ti\' sak</string>
@@ -64,7 +64,7 @@
     <string name="match_app">App partido</string>
     <string name="custom_setting">Boonilo\'ob personalizados</string>
     <string name="app_theme">Yiit u App</string>
-	<string name="today">Be\'elajake</string>
+    <string name="today">Be\'elajake</string>
     <string name="last_year_stats">Le estadísticas ti\' le ja\'abo\' máano\'</string>
     <string name="last_month_stats">Le estadísticas ts\'ook wi\'inal</string>
     <string name="radar_url_not_set">URL Radar ma\' u ts\'áabal. Je\'el u páajtal u bin u ajustes utia\'al k\'ex</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL personalizado ma\' táan establecido, wa táan ti\' sak. Je\'el bin ti\' ajustes utia\'al u ts\'áabal jump\'éel URL personalizada</string>
     <string name="next_moon">Tu láak\' k\'inbesajo\'ob luna?</string>
     <string name="update_while_running">Actualizar ka\' jo\'op\' u yáalkab</string>
+    <string name="force_dark_mode">Muuk\' Modo éek\'joch\'e\'en</string>
 </resources>

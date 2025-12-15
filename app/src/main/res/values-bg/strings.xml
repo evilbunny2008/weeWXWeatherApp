@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Моля, изчакайте, докато проверим изпратения от вас URL адрес</string>
     <string name="remove_all_data">Сигурни ли сте, че искате да премахнете всички данни?</string>
     <string name="no">не</string>
-	<string name="ill_fix_and_try_again">Ще го поправя и ще опитам отново</string>
+    <string name="ill_fix_and_try_again">Ще го поправя и ще опитам отново</string>
     <string name="error_occurred_while_attempting_to_update">Възникна грешка при опит за актуализиране на използването</string>
     <string name="unknown_error_occurred">Възникна неизвестна грешка</string>
     <string name="wasnt_able_to_connect_custom_url">Не можа да се свърже или изтегли от посочения персонализиран URL адрес</string>
     <string name="wasnt_able_to_connect_webcam_url">Не можах да се свържа или да изтегля изображение на уеб камера от вашия сървър</string>
     <string name="wasnt_able_to_connect_forecast">Не можах да се свържа или да изтегля прогнозата</string>
-	<string name="forecast_type_is_invalid">Типът прогноза \'%1$s\' е невалиден, проверете файла с настройки и опитайте отново</string>
+    <string name="forecast_type_is_invalid">Типът прогноза \'%1$s\' е невалиден, проверете файла с настройки и опитайте отново</string>
     <string name="wasnt_able_to_connect_radar_image">Не можах да се свържа или да изтегля радар= изображение от интернет</string>
     <string name="wasnt_able_to_connect_data_txt">Не можах да се свържа или да изтегля data.txt от вашия сървър</string>
     <string name="data_url_was_blank">URL адресът на данните беше празен</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Match App</string>
     <string name="custom_setting">Персонализирани цветове</string>
     <string name="app_theme">Тема на приложението</string>
-	<string name="today">Днес</string>
+    <string name="today">Днес</string>
     <string name="last_year_stats">Статистика за миналата година</string>
     <string name="last_month_stats">Статистика за последния месец</string>
     <string name="radar_url_not_set">URL адресът на радар не е зададен. Можете да отидете в настройките, за да промените</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">Персонализираният URL адрес не е зададен или е празен. Можете да влезете в настройките, за да добавите персонализиран URL адрес</string>
     <string name="next_moon">Събития на следващата луна?</string>
     <string name="update_while_running">Актуализиране по време на работа</string>
+    <string name="force_dark_mode">Принудителен тъмен режим</string>
 </resources>

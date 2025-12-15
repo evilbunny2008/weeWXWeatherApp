@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">Vui lòng đợi trong khi chúng tôi xác minh URL bạn đã gửi</string>
     <string name="remove_all_data">Bạn có chắc chắn muốn xóa tất cả dữ liệu không?</string>
     <string name="no">KHÔNG</string>
-	<string name="ill_fix_and_try_again">Tôi sẽ sửa nó và thử lại</string>
+    <string name="ill_fix_and_try_again">Tôi sẽ sửa nó và thử lại</string>
     <string name="error_occurred_while_attempting_to_update">Đã xảy ra lỗi khi cố gắng cập nhật mức sử dụng</string>
     <string name="unknown_error_occurred">Đã xảy ra lỗi không xác định</string>
     <string name="wasnt_able_to_connect_custom_url">Không thể kết nối hoặc tải xuống từ URL tùy chỉnh được chỉ định</string>
     <string name="wasnt_able_to_connect_webcam_url">Không thể kết nối hoặc tải xuống hình ảnh webcam từ máy chủ của bạn</string>
     <string name="wasnt_able_to_connect_forecast">Không thể kết nối hoặc tải xuống dự báo</string>
-	<string name="forecast_type_is_invalid">Loại dự báo \'%1$s\' không hợp lệ, hãy kiểm tra tệp cài đặt của bạn và thử lại</string>
+    <string name="forecast_type_is_invalid">Loại dự báo \'%1$s\' không hợp lệ, hãy kiểm tra tệp cài đặt của bạn và thử lại</string>
     <string name="wasnt_able_to_connect_radar_image">Không thể kết nối hoặc tải xuống hình ảnh radar= từ internet</string>
     <string name="wasnt_able_to_connect_data_txt">Không thể kết nối hoặc tải xuống data.txt từ máy chủ của bạn</string>
     <string name="data_url_was_blank">URL dữ liệu trống</string>
@@ -64,7 +64,7 @@
     <string name="match_app">Ứng dụng phù hợp</string>
     <string name="custom_setting">Màu tùy chỉnh</string>
     <string name="app_theme">Chủ đề ứng dụng</string>
-	<string name="today">Hôm nay</string>
+    <string name="today">Hôm nay</string>
     <string name="last_year_stats">Thống kê năm ngoái</string>
     <string name="last_month_stats">Thống kê của tháng trước</string>
     <string name="radar_url_not_set">URL radar chưa được đặt. Bạn có thể vào cài đặt để thay đổi</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">URL tùy chỉnh chưa được đặt hoặc trống. Bạn có thể vào cài đặt để thêm URL tùy chỉnh</string>
     <string name="next_moon">Sự kiện trăng tiếp theo?</string>
     <string name="update_while_running">Cập nhật trong khi chạy</string>
+    <string name="force_dark_mode">Buộc chế độ tối</string>
 </resources>

@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">कृपया इंतजार करीं जबले हमनी के रउरा जमा कइल यूआरएल के सत्यापन करीं जा</string>
     <string name="remove_all_data">का रउवा सभे के पक्का विश्वास बा कि रउआ सभे डेटा के हटावल चाहत बानी?</string>
     <string name="no">ना</string>
-	<string name="ill_fix_and_try_again">हम एकरा के ठीक कर देब आ फेर से कोशिश करब</string>
+    <string name="ill_fix_and_try_again">हम एकरा के ठीक कर देब आ फेर से कोशिश करब</string>
     <string name="error_occurred_while_attempting_to_update">उपयोग के अपडेट करे के कोशिश करत घरी एगो त्रुटि भइल</string>
     <string name="unknown_error_occurred">अज्ञात त्रुटि भइल बा</string>
     <string name="wasnt_able_to_connect_custom_url">निर्दिष्ट कस्टम यूआरएल से कनेक्ट भा डाउनलोड ना कर पवले रहले</string>
     <string name="wasnt_able_to_connect_webcam_url">अपना सर्वर से वेबकैम के छवि कनेक्ट भा डाउनलोड ना कर पवले रहले</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमान के कनेक्ट भा डाउनलोड ना कर पवले</string>
-	<string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य बा, आपन सेटिंग्स फाइल के जांच करीं आ फेर से कोशिश करीं।</string>
+    <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य बा, आपन सेटिंग्स फाइल के जांच करीं आ फेर से कोशिश करीं।</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेट से रडार= छवि ना कनेक्ट हो पवले आ डाउनलोड ना कर पवले</string>
     <string name="wasnt_able_to_connect_data_txt">अपना सर्वर से data.txt के कनेक्ट भा डाउनलोड ना कर पवले रहले</string>
     <string name="data_url_was_blank">डेटा यूआरएल खाली रहे</string>
@@ -64,7 +64,7 @@
     <string name="match_app">मैच के ऐप बा</string>
     <string name="custom_setting">कस्टम रंग के बा</string>
     <string name="app_theme">एप थीम के बा</string>
-	<string name="today">आजु</string>
+    <string name="today">आजु</string>
     <string name="last_year_stats">पिछला साल के आँकड़ा</string>
     <string name="last_month_stats">पिछला महीना के आँकड़ा</string>
     <string name="radar_url_not_set">रडार यूआरएल सेट ना भइल। बदले खातिर रउरा सेटिंग में जा सकेनी</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">कस्टम यूआरएल सेट नइखे, भा खाली बा. कस्टम यूआरएल जोड़े खातिर रउआ सेटिंग में जा सकत बानी</string>
     <string name="next_moon">अगिला चंद्रमा के घटना के बारे में बतावल गइल बा?</string>
     <string name="update_while_running">चलत घरी अपडेट करीं</string>
+    <string name="force_dark_mode">फोर्स डार्क मोड के बा</string>
 </resources>

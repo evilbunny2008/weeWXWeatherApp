@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">আপুনি জমা দিয়া URL টো আমি পৰীক্ষা কৰি থাকোঁতে অপেক্ষা কৰক।</string>
     <string name="remove_all_data">আপুনি সকলো তথ্য আঁতৰাব বিচাৰে বুলি নিশ্চিত নেকি?</string>
     <string name="no">নহয়</string>
-	<string name="ill_fix_and_try_again">মই ঠিক কৰি আকৌ চেষ্টা কৰিম ৷</string>
+    <string name="ill_fix_and_try_again">মই ঠিক কৰি আকৌ চেষ্টা কৰিম ৷</string>
     <string name="error_occurred_while_attempting_to_update">ব্যৱহাৰ আপডেইট কৰিবলে চেষ্টা কৰাৰ সময়ত এটা ভুল হৈছিল</string>
     <string name="unknown_error_occurred">অজ্ঞাত ত্ৰুটি ঘটিল</string>
     <string name="wasnt_able_to_connect_custom_url">ধাৰ্য্য কৰা স্বনিৰ্বাচিত URL ৰ পৰা সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
     <string name="wasnt_able_to_connect_webcam_url">আপোনাৰ চাৰ্ভাৰৰ পৰা এটা WebCam ছবি সংযোগ বা ডাউনল\'ড কৰিব পৰা নাছিল</string>
     <string name="wasnt_able_to_connect_forecast">পূৰ্বাভাস সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল।</string>
-	<string name="forecast_type_is_invalid">পূৰ্বাভাসৰ ধৰণ \'%1$s\' অবৈধ, আপোনাৰ ছেটিংছ ফাইল পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
+    <string name="forecast_type_is_invalid">পূৰ্বাভাসৰ ধৰণ \'%1$s\' অবৈধ, আপোনাৰ ছেটিংছ ফাইল পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
     <string name="wasnt_able_to_connect_radar_image">ইণ্টাৰনেটৰ পৰা Radar= ছবি সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
     <string name="wasnt_able_to_connect_data_txt">আপোনাৰ চাৰ্ভাৰৰ পৰা Data.txt সংযোগ বা ডাউনল\'ড কৰিব পৰা নাছিল।</string>
     <string name="data_url_was_blank">ডাটা URL খালী আছিল</string>
@@ -64,7 +64,7 @@
     <string name="match_app">এপ মেচ এপ</string>
     <string name="custom_setting">কাষ্টম ৰং</string>
     <string name="app_theme">App থিম</string>
-	<string name="today">আজি</string>
+    <string name="today">আজি</string>
     <string name="last_year_stats">যোৱা বছৰৰ পৰিসংখ্যা</string>
     <string name="last_month_stats">যোৱা মাহৰ পৰিসংখ্যা</string>
     <string name="radar_url_not_set">ৰাডাৰৰ URL ছেট কৰা হোৱা নাই। সলনি কৰিবলৈ আপুনি ছেটিংছলৈ যাব পাৰে।</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">কাষ্টম URL ছেট কৰা হোৱা নাই, বা খালী। আপুনি এটা স্বনিৰ্বাচিত URL যোগ কৰিবলৈ ছেটিংছলৈ যাব পাৰে</string>
     <string name="next_moon">নেক্সট মুন ইভেন্ট?</string>
     <string name="update_while_running">চলি থকাৰ সময়ত আপডেট কৰক</string>
+    <string name="force_dark_mode">ফোৰ্চ ডাৰ্ক মোড</string>
 </resources>

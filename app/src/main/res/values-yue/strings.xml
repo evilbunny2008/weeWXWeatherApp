@@ -46,13 +46,13 @@
     <string name="please_wait_verify_url">請等我哋驗證你提交嘅網址嘅時候。</string>
     <string name="remove_all_data">你肯定想移除所有資料？</string>
     <string name="no">唔得</string>
-	<string name="ill_fix_and_try_again">我會修正，然後再試下</string>
+    <string name="ill_fix_and_try_again">我會修正，然後再試下</string>
     <string name="error_occurred_while_attempting_to_update">嘗試更新使用時發生錯誤</string>
     <string name="unknown_error_occurred">發生咗未知嘅錯誤</string>
     <string name="wasnt_able_to_connect_custom_url">唔可以喺指定嘅自訂網址連線或者下載</string>
     <string name="wasnt_able_to_connect_webcam_url">喺伺服器上面連接唔到或者下載網絡攝影機圖片</string>
     <string name="wasnt_able_to_connect_forecast">無法連接或下載預測。</string>
-	<string name="forecast_type_is_invalid">預測類型「%1$s」係無效嘅，檢查你嘅設定檔案，然後再試。</string>
+    <string name="forecast_type_is_invalid">預測類型「%1$s」係無效嘅，檢查你嘅設定檔案，然後再試。</string>
     <string name="wasnt_able_to_connect_radar_image">喺互聯網上面連接唔到或者下載 radar = 圖片</string>
     <string name="wasnt_able_to_connect_data_txt">喺伺服器上面連接唔到或者下載資料 . txt</string>
     <string name="data_url_was_blank">資料網址係空白嘅</string>
@@ -64,7 +64,7 @@
     <string name="match_app">配合 App</string>
     <string name="custom_setting">訂造顏色</string>
     <string name="app_theme">App 主題</string>
-	<string name="today">今日</string>
+    <string name="today">今日</string>
     <string name="last_year_stats">上年統計</string>
     <string name="last_month_stats">上個月嘅統計資料</string>
     <string name="radar_url_not_set">雷達網址未設定。你可以去設定改變。</string>
@@ -86,4 +86,5 @@
     <string name="custom_url_not_set_or_blank">自訂網址唔係設定，或者係空白。你可以去設定加入自訂網址</string>
     <string name="next_moon">下一個月亮事件？</string>
     <string name="update_while_running">跑步時更新</string>
+    <string name="force_dark_mode">強制黑暗模式</string>
 </resources>
