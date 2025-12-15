@@ -135,7 +135,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 			stopRefreshing();
 		});
 
-		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK))
+		boolean fdm = weeWXAppCommon.GetBoolPref("force_dark_mode", weeWXApp.force_dark_mode_default);
+		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK) && fdm)
 		{
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2)
 			{
@@ -273,12 +274,13 @@ public class Forecast extends Fragment implements View.OnClickListener
 			weeWXAppCommon.LogMessage("Loading radar image... url: " + radarURL);
 			String radar = "data:image/jpeg;base64," + weeWXAppCommon.toBase64(weeWXAppCommon.bitmapToBytes(bm));
 
-			String html = weeWXApp.current_html_headers + weeWXApp.script_header + weeWXApp.html_header_rest +
+			String html = weeWXApp.current_html_headers +
+			              weeWXApp.html_header_rest +
 			              weeWXApp.inline_arrow +
 			              "\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
 			              weeWXApp.html_footer;
 
-			radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/", html,
+			radarWebView.post(() -> radarWebView.loadDataWithBaseURL("", html,
 					"text/html", "utf-8", null));
 			stopRefreshing();
 			return;
@@ -303,7 +305,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		String html = weeWXApp.current_dialog_html.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(resId));
 
-		radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/", html,
+		radarWebView.post(() -> radarWebView.loadDataWithBaseURL("", html,
 				"text/html", "utf-8", null));
 
 		stopRefreshing();
@@ -313,7 +315,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		final String html = weeWXApp.current_html_headers + weeWXApp.html_header_rest + str + weeWXApp.html_footer;
 
-		radarWebView.post(() -> radarWebView.loadDataWithBaseURL("file:///android_res/", html,
+		radarWebView.post(() -> radarWebView.loadDataWithBaseURL("", html,
 				"text/html", "utf-8", null));
 
 		stopRefreshing();
@@ -360,7 +362,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		weeWXAppCommon.LogMessage("Forecast.java notificationObserver: " + str, true);
+		weeWXAppCommon.LogMessage("Forecast.java notificationObserver: " + str);
 
 		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
 		if(radtype == null)
@@ -749,8 +751,10 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(fctype == null || fctype.isBlank())
 			return;
 
-		String fc = weeWXApp.current_html_headers + weeWXApp.script_header + weeWXApp.html_header_rest +
-		                  weeWXApp.inline_arrow + bits;
+		String fc = weeWXApp.current_html_headers +
+		            weeWXApp.html_header_rest +
+		            weeWXApp.inline_arrow +
+		            bits;
 
 		if(weeWXAppCommon.web_debug_on)
 			fc += weeWXApp.debug_html;
@@ -759,7 +763,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		String finalfc = fc;
 
-		forecastWebView.post(() -> forecastWebView.loadDataWithBaseURL("file:///android_res/", finalfc,
+		forecastWebView.post(() -> forecastWebView.loadDataWithBaseURL("", finalfc,
 					"text/html", "utf-8", null));
 
 		TextView tv1 = rootView.findViewById(R.id.forecast);

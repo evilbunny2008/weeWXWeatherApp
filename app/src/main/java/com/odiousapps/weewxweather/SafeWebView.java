@@ -7,8 +7,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.ConsoleMessage;
-import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -62,7 +60,7 @@ public class SafeWebView extends WebView
 			setNestedScrollingEnabled(true);
 			setVerticalScrollBarEnabled(false);
 			setHorizontalScrollBarEnabled(false);
-			setWebChromeClient(new myWebChromeClient());
+			//setWebChromeClient(new myWebChromeClient());
 
 			// Optional: apply user agent
 			ws.setUserAgentString(NetworkClient.UA);
@@ -83,7 +81,7 @@ public class SafeWebView extends WebView
 			clearCache(false);
 			clearHistory();
 			clearFormData();
-			removeJavascriptInterface("AndroidBridge");
+			//removeJavascriptInterface("AndroidBridge");
 
 			ViewGroup parent = (ViewGroup)getParent();
 			if(parent != null)
@@ -183,7 +181,7 @@ public class SafeWebView extends WebView
 	{
 		void onPageFinished(SafeWebView view, String url);
 	}
-
+/*
 	static final class myWebChromeClient extends WebChromeClient
 	{
 		@Override
@@ -193,4 +191,5 @@ public class SafeWebView extends WebView
 			return true;
 		}
 	}
+*/
 }

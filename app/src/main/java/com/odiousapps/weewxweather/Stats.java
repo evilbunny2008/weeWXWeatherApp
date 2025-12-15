@@ -9,13 +9,8 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.slider.Slider;
-
-import java.io.File;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -46,7 +41,7 @@ public class Stats extends Fragment
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
-			weeWXAppCommon.LogMessage("weeWXAppCommon.getWeather(true, false)...", true);
+			weeWXAppCommon.LogMessage("weeWXAppCommon.getWeather(true, false)...");
 			weeWXAppCommon.getWeather(true, false);
 
 		});
@@ -89,12 +84,12 @@ public class Stats extends Fragment
 
 		wv.setOnPageFinishedListener((v, url) ->
 		{
-			weeWXAppCommon.LogMessage("Stats.setOnPageFinishedListener()", true);
+			weeWXAppCommon.LogMessage("Stats.setOnPageFinishedListener()");
 
 			if(currZoom == 0)
 			{
 				currZoom = sanitiseZoom(weeWXAppCommon.GetIntPref("mySlider", weeWXApp.mySlider_default));
-				weeWXAppCommon.LogMessage("Stats.setOnPageFinishedListener() currZoom: " + currZoom + "%", true);
+				weeWXAppCommon.LogMessage("Stats.setOnPageFinishedListener() currZoom: " + currZoom + "%");
 				wv.postDelayed(() -> setZoom(currZoom, false), 200);
 			}
 
@@ -116,7 +111,7 @@ public class Stats extends Fragment
 		if(currZoom == 0)
 			currZoom = sanitiseZoom(weeWXAppCommon.GetIntPref("mySlider", weeWXApp.mySlider_default));
 
-		weeWXAppCommon.LogMessage("Stats.onResume() currZoom: " + currZoom + "%", true);
+		weeWXAppCommon.LogMessage("Stats.onResume() currZoom: " + currZoom + "%");
 
 		wv.postDelayed(() -> setZoom(currZoom, false), 100);
 	}
@@ -175,11 +170,11 @@ public class Stats extends Fragment
 		final int finalZoom = sanitiseZoom(zoom);
 		String js = "document.body.style.zoom = " + (finalZoom / 100.0) + ";";
 
-		weeWXAppCommon.LogMessage("new zoom value = " + finalZoom + "%", true);
+		weeWXAppCommon.LogMessage("new zoom value = " + finalZoom + "%");
 
 		mySlider.post(() -> mySlider.setValue(finalZoom));
 		//wv.post(() -> wv.getSettings().setTextZoom(finalZoom));
-		weeWXAppCommon.LogMessage("Set Zoom JS: " + js, true);
+		weeWXAppCommon.LogMessage("Set Zoom JS: " + js);
 		wv.post(() -> wv.evaluateJavascript(js, null));
 	}
 
@@ -798,10 +793,10 @@ public class Stats extends Fragment
 		if(ret[0].equals("error"))
 		{
 			if(lastDownload != null && !lastDownload.isBlank())
-				wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/",
+				wv.post(() -> wv.loadDataWithBaseURL("",
 						lastDownload, "text/html", "utf-8", null));
 			else
-				wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/",
+				wv.post(() -> wv.loadDataWithBaseURL("",
 						weeWXApp.getAndroidString(R.string.unknown_error_occurred),
 						"text/html", "utf-8", null));
 
@@ -813,7 +808,7 @@ public class Stats extends Fragment
 
 		if(bits.length < 65)
 		{
-			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/",
+			wv.post(() -> wv.loadDataWithBaseURL("",
 					weeWXApp.getAndroidString(R.string.unknown_error_occurred),
 					"text/html", "utf-8", null));
 			stopRefreshing();
@@ -829,7 +824,6 @@ public class Stats extends Fragment
 		final StringBuilder sb = new StringBuilder();
 
 		sb.append(weeWXApp.current_html_headers);
-		sb.append(weeWXApp.script_header);
 		sb.append(weeWXApp.html_header_rest);
 		sb.append(weeWXApp.inline_arrow);
 
@@ -901,46 +895,12 @@ public class Stats extends Fragment
 
 		sb.append(weeWXApp.html_footer);
 
+		String str = sb.toString();
+
 		if(weeWXAppCommon.debug_html)
-		{
-			String filename = "weeWX_stats_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) + ".html";
+			CustomDebug.writeOutput(requireContext(), "stats", str, isVisible(), requireActivity());
 
-			File outFile = null;
-
-			String str = sb.toString();
-
-			try
-			{
-				outFile = weeWXAppCommon.getExtFile("weeWX", filename);
-				CustomDebug.writeDebug(outFile, str);
-				String theOutFile = outFile.getAbsolutePath();
-
-				weeWXAppCommon.LogMessage("Wrote debug html to " + theOutFile);
-
-				if(isAdded())
-				{
-					requireActivity().runOnUiThread(() ->
-							Toast.makeText(requireContext(), "Wrote debug html to " + theOutFile, Toast.LENGTH_LONG).show());
-				}
-			} catch(Exception e) {
-				weeWXAppCommon.LogMessage("Attempted to write to " + filename + " but failed with the following error: " + e);
-
-				if(isAdded())
-				{
-					if(outFile != null)
-					{
-						String theOutFile = outFile.getAbsolutePath();
-						requireActivity().runOnUiThread(() ->
-								Toast.makeText(requireContext(), "Failed to output debug html to " + theOutFile, Toast.LENGTH_LONG).show());
-					} else {
-						requireActivity().runOnUiThread(() ->
-								Toast.makeText(requireContext(), "Failed to output debug html to " + filename, Toast.LENGTH_LONG).show());
-					}
-				}
-			}
-		}
-
-		wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/",
+		wv.post(() -> wv.loadDataWithBaseURL("",
 				sb.toString(), "text/html", "utf-8", null));
 	}
 }

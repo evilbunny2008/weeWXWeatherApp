@@ -1,17 +1,10 @@
 package com.odiousapps.weewxweather;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
-import android.os.Handler;
-import android.os.Looper;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
 @SuppressWarnings({"unused", "SameParameterValue", "all"})
 public class WebViewPreloader
@@ -157,7 +150,7 @@ public class WebViewPreloader
 			weeWXAppCommon.doStackOutput(t);
 		}
 	}
-
+/*
 	static String getHTML(String url, int timeoutMs)
 	{
 		Context context = weeWXApp.getInstance();
@@ -194,8 +187,8 @@ public class WebViewPreloader
 						ViewGroup.LayoutParams.MATCH_PARENT,
 						ViewGroup.LayoutParams.MATCH_PARENT));
 
-				JsBridge bridge = new JsBridge(latch, htmlHolder, wv);
-				wv.addJavascriptInterface(bridge, "AndroidBridge");
+				//JsBridge bridge = new JsBridge(latch, htmlHolder, wv);
+				//wv.addJavascriptInterface(bridge, "AndroidBridge");
 
 				wv.setOnPageFinishedListener((view, URL) ->
 				{
@@ -232,4 +225,5 @@ public class WebViewPreloader
 
 		return html;
 	}
+*/
 }

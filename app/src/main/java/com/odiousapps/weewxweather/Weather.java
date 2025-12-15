@@ -9,14 +9,10 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
 
-import java.io.File;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -369,13 +365,6 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
-		weeWXAppCommon.LogMessage("bits[25]: " + bits[25], true);
-		weeWXAppCommon.LogMessage("bits[26]: " + bits[26], true);
-		weeWXAppCommon.LogMessage("bits[27]: " + bits[27], true);
-		weeWXAppCommon.LogMessage("bits[28]: " + bits[28], true);
-		weeWXAppCommon.LogMessage("bits[29]: " + bits[29], true);
-		weeWXAppCommon.LogMessage("bits[30]: " + bits[30], true);
-
 		if(bits[27] != null)
 			bits[27] = bits[27].strip();
 		else
@@ -395,12 +384,10 @@ public class Weather extends Fragment implements View.OnClickListener
 				direction = (int)Float.parseFloat(bits[27]);
 		} catch(NumberFormatException ignored) {}
 
-		weeWXAppCommon.LogMessage("bits.length: " + bits.length, true);
+		weeWXAppCommon.LogMessage("bits.length: " + bits.length);
 
 		if(bits.length >= 293)
 		{
-			weeWXAppCommon.LogMessage("bits[292]: " + bits[292], true);
-			weeWXAppCommon.LogMessage("bits[293]: " + bits[293], true);
 			dir = bits[293];
 			direction = (int)Float.parseFloat(bits[292]);
 		}
@@ -596,14 +583,14 @@ public class Weather extends Fragment implements View.OnClickListener
 		wv.post(() ->
 		{
 			if(text != null)
-				wv.loadDataWithBaseURL("file:///android_res/", text,
+				wv.loadDataWithBaseURL("", text,
 						"text/html", "utf-8", null);
 			else if(url != null)
 				wv.loadUrl(url);
 			else
 				wv.reload();
 
-			wv.invalidate();
+			//wv.invalidate();
 		});
 	}
 
@@ -713,41 +700,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		str += weeWXApp.html_footer;
 
 		if(weeWXAppCommon.debug_html)
-		{
-			String filename = "weeWX_current_conditions_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) + ".html";
-
-			File outFile = null;
-
-			try
-			{
-				outFile = weeWXAppCommon.getExtFile("weeWX", filename);
-				CustomDebug.writeDebug(outFile, str);
-				String theOutFile = outFile.getAbsolutePath();
-
-				weeWXAppCommon.LogMessage("Wrote debug html to " + theOutFile);
-
-				if(isAdded())
-				{
-					requireActivity().runOnUiThread(() ->
-							Toast.makeText(requireContext(), "Wrote debug html to " + theOutFile, Toast.LENGTH_LONG).show());
-				}
-			} catch(Exception e) {
-				weeWXAppCommon.LogMessage("Attempted to write to " + filename + " but failed with the following error: " + e);
-
-				if(isAdded())
-				{
-					if(outFile != null)
-					{
-						String theOutFile = outFile.getAbsolutePath();
-						requireActivity().runOnUiThread(() ->
-								Toast.makeText(requireContext(), "Failed to output debug html to " + theOutFile, Toast.LENGTH_LONG).show());
-					} else {
-						requireActivity().runOnUiThread(() ->
-								Toast.makeText(requireContext(), "Failed to output debug html to " + filename, Toast.LENGTH_LONG).show());
-					}
-				}
-			}
-		}
+			CustomDebug.writeOutput(requireContext(), "current_conditions", str, isVisible(), requireActivity());
 
 		loadAndShowWebView(current, str, null);
 		weeWXAppCommon.LogMessage("Line 426 forceCurrentRefresh() calling loadAndShowWebView()");
@@ -809,12 +762,11 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private void loadWebView(boolean radarForecast, String radtype, String radarURL, String fctype, String forecastData)
 	{
-		weeWXAppCommon.LogMessage("loadWebView(forecast)", true);
+		weeWXAppCommon.LogMessage("loadWebView(forecast)");
 
 		final StringBuilder sb = new StringBuilder();
 
 		sb.append(weeWXApp.current_html_headers);
-		sb.append(weeWXApp.script_header);
 		sb.append(weeWXApp.html_header_rest);
 		sb.append(weeWXApp.inline_arrow);
 
@@ -871,8 +823,6 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 			}
 
-			String baseURL = "drawable/";
-
 			switch(fctype.toLowerCase(Locale.ENGLISH))
 			{
 				case "yahoo" ->
@@ -884,8 +834,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.purple);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("purple.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -898,8 +849,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.wz);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("wz.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -912,8 +864,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.yrno);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("yrno.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -926,8 +879,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.met_no);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("met_no.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -940,8 +894,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.wmo);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("wmo.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -954,8 +909,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.wgov);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("wgov.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -968,8 +924,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.wca);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("wca.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -982,8 +939,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.wca);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("wca.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div><")
 							.append(content[0]);
 				}
@@ -996,8 +954,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.met);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("met.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1014,19 +973,20 @@ public class Weather extends Fragment implements View.OnClickListener
 					else
 						return;
 
-					weeWXAppCommon.LogMessage("content: " + Arrays.toString(content));
-
 					if(content == null || content.length == 0)
 					{
 						loadWebViewContent(R.string.failed_to_process_forecast_data);
 						return;
 					}
 
+					weeWXAppCommon.LogMessage("content: " + Arrays.toString(content));
+
 					sb.append("\n<div style='text-align:center'>\n\t");
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.bom);
 					if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
-						sb.append("<img src='").append(baseURL).append("bom.png' style='filter:invert(1);' height='29px' />");
+						sb.append("<img src='").append(imgStr).append("' style='filter:invert(1);' height='29px' />");
 					else
-						sb.append("<img src='").append(baseURL).append("bom.png' height='29px' />");
+						sb.append("<img src='").append(imgStr).append("' height='29px' />");
 					sb.append("\n</div>\n").append(content[0]);
 				}
 				case "aemet.es" ->
@@ -1038,8 +998,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.aemet);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("aemet.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1052,8 +1013,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.dwd);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("dwd.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1066,8 +1028,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.metservice);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("metservice.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1080,8 +1043,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.owm);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("owm.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1094,8 +1058,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.weather_com);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("weather_com.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1108,8 +1073,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.met_ie);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("met_ie.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1122,8 +1088,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
+					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.tempoitalia_it);
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(baseURL).append("tempoitalia_it.png' height='29px'/>")
+							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1136,6 +1103,9 @@ public class Weather extends Fragment implements View.OnClickListener
 			}
 
 			sb.append(weeWXApp.html_footer);
+
+			if(weeWXAppCommon.debug_html)
+				CustomDebug.writeOutput(requireContext(), "forecast", sb.toString(), isVisible(), requireActivity());
 
 			loadWebViewContent(sb.toString());
 			stopRefreshing();
@@ -1160,7 +1130,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
 		{
-			weeWXAppCommon.LogMessage("Weather.java reloadForecast() weeWXApp.ForecastOnHomeScreenis not true, skipping...",true);
+			weeWXAppCommon.LogMessage("Weather.java reloadForecast() weeWXApp.ForecastOnHomeScreen is not true, skipping...",true);
 			loadWebViewContent(R.string.unknown_error_occurred);
 			stopRefreshing();
 			return;
@@ -1170,24 +1140,24 @@ public class Weather extends Fragment implements View.OnClickListener
 		String forecastData = ret[1];
 		String fctype = ret[2];
 
-		weeWXAppCommon.LogMessage("fctype: " + fctype, true);
+		weeWXAppCommon.LogMessage("fctype: " + fctype);
 		weeWXAppCommon.LogMessage("forecastData: " + forecastData);
 
 		if(ret[0].equals("error"))
 		{
 			if(forecastData != null && !forecastData.isBlank())
 			{
-				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData, true);
+				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData);
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest + forecastData + weeWXApp.html_footer);
 			} else {
-				weeWXAppCommon.LogMessage("getForecast returned an unknown error...", true);
+				weeWXAppCommon.LogMessage("getForecast returned an unknown error...");
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
 				                   weeWXApp.getAndroidString(R.string.unknown_error_occurred) +
 				                   weeWXApp.html_footer);
 			}
 		}
 
-		weeWXAppCommon.LogMessage("getForecast returned some content...", true);
+		weeWXAppCommon.LogMessage("getForecast returned some content...");
 		loadWebView(fctype, forecastData);
 	}
 

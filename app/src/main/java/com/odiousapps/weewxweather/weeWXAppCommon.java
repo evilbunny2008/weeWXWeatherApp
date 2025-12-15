@@ -48,6 +48,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -75,7 +76,7 @@ class weeWXAppCommon
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	final static boolean debug_on = false;
-	final static boolean debug_html = false;
+	final static boolean debug_html = true;
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
 
@@ -227,10 +228,15 @@ class weeWXAppCommon
 
 			String tmpStr = string_time + ": " + text.strip() + "\n";
 
-			File file = weeWXAppCommon.getExtFile("weeWX", weeWXApp.debug_filename);
+			File file = getExtFile("weeWX", weeWXApp.debug_filename);
 			boolean needsPublishing = !file.exists();
 			FileOutputStream fos = new FileOutputStream(file, true);
-			fos.write(gzipToBytes(text));
+
+			if(weeWXApp.debug_filename.endsWith(".gz"))
+				fos.write(gzipToBytes(text));
+			else if(weeWXApp.debug_filename.endsWith(".txt"))
+				fos.write(text.getBytes());
+
 			fos.close();
 
 			if(needsPublishing)
@@ -290,7 +296,7 @@ class weeWXAppCommon
 			}
 
 			// If not found, create it
-			if(logFileUri == null)
+			if(logFileUri == null && weeWXApp.debug_filename.endsWith(".gz"))
 			{
 				ContentValues values = new ContentValues();
 				values.put(MediaStore.Files.FileColumns.DISPLAY_NAME, weeWXApp.debug_filename);
@@ -298,9 +304,24 @@ class weeWXAppCommon
 				values.put(MediaStore.Files.FileColumns.RELATIVE_PATH, folderName);
 
 				logFileUri = context.getContentResolver().insert(filesCollection, values);
-				if (logFileUri == null)
+				if(logFileUri == null)
+					throw new RuntimeException("Failed to create log file in MediaStore.Files");
+			} else if(logFileUri == null && weeWXApp.debug_filename.endsWith(".txt")) {
+				ContentValues values = new ContentValues();
+				values.put(MediaStore.Files.FileColumns.DISPLAY_NAME, weeWXApp.debug_filename);
+				values.put(MediaStore.Files.FileColumns.MIME_TYPE, "text/plain");
+				values.put(MediaStore.Files.FileColumns.RELATIVE_PATH, folderName);
+
+				logFileUri = context.getContentResolver().insert(filesCollection, values);
+				if(logFileUri == null)
 					throw new RuntimeException("Failed to create log file in MediaStore.Files");
 			}
+		}
+
+		if(logFileUri == null)
+		{
+			Log.e("weeWXApp", "Failed to open debug file, skipping...");
+			return;
 		}
 
 		//Log.d("weeWXApp", "Appending to file: " + logFileUri);
@@ -316,7 +337,10 @@ class weeWXAppCommon
 
 		try(OutputStream os = context.getContentResolver().openOutputStream(logFileUri, "wa"))
 		{
-			os.write(gzipToBytes(line));
+			if(weeWXApp.debug_filename.endsWith(".gz"))
+				os.write(gzipToBytes(line));
+			else
+				os.write(line.getBytes());
 		} catch (IOException e) {
 			doStackOutput(e);
 		}
@@ -584,7 +608,10 @@ class weeWXAppCommon
 		LogMessage("days: "+days);
 
 		if(days.isEmpty())
+		{
+			LogMessage("generateForecast() Was sent an empty days variable, skipping...");
 			return null;
+		}
 
 		StringBuilder sb = new StringBuilder();
 		int start = 0;
@@ -600,12 +627,20 @@ class weeWXAppCommon
 			Day first = getFirstDay(days);
 
 			sb.append("<div class='today'>\n\t<div class='topRow'>\n");
-			sb.append("\t\t<div class='iconBig'>\n");
-			if(!first.icon.startsWith("file:///") && !first.icon.startsWith("data:image"))
-				sb.append("\t\t\t").append(cssToSVG(first.icon)).append("\n");
-			else
-				sb.append("\t\t\t<img alt='weather icon' src='").append(removeWS(first.icon)).append("' />\n");
-			sb.append("\t\t</div>\n");
+
+			if(first.icon != null && !first.icon.isBlank())
+			{
+				sb.append("\t\t<div class='iconBig'>\n");
+
+				if(!first.icon.startsWith("file:///") && !first.icon.startsWith("data:image"))
+					sb.append("\t\t\t").append(cssToSVG(first.icon)).append("\n");
+				else
+					sb.append("\t\t\t<img alt='weather icon' src='").append(removeWS(first.icon)).append("' />\n");
+
+				sb.append("\t\t</div>\n");
+			} else {
+				sb.append(weeWXApp.currentSpacer);
+			}
 
 			sb.append("\t\t<div class='wordToday'>").append(weeWXApp.getAndroidString(R.string.today)).append("</div>\n");
 
@@ -640,15 +675,19 @@ class weeWXAppCommon
 
 			sb.append("\t<div class='day'>\n\t\t<div class='dayTopRow'>\n");
 
-			String tmpstr = removeWS(day.icon);
+			if(day.icon != null && !day.icon.isBlank())
+			{
+				sb.append("\t\t<div class='iconSmall'>\n");
 
-			sb.append("\t\t\t<div class='iconSmall'>\n");
-			if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
-				sb.append("\t\t\t\t").append(cssToSVG(day.icon)).append("\n");
-			else
-				sb.append("\t\t\t\t<img alt='weather icon' src='")
-						.append(tmpstr).append("' />\n");
-			sb.append("\t\t\t</div>\n");
+				if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
+					sb.append("\t\t\t").append(cssToSVG(day.icon)).append("\n");
+				else
+					sb.append("\t\t\t<img alt='weather icon' src='").append(removeWS(day.icon)).append("' />\n");
+
+				sb.append("\t\t</div>\n");
+			} else {
+				sb.append(weeWXApp.currentSpacer);
+			}
 
 			sb.append("\t\t\t<div class='dayTitle'>");
 
@@ -700,8 +739,8 @@ class weeWXAppCommon
 		long last_update = Math.round(timestamp / 1_000D);
 		long rssCheck = getRSSsecs();
 
-		LogMessage("rssCheck: " + rssCheck, true);
-		LogMessage("last_update: " + last_update, true);
+		LogMessage("rssCheck: " + rssCheck);
+		LogMessage("last_update: " + last_update);
 
 		if(last_update != 0 && last_update != rssCheck)
 			SetLongPref("rssCheck", last_update);
@@ -793,9 +832,9 @@ class weeWXAppCommon
 
 			try
 			{
-				byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+				String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 				if(imageData != null)
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					day.icon = "data:image/jpeg;base64," + imageData;
 				else
 					day.icon = "";
 			} catch(Exception e) {
@@ -845,9 +884,9 @@ class weeWXAppCommon
 
 				try
 				{
-					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 					if(imageData != null)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						day.icon = "data:image/jpeg;base64," + imageData;
 					else
 						day.icon = "";
 				} catch(Exception e) {
@@ -888,7 +927,7 @@ class weeWXAppCommon
 
 		if(data.isBlank())
 		{
-			LogMessage("data is blank, skipping...", true);
+			LogMessage("data is blank, skipping...");
 			return null;
 		}
 
@@ -907,6 +946,7 @@ class weeWXAppCommon
 			String tmp = jobj.getJSONObject("metadata").getString("issue_time");
 
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+			SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE d", Locale.getDefault());
 
 			Date df = sdf.parse(tmp);
 			if(df != null)
@@ -915,19 +955,22 @@ class weeWXAppCommon
 			if(timestamp > 0)
 				updateCacheTime(timestamp);
 
+//			timestamp = System.currentTimeMillis();
+			Date date = new Date(timestamp);
+			SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
+			LogMessage("Updated forecast at: " + sdf3.format(date), true);
+
 			JSONArray mydays = jobj.getJSONArray("data");
 			for(int i = 0; i < mydays.length(); i++)
 			{
 				Day day = new Day();
 
 				day.timestamp = 0;
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 				df = sdf.parse(mydays.getJSONObject(i).getString("date"));
 				if(df != null)
 					day.timestamp = df.getTime();
 
-				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
-				day.day = sdf.format(day.timestamp);
+				day.day = sdf2.format(day.timestamp);
 
 				if(metric)
 				{
@@ -970,9 +1013,9 @@ class weeWXAppCommon
 
 					try
 					{
-						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+						String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							day.icon = "data:image/jpeg;base64," + imageData;
 						else
 							day.icon = "";
 					} catch(Exception e) {
@@ -1057,9 +1100,9 @@ class weeWXAppCommon
 
 			try
 			{
-				byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+				String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 				if(imageData != null)
-					day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+					day.icon = "data:image/jpeg;base64," + imageData;
 				else
 					day.icon = "";
 			} catch(Exception e) {
@@ -1208,9 +1251,9 @@ class weeWXAppCommon
 
 					try
 					{
-						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+						String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							day.icon = "data:image/jpeg;base64," + imageData;
 						else
 							day.icon = "";
 					} catch(Exception e) {
@@ -1348,9 +1391,9 @@ class weeWXAppCommon
 
 					try
 					{
-						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+						String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							day.icon = "data:image/jpeg;base64," + imageData;
 						else
 							day.icon = "";
 					} catch(Exception e) {
@@ -1512,9 +1555,9 @@ class weeWXAppCommon
 
 					try
 					{
-						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+						String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							day.icon = "data:image/jpeg;base64," + imageData;
 						else
 							day.icon = "";
 					} catch(Exception e) {
@@ -1694,9 +1737,9 @@ class weeWXAppCommon
 				{
 					try
 					{
-						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+						String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							day.icon = "data:image/jpeg;base64," + imageData;
 						else
 							day.icon = "";
 					} catch(Exception e) {
@@ -1797,9 +1840,9 @@ class weeWXAppCommon
 				{
 					try
 					{
-						byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+						String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 						if(imageData != null)
-							day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+							day.icon = "data:image/jpeg;base64," + imageData;
 						else
 							day.icon = "";
 					} catch(Exception e) {
@@ -1879,9 +1922,9 @@ class weeWXAppCommon
 
 				try
 				{
-					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 					if(imageData != null)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						day.icon = "data:image/jpeg;base64," + imageData;
 					else
 						day.icon = "";
 				} catch(Exception e) {
@@ -1995,9 +2038,9 @@ class weeWXAppCommon
 				String fileName = "aemet_" + code + "_g.png";
 				try
 				{
-					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 					if(imageData != null)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						day.icon = "data:image/jpeg;base64," + imageData;
 					else
 						day.icon = "";
 				} catch(Exception e) {
@@ -2073,9 +2116,9 @@ class weeWXAppCommon
 
 				try
 				{
-					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 					if(imageData != null)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						day.icon = "data:image/jpeg;base64," + imageData;
 					else
 						day.icon = "";
 				} catch(Exception e) {
@@ -2141,9 +2184,9 @@ class weeWXAppCommon
 				String fileName = "y" + day.icon + ".png";
 				try
 				{
-					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 					if(imageData != null)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						day.icon = "data:image/jpeg;base64," + imageData;
 					else
 						day.icon = "";
 				} catch(Exception e) {
@@ -2298,9 +2341,9 @@ class weeWXAppCommon
 				String fileName = "yrno" + code + ".png";
 				try
 				{
-					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 					if(imageData != null)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						day.icon = "data:image/jpeg;base64," + imageData;
 					else
 						day.icon = "";
 				} catch(Exception e) {
@@ -2413,9 +2456,9 @@ class weeWXAppCommon
 
 				try
 				{
-					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 					if(imageData != null)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						day.icon = "data:image/jpeg;base64," + imageData;
 					else
 						day.icon = "";
 				} catch(Exception e) {
@@ -2626,9 +2669,9 @@ class weeWXAppCommon
 
 				try
 				{
-					byte[] imageData = weeWXApp.loadBinaryFromAssets(fileName);
+					String imageData = weeWXApp.loadBase64FromAssets("icons/" + fileName);
 					if(imageData != null)
-						day.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						day.icon = "data:image/jpeg;base64," + imageData;
 					else
 						day.icon = "";
 				} catch(Exception e) {
@@ -2736,9 +2779,9 @@ class weeWXAppCommon
 
 				try
 				{
-					byte[] imageData = weeWXApp.loadBinaryFromAssets(myday.icon);
+					String imageData = weeWXApp.loadBase64FromAssets("icons/" + myday.icon);
 					if(imageData != null)
-						myday.icon = "data:image/jpeg;base64," + Base64.encodeToString(imageData, Base64.DEFAULT);
+						myday.icon = "data:image/jpeg;base64," + imageData;
 					else
 						myday.icon = "";
 				} catch(Exception e) {
@@ -2773,7 +2816,7 @@ class weeWXAppCommon
 		String baseURL = GetStringPref("BASE_URL", weeWXApp.BASE_URL_default);
 		if(baseURL == null || baseURL.isBlank())
 		{
-			LogMessage("baseURL == null || baseURL.isBlank()...", true);
+			LogMessage("baseURL == null || baseURL.isBlank()...");
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.data_url_was_blank)};
 		}
 
@@ -2782,20 +2825,21 @@ class weeWXAppCommon
 		{
 			if(lastDownload == null || lastDownload.isBlank())
 			{
-				LogMessage("lastDownload is null or blank...", true);
+				LogMessage("lastDownload is null or blank...");
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available)};
 			} else {
-				LogMessage("Not forced and WiFi needed but not available", true);
+				LogMessage("Not forced and WiFi needed but not available");
 				return new String[]{"ok", lastDownload};
 			}
 		}
 
 		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
-		LogMessage("getWeather() pos: " + pos + ", update interval set to: " + weeWXApp.updateOptions[pos] + ", forced set to: " + forced, true);
+		LogMessage("getWeather() pos: " + pos + ", update interval set to: " +
+		           weeWXApp.updateOptions[pos] + ", forced set to: " + forced);
 
 		if(pos < 0)
 		{
-			LogMessage("Invalid update frequency...", true);
+			LogMessage("Invalid update frequency...");
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.invalid_update_interval)};
 		}
 
@@ -2803,19 +2847,18 @@ class weeWXAppCommon
 		{
 			if(lastDownload == null || lastDownload.isBlank())
 			{
-				LogMessage("lastDownload is null or blank...", true);
+				LogMessage("lastDownload is null or blank...");
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached)};
 			} else {
-				LogMessage("Not forced and set to manual updates...", true);
+				LogMessage("Not forced and set to manual updates...");
 				return new String[]{"ok", lastDownload};
 			}
 		}
 
-		long[] npwsll = weeWXAppCommon.getNPWSLL();
+		long[] npwsll = getNPWSLL();
 		if(!forced && npwsll[1] <= 0)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, period is invalid " +
-			                          "or set to manual refresh only...", true);
+			LogMessage("UpdateCheck.java Skipping, period is invalid or set to manual refresh only...");
 
 			if(lastDownload == null || lastDownload.isBlank())
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached)};
@@ -2825,8 +2868,7 @@ class weeWXAppCommon
 
 		if(!forced && npwsll[5] == 0)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, lastDownloadTime == 0, " +
-			                          "app hasn't been setup...", true);
+			LogMessage("UpdateCheck.java Skipping, lastDownloadTime == 0, app hasn't been setup...");
 
 			if(lastDownload == null || lastDownload.isBlank())
 				return new String[]{"error", "UpdateCheck.java Skipping, lastDownloadTime == 0, app hasn't been setup..."};
@@ -2836,18 +2878,17 @@ class weeWXAppCommon
 
 		if(!forced && Math.round((npwsll[5] + npwsll[1]) / 1_000D) > current_time)
 		{
-			LogMessage("!forced && " + Math.round((npwsll[5] + npwsll[1]) / 1_000D) +
-			           " > " + current_time + "...", true);
+			LogMessage("!forced && " + Math.round((npwsll[5] + npwsll[1]) / 1_000D) + " > " + current_time + "...");
 			if(lastDownload != null && !lastDownload.isBlank())
 			{
-				LogMessage("lastDownload != null && !lastDownload.isBlank()... Skipping...", true);
+				LogMessage("lastDownload != null && !lastDownload.isBlank()... Skipping...");
 				return new String[]{"ok", lastDownload};
 			}
 		}
 
 		if(!forced && !weeWXApp.hasBootedFully && !calledFromweeWXApp)
 		{
-			LogMessage("Hasn't booted fully and wasn't called by weeWXApp and wasn't forced, skipping...", true);
+			LogMessage("Hasn't booted fully and wasn't called by weeWXApp and wasn't forced, skipping...");
 
 			if(lastDownload != null && !lastDownload.isBlank())
 				return new String[]{"ok", lastDownload};
@@ -2859,34 +2900,32 @@ class weeWXAppCommon
 		{
 			if(wtStart + 30 > current_time)
 			{
-				LogMessage("weatherTask is less than 30s old (" + (current_time - wtStart) +
-				                          "s), we'll skip this attempt...", true);
+				LogMessage("weatherTask is less than 30s old (" + (current_time - wtStart) + "s), we'll skip this attempt...");
 				return new String[]{"ok", lastDownload};
 			}
 
-			LogMessage("weatherTask was more than 30s old (" + (current_time - wtStart) +
-			           "s) cancelling and restarting...", true);
+			LogMessage("weatherTask was more than 30s old (" + (current_time - wtStart) + "s) cancelling and restarting...");
 
 			weatherTask.cancel(true);
 			weatherTask = null;
 		}
 
-		LogMessage("Creating a weatherTask...", true);
+		LogMessage("Creating a weatherTask...");
 
 		wtStart = current_time;
 
 		weatherTask = executor.submit(() ->
 		{
-			LogMessage("Weather checking: " + baseURL, true);
+			LogMessage("Weather checking: " + baseURL);
 
 			try
 			{
 				if(reallyGetWeather(baseURL))
 				{
-					LogMessage("Update the widget", true);
+					LogMessage("Update the widget");
 					WidgetProvider.updateAppWidget();
 
-					LogMessage("weatherTask.SendIntent(REFRESH_WEATHER_INTENT);", true);
+					LogMessage("weatherTask.SendIntent(REFRESH_WEATHER_INTENT);");
 					SendIntent(REFRESH_WEATHER_INTENT);
 					wtStart = 0;
 					return;
@@ -2895,7 +2934,7 @@ class weeWXAppCommon
 				LogMessage("Error! e: " + e, true);
 			}
 
-			LogMessage("weatherTask.SendIntent(STOP_WEATHER_INTENT);", true);
+			LogMessage("weatherTask.SendIntent(STOP_WEATHER_INTENT);");
 			SendIntent(STOP_WEATHER_INTENT);
 			wtStart = 0;
 		});
@@ -3292,8 +3331,8 @@ class weeWXAppCommon
 		}
 
 		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
-		LogMessage("getForecast() pos: " + pos + ", update interval set to: " + weeWXApp.RSSCache_period_default +
-		           "s, forced set to: " + forced, true);
+		LogMessage("getForecast() pos: " + pos + ", update interval set to: " +
+		           weeWXApp.RSSCache_period_default + "s, forced set to: " + forced, true);
 		if(pos < 0)
 		{
 			LogMessage("Invalid update frequency...", true);
@@ -3348,8 +3387,7 @@ class weeWXAppCommon
 		{
 			if(ftStart + 30 > current_time)
 			{
-				LogMessage("forecastTask is less than 30s old (" + (current_time - ftStart) +
-				           "s), we'll skip this attempt...", true);
+				LogMessage("forecastTask is less than 30s old (" + (current_time - ftStart) + "s), we'll skip this attempt...", true);
 				return new String[]{"ok", forecastData, fctype};
 			}
 
@@ -3357,11 +3395,11 @@ class weeWXAppCommon
 			forecastTask = null;
 		}
 
-		LogMessage("RSSCache_period_default: " + weeWXApp.RSSCache_period_default, true);
-		LogMessage("current_time: " + current_time, true);
-		LogMessage("rssCheckTime: " + rssCheckTime, true);
+		LogMessage("RSSCache_period_default: " + weeWXApp.RSSCache_period_default);
+		LogMessage("current_time: " + current_time);
+		LogMessage("rssCheckTime: " + rssCheckTime);
 		LogMessage("Was forced or no forecast data or cache is more than " + weeWXApp.RSSCache_period_default +
-		           "s old (" + (current_time - rssCheckTime) + "s)", true);
+		           "s old (" + (current_time - rssCheckTime) + "s)");
 
 		ftStart = current_time;
 
@@ -3393,14 +3431,18 @@ class weeWXAppCommon
 		});
 
 		if(forecastData != null && !forecastData.isBlank())
+		{
+			LogMessage("forecastData != null and !isBlank()...", true);
 			return new String[]{"ok", forecastData, fctype};
+		}
 
+		LogMessage("forecastData == null or isBlank()...", true);
 		return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
 	}
 
 	static String reallyGetForecast(String url)
 	{
-		LogMessage("reallyGetForecast() forcecastURL: " + url);
+		LogMessage("reallyGetForecast() forcecastURL: " + url, true);
 
 		if(url == null || url.isBlank())
 			return null;
@@ -3409,15 +3451,20 @@ class weeWXAppCommon
 		if(forecastData.isBlank())
 			return null;
 
-		LogMessage("reallyGetForecast() forcecastData: " + forecastData);
+		try
+		{
+			JSONObject jobj = new JSONObject(forecastData);
+			JSONObject jo = jobj.getJSONObject("metadata");
+			jo.put("issue_time", Instant.ofEpochSecond(getCurrTime()).toString());
+			jobj.put("metadata", jo);
+			forecastData = jobj.toString();
+		} catch(Exception ignored) {}
+
+		LogMessage("reallyGetForecast() forcecastData: " + forecastData, true);
 
 		LogMessage("updating rss cache", true);
-		//RemovePref("rssCheck");
 		SetLongPref("rssCheck", getCurrTime());
-		//RemovePref("forecastData");
 		SetStringPref("forecastData", forecastData);
-
-		LogMessage("forecastData: " + forecastData);
 
 		return forecastData;
 	}
@@ -3547,16 +3594,16 @@ class weeWXAppCommon
 
 		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
 		LogMessage("getWebcamImage() pos: " + pos + ", update interval set to: " +
-		           weeWXApp.updateOptions[pos] + ", forced set to: " + forced, true);
+		           weeWXApp.updateOptions[pos] + ", forced set to: " + forced);
 		if(pos < 0)
 		{
-			LogMessage("Invalid update frequency...", true);
+			LogMessage("Invalid update frequency...");
 			return weeWXApp.textToBitmap(R.string.invalid_update_interval);
 		}
 
 		if(!forced && pos == 0)
 		{
-			LogMessage("Not forced and set to manual updates...", true);
+			LogMessage("Not forced and set to manual updates...");
 
 			if(bm == null)
 				return weeWXApp.textToBitmap(R.string.update_set_to_manual_but_no_content_cached);
@@ -3564,12 +3611,12 @@ class weeWXAppCommon
 			return bm;
 		}
 
-		LogMessage("Reloading webcam...", true);
+		LogMessage("Reloading webcam...");
 
 		String webcamURL = GetStringPref("WEBCAM_URL", weeWXApp.WEBCAM_URL_default);
 		if(webcamURL == null || webcamURL.isBlank())
 		{
-			LogMessage("Webcam URL not set...", true);
+			LogMessage("Webcam URL not set...");
 			return weeWXApp.textToBitmap(R.string.webcam_url_url_not_set);
 		}
 
@@ -3577,21 +3624,18 @@ class weeWXAppCommon
 		{
 			if(bm == null)
 			{
-				LogMessage("Not forced and wcStart + 60 > current_time " +
-				           "and bm == null...", true);
+				LogMessage("Not forced and wcStart + 60 > current_time and bm == null...");
 				return weeWXApp.textToBitmap(R.string.webcam_still_downloading);
 
 			} else {
-				LogMessage("Not forced and wcStart + 60 > current_time " +
-				           "and bm != null...", true);
+				LogMessage("Not forced and wcStart + 60 > current_time and bm != null...");
 				return bm;
 			}
 		}
 
 		if(!forced && !weeWXApp.hasBootedFully && !calledFromweeWXApp)
 		{
-			LogMessage("Not forced and hasBootedFully is false and " +
-			           "calledFromweeWXApp is false...", true);
+			LogMessage("Not forced and hasBootedFully is false and calledFromweeWXApp is false...");
 
 			if(bm != null)
 				return bm;
@@ -3599,14 +3643,13 @@ class weeWXAppCommon
 				return weeWXApp.textToBitmap(R.string.webcam_still_downloading);
 		}
 
-		LogMessage("Reload webcam...", true);
+		LogMessage("Reload webcam...");
 
 		if(webcamTask != null && !webcamTask.isDone())
 		{
 			if(wcStart + 30 > current_time)
 			{
-				LogMessage("webcamTask is less than 30s old (" + (current_time - wcStart) +
-				           "s), we'll skip this attempt...", true);
+				LogMessage("webcamTask is less than 30s old (" + (current_time - wcStart) + "s), we'll skip this attempt...");
 				return bm;
 			}
 
@@ -3618,14 +3661,14 @@ class weeWXAppCommon
 
 		webcamTask = executor.submit(() ->
 		{
-			LogMessage("Webcam checking: " + webcamURL, true);
+			LogMessage("Webcam checking: " + webcamURL);
 
 			try
 			{
-				LogMessage("Starting to download webcam image from: " + webcamURL, true);
+				LogMessage("Starting to download webcam image from: " + webcamURL);
 				if(loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename) != null)
 				{
-					LogMessage("Webcam image downloaded successfully...", true);
+					LogMessage("Webcam image downloaded successfully...");
 					SendIntent(REFRESH_WEBCAM_INTENT);
 					return;
 				}
@@ -3633,7 +3676,7 @@ class weeWXAppCommon
 				LogMessage("Error! e: " + e, true);
 			}
 
-			LogMessage("Webcam image failed to download successfully...", true);
+			LogMessage("Webcam image failed to download successfully...");
 			SendIntent(STOP_WEBCAM_INTENT);
 		});
 
@@ -4059,23 +4102,28 @@ class weeWXAppCommon
 		if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 			tmpStr += " style='filter:invert(1);'";
 
-		tmpStr += " src='file:///android_asset/glyphs/";
+		tmpStr += " src='";
+
+		String tmpImg = "";
 
 		switch(cssname)
 		{
-			case "flaticon-temperature" -> tmpStr += "uniF100.svg";
-			case "flaticon-home-page" -> tmpStr += "uniF101.svg";
-			case "flaticon-women-sunglasses" -> tmpStr += "uniF102.svg";
-			case "flaticon-windy" -> tmpStr += "uniF103.svg";
-			case "flaticon-thermometer" -> tmpStr += "uniF104.svg";
-			case "flaticon-cactus" -> tmpStr += "uniF105.svg";
-			case "flaticon-cool" -> tmpStr += "uniF106.svg";
-			case "flaticon-cold" -> tmpStr += "uniF107.svg";
-			case "flaticon-warm" -> tmpStr += "uniF108.svg";
+			case "flaticon-temperature" -> tmpImg = weeWXApp.loadBase64FromAssets("glyphs/uniF100.svg");
+			case "flaticon-home-page" -> tmpImg = weeWXApp.loadBase64FromAssets("glyphs/uniF101.svg");
+			case "flaticon-women-sunglasses" -> tmpImg = weeWXApp.loadBase64FromAssets("glyphs/uniF102.svg");
+			case "flaticon-windy" -> tmpImg = weeWXApp.loadBase64FromAssets("glyphs/uniF103.svg");
+			case "flaticon-thermometer" -> tmpImg = weeWXApp.loadBase64FromAssets("glyphs/uniF104.svg");
+			case "flaticon-cactus" -> tmpImg = weeWXApp.loadBase64FromAssets("glyphs/uniF105.svg");
+			case "flaticon-cool" -> tmpImg = weeWXApp.loadBase64FromAssets("glyphs/uniF106.svg");
+			case "flaticon-cold" -> tmpImg = weeWXApp.loadBase64FromAssets("glyphs/uniF107.svg");
+			case "flaticon-warm" -> tmpImg = weeWXApp.loadBase64FromAssets("glyphs/uniF108.svg");
 			default -> LogMessage("Invalid FlatIcon String: " + cssname, true);
 		}
 
-		return tmpStr + "'/>";
+		if(!tmpImg.isBlank())
+			tmpImg = "data:image/svg+xml;base64," + tmpImg;
+
+		return tmpStr + tmpImg + "'/>";
 	}
 
 	static int getDirection(String direction)
@@ -4107,11 +4155,17 @@ class weeWXAppCommon
 
 	static String cssToSVG(String cssname)
 	{
+		if(cssname == null || cssname.isBlank())
+			return null;
+
 		return cssToSVG(cssname, null);
 	}
 
 	static String cssToSVG(String cssname, Integer Angle)
 	{
+		if(cssname == null || cssname.isBlank())
+			return null;
+
 		int dir;
 
 		if(cssname.startsWith("<img "))
@@ -4141,9 +4195,11 @@ class weeWXAppCommon
 			tmpStr += "'";
 		}
 
-		tmpStr += " src='file:///android_asset/glyphs/" + cssname;
+		cssname = "glyphs/" + cssname + ".svg";
 
-		return tmpStr + ".svg'/>";
+		tmpStr += " src='data:image/svg+xml;base64," + weeWXApp.loadBase64FromAssets(cssname) + "'/>";
+
+		return tmpStr;
 	}
 
 	static long[] getNPWSLL()
@@ -4153,7 +4209,7 @@ class weeWXAppCommon
 		long now = System.currentTimeMillis();
 
 		String string_time = sdf.format(now);
-		weeWXAppCommon.LogMessage("UpdateCheck.java now: " + string_time, true);
+		LogMessage("UpdateCheck.java now: " + string_time);
 
 		long[] ret = getPeriod();
 		long period = ret[0];
@@ -4162,31 +4218,31 @@ class weeWXAppCommon
 		if(period <= 0)
 			return new long[]{now, period, wait, 0, 0};
 
-		long lastDownloadTime = weeWXAppCommon.GetLongPref("LastDownloadTime", weeWXApp.LastDownloadTime_default) * 1_000L;
+		long lastDownloadTime = GetLongPref("LastDownloadTime", weeWXApp.LastDownloadTime_default) * 1_000L;
 
 		string_time = sdf.format(lastDownloadTime);
-		weeWXAppCommon.LogMessage("UpdateCheck.java lastDownloadTime: " + string_time, true);
+		LogMessage("UpdateCheck.java lastDownloadTime: " + string_time);
 
 		long start = Math.round((double)now / (double)period) * period;
 
 		string_time = sdf.format(start);
-		weeWXAppCommon.LogMessage("UpdateCheck.java start: " + string_time, true);
+		LogMessage("UpdateCheck.java start: " + string_time);
 
 		while(start < now)
 			start += period;
 
 		string_time = sdf.format(start);
-		weeWXAppCommon.LogMessage("UpdateCheck.java start: " + string_time, true);
+		LogMessage("UpdateCheck.java start: " + string_time);
 
 		start += wait;
 
 		string_time = sdf.format(start);
-		weeWXAppCommon.LogMessage("UpdateCheck.java start: " + string_time, true);
+		LogMessage("UpdateCheck.java start: " + string_time);
 
 		long lastStart = start - period;
 
 		string_time = sdf.format(lastStart);
-		weeWXAppCommon.LogMessage("UpdateCheck.java lastStart: " + string_time, true);
+		LogMessage("UpdateCheck.java lastStart: " + string_time);
 /*
 		if(BuildConfig.DEBUG)
 		{

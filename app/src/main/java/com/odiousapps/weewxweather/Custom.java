@@ -66,7 +66,8 @@ public class Custom extends Fragment
 		fl.removeAllViews();
 		fl.addView(wv);
 
-		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK))
+		boolean fdm = weeWXAppCommon.GetBoolPref("force_dark_mode", weeWXApp.force_dark_mode_default);
+		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK) && fdm)
 		{
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2)
 			{
@@ -153,7 +154,7 @@ public class Custom extends Fragment
 			String tmpStr = weeWXApp.current_dialog_html
 					.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(R.string.manual_update_set_refresh_screen_to_load));
 
-			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/", tmpStr,
+			wv.post(() -> wv.loadDataWithBaseURL("", tmpStr,
 					"text/html", "utf-8", null));
 			return;
 		}
@@ -166,7 +167,7 @@ public class Custom extends Fragment
 			String tmpStr = weeWXApp.current_dialog_html
 					.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(R.string.custom_url_not_set_or_blank));
 
-			wv.post(() -> wv.loadDataWithBaseURL("file:///android_res/", tmpStr,
+			wv.post(() -> wv.loadDataWithBaseURL("", tmpStr,
 					"text/html", "utf-8", null));
 			return;
 		}
@@ -179,7 +180,7 @@ public class Custom extends Fragment
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		weeWXAppCommon.LogMessage("Custom.java notificationObserver: " + str, true);
+		weeWXAppCommon.LogMessage("Custom.java notificationObserver: " + str);
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
 		{

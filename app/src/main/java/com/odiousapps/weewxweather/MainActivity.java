@@ -39,8 +39,6 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
 import org.json.JSONObject;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -85,7 +83,8 @@ public class MainActivity extends FragmentActivity
 	private CPEditText fgColour, bgColour;
 	private MaterialButton b1, b2, b3, b4;
 	private MaterialAutoCompleteTextView s1, s2, s3;
-	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, use_exact_alarm, save_app_debug_logs, next_moon;
+	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, use_exact_alarm,
+			save_app_debug_logs, next_moon, force_dark_mode;
 	private MaterialRadioButton showRadar, showForecast;
 	private static ViewPager2 mViewPager;
 
@@ -143,6 +142,7 @@ public class MainActivity extends FragmentActivity
 		R.id.use_exact_alarm,
 		R.id.save_app_debug_logs,
 		R.id.next_moon,
+		R.id.force_dark_mode
 	};
 
 	ColorStateList strokeColors;
@@ -364,6 +364,7 @@ public class MainActivity extends FragmentActivity
 		use_exact_alarm = findViewById(R.id.use_exact_alarm);
 		save_app_debug_logs = findViewById(R.id.save_app_debug_logs);
 		next_moon = findViewById(R.id.next_moon);
+		force_dark_mode = findViewById(R.id.force_dark_mode);
 
 		b1 = findViewById(R.id.saveButton);
 		b2 = findViewById(R.id.deleteData);
@@ -412,11 +413,12 @@ public class MainActivity extends FragmentActivity
 		bgtil = findViewById(R.id.bgTextInputLayout);
 
 		int fg, bg;
-		boolean wo, met, si, sr, sf, uea, sadl, nm, uob;
+		boolean wo, met, si, sr, sf, uea, sadl, nm, fdm;
 
 		UpdateFrequency = weeWXAppCommon.GetIntPref("updateInterval", 1);
 		DayNightMode = weeWXAppCommon.GetIntPref("DayNightMode", weeWXApp.DayNightMode_default);
-		KeyValue.widget_theme_mode = widget_theme_mode = weeWXAppCommon.GetIntPref(weeWXAppCommon.WIDGET_THEME_MODE, weeWXApp.widget_theme_mode_dfault);
+		KeyValue.widget_theme_mode = widget_theme_mode =
+				weeWXAppCommon.GetIntPref(weeWXAppCommon.WIDGET_THEME_MODE, weeWXApp.widget_theme_mode_dfault);
 
 		fg = weeWXAppCommon.GetIntPref("fgColour", weeWXApp.fgColour_default);
 		bg = weeWXAppCommon.GetIntPref("bgColour", weeWXApp.bgColour_default);
@@ -429,6 +431,7 @@ public class MainActivity extends FragmentActivity
 		uea = weeWXAppCommon.GetBoolPref("use_exact_alarm", weeWXApp.use_exact_alarm_default);
 		sadl = KeyValue.save_app_debug_logs;
 		nm = weeWXAppCommon.GetBoolPref("next_moon", weeWXApp.next_moon_default);
+		fdm = weeWXAppCommon.GetBoolPref("next_moon", weeWXApp.force_dark_mode_default);
 
 		if(savedInstanceState != null)
 		{
@@ -451,6 +454,7 @@ public class MainActivity extends FragmentActivity
 			uea = savedInstanceState.getBoolean("uea", uea);
 			sadl = savedInstanceState.getBoolean("sadl", sadl);
 			nm = savedInstanceState.getBoolean("nm", nm);
+			fdm = savedInstanceState.getBoolean("fdm", fdm);
 		}
 
 		// https://github.com/Pes8/android-material-color-picker-dialog
@@ -484,6 +488,7 @@ public class MainActivity extends FragmentActivity
 		use_exact_alarm.setChecked(uea);
 		save_app_debug_logs.setChecked(sadl);
 		next_moon.setChecked(nm);
+		force_dark_mode.setChecked(fdm);
 
 		showRadar.setChecked(sr);
 		showForecast.setChecked(!sr);
@@ -815,6 +820,7 @@ public class MainActivity extends FragmentActivity
 		outState.putBoolean("uea", use_exact_alarm.isChecked());
 		outState.putBoolean("sadl", save_app_debug_logs.isChecked());
 		outState.putBoolean("nm", next_moon.isChecked());
+		outState.putBoolean("fdm", force_dark_mode.isChecked());
 	}
 
 	private void setStrings()
@@ -974,7 +980,7 @@ public class MainActivity extends FragmentActivity
 
 		if(use_exact_alarm.isChecked() && !UpdateCheck.canSetExact(this))
 		{
-			weeWXAppCommon.LogMessage("Need to prompt user to allow exact alarms...", true);
+			weeWXAppCommon.LogMessage("Need to prompt user to allow exact alarms...");
 
 			UpdateCheck.promptForExact(this);
 
@@ -1201,6 +1207,7 @@ public class MainActivity extends FragmentActivity
 				{
 					switch(fctype.toLowerCase(Locale.ENGLISH))
 					{
+/*
 						case "metservice.com2" ->
 						{
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
@@ -1227,6 +1234,7 @@ public class MainActivity extends FragmentActivity
 							bgStart = 0;
 							return;
 						}
+*/
 						case "yahoo" ->
 						{
 							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
@@ -1560,6 +1568,7 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.SetBoolPref("use_exact_alarm", use_exact_alarm.isChecked());
 			weeWXAppCommon.SetBoolPref("save_app_debug_logs", KeyValue.save_app_debug_logs);
 			weeWXAppCommon.SetBoolPref("next_moon", next_moon.isChecked());
+			weeWXAppCommon.SetBoolPref("force_dark_mode", force_dark_mode.isChecked());
 
 			weeWXAppCommon.SetIntPref(weeWXAppCommon.WIDGET_THEME_MODE, widget_theme_mode);
 			KeyValue.widget_theme_mode = widget_theme_mode;
@@ -1593,8 +1602,9 @@ public class MainActivity extends FragmentActivity
 			{
 				resetScreen();
 
-				weeWXAppCommon.LogMessage("Apply the new themes");
+				weeWXAppCommon.LogMessage("Apply the new theme");
 				weeWXApp.applyTheme(false);
+				setTheme(KeyValue.theme);
 				WidgetProvider.updateAppWidget();
 
 				runDelayed(500L, () ->

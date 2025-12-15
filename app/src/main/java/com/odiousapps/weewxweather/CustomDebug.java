@@ -2,12 +2,17 @@ package com.odiousapps.weewxweather;
 
 import android.content.Context;
 import android.os.Environment;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import androidx.fragment.app.FragmentActivity;
 
 @SuppressWarnings({"unused", "SameParameterValue"})
 class CustomDebug
@@ -146,5 +151,42 @@ class CustomDebug
 		}
 
 		return 0;
+	}
+
+	static void writeOutput(Context context, String prefix, String output, boolean isAdded, FragmentActivity fragmentActivity)
+	{
+		String filename = "weeWX_" + prefix + "_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss")) + ".html";
+
+		File outFile = null;
+
+		try
+		{
+			outFile = weeWXAppCommon.getExtFile("weeWX", filename);
+			CustomDebug.writeDebug(outFile, output);
+			String theOutFile = outFile.getAbsolutePath();
+
+			weeWXAppCommon.LogMessage("Wrote debug html to " + theOutFile);
+
+			if(isAdded)
+			{
+				fragmentActivity.runOnUiThread(() ->
+						Toast.makeText(context, "Wrote debug html to " + theOutFile, Toast.LENGTH_LONG).show());
+			}
+		} catch(Exception e) {
+			weeWXAppCommon.LogMessage("Attempted to write to " + filename + " but failed with the following error: " + e);
+
+			if(isAdded)
+			{
+				if(outFile != null)
+				{
+					String theOutFile = outFile.getAbsolutePath();
+					fragmentActivity.runOnUiThread(() ->
+							Toast.makeText(context, "Failed to output debug html to " + theOutFile, Toast.LENGTH_LONG).show());
+				} else {
+					fragmentActivity.runOnUiThread(() ->
+							Toast.makeText(context, "Failed to output debug html to " + filename, Toast.LENGTH_LONG).show());
+				}
+			}
+		}
 	}
 }

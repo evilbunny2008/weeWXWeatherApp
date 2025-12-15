@@ -106,7 +106,7 @@ class NetworkClient
 		// windy.com is very noisy... 2s connectivity checks is beyond excessive...
 		if(!url.contains("windy.com"))
 			weeWXAppCommon.LogMessage("NetworkClient.java getInstance() " + callerClass +
-			                          "." + callerMethod + ", url: " + url, true);
+			                          "." + callerMethod + ", url: " + url);
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() == null || !uri.getUserInfo().contains(":"))

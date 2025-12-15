@@ -1,12 +1,9 @@
 package com.odiousapps.weewxweather;
 
-import android.webkit.JavascriptInterface;
-
-import java.util.concurrent.CountDownLatch;
-
 @SuppressWarnings({"unused", "FieldCanBeLocal"})
 public class JsBridge
 {
+/* noinspection
 	private final CountDownLatch latch;
 	private final String[] htmlHolder;
 	private final SafeWebView webView;
@@ -186,4 +183,5 @@ public class JsBridge
 				.replace("'", "\\'")
 				.replace("\"", "\\\"");
 	}
+*/
 }

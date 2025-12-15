@@ -32,7 +32,7 @@ public class Webcam extends Fragment
 		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
 		{
-			weeWXAppCommon.LogMessage("Webcam.java weeWXAppCommon.getWebcamImage(true, false);", true);
+			weeWXAppCommon.LogMessage("Webcam.java weeWXAppCommon.getWebcamImage(true, false);");
 			swipeLayout.setRefreshing(true);
 			weeWXAppCommon.getWebcamImage(true, false);
 		});

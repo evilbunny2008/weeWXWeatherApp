@@ -13,11 +13,13 @@ import android.os.LocaleList;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
+import android.util.Base64;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
@@ -166,6 +168,7 @@ public class weeWXApp extends Application
 	final static boolean use_exact_alarm_default = false;
 	final static boolean save_app_debug_logs = false;
 	final static boolean next_moon_default = false;
+	final static boolean force_dark_mode_default = false;
 
 	final static int fgColour_default = 0xFFFFFFFF;
 	final static int bgColour_default = 0x00000000;
@@ -193,7 +196,8 @@ public class weeWXApp extends Application
 
 	final static String radarFilename = "radar.gif";
 	final static String webcamFilename = "webcam.jpg";
-	final static String debug_filename = "weeWXApp_Debug.log.gz";
+	//final static String debug_filename = "weeWXApp_Debug.txt.gz";
+	final static String debug_filename = "weeWXApp_Debug.txt";
 
 	final static boolean RadarOnHomeScreen = true;
 	final static boolean ForecastOnHomeScreen = !RadarOnHomeScreen;
@@ -203,6 +207,8 @@ public class weeWXApp extends Application
 	static String[] updateOptions, themeOptions, widgetThemeOptions;
 
 	static boolean hasBootedFully = false;
+
+	final static String charset = StandardCharsets.UTF_8.toString();
 
 	@Override
 	public void onCreate()
@@ -216,11 +222,11 @@ public class weeWXApp extends Application
 		KeyValue.save_app_debug_logs = weeWXAppCommon.GetBoolPref("save_app_debug_logs", weeWXApp.save_app_debug_logs);
 
 		if(KeyValue.save_app_debug_logs)
-			weeWXAppCommon.LogMessage("Debug logging enabled...", true);
+			weeWXAppCommon.LogMessage("Debug logging enabled...");
 		else
-			weeWXAppCommon.LogMessage("Debug logging disabled...", true);
+			weeWXAppCommon.LogMessage("Debug logging disabled...");
 
-		weeWXAppCommon.LogMessage("weeWXApp.java app_version: " + BuildConfig.VERSION_NAME + " starting...", true);
+		weeWXAppCommon.LogMessage("weeWXApp.java app_version: " + BuildConfig.VERSION_NAME + " starting...");
 
 		if(weeWXAppCommon.fixTypes())
 			weeWXAppCommon.LogMessage("weeWXApp.java successfully converted preference object types...");
@@ -234,13 +240,13 @@ public class weeWXApp extends Application
 
 		applyTheme(false);
 
-		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.cancelAlarm();", true);
+		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.cancelAlarm();");
 		UpdateCheck.cancelAlarm();
 
-		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.setNextAlarm();", true);
+		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.setNextAlarm();");
 		UpdateCheck.setNextAlarm();
 
-		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.runInTheBackground(false, true);", true);
+		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.runInTheBackground(false, true);");
 		UpdateCheck.runInTheBackground(false, true);
 	}
 
@@ -291,11 +297,17 @@ public class weeWXApp extends Application
 		};
 	}
 
+	static String loadBase64FromAssets(String filename)
+	{
+		weeWXAppCommon.LogMessage("filename: " + filename);
+		return Base64.encodeToString(loadBinaryFromAssets(filename), Base64.NO_WRAP);
+	}
+
 	static byte[] loadBinaryFromAssets(String filename)
 	{
 		try
 		{
-			InputStream is = instance.getAssets().open("icons/" + filename);
+			InputStream is = instance.getAssets().open(filename);
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
 			byte[] buffer = new byte[1024];
@@ -328,9 +340,42 @@ public class weeWXApp extends Application
 
 			is.close();
 
-			String charset = StandardCharsets.UTF_8.toString();
-
 			return baos.toString(charset);
+		} catch (Exception e) {
+			weeWXAppCommon.doStackOutput(e);
+			return "";
+		}
+	}
+
+	static String loadDrawableFromRes(int drawableid)
+	{
+		Bitmap bitmap;
+
+		try
+		{
+			Drawable drawable = instance.getDrawable(drawableid);
+
+			if(drawable == null)
+				return null;
+
+			if(drawable instanceof BitmapDrawable)
+			{
+				bitmap = ((BitmapDrawable) drawable).getBitmap();
+			} else {
+				int width = drawable.getIntrinsicWidth() > 0 ? drawable.getIntrinsicWidth() : 1;
+				int height = drawable.getIntrinsicHeight() > 0 ? drawable.getIntrinsicHeight() : 1;
+				bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+				Canvas canvas = new Canvas(bitmap);
+				drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+				drawable.draw(canvas);
+			}
+
+			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+			bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+			byte[] byteArray = outputStream.toByteArray();
+
+			// Encode to Base64
+			return Base64.encodeToString(byteArray, Base64.NO_WRAP);
 		} catch (Exception e) {
 			weeWXAppCommon.doStackOutput(e);
 			return "";
@@ -352,7 +397,8 @@ public class weeWXApp extends Application
 		current_html_headers = html_header +
 		                       "<style>\n" +
 		                       loadFileFromAssets("main.css") +
-		                       "\n</style>\n";
+		                       "\n</style>\n" +
+		                       script_header;
 
 		current_dialog_html = dialog_html_header +
 		                      "<style>\n" +
