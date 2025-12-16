@@ -778,47 +778,47 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		switch(fctype.toLowerCase(Locale.ENGLISH))
 		{
-			case "yahoo" -> im.post(() -> im.setImageResource(R.drawable.purple));
-			case "weatherzone" -> im.post(() -> im.setImageResource(R.drawable.wz));
-			case "yr.no" -> im.post(() -> im.setImageResource(R.drawable.yrno));
-			case "met.no" -> im.post(() -> im.setImageResource(R.drawable.met_no));
-			case "wmo.int" -> im.post(() -> im.setImageResource(R.drawable.wmo));
-			case "weather.gov" -> im.post(() -> im.setImageResource(R.drawable.wgov));
+			case "yahoo" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/purple.png")));
+			case "weatherzone" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wz.png")));
+			case "yr.no" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/yrno.png")));
+			case "met.no" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_no.png")));
+			case "wmo.int" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wmo.png")));
+			case "weather.gov" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wgov.png")));
 			case "weather.gc.ca", "weather.gc.ca-fr" -> im.post(() ->
-					im.setImageResource(R.drawable.wca));
-			case "metoffice.gov.uk" -> im.post(() -> im.setImageResource(R.drawable.met));
+					im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wca.png")));
+			case "metoffice.gov.uk" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met.png")));
 			case "bom2", "bom3" ->
 			{
-				im.post(() -> im.setImageResource(R.drawable.bom));
+				im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/bom.png")));
 				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(weeWXAppCommon.NEGATIVE)));
 				else
 					im.post(() -> im.setColorFilter(null));
 			}
-			case "aemet.es" -> im.post(() -> im.setImageResource(R.drawable.aemet));
-			case "dwd.de" -> im.post(() -> im.setImageResource(R.drawable.dwd));
-			case "metservice.com" -> im.post(() -> im.setImageResource(R.drawable.metservice));
-			case "meteofrance.com" -> im.post(() -> im.setImageResource(R.drawable.mf));
-			case "openweathermap.org" -> im.post(() -> im.setImageResource(R.drawable.owm));
+			case "aemet.es" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/aemet.png")));
+			case "dwd.de" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/dwd.png")));
+			case "metservice.com" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/metservice.png")));
+			case "meteofrance.com" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/mf.png")));
+			case "openweathermap.org" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/owm.png")));
 			case "apixu.com" ->
 			{
-				im.post(() -> im.setImageResource(R.drawable.apixu));
+				im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/apixu.png")));
 				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(weeWXAppCommon.NEGATIVE)));
 				else
 					im.post(() -> im.setColorFilter(null));
 			}
-			case "weather.com" -> im.post(() -> im.setImageResource(R.drawable.weather_com));
+			case "weather.com" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/weather_com.png")));
 			case "met.ie" ->
 			{
-				im.post(() -> im.setImageResource(R.drawable.met_ie));
+				im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_ie.png")));
 				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(weeWXAppCommon.NEGATIVE)));
 				else
 					im.post(() -> im.setColorFilter(null));
 			}
-			case "ilmeteo.it" -> im.post(() -> im.setImageResource(R.drawable.ilmeteo_it));
-			case "tempoitalia.it" -> im.post(() -> im.setImageResource(R.drawable.tempoitalia_it));
+			case "ilmeteo.it" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/ilmeteo_it.png")));
+			case "tempoitalia.it" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/tempoitalia_it.png")));
 		}
 	}
 

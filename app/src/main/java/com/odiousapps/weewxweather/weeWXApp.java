@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
@@ -299,10 +300,14 @@ public class weeWXApp extends Application
 		};
 	}
 
-	static String loadBase64FromAssets(String filename)
+	static Bitmap loadBitmapFromAssets(String filename)
 	{
-		weeWXAppCommon.LogMessage("filename: " + filename);
-		return Base64.encodeToString(loadBinaryFromAssets(filename), Base64.NO_WRAP);
+		byte[] imgBytes = loadBinaryFromAssets(filename);
+
+		if(imgBytes == null)
+			return null;
+
+		return BitmapFactory.decodeByteArray(imgBytes, 0, imgBytes.length);
 	}
 
 	static byte[] loadBinaryFromAssets(String filename)
@@ -343,41 +348,6 @@ public class weeWXApp extends Application
 			is.close();
 
 			return baos.toString(charset);
-		} catch (Exception e) {
-			weeWXAppCommon.doStackOutput(e);
-			return "";
-		}
-	}
-
-	static String loadDrawableFromRes(int drawableid)
-	{
-		Bitmap bitmap;
-
-		try
-		{
-			Drawable drawable = AppCompatResources.getDrawable(weeWXApp.getInstance(), drawableid);
-
-			if(drawable == null)
-				return null;
-
-			if(drawable instanceof BitmapDrawable)
-			{
-				bitmap = ((BitmapDrawable) drawable).getBitmap();
-			} else {
-				int width = drawable.getIntrinsicWidth() > 0 ? drawable.getIntrinsicWidth() : 1;
-				int height = drawable.getIntrinsicHeight() > 0 ? drawable.getIntrinsicHeight() : 1;
-				bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-				Canvas canvas = new Canvas(bitmap);
-				drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-				drawable.draw(canvas);
-			}
-
-			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-			bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
-			byte[] byteArray = outputStream.toByteArray();
-
-			// Encode to Base64
-			return Base64.encodeToString(byteArray, Base64.NO_WRAP);
 		} catch (Exception e) {
 			weeWXAppCommon.doStackOutput(e);
 			return "";

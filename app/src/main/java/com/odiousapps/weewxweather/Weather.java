@@ -829,6 +829,8 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 			}
 
+			String base_url = "file:///android_asset/logos/";
+
 			switch(fctype.toLowerCase(Locale.ENGLISH))
 			{
 				case "yahoo" ->
@@ -840,7 +842,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.purple);
+					String imgStr = base_url + "purple.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -855,7 +857,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.wz);
+					String imgStr = base_url + "wz.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -870,7 +872,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.yrno);
+					String imgStr = base_url + "yrno.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -885,7 +887,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.met_no);
+					String imgStr = base_url + "met_no.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -900,7 +902,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.wmo);
+					String imgStr = base_url + "wmo.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -915,7 +917,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.wgov);
+					String imgStr = base_url + "wgov.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -930,7 +932,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.wca);
+					String imgStr = base_url + "wca.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -945,7 +947,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.wca);
+					String imgStr = base_url + "wca.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div><")
@@ -960,7 +962,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.met);
+					String imgStr = base_url + "met.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -988,7 +990,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					weeWXAppCommon.LogMessage("content: " + Arrays.toString(content));
 
 					sb.append("\n<div style='text-align:center'>\n\t");
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.bom);
+					String imgStr = base_url + "bom.png";
 					if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 						sb.append("<img src='").append(imgStr).append("' style='filter:invert(1);' height='29px' />");
 					else
@@ -1004,7 +1006,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.aemet);
+					String imgStr = base_url + "aemet.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -1019,7 +1021,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.dwd);
+					String imgStr = base_url + "dwd.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -1034,7 +1036,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.metservice);
+					String imgStr = base_url + "metservice.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -1049,7 +1051,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.owm);
+					String imgStr = base_url + "owm.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -1064,7 +1066,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.weather_com);
+					String imgStr = base_url + "weather_com.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -1079,7 +1081,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.met_ie);
+					String imgStr = base_url + "met_ie.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
@@ -1094,7 +1096,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = "data:image/png;base64," + weeWXApp.loadDrawableFromRes(R.drawable.tempoitalia_it);
+					String imgStr = base_url + "tempoitalia_it.png";
 					sb.append("<div style='text-align:center'>")
 							.append("<img src='").append(imgStr).append("' height='29px'/>")
 							.append("</div>\n")
