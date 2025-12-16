@@ -199,8 +199,7 @@ public class weeWXApp extends Application
 
 	final static String radarFilename = "radar.gif";
 	final static String webcamFilename = "webcam.jpg";
-	//final static String debug_filename = "weeWXApp_Debug.txt.gz";
-	final static String debug_filename = "weeWXApp_Debug.txt";
+	final static String debug_filename = "weeWXApp_Debug.txt.gz";
 
 	final static boolean RadarOnHomeScreen = true;
 	final static boolean ForecastOnHomeScreen = !RadarOnHomeScreen;
