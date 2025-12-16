@@ -48,7 +48,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -942,11 +941,6 @@ class weeWXAppCommon
 
 			if(timestamp > 0)
 				updateCacheTime(timestamp);
-
-//			timestamp = System.currentTimeMillis();
-			Date date = new Date(timestamp);
-			SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
-			LogMessage("Updated forecast at: " + sdf3.format(date));
 
 			JSONArray mydays = jobj.getJSONArray("data");
 			for(int i = 0; i < mydays.length(); i++)
@@ -3311,14 +3305,6 @@ class weeWXAppCommon
 
 		LogMessage("forecastData: " + forecastData);
 
-		try
-		{
-			JSONObject jobj = new JSONObject(forecastData);
-			JSONObject jo = jobj.getJSONObject("metadata");
-
-			LogMessage("issue_time: " + jo.getString("issue_time"));
-		} catch(Exception ignored) {}
-
 		if(!checkConnection() && !forced)
 		{
 			LogMessage("Not on wifi and not a forced refresh");
@@ -3331,7 +3317,7 @@ class weeWXAppCommon
 
 		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
 		LogMessage("getForecast() pos: " + pos + ", update interval set to: " +
-		           weeWXApp.RSSCache_period_default + "s, forced set to: " + forced, true);
+		           weeWXApp.RSSCache_period_default + "s, forced set to: " + forced);
 		if(pos < 0)
 		{
 			LogMessage("Invalid update frequency...");
@@ -3450,23 +3436,6 @@ class weeWXAppCommon
 		String forecastData = downloadString(url);
 		if(forecastData.isBlank())
 			return null;
-
-		try
-		{
-			JSONObject jobj = new JSONObject(forecastData);
-			JSONObject jo = jobj.getJSONObject("metadata");
-
-			LogMessage("issue_time: " + jo.getString("issue_time"));
-
-			jo.put("issue_time", Instant.ofEpochSecond(getCurrTime()).toString());
-			jobj.put("metadata", jo);
-			forecastData = jobj.toString();
-
-			jobj = new JSONObject(forecastData);
-			jo = jobj.getJSONObject("metadata");
-
-			LogMessage("New issue_time: " + jo.getString("issue_time"));
-		} catch(Exception ignored) {}
 
 		LogMessage("reallyGetForecast() forcecastData: " + forecastData);
 

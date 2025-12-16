@@ -13,8 +13,6 @@ import android.widget.TextView;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
 
-import org.json.JSONObject;
-
 import java.util.Arrays;
 import java.util.Locale;
 
@@ -1112,8 +1110,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			sb.append(weeWXApp.html_footer);
 
-//			if(weeWXAppCommon.debug_html)
-			CustomDebug.writeOutput(requireContext(), "forecast", sb.toString(), isVisible(), requireActivity());
+			if(weeWXAppCommon.debug_html)
+				CustomDebug.writeOutput(requireContext(), "forecast", sb.toString(), isVisible(), requireActivity());
 
 			loadWebViewContent(sb.toString());
 			stopRefreshing();
@@ -1150,14 +1148,6 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		weeWXAppCommon.LogMessage("fctype: " + fctype);
 		weeWXAppCommon.LogMessage("forecastData: " + forecastData);
-
-		try
-		{
-			JSONObject jobj = new JSONObject(forecastData);
-			JSONObject jo = jobj.getJSONObject("metadata");
-
-			weeWXAppCommon.LogMessage("issue_time: " + jo.getString("issue_time"), true);
-		} catch(Exception ignored) {}
 
 		if(ret[0].equals("error"))
 		{

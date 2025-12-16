@@ -39,6 +39,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
 import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -1207,7 +1209,6 @@ public class MainActivity extends FragmentActivity
 				{
 					switch(fctype.toLowerCase(Locale.ENGLISH))
 					{
-/*
 						case "metservice.com2" ->
 						{
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
@@ -1234,7 +1235,6 @@ public class MainActivity extends FragmentActivity
 							bgStart = 0;
 							return;
 						}
-*/
 						case "yahoo" ->
 						{
 							weeWXAppCommon.LogMessage("forecast: " + forecastURL);

@@ -31,123 +31,124 @@ import androidx.core.content.ContextCompat;
 public class weeWXApp extends Application
 {
 	private static final String html_header = """
-			<!DOCTYPE html>
-			<html lang='CURRENT_LANG'>
-				<head>
-					<meta charset='utf-8'>
-					<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
-					<meta name='color-scheme' content='light dark'>
-			""";
+	<!DOCTYPE html>
+	<html lang='CURRENT_LANG'>
+		<head>
+			<meta charset='utf-8'>
+			<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+			<meta name='color-scheme' content='light dark'>
+	""";
 
-	static final String script_header =
-					"""
-					<script>
-						document.addEventListener("DOMContentLoaded", function()
+	static final String script_header = """
+			<script>
+				document.addEventListener("DOMContentLoaded", function()
+				{
+					const btn = document.getElementById("scrollToTop");
+
+					window.addEventListener("scroll", () =>
+					{
+						// At the top? Hide the button
+						if(document.documentElement.scrollTop > 100)
+							btn.classList.add("show");
+						else
+							btn.classList.remove("show");
+					});
+
+					btn.addEventListener("click", () =>
+					{
+						window.scrollTo(
 						{
-							const btn = document.getElementById("scrollToTop");
-	
-							window.addEventListener("scroll", () =>
-							{
-								// At the top? Hide the button
-								if(document.documentElement.scrollTop > 100)
-									btn.classList.add("show");
-								else
-									btn.classList.remove("show");
-							});
-	
-							btn.addEventListener("click", () =>
-							{
-								window.scrollTo(
-								{
-									top: 0,
-									behavior: "smooth"
-								});
-							});
+							top: 0,
+							behavior: "smooth"
 						});
-					</script>
-			""";
+					});
+				});
+			</script>
+	""";
 
 	static final String html_header_rest = """
-				</head>
-				<body>
-			""";
-
-	static final String inline_arrow = """
-					<!-- Floating scroll-to-top button -->
-					<div id="scrollToTop">
-						<svg viewBox="0 0 24 24">
-							<path d="M12 4l-7 8h4v8h6v-8h4z"/>
-						</svg>
-					</div>
-			""";
-
-	static final String html_footer = """
-				</body>
-			</html>
-			""";
-
-	static final String about_blurb = "Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app " +
-					"wouldn't be possible otherwise.<br><br>\n" +
-					"Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and " +
-					"is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and " +
-					"<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers<br><br>\n" +
-					"weeWX Weather App v" + BuildConfig.VERSION_NAME + " is by <a href='https://odiousapps.com'>OdiousApps</a>.\n\n";
-
-	final static String debug_html = """
-					<div id='widthDisplay'
-						style='position: fixed; top: 10px; right: 10px;
-						background: rgba(0,0,0,0.7); color: #fff;
-						padding: 5px 10px; border-radius: 5px;
-						font-family: monospace; z-index: 9999;'>
-					</div>
-
-					<script>
-						const display = document.getElementById('widthDisplay');
-		
-						function updateWidth() {
-							display.textContent = 'Width: ' + window.innerWidth + 'px ' +
-							'x Height: ' + window.innerHeight + 'px';
-						}
-		
-						// Update immediately
-						updateWidth();
-		
-						// Update on resize
-						window.addEventListener('resize', updateWidth);
-					</script>
-			""";
-
-	private static final String dialog_html_header = """
-		<!doctype html>
-		<html lang="REPLACE_WITH_LANG">
-		<head>
-			<meta charset="utf-8" />
-			<meta name="viewport" content="width=device-width,initial-scale=1" />
-			<title>Warning UI Mock</title>
-		""";
-
-	private static final String dialog_html_header_rest = """
 		</head>
 		<body>
-			<!-- Example: full "modal-like" warning -->
-			<div class="warn-wrap" role="alertdialog" aria-labelledby="w-title" aria-describedby="w-desc" tabindex="0">
-				<div class="warn-accent" aria-hidden="true"></div>
-				<div class="warn-icon" aria-hidden="true">
-					<!-- inline SVG warning icon -->
-					<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-						<path d="M11.03 3.5c.37-.9 1.64-.9 2.01 0l7.04 17.06A1.5 1.5 0 0 1 19.67 22H4.33a1.5 1.5 0 0 1-1.41-1.44L10 3.5z" fill="currentColor" opacity="0.12"/>
-						<path d="M12 8.25c-.41 0-.75.34-.75.75v4.5c0 .41.34.75.75.75s.75-.34.75-.75v-4.5c0-.41-.34-.75-.75-.75zm0 8.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z" fill="currentColor"/>
-					</svg>
-				</div>
-				<div class="warn-body">
-				<p id="w-desc" class="warn-desc">
-					WARNING_BODY
-				</p>
-				</div>
+	""";
+
+	static final String inline_arrow = """
+			<!-- Floating scroll-to-top button -->
+			<div id="scrollToTop">
+				<svg viewBox="0 0 24 24">
+					<path d="M12 4l-7 8h4v8h6v-8h4z"/>
+				</svg>
 			</div>
+	""";
+
+	static final String html_footer = """
 		</body>
-		</html>
-		""";
+	</html>
+	""";
+
+	static final String about_blurb = """
+		Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app
+		wouldn't be possible otherwise.<br><br>
+		Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and
+		is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and
+		<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers<br><br>
+		weeWX Weather App v" + BuildConfig.VERSION_NAME + " is by <a href='https://odiousapps.com'>OdiousApps</a>.
+	""";
+
+	final static String debug_html = """
+			<div id='widthDisplay'
+				style='position: fixed; top: 10px; right: 10px;
+				background: rgba(0,0,0,0.7); color: #fff;
+				padding: 5px 10px; border-radius: 5px;
+				font-family: monospace; z-index: 9999;'>
+			</div>
+
+			<script>
+				const display = document.getElementById('widthDisplay');
+
+				function updateWidth() {
+					display.textContent = 'Width: ' + window.innerWidth + 'px ' +
+					'x Height: ' + window.innerHeight + 'px';
+				}
+
+				// Update immediately
+				updateWidth();
+
+				// Update on resize
+				window.addEventListener('resize', updateWidth);
+			</script>
+	""";
+
+	private static final String dialog_html_header = """
+	<!doctype html>
+	<html lang="REPLACE_WITH_LANG">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>Warning UI Mock</title>
+	""";
+
+	private static final String dialog_html_header_rest = """
+	</head>
+	<body>
+		<!-- Example: full "modal-like" warning -->
+		<div class="warn-wrap" role="alertdialog" aria-labelledby="w-title" aria-describedby="w-desc" tabindex="0">
+			<div class="warn-accent" aria-hidden="true"></div>
+			<div class="warn-icon" aria-hidden="true">
+				<!-- inline SVG warning icon -->
+				<svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+					<path d="M11.03 3.5c.37-.9 1.64-.9 2.01 0l7.04 17.06A1.5 1.5 0 0 1 19.67 22H4.33a1.5 1.5 0 0 1-1.41-1.44L10 3.5z" fill="currentColor" opacity="0.12"/>
+					<path d="M12 8.25c-.41 0-.75.34-.75.75v4.5c0 .41.34.75.75.75s.75-.34.75-.75v-4.5c0-.41-.34-.75-.75-.75zm0 8.5a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z" fill="currentColor"/>
+				</svg>
+			</div>
+			<div class="warn-body">
+			<p id="w-desc" class="warn-desc">
+				WARNING_BODY
+			</p>
+			</div>
+		</div>
+	</body>
+	</html>
+	""";
 
 	static String current_html_headers;
 
