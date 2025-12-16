@@ -48,6 +48,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -3457,9 +3458,14 @@ class weeWXAppCommon
 
 			LogMessage("issue_time: " + jo.getString("issue_time"), true);
 
-			//jo.put("issue_time", Instant.ofEpochSecond(getCurrTime()).toString());
-			//jobj.put("metadata", jo);
-			//forecastData = jobj.toString();
+			jo.put("issue_time", Instant.ofEpochSecond(getCurrTime()).toString());
+			jobj.put("metadata", jo);
+			forecastData = jobj.toString();
+
+			jobj = new JSONObject(forecastData);
+			jo = jobj.getJSONObject("metadata");
+
+			LogMessage("New issue_time: " + jo.getString("issue_time"), true);
 		} catch(Exception e) {
 			LogMessage("Error! e: " + e.getMessage(), true);
 			doStackOutput(e);
