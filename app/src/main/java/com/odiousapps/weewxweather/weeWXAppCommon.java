@@ -363,23 +363,19 @@ class weeWXAppCommon
 
 	static void SetStringPref(String name, String value)
 	{
-		prefsExec.execute(() ->
-		{
-			SharedPreferences.Editor editor = getPrefSettings().edit();
-			editor.putString(name, value);
-			editor.commit();
-		});
+		SharedPreferences.Editor editor = getPrefSettings().edit();
+		editor.putString(name, value);
+		editor.commit();
+		editor.apply();
 	}
 
 	static void RemovePref(String name)
 	{
-		prefsExec.execute(() ->
-		{
-			SharedPreferences.Editor editor = getPrefSettings().edit();
-			editor.putString(name, "");
-			editor.remove(name);
-			editor.commit();
-		});
+		SharedPreferences.Editor editor = getPrefSettings().edit();
+		editor.putString(name, "");
+		editor.remove(name);
+		editor.commit();
+		editor.apply();
 	}
 
 	static void clearPref()
@@ -493,12 +489,10 @@ class weeWXAppCommon
 
 	static void SetLongPref(String name, long value)
 	{
-		prefsExec.execute(() ->
-		{
-			SharedPreferences.Editor editor = getPrefSettings().edit();
-			editor.putLong(name, value);
-			editor.commit();
-		});
+		SharedPreferences.Editor editor = getPrefSettings().edit();
+		editor.putLong(name, value);
+		editor.commit();
+		editor.apply();
 	}
 
 	static long GetLongPref(String name, long default_value)
@@ -513,12 +507,10 @@ class weeWXAppCommon
 
 	static void SetFloatPref(String name, float value)
 	{
-		prefsExec.execute(() ->
-		{
-			SharedPreferences.Editor editor = getPrefSettings().edit();
-			editor.putFloat(name, value);
-			editor.commit();
-		});
+		SharedPreferences.Editor editor = getPrefSettings().edit();
+		editor.putFloat(name, value);
+		editor.commit();
+		editor.apply();
 	}
 
 	static float GetFloatPref(String name, float default_value)
@@ -528,12 +520,10 @@ class weeWXAppCommon
 
 	static void SetIntPref(String name, int value)
 	{
-		prefsExec.execute(() ->
-		{
-			SharedPreferences.Editor editor = getPrefSettings().edit();
-			editor.putInt(name, value);
-			editor.commit();
-		});
+		SharedPreferences.Editor editor = getPrefSettings().edit();
+		editor.putInt(name, value);
+		editor.commit();
+		editor.apply();
 	}
 
 	static int GetIntPref(String name, int default_value)
@@ -548,12 +538,10 @@ class weeWXAppCommon
 
 	static void SetBoolPref(String name, boolean value)
 	{
-		prefsExec.execute(() ->
-		{
-			SharedPreferences.Editor editor = getPrefSettings().edit();
-			editor.putBoolean(name, value);
-			editor.commit();
-		});
+		SharedPreferences.Editor editor = getPrefSettings().edit();
+		editor.putBoolean(name, value);
+		editor.commit();
+		editor.apply();
 	}
 
 	static boolean GetBoolPref(String name, boolean default_value)
@@ -958,7 +946,7 @@ class weeWXAppCommon
 //			timestamp = System.currentTimeMillis();
 			Date date = new Date(timestamp);
 			SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
-			LogMessage("Updated forecast at: " + sdf3.format(date), true);
+			LogMessage("Updated forecast at: " + sdf3.format(date));
 
 			JSONArray mydays = jobj.getJSONArray("data");
 			for(int i = 0; i < mydays.length(); i++)
@@ -3306,27 +3294,38 @@ class weeWXAppCommon
 		String fctype = GetStringPref("fctype", weeWXApp.fctype_default);
 		if(fctype == null || fctype.isBlank())
 		{
-			LogMessage("fctype == null || fctype.isBlank(), skipping...", true);
+			LogMessage("fctype == null || fctype.isBlank(), skipping...");
 			String finalErrorStr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
 			return new String[]{"error", finalErrorStr, fctype};
 		}
 
-		LogMessage("getForecast() fctype: " + fctype, true);
+		LogMessage("getForecast() fctype: " + fctype);
 
 		String forecast_url = GetStringPref("FORECAST_URL", weeWXApp.FORECAST_URL_default);
 		if(forecast_url == null || forecast_url.isBlank())
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.forecast_url_not_set), fctype};
 
-		LogMessage("forecast_url: " + forecast_url, true);
+		LogMessage("forecast_url: " + forecast_url);
 
 		String forecastData = GetStringPref("forecastData", weeWXApp.forecastData_default);
 
+		LogMessage("forecastData: " + forecastData);
+
+		try
+		{
+			JSONObject jobj = new JSONObject(forecastData);
+			JSONObject jo = jobj.getJSONObject("metadata");
+
+			LogMessage("issue_time: " + jo.getString("issue_time"));
+		} catch(Exception ignored) {}
+
 		if(!checkConnection() && !forced)
 		{
-			LogMessage("Not on wifi and not a forced refresh", true);
+			LogMessage("Not on wifi and not a forced refresh");
 			if(forecastData == null || forecastData.isBlank())
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available), fctype};
 
+			LogMessage("forecastData != null && !forecastData.isBlank()");
 			return new String[]{"ok", forecastData, fctype};
 		}
 
@@ -3335,17 +3334,18 @@ class weeWXAppCommon
 		           weeWXApp.RSSCache_period_default + "s, forced set to: " + forced, true);
 		if(pos < 0)
 		{
-			LogMessage("Invalid update frequency...", true);
+			LogMessage("Invalid update frequency...");
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.invalid_update_interval), fctype};
 		}
 
 		if(!forced && pos == 0)
 		{
-			LogMessage("Set to manual update and not forced...", true);
+			LogMessage("Set to manual update and not forced...");
 
 			if(forecastData == null || forecastData.isBlank())
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available), fctype};
 
+			LogMessage("forecastData != null && !forecastData.isBlank()");
 			return new String[]{"ok", forecastData, fctype};
 		}
 
@@ -3353,7 +3353,7 @@ class weeWXAppCommon
 		long rssCheckTime = getRSSsecs();
 		if(rssCheckTime == 0)
 		{
-			LogMessage("Bad rssCheckTime, skipping...", true);
+			LogMessage("Bad rssCheckTime, skipping...");
 			if(forecastData == null || forecastData.isBlank())
 				return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
 
@@ -3367,15 +3367,15 @@ class weeWXAppCommon
 			           (current_time - rssCheckTime) + "s old)", true);
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
 			String date = sdf.format(rssCheckTime * 1_000L);
-			LogMessage("rsscheck: " + date, true);
+			LogMessage("rsscheck: " + date);
 			date = sdf.format(current_time * 1_000L);
-			LogMessage("current_time: " + date, true);
+			LogMessage("current_time: " + date);
 			return new String[]{"ok", forecastData, fctype};
 		}
 
 		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp && !forced)
 		{
-			LogMessage("not fully booted or not called from weeWX App class or not forced...", true);
+			LogMessage("not fully booted or not called from weeWX App class or not forced...");
 
 			if(forecastData != null && !forecastData.isBlank())
 				return new String[]{"ok", forecastData, fctype};
@@ -3387,7 +3387,7 @@ class weeWXAppCommon
 		{
 			if(ftStart + 30 > current_time)
 			{
-				LogMessage("forecastTask is less than 30s old (" + (current_time - ftStart) + "s), we'll skip this attempt...", true);
+				LogMessage("forecastTask is less than 30s old (" + (current_time - ftStart) + "s), we'll skip this attempt...");
 				return new String[]{"ok", forecastData, fctype};
 			}
 
@@ -3405,7 +3405,7 @@ class weeWXAppCommon
 
 		forecastTask = executor.submit(() ->
 		{
-			LogMessage("Forecast checking: " + forecast_url, true);
+			LogMessage("Forecast checking: " + forecast_url);
 
 			String tmpForecastData;
 
@@ -3419,30 +3419,30 @@ class weeWXAppCommon
 
 			if(tmpForecastData != null && !tmpForecastData.isBlank())
 			{
-				LogMessage("Successfully updated forecast data...", true);
+				LogMessage("Successfully updated forecast data...");
 				SendIntent(REFRESH_FORECAST_INTENT);
 				ftStart = 0;
 				return;
 			}
 
-			LogMessage("Failed to successfully update forecast data...", true);
+			LogMessage("Failed to successfully update forecast data...");
 			SendIntent(STOP_FORECAST_INTENT);
 			ftStart = 0;
 		});
 
 		if(forecastData != null && !forecastData.isBlank())
 		{
-			LogMessage("forecastData != null and !isBlank()...", true);
+			LogMessage("forecastData != null and !isBlank()...");
 			return new String[]{"ok", forecastData, fctype};
 		}
 
-		LogMessage("forecastData == null or isBlank()...", true);
+		LogMessage("forecastData == null or isBlank()...");
 		return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
 	}
 
 	static String reallyGetForecast(String url)
 	{
-		LogMessage("reallyGetForecast() forcecastURL: " + url, true);
+		LogMessage("reallyGetForecast() forcecastURL: " + url);
 
 		if(url == null || url.isBlank())
 			return null;
@@ -3456,7 +3456,7 @@ class weeWXAppCommon
 			JSONObject jobj = new JSONObject(forecastData);
 			JSONObject jo = jobj.getJSONObject("metadata");
 
-			LogMessage("issue_time: " + jo.getString("issue_time"), true);
+			LogMessage("issue_time: " + jo.getString("issue_time"));
 
 			jo.put("issue_time", Instant.ofEpochSecond(getCurrTime()).toString());
 			jobj.put("metadata", jo);
@@ -3465,15 +3465,12 @@ class weeWXAppCommon
 			jobj = new JSONObject(forecastData);
 			jo = jobj.getJSONObject("metadata");
 
-			LogMessage("New issue_time: " + jo.getString("issue_time"), true);
-		} catch(Exception e) {
-			LogMessage("Error! e: " + e.getMessage(), true);
-			doStackOutput(e);
-		}
+			LogMessage("New issue_time: " + jo.getString("issue_time"));
+		} catch(Exception ignored) {}
 
 		LogMessage("reallyGetForecast() forcecastData: " + forecastData);
 
-		LogMessage("updating rss cache", true);
+		LogMessage("updating rss cache");
 		SetLongPref("rssCheck", getCurrTime());
 		SetStringPref("forecastData", forecastData);
 

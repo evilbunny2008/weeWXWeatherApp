@@ -19,7 +19,6 @@ import com.github.evilbunny2008.colourpicker.CPEditText;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
-import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 
@@ -43,23 +42,26 @@ public class weeWXApp extends Application
 	static final String script_header =
 					"""
 					<script>
-						const btn = document.getElementById("scrollToTop");
-
-						window.addEventListener("scroll", () =>
+						document.addEventListener("DOMContentLoaded", function()
 						{
-							// At the top? Hide the button
-							if(document.documentElement.scrollTop > 100)
-								btn.classList.add("show");
-							else
-								btn.classList.remove("show");
-						});
-
-						btn.addEventListener("click", () =>
-						{
-							window.scrollTo(
+							const btn = document.getElementById("scrollToTop");
+	
+							window.addEventListener("scroll", () =>
 							{
-								top: 0,
-								behavior: "smooth"
+								// At the top? Hide the button
+								if(document.documentElement.scrollTop > 100)
+									btn.classList.add("show");
+								else
+									btn.classList.remove("show");
+							});
+	
+							btn.addEventListener("click", () =>
+							{
+								window.scrollTo(
+								{
+									top: 0,
+									behavior: "smooth"
+								});
 							});
 						});
 					</script>
@@ -353,7 +355,7 @@ public class weeWXApp extends Application
 
 		try
 		{
-			Drawable drawable = instance.getDrawable(drawableid);
+			Drawable drawable = AppCompatResources.getDrawable(weeWXApp.getInstance(), drawableid);
 
 			if(drawable == null)
 				return null;
@@ -397,8 +399,7 @@ public class weeWXApp extends Application
 		current_html_headers = html_header +
 		                       "<style>\n" +
 		                       loadFileFromAssets("main.css") +
-		                       "\n</style>\n" +
-		                       script_header;
+		                       "\n</style>\n";
 
 		current_dialog_html = dialog_html_header +
 		                      "<style>\n" +

@@ -276,7 +276,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			String html = weeWXApp.current_html_headers +
 			              weeWXApp.html_header_rest +
-			              weeWXApp.inline_arrow +
 			              "\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
 			              weeWXApp.html_footer;
 
@@ -740,7 +739,9 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(text == null || text.isBlank())
 			text = weeWXApp.getAndroidString(R.string.forecast_url_not_set);
 
-		String html = weeWXApp.current_html_headers + weeWXApp.html_header_rest + text + weeWXApp.html_footer;
+		String html = weeWXApp.current_html_headers +
+		              weeWXApp.html_header_rest + text +
+		              weeWXApp.html_footer;
 
 		forecastWebView.post(() -> forecastWebView.loadDataWithBaseURL(null, html,
 				"text/html", "utf-8", null));
@@ -752,6 +753,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 
 		String fc = weeWXApp.current_html_headers +
+		            weeWXApp.script_header +
 		            weeWXApp.html_header_rest +
 		            weeWXApp.inline_arrow +
 		            bits;
