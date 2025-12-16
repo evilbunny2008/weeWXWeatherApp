@@ -1,6 +1,8 @@
 package com.odiousapps.weewxweather;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +45,6 @@ public class Stats extends Fragment
 			swipeLayout.setRefreshing(true);
 			weeWXAppCommon.LogMessage("weeWXAppCommon.getWeather(true, false)...");
 			weeWXAppCommon.getWeather(true, false);
-
 		});
 
 		mySlider = rootView.findViewById(R.id.pageZoom);
@@ -168,14 +169,50 @@ public class Stats extends Fragment
 			return;
 
 		final int finalZoom = sanitiseZoom(zoom);
-		String js = "document.body.style.zoom = " + (finalZoom / 100.0) + ";";
+		String js = """
+			(function()
+			{
+				if(document == null)
+					return false;
 
-		weeWXAppCommon.LogMessage("new zoom value = " + finalZoom + "%");
+				if(document.body == null)
+					return false;
+
+				if(document.body.style == null)
+					return false;
+
+				if(document.body.style.zoom == null)
+					return false;
+
+				document.body.style.zoom =
+			""" + (finalZoom / 100.0) + ";" + """
+
+				return true;
+			})();
+			""";
+
+		weeWXAppCommon.LogMessage("new zoom value = " + finalZoom + "%", true);
 
 		mySlider.post(() -> mySlider.setValue(finalZoom));
-		//wv.post(() -> wv.getSettings().setTextZoom(finalZoom));
 		weeWXAppCommon.LogMessage("Set Zoom JS: " + js);
-		wv.post(() -> wv.evaluateJavascript(js, null));
+
+		Handler handler = new Handler(Looper.getMainLooper());
+
+		Runnable poll = new Runnable()
+		{
+			@Override
+			public void run()
+			{
+				wv.post(() -> wv.evaluateJavascript(js, value ->
+				{
+					weeWXAppCommon.LogMessage("Stats.evaluateJavascript() value: " + value);
+					if(!value.equals("true"))
+						handler.postDelayed(this, 100);
+				}));
+			}
+		};
+
+		handler.post(poll);
 	}
 
 	private final Observer<String> notificationObserver = str ->
@@ -801,6 +838,8 @@ public class Stats extends Fragment
 
 			KeyValue.LastWeatherError = null;
 
+			setZoom(currZoom, true);
+
 			stopRefreshing();
 			return;
 		}
@@ -812,6 +851,9 @@ public class Stats extends Fragment
 			wv.post(() -> wv.loadDataWithBaseURL(null,
 					weeWXApp.getAndroidString(R.string.unknown_error_occurred),
 					"text/html", "utf-8", null));
+
+			setZoom(currZoom, true);
+
 			stopRefreshing();
 			return;
 		}
@@ -904,5 +946,9 @@ public class Stats extends Fragment
 
 		wv.post(() -> wv.loadDataWithBaseURL("file:///android_asset/",
 				sb.toString(), "text/html", "utf-8", null));
+
+		setZoom(currZoom, true);
+
+		stopRefreshing();
 	}
 }

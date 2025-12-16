@@ -94,7 +94,9 @@ public class weeWXApp extends Application
 		Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and
 		is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and
 		<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers<br><br>
-		weeWX Weather App v" + BuildConfig.VERSION_NAME + " is by <a href='https://odiousapps.com'>OdiousApps</a>.
+		weeWX Weather App v
+	""" + BuildConfig.VERSION_NAME + """
+	    is by <a href='https://odiousapps.com'>OdiousApps</a>.
 	""";
 
 	final static String debug_html = """
