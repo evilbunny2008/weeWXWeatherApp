@@ -787,28 +787,29 @@ public class Stats extends Fragment
 	private void updateFields()
 	{
 		weeWXAppCommon.LogMessage("Stats.java updateFields()");
-		String[] ret = weeWXAppCommon.getWeather(false, false);
-		String lastDownload = ret[1];
 
-		if(ret[0].equals("error"))
+		boolean ret = weeWXAppCommon.getWeather(false, false);
+		if(!ret)
 		{
-			if(lastDownload != null && !lastDownload.isBlank())
-				wv.post(() -> wv.loadDataWithBaseURL("",
-						lastDownload, "text/html", "utf-8", null));
+			if(KeyValue.LastWeatherError != null && !KeyValue.LastWeatherError.isBlank())
+				wv.post(() -> wv.loadDataWithBaseURL(null, KeyValue.LastWeatherError,
+						"text/html", "utf-8", null));
 			else
-				wv.post(() -> wv.loadDataWithBaseURL("",
+				wv.post(() -> wv.loadDataWithBaseURL(null,
 						weeWXApp.getAndroidString(R.string.unknown_error_occurred),
 						"text/html", "utf-8", null));
+
+			KeyValue.LastWeatherError = null;
 
 			stopRefreshing();
 			return;
 		}
 
-		String[] bits = lastDownload.split("\\|");
+		String[] bits = KeyValue.LastDownload.split("\\|");
 
 		if(bits.length < 65)
 		{
-			wv.post(() -> wv.loadDataWithBaseURL("",
+			wv.post(() -> wv.loadDataWithBaseURL(null,
 					weeWXApp.getAndroidString(R.string.unknown_error_occurred),
 					"text/html", "utf-8", null));
 			stopRefreshing();
@@ -901,7 +902,7 @@ public class Stats extends Fragment
 		if(weeWXAppCommon.debug_html)
 			CustomDebug.writeOutput(requireContext(), "stats", str, isVisible(), requireActivity());
 
-		wv.post(() -> wv.loadDataWithBaseURL("",
+		wv.post(() -> wv.loadDataWithBaseURL("file:///android_asset/",
 				sb.toString(), "text/html", "utf-8", null));
 	}
 }

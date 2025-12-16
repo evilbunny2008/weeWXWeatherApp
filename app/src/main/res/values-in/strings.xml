@@ -87,4 +87,5 @@
     <string name="next_moon">Peristiwa bulan depan?</string>
     <string name="update_while_running">Perbarui saat berjalan</string>
     <string name="force_dark_mode">Paksa Mode Gelap</string>
+    <string name="no_download_or_app_not_setup">Tidak ada unduhan atau aplikasi yang belum disiapkan</string>
 </resources>

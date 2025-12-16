@@ -87,4 +87,5 @@
     <string name="next_moon">შემდეგი მთვარის მოვლენები?</string>
     <string name="update_while_running">განახლება გაშვებისას</string>
     <string name="force_dark_mode">იძულებითი მუქი რეჟიმი</string>
+    <string name="no_download_or_app_not_setup">ჩამოტვირთვა ან აპი არ არის დაყენებული</string>
 </resources>

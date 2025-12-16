@@ -2,7 +2,6 @@ package com.odiousapps.weewxweather;
 
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.ColorMatrixColorFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -279,7 +278,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			              "\n\t<img class='radarImage' alt='Radar Image' src='" + radar + "'>\n" +
 			              weeWXApp.html_footer;
 
-			radarWebView.post(() -> radarWebView.loadDataWithBaseURL("", html,
+			radarWebView.post(() -> radarWebView.loadDataWithBaseURL(null, html,
 					"text/html", "utf-8", null));
 			stopRefreshing();
 			return;
@@ -304,7 +303,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		String html = weeWXApp.current_dialog_html.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(resId));
 
-		radarWebView.post(() -> radarWebView.loadDataWithBaseURL("", html,
+		radarWebView.post(() -> radarWebView.loadDataWithBaseURL(null, html,
 				"text/html", "utf-8", null));
 
 		stopRefreshing();
@@ -314,7 +313,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		final String html = weeWXApp.current_html_headers + weeWXApp.html_header_rest + str + weeWXApp.html_footer;
 
-		radarWebView.post(() -> radarWebView.loadDataWithBaseURL("", html,
+		radarWebView.post(() -> radarWebView.loadDataWithBaseURL(null, html,
 				"text/html", "utf-8", null));
 
 		stopRefreshing();
@@ -500,15 +499,13 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		String[] ret = weeWXAppCommon.getForecast(false, false);
-		String forecastData = ret[1];
-
-		if(ret[0].equals("error"))
+		boolean ret = weeWXAppCommon.getForecast(false, false);
+		if(!ret)
 		{
-			if(forecastData != null && !forecastData.isBlank())
+			if(KeyValue.LastForecastError != null && !KeyValue.LastForecastError.isBlank())
 			{
-				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData);
-				showTextFC(forecastData);
+				weeWXAppCommon.LogMessage("getForecast returned the following error: " + KeyValue.LastForecastError);
+				showTextFC(KeyValue.LastForecastError);
 			} else {
 				weeWXAppCommon.LogMessage("getForecast returned an unknown error...");
 				showTextFC(weeWXApp.getAndroidString(R.string.unknown_error_occurred));
@@ -516,14 +513,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		}
 
 		weeWXAppCommon.LogMessage("getForecast returned some content...");
-		generateForecast(forecastData);
-	}
-
-	private void generateForecast()
-	{
-		weeWXAppCommon.LogMessage("Getting forecast forecastData from shared prefs...");
-		String forecastData = weeWXAppCommon.GetStringPref("forecastData", weeWXApp.forecastData_default);
-		generateForecast(forecastData);
+		generateForecast(KeyValue.forecastData);
 	}
 
 	private void generateForecast(String forecastData)
@@ -765,7 +755,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		String finalfc = fc;
 
-		forecastWebView.post(() -> forecastWebView.loadDataWithBaseURL("", finalfc,
+		forecastWebView.post(() -> forecastWebView.loadDataWithBaseURL("file:///android_asset/", finalfc,
 					"text/html", "utf-8", null));
 
 		TextView tv1 = rootView.findViewById(R.id.forecast);
@@ -776,6 +766,12 @@ public class Forecast extends Fragment implements View.OnClickListener
 			tv1.setText(desc);
 		});
 
+		String ext = "_light.svg";
+		if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
+			ext = "_dark.svg";
+
+		String finalext = ext;
+
 		switch(fctype.toLowerCase(Locale.ENGLISH))
 		{
 			case "yahoo" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/purple.png")));
@@ -784,39 +780,17 @@ public class Forecast extends Fragment implements View.OnClickListener
 			case "met.no" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_no.png")));
 			case "wmo.int" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wmo.png")));
 			case "weather.gov" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wgov.png")));
-			case "weather.gc.ca", "weather.gc.ca-fr" -> im.post(() ->
-					im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wca.png")));
+			case "weather.gc.ca", "weather.gc.ca-fr" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wca.png")));
 			case "metoffice.gov.uk" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met.png")));
-			case "bom2", "bom3" ->
-			{
-				im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/bom.png")));
-				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
-					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(weeWXAppCommon.NEGATIVE)));
-				else
-					im.post(() -> im.setColorFilter(null));
-			}
+			case "bom2", "bom3" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/bom" + finalext)));
 			case "aemet.es" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/aemet.png")));
 			case "dwd.de" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/dwd.png")));
-			case "metservice.com" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/metservice.png")));
+			case "metservice.com" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/metservice" + finalext)));
 			case "meteofrance.com" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/mf.png")));
 			case "openweathermap.org" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/owm.png")));
-			case "apixu.com" ->
-			{
-				im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/apixu.png")));
-				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
-					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(weeWXAppCommon.NEGATIVE)));
-				else
-					im.post(() -> im.setColorFilter(null));
-			}
+			case "apixu.com" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/apixu.png")));
 			case "weather.com" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/weather_com.png")));
-			case "met.ie" ->
-			{
-				im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_ie.png")));
-				if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
-					im.post(() -> im.setColorFilter(new ColorMatrixColorFilter(weeWXAppCommon.NEGATIVE)));
-				else
-					im.post(() -> im.setColorFilter(null));
-			}
+			case "met.ie" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_ie.png")));
 			case "ilmeteo.it" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/ilmeteo_it.png")));
 			case "tempoitalia.it" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/tempoitalia_it.png")));
 		}

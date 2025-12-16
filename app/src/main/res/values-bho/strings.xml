@@ -87,4 +87,5 @@
     <string name="next_moon">अगिला चंद्रमा के घटना के बारे में बतावल गइल बा?</string>
     <string name="update_while_running">चलत घरी अपडेट करीं</string>
     <string name="force_dark_mode">फोर्स डार्क मोड के बा</string>
+    <string name="no_download_or_app_not_setup">कवनो डाउनलोड भा ऐप के सेटअप नइखे भइल</string>
 </resources>

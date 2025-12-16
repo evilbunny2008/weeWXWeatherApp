@@ -9,13 +9,15 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.PictureDrawable;
 import android.os.Build;
 import android.os.LocaleList;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.util.Base64;
 
+import com.caverock.androidsvg.PreserveAspectRatio;
+import com.caverock.androidsvg.SVG;
 import com.github.evilbunny2008.colourpicker.CPEditText;
 
 import java.io.ByteArrayOutputStream;
@@ -251,6 +253,19 @@ public class weeWXApp extends Application
 
 		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.runInTheBackground(false, true);");
 		UpdateCheck.runInTheBackground(false, true);
+
+		if(KeyValue.rssCheck == 0 && KeyValue.forecastData == null)
+		{
+			KeyValue.fctype = weeWXAppCommon.GetStringPref("fctype", null);
+			KeyValue.forecastData = weeWXAppCommon.GetStringPref("forecastData", null);
+			KeyValue.rssCheck = weeWXAppCommon.GetLongPref("rssCheck", 0);
+		}
+
+		if(KeyValue.LastDownloadTime == 0 && KeyValue.LastDownload == null)
+		{
+			KeyValue.LastDownload = weeWXAppCommon.GetStringPref("LastDownload", null);
+			KeyValue.LastDownloadTime = weeWXAppCommon.GetLongPref("LastDownloadTime", 0);
+		}
 	}
 
 	@Override
@@ -298,6 +313,23 @@ public class weeWXApp extends Application
 			getAndroidString(R.string.dark_theme),
 			getAndroidString(R.string.custom_setting)
 		};
+	}
+
+	static Drawable loadSVGFromAssets(String filename)
+	{
+		String svgStr = loadFileFromAssets(filename);
+		weeWXAppCommon.LogMessage("svgStr: " + svgStr);
+
+		try
+		{
+			SVG svg = SVG.getFromString(svgStr);
+			svg.setDocumentPreserveAspectRatio(PreserveAspectRatio.FULLSCREEN);
+			return new PictureDrawable(svg.renderToPicture());
+		} catch(Exception e) {
+			weeWXAppCommon.doStackOutput(e);
+		}
+
+		return null;
 	}
 
 	static Bitmap loadBitmapFromAssets(String filename)

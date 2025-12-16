@@ -87,4 +87,5 @@
     <string name="next_moon">Муваффақиятҳои моҳи оянда?</string>
     <string name="update_while_running">Навсозӣ ҳангоми кор</string>
     <string name="force_dark_mode">Қувваи торик</string>
+    <string name="no_download_or_app_not_setup">Ҳеҷ зеркашӣ ё барнома насб нашудааст</string>
 </resources>

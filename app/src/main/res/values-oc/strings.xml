@@ -87,4 +87,5 @@
     <string name="next_moon">Los eveniments de la luna que venon?</string>
     <string name="update_while_running">Actualizacion al moment de foncionar</string>
     <string name="force_dark_mode">Mode fosc de fòrça</string>
+    <string name="no_download_or_app_not_setup">Pas de descarga o d\'aplicacion es pas estada configurat</string>
 </resources>

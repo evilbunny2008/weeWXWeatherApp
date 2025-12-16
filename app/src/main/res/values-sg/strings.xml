@@ -87,4 +87,5 @@
     <string name="next_moon">Na peko ti aye so ayeke si na yâ ti nze?</string>
     <string name="update_while_running">Mise à jour na ngoi so lo yeke kpe</string>
     <string name="force_dark_mode">Force Mode ti bingo</string>
+    <string name="no_download_or_app_not_setup">A yeke pëpe téléchargement wala application la a leke ni pëpe</string>
 </resources>

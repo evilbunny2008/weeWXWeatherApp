@@ -87,4 +87,5 @@
     <string name="next_moon">Γεγονότα του επόμενου φεγγαριού;</string>
     <string name="update_while_running">Ενημέρωση κατά την εκτέλεση</string>
     <string name="force_dark_mode">Αναγκαστική σκοτεινή λειτουργία</string>
+    <string name="no_download_or_app_not_setup">Δεν έχει ρυθμιστεί καμία λήψη ή εφαρμογή</string>
 </resources>

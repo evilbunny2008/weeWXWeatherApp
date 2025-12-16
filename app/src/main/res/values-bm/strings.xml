@@ -87,4 +87,5 @@
     <string name="next_moon">Kalo nata ko kɛlenw?</string>
     <string name="update_while_running">Update ka baara kɛ</string>
     <string name="force_dark_mode">Force dibi cogoya</string>
+    <string name="no_download_or_app_not_setup">No download walima app ma kɛ setup ye</string>
 </resources>

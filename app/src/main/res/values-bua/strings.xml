@@ -87,4 +87,5 @@
     <string name="next_moon">Удаадахи һарын үйлэ хэрэгүүд?</string>
     <string name="update_while_running">Гүйжэ байхадаа шэнэлхэ</string>
     <string name="force_dark_mode">Хүсэ Хара горим</string>
+    <string name="no_download_or_app_not_setup">Татаха гү, али апп тохируулагдаагүйгүй</string>
 </resources>

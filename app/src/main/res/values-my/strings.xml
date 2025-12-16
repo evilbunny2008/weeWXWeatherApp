@@ -87,4 +87,5 @@
     <string name="next_moon">နောက်လာမည့်ဖြစ်ရပ်များ?</string>
     <string name="update_while_running">run နေစဉ် update ကို</string>
     <string name="force_dark_mode">force dark mode ကို</string>
+    <string name="no_download_or_app_not_setup">ဒေါင်းလုဒ်မရှိပါ သို့မဟုတ် အက်ပ်ကို ထည့်သွင်းမထားပါ။</string>
 </resources>

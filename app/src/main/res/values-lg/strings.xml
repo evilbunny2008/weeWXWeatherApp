@@ -87,4 +87,5 @@
     <string name="next_moon">Ebibaddewo mu mwezi oguddako?</string>
     <string name="update_while_running">Update nga odduka</string>
     <string name="force_dark_mode">Force dark mode</string>
+    <string name="no_download_or_app_not_setup">Tewali kuwanula oba app tebadde setup</string>
 </resources>

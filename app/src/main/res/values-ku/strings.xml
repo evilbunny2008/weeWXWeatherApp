@@ -87,4 +87,5 @@
     <string name="next_moon">Bûyerên din ên heyvê?</string>
     <string name="update_while_running">Di dema xebitandinê de nûve bikin</string>
     <string name="force_dark_mode">Force Dark Mode</string>
+    <string name="no_download_or_app_not_setup">Tu dakêşandin an serîlêdan nehatiye saz kirin</string>
 </resources>

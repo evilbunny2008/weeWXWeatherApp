@@ -87,4 +87,5 @@
     <string name="next_moon">Järgmise kuu sündmused?</string>
     <string name="update_while_running">Värskenda jooksmise ajal</string>
     <string name="force_dark_mode">Sundige tume režiim</string>
+    <string name="no_download_or_app_not_setup">Ühtegi allalaadimist ega rakendust pole seadistatud</string>
 </resources>

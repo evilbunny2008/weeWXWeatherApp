@@ -87,4 +87,5 @@
     <string name="next_moon">ପରବର୍ତ୍ତୀ ଚନ୍ଦ୍ର ଘଟଣା?</string>
     <string name="update_while_running">ଚାଲିବା ସମୟରେ ଅଦ୍ୟତନ କରନ୍ତୁ |</string>
     <string name="force_dark_mode">ଡାର୍କ ମୋଡ୍ ଫୋର୍ସ କରନ୍ତୁ |</string>
+    <string name="no_download_or_app_not_setup">କ download ଣସି ଡାଉନଲୋଡ୍ କିମ୍ବା ଆପ୍ ସେଟଅପ୍ ହୋଇନାହିଁ |</string>
 </resources>

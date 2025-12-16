@@ -87,4 +87,5 @@
     <string name="next_moon">அடுத்த நிலவு நிகழ்வுகள்?</string>
     <string name="update_while_running">இயங்கும் போது புதுப்பிக்கவும்</string>
     <string name="force_dark_mode">கட்டாய டார்க் பயன்முறை</string>
+    <string name="no_download_or_app_not_setup">பதிவிறக்கம் அல்லது பயன்பாடு எதுவும் அமைக்கப்படவில்லை</string>
 </resources>

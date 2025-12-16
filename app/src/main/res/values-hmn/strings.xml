@@ -87,4 +87,5 @@
     <string name="next_moon">Lub hli tom ntej no?</string>
     <string name="update_while_running">Hloov kho thaum khiav</string>
     <string name="force_dark_mode">Yuam kev tsaus nti</string>
+    <string name="no_download_or_app_not_setup">Tsis muaj download lossis app tsis tau teeb tsa</string>
 </resources>

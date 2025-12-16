@@ -87,4 +87,5 @@
     <string name="next_moon">События следующей луны?</string>
     <string name="update_while_running">Обновление во время работы</string>
     <string name="force_dark_mode">Принудительный темный режим</string>
+    <string name="no_download_or_app_not_setup">Нет загрузки или приложение не установлено</string>
 </resources>

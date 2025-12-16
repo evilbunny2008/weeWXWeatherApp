@@ -154,7 +154,7 @@ public class Custom extends Fragment
 			String tmpStr = weeWXApp.current_dialog_html
 					.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(R.string.manual_update_set_refresh_screen_to_load));
 
-			wv.post(() -> wv.loadDataWithBaseURL("", tmpStr,
+			wv.post(() -> wv.loadDataWithBaseURL(null, tmpStr,
 					"text/html", "utf-8", null));
 			return;
 		}
@@ -167,7 +167,7 @@ public class Custom extends Fragment
 			String tmpStr = weeWXApp.current_dialog_html
 					.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(R.string.custom_url_not_set_or_blank));
 
-			wv.post(() -> wv.loadDataWithBaseURL("", tmpStr,
+			wv.post(() -> wv.loadDataWithBaseURL(null, tmpStr,
 					"text/html", "utf-8", null));
 			return;
 		}

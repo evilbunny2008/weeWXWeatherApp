@@ -87,4 +87,5 @@
     <string name="next_moon">পরবর্তী চাঁদের ঘটনা?</string>
     <string name="update_while_running">চলাকালীন আপডেট করুন</string>
     <string name="force_dark_mode">ফোর্স ডার্ক মোড</string>
+    <string name="no_download_or_app_not_setup">কোনো ডাউনলোড বা অ্যাপ সেটআপ করা হয়নি</string>
 </resources>

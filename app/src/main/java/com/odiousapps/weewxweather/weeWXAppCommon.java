@@ -75,7 +75,7 @@ class weeWXAppCommon
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	final static boolean debug_on = false;
-	final static boolean debug_html = true;
+	final static boolean debug_html = false;
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
 
@@ -364,7 +364,6 @@ class weeWXAppCommon
 	{
 		SharedPreferences.Editor editor = getPrefSettings().edit();
 		editor.putString(name, value);
-		editor.commit();
 		editor.apply();
 	}
 
@@ -373,13 +372,7 @@ class weeWXAppCommon
 		SharedPreferences.Editor editor = getPrefSettings().edit();
 		editor.putString(name, "");
 		editor.remove(name);
-		editor.commit();
 		editor.apply();
-	}
-
-	static void clearPref()
-	{
-		prefsExec.execute(() -> getPrefSettings().edit().clear().commit());
 	}
 
 	static boolean isPrefSet(String name)
@@ -434,7 +427,7 @@ class weeWXAppCommon
 		}
 
 		if(changed)
-			editor.commit();
+			editor.apply();
 
 		return changed;
 	}
@@ -490,7 +483,6 @@ class weeWXAppCommon
 	{
 		SharedPreferences.Editor editor = getPrefSettings().edit();
 		editor.putLong(name, value);
-		editor.commit();
 		editor.apply();
 	}
 
@@ -508,7 +500,6 @@ class weeWXAppCommon
 	{
 		SharedPreferences.Editor editor = getPrefSettings().edit();
 		editor.putFloat(name, value);
-		editor.commit();
 		editor.apply();
 	}
 
@@ -521,7 +512,6 @@ class weeWXAppCommon
 	{
 		SharedPreferences.Editor editor = getPrefSettings().edit();
 		editor.putInt(name, value);
-		editor.commit();
 		editor.apply();
 	}
 
@@ -539,7 +529,6 @@ class weeWXAppCommon
 	{
 		SharedPreferences.Editor editor = getPrefSettings().edit();
 		editor.putBoolean(name, value);
-		editor.commit();
 		editor.apply();
 	}
 
@@ -2619,7 +2608,7 @@ class weeWXAppCommon
 		NotificationManager.updateNotificationMessage(action);
 	}
 
-	static String[] getWeather(boolean forced, boolean calledFromweeWXApp)
+	static boolean getWeather(boolean forced, boolean calledFromweeWXApp)
 	{
 		long current_time = getCurrTime();
 
@@ -2627,7 +2616,8 @@ class weeWXAppCommon
 		if(baseURL == null || baseURL.isBlank())
 		{
 			LogMessage("baseURL == null || baseURL.isBlank()...");
-			return new String[]{"error", weeWXApp.getAndroidString(R.string.data_url_was_blank)};
+			KeyValue.LastWeatherError = weeWXApp.getAndroidString(R.string.data_url_was_blank);
+			return false;
 		}
 
 		String lastDownload = GetStringPref("LastDownload", weeWXApp.LastDownload_default);
@@ -2636,10 +2626,11 @@ class weeWXAppCommon
 			if(lastDownload == null || lastDownload.isBlank())
 			{
 				LogMessage("lastDownload is null or blank...");
-				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available)};
+				KeyValue.LastWeatherError = weeWXApp.getAndroidString(R.string.wifi_not_available);
+				return false;
 			} else {
 				LogMessage("Not forced and WiFi needed but not available");
-				return new String[]{"ok", lastDownload};
+				return true;
 			}
 		}
 
@@ -2650,7 +2641,8 @@ class weeWXAppCommon
 		if(pos < 0)
 		{
 			LogMessage("Invalid update frequency...");
-			return new String[]{"error", weeWXApp.getAndroidString(R.string.invalid_update_interval)};
+			KeyValue.LastWeatherError = weeWXApp.getAndroidString(R.string.invalid_update_interval);
+			return false;
 		}
 
 		if(!forced && pos == 0)
@@ -2658,10 +2650,11 @@ class weeWXAppCommon
 			if(lastDownload == null || lastDownload.isBlank())
 			{
 				LogMessage("lastDownload is null or blank...");
-				return new String[]{"error", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached)};
+				KeyValue.LastWeatherError = weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached);
+				return false;
 			} else {
 				LogMessage("Not forced and set to manual updates...");
-				return new String[]{"ok", lastDownload};
+				return true;
 			}
 		}
 
@@ -2671,9 +2664,12 @@ class weeWXAppCommon
 			LogMessage("UpdateCheck.java Skipping, period is invalid or set to manual refresh only...");
 
 			if(lastDownload == null || lastDownload.isBlank())
-				return new String[]{"error", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached)};
-			else
-				return new String[]{"ok", lastDownload};
+			{
+				KeyValue.LastWeatherError = weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached);
+				return false;
+			}
+
+			return true;
 		}
 
 		if(!forced && npwsll[5] == 0)
@@ -2681,9 +2677,12 @@ class weeWXAppCommon
 			LogMessage("UpdateCheck.java Skipping, lastDownloadTime == 0, app hasn't been setup...");
 
 			if(lastDownload == null || lastDownload.isBlank())
-				return new String[]{"error", "UpdateCheck.java Skipping, lastDownloadTime == 0, app hasn't been setup..."};
-			else
-				return new String[]{"ok", lastDownload};
+			{
+				KeyValue.LastWeatherError = weeWXApp.getAndroidString(R.string.no_download_or_app_not_setup);
+				return false;
+			}
+
+			return true;
 		}
 
 		if(!forced && Math.round((npwsll[5] + npwsll[1]) / 1_000D) > current_time)
@@ -2692,7 +2691,7 @@ class weeWXAppCommon
 			if(lastDownload != null && !lastDownload.isBlank())
 			{
 				LogMessage("lastDownload != null && !lastDownload.isBlank()... Skipping...");
-				return new String[]{"ok", lastDownload};
+				return true;
 			}
 		}
 
@@ -2701,9 +2700,13 @@ class weeWXAppCommon
 			LogMessage("Hasn't booted fully and wasn't called by weeWXApp and wasn't forced, skipping...");
 
 			if(lastDownload != null && !lastDownload.isBlank())
-				return new String[]{"ok", lastDownload};
-			else
-				return new String[]{"error", weeWXApp.getAndroidString(R.string.attempting_to_download_data_txt)};
+			{
+				KeyValue.LastWeatherError = lastDownload;
+				return true;
+			}
+
+			KeyValue.LastWeatherError = weeWXApp.getAndroidString(R.string.attempting_to_download_data_txt);
+			return false;
 		}
 
 		if(weatherTask != null && !weatherTask.isDone())
@@ -2711,7 +2714,7 @@ class weeWXAppCommon
 			if(wtStart + 30 > current_time)
 			{
 				LogMessage("weatherTask is less than 30s old (" + (current_time - wtStart) + "s), we'll skip this attempt...");
-				return new String[]{"ok", lastDownload};
+				return true;
 			}
 
 			LogMessage("weatherTask was more than 30s old (" + (current_time - wtStart) + "s) cancelling and restarting...");
@@ -2749,7 +2752,7 @@ class weeWXAppCommon
 			wtStart = 0;
 		});
 
-		return new String[]{"ok", lastDownload};
+		return true;
 	}
 
 	static boolean reallyGetWeather(String url)
@@ -2771,7 +2774,11 @@ class weeWXAppCommon
 			String[] bits = line.split("\\|");
 
 			SetStringPref("LastDownload", line);
+			KeyValue.LastDownload = line;
 			SetLongPref("LastDownloadTime", (long)Double.parseDouble(bits[225]));
+			KeyValue.LastDownloadTime = (long)Double.parseDouble(bits[225]);
+			KeyValue.LastWeatherError = null;
+
 			return true;
 		}
 
@@ -3111,36 +3118,37 @@ class weeWXAppCommon
 		return false;
 	}
 
-	static String[] getForecast(boolean forced, boolean calledFromweeWXApp)
+	static boolean getForecast(boolean forced, boolean calledFromweeWXApp)
 	{
 		String fctype = GetStringPref("fctype", weeWXApp.fctype_default);
 		if(fctype == null || fctype.isBlank())
 		{
 			LogMessage("fctype == null || fctype.isBlank(), skipping...");
-			String finalErrorStr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
-			return new String[]{"error", finalErrorStr, fctype};
+			KeyValue.LastForecastError = String.format(
+					weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
+			return false;
 		}
 
 		LogMessage("getForecast() fctype: " + fctype);
 
 		String forecast_url = GetStringPref("FORECAST_URL", weeWXApp.FORECAST_URL_default);
 		if(forecast_url == null || forecast_url.isBlank())
-			return new String[]{"error", weeWXApp.getAndroidString(R.string.forecast_url_not_set), fctype};
-
-		LogMessage("forecast_url: " + forecast_url);
-
-		String forecastData = GetStringPref("forecastData", weeWXApp.forecastData_default);
-
-		LogMessage("forecastData: " + forecastData);
+		{
+			KeyValue.LastForecastError = weeWXApp.getAndroidString(R.string.forecast_url_not_set);
+			return false;
+		}
 
 		if(!checkConnection() && !forced)
 		{
 			LogMessage("Not on wifi and not a forced refresh");
-			if(forecastData == null || forecastData.isBlank())
-				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available), fctype};
+			if(KeyValue.forecastData == null || KeyValue.forecastData.isBlank())
+			{
+				KeyValue.LastForecastError = weeWXApp.getAndroidString(R.string.wifi_not_available);
+				return false;
+			}
 
 			LogMessage("forecastData != null && !forecastData.isBlank()");
-			return new String[]{"ok", forecastData, fctype};
+			return true;
 		}
 
 		int pos = GetIntPref("updateInterval", weeWXApp.updateInterval_default);
@@ -3149,18 +3157,22 @@ class weeWXAppCommon
 		if(pos < 0)
 		{
 			LogMessage("Invalid update frequency...");
-			return new String[]{"error", weeWXApp.getAndroidString(R.string.invalid_update_interval), fctype};
+			KeyValue.LastForecastError = weeWXApp.getAndroidString(R.string.invalid_update_interval);
+			return false;
 		}
 
 		if(!forced && pos == 0)
 		{
 			LogMessage("Set to manual update and not forced...");
 
-			if(forecastData == null || forecastData.isBlank())
-				return new String[]{"error", weeWXApp.getAndroidString(R.string.wifi_not_available), fctype};
+			if(KeyValue.forecastData == null || KeyValue.forecastData.isBlank())
+			{
+				KeyValue.LastForecastError = weeWXApp.getAndroidString(R.string.wifi_not_available);
+				return false;
+			}
 
 			LogMessage("forecastData != null && !forecastData.isBlank()");
-			return new String[]{"ok", forecastData, fctype};
+			return true;
 		}
 
 		long current_time = getCurrTime();
@@ -3168,14 +3180,17 @@ class weeWXAppCommon
 		if(rssCheckTime == 0)
 		{
 			LogMessage("Bad rssCheckTime, skipping...");
-			if(forecastData == null || forecastData.isBlank())
-				return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
+			if(KeyValue.forecastData == null || KeyValue.forecastData.isBlank())
+			{
+				KeyValue.LastForecastError = weeWXApp.getAndroidString(R.string.still_downloading_forecast_data);
+				return false;
+			}
 
-			return new String[]{"ok", forecastData, fctype};
+			return true;
 		}
 
 		if(!forced && rssCheckTime + weeWXApp.RSSCache_period_default > current_time &&
-		   forecastData != null && !forecastData.isBlank())
+		   KeyValue.forecastData != null && !KeyValue.forecastData.isBlank())
 		{
 			LogMessage("Cache isn't more than " + weeWXApp.RSSCache_period_default + "s old (" +
 			           (current_time - rssCheckTime) + "s old)", true);
@@ -3184,17 +3199,18 @@ class weeWXAppCommon
 			LogMessage("rsscheck: " + date);
 			date = sdf.format(current_time * 1_000L);
 			LogMessage("current_time: " + date);
-			return new String[]{"ok", forecastData, fctype};
+			return true;
 		}
 
 		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp && !forced)
 		{
 			LogMessage("not fully booted or not called from weeWX App class or not forced...");
 
-			if(forecastData != null && !forecastData.isBlank())
-				return new String[]{"ok", forecastData, fctype};
+			if(KeyValue.forecastData != null && !KeyValue.forecastData.isBlank())
+				return true;
 
-			return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
+			KeyValue.LastForecastError = weeWXApp.getAndroidString(R.string.still_downloading_forecast_data);
+			return false;
 		}
 
 		if(forecastTask != null && !forecastTask.isDone())
@@ -3202,7 +3218,7 @@ class weeWXAppCommon
 			if(ftStart + 30 > current_time)
 			{
 				LogMessage("forecastTask is less than 30s old (" + (current_time - ftStart) + "s), we'll skip this attempt...");
-				return new String[]{"ok", forecastData, fctype};
+				return true;
 			}
 
 			forecastTask.cancel(true);
@@ -3244,14 +3260,15 @@ class weeWXAppCommon
 			ftStart = 0;
 		});
 
-		if(forecastData != null && !forecastData.isBlank())
+		if(KeyValue.forecastData != null && !KeyValue.forecastData.isBlank())
 		{
 			LogMessage("forecastData != null and !isBlank()...");
-			return new String[]{"ok", forecastData, fctype};
+			return true;
 		}
 
 		LogMessage("forecastData == null or isBlank()...");
-		return new String[]{"error", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data), fctype};
+		KeyValue.LastForecastError = weeWXApp.getAndroidString(R.string.still_downloading_forecast_data);
+		return false;
 	}
 
 	static String reallyGetForecast(String url)
@@ -3268,8 +3285,11 @@ class weeWXAppCommon
 		LogMessage("reallyGetForecast() forcecastData: " + forecastData);
 
 		LogMessage("updating rss cache");
-		SetLongPref("rssCheck", getCurrTime());
 		SetStringPref("forecastData", forecastData);
+		KeyValue.forecastData = forecastData;
+		SetLongPref("rssCheck", getCurrTime());
+		KeyValue.rssCheck = getCurrTime();
+		KeyValue.LastForecastError = null;
 
 		return forecastData;
 	}

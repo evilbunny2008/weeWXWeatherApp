@@ -87,4 +87,5 @@
     <string name="next_moon">Nächste Mondereignisse?</string>
     <string name="update_while_running">Update während der Ausführung</string>
     <string name="force_dark_mode">Dunklen Modus erzwingen</string>
+    <string name="no_download_or_app_not_setup">Kein Download oder App wurde nicht eingerichtet</string>
 </resources>

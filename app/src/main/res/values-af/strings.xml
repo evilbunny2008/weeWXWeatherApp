@@ -87,4 +87,5 @@
     <string name="next_moon">Volgende maan gebeure?</string>
     <string name="update_while_running">Dateer op terwyl dit hardloop</string>
     <string name="force_dark_mode">Dwing donker modus</string>
+    <string name="no_download_or_app_not_setup">Geen aflaai of toepassing is nie opgestel nie</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">Imicimbi Elandelayo Yenyanga?</string>
     <string name="update_while_running">Buyekeza ngenkathi ugijima</string>
     <string name="force_dark_mode">Cindezela imodi emnyama</string>
+    <string name="no_download_or_app_not_setup">Akukho ukulanda noma uhlelo lokusebenza olungakasethwa</string>
 </resources>

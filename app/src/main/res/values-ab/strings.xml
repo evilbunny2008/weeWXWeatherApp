@@ -87,4 +87,5 @@
     <string name="next_moon">Анаҩстәи амза ахҭысқәа?</string>
     <string name="update_while_running">Арҿыцра аҩраан</string>
     <string name="force_dark_mode">Амчхаратә режим амч</string>
+    <string name="no_download_or_app_not_setup">Ахыхәхәа ма апрограмма еиқәыршәамызт</string>
 </resources>

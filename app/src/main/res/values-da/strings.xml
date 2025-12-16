@@ -87,4 +87,5 @@
     <string name="next_moon">Næste månebegivenheder?</string>
     <string name="update_while_running">Opdater mens du kører</string>
     <string name="force_dark_mode">Tving mørk tilstand</string>
+    <string name="no_download_or_app_not_setup">Ingen download eller app er ikke blevet konfigureret</string>
 </resources>

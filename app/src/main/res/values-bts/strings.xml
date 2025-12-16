@@ -87,4 +87,5 @@
     <string name="next_moon">Selanjutni acara bulan?</string>
     <string name="update_while_running">Pembaruan sanggah marlintun</string>
     <string name="force_dark_mode">Mode Golap Mode</string>
+    <string name="no_download_or_app_not_setup">Lang dong download atap app na lape ibahen</string>
 </resources>

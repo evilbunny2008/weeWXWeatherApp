@@ -87,4 +87,5 @@
     <string name="next_moon">मेगु चन्द्रमाया घटना?</string>
     <string name="update_while_running">ब्वाँय् वनेबलय् अपडेट या</string>
     <string name="force_dark_mode">बल डार्क मोड</string>
+    <string name="no_download_or_app_not_setup">डाउनलोड बाय् एप सेटअप मजूनि बाय् एप मदु ।</string>
 </resources>

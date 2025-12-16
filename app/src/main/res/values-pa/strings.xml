@@ -87,4 +87,5 @@
     <string name="next_moon">ਅਗਲੇ ਚੰਦਰਮਾ ਦੀਆਂ ਘਟਨਾਵਾਂ?</string>
     <string name="update_while_running">ਚੱਲਦੇ ਸਮੇਂ ਅੱਪਡੇਟ ਕਰੋ</string>
     <string name="force_dark_mode">ਡਾਰਕ ਮੋਡ ਨੂੰ ਜ਼ੋਰ ਦਿਓ</string>
+    <string name="no_download_or_app_not_setup">ਕੋਈ ਡਾਊਨਲੋਡ ਜਾਂ ਐਪ ਸੈੱਟਅੱਪ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਹੈ</string>
 </resources>

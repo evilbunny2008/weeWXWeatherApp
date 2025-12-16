@@ -87,4 +87,5 @@
     <string name="next_moon">رویدادهای ماه بعدی؟</string>
     <string name="update_while_running">به روز رسانی در حین اجرا</string>
     <string name="force_dark_mode">اجباری حالت تاریک</string>
+    <string name="no_download_or_app_not_setup">هیچ دانلود یا برنامه ای راه اندازی نشده است</string>
 </resources>

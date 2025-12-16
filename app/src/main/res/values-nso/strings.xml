@@ -87,4 +87,5 @@
     <string name="next_moon">Ditiragalo tše di latelago tša Ngwedi?</string>
     <string name="update_while_running">Update o sa matha</string>
     <string name="force_dark_mode">qobella mokgwa wa lefifi</string>
+    <string name="no_download_or_app_not_setup">Ga go na go taonelouta goba tirišo ga se ya ka ya hlongwa</string>
 </resources>

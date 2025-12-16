@@ -87,4 +87,5 @@
     <string name="next_moon">เหตุการณ์พระจันทร์หน้า?</string>
     <string name="update_while_running">อัปเดตในขณะที่ทำงาน</string>
     <string name="force_dark_mode">บังคับโหมดมืด</string>
+    <string name="no_download_or_app_not_setup">ไม่มีการดาวน์โหลดหรือยังไม่ได้ตั้งค่าแอป</string>
 </resources>

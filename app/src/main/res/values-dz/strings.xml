@@ -87,4 +87,5 @@
     <string name="next_moon">ཤུལ་མམ་གྱི་ཟླ་བའི་བྱུང་རིམ་ཚུ་?</string>
     <string name="update_while_running">གཡོག་བཀོལ་བའི་སྐབས་ དུས་མཐུན་བཟོ།</string>
     <string name="force_dark_mode">force མུན་པའི་ཐབས་ལམ།</string>
+    <string name="no_download_or_app_not_setup">ཕབ་ལེན་ཡང་ན་ མཉེན་ཆས་གཞི་སྒྲིག་མ་འབད་བས།</string>
 </resources>

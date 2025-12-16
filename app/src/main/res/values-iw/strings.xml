@@ -87,4 +87,5 @@
     <string name="next_moon">אירועי הירח הבא?</string>
     <string name="update_while_running">עדכן תוך כדי ריצה</string>
     <string name="force_dark_mode">כפה מצב כהה</string>
+    <string name="no_download_or_app_not_setup">אין הורדה או אפליקציה שלא הוגדרה</string>
 </resources>

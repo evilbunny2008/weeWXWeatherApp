@@ -87,4 +87,5 @@
     <string name="next_moon">Következő hold eseményei?</string>
     <string name="update_while_running">Frissítés futás közben</string>
     <string name="force_dark_mode">Sötét mód kényszerítése</string>
+    <string name="no_download_or_app_not_setup">Nincs letöltés vagy alkalmazás nincs beállítva</string>
 </resources>

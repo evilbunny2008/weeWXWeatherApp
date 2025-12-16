@@ -87,4 +87,5 @@
     <string name="next_moon">Ensi kuun tapahtumat?</string>
     <string name="update_while_running">Päivitä käynnissä ollessa</string>
     <string name="force_dark_mode">Pakota tumma tila</string>
+    <string name="no_download_or_app_not_setup">Mitään latausta tai sovellusta ei ole määritetty</string>
 </resources>

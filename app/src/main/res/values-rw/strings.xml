@@ -87,4 +87,5 @@
     <string name="next_moon">Ukwezi kuzakurikira?</string>
     <string name="update_while_running">Kuvugurura mugihe wiruka</string>
     <string name="force_dark_mode">Imbaraga zo kwica</string>
+    <string name="no_download_or_app_not_setup">Nta gukuramo cyangwa porogaramu ntabwo byashyizweho</string>
 </resources>

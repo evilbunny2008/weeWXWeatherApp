@@ -87,4 +87,5 @@
     <string name="next_moon">Folgjende moanne eveneminten?</string>
     <string name="update_while_running">Update wylst rinnen</string>
     <string name="force_dark_mode">Force Dark Mode</string>
+    <string name="no_download_or_app_not_setup">Gjin download of app is net ynsteld</string>
 </resources>

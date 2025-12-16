@@ -87,4 +87,5 @@
     <string name="next_moon">Nächste Mound Evenementer?</string>
     <string name="update_while_running">Update beim Laafen</string>
     <string name="force_dark_mode">Force Dark Mode</string>
+    <string name="no_download_or_app_not_setup">Keen Download oder App ass net konfiguréiert</string>
 </resources>

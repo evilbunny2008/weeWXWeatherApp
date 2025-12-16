@@ -87,4 +87,5 @@
     <string name="next_moon">Події наступного місяця?</string>
     <string name="update_while_running">Оновлення під час роботи</string>
     <string name="force_dark_mode">Примусовий темний режим</string>
+    <string name="no_download_or_app_not_setup">Немає завантажень або додаток не налаштовано</string>
 </resources>

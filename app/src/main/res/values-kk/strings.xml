@@ -87,4 +87,5 @@
     <string name="next_moon">Келесі ай оқиғалары?</string>
     <string name="update_while_running">Жаңарту кезінде жаңарту</string>
     <string name="force_dark_mode">Күңгірт күші</string>
+    <string name="no_download_or_app_not_setup">Ешбір жүктеу немесе қолданба орнатылмаған</string>
 </resources>

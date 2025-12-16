@@ -87,4 +87,5 @@
     <string name="next_moon">Eventu fulan tuir mai?</string>
     <string name="update_while_running">Atualizasaun bainhira hala\'o</string>
     <string name="force_dark_mode">Forsa Modu Nakukun</string>
+    <string name="no_download_or_app_not_setup">Laiha download ka app seidauk setup</string>
 </resources>

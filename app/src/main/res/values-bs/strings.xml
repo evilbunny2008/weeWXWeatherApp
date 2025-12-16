@@ -87,4 +87,5 @@
     <string name="next_moon">Događaji sljedećeg mjeseca?</string>
     <string name="update_while_running">Ažurirajte dok radite</string>
     <string name="force_dark_mode">Force Dark Mode</string>
+    <string name="no_download_or_app_not_setup">Nijedno preuzimanje ili aplikacija nije postavljena</string>
 </resources>

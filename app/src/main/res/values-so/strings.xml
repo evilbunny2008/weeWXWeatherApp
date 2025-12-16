@@ -87,4 +87,5 @@
     <string name="next_moon">Dhacdooyinka Dayaxa ee xigta?</string>
     <string name="update_while_running">Cusboonaysii inta aad socoto</string>
     <string name="force_dark_mode">Ku qasbi qaab mugdi ah</string>
+    <string name="no_download_or_app_not_setup">Ma jiro soo dejin ama abka lama dejin</string>
 </resources>

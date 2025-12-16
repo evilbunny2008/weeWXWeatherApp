@@ -87,4 +87,5 @@
     <string name="next_moon">Swiendlakalo swa Next Moon?</string>
     <string name="update_while_running">Update loko u ri karhi u tsutsuma</string>
     <string name="force_dark_mode">Force Dark mode</string>
+    <string name="no_download_or_app_not_setup">No download kumbe app a yi se vekiwa</string>
 </resources>

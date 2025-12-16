@@ -87,4 +87,5 @@
     <string name="next_moon">Digwyddiadau lleuad nesaf?</string>
     <string name="update_while_running">Diweddaru wrth redeg</string>
     <string name="force_dark_mode">Gorfodi Modd Tywyll</string>
+    <string name="no_download_or_app_not_setup">Dim lawrlwythiad neu ap heb ei osod</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">Sự kiện trăng tiếp theo?</string>
     <string name="update_while_running">Cập nhật trong khi chạy</string>
     <string name="force_dark_mode">Buộc chế độ tối</string>
+    <string name="no_download_or_app_not_setup">Chưa tải xuống hoặc ứng dụng chưa được thiết lập</string>
 </resources>

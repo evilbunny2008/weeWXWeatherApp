@@ -87,4 +87,5 @@
     <string name="next_moon">Matukio ya mwezi ujao?</string>
     <string name="update_while_running">Sasisha wakati unaendesha</string>
     <string name="force_dark_mode">Nguvu hali ya giza</string>
+    <string name="no_download_or_app_not_setup">Hakuna upakuaji au programu ambayo haijasanidiwa</string>
 </resources>

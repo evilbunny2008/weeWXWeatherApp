@@ -87,4 +87,5 @@
     <string name="next_moon">Nuokušais mieness nūtykumi?</string>
     <string name="update_while_running">100 doc#1159 Atjaunuojums skrīšonā</string>
     <string name="force_dark_mode">Spāks Tymsais režims</string>
+    <string name="no_download_or_app_not_setup">100 doc#1159 Nivīna lejupluodiešona voi līta nav īreikuota</string>
 </resources>

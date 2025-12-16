@@ -23,4 +23,13 @@ class KeyValue
 	static boolean save_app_debug_logs = false;
 
 	static boolean isVisible = false;
+
+	static String fctype = null;
+	static String forecastData = null;
+	static String LastForecastError = null;
+	static long rssCheck = 0;
+
+	static String LastDownload = null;
+	static long LastDownloadTime = 0;
+	static String LastWeatherError = null;
 }

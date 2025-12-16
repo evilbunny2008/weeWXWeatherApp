@@ -87,4 +87,5 @@
     <string name="next_moon">Nyɔŋtsere lɛ nifeemɔi ni nyiɛ sɛɛ lɛ?</string>
     <string name="update_while_running">Tsakemɔ be mli ni ojoɔ foi</string>
     <string name="force_dark_mode">Hewalɛ Dade Mode</string>
+    <string name="no_download_or_app_not_setup">Akɛ nɔ ko ni ajieɔ loo app ko etoko</string>
 </resources>

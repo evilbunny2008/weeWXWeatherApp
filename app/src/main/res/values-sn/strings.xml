@@ -87,4 +87,5 @@
     <string name="next_moon">Zviitiko zvemwedzi zvinotevera?</string>
     <string name="update_while_running">Gadziridza uchimhanya</string>
     <string name="force_dark_mode">Kumanikidza yakasviba maitiro</string>
+    <string name="no_download_or_app_not_setup">Hapana kudhawunirodha kana app isati yagadzirwa</string>
 </resources>

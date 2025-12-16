@@ -87,4 +87,5 @@
     <string name="next_moon">ዝቕጽል ናይ ወርሒ ፍጻመታት?</string>
     <string name="update_while_running">ኣብ እትሰርሓሉ እዋን update</string>
     <string name="force_dark_mode">ሓይሊ ጸሊም ሞድ</string>
+    <string name="no_download_or_app_not_setup">No Download ወይ App ኣይተዳለወን</string>
 </resources>

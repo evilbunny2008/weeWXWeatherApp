@@ -87,4 +87,5 @@
     <string name="next_moon">Невбеттеки ай вакъиалары?</string>
     <string name="update_while_running">Чапкъан вакъытта янъыланмакъ</string>
     <string name="force_dark_mode">Кучь Къаранлыкъ режим</string>
+    <string name="no_download_or_app_not_setup">Юклемек я да къулланма ерлештирильмеген</string>
 </resources>

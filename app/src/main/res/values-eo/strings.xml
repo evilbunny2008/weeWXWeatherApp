@@ -87,4 +87,5 @@
     <string name="next_moon">Okazaĵoj de la venonta luno?</string>
     <string name="update_while_running">Ĝisdatigu dum kurado</string>
     <string name="force_dark_mode">Forto Malhela Reĝimo</string>
+    <string name="no_download_or_app_not_setup">Neniu elŝuto aŭ aplikaĵo ne estis agordita</string>
 </resources>

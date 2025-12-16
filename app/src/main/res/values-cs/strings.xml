@@ -87,4 +87,5 @@
     <string name="next_moon">Další události na Měsíci?</string>
     <string name="update_while_running">Aktualizace za běhu</string>
     <string name="force_dark_mode">Vynutit tmavý režim</string>
+    <string name="no_download_or_app_not_setup">Nebylo nastaveno žádné stahování ani aplikace</string>
 </resources>

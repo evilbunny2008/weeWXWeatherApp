@@ -87,4 +87,5 @@
     <string name="next_moon">Susunod a bulan ing malilyari?</string>
     <string name="update_while_running">Update kabang magdalagan</string>
     <string name="force_dark_mode">Modang Pwersa Daram</string>
+    <string name="no_download_or_app_not_setup">Ala pang me-setup download o app</string>
 </resources>

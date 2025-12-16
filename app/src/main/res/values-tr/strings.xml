@@ -87,4 +87,5 @@
     <string name="next_moon">Sonraki ay etkinlikleri?</string>
     <string name="update_while_running">Çalıştırırken güncelleme</string>
     <string name="force_dark_mode">Karanlık Modu Zorla</string>
+    <string name="no_download_or_app_not_setup">Hiçbir indirme yapılmadı veya uygulama kurulmadı</string>
 </resources>

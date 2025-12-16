@@ -87,4 +87,5 @@
     <string name="next_moon">Eby\'okwezi ebirikukurataho?</string>
     <string name="update_while_running">Hindukira obwo orikwiruka</string>
     <string name="force_dark_mode">Force Dark</string>
+    <string name="no_download_or_app_not_setup">Tihariho orikutunga nari app eyateirweho</string>
 </resources>

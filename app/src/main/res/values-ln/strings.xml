@@ -87,4 +87,5 @@
     <string name="next_moon">Makambo ya sanza oyo ekolanda?</string>
     <string name="update_while_running">Mikolo oyo ntango ozali kosala</string>
     <string name="force_dark_mode">Mode ya molili ya makasi</string>
+    <string name="no_download_or_app_not_setup">Download to app moko te esalemi te</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">Kito mėnulio įvykiai?</string>
     <string name="update_while_running">Atnaujinkite veikiant</string>
     <string name="force_dark_mode">Įjungti tamsųjį režimą</string>
+    <string name="no_download_or_app_not_setup">Joks atsisiuntimas arba programa nebuvo nustatyta</string>
 </resources>

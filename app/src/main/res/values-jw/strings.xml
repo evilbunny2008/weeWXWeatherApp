@@ -87,4 +87,5 @@
     <string name="next_moon">Sabanjure acara?</string>
     <string name="update_while_running">Nganyari nalika mlaku</string>
     <string name="force_dark_mode">Meksa mode peteng</string>
+    <string name="no_download_or_app_not_setup">Ora ana undhuhan utawa app sing durung disetel</string>
 </resources>

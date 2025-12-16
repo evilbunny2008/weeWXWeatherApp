@@ -87,4 +87,5 @@
     <string name="next_moon">Tu láak\' k\'inbesajo\'ob luna?</string>
     <string name="update_while_running">Actualizar ka\' jo\'op\' u yáalkab</string>
     <string name="force_dark_mode">Muuk\' Modo éek\'joch\'e\'en</string>
+    <string name="no_download_or_app_not_setup">Ma\' descarga wa app ma\' ts\'o\'ok sido configuración</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">I ng\'eye, lembe m\'utimere?</string>
     <string name="update_while_running">Ubimo ngo tic mi ng\'wec</string>
     <string name="force_dark_mode">Ka ng\'ato otimo kamano, obiro bedo gi geno mar timo kamano</string>
+    <string name="no_download_or_app_not_setup">Ka ng\'ato oting\'o app kata app ma ok onego oket</string>
 </resources>

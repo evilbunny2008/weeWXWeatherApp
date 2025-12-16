@@ -87,4 +87,5 @@
     <string name="next_moon">ඊළඟ සඳ සිදුවීම්?</string>
     <string name="update_while_running">ධාවනය අතරතුර යාවත්කාලීන කරන්න</string>
     <string name="force_dark_mode">අඳුරු මාදිලිය බල කරන්න</string>
+    <string name="no_download_or_app_not_setup">බාගැනීමක් හෝ යෙදුමක් සකසා නැත</string>
 </resources>

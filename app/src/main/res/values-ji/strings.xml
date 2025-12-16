@@ -87,4 +87,5 @@
     <string name="next_moon">קומענדיקע לבנה געשעענישן?</string>
     <string name="update_while_running">דערהייַנטיקן בשעת פליסנדיק</string>
     <string name="force_dark_mode">צווינגען דאַרק מאָדע</string>
+    <string name="no_download_or_app_not_setup">קיין אראפקאפיע אָדער אַפּ איז נישט סעטאַפּ</string>
 </resources>

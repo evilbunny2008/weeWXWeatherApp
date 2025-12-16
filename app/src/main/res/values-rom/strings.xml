@@ -87,4 +87,5 @@
     <string name="next_moon">Palal e eventura e lunaqe?</string>
     <string name="update_while_running">Aktualizacia kana phiren</string>
     <string name="force_dark_mode">Modo Mode</string>
+    <string name="no_download_or_app_not_setup">Nici download sau apa nu am se condup</string>
 </resources>

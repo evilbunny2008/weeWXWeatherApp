@@ -87,4 +87,5 @@
     <string name="next_moon">Дараагийн сарны арга хэмжээ?</string>
     <string name="update_while_running">Ажиллаж байх үед шинэчлэх</string>
     <string name="force_dark_mode">Харанхуй горимыг хүчээр</string>
+    <string name="no_download_or_app_not_setup">Ямар ч таталт эсвэл програмыг тохируулаагүй байна</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">अगले चाँद के आयोजन का?</string>
     <string name="update_while_running">दौड़ते समय अपडेट करत</string>
     <string name="force_dark_mode">फोर्स डार्क मोड</string>
+    <string name="no_download_or_app_not_setup">कोई डाउनलोड या ऐप सेटअप नहीं किया गया है</string>
 </resources>

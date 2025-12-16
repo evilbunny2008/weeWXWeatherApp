@@ -87,4 +87,5 @@
     <string name="next_moon">फुडले चंद्र घडणुको?</string>
     <string name="update_while_running">चालू आसतना अपडेट</string>
     <string name="force_dark_mode">जबरदस्ती काळो मोड</string>
+    <string name="no_download_or_app_not_setup">ना डाउनलोड वा अॅप सेटअप जावंक ना</string>
 </resources>

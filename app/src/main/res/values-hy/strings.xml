@@ -87,4 +87,5 @@
     <string name="next_moon">Հաջորդ լուսնի իրադարձությունները</string>
     <string name="update_while_running">Թարմացրեք գործարկման ընթացքում</string>
     <string name="force_dark_mode">Ստիպել մութ ռեժիմը</string>
+    <string name="no_download_or_app_not_setup">Ոչ մի ներբեռնում կամ հավելված չի կարգավորվել</string>
 </resources>

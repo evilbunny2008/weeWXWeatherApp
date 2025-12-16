@@ -87,4 +87,5 @@
     <string name="next_moon">Imeachtaí na gealaí seo chugainn?</string>
     <string name="update_while_running">Nuashonraigh agus tú ag rith</string>
     <string name="force_dark_mode">Fórsa Mód Dark</string>
+    <string name="no_download_or_app_not_setup">Níl aon íoslódáil nó níor socraíodh aip</string>
 </resources>

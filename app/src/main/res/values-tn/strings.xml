@@ -87,4 +87,5 @@
     <string name="next_moon">Ditiragalo tse di latelang tsa ngwedi?</string>
     <string name="update_while_running">Ntšhwafatsa fa o ntse o taboga</string>
     <string name="force_dark_mode">Maatla a Lefifi</string>
+    <string name="no_download_or_app_not_setup">Ga go na go laisolola kgotsa tiriswa e e iseng e rulaganye</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">የሚቀጥለው ጨረቃ ክስተቶች?</string>
     <string name="update_while_running">በሚሮጡበት ጊዜ ዝመና</string>
     <string name="force_dark_mode">ጨካኝ ሁነታን ያስገድዱ</string>
+    <string name="no_download_or_app_not_setup">ምንም ማውረድ ወይም መተግበሪያ አልተዋቀረም።</string>
 </resources>

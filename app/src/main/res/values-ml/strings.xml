@@ -87,4 +87,5 @@
     <string name="next_moon">അടുത്ത ചാന്ദ്ര സംഭവങ്ങൾ?</string>
     <string name="update_while_running">റൺ ചെയ്യുമ്പോൾ അപ്ഡേറ്റ് ചെയ്യുക</string>
     <string name="force_dark_mode">ഡാർക്ക് മോഡ് നിർബന്ധിക്കുക</string>
+    <string name="no_download_or_app_not_setup">ഡൗൺലോഡ് അല്ലെങ്കിൽ ആപ്പ് സജ്ജീകരിച്ചിട്ടില്ല</string>
 </resources>

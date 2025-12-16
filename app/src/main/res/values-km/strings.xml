@@ -87,4 +87,5 @@
     <string name="next_moon">ព្រឹត្តិការណ៍ព្រះច័ន្ទបន្ទាប់?</string>
     <string name="update_while_running">ធ្វើបច្ចុប្បន្នភាពពេលកំពុងរត់</string>
     <string name="force_dark_mode">បង្ខំរបៀបងងឹត</string>
+    <string name="no_download_or_app_not_setup">គ្មានការទាញយក ឬកម្មវិធីមិនត្រូវបានដំឡើងទេ។</string>
 </resources>

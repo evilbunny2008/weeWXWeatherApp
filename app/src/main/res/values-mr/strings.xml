@@ -87,4 +87,5 @@
     <string name="next_moon">पुढील चंद्र घटना?</string>
     <string name="update_while_running">चालू असताना अपडेट करा</string>
     <string name="force_dark_mode">गडद मोड सक्ती करा</string>
+    <string name="no_download_or_app_not_setup">कोणतेही डाउनलोड किंवा ॲप सेट केले गेले नाही</string>
 </resources>

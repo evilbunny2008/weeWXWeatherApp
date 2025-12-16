@@ -87,4 +87,5 @@
     <string name="next_moon">Acara bulan depan aja?</string>
     <string name="update_while_running">Update sambil lari</string>
     <string name="force_dark_mode">Maksain Mode Gelap</string>
+    <string name="no_download_or_app_not_setup">Belom ada download atau app belom udah diatur</string>
 </resources>

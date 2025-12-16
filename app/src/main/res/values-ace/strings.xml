@@ -87,4 +87,5 @@
     <string name="next_moon">Acara buleun selanjut jih?</string>
     <string name="update_while_running">Update sambil menjalankan</string>
     <string name="force_dark_mode">Sat Mode Gelap</string>
+    <string name="no_download_or_app_not_setup">Hana ta download atawa app hana ta setup</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">Evenimente de pe luna viitoare?</string>
     <string name="update_while_running">Actualizați în timp ce rulați</string>
     <string name="force_dark_mode">Force Dark Mode</string>
+    <string name="no_download_or_app_not_setup">Nicio descărcare sau aplicație nu a fost configurată</string>
 </resources>

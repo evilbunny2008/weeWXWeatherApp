@@ -87,4 +87,5 @@
     <string name="next_moon">নেক্সট মুন ইভেন্ট?</string>
     <string name="update_while_running">চলি থকাৰ সময়ত আপডেট কৰক</string>
     <string name="force_dark_mode">ফোৰ্চ ডাৰ্ক মোড</string>
+    <string name="no_download_or_app_not_setup">কোনো ডাউনলোড বা এপ ছেটআপ কৰা হোৱা নাই</string>
 </resources>

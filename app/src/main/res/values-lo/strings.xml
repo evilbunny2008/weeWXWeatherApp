@@ -87,4 +87,5 @@
     <string name="next_moon">ເຫດການດວງເດືອນຕໍ່ໄປ?</string>
     <string name="update_while_running">ປັບປຸງໃນຂະນະທີ່ກໍາລັງແລ່ນ</string>
     <string name="force_dark_mode">ບັງຄັບໃຫ້ໂຫມດຊ້ໍາ</string>
+    <string name="no_download_or_app_not_setup">ບໍ່ມີການດາວໂຫຼດ ຫຼືແອັບຍັງບໍ່ໄດ້ຖືກຕັ້ງຄ່າ</string>
 </resources>

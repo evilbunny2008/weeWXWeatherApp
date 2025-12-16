@@ -87,4 +87,5 @@
     <string name="next_moon">Volgende maongebeurtenisse?</string>
     <string name="update_while_running">Bied bij tijdens \'t renne</string>
     <string name="force_dark_mode">Force Duusteremodus</string>
+    <string name="no_download_or_app_not_setup">Gein download of app is neet ingesjtèld</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">Keyingi oy voqealari?</string>
     <string name="update_while_running">Yugurishda yangilang</string>
     <string name="force_dark_mode">Qorong\'u rejimni majburlang</string>
+    <string name="no_download_or_app_not_setup">Hech qanday yuklab olish yoki dastur sozlanmagan</string>
 </resources>

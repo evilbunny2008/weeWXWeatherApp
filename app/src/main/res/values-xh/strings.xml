@@ -87,4 +87,5 @@
     <string name="next_moon">Iziganeko zeNyanga ezayo?</string>
     <string name="update_while_running">Hlaziya ngelixa ubaleka</string>
     <string name="force_dark_mode">Nyanzela indlela emnyama</string>
+    <string name="no_download_or_app_not_setup">Akukho khuphelo okanye usetyenziso olungamiselwanga</string>
 </resources>

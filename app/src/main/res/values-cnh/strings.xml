@@ -87,4 +87,5 @@
     <string name="next_moon">A hnu thlapa thil cangmi hna?</string>
     <string name="update_while_running">Tlik lio ah update tuah</string>
     <string name="force_dark_mode">Force Dark Mode</string>
+    <string name="no_download_or_app_not_setup">Download le app a um lo</string>
 </resources>

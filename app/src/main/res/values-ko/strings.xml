@@ -87,4 +87,5 @@
     <string name="next_moon">다음 달 이벤트?</string>
     <string name="update_while_running">실행 중 업데이트</string>
     <string name="force_dark_mode">강제 다크 모드</string>
+    <string name="no_download_or_app_not_setup">다운로드가 없거나 앱이 설정되지 않았습니다</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">Bafeti ya ngonda ke landa?</string>
     <string name="update_while_running">Kuyidika mambu ntangu nge ke baka ntinu</string>
     <string name="force_dark_mode">Mode ya Mpimpa ya Ngolo</string>
+    <string name="no_download_or_app_not_setup">Ata télécharger mosi ve to appli me kuma ve</string>
 </resources>

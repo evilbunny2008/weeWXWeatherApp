@@ -87,4 +87,5 @@
     <string name="next_moon">下一次月球事件？</string>
     <string name="update_while_running">運行時更新</string>
     <string name="force_dark_mode">強制深色模式</string>
+    <string name="no_download_or_app_not_setup">未下載或尚未安裝應用程序</string>
 </resources>

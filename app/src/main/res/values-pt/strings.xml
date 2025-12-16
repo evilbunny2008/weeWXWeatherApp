@@ -87,4 +87,5 @@
     <string name="next_moon">Próximos eventos lunares?</string>
     <string name="update_while_running">Atualizar durante a execução</string>
     <string name="force_dark_mode">Forçar modo escuro</string>
+    <string name="no_download_or_app_not_setup">Nenhum download ou o aplicativo não foi configurado</string>
 </resources>

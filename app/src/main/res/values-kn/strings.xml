@@ -87,4 +87,5 @@
     <string name="next_moon">ಮುಂದಿನ ಚಂದ್ರನ ಘಟನೆಗಳು?</string>
     <string name="update_while_running">ಚಾಲನೆಯಲ್ಲಿರುವಾಗ ನವೀಕರಿಸಿ</string>
     <string name="force_dark_mode">ಫೋರ್ಸ್ ಡಾರ್ಕ್ ಮೋಡ್</string>
+    <string name="no_download_or_app_not_setup">ಯಾವುದೇ ಡೌನ್‌ಲೋಡ್ ಅಥವಾ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">Indiki Aý wakalary?</string>
     <string name="update_while_running">Işleýän wagtyňyz täzelenme</string>
     <string name="force_dark_mode">Garaňky re modeim bilen mejbur ediň</string>
+    <string name="no_download_or_app_not_setup">Hiç hili göçürip almak ýa-da programma gurulmady</string>
 </resources>

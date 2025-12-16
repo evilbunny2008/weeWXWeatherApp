@@ -87,4 +87,5 @@
     <string name="next_moon">Esdeveniments de la propera lluna?</string>
     <string name="update_while_running">Actualitza mentre s\'executa</string>
     <string name="force_dark_mode">Força el mode fosc</string>
+    <string name="no_download_or_app_not_setup">No s\'ha configurat cap baixada o aplicació</string>
 </resources>

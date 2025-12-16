@@ -87,4 +87,5 @@
     <string name="next_moon">Next Moon events?</string>
     <string name="update_while_running">Update a kal laiin</string>
     <string name="force_dark_mode">Force Dark Mode</string>
+    <string name="no_download_or_app_not_setup">No Download emaw App emaw pawh a la awm lo</string>
 </resources>

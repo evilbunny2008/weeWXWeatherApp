@@ -87,4 +87,5 @@
     <string name="next_moon">Bann prosen levennman lalinn?</string>
     <string name="update_while_running">Miz a zour pandan ki ou pe galoupe</string>
     <string name="force_dark_mode">Mod Lafors Nwar</string>
+    <string name="no_download_or_app_not_setup">Napa telesarz oubyen app pa\'n ganny setup</string>
 </resources>

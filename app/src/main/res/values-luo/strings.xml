@@ -87,4 +87,5 @@
     <string name="next_moon">Gik ma biro timore e dwe mabiro?</string>
     <string name="update_while_running">Loch ka osiko</string>
     <string name="force_dark_mode">Goch Mode mar Dhoot</string>
+    <string name="no_download_or_app_not_setup">Onge ng\'at ma nyalo ng\'ado bura kata ma pok oket</string>
 </resources>

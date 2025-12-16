@@ -87,4 +87,5 @@
     <string name="next_moon">اگلے چاند کے واقعات؟</string>
     <string name="update_while_running">چلتے وقت اپ ڈیٹ کریں</string>
     <string name="force_dark_mode">ڈارک وضع کو مجبور کریں</string>
+    <string name="no_download_or_app_not_setup">کوئی ڈاؤن لوڈ یا ایپ سیٹ اپ نہیں کی گئی ہے</string>
 </resources>

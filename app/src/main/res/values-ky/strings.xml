@@ -87,4 +87,5 @@
     <string name="next_moon">Кийинки ай?</string>
     <string name="update_while_running">Иштеп жатканда жаңыртыңыз</string>
     <string name="force_dark_mode">Күчтүү караңгы режим</string>
+    <string name="no_download_or_app_not_setup">Эч бир жүктөп алуу же колдонмо жөндөлгөн жок</string>
 </resources>

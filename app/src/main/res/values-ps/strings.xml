@@ -87,4 +87,5 @@
     <string name="next_moon">د راتلونکي سپوږمۍ پیښې؟</string>
     <string name="update_while_running">د چلولو پرمهال تازه کړئ</string>
     <string name="force_dark_mode">تیاره حالت ځواک کړئ</string>
+    <string name="no_download_or_app_not_setup">هیڅ ډاونلوډ یا اپلیکیشن ندی ترتیب شوی</string>
 </resources>

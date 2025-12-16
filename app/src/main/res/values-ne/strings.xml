@@ -87,4 +87,5 @@
     <string name="next_moon">अर्को चन्द्रमा घटनाहरू?</string>
     <string name="update_while_running">चलिरहेको बेला अपडेट गर्नुहोस्</string>
     <string name="force_dark_mode">गाढा मोड बल गर्नुहोस्</string>
+    <string name="no_download_or_app_not_setup">कुनै डाउनलोड वा एप सेटअप गरिएको छैन</string>
 </resources>

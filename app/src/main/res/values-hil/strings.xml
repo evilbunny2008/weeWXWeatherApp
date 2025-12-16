@@ -87,4 +87,5 @@
     <string name="next_moon">Sunod nga mga hitabo sa bulan?</string>
     <string name="update_while_running">Update samtang nagdagan</string>
     <string name="force_dark_mode">Pwersa nga Madulom nga Mode</string>
+    <string name="no_download_or_app_not_setup">Wala pa sang na-setup nga download ukon app</string>
 </resources>

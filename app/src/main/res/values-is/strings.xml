@@ -87,4 +87,5 @@
     <string name="next_moon">Næstu tunglviðburðir?</string>
     <string name="update_while_running">Uppfærðu meðan á gangi stendur</string>
     <string name="force_dark_mode">Þvingaðu Dark Mode</string>
+    <string name="no_download_or_app_not_setup">Ekkert niðurhal eða forrit hefur ekki verið sett upp</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">Taateewwan Ji\'aa itti aanan?</string>
     <string name="update_while_running">Utuu hojjechaa jirtuu haaromsuu</string>
     <string name="force_dark_mode">Haala Dukkana Humnaa</string>
+    <string name="no_download_or_app_not_setup">No download ykn app setup hin taane</string>
 </resources>

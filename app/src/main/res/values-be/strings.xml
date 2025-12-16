@@ -87,4 +87,5 @@
     <string name="next_moon">Наступныя месячныя падзеі?</string>
     <string name="update_while_running">Абнаўленне падчас працы</string>
     <string name="force_dark_mode">Уключыць цёмны рэжым</string>
+    <string name="no_download_or_app_not_setup">Няма спампоўкі або праграма не наладжана</string>
 </resources>

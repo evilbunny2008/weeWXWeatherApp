@@ -87,4 +87,5 @@
     <string name="next_moon">أحداث القمر القادمة؟</string>
     <string name="update_while_running">التحديث أثناء التشغيل</string>
     <string name="force_dark_mode">فرض الوضع المظلم</string>
+    <string name="no_download_or_app_not_setup">لم يتم إعداد أي تنزيل أو تطبيق</string>
 </resources>

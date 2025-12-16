@@ -87,4 +87,5 @@
     <string name="next_moon">Liketsahalo tse latelang tsa khoeli?</string>
     <string name="update_while_running">Ntlafatso ha e ntse e sebetsa</string>
     <string name="force_dark_mode">Qobella mokhoa o lefifi</string>
+    <string name="no_download_or_app_not_setup">Ha ho sesebelisoa kapa sesebelisoa se so ka se hlophisoa</string>
 </resources>

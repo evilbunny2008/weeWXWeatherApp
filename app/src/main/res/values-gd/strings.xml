@@ -87,4 +87,5 @@
     <string name="next_moon">Tachartasan an ath ghealach?</string>
     <string name="update_while_running">Ùraich fhad \'s a tha thu a\' ruith</string>
     <string name="force_dark_mode">Feachd am modh dorcha</string>
+    <string name="no_download_or_app_not_setup">Cha deach luchdachadh sìos no app a shuidheachadh</string>
 </resources>

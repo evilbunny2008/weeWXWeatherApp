@@ -87,4 +87,5 @@
     <string name="next_moon">Nākamā mēness notikumi?</string>
     <string name="update_while_running">Atjauniniet darbības laikā</string>
     <string name="force_dark_mode">Piespiest tumšo režīmu</string>
+    <string name="no_download_or_app_not_setup">Nav iestatīta neviena lejupielāde vai lietotne</string>
 </resources>

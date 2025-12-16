@@ -87,4 +87,5 @@
     <string name="next_moon">Hetsika manaraka ny volana?</string>
     <string name="update_while_running">Fanavaozana raha mihazakazaka</string>
     <string name="force_dark_mode">Terena ny maoderina maizina</string>
+    <string name="no_download_or_app_not_setup">Tsy misy fampidinana na fampiharana mbola tsy namboarina</string>
 </resources>

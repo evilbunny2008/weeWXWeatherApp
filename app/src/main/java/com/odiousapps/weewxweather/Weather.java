@@ -91,17 +91,17 @@ public class Weather extends Fragment implements View.OnClickListener
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		if(current == null)
-			current = loadWebview(null, view, R.id.current, true);
+			current = loadWebview(null, view, R.id.current, true, true);
 		else
-			loadWebview(current, view, R.id.current, true);
+			loadWebview(current, view, R.id.current, true, true);
 
 		if(current != null)
 			weeWXAppCommon.LogMessage("current.getHeight(): " + current.getHeight(), true);
 
 		if(forecast == null)
-			forecast = loadWebview(null, view, R.id.forecast, false);
+			forecast = loadWebview(null, view, R.id.forecast, false, false);
 		else
-			loadWebview(forecast, view, R.id.forecast, false);
+			loadWebview(forecast, view, R.id.forecast, false, false);
 
 		if(weeWXAppCommon.isPrefSet("radarforecast"))
 		{
@@ -150,7 +150,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		}
 	}
 
-	private SafeWebView loadWebview(SafeWebView webView, View view, int viewid, boolean doSwipe)
+	private SafeWebView loadWebview(SafeWebView webView, View view, int viewid, boolean doSwipe, boolean isCurrent)
 	{
 		StackTraceElement caller = new Exception().getStackTrace()[1];
 		String callerClass  = caller.getClassName();
@@ -183,11 +183,11 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		webView.setOnPageFinishedListener((v, url) ->
 		{
-			if(dynamicSizing)
+			if(dynamicSizing && isCurrent)
 			{
-				current.postDelayed(() -> adjustHeight(current), 50);
-				current.postDelayed(() -> adjustHeight(current), 150);
-				current.postDelayed(() -> recheckHeight(current), 300);
+				current.postDelayed(() -> adjustHeight(current), 100);
+				current.postDelayed(() -> adjustHeight(current), 200);
+				current.postDelayed(() -> adjustHeight(current), 300);
 			} else if(viewid == R.id.current) {
 				weeWXAppCommon.LogMessage("dynamicSizing is false...");
 			}
@@ -203,38 +203,59 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private void adjustHeight(SafeWebView webView)
 	{
-		webView.evaluateJavascript(
-				"(function() { return Math.max(" +
-				"document.body.scrollHeight, document.documentElement.scrollHeight);" +
-				"})();",
-				value -> {
-					try {
-						weeWXAppCommon.LogMessage("dynamicSizing is true...");
-						// Post a Runnable to make sure contentHeight is available
-						float density =  weeWXApp.getDensity();
-						int height = Math.round(Float.parseFloat(value) * density);
-						int contentHeightPx = tv1.getHeight() + tv2.getHeight() + height;
-						ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
-						if(params.height != contentHeightPx)
-						{
-							params.height = contentHeightPx; // - (int)(5 * density);
-							swipeLayout.setLayoutParams(params);
-							weeWXAppCommon.LogMessage("New Height: " + contentHeightPx);
-						}
-					} catch (Exception ignored) {}
+		weeWXAppCommon.LogMessage("current.getHeight(): " + webView.getHeight(), true);
+
+		float density =  weeWXApp.getDensity();
+
+		weeWXAppCommon.LogMessage("swipeLayout.getHeight(): " + swipeLayout.getHeight(), true);
+
+		webView.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+				View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+		int heightMH = webView.getMeasuredHeight();
+
+		weeWXAppCommon.LogMessage("webView measured height: " + heightMH, true);
+
+		webView.evaluateJavascript("""
+					(function()
+					{
+						return Math.max(
+							document.body.scrollHeight,
+							document.body.offsetHeight,
+							document.documentElement.clientHeight,
+							document.documentElement.scrollHeight,
+							document.documentElement.offsetHeight);
+					})();
+					""", value ->
+				{
+					weeWXAppCommon.LogMessage("value: " + value, true);
+
+					if(value == null || value.isBlank() || value.equals("null"))
+					{
+						weeWXAppCommon.LogMessage("current.evaluateJavascript() value is null " +
+						                          "or blank or equals 'null'", true);
+						return;
+					}
+
+					int heightInPx = (int)Float.parseFloat(value.replace("\"", ""));
+					weeWXAppCommon.LogMessage("From Javascript heightInPx: " + heightInPx, true);
+
+					// Post a Runnable to make sure contentHeight is available
+					int height = Math.round(heightInPx * density);
+					weeWXAppCommon.LogMessage("height in DP: " + height, true);
+
+					int contentHeightPx = tv1.getHeight() + tv2.getHeight() + height;
+					weeWXAppCommon.LogMessage("contentHeightPx: " + contentHeightPx, true);
+
+					ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
+
+					if(params.height != contentHeightPx)
+					{
+						weeWXAppCommon.LogMessage("params.height != contentHeightPx", true);
+						params.height = contentHeightPx;
+						swipeLayout.setLayoutParams(params);
+					}
 				}
 		);
-	}
-
-	private void recheckHeight(SafeWebView webView)
-	{
-		if(webView.getId() == current.getId())
-			weeWXAppCommon.LogMessage("current.getHeight(): " + webView.getHeight(), true);
-		else if(webView.getId() == forecast.getId())
-			weeWXAppCommon.LogMessage("forecast.getHeight(): " + webView.getHeight(), true);
-
-		if(webView.getHeight() <= 400)
-			webView.post(webView::reload);
 	}
 
 	private void checkFields(TextView tv, String txt)
@@ -585,14 +606,12 @@ public class Weather extends Fragment implements View.OnClickListener
 		wv.post(() ->
 		{
 			if(text != null)
-				wv.loadDataWithBaseURL("", text,
+				wv.loadDataWithBaseURL("file:///android_asset/", text,
 						"text/html", "utf-8", null);
 			else if(url != null)
 				wv.loadUrl(url);
 			else
 				wv.reload();
-
-			//wv.invalidate();
 		});
 	}
 
@@ -743,12 +762,8 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		weeWXAppCommon.LogMessage("loadWebView()");
 
-		String fctype = weeWXAppCommon.GetStringPref("fctype", weeWXApp.fctype_default);
-
-		String forecastData = weeWXAppCommon.GetStringPref("forecastData", weeWXApp.forecastData_default);
-
-		if(forecastData != null && !forecastData.isBlank())
-			loadWebView(fctype, forecastData);
+		if(KeyValue.forecastData != null && !KeyValue.forecastData.isBlank())
+			loadWebView(KeyValue.fctype, KeyValue.forecastData);
 	}
 
 	private void loadWebView(String fctype, String forecastData)
@@ -820,7 +835,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			if(forecastData == null || forecastData.isBlank())
 			{
-				forecastData = weeWXAppCommon.GetStringPref("forecastData", weeWXApp.forecastData_default);
+				forecastData = KeyValue.forecastData;
 				if(forecastData == null || forecastData.isBlank())
 				{
 					weeWXAppCommon.LogMessage("Weather.loadWebView() forecast was null or blank");
@@ -830,6 +845,10 @@ public class Weather extends Fragment implements View.OnClickListener
 			}
 
 			String base_url = "file:///android_asset/logos/";
+
+			String ext = "_light.svg";
+			if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
+				ext = "_dark.svg";
 
 			switch(fctype.toLowerCase(Locale.ENGLISH))
 			{
@@ -989,13 +1008,10 @@ public class Weather extends Fragment implements View.OnClickListener
 
 					weeWXAppCommon.LogMessage("content: " + Arrays.toString(content));
 
-					sb.append("\n<div style='text-align:center'>\n\t");
-					String imgStr = base_url + "bom.png";
-					if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
-						sb.append("<img src='").append(imgStr).append("' style='filter:invert(1);' height='29px' />");
-					else
-						sb.append("<img src='").append(imgStr).append("' height='29px' />");
-					sb.append("\n</div>\n").append(content[0]);
+					sb.append("<div style='text-align:center'><img src='file:///android_asset/logos/bom")
+							.append(ext)
+							.append("' height='45px' />\n</div>\n")
+							.append(content[0]);
 				}
 				case "aemet.es" ->
 				{
@@ -1036,10 +1052,9 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = base_url + "metservice.png";
-					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(imgStr).append("' height='29px'/>")
-							.append("</div>\n")
+					sb.append("<div style='text-align:center'><img src='file:///android_asset/logos/metservice")
+							.append(ext)
+							.append("' height='45px' />\n</div>\n")
 							.append(content[0]);
 				}
 				case "openweathermap.org" ->
@@ -1133,30 +1148,25 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		weeWXAppCommon.LogMessage("reloadForecast()");
 
+		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
+			return;
+
 		if(fll.getVisibility() != View.GONE)
 			updateFLL(View.GONE);
 
-		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
+		boolean ret = weeWXAppCommon.getForecast(false, false);
+
+		weeWXAppCommon.LogMessage("fctype: " + KeyValue.fctype);
+		weeWXAppCommon.LogMessage("forecastData: " + KeyValue.forecastData);
+
+		if(!ret)
 		{
-			weeWXAppCommon.LogMessage("Weather.java reloadForecast() weeWXApp.ForecastOnHomeScreen is not true, skipping...",true);
-			loadWebViewContent(R.string.unknown_error_occurred);
-			stopRefreshing();
-			return;
-		}
-
-		String[] ret = weeWXAppCommon.getForecast(false, false);
-		String forecastData = ret[1];
-		String fctype = ret[2];
-
-		weeWXAppCommon.LogMessage("fctype: " + fctype);
-		weeWXAppCommon.LogMessage("forecastData: " + forecastData);
-
-		if(ret[0].equals("error"))
-		{
-			if(forecastData != null && !forecastData.isBlank())
+			if(KeyValue.LastForecastError != null && !KeyValue.LastForecastError.isBlank())
 			{
-				weeWXAppCommon.LogMessage("getForecast returned the following error: " + forecastData);
-				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest + forecastData + weeWXApp.html_footer);
+				weeWXAppCommon.LogMessage("getForecast returned the following error: " +
+				                          KeyValue.LastForecastError);
+				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
+				                   KeyValue.LastForecastError + weeWXApp.html_footer);
 			} else {
 				weeWXAppCommon.LogMessage("getForecast returned an unknown error...");
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
@@ -1166,7 +1176,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		}
 
 		weeWXAppCommon.LogMessage("getForecast returned some content...");
-		loadWebView(fctype, forecastData);
 	}
 
 	private void loadOrReloadRadarImage()
@@ -1213,6 +1222,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		weeWXAppCommon.LogMessage("Weather.onResume() -- updating the value of the floating checkbox...");
 		updateFLL();
+		if(current != null)
+			adjustHeight(current);
 	}
 
 	public void onPause()

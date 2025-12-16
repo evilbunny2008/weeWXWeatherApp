@@ -87,4 +87,5 @@
     <string name="next_moon">Następne wydarzenia na Księżycu?</string>
     <string name="update_while_running">Aktualizuj podczas biegu</string>
     <string name="force_dark_mode">Wymuś tryb ciemny</string>
+    <string name="no_download_or_app_not_setup">Brak pobierania lub aplikacja nie została skonfigurowana</string>
 </resources>

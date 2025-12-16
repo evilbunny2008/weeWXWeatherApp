@@ -87,4 +87,5 @@
     <string name="next_moon">Evènman pwochen lalin?</string>
     <string name="update_while_running">Mete ajou pandan w ap kouri</string>
     <string name="force_dark_mode">Fòs mòd nwa</string>
+    <string name="no_download_or_app_not_setup">Pa gen telechaje oswa aplikasyon pa te konfigirasyon</string>
 </resources>

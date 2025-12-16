@@ -87,4 +87,5 @@
     <string name="next_moon">Hurrengo ilargiko gertaerak?</string>
     <string name="update_while_running">Eguneratu exekutatzen ari zaren bitartean</string>
     <string name="force_dark_mode">Indar iluna modua</string>
+    <string name="no_download_or_app_not_setup">Ez da deskargarik edo aplikaziorik konfiguratu</string>
 </resources>

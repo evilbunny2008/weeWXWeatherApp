@@ -87,4 +87,5 @@
     <string name="next_moon">下一個月亮事件？</string>
     <string name="update_while_running">跑步時更新</string>
     <string name="force_dark_mode">強制黑暗模式</string>
+    <string name="no_download_or_app_not_setup">冇下載或者應用程式仲未設定</string>
 </resources>

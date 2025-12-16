@@ -87,4 +87,5 @@
     <string name="next_moon">Acara bulan salajengna?</string>
     <string name="update_while_running">Update bari ngajalankeun</string>
     <string name="force_dark_mode">Maksa modeu poék</string>
+    <string name="no_download_or_app_not_setup">Henteu aya undeuran atanapi aplikasi anu teu acan disetél</string>
 </resources>

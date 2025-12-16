@@ -87,4 +87,5 @@
     <string name="next_moon">I kare me dwe ma lubo meno?</string>
     <string name="update_while_running">Lok manyen</string>
     <string name="force_dark_mode">Lami dic</string>
+    <string name="no_download_or_app_not_setup">Pe kiketo nyo app mo keken pe kiketo</string>
 </resources>

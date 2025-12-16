@@ -86,5 +86,6 @@
     <string name="custom_url_not_set_or_blank">Anpassad webbadress är inte angiven eller är tom. Du kan gå in i inställningarna för att lägga till en anpassad URL</string>
     <string name="next_moon">Nästa månhändelser?</string>
     <string name="update_while_running">Uppdatera under körning</string>
-    <string name="force_dark_mode"/>
+    <string name="force_dark_mode">Force Dark Mode</string>
+    <string name="no_download_or_app_not_setup">Ingen nedladdning eller app har inte konfigurerats</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">अगला चन्द्र events?</string>
     <string name="update_while_running">चलते समय अपडेट करें</string>
     <string name="force_dark_mode">बल डार्क मोड</string>
+    <string name="no_download_or_app_not_setup">No Download or app setup न कृता अस्ति।</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">Avvenimenti tal-qamar li jmiss?</string>
     <string name="update_while_running">Aġġorna waqt li tkun qed taħdem</string>
     <string name="force_dark_mode">Force Dark Mode</string>
+    <string name="no_download_or_app_not_setup">L-ebda tniżżil jew app ma ġietx setup</string>
 </resources>

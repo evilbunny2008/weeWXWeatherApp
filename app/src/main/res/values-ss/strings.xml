@@ -87,4 +87,5 @@
     <string name="next_moon">Tigameko letilandzelako tenyanga?</string>
     <string name="update_while_running">Vuseketa ngesikhatsi ugijima</string>
     <string name="force_dark_mode">Indlela Yemandla Lemnyama</string>
+    <string name="no_download_or_app_not_setup">Kute lokulandvwako noma lokusebenta lokungakabi kusetha</string>
 </resources>

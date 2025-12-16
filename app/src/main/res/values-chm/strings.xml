@@ -87,4 +87,5 @@
     <string name="next_moon">Вес тылзе событий-влак?</string>
     <string name="update_while_running">Куржмо годым уэмдыме</string>
     <string name="force_dark_mode">Вий Пычкемыш Режим</string>
+    <string name="no_download_or_app_not_setup">Уке скачать але приложений лийын огыл настройкым</string>
 </resources>

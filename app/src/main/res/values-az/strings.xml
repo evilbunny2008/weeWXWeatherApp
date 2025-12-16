@@ -87,4 +87,5 @@
     <string name="next_moon">Növbəti ay hadisələri?</string>
     <string name="update_while_running">İşləyərkən yeniləyin</string>
     <string name="force_dark_mode">Qaranlıq rejimi məcbur edin</string>
+    <string name="no_download_or_app_not_setup">Heç bir yükləmə və ya proqram quraşdırılmayıb</string>
 </resources>

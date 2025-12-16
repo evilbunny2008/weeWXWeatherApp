@@ -87,4 +87,5 @@
     <string name="next_moon">Ibirori vy\'ukwezi bikurikira?</string>
     <string name="update_while_running">Ivyanditswe mu gihe uriko uriruka</string>
     <string name="force_dark_mode">Inkomezi z\'umwiza</string>
+    <string name="no_download_or_app_not_setup">Nta gukuraho canke app ntivyashizweho</string>
 </resources>

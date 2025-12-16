@@ -87,4 +87,5 @@
     <string name="next_moon">Acara bulan selanjutna?</string>
     <string name="update_while_running">Pembaruan tingki marlojong</string>
     <string name="force_dark_mode">Paksa Mode Gelap</string>
+    <string name="no_download_or_app_not_setup">Dang adong diunduh manang app dang di setup</string>
 </resources>

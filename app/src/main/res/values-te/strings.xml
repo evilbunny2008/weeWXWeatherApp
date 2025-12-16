@@ -87,4 +87,5 @@
     <string name="next_moon">తదుపరి చంద్రుని సంఘటనలు?</string>
     <string name="update_while_running">నడుస్తున్నప్పుడు నవీకరించండి</string>
     <string name="force_dark_mode">ఫోర్స్ డార్క్ మోడ్</string>
+    <string name="no_download_or_app_not_setup">డౌన్‌లోడ్ లేదా యాప్ సెటప్ చేయబడలేదు</string>
 </resources>

@@ -87,4 +87,5 @@
     <string name="next_moon">Nga huihuinga o te marama e whai ake nei?</string>
     <string name="update_while_running">Whakahoutanga i te wa e rere ana</string>
     <string name="force_dark_mode">Te aratau pouri pouri</string>
+    <string name="no_download_or_app_not_setup">Karekau he tango, he taupānga ranei kaore ano kia tatū</string>
 </resources>

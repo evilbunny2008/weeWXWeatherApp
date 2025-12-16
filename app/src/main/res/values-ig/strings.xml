@@ -87,4 +87,5 @@
     <string name="next_moon">Ọ na-esote ọnwa?</string>
     <string name="update_while_running">Mmelite mgbe ị na-agba ọsọ</string>
     <string name="force_dark_mode">Ike ọchịchịrị</string>
+    <string name="no_download_or_app_not_setup">Enweghị nbudata ma ọ bụ ngwa edobebeghị</string>
 </resources>

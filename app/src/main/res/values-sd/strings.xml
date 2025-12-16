@@ -87,4 +87,5 @@
     <string name="next_moon">ايندڙ چنڊ واقعا؟</string>
     <string name="update_while_running">هلائڻ دوران تازه ڪاري ڪريو</string>
     <string name="force_dark_mode">ڊارڪ موڊ کي زور ڏيو</string>
+    <string name="no_download_or_app_not_setup">ڪابه ڊائون لوڊ يا ايپ سيٽ اپ نه ڪئي وئي آهي</string>
 </resources>

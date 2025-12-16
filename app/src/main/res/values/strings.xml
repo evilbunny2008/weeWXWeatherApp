@@ -88,4 +88,5 @@
 	<string name="custom_url_not_set_or_blank">Custom URL isn\'t set, or is blank. You can go into settings to add a custom URL</string>
 	<string name="next_moon">Next moon events?</string>
 	<string name="force_dark_mode">Force Dark Mode</string>
+	<string name="no_download_or_app_not_setup">No download or app hasn\'t been setup</string>
 </resources>
