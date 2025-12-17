@@ -1152,8 +1152,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		boolean ret = weeWXAppCommon.getForecast(false, false);
 
-		weeWXAppCommon.LogMessage("fctype: " + KeyValue.fctype, true);
-		weeWXAppCommon.LogMessage("forecastData: " + KeyValue.forecastData, true);
+		weeWXAppCommon.LogMessage("fctype: " + KeyValue.fctype);
+		weeWXAppCommon.LogMessage("forecastData: " + KeyValue.forecastData);
 
 		if(!ret)
 		{

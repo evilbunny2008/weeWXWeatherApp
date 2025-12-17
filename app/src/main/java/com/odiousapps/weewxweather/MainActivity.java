@@ -1410,6 +1410,11 @@ public class MainActivity extends FragmentActivity
 					bgStart = 0;
 					return;
 				}
+
+				KeyValue.fctype = fctype;
+				KeyValue.forecastData = tmpStr;
+				KeyValue.LastForecastError = null;
+				KeyValue.rssCheck = weeWXAppCommon.getCurrTime();
 			}
 
 			if(!webcamURL.isBlank())

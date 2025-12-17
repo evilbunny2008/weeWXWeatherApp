@@ -2,6 +2,7 @@ package com.odiousapps.weewxweather;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -242,6 +243,8 @@ public class weeWXApp extends Application
 
 		colours = new Colours();
 
+		KeyValue.loadYahooRGB2SVGTable();
+
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 			WebViewPreloader.getInstance().init(6);
 
@@ -320,6 +323,10 @@ public class weeWXApp extends Application
 	static Drawable loadSVGFromAssets(String filename)
 	{
 		String svgStr = loadFileFromAssets(filename);
+
+		if(svgStr == null || svgStr.isBlank())
+			return null;
+
 		weeWXAppCommon.LogMessage("svgStr: " + svgStr);
 
 		try
@@ -368,8 +375,41 @@ public class weeWXApp extends Application
 
 	static String loadFileFromAssets(String filename)
 	{
+		String path = "", nameonly;
+
 		try
 		{
+			AssetManager assetManager = instance.getAssets();
+
+			if(filename.lastIndexOf('/') >= 0)
+			{
+				path = filename.substring(0, filename.lastIndexOf('/'));
+				nameonly = filename.substring(filename.lastIndexOf('/') + 1);
+			} else {
+				nameonly = filename;
+			}
+
+
+			String[] files = assetManager.list(path);
+			if(files == null || files.length == 0)
+				return null;
+
+			boolean exists = false;
+			for(String f : files)
+			{
+				if(f.equals(nameonly))
+				{
+					exists = true;
+					break;
+				}
+			}
+
+			if(!exists)
+			{
+				//weeWXAppCommon.LogMessage("File not found: " + filename, true);
+				return null;
+			}
+
 			InputStream is = instance.getAssets().open(filename);
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
@@ -384,8 +424,9 @@ public class weeWXApp extends Application
 			return baos.toString(charset);
 		} catch (Exception e) {
 			weeWXAppCommon.doStackOutput(e);
-			return "";
 		}
+
+		return null;
 	}
 
 	static void applyTheme(boolean forced)

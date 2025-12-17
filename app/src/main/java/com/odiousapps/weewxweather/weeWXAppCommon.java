@@ -1,6 +1,7 @@
 package com.odiousapps.weewxweather;
 
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
@@ -49,7 +50,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -68,8 +68,10 @@ import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
 import androidx.lifecycle.LiveData;
+import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 @SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref", "ConstantConditions",
@@ -112,7 +114,7 @@ class weeWXAppCommon
 
 	private static Future<?> forecastTask, radarTask, weatherTask, webcamTask;
 
-	private static long ftStart, rtStart, wcStart, wtStart;
+	private static long ftStart, rtStart, wcStart, wtStart, lastWeatherRefresh = 0;
 
 	private static final SimpleDateFormat logsdf;
 
@@ -820,9 +822,9 @@ class weeWXAppCommon
 				day.min += "&deg;C";
 			} else {
 				if(!day.max.isBlank())
-					day.max += Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max += C2Fdeg((int)Float.parseFloat(day.max));
 				if(!day.min.isBlank())
-					day.min += Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.min += C2Fdeg((int)Float.parseFloat(day.min));
 			}
 
 			if(day.max.isBlank() || day.max.startsWith("&deg;"))
@@ -853,16 +855,13 @@ class weeWXAppCommon
 
 				day.icon = "file:///android_asset/icons/" + fileName;
 
-				day.max = day.max.replaceAll("°C", "").strip();
-				day.min = day.min.replaceAll("°C", "").strip();
+				day.max = day.max.replaceAll("°C", "").strip() + "&deg;C";
+				day.min = day.min.replaceAll("°C", "").strip() + "&deg;C";
 
-				if(metric)
+				if(!metric)
 				{
-					day.max = day.max + "&deg;C";
-					day.min = day.min + "&deg;C";
-				} else {
-					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = C2Fdeg((int)Float.parseFloat(day.max));
+					day.min = C2Fdeg((int)Float.parseFloat(day.min));
 				}
 
 				days.add(day);
@@ -945,12 +944,12 @@ class weeWXAppCommon
 				} else {
 					try
 					{
-						day.max = Math.round((mydays.getJSONObject(i).getInt("temp_max") * 9.0 / 5.0) + 32.0) + "&deg;F";
+						day.max = Math.round(C2F(mydays.getJSONObject(i).getInt("temp_max"))) + "&deg;F";
 					} catch(Exception ignored) {}
 
 					try
 					{
-						day.min = Math.round((mydays.getJSONObject(i).getInt("temp_min") * 9.0 / 5.0) + 32.0) + "&deg;F";
+						day.min = Math.round(C2F(mydays.getJSONObject(i).getInt("temp_min"))) + "&deg;F";
 					} catch(Exception ignored) {}
 				}
 
@@ -1028,26 +1027,23 @@ class weeWXAppCommon
 			day.day = sdf.format(day.timestamp);
 
 			String icon = "https://beta.metoffice.gov.uk" + forecasts[i].split("<img class='icon'")[1].split("src='")[1].split("'>")[0].strip();
-			String fileName = icon.substring(icon.lastIndexOf('/') + 1).replaceAll("\\.svg$", ".png");
+			StringBuilder fileName = new StringBuilder(icon.substring(icon.lastIndexOf('/') + 1).replaceAll("\\.svg$", ".png"));
 			day.min = forecasts[i].split("<span class='tab-temp-low'", 2)[1].split("'>")[1].split("</span>")[0].strip();
 			day.max = forecasts[i].split("<span class='tab-temp-high'", 2)[1].split("'>")[1].split("</span>")[0].strip();
 			day.text = forecasts[i].split("<div class='summary-text", 2)[1].split("'>", 3)[2]
 					.split("</div>", 2)[0].replaceAll("</span>", "").replaceAll("<span>", "");
 
-			day.min = day.min.substring(0, day.min.length() - 5);
-			day.max = day.max.substring(0, day.max.length() - 5);
+			day.min = day.min.substring(0, day.min.length() - 5) + "&deg;C";
+			day.max = day.max.substring(0, day.max.length() - 5) + "&deg;C";
 
-			fileName = "met" + fileName;
+			fileName.insert(0, "met");
 
 			day.icon = "file:///android_asset/icons/" + fileName;
 
-			if(metric)
+			if(!metric)
 			{
-				day.max += "&deg;C";
-				day.min += "&deg;C";
-			} else {
-				day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-				day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				day.max = C2Fdeg((int)Float.parseFloat(day.max));
+				day.min = C2Fdeg((int)Float.parseFloat(day.min));
 			}
 
 			days.add(day);
@@ -1478,10 +1474,11 @@ class weeWXAppCommon
 
 				day.day = periodName.getString(i);
 
-				if(!metric)
-					day.max = temperature.getString(i) + "&deg;F";
-				else
-					day.max = Math.round((Double.parseDouble(temperature.getString(i)) - 32.0) * 5.0 / 9.0)  + "&deg;C";
+				day.max = temperature.getString(i) + "&deg;F";
+
+				if(metric)
+					day.max = F2Cdeg((int)Float.parseFloat(temperature.getString(i)));
+
 				day.text = weather.getString(i);
 				days.add(day);
 			}
@@ -1619,8 +1616,8 @@ class weeWXAppCommon
 				day.timestamp = tmp_timestamp;
 				day.day = jtmp.getString("dow");
 				day.text = jtmp.getString("forecast");
-				day.max = jtmp.getString("max");
-				day.min = jtmp.getString("min");
+				day.max = jtmp.getString("max") + "&deg;C";
+				day.min = jtmp.getString("min") + "&deg;C";
 				if(jtmp.has("partDayData"))
 					day.icon = jtmp.getJSONObject("partDayData").getJSONObject("afternoon").getString("forecastWord");
 				else
@@ -1636,13 +1633,10 @@ class weeWXAppCommon
 
 				day.icon = "file:///android_asset/icons/" + fileName;
 
-				if(metric)
+				if(!metric)
 				{
-					day.max += "&deg;C";
-					day.min += "&deg;C";
-				} else {
-					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = C2Fdeg((int)Float.parseFloat(day.max));
+					day.min = C2Fdeg((int)Float.parseFloat(day.min));
 				}
 
 				days.add(day);
@@ -1726,11 +1720,10 @@ class weeWXAppCommon
 
 				day.icon = "file:///android_asset/icons/" + fileName;
 
+				day.max = temp + "&deg;C";
 				day.min = "&deg;C";
-				if(metric)
-					day.max = temp + "&deg;C";
-				else
-					day.max = Math.round((Double.parseDouble(temp) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				if(!metric)
+					day.max = C2Fdeg((int)Float.parseFloat(temp));
 
 				days.add(day);
 				lastTS = day.timestamp;
@@ -1797,8 +1790,8 @@ class weeWXAppCommon
 
 				day.icon = "file:///android_asset/icons/" + fileName;
 
-				day.max = bit.split("<td class='tempmax'>", 2)[1].split("°C</td>", 2)[0].strip();
-				day.min = bit.split("<td class='tempmin'>", 2)[1].split("°C</td>", 2)[0].strip();
+				day.max = bit.split("<td class='tempmax'>", 2)[1].split("°C</td>", 2)[0].strip() + "&deg;C";
+				day.min = bit.split("<td class='tempmin'>", 2)[1].split("°C</td>", 2)[0].strip() + "&deg;C";
 
 				day.text = bit.split("<td class='skyDesc'>")[1].split("</td>")[0].strip();
 
@@ -1806,11 +1799,8 @@ class weeWXAppCommon
 
 				if(metric)
 				{
-					day.max += "&deg;C";
-					day.min += "&deg;C";
-				} else {
-					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = C2Fdeg((int)Float.parseFloat(day.max));
+					day.min = C2Fdeg((int)Float.parseFloat(day.min));
 				}
 
 				days.add(day);
@@ -1904,15 +1894,13 @@ class weeWXAppCommon
 
 				day.icon = "file:///android_asset/icons/" + fileName;
 
-				day.max = temperatura.getString("maxima");
-				day.min = temperatura.getString("minima");
-				if(metric)
+				day.max = temperatura.getString("maxima") + "&deg;C";
+				day.min = temperatura.getString("minima") + "&deg;C";
+
+				if(!metric)
 				{
-					day.max += "&deg;C";
-					day.min += "&deg;C";
-				} else {
-					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
-					day.min = Math.round((Double.parseDouble(day.min) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = C2Fdeg((int)Float.parseFloat(day.max));
+					day.min = C2Fdeg((int)Float.parseFloat(day.min));
 				}
 
 				day.text = estado_cielo.getString("descripcion");
@@ -2024,7 +2012,7 @@ class weeWXAppCommon
 					day.timestamp = df.getTime();
 
 				day.day = dayname.format(day.timestamp);
-				day.max = jobj.getString("temperature");
+				day.max = jobj.getString("temperature") + "&deg;C";
 				day.icon = jobj.getString("weatherNumber");
 
 				String fileName = "y" + day.icon + ".png";
@@ -2033,10 +2021,8 @@ class weeWXAppCommon
 
 				day.text = jobj.getString("weatherDescription");
 
-				if(metric)
-					day.max += "&deg;C";
-				else
-					day.max = Math.round((Double.parseDouble(day.max) * 9.0 / 5.0) + 32.0) + "&deg;F";
+				if(!metric)
+					day.max = C2Fdeg((int)Float.parseFloat(day.max));
 
 				days.add(day);
 			}
@@ -2235,10 +2221,11 @@ class weeWXAppCommon
 
 				JSONObject tsdata = jarr.getJSONObject(i).getJSONObject("data");
 				double temp = tsdata.getJSONObject("instant").getJSONObject("details").getDouble("air_temperature");
-				if(metric)
-					day.max = Math.round(temp) + "&deg;C";
-				else
-					day.max = Math.round((temp * 9.0 / 5.0) + 32.0) + "&deg;F";
+
+				day.max = Math.round(temp) + "&deg;C";
+
+				if(!metric)
+					day.max = C2Fdeg((int)Float.parseFloat(day.max));
 
 				String icon;
 
@@ -2493,11 +2480,13 @@ class weeWXAppCommon
 
 				day.max = range[1];
 				day.min = range[0];
+
 				if(!metric)
 				{
-					day.max = Math.round(Double.parseDouble(range[1].substring(0, range[1].length() - 7)) * 9.0 / 5.0 + 32.0) + "&deg;F";
-					day.min = Math.round((Double.parseDouble(range[0].substring(0, range[0].length() - 7)) * 9.0 / 5.0) + 32.0) + "&deg;F";
+					day.max = C2Fdeg((int)Float.parseFloat(day.max));
+					day.min = C2Fdeg((int)Float.parseFloat(day.min));
 				}
+
 				day.text = mydesc;
 				days.add(day);
 				lastTS = day.timestamp;
@@ -2510,6 +2499,23 @@ class weeWXAppCommon
 		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
+	static String convertRGB2Hex(String svg)
+	{
+		// rgb(var(--uds-spectrum-color-purple-4))
+		for(KV kv : KeyValue.yahoo)
+		{
+			LogMessage("Checking for rgb(var(" + kv.Key + ")) -> " + kv.Val);
+			svg = svg.replaceAll("rgb\\(var\\(" + kv.Key + "\\)\\)", kv.Val);
+		}
+
+		Pattern p = Pattern.compile("rgb\\(var\\((.*?)\\)\\)");
+		Matcher m = p.matcher(svg);
+		while(m.find())
+			LogMessage("Found unconverted RGB in SVG: " + m.group(1), true);
+
+		return svg;
+	}
+
 	static String[] processYahoo(String data)
 	{
 		return processYahoo(data, false);
@@ -2520,21 +2526,192 @@ class weeWXAppCommon
 		if(data.isBlank())
 			return null;
 
-		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
+		SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE d", Locale.getDefault());
 
+		boolean metric = GetBoolPref("metric", weeWXApp.metric_default);
 		List<Day> days = new ArrayList<>();
 		long timestamp = getRSSms();
-		String desc;
+		String desc = "";
+		JSONArray jarr;
+		JSONObject jobj;
+
+		Document doc = Jsoup.parse(data);
+
+		if(false)
+		{
+			try(ExecutorService executor = Executors.newSingleThreadExecutor())
+			{
+				Future<?> backgroundTask = executor.submit(() ->
+				{
+					String base_url = "https://odiousapps.com/yahoosvg.php";
+
+					Elements svgs = doc.select("svg");
+
+					for(Element svg: svgs)
+					{
+						if(svg == null || svg.outerHtml().isBlank())
+							continue;
+
+						if(!svg.hasAttr("aria-label"))
+							continue;
+
+						String filenameOrig = svg.attr("aria-label");
+
+						if(filenameOrig == null || filenameOrig.isBlank() || filenameOrig.equals("Yahoo Weather"))
+							continue;
+
+						filenameOrig = filenameOrig.replaceAll(" ", "_");
+
+						int height = 0;
+
+						if(svg.hasAttr("height"))
+							height = (int)Float.parseFloat(svg.attr("height"));
+
+						int width = 0;
+						if(svg.hasAttr("width"))
+							width = (int)Float.parseFloat(svg.attr("width"));
+
+						if(width > 0 && height > 0)
+							filenameOrig += "_" + height + "x" + width;
+
+						boolean hasDark = false;
+						boolean hasLight = false;
+
+						Element lightSVG = svg.clone();
+						if(!lightSVG.select("g.uds-light-mode-icon").isEmpty())
+						{
+							hasLight = true;
+							lightSVG.select("g.uds-dark-mode-icon").remove();
+						}
+
+						Element darkSVG = svg.clone();
+						if(!darkSVG.select("g.uds-dark-mode-icon").isEmpty())
+						{
+							hasDark = true;
+							darkSVG.select("g.uds-light-mode-icon").remove();
+						}
+
+						try
+						{
+							if(hasLight)
+							{
+								boolean alreadyWrittenLight = false;
+								String outputLight = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + convertRGB2Hex(lightSVG.outerHtml()) + "\n";
+								String filenameLight = null;
+								for(int i = 0; i < 10; i++)
+								{
+									filenameLight = "yahoo" + "_" + filenameOrig + "_" + i + "_light.svg";
+
+									String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filenameLight);
+
+									if(content == null || content.isBlank())
+										break;
+
+									if(content.strip().equals(outputLight.strip()))
+									{
+										alreadyWrittenLight = true;
+										break;
+									}
+								}
+
+								if(filenameLight != null && !filenameLight.isBlank() && !alreadyWrittenLight)
+								{
+									Map<String, String> args = Map.of(
+											"svgName", filenameLight,
+											"svgHeight", "" + height,
+											"svgWidth", "" + width,
+											"svg", outputLight);
+
+									uploadString(base_url, args);
+								}
+							}
+
+							if(hasDark)
+							{
+								boolean alreadyWrittenDark = false;
+								String outputDark = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + convertRGB2Hex(darkSVG.outerHtml()) + "\n";
+								String filenameDark = null;
+								for(int i = 0; i < 10; i++)
+								{
+									filenameDark = "yahoo" + "_" + filenameOrig + "_" + i + "_dark.svg";
+
+									String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filenameDark);
+
+									if(content == null || content.isBlank())
+										break;
+
+									if(content.strip().equals(outputDark.strip()))
+									{
+										alreadyWrittenDark = true;
+										break;
+									}
+								}
+
+								if(filenameDark != null && !filenameDark.isBlank() && !alreadyWrittenDark)
+								{
+									Map<String, String> args = Map.of(
+											"svgName", filenameDark,
+											"svgHeight", "" + height,
+											"svgWidth", "" + width,
+											"svg", outputDark);
+
+
+									uploadString(base_url, args);
+								}
+							}
+
+							if(!hasLight && !hasDark)
+							{
+								boolean alreadyWritten = false;
+								String output = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" + convertRGB2Hex(svg.outerHtml()) + "\n";
+								String filename = null;
+								for(int i = 0; i < 10; i++)
+								{
+									filename = "yahoo" + "_" + filenameOrig + "_" + i + ".svg";
+
+									String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filename);
+
+									if(content == null || content.isBlank())
+										break;
+
+									if(content.strip().equals(output.strip()))
+									{
+										alreadyWritten = true;
+										break;
+									}
+								}
+
+								if(filename != null && !filename.isBlank() && !alreadyWritten)
+								{
+									Map<String, String> args = Map.of(
+											"svgName", filename,
+											"svgHeight", "" + height,
+											"svgWidth", "" + width,
+											"svg", output);
+
+									uploadString(base_url, args);
+								}
+							}
+
+							//publish(file);
+						} catch(Exception e) {
+							doStackOutput(e);
+						}
+					}
+				});
+			} catch(Exception e) {
+				LogMessage("Error! e: " + e.getMessage(), true);
+				doStackOutput(e);
+			}
+		}
+
+		Pattern p = Pattern.compile("self.__next_f\\.push\\(\\[\\d+,\"(.*)\"]\\)", Pattern.DOTALL);
 
 		try
 		{
-			Pattern p = Pattern.compile("self.__next_f\\.push\\(\\[\\d+,\"(.*)\"]\\)", Pattern.DOTALL);
-
-			Document doc = Jsoup.parse(data);
-
+			String forecastStr = null;
 			Elements scripts = doc.select("script");
 
-			int count = 0;
 			for(Element element : scripts)
 			{
 				Matcher m = p.matcher(element.data());
@@ -2549,64 +2726,198 @@ class weeWXAppCommon
 				if(colon < 1)
 					continue;
 
-				String jsonPart = unescaped.substring(colon + 1);
-				String before = unescaped.substring(0, colon);
+				String jsonPart = unescaped.substring(colon + 1).strip();
+				String before = unescaped.substring(0, colon).strip();
+				if(before.equals("9"))
+				{
+					try
+					{
+						jobj = new JSONObject(jsonPart);
+						jarr = jobj.getJSONArray("metadata");
+						for(int i = 0; i < jarr.length(); i++)
+						{
+							if(!jarr.getJSONArray(1).getString(2).equals("1"))
+								continue;
+
+							forecastStr = jarr.getJSONArray(1).getJSONObject(3).getString("content");
+
+							boolean isFahrenheit = forecastStr.contains("°F");
+
+							if(metric && isFahrenheit)
+							{
+								Pattern TEMP_F = Pattern.compile("(\\d+(?:\\.\\d+)?)\\s*°F");
+
+								Matcher m2 = TEMP_F.matcher(forecastStr);
+
+								StringBuilder sb = new StringBuilder();
+
+								while(m2.find())
+								{
+									int f = (int)Float.parseFloat(m2.group(1));
+									String c = F2Cdeg(f);
+									m2.appendReplacement(sb, c);
+								}
+
+								m2.appendTail(sb);
+
+								forecastStr = sb.toString();
+							}
+
+							if(!metric && !isFahrenheit)
+							{
+								Pattern TEMP_C = Pattern.compile("(\\d+(?:\\.\\d+)?)\\s*°C");
+
+								Matcher m2 = TEMP_C.matcher(forecastStr);
+
+								StringBuilder sb = new StringBuilder();
+
+								while(m2.find())
+								{
+									int c = (int)Float.parseFloat(m2.group(1));
+									String f = C2Fdeg(c);
+									m2.appendReplacement(sb, f);
+								}
+
+								m2.appendTail(sb);
+
+								forecastStr = sb.toString();
+							}
+						}
+					} catch(Exception e) {
+						LogMessage("Error! e: " + e.getMessage(), true);
+						doStackOutput(e);
+					}
+
+					continue;
+				}
 
 				if(!before.equals("5"))
 					continue;
 
-				JSONArray jarr;
-
 				try
 				{
 					jarr = new JSONArray(jsonPart);
-					JSONObject jobj;
 
 					jarr = jarr.getJSONObject(3).getJSONArray("children").getJSONArray(4)
 							.getJSONObject(3).getJSONArray("children").getJSONArray(2)
 							.getJSONObject(3).getJSONArray("children").getJSONArray(1)
 							.getJSONArray(1).getJSONObject(3).getJSONArray("dailyForecasts");
 
-					//CustomDebug.writeOutput(weeWXApp.getInstance(), "yahoo" + i + "-",
-					//		jarr.toString(4), false, null);
+					SimpleDateFormat sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
 
 					for(int i = 0; i < jarr.length(); i++)
 					{
+						Day day = new Day();
+
 						jobj = jarr.getJSONObject(i);
 
-						//  TODO: Fixme!
+						day.timestamp = System.currentTimeMillis() + (86_400_000L * i);
 
-						//     "date": "Today",
-						//    "highTemperature": 91,
-						//    "lowTemperature": 56,
-						//    "unit": "°F",
-						//    "icon": "PartlySunny",
-						//    "iconLabel": "Mostly Sunny",
+						day.day = sdf2.format(day.timestamp);
 
+						if(i == 0)
+							day.text = forecastStr;
 
-						CustomDebug.writeOutput(weeWXApp.getInstance(), "yahoo" + i,
-								jobj.toString(4), false, null);
+						if(metric)
+						{
+							if(jobj.getString("unit").equals("°F"))
+							{
+								try
+								{
+									day.max = F2Cdeg(jobj.getInt("highTemperature"));
+								} catch(Exception ignored) {}
+
+								try
+								{
+									day.min = F2Cdeg(jobj.getInt("lowTemperature"));
+								} catch(Exception ignored) {}
+
+							} else {
+
+								try
+								{
+									day.max = jobj.getInt("highTemperature") + "&deg;C";
+								} catch(Exception ignored) {}
+
+								try
+								{
+									day.min = jobj.getInt("lowTemperature") + "&deg;C";
+								} catch(Exception ignored) {}
+							}
+						} else {
+							if(jobj.getString("unit").equals("°F"))
+							{
+								try
+								{
+									day.max = jobj.getInt("highTemperature") + "&deg;F";
+								} catch(Exception ignored) {}
+
+								try
+								{
+									day.min = jobj.getInt("lowTemperature") + "&deg;F";
+								} catch(Exception ignored) {}
+							} else {
+								try
+								{
+									day.max = C2Fdeg(jobj.getInt("highTemperature"));
+								} catch(Exception ignored) {}
+
+								try
+								{
+									day.min = F2Cdeg(jobj.getInt("lowTemperature"));
+								} catch(Exception ignored) {}
+							}
+						}
+
+						String content = null;
+						String[] options = new String[]{"32x32_1", "32x32_0", "24x24_0"};
+
+						for(String option : options)
+						{
+							day.icon = "icons/yahoo/yahoo_" + jobj.getString("iconLabel")
+									.replaceAll(" ", "_") + "_" + option + "_light.svg";
+							content = weeWXApp.loadFileFromAssets(day.icon);
+							if(content != null && !content.isBlank())
+							{
+								day.icon = "file:///android_asset/" + day.icon;
+								break;
+							}
+						}
+
+						if(content == null || content.isBlank())
+						{
+							if(day.icon != null && !day.icon.isBlank())
+							{
+								String base_url = "https://odiousapps.com/yahoo-missing-svg.php";
+
+								LogMessage("Unable to locate SVG: " + day.icon);
+								uploadString(base_url, Map.of("svgMissingName", day.icon));
+							}
+
+							day.icon = null;
+						}
+
+						days.add(day);
 					}
 				} catch(Exception e) {
 					doStackOutput(e);
 				}
 			}
-
-//			JSONObject jobj = jarr.getJSONObject(3);
-
-//			CustomDebug.writeOutput(weeWXApp.getInstance(), "yahoo", jobj.toString(4), false, null);
-
 		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
 
-		//return new String[]{generateForecast(days, timestamp, showHeader), desc};
-		return null;
+		return new String[]{generateForecast(days, timestamp, showHeader), desc};
 	}
 
 	static void SendIntent(String action)
 	{
+		if(action.equals(REFRESH_WEATHER_INTENT) && lastWeatherRefresh + 5 > getCurrTime())
+			return;
+
+		lastWeatherRefresh = getCurrTime();
+
 		StackTraceElement caller = new Exception().getStackTrace()[1];
 		String callerClass  = caller.getClassName();
 		String callerMethod = caller.getMethodName();
@@ -3102,6 +3413,48 @@ class weeWXAppCommon
 		return null;
 	}
 
+	static void uploadString(String url, Map<String,String> args)
+	{
+		if(args == null || args.isEmpty())
+		{
+			LogMessage("Attempted uploading nothing, skipping...", true);
+			return;
+		}
+
+		LogMessage("uploading text to " + url, true);
+/*
+		HttpUrl.Builder urlBuilder = HttpUrl.parse(url).newBuilder();
+
+		for(Map.Entry<String, String> arg: args.entrySet())
+			urlBuilder.addQueryParameter(arg.getKey(), arg.getValue());
+
+		String internalurl = urlBuilder.build().toString();
+*/
+		//LogMessage("New url: " + internalurl, true);
+
+		FormBody.Builder fb = new FormBody.Builder();
+
+		for(Map.Entry<String, String> arg: args.entrySet())
+			fb.add(arg.getKey(), arg.getValue());
+
+		RequestBody formBody = fb.build();
+
+		OkHttpClient client = NetworkClient.getInstance(url);
+		Request request = NetworkClient.getRequest(false, url)
+				.newBuilder().post(formBody).build();
+
+		try(Response response = client.newCall(request).execute())
+		{
+			if(response.isSuccessful())
+				LogMessage("Successfully uploaded something... response: " + response.body().string(), true);
+			else
+				LogMessage("Failed to upload something... response: " + response.body().string(), true);
+		} catch(Exception e) {
+			LogMessage("Error! e: " + e.getMessage(), true);
+			doStackOutput(e);
+		}
+	}
+
 	static void publish(File f)
 	{
 		LogMessage("wrote to " + f.getAbsolutePath());
@@ -3126,7 +3479,7 @@ class weeWXAppCommon
 
 	static boolean getForecast(boolean forced, boolean calledFromweeWXApp)
 	{
-		String fctype = GetStringPref("fctype", weeWXApp.fctype_default);
+		String fctype = KeyValue.fctype;
 		if(fctype == null || fctype.isBlank())
 		{
 			LogMessage("fctype == null || fctype.isBlank(), skipping...");
@@ -4010,6 +4363,26 @@ class weeWXAppCommon
 		return cssToSVG(cssname, null);
 	}
 
+	static float C2F(float C)
+	{
+		return C * 9.0f / 5.0f + 32.0f;
+	}
+
+	static float F2C(float F)
+	{
+		return (F - 32.0f) / 1.8f;
+	}
+
+	static String C2Fdeg(int C)
+	{
+		return Math.round(C2F(C)) + "&deg;F";
+	}
+
+	static String F2Cdeg(int F)
+	{
+		return Math.round(F2C(F)) + "&deg;C";
+	}
+
 	static String cssToSVG(String cssname, Integer Angle)
 	{
 		if(cssname == null || cssname.isBlank())
@@ -4021,8 +4394,6 @@ class weeWXAppCommon
 			return cssname;
 
 		String tmpStr = "<img class='wi'";
-
-		tmpStr += " class='wi'";
 
 		if((cssname.equals("wi-wind-deg") && Angle != null) || KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
 		{

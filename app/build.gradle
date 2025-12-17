@@ -8,8 +8,8 @@ android {
         applicationId = "com.odiousapps.weewxweather"
         minSdk = 24
         targetSdk = 36
-	    versionName = "1.99.67beta"
-        versionCode = 1099067
+	    versionName = "1.99.68beta"
+        versionCode = 1099068
     }
 
 	buildFeatures {
@@ -54,7 +54,9 @@ androidComponents {
 
 dependencies {
 	coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.5")
+
 	implementation fileTree(dir: "libs", include: ["*.jar"])
+
 	implementation("com.google.android.material:material:1.13.0")
 	implementation("androidx.core:core:1.17.0")
 	implementation("androidx.fragment:fragment:1.8.9")

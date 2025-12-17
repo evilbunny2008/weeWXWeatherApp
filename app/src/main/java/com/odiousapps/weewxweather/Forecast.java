@@ -519,8 +519,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void generateForecast(String forecastData)
 	{
-		weeWXAppCommon.LogMessage("Getting fctype from shared prefs...");
-		String fctype = weeWXAppCommon.GetStringPref("fctype", weeWXApp.fctype_default);
+		String fctype = KeyValue.fctype;
 		if(fctype == null || fctype.isBlank())
 		{
 			showTextFC("Forecast type is blank...");
