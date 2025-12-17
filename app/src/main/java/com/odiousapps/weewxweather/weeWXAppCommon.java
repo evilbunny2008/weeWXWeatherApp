@@ -30,6 +30,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.BufferedReader;
@@ -48,6 +49,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -58,6 +60,7 @@ import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPOutputStream;
 
@@ -911,6 +914,11 @@ class weeWXAppCommon
 			if(timestamp > 0)
 				updateCacheTime(timestamp);
 
+//			timestamp = System.currentTimeMillis();
+			Date date = new Date(timestamp);
+			SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
+			LogMessage("Last updated forecast: " + sdf3.format(date), true);
+
 			JSONArray mydays = jobj.getJSONArray("data");
 			for(int i = 0; i < mydays.length(); i++)
 			{
@@ -928,30 +936,22 @@ class weeWXAppCommon
 					try
 					{
 						day.max = mydays.getJSONObject(i).getInt("temp_max") + "&deg;C";
-					} catch(Exception e) {
-						// ignore errors
-					}
+					} catch(Exception ignored) {}
 
 					try
 					{
 						day.min = mydays.getJSONObject(i).getInt("temp_min") + "&deg;C";
-					} catch(Exception e) {
-						// ignore errors
-					}
+					} catch(Exception ignored) {}
 				} else {
 					try
 					{
 						day.max = Math.round((mydays.getJSONObject(i).getInt("temp_max") * 9.0 / 5.0) + 32.0) + "&deg;F";
-					} catch(Exception e) {
-						// ignore errors
-					}
+					} catch(Exception ignored) {}
 
 					try
 					{
 						day.min = Math.round((mydays.getJSONObject(i).getInt("temp_min") * 9.0 / 5.0) + 32.0) + "&deg;F";
-					} catch(Exception e) {
-						// ignore errors
-					}
+					} catch(Exception ignored) {}
 				}
 
 				if(!mydays.getJSONObject(i).getString("extended_text").equals("null"))
@@ -2483,9 +2483,13 @@ class weeWXAppCommon
 				String mydesc = mybits[2].strip();
 				String[] range = mybits[3].split(" - ", 2);
 
-				String fileName = "wz" + myimg.replaceAll("-", "_") + ".png";
+				String fileName = myimg.replaceAll("-", "_");
+
+				fileName = "wz" + fileName.substring(fileName.lastIndexOf('/') + 1, fileName.length() - 2) + ".png";
 
 				day.icon = "file:///android_asset/icons/" + fileName;
+
+				LogMessage("WZ URI: " + fileName, true);
 
 				day.max = range[1];
 				day.min = range[0];
@@ -2521,82 +2525,84 @@ class weeWXAppCommon
 		List<Day> days = new ArrayList<>();
 		long timestamp = getRSSms();
 		String desc;
-		Document doc;
 
 		try
 		{
-			String[] bits = data.split("data-reactid='7'>", 8);
-			String[] b = bits[7].split("</h1>", 2);
-			String town = b[0];
-			String rest = b[1];
-			b = rest.split("data-reactid='8'>", 2)[1].split("</div>", 2);
-			String country = b[0];
-			rest = b[1];
+			Pattern p = Pattern.compile("self.__next_f\\.push\\(\\[\\d+,\"(.*)\"]\\)", Pattern.DOTALL);
 
-			desc = town.strip() + ", " + country.strip();
-			int[] daynums = new int[]{196, 221, 241, 261, 281, 301, 321, 341, 361, 381};
-			for (int startid : daynums)
+			Document doc = Jsoup.parse(data);
+
+			Elements scripts = doc.select("script");
+
+			int count = 0;
+			for(Element element : scripts)
 			{
-				Day day = new Day();
+				Matcher m = p.matcher(element.data());
+				if(!m.find())
+					continue;
 
-				int endid;
-				long last_ts = System.currentTimeMillis();
+				String payload = m.group(1);
 
-				if(startid == 196)
-					endid = startid + 24;
-				else
-					endid = startid + 19;
+				String unescaped = payload.replace("\\\"", "\"").replace("\\\\", "\\");
 
-				String tmpstr = rest.split("<span data-reactid='" + startid + "'>", 2)[1];
-				bits = tmpstr.split("data-reactid='" + endid + "'>", 2);
-				tmpstr = bits[0];
-				rest = bits[1];
-				String dow = tmpstr.split("</span>", 2)[0].strip();
-				Locale locale = new Locale.Builder().setLanguage("en").setRegion("US").build();
-				day.timestamp = convertDaytoTS(dow, locale, last_ts);
-				SimpleDateFormat sdf = new SimpleDateFormat("EEEE", Locale.getDefault());
-				day.day = sdf.format(day.timestamp);
+				int colon = unescaped.indexOf(':');
+				if(colon < 1)
+					continue;
 
-				day.text = tmpstr.split("<img alt='", 2)[1].split("'", 2)[0].strip();
+				String jsonPart = unescaped.substring(colon + 1);
+				String before = unescaped.substring(0, colon);
 
-				day.max = tmpstr.split("data-reactid='" + (startid + 10) + "'>", 2)[1];
-				day.max = day.max.split("</span>", 2)[0].strip();
-				day.min = tmpstr.split("data-reactid='" + (startid + 13) + "'>", 2)[1];
-				day.min = day.min.split("</span>", 2)[0].strip();
+				if(!before.equals("5"))
+					continue;
 
-				doc = Jsoup.parse(day.max.strip());
-				day.max = doc.text();
+				JSONArray jarr;
 
-				doc = Jsoup.parse(day.min.strip());
-				day.min = doc.text();
-
-				day.max = day.max.substring(0, day.max.length() - 1);
-				day.min = day.min.substring(0, day.min.length() - 1);
-
-				if(metric)
+				try
 				{
-					day.max = Math.round((Double.parseDouble(day.max) - 32.0) * 5.0 / 9.0) + "&deg;C";
-					day.min = Math.round((Double.parseDouble(day.min) - 32.0) * 5.0 / 9.0) + "&deg;C";
-				} else
-				{
-					day.max += "&deg;F";
-					day.min += "&deg;F";
+					jarr = new JSONArray(jsonPart);
+					JSONObject jobj;
+
+					jarr = jarr.getJSONObject(3).getJSONArray("children").getJSONArray(4)
+							.getJSONObject(3).getJSONArray("children").getJSONArray(2)
+							.getJSONObject(3).getJSONArray("children").getJSONArray(1)
+							.getJSONArray(1).getJSONObject(3).getJSONArray("dailyForecasts");
+
+					//CustomDebug.writeOutput(weeWXApp.getInstance(), "yahoo" + i + "-",
+					//		jarr.toString(4), false, null);
+
+					for(int i = 0; i < jarr.length(); i++)
+					{
+						jobj = jarr.getJSONObject(i);
+
+						//  TODO: Fixme!
+
+						//     "date": "Today",
+						//    "highTemperature": 91,
+						//    "lowTemperature": 56,
+						//    "unit": "°F",
+						//    "icon": "PartlySunny",
+						//    "iconLabel": "Mostly Sunny",
+
+
+						CustomDebug.writeOutput(weeWXApp.getInstance(), "yahoo" + i,
+								jobj.toString(4), false, null);
+					}
+				} catch(Exception e) {
+					doStackOutput(e);
 				}
-
-				String fileName = tmpstr.split("<img alt='", 2)[1].split("'", 2)[1];
-				fileName = fileName.split("src='", 2)[1].split("'", 2)[0].strip();
-
-				day.icon = "file:///android_asset/icons/" + fileName;
-
-				LogMessage(day.toString());
-				days.add(day);
 			}
+
+//			JSONObject jobj = jarr.getJSONObject(3);
+
+//			CustomDebug.writeOutput(weeWXApp.getInstance(), "yahoo", jobj.toString(4), false, null);
+
 		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
 
-		return new String[]{generateForecast(days, timestamp, showHeader), desc};
+		//return new String[]{generateForecast(days, timestamp, showHeader), desc};
+		return null;
 	}
 
 	static void SendIntent(String action)
@@ -3283,6 +3289,24 @@ class weeWXAppCommon
 			return null;
 
 		LogMessage("reallyGetForecast() forcecastData: " + forecastData);
+
+		try
+		{
+			JSONObject jobj = new JSONObject(forecastData);
+			JSONObject jo = jobj.getJSONObject("metadata");
+
+			LogMessage("issue_time: " + jo.getString("issue_time"), true);
+/*
+			jo.put("issue_time", Instant.ofEpochSecond(getCurrTime()).toString());
+			jobj.put("metadata", jo);
+			forecastData = jobj.toString();
+
+			jobj = new JSONObject(forecastData);
+			jo = jobj.getJSONObject("metadata");
+
+			LogMessage("New issue_time: " + jo.getString("issue_time"), true);
+*/
+		} catch(Exception ignored) {}
 
 		LogMessage("updating rss cache");
 		SetStringPref("forecastData", forecastData);

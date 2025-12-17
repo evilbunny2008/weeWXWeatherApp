@@ -52,6 +52,8 @@ html, body
 	display: flex;
 	flex-direction: column;
 	margin: 0 10px 10px 10px;
+	max-width: 500px;
+	width: 100%;
 }
 .topRow
 {

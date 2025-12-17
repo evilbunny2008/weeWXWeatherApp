@@ -37,13 +37,14 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private MaterialCheckBox floatingCheckBox;
 	private boolean isVisible = false;
 	private MainActivity activity;
+
 	private final ViewTreeObserver.OnScrollChangedListener forecastScrollListener = () ->
-														swipeLayout1.setEnabled(floatingCheckBox.getVisibility() != View.VISIBLE &&
-																				forecastWebView.getScrollY() == 0);
+						swipeLayout1.setEnabled(floatingCheckBox.getVisibility() != View.VISIBLE &&
+						forecastWebView.getScrollY() == 0);
+
 	private final ViewTreeObserver.OnScrollChangedListener radarScrollListener = () ->
-														swipeLayout2.setEnabled(floatingCheckBox.getVisibility() == View.VISIBLE &&
-														                        !floatingCheckBox.isChecked() &&
-														                        radarWebView.getScrollY() == 0);
+						swipeLayout2.setEnabled(floatingCheckBox.getVisibility() == View.VISIBLE &&
+                        !floatingCheckBox.isChecked() && radarWebView.getScrollY() == 0);
 
 	public View onCreateView(@NonNull LayoutInflater inflater,
 	                         @Nullable ViewGroup container,
@@ -512,7 +513,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			}
 		}
 
-		weeWXAppCommon.LogMessage("getForecast returned some content...");
+		weeWXAppCommon.LogMessage("getForecast returned some content...", true);
 		generateForecast(KeyValue.forecastData);
 	}
 
@@ -753,6 +754,10 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		fc += weeWXApp.html_footer;
 
+		if(weeWXAppCommon.debug_html)
+			CustomDebug.writeOutput(requireContext(), "forecast", fc, isVisible(), requireActivity());
+
+
 		String finalfc = fc;
 
 		forecastWebView.post(() -> forecastWebView.loadDataWithBaseURL("file:///android_asset/", finalfc,
@@ -767,15 +772,15 @@ public class Forecast extends Fragment implements View.OnClickListener
 		});
 
 		String ext = "_light.svg";
-		if(KeyValue.theme == R.style.AppTheme_weeWXApp_Dark_Common)
+		if(KeyValue.theme != R.style.AppTheme_weeWXApp_Dark_Common)
 			ext = "_dark.svg";
 
 		String finalext = ext;
 
 		switch(fctype.toLowerCase(Locale.ENGLISH))
 		{
-			case "yahoo" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/purple.png")));
-			case "weatherzone" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wz.png")));
+			case "yahoo" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/yahoo" + finalext)));
+			case "weatherzone" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/wz" + finalext)));
 			case "yr.no" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/yrno.png")));
 			case "met.no" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_no.png")));
 			case "wmo.int" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wmo.png")));

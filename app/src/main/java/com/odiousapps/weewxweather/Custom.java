@@ -24,6 +24,7 @@ public class Custom extends Fragment
 	private SafeWebView wv;
 	private SwipeRefreshLayout swipeLayout;
 	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
+	private static long lastRefresh = 0;
 
 	@Nullable
 	@Override
@@ -43,6 +44,7 @@ public class Custom extends Fragment
 			swipeLayout.setRefreshing(true);
 			weeWXAppCommon.LogMessage("onRefresh();");
 			loadCustom(true);
+			lastRefresh = weeWXAppCommon.getCurrTime();
 		});
 
 		return view;
@@ -184,6 +186,13 @@ public class Custom extends Fragment
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
 		{
+			long currtime = weeWXAppCommon.getCurrTime();
+
+			if(lastRefresh + 30 > currtime)
+				return;
+
+			lastRefresh = currtime;
+
 			int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
 			if(pos > 0 && KeyValue.isVisible)
 				loadCustom(true);
