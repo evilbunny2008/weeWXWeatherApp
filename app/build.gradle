@@ -8,8 +8,8 @@ android {
         applicationId = "com.odiousapps.weewxweather"
         minSdk = 24
         targetSdk = 36
-	    versionName = "1.99.68beta"
-        versionCode = 1099068
+	    versionName = "1.99.69beta"
+        versionCode = 1099069
     }
 
 	buildFeatures {
@@ -61,7 +61,7 @@ dependencies {
 	implementation("androidx.core:core:1.17.0")
 	implementation("androidx.fragment:fragment:1.8.9")
 	implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.2.0")
-	implementation("androidx.webkit:webkit:1.14.0")
+	implementation("androidx.webkit:webkit:1.15.0")
 
 	implementation("com.caverock:androidsvg:1.4")
 

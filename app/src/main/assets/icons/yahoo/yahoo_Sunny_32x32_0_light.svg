@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="false" focusable="false" class="flex-none" aria-label="Sunny" role="img">
+ <g class="uds-light-mode-icon">
+  <path fill="#FFD333" d="M16 8.7a7.3 7.3 0 1 1 0 14.6 7.3 7.3 0 0 1 0-14.6"></path><path fill="#000000" d="M16 7a9 9 0 1 1 0 18 9 9 0 0 1 0-18m0 1.7a7.3 7.3 0 1 0 0 14.6 7.3 7.3 0 0 0 0-14.6m.85-7.7v4.286h-1.7V1zm0 25.714v4.287h-1.7v-4.287zM31 16.85h-4.286v-1.7H31zm-25.714 0H1v-1.7h4.286z"></path><path fill="#000000" d="M5.286 16.85H1v-1.7h4.286zm20.72 10.357-3.03-3.03 1.2-1.202 3.031 3.03zM7.823 9.025l-3.03-3.031 1.2-1.202 3.032 3.031zm-3.03 16.981 3.03-3.03 1.202 1.2-3.03 3.031zM22.975 7.823l3.031-3.03 1.202 1.2-3.031 3.032z"></path>
+ </g>
+</svg>
+

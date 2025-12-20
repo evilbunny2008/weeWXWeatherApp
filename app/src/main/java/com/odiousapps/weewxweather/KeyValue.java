@@ -35,7 +35,7 @@ class KeyValue
 	static long LastDownloadTime = 0;
 	static String LastWeatherError = null;
 
-	static List<KV> yahoo = new ArrayList<>();
+	static final List<KV> yahoo = new ArrayList<>();
 
 	static void loadYahooRGB2SVGTable()
 	{

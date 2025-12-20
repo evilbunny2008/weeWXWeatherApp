@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="false" focusable="false" class="flex-none" aria-label="Sunset" role="img">
+ <g class="uds-dark-mode-icon">
+  <path fill="#644300" d="M31 23.9h-4.286v-1.8H31z"></path><path fill="#FFFFFF" d="M5.286 23.9H1v-1.8h4.286z"></path><path fill="#644300" d="M5.286 23.9H1v-1.8h4.286zm2.501-7.84-3.03-3.03 1.273-1.273 3.03 3.03zm15.153-1.273 3.03-3.03 1.274 1.273-3.031 3.03zM16 16a7.2 7.2 0 0 1 7.155 8H8.845A7.2 7.2 0 0 1 16 16"></path><path fill="#000000" d="M10.546 6.454h10.908L16 11.908z"></path>
+ </g>
+</svg>

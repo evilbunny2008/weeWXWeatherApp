@@ -1,7 +1,6 @@
 package com.odiousapps.weewxweather;
 
 import android.app.Activity;
-import android.app.NotificationManager;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
@@ -75,7 +74,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 @SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref", "ConstantConditions",
-		"SameReturnValue", "BooleanMethodIsAlwaysInverted", "SetTextI18n"})
+		"SameReturnValue", "BooleanMethodIsAlwaysInverted", "SetTextI18n", "StringBufferMayBeStringBuilder"})
 class weeWXAppCommon
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
@@ -2104,72 +2103,32 @@ class weeWXAppCommon
 		if(data.isBlank())
 			return null;
 
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
+		SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE d", Locale.getDefault());
+
 		List<Day> days = new ArrayList<>();
-		String desc;
-		long timestamp;
+		String desc = "";
+		long timestamp = 0;
 
 		try
 		{
-			JSONObject jobj = new XmlToJson.Builder(data).build().toJson();
+			JSONObject jobj = new JSONObject(data);
 			if(jobj == null)
 				return null;
 
-			jobj = jobj.getJSONObject("weatherdata");
-			JSONObject location = jobj.getJSONObject("location");
-			desc = location.getString("name") + ", " + location.getString("country");
+			jobj = jobj.getJSONObject("properties");
+			JSONObject meta = jobj.getJSONObject("meta");
+			JSONObject timeseries = jobj.getJSONObject("timeseries");
+			JSONObject units = jobj.getJSONObject("units");
+			String updated_at = meta.getString("updated_at");
 
-			timestamp = getRSSms();
+			Date df = sdf.parse(updated_at);
+			if(df != null)
+				timestamp = df.getTime();
 
-			JSONArray jarr = jobj.getJSONObject("forecast")
-					.getJSONObject("tabular")
-					.getJSONArray("time");
+			if(timestamp > 0)
+				updateCacheTime(timestamp);
 
-			for(int i = 0; i < jarr.length(); i++)
-			{
-				Day day = new Day();
-				String from = jarr.getJSONObject(i).getString("from");
-				String to = jarr.getJSONObject(i).getString("to");
-				//String period = jarr.getJSONObject(i).getString("period");
-				JSONObject symbol = jarr.getJSONObject(i).getJSONObject("symbol");
-				JSONObject precipitation = jarr.getJSONObject(i).getJSONObject("precipitation");
-				JSONObject temperature = jarr.getJSONObject(i).getJSONObject("temperature");
-				JSONObject windDirection = jarr.getJSONObject(i).getJSONObject("windDirection");
-				JSONObject windSpeed = jarr.getJSONObject(i).getJSONObject("windSpeed");
-
-				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-				day.timestamp = 0;
-				Date df = sdf.parse(from);
-				if(df != null)
-					day.timestamp = df.getTime();
-
-				sdf = new SimpleDateFormat("EEEE d", Locale.getDefault());
-				String date = sdf.format(day.timestamp);
-
-				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
-				from = sdf.format(day.timestamp);
-
-				sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
-				long mdate = 0;
-				df = sdf.parse(to);
-				if(df != null)
-					mdate = df.getTime();
-
-				sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
-				to = sdf.format(mdate);
-
-				day.day = date + ": " + from + "-" + to;
-
-				String code = symbol.getString("var");
-
-				String fileName = "yrno" + code + ".png";
-
-				day.icon = "file:///android_asset/icons/" + fileName;
-
-				day.max = temperature.getString("value") + "&deg;C";
-				day.min = precipitation.getString("value") + "mm";
-				day.text = windSpeed.getString("name") + ", " + windSpeed.get("mps") + "m/s from the " + windDirection.getString("name");
-				days.add(day);
-			}
 		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
@@ -2749,7 +2708,7 @@ class weeWXAppCommon
 
 								Matcher m2 = TEMP_F.matcher(forecastStr);
 
-								StringBuilder sb = new StringBuilder();
+								StringBuffer sb = new StringBuffer();
 
 								while(m2.find())
 								{
@@ -2769,7 +2728,7 @@ class weeWXAppCommon
 
 								Matcher m2 = TEMP_C.matcher(forecastStr);
 
-								StringBuilder sb = new StringBuilder();
+								StringBuffer sb = new StringBuffer();
 
 								while(m2.find())
 								{

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="false" focusable="false" class="flex-none" aria-label="Sunset" role="img">
+ <g class="uds-light-mode-icon">
+  <path fill="#000000" d="M31 23.9h-4.286v-1.8H31zm-25.714 0H1v-1.8h4.286z"></path><path fill="#000000" d="M5.286 23.9H1v-1.8h4.286zm2.501-7.84-3.03-3.03 1.273-1.273 3.03 3.03zm15.153-1.273 3.03-3.03 1.274 1.273-3.031 3.03z"></path><path fill="#FFD333" d="M16 15.8a7.2 7.2 0 0 1 7.155 6.4H8.845A7.2 7.2 0 0 1 16 15.8"></path><path fill="#000000" d="M16 14a9 9 0 0 1 8.943 10H7.057A9 9 0 0 1 16 14m0 1.8a7.2 7.2 0 0 0-7.155 6.4h14.31A7.2 7.2 0 0 0 16 15.8m-5.454-9.346h10.908L16 11.908z"></path>
+ </g>
+</svg>
+
