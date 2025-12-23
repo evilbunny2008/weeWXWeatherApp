@@ -53,18 +53,18 @@ public class WidgetProvider extends AppWidgetProvider
 		updateAppWidget(context, appWidgetManager, new int[]{appWidgetId});
 	}
 
-	static void setDefaultColoursAndText(Context context, RemoteViews views, int bgColour, int fgColour)
+	static void setDefaultColoursAndText(Context context, RemoteViews views, int widgetBG, int widgetFG)
 	{
-		weeWXAppCommon.LogMessage("fgColour = " + to_ARGB_hex(fgColour));
-		weeWXAppCommon.LogMessage("bgColour = " + to_ARGB_hex(bgColour));
+		weeWXAppCommon.LogMessage("widgetBG = " + to_ARGB_hex(widgetBG));
+		weeWXAppCommon.LogMessage("widgetFG = " + to_ARGB_hex(widgetFG));
 
-		views.setInt(R.id.widget_frame, "setBackgroundColor", bgColour);
+		views.setInt(R.id.widget_frame, "setBackgroundColor", widgetBG);
 
-		views.setTextColor(R.id.widget_location, fgColour);
-		views.setTextColor(R.id.widget_time, fgColour);
-		views.setTextColor(R.id.widget_temperature, fgColour);
-		views.setTextColor(R.id.widget_wind, fgColour);
-		views.setTextColor(R.id.widget_rain, fgColour);
+		views.setTextColor(R.id.widget_location, widgetFG);
+		views.setTextColor(R.id.widget_time, widgetFG);
+		views.setTextColor(R.id.widget_temperature, widgetFG);
+		views.setTextColor(R.id.widget_wind, widgetFG);
+		views.setTextColor(R.id.widget_rain, widgetFG);
 
 		views.setTextViewText(R.id.widget_location, "");
 		views.setTextViewText(R.id.widget_time, "");
@@ -95,10 +95,10 @@ public class WidgetProvider extends AppWidgetProvider
 
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
 
-		int bgColour = weeWXApp.bgColour_default;
-		int fgColour = weeWXApp.fgColour_default;
+		int widgetBG = weeWXApp.widgetBG_default;
+		int widgetFG = weeWXApp.widgetFG_default;
 
-		setDefaultColoursAndText(context, views, bgColour, fgColour);
+		setDefaultColoursAndText(context, views, widgetBG, widgetFG);
 
 		views.setTextViewText(R.id.widget_temperature, "Error!");
 
@@ -121,15 +121,15 @@ public class WidgetProvider extends AppWidgetProvider
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
 		weeWXAppCommon.LogMessage("RemoteViews built: " + views);
 
-		int bgColour = KeyValue.widgetBG;
-		int fgColour = KeyValue.widgetFG;
+		int widgetBG = (int)KeyValue.readVar("widgetBG", weeWXApp.widgetBG_default);
+		int widgetFG = (int)KeyValue.readVar("widgetFG", weeWXApp.widgetFG_default);
 
-		setDefaultColoursAndText(context, views, bgColour, fgColour);
+		setDefaultColoursAndText(context, views, widgetBG, widgetFG);
 
 		String tempText;
 		//float approxCharWidthDp = 8f;
 
-		String lastDownload = weeWXAppCommon.GetStringPref("LastDownload", weeWXApp.LastDownload_default);
+		String lastDownload = (String)KeyValue.readVar("LastDownload", null);
 		if(lastDownload != null && !lastDownload.isBlank())
 		{
 			String[] bits = lastDownload.split("\\|");
@@ -153,7 +153,7 @@ public class WidgetProvider extends AppWidgetProvider
 
 		views.setTextViewText(R.id.widget_temperature, tempText);
 
-		for(int widgetId : widgetIds)
+		for(int widgetId: widgetIds)
 			manager.updateAppWidget(widgetId, views);
 	}
 }

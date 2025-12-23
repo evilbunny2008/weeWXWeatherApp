@@ -10,8 +10,6 @@ import android.os.Build;
 import android.os.PowerManager;
 import android.provider.Settings;
 
-import java.text.SimpleDateFormat;
-import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -31,43 +29,43 @@ public class UpdateCheck extends BroadcastReceiver
 	@Override
 	public void onReceive(Context context, Intent i)
 	{
-		weeWXAppCommon.LogMessage("UpdateCheck.java onReceive() i.getAction(): " + i.getAction());
+		weeWXAppCommon.LogMessage("UpdateCheck.java onReceive() i.getAction(): " + i.getAction(), KeyValue.d);
 
 		if(context == null)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null");
+			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null", KeyValue.d);
 			return;
 		}
 
 		if(!weeWXAppCommon.UPDATECHECK.equals(i.getAction()))
 		{
-			weeWXAppCommon.LogMessage(i.getAction() + " != " + weeWXAppCommon.UPDATECHECK + ", skipping...");
+			weeWXAppCommon.LogMessage(i.getAction() + " != " + weeWXAppCommon.UPDATECHECK + ", skipping...", KeyValue.d);
 			return;
 		}
 
 		if(!weeWXAppCommon.checkConnection())
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping update due to wifi setting.");
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping update due to wifi setting.", KeyValue.d);
 			return;
 		}
 
 		long[] npwsll = weeWXAppCommon.getNPWSLL();
 		if(npwsll[1] <= 0)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, period is invalid or set to manual refresh only...");
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, period is invalid or set to manual refresh only...", KeyValue.d);
 			return;
 		}
 
 		if(npwsll[5] == 0)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, lastDownloadTime == 0, app hasn't been setup...");
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, lastDownloadTime == 0, app hasn't been setup...", KeyValue.d);
 			return;
 		}
 
-		int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		int pos = (int)KeyValue.readVar("updateInterval", weeWXApp.updateInterval_default);
 		if(pos == 6 && !KeyValue.isVisible)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, pos == 6 but app isn't visible...");
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, pos == 6 but app isn't visible...", KeyValue.d);
 			return;
 		}
 
@@ -102,48 +100,41 @@ public class UpdateCheck extends BroadcastReceiver
 		Context context = weeWXApp.getInstance();
 		if(context == null)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null");
-			return;
-		}
-
-		if(!canSetExact(context))
-		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java canSetExactAlarm is false, Skipping...");
+			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null", KeyValue.d);
 			return;
 		}
 
 		long[] npwsll = weeWXAppCommon.getNPWSLL();
 		if(npwsll[1] <= 0)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, period is invalid or set to manual refresh only...");
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, period is invalid or set to manual refresh only...", KeyValue.d);
 			return;
 		}
 
 		if(npwsll[5] == 0)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, lastDownloadTime == 0, app hasn't been setup...");
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, lastDownloadTime == 0, app hasn't been setup...", KeyValue.d);
 			return;
 		}
 
-		int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		int pos = (int)KeyValue.readVar("updateInterval", weeWXApp.updateInterval_default);
 		if(pos == 6 && !KeyValue.isVisible)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, pos == 6 but app isn't visible...");
+			weeWXAppCommon.LogMessage("UpdateCheck.java Skipping, pos == 6 but app isn't visible...", KeyValue.d);
 			return;
 		}
 
 		if(getPendingIntent(context, true) != null)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java An alarm is already set, did you forget to call cancel first? Skipping...");
+			weeWXAppCommon.LogMessage("UpdateCheck.java An alarm is already set, did you forget to call cancel first? Skipping...", KeyValue.d);
 			return;
 		}
 
-		SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
-		String string_time = sdf.format(npwsll[0]);
+		String string_time = weeWXAppCommon.sdf10.format(npwsll[0]);
 
 		weeWXAppCommon.LogMessage("UpdateCheck.java now: " + string_time);
 
-		string_time = sdf.format(npwsll[3]);
+		string_time = weeWXAppCommon.sdf10.format(npwsll[3]);
 		weeWXAppCommon.LogMessage("UpdateCheck.java start: " + string_time);
 		weeWXAppCommon.LogMessage("UpdateCheck.java period: " + Math.round(npwsll[1] / 1_000D) + "s");
 		weeWXAppCommon.LogMessage("UpdateCheck.java wait: " + Math.round(npwsll[2] / 1_000D) + "s");
@@ -221,7 +212,7 @@ public class UpdateCheck extends BroadcastReceiver
 		Context context = weeWXApp.getInstance();
 		if(context == null)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null");
+			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null", KeyValue.d);
 			return;
 		}
 
@@ -256,16 +247,16 @@ public class UpdateCheck extends BroadcastReceiver
 		Context context = weeWXApp.getInstance();
 		if(context == null)
 		{
-			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null");
+			weeWXAppCommon.LogMessage("UpdateCheck.java failed, context == null", KeyValue.d);
 			if(!weeWXApp.hasBootedFully)
 				weeWXApp.hasBootedFully = true;
 			return;
 		}
 
-		int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+		int pos = (int)KeyValue.readVar("updateInterval", weeWXApp.updateInterval_default);
 		if(pos < 0)
 		{
-			weeWXAppCommon.LogMessage("Invalid update frequency...");
+			weeWXAppCommon.LogMessage("Invalid update frequency...", KeyValue.d);
 			if(!weeWXApp.hasBootedFully)
 				weeWXApp.hasBootedFully = true;
 			return;
@@ -273,7 +264,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 		if(pos == 0)
 		{
-			weeWXAppCommon.LogMessage("update interval set to manual update... skipping...");
+			weeWXAppCommon.LogMessage("update interval set to manual update... skipping...", KeyValue.d);
 			if(!weeWXApp.hasBootedFully)
 				weeWXApp.hasBootedFully = true;
 			return;
@@ -281,7 +272,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 		if(pos == 6 && !KeyValue.isVisible)
 		{
-			weeWXAppCommon.LogMessage("update interval set to manual update and app not visible... skipping...");
+			weeWXAppCommon.LogMessage("update interval set to manual update and app not visible... skipping...", KeyValue.d);
 			if(!weeWXApp.hasBootedFully)
 				weeWXApp.hasBootedFully = true;
 			return;
@@ -289,7 +280,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 		if(!weeWXAppCommon.checkConnection())
 		{
-			weeWXAppCommon.LogMessage("WiFi needed but unavailable... skipping...");
+			weeWXAppCommon.LogMessage("WiFi needed but unavailable... skipping...", KeyValue.d);
 			if(!weeWXApp.hasBootedFully)
 				weeWXApp.hasBootedFully = true;
 			return;
@@ -303,18 +294,16 @@ public class UpdateCheck extends BroadcastReceiver
 
 			if(npwsll[1] <= 0)
 			{
-				weeWXAppCommon.LogMessage("Period is invalid or set to manual update only... skipping...");
+				weeWXAppCommon.LogMessage("Period is invalid or set to manual update only... skipping...", KeyValue.d);
 				if(!weeWXApp.hasBootedFully)
 					weeWXApp.hasBootedFully = true;
 				return;
 			}
 
-			SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy HH:mm:ss", Locale.getDefault());
-
-			String string_time = sdf.format(npwsll[5]);
+			String string_time = weeWXAppCommon.sdf10.format(npwsll[5]);
 			weeWXAppCommon.LogMessage("UpdateCheck.java lastDownloadTime: " + string_time);
 
-			string_time = sdf.format(npwsll[4]);
+			string_time = weeWXAppCommon.sdf10.format(npwsll[4]);
 			weeWXAppCommon.LogMessage("UpdateCheck.java lastStart: " + string_time);
 
 			if(npwsll[5] >= npwsll[4])
@@ -370,10 +359,10 @@ public class UpdateCheck extends BroadcastReceiver
 				                          "false, " + onAppStart + ")...");
 				weeWXAppCommon.getForecast(false, onAppStart);
 
-				String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+				String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 				if(radtype != null && radtype.equals("image"))
 				{
-					String radarURL = weeWXAppCommon.GetStringPref("RADAR_URL", weeWXApp.RADAR_URL_default);
+					String radarURL = (String)KeyValue.readVar("RADAR_URL", weeWXApp.RADAR_URL_default);
 					if(radarURL != null && !radarURL.isBlank())
 					{
 						weeWXAppCommon.LogMessage("UpdateCheck.java executor.submit() weeWXAppCommon.getRadarImage(" +
@@ -390,7 +379,7 @@ public class UpdateCheck extends BroadcastReceiver
 				                          "false, " + onAppStart + ")...");
 				weeWXAppCommon.getWebcamImage(false, onAppStart);
 			} catch(Exception e) {
-				weeWXAppCommon.LogMessage("Error! e: " + e, true);
+				weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
 			}
 
 			if(!weeWXApp.hasBootedFully)

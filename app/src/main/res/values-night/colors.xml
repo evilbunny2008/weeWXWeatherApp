@@ -3,6 +3,7 @@
 	<!-- Common colour names -->
 	<color name="White">@android:color/white</color>
 	<color name="Black">@android:color/black</color>
+	<color name="transparent">#00000000</color>
 	<color name="LightPrussianBlue">#FF00487B</color>
 	<color name="AlmostBlack">#FF121212</color>
 	<color name="LightBlueAccent">#FF82B1FF</color>
@@ -11,8 +12,8 @@
 	<color name="LightGray">#FFE0E0E0</color>
 
 	<!-- Night Colours -->
-	<color name="widgetBackgroundColour">@color/Black</color>
-	<color name="widgetTextColour">@color/White</color>
+	<color name="appBackgroundColour">@color/Black</color>
+	<color name="appTextColour">@color/White</color>
 	<color name="MyAppNavBarColour">#FF3F51B5</color>
 	<color name="MyAppNavBarTextColour">@color/White</color>
 	<color name="tabIndicatorColor">#FF03A9F4</color>

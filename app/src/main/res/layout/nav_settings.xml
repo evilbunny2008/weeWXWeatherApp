@@ -204,27 +204,6 @@
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.textfield.TextInputLayout
-			android:id="@+id/fgTextInputLayout"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="10dp"
-			android:hint="@string/fgColour"
-			android:visibility="gone"
-			tools:ignore="VisualLintBounds">
-
-			<com.github.evilbunny2008.colourpicker.CPEditText
-				android:id="@+id/fg_Picker"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:autofillHints="@string/fgColour"
-				android:gravity="center_vertical"
-				android:clickable="true"
-				android:focusable="false"
-				android:minHeight="48dp"
-				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
-		</com.google.android.material.textfield.TextInputLayout>
-
-		<com.google.android.material.textfield.TextInputLayout
 			android:id="@+id/bgTextInputLayout"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -234,7 +213,7 @@
 			tools:ignore="VisualLintBounds">
 
 			<com.github.evilbunny2008.colourpicker.CPEditText
-				android:id="@+id/bg_Picker"
+				android:id="@+id/widgetBG"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:clickable="true"
@@ -242,6 +221,27 @@
 				android:gravity="center_vertical"
 				android:minHeight="48dp"
 				tools:ignore="VisualLintTextFieldSize,SpeakableTextPresentCheck" />
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/fgTextInputLayout"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dp"
+			android:hint="@string/fgColour"
+			android:visibility="gone"
+			tools:ignore="VisualLintBounds">
+
+			<com.github.evilbunny2008.colourpicker.CPEditText
+				android:id="@+id/widgetFG"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:autofillHints="@string/fgColour"
+				android:gravity="center_vertical"
+				android:clickable="true"
+				android:focusable="false"
+				android:minHeight="48dp"
+				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.textview.MaterialTextView

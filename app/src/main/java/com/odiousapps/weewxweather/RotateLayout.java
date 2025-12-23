@@ -61,7 +61,7 @@ public class RotateLayout extends ViewGroup
 			setWillNotDraw(false);
 			weeWXAppCommon.LogMessage("Step 4 complete...");
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Error: " + e);
+			weeWXAppCommon.LogMessage("Error: " + e, true, KeyValue.e);
 		}
 	}
 

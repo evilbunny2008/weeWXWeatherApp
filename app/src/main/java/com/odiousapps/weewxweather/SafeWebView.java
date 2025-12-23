@@ -4,9 +4,10 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.ConsoleMessage;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -35,10 +36,22 @@ public class SafeWebView extends WebView
 		initSettings();
 	}
 
-	/** Initialize SafeWebView safely with common settings. */
+	// Initialize SafeWebView safely with common settings.
 	@SuppressLint("SetJavaScriptEnabled")
 	void initSettings()
 	{
+		if(KeyValue.currWebViewVer == null)
+		{
+			try
+			{
+				KeyValue.currWebViewVer = weeWXApp.getInstance().getPackageManager()
+						.getPackageInfo("com.google.android.webview", 0)
+						.versionName;
+			} catch(Exception e) {
+				weeWXAppCommon.LogMessage("Error! e: " + e.getMessage(), KeyValue.e);
+			}
+		}
+
 		try
 		{
 			// Always safe to create on API 24+
@@ -60,7 +73,7 @@ public class SafeWebView extends WebView
 			setNestedScrollingEnabled(true);
 			setVerticalScrollBarEnabled(false);
 			setHorizontalScrollBarEnabled(false);
-			//setWebChromeClient(new myWebChromeClient());
+			setWebChromeClient(new myWebChromeClient());
 
 			// Optional: apply user agent
 			ws.setUserAgentString(NetworkClient.UA);
@@ -81,7 +94,7 @@ public class SafeWebView extends WebView
 			clearCache(false);
 			clearHistory();
 			clearFormData();
-			//removeJavascriptInterface("AndroidBridge");
+			removeJavascriptInterface("AndroidBridge");
 
 			ViewGroup parent = (ViewGroup)getParent();
 			if(parent != null)
@@ -96,8 +109,7 @@ public class SafeWebView extends WebView
 	@Override
 	public void loadUrl(@NonNull String url)
 	{
-		// Example: log URLs
-		Log.d("SafeWebView", "Loading URL: " + url);
+		weeWXAppCommon.LogMessage("Loading URL: " + url);
 		super.loadUrl(url);
 	}
 
@@ -156,7 +168,7 @@ public class SafeWebView extends WebView
 						return new WebResourceResponse(mime, encoding, bais);
 					} catch(UnknownHostException ignored) {
 					} catch(Exception e) {
-						weeWXAppCommon.LogMessage("Error! e: " + e, true);
+						weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
 						weeWXAppCommon.doStackOutput(e);
 					}
 
@@ -181,15 +193,14 @@ public class SafeWebView extends WebView
 	{
 		void onPageFinished(SafeWebView view, String url);
 	}
-/*
+
 	static final class myWebChromeClient extends WebChromeClient
 	{
 		@Override
 		public boolean onConsoleMessage(ConsoleMessage cm)
 		{
-			weeWXAppCommon.LogMessage("ConsoleMessage: " + cm.message());
+			weeWXAppCommon.LogMessage("ConsoleMessage: " + cm.message(), KeyValue.d);
 			return true;
 		}
 	}
-*/
 }

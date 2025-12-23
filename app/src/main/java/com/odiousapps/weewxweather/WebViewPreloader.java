@@ -207,9 +207,9 @@ public class WebViewPreloader
 						root.removeView(container);
 						container.removeAllViews();
 
-						//instance.destroyWebView(wv);
+						instance.recycleWebView(wv);
 					} catch(Exception e) {
-						weeWXAppCommon.LogMessage("Error! e: " + e, true);
+						weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
 					}
 				});
 
@@ -225,7 +225,7 @@ public class WebViewPreloader
 			boolean ok = latch.await(timeoutMs, TimeUnit.MILLISECONDS);
 			html = ok ? htmlHolder[0] : null;
 		} catch(InterruptedException e) {
-			//weeWXAppCommon.LogMessage("Error! e: " + e, true);
+			weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
 		}
 
 		instance.isRunning = false;

@@ -35,8 +35,6 @@ public class LessSensitiveViewPagerLayout extends FrameLayout
 				float dx = Math.abs(ev.getX() - startX);
 				float dy = Math.abs(ev.getY() - startY);
 
-				//Common.LogMessage("dx=" + dx + " dy=" + dy + " intercept=" + (dx > SWIPE_SLOP && dx > dy));
-
 				// Only intercept if it's a strong horizontal gesture
 				if(dx > SWIPE_SLOP && dx > dy)
 				{

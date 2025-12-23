@@ -8,34 +8,80 @@ import java.util.Map;
 @SuppressWarnings("unused")
 class KeyValue
 {
-	static int theme;
-	static int widget_theme_mode;
-	static int mode;
-	static int bgColour;
-	static int fgColour;
-
-	static int widgetBG;
-	static int widgetFG;
-
 	final static Map<Integer, Integer> widgetMinHeight = new HashMap<>();
 	final static Map<Integer, Integer> widgetMinWidth = new HashMap<>();
 	final static Map<Integer, Integer> widgetMaxHeight = new HashMap<>();
 	final static Map<Integer, Integer> widgetMaxWidth = new HashMap<>();
 
-	static boolean save_app_debug_logs = false;
+	final static int e = 0;
+	final static int w = 1;
+	final static int i = 2;
+	final static int d = 3;
+	final static int v = 4;
+
+	static String currWebViewVer = null;
 
 	static boolean isVisible = false;
 
-	static String fctype = null;
-	static String forecastData = null;
-	static String LastForecastError = null;
-	static long rssCheck = 0;
+	record Result(String Key, Object Val) {}
 
-	static String LastDownload = null;
-	static long LastDownloadTime = 0;
-	static String LastWeatherError = null;
+	static final List<Result> prefs = new ArrayList<>();
 
 	static final List<KV> yahoo = new ArrayList<>();
+
+	static Object readVar(String var, Object defVal)
+	{
+		if(!weeWXAppCommon.isPrefSet(var))
+			return defVal;
+
+		try
+		{
+			for(int i = 0; i < prefs.size(); i++)
+			{
+				Result r = prefs.get(i);
+				if(r.Key.equals(var))
+					return r.Val();
+			}
+
+			Object ret = weeWXAppCommon.readVar(var, defVal);
+
+			weeWXAppCommon.LogMessage("ret: " + ret);
+
+			if(ret != null)
+				return ret;
+
+			return defVal;
+		} catch(Exception err) {
+			weeWXAppCommon.LogMessage("Error! e: " + err.getMessage(), true, e);
+			weeWXAppCommon.doStackOutput(err);
+		}
+
+		return defVal;
+	}
+
+	static void putVar(String var, Object val)
+	{
+		boolean found = false;
+		Result r = new Result(var, val);
+
+		for(int i = 0; i < prefs.size(); i++)
+		{
+			Result tmpr = prefs.get(i);
+			if(tmpr.Key.equals(var))
+			{
+				found = true;
+				weeWXAppCommon.setVar(var, val);
+				prefs.set(i, r);
+				break;
+			}
+		}
+
+		if(!found)
+		{
+			weeWXAppCommon.setVar(var, val);
+			prefs.add(r);
+		}
+	}
 
 	static void loadYahooRGB2SVGTable()
 	{
@@ -1640,5 +1686,11 @@ class KeyValue
 		kv.Key = "--uds-spectrum-color-red-15";
 		kv.Val = "#260300";
 		KeyValue.yahoo.add(kv);
+	}
+
+	static class KV
+	{
+		String Key = null;
+		String Val = null;
 	}
 }

@@ -17,10 +17,13 @@ import androidx.fragment.app.FragmentActivity;
 @SuppressWarnings({"unused", "SameParameterValue"})
 class CustomDebug
 {
-	static void writeDebug(String dir, String filename, String text) throws IOException
+	static void writeDebug(String dir, String filename, String text)
 	{
-		File file = weeWXAppCommon.getExtFile(dir, filename);
-		writeDebug(file, text, 0);
+		try
+		{
+			File file = weeWXAppCommon.getExtFile(dir, filename);
+			writeDebug(file, text, 0);
+		} catch(Exception ignored) {}
 	}
 
 	static void writeDebug(File file, String text)
@@ -37,8 +40,9 @@ class CustomDebug
 		{
 			if(file.exists() && !file.delete())
 			{
-				weeWXAppCommon.LogMessage("Failed to remove existing file " + file.getAbsoluteFile());
-				throw new IOException("Failed to remove existing file " + file.getAbsoluteFile());
+				weeWXAppCommon.LogMessage("Failed to remove existing file " + file.getAbsoluteFile(), KeyValue.w);
+				//throw new IOException("Failed to remove existing file " + file.getAbsoluteFile());
+				return;
 			}
 
 			FileOutputStream FOS = new FileOutputStream(file);
@@ -73,7 +77,7 @@ class CustomDebug
 			outFile = new File(outFile, dir);
 			if(outFile.exists() && !outFile.isDirectory())
 			{
-				weeWXAppCommon.LogMessage("'" + dir + "' already exist, but it isn't a directory...");
+				weeWXAppCommon.LogMessage("'" + dir + "' already exist, but it isn't a directory...", KeyValue.w);
 				return;
 			}
 
@@ -81,7 +85,7 @@ class CustomDebug
 			{
 				if(!outFile.mkdirs())
 				{
-					weeWXAppCommon.LogMessage("Can't make '" + dir + "' dir...");
+					weeWXAppCommon.LogMessage("Can't make '" + dir + "' dir...", KeyValue.w);
 					return;
 				}
 
@@ -122,7 +126,7 @@ class CustomDebug
 			{
 				if(!file.delete())
 				{
-					weeWXAppCommon.LogMessage("Couldn't delete " + file.getAbsolutePath());
+					weeWXAppCommon.LogMessage("Couldn't delete " + file.getAbsolutePath(), KeyValue.w);
 					return false;
 				} else {
 					weeWXAppCommon.LogMessage("Deleted " + file.getAbsolutePath());
@@ -134,7 +138,7 @@ class CustomDebug
 				return true;
 			}
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Error! e: " + e, true);
+			weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
 		}
 
 		return false;
@@ -147,7 +151,7 @@ class CustomDebug
 			if(file.exists())
 				return Math.round(file.lastModified() / 1_000D);
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Error! e: " + e, true);
+			weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
 		}
 
 		return 0;
@@ -173,7 +177,7 @@ class CustomDebug
 						Toast.makeText(context, "Wrote debug html to " + theOutFile, Toast.LENGTH_LONG).show());
 			}
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Attempted to write to " + filename + " but failed with the following error: " + e);
+			weeWXAppCommon.LogMessage("Attempted to write to " + filename + " but failed with the following error: " + e.getMessage(), KeyValue.e);
 
 			if(isAdded)
 			{

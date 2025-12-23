@@ -77,13 +77,16 @@ class NetworkClient
 					.sslSocketFactory(sslSocketFactory, (X509TrustManager)trustAllCerts[0])
 					.hostnameVerifier((hostname, session) -> true)
 					.connectionSpecs(Arrays.asList(modernTLS, ConnectionSpec.CLEARTEXT))
-					.connectTimeout(60, TimeUnit.SECONDS)
-					.writeTimeout(60, TimeUnit.SECONDS)
-					.readTimeout(60, TimeUnit.SECONDS)
+					.connectTimeout(5, TimeUnit.SECONDS)
+					.writeTimeout(5, TimeUnit.SECONDS)
+					.readTimeout(5, TimeUnit.SECONDS)
+					.callTimeout(5, TimeUnit.SECONDS)
+					.retryOnConnectionFailure(false)
+					.dns(new CustomDns())
 					.build();
 
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Error! e: " + e, true);
+			weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
 		}
 	}
 
@@ -99,14 +102,9 @@ class NetworkClient
 		if(url == null || url.isBlank() || !url.startsWith("http"))
 			return newClient.build();
 
-		StackTraceElement caller = new Exception().getStackTrace()[1];
-		String callerClass  = caller.getClassName();
-		String callerMethod = caller.getMethodName();
-
 		// windy.com is very noisy... 2s connectivity checks is beyond excessive...
-		if(!url.contains("windy.com"))
-			weeWXAppCommon.LogMessage("NetworkClient.java getInstance() " + callerClass +
-			                          "." + callerMethod + ", url: " + url);
+		//if(!url.contains("windy.com"))
+		weeWXAppCommon.LogMessage("New URL: " + url);
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() == null || !uri.getUserInfo().contains(":"))
@@ -136,7 +134,7 @@ class NetworkClient
 		{
 			String[] UC = uri.getUserInfo().split(":");
 			String credentials = Credentials.basic(UC[0], UC[1]);
-			return newClient.readTimeout(0, TimeUnit.MILLISECONDS)
+			return newClient.readTimeout(5, TimeUnit.SECONDS)
 					.authenticator((route, response) ->
 					{
 						if(responseCount(response) >= 3)

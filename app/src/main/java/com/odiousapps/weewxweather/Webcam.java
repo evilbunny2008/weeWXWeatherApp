@@ -27,7 +27,7 @@ public class Webcam extends Fragment
 		rl = rootView.findViewById(R.id.rotateLayout);
 		iv = rootView.findViewById(R.id.webcam);
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-		swipeLayout.setBackgroundColor(KeyValue.bgColour);
+		swipeLayout.setBackgroundColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
 
 		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
@@ -104,7 +104,7 @@ public class Webcam extends Fragment
 			else
 				noImageToShow(weeWXApp.getAndroidString(R.string.webcam_still_downloading));
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Error! e: " + e);
+			weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
 			noImageToShow("Error: " + e);
 		}
 

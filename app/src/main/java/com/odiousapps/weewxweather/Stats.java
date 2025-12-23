@@ -34,10 +34,12 @@ public class Stats extends Fragment
 		weeWXAppCommon.LogMessage("Stats.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
 
+		int bgColour = (int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default);
+
 		rootView = inflater.inflate(R.layout.fragment_stats, container, false);
 
 		LinearLayout ll = rootView.findViewById(R.id.stats_ll);
-		ll.setBackgroundColor(KeyValue.bgColour);
+		ll.setBackgroundColor(bgColour);
 
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
 		swipeLayout.setOnRefreshListener(() ->
@@ -48,7 +50,7 @@ public class Stats extends Fragment
 		});
 
 		mySlider = rootView.findViewById(R.id.pageZoom);
-		mySlider.setBackgroundColor(KeyValue.bgColour);
+		mySlider.setBackgroundColor(bgColour);
 		mySlider.addOnChangeListener((slider, value, fromUser) ->
 		{
 			weeWXAppCommon.LogMessage("Current Slider zoom =" + (int)mySlider.getValue() + "%");
@@ -89,8 +91,8 @@ public class Stats extends Fragment
 
 			if(currZoom == 0)
 			{
-				currZoom = sanitiseZoom(weeWXAppCommon.GetIntPref("mySlider", weeWXApp.mySlider_default));
-				weeWXAppCommon.LogMessage("Stats.setOnPageFinishedListener() currZoom: " + currZoom + "%");
+				currZoom = sanitiseZoom((int)KeyValue.readVar("mySlider", weeWXApp.mySlider_default));
+				weeWXAppCommon.LogMessage("Stats.setOnPageFinishedListener() currZoom: " + currZoom + "%", KeyValue.d);
 				wv.postDelayed(() -> setZoom(currZoom, false), 200);
 			}
 
@@ -110,9 +112,9 @@ public class Stats extends Fragment
 		super.onResume();
 
 		if(currZoom == 0)
-			currZoom = sanitiseZoom(weeWXAppCommon.GetIntPref("mySlider", weeWXApp.mySlider_default));
+			currZoom = sanitiseZoom((int)KeyValue.readVar("mySlider", weeWXApp.mySlider_default));
 
-		weeWXAppCommon.LogMessage("Stats.onResume() currZoom: " + currZoom + "%");
+		weeWXAppCommon.LogMessage("Stats.onResume() currZoom: " + currZoom + "%", KeyValue.d);
 
 		wv.postDelayed(() -> setZoom(currZoom, false), 100);
 	}
@@ -152,10 +154,10 @@ public class Stats extends Fragment
 		//zoom = Math.round(Math.round(zoom * 10.0f) * 10.0f);
 
 		if(zoom < 50)
-			zoom = 50;
+			zoom = 100;
 
-		if(zoom > 200)
-			zoom = 200;
+		if(zoom > 199)
+			zoom = 100;
 
 		return zoom;
 	}
@@ -191,10 +193,10 @@ public class Stats extends Fragment
 			})();
 			""";
 
-		weeWXAppCommon.LogMessage("new zoom value = " + finalZoom + "%", true);
+		weeWXAppCommon.LogMessage("new zoom value = " + finalZoom + "%", KeyValue.d);
 
 		mySlider.post(() -> mySlider.setValue(finalZoom));
-		weeWXAppCommon.LogMessage("Set Zoom JS: " + js);
+		weeWXAppCommon.LogMessage("Set Zoom JS: " + js, KeyValue.d);
 
 		Handler handler = new Handler(Looper.getMainLooper());
 
@@ -231,8 +233,8 @@ public class Stats extends Fragment
 		if(!tv.getText().toString().equals(txt))
 			tv.post(() ->
 			{
-				tv.setBackgroundColor(KeyValue.bgColour);
-				tv.setTextColor(KeyValue.fgColour);
+				tv.setBackgroundColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
+				tv.setTextColor((int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default));
 				tv.setText(txt);
 			});
 	}
@@ -371,7 +373,7 @@ public class Stats extends Fragment
 			if(bits.length > element)
 				return bits[element].strip();
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Error! e: " + e, true);
+			weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
 		}
 
 		return "";
@@ -514,7 +516,7 @@ public class Stats extends Fragment
 				convert(getElement(bits, 42)),
 				getElement(bits, 41) + getElement(bits, 63)));
 
-		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
+		if((boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > 165 && !bits[163].isBlank() && !bits[165].isBlank())
 				sb.append(showIndoor(60, bits, 164, 165, 162, 163, 0, null));
@@ -576,7 +578,7 @@ public class Stats extends Fragment
 				convert(getElement(bits, 87)),
 				getElement(bits, 86) + getElement(bits, 63)));
 
-		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
+		if((boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > 174 && !bits[174].isBlank() && !bits[172].isBlank())
 				sb.append(showIndoor(60, bits, 173, 174, 171, 172, 0, null));
@@ -638,7 +640,7 @@ public class Stats extends Fragment
 				getTimeMonth(getElement(bits, 110)),
 				getElement(bits, 109) + getElement(bits, 63)));
 
-		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
+		if((boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > 182 && !bits[182].isBlank() && !bits[180].isBlank())
 				sb.append(showIndoor(60, bits, 181, 182, 179, 180, 1, null));
@@ -689,7 +691,7 @@ public class Stats extends Fragment
 				getTimeYear(getElement(bits, 133)),
 				getElement(bits, 132) + getElement(bits, 63)));
 
-		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
+		if((boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > 190 && !bits[190].isBlank() && !bits[188].isBlank())
 				sb.append(showIndoor(60, bits, 189, 190, 187, 188, 2, null));
@@ -745,7 +747,7 @@ public class Stats extends Fragment
 				getTimeSection(which, bits[start + 10]),
 				bits[start + 9] + getElement(bits, 63)));
 
-		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
+		if((boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > start + 23 && !bits[start + 23].isBlank() && !bits[start + 21].isBlank())
 				sb.append(showIndoor(60, bits,
@@ -801,7 +803,7 @@ public class Stats extends Fragment
 				getAllTime(getElement(bits, 156)),
 				getElement(bits, 155) + getElement(bits, 63)));
 
-		if(weeWXAppCommon.GetBoolPref("showIndoor", weeWXApp.showIndoor_default))
+		if((boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
 		{
 			if(bits.length > 198 && !bits[198].isBlank() && !bits[196].isBlank())
 				sb.append(showIndoor(60, bits,
@@ -828,15 +830,16 @@ public class Stats extends Fragment
 		boolean ret = weeWXAppCommon.getWeather(false, false);
 		if(!ret)
 		{
-			if(KeyValue.LastWeatherError != null && !KeyValue.LastWeatherError.isBlank())
-				wv.post(() -> wv.loadDataWithBaseURL(null, KeyValue.LastWeatherError,
+			String LastWeatherError = (String)KeyValue.readVar("LastWeatherError", "");
+			if(LastWeatherError != null && !LastWeatherError.isBlank())
+				wv.post(() -> wv.loadDataWithBaseURL(null, LastWeatherError,
 						"text/html", "utf-8", null));
 			else
 				wv.post(() -> wv.loadDataWithBaseURL(null,
 						weeWXApp.getAndroidString(R.string.unknown_error_occurred),
 						"text/html", "utf-8", null));
 
-			KeyValue.LastWeatherError = null;
+			KeyValue.putVar("LastWeatherError", null);
 
 			setZoom(currZoom, true);
 
@@ -844,7 +847,7 @@ public class Stats extends Fragment
 			return;
 		}
 
-		String[] bits = KeyValue.LastDownload.split("\\|");
+		String[] bits = ((String)KeyValue.readVar("LastDownload", "")).split("\\|");
 
 		if(bits.length < 65)
 		{

@@ -68,37 +68,6 @@ public class Custom extends Fragment
 		fl.removeAllViews();
 		fl.addView(wv);
 
-		boolean fdm = weeWXAppCommon.GetBoolPref("force_dark_mode", weeWXApp.force_dark_mode_default);
-		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK) && fdm)
-		{
-			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2)
-			{
-				if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
-				{
-					try
-					{
-						WebSettingsCompat.setAlgorithmicDarkeningAllowed(wv.getSettings(), true);
-					} catch(Exception e) {
-						weeWXAppCommon.doStackOutput(e);
-					}
-				}
-			} else {
-				if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY))
-					WebSettingsCompat.setForceDarkStrategy(wv.getSettings(),
-							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
-
-				if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
-					WebSettingsCompat.setAlgorithmicDarkeningAllowed(wv.getSettings(), true);
-
-				int mode = WebSettingsCompat.FORCE_DARK_OFF;
-
-				if(KeyValue.mode == 1)
-					mode = WebSettingsCompat.FORCE_DARK_ON;
-
-				WebSettingsCompat.setForceDark(wv.getSettings(), mode);
-			}
-		}
-
 		wv.getViewTreeObserver().addOnScrollChangedListener(scl);
 
 		wv.setOnPageFinishedListener((v, url) -> swipeLayout.setRefreshing(false));
@@ -123,7 +92,47 @@ public class Custom extends Fragment
 			return false;
 		});
 
+		setMode();
+
 		loadCustom(false);
+	}
+
+	private void setMode()
+	{
+		boolean fdm = (boolean)KeyValue.readVar("force_dark_mode", weeWXApp.force_dark_mode_default);
+		boolean darkmode = (int)KeyValue.readVar("mode", weeWXApp.mode_default) == 1;
+
+		if(darkmode && !fdm)
+			darkmode = false;
+
+		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK) && fdm)
+		{
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2)
+			{
+				if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+				{
+					try
+					{
+						WebSettingsCompat.setAlgorithmicDarkeningAllowed(wv.getSettings(), darkmode);
+					} catch(Exception e) {
+						weeWXAppCommon.doStackOutput(e);
+					}
+				}
+			} else {
+				if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY))
+					WebSettingsCompat.setForceDarkStrategy(wv.getSettings(),
+							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
+
+				if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+					WebSettingsCompat.setAlgorithmicDarkeningAllowed(wv.getSettings(), darkmode);
+
+				int mode = WebSettingsCompat.FORCE_DARK_OFF;
+				if(darkmode)
+					mode = WebSettingsCompat.FORCE_DARK_ON;
+
+				WebSettingsCompat.setForceDark(wv.getSettings(), mode);
+			}
+		}
 	}
 
 	@Override
@@ -161,8 +170,8 @@ public class Custom extends Fragment
 			return;
 		}
 
-		String custom = weeWXAppCommon.GetStringPref("CUSTOM_URL", weeWXApp.CUSTOM_URL_default);
-		String custom_url = weeWXAppCommon.GetStringPref("custom_url", weeWXApp.custom_url_default);
+		String custom = (String)KeyValue.readVar("CUSTOM_URL", weeWXApp.CUSTOM_URL_default);
+		String custom_url = (String)KeyValue.readVar("custom_url", weeWXApp.custom_url_default);
 
 		if((custom == null || custom.isBlank()) && (custom_url == null || custom_url.isBlank()))
 		{
@@ -193,9 +202,12 @@ public class Custom extends Fragment
 
 			lastRefresh = currtime;
 
-			int pos = weeWXAppCommon.GetIntPref("updateInterval", weeWXApp.updateInterval_default);
+			int pos = (int)KeyValue.readVar("updateInterval", weeWXApp.updateInterval_default);
 			if(pos > 0 && KeyValue.isVisible)
 				loadCustom(true);
 		}
+
+		if(str.equals(weeWXAppCommon.REFRESH_DARKMODE_INTENT))
+			setMode();
 	};
 }

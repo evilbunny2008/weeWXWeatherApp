@@ -49,6 +49,32 @@
 -keep class okhttp3.Response { *; }
 -dontwarn okhttp3.**
 
+-keep class com.sun.jna.** { *; }
+-dontwarn com.sun.jna.**
+
+-keep class sun.net.spi.** { *; }
+-dontwarn sun.net.spi.**
+
+-keep class java.net.spi.** { *; }
+-dontwarn java.net.spi.**
+
+-keep class javax.naming.** { *; }
+-dontwarn javax.naming.**
+
+-keep class lombok.** { *; }
+-dontwarn lombok.**
+
+-keep class org.slf4j.** { *; }
+
+-keep class org.xbill.DNS.Cache.** { *; }
+-dontwarn org.xbill.DNS.Cache.**
+
+-keep class org.xbill.DNS.Config.** { *; }
+-dontwarn org.xbill.DNS.Config.**
+
+-keep class org.xbill.DNS.spi.** { *; }
+-dontwarn org.xbill.DNS.spi.**
+
 ########################################
 # Misc
 ########################################

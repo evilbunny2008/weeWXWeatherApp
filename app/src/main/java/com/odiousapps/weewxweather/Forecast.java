@@ -74,7 +74,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			weeWXAppCommon.LogMessage("swipeLayout2.onRefresh();");
 
 
-			String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
 				weeWXAppCommon.getRadarImage(true, false);
 			else
@@ -135,57 +135,15 @@ public class Forecast extends Fragment implements View.OnClickListener
 			stopRefreshing();
 		});
 
-		boolean fdm = weeWXAppCommon.GetBoolPref("force_dark_mode", weeWXApp.force_dark_mode_default);
-		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK) && fdm)
-		{
-			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2)
-			{
-				if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
-				{
-					try
-					{
-						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarWebView.getSettings(),true);
-					} catch(Exception e) {
-						weeWXAppCommon.doStackOutput(e);
-					}
-				}
-			} else {
-				if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY))
-				{
-					WebSettingsCompat.setForceDarkStrategy(forecastWebView.getSettings(),
-							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
-
-					if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
-						WebSettingsCompat.setAlgorithmicDarkeningAllowed(forecastWebView.getSettings(),
-								true);
-
-					WebSettingsCompat.setForceDarkStrategy(radarWebView.getSettings(),
-							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
-
-					if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
-						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarWebView.getSettings(),
-								true);
-				}
-
-				int mode = WebSettingsCompat.FORCE_DARK_OFF;
-
-				if(KeyValue.mode == 1)
-					mode = WebSettingsCompat.FORCE_DARK_ON;
-
-				WebSettingsCompat.setForceDark(forecastWebView.getSettings(), mode);
-				WebSettingsCompat.setForceDark(radarWebView.getSettings(), mode);
-			}
-		}
-
 		if(weeWXAppCommon.isPrefSet("radarforecast"))
 		{
-			boolean disableSwipeOnRadar = weeWXAppCommon.GetBoolPref("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
+			boolean disableSwipeOnRadar = (boolean)KeyValue.readVar("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
 			floatingCheckBox.setChecked(disableSwipeOnRadar);
 
 			updateSwipe();
 			updateScreen(true);
 
-			if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen)
+			if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen)
 				loadRadar(false);
 			else
 				getForecast();
@@ -226,6 +184,46 @@ public class Forecast extends Fragment implements View.OnClickListener
 		}
 	}
 
+	private void setMode()
+	{
+		boolean fdm = (boolean)KeyValue.readVar("force_dark_mode", weeWXApp.force_dark_mode_default);
+		boolean darkmode = (int)KeyValue.readVar("mode", weeWXApp.mode_default) == 1;
+
+		if(darkmode && !fdm)
+			darkmode = false;
+
+		if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK))
+		{
+			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S_V2)
+			{
+				if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+				{
+					try
+					{
+						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarWebView.getSettings(), darkmode);
+					} catch(Exception e) {
+						weeWXAppCommon.doStackOutput(e);
+					}
+				}
+			} else {
+				if(WebViewFeature.isFeatureSupported(WebViewFeature.FORCE_DARK_STRATEGY))
+				{
+					WebSettingsCompat.setForceDarkStrategy(radarWebView.getSettings(),
+							WebSettingsCompat.DARK_STRATEGY_WEB_THEME_DARKENING_ONLY);
+
+					if(WebViewFeature.isFeatureSupported(WebViewFeature.ALGORITHMIC_DARKENING))
+						WebSettingsCompat.setAlgorithmicDarkeningAllowed(radarWebView.getSettings(), darkmode);
+				}
+
+				int mode = WebSettingsCompat.FORCE_DARK_OFF;
+				if(darkmode)
+					mode = WebSettingsCompat.FORCE_DARK_ON;
+
+				WebSettingsCompat.setForceDark(radarWebView.getSettings(), mode);
+			}
+		}
+	}
+
 	private void stopRefreshing()
 	{
 		if(swipeLayout1.isRefreshing())
@@ -239,17 +237,17 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		weeWXAppCommon.LogMessage("Forecast.java loadRadar()");
 
-		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnForecastScreen)
+		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnForecastScreen)
 			return;
 
-		String radarURL = weeWXAppCommon.GetStringPref("RADAR_URL", weeWXApp.RADAR_URL_default);
+		String radarURL = (String)KeyValue.readVar("RADAR_URL", weeWXApp.RADAR_URL_default);
 		if(radarURL == null || radarURL.isBlank())
 		{
 			failedRadarWebViewDownload(R.string.radar_url_not_set);
 			return;
 		}
 
-		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+		String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 		if(radtype == null || radtype.isBlank())
 		{
 			String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
@@ -288,7 +286,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		long[] npwsll = weeWXAppCommon.getNPWSLL();
 		if(!forced && npwsll[1] <= 0)
 		{
-			weeWXAppCommon.LogMessage("Manual updating set, don't autoload the radar webpage...");
+			weeWXAppCommon.LogMessage("Manual updating set, don't autoload the radar webpage...", KeyValue.w);
 			failedRadarWebViewDownload(R.string.manual_update_set_refresh_screen_to_load);
 			stopRefreshing();
 			return;
@@ -331,7 +329,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		isVisible = true;
 
-		boolean disableSwipeOnRadar = weeWXAppCommon.GetBoolPref("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
+		boolean disableSwipeOnRadar = (boolean)KeyValue.readVar("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
 		floatingCheckBox.setChecked(disableSwipeOnRadar);
 
 		updateScreen(false);
@@ -363,7 +361,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		weeWXAppCommon.LogMessage("Forecast.java notificationObserver: " + str);
 
-		String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+		String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 		if(radtype == null)
 			radtype = "";
 
@@ -373,11 +371,14 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if(str.equals(weeWXAppCommon.REFRESH_RADAR_INTENT))
 			loadRadar(false);
 
-		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen &&
+		if(str.equals(weeWXAppCommon.REFRESH_DARKMODE_INTENT))
+			setMode();
+
+		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnForecastScreen &&
 		   str.equals(weeWXAppCommon.STOP_RADAR_INTENT) && radtype.equals("image"))
 			stopRefreshing();
 
-		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.ForecastOnForecastScreen &&
+		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.ForecastOnForecastScreen &&
 		   str.equals(weeWXAppCommon.STOP_FORECAST_INTENT))
 			stopRefreshing();
 
@@ -389,7 +390,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	{
 		weeWXAppCommon.LogMessage("Forecast.java updateScreen()");
 
-		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.ForecastOnForecastScreen)
+		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.ForecastOnForecastScreen)
 		{
 			weeWXAppCommon.LogMessage("Displaying forecastWebView...");
 			if(rfl.getVisibility() != View.GONE)
@@ -406,7 +407,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			swipeLayout1.post(() ->
 			{
-				swipeLayout1.setBackgroundColor(KeyValue.bgColour);
+				swipeLayout1.setBackgroundColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
 				if(swipeLayout1.isRefreshing() != setRefreshing)
 					swipeLayout1.setRefreshing(setRefreshing);
 				swipeLayout1.setEnabled(true);
@@ -435,7 +436,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			boolean rotate = false;
 
-			String radtype = weeWXAppCommon.GetStringPref("radtype", weeWXApp.radtype_default);
+			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 			if(radtype == null || radtype.isBlank())
 			{
 				if(rl.getAngle() != 0)
@@ -493,33 +494,30 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void getForecast()
 	{
-		if(weeWXAppCommon.GetBoolPref("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnForecastScreen)
-		{
-			weeWXAppCommon.LogMessage("Forecast.java getForecast() this line shouldn't be hit... weeWXApp.ForecastOnForecastScreen is false...");
-			stopRefreshing();
+		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnForecastScreen)
 			return;
-		}
 
 		boolean ret = weeWXAppCommon.getForecast(false, false);
 		if(!ret)
 		{
-			if(KeyValue.LastForecastError != null && !KeyValue.LastForecastError.isBlank())
+			String LastForecastError = (String)KeyValue.readVar("LastForecastError", "");
+			if(LastForecastError != null && !LastForecastError.isBlank())
 			{
-				weeWXAppCommon.LogMessage("getForecast returned the following error: " + KeyValue.LastForecastError);
-				showTextFC(KeyValue.LastForecastError);
+				weeWXAppCommon.LogMessage("getForecast returned the following error: " + LastForecastError, KeyValue.w);
+				showTextFC(LastForecastError);
 			} else {
-				weeWXAppCommon.LogMessage("getForecast returned an unknown error...");
+				weeWXAppCommon.LogMessage("getForecast returned an unknown error...", KeyValue.w);
 				showTextFC(weeWXApp.getAndroidString(R.string.unknown_error_occurred));
 			}
 		}
 
-		weeWXAppCommon.LogMessage("getForecast returned some content...", true);
-		generateForecast(KeyValue.forecastData);
+		weeWXAppCommon.LogMessage("getForecast returned some content...");
+		generateForecast((String)KeyValue.readVar("forecastData", ""));
 	}
 
 	private void generateForecast(String forecastData)
 	{
-		String fctype = KeyValue.fctype;
+		String fctype = (String)KeyValue.readVar("fctype", "");
 		if(fctype == null || fctype.isBlank())
 		{
 			showTextFC("Forecast type is blank...");
@@ -561,15 +559,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 			case "weatherzone" ->
 			{
 				String[] content = weeWXAppCommon.processWZ(forecastData, true);
-				if(content != null && content.length >= 2)
-				{
-					updateForecast(fctype, content[0], content[1]);
-					return;
-				}
-			}
-			case "yr.no" ->
-			{
-				String[] content = weeWXAppCommon.processYR(forecastData, true);
 				if(content != null && content.length >= 2)
 				{
 					updateForecast(fctype, content[0], content[1]);
@@ -765,13 +754,13 @@ public class Forecast extends Fragment implements View.OnClickListener
 		TextView tv1 = rootView.findViewById(R.id.forecast);
 		tv1.post(() ->
 		{
-			tv1.setTextColor(KeyValue.fgColour);
-			tv1.setBackgroundColor(KeyValue.bgColour);
+			tv1.setTextColor((int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default));
+			tv1.setBackgroundColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
 			tv1.setText(desc);
 		});
 
 		String ext = "_light.svg";
-		if(KeyValue.theme != R.style.AppTheme_weeWXApp_Dark_Common)
+		if((int)KeyValue.readVar("theme", weeWXApp.theme_default) != R.style.AppTheme_weeWXApp_Dark_Common)
 			ext = "_dark.svg";
 
 		String finalext = ext;
@@ -780,7 +769,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 		{
 			case "yahoo" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/yahoo" + finalext)));
 			case "weatherzone" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/wz" + finalext)));
-			case "yr.no" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/yrno.png")));
 			case "met.no" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_no.png")));
 			case "wmo.int" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wmo.png")));
 			case "weather.gov" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wgov.png")));
