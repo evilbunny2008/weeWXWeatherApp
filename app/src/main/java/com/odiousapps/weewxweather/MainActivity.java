@@ -503,23 +503,21 @@ public class MainActivity extends FragmentActivity
 		settingLayout.setVisibility(View.VISIBLE);
 		aboutLayout.setVisibility(View.GONE);
 
-		MaterialTextView tv1 = findViewById(R.id.aboutText);
-		String about_blurb = weeWXApp.about_blurb.replaceAll("WEBVIEWVER", KeyValue.currWebViewVer);
-		tv1.setText(HtmlCompat.fromHtml(about_blurb, HtmlCompat.FROM_HTML_MODE_COMPACT));
-		tv1.setMovementMethod(LinkMovementMethod.getInstance());
-
 		b1.setOnClickListener(arg0 ->
 		{
+			weeWXAppCommon.LogMessage("Starting save settings!", true, KeyValue.w);
 			b1.setEnabled(false);
 			b2.setEnabled(false);
 			closeKeyboard();
 
-			weeWXAppCommon.LogMessage("show dialog");
+			weeWXAppCommon.LogMessage("show dialog", true, KeyValue.w);
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setCancelable(false);
 			builder.setView(R.layout.layout_loading_dialog);
 			dialog = builder.create();
 			dialog.show();
+
+			weeWXAppCommon.LogMessage("Process settings!", true, KeyValue.w);
 			processSettings();
 		});
 
@@ -628,6 +626,9 @@ public class MainActivity extends FragmentActivity
 	{
 		super.onResume();
 
+		if(KeyValue.isVisible)
+			return;
+
 		KeyValue.isVisible = true;
 
 		UpdateCheck.cancelAlarm();
@@ -635,6 +636,11 @@ public class MainActivity extends FragmentActivity
 		UpdateCheck.setNextAlarm();
 
 		UpdateCheck.runInTheBackground(false, false);
+
+		MaterialTextView tv1 = findViewById(R.id.aboutText);
+		String about_blurb = weeWXApp.current_about_blurb;
+		tv1.setText(HtmlCompat.fromHtml(about_blurb, HtmlCompat.FROM_HTML_MODE_COMPACT));
+		tv1.setMovementMethod(LinkMovementMethod.getInstance());
 	}
 
 	@Override
@@ -990,7 +996,7 @@ public class MainActivity extends FragmentActivity
 
 	private void processSettings()
 	{
-		weeWXAppCommon.LogMessage("MainActivity.java processSettings() running the background updates...");
+		weeWXAppCommon.LogMessage("MainActivity.java processSettings() running the background updates...", true);
 
 		if(use_exact_alarm.isChecked() && !UpdateCheck.canSetExact(this))
 		{
@@ -1032,7 +1038,7 @@ public class MainActivity extends FragmentActivity
 		bgStart = current_time;
 		backgroundTask = executor.submit(() ->
 		{
-			weeWXAppCommon.LogMessage("MainActivity.java bg started...");
+			weeWXAppCommon.LogMessage("MainActivity.java bg started...", true);
 
 			String tmpStr, errorStr = "";
 			String forecastLocationName = null;
@@ -1047,7 +1053,7 @@ public class MainActivity extends FragmentActivity
 					CustomURL = "", appCustomURL, fctype = "", bomtown = "", metierev;
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
-			weeWXAppCommon.LogMessage("settings_url: " + settings_url);
+			weeWXAppCommon.LogMessage("settings_url: " + settings_url, true);
 
 			if(settings_url.isBlank() || settings_url.equals(weeWXApp.SETTINGS_URL_default))
 			{

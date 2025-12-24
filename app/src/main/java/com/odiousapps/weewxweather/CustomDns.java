@@ -14,6 +14,8 @@ import org.xbill.DNS.Record;
 import org.xbill.DNS.config.AndroidResolverConfigProvider;
 
 import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -34,18 +36,37 @@ class CustomDns implements Dns
 		{
 			// Attempt a HTTPS connection...
 			SocketAddress socketAddress = new InetSocketAddress(addr, 443);
-			socket.connect(socketAddress, 1_000);
+			socket.connect(socketAddress, 5_000);
 			return true;
 		} catch (IOException e) {
 			try(Socket socket = new Socket())
 			{
 				// Attempt a HTTP connection...
 				SocketAddress socketAddress = new InetSocketAddress(addr, 80);
-				socket.connect(socketAddress, 1_000);
+				socket.connect(socketAddress, 5_000);
 				return true;
 			} catch (IOException ioe) {
 				return false;
 			}
+		}
+	}
+
+	boolean isReachableUDP(InetAddress addr)
+	{
+		try(DatagramSocket socket = new DatagramSocket())
+		{
+			// Attempt a DNS connection...
+			byte[] buf = "test".getBytes();
+			DatagramPacket packet = new DatagramPacket(buf, buf.length, addr, 53);
+			socket.send(packet);
+			packet = new DatagramPacket(buf, buf.length);
+			socket.receive(packet);
+			String received = new String(packet.getData(), 0, packet.getLength());
+			weeWXAppCommon.LogMessage("received: " + received, true, KeyValue.i);
+			return true;
+		} catch (Exception e) {
+			weeWXAppCommon.LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
+			return false;
 		}
 	}
 
@@ -95,8 +116,6 @@ class CustomDns implements Dns
 
 	List<InetAddress> getDNSServers()
 	{
-		List<InetAddress> servers = new ArrayList<>();
-
 		try
 		{
 			ConnectivityManager cm = (ConnectivityManager)weeWXApp.getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -118,26 +137,10 @@ class CustomDns implements Dns
 				return new ArrayList<>();
 			}
 
-			for(InetAddress dns: lp.getDnsServers())
-			{
-				String IP = dns.getHostAddress();
-				weeWXAppCommon.LogMessage("DNS Server: " + IP, KeyValue.d);
-
-				if(IP == null || IP.isBlank())
-					continue;
-
-				if(isReachableTCP(dns))
-				{
-					weeWXAppCommon.LogMessage(IP + " was reachable, adding to list...", true, KeyValue.d);
-					servers.add(dns);
-				} else
-				{
-					weeWXAppCommon.LogMessage(IP + " wasn't reachable, not adding to list...", true, KeyValue.d);
-				}
-			}
+			return lp.getDnsServers();
 		} catch(Exception ignored) {}
 
-		return servers;
+		return new ArrayList<>();
 	}
 
 	List<InetAddress> doLookup(String hostname)

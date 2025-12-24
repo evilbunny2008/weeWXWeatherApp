@@ -40,18 +40,6 @@ public class SafeWebView extends WebView
 	@SuppressLint("SetJavaScriptEnabled")
 	void initSettings()
 	{
-		if(KeyValue.currWebViewVer == null)
-		{
-			try
-			{
-				KeyValue.currWebViewVer = weeWXApp.getInstance().getPackageManager()
-						.getPackageInfo("com.google.android.webview", 0)
-						.versionName;
-			} catch(Exception e) {
-				weeWXAppCommon.LogMessage("Error! e: " + e.getMessage(), KeyValue.e);
-			}
-		}
-
 		try
 		{
 			// Always safe to create on API 24+

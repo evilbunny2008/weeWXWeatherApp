@@ -90,7 +90,7 @@ public class weeWXApp extends Application
 	</html>
 	""";
 
-	static final String about_blurb = """
+	private static final String about_blurb = """
 		Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app
 		wouldn't be possible otherwise.<br><br>
 		Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and
@@ -163,6 +163,8 @@ public class weeWXApp extends Application
 	static String current_html_headers;
 
 	static String current_dialog_html;
+
+	static String current_about_blurb = about_blurb;
 
 	final static String emptyField = "<div style='span:3;'>\u00A0</div>\n";
 	final static String currentSpacer = "\t\t\t<div class='currentSpacer'>\u00A0</div>\n";
@@ -300,6 +302,8 @@ public class weeWXApp extends Application
 
 		weeWXAppCommon.LogMessage("weeWXApp.java UpdateCheck.runInTheBackground(false, true)");
 		UpdateCheck.runInTheBackground(false, true);
+
+		updateAboutBlurb();
 	}
 
 	@Override
@@ -316,6 +320,26 @@ public class weeWXApp extends Application
 		{
 			weeWXAppCommon.LogMessage("newConfig.uiMode changed, update the theme and mode!", KeyValue.d);
 			applyTheme(true);
+		}
+	}
+
+	static void updateAboutBlurb()
+	{
+		if(KeyValue.currWebViewVer == null)
+		{
+			try
+			{
+				KeyValue.currWebViewVer = weeWXApp.getInstance().getPackageManager()
+						.getPackageInfo("com.google.android.webview", 0)
+						.versionName;
+			} catch(Exception e) {
+				weeWXAppCommon.LogMessage("Error! e: " + e.getMessage(), KeyValue.e);
+			}
+		}
+
+		if(KeyValue.currWebViewVer != null)
+		{
+			current_about_blurb = about_blurb.replaceAll("WEBVIEWVER", KeyValue.currWebViewVer);
 		}
 	}
 

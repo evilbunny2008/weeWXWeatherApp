@@ -98,7 +98,7 @@ import okhttp3.Response;
 class weeWXAppCommon
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
-	final static int debug_level = KeyValue.i;
+	final static int debug_level = KeyValue.v;
 	final static boolean debug_html = false;
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
@@ -232,7 +232,7 @@ class weeWXAppCommon
 		if(text == null || text.isBlank())
 			return;
 
-		if((boolean)readVar("save_app_debug_logs", weeWXApp.save_app_debug_logs_default))
+		if((boolean)KeyValue.readVar("save_app_debug_logs", weeWXApp.save_app_debug_logs_default))
 		{
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 				appendWithMediaStore(context, text);

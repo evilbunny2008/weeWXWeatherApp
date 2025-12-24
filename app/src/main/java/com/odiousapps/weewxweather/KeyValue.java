@@ -1,5 +1,7 @@
 package com.odiousapps.weewxweather;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -52,8 +54,7 @@ class KeyValue
 
 			return defVal;
 		} catch(Exception err) {
-			weeWXAppCommon.LogMessage("Error! e: " + err.getMessage(), true, e);
-			weeWXAppCommon.doStackOutput(err);
+			Log.e("weeWXApp", "Error! err: ", err);
 		}
 
 		return defVal;
