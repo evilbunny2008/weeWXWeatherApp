@@ -25,6 +25,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.window.OnBackInvokedDispatcher;
 
 import com.caverock.androidsvg.BuildConfig;
 import com.github.evilbunny2008.colourpicker.CPEditText;
@@ -212,7 +213,7 @@ public class MainActivity extends FragmentActivity
 			// Android 13+ predictive back gestures
 			// Only intercept the back if keyboard is visible or drawer is open
 			weeWXAppCommon.LogMessage("setupBackHandling() setting getOnBackInvokedDispatcher() SDK >= TIRAMISU");
-			Api33BackHandler.setup(this);
+			getOnBackInvokedDispatcher().registerOnBackInvokedCallback(OnBackInvokedDispatcher.PRIORITY_DEFAULT, this::handleBack);
 		}
 
 		myLinearLayout cd = findViewById(R.id.custom_drawer);
@@ -1019,8 +1020,6 @@ public class MainActivity extends FragmentActivity
 
 		UpdateCheck.cancelAlarm();
 
-		UpdateCheck.setNextAlarm();
-
 		if(backgroundTask != null && !backgroundTask.isDone())
 		{
 			if(bgStart + 30 > current_time)
@@ -1683,8 +1682,7 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.LogMessage("Refresh widgets if at least one exists...");
 			WidgetProvider.updateAppWidget();
 
-			weeWXAppCommon.LogMessage("Restart the alarm...");
-			UpdateCheck.cancelAlarm();
+			weeWXAppCommon.LogMessage("Set the alarm...");
 			UpdateCheck.setNextAlarm();
 
 			runOnUiThread(() ->

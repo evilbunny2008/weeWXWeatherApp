@@ -98,7 +98,8 @@ import okhttp3.Response;
 class weeWXAppCommon
 {
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
-	final static int debug_level = KeyValue.v;
+	final static String LOGTAG = "weeWXApp";
+	static int debug_level = KeyValue.i;
 	final static boolean debug_html = false;
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
@@ -159,6 +160,9 @@ class weeWXAppCommon
 
 	static
 	{
+		if(BuildConfig.DEBUG)
+			debug_level =  KeyValue.v;
+
 		try
 		{
 			System.setProperty("http.agent", NetworkClient.UA);
@@ -235,13 +239,10 @@ class weeWXAppCommon
 		if((boolean)KeyValue.readVar("save_app_debug_logs", weeWXApp.save_app_debug_logs_default))
 		{
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-				appendWithMediaStore(context, text);
+				appendWithMediaStore(text, level);
 			else
-				appendLegacy(text);
+				appendLegacy(text, level);
 		}
-
-		if(level >= KeyValue.i)
-			return;
 
 		if(level <= debug_level || showAnyway)
 		{
@@ -250,17 +251,17 @@ class weeWXAppCommon
 				text = "[String truncated to " + maxLogLength + " bytes] " + text.substring(0, maxLogLength);
 
 			if(level == KeyValue.e)
-				Log.e("weeWXApp", "message='" + text + "'");
+				Log.e(LOGTAG, "message='" + text + "'");
 			else if(level == KeyValue.w)
-				Log.w("weeWXApp", "message='" + text + "'");
+				Log.w(LOGTAG, "message='" + text + "'");
 			else if(level == KeyValue.i)
-				Log.i("weeWXApp", "message='" + text + "'");
+				Log.i(LOGTAG, "message='" + text + "'");
 			else if(level == KeyValue.d)
-				Log.d("weeWXApp", "message='" + text + "'");
+				Log.d(LOGTAG, "message='" + text + "'");
 			else
-				Log.v("weeWXApp", "message='" + text + "'");
+				Log.v(LOGTAG, "message='" + text + "'");
 		} else
-			Log.v("weeWXApp", "message='" + text + "'");
+			Log.v(LOGTAG, "hidden message='" + text + "'");
 	}
 
 	public static byte[] gzipToBytes(String text) throws IOException
@@ -276,13 +277,29 @@ class weeWXAppCommon
 		return baos.toByteArray();
 	}
 
-	private static void appendLegacy(String text)
+	static String levelToName(int level)
+	{
+		String name = "INVALID";
+
+		switch(level)
+		{
+			case KeyValue.e -> name = "ERR";
+			case KeyValue.w -> name = "WARN";
+			case KeyValue.i -> name = "INFO";
+			case KeyValue.d -> name = "DEBUG";
+			case KeyValue.v -> name = "VERBOSE";
+		}
+
+		return name;
+	}
+
+	private static void appendLegacy(String text, int level)
 	{
 		try
 		{
 			String string_time = sdf13.format(System.currentTimeMillis());
 
-			String tmpStr = string_time + ": " + text.strip() + "\n";
+			String tmpStr = string_time + " " + levelToName(level) + ": " + text.strip() + "\n";
 
 			File file = getExtFile("weeWX", weeWXApp.debug_filename);
 			boolean needsPublishing = !file.exists();
@@ -303,8 +320,9 @@ class weeWXAppCommon
 	}
 
 	@RequiresApi(api = Build.VERSION_CODES.Q)
-	private static void appendWithMediaStore(Context context, String text)
+	private static void appendWithMediaStore(String text, int level)
 	{
+		Context context = weeWXApp.getInstance();
 		String folderName = Environment.DIRECTORY_DOWNLOADS + "/weeWX/";
 
 		// ================
@@ -370,14 +388,19 @@ class weeWXAppCommon
 
 				logFileUri = context.getContentResolver().insert(filesCollection, values);
 				if(logFileUri == null)
-					throw new RuntimeException("Failed to create log file in MediaStore.Files");
+				{
+					String warning = "Failed to create log file in MediaStore.Files";
+					Log.w(LOGTAG, warning);
+					throw new RuntimeException(warning);
+				}
 			}
 		}
 
 		if(logFileUri == null)
 		{
-			Log.e("weeWXApp", "Failed to open debug file, skipping...");
-			return;
+			String warning = "Failed to open debug file, skipping...";
+			Log.w(LOGTAG, warning);
+			throw new RuntimeException(warning);
 		}
 
 		// ================
@@ -385,14 +408,14 @@ class weeWXAppCommon
 		// ================
 		String timestamp = sdf13.format(System.currentTimeMillis());
 
-		String line = timestamp + ": " + text.strip() + "\n";
+		String tmpStr = timestamp + " " + levelToName(level) + ": " + text.strip() + "\n";
 
 		try(OutputStream os = context.getContentResolver().openOutputStream(logFileUri, "wa"))
 		{
 			if(weeWXApp.debug_filename.endsWith(".gz"))
-				os.write(gzipToBytes(line));
+				os.write(gzipToBytes(tmpStr));
 			else
-				os.write(line.getBytes());
+				os.write(tmpStr.getBytes());
 		} catch (IOException e) {
 			doStackOutput(e);
 		}
@@ -970,7 +993,6 @@ class weeWXAppCommon
 
 //			timestamp = System.currentTimeMillis();
 			Date date = new Date(timestamp);
-			SimpleDateFormat sdf5 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.getDefault());
 			LogMessage("Last updated forecast: " + sdf3.format(date));
 
 			JSONArray mydays = jobj.getJSONArray("data");
@@ -1798,7 +1820,6 @@ class weeWXAppCommon
 		{
 			desc = (String)KeyValue.readVar("metierev", weeWXApp.metierev_default);
 
-			SimpleDateFormat dayname = new SimpleDateFormat("EEEE d", Locale.getDefault());
 			JSONArray jarr = new JSONArray(data);
 			for(int i = 0; i < jarr.length(); i++)
 			{
@@ -1810,7 +1831,7 @@ class weeWXAppCommon
 				if(df != null)
 					day.timestamp = df.getTime();
 
-				day.day = dayname.format(day.timestamp);
+				day.day = sdf2.format(day.timestamp);
 				day.max = jobj.getString("temperature") + "&deg;C";
 				day.icon = jobj.getString("weatherNumber");
 

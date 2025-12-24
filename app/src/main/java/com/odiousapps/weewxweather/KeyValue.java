@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@SuppressWarnings("unused")
+@SuppressWarnings({"unused", "ConstantValue"})
 class KeyValue
 {
 	final static Map<Integer, Integer> widgetMinHeight = new HashMap<>();
@@ -47,14 +47,15 @@ class KeyValue
 
 			Object ret = weeWXAppCommon.readVar(var, defVal);
 
-			weeWXAppCommon.LogMessage("ret: " + ret);
+			if(weeWXAppCommon.debug_level == v)
+				Log.v(weeWXAppCommon.LOGTAG, "ret: " + ret);
 
 			if(ret != null)
 				return ret;
 
 			return defVal;
 		} catch(Exception err) {
-			Log.e("weeWXApp", "Error! err: ", err);
+			Log.e(weeWXAppCommon.LOGTAG, "Error! err: ", err);
 		}
 
 		return defVal;

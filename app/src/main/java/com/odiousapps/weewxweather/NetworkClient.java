@@ -33,10 +33,7 @@ class NetworkClient
 		try
 		{
 			Context context = weeWXApp.getInstance();
-/*
-			if(Security.getProvider("Conscrypt") == null)
-				Security.insertProviderAt(Conscrypt.newProvider(), 1);
-*/
+
 			// Create a trust manager that does not validate certificate chains
 			@SuppressLint("CustomX509TrustManager")
 			final TrustManager[] trustAllCerts = new TrustManager[]
@@ -86,7 +83,7 @@ class NetworkClient
 					.build();
 
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
+			weeWXAppCommon.LogMessage("NetworkClient.java Error! e: " + e, true, KeyValue.e);
 		}
 	}
 
