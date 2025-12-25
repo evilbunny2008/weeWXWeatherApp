@@ -13,8 +13,8 @@ class Colours
 	public int widgetBG = weeWXApp.widgetBG_default;
 	public int widgetFG = weeWXApp.widgetFG_default;
 
-	public int bgColour = White;
-	public int fgColour = Black;
+	public int bgColour = weeWXApp.bgColour_default;
+	public int fgColour = weeWXApp.fgColour_default;
 
 	public int AlmostBlack = 0xFF121212;
 	public int LightBlueAccent = 0xFF82B1FF;
@@ -26,8 +26,11 @@ class Colours
 	{
 		Context context = weeWXApp.getInstance();
 
-		bgColour = ContextCompat.getColor(context, R.color.appBackgroundColour);
-		fgColour = ContextCompat.getColor(context, R.color.appTextColour);
+		bgColour = (int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default);
+		fgColour = (int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default);
+
+		widgetBG = (int)KeyValue.readVar("widgetBG", weeWXApp.widgetBG_default);
+		widgetFG = (int)KeyValue.readVar("widgetFG", weeWXApp.widgetFG_default);
 
 		White = ContextCompat.getColor(context, R.color.White);
 		Black = ContextCompat.getColor(context, R.color.Black);

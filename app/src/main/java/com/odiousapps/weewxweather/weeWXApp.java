@@ -1,7 +1,6 @@
 package com.odiousapps.weewxweather;
 
 import android.app.Application;
-import android.content.Context;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -16,8 +15,8 @@ import android.os.LocaleList;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
+import android.util.Log;
 
-import com.caverock.androidsvg.BuildConfig;
 import com.caverock.androidsvg.PreserveAspectRatio;
 import com.caverock.androidsvg.SVG;
 import com.github.evilbunny2008.colourpicker.CPEditText;
@@ -25,6 +24,8 @@ import com.github.evilbunny2008.colourpicker.CPEditText;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import androidx.annotation.NonNull;
@@ -32,7 +33,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.ContextCompat;
 
-@SuppressWarnings({"unused", "SameParameterValue", "DataFlowIssue"})
+@SuppressWarnings({"unused", "SameParameterValue"})
 public class weeWXApp extends Application
 {
 	private static final String html_header = """
@@ -99,8 +100,7 @@ public class weeWXApp extends Application
 		<br><br>
 		Current WebView Library Version: WEBVIEWVER
 		<br/><br/>
-		weeWX Weather App v
-	""" + BuildConfig.VERSION_NAME + """
+		weeWX Weather App vAPPVERSION
 	    is by <a href='https://odiousapps.com'>OdiousApps</a>.
 	""";
 
@@ -170,7 +170,7 @@ public class weeWXApp extends Application
 	final static String currentSpacer = "\t\t\t<div class='currentSpacer'>\u00A0</div>\n";
 
 	private static weeWXApp instance = null;
-	private Colours colours;
+	private static Colours colours;
 	private static int lastNightMode = -1;
 
 	final static int minimum_inigo_version = 4000;
@@ -230,12 +230,24 @@ public class weeWXApp extends Application
 
 	static boolean hasBootedFully = false;
 
+	private static Integer currentTheme = null;
+
 	final static String charset = StandardCharsets.UTF_8.toString();
+
+	record Setting(String Key, Object Val) {}
 
 	@Override
 	public void onCreate()
 	{
 		instance = this;
+
+		try
+		{
+			// Preload the weeWXAppCommon and KeyValue classes
+			Class.forName("com.odiousapps.weewxweather.BuildConfig");
+			Class.forName("com.odiousapps.weewxweather.weeWXAppCommon");
+			Class.forName("com.odiousapps.weewxweather.KeyValue");
+		} catch(ClassNotFoundException ignored) {}
 
 		super.onCreate();
 
@@ -266,19 +278,12 @@ public class weeWXApp extends Application
 			getAndroidString(R.string.custom_setting)
 		};
 
-		try
-		{
-			// Preload the weeWXAppCommon and KeyValue classes
-			Class.forName("com.odiousapps.weewxweather.weeWXAppCommon");
-			Class.forName("com.odiousapps.weewxweather.KeyValue");
-		} catch(ClassNotFoundException ignored) {}
-
 		if((boolean)KeyValue.readVar("save_app_debug_logs", save_app_debug_logs_default))
 			weeWXAppCommon.LogMessage("Debug logging enabled...", true, KeyValue.i);
 		else
 			weeWXAppCommon.LogMessage("Debug logging disabled...", true, KeyValue.i);
 
-		weeWXAppCommon.LogMessage("weeWXApp.java app_version: " + BuildConfig.VERSION_NAME + " starting...", KeyValue.i);
+		weeWXAppCommon.LogMessage("weeWXApp.java app_version: " + com.odiousapps.weewxweather.BuildConfig.VERSION_NAME + " starting...", KeyValue.i);
 
 		if(weeWXAppCommon.fixTypes())
 			weeWXAppCommon.LogMessage("weeWXApp.java successfully converted preference object types...", KeyValue.d);
@@ -339,7 +344,8 @@ public class weeWXApp extends Application
 
 		if(KeyValue.currWebViewVer != null)
 		{
-			current_about_blurb = about_blurb.replaceAll("WEBVIEWVER", KeyValue.currWebViewVer);
+			current_about_blurb = about_blurb.replaceAll("WEBVIEWVER", KeyValue.currWebViewVer)
+					.replaceAll("APPVERSION", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
 		}
 	}
 
@@ -454,16 +460,44 @@ public class weeWXApp extends Application
 
 	static void applyTheme(boolean forced)
 	{
+		int theme = theme_default;
+		int mode = mode_default;
+
 		//if(DynamicColors.isDynamicColorAvailable())
 		//	DynamicColors.applyToActivitiesIfAvailable(this);
 
-		instance.colours.initOrReinit();
+		colours.initOrReinit();
 
-		getDayNightMode();
+		List<Setting> settings = getDayNightMode();
 
-		int mode = (int)KeyValue.readVar("mode", mode_default);
+		for(Setting s : settings)
+		{
+			if(s.Key.equals("theme"))
+				theme = (int)s.Val();
+
+			if(s.Key.equals("mode"))
+				mode = (int)s.Val();
+		}
+
+		if(theme == R.style.AppTheme_weeWXApp_Light_Common)
+			Log.i(weeWXAppCommon.LOGTAG, "weeWXApp.onCreate() theme: R.style.AppTheme_weeWXApp_Light_Common");
+		else if(theme == R.style.AppTheme_weeWXApp_Dark_Common)
+			Log.i(weeWXAppCommon.LOGTAG, "weeWXApp.onCreate() theme: R.style.AppTheme_weeWXApp_Dark_Common");
+		else if(theme == R.style.AppTheme_weeWXApp_Common)
+			Log.i(weeWXAppCommon.LOGTAG, "weeWXApp.onCreate() theme: R.style.AppTheme_weeWXApp_Common");
+		else
+			Log.i(weeWXAppCommon.LOGTAG, "weeWXApp.onCreate() theme: " + theme);
+
+		weeWXAppCommon.LogMessage("Setting mode to: " + mode, true, KeyValue.w);
+
 		if(AppCompatDelegate.getDefaultNightMode() != mode)
 			AppCompatDelegate.setDefaultNightMode(mode);
+
+		if(currentTheme == null || currentTheme != theme)
+		{
+			currentTheme = theme;
+			instance.setTheme(theme);
+		}
 
 		current_html_headers = html_header +
 		                       "<style>\n" +
@@ -476,15 +510,15 @@ public class weeWXApp extends Application
 		                      "\n</style>\n" +
 		                      dialog_html_header_rest;
 
-		replaceHex6String("BG_HEX", instance.colours.bgColour);
-		replaceHex6String("FG_HEX", instance.colours.fgColour);
+		replaceHex6String("BG_HEX", colours.bgColour);
+		replaceHex6String("FG_HEX", colours.fgColour);
 		if((int)KeyValue.readVar("theme", theme_default) == R.style.AppTheme_weeWXApp_Dark_Common)
 		{
-			replaceHex6String("ACCENT_HEX", instance.colours.DarkBlueAccent);
-			replaceHex6String("GRAY_HEX", instance.colours.DarkGray);
+			replaceHex6String("ACCENT_HEX", colours.DarkBlueAccent);
+			replaceHex6String("GRAY_HEX", colours.DarkGray);
 		} else {
-			replaceHex6String("ACCENT_HEX", instance.colours.LightBlueAccent);
-			replaceHex6String("GRAY_HEX", instance.colours.LightGray);
+			replaceHex6String("ACCENT_HEX", colours.LightBlueAccent);
+			replaceHex6String("GRAY_HEX", colours.LightGray);
 		}
 
 		String lang = Locale.getDefault().getLanguage();
@@ -506,11 +540,8 @@ public class weeWXApp extends Application
 
 		current_html_headers = replaceHTMLString(current_html_headers, "CURRENT_LANG", lang);
 		current_dialog_html = replaceHTMLString(current_dialog_html, "CURRENT_LANG", lang);
+
 		weeWXAppCommon.LogMessage("Current app language: " + lang, KeyValue.d);
-
-		instance.setTheme((int)KeyValue.readVar("theme", theme_default));
-
-		weeWXAppCommon.LogMessage("DayNightMode == " + AppCompatDelegate.getDefaultNightMode(), KeyValue.d);
 
 		if(forced)
 		{
@@ -521,6 +552,9 @@ public class weeWXApp extends Application
 		}
 
 		weeWXAppCommon.LogMessage("Theme should have updated!");
+
+		weeWXAppCommon.LogMessage("Theme == " + instance.getTheme(), true, KeyValue.w);
+		weeWXAppCommon.LogMessage("DayNightMode == " + AppCompatDelegate.getDefaultNightMode(), true, KeyValue.w);
 
 		weeWXAppCommon.SendIntent(weeWXAppCommon.REFRESH_DARKMODE_INTENT);
 	}
@@ -636,11 +670,11 @@ public class weeWXApp extends Application
 
 			bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
 			Canvas canvas = new Canvas(bitmap);
-			canvas.drawColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
+			canvas.drawColor(weeWXApp.getColours().bgColour);
 
 			// 3️⃣ Prepare the paint
 			TextPaint paint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
-			paint.setColor((int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default));
+			paint.setColor(weeWXApp.getColours().fgColour);
 			paint.setTextAlign(Paint.Align.LEFT);
 			paint.setTextSize(textSize);
 
@@ -674,27 +708,25 @@ public class weeWXApp extends Application
 
 	static Colours getColours()
 	{
-		return instance.colours;
+		return colours;
 	}
 
-	static void getDayNightMode()
+	static List<Setting> getDayNightMode()
 	{
-		Context context = instance;
+		List<Setting> settings = new ArrayList<>();
 
-		boolean isWidgetSet = false;
+		int Black = ContextCompat.getColor(instance, R.color.Black);
+		int White = ContextCompat.getColor(instance, R.color.White);
+
 		boolean prefSet = weeWXAppCommon.isPrefSet("DayNightMode");
 
-		int current_theme = theme_default;
-		int current_mode = mode_default;
-		int current_bgColour = bgColour_default;
-		int current_fgColour = fgColour_default;
-		int current_widgetBG = widgetBG_default;
-		int current_widgetFG = widgetFG_default;
-
-		Object ret = KeyValue.readVar(weeWXAppCommon.WIDGET_THEME_MODE, widget_theme_mode_default);
-		weeWXAppCommon.LogMessage("ret: " + ret);
-
-		int widget_theme_mode = (int)ret;
+		int current_theme = (int)KeyValue.readVar("theme", theme_default);
+		int current_mode = (int)KeyValue.readVar("mode", mode_default);
+		int widget_theme_mode = (int)KeyValue.readVar("widget_theme_mode", widget_theme_mode_default);
+		int current_bgColour = (int)KeyValue.readVar("bgColour", bgColour_default);
+		int current_fgColour = (int)KeyValue.readVar("fgColour", fgColour_default);
+		int current_widgetBG = (int)KeyValue.readVar("widgetBG", widgetBG_default);
+		int current_widgetFG = (int)KeyValue.readVar("widgetFG", widgetFG_default);
 
 		int theme = current_theme;
 		int mode = current_mode;
@@ -703,78 +735,69 @@ public class weeWXApp extends Application
 		int widgetBG = current_widgetBG;
 		int widgetFG = current_widgetFG;
 
-		int nightDaySetting = getAppDayNightSetting();
+		int nightDaySetting = (int)KeyValue.readVar("DayNightMode", DayNightMode_default);
 		int nightModeFlags = getUImode() & Configuration.UI_MODE_NIGHT_MASK;
 
 		if(prefSet)
 		{
-			current_theme = (int)KeyValue.readVar("theme", theme_default);
-			current_mode = (int)KeyValue.readVar("mode", mode_default);
-			current_bgColour = (int)KeyValue.readVar("bgColour", bgColour_default);
-			current_fgColour = (int)KeyValue.readVar("fgColour", fgColour_default);
-			current_widgetBG = (int)KeyValue.readVar("widgetBG", widgetBG_default);
-			current_widgetFG = (int)KeyValue.readVar("widgetFG", widgetFG_default);
-
 			if(nightDaySetting == 0)
 			{
-				weeWXAppCommon.LogMessage("Night mode off...");
-			} else if(nightDaySetting == 1) {
-				weeWXAppCommon.LogMessage("Night mode on...");
-				theme = R.style.AppTheme_weeWXApp_Dark_Common;
+				weeWXAppCommon.LogMessage("Dark mode off...");
+				theme = R.style.AppTheme_weeWXApp_Light_Common;
 				mode = AppCompatDelegate.MODE_NIGHT_NO;
-				bgColour = ContextCompat.getColor(context, R.color.White);
-				fgColour = ContextCompat.getColor(context, R.color.Black);
+				bgColour = White;
+				fgColour = Black;
 				widgetBG = widgetBG_default;
 				widgetFG = widgetFG_default;
-			}
-
-			if((int)KeyValue.readVar("widget_theme_mode", weeWXApp.widget_theme_mode_default) == 1)
-			{
-				isWidgetSet = true;
+			} else if(nightDaySetting == 1) {
+				weeWXAppCommon.LogMessage("Dark mode on...");
+				theme = R.style.AppTheme_weeWXApp_Dark_Common;
+				mode = AppCompatDelegate.MODE_NIGHT_NO;
+				bgColour = Black;
+				fgColour = White;
 				widgetBG = widgetBG_default2;
 				widgetFG = widgetFG_default2;
+			}
+
+			if(widget_theme_mode == 1)
+			{
+				widgetBG = bgColour;
+				widgetFG = fgColour;
 			}
 		}
 
-		if(!prefSet || (nightDaySetting != 0 && nightDaySetting != 1))
+		if(!prefSet || nightDaySetting == 2)
 		{
+			weeWXAppCommon.LogMessage("Pref isn't set, or pref set to follow system...");
+
+			theme = R.style.AppTheme_weeWXApp_Common;
+			bgColour = White;
+			fgColour = Black;
+
 			if(nightModeFlags == Configuration.UI_MODE_NIGHT_NO)
 			{
 				weeWXAppCommon.LogMessage("Night mode off...");
-				theme = R.style.AppTheme_weeWXApp_Light_Common;
 				mode = AppCompatDelegate.MODE_NIGHT_NO;
-				bgColour = ContextCompat.getColor(context, R.color.White);
-				fgColour = ContextCompat.getColor(context, R.color.Black);
-				widgetBG = widgetBG_default2;
-				widgetFG = widgetFG_default2;
-			} else {
-				weeWXAppCommon.LogMessage("Night mode on...");
-				bgColour = ContextCompat.getColor(context, R.color.Black);
-				fgColour = ContextCompat.getColor(context, R.color.White);
 				widgetBG = widgetBG_default;
 				widgetFG = widgetFG_default;
-				theme = R.style.AppTheme_weeWXApp_Dark_Common;
+			} else {
+				weeWXAppCommon.LogMessage("Night mode on...");
+				mode = AppCompatDelegate.MODE_NIGHT_YES;
+				widgetBG = widgetBG_default2;
+				widgetFG = widgetFG_default2;
 			}
 		}
 
 		if(widget_theme_mode == 2 || (widget_theme_mode == 0 && nightModeFlags == Configuration.UI_MODE_NIGHT_NO))
 		{
-			isWidgetSet = true;
-			widgetBG = ContextCompat.getColor(context, R.color.White);
-			widgetFG = ContextCompat.getColor(context, R.color.Black);
+			widgetBG = widgetBG_default;
+			widgetFG = widgetFG_default;
 		}
 
 		if(widget_theme_mode == 3 || (widget_theme_mode == 0 && nightModeFlags == Configuration.UI_MODE_NIGHT_YES))
 		{
-			isWidgetSet = true;
-			widgetBG = ContextCompat.getColor(context, R.color.Black);
-			widgetFG = ContextCompat.getColor(context, R.color.White);
-		}
-
-		if(widget_theme_mode == 4 || !isWidgetSet)
-		{
-			widgetBG = widgetBG_default;
-			widgetFG = widgetFG_default;
+			widgetBG = widgetBG_default2;
+			widgetFG = widgetFG_default2;
 		}
 
 		if(theme != current_theme)
@@ -784,20 +807,39 @@ public class weeWXApp extends Application
 			KeyValue.putVar("mode", mode);
 
 		if(bgColour != current_bgColour)
+		{
+			colours.bgColour = bgColour;
 			KeyValue.putVar("bgColour", bgColour);
+		}
 
 		if(fgColour != current_fgColour)
+		{
+			colours.fgColour = fgColour;
 			KeyValue.putVar("fgColour", fgColour);
+		}
 
 		if(widgetBG != current_widgetBG)
+		{
+			colours.widgetBG = widgetBG;
 			KeyValue.putVar("widgetBG", widgetBG);
+		}
 
 		if(widgetFG != current_widgetFG)
+		{
+			colours.widgetFG = widgetFG;
 			KeyValue.putVar("widgetFG", widgetFG);
-	}
+		}
 
-	static int getAppDayNightSetting()
-	{
-		return (int)KeyValue.readVar("DayNightMode", DayNightMode_default);
+		settings.add(new Setting("theme", theme));
+		settings.add(new Setting("mode", mode));
+		settings.add(new Setting("bgColour", bgColour));
+		settings.add(new Setting("fgColour", fgColour));
+		settings.add(new Setting("widgetBG", widgetBG));
+		settings.add(new Setting("widgetFG", widgetFG));
+
+		Log.w(weeWXAppCommon.LOGTAG, "weeWXApp.getDayNightMode() bgColour: #" + Integer.toHexString(bgColour));
+		Log.w(weeWXAppCommon.LOGTAG, "weeWXApp.getDayNightMode() fgColour: #" + Integer.toHexString(fgColour));
+
+		return settings;
 	}
 }

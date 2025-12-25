@@ -34,7 +34,7 @@ public class Stats extends Fragment
 		weeWXAppCommon.LogMessage("Stats.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
 
-		int bgColour = (int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default);
+		int bgColour = weeWXApp.getColours().bgColour;
 
 		rootView = inflater.inflate(R.layout.fragment_stats, container, false);
 
@@ -233,8 +233,8 @@ public class Stats extends Fragment
 		if(!tv.getText().toString().equals(txt))
 			tv.post(() ->
 			{
-				tv.setBackgroundColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
-				tv.setTextColor((int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default));
+				tv.setBackgroundColor(weeWXApp.getColours().bgColour);
+				tv.setTextColor(weeWXApp.getColours().fgColour);
 				tv.setText(txt);
 			});
 	}

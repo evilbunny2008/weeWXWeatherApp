@@ -53,8 +53,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		weeWXAppCommon.LogMessage("Weather.onCreateView()");
 
-		int fgColour = (int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default);
-		int bgColour = (int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default);
+		int bgColour = weeWXApp.getColours().bgColour;
+		int fgColour = weeWXApp.getColours().fgColour;
 
 		activity = (MainActivity)getActivity();
 
@@ -560,7 +560,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(bits[45].contains("N/A"))
 			bits[45] = "";
-/* TODO uncomment me!
+
 		if(!bits[43].isBlank() || !bits[45].isBlank())
 		{
 			sb.append("\t\t<div class='dataRowCurrent'>\n");
@@ -592,7 +592,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			sb.append("\t\t</div>\n");
 		}
-*/
+
 		if(bits.length > 166 && (!bits[161].isBlank() || !bits[166].isBlank()) &&
 		   (boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
 		{

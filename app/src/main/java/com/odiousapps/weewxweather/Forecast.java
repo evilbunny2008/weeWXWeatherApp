@@ -407,7 +407,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			swipeLayout1.post(() ->
 			{
-				swipeLayout1.setBackgroundColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
+				swipeLayout1.setBackgroundColor(weeWXApp.getColours().bgColour);
 				if(swipeLayout1.isRefreshing() != setRefreshing)
 					swipeLayout1.setRefreshing(setRefreshing);
 				swipeLayout1.setEnabled(true);
@@ -754,8 +754,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 		TextView tv1 = rootView.findViewById(R.id.forecast);
 		tv1.post(() ->
 		{
-			tv1.setTextColor((int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default));
-			tv1.setBackgroundColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
+			tv1.setBackgroundColor(weeWXApp.getColours().bgColour);
+			tv1.setTextColor(weeWXApp.getColours().fgColour);
 			tv1.setText(desc);
 		});
 

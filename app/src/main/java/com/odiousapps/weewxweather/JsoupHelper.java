@@ -1,7 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import com.caverock.androidsvg.BuildConfig;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.jsoup.Jsoup;
@@ -122,8 +120,8 @@ class JsoupHelper
 											"svgHeight", "" + height,
 											"svgWidth", "" + width,
 											"svg", outputLight,
-											"appName", BuildConfig.APPLICATION_ID,
-											"appVersion", BuildConfig.VERSION_NAME);
+											"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
+											"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
 
 									weeWXAppCommon.uploadString(base_url, args);
 								}
@@ -158,8 +156,8 @@ class JsoupHelper
 											"svgHeight", "" + height,
 											"svgWidth", "" + width,
 											"svg", outputDark,
-											"appName", BuildConfig.APPLICATION_ID,
-											"appVersion", BuildConfig.VERSION_NAME);
+											"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
+											"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
 
 
 									weeWXAppCommon.uploadString(base_url, args);
@@ -195,8 +193,8 @@ class JsoupHelper
 											"svgHeight", "" + height,
 											"svgWidth", "" + width,
 											"svg", output,
-											"appName", BuildConfig.APPLICATION_ID,
-											"appVersion", BuildConfig.VERSION_NAME);
+											"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
+											"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
 
 									weeWXAppCommon.uploadString(base_url, args);
 								}
@@ -409,8 +407,8 @@ class JsoupHelper
 								weeWXAppCommon.uploadString(base_url, Map.of(
 										"svgMissingName", day.icon,
 										"svgMissingURL", forecaseURL,
-										"appName", BuildConfig.APPLICATION_ID,
-										"appVersion", BuildConfig.VERSION_NAME));
+										"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
+										"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME));
 							}
 
 							day.icon = null;

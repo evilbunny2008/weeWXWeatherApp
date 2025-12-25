@@ -13,6 +13,7 @@ import android.os.Looper;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.method.LinkMovementMethod;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,6 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.window.OnBackInvokedDispatcher;
 
-import com.caverock.androidsvg.BuildConfig;
 import com.github.evilbunny2008.colourpicker.CPEditText;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.button.MaterialButton;
@@ -48,6 +48,7 @@ import java.lang.reflect.Field;
 import java.net.URI;
 import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
@@ -75,6 +76,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 
 import static androidx.core.view.WindowCompat.enableEdgeToEdge;
+
 import static com.github.evilbunny2008.colourpicker.Common.parseHexToColour;
 import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
@@ -123,47 +125,70 @@ public class MainActivity extends FragmentActivity
 
 	private long bgStart;
 
-	private final int[] screen_elements = new int[]
-	{
-		R.id.about_the_app,
-		R.id.aboutText,
-		R.id.til1,
-		R.id.settings,
-		R.id.show_indoor,
-		R.id.metric_forecasts,
-		R.id.wifi_only,
-		R.id.til2,
-		R.id.spinner1,
-		R.id.til3,
-		R.id.spinner2,
-		R.id.til4,
-		R.id.spinner3,
-		R.id.fgTextInputLayout,
-		R.id.widgetBG,
-		R.id.bgTextInputLayout,
-		R.id.widgetFG,
-		R.id.mtv1,
-		R.id.mtv2,
-		R.id.showRadar,
-		R.id.showForecast,
-		R.id.til5,
-		R.id.customURL,
-		R.id.use_exact_alarm,
-		R.id.save_app_debug_logs,
-		R.id.next_moon,
-		R.id.force_dark_mode
-	};
+	private int theme;
+
+	private record Setting(String name, int ResId) {}
+
+	private final List<Setting> screen_elements = new ArrayList<>();
 
 	ColorStateList strokeColors;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
-		setTheme((int)KeyValue.readVar("theme", weeWXApp.theme_default));
+		theme = (int)KeyValue.readVar("theme", weeWXApp.theme_default);
+
+		setTheme(theme);
+
+		if(weeWXApp.theme_default == R.style.AppTheme_weeWXApp_Light_Common)
+			Log.i(weeWXAppCommon.LOGTAG, "MainActivity.onCreate() weeWXApp.theme_default: R.style.AppTheme_weeWXApp_Light_Common");
+		else if(weeWXApp.theme_default == R.style.AppTheme_weeWXApp_Dark_Common)
+			Log.i(weeWXAppCommon.LOGTAG, "MainActivity.onCreate() weeWXApp.theme_default: R.style.AppTheme_weeWXApp_Dark_Common");
+		else if(weeWXApp.theme_default == R.style.AppTheme_weeWXApp_Common)
+			Log.i(weeWXAppCommon.LOGTAG, "MainActivity.onCreate() weeWXApp.theme_default: R.style.AppTheme_weeWXApp_Common");
+		else
+			Log.i(weeWXAppCommon.LOGTAG, "MainActivity.onCreate() theme: " + weeWXApp.theme_default);
+
+		if(theme == R.style.AppTheme_weeWXApp_Light_Common)
+			Log.i(weeWXAppCommon.LOGTAG, "MainActivity.onCreate() theme: R.style.AppTheme_weeWXApp_Light_Common");
+		else if(theme == R.style.AppTheme_weeWXApp_Dark_Common)
+			Log.i(weeWXAppCommon.LOGTAG, "MainActivity.onCreate() theme: R.style.AppTheme_weeWXApp_Dark_Common");
+		else if(theme == R.style.AppTheme_weeWXApp_Common)
+			Log.i(weeWXAppCommon.LOGTAG, "MainActivity.onCreate() theme: R.style.AppTheme_weeWXApp_Common");
+		else
+			Log.i(weeWXAppCommon.LOGTAG, "MainActivity.onCreate() theme: " + theme);
 
 		super.onCreate(savedInstanceState);
 
-		weeWXAppCommon.LogMessage("MainActivity.ocCreate() started...");
+		screen_elements.add(new Setting("about_the_app", R.id.about_the_app));
+		screen_elements.add(new Setting("aboutText", R.id.aboutText));
+		screen_elements.add(new Setting("til1", R.id.til1));
+		screen_elements.add(new Setting("settings", R.id.settings));
+		screen_elements.add(new Setting("show_indoor", R.id.show_indoor));
+		screen_elements.add(new Setting("metric_forecasts", R.id.metric_forecasts));
+		screen_elements.add(new Setting("wifi_only", R.id.wifi_only));
+		screen_elements.add(new Setting("til2", R.id.til2));
+		screen_elements.add(new Setting("spinner1", R.id.spinner1));
+		screen_elements.add(new Setting("til3", R.id.til3));
+		screen_elements.add(new Setting("spinner2", R.id.spinner2));
+		screen_elements.add(new Setting("til4", R.id.til4));
+		screen_elements.add(new Setting("spinner3", R.id.spinner3));
+		screen_elements.add(new Setting("fgTextInputLayout", R.id.fgTextInputLayout));
+		screen_elements.add(new Setting("widgetBG", R.id.widgetBG));
+		screen_elements.add(new Setting("bgTextInputLayout", R.id.bgTextInputLayout));
+		screen_elements.add(new Setting("widgetFG", R.id.widgetFG));
+		screen_elements.add(new Setting("mtv1", R.id.mtv1));
+		screen_elements.add(new Setting("mtv2", R.id.mtv2));
+		screen_elements.add(new Setting("showRadar", R.id.showRadar));
+		screen_elements.add(new Setting("showForecast", R.id.showForecast));
+		screen_elements.add(new Setting("til5", R.id.til5));
+		screen_elements.add(new Setting("customURL", R.id.customURL));
+		screen_elements.add(new Setting("use_exact_alarm", R.id.use_exact_alarm));
+		screen_elements.add(new Setting("save_app_debug_logs", R.id.save_app_debug_logs));
+		screen_elements.add(new Setting("next_moon", R.id.next_moon));
+		screen_elements.add(new Setting("force_dark_mode", R.id.force_dark_mode));
+
+		weeWXAppCommon.LogMessage("MainActivity.onCreate() started...");
 
 		WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
@@ -217,7 +242,7 @@ public class MainActivity extends FragmentActivity
 		}
 
 		myLinearLayout cd = findViewById(R.id.custom_drawer);
-		cd.setBackgroundColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
+		cd.setBackgroundColor(weeWXApp.getColours().bgColour);
 		cd.setOnTouchedListener((v) ->
 		{
 			weeWXAppCommon.LogMessage("cd.TouchedListener()");
@@ -422,6 +447,8 @@ public class MainActivity extends FragmentActivity
 		DayNightMode = (int)KeyValue.readVar("DayNightMode", weeWXApp.DayNightMode_default);
 		widget_theme_mode =	(int)KeyValue.readVar(weeWXAppCommon.WIDGET_THEME_MODE, weeWXApp.widget_theme_mode_default);
 
+		weeWXAppCommon.LogMessage("DayNightMode: " + DayNightMode);
+
 		bg = (int)KeyValue.readVar("widgetBG", weeWXApp.widgetBG_default);
 		fg = (int)KeyValue.readVar("widgetFG", weeWXApp.widgetFG_default);
 
@@ -434,8 +461,6 @@ public class MainActivity extends FragmentActivity
 		sadl = (boolean)KeyValue.readVar("save_app_debug_logs", weeWXApp.save_app_debug_logs_default);
 		nm = (boolean)KeyValue.readVar("next_moon", weeWXApp.next_moon_default);
 		fdm = (boolean)KeyValue.readVar("force_dark_mode", weeWXApp.force_dark_mode_default);
-
-		weeWXAppCommon.LogMessage("nm: " + nm);
 
 		if(savedInstanceState != null)
 		{
@@ -460,7 +485,7 @@ public class MainActivity extends FragmentActivity
 			nm = savedInstanceState.getBoolean("nm", nm);
 			fdm = savedInstanceState.getBoolean("fdm", fdm);
 
-			weeWXAppCommon.LogMessage("nm: " + nm);
+			weeWXAppCommon.LogMessage("DayNightMode: " + DayNightMode);
 		}
 
 		// https://github.com/Pes8/android-material-color-picker-dialog
@@ -496,7 +521,7 @@ public class MainActivity extends FragmentActivity
 		next_moon.setChecked(nm);
 		force_dark_mode.setChecked(fdm);
 
-		weeWXAppCommon.LogMessage("nm: " + nm);
+		weeWXAppCommon.LogMessage("DayNightMode: " + DayNightMode);
 
 		showRadar.setChecked(sr);
 		showForecast.setChecked(!sr);
@@ -594,6 +619,11 @@ public class MainActivity extends FragmentActivity
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(this, notificationObserver);
 
 		weeWXAppCommon.LogMessage("MainActivity.onCreate() has finished...");
+
+		for(Setting s : screen_elements)
+		{
+			weeWXAppCommon.LogColour(findViewById(s.ResId()), s.name());
+		}
 	}
 
 	private void reduceViewPagerSwipeSensitivity(ViewPager2 viewPager)
@@ -654,11 +684,13 @@ public class MainActivity extends FragmentActivity
 
 	private void updateColours()
 	{
-		int fgColour = (int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default);
+		int fgColour = weeWXApp.getColours().fgColour;
 
-		for(int i : screen_elements)
+		Log.w(weeWXAppCommon.LOGTAG, "MainActivity.onCreate() fgColour: #" + Integer.toHexString(fgColour));
+
+		for(Setting s : screen_elements)
 		{
-			View view = findViewById(i);
+			View view = findViewById(s.ResId());
 			switch(view)
 			{
 				case TextInputLayout v ->
@@ -841,10 +873,10 @@ public class MainActivity extends FragmentActivity
 
 	private void setStrings()
 	{
-		int fgColour = (int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default);
+		int fgColour = weeWXApp.getColours().fgColour;
 
 		int disabled = weeWXApp.getColours().LightGray;
-		if((int)KeyValue.readVar("theme", weeWXApp.theme_default) == R.style.AppTheme_weeWXApp_Dark_Common)
+		if(theme == R.style.AppTheme_weeWXApp_Dark_Common)
 			disabled = weeWXApp.getColours().DarkGray;
 
 		strokeColors = new ColorStateList(new int[][]{new int[]{android.R.attr.state_enabled},      // default enabled
@@ -867,8 +899,8 @@ public class MainActivity extends FragmentActivity
 			public View getView(int position, View convertView, @NonNull ViewGroup parent)
 			{
 				MaterialTextView view = (MaterialTextView)super.getView(position, convertView, parent);
-				view.setBackgroundColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
-				view.setTextColor((int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default));
+				view.setBackgroundColor(weeWXApp.getColours().bgColour);
+				view.setTextColor(weeWXApp.getColours().fgColour);
 				return view;
 			}
 
@@ -876,8 +908,8 @@ public class MainActivity extends FragmentActivity
 			public View getDropDownView(int position, View convertView, @NonNull ViewGroup parent)
 			{
 				MaterialTextView view = (MaterialTextView)super.getDropDownView(position, convertView, parent);
-				view.setBackgroundColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
-				view.setTextColor((int)KeyValue.readVar("fgColour", weeWXApp.fgColour_default));
+				view.setBackgroundColor(weeWXApp.getColours().bgColour);
+				view.setTextColor(weeWXApp.getColours().fgColour);
 				return view;
 			}
 		};
@@ -1325,8 +1357,8 @@ public class MainActivity extends FragmentActivity
 								Map<String, String> args = Map.of(
 										"lat", "" + lat,
 										"lon", "" + lon,
-										"appName", BuildConfig.APPLICATION_ID,
-										"appVersion", BuildConfig.VERSION_NAME);
+										"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
+										"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
 
 								forecastLocationName = weeWXAppCommon.downloadString(url, args);
 
@@ -1690,8 +1722,8 @@ public class MainActivity extends FragmentActivity
 				resetScreen();
 
 				weeWXAppCommon.LogMessage("Apply the new theme");
-				weeWXApp.applyTheme(false);
 				setTheme((int)KeyValue.readVar("theme", weeWXApp.theme_default));
+				weeWXApp.applyTheme(false);
 
 				runDelayed(500L, () ->
 				{

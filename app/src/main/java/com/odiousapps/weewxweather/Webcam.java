@@ -27,7 +27,7 @@ public class Webcam extends Fragment
 		rl = rootView.findViewById(R.id.rotateLayout);
 		iv = rootView.findViewById(R.id.webcam);
 		swipeLayout = rootView.findViewById(R.id.swipeToRefresh);
-		swipeLayout.setBackgroundColor((int)KeyValue.readVar("bgColour", weeWXApp.bgColour_default));
+		swipeLayout.setBackgroundColor(weeWXApp.getColours().bgColour);
 
 		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->

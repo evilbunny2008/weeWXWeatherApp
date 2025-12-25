@@ -23,8 +23,18 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.github.evilbunny2008.xmltojson.XmlToJson;
+import com.google.android.material.materialswitch.MaterialSwitch;
+import com.google.android.material.radiobutton.MaterialRadioButton;
+import com.google.android.material.textfield.MaterialAutoCompleteTextView;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.android.material.textview.MaterialTextView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -160,7 +170,7 @@ class weeWXAppCommon
 
 	static
 	{
-		if(BuildConfig.DEBUG)
+		if(com.odiousapps.weewxweather.BuildConfig.DEBUG)
 			debug_level =  KeyValue.v;
 
 		try
@@ -210,6 +220,31 @@ class weeWXAppCommon
 		}
 
 		return new long[]{period, 45_000L};
+	}
+
+	static void LogColour(View view, String name)
+	{
+		Integer colour = null;
+
+		switch(view)
+		{
+			case TextInputLayout v ->
+			{
+				EditText editText = v.getEditText();
+				if(editText != null)
+					colour = editText.getCurrentTextColor();
+			}
+			case MaterialTextView v -> colour = v.getCurrentTextColor();
+			case TextInputEditText v -> colour = v.getCurrentTextColor();
+			case MaterialSwitch v -> colour = v.getCurrentTextColor();
+			case MaterialAutoCompleteTextView v -> colour = v.getCurrentTextColor();
+			case MaterialRadioButton v -> colour = v.getCurrentTextColor();
+			case TextView v -> colour = v.getCurrentTextColor();
+			default -> LogMessage("Uncaught view type: " + view, KeyValue.w);
+		}
+
+		if(colour != null)
+			Log.w(LOGTAG, "MainActivity.onCreate() colorSurface of " + name + ": #" + Integer.toHexString(colour));
 	}
 
 	static void LogMessage(String text)
