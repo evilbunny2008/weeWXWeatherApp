@@ -528,7 +528,14 @@ class JsoupHelper
 					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1)
 							.replaceAll("\\.gif$", "") + ".png";
 
-					day.icon = "file:///android_asset/icons/wcaf/" + fileName;
+					day.icon = "icons/wca/" + fileName;
+					String content = weeWXApp.loadFileFromAssets(day.icon);
+					if(content != null && !content.isBlank())
+					{
+						day.icon = "file:///android_asset/" + day.icon;
+						break;
+					} else
+						day.icon = null;
 
 					day.day = date;
 					day.max = temp;
@@ -661,7 +668,14 @@ class JsoupHelper
 
 					fileName = "wca" + fileName + ".png";
 
-					day.icon = "file:///android_asset/icons/wca/" + fileName;
+					day.icon = "icons/wca/" + fileName;
+					String content = weeWXApp.loadFileFromAssets(day.icon);
+					if(content != null && !content.isBlank())
+					{
+						day.icon = "file:///android_asset/" + day.icon;
+						break;
+					} else
+						day.icon = null;
 
 					day.day = date;
 					day.max = temp;

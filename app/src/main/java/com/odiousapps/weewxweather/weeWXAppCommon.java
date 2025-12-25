@@ -1176,7 +1176,7 @@ class weeWXAppCommon
 
 			fileName.insert(0, "met");
 
-			day.icon = "file:///android_asset/icons/" + fileName;
+			day.icon = "file:///android_asset/icons/met/" + fileName;
 
 			if(!metric)
 			{
@@ -1357,7 +1357,7 @@ class weeWXAppCommon
 				{
 					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).strip().replaceAll("\\.png$", ".jpg");
 
-					day.icon = "file:///android_asset/icons/" + fileName;
+					day.icon = "file:///android_asset/icons/wgov/" + fileName;
 				} else {
 					day.icon = iconLink.getString(i);
 				}
@@ -1610,7 +1610,7 @@ class weeWXAppCommon
 				String fileName = "dwd_" + icon.replaceAll("-", "_");
 				String url = "https://www.dwd.de/DE/wetter/_functions/piktos/" + icon + "?__blob=normal";
 
-				day.icon = "file:///android_asset/icons/" + fileName;
+				day.icon = "file:///android_asset/icons/dwd/" + fileName;
 
 				day.max = temp + "&deg;C";
 				day.min = "&deg;C";
@@ -1675,7 +1675,7 @@ class weeWXAppCommon
 
 				String fileName = cssToSVG("wi-tempoitalia-" + icon);
 
-				day.icon = "file:///android_asset/icons/" + fileName;
+				day.icon = "file:///android_asset/icons/tempoitalia/" + fileName;
 
 				day.max = bit.split("<td class='tempmax'>", 2)[1].split("°C</td>", 2)[0].strip() + "&deg;C";
 				day.min = bit.split("<td class='tempmin'>", 2)[1].split("°C</td>", 2)[0].strip() + "&deg;C";
@@ -1776,7 +1776,7 @@ class weeWXAppCommon
 				String url = "https://www.aemet.es/imagenes/png/estado_cielo/" + code + "_g.png";
 				String fileName = "aemet_" + code + "_g.png";
 
-				day.icon = "file:///android_asset/icons/" + fileName;
+				day.icon = "file:///android_asset/icons/aemet/" + fileName;
 
 				day.max = temperatura.getString("maxima") + "&deg;C";
 				day.min = temperatura.getString("minima") + "&deg;C";
@@ -1842,7 +1842,7 @@ class weeWXAppCommon
 
 				String fileName = day.icon + ".png";
 
-				day.icon = "file:///android_asset/icons/" + fileName;
+				day.icon = "file:///android_asset/icons/wcom/" + fileName;
 
 				if(metric)
 				{
@@ -1899,7 +1899,7 @@ class weeWXAppCommon
 
 				String fileName = "y" + day.icon + ".png";
 
-				day.icon = "file:///android_asset/icons/" + fileName;
+				day.icon = "file:///android_asset/icons/metie/" + fileName;
 
 				day.text = jobj.getString("weatherDescription");
 
@@ -2304,7 +2304,7 @@ class weeWXAppCommon
 
 				fileName = "wz" + fileName.substring(fileName.lastIndexOf('/') + 1, fileName.length() - 2) + ".png";
 
-				day.icon = "file:///android_asset/icons/" + fileName;
+				day.icon = "file:///android_asset/icons/wz/" + fileName;
 
 				LogMessage("WZ URI: " + fileName);
 
