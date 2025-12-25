@@ -385,7 +385,7 @@ class JsoupHelper
 
 						for(String option : options)
 						{
-							day.icon = "icons/yahoo/yahoo_" + jobj.getString("iconLabel")
+							day.icon = "icons/yahoo/" + jobj.getString("iconLabel")
 									.replaceAll(" ", "_") + "_" + option + "_light.svg";
 							content = weeWXApp.loadFileFromAssets(day.icon);
 							if(content != null && !content.isBlank())
@@ -528,7 +528,7 @@ class JsoupHelper
 					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1)
 							.replaceAll("\\.gif$", "") + ".png";
 
-					day.icon = "file:///android_asset/icons/" + fileName;
+					day.icon = "file:///android_asset/icons/wcaf/" + fileName;
 
 					day.day = date;
 					day.max = temp;
@@ -661,7 +661,7 @@ class JsoupHelper
 
 					fileName = "wca" + fileName + ".png";
 
-					day.icon = "file:///android_asset/icons/" + fileName;
+					day.icon = "file:///android_asset/icons/wca/" + fileName;
 
 					day.day = date;
 					day.max = temp;
@@ -753,7 +753,7 @@ class JsoupHelper
 
 			String fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
 
-			day.icon = "file:///android_asset/icons/" + fileName;
+			day.icon = "file:///android_asset/icons/bom/" + fileName;
 
 			day.max = day.max.replaceAll("°C", "").strip();
 			day.min = day.min.replaceAll("°C", "").strip();
@@ -793,8 +793,7 @@ class JsoupHelper
 				day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].strip();
 
 				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
-
-				day.icon = "file:///android_asset/icons/" + fileName;
+				day.icon = "file:///android_asset/icons/bom/" + fileName;
 
 				day.max = day.max.replaceAll("°C", "").strip() + "&deg;C";
 				day.min = day.min.replaceAll("°C", "").strip() + "&deg;C";

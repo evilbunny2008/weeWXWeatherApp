@@ -23,7 +23,6 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -154,7 +153,7 @@ class weeWXAppCommon
 
 	private static Typeface tf_bold = null;
 
-	private final static ExecutorService executor = Executors.newFixedThreadPool(4);
+	private final static ExecutorService executor = Executors.newFixedThreadPool(5);
 	private static final ExecutorService prefsExec = Executors.newSingleThreadExecutor();
 
 	private static Future<?> forecastTask, radarTask, weatherTask, webcamTask;
@@ -997,6 +996,8 @@ class weeWXAppCommon
 
 	static String[] processBOM3(String data, boolean showHeader)
 	{
+		String missing = null;
+
 		LogMessage("Starting processBOM3()");
 
 		if(data.isBlank())
@@ -1071,9 +1072,33 @@ class weeWXAppCommon
 				String fileName = bomlookup(mydays.getJSONObject(i).getString("icon_descriptor"));
 				if(fileName != null && !fileName.equals("null") && !fileName.isBlank())
 				{
-					fileName = "bom2" + fileName + ".png";
+					day.icon = "icons/bom/" + fileName + ".svg";
 
-					day.icon = "file:///android_asset/icons/" + fileName;
+					String content = weeWXApp.loadFileFromAssets(day.icon);
+					if(content != null && !content.isBlank())
+					{
+						missing = null;
+						day.icon = "file:///android_asset/" + day.icon;
+					} else {
+						missing = day.icon;
+						day.icon = null;
+					}
+				}
+
+				if(missing != null)
+				{
+					String base_url = "https://odiousapps.com/bom-missing-svg.php";
+
+					String forecaseURL = (String)KeyValue.readVar("FORECAST_URL", null);
+
+					weeWXAppCommon.LogMessage("Unable to locate SVG: " + missing, KeyValue.d);
+
+					weeWXAppCommon.uploadString(base_url, Map.of(
+							"svgMissingName", missing,
+							"svgMissingURL", forecaseURL,
+							"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
+							"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME));
+
 				}
 
 				days.add(day);
@@ -1095,7 +1120,7 @@ class weeWXAppCommon
 	{
 		icon = icon.replace("-", "_");
 
-		return switch(icon)
+		String newicon = switch(icon)
 		{
 			case "shower" -> "showers";
 			case "dusty" -> "dust";
@@ -1104,6 +1129,10 @@ class weeWXAppCommon
 			case "windy" -> "wind";
 			default -> icon;
 		};
+
+		LogMessage("BoM Old Icon: " + icon, KeyValue.d);
+		LogMessage("BoM New Icon: " + newicon, KeyValue.d);
+		return newicon;
 	}
 
 	static String[] processMET(String data, boolean showHeader)
@@ -1492,11 +1521,9 @@ class weeWXAppCommon
 
 				String content = weeWXApp.loadFileFromAssets(day.icon);
 				if(content != null && !content.isBlank())
-				{
 					day.icon = "file:///android_asset/" + day.icon;
-				} else {
+				else
 					day.icon = null;
-				}
 
 				LogMessage("day.icon: " + day.icon);
 
@@ -2881,36 +2908,39 @@ class weeWXAppCommon
 
 	static void uploadString(String url, Map<String,String> args)
 	{
-		if(args == null || args.isEmpty())
+		if(url == null || url.isBlank() || args == null || args.isEmpty())
 		{
 			LogMessage("uploadString() Attempted uploading nothing, skipping...", KeyValue.d);
 			return;
 		}
 
-		LogMessage("uploadString() uploading text to " + url);
-
-		FormBody.Builder fb = new FormBody.Builder();
-
-		for(Map.Entry<String, String> arg: args.entrySet())
-			fb.add(arg.getKey(), arg.getValue());
-
-		RequestBody formBody = fb.build();
-
-		OkHttpClient client = NetworkClient.getInstance(url);
-		Request request = NetworkClient.getRequest(false, url)
-				.newBuilder().post(formBody).build();
-
-		try(Response response = client.newCall(request).execute())
+		executor.submit(() ->
 		{
-			String bodyStr = response.body().string();
-			if(response.isSuccessful())
-				LogMessage("uploadString() Successfully uploaded something... response: " + bodyStr);
-			else
-				LogMessage("uploadString() Failed to upload something... response: " + bodyStr, true, KeyValue.d);
-		} catch(Exception e) {
-			LogMessage("uploadString() Error! e: " + e.getMessage(), true, KeyValue.e);
-			doStackOutput(e);
-		}
+			LogMessage("uploadString() uploading text to " + url);
+
+			FormBody.Builder fb = new FormBody.Builder();
+
+			for(Map.Entry<String, String> arg: args.entrySet())
+				fb.add(arg.getKey(), arg.getValue());
+
+			RequestBody formBody = fb.build();
+
+			OkHttpClient client = NetworkClient.getInstance(url);
+			Request request = NetworkClient.getRequest(false, url)
+					.newBuilder().post(formBody).build();
+
+			try(Response response = client.newCall(request).execute())
+			{
+				String bodyStr = response.body().string();
+				if(response.isSuccessful())
+					LogMessage("uploadString() Successfully uploaded something... response: " + bodyStr);
+				else
+					LogMessage("uploadString() Failed to upload something... response: " + bodyStr, true, KeyValue.d);
+			} catch(Exception e) {
+				LogMessage("uploadString() Error! e: " + e.getMessage(), true, KeyValue.e);
+				doStackOutput(e);
+			}
+		});
 	}
 
 	static void publish(File f)

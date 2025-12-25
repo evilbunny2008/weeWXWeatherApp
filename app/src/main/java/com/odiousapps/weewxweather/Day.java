@@ -4,11 +4,11 @@ import androidx.annotation.NonNull;
 
 class Day
 {
-	String day = "";
-	String icon = "";
-	String text = "";
-	String max = "";
-	String min = "";
+	String day = null;
+	String icon = null;
+	String text = null;
+	String max = null;
+	String min = null;
 	long timestamp = 0;
 
 	@NonNull
