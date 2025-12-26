@@ -113,6 +113,8 @@ class weeWXAppCommon
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
 
+	static final int default_timeout = 5_000;
+
 	private static Uri logFileUri = null;
 
 	static final String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
@@ -3996,6 +3998,8 @@ class weeWXAppCommon
 	{
 		long now = System.currentTimeMillis();
 
+		Log.i(LOGTAG, Log.getStackTraceString(new Throwable()));
+
 		String string_time = sdf8.format(now);
 		LogMessage("getNPWSLL() now: " + string_time);
 
@@ -4023,16 +4027,16 @@ class weeWXAppCommon
 		string_time = sdf8.format(start);
 		LogMessage("getNPWSLL() start: " + string_time);
 
+		start += wait;
+
+		string_time = sdf8.format(start);
+		LogMessage("getNPWSLL() start+wait: " + string_time);
+
 		while(start < now)
 			start += period;
 
 		string_time = sdf8.format(start);
-		LogMessage("getNPWSLL() start: " + string_time);
-
-		start += wait;
-
-		string_time = sdf8.format(start);
-		LogMessage("getNPWSLL() start: " + string_time);
+		LogMessage("getNPWSLL() next start: " + string_time);
 
 		long lastStart = start - period;
 

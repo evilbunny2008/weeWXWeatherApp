@@ -158,7 +158,7 @@ public class WebViewPreloader
 		}
 	}
 
-	static String getHTML(String url, int timeoutMs)
+	static String getHTML(String url)
 	{
 		Context context = weeWXApp.getInstance();
 
@@ -222,7 +222,7 @@ public class WebViewPreloader
 		try
 		{
 			// wait on background thread (not UI)
-			boolean ok = latch.await(timeoutMs, TimeUnit.MILLISECONDS);
+			boolean ok = latch.await(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS);
 			html = ok ? htmlHolder[0] : null;
 		} catch(InterruptedException e) {
 			weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);

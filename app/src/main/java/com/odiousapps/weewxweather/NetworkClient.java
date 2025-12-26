@@ -74,10 +74,10 @@ class NetworkClient
 					.sslSocketFactory(sslSocketFactory, (X509TrustManager)trustAllCerts[0])
 					.hostnameVerifier((hostname, session) -> true)
 					.connectionSpecs(Arrays.asList(modernTLS, ConnectionSpec.CLEARTEXT))
-					.connectTimeout(5, TimeUnit.SECONDS)
-					.writeTimeout(5, TimeUnit.SECONDS)
-					.readTimeout(5, TimeUnit.SECONDS)
-					.callTimeout(5, TimeUnit.SECONDS)
+					.connectTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
+					.writeTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
+					.readTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
+					.callTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
 					.retryOnConnectionFailure(false)
 					.dns(new CustomDns())
 					.build();
@@ -131,7 +131,7 @@ class NetworkClient
 		{
 			String[] UC = uri.getUserInfo().split(":");
 			String credentials = Credentials.basic(UC[0], UC[1]);
-			return newClient.readTimeout(5, TimeUnit.SECONDS)
+			return newClient.readTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
 					.authenticator((route, response) ->
 					{
 						if(responseCount(response) >= 3)

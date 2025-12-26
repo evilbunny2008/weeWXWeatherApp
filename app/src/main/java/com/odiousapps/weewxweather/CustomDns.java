@@ -33,14 +33,14 @@ class CustomDns implements Dns
 		{
 			// Attempt a HTTPS connection...
 			SocketAddress socketAddress = new InetSocketAddress(addr, 443);
-			socket.connect(socketAddress, 3_000);
+			socket.connect(socketAddress, weeWXAppCommon.default_timeout);
 			return true;
 		} catch (IOException e) {
 			try(Socket socket = new Socket())
 			{
 				// Fall back to a HTTP connection...
 				SocketAddress socketAddress = new InetSocketAddress(addr, 80);
-				socket.connect(socketAddress, 3_000);
+				socket.connect(socketAddress, weeWXAppCommon.default_timeout);
 				return true;
 			} catch (IOException ioe) {
 				return false;
@@ -136,7 +136,7 @@ class CustomDns implements Dns
 		for(InetAddress dns_server : servers)
 		{
 			SimpleResolver resolver = new SimpleResolver(dns_server);
-			resolver.setTimeout(Duration.ofSeconds(1));
+			resolver.setTimeout(Duration.ofMillis(weeWXAppCommon.default_timeout));
 
 			for(int type : types)
 			{

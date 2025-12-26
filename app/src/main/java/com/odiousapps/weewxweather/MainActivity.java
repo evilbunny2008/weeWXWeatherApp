@@ -82,7 +82,7 @@ import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
 @SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag",
 		"UnsafeIntentLaunch", "NotifyDataSetChanged", "SourceLockedOrientationActivity",
-		"ConstantConditions", "SameParameterValue"})
+		"ConstantConditions", "SameParameterValue", "SequencedCollectionMethodCanBeUsed"})
 public class MainActivity extends FragmentActivity
 {
 	private TabLayout tabLayout;
@@ -620,8 +620,9 @@ public class MainActivity extends FragmentActivity
 
 		weeWXAppCommon.LogMessage("MainActivity.onCreate() has finished...");
 
-		for(Setting s : screen_elements)
+		if(!screen_elements.isEmpty())
 		{
+			Setting s = screen_elements.get(0);
 			weeWXAppCommon.LogColour(findViewById(s.ResId()), s.name());
 		}
 	}
@@ -638,7 +639,7 @@ public class MainActivity extends FragmentActivity
 			touchSlopField.setAccessible(true);
 			int touchSlop = (int) touchSlopField.get(recyclerView);
 			touchSlopField.set(recyclerView, touchSlop * 3);
-		} catch (Exception e) {
+		} catch(Exception e) {
 			weeWXAppCommon.doStackOutput(e);
 		}
 	}
@@ -1274,7 +1275,7 @@ public class MainActivity extends FragmentActivity
 						{
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 							weeWXAppCommon.LogMessage("forecast:" + forecastURL);
-							String metService = WebViewPreloader.getHTML(forecastURL, 10_000);
+							String metService = WebViewPreloader.getHTML(forecastURL);
 							if(metService != null && metService.length() > 1024)
 							{
 								String pretty = Jsoup.parse(metService).outputSettings(

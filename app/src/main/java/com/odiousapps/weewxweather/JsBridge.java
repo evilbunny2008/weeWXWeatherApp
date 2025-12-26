@@ -11,7 +11,7 @@ public class JsBridge
 	private final String[] htmlHolder;
 	private final SafeWebView webView;
 
-	static final String javascript = """
+	private static final String private_javascript = """
 document.addEventListener("DOMContentLoaded", function()
 {
 	(function()
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function()
 			setTimeout(check, pollInterval);
 		})();
 		
-		// Fallback after 2s ONLY if long enough
+		// Time out after DEFAULT_TIMEOUTms unless function finishes sooner...
 		setTimeout(function()
 		{
 			try
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function()
 			} catch(e) {
 			console.log('detector top error:'+e);
 			}
-		}, 2000);
+		}, DEFAULT_TIMEOUT);
 		
 		} catch(ex) {
 			console.log('detector top error:'+ex);
@@ -171,8 +171,12 @@ document.addEventListener("DOMContentLoaded", function()
 });
 """;
 
+	static String javascript = private_javascript;
+
 	public JsBridge(CountDownLatch latch, String[] htmlHolder, SafeWebView webView)
 	{
+		javascript = private_javascript.replaceAll("DEFAULT_TIMEOUT", "" + weeWXAppCommon.default_timeout);
+
 		this.latch = latch;
 		this.htmlHolder = htmlHolder;
 		this.webView = webView;
