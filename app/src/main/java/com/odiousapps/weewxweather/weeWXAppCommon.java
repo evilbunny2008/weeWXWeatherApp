@@ -161,7 +161,7 @@ class weeWXAppCommon
 
 	private static Future<?> forecastTask, radarTask, weatherTask, webcamTask;
 
-	private static long ftStart, rtStart, wcStart, wtStart, lastWeatherRefresh = 0;
+	private static long ftStart, rtStart, wcStart, wtStart; //, lastWeatherRefresh = 0;
 
 	static final float[] NEGATIVE = {
 			-1.0f, 0, 0, 0, 255, // red

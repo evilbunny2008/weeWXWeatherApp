@@ -33,7 +33,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.ContextCompat;
 
-@SuppressWarnings({"unused", "SameParameterValue", "DataFlowIssue"})
+@SuppressWarnings({"unused", "SameParameterValue"})
 public class weeWXApp extends Application
 {
 	private static final String html_header = """
