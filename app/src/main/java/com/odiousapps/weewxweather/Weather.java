@@ -210,14 +210,17 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		//boolean dynamicSizing = viewid == R.id.current && weeWXApp.getWidth() < 1100;
 
-		weeWXAppCommon.LogMessage("Weather.java onViewCreated() height: " + weeWXApp.getHeight());
-		weeWXAppCommon.LogMessage("Weather.java onViewCreated() width: " + weeWXApp.getWidth());
-		weeWXAppCommon.LogMessage("Weather.java onViewCreated() density: " + weeWXApp.getDensity());
+		weeWXAppCommon.LogMessage("Weather.java loadWebview() height: " + weeWXApp.getHeight());
+		weeWXAppCommon.LogMessage("Weather.java loadWebview() width: " + weeWXApp.getWidth());
+		weeWXAppCommon.LogMessage("Weather.java loadWebview() density: " + weeWXApp.getDensity());
 
 		boolean wasNull = webView == null;
 
 		if(wasNull)
-			webView = WebViewPreloader.getInstance().getWebView(requireContext());
+		{
+			weeWXAppCommon.LogMessage("Weather.java loadWebview() webView == null");
+			webView = WebViewPreloader.getInstance().getWebView();
+		}
 
 		if(webView.getParent() != null)
 			((ViewGroup)webView.getParent()).removeView(webView);

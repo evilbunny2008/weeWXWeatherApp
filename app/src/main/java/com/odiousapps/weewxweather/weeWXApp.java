@@ -1,6 +1,8 @@
 package com.odiousapps.weewxweather;
 
 import android.app.Application;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
@@ -243,13 +245,49 @@ public class weeWXApp extends Application
 
 		try
 		{
-			// Preload the weeWXAppCommon and KeyValue classes
+			// Preload the BuildConfig, weeWXAppCommon and KeyValue classes
 			Class.forName("com.odiousapps.weewxweather.BuildConfig");
 			Class.forName("com.odiousapps.weewxweather.weeWXAppCommon");
 			Class.forName("com.odiousapps.weewxweather.KeyValue");
 		} catch(ClassNotFoundException ignored) {}
 
 		super.onCreate();
+
+		int major = 0;
+		try
+		{
+			PackageManager pm = weeWXApp.getInstance().getPackageManager();
+			String[] possibleWebViews = {
+					"com.google.android.webview",
+					"com.android.webview",
+					"com.android.chrome"
+			};
+
+			for (String pkg : possibleWebViews) {
+				try {
+					Log.i(weeWXAppCommon.LOGTAG, "Checking for " + pkg);
+					PackageInfo info = pm.getPackageInfo(pkg, 0);
+					KeyValue.currWebViewVer = info.versionName;
+					Log.i(weeWXAppCommon.LOGTAG, pkg + " version: " + KeyValue.currWebViewVer);
+					break;
+				} catch (PackageManager.NameNotFoundException ignored) {}
+			}
+
+			if(KeyValue.currWebViewVer != null && !KeyValue.currWebViewVer.isBlank())
+			{
+				String[] parts = KeyValue.currWebViewVer.split("\\.");
+				KeyValue.webview_major_version = (int)Float.parseFloat(parts[0]);
+			}
+		} catch(Exception e) {
+			Log.e(weeWXAppCommon.LOGTAG, "Error! e: " + e.getMessage(), e);
+		}
+
+		// Let's assume no value is actually ok and the package name has changed or something similar...
+		if(KeyValue.webview_major_version <= 0)
+			KeyValue.webview_major_version = 83;
+
+		if(KeyValue.webview_major_version < 83)
+			return;
 
 		updateOptions = new String[]
 		{
@@ -330,18 +368,6 @@ public class weeWXApp extends Application
 
 	static void updateAboutBlurb()
 	{
-		if(KeyValue.currWebViewVer == null)
-		{
-			try
-			{
-				KeyValue.currWebViewVer = weeWXApp.getInstance().getPackageManager()
-						.getPackageInfo("com.google.android.webview", 0)
-						.versionName;
-			} catch(Exception e) {
-				weeWXAppCommon.LogMessage("Error! e: " + e.getMessage(), KeyValue.e);
-			}
-		}
-
 		if(KeyValue.currWebViewVer != null)
 		{
 			current_about_blurb = about_blurb.replaceAll("WEBVIEWVER", KeyValue.currWebViewVer)
@@ -553,7 +579,6 @@ public class weeWXApp extends Application
 
 		weeWXAppCommon.LogMessage("Theme should have updated!");
 
-		weeWXAppCommon.LogMessage("Theme == " + instance.getTheme(), true, KeyValue.w);
 		weeWXAppCommon.LogMessage("DayNightMode == " + AppCompatDelegate.getDefaultNightMode(), true, KeyValue.w);
 
 		weeWXAppCommon.SendIntent(weeWXAppCommon.REFRESH_DARKMODE_INTENT);

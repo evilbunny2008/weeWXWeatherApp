@@ -3,6 +3,7 @@ package com.odiousapps.weewxweather;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
@@ -136,6 +137,16 @@ public class MainActivity extends FragmentActivity
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 	{
+		super.onCreate(savedInstanceState);
+
+		if(KeyValue.webview_major_version < 83)
+		{
+			Intent intent = new Intent(this, WebViewTooOldActivity.class);
+			startActivity(intent);
+			finish();
+			return;
+		}
+
 		theme = (int)KeyValue.readVar("theme", weeWXApp.theme_default);
 
 		setTheme(theme);
@@ -157,8 +168,6 @@ public class MainActivity extends FragmentActivity
 			Log.i(weeWXAppCommon.LOGTAG, "MainActivity.onCreate() theme: R.style.AppTheme_weeWXApp_Common");
 		else
 			Log.i(weeWXAppCommon.LOGTAG, "MainActivity.onCreate() theme: " + theme);
-
-		super.onCreate(savedInstanceState);
 
 		screen_elements.add(new Setting("about_the_app", R.id.about_the_app));
 		screen_elements.add(new Setting("aboutText", R.id.aboutText));

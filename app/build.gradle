@@ -8,8 +8,8 @@ android {
         applicationId = "com.odiousapps.weewxweather"
         minSdk = 24
         targetSdk = 36
-	    versionName = "1.99.73beta"
-        versionCode = 1099073
+	    versionName = "1.99.74beta"
+        versionCode = 1099074
     }
 
 	buildFeatures {
@@ -66,6 +66,7 @@ dependencies {
 	implementation("com.caverock:androidsvg:1.4")
 
 	implementation("com.squareup.okhttp3:okhttp:5.3.2")
+	implementation("org.nanohttpd:nanohttpd:2.3.1")
 
 	implementation("dnsjava:dnsjava:3.6.3")
 	implementation("org.slf4j:slf4j-api:2.0.17")

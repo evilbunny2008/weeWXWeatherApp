@@ -74,7 +74,7 @@ public class Stats extends Fragment
 		super.onViewCreated(view, savedInstanceState);
 
 		if(wv == null)
-			wv = WebViewPreloader.getInstance().getWebView(requireContext());
+			wv = WebViewPreloader.getInstance().getWebView();
 
 		if(wv.getParent() != null)
 			((ViewGroup)wv.getParent()).removeView(wv);

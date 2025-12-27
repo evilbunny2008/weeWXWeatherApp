@@ -98,7 +98,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		if(forecastWebView == null)
-			forecastWebView = WebViewPreloader.getInstance().getWebView(requireContext());
+			forecastWebView = WebViewPreloader.getInstance().getWebView();
 
 		if(forecastWebView.getParent() != null)
 			((ViewGroup)forecastWebView.getParent()).removeView(forecastWebView);
@@ -114,7 +114,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		forecastFL.addView(forecastWebView);
 
 		if(radarWebView == null)
-			radarWebView = WebViewPreloader.getInstance().getWebView(requireContext());
+			radarWebView = WebViewPreloader.getInstance().getWebView();
 
 		if(radarWebView.getParent() != null)
 			((ViewGroup)radarWebView.getParent()).removeView(radarWebView);

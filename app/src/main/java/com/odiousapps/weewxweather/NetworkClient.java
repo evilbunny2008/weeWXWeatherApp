@@ -99,13 +99,6 @@ class NetworkClient
 		if(url == null || url.isBlank() || !url.startsWith("http"))
 			return newClient.build();
 
-		String addnocache = "_cf_cb=" + System.currentTimeMillis();
-
-		if(!url.contains("?"))
-			url += "?" + addnocache;
-		else
-			url += "&" + addnocache;
-
 		// windy.com is very noisy... 2s connectivity checks is beyond excessive...
 		//if(!url.contains("windy.com"))
 		weeWXAppCommon.LogMessage("New URL: " + url);

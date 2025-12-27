@@ -25,6 +25,7 @@ class KeyValue
 	static int mode;
 
 	static String currWebViewVer = null;
+	static int webview_major_version = 0;
 
 	static boolean isVisible = false;
 

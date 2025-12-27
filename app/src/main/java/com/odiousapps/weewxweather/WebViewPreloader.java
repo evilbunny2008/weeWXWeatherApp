@@ -38,7 +38,7 @@ public class WebViewPreloader
 
 			for(int i = 0; i < count; i++)
 			{
-				SafeWebView webView = generateWebView(context);
+				SafeWebView webView = generateWebView();
 
 				synchronized(preloadedWebViews)
 				{
@@ -50,7 +50,7 @@ public class WebViewPreloader
 		}
 	}
 
-	static synchronized WebViewPreloader getInstance()
+	static WebViewPreloader getInstance()
 	{
 		if(instance == null)
 			instance = new WebViewPreloader();
@@ -58,11 +58,11 @@ public class WebViewPreloader
 		return instance;
 	}
 
-	private SafeWebView generateWebView(Context context)
+	private SafeWebView generateWebView()
 	{
 		try
 		{
-			return new SafeWebView(context);
+			return new SafeWebView(weeWXApp.getInstance().getApplicationContext());
 		} catch(Throwable t) {
 			weeWXAppCommon.doStackOutput(t);
 		}
@@ -70,34 +70,36 @@ public class WebViewPreloader
 		return null;
 	}
 
-	SafeWebView getWebView(Context context)
+	SafeWebView getWebView()
 	{
 		try
 		{
+			synchronized(preloadedWebViews)
+			{
+				SafeWebView wv;
+
+				if(!preloadedWebViews.isEmpty())
+				{
+					wv = preloadedWebViews.poll();
+					if(wv != null)
+					{
+						wv.initSettings();
+						wv.onResume();
+						wv.resumeTimers();
+						return wv;
+					}
+				}
+
+				wv = generateWebView();
+				return wv;
+			}
+/*
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 			{
-				synchronized(preloadedWebViews)
-				{
-					SafeWebView wv;
-
-					if(!preloadedWebViews.isEmpty())
-					{
-						wv = preloadedWebViews.poll();
-						if(wv != null)
-						{
-							wv.initSettings();
-							wv.onResume();
-							wv.resumeTimers();
-							return wv;
-						}
-					}
-
-					wv = generateWebView(context);
-					return wv;
-				}
 			} else {
 				return generateWebView(context);
 			}
+ */
 		} catch(Throwable t) {
 			weeWXAppCommon.doStackOutput(t);
 		}
@@ -112,16 +114,18 @@ public class WebViewPreloader
 
 		try
 		{
+			wv.onPause();
+			synchronized(preloadedWebViews)
+			{
+				preloadedWebViews.add(wv);
+			}
+/*
 			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 			{
-				wv.onPause();
-				synchronized(preloadedWebViews)
-				{
-					preloadedWebViews.add(wv);
-				}
 			} else {
 				destroyWebView(wv);
 			}
+*/
 		} catch(Throwable t) {
 			weeWXAppCommon.doStackOutput(t);
 		}
@@ -179,7 +183,7 @@ public class WebViewPreloader
 			// Optionally remove bridge + cleanup on UI thread
 			new Handler(Looper.getMainLooper()).post(() ->
 			{
-				SafeWebView wv = new SafeWebView(context);
+				SafeWebView wv = new SafeWebView(weeWXApp.getInstance().getApplicationContext());
 				wv.onResume();
 				wv.resumeTimers();
 

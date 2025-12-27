@@ -119,7 +119,6 @@ public class WidgetProvider extends AppWidgetProvider
 	{
 		weeWXAppCommon.LogMessage("WidgetProvider.updateAppWidget() called..");
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget);
-		weeWXAppCommon.LogMessage("RemoteViews built: " + views);
 
 		int widgetBG = (int)KeyValue.readVar("widgetBG", weeWXApp.widgetBG_default);
 		int widgetFG = (int)KeyValue.readVar("widgetFG", weeWXApp.widgetFG_default);

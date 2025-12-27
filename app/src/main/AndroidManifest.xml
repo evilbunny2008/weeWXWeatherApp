@@ -37,7 +37,12 @@
 	        </intent-filter>
         </activity>
 
-        <receiver
+		<activity
+			android:name=".WebViewTooOldActivity"
+			android:exported="false">
+		</activity>
+
+		<receiver
 	        android:name="WidgetProvider"
 	        android:label="weeWX (2x1)"
             android:exported="true">
@@ -58,4 +63,11 @@
             </intent-filter>
         </receiver>
     </application>
+
+	<queries>
+		<!-- Specific WebView packages you want to detect -->
+		<package android:name="com.google.android.webview" />
+		<package android:name="com.android.webview" />
+		<package android:name="com.android.chrome" />
+	</queries>
 </manifest>

@@ -59,7 +59,7 @@ public class Custom extends Fragment
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		if(wv == null)
-			wv = WebViewPreloader.getInstance().getWebView(requireContext());
+			wv = WebViewPreloader.getInstance().getWebView();
 
 		if(wv.getParent() != null)
 			((ViewGroup)wv.getParent()).removeView(wv);

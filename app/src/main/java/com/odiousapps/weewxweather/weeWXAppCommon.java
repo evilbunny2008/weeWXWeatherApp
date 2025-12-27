@@ -2862,6 +2862,11 @@ class weeWXAppCommon
 
 	static String downloadString(String url)
 	{
+		return reallyDownloadString(url, 0);
+	}
+
+	private static String reallyDownloadString(String url, int retries)
+	{
 		LogMessage("downloading text from " + url, true);
 		OkHttpClient client = NetworkClient.getInstance(url);
 		Request request = NetworkClient.getRequest(false, url);
@@ -2885,6 +2890,21 @@ class weeWXAppCommon
 			LogMessage("Returned string: " + bodyStr);
 			return bodyStr;
 		} catch(Exception e) {
+			if(retries < 3)
+			{
+				retries++;
+
+				try
+				{
+					Thread.sleep(1_000);
+				} catch (InterruptedException ie) {
+					Thread.currentThread().interrupt();
+					return null;
+				}
+
+				return reallyDownloadString(url, retries);
+			}
+
 			LogMessage("downloadString() Error! e: " + e.getMessage(), true, KeyValue.e);
 			doStackOutput(e);
 		}
@@ -2892,7 +2912,7 @@ class weeWXAppCommon
 		return null;
 	}
 
-	static String downloadString(String url, Map<String,String> args)
+	static String downloadString(String url, Map<String, String> args)
 	{
 		if(url == null || url.isBlank() || args == null || args.isEmpty())
 		{
