@@ -148,6 +148,7 @@ class weeWXAppCommon
 	static final SimpleDateFormat sdf11 = new SimpleDateFormat("dd.MM.yyyy' 'HH", Locale.getDefault());
 	static final SimpleDateFormat sdf12 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss", Locale.getDefault());
 	static final SimpleDateFormat sdf13 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSS", Locale.getDefault());
+	static final SimpleDateFormat sdf14 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS XXX", Locale.getDefault());
 
 	private static final BitmapFactory.Options options = new BitmapFactory.Options();
 
@@ -2368,10 +2369,11 @@ class weeWXAppCommon
 
 	static void SendIntent(String action)
 	{
-		if(action.equals(REFRESH_WEATHER_INTENT) && lastWeatherRefresh + 5 > getCurrTime())
-			return;
+//		if(action.equals(REFRESH_WEATHER_INTENT) && lastWeatherRefresh + 5 > getCurrTime())
+//				return;
 
-		lastWeatherRefresh = getCurrTime();
+//		if(action.equals(REFRESH_WEATHER_INTENT))
+//			lastWeatherRefresh = getCurrTime();
 
 		NotificationManager.updateNotificationMessage(action);
 	}
@@ -2523,16 +2525,29 @@ class weeWXAppCommon
 		return true;
 	}
 
+	static String getElement(String[] bits, int element)
+	{
+		try
+		{
+			if(bits.length > element)
+				return bits[element].strip();
+		} catch(Exception e) {
+			weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
+		}
+
+		return "";
+	}
+
 	static boolean reallyGetWeather(String url)
 	{
 		LogMessage("reallyGetWeather() url: " + url);
 		String line = downloadString(url);
-		//LogMessage("reallyGetWeather() Got output, line: " + line);
+		LogMessage("reallyGetWeather() Got output, line: " + line);
 		if(!line.isBlank() && line.contains("|"))
 		{
 			String[] bits = line.split("\\|");
 			int version = (int)Float.parseFloat(bits[0]);
-			if(version < weeWXApp.minimum_inigo_version || bits.length < 2)
+			if(version < weeWXApp.minimum_inigo_version || bits.length <= 100)
 			{
 				sendAlert();
 				return false;
@@ -2542,9 +2557,17 @@ class weeWXAppCommon
 			line = String.join("|", bits);
 			//LogMessage("reallyGetWeather() new line: " + line);
 
+			long LastDownloadTime = Math.round(System.currentTimeMillis() / 1_000D);
+			String ret = getElement(bits, 225);
+			if(ret != null && !ret.isBlank())
+				LastDownloadTime = (long)Double.parseDouble(bits[225]);
+
 			KeyValue.putVar("LastDownload", line);
-			KeyValue.putVar("LastDownloadTime", (long)Double.parseDouble(bits[225]));
-			KeyValue.putVar("LastWeatherError", "");
+			KeyValue.putVar("LastDownloadTime", LastDownloadTime);
+			KeyValue.putVar("LastWeatherError", null);
+
+			LogMessage("Last Server Update Time: " + sdf14.format(LastDownloadTime * 1_000L));
+			LogMessage("LastDownloadTime: " + sdf14.format(System.currentTimeMillis()));
 
 			return true;
 		}
@@ -3998,7 +4021,7 @@ class weeWXAppCommon
 	{
 		long now = System.currentTimeMillis();
 
-		Log.i(LOGTAG, Log.getStackTraceString(new Throwable()));
+//		Log.i(LOGTAG, Log.getStackTraceString(new Throwable()));
 
 		String string_time = sdf8.format(now);
 		LogMessage("getNPWSLL() now: " + string_time);

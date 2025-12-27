@@ -3,9 +3,10 @@
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="0dp"
-	android:layout_weight="1"
+	android:layout_width="350dp"
+	android:layout_height="90dp"
+	android:layout_gravity="center"
+	android:background="@color/White"
 	android:gravity="center"
 	android:padding="20dp">
 
@@ -29,7 +30,8 @@
         android:layout_weight="1"
         android:gravity="center"
 	    android:paddingHorizontal="5dp"
-        android:text="@string/please_wait_verify_url" />
+        android:text="@string/please_wait_verify_url"
+	    android:textColor="@color/Black"  />
 
 	</LinearLayout>
 </LinearLayout>

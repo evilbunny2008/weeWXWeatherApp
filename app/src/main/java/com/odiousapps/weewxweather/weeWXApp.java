@@ -33,7 +33,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.ContextCompat;
 
-@SuppressWarnings({"unused", "SameParameterValue"})
+@SuppressWarnings({"unused", "SameParameterValue", "DataFlowIssue"})
 public class weeWXApp extends Application
 {
 	private static final String html_header = """
@@ -728,6 +728,9 @@ public class weeWXApp extends Application
 		int current_widgetBG = (int)KeyValue.readVar("widgetBG", widgetBG_default);
 		int current_widgetFG = (int)KeyValue.readVar("widgetFG", widgetFG_default);
 
+		int nightDaySetting = (int)KeyValue.readVar("DayNightMode", DayNightMode_default);
+		int nightModeFlags = getUImode() & Configuration.UI_MODE_NIGHT_MASK;
+
 		int theme = current_theme;
 		int mode = current_mode;
 		int bgColour = current_bgColour;
@@ -735,103 +738,114 @@ public class weeWXApp extends Application
 		int widgetBG = current_widgetBG;
 		int widgetFG = current_widgetFG;
 
-		int nightDaySetting = (int)KeyValue.readVar("DayNightMode", DayNightMode_default);
-		int nightModeFlags = getUImode() & Configuration.UI_MODE_NIGHT_MASK;
-
-		if(prefSet)
+		if(prefSet && nightDaySetting == 0)
 		{
-			if(nightDaySetting == 0)
-			{
-				weeWXAppCommon.LogMessage("Dark mode off...");
-				theme = R.style.AppTheme_weeWXApp_Light_Common;
-				mode = AppCompatDelegate.MODE_NIGHT_NO;
-				bgColour = White;
-				fgColour = Black;
-				widgetBG = widgetBG_default;
-				widgetFG = widgetFG_default;
-			} else if(nightDaySetting == 1) {
-				weeWXAppCommon.LogMessage("Dark mode on...");
-				theme = R.style.AppTheme_weeWXApp_Dark_Common;
-				mode = AppCompatDelegate.MODE_NIGHT_NO;
-				bgColour = Black;
-				fgColour = White;
-				widgetBG = widgetBG_default2;
-				widgetFG = widgetFG_default2;
-			}
+			weeWXAppCommon.LogMessage("Set to Light...");
+			theme = R.style.AppTheme_weeWXApp_Light_Common;
+			mode = AppCompatDelegate.MODE_NIGHT_NO;
+			bgColour = White;
+			fgColour = Black;
+		}
 
-			if(widget_theme_mode == 1)
-			{
-				widgetBG = bgColour;
-				widgetFG = fgColour;
-			}
+		if(prefSet && nightDaySetting == 1)
+		{
+			weeWXAppCommon.LogMessage("Set to Dark...");
+			theme = R.style.AppTheme_weeWXApp_Dark_Common;
+			mode = AppCompatDelegate.MODE_NIGHT_NO;
+			bgColour = Black;
+			fgColour = White;
 		}
 
 		if(!prefSet || nightDaySetting == 2)
 		{
-			weeWXAppCommon.LogMessage("Pref isn't set, or pref set to follow system...");
+			if(nightDaySetting == 2 && nightModeFlags == Configuration.UI_MODE_NIGHT_NO)
+			{
+				weeWXAppCommon.LogMessage("Pref not set or set to follow system and dark mode off...");
+				theme = R.style.AppTheme_weeWXApp_Light_Common;
+				mode = AppCompatDelegate.MODE_NIGHT_NO;
+				bgColour = White;
+				fgColour = Black;
+			} else {
+				weeWXAppCommon.LogMessage("Pref not set or set to follow system and dark mode on...");
+				theme = R.style.AppTheme_weeWXApp_Dark_Common;
+				mode = AppCompatDelegate.MODE_NIGHT_NO;
+				bgColour = Black;
+				fgColour = White;
+			}
+		}
 
-			theme = R.style.AppTheme_weeWXApp_Common;
-			bgColour = White;
-			fgColour = Black;
-
+		if(!prefSet || widget_theme_mode == 0)
+		{
 			if(nightModeFlags == Configuration.UI_MODE_NIGHT_NO)
 			{
-				weeWXAppCommon.LogMessage("Night mode off...");
-				mode = AppCompatDelegate.MODE_NIGHT_NO;
+				weeWXAppCommon.LogMessage("Pref set to follow system and dark mode isn't on...");
 				widgetBG = widgetBG_default;
 				widgetFG = widgetFG_default;
 			} else {
-				weeWXAppCommon.LogMessage("Night mode on...");
-				mode = AppCompatDelegate.MODE_NIGHT_YES;
+				weeWXAppCommon.LogMessage("Pref set to follow system and dark mode is on...");
 				widgetBG = widgetBG_default2;
 				widgetFG = widgetFG_default2;
 			}
 		}
 
-		if(widget_theme_mode == 2 || (widget_theme_mode == 0 && nightModeFlags == Configuration.UI_MODE_NIGHT_NO))
+		if(prefSet && widget_theme_mode == 1)
 		{
-			widgetBG = widgetBG_default;
-			widgetFG = widgetFG_default;
+			weeWXAppCommon.LogMessage("Pref set to follow the app...");
+			widgetBG = bgColour;
+			widgetFG = fgColour;
 		}
 
-		if(widget_theme_mode == 3 || (widget_theme_mode == 0 && nightModeFlags == Configuration.UI_MODE_NIGHT_YES))
+		if(prefSet && widget_theme_mode == 2)
 		{
+			weeWXAppCommon.LogMessage("Pref set to Light...");
 			widgetBG = widgetBG_default2;
 			widgetFG = widgetFG_default2;
 		}
 
-		if(theme != current_theme)
-			KeyValue.putVar("theme", theme);
-
-		if(mode != current_mode)
-			KeyValue.putVar("mode", mode);
-
-		if(bgColour != current_bgColour)
+		if(prefSet && widget_theme_mode == 3)
 		{
-			colours.bgColour = bgColour;
-			KeyValue.putVar("bgColour", bgColour);
+			weeWXAppCommon.LogMessage("Pref set to Dark...");
+			widgetBG = widgetBG_default;
+			widgetFG = widgetFG_default;
 		}
 
-		if(fgColour != current_fgColour)
+		if(prefSet && widget_theme_mode == 4)
 		{
-			colours.fgColour = fgColour;
-			KeyValue.putVar("fgColour", fgColour);
+			weeWXAppCommon.LogMessage("Pref set to Custom...");
 		}
 
-		if(widgetBG != current_widgetBG)
-		{
-			colours.widgetBG = widgetBG;
-			KeyValue.putVar("widgetBG", widgetBG);
-		}
+		KeyValue.theme = theme;
+		KeyValue.mode = mode;
+		colours.bgColour = bgColour;
+		colours.fgColour = fgColour;
+		colours.widgetBG = widgetBG;
+		colours.widgetFG = widgetFG;
 
-		if(widgetFG != current_widgetFG)
+		if(prefSet)
 		{
-			colours.widgetFG = widgetFG;
-			KeyValue.putVar("widgetFG", widgetFG);
+			if(current_theme != theme)
+				KeyValue.putVar("theme", theme);
+
+			if(current_mode != mode)
+				KeyValue.putVar("mode", mode);
+
+			if(current_bgColour != bgColour)
+				KeyValue.putVar("bgColour", bgColour);
+
+			if(current_fgColour != fgColour)
+				KeyValue.putVar("fgColour", fgColour);
+
+			if(current_widgetBG != widgetBG)
+				KeyValue.putVar("widgetBG", widgetBG);
+
+			if(current_widgetFG != widgetFG)
+				KeyValue.putVar("widgetFG", widgetFG);
 		}
 
 		settings.add(new Setting("theme", theme));
 		settings.add(new Setting("mode", mode));
+		settings.add(new Setting("widget_theme_mode", widget_theme_mode));
+
 		settings.add(new Setting("bgColour", bgColour));
 		settings.add(new Setting("fgColour", fgColour));
 		settings.add(new Setting("widgetBG", widgetBG));
@@ -839,6 +853,8 @@ public class weeWXApp extends Application
 
 		Log.w(weeWXAppCommon.LOGTAG, "weeWXApp.getDayNightMode() bgColour: #" + Integer.toHexString(bgColour));
 		Log.w(weeWXAppCommon.LOGTAG, "weeWXApp.getDayNightMode() fgColour: #" + Integer.toHexString(fgColour));
+		Log.w(weeWXAppCommon.LOGTAG, "weeWXApp.getDayNightMode() widgetBG: #" + Integer.toHexString(widgetBG));
+		Log.w(weeWXAppCommon.LOGTAG, "weeWXApp.getDayNightMode() widgetFG: #" + Integer.toHexString(widgetFG));
 
 		return settings;
 	}

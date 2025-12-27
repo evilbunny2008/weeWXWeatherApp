@@ -539,7 +539,10 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.LogMessage("show dialog", true, KeyValue.w);
 			AlertDialog.Builder builder = new AlertDialog.Builder(this);
 			builder.setCancelable(false);
-			builder.setView(R.layout.layout_loading_dialog);
+			if(KeyValue.theme == R.style.AppTheme_weeWXApp_Light_Common)
+				builder.setView(R.layout.layout_loading_dialog_light);
+			else
+				builder.setView(R.layout.layout_loading_dialog_dark);
 			dialog = builder.create();
 			dialog.show();
 

@@ -7,6 +7,7 @@ import android.net.Uri;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.SSLContext;
@@ -16,6 +17,7 @@ import javax.net.ssl.X509TrustManager;
 
 import okhttp3.ConnectionSpec;
 import okhttp3.Credentials;
+import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -99,6 +101,13 @@ class NetworkClient
 		if(url == null || url.isBlank() || !url.startsWith("http"))
 			return newClient.build();
 
+		String addnocache = "_cf_cb=" + System.currentTimeMillis();
+
+		if(!url.contains("?"))
+			url += "?" + addnocache;
+		else
+			url += "&" + addnocache;
+
 		// windy.com is very noisy... 2s connectivity checks is beyond excessive...
 		//if(!url.contains("windy.com"))
 		weeWXAppCommon.LogMessage("New URL: " + url);
@@ -125,6 +134,13 @@ class NetworkClient
 			return newClient.build();
 
 		weeWXAppCommon.LogMessage("getStream(), url: " + url);
+
+		String addnocache = "_cf_cb=" + System.currentTimeMillis();
+
+		if(!url.contains("?"))
+			url += "?" + addnocache;
+		else
+			url += "&" + addnocache;
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
@@ -163,7 +179,8 @@ class NetworkClient
 		Request.Builder req = new Request.Builder()
 				.header("User-Agent", UA)
 				.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
-				.header("Cache-Control", "max-age=0")
+				.header("Cache-Control", "no-cache, no-store, max-age=0")
+				.header("Pragma", "no-cache")
 				.header("Accept-Language", "en")
 				.header("Upgrade-Insecure-Requests", "1")
 				.header("Referer", url)

@@ -21,6 +21,9 @@ class KeyValue
 	final static int d = 3;
 	final static int v = 4;
 
+	static int theme;
+	static int mode;
+
 	static String currWebViewVer = null;
 
 	static boolean isVisible = false;
