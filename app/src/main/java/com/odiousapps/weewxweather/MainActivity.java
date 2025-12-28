@@ -1502,10 +1502,15 @@ public class MainActivity extends FragmentActivity
 
 			if(!forecastURL.isBlank())
 			{
-				weeWXAppCommon.LogMessage("forecast checking: " + forecastURL);
+				weeWXAppCommon.LogMessage("processSettings() forecast checking: " + forecastURL);
 
-				tmpStr = weeWXAppCommon.reallyGetForecast(forecastURL);
-				weeWXAppCommon.LogMessage("tmpStr: " + tmpStr);
+				tmpStr = null;
+				try
+				{
+					tmpStr = weeWXAppCommon.reallyGetForecast(forecastURL);
+					weeWXAppCommon.LogMessage("processSettings() tmpStr: " + tmpStr);
+				} catch(Exception ignored) {}
+
 				validURL3 = tmpStr != null && !tmpStr.isBlank();
 
 				if(!validURL3 && errorStr != null && !errorStr.isBlank())

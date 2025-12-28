@@ -47,7 +47,6 @@ import org.w3c.dom.Node;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.EOFException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -113,7 +112,11 @@ class weeWXAppCommon
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
 
+	static final String UTF8_BOM = "\uFEFF";
+
 	static final int default_timeout = 5_000;
+	static final int maximum_retries = 3;
+	static final int retry_sleep_time = 1_000;
 
 	private static Uri logFileUri = null;
 
@@ -301,7 +304,7 @@ class weeWXAppCommon
 			Log.v(LOGTAG, "hidden message='" + text + "'");
 	}
 
-	public static byte[] gzipToBytes(String text) throws IOException
+	static byte[] gzipToBytes(String text) throws IOException
 	{
 		if(text == null || text.isBlank())
 			return null;
@@ -2538,7 +2541,7 @@ class weeWXAppCommon
 		return "";
 	}
 
-	static boolean reallyGetWeather(String url)
+	static boolean reallyGetWeather(String url) throws InterruptedException, IOException
 	{
 		LogMessage("reallyGetWeather() url: " + url);
 		String line = downloadString(url);
@@ -2831,13 +2834,14 @@ class weeWXAppCommon
 		}
 	}
 
-	static String downloadSettings(String url)
+	static String downloadSettings(String url) throws InterruptedException, IOException
 	{
-		String UTF8_BOM = "\uFEFF";
-
 		KeyValue.putVar("SETTINGS_URL", url);
 
 		String cfg = downloadString(url);
+
+		if(cfg == null)
+			return null;
 
 		if(cfg.startsWith(UTF8_BOM))
 			cfg = cfg.substring(1).strip();
@@ -2845,33 +2849,62 @@ class weeWXAppCommon
 		return cfg;
 	}
 
-	static boolean checkURL(String url) throws IOException
+	static boolean checkURL(String url) throws InterruptedException, IOException
 	{
-		LogMessage("checking if url  " + url + " is valid...");
 		if(url == null || url.isBlank())
 			return false;
 
 		OkHttpClient client = NetworkClient.getInstance(url);
+
+		return reallyCheckURL(client, url, 0);
+	}
+
+	private static boolean reallyCheckURL(OkHttpClient client, String url, int retries) throws InterruptedException, IOException
+	{
+		LogMessage("reallyCheckURL() checking if url  " + url + " is valid, attempt " + (retries + 1));
+
 		Request request = NetworkClient.getRequest(true, url);
 
 		try(Response response = client.newCall(request).execute())
 		{
 			return response.isSuccessful();
+		} catch(Exception e) {
+			if(retries < maximum_retries)
+			{
+				retries++;
+
+				LogMessage("reallyCheckURL() Error! e: " + e.getMessage() + ", retry: " + retries +
+				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+
+				try
+				{
+					Thread.sleep(retry_sleep_time);
+				} catch (InterruptedException ie) {
+					Thread.currentThread().interrupt();
+					LogMessage("reallyCheckURL() Error! ie: " + ie.getMessage(), true, KeyValue.e);
+
+					throw ie;
+				}
+
+				return reallyCheckURL(client, url, retries);
+			}
+
+			LogMessage("reallyCheckURL() Error! e: " + e.getMessage(), true, KeyValue.e);
+			throw e;
 		}
 	}
 
-	static String downloadString(String url)
+	static String downloadString(String url) throws InterruptedException, IOException
 	{
-		return reallyDownloadString(url, 0);
+		OkHttpClient client = NetworkClient.getInstance(url);
+
+		return reallyDownloadString(client, url, 0);
 	}
 
-	private static String reallyDownloadString(String url, int retries)
+	private static String reallyDownloadString(OkHttpClient client, String url, int retries) throws InterruptedException, IOException
 	{
-		LogMessage("downloading text from " + url, true);
-		OkHttpClient client = NetworkClient.getInstance(url);
+		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
 		Request request = NetworkClient.getRequest(false, url);
-
-		LogMessage("downloading text from " + url, true);
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -2882,7 +2915,7 @@ class weeWXAppCommon
 				String error = "HTTP error " + response;
 				if(bodyStr != null && !bodyStr.isBlank())
 					error += ", body: " + bodyStr;
-				LogMessage("Error! error: " + error, true, KeyValue.w);
+				LogMessage("reallyDownloadString() Error! error: " + error, true, KeyValue.w);
 				throw new IOException(error);
 			}
 
@@ -2890,29 +2923,31 @@ class weeWXAppCommon
 			LogMessage("Returned string: " + bodyStr);
 			return bodyStr;
 		} catch(Exception e) {
-			if(retries < 3)
+			if(retries < maximum_retries)
 			{
 				retries++;
 
+				LogMessage("reallyDownloadString() Error! e: " + e.getMessage() + ", retry: " + retries +
+				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+
 				try
 				{
-					Thread.sleep(1_000);
+					Thread.sleep(retry_sleep_time);
 				} catch (InterruptedException ie) {
 					Thread.currentThread().interrupt();
-					return null;
+					LogMessage("reallyDownloadString() Error! ie: " + ie.getMessage(), true, KeyValue.e);
+					throw ie;
 				}
 
-				return reallyDownloadString(url, retries);
+				return reallyDownloadString(client, url, retries);
 			}
 
-			LogMessage("downloadString() Error! e: " + e.getMessage(), true, KeyValue.e);
-			doStackOutput(e);
+			LogMessage("reallyDownloadString() Error! e: " + e.getMessage(), true, KeyValue.e);
+			throw e;
 		}
-
-		return null;
 	}
 
-	static String downloadString(String url, Map<String, String> args)
+	static String downloadString(String url, Map<String, String> args) throws InterruptedException, IOException
 	{
 		if(url == null || url.isBlank() || args == null || args.isEmpty())
 		{
@@ -2920,32 +2955,57 @@ class weeWXAppCommon
 			return null;
 		}
 
-		LogMessage("downloadString(url, args) downloading text from " + url);
-
 		FormBody.Builder fb = new FormBody.Builder();
 
 		for(Map.Entry<String, String> arg: args.entrySet())
 			fb.add(arg.getKey(), arg.getValue());
 
-		RequestBody formBody = fb.build();
+		RequestBody requestBody = fb.build();
 
 		OkHttpClient client = NetworkClient.getInstance(url);
+
+		return reallyDownloadString(client, requestBody, url, 0);
+	}
+
+	private static String reallyDownloadString(OkHttpClient client, RequestBody requestBody,
+                       String url, int retries) throws InterruptedException, IOException
+	{
+		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
+
 		Request request = NetworkClient.getRequest(false, url)
-				.newBuilder().post(formBody).build();
+				.newBuilder().post(requestBody).build();
 
 		try(Response response = client.newCall(request).execute())
 		{
 			String bodyStr = response.body().string();
 			if(response.isSuccessful())
 			{
-				LogMessage("downloadString(url, args) Successfully uploaded something... response: " + bodyStr);
+				LogMessage("reallyDownloadString(url, args) Successfully uploaded something... response: " + bodyStr);
 				return bodyStr;
 			} else {
-				LogMessage("downloadString(url, args) Failed to upload something... response: " + bodyStr, true, KeyValue.w);
+				LogMessage("reallyDownloadString(url, args) Failed to upload something... response: " + bodyStr, true, KeyValue.w);
 			}
 		} catch(Exception e) {
-			LogMessage("downloadString(url, args) Error! e: " + e.getMessage(), true, KeyValue.e);
-			doStackOutput(e);
+			if(retries < maximum_retries)
+			{
+				retries++;
+
+				LogMessage("reallyDownloadString() Error! e: " + e.getMessage() + ", retry: " + retries +
+				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+
+				try
+				{
+					Thread.sleep(retry_sleep_time);
+				} catch (InterruptedException ie) {
+					Thread.currentThread().interrupt();
+					throw ie;
+				}
+
+				return reallyDownloadString(client, requestBody, url, retries);
+			}
+
+			LogMessage("reallyDownloadString(url, args) Error! e: " + e.getMessage(), true, KeyValue.e);
+			throw e;
 		}
 
 		return null;
@@ -2961,39 +3021,69 @@ class weeWXAppCommon
 
 		executor.submit(() ->
 		{
-			LogMessage("uploadString() uploading text to " + url);
-
 			FormBody.Builder fb = new FormBody.Builder();
 
 			for(Map.Entry<String, String> arg: args.entrySet())
 				fb.add(arg.getKey(), arg.getValue());
 
-			RequestBody formBody = fb.build();
+			RequestBody requestBody = fb.build();
 
 			OkHttpClient client = NetworkClient.getInstance(url);
-			Request request = NetworkClient.getRequest(false, url)
-					.newBuilder().post(formBody).build();
 
-			try(Response response = client.newCall(request).execute())
-			{
-				String bodyStr = response.body().string();
-				if(response.isSuccessful())
-					LogMessage("uploadString() Successfully uploaded something... response: " + bodyStr);
-				else
-					LogMessage("uploadString() Failed to upload something... response: " + bodyStr, true, KeyValue.d);
-			} catch(Exception e) {
-				LogMessage("uploadString() Error! e: " + e.getMessage(), true, KeyValue.e);
-				doStackOutput(e);
-			}
+			reallyUploadString(client, requestBody, url, 0);
 		});
+	}
+
+	private static void reallyUploadString(OkHttpClient client, RequestBody requestBody, String url, int retries)
+	{
+		LogMessage("reallyUploadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
+
+		Request request = NetworkClient.getRequest(false, url)
+				.newBuilder().post(requestBody).build();
+
+		try(Response response = client.newCall(request).execute())
+		{
+			String bodyStr = response.body().string();
+			if(response.isSuccessful())
+				LogMessage("reallyUploadString() Successfully uploaded something... response: " + bodyStr);
+			else
+				LogMessage("reallyUploadString() Failed to upload something... response: " + bodyStr, true, KeyValue.d);
+		} catch(Exception e) {
+			if(retries < maximum_retries)
+			{
+				retries++;
+
+				LogMessage("reallyUploadString() Error! e: " + e.getMessage() + ", retry: " + retries +
+				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+
+				try
+				{
+					Thread.sleep(retry_sleep_time);
+				} catch (InterruptedException ie) {
+					LogMessage("reallyUploadString() Error! ie: " + ie.getMessage(), true, KeyValue.e);
+					Thread.currentThread().interrupt();
+					return;
+				}
+
+				reallyUploadString(client, requestBody, url, retries);
+				return;
+			}
+
+			LogMessage("reallyUploadString() Error! e: " + e.getMessage(), true, KeyValue.e);
+			doStackOutput(e);
+		}
 	}
 
 	static void publish(File f)
 	{
-		LogMessage("wrote to " + f.getAbsolutePath());
 		if(f.exists())
+		{
+			LogMessage("Let's tell Android about: " + f.getAbsolutePath());
+
 			MediaScannerConnection.scanFile(weeWXApp.getInstance(),
 					new String[]{f.getAbsolutePath()}, null, null);
+		} else
+			LogMessage(f.getAbsolutePath() + " doesn't exist, skipping...");
 	}
 
 	static boolean checkForImage(String filename)
@@ -3205,7 +3295,7 @@ class weeWXAppCommon
 		return false;
 	}
 
-	static String reallyGetForecast(String url)
+	static String reallyGetForecast(String url) throws InterruptedException, IOException
 	{
 		LogMessage("reallyGetForecast() forcecastURL: " + url);
 
@@ -3699,7 +3789,7 @@ class weeWXAppCommon
 		return BitmapFactory.decodeFile(file.getAbsolutePath(), options);
 	}
 
-	static Bitmap loadOrDownloadImage(String url, String filename) throws IOException
+	static Bitmap loadOrDownloadImage(String url, String filename) throws InterruptedException, IOException
 	{
 		Bitmap bm = null;
 		File file = getFile(filename);
@@ -3732,7 +3822,7 @@ class weeWXAppCommon
 		return bm;
 	}
 
-	static byte[] downloadContent(String url) throws IOException
+	static byte[] downloadContent(String url) throws InterruptedException, IOException
 	{
 		if(url == null || url.isBlank())
 		{
@@ -3741,18 +3831,53 @@ class weeWXAppCommon
 		}
 
 		OkHttpClient client = NetworkClient.getInstance(url);
+
+		return reallyDownloadContent(client, url, 0);
+	}
+
+	private static byte[] reallyDownloadContent(OkHttpClient client, String url, int retries) throws InterruptedException, IOException
+	{
+		LogMessage("reallyDownloadContent() checking if url  " + url + " is valid, attempt " + (retries + 1));
+
 		Request request = NetworkClient.getRequest(false, url);
 
 		try(Response response = client.newCall(request).execute())
 		{
 			if(!response.isSuccessful())
-				throw new IOException("HTTP error " + response);
+			{
+				String warning = "HTTP Error: " + response;
+				LogMessage(warning, true, KeyValue.w);
+				throw new IOException(warning);
+			}
 
 			return response.body().bytes();
+		} catch(Exception e) {
+			if(retries < maximum_retries)
+			{
+				retries++;
+
+				LogMessage("reallyCheckURL() Error! e: " + e.getMessage() + ", retry: " + retries +
+				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+
+				try
+				{
+					Thread.sleep(retry_sleep_time);
+				} catch (InterruptedException ie) {
+					Thread.currentThread().interrupt();
+					LogMessage("reallyCheckURL() Error! ie: " + ie.getMessage(), true, KeyValue.e);
+
+					throw ie;
+				}
+
+				return reallyDownloadContent(client, url, retries);
+			}
+
+			LogMessage("reallyCheckURL() Error! e: " + e.getMessage(), true, KeyValue.e);
+			throw e;
 		}
 	}
 
-	static boolean downloadToFile(File file, String url) throws IOException
+	static boolean downloadToFile(File file, String url) throws InterruptedException, IOException
 	{
 		LogMessage("Downloading from url: " + url);
 		byte[] body = downloadContent(url);
@@ -3791,14 +3916,27 @@ class weeWXAppCommon
 		return true;
 	}
 
-	public static Bitmap grabMjpegFrame(String url) throws IOException
+	static Bitmap grabMjpegFrame(String url) throws InterruptedException, IOException
 	{
-		LogMessage("Requesting a MJPEG frame from " + url);
+		if(url == null || url.isBlank())
+		{
+			LogMessage("url is null or blank, bailing out...", KeyValue.d);
+			throw new IOException("url is null or blank, bailing out...");
+		}
 
+		OkHttpClient client = NetworkClient.getStream(url);
+
+		return reallyGrabMjpegFrame(client, url, 0);
+	}
+
+	static Bitmap reallyGrabMjpegFrame(OkHttpClient client, String url, int retries) throws InterruptedException, IOException
+	{
+		Exception lastException;
 		Bitmap bm;
 		InputStream urlStream = null;
 
-		OkHttpClient client = NetworkClient.getStream(url);
+		LogMessage("reallyGrabMjpegFrame() checking if url  " + url + " is valid, attempt " + (retries + 1));
+
 		Request request = NetworkClient.getRequest(false, url);
 
 		try(Response response = client.newCall(request).execute())
@@ -3816,53 +3954,80 @@ class weeWXAppCommon
 
 			BufferedReader reader = new BufferedReader(new InputStreamReader(urlStream, StandardCharsets.US_ASCII));
 
-			while(true)
+			String line;
+			int contentLength = -1;
+
+			while((line = reader.readLine()) != null)
 			{
-
-				String line;
-				int contentLength = -1;
-
-				while((line = reader.readLine()) != null)
-				{
-					if(line.isEmpty() && contentLength > 0)
-						break;
-
-					if(line.startsWith("Content-Length:"))
-						contentLength = Integer.parseInt(line.substring(15).strip());
-				}
-
-				LogMessage("contentLength: " + contentLength);
-
-				byte[] imageBytes = new byte[contentLength];
-				int offset = 0;
-				while(offset < contentLength)
-				{
-					int read = urlStream.read(imageBytes, offset, contentLength - offset);
-					if(read == -1)
-					{
-						String warning = "Stream ended prematurely";
-						LogMessage(warning, true, KeyValue.w);
-						throw new EOFException(warning);
-					}
-					offset += read;
-				}
-
-				BitmapFactory.Options options = new BitmapFactory.Options();
-				bm = BitmapFactory.decodeStream(new ByteArrayInputStream(imageBytes), null, options);
-				if(bm != null)
-				{
-					LogMessage("Got an image... wooo!");
+				if(line.isEmpty() && contentLength > 0)
 					break;
-				} else {
-					LogMessage("bm is null, let's go again...", KeyValue.d);
-				}
+
+				if(line.startsWith("Content-Length:"))
+					contentLength = Integer.parseInt(line.substring(15).strip());
 			}
+
+			LogMessage("contentLength: " + contentLength);
+
+			byte[] imageBytes = new byte[contentLength];
+			int offset = 0;
+			while(offset < contentLength)
+			{
+				int read = urlStream.read(imageBytes, offset, contentLength - offset);
+				if(read == -1)
+				{
+					String warning = "Stream ended prematurely";
+					LogMessage(warning, true, KeyValue.w);
+					throw new IOException(warning);
+				}
+				offset += read;
+			}
+
+			BitmapFactory.Options options = new BitmapFactory.Options();
+			bm = BitmapFactory.decodeStream(new ByteArrayInputStream(imageBytes), null, options);
+			if(bm != null)
+			{
+				LogMessage("Got an image... wooo!");
+				return bm;
+			}
+
+			lastException = new IOException("Failed to successfully grab a frame from a mjpeg stream...");
+		} catch(IOException e) {
+			lastException = e;
 		} finally {
 			if(urlStream != null)
 				urlStream.close();
 		}
 
-		return bm;
+		if(lastException == null)
+			lastException = new IOException("Something bad happened... Not sure what though...");
+
+		if(retries < maximum_retries)
+		{
+			retries++;
+
+			LogMessage("reallyCheckURL() Error! e: " + lastException.getMessage() + ", retry: " + retries +
+			           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+
+			try
+			{
+				Thread.sleep(retry_sleep_time);
+			} catch (InterruptedException ie) {
+				Thread.currentThread().interrupt();
+				LogMessage("reallyCheckURL() Error! ie: " + ie.getMessage(), true, KeyValue.e);
+
+				throw ie;
+			}
+
+			return reallyGrabMjpegFrame(client, url, retries);
+		}
+
+		LogMessage("reallyCheckURL() Error! lastException: " + lastException.getMessage(), true, KeyValue.e);
+		try
+		{
+			throw lastException;
+		} catch(Exception e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 	static long getCurrTime()
