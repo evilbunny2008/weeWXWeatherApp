@@ -503,15 +503,15 @@ public class Forecast extends Fragment implements View.OnClickListener
 			String LastForecastError = (String)KeyValue.readVar("LastForecastError", "");
 			if(LastForecastError != null && !LastForecastError.isBlank())
 			{
-				weeWXAppCommon.LogMessage("getForecast returned the following error: " + LastForecastError, KeyValue.w);
+				weeWXAppCommon.LogMessage("Forecast.getForecast() getForecast returned the following error: " + LastForecastError, KeyValue.w);
 				showTextFC(LastForecastError);
 			} else {
-				weeWXAppCommon.LogMessage("getForecast returned an unknown error...", KeyValue.w);
+				weeWXAppCommon.LogMessage("Forecast.getForecast() getForecast returned an unknown error...", KeyValue.w);
 				showTextFC(weeWXApp.getAndroidString(R.string.unknown_error_occurred));
 			}
 		}
 
-		weeWXAppCommon.LogMessage("getForecast returned some content...");
+		weeWXAppCommon.LogMessage("Forecast.getForecast() getForecast returned some content...");
 		generateForecast((String)KeyValue.readVar("forecastData", ""));
 	}
 
@@ -759,30 +759,35 @@ public class Forecast extends Fragment implements View.OnClickListener
 			tv1.setText(desc);
 		});
 
-		String ext = "_light.svg";
+		String extSVG = "_light.svg";
+		String extPNG = "_light.png";
 		if((int)KeyValue.readVar("theme", weeWXApp.theme_default) != R.style.AppTheme_weeWXApp_Dark_Common)
-			ext = "_dark.svg";
+		{
+			extSVG = "_dark.svg";
+			extPNG = "_dark.png";
+		}
 
-		String finalext = ext;
+		String finalextSVG = extSVG;
+		String finalextPNG = extPNG;
 
 		switch(fctype.toLowerCase(Locale.ENGLISH))
 		{
-			case "yahoo" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/yahoo" + finalext)));
-			case "weatherzone" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/wz" + finalext)));
+			case "yahoo" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/yahoo" + finalextSVG)));
+			case "weatherzone" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/wz" + finalextSVG)));
 			case "met.no" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_no.png")));
 			case "wmo.int" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wmo.png")));
 			case "weather.gov" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wgov.png")));
 			case "weather.gc.ca", "weather.gc.ca-fr" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wca.png")));
 			case "metoffice.gov.uk" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met.png")));
-			case "bom2", "bom3" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/bom" + finalext)));
+			case "bom2", "bom3" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/bom" + finalextSVG)));
 			case "aemet.es" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/aemet.png")));
 			case "dwd.de" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/dwd.png")));
-			case "metservice.com" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/metservice" + finalext)));
+			case "metservice.com" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/metservice" + finalextSVG)));
 			case "meteofrance.com" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/mf.png")));
 			case "openweathermap.org" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/owm.png")));
 			case "apixu.com" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/apixu.png")));
 			case "weather.com" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/weather_com.png")));
-			case "met.ie" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_ie.png")));
+			case "met.ie" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_ie" + finalextPNG)));
 			case "ilmeteo.it" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/ilmeteo_it.png")));
 			case "tempoitalia.it" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/tempoitalia_it.png")));
 		}

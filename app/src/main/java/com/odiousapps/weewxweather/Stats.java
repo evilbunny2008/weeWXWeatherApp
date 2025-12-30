@@ -243,7 +243,7 @@ public class Stats extends Fragment
 	{
 		cur = cur.strip();
 
-		weeWXAppCommon.LogMessage("Old cur: " + cur);
+		//weeWXAppCommon.LogMessage("Old cur: " + cur);
 
 		String[] time = cur.split(":");
 		cur = time[0];
@@ -252,7 +252,7 @@ public class Stats extends Fragment
 		if(cur.length() > 1 && cur.startsWith("0"))
 			cur = cur.substring(1);
 
-		weeWXAppCommon.LogMessage("New cur: " + cur);
+		//weeWXAppCommon.LogMessage("New cur: " + cur);
 
 		return cur;
 	}

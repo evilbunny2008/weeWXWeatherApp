@@ -1,8 +1,10 @@
 package com.odiousapps.weewxweather;
 
+import android.location.Location;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -34,6 +36,10 @@ class KeyValue
 	static final List<Result> prefs = new ArrayList<>();
 
 	static final List<KV> yahoo = new ArrayList<>();
+
+	static final List<County> counties = new ArrayList<>();
+
+	static String countyName = null;
 
 	static Object readVar(String var, Object defVal)
 	{
@@ -87,6 +93,104 @@ class KeyValue
 			weeWXAppCommon.setVar(var, val);
 			prefs.add(r);
 		}
+	}
+
+	public static Object[] closestCounty(float targetLat, float targetLon) {
+
+		float[] results = new float[1];
+		float minDistance = Float.MAX_VALUE;
+		County closest = null;
+
+		for(County c : counties)
+		{
+			Location.distanceBetween(targetLat, targetLon, c.latitude, c.longitude, results);
+
+			if(results[0] < minDistance)
+			{
+				minDistance = results[0];
+				closest = c;
+			}
+		}
+
+		return new Object[]{closest, minDistance};
+	}
+
+	static void fillCounties()
+	{
+		try
+		{
+			County c = new County();
+			c.geonameid = 2964574;
+			c.name = "Dublin";
+			c.cc = "IE";
+			c.population = 1024027;
+			c.timezone = "Europe/Dublin";
+			c.lastModified = weeWXAppCommon.sdf4.parse("2022-03-09");
+			c.latitude = 53.3331f;
+			c.longitude = -6.24889f;
+
+			counties.add(c);
+		} catch(Exception ignored) {}
+
+		try
+		{
+			County c = new County();
+			c.geonameid = 7521313;
+			c.name = "Connacht";
+			c.cc = "IE";
+			c.population = 588583;
+			c.timezone = "Europe/Dublin";
+			c.lastModified = weeWXAppCommon.sdf4.parse("2022-12-15");
+			c.latitude = 53.87f;
+			c.longitude = -8.63333f;
+
+			counties.add(c);
+		} catch(Exception ignored) {}
+
+		try
+		{
+			County c = new County();
+			c.geonameid = 7521314;
+			c.name = "Leinster";
+			c.cc = "IE";
+			c.population = 2858501;
+			c.timezone = "Europe/Dublin";
+			c.lastModified = weeWXAppCommon.sdf4.parse("2022-12-15");
+			c.latitude = 53.1667f;
+			c.longitude = -7.02121f;
+
+			counties.add(c);
+		} catch(Exception ignored) {}
+
+		try
+		{
+			County c = new County();
+			c.geonameid = 7521315;
+			c.name = "Munster";
+			c.cc = "IE";
+			c.population = 1364098;
+			c.timezone = "Europe/Dublin";
+			c.lastModified = weeWXAppCommon.sdf4.parse("2024-12-03");
+			c.latitude = 52.3433f;
+			c.longitude = -8.71667f;
+
+			counties.add(c);
+		} catch(Exception ignored) {}
+
+		try
+		{
+			County c = new County();
+			c.geonameid = 7521316;
+			c.name = "Ulster";
+			c.cc = "IE";
+			c.population = 2215454;
+			c.timezone = "Europe/Dublin";
+			c.lastModified = weeWXAppCommon.sdf4.parse("2022-12-15");
+			c.latitude = 54.9273f;
+			c.longitude = -7.9395f;
+
+			counties.add(c);
+		} catch(Exception ignored) {}
 	}
 
 	static void loadYahooRGB2SVGTable()
@@ -1698,5 +1802,17 @@ class KeyValue
 	{
 		String Key = null;
 		String Val = null;
+	}
+
+	static class County
+	{
+		int geonameid;
+		String name;
+		String cc;
+		int population;
+		String timezone;
+		Date lastModified;
+		float latitude;
+		float longitude;
 	}
 }

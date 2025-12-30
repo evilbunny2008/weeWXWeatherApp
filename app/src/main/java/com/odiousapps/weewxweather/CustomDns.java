@@ -1,5 +1,10 @@
 package com.odiousapps.weewxweather;
 
+//
+//  This class is needed to get round the Android limitation of not honouring
+//  timeouts for DNS queries which can cause the app to hang...
+//
+
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.LinkProperties;
@@ -48,9 +53,8 @@ class CustomDns implements Dns
 		}
 	}
 
-	List<InetAddress> getList(Record[] records)
+	List<InetAddress> getList(Record[] records, List<InetAddress> results)
 	{
-		List<InetAddress> result = new ArrayList<>();
 		for(Record r : records)
 		{
 			if(r instanceof AAAARecord)
@@ -58,13 +62,17 @@ class CustomDns implements Dns
 				try
 				{
 					InetAddress i = ((AAAARecord)r).getAddress();
-					weeWXAppCommon.LogMessage("CustomDNS.java Testing IPv6: " + i.getHostAddress());
-					if(isReachableTCP(i))
+					if(!results.contains(i))
 					{
-						weeWXAppCommon.LogMessage("CustomDNS.java " + i.getHostAddress() + " was reachable...");
-						result.add(i);
-					} else {
-						weeWXAppCommon.LogMessage("CustomDNS.java " + i.getHostAddress() + " wasn't reachable...");
+						weeWXAppCommon.LogMessage("CustomDNS.java Testing IPv6: " + i.getHostAddress());
+
+						if(isReachableTCP(i))
+						{
+							weeWXAppCommon.LogMessage("CustomDNS.java " + i.getHostAddress() + " was reachable...");
+							results.add(i);
+						} else {
+							weeWXAppCommon.LogMessage("CustomDNS.java " + i.getHostAddress() + " wasn't reachable...");
+						}
 					}
 				} catch(Exception e) {
 					weeWXAppCommon.LogMessage("CustomDNS.java Error! e: " + e.getMessage(), KeyValue.e);
@@ -74,13 +82,16 @@ class CustomDns implements Dns
 				try
 				{
 					InetAddress i = ((ARecord)r).getAddress();
-					weeWXAppCommon.LogMessage("CustomDNS.java Testing IPv4: " + i.getHostAddress());
-					if(isReachableTCP(i))
+					if(!results.contains(i))
 					{
-						weeWXAppCommon.LogMessage("CustomDNS.java " + i.getHostAddress() + " was reachable...");
-						result.add(i);
-					} else {
-						weeWXAppCommon.LogMessage("CustomDNS.java " + i.getHostAddress() + " wasn't reachable...");
+						weeWXAppCommon.LogMessage("CustomDNS.java Testing IPv4: " + i.getHostAddress());
+						if(isReachableTCP(i))
+						{
+							weeWXAppCommon.LogMessage("CustomDNS.java " + i.getHostAddress() + " was reachable...");
+							results.add(i);
+						} else {
+							weeWXAppCommon.LogMessage("CustomDNS.java " + i.getHostAddress() + " wasn't reachable...");
+						}
 					}
 				} catch(Exception e) {
 					weeWXAppCommon.LogMessage("CustomDNS.java Error! e: " + e.getMessage(), KeyValue.e);
@@ -89,7 +100,7 @@ class CustomDns implements Dns
 			}
 		}
 
-		return result;
+		return results;
 	}
 
 	List<InetAddress> getDNSServers()
@@ -127,9 +138,9 @@ class CustomDns implements Dns
 	{
 		int[] types = new int[]{Type.AAAA, Type.A};
 
-		List<InetAddress> results = new ArrayList<>();
-
 		List<InetAddress> servers = getDNSServers();
+
+		List<InetAddress> results = new ArrayList<>();
 
 		AndroidResolverConfigProvider.setContext(weeWXApp.getInstance());
 
@@ -155,22 +166,16 @@ class CustomDns implements Dns
 
 					Record[] records = lookup.run();
 					if(records != null && records.length > 0)
-					{
-						List<InetAddress> result = getList(records);
-						if(result != null && !result.isEmpty())
-						{
-							for(InetAddress i : result)
-							{
-								weeWXAppCommon.LogMessage("CustomDNS.java result: " + i, KeyValue.d);
-								if(!results.contains(i))
-									results.add(i);
-							}
-						}
-					}
+						results = getList(records, results);
+
+					if(!results.isEmpty())
+						break;
+
 				} catch(Exception ignored) {}
 			}
 		}
 
+		weeWXAppCommon.LogMessage("CustomDns.lookup() results: " + results);
 		return results;
 	}
 }

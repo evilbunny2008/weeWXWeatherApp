@@ -70,6 +70,8 @@ class NetworkClient
 					.allEnabledCipherSuites()
 					.build();
 
+//					.callTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
+
 			clientInstance = new OkHttpClient.Builder()
 					.sslSocketFactory(sslSocketFactory, (X509TrustManager)trustAllCerts[0])
 					.hostnameVerifier((hostname, session) -> true)
@@ -77,7 +79,6 @@ class NetworkClient
 					.connectTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
 					.writeTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
 					.readTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
-					.callTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
 					.retryOnConnectionFailure(false)
 					.dns(new CustomDns())
 					.build();

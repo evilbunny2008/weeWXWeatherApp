@@ -23,6 +23,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.util.Log;
+import android.util.Xml;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -36,6 +37,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import org.w3c.dom.Attr;
@@ -43,6 +45,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
+import org.xmlpull.v1.XmlPullParser;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -75,6 +78,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.TimeZone;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -114,7 +118,7 @@ class weeWXAppCommon
 
 	static final String UTF8_BOM = "\uFEFF";
 
-	static final int default_timeout = 5_000;
+	static final int default_timeout = 15_000;
 	static final int maximum_retries = 3;
 	static final int retry_sleep_time = 1_000;
 
@@ -175,7 +179,7 @@ class weeWXAppCommon
 
 	static
 	{
-		if(com.odiousapps.weewxweather.BuildConfig.DEBUG)
+		if(BuildConfig.DEBUG)
 			debug_level =  KeyValue.v;
 
 		try
@@ -1102,8 +1106,8 @@ class weeWXAppCommon
 					weeWXAppCommon.uploadString(base_url, Map.of(
 							"svgMissingName", missing,
 							"svgMissingURL", forecaseURL,
-							"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
-							"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME));
+							"appName", BuildConfig.APPLICATION_ID,
+							"appVersion", BuildConfig.VERSION_NAME));
 
 				}
 
@@ -1884,35 +1888,204 @@ class weeWXAppCommon
 		List<Day> days = new ArrayList<>();
 		String desc;
 
+		Date firstTimeFrom = null, secondTimeFrom = null;
+		Date secondTimeTo = null;
+
+		String temp = null, rain = null, symbolNo = null;
+
+		float maxTemp = -999.9f;
+		float possRainTotal = 0.0f;
+
+		String today = null, tonight = null, tomorrow = null, outlook = null;
+
+		boolean doneToday = false, doneTomorrow = false, doneOutlook = false;
+
+		int firstDay = 0, secondDay = 0;
+
+		Calendar calendar = Calendar.getInstance();
+		Calendar UTCcal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+
+		long now = System.currentTimeMillis();
+/*
+		Calendar nowcal = Calendar.getInstance();
+		nowcal.setTime(new Date(now));
+		int nowDayOfMonth = nowcal.get(Calendar.DAY_OF_MONTH);
+		int nowHourOfDay = nowcal.get(Calendar.HOUR_OF_DAY);
+*/
+		String fcText = (String)KeyValue.readVar("textFC", null);
+		if(fcText != null && !fcText.isBlank())
+		{
+			try
+			{
+				JSONArray jarr = new JSONObject(fcText)
+						.getJSONArray("forecasts")
+						.getJSONObject(0)
+						.getJSONArray("regions");
+
+				for(int i = 0;  i < jarr.length(); i++)
+				{
+					JSONObject jobj = jarr.getJSONObject(i);
+
+					if(jobj.has("today"))
+						today = jobj.getString("today");
+
+					if(jobj.has("tonight"))
+						tonight = jobj.getString("tonight");
+
+					if(jobj.has("tomorrow"))
+						tomorrow = jobj.getString("tomorrow");
+
+					if(jobj.has("outlook"))
+						outlook = jobj.getString("outlook");
+				}
+
+				LogMessage("jarr: " + jarr, true, KeyValue.i);
+			} catch(JSONException ignored) {}
+		}
+
 		try
 		{
-			desc = (String)KeyValue.readVar("metierev", weeWXApp.metierev_default);
+			desc = (String)KeyValue.readVar("forecastLocationName", null);
 
-			JSONArray jarr = new JSONArray(data);
-			for(int i = 0; i < jarr.length(); i++)
+			XmlPullParser parser = Xml.newPullParser();
+			parser.setInput(new StringReader(data));
+
+			boolean foundProduct = false;
+			int eventType = parser.getEventType();
+			while(eventType != XmlPullParser.END_DOCUMENT)
 			{
-				JSONObject jobj = jarr.getJSONObject(i);
-				Day day = new Day();
-				String tmpDay = jobj.getString("date") + " " + jobj.getString("time");
-				day.timestamp = 0;
-				Date df = sdf7.parse(tmpDay);
-				if(df != null)
-					day.timestamp = df.getTime();
+				String tag = parser.getName();
+				if(tag != null && !tag.isBlank() && tag.equals("product") && eventType == XmlPullParser.START_TAG)
+					break;
 
-				day.day = sdf2.format(day.timestamp);
-				day.max = jobj.getString("temperature") + "&deg;C";
-				day.icon = jobj.getString("weatherNumber");
+				eventType = parser.next();
+			}
 
-				String fileName = "y" + day.icon + ".png";
+			while(eventType != XmlPullParser.END_DOCUMENT)
+			{
+				eventType = parser.next();
 
-				day.icon = "file:///android_asset/icons/metie/" + fileName;
+				if(eventType == XmlPullParser.END_TAG)
+					continue;
 
-				day.text = jobj.getString("weatherDescription");
+				String tag = parser.getName();
+				if(tag != null && !tag.isBlank())
+				{
+					if(tag.equals("location") || (tag.equals("time") && eventType == XmlPullParser.END_TAG))
+						continue;
 
-				if(!metric)
-					day.max = C2Fdeg((int)Float.parseFloat(day.max));
+					if(tag.equals("time"))
+					{
+						if(firstTimeFrom == null)
+						{
+							firstTimeFrom = sdf1.parse(parser.getAttributeValue(null, "from"));
+						} else
+						{
+							secondTimeFrom = sdf1.parse(parser.getAttributeValue(null, "from"));
+							secondTimeTo = sdf1.parse(parser.getAttributeValue(null, "to"));
+						}
+					}
 
-				days.add(day);
+					if(tag.equals("temperature"))
+						temp = parser.getAttributeValue(null, "value");
+
+					if(tag.equals("precipitation"))
+						rain = parser.getAttributeValue(null, "value");
+
+					if(tag.equals("symbol"))
+						symbolNo = parser.getAttributeValue(null, "number");
+
+					if(symbolNo == null)
+						continue;
+
+					if(secondTimeFrom.getTime() < now)
+					{
+						firstTimeFrom = secondTimeFrom = secondTimeTo = null;
+						temp = rain = symbolNo = null;
+
+						continue;
+					}
+
+					calendar.setTime(secondTimeFrom);
+					UTCcal.setTime(secondTimeFrom);
+
+					int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+					int hourOfDay = calendar.get(Calendar.HOUR_OF_DAY);
+					int UTChourOfDay = UTCcal.get(Calendar.HOUR_OF_DAY);
+					long utctimestamp = secondTimeFrom.getTime() - 86_400_000L;
+
+					float tmpTemp = Float.parseFloat(temp);
+					if(maxTemp < tmpTemp)
+						maxTemp = tmpTemp;
+
+					possRainTotal += Float.parseFloat(rain);
+
+					if(UTChourOfDay != 0)
+					{
+						LogMessage(UTChourOfDay + " != 0, skipping...");
+
+						firstTimeFrom = secondTimeFrom = secondTimeTo = null;
+						temp = rain = symbolNo = null;
+
+						continue;
+					}
+
+					LogMessage(UTChourOfDay + " == 0, processing....");
+
+					Day day = new Day();
+
+					LogMessage("secondTimeFrom: " + sdf8.format(secondTimeFrom));
+					LogMessage("secondTimeTo: " + sdf8.format(secondTimeTo));
+
+					if(days.isEmpty())
+						day.timestamp = now;
+					else
+						day.timestamp = secondTimeFrom.getTime() - 86_400_000L;
+
+					day.day = sdf2.format(day.timestamp);
+
+					if(!doneToday)
+					{
+						doneToday = true;
+						if(UTCcal.get(Calendar.HOUR_OF_DAY) >= 17)
+							day.text = tonight;
+						else
+							day.text = today;
+						LogMessage("day.text: " + day.text, true, KeyValue.i);
+					} else if(!doneTomorrow) {
+						doneTomorrow = true;
+						day.text = tomorrow;
+						LogMessage("Tomorrow: " + tomorrow, true, KeyValue.i);
+					} else if(!doneOutlook) {
+						doneOutlook = true;
+						day.text = outlook;
+						LogMessage("Outlook: " + outlook, true, KeyValue.i);
+					}
+
+					symbolNo = String.format(Locale.US, "%02d", Integer.parseInt(symbolNo));
+
+					day.icon = "icons/metie/y" + symbolNo + "d.png";
+					String content = weeWXApp.loadFileFromAssets(day.icon);
+					if(content != null && !content.isBlank())
+						day.icon = "file:///android_asset/" + day.icon;
+					else
+						day.icon = null;
+
+					day.max = maxTemp + "&deg;C";
+					if(!metric)
+						day.max = C2Fdeg(maxTemp);
+
+					day.min = rain + "mm";
+					if(!metric)
+						day.min = mm2in(Float.parseFloat(rain));
+
+					days.add(day);
+
+					maxTemp = -999.9f;
+					possRainTotal = 0.0f;
+					firstTimeFrom = secondTimeFrom = secondTimeTo = null;
+					temp = rain = symbolNo = null;
+				}
 			}
 		} catch(Exception e) {
 			doStackOutput(e);
@@ -2064,7 +2237,7 @@ class weeWXAppCommon
 					{
 						day.max = details.getDouble("air_temperature_max") + "&deg;C";
 						if(!metric)
-							day.max = C2Fdeg(round(Float.parseFloat(day.max), 1));
+							day.max = C2Fdeg(Float.parseFloat(day.max));
 					} else {
 						CustomDebug.writeDebug("weeWX", "processMetNO" + count++ + ".json", details.toString(4));
 					}
@@ -2910,6 +3083,9 @@ class weeWXAppCommon
 		{
 			String bodyStr = response.body().string();
 
+			LogMessage("response: " + response);
+			LogMessage("Returned string: " + bodyStr);
+
 			if(!response.isSuccessful())
 			{
 				String error = "HTTP error " + response;
@@ -2919,16 +3095,15 @@ class weeWXAppCommon
 				throw new IOException(error);
 			}
 
-			LogMessage("response: " + response);
-			LogMessage("Returned string: " + bodyStr);
 			return bodyStr;
 		} catch(Exception e) {
+			//doStackOutput(e);
 			if(retries < maximum_retries)
 			{
 				retries++;
 
 				LogMessage("reallyDownloadString() Error! e: " + e.getMessage() + ", retry: " + retries +
-				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+				           ", will sleep " + Math.round(retry_sleep_time / 1_000D) + " seconds and retry...", true);
 
 				try
 				{
@@ -3307,15 +3482,15 @@ class weeWXAppCommon
 			return null;
 
 		LogMessage("reallyGetForecast() forcecastData: " + forecastData);
-
+/*
 		try
 		{
 			JSONObject jobj = new JSONObject(forecastData);
 			JSONObject jo = jobj.getJSONObject("metadata");
 
 			LogMessage("issue_time: " + jo.getString("issue_time"));
-/*
-			jo.put("issue_time", Instant.ofEpochSecond(getCurrTime()).toString());
+
+	  		jo.put("issue_time", Instant.ofEpochSecond(getCurrTime()).toString());
 			jobj.put("metadata", jo);
 			forecastData = jobj.toString();
 
@@ -3323,8 +3498,15 @@ class weeWXAppCommon
 			jo = jobj.getJSONObject("metadata");
 
 			LogMessage("New issue_time: " + jo.getString("issue_time"));
-*/
+
 		} catch(Exception ignored) {}
+*/
+
+		if(KeyValue.countyName != null && !KeyValue.countyName.isBlank())
+		{
+			String textFC = downloadString("https://www.met.ie/Open_Data/json/" + KeyValue.countyName + ".json");
+			KeyValue.putVar("textFC", textFC);
+		}
 
 		long lastForecastDownloadTime = getCurrTime();
 
@@ -4147,6 +4329,22 @@ class weeWXAppCommon
 	static String F2Cdeg(float F)
 	{
 		return (Math.round(F2C(F) * 10.0) / 10.0) + "&deg;C";
+	}
+
+	static String mm2in(float mm)
+	{
+		float in = Math.round(mm * 0.3937008) / 10.0f;
+		return in + "in";
+	}
+
+	static float mps2kmph(float mps)
+	{
+		return round(mps * 3.6f, 1);
+	}
+
+	static float mps2mph(float mps)
+	{
+		return round(mps * 2.236936f, 1);
 	}
 
 	static float round(float num, int dp)

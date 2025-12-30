@@ -1021,9 +1021,13 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			String base_url = "file:///android_asset/logos/";
 
-			String ext = "_light.svg";
+			String extPNG = "_light.png";
+			String extSVG = "_light.svg";
 			if((int)KeyValue.readVar("theme", weeWXApp.theme_default) != R.style.AppTheme_weeWXApp_Dark_Common)
-				ext = "_dark.svg";
+			{
+				extPNG = "_dark.png";
+				extSVG = "_dark.svg";
+			}
 
 			switch(fctype.toLowerCase(Locale.ENGLISH))
 			{
@@ -1037,7 +1041,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					}
 
 					sb.append("<div style='text-align:center'><img src='")
-							.append(base_url).append("yahoo").append(ext)
+							.append(base_url).append("yahoo").append(extSVG)
 							.append("' height='45px' />\n</div>\n")
 							.append(content[0]);
 				}
@@ -1051,7 +1055,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					}
 
 					sb.append("<div style='text-align:center'><img src='")
-							.append(base_url).append("wz").append(ext)
+							.append(base_url).append("wz").append(extSVG)
 							.append("' height='45px' />\n</div>\n")
 							.append(content[0]);
 				}
@@ -1165,7 +1169,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					}
 
 					sb.append("<div style='text-align:center'><img src='file:///android_asset/logos/bom")
-							.append(ext)
+							.append(extSVG)
 							.append("' height='45px' />\n</div>\n")
 							.append(content[0]);
 				}
@@ -1180,7 +1184,9 @@ public class Weather extends Fragment implements View.OnClickListener
 
 					String imgStr = base_url + "aemet.png";
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(imgStr).append("' height='29px'/>")
+							.append("<img src='")
+							.append(imgStr)
+							.append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1209,7 +1215,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					}
 
 					sb.append("<div style='text-align:center'><img src='file:///android_asset/logos/metservice")
-							.append(ext)
+							.append(extSVG)
 							.append("' height='45px' />\n</div>\n")
 							.append(content[0]);
 				}
@@ -1252,9 +1258,12 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = base_url + "met_ie.png";
+					String imgStr = base_url + "met_ie";
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(imgStr).append("' height='29px'/>")
+							.append("<img src='")
+							.append(imgStr)
+							.append(extPNG)
+							.append("' height='45px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1269,7 +1278,9 @@ public class Weather extends Fragment implements View.OnClickListener
 
 					String imgStr = base_url + "tempoitalia_it.png";
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(imgStr).append("' height='29px'/>")
+							.append("<img src='")
+							.append(imgStr)
+							.append("' height='29px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1302,7 +1313,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private void reloadForecast()
 	{
-		weeWXAppCommon.LogMessage("reloadForecast()");
+		weeWXAppCommon.LogMessage("Weather.reloadForecast()");
 
 		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
 			return;
@@ -1311,35 +1322,35 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		boolean ret = weeWXAppCommon.getForecast(false, false);
 
-		weeWXAppCommon.LogMessage("fctype: " + KeyValue.readVar("fctype", weeWXApp.fctype_default));
-		weeWXAppCommon.LogMessage("forecastData: " + KeyValue.readVar("forecastData", weeWXApp.forecastData_default));
+		weeWXAppCommon.LogMessage("Weather.reloadForecast() fctype: " + KeyValue.readVar("fctype", weeWXApp.fctype_default));
+		weeWXAppCommon.LogMessage("Weather.reloadForecast() forecastData: " + KeyValue.readVar("forecastData", weeWXApp.forecastData_default));
 
 		if(!ret)
 		{
 			String LastForecastError = (String)KeyValue.readVar("LastForecastError", "");
 			if(LastForecastError != null && !LastForecastError.isBlank())
 			{
-				weeWXAppCommon.LogMessage("getForecast returned the following error: " +
+				weeWXAppCommon.LogMessage("Weather.reloadForecast() getForecast returned the following error: " +
 				                          LastForecastError, true, KeyValue.w);
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
 				                   LastForecastError + weeWXApp.html_footer);
 				KeyValue.putVar("LastForecastError", null);
 			} else {
-				weeWXAppCommon.LogMessage("getForecast returned an unknown error...", true, KeyValue.w);
+				weeWXAppCommon.LogMessage("Weather.reloadForecast() getForecast returned an unknown error...", true, KeyValue.w);
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
 				                   weeWXApp.getAndroidString(R.string.unknown_error_occurred) +
 				                   weeWXApp.html_footer);
 			}
 		}
 
-		weeWXAppCommon.LogMessage("getForecast returned some content...");
+		weeWXAppCommon.LogMessage("Weather.reloadForecast() getForecast returned some content...");
 		loadWebView((String)KeyValue.readVar("fctype", ""),
 				(String)KeyValue.readVar("forecastData", ""));
 	}
 
 	private void loadOrReloadRadarImage()
 	{
-		weeWXAppCommon.LogMessage("loadOrReloadRadarImage()");
+		weeWXAppCommon.LogMessage("Weather.loadOrReloadRadarImage()");
 
 		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnHomeScreen)
 			return;
@@ -1350,7 +1361,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(weeWXAppCommon.getRadarImage(false, false) != null)
 		{
-			weeWXAppCommon.LogMessage("done downloading radar.gif, prompt to show");
+			weeWXAppCommon.LogMessage("Weather.loadOrReloadRadarImage() done downloading radar.gif, prompt to show");
 			loadWebView();
 			stopRefreshing();
 			return;
@@ -1359,7 +1370,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		html = weeWXApp.current_html_headers + weeWXApp.html_header_rest +
 		       weeWXApp.getAndroidString(R.string.radar_still_downloading) +
 		       weeWXApp.html_footer;
-		weeWXAppCommon.LogMessage("Failed to download radar image", KeyValue.w);
+		weeWXAppCommon.LogMessage("Weather.loadOrReloadRadarImage() Failed to download radar image", KeyValue.w);
 		loadWebViewContent(html);
 		stopRefreshing();
 	}

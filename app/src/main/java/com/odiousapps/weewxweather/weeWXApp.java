@@ -79,14 +79,27 @@ public class weeWXApp extends Application
 		<body>
 	""";
 
-	static final String inline_arrow = """
+	private static final String inline_arrow_light = """
 			<!-- Floating scroll-to-top button -->
 			<div id="scrollToTop">
 				<svg viewBox="0 0 24 24">
-					<path d="M12 4l-7 8h4v8h6v-8h4z"/>
+					<path fill="#fff"
+					      d="M12 4l-7 8h4v8h6v-8h4z"/>
 				</svg>
 			</div>
 	""";
+
+	private static final String inline_arrow_dark = """
+			<!-- Floating scroll-to-top button -->
+			<div id="scrollToTop">
+				<svg viewBox="0 0 24 24">
+					<path fill="#000"
+					      d="M12 4l-7 8h4v8h6v-8h4z"/>
+				</svg>
+			</div>
+	""";
+
+	static String inline_arrow = inline_arrow_light;
 
 	static final String html_footer = """
 		</body>
@@ -212,7 +225,6 @@ public class weeWXApp extends Application
 	final static String WEBCAM_URL_default = "";
 	final static String CUSTOM_URL_default = "";
 	final static String custom_url_default = "";
-	final static String metierev_default = "";
 	final static String forecastData_default = "";
 	final static String fctype_default = "";
 	final static String radtype_default = "image";
@@ -331,6 +343,7 @@ public class weeWXApp extends Application
 		colours = new Colours();
 
 		KeyValue.loadYahooRGB2SVGTable();
+		KeyValue.fillCounties();
 
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 			WebViewPreloader.getInstance().init(6);
@@ -347,6 +360,8 @@ public class weeWXApp extends Application
 		UpdateCheck.runInTheBackground(false, true);
 
 		updateAboutBlurb();
+
+		KeyValue.countyName = (String)KeyValue.readVar("CountyName", null);
 	}
 
 	@Override
@@ -486,7 +501,7 @@ public class weeWXApp extends Application
 
 	static void applyTheme(boolean forced)
 	{
-		int theme = theme_default;
+		int theme = (int)KeyValue.readVar("theme", theme_default);
 		int mode = mode_default;
 
 		//if(DynamicColors.isDynamicColorAvailable())
@@ -525,9 +540,20 @@ public class weeWXApp extends Application
 			instance.setTheme(theme);
 		}
 
+		String main_css = loadFileFromAssets("main.css");
+		if(main_css != null && !main_css.isBlank())
+		{
+			if(theme == R.style.AppTheme_weeWXApp_Light_Common)
+				main_css = main_css.replaceAll("ARROW_COLOUR", "#fff")
+						.replaceAll("ARROW_BG_COLOUR", "#333");
+			else
+				main_css = main_css.replaceAll("ARROW_COLOUR", "#000000")
+						.replaceAll("ARROW_BG_COLOUR", "#CCCCCC");
+		}
+
 		current_html_headers = html_header +
 		                       "<style>\n" +
-		                       loadFileFromAssets("main.css") +
+		                       main_css+
 		                       "\n</style>\n";
 
 		current_dialog_html = dialog_html_header +
@@ -535,6 +561,11 @@ public class weeWXApp extends Application
 		                      loadFileFromAssets("secondary.css") +
 		                      "\n</style>\n" +
 		                      dialog_html_header_rest;
+
+		if(theme == R.style.AppTheme_weeWXApp_Light_Common)
+			inline_arrow = inline_arrow_light;
+		else
+			inline_arrow = inline_arrow_dark;
 
 		replaceHex6String("BG_HEX", colours.bgColour);
 		replaceHex6String("FG_HEX", colours.fgColour);

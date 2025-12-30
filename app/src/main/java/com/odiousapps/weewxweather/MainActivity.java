@@ -41,7 +41,6 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
-import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -1094,7 +1093,7 @@ public class MainActivity extends FragmentActivity
 			boolean validURL5;
 
 			String baseURL = "", radtype = "", radarURL = "", forecastURL = "", webcamURL = "",
-					CustomURL = "", appCustomURL, fctype = "", bomtown = "", metierev;
+					CustomURL = "", appCustomURL, fctype = "", bomtown = "";
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
 			weeWXAppCommon.LogMessage("settings_url: " + settings_url, true);
@@ -1451,26 +1450,40 @@ public class MainActivity extends FragmentActivity
 						}
 						case "met.ie" ->
 						{
-							metierev = "https://prodapi.metweb.ie/location/reverse/" + forecastURL.replaceAll(",", "/");
-							forecastURL = "https://prodapi.metweb.ie/weather/daily/" + forecastURL.replaceAll(",", "/") + "/10";
+							String[] llbits = forecastURL.split(",", 2);
 
-							tmpStr = (String)KeyValue.readVar("metierev", weeWXApp.metierev_default);
-							if(tmpStr == null || tmpStr.isBlank())
+							float lat = Float.parseFloat(llbits[0]);
+							float lon = Float.parseFloat(llbits[1]);
+
+							if(lat != 0 && lon != 0)
 							{
-								metierev = weeWXAppCommon.downloadString(metierev);
-								if(metierev == null)
-								{
-									bgStart = 0;
-									return;
-								}
+								forecastURL = "http://openaccess.pf.api.met.ie/metno-wdb2ts/locationforecast?" +
+								              "lat=" + lat + ";long=" + lon;
 
-								JSONObject jobj = new JSONObject(metierev);
-								metierev = jobj.getString("city") + ", Ireland";
-								KeyValue.putVar("metierev", metierev);
+								String url = "https://odiousapps.com/get-location-name-by-ll.php";
+
+								Map<String, String> args = Map.of(
+										"lat", "" + lat,
+										"lon", "" + lon,
+										"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
+										"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
+
+								forecastLocationName = weeWXAppCommon.downloadString(url, args);
+
+								weeWXAppCommon.LogMessage("forecastLocationName: " + forecastLocationName);
+
+								Object[] o = KeyValue.closestCounty(lat, lon);
+
+								if(o != null && o.length == 2)
+								{
+									KeyValue.countyName = ((KeyValue.County)o[0]).name;
+									weeWXAppCommon.LogMessage("County Name: " + KeyValue.countyName);
+									weeWXAppCommon.LogMessage("Distance: " + (float)o[1]);
+								}
 							}
+
 							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
-							weeWXAppCommon.LogMessage("metierev: " + metierev);
 						}
 						default ->
 						{
@@ -1650,6 +1663,8 @@ public class MainActivity extends FragmentActivity
 					return;
 				}
 			}
+
+			KeyValue.putVar("CountyName", KeyValue.countyName);
 
 			KeyValue.putVar("SETTINGS_URL", settingsURL.getText().toString());
 			KeyValue.putVar("updateInterval", UpdateFrequency);
