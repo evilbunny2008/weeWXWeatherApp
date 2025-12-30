@@ -1850,9 +1850,13 @@ class weeWXAppCommon
 				day.max = day_temp.getString(i);
 				day.min = night_temp.getString(i);
 
-				String fileName = day.icon + ".png";
-
-				day.icon = "file:///android_asset/icons/wcom/" + fileName;
+				day.icon = String.format(Locale.US, "%02d", Integer.parseInt(day.icon));
+				day.icon = "icons/wcom/" + day.icon + ".svg";
+				String content = weeWXApp.loadFileFromAssets(day.icon);
+				if(content != null && !content.isBlank())
+					day.icon = "file:///android_asset/" + day.icon;
+				else
+					day.icon = null;
 
 				if(metric)
 				{

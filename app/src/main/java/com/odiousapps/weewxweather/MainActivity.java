@@ -1438,7 +1438,7 @@ public class MainActivity extends FragmentActivity
 						}
 						case "weather.com" ->
 						{
-							forecastURL = "https://api.weather.com/v3/wx/forecast/daily/5day?geocode=" + forecastURL + "&format=json&apiKey" +
+							forecastURL = "https://api.weather.com/v3/wx/forecast/daily/10day?geocode=" + forecastURL + "&format=json&apiKey" +
 							    "=71f92ea9dd2f4790b92ea9dd2f779061";
 							if(metric_forecasts.isChecked())
 								forecastURL += "&units=m";

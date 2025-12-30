@@ -1243,9 +1243,11 @@ public class Weather extends Fragment implements View.OnClickListener
 						return;
 					}
 
-					String imgStr = base_url + "weather_com.png";
+					String imgStr = base_url + "weather_com.svg";
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(imgStr).append("' height='29px'/>")
+							.append("<img src='")
+							.append(imgStr)
+							.append("' height='45px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
