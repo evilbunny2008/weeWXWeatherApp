@@ -854,7 +854,7 @@ class weeWXAppCommon
 		StringBuilder sb = new StringBuilder();
 		int start = 0;
 
-		String string_time = sdf2.format(timestamp);
+		String string_time = sdf7.format(timestamp);
 
 		sb.append("\n<div class='header'>").append(string_time).append("</div>\n\n");
 
@@ -1045,7 +1045,7 @@ class weeWXAppCommon
 
 //			timestamp = System.currentTimeMillis();
 			Date date = new Date(timestamp);
-			LogMessage("Last updated forecast: " + sdf3.format(date));
+			LogMessage("Last updated forecast: " + sdf5.format(date));
 
 			JSONArray mydays = jobj.getJSONArray("data");
 			for(int i = 0; i < mydays.length(); i++)
