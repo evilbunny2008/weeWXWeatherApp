@@ -574,11 +574,7 @@ public class MainActivity extends FragmentActivity
 			scrollView.smoothScrollTo(0, 0);
 		});
 
-		String SETTINGS_URL_default = weeWXApp.SETTINGS_URL_default;
-		if(weeWXApp.DEBUG)
-			SETTINGS_URL_default = "https://delungra.com/weewx/inigo-settings.txt";
-
-		settingsURL.setText((String)KeyValue.readVar("SETTINGS_URL", SETTINGS_URL_default));
+		settingsURL.setText((String)KeyValue.readVar("SETTINGS_URL", weeWXApp.SETTINGS_URL_default));
 		settingsURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
 			if(!hasFocus)
