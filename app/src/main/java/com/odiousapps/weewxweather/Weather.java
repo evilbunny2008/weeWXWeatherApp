@@ -149,7 +149,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			current.getViewTreeObserver().removeOnScrollChangedListener(scl);
 
-			WebViewPreloader.getInstance().recycleWebView(current);
+			weeWXApp.getInstance().wvpl.recycleWebView(current);
 
 			weeWXAppCommon.LogMessage("Weather.onDestroyView() recycled current...");
 		}
@@ -160,7 +160,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(parent instanceof ViewGroup)
 				((ViewGroup)parent).removeView(forecast);
 
-			WebViewPreloader.getInstance().recycleWebView(forecast);
+			weeWXApp.getInstance().wvpl.recycleWebView(forecast);
 
 			weeWXAppCommon.LogMessage("Weather.onDestroyView() recycled forecast...");
 		}
@@ -219,7 +219,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(wasNull)
 		{
 			weeWXAppCommon.LogMessage("Weather.java loadWebview() webView == null");
-			webView = WebViewPreloader.getInstance().getWebView();
+			webView = weeWXApp.getInstance().wvpl.getWebView();
 		}
 
 		if(webView.getParent() != null)
@@ -1230,7 +1230,9 @@ public class Weather extends Fragment implements View.OnClickListener
 
 					String imgStr = base_url + "owm.png";
 					sb.append("<div style='text-align:center'>")
-							.append("<img src='").append(imgStr).append("' height='29px'/>")
+							.append("<img src='")
+							.append(imgStr)
+							.append("' height='30px'/>")
 							.append("</div>\n")
 							.append(content[0]);
 				}
@@ -1317,6 +1319,11 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		weeWXAppCommon.LogMessage("Weather.reloadForecast()");
 
+		String fctype = (String)KeyValue.readVar("fctype", weeWXApp.fctype_default);
+
+		if(fctype.equals("weatherzone2"))
+			return;
+
 		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnHomeScreen)
 			return;
 
@@ -1324,8 +1331,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		boolean ret = weeWXAppCommon.getForecast(false, false);
 
-		weeWXAppCommon.LogMessage("Weather.reloadForecast() fctype: " + KeyValue.readVar("fctype", weeWXApp.fctype_default));
-		weeWXAppCommon.LogMessage("Weather.reloadForecast() forecastData: " + KeyValue.readVar("forecastData", weeWXApp.forecastData_default));
+		weeWXAppCommon.LogMessage("Weather.reloadForecast() fctype: " + fctype);
+		//weeWXAppCommon.LogMessage("Weather.reloadForecast() forecastData: " + KeyValue.readVar("forecastData", weeWXApp.forecastData_default));
 
 		if(!ret)
 		{

@@ -102,7 +102,11 @@ class NetworkClient
 
 		// windy.com is very noisy... 2s connectivity checks is beyond excessive...
 		//if(!url.contains("windy.com"))
-		weeWXAppCommon.LogMessage("New URL: " + url);
+		weeWXAppCommon.LogMessage("NetworkClient.getInstance() URL: " + url);
+
+		url = noCache(url);
+
+		weeWXAppCommon.LogMessage("NetworkClient.getInstance() New URL: " + url);
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() == null || !uri.getUserInfo().contains(":"))
@@ -125,14 +129,11 @@ class NetworkClient
 		if(url == null || url.isBlank() || !url.startsWith("http"))
 			return newClient.build();
 
-		weeWXAppCommon.LogMessage("getStream(), url: " + url);
+		weeWXAppCommon.LogMessage("NetworkClient.getStream() URL: " + url);
 
-		String addnocache = "_cf_cb=" + System.currentTimeMillis();
+		url = noCache(url);
 
-		if(!url.contains("?"))
-			url += "?" + addnocache;
-		else
-			url += "&" + addnocache;
+		weeWXAppCommon.LogMessage("NetworkClient.getStream() New URL: " + url);
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
@@ -151,6 +152,16 @@ class NetworkClient
 		return newClient.build();
 	}
 
+	private static String noCache(String url)
+	{
+		if(!url.contains("?"))
+			url += "?";
+		else
+			url += "&";
+
+		return url + "noCache=" + System.currentTimeMillis();
+	}
+
 	private static int responseCount(Response response)
 	{
 		int result = 1;
@@ -166,7 +177,11 @@ class NetworkClient
 		if(url == null || url.isBlank() || !url.startsWith("http"))
 			return null;
 
-		weeWXAppCommon.LogMessage("newRequest(), url: " + url);
+		weeWXAppCommon.LogMessage("NetworkClient.getRequest(), URL: " + url);
+
+		url = noCache(url);
+
+		weeWXAppCommon.LogMessage("NetworkClient.getRequest(), New URL: " + url);
 
 		Request.Builder req = new Request.Builder()
 				.header("User-Agent", UA)

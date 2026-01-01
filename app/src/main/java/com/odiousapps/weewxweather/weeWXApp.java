@@ -175,6 +175,8 @@ public class weeWXApp extends Application
 	</html>
 	""";
 
+	record Setting(String Key, Object Val) {}
+
 	static String current_html_headers;
 
 	static String current_dialog_html;
@@ -230,6 +232,7 @@ public class weeWXApp extends Application
 	final static String radtype_default = "image";
 	final static String SETTINGS_URL_default = "https://example.com/weewx/inigo-settings.txt";
 	final static String CustomURL_default = "https://example.com/mobile.html";
+	final static String missingIconURL = "https://odiousapps.com/weewxweatherapp-icon-missing.php";
 
 	final static String radarFilename = "radar.gif";
 	final static String webcamFilename = "webcam.jpg";
@@ -248,7 +251,11 @@ public class weeWXApp extends Application
 
 	final static String charset = StandardCharsets.UTF_8.toString();
 
-	record Setting(String Key, Object Val) {}
+	WebViewPreloader wvpl;
+
+	final static boolean DEBUG = com.odiousapps.weewxweather.BuildConfig.DEBUG;
+	final static String VERSION_NAME = com.odiousapps.weewxweather.BuildConfig.VERSION_NAME;
+	final static String APPLICATION_ID = com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID;
 
 	@Override
 	public void onCreate()
@@ -257,13 +264,15 @@ public class weeWXApp extends Application
 
 		try
 		{
-			// Preload the BuildConfig, weeWXAppCommon and KeyValue classes
-			Class.forName("com.odiousapps.weewxweather.BuildConfig");
+			// Preload the weeWXAppCommon, KeyValue and WebViewPreloader classes
 			Class.forName("com.odiousapps.weewxweather.weeWXAppCommon");
 			Class.forName("com.odiousapps.weewxweather.KeyValue");
+			Class.forName("com.odiousapps.weewxweather.WebViewPreloader");
 		} catch(ClassNotFoundException ignored) {}
 
 		super.onCreate();
+
+		wvpl = new WebViewPreloader();
 
 		int major = 0;
 		try
@@ -333,7 +342,7 @@ public class weeWXApp extends Application
 		else
 			weeWXAppCommon.LogMessage("Debug logging disabled...", true, KeyValue.i);
 
-		weeWXAppCommon.LogMessage("weeWXApp.java app_version: " + com.odiousapps.weewxweather.BuildConfig.VERSION_NAME + " starting...", KeyValue.i);
+		weeWXAppCommon.LogMessage("weeWXApp.java app_version: " + VERSION_NAME + " starting...", KeyValue.i);
 
 		if(weeWXAppCommon.fixTypes())
 			weeWXAppCommon.LogMessage("weeWXApp.java successfully converted preference object types...", KeyValue.d);
@@ -346,7 +355,7 @@ public class weeWXApp extends Application
 		KeyValue.fillCounties();
 
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-			WebViewPreloader.getInstance().init(6);
+			weeWXApp.getInstance().wvpl.init(6);
 
 		applyTheme(false);
 
@@ -386,7 +395,7 @@ public class weeWXApp extends Application
 		if(KeyValue.currWebViewVer != null)
 		{
 			current_about_blurb = about_blurb.replaceAll("WEBVIEWVER", KeyValue.currWebViewVer)
-					.replaceAll("APPVERSION", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
+					.replaceAll("APPVERSION", VERSION_NAME);
 		}
 	}
 

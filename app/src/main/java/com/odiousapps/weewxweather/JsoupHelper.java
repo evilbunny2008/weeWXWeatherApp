@@ -7,11 +7,20 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -22,6 +31,46 @@ import java.util.regex.Pattern;
                    "SameReturnValue", "BooleanMethodIsAlwaysInverted", "SetTextI18n", "StringBufferMayBeStringBuilder"})
 class JsoupHelper
 {
+	private static final Set<String> processedFiles = new HashSet<>();
+
+	static final Map<String, DayOfWeek> IT_DAYS = Map.of(
+	"lun", DayOfWeek.MONDAY,
+	"mar", DayOfWeek.TUESDAY,
+	"mer", DayOfWeek.WEDNESDAY,
+	"gio", DayOfWeek.THURSDAY,
+	"ven", DayOfWeek.FRIDAY,
+	"sab", DayOfWeek.SATURDAY,
+	"dom", DayOfWeek.SUNDAY
+	);
+
+	static
+	{
+		processedFiles.addAll(Arrays.asList("arrow_accordion.svg", "icon_setting.svg", "logodtninverted.svg",
+				"profile.svg", "arrow_in_circle.svg", "iconmenuwhite.svg", "welcome_to_weatherzone.svg",
+				"steady.svg", "icon_arrow_selector.svg", "falling.svg", "rising.svg", "steady.svg"));
+	}
+
+	static Date parseItalianDate(String input)
+	{
+		String[] parts = input.toLowerCase(Locale.ITALIAN).split("\\s+");
+
+		DayOfWeek targetDow = IT_DAYS.get(parts[0]);
+		int targetDay = Integer.parseInt(parts[1]);
+
+		LocalDate date = LocalDate.now();
+		date = date.minusDays(7);
+
+		for(int i = -7; i < 7; i++)
+		{
+			if(date.getDayOfMonth() == targetDay && date.getDayOfWeek() == targetDow)
+				return Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant());
+
+			date = date.plusDays(1);
+		}
+
+		return null;
+	}
+
 	record Result(List<Day> days, String desc, long timestamp) {}
 
 	static Result processYahoo(String data)
@@ -35,184 +84,9 @@ class JsoupHelper
 
 		Document doc = Jsoup.parse(data);
 
-		if(false)
-		{
-			try(ExecutorService executor = Executors.newSingleThreadExecutor())
-			{
-				Future<?> backgroundTask = executor.submit(() ->
-				{
-					String base_url = "https://odiousapps.com/yahoosvg.php";
-
-					Elements svgs = doc.select("svg");
-
-					for(Element svg: svgs)
-					{
-						if(svg == null || svg.outerHtml().isBlank())
-							continue;
-
-						if(!svg.hasAttr("aria-label"))
-							continue;
-
-						String filenameOrig = svg.attr("aria-label");
-
-						if(filenameOrig == null || filenameOrig.isBlank() || filenameOrig.equals("Yahoo Weather"))
-							continue;
-
-						filenameOrig = filenameOrig.replaceAll(" ", "_");
-
-						int height = 0;
-
-						if(svg.hasAttr("height"))
-							height = (int)Float.parseFloat(svg.attr("height"));
-
-						int width = 0;
-						if(svg.hasAttr("width"))
-							width = (int)Float.parseFloat(svg.attr("width"));
-
-						if(width > 0 && height > 0)
-							filenameOrig += "_" + height + "x" + width;
-
-						boolean hasDark = false;
-						boolean hasLight = false;
-
-						Element lightSVG = svg.clone();
-						if(!lightSVG.select("g.uds-light-mode-icon").isEmpty())
-						{
-							hasLight = true;
-							lightSVG.select("g.uds-dark-mode-icon").remove();
-						}
-
-						Element darkSVG = svg.clone();
-						if(!darkSVG.select("g.uds-dark-mode-icon").isEmpty())
-						{
-							hasDark = true;
-							darkSVG.select("g.uds-light-mode-icon").remove();
-						}
-
-						try
-						{
-							if(hasLight)
-							{
-								boolean alreadyWrittenLight = false;
-								String outputLight = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-								                     weeWXAppCommon.convertRGB2Hex(lightSVG.outerHtml()) + "\n";
-								String filenameLight = null;
-								for(int i = 0; i < 10; i++)
-								{
-									filenameLight = "yahoo" + "_" + filenameOrig + "_" + i + "_light.svg";
-
-									String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filenameLight);
-
-									if(content == null || content.isBlank())
-										break;
-
-									if(content.strip().equals(outputLight.strip()))
-									{
-										alreadyWrittenLight = true;
-										break;
-									}
-								}
-
-								if(filenameLight != null && !filenameLight.isBlank() && !alreadyWrittenLight)
-								{
-									Map<String, String> args = Map.of(
-											"svgName", filenameLight,
-											"svgHeight", "" + height,
-											"svgWidth", "" + width,
-											"svg", outputLight,
-											"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
-											"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
-
-									weeWXAppCommon.uploadString(base_url, args);
-								}
-							}
-
-							if(hasDark)
-							{
-								boolean alreadyWrittenDark = false;
-								String outputDark = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-								                    weeWXAppCommon.convertRGB2Hex(darkSVG.outerHtml()) + "\n";
-								String filenameDark = null;
-								for(int i = 0; i < 10; i++)
-								{
-									filenameDark = "yahoo" + "_" + filenameOrig + "_" + i + "_dark.svg";
-
-									String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filenameDark);
-
-									if(content == null || content.isBlank())
-										break;
-
-									if(content.strip().equals(outputDark.strip()))
-									{
-										alreadyWrittenDark = true;
-										break;
-									}
-								}
-
-								if(filenameDark != null && !filenameDark.isBlank() && !alreadyWrittenDark)
-								{
-									Map<String, String> args = Map.of(
-											"svgName", filenameDark,
-											"svgHeight", "" + height,
-											"svgWidth", "" + width,
-											"svg", outputDark,
-											"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
-											"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
-
-
-									weeWXAppCommon.uploadString(base_url, args);
-								}
-							}
-
-							if(!hasLight && !hasDark)
-							{
-								boolean alreadyWritten = false;
-								String output = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-								                weeWXAppCommon.convertRGB2Hex(svg.outerHtml()) + "\n";
-								String filename = null;
-								for(int i = 0; i < 10; i++)
-								{
-									filename = "yahoo" + "_" + filenameOrig + "_" + i + ".svg";
-
-									String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filename);
-
-									if(content == null || content.isBlank())
-										break;
-
-									if(content.strip().equals(output.strip()))
-									{
-										alreadyWritten = true;
-										break;
-									}
-								}
-
-								if(filename != null && !filename.isBlank() && !alreadyWritten)
-								{
-									Map<String, String> args = Map.of(
-											"svgName", filename,
-											"svgHeight", "" + height,
-											"svgWidth", "" + width,
-											"svg", output,
-											"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
-											"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
-
-									weeWXAppCommon.uploadString(base_url, args);
-								}
-							}
-
-							//publish(file);
-						} catch(Exception e) {
-							weeWXAppCommon.doStackOutput(e);
-						}
-					}
-				});
-			} catch(Exception e) {
-				weeWXAppCommon.LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
-				weeWXAppCommon.doStackOutput(e);
-			}
-		}
-
 		Pattern p = Pattern.compile("self.__next_f\\.push\\(\\[\\d+,\"(.*)\"]\\)", Pattern.DOTALL);
+
+		boolean hasUploadedMissing = false;
 
 		try
 		{
@@ -395,20 +269,12 @@ class JsoupHelper
 							}
 						}
 
-						if(content == null || content.isBlank())
+						if((content == null || content.isBlank()) && day.icon != null && !day.icon.isBlank())
 						{
-							if(day.icon != null && !day.icon.isBlank())
+							if(!hasUploadedMissing)
 							{
-								String base_url = "https://odiousapps.com/yahoo-missing-svg.php";
-
-								String forecaseURL = (String)KeyValue.readVar("FORECAST_URL", null);
-
-								weeWXAppCommon.LogMessage("Unable to locate SVG: " + day.icon, KeyValue.d);
-								weeWXAppCommon.uploadString(base_url, Map.of(
-										"svgMissingName", day.icon,
-										"svgMissingURL", forecaseURL,
-										"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
-										"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME));
+								 hasUploadedMissing = true;
+								 uploadMissingYahooIcons(doc);
 							}
 
 							day.icon = null;
@@ -425,6 +291,162 @@ class JsoupHelper
 		} catch(Exception e) {
 			weeWXAppCommon.doStackOutput(e);
 			return null;
+		}
+	}
+
+	private static void uploadMissingYahooIcons(Document doc)
+	{
+		try(ExecutorService executor = Executors.newSingleThreadExecutor())
+		{
+			Future<?> backgroundTask = executor.submit(() ->
+			{
+				Elements svgs = doc.select("svg");
+
+				for(Element svg: svgs)
+				{
+					if(svg == null || svg.outerHtml().isBlank())
+						continue;
+
+					if(!svg.hasAttr("aria-label"))
+						continue;
+
+					String filenameOrig = svg.attr("aria-label");
+
+					if(filenameOrig == null || filenameOrig.isBlank() || filenameOrig.equals("Yahoo Weather"))
+						continue;
+
+					filenameOrig = filenameOrig.replaceAll(" ", "_");
+
+					int height = 0;
+
+					if(svg.hasAttr("height"))
+						height = (int)Float.parseFloat(svg.attr("height"));
+
+					int width = 0;
+					if(svg.hasAttr("width"))
+						width = (int)Float.parseFloat(svg.attr("width"));
+
+					if(width > 0 && height > 0)
+						filenameOrig += "_" + height + "x" + width;
+
+					boolean hasDark = false;
+					boolean hasLight = false;
+
+					Element lightSVG = svg.clone();
+					if(!lightSVG.select("g.uds-light-mode-icon").isEmpty())
+					{
+						hasLight = true;
+						lightSVG.select("g.uds-dark-mode-icon").remove();
+					}
+
+					Element darkSVG = svg.clone();
+					if(!darkSVG.select("g.uds-dark-mode-icon").isEmpty())
+					{
+						hasDark = true;
+						darkSVG.select("g.uds-light-mode-icon").remove();
+					}
+
+					try
+					{
+						if(hasLight)
+						{
+							boolean alreadyWrittenLight = false;
+							String outputLight = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+							                     weeWXAppCommon.convertRGB2Hex(lightSVG.outerHtml()) + "\n";
+							String filenameLight = null;
+							for(int i = 0; i < 10; i++)
+							{
+								filenameLight = "yahoo" + "_" + filenameOrig + "_" + i + "_light.svg";
+
+								String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filenameLight);
+
+								if(content == null || content.isBlank())
+									break;
+
+								if(content.strip().equals(outputLight.strip()))
+								{
+									alreadyWrittenLight = true;
+									break;
+								}
+							}
+
+							if(filenameLight != null && !filenameLight.isBlank() && !alreadyWrittenLight)
+								weeWXAppCommon.uploadMissingIcon(Map.of(
+										"svgName", filenameLight,
+										"svgHeight", "" + height,
+										"svgWidth", "" + width,
+										"svg", outputLight));
+						}
+
+						if(hasDark)
+						{
+							boolean alreadyWrittenDark = false;
+							String outputDark = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+							                    weeWXAppCommon.convertRGB2Hex(darkSVG.outerHtml()) + "\n";
+							String filenameDark = null;
+							for(int i = 0; i < 10; i++)
+							{
+								filenameDark = "yahoo" + "_" + filenameOrig + "_" + i + "_dark.svg";
+
+								String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filenameDark);
+
+								if(content == null || content.isBlank())
+									break;
+
+								if(content.strip().equals(outputDark.strip()))
+								{
+									alreadyWrittenDark = true;
+									break;
+								}
+							}
+
+							if(filenameDark != null && !filenameDark.isBlank() && !alreadyWrittenDark)
+								weeWXAppCommon.uploadMissingIcon(Map.of(
+										"svgName", filenameDark,
+										"svgHeight", "" + height,
+										"svgWidth", "" + width,
+										"svg", outputDark));
+						}
+
+						if(!hasLight && !hasDark)
+						{
+							boolean alreadyWritten = false;
+							String output = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
+							                weeWXAppCommon.convertRGB2Hex(svg.outerHtml()) + "\n";
+							String filename = null;
+							for(int i = 0; i < 10; i++)
+							{
+								filename = "yahoo" + "_" + filenameOrig + "_" + i + ".svg";
+
+								String content = weeWXApp.loadFileFromAssets("icons/yahoo/" + filename);
+
+								if(content == null || content.isBlank())
+									break;
+
+								if(content.strip().equals(output.strip()))
+								{
+									alreadyWritten = true;
+									break;
+								}
+							}
+
+							if(filename != null && !filename.isBlank() && !alreadyWritten)
+								weeWXAppCommon.uploadMissingIcon(Map.of(
+										"svgName", filename,
+										"svgHeight", "" + height,
+										"svgWidth", "" + width,
+										"svg", output));
+						}
+
+						//publish(file);
+					} catch(Exception e) {
+						weeWXAppCommon.doStackOutput(e);
+					}
+				}
+			});
+		} catch(Exception e) {
+			weeWXAppCommon.LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
+			weeWXAppCommon.doStackOutput(e);
 		}
 	}
 
@@ -827,5 +849,132 @@ class JsoupHelper
 		}
 
 		return null;
+	}
+
+	static Result processTempoItalia(String data)
+	{
+		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		List<Day> days = new ArrayList<>();
+		String desc;
+		long timestamp = 0;
+		long lastTS = 0;
+
+		String timeweek, skyIcon = "", skyDesc = "", tempmin = "", tempmax = "";
+
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE d", Locale.ITALIAN);
+
+		try
+		{
+			Document doc = Jsoup.parse(data.strip());
+			Elements title = doc.select("title");
+
+			desc = title.text().split("Meteo", 2)[1].split("dal", 2)[0].strip();
+
+			Elements tr = doc.select("tbody").select("tr");
+			for(Element e : tr)
+			{
+				Day day = new Day();
+				Element td = e.selectFirst("td.timeweek");
+				if(td != null)
+				{
+					Date date = null;
+					timeweek = td.text();
+					if(timeweek != null && !timeweek.isBlank())
+						date = parseItalianDate(timeweek);
+
+					if(date != null)
+					{
+						day.timestamp = date.getTime();
+						weeWXAppCommon.LogMessage("date.getTime(): " + date.getTime());
+						weeWXAppCommon.LogMessage("sdf2: " + weeWXAppCommon.sdf2.format(date.getTime()));
+					}
+				}
+
+				td = e.selectFirst("td.skyIcon img");
+				if(td != null)
+				{
+					day.icon = td.attr("src");
+					day.icon = "icons/tempoitalia/" + day.icon.substring(day.icon.lastIndexOf('/') + 1);
+
+					String content = weeWXApp.loadFileFromAssets(day.icon);
+					if(content != null && !content.isBlank())
+						day.icon = "file:///android_asset/" + day.icon;
+					else
+						day.icon = null;
+
+					weeWXAppCommon.LogMessage("day.icon: " + day.icon);
+				}
+
+				td = e.selectFirst("td.skyDesc");
+				if(td != null)
+					day.text = td.text();
+
+				td = e.selectFirst("td.tempin");
+				if(td != null)
+				{
+					if(metric)
+						day.min = Math.round(Float.parseFloat(td.text().replaceAll("°C", ""))) + "&deg;C";
+					else
+						day.min = (int)weeWXAppCommon.C2F(Float.parseFloat(td.text().replaceAll("°C", ""))) + "&deg;F";
+				}
+
+				td = e.selectFirst("td.tempmax");
+				{
+					if(metric)
+						day.max = Math.round(Float.parseFloat(td.text().replaceAll("°C", ""))) + "&deg;C";
+					else
+						day.max = (int)weeWXAppCommon.C2F(Float.parseFloat(td.text().replaceAll("°C", ""))) + "&deg;F";
+				}
+
+				days.add(day);
+			}
+
+			return new Result(days, desc, timestamp);
+		} catch(Exception e) {
+			weeWXAppCommon.doStackOutput(e);
+			return null;
+		}
+	}
+
+	static void processWZhtml(String html)
+	{
+		Document doc = Jsoup.parse(html.strip());
+		Elements SVGs = doc.select("svg");
+		for(Element SVG : SVGs)
+		{
+			String title = SVG.selectFirst("title") != null ? SVG.selectFirst("title").text() : null;
+			if(title == null || title.isBlank())
+				continue;
+
+			title = title.replace(" ", "_").toLowerCase();
+			if(title.endsWith("_icon") || title.startsWith("wind_speed_") ||
+			   title.startsWith("logo") || title.startsWith("icon"))
+				continue;
+
+			title = title + ".svg";
+
+			if(processedFiles.contains(title))
+				continue;
+
+			//weeWXAppCommon.LogMessage("new svg: " + SVG.outerHtml());
+			//weeWXAppCommon.LogMessage("new svg: " + title);
+
+			try
+			{
+				File f = weeWXAppCommon.getExtFile("weeWX", title);
+				if(f.exists())
+				{
+					processedFiles.add(title);
+					continue;
+				}
+
+				try(FileOutputStream fos = new FileOutputStream(f))
+				{
+					fos.write(SVG.outerHtml().getBytes());
+					processedFiles.add(title);
+					weeWXAppCommon.LogMessage("Successfully wrote to " + title);
+				} catch(Exception ignored) {}
+			} catch(Exception ignored) {}
+		}
 	}
 }

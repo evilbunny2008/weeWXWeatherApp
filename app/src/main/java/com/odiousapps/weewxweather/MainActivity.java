@@ -253,7 +253,7 @@ public class MainActivity extends FragmentActivity
 		cd.setBackgroundColor(weeWXApp.getColours().bgColour);
 		cd.setOnTouchedListener((v) ->
 		{
-			weeWXAppCommon.LogMessage("cd.TouchedListener()");
+			//weeWXAppCommon.LogMessage("cd.TouchedListener()");
 			handleTouch();
 		});
 
@@ -574,7 +574,11 @@ public class MainActivity extends FragmentActivity
 			scrollView.smoothScrollTo(0, 0);
 		});
 
-		settingsURL.setText((String)KeyValue.readVar("SETTINGS_URL", weeWXApp.SETTINGS_URL_default));
+		String SETTINGS_URL_default = weeWXApp.SETTINGS_URL_default;
+		if(weeWXApp.DEBUG)
+			SETTINGS_URL_default = "https://delungra.com/weewx/inigo-settings.txt";
+
+		settingsURL.setText((String)KeyValue.readVar("SETTINGS_URL", SETTINGS_URL_default));
 		settingsURL.setOnFocusChangeListener((v, hasFocus) ->
 		{
 			if(!hasFocus)
@@ -1084,7 +1088,7 @@ public class MainActivity extends FragmentActivity
 			weeWXAppCommon.LogMessage("MainActivity.java bg started...", true);
 
 			String tmpStr, errorStr = "";
-			String forecastLocationName = null;
+			String forecastLocationName = KeyValue.countyName = null;
 
 			boolean validURL;
 			boolean validURL1;
@@ -1119,7 +1123,7 @@ public class MainActivity extends FragmentActivity
 			try
 			{
 				String settingsData = weeWXAppCommon.downloadSettings(settings_url).strip();
-				weeWXAppCommon.LogMessage("settingsData: " + settingsData);
+				//weeWXAppCommon.LogMessage("settingsData: " + settingsData);
 
 				if(settingsData == null || settingsData.isBlank())
 				{
@@ -1166,6 +1170,14 @@ public class MainActivity extends FragmentActivity
 				validURL = false;
 			}
 
+			weeWXAppCommon.LogMessage("baseURL: " + baseURL);
+			weeWXAppCommon.LogMessage("radarURL: " + radarURL);
+			weeWXAppCommon.LogMessage("radtype: " + radtype);
+			weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
+			weeWXAppCommon.LogMessage("fctype: " + fctype);
+			weeWXAppCommon.LogMessage("webcamURL: " + webcamURL);
+			weeWXAppCommon.LogMessage("CustomURL: " + CustomURL);
+
 			if(!validURL)
 			{
 				String finalErrorStr = errorStr;
@@ -1184,14 +1196,6 @@ public class MainActivity extends FragmentActivity
 				bgStart = 0;
 				return;
 			}
-
-			weeWXAppCommon.LogMessage("baseURL: " + baseURL);
-			weeWXAppCommon.LogMessage("radarURL: " + radarURL);
-			weeWXAppCommon.LogMessage("radtype: " + radtype);
-			weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
-			weeWXAppCommon.LogMessage("fctype: " + fctype);
-			weeWXAppCommon.LogMessage("webcamURL: " + webcamURL);
-			weeWXAppCommon.LogMessage("CustomURL: " + CustomURL);
 
 			if(baseURL == null || baseURL.isBlank())
 			{
@@ -1276,17 +1280,56 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
+			weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
+
 			if(!forecastURL.isBlank())
 			{
 				try
 				{
 					switch(fctype.toLowerCase(Locale.ENGLISH))
 					{
+						case "weatherzone2" ->
+						{
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
+							weeWXAppCommon.LogMessage("fctype: " + fctype);
+
+							String forecastData = weeWXApp.getInstance().wvpl.getHTML(this, forecastURL);
+
+							long lastForecastDownloadTime = weeWXAppCommon.getCurrTime();
+
+							weeWXAppCommon.LogMessage("updating rss cache");
+							KeyValue.putVar("forecastData", forecastData);
+
+							KeyValue.putVar("rssCheck", lastForecastDownloadTime);
+							KeyValue.putVar("lastForecastDownloadTime", lastForecastDownloadTime);
+							KeyValue.putVar("LastForecastError", null);
+
+
+							JsoupHelper.processWZhtml(forecastData);
+/*
+							String finalErrorStr = errorStr;
+							runOnUiThread(() ->
+							{
+								b1.setEnabled(true);
+								b2.setEnabled(true);
+								dialog.dismiss();
+								new AlertDialog.Builder(this)
+										.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_radar_image))
+										.setMessage(finalErrorStr)
+										.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+												(dialog, which) -> {}).show();
+							});
+
+							bgStart = 0;
+							return;
+*/
+						}
 						case "metservice.com2" ->
 						{
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
-							weeWXAppCommon.LogMessage("forecast:" + forecastURL);
-							String metService = WebViewPreloader.getHTML(forecastURL);
+							weeWXAppCommon.LogMessage("forecastURL:" + forecastURL);
+
+							String metService = weeWXApp.getInstance().wvpl.getHTML(this, forecastURL);
 							if(metService != null && metService.length() > 1024)
 							{
 								String pretty = Jsoup.parse(metService).outputSettings(
@@ -1310,7 +1353,7 @@ public class MainActivity extends FragmentActivity
 						}
 						case "yahoo" ->
 						{
-							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 							if(!forecastURL.startsWith("http"))
 							{
@@ -1334,12 +1377,12 @@ public class MainActivity extends FragmentActivity
 						case "weatherzone" ->
 						{
 							forecastURL = "https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecastURL + "&obs=0&fc=1&warn=0";
-							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 						}
 						case "met.no" ->
 						{
-							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 
 							URI uri = URI.create(forecastURL);
@@ -1366,13 +1409,9 @@ public class MainActivity extends FragmentActivity
 							{
 								String url = "https://odiousapps.com/get-location-name-by-ll.php";
 
-								Map<String, String> args = Map.of(
+								forecastLocationName = weeWXAppCommon.downloadString(url, Map.of(
 										"lat", "" + lat,
-										"lon", "" + lon,
-										"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
-										"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
-
-								forecastLocationName = weeWXAppCommon.downloadString(url, args);
+										"lon", "" + lon));
 
 								weeWXAppCommon.LogMessage("forecastLocationName: " + forecastLocationName);
 							}
@@ -1380,14 +1419,14 @@ public class MainActivity extends FragmentActivity
 						case "weather.gc.ca", "weather.gc.ca-fr", "metoffice.gov.uk",
 						     "bom2", "aemet.es", "dwd.de", "tempoitalia.it" ->
 						{
-							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 						}
 						case "wmo.int" ->
 						{
 							if(!forecastURL.startsWith("http"))
 								forecastURL = "https://worldweather.wmo.int/en/json/" + forecastURL.strip() + "_en.xml";
-							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 						}
 						case "weather.gov" ->
@@ -1411,19 +1450,19 @@ public class MainActivity extends FragmentActivity
 							}
 
 							forecastURL = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon=" + lon + "&unit=0&lg=english&FcstType=json";
-							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 						}
 						case "bom3" ->
 						{
 							forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip() + "/forecasts/daily";
-							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 						}
 						case "metservice.com" ->
 						{
 							forecastURL = "https://www.metservice.com/publicData/localForecast" + forecastURL;
-							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 						}
 						case "openweathermap.org" ->
@@ -1433,7 +1472,9 @@ public class MainActivity extends FragmentActivity
 							else
 								forecastURL += "&units=imperial";
 							forecastURL += "&lang=" + Locale.getDefault().getLanguage();
-							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
+							forecastURL += "&mode=json&cnt=16";
+
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 						}
 						case "weather.com" ->
@@ -1445,8 +1486,8 @@ public class MainActivity extends FragmentActivity
 							else
 								forecastURL += "&units=e";
 							forecastURL += "&language=" + Locale.getDefault().getLanguage() + "-" + Locale.getDefault().getCountry();
-							weeWXAppCommon.LogMessage("forecast=" + forecastURL);
-							weeWXAppCommon.LogMessage("fctype=" + fctype);
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
+							weeWXAppCommon.LogMessage("fctype: " + fctype);
 						}
 						case "met.ie" ->
 						{
@@ -1462,13 +1503,9 @@ public class MainActivity extends FragmentActivity
 
 								String url = "https://odiousapps.com/get-location-name-by-ll.php";
 
-								Map<String, String> args = Map.of(
+								forecastLocationName = weeWXAppCommon.downloadString(url, Map.of(
 										"lat", "" + lat,
-										"lon", "" + lon,
-										"appName", com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID,
-										"appVersion", com.odiousapps.weewxweather.BuildConfig.VERSION_NAME);
-
-								forecastLocationName = weeWXAppCommon.downloadString(url, args);
+										"lon", "" + lon));
 
 								weeWXAppCommon.LogMessage("forecastLocationName: " + forecastLocationName);
 
@@ -1482,7 +1519,7 @@ public class MainActivity extends FragmentActivity
 								}
 							}
 
-							weeWXAppCommon.LogMessage("forecast: " + forecastURL);
+							weeWXAppCommon.LogMessage("forecastURL: " + forecastURL);
 							weeWXAppCommon.LogMessage("fctype: " + fctype);
 						}
 						default ->
@@ -1513,7 +1550,7 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			if(!forecastURL.isBlank())
+			if(!forecastURL.isBlank() && !fctype.equals("weatherzone2") && !fctype.equals("metservice.com2"))
 			{
 				weeWXAppCommon.LogMessage("processSettings() forecast checking: " + forecastURL);
 
@@ -1521,7 +1558,7 @@ public class MainActivity extends FragmentActivity
 				try
 				{
 					tmpStr = weeWXAppCommon.reallyGetForecast(forecastURL);
-					weeWXAppCommon.LogMessage("processSettings() tmpStr: " + tmpStr);
+					//weeWXAppCommon.LogMessage("processSettings() tmpStr: " + tmpStr);
 				} catch(Exception ignored) {}
 
 				validURL3 = tmpStr != null && !tmpStr.isBlank();
@@ -1544,11 +1581,6 @@ public class MainActivity extends FragmentActivity
 					bgStart = 0;
 					return;
 				}
-
-				KeyValue.putVar("fctype", fctype);
-				KeyValue.putVar("forecastData",tmpStr);
-				KeyValue.putVar("LastForecastError", "");
-				KeyValue.putVar("rssCheck", weeWXAppCommon.getCurrTime());
 			}
 
 			if(!webcamURL.isBlank())
@@ -1663,6 +1695,9 @@ public class MainActivity extends FragmentActivity
 					return;
 				}
 			}
+
+			if(KeyValue.countyName != null && KeyValue.countyName.isBlank())
+				KeyValue.countyName = null;
 
 			KeyValue.putVar("CountyName", KeyValue.countyName);
 

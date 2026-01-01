@@ -74,10 +74,12 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.Set;
 import java.util.TimeZone;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -109,6 +111,13 @@ import okhttp3.Response;
 		"CallToPrintStackTrace"})
 class weeWXAppCommon
 {
+	static final float[] NEGATIVE = {
+			-1.0f, 0, 0, 0, 255, // red
+			0, -1.0f, 0, 0, 255, // green
+			0, 0, -1.0f, 0, 255, // blue
+			0, 0, 0, 1.0f, 0  // alpha
+	};
+
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	final static String LOGTAG = "weeWXApp";
 	static int debug_level = KeyValue.i;
@@ -170,16 +179,11 @@ class weeWXAppCommon
 
 	private static long ftStart, rtStart, wcStart, wtStart; //, lastWeatherRefresh = 0;
 
-	static final float[] NEGATIVE = {
-			-1.0f, 0, 0, 0, 255, // red
-			0, -1.0f, 0, 0, 255, // green
-			0, 0, -1.0f, 0, 255, // blue
-			0, 0, 0, 1.0f, 0  // alpha
-	};
+	private static final Set<String> processedMissingIcons = new HashSet<>();
 
 	static
 	{
-		if(BuildConfig.DEBUG)
+		if(weeWXApp.DEBUG)
 			debug_level =  KeyValue.v;
 
 		try
@@ -850,7 +854,7 @@ class weeWXAppCommon
 		StringBuilder sb = new StringBuilder();
 		int start = 0;
 
-		String string_time = sdf7.format(timestamp);
+		String string_time = sdf2.format(timestamp);
 
 		sb.append("\n<div class='header'>").append(string_time).append("</div>\n\n");
 
@@ -868,7 +872,7 @@ class weeWXAppCommon
 				if(!first.icon.startsWith("file:///") && !first.icon.startsWith("data:image"))
 					sb.append("\t\t\t").append(cssToSVG(first.icon)).append("\n");
 				else
-					sb.append("\t\t\t<img alt='weather icon' src='").append(removeWS(first.icon)).append("' />\n");
+					sb.append("\t\t\t<img style='height:100px;width:auto;' alt='weather icon' src='").append(removeWS(first.icon)).append("' />\n");
 
 				sb.append("\t\t</div>\n");
 			} else {
@@ -915,7 +919,9 @@ class weeWXAppCommon
 				if(!day.icon.startsWith("file:///") && !day.icon.startsWith("data:image"))
 					sb.append("\t\t\t").append(cssToSVG(day.icon)).append("\n");
 				else
-					sb.append("\t\t\t<img alt='weather icon' src='").append(removeWS(day.icon)).append("' />\n");
+					sb.append("\t\t\t<img style='height:75px;width:auto;' alt='weather icon' src='")
+							.append(removeWS(day.icon))
+							.append("' />\n");
 
 				sb.append("\t\t</div>\n");
 			} else {
@@ -1097,17 +1103,13 @@ class weeWXAppCommon
 
 				if(missing != null)
 				{
-					String base_url = "https://odiousapps.com/bom-missing-svg.php";
-
 					String forecaseURL = (String)KeyValue.readVar("FORECAST_URL", null);
 
 					weeWXAppCommon.LogMessage("Unable to locate SVG: " + missing, KeyValue.d);
 
-					weeWXAppCommon.uploadString(base_url, Map.of(
-							"svgMissingName", missing,
-							"svgMissingURL", forecaseURL,
-							"appName", BuildConfig.APPLICATION_ID,
-							"appVersion", BuildConfig.VERSION_NAME));
+					weeWXAppCommon.uploadMissingIcon(Map.of(
+							"svgName", missing,
+							"svgURL", forecaseURL));
 
 				}
 
@@ -1132,10 +1134,11 @@ class weeWXAppCommon
 
 		String newicon = switch(icon)
 		{
-			case "shower" -> "showers";
 			case "dusty" -> "dust";
-			case "mostly_sunny" -> "partly_cloudy";
 			case "light_shower" -> "light_showers";
+			case "mostly_sunny" -> "partly_cloudy";
+			case "shower" -> "showers";
+			case "storm" -> "storms";
 			case "windy" -> "wind";
 			default -> icon;
 		};
@@ -1648,67 +1651,12 @@ class weeWXAppCommon
 		if(data.isBlank())
 			return null;
 
-		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
-		List<Day> days = new ArrayList<>();
-		String desc;
-		long timestamp = 0;
-		long lastTS = 0;
+		JsoupHelper.Result ret = JsoupHelper.processTempoItalia(data);
 
-		try
-		{
-			String stuff = data.split("<div id='weatherDayNavigator'>", 2)[1].strip();
-			stuff = stuff.split("<h2>", 2)[1].strip();
-			desc = stuff.split(" <span class='day'>")[0].strip();
-			String string_time = sdf7.format(System.currentTimeMillis());
-			Date df = sdf7.parse(string_time);
-			if(df != null)
-				lastTS = timestamp = df.getTime();
-
-			if(timestamp > 0)
-				updateCacheTime(timestamp);
-
-			data = data.split("<tbody>")[1].strip();
-			String[] bits = data.split("<tr>");
-			for(int i = 1; i < bits.length; i++)
-			{
-				Day day = new Day();
-				String bit = bits[i].strip();
-				day.day = bit.split("<td class='timeweek'>")[1].split("'>")[1].split("</a></td>", 2)[0].strip();
-
-				Locale locale = new Locale.Builder().setLanguage("it").setRegion("IT").build();
-				day.timestamp = convertDaytoTS(day.day, locale, lastTS);
-				if(day.timestamp != 0)
-					day.day = sdf2.format(day.timestamp);
-
-				String url = bit.split("<td class='skyIcon'><img src='", 2)[1].split("' alt='",2)[0].strip();
-				String icon = new File(url).getName();
-
-				String fileName = cssToSVG("wi-tempoitalia-" + icon);
-
-				day.icon = "file:///android_asset/icons/tempoitalia/" + fileName;
-
-				day.max = bit.split("<td class='tempmax'>", 2)[1].split("°C</td>", 2)[0].strip() + "&deg;C";
-				day.min = bit.split("<td class='tempmin'>", 2)[1].split("°C</td>", 2)[0].strip() + "&deg;C";
-
-				day.text = bit.split("<td class='skyDesc'>")[1].split("</td>")[0].strip();
-
-				LogMessage("day.icon=" + day.icon);
-
-				if(metric)
-				{
-					day.max = C2Fdeg((int)Float.parseFloat(day.max));
-					day.min = C2Fdeg((int)Float.parseFloat(day.min));
-				}
-
-				days.add(day);
-				lastTS = day.timestamp;
-			}
-		} catch(Exception e) {
-			doStackOutput(e);
+		if(ret == null || ret.days() == null)
 			return null;
-		}
 
-		return new String[]{generateForecast(days, timestamp, showHeader), desc};
+		return new String[]{generateForecast(ret.days(), ret.timestamp(), showHeader), ret.desc()};
 	}
 
 	static String[] processAEMET(String data)
@@ -2122,7 +2070,7 @@ class weeWXAppCommon
 				Day day = new Day();
 				JSONObject j = jarr.getJSONObject(i);
 				day.timestamp = j.getLong("dt") * 1_000L;
-				day.day = sdf7.format(day.timestamp);
+				day.day = sdf2.format(day.timestamp);
 
 				JSONObject temp = j.getJSONObject("temp");
 				int min = (int)Math.round(Double.parseDouble(temp.getString("min")));
@@ -2133,10 +2081,19 @@ class weeWXAppCommon
 				String text = weather.getString("description");
 				String icon = weather.getString("icon");
 
-				if(!icon.endsWith("n"))
-					day.icon = cssToSVG("wi-owm-day-" + id);
-				else
-					day.icon = cssToSVG("wi-owm-night-" + id);
+				LogMessage("icon: " + icon);
+
+				day.icon = "icons/owm/" + icon + "_t@4x.png";
+				String content = weeWXApp.loadFileFromAssets(day.icon);
+				if(content != null && !content.isBlank())
+				{
+					day.icon = "file:///android_asset/" + day.icon;
+					//CustomDebug.writeDebug("weeWX", "processMetNO" + count++ + ".json", jobj2.toString(4));
+				} else {
+					day.icon = null;
+				}
+
+				LogMessage("day.icon: " + day.icon);
 
 				if(metric)
 					day.max = max + "&deg;C";
@@ -2539,7 +2496,7 @@ class weeWXAppCommon
 		if(data.isBlank())
 			return null;
 
-		JsoupHelper.Result ret = JsoupHelper.processBoM2(data);
+		JsoupHelper.Result ret = JsoupHelper.processYahoo(data);
 
 		if(ret == null || ret.days() == null)
 			return null;
@@ -3088,7 +3045,7 @@ class weeWXAppCommon
 			String bodyStr = response.body().string();
 
 			LogMessage("response: " + response);
-			LogMessage("Returned string: " + bodyStr);
+			//LogMessage("Returned string: " + bodyStr);
 
 			if(!response.isSuccessful())
 			{
@@ -3138,6 +3095,9 @@ class weeWXAppCommon
 
 		for(Map.Entry<String, String> arg: args.entrySet())
 			fb.add(arg.getKey(), arg.getValue());
+
+		fb.add("appName", weeWXApp.APPLICATION_ID);
+		fb.add("appVersion", weeWXApp.VERSION_NAME);
 
 		RequestBody requestBody = fb.build();
 
@@ -3190,32 +3150,41 @@ class weeWXAppCommon
 		return null;
 	}
 
-	static void uploadString(String url, Map<String,String> args)
+	static void uploadMissingIcon(Map<String,String> args)
 	{
-		if(url == null || url.isBlank() || args == null || args.isEmpty())
+		String url = weeWXApp.missingIconURL;
+
+		FormBody.Builder fb = new FormBody.Builder();
+
+		for(Map.Entry<String, String> arg: args.entrySet())
 		{
-			LogMessage("uploadString() Attempted uploading nothing, skipping...", KeyValue.d);
-			return;
+			if(arg.getKey().equals("svgName"))
+				if(processedMissingIcons.contains(arg.getValue()))
+					return;
+				else
+					processedMissingIcons.add(arg.getValue());
+
+			fb.add(arg.getKey(), arg.getValue());
 		}
+
+		fb.add("appName", weeWXApp.APPLICATION_ID);
+		fb.add("appVersion", weeWXApp.VERSION_NAME);
 
 		executor.submit(() ->
 		{
-			FormBody.Builder fb = new FormBody.Builder();
-
-			for(Map.Entry<String, String> arg: args.entrySet())
-				fb.add(arg.getKey(), arg.getValue());
-
 			RequestBody requestBody = fb.build();
 
 			OkHttpClient client = NetworkClient.getInstance(url);
 
-			reallyUploadString(client, requestBody, url, 0);
+			reallyUploadMissingIcon(client, requestBody, url, 0);
 		});
 	}
 
-	private static void reallyUploadString(OkHttpClient client, RequestBody requestBody, String url, int retries)
+	private static void reallyUploadMissingIcon(OkHttpClient client, RequestBody requestBody, String url, int retries)
 	{
-		LogMessage("reallyUploadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
+		Exception lastException = null;
+
+		LogMessage("reallyUploadString() checking if url  " + url + " is valid, attempt: #" + (retries + 1));
 
 		Request request = NetworkClient.getRequest(false, url)
 				.newBuilder().post(requestBody).build();
@@ -3224,32 +3193,47 @@ class weeWXAppCommon
 		{
 			String bodyStr = response.body().string();
 			if(response.isSuccessful())
-				LogMessage("reallyUploadString() Successfully uploaded something... response: " + bodyStr);
-			else
-				LogMessage("reallyUploadString() Failed to upload something... response: " + bodyStr, true, KeyValue.d);
-		} catch(Exception e) {
-			if(retries < maximum_retries)
 			{
-				retries++;
-
-				LogMessage("reallyUploadString() Error! e: " + e.getMessage() + ", retry: " + retries +
-				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
-
-				try
+				if(bodyStr != null && bodyStr.equals("OK"))
 				{
-					Thread.sleep(retry_sleep_time);
-				} catch (InterruptedException ie) {
-					LogMessage("reallyUploadString() Error! ie: " + ie.getMessage(), true, KeyValue.e);
-					Thread.currentThread().interrupt();
+					LogMessage("reallyUploadString() Map uploaded successfully...");
 					return;
 				}
 
-				reallyUploadString(client, requestBody, url, retries);
+				LogMessage("reallyUploadString() Error from server: " + bodyStr + ", retry: " + retries +
+				           ", will sleep " + retry_sleep_time + " seconds and retry...", true, KeyValue.w);
+			} else
+				LogMessage("reallyUploadString() Failed to upload something... response code: " + response.code() +
+				           ", body: " + bodyStr, true, KeyValue.w);
+		} catch(Exception e) {
+			lastException = e;
+		}
+
+		if(retries < maximum_retries)
+		{
+			retries++;
+
+			if(lastException != null)
+				LogMessage("reallyUploadString() Error! lastException: " + lastException.getMessage() + ", retry: #" + retries +
+				           ", will sleep " + Math.round(retry_sleep_time / 1_000D) + "s and then retry...", true, KeyValue.w);
+
+			try
+			{
+				Thread.sleep(retry_sleep_time);
+			} catch (InterruptedException ie) {
+				LogMessage("reallyUploadString() Error! ie: " + ie.getMessage(), true, KeyValue.e);
+				Thread.currentThread().interrupt();
 				return;
 			}
 
-			LogMessage("reallyUploadString() Error! e: " + e.getMessage(), true, KeyValue.e);
-			doStackOutput(e);
+			reallyUploadMissingIcon(client, requestBody, url, retries);
+			return;
+		}
+
+		if(lastException != null)
+		{
+			LogMessage("reallyUploadString() Error! lastException: " + lastException.getMessage(), true, KeyValue.e);
+			doStackOutput(lastException);
 		}
 	}
 
@@ -3519,7 +3503,7 @@ class weeWXAppCommon
 
 		KeyValue.putVar("rssCheck", lastForecastDownloadTime);
 		KeyValue.putVar("lastForecastDownloadTime", lastForecastDownloadTime);
-		KeyValue.putVar("LastForecastError", "");
+		KeyValue.putVar("LastForecastError", null);
 
 		return forecastData;
 	}

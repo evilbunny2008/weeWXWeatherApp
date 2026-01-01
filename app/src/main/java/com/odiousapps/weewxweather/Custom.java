@@ -24,7 +24,7 @@ public class Custom extends Fragment
 	private SafeWebView wv;
 	private SwipeRefreshLayout swipeLayout;
 	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
-	private static long lastRefresh = 0;
+	private long lastRefresh = 0;
 
 	@Nullable
 	@Override
@@ -59,7 +59,7 @@ public class Custom extends Fragment
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		if(wv == null)
-			wv = WebViewPreloader.getInstance().getWebView();
+			wv = weeWXApp.getInstance().wvpl.getWebView();
 
 		if(wv.getParent() != null)
 			((ViewGroup)wv.getParent()).removeView(wv);
@@ -151,7 +151,7 @@ public class Custom extends Fragment
 
 			wv.getViewTreeObserver().removeOnScrollChangedListener(scl);
 
-			WebViewPreloader.getInstance().recycleWebView(wv);
+			weeWXApp.getInstance().wvpl.recycleWebView(wv);
 
 			weeWXAppCommon.LogMessage("Custom.onDestroyView() recycled wv...");
 		}

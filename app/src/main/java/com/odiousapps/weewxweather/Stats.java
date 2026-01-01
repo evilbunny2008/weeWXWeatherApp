@@ -74,7 +74,7 @@ public class Stats extends Fragment
 		super.onViewCreated(view, savedInstanceState);
 
 		if(wv == null)
-			wv = WebViewPreloader.getInstance().getWebView();
+			wv = weeWXApp.getInstance().wvpl.getWebView();
 
 		if(wv.getParent() != null)
 			((ViewGroup)wv.getParent()).removeView(wv);
@@ -135,7 +135,7 @@ public class Stats extends Fragment
 
 			wv.getViewTreeObserver().removeOnScrollChangedListener(scl);
 
-			WebViewPreloader.getInstance().recycleWebView(wv);
+			weeWXApp.getInstance().wvpl.recycleWebView(wv);
 
 			weeWXAppCommon.LogMessage("Stats.onDestroyView() recycled wv...");
 		}

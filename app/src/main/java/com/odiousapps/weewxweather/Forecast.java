@@ -98,7 +98,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		if(forecastWebView == null)
-			forecastWebView = WebViewPreloader.getInstance().getWebView();
+			forecastWebView = weeWXApp.getInstance().wvpl.getWebView();
 
 		if(forecastWebView.getParent() != null)
 			((ViewGroup)forecastWebView.getParent()).removeView(forecastWebView);
@@ -114,7 +114,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		forecastFL.addView(forecastWebView);
 
 		if(radarWebView == null)
-			radarWebView = WebViewPreloader.getInstance().getWebView();
+			radarWebView = weeWXApp.getInstance().wvpl.getWebView();
 
 		if(radarWebView.getParent() != null)
 			((ViewGroup)radarWebView.getParent()).removeView(radarWebView);
@@ -165,7 +165,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			forecastWebView.getViewTreeObserver().removeOnScrollChangedListener(forecastScrollListener);
 
-			WebViewPreloader.getInstance().recycleWebView(forecastWebView);
+			weeWXApp.getInstance().wvpl.recycleWebView(forecastWebView);
 
 			weeWXAppCommon.LogMessage("Forecast.onDestroyView() recycled forecastWebView...");
 		}
@@ -178,7 +178,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			radarWebView.getViewTreeObserver().removeOnScrollChangedListener(radarScrollListener);
 
-			WebViewPreloader.getInstance().recycleWebView(radarWebView);
+			weeWXApp.getInstance().wvpl.recycleWebView(radarWebView);
 
 			weeWXAppCommon.LogMessage("Forecast.onDestroyView() recycled radarWebView...");
 		}
