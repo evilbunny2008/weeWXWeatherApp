@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@SuppressWarnings({"unused"})
+@SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "ConstantValue"})
 class KeyValue
 {
 	final static Map<Integer, Integer> widgetMinHeight = new HashMap<>();
@@ -41,11 +41,20 @@ class KeyValue
 
 	static String countyName = null;
 
+	static boolean isPrefSet(String var)
+	{
+		for(int i = 0; i < prefs.size(); i++)
+		{
+			Result r = prefs.get(i);
+			if(r.Key.equals(var))
+				return true;
+		}
+
+		return weeWXAppCommon.isPrefSet(var);
+	}
+
 	static Object readVar(String var, Object defVal)
 	{
-		if(!weeWXAppCommon.isPrefSet(var))
-			return defVal;
-
 		try
 		{
 			for(int i = 0; i < prefs.size(); i++)
@@ -58,7 +67,7 @@ class KeyValue
 			Object ret = weeWXAppCommon.readVar(var, defVal);
 
 //			if(weeWXAppCommon.debug_level == v)
-//				Log.v(weeWXAppCommon.LOGTAG, "readVar() var: " + var + ", ret: " + ret);
+//				LogMessage("readVar() var: " + var + ", ret: " + ret);
 
 			if(ret != null)
 				return ret;
@@ -73,25 +82,44 @@ class KeyValue
 
 	static void putVar(String var, Object val)
 	{
-		boolean found = false;
+		boolean isSet = isPrefSet(var);
+
+		if(val == null)
+		{
+			if(!isSet)
+				return;
+
+			weeWXAppCommon.setVar(var, val);
+			for(int i = 0; i < prefs.size(); i++)
+			{
+				Result tmpr = prefs.get(i);
+				if(tmpr.Key.equals(var))
+				{
+					prefs.remove(i);
+					return;
+				}
+			}
+
+			return;
+		}
+
 		Result r = new Result(var, val);
+		weeWXAppCommon.setVar(var, val);
+
+		if(!isSet)
+		{
+			prefs.add(r);
+			return;
+		}
 
 		for(int i = 0; i < prefs.size(); i++)
 		{
 			Result tmpr = prefs.get(i);
 			if(tmpr.Key.equals(var))
 			{
-				found = true;
-				weeWXAppCommon.setVar(var, val);
 				prefs.set(i, r);
-				break;
+				return;
 			}
-		}
-
-		if(!found)
-		{
-			weeWXAppCommon.setVar(var, val);
-			prefs.add(r);
 		}
 	}
 

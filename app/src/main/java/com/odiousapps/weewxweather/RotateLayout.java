@@ -20,6 +20,8 @@ import static java.lang.Math.ceil;
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 
+import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+
 /**
  * <a href="https://github.com/rongi/rotate-layout">...</a>
  * Rotates first view in this layout by specified angle.
@@ -52,16 +54,16 @@ public class RotateLayout extends ViewGroup
 	{
 		super(context, attrs);
 
-		weeWXAppCommon.LogMessage("About to act on a typedArray!");
+//		LogMessage("RotateLayout() About to act on a typedArray!");
 		try(TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RotateLayout))
 		{
-			weeWXAppCommon.LogMessage("Step 1 complete...");
+//			LogMessage("RotateLayout() Step 1 complete...");
 			angle = a.getInt(R.styleable.RotateLayout_angle, 0);
-			weeWXAppCommon.LogMessage("Step 3 complete...");
+//			LogMessage("RotateLayout() Step 3 complete...");
 			setWillNotDraw(false);
-			weeWXAppCommon.LogMessage("Step 4 complete...");
+//			LogMessage("RotateLayout() Step 4 complete...");
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Error: " + e, true, KeyValue.e);
+			LogMessage("RotateLayout.RotateLayout() Error: " + e, true, KeyValue.e);
 		}
 	}
 

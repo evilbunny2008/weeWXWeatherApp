@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+
 public class Webcam extends Fragment
 {
 	private RotateLayout rl;
@@ -32,9 +34,9 @@ public class Webcam extends Fragment
 		swipeLayout.setRefreshing(true);
 		swipeLayout.setOnRefreshListener(() ->
 		{
-			weeWXAppCommon.LogMessage("Webcam.java weeWXAppCommon.getWebcamImage(true, false);");
+			LogMessage("Webcam.java weeWXAppCommon.getWebcamImage(true, false);");
 			swipeLayout.setRefreshing(true);
-			weeWXAppCommon.getWebcamImage(true, false);
+			weeWXAppCommon.getWebcamImage(true, false, true);
 		});
 
 		return rootView;
@@ -68,11 +70,11 @@ public class Webcam extends Fragment
 			return;
 		}
 
-		weeWXAppCommon.LogMessage("rl.getAngle()=" + rl.getAngle());
-		weeWXAppCommon.LogMessage("screenHeightDp=" + weeWXApp.getHeight());
-		weeWXAppCommon.LogMessage("screenWidthDp=" + weeWXApp.getWidth());
-		weeWXAppCommon.LogMessage("bm.getWidth()=" + bm.getWidth());
-		weeWXAppCommon.LogMessage("bm.getHeight()=" + bm.getHeight());
+		LogMessage("rl.getAngle()=" + rl.getAngle());
+		LogMessage("screenHeightDp=" + weeWXApp.getHeight());
+		LogMessage("screenWidthDp=" + weeWXApp.getWidth());
+		LogMessage("bm.getWidth()=" + bm.getWidth());
+		LogMessage("bm.getHeight()=" + bm.getHeight());
 
 		if(weeWXApp.getHeight() > weeWXApp.getWidth() && bm.getWidth() > bm.getHeight())
 		{
@@ -89,22 +91,25 @@ public class Webcam extends Fragment
 			iv.invalidate();
 		});
 
-		weeWXAppCommon.LogMessage("Finished reading webcam.jpg into memory and iv should have updated...");
+		LogMessage("Finished reading webcam.jpg into memory and iv should have updated...");
 	}
 
 	private void loadWebcamImage()
 	{
-		weeWXAppCommon.LogMessage("loadWebcamImage...");
+		LogMessage("loadWebcamImage...");
+
+		if(!KeyValue.isPrefSet("lastWebcamDownload"))
+			return;
 
 		try
 		{
-			Bitmap bm = weeWXAppCommon.getWebcamImage(false, false);
+			Bitmap bm = weeWXAppCommon.getWebcamImage(false, false, true);
 			if(bm != null)
 				showWebcamImage(bm);
 			else
 				noImageToShow(weeWXApp.getAndroidString(R.string.webcam_still_downloading));
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
+			LogMessage("Error! e: " + e, true, KeyValue.e);
 			noImageToShow("Error: " + e);
 		}
 
@@ -113,7 +118,7 @@ public class Webcam extends Fragment
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		weeWXAppCommon.LogMessage("Webcam.java notificationObserver: " + str);
+		LogMessage("Webcam.java notificationObserver: " + str);
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEBCAM_INTENT))
 			loadWebcamImage();

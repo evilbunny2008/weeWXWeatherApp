@@ -20,6 +20,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+
 public class Stats extends Fragment
 {
 	private Slider mySlider;
@@ -31,7 +33,7 @@ public class Stats extends Fragment
 
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
-		weeWXAppCommon.LogMessage("Stats.onCreateView()");
+		LogMessage("Stats.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
 
 		int bgColour = weeWXApp.getColours().bgColour;
@@ -45,7 +47,7 @@ public class Stats extends Fragment
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
-			weeWXAppCommon.LogMessage("weeWXAppCommon.getWeather(true, false)...");
+			LogMessage("weeWXAppCommon.getWeather(true, false)...");
 			weeWXAppCommon.getWeather(true, false);
 		});
 
@@ -53,13 +55,13 @@ public class Stats extends Fragment
 		mySlider.setBackgroundColor(bgColour);
 		mySlider.addOnChangeListener((slider, value, fromUser) ->
 		{
-			weeWXAppCommon.LogMessage("Current Slider zoom =" + (int)mySlider.getValue() + "%");
-			weeWXAppCommon.LogMessage("New Slider zoom =" + value + "%");
+			LogMessage("Current Slider zoom =" + (int)mySlider.getValue() + "%");
+			LogMessage("New Slider zoom =" + value + "%");
 
 			if(fromUser && currZoom != (int)value)
 			{
 				currZoom = (int)value;
-				weeWXAppCommon.SetIntPref("mySlider", currZoom);
+				KeyValue.putVar("mySlider", currZoom);
 				setZoom(currZoom, true);
 			}
 		});
@@ -70,7 +72,7 @@ public class Stats extends Fragment
 	@Override
 	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
 	{
-		weeWXAppCommon.LogMessage("Stats.onViewCreated()");
+		LogMessage("Stats.onViewCreated()");
 		super.onViewCreated(view, savedInstanceState);
 
 		if(wv == null)
@@ -87,23 +89,23 @@ public class Stats extends Fragment
 
 		wv.setOnPageFinishedListener((v, url) ->
 		{
-			weeWXAppCommon.LogMessage("Stats.setOnPageFinishedListener()");
+			LogMessage("Stats.setOnPageFinishedListener()");
 
 			if(currZoom == 0)
 			{
 				currZoom = sanitiseZoom((int)KeyValue.readVar("mySlider", weeWXApp.mySlider_default));
-				weeWXAppCommon.LogMessage("Stats.setOnPageFinishedListener() currZoom: " + currZoom + "%", KeyValue.d);
+				LogMessage("Stats.setOnPageFinishedListener() currZoom: " + currZoom + "%", KeyValue.d);
 				wv.postDelayed(() -> setZoom(currZoom, false), 200);
 			}
 
 			stopRefreshing();
-		});
+		}, false);
 
 		swipeLayout.setRefreshing(true);
 
 		updateFields();
 
-		weeWXAppCommon.LogMessage("Stats.onViewCreated()-- adding notification manager...");
+		LogMessage("Stats.onViewCreated()-- adding notification manager...");
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 	}
 
@@ -114,7 +116,7 @@ public class Stats extends Fragment
 		if(currZoom == 0)
 			currZoom = sanitiseZoom((int)KeyValue.readVar("mySlider", weeWXApp.mySlider_default));
 
-		weeWXAppCommon.LogMessage("Stats.onResume() currZoom: " + currZoom + "%", KeyValue.d);
+		LogMessage("Stats.onResume() currZoom: " + currZoom + "%", KeyValue.d);
 
 		wv.postDelayed(() -> setZoom(currZoom, false), 100);
 	}
@@ -122,7 +124,7 @@ public class Stats extends Fragment
 	@Override
 	public void onDestroyView()
 	{
-		weeWXAppCommon.LogMessage("Stats.onDestroyView()");
+		LogMessage("Stats.onDestroyView()");
 		super.onDestroyView();
 
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(getViewLifecycleOwner());
@@ -137,7 +139,7 @@ public class Stats extends Fragment
 
 			weeWXApp.getInstance().wvpl.recycleWebView(wv);
 
-			weeWXAppCommon.LogMessage("Stats.onDestroyView() recycled wv...");
+			LogMessage("Stats.onDestroyView() recycled wv...");
 		}
 	}
 
@@ -193,10 +195,10 @@ public class Stats extends Fragment
 			})();
 			""";
 
-		weeWXAppCommon.LogMessage("new zoom value = " + finalZoom + "%", KeyValue.d);
+		LogMessage("new zoom value = " + finalZoom + "%", KeyValue.d);
 
 		mySlider.post(() -> mySlider.setValue(finalZoom));
-		weeWXAppCommon.LogMessage("Set Zoom JS: " + js, KeyValue.d);
+		LogMessage("Set Zoom JS: " + js, KeyValue.d);
 
 		Handler handler = new Handler(Looper.getMainLooper());
 
@@ -207,7 +209,7 @@ public class Stats extends Fragment
 			{
 				wv.post(() -> wv.evaluateJavascript(js, value ->
 				{
-					weeWXAppCommon.LogMessage("Stats.evaluateJavascript() value: " + value);
+					LogMessage("Stats.evaluateJavascript() value: " + value);
 					if(!value.equals("true"))
 						handler.postDelayed(this, 100);
 				}));
@@ -219,7 +221,7 @@ public class Stats extends Fragment
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		weeWXAppCommon.LogMessage("Stats.notificationObserver: " + str);
+		LogMessage("Stats.notificationObserver: " + str);
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
 			updateFields();
@@ -243,7 +245,7 @@ public class Stats extends Fragment
 	{
 		cur = cur.strip();
 
-		//weeWXAppCommon.LogMessage("Old cur: " + cur);
+		//LogMessage("Old cur: " + cur);
 
 		String[] time = cur.split(":");
 		cur = time[0];
@@ -252,7 +254,7 @@ public class Stats extends Fragment
 		if(cur.length() > 1 && cur.startsWith("0"))
 			cur = cur.substring(1);
 
-		//weeWXAppCommon.LogMessage("New cur: " + cur);
+		//LogMessage("New cur: " + cur);
 
 		return cur;
 	}
@@ -371,7 +373,7 @@ public class Stats extends Fragment
 	{
 		if(bits.length <= Math.max(Math.max(uv, uvWhen), Math.max(solar, solarWhen)))
 		{
-			weeWXAppCommon.LogMessage("No solar or UV data, skipping...");
+			LogMessage("No solar or UV data, skipping...");
 			return "";
 		}
 
@@ -392,7 +394,7 @@ public class Stats extends Fragment
 
 		if(UV.isBlank() && SOLAR.isBlank())
 		{
-			weeWXAppCommon.LogMessage("No solar and UV data, skipping...");
+			LogMessage("No solar and UV data, skipping...");
 			return "";
 		}
 
@@ -812,7 +814,7 @@ public class Stats extends Fragment
 
 	private void updateFields()
 	{
-		weeWXAppCommon.LogMessage("Stats.java updateFields()");
+		LogMessage("Stats.java updateFields()");
 
 		boolean ret = weeWXAppCommon.getWeather(false, false);
 		if(!ret)
@@ -926,10 +928,8 @@ public class Stats extends Fragment
 
 		sb.append(weeWXApp.html_footer);
 
-		String str = sb.toString();
-
-		if(weeWXAppCommon.debug_html)
-			CustomDebug.writeOutput(requireContext(), "stats", str, isVisible(), requireActivity());
+		//if(weeWXAppCommon.debug_html)
+		//	CustomDebug.writeOutput(requireContext(), "stats", sb.toString(), isVisible(), requireActivity());
 
 		wv.post(() -> wv.loadDataWithBaseURL("file:///android_asset/",
 				sb.toString(), "text/html", "utf-8", null));

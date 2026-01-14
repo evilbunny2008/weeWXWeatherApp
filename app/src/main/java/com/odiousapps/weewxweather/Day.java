@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 
 class Day
 {
-	String day = "";
 	String icon = "";
 	String text = "";
 	String max = "";
@@ -14,6 +13,6 @@ class Day
 	@NonNull
 	public String toString()
 	{
-		return "day == " + day + "\nicon == " + icon + "\ntext == " + text + "\nmax == " + max + "\nmin == " + min + "\ntimestamp == " + timestamp + "\n\n";
+		return "[timestamp: " + timestamp + ", icon: " + icon + ", max: " + max + ", min: " + min + ", text: " + text + "]";
 	}
 }

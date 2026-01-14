@@ -5,17 +5,22 @@ import org.json.JSONObject;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
+import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.Year;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
@@ -23,17 +28,25 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref", "ConstantConditions",
-                   "SameReturnValue", "BooleanMethodIsAlwaysInverted", "SetTextI18n", "StringBufferMayBeStringBuilder"})
+import com.odiousapps.weewxweather.weeWXAppCommon.Result;
+import com.odiousapps.weewxweather.weeWXAppCommon.Result2;
+
+import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
+import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+
+@SuppressWarnings({"SameParameterValue", "ApplySharedPref", "ConstantConditions", "SameReturnValue",
+                   "BooleanMethodIsAlwaysInverted", "SetTextI18n", "StringBufferMayBeStringBuilder"})
 class JsoupHelper
 {
 	private static final Set<String> processedFiles = new HashSet<>();
+	private static final Set<String> skipTitles = new HashSet<>();
 
-	static final Map<String, DayOfWeek> IT_DAYS = Map.of(
+//	private static final Pattern ZONE_RE = Pattern.compile("^(?:AEDT|AEST|ACDT|ACST|AWST|LHDT|LHST|ACWST|GMT\\+\\d{1,2}(?::\\d{2})?)$");
+
+	private static final Map<String, DayOfWeek> IT_DAYS = Map.of(
 	"lun", DayOfWeek.MONDAY,
 	"mar", DayOfWeek.TUESDAY,
 	"mer", DayOfWeek.WEDNESDAY,
@@ -48,7 +61,46 @@ class JsoupHelper
 		processedFiles.addAll(Arrays.asList("arrow_accordion.svg", "icon_setting.svg", "logodtninverted.svg",
 				"profile.svg", "arrow_in_circle.svg", "iconmenuwhite.svg", "welcome_to_weatherzone.svg",
 				"steady.svg", "icon_arrow_selector.svg", "falling.svg", "rising.svg", "steady.svg"));
+
+		skipTitles.addAll(Arrays.asList("arrow_accordion", "icon_setting", "logodtninverted",
+				"profile", "arrow_in_circle", "iconmenuwhite", "welcome_to_weatherzone",
+				"steady", "icon_arrow_selector", "falling", "rising", "steady"));
 	}
+
+	private static DayOfWeek parseDay(String name)
+	{
+		return DayOfWeek.valueOf(name.toUpperCase(Locale.ROOT));
+	}
+
+	private static int indexFromToday(DayOfWeek target)
+	{
+		DayOfWeek today = LocalDate.now().getDayOfWeek();
+		int diff = target.getValue() - today.getValue();
+		if(diff < 0)
+			diff += 7;
+		return diff;   // 0..6
+	}
+
+//	static ZoneId getZoneId(String zoneStr)
+//	{
+//		return switch(zoneStr)
+//		{
+//			case "AEDT" -> ZoneId.of("Australia/Sydney");
+//			case "AEST" -> ZoneId.of("Australia/Brisbane");
+//			case "ACDT" -> ZoneId.of("Australia/Adelaide");
+//			case "ACST" -> ZoneId.of("Australia/Darwin");
+//			case "AWST" -> ZoneId.of("Australia/Perth");
+//			case "LHST", "LHDT" -> ZoneId.of("Australia/Lord_Howe");
+//			case "ACWST" -> ZoneId.of("Australia/Eucla");
+//			default ->
+//			{
+//				if(zoneStr.startsWith("GMT"))
+//					yield ZoneId.of(zoneStr);
+//				else
+//					throw new IllegalArgumentException("Unknown timezone: " + zoneStr);
+//			}
+//		};
+//	}
 
 	static Date parseItalianDate(String input)
 	{
@@ -70,8 +122,6 @@ class JsoupHelper
 
 		return null;
 	}
-
-	record Result(List<Day> days, String desc, long timestamp) {}
 
 	static Result processYahoo(String data)
 	{
@@ -129,7 +179,7 @@ class JsoupHelper
 
 							if(metric && isFahrenheit)
 							{
-								Pattern TEMP_F = Pattern.compile("(\\d+(?:\\.\\d+)?)\\s*°F");
+								Pattern TEMP_F = Pattern.compile("(\\d+(?:\\.\\d+)?)\\s+°F");
 
 								Matcher m2 = TEMP_F.matcher(forecastStr);
 
@@ -149,7 +199,7 @@ class JsoupHelper
 
 							if(!metric && !isFahrenheit)
 							{
-								Pattern TEMP_C = Pattern.compile("(\\d+(?:\\.\\d+)?)\\s*°C");
+								Pattern TEMP_C = Pattern.compile("(\\d+(?:\\.\\d+)?)\\s+°C");
 
 								Matcher m2 = TEMP_C.matcher(forecastStr);
 
@@ -171,8 +221,8 @@ class JsoupHelper
 							}
 						}
 					} catch(Exception e) {
-						weeWXAppCommon.LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
-						weeWXAppCommon.doStackOutput(e);
+						LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
+						doStackOutput(e);
 					}
 
 					continue;
@@ -197,8 +247,6 @@ class JsoupHelper
 						jobj = jarr.getJSONObject(i);
 
 						day.timestamp = System.currentTimeMillis() + (86_400_000L * i);
-
-						day.day = weeWXAppCommon.sdf2.format(day.timestamp);
 
 						if(i == 0)
 							day.text = forecastStr;
@@ -255,12 +303,12 @@ class JsoupHelper
 						}
 
 						String content = null;
-						String[] options = new String[]{"32x32_1", "32x32_0", "24x24_0"};
+						String[] options = {"32x32_1", "32x32_0", "24x24_0"};
 
 						for(String option : options)
 						{
 							day.icon = "icons/yahoo/" + jobj.getString("iconLabel")
-									.replaceAll(" ", "_") + "_" + option + "_light.svg";
+									.replace(" ", "_") + "_" + option + "_light.svg";
 							content = weeWXApp.loadFileFromAssets(day.icon);
 							if(content != null && !content.isBlank())
 							{
@@ -283,13 +331,13 @@ class JsoupHelper
 						days.add(day);
 					}
 				} catch(Exception e) {
-					weeWXAppCommon.doStackOutput(e);
+					doStackOutput(e);
 				}
 			}
 
 			return new Result(days, desc, timestamp);
 		} catch(Exception e) {
-			weeWXAppCommon.doStackOutput(e);
+			doStackOutput(e);
 			return null;
 		}
 	}
@@ -298,7 +346,7 @@ class JsoupHelper
 	{
 		try(ExecutorService executor = Executors.newSingleThreadExecutor())
 		{
-			Future<?> backgroundTask = executor.submit(() ->
+			executor.submit(() ->
 			{
 				Elements svgs = doc.select("svg");
 
@@ -315,7 +363,7 @@ class JsoupHelper
 					if(filenameOrig == null || filenameOrig.isBlank() || filenameOrig.equals("Yahoo Weather"))
 						continue;
 
-					filenameOrig = filenameOrig.replaceAll(" ", "_");
+					filenameOrig = filenameOrig.replace(" ", "_");
 
 					int height = 0;
 
@@ -440,13 +488,13 @@ class JsoupHelper
 
 						//publish(file);
 					} catch(Exception e) {
-						weeWXAppCommon.doStackOutput(e);
+						doStackOutput(e);
 					}
 				}
 			});
 		} catch(Exception e) {
-			weeWXAppCommon.LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
-			weeWXAppCommon.doStackOutput(e);
+			LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
+			doStackOutput(e);
 		}
 	}
 
@@ -510,10 +558,8 @@ class JsoupHelper
 					{
 						if(div.get(j).select("div").html().contains("Ce soir et cette nuit"))
 						{
-							date = "Cette nuit";
 							day.timestamp = lastTS;
 						} else if(div.get(j).select("div").html().contains("Nuit")) {
-							date = "Nuit";
 							day.timestamp = lastTS;
 						} else {
 							date = div.get(j).html().split("<strong title='", 2)[1].split("'>", 2)[0].strip();
@@ -526,7 +572,7 @@ class JsoupHelper
 
 					if(j >= div.size())
 					{
-						weeWXAppCommon.LogMessage("continue");
+						LogMessage("continue");
 						continue;
 					}
 
@@ -543,8 +589,8 @@ class JsoupHelper
 							pop = div.get(j).select("div").select("small").html().strip();
 						}
 					} catch(Exception e) {
-						weeWXAppCommon.LogMessage("hmmm 2 == " + div.html(), KeyValue.e);
-						weeWXAppCommon.doStackOutput(e);
+						LogMessage("hmmm 2 == " + div.html(), KeyValue.e);
+						doStackOutput(e);
 					}
 
 					String fileName = "wca" + img_url.substring(img_url.lastIndexOf('/') + 1)
@@ -559,7 +605,6 @@ class JsoupHelper
 					} else
 						day.icon = null;
 
-					day.day = date;
 					day.max = temp;
 					day.text = text;
 					day.min = pop;
@@ -571,7 +616,7 @@ class JsoupHelper
 
 			return new Result(days, desc, timestamp);
 		} catch(Exception e) {
-			weeWXAppCommon.doStackOutput(e);
+			doStackOutput(e);
 			return null;
 		}
 	}
@@ -649,10 +694,8 @@ class JsoupHelper
 					{
 						if(div.get(j).select("div").html().contains("Tonight"))
 						{
-							date = "Tonight";
 							day.timestamp = lastTS;
 						} else if(div.get(j).select("div").html().contains("Night")) {
-							date = "Night";
 							day.timestamp = lastTS;
 						} else {
 							date = div.get(j).html().split("<strong title='", 2)[1].split("'>", 2)[0].strip();
@@ -665,7 +708,7 @@ class JsoupHelper
 
 					if(j >= div.size())
 					{
-						weeWXAppCommon.LogMessage("continue");
+						LogMessage("continue");
 						continue;
 					}
 
@@ -682,8 +725,8 @@ class JsoupHelper
 							pop = div.get(j).select("div").select("small").html().strip();
 						}
 					} catch(Exception e) {
-						weeWXAppCommon.LogMessage("hmmm 2 == " + div.html(), KeyValue.e);
-						weeWXAppCommon.doStackOutput(e);
+						LogMessage("hmmm 2 == " + div.html(), KeyValue.e);
+						doStackOutput(e);
 					}
 
 					String fileName = img_url.substring(img_url.lastIndexOf('/') + 1).replaceAll("\\.gif$", "");
@@ -699,7 +742,6 @@ class JsoupHelper
 					} else
 						day.icon = null;
 
-					day.day = date;
 					day.max = temp;
 					day.text = text;
 					day.min = pop;
@@ -712,7 +754,7 @@ class JsoupHelper
 
 			return new Result(days, desc, timestamp);
 		} catch(Exception e) {
-			weeWXAppCommon.doStackOutput(e);
+			doStackOutput(e);
 		}
 
 		return null;
@@ -768,14 +810,13 @@ class JsoupHelper
 			String bit = bits[1];
 			Day day = new Day();
 
-			day.day = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].strip();
+			String dayName = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].strip();
 
 			day.timestamp = 0;
-			df = weeWXAppCommon.sdf4.parse(day.day);
+			df = weeWXAppCommon.sdf4.parse(dayName);
 			if(df != null)
 				day.timestamp = df.getTime();
 
-			day.day = weeWXAppCommon.sdf2.format(day.timestamp);
 
 			day.icon = "https://reg.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].strip();
 
@@ -787,12 +828,12 @@ class JsoupHelper
 
 			day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].strip();
 
-			String fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
+			String fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf("/") + 1).replace("-", "_");
 
 			day.icon = "file:///android_asset/icons/bom/" + fileName;
 
-			day.max = day.max.replaceAll("°C", "").strip();
-			day.min = day.min.replaceAll("°C", "").strip();
+			day.max = day.max.replace("°C", "").strip();
+			day.min = day.min.replace("°C", "").strip();
 
 			if(metric)
 			{
@@ -814,25 +855,23 @@ class JsoupHelper
 			{
 				day = new Day();
 				bit = bits[i];
-				day.day = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].strip();
+				dayName = bit.split("<a href='", 2)[1].split("'>", 2)[0].split("/forecast/detailed/#d", 2)[1].strip();
 
 				day.timestamp = 0;
-				df = weeWXAppCommon.sdf1.parse(day.day);
+				df = weeWXAppCommon.sdf1.parse(dayName);
 				if(df != null)
 					day.timestamp = df.getTime();
-
-				day.day = weeWXAppCommon.sdf2.format(day.timestamp);
 
 				day.icon = "https://reg.bom.gov.au" + bit.split("<img src='", 2)[1].split("' alt='", 2)[0].strip();
 				day.max = bit.split("<dd class='max'>")[1].split("</dd>")[0].strip();
 				day.min = bit.split("<dd class='min'>")[1].split("</dd>")[0].strip();
 				day.text = bit.split("<dd class='summary'>")[1].split("</dd>")[0].strip();
 
-				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf('/') + 1).replaceAll("-", "_");
+				fileName = "bom2" + day.icon.substring(day.icon.lastIndexOf("/") + 1).replace("-", "_");
 				day.icon = "file:///android_asset/icons/bom/" + fileName;
 
-				day.max = day.max.replaceAll("°C", "").strip() + "&deg;C";
-				day.min = day.min.replaceAll("°C", "").strip() + "&deg;C";
+				day.max = day.max.replace("°C", "").strip() + "&deg;C";
+				day.min = day.min.replace("°C", "").strip() + "&deg;C";
 
 				if(!metric)
 				{
@@ -845,7 +884,7 @@ class JsoupHelper
 
 			return new Result(days, desc, timestamp);
 		} catch(Exception e) {
-			weeWXAppCommon.doStackOutput(e);
+			doStackOutput(e);
 		}
 
 		return null;
@@ -857,11 +896,10 @@ class JsoupHelper
 		List<Day> days = new ArrayList<>();
 		String desc;
 		long timestamp = 0;
-		long lastTS = 0;
 
-		String timeweek, skyIcon = "", skyDesc = "", tempmin = "", tempmax = "";
+		String timeweek;
 
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE d", Locale.ITALIAN);
+		//DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEE d", Locale.ITALIAN);
 
 		try
 		{
@@ -885,8 +923,8 @@ class JsoupHelper
 					if(date != null)
 					{
 						day.timestamp = date.getTime();
-						weeWXAppCommon.LogMessage("date.getTime(): " + date.getTime());
-						weeWXAppCommon.LogMessage("sdf2: " + weeWXAppCommon.sdf2.format(date.getTime()));
+						LogMessage("date.getTime(): " + date.getTime());
+						LogMessage("sdf2: " + weeWXAppCommon.sdf2.format(date.getTime()));
 					}
 				}
 
@@ -902,7 +940,7 @@ class JsoupHelper
 					else
 						day.icon = null;
 
-					weeWXAppCommon.LogMessage("day.icon: " + day.icon);
+					LogMessage("day.icon: " + day.icon);
 				}
 
 				td = e.selectFirst("td.skyDesc");
@@ -913,17 +951,17 @@ class JsoupHelper
 				if(td != null)
 				{
 					if(metric)
-						day.min = Math.round(Float.parseFloat(td.text().replaceAll("°C", ""))) + "&deg;C";
+						day.min = Math.round(Float.parseFloat(td.text().replace("°C", ""))) + "&deg;C";
 					else
-						day.min = (int)weeWXAppCommon.C2F(Float.parseFloat(td.text().replaceAll("°C", ""))) + "&deg;F";
+						day.min = (int)weeWXAppCommon.C2F(Float.parseFloat(td.text().replace("°C", ""))) + "&deg;F";
 				}
 
 				td = e.selectFirst("td.tempmax");
 				{
 					if(metric)
-						day.max = Math.round(Float.parseFloat(td.text().replaceAll("°C", ""))) + "&deg;C";
+						day.max = Math.round(Float.parseFloat(td.text().replace("°C", ""))) + "&deg;C";
 					else
-						day.max = (int)weeWXAppCommon.C2F(Float.parseFloat(td.text().replaceAll("°C", ""))) + "&deg;F";
+						day.max = (int)weeWXAppCommon.C2F(Float.parseFloat(td.text().replace("°C", ""))) + "&deg;F";
 				}
 
 				days.add(day);
@@ -931,50 +969,870 @@ class JsoupHelper
 
 			return new Result(days, desc, timestamp);
 		} catch(Exception e) {
-			weeWXAppCommon.doStackOutput(e);
+			doStackOutput(e);
 			return null;
 		}
 	}
 
-	static void processWZhtml(String html)
+	static void processWZhtml(String url, String html)
 	{
-		Document doc = Jsoup.parse(html.strip());
-		Elements SVGs = doc.select("svg");
-		for(Element SVG : SVGs)
+		LogMessage("Starting SVG checking/downloading...");
+
+		int rc = 0;
+		int totalrc = 0;
+
+		Elements svgs = Jsoup.parse(html.strip()).select("svg:has(title)");
+		for(Element svg : svgs)
 		{
-			String title = SVG.selectFirst("title") != null ? SVG.selectFirst("title").text() : null;
+			totalrc++;
+
+			if(svg == null || !svg.hasText())
+				continue;
+
+			String title = svg.selectFirst("title").text();
 			if(title == null || title.isBlank())
 				continue;
 
-			title = title.replace(" ", "_").toLowerCase();
-			if(title.endsWith("_icon") || title.startsWith("wind_speed_") ||
-			   title.startsWith("logo") || title.startsWith("icon"))
+			title = wzTitle2Filename(url, title, svg.outerHtml(), true);
+			LogMessage("Found new SVG: " + title);
+		}
+
+		LogMessage("TOTALSVGS SVGs found but only NEWSVGS new SVGs extracted and saved..."
+				.replace("TOTALSVGS", "" + totalrc).replace("NEWSVGS", "" + rc));
+	}
+
+	private static void removeCommentsIMGsAndUnwantedSVGs(Node node, boolean removeAllSVGs)
+	{
+		List<Node> children = new ArrayList<>(node.childNodes());
+
+		if(children == null || children.isEmpty())
+			return;
+
+		for(Node child : children)
+		{
+			if(child == null)
 				continue;
 
-			title = title + ".svg";
-
-			if(processedFiles.contains(title))
-				continue;
-
-			//weeWXAppCommon.LogMessage("new svg: " + SVG.outerHtml());
-			//weeWXAppCommon.LogMessage("new svg: " + title);
-
-			try
+			if("#comment".equals(child.nodeName()))
 			{
-				File f = weeWXAppCommon.getExtFile("weeWX", title);
-				if(f.exists())
+				child.remove();
+				continue;
+			} else if("noscript".equals(child.nodeName())) {
+				child.remove();
+				continue;
+			} else if("script".equals(child.nodeName())) {
+				child.remove();
+				continue;
+			} else if("img".equals(child.nodeName())) {
+				child.remove();
+				continue;
+			} else if("svg".equals(child.nodeName())) {
+				if(removeAllSVGs)
 				{
-					processedFiles.add(title);
+					child.remove();
 					continue;
 				}
 
-				try(FileOutputStream fos = new FileOutputStream(f))
+				Element svg = (Element)child;
+				Element svgTitle = svg.selectFirst("> title");
+
+				if(svgTitle == null || !svgTitle.hasText())
 				{
-					fos.write(SVG.outerHtml().getBytes());
-					processedFiles.add(title);
-					weeWXAppCommon.LogMessage("Successfully wrote to " + title);
-				} catch(Exception ignored) {}
-			} catch(Exception ignored) {}
+//					LogMessage("removeCommentsIMGsAndUnwantedSVGs() Removing SVG with no title...");
+					child.remove();
+					continue;
+				}
+
+				String title = svgTitle.text();
+				if(title == null || title.isBlank())
+				{
+//					LogMessage("removeCommentsIMGsAndUnwantedSVGs() Removing SVG with no title...");
+					child.remove();
+					continue;
+				}
+
+				title = title.strip().replace(" ", "_").toLowerCase();
+
+				if(title.endsWith("_icon") || title.startsWith("wind_speed_") || title.startsWith("logo") ||
+				   title.startsWith("icon") || title.startsWith("layer_") || title.startsWith("miscellaneous_"))
+				{
+//					LogMessage("removeCommentsIMGsAndUnwantedSVGs() Removing SVG with title " +
+//					                          "starting/ending with something unneeded: " + title);
+					child.remove();
+					continue;
+				}
+
+				if(skipTitles.contains(title))
+				{
+//					LogMessage("removeCommentsIMGsAndUnwantedSVGs() Removing SVG with a title in skipTitles: " + title);
+					child.remove();
+					continue;
+				}
+
+//				LogMessage("removeCommentsIMGsAndUnwantedSVGs() Found SVG with title we're keeping: " + title);
+//				continue;
+			}
+
+			removeCommentsIMGsAndUnwantedSVGs(child, removeAllSVGs);
 		}
 	}
+
+	static Element searchElemntForWords(String lineCalledFrom, Element parent, String wordsToFind)
+	{
+		if(parent == null)
+			return null;
+
+		if(wordsToFind == null || wordsToFind.isBlank())
+			return null;
+
+		if(lineCalledFrom == null || lineCalledFrom.isBlank())
+			lineCalledFrom = "N/A";
+
+		for(int i = 0; i < parent.childrenSize(); i++)
+		{
+			Element child = parent.child(i);
+			if(child == null || !child.hasText() || child.text().isBlank())
+				continue;
+
+			String text = normaliseText(child.text());
+			if(!(" " + text.toLowerCase() + " ").contains(" " + wordsToFind.toLowerCase() + " "))
+				continue;
+
+			text = normaliseText(child.ownText());
+			if(text != null && !text.isBlank())
+				if((" " + text.toLowerCase() + " ").contains(" " + wordsToFind.toLowerCase() + " "))
+					return child;
+
+			Element newchild = searchElemntForWords(lineCalledFrom, child, wordsToFind);
+			if(newchild != null)
+				return newchild;
+		}
+
+		return null;
+	}
+
+	static String normaliseText(String text)
+	{
+		if(text == null || text.isBlank())
+			return null;
+
+		return text.strip().replaceAll("\\s+", " ").replace("' ", "'").replace(" '", "'");
+	}
+
+	static void cleanWZDoc(Element body, boolean removeAllSVGs)
+	{
+		LogMessage("cleanWZDoc() Let's start by removing all the comments, IMGs, all SVGs " +
+		                          "and empty tags, doc original size: " + body.outerHtml().length());
+
+		for(Element el : body.getAllElements())
+			for(TextNode tn : el.textNodes())
+				tn.text(tn.text().replace("\u00A0", " "));
+
+		for(Node node : body.childNodes())
+		{
+			if(node == null)
+				continue;
+
+			removeCommentsIMGsAndUnwantedSVGs(node, removeAllSVGs);
+		}
+
+		String[] thingsThatCanBeEmpty = {"style", "a", "span", "p", "li", "ul", "div", "nav"};
+
+		for(int i = 0; i < 2; i++)
+			for(String tag : thingsThatCanBeEmpty)
+				body.select("HTMLTAG:matchesOwn(^\\s+$):not(:has(*))".replace("HTMLTAG", tag)).remove();
+
+		body.select("*").forEach(el ->
+		{
+			if(el.childrenSize() == 0 && el.text().isBlank())
+				el.remove();
+		});
+
+		String elements = "span, font, a, i, b, p, button";
+
+		body.select(elements).forEach(tag ->
+		{
+			String t = tag.text().replace("\u00A0", "").strip();
+
+			if(t.length() <= 1 && tag.childrenSize() == 0)
+			{
+				tag.before(" ");
+				tag.unwrap();
+			}
+		});
+
+		body.select(elements).forEach(tag ->
+		{
+			tag.before(" ");
+			tag.unwrap();
+		});
+
+		LogMessage("cleanWZDoc() Comments, IMGs, all SVGs and empty tags are now gone from wzHTML, " +
+		                          "doc new html size: " + body.outerHtml().length());
+	}
+
+	static String nowTS()
+	{
+		return "" + System.currentTimeMillis();
+	}
+
+	static Result2 processWZ2GetForecastStrings(String data)
+	{
+		LogMessage("processWZ2GetForecastStrings() starting to process WZ data...");
+
+		String[] forecast_text = new String[28];
+		String desc;
+		int rc = 0;
+
+		try
+		{
+			Element body = Jsoup.parse(data).body();
+
+//			LogMessage("processWZ2GetForecastStrings() Writting to WZtest_body_" + nowTS + ".html");
+//			CustomDebug.writeDebug("weeWX", "WZtest_body_" + nowTS + ".html", body.html());
+
+			if(!body.hasText())
+				return null;
+
+			Element districts_block = searchElemntForWords("1209", body, "Districts");
+			if(districts_block == null)
+			{
+				LogMessage("processWZ2GetForecastStrings() districts_block came back as null, skipping...");
+
+				String nowTS = nowTS();
+				LogMessage("processWZ2GetForecastStrings() Writting to WZtest_ndb_body_" + nowTS + ".html");
+				CustomDebug.writeDebug("weeWX", "WZtest_ndb_body_" + nowTS + ".html", body.html());
+
+				return null;
+			}
+
+			Element parent = districts_block.parent().parent();
+
+//			LogMessage("processWZ2GetForecastStrings() Writting to WZtest_parent_" + nowTS + ".html");
+//			CustomDebug.writeDebug("weeWX", "WZtest_parent_" + nowTS + ".html", parent.html());
+
+//			if(weeWXApp.DEBUG)
+//				throw new IOException("Escape!");
+
+			Element forecast_block = searchElemntForWords("1222", parent, "Forecast");
+			if(forecast_block == null)
+			{
+				LogMessage("processWZ2GetForecastStrings() forecast_block came back as null, skipping...");
+
+				String nowTS = nowTS();
+				LogMessage("processWZ2GetForecastStrings() Writting to WZtest_nf_parent_" + nowTS + ".html");
+				CustomDebug.writeDebug("weeWX", "WZtest_nf_parent_" + nowTS + ".html", parent.html());
+
+				return null;
+			}
+
+			StringBuilder sb = new StringBuilder();
+			String[] words = normaliseText(forecast_block.text()).split(" ");
+			for(String word : words)
+			{
+				if(word.equals("Forecast"))
+					break;
+
+				if(sb.length() > 0)
+					sb.append(" ");
+
+				sb.append(word);
+			}
+
+			desc = sb.toString();
+
+			//LogMessage("processWZ2GetForecastStrings() desc: " + desc);
+
+			parent = forecast_block.parent();
+
+//			LogMessage("processWZ2GetForecastStrings() Writting to WZtest_parent_" + nowTS + ".html");
+//			CustomDebug.writeDebug("weeWX", "WZtest_parent_" + nowTS + ".html", parent.html());
+//
+//			if(weeWXApp.DEBUG)
+//				throw new IOException("Escape!");
+
+			Elements dayEls = parent.select("*:matchesOwn(^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)$)");
+			Pattern p = Pattern.compile("^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\\s+(.*)", Pattern.DOTALL);
+
+			String text;
+
+			DayOfWeek dow = null;
+			int idx = 0;
+			for(int i = 0; i < dayEls.size(); i++)
+			{
+				Element previous_element = dayEls.get(i);
+				parent = previous_element.parent();
+
+//				LogMessage("processWZ2GetForecastStrings() Writting to WZtest_parent_" + i + "_" + nowTS + ".html");
+//				CustomDebug.writeDebug("weeWX", "WZtest_parent_" + i + "_" + nowTS + ".html", parent.html());
+
+				text = normaliseText(parent.text());
+				//weeWXAppCommon.dumpString(text);
+				//LogMessage("processWZ2GetForecastStrings() parent.text(): " + text);
+
+				Matcher m = p.matcher(text);
+				if(m == null || !m.find())
+				{
+					String nowTS = nowTS();
+					LogMessage("processWZ2GetForecastStrings() Writting to WZtest_previous_element_" + i + "_" + nowTS + ".html");
+					CustomDebug.writeDebug("weeWX", "WZtest_previous_element_" + i + "_" + nowTS + ".html", previous_element.html());
+					continue;
+				}
+
+//				LogMessage("processWZ2GetForecastStrings() m.group(): " + m.group());
+
+				String dayName = m.group(1);
+				String forecast2 = m.group(2);
+
+				if(dayName == null || forecast2 == null || dayName.isBlank() || forecast2.isBlank())
+					continue;
+
+				dayName = dayName.strip();
+				forecast2 = forecast2.strip();
+
+				if(dow == null)
+				{
+					dow = parseDay(dayName);
+					idx = indexFromToday(dow);
+				} else
+					idx++;
+
+				forecast_text[idx] = forecast2;
+				rc++;
+
+				//LogMessage("processWZ2GetForecastStrings() idx: " + idx + ", forecast2: " + forecast2);
+			}
+
+			if(rc > 0)
+				return new Result2(forecast_text, desc, rc);
+		} catch(Exception e) {
+			LogMessage("processWZ2GetForecastStrings() Error! e: " + e.getMessage(), true, KeyValue.e);
+			doStackOutput(e);
+		}
+
+		return null;
+	}
+
+	static Result processWZ2Forecasts(String url, String data, Result2 result2) throws IOException
+	{
+		if(data == null || data.isBlank() || result2 == null || result2.rc() == 0)
+			return null;
+
+		String[] forecast_text = result2.forecast_text();
+		String desc = result2.desc();
+
+		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		Day[] days = new Day[28];
+
+		LogMessage("processWZ2Forecasts() starting to process wzHTML...");
+
+		Element body = Jsoup.parse(data).body();
+
+//		LogMessage("processWZ2Forecasts() Writting to WZtest_body_" + nowTS + ".html");
+//		CustomDebug.writeDebug("weeWX", "WZtest_body_" + nowTS + ".html", body.html());
+
+		if(!body.hasText())
+		{
+			LogMessage("processWZ2Forecasts() body has no text...");
+			return new Result(null, null, 0L);
+		}
+
+//		if(weeWXApp.DEBUG)
+//			return null;
+//
+//		Element updated_block = searchElemntForWords("1502", body, "UPDATED");
+//		if(updated_block == null)
+//		{
+//			LogMessage("processWZ2Forecasts() updated_block came back as null, skipping...");
+//
+//			String nowTS = nowTS();
+//			LogMessage("processWZ2Forecasts() Writting to WZtest_nub_body_" + nowTS + ".html");
+//			CustomDebug.writeDebug("weeWX", "WZtest_nub_body_" + nowTS + ".html", body.html());
+//
+//			return null;
+//		}
+//
+//		Element parent = goUpAndSearch(updated_block, new String[]{"Now", "UPDATED"}, 4, nowTS());
+//		if(parent == null)
+//		{
+//			String nowTS = nowTS();
+//			LogMessage("processWZ2Forecasts() Writting to WZtest_parent_null_or_no_word_matches_" + nowTS + ".html");
+//			CustomDebug.writeDebug("weeWX", "WZtest_parent_null_or_no_word_matches_" + nowTS + ".html", updated_block.outerHtml());
+//
+//			return null;
+//		}
+//
+//		String[] words = parent.text().strip().split(" ");
+//		Matcher m = ZONE_RE.matcher(words[3]);
+//		if(m.matches())
+//		{
+//			ZoneId zoneId = getZoneId(words[3]);
+//
+//			DateTimeFormatter fmt = DateTimeFormatter.ofPattern("h:mma", Locale.ENGLISH);
+//			LocalTime time = LocalTime.parse(words[2], fmt);
+//			ZonedDateTime zdt = ZonedDateTime.of(LocalDate.now(zoneId), time, zoneId);
+//
+//			timestamp = zdt.toInstant().toEpochMilli();
+//			if(timestamp > 0)
+//			{
+//				weeWXAppCommon.updateCacheTime(timestamp);
+//				//LogMessage("processWZ2Forecasts() lastUpdated(" + timestamp + "): " + weeWXAppCommon.sdf14.format(timestamp));
+//			}
+//		}
+//
+//		if(timestamp == 0)
+//		{
+//			String nowTS = nowTS();
+//			LogMessage("processWZ2Forecasts() Writting to WZtest_no_updated_timestamp_parent_" + nowTS + ".html");
+//			CustomDebug.writeDebug("weeWX", "WZtest_no_updated_timestamp_parent_" + nowTS + ".html", parent.outerHtml());
+//
+//			return null;
+//		}
+
+		Element daily_forecast_block = searchElemntForWords("1566", body, "Daily Forecast");
+		if(daily_forecast_block == null)
+		{
+			LogMessage("processWZ2Forecasts() daily_forecast_block came back as null, skipping...");
+
+			String nowTS = nowTS();
+			LogMessage("processWZ2Forecasts() Writting to WZtest_no_daily_forecast_block_body_" + nowTS + ".html");
+			CustomDebug.writeDebug("weeWX", "WZtest_no_daily_forecast_block_body_" + nowTS + ".html", body.html());
+
+			return new Result(null, null, 0L);
+		}
+
+		Element parent = daily_forecast_block.parent();
+		if(parent == null)
+		{
+			String nowTS = nowTS();
+			LogMessage("processWZ2Forecasts() Writting to WZtest_no_svg_found_" + nowTS + ".html");
+			CustomDebug.writeDebug("weeWX", "WZtest_no_svg_found_" + nowTS + ".html", daily_forecast_block.outerHtml());
+
+			return new Result(null, null, 0L);
+		}
+
+//		if(weeWXApp.DEBUG)
+//		{
+//			String nowTS = nowTS();
+//			LogMessage("processWZ2Forecasts() Writting to WZtest_parent_" + nowTS + ".html");
+//			CustomDebug.writeDebug("weeWX", "WZtest_parent_" + nowTS + ".html", parent.html());
+//			throw new IOException("I'm escaping!");
+//		}
+
+		DayOfWeek dow = null;
+		int idx = -1;
+		Elements svgs = parent.select("svg:has(title)");
+		Pattern dayPat = Pattern.compile("^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\\s+(.*)$");
+		Pattern tempPat = Pattern.compile("(-?\\d+)\\s+°");
+		for(int i = 0; i < svgs.size(); i++)
+		{
+			Element svg = svgs.get(i);
+
+			if(svg == null)
+				continue;
+
+			String title = svg.selectFirst("title").text().strip();
+			if(title == null || title.isBlank())
+				continue;
+
+			Day day = new Day();
+
+			day.icon = wzTitle2Filename(url, title, svg.outerHtml(), false);
+			if(day.icon != null && !day.icon.isBlank())
+				day.icon = "file:///android_asset/icons/wz/" + day.icon;
+			else
+				day.icon = null;
+
+			//LogMessage("processWZ2Forecasts() day.icon: " + day.icon);
+
+			Element block = svg.parent().parent();
+
+//			String nowTS = nowTS();
+//			LogMessage("processWZ2Forecasts() Writting to WZtest_dayEl_" + i + "_" + nowTS + ".html");
+//			CustomDebug.writeDebug("weeWX", "WZtest_dayEl_" + i + "_" + nowTS + ".html", block.outerHtml());
+
+			svg.remove();
+
+			Element dayEl = block.selectFirst("*:matchesOwn(^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\\b)");
+			if(dayEl == null)
+				continue;
+
+//			LogMessage("processWZ2Forecasts() Writting to WZtest_dayEl_" + i + "_" + nowTS + ".html");
+//			CustomDebug.writeDebug("weeWX", "WZtest_dayEl_" + i + "_" + nowTS + ".html", dayEl.outerHtml());
+
+			String text = normaliseText(dayEl.text());
+			//LogMessage("processWZ2Forecasts() text: " + text);
+
+			Matcher dm = dayPat.matcher(text);
+			if(dm.find())
+			{
+				String dayName = dm.group(1).strip();
+				String dayMonth = dm.group(2).strip();
+
+				if(dow == null && idx == -1)
+				{
+					dow = DayOfWeek.valueOf(dayName.toUpperCase(Locale.ENGLISH));
+					idx = (dow.getValue() - LocalDate.now().getDayOfWeek().getValue() + 7) % 7;
+				} else
+					idx++;
+
+				int year = Year.now(ZoneId.systemDefault()).getValue();
+				String full = dayMonth + " " + year;
+
+				DateTimeFormatter fmt = DateTimeFormatter.ofPattern("d MMMM uuuu", Locale.ENGLISH);
+
+				LocalDate date = LocalDate.parse(full, fmt);
+
+				if(date.isBefore(LocalDate.now()))
+					date = date.plusYears(1);
+
+				day.timestamp = date.atStartOfDay(ZoneId.systemDefault()).toInstant().toEpochMilli();
+
+//				LogMessage("processWZ2Forecasts() day.timestamp: " + day.timestamp +
+//				                          ", day.day: " + weeWXAppCommon.sdf10.format(day.timestamp));
+			} else {
+				String nowTS = nowTS();
+				LogMessage("processWZ2Forecasts() Writting to WZtest_no_day_matched_dayEl_" + i + "_" + nowTS + ".html");
+				CustomDebug.writeDebug("weeWX", "WZtest_no_day_matched_dayEl_" + i + "_" + nowTS + ".html", dayEl.outerHtml());
+				continue;
+			}
+
+//			LogMessage("processWZ2Forecasts() dm.matches(): " + dm.matches());
+
+//			if(weeWXApp.DEBUG)
+//				throw new IOException("I'm escaping!");
+
+			List<String> temps = new ArrayList<>();
+			for(Element e : block.select("*:containsOwn(°)"))
+			{
+				Matcher tm = tempPat.matcher(e.text());
+				if(tm.find())
+				{
+					if(tm.group(1) == null || tm.group(1).isBlank())
+						continue;
+
+					//LogMessage("processWZ2Forecasts() tm.group(1): " + tm.group(1));
+
+					int C = Math.round(weeWXAppCommon.str2Float(tm.group(1)));
+
+					if(metric)
+						temps.add(C + "&deg;C");
+					else
+						temps.add(weeWXAppCommon.C2Fdeground(C) + "&deg;F");
+				}
+			}
+
+			if(temps.size() > 1)
+			{
+				day.min = temps.get(0);
+				day.max = temps.get(1);
+			} else if(!temps.isEmpty())
+				day.max = temps.get(0);
+
+			if(day.max == null || day.max.isBlank())
+			{
+				String nowTS = nowTS();
+				LogMessage("processWZ2Forecasts() Writting to WZtest_no_temps_block_" + nowTS + ".html");
+				CustomDebug.writeDebug("weeWX", "WZtest_no_temps_block_" + nowTS + ".html", dayEl.html());
+				continue;
+			}
+
+			//LogMessage("processWZ2Forecasts() day.min: " + day.min);
+			//LogMessage("processWZ2Forecasts() day.max: " + day.max);
+
+			Element rainEl = block.selectFirst("*:containsOwn(mm)");
+			if(rainEl == null || !rainEl.hasText() || rainEl.text().isBlank())
+			{
+				String nowTS = nowTS();
+				LogMessage("processWZ2Forecasts() Writting to WZtest_no_rainEl_" + nowTS + ".html");
+				CustomDebug.writeDebug("weeWX", "WZtest_no_rainEl_" + nowTS + ".html", rainEl.html());
+				continue;
+			}
+
+			String possrain = possrain2Record(rainEl.text().strip(), metric);
+
+			//LogMessage("processWZ2Forecasts() possrain: " + possrain);
+
+			if(idx < forecast_text.length && forecast_text[idx] != null && !forecast_text[idx].isBlank())
+			{
+				//LogMessage("processWZ2Forecasts() forecast_text[" + idx + "]: " + forecast_text[idx]);
+				day.text = forecast_text[idx].strip();
+
+				if(!day.text.endsWith("."))
+					day.text += ".";
+
+				day.text += "<br/>\n<br/>\n" + possrain;
+			} else {
+				day.text = possrain;
+			}
+
+			days[idx] = day;
+
+			//LogMessage("processWZ2Forecasts() day.text: " + day.text);
+		}
+
+		List<Day> newdays = new ArrayList<>();
+		for(Day day : days)
+			if(day != null && day.max != null && !day.max.isBlank())
+				newdays.add(day);
+
+//			if(weeWXApp.DEBUG)
+//				return null;
+
+		if(!newdays.isEmpty())
+			return new Result(newdays, desc, 0L);
+
+		return new Result(null, null, 0L);
+	}
+
+	static String wzTitle2Filename(String url, String title, String svg, boolean saveToFile)
+	{
+		if(title == null || title.isBlank())
+			return null;
+
+		title = normaliseText(title).replaceAll("[ -]", "_").replaceAll("_+", "_").toLowerCase();
+
+		if(title.endsWith("_icon") || title.startsWith("wind_speed_") || title.startsWith("logo") || title.startsWith("icon") ||
+		   title.startsWith("layer_") || title.startsWith("miscellaneous_"))
+			return null;
+
+		if(skipTitles.contains(title))
+			return null;
+
+		String filenameSVG = "icons/wz/" + title + ".svg";
+		String content = weeWXApp.loadFileFromAssets(filenameSVG);
+		if(content != null && !content.isBlank())
+			return title + ".svg";
+
+		String filenamePNG = "icons/wz/wz" + title + ".png";
+		content = weeWXApp.loadFileFromAssets(filenamePNG);
+		boolean foundPNG = content != null && !content.isBlank();
+
+		if(processedFiles.contains(title + ".svg"))
+		{
+			if(foundPNG)
+				return "wz" + title + ".png";
+			else
+				return null;
+		}
+
+		File f = null;
+		int len = svg != null && svg.length() > 0 ? svg.length() : 0;
+
+		try
+		{
+			f = weeWXAppCommon.getExtFile("weeWX", title);
+			if(f.exists() && f.length() > 0 && f.length() == len)
+			{
+				if(foundPNG)
+					return "wz" + title + ".png";
+				else
+					return null;
+			}
+		} catch(Exception ignored) {}
+
+		LogMessage("wzTitle2Filename() Unable to locate title: " + title, KeyValue.d);
+
+		Map<String, String> map = new HashMap<>();
+		map.put("svgName", title);
+		map.put("svgURL", url);
+
+		if(svg != null && !svg.isBlank())
+		{
+			LogMessage("wzTitle2Filename() svg != null && !svg.isBlank()", KeyValue.d);
+			map.put("svg", svg);
+		}
+
+		weeWXAppCommon.uploadMissingIcon(map);
+
+		if(saveToFile)
+		{
+			try
+			{
+				if((!f.exists() || f.length() != len) && len > 0 && f.canWrite())
+				{
+					LogMessage("Writting to new svg file: " + title + ".svg");
+
+					try(FileOutputStream fos = new FileOutputStream(f))
+					{
+						fos.write(svg.getBytes());
+						LogMessage("Successfully wrote to " + title + ".svg");
+					} catch(Exception ignored) {}
+				}
+			} catch(Exception ignored) {}
+		}
+
+		processedFiles.add(title + ".svg");
+
+		if(foundPNG)
+			return "wz" + title + ".png";
+		else
+			return null;
+	}
+
+	static String possrain2Record(String possrain, boolean metric)
+	{
+		if(possrain == null || possrain.isBlank())
+			return null;
+
+		possrain = possrain.strip();
+
+		String output = "Possible rainfall ";
+
+		// 5% / < 1mm
+		// 50% / 1-5mm
+		// 90% / 10-20mm
+		String percent = null;
+		String max = null;
+		String min = null;
+
+		if(possrain.contains("/"))
+		{
+			String[] bits = possrain.split("/", 2);
+
+			if(bits.length >= 2)
+			{
+				possrain = bits[1].strip();
+
+				if(bits[0].contains("%"))
+					percent = "" + Math.round(weeWXAppCommon.str2Float(bits[0]));
+			}
+		}
+
+		boolean lt = possrain.contains("&lt;") || possrain.contains("<");
+		if(lt)
+			possrain = possrain.substring(possrain.indexOf(" ")).strip();
+
+		boolean gt = possrain.contains("&gt;") || possrain.contains(">");
+		if(!lt && gt)
+			possrain = possrain.substring(possrain.indexOf(" ")).strip();
+
+		if(possrain.contains("-"))
+		{
+			String[] bits = possrain.split("-", 2);
+
+			if(bits[0] != null && !bits[0].isBlank())
+				bits[0] = "" + Math.round(weeWXAppCommon.str2Float(bits[0]));
+			else
+				bits[0] = null;
+
+			if(bits[1] != null && !bits[1].isBlank())
+				bits[1] = "" + Math.round(weeWXAppCommon.str2Float(bits[1]));
+			else
+				bits[1] = null;
+
+			if(bits.length == 2)
+			{
+				if(bits[0] != null && bits[1] != null)
+				{
+					min = bits[0];
+					max = bits[1];
+				} else if(bits[1] != null) {
+					max = bits[1];
+				} else {
+					max = bits[0];
+				}
+			} else if(bits.length == 1) {
+				min = null;
+				max = bits[0];
+			}
+		} else {
+			min = null;
+			max = "" + Math.round(weeWXAppCommon.str2Float(possrain));
+		}
+
+		if(min != null || max != null)
+		{
+			if(percent != null && !percent.isBlank())
+				output += Math.round(weeWXAppCommon.str2Float(percent)) + "% / ";
+
+			if(lt)
+				output += "&lt;";
+
+			if(gt)
+				output += "&gt;";
+
+			if(metric)
+			{
+				if(min != null)
+					output += min + "mm to ";
+
+				if(max != null)
+					output += max + "mm";
+			} else {
+				if(min != null)
+					min = "" + Math.round(weeWXAppCommon.mm2in(Float.parseFloat(min)));
+
+				if(max != null)
+					max = "" + Math.round(weeWXAppCommon.mm2in(Float.parseFloat(max)));
+
+				if(min != null)
+					output += min + "in to ";
+
+				if(max != null)
+					output += max + "in";
+			}
+		}
+
+		return output;
+	}
+/*
+	static Element goUp(Element child, int levels)
+	{
+		Element parent = child;
+		for(int i = 0; i < levels; i++)
+		{
+			if(parent.parent() == null)
+				return parent;
+
+			parent = parent.parent();
+		}
+
+		return parent;
+	}
+
+	static Element goUpAndSearchForElement(Element child, String element_name, String nowTS)
+	{
+		if(child == null)
+			return null;
+
+		Element parent = child;
+		while(parent.parent() != null)
+		{
+			parent = parent.parent();
+
+			Element svg = parent.selectFirst(element_name);
+			if(svg != null)
+				return goUp(parent, 3);
+		}
+
+		LogMessage("goUpAndSearchForElement() Writting to WZtest_no_element_" + element_name + "_" + nowTS + ".html");
+		CustomDebug.writeDebug("weeWX", "WZtest_no_element_" + element_name + "_" + nowTS + ".html", child.html());
+
+		LogMessage("goUpAndSearchForElement() text == null || text.isBlank() || !text.contains(space), skipping...");
+		return null;
+	}
+
+	static Element goUpAndSearch(Element child, String[] search_words, int minLength, String nowTS)
+	{
+		Element parent = child;
+		while(parent.parent() != null)
+		{
+			parent = parent.parent();
+			String text = parent.text();
+			if(text.contains(" "))
+			{
+				String[] words = text.split(" ");
+				if(words[0].equals(search_words[0]) && words[1].equals(search_words[1]) && words.length >= minLength)
+					return parent;
+			}
+		}
+
+		LogMessage("goUpAndSearch() Writting to WZtest_no_search_words_" + String.join("_", search_words) + "_" + nowTS + ".html");
+		CustomDebug.writeDebug("weeWX", "WZtest_no_search_words_" + String.join("_", search_words) + "_" + nowTS + ".html", child.html());
+
+		LogMessage("goUpAndSearch() text == null || text.isBlank() || !text.contains(space), skipping...");
+		return null;
+	}
+*/
 }

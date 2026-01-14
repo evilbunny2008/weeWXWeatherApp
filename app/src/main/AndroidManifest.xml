@@ -62,6 +62,8 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
+
+		<meta-data android:name="android.webkit.WebView.MetricsOptOut" android:value="true" />
     </application>
 
 	<queries>

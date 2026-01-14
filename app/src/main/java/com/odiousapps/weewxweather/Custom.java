@@ -18,6 +18,9 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
+import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
+import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+
 @SuppressWarnings("deprecation")
 public class Custom extends Fragment
 {
@@ -32,7 +35,7 @@ public class Custom extends Fragment
 	                         @Nullable ViewGroup container,
 	                         @Nullable Bundle savedInstanceState)
 	{
-		weeWXAppCommon.LogMessage("Custom.onCreateView()");
+		LogMessage("Custom.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
 
 		View view = inflater.inflate(R.layout.fragment_custom, container, false);
@@ -42,7 +45,7 @@ public class Custom extends Fragment
 		swipeLayout.setOnRefreshListener(() ->
 		{
 			swipeLayout.setRefreshing(true);
-			weeWXAppCommon.LogMessage("onRefresh();");
+			LogMessage("onRefresh();");
 			loadCustom(true);
 			lastRefresh = weeWXAppCommon.getCurrTime();
 		});
@@ -53,7 +56,7 @@ public class Custom extends Fragment
 	@Override
 	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
 	{
-		weeWXAppCommon.LogMessage("Custom.onViewCreated()");
+		LogMessage("Custom.onViewCreated()");
 		super.onViewCreated(view, savedInstanceState);
 
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
@@ -70,7 +73,7 @@ public class Custom extends Fragment
 
 		wv.getViewTreeObserver().addOnScrollChangedListener(scl);
 
-		wv.setOnPageFinishedListener((v, url) -> swipeLayout.setRefreshing(false));
+		wv.setOnPageFinishedListener((v, url) -> swipeLayout.setRefreshing(false), false);
 
 		wv.setOnKeyListener((v, keyCode, event) ->
 		{
@@ -115,7 +118,7 @@ public class Custom extends Fragment
 					{
 						WebSettingsCompat.setAlgorithmicDarkeningAllowed(wv.getSettings(), darkmode);
 					} catch(Exception e) {
-						weeWXAppCommon.doStackOutput(e);
+						doStackOutput(e);
 					}
 				}
 			} else {
@@ -138,7 +141,7 @@ public class Custom extends Fragment
 	@Override
 	public void onDestroyView()
 	{
-		weeWXAppCommon.LogMessage("Custom.onDestroyView()");
+		LogMessage("Custom.onDestroyView()");
 		super.onDestroyView();
 
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(getViewLifecycleOwner());
@@ -153,7 +156,7 @@ public class Custom extends Fragment
 
 			weeWXApp.getInstance().wvpl.recycleWebView(wv);
 
-			weeWXAppCommon.LogMessage("Custom.onDestroyView() recycled wv...");
+			LogMessage("Custom.onDestroyView() recycled wv...");
 		}
 	}
 
@@ -163,20 +166,20 @@ public class Custom extends Fragment
 		if(!forced && npwsll[1] <= 0)
 		{
 			String tmpStr = weeWXApp.current_dialog_html
-					.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(R.string.manual_update_set_refresh_screen_to_load));
+					.replace("WARNING_BODY", weeWXApp.getAndroidString(R.string.manual_update_set_refresh_screen_to_load));
 
 			wv.post(() -> wv.loadDataWithBaseURL(null, tmpStr,
 					"text/html", "utf-8", null));
 			return;
 		}
 
-		String custom = (String)KeyValue.readVar("CUSTOM_URL", weeWXApp.CUSTOM_URL_default);
-		String custom_url = (String)KeyValue.readVar("custom_url", weeWXApp.custom_url_default);
+		String custom = (String)KeyValue.readVar("CUSTOM_URL", "");
+		String custom_url = (String)KeyValue.readVar("custom_url", "");
 
 		if((custom == null || custom.isBlank()) && (custom_url == null || custom_url.isBlank()))
 		{
 			String tmpStr = weeWXApp.current_dialog_html
-					.replaceAll("WARNING_BODY", weeWXApp.getAndroidString(R.string.custom_url_not_set_or_blank));
+					.replace("WARNING_BODY", weeWXApp.getAndroidString(R.string.custom_url_not_set_or_blank));
 
 			wv.post(() -> wv.loadDataWithBaseURL(null, tmpStr,
 					"text/html", "utf-8", null));
@@ -191,7 +194,7 @@ public class Custom extends Fragment
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		weeWXAppCommon.LogMessage("Custom.java notificationObserver: " + str);
+		LogMessage("Custom.java notificationObserver: " + str);
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
 		{

@@ -9,183 +9,35 @@ import android.view.ViewGroup;
 import android.webkit.JavascriptInterface;
 import android.widget.FrameLayout;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Element;
+
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
+import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
+import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+
 @SuppressWarnings({"unused", "SameParameterValue", "all"})
 public class WebViewPreloader
 {
-	private String private_javascript = """
-	document.addEventListener("DOMContentLoaded", function()
-	{
-		(function()
-		{
-			try
-			{
-			if(window.__android_detector_installed)
-			{
-			    console.log('detector: already installed');
-			    return;
-			}
-			
-			console.log('detector: start');
-			window.__android_detector_installed = true;
-			
-			window.__android_pending = 0;
-			
-			(function(open, send)
-			{
-				XMLHttpRequest.prototype.open = function()
-				{
-					this._url = arguments[1];
-					return open.apply(this, arguments);
-				};
-			
-				XMLHttpRequest.prototype.send = function()
-				{
-					window.__android_pending++;
-					var xhr = this;
-					function done()
-					{
-						try
-						{
-							if(!xhr.__android_done)
-							{
-								xhr.__android_done = true;
-								window.__android_pending--;
-							}
-						}catch(e){}
-					}
-			
-					xhr.addEventListener('load', done);
-					xhr.addEventListener('error', done);
-					xhr.addEventListener('abort', done);
-					xhr.addEventListener('timeout', done);
-					return send.apply(this, arguments);
-				};
-			
-			})
-			
-			(XMLHttpRequest.prototype.open, XMLHttpRequest.prototype.send);
-			
-			if(window.fetch)
-			{
-				var _fetch = window.fetch;
-				window.fetch = function()
-				{
-					window.__android_pending++;
-					return _fetch.apply(this, arguments)
-						.then(function(r){ window.__android_pending--; return r; })
-						.catch(function(e){ window.__android_pending--; throw e; });
-				};
-			}
-			
-			var lastChange = Date.now();
-			var mo = new MutationObserver(function(){ lastChange = Date.now(); });
-			mo.observe(document,
-			{
-			    childList:true, subtree:true, attributes:true, characterData:true
-			});
-			
-			function sendHtml(note)
-			{
-				try
-				{
-					var html = document.documentElement ? document.documentElement.outerHTML : '';
-					console.log('detector: sending html, len=' + html.length + ', note=' + note);
-					if(window.AndroidBridge && window.AndroidBridge.onReady)
-						AndroidBridge.onReady(html);
-				} catch(e) {
-					console.log('detector: send failed ' + e);
-				}
-			}
-			
-			var stableMs = 600;
-			var pollInterval = 250;
-			var maxWait = 15000;
-			var minLength = 1024;
-			var start = Date.now();
-			
-			(function check()
-			{
-				try
-				{
-					var now = Date.now();
-					var pending = window.__android_pending || 0;
-					
-					var html = "";
-					try
-					{
-						html = document.documentElement ? document.documentElement.outerHTML : "";
-					} catch(e) {
-						console.log('detector top error:'+e);
-					}
-					
-					var htmlLen = html.length;
-					
-					// Only send when stable, loaded, and long enough
-					if(pending === 0 && (now - lastChange) > stableMs && htmlLen >= minLength)
-					{
-						console.log('detector: stable & length ok ('+htmlLen+')');
-						sendHtml('stable');
-						mo.disconnect();
-						return;
-					}
-					
-					// timeout → send whatever we have
-					if((now - start) > maxWait)
-					{
-						console.log('detector: timeout, htmlLen='+htmlLen);
-						sendHtml('timeout');
-						mo.disconnect();
-						return;
-					}
-					
-					console.log('detector: waiting… pending=' + pending + ' stable='+(now-lastChange) + ' htmlLen='+htmlLen);
-					
-				} catch(e) {
-					console.log('detector: check err '+e);
-				}
-			
-				setTimeout(check, pollInterval);
-			})();
-			
-			// Time out after DEFAULT_TIMEOUTms unless function finishes sooner...
-			setTimeout(function()
-			{
-				try
-				{
-					var html = document.documentElement ? document.documentElement.outerHTML : "";
-					var htmlLen = html.length;
-					if(window.__android_pending===0 && htmlLen >= minLength)
-					{
-						console.log('detector: fallback triggered (len='+htmlLen+')');
-						sendHtml('fallback');
-						mo.disconnect();
-					}
-				} catch(e) {
-				console.log('detector top error:'+e);
-				}
-			}, DEFAULT_TIMEOUT);
-			
-			} catch(ex) {
-				console.log('detector top error:'+ex);
-			}
-		})();
-	});
-	""";
-
 	private Queue<SafeWebView> preloadedWebViews = new LinkedList<>();
 	private boolean isRunning = false;
-	private CountDownLatch latch = new CountDownLatch(1);
-	private String[] htmlHolder = new String[1];
-	private String html = "";
+	private CountDownLatch latch = null;
+	private String[] htmlHolder = null;
 	private ViewGroup rootView;
 	private FrameLayout wvContainer;
-	private SafeWebView wv;
 	private Handler handler;
+	private SafeWebView wv;
+
+	private String[] search_terms = null;
+	private String[] search_terms_and_not_have = null;
+	private String[] search_terms_or_not_have = null;
+
+	record Result(String html, boolean gotresult) {}
 
 	WebViewPreloader()
 	{}
@@ -206,8 +58,8 @@ public class WebViewPreloader
 					preloadedWebViews.add(webView);
 				}
 			}
-		} catch (Throwable t) {
-			weeWXAppCommon.doStackOutput(t);
+		} catch(Throwable t) {
+			doStackOutput(t);
 		}
 	}
 
@@ -215,9 +67,9 @@ public class WebViewPreloader
 	{
 		try
 		{
-			return new SafeWebView(weeWXApp.getInstance().getApplicationContext());
+			return new SafeWebView(weeWXApp.getInstance());
 		} catch(Throwable t) {
-			weeWXAppCommon.doStackOutput(t);
+			doStackOutput(t);
 		}
 
 		return null;
@@ -253,8 +105,9 @@ public class WebViewPreloader
 				return generateWebView(context);
 			}
  */
-		} catch(Throwable t) {
-			weeWXAppCommon.doStackOutput(t);
+		} catch(Throwable t)
+		{
+			doStackOutput(t);
 		}
 
 		return null;
@@ -279,8 +132,9 @@ public class WebViewPreloader
 				destroyWebView(wv);
 			}
 */
-		} catch(Throwable t) {
-			weeWXAppCommon.doStackOutput(t);
+		} catch(Throwable t)
+		{
+			doStackOutput(t);
 		}
 	}
 
@@ -294,8 +148,9 @@ public class WebViewPreloader
 			wv.onPause();
 			wv.destroy();
 			wv = null;
-		} catch (Throwable t) {
-			weeWXAppCommon.doStackOutput(t);
+		} catch(Throwable t)
+		{
+			doStackOutput(t);
 		}
 	}
 
@@ -305,138 +160,360 @@ public class WebViewPreloader
 		{
 			synchronized(preloadedWebViews)
 			{
-				for(SafeWebView wv : preloadedWebViews)
+				for(SafeWebView wv: preloadedWebViews)
 					destroyWebView(wv);
 
 				preloadedWebViews.clear();
 			}
-		} catch (Throwable t) {
-			weeWXAppCommon.doStackOutput(t);
+		} catch(Throwable t) {
+			doStackOutput(t);
 		}
 	}
 
-	String getHTML(Context context, String url)
+	String getHTML(String url, String[] searchTerms, String[] mustNotContain, String[] orNotContain) throws IOException
 	{
+		LogMessage("WebViewPreloader.getHTML()...");
+
+		Context context = weeWXApp.getInstance();
+
 		if(context == null)
+		{
+			LogMessage("WebViewPreloader.getHTML() context == null, skipping...", KeyValue.w);
 			return null;
+		}
+
+		if(url == null || url.isBlank())
+		{
+			LogMessage("WebViewPreloader.getHTML() url == null || url.isBlank(), skipping...", KeyValue.w);
+			return null;
+		}
 
 		if(isRunning)
+		{
+			LogMessage("WebViewPreloader.getHTML() Already running, skipping...", KeyValue.w);
 			return null;
+		}
 
 		isRunning = true;
 
-		String javascript = private_javascript.replaceAll("DEFAULT_TIMEOUT", "" + weeWXAppCommon.default_timeout);
+		search_terms = searchTerms;
+		search_terms_and_not_have = mustNotContain;
+		search_terms_or_not_have = orNotContain;
+
+		latch = new CountDownLatch(1);
+		htmlHolder = new String[1];
 
 		try
 		{
-			// Optionally remove bridge + cleanup on UI thread
 			handler = new Handler(Looper.getMainLooper());
 			handler.post(() ->
 			{
-				wv = new SafeWebView(context);
-				wv.onResume();
-				wv.resumeTimers();
-
-				wvContainer = new FrameLayout(context);
-				wvContainer.setAlpha(0f);
-				wvContainer.addView(wv, new FrameLayout.LayoutParams(
-						ViewGroup.LayoutParams.MATCH_PARENT,
-						ViewGroup.LayoutParams.WRAP_CONTENT));
-
-				rootView = (ViewGroup)((Activity)context).getWindow().getDecorView();
-				rootView.addView(wvContainer, new FrameLayout.LayoutParams(
-						ViewGroup.LayoutParams.MATCH_PARENT,
-						ViewGroup.LayoutParams.MATCH_PARENT));
-
-				wv.addJavascriptInterface(this, "AndroidBridge");
-
-				wv.setOnPageFinishedListener((view, URL) ->
+				if(wvContainer == null)
 				{
-					weeWXAppCommon.LogMessage("Page has finished loading, just need to wait for JS to finish running now...");
-					wv.post(() -> wv.evaluateJavascript("""
-							window.addEventListener("load", (event) =>
-							{
-								console.log("page is fully loaded");
-								const txt = document.documentElement.innerHTML;
-		                        console.log("HTML returned: " + txt.length + "bytes...");
-								if(window.AndroidBridge && window.AndroidBridge.onReady)
-									AndroidBridge.onReady(txt);
-							});
-							""", null
-					));
-				});
+					LogMessage("WebViewPreloader.getHTML() Creating wvContainer...");
+					wvContainer = new FrameLayout(context);
+					wvContainer.setAlpha(0f);
+				}
 
+				if(rootView == null)
+				{
+					LogMessage("WebViewPreloader.getHTML() Getting rootView...");
+					Activity mainActivity = (Activity)MainActivity.getInstance();
+					if(mainActivity == null)
+						return;
+
+					rootView = (ViewGroup)(mainActivity).getWindow().getDecorView();
+					if(rootView == null)
+						return;
+
+					rootView.addView(wvContainer, new FrameLayout.LayoutParams(
+							ViewGroup.LayoutParams.MATCH_PARENT,
+							ViewGroup.LayoutParams.MATCH_PARENT));
+				}
+
+				if(wv == null)
+				{
+					wv = new SafeWebView(context);
+					wv.setOnPageFinishedListener((wv, wvurl) ->
+					{
+						if(false)
+							LogMessage("Have a hit for wvurl: " + wvurl);
+					}, false);
+
+					LogMessage("WebViewPreloader.getHTML() Adding final_wv to wvContainer...");
+					wvContainer.addView(wv, new FrameLayout.LayoutParams(
+							ViewGroup.LayoutParams.MATCH_PARENT,
+							ViewGroup.LayoutParams.WRAP_CONTENT));
+
+					wv.addJavascriptInterface(this, "AndroidBridge");
+				}
+
+				int delay = 0;
+				int wait = 10_000;
+				for(int attempt = 1; attempt <= 10; attempt++)
+				{
+					int thisAttempt = attempt;
+					long doattempt = Math.round(delay + wait * attempt);
+					float doattempt_in_sec = Math.round(doattempt / 100.0f) / 10.0f;
+
+					LogMessage("Setting a check for " + doattempt_in_sec + "s time...");
+					handler.postDelayed(() -> wv.evaluateJavascript("""
+                        (function()
+                        {
+                            console.log("message=Attempt #ATTEMPT_NUM, Time: " + new Date().toLocaleTimeString());
+                            if(document == null)
+                                console.log("message=document == null");
+                            else if(document.readyState == null)
+                                console.log("message=document.readyState == null");
+                            else if(document.documentElement == null)
+                                console.log("message=document.documentElement == null");
+							else
+	                            AndroidBridge.injectHTML(ATTEMPT_NUM, document.readyState, document.documentElement.outerHTML);
+
+                            return;
+                        })();
+                        """.replace("ATTEMPT_NUM", "" + thisAttempt), null), doattempt
+					);
+				}
+
+				LogMessage("WebViewPreloader.getHTML() wv.loadUrl(" + url + ")");
 				wv.loadUrl(url);
 			});
-		} catch (Throwable t) {
-			weeWXAppCommon.doStackOutput(t);
+		} catch(Throwable t) {
+			doStackOutput(t);
 		}
+
+		String html = null;
 
 		try
 		{
-			// wait on background thread (not UI)
-			boolean ok = latch.await(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS);
+			LogMessage("WebViewPreloader.getHTML() Wait on background thread for HTML data");
+			boolean ok = latch.await(weeWXAppCommon.default_webview_timeout, TimeUnit.MILLISECONDS);
 			html = ok ? htmlHolder[0] : null;
-
-			handler.post(() ->
-			{
-				rootView.removeView(wvContainer);
-				wvContainer.removeAllViews();
-				wv.removeJavascriptInterface("AndroidBridge");
-				recycleWebView(wv);
-			});
 		} catch(InterruptedException e) {
-			weeWXAppCommon.LogMessage("Error! e: " + e, true, KeyValue.e);
+			LogMessage("WebViewPreloader.getHTML() Error! e: " + e, true, KeyValue.e);
 		}
 
+		wv.post(() -> wv.loadUrl("about:blank"));
+
 		isRunning = false;
+
+		if(html != null && html.startsWith("error|"))
+		{
+			String[] error = html.strip().split("\\|", 2);
+			if(error[0].equalsIgnoreCase("error"))
+			{
+				deleteWV();
+				if(error[1] != null && !error[1].isBlank())
+					throw new IOException(error[1]);
+
+				throw new IOException("An error occurred but it's not clear what");
+			}
+		}
 
 		return html;
 	}
 
-	@JavascriptInterface
-	public void onReady(String html)
+	void deleteWV()
 	{
-		weeWXAppCommon.LogMessage("Got the following HTML length: " + html.length());
+		if(rootView != null && wvContainer != null && wv != null)
+		{
+			rootView.post(() ->
+			{
+				if(wv != null)
+				{
+					wv.stopLoading();
+					wv.removeJavascriptInterface("AndroidBridge");
+					wv.destroy();
+				}
 
-		if(html == null || html.isBlank() || html.length() < 10_000)
+				if(wvContainer != null)
+					wvContainer.removeAllViews();
+
+				if(rootView != null && wvContainer != null)
+					rootView.removeView(wvContainer);
+
+				rootView = null;
+				wvContainer = null;
+				wv = null;
+			});
+		} else if(wvContainer != null && wv != null) {
+			wvContainer.post(() ->
+			{
+				if(wv != null)
+				{
+					wv.removeJavascriptInterface("AndroidBridge");
+					wv.destroy();
+				}
+
+				if(wvContainer != null)
+					wvContainer.removeAllViews();
+
+				wvContainer = null;
+				wv = null;
+			});
+		} else if(rootView != null && wvContainer != null) {
+			rootView.post(() ->
+			{
+				wvContainer.removeAllViews();
+				rootView.removeView(wvContainer);
+				rootView = null;
+				wvContainer = null;
+			});
+		} else if(rootView != null && wv != null) {
+			wv.post(() ->
+			{
+				wv.stopLoading();
+				wv.removeJavascriptInterface("AndroidBridge");
+				wv.destroy();
+				wv = null;
+				rootView = null;
+			});
+		} else if(rootView != null) {
+			rootView = null;
+		} else if(wvContainer != null) {
+			wvContainer.post(() ->
+			{
+				wvContainer.removeAllViews();
+				wvContainer = null;
+			});
+		} else if(wv != null) {
+			wv.post(() ->
+			{
+				wv.stopLoading();
+				wv.removeJavascriptInterface("AndroidBridge");
+				wv.destroy();
+				wv = null;
+			});
+		}
+	}
+
+	@JavascriptInterface
+	public synchronized void injectHTML(int attempt, String docstate, String html)
+	{
+		if(latch.getCount() == 0)
 			return;
 
-		html = "<html>" + html + "</html>";
+		if(html != null)
+			LogMessage("injectHTML() Got the following Attempt: #" + attempt + ", docstate: " +
+		                          docstate + ", HTML length: " + html.length());
+		else
+			LogMessage("injectHTML() Attempt: #" + attempt + ", html == null...");
 
-		// This runs on the UI thread internally, but be careful with heavy work
-		htmlHolder[0] = cleanReturnedHtml(html);
+		if((html == null || html.length() < 512) && attempt < 10)
+			return;
 
-		latch.countDown();
-	}
+		boolean hasST = search_terms != null && search_terms.length > 0;
+		boolean andHasNT = search_terms_and_not_have != null && search_terms_and_not_have.length > 0;
+		boolean orHasNT = search_terms_or_not_have != null && search_terms_or_not_have.length > 0;
 
-	String cleanReturnedHtml(String jsonEncodedHtml)
-	{
-		if(jsonEncodedHtml == null || jsonEncodedHtml.isBlank())
-			return null;
+		if(attempt < 10 && (hasST || andHasNT || orHasNT))
+		{
+			Element body = Jsoup.parse(html).body();
 
-		String s = jsonEncodedHtml.strip();
+//			LogMessage("injectHTML() Writting to WZtest_body_before_" + nowTS + ".html");
+//			CustomDebug.writeDebug("weeWX", "WZtest_body_before_" + nowTS + ".html", body.html());
 
-		// remove surrounding quotes if present
-		if(s.startsWith("\"") && s.endsWith("\"") && s.length() >= 2)
-			s = s.substring(1, s.length() - 1);
+			JsoupHelper.cleanWZDoc(body, false);
+			if(!body.hasText())
+			{
+				LogMessage("injectHTML() Body has no text... body: " + body);
+				return;
+			}
 
-		// common escape sequences returned by evaluateJavascript
-		s = s.replace("\\u003C", "<");
-		s = s.replace("\\n", "\n");
-		s = s.replace("\\\"", "\"");
-		s = s.replace("\\r", "\r");
+//			LogMessage("injectHTML() Writting to WZtest_body_after_" + nowTS + ".html");
+//			CustomDebug.writeDebug("weeWX", "WZtest_body_after_" + nowTS + ".html", body.html());
 
-		return s;
-	}
+			String text = JsoupHelper.normaliseText(body.text());
+			if(text == null || text.isBlank())
+				return;
 
-	String escapeJsString(String s)
-	{
-		if(s == null)
-			return "";
+			if(andHasNT)
+			{
+				boolean found_all = true;
+				for(String st : search_terms_and_not_have)
+				{
+					if(!(" " + text + " ").contains(" " + st + " "))
+					{
+						found_all = false;
+						break;
+					}
+				}
 
-		return s.replace("\\", "\\\\")
-				.replace("'", "\\'")
-				.replace("\"", "\\\"");
+				if(found_all)
+				{
+					LogMessage("injectHTML() All not search terms found: " +
+					                          String.join(", ", search_terms_and_not_have));
+					LogMessage("injectHTML() text: " + text);
+					htmlHolder[0] = "error|All bad search terms found, will retry later...";
+					handler.removeCallbacksAndMessages(null);
+					latch.countDown();
+					return;
+				}
+			}
+
+			if(orHasNT)
+			{
+				boolean found_any = false;
+				for(String st : search_terms_or_not_have)
+				{
+					if((" " + text + " ").contains(" " + st + " "))
+					{
+						found_any = true;
+						break;
+					}
+				}
+
+				if(found_any)
+				{
+					LogMessage("injectHTML() One or more not search terms found: " +
+					                          String.join(", ", search_terms_or_not_have));
+					LogMessage("injectHTML() text: " + text);
+					htmlHolder[0] = "error|At least one bad search term found, will retry later...";
+					handler.removeCallbacksAndMessages(null);
+					latch.countDown();
+					return;
+				}
+			}
+
+			if(hasST)
+			{
+				String stNotFound = "";
+				boolean found_all = true;
+				for(String st : search_terms)
+				{
+					if(!(" " + text + " ").contains(" " + st + " "))
+					{
+						stNotFound = st;
+						found_all = false;
+						break;
+					}
+				}
+
+				if(found_all)
+				{
+					LogMessage("injectHTML() All search terms found, now we can move on...");
+					htmlHolder[0] = body.outerHtml().strip();
+					handler.removeCallbacksAndMessages(null);
+					latch.countDown();
+					return;
+				}
+
+				LogMessage("injectHTML() Not all search terms found, missing: " + stNotFound + ", list: " +
+				                          String.join(", ", search_terms));
+				//LogMessage("injectHTML() text: " + text);
+			}
+
+			return;
+		}
+
+		htmlHolder[0] = html;
+
+		if((docstate.equals("complete") && html.length() > 10_000) || attempt >= 10)
+		{
+			LogMessage("injectHTML() We seem to have gotten html, cancelling the rest of the checks...");
+			handler.removeCallbacksAndMessages(null);
+			latch.countDown();
+		}
 	}
 }
