@@ -48,7 +48,7 @@ public class Stats extends Fragment
 		{
 			swipeLayout.setRefreshing(true);
 			LogMessage("weeWXAppCommon.getWeather(true, false)...");
-			weeWXAppCommon.getWeather(true, false);
+			weeWXAppCommon.getWeather(true, false, false);
 		});
 
 		mySlider = rootView.findViewById(R.id.pageZoom);
@@ -66,22 +66,13 @@ public class Stats extends Fragment
 			}
 		});
 
-		return rootView;
-	}
-
-	@Override
-	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
-	{
-		LogMessage("Stats.onViewCreated()");
-		super.onViewCreated(view, savedInstanceState);
-
 		if(wv == null)
 			wv = weeWXApp.getInstance().wvpl.getWebView();
 
 		if(wv.getParent() != null)
 			((ViewGroup)wv.getParent()).removeView(wv);
 
-		FrameLayout fl = view.findViewById(R.id.webViewFrameLayout);
+		FrameLayout fl = rootView.findViewById(R.id.webViewFrameLayout);
 		fl.removeAllViews();
 		fl.addView(wv);
 
@@ -95,7 +86,7 @@ public class Stats extends Fragment
 			{
 				currZoom = sanitiseZoom((int)KeyValue.readVar("mySlider", weeWXApp.mySlider_default));
 				LogMessage("Stats.setOnPageFinishedListener() currZoom: " + currZoom + "%", KeyValue.d);
-				wv.postDelayed(() -> setZoom(currZoom, false), 200);
+				wv.postDelayed(() -> setZoom(currZoom, false), 50);
 			}
 
 			stopRefreshing();
@@ -107,18 +98,19 @@ public class Stats extends Fragment
 
 		LogMessage("Stats.onViewCreated()-- adding notification manager...");
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
+
+		return rootView;
 	}
 
 	public void onResume()
 	{
 		super.onResume();
 
-		if(currZoom == 0)
-			currZoom = sanitiseZoom((int)KeyValue.readVar("mySlider", weeWXApp.mySlider_default));
+		currZoom = sanitiseZoom((int)KeyValue.readVar("mySlider", weeWXApp.mySlider_default));
 
 		LogMessage("Stats.onResume() currZoom: " + currZoom + "%", KeyValue.d);
 
-		wv.postDelayed(() -> setZoom(currZoom, false), 100);
+		wv.postDelayed(() -> setZoom(currZoom, false), 50);
 	}
 
 	@Override
@@ -173,47 +165,75 @@ public class Stats extends Fragment
 			return;
 
 		final int finalZoom = sanitiseZoom(zoom);
-		String js = """
+		final float finalZoomDec = finalZoom / 100.0f;
+
+		String jsCommon = """
 			(function()
 			{
 				if(document == null)
-					return false;
+					return -1;
 
 				if(document.body == null)
-					return false;
+					return -1;
 
 				if(document.body.style == null)
-					return false;
+					return -1;
 
 				if(document.body.style.zoom == null)
-					return false;
-
-				document.body.style.zoom =
-			""" + (finalZoom / 100.0) + ";" + """
-
-				return true;
-			})();
+					return -1;
 			""";
 
-		LogMessage("new zoom value = " + finalZoom + "%", KeyValue.d);
+		String jsBottom = "\n})();";
 
-		mySlider.post(() -> mySlider.setValue(finalZoom));
-		LogMessage("Set Zoom JS: " + js, KeyValue.d);
+		String js1 = jsCommon + "\n\treturn document.body.style.zoom;\n" + jsBottom;
+
+		String js2 = jsCommon + "\n\tdocument.body.style.zoom = " + finalZoomDec + ";\n\n\treturn true;\n" + jsBottom;
+
+		LogMessage("Set Zoom JS: " + js2.replaceAll("[\n\r\t]", "")
+				.replaceAll("\\s+", " "), KeyValue.d);
 
 		Handler handler = new Handler(Looper.getMainLooper());
-
 		Runnable poll = new Runnable()
 		{
 			@Override
 			public void run()
 			{
-				wv.post(() -> wv.evaluateJavascript(js, value ->
-				{
-					LogMessage("Stats.evaluateJavascript() value: " + value);
-					if(!value.equals("true"))
-						handler.postDelayed(this, 100);
-				}));
-			}
+			    wv.evaluateJavascript(js1, value1 ->
+			    {
+				    if(value1 == null || value1.isBlank() || value1.equals("null") || value1.equals("-1"))
+				    {
+						handler.postDelayed(this, 50);
+						return;
+				    }
+
+					Float f = weeWXAppCommon.str2Float(value1);
+					if(f == null)
+					{
+						handler.postDelayed(this, 50);
+						return;
+					}
+
+					if(f == finalZoomDec)
+					{
+						LogMessage("Zoom value = " + finalZoom + "%", KeyValue.d);
+						mySlider.setValue(finalZoom);
+						return;
+					}
+
+				    wv.post(() -> wv.evaluateJavascript(js2, value2 ->
+				    {
+						LogMessage("Stats.evaluateJavascript() value: " + value2);
+						if(!value2.equals("true"))
+					    {
+							handler.postDelayed(this, 50);
+							return;
+					    }
+
+						LogMessage("new zoom value = " + finalZoom + "%", KeyValue.d);
+					    mySlider.setValue(finalZoom);
+				    }));
+			    });
+		    }
 		};
 
 		handler.post(poll);
@@ -816,7 +836,7 @@ public class Stats extends Fragment
 	{
 		LogMessage("Stats.java updateFields()");
 
-		boolean ret = weeWXAppCommon.getWeather(false, false);
+		boolean ret = weeWXAppCommon.getWeather(false, false, false);
 		if(!ret)
 		{
 			String LastWeatherError = (String)KeyValue.readVar("LastWeatherError", "");

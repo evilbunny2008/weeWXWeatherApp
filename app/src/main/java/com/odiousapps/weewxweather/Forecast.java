@@ -65,7 +65,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		{
 			swipeLayout1.setRefreshing(true);
 			LogMessage("swipeLayout1.onRefresh();");
-			weeWXAppCommon.getForecast(true, false);
+			weeWXAppCommon.getForecast(true, false, false);
 		});
 
 		swipeLayout2 = rootView.findViewById(R.id.swipeToRefresh2);
@@ -77,7 +77,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
-				weeWXAppCommon.getRadarImage(true, false, false);
+				weeWXAppCommon.getRadarImage(true, false, false, false);
 			else
 				loadRadar(true);
 		});
@@ -258,7 +258,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(radtype.equals("image"))
 		{
-			Bitmap bm = weeWXAppCommon.getRadarImage(false, false, false);
+			Bitmap bm = weeWXAppCommon.getRadarImage(false, false, false, false);
 			if(bm == null)
 			{
 				failedRadarWebViewDownload(R.string.radar_download_failed);
@@ -498,7 +498,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		if((boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.ForecastOnForecastScreen)
 			return;
 
-		boolean ret = weeWXAppCommon.getForecast(false, false);
+		boolean ret = weeWXAppCommon.getForecast(false, false, false);
 		if(!ret)
 		{
 			String LastForecastError = (String)KeyValue.readVar("LastForecastError", "");
@@ -519,8 +519,9 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private void generateForecast()
 	{
 		String forecastGson = (String)KeyValue.readVar("forecastGsonEncoded", "");
-		boolean hasForecastGson = forecastGson != null && !forecastGson.isBlank() && forecastGson.length() > 128;
-		LogMessage("forecastGson: " + forecastGson);
+		boolean hasForecastGson = forecastGson != null && forecastGson.length() > 128;
+		if(hasForecastGson)
+			LogMessage("forecastGson.length(): " + forecastGson.length());
 
 		if(!hasForecastGson)
 		{

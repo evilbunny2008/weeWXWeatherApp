@@ -370,11 +370,11 @@ public class weeWXApp extends Application
 
 		applyTheme(false);
 
-		LogMessage("weeWXApp.java UpdateCheck.cancelAlarm()");
-		UpdateCheck.cancelAlarm();
-
-		LogMessage("weeWXApp.java UpdateCheck.setNextAlarm()");
-		UpdateCheck.setNextAlarm();
+//		LogMessage("weeWXApp.java UpdateCheck.cancelAlarm()");
+//		UpdateCheck.cancelAlarm();
+//
+//		LogMessage("weeWXApp.java UpdateCheck.setNextAlarm()");
+//		UpdateCheck.setNextAlarm();
 
 		LogMessage("weeWXApp.java UpdateCheck.runInTheBackground(false, true)");
 		UpdateCheck.runInTheBackground(false, true);

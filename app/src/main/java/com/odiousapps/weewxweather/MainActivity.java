@@ -43,6 +43,10 @@ import com.google.android.material.textview.MaterialTextView;
 import java.lang.reflect.Field;
 import java.net.URI;
 import java.net.URLDecoder;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -129,7 +133,7 @@ public class MainActivity extends FragmentActivity
 
 	private Future<?> backgroundTask;
 
-	private long bgStart;
+	private Instant bgStart = Instant.EPOCH;
 
 	private int theme;
 
@@ -1080,16 +1084,16 @@ public class MainActivity extends FragmentActivity
 			return;
 		}
 
-		long current_time = weeWXAppCommon.getCurrTime();
+		Instant now = Instant.now();
 
 		UpdateCheck.cancelAlarm();
 
 		if(backgroundTask != null && !backgroundTask.isDone())
 		{
-			if(bgStart + 30 > current_time)
+			if(Math.abs(Duration.between(bgStart, now).toSeconds()) < 30)
 			{
 				LogMessage("processSettings() executor is still running and is less than 30s old (" +
-				                          (current_time - bgStart) + "s), skipping...",	true, KeyValue.w);
+				           Math.abs(Duration.between(bgStart, now).toSeconds()) + "s), skipping...",	true, KeyValue.w);
 				return;
 			}
 
@@ -1098,7 +1102,7 @@ public class MainActivity extends FragmentActivity
 			backgroundTask = null;
 		}
 
-		bgStart = current_time;
+		bgStart = now;
 		backgroundTask = executor.submit(() ->
 		{
 			LogMessage("processSettings() bg executor started...");
@@ -1132,7 +1136,7 @@ public class MainActivity extends FragmentActivity
 									(dialog, which) -> {}).show();
 				});
 
-				bgStart = 0;
+				bgStart = Instant.EPOCH;
 				return;
 			}
 
@@ -1207,7 +1211,7 @@ public class MainActivity extends FragmentActivity
 									(dialog, which) -> {}).show();
 				});
 
-				bgStart = 0;
+				bgStart = Instant.EPOCH;
 				return;
 			}
 
@@ -1249,27 +1253,20 @@ public class MainActivity extends FragmentActivity
 							String[] allURLs = new String[URLs.length * 7];
 							Calendar cal = Calendar.getInstance();
 							Date d;
-							long now = System.currentTimeMillis();
 							int rc = 0;
 							for(String url : URLs)
 							{
 								for(int i = 0; i < 7; i++)
 								{
-									long futureWhen = now + 86_400_000 * i;
+									Instant futureWhen = now.plusMillis(86_400_000 * i);
+									ZonedDateTime zdt = now.atZone(ZoneId.systemDefault());
 
 									allURLs[rc] = url;
-									d = new Date(futureWhen);
-									cal.setTime(d);
-
-									int day = cal.get(Calendar.DATE);
-									int month = cal.get(Calendar.MONTH) + 1;
-									int year = cal.get(Calendar.YEAR);
-
 									if(i > 0)
 									{
-										allURLs[rc] += String.format(Locale.getDefault(), "?date=%04d", year);
-										allURLs[rc] += String.format(Locale.getDefault(), "-%02d", month);
-										allURLs[rc] += String.format(Locale.getDefault(), "-%02d", day);
+										allURLs[rc] += String.format(Locale.getDefault(), "?date=%04d", zdt.getYear());
+										allURLs[rc] += String.format(Locale.getDefault(), "-%02d", zdt.getMonthValue());
+										allURLs[rc] += String.format(Locale.getDefault(), "-%02d", zdt.getDayOfMonth());
 									}
 
 									rc++;
@@ -1342,7 +1339,7 @@ public class MainActivity extends FragmentActivity
 								closeDrawer();
 							});
 
-							bgStart = 0;
+							bgStart = Instant.EPOCH;
 							return;
 						}
 						case "yahoo" ->
@@ -1364,7 +1361,7 @@ public class MainActivity extends FragmentActivity
 													(dialog, which) -> {}).show();
 								});
 
-								bgStart = 0;
+								bgStart = Instant.EPOCH;
 								return;
 							}
 						}
@@ -1534,7 +1531,7 @@ public class MainActivity extends FragmentActivity
 										}).show();
 							});
 
-							bgStart = 0;
+							bgStart = Instant.EPOCH;
 							return;
 						}
 					}
@@ -1576,7 +1573,7 @@ public class MainActivity extends FragmentActivity
 										(dialog, which) -> {}).show();
 					});
 
-					bgStart = 0;
+					bgStart = Instant.EPOCH;
 					return;
 				}
 			}
@@ -1595,7 +1592,7 @@ public class MainActivity extends FragmentActivity
 									(dialog, which) -> {}).show();
 				});
 
-				bgStart = 0;
+				bgStart = Instant.EPOCH;
 				return;
 			}
 
@@ -1624,7 +1621,7 @@ public class MainActivity extends FragmentActivity
 									(dialog, which) -> {}).show();
 				});
 
-				bgStart = 0;
+				bgStart = Instant.EPOCH;
 				return;
 			}
 
@@ -1659,7 +1656,7 @@ public class MainActivity extends FragmentActivity
 										(dialog, which) -> {}).show();
 					});
 
-					bgStart = 0;
+					bgStart = Instant.EPOCH;
 					return;
 				}
 			}
@@ -1696,7 +1693,7 @@ public class MainActivity extends FragmentActivity
 											(dialog, which) -> {}).show();
 						});
 
-						bgStart = 0;
+						bgStart = Instant.EPOCH;
 						return;
 					}
 				} catch(Exception e) {
@@ -1742,7 +1739,7 @@ public class MainActivity extends FragmentActivity
 											(dialog, which) -> {}).show();
 						});
 
-						bgStart = 0;
+						bgStart = Instant.EPOCH;
 						return;
 					}
 				}
@@ -1772,7 +1769,7 @@ public class MainActivity extends FragmentActivity
 										(dialog, which) -> {}).show();
 					});
 
-					bgStart = 0;
+					bgStart = Instant.EPOCH;
 					return;
 				}
 			}

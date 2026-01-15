@@ -10,6 +10,9 @@ import android.view.ViewParent;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 
+import java.time.Duration;
+import java.time.Instant;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -27,13 +30,11 @@ public class Custom extends Fragment
 	private SafeWebView wv;
 	private SwipeRefreshLayout swipeLayout;
 	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
-	private long lastRefresh = 0;
+	private Instant lastRefresh = Instant.EPOCH;
 
 	@Nullable
 	@Override
-	public View onCreateView(@NonNull LayoutInflater inflater,
-	                         @Nullable ViewGroup container,
-	                         @Nullable Bundle savedInstanceState)
+	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
 		LogMessage("Custom.onCreateView()");
 		super.onCreateView(inflater, container, savedInstanceState);
@@ -47,19 +48,8 @@ public class Custom extends Fragment
 			swipeLayout.setRefreshing(true);
 			LogMessage("onRefresh();");
 			loadCustom(true);
-			lastRefresh = weeWXAppCommon.getCurrTime();
+			lastRefresh = Instant.now();
 		});
-
-		return view;
-	}
-
-	@Override
-	public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState)
-	{
-		LogMessage("Custom.onViewCreated()");
-		super.onViewCreated(view, savedInstanceState);
-
-		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		if(wv == null)
 			wv = weeWXApp.getInstance().wvpl.getWebView();
@@ -77,19 +67,10 @@ public class Custom extends Fragment
 
 		wv.setOnKeyListener((v, keyCode, event) ->
 		{
-			if(event.getAction() == KeyEvent.ACTION_DOWN)
+			if(wv != null && wv.canGoBack() && event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_BACK)
 			{
-				if((keyCode == KeyEvent.KEYCODE_BACK))
-				{
-					if(wv != null)
-					{
-						if(wv.canGoBack())
-						{
-							wv.goBack();
-							return true;
-						}
-					}
-				}
+				wv.goBack();
+				return true;
 			}
 
 			return false;
@@ -98,6 +79,10 @@ public class Custom extends Fragment
 		setMode();
 
 		loadCustom(false);
+
+		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
+
+		return view;
 	}
 
 	private void setMode()
@@ -198,12 +183,12 @@ public class Custom extends Fragment
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
 		{
-			long currtime = weeWXAppCommon.getCurrTime();
+			Instant now = Instant.now();
 
-			if(lastRefresh + 30 > currtime)
+			if(Math.abs(Duration.between(lastRefresh, now).toSeconds()) < 30)
 				return;
 
-			lastRefresh = currtime;
+			lastRefresh = now;
 
 			int pos = (int)KeyValue.readVar("updateInterval", weeWXApp.updateInterval_default);
 			if(pos > 0 && KeyValue.isVisible)

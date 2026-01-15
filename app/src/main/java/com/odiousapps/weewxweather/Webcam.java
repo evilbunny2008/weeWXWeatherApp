@@ -36,20 +36,14 @@ public class Webcam extends Fragment
 		{
 			LogMessage("Webcam.java weeWXAppCommon.getWebcamImage(true, false);");
 			swipeLayout.setRefreshing(true);
-			weeWXAppCommon.getWebcamImage(true, false, true);
+			weeWXAppCommon.getWebcamImage(true, false, true, false);
 		});
-
-		return rootView;
-	}
-
-	@Override
-	public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
-	{
-		super.onViewCreated(view, savedInstanceState);
 
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		loadWebcamImage();
+
+		return rootView;
 	}
 
 	void stopRefreshing()
@@ -88,7 +82,8 @@ public class Webcam extends Fragment
 		iv.post(() ->
 		{
 			iv.setImageBitmap(bm);
-			iv.invalidate();
+			//iv.invalidate();
+			stopRefreshing();
 		});
 
 		LogMessage("Finished reading webcam.jpg into memory and iv should have updated...");
@@ -98,18 +93,15 @@ public class Webcam extends Fragment
 	{
 		LogMessage("loadWebcamImage...");
 
-		if(!KeyValue.isPrefSet("lastWebcamDownload"))
-			return;
-
 		try
 		{
-			Bitmap bm = weeWXAppCommon.getWebcamImage(false, false, true);
+			Bitmap bm = weeWXAppCommon.getWebcamImage(false, false, true, false);
 			if(bm != null)
 				showWebcamImage(bm);
 			else
 				noImageToShow(weeWXApp.getAndroidString(R.string.webcam_still_downloading));
 		} catch(Exception e) {
-			LogMessage("Error! e: " + e, true, KeyValue.e);
+			LogMessage("loadWebcamImage() Error! e: " + e, true, KeyValue.e);
 			noImageToShow("Error: " + e);
 		}
 
@@ -118,7 +110,7 @@ public class Webcam extends Fragment
 
 	private final Observer<String> notificationObserver = str ->
 	{
-		LogMessage("Webcam.java notificationObserver: " + str);
+		LogMessage("Webcam.notificationObserver notificationObserver: " + str);
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEBCAM_INTENT))
 			loadWebcamImage();
