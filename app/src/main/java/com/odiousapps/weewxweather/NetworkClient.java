@@ -200,7 +200,7 @@ class NetworkClient
 
 		LogMessage("NetworkClient.getRequest() URL: " + url);
 
-		String referer = url.substring(0, url.indexOf("/", 8));
+		String referer = url.indexOf("/", 8) > 0 ? url.substring(0, url.indexOf("/", 8)) : url;
 
 		LogMessage("NetworkClient.getRequest() referer: " + referer);
 
