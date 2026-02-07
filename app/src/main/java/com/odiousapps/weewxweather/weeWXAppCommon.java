@@ -3723,8 +3723,8 @@ class weeWXAppCommon
 
 		if(r1 == null || r1.days() == null || r1.days().isEmpty())
 		{
-			if(forecastData != null && !forecastData.isBlank())
-				CustomDebug.writeDebug("weeWX", "forecast.html", forecastData);
+//			if(forecastData != null && !forecastData.isBlank())
+//				CustomDebug.writeDebug("weeWX", "forecast.html", forecastData);
 
 			LogMessage("reallyGetForecast() Failed to process forecast data, giving up...", KeyValue.w);
 			KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data));
@@ -4740,12 +4740,15 @@ class weeWXAppCommon
 		long period = ret[0];
 		long wait = ret[1];
 
-		if(period <= 0)
-			return new long[]{now, period, wait, 0L, 0L};
-
 		//LogMessage("Here1");
 
 		long lastDownloadTime = getLDTms() + wait + 1_000L;
+
+		string_time = sdf8.format(lastDownloadTime);
+		LogMessage("getNPWSLL() lastDownloadTime: " + string_time);
+
+		if(period <= 0)
+			return new long[]{now, period, wait, 0L, 0L, lastDownloadTime};
 
 		//LogMessage("Here2");
 
@@ -4769,9 +4772,6 @@ class weeWXAppCommon
 
 		string_time = sdf8.format(lastStart);
 		LogMessage("getNPWSLL() lastStart: " + string_time);
-
-		string_time = sdf8.format(lastDownloadTime);
-		LogMessage("getNPWSLL() lastDownloadTime: " + string_time);
 
 		return new long[]{now, period, wait, start, lastStart, lastDownloadTime};
 	}

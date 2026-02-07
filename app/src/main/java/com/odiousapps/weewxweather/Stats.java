@@ -55,8 +55,8 @@ public class Stats extends Fragment
 		mySlider.setBackgroundColor(bgColour);
 		mySlider.addOnChangeListener((slider, value, fromUser) ->
 		{
-			LogMessage("Current Slider zoom =" + (int)mySlider.getValue() + "%");
-			LogMessage("New Slider zoom =" + value + "%");
+			LogMessage("Current Slider zoom = " + (int)mySlider.getValue() + "%");
+			LogMessage("New Slider zoom = " + value + "%");
 
 			if(fromUser && currZoom != (int)value)
 			{
@@ -170,26 +170,23 @@ public class Stats extends Fragment
 		String jsCommon = """
 			(function()
 			{
-				if(document == null)
-					return -1;
+				if(document == null) return -1;
+				if(document.body == null) return -1;
+				if(document.body.style == null) return -1;
+				if(document.body.style.zoom == null) return -1;
 
-				if(document.body == null)
-					return -1;
-
-				if(document.body.style == null)
-					return -1;
-
-				if(document.body.style.zoom == null)
-					return -1;
 			""";
 
-		String jsBottom = "\n})();";
+		String jsBottom = " })();";
 
-		String js1 = jsCommon + "\n\treturn document.body.style.zoom;\n" + jsBottom;
+		String js1 = jsCommon + "return document.body.style.zoom;" + jsBottom;
 
-		String js2 = jsCommon + "\n\tdocument.body.style.zoom = " + finalZoomDec + ";\n\n\treturn true;\n" + jsBottom;
+		LogMessage("Get Zoom JS: " + js1.replaceAll("[\n\r\t]", " ")
+				.replaceAll("\\s+", " "), KeyValue.d);
 
-		LogMessage("Set Zoom JS: " + js2.replaceAll("[\n\r\t]", "")
+		String js2 = jsCommon + "document.body.style.zoom = " + finalZoomDec + "; return 'OK'';" + jsBottom;
+
+		LogMessage("Set Zoom JS: " + js2.replaceAll("[\n\r\t]", " ")
 				.replaceAll("\\s+", " "), KeyValue.d);
 
 		Handler handler = new Handler(Looper.getMainLooper());
@@ -200,18 +197,24 @@ public class Stats extends Fragment
 			{
 			    wv.evaluateJavascript(js1, value1 ->
 			    {
+					LogMessage("value1: " + value1, KeyValue.i);
+
 				    if(value1 == null || value1.isBlank() || value1.equals("null") || value1.equals("-1"))
 				    {
-						handler.postDelayed(this, 50);
+						handler.postDelayed(this, 150);
 						return;
 				    }
 
 					Float f = weeWXAppCommon.str2Float(value1);
 					if(f == null)
 					{
-						handler.postDelayed(this, 50);
+						LogMessage("f is null!", KeyValue.i);
+
+						handler.postDelayed(this, 150);
 						return;
 					}
+
+				    LogMessage("f == " + f, KeyValue.i);
 
 					if(f == finalZoomDec)
 					{
@@ -225,7 +228,9 @@ public class Stats extends Fragment
 						LogMessage("Stats.evaluateJavascript() value: " + value2);
 						if(!value2.equals("true"))
 					    {
-							handler.postDelayed(this, 50);
+						    LogMessage("value != true: " + value2);
+
+							handler.postDelayed(this, 150);
 							return;
 					    }
 
