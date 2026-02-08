@@ -170,21 +170,19 @@ public class Stats extends Fragment
 		String jsCommon = """
 			(function()
 			{
-				if(document == null) return -1;
-				if(document.body == null) return -1;
-				if(document.body.style == null) return -1;
-				if(document.body.style.zoom == null) return -1;
+				if (!document || !document.body || !document.body.style) return -1;
 
 			""";
 
-		String jsBottom = " })();";
+		String jsBottom = "})();";
 
-		String js1 = jsCommon + "return document.body.style.zoom;" + jsBottom;
+		String js1 = jsCommon + "var z = window.getComputedStyle(document.body).zoom;" +
+		                        "return z ? z : -1;" + jsBottom;
 
 		LogMessage("Get Zoom JS: " + js1.replaceAll("[\n\r\t]", " ")
 				.replaceAll("\\s+", " "), KeyValue.d);
 
-		String js2 = jsCommon + "document.body.style.zoom = " + finalZoomDec + "; return 'OK'';" + jsBottom;
+		String js2 = jsCommon + "document.body.style.zoom = " + finalZoomDec + "; return 'OK';" + jsBottom;
 
 		LogMessage("Set Zoom JS: " + js2.replaceAll("[\n\r\t]", " ")
 				.replaceAll("\\s+", " "), KeyValue.d);
@@ -201,7 +199,7 @@ public class Stats extends Fragment
 
 				    if(value1 == null || value1.isBlank() || value1.equals("null") || value1.equals("-1"))
 				    {
-						handler.postDelayed(this, 150);
+					    handler.postDelayed(this, 150);
 						return;
 				    }
 
@@ -214,27 +212,27 @@ public class Stats extends Fragment
 						return;
 					}
 
-				    LogMessage("f == " + f, KeyValue.i);
+					LogMessage("f == " + f, KeyValue.i);
 
 					if(f == finalZoomDec)
 					{
-						LogMessage("Zoom value = " + finalZoom + "%", KeyValue.d);
+						LogMessage("Current page zoom: " + finalZoom + "%, no change required", KeyValue.d);
 						mySlider.setValue(finalZoom);
 						return;
 					}
 
 				    wv.post(() -> wv.evaluateJavascript(js2, value2 ->
 				    {
-						LogMessage("Stats.evaluateJavascript() value: " + value2);
-						if(!value2.equals("true"))
+						LogMessage("Stats.evaluateJavascript() returned value: " + value2);
+						if(!value2.equals("\"OK\""))
 					    {
-						    LogMessage("value != true: " + value2);
+						    LogMessage("value != OK: " + value2);
 
 							handler.postDelayed(this, 150);
 							return;
 					    }
 
-						LogMessage("new zoom value = " + finalZoom + "%", KeyValue.d);
+						LogMessage("New zoom set to value: " + finalZoom + "%", KeyValue.d);
 					    mySlider.setValue(finalZoom);
 				    }));
 			    });
