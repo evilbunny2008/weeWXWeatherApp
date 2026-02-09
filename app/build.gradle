@@ -11,8 +11,8 @@ android
         applicationId = "com.odiousapps.weewxweather"
         minSdk = 24
         targetSdk = 36
-	    versionName = "1.99.84beta"
-        versionCode = 1099084
+	    versionName = "1.99.85beta"
+        versionCode = 1099085
     }
 
 	buildFeatures
@@ -81,7 +81,7 @@ dependencies
 	implementation("com.squareup.okhttp3:okhttp:5.3.2")
 	implementation("org.nanohttpd:nanohttpd:2.3.1")
 
-	implementation("dnsjava:dnsjava:3.6.3")
+	implementation("dnsjava:dnsjava:3.6.4")
 	implementation("org.slf4j:slf4j-api:2.0.17")
 	implementation("uk.uuid.slf4j:slf4j-android:2.0.17-0")
 

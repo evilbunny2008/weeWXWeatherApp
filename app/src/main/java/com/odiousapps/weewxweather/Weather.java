@@ -225,7 +225,11 @@ public class Weather extends Fragment implements View.OnClickListener
 		webView.setOnPageFinishedListener((v, url) ->
 		{
 			if(url.strip().equals("data:text/html,"))
+			{
+				forecast_refresh = true;
+				stopRefreshing();
 				return;
+			}
 
 			LogMessage("Just loaded URL: " + url);
 
@@ -249,17 +253,34 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private void adjustHeight(SafeWebView webView, int attempt)
 	{
-		if(webView == null || current == null || (current.getHeight() == 0 && swipeLayout.getHeight() == 0))
+		if(webView == null || current == null)
+		{
+			if(attempt >= 3)
+			{
+				current_refreshed = true;
+				stopRefreshing();
+			}
+
 			return;
+		}
 
 		LogMessage("current.getHeight(): " + current.getHeight());
 		LogMessage("swipeLayout.getHeight(): " + swipeLayout.getHeight());
 
 		if(current.getHeight() == 0 || swipeLayout.getHeight() == 0)
+		{
+			if(attempt >= 3)
+			{
+				current_refreshed = true;
+				stopRefreshing();
+			}
+
 			return;
+		}
 
 		webView.measure(View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
 				View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+
 		int heightMH = webView.getMeasuredHeight();
 
 		LogMessage("webView measured height: " + heightMH);
@@ -289,7 +310,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						LogMessage("current.evaluateJavascript() value is null " +
 						                          "or blank or equals 'null'", KeyValue.v);
 
-						if(attempt == 3)
+						if(attempt >= 3)
 						{
 							current_refreshed = true;
 							stopRefreshing();
@@ -307,7 +328,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					{
 						LogMessage("heightInPx is 0 skipping...");
 
-						if(attempt == 3)
+						if(attempt >= 3)
 						{
 							current_refreshed = true;
 							stopRefreshing();
@@ -325,7 +346,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						if(!current.isInLayout())
 							current.post(() -> current.requestLayout());
 
-						if(attempt == 3)
+						if(attempt >= 3)
 						{
 							current_refreshed = true;
 							stopRefreshing();
@@ -1272,10 +1293,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				forecast_refresh = true;
 				stopRefreshing();
 			}
-		}
-
-		if(radarforecast == weeWXApp.ForecastOnHomeScreen)
-		{
+		} else {
 			if(str.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
 			{
 				LogMessage("Weather.notificationObserver running reloadForecast()");

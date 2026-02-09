@@ -199,7 +199,7 @@ public class Stats extends Fragment
 
 				    if(value1 == null || value1.isBlank() || value1.equals("null") || value1.equals("-1"))
 				    {
-					    handler.postDelayed(this, 150);
+						handler.postDelayed(this, 150);
 						return;
 				    }
 
@@ -212,7 +212,7 @@ public class Stats extends Fragment
 						return;
 					}
 
-					LogMessage("f == " + f, KeyValue.i);
+					LogMessage("f: " + f + ", finalZoomDec: " + finalZoomDec, KeyValue.i);
 
 					if(f == finalZoomDec)
 					{
