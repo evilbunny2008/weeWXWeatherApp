@@ -1124,9 +1124,13 @@ public class Weather extends Fragment implements View.OnClickListener
 				}
 			}
 
+			String logoStyle = "height:45px";
+			if(fctype.equals("met.no") && (int)KeyValue.readVar("theme", weeWXApp.theme_default) == R.style.AppTheme_weeWXApp_Dark_Common)
+				logoStyle += ";filter:invert(1)";
+
 			sb.append("<div style='text-align:center'><img src='")
 					.append(logo)
-					.append("' height='45px' />\n</div>\n")
+					.append("' style='").append(logoStyle).append("' />\n</div>\n")
 					.append(content[1]);
 
 			sb.append(weeWXApp.html_footer);

@@ -577,7 +577,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		updateForecast(fctype, content[0], content[1]);
+		updateForecast(fctype, content[1], content.length > 2 ? content[2] : "");
 	}
 
 	private void showTextFC(String text)
@@ -636,11 +636,19 @@ public class Forecast extends Fragment implements View.OnClickListener
 		String finalextSVG = extSVG;
 		String finalextPNG = extPNG;
 
+		boolean isDarkTheme = (int)KeyValue.readVar("theme", weeWXApp.theme_default) == R.style.AppTheme_weeWXApp_Dark_Common;
+
 		switch(fctype.toLowerCase())
 		{
 			case "yahoo" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/yahoo" + finalextSVG)));
 			case "weatherzone", "weatherzone2" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/wz" + finalextSVG)));
-			case "met.no" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_no.png")));
+			case "met.no" -> im.post(() -> {
+				im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met_no.png"));
+				if(isDarkTheme)
+					im.setColorFilter(android.graphics.Color.WHITE, android.graphics.PorterDuff.Mode.SRC_IN);
+				else
+					im.clearColorFilter();
+			});
 			case "wmo.int" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wmo.png")));
 			case "weather.gov" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wgov.png")));
 			case "weather.gc.ca", "weather.gc.ca-fr" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wca.png")));
