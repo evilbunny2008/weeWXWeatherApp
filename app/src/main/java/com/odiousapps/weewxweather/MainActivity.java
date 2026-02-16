@@ -102,8 +102,8 @@ public class MainActivity extends FragmentActivity
 	private CPEditText widgetBG, widgetFG;
 	private MaterialButton b1, b2, b3, b4;
 	private MaterialAutoCompleteTextView s1, s2, s3;
-	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, use_exact_alarm,
-			save_app_debug_logs, next_moon, force_dark_mode;
+	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, rain_in_inches,
+			use_exact_alarm, save_app_debug_logs, next_moon, force_dark_mode;
 	private MaterialRadioButton showRadar, showForecast;
 	private ViewPager2 mViewPager;
 
@@ -186,6 +186,7 @@ public class MainActivity extends FragmentActivity
 		screen_elements.add(new Setting("settings", R.id.settings));
 		screen_elements.add(new Setting("show_indoor", R.id.show_indoor));
 		screen_elements.add(new Setting("metric_forecasts", R.id.metric_forecasts));
+		screen_elements.add(new Setting("rain_in_inches", R.id.rain_in_inches));
 		screen_elements.add(new Setting("wifi_only", R.id.wifi_only));
 		screen_elements.add(new Setting("til2", R.id.til2));
 		screen_elements.add(new Setting("spinner1", R.id.spinner1));
@@ -407,6 +408,7 @@ public class MainActivity extends FragmentActivity
 		customURL = findViewById(R.id.customURL);
 
 		metric_forecasts = findViewById(R.id.metric_forecasts);
+		rain_in_inches = findViewById(R.id.rain_in_inches);
 		show_indoor = findViewById(R.id.show_indoor);
 
 		use_exact_alarm = findViewById(R.id.use_exact_alarm);
@@ -461,7 +463,7 @@ public class MainActivity extends FragmentActivity
 		bgtil = findViewById(R.id.bgTextInputLayout);
 
 		int fg, bg;
-		boolean wo, met, si, sr, sf, uea, sadl, nm, fdm;
+		boolean wo, met, rii, si, sr, sf, uea, sadl, nm, fdm;
 
 		UpdateFrequency = (int)KeyValue.readVar("updateInterval", weeWXApp.updateInterval_default);
 		DayNightMode = (int)KeyValue.readVar("DayNightMode", weeWXApp.DayNightMode_default);
@@ -474,6 +476,7 @@ public class MainActivity extends FragmentActivity
 
 		wo = (boolean)KeyValue.readVar("onlyWIFI", weeWXApp.onlyWIFI_default);
 		met = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		rii = (boolean)KeyValue.readVar("rainInInches", false);
 		si = (boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default);
 		sr = (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default);
 
@@ -498,6 +501,7 @@ public class MainActivity extends FragmentActivity
 
 			wo = savedInstanceState.getBoolean("wo", wo);
 			met = savedInstanceState.getBoolean("met", met);
+			rii = savedInstanceState.getBoolean("rii", rii);
 			si = savedInstanceState.getBoolean("si", si);
 			sr = savedInstanceState.getBoolean("sr", sr);
 			uea = savedInstanceState.getBoolean("uea", uea);
@@ -535,6 +539,7 @@ public class MainActivity extends FragmentActivity
 
 		wifi_only.setChecked(wo);
 		metric_forecasts.setChecked(met);
+		rain_in_inches.setChecked(rii);
 		show_indoor.setChecked(si);
 		use_exact_alarm.setChecked(uea);
 		save_app_debug_logs.setChecked(sadl);
@@ -887,6 +892,7 @@ public class MainActivity extends FragmentActivity
 
 		outState.putBoolean("wo", wifi_only.isChecked());
 		outState.putBoolean("met", metric_forecasts.isChecked());
+		outState.putBoolean("rii", rain_in_inches.isChecked());
 		outState.putBoolean("si", show_indoor.isChecked());
 		outState.putBoolean("sr", showRadar.isChecked());
 		outState.putBoolean("uea", use_exact_alarm.isChecked());
@@ -1838,6 +1844,7 @@ public class MainActivity extends FragmentActivity
 				KeyValue.putVar("custom_url", appCustomURL);
 
 			KeyValue.putVar("metric", metric_forecasts.isChecked());
+			KeyValue.putVar("rainInInches", rain_in_inches.isChecked());
 			KeyValue.putVar("showIndoor", show_indoor.isChecked());
 			KeyValue.putVar("DayNightMode", DayNightMode);
 			KeyValue.putVar("onlyWIFI", wifi_only.isChecked());
