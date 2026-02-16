@@ -25,6 +25,36 @@
 			android:foregroundGravity="center"
 			android:contentDescription="@string/empty" />
 
+		<com.google.android.material.button.MaterialButtonToggleGroup
+			android:id="@+id/forecastToggle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:layout_marginTop="4dp"
+			android:layout_marginBottom="4dp"
+			android:visibility="gone"
+			app:singleSelection="true"
+			app:selectionRequired="true"
+			xmlns:app="http://schemas.android.com/apk/res-auto">
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/btnDaily"
+				style="?attr/materialButtonOutlinedStyle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/forecast_daily"
+				android:textSize="12sp" />
+
+			<com.google.android.material.button.MaterialButton
+				android:id="@+id/btn6Hourly"
+				style="?attr/materialButtonOutlinedStyle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/forecast_6hourly"
+				android:textSize="12sp" />
+
+		</com.google.android.material.button.MaterialButtonToggleGroup>
+
 		<FrameLayout
 			android:id="@+id/forecastWebView"
 			android:layout_width="match_parent"
