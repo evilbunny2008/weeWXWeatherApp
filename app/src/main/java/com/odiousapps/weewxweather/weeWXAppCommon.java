@@ -1846,9 +1846,11 @@ class weeWXAppCommon
 					if(!metric)
 						day.max = C2Fdeg(maxTemp);
 
-					day.min = rain + "mm";
-					if(!metric)
+					boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", false);
+					if(!metric || rainInInches)
 						day.min = mm2in(Float.parseFloat(rain)) + "in";
+					else
+						day.min = rain + "mm";
 
 					days.add(day);
 
@@ -2013,10 +2015,12 @@ class weeWXAppCommon
 
 					try
 					{
+						boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", false);
 						double precip = details.getDouble("precipitation_amount");
-						day.min = precip + "mm";
-						if(!metric)
+						if(!metric || rainInInches)
 							day.min = round(precip / 25.4, 1) + "in";
+						else
+							day.min = precip + "mm";
 					} catch(Exception ignored) {}
 				}
 

@@ -9,6 +9,7 @@
     <string name="yesterdayStats">Yesterday\'s Statistics</string>
 	<string name="forecast">Forecast Page</string>
 	<string name="metric">Use Metric?</string>
+	<string name="rain_in_inches">Rain in Inches?</string>
 	<string name="about_app">About the App</string>
     <string name="weather2">Weather</string>
     <string name="stats2">Statistics</string>
