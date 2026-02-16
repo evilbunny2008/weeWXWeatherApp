@@ -1376,28 +1376,39 @@ public class MainActivity extends FragmentActivity
 							LogMessage("processSettings() forecastURL: " + forecastURL);
 							LogMessage("processSettings() fctype: " + fctype);
 
-							URI uri = URI.create(forecastURL);
-
 							float lat = 0, lon = 0;
 
-							if(uri.getQuery() != null)
+							if(forecastURL.startsWith("http"))
 							{
-								for(String pair : uri.getQuery().split("&"))
+								// Full URL provided, extract lat/lon from query params
+								URI uri = URI.create(forecastURL);
+
+								if(uri.getQuery() != null)
 								{
-									int idx = pair.indexOf('=');
-									String key = URLDecoder.decode(pair.substring(0, idx), utf8);
-									String val = URLDecoder.decode(pair.substring(idx + 1), utf8);
+									for(String pair : uri.getQuery().split("&"))
+									{
+										int idx = pair.indexOf('=');
+										String key = URLDecoder.decode(pair.substring(0, idx), utf8);
+										String val = URLDecoder.decode(pair.substring(idx + 1), utf8);
 
-									if(key.equals("lat"))
-										lat = Float.parseFloat(val);
+										if(key.equals("lat"))
+											lat = Float.parseFloat(val);
 
-									if(key.equals("lon"))
-										lon = Float.parseFloat(val);
+										if(key.equals("lon"))
+											lon = Float.parseFloat(val);
+									}
 								}
+							} else if(forecastURL.contains(",")) {
+								// Coordinates format: lat,lon
+								String[] llbits = forecastURL.split(",", 2);
+								lat = Float.parseFloat(llbits[0].strip());
+								lon = Float.parseFloat(llbits[1].strip());
 							}
 
 							if(lat != 0 && lon != 0)
 							{
+								forecastURL = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=" + lat + "&lon=" + lon;
+
 								String url = "https://odiousapps.com/get-location-name-by-ll.php";
 
 								forecastLocationName = weeWXAppCommon.downloadString(url, Map.of(
@@ -1406,6 +1417,8 @@ public class MainActivity extends FragmentActivity
 
 								LogMessage("processSettings() forecastLocationName: " + forecastLocationName);
 							}
+
+							LogMessage("processSettings() met.no forecastURL: " + forecastURL);
 						}
 						case "weather.gc.ca", "weather.gc.ca-fr", "metoffice.gov.uk",
 						     "bom2", "aemet.es", "dwd.de", "tempoitalia.it", "weatherzone2" ->
