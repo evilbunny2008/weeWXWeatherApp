@@ -3532,7 +3532,7 @@ class weeWXAppCommon
 		}
 
 		LogMessage("Weather.loadWebView() WZ content.length(): " + content.length());
-		return new String[]{null, content};
+		return new String[]{null, content, gh.desc != null ? gh.desc : ""};
 	}
 
 	static boolean reallyGetForecast(String fctype, String url) throws InterruptedException, IOException
