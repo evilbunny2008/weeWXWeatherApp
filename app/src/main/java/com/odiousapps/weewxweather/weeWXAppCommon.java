@@ -173,6 +173,7 @@ class weeWXAppCommon
 	static final SimpleDateFormat sdf13 = new SimpleDateFormat("dd MMM yyyy HH:mm:ss.SSS", Locale.getDefault());
 	static final SimpleDateFormat sdf14 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS XXX", Locale.getDefault());
 	static final SimpleDateFormat sdf15 = new SimpleDateFormat("d MMM yyyy", Locale.getDefault());
+	static final SimpleDateFormat sdf6h = new SimpleDateFormat("EEE d, HH:mm", Locale.getDefault());
 
 	private static final BitmapFactory.Options options = new BitmapFactory.Options();
 
@@ -194,7 +195,7 @@ class weeWXAppCommon
 	private static int wriCounter = 0;
 	private static long wriStart = 0;
 
-	record Result(List<Day> days, String desc, long timestamp) {}
+	record Result(List<Day> days, List<Day> sixHourly, String desc, long timestamp) {}
 	record Result2(String[] forecast_text, String desc, int rc) {}
 
 	private static final String utf8 = "utf-8";
@@ -794,6 +795,11 @@ class weeWXAppCommon
 
 	static String generateForecast(List<Day> days, long timestamp, boolean showHeader)
 	{
+		return generateForecast(days, timestamp, showHeader, false);
+	}
+
+	static String generateForecast(List<Day> days, long timestamp, boolean showHeader, boolean sixHourlyMode)
+	{
 		LogMessage("Starting generateForecast()");
 		LogMessage("days: " + days);
 
@@ -882,7 +888,9 @@ class weeWXAppCommon
 
 			sb.append("\t\t\t<div class='dayTitle'>");
 
-			if(i > 0)
+			if(sixHourlyMode)
+				sb.append(weeWXAppCommon.sdf6h.format(day.timestamp));
+			else if(i > 0)
 				sb.append(weeWXAppCommon.sdf2.format(day.timestamp));
 			else
 				sb.append(weeWXApp.getAndroidString(R.string.today));
@@ -1051,7 +1059,7 @@ class weeWXAppCommon
 		}
 
 		LogMessage("Forecast data has been processed, sending for layout...");
-		return new Result(days, desc, timestamp);
+		return new Result(days, null, desc, timestamp);
 	}
 
 	private static String bomlookup(String icon)
@@ -1125,7 +1133,7 @@ class weeWXAppCommon
 			days.add(day);
 		}
 
-		return new Result(days, desc, timestamp);
+		return new Result(days, null, desc, timestamp);
 	}
 
 	// Thanks goes to the https://saratoga-weather.org folk for the base NOAA icons and code for dualimage.php
@@ -1276,7 +1284,7 @@ class weeWXAppCommon
 			return null;
 		}
 
-		return new Result(days, desc, timestamp);
+		return new Result(days, null, desc, timestamp);
 	}
 
 	static Result processWMO(String data)
@@ -1350,7 +1358,7 @@ class weeWXAppCommon
 			return null;
 		}
 
-		return new Result(days, desc, timestamp);
+		return new Result(days, null, desc, timestamp);
 	}
 
 	static Result processMetService(String data)
@@ -1425,7 +1433,7 @@ class weeWXAppCommon
 			return null;
 		}
 
-		return new Result(days, desc, timestamp);
+		return new Result(days, null, desc, timestamp);
 	}
 
 	static Result processDWD(String data)
@@ -1501,7 +1509,7 @@ class weeWXAppCommon
 			return null;
 		}
 
-		return new Result(days, desc, timestamp);
+		return new Result(days, null, desc, timestamp);
 	}
 
 	static Result processAEMET(String data)
@@ -1591,7 +1599,7 @@ class weeWXAppCommon
 			return null;
 		}
 
-		return new Result(days, desc, timestamp);
+		return new Result(days, null, desc, timestamp);
 	}
 
 	static Result processWCOM(String data)
@@ -1654,7 +1662,7 @@ class weeWXAppCommon
 			return null;
 		}
 
-		return new Result(days, desc, timestamp);
+		return new Result(days, null, desc, timestamp);
 	}
 
 	static Result processMETIE(String data)
@@ -1865,7 +1873,7 @@ class weeWXAppCommon
 			return null;
 		}
 
-		return new Result(days, desc, timestamp);
+		return new Result(days, null, desc, timestamp);
 	}
 
 	static Result processOWM(String data)
@@ -1927,7 +1935,7 @@ class weeWXAppCommon
 			return null;
 		}
 
-		return new Result(days, desc, timestamp);
+		return new Result(days, null, desc, timestamp);
 	}
 
 	static Result processMetNO(String data)
@@ -1936,10 +1944,10 @@ class weeWXAppCommon
 			return null;
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", false);
 		long timestamp = 0;
 		List<Day> days = new ArrayList<>();
-
-		Calendar cal = Calendar.getInstance();
+		List<Day> sixHourly = new ArrayList<>();
 
 		String desc = (String)KeyValue.readVar("forecastLocationName", "");
 		if(desc == null || desc.isBlank())
@@ -1953,10 +1961,7 @@ class weeWXAppCommon
 
 			jobj = jobj.getJSONObject("properties");
 
-			//CustomDebug.writeDebug("weeWX", "processMetNO.json", jobj.toString(4));
-
 			JSONObject meta = jobj.getJSONObject("meta");
-			JSONObject units = meta.getJSONObject("units");
 			String updated_at = meta.getString("updated_at");
 			JSONArray timeseries = jobj.getJSONArray("timeseries");
 
@@ -1968,100 +1973,121 @@ class weeWXAppCommon
 					updateCacheTime(timestamp);
 			}
 
-			int count = 0;
 			for(int i = 0; i < timeseries.length(); i++)
 			{
-				Day day = new Day();
-
 				JSONObject jobj2 = timeseries.getJSONObject(i);
+				String time = jobj2.getString("time");
 
-//				df = sdf1.parse(jobj2.getString("time"));
-//				cal.setTime(df);
-//				if(cal.get(Calendar.HOUR_OF_DAY) != 0)
-//					continue;
+				boolean isMidnight = time.endsWith("T00:00:00Z");
+				boolean isSixHourly = time.endsWith("T00:00:00Z") || time.endsWith("T06:00:00Z") ||
+						time.endsWith("T12:00:00Z") || time.endsWith("T18:00:00Z");
 
-				if(i != 0 && !jobj2.getString("time").endsWith("T00:00:00Z"))
+				if(i != 0 && !isSixHourly)
 					continue;
 
-				JSONObject tsdata = jobj2.getJSONObject("data");
-				JSONObject details;
+				Day day = buildMetNODay(jobj2, metric, rainInInches);
+				if(day == null)
+					continue;
 
-				String icon = "";
+				if(i == 0 || isMidnight)
+					days.add(day);
 
-				if(tsdata.has("next_12_hours"))
-				{
-					icon = tsdata.getJSONObject("next_12_hours")
-							.getJSONObject("summary")
-							.getString("symbol_code");
-				} else if(tsdata.has("next_6_hours")) {
-					icon = tsdata.getJSONObject("next_6_hours")
-							.getJSONObject("summary")
-							.getString("symbol_code");
-				}
-
-				if(tsdata.has("next_6_hours"))
-				{
-					details = tsdata.getJSONObject("next_6_hours")
-							.getJSONObject("details");
-
-					if(details.has("air_temperature_max"))
-					{
-						day.max = details.getDouble("air_temperature_max") + "&deg;C";
-						if(!metric)
-							day.max = C2Fdeg(Float.parseFloat(day.max));
-					} else {
-						CustomDebug.writeDebug("weeWX", "processMetNO" + count++ + ".json", details.toString(4));
-					}
-
-					try
-					{
-						boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", false);
-						double precip = details.getDouble("precipitation_amount");
-						if(!metric || rainInInches)
-							day.min = round(precip / 25.4, 1) + "in";
-						else
-							day.min = precip + "mm";
-					} catch(Exception ignored) {}
-				}
-
-				JSONObject details2 = tsdata.getJSONObject("instant")
-						.getJSONObject("details");
-				if(details2.has("wind_speed"))
-				{
-					double windSpeed = details2.getDouble("wind_speed");
-					double windDir = details2.getDouble("wind_from_direction");
-
-					if(metric)
-						day.text = Math.round(windSpeed * 3.6) + "kph from the " + degtoname(windDir);
-					else
-						day.text = Math.round(windSpeed * 2.236936) + "mph from the " + degtoname(windDir);
-				}
-
-				day.timestamp = 0;
-				df = sdf1.parse(jobj2.getString("time"));
-				if(df != null)
-					day.timestamp = df.getTime();
-				else
-					day.timestamp = System.currentTimeMillis();
-
-				day.icon = "icons/metno/" + icon + ".svg";
-				String content = weeWXApp.loadFileFromAssets(day.icon);
-				if(content != null && !content.isBlank())
-				{
-					day.icon = "file:///android_asset/" + day.icon;
-					//CustomDebug.writeDebug("weeWX", "processMetNO" + count++ + ".json", jobj2.toString(4));
-				} else {
-					day.icon = null;
-				}
-
-				days.add(day);
+				if(i == 0 || isSixHourly)
+					sixHourly.add(day);
 			}
 		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
 
-		return new Result(days, desc, timestamp);
+		return new Result(days, sixHourly, desc, timestamp);
+	}
+
+	private static Day buildMetNODay(JSONObject jobj2, boolean metric, boolean rainInInches)
+	{
+		try
+		{
+			Day day = new Day();
+			JSONObject tsdata = jobj2.getJSONObject("data");
+
+			String icon = "";
+			if(tsdata.has("next_12_hours"))
+			{
+				icon = tsdata.getJSONObject("next_12_hours")
+						.getJSONObject("summary")
+						.getString("symbol_code");
+			} else if(tsdata.has("next_6_hours")) {
+				icon = tsdata.getJSONObject("next_6_hours")
+						.getJSONObject("summary")
+						.getString("symbol_code");
+			} else if(tsdata.has("next_1_hours")) {
+				icon = tsdata.getJSONObject("next_1_hours")
+						.getJSONObject("summary")
+						.getString("symbol_code");
+			}
+
+			if(tsdata.has("next_6_hours"))
+			{
+				JSONObject details = tsdata.getJSONObject("next_6_hours")
+						.getJSONObject("details");
+
+				if(details.has("air_temperature_max"))
+				{
+					day.max = details.getDouble("air_temperature_max") + "&deg;C";
+					if(!metric)
+						day.max = C2Fdeg(Float.parseFloat(day.max));
+				}
+
+				try
+				{
+					double precip = details.getDouble("precipitation_amount");
+					if(!metric || rainInInches)
+						day.min = round(precip / 25.4, 1) + "in";
+					else
+						day.min = precip + "mm";
+				} catch(Exception ignored) {}
+			} else {
+				// Fallback to instant data for temperature
+				JSONObject instant = tsdata.getJSONObject("instant").getJSONObject("details");
+				if(instant.has("air_temperature"))
+				{
+					day.max = instant.getDouble("air_temperature") + "&deg;C";
+					if(!metric)
+						day.max = C2Fdeg(Float.parseFloat(day.max));
+				}
+			}
+
+			JSONObject details2 = tsdata.getJSONObject("instant")
+					.getJSONObject("details");
+			if(details2.has("wind_speed"))
+			{
+				double windSpeed = details2.getDouble("wind_speed");
+				double windDir = details2.getDouble("wind_from_direction");
+
+				if(metric)
+					day.text = Math.round(windSpeed * 3.6) + "kph from the " + degtoname(windDir);
+				else
+					day.text = Math.round(windSpeed * 2.236936) + "mph from the " + degtoname(windDir);
+			}
+
+			Date df = sdf1.parse(jobj2.getString("time"));
+			if(df != null)
+				day.timestamp = df.getTime();
+			else
+				day.timestamp = System.currentTimeMillis();
+
+			day.icon = "icons/metno/" + icon + ".svg";
+			String content = weeWXApp.loadFileFromAssets(day.icon);
+			if(content != null && !content.isBlank())
+				day.icon = "file:///android_asset/" + day.icon;
+			else
+				day.icon = null;
+
+			return day;
+		} catch(Exception e) {
+			doStackOutput(e);
+			return null;
+		}
 	}
 
 	private static String degtoname(double deg)
@@ -2266,7 +2292,7 @@ class weeWXAppCommon
 			return null;
 		}
 
-		return new Result(days, desc, timestamp);
+		return new Result(days, null, desc, timestamp);
 	}
 
 	static String convertRGB2Hex(String svg)
@@ -3484,19 +3510,27 @@ class weeWXAppCommon
 
 	static String[] getGsonContent(String forecastGson, boolean showHeader)
 	{
+		return getGsonContent(forecastGson, showHeader, false);
+	}
+
+	static String[] getGsonContent(String forecastGson, boolean showHeader, boolean sixHourlyMode)
+	{
 		LogMessage("Weather.loadWebView() forecastGson.length(): " + forecastGson.length());
 
 		Gson gson = new Gson();
-		Result r1 = gson.fromJson(forecastGson, Result.class);
-		if(r1 == null || r1.days() == null || r1.days().isEmpty())
+		GsonHelper gh = gson.fromJson(forecastGson, GsonHelper.class);
+		if(gh == null || gh.days == null || gh.days.isEmpty())
 		{
 			LogMessage("Weather.loadWebView() #2 Failed to process WZ forecast data...");
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data)};
 		}
 
-		LogMessage("Weather.loadWebView() r1.days().size(): " + r1.days().size());
+		List<Day> displayDays = (sixHourlyMode && gh.sixHourly != null && !gh.sixHourly.isEmpty())
+				? gh.sixHourly : gh.days;
 
-		String content = weeWXAppCommon.generateForecast(r1.days(), r1.timestamp(), showHeader);
+		LogMessage("Weather.loadWebView() displayDays.size(): " + displayDays.size());
+
+		String content = weeWXAppCommon.generateForecast(displayDays, gh.timestamp, showHeader, sixHourlyMode);
 		if(content == null || content.isBlank())
 		{
 			LogMessage("Weather.loadWebView() #3 Failed to process WZ forecast data...");
@@ -3740,6 +3774,7 @@ class weeWXAppCommon
 
 		GsonHelper gh = new GsonHelper();
 		gh.days = r1.days();
+		gh.sixHourly = r1.sixHourly();
 		gh.desc = r1.desc();
 		gh.timestamp = r1.timestamp() > 0 ? r1.timestamp() : System.currentTimeMillis();
 

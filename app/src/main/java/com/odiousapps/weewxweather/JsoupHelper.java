@@ -335,7 +335,7 @@ class JsoupHelper
 				}
 			}
 
-			return new Result(days, desc, timestamp);
+			return new Result(days, null, desc, timestamp);
 		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
@@ -614,7 +614,7 @@ class JsoupHelper
 				}
 			}
 
-			return new Result(days, desc, timestamp);
+			return new Result(days, null, desc, timestamp);
 		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
@@ -752,7 +752,7 @@ class JsoupHelper
 				}
 			}
 
-			return new Result(days, desc, timestamp);
+			return new Result(days, null, desc, timestamp);
 		} catch(Exception e) {
 			doStackOutput(e);
 		}
@@ -882,7 +882,7 @@ class JsoupHelper
 				days.add(day);
 			}
 
-			return new Result(days, desc, timestamp);
+			return new Result(days, null, desc, timestamp);
 		} catch(Exception e) {
 			doStackOutput(e);
 		}
@@ -967,7 +967,7 @@ class JsoupHelper
 				days.add(day);
 			}
 
-			return new Result(days, desc, timestamp);
+			return new Result(days, null, desc, timestamp);
 		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
@@ -1334,7 +1334,7 @@ class JsoupHelper
 		if(!body.hasText())
 		{
 			LogMessage("processWZ2Forecasts() body has no text...");
-			return new Result(null, null, 0L);
+			return new Result(null, null, null, 0L);
 		}
 
 //		if(weeWXApp.DEBUG)
@@ -1398,7 +1398,7 @@ class JsoupHelper
 			LogMessage("processWZ2Forecasts() Writting to WZtest_no_daily_forecast_block_body_" + nowTS + ".html");
 			CustomDebug.writeDebug("weeWX", "WZtest_no_daily_forecast_block_body_" + nowTS + ".html", body.html());
 
-			return new Result(null, null, 0L);
+			return new Result(null, null, null, 0L);
 		}
 
 		Element parent = daily_forecast_block.parent();
@@ -1408,7 +1408,7 @@ class JsoupHelper
 			LogMessage("processWZ2Forecasts() Writting to WZtest_no_svg_found_" + nowTS + ".html");
 			CustomDebug.writeDebug("weeWX", "WZtest_no_svg_found_" + nowTS + ".html", daily_forecast_block.outerHtml());
 
-			return new Result(null, null, 0L);
+			return new Result(null, null, null, 0L);
 		}
 
 //		if(weeWXApp.DEBUG)
@@ -1580,9 +1580,9 @@ class JsoupHelper
 //				return null;
 
 		if(!newdays.isEmpty())
-			return new Result(newdays, desc, 0L);
+			return new Result(newdays, null, desc, 0L);
 
-		return new Result(null, null, 0L);
+		return new Result(null, null, null, 0L);
 	}
 
 	static String wzTitle2Filename(String url, String title, String svg, boolean saveToFile)

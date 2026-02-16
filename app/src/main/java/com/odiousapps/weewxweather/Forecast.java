@@ -13,6 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.checkbox.MaterialCheckBox;
 
 import androidx.annotation.NonNull;
@@ -36,6 +37,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private FrameLayout rfl;
 	private RotateLayout rl;
 	private MaterialCheckBox floatingCheckBox;
+	private MaterialButtonToggleGroup forecastToggle;
+	private boolean sixHourlyMode = false;
 	private boolean isVisible = false;
 	private MainActivity activity;
 
@@ -83,6 +86,17 @@ public class Forecast extends Fragment implements View.OnClickListener
 		});
 
 		im = rootView.findViewById(R.id.logo);
+
+		forecastToggle = rootView.findViewById(R.id.forecastToggle);
+		forecastToggle.check(R.id.btnDaily);
+		forecastToggle.addOnButtonCheckedListener((group, checkedId, isChecked) ->
+		{
+			if(isChecked)
+			{
+				sixHourlyMode = (checkedId == R.id.btn6Hourly);
+				generateForecast();
+			}
+		});
 
 		floatingCheckBox = rootView.findViewById(R.id.floatingCheckBox);
 		floatingCheckBox.setOnClickListener(this);
@@ -539,7 +553,10 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		String[] content = weeWXAppCommon.getGsonContent(forecastGson, false);
+		boolean hasSixHourly = fctype.equals("met.no");
+		forecastToggle.post(() -> forecastToggle.setVisibility(hasSixHourly ? View.VISIBLE : View.GONE));
+
+		String[] content = weeWXAppCommon.getGsonContent(forecastGson, false, hasSixHourly && sixHourlyMode);
 		if(content[0] != null && content[0].equals("error"))
 		{
 			if(content[1] != null && !content[1].isBlank())
