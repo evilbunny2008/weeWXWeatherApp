@@ -3716,7 +3716,10 @@ class weeWXAppCommon
 			}
 
 			if(forecastData.length() > 128 && debugging_on)
-				CustomDebug.writeDebug("weeWX", "forecast.html", forecastData);
+			{
+				try { CustomDebug.writeDebug("weeWX", "forecast.html", forecastData); }
+				catch(Exception e) { LogMessage("reallyGetForecast() Debug write failed: " + e.getMessage(), KeyValue.w); }
+			}
 
 			LogMessage("reallyGetForecast() forcecastData: " + forecastData);
 		}
