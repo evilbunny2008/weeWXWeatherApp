@@ -2026,17 +2026,20 @@ class weeWXAppCommon
 						.getString("symbol_code");
 			}
 
+			// Temperature from instant data (compact API doesn't have air_temperature_max)
+			JSONObject instant = tsdata.getJSONObject("instant").getJSONObject("details");
+			if(instant.has("air_temperature"))
+			{
+				day.max = instant.getDouble("air_temperature") + "&deg;C";
+				if(!metric)
+					day.max = C2Fdeg(Float.parseFloat(day.max));
+			}
+
+			// Rain from next_6_hours details
 			if(tsdata.has("next_6_hours"))
 			{
 				JSONObject details = tsdata.getJSONObject("next_6_hours")
 						.getJSONObject("details");
-
-				if(details.has("air_temperature_max"))
-				{
-					day.max = details.getDouble("air_temperature_max") + "&deg;C";
-					if(!metric)
-						day.max = C2Fdeg(Float.parseFloat(day.max));
-				}
 
 				try
 				{
@@ -2046,15 +2049,6 @@ class weeWXAppCommon
 					else
 						day.min = precip + "mm";
 				} catch(Exception ignored) {}
-			} else {
-				// Fallback to instant data for temperature
-				JSONObject instant = tsdata.getJSONObject("instant").getJSONObject("details");
-				if(instant.has("air_temperature"))
-				{
-					day.max = instant.getDouble("air_temperature") + "&deg;C";
-					if(!metric)
-						day.max = C2Fdeg(Float.parseFloat(day.max));
-				}
 			}
 
 			JSONObject details2 = tsdata.getJSONObject("instant")
