@@ -30,8 +30,8 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center"
-			android:layout_marginTop="4dp"
-			android:layout_marginBottom="4dp"
+			android:layout_marginTop="8dp"
+			android:layout_marginBottom="8dp"
 			android:visibility="gone"
 			app:singleSelection="true"
 			app:selectionRequired="true"
@@ -39,19 +39,17 @@
 
 			<com.google.android.material.button.MaterialButton
 				android:id="@+id/btnDaily"
-				style="?attr/materialButtonOutlinedStyle"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/forecast_daily"
-				android:textSize="12sp" />
+				android:textSize="14sp" />
 
 			<com.google.android.material.button.MaterialButton
 				android:id="@+id/btn6Hourly"
-				style="?attr/materialButtonOutlinedStyle"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="@string/forecast_6hourly"
-				android:textSize="12sp" />
+				android:textSize="14sp" />
 
 		</com.google.android.material.button.MaterialButtonToggleGroup>
 

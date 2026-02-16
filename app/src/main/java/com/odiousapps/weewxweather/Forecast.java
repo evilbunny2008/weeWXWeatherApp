@@ -150,6 +150,13 @@ public class Forecast extends Fragment implements View.OnClickListener
 			stopRefreshing();
 		}, false);
 
+		// Show/hide 6-hourly toggle based on forecast type
+		String fctype = (String)KeyValue.readVar("fctype", "");
+		if(fctype != null && fctype.equals("met.no"))
+			forecastToggle.setVisibility(View.VISIBLE);
+		else
+			forecastToggle.setVisibility(View.GONE);
+
 		if(KeyValue.isPrefSet("radarforecast"))
 		{
 			boolean disableSwipeOnRadar = (boolean)KeyValue.readVar("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
