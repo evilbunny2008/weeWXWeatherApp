@@ -2906,6 +2906,9 @@ class weeWXAppCommon
 		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
 		Request request = NetworkClient.getRequest(false, url, true);
 
+		if(request == null)
+			throw new IOException("Failed to build request for URL: " + url);
+
 		try(Response response = client.newCall(request).execute())
 		{
 			String bodyStr = response.body().string();
