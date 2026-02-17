@@ -6,7 +6,7 @@ import java.util.List;
 class GsonHelper
 {
 	List<Day> days = null;
-	List<Day> sixHourly = null;
+	List<Day> allEntries = null;
 	String desc = null;
 	long timestamp = 0;
 }

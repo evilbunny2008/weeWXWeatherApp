@@ -12,6 +12,11 @@
 	<string name="rain_in_inches">Rain in Inches?</string>
 	<string name="forecast_daily">Daily</string>
 	<string name="forecast_6hourly">6 Hourly</string>
+	<string name="interval_daily">Daily</string>
+	<string name="interval_12h">12 Hourly</string>
+	<string name="interval_6h">6 Hourly</string>
+	<string name="interval_3h">3 Hourly</string>
+	<string name="interval_hourly">Hourly</string>
 	<string name="about_app">About the App</string>
     <string name="weather2">Weather</string>
     <string name="stats2">Statistics</string>
