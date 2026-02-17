@@ -175,12 +175,10 @@ class NetworkClient
 
 	private static String noCache(String url)
 	{
-		if(!url.contains("?"))
-			url += "?";
-		else
-			url += "&";
-
-		return url + "noCache=" + System.currentTimeMillis();
+		// Cache-Control headers already handle caching (set in getRequest).
+		// Appending noCache= as a query parameter breaks APIs like met.no
+		// and weather.com that reject unknown parameters with HTTP 400.
+		return url;
 	}
 
 	private static int responseCount(Response response)
