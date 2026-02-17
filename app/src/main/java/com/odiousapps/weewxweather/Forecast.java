@@ -13,8 +13,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.checkbox.MaterialCheckBox;
+import com.google.android.material.chip.ChipGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,8 +37,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private FrameLayout rfl;
 	private RotateLayout rl;
 	private MaterialCheckBox floatingCheckBox;
-	private MaterialButtonToggleGroup forecastToggle;
-	private boolean sixHourlyMode = false;
+	private ChipGroup forecastIntervalGroup;
+	private int intervalHours = 0; // 0=daily, 1=hourly, 3=3h, 6=6h, 12=12h
 	private boolean isVisible = false;
 	private MainActivity activity;
 
@@ -87,13 +87,18 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		im = rootView.findViewById(R.id.logo);
 
-		forecastToggle = rootView.findViewById(R.id.forecastToggle);
-		forecastToggle.check(R.id.btnDaily);
-		forecastToggle.addOnButtonCheckedListener((group, checkedId, isChecked) ->
+		forecastIntervalGroup = rootView.findViewById(R.id.forecastIntervalGroup);
+		forecastIntervalGroup.check(R.id.chipDaily);
+		forecastIntervalGroup.setOnCheckedStateChangeListener((group, checkedIds) ->
 		{
-			if(isChecked)
+			if(!checkedIds.isEmpty())
 			{
-				sixHourlyMode = (checkedId == R.id.btn6Hourly);
+				int checkedId = checkedIds.get(0);
+				if(checkedId == R.id.chipHourly) intervalHours = 1;
+				else if(checkedId == R.id.chip3h) intervalHours = 3;
+				else if(checkedId == R.id.chip6h) intervalHours = 6;
+				else if(checkedId == R.id.chip12h) intervalHours = 12;
+				else intervalHours = 0; // daily
 				generateForecast();
 			}
 		});
@@ -150,12 +155,12 @@ public class Forecast extends Fragment implements View.OnClickListener
 			stopRefreshing();
 		}, false);
 
-		// Show/hide 6-hourly toggle based on forecast type
+		// Show/hide interval selector based on forecast type
 		String fctype = (String)KeyValue.readVar("fctype", "");
 		if(fctype != null && fctype.equals("met.no"))
-			forecastToggle.setVisibility(View.VISIBLE);
+			forecastIntervalGroup.setVisibility(View.VISIBLE);
 		else
-			forecastToggle.setVisibility(View.GONE);
+			forecastIntervalGroup.setVisibility(View.GONE);
 
 		if(KeyValue.isPrefSet("radarforecast"))
 		{
@@ -560,10 +565,10 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		boolean hasSixHourly = fctype.equals("met.no");
-		forecastToggle.post(() -> forecastToggle.setVisibility(hasSixHourly ? View.VISIBLE : View.GONE));
+		boolean hasIntervals = fctype.equals("met.no");
+		forecastIntervalGroup.post(() -> forecastIntervalGroup.setVisibility(hasIntervals ? View.VISIBLE : View.GONE));
 
-		String[] content = weeWXAppCommon.getGsonContent(forecastGson, false, hasSixHourly && sixHourlyMode);
+		String[] content = weeWXAppCommon.getGsonContent(forecastGson, false, hasIntervals ? intervalHours : 0);
 		if(content[0] != null && content[0].equals("error"))
 		{
 			if(content[1] != null && !content[1].isBlank())

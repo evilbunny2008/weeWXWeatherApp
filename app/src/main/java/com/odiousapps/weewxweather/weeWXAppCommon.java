@@ -195,7 +195,7 @@ class weeWXAppCommon
 	private static int wriCounter = 0;
 	private static long wriStart = 0;
 
-	record Result(List<Day> days, List<Day> sixHourly, String desc, long timestamp) {}
+	record Result(List<Day> days, List<Day> allEntries, String desc, long timestamp) {}
 	record Result2(String[] forecast_text, String desc, int rc) {}
 
 	private static final String utf8 = "utf-8";
@@ -795,10 +795,10 @@ class weeWXAppCommon
 
 	static String generateForecast(List<Day> days, long timestamp, boolean showHeader)
 	{
-		return generateForecast(days, timestamp, showHeader, false);
+		return generateForecast(days, timestamp, showHeader, 0);
 	}
 
-	static String generateForecast(List<Day> days, long timestamp, boolean showHeader, boolean sixHourlyMode)
+	static String generateForecast(List<Day> days, long timestamp, boolean showHeader, int intervalHours)
 	{
 		LogMessage("Starting generateForecast()");
 		LogMessage("days: " + days);
@@ -888,12 +888,12 @@ class weeWXAppCommon
 
 			sb.append("\t\t\t<div class='dayTitle'>");
 
-			if(sixHourlyMode)
-				sb.append(weeWXAppCommon.sdf6h.format(day.timestamp));
-			else if(i > 0)
-				sb.append(weeWXAppCommon.sdf2.format(day.timestamp));
-			else
+			if(i == 0 && intervalHours <= 0)
 				sb.append(weeWXApp.getAndroidString(R.string.today));
+			else if(intervalHours > 0)
+				sb.append(weeWXAppCommon.sdf6h.format(day.timestamp));
+			else
+				sb.append(weeWXAppCommon.sdf2.format(day.timestamp));
 
 			sb.append("</div>\n");
 
@@ -1947,7 +1947,7 @@ class weeWXAppCommon
 		boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", false);
 		long timestamp = 0;
 		List<Day> days = new ArrayList<>();
-		List<Day> sixHourly = new ArrayList<>();
+		List<Day> allEntries = new ArrayList<>();
 
 		String desc = (String)KeyValue.readVar("forecastLocationName", "");
 		if(desc == null || desc.isBlank())
@@ -1977,33 +1977,30 @@ class weeWXAppCommon
 			{
 				JSONObject jobj2 = timeseries.getJSONObject(i);
 				String time = jobj2.getString("time");
-
 				boolean isMidnight = time.endsWith("T00:00:00Z");
-				boolean isSixHourly = time.endsWith("T00:00:00Z") || time.endsWith("T06:00:00Z") ||
-						time.endsWith("T12:00:00Z") || time.endsWith("T18:00:00Z");
 
-				if(i != 0 && !isSixHourly)
-					continue;
+				// Build hourly entry (prefer next_1_hours rain) for allEntries
+				Day hourlyDay = buildMetNODay(jobj2, metric, rainInInches, true);
+				if(hourlyDay != null)
+					allEntries.add(hourlyDay);
 
-				Day day = buildMetNODay(jobj2, metric, rainInInches);
-				if(day == null)
-					continue;
-
+				// Build daily entry (use next_6_hours rain) for days list
 				if(i == 0 || isMidnight)
-					days.add(day);
-
-				if(i == 0 || isSixHourly)
-					sixHourly.add(day);
+				{
+					Day dailyDay = buildMetNODay(jobj2, metric, rainInInches, false);
+					if(dailyDay != null)
+						days.add(dailyDay);
+				}
 			}
 		} catch(Exception e) {
 			doStackOutput(e);
 			return null;
 		}
 
-		return new Result(days, sixHourly, desc, timestamp);
+		return new Result(days, allEntries, desc, timestamp);
 	}
 
-	private static Day buildMetNODay(JSONObject jobj2, boolean metric, boolean rainInInches)
+	private static Day buildMetNODay(JSONObject jobj2, boolean metric, boolean rainInInches, boolean preferShortInterval)
 	{
 		try
 		{
@@ -2011,19 +2008,23 @@ class weeWXAppCommon
 			JSONObject tsdata = jobj2.getJSONObject("data");
 
 			String icon = "";
-			if(tsdata.has("next_12_hours"))
+			if(preferShortInterval)
 			{
-				icon = tsdata.getJSONObject("next_12_hours")
-						.getJSONObject("summary")
-						.getString("symbol_code");
-			} else if(tsdata.has("next_6_hours")) {
-				icon = tsdata.getJSONObject("next_6_hours")
-						.getJSONObject("summary")
-						.getString("symbol_code");
-			} else if(tsdata.has("next_1_hours")) {
-				icon = tsdata.getJSONObject("next_1_hours")
-						.getJSONObject("summary")
-						.getString("symbol_code");
+				// Prefer shorter interval icons for hourly/sub-daily views
+				if(tsdata.has("next_1_hours"))
+					icon = tsdata.getJSONObject("next_1_hours").getJSONObject("summary").getString("symbol_code");
+				else if(tsdata.has("next_6_hours"))
+					icon = tsdata.getJSONObject("next_6_hours").getJSONObject("summary").getString("symbol_code");
+				else if(tsdata.has("next_12_hours"))
+					icon = tsdata.getJSONObject("next_12_hours").getJSONObject("summary").getString("symbol_code");
+			} else {
+				// Prefer longer interval icons for daily view
+				if(tsdata.has("next_12_hours"))
+					icon = tsdata.getJSONObject("next_12_hours").getJSONObject("summary").getString("symbol_code");
+				else if(tsdata.has("next_6_hours"))
+					icon = tsdata.getJSONObject("next_6_hours").getJSONObject("summary").getString("symbol_code");
+				else if(tsdata.has("next_1_hours"))
+					icon = tsdata.getJSONObject("next_1_hours").getJSONObject("summary").getString("symbol_code");
 			}
 
 			// Temperature from instant data (compact API doesn't have air_temperature_max)
@@ -2035,8 +2036,23 @@ class weeWXAppCommon
 					day.max = C2Fdeg(Float.parseFloat(day.max));
 			}
 
-			// Rain from next_6_hours details
-			if(tsdata.has("next_6_hours"))
+			// Rain - prefer next_1_hours for short intervals, next_6_hours for daily
+			boolean gotRain = false;
+			if(preferShortInterval && tsdata.has("next_1_hours"))
+			{
+				try
+				{
+					JSONObject details = tsdata.getJSONObject("next_1_hours").getJSONObject("details");
+					double precip = details.getDouble("precipitation_amount");
+					if(!metric || rainInInches)
+						day.min = round(precip / 25.4, 1) + "in";
+					else
+						day.min = precip + "mm";
+					gotRain = true;
+				} catch(Exception ignored) {}
+			}
+
+			if(!gotRain && tsdata.has("next_6_hours"))
 			{
 				JSONObject details = tsdata.getJSONObject("next_6_hours")
 						.getJSONObject("details");
@@ -3504,10 +3520,10 @@ class weeWXAppCommon
 
 	static String[] getGsonContent(String forecastGson, boolean showHeader)
 	{
-		return getGsonContent(forecastGson, showHeader, false);
+		return getGsonContent(forecastGson, showHeader, 0);
 	}
 
-	static String[] getGsonContent(String forecastGson, boolean showHeader, boolean sixHourlyMode)
+	static String[] getGsonContent(String forecastGson, boolean showHeader, int intervalHours)
 	{
 		LogMessage("Weather.loadWebView() forecastGson.length(): " + forecastGson.length());
 
@@ -3519,12 +3535,21 @@ class weeWXAppCommon
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data)};
 		}
 
-		List<Day> displayDays = (sixHourlyMode && gh.sixHourly != null && !gh.sixHourly.isEmpty())
-				? gh.sixHourly : gh.days;
+		List<Day> displayDays;
+		if(intervalHours <= 0)
+		{
+			// Daily mode - use the pre-built days list
+			displayDays = gh.days;
+		} else if(gh.allEntries != null && !gh.allEntries.isEmpty()) {
+			// Filter allEntries by interval
+			displayDays = filterByInterval(gh.allEntries, intervalHours);
+		} else {
+			displayDays = gh.days;
+		}
 
 		LogMessage("Weather.loadWebView() displayDays.size(): " + displayDays.size());
 
-		String content = weeWXAppCommon.generateForecast(displayDays, gh.timestamp, showHeader, sixHourlyMode);
+		String content = weeWXAppCommon.generateForecast(displayDays, gh.timestamp, showHeader, intervalHours);
 		if(content == null || content.isBlank())
 		{
 			LogMessage("Weather.loadWebView() #3 Failed to process WZ forecast data...");
@@ -3533,6 +3558,34 @@ class weeWXAppCommon
 
 		LogMessage("Weather.loadWebView() WZ content.length(): " + content.length());
 		return new String[]{null, content, gh.desc != null ? gh.desc : ""};
+	}
+
+	private static List<Day> filterByInterval(List<Day> allEntries, int intervalHours)
+	{
+		if(allEntries == null || allEntries.isEmpty())
+			return allEntries;
+
+		if(intervalHours <= 1)
+			return allEntries; // hourly = all entries
+
+		List<Day> filtered = new ArrayList<>();
+		Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+		for(int i = 0; i < allEntries.size(); i++)
+		{
+			Day day = allEntries.get(i);
+			if(i == 0)
+			{
+				filtered.add(day);
+				continue;
+			}
+
+			cal.setTimeInMillis(day.timestamp);
+			int hour = cal.get(Calendar.HOUR_OF_DAY);
+			if(hour % intervalHours == 0)
+				filtered.add(day);
+		}
+
+		return filtered;
 	}
 
 	static boolean reallyGetForecast(String fctype, String url) throws InterruptedException, IOException
@@ -3771,7 +3824,7 @@ class weeWXAppCommon
 
 		GsonHelper gh = new GsonHelper();
 		gh.days = r1.days();
-		gh.sixHourly = r1.sixHourly();
+		gh.allEntries = r1.allEntries();
 		gh.desc = r1.desc();
 		gh.timestamp = r1.timestamp() > 0 ? r1.timestamp() : System.currentTimeMillis();
 
