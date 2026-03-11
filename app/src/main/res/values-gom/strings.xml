@@ -71,7 +71,7 @@
     <string name="radar_still_downloading">रडाराची प्रतिमा अजूनय डाउनलोड करपाक लागल्या</string>
     <string name="radar_download_failed">रडाराची प्रतिमा डाउनलोड करपाक अपेस आयलें</string>
     <string name="failed_to_process_forecast_data">अदमास डेटाचेर प्रक्रिया करपाक अपेस आयलें</string>
-    <string name="wifi_not_available">would would updated but wifi connection उपलब्ध ना</string>
+    <string name="wifi_not_available">would have updated but Wi-Fi connection उपलब्ध ना</string>
     <string name="invalid_update_interval">अपडेट अंतर अवैध, अद्ययावत करप आनी मागीर परतून यत्न करप</string>
     <string name="attempting_to_download_data_txt">तुमच्या सर्वरा वयल्यान data.txt डाउनलोड करपाचो यत्न करप</string>
     <string name="radar_type_is_invalid">रडार प्रकार \'%1$s\' अवैध आसा, तुमची मांडावळी फायल तपासात आनी परतून यत्न करात</string>
@@ -88,4 +88,13 @@
     <string name="update_while_running">चालू आसतना अपडेट</string>
     <string name="force_dark_mode">जबरदस्ती काळो मोड</string>
     <string name="no_download_or_app_not_setup">ना डाउनलोड वा अॅप सेटअप जावंक ना</string>
+    <string name="rain_in_inches">इंचांत पावस?</string>
+    <string name="forecast_interval">अदमास अंतर (लागू आसल्यार) 1.1</string>
+    <string name="forecast_daily">सद्दां</string>
+    <string name="forecast_6hourly">६ वराक</string>
+    <string name="interval_daily">सद्दां</string>
+    <string name="interval_12h">१२ वराक</string>
+    <string name="interval_6h">६ वराक</string>
+    <string name="interval_3h">३ वराक</string>
+    <string name="interval_hourly">वराक वराक</string>
 </resources>

@@ -88,4 +88,13 @@
     <string name="update_while_running">Updaten tijdens het hardlopen</string>
     <string name="force_dark_mode">Forceer de donkere modus</string>
     <string name="no_download_or_app_not_setup">Er is geen download of app ingesteld</string>
+    <string name="rain_in_inches">Regen in centimeters?</string>
+    <string name="forecast_interval">Prognose-interval (indien van toepassing)</string>
+    <string name="forecast_daily">Dagelijks</string>
+    <string name="forecast_6hourly">6 uur</string>
+    <string name="interval_daily">Dagelijks</string>
+    <string name="interval_12h">12 uur</string>
+    <string name="interval_6h">6 uur</string>
+    <string name="interval_3h">3 Per uur</string>
+    <string name="interval_hourly">Per uur</string>
 </resources>

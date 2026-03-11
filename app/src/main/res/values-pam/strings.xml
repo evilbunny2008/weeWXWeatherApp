@@ -88,4 +88,13 @@
     <string name="update_while_running">Update kabang magdalagan</string>
     <string name="force_dark_mode">Modang Pwersa Daram</string>
     <string name="no_download_or_app_not_setup">Ala pang me-setup download o app</string>
+    <string name="rain_in_inches">uran keng pulgada?</string>
+    <string name="forecast_interval">Forecast Interval (nung malyari)</string>
+    <string name="forecast_daily">Aldo aldo</string>
+    <string name="forecast_6hourly">6 Oras</string>
+    <string name="interval_daily">Aldo aldo</string>
+    <string name="interval_12h">12 Oras</string>
+    <string name="interval_6h">6 Oras</string>
+    <string name="interval_3h">3 Oras</string>
+    <string name="interval_hourly">Balang oras</string>
 </resources>

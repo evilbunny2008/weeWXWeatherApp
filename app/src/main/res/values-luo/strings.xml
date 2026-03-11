@@ -88,4 +88,13 @@
     <string name="update_while_running">Loch ka osiko</string>
     <string name="force_dark_mode">Goch Mode mar Dhoot</string>
     <string name="no_download_or_app_not_setup">Onge ng\'at ma nyalo ng\'ado bura kata ma pok oket</string>
+    <string name="rain_in_inches">Koth chwe e Inchi?</string>
+    <string name="forecast_interval">Kinde mar geno (ka nyalore)</string>
+    <string name="forecast_daily">Pilepile</string>
+    <string name="forecast_6hourly">Saa 6</string>
+    <string name="interval_daily">Pilepile</string>
+    <string name="interval_12h">12 Saa ka seche</string>
+    <string name="interval_6h">Saa 6</string>
+    <string name="interval_3h">Saa 3</string>
+    <string name="interval_hourly">Saa ka seche</string>
 </resources>

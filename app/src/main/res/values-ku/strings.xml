@@ -88,4 +88,13 @@
     <string name="update_while_running">Di dema xebitandinê de nûve bikin</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="no_download_or_app_not_setup">Tu dakêşandin an serîlêdan nehatiye saz kirin</string>
+    <string name="rain_in_inches">Baran bi Inches?</string>
+    <string name="forecast_interval">Navbera Pêşbîniyê (heke hebe)</string>
+    <string name="forecast_daily">Rojane</string>
+    <string name="forecast_6hourly">6 Saet</string>
+    <string name="interval_daily">Rojane</string>
+    <string name="interval_12h">12 Saet</string>
+    <string name="interval_6h">6 Saet</string>
+    <string name="interval_3h">3 Saetî</string>
+    <string name="interval_hourly">Seetî</string>
 </resources>

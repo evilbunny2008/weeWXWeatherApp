@@ -88,4 +88,13 @@
     <string name="update_while_running">هلائڻ دوران تازه ڪاري ڪريو</string>
     <string name="force_dark_mode">ڊارڪ موڊ کي زور ڏيو</string>
     <string name="no_download_or_app_not_setup">ڪابه ڊائون لوڊ يا ايپ سيٽ اپ نه ڪئي وئي آهي</string>
+    <string name="rain_in_inches">انچن ۾ برسات؟</string>
+    <string name="forecast_interval">اڳڪٿي جو وقفو (جيڪڏهن قابل اطلاق هجي)</string>
+    <string name="forecast_daily">روزاني</string>
+    <string name="forecast_6hourly">6 ڪلاڪ</string>
+    <string name="interval_daily">روزاني</string>
+    <string name="interval_12h">12 ڪلاڪ</string>
+    <string name="interval_6h">6 ڪلاڪ</string>
+    <string name="interval_3h">3 ڪلاڪ</string>
+    <string name="interval_hourly">ڪلاڪار</string>
 </resources>

@@ -71,7 +71,7 @@
     <string name="radar_still_downloading">Ti ladawan ti radar ket ag-download pay laeng</string>
     <string name="radar_download_failed">Nalpasen a nai-download ti ladawan ti radar</string>
     <string name="failed_to_process_forecast_data">Nalpasen ti panangproseso ti datos ti panagpakpakauna</string>
-    <string name="wifi_not_available">would have updated ngem wifi connection unavailable</string>
+    <string name="wifi_not_available">would have updated ngem Wi-Fi connection unavailable</string>
     <string name="invalid_update_interval">Ti update interval ket saan nga imbalido, update settings ken kalpasanna padasen manen</string>
     <string name="attempting_to_download_data_txt">Panagpadas ti Download Data.txt manipud iti servermo</string>
     <string name="radar_type_is_invalid">Ti kita ti radar a \'%1$sS\' ket saan nga imbalido, kitaen ti file ti Settings-mo ken padasem manen</string>
@@ -88,4 +88,13 @@
     <string name="update_while_running">Update bayat ti panagtaray</string>
     <string name="force_dark_mode">puersa Nasipnget nga Modo</string>
     <string name="no_download_or_app_not_setup">Awan ti download wenno app a saan a na-setup</string>
+    <string name="rain_in_inches">Tudo iti Pulgada?</string>
+    <string name="forecast_interval">Forecast Interval (no mayaplikar)</string>
+    <string name="forecast_daily">Inaldaw</string>
+    <string name="forecast_6hourly">6 Kada oras</string>
+    <string name="interval_daily">Inaldaw</string>
+    <string name="interval_12h">12 Kada oras</string>
+    <string name="interval_6h">6 Kada oras</string>
+    <string name="interval_3h">3 Kada oras</string>
+    <string name="interval_hourly">Kada oras</string>
 </resources>

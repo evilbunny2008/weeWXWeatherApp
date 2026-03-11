@@ -88,4 +88,13 @@
     <string name="update_while_running">Aktualizacia kana phiren</string>
     <string name="force_dark_mode">Modo Mode</string>
     <string name="no_download_or_app_not_setup">Nici download sau apa nu am se condup</string>
+    <string name="rain_in_inches">Brishind ande inćura?</string>
+    <string name="forecast_interval">Intervalo e prognòzaqo (te si aplikàbilo)</string>
+    <string name="forecast_daily">Divesutno</string>
+    <string name="forecast_6hourly">6 Sako ćaso</string>
+    <string name="interval_daily">Divesutno</string>
+    <string name="interval_12h">12 Sako ćaso</string>
+    <string name="interval_6h">6 Sako ćaso</string>
+    <string name="interval_3h">3 Sako òra</string>
+    <string name="interval_hourly">Sako ćaso</string>
 </resources>

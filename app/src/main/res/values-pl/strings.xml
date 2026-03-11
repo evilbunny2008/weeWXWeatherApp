@@ -88,4 +88,13 @@
     <string name="update_while_running">Aktualizuj podczas biegu</string>
     <string name="force_dark_mode">Wymuś tryb ciemny</string>
     <string name="no_download_or_app_not_setup">Brak pobierania lub aplikacja nie została skonfigurowana</string>
+    <string name="rain_in_inches">Deszcz w calach?</string>
+    <string name="forecast_interval">Przedział prognozy (jeśli dotyczy)</string>
+    <string name="forecast_daily">Codziennie</string>
+    <string name="forecast_6hourly">6 Co godzinę</string>
+    <string name="interval_daily">Codziennie</string>
+    <string name="interval_12h">12 Co godzinę</string>
+    <string name="interval_6h">6 Co godzinę</string>
+    <string name="interval_3h">3 Co godzinę</string>
+    <string name="interval_hourly">Cogodzinny</string>
 </resources>

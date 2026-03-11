@@ -88,4 +88,13 @@
     <string name="update_while_running">Aktualizacyjo przi bieganiu</string>
     <string name="force_dark_mode">Barzo modernizacyjo Modes</string>
     <string name="no_download_or_app_not_setup">Żodne pobranie ani aplikacyje niy było ustawiynio</string>
+    <string name="rain_in_inches">Dyszcz w calach?</string>
+    <string name="forecast_interval">Ôdstymp prognozy (jeźli je stosowny)</string>
+    <string name="forecast_daily">Dziynnie</string>
+    <string name="forecast_6hourly">6 godzin</string>
+    <string name="interval_daily">Dziynnie</string>
+    <string name="interval_12h">12 godzin</string>
+    <string name="interval_6h">6 godzin</string>
+    <string name="interval_3h">Co 3 godziny</string>
+    <string name="interval_hourly">Co godzino</string>
 </resources>

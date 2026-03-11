@@ -88,4 +88,13 @@
     <string name="update_while_running">דערהייַנטיקן בשעת פליסנדיק</string>
     <string name="force_dark_mode">צווינגען דאַרק מאָדע</string>
     <string name="no_download_or_app_not_setup">קיין אראפקאפיע אָדער אַפּ איז נישט סעטאַפּ</string>
+    <string name="rain_in_inches">רעגן אין אינטשעס?</string>
+    <string name="forecast_interval">פאָרויסזאָגן ינטערוואַל (אויב אָנווענדלעך)</string>
+    <string name="forecast_daily">טעגלעך</string>
+    <string name="forecast_6hourly">6 אַורלי</string>
+    <string name="interval_daily">טעגלעך</string>
+    <string name="interval_12h">12 אַורלי</string>
+    <string name="interval_6h">6 אַורלי</string>
+    <string name="interval_3h">3 אַורלי</string>
+    <string name="interval_hourly">אַורלי</string>
 </resources>

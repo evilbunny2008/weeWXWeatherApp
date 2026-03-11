@@ -88,4 +88,13 @@
     <string name="update_while_running">Ku ë yic, ke yïn ë kat</string>
     <string name="force_dark_mode">Thöl ë jäl ë pïu ë pïu ë pïu</string>
     <string name="no_download_or_app_not_setup">Acïn kë bï yök wala app këc tɔ̈ɔ̈u</string>
+    <string name="rain_in_inches">Deŋ në Inch?</string>
+    <string name="forecast_interval">Thɛɛr ke thööŋ (naa luui)</string>
+    <string name="forecast_daily">Nhial</string>
+    <string name="forecast_6hourly">6 Thɛɛr</string>
+    <string name="interval_daily">Nhial</string>
+    <string name="interval_12h">12 Thɛɛr</string>
+    <string name="interval_6h">6 Thɛɛr</string>
+    <string name="interval_3h">3 Thɛɛr</string>
+    <string name="interval_hourly">Thɛɛr</string>
 </resources>

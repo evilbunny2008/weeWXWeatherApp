@@ -88,4 +88,13 @@
     <string name="update_while_running">Frissítés futás közben</string>
     <string name="force_dark_mode">Sötét mód kényszerítése</string>
     <string name="no_download_or_app_not_setup">Nincs letöltés vagy alkalmazás nincs beállítva</string>
+    <string name="rain_in_inches">Eső hüvelykben?</string>
+    <string name="forecast_interval">Előrejelzési intervallum (ha van)</string>
+    <string name="forecast_daily">Napi</string>
+    <string name="forecast_6hourly">6 Óránként</string>
+    <string name="interval_daily">Napi</string>
+    <string name="interval_12h">12 óránként</string>
+    <string name="interval_6h">6 Óránként</string>
+    <string name="interval_3h">3 óránként</string>
+    <string name="interval_hourly">Óránkénti</string>
 </resources>

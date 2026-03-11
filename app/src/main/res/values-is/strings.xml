@@ -88,4 +88,13 @@
     <string name="update_while_running">Uppfærðu meðan á gangi stendur</string>
     <string name="force_dark_mode">Þvingaðu Dark Mode</string>
     <string name="no_download_or_app_not_setup">Ekkert niðurhal eða forrit hefur ekki verið sett upp</string>
+    <string name="rain_in_inches">Rigning í tommum?</string>
+    <string name="forecast_interval">Spábil (ef við á)</string>
+    <string name="forecast_daily">Daglega</string>
+    <string name="forecast_6hourly">6 Klukkutíma fresti</string>
+    <string name="interval_daily">Daglega</string>
+    <string name="interval_12h">12 Klukkutíma fresti</string>
+    <string name="interval_6h">6 Klukkutíma fresti</string>
+    <string name="interval_3h">3 Klukkutíma fresti</string>
+    <string name="interval_hourly">Á klukkutíma fresti</string>
 </resources>

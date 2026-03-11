@@ -88,4 +88,13 @@
     <string name="update_while_running">Mise à jour na ngoi so lo yeke kpe</string>
     <string name="force_dark_mode">Force Mode ti bingo</string>
     <string name="no_download_or_app_not_setup">A yeke pëpe téléchargement wala application la a leke ni pëpe</string>
+    <string name="rain_in_inches">Ngu-nzapa na Pouce?</string>
+    <string name="forecast_interval">Ngoi ti fango ye (tongana a lingbi)</string>
+    <string name="forecast_daily">Lakualakue</string>
+    <string name="forecast_6hourly">6 Ngbonga oko oko</string>
+    <string name="interval_daily">Lakualakue</string>
+    <string name="interval_12h">12 Ngbonga oko oko</string>
+    <string name="interval_6h">6 Ngbonga oko oko</string>
+    <string name="interval_3h">3 Ngbonga oko oko</string>
+    <string name="interval_hourly">Ngbonga oko oko</string>
 </resources>

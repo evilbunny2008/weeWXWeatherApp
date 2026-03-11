@@ -88,4 +88,13 @@
     <string name="update_while_running">Diweddaru wrth redeg</string>
     <string name="force_dark_mode">Gorfodi Modd Tywyll</string>
     <string name="no_download_or_app_not_setup">Dim lawrlwythiad neu ap heb ei osod</string>
+    <string name="rain_in_inches">Glaw mewn modfeddi?</string>
+    <string name="forecast_interval">Cyfnod Rhagolwg (os yw\'n berthnasol)</string>
+    <string name="forecast_daily">Dyddiol</string>
+    <string name="forecast_6hourly">6 Awr</string>
+    <string name="interval_daily">Dyddiol</string>
+    <string name="interval_12h">12 Yr Awr</string>
+    <string name="interval_6h">6 Awr</string>
+    <string name="interval_3h">3 Awr</string>
+    <string name="interval_hourly">Yr awr</string>
 </resources>

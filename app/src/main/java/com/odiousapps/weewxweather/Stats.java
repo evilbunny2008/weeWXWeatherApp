@@ -226,7 +226,7 @@ public class Stats extends Fragment
 						LogMessage("Stats.evaluateJavascript() returned value: " + value2);
 						if(!value2.equals("\"OK\""))
 					    {
-						    LogMessage("value != OK: " + value2);
+							LogMessage("value != OK: " + value2);
 
 							handler.postDelayed(this, 150);
 							return;

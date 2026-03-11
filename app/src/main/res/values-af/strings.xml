@@ -88,4 +88,13 @@
     <string name="update_while_running">Dateer op terwyl dit hardloop</string>
     <string name="force_dark_mode">Dwing donker modus</string>
     <string name="no_download_or_app_not_setup">Geen aflaai of toepassing is nie opgestel nie</string>
+    <string name="rain_in_inches">Reën in duim?</string>
+    <string name="forecast_daily">Daagliks</string>
+    <string name="forecast_6hourly">6 uurliks</string>
+    <string name="interval_daily">Daagliks</string>
+    <string name="interval_12h">12 uurliks</string>
+    <string name="interval_6h">6 uurliks</string>
+    <string name="interval_3h">3 uurliks</string>
+    <string name="interval_hourly">Uurliks</string>
+    <string name="forecast_interval">Voorspellingsinterval (indien van toepassing)</string>
 </resources>

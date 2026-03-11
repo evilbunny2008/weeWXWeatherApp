@@ -88,4 +88,13 @@
     <string name="update_while_running">Sinthani pomwe mukuthamanga</string>
     <string name="force_dark_mode">Kukakamiza kwamdima</string>
     <string name="no_download_or_app_not_setup">Palibe kutsitsa kapena pulogalamu yomwe sinakhazikitsidwe</string>
+    <string name="rain_in_inches">Mvula mwa mainchesi?</string>
+    <string name="forecast_interval">Nthawi yolosera (ngati ikuyenera)</string>
+    <string name="forecast_daily">Tsiku ndi tsiku</string>
+    <string name="forecast_6hourly">6 Ola lililonse</string>
+    <string name="interval_daily">Tsiku ndi tsiku</string>
+    <string name="interval_12h">12 Ola lililonse</string>
+    <string name="interval_6h">6 Ola lililonse</string>
+    <string name="interval_3h">3 Ola lililonse</string>
+    <string name="interval_hourly">Ola lililonse</string>
 </resources>

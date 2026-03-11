@@ -88,4 +88,13 @@
     <string name="update_while_running">Perbarui sambia balari</string>
     <string name="force_dark_mode">Mode Gelap Angkatan</string>
     <string name="no_download_or_app_not_setup">Indak ado download atau aplikasi alun setup</string>
+    <string name="rain_in_inches">Hujan di Inci?</string>
+    <string name="forecast_interval">Selang Ramalan (jiko ado)</string>
+    <string name="forecast_daily">Sahari-ari</string>
+    <string name="forecast_6hourly">6 Jam</string>
+    <string name="interval_daily">Sahari-ari</string>
+    <string name="interval_12h">12 Jam</string>
+    <string name="interval_6h">6 Jam</string>
+    <string name="interval_3h">3 Jam</string>
+    <string name="interval_hourly">Sajam</string>
 </resources>

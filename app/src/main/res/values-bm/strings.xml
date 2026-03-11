@@ -88,4 +88,13 @@
     <string name="update_while_running">Update ka baara kɛ</string>
     <string name="force_dark_mode">Force dibi cogoya</string>
     <string name="no_download_or_app_not_setup">No download walima app ma kɛ setup ye</string>
+    <string name="rain_in_inches">Sanji bɛ na ni Insi ye wa?</string>
+    <string name="forecast_daily">Don o don</string>
+    <string name="forecast_6hourly">6 Lɛrɛ o lɛrɛ</string>
+    <string name="interval_daily">Don o don</string>
+    <string name="interval_12h">12 Lɛrɛ o lɛrɛ</string>
+    <string name="interval_6h">6 Lɛrɛ o lɛrɛ</string>
+    <string name="interval_3h">3 Lɛrɛ o lɛrɛ</string>
+    <string name="interval_hourly">Lɛrɛ o lɛrɛ</string>
+    <string name="forecast_interval">Forecast Interval (ni a bɛ se ka kɛ)</string>
 </resources>

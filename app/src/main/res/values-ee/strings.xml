@@ -88,4 +88,13 @@
     <string name="update_while_running">Update esime nèle du dzi</string>
     <string name="force_dark_mode">Ŋusẽ Viviti ƒe Nɔnɔme</string>
     <string name="no_download_or_app_not_setup">Womeɖo download alo app aɖeke o</string>
+    <string name="rain_in_inches">Tsidzadza le Inches mea?</string>
+    <string name="forecast_interval">Nyagblɔɖi ƒe Dometsotso (ne esɔ)</string>
+    <string name="forecast_daily">Gbe sia gbe</string>
+    <string name="forecast_6hourly">6 Gaƒoƒo ɖesiaɖe</string>
+    <string name="interval_daily">Gbe sia gbe</string>
+    <string name="interval_12h">12 Gaƒoƒo ɖesiaɖe</string>
+    <string name="interval_6h">6 Gaƒoƒo ɖesiaɖe</string>
+    <string name="interval_3h">3 Gaƒoƒo ɖesiaɖe</string>
+    <string name="interval_hourly">Gaƒoƒo sia gaƒoƒo</string>
 </resources>

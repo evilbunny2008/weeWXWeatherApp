@@ -88,4 +88,13 @@
     <string name="update_while_running">ປັບປຸງໃນຂະນະທີ່ກໍາລັງແລ່ນ</string>
     <string name="force_dark_mode">ບັງຄັບໃຫ້ໂຫມດຊ້ໍາ</string>
     <string name="no_download_or_app_not_setup">ບໍ່ມີການດາວໂຫຼດ ຫຼືແອັບຍັງບໍ່ໄດ້ຖືກຕັ້ງຄ່າ</string>
+    <string name="rain_in_inches">ຝົນໃນນິ້ວ?</string>
+    <string name="forecast_interval">ໄລຍະການພະຍາກອນ (ຖ້າມີ)</string>
+    <string name="forecast_daily">ປະຈໍາວັນ</string>
+    <string name="forecast_6hourly">6 ຊົ່ວໂມງ</string>
+    <string name="interval_daily">ປະຈໍາວັນ</string>
+    <string name="interval_12h">12 ຊົ່ວໂມງ</string>
+    <string name="interval_6h">6 ຊົ່ວໂມງ</string>
+    <string name="interval_3h">3 ຊົ່ວໂມງ</string>
+    <string name="interval_hourly">ທຸກໆຊົ່ວໂມງ</string>
 </resources>

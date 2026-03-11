@@ -88,4 +88,13 @@
     <string name="update_while_running">განახლება გაშვებისას</string>
     <string name="force_dark_mode">იძულებითი მუქი რეჟიმი</string>
     <string name="no_download_or_app_not_setup">ჩამოტვირთვა ან აპი არ არის დაყენებული</string>
+    <string name="rain_in_inches">წვიმა ინჩებში?</string>
+    <string name="forecast_interval">პროგნოზის ინტერვალი (ასეთის არსებობის შემთხვევაში)</string>
+    <string name="forecast_daily">ყოველდღიური</string>
+    <string name="forecast_6hourly">6 საათიანი</string>
+    <string name="interval_daily">ყოველდღიური</string>
+    <string name="interval_12h">12 საათიანი</string>
+    <string name="interval_6h">6 საათიანი</string>
+    <string name="interval_3h">3 საათიანი</string>
+    <string name="interval_hourly">საათობრივი</string>
 </resources>

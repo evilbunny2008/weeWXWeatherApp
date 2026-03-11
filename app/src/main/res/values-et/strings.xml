@@ -88,4 +88,13 @@
     <string name="update_while_running">Värskenda jooksmise ajal</string>
     <string name="force_dark_mode">Sundige tume režiim</string>
     <string name="no_download_or_app_not_setup">Ühtegi allalaadimist ega rakendust pole seadistatud</string>
+    <string name="rain_in_inches">Vihm tollides?</string>
+    <string name="forecast_interval">Prognoosi intervall (kui see on kohaldatav)</string>
+    <string name="forecast_daily">Igapäevane</string>
+    <string name="forecast_6hourly">6 tunnis</string>
+    <string name="interval_daily">Igapäevane</string>
+    <string name="interval_12h">12 tunnis</string>
+    <string name="interval_6h">6 tunnis</string>
+    <string name="interval_3h">3 tunnis</string>
+    <string name="interval_hourly">Tunni kaupa</string>
 </resources>

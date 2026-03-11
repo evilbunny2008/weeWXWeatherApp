@@ -88,4 +88,13 @@
     <string name="update_while_running">ચાલતી વખતે અપડેટ કરો</string>
     <string name="force_dark_mode">ડાર્ક મોડને ફોર્સ કરો</string>
     <string name="no_download_or_app_not_setup">કોઈ ડાઉનલોડ કે એપ સેટઅપ કરવામાં આવી નથી</string>
+    <string name="rain_in_inches">ઇંચ વરસાદ?</string>
+    <string name="forecast_interval">આગાહી અંતરાલ (જો લાગુ હોય તો)</string>
+    <string name="forecast_daily">દૈનિક</string>
+    <string name="forecast_6hourly">6 કલાકે</string>
+    <string name="interval_daily">દૈનિક</string>
+    <string name="interval_12h">12 કલાકે</string>
+    <string name="interval_6h">6 કલાકે</string>
+    <string name="interval_3h">3 કલાકે</string>
+    <string name="interval_hourly">કલાકદીઠ</string>
 </resources>

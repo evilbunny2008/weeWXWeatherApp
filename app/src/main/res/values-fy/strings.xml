@@ -88,4 +88,13 @@
     <string name="update_while_running">Update wylst rinnen</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="no_download_or_app_not_setup">Gjin download of app is net ynsteld</string>
+    <string name="rain_in_inches">Rein yn Inches?</string>
+    <string name="forecast_interval">Prognose-ynterval (as fan tapassing)</string>
+    <string name="forecast_daily">Deistich</string>
+    <string name="forecast_6hourly">6 oere</string>
+    <string name="interval_daily">Deistich</string>
+    <string name="interval_12h">12 oere</string>
+    <string name="interval_6h">6 oere</string>
+    <string name="interval_3h">3 oere</string>
+    <string name="interval_hourly">Oeren</string>
 </resources>

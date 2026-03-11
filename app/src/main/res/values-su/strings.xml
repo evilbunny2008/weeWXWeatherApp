@@ -88,4 +88,13 @@
     <string name="update_while_running">Update bari ngajalankeun</string>
     <string name="force_dark_mode">Maksa modeu poék</string>
     <string name="no_download_or_app_not_setup">Henteu aya undeuran atanapi aplikasi anu teu acan disetél</string>
+    <string name="rain_in_inches">Hujan di Inci?</string>
+    <string name="forecast_interval">Interval Ramalan (upami aya)</string>
+    <string name="forecast_daily">Sapopoé</string>
+    <string name="forecast_6hourly">6 Sajam</string>
+    <string name="interval_daily">Sapopoé</string>
+    <string name="interval_12h">12 Sajam</string>
+    <string name="interval_6h">6 Sajam</string>
+    <string name="interval_3h">3 Sajam</string>
+    <string name="interval_hourly">Sajam</string>
 </resources>

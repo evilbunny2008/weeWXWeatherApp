@@ -88,4 +88,13 @@
     <string name="update_while_running">Gadziridza uchimhanya</string>
     <string name="force_dark_mode">Kumanikidza yakasviba maitiro</string>
     <string name="no_download_or_app_not_setup">Hapana kudhawunirodha kana app isati yagadzirwa</string>
+    <string name="rain_in_inches">Kunaya muMasendimita?</string>
+    <string name="forecast_interval">Forecast Interval (kana zvichibvira)</string>
+    <string name="forecast_daily">Daily</string>
+    <string name="forecast_6hourly">6 Awa</string>
+    <string name="interval_daily">Daily</string>
+    <string name="interval_12h">12 Awa</string>
+    <string name="interval_6h">6 Awa</string>
+    <string name="interval_3h">3 Awa</string>
+    <string name="interval_hourly">Hourly</string>
 </resources>

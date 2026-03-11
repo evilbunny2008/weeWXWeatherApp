@@ -88,4 +88,13 @@
     <string name="update_while_running">चलांदे वक्त अपडेट</string>
     <string name="force_dark_mode">बल डार्क मोड</string>
     <string name="no_download_or_app_not_setup">कोई डाउनलोड या ऐप सेटअप नेईं कीता गेआ ऐ</string>
+    <string name="rain_in_inches">इंच में बरखा?</string>
+    <string name="forecast_interval">पूर्वानुमान अंतराल (जेकर लागू ऐ तां)</string>
+    <string name="forecast_daily">रोजना</string>
+    <string name="forecast_6hourly">६घंटे दा</string>
+    <string name="interval_daily">रोजना</string>
+    <string name="interval_12h">१२ घण्टे दा</string>
+    <string name="interval_6h">६घंटे दा</string>
+    <string name="interval_3h">३घंटे दा</string>
+    <string name="interval_hourly">हर घंटे</string>
 </resources>

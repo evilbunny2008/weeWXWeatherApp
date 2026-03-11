@@ -88,4 +88,13 @@
     <string name="update_while_running">Яңыртыу, эшләгәндә</string>
     <string name="force_dark_mode">Көс Ҡараңғы режим</string>
     <string name="no_download_or_app_not_setup">Юҡ скачать йәки ҡушымта түгел, тип настройка</string>
+    <string name="rain_in_inches">Ямғыр дюймдарҙа?</string>
+    <string name="forecast_daily">Көндәлек</string>
+    <string name="forecast_6hourly">6 сәғәтлек</string>
+    <string name="interval_daily">Көндәлек</string>
+    <string name="interval_12h">12 Сәғәт</string>
+    <string name="interval_6h">6 сәғәтлек</string>
+    <string name="interval_3h">3 сәғәтлек</string>
+    <string name="interval_hourly">Сәғәт һайын</string>
+    <string name="forecast_interval">Прогноз арауығы (әгәр ҙә кәрәк булһа)</string>
 </resources>

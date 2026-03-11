@@ -88,4 +88,13 @@
     <string name="update_while_running">run နေစဉ် update ကို</string>
     <string name="force_dark_mode">force dark mode ကို</string>
     <string name="no_download_or_app_not_setup">ဒေါင်းလုဒ်မရှိပါ သို့မဟုတ် အက်ပ်ကို ထည့်သွင်းမထားပါ။</string>
+    <string name="rain_in_inches">လက်မနဲ့ မိုးရွာမလား?</string>
+    <string name="forecast_interval">ခန့်မှန်းချက် ကြားကာလ (ဖြစ်နိုင်လျှင်)</string>
+    <string name="forecast_daily">နေ့စဉ်</string>
+    <string name="forecast_6hourly">၆ နာရီ</string>
+    <string name="interval_daily">နေ့စဉ်</string>
+    <string name="interval_12h">၁၂ နာရီ</string>
+    <string name="interval_6h">၆ နာရီ</string>
+    <string name="interval_3h">၃ နာရီ</string>
+    <string name="interval_hourly">နာရီတိုင်း</string>
 </resources>

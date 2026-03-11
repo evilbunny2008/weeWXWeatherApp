@@ -88,4 +88,13 @@
     <string name="update_while_running">Арҿыцра аҩраан</string>
     <string name="force_dark_mode">Амчхаратә режим амч</string>
     <string name="no_download_or_app_not_setup">Ахыхәхәа ма апрограмма еиқәыршәамызт</string>
+    <string name="rain_in_inches">Ақәа Инчла?</string>
+    <string name="forecast_daily">Есыҽнытәи</string>
+    <string name="forecast_6hourly">6 Сааҭла</string>
+    <string name="interval_daily">Есыҽнытәи</string>
+    <string name="interval_12h">12 Сааҭла</string>
+    <string name="interval_6h">6 Сааҭла</string>
+    <string name="interval_3h">3 сааҭла</string>
+    <string name="interval_hourly">Сааҭла</string>
+    <string name="forecast_interval">Аԥхьагәаҭара абжьаӡара (иаҭахызар)</string>
 </resources>

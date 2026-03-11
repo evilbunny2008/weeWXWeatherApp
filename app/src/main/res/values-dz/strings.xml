@@ -88,4 +88,13 @@
     <string name="update_while_running">གཡོག་བཀོལ་བའི་སྐབས་ དུས་མཐུན་བཟོ།</string>
     <string name="force_dark_mode">force མུན་པའི་ཐབས་ལམ།</string>
     <string name="no_download_or_app_not_setup">ཕབ་ལེན་ཡང་ན་ མཉེན་ཆས་གཞི་སྒྲིག་མ་འབད་བས།</string>
+    <string name="rain_in_inches">ཆརཔ་ཨིན་ཅི་ནང་?</string>
+    <string name="forecast_interval">སྔོན་བཤད་བར་མཚམས་ (གལ་སྲིད་འབྲེལ་ཡོད་)</string>
+    <string name="forecast_daily">ཨ་རྟག་ར</string>
+    <string name="forecast_6hourly">༦ ཆུ་ཚོད་རེ།</string>
+    <string name="interval_daily">ཨ་རྟག་ར</string>
+    <string name="interval_12h">12 ཆུ་ཚོད།</string>
+    <string name="interval_6h">༦ ཆུ་ཚོད་རེ།</string>
+    <string name="interval_3h">3 ཆུ་ཚོད་རེ།</string>
+    <string name="interval_hourly">ཆུ་ཚོད།</string>
 </resources>

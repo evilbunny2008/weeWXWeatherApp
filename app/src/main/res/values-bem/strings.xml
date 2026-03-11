@@ -88,4 +88,13 @@
     <string name="update_while_running">Ukubwekeshapo ilyo ulebutuka</string>
     <string name="force_dark_mode">Inkondo yafiita</string>
     <string name="no_download_or_app_not_setup">Tapali ukukopa nangu app tayapangilwe</string>
+    <string name="rain_in_inches">Imfula mu Mainchi?</string>
+    <string name="forecast_daily">Cilabushiku</string>
+    <string name="forecast_6hourly">6 pa nsa</string>
+    <string name="interval_daily">Cilabushiku</string>
+    <string name="interval_12h">12 Insa</string>
+    <string name="interval_6h">6 pa nsa</string>
+    <string name="interval_3h">3 Insa</string>
+    <string name="interval_hourly">Cila nsa</string>
+    <string name="forecast_interval">Inshita iya Kusobela (nga calinga)</string>
 </resources>

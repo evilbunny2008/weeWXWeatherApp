@@ -88,4 +88,13 @@
     <string name="update_while_running">Tsakemɔ be mli ni ojoɔ foi</string>
     <string name="force_dark_mode">Hewalɛ Dade Mode</string>
     <string name="no_download_or_app_not_setup">Akɛ nɔ ko ni ajieɔ loo app ko etoko</string>
+    <string name="rain_in_inches">Nugbɔ yɛ Inch mli?</string>
+    <string name="forecast_interval">Gbɛtsɔɔmɔ teŋ (kɛji ehi)</string>
+    <string name="forecast_daily">Daanɛ</string>
+    <string name="forecast_6hourly">6 Daa ŋmɛlɛtswaa</string>
+    <string name="interval_daily">Daanɛ</string>
+    <string name="interval_12h">12 Daa ŋmɛlɛtswaa</string>
+    <string name="interval_6h">6 Daa ŋmɛlɛtswaa</string>
+    <string name="interval_3h">3 ŋmɛlɛtswaa fɛɛ ŋmɛlɛtswaa</string>
+    <string name="interval_hourly">Daa ŋmɛlɛtswaa</string>
 </resources>

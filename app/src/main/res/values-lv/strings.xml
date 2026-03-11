@@ -88,4 +88,13 @@
     <string name="update_while_running">Atjauniniet darbības laikā</string>
     <string name="force_dark_mode">Piespiest tumšo režīmu</string>
     <string name="no_download_or_app_not_setup">Nav iestatīta neviena lejupielāde vai lietotne</string>
+    <string name="rain_in_inches">Lietus collās?</string>
+    <string name="forecast_interval">Prognozes intervāls (ja piemērojams)</string>
+    <string name="forecast_daily">Ikdienas</string>
+    <string name="forecast_6hourly">6 Stundu</string>
+    <string name="interval_daily">Ikdienas</string>
+    <string name="interval_12h">12 Stundu</string>
+    <string name="interval_6h">6 Stundu</string>
+    <string name="interval_3h">3 Stundu</string>
+    <string name="interval_hourly">Stundu</string>
 </resources>

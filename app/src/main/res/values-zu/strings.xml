@@ -88,4 +88,13 @@
     <string name="update_while_running">Buyekeza ngenkathi ugijima</string>
     <string name="force_dark_mode">Cindezela imodi emnyama</string>
     <string name="no_download_or_app_not_setup">Akukho ukulanda noma uhlelo lokusebenza olungakasethwa</string>
+    <string name="rain_in_inches">Imvula ngama-intshi?</string>
+    <string name="forecast_interval">Isikhathi Sokubikezela (uma sikhona)</string>
+    <string name="forecast_daily">Nsuku zonke</string>
+    <string name="forecast_6hourly">6 Ngehora</string>
+    <string name="interval_daily">Nsuku zonke</string>
+    <string name="interval_12h">12 Ngehora</string>
+    <string name="interval_6h">6 Ngehora</string>
+    <string name="interval_3h">3 Ngehora</string>
+    <string name="interval_hourly">Ngehora</string>
 </resources>

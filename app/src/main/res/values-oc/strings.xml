@@ -88,4 +88,13 @@
     <string name="update_while_running">Actualizacion al moment de foncionar</string>
     <string name="force_dark_mode">Mode fosc de fòrça</string>
     <string name="no_download_or_app_not_setup">Pas de descarga o d\'aplicacion es pas estada configurat</string>
+    <string name="rain_in_inches">Pluèja en polças?</string>
+    <string name="forecast_interval">Interval de prevision (se s\'aplica)</string>
+    <string name="forecast_daily">Quotidian</string>
+    <string name="forecast_6hourly">6 per ora</string>
+    <string name="interval_daily">Quotidian</string>
+    <string name="interval_12h">12 per ora</string>
+    <string name="interval_6h">6 per ora</string>
+    <string name="interval_3h">3 per ora</string>
+    <string name="interval_hourly">Orari</string>
 </resources>

@@ -88,4 +88,13 @@
     <string name="update_while_running">Update o sa matha</string>
     <string name="force_dark_mode">qobella mokgwa wa lefifi</string>
     <string name="no_download_or_app_not_setup">Ga go na go taonelouta goba tirišo ga se ya ka ya hlongwa</string>
+    <string name="rain_in_inches">Pula ka Disenthimithara?</string>
+    <string name="forecast_interval">Sebaka sa Ponelopele (ge e le maleba)</string>
+    <string name="forecast_daily">Tšatši ka tšatši</string>
+    <string name="forecast_6hourly">6 Ka iri ka iri</string>
+    <string name="interval_daily">Tšatši ka tšatši</string>
+    <string name="interval_12h">12 Ka iri ka iri</string>
+    <string name="interval_6h">6 Ka iri ka iri</string>
+    <string name="interval_3h">3 Ka iri ka iri</string>
+    <string name="interval_hourly">Iri le iri</string>
 </resources>

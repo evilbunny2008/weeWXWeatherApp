@@ -40,6 +40,7 @@ class KeyValue
 	static final List<County> counties = new ArrayList<>();
 
 	static String countyName = null;
+	static String bomLocation = null;
 
 	static boolean isPrefSet(String var)
 	{

@@ -114,7 +114,7 @@ class NetworkClient
 		return clientNoTimeoutInstance.newBuilder().build();
 	}
 
-	static OkHttpClient getInstance(String url)
+	static OkHttpClient getInstance(String url, boolean nocache)
 	{
 		OkHttpClient.Builder newClient = newInstance();
 
@@ -125,9 +125,11 @@ class NetworkClient
 		//if(!url.contains("windy.com"))
 		LogMessage("NetworkClient.getInstance() URL: " + url);
 
-		url = noCache(url);
-
-		LogMessage("NetworkClient.getInstance() New URL: " + url);
+		if(nocache)
+		{
+			url = noCache(url);
+			LogMessage("NetworkClient.getInstance() New URL: " + url);
+		}
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() == null || !uri.getUserInfo().contains(":"))

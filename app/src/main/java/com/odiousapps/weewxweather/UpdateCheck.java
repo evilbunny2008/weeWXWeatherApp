@@ -65,7 +65,7 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		int pos = (int)KeyValue.readVar("updateInterval", weeWXApp.updateInterval_default);
+		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
 		if(pos == 6 && !KeyValue.isVisible)
 		{
 			LogMessage("UpdateCheck.onReceive() Skipping, pos == 6 but app isn't visible...", KeyValue.d);
@@ -90,7 +90,7 @@ public class UpdateCheck extends BroadcastReceiver
 		LogMessage("UpdateCheck.onReceive() finished.");
 	}
 
-	private static PendingIntent getPendingIntent(Context context, boolean doNoCreate)
+	private static PendingIntent getPendingIntent(Context context, boolean doNoCreate, int reqcode)
 	{
 		Intent intent = new Intent(context, UpdateCheck.class);
 		intent.setAction(weeWXAppCommon.UPDATECHECK);
@@ -100,7 +100,7 @@ public class UpdateCheck extends BroadcastReceiver
 		if(doNoCreate)
 			flags |= PendingIntent.FLAG_NO_CREATE;
 
-		return PendingIntent.getBroadcast(context, 0, intent, flags);
+		return PendingIntent.getBroadcast(context, reqcode, intent, flags);
 	}
 
 	static void setNextAlarm()
@@ -127,21 +127,14 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		int pos = (int)KeyValue.readVar("updateInterval", weeWXApp.updateInterval_default);
+		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
 		if(pos == 6 && !KeyValue.isVisible)
 		{
 			LogMessage("UpdateCheck.setNextAlarm() Skipping, pos == 6 but app isn't visible...", KeyValue.d);
 			return;
 		}
 
-		if(getPendingIntent(context, true) != null)
-		{
-			LogMessage("UpdateCheck.setNextAlarm() An alarm is already set, did you forget to call cancel first? Skipping...", KeyValue.d);
-			return;
-		}
-
 		String string_time = weeWXAppCommon.sdf10.format(npwsll[0]);
-
 		LogMessage("UpdateCheck.setNextAlarm() now: " + string_time);
 
 		string_time = weeWXAppCommon.sdf10.format(npwsll[3]);
@@ -154,9 +147,9 @@ public class UpdateCheck extends BroadcastReceiver
 		AlarmManager alarm = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
 
 		if(canSetExact(context))
-			setExactAlarm(context, alarm, npwsll[3]);
+			setExactAlarm(context, alarm, npwsll[3], npwsll[1]);
 		else
-			setInexactAlarm(context, alarm, npwsll[3]);
+			setInexactAlarm(context, alarm, npwsll[3], npwsll[1]);
 	}
 
 	static void promptForExact(Context context)
@@ -179,20 +172,30 @@ public class UpdateCheck extends BroadcastReceiver
 		}
 	}
 
-	private static void setExactAlarm(Context context, AlarmManager alarm, long start)
+	private static void setExactAlarm(Context context, AlarmManager alarm, long start, long period)
 	{
 		long current_time = System.currentTimeMillis();
-		alarm.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, start, getPendingIntent(context, false));
-		LogMessage("UpdateCheck.setExactAlarm() Successfully set the exact alarm for " +
-		           (Math.round((start - current_time) / 100D) / 10D) + "s time...");
+		int reqcode = 0;
+
+		for(long i = start; i < start + period * weeWXApp.max_alarms; i += period)
+		{
+			alarm.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, i, getPendingIntent(context, false, reqcode++));
+			LogMessage("UpdateCheck.setExactAlarm() Successfully set the exact alarm for " +
+			           (Math.round((i - current_time) / 100D) / 10D) + "s time...");
+		}
 	}
 
-	private static void setInexactAlarm(Context context, AlarmManager alarm, long start)
+	private static void setInexactAlarm(Context context, AlarmManager alarm, long start, long period)
 	{
 		long current_time = System.currentTimeMillis();
-		alarm.set(AlarmManager.RTC_WAKEUP, start, getPendingIntent(context, false));
-		LogMessage("UpdateCheck.setInexactAlarm() Successfully set the inexact alarm for " +
-		           (Math.round((start - current_time) / 100D) / 10D) + "s time...");
+		int reqcode = 0;
+
+		for(long i = start; i < start + period * weeWXApp.max_alarms; i += period)
+		{
+			alarm.set(AlarmManager.RTC_WAKEUP, i, getPendingIntent(context, false, reqcode++));
+			LogMessage("UpdateCheck.setInexactAlarm() Successfully set the inexact alarm for " +
+			           (Math.round((i - current_time) / 100D) / 10D) + "s time...");
+		}
 	}
 
 	static boolean canSetExact(Context context)
@@ -225,19 +228,19 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		PendingIntent pi = getPendingIntent(context, true);
-
-		if(pi == null)
+		for(int reqcode = 0; reqcode < weeWXApp.max_alarms * 2; reqcode++)
 		{
-			LogMessage("UpdateCheck.cancelAlarm() An alarm wasn't set, skipping...");
-			return;
+			PendingIntent pi = getPendingIntent(context, true, reqcode);
+
+			if(pi != null)
+			{
+				AlarmManager alarmManager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
+				alarmManager.cancel(pi);
+				pi.cancel();
+
+				LogMessage("UpdateCheck.cancelAlarm() Successfully cancelled the reoccurring alarm...");
+			}
 		}
-
-		AlarmManager alarmManager = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
-		alarmManager.cancel(pi);
-		pi.cancel();
-
-		LogMessage("UpdateCheck.cancelAlarm() Successfully cancelled the reoccurring alarm...");
 	}
 
 	static void runInTheBackground(boolean onReceivedUpdate, boolean onAppStart)
@@ -264,7 +267,7 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		int pos = (int)KeyValue.readVar("updateInterval", weeWXApp.updateInterval_default);
+		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
 		if(pos < 0)
 		{
 			LogMessage("UpdateCheck.runInTheBackground() Invalid update frequency...", KeyValue.d);

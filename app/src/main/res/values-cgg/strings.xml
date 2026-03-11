@@ -88,4 +88,13 @@
     <string name="update_while_running">Hindukira obwo orikwiruka</string>
     <string name="force_dark_mode">Force Dark</string>
     <string name="no_download_or_app_not_setup">Tihariho orikutunga nari app eyateirweho</string>
+    <string name="rain_in_inches">Enjura omu Inci?</string>
+    <string name="forecast_interval">Okutebereza kw\'obwire (kyaba nikibaasika)</string>
+    <string name="forecast_daily">Burijo</string>
+    <string name="forecast_6hourly">6 buri shaaha</string>
+    <string name="interval_daily">Burijo</string>
+    <string name="interval_12h">12 buri shaaha</string>
+    <string name="interval_6h">6 buri shaaha</string>
+    <string name="interval_3h">3 buri shaaha</string>
+    <string name="interval_hourly">Buri shaaha</string>
 </resources>

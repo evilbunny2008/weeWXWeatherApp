@@ -88,4 +88,13 @@
     <string name="update_while_running">Kuvugurura mugihe wiruka</string>
     <string name="force_dark_mode">Imbaraga zo kwica</string>
     <string name="no_download_or_app_not_setup">Nta gukuramo cyangwa porogaramu ntabwo byashyizweho</string>
+    <string name="rain_in_inches">Imvura muri Inch?</string>
+    <string name="forecast_interval">Intera iteganijwe (niba bishoboka)</string>
+    <string name="forecast_daily">Buri munsi</string>
+    <string name="forecast_6hourly">6 Isaha</string>
+    <string name="interval_daily">Buri munsi</string>
+    <string name="interval_12h">12 Isaha</string>
+    <string name="interval_6h">6 Isaha</string>
+    <string name="interval_3h">3 Isaha</string>
+    <string name="interval_hourly">Isaha</string>
 </resources>

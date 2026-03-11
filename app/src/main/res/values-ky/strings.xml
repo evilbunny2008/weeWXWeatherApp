@@ -88,4 +88,13 @@
     <string name="update_while_running">Иштеп жатканда жаңыртыңыз</string>
     <string name="force_dark_mode">Күчтүү караңгы режим</string>
     <string name="no_download_or_app_not_setup">Эч бир жүктөп алуу же колдонмо жөндөлгөн жок</string>
+    <string name="rain_in_inches">Дюйм менен жаанбы?</string>
+    <string name="forecast_interval">Болжолдоо аралыгы (эгер бар болсо)</string>
+    <string name="forecast_daily">Күнүмдүк</string>
+    <string name="forecast_6hourly">6 Саат сайын</string>
+    <string name="interval_daily">Күнүмдүк</string>
+    <string name="interval_12h">12 Саат сайын</string>
+    <string name="interval_6h">6 Саат сайын</string>
+    <string name="interval_3h">3 Саат сайын</string>
+    <string name="interval_hourly">Саат сайын</string>
 </resources>

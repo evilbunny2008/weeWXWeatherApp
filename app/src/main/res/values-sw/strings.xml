@@ -88,4 +88,13 @@
     <string name="update_while_running">Sasisha wakati unaendesha</string>
     <string name="force_dark_mode">Nguvu hali ya giza</string>
     <string name="no_download_or_app_not_setup">Hakuna upakuaji au programu ambayo haijasanidiwa</string>
+    <string name="rain_in_inches">Mvua kwa Inchi?</string>
+    <string name="forecast_interval">Muda wa Utabiri (ikiwa unatumika)</string>
+    <string name="forecast_daily">Kila siku</string>
+    <string name="forecast_6hourly">6 Saa</string>
+    <string name="interval_daily">Kila siku</string>
+    <string name="interval_12h">12 Saa</string>
+    <string name="interval_6h">6 Saa</string>
+    <string name="interval_3h">3 Saa</string>
+    <string name="interval_hourly">Kila saa</string>
 </resources>

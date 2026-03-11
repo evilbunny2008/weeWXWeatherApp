@@ -190,7 +190,7 @@ public class Custom extends Fragment
 
 			lastRefresh = now;
 
-			int pos = (int)KeyValue.readVar("updateInterval", weeWXApp.updateInterval_default);
+			int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
 			if(pos > 0 && KeyValue.isVisible)
 				loadCustom(true);
 		}

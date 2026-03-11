@@ -88,4 +88,13 @@
     <string name="update_while_running">I -update habang tumatakbo</string>
     <string name="force_dark_mode">Pilitin ang madilim na mode</string>
     <string name="no_download_or_app_not_setup">Walang pag-download o app na hindi pa nase-setup</string>
+    <string name="rain_in_inches">Ulan sa pulgada?</string>
+    <string name="forecast_interval">Pagtataya Interval (kung naaangkop)</string>
+    <string name="forecast_daily">Araw-araw</string>
+    <string name="forecast_6hourly">6 Oras</string>
+    <string name="interval_daily">Araw-araw</string>
+    <string name="interval_12h">12 Oras</string>
+    <string name="interval_6h">6 Oras</string>
+    <string name="interval_3h">3 Oras</string>
+    <string name="interval_hourly">Oras-oras</string>
 </resources>

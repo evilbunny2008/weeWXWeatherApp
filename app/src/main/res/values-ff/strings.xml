@@ -88,4 +88,13 @@
     <string name="update_while_running">Hesɗitin nde dogata</string>
     <string name="force_dark_mode">Mode doole niɓɓere</string>
     <string name="no_download_or_app_not_setup">Alaa ƴettugol walla app alaa ko setup</string>
+    <string name="rain_in_inches">Toɓo e nder Inɗe?</string>
+    <string name="forecast_interval">Hakkunde Teskagol (so ina woodi)</string>
+    <string name="forecast_daily">Ko wetti</string>
+    <string name="forecast_6hourly">6 Waktu kala</string>
+    <string name="interval_daily">Ko wetti</string>
+    <string name="interval_12h">12 Waktu kala</string>
+    <string name="interval_6h">6 Waktu kala</string>
+    <string name="interval_3h">3 Waktu kala</string>
+    <string name="interval_hourly">Waktu kala</string>
 </resources>

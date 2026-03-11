@@ -88,4 +88,13 @@
     <string name="update_while_running">Nuashonraigh agus tú ag rith</string>
     <string name="force_dark_mode">Fórsa Mód Dark</string>
     <string name="no_download_or_app_not_setup">Níl aon íoslódáil nó níor socraíodh aip</string>
+    <string name="rain_in_inches">Báisteach in Orlach?</string>
+    <string name="forecast_interval">Eatramh Réamhaisnéise (má bhaineann)</string>
+    <string name="forecast_daily">laethúil</string>
+    <string name="forecast_6hourly">6 in aghaidh na huaire</string>
+    <string name="interval_daily">laethúil</string>
+    <string name="interval_12h">12 in aghaidh na huaire</string>
+    <string name="interval_6h">6 in aghaidh na huaire</string>
+    <string name="interval_3h">3 in aghaidh na huaire</string>
+    <string name="interval_hourly">in aghaidh na huaire</string>
 </resources>

@@ -88,4 +88,13 @@
     <string name="update_while_running">ධාවනය අතරතුර යාවත්කාලීන කරන්න</string>
     <string name="force_dark_mode">අඳුරු මාදිලිය බල කරන්න</string>
     <string name="no_download_or_app_not_setup">බාගැනීමක් හෝ යෙදුමක් සකසා නැත</string>
+    <string name="rain_in_inches">අඟල් වලින් වැස්ස?</string>
+    <string name="forecast_interval">පුරෝකථන කාල පරතරය (අදාළ නම්)</string>
+    <string name="forecast_daily">දිනපතා</string>
+    <string name="forecast_6hourly">6 පැයකට</string>
+    <string name="interval_daily">දිනපතා</string>
+    <string name="interval_12h">12 පැයකට</string>
+    <string name="interval_6h">6 පැයකට</string>
+    <string name="interval_3h">3 පැයකට</string>
+    <string name="interval_hourly">පැයකට වරක්</string>
 </resources>

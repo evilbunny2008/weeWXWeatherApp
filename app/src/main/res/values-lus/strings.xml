@@ -88,4 +88,13 @@
     <string name="update_while_running">Update a kal laiin</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="no_download_or_app_not_setup">No Download emaw App emaw pawh a la awm lo</string>
+    <string name="rain_in_inches">Ruah hi Inches in a tla em?</string>
+    <string name="forecast_interval">Forecast Interval (a hman theih chuan) 1.1</string>
+    <string name="forecast_daily">Nitin</string>
+    <string name="forecast_6hourly">6 Darkar tin</string>
+    <string name="interval_daily">Nitin</string>
+    <string name="interval_12h">12 Darkar tin</string>
+    <string name="interval_6h">6 Darkar tin</string>
+    <string name="interval_3h">Darkar khatah 3</string>
+    <string name="interval_hourly">Darkar tin</string>
 </resources>

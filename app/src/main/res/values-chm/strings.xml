@@ -88,4 +88,13 @@
     <string name="update_while_running">Куржмо годым уэмдыме</string>
     <string name="force_dark_mode">Вий Пычкемыш Режим</string>
     <string name="no_download_or_app_not_setup">Уке скачать але приложений лийын огыл настройкым</string>
+    <string name="rain_in_inches">Дюйм дене йӱр?</string>
+    <string name="forecast_interval">Прогноз интервал (уке гын)</string>
+    <string name="forecast_daily">Еда</string>
+    <string name="forecast_6hourly">6 шагатлан</string>
+    <string name="interval_daily">Еда</string>
+    <string name="interval_12h">12 шагатлан</string>
+    <string name="interval_6h">6 шагатлан</string>
+    <string name="interval_3h">3 шагатлан</string>
+    <string name="interval_hourly">Шагат еда</string>
 </resources>

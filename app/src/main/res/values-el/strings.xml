@@ -88,4 +88,13 @@
     <string name="update_while_running">Ενημέρωση κατά την εκτέλεση</string>
     <string name="force_dark_mode">Αναγκαστική σκοτεινή λειτουργία</string>
     <string name="no_download_or_app_not_setup">Δεν έχει ρυθμιστεί καμία λήψη ή εφαρμογή</string>
+    <string name="rain_in_inches">Βροχή σε ίντσες;</string>
+    <string name="forecast_interval">Διάστημα πρόβλεψης (αν υπάρχει)</string>
+    <string name="forecast_daily">Καθημερινά</string>
+    <string name="forecast_6hourly">6 Ωριαία</string>
+    <string name="interval_daily">Καθημερινά</string>
+    <string name="interval_12h">12 Ωριαία</string>
+    <string name="interval_6h">6 Ωριαία</string>
+    <string name="interval_3h">3 Ωριαία</string>
+    <string name="interval_hourly">Ωριαίος</string>
 </resources>

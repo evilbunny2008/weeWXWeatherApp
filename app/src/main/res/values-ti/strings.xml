@@ -71,7 +71,7 @@
     <string name="radar_still_downloading">ራዳር ምስሊ ገና ይወርድ ኣሎ።</string>
     <string name="radar_download_failed">ናይ ራዳር ምስሊ ምውራድ ኣይከኣለን</string>
     <string name="failed_to_process_forecast_data">ትንበያ ዳታ ምምስራሕ ኣይተኻእለን ።</string>
-    <string name="wifi_not_available">would updated but wifi connection ኣይምተረኽበን</string>
+    <string name="wifi_not_available">would updated but Wi-Fi connection ኣይምተረኽበን</string>
     <string name="invalid_update_interval">ናይ ምዕባለ ፍልልይ ትኽክል ኣይኮነን፣ ቅጥዕታት ኣዘምኖ ድሕሪኡ ዳግማይ ፈትኖ</string>
     <string name="attempting_to_download_data_txt">ካብ ሰርቨርካ Data.txt download data.txt</string>
     <string name="radar_type_is_invalid">ራዳር ዓይነት \'%1$s\' ትኽክል ኣይኮነን፣ ናይ ቅጥዕታት ፋይልካ መርምሮ እሞ እንደገና ፈትን።</string>
@@ -88,4 +88,13 @@
     <string name="update_while_running">ኣብ እትሰርሓሉ እዋን update</string>
     <string name="force_dark_mode">ሓይሊ ጸሊም ሞድ</string>
     <string name="no_download_or_app_not_setup">No Download ወይ App ኣይተዳለወን</string>
+    <string name="rain_in_inches">ዝናብ ብኢንች?</string>
+    <string name="forecast_interval">ትንበያ ፍልልይ (ኣድላዪ እንተኾይኑ)</string>
+    <string name="forecast_daily">መዓልታዊ</string>
+    <string name="forecast_6hourly">6 ኣብ ሰዓት</string>
+    <string name="interval_daily">መዓልታዊ</string>
+    <string name="interval_12h">12 ኣብ ሰዓት</string>
+    <string name="interval_6h">6 ኣብ ሰዓት</string>
+    <string name="interval_3h">3 ኣብ ሰዓት</string>
+    <string name="interval_hourly">ኣብ ሰዓት</string>
 </resources>

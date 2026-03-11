@@ -88,4 +88,13 @@
     <string name="update_while_running">Eguneratu exekutatzen ari zaren bitartean</string>
     <string name="force_dark_mode">Indar iluna modua</string>
     <string name="no_download_or_app_not_setup">Ez da deskargarik edo aplikaziorik konfiguratu</string>
+    <string name="rain_in_inches">Euria hazbetetan?</string>
+    <string name="forecast_daily">Egunero</string>
+    <string name="forecast_6hourly">6 Orduka</string>
+    <string name="interval_daily">Egunero</string>
+    <string name="interval_12h">12 orduro</string>
+    <string name="interval_6h">6 Orduka</string>
+    <string name="interval_3h">3 Orduka</string>
+    <string name="interval_hourly">Orduka</string>
+    <string name="forecast_interval">Iragarpen tartea (hala badagokio)</string>
 </resources>

@@ -88,4 +88,13 @@
     <string name="update_while_running">Update sambil lari</string>
     <string name="force_dark_mode">Maksain Mode Gelap</string>
     <string name="no_download_or_app_not_setup">Belom ada download atau app belom udah diatur</string>
+    <string name="rain_in_inches">Hujan di inci?</string>
+    <string name="forecast_daily">Tiap ari</string>
+    <string name="forecast_6hourly">6 Jam</string>
+    <string name="interval_daily">Tiap ari</string>
+    <string name="interval_12h">12 Jam</string>
+    <string name="interval_6h">6 Jam</string>
+    <string name="interval_3h">3 per jam</string>
+    <string name="interval_hourly">Per jam</string>
+    <string name="forecast_interval">Perkiraan Interval (kalo ada)</string>
 </resources>

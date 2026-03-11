@@ -88,4 +88,13 @@
     <string name="update_while_running">Faafou ao tamoe</string>
     <string name="force_dark_mode">Faamalosia le pogisa auala</string>
     <string name="no_download_or_app_not_setup">E le\'i fa\'atulaga se laiga po\'o se app</string>
+    <string name="rain_in_inches">Timuga i Inisi?</string>
+    <string name="forecast_interval">Vaeluaga o Va\'aiga (pe a talafeagai)</string>
+    <string name="forecast_daily">Aso uma</string>
+    <string name="forecast_6hourly">6 Itula</string>
+    <string name="interval_daily">Aso uma</string>
+    <string name="interval_12h">12 Itula</string>
+    <string name="interval_6h">6 Itula</string>
+    <string name="interval_3h">3 Itula</string>
+    <string name="interval_hourly">Ta\'i itula</string>
 </resources>

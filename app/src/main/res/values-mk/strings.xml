@@ -88,4 +88,13 @@
     <string name="update_while_running">Ажурирајте додека работи</string>
     <string name="force_dark_mode">Присилете го темниот режим</string>
     <string name="no_download_or_app_not_setup">Ниту едно преземање или апликација не е поставена</string>
+    <string name="rain_in_inches">Дожд во инчи?</string>
+    <string name="forecast_interval">Прогнозиран интервал (ако е применливо)</string>
+    <string name="forecast_daily">Дневно</string>
+    <string name="forecast_6hourly">6 На час</string>
+    <string name="interval_daily">Дневно</string>
+    <string name="interval_12h">12 час</string>
+    <string name="interval_6h">6 На час</string>
+    <string name="interval_3h">3 час</string>
+    <string name="interval_hourly">На час</string>
 </resources>

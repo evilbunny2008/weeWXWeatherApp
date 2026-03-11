@@ -80,6 +80,9 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
 
+import org.json.JSONObject;
+
+
 import static androidx.core.view.WindowCompat.enableEdgeToEdge;
 
 import static com.github.evilbunny2008.colourpicker.Common.parseHexToColour;
@@ -101,7 +104,7 @@ public class MainActivity extends FragmentActivity
 	private TextInputEditText settingsURL, customURL;
 	private CPEditText widgetBG, widgetFG;
 	private MaterialButton b1, b2, b3, b4;
-	private MaterialAutoCompleteTextView s1, s2, s3;
+	private MaterialAutoCompleteTextView s1, s2, s3, s4;
 	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, rain_in_inches,
 			use_exact_alarm, save_app_debug_logs, next_moon, force_dark_mode;
 	private MaterialRadioButton showRadar, showForecast;
@@ -117,7 +120,7 @@ public class MainActivity extends FragmentActivity
 
 	private final String utf8 = "UTF-8";
 
-	private int UpdateFrequency, DayNightMode, widget_theme_mode;
+	private int UpdateFrequency, DayNightMode, widget_theme_mode, UpdateInterval;
 
 	private int appInitialLeft, appInitialRight, appInitialTop, appInitialBottom;
 	private int cdInitialLeft, cdInitialRight, cdInitialTop, cdInitialBottom;
@@ -199,11 +202,13 @@ public class MainActivity extends FragmentActivity
 		screen_elements.add(new Setting("spinner1", R.id.spinner1));
 		screen_elements.add(new Setting("spinner2", R.id.spinner2));
 		screen_elements.add(new Setting("spinner3", R.id.spinner3));
+		screen_elements.add(new Setting("spinner4", R.id.spinner4));
 		screen_elements.add(new Setting("til1", R.id.til1));
 		screen_elements.add(new Setting("til2", R.id.til2));
 		screen_elements.add(new Setting("til3", R.id.til3));
 		screen_elements.add(new Setting("til4", R.id.til4));
 		screen_elements.add(new Setting("til5", R.id.til5));
+		screen_elements.add(new Setting("til6", R.id.til6));
 		screen_elements.add(new Setting("use_exact_alarm", R.id.use_exact_alarm));
 		screen_elements.add(new Setting("widgetBG", R.id.widgetBG));
 		screen_elements.add(new Setting("widgetFG", R.id.widgetFG));
@@ -451,6 +456,13 @@ public class MainActivity extends FragmentActivity
 			LogMessage("MainActivity.onCreate() New widget_theme_mode: " + widget_theme_mode);
 		});
 
+		s4 = findViewById(R.id.spinner4);
+		s4.setOnItemClickListener((parent, view, position, id) ->
+		{
+			UpdateInterval = position;
+			LogMessage("MainActivity.onCreate() New UpdateInterval: " + UpdateInterval);
+		});
+
 		widgetBG = findViewById(R.id.widgetBG);
 		widgetFG = findViewById(R.id.widgetFG);
 
@@ -465,7 +477,8 @@ public class MainActivity extends FragmentActivity
 		int fg, bg;
 		boolean wo, met, rii, si, sr, sf, uea, sadl, nm, fdm;
 
-		UpdateFrequency = (int)KeyValue.readVar("updateInterval", weeWXApp.updateInterval_default);
+		UpdateFrequency = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+		UpdateInterval = (int)KeyValue.readVar("UpdateInterval", weeWXApp.UpdateInterval_default);
 		DayNightMode = (int)KeyValue.readVar("DayNightMode", weeWXApp.DayNightMode_default);
 		widget_theme_mode =	(int)KeyValue.readVar(weeWXAppCommon.WIDGET_THEME_MODE, weeWXApp.widget_theme_mode_default);
 
@@ -476,7 +489,7 @@ public class MainActivity extends FragmentActivity
 
 		wo = (boolean)KeyValue.readVar("onlyWIFI", weeWXApp.onlyWIFI_default);
 		met = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
-		rii = (boolean)KeyValue.readVar("rainInInches", false);
+		rii = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
 		si = (boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default);
 		sr = (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default);
 
@@ -489,10 +502,12 @@ public class MainActivity extends FragmentActivity
 		{
 			LogMessage("MainActivity.onCreate() Reading current settings that were saved in a bundle....");
 			UpdateFrequency = savedInstanceState.getInt("UpdateFrequency", UpdateFrequency);
+			UpdateInterval = savedInstanceState.getInt("UpdateInterval", UpdateInterval);
 			DayNightMode = savedInstanceState.getInt("DayNightMode", DayNightMode);
 			widget_theme_mode = savedInstanceState.getInt("widget_theme_mode", widget_theme_mode);
 
 			LogMessage("MainActivity.onCreate() UpdateFrequency: " + UpdateFrequency);
+			LogMessage("MainActivity.onCreate() UpdateInterval: " + UpdateInterval);
 			LogMessage("MainActivity.onCreate() DayNightMode: " + DayNightMode);
 			LogMessage("MainActivity.onCreate() widget_theme_mode: " + widget_theme_mode);
 
@@ -865,10 +880,12 @@ public class MainActivity extends FragmentActivity
 		LogMessage("MainActivity.onSaveInstanceState() Stashing current settings into a bundle....");
 		outState.putInt("page", mViewPager.getCurrentItem());
 		outState.putInt("UpdateFrequency", UpdateFrequency);
+		outState.putInt("UpdateInterval", UpdateInterval);
 		outState.putInt("DayNightMode", DayNightMode);
 		outState.putInt("widget_theme_mode", widget_theme_mode);
 
 		LogMessage("MainActivity.onSaveInstanceState() UpdateFrequency: " + UpdateFrequency);
+		LogMessage("MainActivity.onSaveInstanceState() UpdateInterval: " + UpdateInterval);
 		LogMessage("MainActivity.onSaveInstanceState() DayNightMode: " + DayNightMode);
 		LogMessage("MainActivity.onSaveInstanceState() widget_theme_mode: " + widget_theme_mode);
 
@@ -950,6 +967,7 @@ public class MainActivity extends FragmentActivity
 		ArrayAdapter<String> adapter1 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.updateOptions);
 		ArrayAdapter<String> adapter2 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.themeOptions);
 		ArrayAdapter<String> adapter3 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.widgetThemeOptions);
+		ArrayAdapter<String> adapter4 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.updateInterval);
 
 		adapter1.notifyDataSetChanged();
 		adapter2.notifyDataSetChanged();
@@ -958,13 +976,18 @@ public class MainActivity extends FragmentActivity
 		if(UpdateFrequency < 0)
 			UpdateFrequency = 1;
 
+		if(UpdateInterval < 0)
+			UpdateInterval = 0;
+
 		final int uf = UpdateFrequency;
+		final int ui = UpdateInterval;
 		final int dnm = DayNightMode;
 		final int wtm = widget_theme_mode;
 
 		runOnUiThread(() ->
 		{
 			LogMessage("MainActivity.updateDropDowns() UpdateFrequency: " + uf);
+			LogMessage("MainActivity.updateDropDowns() UpdateInterval: " + ui);
 			LogMessage("MainActivity.updateDropDowns() DayNightMode: " + dnm);
 			LogMessage("MainActivity.updateDropDowns() widget_theme_mode: " + wtm);
 
@@ -985,6 +1008,9 @@ public class MainActivity extends FragmentActivity
 
 			s3.setAdapter(adapter3);
 			s3.setText(weeWXApp.widgetThemeOptions[wtm], false);
+
+			s4.setAdapter(adapter4);
+			s4.setText(weeWXApp.updateInterval[ui], false);
 		});
 	}
 
@@ -1096,7 +1122,7 @@ public class MainActivity extends FragmentActivity
 
 		if(backgroundTask != null && !backgroundTask.isDone())
 		{
-			if(Math.abs(Duration.between(bgStart, now).toSeconds()) < 30)
+			if(Duration.between(bgStart, now).toSeconds() < 30)
 			{
 				LogMessage("processSettings() executor is still running and is less than 30s old (" +
 				           Math.abs(Duration.between(bgStart, now).toSeconds()) + "s), skipping...",	true, KeyValue.w);
@@ -1122,8 +1148,8 @@ public class MainActivity extends FragmentActivity
 			boolean validURL3 = false;
 			boolean validURL5;
 
-			String baseURL = "", radtype = "", radarURL = "", forecastURL = "", webcamURL = "",
-					CustomURL = "", appCustomURL, fctype = "", bomtown = "";
+			String baseURL = "", radtype = "", radarURL = "", forecastURL = "",
+					webcamURL = "", CustomURL = "", appCustomURL, fctype = "", bomtown = "";
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
 			LogMessage("processSettings() settings_url: " + settings_url);
@@ -1223,10 +1249,22 @@ public class MainActivity extends FragmentActivity
 
 			LogMessage("processSettings() forecastURL: " + forecastURL);
 
+			String bom3_endpoint = "daily";
 			if(!forecastURL.isBlank())
 			{
 				try
 				{
+					if(fctype.toLowerCase(Locale.ENGLISH).equals("bom3"))
+					{
+						forecastURL = forecastURL.strip();
+
+						if(forecastURL.length() > 6)
+							forecastURL = forecastURL.substring(0, 6);
+
+						if(UpdateInterval > 0)
+							bom3_endpoint = "hourly";
+					}
+
 					switch(fctype.toLowerCase(Locale.ENGLISH))
 					{
 						case "weatherzone3" ->
@@ -1452,7 +1490,22 @@ public class MainActivity extends FragmentActivity
 						}
 						case "bom3" ->
 						{
-							forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip() + "/forecasts/daily";
+							String newurl = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip();
+							String text = weeWXAppCommon.downloadString(newurl, false);
+							LogMessage("processSettings(): text: " + text);
+
+							JSONObject jobj = new JSONObject(text);
+							if(jobj.has("data"))
+							{
+								jobj = jobj.getJSONObject("data");
+								if(jobj.has("name") && jobj.has("state"))
+								{
+									KeyValue.bomLocation = jobj.getString("name") + ", " + jobj.getString("state");
+									LogMessage("processSettings() BoM Location: " + KeyValue.bomLocation);
+								}
+							}
+
+							forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip() + "/forecasts/" + bom3_endpoint;
 							LogMessage("processSettings() forecastURL: " + forecastURL);
 							LogMessage("processSettings() fctype: " + fctype);
 						}
@@ -1551,10 +1604,11 @@ public class MainActivity extends FragmentActivity
 			{
 				LogMessage("processSettings() forecast checking: " + forecastURL);
 				LogMessage("processSettings() fctype: " + fctype);
+				LogMessage("processSettings() UpdateInterval: " + UpdateInterval);
 
 				try
 				{
-					validURL3 = weeWXAppCommon.reallyGetForecast(fctype, forecastURL);
+					validURL3 = weeWXAppCommon.reallyGetForecast(fctype, forecastURL, UpdateInterval);
 					//LogMessage("processSettings() tmpStr: " + tmpStr);
 				} catch(Exception e) {
 					//doStackOutput(e);
@@ -1638,7 +1692,7 @@ public class MainActivity extends FragmentActivity
 					if(radtype.equals("image"))
 						validURL2 = weeWXAppCommon.loadOrDownloadImage(radarURL, weeWXApp.radarFilename, false) != null;
 					else if(radtype.equals("webpage"))
-						validURL2 = weeWXAppCommon.checkURL(radarURL);
+						validURL2 = weeWXAppCommon.checkURL(radarURL, false);
 					else
 						validURL2 = false;
 				} catch(Exception e) {
@@ -1717,7 +1771,7 @@ public class MainActivity extends FragmentActivity
 				{
 					try
 					{
-						if(weeWXAppCommon.checkURL(CustomURL))
+						if(weeWXAppCommon.checkURL(CustomURL, false))
 						{
 							validURL5 = true;
 						} else {
@@ -1753,7 +1807,7 @@ public class MainActivity extends FragmentActivity
 				try
 				{
 					LogMessage("processSettings() Checking url: " + appCustomURL);
-					validURL5 = weeWXAppCommon.checkURL(appCustomURL);
+					validURL5 = weeWXAppCommon.checkURL(appCustomURL, true);
 				} catch(Exception e) {
 					doStackOutput(e);
 					errorStr = e.getLocalizedMessage();
@@ -1785,8 +1839,14 @@ public class MainActivity extends FragmentActivity
 
 			KeyValue.putVar("CountyName", KeyValue.countyName);
 
+			if(KeyValue.bomLocation != null && KeyValue.bomLocation.isBlank())
+				KeyValue.bomLocation = null;
+
+			KeyValue.putVar("bomLocation", KeyValue.bomLocation);
+
 			KeyValue.putVar("SETTINGS_URL", settingsURL.getText().toString());
-			KeyValue.putVar("updateInterval", UpdateFrequency);
+			KeyValue.putVar("UpdateFrequency", UpdateFrequency);
+			KeyValue.putVar("UpdateInterval", UpdateInterval);
 			KeyValue.putVar("BASE_URL", baseURL);
 
 			if(forecastURL == null || forecastURL.isBlank())
@@ -1801,8 +1861,10 @@ public class MainActivity extends FragmentActivity
 			} else {
 				KeyValue.putVar("FORECAST_URL", forecastURL);
 				KeyValue.putVar("fctype", fctype);
+
 				if(forecastLocationName == null || forecastLocationName.isBlank())
 					forecastLocationName = null;
+
 				KeyValue.putVar("forecastLocationName", forecastLocationName);
 			}
 

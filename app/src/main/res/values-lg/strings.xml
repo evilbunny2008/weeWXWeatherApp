@@ -88,4 +88,13 @@
     <string name="update_while_running">Update nga odduka</string>
     <string name="force_dark_mode">Force dark mode</string>
     <string name="no_download_or_app_not_setup">Tewali kuwanula oba app tebadde setup</string>
+    <string name="rain_in_inches">Enkuba etonnya mu Yinsi?</string>
+    <string name="forecast_interval">Obudde bw\'okuteebereza (bwe kiba kisoboka)</string>
+    <string name="forecast_daily">Buli lunaku</string>
+    <string name="forecast_6hourly">6 Buli ssaawa</string>
+    <string name="interval_daily">Buli lunaku</string>
+    <string name="interval_12h">12 Buli ssaawa</string>
+    <string name="interval_6h">6 Buli ssaawa</string>
+    <string name="interval_3h">3 Buli ssaawa</string>
+    <string name="interval_hourly">Buli ssaawa</string>
 </resources>

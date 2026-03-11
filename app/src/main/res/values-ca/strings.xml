@@ -88,4 +88,13 @@
     <string name="update_while_running">Actualitza mentre s\'executa</string>
     <string name="force_dark_mode">Força el mode fosc</string>
     <string name="no_download_or_app_not_setup">No s\'ha configurat cap baixada o aplicació</string>
+    <string name="rain_in_inches">Pluja en polzades?</string>
+    <string name="forecast_interval">Interval de previsió (si escau)</string>
+    <string name="forecast_daily">Diàriament</string>
+    <string name="forecast_6hourly">6 Cada hora</string>
+    <string name="interval_daily">Diàriament</string>
+    <string name="interval_12h">12 hores</string>
+    <string name="interval_6h">6 Cada hora</string>
+    <string name="interval_3h">3 Cada hora</string>
+    <string name="interval_hourly">Cada hora</string>
 </resources>

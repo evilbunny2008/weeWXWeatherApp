@@ -88,4 +88,13 @@
     <string name="update_while_running">Ažurirajte tijekom rada</string>
     <string name="force_dark_mode">Prisilni tamni način rada</string>
     <string name="no_download_or_app_not_setup">Nema preuzimanja ili aplikacija nije postavljena</string>
+    <string name="rain_in_inches">Kiša u inčima?</string>
+    <string name="forecast_interval">Interval predviđanja (ako je primjenjivo)</string>
+    <string name="forecast_daily">Dnevno</string>
+    <string name="forecast_6hourly">6 na sat</string>
+    <string name="interval_daily">Dnevno</string>
+    <string name="interval_12h">12 na sat</string>
+    <string name="interval_6h">6 na sat</string>
+    <string name="interval_3h">3 sata</string>
+    <string name="interval_hourly">Svaki sat</string>
 </resources>

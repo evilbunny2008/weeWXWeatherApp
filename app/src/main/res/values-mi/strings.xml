@@ -88,4 +88,13 @@
     <string name="update_while_running">Whakahoutanga i te wa e rere ana</string>
     <string name="force_dark_mode">Te aratau pouri pouri</string>
     <string name="no_download_or_app_not_setup">Karekau he tango, he taupānga ranei kaore ano kia tatū</string>
+    <string name="rain_in_inches">Te ua i roto Inihi?</string>
+    <string name="forecast_interval">Wā Matapae (mehemea e hāngai ana)</string>
+    <string name="forecast_daily">Ia rā</string>
+    <string name="forecast_6hourly">6 Ia haora</string>
+    <string name="interval_daily">Ia rā</string>
+    <string name="interval_12h">12 Ia haora</string>
+    <string name="interval_6h">6 Ia haora</string>
+    <string name="interval_3h">3 Ia haora</string>
+    <string name="interval_hourly">Ia haora</string>
 </resources>

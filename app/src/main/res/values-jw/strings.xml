@@ -88,4 +88,13 @@
     <string name="update_while_running">Nganyari nalika mlaku</string>
     <string name="force_dark_mode">Meksa mode peteng</string>
     <string name="no_download_or_app_not_setup">Ora ana undhuhan utawa app sing durung disetel</string>
+    <string name="rain_in_inches">Udan ing Inci?</string>
+    <string name="forecast_interval">Interval Prakiraan (yen ana)</string>
+    <string name="forecast_daily">Saben dina</string>
+    <string name="forecast_6hourly">6 saben jam</string>
+    <string name="interval_daily">Saben dina</string>
+    <string name="interval_12h">12 saben jam</string>
+    <string name="interval_6h">6 saben jam</string>
+    <string name="interval_3h">3 saben jam</string>
+    <string name="interval_hourly">saben jam</string>
 </resources>

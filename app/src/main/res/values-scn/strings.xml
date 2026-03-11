@@ -88,4 +88,13 @@
     <string name="update_while_running">Aggiornamentu mentri ca currine</string>
     <string name="force_dark_mode">Modu Scuru dâ forza</string>
     <string name="no_download_or_app_not_setup">Nuḍḍa scarica o app nun fu cunfigurata</string>
+    <string name="rain_in_inches">Chioggia \'n pullici?</string>
+    <string name="forecast_interval">Ntirvallu di privisioni (si applicabbili)</string>
+    <string name="forecast_daily">Jurnaleru</string>
+    <string name="forecast_6hourly">6 uri</string>
+    <string name="interval_daily">Jurnaleru</string>
+    <string name="interval_12h">12 uri</string>
+    <string name="interval_6h">6 uri</string>
+    <string name="interval_3h">3 uri</string>
+    <string name="interval_hourly">Orariu</string>
 </resources>

@@ -88,4 +88,13 @@
     <string name="update_while_running">Update beim Laafen</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="no_download_or_app_not_setup">Keen Download oder App ass net konfiguréiert</string>
+    <string name="rain_in_inches">Reen an Zoll?</string>
+    <string name="forecast_interval">Prognoseintervall (wann zoutreffend)</string>
+    <string name="forecast_daily">Deeglech</string>
+    <string name="forecast_6hourly">6 Stonn</string>
+    <string name="interval_daily">Deeglech</string>
+    <string name="interval_12h">12 Stonneplang</string>
+    <string name="interval_6h">6 Stonn</string>
+    <string name="interval_3h">3 Stonn</string>
+    <string name="interval_hourly">Stonneplang</string>
 </resources>

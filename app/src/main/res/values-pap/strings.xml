@@ -88,4 +88,13 @@
     <string name="update_while_running">Update mientras ta core</string>
     <string name="force_dark_mode">Forsa Modo Skur</string>
     <string name="no_download_or_app_not_setup">No download òf app no ​​a wòrdu setup</string>
+    <string name="rain_in_inches">Awasero den Inch?</string>
+    <string name="forecast_interval">Intervalo di Pronóstiko (si ta aplikabel)</string>
+    <string name="forecast_daily">Tur dia</string>
+    <string name="forecast_6hourly">6 pa ora</string>
+    <string name="interval_daily">Tur dia</string>
+    <string name="interval_12h">12 pa ora</string>
+    <string name="interval_6h">6 pa ora</string>
+    <string name="interval_3h">3 pa ora</string>
+    <string name="interval_hourly">Pa ora</string>
 </resources>

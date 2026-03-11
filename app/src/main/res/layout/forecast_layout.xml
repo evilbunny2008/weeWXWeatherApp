@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	xmlns:app="http://schemas.android.com/apk/res-auto">
+	android:layout_height="match_parent">
 
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -25,62 +24,6 @@
 			android:layout_gravity="center"
 			android:foregroundGravity="center"
 			android:contentDescription="@string/empty" />
-
-		<com.google.android.material.chip.ChipGroup
-			android:id="@+id/forecastIntervalGroup"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center"
-			android:layout_marginTop="4dp"
-			android:layout_marginBottom="4dp"
-			android:visibility="gone"
-			app:singleSelection="true"
-			app:selectionRequired="true"
-			app:chipSpacingHorizontal="4dp"
-			app:chipSpacingVertical="0dp">
-
-			<com.google.android.material.chip.Chip
-				android:id="@+id/chipDaily"
-				style="@style/Widget.Material3.Chip.Filter"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/interval_daily"
-				android:textSize="11sp"
-				android:checked="true" />
-
-			<com.google.android.material.chip.Chip
-				android:id="@+id/chip12h"
-				style="@style/Widget.Material3.Chip.Filter"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/interval_12h"
-				android:textSize="11sp" />
-
-			<com.google.android.material.chip.Chip
-				android:id="@+id/chip6h"
-				style="@style/Widget.Material3.Chip.Filter"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/interval_6h"
-				android:textSize="11sp" />
-
-			<com.google.android.material.chip.Chip
-				android:id="@+id/chip3h"
-				style="@style/Widget.Material3.Chip.Filter"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/interval_3h"
-				android:textSize="11sp" />
-
-			<com.google.android.material.chip.Chip
-				android:id="@+id/chipHourly"
-				style="@style/Widget.Material3.Chip.Filter"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:text="@string/interval_hourly"
-				android:textSize="11sp" />
-
-		</com.google.android.material.chip.ChipGroup>
 
 		<FrameLayout
 			android:id="@+id/forecastWebView"

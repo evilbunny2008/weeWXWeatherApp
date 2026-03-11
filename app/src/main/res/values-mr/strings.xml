@@ -88,4 +88,13 @@
     <string name="update_while_running">चालू असताना अपडेट करा</string>
     <string name="force_dark_mode">गडद मोड सक्ती करा</string>
     <string name="no_download_or_app_not_setup">कोणतेही डाउनलोड किंवा ॲप सेट केले गेले नाही</string>
+    <string name="rain_in_inches">इंच पाऊस?</string>
+    <string name="forecast_interval">अंदाज अंतराल (लागू असल्यास)</string>
+    <string name="forecast_daily">दररोज</string>
+    <string name="forecast_6hourly">6 तास</string>
+    <string name="interval_daily">दररोज</string>
+    <string name="interval_12h">12 तास</string>
+    <string name="interval_6h">6 तास</string>
+    <string name="interval_3h">3 तास</string>
+    <string name="interval_hourly">प्रति तास</string>
 </resources>

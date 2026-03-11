@@ -88,4 +88,13 @@
     <string name="update_while_running">Miz a zour pandan ki ou pe galoupe</string>
     <string name="force_dark_mode">Mod Lafors Nwar</string>
     <string name="no_download_or_app_not_setup">Napa telesarz oubyen app pa\'n ganny setup</string>
+    <string name="rain_in_inches">lapli an pous?</string>
+    <string name="forecast_interval">enterval previzyon (si i aplikab)</string>
+    <string name="forecast_daily">Toulezour</string>
+    <string name="forecast_6hourly">6 par erdtan</string>
+    <string name="interval_daily">Toulezour</string>
+    <string name="interval_12h">12 par erdtan</string>
+    <string name="interval_6h">6 par erdtan</string>
+    <string name="interval_3h">3 par erdtan</string>
+    <string name="interval_hourly">par erdtan</string>
 </resources>

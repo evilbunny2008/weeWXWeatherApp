@@ -88,4 +88,13 @@
     <string name="update_while_running">ਚੱਲਦੇ ਸਮੇਂ ਅੱਪਡੇਟ ਕਰੋ</string>
     <string name="force_dark_mode">ਡਾਰਕ ਮੋਡ ਨੂੰ ਜ਼ੋਰ ਦਿਓ</string>
     <string name="no_download_or_app_not_setup">ਕੋਈ ਡਾਊਨਲੋਡ ਜਾਂ ਐਪ ਸੈੱਟਅੱਪ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਹੈ</string>
+    <string name="rain_in_inches">ਇੰਚਾਂ ਵਿੱਚ ਮੀਂਹ?</string>
+    <string name="forecast_interval">ਪੂਰਵ ਅਨੁਮਾਨ ਅੰਤਰਾਲ (ਜੇ ਲਾਗੂ ਹੋਵੇ)</string>
+    <string name="forecast_daily">ਰੋਜ਼ਾਨਾ</string>
+    <string name="forecast_6hourly">6 ਘੰਟਾ</string>
+    <string name="interval_daily">ਰੋਜ਼ਾਨਾ</string>
+    <string name="interval_12h">12 ਘੰਟਾ</string>
+    <string name="interval_6h">6 ਘੰਟਾ</string>
+    <string name="interval_3h">੩ਘੰਟਾ</string>
+    <string name="interval_hourly">ਘੰਟਾ</string>
 </resources>

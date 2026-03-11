@@ -88,4 +88,13 @@
     <string name="update_while_running">चलिरहेको बेला अपडेट गर्नुहोस्</string>
     <string name="force_dark_mode">गाढा मोड बल गर्नुहोस्</string>
     <string name="no_download_or_app_not_setup">कुनै डाउनलोड वा एप सेटअप गरिएको छैन</string>
+    <string name="rain_in_inches">इन्चमा वर्षा हुन्छ?</string>
+    <string name="forecast_interval">पूर्वानुमान अन्तराल (यदि लागू हुन्छ)</string>
+    <string name="forecast_daily">दैनिक</string>
+    <string name="forecast_6hourly">६ घण्टामा</string>
+    <string name="interval_daily">दैनिक</string>
+    <string name="interval_12h">12 घण्टा</string>
+    <string name="interval_6h">६ घण्टामा</string>
+    <string name="interval_3h">३ घण्टामा</string>
+    <string name="interval_hourly">प्रति घण्टा</string>
 </resources>

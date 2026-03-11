@@ -88,4 +88,13 @@
     <string name="update_while_running">ၶၢဝ်ႇမႂ်ႇ ၽွင်းလႅၼ်ႈ</string>
     <string name="force_dark_mode">မုၵ်ႉၸုမ်း Dark Mode</string>
     <string name="no_download_or_app_not_setup">ဢမ်ႇမီး Download ဢမ်ႇၼၼ် ဢႅပ်ႉ ပႆႇလႆႈ Setup</string>
+    <string name="rain_in_inches">ၾူၼ်တူၵ်း ၼႂ်းဢိၼ်ႇၸိမ်ႇႁႃႉ?</string>
+    <string name="forecast_interval">ၶၢဝ်းယၢမ်းလၢမ်းၶၢတ်ႈ (ပေႃးမီး)</string>
+    <string name="forecast_daily">ၵူႊဝၼ်း</string>
+    <string name="forecast_6hourly">6 ၸူဝ်ႈမူင်း</string>
+    <string name="interval_daily">ၵူႊဝၼ်း</string>
+    <string name="interval_12h">12 ၸူဝ်ႈမူင်း</string>
+    <string name="interval_6h">6 ၸူဝ်ႈမူင်း</string>
+    <string name="interval_3h">3 ၸူဝ်ႈမူင်း</string>
+    <string name="interval_hourly">ၼိုင်ႈၸူဝ်ႈမူင်း</string>
 </resources>

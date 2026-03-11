@@ -88,4 +88,13 @@
     <string name="update_while_running">運行時更新</string>
     <string name="force_dark_mode">強制深色模式</string>
     <string name="no_download_or_app_not_setup">未下載或尚未安裝應用程序</string>
+    <string name="rain_in_inches">雨量以英吋為單位？</string>
+    <string name="forecast_interval">預測間隔（如果適用）</string>
+    <string name="forecast_daily">日常的</string>
+    <string name="forecast_6hourly">6小時一班</string>
+    <string name="interval_daily">日常的</string>
+    <string name="interval_12h">12小時一班</string>
+    <string name="interval_6h">6小時一班</string>
+    <string name="interval_3h">3小時一班</string>
+    <string name="interval_hourly">每小時</string>
 </resources>

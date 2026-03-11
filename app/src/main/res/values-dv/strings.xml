@@ -88,4 +88,13 @@
     <string name="update_while_running">ދުއްވާއިރު އަޕްޑޭޓް</string>
     <string name="force_dark_mode">ފޯސް ޑާކް މޯޑް</string>
     <string name="no_download_or_app_not_setup">އެއްވެސް ޑައުންލޯޑެއް ނުވަތަ އެޕް އެއް ސެޓަޕް ނުކޮށް</string>
+    <string name="rain_in_inches">އިންޗިން ވާރޭ ވެހޭނެ ހެއްޔެވެ؟</string>
+    <string name="forecast_interval">ފޯކަސްޓް އިންޓަވަލް (އެކަށީގެންވާނަމަ)</string>
+    <string name="forecast_daily">ކޮންމެ ދުވަހަކު</string>
+    <string name="forecast_6hourly">6 ގަޑިއިރަށް</string>
+    <string name="interval_daily">ކޮންމެ ދުވަހަކު</string>
+    <string name="interval_12h">12 ގަޑިއިރަކު</string>
+    <string name="interval_6h">6 ގަޑިއިރަށް</string>
+    <string name="interval_3h">3 ގަޑިއިރަށް</string>
+    <string name="interval_hourly">ގަޑިއަކު އެއްފަހަރު</string>
 </resources>

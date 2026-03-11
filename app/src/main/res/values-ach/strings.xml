@@ -88,4 +88,13 @@
     <string name="update_while_running">Lok manyen</string>
     <string name="force_dark_mode">Lami dic</string>
     <string name="no_download_or_app_not_setup">Pe kiketo nyo app mo keken pe kiketo</string>
+    <string name="rain_in_inches">Kot i inci?</string>
+    <string name="forecast_daily">Ninu ki ninu</string>
+    <string name="forecast_6hourly">6 Cawa acel acel</string>
+    <string name="interval_daily">Ninu ki ninu</string>
+    <string name="interval_12h">12 pi cawa acel acel</string>
+    <string name="interval_6h">6 Cawa acel acel</string>
+    <string name="interval_3h">3 Cawa acel acel</string>
+    <string name="interval_hourly">Cawa acel acel</string>
+    <string name="forecast_interval">kare me byeko anyim (ka tye)</string>
 </resources>

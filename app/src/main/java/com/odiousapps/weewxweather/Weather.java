@@ -44,9 +44,6 @@ public class Weather extends Fragment implements View.OnClickListener
 	private MainActivity activity;
 	private MaterialTextView tv1, tv2;
 
-	private boolean current_refreshed = true;
-	private boolean forecast_refresh = true;
-
 	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(current.getScrollY() == 0);
 
 	private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(5);
@@ -84,8 +81,6 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		swipeLayout.setOnRefreshListener(() ->
 		{
-			current_refreshed = false;
-			forecast_refresh = false;
 			swipeLayout.setRefreshing(true);
 			LogMessage("onRefresh()");
 			forceRefresh();
@@ -226,7 +221,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		{
 			if(url.strip().equals("data:text/html,"))
 			{
-				forecast_refresh = true;
 				stopRefreshing();
 				return;
 			}
@@ -241,7 +235,6 @@ public class Weather extends Fragment implements View.OnClickListener
 				return;
 			}
 
-			forecast_refresh = true;
 			stopRefreshing();
 		}, false);
 
@@ -256,10 +249,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(webView == null || current == null)
 		{
 			if(attempt >= 3)
-			{
-				current_refreshed = true;
 				stopRefreshing();
-			}
 
 			return;
 		}
@@ -270,10 +260,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(current.getHeight() == 0 || swipeLayout.getHeight() == 0)
 		{
 			if(attempt >= 3)
-			{
-				current_refreshed = true;
 				stopRefreshing();
-			}
 
 			return;
 		}
@@ -311,10 +298,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						                          "or blank or equals 'null'", KeyValue.v);
 
 						if(attempt >= 3)
-						{
-							current_refreshed = true;
 							stopRefreshing();
-						}
 
 						return;
 					}
@@ -329,10 +313,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						LogMessage("heightInPx is 0 skipping...");
 
 						if(attempt >= 3)
-						{
-							current_refreshed = true;
 							stopRefreshing();
-						}
 
 						return;
 					}
@@ -347,10 +328,7 @@ public class Weather extends Fragment implements View.OnClickListener
 							current.post(() -> current.requestLayout());
 
 						if(attempt >= 3)
-						{
-							current_refreshed = true;
 							stopRefreshing();
-						}
 
 						return;
 					}
@@ -373,7 +351,6 @@ public class Weather extends Fragment implements View.OnClickListener
 						swipeLayout.post(() -> swipeLayout.setLayoutParams(params));
 					}
 
-					current_refreshed = true;
 					stopRefreshing();
 				}
 		));
@@ -399,10 +376,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		{
 			LogMessage("We already ran less than 5s ago, skipping...", KeyValue.d);
 			if(!swipeLayout.isRefreshing())
-			{
-				forecast_refresh = true;
 				stopRefreshing();
-			}
 
 			return;
 		}
@@ -415,7 +389,6 @@ public class Weather extends Fragment implements View.OnClickListener
 			LogMessage("radtype: " + radtype);
 			String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
 			loadWebViewContent(tmp);
-			forecast_refresh = true;
 			stopRefreshing();
 			return;
 		}
@@ -839,7 +812,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(forecast == null)
 		{
 			LogMessage("loadWebViewURL() forecast == null, skipping...", true, KeyValue.w);
-			forecast_refresh = true;
 			stopRefreshing();
 			return;
 		}
@@ -849,7 +821,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		   (radtype != null && radtype.equals("image")))
 		{
 			LogMessage("loadWebViewURL() radarforecast != weeWXApp.RadarOnHomeScreen or radtype == image...", KeyValue.w);
-			forecast_refresh = true;
 			stopRefreshing();
 			return;
 		}
@@ -857,7 +828,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(Math.abs(Duration.between(lastRunForecast, now).toSeconds()) < 5)
 		{
 			LogMessage("loadWebViewURL() ran less than 5s ago, skipping...", KeyValue.d);
-			forecast_refresh = true;
 			stopRefreshing();
 			return;
 		}
@@ -900,7 +870,6 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		if(forecast == null)
 		{
-			forecast_refresh = true;
 			stopRefreshing();
 			return;
 		}
@@ -1148,9 +1117,6 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(!swipeLayout.isRefreshing())
 			return;
 
-		if(!forecast_refresh || !current_refreshed)
-			return;
-
 		swipeLayout.post(() -> swipeLayout.setRefreshing(false));
 	}
 
@@ -1224,12 +1190,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		updateFLL();
 
-		if(KeyValue.isPrefSet("radarforecast") &&
-		   current_refreshed && forecast_refresh)
+		if(KeyValue.isPrefSet("radarforecast"))
 		{
-			current_refreshed = false;
-			forecast_refresh = false;
-
 //			if(current != null)
 //				adjustHeight(current, 3);
 
@@ -1271,44 +1233,31 @@ public class Weather extends Fragment implements View.OnClickListener
 			radtype = "";
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
-		{
-			current_refreshed = false;
 			drawWeather();
-		}
 
 		if(str.equals(weeWXAppCommon.STOP_WEATHER_INTENT))
-		{
-			current_refreshed = true;
 			stopRefreshing();
-		}
 
 		boolean radarforecast = (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default);
 
 		if(radarforecast == weeWXApp.RadarOnHomeScreen && radtype.equals("image"))
 		{
 			if(str.equals(weeWXAppCommon.REFRESH_RADAR_INTENT))
-			{
-				forecast_refresh = false;
 				drawRadar();
-			}
 
 			if(str.equals(weeWXAppCommon.STOP_RADAR_INTENT))
-			{
-				forecast_refresh = true;
 				stopRefreshing();
-			}
+
 		} else {
 			if(str.equals(weeWXAppCommon.REFRESH_FORECAST_INTENT))
 			{
 				LogMessage("Weather.notificationObserver running reloadForecast()");
-				forecast_refresh = false;
 				reloadForecast();
 			}
 
 			if(str.equals(weeWXAppCommon.STOP_FORECAST_INTENT))
 			{
 				LogMessage("Weather.notificationObserver running stopRefreshing()");
-				forecast_refresh = true;
 				stopRefreshing();
 			}
 		}

@@ -88,4 +88,13 @@
     <string name="update_while_running">Ntlafatso ha e ntse e sebetsa</string>
     <string name="force_dark_mode">Qobella mokhoa o lefifi</string>
     <string name="no_download_or_app_not_setup">Ha ho sesebelisoa kapa sesebelisoa se so ka se hlophisoa</string>
+    <string name="rain_in_inches">Pula ka Li-inch?</string>
+    <string name="forecast_interval">Nako ea Lebelo (haeba e sebetsa)</string>
+    <string name="forecast_daily">Letsatsi le letsatsi</string>
+    <string name="forecast_6hourly">6 Hora</string>
+    <string name="interval_daily">Letsatsi le letsatsi</string>
+    <string name="interval_12h">12 Hora</string>
+    <string name="interval_6h">6 Hora</string>
+    <string name="interval_3h">3 Hora</string>
+    <string name="interval_hourly">Ka hora</string>
 </resources>

@@ -88,4 +88,13 @@
     <string name="update_while_running">Kuyidika mambu ntangu nge ke baka ntinu</string>
     <string name="force_dark_mode">Mode ya Mpimpa ya Ngolo</string>
     <string name="no_download_or_app_not_setup">Ata télécharger mosi ve to appli me kuma ve</string>
+    <string name="rain_in_inches">Mvula na Ba-Inch?</string>
+    <string name="forecast_interval">Ntangu ya Kuyindula (kana yo kele mfunu)</string>
+    <string name="forecast_daily">Konso kilumbu</string>
+    <string name="forecast_6hourly">6 Konso Ngunga</string>
+    <string name="interval_daily">Konso kilumbu</string>
+    <string name="interval_12h">12 Konso ngunga</string>
+    <string name="interval_6h">6 Konso Ngunga</string>
+    <string name="interval_3h">3 Ngunga</string>
+    <string name="interval_hourly">Konso ngunga</string>
 </resources>

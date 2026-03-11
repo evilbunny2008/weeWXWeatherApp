@@ -88,4 +88,13 @@
     <string name="update_while_running">อัปเดตในขณะที่ทำงาน</string>
     <string name="force_dark_mode">บังคับโหมดมืด</string>
     <string name="no_download_or_app_not_setup">ไม่มีการดาวน์โหลดหรือยังไม่ได้ตั้งค่าแอป</string>
+    <string name="rain_in_inches">ฝนตกเป็นนิ้ว?</string>
+    <string name="forecast_interval">ช่วงการคาดการณ์ (ถ้ามี)</string>
+    <string name="forecast_daily">รายวัน</string>
+    <string name="forecast_6hourly">6 ชั่วโมง</string>
+    <string name="interval_daily">รายวัน</string>
+    <string name="interval_12h">12 ชั่วโมง</string>
+    <string name="interval_6h">6 ชั่วโมง</string>
+    <string name="interval_3h">3 ชั่วโมง</string>
+    <string name="interval_hourly">รายชั่วโมง</string>
 </resources>

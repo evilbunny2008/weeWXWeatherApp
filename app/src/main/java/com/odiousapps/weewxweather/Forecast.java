@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
-import com.google.android.material.chip.ChipGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,7 +26,7 @@ import androidx.webkit.WebViewFeature;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
-@SuppressWarnings({"SameParameterValue", "unused", "deprecation"})
+@SuppressWarnings({"SameParameterValue", "unused", "deprecation", "SequencedCollectionMethodCanBeUsed"})
 public class Forecast extends Fragment implements View.OnClickListener
 {
 	private View rootView;
@@ -37,8 +36,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private FrameLayout rfl;
 	private RotateLayout rl;
 	private MaterialCheckBox floatingCheckBox;
-	private ChipGroup forecastIntervalGroup;
-	private int intervalHours = 0; // 0=daily, 1=hourly, 3=3h, 6=6h, 12=12h
 	private boolean isVisible = false;
 	private MainActivity activity;
 
@@ -86,22 +83,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 		});
 
 		im = rootView.findViewById(R.id.logo);
-
-		forecastIntervalGroup = rootView.findViewById(R.id.forecastIntervalGroup);
-		forecastIntervalGroup.check(R.id.chipDaily);
-		forecastIntervalGroup.setOnCheckedStateChangeListener((group, checkedIds) ->
-		{
-			if(!checkedIds.isEmpty())
-			{
-				int checkedId = checkedIds.get(0);
-				if(checkedId == R.id.chipHourly) intervalHours = 1;
-				else if(checkedId == R.id.chip3h) intervalHours = 3;
-				else if(checkedId == R.id.chip6h) intervalHours = 6;
-				else if(checkedId == R.id.chip12h) intervalHours = 12;
-				else intervalHours = 0; // daily
-				generateForecast();
-			}
-		});
 
 		floatingCheckBox = rootView.findViewById(R.id.floatingCheckBox);
 		floatingCheckBox.setOnClickListener(this);
@@ -154,13 +135,6 @@ public class Forecast extends Fragment implements View.OnClickListener
 			LogMessage("radarWebView.onPageFinished()");
 			stopRefreshing();
 		}, false);
-
-		// Show/hide interval selector based on forecast type
-		String fctype = (String)KeyValue.readVar("fctype", "");
-		if(fctype != null && fctype.equals("met.no"))
-			forecastIntervalGroup.setVisibility(View.VISIBLE);
-		else
-			forecastIntervalGroup.setVisibility(View.GONE);
 
 		if(KeyValue.isPrefSet("radarforecast"))
 		{
@@ -565,10 +539,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		boolean hasIntervals = fctype.equals("met.no");
-		forecastIntervalGroup.post(() -> forecastIntervalGroup.setVisibility(hasIntervals ? View.VISIBLE : View.GONE));
-
-		String[] content = weeWXAppCommon.getGsonContent(forecastGson, false, hasIntervals ? intervalHours : 0);
+		String[] content = weeWXAppCommon.getGsonContent(forecastGson, false);
 		if(content[0] != null && content[0].equals("error"))
 		{
 			if(content[1] != null && !content[1].isBlank())

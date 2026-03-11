@@ -88,4 +88,13 @@
     <string name="update_while_running">Чапкъан вакъытта янъыланмакъ</string>
     <string name="force_dark_mode">Кучь Къаранлыкъ режим</string>
     <string name="no_download_or_app_not_setup">Юклемек я да къулланма ерлештирильмеген</string>
+    <string name="rain_in_inches">Ягъмур дюймлернен?</string>
+    <string name="forecast_interval">Прогноз аралыгъы (эгер олса)</string>
+    <string name="forecast_daily">Куньделик</string>
+    <string name="forecast_6hourly">6 саатлик</string>
+    <string name="interval_daily">Куньделик</string>
+    <string name="interval_12h">12 саатлик</string>
+    <string name="interval_6h">6 саатлик</string>
+    <string name="interval_3h">3 саатлик</string>
+    <string name="interval_hourly">Саатлик</string>
 </resources>

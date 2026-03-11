@@ -88,4 +88,13 @@
     <string name="update_while_running">Atnaujinkite veikiant</string>
     <string name="force_dark_mode">Įjungti tamsųjį režimą</string>
     <string name="no_download_or_app_not_setup">Joks atsisiuntimas arba programa nebuvo nustatyta</string>
+    <string name="rain_in_inches">Lietus coliais?</string>
+    <string name="forecast_interval">Prognozės intervalas (jei taikoma)</string>
+    <string name="forecast_daily">Kasdien</string>
+    <string name="forecast_6hourly">6 Kas valandą</string>
+    <string name="interval_daily">Kasdien</string>
+    <string name="interval_12h">12 valandos</string>
+    <string name="interval_6h">6 Kas valandą</string>
+    <string name="interval_3h">3 Valandos</string>
+    <string name="interval_hourly">Kas valandą</string>
 </resources>

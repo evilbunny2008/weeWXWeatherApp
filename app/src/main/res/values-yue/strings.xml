@@ -88,4 +88,13 @@
     <string name="update_while_running">跑步時更新</string>
     <string name="force_dark_mode">強制黑暗模式</string>
     <string name="no_download_or_app_not_setup">冇下載或者應用程式仲未設定</string>
+    <string name="rain_in_inches">雨以吋計？</string>
+    <string name="forecast_interval">預測間隔（如果適用）</string>
+    <string name="forecast_daily">每日</string>
+    <string name="forecast_6hourly">6 個鐘</string>
+    <string name="interval_daily">每日</string>
+    <string name="interval_12h">12個鐘</string>
+    <string name="interval_6h">6 個鐘</string>
+    <string name="interval_3h">3 個鐘</string>
+    <string name="interval_hourly">每小時</string>
 </resources>

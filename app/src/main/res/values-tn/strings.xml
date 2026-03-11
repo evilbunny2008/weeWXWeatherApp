@@ -88,4 +88,13 @@
     <string name="update_while_running">Ntšhwafatsa fa o ntse o taboga</string>
     <string name="force_dark_mode">Maatla a Lefifi</string>
     <string name="no_download_or_app_not_setup">Ga go na go laisolola kgotsa tiriswa e e iseng e rulaganye</string>
+    <string name="rain_in_inches">Pula ka Diintšhe?</string>
+    <string name="forecast_interval">Kgaotso ya Ponelopele (fa e le maleba)</string>
+    <string name="forecast_daily">Ka letsatsi</string>
+    <string name="forecast_6hourly">6 ka ura</string>
+    <string name="interval_daily">Ka letsatsi</string>
+    <string name="interval_12h">12 ka ura</string>
+    <string name="interval_6h">6 ka ura</string>
+    <string name="interval_3h">3 Ura</string>
+    <string name="interval_hourly">Ura le ura</string>
 </resources>

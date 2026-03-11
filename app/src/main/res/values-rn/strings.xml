@@ -88,4 +88,13 @@
     <string name="update_while_running">Ivyanditswe mu gihe uriko uriruka</string>
     <string name="force_dark_mode">Inkomezi z\'umwiza</string>
     <string name="no_download_or_app_not_setup">Nta gukuraho canke app ntivyashizweho</string>
+    <string name="rain_in_inches">Imvura mu Inches?</string>
+    <string name="forecast_interval">Igihe co gutegekanya (niba bishoboka)</string>
+    <string name="forecast_daily">Imisi yose</string>
+    <string name="forecast_6hourly">6 ku masaha</string>
+    <string name="interval_daily">Imisi yose</string>
+    <string name="interval_12h">12 Ku masaha</string>
+    <string name="interval_6h">6 ku masaha</string>
+    <string name="interval_3h">3 ku masaha</string>
+    <string name="interval_hourly">Isaha yose</string>
 </resources>

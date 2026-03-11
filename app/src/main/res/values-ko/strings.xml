@@ -88,4 +88,13 @@
     <string name="update_while_running">실행 중 업데이트</string>
     <string name="force_dark_mode">강제 다크 모드</string>
     <string name="no_download_or_app_not_setup">다운로드가 없거나 앱이 설정되지 않았습니다</string>
+    <string name="rain_in_inches">비를 인치 단위로?</string>
+    <string name="forecast_interval">예측 간격(해당하는 경우)</string>
+    <string name="forecast_daily">일일</string>
+    <string name="forecast_6hourly">6시간당</string>
+    <string name="interval_daily">일일</string>
+    <string name="interval_12h">12시간마다</string>
+    <string name="interval_6h">6시간당</string>
+    <string name="interval_3h">3시간당</string>
+    <string name="interval_hourly">시간별</string>
 </resources>

@@ -88,4 +88,13 @@
     <string name="update_while_running">Mete ajou pandan w ap kouri</string>
     <string name="force_dark_mode">Fòs mòd nwa</string>
     <string name="no_download_or_app_not_setup">Pa gen telechaje oswa aplikasyon pa te konfigirasyon</string>
+    <string name="rain_in_inches">Lapli an pous?</string>
+    <string name="forecast_interval">Entèval Previzyon (si sa aplikab)</string>
+    <string name="forecast_daily">Chak jou</string>
+    <string name="forecast_6hourly">6 Chak èdtan</string>
+    <string name="interval_daily">Chak jou</string>
+    <string name="interval_12h">12 èdtan</string>
+    <string name="interval_6h">6 Chak èdtan</string>
+    <string name="interval_3h">3 Chak èdtan</string>
+    <string name="interval_hourly">Chak èdtan</string>
 </resources>

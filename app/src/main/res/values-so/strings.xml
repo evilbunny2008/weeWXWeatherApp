@@ -88,4 +88,13 @@
     <string name="update_while_running">Cusboonaysii inta aad socoto</string>
     <string name="force_dark_mode">Ku qasbi qaab mugdi ah</string>
     <string name="no_download_or_app_not_setup">Ma jiro soo dejin ama abka lama dejin</string>
+    <string name="rain_in_inches">Roobka Inches?</string>
+    <string name="forecast_interval">Dhexdhexaadinta Saadaasha (haddii ay khuseyso)</string>
+    <string name="forecast_daily">Maalin walba</string>
+    <string name="forecast_6hourly">6 saac</string>
+    <string name="interval_daily">Maalin walba</string>
+    <string name="interval_12h">12 saac</string>
+    <string name="interval_6h">6 saac</string>
+    <string name="interval_3h">3 saac</string>
+    <string name="interval_hourly">saacadle</string>
 </resources>

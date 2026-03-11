@@ -88,4 +88,13 @@
     <string name="update_while_running">100 doc#1159 Atjaunuojums skrīšonā</string>
     <string name="force_dark_mode">Spāks Tymsais režims</string>
     <string name="no_download_or_app_not_setup">100 doc#1159 Nivīna lejupluodiešona voi līta nav īreikuota</string>
+    <string name="rain_in_inches">Leits Collōs?</string>
+    <string name="forecast_interval">Prognozis intervals (ja pīmāruojams)</string>
+    <string name="forecast_daily">Kotru dīnu</string>
+    <string name="forecast_6hourly">6 Stuņžu</string>
+    <string name="interval_daily">Kotru dīnu</string>
+    <string name="interval_12h">12 Stuņžu</string>
+    <string name="interval_6h">6 Stuņžu</string>
+    <string name="interval_3h">3 Stuņžu</string>
+    <string name="interval_hourly">Stuņžu</string>
 </resources>

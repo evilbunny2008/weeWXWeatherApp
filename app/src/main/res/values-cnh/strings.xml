@@ -88,4 +88,13 @@
     <string name="update_while_running">Tlik lio ah update tuah</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="no_download_or_app_not_setup">Download le app a um lo</string>
+    <string name="rain_in_inches">Inches in ruah?</string>
+    <string name="forecast_interval">Hmailei Chimchungnak Caan (a hman ahcun)</string>
+    <string name="forecast_daily">Nifatin</string>
+    <string name="forecast_6hourly">Suimilam 6</string>
+    <string name="interval_daily">Nifatin</string>
+    <string name="interval_12h">Suimilam 12</string>
+    <string name="interval_6h">Suimilam 6</string>
+    <string name="interval_3h">Suimilam 3</string>
+    <string name="interval_hourly">Suimilam fatin</string>
 </resources>

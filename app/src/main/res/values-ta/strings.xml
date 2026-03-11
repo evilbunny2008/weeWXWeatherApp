@@ -88,4 +88,13 @@
     <string name="update_while_running">இயங்கும் போது புதுப்பிக்கவும்</string>
     <string name="force_dark_mode">கட்டாய டார்க் பயன்முறை</string>
     <string name="no_download_or_app_not_setup">பதிவிறக்கம் அல்லது பயன்பாடு எதுவும் அமைக்கப்படவில்லை</string>
+    <string name="rain_in_inches">அங்குலத்தில் மழையா?</string>
+    <string name="forecast_interval">முன்னறிவிப்பு இடைவெளி (பொருந்தினால்)</string>
+    <string name="forecast_daily">தினசரி</string>
+    <string name="forecast_6hourly">6 மணிநேரம்</string>
+    <string name="interval_daily">தினசரி</string>
+    <string name="interval_12h">12 மணிநேரம்</string>
+    <string name="interval_6h">6 மணிநேரம்</string>
+    <string name="interval_3h">3 மணிநேரம்</string>
+    <string name="interval_hourly">மணிநேரம்</string>
 </resources>

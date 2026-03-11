@@ -199,6 +199,7 @@ public class weeWXApp extends Application
 	final static boolean disableSwipeOnRadar_default = false;
 	final static boolean onlyWIFI_default = false;
 	final static boolean metric_default = true;
+	final static boolean rain_in_inches_default = false;
 	final static boolean showIndoor_default = true;
 	final static boolean use_exact_alarm_default = false;
 	final static boolean next_moon_default = false;
@@ -213,7 +214,8 @@ public class weeWXApp extends Application
 	final static int widgetBG_default2 = 0x00000000;
 	final static int widgetFG_default2 = 0xFF000000;
 
-	final static int updateInterval_default = 1;
+	final static int UpdateFrequency_default = 1;
+	final static int UpdateInterval_default = 0;
 	final static int mySlider_default = 100;
 	final static int DayNightMode_default = 2;
 	final static int widget_theme_mode_default = 4;
@@ -234,7 +236,7 @@ public class weeWXApp extends Application
 	final static boolean RadarOnForecastScreen = !RadarOnHomeScreen;
 	final static boolean ForecastOnForecastScreen = RadarOnHomeScreen;
 
-	static String[] updateOptions, themeOptions, widgetThemeOptions;
+	static String[] updateOptions, themeOptions, widgetThemeOptions, updateInterval;
 
 	static boolean hasBootedFully = false;
 
@@ -254,6 +256,8 @@ public class weeWXApp extends Application
 	static Boolean fallback_to_DoH = null;
 
 	static final List<ForecastDefaults> fc_defaults = new ArrayList<>();
+
+	static final int max_alarms = 5;
 
 	ForecastDefaults fcDef = null;
 
@@ -348,6 +352,15 @@ public class weeWXApp extends Application
 			getAndroidString(R.string.custom_setting)
 		};
 
+		updateInterval = new String[]
+		{
+			getAndroidString(R.string.interval_daily),
+			getAndroidString(R.string.interval_12h),
+			getAndroidString(R.string.interval_6h),
+			getAndroidString(R.string.interval_3h),
+			getAndroidString(R.string.interval_hourly),
+		};
+
 		if((boolean)KeyValue.readVar("save_app_debug_logs", save_app_debug_logs_default))
 			LogMessage("Debug logging enabled...", true, KeyValue.i);
 		else
@@ -382,6 +395,7 @@ public class weeWXApp extends Application
 		updateAboutBlurb();
 
 		KeyValue.countyName = (String)KeyValue.readVar("CountyName", "");
+		KeyValue.bomLocation = (String)KeyValue.readVar("bomLocation", "");
 	}
 
 	@Override

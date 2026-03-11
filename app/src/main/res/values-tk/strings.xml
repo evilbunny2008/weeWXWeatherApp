@@ -88,4 +88,13 @@
     <string name="update_while_running">Işleýän wagtyňyz täzelenme</string>
     <string name="force_dark_mode">Garaňky re modeim bilen mejbur ediň</string>
     <string name="no_download_or_app_not_setup">Hiç hili göçürip almak ýa-da programma gurulmady</string>
+    <string name="rain_in_inches">Inçlerde ýagyş?</string>
+    <string name="forecast_interval">Çaklama aralygy (bar bolsa)</string>
+    <string name="forecast_daily">Her gün</string>
+    <string name="forecast_6hourly">6 sagat</string>
+    <string name="interval_daily">Her gün</string>
+    <string name="interval_12h">12 sagat</string>
+    <string name="interval_6h">6 sagat</string>
+    <string name="interval_3h">3 sagat</string>
+    <string name="interval_hourly">Her sagat</string>
 </resources>

@@ -88,4 +88,13 @@
     <string name="update_while_running">د چلولو پرمهال تازه کړئ</string>
     <string name="force_dark_mode">تیاره حالت ځواک کړئ</string>
     <string name="no_download_or_app_not_setup">هیڅ ډاونلوډ یا اپلیکیشن ندی ترتیب شوی</string>
+    <string name="rain_in_inches">باران په انچو کې؟</string>
+    <string name="forecast_interval">د وړاندوینې وقفه (که د تطبیق وړ وي)</string>
+    <string name="forecast_daily">ورځنی</string>
+    <string name="forecast_6hourly">6 په ساعت کې</string>
+    <string name="interval_daily">ورځنی</string>
+    <string name="interval_12h">12 ساعته</string>
+    <string name="interval_6h">6 په ساعت کې</string>
+    <string name="interval_3h">3 ساعته</string>
+    <string name="interval_hourly">په ساعت کې</string>
 </resources>

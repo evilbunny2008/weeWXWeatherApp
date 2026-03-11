@@ -88,4 +88,13 @@
     <string name="update_while_running">Mmelite mgbe ị na-agba ọsọ</string>
     <string name="force_dark_mode">Ike ọchịchịrị</string>
     <string name="no_download_or_app_not_setup">Enweghị nbudata ma ọ bụ ngwa edobebeghị</string>
+    <string name="rain_in_inches">Mmiri ozuzo na sentimita?</string>
+    <string name="forecast_interval">Ogologo oge amụma (ọ bụrụ na ọdabara)</string>
+    <string name="forecast_daily">Kwa ụbọchị</string>
+    <string name="forecast_6hourly">6 kwa elekere</string>
+    <string name="interval_daily">Kwa ụbọchị</string>
+    <string name="interval_12h">12 kwa elekere</string>
+    <string name="interval_6h">6 kwa elekere</string>
+    <string name="interval_3h">3 kwa elekere</string>
+    <string name="interval_hourly">Oge elekere</string>
 </resources>

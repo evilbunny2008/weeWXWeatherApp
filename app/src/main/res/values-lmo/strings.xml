@@ -88,4 +88,13 @@
     <string name="update_while_running">Intra i haver-g</string>
     <string name="force_dark_mode">se</string>
     <string name="no_download_or_app_not_setup">Nonn minga in de la pagina di telefonà</string>
+    <string name="rain_in_inches">Pioggia in pollici?</string>
+    <string name="forecast_interval">Interval de previsiun (se pertinent)</string>
+    <string name="forecast_daily">Jornalier</string>
+    <string name="forecast_6hourly">6 orari</string>
+    <string name="interval_daily">Jornalier</string>
+    <string name="interval_12h">12 orari</string>
+    <string name="interval_6h">6 orari</string>
+    <string name="interval_3h">3 orari</string>
+    <string name="interval_hourly">Oraria</string>
 </resources>

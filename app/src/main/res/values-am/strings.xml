@@ -88,4 +88,13 @@
     <string name="update_while_running">በሚሮጡበት ጊዜ ዝመና</string>
     <string name="force_dark_mode">ጨካኝ ሁነታን ያስገድዱ</string>
     <string name="no_download_or_app_not_setup">ምንም ማውረድ ወይም መተግበሪያ አልተዋቀረም።</string>
+    <string name="rain_in_inches">በ ኢንች ውስጥ ዝናብ?</string>
+    <string name="forecast_daily">በየቀኑ</string>
+    <string name="forecast_6hourly">6 በሰዓት</string>
+    <string name="interval_daily">በየቀኑ</string>
+    <string name="interval_12h">12 ሰዓት</string>
+    <string name="interval_6h">6 በሰዓት</string>
+    <string name="interval_3h">3 ሰዓት</string>
+    <string name="interval_hourly">በየሰዓቱ</string>
+    <string name="forecast_interval">የትንበያ ክፍተት (የሚመለከተው ከሆነ)</string>
 </resources>

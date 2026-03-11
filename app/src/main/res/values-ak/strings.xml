@@ -88,4 +88,13 @@
     <string name="update_while_running">Update bere a woreyɛ adwuma</string>
     <string name="force_dark_mode">Hyɛ dark mode</string>
     <string name="no_download_or_app_not_setup">Wɔnnyɛ download anaa app no ​​ho nhyehyɛe biara</string>
+    <string name="rain_in_inches">Osu a ɛtɔ wɔ Inches mu?</string>
+    <string name="forecast_interval">Forecast Interval (sɛ ɛfata a)</string>
+    <string name="forecast_daily">Da biara</string>
+    <string name="forecast_6hourly">6 Dɔnhwerew biara</string>
+    <string name="interval_daily">Da biara</string>
+    <string name="interval_12h">12 Dɔnhwerew biara</string>
+    <string name="interval_6h">6 Dɔnhwerew biara</string>
+    <string name="interval_3h">3 Dɔnhwerew biara</string>
+    <string name="interval_hourly">Dɔnhwerew biara</string>
 </resources>

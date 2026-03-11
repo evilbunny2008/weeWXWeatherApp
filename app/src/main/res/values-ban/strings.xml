@@ -88,4 +88,13 @@
     <string name="update_while_running">Update rikala malaib</string>
     <string name="force_dark_mode">saking Mode Gelap</string>
     <string name="no_download_or_app_not_setup">Nénten ja download utawi aplikasi</string>
+    <string name="rain_in_inches">Ujan ring Inci?</string>
+    <string name="forecast_daily">Sabilang dina</string>
+    <string name="forecast_6hourly">6 Jam</string>
+    <string name="interval_daily">Sabilang dina</string>
+    <string name="interval_12h">12 Jam</string>
+    <string name="interval_6h">6 Jam</string>
+    <string name="interval_3h">3 Jam</string>
+    <string name="interval_hourly">Nyabran jam</string>
+    <string name="forecast_interval">Interval ramalan (yéning wénten)</string>
 </resources>

@@ -88,4 +88,13 @@
     <string name="update_while_running">Aġġorna waqt li tkun qed taħdem</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="no_download_or_app_not_setup">L-ebda tniżżil jew app ma ġietx setup</string>
+    <string name="rain_in_inches">Xita f\'pulzieri?</string>
+    <string name="forecast_interval">Intervall tat-tbassir (jekk applikabbli)</string>
+    <string name="forecast_daily">Kuljum</string>
+    <string name="forecast_6hourly">6 Kull siegħa</string>
+    <string name="interval_daily">Kuljum</string>
+    <string name="interval_12h">12 kull siegħa</string>
+    <string name="interval_6h">6 Kull siegħa</string>
+    <string name="interval_3h">3 Kull siegħa</string>
+    <string name="interval_hourly">Kull siegħa</string>
 </resources>

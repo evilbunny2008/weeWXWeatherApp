@@ -88,4 +88,13 @@
     <string name="update_while_running">Çalıştırırken güncelleme</string>
     <string name="force_dark_mode">Karanlık Modu Zorla</string>
     <string name="no_download_or_app_not_setup">Hiçbir indirme yapılmadı veya uygulama kurulmadı</string>
+    <string name="rain_in_inches">İnç cinsinden yağmur mu?</string>
+    <string name="forecast_interval">Tahmin Aralığı (varsa)</string>
+    <string name="forecast_daily">Günlük</string>
+    <string name="forecast_6hourly">6 Saatlik</string>
+    <string name="interval_daily">Günlük</string>
+    <string name="interval_12h">12 Saatlik</string>
+    <string name="interval_6h">6 Saatlik</string>
+    <string name="interval_3h">3 Saatlik</string>
+    <string name="interval_hourly">Saatlik</string>
 </resources>

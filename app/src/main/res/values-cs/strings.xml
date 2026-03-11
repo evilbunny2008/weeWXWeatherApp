@@ -88,4 +88,13 @@
     <string name="update_while_running">Aktualizace za běhu</string>
     <string name="force_dark_mode">Vynutit tmavý režim</string>
     <string name="no_download_or_app_not_setup">Nebylo nastaveno žádné stahování ani aplikace</string>
+    <string name="rain_in_inches">Déšť v palcích?</string>
+    <string name="forecast_interval">Interval předpovědi (pokud existuje)</string>
+    <string name="forecast_daily">Denní</string>
+    <string name="forecast_6hourly">6 hodin denně</string>
+    <string name="interval_daily">Denní</string>
+    <string name="interval_12h">12 hodin denně</string>
+    <string name="interval_6h">6 hodin denně</string>
+    <string name="interval_3h">3 hodiny</string>
+    <string name="interval_hourly">Hodinově</string>
 </resources>

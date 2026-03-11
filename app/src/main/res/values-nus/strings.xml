@@ -88,4 +88,13 @@
     <string name="update_while_running">Updatdat gua̱a̱th in riŋni</string>
     <string name="force_dark_mode">Cua Force Dark Mode</string>
     <string name="no_download_or_app_not_setup">Thiɛlɛ mi ca ka̱m raar kiɛ app mi /ka̱n la̱th lät</string>
+    <string name="rain_in_inches">Kä nhiaal rɛy Inci̱ni̱?</string>
+    <string name="forecast_interval">Pörɛkka̱th Intɛrbal (mi̱ lätdɛ)</string>
+    <string name="forecast_daily">Ni cia̱ŋ</string>
+    <string name="forecast_6hourly">6 kɛ thaak</string>
+    <string name="interval_daily">Ni cia̱ŋ</string>
+    <string name="interval_12h">12 kɛ thaak</string>
+    <string name="interval_6h">6 kɛ thaak</string>
+    <string name="interval_3h">3 kɛ thaak</string>
+    <string name="interval_hourly">Kɛ thaak</string>
 </resources>

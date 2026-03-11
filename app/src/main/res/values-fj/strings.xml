@@ -88,4 +88,13 @@
     <string name="update_while_running">wa eso tale na cici</string>
     <string name="force_dark_mode">iTi ki na tutu ni mataka</string>
     <string name="no_download_or_app_not_setup">E sega ni dua na lavetaka se app e se bera ni tauyavutaki</string>
+    <string name="rain_in_inches">Uca ena Idi?</string>
+    <string name="forecast_interval">Na gauna ni parofisai (kevaka e ganita)</string>
+    <string name="forecast_daily">Veisiga</string>
+    <string name="forecast_6hourly">6 Auwa</string>
+    <string name="interval_daily">Veisiga</string>
+    <string name="interval_12h">12 Auwa</string>
+    <string name="interval_6h">6 Auwa</string>
+    <string name="interval_3h">3 na auwa</string>
+    <string name="interval_hourly">Auwa</string>
 </resources>

@@ -88,4 +88,13 @@
     <string name="update_while_running">Ùraich fhad \'s a tha thu a\' ruith</string>
     <string name="force_dark_mode">Feachd am modh dorcha</string>
     <string name="no_download_or_app_not_setup">Cha deach luchdachadh sìos no app a shuidheachadh</string>
+    <string name="rain_in_inches">Uisge anns na h-Inches?</string>
+    <string name="forecast_interval">Eadar-ama ro-shealladh (ma tha sin iomchaidh)</string>
+    <string name="forecast_daily">Gach latha</string>
+    <string name="forecast_6hourly">6 Uair</string>
+    <string name="interval_daily">Gach latha</string>
+    <string name="interval_12h">12 Uair</string>
+    <string name="interval_6h">6 Uair</string>
+    <string name="interval_3h">3 San uair</string>
+    <string name="interval_hourly">Uair</string>
 </resources>

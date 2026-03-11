@@ -88,4 +88,13 @@
     <string name="update_while_running">Mikolo oyo ntango ozali kosala</string>
     <string name="force_dark_mode">Mode ya molili ya makasi</string>
     <string name="no_download_or_app_not_setup">Download to app moko te esalemi te</string>
+    <string name="rain_in_inches">Mbula na ba Pouces?</string>
+    <string name="forecast_interval">Intervalle ya prévision (soki esengeli)</string>
+    <string name="forecast_daily">Mokolo na mokolo</string>
+    <string name="forecast_6hourly">6 Ngonga na ngonga</string>
+    <string name="interval_daily">Mokolo na mokolo</string>
+    <string name="interval_12h">12 Ngonga na ngonga</string>
+    <string name="interval_6h">6 Ngonga na ngonga</string>
+    <string name="interval_3h">3 Ngonga na ngonga</string>
+    <string name="interval_hourly">Ngonga na ngonga</string>
 </resources>

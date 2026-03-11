@@ -88,4 +88,13 @@
     <string name="update_while_running">Обновление во время работы</string>
     <string name="force_dark_mode">Принудительный темный режим</string>
     <string name="no_download_or_app_not_setup">Нет загрузки или приложение не установлено</string>
+    <string name="rain_in_inches">Дождь в дюймах?</string>
+    <string name="forecast_interval">Интервал прогноза (если применимо)</string>
+    <string name="forecast_daily">Ежедневно</string>
+    <string name="forecast_6hourly">6 часов в час</string>
+    <string name="interval_daily">Ежедневно</string>
+    <string name="interval_12h">12 часов в час</string>
+    <string name="interval_6h">6 часов в час</string>
+    <string name="interval_3h">3 часа в час</string>
+    <string name="interval_hourly">Ежечасно</string>
 </resources>

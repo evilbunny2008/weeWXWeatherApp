@@ -88,4 +88,13 @@
     <string name="update_while_running">Onsusulong legan ya ombabatik</string>
     <string name="force_dark_mode">Puersa na Mabilungetan ya Mode</string>
     <string name="no_download_or_app_not_setup">Wala ray download odino app ya ag-akaseptup</string>
+    <string name="rain_in_inches">Uran ed Pulgada?</string>
+    <string name="forecast_interval">Forecast Interval (no onaplika)</string>
+    <string name="forecast_daily">Kada agew</string>
+    <string name="forecast_6hourly">6 kada oras</string>
+    <string name="interval_daily">Kada agew</string>
+    <string name="interval_12h">12 kada oras</string>
+    <string name="interval_6h">6 kada oras</string>
+    <string name="interval_3h">3 kada oras</string>
+    <string name="interval_hourly">Kada oras</string>
 </resources>

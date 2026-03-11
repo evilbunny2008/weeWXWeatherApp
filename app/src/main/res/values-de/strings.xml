@@ -88,4 +88,13 @@
     <string name="update_while_running">Update während der Ausführung</string>
     <string name="force_dark_mode">Dunklen Modus erzwingen</string>
     <string name="no_download_or_app_not_setup">Kein Download oder App wurde nicht eingerichtet</string>
+    <string name="rain_in_inches">Regen in Zoll?</string>
+    <string name="forecast_interval">Prognoseintervall (falls zutreffend)</string>
+    <string name="forecast_daily">Täglich</string>
+    <string name="forecast_6hourly">6 stündlich</string>
+    <string name="interval_daily">Täglich</string>
+    <string name="interval_12h">12 Stunden</string>
+    <string name="interval_6h">6 stündlich</string>
+    <string name="interval_3h">3 Stündlich</string>
+    <string name="interval_hourly">Stündlich</string>
 </resources>

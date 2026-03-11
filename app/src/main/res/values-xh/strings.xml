@@ -88,4 +88,13 @@
     <string name="update_while_running">Hlaziya ngelixa ubaleka</string>
     <string name="force_dark_mode">Nyanzela indlela emnyama</string>
     <string name="no_download_or_app_not_setup">Akukho khuphelo okanye usetyenziso olungamiselwanga</string>
+    <string name="rain_in_inches">Imvula ngee-Intshi?</string>
+    <string name="forecast_interval">Ithuba loqikelelo (ukuba likhona)</string>
+    <string name="forecast_daily">Yonke imihla</string>
+    <string name="forecast_6hourly">6 Ngeyure</string>
+    <string name="interval_daily">Yonke imihla</string>
+    <string name="interval_12h">12 Ngeyure</string>
+    <string name="interval_6h">6 Ngeyure</string>
+    <string name="interval_3h">3 Ngeyure</string>
+    <string name="interval_hourly">Ngeyure</string>
 </resources>

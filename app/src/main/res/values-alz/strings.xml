@@ -88,4 +88,13 @@
     <string name="update_while_running">Ubimo ngo tic mi ng\'wec</string>
     <string name="force_dark_mode">Ka ng\'ato otimo kamano, obiro bedo gi geno mar timo kamano</string>
     <string name="no_download_or_app_not_setup">Ka ng\'ato oting\'o app kata app ma ok onego oket</string>
+    <string name="rain_in_inches">Koth in Inches?</string>
+    <string name="forecast_daily">Kubang nindo</string>
+    <string name="forecast_6hourly">6 kubang sawa</string>
+    <string name="interval_daily">Kubang nindo</string>
+    <string name="interval_12h">12 kubang sawa</string>
+    <string name="interval_6h">6 kubang sawa</string>
+    <string name="interval_3h">3 kubang sawa</string>
+    <string name="interval_hourly">Kubang sawa</string>
+    <string name="forecast_interval">Kare ma jular jukoro (ka tiye)</string>
 </resources>
