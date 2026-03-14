@@ -8,4 +8,5 @@ class GsonHelper
 	List<Day> days = null;
 	String desc = null;
 	long timestamp = 0;
+	boolean isDaily = true;
 }
