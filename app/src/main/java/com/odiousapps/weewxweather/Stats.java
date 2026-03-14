@@ -853,7 +853,7 @@ public class Stats extends Fragment
 
 			KeyValue.putVar("LastWeatherError", null);
 
-			setZoom(currZoom, true);
+			//setZoom(currZoom, true);
 
 			stopRefreshing();
 			return;
@@ -867,7 +867,7 @@ public class Stats extends Fragment
 					weeWXApp.getAndroidString(R.string.unknown_error_occurred),
 					"text/html", "utf-8", null));
 
-			setZoom(currZoom, true);
+			//setZoom(currZoom, true);
 
 			stopRefreshing();
 			return;
@@ -881,8 +881,16 @@ public class Stats extends Fragment
 
 		final StringBuilder sb = new StringBuilder();
 
-		sb.append(weeWXApp.current_html_headers)
-				.append(weeWXApp.script_header)
+		sb.append(weeWXApp.current_html_headers);
+
+		if(currZoom != 100)
+		{
+			float newZoom = (float)Math.round(currZoom / 10f) / 10;
+
+			sb.append("\n\t\t<style>\n\t\t\tbody\n\t\t\t{\n\t\t\t\tzoom: ").append(newZoom).append(";\n\t\t\t}\n\t\t</style>\n");
+		}
+
+		sb.append(weeWXApp.script_header)
 				.append(weeWXApp.html_header_rest)
 				.append(weeWXApp.inline_arrow);
 
@@ -951,13 +959,11 @@ public class Stats extends Fragment
 
 		sb.append(weeWXApp.html_footer);
 
-		//if(weeWXAppCommon.debug_html)
-		//	CustomDebug.writeOutput(requireContext(), "stats", sb.toString(), isVisible(), requireActivity());
+		if(weeWXAppCommon.debug_html)
+			CustomDebug.writeOutput(requireContext(), "stats", sb.toString(), isVisible(), requireActivity());
 
 		wv.post(() -> wv.loadDataWithBaseURL("file:///android_asset/",
 				sb.toString(), "text/html", "utf-8", null));
-
-		setZoom(currZoom, true);
 
 		stopRefreshing();
 	}
