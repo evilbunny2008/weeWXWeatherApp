@@ -97,4 +97,8 @@
     <string name="interval_6h">6 na sat</string>
     <string name="interval_3h">3 sata</string>
     <string name="interval_hourly">Po satu</string>
+    <string name="temp_alert">Temperatura %1$.1f°%2$s je pala na vašu granicu od %3$.1f°%2$s</string>
+    <string name="temperature">Temperatura</string>
+    <string name="morning_temp_alert">Morning Alert?</string>
+    <string name="afternoon_temp_alert">Popodnevno upozorenje?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">6 ڪلاڪ</string>
     <string name="interval_3h">3 ڪلاڪ</string>
     <string name="interval_hourly">ڪلاڪار</string>
+    <string name="temp_alert">گرمي پد %1$.1f°%2$s توهان جي %3$.1f°%2$s جي حد تائين گهٽجي ويو آهي</string>
+    <string name="temperature">گرمي پد</string>
+    <string name="morning_temp_alert">صبح جو الرٽ؟</string>
+    <string name="afternoon_temp_alert">شام جو الرٽ؟</string>
 </resources>

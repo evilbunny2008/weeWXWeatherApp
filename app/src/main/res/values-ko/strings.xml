@@ -97,4 +97,8 @@
     <string name="interval_6h">6시간당</string>
     <string name="interval_3h">3시간당</string>
     <string name="interval_hourly">시간별</string>
+    <string name="temp_alert">온도 %1$.1f°%2$s가 한도인 %3$.1f°%2$s까지 떨어졌습니다</string>
+    <string name="temperature">온도</string>
+    <string name="morning_temp_alert">아침 알림?</string>
+    <string name="afternoon_temp_alert">오후 알림?</string>
 </resources>

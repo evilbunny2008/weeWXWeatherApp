@@ -97,4 +97,8 @@
     <string name="interval_3h">3 saatlıq</string>
     <string name="interval_hourly">Saatlıq</string>
     <string name="forecast_interval">Proqnoz Aralığı (əgər varsa)</string>
+    <string name="temp_alert">%1$.1f°%2$s temperaturu %3$.1f°%2$s limitinizə düşüb</string>
+    <string name="morning_temp_alert">Səhər Xəbərdarlığı?</string>
+    <string name="afternoon_temp_alert">Günorta Siqnalı?</string>
+    <string name="temperature">Temperatur</string>
 </resources>

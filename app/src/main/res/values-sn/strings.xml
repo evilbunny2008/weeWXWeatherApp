@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Awa</string>
     <string name="interval_3h">3 Awa</string>
     <string name="interval_hourly">Hourly</string>
+    <string name="temp_alert">Tembiricha %1$.1f°%2$s yadzikira kusvika paunogumira pa %3$.1f°%2$s</string>
+    <string name="temperature">Tembiricha</string>
+    <string name="morning_temp_alert">Morning Alert?</string>
+    <string name="afternoon_temp_alert">Masikati Alert?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">६ वराक</string>
     <string name="interval_3h">३ वराक</string>
     <string name="interval_hourly">वराक वराक</string>
+    <string name="temp_alert">तापमान %1$.1f°%2$s तुमच्या %3$.1f°%2$s मर्यादेमेरेन देंवलां</string>
+    <string name="temperature">तापमान</string>
+    <string name="morning_temp_alert">सकाळीं इशारो?</string>
+    <string name="afternoon_temp_alert">दनपारां इशारो?</string>
 </resources>

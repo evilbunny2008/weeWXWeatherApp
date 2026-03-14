@@ -97,4 +97,8 @@
     <string name="interval_6h">6 na uro</string>
     <string name="interval_3h">3 ure</string>
     <string name="interval_hourly">Vsako uro</string>
+    <string name="temp_alert">Temperatura %1$.1f°%2$s je padla na vašo mejo %3$.1f°%2$s</string>
+    <string name="temperature">Temperatura</string>
+    <string name="morning_temp_alert">Jutranje opozorilo?</string>
+    <string name="afternoon_temp_alert">Popoldansko opozorilo?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">၆ နာရီ</string>
     <string name="interval_3h">၃ နာရီ</string>
     <string name="interval_hourly">နာရီတိုင်း</string>
+    <string name="temp_alert">အပူချိန် %1$.1f°%2$s သည် သင့်ကန့်သတ်ချက် %3$.1f°%2$s သို့ ကျဆင်းသွားသည်</string>
+    <string name="temperature">အပူချိန်</string>
+    <string name="morning_temp_alert">မနက်ခင်း သတိပေးချက်</string>
+    <string name="afternoon_temp_alert">နေ့ခင်းသတိပေးချက်?</string>
 </resources>

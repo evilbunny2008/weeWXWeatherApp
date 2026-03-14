@@ -97,4 +97,8 @@
     <string name="interval_3h">3 Lɛrɛ o lɛrɛ</string>
     <string name="interval_hourly">Lɛrɛ o lɛrɛ</string>
     <string name="forecast_interval">Forecast Interval (ni a bɛ se ka kɛ)</string>
+    <string name="temp_alert">Funteni %1$.1f°%2$s jigira ka se i dan ma min ye %3$.1f°%2$s ye</string>
+    <string name="morning_temp_alert">Sɔgɔmadafɛla Lakɔlɔsi?</string>
+    <string name="temperature">Goniyahakɛ</string>
+    <string name="afternoon_temp_alert">Tilegan fɛ Lakɔlɔsi?</string>
 </resources>

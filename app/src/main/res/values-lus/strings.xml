@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Darkar tin</string>
     <string name="interval_3h">Darkar khatah 3</string>
     <string name="interval_hourly">Darkar tin</string>
+    <string name="temp_alert">Temperature %1$.1f°%2$s chu i limit %3$.1f°%2$s ah a tlahniam ta</string>
+    <string name="temperature">Lum leh vawt tehna</string>
+    <string name="morning_temp_alert">Zing Alert a ni em?</string>
+    <string name="afternoon_temp_alert">Chawhnu lam Alert?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">6 ਘੰਟਾ</string>
     <string name="interval_3h">੩ਘੰਟਾ</string>
     <string name="interval_hourly">ਘੰਟਾ</string>
+    <string name="temp_alert">ਤਾਪਮਾਨ %1$.1f°%2$s ਤੁਹਾਡੀ ਸੀਮਾ %3$.1f°%2$s ਤੱਕ ਡਿੱਗ ਗਿਆ ਹੈ</string>
+    <string name="temperature">ਤਾਪਮਾਨ</string>
+    <string name="morning_temp_alert">ਸਵੇਰ ਦੀ ਚੇਤਾਵਨੀ?</string>
+    <string name="afternoon_temp_alert">ਦੁਪਹਿਰ ਦੀ ਚੇਤਾਵਨੀ?</string>
 </resources>

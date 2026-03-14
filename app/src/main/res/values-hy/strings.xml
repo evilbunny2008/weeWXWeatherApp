@@ -97,4 +97,8 @@
     <string name="interval_3h">3 Ժամային</string>
     <string name="interval_hourly">Ժամային</string>
     <string name="forecast_interval">Կանխատեսման միջակայք (եթե կիրառելի է)</string>
+    <string name="temp_alert">%1$.1f°%2$s ջերմաստիճանն իջել է մինչև ձեր սահմանաչափը՝ %3$.1f°%2$s</string>
+    <string name="morning_temp_alert">Առավոտյան ահազանգ?</string>
+    <string name="afternoon_temp_alert">Կեսօրվա ահազանգ?</string>
+    <string name="temperature">Ջերմաստիճանը</string>
 </resources>

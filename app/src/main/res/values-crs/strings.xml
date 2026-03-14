@@ -97,4 +97,8 @@
     <string name="interval_6h">6 par erdtan</string>
     <string name="interval_3h">3 par erdtan</string>
     <string name="interval_hourly">par erdtan</string>
+    <string name="temp_alert">tanperatir %1$.1f°%2$s in desann ziska ou limit %3$.1f°%2$s</string>
+    <string name="temperature">Tanperatir</string>
+    <string name="morning_temp_alert">alert bomaten?</string>
+    <string name="afternoon_temp_alert">alert apremidi?</string>
 </resources>

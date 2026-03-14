@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Aravo rehegua</string>
     <string name="interval_3h">3 Aravo rehegua</string>
     <string name="interval_hourly">Aravo rehegua</string>
+    <string name="temp_alert">Temperatura %1$.1f°%2$s oguejy nde límite %3$.1f°%2$s peve</string>
+    <string name="temperature">Arapytureko</string>
+    <string name="morning_temp_alert">¿Alerta pyharevegua?</string>
+    <string name="afternoon_temp_alert">¿Alerta Asaje rehegua?</string>
 </resources>

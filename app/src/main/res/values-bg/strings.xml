@@ -97,4 +97,8 @@
     <string name="interval_3h">3 на час</string>
     <string name="interval_hourly">Почасово</string>
     <string name="forecast_6hourly">6 на час</string>
+    <string name="temp_alert">Температурата %1$.1f°%2$s падна до вашия лимит от %3$.1f°%2$s</string>
+    <string name="temperature">температура</string>
+    <string name="morning_temp_alert">Сутрешна тревога?</string>
+    <string name="afternoon_temp_alert">Следобеден сигнал?</string>
 </resources>

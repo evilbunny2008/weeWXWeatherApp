@@ -97,4 +97,8 @@
     <string name="interval_6h">6 ساعتی</string>
     <string name="interval_3h">3 ساعتی</string>
     <string name="interval_hourly">ساعتی</string>
+    <string name="temp_alert">دمای %1$.1f°%2$s به حد مجاز %3$.1f°%2$s شما کاهش یافته است</string>
+    <string name="temperature">دما</string>
+    <string name="morning_temp_alert">هشدار صبحگاهی؟</string>
+    <string name="afternoon_temp_alert">هشدار بعدازظهر؟</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Hver time</string>
     <string name="interval_3h">3 Hver time</string>
     <string name="interval_hourly">Hver time</string>
+    <string name="temp_alert">Temperaturen %1$.1f°%2$s er faldet til din grænse på %3$.1f°%2$s</string>
+    <string name="temperature">Temperatur</string>
+    <string name="morning_temp_alert">Morgen alarm?</string>
+    <string name="afternoon_temp_alert">Eftermiddagsalarm?</string>
 </resources>

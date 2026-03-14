@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Dɔnhwerew biara</string>
     <string name="interval_3h">3 Dɔnhwerew biara</string>
     <string name="interval_hourly">Dɔnhwerew biara</string>
+    <string name="temp_alert">Ɔhyew %1$.1f°%2$s akɔ fam akodu wo anohyeto a ɛyɛ %3$.1f°%2$s</string>
+    <string name="temperature">Ahoɔhyeɛ</string>
+    <string name="morning_temp_alert">Anɔpa Kɔkɔbɔ?</string>
+    <string name="afternoon_temp_alert">Awia Kɔkɔbɔ?</string>
 </resources>

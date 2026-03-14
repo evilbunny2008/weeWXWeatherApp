@@ -97,4 +97,8 @@
     <string name="interval_3h">3 Cawa acel acel</string>
     <string name="interval_hourly">Cawa acel acel</string>
     <string name="forecast_interval">kare me byeko anyim (ka tye)</string>
+    <string name="temp_alert">Lyeto %1$.1f°%2$s opoto piny nio wa i rwom me %3$.1f°%2$s</string>
+    <string name="morning_temp_alert">Lok me odiko?</string>
+    <string name="afternoon_temp_alert">Lok me dyeceng?</string>
+    <string name="temperature">Lyeto ki ngicu</string>
 </resources>

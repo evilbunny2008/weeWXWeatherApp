@@ -4,7 +4,7 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
+	android:layout_height="0dp"
 	android:layout_weight="1"
 	android:orientation="vertical"
 	tools:ignore="VisualLintBounds">
@@ -345,6 +345,162 @@
 				android:minHeight="48dp"
 				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize,TextContrastCheck" />
 		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.materialswitch.MaterialSwitch
+			android:id="@+id/morning_temp_alert"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="48dp"
+			android:checked="false"
+			android:text="@string/morning_temp_alert"
+			android:textSize="20sp"
+			android:layout_marginTop="10dp"
+			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+
+		<LinearLayout
+			android:id="@+id/morning_temp_settings"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_marginTop="10dp">
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.DisplaySmall"
+					android:id="@+id/tvMorningTempLabel"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:text="@string/temperature"
+					android:textSize="20sp"
+					android:gravity="start" />
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.DisplaySmall"
+					android:id="@+id/tvMorningTempValue"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:textSize="20sp"
+					android:gravity="end" />
+
+			</LinearLayout>
+
+			<com.google.android.material.slider.Slider
+				android:id="@+id/sliderMorningTemp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:stepSize="0.1"
+				app:labelBehavior="floating"
+				app:haloRadius="0dp"/>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.BodySmall"
+					android:id="@+id/minMorningTemp"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:textSize="20sp"
+					android:gravity="start" />
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.BodySmall"
+					android:id="@+id/maxMorningTemp"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:textSize="20sp"
+					android:gravity="end" />
+
+			</LinearLayout>
+		</LinearLayout>
+
+		<com.google.android.material.materialswitch.MaterialSwitch
+			android:id="@+id/afternoon_temp_alert"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="48dp"
+			android:checked="false"
+			android:text="@string/afternoon_temp_alert"
+			android:textSize="20sp"
+			android:layout_marginTop="10dp"
+			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+
+		<LinearLayout
+			android:id="@+id/afternoon_temp_settings"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_marginTop="10dp">
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.DisplaySmall"
+					android:id="@+id/tvAfternoonTempLabel"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:text="@string/temperature"
+					android:textSize="20sp"
+					android:gravity="start" />
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.DisplaySmall"
+					android:id="@+id/tvAfternoonTempValue"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:textSize="20sp"
+					android:gravity="end" />
+
+			</LinearLayout>
+
+			<com.google.android.material.slider.Slider
+				android:id="@+id/sliderAfternoonTemp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:stepSize="0.1"
+				app:labelBehavior="floating"
+				app:haloRadius="0dp"/>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.BodySmall"
+					android:id="@+id/minAfternoonTemp"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:textSize="20sp"
+					android:gravity="start" />
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.BodySmall"
+					android:id="@+id/maxAfternoonTemp"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:textSize="20sp"
+					android:gravity="end" />
+
+			</LinearLayout>
+		</LinearLayout>
 	</LinearLayout>
 
 	<LinearLayout

@@ -97,4 +97,8 @@
     <string name="interval_6h">6 hodin denně</string>
     <string name="interval_3h">3 hodiny</string>
     <string name="interval_hourly">Hodinově</string>
+    <string name="temp_alert">Teplota %1$.1f°%2$s klesla na váš limit %3$.1f°%2$s</string>
+    <string name="temperature">Teplota</string>
+    <string name="morning_temp_alert">Ranní upozornění?</string>
+    <string name="afternoon_temp_alert">Odpolední upozornění?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">Suimilam 6</string>
     <string name="interval_3h">Suimilam 3</string>
     <string name="interval_hourly">Suimilam fatin</string>
+    <string name="temp_alert">Lungthawhnak %1$.1f°%2$s cu na ri %3$.1f°%2$s tiang a tla</string>
+    <string name="temperature">A kih a lum</string>
+    <string name="morning_temp_alert">Zingka Ralrinnak?</string>
+    <string name="afternoon_temp_alert">Chunhnu Ralrinnak?</string>
 </resources>

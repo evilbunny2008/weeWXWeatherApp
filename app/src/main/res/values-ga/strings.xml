@@ -97,4 +97,8 @@
     <string name="interval_6h">6 in aghaidh na huaire</string>
     <string name="interval_3h">3 in aghaidh na huaire</string>
     <string name="interval_hourly">in aghaidh na huaire</string>
+    <string name="temp_alert">Thit an teocht %1$.1f°%2$s go dtí an teorainn atá agat de %3$.1f°%2$s</string>
+    <string name="temperature">Teocht</string>
+    <string name="morning_temp_alert">Foláireamh Maidin?</string>
+    <string name="afternoon_temp_alert">Foláireamh Tráthnóna?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">6 ora</string>
     <string name="interval_3h">3 ora</string>
     <string name="interval_hourly">isan\'ora</string>
+    <string name="temp_alert">Nidina ho %3$.1f°%2$s ny maripana %1$.1f°%2$s</string>
+    <string name="temperature">hafanana</string>
+    <string name="morning_temp_alert">Fanairana maraina?</string>
+    <string name="afternoon_temp_alert">Fanairana tolakandro?</string>
 </resources>

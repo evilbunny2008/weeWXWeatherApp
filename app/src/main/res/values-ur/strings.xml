@@ -97,4 +97,8 @@
     <string name="interval_6h">6 گھنٹہ</string>
     <string name="interval_3h">3 گھنٹہ</string>
     <string name="interval_hourly">فی گھنٹہ</string>
+    <string name="temp_alert">درجہ حرارت %1$.1f°%2$s آپ کی %3$.1f°%2$s کی حد تک گر گیا ہے</string>
+    <string name="temperature">درجہ حرارت</string>
+    <string name="morning_temp_alert">صبح کا انتباہ؟</string>
+    <string name="afternoon_temp_alert">دوپہر کا الرٹ؟</string>
 </resources>

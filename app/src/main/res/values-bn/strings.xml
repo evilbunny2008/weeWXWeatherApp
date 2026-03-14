@@ -97,4 +97,8 @@
     <string name="interval_3h">3 ঘন্টায়</string>
     <string name="interval_hourly">ঘণ্টায়</string>
     <string name="forecast_interval">পূর্বাভাসের ব্যবধান (যদি প্রযোজ্য হয়)</string>
+    <string name="temp_alert">তাপমাত্রা %1$.1f°%2$s আপনার %3$.1f°%2$s সীমাতে নেমে গেছে</string>
+    <string name="temperature">তাপমাত্রা</string>
+    <string name="morning_temp_alert">সকালের সতর্কতা?</string>
+    <string name="afternoon_temp_alert">বিকেলের সতর্কতা?</string>
 </resources>

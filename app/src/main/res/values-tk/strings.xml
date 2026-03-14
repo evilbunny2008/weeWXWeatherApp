@@ -97,4 +97,8 @@
     <string name="interval_6h">6 sagat</string>
     <string name="interval_3h">3 sagat</string>
     <string name="interval_hourly">Her sagat</string>
+    <string name="temp_alert">Temperatura%1$.1f°%2$s siziň çägiňize düşdi%3$.1f°%2$s</string>
+    <string name="temperature">Temperatura</string>
+    <string name="morning_temp_alert">Irden duýduryş?</string>
+    <string name="afternoon_temp_alert">Günortanlyk duýduryşy?</string>
 </resources>

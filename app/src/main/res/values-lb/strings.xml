@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Stonn</string>
     <string name="interval_3h">3 Stonn</string>
     <string name="interval_hourly">Stonneplang</string>
+    <string name="temp_alert">Temperatur %1$.1f°%2$s ass op Är Limit vun %3$.1f°%2$s erofgaang</string>
+    <string name="temperature">Temperatur</string>
+    <string name="morning_temp_alert">Moien Alarm?</string>
+    <string name="afternoon_temp_alert">Nomëtteg Alarm?</string>
 </resources>

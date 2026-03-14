@@ -97,4 +97,8 @@
     <string name="interval_6h">6 din oră</string>
     <string name="interval_3h">3 din oră</string>
     <string name="interval_hourly">Orar</string>
+    <string name="temp_alert">Temperatura %1$.1f°%2$s a scăzut la limita dvs. de %3$.1f°%2$s</string>
+    <string name="temperature">Temperatură</string>
+    <string name="morning_temp_alert">Alertă de dimineață?</string>
+    <string name="afternoon_temp_alert">Alertă de după-amiază?</string>
 </resources>

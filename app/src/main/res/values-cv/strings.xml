@@ -97,4 +97,8 @@
     <string name="interval_6h">6 сехет</string>
     <string name="interval_3h">3 сехетре</string>
     <string name="interval_hourly">Сехетсерен</string>
+    <string name="temp_alert">Температура %1$.1f°%2$s сирӗн чикӗ %3$.1f°%2$s таран анчӗ</string>
+    <string name="temperature">Температура</string>
+    <string name="morning_temp_alert">Ирхи сигнал?</string>
+    <string name="afternoon_temp_alert">Кӑнтӑрлахи сигнал?</string>
 </resources>

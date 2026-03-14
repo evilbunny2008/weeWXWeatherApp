@@ -97,4 +97,8 @@
     <string name="interval_6h">6 часай</string>
     <string name="interval_3h">3 часай</string>
     <string name="interval_hourly">Час бүри</string>
+    <string name="temp_alert">%1$.1f°%2$s температура %3$.1f°%2$s хизаарлалта хүрэтэр буураа</string>
+    <string name="temperature">Халуун</string>
+    <string name="morning_temp_alert">Үглөөнэй һэргылэмжэ?</string>
+    <string name="afternoon_temp_alert">Үдэрэй һэргылэмжэ?</string>
 </resources>

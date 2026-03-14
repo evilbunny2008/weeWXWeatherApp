@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Daa ŋmɛlɛtswaa</string>
     <string name="interval_3h">3 ŋmɛlɛtswaa fɛɛ ŋmɛlɛtswaa</string>
     <string name="interval_hourly">Daa ŋmɛlɛtswaa</string>
+    <string name="temp_alert">Dɔlɛ %1$.1f°%2$s eba shi kɛyashɛ ohusu ni ji %3$.1f°%2$s</string>
+    <string name="temperature">Dɔlɛ</string>
+    <string name="morning_temp_alert">Leebi kɔkɔbɔɔ?</string>
+    <string name="afternoon_temp_alert">Gbi gbɛkɛ kɔkɔbɔɔ?</string>
 </resources>

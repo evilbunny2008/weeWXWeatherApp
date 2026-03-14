@@ -97,4 +97,8 @@
     <string name="interval_3h">3 Orduka</string>
     <string name="interval_hourly">Orduka</string>
     <string name="forecast_interval">Iragarpen tartea (hala badagokio)</string>
+    <string name="temp_alert">%1$.1f°%2$s tenperatura zure %3$.1f°%2$s mugara jaitsi da</string>
+    <string name="temperature">Tenperatura</string>
+    <string name="morning_temp_alert">Goizeko alerta?</string>
+    <string name="afternoon_temp_alert">Arratsaldeko alerta?</string>
 </resources>

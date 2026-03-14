@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Jam</string>
     <string name="interval_3h">3 Jam</string>
     <string name="interval_hourly">Jam-jam</string>
+    <string name="temp_alert">Suhu %1$.1f°%2$s naung mange ri batasnu %3$.1f°%2$s</string>
+    <string name="temperature">Suhu</string>
+    <string name="morning_temp_alert">Waspada bari\'basa?</string>
+    <string name="afternoon_temp_alert">Waspada sore?</string>
 </resources>

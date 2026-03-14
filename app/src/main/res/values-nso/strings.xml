@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Ka iri ka iri</string>
     <string name="interval_3h">3 Ka iri ka iri</string>
     <string name="interval_hourly">Iri le iri</string>
+    <string name="temp_alert">Thempheretšha %1$.1f°%2$s e theogile go fihla moeding wa gago wa %3$.1f°%2$s</string>
+    <string name="temperature">Themphereitšha</string>
+    <string name="morning_temp_alert">Tlhokomedišo ya Mesong?</string>
+    <string name="afternoon_temp_alert">Tlhokomedišo ya Thapama?</string>
 </resources>

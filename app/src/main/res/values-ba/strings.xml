@@ -97,4 +97,8 @@
     <string name="interval_3h">3 сәғәтлек</string>
     <string name="interval_hourly">Сәғәт һайын</string>
     <string name="forecast_interval">Прогноз арауығы (әгәр ҙә кәрәк булһа)</string>
+    <string name="temp_alert">Температура %1$.1f°%2$s һеҙҙең сиккә тиклем төштө %3$.1f°%2$s</string>
+    <string name="temperature">Температура</string>
+    <string name="morning_temp_alert">Иртәнге уятыу?</string>
+    <string name="afternoon_temp_alert">Төштән һуң иҫкәртмә?</string>
 </resources>

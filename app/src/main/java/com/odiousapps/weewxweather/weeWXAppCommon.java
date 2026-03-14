@@ -2710,6 +2710,8 @@ class weeWXAppCommon
 						LogMessage("getWeather() Update the widget");
 						WidgetProvider.updateAppWidget();
 
+						checkTempAlarms();
+
 						LogMessage("getWeather() weatherTask.SendIntent(REFRESH_WEATHER_INTENT)");
 						SendIntent(REFRESH_WEATHER_INTENT);
 						wtStart = Instant.EPOCH;
@@ -2740,6 +2742,8 @@ class weeWXAppCommon
 					LogMessage("getWeather() Update the widget");
 					WidgetProvider.updateAppWidget();
 
+					checkTempAlarms();
+
 					LogMessage("getWeather() weatherTask.SendIntent(REFRESH_WEATHER_INTENT)");
 					SendIntent(REFRESH_WEATHER_INTENT);
 					wtStart = Instant.EPOCH;
@@ -2758,6 +2762,97 @@ class weeWXAppCommon
 			wtStart = Instant.EPOCH;
 			return false;
 		}
+	}
+
+	static void checkTempAlarms()
+	{
+		boolean morning_temp_alert = (boolean)KeyValue.readVar("morning_temp_alert", weeWXApp.morning_temp_alert_default);
+
+		Calendar cal = Calendar.getInstance();
+		Calendar cal1 = Calendar.getInstance();
+
+		if(cal.get(Calendar.HOUR_OF_DAY) < 12 && morning_temp_alert)
+		{
+			LogMessage("checkTempAlarms() morning_temp_alert set to true");
+
+			long last_morning_alert = (long)KeyValue.readVar("LastMorningTempAlert", 0L);
+			Date date1 = new Date(last_morning_alert);
+			cal1.setTime(date1);
+
+			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
+			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
+			{
+				LogMessage("checkTempAlarms() Notification already triggered this morning");
+				return;
+			}
+
+			float morning_temp_limit = (float)KeyValue.readVar("MorningTemp", weeWXApp.MorningTemp_default);
+
+			float CurrTemp = get_curr_temp();
+
+			if(CurrTemp >= morning_temp_limit)
+			{
+				KeyValue.putVar("LastMorningTempAlert", System.currentTimeMillis());
+				weeWXApp.sendTemperatureAlert(CurrTemp, morning_temp_limit);
+				LogMessage("checkTempAlarms() CurrTemp (" + CurrTemp + ") >= morning_temp_limit (" + morning_temp_limit + ") notification triggered");
+			} else {
+				LogMessage("checkTempAlarms() CurrTemp (" + CurrTemp + ") < morning_temp_limit (" + morning_temp_limit + ") no notification triggered");
+			}
+
+			return;
+		}
+
+		if(cal.get(Calendar.HOUR_OF_DAY) < 12)
+		{
+			LogMessage("checkTempAlarms() morning_temp_alert set to false");
+			return;
+		}
+
+		boolean afternoon_temp_alert = (boolean)KeyValue.readVar("afternoon_temp_alert", weeWXApp.afternoon_temp_alert_default);
+
+		if(cal.get(Calendar.HOUR_OF_DAY) >= 12 && afternoon_temp_alert)
+		{
+			LogMessage("checkTempAlarms() afternoon_temp_alert set to true");
+
+			long last_afternoon_alert = (long)KeyValue.readVar("LastAfternoonTempAlert", 0L);
+			Date date1 = new Date(last_afternoon_alert);
+			cal1.setTime(date1);
+
+			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
+			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
+			{
+				LogMessage("checkTempAlarms() Notification already triggered this afternoon");
+				return;
+			}
+
+			float afternoon_temp_limit = (float)KeyValue.readVar("AfternoonTemp", weeWXApp.AfternoonTemp_default);
+
+			float CurrTemp = get_curr_temp();
+
+			if(CurrTemp <= afternoon_temp_limit)
+			{
+				KeyValue.putVar("LastAfternoonTempAlert", System.currentTimeMillis());
+				weeWXApp.sendTemperatureAlert(CurrTemp, afternoon_temp_limit);
+				LogMessage("checkTempAlarms() CurrTemp (" + CurrTemp + ") <= afternoon_temp_limit (" + afternoon_temp_limit + ") notification triggered");
+			} else {
+				LogMessage("checkTempAlarms() CurrTemp (" + CurrTemp + ") > afternoon_temp_limit (" + afternoon_temp_limit + ") no notification triggered");
+			}
+		}
+
+		if(cal.get(Calendar.HOUR_OF_DAY) >= 12 && afternoon_temp_alert)
+		{
+			LogMessage("checkTempAlarms() afternoon_temp_alert set to false");
+		}
+	}
+
+	static float get_curr_temp()
+	{
+		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
+		if(lastDownload == null || lastDownload.isBlank())
+			return -999;
+
+		String[] bits = lastDownload.split("\\|");
+		return Float.parseFloat(bits[0]);
 	}
 
 	static String getElement(String[] bits, int element)
@@ -4993,7 +5088,6 @@ class weeWXAppCommon
 
 		switch(pos)
 		{
-			case 0 -> IntervalTime = 86_400;
 			case 1 -> IntervalTime = 43_200;
 			case 2 -> IntervalTime = 21_600;
 			case 3 -> IntervalTime = 10_800;

@@ -97,4 +97,8 @@
     <string name="interval_3h">3 Jam</string>
     <string name="interval_hourly">Jam-jam</string>
     <string name="forecast_interval">Selang Ramalan (adi lit)</string>
+    <string name="temp_alert">Suhu %1$.1f°%2$s enggo nusur ku batasndu %3$.1f°%2$s</string>
+    <string name="temperature">Temperatur</string>
+    <string name="morning_temp_alert">Siaga Pagi?</string>
+    <string name="afternoon_temp_alert">Siaga Siang?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_3h">3 për orë</string>
     <string name="interval_hourly">Për orë</string>
     <string name="forecast_interval">Intervali i parashikimit (nëse është e aplikueshme)</string>
+    <string name="temp_alert">Temperatura %1$.1f°%2$s ka rënë në kufirin tuaj prej %3$.1f°%2$s</string>
+    <string name="morning_temp_alert">Alarmi në mëngjes?</string>
+    <string name="afternoon_temp_alert">Alarmi pasdite?</string>
+    <string name="temperature">Temperatura</string>
 </resources>

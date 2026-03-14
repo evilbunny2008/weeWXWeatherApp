@@ -97,4 +97,8 @@
     <string name="interval_6h">6 шагатлан</string>
     <string name="interval_3h">3 шагатлан</string>
     <string name="interval_hourly">Шагат еда</string>
+    <string name="temp_alert">%1$.1f°%2$s температур тендан %3$.1f°%2$s марте волен</string>
+    <string name="temperature">Температур</string>
+    <string name="morning_temp_alert">Эрдене шекланен?</string>
+    <string name="afternoon_temp_alert">Кечывал деч варасе тревога?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Ogni ora</string>
     <string name="interval_3h">3 Ogni ora</string>
     <string name="interval_hourly">Ogni ora</string>
+    <string name="temp_alert">A temperatura %1$.1f°%2$s hè cascata à u vostru limitu di %3$.1f°%2$s</string>
+    <string name="temperature">Temperature</string>
+    <string name="morning_temp_alert">Alerta matina?</string>
+    <string name="afternoon_temp_alert">Alerta dopu meziornu?</string>
 </resources>

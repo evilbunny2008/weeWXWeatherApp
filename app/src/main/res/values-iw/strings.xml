@@ -97,4 +97,8 @@
     <string name="interval_6h">6 כל שעה</string>
     <string name="interval_3h">3 כל שעה</string>
     <string name="interval_hourly">מדי שעה</string>
+    <string name="temp_alert">הטמפרטורה %1$.1f°%2$s ירדה למגבלה של %3$.1f°%2$s</string>
+    <string name="temperature">טֶמפֶּרָטוּרָה</string>
+    <string name="morning_temp_alert">התראה בבוקר?</string>
+    <string name="afternoon_temp_alert">התראה אחר הצהריים?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Auwa</string>
     <string name="interval_3h">3 na auwa</string>
     <string name="interval_hourly">Auwa</string>
+    <string name="temp_alert">Na ivakarau ni katakata %1$.1f°%2$s sa lutu ki na nomu iyalayala ni %3$.1f°%2$s</string>
+    <string name="temperature">Katakata</string>
+    <string name="morning_temp_alert">Vakasala ni Mataka?</string>
+    <string name="afternoon_temp_alert">Vakasala ni Yakavi?</string>
 </resources>

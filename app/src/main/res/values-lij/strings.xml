@@ -97,4 +97,8 @@
     <string name="interval_6h">6 pe oe</string>
     <string name="interval_3h">3 pe oe</string>
     <string name="interval_hourly">Pe oa</string>
+    <string name="temp_alert">A temperatua %1$.1f°%2$s a l\'é cheita a-o seu limite de %3$.1f°%2$s</string>
+    <string name="temperature">Temperatua</string>
+    <string name="morning_temp_alert">Avvertimento do mattin?</string>
+    <string name="afternoon_temp_alert">Avvertimento do pomeriggio?</string>
 </resources>

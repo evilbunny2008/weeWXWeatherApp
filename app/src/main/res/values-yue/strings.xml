@@ -97,4 +97,8 @@
     <string name="interval_6h">6 個鐘</string>
     <string name="interval_3h">3 個鐘</string>
     <string name="interval_hourly">每小時</string>
+    <string name="temp_alert">溫度 %1$.1f°%2$s 已經降到你嘅極限 %3$.1f°%2$s</string>
+    <string name="temperature">溫度</string>
+    <string name="morning_temp_alert">朝早警報？</string>
+    <string name="afternoon_temp_alert">下午警報？</string>
 </resources>

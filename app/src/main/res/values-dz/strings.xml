@@ -97,4 +97,8 @@
     <string name="interval_6h">༦ ཆུ་ཚོད་རེ།</string>
     <string name="interval_3h">3 ཆུ་ཚོད་རེ།</string>
     <string name="interval_hourly">ཆུ་ཚོད།</string>
+    <string name="temp_alert">དྲོད་ཚད་ %1$.1f°%2$s ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.1f°%2$s ལུ་བབས་ཡོད།</string>
+    <string name="temperature">ཚ་དྲོད</string>
+    <string name="morning_temp_alert">དྲོ་པ་ཉེན་བརྡ་?</string>
+    <string name="afternoon_temp_alert">ཉིན་མའི་ཉེན་བརྡ་?</string>
 </resources>

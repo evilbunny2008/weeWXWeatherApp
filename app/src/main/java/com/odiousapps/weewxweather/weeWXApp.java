@@ -1,6 +1,9 @@
 package com.odiousapps.weewxweather;
 
+import android.Manifest;
 import android.app.Application;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -33,6 +36,9 @@ import java.util.Locale;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.content.res.AppCompatResources;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
@@ -222,6 +228,12 @@ public class weeWXApp extends Application
 	final static int theme_default = R.style.AppTheme_weeWXApp_Light_Common;
 	final static int mode_default = AppCompatDelegate.MODE_NIGHT_NO;
 
+	final static boolean morning_temp_alert_default = false;
+	final static float MorningTemp_default = 23.0f;
+
+	final static boolean afternoon_temp_alert_default = false;
+	final static float AfternoonTemp_default = 26.0f;
+
 	final static String radtype_default = "image";
 	final static String SETTINGS_URL_default = "https://example.com/weewx/inigo-settings.txt";
 	final static String CustomURL_default = "https://example.com/mobile.html";
@@ -265,6 +277,8 @@ public class weeWXApp extends Application
 	public void onCreate()
 	{
 		instance = this;
+
+		createNotificationChannel();
 
 		ForecastDefaults fcdef = new ForecastDefaults();
 		fcdef.fctype = "weatherzone2";
@@ -972,5 +986,42 @@ public class weeWXApp extends Application
 		fcDef.fctype = fctype;
 		instance.fcDef = fcDef;
 		return fcDef;
+	}
+
+	private void createNotificationChannel()
+	{
+		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+		{
+			NotificationChannel channel = new NotificationChannel(
+				"temperature_alerts",
+				"Temperature Alerts",
+				NotificationManager.IMPORTANCE_HIGH
+			);
+
+			channel.setDescription("Alerts when temperature reaches set limit");
+			NotificationManager manager = getSystemService(NotificationManager.class);
+			manager.createNotificationChannel(channel);
+		}
+	}
+
+	static void sendTemperatureAlert(float temperature, float limit)
+	{
+		if(ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
+		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+			return;
+
+		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+
+		String unit = metric ? "C" : "F";
+
+	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "temperature_alerts")
+	        .setSmallIcon(R.drawable.baseline_thermostat_24)
+	        .setContentTitle("Temperature Alert")
+	        .setContentText(String.format(getAndroidString(R.string.temp_alert), temperature, unit, limit))
+	        .setPriority(NotificationCompat.PRIORITY_HIGH)
+	        .setAutoCancel(true);
+
+	    NotificationManagerCompat manager = NotificationManagerCompat.from(instance);
+		manager.notify(1001, builder.build());
 	}
 }

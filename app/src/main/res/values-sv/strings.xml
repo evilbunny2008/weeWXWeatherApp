@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Varje timme</string>
     <string name="interval_3h">3 timme</string>
     <string name="interval_hourly">Varje timme</string>
+    <string name="temp_alert">Temperaturen %1$.1f°%2$s har sjunkit till din gräns på %3$.1f°%2$s</string>
+    <string name="temperature">Temperatur</string>
+    <string name="morning_temp_alert">Morgonvarning?</string>
+    <string name="afternoon_temp_alert">Eftermiddagsvarning?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">6 ގަޑިއިރަށް</string>
     <string name="interval_3h">3 ގަޑިއިރަށް</string>
     <string name="interval_hourly">ގަޑިއަކު އެއްފަހަރު</string>
+    <string name="temp_alert">%1$.1f°%2$s ގެ ފިނިހޫނުމިން ތިބާގެ ލިމިޓް %3$.1f°%2$s އަށް ވެއްޓިއްޖެއެވެ</string>
+    <string name="temperature">ފިނިހޫނުމިން</string>
+    <string name="morning_temp_alert">ހެނދުނުގެ އެލާޓް؟</string>
+    <string name="afternoon_temp_alert">މެންދުރު އެލާޓް؟</string>
 </resources>

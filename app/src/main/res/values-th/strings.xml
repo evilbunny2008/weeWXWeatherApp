@@ -97,4 +97,8 @@
     <string name="interval_6h">6 ชั่วโมง</string>
     <string name="interval_3h">3 ชั่วโมง</string>
     <string name="interval_hourly">รายชั่วโมง</string>
+    <string name="temp_alert">อุณหภูมิ %1$.1f°%2$s ลดลงถึงขีดจำกัดของคุณที่ %3$.1f°%2$s</string>
+    <string name="temperature">อุณหภูมิ</string>
+    <string name="morning_temp_alert">การแจ้งเตือนตอนเช้า?</string>
+    <string name="afternoon_temp_alert">แจ้งเตือนช่วงบ่าย?</string>
 </resources>

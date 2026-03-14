@@ -97,4 +97,8 @@
     <string name="interval_6h">6 kwa elekere</string>
     <string name="interval_3h">3 kwa elekere</string>
     <string name="interval_hourly">Oge elekere</string>
+    <string name="temp_alert">Okpomọkụ %1$.1f°%2$s adaala ruo oke gị nke %3$.1f°%2$s</string>
+    <string name="temperature">Okpomọkụ</string>
+    <string name="morning_temp_alert">Ntị ụtụtụ?</string>
+    <string name="afternoon_temp_alert">Njikere ehihie?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Thɛɛr</string>
     <string name="interval_3h">3 Thɛɛr</string>
     <string name="interval_hourly">Thɛɛr</string>
+    <string name="temp_alert">Atuɔ̈c %1$.1f°%2$s acï lɔ piny tën thökdu ë %3$.1f°%2$s</string>
+    <string name="temperature">Liɛrë piny</string>
+    <string name="morning_temp_alert">Kë ye kɔc lɛ̈k miäkduur?</string>
+    <string name="afternoon_temp_alert">Alert de akɔ̈l ciɛlic?</string>
 </resources>

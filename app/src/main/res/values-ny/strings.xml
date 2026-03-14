@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Ola lililonse</string>
     <string name="interval_3h">3 Ola lililonse</string>
     <string name="interval_hourly">Ola lililonse</string>
+    <string name="temp_alert">Kutentha %1$.1f°%2$s kwatsika kufika pa %3$.1f°%2$s</string>
+    <string name="temperature">Kutentha</string>
+    <string name="morning_temp_alert">Chidziwitso Cham\'mawa?</string>
+    <string name="afternoon_temp_alert">Chidziwitso Cha Masana?</string>
 </resources>

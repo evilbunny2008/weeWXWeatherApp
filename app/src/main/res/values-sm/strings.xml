@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Itula</string>
     <string name="interval_3h">3 Itula</string>
     <string name="interval_hourly">Ta\'i itula</string>
+    <string name="temp_alert">Ua pa\'ū le vevela %1$.1f°%2$s i lau tapulaa o le %3$.1f°%2$s</string>
+    <string name="temperature">vevela</string>
+    <string name="morning_temp_alert">Alalaga i le taeao?</string>
+    <string name="afternoon_temp_alert">Alalaga i le aoauli?</string>
 </resources>

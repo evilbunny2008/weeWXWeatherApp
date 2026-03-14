@@ -97,4 +97,8 @@
     <string name="interval_6h">6 ម៉ោង</string>
     <string name="interval_3h">3 រៀងរាល់ម៉ោង</string>
     <string name="interval_hourly">រៀងរាល់ម៉ោង</string>
+    <string name="temp_alert">សីតុណ្ហភាព %1$.1f°%2$s បានធ្លាក់ចុះដល់ដែនកំណត់របស់អ្នក %3$.1f°%2$s</string>
+    <string name="temperature">សីតុណ្ហភាព</string>
+    <string name="morning_temp_alert">ការជូនដំណឹងពេលព្រឹក?</string>
+    <string name="afternoon_temp_alert">ជូនដំណឹងពេលរសៀល?</string>
 </resources>

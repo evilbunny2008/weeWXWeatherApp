@@ -97,4 +97,8 @@
     <string name="interval_6h">6 xtune</string>
     <string name="interval_3h">3 xtune</string>
     <string name="interval_hourly">Stunde</string>
+    <string name="temp_alert">Ti temperatuur %1$.1f°%2$s is runer kang uf ti xpits fon 3$.1f°%2$s</string>
+    <string name="temperature">Temperatuer</string>
+    <string name="morning_temp_alert">Morgen alert?</string>
+    <string name="afternoon_temp_alert">Nachmittag Alert?</string>
 </resources>

@@ -42,6 +42,8 @@ class KeyValue
 	static String countyName = null;
 	static String bomLocation = null;
 
+	static boolean hasNotificationPerm = false;
+
 	static boolean isPrefSet(String var)
 	{
 		for(int i = 0; i < prefs.size(); i++)

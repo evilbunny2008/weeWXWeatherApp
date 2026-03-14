@@ -97,4 +97,8 @@
     <string name="interval_6h">6 сәгать</string>
     <string name="interval_3h">3 сәгать</string>
     <string name="interval_hourly">Сәгать саен</string>
+    <string name="temp_alert">Температура%1$.1f°%2$s сезнең лимитка төште%3$.1f°%2$s</string>
+    <string name="temperature">Температура</string>
+    <string name="morning_temp_alert">Таң хәбәре?</string>
+    <string name="afternoon_temp_alert">Көндезге хәбәр?</string>
 </resources>

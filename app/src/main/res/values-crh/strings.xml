@@ -97,4 +97,8 @@
     <string name="interval_6h">6 саатлик</string>
     <string name="interval_3h">3 саатлик</string>
     <string name="interval_hourly">Саатлик</string>
+    <string name="temp_alert">Сыджакълыкъ %1$.1f°%2$s сизинъ %3$.1f°%2$s сынъырынъызгъа тюшти</string>
+    <string name="temperature">Сыджакълыкъ</string>
+    <string name="morning_temp_alert">Сабалыкъ хабердарлыкъ?</string>
+    <string name="afternoon_temp_alert">Куньдюзки хабердарлыкъ?</string>
 </resources>

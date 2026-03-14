@@ -97,4 +97,8 @@
     <string name="interval_3h">3 сааҭла</string>
     <string name="interval_hourly">Сааҭла</string>
     <string name="forecast_interval">Аԥхьагәаҭара абжьаӡара (иаҭахызар)</string>
+    <string name="temp_alert">Аԥхарра %1$.1f°%2$s еиҵахеит уҳәаа %3$.1f°%2$s</string>
+    <string name="morning_temp_alert">Ашьыжьтәи агәҽанҵара?</string>
+    <string name="afternoon_temp_alert">Шьыбжьонтәи агәҽанҵара?</string>
+    <string name="temperature">Атемпература</string>
 </resources>

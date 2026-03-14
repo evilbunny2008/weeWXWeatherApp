@@ -97,4 +97,8 @@
     <string name="interval_6h">6 ogni ora</string>
     <string name="interval_3h">3 ore</string>
     <string name="interval_hourly">Ogni ora</string>
+    <string name="temp_alert">La temperatura %1$.1f°%2$s è scesa al limite di %3$.1f°%2$s</string>
+    <string name="temperature">Temperatura</string>
+    <string name="morning_temp_alert">Avviso mattutino?</string>
+    <string name="afternoon_temp_alert">Avviso pomeridiano?</string>
 </resources>

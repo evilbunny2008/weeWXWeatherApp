@@ -97,4 +97,8 @@
     <string name="interval_6h">6 сати на сат</string>
     <string name="interval_3h">3 сата</string>
     <string name="interval_hourly">По сату</string>
+    <string name="temp_alert">Температура %1$.1ф°%2$с је пала на вашу границу од %3$.1ф°%2$с</string>
+    <string name="temperature">Температура</string>
+    <string name="morning_temp_alert">Морнинг Алерт?</string>
+    <string name="afternoon_temp_alert">Поподневно упозорење?</string>
 </resources>

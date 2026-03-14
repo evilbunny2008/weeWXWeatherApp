@@ -97,4 +97,8 @@
     <string name="interval_6h">6 pa ora</string>
     <string name="interval_3h">3 pa ora</string>
     <string name="interval_hourly">Pa ora</string>
+    <string name="temp_alert">Temperatura %1$.1f°%2$s a baha te na bo límite di %3$.1f°%2$s</string>
+    <string name="temperature">Temperatura</string>
+    <string name="morning_temp_alert">Alerta di Mainta?</string>
+    <string name="afternoon_temp_alert">Alerta di atardi?</string>
 </resources>

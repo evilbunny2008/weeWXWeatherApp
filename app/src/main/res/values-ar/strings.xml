@@ -97,4 +97,8 @@
     <string name="interval_3h">3 ساعة</string>
     <string name="interval_hourly">كل ساعة</string>
     <string name="forecast_interval">الفاصل الزمني للتنبؤ (إن أمكن)</string>
+    <string name="temp_alert">انخفضت درجة الحرارة %1$.1f°%2$s إلى الحد المسموح به وهو %3$.1f°%2$s</string>
+    <string name="morning_temp_alert">تنبيه الصباح؟</string>
+    <string name="afternoon_temp_alert">تنبيه بعد الظهر؟</string>
+    <string name="temperature">درجة حرارة</string>
 </resources>

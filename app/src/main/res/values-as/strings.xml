@@ -97,4 +97,8 @@
     <string name="interval_3h">৩ ঘণ্টাৰ পিছত ঘণ্টা</string>
     <string name="interval_hourly">ঘণ্টাৰ পিছত ঘণ্টা</string>
     <string name="forecast_interval">পূৰ্বাভাসৰ ব্যৱধান (যদি প্ৰযোজ্য)</string>
+    <string name="temp_alert">তাপমাত্ৰা %1$.1f°%2$s আপোনাৰ সীমা %3$.1f°%2$s লৈ হ্ৰাস পাইছে</string>
+    <string name="morning_temp_alert">ৰাতিপুৱাৰ সতৰ্কবাণী?</string>
+    <string name="afternoon_temp_alert">দুপৰীয়াৰ সতৰ্কবাণী?</string>
+    <string name="temperature">তাপমান</string>
 </resources>

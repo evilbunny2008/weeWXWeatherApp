@@ -97,4 +97,8 @@
     <string name="interval_6h">6 uri</string>
     <string name="interval_3h">3 uri</string>
     <string name="interval_hourly">Orariu</string>
+    <string name="temp_alert">La timpiratura %1$.1f°%2$s è calata ô vostru limiti di %3$.1f°%2$s</string>
+    <string name="temperature">Tempiratura</string>
+    <string name="morning_temp_alert">Avvisu dû matina?</string>
+    <string name="afternoon_temp_alert">Avvisu dû pomeriggiu?</string>
 </resources>

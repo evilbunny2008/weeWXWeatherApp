@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Saet</string>
     <string name="interval_3h">3 Saetî</string>
     <string name="interval_hourly">Seetî</string>
+    <string name="temp_alert">Germahiya %1$.1f°%2$s daketiye sînorê te %3$.1f°%2$s</string>
+    <string name="temperature">Germî</string>
+    <string name="morning_temp_alert">Morning Alert?</string>
+    <string name="afternoon_temp_alert">Alert piştî nîvro?</string>
 </resources>

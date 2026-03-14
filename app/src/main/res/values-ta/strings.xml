@@ -97,4 +97,8 @@
     <string name="interval_6h">6 மணிநேரம்</string>
     <string name="interval_3h">3 மணிநேரம்</string>
     <string name="interval_hourly">மணிநேரம்</string>
+    <string name="temp_alert">வெப்பநிலை %1$.1f°%2$s உங்கள் வரம்பான %3$.1f°%2$sக்கு குறைந்துள்ளது</string>
+    <string name="temperature">வெப்பநிலை</string>
+    <string name="morning_temp_alert">காலை எச்சரிக்கை?</string>
+    <string name="afternoon_temp_alert">மதியம் எச்சரிக்கை?</string>
 </resources>

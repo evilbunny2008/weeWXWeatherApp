@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Co godzinę</string>
     <string name="interval_3h">3 Co godzinę</string>
     <string name="interval_hourly">Cogodzinny</string>
+    <string name="temp_alert">Temperatura %1$.1f°%2$s spadła do limitu %3$.1f°%2$s</string>
+    <string name="temperature">Temperatura</string>
+    <string name="morning_temp_alert">Poranny alarm?</string>
+    <string name="afternoon_temp_alert">Popołudniowy alarm?</string>
 </resources>

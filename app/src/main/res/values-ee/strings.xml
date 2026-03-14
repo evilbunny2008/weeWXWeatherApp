@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Gaƒoƒo ɖesiaɖe</string>
     <string name="interval_3h">3 Gaƒoƒo ɖesiaɖe</string>
     <string name="interval_hourly">Gaƒoƒo sia gaƒoƒo</string>
+    <string name="temp_alert">Dzoxɔxɔ %1$.1f°%2$s ɖiɖi va ɖo wò seɖoƒe si nye %3$.1f°%2$s</string>
+    <string name="temperature">Dzoxɔxɔ</string>
+    <string name="morning_temp_alert">Ŋdi ƒe Nuxlɔ̃amea?</string>
+    <string name="afternoon_temp_alert">Ŋdɔ me Nuxlɔ̃amea?</string>
 </resources>

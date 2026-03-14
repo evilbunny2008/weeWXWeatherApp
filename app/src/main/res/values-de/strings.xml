@@ -97,4 +97,8 @@
     <string name="interval_6h">6 stündlich</string>
     <string name="interval_3h">3 Stündlich</string>
     <string name="interval_hourly">Stündlich</string>
+    <string name="temp_alert">Die Temperatur %1$.1f°%2$s ist auf Ihren Grenzwert von %3$.1f°%2$s gefallen</string>
+    <string name="temperature">Temperatur</string>
+    <string name="morning_temp_alert">Morgenalarm?</string>
+    <string name="afternoon_temp_alert">Nachmittagsalarm?</string>
 </resources>

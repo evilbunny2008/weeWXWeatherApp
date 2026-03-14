@@ -97,4 +97,8 @@
     <string name="interval_6h">६ घौया</string>
     <string name="interval_3h">३ घौया</string>
     <string name="interval_hourly">घौपतिकं</string>
+    <string name="temp_alert">तापक्रम %१$.१f°%२$s छिगु सिमा %३$.१f°%२$s तक कुहां वन</string>
+    <string name="temperature">तापक्रम</string>
+    <string name="morning_temp_alert">सुथसिया सतर्कता?</string>
+    <string name="afternoon_temp_alert">न्हिनय् सतर्कता?</string>
 </resources>

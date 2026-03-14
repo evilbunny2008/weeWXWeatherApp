@@ -97,4 +97,8 @@
     <string name="interval_6h">6 eurvezh</string>
     <string name="interval_3h">3 eurvezh</string>
     <string name="interval_hourly">Bep eurvezh</string>
+    <string name="temp_alert">Diskennet eo an temperadur %1$.1f°%2$s betek ho bevenn a %3$.1f°%2$s</string>
+    <string name="temperature">Gwrez</string>
+    <string name="morning_temp_alert">Kemennadenn ar mintin?</string>
+    <string name="afternoon_temp_alert">Kemenn goude merenn?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_3h">3 uurliks</string>
     <string name="interval_hourly">Uurliks</string>
     <string name="forecast_interval">Voorspellingsinterval (indien van toepassing)</string>
+    <string name="temp_alert">Temperatuur %1$.1f°%2$s het tot jou limiet van %3$.1f°%2$s gedaal</string>
+    <string name="morning_temp_alert">Oggendwaarskuwing?</string>
+    <string name="afternoon_temp_alert">Middagwaarskuwing?</string>
+    <string name="temperature">Temperatuur</string>
 </resources>

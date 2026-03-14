@@ -97,4 +97,8 @@
     <string name="interval_6h">6 საათიანი</string>
     <string name="interval_3h">3 საათიანი</string>
     <string name="interval_hourly">საათობრივი</string>
+    <string name="temp_alert">ტემპერატურა %1$.1f°%2$s დაეცა თქვენს ლიმიტამდე %3$.1f°%2$s</string>
+    <string name="temperature">ტემპერატურა</string>
+    <string name="morning_temp_alert">დილის გაფრთხილება?</string>
+    <string name="afternoon_temp_alert">შუადღის გაფრთხილება?</string>
 </resources>

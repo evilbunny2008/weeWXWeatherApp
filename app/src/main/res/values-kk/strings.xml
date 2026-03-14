@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Сағат сайын</string>
     <string name="interval_3h">3 сағат сайын</string>
     <string name="interval_hourly">Сағат сайын</string>
+    <string name="temp_alert">%1$.1f°%2$s температурасы %3$.1f°%2$s шегіне дейін төмендеді</string>
+    <string name="temperature">Температура</string>
+    <string name="morning_temp_alert">Таңертеңгі ескерту?</string>
+    <string name="afternoon_temp_alert">Түстен кейінгі ескерту?</string>
 </resources>

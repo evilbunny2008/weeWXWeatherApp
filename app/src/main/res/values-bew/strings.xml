@@ -97,4 +97,8 @@
     <string name="interval_3h">3 per jam</string>
     <string name="interval_hourly">Per jam</string>
     <string name="forecast_interval">Perkiraan Interval (kalo ada)</string>
+    <string name="temp_alert">Suhu %1$.1f°%2$s udah turun ke batas lu %3$.1f°%2$s</string>
+    <string name="temperature">Suhu</string>
+    <string name="morning_temp_alert">Waspada Pagi?</string>
+    <string name="afternoon_temp_alert">Waspada Sore?</string>
 </resources>

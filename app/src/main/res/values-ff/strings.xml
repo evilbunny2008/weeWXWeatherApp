@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Waktu kala</string>
     <string name="interval_3h">3 Waktu kala</string>
     <string name="interval_hourly">Waktu kala</string>
+    <string name="temp_alert">Nguleeki %1$.1f°%2$s ustiima haa keerol maa %3$.1f°%2$s</string>
+    <string name="temperature">Wulol</string>
+    <string name="morning_temp_alert">Jeertinaango subaka?</string>
+    <string name="afternoon_temp_alert">Jeertinaango kikiiɗe?</string>
 </resources>

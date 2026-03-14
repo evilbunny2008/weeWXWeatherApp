@@ -97,4 +97,8 @@
     <string name="interval_6h">6 કલાકે</string>
     <string name="interval_3h">3 કલાકે</string>
     <string name="interval_hourly">કલાકદીઠ</string>
+    <string name="temp_alert">તાપમાન %1$.1f°%2$s %3$.1f°%2$s ની તમારી મર્યાદા સુધી ઘટી ગયું છે</string>
+    <string name="temperature">તાપમાન</string>
+    <string name="morning_temp_alert">મોર્નિંગ એલર્ટ?</string>
+    <string name="afternoon_temp_alert">બપોરે ચેતવણી?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_6h">6 ଘଣ୍ଟା</string>
     <string name="interval_3h">3 ଘଣ୍ଟା</string>
     <string name="interval_hourly">ଘଣ୍ଟା</string>
+    <string name="temp_alert">ତାପମାତ୍ରା%1$.1f°%2$s ଆପଣଙ୍କର ସୀମାକୁ%3$.1f°%2$s କୁ ଖସି ଆସିଛି |</string>
+    <string name="temperature">ତାପମାତ୍ରା</string>
+    <string name="morning_temp_alert">ପ୍ରଭାତ ସତର୍କ?</string>
+    <string name="afternoon_temp_alert">ଅପରାହ୍ନ ଆଲର୍ଟ?</string>
 </resources>

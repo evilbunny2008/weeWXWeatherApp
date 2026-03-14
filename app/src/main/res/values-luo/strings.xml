@@ -97,4 +97,8 @@
     <string name="interval_6h">Saa 6</string>
     <string name="interval_3h">Saa 3</string>
     <string name="interval_hourly">Saa ka seche</string>
+    <string name="temp_alert">Liet mar %1$.1f°%2$s osedok piny nyaka giko mari mar %3$.1f°%2$s</string>
+    <string name="temperature">Liet</string>
+    <string name="morning_temp_alert">Chik mar Odhiambo?</string>
+    <string name="afternoon_temp_alert">Chieng\' mar otieno?</string>
 </resources>

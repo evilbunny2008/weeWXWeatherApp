@@ -97,4 +97,8 @@
     <string name="interval_6h">6 గంటలకు</string>
     <string name="interval_3h">3 గంటకు</string>
     <string name="interval_hourly">గంటకోసారి</string>
+    <string name="temp_alert">ఉష్ణోగ్రత %1$.1f°%2$s మీ పరిమితి %3$.1f°%2$sకి పడిపోయింది</string>
+    <string name="temperature">ఉష్ణోగ్రత</string>
+    <string name="morning_temp_alert">మార్నింగ్ అలర్ట్?</string>
+    <string name="afternoon_temp_alert">మధ్యాహ్నం అలర్ట్?</string>
 </resources>

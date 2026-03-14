@@ -97,4 +97,8 @@
     <string name="interval_6h">6 ຊົ່ວໂມງ</string>
     <string name="interval_3h">3 ຊົ່ວໂມງ</string>
     <string name="interval_hourly">ທຸກໆຊົ່ວໂມງ</string>
+    <string name="temp_alert">ອຸນຫະພູມ %1$.1f°%2$s ໄດ້ຫຼຸດລົງເຖິງຂີດຈຳກັດຂອງທ່ານທີ່ %3$.1f°%2$s</string>
+    <string name="temperature">ອຸນຫະພູມ</string>
+    <string name="morning_temp_alert">ແຈ້ງເຕືອນຕອນເຊົ້າ?</string>
+    <string name="afternoon_temp_alert">ແຈ້ງເຕືອນຕອນບ່າຍ?</string>
 </resources>

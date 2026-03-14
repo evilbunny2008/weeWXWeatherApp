@@ -99,4 +99,8 @@
     <string name="next_moon">Next moon events?</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="no_download_or_app_not_setup">No download or app hasn\'t been setup</string>
+	<string name="temperature">Temperature</string>
+	<string name="temp_alert">Temperature %1$.1f°%2$s has dropped to your limit of %3$.1f°%2$s</string>
+	<string name="morning_temp_alert">Morning Alert?</string>
+	<string name="afternoon_temp_alert">Afternoon Alert?</string>
 </resources>

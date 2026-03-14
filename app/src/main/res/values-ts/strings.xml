@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Hi awara yin\'wana ni yin\'wana</string>
     <string name="interval_3h">3 Hi awara yin\'wana ni yin\'wana</string>
     <string name="interval_hourly">Hi awara na awara</string>
+    <string name="temp_alert">Mahiselo ya %1$.1f°%2$s ya yile ehansi kuya eka mpimo wa wena wa %3$.1f°%2$s</string>
+    <string name="temperature">Mahiselo</string>
+    <string name="morning_temp_alert">Xitsundzuxo xa Mixo?</string>
+    <string name="afternoon_temp_alert">Xitsundzuxo xa Madyambu?</string>
 </resources>

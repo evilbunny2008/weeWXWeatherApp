@@ -97,4 +97,8 @@
     <string name="interval_6h">6 אַורלי</string>
     <string name="interval_3h">3 אַורלי</string>
     <string name="interval_hourly">אַורלי</string>
+    <string name="temp_alert">טעמפּעראַטור %1$.1f°%2$s איז געפאלן צו דיין שיעור פון %3$.1f°%2$s</string>
+    <string name="temperature">טעמפּעראַטור</string>
+    <string name="morning_temp_alert">מאָרגן אַלערט?</string>
+    <string name="afternoon_temp_alert">נאָכמיטאָג אַלערט?</string>
 </resources>

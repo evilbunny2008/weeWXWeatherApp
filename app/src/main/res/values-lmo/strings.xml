@@ -97,4 +97,8 @@
     <string name="interval_6h">6 orari</string>
     <string name="interval_3h">3 orari</string>
     <string name="interval_hourly">Oraria</string>
+    <string name="temp_alert">La temperadüra %1$.1f°%2$s l\'è calada al limit de %3$.1f°%2$s</string>
+    <string name="temperature">Temperadura</string>
+    <string name="morning_temp_alert">Alerta del matin?</string>
+    <string name="afternoon_temp_alert">Alerta del dopudisnà?</string>
 </resources>

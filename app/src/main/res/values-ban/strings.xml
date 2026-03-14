@@ -97,4 +97,8 @@
     <string name="interval_3h">3 Jam</string>
     <string name="interval_hourly">Nyabran jam</string>
     <string name="forecast_interval">Interval ramalan (yéning wénten)</string>
+    <string name="temp_alert">Suhu %1$.1f°%2$s sampun tedun ngantos wates semetone %3$.1f°%2$s</string>
+    <string name="morning_temp_alert">Painget Semeng?</string>
+    <string name="afternoon_temp_alert">Painget Sore?</string>
+    <string name="temperature">Suhu</string>
 </resources>

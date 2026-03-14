@@ -97,4 +97,8 @@
     <string name="interval_6h">6 teev</string>
     <string name="interval_3h">3 teev</string>
     <string name="interval_hourly">Txhua teev</string>
+    <string name="temp_alert">Kub %1$.1f°%2$s tau poob rau koj qhov txwv ntawm %3$.1f°%2$s</string>
+    <string name="temperature">Kub</string>
+    <string name="morning_temp_alert">Sawv ntxov ceeb toom?</string>
+    <string name="afternoon_temp_alert">Hmo ntuj ceeb toom?</string>
 </resources>

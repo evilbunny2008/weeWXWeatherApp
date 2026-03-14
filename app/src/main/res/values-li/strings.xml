@@ -97,4 +97,8 @@
     <string name="interval_6h">6 per oor</string>
     <string name="interval_3h">3 per oor</string>
     <string name="interval_hourly">Per oor</string>
+    <string name="temp_alert">De temperatuur %1$.1f°%2$s is gedaald tot eur limiet vaan %3$.1f°%2$s</string>
+    <string name="temperature">Températuur</string>
+    <string name="morning_temp_alert">Ochtendwaarsjuwing?</string>
+    <string name="afternoon_temp_alert">Middagwaarsjuwing?</string>
 </resources>

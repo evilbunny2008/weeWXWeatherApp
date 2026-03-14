@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Stuņžu</string>
     <string name="interval_3h">3 Stuņžu</string>
     <string name="interval_hourly">Stuņžu</string>
+    <string name="temp_alert">Temperatura %1$.1f°%2$s ir nūkrituse leidz jūs rūbežam %3$.1f°%2$s</string>
+    <string name="temperature">Temperatura</string>
+    <string name="morning_temp_alert">Reita breidynuojums?</string>
+    <string name="afternoon_temp_alert">Piecpušdīnis breidynuojums?</string>
 </resources>

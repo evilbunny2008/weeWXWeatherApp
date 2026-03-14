@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Sa\'aatii tokkotti</string>
     <string name="interval_3h">3 Sa\'aatii tokkotti</string>
     <string name="interval_hourly">Sa\'aatii sa\'aatiin</string>
+    <string name="temp_alert">Ho\'i %1$.1f°%2$s gara daangaa kee %3$.1f°%2$s gadi bu\'eera</string>
+    <string name="temperature">Ho\'ina</string>
+    <string name="morning_temp_alert">Akeekkachiisa Ganama?</string>
+    <string name="afternoon_temp_alert">Akeekkachiisa Waaree boodaa?</string>
 </resources>

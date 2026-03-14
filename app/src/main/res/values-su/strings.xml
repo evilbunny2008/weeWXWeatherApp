@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Sajam</string>
     <string name="interval_3h">3 Sajam</string>
     <string name="interval_hourly">Sajam</string>
+    <string name="temp_alert">Suhu %1$.1f°%2$s parantos turun ka wates anjeun %3$.1f°%2$s</string>
+    <string name="temperature">Suhu</string>
+    <string name="morning_temp_alert">Siaga isuk?</string>
+    <string name="afternoon_temp_alert">Siaga Soré?</string>
 </resources>

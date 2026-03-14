@@ -97,4 +97,8 @@
     <string name="interval_6h">6 soatlik</string>
     <string name="interval_3h">3 soatlik</string>
     <string name="interval_hourly">Soatlik</string>
+    <string name="temp_alert">Harorat %1$.1f°%2$s chegarangizgacha tushib ketdi: %3$.1f°%2$s</string>
+    <string name="temperature">Harorat</string>
+    <string name="morning_temp_alert">Ertalab ogohlantirishmi?</string>
+    <string name="afternoon_temp_alert">Peshindan keyin ogohlantirishmi?</string>
 </resources>

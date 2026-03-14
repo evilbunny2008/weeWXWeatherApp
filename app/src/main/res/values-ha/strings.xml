@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Sa\'a</string>
     <string name="interval_3h">3 Sa\'a</string>
     <string name="interval_hourly">Sa\'a</string>
+    <string name="temp_alert">Zazzabi %1$.1f°%2$s ya ragu zuwa iyakar ku na %3$.1f°%2$s</string>
+    <string name="temperature">Zazzabi</string>
+    <string name="morning_temp_alert">Faɗakarwar Safiya?</string>
+    <string name="afternoon_temp_alert">Jijjiga La\'asar?</string>
 </resources>

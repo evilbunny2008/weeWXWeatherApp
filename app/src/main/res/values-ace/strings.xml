@@ -97,4 +97,8 @@
     <string name="interval_3h">3 Jeum</string>
     <string name="interval_hourly">Jeum</string>
     <string name="forecast_interval">Interval Ramalan (meunyoe na)</string>
+    <string name="temp_alert">Suhu %1$.1f°%2$s ka jitron u bataih droeneuh %3$.1f°%2$s</string>
+    <string name="morning_temp_alert">Siaga Beungoh?</string>
+    <string name="afternoon_temp_alert">Waspada Siang?</string>
+    <string name="temperature">Temperatur</string>
 </resources>

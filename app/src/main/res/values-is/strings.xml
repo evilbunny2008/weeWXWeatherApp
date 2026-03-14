@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Klukkutíma fresti</string>
     <string name="interval_3h">3 Klukkutíma fresti</string>
     <string name="interval_hourly">Á klukkutíma fresti</string>
+    <string name="temp_alert">Hitastig %1$.1f°%2$s hefur farið niður í %3$.1f°%2$s mörkin þín</string>
+    <string name="temperature">Hitastig</string>
+    <string name="morning_temp_alert">Morgunviðvörun?</string>
+    <string name="afternoon_temp_alert">Síðdegisviðvörun?</string>
 </resources>

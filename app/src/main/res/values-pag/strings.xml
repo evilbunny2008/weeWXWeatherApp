@@ -97,4 +97,8 @@
     <string name="interval_6h">6 kada oras</string>
     <string name="interval_3h">3 kada oras</string>
     <string name="interval_hourly">Kada oras</string>
+    <string name="temp_alert">Say temperatura %1$.1f°%2$s et inmepas ed limitasyon mo ya %3$.1f°%2$s</string>
+    <string name="temperature">Temperatura</string>
+    <string name="morning_temp_alert">Alerto ed kabuasan?</string>
+    <string name="afternoon_temp_alert">Alerto ed ngarem?</string>
 </resources>

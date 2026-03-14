@@ -97,4 +97,8 @@
     <string name="interval_6h">6 kɛ thaak</string>
     <string name="interval_3h">3 kɛ thaak</string>
     <string name="interval_hourly">Kɛ thaak</string>
+    <string name="temp_alert">Tɛmpi̱rɛciɛr %1$.1f°%2$s cɛ wä piny ɛ wä kä %3$.1f°%2$s</string>
+    <string name="temperature">Lëth kɛnɛ kɔa̱c ɣɔ̱a̱</string>
+    <string name="morning_temp_alert">Alert kɛ runwaŋ?</string>
+    <string name="afternoon_temp_alert">Alert kɛ kɔr ca̱ŋ?</string>
 </resources>

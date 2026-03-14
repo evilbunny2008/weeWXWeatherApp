@@ -1,11 +1,13 @@
 package com.odiousapps.weewxweather;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.os.Build;
@@ -33,6 +35,7 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.radiobutton.MaterialRadioButton;
+import com.google.android.material.slider.Slider;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
@@ -61,6 +64,7 @@ import java.util.concurrent.Future;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.text.HtmlCompat;
 import androidx.core.view.GravityCompat;
@@ -98,6 +102,8 @@ public class MainActivity extends FragmentActivity
 {
 	private static MainActivity instance;
 
+	private static final int NOTIFICATION_PERMISSION_CODE = 1001;
+
 	private TabLayout tabLayout;
 	private DrawerLayout mDrawerLayout;
 	private TextInputLayout fgtil, bgtil;
@@ -106,13 +112,15 @@ public class MainActivity extends FragmentActivity
 	private MaterialButton b1, b2, b3, b4;
 	private MaterialAutoCompleteTextView s1, s2, s3, s4;
 	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, rain_in_inches,
-			use_exact_alarm, save_app_debug_logs, next_moon, force_dark_mode;
+			use_exact_alarm, save_app_debug_logs, next_moon, force_dark_mode,
+			morning_temp_alert, afternoon_temp_alert;
 	private MaterialRadioButton showRadar, showForecast;
 	private ViewPager2 mViewPager;
+	private Slider sliderMorningTemp, sliderAfternoonTemp;
 
 	private AlertDialog dialog;
 
-	private LinearLayout settingLayout, aboutLayout;
+	private LinearLayout settingLayout, aboutLayout, morning_temp_settings, afternoon_temp_settings;
 
 	private ScrollView scrollView;
 
@@ -145,6 +153,10 @@ public class MainActivity extends FragmentActivity
 	private final List<Setting> screen_elements = new ArrayList<>();
 
 	ColorStateList strokeColors;
+
+	private float MorningTemp = 23.0f;
+	private float AfternoonTemp = 26.0f;
+	private boolean hasStarted = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -213,6 +225,24 @@ public class MainActivity extends FragmentActivity
 		screen_elements.add(new Setting("widgetBG", R.id.widgetBG));
 		screen_elements.add(new Setting("widgetFG", R.id.widgetFG));
 		screen_elements.add(new Setting("wifi_only", R.id.wifi_only));
+
+		screen_elements.add(new Setting("morning_temp_alert", R.id.morning_temp_alert));
+		screen_elements.add(new Setting("morning_temp_settings", R.id.morning_temp_settings));
+
+		screen_elements.add(new Setting("tvMorningTempLabel", R.id.tvMorningTempLabel));
+		screen_elements.add(new Setting("tvMorningTempValue", R.id.tvMorningTempValue));
+		screen_elements.add(new Setting("sliderMorningTemp", R.id.sliderMorningTemp));
+		screen_elements.add(new Setting("minMorningTemp", R.id.minMorningTemp));
+		screen_elements.add(new Setting("maxMorningTemp", R.id.maxMorningTemp));
+
+		screen_elements.add(new Setting("afternoon_temp_alert", R.id.afternoon_temp_alert));
+		screen_elements.add(new Setting("afternoon_temp_settings", R.id.afternoon_temp_settings));
+
+		screen_elements.add(new Setting("tvAfternoonTempLabel", R.id.tvAfternoonTempLabel));
+		screen_elements.add(new Setting("tvAfternoonTempValue", R.id.tvAfternoonTempValue));
+		screen_elements.add(new Setting("sliderAfternoonTemp", R.id.sliderAfternoonTemp));
+		screen_elements.add(new Setting("minAfternoonTemp", R.id.minAfternoonTemp));
+		screen_elements.add(new Setting("maxAfternoonTemp", R.id.maxAfternoonTemp));
 
 		LogMessage("MainActivity.onCreate() started...");
 
@@ -413,6 +443,23 @@ public class MainActivity extends FragmentActivity
 		customURL = findViewById(R.id.customURL);
 
 		metric_forecasts = findViewById(R.id.metric_forecasts);
+		metric_forecasts.setOnCheckedChangeListener((buttonView, isChecked) ->
+		{
+			if(hasStarted)
+			{
+				if(isChecked)
+				{
+					MorningTemp = weeWXAppCommon.F2C(MorningTemp);
+					AfternoonTemp = weeWXAppCommon.F2C(AfternoonTemp);
+				} else {
+					MorningTemp = weeWXAppCommon.C2F(MorningTemp);
+					AfternoonTemp = weeWXAppCommon.C2F(AfternoonTemp);
+				}
+
+				updateSliders(isChecked, MorningTemp, AfternoonTemp);
+			}
+		});
+
 		rain_in_inches = findViewById(R.id.rain_in_inches);
 		show_indoor = findViewById(R.id.show_indoor);
 
@@ -471,11 +518,66 @@ public class MainActivity extends FragmentActivity
 		showRadar = findViewById(R.id.showRadar);
 		showForecast = findViewById(R.id.showForecast);
 
+		sliderMorningTemp = findViewById(R.id.sliderMorningTemp);
+		TextView tvMorningTempValue = findViewById(R.id.tvMorningTempValue);
+
+		sliderMorningTemp.addOnChangeListener((s, value, fromUser) ->
+		{
+			String tempUnit = "C";
+			if(!metric_forecasts.isChecked())
+				tempUnit = "F";
+
+			MorningTemp = value;
+
+			tvMorningTempValue.setText(String.format(Locale.getDefault(), "%.1f°" + tempUnit, value));
+		});
+
+		sliderAfternoonTemp = findViewById(R.id.sliderAfternoonTemp);
+		TextView tvAfternoonTempValue = findViewById(R.id.tvAfternoonTempValue);
+
+		sliderAfternoonTemp.addOnChangeListener((s, value, fromUser) ->
+		{
+			String tempUnit = "C";
+			if(!metric_forecasts.isChecked())
+				tempUnit = "F";
+
+			AfternoonTemp = value;
+
+			tvAfternoonTempValue.setText(String.format(Locale.getDefault(), "%.1f°" + tempUnit, value));
+		});
+
+		morning_temp_settings = findViewById(R.id.morning_temp_settings);
+		morning_temp_alert = findViewById(R.id.morning_temp_alert);
+		morning_temp_alert.setOnCheckedChangeListener((buttonView, isChecked) ->
+		{
+		    if(isChecked)
+		    {
+				requestNotificationPermission();
+				morning_temp_settings.setVisibility(View.VISIBLE);
+		    } else {
+				morning_temp_settings.setVisibility(View.GONE);
+		    }
+		});
+
+		afternoon_temp_settings = findViewById(R.id.afternoon_temp_settings);
+		afternoon_temp_alert = findViewById(R.id.afternoon_temp_alert);
+		afternoon_temp_alert.setOnCheckedChangeListener((buttonView, isChecked) ->
+		{
+		    if(isChecked)
+		    {
+				requestNotificationPermission();
+				afternoon_temp_settings.setVisibility(View.VISIBLE);
+		    } else {
+				afternoon_temp_settings.setVisibility(View.GONE);
+		    }
+		});
+
 		fgtil = findViewById(R.id.fgTextInputLayout);
 		bgtil = findViewById(R.id.bgTextInputLayout);
 
 		int fg, bg;
-		boolean wo, met, rii, si, sr, sf, uea, sadl, nm, fdm;
+		boolean wo, met, rii, si, sr, sf, uea, sadl, nm, fdm, mta, ata;
+		float mt, at;
 
 		UpdateFrequency = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
 		UpdateInterval = (int)KeyValue.readVar("UpdateInterval", weeWXApp.UpdateInterval_default);
@@ -497,6 +599,12 @@ public class MainActivity extends FragmentActivity
 		sadl = (boolean)KeyValue.readVar("save_app_debug_logs", weeWXApp.save_app_debug_logs_default);
 		nm = (boolean)KeyValue.readVar("next_moon", weeWXApp.next_moon_default);
 		fdm = (boolean)KeyValue.readVar("force_dark_mode", weeWXApp.force_dark_mode_default);
+
+		mta = (boolean)KeyValue.readVar("morning_temp_alert", weeWXApp.morning_temp_alert_default);
+		mt = (float)KeyValue.readVar("MorningTemp", weeWXApp.MorningTemp_default);
+
+		ata = (boolean)KeyValue.readVar("afternoon_temp_alert", weeWXApp.afternoon_temp_alert_default);
+		at = (float)KeyValue.readVar("AfternoonTemp", weeWXApp.AfternoonTemp_default);
 
 		if(savedInstanceState != null)
 		{
@@ -523,6 +631,11 @@ public class MainActivity extends FragmentActivity
 			sadl = savedInstanceState.getBoolean("sadl", sadl);
 			nm = savedInstanceState.getBoolean("nm", nm);
 			fdm = savedInstanceState.getBoolean("fdm", fdm);
+
+			mta = savedInstanceState.getBoolean("mta", mta);
+			mt = savedInstanceState.getFloat("mt", mt);
+			ata = savedInstanceState.getBoolean("ata", ata);
+			at = savedInstanceState.getFloat("at", at);
 
 			LogMessage("MainActivity.onCreate() DayNightMode: " + DayNightMode);
 		}
@@ -560,6 +673,11 @@ public class MainActivity extends FragmentActivity
 		save_app_debug_logs.setChecked(sadl);
 		next_moon.setChecked(nm);
 		force_dark_mode.setChecked(fdm);
+
+		morning_temp_alert.setChecked(mta);
+		afternoon_temp_alert.setChecked(ata);
+
+		updateSliders(met, mt, at);
 
 		LogMessage("MainActivity.onCreate() DayNightMode: " + DayNightMode);
 
@@ -668,6 +786,49 @@ public class MainActivity extends FragmentActivity
 			Setting s = screen_elements.get(0);
 			weeWXAppCommon.LogColour(findViewById(s.ResId()), s.name());
 		}
+
+		hasStarted = true;
+	}
+
+	private void updateSliders(boolean met, float morning, float afternoon)
+	{
+		MaterialTextView minMorningTemp = findViewById(R.id.minMorningTemp);
+		MaterialTextView maxMorningTemp = findViewById(R.id.maxMorningTemp);
+		MaterialTextView minAfternoonTemp = findViewById(R.id.minAfternoonTemp);
+		MaterialTextView maxAfternoonTemp = findViewById(R.id.maxAfternoonTemp);
+
+		int minTemp = 16;
+		int maxTemp = 30;
+		String tempUnit = "°C";
+
+		if(!met)
+		{
+			minTemp = (int)Math.floor(weeWXAppCommon.C2F(minTemp));
+			maxTemp = (int)Math.floor(weeWXAppCommon.C2F(maxTemp));
+			tempUnit = "°F";
+		}
+
+		sliderMorningTemp.setValueFrom(-999);
+		sliderMorningTemp.setValueTo(999);
+
+		sliderMorningTemp.setValue(morning);
+		sliderMorningTemp.setValueFrom(minTemp);
+		sliderMorningTemp.setValueTo(maxTemp);
+
+		sliderAfternoonTemp.setValueFrom(-999);
+		sliderAfternoonTemp.setValueTo(999);
+
+		sliderAfternoonTemp.setValue(afternoon);
+		sliderAfternoonTemp.setValueFrom(minTemp);
+		sliderAfternoonTemp.setValueTo(maxTemp);
+
+		String str = minTemp + tempUnit;
+		minMorningTemp.setText(str);
+		minAfternoonTemp.setText(str);
+
+		str = maxTemp + tempUnit;
+		maxMorningTemp.setText(str);
+		maxAfternoonTemp.setText(str);
 	}
 
 	private void reduceViewPagerSwipeSensitivity(ViewPager2 viewPager)
@@ -775,6 +936,7 @@ public class MainActivity extends FragmentActivity
 					v.setTextColor(fgColour);
 					v.setHintTextColor(fgColour);
 				}
+				case Slider v -> LogMessage("MainActivity.updateColours(): Slider detected");
 				default -> LogMessage("MainActivity.updateColours() Uncaught view type: " + view, KeyValue.w);
 			}
 		}
@@ -916,6 +1078,12 @@ public class MainActivity extends FragmentActivity
 		outState.putBoolean("sadl", save_app_debug_logs.isChecked());
 		outState.putBoolean("nm", next_moon.isChecked());
 		outState.putBoolean("fdm", force_dark_mode.isChecked());
+
+		outState.putBoolean("mta", morning_temp_alert.isChecked());
+		outState.putBoolean("ata", afternoon_temp_alert.isChecked());
+
+		outState.putFloat("mt", sliderMorningTemp.getValue());
+		outState.putFloat("at", sliderAfternoonTemp.getValue());
 	}
 
 	private void setStrings()
@@ -1905,6 +2073,11 @@ public class MainActivity extends FragmentActivity
 			else
 				KeyValue.putVar("custom_url", appCustomURL);
 
+			KeyValue.putVar("morning_temp_alert", morning_temp_alert.isChecked());
+			KeyValue.putVar("MorningTemp", sliderMorningTemp.getValue());
+			KeyValue.putVar("afternoon_temp_alert", afternoon_temp_alert.isChecked());
+			KeyValue.putVar("AfternoonTemp", sliderAfternoonTemp.getValue());
+
 			KeyValue.putVar("metric", metric_forecasts.isChecked());
 			KeyValue.putVar("rainInInches", rain_in_inches.isChecked());
 			KeyValue.putVar("showIndoor", show_indoor.isChecked());
@@ -2023,5 +2196,30 @@ public class MainActivity extends FragmentActivity
 		{
 			return arrayList.size();
 		}
+	}
+
+	private void requestNotificationPermission()
+	{
+	    if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)
+		{
+	        if(ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+	            != PackageManager.PERMISSION_GRANTED)
+			{
+	            ActivityCompat.requestPermissions(this,
+	                new String[]{Manifest.permission.POST_NOTIFICATIONS},
+	                NOTIFICATION_PERMISSION_CODE);
+	        }
+	    } else {
+		    KeyValue.hasNotificationPerm = true;
+	    }
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults)
+	{
+	    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+	    if(requestCode == NOTIFICATION_PERMISSION_CODE)
+			KeyValue.hasNotificationPerm = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
 	}
 }

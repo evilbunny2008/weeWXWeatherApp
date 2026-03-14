@@ -97,4 +97,8 @@
     <string name="interval_6h">6 Цаг тутамд</string>
     <string name="interval_3h">3 Цаг тутамд</string>
     <string name="interval_hourly">Цаг тутамд</string>
+    <string name="temp_alert">Температур %1$.1f°%2$s таны хязгаар болох %3$.1f°%2$s хүртэл буурсан байна</string>
+    <string name="temperature">Температур</string>
+    <string name="morning_temp_alert">Өглөөний сэрэмжлүүлэг?</string>
+    <string name="afternoon_temp_alert">Үдээс хойш сэрэмжлүүлэх үү?</string>
 </resources>

@@ -97,4 +97,8 @@
     <string name="interval_3h">3 ሰዓት</string>
     <string name="interval_hourly">በየሰዓቱ</string>
     <string name="forecast_interval">የትንበያ ክፍተት (የሚመለከተው ከሆነ)</string>
+    <string name="temp_alert">የሙቀት መጠን %1$.1f°%2$s ወደ %3$.1f°%2$s ገደብ ወርዷል</string>
+    <string name="morning_temp_alert">የጠዋት ማንቂያ?</string>
+    <string name="afternoon_temp_alert">ከሰአት ማንቂያ?</string>
+    <string name="temperature">የሙቀት መጠን</string>
 </resources>

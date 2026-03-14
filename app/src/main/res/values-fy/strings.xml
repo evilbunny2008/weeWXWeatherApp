@@ -97,4 +97,8 @@
     <string name="interval_6h">6 oere</string>
     <string name="interval_3h">3 oere</string>
     <string name="interval_hourly">Oeren</string>
+    <string name="temp_alert">Temperatuer %1$.1f°%2$s is sakke nei jo limyt fan %3$.1f°%2$s</string>
+    <string name="temperature">Temperatuer</string>
+    <string name="morning_temp_alert">Moarn warskôging?</string>
+    <string name="afternoon_temp_alert">Middeis warskôging?</string>
 </resources>
