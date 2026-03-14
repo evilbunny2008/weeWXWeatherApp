@@ -150,7 +150,7 @@ public class Stats extends Fragment
 		if(zoom < 50)
 			zoom = 100;
 
-		if(zoom > 199)
+		if(zoom > 200)
 			zoom = 100;
 
 		return zoom;
