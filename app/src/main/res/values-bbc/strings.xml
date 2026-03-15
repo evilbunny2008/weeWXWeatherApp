@@ -97,8 +97,21 @@
     <string name="interval_3h">3 Jam</string>
     <string name="interval_hourly">Marjam</string>
     <string name="forecast_interval">Selang Ramalan (molo adong)</string>
-    <string name="temp_alert">Suhu %1$.1f°%2$s nunga turun tu batasmu %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$.1f°%2$s nunga turun tu batasmu %3$.1f°%2$s</string>
     <string name="temperature">Milas</string>
     <string name="morning_temp_alert">Siaga Pagi?</string>
     <string name="afternoon_temp_alert">Siaga Siang?</string>
+    <string name="morning_alert">Suhu %1$.1f°%2$s nunga naik tu batasmu %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Siaga Udan?</string>
+    <string name="rainrate_alert">Siaga Tingkat Udan?</string>
+    <string name="rainfall_limit">Batas Curah Udan</string>
+    <string name="rainrate_limit">Batas Tingkat Udan</string>
+    <string name="hour">jom</string>
+    <string name="notification_permission">Izin Pemberitahuan</string>
+    <string name="notifications_needed">Dihaporluhon do pemberitahuan laho paingothon hamu molo suhu, udan manang tingkat udan sahat tu batas naung ditontuhon hamu</string>
+    <string name="notifications_needed2">Ala nunga dua hali hamu manolak izin pemberitahuan, porlu do diaktifhon hamu i di pengaturan, peluncuran pengaturan?</string>
+    <string name="rainfall_alert_metric">Udan %1$.1f%2$s nunga hombar tu batasmu %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Udan %1$.2f%2$s nunga hombar tu batasmu %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Tingkat udan %1$.1f%2$s per jam nunga hombar tu batasmu %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Tingkat udan %1$.2f%2$s per jam nunga hombar tu batasmu %3$.2f%2$s</string>
 </resources>

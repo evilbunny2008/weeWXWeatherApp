@@ -52,7 +52,6 @@
     <string name="wasnt_able_to_connect_custom_url">Иарбоу URL аҟынтәи аидҳәалара ма ахәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_webcam_url">Усервер аҟынтәи ауеб-камера асахьа аидҳәалара ма ахәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_forecast">Аԥхьарбара аидҳәалара ма ахәыҵахра алшара амамызт</string>
-    <string name="forecast_type_is_invalid">Аԥхьагәаҭара \'%1$s\' иашам, шәеиқәыршәарақәа рфаил гәаҭаны, даҽазнык шәҽазышәшәа</string>
     <string name="wasnt_able_to_connect_radar_image">Интернет аҟынтәи радар=исахьа аҿаҳәара ма ахәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_data_txt">Усервер аҟынтәи data.txt еидызкыло ма ихәыҵаҳәҳәар алымшеит</string>
     <string name="data_url_was_blank">Адыррақәа URL ҭацәын</string>
@@ -74,7 +73,6 @@
     <string name="wifi_not_available">Иҿыцхон, аха WiFi аимадара ыҟам</string>
     <string name="invalid_update_interval">Арҿыцра абжьаӡара иашам, абжьаҵарақәа рырхиарақәа, нас еиҭаҿактәуп</string>
     <string name="attempting_to_download_data_txt">Аҭагалара аҽазышәара data.txt усервер аҟынтәи</string>
-    <string name="radar_type_is_invalid">Радар тип \'%1$s\' ҵабыргуп, урхиарақәа рфаил гәаҭаны, еиҭа уҽазышәа</string>
     <string name="webcam_still_downloading">Webcam асахьа уажәгьы ихәыҵгоит</string>
     <string name="webcam_url_url_not_set">Webcam URL еиқәыршәам, мамзаргьы иҭацәуп</string>
     <string name="update_set_to_manual_but_no_content_cached">Иқәыргылатәуп напыла абжьаҵарақәа, аха макьана аҵакы ҵәахым</string>
@@ -97,8 +95,23 @@
     <string name="interval_3h">3 сааҭла</string>
     <string name="interval_hourly">Сааҭла</string>
     <string name="forecast_interval">Аԥхьагәаҭара абжьаӡара (иаҭахызар)</string>
-    <string name="temp_alert">Аԥхарра %1$.1f°%2$s еиҵахеит уҳәаа %3$.1f°%2$s</string>
     <string name="morning_temp_alert">Ашьыжьтәи агәҽанҵара?</string>
     <string name="afternoon_temp_alert">Шьыбжьонтәи агәҽанҵара?</string>
     <string name="temperature">Атемпература</string>
+    <string name="rainfall_alert">Ақәа ақәҭәара агәҽанҵара?</string>
+    <string name="rainrate_alert">Ақәа амҽхак азы агәҽанҵара?</string>
+    <string name="rainfall_limit">Ақәоура аҳәаа</string>
+    <string name="rainrate_limit">Ақәа амҽхак аҳәаа</string>
+    <string name="hour">асааҭ</string>
+    <string name="notification_permission">Ардырразы азин</string>
+    <string name="notifications_needed">Ардыррақәа рҭахуп аҳауа аԥхарра, ақәа леира, мамзаргьы ақәа амҽхак иаԥуҵаз аҳәаақәа ианрықәшәо ​​угәуҽанырҵарц азы</string>
+    <string name="notifications_needed2">Ҩынтә ардырра азин мап ацәышәкит, уи аҭыԥан архиарақәа рҿы аус арутәуп, архиарақәа ралагара?</string>
+    <string name="forecast_type_is_invalid">Аԥааимбаражәа ахкы \'%1$s\' ииашам, шәырхиарақәа рфаил гәаҭаны даҽазнык шәҽазышәшәа</string>
+    <string name="radar_type_is_invalid">Арадар хкы \'%1$s\' ииашам, уеиқәыршәарақәа рфаил гәаҭаны даҽазнык уҽазышәа</string>
+    <string name="morning_alert">Аԥхарра %1$.1f°%2$s уҳәаа %3$.1f°%2$s аҟынӡа иҳаракхеит</string>
+    <string name="afternoon_alert">Аԥхарра %1$.1f°%2$s еиҵахеит уҳәаа %3$.1f°%2$s</string>
+    <string name="rainfall_alert_metric">Ақәа %1$.1f%2$s уара уҳәаа %3$.1f%2$s иақәшәоит</string>
+    <string name="rainfall_alert_imperial">Ақәа %1$.2f%2$s уара уҳәаа %3$.2f%2$s иақәшәоит</string>
+    <string name="rainrate_alert_metric">Ақәа амҽхак %1$.1f%2$s сааҭк аҟны иақәшәоит уара уҳәаа %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Ақәа амҽхак %1$.2f%2$s сааҭк азы иақәшәоит уара уҳәаа %3$.2f%2$s</string>
 </resources>

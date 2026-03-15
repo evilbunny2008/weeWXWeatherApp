@@ -97,8 +97,21 @@
     <string name="interval_6h">6 گھنٹہ</string>
     <string name="interval_3h">3 گھنٹہ</string>
     <string name="interval_hourly">فی گھنٹہ</string>
-    <string name="temp_alert">درجہ حرارت %1$.1f°%2$s آپ کی %3$.1f°%2$s کی حد تک گر گیا ہے</string>
+    <string name="afternoon_alert">درجہ حرارت %1$.1f°%2$s آپ کی %3$.1f°%2$s کی حد تک گر گیا ہے</string>
     <string name="temperature">درجہ حرارت</string>
     <string name="morning_temp_alert">صبح کا انتباہ؟</string>
     <string name="afternoon_temp_alert">دوپہر کا الرٹ؟</string>
+    <string name="morning_alert">درجہ حرارت %1$.1f°%2$s آپ کی حد %3$.1f°%2$s تک بڑھ گیا ہے</string>
+    <string name="rainfall_alert">بارش کا الرٹ؟</string>
+    <string name="rainfall_limit">بارش کی حد</string>
+    <string name="rainrate_alert">بارش کا انتباہ؟</string>
+    <string name="rainrate_limit">بارش کی حد</string>
+    <string name="hour">گھنٹہ</string>
+    <string name="notification_permission">اطلاع کی اجازت</string>
+    <string name="notifications_needed">جب درجہ حرارت، بارش یا بارش کی شرح آپ کی مقرر کردہ حدود کو پورا کرتی ہے تو آپ کو متنبہ کرنے کے لیے اطلاعات کی ضرورت ہوتی ہے۔</string>
+    <string name="notifications_needed2">چونکہ آپ نے نوٹیفکیشن کی اجازت کو دو بار مسترد کیا ہے، اس لیے آپ کو اسے سیٹنگز میں فعال کرنے کی ضرورت ہے، سیٹنگز لانچ کریں؟</string>
+    <string name="rainfall_alert_metric">بارش %1$.1f%2$s آپ کی %3$.1f%2$s کی حد سے مماثل ہے</string>
+    <string name="rainfall_alert_imperial">بارش %1$.2f%2$s آپ کی %3$.2f%2$s کی حد سے مماثل ہے</string>
+    <string name="rainrate_alert_metric">بارش کی شرح %1$.1f%2$s فی گھنٹہ آپ کی %3$.1f%2$s کی حد سے مماثل ہے</string>
+    <string name="rainrate_alert_imperial">بارش کی شرح %1$.2f%2$s فی گھنٹہ آپ کی %3$.2f%2$s کی حد سے مماثل ہے</string>
 </resources>

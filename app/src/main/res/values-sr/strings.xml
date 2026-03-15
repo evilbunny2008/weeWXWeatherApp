@@ -52,7 +52,6 @@
     <string name="wasnt_able_to_connect_custom_url">Нисам могао да се повежем или преузмем са наведеног прилагођеног УРЛ-а</string>
     <string name="wasnt_able_to_connect_webcam_url">Нисам могао да се повежем или преузмем слику веб камере са вашег сервера</string>
     <string name="wasnt_able_to_connect_forecast">Нисам могао да се повежем или преузмем прогнозу</string>
-    <string name="forecast_type_is_invalid">Тип предвиђања \'%1$s\' је неважећи, проверите датотеку са подешавањима и покушајте поново</string>
     <string name="wasnt_able_to_connect_radar_image">Нисам могао да се повежем или преузмем радар= слику са интернета</string>
     <string name="wasnt_able_to_connect_data_txt">Нисам могао да се повежем или преузмем дата.ткт са вашег сервера</string>
     <string name="data_url_was_blank">УРЛ података је био празан</string>
@@ -74,7 +73,6 @@
     <string name="wifi_not_available">Били би ажурирани, али ВиФи веза није доступна</string>
     <string name="invalid_update_interval">Интервал ажурирања је неважећи, ажурирајте подешавања и покушајте поново</string>
     <string name="attempting_to_download_data_txt">Покушај преузимања дата.ткт са вашег сервера</string>
-    <string name="radar_type_is_invalid">Тип радара \'%1$s\' је неважећи, проверите датотеку са подешавањима и покушајте поново</string>
     <string name="webcam_still_downloading">Слика са веб камере се још увек преузима</string>
     <string name="webcam_url_url_not_set">УРЛ веб камере није подешен или је празан</string>
     <string name="update_set_to_manual_but_no_content_cached">Постављено на ручна ажурирања, али садржај још увек није кеширан</string>
@@ -97,8 +95,23 @@
     <string name="interval_6h">6 сати на сат</string>
     <string name="interval_3h">3 сата</string>
     <string name="interval_hourly">По сату</string>
-    <string name="temp_alert">Температура %1$.1ф°%2$с је пала на вашу границу од %3$.1ф°%2$с</string>
     <string name="temperature">Температура</string>
     <string name="morning_temp_alert">Морнинг Алерт?</string>
     <string name="afternoon_temp_alert">Поподневно упозорење?</string>
+    <string name="rainfall_alert">Раинфалл Алерт?</string>
+    <string name="rainfall_limit">Ограничење падавина</string>
+    <string name="rainrate_alert">Раинрате Алерт?</string>
+    <string name="rainrate_limit">Раинрате Лимит</string>
+    <string name="hour">сат</string>
+    <string name="notification_permission">Дозвола за обавештења</string>
+    <string name="notifications_needed">Обавештења су потребна да би вас упозорила када температура, падавина или количина кише испуне постављена ограничења</string>
+    <string name="notifications_needed2">Пошто сте двапут одбили дозволу за обавештења, треба да је омогућите у подешавањима, да покренете подешавања?</string>
+    <string name="forecast_type_is_invalid">Тип предвиђања \'%1$s\' је неважећи, проверите датотеку са подешавањима и покушајте поново</string>
+    <string name="radar_type_is_invalid">Тип радара \'%1$s\' је неважећи, проверите датотеку са подешавањима и покушајте поново</string>
+    <string name="morning_alert">Температура %1$.1f°%2$s је порасла на вашу границу од %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Температура %1$.1f°%2$s је пала на вашу границу од %3$.1f°%2$s</string>
+    <string name="rainfall_alert_metric">Киша %1$.1f%2$s се поклопила са вашим ограничењем од %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Киша %1$.2f%2$s се поклопила са вашим ограничењем од %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Стопа кише од %1$.1f%2$s по сату се поклапа са вашим ограничењем од %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Стопа кише од %1$.2f%2$s по сату се поклапа са вашим ограничењем од %3$.2f%2$s</string>
 </resources>

@@ -52,7 +52,6 @@
     <string name="wasnt_able_to_connect_custom_url">Косьтерильген махсус URL-ден багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_connect_webcam_url">Серверинъизден веб-камера ресимини багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_connect_forecast">Прогнозны багълап я да юклеп оламады</string>
-    <string name="forecast_type_is_invalid">\'%1$sporecart типи догъру дегиль, параметрлер файлынъызны тешкеринъиз ве кене тырышынъыз</string>
     <string name="wasnt_able_to_connect_radar_image">Интернеттен радар= ресимни багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_connect_data_txt">Серверинъизден data.txt багълап я да юклеп оламады</string>
     <string name="data_url_was_blank">Малюмат URL бош эди</string>
@@ -74,7 +73,6 @@
     <string name="wifi_not_available">Янъыланаджакъ эди, амма WiFi багълантысы тапылмай</string>
     <string name="invalid_update_interval">Янъыланув аралыгъы догъру дегиль, янъыланув параметрлери ве сонъра янъыдан чалышмакъ</string>
     <string name="attempting_to_download_data_txt">Серверинъизден data.txt dest.txt</string>
-    <string name="radar_type_is_invalid">\'%1$s\' радар типи догъру дегиль, параметрлер файлынъызны тешкеринъиз ве кене тырышынъыз</string>
     <string name="webcam_still_downloading">Веб-камера ресими шимди де юклей</string>
     <string name="webcam_url_url_not_set">Веб-камералы URL къоюлмай я да бош</string>
     <string name="update_set_to_manual_but_no_content_cached">Къолнен япылгъан янъыланмаларгъа къоюнъ, амма даа контентни кешкен</string>
@@ -97,8 +95,23 @@
     <string name="interval_6h">6 саатлик</string>
     <string name="interval_3h">3 саатлик</string>
     <string name="interval_hourly">Саатлик</string>
-    <string name="temp_alert">Сыджакълыкъ %1$.1f°%2$s сизинъ %3$.1f°%2$s сынъырынъызгъа тюшти</string>
     <string name="temperature">Сыджакълыкъ</string>
     <string name="morning_temp_alert">Сабалыкъ хабердарлыкъ?</string>
     <string name="afternoon_temp_alert">Куньдюзки хабердарлыкъ?</string>
+    <string name="rainfall_alert">Ягъмур акъкъында хабердарлыкъ?</string>
+    <string name="rainfall_limit">Ягъмурларнынъ сынъыры</string>
+    <string name="rainrate_alert">Ягъмур акъкъында хабердарлыкъ?</string>
+    <string name="rainrate_limit">Ягъмур сынъыры</string>
+    <string name="hour">саат</string>
+    <string name="notification_permission">Хабердарлыкъ рухсети</string>
+    <string name="notifications_needed">Сыджакълыкъ, ягъмур я да ягъмур ольчюси сизинъ бельгилеген сынъырларынъызгъа етсе, сизни хабердар этмек ичюн хабердарлыкъ керек</string>
+    <string name="notifications_needed2">Хабердарлыкъ рухсети эки кере ред эттинъиз, онынъ ерине параметрлерде оны чалыштырмакъ керек, параметрлерни чалыштырмакъ керекми?</string>
+    <string name="forecast_type_is_invalid">\'%1$s\' прогноз чешити догъру дегиль, параметрлер файлынъызны тешкеринъиз ве кене тырышынъыз</string>
+    <string name="radar_type_is_invalid">\'%1$s\' радар типи догъру дегиль, параметрлер файлынъызны тешкеринъиз ве кене тырышынъыз</string>
+    <string name="morning_alert">Сыджакълыкъ %1$.1f°%2$s сизинъ %3$.1f°%2$s сынъырынъызгъа котерильди</string>
+    <string name="afternoon_alert">Сыджакълыкъ %1$.1f°%2$s сизинъ %3$.1f°%2$s сынъырынъызгъа тюшти</string>
+    <string name="rainfall_alert_metric">Ягъмур %1$.1f%2$s сизинъ %3$.1f%2$s сынъырынъызгъа келишти</string>
+    <string name="rainfall_alert_imperial">Ягъмур %1$.2f%2$s сизинъ %3$.2f%2$s сынъырынъызгъа келишти</string>
+    <string name="rainrate_alert_metric">Саатте %1$.1f%2$sс ягъмур ольчюси сизинъ %3$.1f%2$s сынъырынъызгъа келишти</string>
+    <string name="rainrate_alert_imperial">Саатте %1$.2f%2$sс ягъмур ольчюси сизинъ %3$.2f%2$s сынъырынъызгъа келишти</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 個鐘</string>
     <string name="interval_3h">3 個鐘</string>
     <string name="interval_hourly">每小時</string>
-    <string name="temp_alert">溫度 %1$.1f°%2$s 已經降到你嘅極限 %3$.1f°%2$s</string>
+    <string name="afternoon_alert">溫度 %1$.1f°%2$s 已經降到你嘅極限 %3$.1f°%2$s</string>
     <string name="temperature">溫度</string>
     <string name="morning_temp_alert">朝早警報？</string>
     <string name="afternoon_temp_alert">下午警報？</string>
+    <string name="morning_alert">溫度 %1$.1f°%2$s 已經升到你嘅極限 %3$.1f°%2$s</string>
+    <string name="rainfall_alert">降雨警報？</string>
+    <string name="rainfall_limit">降雨量限制</string>
+    <string name="rainrate_alert">雨率警報？</string>
+    <string name="rainrate_limit">降雨量限制</string>
+    <string name="hour">鐘頭</string>
+    <string name="notification_permission">通知權限</string>
+    <string name="notifications_needed">當氣溫、降雨量或者雨量達到你設定嘅限制嗰陣，需要通知嚟提醒你</string>
+    <string name="notifications_needed2">由於你拒絕咗兩次通知權限，你需要喺設定入面啟用佢，而唔係啟動設定？</string>
+    <string name="rainfall_alert_metric">降雨量 %1$.1f%2$s 已經符合你嘅上限 %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">降雨量 %1$.2f%2$s 已經符合你嘅上限 %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">每小時 %1$.1f%2$s 嘅降雨率已經符合你嘅上限 %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">每小時 %1$.2f%2$s 嘅雨量已經符合你嘅上限 %3$.2f%2$s</string>
 </resources>

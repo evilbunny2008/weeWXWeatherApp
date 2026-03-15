@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Buli ssaawa</string>
     <string name="interval_3h">3 Buli ssaawa</string>
     <string name="interval_hourly">Buli ssaawa</string>
-    <string name="temp_alert">Ebbugumu %1$.1f°%2$s likendedde okutuuka ku kkomo lyo erya %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Ebbugumu %1$.1f°%2$s likendedde okutuuka ku kkomo lyo erya %3$.1f°%2$s</string>
     <string name="temperature">Ebbugumu</string>
     <string name="morning_temp_alert">Okulabula ku makya?</string>
     <string name="afternoon_temp_alert">Okulabula kw\'emisana?</string>
+    <string name="morning_alert">Ebbugumu %1$.1f°%2$s lirinnye okutuuka ku kkomo lyo erya %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Okulabula kw\'enkuba?</string>
+    <string name="rainfall_limit">Ekkomo ku nkuba</string>
+    <string name="rainrate_alert">Okulabula kw\'enkuba?</string>
+    <string name="rainrate_limit">Ekkomo ku muwendo gw\'enkuba</string>
+    <string name="hour">essaawa</string>
+    <string name="notification_permission">Olukusa lw\'okutegeeza</string>
+    <string name="notifications_needed">Okumanyisibwa kwetaagibwa okukulabula ng\'ebbugumu, enkuba oba enkuba etuuse ku kkomo lyo lye wateekawo</string>
+    <string name="notifications_needed2">Okuva bwe wagaana olukusa lw\'okumanyisa emirundi ebiri, olina okulusobozesa mu nteekateeka mu kifo ky\'ekyo, okutongoza ensengeka?</string>
+    <string name="rainfall_alert_metric">Enkuba %1$.1f%2$s ekwatagana n\'ekkomo lyo erya %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Enkuba %1$.2f%2$s ekwatagana n\'ekkomo lyo erya %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Enkuba ya %1$.1f%2$s buli ssaawa ekwatagana n\'ekkomo lyo erya %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Enkuba ya %1$.2f%2$s buli ssaawa ekwatagana n\'ekkomo lyo erya %3$.2f%2$s</string>
 </resources>

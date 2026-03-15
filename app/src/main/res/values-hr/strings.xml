@@ -97,8 +97,21 @@
     <string name="interval_6h">6 na sat</string>
     <string name="interval_3h">3 sata</string>
     <string name="interval_hourly">Svaki sat</string>
-    <string name="temp_alert">Temperatura %1$.1f°%2$s pala je na vašu granicu od %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatura %1$.1f°%2$s pala je na vašu granicu od %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Jutarnja uzbuna?</string>
     <string name="afternoon_temp_alert">Popodnevna uzbuna?</string>
+    <string name="morning_alert">Temperatura %1$.1f°%2$s porasla je do vaše granice od %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Upozorenje o kiši?</string>
+    <string name="rainfall_limit">Ograničenje padalina</string>
+    <string name="rainrate_alert">Upozorenje o količini kiše?</string>
+    <string name="rainrate_limit">Ograničenje količine kiše</string>
+    <string name="hour">sat</string>
+    <string name="notification_permission">Dopuštenje za obavijesti</string>
+    <string name="notifications_needed">Obavijesti su potrebne kako bi vas upozorili kada temperatura, količina padalina ili količina kiše dosegne postavljena ograničenja</string>
+    <string name="notifications_needed2">Budući da ste dvaput odbili dopuštenje za obavijesti, morate ga umjesto toga omogućiti u postavkama, pokrenuti postavke?</string>
+    <string name="rainfall_alert_metric">Količina padalina %1$.1f%2$s poklopila se s vašim ograničenjem od %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Količina padalina %1$.2f%2$s poklopila se s vašim ograničenjem od %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Stopa kiše od %1$.1f%2$s po satu odgovara vašem ograničenju od %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Stopa kiše od %1$.2f%2$s po satu odgovara vašem ograničenju od %3$.2f%2$s</string>
 </resources>

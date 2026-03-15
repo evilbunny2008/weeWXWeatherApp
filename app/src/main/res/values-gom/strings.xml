@@ -97,8 +97,21 @@
     <string name="interval_6h">६ वराक</string>
     <string name="interval_3h">३ वराक</string>
     <string name="interval_hourly">वराक वराक</string>
-    <string name="temp_alert">तापमान %1$.1f°%2$s तुमच्या %3$.1f°%2$s मर्यादेमेरेन देंवलां</string>
+    <string name="afternoon_alert">तापमान %1$.1f°%2$s तुमच्या %3$.1f°%2$s मर्यादेमेरेन देंवलां</string>
     <string name="temperature">तापमान</string>
     <string name="morning_temp_alert">सकाळीं इशारो?</string>
     <string name="afternoon_temp_alert">दनपारां इशारो?</string>
+    <string name="morning_alert">तापमान %1$.1f°%2$s तुमच्या %3$.1f°%2$s मर्यादेमेरेन वाडलां</string>
+    <string name="rainfall_alert">पावसाची इशारो?</string>
+    <string name="rainfall_limit">पावसाची मर्यादा</string>
+    <string name="rainrate_alert">पावसाच्या दरान सावधानताय?</string>
+    <string name="rainrate_limit">पावसाच्या दराची मर्यादा</string>
+    <string name="hour">वर</string>
+    <string name="notification_permission">अधिसुचोवणी परवानगी</string>
+    <string name="notifications_needed">तापमान, पावस वा पावसाचे दर तुमच्या थारायिल्ले मर्यादेक पावता तेन्ना तुमकां सावधान करपाक अधिसुचोवण्यो जाय</string>
+    <string name="notifications_needed2">तुमी अधिसुचोवणी परवानगी दोन फावटीं नाका म्हणिल्ल्यान, तुमकां ताचे बदला मांडावळींनी सक्षम करपाची गरज आसा, मांडावळी सुरू करात?</string>
+    <string name="rainfall_alert_metric">पावस %1$.1f%2$s तुमच्या %3$.1f%2$s मर्यादेकडेन जुळ्ळा</string>
+    <string name="rainfall_alert_imperial">पावस %1$.2f%2$s तुमच्या %3$.2f%2$s मर्यादेकडेन जुळ्ळा</string>
+    <string name="rainrate_alert_metric">दर वराक %1$.1f%2$s पावसाचे दर तुमच्या %3$.1f%2$s मर्यादेकडेन जुळ्ळा</string>
+    <string name="rainrate_alert_imperial">दर वराक %1$.2f%2$s पावसाचे दर तुमच्या %3$.2f%2$s मर्यादेकडेन जुळ्ळा</string>
 </resources>

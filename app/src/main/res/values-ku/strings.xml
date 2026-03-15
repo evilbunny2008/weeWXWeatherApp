@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Saet</string>
     <string name="interval_3h">3 Saetî</string>
     <string name="interval_hourly">Seetî</string>
-    <string name="temp_alert">Germahiya %1$.1f°%2$s daketiye sînorê te %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Germahiya %1$.1f°%2$s daketiye sînorê te %3$.1f°%2$s</string>
     <string name="temperature">Germî</string>
     <string name="morning_temp_alert">Morning Alert?</string>
     <string name="afternoon_temp_alert">Alert piştî nîvro?</string>
+    <string name="morning_alert">Germahiya %1$.1f°%2$s gihîştiye sînorê weya %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Rainfall Alert?</string>
+    <string name="rainfall_limit">Sînora baranê</string>
+    <string name="rainrate_alert">Rainrate Alert?</string>
+    <string name="rainrate_limit">Rainrate Limit</string>
+    <string name="hour">seet</string>
+    <string name="notification_permission">Destûra ragihandinê</string>
+    <string name="notifications_needed">Dema ku germahî, barîna baranê an rêjeya baranê sînorên we yên destnîşankirî pêk tîne, agahdarî hewce ne ku hûn hişyar bikin</string>
+    <string name="notifications_needed2">Ji ber ku we du caran destûrnameya agahdarkirinê red kir, hûn hewce ne ku wê di şûna mîhengan de çalak bikin, mîhengan bidin destpêkirin?</string>
+    <string name="rainfall_alert_metric">Barîna %1$.1f%2$s bi sînorê te yê %3$.1f%2$s re li hev hat</string>
+    <string name="rainfall_alert_imperial">Barîna %1$.2f%2$s bi sînorê te yê %3$.2f%2$s re hat hev</string>
+    <string name="rainrate_alert_metric">Rêjeya baranê ya %1$.1f%2$s di saetekê de bi sînorê weya %3$.1f%2$s re li hev hatiye</string>
+    <string name="rainrate_alert_imperial">Rêjeya baranê ya %1$.2f%2$s di saetekê de bi sînorê weya %3$.2f%2$s re hat hev</string>
 </resources>

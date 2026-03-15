@@ -97,8 +97,21 @@
     <string name="interval_3h">৩ ঘণ্টাৰ পিছত ঘণ্টা</string>
     <string name="interval_hourly">ঘণ্টাৰ পিছত ঘণ্টা</string>
     <string name="forecast_interval">পূৰ্বাভাসৰ ব্যৱধান (যদি প্ৰযোজ্য)</string>
-    <string name="temp_alert">তাপমাত্ৰা %1$.1f°%2$s আপোনাৰ সীমা %3$.1f°%2$s লৈ হ্ৰাস পাইছে</string>
+    <string name="afternoon_alert">তাপমাত্ৰা %1$.1f°%2$s আপোনাৰ সীমা %3$.1f°%2$s লৈ হ্ৰাস পাইছে</string>
     <string name="morning_temp_alert">ৰাতিপুৱাৰ সতৰ্কবাণী?</string>
     <string name="afternoon_temp_alert">দুপৰীয়াৰ সতৰ্কবাণী?</string>
     <string name="temperature">তাপমান</string>
+    <string name="morning_alert">তাপমাত্ৰা %1$.1f°%2$s আপোনাৰ সীমা %3$.1f°%2$s লৈ বৃদ্ধি পাইছে</string>
+    <string name="rainfall_alert">বৰষুণৰ সতৰ্কবাণী?</string>
+    <string name="rainrate_alert">বৰষুণৰ হাৰ সতৰ্কবাণী?</string>
+    <string name="rainfall_limit">বৰষুণৰ সীমা</string>
+    <string name="rainrate_limit">বৰষুণৰ হাৰ সীমা</string>
+    <string name="hour">ঘণ্টা</string>
+    <string name="notification_permission">অধিসূচনাৰ অনুমতি</string>
+    <string name="notifications_needed">উষ্ণতা, বৰষুণ বা বৰষুণৰ হাৰে আপোনাৰ নিৰ্ধাৰিত সীমা পূৰণ কৰিলে আপোনাক সতৰ্ক কৰিবলৈ জাননীৰ প্ৰয়োজন</string>
+    <string name="notifications_needed2">যিহেতু আপুনি অধিসূচনাৰ অনুমতি দুবাৰ অস্বীকাৰ কৰিছে, আপুনি ইয়াক ছেটিংছত সামৰ্থবান কৰিব লাগিব ইয়াৰ পৰিবৰ্তে, ছেটিংছ আৰম্ভ কৰক?</string>
+    <string name="rainfall_alert_metric">বৰষুণ %1$.1f%2$s আপোনাৰ %3$.1f%2$s সীমাৰ সৈতে মিল আছে</string>
+    <string name="rainfall_alert_imperial">বৰষুণ %1$.2f%2$s আপোনাৰ %3$.2f%2$s সীমাৰ সৈতে মিল আছে</string>
+    <string name="rainrate_alert_metric">প্ৰতি ঘণ্টাত %1$.1f%2$s বৰষুণৰ হাৰ আপোনাৰ %3$.1f%2$s সীমাৰ সৈতে মিল আছে</string>
+    <string name="rainrate_alert_imperial">প্ৰতি ঘণ্টাত %1$.2f%2$s বৰষুণৰ হাৰ আপোনাৰ %3$.2f%2$s সীমাৰ সৈতে মিল আছে</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Ngehora</string>
     <string name="interval_3h">3 Ngehora</string>
     <string name="interval_hourly">Ngehora</string>
-    <string name="temp_alert">Izinga lokushisa %1$.1f°%2$s lehlile lafika kumkhawulo wakho ongu-%3$.1f°%2$s</string>
+    <string name="afternoon_alert">Izinga lokushisa %1$.1f°%2$s lehlile lafika kumkhawulo wakho ongu-%3$.1f°%2$s</string>
     <string name="temperature">Izinga lokushisa</string>
     <string name="morning_temp_alert">Isexwayiso sasekuseni?</string>
     <string name="afternoon_temp_alert">Isexwayiso santambama?</string>
+    <string name="morning_alert">Izinga lokushisa %1$.1f°%2$s likhuphukele kumkhawulo wakho ongu-%3$.1f°%2$s</string>
+    <string name="rainfall_alert">Isexwayiso Ngemvula?</string>
+    <string name="rainfall_limit">Umkhawulo Wemvula</string>
+    <string name="rainrate_alert">Isexwayiso semvula?</string>
+    <string name="rainrate_limit">Umkhawulo Wemvula</string>
+    <string name="hour">ihora</string>
+    <string name="notification_permission">Imvume yesaziso</string>
+    <string name="notifications_needed">Izaziso ziyadingeka ukuze uqaphele lapho izinga lokushisa, imvula noma izinga lemvula lihlangabezana nemikhawulo yakho emisiwe</string>
+    <string name="notifications_needed2">Njengoba unqabe imvume yesaziso kabili, udinga ukusivumela kuzilungiselelo esikhundleni salokho, uqalise izilungiselelo?</string>
+    <string name="rainfall_alert_metric">Imvula engu-%1$.1f%2$s ifane nomkhawulo wakho ongu-%3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Imvula engu-%1$.2f%2$s ifane nomkhawulo wakho ongu-%3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Imvula engu-%1$.1f%2$s ngehora ifane nomkhawulo wakho ongu-%3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Imvula engu-%1$.2f%2$s ngehora ifane nomkhawulo wakho ongu-%3$.2f%2$s</string>
 </resources>

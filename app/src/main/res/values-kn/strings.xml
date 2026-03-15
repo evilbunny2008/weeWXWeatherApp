@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ಗಂಟೆಗೆ</string>
     <string name="interval_3h">3 ಗಂಟೆಗೆ</string>
     <string name="interval_hourly">ಗಂಟೆಗೊಮ್ಮೆ</string>
-    <string name="temp_alert">ತಾಪಮಾನ %1$.1f°%2$s ನಿಮ್ಮ ಮಿತಿ %3$.1f°%2$s ಗೆ ಇಳಿದಿದೆ</string>
+    <string name="afternoon_alert">ತಾಪಮಾನ %1$.1f°%2$s ನಿಮ್ಮ ಮಿತಿ %3$.1f°%2$s ಗೆ ಇಳಿದಿದೆ</string>
     <string name="temperature">ತಾಪಮಾನ</string>
     <string name="morning_temp_alert">ಬೆಳಗಿನ ಎಚ್ಚರಿಕೆ?</string>
     <string name="afternoon_temp_alert">ಮಧ್ಯಾಹ್ನದ ಎಚ್ಚರಿಕೆ?</string>
+    <string name="morning_alert">ತಾಪಮಾನ %1$.1f°%2$s ನಿಮ್ಮ ಮಿತಿ %3$.1f°%2$s ಗೆ ಏರಿದೆ</string>
+    <string name="rainfall_alert">ಮಳೆಯ ಎಚ್ಚರಿಕೆ?</string>
+    <string name="rainfall_limit">ಮಳೆಯ ಮಿತಿ</string>
+    <string name="rainrate_alert">ಮಳೆ ಬೀಳುವ ಎಚ್ಚರಿಕೆ?</string>
+    <string name="rainrate_limit">ಮಳೆಯ ಮಿತಿ</string>
+    <string name="hour">ಗಂಟೆ</string>
+    <string name="notification_permission">ಅಧಿಸೂಚನೆ ಅನುಮತಿ</string>
+    <string name="notifications_needed">ತಾಪಮಾನ, ಮಳೆ ಅಥವಾ ಮಳೆಯ ಪ್ರಮಾಣವು ನಿಮ್ಮ ನಿಗದಿತ ಮಿತಿಗಳನ್ನು ಪೂರೈಸಿದಾಗ ನಿಮ್ಮನ್ನು ಎಚ್ಚರಿಸಲು ಅಧಿಸೂಚನೆಗಳ ಅಗತ್ಯವಿದೆ</string>
+    <string name="notifications_needed2">ನೀವು ಅಧಿಸೂಚನೆಯ ಅನುಮತಿಯನ್ನು ಎರಡು ಬಾರಿ ನಿರಾಕರಿಸಿರುವುದರಿಂದ, ನೀವು ಅದನ್ನು ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಸಕ್ರಿಯಗೊಳಿಸಬೇಕೇ, ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಪ್ರಾರಂಭಿಸುವುದೇ?</string>
+    <string name="rainfall_alert_metric">%1$.1f%2$s ಮಳೆಯು ನಿಮ್ಮ %3$.1f%2$s ಮಿತಿಗೆ ಹೊಂದಿಕೆಯಾಗಿದೆ</string>
+    <string name="rainfall_alert_imperial">%1$.2f%2$s ಮಳೆಯು ನಿಮ್ಮ %3$.2f%2$s ಮಿತಿಗೆ ಹೊಂದಿಕೆಯಾಗಿದೆ</string>
+    <string name="rainrate_alert_metric">ಪ್ರತಿ ಗಂಟೆಗೆ %1$.1f%2$s ರ ಮಳೆಯ ಪ್ರಮಾಣವು ನಿಮ್ಮ ಮಿತಿ %3$.1f%2$s ಗೆ ಹೊಂದಿಕೆಯಾಗಿದೆ</string>
+    <string name="rainrate_alert_imperial">ಪ್ರತಿ ಗಂಟೆಗೆ %1$.2f%2$s ರ ಮಳೆಯ ಪ್ರಮಾಣವು ನಿಮ್ಮ ಮಿತಿ %3$.2f%2$s ಗೆ ಹೊಂದಿಕೆಯಾಗಿದೆ</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Ĉiuhore</string>
     <string name="interval_3h">3 Ĉiuhore</string>
     <string name="interval_hourly">Hore</string>
-    <string name="temp_alert">Temperaturo %1$.1f°%2$s malaltiĝis al via limo de %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperaturo %1$.1f°%2$s malaltiĝis al via limo de %3$.1f°%2$s</string>
     <string name="temperature">Temperaturo</string>
     <string name="morning_temp_alert">Matena Atentigo?</string>
     <string name="afternoon_temp_alert">Posttagmeza Atentigo?</string>
+    <string name="morning_alert">Temperaturo %1$.1f°%2$s altiĝis ĝis via limo de %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Atentigo pri Pluvo?</string>
+    <string name="rainfall_limit">Limo de Pluvo</string>
+    <string name="rainrate_alert">Averto pri pluvofresio?</string>
+    <string name="rainrate_limit">Pluvokvanto Limo</string>
+    <string name="hour">horo</string>
+    <string name="notification_permission">Permeso pri sciigo</string>
+    <string name="notifications_needed">Sciigoj necesas por atentigi vin kiam temperaturo, pluvo aŭ pluvokvanto renkontas viajn fiksitajn limojn</string>
+    <string name="notifications_needed2">Ĉar vi malakceptis la sciigan permeson dufoje, vi devas ebligi ĝin en agordoj anstataŭe, lanĉi agordojn?</string>
+    <string name="rainfall_alert_metric">Pluvo %1$.1f%2$s kongruis kun via limo de %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Pluvokvanto %1$.2f%2$s kongruis kun via limo de %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Pluvokvanto de %1$.1f%2$s hore kongruis kun via limo de %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Pluvokvanto de %1$.2f%2$s hore kongruis kun via limo de %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Ogni ora</string>
     <string name="interval_3h">3 Ogni ora</string>
     <string name="interval_hourly">Ogni ora</string>
-    <string name="temp_alert">A temperatura %1$.1f°%2$s hè cascata à u vostru limitu di %3$.1f°%2$s</string>
+    <string name="afternoon_alert">A temperatura %1$.1f°%2$s hè cascata à u vostru limitu di %3$.1f°%2$s</string>
     <string name="temperature">Temperature</string>
     <string name="morning_temp_alert">Alerta matina?</string>
     <string name="afternoon_temp_alert">Alerta dopu meziornu?</string>
+    <string name="morning_alert">A temperatura %1$.1f°%2$s hà righjuntu u vostru limitu di %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alerta di precipitazione?</string>
+    <string name="rainfall_limit">Limite di precipitazione</string>
+    <string name="rainrate_alert">Alert Rainrate?</string>
+    <string name="rainrate_limit">Rainrate Limite</string>
+    <string name="hour">ora</string>
+    <string name="notification_permission">Permissione di Notificazione</string>
+    <string name="notifications_needed">I notificazioni sò necessarii per avvisà quandu a temperatura, a precipitazione o a precipitazione scontra i vostri limiti stabiliti</string>
+    <string name="notifications_needed2">Siccomu avete rifiutatu u permessu di notificazione duie volte, avete bisognu di attivà in i paràmetri invece, lanciate i paràmetri?</string>
+    <string name="rainfall_alert_metric">A precipitazione %1$.1f%2$s hè ghjunta à u vostru limitu di %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">A precipitazione %1$.2f%2$s hè ghjunta à u vostru limitu di %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">A rata di pioggia di %1$.1f%2$s per ora hè ghjunta à u vostru limitu di %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">A rata di pioggia di %1$.2f%2$s per ora hè ghjunta à u vostru limitu di %3$.2f%2$s</string>
 </resources>

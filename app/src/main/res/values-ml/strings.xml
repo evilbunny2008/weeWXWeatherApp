@@ -97,8 +97,21 @@
     <string name="interval_6h">6 മണിക്കൂർ</string>
     <string name="interval_3h">3 മണിക്കൂർ</string>
     <string name="interval_hourly">മണിക്കൂറിൽ</string>
-    <string name="temp_alert">%1$.1f°%2$s എന്ന താപനില നിങ്ങളുടെ പരിധിയായ %3$.1f°%2$s-ലേക്ക് കുറഞ്ഞു</string>
+    <string name="afternoon_alert">%1$.1f°%2$s എന്ന താപനില നിങ്ങളുടെ പരിധിയായ %3$.1f°%2$s-ലേക്ക് കുറഞ്ഞു</string>
     <string name="temperature">താപനില</string>
     <string name="morning_temp_alert">പ്രഭാത അലേർട്ട്?</string>
     <string name="afternoon_temp_alert">ഉച്ചയ്ക്ക് ശേഷമുള്ള അലേർട്ട്?</string>
+    <string name="morning_alert">%1$.1f°%2$s എന്ന താപനില നിങ്ങളുടെ പരിധിയായ %3$.1f°%2$s-ലേക്ക് ഉയർന്നു</string>
+    <string name="rainfall_alert">മഴ മുന്നറിയിപ്പ്?</string>
+    <string name="rainfall_limit">മഴയുടെ പരിധി</string>
+    <string name="rainrate_alert">റെയിൻറേറ്റ് അലേർട്ട്?</string>
+    <string name="rainrate_limit">മഴയുടെ പരിധി</string>
+    <string name="hour">മണിക്കൂർ</string>
+    <string name="notification_permission">അറിയിപ്പ് അനുമതി</string>
+    <string name="notifications_needed">താപനിലയോ മഴയോ മഴയോ നിങ്ങൾ നിശ്ചയിച്ച പരിധികൾ പാലിക്കുമ്പോൾ നിങ്ങളെ അറിയിക്കാൻ അറിയിപ്പുകൾ ആവശ്യമാണ്</string>
+    <string name="notifications_needed2">നിങ്ങൾ അറിയിപ്പ് അനുമതി രണ്ടുതവണ നിരസിച്ചതിനാൽ, പകരം ക്രമീകരണങ്ങളിൽ അത് പ്രവർത്തനക്ഷമമാക്കേണ്ടതുണ്ട്, ക്രമീകരണങ്ങൾ സമാരംഭിക്കണോ?</string>
+    <string name="rainfall_alert_metric">%1$.1f%2$s മഴ നിങ്ങളുടെ %3$.1f%2$s എന്ന പരിധിയുമായി പൊരുത്തപ്പെട്ടു</string>
+    <string name="rainfall_alert_imperial">%1$.2f%2$s മഴ നിങ്ങളുടെ %3$.2f%2$s എന്ന പരിധിയുമായി പൊരുത്തപ്പെട്ടു</string>
+    <string name="rainrate_alert_metric">മണിക്കൂറിൽ %1$.1f%2$s എന്ന മഴ നിരക്ക് നിങ്ങളുടെ %3$.1f%2$s എന്ന പരിധിയുമായി പൊരുത്തപ്പെട്ടു</string>
+    <string name="rainrate_alert_imperial">മണിക്കൂറിൽ %1$.2f%2$s എന്ന മഴ നിരക്ക് നിങ്ങളുടെ %3$.2f%2$s എന്ന പരിധിയുമായി പൊരുത്തപ്പെട്ടു</string>
 </resources>

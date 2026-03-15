@@ -97,8 +97,21 @@
     <string name="interval_3h">3 штогадзіны</string>
     <string name="interval_hourly">Штогадзіны</string>
     <string name="forecast_interval">Інтэрвал прагнозу (калі дастасавальна)</string>
-    <string name="temp_alert">Тэмпература %1$.1f°%2$s апусцілася да вашай мяжы %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Тэмпература %1$.1f°%2$s апусцілася да вашай мяжы %3$.1f°%2$s</string>
     <string name="temperature">тэмпература</string>
     <string name="morning_temp_alert">Ранішняя трывога?</string>
     <string name="afternoon_temp_alert">Папярэджанне пасля абеду?</string>
+    <string name="morning_alert">Тэмпература %1$.1f°%2$s паднялася да вашай мяжы ў %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Абвестка пра ападкі?</string>
+    <string name="rainrate_alert">Абвестка аб дажджы?</string>
+    <string name="rainfall_limit">Ліміт ападкаў</string>
+    <string name="rainrate_limit">Ліміт дажджу</string>
+    <string name="hour">гадзіну</string>
+    <string name="notification_permission">Дазвол на апавяшчэнне</string>
+    <string name="notifications_needed">Апавяшчэнні неабходныя, каб папярэджваць вас, калі тэмпература, колькасць ападкаў або колькасць ападкаў дасягаюць зададзеных абмежаванняў</string>
+    <string name="notifications_needed2">Паколькі вы двойчы адхілялі дазвол на апавяшчэнне, вам трэба ўключыць яго ў наладах, запусціць налады?</string>
+    <string name="rainfall_alert_metric">Колькасць ападкаў %1$.1f%2$s дасягнула вашага ліміту ў %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Колькасць ападкаў %1$.2f%2$s дасягнула вашага ліміту ў %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Колькасць дажджу ў %1$.1f%2$s у гадзіну адпавядае вашаму ліміту ў %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Колькасць дажджу ў %1$.2f%2$s у гадзіну адпавядае вашаму ліміту ў %3$.2f%2$s</string>
 </resources>

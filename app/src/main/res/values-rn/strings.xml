@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ku masaha</string>
     <string name="interval_3h">3 ku masaha</string>
     <string name="interval_hourly">Isaha yose</string>
-    <string name="temp_alert">Ubushuhe %1$.1f°%2$s bwagabanutse ku rugero rwawe rwa %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Ubushuhe %1$.1f°%2$s bwagabanutse ku rugero rwawe rwa %3$.1f°%2$s</string>
     <string name="temperature">Ubushuhe</string>
     <string name="morning_temp_alert">Imburi yo mu gitondo?</string>
     <string name="afternoon_temp_alert">Inyuma y\'umuhingamo?</string>
+    <string name="morning_alert">Ubushuhe %1$.1f°%2$s bwadutse ku rugero rwawe rwa %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Imburi y\'imvura?</string>
+    <string name="rainfall_limit">Imvura ishobora kugwa</string>
+    <string name="rainrate_alert">Imburi y\'Igipimo c\'Imvura?</string>
+    <string name="rainrate_limit">Igipimo c\'imvura</string>
+    <string name="hour">isaha</string>
+    <string name="notification_permission">Uruhusha rwo gutangaza</string>
+    <string name="notifications_needed">Amatangazo arakenewe kugira ngo akumenyeshe igihe ubushuhe, imvura canke urugero rw\'imvura bishitse ku rugero rwawe</string>
+    <string name="notifications_needed2">Ko wanse uruhusha rwo kumenyesha incuro zibiri, ukeneye kurushoboza mu mitunganyirize aho, gutanguza imitunganyirize?</string>
+    <string name="rainfall_alert_metric">Imvura %1$.1f%2$s yahuye n\'umupaka wawe wa %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Imvura %1$.2f%2$s yahuye n\'umupaka wawe wa %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Imvura %1$.1f%2$s kw\'isaha ihuye n\'umupaka wawe wa %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Imvura %1$.2f%2$s kw\'isaha ihuye n\'umupaka wawe wa %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 На час</string>
     <string name="interval_3h">3 час</string>
     <string name="interval_hourly">На час</string>
-    <string name="temp_alert">Температурата %1$.1f°%2$s се спушти до вашата граница од %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Температурата %1$.1f°%2$s се спушти до вашата граница од %3$.1f°%2$s</string>
     <string name="temperature">Температура</string>
     <string name="morning_temp_alert">Утринско предупредување?</string>
     <string name="afternoon_temp_alert">Попладневно предупредување?</string>
+    <string name="morning_alert">Температурата %1$.1f°%2$s се зголеми до вашата граница од %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Предупредување за врнежи?</string>
+    <string name="rainfall_limit">Ограничување на врнежите</string>
+    <string name="rainrate_alert">Предупредување за врнежи?</string>
+    <string name="rainrate_limit">Ограничување на стапката на дожд</string>
+    <string name="hour">час</string>
+    <string name="notification_permission">Дозвола за известување</string>
+    <string name="notifications_needed">Потребни се известувања за да ве известат кога температурата, врнежите или врнежите ги исполнуваат вашите поставени ограничувања</string>
+    <string name="notifications_needed2">Бидејќи двапати ја одбивте дозволата за известување, наместо тоа треба да ја овозможите во поставките, стартувајте ги поставките?</string>
+    <string name="rainfall_alert_metric">Врнежите %1$.1f%2$s се совпаѓаат со вашата граница од %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Врнежите %1$.2f%2$s се совпаѓаат со вашата граница од %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Стапката на дожд од %1$.1f%2$s на час се совпаѓа со вашата граница од %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Стапката на дожд од %1$.2f%2$s на час се совпаѓа со вашата граница од %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ساعتی</string>
     <string name="interval_3h">3 ساعتی</string>
     <string name="interval_hourly">ساعتی</string>
-    <string name="temp_alert">دمای %1$.1f°%2$s به حد مجاز %3$.1f°%2$s شما کاهش یافته است</string>
+    <string name="afternoon_alert">دمای %1$.1f°%2$s به حد مجاز %3$.1f°%2$s شما کاهش یافته است</string>
     <string name="temperature">دما</string>
     <string name="morning_temp_alert">هشدار صبحگاهی؟</string>
     <string name="afternoon_temp_alert">هشدار بعدازظهر؟</string>
+    <string name="morning_alert">دمای %1$.1f°%2$s به حد مجاز %3$.1f°%2$s شما افزایش یافته است</string>
+    <string name="rainfall_alert">هشدار بارندگی؟</string>
+    <string name="rainfall_limit">محدودیت بارندگی</string>
+    <string name="rainrate_alert">هشدار میزان باران؟</string>
+    <string name="rainrate_limit">محدودیت میزان بارندگی</string>
+    <string name="hour">ساعت</string>
+    <string name="notification_permission">مجوز اطلاع رسانی</string>
+    <string name="notifications_needed">زمانی که دما، بارندگی یا میزان بارندگی با محدودیت‌های تعیین‌شده شما مطابقت دارد، اعلان‌ها برای هشدار به شما لازم است</string>
+    <string name="notifications_needed2">از آنجایی که شما دو بار مجوز اعلان را رد کردید، باید آن را در تنظیمات فعال کنید، تنظیمات را راه اندازی کنید؟</string>
+    <string name="rainfall_alert_metric">میزان بارندگی %1$.1f%2$s با محدودیت %3$.1f%2$s شما مطابقت دارد</string>
+    <string name="rainfall_alert_imperial">میزان بارندگی %1$.2f%2$s با محدودیت %3$.2f%2$s شما مطابقت دارد</string>
+    <string name="rainrate_alert_metric">میزان بارندگی %1$.1f%2$s در ساعت با محدودیت %3$.1f%2$s شما مطابقت دارد</string>
+    <string name="rainrate_alert_imperial">میزان بارندگی %1$.2f%2$s در ساعت با محدودیت %3$.2f%2$s شما مطابقت دارد</string>
 </resources>

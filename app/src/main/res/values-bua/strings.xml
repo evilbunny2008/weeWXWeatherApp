@@ -97,8 +97,21 @@
     <string name="interval_6h">6 часай</string>
     <string name="interval_3h">3 часай</string>
     <string name="interval_hourly">Час бүри</string>
-    <string name="temp_alert">%1$.1f°%2$s температура %3$.1f°%2$s хизаарлалта хүрэтэр буураа</string>
+    <string name="afternoon_alert">%1$.1f°%2$s температура %3$.1f°%2$s хизаарлалта хүрэтэр буураа</string>
     <string name="temperature">Халуун</string>
     <string name="morning_temp_alert">Үглөөнэй һэргылэмжэ?</string>
     <string name="afternoon_temp_alert">Үдэрэй һэргылэмжэ?</string>
+    <string name="morning_alert">%1$.1f°%2$s дулаан %3$.1f°%2$s хүрэтэр дээшэлээ</string>
+    <string name="rainfall_alert">Борооной һэргылэмжэ?</string>
+    <string name="rainfall_limit">Хура борооной хизаарлалта</string>
+    <string name="rainrate_alert">Борооной һэргылэмжэ?</string>
+    <string name="rainrate_limit">Борооной хэмжээнэй хизаарлалта</string>
+    <string name="hour">саг</string>
+    <string name="notification_permission">Мэдүүлгын зүбшөөл</string>
+    <string name="notifications_needed">Температура, бороо гү, али бороогой хэмжээ танай табиһан хизаарлалтада хүрэхэдөө һэргылхэ мэдээсэлнүүд хэрэгтэй</string>
+    <string name="notifications_needed2">Мэдэгдэлэй зүбшөөл хоёр дахин арсаһан тула, орондонь тохиргоонууд соо нээхэ хэрэгтэй гү, тохиргоонуудые эхилхэ гү?</string>
+    <string name="rainfall_alert_metric">Бороо %1$.1f%2$s танай %3$.1f%2$s хизаарлалтада таарана</string>
+    <string name="rainfall_alert_imperial">Бороо %1$.2f%2$s танай %3$.2f%2$s хизаарлалтада таарана</string>
+    <string name="rainrate_alert_metric">Нэгэ часай %1$.1f%2$s борооной хурдадхал %3$.1f%2$s хизаарлалтада таарана</string>
+    <string name="rainrate_alert_imperial">Нэгэ часай %1$.2f%2$s борооной хурдадхал %3$.2f%2$s хизаарлалтада таарана</string>
 </resources>

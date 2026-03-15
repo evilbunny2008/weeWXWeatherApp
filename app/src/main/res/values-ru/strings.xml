@@ -97,8 +97,21 @@
     <string name="interval_6h">6 часов в час</string>
     <string name="interval_3h">3 часа в час</string>
     <string name="interval_hourly">Ежечасно</string>
-    <string name="temp_alert">Температура %1$.1f°%2$s упала до вашего предела %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Температура %1$.1f°%2$s упала до вашего предела %3$.1f°%2$s</string>
     <string name="temperature">Температура</string>
     <string name="morning_temp_alert">Утреннее оповещение?</string>
     <string name="afternoon_temp_alert">Послеобеденное оповещение?</string>
+    <string name="morning_alert">Температура %1$.1f°%2$s достигла предела %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Оповещение о ливне?</string>
+    <string name="rainfall_limit">Предел количества осадков</string>
+    <string name="rainrate_alert">Предупреждение о скорости дождя?</string>
+    <string name="rainrate_limit">Предел скорости дождя</string>
+    <string name="hour">час</string>
+    <string name="notification_permission">Разрешение на уведомление</string>
+    <string name="notifications_needed">Уведомления необходимы, чтобы предупредить вас, когда температура, количество осадков или интенсивность дождя достигают установленных вами пределов</string>
+    <string name="notifications_needed2">Поскольку вы дважды отклонили разрешение на уведомление, вам нужно вместо этого включить его в настройках, запустить настройки?</string>
+    <string name="rainfall_alert_metric">Количество осадков %1$.1f%2$s соответствует вашему лимиту в %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Количество осадков %1$.2f%2$s соответствует вашему лимиту в %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Скорость дождя %1$.1f%2$s в час соответствует вашему лимиту %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Скорость дождя %1$.2f%2$s в час соответствует вашему лимиту %3$.2f%2$s</string>
 </resources>

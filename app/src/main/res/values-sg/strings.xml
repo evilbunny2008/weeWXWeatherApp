@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Ngbonga oko oko</string>
     <string name="interval_3h">3 Ngbonga oko oko</string>
     <string name="interval_hourly">Ngbonga oko oko</string>
-    <string name="temp_alert">Température ti %1$.1f°%2$s ti mo ayeke %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Température ti %1$.1f°%2$s ti mo ayeke %3$.1f°%2$s</string>
     <string name="temperature">Zendo</string>
     <string name="morning_temp_alert">Alerte ti ndapre?</string>
     <string name="afternoon_temp_alert">Alerte ti peko ti midi?</string>
+    <string name="morning_alert">Température ti %1$.1f°%2$s ti gue na li ni ti si na %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alerte ti ngu-nzapa?</string>
+    <string name="rainfall_limit">Limite ti ngu-nzapa</string>
+    <string name="rainrate_alert">Alerte ti ngu-nzapa?</string>
+    <string name="rainrate_limit">Limite ti ngu-nzapa</string>
+    <string name="hour">ngbonga</string>
+    <string name="notification_permission">Mbele ti fango tënë</string>
+    <string name="notifications_needed">A hunda ti wara asango ti gboto mê ti mo tongana ndowa, ngu-nzapa wala wungo ti ngu-nzapa asi na akatikati so mo zia</string>
+    <string name="notifications_needed2">Teti so mo ke ti wara lege ti mû notification ni fani use, a lingbi mo zi ni na yâ ti a-paramètre na place ni, ti zi a-paramètre?</string>
+    <string name="rainfall_alert_metric">Ngu-nzapa %1$.1f%2$s alingbi na limite ti mo ti %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Ngu-nzapa %1$.2f%2$s alingbi na limite ti mo ti %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Ngu-nzapa ti %1$.1f%2$s na yâ ti ngbonga oko oko alingbi na limite ti mo ti %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Ngu-nzapa ti %1$.2f%2$s na yâ ti ngbonga oko oko alingbi na limite ti mo ti %3$.2f%2$s</string>
 </resources>

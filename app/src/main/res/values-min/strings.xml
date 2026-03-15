@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Jam</string>
     <string name="interval_3h">3 Jam</string>
     <string name="interval_hourly">Sajam</string>
-    <string name="temp_alert">Suhu %1$.1f°%2$s alah turun ka bateh sanak %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$.1f°%2$s alah turun ka bateh sanak %3$.1f°%2$s</string>
     <string name="temperature">Suhu</string>
     <string name="morning_temp_alert">Waspada Pagi?</string>
     <string name="afternoon_temp_alert">Waspada Siang?</string>
+    <string name="morning_alert">Suhu %1$.1f°%2$s alah naiak ka bateh sanak %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Waspada Curah Hujan?</string>
+    <string name="rainfall_limit">Bateh Curah Hujan</string>
+    <string name="rainrate_alert">Waspada Kadar Hujan?</string>
+    <string name="rainrate_limit">Bateh Kadar Hujan</string>
+    <string name="hour">wakatu</string>
+    <string name="notification_permission">Izin Pamberitahuan</string>
+    <string name="notifications_needed">Pemberitahuan diparalukan untuak maagiah tahu Sanak katiko suhu, curah hujan atau laju hujan mamanuahi bateh nan Sanak tetapkan</string>
+    <string name="notifications_needed2">Karano Sanak manulak izin pamberitahuan duo kali, Sanak paralu maaktifkannyo di pangaturan sabagai gantinyo, pangaturan luncuran?</string>
+    <string name="rainfall_alert_metric">Curah hujan %1$.1f%2$s alah cocok jo bateh sanak %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Curah hujan %1$.2f%2$s alah cocok jo bateh sanak %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Laju hujan %1$.1f%2$s per jam alah cocok jo bateh sanak %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Laju hujan %1$.2f%2$s per jam alah cocok jo bateh sanak %3$.2f%2$s</string>
 </resources>

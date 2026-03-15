@@ -97,8 +97,21 @@
     <string name="interval_6h">6 tunnin välein</string>
     <string name="interval_3h">3 tunnin välein</string>
     <string name="interval_hourly">Tunneittain</string>
-    <string name="temp_alert">Lämpötila %1$.1f°%2$s on laskenut rajallesi %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Lämpötila %1$.1f°%2$s on laskenut rajallesi %3$.1f°%2$s</string>
     <string name="temperature">Lämpötila</string>
     <string name="morning_temp_alert">Aamuvaroitus?</string>
     <string name="afternoon_temp_alert">Iltapäivän hälytys?</string>
+    <string name="morning_alert">Lämpötila %1$.1f°%2$s on noussut rajallesi %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Varoitus sateesta?</string>
+    <string name="rainfall_limit">Sademäärän raja</string>
+    <string name="rainrate_alert">Varoitus sademäärästä?</string>
+    <string name="rainrate_limit">Sademäärän rajoitus</string>
+    <string name="hour">tunnin</string>
+    <string name="notification_permission">Ilmoituslupa</string>
+    <string name="notifications_needed">Ilmoitukset tarvitaan hälyttämään, kun lämpötila, sademäärä tai sademäärä saavuttaa asettamasi rajat</string>
+    <string name="notifications_needed2">Koska hylkäsit ilmoitusluvan kahdesti, sinun on otettava se käyttöön asetuksista, käynnistää asetukset?</string>
+    <string name="rainfall_alert_metric">Sademäärä %1$.1f%2$s on vastannut rajaasi %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Sademäärä %1$.2f%2$s on vastannut rajaasi %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Sademäärä %1$.1f%2$s tunnissa on sama kuin rajasi %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Sademäärä %1$.2f%2$s tunnissa on sama kuin rajasi %3$.2f%2$s</string>
 </resources>

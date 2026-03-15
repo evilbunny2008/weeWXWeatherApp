@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Oras</string>
     <string name="interval_3h">3 Oras</string>
     <string name="interval_hourly">Oras-oras</string>
-    <string name="temp_alert">Ang temperaturang %1$.1f°%2$s ay bumaba sa iyong limitasyon na %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Ang temperaturang %1$.1f°%2$s ay bumaba sa iyong limitasyon na %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Alerto sa Umaga?</string>
     <string name="afternoon_temp_alert">Alerto sa hapon?</string>
+    <string name="morning_alert">Ang temperaturang %1$.1f°%2$s ay tumaas sa iyong limitasyon na %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alerto sa Ulan?</string>
+    <string name="rainfall_limit">Limitasyon sa Pag-ulan</string>
+    <string name="rainrate_alert">Alerto sa Rainrate?</string>
+    <string name="rainrate_limit">Hangganan ng Rainrate</string>
+    <string name="hour">oras</string>
+    <string name="notification_permission">Pahintulot sa Pag-abiso</string>
+    <string name="notifications_needed">Kailangan ng mga notification para alertuhan ka kapag naabot ng temperatura, pag-ulan o rate ng ulan ang iyong mga itinakdang limitasyon</string>
+    <string name="notifications_needed2">Dahil dalawang beses mong tinanggihan ang pahintulot sa notification, kailangan mo itong paganahin sa mga setting sa halip, ilunsad ang mga setting?</string>
+    <string name="rainfall_alert_metric">Ang ulan %1$.1f%2$s ay tumugma sa iyong limitasyon na %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Ang ulan %1$.2f%2$s ay tumugma sa iyong limitasyon na %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Ang pag-ulan na %1$.1f%2$s bawat oras ay tumugma sa iyong limitasyon na %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Ang pag-ulan na %1$.2f%2$s bawat oras ay tumugma sa iyong limitasyon na %3$.2f%2$s</string>
 </resources>

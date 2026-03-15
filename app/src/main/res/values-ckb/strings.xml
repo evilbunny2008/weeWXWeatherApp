@@ -97,8 +97,21 @@
     <string name="interval_6h">٦ کاتژمێرێک</string>
     <string name="interval_3h">٣ کاتژمێری</string>
     <string name="interval_hourly">کاتژمێرێک</string>
-    <string name="temp_alert">پلەی گەرمی %1$.1f°%2$s دابەزیوە بۆ سنووری تۆ کە %3$.1f°%2$s یە</string>
+    <string name="afternoon_alert">پلەی گەرمی %1$.1f°%2$s دابەزیوە بۆ سنووری تۆ کە %3$.1f°%2$s یە</string>
     <string name="temperature">پلەی گەرمی</string>
     <string name="morning_temp_alert">ئاگاداری بەیانیان؟</string>
     <string name="afternoon_temp_alert">ئاگاداری پاشنیوەڕۆ؟</string>
+    <string name="morning_alert">پلەی گەرمی %1$.1f°%2$s بەرزبووەتەوە بۆ سنووری تۆ کە %3$.1f°%2$s یە</string>
+    <string name="rainfall_alert">ئاگاداری باران بارین؟</string>
+    <string name="rainfall_limit">سنووری بارانبارین</string>
+    <string name="rainrate_alert">ئاگادارکردنەوەی ڕێژەی باران؟</string>
+    <string name="rainrate_limit">سنووری ڕێژەی باران بارین</string>
+    <string name="hour">کاتژمێر</string>
+    <string name="notification_permission">مۆڵەتی ئاگادارکردنەوە</string>
+    <string name="notifications_needed">ئاگادارکردنەوە پێویستە بۆ ئەوەی ئاگادارت بکاتەوە کاتێک پلەی گەرمی، بارانبارین یان ڕێژەی بارانبارین سنوورە دیاریکراوەکانت بەدی دەکات</string>
+    <string name="notifications_needed2">بەو پێیەی دوو جار مۆڵەتی ئاگادارکردنەوەکەت ڕەتکردەوە، پێویستە لەبری ئەوە لە ڕێکخستنەکاندا چالاک بکەیت، ڕێکخستنەکانی دەستپێبکە؟</string>
+    <string name="rainfall_alert_metric">بارانبارین %1$.1f%2$s لەگەڵ سنووری تۆ کە %3$.1f%2$s هاوتایە</string>
+    <string name="rainfall_alert_imperial">بارانبارین %1$.2f%2$s لەگەڵ سنووری تۆ کە %3$.2f%2$s هاوتایە</string>
+    <string name="rainrate_alert_metric">ڕێژەی بارانبارین کە %1$.1f%2$s لە کاتژمێرێکدا هاوتایە لەگەڵ سنووری تۆ کە %3$.1f%2$s بوو</string>
+    <string name="rainrate_alert_imperial">ڕێژەی بارانبارین کە %1$.2f%2$s لە کاتژمێرێکدا هاوتایە لەگەڵ سنووری تۆ کە %3$.2f%2$s بوو</string>
 </resources>

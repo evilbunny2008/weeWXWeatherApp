@@ -97,8 +97,21 @@
     <string name="interval_6h">6 tumen p\'isib</string>
     <string name="interval_3h">3 tumen p\'isib</string>
     <string name="interval_hourly">Tu p\'isib</string>
-    <string name="temp_alert">Temperatura %1$.1f°%2$s ts\'o\'ok u yéemel tak u límite %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatura %1$.1f°%2$s ts\'o\'ok u yéemel tak u límite %3$.1f°%2$s</string>
     <string name="temperature">Téemperatura</string>
     <string name="morning_temp_alert">Alerta ja\'atskab?</string>
     <string name="afternoon_temp_alert">Alerta ti\' le tarde?</string>
+    <string name="morning_alert">Temperatura %1$.1f°%2$s ts\'o\'ok u na\'akal tak u límite %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alerta ti\' cháak?</string>
+    <string name="rainfall_limit">Límite de precipitación</string>
+    <string name="rainrate_alert">Alerta u k\'áaxal ja\'?</string>
+    <string name="rainrate_limit">Límite u tasa cháak</string>
+    <string name="hour">p\'íik\'iin</string>
+    <string name="notification_permission">Permiso u Notificación</string>
+    <string name="notifications_needed">K\'a\'abéet u ts\'a\'abal notificaciones uti\'al u ts\'a\'abal ojéeltbil ken u temperatura, u k\'áaxal ja\' wa u tasa u k\'áaxal ja\' ku chukik u límites establecidos</string>
+    <string name="notifications_needed2">Ts\'o\'ok u rechazado le permiso notificación ka\'ap\'éel Óoxten, k\'a\'abéet u habilitar ti\' configuración tu kúuchilo\'ob, configuración lanzamiento?</string>
+    <string name="rainfall_alert_metric">Le cháak %1$.1f%2$s ts\'o\'ok u náats\'al ti\' u límite %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Le cháak %1$.2f%2$s ts\'o\'ok u náats\'al ti\' u límite %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Le cháak %1$.1f%2$s tumen p\'isib ts\'o\'ok u náats\'al ti\' u límite %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Le cháak %1$.2f%2$s tumen p\'isib ts\'o\'ok u náats\'al ti\' u límite %3$.2f%2$s</string>
 </resources>

@@ -52,7 +52,6 @@
     <string name="wasnt_able_to_connect_custom_url">Waar net in kontitsioon fer se ferklayche orer download mache fon te personaliseerte URL woo pextimt is</string>
     <string name="wasnt_able_to_connect_webcam_url">Waar nët in kontitsioon fer een webcam pilt fon tayn serwer se ferklayche orer download mache</string>
     <string name="wasnt_able_to_connect_forecast">Waar nët in kontitsioon fer ti prokramatsioon se ferklayche orer se download mache</string>
-    <string name="forecast_type_is_invalid">Forecast tip \'%1$s\' is inwaliteet, kontroliire tayn instëlunge file un proope noch mool</string>
     <string name="wasnt_able_to_connect_radar_image">Waar nët in kontitsioon fer radar= pilt fon te internet se ferklayche orer download mache</string>
     <string name="wasnt_able_to_connect_data_txt">Waar nët in kontitsioon fer ti data.txt fon tayn serwer se ferklayche orer download mache</string>
     <string name="data_url_was_blank">Data URL waar leetich</string>
@@ -74,7 +73,6 @@
     <string name="wifi_not_available">Wolt sich aktualisiert awer WiFi ferpintung unferkënglich</string>
     <string name="invalid_update_interval">Aktualisiire interwaal is inwaliteet, aktualisiirunge instellunge un tan noch moolry</string>
     <string name="attempting_to_download_data_txt">Fersuuche ti data.txt fon tayn serwer download mache</string>
-    <string name="radar_type_is_invalid">Radar tip \'%1$s\' is inwalit, kontroliire tayn instëlunge file un proope noch mool</string>
     <string name="webcam_still_downloading">Webcam pilt is noch am download mache</string>
     <string name="webcam_url_url_not_set">Webcam URL is niet of is leen</string>
     <string name="update_set_to_manual_but_no_content_cached">Set in manual aktualisiirunge, awer khee inhalt hot noch mool kexrip</string>
@@ -97,8 +95,23 @@
     <string name="interval_6h">6 xtune</string>
     <string name="interval_3h">3 xtune</string>
     <string name="interval_hourly">Stunde</string>
-    <string name="temp_alert">Ti temperatuur %1$.1f°%2$s is runer kang uf ti xpits fon 3$.1f°%2$s</string>
     <string name="temperature">Temperatuer</string>
     <string name="morning_temp_alert">Morgen alert?</string>
     <string name="afternoon_temp_alert">Nachmittag Alert?</string>
+    <string name="rainfall_alert">Reen Alert?</string>
+    <string name="rainfall_limit">Reen Limit</string>
+    <string name="rainrate_alert">Reenrate Alarm?</string>
+    <string name="rainrate_limit">Reenrate Limite</string>
+    <string name="forecast_type_is_invalid">Ti protuktsioons tiire \'%1$s\' sin nët richtich, kuk tayn instelungs file un fersuuch noch mool</string>
+    <string name="radar_type_is_invalid">Radar tip \'%1$s\' is nët richtich, kuke tayn instelungs file un proope noch mool</string>
+    <string name="hour">xtun</string>
+    <string name="notification_permission">Notifikatsioons Erlaupnis</string>
+    <string name="notifications_needed">Notifikatsioone sin neetich fer tich uf muute wën ti temperatuur, ti reen orer ti reen rate tayn pextimte xpiichle erfiile</string>
+    <string name="notifications_needed2">Wayl tuu ti notisye erlaupnis tswaay mool ap kelos host, prauchst tuu tas in te instellunge in xtele, instellunge lanseere?</string>
+    <string name="morning_alert">Ti temperatuur %1$.1f°%2$s is pis an ti xpits fon %3$.1f°%2$s kewakst</string>
+    <string name="afternoon_alert">Ti temperatuur %1$.1f°%2$s is runer kang uf ti xpits fon %3$.1f°%2$s</string>
+    <string name="rainfall_alert_metric">Reenfall %1$.1f%2$s hot sich ferklaycht mit tëm xpits puuch fon %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Reen %1$.2f%2$s hot sich ferklaycht mit tëm xpits puuch fon %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Reen rate fon %1$.1f%2$s pro xtun hot sich ferklaycht mit tëm xpits puuch fon %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Reen rate fon %1$.2f%2$s pro xtun hot sich ferklaycht mit tayn limite fon %3$.2f%2$s</string>
 </resources>

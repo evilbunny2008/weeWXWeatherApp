@@ -97,8 +97,21 @@
     <string name="interval_6h">6 din oră</string>
     <string name="interval_3h">3 din oră</string>
     <string name="interval_hourly">Orar</string>
-    <string name="temp_alert">Temperatura %1$.1f°%2$s a scăzut la limita dvs. de %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatura %1$.1f°%2$s a scăzut la limita dvs. de %3$.1f°%2$s</string>
     <string name="temperature">Temperatură</string>
     <string name="morning_temp_alert">Alertă de dimineață?</string>
     <string name="afternoon_temp_alert">Alertă de după-amiază?</string>
+    <string name="morning_alert">Temperatura %1$.1f°%2$s a crescut până la limita dvs. de %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alertă de precipitații?</string>
+    <string name="rainfall_limit">Limita de precipitații</string>
+    <string name="rainrate_alert">Alertă de ploi?</string>
+    <string name="rainrate_limit">Limita ploii</string>
+    <string name="hour">oră</string>
+    <string name="notification_permission">Permisiune de notificare</string>
+    <string name="notifications_needed">Notificările sunt necesare pentru a vă avertiza când temperatura, precipitațiile sau rata ploii îndeplinesc limitele stabilite</string>
+    <string name="notifications_needed2">Deoarece ați refuzat permisiunea de notificare de două ori, trebuie să o activați în setări, lansați setările?</string>
+    <string name="rainfall_alert_metric">Precipitațiile %1$.1f%2$s au ajuns la limita dvs. de %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Precipitațiile %1$.2f%2$s au ajuns la limita dvs. de %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Rata ploii de %1$.1f%2$s pe oră a ajuns la limita dvs. de %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Rata ploii de %1$.2f%2$s pe oră a ajuns la limita dvs. de %3$.2f%2$s</string>
 </resources>

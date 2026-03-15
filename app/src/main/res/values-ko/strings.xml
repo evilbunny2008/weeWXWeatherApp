@@ -97,8 +97,21 @@
     <string name="interval_6h">6시간당</string>
     <string name="interval_3h">3시간당</string>
     <string name="interval_hourly">시간별</string>
-    <string name="temp_alert">온도 %1$.1f°%2$s가 한도인 %3$.1f°%2$s까지 떨어졌습니다</string>
+    <string name="afternoon_alert">온도 %1$.1f°%2$s가 한도인 %3$.1f°%2$s까지 떨어졌습니다</string>
     <string name="temperature">온도</string>
     <string name="morning_temp_alert">아침 알림?</string>
     <string name="afternoon_temp_alert">오후 알림?</string>
+    <string name="morning_alert">온도 %1$.1f°%2$s가 한도인 %3$.1f°%2$s까지 상승했습니다</string>
+    <string name="rainfall_alert">강우 경보?</string>
+    <string name="rainfall_limit">강수량 제한</string>
+    <string name="rainrate_alert">강수량 경고?</string>
+    <string name="rainrate_limit">강수량 제한</string>
+    <string name="hour">시간</string>
+    <string name="notification_permission">알림 권한</string>
+    <string name="notifications_needed">기온, 강수량, 강우량이 설정된 한도에 도달하면 알림이 필요합니다</string>
+    <string name="notifications_needed2">알림 권한을 두 번 거부했기 때문에 대신 설정에서 활성화해야 합니다. 설정을 시작하시겠습니까?</string>
+    <string name="rainfall_alert_metric">강수량 %1$.1f%2$s이 한도인 %3$.1f%2$s와 일치합니다</string>
+    <string name="rainfall_alert_imperial">강수량 %1$.2f%2$s이 한도인 %3$.2f%2$s와 일치합니다</string>
+    <string name="rainrate_alert_metric">시간당 %1$.1f%2$s의 강우량이 한도인 %3$.1f%2$s와 일치합니다</string>
+    <string name="rainrate_alert_imperial">시간당 %1$.2f%2$s의 강우량이 한도인 %3$.2f%2$s와 일치합니다</string>
 </resources>

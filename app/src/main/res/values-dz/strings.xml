@@ -97,8 +97,21 @@
     <string name="interval_6h">༦ ཆུ་ཚོད་རེ།</string>
     <string name="interval_3h">3 ཆུ་ཚོད་རེ།</string>
     <string name="interval_hourly">ཆུ་ཚོད།</string>
-    <string name="temp_alert">དྲོད་ཚད་ %1$.1f°%2$s ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.1f°%2$s ལུ་བབས་ཡོད།</string>
+    <string name="afternoon_alert">དྲོད་ཚད་ %1$.1f°%2$s ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.1f°%2$s ལུ་བབས་ཡོད།</string>
     <string name="temperature">ཚ་དྲོད</string>
     <string name="morning_temp_alert">དྲོ་པ་ཉེན་བརྡ་?</string>
     <string name="afternoon_temp_alert">ཉིན་མའི་ཉེན་བརྡ་?</string>
+    <string name="morning_alert">དྲོད་ཚད་ %1$.1f°%2$s ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.1f°%2$s ལ་འཕར་ཡོད།</string>
+    <string name="rainfall_alert">ཆརཔ་ཉེན་བརྡ་?</string>
+    <string name="rainfall_limit">ཆར་ཆུའི་ཚད་གཞི།</string>
+    <string name="rainrate_alert">ཆརཔ་གི་ཉེན་བརྡ་?</string>
+    <string name="rainrate_limit">ཆར་ཆུ་ཚད་གཞི།</string>
+    <string name="hour">ཆུ༌ཚོད</string>
+    <string name="notification_permission">བརྡ་ཐོའི་ཆོག་མཆན།</string>
+    <string name="notifications_needed">དྲོད་ཚད་དང་ཆརཔ་ ཡང་ན་ ཆརཔ་གི་ཚད་གཞི་ཚུ་ ཁྱོད་རའི་ཚད་གཞི་ཚུ་ ལྷོད་པའི་སྐབས་ ཁྱོད་ལུ་ ཉེན་བརྡ་འབད་ནིའི་དོན་ལུ་ བརྡ་དོན་ཚུ་དགོཔ་ཨིན།</string>
+    <string name="notifications_needed2">ཁྱོད་ཀྱིས་ བརྡ་དོན་གནང་བ་འདི་ ཚར་གཉིས་ ངོས་ལེན་མ་འབད་བར་ཡོདཔ་ལས་ དེ་གི་ཚབ་ལུ་ སྒྲིག་སྟངས་ཚུ་ནང་ ལྕོགས་ཅན་བཟོ་དགོཔ་ཨིན་ན་ སྒྲིག་སྟངས་ཚུ་ འགོ་བཙུགས།</string>
+    <string name="rainfall_alert_metric">ཆར་འབབ་ཚད་ %1$.1f%2$s དེ་ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.1f%2$s དང་མཐུན་ཡོད།</string>
+    <string name="rainfall_alert_imperial">ཆར་འབབ་ཚད་ %1$.2f%2$s དེ་ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.2f%2$s དང་མཐུན་ཡོད།</string>
+    <string name="rainrate_alert_metric">ཆུ་ཚོད་རེ་ལུ་ %1$.1f%2$s གི་ཆར་ཚད་འདི་ ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.1f%2$s དང་མཐུན་སྒྲིག་འབད་ཡོདཔ།</string>
+    <string name="rainrate_alert_imperial">ཆུ་ཚོད་རེ་ལུ་ %1$.2f%2$s གི་ཆར་ཚད་འདི་ ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.2f%2$s དང་མཐུན་སྒྲིག་འབད་ཡོདཔ།</string>
 </resources>

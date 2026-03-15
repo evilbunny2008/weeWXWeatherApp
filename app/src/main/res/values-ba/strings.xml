@@ -52,7 +52,6 @@
     <string name="wasnt_able_to_connect_custom_url">Ҡулланыусы URL-адрестан тоташтырыу йәки скачать мөмкин түгел ине</string>
     <string name="wasnt_able_to_connect_webcam_url">Һеҙҙең серверҙан веб-камера һүрәтен тоташтыра йәки скачать итә алманы</string>
     <string name="wasnt_able_to_connect_forecast">Прогнозды тоташтыра йәки скачать итә алманы</string>
-    <string name="forecast_type_is_invalid">Тип \'%1$s\' тип дөрөҫ түгел, һеҙҙең параметрҙар файлын тикшерергә һәм яңынан һынап ҡарағыҙ</string>
     <string name="wasnt_able_to_connect_radar_image">Радар тоташтырыу йәки скачать мөмкин түгел ине радар= һүрәт интернеттан</string>
     <string name="wasnt_able_to_connect_data_txt">Һеҙҙең серверҙан тоташтырыу йәки скачать мөмкин түгел ине</string>
     <string name="data_url_was_blank">Мәғлүмәттәр URL буш булды</string>
@@ -74,7 +73,6 @@
     <string name="wifi_not_available">Яңыртылған булыр ине, әммә WiFi тоташыу мөмкин булмаған</string>
     <string name="invalid_update_interval">Яңыртыу интервалы дөрөҫ түгел, яңыртыу параметрҙары, ә һуңынан ҡайта</string>
     <string name="attempting_to_download_data_txt">Һеҙҙең серверҙан скачать cavic</string>
-    <string name="radar_type_is_invalid">Радар тип \'%1$s\' дөрөҫ түгел, һеҙҙең параметрҙар файлын тикшерергә һәм яңынан һынап ҡарағыҙ</string>
     <string name="webcam_still_downloading">Веб-камера һүрәте әле лә скачать</string>
     <string name="webcam_url_url_not_set">Веб-камера URL ҡуйылмаған йәки буш тора</string>
     <string name="update_set_to_manual_but_no_content_cached">Ҡул менән яңыртыу өсөн ҡуйылған, әммә бер ниндәй ҙә контент кэш</string>
@@ -97,8 +95,23 @@
     <string name="interval_3h">3 сәғәтлек</string>
     <string name="interval_hourly">Сәғәт һайын</string>
     <string name="forecast_interval">Прогноз арауығы (әгәр ҙә кәрәк булһа)</string>
-    <string name="temp_alert">Температура %1$.1f°%2$s һеҙҙең сиккә тиклем төштө %3$.1f°%2$s</string>
     <string name="temperature">Температура</string>
     <string name="morning_temp_alert">Иртәнге уятыу?</string>
     <string name="afternoon_temp_alert">Төштән һуң иҫкәртмә?</string>
+    <string name="rainfall_alert">Ямғыр тураһында иҫкәртмә?</string>
+    <string name="rainrate_alert">Ямғыр тиҙлеге тураһында иҫкәртмә?</string>
+    <string name="rainfall_limit">Яуым-төшөм сиге</string>
+    <string name="rainrate_limit">Ямғыр тиҙлеге сиге</string>
+    <string name="hour">сәғәт</string>
+    <string name="notification_permission">Хәбәр итеү рөхсәте</string>
+    <string name="notifications_needed">Хәбәр итеү кәрәк, һеҙҙе иҫкәртергә, ҡасан температура, ямғыр йәки ямғыр һеҙҙең билдәләнгән сиктәргә тап килә</string>
+    <string name="notifications_needed2">Һеҙ ике тапҡыр хәбәр итеү рөхсәтенән баш тартҡандан бирле, һеҙгә уны урынына параметрҙарҙа индереү кәрәк, параметрҙарҙы эшләтеп ебәрергә?</string>
+    <string name="morning_alert">Температура %1$.1f°%2$s һеҙҙең сиккә күтәрелде %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Температура %1$.1f°%2$s һеҙҙең сиккә тиклем төштө %3$.1f°%2$s</string>
+    <string name="rainfall_alert_metric">Яуым-төшөм %1$.1f%2$s һеҙҙең сиккә тап килде %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Яуым-төшөм %1$.2f%2$s һеҙҙең сиккә тап килде %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Ямғыр тиҙлеге сәғәтенә %1$.1f%2$s һеҙҙең сиккә тап килде %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Ямғыр тиҙлеге сәғәтенә %1$.2f%2$s һеҙҙең сиккә тап килде %3$.2f%2$s</string>
+    <string name="forecast_type_is_invalid">Прогноз тибы \'%1$s\' дөрөҫ түгел, параметрҙар файлын тикшерегеҙ һәм яңынан тырышығыҙ</string>
+    <string name="radar_type_is_invalid">Радар тибы \'%1$s\' дөрөҫ түгел, һеҙҙең параметрҙар файлын тикшерегеҙ һәм яңынан тырышығыҙ</string>
 </resources>

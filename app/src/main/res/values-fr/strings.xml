@@ -97,8 +97,21 @@
     <string name="interval_6h">6 heures par heure</string>
     <string name="interval_3h">3 heures</string>
     <string name="interval_hourly">Horaire</string>
-    <string name="temp_alert">La température %1$.1f°%2$s a chuté jusqu\'à votre limite de %3$.1f°%2$s</string>
+    <string name="afternoon_alert">La température %1$.1f°%2$s a chuté jusqu\'à votre limite de %3$.1f°%2$s</string>
     <string name="temperature">Température</string>
     <string name="morning_temp_alert">Alerte matinale?</string>
     <string name="afternoon_temp_alert">Alerte de l\'après-midi?</string>
+    <string name="morning_alert">La température %1$.1f°%2$s a atteint votre limite de %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alerte à la pluie?</string>
+    <string name="rainfall_limit">Limite de précipitations</string>
+    <string name="rainrate_alert">Alerte au taux de pluie ?</string>
+    <string name="rainrate_limit">Limite de taux de pluie</string>
+    <string name="hour">heure</string>
+    <string name="notification_permission">Autorisation de notification</string>
+    <string name="notifications_needed">Des notifications sont nécessaires pour vous alerter lorsque la température, les précipitations ou le taux de pluie atteignent les limites définies</string>
+    <string name="notifications_needed2">Étant donné que vous avez refusé l\'autorisation de notification à deux reprises, vous devez plutôt l\'activer dans les paramètres, lancer les paramètres ?</string>
+    <string name="rainfall_alert_metric">Les précipitations %1$.1f%2$s ont atteint votre limite de %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Les précipitations %1$.2f%2$s ont atteint votre limite de %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Le taux de pluie de %1$.1f%2$s par heure correspond à votre limite de %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Le taux de pluie de %1$.2f%2$s par heure correspond à votre limite de %3$.2f%2$s</string>
 </resources>

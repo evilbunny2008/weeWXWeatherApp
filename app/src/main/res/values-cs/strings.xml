@@ -97,8 +97,21 @@
     <string name="interval_6h">6 hodin denně</string>
     <string name="interval_3h">3 hodiny</string>
     <string name="interval_hourly">Hodinově</string>
-    <string name="temp_alert">Teplota %1$.1f°%2$s klesla na váš limit %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Teplota %1$.1f°%2$s klesla na váš limit %3$.1f°%2$s</string>
     <string name="temperature">Teplota</string>
     <string name="morning_temp_alert">Ranní upozornění?</string>
     <string name="afternoon_temp_alert">Odpolední upozornění?</string>
+    <string name="morning_alert">Teplota %1$.1f°%2$s vzrostla na váš limit %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Upozornění na déšť?</string>
+    <string name="rainfall_limit">Limit srážek</string>
+    <string name="rainrate_alert">Upozornění na déšť?</string>
+    <string name="rainrate_limit">Limit deště</string>
+    <string name="hour">hodina</string>
+    <string name="notification_permission">Oprávnění k oznámení</string>
+    <string name="notifications_needed">Oznámení jsou potřebná, aby vás upozornila, když teplota, srážky nebo dešťové srážky splní vaše nastavené limity</string>
+    <string name="notifications_needed2">Vzhledem k tomu, že jste dvakrát odmítli oprávnění k oznámení, musíte je místo toho povolit v nastavení, spustit nastavení?</string>
+    <string name="rainfall_alert_metric">Dešťové srážky %1$.1f%2$s odpovídají vašemu limitu %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Dešťové srážky %1$.2f%2$s odpovídají vašemu limitu %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Rychlost srážek %1$.1f%2$s za hodinu odpovídá vašemu limitu %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Rychlost srážek %1$.2f%2$s za hodinu odpovídá vašemu limitu %3$.2f%2$s</string>
 </resources>

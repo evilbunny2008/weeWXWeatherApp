@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Ia haora</string>
     <string name="interval_3h">3 Ia haora</string>
     <string name="interval_hourly">Ia haora</string>
-    <string name="temp_alert">Kua heke te pāmahana %1$.1f°%2$s ki tō tepe o %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Kua heke te pāmahana %1$.1f°%2$s ki tō tepe o %3$.1f°%2$s</string>
     <string name="temperature">Te pāmahana</string>
     <string name="morning_temp_alert">Matohi Ata?</string>
     <string name="afternoon_temp_alert">Matohi o te ahiahi?</string>
+    <string name="morning_alert">Kua piki te pāmahana %1$.1f°%2$s ki tō tepe o %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Matohi ua?</string>
+    <string name="rainfall_limit">Tepe ua</string>
+    <string name="rainrate_alert">Matohi o te ua?</string>
+    <string name="rainrate_limit">Tepe ua</string>
+    <string name="hour">haora</string>
+    <string name="notification_permission">Whakaaetanga Whakamōhiotanga</string>
+    <string name="notifications_needed">Me whakamohiotanga hei whakamohio i a koe ina tutuki te pāmahana, te ua, te ua ranei ki o rohe kua whakaritea</string>
+    <string name="notifications_needed2">I te mea e rua nga wa i paopao koe i te whakaaetanga whakamohiotanga, me whakaahei koe i roto i nga tautuhinga hei utu, whakarewahia nga tautuhinga?</string>
+    <string name="rainfall_alert_metric">Kua tau te ua %1$.1f%2$s ki to tepe o %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Kua rite te ua %1$.2f%2$s ki to tepe o %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Ko te ua o %1$.1f%2$s ia haora kua rite ki to rohe o %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Ko te ua o %1$.2f%2$s ia haora kua rite ki to rohe o %3$.2f%2$s</string>
 </resources>

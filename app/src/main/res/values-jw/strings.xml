@@ -97,8 +97,21 @@
     <string name="interval_6h">6 saben jam</string>
     <string name="interval_3h">3 saben jam</string>
     <string name="interval_hourly">saben jam</string>
-    <string name="temp_alert">Suhu %1$.1f°%2$s wis mudhun nganti watesan sampeyan %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$.1f°%2$s wis mudhun nganti watesan sampeyan %3$.1f°%2$s</string>
     <string name="temperature">Suhu</string>
     <string name="morning_temp_alert">Tandha esuk?</string>
     <string name="afternoon_temp_alert">Lansiran Sore?</string>
+    <string name="morning_alert">Suhu %1$.1f°%2$s wis munggah nganti watesan sampeyan %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Tandha Udan?</string>
+    <string name="rainfall_limit">Watesan udan</string>
+    <string name="rainrate_alert">Lansiran Rainrate?</string>
+    <string name="rainrate_limit">Rainrate Limit</string>
+    <string name="hour">jam</string>
+    <string name="notification_permission">Izin Notifikasi</string>
+    <string name="notifications_needed">Kabar dibutuhake kanggo menehi tandha yen suhu, curah udan, utawa udan tekan watesan sing disetel</string>
+    <string name="notifications_needed2">Awit sampeyan nolak ijin kabar kaping pindho, sampeyan kudu ngaktifake ing setelan tinimbang, miwiti setelan?</string>
+    <string name="rainfall_alert_metric">Curah udan %1$.1f%2$s wis cocog karo watesan sampeyan %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Curah udan %1$.2f%2$s wis cocog karo watesan sampeyan %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Udan %1$.1f%2$s saben jam wis cocog karo watesan sampeyan %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Udan %1$.2f%2$s saben jam wis cocog karo watesan sampeyan %3$.2f%2$s</string>
 </resources>

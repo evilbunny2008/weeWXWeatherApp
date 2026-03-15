@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ชั่วโมง</string>
     <string name="interval_3h">3 ชั่วโมง</string>
     <string name="interval_hourly">รายชั่วโมง</string>
-    <string name="temp_alert">อุณหภูมิ %1$.1f°%2$s ลดลงถึงขีดจำกัดของคุณที่ %3$.1f°%2$s</string>
+    <string name="afternoon_alert">อุณหภูมิ %1$.1f°%2$s ลดลงถึงขีดจำกัดของคุณที่ %3$.1f°%2$s</string>
     <string name="temperature">อุณหภูมิ</string>
     <string name="morning_temp_alert">การแจ้งเตือนตอนเช้า?</string>
     <string name="afternoon_temp_alert">แจ้งเตือนช่วงบ่าย?</string>
+    <string name="morning_alert">อุณหภูมิ %1$.1f°%2$s เพิ่มขึ้นถึงขีดจำกัดของคุณที่ %3$.1f°%2$s แล้ว</string>
+    <string name="rainfall_alert">แจ้งเตือนปริมาณน้ำฝน?</string>
+    <string name="rainfall_limit">ขีดจำกัดปริมาณน้ำฝน</string>
+    <string name="rainrate_alert">แจ้งเตือนปริมาณน้ำฝน?</string>
+    <string name="rainrate_limit">ขีดจำกัดปริมาณน้ำฝน</string>
+    <string name="hour">ชั่วโมง</string>
+    <string name="notification_permission">การอนุญาตการแจ้งเตือน</string>
+    <string name="notifications_needed">จำเป็นต้องมีการแจ้งเตือนเพื่อแจ้งเตือนคุณเมื่ออุณหภูมิ ปริมาณน้ำฝน หรือปริมาณฝนถึงขีดจำกัดที่คุณตั้งไว้</string>
+    <string name="notifications_needed2">เนื่องจากคุณปฏิเสธการอนุญาตการแจ้งเตือนสองครั้ง คุณต้องเปิดใช้งานในการตั้งค่าแทน เปิดการตั้งค่าหรือไม่</string>
+    <string name="rainfall_alert_metric">ปริมาณน้ำฝน %1$.1f%2$s ตรงกับขีดจำกัดของคุณที่ %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">ปริมาณน้ำฝน %1$.2f%2$s ตรงกับขีดจำกัดของคุณที่ %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">อัตราฝน %1$.1f%2$s ต่อชั่วโมง ตรงกับขีดจำกัดของคุณที่ %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">อัตราฝน %1$.2f%2$s ต่อชั่วโมง ตรงกับขีดจำกัดของคุณที่ %3$.2f%2$s</string>
 </resources>

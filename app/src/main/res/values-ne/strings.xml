@@ -97,8 +97,21 @@
     <string name="interval_6h">६ घण्टामा</string>
     <string name="interval_3h">३ घण्टामा</string>
     <string name="interval_hourly">प्रति घण्टा</string>
-    <string name="temp_alert">तापक्रम %1$.1f°%2$s %3$.1f°%2$s को तपाईंको सीमामा झरेको छ</string>
+    <string name="afternoon_alert">तापक्रम %1$.1f°%2$s %3$.1f°%2$s को तपाईंको सीमामा झरेको छ</string>
     <string name="temperature">तापक्रम</string>
     <string name="morning_temp_alert">बिहानको चेतावनी?</string>
     <string name="afternoon_temp_alert">दिउँसो अलर्ट?</string>
+    <string name="morning_alert">तापक्रम %1$.1f°%2$s %3$.1f°%2$s को तपाईंको सीमामा बढेको छ</string>
+    <string name="rainfall_alert">वर्षा चेतावनी?</string>
+    <string name="rainfall_limit">वर्षा सीमा</string>
+    <string name="rainrate_alert">रेनरेट अलर्ट?</string>
+    <string name="rainrate_limit">वर्षा सीमा</string>
+    <string name="hour">घण्टा</string>
+    <string name="notification_permission">सूचना अनुमति</string>
+    <string name="notifications_needed">जब तापमान, वर्षा वा वर्षाको दरले तपाइँको निर्धारित सीमाहरू पूरा गर्दछ तब तपाइँलाई सचेत गराउन अधिसूचनाहरू आवश्यक पर्दछ</string>
+    <string name="notifications_needed2">तपाईंले अधिसूचना अनुमति दुई पटक अस्वीकार गर्नुभएकोले, तपाईंले यसलाई सेटिङहरूमा सक्षम गर्न आवश्यक छ, सेटिङहरू सुरु गर्नुहोस्?</string>
+    <string name="rainfall_alert_metric">वर्षा %1$.1f%2$s तपाईंको %3$.1f%2$s को सीमासँग मेल खायो</string>
+    <string name="rainfall_alert_imperial">वर्षा %1$.2f%2$s तपाईंको %3$.2f%2$s को सीमासँग मेल खायो</string>
+    <string name="rainrate_alert_metric">%1$.1f%2$s प्रति घण्टाको वर्षाको दर तपाईंको %3$.1f%2$s को सीमासँग मेल खान्छ</string>
+    <string name="rainrate_alert_imperial">प्रति घन्टा %1$.2f%2$s को वर्षाको दर तपाईंको %3$.2f%2$s को सीमासँग मेल खान्छ</string>
 </resources>

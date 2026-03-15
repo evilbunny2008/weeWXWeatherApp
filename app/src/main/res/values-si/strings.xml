@@ -97,8 +97,21 @@
     <string name="interval_6h">6 පැයකට</string>
     <string name="interval_3h">3 පැයකට</string>
     <string name="interval_hourly">පැයකට වරක්</string>
-    <string name="temp_alert">උෂ්ණත්වය %1$.1f°%2$s ඔබේ සීමාව %3$.1f°%2$s දක්වා පහත වැටී ඇත</string>
+    <string name="afternoon_alert">උෂ්ණත්වය %1$.1f°%2$s ඔබේ සීමාව %3$.1f°%2$s දක්වා පහත වැටී ඇත</string>
     <string name="temperature">උෂ්ණත්වය</string>
     <string name="morning_temp_alert">උදෑසන අනතුරු ඇඟවීම?</string>
     <string name="afternoon_temp_alert">දහවල් අනතුරු ඇඟවීම?</string>
+    <string name="morning_alert">උෂ්ණත්වය %1$.1f°%2$s ඔබේ සීමාව වන %3$.1f°%2$s දක්වා ඉහළ ගොස් ඇත</string>
+    <string name="rainfall_alert">වර්ෂාපතන අනතුරු ඇඟවීමක්ද?</string>
+    <string name="rainfall_limit">වර්ෂාපතන සීමාව</string>
+    <string name="rainrate_alert">වැස්ස අනතුරු ඇඟවීමද?</string>
+    <string name="rainrate_limit">වර්ෂාපතන සීමාව</string>
+    <string name="hour">පැය</string>
+    <string name="notification_permission">දැනුම්දීමේ අවසරය</string>
+    <string name="notifications_needed">උෂ්ණත්වය, වර්ෂාපතනය හෝ වර්ෂාපතනය ඔබේ නියමිත සීමාවන් සපුරාලන විට ඔබව දැනුවත් කිරීමට දැනුම්දීම් අවශ්‍ය වේ</string>
+    <string name="notifications_needed2">ඔබ දැනුම්දීම් අවසරය දෙවරක් ප්‍රතික්ෂේප කළ බැවින්, ඒ වෙනුවට ඔබට එය සැකසීම් තුළ සබල කිරීමට අවශ්‍ය වේ, සැකසීම් දියත් කරන්නද?</string>
+    <string name="rainfall_alert_metric">වර්ෂාපතනය %1$.1f%2$s ඔබේ %3$.1f%2$s සීමාවට ගැලපේ</string>
+    <string name="rainfall_alert_imperial">වර්ෂාපතනය %1$.2f%2$s ඔබේ %3$.2f%2$s සීමාවට ගැලපේ</string>
+    <string name="rainrate_alert_metric">පැයකට %1$.1f%2$s වැසි අනුපාතය ඔබේ %3$.1f%2$s සීමාවට ගැලපේ</string>
+    <string name="rainrate_alert_imperial">පැයකට %1$.2f%2$s වැසි අනුපාතය ඔබේ %3$.2f%2$s සීමාවට ගැලපේ</string>
 </resources>

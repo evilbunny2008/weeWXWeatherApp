@@ -97,8 +97,21 @@
     <string name="interval_6h">6 په ساعت کې</string>
     <string name="interval_3h">3 ساعته</string>
     <string name="interval_hourly">په ساعت کې</string>
-    <string name="temp_alert">د تودوخې درجه %1$.1f°%2$s ستاسو حد %3$.1f°%2$s ته راښکته شوې ده</string>
+    <string name="afternoon_alert">د تودوخې درجه %1$.1f°%2$s ستاسو حد %3$.1f°%2$s ته راښکته شوې ده</string>
     <string name="temperature">د حرارت درجه</string>
     <string name="morning_temp_alert">د سهار خبرتیا؟</string>
     <string name="afternoon_temp_alert">د ماسپښین خبرتیا؟</string>
+    <string name="morning_alert">د تودوخې درجه %1$.1f°%2$s ستاسو حد %3$.1f°%2$s ته لوړه شوې ده</string>
+    <string name="rainfall_alert">د باران خبرتیا؟</string>
+    <string name="rainfall_limit">د باران حد</string>
+    <string name="rainrate_alert">د باران خبرداری؟</string>
+    <string name="rainrate_limit">د باران حد</string>
+    <string name="hour">ساعت</string>
+    <string name="notification_permission">د خبرتیا اجازه</string>
+    <string name="notifications_needed">کله چې د تودوخې، باران یا باران کچه ستاسو ټاکل شوي حدود پوره کوي نو خبرتیاو ته اړتیا لیدل کیږي</string>
+    <string name="notifications_needed2">له هغه وخته چې تاسو د خبرتیا اجازه دوه ځله رد کړې، تاسو اړتیا لرئ چې دا د دې پرځای په ترتیباتو کې فعال کړئ، ترتیبات پیل کړئ؟</string>
+    <string name="rainfall_alert_metric">باران %1$.1f%2$s ستاسو د %3$.1f%2$s حد سره سمون خوري</string>
+    <string name="rainfall_alert_imperial">باران %1$.2f%2$s ستاسو د %3$.2f%2$s حد سره سمون خوري</string>
+    <string name="rainrate_alert_metric">په هر ساعت کې د باران %1$.1f%2$s ستاسو د %3$.1f%2$s حد سره سمون خوري</string>
+    <string name="rainrate_alert_imperial">په هر ساعت کې د باران %1$.2f%2$s ستاسو د %3$.2f%2$s حد سره سمون خوري</string>
 </resources>

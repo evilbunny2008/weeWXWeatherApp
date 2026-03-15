@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ຊົ່ວໂມງ</string>
     <string name="interval_3h">3 ຊົ່ວໂມງ</string>
     <string name="interval_hourly">ທຸກໆຊົ່ວໂມງ</string>
-    <string name="temp_alert">ອຸນຫະພູມ %1$.1f°%2$s ໄດ້ຫຼຸດລົງເຖິງຂີດຈຳກັດຂອງທ່ານທີ່ %3$.1f°%2$s</string>
+    <string name="afternoon_alert">ອຸນຫະພູມ %1$.1f°%2$s ໄດ້ຫຼຸດລົງເຖິງຂີດຈຳກັດຂອງທ່ານທີ່ %3$.1f°%2$s</string>
     <string name="temperature">ອຸນຫະພູມ</string>
     <string name="morning_temp_alert">ແຈ້ງເຕືອນຕອນເຊົ້າ?</string>
     <string name="afternoon_temp_alert">ແຈ້ງເຕືອນຕອນບ່າຍ?</string>
+    <string name="morning_alert">ອຸນຫະພູມ %1$.1f°%2$s ເພີ່ມຂຶ້ນຮອດຂີດຈຳກັດຂອງທ່ານທີ່ %3$.1f°%2$s</string>
+    <string name="rainfall_alert">ແຈ້ງເຕືອນຝົນຕົກ?</string>
+    <string name="rainfall_limit">ຈຳກັດປະລິມານນ້ຳຝົນ</string>
+    <string name="rainrate_alert">ແຈ້ງເຕືອນຝົນຕົກ?</string>
+    <string name="rainrate_limit">ຈຳກັດອັດຕາຝົນ</string>
+    <string name="hour">ຊົ່ວໂມງ</string>
+    <string name="notification_permission">ການ​ອະ​ນຸ​ຍາດ​ແຈ້ງ​ການ​</string>
+    <string name="notifications_needed">ຕ້ອງການການແຈ້ງເຕືອນເພື່ອແຈ້ງເຕືອນທ່ານເມື່ອອຸນຫະພູມ, ນໍ້າຝົນ ຫຼື ລະດັບນໍ້າຝົນກົງຕາມຂອບເຂດທີ່ກໍານົດໄວ້ຂອງທ່ານ</string>
+    <string name="notifications_needed2">ນັບຕັ້ງແຕ່ທ່ານປະຕິເສດການອະນຸຍາດການແຈ້ງເຕືອນສອງຄັ້ງ, ທ່ານຈໍາເປັນຕ້ອງເປີດໃຊ້ມັນໃນການຕັ້ງຄ່າແທນ, ເປີດການຕັ້ງຄ່າບໍ?</string>
+    <string name="rainfall_alert_metric">ຝົນຕົກ %1$.1f%2$s ກົງກັບຂີດຈຳກັດ %3$.1f%2$s ຂອງທ່ານ</string>
+    <string name="rainfall_alert_imperial">ຝົນຕົກ %1$.2f%2$s ກົງກັບຂີດຈຳກັດ %3$.2f%2$s ຂອງທ່ານ</string>
+    <string name="rainrate_alert_metric">ອັດຕາຝົນ %1$.1f%2$s ຕໍ່ຊົ່ວໂມງກົງກັບຂີດຈຳກັດ %3$.1f%2$s ຂອງທ່ານ</string>
+    <string name="rainrate_alert_imperial">ອັດຕາຝົນ %1$.2f%2$s ຕໍ່ຊົ່ວໂມງກົງກັບຂີດຈຳກັດ %3$.2f%2$s ຂອງທ່ານ</string>
 </resources>

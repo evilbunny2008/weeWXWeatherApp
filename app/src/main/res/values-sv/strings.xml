@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Varje timme</string>
     <string name="interval_3h">3 timme</string>
     <string name="interval_hourly">Varje timme</string>
-    <string name="temp_alert">Temperaturen %1$.1f°%2$s har sjunkit till din gräns på %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperaturen %1$.1f°%2$s har sjunkit till din gräns på %3$.1f°%2$s</string>
     <string name="temperature">Temperatur</string>
     <string name="morning_temp_alert">Morgonvarning?</string>
     <string name="afternoon_temp_alert">Eftermiddagsvarning?</string>
+    <string name="morning_alert">Temperaturen %1$.1f°%2$s har stigit till din gräns på %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Regnvarning?</string>
+    <string name="rainfall_limit">Nederbördsgräns</string>
+    <string name="rainrate_alert">Regnhastighetsvarning?</string>
+    <string name="rainrate_limit">Regnhastighetsgräns</string>
+    <string name="hour">timme</string>
+    <string name="notification_permission">Notifieringstillstånd</string>
+    <string name="notifications_needed">Aviseringar behövs för att varna dig när temperatur, nederbörd eller regnmängd når dina inställda gränser</string>
+    <string name="notifications_needed2">Eftersom du tackade nej till aviseringsbehörighet två gånger, måste du aktivera den i inställningar istället, starta inställningar?</string>
+    <string name="rainfall_alert_metric">Nederbörden %1$.1f%2$s har matchat din gräns på %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Nederbörden %1$.2f%2$s har matchat din gräns på %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Regnhastigheten på %1$.1f%2$s per timme har matchat din gräns på %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Regnhastigheten på %1$.2f%2$s per timme har matchat din gräns på %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 na sat</string>
     <string name="interval_3h">3 sata</string>
     <string name="interval_hourly">Po satu</string>
-    <string name="temp_alert">Temperatura %1$.1f°%2$s je pala na vašu granicu od %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatura %1$.1f°%2$s je pala na vašu granicu od %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Morning Alert?</string>
     <string name="afternoon_temp_alert">Popodnevno upozorenje?</string>
+    <string name="morning_alert">Temperatura %1$.1f°%2$s je porasla na vašu granicu od %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Rainfall Alert?</string>
+    <string name="rainfall_limit">Ograničenje padavina</string>
+    <string name="rainrate_alert">Rainrate Alert?</string>
+    <string name="rainrate_limit">Ograničenje brzine kiše</string>
+    <string name="hour">sat</string>
+    <string name="notification_permission">Dozvola za obavještenje</string>
+    <string name="notifications_needed">Obavještenja su potrebna da vas upozore kada temperatura, padavina ili količina kiše ispune vaša postavljena ograničenja</string>
+    <string name="notifications_needed2">Pošto ste dvaput odbili dozvolu za obavještavanje, trebate je omogućiti u postavkama umjesto toga, pokrenuti postavke?</string>
+    <string name="rainfall_alert_metric">Kiša %1$.1f%2$s odgovara vašem ograničenju od %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Kiša %1$.2f%2$s odgovara vašem ograničenju od %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Stopa kiše od %1$.1f%2$s po satu odgovara vašem limitu od %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Stopa kiše od %1$.2f%2$s po satu odgovara vašem limitu od %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 மணிநேரம்</string>
     <string name="interval_3h">3 மணிநேரம்</string>
     <string name="interval_hourly">மணிநேரம்</string>
-    <string name="temp_alert">வெப்பநிலை %1$.1f°%2$s உங்கள் வரம்பான %3$.1f°%2$sக்கு குறைந்துள்ளது</string>
+    <string name="afternoon_alert">வெப்பநிலை %1$.1f°%2$s உங்கள் வரம்பான %3$.1f°%2$sக்கு குறைந்துள்ளது</string>
     <string name="temperature">வெப்பநிலை</string>
     <string name="morning_temp_alert">காலை எச்சரிக்கை?</string>
     <string name="afternoon_temp_alert">மதியம் எச்சரிக்கை?</string>
+    <string name="morning_alert">%1$.1f°%2$s வெப்பநிலை உங்கள் வரம்பான %3$.1f°%2$sக்கு உயர்ந்துள்ளது</string>
+    <string name="rainfall_alert">மழை எச்சரிக்கை?</string>
+    <string name="rainfall_limit">மழை வரம்பு</string>
+    <string name="rainrate_alert">மழை பெய்யும் எச்சரிக்கை?</string>
+    <string name="rainrate_limit">மழை வரம்பு</string>
+    <string name="hour">மணி</string>
+    <string name="notification_permission">அறிவிப்பு அனுமதி</string>
+    <string name="notifications_needed">வெப்பநிலை, மழைப்பொழிவு அல்லது மழைவீதம் நீங்கள் நிர்ணயிக்கப்பட்ட வரம்புகளை சந்திக்கும் போது உங்களுக்கு எச்சரிக்கை செய்ய அறிவிப்புகள் தேவை</string>
+    <string name="notifications_needed2">இரண்டு முறை அறிவிப்பு அனுமதியை மறுத்துள்ளதால், அதற்குப் பதிலாக அமைப்புகளில் அதை இயக்க வேண்டும், அமைப்புகளைத் தொடங்கவா?</string>
+    <string name="rainfall_alert_metric">%1$.1f%2$s மழைப்பொழிவு உங்கள் வரம்பான %3$.1f%2$s உடன் பொருந்தியது</string>
+    <string name="rainfall_alert_imperial">%1$.2f%2$s மழைப்பொழிவு உங்கள் வரம்பான %3$.2f%2$s உடன் பொருந்தியது</string>
+    <string name="rainrate_alert_metric">ஒரு மணி நேரத்திற்கு %1$.1f%2$s மழைவீதம் உங்களின் வரம்பான %3$.1f%2$s உடன் பொருந்துகிறது</string>
+    <string name="rainrate_alert_imperial">ஒரு மணி நேரத்திற்கு %1$.2f%2$s மழைவீதம் உங்களின் வரம்பான %3$.2f%2$s உடன் பொருந்தியது</string>
 </resources>

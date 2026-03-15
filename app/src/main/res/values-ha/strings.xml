@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Sa\'a</string>
     <string name="interval_3h">3 Sa\'a</string>
     <string name="interval_hourly">Sa\'a</string>
-    <string name="temp_alert">Zazzabi %1$.1f°%2$s ya ragu zuwa iyakar ku na %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Zazzabi %1$.1f°%2$s ya ragu zuwa iyakar ku na %3$.1f°%2$s</string>
     <string name="temperature">Zazzabi</string>
     <string name="morning_temp_alert">Faɗakarwar Safiya?</string>
     <string name="afternoon_temp_alert">Jijjiga La\'asar?</string>
+    <string name="morning_alert">Zazzabi %1$.1f°%2$s ya tashi zuwa iyakar ku na %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Faɗakarwar ruwan sama?</string>
+    <string name="rainfall_limit">Iyakar ruwan sama</string>
+    <string name="rainrate_alert">Faɗakarwar ruwan sama?</string>
+    <string name="rainrate_limit">Iyakar ruwan sama</string>
+    <string name="hour">awa</string>
+    <string name="notification_permission">Izinin Sanarwa</string>
+    <string name="notifications_needed">Ana buƙatar sanarwa don faɗakar da kai lokacin da zafin jiki, ruwan sama ko ruwan sama ya cika iyakokin da aka saita</string>
+    <string name="notifications_needed2">Tun da kun ƙi izinin sanarwar sau biyu, kuna buƙatar kunna ta a cikin saitunan maimakon, ƙaddamar da saitunan?</string>
+    <string name="rainfall_alert_metric">Ruwan sama %1$.1f%2$s ya yi daidai da iyakar ku na %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Ruwan sama %1$.2f%2$s ya yi daidai da iyakar ku na %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Ruwan sama na %1$.1f%2$s a kowace awa ya yi daidai da iyakar ku na %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Ruwan sama na %1$.2f%2$s a kowace awa ya yi daidai da iyakar ku na %3$.2f%2$s</string>
 </resources>

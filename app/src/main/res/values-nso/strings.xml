@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Ka iri ka iri</string>
     <string name="interval_3h">3 Ka iri ka iri</string>
     <string name="interval_hourly">Iri le iri</string>
-    <string name="temp_alert">Thempheretšha %1$.1f°%2$s e theogile go fihla moeding wa gago wa %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Thempheretšha %1$.1f°%2$s e theogile go fihla moeding wa gago wa %3$.1f°%2$s</string>
     <string name="temperature">Themphereitšha</string>
     <string name="morning_temp_alert">Tlhokomedišo ya Mesong?</string>
     <string name="afternoon_temp_alert">Tlhokomedišo ya Thapama?</string>
+    <string name="morning_alert">Thempheretšha %1$.1f°%2$s e hlatlogile go fihla moeding wa gago wa %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Tlhokomedišo ya Pula?</string>
+    <string name="rainfall_limit">Moedi wa Pula</string>
+    <string name="rainrate_alert">Tlhokomedišo ya Seelo sa Pula?</string>
+    <string name="rainrate_limit">Moedi wa Sekgahla sa Pula</string>
+    <string name="hour">iri</string>
+    <string name="notification_permission">Tumelelo ya Tsebišo</string>
+    <string name="notifications_needed">Ditsebišo di a nyakega go go lemoša ge themperetšha, pula goba tekanyo ya pula e fihlelela mellwane yeo o e beilego</string>
+    <string name="notifications_needed2">Ka ge o ganne tumelelo ya tsebišo gabedi, o swanetše go e kgontšha ka dipeakanyo go e na le moo, thoma dipeakanyo?</string>
+    <string name="rainfall_alert_metric">Pula ya %1$.1f%2$s e swana le moedi wa gago wa %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Pula ya %1$.2f%2$s e swana le moedi wa gago wa %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Sekgahla sa pula sa %1$.1f%2$s ka iri se sepelelana le moedi wa gago wa %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Sekgahla sa pula sa %1$.2f%2$s ka iri se sepelelana le moedi wa gago wa %3$.2f%2$s</string>
 </resources>

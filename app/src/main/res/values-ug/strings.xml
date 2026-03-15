@@ -97,8 +97,21 @@
     <string name="interval_6h">6 سائەت</string>
     <string name="interval_3h">3 سائەت</string>
     <string name="interval_hourly">سائەتلىك</string>
-    <string name="temp_alert">تېمپېراتۇرا%1$.1f°%2$s سىزنىڭ چېكىڭىزگە چۈشۈپ قالدى%3$.1f°%2$s</string>
+    <string name="afternoon_alert">تېمپېراتۇرا%1$.1f°%2$s سىزنىڭ چېكىڭىزگە چۈشۈپ قالدى%3$.1f°%2$s</string>
     <string name="temperature">تېمپېراتۇرا</string>
     <string name="morning_temp_alert">ئەتىگەنلىك ئاگاھلاندۇرۇش؟</string>
     <string name="afternoon_temp_alert">چۈشتىن كېيىن ئاگاھلاندۇرۇش؟</string>
+    <string name="morning_alert">تېمپېراتۇرا%1$.1f°%2$s سىزنىڭ%3$.1f°%2$s نىڭ چېكىگە يەتتى</string>
+    <string name="rainfall_alert">يامغۇردىن ئاگاھلاندۇرۇش؟</string>
+    <string name="rainfall_limit">يامغۇر مىقدارى</string>
+    <string name="rainrate_alert">يامغۇرلۇق ئاگاھلاندۇرۇش؟</string>
+    <string name="rainrate_limit">يامغۇر چەكلىمىسى</string>
+    <string name="hour">سائەت</string>
+    <string name="notification_permission">ئۇقتۇرۇش ئىجازىتى</string>
+    <string name="notifications_needed">تېمپېراتۇرا ، ھۆل-يېغىن ياكى يامغۇر سىز بەلگىلىگەن چەككە يەتكەندە سىزگە ئاگاھلاندۇرۇش كېرەك</string>
+    <string name="notifications_needed2">ئۇقتۇرۇش ئىجازىتىنى ئىككى قېتىم رەت قىلغانلىقىڭىز ئۈچۈن ، ئۇنى تەڭشەك ، قوزغىتىش تەڭشىكىدە قوزغىتىشىڭىز كېرەكمۇ؟</string>
+    <string name="rainfall_alert_metric">ھۆل-يېغىن%1$.1f%2$s سىزنىڭ%3$.1f%2$s چېكىڭىزگە ماس كەلدى</string>
+    <string name="rainfall_alert_imperial">ھۆل-يېغىن%1$.2f%2$s سىزنىڭ%3$.2f%2$s چېكىڭىزگە ماسلاشتى</string>
+    <string name="rainrate_alert_metric">يامغۇر مىقدارى%1$.1f%2$s سائىتىگە%3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">يامغۇر مىقدارى%1$.2f%2$s سائىتىگە%3$.2f%2$s</string>
 </resources>

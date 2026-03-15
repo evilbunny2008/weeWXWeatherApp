@@ -97,8 +97,21 @@
     <string name="interval_6h">6 шагатлан</string>
     <string name="interval_3h">3 шагатлан</string>
     <string name="interval_hourly">Шагат еда</string>
-    <string name="temp_alert">%1$.1f°%2$s температур тендан %3$.1f°%2$s марте волен</string>
+    <string name="afternoon_alert">%1$.1f°%2$s температур тендан %3$.1f°%2$s марте волен</string>
     <string name="temperature">Температур</string>
     <string name="morning_temp_alert">Эрдене шекланен?</string>
     <string name="afternoon_temp_alert">Кечывал деч варасе тревога?</string>
+    <string name="morning_alert">Температур %1$.1f°%2$s тендан лимит марте кӱзен %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Йӱр нерген шижтарымаш?</string>
+    <string name="rainfall_limit">Йӱр йӱрмӧ лимит</string>
+    <string name="rainrate_alert">Йӱр йӱрмӧ нерген шижтарымаш?</string>
+    <string name="rainrate_limit">Йӱр йӱрмӧ лимит</string>
+    <string name="hour">шагат</string>
+    <string name="notification_permission">Увертарымаш разрешений</string>
+    <string name="notifications_needed">Увертарымаш-влак кӱлыт, кунам температур, йӱр але йӱр йӱрмӧ годым тендан палемдыме чекда шуэш</string>
+    <string name="notifications_needed2">Увертарымаш разрешенийым кок гана отказым пуымо деч вара, тудым настройкыште йӧным ыштыман, настройкым почаш?</string>
+    <string name="rainfall_alert_metric">Йӱр %1$.1f%2$s тендан %3$.1f%2$s лимит дене келшен толеш</string>
+    <string name="rainfall_alert_imperial">Йӱр %1$.2f%2$s тендан %3$.2f%2$s лимит дене келшен толеш</string>
+    <string name="rainrate_alert_metric">Йӱр йӱрмӧ %1$.1f%2$s шагатлан ​​тендан %3$.1f%2$s лимит дене келшен толеш</string>
+    <string name="rainrate_alert_imperial">Шагатыште %1$.2f%2$s йӱр йӱрмӧ тендан %3$.2f%2$s лимитда дене келшен толеш</string>
 </resources>

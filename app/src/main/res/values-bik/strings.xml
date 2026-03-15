@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Kada Oras</string>
     <string name="interval_3h">3 Oras</string>
     <string name="interval_hourly">Oras-oras</string>
-    <string name="temp_alert">An temperatura %1$.1f°%2$s buminagsak sa saimong limitasyon na %3$.1f°%2$s</string>
+    <string name="afternoon_alert">An temperatura %1$.1f°%2$s buminagsak sa saimong limitasyon na %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Alerto sa Aga?</string>
     <string name="afternoon_temp_alert">Alerto sa Hapon?</string>
+    <string name="morning_alert">An temperatura %1$.1f°%2$s naglangkaw na sa saimong limitasyon na %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alerto sa Pag-uran?</string>
+    <string name="rainfall_limit">Limitasyon nin Pag-uran</string>
+    <string name="rainrate_alert">Rainrate Alert?</string>
+    <string name="rainrate_limit">Limitasyon sa Uran</string>
+    <string name="hour">oras</string>
+    <string name="notification_permission">Pagtugot sa Paisi</string>
+    <string name="notifications_needed">Kaipuhan an mga notipikasyon tanganing maalerto ka kun an temperatura, pag-uran o rainrate minaabot sa saimong mga itinalaan na limitasyon</string>
+    <string name="notifications_needed2">Nin huli ta duwang beses mong sinayumahan an permiso sa notipikasyon, kaipuhan mong i-enable ini sa mga setting imbes, an mga setting sa paglansar?</string>
+    <string name="rainfall_alert_metric">An pag-uran %1$.1f%2$s nakatugma sa saimong limitasyon na %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">An pag-uran %1$.2f%2$s nakatugma sa saimong limitasyon na %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">An rainrate na %1$.1f%2$s kada oras nakatugma sa saimong limitasyon na %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">An rainrate na %1$.2f%2$s kada oras nakatugma sa saimong limitasyon na %3$.2f%2$s</string>
 </resources>

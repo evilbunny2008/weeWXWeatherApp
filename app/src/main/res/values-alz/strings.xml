@@ -97,8 +97,21 @@
     <string name="interval_3h">3 kubang sawa</string>
     <string name="interval_hourly">Kubang sawa</string>
     <string name="forecast_interval">Kare ma jular jukoro (ka tiye)</string>
-    <string name="temp_alert">Lieth %1$.1f°%2$s udok piny ni %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Lieth %1$.1f°%2$s udok piny ni %3$.1f°%2$s</string>
     <string name="morning_temp_alert">Lembe mi uthieno?</string>
     <string name="afternoon_temp_alert">Lembe mi diewor?</string>
     <string name="temperature">Lyetho</string>
+    <string name="morning_alert">Liet %1$.1f°%2$s umedire nitundo i rwom peri mi %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Lembe mi koth?</string>
+    <string name="rainrate_alert">Rainrate Alert?</string>
+    <string name="rainfall_limit">Koth ma romo</string>
+    <string name="rainrate_limit">Koth ma romo</string>
+    <string name="hour">sawa</string>
+    <string name="notification_permission">Yio mi lwongo</string>
+    <string name="notifications_needed">Lembe mi poyo wic mitire ni poyo wii ka lyethu, koth nyo koth utuc ikum rwom peri</string>
+    <string name="notifications_needed2">Calu ma ikwero twero mi lwongo wang aryo, umitu iketh i settings kakare, launch settings?</string>
+    <string name="rainfall_alert_metric">Koth %1$.1f%2$s urombo ku rwom peri mi %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Koth %1$.2f%2$s urombo ku rwom peri mi %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Koth pa %1$.1f%2$s pi sawa acel urombo ku rwom peri pa %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Koth pa %1$.2f%2$s pi sawa acel urombo ku rwom peri pa %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Kas valandą</string>
     <string name="interval_3h">3 Valandos</string>
     <string name="interval_hourly">Kas valandą</string>
-    <string name="temp_alert">Temperatūra %1$.1f°%2$s nukrito iki %3$.1f°%2$s ribos</string>
+    <string name="afternoon_alert">Temperatūra %1$.1f°%2$s nukrito iki %3$.1f°%2$s ribos</string>
     <string name="temperature">Temperatūra</string>
     <string name="morning_temp_alert">Rytinis įspėjimas?</string>
     <string name="afternoon_temp_alert">Popietinis įspėjimas?</string>
+    <string name="morning_alert">Temperatūra %1$.1f°%2$s pakilo iki %3$.1f°%2$s ribos</string>
+    <string name="rainfall_alert">Įspėjimas dėl lietaus?</string>
+    <string name="rainfall_limit">Kritulių limitas</string>
+    <string name="rainrate_alert">Įspėjimas apie lietaus greitį?</string>
+    <string name="rainrate_limit">Lietaus normos riba</string>
+    <string name="hour">valandą</string>
+    <string name="notification_permission">Pranešimo leidimas</string>
+    <string name="notifications_needed">Pranešimai reikalingi, kad įspėtų jus, kai temperatūra, kritulių kiekis ar kritulių kiekis atitinka jūsų nustatytas ribas</string>
+    <string name="notifications_needed2">Kadangi du kartus atmetėte pranešimų leidimą, turite jį įjungti nustatymuose, paleisti nustatymus?</string>
+    <string name="rainfall_alert_metric">Kritulių kiekis %1$.1f%2$s atitiko %3$.1f%2$s limitą</string>
+    <string name="rainfall_alert_imperial">Kritulių kiekis %1$.2f%2$s atitiko %3$.2f%2$s limitą</string>
+    <string name="rainrate_alert_metric">%1$.1f%2$s lietaus greitis per valandą atitiko %3$.1f%2$s limitą</string>
+    <string name="rainrate_alert_imperial">%1$.2f%2$s lietaus greitis per valandą atitiko %3$.2f%2$s limitą</string>
 </resources>

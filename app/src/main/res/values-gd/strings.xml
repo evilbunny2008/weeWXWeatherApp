@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Uair</string>
     <string name="interval_3h">3 San uair</string>
     <string name="interval_hourly">Uair</string>
-    <string name="temp_alert">Tha an teòthachd %1$.1f°%2$s air tuiteam chun ìre as àirde de %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Tha an teòthachd %1$.1f°%2$s air tuiteam chun ìre as àirde de %3$.1f°%2$s</string>
     <string name="temperature">Teòthachd</string>
     <string name="morning_temp_alert">Rabhadh Madainn?</string>
     <string name="afternoon_temp_alert">Rabhadh Feasgar?</string>
+    <string name="morning_alert">Tha an teòthachd %1$.1f°%2$s air èirigh chun ìre as àirde de %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Rabhadh sileadh?</string>
+    <string name="rainfall_limit">Crìochan sileadh</string>
+    <string name="rainrate_alert">Rabhadh Rainrate?</string>
+    <string name="rainrate_limit">Crìochan uisgeachaidh</string>
+    <string name="hour">uair</string>
+    <string name="notification_permission">Cead fios</string>
+    <string name="notifications_needed">Tha feum air fiosan gus rabhadh a thoirt dhut nuair a choinnicheas teòthachd, sileadh no uisgeachadh ris na crìochan stèidhichte agad</string>
+    <string name="notifications_needed2">Leis gun do dhiùlt thu an cead fios dà uair, feumaidh tu a chomasachadh ann an roghainnean na àite, cuir air bhog roghainnean?</string>
+    <string name="rainfall_alert_metric">Tha an t-sileadh %1$.1f%2$s air a rèir do chrìoch de %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Tha an t-sileadh %1$.2f%2$s air a mhaidseadh ris a\' chrìoch agad de %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Tha an ìre uisge de %1$.1f%2$s san uair air a mhaidseadh ris a\' chrìoch agad de %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Tha an ìre uisge de %1$.2f%2$s san uair air a mhaidseadh ris a\' chrìoch agad de %3$.2f%2$s</string>
 </resources>

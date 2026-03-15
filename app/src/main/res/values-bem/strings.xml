@@ -97,8 +97,21 @@
     <string name="interval_3h">3 Insa</string>
     <string name="interval_hourly">Cila nsa</string>
     <string name="forecast_interval">Inshita iya Kusobela (nga calinga)</string>
-    <string name="temp_alert">Ukukaba %1$.1f°2$s kwacepa ukufika pa cipimo cenu ica %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Ukukaba %1$.1f°2$s kwacepa ukufika pa cipimo cenu ica %3$.1f°%2$s</string>
     <string name="temperature">Imibele ya miceele</string>
     <string name="morning_temp_alert">Ukucenjesha kwa mu cungulo?</string>
     <string name="afternoon_temp_alert">Ukucenjesha kwa cungulo?</string>
+    <string name="morning_alert">Ukukaba %1$.1f°2$s kwakulilako ukufika pa cipimo cenu ica %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Icebusho lya Mfula?</string>
+    <string name="rainfall_limit">Ukufika pa Mfula</string>
+    <string name="rainrate_alert">Icebusho lya Mfula?</string>
+    <string name="rainrate_limit">Ukucepelwa kwa Mfula</string>
+    <string name="hour">insa</string>
+    <string name="notification_permission">Insambu sha kwishibisha</string>
+    <string name="notifications_needed">Ifishibisho filakabilwa ukumicenjesha nga cakuti ukutenta, imfula nangula imfula yafika pa fipimo fyenu</string>
+    <string name="notifications_needed2">Apo mwakana insambu sha kwishibisha imiku ibili, bushe mufwile ukucisuminisha mu fipekanishiwe mu cifulo ca fyo, ukutendeka ifipekanishiwe?</string>
+    <string name="rainfall_alert_metric">Imfula %1$.1f%2$s yalilingana ne cipimo cenu ica %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Imfula %1$.2f%2$s yalilingana ne cipimo cenu ica %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Imfula iya %1$.1f%2$s pa ora yalilingana ne cipimo cenu ica %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Imfula iya %1$.2f%2$s pa ora yalilingana ne cipimo cenu ica %3$.2f%2$s</string>
 </resources>

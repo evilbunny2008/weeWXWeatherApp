@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Setiap Jam</string>
     <string name="interval_3h">3 Setiap Jam</string>
     <string name="interval_hourly">setiap jam</string>
-    <string name="temp_alert">Suhu %1$.1f°%2$s telah menurun kepada had anda sebanyak %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$.1f°%2$s telah menurun kepada had anda sebanyak %3$.1f°%2$s</string>
     <string name="temperature">Suhu</string>
     <string name="morning_temp_alert">Makluman Pagi?</string>
     <string name="afternoon_temp_alert">Makluman Petang?</string>
+    <string name="morning_alert">Suhu %1$.1f°%2$s telah meningkat kepada had anda sebanyak %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Makluman Hujan?</string>
+    <string name="rainfall_limit">Had Hujan</string>
+    <string name="rainrate_alert">Makluman Hujan?</string>
+    <string name="rainrate_limit">Had Kadar Hujan</string>
+    <string name="hour">jam</string>
+    <string name="notification_permission">Kebenaran Pemberitahuan</string>
+    <string name="notifications_needed">Pemberitahuan diperlukan untuk memaklumkan anda apabila suhu, hujan atau kadar hujan memenuhi had yang anda tetapkan</string>
+    <string name="notifications_needed2">Memandangkan anda menolak kebenaran pemberitahuan dua kali, anda perlu mendayakannya dalam tetapan sebaliknya, melancarkan tetapan?</string>
+    <string name="rainfall_alert_metric">Hujan %1$.1f%2$s telah sepadan dengan had anda sebanyak %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Hujan %1$.2f%2$s telah sepadan dengan had anda sebanyak %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Kadar hujan sebanyak %1$.1f%2$s sejam telah sepadan dengan had anda sebanyak %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Kadar hujan sebanyak %1$.2f%2$s sejam telah sepadan dengan had anda sebanyak %3$.2f%2$s</string>
 </resources>

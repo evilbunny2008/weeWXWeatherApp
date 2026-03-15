@@ -97,8 +97,21 @@
     <string name="interval_3h">3 ساعة</string>
     <string name="interval_hourly">كل ساعة</string>
     <string name="forecast_interval">الفاصل الزمني للتنبؤ (إن أمكن)</string>
-    <string name="temp_alert">انخفضت درجة الحرارة %1$.1f°%2$s إلى الحد المسموح به وهو %3$.1f°%2$s</string>
+    <string name="afternoon_alert">انخفضت درجة الحرارة %1$.1f°%2$s إلى الحد المسموح به وهو %3$.1f°%2$s</string>
     <string name="morning_temp_alert">تنبيه الصباح؟</string>
     <string name="afternoon_temp_alert">تنبيه بعد الظهر؟</string>
     <string name="temperature">درجة حرارة</string>
+    <string name="morning_alert">ارتفعت درجة الحرارة %1$.1f°%2$s إلى الحد المسموح به وهو %3$.1f°%2$s</string>
+    <string name="rainfall_alert">تنبيه هطول الأمطار؟</string>
+    <string name="rainrate_alert">تنبيه معدل المطر؟</string>
+    <string name="rainfall_limit">حد هطول الأمطار</string>
+    <string name="rainrate_limit">حد معدل المطر</string>
+    <string name="hour">ساعة</string>
+    <string name="notification_permission">إذن الإخطار</string>
+    <string name="notifications_needed">هناك حاجة إلى إشعارات لتنبيهك عندما تصل درجة الحرارة أو هطول الأمطار أو معدل هطول الأمطار إلى الحدود التي حددتها</string>
+    <string name="notifications_needed2">نظرًا لأنك رفضت إذن الإشعارات مرتين، فأنت بحاجة إلى تمكينه في الإعدادات بدلاً من ذلك، هل تريد تشغيل الإعدادات؟</string>
+    <string name="rainfall_alert_metric">لقد تطابق هطول الأمطار %1$.1f%2$s مع الحد الذي حددته وهو %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">لقد تطابق هطول الأمطار %1$.2f%2$s مع الحد المسموح به وهو %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">لقد تطابق معدل المطر %1$.1f%2$s في الساعة مع الحد الخاص بك وهو %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">لقد تطابق معدل المطر %1$.2f%2$s في الساعة مع الحد الخاص بك وهو %3$.2f%2$s</string>
 </resources>

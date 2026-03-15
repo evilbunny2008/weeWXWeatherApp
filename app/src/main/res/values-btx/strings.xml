@@ -97,8 +97,21 @@
     <string name="interval_3h">3 Jam</string>
     <string name="interval_hourly">Jam-jam</string>
     <string name="forecast_interval">Selang Ramalan (adi lit)</string>
-    <string name="temp_alert">Suhu %1$.1f°%2$s enggo nusur ku batasndu %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$.1f°%2$s enggo nusur ku batasndu %3$.1f°%2$s</string>
     <string name="temperature">Temperatur</string>
     <string name="morning_temp_alert">Siaga Pagi?</string>
     <string name="afternoon_temp_alert">Siaga Siang?</string>
+    <string name="morning_alert">Suhu %1$.1f°%2$s enggo naik ku batasndu %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Persinget kerna Udan?</string>
+    <string name="rainrate_alert">Persinget kerna Tingkat Udan?</string>
+    <string name="rainfall_limit">Batas Curah Udan</string>
+    <string name="rainrate_limit">Batas Tingkat Udan</string>
+    <string name="hour">jam</string>
+    <string name="notification_permission">Izin Pemberitahuan</string>
+    <string name="notifications_needed">Pemberitahuan iperluken guna mpersingeti kam sanga suhu, curah udan ntah pe tingkat udan enggo seh ku batas si enggo itetapkenndu</string>
+    <string name="notifications_needed2">Erkiteken enggo dua kali kam nulak izin pemberitahuan, perlu kam ngaktifkenca i bas pengaturen sebalikna, pengaturen peluncuran?</string>
+    <string name="rainfall_alert_metric">Udan %1$.1f%2$s enggo cocok ras batasndu %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Curah udan %1$.2f%2$s enggo cocok ras batasndu %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Tingkat udan %1$.1f%2$s per jam enggo cocok ras batasndu %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Tingkat udan %1$.2f%2$s per jam enggo cocok ras batasndu %3$.2f%2$s</string>
 </resources>

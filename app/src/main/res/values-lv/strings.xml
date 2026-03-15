@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Stundu</string>
     <string name="interval_3h">3 Stundu</string>
     <string name="interval_hourly">Stundu</string>
-    <string name="temp_alert">Temperatūra %1$.1f°%2$s ir noslīdējusi līdz robežai %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatūra %1$.1f°%2$s ir noslīdējusi līdz robežai %3$.1f°%2$s</string>
     <string name="temperature">Temperatūra</string>
     <string name="morning_temp_alert">Rīta brīdinājums?</string>
     <string name="afternoon_temp_alert">Pēcpusdienas brīdinājums?</string>
+    <string name="morning_alert">Temperatūra %1$.1f°%2$s ir pieaugusi līdz jūsu ierobežojumam %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Brīdinājums par nokrišņiem?</string>
+    <string name="rainfall_limit">Nokrišņu limits</string>
+    <string name="rainrate_alert">Brīdinājums par lietus ātrumu?</string>
+    <string name="rainrate_limit">Lietus daudzuma ierobežojums</string>
+    <string name="hour">stundu</string>
+    <string name="notification_permission">Paziņojumu atļauja</string>
+    <string name="notifications_needed">Paziņojumi ir nepieciešami, lai brīdinātu jūs, kad temperatūra, nokrišņu daudzums vai lietus daudzums atbilst jūsu iestatītajiem ierobežojumiem</string>
+    <string name="notifications_needed2">Tā kā jūs divreiz noraidījāt paziņojumu atļauju, tā ir jāiespējo iestatījumos, vai palaist iestatījumus?</string>
+    <string name="rainfall_alert_metric">Nokrišņu daudzums %1$.1f%2$s atbilst jūsu ierobežojumam %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Nokrišņu daudzums %1$.2f%2$s atbilst jūsu ierobežojumam %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Lietus ātrums %1$.1f%2$s stundā atbilst jūsu ierobežojumam %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Lietus ātrums %1$.2f%2$s stundā atbilst jūsu ierobežojumam %3$.2f%2$s</string>
 </resources>

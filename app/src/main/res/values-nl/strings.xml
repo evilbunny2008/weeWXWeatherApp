@@ -97,8 +97,21 @@
     <string name="interval_6h">6 uur</string>
     <string name="interval_3h">3 Per uur</string>
     <string name="interval_hourly">Per uur</string>
-    <string name="temp_alert">Temperatuur %1$.1f°%2$s is gedaald tot uw limiet van %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatuur %1$.1f°%2$s is gedaald tot uw limiet van %3$.1f°%2$s</string>
     <string name="temperature">Temperatuur</string>
     <string name="morning_temp_alert">Ochtendwaarschuwing?</string>
     <string name="afternoon_temp_alert">Middagwaarschuwing?</string>
+    <string name="morning_alert">Temperatuur %1$.1f°%2$s is gestegen tot uw limiet van %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Neerslagwaarschuwing?</string>
+    <string name="rainfall_limit">Neerslaglimiet</string>
+    <string name="rainrate_alert">Regenwaarschuwing?</string>
+    <string name="rainrate_limit">Regensnelheidslimiet</string>
+    <string name="hour">uur</string>
+    <string name="notification_permission">Meldingstoestemming</string>
+    <string name="notifications_needed">Er zijn meldingen nodig om u te waarschuwen wanneer de temperatuur, regenval of regenhoeveelheid de door u ingestelde limieten bereikt</string>
+    <string name="notifications_needed2">Omdat je de toestemming voor meldingen twee keer hebt geweigerd, moet je deze in plaats daarvan inschakelen in de instellingen. Instellingen starten?</string>
+    <string name="rainfall_alert_metric">Neerslag %1$.1f%2$s komt overeen met uw limiet van %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Neerslag %1$.2f%2$s komt overeen met uw limiet van %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Regensnelheid van %1$.1f%2$s per uur komt overeen met uw limiet van %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Regensnelheid van %1$.2f%2$s per uur komt overeen met uw limiet van %3$.2f%2$s</string>
 </resources>

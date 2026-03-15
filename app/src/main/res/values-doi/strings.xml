@@ -97,8 +97,21 @@
     <string name="interval_6h">६घंटे दा</string>
     <string name="interval_3h">३घंटे दा</string>
     <string name="interval_hourly">हर घंटे</string>
-    <string name="temp_alert">तापमान %1$.1f°%2$s तुंदी सीमा %3$.1f°%2$s तगर घट्ट होई गेआ ऐ</string>
+    <string name="afternoon_alert">तापमान %1$.1f°%2$s तुंदी सीमा %3$.1f°%2$s तगर घट्ट होई गेआ ऐ</string>
     <string name="temperature">तापमान</string>
     <string name="morning_temp_alert">सुबह दा अलर्ट?</string>
     <string name="afternoon_temp_alert">दोपहर दा अलर्ट?</string>
+    <string name="morning_alert">तापमान %1$.1f°%2$s तुंदी सीमा %3$.1f°%2$s तगर बधी गेदा ऐ</string>
+    <string name="rainfall_alert">बरखा दा अलर्ट?</string>
+    <string name="rainfall_limit">बरखा की सीमा</string>
+    <string name="rainrate_alert">रेनरेट अलर्ट ऐ?</string>
+    <string name="rainrate_limit">रेनरेट सीमा</string>
+    <string name="hour">घैंटा</string>
+    <string name="notification_permission">अधिसूचना दी अनुमति</string>
+    <string name="notifications_needed">जदूं तापमान, बरखा जां बरखा दी दर तुंदी निर्धारित सीमा गी पूरा करदी ऐ तां तुसेंगी अलर्ट करने लेई सूचनाएं दी लोड़ ऐ</string>
+    <string name="notifications_needed2">चूंकि तुसें सूचना दी अनुमति गी दो बारी मना करी दित्ता ऐ, इसलेई तुसेंगी इसदे बजाय सेटिंग्स च सक्षम करने दी लोड़ ऐ, सेटिंग्स लॉन्च करो?</string>
+    <string name="rainfall_alert_metric">बरखा %1$.1f%2$s तुंदी सीमा %3$.1f%2$s कन्नै मेल खंदा ऐ</string>
+    <string name="rainfall_alert_imperial">बरखा %1$.2f%2$s तुंदी सीमा %3$.2f%2$s कन्नै मेल खंदा ऐ</string>
+    <string name="rainrate_alert_metric">%1$.1f%2$s प्रति घैंटे दी बरखा दर तुंदी %3$.1f%2$s दी सीमा कन्नै मेल खंदा ऐ</string>
+    <string name="rainrate_alert_imperial">%1$.2f%2$s प्रति घैंटे दी बरखा दर तुंदी %3$.2f%2$s दी सीमा कन्नै मेल खंदा ऐ</string>
 </resources>

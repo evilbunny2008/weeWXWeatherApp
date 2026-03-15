@@ -97,8 +97,21 @@
     <string name="interval_3h">3 Cawa acel acel</string>
     <string name="interval_hourly">Cawa acel acel</string>
     <string name="forecast_interval">kare me byeko anyim (ka tye)</string>
-    <string name="temp_alert">Lyeto %1$.1f°%2$s opoto piny nio wa i rwom me %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Lyeto %1$.1f°%2$s opoto piny nio wa i rwom me %3$.1f°%2$s</string>
     <string name="morning_temp_alert">Lok me odiko?</string>
     <string name="afternoon_temp_alert">Lok me dyeceng?</string>
     <string name="temperature">Lyeto ki ngicu</string>
+    <string name="morning_alert">Lyeto %1$.1f°%2$s omede wa i rwom me %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Lok me kot?</string>
+    <string name="rainrate_alert">Lok me kot?</string>
+    <string name="rainfall_limit">wel kot ma twero cwer</string>
+    <string name="rainrate_limit">Pek pa kot ma twero cwer</string>
+    <string name="hour">cawa</string>
+    <string name="notification_permission">twero me miyo ngec</string>
+    <string name="notifications_needed">Lok ma miite me poyo wii ka lyeto, kot onyo rwom me kot oo i rwom ma imito</string>
+    <string name="notifications_needed2">Kit ma i kwero twero me miyo ngec ni tyen aryo, omyera i ket i yub me tic, yub me yabo?</string>
+    <string name="rainfall_alert_metric">Kot %1$.1f%2$s orwate ki rwom me %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Kot %1$.2f%2$s orwate ki rwom me %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Kot ma oo %1$.1f%2$s pi cawa acel orwate ki rwom me %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Kot ma oo %1$.2f%2$s pi cawa acel orwate ki rwom me %3$.2f%2$s</string>
 </resources>

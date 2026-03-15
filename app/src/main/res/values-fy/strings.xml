@@ -97,8 +97,21 @@
     <string name="interval_6h">6 oere</string>
     <string name="interval_3h">3 oere</string>
     <string name="interval_hourly">Oeren</string>
-    <string name="temp_alert">Temperatuer %1$.1f°%2$s is sakke nei jo limyt fan %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatuer %1$.1f°%2$s is sakke nei jo limyt fan %3$.1f°%2$s</string>
     <string name="temperature">Temperatuer</string>
     <string name="morning_temp_alert">Moarn warskôging?</string>
     <string name="afternoon_temp_alert">Middeis warskôging?</string>
+    <string name="morning_alert">Temperatuer %1$.1f°%2$s is omheech gien nei jo limyt fan %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Rainfall Alert?</string>
+    <string name="rainfall_limit">Rainfall Limit</string>
+    <string name="rainrate_alert">Rainrate Alert?</string>
+    <string name="rainrate_limit">Rainrate Limit</string>
+    <string name="hour">oere</string>
+    <string name="notification_permission">Notifikaasje Tastimming</string>
+    <string name="notifications_needed">Notifikaasjes binne nedich om jo te warskôgjen as temperatuer, delslach of reinrate oan jo ynstelde grinzen foldocht</string>
+    <string name="notifications_needed2">Om\'t jo de tastimming foar notifikaasje twa kear wegere hawwe, moatte jo it ynstee ynskeakelje yn ynstellings, ynstellings starte?</string>
+    <string name="rainfall_alert_metric">Reinfal %1$.1f%2$s komt oerien mei jo limyt fan %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Reinfal %1$.2f%2$s komt oerien mei jo limyt fan %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Rainrate fan %1$.1f%2$s per oere komt oerien mei jo limyt fan %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Rainrate fan %1$.2f%2$s per oere komt oerien mei jo limyt fan %3$.2f%2$s</string>
 </resources>

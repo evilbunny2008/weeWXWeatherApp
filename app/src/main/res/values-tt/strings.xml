@@ -97,8 +97,21 @@
     <string name="interval_6h">6 сәгать</string>
     <string name="interval_3h">3 сәгать</string>
     <string name="interval_hourly">Сәгать саен</string>
-    <string name="temp_alert">Температура%1$.1f°%2$s сезнең лимитка төште%3$.1f°%2$s</string>
+    <string name="afternoon_alert">Температура%1$.1f°%2$s сезнең лимитка төште%3$.1f°%2$s</string>
     <string name="temperature">Температура</string>
     <string name="morning_temp_alert">Таң хәбәре?</string>
     <string name="afternoon_temp_alert">Көндезге хәбәр?</string>
+    <string name="morning_alert">Температура%1$.1f°%2$s сезнең лимитка күтәрелде%3$.1f°%2$s</string>
+    <string name="rainfall_alert">Яңгыр турында хәбәр?</string>
+    <string name="rainfall_limit">Яңгыр чикләре</string>
+    <string name="rainrate_alert">Яңгыр?</string>
+    <string name="rainrate_limit">Яңгыр чикләре</string>
+    <string name="hour">сәгать</string>
+    <string name="notification_permission">Хәбәрләр рөхсәте</string>
+    <string name="notifications_needed">Температура, яңгыр яисә яңгыр яву билгеләнгән чикләргә туры килгәндә сезне хәбәр итү өчен хәбәрләр кирәк</string>
+    <string name="notifications_needed2">Ике тапкыр хәбәр итү рөхсәтеннән баш тартканга, сез аны көйләүләрдә, көйләүләрне эшләтеп җибәрергә тиеш?</string>
+    <string name="rainfall_alert_metric">Яңгыр%1$.1f%2$s сезнең лимитка туры килде%3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Яңгыр%1$.2f%2$s сезнең лимитка туры килде%3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Сәгатенә%1$.1f%2$s яңгыры сезнең%3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Сәгатенә%1$.2f%2$s яңгыры сезнең%3$.2f%2$s лимитына туры килде</string>
 </resources>

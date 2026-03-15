@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Waktu kala</string>
     <string name="interval_3h">3 Waktu kala</string>
     <string name="interval_hourly">Waktu kala</string>
-    <string name="temp_alert">Nguleeki %1$.1f°%2$s ustiima haa keerol maa %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Nguleeki %1$.1f°%2$s ustiima haa keerol maa %3$.1f°%2$s</string>
     <string name="temperature">Wulol</string>
     <string name="morning_temp_alert">Jeertinaango subaka?</string>
     <string name="afternoon_temp_alert">Jeertinaango kikiiɗe?</string>
+    <string name="morning_alert">Tampere %1$.1f°%2$s ɓeydiima haa keerol maa %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Jeertinaango toɓo?</string>
+    <string name="rainfall_limit">Keeri Toɓo</string>
+    <string name="rainrate_alert">Jeertinaango toɓo?</string>
+    <string name="rainrate_limit">Keerol toɓo</string>
+    <string name="hour">njamdi</string>
+    <string name="notification_permission">Jaɓde humpito</string>
+    <string name="notifications_needed">Notifikaaji ina njiɗaa ngam jeertinde ma so nguleeki, toɓo walla tolno toɓo ina hawra e keerol ngol ndarnaa</string>
+    <string name="notifications_needed2">Nde tawnoo a saliima yamiroore humpito laabi ɗiɗi, aɗa foti softinde ɗum e dottaaɗe e nokku, udditaa dottaaɗe?</string>
+    <string name="rainfall_alert_metric">Toɓo %1$.1f%2$s hawrii e keerol maa %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Toɓo %1$.2f%2$s hawrii e keerol maa %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Toɓo %1$.1f%2$s e waktu ina hawri e keerol maa %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Toɓo %1$.2f%2$s e waktu gooto hawri ko e keerol maa %3$.2f%2$s</string>
 </resources>

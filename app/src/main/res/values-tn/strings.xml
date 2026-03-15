@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ka ura</string>
     <string name="interval_3h">3 Ura</string>
     <string name="interval_hourly">Ura le ura</string>
-    <string name="temp_alert">Mogote wa %1$.1f°%2$s o wetse tlase go fitlha kwa selekanyong sa gago sa %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Mogote wa %1$.1f°%2$s o wetse tlase go fitlha kwa selekanyong sa gago sa %3$.1f°%2$s</string>
     <string name="temperature">Themperetšha</string>
     <string name="morning_temp_alert">Tlhagiso ya Moso?</string>
     <string name="afternoon_temp_alert">Tlhagiso ya Thapama?</string>
+    <string name="morning_alert">Mogote wa %1$.1f°%2$s o tlhatlogetse kwa selekanyong sa gago sa %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Tlhagiso ya Pula?</string>
+    <string name="rainfall_limit">Tekanyetso ya Pula</string>
+    <string name="rainrate_alert">Tlhagiso ya Seelo sa Pula?</string>
+    <string name="rainrate_limit">Tekanyetso ya Seelo sa Pula</string>
+    <string name="hour">ura</string>
+    <string name="notification_permission">Tetla ya Kitsiso</string>
+    <string name="notifications_needed">Dikitsiso di a tlhokega go go tsibosa fa themphereitšha, pula kgotsa selekanyo sa pula di fitlhelela melelwane e o e beileng</string>
+    <string name="notifications_needed2">E re ka o ganne tetla ya kitsiso gabedi, a o tlhoka go e kgontsha mo diseting boemong jwa seo, simolola diseting?</string>
+    <string name="rainfall_alert_metric">Pula ya %1$.1f%2$s e nyalane le tekanyetso ya gago ya %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Pula ya %1$.2f%2$s e nyalane le tekanyetso ya gago ya %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Seelo sa pula sa %1$.1f%2$s ka ura se tsamaisana le tekanyetso ya gago ya %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Seelo sa pula sa %1$.2f%2$s ka ura se tsamaisana le tekanyetso ya gago ya %3$.2f%2$s</string>
 </resources>

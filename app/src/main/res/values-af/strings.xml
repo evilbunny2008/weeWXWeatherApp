@@ -97,8 +97,21 @@
     <string name="interval_3h">3 uurliks</string>
     <string name="interval_hourly">Uurliks</string>
     <string name="forecast_interval">Voorspellingsinterval (indien van toepassing)</string>
-    <string name="temp_alert">Temperatuur %1$.1f°%2$s het tot jou limiet van %3$.1f°%2$s gedaal</string>
+    <string name="afternoon_alert">Temperatuur %1$.1f°%2$s het tot jou limiet van %3$.1f°%2$s gedaal</string>
     <string name="morning_temp_alert">Oggendwaarskuwing?</string>
     <string name="afternoon_temp_alert">Middagwaarskuwing?</string>
     <string name="temperature">Temperatuur</string>
+    <string name="morning_alert">Temperatuur %1$.1f°%2$s het tot jou limiet van %3$.1f°%2$s gestyg</string>
+    <string name="rainfall_alert">Reënvalwaarskuwing?</string>
+    <string name="rainrate_alert">Reëntempo waarskuwing?</string>
+    <string name="rainfall_limit">Reënval beperking</string>
+    <string name="rainrate_limit">Reëntempo beperking</string>
+    <string name="hour">uur</string>
+    <string name="notification_permission">Kennisgewing toestemming</string>
+    <string name="notifications_needed">Kennisgewings is nodig om jou te waarsku wanneer temperatuur, reënval of reëntempo jou vasgestelde limiete bereik</string>
+    <string name="notifications_needed2">Aangesien jy die kennisgewingtoestemming twee keer geweier het, moet jy dit eerder in instellings aktiveer, instellings begin?</string>
+    <string name="rainfall_alert_metric">Reënval %1$.1f%2$s het ooreenstem met jou limiet van %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Reënval %1$.2f%2$s het ooreenstem met jou limiet van %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Reëntempo van %1$.1f%2$s per uur het ooreenstem met jou limiet van %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Reëntempo van %1$.2f%2$s per uur het ooreenstem met jou limiet van %3$.2f%2$s</string>
 </resources>

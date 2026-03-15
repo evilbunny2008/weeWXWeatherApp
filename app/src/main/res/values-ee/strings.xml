@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Gaƒoƒo ɖesiaɖe</string>
     <string name="interval_3h">3 Gaƒoƒo ɖesiaɖe</string>
     <string name="interval_hourly">Gaƒoƒo sia gaƒoƒo</string>
-    <string name="temp_alert">Dzoxɔxɔ %1$.1f°%2$s ɖiɖi va ɖo wò seɖoƒe si nye %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Dzoxɔxɔ %1$.1f°%2$s ɖiɖi va ɖo wò seɖoƒe si nye %3$.1f°%2$s</string>
     <string name="temperature">Dzoxɔxɔ</string>
     <string name="morning_temp_alert">Ŋdi ƒe Nuxlɔ̃amea?</string>
     <string name="afternoon_temp_alert">Ŋdɔ me Nuxlɔ̃amea?</string>
+    <string name="morning_alert">Dzoxɔxɔ %1$.1f°%2$s dzi ɖe edzi va ɖo wò seɖoƒe si nye %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Tsidzadza ƒe Nuxlɔ̃amea?</string>
+    <string name="rainfall_limit">Tsidzadza ƒe Seɖoƒe</string>
+    <string name="rainrate_alert">Tsidzadza ƒe Nuxlɔ̃amea?</string>
+    <string name="rainrate_limit">Tsidzadza ƒe Seɖoƒe</string>
+    <string name="hour">gaƒoƒo</string>
+    <string name="notification_permission">Mɔɖeɖe na Nyatakaka</string>
+    <string name="notifications_needed">Nyatakakawo hiã be woaxlɔ̃ nu wò ne dzoxɔxɔ, tsidzadza alo tsidzadza ƒe agbɔsɔsɔme ɖo seɖoƒe si nèɖo gbɔ</string>
+    <string name="notifications_needed2">Esi nègbe gbeƒãɖeɖe ƒe mɔɖeɖea zi eve ta la, ele be nàwɔe le ɖoɖowo me boŋ, dze ɖoɖowo gɔmea?</string>
+    <string name="rainfall_alert_metric">Tsidzadza %1$.1f%2$s sɔ kple wò seɖoƒe si nye %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Tsidzadza %1$.2f%2$s sɔ kple wò seɖoƒe si nye %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Tsidzadza ƒe agbɔsɔsɔme si nye %1$.1f%2$s le gaƒoƒo ɖeka me sɔ kple wò seɖoƒe si nye %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Tsidzadza ƒe agbɔsɔsɔme si nye %1$.2f%2$s le gaƒoƒo ɖeka me sɔ kple wò seɖoƒe si nye %3$.2f%2$s</string>
 </resources>

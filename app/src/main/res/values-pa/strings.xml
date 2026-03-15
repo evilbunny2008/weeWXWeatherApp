@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ਘੰਟਾ</string>
     <string name="interval_3h">੩ਘੰਟਾ</string>
     <string name="interval_hourly">ਘੰਟਾ</string>
-    <string name="temp_alert">ਤਾਪਮਾਨ %1$.1f°%2$s ਤੁਹਾਡੀ ਸੀਮਾ %3$.1f°%2$s ਤੱਕ ਡਿੱਗ ਗਿਆ ਹੈ</string>
+    <string name="afternoon_alert">ਤਾਪਮਾਨ %1$.1f°%2$s ਤੁਹਾਡੀ ਸੀਮਾ %3$.1f°%2$s ਤੱਕ ਡਿੱਗ ਗਿਆ ਹੈ</string>
     <string name="temperature">ਤਾਪਮਾਨ</string>
     <string name="morning_temp_alert">ਸਵੇਰ ਦੀ ਚੇਤਾਵਨੀ?</string>
     <string name="afternoon_temp_alert">ਦੁਪਹਿਰ ਦੀ ਚੇਤਾਵਨੀ?</string>
+    <string name="morning_alert">ਤਾਪਮਾਨ %1$.1f°%2$s ਤੁਹਾਡੀ ਸੀਮਾ %3$.1f°%2$s ਤੱਕ ਵੱਧ ਗਿਆ ਹੈ</string>
+    <string name="rainfall_alert">ਮੀਂਹ ਦੀ ਚੇਤਾਵਨੀ?</string>
+    <string name="rainfall_limit">ਮੀਂਹ ਦੀ ਸੀਮਾ</string>
+    <string name="rainrate_alert">ਬਾਰਿਸ਼ ਦੀ ਚੇਤਾਵਨੀ?</string>
+    <string name="rainrate_limit">ਮੀਂਹ ਦੀ ਦਰ ਸੀਮਾ</string>
+    <string name="hour">ਘੰਟਾ</string>
+    <string name="notification_permission">ਸੂਚਨਾ ਅਨੁਮਤੀ</string>
+    <string name="notifications_needed">ਜਦੋਂ ਤਾਪਮਾਨ, ਬਾਰਸ਼ ਜਾਂ ਮੀਂਹ ਦੀ ਦਰ ਤੁਹਾਡੀਆਂ ਨਿਰਧਾਰਤ ਸੀਮਾਵਾਂ ਨੂੰ ਪੂਰਾ ਕਰਦੀ ਹੈ ਤਾਂ ਤੁਹਾਨੂੰ ਸੁਚੇਤ ਕਰਨ ਲਈ ਸੂਚਨਾਵਾਂ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ</string>
+    <string name="notifications_needed2">ਕਿਉਂਕਿ ਤੁਸੀਂ ਨੋਟੀਫਿਕੇਸ਼ਨ ਅਨੁਮਤੀ ਨੂੰ ਦੋ ਵਾਰ ਅਸਵੀਕਾਰ ਕੀਤਾ ਹੈ, ਤੁਹਾਨੂੰ ਇਸ ਦੀ ਬਜਾਏ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਇਸਨੂੰ ਸਮਰੱਥ ਕਰਨ ਦੀ ਲੋੜ ਹੈ, ਸੈਟਿੰਗਾਂ ਲਾਂਚ ਕਰੋ?</string>
+    <string name="rainfall_alert_metric">ਬਾਰਸ਼ %1$.1f%2$s ਤੁਹਾਡੀ %3$.1f%2$s ਦੀ ਸੀਮਾ ਨਾਲ ਮੇਲ ਖਾਂਦੀ ਹੈ</string>
+    <string name="rainfall_alert_imperial">ਬਾਰਸ਼ %1$.2f%2$s ਤੁਹਾਡੀ %3$.2f%2$s ਦੀ ਸੀਮਾ ਨਾਲ ਮੇਲ ਖਾਂਦੀ ਹੈ</string>
+    <string name="rainrate_alert_metric">%1$.1f%2$s ਪ੍ਰਤੀ ਘੰਟਾ ਮੀਂਹ ਦੀ ਦਰ ਤੁਹਾਡੀ %3$.1f%2$s ਦੀ ਸੀਮਾ ਨਾਲ ਮੇਲ ਖਾਂਦੀ ਹੈ</string>
+    <string name="rainrate_alert_imperial">%1$.2f%2$s ਪ੍ਰਤੀ ਘੰਟਾ ਮੀਂਹ ਦੀ ਦਰ ਤੁਹਾਡੀ %3$.2f%2$s ਦੀ ਸੀਮਾ ਨਾਲ ਮੇਲ ਖਾਂਦੀ ਹੈ</string>
 </resources>

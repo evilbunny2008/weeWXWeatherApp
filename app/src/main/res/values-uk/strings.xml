@@ -97,8 +97,21 @@
     <string name="interval_6h">6 щогодини</string>
     <string name="interval_3h">3 щогодини</string>
     <string name="interval_hourly">щогодини</string>
-    <string name="temp_alert">Температура %1$.1f°%2$s впала до вашого ліміту %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Температура %1$.1f°%2$s впала до вашого ліміту %3$.1f°%2$s</string>
     <string name="temperature">температура</string>
     <string name="morning_temp_alert">Ранкова тривога?</string>
     <string name="afternoon_temp_alert">Оповіщення після обіду?</string>
+    <string name="morning_alert">Температура %1$.1f°%2$s піднялася до вашого ліміту %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Сповіщення про дощ?</string>
+    <string name="rainfall_limit">Обмеження кількості опадів</string>
+    <string name="rainrate_alert">Сповіщення про дощ?</string>
+    <string name="rainrate_limit">Обмеження дощу</string>
+    <string name="hour">година</string>
+    <string name="notification_permission">Дозвіл на сповіщення</string>
+    <string name="notifications_needed">Повідомлення потрібні, щоб сповістити вас, коли температура, кількість опадів або кількість дощу досягає встановлених обмежень</string>
+    <string name="notifications_needed2">Оскільки ви двічі відхилили дозвіл на сповіщення, вам потрібно натомість увімкнути його в налаштуваннях, запустити налаштування?</string>
+    <string name="rainfall_alert_metric">Кількість опадів %1$.1f%2$s досягла вашого ліміту %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Кількість опадів %1$.2f%2$s досягла вашого обмеження в %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Кількість опадів %1$.1f%2$s на годину відповідає вашому обмеженню %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Кількість опадів %1$.2f%2$s на годину відповідає вашому обмеженню %3$.2f%2$s</string>
 </resources>

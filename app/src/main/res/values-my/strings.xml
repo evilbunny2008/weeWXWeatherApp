@@ -97,8 +97,21 @@
     <string name="interval_6h">၆ နာရီ</string>
     <string name="interval_3h">၃ နာရီ</string>
     <string name="interval_hourly">နာရီတိုင်း</string>
-    <string name="temp_alert">အပူချိန် %1$.1f°%2$s သည် သင့်ကန့်သတ်ချက် %3$.1f°%2$s သို့ ကျဆင်းသွားသည်</string>
+    <string name="afternoon_alert">အပူချိန် %1$.1f°%2$s သည် သင့်ကန့်သတ်ချက် %3$.1f°%2$s သို့ ကျဆင်းသွားသည်</string>
     <string name="temperature">အပူချိန်</string>
     <string name="morning_temp_alert">မနက်ခင်း သတိပေးချက်</string>
     <string name="afternoon_temp_alert">နေ့ခင်းသတိပေးချက်?</string>
+    <string name="morning_alert">အပူချိန် %1$.1f°%2$s သည် သင့်ကန့်သတ်ချက် %3$.1f°%2$s သို့ တက်သွားသည်</string>
+    <string name="rainfall_alert">မိုးရွာသွန်းမှု သတိပေးချက်</string>
+    <string name="rainfall_limit">မိုးရေချိန်ကန့်သတ်ချက်</string>
+    <string name="rainrate_alert">မိုးရေချိန် သတိပေးချက်။</string>
+    <string name="rainrate_limit">မိုးရေချိန်ကန့်သတ်ချက်</string>
+    <string name="hour">နာရီ</string>
+    <string name="notification_permission">အသိပေးချက်ခွင့်ပြုချက်</string>
+    <string name="notifications_needed">အပူချိန်၊ မိုးရွာသွန်းမှု သို့မဟုတ် မိုးရေချိန်သည် သင်၏သတ်မှတ်ကန့်သတ်ချက်များနှင့် ပြည့်မီသည့်အခါ သင့်ကိုသတိပေးရန်လိုအပ်ပါသည်။</string>
+    <string name="notifications_needed2">အကြောင်းကြားချက်ခွင့်ပြုချက်ကို နှစ်ကြိမ်တိုင်တိုင် ငြင်းပယ်ခဲ့သောကြောင့်၊ ၎င်းအစား ဆက်တင်များတွင် ၎င်းကိုဖွင့်ရန်၊ ဆက်တင်များကိုဖွင့်ရန် လိုအပ်ပါသလား။</string>
+    <string name="rainfall_alert_metric">မိုးရေချိန် %1$.1f%2$s သည် သင့်ကန့်သတ်ချက် %3$.1f%2$s နှင့် ကိုက်ညီသည်</string>
+    <string name="rainfall_alert_imperial">မိုးရေချိန် %1$.2f%2$s သည် သင့်ကန့်သတ်ချက် %3$.2f%2$s နှင့် ကိုက်ညီသည်</string>
+    <string name="rainrate_alert_metric">တစ်နာရီလျှင် မိုးရေချိန် %1$.1f%2$s သည် သင့်ကန့်သတ်ချက် %3$.1f%2$s နှင့် ကိုက်ညီသည်</string>
+    <string name="rainrate_alert_imperial">တစ်နာရီလျှင် မိုးရေချိန် %1$.2f%2$s သည် သင့်ကန့်သတ်ချက် %3$.2f%2$s နှင့် ကိုက်ညီသည်</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 eurvezh</string>
     <string name="interval_3h">3 eurvezh</string>
     <string name="interval_hourly">Bep eurvezh</string>
-    <string name="temp_alert">Diskennet eo an temperadur %1$.1f°%2$s betek ho bevenn a %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Diskennet eo an temperadur %1$.1f°%2$s betek ho bevenn a %3$.1f°%2$s</string>
     <string name="temperature">Gwrez</string>
     <string name="morning_temp_alert">Kemennadenn ar mintin?</string>
     <string name="afternoon_temp_alert">Kemenn goude merenn?</string>
+    <string name="morning_alert">Savet eo an temperadur %1$.1f°%2$s betek ho bevenn a %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Kemennadenn glav?</string>
+    <string name="rainfall_limit">Bevenn ar glaveier</string>
+    <string name="rainrate_alert">Diwall ouzh ar feur glav?</string>
+    <string name="rainrate_limit">Bevenn ar feur glav</string>
+    <string name="hour">eur</string>
+    <string name="notification_permission">Aotre kemenn</string>
+    <string name="notifications_needed">Ezhomm zo eus kemennadennoù evit ho kelaouiñ pa vez an temperadur, ar glav pe ar feur glav o tizhout ho bevennoù lakaet</string>
+    <string name="notifications_needed2">Dre ma\'z oc\'h bet nac\'het div wech an aotre da gemenn, ret eo deoc\'h he gweredekaat en arventennoù e-lec\'h, arventennoù lañsañ?</string>
+    <string name="rainfall_alert_metric">Ar glaveier %1$.1f%2$s en deus kevatal d\'ho termen %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Ar glaveier %1$.2f%2$s en deus kevatal d\'ho bevenn %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Ar feur glav a %1$.1f%2$s dre eurvezh a glot gant ho bevenn a %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Ar feur glav a %1$.2f%2$s dre eurvezh a glot gant ho bevenn a %3$.2f%2$s</string>
 </resources>

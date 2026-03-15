@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Óránként</string>
     <string name="interval_3h">3 óránként</string>
     <string name="interval_hourly">Óránkénti</string>
-    <string name="temp_alert">A %1$.1f°%2$s hőmérséklet a %3$.1f°%2$s határértékre esett</string>
+    <string name="afternoon_alert">A %1$.1f°%2$s hőmérséklet a %3$.1f°%2$s határértékre esett</string>
     <string name="temperature">Hőmérséklet</string>
     <string name="morning_temp_alert">Reggeli riasztás?</string>
     <string name="afternoon_temp_alert">Délutáni riasztás?</string>
+    <string name="morning_alert">A %1$.1f°%2$s hőmérséklet elérte a %3$.1f°%2$s határértéket</string>
+    <string name="rainfall_alert">Eső riasztás?</string>
+    <string name="rainfall_limit">Csapadékkorlát</string>
+    <string name="rainrate_alert">Esőszám riasztás?</string>
+    <string name="rainrate_limit">Rainrate Limit</string>
+    <string name="hour">óra</string>
+    <string name="notification_permission">Értesítési engedély</string>
+    <string name="notifications_needed">Az értesítésekre azért van szükség, hogy figyelmeztesse Önt, ha a hőmérséklet, csapadék vagy csapadékmennyiség eléri a beállított határértékeket</string>
+    <string name="notifications_needed2">Mivel kétszer elutasította az értesítési engedélyt, inkább engedélyeznie kell a beállításokban, elindítja a beállításokat?</string>
+    <string name="rainfall_alert_metric">A(z) %1$.1f%2$s csapadék elérte a %3$.1f%2$s korlátot</string>
+    <string name="rainfall_alert_imperial">A(z) %1$.2f%2$s csapadék elérte a %3$.2f%2$s korlátot</string>
+    <string name="rainrate_alert_metric">Az óránkénti %1$.1f%2$s esőarány megegyezett a %3$.1f%2$s korláttal</string>
+    <string name="rainrate_alert_imperial">Az óránkénti %1$.2f%2$s esőarány megegyezett a %3$.2f%2$s korláttal</string>
 </resources>

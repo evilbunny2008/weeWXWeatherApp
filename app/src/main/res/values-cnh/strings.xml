@@ -97,8 +97,21 @@
     <string name="interval_6h">Suimilam 6</string>
     <string name="interval_3h">Suimilam 3</string>
     <string name="interval_hourly">Suimilam fatin</string>
-    <string name="temp_alert">Lungthawhnak %1$.1f°%2$s cu na ri %3$.1f°%2$s tiang a tla</string>
+    <string name="afternoon_alert">Lungthawhnak %1$.1f°%2$s cu na ri %3$.1f°%2$s tiang a tla</string>
     <string name="temperature">A kih a lum</string>
     <string name="morning_temp_alert">Zingka Ralrinnak?</string>
     <string name="afternoon_temp_alert">Chunhnu Ralrinnak?</string>
+    <string name="morning_alert">Lungthawhnak %1$.1f°%2$s cu na ri %3$.1f°%2$s tiang a kai cang</string>
+    <string name="rainfall_alert">Ruah sur ralrinnak?</string>
+    <string name="rainfall_limit">Ruah surnak ri</string>
+    <string name="rainrate_alert">Ruah sur ralrin peknak?</string>
+    <string name="rainrate_limit">Ruahsurnak rikhiahnak</string>
+    <string name="hour">suimilam</string>
+    <string name="notification_permission">Theihternak nawl</string>
+    <string name="notifications_needed">Khuacaan, ruahsurnak asiloah ruahsurnak nih na khiahmi ri a tlinh tikah ralrinnak pek awkah theihternak a herh</string>
+    <string name="notifications_needed2">Theihternak nawl voihnih na al caah, cu nakin settings ah na on a hau, settings thawk?</string>
+    <string name="rainfall_alert_metric">Ruahsurnak %1$.1f%2$s cu na ri %3$.1f%2$s he aa tlak</string>
+    <string name="rainfall_alert_imperial">Ruahsurnak %1$.2f%2$s cu na ri %3$.2f%2$s he aa tlak</string>
+    <string name="rainrate_alert_metric">Suimilam pakhat ah %1$.1f%2$s ruah a surmi nih na %3$.1f%2$s ri he aa tlak</string>
+    <string name="rainrate_alert_imperial">Suimilam pakhat ah %1$.2f%2$s ruah a surmi nih na ri %3$.2f%2$s he aa tlak</string>
 </resources>

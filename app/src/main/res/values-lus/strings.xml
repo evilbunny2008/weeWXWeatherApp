@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Darkar tin</string>
     <string name="interval_3h">Darkar khatah 3</string>
     <string name="interval_hourly">Darkar tin</string>
-    <string name="temp_alert">Temperature %1$.1f°%2$s chu i limit %3$.1f°%2$s ah a tlahniam ta</string>
+    <string name="afternoon_alert">Temperature %1$.1f°%2$s chu i limit %3$.1f°%2$s ah a tlahniam ta</string>
     <string name="temperature">Lum leh vawt tehna</string>
     <string name="morning_temp_alert">Zing Alert a ni em?</string>
     <string name="afternoon_temp_alert">Chawhnu lam Alert?</string>
+    <string name="morning_alert">Temperature %1$.1f°%2$s chu i limit %3$.1f°%2$s thlengin a sang tawh</string>
+    <string name="rainfall_alert">Ruahtui tlak dan tur Alert?</string>
+    <string name="rainfall_limit">Ruahtui tlak theihna tur Limit</string>
+    <string name="rainrate_alert">Ruahtui tlak dan tur Alert?</string>
+    <string name="rainrate_limit">Ruahtui tlak zat tihtlem</string>
+    <string name="hour">darkar</string>
+    <string name="notification_permission">Hriattirna phalna pek a ni</string>
+    <string name="notifications_needed">Temperature, ruahtui tlak emaw ruahtui tlak zat emaw i set limit a tlin chuan hriattirna pek a ngai a ni</string>
+    <string name="notifications_needed2">Notification permission vawi hnih i decline avangin settings ah enable a ngai zawk a, launch settings?</string>
+    <string name="rainfall_alert_metric">Ruahtui tla %1$.1f%2$s chu i limit %3$.1f%2$s nen a inmil tawh</string>
+    <string name="rainfall_alert_imperial">Ruahtui tla %1$.2f%2$s chu i limit %3$.2f%2$s nen a inmil tawh</string>
+    <string name="rainrate_alert_metric">Darkar khata ruahtui tlak zat %1$.1f%2$s chu i limit %3$.1f%2$s nen a inmil tawh</string>
+    <string name="rainrate_alert_imperial">Darkar khata ruahtui tlak zat %1$.2f%2$s chu i limit %3$.2f%2$s nen a inmil tawh</string>
 </resources>

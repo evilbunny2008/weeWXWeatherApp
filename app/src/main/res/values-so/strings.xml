@@ -97,8 +97,21 @@
     <string name="interval_6h">6 saac</string>
     <string name="interval_3h">3 saac</string>
     <string name="interval_hourly">saacadle</string>
-    <string name="temp_alert">Heerkulka %1$.1f°%2$s ayaa hoos ugu dhacay xadkaaga %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Heerkulka %1$.1f°%2$s ayaa hoos ugu dhacay xadkaaga %3$.1f°%2$s</string>
     <string name="temperature">Heerkulka</string>
     <string name="morning_temp_alert">Digniin Subax?</string>
     <string name="afternoon_temp_alert">Digniin Galabta?</string>
+    <string name="morning_alert">Heerkulka %1$.1f°%2$s ayaa kor u kacay ilaa xadkaaga %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Digniin Roobab?</string>
+    <string name="rainfall_limit">Xadka Roobabka</string>
+    <string name="rainrate_alert">Digniinta Roobka?</string>
+    <string name="rainrate_limit">Xadka Roobabka</string>
+    <string name="hour">saac</string>
+    <string name="notification_permission">Ogolaanshaha Ogeysiinta</string>
+    <string name="notifications_needed">Ogeysiisyada ayaa loo baahan yahay si laguugu ogeysiiyo marka heerkulka, roobka da\'a ama heerka roobku uu buuxiyo xadkaaga</string>
+    <string name="notifications_needed2">Mar haddii aad diidday oggolaanshaha ogeysiinta laba jeer, waxaad u baahan tahay inaad karti u geliso Settings beddelkeeda, bilaw Settings?</string>
+    <string name="rainfall_alert_metric">Roobabka %1$.1f%2$s ayaa u dhigma xadkaaga %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Roobabka %1$.2f%2$s ayaa u dhigma xadkaaga %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Heerka roobka %1$.1f%2$s saacadii ayaa ku beegnayd xadkaaga %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Heerka roobka %1$.2f%2$s saacadii ayaa ku beegnayd xadkaaga %3$.2f%2$s</string>
 </resources>

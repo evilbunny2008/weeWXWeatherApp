@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Ola lililonse</string>
     <string name="interval_3h">3 Ola lililonse</string>
     <string name="interval_hourly">Ola lililonse</string>
-    <string name="temp_alert">Kutentha %1$.1f°%2$s kwatsika kufika pa %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Kutentha %1$.1f°%2$s kwatsika kufika pa %3$.1f°%2$s</string>
     <string name="temperature">Kutentha</string>
     <string name="morning_temp_alert">Chidziwitso Cham\'mawa?</string>
     <string name="afternoon_temp_alert">Chidziwitso Cha Masana?</string>
+    <string name="morning_alert">Kutentha %1$.1f°%2$s kwakwera kufika pa %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Chenjezo la Mvula?</string>
+    <string name="rainfall_limit">Malire a Mvula</string>
+    <string name="rainrate_alert">Chidziwitso cha Mvula?</string>
+    <string name="rainrate_limit">Malire a Rainrate</string>
+    <string name="hour">ola</string>
+    <string name="notification_permission">Chilolezo cha Zidziwitso</string>
+    <string name="notifications_needed">Zidziwitso zimafunika kukuchenjezani kutentha, mvula kapena mvula ikakwaniritsa malire omwe munakhazikitsa</string>
+    <string name="notifications_needed2">Popeza mudakana chilolezo cha zidziwitso kawiri, muyenera kuyitsetsa pazokonda m\'malo mwake, yambitsani zokonda?</string>
+    <string name="rainfall_alert_metric">Mvula %1$.1f%2$s yafanana ndi malire anu a %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Mvula %1$.2f%2$s yafanana ndi malire anu a %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Mvula ya %1$.1f%2$s pa ola yafanana ndi malire anu a %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Mvula ya %1$.2f%2$s pa ola yafanana ndi malire anu a %3$.2f%2$s</string>
 </resources>

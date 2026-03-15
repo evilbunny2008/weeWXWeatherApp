@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Daa ŋmɛlɛtswaa</string>
     <string name="interval_3h">3 ŋmɛlɛtswaa fɛɛ ŋmɛlɛtswaa</string>
     <string name="interval_hourly">Daa ŋmɛlɛtswaa</string>
-    <string name="temp_alert">Dɔlɛ %1$.1f°%2$s eba shi kɛyashɛ ohusu ni ji %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Dɔlɛ %1$.1f°%2$s eba shi kɛyashɛ ohusu ni ji %3$.1f°%2$s</string>
     <string name="temperature">Dɔlɛ</string>
     <string name="morning_temp_alert">Leebi kɔkɔbɔɔ?</string>
     <string name="afternoon_temp_alert">Gbi gbɛkɛ kɔkɔbɔɔ?</string>
+    <string name="morning_alert">Dɔlɛ %1$.1f°%2$s etee ŋwɛi kɛyashɛ ohusu ni ji %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Nugbɔshiimɔ He Kɔkɔbɔɔ?</string>
+    <string name="rainfall_limit">Nugbɔshiimɔ Husu</string>
+    <string name="rainrate_alert">Nugbɔshiimɔ he kɔkɔbɔɔ?</string>
+    <string name="rainrate_limit">Nugbɔshiimɔ He Husu</string>
+    <string name="hour">ŋmɛlɛtswa</string>
+    <string name="notification_permission">Hegbɛ ni akɛtswaa adafi</string>
+    <string name="notifications_needed">Adafitswaa he miihia koni abɔ bo kɔkɔ kɛji dɔlɛ, nugbɔshiimɔ loo nugbɔshiimɔ shɛ husui ni ato lɛ he</string>
+    <string name="notifications_needed2">Akɛni okpoo adafitswaa hegbɛ lɛ shii enyɔ hewɔ lɛ, ehe miihia ni oha etsu nii yɛ gbɛjianɔtoo lɛ mli moŋ, je gbɛjianɔtoo lɛ shishi?</string>
+    <string name="rainfall_alert_metric">Nugbɔ ni nɛɔ %1$.1f%2$s kɛ ohusu ni ji %3$.1f%2$s lɛ kpãa gbee</string>
+    <string name="rainfall_alert_imperial">Nugbɔ ni nɛɔ %1$.2f%2$s kɛ ohusu ni ji %3$.2f%2$s lɛ kpãa gbee</string>
+    <string name="rainrate_alert_metric">Nugbɔ ni nɛɔ yɛ ŋmɛlɛtswaa kome mli lɛ kɛ %1$.1f%2$s ohusu ni ji %3$.1f%2$s lɛ kpãa gbee</string>
+    <string name="rainrate_alert_imperial">Nugbɔ ni nɛɔ yɛ ŋmɛlɛtswaa kome mli lɛ kɛ %1$.2f%2$s ohusu ni ji %3$.2f%2$s lɛ kpãa gbee</string>
 </resources>

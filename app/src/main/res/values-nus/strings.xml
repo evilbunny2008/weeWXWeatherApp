@@ -97,8 +97,21 @@
     <string name="interval_6h">6 kɛ thaak</string>
     <string name="interval_3h">3 kɛ thaak</string>
     <string name="interval_hourly">Kɛ thaak</string>
-    <string name="temp_alert">Tɛmpi̱rɛciɛr %1$.1f°%2$s cɛ wä piny ɛ wä kä %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Tɛmpi̱rɛciɛr %1$.1f°%2$s cɛ wä piny ɛ wä kä %3$.1f°%2$s</string>
     <string name="temperature">Lëth kɛnɛ kɔa̱c ɣɔ̱a̱</string>
     <string name="morning_temp_alert">Alert kɛ runwaŋ?</string>
     <string name="afternoon_temp_alert">Alert kɛ kɔr ca̱ŋ?</string>
+    <string name="morning_alert">Tɛmpi̱rɛciɛr %1$.1f°%2$s cɛ rɔ jiɛc ɛ wä kä %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Rainpɔl Alert?</string>
+    <string name="rainfall_limit">Rainpɔl Li̱mit</string>
+    <string name="rainrate_alert">Rainrɛt Alert?</string>
+    <string name="rainrate_limit">Rainrɛt Li̱mit</string>
+    <string name="hour">tha̱k</string>
+    <string name="notification_permission">Nöti̱pi̱këcin Permi̱ciɔn</string>
+    <string name="notifications_needed">Notificationni̱ görkɛ ɣöö ba ji̱ la̱r lär mi̱ ci̱ lëth, nhiaal kiɛ nhiaal cop kä min ca la̱th piny</string>
+    <string name="notifications_needed2">Ni̱ mëë ci̱ ji̱n nhɔk ni̱ ɣöö ba ji̱ la̱r lär lo̱k ni̱ kä rɛɛw, go̱o̱ri ɣöö biɛ la̱th lät rɛy thɛtni̱ ni̱ ɣöö, launch thɛtni̱?</string>
+    <string name="rainfall_alert_metric">Kä %1$.1f%2$s cuɛ pa̱a̱r kɛ pekdu min %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Kä nhiaal mi̱ ci̱ tuɔɔk %1$.2f%2$s cuɛ pa̱a̱r kɛ pekdu min la %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Rainrɛt mi̱ %1$.1f%2$s kɛ thaak cuɛ pa̱a̱r kɛ pekdu min %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Rainrɛt mi̱ %1$.2f%2$s kɛ thaak cuɛ pa̱a̱r kɛ pekdu min %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_3h">3 Lɛrɛ o lɛrɛ</string>
     <string name="interval_hourly">Lɛrɛ o lɛrɛ</string>
     <string name="forecast_interval">Forecast Interval (ni a bɛ se ka kɛ)</string>
-    <string name="temp_alert">Funteni %1$.1f°%2$s jigira ka se i dan ma min ye %3$.1f°%2$s ye</string>
+    <string name="afternoon_alert">Funteni %1$.1f°%2$s jigira ka se i dan ma min ye %3$.1f°%2$s ye</string>
     <string name="morning_temp_alert">Sɔgɔmadafɛla Lakɔlɔsi?</string>
     <string name="temperature">Goniyahakɛ</string>
     <string name="afternoon_temp_alert">Tilegan fɛ Lakɔlɔsi?</string>
+    <string name="morning_alert">Funteni %1$.1f°%2$s wulila ka se i dan ma min ye %3$.1f°%2$s ye</string>
+    <string name="rainfall_alert">Sanjiko lasɔmini?</string>
+    <string name="rainrate_alert">Sanji hakɛ Lakɔlɔsi?</string>
+    <string name="rainfall_limit">Sanjiko Dan</string>
+    <string name="rainrate_limit">Sanji hakɛ dancɛ</string>
+    <string name="hour">lɛrɛ</string>
+    <string name="notification_permission">Ladɔnniyali yamaruya</string>
+    <string name="notifications_needed">Ladɔnniyaliw ka kan ka kɛ walasa k\'aw lasɔmi ni funteni, sanji walima sanji hakɛ bɛ aw ka dan sigilenw dafa</string>
+    <string name="notifications_needed2">Komin i banna kunnafonidi yamaruya la siɲɛ fila, i ka kan k\'a daminɛ settings kɔnɔ o nɔ na, ​​lancement settings?</string>
+    <string name="rainfall_alert_metric">Sanji %1$.1f%2$s bɛnna i ka dancɛ ma min ye %3$.1f%2$s ye</string>
+    <string name="rainfall_alert_imperial">Sanji %1$.2f%2$s bɛnna i ka dancɛ ma min ye %3$.2f%2$s ye</string>
+    <string name="rainrate_alert_metric">Sanji hakɛ min ye %1$.1f%2$s ye lɛrɛ kelen kɔnɔ, o bɛnna i ka dancɛ ma min ye %3$.1f%2$s ye</string>
+    <string name="rainrate_alert_imperial">Sanji hakɛ min ye %1$.2f%2$s ye lɛrɛ kelen kɔnɔ, o bɛnna i ka dancɛ ma min ye %3$.2f%2$s ye</string>
 </resources>

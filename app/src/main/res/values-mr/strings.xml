@@ -97,8 +97,21 @@
     <string name="interval_6h">6 तास</string>
     <string name="interval_3h">3 तास</string>
     <string name="interval_hourly">प्रति तास</string>
-    <string name="temp_alert">तापमान %1$.1f°%2$s तुमच्या %3$.1f°%2$s च्या मर्यादेपर्यंत घसरले आहे</string>
+    <string name="afternoon_alert">तापमान %1$.1f°%2$s तुमच्या %3$.1f°%2$s च्या मर्यादेपर्यंत घसरले आहे</string>
     <string name="temperature">तापमान</string>
     <string name="morning_temp_alert">सकाळचा इशारा?</string>
     <string name="afternoon_temp_alert">दुपारचा इशारा?</string>
+    <string name="morning_alert">तापमान %1$.1f°%2$s तुमच्या %3$.1f°%2$s च्या मर्यादेपर्यंत वाढले आहे</string>
+    <string name="rainfall_alert">पावसाचा इशारा?</string>
+    <string name="rainfall_limit">पावसाची मर्यादा</string>
+    <string name="rainrate_alert">रेनरेट अलर्ट?</string>
+    <string name="rainrate_limit">रेनरेट मर्यादा</string>
+    <string name="hour">तास</string>
+    <string name="notification_permission">सूचना परवानगी</string>
+    <string name="notifications_needed">जेव्हा तापमान, पाऊस किंवा पावसाचा दर तुमच्या निर्धारित मर्यादा पूर्ण करतो तेव्हा तुम्हाला सतर्क करण्यासाठी सूचना आवश्यक असतात</string>
+    <string name="notifications_needed2">तुम्ही सूचना परवानगी दोनदा नाकारली असल्याने, तुम्हाला ती सेटिंग्जमध्ये सुरू करायची आहे, सेटिंग्ज लाँच करायची आहे का?</string>
+    <string name="rainfall_alert_metric">पाऊस %1$.1f%2$s तुमच्या %3$.1f%2$s च्या मर्यादेशी जुळला आहे</string>
+    <string name="rainfall_alert_imperial">पाऊस %1$.2f%2$s तुमच्या %3$.2f%2$s च्या मर्यादेशी जुळला आहे</string>
+    <string name="rainrate_alert_metric">%1$.1f%2$s प्रति तास पावसाचा दर तुमच्या %3$.1f%2$s च्या मर्यादेशी जुळला आहे</string>
+    <string name="rainrate_alert_imperial">%1$.2f%2$s प्रति तास पावसाचा दर तुमच्या %3$.2f%2$s च्या मर्यादेशी जुळला आहे</string>
 </resources>

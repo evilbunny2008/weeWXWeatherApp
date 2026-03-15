@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Oras ida-idak</string>
     <string name="interval_3h">3 kada oras</string>
     <string name="interval_hourly">Oras-oras</string>
-    <string name="temp_alert">Temperatura %1$.1f°%2$s tun ona ba ita-boot nia limite %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatura %1$.1f°%2$s tun ona ba ita-boot nia limite %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Alerta dadeer nian?</string>
     <string name="afternoon_temp_alert">Alerta loraik nian?</string>
+    <string name="morning_alert">Temperatura %1$.1f°%2$s sa\'e ona ba ita-boot nia limite %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alerta ba udan-been?</string>
+    <string name="rainfall_limit">Limite udan been</string>
+    <string name="rainrate_alert">Alerta ba udan-been?</string>
+    <string name="rainrate_limit">Limite ba Taxa Udan nian</string>
+    <string name="hour">oras</string>
+    <string name="notification_permission">Lisensa ba Notifikasaun</string>
+    <string name="notifications_needed">Notifikasaun sira presiza atu alerta ita-boot bainhira temperatura, udan-been ka udan-been atinji ita-boot nia limite sira ne\'ebé maka estabelese ona</string>
+    <string name="notifications_needed2">Tanba ita-boot rejeita lisensa notifikasaun nian dala rua, ita-boot presiza atu ativa ida-ne\'e iha konfigurasaun sira, lansa konfigurasaun sira?</string>
+    <string name="rainfall_alert_metric">Udan-been %1$.1f%2$s koresponde ona ho ita-boot nia limite %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Udan been %1$.2f%2$s koresponde ona ho ita-boot nia limite %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Udan-been %1$.1f%2$s kada oras hanesan ona ho ita-boot nia limite %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Udan-been %1$.2f%2$s kada oras hanesan ona ho ita-boot nia limite %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 kada oras</string>
     <string name="interval_3h">3 kada oras</string>
     <string name="interval_hourly">Kada oras</string>
-    <string name="temp_alert">Ang temperatura %1$.1f°%2$s nagnubo sa imo limitasyon nga %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Ang temperatura %1$.1f°%2$s nagnubo sa imo limitasyon nga %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Alerto sa Aga?</string>
     <string name="afternoon_temp_alert">Alerto sa Hapon?</string>
+    <string name="morning_alert">Ang temperatura %1$.1f°%2$s nagtaas sa imo limitasyon nga %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alerto sa Pag-ulan?</string>
+    <string name="rainfall_limit">Limitasyon sa Pag-ulan</string>
+    <string name="rainrate_alert">Rainrate Alert?</string>
+    <string name="rainrate_limit">Limitasyon sang Rainrate</string>
+    <string name="hour">oras</string>
+    <string name="notification_permission">Pagtugot sa Pagpahibalo</string>
+    <string name="notifications_needed">Kinahanglan ang mga abiso agud mapahibalo ka kon ang temperatura, pag-ulan ukon kadasigon sang ulan nagalab-ot sa imo gintalana nga mga limitasyon</string>
+    <string name="notifications_needed2">Sanglit duha ka beses mo nga ginbalibaran ang pahanugot sa abiso, kinahanglan mo ini nga i-enable sa mga setting sa baylo, maglunsar sang mga setting?</string>
+    <string name="rainfall_alert_metric">Ang pag-ulan %1$.1f%2$s nakatupong sa imo limitasyon nga %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Ang pag-ulan %1$.2f%2$s nagtupong sa imo limitasyon nga %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Ang kadasigon sang ulan nga %1$.1f%2$s kada oras nakatupong sa imo limitasyon nga %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Ang kadasigon sang ulan nga %1$.2f%2$s kada oras nakatupong sa imo limitasyon nga %3$.2f%2$s</string>
 </resources>

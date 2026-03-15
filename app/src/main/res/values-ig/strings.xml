@@ -97,8 +97,21 @@
     <string name="interval_6h">6 kwa elekere</string>
     <string name="interval_3h">3 kwa elekere</string>
     <string name="interval_hourly">Oge elekere</string>
-    <string name="temp_alert">Okpomọkụ %1$.1f°%2$s adaala ruo oke gị nke %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Okpomọkụ %1$.1f°%2$s adaala ruo oke gị nke %3$.1f°%2$s</string>
     <string name="temperature">Okpomọkụ</string>
     <string name="morning_temp_alert">Ntị ụtụtụ?</string>
     <string name="afternoon_temp_alert">Njikere ehihie?</string>
+    <string name="morning_alert">Okpomọkụ %1$.1f°%2$s ebilila ruo oke gị nke %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Mkpu maka mmiri ozuzo?</string>
+    <string name="rainfall_limit">Oke mmiri ozuzo</string>
+    <string name="rainrate_alert">Nti mkpu mmiri ozuzo?</string>
+    <string name="rainrate_limit">Oke mmiri ozuzo</string>
+    <string name="hour">awa</string>
+    <string name="notification_permission">Ikikere ngosi</string>
+    <string name="notifications_needed">Ọkwa dị mkpa iji mee ka ị mara mgbe okpomọkụ, mmiri ozuzo ma ọ bụ oke mmiri ozuzo zutere oke gị</string>
+    <string name="notifications_needed2">Ebe ị jụrụ ikike ngosi ugboro abụọ, ịkwesịrị ịme ya na ntọala kama, malite ntọala?</string>
+    <string name="rainfall_alert_metric">Mmiri ozuzo %1$.1f%2$s dakọtara na oke gị nke %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Mmiri ozuzo %1$.2f%2$s dakọtara na oke gị nke %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Oke mmiri ozuzo nke %1$.1f%2$s kwa elekere dabara na oke %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Oke mmiri ozuzo nke %1$.2f%2$s kwa elekere dabara na oke gị nke %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 sagat</string>
     <string name="interval_3h">3 sagat</string>
     <string name="interval_hourly">Her sagat</string>
-    <string name="temp_alert">Temperatura%1$.1f°%2$s siziň çägiňize düşdi%3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatura%1$.1f°%2$s siziň çägiňize düşdi%3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Irden duýduryş?</string>
     <string name="afternoon_temp_alert">Günortanlyk duýduryşy?</string>
+    <string name="rainfall_alert">Rainagyş duýduryşy?</string>
+    <string name="rainfall_limit">Fallagyşyň çäkleri</string>
+    <string name="rainrate_alert">Rainagyş duýduryşy?</string>
+    <string name="rainrate_limit">Rainagyş çägi</string>
+    <string name="hour">sagat</string>
+    <string name="notification_permission">Duýduryş rugsady</string>
+    <string name="notifications_needed">Temperatura, ýagyş ýa-da ýagyş bellenen çäklere laýyk gelende duýduryş bermek üçin zerurdyr</string>
+    <string name="notifications_needed2">Duýduryş rugsadyny iki gezek ret edeniňiz üçin, ony ýerine sazlamalarda işletmeli, sazlamalary işe girizmeli?</string>
+    <string name="morning_alert">Temperatura%1$.1f °%2$s siziň çägiňize ýetdi%3$.1f °%2$s</string>
+    <string name="rainfall_alert_metric">Fallagyş%1$.1f%2$s siziň%3$.1f%2$s çägiňize laýyk geldi</string>
+    <string name="rainfall_alert_imperial">Fallagyş%1$.2f%2$s siziň%3$.2f%2$s çägiňize laýyk geldi</string>
+    <string name="rainrate_alert_metric">Sagatda%1$.1f%2$s ýagyş,%3$.1f%2$s çägiňize laýyk geldi</string>
+    <string name="rainrate_alert_imperial">Sagatda%1$.2f%2$s ýagyş,%3$.2f%2$s çägiňize laýyk geldi</string>
 </resources>

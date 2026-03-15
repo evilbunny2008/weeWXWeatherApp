@@ -97,8 +97,21 @@
     <string name="interval_6h">6 pa ora</string>
     <string name="interval_3h">3 pa ora</string>
     <string name="interval_hourly">Pa ora</string>
-    <string name="temp_alert">Temperatura %1$.1f°%2$s a baha te na bo límite di %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatura %1$.1f°%2$s a baha te na bo límite di %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Alerta di Mainta?</string>
     <string name="afternoon_temp_alert">Alerta di atardi?</string>
+    <string name="morning_alert">Temperatura %1$.1f°%2$s a subi te na bo límite di %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alerta di áwaseru?</string>
+    <string name="rainfall_limit">Límite di áwaseru</string>
+    <string name="rainrate_alert">Alerta di áwaseru?</string>
+    <string name="rainrate_limit">Límite di Frekuensha di Yobida</string>
+    <string name="hour">ora</string>
+    <string name="notification_permission">Pèrmit di Notifikashon</string>
+    <string name="notifications_needed">Notifikashonnan ta nesesario pa alertá bo ora temperatura, áwaseru òf tasa di áwaseru ta kumpli ku bo límitenan stipulá</string>
+    <string name="notifications_needed2">Komo ku bo a rechasá e pèrmit di notifikashon dos biaha, bo mester aktiv\'é den settingnan en bes di esei, settingnan di lansamentu?</string>
+    <string name="rainfall_alert_metric">Awasero %1$.1f%2$s a kuadra ku bo límite di %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Awasero %1$.2f%2$s a kuadra ku bo límite di %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Un frekuensha di áwaseru di %1$.1f%2$s pa ora a kuadra ku bo límite di %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Un frekuensha di áwaseru di %1$.2f%2$s pa ora a kuadra ku bo límite di %3$.2f%2$s</string>
 </resources>

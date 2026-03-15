@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Jam</string>
     <string name="interval_3h">3 Jam</string>
     <string name="interval_hourly">Jam-jam</string>
-    <string name="temp_alert">Suhu %1$.1f°%2$s naung mange ri batasnu %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$.1f°%2$s naung mange ri batasnu %3$.1f°%2$s</string>
     <string name="temperature">Suhu</string>
     <string name="morning_temp_alert">Waspada bari\'basa?</string>
     <string name="afternoon_temp_alert">Waspada sore?</string>
+    <string name="morning_alert">Suhu %1$.1f°%2$s nai\'mi mange ri batasnu %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Waspada bosi?</string>
+    <string name="rainfall_limit">Batas bosi</string>
+    <string name="rainrate_alert">Waspada laju bosi?</string>
+    <string name="rainrate_limit">Batas laju bosi</string>
+    <string name="hour">jam</string>
+    <string name="notification_permission">Izin pemberitahuan</string>
+    <string name="notifications_needed">Notifikasi parallui untu\' ampakaingaki punna suhu, bosi yareka rainrate narapi\'i batasa nu le\'ba\' nupattantu</string>
+    <string name="notifications_needed2">Nasaba nu tolak izin pemberitahuan rua pissang, paralluko ampa aktifkangi ri setting, setting peluncuran?</string>
+    <string name="rainfall_alert_metric">Bosi %1$.1f%2$s sangkammai siagang batasnu %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Bosi %1$.2f%2$s sangkammai siagang batasnu %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Laju bosi %1$.1f%2$s per jam sanna\'i cocokna siagang batasnu %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Laju bosi %1$.2f%2$s per jam sanna\'i cocokna siagang batasnu %3$.2f%2$s</string>
 </resources>

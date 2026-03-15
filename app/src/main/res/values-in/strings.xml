@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Setiap Jam</string>
     <string name="interval_3h">3 Setiap Jam</string>
     <string name="interval_hourly">Per jam</string>
-    <string name="temp_alert">Suhu %1$.1f°%2$s telah turun hingga batas Anda %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$.1f°%2$s telah turun hingga batas Anda %3$.1f°%2$s</string>
     <string name="temperature">Suhu</string>
     <string name="morning_temp_alert">Peringatan Pagi?</string>
     <string name="afternoon_temp_alert">Peringatan Sore?</string>
+    <string name="morning_alert">Suhu %1$.1f°%2$s telah meningkat hingga batas Anda %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Peringatan Curah Hujan?</string>
+    <string name="rainfall_limit">Batas Curah Hujan</string>
+    <string name="rainrate_alert">Peringatan Curah Hujan?</string>
+    <string name="rainrate_limit">Batas Curah Hujan</string>
+    <string name="hour">jam</string>
+    <string name="notification_permission">Izin Pemberitahuan</string>
+    <string name="notifications_needed">Pemberitahuan diperlukan untuk mengingatkan Anda ketika suhu, curah hujan, atau laju hujan memenuhi batas yang Anda tetapkan</string>
+    <string name="notifications_needed2">Karena Anda menolak izin notifikasi dua kali, Anda harus mengaktifkannya di pengaturan, luncurkan pengaturan?</string>
+    <string name="rainfall_alert_metric">Curah hujan %1$.1f%2$s telah sesuai dengan batas Anda yaitu %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Curah hujan %1$.2f%2$s telah sesuai dengan batas Anda yaitu %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Tingkat hujan sebesar %1$.1f%2$s per jam telah sesuai dengan batas Anda sebesar %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Tingkat hujan sebesar %1$.2f%2$s per jam telah sesuai dengan batas Anda sebesar %3$.2f%2$s</string>
 </resources>

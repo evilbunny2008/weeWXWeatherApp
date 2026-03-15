@@ -97,8 +97,21 @@
     <string name="interval_3h">3 për orë</string>
     <string name="interval_hourly">Për orë</string>
     <string name="forecast_interval">Intervali i parashikimit (nëse është e aplikueshme)</string>
-    <string name="temp_alert">Temperatura %1$.1f°%2$s ka rënë në kufirin tuaj prej %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatura %1$.1f°%2$s ka rënë në kufirin tuaj prej %3$.1f°%2$s</string>
     <string name="morning_temp_alert">Alarmi në mëngjes?</string>
     <string name="afternoon_temp_alert">Alarmi pasdite?</string>
     <string name="temperature">Temperatura</string>
+    <string name="morning_alert">Temperatura %1$.1f°%2$s është rritur në kufirin tuaj prej %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alarmi për reshje?</string>
+    <string name="rainrate_alert">Alarmi për shiun?</string>
+    <string name="rainfall_limit">Kufiri i reshjeve</string>
+    <string name="rainrate_limit">Kufiri i shkallës së shiut</string>
+    <string name="hour">orë</string>
+    <string name="notification_permission">Leja e njoftimit</string>
+    <string name="notifications_needed">Njoftimet nevojiten për t\'ju njoftuar kur temperatura, reshjet ose shkalla e shiut plotëson kufijtë e caktuar</string>
+    <string name="notifications_needed2">Meqenëse e refuzuat lejen e njoftimit dy herë, duhet ta aktivizoni atë te cilësimet në vend të kësaj, nisni cilësimet?</string>
+    <string name="rainfall_alert_metric">Reshjet %1$.1f%2$s janë përputhur me kufirin tuaj prej %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Reshjet %1$.2f%2$s janë përputhur me kufirin tuaj prej %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Shkalla e shiut prej %1$.1f%2$s në orë është përputhur me kufirin tuaj prej %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Shkalla e shiut prej %1$.2f%2$s në orë është përputhur me kufirin tuaj prej %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 horas</string>
     <string name="interval_3h">3 horas</string>
     <string name="interval_hourly">Cada hora</string>
-    <string name="temp_alert">La temperatura %1$.1f°%2$s ha bajado a su límite de %3$.1f°%2$s</string>
+    <string name="afternoon_alert">La temperatura %1$.1f°%2$s ha bajado a su límite de %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">¿Alerta matutina?</string>
     <string name="afternoon_temp_alert">¿Alerta de la tarde?</string>
+    <string name="morning_alert">La temperatura %1$.1f°%2$s ha aumentado hasta tu límite de %3$.1f°%2$s</string>
+    <string name="rainfall_alert">¿Alerta de lluvia?</string>
+    <string name="rainfall_limit">Límite de lluvia</string>
+    <string name="rainrate_alert">¿Alerta de índice de lluvia?</string>
+    <string name="rainrate_limit">Límite de lluvia</string>
+    <string name="hour">hora</string>
+    <string name="notification_permission">Permiso de notificación</string>
+    <string name="notifications_needed">Se necesitan notificaciones para avisarle cuando la temperatura, las precipitaciones o la tasa de lluvia alcancen los límites establecidos</string>
+    <string name="notifications_needed2">Dado que rechazó el permiso de notificación dos veces, debe habilitarlo en la configuración, ¿iniciar la configuración?</string>
+    <string name="rainfall_alert_metric">Las precipitaciones %1$.1f%2$s han coincidido con tu límite de %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Las precipitaciones %1$.2f%2$s han coincidido con tu límite de %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">La tasa de lluvia de %1$.1f%2$s por hora ha coincidido con tu límite de %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">La tasa de lluvia de %1$.2f%2$s por hora ha coincidido con tu límite de %3$.2f%2$s</string>
 </resources>

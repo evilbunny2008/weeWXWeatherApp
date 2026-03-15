@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Hora</string>
     <string name="interval_3h">3 Hora</string>
     <string name="interval_hourly">Ka hora</string>
-    <string name="temp_alert">Thempereichara %1$.1f°%2$s e theohetse ho %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Thempereichara %1$.1f°%2$s e theohetse ho %3$.1f°%2$s</string>
     <string name="temperature">Mocheso</string>
     <string name="morning_temp_alert">Tlhokomeliso ea Hoseng?</string>
     <string name="afternoon_temp_alert">Tlhokomeliso ea Thapama?</string>
+    <string name="morning_alert">Mocheso %1$.1f°%2$s o nyolohetse ho %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Tlhokomeliso ka Pula?</string>
+    <string name="rainfall_limit">Moedi wa Pula</string>
+    <string name="rainrate_alert">Tlhokomeliso ea Rainrate?</string>
+    <string name="rainrate_limit">Rainrate Limit</string>
+    <string name="hour">hora</string>
+    <string name="notification_permission">Tumello ea Tsebiso</string>
+    <string name="notifications_needed">Litsebiso lia hlokahala ho u lemosa ha thempereichara, pula e na kapa sekhahla sa pula se fihlela meeli eo u e behileng</string>
+    <string name="notifications_needed2">Kaha u hanne tumello ea tsebiso habeli, u hloka ho e lumella ho li-setting, ho qala litlhophiso?</string>
+    <string name="rainfall_alert_metric">Pula %1$.1f%2$s e tsamaellana le moeli oa hau oa %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Pula %1$.2f%2$s e tsamaellana le moeli oa hau oa %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Pula ya %1$.1f%2$s ka hora e tsamaellana le moedi wa hao wa %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Pula ya %1$.2f%2$s ka hora e tsamaellana le moedi wa hao wa %3$.2f%2$s</string>
 </resources>

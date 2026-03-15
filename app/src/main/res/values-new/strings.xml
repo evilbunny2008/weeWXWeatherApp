@@ -52,7 +52,6 @@
     <string name="wasnt_able_to_connect_custom_url">कस्टम यूआरएलं न्ह्यथना त:गु कस्टम यूआरएलपाखें स्वायेत बाय् डाउनलोड याये मफुत ।</string>
     <string name="wasnt_able_to_connect_webcam_url">छिगु सर्भरं वेबक्यामया किपा स्वाये मफुत बाय् डाउनलोड याये मफुत ।</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमानयात स्वायेत बाय् डाउनलोड याये मफुत ।</string>
-    <string name="forecast_type_is_invalid">पूर्वानुमान ताजिया \'%1$s\' अमान्य जुइ, छिगु सेटिङ फाइल जाँच यानादिसँ अले हानं कुतः यानादिसँ ।</string>
     <string name="wasnt_able_to_connect_radar_image">इन्टरनेटं राडार= किपा स्वाये बाय् डाउनलोड याये मफुत ।</string>
     <string name="wasnt_able_to_connect_data_txt">छिगु सर्भरं डाटालिसे स्वाये बाय् डाउनलोड याये मफुत ।</string>
     <string name="data_url_was_blank">डाटा यूआरएल खाली जुल</string>
@@ -74,7 +73,6 @@
     <string name="wifi_not_available">अपडेट जूगु जुइ तर वाइफाइ कनेक्सनयात छ्यले मफइगु जुइ ।</string>
     <string name="invalid_update_interval">अपडेट अन्तराल अमान्य खः, सेटिङ्ग सेटिङ्ग अले हानं हानं कुतः या ।</string>
     <string name="attempting_to_download_data_txt">छिगु सर्भरं डाउनलोड डाटा.टिएक्सट या ।</string>
-    <string name="radar_type_is_invalid">राडार टाइप \'%1$s\' अमान्य जुइ, थःगु सेटिङ फाइल जाँच यानादिसँ अले हाकनं कुतः यानादिसँ ।</string>
     <string name="webcam_still_downloading">वेबक्याम इमेज आः नं डाउनलोड यानाच्वंगु दु ।</string>
     <string name="webcam_url_url_not_set">वेबक्याम यूआरएल सेट मजू बाय् खाली खः ।</string>
     <string name="update_set_to_manual_but_no_content_cached">म्यानुअल अपडेटय् सेट या, तर आःतकं कन्टेन्ट क्याच मदु</string>
@@ -97,8 +95,23 @@
     <string name="interval_6h">६ घौया</string>
     <string name="interval_3h">३ घौया</string>
     <string name="interval_hourly">घौपतिकं</string>
-    <string name="temp_alert">तापक्रम %१$.१f°%२$s छिगु सिमा %३$.१f°%२$s तक कुहां वन</string>
     <string name="temperature">तापक्रम</string>
     <string name="morning_temp_alert">सुथसिया सतर्कता?</string>
     <string name="afternoon_temp_alert">न्हिनय् सतर्कता?</string>
+    <string name="rainfall_alert">वा वइगु सतर्कता?</string>
+    <string name="rainfall_limit">वा वइगु सीमा</string>
+    <string name="rainrate_alert">वा वइगु दर सतर्कता?</string>
+    <string name="rainrate_limit">वर्षा दर सीमा</string>
+    <string name="forecast_type_is_invalid">पूर्वानुमान ताजि \'%1$s\' अमान्य जुल, छिगु सेटिङ्ग फाइल जाँच यानादिसँ अले हानं कुतः यानादिसँ ।</string>
+    <string name="radar_type_is_invalid">राडार ताजिया \'%1$s\' पाय् छि मजू, छिगु सेटिङ्ग फाइल जाँच यानादिसँ अले हानं कुतः यानादिसँ ।</string>
+    <string name="hour">घण्टा</string>
+    <string name="notification_permission">सुचं अनुमति</string>
+    <string name="notifications_needed">तापक्रम, वा वइगु बाय् वा वइगु दर छिं क्वःछिनातःगु सिमा पूवंकलकि छितः सचेत यायेत सुचं माः ।</string>
+    <string name="notifications_needed2">छिं निक्वःतक सुचंया अनुमति अस्वीकार यानादीगुलिं, उकिया पलेसा सेटिङ्गय् सक्षम यायेमाःगु दु, सेटिङ्ग न्ह्याकादिसँ ।</string>
+    <string name="morning_alert">तापक्रम %1$.1f%2$s छिगु सिमा %3$.1f%2$s तक थ्यन</string>
+    <string name="afternoon_alert">तापक्रम %1$.1f%2$s छिगु सिमा %3$.1f%2$s तक कुहां वन</string>
+    <string name="rainfall_alert_metric">वा वःगु %1$.1f%2$s छिगु सिमा %3$.1f%2$s नापं ज्वःलाः</string>
+    <string name="rainfall_alert_imperial">वा वःगु %1$.2f%2$s छिगु सिमा %3$.2f%2$s नापं ज्वःलाः</string>
+    <string name="rainrate_alert_metric">घौछिया %1$.1f%2$s वा वइगु दर छिगु सिमा %3$.1f%2$s नापं ज्वःलाः</string>
+    <string name="rainrate_alert_imperial">घौछिया %1$.2f%2$s वा वइगु दर छिगु सिमा %3$.2f%2$s नाप ज्वःलाः</string>
 </resources>

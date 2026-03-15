@@ -97,8 +97,21 @@
     <string name="interval_6h">Saa 6</string>
     <string name="interval_3h">Saa 3</string>
     <string name="interval_hourly">Saa ka seche</string>
-    <string name="temp_alert">Liet mar %1$.1f°%2$s osedok piny nyaka giko mari mar %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Liet mar %1$.1f°%2$s osedok piny nyaka giko mari mar %3$.1f°%2$s</string>
     <string name="temperature">Liet</string>
     <string name="morning_temp_alert">Chik mar Odhiambo?</string>
     <string name="afternoon_temp_alert">Chieng\' mar otieno?</string>
+    <string name="morning_alert">Liet mar %1$.1f°%2$s osemedore nyaka giko mari mar %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Chiembo mar Koth?</string>
+    <string name="rainfall_limit">Giko mar Koth</string>
+    <string name="rainrate_alert">Chik mar Koth?</string>
+    <string name="rainrate_limit">Giko mar Koth</string>
+    <string name="hour">saa</string>
+    <string name="notification_permission">Yie mar lendo</string>
+    <string name="notifications_needed">Owinjore omiyi lendo mondo onyisi ka liet, koth kata kwan mar koth ochopo giko ma iketo</string>
+    <string name="notifications_needed2">Kaka ne idagi ratiro mar lendo nyadi riyo, be dwarore ni ikete e chenro kar mano, ichak chenro?</string>
+    <string name="rainfall_alert_metric">Koth ma chwe %1$.1f%2$s osechopo gi giko mari mar %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Koth ma chwe %1$.2f%2$s osechopo gi giko mari mar %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Kidieny mar koth ma romo %1$.1f%2$s e saa achiel osechopo gi giko mari mar %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Kidieny mar koth ma romo %1$.2f%2$s e saa achiel osechopo gi giko mari mar %3$.2f%2$s</string>
 </resources>

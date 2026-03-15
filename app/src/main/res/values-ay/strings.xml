@@ -97,8 +97,21 @@
     <string name="interval_3h">3 Sapa hora</string>
     <string name="interval_hourly">Sapa hora</string>
     <string name="forecast_interval">Intervalo de Pronóstico (ukaxa wakisiwa)</string>
-    <string name="temp_alert">Temperatura %1$.1f°%2$s ukaxa %3$.1f°%2$s ukjamawa</string>
+    <string name="afternoon_alert">Temperatura %1$.1f°%2$s ukaxa %3$.1f°%2$s ukjamawa</string>
     <string name="morning_temp_alert">¿Alwat Alerta?</string>
     <string name="afternoon_temp_alert">¿Alerta tarde uruxa?</string>
     <string name="temperature">Timpiratura</string>
+    <string name="morning_alert">Temperatura %1$.1f°%2$s ukaxa %3$.1f°%2$s ukjamawa</string>
+    <string name="rainfall_alert">Jallu pachat yatiyañataki?</string>
+    <string name="rainrate_alert">¿Alerta de Rainrate ukax utjiti?</string>
+    <string name="rainfall_limit">Jallu pacha Límite</string>
+    <string name="rainrate_limit">Límite de ritmo de lluvia ukax mä juk\'a pachanakanwa</string>
+    <string name="hour">pacha</string>
+    <string name="notification_permission">Yatiyawi Permiso</string>
+    <string name="notifications_needed">Yatiyawinakax wakisiwa kunapachatix temperatura, jallu jan ukax jallu pachax límites establecidos ukar phuqhki ukhax yatiyañataki</string>
+    <string name="notifications_needed2">Kunjamakitix pä kutiw yatiyaw permiso ukax jan iyaw sawaykchixa, ukax configuración ukan activañaw wakisi uka lantix, configuración de lanzamiento?</string>
+    <string name="rainfall_alert_metric">Jallu pacha %1$.1f%2$s ukax %3$.1f%2$s uka límite ukar uñtasitawa</string>
+    <string name="rainfall_alert_imperial">Jallu pacha %1$.2f%2$s ukax %3$.2f%2$s uka límite ukar uñtasitawa</string>
+    <string name="rainrate_alert_metric">Jallu pachax %1$.1f%2$s sapa horax %3$.1f%2$s límite ukar uñtasitawa</string>
+    <string name="rainrate_alert_imperial">Jallu pachax %1$.2f%2$s sapa horax %3$.2f%2$s límite ukar uñtasitawa</string>
 </resources>

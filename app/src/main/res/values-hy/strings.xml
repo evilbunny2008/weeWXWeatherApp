@@ -97,8 +97,21 @@
     <string name="interval_3h">3 Ժամային</string>
     <string name="interval_hourly">Ժամային</string>
     <string name="forecast_interval">Կանխատեսման միջակայք (եթե կիրառելի է)</string>
-    <string name="temp_alert">%1$.1f°%2$s ջերմաստիճանն իջել է մինչև ձեր սահմանաչափը՝ %3$.1f°%2$s</string>
+    <string name="afternoon_alert">%1$.1f°%2$s ջերմաստիճանն իջել է մինչև ձեր սահմանաչափը՝ %3$.1f°%2$s</string>
     <string name="morning_temp_alert">Առավոտյան ահազանգ?</string>
     <string name="afternoon_temp_alert">Կեսօրվա ահազանգ?</string>
     <string name="temperature">Ջերմաստիճանը</string>
+    <string name="morning_alert">%1$.1f°%2$s ջերմաստիճանը բարձրացել է մինչև ձեր սահմանաչափը՝ %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Անձրևի մասին ահազանգ?</string>
+    <string name="rainrate_alert">Անձրևի ծանուցում</string>
+    <string name="rainfall_limit">Անձրևի սահմանաչափ</string>
+    <string name="rainrate_limit">Անձրևի մակարդակի սահմանաչափ</string>
+    <string name="hour">ժամ</string>
+    <string name="notification_permission">Ծանուցման թույլտվություն</string>
+    <string name="notifications_needed">Ծանուցումներ են անհրաժեշտ՝ ձեզ զգուշացնելու համար, երբ ջերմաստիճանը, անձրևը կամ անձրևի մակարդակը համապատասխանում են ձեր սահմանված սահմաններին</string>
+    <string name="notifications_needed2">Քանի որ դուք երկու անգամ մերժել եք ծանուցման թույլտվությունը, դրա փոխարեն պետք է միացնե՞ք այն կարգավորումներում, գործարկե՞լ կարգավորումները:</string>
+    <string name="rainfall_alert_metric">Անձրևը %1$.1f%2$s համապատասխանում է ձեր սահմանաչափին՝ %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Անձրևը %1$.2f%2$s համապատասխանում է ձեր սահմանաչափին՝ %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">%1$.1f%2$s ժամում անձրևի արագությունը համապատասխանում է ձեր սահմանաչափին՝ %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">%1$.2f%2$s ժամում անձրևի արագությունը համապատասխանում է ձեր սահմանաչափին՝ %3$.2f%2$s</string>
 </resources>

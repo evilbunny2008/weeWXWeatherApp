@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Stonn</string>
     <string name="interval_3h">3 Stonn</string>
     <string name="interval_hourly">Stonneplang</string>
-    <string name="temp_alert">Temperatur %1$.1f°%2$s ass op Är Limit vun %3$.1f°%2$s erofgaang</string>
+    <string name="afternoon_alert">Temperatur %1$.1f°%2$s ass op Är Limit vun %3$.1f°%2$s erofgaang</string>
     <string name="temperature">Temperatur</string>
     <string name="morning_temp_alert">Moien Alarm?</string>
     <string name="afternoon_temp_alert">Nomëtteg Alarm?</string>
+    <string name="morning_alert">Temperatur %1$.1f°%2$s ass op Är Limit vun %3$.1f°%2$s geklommen</string>
+    <string name="rainfall_alert">Nidderschlag Alarm?</string>
+    <string name="rainfall_limit">Nidderschlag Limit</string>
+    <string name="rainrate_alert">Reenrate Alarm?</string>
+    <string name="rainrate_limit">Rainrate Limit</string>
+    <string name="hour">Stonn</string>
+    <string name="notification_permission">Notifikatioun Erlaabnis</string>
+    <string name="notifications_needed">Notifikatioune si gebraucht fir Iech ze alarméieren wann d\'Temperatur, d\'Nidderschlag oder d\'Reengeschwindegkeet Äre bestëmmte Limiten entsprécht</string>
+    <string name="notifications_needed2">Zënter datt Dir d\'Notifikatiounserlaabnes zweemol ofgeleent hutt, musst Dir et an Astellungen aktivéieren amplaz, Astellungen starten?</string>
+    <string name="rainfall_alert_metric">Nidderschlag %1$.1f%2$s passt op Är Limit vun %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Nidderschlag %1$.2f%2$s passt op Är Limit vun %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Reenrate vun %1$.1f%2$s pro Stonn entsprécht Är Limit vun %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Reenrate vun %1$.2f%2$s pro Stonn entsprécht Är Limit vun %3$.2f%2$s</string>
 </resources>

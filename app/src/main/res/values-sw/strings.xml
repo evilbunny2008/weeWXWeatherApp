@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Saa</string>
     <string name="interval_3h">3 Saa</string>
     <string name="interval_hourly">Kila saa</string>
-    <string name="temp_alert">Halijoto %1$.1f°%2$s imeshuka hadi kikomo chako cha %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Halijoto %1$.1f°%2$s imeshuka hadi kikomo chako cha %3$.1f°%2$s</string>
     <string name="temperature">Halijoto</string>
     <string name="morning_temp_alert">Tahadhari ya Asubuhi?</string>
     <string name="afternoon_temp_alert">Arifa ya Alasiri?</string>
+    <string name="morning_alert">Halijoto %1$.1f°%2$s imepanda hadi kikomo chako cha %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Tahadhari kuhusu Mvua?</string>
+    <string name="rainfall_limit">Kikomo cha Mvua</string>
+    <string name="rainrate_alert">Tahadhari ya Kunyesha?</string>
+    <string name="rainrate_limit">Kikomo cha Mvua</string>
+    <string name="hour">saa</string>
+    <string name="notification_permission">Ruhusa ya Arifa</string>
+    <string name="notifications_needed">Arifa zinahitajika ili kukuarifu wakati halijoto, mvua au kiwango cha mvua kinafikia viwango vyako vilivyowekwa</string>
+    <string name="notifications_needed2">Kwa kuwa ulikataa ruhusa ya arifa mara mbili, unahitaji kuiwasha katika mipangilio badala yake, uzindua mipangilio?</string>
+    <string name="rainfall_alert_metric">Mvua %1$.1f%2$s imelingana na kikomo chako cha %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Mvua %1$.2f%2$s imelingana na kikomo chako cha %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Kiwango cha mvua cha %1$.1f%2$s kwa saa kimelingana na kikomo chako cha %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Kiwango cha mvua cha %1$.2f%2$s kwa saa kimelingana na kikomo chako cha %3$.2f%2$s</string>
 </resources>

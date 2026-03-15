@@ -97,8 +97,21 @@
     <string name="interval_6h">6 kada oras</string>
     <string name="interval_3h">3 kada oras</string>
     <string name="interval_hourly">Kada oras</string>
-    <string name="temp_alert">Say temperatura %1$.1f°%2$s et inmepas ed limitasyon mo ya %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Say temperatura %1$.1f°%2$s et inmepas ed limitasyon mo ya %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Alerto ed kabuasan?</string>
     <string name="afternoon_temp_alert">Alerto ed ngarem?</string>
+    <string name="morning_alert">Say temperatura %1$.1f°%2$s et inmatagey ed limitasyon ya %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Rainfall Alert?</string>
+    <string name="rainfall_limit">Limitasyon na Uran</string>
+    <string name="rainrate_alert">Rainrate Alert?</string>
+    <string name="rainrate_limit">Limitasyon na Uran</string>
+    <string name="hour">oras</string>
+    <string name="notification_permission">Permisyon ed Pakabat</string>
+    <string name="notifications_needed">Kaukolan iray notipikasyon pian naalerto ka no say temperatura, uran odino karakel na uran et onsabi ed saray limitasyon mo</string>
+    <string name="notifications_needed2">Lapud amidua mon inawat so permiso ed pakaamta, kaukolan mon i-enable itan ed settings imbes, launch settings?</string>
+    <string name="rainfall_alert_metric">Say uran %1$.1f%2$s et akaparaan ed limitasyon mo ya %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Say uran %1$.2f%2$s et akaparaan ed limitasyon mo ya %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Say uran ya %1$.1f%2$s kada oras et mipara ed limitasyon mon %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Say uran ya %1$.2f%2$s kada oras et mipara ed limitasyon mon %3$.2f%2$s</string>
 </resources>

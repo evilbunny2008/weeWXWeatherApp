@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Aravo rehegua</string>
     <string name="interval_3h">3 Aravo rehegua</string>
     <string name="interval_hourly">Aravo rehegua</string>
-    <string name="temp_alert">Temperatura %1$.1f°%2$s oguejy nde límite %3$.1f°%2$s peve</string>
+    <string name="afternoon_alert">Temperatura %1$.1f°%2$s oguejy nde límite %3$.1f°%2$s peve</string>
     <string name="temperature">Arapytureko</string>
     <string name="morning_temp_alert">¿Alerta pyharevegua?</string>
     <string name="afternoon_temp_alert">¿Alerta Asaje rehegua?</string>
+    <string name="morning_alert">Temperatura %1$.1f°%2$s ojupi nde límite %3$.1f°%2$s peve</string>
+    <string name="rainfall_alert">¿Alerta Ama rehegua?</string>
+    <string name="rainfall_limit">Límite de lluvia</string>
+    <string name="rainrate_alert">¿Alerta de precisión de lluvia?</string>
+    <string name="rainrate_limit">Límite de Rasa de lluvia rehegua</string>
+    <string name="hour">aravo</string>
+    <string name="notification_permission">Marandu rehegua Permiso</string>
+    <string name="notifications_needed">Oñeikotevẽ marandu ojekuaauka hag̃ua ndéve temperatura, ama térã ritmo de lluvia ombohovái jave umi límite remoĩva\'ekue</string>
+    <string name="notifications_needed2">Embotovégui mokõi jey pe permiso momarandurã, tekotevẽ emboguata ñembohekorãme hendaguépe, emoñepyrũ ñemboheko?</string>
+    <string name="rainfall_alert_metric">Ama %1$.1f%2$s ombojoaju nde límite %3$.1f%2$s ndive</string>
+    <string name="rainfall_alert_imperial">Ama %1$.2f%2$s ojoaju nde límite %3$.2f%2$s ndive</string>
+    <string name="rainrate_alert_metric">Ama ritmo %1$.1f%2$s peteĩ aravópe ojoaju nde límite %3$.1f%2$s ndive</string>
+    <string name="rainrate_alert_imperial">Ama ritmo %1$.2f%2$s peteĩ aravópe ojoaju nde límite %3$.2f%2$s ndive</string>
 </resources>

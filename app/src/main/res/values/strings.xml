@@ -99,8 +99,21 @@
     <string name="next_moon">Next moon events?</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="no_download_or_app_not_setup">No download or app hasn\'t been setup</string>
+	<string name="hour">hour</string>
 	<string name="temperature">Temperature</string>
-	<string name="temp_alert">Temperature %1$.1f°%2$s has dropped to your limit of %3$.1f°%2$s</string>
+	<string name="notification_permission">Notification Permission</string>
+	<string name="notifications_needed">Notifications are needed to alert you when temperature, rainfall or rainrate meets your set limits</string>
+	<string name="notifications_needed2">Since you declined the notification permission twice, you need to enable it in settings instead, launch settings?</string>
 	<string name="morning_temp_alert">Morning Alert?</string>
+	<string name="morning_alert">Temperature %1$.1f°%2$s has risen to your limit of %3$.1f°%2$s</string>
 	<string name="afternoon_temp_alert">Afternoon Alert?</string>
+	<string name="afternoon_alert">Temperature %1$.1f°%2$s has dropped to your limit of %3$.1f°%2$s</string>
+	<string name="rainfall_alert">Rainfall Alert?</string>
+	<string name="rainfall_limit">Rainfall Limit</string>
+	<string name="rainfall_alert_metric">Rainfall %1$.1f%2$s has matched to your limit of %3$.1f%2$s</string>
+	<string name="rainfall_alert_imperial">Rainfall %1$.2f%2$s has matched to your limit of %3$.2f%2$s</string>
+	<string name="rainrate_alert">Rainrate Alert?</string>
+	<string name="rainrate_limit">Rainrate Limit</string>
+	<string name="rainrate_alert_metric">Rainrate of %1$.1f%2$s per hour has matched to your limit of %3$.1f%2$s</string>
+	<string name="rainrate_alert_imperial">Rainrate of %1$.2f%2$s per hour has matched to your limit of %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Awr</string>
     <string name="interval_3h">3 Awr</string>
     <string name="interval_hourly">Yr awr</string>
-    <string name="temp_alert">Mae tymheredd %1$.1f°%2$s wedi gostwng i\'ch terfyn o %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Mae tymheredd %1$.1f°%2$s wedi gostwng i\'ch terfyn o %3$.1f°%2$s</string>
     <string name="temperature">Tymheredd</string>
     <string name="morning_temp_alert">Rhybudd Bore?</string>
     <string name="afternoon_temp_alert">Rhybudd Prynhawn?</string>
+    <string name="morning_alert">Mae tymheredd %1$.1f°%2$s wedi codi i\'ch terfyn o %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Rhybudd Glawiad?</string>
+    <string name="rainfall_limit">Terfyn Glawiad</string>
+    <string name="rainrate_alert">Rhybudd Cyfraddau Glaw?</string>
+    <string name="rainrate_limit">Terfyn cyfradd glaw</string>
+    <string name="hour">awr</string>
+    <string name="notification_permission">Caniatâd Hysbysu</string>
+    <string name="notifications_needed">Mae angen hysbysiadau i\'ch rhybuddio pan fydd tymheredd, glawiad neu gyfradd glaw yn cwrdd â\'ch terfynau gosodedig</string>
+    <string name="notifications_needed2">Ers i chi wrthod y caniatâd hysbysu ddwywaith, mae angen i chi ei alluogi yn y gosodiadau yn lle hynny, lansio gosodiadau?</string>
+    <string name="rainfall_alert_metric">Mae glawiad %1$.1f%2$s wedi cyfateb i\'ch terfyn o %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Mae glawiad %1$.2f%2$s wedi cyfateb i\'ch terfyn o %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Cyfradd law o %1$.1f%2$s yr awr wedi cyfateb i\'ch terfyn o %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Cyfradd law o %1$.2f%2$s yr awr wedi cyfateb i\'ch terfyn o %3$.2f%2$s</string>
 </resources>

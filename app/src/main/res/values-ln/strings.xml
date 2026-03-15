@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Ngonga na ngonga</string>
     <string name="interval_3h">3 Ngonga na ngonga</string>
     <string name="interval_hourly">Ngonga na ngonga</string>
-    <string name="temp_alert">Température %1$.1f°%2$s ekiti na ndelo na yo ya %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Température %1$.1f°%2$s ekiti na ndelo na yo ya %3$.1f°%2$s</string>
     <string name="temperature">Molunge</string>
     <string name="morning_temp_alert">Alerte ya tongo?</string>
     <string name="afternoon_temp_alert">Alerte ya nsima ya midi?</string>
+    <string name="morning_alert">Température %1$.1f°%2$s emati na limite na yo ya %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alerte ya mbula?</string>
+    <string name="rainfall_limit">Limite ya mbula</string>
+    <string name="rainrate_alert">Alerte ya mbula ya mbula?</string>
+    <string name="rainrate_limit">Limite ya mbangu ya mbula</string>
+    <string name="hour">ngonga</string>
+    <string name="notification_permission">Ndingisa ya koyebisa</string>
+    <string name="notifications_needed">Esengeli kopesa mayebisi mpo na kokebisa yo ntango molunge, mbula to mbula ekokisaka ndelo oyo otye</string>
+    <string name="notifications_needed2">Lokola oboyaki ndingisa ya notification mbala mibale, esengeli o activer yango na paramètres au lieu, lancement paramètres?</string>
+    <string name="rainfall_alert_metric">Mbula %1$.1f%2$s ekokani na ndelo na yo ya %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Mbula %1$.2f%2$s ekokani na ndelo na yo ya %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Taux ya mbula ya %1$.1f%2$s na ngonga moko ekokani na limite na yo ya %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Taux ya mbula ya %1$.2f%2$s na ngonga moko ekokani na limite na yo ya %3$.2f%2$s</string>
 </resources>

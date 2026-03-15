@@ -97,8 +97,21 @@
     <string name="interval_6h">6 stündlich</string>
     <string name="interval_3h">3 Stündlich</string>
     <string name="interval_hourly">Stündlich</string>
-    <string name="temp_alert">Die Temperatur %1$.1f°%2$s ist auf Ihren Grenzwert von %3$.1f°%2$s gefallen</string>
+    <string name="afternoon_alert">Die Temperatur %1$.1f°%2$s ist auf Ihren Grenzwert von %3$.1f°%2$s gefallen</string>
     <string name="temperature">Temperatur</string>
     <string name="morning_temp_alert">Morgenalarm?</string>
     <string name="afternoon_temp_alert">Nachmittagsalarm?</string>
+    <string name="morning_alert">Die Temperatur %1$.1f°%2$s ist auf Ihren Grenzwert von %3$.1f°%2$s gestiegen</string>
+    <string name="rainfall_alert">Regenwarnung?</string>
+    <string name="rainfall_limit">Niederschlagsgrenze</string>
+    <string name="rainrate_alert">Niederschlagsalarm?</string>
+    <string name="rainrate_limit">Niederschlagsbegrenzung</string>
+    <string name="hour">Stunde</string>
+    <string name="notification_permission">Benachrichtigungsberechtigung</string>
+    <string name="notifications_needed">Benachrichtigungen sind erforderlich, um Sie zu benachrichtigen, wenn Temperatur, Niederschlag oder Regenrate Ihre festgelegten Grenzwerte erreichen</string>
+    <string name="notifications_needed2">Da Sie die Benachrichtigungsberechtigung zweimal abgelehnt haben, müssen Sie sie stattdessen in den Einstellungen aktivieren. Einstellungen starten?</string>
+    <string name="rainfall_alert_metric">Die Niederschlagsmenge %1$.1f%2$s hat Ihren Grenzwert von %3$.1f%2$s erreicht</string>
+    <string name="rainfall_alert_imperial">Die Niederschlagsmenge %1$.2f%2$s hat Ihren Grenzwert von %3$.2f%2$s erreicht</string>
+    <string name="rainrate_alert_metric">Die Regenrate von %1$.1f%2$s pro Stunde entspricht Ihrem Limit von %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Die Regenrate von %1$.2f%2$s pro Stunde entspricht Ihrem Limit von %3$.2f%2$s</string>
 </resources>

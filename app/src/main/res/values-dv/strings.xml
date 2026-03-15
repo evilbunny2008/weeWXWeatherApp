@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ގަޑިއިރަށް</string>
     <string name="interval_3h">3 ގަޑިއިރަށް</string>
     <string name="interval_hourly">ގަޑިއަކު އެއްފަހަރު</string>
-    <string name="temp_alert">%1$.1f°%2$s ގެ ފިނިހޫނުމިން ތިބާގެ ލިމިޓް %3$.1f°%2$s އަށް ވެއްޓިއްޖެއެވެ</string>
+    <string name="afternoon_alert">%1$.1f°%2$s ގެ ފިނިހޫނުމިން ތިބާގެ ލިމިޓް %3$.1f°%2$s އަށް ވެއްޓިއްޖެއެވެ</string>
     <string name="temperature">ފިނިހޫނުމިން</string>
     <string name="morning_temp_alert">ހެނދުނުގެ އެލާޓް؟</string>
     <string name="afternoon_temp_alert">މެންދުރު އެލާޓް؟</string>
+    <string name="morning_alert">ފިނިހޫނުމިން %1$.1f°%2$s ތިބާގެ ލިމިޓް %3$.1f°%2$s އަށް މައްޗަށް ގޮސްފިއެވެ</string>
+    <string name="rainfall_alert">ރެއިންފޯލް އެލާޓް؟</string>
+    <string name="rainfall_limit">ވާރޭވެހުމުގެ ލިމިޓް</string>
+    <string name="rainrate_alert">ރެއިންރޭޓް އެލާޓް؟</string>
+    <string name="rainrate_limit">ރެއިންރޭޓް ލިމިޓް</string>
+    <string name="hour">ގަޑިއިރު</string>
+    <string name="notification_permission">ނޮޓިފިކޭޝަން ހުއްދަ</string>
+    <string name="notifications_needed">ފިނިހޫނުމިނާއި ވާރޭވެހޭ މިންވަރު ނުވަތަ ވާރޭ ވެހޭ މިންވަރު ކަނޑައެޅިފައިވާ ލިމިޓްތަކާ އެއްވަރަށް ވާއިރު އެލާޓް ދިނުމަށް ނޮޓިފިކޭޝަންތައް ބޭނުންވެ އެވެ</string>
+    <string name="notifications_needed2">ދެފަހަރު ނޮޓިފިކޭޝަން ހުއްދައަށް އިންކާރު ކުރި ކަމުން، އޭގެ ބަދަލުގައި ސެޓިންގްސްގައި އެނެބަލް ކުރަން ޖެހޭނެ، ސެޓިންގްސް ލޯންޗް ކުރަން ހެއްޔެވެ؟</string>
+    <string name="rainfall_alert_metric">ވާރޭ ވެހޭ މިންވަރު %1$.1f%2$s އާއި ތިބާގެ ލިމިޓް %3$.1f%2$s އާއި ގުޅިއްޖެއެވެ</string>
+    <string name="rainfall_alert_imperial">ވާރޭ ވެހޭ މިންވަރު %1$.2f%2$s އާއި ތިބާގެ ލިމިޓް %3$.2f%2$s އާއި ގުޅިއްޖެއެވެ</string>
+    <string name="rainrate_alert_metric">ގަޑިއަކު %1$.1f%2$s ގެ ވާރޭ ރޭޓް ތިބާގެ %3$.1f%2$s ގެ ލިމިޓާ އެއްވަރެވެ</string>
+    <string name="rainrate_alert_imperial">ގަޑިއަކު %1$.2f%2$s ގެ ވާރޭ ރޭޓް ތިބާގެ %3$.2f%2$s ގެ ލިމިޓާ އެއްވަރެވެ</string>
 </resources>

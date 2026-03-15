@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Kull siegħa</string>
     <string name="interval_3h">3 Kull siegħa</string>
     <string name="interval_hourly">Kull siegħa</string>
-    <string name="temp_alert">It-temperatura %1$.1f°%2$s niżlet sal-limitu tiegħek ta\' %3$.1f°%2$s</string>
+    <string name="afternoon_alert">It-temperatura %1$.1f°%2$s niżlet sal-limitu tiegħek ta\' %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Twissija ta\' Filgħodu?</string>
     <string name="afternoon_temp_alert">Twissija ta\' wara nofsinhar?</string>
+    <string name="morning_alert">It-temperatura %1$.1f°%2$s telgħet sal-limitu tiegħek ta\' %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Twissija dwar ix-xita?</string>
+    <string name="rainfall_limit">Limitu tax-xita</string>
+    <string name="rainrate_alert">Twissija Rainrate?</string>
+    <string name="rainrate_limit">Limitu tar-Rainrate</string>
+    <string name="hour">siegħa</string>
+    <string name="notification_permission">Permess ta\' Notifika</string>
+    <string name="notifications_needed">In-notifiki huma meħtieġa biex javżawk meta t-temperatura, ix-xita jew ir-rata tax-xita tilħaq il-limiti stabbiliti tiegħek</string>
+    <string name="notifications_needed2">Peress li rrifjutajt il-permess ta\' notifika darbtejn, trid tagħmilha fis-settings minflok, tniedi settings?</string>
+    <string name="rainfall_alert_metric">Ix-xita %1$.1f%2$s qablet mal-limitu tiegħek ta\' %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Ix-xita %1$.2f%2$s qablet mal-limitu tiegħek ta\' %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Ir-rata tax-xita ta\' %1$.1f%2$s fis-siegħa qablet mal-limitu tiegħek ta\' %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Ir-rata tax-xita ta\' %1$.2f%2$s fis-siegħa qablet mal-limitu tiegħek ta\' %3$.2f%2$s</string>
 </resources>

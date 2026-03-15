@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ڪلاڪ</string>
     <string name="interval_3h">3 ڪلاڪ</string>
     <string name="interval_hourly">ڪلاڪار</string>
-    <string name="temp_alert">گرمي پد %1$.1f°%2$s توهان جي %3$.1f°%2$s جي حد تائين گهٽجي ويو آهي</string>
+    <string name="afternoon_alert">گرمي پد %1$.1f°%2$s توهان جي %3$.1f°%2$s جي حد تائين گهٽجي ويو آهي</string>
     <string name="temperature">گرمي پد</string>
     <string name="morning_temp_alert">صبح جو الرٽ؟</string>
     <string name="afternoon_temp_alert">شام جو الرٽ؟</string>
+    <string name="morning_alert">گرمي پد %1$.1f°%2$s توهان جي حد تائين وڌي ويو آهي %3$.1f°%2$s</string>
+    <string name="rainfall_alert">برسات جي خبرداري؟</string>
+    <string name="rainfall_limit">برسات جي حد</string>
+    <string name="rainrate_alert">برسات جي خبرداري؟</string>
+    <string name="rainrate_limit">برسات جي حد</string>
+    <string name="hour">ڪلاڪ</string>
+    <string name="notification_permission">نوٽيفڪيشن جي اجازت</string>
+    <string name="notifications_needed">اطلاعن جي ضرورت آھي توھان کي خبردار ڪرڻ لاءِ جڏھن گرمي، برسات يا برسات جي شرح توھان جي مقرر ڪيل حدن کي پورو ڪري</string>
+    <string name="notifications_needed2">جتان توھان نوٽيفڪيشن جي اجازت کي ٻه ڀيرا رد ڪيو، توھان کي ان کي سيٽنگن ۾ فعال ڪرڻ جي ضرورت آھي، سيٽنگون لانچ ڪريو؟</string>
+    <string name="rainfall_alert_metric">برسات %1$.1f%2$s توهان جي %3$.1f%2$s جي حد سان ملي وئي آهي</string>
+    <string name="rainfall_alert_imperial">برسات %1$.2f%2$s توهان جي %3$.2f%2$s جي حد سان ملي وئي آهي</string>
+    <string name="rainrate_alert_metric">%1$.1f%2$s في ڪلاڪ جي برسات توهان جي %3$.1f%2$s جي حد سان ملائي وئي آهي</string>
+    <string name="rainrate_alert_imperial">برسات جي شرح %1$.2f%2$s في ڪلاڪ توهان جي %3$.2f%2$s جي حد سان ملي وئي آهي</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 giờ mỗi giờ</string>
     <string name="interval_3h">3 giờ</string>
     <string name="interval_hourly">Hàng giờ</string>
-    <string name="temp_alert">Nhiệt độ %1$.1f°%2$s đã giảm xuống giới hạn của bạn là %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Nhiệt độ %1$.1f°%2$s đã giảm xuống giới hạn của bạn là %3$.1f°%2$s</string>
     <string name="temperature">Nhiệt độ</string>
     <string name="morning_temp_alert">Cảnh báo buổi sáng?</string>
     <string name="afternoon_temp_alert">Cảnh báo buổi chiều?</string>
+    <string name="morning_alert">Nhiệt độ %1$.1f°%2$s đã tăng lên đến giới hạn của bạn là %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Cảnh báo lượng mưa?</string>
+    <string name="rainfall_limit">Giới hạn lượng mưa</string>
+    <string name="rainrate_alert">Cảnh báo lượng mưa?</string>
+    <string name="rainrate_limit">Giới hạn lượng mưa</string>
+    <string name="hour">giờ</string>
+    <string name="notification_permission">Quyền thông báo</string>
+    <string name="notifications_needed">Cần có thông báo để cảnh báo bạn khi nhiệt độ, lượng mưa hoặc lượng mưa đáp ứng giới hạn đã đặt của bạn</string>
+    <string name="notifications_needed2">Vì bạn đã từ chối quyền thông báo hai lần nên thay vào đó, bạn cần bật quyền này trong cài đặt, khởi chạy cài đặt?</string>
+    <string name="rainfall_alert_metric">Lượng mưa %1$.1f%2$s đã khớp với giới hạn %3$.1f%2$s của bạn</string>
+    <string name="rainfall_alert_imperial">Lượng mưa %1$.2f%2$s đã khớp với giới hạn %3$.2f%2$s của bạn</string>
+    <string name="rainrate_alert_metric">Tốc độ mưa %1$.1f%2$s mỗi giờ đã khớp với giới hạn %3$.1f%2$s của bạn</string>
+    <string name="rainrate_alert_imperial">Tốc độ mưa %1$.2f%2$s mỗi giờ đã khớp với giới hạn %3$.2f%2$s của bạn</string>
 </resources>

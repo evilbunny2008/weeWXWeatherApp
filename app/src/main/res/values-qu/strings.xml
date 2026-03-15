@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Sapa hora</string>
     <string name="interval_3h">3 Sapa hora</string>
     <string name="interval_hourly">Sapa hora</string>
-    <string name="temp_alert">%1$.1f°%2$s ruphayqa %3$.1f°%2$s nisqa limiteykimanmi uraykamun</string>
+    <string name="afternoon_alert">%1$.1f°%2$s ruphayqa %3$.1f°%2$s nisqa limiteykimanmi uraykamun</string>
     <string name="temperature">Llapiyay</string>
     <string name="morning_temp_alert">¿Alerta de la mañana?</string>
     <string name="afternoon_temp_alert">¿Alerta tarde?</string>
+    <string name="morning_alert">%1$.1f°%2$s ruphayqa %3$.1f°%2$s nisqa limiteykikamam wicharirun</string>
+    <string name="rainfall_alert">¿Alerta paramanta?</string>
+    <string name="rainfall_limit">Para Límite</string>
+    <string name="rainrate_alert">¿Alerta de Rainrate?</string>
+    <string name="rainrate_limit">Límite de ritmo de lluvia</string>
+    <string name="hour">hora</string>
+    <string name="notification_permission">Willakuy Permiso</string>
+    <string name="notifications_needed">Willakuykuna necesitakun willanaykipaq mayk\'aqchus temperatura, para utaq para ritmo churasqa límitesniykiwan tupan</string>
+    <string name="notifications_needed2">Iskay kutita willay atiyta mana munasqaykimanta, chaymanta atichinayki tiyan churanakunapi, qallariypaq churanakuna?</string>
+    <string name="rainfall_alert_metric">Para %1$.1f%2$s %3$.1f%2$s nisqa limiteykiwan tupachisqa</string>
+    <string name="rainfall_alert_imperial">Para %1$.2f%2$s %3$.2f%2$s nisqa limiteykiwan tupachisqa</string>
+    <string name="rainrate_alert_metric">%1$.1f%2$s sapa hora paray rit\'i %3$.1f%2$s limiteykiwan tupachisqa</string>
+    <string name="rainrate_alert_imperial">%1$.2f%2$s sapa hora paray rit\'i %3$.2f%2$s limiteykiwan tupachisqa</string>
 </resources>

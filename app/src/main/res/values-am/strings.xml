@@ -97,8 +97,21 @@
     <string name="interval_3h">3 ሰዓት</string>
     <string name="interval_hourly">በየሰዓቱ</string>
     <string name="forecast_interval">የትንበያ ክፍተት (የሚመለከተው ከሆነ)</string>
-    <string name="temp_alert">የሙቀት መጠን %1$.1f°%2$s ወደ %3$.1f°%2$s ገደብ ወርዷል</string>
+    <string name="afternoon_alert">የሙቀት መጠን %1$.1f°%2$s ወደ %3$.1f°%2$s ገደብ ወርዷል</string>
     <string name="morning_temp_alert">የጠዋት ማንቂያ?</string>
     <string name="afternoon_temp_alert">ከሰአት ማንቂያ?</string>
     <string name="temperature">የሙቀት መጠን</string>
+    <string name="morning_alert">የሙቀት መጠን %1$.1f°%2$s ገደብዎ %3$.1f°%2$s ደርሷል</string>
+    <string name="rainfall_alert">የዝናብ መጠን ማንቂያ?</string>
+    <string name="rainrate_alert">የዝናብ መጠን ማንቂያ?</string>
+    <string name="rainfall_limit">የዝናብ መጠን ገደብ</string>
+    <string name="rainrate_limit">የዝናብ መጠን ገደብ</string>
+    <string name="hour">ሰአት</string>
+    <string name="notification_permission">የማሳወቂያ ፍቃድ</string>
+    <string name="notifications_needed">የሙቀት መጠን፣ ዝናብ ወይም የዝናብ መጠን ገደብዎን ሲያሟሉ እርስዎን ለማስጠንቀቅ ማሳወቂያዎች ያስፈልጋሉ።</string>
+    <string name="notifications_needed2">የማሳወቂያ ፈቃዱን ሁለት ጊዜ ስላልተቀበልክ፣ በምትኩ ቅንብሮች ውስጥ ማንቃት አለብህ፣ ቅንጅቶችን አስጀምር?</string>
+    <string name="rainfall_alert_metric">የ %1$.1f%2$s የዝናብ መጠን ከ%3$.1f%2$s ገደብ ጋር ይዛመዳል</string>
+    <string name="rainfall_alert_imperial">የ %1$.2f%2$s የዝናብ መጠን ከ%3$.2f%2$s ገደብ ጋር ይዛመዳል</string>
+    <string name="rainrate_alert_metric">በሰአት የ%1$.1f%2$s የዝናብ መጠን ከ%3$.1f%2$s ገደብ ጋር ይዛመዳል</string>
+    <string name="rainrate_alert_imperial">በሰአት የ%1$.2f%2$s የዝናብ መጠን ከ%3$.2f%2$s ገደብ ጋር ይዛመዳል</string>
 </resources>

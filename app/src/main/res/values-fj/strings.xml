@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Auwa</string>
     <string name="interval_3h">3 na auwa</string>
     <string name="interval_hourly">Auwa</string>
-    <string name="temp_alert">Na ivakarau ni katakata %1$.1f°%2$s sa lutu ki na nomu iyalayala ni %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Na ivakarau ni katakata %1$.1f°%2$s sa lutu ki na nomu iyalayala ni %3$.1f°%2$s</string>
     <string name="temperature">Katakata</string>
     <string name="morning_temp_alert">Vakasala ni Mataka?</string>
     <string name="afternoon_temp_alert">Vakasala ni Yakavi?</string>
+    <string name="morning_alert">Na ivakarau ni katakata %1$.1f°%2$s sa tubu cake ki na nomu iyalayala ni %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Vakasalataki ni uca?</string>
+    <string name="rainfall_limit">iYalayala ni Uca</string>
+    <string name="rainrate_alert">Vakasalataki ni uca?</string>
+    <string name="rainrate_limit">Iyalayala ni Uca</string>
+    <string name="hour">auwa</string>
+    <string name="notification_permission">Veivakadonui ni veivakadeitaki</string>
+    <string name="notifications_needed">E gadrevi na veivakadeitaki me vakaroti iko ena gauna e sotava kina na nomu iyalayala ni katakata, uca se rainrate</string>
+    <string name="notifications_needed2">Me vaka ni o sa vakasuka na veivakadonui ni veivakadeitaki vakarua, e dodonu mo vakatara ena ituvatuva ena kena isosomi, ituvatuva ni launch?</string>
+    <string name="rainfall_alert_metric">Na uca %1$.1f%2$s sa veiganiti kei na nomu iyalayala ni %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Na uca %1$.2f%2$s sa veiganiti kei na nomu iyalayala ni %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Na uca ni %1$.1f%2$s ena dua na auwa sa veiganiti kei na nomu iyalayala ni %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Na uca ni %1$.2f%2$s ena dua na auwa sa veiganiti kei na nomu iyalayala ni %3$.2f%2$s</string>
 </resources>

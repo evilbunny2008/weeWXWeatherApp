@@ -97,8 +97,21 @@
     <string name="interval_3h">3 Jeum</string>
     <string name="interval_hourly">Jeum</string>
     <string name="forecast_interval">Interval Ramalan (meunyoe na)</string>
-    <string name="temp_alert">Suhu %1$.1f°%2$s ka jitron u bataih droeneuh %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$.1f°%2$s ka jitron u bataih droeneuh %3$.1f°%2$s</string>
     <string name="morning_temp_alert">Siaga Beungoh?</string>
     <string name="afternoon_temp_alert">Waspada Siang?</string>
     <string name="temperature">Temperatur</string>
+    <string name="morning_alert">Suhu %1$.1f°%2$s ka meutamah bak bataih droeneuh %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Waspada Curah Hujan?</string>
+    <string name="rainrate_alert">Waspada Laju Hujeun?</string>
+    <string name="rainfall_limit">Batas Curah Ujeuen</string>
+    <string name="rainrate_limit">Batas Laju Ujeuen</string>
+    <string name="hour">jeum</string>
+    <string name="notification_permission">Izin Peunyata</string>
+    <string name="notifications_needed">Peunyataan peureulee keu peuingat droeneuh watee suhu, curah ujeuen atawa laju ujeuen ka meupeunoh bataih nyang ka neutetapkan</string>
+    <string name="notifications_needed2">Kareuna droeneuh neutulak izin pemberitahuan dua goe, droeneuh peureulee neu aktifkan lam pengaturan seubagoe gantoe, neupeuhah pengaturan?</string>
+    <string name="rainfall_alert_metric">Curah ujeuen %1$.1f%2$s ka cocok ngon bataih droeneuh %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Curah ujeuen %1$.2f%2$s ka cocok ngon bataih droeneuh %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Laju ujeuen %1$.1f%2$s per jam ka cocok ngon bataih droeneuh %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Laju ujeuen %1$.2f%2$s sijeum ka cocok ngon bataih droeneuh %3$.2f%2$s</string>
 </resources>

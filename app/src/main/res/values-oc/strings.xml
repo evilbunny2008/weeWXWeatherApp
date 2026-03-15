@@ -97,8 +97,21 @@
     <string name="interval_6h">6 per ora</string>
     <string name="interval_3h">3 per ora</string>
     <string name="interval_hourly">Orari</string>
-    <string name="temp_alert">La temperatura %1$.1f°%2$s a davalat a vòstre limit de %3$.1f°%2$s</string>
+    <string name="afternoon_alert">La temperatura %1$.1f°%2$s a davalat a vòstre limit de %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Alèrta del matin?</string>
     <string name="afternoon_temp_alert">Alèrta de l\'après-miègjorn?</string>
+    <string name="morning_alert">La temperatura %1$.1f°%2$s a pujat a vòstre limit de %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alèrta de pluèja?</string>
+    <string name="rainfall_limit">Limit de pluèja</string>
+    <string name="rainrate_alert">Alèrta de taus de pluèja?</string>
+    <string name="rainrate_limit">Limit de taus de pluèja</string>
+    <string name="hour">ora</string>
+    <string name="notification_permission">Permission de notificacion</string>
+    <string name="notifications_needed">De notificacions son necessàrias per vos alertar quand la temperatura, las pluèjas o lo taus de pluèja atenh vòstres limits fixats</string>
+    <string name="notifications_needed2">Coma avètz refusat l\'autorizacion de notificacion dos còps, vos cal l\'activar dins los paramètres a la plaça, los paramètres de lançament?</string>
+    <string name="rainfall_alert_metric">La pluèja %1$.1f%2$s a correspondut a vòstre limit de %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">La pluèja %1$.2f%2$s a correspondut a vòstre limit de %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Lo taus de pluèja de %1$.1f%2$s per ora a correspondut a vòstre limit de %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Lo taus de pluèja de %1$.2f%2$s per ora a correspondut a vòstre limit de %3$.2f%2$s</string>
 </resources>

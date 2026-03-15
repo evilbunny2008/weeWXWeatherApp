@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ၸူဝ်ႈမူင်း</string>
     <string name="interval_3h">3 ၸူဝ်ႈမူင်း</string>
     <string name="interval_hourly">ၼိုင်ႈၸူဝ်ႈမူင်း</string>
-    <string name="temp_alert">တၢင်းမႆႈ %1$.1f°%2$s လူတ်းလူင်းထိုင် တီႈမၵ်းၶႅၼ်ႈ ၸဝ်ႈၵဝ်ႇ %3$.1f°%2$s</string>
+    <string name="afternoon_alert">တၢင်းမႆႈ %1$.1f°%2$s လူတ်းလူင်းထိုင် တီႈမၵ်းၶႅၼ်ႈ ၸဝ်ႈၵဝ်ႇ %3$.1f°%2$s</string>
     <string name="temperature">တၢင်ႉမႆႈ</string>
     <string name="morning_temp_alert">ၾၢင်ႉၵၢင်ၼႂ်?</string>
     <string name="afternoon_temp_alert">ၾၢင်ႉၵၢင်ၼႂ်?</string>
+    <string name="morning_alert">တၢင်းမႆႈ %1$.1f°%2$s ၶိုၼ်ႈထိုင် တီႈမၵ်းၶႅၼ်ႈ ၸဝ်ႈၵဝ်ႇ %3$.1f°%2$s</string>
+    <string name="rainfall_alert">ၾၢင်ႉၾူၼ်တူၵ်း?</string>
+    <string name="rainfall_limit">ၶွပ်ႇၾူၼ်တူၵ်း</string>
+    <string name="rainrate_alert">ၾၢင်ႉၾူၼ်တူၵ်း?</string>
+    <string name="rainrate_limit">မၵ်းၶၢၼ်းၶၼ်ၾူၼ်</string>
+    <string name="hour">ၸူဝ်ႊမူင်း</string>
+    <string name="notification_permission">ၶႂၢင်ႉပၼ်ၶၢဝ်ႇ</string>
+    <string name="notifications_needed">လူဝ်ႇလႆႈမီးၶေႃႈၸီႉသင်ႇ တႃႇပၼ်ၾၢင်ႉ မိူဝ်ႈလူမ်းမႆႈ၊</string>
+    <string name="notifications_needed2">ယွၼ်ႉဝႃႈ ၸဝ်ႈၵဝ်ႇ ဢမ်ႇယွမ်းႁပ်ႉ ၶႂၢင်ႉ လွင်ႈပၼ်ၶၢဝ်ႇ သွင်ပွၵ်ႈလႄႈ ၸဝ်ႈၵဝ်ႇ လူဝ်ႇလႆႈ ပိုတ်ႇပၼ် ၼႂ်း settings တႅၼ်းတီႈမၼ်း ပိုတ်ႇ settings ႁိုဝ်?</string>
+    <string name="rainfall_alert_metric">ၾူၼ်တူၵ်း %1$.1f%2$s ၼႆႉ မၼ်းထုၵ်ႇမႅၼ်ႈၸွမ်း လွင်ႈမၵ်းၶႅၼ်ႈ %3$.1f%2$s ၸဝ်ႈၵဝ်ႇယဝ်ႉ</string>
+    <string name="rainfall_alert_imperial">ၾူၼ်တူၵ်း %1$.2f%2$s လႆႈထုၵ်ႇမႅၼ်ႈၵၼ်တင်း ၶွပ်ႇလႅၼ်ၸဝ်ႈၵဝ်ႇ %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">ၾူၼ်တူၵ်း %1$.1f%2$s ၼိုင်ႈၸူဝ်ႈမူင်း လႆႈထုၵ်ႇမႅၼ်ႈၵၼ်တင်း ၶွပ်ႇမၵ်းမၼ်ႈ %3$.1f%2$s ၸဝ်ႈၵဝ်ႇ</string>
+    <string name="rainrate_alert_imperial">ၾူၼ်တူၵ်း %1$.2f%2$s ၼိုင်ႈၸူဝ်ႈမူင်း လႆႈထုၵ်ႇမႅၼ်ႈၵၼ်တင်း ၶွပ်ႇမၵ်းမၼ်ႈ %3$.2f%2$s ၸဝ်ႈၵဝ်ႇ</string>
 </resources>

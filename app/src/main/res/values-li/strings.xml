@@ -97,8 +97,21 @@
     <string name="interval_6h">6 per oor</string>
     <string name="interval_3h">3 per oor</string>
     <string name="interval_hourly">Per oor</string>
-    <string name="temp_alert">De temperatuur %1$.1f°%2$s is gedaald tot eur limiet vaan %3$.1f°%2$s</string>
+    <string name="afternoon_alert">De temperatuur %1$.1f°%2$s is gedaald tot eur limiet vaan %3$.1f°%2$s</string>
     <string name="temperature">Températuur</string>
     <string name="morning_temp_alert">Ochtendwaarsjuwing?</string>
     <string name="afternoon_temp_alert">Middagwaarsjuwing?</string>
+    <string name="morning_alert">De temperatuur %1$.1f°%2$s is gesteeg tot de grens vaan %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Regewaarsjuwing?</string>
+    <string name="rainfall_limit">Neerslaggrens</string>
+    <string name="rainrate_alert">Regefrequentiewarning?</string>
+    <string name="rainrate_limit">Regensnelheidsgrens</string>
+    <string name="hour">oer</string>
+    <string name="notification_permission">Toestumming veur kennisgeving</string>
+    <string name="notifications_needed">Meldingen zien nuudig um uch te waarsjouwe es temperatuur, neerslag of neersjnelheid aon de ingestelde grenze kump</string>
+    <string name="notifications_needed2">Umtot geej de meldingstoestumming twie kier heet aafgeweze, mot geer \'t in plaats daovan in de insjtellinge insjakele, insjtellinge starte?</string>
+    <string name="rainfall_alert_metric">Neerslag %1$.1f%2$s is euvereinkomme mit eur grens vaan %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Neerslag %1$.2f%2$s heet euvereingekomme mit eur grens vaan %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">De neersnelheid vaan %1$.1f%2$s per oor is euvereinkomme mit de grens vaan %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">De neersnelheid vaan %1$.2f%2$s per oor is euvereinkomme mit de grens vaan %3$.2f%2$s</string>
 </resources>

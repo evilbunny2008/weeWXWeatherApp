@@ -97,8 +97,21 @@
     <string name="interval_6h">6 сехет</string>
     <string name="interval_3h">3 сехетре</string>
     <string name="interval_hourly">Сехетсерен</string>
-    <string name="temp_alert">Температура %1$.1f°%2$s сирӗн чикӗ %3$.1f°%2$s таран анчӗ</string>
+    <string name="afternoon_alert">Температура %1$.1f°%2$s сирӗн чикӗ %3$.1f°%2$s таран анчӗ</string>
     <string name="temperature">Температура</string>
     <string name="morning_temp_alert">Ирхи сигнал?</string>
     <string name="afternoon_temp_alert">Кӑнтӑрлахи сигнал?</string>
+    <string name="morning_alert">Температура %1$.1f°%2$s сирӗн чикӗре %3$.1f°%2$s ҫитрӗ</string>
+    <string name="rainfall_alert">Ҫумӑр ҫинчен систерӳ?</string>
+    <string name="rainfall_limit">Ҫумӑр чикки</string>
+    <string name="rainrate_alert">Ҫумӑр хӑвӑртлӑхӗ ҫинчен систерекен-и?</string>
+    <string name="rainrate_limit">Ҫумӑр шайӗн чикки</string>
+    <string name="hour">сехет</string>
+    <string name="notification_permission">Пӗлтерӳ ирӗкӗ</string>
+    <string name="notifications_needed">Температура, ҫумӑр е ҫумӑр шайӗ сирӗн палӑртнӑ чикӗсене ҫитсен сире пӗлтерме пӗлтерӳсем кирлӗ</string>
+    <string name="notifications_needed2">Пӗлтерӳ ирӗкне икӗ хутчен йышӑнманран ӑна настройкӑсенче ӗҫлеттермелле-и, настройкӑсене пуҫламалла-и?</string>
+    <string name="rainfall_alert_metric">Ҫумӑр %1$.1f%2$s сирӗн %3$.1f%2$s чикӗпе танлашнӑ</string>
+    <string name="rainfall_alert_imperial">Ҫумӑр %1$.2f%2$s сирӗн %3$.2f%2$s чикӗпе танлашнӑ</string>
+    <string name="rainrate_alert_metric">Сехетре %1$.1f%2$s ҫумӑр хӑвӑртлӑхӗ сирӗн %3$.1f%2$s чикӗпе танлашрӗ</string>
+    <string name="rainrate_alert_imperial">Сехетре %1$.2f%2$s ҫумӑр хӑвӑртлӑхӗ сирӗн %3$.2f%2$s чикӗпе танлашрӗ</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_3h">3 saatlıq</string>
     <string name="interval_hourly">Saatlıq</string>
     <string name="forecast_interval">Proqnoz Aralığı (əgər varsa)</string>
-    <string name="temp_alert">%1$.1f°%2$s temperaturu %3$.1f°%2$s limitinizə düşüb</string>
+    <string name="afternoon_alert">%1$.1f°%2$s temperaturu %3$.1f°%2$s limitinizə düşüb</string>
     <string name="morning_temp_alert">Səhər Xəbərdarlığı?</string>
     <string name="afternoon_temp_alert">Günorta Siqnalı?</string>
     <string name="temperature">Temperatur</string>
+    <string name="morning_alert">%1$.1f°%2$s temperaturu %3$.1f°%2$s limitinizə yüksəldi</string>
+    <string name="rainfall_alert">Yağış Xəbərdarlığı?</string>
+    <string name="rainrate_alert">Yağış Xəbərdarlığı?</string>
+    <string name="rainfall_limit">Yağış limiti</string>
+    <string name="rainrate_limit">Yağış Həddini</string>
+    <string name="hour">saat</string>
+    <string name="notification_permission">Bildiriş icazəsi</string>
+    <string name="notifications_needed">Temperatur, yağış və ya yağış dərəcəsi təyin etdiyiniz limitlərə uyğunlaşdıqda sizi xəbərdar etmək üçün bildirişlər lazımdır</string>
+    <string name="notifications_needed2">Bildiriş icazəsini iki dəfə rədd etdiyinizə görə, bunun əvəzinə onu parametrlərdə aktivləşdirməlisiniz, parametrlər işə salınsın?</string>
+    <string name="rainfall_alert_metric">Yağış %1$.1f%2$s sizin %3$.1f%2$s limitinizə uyğun gəldi</string>
+    <string name="rainfall_alert_imperial">Yağış %1$.2f%2$s sizin %3$.2f%2$s limitinizə uyğun gəldi</string>
+    <string name="rainrate_alert_metric">Saatda %1$.1f%2$s yağış sürəti %3$.1f%2$s limitinizə uyğundur</string>
+    <string name="rainrate_alert_imperial">Saatda %1$.2f%2$s yağış sürəti %3$.2f%2$s limitinizə uyğundur</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Co godzinę</string>
     <string name="interval_3h">3 Co godzinę</string>
     <string name="interval_hourly">Cogodzinny</string>
-    <string name="temp_alert">Temperatura %1$.1f°%2$s spadła do limitu %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatura %1$.1f°%2$s spadła do limitu %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Poranny alarm?</string>
     <string name="afternoon_temp_alert">Popołudniowy alarm?</string>
+    <string name="morning_alert">Temperatura %1$.1f°%2$s wzrosła do limitu %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alarm opadowy?</string>
+    <string name="rainfall_limit">Limit opadów</string>
+    <string name="rainrate_alert">Alarm opadów?</string>
+    <string name="rainrate_limit">Limit opadów</string>
+    <string name="hour">godzina</string>
+    <string name="notification_permission">Zezwolenie na powiadomienie</string>
+    <string name="notifications_needed">Powiadomienia są potrzebne, aby ostrzec Cię, gdy temperatura, opady lub intensywność opadów osiągną ustawione limity</string>
+    <string name="notifications_needed2">Ponieważ dwukrotnie odrzuciłeś pozwolenie na powiadomienia, musisz zamiast tego włączyć je w ustawieniach, uruchomić ustawienia?</string>
+    <string name="rainfall_alert_metric">Opady deszczu %1$.1f%2$s osiągnęły limit %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Opady deszczu %1$.2f%2$s osiągnęły limit %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Poziom opadów %1$.1f%2$s na godzinę osiągnął Twój limit %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Poziom opadów %1$.2f%2$s na godzinę osiągnął Twój limit %3$.2f%2$s</string>
 </resources>

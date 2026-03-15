@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Sako ćaso</string>
     <string name="interval_3h">3 Sako òra</string>
     <string name="interval_hourly">Sako ćaso</string>
-    <string name="temp_alert">I temperatura %1$.1f°%2$s resli źi ko limito %3$.1f°%2$s</string>
+    <string name="afternoon_alert">I temperatura %1$.1f°%2$s resli źi ko limito %3$.1f°%2$s</string>
     <string name="temperature">Temperatùra</string>
     <string name="morning_temp_alert">Alerta e divesesqi?</string>
     <string name="afternoon_temp_alert">Alerto palal o mizmeri?</string>
+    <string name="morning_alert">I temperatura %1$.1f°%2$s vazdili źi ko limito %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alarmo pal-o brishind?</string>
+    <string name="rainfall_limit">Limito e brishindesqo</string>
+    <string name="rainrate_alert">Alarmo pal-o brishind?</string>
+    <string name="rainrate_limit">Limito e balvalenqo</string>
+    <string name="hour">òra</string>
+    <string name="notification_permission">Notifikaciaqo śajdipen</string>
+    <string name="notifications_needed">Trubul te aven notifikàcie te alarmisaren tumen kana i temperatura, o brishind vaj o brishind resel tumare limitură</string>
+    <string name="notifications_needed2">Sar so duvar na mangljan o notifikàciaqo śajdipen, trubul te aktivisares les anθ-e paramètrură, anθ-e paramètrură te putres?</string>
+    <string name="rainfall_alert_metric">O brishind %1$.1f%2$s si phanglo e limitosa %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">O brishind %1$.2f%2$s si phanglo e limitosa %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">O brishind %1$.1f%2$s pe jekh ćàso si phanglo e limitosa %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">O brishind %1$.2f%2$s pe jekh ćàso si phanglo e limitosa %3$.2f%2$s</string>
 </resources>

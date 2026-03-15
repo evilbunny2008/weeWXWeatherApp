@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ኣብ ሰዓት</string>
     <string name="interval_3h">3 ኣብ ሰዓት</string>
     <string name="interval_hourly">ኣብ ሰዓት</string>
-    <string name="temp_alert">ሙቐት %1$.1f°%2$s ናብ ደረትካ %3$.1f°%2$s ወሪዱ ኣሎ።</string>
+    <string name="afternoon_alert">ሙቐት %1$.1f°%2$s ናብ ደረትካ %3$.1f°%2$s ወሪዱ ኣሎ።</string>
     <string name="temperature">መጠን ሙቁት</string>
     <string name="morning_temp_alert">ናይ ንግሆ መጠንቀቕታ?</string>
     <string name="afternoon_temp_alert">ናይ ድሕሪ ቀትሪ መጠንቀቕታ?</string>
+    <string name="morning_alert">ሙቐት %1$.1f°%2$s ናብ ደረትካ %3$.1f°%2$s ደይቡ ኣሎ።</string>
+    <string name="rainfall_alert">መጠንቀቕታ ዝናብ?</string>
+    <string name="rainfall_limit">ደረት ዝናብ</string>
+    <string name="rainrate_alert">መጠን ዝናብ መጠንቀቕታ?</string>
+    <string name="rainrate_limit">ደረት ፍጥነት ዝናብ</string>
+    <string name="hour">ሰዓት</string>
+    <string name="notification_permission">ፍቓድ መፍለጢ</string>
+    <string name="notifications_needed">ሙቐት፡ ዝናብ ወይ ፍጥነት ዝናብ ነቲ ዝተወሰነካ ገደብ ምስ ዘማልእ ንምጥንቃቕ መፍለጢታት የድልዩ።</string>
+    <string name="notifications_needed2">ክልተ ግዜ ነቲ ናይ መፍለጢ ፍቓድ ስለ ዝነጸግካዮ፡ ኣብ ክንድኡ ኣብ ቅጥዕታት ከተኽእሎ ኣለካ፡ ቅጥዕታት ምጅማር?</string>
+    <string name="rainfall_alert_metric">ዝናብ %1$.1f%2$s ምስቲ ናትካ ደረት %3$.1f%2$s ተሰማሚዑ ኣሎ።</string>
+    <string name="rainfall_alert_imperial">ዝናብ %1$.2f%2$s ምስቲ ናትካ ደረት %3$.2f%2$s ተሰማሚዑ ኣሎ።</string>
+    <string name="rainrate_alert_metric">ኣብ ሰዓት %1$.1f%2$s ዝናብ ምስቲ %3$.1f%2$s ዝኾነ ደረትካ ተሰማሚዑ ኣሎ።</string>
+    <string name="rainrate_alert_imperial">ኣብ ሰዓት %1$.2f%2$s ዝናብ ምስቲ %3$.2f%2$s ዝኾነ ደረትካ ተሰማሚዑ ኣሎ።</string>
 </resources>

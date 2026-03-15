@@ -97,8 +97,21 @@
     <string name="interval_3h">3 ঘন্টায়</string>
     <string name="interval_hourly">ঘণ্টায়</string>
     <string name="forecast_interval">পূর্বাভাসের ব্যবধান (যদি প্রযোজ্য হয়)</string>
-    <string name="temp_alert">তাপমাত্রা %1$.1f°%2$s আপনার %3$.1f°%2$s সীমাতে নেমে গেছে</string>
+    <string name="afternoon_alert">তাপমাত্রা %1$.1f°%2$s আপনার %3$.1f°%2$s সীমাতে নেমে গেছে</string>
     <string name="temperature">তাপমাত্রা</string>
     <string name="morning_temp_alert">সকালের সতর্কতা?</string>
     <string name="afternoon_temp_alert">বিকেলের সতর্কতা?</string>
+    <string name="morning_alert">তাপমাত্রা %1$.1f°%2$s আপনার %3$.1f°%2$s সীমাতে বেড়েছে</string>
+    <string name="rainfall_alert">বৃষ্টিপাতের সতর্কতা?</string>
+    <string name="rainfall_limit">বৃষ্টিপাতের সীমা</string>
+    <string name="rainrate_alert">বৃষ্টিপাতের সতর্কতা?</string>
+    <string name="rainrate_limit">বৃষ্টির হার সীমা</string>
+    <string name="hour">ঘন্টা</string>
+    <string name="notification_permission">বিজ্ঞপ্তির অনুমতি</string>
+    <string name="notifications_needed">যখন তাপমাত্রা, বৃষ্টিপাত বা বৃষ্টির হার আপনার নির্ধারিত সীমা পূরণ করে তখন আপনাকে সতর্ক করার জন্য বিজ্ঞপ্তির প্রয়োজন হয়</string>
+    <string name="notifications_needed2">যেহেতু আপনি বিজ্ঞপ্তির অনুমতি দুইবার প্রত্যাখ্যান করেছেন, আপনার পরিবর্তে সেটিংসে এটি চালু করতে হবে, সেটিংস চালু করতে হবে?</string>
+    <string name="rainfall_alert_metric">বৃষ্টিপাত %1$.1f%2$s আপনার %3$.1f%2$s সীমার সাথে মিলেছে</string>
+    <string name="rainfall_alert_imperial">বৃষ্টিপাত %1$.2f%2$s আপনার %3$.2f%2$s সীমার সাথে মিলেছে</string>
+    <string name="rainrate_alert_metric">প্রতি ঘণ্টায় %1$.1f%2$s বৃষ্টির হার আপনার %3$.1f%2$s সীমার সাথে মিলে গেছে</string>
+    <string name="rainrate_alert_imperial">প্রতি ঘণ্টায় %1$.2f%2$s বৃষ্টির হার আপনার %3$.2f%2$s সীমার সাথে মিলে গেছে</string>
 </resources>

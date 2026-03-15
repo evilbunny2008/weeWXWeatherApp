@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Konso Ngunga</string>
     <string name="interval_3h">3 Ngunga</string>
     <string name="interval_hourly">Konso ngunga</string>
-    <string name="temp_alert">Tiya %1$.1f°%2$s me kulumuka na ndilu na nge ya %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Tiya %1$.1f°%2$s me kulumuka na ndilu na nge ya %3$.1f°%2$s</string>
     <string name="temperature">Tiya</string>
     <string name="morning_temp_alert">Kukebisa na Suka?</string>
     <string name="afternoon_temp_alert">Kukebisa na nima ya midi?</string>
+    <string name="morning_alert">Tiya %1$.1f°%2$s me tombuka na ndilu na nge ya %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Lukebisu ya Mvula?</string>
+    <string name="rainfall_limit">Ndilu ya Mvula</string>
+    <string name="rainrate_alert">Lukebisu ya Mvula?</string>
+    <string name="rainrate_limit">Ndilu ya Mvula</string>
+    <string name="hour">ngunga</string>
+    <string name="notification_permission">Nswa ya kuzabisa</string>
+    <string name="notifications_needed">Bansangu kele mfunu sambu na kukebisa nge kana mupepe, mvula to ntalu ya mvula me lungisa bandilu yina nge me tula</string>
+    <string name="notifications_needed2">Sambu nge me buya nswa ya nsangu mbala zole, nge fwete kangula yo na baparametre na kisika ya kukangula baparametre?</string>
+    <string name="rainfall_alert_metric">Mvula %1$.1f%2$s me fwanana ti ndilu na nge ya %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Mvula %1$.2f%2$s me fwanana ti ndilu na nge ya %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Mvula ya %1$.1f%2$s na ngunga mosi me fwanana ti ndilu na nge ya %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Mvula ya %1$.2f%2$s na ngunga mosi me fwanana ti ndilu na nge ya %3$.2f%2$s</string>
 </resources>

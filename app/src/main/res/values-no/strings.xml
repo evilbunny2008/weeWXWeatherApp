@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Hver time</string>
     <string name="interval_3h">3 time</string>
     <string name="interval_hourly">Hver time</string>
-    <string name="temp_alert">Temperaturen %1$.1f°%2$s har sunket til grensen din på %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperaturen %1$.1f°%2$s har sunket til grensen din på %3$.1f°%2$s</string>
     <string name="temperature">Temperatur</string>
     <string name="morning_temp_alert">Morgenvarsel?</string>
     <string name="afternoon_temp_alert">Ettermiddagsvarsel?</string>
+    <string name="morning_alert">Temperaturen %1$.1f°%2$s har steget til grensen din på %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Varsel om nedbør?</string>
+    <string name="rainfall_limit">Nedbørsgrense</string>
+    <string name="rainrate_alert">Regnmengdevarsel?</string>
+    <string name="rainrate_limit">Regnhastighetsgrense</string>
+    <string name="hour">time</string>
+    <string name="notification_permission">Varslingstillatelse</string>
+    <string name="notifications_needed">Varsler er nødvendig for å varsle deg når temperatur, nedbør eller nedbørsmengde oppfyller de angitte grensene</string>
+    <string name="notifications_needed2">Siden du avslo varslingstillatelsen to ganger, må du aktivere den i innstillingene i stedet, starte innstillinger?</string>
+    <string name="rainfall_alert_metric">Nedbør %1$.1f%2$s har matchet grensen din på %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Nedbør %1$.2f%2$s har matchet grensen din på %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Regnmengden på %1$.1f%2$s per time har matchet grensen din på %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Regnmengden på %1$.2f%2$s per time har matchet grensen din på %3$.2f%2$s</string>
 </resources>

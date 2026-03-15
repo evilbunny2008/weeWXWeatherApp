@@ -97,8 +97,21 @@
     <string name="interval_6h">6 საათიანი</string>
     <string name="interval_3h">3 საათიანი</string>
     <string name="interval_hourly">საათობრივი</string>
-    <string name="temp_alert">ტემპერატურა %1$.1f°%2$s დაეცა თქვენს ლიმიტამდე %3$.1f°%2$s</string>
+    <string name="afternoon_alert">ტემპერატურა %1$.1f°%2$s დაეცა თქვენს ლიმიტამდე %3$.1f°%2$s</string>
     <string name="temperature">ტემპერატურა</string>
     <string name="morning_temp_alert">დილის გაფრთხილება?</string>
     <string name="afternoon_temp_alert">შუადღის გაფრთხილება?</string>
+    <string name="morning_alert">ტემპერატურა %1$.1f°%2$s გაიზარდა თქვენს ლიმიტამდე %3$.1f°%2$s</string>
+    <string name="rainfall_alert">გაფრთხილება წვიმის შესახებ?</string>
+    <string name="rainfall_limit">ნალექის ლიმიტი</string>
+    <string name="rainrate_alert">წვიმის გაფრთხილება?</string>
+    <string name="rainrate_limit">წვიმის ლიმიტი</string>
+    <string name="hour">საათი</string>
+    <string name="notification_permission">შეტყობინების ნებართვა</string>
+    <string name="notifications_needed">საჭიროა შეტყობინებები, რათა გაგაფრთხილოთ, როდესაც ტემპერატურა, ნალექი ან წვიმის სიხშირე აკმაყოფილებს თქვენს დადგენილ ლიმიტებს</string>
+    <string name="notifications_needed2">მას შემდეგ, რაც თქვენ ორჯერ თქვით შეტყობინების ნებართვა, უნდა ჩართოთ ის პარამეტრებში, გაუშვათ პარამეტრები?</string>
+    <string name="rainfall_alert_metric">ნალექი %1$.1f%2$s დაემთხვა თქვენს %3$.1f%2$s ლიმიტს</string>
+    <string name="rainfall_alert_imperial">ნალექი %1$.2f%2$s დაემთხვა თქვენს %3$.2f%2$s ლიმიტს</string>
+    <string name="rainrate_alert_metric">წვიმის %1$.1f%2$s საათში დაემთხვა თქვენს ლიმიტს %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">წვიმის მაჩვენებელი %1$.2f%2$s საათში დაემთხვა თქვენს ლიმიტს %3$.2f%2$s</string>
 </resources>

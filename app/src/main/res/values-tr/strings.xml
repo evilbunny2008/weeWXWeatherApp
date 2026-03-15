@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Saatlik</string>
     <string name="interval_3h">3 Saatlik</string>
     <string name="interval_hourly">Saatlik</string>
-    <string name="temp_alert">%1$.1f°%2$s sıcaklığı %3$.1f°%2$s sınırınıza düştü</string>
+    <string name="afternoon_alert">%1$.1f°%2$s sıcaklığı %3$.1f°%2$s sınırınıza düştü</string>
     <string name="temperature">Sıcaklık</string>
     <string name="morning_temp_alert">Sabah Uyarısı?</string>
     <string name="afternoon_temp_alert">Öğleden Sonra Uyarısı?</string>
+    <string name="morning_alert">%1$.1f°%2$s sıcaklığı %3$.1f°%2$s sınırınıza yükseldi</string>
+    <string name="rainfall_alert">Yağış Uyarısı?</string>
+    <string name="rainfall_limit">Yağış Sınırı</string>
+    <string name="rainrate_alert">Yağmur Hızı Uyarısı?</string>
+    <string name="rainrate_limit">Yağmur Hızı Sınırı</string>
+    <string name="hour">saat</string>
+    <string name="notification_permission">Bildirim İzni</string>
+    <string name="notifications_needed">Sıcaklık, yağış veya yağmur oranı ayarladığınız limitlere ulaştığında sizi uyarmak için bildirimler gereklidir</string>
+    <string name="notifications_needed2">Bildirim iznini iki kez reddettiğiniz için bunun yerine ayarlarda etkinleştirmeniz mi gerekiyor, ayarları başlatalım mı?</string>
+    <string name="rainfall_alert_metric">%1$.1f%2$s yağış %3$.1f%2$s sınırınıza ulaştı</string>
+    <string name="rainfall_alert_imperial">%1$.2f%2$s yağış %3$.2f%2$s sınırınıza ulaştı</string>
+    <string name="rainrate_alert_metric">Saatteki %1$.1f%2$s yağmur oranı, %3$.1f%2$s sınırınızla eşleşti</string>
+    <string name="rainrate_alert_imperial">Saatteki %1$.2f%2$s yağmur oranı, %3$.2f%2$s sınırınızla eşleşti</string>
 </resources>

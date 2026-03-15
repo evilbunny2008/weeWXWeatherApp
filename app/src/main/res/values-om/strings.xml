@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Sa\'aatii tokkotti</string>
     <string name="interval_3h">3 Sa\'aatii tokkotti</string>
     <string name="interval_hourly">Sa\'aatii sa\'aatiin</string>
-    <string name="temp_alert">Ho\'i %1$.1f°%2$s gara daangaa kee %3$.1f°%2$s gadi bu\'eera</string>
+    <string name="afternoon_alert">Ho\'i %1$.1f°%2$s gara daangaa kee %3$.1f°%2$s gadi bu\'eera</string>
     <string name="temperature">Ho\'ina</string>
     <string name="morning_temp_alert">Akeekkachiisa Ganama?</string>
     <string name="afternoon_temp_alert">Akeekkachiisa Waaree boodaa?</string>
+    <string name="morning_alert">Ho\'i %1$.1f°%2$s gara daangaa kee %3$.1f°%2$s ol ka\'eera</string>
+    <string name="rainfall_alert">Akeekkachiisa Roobaa?</string>
+    <string name="rainfall_limit">Daangaa Roobaa</string>
+    <string name="rainrate_alert">Akeekkachiisa Saffisa Roobaa?</string>
+    <string name="rainrate_limit">Daangaa Saffisa Roobaa</string>
+    <string name="hour">sa\'a</string>
+    <string name="notification_permission">Hayyama Beeksisa</string>
+    <string name="notifications_needed">Yeroo ho\'i, rooba ykn saffisi roobaa daangaa ati kaa\'ame guutu si akeekkachiisuuf beeksisni barbaachisaadha</string>
+    <string name="notifications_needed2">Hayyama beeksisa yeroo lama waan diddeef, kanaa mannaa qindaa\'inoota keessatti dandeessisuun si barbaachisa, qindaa\'inoota eegaluu?</string>
+    <string name="rainfall_alert_metric">Roobni %1$.1f%2$s daangaa kee %3$.1f%2$s waliin walsimsiiseera</string>
+    <string name="rainfall_alert_imperial">Roobni %1$.2f%2$s daangaa kee %3$.2f%2$s wajjin walsimsiiseera</string>
+    <string name="rainrate_alert_metric">Saffisi rooba sa\'aatii tokkotti %1$.1f%2$s daangaa kee %3$.1f%2$s wajjin walsimsiiseera</string>
+    <string name="rainrate_alert_imperial">Saffisi rooba sa\'aatii tokkotti %1$.2f%2$s daangaa kee %3$.2f%2$s wajjin walsimsiiseera</string>
 </resources>

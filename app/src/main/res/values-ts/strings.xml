@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Hi awara yin\'wana ni yin\'wana</string>
     <string name="interval_3h">3 Hi awara yin\'wana ni yin\'wana</string>
     <string name="interval_hourly">Hi awara na awara</string>
-    <string name="temp_alert">Mahiselo ya %1$.1f°%2$s ya yile ehansi kuya eka mpimo wa wena wa %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Mahiselo ya %1$.1f°%2$s ya yile ehansi kuya eka mpimo wa wena wa %3$.1f°%2$s</string>
     <string name="temperature">Mahiselo</string>
     <string name="morning_temp_alert">Xitsundzuxo xa Mixo?</string>
     <string name="afternoon_temp_alert">Xitsundzuxo xa Madyambu?</string>
+    <string name="morning_alert">Mahiselo ya %1$.1f°%2$s ya tlakuke kuya eka mpimo wa wena wa %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Xitsundzuxo xa Mpfula?</string>
+    <string name="rainfall_limit">Mpfula ya Mpfula</string>
+    <string name="rainrate_alert">Xitsundzuxo xa Mpfula?</string>
+    <string name="rainrate_limit">Mpimo wa Mpfula</string>
+    <string name="hour">awara</string>
+    <string name="notification_permission">Mpfumelelo wa Xitiviso</string>
+    <string name="notifications_needed">Switiviso swa laveka ku ku lemukisa loko mahiselo, mpfula kumbe mpfula yi fikelela swipimelo swa wena leswi vekiweke</string>
+    <string name="notifications_needed2">Leswi u aleke mpfumelelo wa xitiviso kambirhi, u fanele u wu pfumelela eka swiyimiso ematshan\'weni ya sweswo, ku sungula swiyimiso?</string>
+    <string name="rainfall_alert_metric">Mpfula ya %1$.1f%2$s yi fambelanile na mpimo wa wena wa %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Mpfula ya %1$.2f%2$s yi fambelanile na mpimo wa wena wa %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Mpfula ya %1$.1f%2$s hi awara yi fambelanile na mpimo wa wena wa %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Mpfula ya %1$.2f%2$s hi awara yi fambelanile na mpimo wa wena wa %3$.2f%2$s</string>
 </resources>

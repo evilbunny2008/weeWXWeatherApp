@@ -229,10 +229,16 @@ public class weeWXApp extends Application
 	final static int mode_default = AppCompatDelegate.MODE_NIGHT_NO;
 
 	final static boolean morning_temp_alert_default = false;
-	final static float MorningTemp_default = 23.0f;
+	final static int MorningTemp_default = 230;
 
 	final static boolean afternoon_temp_alert_default = false;
-	final static float AfternoonTemp_default = 26.0f;
+	final static int AfternoonTemp_default = 260;
+
+	final static boolean rainfall_alert_default = false;
+	final static int RainfallLimit_default = 2500;
+
+	final static boolean rainrate_alert_default = false;
+	final static int RainrateLimit_default = 5000;
 
 	final static String radtype_default = "image";
 	final static String SETTINGS_URL_default = "https://example.com/weewx/inigo-settings.txt";
@@ -278,7 +284,12 @@ public class weeWXApp extends Application
 	{
 		instance = this;
 
-		createNotificationChannel();
+		createNotificationChannel("temperature_alerts", "Temperature Alerts",
+				"Alerts up to twice daily when the temperature reaches your set limits");
+		createNotificationChannel("rainfall_alert", "Rainfall Alert",
+				"Alerts daily when the rainfall reaches your set limit");
+		createNotificationChannel("rainrate_alert", "Rainrate Alert",
+				"Alerts hourly if the rainrate reaches your set limit");
 
 		ForecastDefaults fcdef = new ForecastDefaults();
 		fcdef.fctype = "weatherzone2";
@@ -988,17 +999,17 @@ public class weeWXApp extends Application
 		return fcDef;
 	}
 
-	private void createNotificationChannel()
+	private void createNotificationChannel(String id, String name, String description)
 	{
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 		{
 			NotificationChannel channel = new NotificationChannel(
-				"temperature_alerts",
-				"Temperature Alerts",
+				id,
+				name,
 				NotificationManager.IMPORTANCE_HIGH
 			);
 
-			channel.setDescription("Alerts when temperature reaches set limit");
+			channel.setDescription(description);
 			NotificationManager manager = getSystemService(NotificationManager.class);
 			manager.createNotificationChannel(channel);
 		}
@@ -1017,7 +1028,55 @@ public class weeWXApp extends Application
 	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "temperature_alerts")
 	        .setSmallIcon(R.drawable.baseline_thermostat_24)
 	        .setContentTitle("Temperature Alert")
-	        .setContentText(String.format(getAndroidString(R.string.temp_alert), temperature, unit, limit))
+	        .setContentText(String.format(getAndroidString(R.string.afternoon_alert), temperature, unit, limit))
+	        .setPriority(NotificationCompat.PRIORITY_HIGH)
+	        .setAutoCancel(true);
+
+	    NotificationManagerCompat manager = NotificationManagerCompat.from(instance);
+		manager.notify(1001, builder.build());
+	}
+
+	static void sendRainfallAlert(float rainfall, float rainfalllimit)
+	{
+		if(ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
+		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+			return;
+
+		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
+
+		String str = metric && !rainInInches ?
+		             String.format(getAndroidString(R.string.rainfall_alert_metric), rainfall, "mm", rainfalllimit) :
+		             String.format(getAndroidString(R.string.rainfall_alert_imperial), rainfall, "in", rainfalllimit);
+
+	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainfall_alert")
+	        .setSmallIcon(R.drawable.baseline_thermostat_24)
+	        .setContentTitle("Rainfall Alert")
+	        .setContentText(str)
+	        .setPriority(NotificationCompat.PRIORITY_HIGH)
+	        .setAutoCancel(true);
+
+	    NotificationManagerCompat manager = NotificationManagerCompat.from(instance);
+		manager.notify(1001, builder.build());
+	}
+
+	static void sendRainrateAlert(float rainrate, float rainratelimit)
+	{
+		if(ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
+		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+			return;
+
+		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
+
+		String str = metric && !rainInInches ?
+		             String.format(getAndroidString(R.string.rainrate_alert_metric), rainrate, "mm", rainratelimit) :
+		             String.format(getAndroidString(R.string.rainrate_alert_imperial), rainrate, "in", rainratelimit);
+
+	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainrate_alert")
+	        .setSmallIcon(R.drawable.baseline_thermostat_24)
+	        .setContentTitle("Rainrate Alert")
+	        .setContentText(str)
 	        .setPriority(NotificationCompat.PRIORITY_HIGH)
 	        .setAutoCancel(true);
 

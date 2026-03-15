@@ -97,8 +97,21 @@
     <string name="interval_6h">6 soatlik</string>
     <string name="interval_3h">3 soatlik</string>
     <string name="interval_hourly">Soatlik</string>
-    <string name="temp_alert">Harorat %1$.1f°%2$s chegarangizgacha tushib ketdi: %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Harorat %1$.1f°%2$s chegarangizgacha tushib ketdi: %3$.1f°%2$s</string>
     <string name="temperature">Harorat</string>
     <string name="morning_temp_alert">Ertalab ogohlantirishmi?</string>
     <string name="afternoon_temp_alert">Peshindan keyin ogohlantirishmi?</string>
+    <string name="morning_alert">Harorat %1$.1f°%2$s sizning chegarangizga koʻtarildi: %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Yomg\'ir haqida ogohlantirishmi?</string>
+    <string name="rainfall_limit">Yomg\'ir chegarasi</string>
+    <string name="rainrate_alert">Yomg\'ir haqida ogohlantirishmi?</string>
+    <string name="rainrate_limit">Yomg\'ir tezligi chegarasi</string>
+    <string name="hour">soat</string>
+    <string name="notification_permission">Bildirishnoma ruxsati</string>
+    <string name="notifications_needed">Harorat, yog\'ingarchilik yoki yomg\'ir miqdori belgilangan chegaralarga to\'g\'ri kelishi haqida sizni ogohlantirish uchun bildirishnomalar kerak</string>
+    <string name="notifications_needed2">Ikki marta bildirishnoma ruxsatini rad etganingiz uchun uni sozlamalarda yoqishingiz kerak, sozlamalar ishga tushirilsinmi?</string>
+    <string name="rainfall_alert_metric">Yomg\'ir miqdori %1$.1f%2$s sizning limitingizga mos keldi: %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Yomg\'ir miqdori %1$.2f%2$s sizning limitingizga mos keldi: %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Soatiga %1$.1f%2$s yomgʻir tezligi sizning cheklovingiz %3$.1f%2$sga toʻgʻri keldi</string>
+    <string name="rainrate_alert_imperial">Soatiga %1$.2f%2$s yomgʻir tezligi sizning cheklovingizga mos keldi: %3$.2f%2$s</string>
 </resources>

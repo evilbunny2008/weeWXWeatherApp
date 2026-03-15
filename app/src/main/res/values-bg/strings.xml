@@ -97,8 +97,21 @@
     <string name="interval_3h">3 на час</string>
     <string name="interval_hourly">Почасово</string>
     <string name="forecast_6hourly">6 на час</string>
-    <string name="temp_alert">Температурата %1$.1f°%2$s падна до вашия лимит от %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Температурата %1$.1f°%2$s падна до вашия лимит от %3$.1f°%2$s</string>
     <string name="temperature">температура</string>
     <string name="morning_temp_alert">Сутрешна тревога?</string>
     <string name="afternoon_temp_alert">Следобеден сигнал?</string>
+    <string name="morning_alert">Температурата %1$.1f°%2$s се повиши до вашата граница от %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Предупреждение за валежи?</string>
+    <string name="rainfall_limit">Ограничение на валежите</string>
+    <string name="rainrate_alert">Предупреждение за дъжд?</string>
+    <string name="rainrate_limit">Ограничение за количеството дъжд</string>
+    <string name="hour">час</string>
+    <string name="notification_permission">Разрешение за уведомяване</string>
+    <string name="notifications_needed">Известията са необходими, за да ви предупреждават, когато температурата, валежите или количеството на дъжда отговарят на зададените от вас ограничения</string>
+    <string name="notifications_needed2">Тъй като отказахте разрешението за уведомяване два пъти, трябва вместо това да го активирате в настройките, настройките за стартиране?</string>
+    <string name="rainfall_alert_metric">Валежите %1$.1f%2$s съответстват на лимита ви от %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Валежите %1$.2f%2$s съответстват на лимита ви от %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Интензивността на дъжда от %1$.1f%2$s на час съответства на вашия лимит от %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Интензивността на дъжда от %1$.2f%2$s на час съответства на вашия лимит от %3$.2f%2$s</string>
 </resources>

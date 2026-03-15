@@ -97,8 +97,21 @@
     <string name="interval_6h">6 uri</string>
     <string name="interval_3h">3 uri</string>
     <string name="interval_hourly">Orariu</string>
-    <string name="temp_alert">La timpiratura %1$.1f°%2$s è calata ô vostru limiti di %3$.1f°%2$s</string>
+    <string name="afternoon_alert">La timpiratura %1$.1f°%2$s è calata ô vostru limiti di %3$.1f°%2$s</string>
     <string name="temperature">Tempiratura</string>
     <string name="morning_temp_alert">Avvisu dû matina?</string>
     <string name="afternoon_temp_alert">Avvisu dû pomeriggiu?</string>
+    <string name="morning_alert">La timpiratura %1$.1f°%2$s aumintau ô vostru limiti di %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Avvisu di chioggia?</string>
+    <string name="rainfall_limit">Limiti di piòggia</string>
+    <string name="rainrate_alert">Avvisu di tassu di chioggia?</string>
+    <string name="rainrate_limit">Limiti dâ chioggia</string>
+    <string name="hour">ura</string>
+    <string name="notification_permission">Pirmissu di nutificazzioni</string>
+    <string name="notifications_needed">Sunnu nicissari li nutificazzioni pi avvisari quannu la timpiratura, la piòggia o la prubabbilità di piòggia suddisfanu li limiti fissati</string>
+    <string name="notifications_needed2">Vistu ca rifiutasti lu pirmissu di nutificazzioni du\' voti, mmeci è nicissariu attivàrilu nnê mpistazzioni, avviari li mpistazzioni?</string>
+    <string name="rainfall_alert_metric">Piòggia %1$.1f%2$s currispunnìu ô vostru limiti di %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Piòggia %1$.2f%2$s currispunnìu ô vostru limiti di %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Lu tassu di chioggia di %1$.1f%2$s all\'ura currispunni ô vostru limiti di %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Lu tassu di chioggia di %1$.2f%2$s all\'ura currispunni ô vostru limiti di %3$.2f%2$s</string>
 </resources>

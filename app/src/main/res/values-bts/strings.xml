@@ -97,8 +97,21 @@
     <string name="interval_3h">3 Jam</string>
     <string name="interval_hourly">Tiap jam</string>
     <string name="forecast_interval">Selang Perkiraan (anggo dong)</string>
-    <string name="temp_alert">Suhu %1$.1f°%2$s domma turun hu batasmu %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$.1f°%2$s domma turun hu batasmu %3$.1f°%2$s</string>
     <string name="temperature">Naskah</string>
     <string name="morning_temp_alert">Siaga Pagi?</string>
     <string name="afternoon_temp_alert">Siaga Siang?</string>
+    <string name="morning_alert">Suhu %1$.1f°%2$s domma naik das hubani batasmu %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Siaga Hujan?</string>
+    <string name="rainrate_alert">Peringatan Laju Udan?</string>
+    <string name="rainfall_limit">Batas ni Udan</string>
+    <string name="rainrate_limit">Batas Udan</string>
+    <string name="hour">jam</string>
+    <string name="notification_permission">Izin Pemberitahuan</string>
+    <string name="notifications_needed">Pemberitahuan porlu laho pasingatkon nassiam anggo suhu, udan atap udan das hubani batas na dob itontuhon nassiam</string>
+    <string name="notifications_needed2">Halani domma dua hali ham manolak ijin pemberitahuan, porlu do iaktifkon ham ai bani pengaturan, pengaturan peluncuran?</string>
+    <string name="rainfall_alert_metric">Udan %1$.1f%2$s domma sosok pakon batasmu %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Udan %1$.2f%2$s domma sosok pakon batasmu %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Udan %1$.1f%2$s per jam domma sadalan hubani batasmu %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Udan %1$.2f%2$s per jam domma sadalan hubani batasmu %3$.2f%2$s</string>
 </resources>

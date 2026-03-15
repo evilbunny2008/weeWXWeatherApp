@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Ngelihora</string>
     <string name="interval_3h">3 Ngelihora</string>
     <string name="interval_hourly">Ngelihora</string>
-    <string name="temp_alert">Lizinga lekushisa %1$.1f°%2$s lehle lafika emkhawulweni wakho we %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Lizinga lekushisa %1$.1f°%2$s lehle lafika emkhawulweni wakho we %3$.1f°%2$s</string>
     <string name="temperature">Kushisa</string>
     <string name="morning_temp_alert">Secwayiso sasekuseni?</string>
     <string name="afternoon_temp_alert">Secwayiso santambama?</string>
+    <string name="morning_alert">Lizinga lekushisa %1$.1f°%2$s likhuphukele emkhawulweni wakho we %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Secwayiso Semvula?</string>
+    <string name="rainfall_limit">Umkhawulo Wemvula</string>
+    <string name="rainrate_alert">Secwayiso Selizinga Lemvula?</string>
+    <string name="rainrate_limit">Umkhawulo Welizinga Lemvula</string>
+    <string name="hour">li-awa</string>
+    <string name="notification_permission">Imvume yesatiso</string>
+    <string name="notifications_needed">Tatiso tiyadzingeka kute tikucwayise uma lizinga lekushisa, imvula noma lizinga lemvula lihlangabetana nemikhawulo yakho lebekiwe</string>
+    <string name="notifications_needed2">Njengobe wala imvume yesatiso kabili, kufanele uyivumele kumasethingi esikhundleni saloko, kwetfula emasethingi?</string>
+    <string name="rainfall_alert_metric">Imvula %1$.1f%2$s ihambisane nemkhawulo wakho we %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Imvula %1$.2f%2$s ihambisane nemkhawulo wakho we %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Imvula lengu %1$.1f%2$s ngelihora ihambisane nemkhawulo wakho we %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Imvula lengu %1$.2f%2$s ngelihora ihambisane nemkhawulo wakho we %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Сағат сайын</string>
     <string name="interval_3h">3 сағат сайын</string>
     <string name="interval_hourly">Сағат сайын</string>
-    <string name="temp_alert">%1$.1f°%2$s температурасы %3$.1f°%2$s шегіне дейін төмендеді</string>
+    <string name="afternoon_alert">%1$.1f°%2$s температурасы %3$.1f°%2$s шегіне дейін төмендеді</string>
     <string name="temperature">Температура</string>
     <string name="morning_temp_alert">Таңертеңгі ескерту?</string>
     <string name="afternoon_temp_alert">Түстен кейінгі ескерту?</string>
+    <string name="morning_alert">%1$.1f°%2$s температурасы %3$.1f°%2$s шегіне дейін көтерілді</string>
+    <string name="rainfall_alert">Жауын-шашын туралы ескерту?</string>
+    <string name="rainfall_limit">Жауын-шашынның шегі</string>
+    <string name="rainrate_alert">Жаңбыр дабылы ма?</string>
+    <string name="rainrate_limit">Жаңбыр жылдамдығының шегі</string>
+    <string name="hour">сағат</string>
+    <string name="notification_permission">Хабарландыру рұқсаты</string>
+    <string name="notifications_needed">Температура, жауын-шашын немесе жаңбыр жылдамдығы белгіленген шектеулерге сәйкес келетінін ескерту үшін хабарландырулар қажет</string>
+    <string name="notifications_needed2">Хабарландыру рұқсатынан екі рет бас тартқандықтан, оның орнына параметрлерде оны қосу керек, параметрлерді іске қосу керек пе?</string>
+    <string name="rainfall_alert_metric">%1$.1f%2$s жауын-шашын мөлшері сіздің %3$.1f%2$s шегіне сәйкес келді</string>
+    <string name="rainfall_alert_imperial">%1$.2f%2$s жауын-шашын мөлшері сіздің %3$.2f%2$s шегіне сәйкес келді</string>
+    <string name="rainrate_alert_metric">Сағатына %1$.1f%2$s жаңбыр жаууы сіздің %3$.1f%2$s шегіңізге сәйкес келді</string>
+    <string name="rainrate_alert_imperial">Сағатына %1$.2f%2$s жаңбыр жаууы сіздің %3$.2f%2$s шегіңізге сәйкес келді</string>
 </resources>

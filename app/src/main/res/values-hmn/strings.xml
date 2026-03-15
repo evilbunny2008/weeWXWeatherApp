@@ -97,8 +97,21 @@
     <string name="interval_6h">6 teev</string>
     <string name="interval_3h">3 teev</string>
     <string name="interval_hourly">Txhua teev</string>
-    <string name="temp_alert">Kub %1$.1f°%2$s tau poob rau koj qhov txwv ntawm %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Kub %1$.1f°%2$s tau poob rau koj qhov txwv ntawm %3$.1f°%2$s</string>
     <string name="temperature">Kub</string>
     <string name="morning_temp_alert">Sawv ntxov ceeb toom?</string>
     <string name="afternoon_temp_alert">Hmo ntuj ceeb toom?</string>
+    <string name="morning_alert">Kub %1$.1f°%2$s tau nce rau koj qhov txwv ntawm %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Rainfall Alert?</string>
+    <string name="rainfall_limit">Kev txwv dej nag</string>
+    <string name="rainrate_alert">Rainrate ceeb toom?</string>
+    <string name="rainrate_limit">Rainrate txwv</string>
+    <string name="hour">teev</string>
+    <string name="notification_permission">Ceeb Toom Tso Cai</string>
+    <string name="notifications_needed">Cov ntawv ceeb toom yuav tsum tau ceeb toom rau koj thaum kub, dej nag lossis dej nag ua tau raws li koj qhov kev txwv</string>
+    <string name="notifications_needed2">Txij li thaum koj tsis kam lees txais kev tso cai ob zaug, koj yuav tsum tau qhib nws hauv kev teeb tsa, tso tawm qhov chaw?</string>
+    <string name="rainfall_alert_metric">Los nag %1$.1f%2$s tau phim rau koj qhov txwv ntawm %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Los nag %1$.2f%2$s tau phim rau koj qhov txwv ntawm %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Los nag ntawm %1$.1f%2$s ib teev twg tau phim rau koj qhov txwv ntawm %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Los nag ntawm %1$.2f%2$s ib teev tau sib npaug rau koj qhov txwv ntawm %3$.2f%2$s</string>
 </resources>

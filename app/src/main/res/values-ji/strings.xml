@@ -97,8 +97,21 @@
     <string name="interval_6h">6 אַורלי</string>
     <string name="interval_3h">3 אַורלי</string>
     <string name="interval_hourly">אַורלי</string>
-    <string name="temp_alert">טעמפּעראַטור %1$.1f°%2$s איז געפאלן צו דיין שיעור פון %3$.1f°%2$s</string>
+    <string name="afternoon_alert">טעמפּעראַטור %1$.1f°%2$s איז געפאלן צו דיין שיעור פון %3$.1f°%2$s</string>
     <string name="temperature">טעמפּעראַטור</string>
     <string name="morning_temp_alert">מאָרגן אַלערט?</string>
     <string name="afternoon_temp_alert">נאָכמיטאָג אַלערט?</string>
+    <string name="morning_alert">טעמפּעראַטור %1$.1f°%2$s איז געשטיגן צו דיין שיעור פון %3$.1f°%2$s</string>
+    <string name="rainfall_alert">רעגן אַלערט?</string>
+    <string name="rainfall_limit">רעגן לימיט</string>
+    <string name="rainrate_alert">ריינרייט אַלערט?</string>
+    <string name="rainrate_limit">רעגנרייט לימיט</string>
+    <string name="hour">שעה</string>
+    <string name="notification_permission">אָנזאָג דערלויבעניש</string>
+    <string name="notifications_needed">נאָוטאַפאַקיישאַנז זענען דארף צו פלינק איר ווען טעמפּעראַטור, רעגן אָדער רעגן קורס טרעפן דיין באַשטימט לימאַץ</string>
+    <string name="notifications_needed2">זינט איר דיקליינד די אָנזאָג דערלויבעניש צוויי מאָל, איר דאַרפֿן צו געבן עס אין סעטטינגס אַנשטאָט, קאַטער סעטטינגס?</string>
+    <string name="rainfall_alert_metric">רעגן %1$.1f%2$s איז מאַטשט צו דיין שיעור פון %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">רעגן %1$.2f%2$s איז מאַטשט צו דיין שיעור פון %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">רעגן קורס פון %1$.1f%2$s פּער שעה איז מאַטשט צו דיין שיעור פון %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">רעגן קורס פון %1$.2f%2$s פּער שעה איז מאַטשט צו דיין שיעור פון %3$.2f%2$s</string>
 </resources>

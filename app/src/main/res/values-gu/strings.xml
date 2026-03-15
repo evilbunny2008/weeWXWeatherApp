@@ -97,8 +97,21 @@
     <string name="interval_6h">6 કલાકે</string>
     <string name="interval_3h">3 કલાકે</string>
     <string name="interval_hourly">કલાકદીઠ</string>
-    <string name="temp_alert">તાપમાન %1$.1f°%2$s %3$.1f°%2$s ની તમારી મર્યાદા સુધી ઘટી ગયું છે</string>
+    <string name="afternoon_alert">તાપમાન %1$.1f°%2$s %3$.1f°%2$s ની તમારી મર્યાદા સુધી ઘટી ગયું છે</string>
     <string name="temperature">તાપમાન</string>
     <string name="morning_temp_alert">મોર્નિંગ એલર્ટ?</string>
     <string name="afternoon_temp_alert">બપોરે ચેતવણી?</string>
+    <string name="morning_alert">તાપમાન %1$.1f°%2$s %3$.1f°%2$s ની તમારી મર્યાદા સુધી વધી ગયું છે</string>
+    <string name="rainfall_alert">વરસાદની ચેતવણી?</string>
+    <string name="rainfall_limit">વરસાદની મર્યાદા</string>
+    <string name="rainrate_alert">રેઈનરેટ એલર્ટ?</string>
+    <string name="rainrate_limit">વરસાદની મર્યાદા</string>
+    <string name="hour">કલાક</string>
+    <string name="notification_permission">સૂચના પરવાનગી</string>
+    <string name="notifications_needed">જ્યારે તાપમાન, વરસાદ અથવા વરસાદનો દર તમારી નિર્ધારિત મર્યાદાઓને પૂર્ણ કરે છે ત્યારે તમને ચેતવણી આપવા માટે સૂચનાઓ જરૂરી છે</string>
+    <string name="notifications_needed2">તમે નોટિફિકેશનની પરવાનગીને બે વાર નકારી દીધી હોવાથી, તમારે તેને બદલે સેટિંગમાં ચાલુ કરવાની જરૂર છે, સેટિંગ શરૂ કરો?</string>
+    <string name="rainfall_alert_metric">વરસાદ %1$.1f%2$s તમારી %3$.1f%2$s ની મર્યાદા સાથે મેળ ખાય છે</string>
+    <string name="rainfall_alert_imperial">વરસાદ %1$.2f%2$s તમારી %3$.2f%2$s ની મર્યાદા સાથે મેળ ખાય છે</string>
+    <string name="rainrate_alert_metric">%1$.1f%2$s પ્રતિ કલાકનો વરસાદ તમારી %3$.1f%2$s ની મર્યાદા સાથે મેળ ખાય છે</string>
+    <string name="rainrate_alert_imperial">%1$.2f%2$s પ્રતિ કલાકનો વરસાદ તમારી %3$.2f%2$s ની મર્યાદા સાથે મેળ ખાય છે</string>
 </resources>

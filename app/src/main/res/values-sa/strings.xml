@@ -97,8 +97,21 @@
     <string name="interval_6h">६ प्रतिघण्टा</string>
     <string name="interval_3h">३ प्रतिघण्टा</string>
     <string name="interval_hourly">प्रतिघण्टा</string>
-    <string name="temp_alert">तापमानं %1$.1f°%2$s भवतः %3$.1f°%2$s इति सीमां यावत् पतितम् अस्ति</string>
+    <string name="afternoon_alert">तापमानं %1$.1f°%2$s भवतः %3$.1f°%2$s इति सीमां यावत् पतितम् अस्ति</string>
     <string name="temperature">तापमान</string>
     <string name="morning_temp_alert">प्रातःकाले सचेतना?</string>
     <string name="afternoon_temp_alert">अपराह्ण सचेतना?</string>
+    <string name="morning_alert">तापमानं %1$.1f°%2$s भवतः %3$.1f°%2$s सीमां यावत् वर्धितम् अस्ति</string>
+    <string name="rainfall_alert">वर्षा अलर्ट?</string>
+    <string name="rainfall_limit">वर्षा सीमा</string>
+    <string name="rainrate_alert">वर्षादर अलर्ट?</string>
+    <string name="rainrate_limit">वर्षा दर सीमा</string>
+    <string name="hour">घटकः</string>
+    <string name="notification_permission">अधिसूचना अनुमतिः</string>
+    <string name="notifications_needed">यदा तापमानं, वर्षा वा वर्षा वा भवतः निर्धारितसीमाः पूरयति तदा भवन्तं सचेष्टयितुं सूचनानां आवश्यकता भवति</string>
+    <string name="notifications_needed2">यतः भवान् द्विवारं सूचनानुमतिं अङ्गीकृतवान्, तस्मात् भवद्भिः तस्य स्थाने सेटिङ्ग्स् मध्ये सक्षमीकरणं करणीयम्, सेटिङ्ग्स् प्रारम्भः?</string>
+    <string name="rainfall_alert_metric">वर्षा %1$.1f%2$s भवतः %3$.1f%2$s सीमायाः सङ्गतिः अभवत्</string>
+    <string name="rainfall_alert_imperial">वर्षा %1$.2f%2$s भवतः %3$.2f%2$s सीमायाः सङ्गतिः अभवत्</string>
+    <string name="rainrate_alert_metric">प्रतिघण्टां %1$.1f%2$s इत्यस्य वर्षादरः भवतः %3$.1f%2$s इत्यस्य सीमायाः सङ्गतिः अभवत्</string>
+    <string name="rainrate_alert_imperial">प्रतिघण्टां %1$.2f%2$s इत्यस्य वर्षादरः भवतः %3$.2f%2$s इत्यस्य सीमायाः सङ्गतिः अभवत्</string>
 </resources>

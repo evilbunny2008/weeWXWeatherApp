@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Cada hora</string>
     <string name="interval_3h">3 Cada hora</string>
     <string name="interval_hourly">Cada hora</string>
-    <string name="temp_alert">La temperatura %1$.1f°%2$s ha baixat fins al vostre límit de %3$.1f°%2$s</string>
+    <string name="afternoon_alert">La temperatura %1$.1f°%2$s ha baixat fins al vostre límit de %3$.1f°%2$s</string>
     <string name="temperature">Temperatura</string>
     <string name="morning_temp_alert">Alerta matinal?</string>
     <string name="afternoon_temp_alert">Alerta a la tarda?</string>
+    <string name="morning_alert">La temperatura %1$.1f°%2$s ha augmentat fins al vostre límit de %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alerta de pluja?</string>
+    <string name="rainfall_limit">Límit de pluja</string>
+    <string name="rainrate_alert">Alerta de pluja?</string>
+    <string name="rainrate_limit">Límit de pluja</string>
+    <string name="hour">hora</string>
+    <string name="notification_permission">Permís de notificació</string>
+    <string name="notifications_needed">Calen notificacions per avisar-vos quan la temperatura, la pluja o la taxa de pluja compleixin els vostres límits establerts</string>
+    <string name="notifications_needed2">Com que heu rebutjat el permís de notificació dues vegades, heu d\'activar-lo a la configuració, iniciar la configuració?</string>
+    <string name="rainfall_alert_metric">La pluja %1$.1f%2$s ha coincidit amb el vostre límit de %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">La pluja %1$.2f%2$s ha coincidit amb el vostre límit de %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">La taxa de pluja de %1$.1f%2$s per hora ha coincidit amb el vostre límit de %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">La taxa de pluja de %1$.2f%2$s per hora ha coincidit amb el vostre límit de %3$.2f%2$s</string>
 </resources>

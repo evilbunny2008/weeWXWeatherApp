@@ -97,8 +97,21 @@
     <string name="interval_6h">6 I kēlā me kēia hola</string>
     <string name="interval_3h">3 I kēlā me kēia hola</string>
     <string name="interval_hourly">I kēlā me kēia hola</string>
-    <string name="temp_alert">Ua emi ka mahana %1$.1f°%2$s i kou palena o %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Ua emi ka mahana %1$.1f°%2$s i kou palena o %3$.1f°%2$s</string>
     <string name="temperature">Mahana</string>
     <string name="morning_temp_alert">Makaʻala kakahiaka?</string>
     <string name="afternoon_temp_alert">Makaʻala ahiahi?</string>
+    <string name="morning_alert">Ua piʻi ka mahana %1$.1f°%2$s i kāu palena o %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Makaʻala ua?</string>
+    <string name="rainfall_limit">Ka palena ua</string>
+    <string name="rainrate_alert">Makaʻala ka ua?</string>
+    <string name="rainrate_limit">Ka palena ua</string>
+    <string name="hour">hola</string>
+    <string name="notification_permission">ʻAe Hoʻolaha</string>
+    <string name="notifications_needed">Pono nā leka hoʻomaopopo e makaʻala iā ʻoe i ka wā e hālāwai ai ka mahana, ka ua a i ʻole ka ua i kāu mau palena</string>
+    <string name="notifications_needed2">Ma muli o kou hōʻole ʻana i ka ʻae hoʻolaha i ʻelua manawa, pono ʻoe e ʻae iā ia i nā hoʻonohonoho ma kahi o nā hoʻonohonoho hoʻomaka?</string>
+    <string name="rainfall_alert_metric">Ua like ka ua %1$.1f%2$s i kou palena o %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Ua like ka ua %1$.2f%2$s i kou palena o %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Ua like ka ua o %1$.1f%2$s i kēlā me kēia hola i kāu palena o %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Ua like ka ua o %1$.2f%2$s i kēlā me kēia hola i kāu palena o %3$.2f%2$s</string>
 </resources>

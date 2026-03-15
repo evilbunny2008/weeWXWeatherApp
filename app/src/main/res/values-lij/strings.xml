@@ -97,8 +97,21 @@
     <string name="interval_6h">6 pe oe</string>
     <string name="interval_3h">3 pe oe</string>
     <string name="interval_hourly">Pe oa</string>
-    <string name="temp_alert">A temperatua %1$.1f°%2$s a l\'é cheita a-o seu limite de %3$.1f°%2$s</string>
+    <string name="afternoon_alert">A temperatua %1$.1f°%2$s a l\'é cheita a-o seu limite de %3$.1f°%2$s</string>
     <string name="temperature">Temperatua</string>
     <string name="morning_temp_alert">Avvertimento do mattin?</string>
     <string name="afternoon_temp_alert">Avvertimento do pomeriggio?</string>
+    <string name="morning_alert">A temperatua %1$.1f°%2$s a l\'é montâ a-o seu limite de %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Avvertimento de cheita d\'ægua?</string>
+    <string name="rainfall_limit">Limite de cheita d\'ægua</string>
+    <string name="rainrate_alert">Avvertimento de tasso de piövia?</string>
+    <string name="rainrate_limit">Limite da frequensa de piövia</string>
+    <string name="hour">oa</string>
+    <string name="notification_permission">Permisso de notificaçion</string>
+    <string name="notifications_needed">Gh\'é de beseugno de notificaçioin pe avvertî quande a temperatua, a cheita d\'ægua ò a frequensa de cheita d\'ægua soddisfan i limiti stabilii</string>
+    <string name="notifications_needed2">Dæto che l\'é stæto refuou o permisso de notificaçion doe vòtte, l\'é neçessäio attivâlo inte impostaçioin, avviâ e impostaçioin?</string>
+    <string name="rainfall_alert_metric">A cheita d\'ægua %1$.1f%2$s a l\'é corresponde a-o seu limite de %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">A cheita d\'ægua %1$.2f%2$s a l\'é corresponde a-o seu limite de %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">O tasso de ciuvaña de %1$.1f%2$s pe òra o l\'é corresponduo a-o seu limite de %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">O tasso de ciuvaña de %1$.2f%2$s pe òra o l\'é corresponduo a-o seu limite de %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Chak èdtan</string>
     <string name="interval_3h">3 Chak èdtan</string>
     <string name="interval_hourly">Chak èdtan</string>
-    <string name="temp_alert">Tanperati %1$.1f°%2$s desann nan limit ou nan %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Tanperati %1$.1f°%2$s desann nan limit ou nan %3$.1f°%2$s</string>
     <string name="temperature">Tanperati</string>
     <string name="morning_temp_alert">Alèt maten?</string>
     <string name="afternoon_temp_alert">Alèt apremidi?</string>
+    <string name="morning_alert">Tanperati %1$.1f°%2$s monte nan limit ou nan %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alèt lapli?</string>
+    <string name="rainfall_limit">Limit lapli</string>
+    <string name="rainrate_alert">Alèt lapli?</string>
+    <string name="rainrate_limit">Limit lapli</string>
+    <string name="hour">èdtan</string>
+    <string name="notification_permission">Pèmisyon Notifikasyon</string>
+    <string name="notifications_needed">Yo bezwen notifikasyon pou avèti w lè tanperati, lapli oswa to lapli satisfè limit ou yo</string>
+    <string name="notifications_needed2">Depi ou refize pèmisyon notifikasyon an de fwa, ou bezwen aktive li nan anviwònman olye, lanse anviwònman?</string>
+    <string name="rainfall_alert_metric">Lapli %1$.1f%2$s rive nan limit ou a nan %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Lapli %1$.2f%2$s matche ak limit ou a nan %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Pousantaj lapli %1$.1f%2$s pa èdtan matche ak limit ou a nan %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Pousantaj lapli %1$.2f%2$s pa èdtan matche ak limit ou a nan %3$.2f%2$s</string>
 </resources>

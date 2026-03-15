@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Соатӣ</string>
     <string name="interval_3h">3 Соатӣ</string>
     <string name="interval_hourly">Соатӣ</string>
-    <string name="temp_alert">Ҳарорат %1$.1f°%2$s то ҳадди %3$.1f°%2$s паст шуд</string>
+    <string name="afternoon_alert">Ҳарорат %1$.1f°%2$s то ҳадди %3$.1f°%2$s паст шуд</string>
     <string name="temperature">Ҳарорат</string>
     <string name="morning_temp_alert">Огоҳии субҳ?</string>
     <string name="afternoon_temp_alert">Огоҳии нисфирӯзӣ?</string>
+    <string name="morning_alert">Ҳарорат %1$.1f°%2$s то ҳадди шумо аз %3$.1f°%2$s баланд шуд</string>
+    <string name="rainfall_alert">Огоҳӣ дар бораи борон?</string>
+    <string name="rainfall_limit">Маҳдудияти боришот</string>
+    <string name="rainrate_alert">Огоҳии борон?</string>
+    <string name="rainrate_limit">Маҳдудияти суръати борон</string>
+    <string name="hour">соат</string>
+    <string name="notification_permission">Иҷозати огоҳӣ</string>
+    <string name="notifications_needed">Огоҳиномаҳо лозиманд, то шуморо огоҳ созанд, ки ҳарорат, бориш ё суръати борон ба меъёрҳои муқарраркардаи шумо мувофиқат кунад</string>
+    <string name="notifications_needed2">Азбаски шумо ду маротиба иҷозати огоҳиномаро рад кардед, шумо бояд онро дар танзимот фаъол созед, танзимотро оғоз кунед?</string>
+    <string name="rainfall_alert_metric">Боришоти %1$.1f%2$s ба меъёри %3$.1f%2$s мувофиқ омад</string>
+    <string name="rainfall_alert_imperial">Боришоти %1$.2f%2$s ба меъёри %3$.2f%2$s мувофиқат кард</string>
+    <string name="rainrate_alert_metric">Меъёри боришоти %1$.1f%2$s дар як соат ба маҳдудияти %3$.1f%2$s мувофиқат кард</string>
+    <string name="rainrate_alert_imperial">Меъёри боришоти %1$.2f%2$s дар як соат ба маҳдудияти %3$.2f%2$s мувофиқат кард</string>
 </resources>

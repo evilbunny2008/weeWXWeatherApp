@@ -97,8 +97,21 @@
     <string name="interval_3h">3 Jam</string>
     <string name="interval_hourly">Nyabran jam</string>
     <string name="forecast_interval">Interval ramalan (yéning wénten)</string>
-    <string name="temp_alert">Suhu %1$.1f°%2$s sampun tedun ngantos wates semetone %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$.1f°%2$s sampun tedun ngantos wates semetone %3$.1f°%2$s</string>
     <string name="morning_temp_alert">Painget Semeng?</string>
     <string name="afternoon_temp_alert">Painget Sore?</string>
     <string name="temperature">Suhu</string>
+    <string name="morning_alert">Suhu %1$.1f°%2$s sampun nincap ngantos wates semetone %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Painget Ujan?</string>
+    <string name="rainrate_alert">Painget Kadar Ujan?</string>
+    <string name="rainfall_limit">Wates Curah Ujan</string>
+    <string name="rainrate_limit">Wates Kadar Ujan</string>
+    <string name="hour">jam</string>
+    <string name="notification_permission">Ijin Pakéling</string>
+    <string name="notifications_needed">Pakéling kaperluang anggén ngingsirang Sameton yéning suhu, ujan, utawi ujan sampun manut ring wates sané sampun katetapang</string>
+    <string name="notifications_needed2">Mawinan Sameton nulak ijin pakéling ping kalih, Sameton patut ngaktipang ring setélan, bukak setélan?</string>
+    <string name="rainfall_alert_metric">Curah hujan %1$.1f%2$s sampun cocok sareng wates semetone %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Curah hujan %1$.2f%2$s sampun cocok sareng wates semetone %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Tingkat ujan %1$.1f%2$s per jam sampun cocok sareng wates Sameton %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Tingkat ujan %1$.2f%2$s per jam sampun cocok sareng wates Sameton %3$.2f%2$s</string>
 </resources>

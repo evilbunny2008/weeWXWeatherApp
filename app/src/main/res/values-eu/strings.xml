@@ -97,8 +97,21 @@
     <string name="interval_3h">3 Orduka</string>
     <string name="interval_hourly">Orduka</string>
     <string name="forecast_interval">Iragarpen tartea (hala badagokio)</string>
-    <string name="temp_alert">%1$.1f°%2$s tenperatura zure %3$.1f°%2$s mugara jaitsi da</string>
+    <string name="afternoon_alert">%1$.1f°%2$s tenperatura zure %3$.1f°%2$s mugara jaitsi da</string>
     <string name="temperature">Tenperatura</string>
     <string name="morning_temp_alert">Goizeko alerta?</string>
     <string name="afternoon_temp_alert">Arratsaldeko alerta?</string>
+    <string name="morning_alert">%1$.1f°%2$s tenperatura zure %3$.1f°%2$s mugaraino igo da</string>
+    <string name="rainfall_alert">Euri-alerta?</string>
+    <string name="rainrate_alert">Euri tasaren alerta?</string>
+    <string name="rainfall_limit">Prezipitazio muga</string>
+    <string name="rainrate_limit">Euri-tasa muga</string>
+    <string name="hour">ordua</string>
+    <string name="notification_permission">Jakinarazpen-baimena</string>
+    <string name="notifications_needed">Jakinarazpenak beharrezkoak dira tenperaturak, prezipitazioak edo euri-tasak ezarritako mugak betetzen dituenean abisatzeko</string>
+    <string name="notifications_needed2">Jakinarazpen-baimena bi aldiz ukatu duzunez, ezarpenetan gaitu behar duzu, ezarpenak abiarazi?</string>
+    <string name="rainfall_alert_metric">%1$.1f%2$s prezipitazioak zure %3$.1f%2$s-ko mugarekin bat egin du</string>
+    <string name="rainfall_alert_imperial">%1$.2f%2$s prezipitazioak zure %3$.2f%2$s-ko mugarekin bat egin du</string>
+    <string name="rainrate_alert_metric">%1$.1f%2$s orduko euri-tasa zure %3$.1f%2$s-ko mugarekin bat etorri da</string>
+    <string name="rainrate_alert_imperial">%1$.2f%2$s orduko euri-tasa zure %3$.2f%2$s-ko mugarekin bat etorri da</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 par erdtan</string>
     <string name="interval_3h">3 par erdtan</string>
     <string name="interval_hourly">par erdtan</string>
-    <string name="temp_alert">tanperatir %1$.1f°%2$s in desann ziska ou limit %3$.1f°%2$s</string>
+    <string name="afternoon_alert">tanperatir %1$.1f°%2$s in desann ziska ou limit %3$.1f°%2$s</string>
     <string name="temperature">Tanperatir</string>
     <string name="morning_temp_alert">alert bomaten?</string>
     <string name="afternoon_temp_alert">alert apremidi?</string>
+    <string name="morning_alert">tanperatir %1$.1f°%2$s in ariv ou limit %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Alert lapli?</string>
+    <string name="rainfall_limit">limit lapli</string>
+    <string name="rainrate_alert">Alert to lapli?</string>
+    <string name="rainrate_limit">Limit to lapli</string>
+    <string name="hour">erdtan</string>
+    <string name="notification_permission">Permisyon Notifikasyon</string>
+    <string name="notifications_needed">bann notifikasyon i neseser pou alert ou ler tanperatir, lapli oubyen to lapli i zwenn ou bann limit</string>
+    <string name="notifications_needed2">vi ki ou\'n refiz permisyon notifikasyon de fwa, ou bezwen met li dan bann seting olye, lans bann seting?</string>
+    <string name="rainfall_alert_metric">lapli %1$.1f%2$s in match avek ou limit %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">lapli %1$.2f%2$s in match avek ou limit %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">to lapli %1$.1f%2$s par erdtan in koresponn avek ou limit %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">to lapli %1$.2f%2$s par erdtan in koresponn avek ou limit %3$.2f%2$s</string>
 </resources>

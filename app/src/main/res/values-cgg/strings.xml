@@ -97,8 +97,21 @@
     <string name="interval_6h">6 buri shaaha</string>
     <string name="interval_3h">3 buri shaaha</string>
     <string name="interval_hourly">Buri shaaha</string>
-    <string name="temp_alert">Ebirikuba biriho %1$.1f°%2$s byagaruka ahansi kuhika aha kikomo kyawe kya %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Ebirikuba biriho %1$.1f°%2$s byagaruka ahansi kuhika aha kikomo kyawe kya %3$.1f°%2$s</string>
     <string name="temperature">Obutagasi</string>
     <string name="morning_temp_alert">Okurabura omukasheeshe?</string>
     <string name="afternoon_temp_alert">Okurabura kw\'omu mwabazyo?</string>
+    <string name="morning_alert">Ebirikuba biriho %1$.1f°%2$s byeyongyeire kuhika aha kikomo kyawe kya %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Okurabura aha kugwa kw\'enjura?</string>
+    <string name="rainfall_limit">Ekigarukwamu ky\'enjura</string>
+    <string name="rainrate_alert">Okurabura aha mubaro gw\'enjura?</string>
+    <string name="rainrate_limit">Ekigarukwamu ky\'enjura</string>
+    <string name="hour">eshaaha</string>
+    <string name="notification_permission">Orusa rw\'okumanyisa</string>
+    <string name="notifications_needed">Ebimanyiso nibyetengyesa kukumanyisa obutagatsi, enjura nari omubaro gw\'enjura gwahika aha bugarukiro obu oteireho</string>
+    <string name="notifications_needed2">Ahabw\'okugira ngu okayanga orusa rw\'okumanyisibwa emirundi ebiri, nooyetenga kukiikiriza omu ntebeekanisa omu mwanya gw\'ekyo, okutandikaho ntebeekanisa?</string>
+    <string name="rainfall_alert_metric">Enjura %1$.1f%2$s ehikaine n\'ekikomo kyawe kya %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Enjura %1$.2f%2$s ehikaine n\'ekikomo kyawe kya %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Omubaro gw\'enjura gwa %1$.1f%2$s buri shaaha guhikire n\'ekikomo kyawe kya %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Enjura ya %1$.2f%2$s buri shaaha ehikire n\'ekikomo kyawe kya %3$.2f%2$s</string>
 </resources>

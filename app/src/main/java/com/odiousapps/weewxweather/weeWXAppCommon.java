@@ -797,7 +797,7 @@ class weeWXAppCommon
 	static String generateForecast(List<Day> days, long timestamp, boolean showHeader, boolean daily)
 	{
 		LogMessage("Starting generateForecast()");
-		LogMessage("days: " + days);
+//		LogMessage("days: " + days);
 
 		if(days.isEmpty())
 		{
@@ -955,83 +955,117 @@ class weeWXAppCommon
 	static Day getDayByDate(List<Day> days, long timestamp)
 	{
 		Calendar cal = Calendar.getInstance();
+		cal.setTimeInMillis(timestamp);
+
+		Calendar cal1 = Calendar.getInstance();
 
 		for(int i = 0; i < days.size(); i++)
 		{
 			Day day = days.get(i);
-			if(day.timestamp == timestamp)
+
+			cal1.setTimeInMillis(day.timestamp);
+
+			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
+			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
 				return day;
 		}
 
 		return null;
 	}
 
-	static Result processBOM3(int UpdateInterval, String data, String url)
+	static Result processBOM3(int UpdateInterval, String data, String url) throws IOException, InterruptedException
 	{
+		LogMessage("processBOM3()");
+
 		if(UpdateInterval == 0)
-			return processBOM3Daily(data);
+			return processBOM3Daily(data, true);
+
+		int modhour = getIntervalTime(UpdateInterval)[1];
+		String url2 = url.replace("/hourly", "/daily");
+
+		String fcdata = "";
+		if(!url2.isBlank() && !url2.equals(url))
+		{
+			LogMessage("processBOM3(): Getting BoM daily");
+			fcdata = downloadString(url2, false);
+		}
 
 		Result r1 = null;
-		String url2 = url.replace("/hourly", "/daily");
+		if(fcdata != null && !fcdata.isBlank())
+		{
+			LogMessage("processBOM3(): Processing BoM daily");
+			r1 = processBOM3Daily(fcdata, false);
+		}
+
 		Calendar cal = Calendar.getInstance();
+		Calendar today = Calendar.getInstance();
 
-		try
+		LogMessage("processBOM3(): Processing BoM hourly");
+		Result r2 = processBOM3Hourly(data);
+
+		if(r1 == null || r1.days.isEmpty())
+			return r2;
+
+		LogMessage("processBOM3(): Merging BoM daily + hourly");
+
+		long lasttimestamp = 0;
+		boolean not_set_text_yet = false;
+		for(int i = 0; i < r2.days.size(); i++)
 		{
-			r1 = processBOM3Daily(downloadString(url2, false));
-		} catch(Exception ignored) {}
+			Day day = r2.days.get(i);
+			cal.setTimeInMillis(day.timestamp);
+			int hour = cal.get(Calendar.HOUR_OF_DAY);
 
-		Result r2 = processBOM3Hourly(UpdateInterval, data);
+			lasttimestamp = day.timestamp;
 
-		if(r1 != null && !r1.days.isEmpty())
+			boolean isToday = cal.get(Calendar.YEAR) == today.get(Calendar.YEAR) &&
+						   cal.get(Calendar.DAY_OF_YEAR) == today.get(Calendar.DAY_OF_YEAR);
+
+			Day r1day = getDayByDate(r1.days, day.timestamp);
+			if(r1day == null)
+				continue;
+
+//			if(!not_set_text_yet)
+//			{
+//				LogMessage("cal.get(Calendar.YEAR): " + cal.get(Calendar.YEAR));
+//				LogMessage("today.get(Calendar.YEAR): " + today.get(Calendar.YEAR));
+//				LogMessage("cal.get(Calendar.DAY_OF_YEAR): " + cal.get(Calendar.DAY_OF_YEAR));
+//				LogMessage("today.get(Calendar.DAY_OF_YEAR): " + today.get(Calendar.DAY_OF_YEAR));
+//
+//				LogMessage("hour: " + hour);
+//				LogMessage("modhour: " + modhour);
+//				LogMessage("hour % modhour: " + hour % modhour);
+//			}
+
+			if(isToday && hour % modhour == 0 && !not_set_text_yet)
+			{
+				not_set_text_yet = true;
+				day.text = r1day.text;
+				r2.days.set(i, day);
+			}
+
+			if(hour == 0)
+			{
+				day.text = r1day.text;
+				day.min = r1day.min;
+				day.max = r1day.max;
+				r2.days.set(i, day);
+			}
+		}
+
+		for(int i = 0; i < r1.days.size(); i++)
 		{
-			long lasttimestamp = 0;
-			for(int i = 0; i < r2.days.size(); i++)
-			{
-				Day day = r2.days.get(i);
-				cal.setTimeInMillis(day.timestamp);
-				int hour = cal.get(Calendar.HOUR_OF_DAY);
-				if(hour == 0)
-				{
-					Day r1day = getDayByDate(r1.days, day.timestamp);
-					if(r1day == null)
-						continue;
+			Day r1day = r1.days.get(i);
+			if(r1day.timestamp < lasttimestamp)
+				continue;
 
-					day.text = r1day.text;
-					r2.days.set(i, day);
-				}
-
-				lasttimestamp = day.timestamp;
-			}
-
-			int modhour = getIntervalTime()[1];
-
-			for(int i = 0; i < r2.days.size(); i++)
-			{
-				Day r2day = r2.days.get(i);
-				cal.setTimeInMillis(r2day.timestamp);
-				int hour = cal.get(Calendar.HOUR_OF_DAY);
-				if(hour % modhour != 0)
-					continue;
-
-				r2day.text = r1.days.get(0).text;
-				r2.days.set(i, r2day);
-				break;
-			}
-
-			for(int i = 0; i < r1.days.size(); i++)
-			{
-				Day r1day = r1.days.get(i);
-				if(r1day.timestamp < lasttimestamp)
-					continue;
-
-				r2.days.add(r1day);
-			}
+			r2.days.add(r1day);
 		}
 
 		return r2;
 	}
 
-	static Result processBOM3Hourly(int UpdateInterval, String data)
+	static Result processBOM3Hourly(String data)
 	{
 		String missing = null;
 
@@ -1046,7 +1080,10 @@ class weeWXAppCommon
 		//LogMessage("data: " + data);
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+
 		String desc = KeyValue.bomLocation;
+		LogMessage("processBOM3Hourly(): desc: " + desc);
+
 		List<Day> days = new ArrayList<>();
 		long timestamp = 0;
 
@@ -1139,11 +1176,10 @@ class weeWXAppCommon
 			act.finish();
 		}
 
-		LogMessage("Forecast data has been processed, sending for layout...");
 		return new Result(days, desc, timestamp, false);
 	}
 
-	static Result processBOM3Daily(String data)
+	static Result processBOM3Daily(String data, boolean updateCacheTime)
 	{
 		String missing = null;
 
@@ -1173,7 +1209,7 @@ class weeWXAppCommon
 			if(df != null)
 				timestamp = df.getTime();
 
-			if(timestamp > 0)
+			if(timestamp > 0 && updateCacheTime)
 				updateCacheTime(timestamp);
 
 //			timestamp = System.currentTimeMillis();
@@ -1244,7 +1280,8 @@ class weeWXAppCommon
 					);
 				}
 
-				days.add(day);
+				if(day.icon != null && !day.icon.isBlank())
+					days.add(day);
 			}
 		} catch(Exception e) {
 			LogMessage("Error! e: " + e, true, KeyValue.e);
@@ -1255,7 +1292,6 @@ class weeWXAppCommon
 			act.finish();
 		}
 
-		LogMessage("Forecast data has been processed, sending for layout...");
 		return new Result(days, desc, timestamp, true);
 	}
 
@@ -1263,7 +1299,7 @@ class weeWXAppCommon
 	{
 		icon = icon.replace("-", "_");
 
-		String newicon = switch(icon)
+		return switch(icon)
 		{
 			case "dusty" -> "dust";
 			case "hazy" -> "haze";
@@ -1275,9 +1311,9 @@ class weeWXAppCommon
 			default -> icon;
 		};
 
-		LogMessage("BoM Old Icon: " + icon, KeyValue.d);
-		LogMessage("BoM New Icon: " + newicon, KeyValue.d);
-		return newicon;
+//		LogMessage("BoM Old Icon: " + icon, KeyValue.d);
+//		LogMessage("BoM New Icon: " + newicon, KeyValue.d);
+//		return newicon;
 	}
 
 	static Result processMET(String data)
@@ -2708,7 +2744,9 @@ class weeWXAppCommon
 						LogMessage("getWeather() Update the widget");
 						WidgetProvider.updateAppWidget();
 
-						checkTempAlarms();
+						checkTempAlerts();
+						checkRainfallAlert();
+						checkRainrateAlert();
 
 						LogMessage("getWeather() weatherTask.SendIntent(REFRESH_WEATHER_INTENT)");
 						SendIntent(REFRESH_WEATHER_INTENT);
@@ -2740,7 +2778,9 @@ class weeWXAppCommon
 					LogMessage("getWeather() Update the widget");
 					WidgetProvider.updateAppWidget();
 
-					checkTempAlarms();
+					checkTempAlerts();
+					checkRainfallAlert();
+					checkRainrateAlert();
 
 					LogMessage("getWeather() weatherTask.SendIntent(REFRESH_WEATHER_INTENT)");
 					SendIntent(REFRESH_WEATHER_INTENT);
@@ -2762,7 +2802,96 @@ class weeWXAppCommon
 		}
 	}
 
-	static void checkTempAlarms()
+	static void checkRainfallAlert()
+	{
+		boolean rainfall_alert = (boolean)KeyValue.readVar("rainfall_alert", weeWXApp.rainfall_alert_default);
+
+		Calendar cal = Calendar.getInstance();
+		Calendar cal1 = Calendar.getInstance();
+
+		if(!rainfall_alert)
+		{
+			LogMessage("checkRainAlert() rainfall_alert set to false");
+			return;
+		}
+
+		LogMessage("checkRainAlert() rainfall_alert set to true");
+
+		long last_rainfall_alert = (long)KeyValue.readVar("LastRainfallAlert", 0L);
+		Date date1 = new Date(last_rainfall_alert);
+		cal1.setTime(date1);
+
+		if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
+		   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
+		{
+			LogMessage("checkRainAlert() Rainfall notification already triggered today");
+			return;
+		}
+
+		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
+		if(lastDownload == null || lastDownload.isBlank())
+			return;
+
+		String[] bits = lastDownload.split("\\|");
+
+		float rainfall = Float.parseFloat(bits[20]);
+		if(!bits[158].isBlank())
+			rainfall = Float.parseFloat(bits[158]);
+
+		float rainfall_limit = (int)KeyValue.readVar("RainfallLimit", weeWXApp.RainfallLimit_default) / 100f;
+
+		if(rainfall >= rainfall_limit)
+		{
+			KeyValue.putVar("LastRainfallAlert", System.currentTimeMillis());
+			weeWXApp.sendRainfallAlert(rainfall, rainfall_limit);
+			LogMessage("checkRainAlert() rainfall (" + rainfall + ") >= rainfall_limit (" + rainfall_limit + ") notification triggered");
+		} else {
+			LogMessage("checkRainAlert() rainfall (" + rainfall + ") < rainfall_limit (" + rainfall_limit + ") no notification triggered");
+		}
+	}
+
+	static void checkRainrateAlert()
+	{
+		boolean rainrate_alert = (boolean)KeyValue.readVar("rainrate_alert", weeWXApp.rainrate_alert_default);
+
+		if(!rainrate_alert)
+		{
+			LogMessage("checkRainAlert() rainrate_alert set to false");
+			return;
+		}
+
+		LogMessage("checkRainAlert() rainrate_alert set to true");
+
+		long now = System.currentTimeMillis();
+		long last_rainrate_alert = (long)KeyValue.readVar("LastRainrateAlert", 0L);
+
+		if(now - last_rainrate_alert < 3_600_000L)
+		{
+			LogMessage("checkRainAlert() Rainrate notification already triggered in last hour");
+			return;
+		}
+
+		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
+		if(lastDownload == null || lastDownload.isBlank())
+			return;
+
+		String[] bits = lastDownload.split("\\|");
+
+		float rainrate = Float.parseFloat(bits[24]);
+
+		float rainrate_limit = (int)KeyValue.readVar("RainrateLimit", weeWXApp.RainrateLimit_default) / 100f;
+
+		if(rainrate >= rainrate_limit)
+		{
+			KeyValue.putVar("LastRainrateAlert", now);
+			weeWXApp.sendRainrateAlert(rainrate, rainrate_limit);
+			LogMessage("checkRainAlert() rainrate (" + rainrate + ") >= rainrate_limit (" + rainrate_limit + ") notification triggered");
+		} else {
+			LogMessage("checkRainAlert() rainrate (" + rainrate + ") < rainrate_limit (" + rainrate_limit + ") no notification triggered");
+		}
+	}
+
+	static void checkTempAlerts()
 	{
 		boolean morning_temp_alert = (boolean)KeyValue.readVar("morning_temp_alert", weeWXApp.morning_temp_alert_default);
 
@@ -2771,7 +2900,7 @@ class weeWXAppCommon
 
 		if(cal.get(Calendar.HOUR_OF_DAY) < 12 && morning_temp_alert)
 		{
-			LogMessage("checkTempAlarms() morning_temp_alert set to true");
+			LogMessage("checkTempAlerts() morning_temp_alert set to true");
 
 			long last_morning_alert = (long)KeyValue.readVar("LastMorningTempAlert", 0L);
 			Date date1 = new Date(last_morning_alert);
@@ -2780,21 +2909,21 @@ class weeWXAppCommon
 			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
 			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
 			{
-				LogMessage("checkTempAlarms() Notification already triggered this morning");
+				LogMessage("checkTempAlerts() Notification already triggered this morning");
 				return;
 			}
 
-			float morning_temp_limit = (float)KeyValue.readVar("MorningTemp", weeWXApp.MorningTemp_default);
+			float morning_temp_limit = (int)KeyValue.readVar("MorningTemp", weeWXApp.MorningTemp_default) / 10f;
 
-			float CurrTemp = get_curr_temp();
+			float CurrTemp = get_curr_n_max_temp()[0];
 
 			if(CurrTemp >= morning_temp_limit)
 			{
 				KeyValue.putVar("LastMorningTempAlert", System.currentTimeMillis());
 				weeWXApp.sendTemperatureAlert(CurrTemp, morning_temp_limit);
-				LogMessage("checkTempAlarms() CurrTemp (" + CurrTemp + ") >= morning_temp_limit (" + morning_temp_limit + ") notification triggered");
+				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") >= morning_temp_limit (" + morning_temp_limit + ") notification triggered");
 			} else {
-				LogMessage("checkTempAlarms() CurrTemp (" + CurrTemp + ") < morning_temp_limit (" + morning_temp_limit + ") no notification triggered");
+				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") < morning_temp_limit (" + morning_temp_limit + ") no notification triggered");
 			}
 
 			return;
@@ -2802,15 +2931,15 @@ class weeWXAppCommon
 
 		if(cal.get(Calendar.HOUR_OF_DAY) < 12)
 		{
-			LogMessage("checkTempAlarms() morning_temp_alert set to false");
+			LogMessage("checkTempAlerts() morning_temp_alert set to false");
 			return;
 		}
 
 		boolean afternoon_temp_alert = (boolean)KeyValue.readVar("afternoon_temp_alert", weeWXApp.afternoon_temp_alert_default);
 
-		if(cal.get(Calendar.HOUR_OF_DAY) >= 12 && afternoon_temp_alert)
+		if(afternoon_temp_alert)
 		{
-			LogMessage("checkTempAlarms() afternoon_temp_alert set to true");
+			LogMessage("checkTempAlerts() afternoon_temp_alert set to true");
 
 			long last_afternoon_alert = (long)KeyValue.readVar("LastAfternoonTempAlert", 0L);
 			Date date1 = new Date(last_afternoon_alert);
@@ -2819,38 +2948,37 @@ class weeWXAppCommon
 			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
 			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
 			{
-				LogMessage("checkTempAlarms() Notification already triggered this afternoon");
+				LogMessage("checkTempAlerts() Notification already triggered this afternoon");
 				return;
 			}
 
-			float afternoon_temp_limit = (float)KeyValue.readVar("AfternoonTemp", weeWXApp.AfternoonTemp_default);
+			float afternoon_temp_limit = (int)KeyValue.readVar("AfternoonTemp", weeWXApp.AfternoonTemp_default) / 10f;
 
-			float CurrTemp = get_curr_temp();
+			float[] temps = get_curr_n_max_temp();
+			float CurrTemp = temps[0];
+			float maxTemp = temps[1];
 
-			if(CurrTemp <= afternoon_temp_limit)
+			if(CurrTemp <= afternoon_temp_limit && CurrTemp <= maxTemp - 1)
 			{
 				KeyValue.putVar("LastAfternoonTempAlert", System.currentTimeMillis());
 				weeWXApp.sendTemperatureAlert(CurrTemp, afternoon_temp_limit);
-				LogMessage("checkTempAlarms() CurrTemp (" + CurrTemp + ") <= afternoon_temp_limit (" + afternoon_temp_limit + ") notification triggered");
+				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") <= afternoon_temp_limit (" + afternoon_temp_limit + ") notification triggered");
 			} else {
-				LogMessage("checkTempAlarms() CurrTemp (" + CurrTemp + ") > afternoon_temp_limit (" + afternoon_temp_limit + ") no notification triggered");
+				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") > afternoon_temp_limit (" + afternoon_temp_limit + ") no notification triggered");
 			}
-		}
-
-		if(cal.get(Calendar.HOUR_OF_DAY) >= 12 && afternoon_temp_alert)
-		{
-			LogMessage("checkTempAlarms() afternoon_temp_alert set to false");
+		} else {
+			LogMessage("checkTempAlerts() afternoon_temp_alert set to false");
 		}
 	}
 
-	static float get_curr_temp()
+	static float[] get_curr_n_max_temp()
 	{
 		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
 		if(lastDownload == null || lastDownload.isBlank())
-			return -999;
+			return new float[]{-999, -999};
 
 		String[] bits = lastDownload.split("\\|");
-		return Float.parseFloat(bits[0]);
+		return new float[]{Float.parseFloat(bits[0]), Float.parseFloat(bits[3])};
 	}
 
 	static String getElement(String[] bits, int element)
@@ -2870,7 +2998,7 @@ class weeWXAppCommon
 	{
 		LogMessage("reallyGetWeather() url: " + url);
 		String line = downloadString(url, true);
-		LogMessage("reallyGetWeather() Got output, line: " + line);
+		//LogMessage("reallyGetWeather() Got output, line: " + line);
 		if(!line.isBlank() && line.contains("|"))
 		{
 			String[] bits = line.split("\\|");
@@ -3827,8 +3955,8 @@ class weeWXAppCommon
 
 	private static List<Day> filterByInterval(List<Day> allEntries, int modhour)
 	{
-		LogMessage("filterByInterval(): modhour: " + modhour);
-		LogMessage("filterByInterval(): allEntries: " + allEntries);
+//		LogMessage("filterByInterval(): modhour: " + modhour);
+//		LogMessage("filterByInterval(): allEntries: " + allEntries);
 
 		if(allEntries == null || allEntries.isEmpty())
 			return allEntries;
@@ -3838,22 +3966,21 @@ class weeWXAppCommon
 		for(int i = 0; i < allEntries.size(); i++)
 		{
 			Day day = allEntries.get(i);
-			Date date = new Date(day.timestamp);
-			cal.setTime(date);
+			cal.setTimeInMillis(day.timestamp);
 
-			LogMessage("filterByInterval(): DAY_OF_MONTH: " + cal.get(Calendar.DAY_OF_MONTH));
-			LogMessage("filterByInterval(): DAY_OF_YEAR: " + cal.get(Calendar.DAY_OF_YEAR));
-
-			LogMessage("filterByInterval(): HOUR_OF_DAY: " + cal.get(Calendar.HOUR_OF_DAY));
-			LogMessage("filterByInterval(): MINUTE: " + cal.get(Calendar.MINUTE));
-			LogMessage("filterByInterval(): SECOND: " + cal.get(Calendar.SECOND));
+//			LogMessage("filterByInterval(): DAY_OF_MONTH: " + cal.get(Calendar.DAY_OF_MONTH));
+//			LogMessage("filterByInterval(): DAY_OF_YEAR: " + cal.get(Calendar.DAY_OF_YEAR));
+//
+//			LogMessage("filterByInterval(): HOUR_OF_DAY: " + cal.get(Calendar.HOUR_OF_DAY));
+//			LogMessage("filterByInterval(): MINUTE: " + cal.get(Calendar.MINUTE));
+//			LogMessage("filterByInterval(): SECOND: " + cal.get(Calendar.SECOND));
 
 			int hour = cal.get(Calendar.HOUR_OF_DAY);
 			if(hour % modhour == 0)
 				filtered.add(day);
 		}
 
-		LogMessage("filterByInterval(): filtered: " + filtered);
+//		LogMessage("filterByInterval(): filtered: " + filtered);
 
 		return filtered;
 	}
@@ -5014,7 +5141,12 @@ class weeWXAppCommon
 
 	static float mm2in(float mm)
 	{
-		return Math.round(mm * 3.937008) / 100.00f;
+		return mm / 25.4f;
+	}
+
+	static float in2mm(float in)
+	{
+		return in * 25.4f;
 	}
 
 	static float mps2kmph(float mps)
@@ -5105,7 +5237,7 @@ class weeWXAppCommon
 			default -> IntervalTime = 86_400;
 		}
 
-		LogMessage("IntervalTime: " + IntervalTime + "s");
+		//LogMessage("IntervalTime: " + IntervalTime + "s");
 
 		int modhour = Math.round(IntervalTime / 3_600f);
 

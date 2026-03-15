@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Wakati</string>
     <string name="interval_3h">3 Wakati</string>
     <string name="interval_hourly">Wakati</string>
-    <string name="temp_alert">Iwọn otutu %1$.1f°%2$s ti lọ silẹ si opin rẹ ti %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Iwọn otutu %1$.1f°%2$s ti lọ silẹ si opin rẹ ti %3$.1f°%2$s</string>
     <string name="temperature">Iwọn otutu</string>
     <string name="morning_temp_alert">Itaniji owurọ?</string>
     <string name="afternoon_temp_alert">Itaniji Ọsan?</string>
+    <string name="morning_alert">Iwọn otutu %1$.1f°%2$s ti dide si opin rẹ ti %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Itaniji Oju ojo?</string>
+    <string name="rainfall_limit">Idiwọn ojo</string>
+    <string name="rainrate_alert">Itaniji Ojo?</string>
+    <string name="rainrate_limit">Opin ti ojo</string>
+    <string name="hour">wakati</string>
+    <string name="notification_permission">Gbigbanilaaye iwifunni</string>
+    <string name="notifications_needed">Awọn iwifunni nilo lati ṣe itaniji nigbati iwọn otutu, ojo tabi ojo ba pade awọn opin ti a ṣeto</string>
+    <string name="notifications_needed2">Niwọn igba ti o ti kọ igbanilaaye iwifunni lẹẹmeji, o nilo lati mu ṣiṣẹ ni awọn eto dipo, awọn eto ifilọlẹ?</string>
+    <string name="rainfall_alert_metric">Òjò %1$.1f%2$s ti bá iye rẹ %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Òjò %1$.2f%2$s ti bá iye rẹ %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Oṣuwọn %1$.1f%2$s fun wakati kan ti baamu si opin rẹ ti %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Oṣuwọn %1$.2f%2$s fun wakati kan ti baamu si opin rẹ ti %3$.2f%2$s</string>
 </resources>

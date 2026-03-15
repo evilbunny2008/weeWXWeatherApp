@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Awa</string>
     <string name="interval_3h">3 Awa</string>
     <string name="interval_hourly">Hourly</string>
-    <string name="temp_alert">Tembiricha %1$.1f°%2$s yadzikira kusvika paunogumira pa %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Tembiricha %1$.1f°%2$s yadzikira kusvika paunogumira pa %3$.1f°%2$s</string>
     <string name="temperature">Tembiricha</string>
     <string name="morning_temp_alert">Morning Alert?</string>
     <string name="afternoon_temp_alert">Masikati Alert?</string>
+    <string name="morning_alert">Tembiricha %1$.1f°%2$s yakwira kusvika paunogumira pa %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Yambiro yeKunaya kwemvura?</string>
+    <string name="rainfall_limit">Rainfall Limit</string>
+    <string name="rainrate_alert">Rainrate Alert?</string>
+    <string name="rainrate_limit">Rainrate Limit</string>
+    <string name="hour">awa</string>
+    <string name="notification_permission">Mvumo yekuzivisa</string>
+    <string name="notifications_needed">Zviziviso zvinodikanwa kukuzivisa iwe kana tembiricha, kunaya kana mvura inonaya inosangana nemiganho yako yakatarwa</string>
+    <string name="notifications_needed2">Sezvo iwe waramba mvumo yekuzivisa kaviri, unofanirwa kuigonesa muzvirongwa panzvimbo, tanga marongero?</string>
+    <string name="rainfall_alert_metric">Kunaya kwemvura %1$.1f%2$s kwaenderana newaunogumira pa %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Kunaya kwemvura %1$.2f%2$s yaenderana newaunogumira pa %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Kunaya kwe %1$.1f%2$s paawa imwe chete kwaenderana newaunogumira pa %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Kunaya kwe %1$.2f%2$s paawa kwaenderana newaunogumira pa %3$.2f%2$s</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Саат сайын</string>
     <string name="interval_3h">3 Саат сайын</string>
     <string name="interval_hourly">Саат сайын</string>
-    <string name="temp_alert">%1$.1f°%2$s температурасы сиздин %3$.1f°%2$s чегиңизге түштү</string>
+    <string name="afternoon_alert">%1$.1f°%2$s температурасы сиздин %3$.1f°%2$s чегиңизге түштү</string>
     <string name="temperature">Температура</string>
     <string name="morning_temp_alert">Таңкы эскертүү?</string>
     <string name="afternoon_temp_alert">Түштөн кийин эскертүү?</string>
+    <string name="morning_alert">%1$.1f°%2$s температурасы сиздин %3$.1f°%2$s чегиңизге көтөрүлдү</string>
+    <string name="rainfall_alert">Жаан жөнүндө эскертүүбү?</string>
+    <string name="rainfall_limit">Жаан-чачындын чеги</string>
+    <string name="rainrate_alert">Жамгырдын ылдамдыгы жөнүндө эскертүүбү?</string>
+    <string name="rainrate_limit">Жаан-чачындын чеги</string>
+    <string name="hour">саат</string>
+    <string name="notification_permission">Эскертме уруксаты</string>
+    <string name="notifications_needed">Температура, жаан-чачын же жамгырдын ылдамдыгы белгиленген чектерге жеткенде сизге эскертүү берүү үчүн эскертмелер керек</string>
+    <string name="notifications_needed2">Эскертме уруксатын эки жолу четке какканыңыз үчүн, анын ордуна жөндөөлөрдөн иштетишиңиз керек, жөндөөлөрдү ишке киргизиңизби?</string>
+    <string name="rainfall_alert_metric">Жаан-чачын %1$.1f%2$s сиздин %3$.1f%2$s чегиңизге дал келди</string>
+    <string name="rainfall_alert_imperial">Жаан-чачын %1$.2f%2$s сиздин %3$.2f%2$s чегиңизге дал келди</string>
+    <string name="rainrate_alert_metric">Саатына %1$.1f%2$s жамгырдын ылдамдыгы сиздин %3$.1f%2$s чегиңизге дал келди</string>
+    <string name="rainrate_alert_imperial">Саатына %1$.2f%2$s жамгырдын ылдамдыгы сиздин %3$.2f%2$s чегиңизге дал келди</string>
 </resources>

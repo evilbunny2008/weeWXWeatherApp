@@ -97,8 +97,21 @@
     <string name="interval_6h">6 tunnis</string>
     <string name="interval_3h">3 tunnis</string>
     <string name="interval_hourly">Tunni kaupa</string>
-    <string name="temp_alert">Temperatuur %1$.1f°%2$s on langenud teie piirini %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatuur %1$.1f°%2$s on langenud teie piirini %3$.1f°%2$s</string>
     <string name="temperature">Temperatuur</string>
     <string name="morning_temp_alert">Hommikune hoiatus?</string>
     <string name="afternoon_temp_alert">Pärastlõunane hoiatus?</string>
+    <string name="morning_alert">Temperatuur %1$.1f°%2$s on tõusnud teie piirini %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Vihmahoiatus?</string>
+    <string name="rainfall_limit">Sademete piirmäär</string>
+    <string name="rainrate_alert">Vihmahoiatus?</string>
+    <string name="rainrate_limit">Vihmamäära piirang</string>
+    <string name="hour">tund</string>
+    <string name="notification_permission">Teavitamise luba</string>
+    <string name="notifications_needed">Märguanded on vajalikud, et teavitada teid, kui temperatuur, sademed või sademete hulk vastab teie seatud piiridele</string>
+    <string name="notifications_needed2">Kuna keeldusite teavitusloast kaks korda, peate selle hoopis seadetes lubama. Kas käivitada seaded?</string>
+    <string name="rainfall_alert_metric">Vihmahulk %1$.1f%2$s on ühtinud teie limiidiga %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Vihmahulk %1$.2f%2$s on ühtinud teie limiidiga %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Vihmamäär %1$.1f%2$s tunnis on ühtinud teie limiidiga %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Vihmamäär %1$.2f%2$s tunnis on ühtinud teie limiidiga %3$.2f%2$s</string>
 </resources>

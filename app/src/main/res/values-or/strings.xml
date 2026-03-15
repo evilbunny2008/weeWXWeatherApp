@@ -97,8 +97,21 @@
     <string name="interval_6h">6 ଘଣ୍ଟା</string>
     <string name="interval_3h">3 ଘଣ୍ଟା</string>
     <string name="interval_hourly">ଘଣ୍ଟା</string>
-    <string name="temp_alert">ତାପମାତ୍ରା%1$.1f°%2$s ଆପଣଙ୍କର ସୀମାକୁ%3$.1f°%2$s କୁ ଖସି ଆସିଛି |</string>
+    <string name="afternoon_alert">ତାପମାତ୍ରା%1$.1f°%2$s ଆପଣଙ୍କର ସୀମାକୁ%3$.1f°%2$s କୁ ଖସି ଆସିଛି |</string>
     <string name="temperature">ତାପମାତ୍ରା</string>
     <string name="morning_temp_alert">ପ୍ରଭାତ ସତର୍କ?</string>
     <string name="afternoon_temp_alert">ଅପରାହ୍ନ ଆଲର୍ଟ?</string>
+    <string name="morning_alert">ତାପମାତ୍ରା%1$.1f°%2$s ଆପଣଙ୍କ ସୀମା%3$.1f°%2$s କୁ ବୃଦ୍ଧି ପାଇଛି |</string>
+    <string name="rainfall_alert">ବର୍ଷା ସତର୍କ?</string>
+    <string name="rainfall_limit">ବର୍ଷା ସୀମା |</string>
+    <string name="rainrate_alert">ବର୍ଷା ସତର୍କ?</string>
+    <string name="rainrate_limit">ବର୍ଷା ସୀମା |</string>
+    <string name="hour">ଘଣ୍ଟା</string>
+    <string name="notification_permission">ବିଜ୍ଞପ୍ତି ଅନୁମତି |</string>
+    <string name="notifications_needed">ଯେତେବେଳେ ତାପମାତ୍ରା, ବର୍ଷା କିମ୍ବା ବର୍ଷା ତୁମର ସେଟ୍ ସୀମା ପୂରଣ କରେ ତୁମକୁ ସତର୍କ କରିବା ପାଇଁ ବିଜ୍ଞପ୍ତିଗୁଡ଼ିକ ଆବଶ୍ୟକ |</string>
+    <string name="notifications_needed2">ଯେହେତୁ ତୁମେ ଦୁଇଥର ବିଜ୍ଞପ୍ତି ଅନୁମତି ପ୍ରତ୍ୟାଖ୍ୟାନ କରିଛ, ତୁମେ ଏହା ବଦଳରେ ସେଟିଂସମୂହରେ ସକ୍ଷମ କରିବାକୁ ପଡିବ, ସେଟିଂସମୂହ ଲଞ୍ଚ କର?</string>
+    <string name="rainfall_alert_metric">ବର୍ଷା%1$.1f%2$s ଆପଣଙ୍କର ସୀମା ସହିତ%3$.1f%2$s ସହିତ ମେଳ ଖାଉଛି |</string>
+    <string name="rainfall_alert_imperial">ବର୍ଷା%1$.2f%2$s ଆପଣଙ୍କର ସୀମା ସହିତ%3$.2f%2$s ସହିତ ମେଳ ହୋଇଛି |</string>
+    <string name="rainrate_alert_metric">ଘଣ୍ଟା ପ୍ରତି%1$.1f%2$s ର ବର୍ଷା ଆପଣଙ୍କ%3$.1f%2$s ର ସୀମା ସହିତ ମେଳ ଖାଉଛି |</string>
+    <string name="rainrate_alert_imperial">ଘଣ୍ଟା ପ୍ରତି%1$.2f%2$s ର ବର୍ଷା ତୁମର%3$.2f%2$s ର ସୀମା ସହିତ ମେଳ ହୋଇଛି |</string>
 </resources>

@@ -97,8 +97,21 @@
     <string name="interval_6h">6 Sajam</string>
     <string name="interval_3h">3 Sajam</string>
     <string name="interval_hourly">Sajam</string>
-    <string name="temp_alert">Suhu %1$.1f°%2$s parantos turun ka wates anjeun %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$.1f°%2$s parantos turun ka wates anjeun %3$.1f°%2$s</string>
     <string name="temperature">Suhu</string>
     <string name="morning_temp_alert">Siaga isuk?</string>
     <string name="afternoon_temp_alert">Siaga Soré?</string>
+    <string name="morning_alert">Suhu %1$.1f°%2$s geus naek ka wates anjeun %3$.1f°%2$s</string>
+    <string name="rainfall_alert">Waspada Hujan?</string>
+    <string name="rainfall_limit">Wates Curah Hujan</string>
+    <string name="rainrate_alert">Siaga Hujan?</string>
+    <string name="rainrate_limit">Wates Hujan</string>
+    <string name="hour">jam</string>
+    <string name="notification_permission">Idin Bewara</string>
+    <string name="notifications_needed">Bewara diperyogikeun pikeun ngingetkeun anjeun nalika suhu, curah hujan atanapi curah hujan nyumponan wates anu anjeun atur</string>
+    <string name="notifications_needed2">Kusabab anjeun nampik idin béwara dua kali, anjeun kedah ngaktifkeunana dina setélan, ngajalankeun setélan?</string>
+    <string name="rainfall_alert_metric">Curah hujan %1$.1f%2$s parantos cocog sareng wates anjeun %3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Curah hujan %1$.2f%2$s parantos cocog sareng wates anjeun %3$.2f%2$s</string>
+    <string name="rainrate_alert_metric">Laju hujan %1$.1f%2$s per jam geus cocog jeung wates anjeun %3$.1f%2$s</string>
+    <string name="rainrate_alert_imperial">Laju hujan %1$.2f%2$s per jam geus cocog jeung wates anjeun %3$.2f%2$s</string>
 </resources>

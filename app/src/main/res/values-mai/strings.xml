@@ -97,8 +97,21 @@
     <string name="interval_6h">६ घण्टा प्रति घंटा</string>
     <string name="interval_3h">३ घण्टा प्रति घंटा</string>
     <string name="interval_hourly">घण्टा प्रति घंटा</string>
-    <string name="temp_alert">तापमान %1$.1f°%2$s अहाँक सीमा %3$.1f°%2$s पर खसि गेल अछि</string>
+    <string name="afternoon_alert">तापमान %1$.1f°%2$s अहाँक सीमा %3$.1f°%2$s पर खसि गेल अछि</string>
     <string name="temperature">तापमान</string>
     <string name="morning_temp_alert">भोरका अलर्ट?</string>
     <string name="afternoon_temp_alert">दुपहर के अलर्ट?</string>
+    <string name="morning_alert">तापमान %1$.1f°%2$s अहाँक सीमा %3$.1f°%2$s धरि बढ़ि गेल अछि</string>
+    <string name="rainfall_alert">वर्षा के अलर्ट?</string>
+    <string name="rainfall_limit">वर्षा सीमा</string>
+    <string name="rainrate_alert">वर्षा दर अलर्ट?</string>
+    <string name="rainrate_limit">वर्षा दर सीमा</string>
+    <string name="hour">घंटा</string>
+    <string name="notification_permission">अधिसूचना अनुमति</string>
+    <string name="notifications_needed">जखन तापमान, वर्षा या वर्षा दर अहां कें निर्धारित सीमा कें पूरा करएयत छै तखन अहां कें सचेत करएय कें लेल सूचनाक कें जरूरत छै</string>
+    <string name="notifications_needed2">चूँकि अहाँ दू बेर सूचना अनुमति केँ अस्वीकार केलहुँ, अहाँ केँ एकरा बदला मे सेटिंग्स मे सक्षम करबाक आवश्यकता अछि, सेटिंग्स लॉन्च करबाक चाही?</string>
+    <string name="rainfall_alert_metric">वर्षा %1$.1f%2$s अहाँक सीमा %3$.1f%2$s सँ मेल खा गेल अछि</string>
+    <string name="rainfall_alert_imperial">वर्षा %1$.2f%2$s अहाँक सीमा %3$.2f%2$s सँ मेल खा गेल अछि</string>
+    <string name="rainrate_alert_metric">%1$.1f%2$s प्रति घंटा के वर्षा दर अहाँक %3$.1f%2$s के सीमा स मेल खा गेल अछि</string>
+    <string name="rainrate_alert_imperial">%1$.2f%2$s प्रति घंटा के वर्षा दर अहाँक %3$.2f%2$s के सीमा स मेल खा गेल अछि</string>
 </resources>
