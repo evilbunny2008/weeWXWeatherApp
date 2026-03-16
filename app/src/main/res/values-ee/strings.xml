@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Tsidzadza %1$.2f%2$s sɔ kple wò seɖoƒe si nye %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Tsidzadza ƒe agbɔsɔsɔme si nye %1$.1f%2$s le gaƒoƒo ɖeka me sɔ kple wò seɖoƒe si nye %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Tsidzadza ƒe agbɔsɔsɔme si nye %1$.2f%2$s le gaƒoƒo ɖeka me sɔ kple wò seɖoƒe si nye %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Dzoxɔxɔ ƒe Nuxlɔ̃ame</string>
+    <string name="rainfall_alert_str">Tsidzadza ƒe Nuxlɔ̃ame</string>
+    <string name="rainrate_alert_str">Tsidzadza ƒe Nuxlɔ̃ame</string>
 </resources>

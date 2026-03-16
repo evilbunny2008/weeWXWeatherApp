@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Врнежите %1$.2f%2$s се совпаѓаат со вашата граница од %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Стапката на дожд од %1$.1f%2$s на час се совпаѓа со вашата граница од %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Стапката на дожд од %1$.2f%2$s на час се совпаѓа со вашата граница од %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Температурно предупредување</string>
+    <string name="rainfall_alert_str">Известување за врнежи</string>
+    <string name="rainrate_alert_str">Предупредување за врнежи од дожд</string>
 </resources>

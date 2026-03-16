@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">강수량 %1$.2f%2$s이 한도인 %3$.2f%2$s와 일치합니다</string>
     <string name="rainrate_alert_metric">시간당 %1$.1f%2$s의 강우량이 한도인 %3$.1f%2$s와 일치합니다</string>
     <string name="rainrate_alert_imperial">시간당 %1$.2f%2$s의 강우량이 한도인 %3$.2f%2$s와 일치합니다</string>
+    <string name="temperature_alert_str">온도 경고</string>
+    <string name="rainfall_alert_str">강우 경보</string>
+    <string name="rainrate_alert_str">강수량 경보</string>
 </resources>

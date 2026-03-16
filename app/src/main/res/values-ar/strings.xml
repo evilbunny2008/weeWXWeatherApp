@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">لقد تطابق هطول الأمطار %1$.2f%2$s مع الحد المسموح به وهو %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">لقد تطابق معدل المطر %1$.1f%2$s في الساعة مع الحد الخاص بك وهو %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">لقد تطابق معدل المطر %1$.2f%2$s في الساعة مع الحد الخاص بك وهو %3$.2f%2$s</string>
+    <string name="temperature_alert_str">تنبيه درجة الحرارة</string>
+    <string name="rainfall_alert_str">تنبيه هطول الأمطار</string>
+    <string name="rainrate_alert_str">تنبيه معدل المطر</string>
 </resources>

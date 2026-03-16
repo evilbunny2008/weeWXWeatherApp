@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Reen %1$.2f%2$s hot sich ferklaycht mit tëm xpits puuch fon %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Reen rate fon %1$.1f%2$s pro xtun hot sich ferklaycht mit tëm xpits puuch fon %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Reen rate fon %1$.2f%2$s pro xtun hot sich ferklaycht mit tayn limite fon %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Temperatuur Alarm</string>
+    <string name="rainfall_alert_str">Reen Alarm</string>
+    <string name="rainrate_alert_str">Reenrate Alarm</string>
 </resources>

@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Йӱр %1$.2f%2$s тендан %3$.2f%2$s лимит дене келшен толеш</string>
     <string name="rainrate_alert_metric">Йӱр йӱрмӧ %1$.1f%2$s шагатлан ​​тендан %3$.1f%2$s лимит дене келшен толеш</string>
     <string name="rainrate_alert_imperial">Шагатыште %1$.2f%2$s йӱр йӱрмӧ тендан %3$.2f%2$s лимитда дене келшен толеш</string>
+    <string name="temperature_alert_str">Температур нерген увертарымаш</string>
+    <string name="rainfall_alert_str">Йӱр нерген шижтарымаш</string>
+    <string name="rainrate_alert_str">Йӱр йӱрмӧ нерген шижтарымаш</string>
 </resources>

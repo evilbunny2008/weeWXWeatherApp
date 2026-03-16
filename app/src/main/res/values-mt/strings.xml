@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Ix-xita %1$.2f%2$s qablet mal-limitu tiegħek ta\' %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Ir-rata tax-xita ta\' %1$.1f%2$s fis-siegħa qablet mal-limitu tiegħek ta\' %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Ir-rata tax-xita ta\' %1$.2f%2$s fis-siegħa qablet mal-limitu tiegħek ta\' %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Twissija tat-Temperatura</string>
+    <string name="rainfall_alert_str">Twissija dwar ix-xita</string>
+    <string name="rainrate_alert_str">Twissija Rainrate</string>
 </resources>

@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Mvula %1$.2f%2$s me fwanana ti ndilu na nge ya %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Mvula ya %1$.1f%2$s na ngunga mosi me fwanana ti ndilu na nge ya %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Mvula ya %1$.2f%2$s na ngunga mosi me fwanana ti ndilu na nge ya %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Lukebisu ya Tiya</string>
+    <string name="rainfall_alert_str">Lukebisu ya Mvula</string>
+    <string name="rainrate_alert_str">Lukebisu ya Mvula</string>
 </resources>

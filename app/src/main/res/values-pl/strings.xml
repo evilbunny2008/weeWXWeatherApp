@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Opady deszczu %1$.2f%2$s osiągnęły limit %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Poziom opadów %1$.1f%2$s na godzinę osiągnął Twój limit %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Poziom opadów %1$.2f%2$s na godzinę osiągnął Twój limit %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Alarm temperatury</string>
+    <string name="rainfall_alert_str">Alarm opadowy</string>
+    <string name="rainrate_alert_str">Alarm opadów</string>
 </resources>

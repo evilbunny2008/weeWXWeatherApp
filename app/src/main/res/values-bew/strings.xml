@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Curah hujan %1$.2f%2$s udah cocok ama batas lu %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Laju hujan %1$.1f%2$s per jam udah cocok ama batas lu %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Laju hujan %1$.2f%2$s per jam udah cocok ama batas lu %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Peringatan Suhu</string>
+    <string name="rainfall_alert_str">Peringatan Curah Hujan</string>
+    <string name="rainrate_alert_str">Peringatan laju hujan</string>
 </resources>

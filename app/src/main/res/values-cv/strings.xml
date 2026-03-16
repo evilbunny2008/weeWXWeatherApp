@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Ҫумӑр %1$.2f%2$s сирӗн %3$.2f%2$s чикӗпе танлашнӑ</string>
     <string name="rainrate_alert_metric">Сехетре %1$.1f%2$s ҫумӑр хӑвӑртлӑхӗ сирӗн %3$.1f%2$s чикӗпе танлашрӗ</string>
     <string name="rainrate_alert_imperial">Сехетре %1$.2f%2$s ҫумӑр хӑвӑртлӑхӗ сирӗн %3$.2f%2$s чикӗпе танлашрӗ</string>
+    <string name="temperature_alert_str">Температура ҫинчен пӗлтерекен сигнал</string>
+    <string name="rainfall_alert_str">Ҫумӑр ҫинчен систерӳ</string>
+    <string name="rainrate_alert_str">Ҫумӑр ҫинчен систерекен сигнал</string>
 </resources>

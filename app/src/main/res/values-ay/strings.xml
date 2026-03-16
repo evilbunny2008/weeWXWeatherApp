@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Jallu pacha %1$.2f%2$s ukax %3$.2f%2$s uka límite ukar uñtasitawa</string>
     <string name="rainrate_alert_metric">Jallu pachax %1$.1f%2$s sapa horax %3$.1f%2$s límite ukar uñtasitawa</string>
     <string name="rainrate_alert_imperial">Jallu pachax %1$.2f%2$s sapa horax %3$.2f%2$s límite ukar uñtasitawa</string>
+    <string name="temperature_alert_str">Alerta de Temperatura ukaxa mä juk\'a pachanakwa lurasi</string>
+    <string name="rainfall_alert_str">Jallu pacha tuqita Alerta</string>
+    <string name="rainrate_alert_str">Jallu pachan Alerta</string>
 </resources>

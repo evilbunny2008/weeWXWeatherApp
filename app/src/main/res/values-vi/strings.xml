@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Lượng mưa %1$.2f%2$s đã khớp với giới hạn %3$.2f%2$s của bạn</string>
     <string name="rainrate_alert_metric">Tốc độ mưa %1$.1f%2$s mỗi giờ đã khớp với giới hạn %3$.1f%2$s của bạn</string>
     <string name="rainrate_alert_imperial">Tốc độ mưa %1$.2f%2$s mỗi giờ đã khớp với giới hạn %3$.2f%2$s của bạn</string>
+    <string name="temperature_alert_str">Cảnh báo nhiệt độ</string>
+    <string name="rainfall_alert_str">Cảnh báo lượng mưa</string>
+    <string name="rainrate_alert_str">Cảnh báo lượng mưa</string>
 </resources>

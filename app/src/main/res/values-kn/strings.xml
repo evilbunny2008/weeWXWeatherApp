@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">%1$.2f%2$s ಮಳೆಯು ನಿಮ್ಮ %3$.2f%2$s ಮಿತಿಗೆ ಹೊಂದಿಕೆಯಾಗಿದೆ</string>
     <string name="rainrate_alert_metric">ಪ್ರತಿ ಗಂಟೆಗೆ %1$.1f%2$s ರ ಮಳೆಯ ಪ್ರಮಾಣವು ನಿಮ್ಮ ಮಿತಿ %3$.1f%2$s ಗೆ ಹೊಂದಿಕೆಯಾಗಿದೆ</string>
     <string name="rainrate_alert_imperial">ಪ್ರತಿ ಗಂಟೆಗೆ %1$.2f%2$s ರ ಮಳೆಯ ಪ್ರಮಾಣವು ನಿಮ್ಮ ಮಿತಿ %3$.2f%2$s ಗೆ ಹೊಂದಿಕೆಯಾಗಿದೆ</string>
+    <string name="temperature_alert_str">ತಾಪಮಾನ ಎಚ್ಚರಿಕೆ</string>
+    <string name="rainfall_alert_str">ಮಳೆಯ ಎಚ್ಚರಿಕೆ</string>
+    <string name="rainrate_alert_str">ರೈನ್ರೇಟ್ ಎಚ್ಚರಿಕೆ</string>
 </resources>

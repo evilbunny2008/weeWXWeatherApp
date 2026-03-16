@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Fallagyş%1$.2f%2$s siziň%3$.2f%2$s çägiňize laýyk geldi</string>
     <string name="rainrate_alert_metric">Sagatda%1$.1f%2$s ýagyş,%3$.1f%2$s çägiňize laýyk geldi</string>
     <string name="rainrate_alert_imperial">Sagatda%1$.2f%2$s ýagyş,%3$.2f%2$s çägiňize laýyk geldi</string>
+    <string name="temperature_alert_str">Temperatura duýduryşy</string>
+    <string name="rainfall_alert_str">Rainagyş duýduryşy</string>
+    <string name="rainrate_alert_str">Rainagyş duýduryşy</string>
 </resources>

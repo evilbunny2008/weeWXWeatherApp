@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Ôpady dyszcza %1$.2f%2$s ôdpowiadały twojij granice %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Spōłczynnik dyszczu %1$.1f%2$s na godzina ôdpowiadoł twojim granicy %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Tympo dyszcza %1$.2f%2$s na godzina ôdpowiadało twojim limitie %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Alarm ô tymperaturze</string>
+    <string name="rainfall_alert_str">Alarm ô ôpadkach</string>
+    <string name="rainrate_alert_str">Alarm ô spōłczynniku dyszczu</string>
 </resources>

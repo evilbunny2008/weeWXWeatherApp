@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Ren fɔl %1$.2f%2$s dɔn mach to yu limit we na %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Ren rit we na %1$.1f%2$s fɔ wan awa dɔn mach to yu limit we na %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Ren rit we na %1$.2f%2$s fɔ wan awa dɔn mach to yu limit we na %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Alɛrt fɔ di tɛmpracha</string>
+    <string name="rainfall_alert_str">Ren we kin kam</string>
+    <string name="rainrate_alert_str">Rainrate Alert fɔ di ren</string>
 </resources>

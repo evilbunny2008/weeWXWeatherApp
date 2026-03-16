@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Deŋ %1$.2f%2$s acï thöŋ keke thökdu ë %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Deŋ ë %1$.1f%2$s në thaa tökic acï thöŋ ke thökdu ë %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Deŋ de %1$.2f%2$s në thaa tökic acï thöŋ ke thökdu de %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Atuɔ̈c</string>
+    <string name="rainfall_alert_str">Lööŋ de Deŋ</string>
+    <string name="rainrate_alert_str">Tɛ̈ŋ de deŋ</string>
 </resources>

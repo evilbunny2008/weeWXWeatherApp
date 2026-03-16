@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">ਬਾਰਸ਼ %1$.2f%2$s ਤੁਹਾਡੀ %3$.2f%2$s ਦੀ ਸੀਮਾ ਨਾਲ ਮੇਲ ਖਾਂਦੀ ਹੈ</string>
     <string name="rainrate_alert_metric">%1$.1f%2$s ਪ੍ਰਤੀ ਘੰਟਾ ਮੀਂਹ ਦੀ ਦਰ ਤੁਹਾਡੀ %3$.1f%2$s ਦੀ ਸੀਮਾ ਨਾਲ ਮੇਲ ਖਾਂਦੀ ਹੈ</string>
     <string name="rainrate_alert_imperial">%1$.2f%2$s ਪ੍ਰਤੀ ਘੰਟਾ ਮੀਂਹ ਦੀ ਦਰ ਤੁਹਾਡੀ %3$.2f%2$s ਦੀ ਸੀਮਾ ਨਾਲ ਮੇਲ ਖਾਂਦੀ ਹੈ</string>
+    <string name="temperature_alert_str">ਤਾਪਮਾਨ ਚੇਤਾਵਨੀ</string>
+    <string name="rainfall_alert_str">ਮੀਂਹ ਦੀ ਚਿਤਾਵਨੀ</string>
+    <string name="rainrate_alert_str">ਬਾਰਿਸ਼ ਦੀ ਚੇਤਾਵਨੀ</string>
 </resources>

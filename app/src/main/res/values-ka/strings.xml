@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">ნალექი %1$.2f%2$s დაემთხვა თქვენს %3$.2f%2$s ლიმიტს</string>
     <string name="rainrate_alert_metric">წვიმის %1$.1f%2$s საათში დაემთხვა თქვენს ლიმიტს %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">წვიმის მაჩვენებელი %1$.2f%2$s საათში დაემთხვა თქვენს ლიმიტს %3$.2f%2$s</string>
+    <string name="temperature_alert_str">ტემპერატურის გაფრთხილება</string>
+    <string name="rainfall_alert_str">წვიმის გაფრთხილება</string>
+    <string name="rainrate_alert_str">წვიმის გაფრთხილება</string>
 </resources>

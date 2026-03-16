@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Reënval %1$.2f%2$s het ooreenstem met jou limiet van %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Reëntempo van %1$.1f%2$s per uur het ooreenstem met jou limiet van %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Reëntempo van %1$.2f%2$s per uur het ooreenstem met jou limiet van %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Temperatuurwaarskuwing</string>
+    <string name="rainfall_alert_str">Reënval waarskuwing</string>
+    <string name="rainrate_alert_str">Reëntempo waarskuwing</string>
 </resources>

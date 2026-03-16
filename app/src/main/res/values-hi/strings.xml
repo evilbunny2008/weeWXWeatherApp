@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">वर्षा %1$.2f%2$s आपकी %3$.2f%2$s की सीमा से मेल खाती है</string>
     <string name="rainrate_alert_metric">%1$.1f%2$s प्रति घंटे की वर्षा दर आपकी %3$.1f%2$s की सीमा से मेल खाती है</string>
     <string name="rainrate_alert_imperial">%1$.2f%2$s प्रति घंटे की वर्षा दर आपकी %3$.2f%2$s की सीमा से मेल खाती है</string>
+    <string name="temperature_alert_str">तापमान चेतावनी</string>
+    <string name="rainfall_alert_str">वर्षा चेतावनी</string>
+    <string name="rainrate_alert_str">वर्षा दर चेतावनी</string>
 </resources>

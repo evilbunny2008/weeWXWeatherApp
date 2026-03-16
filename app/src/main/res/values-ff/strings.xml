@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Toɓo %1$.2f%2$s hawrii e keerol maa %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Toɓo %1$.1f%2$s e waktu ina hawri e keerol maa %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Toɓo %1$.2f%2$s e waktu gooto hawri ko e keerol maa %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Jeertinaango nguleeki</string>
+    <string name="rainfall_alert_str">Jeertinaango toɓo</string>
+    <string name="rainrate_alert_str">Jeertinaango toɓo</string>
 </resources>

@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">ዝናብ %1$.2f%2$s ምስቲ ናትካ ደረት %3$.2f%2$s ተሰማሚዑ ኣሎ።</string>
     <string name="rainrate_alert_metric">ኣብ ሰዓት %1$.1f%2$s ዝናብ ምስቲ %3$.1f%2$s ዝኾነ ደረትካ ተሰማሚዑ ኣሎ።</string>
     <string name="rainrate_alert_imperial">ኣብ ሰዓት %1$.2f%2$s ዝናብ ምስቲ %3$.2f%2$s ዝኾነ ደረትካ ተሰማሚዑ ኣሎ።</string>
+    <string name="temperature_alert_str">መጠንቀቕታ ሙቐት</string>
+    <string name="rainfall_alert_str">መጠንቀቕታ ዝናብ</string>
+    <string name="rainrate_alert_str">መጠን ዝናብ መጠንቀቕታ</string>
 </resources>

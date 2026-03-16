@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Sanji %1$.2f%2$s bɛnna i ka dancɛ ma min ye %3$.2f%2$s ye</string>
     <string name="rainrate_alert_metric">Sanji hakɛ min ye %1$.1f%2$s ye lɛrɛ kelen kɔnɔ, o bɛnna i ka dancɛ ma min ye %3$.1f%2$s ye</string>
     <string name="rainrate_alert_imperial">Sanji hakɛ min ye %1$.2f%2$s ye lɛrɛ kelen kɔnɔ, o bɛnna i ka dancɛ ma min ye %3$.2f%2$s ye</string>
+    <string name="temperature_alert_str">Funteni hakɛ Lakɔlɔsili</string>
+    <string name="rainfall_alert_str">Sanjiko Lakɔlɔsili</string>
+    <string name="rainrate_alert_str">Sanji hakɛ Lakɔlɔsili</string>
 </resources>

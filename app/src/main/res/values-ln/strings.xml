@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Mbula %1$.2f%2$s ekokani na ndelo na yo ya %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Taux ya mbula ya %1$.1f%2$s na ngonga moko ekokani na limite na yo ya %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Taux ya mbula ya %1$.2f%2$s na ngonga moko ekokani na limite na yo ya %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Alerte ya température</string>
+    <string name="rainfall_alert_str">Alerte ya mbula</string>
+    <string name="rainrate_alert_str">Alerte ya mbula ya mbula</string>
 </resources>

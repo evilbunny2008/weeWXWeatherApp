@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Валежите %1$.2f%2$s съответстват на лимита ви от %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Интензивността на дъжда от %1$.1f%2$s на час съответства на вашия лимит от %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Интензивността на дъжда от %1$.2f%2$s на час съответства на вашия лимит от %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Предупреждение за температура</string>
+    <string name="rainfall_alert_str">Предупреждение за валежи</string>
+    <string name="rainrate_alert_str">Предупреждение за дъжд</string>
 </resources>

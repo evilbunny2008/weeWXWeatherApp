@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Udan %1$.2f%2$s nunga hombar tu batasmu %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Tingkat udan %1$.1f%2$s per jam nunga hombar tu batasmu %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Tingkat udan %1$.2f%2$s per jam nunga hombar tu batasmu %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Peringatan Suhu</string>
+    <string name="rainfall_alert_str">Siaga Udan</string>
+    <string name="rainrate_alert_str">Peringatan Tingkat Udan</string>
 </resources>

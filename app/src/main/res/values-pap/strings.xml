@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Awasero %1$.2f%2$s a kuadra ku bo límite di %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Un frekuensha di áwaseru di %1$.1f%2$s pa ora a kuadra ku bo límite di %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Un frekuensha di áwaseru di %1$.2f%2$s pa ora a kuadra ku bo límite di %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Alerta di Temperatura</string>
+    <string name="rainfall_alert_str">Alerta di áwaseru</string>
+    <string name="rainrate_alert_str">Alerta di áwaseru</string>
 </resources>

@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Nederbörden %1$.2f%2$s har matchat din gräns på %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Regnhastigheten på %1$.1f%2$s per timme har matchat din gräns på %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Regnhastigheten på %1$.2f%2$s per timme har matchat din gräns på %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Temperaturvarning</string>
+    <string name="rainfall_alert_str">Regnvarning</string>
+    <string name="rainrate_alert_str">Regnhastighetsvarning</string>
 </resources>

@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Las precipitaciones %1$.2f%2$s han coincidido con tu límite de %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">La tasa de lluvia de %1$.1f%2$s por hora ha coincidido con tu límite de %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">La tasa de lluvia de %1$.2f%2$s por hora ha coincidido con tu límite de %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Alerta de temperatura</string>
+    <string name="rainfall_alert_str">Alerta de lluvia</string>
+    <string name="rainrate_alert_str">Alerta de lluvia</string>
 </resources>

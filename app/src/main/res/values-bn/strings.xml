@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">বৃষ্টিপাত %1$.2f%2$s আপনার %3$.2f%2$s সীমার সাথে মিলেছে</string>
     <string name="rainrate_alert_metric">প্রতি ঘণ্টায় %1$.1f%2$s বৃষ্টির হার আপনার %3$.1f%2$s সীমার সাথে মিলে গেছে</string>
     <string name="rainrate_alert_imperial">প্রতি ঘণ্টায় %1$.2f%2$s বৃষ্টির হার আপনার %3$.2f%2$s সীমার সাথে মিলে গেছে</string>
+    <string name="temperature_alert_str">তাপমাত্রা সতর্কতা</string>
+    <string name="rainfall_alert_str">বৃষ্টিপাতের সতর্কতা</string>
+    <string name="rainrate_alert_str">বৃষ্টিপাতের সতর্কতা</string>
 </resources>

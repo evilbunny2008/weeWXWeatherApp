@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">%1$.2f%2$s жауын-шашын мөлшері сіздің %3$.2f%2$s шегіне сәйкес келді</string>
     <string name="rainrate_alert_metric">Сағатына %1$.1f%2$s жаңбыр жаууы сіздің %3$.1f%2$s шегіңізге сәйкес келді</string>
     <string name="rainrate_alert_imperial">Сағатына %1$.2f%2$s жаңбыр жаууы сіздің %3$.2f%2$s шегіңізге сәйкес келді</string>
+    <string name="temperature_alert_str">Температура туралы ескерту</string>
+    <string name="rainfall_alert_str">Жауын-шашын туралы ескерту</string>
+    <string name="rainrate_alert_str">Жаңбыр туралы ескерту</string>
 </resources>

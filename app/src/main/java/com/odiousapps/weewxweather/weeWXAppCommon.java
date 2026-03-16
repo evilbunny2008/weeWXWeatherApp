@@ -2920,7 +2920,7 @@ class weeWXAppCommon
 			if(CurrTemp >= morning_temp_limit)
 			{
 				KeyValue.putVar("LastMorningTempAlert", System.currentTimeMillis());
-				weeWXApp.sendTemperatureAlert(CurrTemp, morning_temp_limit);
+				weeWXApp.sendTemperatureAlert(CurrTemp, morning_temp_limit, false);
 				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") >= morning_temp_limit (" + morning_temp_limit + ") notification triggered");
 			} else {
 				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") < morning_temp_limit (" + morning_temp_limit + ") no notification triggered");
@@ -2961,7 +2961,7 @@ class weeWXAppCommon
 			if(CurrTemp <= afternoon_temp_limit && CurrTemp <= maxTemp - 1)
 			{
 				KeyValue.putVar("LastAfternoonTempAlert", System.currentTimeMillis());
-				weeWXApp.sendTemperatureAlert(CurrTemp, afternoon_temp_limit);
+				weeWXApp.sendTemperatureAlert(CurrTemp, afternoon_temp_limit, true);
 				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") <= afternoon_temp_limit (" + afternoon_temp_limit + ") notification triggered");
 			} else {
 				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") > afternoon_temp_limit (" + afternoon_temp_limit + ") no notification triggered");

@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">O brishind %1$.2f%2$s si phanglo e limitosa %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">O brishind %1$.1f%2$s pe jekh ćàso si phanglo e limitosa %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">O brishind %1$.2f%2$s pe jekh ćàso si phanglo e limitosa %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Alerto pal-i temperatura</string>
+    <string name="rainfall_alert_str">Alerto pal-o brishind</string>
+    <string name="rainrate_alert_str">Alarmo pal-o brishind</string>
 </resources>

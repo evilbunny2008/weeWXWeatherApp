@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Yağış %1$.2f%2$s sizin %3$.2f%2$s limitinizə uyğun gəldi</string>
     <string name="rainrate_alert_metric">Saatda %1$.1f%2$s yağış sürəti %3$.1f%2$s limitinizə uyğundur</string>
     <string name="rainrate_alert_imperial">Saatda %1$.2f%2$s yağış sürəti %3$.2f%2$s limitinizə uyğundur</string>
+    <string name="temperature_alert_str">Temperatur Xəbərdarlığı</string>
+    <string name="rainfall_alert_str">Yağış Xəbərdarlığı</string>
+    <string name="rainrate_alert_str">Yağış Xəbərdarlığı</string>
 </resources>

@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">ବର୍ଷା%1$.2f%2$s ଆପଣଙ୍କର ସୀମା ସହିତ%3$.2f%2$s ସହିତ ମେଳ ହୋଇଛି |</string>
     <string name="rainrate_alert_metric">ଘଣ୍ଟା ପ୍ରତି%1$.1f%2$s ର ବର୍ଷା ଆପଣଙ୍କ%3$.1f%2$s ର ସୀମା ସହିତ ମେଳ ଖାଉଛି |</string>
     <string name="rainrate_alert_imperial">ଘଣ୍ଟା ପ୍ରତି%1$.2f%2$s ର ବର୍ଷା ତୁମର%3$.2f%2$s ର ସୀମା ସହିତ ମେଳ ହୋଇଛି |</string>
+    <string name="temperature_alert_str">ତାପମାତ୍ରା ସତର୍କତା |</string>
+    <string name="rainfall_alert_str">ବର୍ଷା ସତର୍କତା |</string>
+    <string name="rainrate_alert_str">ବର୍ଷା ଆଲର୍ଟ |</string>
 </resources>

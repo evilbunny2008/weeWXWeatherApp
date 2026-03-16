@@ -120,7 +120,8 @@ public class weeWXApp extends Application
 		wouldn't be possible otherwise.<br><br>
 		Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and
 		is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and
-		<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers
+		<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers and
+		<a href="https://www.vecteezy.com/free-vector/">Vectors by Vecteezy</a>
 		<br><br>
 		Current WebView Library Version: WEBVIEWVER
 		<br/><br/>
@@ -1015,7 +1016,7 @@ public class weeWXApp extends Application
 		}
 	}
 
-	static void sendTemperatureAlert(float temperature, float limit)
+	static void sendTemperatureAlert(float temperature, float limit, boolean isAfternoon)
 	{
 		if(ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
 		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
@@ -1025,10 +1026,18 @@ public class weeWXApp extends Application
 
 		String unit = metric ? "C" : "F";
 
+		int iconID = R.drawable.hot;
+		String str = String.format(getAndroidString(R.string.morning_alert), temperature, unit, limit);
+		if(isAfternoon)
+		{
+			iconID = R.drawable.cold;
+			str = String.format(getAndroidString(R.string.afternoon_alert), temperature, unit, limit);
+		}
+
 	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "temperature_alerts")
-	        .setSmallIcon(R.drawable.baseline_thermostat_24)
-	        .setContentTitle("Temperature Alert")
-	        .setContentText(String.format(getAndroidString(R.string.afternoon_alert), temperature, unit, limit))
+	        .setSmallIcon(iconID)
+	        .setContentTitle(getAndroidString(R.string.temperature))
+	        .setContentText(str)
 	        .setPriority(NotificationCompat.PRIORITY_HIGH)
 	        .setAutoCancel(true);
 
@@ -1050,8 +1059,8 @@ public class weeWXApp extends Application
 		             String.format(getAndroidString(R.string.rainfall_alert_imperial), rainfall, "in", rainfalllimit);
 
 	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainfall_alert")
-	        .setSmallIcon(R.drawable.baseline_thermostat_24)
-	        .setContentTitle("Rainfall Alert")
+	        .setSmallIcon(R.drawable.rain)
+	        .setContentTitle(getAndroidString(R.string.rainfall_alert))
 	        .setContentText(str)
 	        .setPriority(NotificationCompat.PRIORITY_HIGH)
 	        .setAutoCancel(true);
@@ -1074,8 +1083,8 @@ public class weeWXApp extends Application
 		             String.format(getAndroidString(R.string.rainrate_alert_imperial), rainrate, "in", rainratelimit);
 
 	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainrate_alert")
-	        .setSmallIcon(R.drawable.baseline_thermostat_24)
-	        .setContentTitle("Rainrate Alert")
+	        .setSmallIcon(R.drawable.rain)
+	        .setContentTitle(getAndroidString(R.string.rainrate_alert))
 	        .setContentText(str)
 	        .setPriority(NotificationCompat.PRIORITY_HIGH)
 	        .setAutoCancel(true);

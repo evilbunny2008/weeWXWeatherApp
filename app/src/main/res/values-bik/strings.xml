@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">An pag-uran %1$.2f%2$s nakatugma sa saimong limitasyon na %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">An rainrate na %1$.1f%2$s kada oras nakatugma sa saimong limitasyon na %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">An rainrate na %1$.2f%2$s kada oras nakatugma sa saimong limitasyon na %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Alerto sa Temperatura</string>
+    <string name="rainfall_alert_str">Alerto sa Pag-uran</string>
+    <string name="rainrate_alert_str">Alerto sa Rainrate</string>
 </resources>

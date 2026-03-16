@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Kunaya kwemvura %1$.2f%2$s yaenderana newaunogumira pa %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Kunaya kwe %1$.1f%2$s paawa imwe chete kwaenderana newaunogumira pa %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Kunaya kwe %1$.2f%2$s paawa kwaenderana newaunogumira pa %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Tembiricha Alert</string>
+    <string name="rainfall_alert_str">Rainfall Alert</string>
+    <string name="rainrate_alert_str">Rainrate Alert</string>
 </resources>

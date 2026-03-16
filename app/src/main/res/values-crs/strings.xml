@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">lapli %1$.2f%2$s in match avek ou limit %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">to lapli %1$.1f%2$s par erdtan in koresponn avek ou limit %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">to lapli %1$.2f%2$s par erdtan in koresponn avek ou limit %3$.2f%2$s</string>
+    <string name="temperature_alert_str">alert tanperatir</string>
+    <string name="rainfall_alert_str">alert lapli</string>
+    <string name="rainrate_alert_str">alert to lapli</string>
 </resources>

@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Nugbɔ ni nɛɔ %1$.2f%2$s kɛ ohusu ni ji %3$.2f%2$s lɛ kpãa gbee</string>
     <string name="rainrate_alert_metric">Nugbɔ ni nɛɔ yɛ ŋmɛlɛtswaa kome mli lɛ kɛ %1$.1f%2$s ohusu ni ji %3$.1f%2$s lɛ kpãa gbee</string>
     <string name="rainrate_alert_imperial">Nugbɔ ni nɛɔ yɛ ŋmɛlɛtswaa kome mli lɛ kɛ %1$.2f%2$s ohusu ni ji %3$.2f%2$s lɛ kpãa gbee</string>
+    <string name="temperature_alert_str">Dɔlɛ He Kɔkɔbɔɔ</string>
+    <string name="rainfall_alert_str">Nugbɔshiimɔ He Kɔkɔbɔɔ</string>
+    <string name="rainrate_alert_str">Nugbɔshiimɔ He Kɔkɔbɔɔ</string>
 </resources>

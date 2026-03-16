@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Dešťové srážky %1$.2f%2$s odpovídají vašemu limitu %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Rychlost srážek %1$.1f%2$s za hodinu odpovídá vašemu limitu %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Rychlost srážek %1$.2f%2$s za hodinu odpovídá vašemu limitu %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Upozornění na teplotu</string>
+    <string name="rainfall_alert_str">Upozornění na déšť</string>
+    <string name="rainrate_alert_str">Upozornění na déšť</string>
 </resources>

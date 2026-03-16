@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Koth %1$.2f%2$s urombo ku rwom peri mi %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Koth pa %1$.1f%2$s pi sawa acel urombo ku rwom peri pa %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Koth pa %1$.2f%2$s pi sawa acel urombo ku rwom peri pa %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Lembe mi lyethu</string>
+    <string name="rainfall_alert_str">Lembe mi koth</string>
+    <string name="rainrate_alert_str">Lembe mi koth</string>
 </resources>

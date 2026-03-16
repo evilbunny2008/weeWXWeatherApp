@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">पावस %1$.2f%2$s तुमच्या %3$.2f%2$s मर्यादेकडेन जुळ्ळा</string>
     <string name="rainrate_alert_metric">दर वराक %1$.1f%2$s पावसाचे दर तुमच्या %3$.1f%2$s मर्यादेकडेन जुळ्ळा</string>
     <string name="rainrate_alert_imperial">दर वराक %1$.2f%2$s पावसाचे दर तुमच्या %3$.2f%2$s मर्यादेकडेन जुळ्ळा</string>
+    <string name="temperature_alert_str">तापमानाची सावधानताय</string>
+    <string name="rainfall_alert_str">पावसाची इशारो</string>
+    <string name="rainrate_alert_str">पावसाच्या दरान इशारो</string>
 </resources>

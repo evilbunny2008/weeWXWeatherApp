@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">A precipitazione %1$.2f%2$s hè ghjunta à u vostru limitu di %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">A rata di pioggia di %1$.1f%2$s per ora hè ghjunta à u vostru limitu di %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">A rata di pioggia di %1$.2f%2$s per ora hè ghjunta à u vostru limitu di %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Alerta di temperatura</string>
+    <string name="rainfall_alert_str">Alerta di precipitazione</string>
+    <string name="rainrate_alert_str">Alert Rainrate</string>
 </resources>

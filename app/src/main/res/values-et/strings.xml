@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Vihmahulk %1$.2f%2$s on ühtinud teie limiidiga %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Vihmamäär %1$.1f%2$s tunnis on ühtinud teie limiidiga %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Vihmamäär %1$.2f%2$s tunnis on ühtinud teie limiidiga %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Temperatuuri hoiatus</string>
+    <string name="rainfall_alert_str">Vihmahoiatus</string>
+    <string name="rainrate_alert_str">Vihmahoiatus</string>
 </resources>

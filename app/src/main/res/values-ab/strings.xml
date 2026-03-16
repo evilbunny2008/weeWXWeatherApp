@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Ақәа %1$.2f%2$s уара уҳәаа %3$.2f%2$s иақәшәоит</string>
     <string name="rainrate_alert_metric">Ақәа амҽхак %1$.1f%2$s сааҭк аҟны иақәшәоит уара уҳәаа %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Ақәа амҽхак %1$.2f%2$s сааҭк азы иақәшәоит уара уҳәаа %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Аԥхарра агәҽанҵара</string>
+    <string name="rainfall_alert_str">Ақәаршҩы азы агәҽанҵара</string>
+    <string name="rainrate_alert_str">Ақәа амҽхак азы агәҽанҵара</string>
 </resources>

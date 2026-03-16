@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Úrkoma %1$.2f%2$s hefur passað við mörkin þín upp á %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Regnhraði upp á %1$.1f%2$s á klukkustund hefur passað við mörkin þín, %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Regnhraði upp á %1$.2f%2$s á klukkustund hefur passað við mörkin þín, %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Hitaviðvörun</string>
+    <string name="rainfall_alert_str">Regnviðvörun</string>
+    <string name="rainrate_alert_str">Rainrate Alert</string>
 </resources>

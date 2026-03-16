@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Bosi %1$.2f%2$s sangkammai siagang batasnu %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Laju bosi %1$.1f%2$s per jam sanna\'i cocokna siagang batasnu %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Laju bosi %1$.2f%2$s per jam sanna\'i cocokna siagang batasnu %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Peringatan suhu</string>
+    <string name="rainfall_alert_str">Peringatan bosi</string>
+    <string name="rainrate_alert_str">Peringatan laju bosi</string>
 </resources>

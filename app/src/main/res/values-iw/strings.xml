@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">כמות המשקעים %1$.2f%2$s תואמת למגבלה שלך של %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">קצב הגשם של %1$.1f%2$s לשעה תואם למגבלה של %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">קצב הגשם של %1$.2f%2$s לשעה תואם למגבלה של %3$.2f%2$s</string>
+    <string name="temperature_alert_str">התראת טמפרטורה</string>
+    <string name="rainfall_alert_str">התראת גשם</string>
+    <string name="rainrate_alert_str">התראת גשם</string>
 </resources>

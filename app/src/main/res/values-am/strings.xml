@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">የ %1$.2f%2$s የዝናብ መጠን ከ%3$.2f%2$s ገደብ ጋር ይዛመዳል</string>
     <string name="rainrate_alert_metric">በሰአት የ%1$.1f%2$s የዝናብ መጠን ከ%3$.1f%2$s ገደብ ጋር ይዛመዳል</string>
     <string name="rainrate_alert_imperial">በሰአት የ%1$.2f%2$s የዝናብ መጠን ከ%3$.2f%2$s ገደብ ጋር ይዛመዳል</string>
+    <string name="temperature_alert_str">የሙቀት ማንቂያ</string>
+    <string name="rainfall_alert_str">የዝናብ መጠን ማንቂያ</string>
+    <string name="rainrate_alert_str">የዝናብ መጠን ማንቂያ</string>
 </resources>

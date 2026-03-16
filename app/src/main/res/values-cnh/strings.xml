@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Ruahsurnak %1$.2f%2$s cu na ri %3$.2f%2$s he aa tlak</string>
     <string name="rainrate_alert_metric">Suimilam pakhat ah %1$.1f%2$s ruah a surmi nih na %3$.1f%2$s ri he aa tlak</string>
     <string name="rainrate_alert_imperial">Suimilam pakhat ah %1$.2f%2$s ruah a surmi nih na ri %3$.2f%2$s he aa tlak</string>
+    <string name="temperature_alert_str">Khuacaan Ralrinnak</string>
+    <string name="rainfall_alert_str">Ruah sur ralrinnak</string>
+    <string name="rainrate_alert_str">Ruah sur ralrin peknak</string>
 </resources>

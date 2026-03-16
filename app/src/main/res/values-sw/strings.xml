@@ -114,4 +114,7 @@
     <string name="rainfall_alert_imperial">Mvua %1$.2f%2$s imelingana na kikomo chako cha %3$.2f%2$s</string>
     <string name="rainrate_alert_metric">Kiwango cha mvua cha %1$.1f%2$s kwa saa kimelingana na kikomo chako cha %3$.1f%2$s</string>
     <string name="rainrate_alert_imperial">Kiwango cha mvua cha %1$.2f%2$s kwa saa kimelingana na kikomo chako cha %3$.2f%2$s</string>
+    <string name="temperature_alert_str">Tahadhari ya Halijoto</string>
+    <string name="rainfall_alert_str">Tahadhari ya Kunyesha kwa Mvua</string>
+    <string name="rainrate_alert_str">Tahadhari ya Mvua</string>
 </resources>
