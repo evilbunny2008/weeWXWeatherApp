@@ -2929,6 +2929,9 @@ class weeWXAppCommon
 		Calendar cal = Calendar.getInstance();
 		Calendar cal1 = Calendar.getInstance();
 
+		if(cal.get(Calendar.HOUR_OF_DAY) < 6)
+			return;
+
 		if(cal.get(Calendar.HOUR_OF_DAY) < 12 && morning_temp_alert)
 		{
 			LogMessage("checkTempAlerts() morning_temp_alert set to true");
