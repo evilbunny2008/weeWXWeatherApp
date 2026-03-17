@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerta de temperatura</string>
     <string name="rainfall_alert_str">Alerta de lluvia</string>
     <string name="rainrate_alert_str">Alerta de lluvia</string>
+    <string name="temperature_alert_desc">Alerta hasta dos veces al día cuando la temperatura alcanza los límites establecidos</string>
+    <string name="rainfall_alert_desc">Alertas diarias cuando la lluvia alcanza el límite establecido</string>
+    <string name="rainrate_alert_desc">Alertas cada hora si la tasa de lluvia alcanza el límite establecido</string>
 </resources>

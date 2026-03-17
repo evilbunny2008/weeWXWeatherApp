@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">तापमान अलर्ट</string>
     <string name="rainfall_alert_str">बरखा दा अलर्ट</string>
     <string name="rainrate_alert_str">रेनरेट अलर्ट</string>
+    <string name="temperature_alert_desc">जदूं तापमान तुंदी निर्धारत सीमा तगर पुज्जी जंदा ऐ तां रोजाना दो बारी तगर अलर्ट करदा ऐ</string>
+    <string name="rainfall_alert_desc">बरखा तुंदी निर्धारित सीमा तगर पुज्जने पर रोजाना अलर्ट करदा ऐ</string>
+    <string name="rainrate_alert_desc">जेकर बरखा दी दर तुंदी निर्धारित सीमा तगर पुज्जी जंदी ऐ तां हर घैंटे अलर्ट करदा ऐ</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Painget Suhu</string>
     <string name="rainfall_alert_str">Painget Ujan</string>
     <string name="rainrate_alert_str">Painget Tingkat Ujan</string>
+    <string name="temperature_alert_desc">Painget ngantos ping kalih nyabran rahina yéning suhu sampun ngantos wates sané sampun katetapang</string>
+    <string name="rainfall_alert_desc">Painget nyabran rahina yéning ujan sampun ngantos wates sané sampun katetapang</string>
+    <string name="rainrate_alert_desc">Painget nyabran jam yéning ujan ngantos wates sané sampun katetapang</string>
 </resources>

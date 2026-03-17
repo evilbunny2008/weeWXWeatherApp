@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Foláireamh Teochta</string>
     <string name="rainfall_alert_str">Foláireamh Báistí</string>
     <string name="rainrate_alert_str">Foláireamh Báisteach</string>
+    <string name="temperature_alert_desc">Foláirimh suas le dhá uair sa lá nuair a shroicheann an teocht do teorainneacha socraithe</string>
+    <string name="rainfall_alert_desc">Foláirimh laethúil nuair a shroicheann an bháisteach an teorainn socraithe agat</string>
+    <string name="rainrate_alert_desc">Foláirimh in aghaidh na huaire má shroicheann an ráta báistí do theorainn socraithe</string>
 </resources>

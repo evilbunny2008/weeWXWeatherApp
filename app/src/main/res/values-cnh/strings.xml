@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Khuacaan Ralrinnak</string>
     <string name="rainfall_alert_str">Ruah sur ralrinnak</string>
     <string name="rainrate_alert_str">Ruah sur ralrin peknak</string>
+    <string name="temperature_alert_desc">Nikhat ah voihnih tiang lum le kih nih na chiahmi ri a phak tikah ralrinnak a pek</string>
+    <string name="rainfall_alert_desc">Ruah nih na khiahmi ri a phak tikah nifatin ralrin peknak</string>
+    <string name="rainrate_alert_desc">Ruah nih na khiahmi ri a phanh ahcun suimilam fatin ralrin peknak</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Абвестка аб тэмпературы</string>
     <string name="rainfall_alert_str">Абвестка пра ападкі</string>
     <string name="rainrate_alert_str">Абвестка аб дажджы</string>
+    <string name="temperature_alert_desc">Абвесткі да двух разоў на дзень, калі тэмпература дасягае зададзеных межаў</string>
+    <string name="rainfall_alert_desc">Абвесткі штодня, калі колькасць ападкаў дасягае зададзенага ліміту</string>
+    <string name="rainrate_alert_desc">Абвесткі кожную гадзіну, калі колькасць дажджу дасягае зададзенага ліміту</string>
 </resources>

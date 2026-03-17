@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">তাপমাত্ৰা সতৰ্কবাণী</string>
     <string name="rainfall_alert_str">বৰষুণৰ সতৰ্কবাণী</string>
     <string name="rainrate_alert_str">বৰষুণৰ হাৰ সতৰ্কবাণী</string>
+    <string name="temperature_alert_desc">উষ্ণতাই আপোনাৰ নিৰ্ধাৰিত সীমাত উপনীত হ\'লে দৈনিক দুবাৰলৈকে সতৰ্ক কৰে</string>
+    <string name="rainfall_alert_desc">বৰষুণে আপোনাৰ নিৰ্ধাৰিত সীমাত উপনীত হ\'লে দৈনিক সতৰ্ক কৰি দিয়ে</string>
+    <string name="rainrate_alert_desc">বৰষুণৰ হাৰ আপোনাৰ নিৰ্ধাৰিত সীমাত উপনীত হ\'লে ঘণ্টাৰ পিছত ঘণ্টা সতৰ্ক কৰি দিয়ে</string>
 </resources>

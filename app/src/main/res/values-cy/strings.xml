@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Rhybudd Tymheredd</string>
     <string name="rainfall_alert_str">Rhybudd Glawiad</string>
     <string name="rainrate_alert_str">Rhybudd Cyfraddau Glaw</string>
+    <string name="temperature_alert_desc">Rhybuddion hyd at ddwywaith y dydd pan fydd y tymheredd yn cyrraedd eich terfynau penodol</string>
+    <string name="rainfall_alert_desc">Rhybuddion dyddiol pan fydd y glawiad yn cyrraedd eich terfyn penodol</string>
+    <string name="rainrate_alert_desc">Rhybuddion bob awr os bydd y glawiad yn cyrraedd eich terfyn penodol</string>
 </resources>

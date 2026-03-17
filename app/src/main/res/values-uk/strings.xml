@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Сповіщення про температуру</string>
     <string name="rainfall_alert_str">Сповіщення про дощ</string>
     <string name="rainrate_alert_str">Сповіщення про дощ</string>
+    <string name="temperature_alert_desc">Сповіщення двічі на день, коли температура досягає встановлених меж</string>
+    <string name="rainfall_alert_desc">Сповіщення щодня, коли кількість опадів досягає встановленого ліміту</string>
+    <string name="rainrate_alert_desc">Сповіщення щогодини, якщо рівень дощу досягає встановленого ліміту</string>
 </resources>

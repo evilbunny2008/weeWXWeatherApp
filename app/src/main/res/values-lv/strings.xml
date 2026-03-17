@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperatūras brīdinājums</string>
     <string name="rainfall_alert_str">Brīdinājums par nokrišņiem</string>
     <string name="rainrate_alert_str">Brīdinājums par lietus ātrumu</string>
+    <string name="temperature_alert_desc">Brīdina līdz pat divas reizes dienā, kad temperatūra sasniedz iestatītās robežas</string>
+    <string name="rainfall_alert_desc">Brīdina katru dienu, kad nokrišņu daudzums sasniedz iestatīto ierobežojumu</string>
+    <string name="rainrate_alert_desc">Brīdina katru stundu, ja lietus līmenis sasniedz iestatīto ierobežojumu</string>
 </resources>

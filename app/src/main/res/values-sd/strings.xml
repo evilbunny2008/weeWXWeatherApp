@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">درجه حرارت جي خبرداري</string>
     <string name="rainfall_alert_str">برسات جي خبرداري</string>
     <string name="rainrate_alert_str">برسات جي خبرداري</string>
+    <string name="temperature_alert_desc">روزانو ٻه ڀيرا خبردار ڪيو وڃي ٿو جڏهن درجه حرارت توهان جي مقرر ڪيل حدن تائين پهچي ٿي</string>
+    <string name="rainfall_alert_desc">روزانه الرٽ جڏهن برسات توهان جي مقرر ڪيل حد تائين پهچي ٿي</string>
+    <string name="rainrate_alert_desc">خبردار ڪلاڪ ڪلاڪ جيڪڏھن مينهن جي شرح توھان جي مقرر ڪيل حد تائين پھچي</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperatūros įspėjimas</string>
     <string name="rainfall_alert_str">Įspėjimas dėl lietaus</string>
     <string name="rainrate_alert_str">Įspėjimas apie lietaus greitį</string>
+    <string name="temperature_alert_desc">Įspėja iki dviejų kartų per dieną, kai temperatūra pasiekia nustatytas ribas</string>
+    <string name="rainfall_alert_desc">Kasdien įspėja, kai kritulių kiekis pasiekia nustatytą ribą</string>
+    <string name="rainrate_alert_desc">Kas valandą įspėja, jei kritulių kiekis pasiekia nustatytą ribą</string>
 </resources>

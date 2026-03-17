@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">དྲོད་ཚད་ཉེན་བརྡ།</string>
     <string name="rainfall_alert_str">ཆར་ཆུའི་ཉེན་བརྡ།</string>
     <string name="rainrate_alert_str">ཆར་ཆུའི་ཉེན་བརྡ།</string>
+    <string name="temperature_alert_desc">དྲོད་ཚད་འདི་ཁྱོད་ཀྱི་གཞི་སྒྲིག་ཚད་གཞི་ལུ་ལྷོདཔ་ད་ ཉིན་བསྟར་བཞིན་དུ་ཚར་གཉིས་ཚུན་ཚོད་ཉེན་བརྡ་འབདཝ་ཨིན།</string>
+    <string name="rainfall_alert_desc">ཆརཔ་རྐྱབ་ཚད་འདི་ ཁྱོད་རའི་ཚད་གཞི་ལུ་ལྷོདཔ་ད་ ཉིན་བསྟར་གྱི་ཉེན་བརྡ་འབདཝ་ཨིན།</string>
+    <string name="rainrate_alert_desc">ཆརཔ་གི་ཚད་གཞི་འདི་ཁྱོད་ཀྱི་གཞི་སྒྲིག་ཚད་གཞི་ལུ་ལྷོད་པ་ཅིན་ ཆུ་ཚོད་རེ་ལུ་ཉེན་བརྡ་འབདཝ་ཨིན།</string>
 </resources>

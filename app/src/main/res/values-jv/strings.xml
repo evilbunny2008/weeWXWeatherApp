@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Tandha Suhu</string>
     <string name="rainfall_alert_str">Tandha Udan</string>
     <string name="rainrate_alert_str">Tandha Rainrate</string>
+    <string name="temperature_alert_desc">Tandha nganti kaping pindho saben dina nalika suhu tekan watesan sing disetel</string>
+    <string name="rainfall_alert_desc">Tandha saben dina nalika udan tekan wates sing disetel</string>
+    <string name="rainrate_alert_desc">Tandha saben jam yen tingkat udan tekan watesan sing disetel</string>
 </resources>

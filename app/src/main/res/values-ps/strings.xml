@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">د تودوخې خبرتیا</string>
     <string name="rainfall_alert_str">د باران خبرتیا</string>
     <string name="rainrate_alert_str">د باران خبرتیا</string>
+    <string name="temperature_alert_desc">په ورځ کې دوه ځله خبرتیاوې کله چې تودوخه ستاسو ټاکل شوي حد ته رسي</string>
+    <string name="rainfall_alert_desc">هره ورځ خبرداری ورکوي کله چې باران ستاسو ټاکل شوي حد ته ورسیږي</string>
+    <string name="rainrate_alert_desc">په ساعت کې خبرتیاوې که د باران کچه ستاسو ټاکل شوي حد ته ورسیږي</string>
 </resources>

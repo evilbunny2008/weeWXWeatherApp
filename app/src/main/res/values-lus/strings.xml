@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperature chungchang hriattirna</string>
     <string name="rainfall_alert_str">Ruahtui tlak dan tur hriattirna</string>
     <string name="rainrate_alert_str">Ruahtui tlak dan tur Alert</string>
+    <string name="temperature_alert_desc">I set limit a thlen chuan nitin vawi hnih thleng alert thin</string>
+    <string name="rainfall_alert_desc">Ruah surin i set limit a thlen chuan nitin alert thin</string>
+    <string name="rainrate_alert_desc">Ruahtui tlak zatin i set limit a thlen chuan darkar tin alert thin</string>
 </resources>

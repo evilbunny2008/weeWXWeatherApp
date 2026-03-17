@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Fanairana ny maripana</string>
     <string name="rainfall_alert_str">Fanairana rotsak\'orana</string>
     <string name="rainrate_alert_str">Fanairana ny orana</string>
+    <string name="temperature_alert_desc">Fampandrenesana hatramin\'ny indroa isan\'andro rehefa mahatratra ny fetra napetrakao ny mari-pana</string>
+    <string name="rainfall_alert_desc">Fampandrenesana isan\'andro rehefa mahatratra ny fetra napetrakao ny rotsak\'orana</string>
+    <string name="rainrate_alert_desc">Fampandrenesana isan\'ora raha mahatratra ny fetra napetrakao ny orana</string>
 </resources>

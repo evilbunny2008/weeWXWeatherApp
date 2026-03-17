@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Xitsundzuxo xa Mahiselo</string>
     <string name="rainfall_alert_str">Xitsundzuxo xa Mpfula</string>
     <string name="rainrate_alert_str">Xitsundzuxo xa Mpfula</string>
+    <string name="temperature_alert_desc">Swi lemukisa ku fika kambirhi hi siku loko mahiselo ya fika eka swipimelo swa wena leswi vekiweke</string>
+    <string name="rainfall_alert_desc">Yi lemukisa siku na siku loko mpfula yi fika eka mpimo lowu u wu vekeke</string>
+    <string name="rainrate_alert_desc">Yi tsundzuxa awara na awara loko mpfula yi fika eka mpimo wa wena lowu u wu vekeke</string>
 </resources>

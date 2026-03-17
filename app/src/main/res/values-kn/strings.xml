@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">ತಾಪಮಾನ ಎಚ್ಚರಿಕೆ</string>
     <string name="rainfall_alert_str">ಮಳೆಯ ಎಚ್ಚರಿಕೆ</string>
     <string name="rainrate_alert_str">ರೈನ್ರೇಟ್ ಎಚ್ಚರಿಕೆ</string>
+    <string name="temperature_alert_desc">ತಾಪಮಾನವು ನಿಮ್ಮ ನಿಗದಿತ ಮಿತಿಗಳನ್ನು ತಲುಪಿದಾಗ ದಿನಕ್ಕೆ ಎರಡು ಬಾರಿ ಎಚ್ಚರಿಕೆ ನೀಡುತ್ತದೆ</string>
+    <string name="rainfall_alert_desc">ಮಳೆಯು ನಿಮ್ಮ ನಿಗದಿತ ಮಿತಿಯನ್ನು ತಲುಪಿದಾಗ ದೈನಂದಿನ ಎಚ್ಚರಿಕೆಗಳು</string>
+    <string name="rainrate_alert_desc">ಮಳೆಯ ಪ್ರಮಾಣವು ನಿಮ್ಮ ನಿಗದಿತ ಮಿತಿಯನ್ನು ತಲುಪಿದರೆ ಗಂಟೆಗೊಮ್ಮೆ ಎಚ್ಚರಿಕೆ ನೀಡುತ್ತದೆ</string>
 </resources>

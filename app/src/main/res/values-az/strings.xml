@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperatur Xəbərdarlığı</string>
     <string name="rainfall_alert_str">Yağış Xəbərdarlığı</string>
     <string name="rainrate_alert_str">Yağış Xəbərdarlığı</string>
+    <string name="temperature_alert_desc">Temperatur təyin etdiyiniz hədlərə çatdıqda gündə iki dəfəyə qədər xəbərdarlıq edir</string>
+    <string name="rainfall_alert_desc">Yağış təyin etdiyiniz limitə çatdıqda hər gün xəbərdarlıq edir</string>
+    <string name="rainrate_alert_desc">Yağış dərəcəsi təyin etdiyiniz limitə çatdıqda hər saat xəbərdarlıq edir</string>
 </resources>

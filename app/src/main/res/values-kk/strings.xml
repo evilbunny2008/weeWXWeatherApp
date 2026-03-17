@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Температура туралы ескерту</string>
     <string name="rainfall_alert_str">Жауын-шашын туралы ескерту</string>
     <string name="rainrate_alert_str">Жаңбыр туралы ескерту</string>
+    <string name="temperature_alert_desc">Температура белгіленген шектерге жеткенде күніне екі ретке дейін ескертеді</string>
+    <string name="rainfall_alert_desc">Жауын-шашын белгіленген шекке жеткенде күнделікті ескертеді</string>
+    <string name="rainrate_alert_desc">Жаңбыр мөлшері белгіленген шекке жеткенде сағат сайын ескертеді</string>
 </resources>

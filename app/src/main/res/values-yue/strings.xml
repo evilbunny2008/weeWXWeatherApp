@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">溫度警報</string>
     <string name="rainfall_alert_str">降雨警報</string>
     <string name="rainrate_alert_str">雨量警報</string>
+    <string name="temperature_alert_desc">當溫度達到你設定嘅限制嗰陣，每日最多會發出兩次警示</string>
+    <string name="rainfall_alert_desc">當降雨量達到你設定嘅限制嗰陣，每日都會發出警示</string>
+    <string name="rainrate_alert_desc">如果雨量達到你設定嘅限制，每小時會發出警示</string>
 </resources>

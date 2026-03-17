@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">အပူချိန်သတိပေးချက်</string>
     <string name="rainfall_alert_str">မိုးရွာသွန်းမှု သတိပေးချက်</string>
     <string name="rainrate_alert_str">မိုးရေချိန် သတိပေးချက်</string>
+    <string name="temperature_alert_desc">သင့်သတ်မှတ်ထားသော အပူချိန်သို့ ရောက်သည့်အခါ နေ့စဉ် နှစ်ကြိမ်အထိ သတိပေးသည်။</string>
+    <string name="rainfall_alert_desc">မိုးရွာသွန်းမှု ကန့်သတ်ချက် ပြည့်သွားသည့်အခါ နေ့စဉ်သတိပေးချက်များ</string>
+    <string name="rainrate_alert_desc">မိုးရေချိန်သည် သင်၏သတ်မှတ်ကန့်သတ်ချက်သို့ ရောက်ရှိပါက နာရီတိုင်း သတိပေးသည်။</string>
 </resources>

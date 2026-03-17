@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">ແຈ້ງເຕືອນອຸນຫະພູມ</string>
     <string name="rainfall_alert_str">ແຈ້ງເຕືອນຝົນຕົກ</string>
     <string name="rainrate_alert_str">ແຈ້ງເຕືອນຝົນຕົກ</string>
+    <string name="temperature_alert_desc">ແຈ້ງເຕືອນເຖິງສອງຄັ້ງຕໍ່ມື້ເມື່ອອຸນຫະພູມຮອດຂີດຈຳກັດທີ່ທ່ານຕັ້ງໄວ້</string>
+    <string name="rainfall_alert_desc">ແຈ້ງເຕືອນທຸກວັນເມື່ອຝົນຕົກຮອດກຳນົດທີ່ກຳນົດໄວ້</string>
+    <string name="rainrate_alert_desc">ແຈ້ງເຕືອນທຸກຊົ່ວໂມງຖ້າອັດຕາຝົນຮອດຂີດຈຳກັດທີ່ທ່ານຕັ້ງໄວ້</string>
 </resources>

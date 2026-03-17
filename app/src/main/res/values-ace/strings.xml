@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Peuingat Suhu</string>
     <string name="rainfall_alert_str">Peringatan Curah Ujeuen</string>
     <string name="rainrate_alert_str">Peringatan laju ujeun</string>
+    <string name="temperature_alert_desc">Peuingat sampoe dua goe siuroe watee suhu troh bataih nyang ka neutetapkan</string>
+    <string name="rainfall_alert_desc">Peuingat tiep uroe watee curah ujeuen troh bataih nyang ka neutetapkan</string>
+    <string name="rainrate_alert_desc">Peuingat tiep jeum meunyoe laju ujeuen troh bataih nyang ka neutetapkan</string>
 </resources>

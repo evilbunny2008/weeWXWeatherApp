@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Peringatan Suhu</string>
     <string name="rainfall_alert_str">Peringatan Udan</string>
     <string name="rainrate_alert_str">Peringatan Udan</string>
+    <string name="temperature_alert_desc">Peringatan ronsi dua hali sadari anggo suhu das hubani batas na dob itontuhon nasiam</string>
+    <string name="rainfall_alert_desc">Peringatan tiap ari anggo udan das hubani batas na dob itontuhon nasiam</string>
+    <string name="rainrate_alert_desc">Peringatan tiap jam anggo udan das hubani batas na dob itontuhon nasiam</string>
 </resources>

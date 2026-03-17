@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Atuɔ̈c</string>
     <string name="rainfall_alert_str">Lööŋ de Deŋ</string>
     <string name="rainrate_alert_str">Tɛ̈ŋ de deŋ</string>
+    <string name="temperature_alert_desc">Kä ye kɔc lɛ̈k agut cï naa rou në kööl tökic të cïnë atuɔ̈c ɣet të cïnë ye tääu thïn</string>
+    <string name="rainfall_alert_desc">Ye kɔc lɛ̈k në köölthok të cïnë deŋ ɣet të cïnë ye tääu thïn</string>
+    <string name="rainrate_alert_desc">Ye kɔc lɛ̈k në thaar tökic naa cï deŋ ɣet të cïnë ye tääu thïn</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">तापमान अलर्ट</string>
     <string name="rainfall_alert_str">वर्षा अलर्ट</string>
     <string name="rainrate_alert_str">वर्षा दर अलर्ट</string>
+    <string name="temperature_alert_desc">जखन तापमान अहां कें निर्धारित सीमा पर पहुंच जायत छै तखन रोज दू बेर तइक अलर्ट करएयत छै</string>
+    <string name="rainfall_alert_desc">जखन बरखा अहां कें निर्धारित सीमा पर पहुंच जायत छै तखन रोज अलर्ट करएयत छै</string>
+    <string name="rainrate_alert_desc">अगर बरखा के दर अहां के निर्धारित सीमा तक पहुंच गेल त हर घंटा अलर्ट करैत अछि</string>
 </resources>

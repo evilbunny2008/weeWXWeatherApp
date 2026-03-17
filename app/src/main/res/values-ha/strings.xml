@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Faɗakarwar Zazzabi</string>
     <string name="rainfall_alert_str">Faɗakarwar ruwan sama</string>
     <string name="rainrate_alert_str">Faɗakarwar ruwan sama</string>
+    <string name="temperature_alert_desc">Faɗakarwa har sau biyu a kullum lokacin da zafin jiki ya kai iyakar da aka saita</string>
+    <string name="rainfall_alert_desc">Faɗakarwa kullum lokacin da ruwan sama ya kai iyakar da aka saita</string>
+    <string name="rainrate_alert_desc">Faɗakarwa kowane awa idan adadin ruwan sama ya kai iyakar da aka saita</string>
 </resources>

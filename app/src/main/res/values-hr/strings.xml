@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Upozorenje o temperaturi</string>
     <string name="rainfall_alert_str">Upozorenje o padalinama</string>
     <string name="rainrate_alert_str">Upozorenje o količini kiše</string>
+    <string name="temperature_alert_desc">Upozorava do dva puta dnevno kada temperatura dosegne postavljena ograničenja</string>
+    <string name="rainfall_alert_desc">Svakodnevna upozorenja kada količina padalina dosegne postavljenu granicu</string>
+    <string name="rainrate_alert_desc">Upozorenje svakog sata ako količina kiše dosegne postavljenu granicu</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Lok me lyeto</string>
     <string name="rainfall_alert_str">Lok me kot</string>
     <string name="rainrate_alert_str">Lok me rwom me kot</string>
+    <string name="temperature_alert_desc">Miyo ngec ma romo tyen aryo nino ducu ka lyeto oo i rwom ma imito</string>
+    <string name="rainfall_alert_desc">Miiyo ngec nino ducu ka kot oo i rwom ma imito</string>
+    <string name="rainrate_alert_desc">Miiyo ngec cawa ki cawa ka kot oo i rwom ma ki keto</string>
 </resources>

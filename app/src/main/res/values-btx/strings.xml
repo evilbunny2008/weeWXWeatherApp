@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Peringaten Suhu</string>
     <string name="rainfall_alert_str">Persinget kerna Udan</string>
     <string name="rainrate_alert_str">Persinget kerna Tingkat Udan</string>
+    <string name="temperature_alert_desc">Persinget seh dua kali sada wari adi suhu seh ku batas si enggo itetapkenndu</string>
+    <string name="rainfall_alert_desc">Persinget tep-tep wari adi curah udan enggo seh ku batas si enggo itetapkenndu</string>
+    <string name="rainrate_alert_desc">Persinget tiap jam adi udan seh ku batas si enggo itetapkenndu</string>
 </resources>

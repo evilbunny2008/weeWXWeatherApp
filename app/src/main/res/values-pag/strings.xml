@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerto ed Temperatura</string>
     <string name="rainfall_alert_str">Alerto ed Uran</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
+    <string name="temperature_alert_desc">Manpapaamta na anggad mamidua ed sanagew no say temperatura et onsabi ed limitasyon mo</string>
+    <string name="rainfall_alert_desc">Inagew-agew ya manalerto no say uran et onsabi ed limitasyon mo</string>
+    <string name="rainrate_alert_desc">Manpapaamta kada oras no say uran et onsabi ed limitasyon mo</string>
 </resources>

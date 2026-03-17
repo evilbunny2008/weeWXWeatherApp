@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alarmi për temperaturën</string>
     <string name="rainfall_alert_str">Alarmi për reshje</string>
     <string name="rainrate_alert_str">Sinjalizim për normat e shiut</string>
+    <string name="temperature_alert_desc">Paralajmëron deri në dy herë në ditë kur temperatura arrin kufijtë e caktuar</string>
+    <string name="rainfall_alert_desc">Alarmet çdo ditë kur reshjet arrijnë kufirin tuaj të caktuar</string>
+    <string name="rainrate_alert_desc">Paralajmëron çdo orë nëse shkalla e shiut arrin kufirin tuaj të caktuar</string>
 </resources>

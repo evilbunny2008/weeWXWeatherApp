@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Температура турында хәбәр</string>
     <string name="rainfall_alert_str">Яңгырлар турында хәбәр</string>
     <string name="rainrate_alert_str">Яңгыр</string>
+    <string name="temperature_alert_desc">Көн саен ике тапкыр температура билгеләнгән чикләргә җиткәч</string>
+    <string name="rainfall_alert_desc">Яңгырлар билгеләнгән чиккә җиткәч, көн саен хәбәрләр</string>
+    <string name="rainrate_alert_desc">Әгәр яңгыр яңгыры билгеләнгән чиккә җитсә, сәгать саен хәбәрләр</string>
 </resources>

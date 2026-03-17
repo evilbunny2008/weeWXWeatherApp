@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Температурно предупредување</string>
     <string name="rainfall_alert_str">Известување за врнежи</string>
     <string name="rainrate_alert_str">Предупредување за врнежи од дожд</string>
+    <string name="temperature_alert_desc">Известува до двапати дневно кога температурата ќе ги достигне вашите поставени граници</string>
+    <string name="rainfall_alert_desc">Секојдневно известува кога врнежите ќе ја достигнат поставената граница</string>
+    <string name="rainrate_alert_desc">Известува секој час ако стапката на дожд ја достигне вашата поставена граница</string>
 </resources>

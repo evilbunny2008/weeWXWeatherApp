@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">तापक्रम सतर्कता</string>
     <string name="rainfall_alert_str">वा वइगु सतर्कता</string>
     <string name="rainrate_alert_str">वा वइगु दर सतर्कता</string>
+    <string name="temperature_alert_desc">तापक्रम छिं क्वःछिनातःगु सिमाय् थ्यनीबलय् न्हिं निक्वः तक सतर्क जुइ ।</string>
+    <string name="rainfall_alert_desc">वा वइगु छिं क्वःछिनातःगु सिमाय् थ्यनकि न्हिथं सचेत यानादिसँ ।</string>
+    <string name="rainrate_alert_desc">वा वइगु दर छिं क्वःछिनातःगु सिमाय् थ्यन धाःसा घौछिया सचेत</string>
 </resources>

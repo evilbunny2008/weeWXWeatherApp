@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Ջերմաստիճանի ազդանշան</string>
     <string name="rainfall_alert_str">Անձրևի մասին ահազանգ</string>
     <string name="rainrate_alert_str">Անձրևի տեմպերի ահազանգ</string>
+    <string name="temperature_alert_desc">Ծանուցում է օրական մինչև երկու անգամ, երբ ջերմաստիճանը հասնում է ձեր սահմանված սահմաններին</string>
+    <string name="rainfall_alert_desc">Ամեն օր ահազանգեր, երբ տեղումները հասնում են ձեր սահմանված սահմանաչափին</string>
+    <string name="rainrate_alert_desc">Ամենժամյա ծանուցումներ, եթե անձրևի մակարդակը հասնում է ձեր սահմանված սահմանաչափին</string>
 </resources>

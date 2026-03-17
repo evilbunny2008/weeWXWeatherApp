@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Makluman Suhu</string>
     <string name="rainfall_alert_str">Makluman Hujan</string>
     <string name="rainrate_alert_str">Makluman Hujan</string>
+    <string name="temperature_alert_desc">Makluman sehingga dua kali sehari apabila suhu mencapai had yang anda tetapkan</string>
+    <string name="rainfall_alert_desc">Makluman setiap hari apabila hujan mencapai had yang anda tetapkan</string>
+    <string name="rainrate_alert_desc">Makluman setiap jam jika kadar hujan mencapai had yang anda tetapkan</string>
 </resources>

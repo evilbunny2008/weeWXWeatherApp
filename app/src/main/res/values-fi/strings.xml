@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Lämpötilahälytys</string>
     <string name="rainfall_alert_str">Varoitus sateesta</string>
     <string name="rainrate_alert_str">Varoitus sademäärästä</string>
+    <string name="temperature_alert_desc">Hälyttää jopa kahdesti päivässä, kun lämpötila saavuttaa asettamasi rajat</string>
+    <string name="rainfall_alert_desc">Hälyttää päivittäin, kun sademäärä saavuttaa asettamasi rajan</string>
+    <string name="rainrate_alert_desc">Hälyttää tunneittain, jos sademäärä saavuttaa asettamasi rajan</string>
 </resources>

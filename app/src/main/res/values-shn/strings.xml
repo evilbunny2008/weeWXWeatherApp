@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">ၶေႃႈၾၢင်ႉ လွင်ႈမႆႈ</string>
     <string name="rainfall_alert_str">ၾၢင်ႉၾူၼ်တူၵ်း</string>
     <string name="rainrate_alert_str">ၾၢင်ႉၾူၼ်တူၵ်း</string>
+    <string name="temperature_alert_desc">ပၼ်ၾၢင်ႉ တေႃႇထိုင် ၼိုင်ႈဝၼ်း သွင်ပွၵ်ႈ မိူဝ်ႈလူမ်းမႆႈ ထိုင်တီႈ ၶွပ်ႇမၵ်းမၼ်ႈ ဢၼ်ၸဝ်ႈၵဝ်ႇ တမ်းဝၢင်းဝႆႉၼၼ်ႉ</string>
+    <string name="rainfall_alert_desc">ပၼ်ၾၢင်ႉၵူႈဝၼ်း မိူဝ်ႈၾူၼ်တူၵ်းထိုင်တီႈမၵ်းမၼ်ႈဝႆႉ</string>
+    <string name="rainrate_alert_desc">ပၼ်ၾၢင်ႉၵူႈၸူဝ်ႈမူင်း သင်ဝႃႈ ၾူၼ်တူၵ်းထိုင်တီႈမၵ်းမၼ်ႈဝႆႉ</string>
 </resources>

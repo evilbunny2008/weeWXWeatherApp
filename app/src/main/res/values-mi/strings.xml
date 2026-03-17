@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Matohi Paemahana</string>
     <string name="rainfall_alert_str">Matohi ua</string>
     <string name="rainrate_alert_str">Matohi Te ua</string>
+    <string name="temperature_alert_desc">Matohi kia rua nga wa ia ra ka eke te pāmahana ki o rohe kua whakaritea</string>
+    <string name="rainfall_alert_desc">He matohi ia ra ina tae te ua ki to rohe kua whakaritea</string>
+    <string name="rainrate_alert_desc">Matohi ia haora mena ka eke te ua ki to rohe kua whakaritea</string>
 </resources>

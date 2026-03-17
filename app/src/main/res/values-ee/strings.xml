@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Dzoxɔxɔ ƒe Nuxlɔ̃ame</string>
     <string name="rainfall_alert_str">Tsidzadza ƒe Nuxlɔ̃ame</string>
     <string name="rainrate_alert_str">Tsidzadza ƒe Nuxlɔ̃ame</string>
+    <string name="temperature_alert_desc">Xlɔ̃a nu wòdea zi eve gbesiagbe ne dzoxɔxɔa ɖo seɖoƒe si nèɖo</string>
+    <string name="rainfall_alert_desc">Xlɔ̃a nu gbesiagbe ne tsidzadzaa ɖo seɖoƒe si nèɖo</string>
+    <string name="rainrate_alert_desc">Xlɔ̃a nu gaƒoƒo sia gaƒoƒo ne tsidzadza ƒe agbɔsɔsɔme ɖo seɖoƒe si nèɖo</string>
 </resources>

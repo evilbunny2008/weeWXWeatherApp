@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Itaniji iwọn otutu</string>
     <string name="rainfall_alert_str">Itaniji ojo ojo</string>
     <string name="rainrate_alert_str">Gbigbọn ojo ojo</string>
+    <string name="temperature_alert_desc">Awọn itaniji titi di ẹẹmeji lojoojumọ nigbati iwọn otutu ba de opin ti ṣeto rẹ</string>
+    <string name="rainfall_alert_desc">Awọn itaniji lojoojumọ nigbati ojo ba de opin ti o ṣeto</string>
+    <string name="rainrate_alert_desc">Titaniji ni wakati ti iwọn ojo ba de opin ti o ṣeto</string>
 </resources>

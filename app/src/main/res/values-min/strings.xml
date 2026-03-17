@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Paingatan Suhu</string>
     <string name="rainfall_alert_str">Waspada Curah Hujan</string>
     <string name="rainrate_alert_str">Waspada Kadar Hujan</string>
+    <string name="temperature_alert_desc">Peringatan sampai duo kali sahari katiko suhu mancapai bateh nan alah ditetapkan</string>
+    <string name="rainfall_alert_desc">Peringatan harian katiko curah hujan mancapai bateh nan alah ditetapkan</string>
+    <string name="rainrate_alert_desc">Peringatan sajam jikok hujan mancapai bateh nan alah ditetapkan</string>
 </resources>

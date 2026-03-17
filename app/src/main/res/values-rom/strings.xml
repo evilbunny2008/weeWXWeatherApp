@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerto pal-i temperatura</string>
     <string name="rainfall_alert_str">Alerto pal-o brishind</string>
     <string name="rainrate_alert_str">Alarmo pal-o brishind</string>
+    <string name="temperature_alert_desc">Alarmura dži ko duvar sakodives kana i temperatura resel tumare limitirime limitura</string>
+    <string name="rainfall_alert_desc">Alarmura sakodives kana o brishind resel o limito savo si thodino</string>
+    <string name="rainrate_alert_desc">Alarmura sako chaso te o brishind resel o limito savo si thodino</string>
 </resources>

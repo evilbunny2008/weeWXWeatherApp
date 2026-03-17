@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Secwayiso sekushisa</string>
     <string name="rainfall_alert_str">Secwayiso seMvula</string>
     <string name="rainrate_alert_str">Secwayiso selizinga lemvula</string>
+    <string name="temperature_alert_desc">Ticwayiso letifika kabili ngelilanga uma lizinga lekushisa lifinyelela emikhawulweni yakho lebekiwe</string>
+    <string name="rainfall_alert_desc">Ticwayiso onkhe malanga nangabe imvula ifika emkhawulweni wakho lobekiwe</string>
+    <string name="rainrate_alert_desc">Ticwayisa njalo ngeli-awa nangabe lizinga lemvula lifinyelela umkhawulo wakho lobekiwe</string>
 </resources>

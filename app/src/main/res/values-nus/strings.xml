@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Tɛmpi̱rɛciɛr Alert</string>
     <string name="rainfall_alert_str">Rainpɔl Alert</string>
     <string name="rainrate_alert_str">Rainrɛt Alert</string>
+    <string name="temperature_alert_desc">Alerts ɛ wä kä rɛɛw kɛ cäŋ kɛl mi ci lëthdɛ cop kä pek in ca lar</string>
+    <string name="rainfall_alert_desc">La̱tdɛ ni̱ ciaaŋ mi̱ ci̱ nhiaal cop gua̱a̱th in ca la̱th thi̱n</string>
+    <string name="rainrate_alert_desc">Alerts kɛ thaak kɛl mi ci nhiaal cop kä pek in ca lar</string>
 </resources>

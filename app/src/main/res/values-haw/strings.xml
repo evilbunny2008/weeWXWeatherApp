@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Makaʻala wela</string>
     <string name="rainfall_alert_str">Makaʻala ua</string>
     <string name="rainrate_alert_str">Makaʻala ka ua</string>
+    <string name="temperature_alert_desc">Hoʻolaha a hiki i ʻelua manawa i kēlā me kēia lā ke hiki ka mahana i kāu mau palena i hoʻonohonoho ʻia</string>
+    <string name="rainfall_alert_desc">Hoʻolaha i kēlā me kēia lā ke hiki ka ua i kāu palena i kau ʻia</string>
+    <string name="rainrate_alert_desc">Hoʻolaha i kēlā me kēia hola inā hiki ka ua i kāu palena i kau ʻia</string>
 </resources>

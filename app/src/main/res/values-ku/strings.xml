@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alert Temperature</string>
     <string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
+    <string name="temperature_alert_desc">Dema ku germahî digihîje sînorên weya diyarkirî rojê du caran hişyar dike</string>
+    <string name="rainfall_alert_desc">Dema ku baran digihîje sînorê weya destnîşankirî rojane hişyar dike</string>
+    <string name="rainrate_alert_desc">Ger rêjeya baranê bigihîje sînorê weya diyarkirî her demjimêr hişyar dike</string>
 </resources>

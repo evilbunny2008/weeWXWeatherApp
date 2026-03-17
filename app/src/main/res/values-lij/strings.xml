@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Avvertimento de temperatua</string>
     <string name="rainfall_alert_str">Avvertimento de cheita d\'ægua</string>
     <string name="rainrate_alert_str">Avvertimento de tasso de piövia</string>
+    <string name="temperature_alert_desc">Avvertimenti fin à doe vòtte pe giorno quande a temperatua a razzonze i limiti stabilii</string>
+    <string name="rainfall_alert_desc">Avvertimenti tutti i giorni quande a cheita d\'ægua a razzonze o limite stabilio</string>
+    <string name="rainrate_alert_desc">Avvertimenti ògni oa se o tasso de ciuvaña o razzonze o limite stabilio</string>
 </resources>

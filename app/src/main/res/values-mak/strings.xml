@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Peringatan suhu</string>
     <string name="rainfall_alert_str">Peringatan bosi</string>
     <string name="rainrate_alert_str">Peringatan laju bosi</string>
+    <string name="temperature_alert_desc">Pappiu\'rangi sa\'genna rua allo punna suhu narapi\'i batas nu lebba\'</string>
+    <string name="rainfall_alert_desc">Pappiu\'rangi allo-allo punna bosi narapi\'i batasa nu lebba\'</string>
+    <string name="rainrate_alert_desc">Pappiu\'rangi tunggala jam punna bosi narapi\'i batasa nu lebba\'</string>
 </resources>

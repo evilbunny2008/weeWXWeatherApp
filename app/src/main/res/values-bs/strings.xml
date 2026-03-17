@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperatura Alert</string>
     <string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
+    <string name="temperature_alert_desc">Upozorava do dva puta dnevno kada temperatura dostigne postavljene granice</string>
+    <string name="rainfall_alert_desc">Obavještava vas svaki dan kada kiša dosegne postavljenu granicu</string>
+    <string name="rainrate_alert_desc">Upozorava svaki sat ako količina kiše dosegne postavljenu granicu</string>
 </resources>

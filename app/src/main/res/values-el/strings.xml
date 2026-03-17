@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Ειδοποίηση θερμοκρασίας</string>
     <string name="rainfall_alert_str">Ειδοποίηση βροχοπτώσεων</string>
     <string name="rainrate_alert_str">Ειδοποίηση ρυθμού βροχής</string>
+    <string name="temperature_alert_desc">Ειδοποιήσεις έως και δύο φορές την ημέρα όταν η θερμοκρασία φτάσει τα καθορισμένα όρια</string>
+    <string name="rainfall_alert_desc">Ειδοποιήσεις καθημερινά όταν η βροχόπτωση φτάσει στο καθορισμένο όριο</string>
+    <string name="rainrate_alert_desc">Ειδοποιεί κάθε ώρα εάν η βροχόπτωση φτάσει στο καθορισμένο όριο</string>
 </resources>

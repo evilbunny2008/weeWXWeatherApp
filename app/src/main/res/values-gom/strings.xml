@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">तापमानाची सावधानताय</string>
     <string name="rainfall_alert_str">पावसाची इशारो</string>
     <string name="rainrate_alert_str">पावसाच्या दरान इशारो</string>
+    <string name="temperature_alert_desc">तापमान तुमच्या थारायिल्ल्या मर्यादे मेरेन पावतकच दिसाक दोन फावटीं मेरेन सावधानताय दिता</string>
+    <string name="rainfall_alert_desc">पावस तुमच्या थारायिल्ले मर्यादेचेर पावतकच दर दिसा सावधान करता</string>
+    <string name="rainrate_alert_desc">पावसाचो दर तुमच्या थारायिल्ल्या मर्यादेमेरेन पावलो जाल्यार दर वराक इशारो दिता</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerta de Temperatura ukaxa mä juk\'a pachanakwa lurasi</string>
     <string name="rainfall_alert_str">Jallu pacha tuqita Alerta</string>
     <string name="rainrate_alert_str">Jallu pachan Alerta</string>
+    <string name="temperature_alert_desc">Sapa uru pä kutikamaw alerta, kunapachatix temperaturax límites establecidos ukar purinxi ukhaxa</string>
+    <string name="rainfall_alert_desc">Sapa uruw alertas kunapachatix jallux límite ukar purinxi ukhaxa</string>
+    <string name="rainrate_alert_desc">Jallu pachax límite ukar purispa ukhax sapa horaw alerta</string>
 </resources>

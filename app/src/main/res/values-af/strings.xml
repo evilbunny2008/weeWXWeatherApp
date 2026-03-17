@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperatuurwaarskuwing</string>
     <string name="rainfall_alert_str">Reënval waarskuwing</string>
     <string name="rainrate_alert_str">Reëntempo waarskuwing</string>
+    <string name="temperature_alert_desc">Waarskuwings tot twee keer per dag wanneer die temperatuur jou vasgestelde limiete bereik</string>
+    <string name="rainfall_alert_desc">Waarskuwings daagliks wanneer die reënval jou vasgestelde limiet bereik</string>
+    <string name="rainrate_alert_desc">Waarsku elke uur as die reëntempo jou vasgestelde limiet bereik</string>
 </resources>

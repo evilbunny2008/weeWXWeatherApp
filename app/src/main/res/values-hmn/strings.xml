@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Kub ceeb toom</string>
     <string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainrate_alert_str">Rainrate ceeb toom</string>
+    <string name="temperature_alert_desc">Kev ceeb toom txog ob zaug ib hnub twg thaum qhov kub nce mus txog koj qhov kev txwv</string>
+    <string name="rainfall_alert_desc">Kev ceeb toom txhua hnub thaum dej nag nce mus txog koj qhov kev txwv</string>
+    <string name="rainrate_alert_desc">Kev ceeb toom txhua teev yog tias nag nag nce mus txog koj qhov kev txwv</string>
 </resources>

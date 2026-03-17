@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Peringatan Suhu</string>
     <string name="rainfall_alert_str">Siaga Udan</string>
     <string name="rainrate_alert_str">Peringatan Tingkat Udan</string>
+    <string name="temperature_alert_desc">Peringatan sahat tu dua hali sadari molo suhu sahat tu batas naung ditontuhon hamu</string>
+    <string name="rainfall_alert_desc">Peringatan ganup ari molo sahat udan tu batas naung ditontuhon hamu</string>
+    <string name="rainrate_alert_desc">Peringatan per jam molo tingkat udan sahat tu batas naung ditontuhon hamu</string>
 </resources>

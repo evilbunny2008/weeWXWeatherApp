@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Tlhokomedišo ya Thempheretšha</string>
     <string name="rainfall_alert_str">Tlhokomedišo ya Pula</string>
     <string name="rainrate_alert_str">Tlhokomedišo ya Seelo sa Pula</string>
+    <string name="temperature_alert_desc">E lemoša go fihla gabedi ka letšatši ge themperetšha e fihla mellwaneng yeo o e beilego</string>
+    <string name="rainfall_alert_desc">E lemoša letšatši le letšatši ge pula e fihla moeding wa gago wo o beilwego</string>
+    <string name="rainrate_alert_desc">E lemoša iri le iri ge e ba tekanyo ya pula e fihla moeding wa gago wo o beilwego</string>
 </resources>

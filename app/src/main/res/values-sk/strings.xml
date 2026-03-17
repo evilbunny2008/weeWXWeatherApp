@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Upozornenie na teplotu</string>
     <string name="rainfall_alert_str">Upozornenie na zrážky</string>
     <string name="rainrate_alert_str">Upozornenie na dážď</string>
+    <string name="temperature_alert_desc">Upozorní až dvakrát denne, keď teplota dosiahne nastavené limity</string>
+    <string name="rainfall_alert_desc">Denne vás upozorní, keď zrážky dosiahnu váš nastavený limit</string>
+    <string name="rainrate_alert_desc">Upozorní každú hodinu, ak rýchlosť zrážok dosiahne váš nastavený limit</string>
 </resources>

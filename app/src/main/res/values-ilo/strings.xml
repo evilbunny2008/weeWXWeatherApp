@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerto ti Temperatura</string>
     <string name="rainfall_alert_str">Alerto ti Tudo</string>
     <string name="rainrate_alert_str">Alerto ti Rainrate</string>
+    <string name="temperature_alert_desc">Alerto agingga iti mamindua iti inaldaw no makadanon ti temperatura kadagiti naikeddeng a limitasionmo</string>
+    <string name="rainfall_alert_desc">Inaldaw nga alerto no makadanon ti tudo iti naikeddeng a limitasionmo</string>
+    <string name="rainrate_alert_desc">Alerto iti kada oras no ti rainrate ket makadanon iti naikeddeng a limitasionmo</string>
 </resources>

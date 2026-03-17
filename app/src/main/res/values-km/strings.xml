@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">ការជូនដំណឹងអំពីសីតុណ្ហភាព</string>
     <string name="rainfall_alert_str">ការជូនដំណឹងអំពីទឹកភ្លៀង</string>
     <string name="rainrate_alert_str">ការជូនដំណឹងអំពីភ្លៀង</string>
+    <string name="temperature_alert_desc">ការជូនដំណឹងរហូតដល់ពីរដងក្នុងមួយថ្ងៃ នៅពេលដែលសីតុណ្ហភាពឡើងដល់កម្រិតកំណត់របស់អ្នក។</string>
+    <string name="rainfall_alert_desc">ការជូនដំណឹងជារៀងរាល់ថ្ងៃ នៅពេលដែលទឹកភ្លៀងឈានដល់កម្រិតកំណត់របស់អ្នក។</string>
+    <string name="rainrate_alert_desc">ជូនដំណឹងរៀងរាល់ម៉ោង ប្រសិនបើភ្លៀងធ្លាក់ដល់កម្រិតកំណត់របស់អ្នក។</string>
 </resources>

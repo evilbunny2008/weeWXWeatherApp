@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">התראת טמפרטורה</string>
     <string name="rainfall_alert_str">התראת גשם</string>
     <string name="rainrate_alert_str">התראת גשם</string>
+    <string name="temperature_alert_desc">מתריע עד פעמיים ביום כאשר הטמפרטורה מגיעה לגבולות שנקבעו</string>
+    <string name="rainfall_alert_desc">מתריע מדי יום כאשר כמות הגשמים מגיעה לגבול המוגדר</string>
+    <string name="rainrate_alert_desc">מתריע מדי שעה אם קצב הגשם מגיע למגבלה שנקבעה</string>
 </resources>

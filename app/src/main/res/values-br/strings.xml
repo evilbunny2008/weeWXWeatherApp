@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Kemennadenn temperadur</string>
     <string name="rainfall_alert_str">Kemennadenn glav</string>
     <string name="rainrate_alert_str">Diwall ouzh ar feur glav</string>
+    <string name="temperature_alert_desc">Kemennadennoù betek div wech bemdez pa vez tizhet ho bevennoù lakaet gant an temperadur</string>
+    <string name="rainfall_alert_desc">Kemennadennoù bemdez pa vez tizhet ar vevenn lakaet gant ar glav</string>
+    <string name="rainrate_alert_desc">Kemennadennoù bep eur ma tizh ar feur glav ho termen termenet</string>
 </resources>

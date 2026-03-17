@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Lembe mi lyethu</string>
     <string name="rainfall_alert_str">Lembe mi koth</string>
     <string name="rainrate_alert_str">Lembe mi koth</string>
+    <string name="temperature_alert_desc">Nyuthu lembe wang aryo kubang ceng ka lyethu utuc i rwom peri</string>
+    <string name="rainfall_alert_desc">Mi poyo wic kubang ceng ka koth utuc i rwom ma juketho</string>
+    <string name="rainrate_alert_desc">Nyuthu lembe kubang sawa ka koth utuc i rwom peri</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">የሙቀት ማንቂያ</string>
     <string name="rainfall_alert_str">የዝናብ መጠን ማንቂያ</string>
     <string name="rainrate_alert_str">የዝናብ መጠን ማንቂያ</string>
+    <string name="temperature_alert_desc">የሙቀት መጠኑ ገደብዎ ላይ ሲደርስ በቀን እስከ ሁለት ጊዜ ማንቂያዎች</string>
+    <string name="rainfall_alert_desc">የዝናብ መጠን የወሰንከው ገደብ ላይ ሲደርስ በየቀኑ ማንቂያዎች</string>
+    <string name="rainrate_alert_desc">የዝናብ መጠኑ በተቀመጠው ገደብዎ ላይ ከደረሰ በየሰዓቱ ያሳውቁ</string>
 </resources>

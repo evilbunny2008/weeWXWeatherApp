@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Lukebisu ya Tiya</string>
     <string name="rainfall_alert_str">Lukebisu ya Mvula</string>
     <string name="rainrate_alert_str">Lukebisu ya Mvula</string>
+    <string name="temperature_alert_desc">Kukebisa tii mbala zole konso kilumbu kana tiya me kuma na bandilu yina nge me tula</string>
+    <string name="rainfall_alert_desc">Kukebisa konso kilumbu kana mvula me kuma na ndilu yina nge me tula</string>
+    <string name="rainrate_alert_desc">Kukebisa konso ngunga kana ntalu ya mvula me kuma na ndilu yina nge me tula</string>
 </resources>

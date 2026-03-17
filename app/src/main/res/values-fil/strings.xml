@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerto sa Temperatura</string>
     <string name="rainfall_alert_str">Alerto sa Pag-ulan</string>
     <string name="rainrate_alert_str">Alerto sa Rainrate</string>
+    <string name="temperature_alert_desc">Mga alerto nang hanggang dalawang beses araw-araw kapag naabot ng temperatura ang iyong mga itinakdang limitasyon</string>
+    <string name="rainfall_alert_desc">Araw-araw na mga alerto kapag naabot ng ulan ang iyong itinakdang limitasyon</string>
+    <string name="rainrate_alert_desc">Mga alerto kada oras kung umabot ang rate ng ulan sa iyong itinakdang limitasyon</string>
 </resources>

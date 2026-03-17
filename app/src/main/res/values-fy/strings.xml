@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperatuer Alert</string>
     <string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
+    <string name="temperature_alert_desc">Alerts oant twa kear deis as de temperatuer jo ynstelde grinzen berikt</string>
+    <string name="rainfall_alert_desc">Alerts alle dagen as de delslach jo ynstelde limyt berikt</string>
+    <string name="rainrate_alert_desc">Alerts elk oere as de reinrate jo ynstelde limyt berikt</string>
 </resources>

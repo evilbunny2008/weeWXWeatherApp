@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Сыджакълыкъ акъкъында хабердарлыкъ</string>
     <string name="rainfall_alert_str">Ягъмур акъкъында хабер</string>
     <string name="rainrate_alert_str">Ягъмур акъкъында хабердарлыкъ</string>
+    <string name="temperature_alert_desc">Сыджакълыкъ сиз бельгилеген сынъырларынъызгъа етсе, куньде эки кереге къадар хабердар эте</string>
+    <string name="rainfall_alert_desc">Ягъмур сиз бельгилеген сынъыргъа етсе, эр кунь хабердар эте</string>
+    <string name="rainrate_alert_desc">Ягъмурнынъ ольчюси сиз бельгилеген сынъыргъа етсе, эр саат хабер эте</string>
 </resources>

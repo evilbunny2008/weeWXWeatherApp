@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">வெப்பநிலை எச்சரிக்கை</string>
     <string name="rainfall_alert_str">மழை எச்சரிக்கை</string>
     <string name="rainrate_alert_str">மழைவீழ்ச்சி எச்சரிக்கை</string>
+    <string name="temperature_alert_desc">வெப்பநிலை உங்கள் நிர்ணயிக்கப்பட்ட வரம்பை அடையும் போது தினமும் இரண்டு முறை எச்சரிக்கை</string>
+    <string name="rainfall_alert_desc">மழைப்பொழிவு உங்கள் நிர்ணயிக்கப்பட்ட வரம்பை அடையும் போது தினசரி எச்சரிக்கைகள்</string>
+    <string name="rainrate_alert_desc">உங்கள் நிர்ணயிக்கப்பட்ட வரம்பை மழைவீதம் அடைந்தால் மணிநேரத்திற்கு எச்சரிக்கை</string>
 </resources>

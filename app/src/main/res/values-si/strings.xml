@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">උෂ්ණත්ව අනතුරු ඇඟවීම</string>
     <string name="rainfall_alert_str">වර්ෂාපතන අනතුරු ඇඟවීම</string>
     <string name="rainrate_alert_str">වැස්ස අනතුරු ඇඟවීම</string>
+    <string name="temperature_alert_desc">උෂ්ණත්වය ඔබගේ නියමිත සීමාවන් කරා ළඟා වන විට දිනකට දෙවරක් දක්වා අනතුරු අඟවයි</string>
+    <string name="rainfall_alert_desc">වර්ෂාපතනය ඔබේ නියමිත සීමාවට ළඟා වන විට දිනපතා ඇඟවීම්</string>
+    <string name="rainrate_alert_desc">වර්ෂාපතනය ඔබේ නියමිත සීමාවට ළඟා වුවහොත් පැයකට වරක් ඇඟවීම්</string>
 </resources>

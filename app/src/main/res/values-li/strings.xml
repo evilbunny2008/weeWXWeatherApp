@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperatuurwarning</string>
     <string name="rainfall_alert_str">Regewaarsjuwing</string>
     <string name="rainrate_alert_str">Regefrequentiewarning</string>
+    <string name="temperature_alert_desc">Warnings maximaal twie kier per dage es de temperatuur de ingestelde grenze bereik</string>
+    <string name="rainfall_alert_desc">Warnings dageleks es de neerslag de ingestelde grens bereik</string>
+    <string name="rainrate_alert_desc">Per oor waarsjuwinge es de neersnelheid de ingestelde grens bereik</string>
 </resources>

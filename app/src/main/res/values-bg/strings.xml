@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Предупреждение за температура</string>
     <string name="rainfall_alert_str">Предупреждение за валежи</string>
     <string name="rainrate_alert_str">Предупреждение за дъжд</string>
+    <string name="temperature_alert_desc">Предупреждава до два пъти дневно, когато температурата достигне зададените от вас граници</string>
+    <string name="rainfall_alert_desc">Предупреждава всеки ден, когато валежите достигнат зададения ви лимит</string>
+    <string name="rainrate_alert_desc">Предупреждава на всеки час, ако нивото на дъжд достигне зададената от вас граница</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Chenjezo la Kutentha</string>
     <string name="rainfall_alert_str">Chenjezo la Mvula</string>
     <string name="rainrate_alert_str">Chidziwitso cha Mvula</string>
+    <string name="temperature_alert_desc">Zidziwitso mpaka kawiri tsiku kutentha kukafika malire omwe mwakhazikitsa</string>
+    <string name="rainfall_alert_desc">Zidziwitso tsiku lililonse mvula ikafika pamlingo womwe munakhazikitsa</string>
+    <string name="rainrate_alert_desc">Zidziwitso pa ola lililonse ngati mvula ifika malire omwe mwakhazikitsa</string>
 </resources>

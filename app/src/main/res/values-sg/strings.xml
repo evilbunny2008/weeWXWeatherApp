@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerte ti température</string>
     <string name="rainfall_alert_str">Alerte ti ngu-nzapa</string>
     <string name="rainrate_alert_str">Alerte ti ngu-nzapa</string>
+    <string name="temperature_alert_desc">A yeke gboto mê juska fani use na yâ ti lango oko oko tongana ndowa asi na ndo so mo zia dä</string>
+    <string name="rainfall_alert_desc">A yeke gboto mê lâ oko oko tongana ngu-nzapa asi na wungo so mo zia</string>
+    <string name="rainrate_alert_desc">A yeke gboto mê ti azo ngbonga oko oko tongana wungo ti ngu-nzapa asi na wungo so mo zia</string>
 </resources>

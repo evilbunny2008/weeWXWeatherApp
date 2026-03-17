@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">ޓެމްޕަރޭޗަރ އެލާޓް</string>
     <string name="rainfall_alert_str">ރެއިންފޯލް އެލާޓް</string>
     <string name="rainrate_alert_str">ރެއިންރޭޓް އެލާޓް</string>
+    <string name="temperature_alert_desc">ދުވާލަކު ދެފަހަރު ވަންދެން ފިނިހޫނުމިން ކަނޑައެޅިފައިވާ ލިމިޓަށް އަރާއިރު އެލާޓް ކުރެއެވެ</string>
+    <string name="rainfall_alert_desc">ކޮންމެ ދުވަހަކު ވާރޭ ވެހޭ މިންވަރު ކަނޑައެޅިފައިވާ ލިމިޓަށް ވާސިލްވުމުން އެލާޓް ކުރެއެވެ</string>
+    <string name="rainrate_alert_desc">ވާރޭގެ ރޭޓް ކަނޑައެޅިފައިވާ ލިމިޓަށް ވާސިލްވެއްޖެނަމަ ގަޑިއަކު އެއްފަހަރު އެލާޓް ކުރެއެވެ</string>
 </resources>

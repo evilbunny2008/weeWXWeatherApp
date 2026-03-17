@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Digniinta heerkulka</string>
     <string name="rainfall_alert_str">Digniinta Roobka</string>
     <string name="rainrate_alert_str">Digniinta Roobka</string>
+    <string name="temperature_alert_desc">Ogeysiis ilaa laba jeer maalintii marka heerkulku gaadho xadkaaga go\'an</string>
+    <string name="rainfall_alert_desc">Digniin maalinle ah marka roobku gaadho xadkaaga go\'an</string>
+    <string name="rainrate_alert_desc">Ogeysii saacaddii haddii heerka roobku gaaro xadkaaga go\'an</string>
 </resources>

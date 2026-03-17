@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Okulabula ku bbugumu</string>
     <string name="rainfall_alert_str">Okulabula kw\'enkuba</string>
     <string name="rainrate_alert_str">Okulabula kw\'enkuba etonnya</string>
+    <string name="temperature_alert_desc">Alabula okutuuka ku mirundi ebiri buli lunaku ng\'ebbugumu lituuse ku kkomo lyo lye wateekawo</string>
+    <string name="rainfall_alert_desc">Alabula buli lunaku ng\'enkuba etuuse ku kkomo lyo lye wateekawo</string>
+    <string name="rainrate_alert_desc">Alabula buli ssaawa singa enkuba etuuka ku kkomo lyo lye wateekawo</string>
 </resources>

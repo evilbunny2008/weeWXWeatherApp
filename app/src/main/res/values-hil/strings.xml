@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerto sa Temperatura</string>
     <string name="rainfall_alert_str">Alerto sa Pag-ulan</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
+    <string name="temperature_alert_desc">Mga alerto tubtob makaduha kada adlaw kon ang temperatura maglab-ot sa imo gintalana nga mga limitasyon</string>
+    <string name="rainfall_alert_desc">Mga alerto adlaw-adlaw kon ang ulan maglab-ot sa imo gintalana nga limitasyon</string>
+    <string name="rainrate_alert_desc">Mga alerto kada oras kon ang rainrate maglab-ot sa imo gintalana nga limitasyon</string>
 </resources>

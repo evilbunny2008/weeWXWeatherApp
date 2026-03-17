@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">温度警告</string>
     <string name="rainfall_alert_str">降雨警報</string>
     <string name="rainrate_alert_str">降雨量アラート</string>
+    <string name="temperature_alert_desc">温度が設定した制限値に達したときに、1 日に最大 2 回アラートを送信します</string>
+    <string name="rainfall_alert_desc">降雨量が設定した制限に達すると毎日アラートが送信されます</string>
+    <string name="rainrate_alert_desc">降雨量が設定した制限に達すると、1 時間ごとにアラートが送信されます</string>
 </resources>

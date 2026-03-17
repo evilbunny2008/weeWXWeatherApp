@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperatuuri hoiatus</string>
     <string name="rainfall_alert_str">Vihmahoiatus</string>
     <string name="rainrate_alert_str">Vihmahoiatus</string>
+    <string name="temperature_alert_desc">Hoiatab kuni kaks korda päevas, kui temperatuur jõuab seatud piirini</string>
+    <string name="rainfall_alert_desc">Hoiatab iga päev, kui sademete hulk jõuab seatud piirini</string>
+    <string name="rainrate_alert_desc">Hoiatab iga tunni tagant, kui sademete hulk jõuab seatud piirini</string>
 </resources>

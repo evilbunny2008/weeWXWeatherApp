@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Температура Алерт</string>
     <string name="rainfall_alert_str">Раинфалл Алерт</string>
     <string name="rainrate_alert_str">Раинрате Алерт</string>
+    <string name="temperature_alert_desc">Упозорава до два пута дневно када температура достигне постављене границе</string>
+    <string name="rainfall_alert_desc">Обавештава вас свакодневно када киша достигне постављено ограничење</string>
+    <string name="rainrate_alert_desc">Упозорава сваки сат ако количина кише достигне постављену границу</string>
 </resources>

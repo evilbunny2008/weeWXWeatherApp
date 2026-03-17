@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alertă de temperatură</string>
     <string name="rainfall_alert_str">Alertă de precipitații</string>
     <string name="rainrate_alert_str">Alertă de ploi</string>
+    <string name="temperature_alert_desc">Alerte de până la două ori pe zi când temperatura atinge limitele stabilite</string>
+    <string name="rainfall_alert_desc">Alerte zilnice când precipitațiile ating limita stabilită</string>
+    <string name="rainrate_alert_desc">Alerte din oră dacă ploaia atinge limita stabilită</string>
 </resources>

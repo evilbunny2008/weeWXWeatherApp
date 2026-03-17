@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Akeekkachiisa Ho\'aa</string>
     <string name="rainfall_alert_str">Akeekkachiisa Roobaa</string>
     <string name="rainrate_alert_str">Akeekkachiisa Saffisa Roobaa</string>
+    <string name="temperature_alert_desc">Yeroo ho\'i daangaa ati kaa\'ame ga\'u guyyaatti hanga si\'a lamaa akeekkachiisa</string>
+    <string name="rainfall_alert_desc">Guyyaa guyyaan yeroo roobni daangaa ati murtaa\'e irra ga\'u akeekkachiisa</string>
+    <string name="rainrate_alert_desc">Yoo saffisi rooba daangaa ati kaa\'ame gahe sa\'aatii sa\'aatii akeekkachiisa</string>
 </resources>

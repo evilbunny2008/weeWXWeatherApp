@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerta ti\' temperatura</string>
     <string name="rainfall_alert_str">Alerta ti\' cháak</string>
     <string name="rainrate_alert_str">Alerta u k\'áaxal ja\'</string>
+    <string name="temperature_alert_desc">Alertas tak ka\'atéen sáansamal ken u temperatura k\'uchul u límites establecidos</string>
+    <string name="rainfall_alert_desc">Sáansamal ku ts\'áaik ojéeltbil ken k\'uchuk le cháak tu límite ts\'a\'an</string>
+    <string name="rainrate_alert_desc">Alertas por hora wa le tasa cháak ku k\'uchul u límite establecido</string>
 </resources>

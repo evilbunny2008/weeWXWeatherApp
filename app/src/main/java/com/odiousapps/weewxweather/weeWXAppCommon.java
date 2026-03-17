@@ -977,24 +977,49 @@ class weeWXAppCommon
 	{
 		LogMessage("processBOM3()");
 
-		if(UpdateInterval == 0)
-			return processBOM3Daily(data, true);
-
 		int modhour = getIntervalTime(UpdateInterval)[1];
-		String url2 = url.replace("/hourly", "/daily");
-
-		String fcdata = "";
-		if(!url2.isBlank() && !url2.equals(url))
-		{
-			LogMessage("processBOM3(): Getting BoM daily");
-			fcdata = downloadString(url2, false);
-		}
+		long now = System.currentTimeMillis();
 
 		Result r1 = null;
-		if(fcdata != null && !fcdata.isBlank())
+		long bomDailyLastUpdate = (long)KeyValue.readVar("bomDailyLastUpdate", 0L);
+		if(now - bomDailyLastUpdate < 10_800_000L)
 		{
-			LogMessage("processBOM3(): Processing BoM daily");
-			r1 = processBOM3Daily(fcdata, false);
+			String bomDailyGson = (String)KeyValue.readVar("bomDailyGson", "");
+			Gson gson = new Gson();
+			GsonHelper gh = gson.fromJson(bomDailyGson, GsonHelper.class);
+			if(gh != null && gh.days != null && !gh.days.isEmpty())
+				r1 = new Result(gh.days, gh.desc, gh.timestamp, gh.isDaily);
+		}
+
+		if(r1 == null)
+		{
+			String url2 = url.replace("/hourly", "/daily");
+
+			String fcdata = "";
+			if(!url2.isBlank() && !url2.equals(url))
+			{
+				LogMessage("processBOM3(): Getting BoM daily");
+				fcdata = downloadString(url2, false);
+			}
+
+			if(fcdata != null && !fcdata.isBlank())
+			{
+				LogMessage("processBOM3(): Processing BoM daily");
+				r1 = processBOM3Daily(fcdata, false);
+				if(r1 != null)
+				{
+					GsonHelper gh = new GsonHelper();
+					gh.days = r1.days();
+					gh.desc = r1.desc();
+					gh.timestamp = r1.timestamp() > 0 ? r1.timestamp() : System.currentTimeMillis();
+					gh.isDaily = r1.isDaily();
+					Gson gson = new Gson();
+					String forecastGson = gson.toJson(gh);
+
+					KeyValue.putVar("bomDailyGson", forecastGson);
+					KeyValue.putVar("bomDailyLastUpdate", gh.timestamp);
+				}
+			}
 		}
 
 		Calendar cal = Calendar.getInstance();
@@ -1062,6 +1087,8 @@ class weeWXAppCommon
 			r2.days.add(r1day);
 		}
 
+		LogMessage("processBOM3(): Successfully merging BoM daily + hourly");
+
 		return r2;
 	}
 
@@ -1097,10 +1124,12 @@ class weeWXAppCommon
 			if(df != null)
 				timestamp = df.getTime();
 
+			if(timestamp <= 0)
+				timestamp = System.currentTimeMillis();
+
 			if(timestamp > 0)
 				updateCacheTime(timestamp);
 
-//			timestamp = System.currentTimeMillis();
 			Date date = new Date(timestamp);
 			LogMessage("Last updated forecast: " + sdf5.format(date));
 
@@ -1209,10 +1238,12 @@ class weeWXAppCommon
 			if(df != null)
 				timestamp = df.getTime();
 
+			if(timestamp <= 0)
+				timestamp = System.currentTimeMillis();
+
 			if(timestamp > 0 && updateCacheTime)
 				updateCacheTime(timestamp);
 
-//			timestamp = System.currentTimeMillis();
 			Date date = new Date(timestamp);
 			LogMessage("Last updated forecast: " + sdf5.format(date));
 
@@ -2915,9 +2946,11 @@ class weeWXAppCommon
 
 			float morning_temp_limit = (int)KeyValue.readVar("MorningTemp", weeWXApp.MorningTemp_default) / 10f;
 
-			float CurrTemp = get_curr_n_max_temp()[0];
+			float[] temps = get_curr_min_max_temp();
+			float CurrTemp = temps[0];
+			float minTemp = temps[1];
 
-			if(CurrTemp >= morning_temp_limit)
+			if(CurrTemp >= morning_temp_limit && CurrTemp >= minTemp + 1)
 			{
 				KeyValue.putVar("LastMorningTempAlert", System.currentTimeMillis());
 				weeWXApp.sendTemperatureAlert(CurrTemp, morning_temp_limit, false);
@@ -2954,9 +2987,9 @@ class weeWXAppCommon
 
 			float afternoon_temp_limit = (int)KeyValue.readVar("AfternoonTemp", weeWXApp.AfternoonTemp_default) / 10f;
 
-			float[] temps = get_curr_n_max_temp();
+			float[] temps = get_curr_min_max_temp();
 			float CurrTemp = temps[0];
-			float maxTemp = temps[1];
+			float maxTemp = temps[2];
 
 			if(CurrTemp <= afternoon_temp_limit && CurrTemp <= maxTemp - 1)
 			{
@@ -2971,14 +3004,14 @@ class weeWXAppCommon
 		}
 	}
 
-	static float[] get_curr_n_max_temp()
+	static float[] get_curr_min_max_temp()
 	{
 		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
 		if(lastDownload == null || lastDownload.isBlank())
-			return new float[]{-999, -999};
+			return new float[]{-999, -999, -999};
 
 		String[] bits = lastDownload.split("\\|");
-		return new float[]{Float.parseFloat(bits[0]), Float.parseFloat(bits[3])};
+		return new float[]{Float.parseFloat(bits[0]), Float.parseFloat(bits[1]), Float.parseFloat(bits[3])};
 	}
 
 	static String getElement(String[] bits, int element)
@@ -3793,28 +3826,12 @@ class weeWXAppCommon
 			forecastTask = executor.submit(() ->
 			{
 				LogMessage("getForecast() Forecast checking: " + forecast_url);
-
-				boolean dledForecastData;
-
-				try
-				{
-					if(reallyGetForecast(fctype, forecast_url, intervalpos))
-					{
-						LogMessage("getForecast() Successfully updated local forecast cache...");
-						SendIntent(REFRESH_FORECAST_INTENT);
-						ftStart = Instant.EPOCH;
-						return;
-					}
-				} catch(Exception e) {
-					LogMessage("getForecast() Error! e: " + e, true, KeyValue.e);
-					KeyValue.putVar("LastForecastError", e.getLocalizedMessage());
+				boolean ret = handleUpdate(fctype, forecast_url, intervalpos);
+				if(ret)
 					SendIntent(REFRESH_FORECAST_INTENT);
-					ftStart = Instant.EPOCH;
-					return;
-				}
+				else
+					SendIntent(STOP_FORECAST_INTENT);
 
-				LogMessage("getForecast() Failed to successfully update local forecast cache...", KeyValue.d);
-				SendIntent(REFRESH_FORECAST_INTENT);
 				ftStart = Instant.EPOCH;
 			});
 
@@ -3826,33 +3843,38 @@ class weeWXAppCommon
 
 			LogMessage("getForecast() hasForecastGson is false...", KeyValue.d);
 			KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data));
+
+			return true;
 		} else {
 			LogMessage("getForecast() Forecast checking: " + forecast_url);
-
-			boolean dledForecastData;
-
-			try
-			{
-				if(reallyGetForecast(fctype, forecast_url, intervalpos))
-				{
-					LogMessage("getForecast() Successfully updated local forecast cache...");
-					SendIntent(REFRESH_FORECAST_INTENT);
-					ftStart = Instant.EPOCH;
-					return true;
-				}
-			} catch(Exception e) {
-				LogMessage("getForecast() Error! e: " + e, true, KeyValue.e);
-				KeyValue.putVar("LastForecastError", e.getLocalizedMessage());
+			boolean ret = handleUpdate(fctype, forecast_url, intervalpos);
+			if(ret)
 				SendIntent(REFRESH_FORECAST_INTENT);
-				ftStart = Instant.EPOCH;
+			else
+				SendIntent(STOP_FORECAST_INTENT);
+
+			ftStart = Instant.EPOCH;
+
+			return ret;
+		}
+	}
+
+	private static boolean handleUpdate(String fctype, String forecast_url, int intervalpos)
+	{
+		try
+		{
+			if(reallyGetForecast(fctype, forecast_url, intervalpos))
+			{
+				LogMessage("getForecast() Successfully updated local forecast cache...");
 				return true;
 			}
-
-			LogMessage("getForecast() Failed to successfully update local forecast cache...", KeyValue.d);
-			SendIntent(REFRESH_FORECAST_INTENT);
-			ftStart = Instant.EPOCH;
+		} catch(Exception e) {
+			LogMessage("getForecast() Error! e: " + e, true, KeyValue.e);
+			KeyValue.putVar("LastForecastError", e.getLocalizedMessage());
+			return true;
 		}
 
+		LogMessage("getForecast() Failed to successfully update local forecast cache...", KeyValue.d);
 		return false;
 	}
 
@@ -4184,7 +4206,8 @@ class weeWXAppCommon
 		{
 			case "aemet.es" -> r1 = processAEMET(forecastData);
 			case "bom2" -> r1 = JsoupHelper.processBoM2(forecastData);
-			case "bom3" -> r1 = processBOM3(UpdateInterval, forecastData, url);
+			case "bom3daily" -> r1 = processBOM3Daily(forecastData, true);
+			case "bom3hourly" -> r1 = processBOM3(UpdateInterval, forecastData, url);
 			case "dwd.de" -> r1 = processDWD(forecastData);
 			case "tempoitalia.it" -> r1 = JsoupHelper.processTempoItalia(forecastData);
 			case "met.ie" -> r1 = processMETIE(forecastData);

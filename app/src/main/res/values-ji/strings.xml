@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">טעמפּעראַטור אַלערט</string>
     <string name="rainfall_alert_str">רעגן אַלערט</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
+    <string name="temperature_alert_desc">אַלערץ אַרויף צו צוויי מאָל טעגלעך ווען די טעמפּעראַטור ריטשאַז דיין באַשטימט לימאַץ</string>
+    <string name="rainfall_alert_desc">אַלערץ טעגלעך ווען די רעגן ריטשאַז דיין באַשטימט שיעור</string>
+    <string name="rainrate_alert_desc">אַלערץ אַורלי אויב די רעגן קורס ריטשאַז דיין באַשטימט שיעור</string>
 </resources>

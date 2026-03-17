@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Ubushyuhe</string>
     <string name="rainfall_alert_str">Imenyesha ry\'imvura</string>
     <string name="rainrate_alert_str">Kumenyesha imvura</string>
+    <string name="temperature_alert_desc">Imenyesha kugeza kabiri kumunsi iyo ubushyuhe bugeze kumupaka wagenwe</string>
+    <string name="rainfall_alert_desc">Menyesha buri munsi iyo imvura igeze kumupaka wagenwe</string>
+    <string name="rainrate_alert_desc">Imenyesha buri saha niba imvura igeze kumupaka wagenwe</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Tahadhari ya Halijoto</string>
     <string name="rainfall_alert_str">Tahadhari ya Kunyesha kwa Mvua</string>
     <string name="rainrate_alert_str">Tahadhari ya Mvua</string>
+    <string name="temperature_alert_desc">Arifa hadi mara mbili kila siku halijoto inapofikia viwango vyako vilivyowekwa</string>
+    <string name="rainfall_alert_desc">Arifa kila siku mvua inapofikia kikomo chako ulichoweka</string>
+    <string name="rainrate_alert_desc">Arifa kila saa ikiwa kiwango cha mvua kinafikia kikomo chako ulichoweka</string>
 </resources>

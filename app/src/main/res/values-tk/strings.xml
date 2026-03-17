@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperatura duýduryşy</string>
     <string name="rainfall_alert_str">Rainagyş duýduryşy</string>
     <string name="rainrate_alert_str">Rainagyş duýduryşy</string>
+    <string name="temperature_alert_desc">Temperatura kesgitlenen çäklere ýetende günde iki gezek duýduryş beriň</string>
+    <string name="rainfall_alert_desc">Fallagyş bellenen çäklere ýetende her gün duýduryş beriň</string>
+    <string name="rainrate_alert_desc">Rainagyş ýagyşy bellenen çägiňize ýetse sagatda duýduryş beriň</string>
 </resources>

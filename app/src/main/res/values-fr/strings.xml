@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerte de température</string>
     <string name="rainfall_alert_str">Alerte de pluie</string>
     <string name="rainrate_alert_str">Alerte de taux de pluie</string>
+    <string name="temperature_alert_desc">Alerte jusqu\'à deux fois par jour lorsque la température atteint les limites définies</string>
+    <string name="rainfall_alert_desc">Alertes quotidiennes lorsque les précipitations atteignent votre limite définie</string>
+    <string name="rainrate_alert_desc">Alertes toutes les heures si le taux de pluie atteint votre limite définie</string>
 </resources>

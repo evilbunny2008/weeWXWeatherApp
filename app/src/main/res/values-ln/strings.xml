@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerte ya température</string>
     <string name="rainfall_alert_str">Alerte ya mbula</string>
     <string name="rainrate_alert_str">Alerte ya mbula ya mbula</string>
+    <string name="temperature_alert_desc">Ezali kokebisa mbala mibale na mokolo ntango molunge ekomi na ndelo oyo otye</string>
+    <string name="rainfall_alert_desc">Ezali kokebisa mokolo na mokolo ntango mbula ekomi na ndelo oyo otye</string>
+    <string name="rainrate_alert_desc">Ezali kokebisa ngonga na ngonga soki mbula ekomi na ndelo oyo otye</string>
 </resources>

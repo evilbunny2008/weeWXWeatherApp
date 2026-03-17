@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperaturalarm</string>
     <string name="rainfall_alert_str">Alarm om nedbør</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
+    <string name="temperature_alert_desc">Advarer op til to gange dagligt, når temperaturen når dine indstillede grænser</string>
+    <string name="rainfall_alert_desc">Advarer dagligt, når nedbøren når din indstillede grænse</string>
+    <string name="rainrate_alert_desc">Advarer hver time, hvis regnmængden når din indstillede grænse</string>
 </resources>

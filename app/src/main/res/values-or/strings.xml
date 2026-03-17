@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">ତାପମାତ୍ରା ସତର୍କତା |</string>
     <string name="rainfall_alert_str">ବର୍ଷା ସତର୍କତା |</string>
     <string name="rainrate_alert_str">ବର୍ଷା ଆଲର୍ଟ |</string>
+    <string name="temperature_alert_desc">ତାପମାତ୍ରା ଆପଣଙ୍କ ସେଟ୍ ସୀମାକୁ ପହଞ୍ଚିବା ପରେ ପ୍ରତିଦିନ ଦୁଇଥର ସତର୍କ କର |</string>
+    <string name="rainfall_alert_desc">ଯେତେବେଳେ ବର୍ଷା ଆପଣଙ୍କ ନିର୍ଦ୍ଧାରିତ ସୀମାରେ ପହଞ୍ଚେ ପ୍ରତିଦିନ ସତର୍କ କର |</string>
+    <string name="rainrate_alert_desc">ଯଦି ବର୍ଷା ଆପଣଙ୍କ ସେଟ୍ ସୀମାରେ ପହଞ୍ଚେ ତେବେ ଘଣ୍ଟା ପ୍ରତି ସତର୍କ କର |</string>
 </resources>

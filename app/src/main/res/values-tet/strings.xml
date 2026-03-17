@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerta ba Temperatura</string>
     <string name="rainfall_alert_str">Alerta ba udan-been</string>
     <string name="rainrate_alert_str">Alerta ba udan-been</string>
+    <string name="temperature_alert_desc">Alerta sira to\'o dala rua loron-loron bainhira temperatura atinji ita-boot nia limite sira ne\'ebé estabelese ona</string>
+    <string name="rainfall_alert_desc">Alerta loroloron bainhira udan-been atinji ita-boot nia limite ne\'ebé estabelese ona</string>
+    <string name="rainrate_alert_desc">Alerta sira kada oras se udan-been atinji ita-boot nia limite ne\'ebé estabelese ona</string>
 </resources>

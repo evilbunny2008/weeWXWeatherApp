@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alèrta de temperatura</string>
     <string name="rainfall_alert_str">Alèrta de pluèjas</string>
     <string name="rainrate_alert_str">Alèrta de taus de pluèja</string>
+    <string name="temperature_alert_desc">Alèrtas fins a dos còps per jorn quand la temperatura atenh vòstres limits fixats</string>
+    <string name="rainfall_alert_desc">Alèrtas cada jorn quand las pluèjas atenh vòstre limit fixat</string>
+    <string name="rainrate_alert_desc">Alertas cada ora se la frequéncia de pluèja atenh vòstre limit fixat</string>
 </resources>

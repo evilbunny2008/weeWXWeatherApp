@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Isexwayiso Sezinga lokushisa</string>
     <string name="rainfall_alert_str">Isexwayiso Semvula</string>
     <string name="rainrate_alert_str">Isexwayiso semvula</string>
+    <string name="temperature_alert_desc">Izaziso ezifika kabili ngosuku lapho izinga lokushisa lifinyelela umkhawulo wakho omisiwe</string>
+    <string name="rainfall_alert_desc">Izexwayiso nsuku zonke lapho imvula ifinyelela umkhawulo owumisiwe</string>
+    <string name="rainrate_alert_desc">Izexwayiso njalo ngehora uma izinga lemvula lifinyelela umkhawulo owubekiwe</string>
 </resources>

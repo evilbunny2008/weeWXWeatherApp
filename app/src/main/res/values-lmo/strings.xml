@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Avvertiment de temperadüra</string>
     <string name="rainfall_alert_str">Alerta de pioggia</string>
     <string name="rainrate_alert_str">Avvertiment de pioggia</string>
+    <string name="temperature_alert_desc">Avvisi fin a dü volt al dì quand la temperadüra riva ai limit stabilì</string>
+    <string name="rainfall_alert_desc">Avvertiment tüt i dì quand la precipitaziun riva al limit stabilì</string>
+    <string name="rainrate_alert_desc">Avvertiment ogni ura se el tass de piœuva riva al limit stabilì</string>
 </resources>

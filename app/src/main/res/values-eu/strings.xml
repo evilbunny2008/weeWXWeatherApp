@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Tenperatura alerta</string>
     <string name="rainfall_alert_str">Euri-Alerta</string>
     <string name="rainrate_alert_str">Euri-tasa alerta</string>
+    <string name="temperature_alert_desc">Tenperaturak ezarritako mugetara iristen direnean, egunean bi aldiz abisatzen du</string>
+    <string name="rainfall_alert_desc">Euria ezarritako mugara iristen denean alertak egunero</string>
+    <string name="rainrate_alert_desc">Alertak orduko euri-tasa ezarritako mugara iristen bada</string>
 </resources>

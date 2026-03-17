@@ -41,6 +41,7 @@ class KeyValue
 
 	static String countyName = null;
 	static String bomLocation = null;
+	static String bomGeohash = null;
 
 	static boolean hasNotificationPerm = false;
 

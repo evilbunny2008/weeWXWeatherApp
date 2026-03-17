@@ -285,12 +285,15 @@ public class weeWXApp extends Application
 	{
 		instance = this;
 
-		createNotificationChannel("temperature_alerts", "Temperature Alerts",
-				"Alerts up to twice daily when the temperature reaches your set limits");
-		createNotificationChannel("rainfall_alert", "Rainfall Alert",
-				"Alerts daily when the rainfall reaches your set limit");
-		createNotificationChannel("rainrate_alert", "Rainrate Alert",
-				"Alerts hourly if the rainrate reaches your set limit");
+		createNotificationChannel("temperature_alerts",
+				weeWXApp.getAndroidString(R.string.temperature_alert_str),
+				weeWXApp.getAndroidString(R.string.temperature_alert_desc));
+		createNotificationChannel("rainfall_alert",
+				weeWXApp.getAndroidString(R.string.rainfall_alert_str),
+				weeWXApp.getAndroidString(R.string.rainfall_alert_desc));
+		createNotificationChannel("rainrate_alert",
+				weeWXApp.getAndroidString(R.string.rainrate_alert_str),
+				weeWXApp.getAndroidString(R.string.rainrate_alert_desc));
 
 		ForecastDefaults fcdef = new ForecastDefaults();
 		fcdef.fctype = "weatherzone2";
@@ -301,6 +304,19 @@ public class weeWXApp extends Application
 		fcdef = new ForecastDefaults();
 		fcdef.fctype = "metservice.com";
 		fcdef.default_forecast_refresh = 14_400;
+
+		fc_defaults.add(fcdef);
+
+		fcdef = new ForecastDefaults();
+		fcdef.fctype = "bom3hourly";
+		fcdef.default_forecast_refresh = 3_600;
+		fcdef.delay_before_downloading = 1_800;
+
+		fc_defaults.add(fcdef);
+
+		fcdef = new ForecastDefaults();
+		fcdef.fctype = "bom3daily";
+		fcdef.default_forecast_refresh = 10_080;
 
 		fc_defaults.add(fcdef);
 
@@ -422,6 +438,7 @@ public class weeWXApp extends Application
 
 		KeyValue.countyName = (String)KeyValue.readVar("CountyName", "");
 		KeyValue.bomLocation = (String)KeyValue.readVar("bomLocation", "");
+		KeyValue.bomGeohash = (String)KeyValue.readVar("bomGeohash", "");
 	}
 
 	@Override
@@ -982,7 +999,7 @@ public class weeWXApp extends Application
 		if(fctype == null || fctype.isBlank())
 			return null;
 
-		if(instance.fcDef != null)
+		if(instance.fcDef != null && instance.fcDef.fctype.equalsIgnoreCase(fctype))
 			return instance.fcDef;
 
 		for(ForecastDefaults fcdef : fc_defaults)
@@ -998,6 +1015,20 @@ public class weeWXApp extends Application
 		fcDef.fctype = fctype;
 		instance.fcDef = fcDef;
 		return fcDef;
+	}
+
+	static void updateFCdefs(ForecastDefaults newfcDef)
+	{
+		for(int i = 0; i < fc_defaults.size(); i++)
+		{
+			ForecastDefaults fcdef = fc_defaults.get(i);
+			if(fcdef.fctype.equalsIgnoreCase(newfcDef.fctype))
+			{
+				instance.fcDef = newfcDef;
+				fc_defaults.set(i, newfcDef);
+				return;
+			}
+		}
 	}
 
 	private void createNotificationChannel(String id, String name, String description)

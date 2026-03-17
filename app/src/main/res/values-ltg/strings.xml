@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperaturys breidynuojums</string>
     <string name="rainfall_alert_str">Breidynuojums par nūkrišņu</string>
     <string name="rainrate_alert_str">Leita ātruma breidynuojums</string>
+    <string name="temperature_alert_desc">100 doc#1159 Breidynoj leidz pat divejom reizem dīnā , kod temperatura sasnādz jūs nūteiktūs rūbežus</string>
+    <string name="rainfall_alert_desc">100 doc#1159 Breidynoj kasdīnā , kod nūkrišņu daudzums sasnādz jūs nūteiktū rūbežu</string>
+    <string name="rainrate_alert_desc">100 doc#1159 Breidynoj kotru stuņdi , ka leita ātrums sasnādz jūs nūteiktū rūbežu</string>
 </resources>

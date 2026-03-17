@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Огоҳии ҳарорат</string>
     <string name="rainfall_alert_str">Огоҳӣ дар бораи борон</string>
     <string name="rainrate_alert_str">Огоҳии борон</string>
+    <string name="temperature_alert_desc">Ҳангоме ки ҳарорат ба ҳадди муқарраршудаи шумо мерасад, дар як рӯз то ду маротиба ҳушдор медиҳад</string>
+    <string name="rainfall_alert_desc">Ҳар рӯз ҳушдор медиҳад, ки боришот ба ҳадди муқарраркардаи шумо мерасад</string>
+    <string name="rainrate_alert_desc">Ҳар соат ҳушдор медиҳад, агар суръати борон ба ҳадди муқарраркардаи шумо мерасад</string>
 </resources>

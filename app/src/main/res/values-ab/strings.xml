@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Аԥхарра агәҽанҵара</string>
     <string name="rainfall_alert_str">Ақәаршҩы азы агәҽанҵара</string>
     <string name="rainrate_alert_str">Ақәа амҽхак азы агәҽанҵара</string>
+    <string name="temperature_alert_desc">Аҳауа аԥхарра иаԥуҵаз аҳәаа анаӡо есыҽны ҩынтә рҟынӡа агәҽанҵарақәа ҟанаҵоит</string>
+    <string name="rainfall_alert_desc">Есыҽны агәҽанҵарақәа ҟанаҵоит ақәа леира иаԥуҵаз аҳәаа анааиуа</string>
+    <string name="rainrate_alert_desc">Сааҭцыԥхьаӡа агәҽанҵара ҟанаҵоит ақәа амҽхак иаԥуҵаз аҳәаа инаӡар</string>
 </resources>

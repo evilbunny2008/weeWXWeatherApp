@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">तापमानाचा इशारा</string>
     <string name="rainfall_alert_str">पावसाचा इशारा</string>
     <string name="rainrate_alert_str">रेनरेट अलर्ट</string>
+    <string name="temperature_alert_desc">जेव्हा तापमान तुमच्या सेट केलेल्या मर्यादेपर्यंत पोहोचते तेव्हा दररोज दोनदा अलर्ट</string>
+    <string name="rainfall_alert_desc">जेव्हा पाऊस तुमच्या निर्धारित मर्यादेपर्यंत पोहोचतो तेव्हा दररोज सूचना</string>
+    <string name="rainrate_alert_desc">पावसाचा दर तुमच्या निर्धारित मर्यादेपर्यंत पोहोचल्यास तासाभराने सूचना</string>
 </resources>

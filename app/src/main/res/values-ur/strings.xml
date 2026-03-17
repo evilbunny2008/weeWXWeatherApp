@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">درجہ حرارت کا الرٹ</string>
     <string name="rainfall_alert_str">بارش کا الرٹ</string>
     <string name="rainrate_alert_str">بارش کا انتباہ</string>
+    <string name="temperature_alert_desc">جب درجہ حرارت آپ کی مقرر کردہ حد تک پہنچ جاتا ہے تو روزانہ دو بار تک الرٹس</string>
+    <string name="rainfall_alert_desc">جب بارش آپ کی مقررہ حد تک پہنچ جاتی ہے تو روزانہ الرٹس</string>
+    <string name="rainrate_alert_desc">اگر بارش کی شرح آپ کی مقرر کردہ حد تک پہنچ جائے تو فی گھنٹہ الرٹس</string>
 </resources>

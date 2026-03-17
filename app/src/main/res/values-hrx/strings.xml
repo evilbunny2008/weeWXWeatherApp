@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperatuur Alarm</string>
     <string name="rainfall_alert_str">Reen Alarm</string>
     <string name="rainrate_alert_str">Reenrate Alarm</string>
+    <string name="temperature_alert_desc">Alarme pis tswaay mool im taach wën ti temperatuur tayn pextimte xpiichel erkhënt</string>
+    <string name="rainfall_alert_desc">Alerts yeete taach wën ti reen tayn pextimte limit erkhëne</string>
+    <string name="rainrate_alert_desc">Alerts xtune wën ti reen rate tayn pextimte limit erreecht</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Nlebaanya okpomọkụ</string>
     <string name="rainfall_alert_str">Nleba anya mmiri ozuzo</string>
     <string name="rainrate_alert_str">Nleba anya mmiri ozuzo</string>
+    <string name="temperature_alert_desc">Na-ama ọkwa ugboro abụọ kwa ụbọchị mgbe okpomọkụ ruru oke gị</string>
+    <string name="rainfall_alert_desc">Na-ama ọkwa kwa ụbọchị mgbe mmiri ozuzo ruru oke gị</string>
+    <string name="rainrate_alert_desc">Na-ama ọkwa kwa elekere ma ọ bụrụ na oke mmiri ozuzo ruru oke atọrọ gị</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Twissija tat-Temperatura</string>
     <string name="rainfall_alert_str">Twissija dwar ix-xita</string>
     <string name="rainrate_alert_str">Twissija Rainrate</string>
+    <string name="temperature_alert_desc">Twissijiet sa darbtejn kuljum meta t-temperatura tilħaq il-limiti stabbiliti tiegħek</string>
+    <string name="rainfall_alert_desc">Twissijiet kuljum meta x-xita tilħaq il-limitu stabbilit tiegħek</string>
+    <string name="rainrate_alert_desc">Twissijiet kull siegħa jekk ir-rata tax-xita tilħaq il-limitu stabbilit tiegħek</string>
 </resources>

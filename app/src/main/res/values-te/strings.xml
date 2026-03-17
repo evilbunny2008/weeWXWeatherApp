@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">ఉష్ణోగ్రత హెచ్చరిక</string>
     <string name="rainfall_alert_str">వర్షపాతం హెచ్చరిక</string>
     <string name="rainrate_alert_str">రెయిన్రేట్ హెచ్చరిక</string>
+    <string name="temperature_alert_desc">ఉష్ణోగ్రత మీ సెట్ పరిమితులకు చేరుకున్నప్పుడు రోజుకు రెండుసార్లు హెచ్చరిస్తుంది</string>
+    <string name="rainfall_alert_desc">వర్షపాతం మీ సెట్ పరిమితిని చేరుకున్నప్పుడు ప్రతిరోజూ హెచ్చరికలు</string>
+    <string name="rainrate_alert_desc">వర్షపాతం మీ సెట్ పరిమితిని చేరుకుంటే గంటకోసారి హెచ్చరిస్తుంది</string>
 </resources>

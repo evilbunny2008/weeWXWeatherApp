@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperatur Alarm</string>
     <string name="rainfall_alert_str">Nidderschlag Alarm</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
+    <string name="temperature_alert_desc">Alarméiert bis zweemol am Dag wann d\'Temperatur Är agestallte Grenzen erreecht</string>
+    <string name="rainfall_alert_desc">Alarméiert all Dag wann de Nidderschlag Är gesat Limit erreecht</string>
+    <string name="rainrate_alert_desc">Alarméiert all Stonn wann de Reenquote Är festgeluegt Limit erreecht</string>
 </resources>

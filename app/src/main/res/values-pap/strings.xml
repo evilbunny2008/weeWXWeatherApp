@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerta di Temperatura</string>
     <string name="rainfall_alert_str">Alerta di áwaseru</string>
     <string name="rainrate_alert_str">Alerta di áwaseru</string>
+    <string name="temperature_alert_desc">Alertanan te ku dos biaha pa dia ora e temperatura yega bo límitenan stipulá</string>
+    <string name="rainfall_alert_desc">Alerta tur dia ora e áwaseru yega bo límite stipulá</string>
+    <string name="rainrate_alert_desc">Alerta tur ora si e tasa di áwaseru yega bo límite stipulá</string>
 </resources>

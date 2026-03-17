@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">온도 경고</string>
     <string name="rainfall_alert_str">강우 경보</string>
     <string name="rainrate_alert_str">강수량 경보</string>
+    <string name="temperature_alert_desc">온도가 설정된 한도에 도달하면 하루에 최대 2번 경고합니다</string>
+    <string name="rainfall_alert_desc">강우량이 설정된 한도에 도달하면 매일 경고합니다</string>
+    <string name="rainrate_alert_desc">강우량이 설정된 한도에 도달하면 매시간 경고합니다</string>
 </resources>

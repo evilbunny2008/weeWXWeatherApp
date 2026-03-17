@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Dɔlɛ He Kɔkɔbɔɔ</string>
     <string name="rainfall_alert_str">Nugbɔshiimɔ He Kɔkɔbɔɔ</string>
     <string name="rainrate_alert_str">Nugbɔshiimɔ He Kɔkɔbɔɔ</string>
+    <string name="temperature_alert_desc">Kɔkɔbɔɔi kɛyashi shii enyɔ daa gbi kɛji hulutsoo be lɛ shɛ husui ni okɛto lɛ he</string>
+    <string name="rainfall_alert_desc">Kɔkɔbɔɔ daa gbi kɛji nugbɔ lɛ shɛ husu ni okɛto lɛ he</string>
+    <string name="rainrate_alert_desc">Kɔkɔbɔɔ daa ŋmɛlɛtswaa kɛji nugbɔ lɛ shɛ husu ni okɛto lɛ he</string>
 </resources>

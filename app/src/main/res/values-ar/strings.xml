@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">تنبيه درجة الحرارة</string>
     <string name="rainfall_alert_str">تنبيه هطول الأمطار</string>
     <string name="rainrate_alert_str">تنبيه معدل المطر</string>
+    <string name="temperature_alert_desc">تنبيهات تصل إلى مرتين يوميًا عندما تصل درجة الحرارة إلى الحدود المحددة</string>
+    <string name="rainfall_alert_desc">تنبيهات يومية عندما يصل هطول الأمطار إلى الحد المحدد</string>
+    <string name="rainrate_alert_desc">تنبيهات كل ساعة إذا وصل معدل المطر إلى الحد المحدد</string>
 </resources>

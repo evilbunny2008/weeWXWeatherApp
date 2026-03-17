@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">การแจ้งเตือนอุณหภูมิ</string>
     <string name="rainfall_alert_str">การแจ้งเตือนปริมาณน้ำฝน</string>
     <string name="rainrate_alert_str">การแจ้งเตือนปริมาณน้ำฝน</string>
+    <string name="temperature_alert_desc">แจ้งเตือนสูงสุดวันละสองครั้งเมื่ออุณหภูมิถึงขีดจำกัดที่คุณตั้งไว้</string>
+    <string name="rainfall_alert_desc">แจ้งเตือนทุกวันเมื่อปริมาณน้ำฝนถึงขีดจำกัดที่คุณตั้งไว้</string>
+    <string name="rainrate_alert_desc">แจ้งเตือนทุกชั่วโมงหากปริมาณน้ำฝนถึงขีดจำกัดที่คุณตั้งไว้</string>
 </resources>

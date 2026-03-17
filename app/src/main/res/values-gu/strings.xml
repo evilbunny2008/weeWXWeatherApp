@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">તાપમાન ચેતવણી</string>
     <string name="rainfall_alert_str">વરસાદની ચેતવણી</string>
     <string name="rainrate_alert_str">રેઈનરેટ એલર્ટ</string>
+    <string name="temperature_alert_desc">જ્યારે તાપમાન તમારી નિર્ધારિત મર્યાદા સુધી પહોંચે છે ત્યારે દરરોજ બે વાર ચેતવણી આપે છે</string>
+    <string name="rainfall_alert_desc">જ્યારે વરસાદ તમારી નિર્ધારિત મર્યાદા સુધી પહોંચે ત્યારે દરરોજ ચેતવણીઓ</string>
+    <string name="rainrate_alert_desc">જો વરસાદનો દર તમારી નિર્ધારિત મર્યાદા સુધી પહોંચે તો કલાકદીઠ ચેતવણીઓ</string>
 </resources>

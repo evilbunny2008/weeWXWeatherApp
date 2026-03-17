@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Температурын һэргылэмжэ</string>
     <string name="rainfall_alert_str">Хур борооной һэргылэмжэ</string>
     <string name="rainrate_alert_str">Борооной һэргылэмжэ</string>
+    <string name="temperature_alert_desc">Температура танай табиһан хизаарта хүрэхэдэ үдэртэ хоёр дахин хүрэтэр һэргылэмжэ үгэнэ</string>
+    <string name="rainfall_alert_desc">Хура бороогой табигдаһан хизаарта хүрэхэдөө үдэр бүри һэргылнэ</string>
+    <string name="rainrate_alert_desc">Хэрбээ борооной хэмжээн танай табиһан хизаарта хүрөө һаань, часай һэргылэмжэ</string>
 </resources>

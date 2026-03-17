@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Imburi y\'ubushuhe</string>
     <string name="rainfall_alert_str">Imburi y\'imvura</string>
     <string name="rainrate_alert_str">Imburi y\'imvura</string>
+    <string name="temperature_alert_desc">Imenyesha gushika incuro zibiri ku musi iyo ubushuhe bushitse ku rugero rwashizweho</string>
+    <string name="rainfall_alert_desc">Imenyesha buri musi iyo imvura ishitse ku rugero rwategekanije</string>
+    <string name="rainrate_alert_desc">Imenyesha buri saha iyo imvura igeze ku rugero rwashizeho</string>
 </resources>

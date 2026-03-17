@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Isilumkiso sobushushu</string>
     <string name="rainfall_alert_str">Isilumkiso ngemvula</string>
     <string name="rainrate_alert_str">Isilumkiso semvula</string>
+    <string name="temperature_alert_desc">Izilumkiso ukuya kuthi ga kabini yonke imihla xa ubushushu bufikelela kwimida yakho ebekiweyo</string>
+    <string name="rainfall_alert_desc">Izilumkiso mihla le xa imvula ifikelela kumda obekiweyo</string>
+    <string name="rainrate_alert_desc">Izaziso ngeyure ukuba imvula ifikelela kumda obekiweyo</string>
 </resources>

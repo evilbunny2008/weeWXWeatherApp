@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Температурын дохиолол</string>
     <string name="rainfall_alert_str">Хур тунадасны сэрэмжлүүлэг</string>
     <string name="rainrate_alert_str">Борооны дохио</string>
+    <string name="temperature_alert_desc">Температур нь тогтоосон хязгаарт хүрэх үед өдөрт хоёр удаа дохио өгдөг</string>
+    <string name="rainfall_alert_desc">Хур тунадасны хэмжээ таны тогтоосон хязгаарт хүрэхэд өдөр бүр мэдэгдэнэ</string>
+    <string name="rainrate_alert_desc">Борооны хэмжээ таны тогтоосон хязгаарт хүрсэн тохиолдолд цаг тутам мэдэгдэнэ</string>
 </resources>

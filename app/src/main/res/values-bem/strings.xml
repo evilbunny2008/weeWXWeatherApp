@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Icebusho lya Kukaba</string>
     <string name="rainfall_alert_str">Icebusho lya Mfula</string>
     <string name="rainrate_alert_str">Icebusho lya Mfula</string>
+    <string name="temperature_alert_desc">Ifishinka ukufika ku miku ibili cila bushiku nga ca kuti ukutenta kwafika pa cipimo ico mwabika</string>
+    <string name="rainfall_alert_desc">Ukucenjesha cila bushiku ilyo imfula yafika pa cipimo ico mwabika</string>
+    <string name="rainrate_alert_desc">Ukucenjesha cila ora nga cakuti imfula yafika pa cipimo ico mwabika</string>
 </resources>

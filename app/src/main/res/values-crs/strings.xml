@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">alert tanperatir</string>
     <string name="rainfall_alert_str">alert lapli</string>
     <string name="rainrate_alert_str">alert to lapli</string>
+    <string name="temperature_alert_desc">bann alert ziska de fwa par zour ler tanperatir i ariv ou limit</string>
+    <string name="rainfall_alert_desc">bann alert toulezour ler lapli i ariv ou limit</string>
+    <string name="rainrate_alert_desc">bann alert tou le erdtan si to lapli i ariv ou limit</string>
 </resources>

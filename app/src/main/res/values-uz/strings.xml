@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Harorat haqida ogohlantirish</string>
     <string name="rainfall_alert_str">Yomg\'ir haqida ogohlantirish</string>
     <string name="rainrate_alert_str">Yomg\'ir haqida ogohlantirish</string>
+    <string name="temperature_alert_desc">Harorat belgilangan chegaralarga yetganda kuniga ikki martagacha ogohlantiradi</string>
+    <string name="rainfall_alert_desc">Yomg\'ir miqdori belgilangan chegaraga yetganda har kuni ogohlantiriladi</string>
+    <string name="rainrate_alert_desc">Yomg\'ir miqdori belgilangan chegaraga yetsa, har soatda ogohlantiriladi</string>
 </resources>

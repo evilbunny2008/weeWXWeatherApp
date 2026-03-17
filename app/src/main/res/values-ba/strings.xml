@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Температура тураһында иҫкәртмә</string>
     <string name="rainfall_alert_str">Яуым-төшөм тураһында иҫкәртмә</string>
     <string name="rainrate_alert_str">Ямғыр тиҙлеге тураһында иҫкәртмә</string>
+    <string name="temperature_alert_desc">Температура һеҙҙең ҡуйылған сиктәргә еткәндә көнөнә ике тапҡырға тиклем иҫкәртәләр</string>
+    <string name="rainfall_alert_desc">Яуым-төшөм һеҙҙең билдәләнгән сиккә еткәндә көн һайын иҫкәртә</string>
+    <string name="rainrate_alert_desc">Ямғыр тиҙлеге һеҙҙең билдәләнгән сиккә етһә, сәғәт һайын иҫкәртә</string>
 </resources>

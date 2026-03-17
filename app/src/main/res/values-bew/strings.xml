@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Peringatan Suhu</string>
     <string name="rainfall_alert_str">Peringatan Curah Hujan</string>
     <string name="rainrate_alert_str">Peringatan laju hujan</string>
+    <string name="temperature_alert_desc">Peringatan sampe dua kali sehari pas suhu nyampe batas yang lu set</string>
+    <string name="rainfall_alert_desc">Peringatan setiap hari ketika curah hujan mencapai batas yang lu set</string>
+    <string name="rainrate_alert_desc">Peringatan tiap jam kalo hujan nyampe batas yang lu tentuin</string>
 </resources>

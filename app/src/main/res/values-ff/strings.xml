@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Jeertinaango nguleeki</string>
     <string name="rainfall_alert_str">Jeertinaango toɓo</string>
     <string name="rainrate_alert_str">Jeertinaango toɓo</string>
+    <string name="temperature_alert_desc">Jeertinaango haa laabi ɗiɗi ñalawma kala so nguleeki yettiima keerol ngol ndarnaa</string>
+    <string name="rainfall_alert_desc">Jeertinaango ñalnde kala so toɓo ngoo yettiima keerol ngol njiɗ-ɗaa</string>
+    <string name="rainrate_alert_desc">Jeertinaango waktu kala so tawii toɓo ngoo yettiima keerol ngol ndarnaa</string>
 </resources>

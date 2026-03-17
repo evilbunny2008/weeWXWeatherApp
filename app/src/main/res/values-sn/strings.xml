@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Tembiricha Alert</string>
     <string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
+    <string name="temperature_alert_desc">Yambiro kusvika kaviri zuva nezuva kana tembiricha yasvika pawakatemerwa</string>
+    <string name="rainfall_alert_desc">Yambiro zuva nezuva kana mvura yanaya yasvika paunogumira</string>
+    <string name="rainrate_alert_desc">Yambiro paawa imwe neimwe kana mvura yasvika pawakatemerwa</string>
 </resources>

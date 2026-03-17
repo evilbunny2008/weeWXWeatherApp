@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Cảnh báo nhiệt độ</string>
     <string name="rainfall_alert_str">Cảnh báo lượng mưa</string>
     <string name="rainrate_alert_str">Cảnh báo lượng mưa</string>
+    <string name="temperature_alert_desc">Cảnh báo tối đa hai lần mỗi ngày khi nhiệt độ đạt đến giới hạn cài đặt của bạn</string>
+    <string name="rainfall_alert_desc">Cảnh báo hàng ngày khi lượng mưa đạt đến giới hạn đã đặt</string>
+    <string name="rainrate_alert_desc">Cảnh báo hàng giờ nếu lượng mưa đạt đến giới hạn đã đặt của bạn</string>
 </resources>

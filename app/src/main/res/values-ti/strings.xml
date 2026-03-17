@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">መጠንቀቕታ ሙቐት</string>
     <string name="rainfall_alert_str">መጠንቀቕታ ዝናብ</string>
     <string name="rainrate_alert_str">መጠን ዝናብ መጠንቀቕታ</string>
+    <string name="temperature_alert_desc">ሙቐት ኣብቲ ዝተወሰነካ ደረት ምስ በጽሐ ኣብ መዓልቲ ክሳብ ክልተ ግዜ የጠንቅቕ</string>
+    <string name="rainfall_alert_desc">ዝናብ ኣብቲ ዝተወሰነካ ደረት ምስ በጽሐ መዓልታዊ የጠንቅቕ</string>
+    <string name="rainrate_alert_desc">ፍጥነት ዝናብ ኣብቲ ዝተወሰነካ ደረት እንተበጺሑ ኣብ ሰዓት የጠንቅቕ</string>
 </resources>

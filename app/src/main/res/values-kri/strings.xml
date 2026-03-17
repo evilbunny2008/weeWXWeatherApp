@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alɛrt fɔ di tɛmpracha</string>
     <string name="rainfall_alert_str">Ren we kin kam</string>
     <string name="rainrate_alert_str">Rainrate Alert fɔ di ren</string>
+    <string name="temperature_alert_desc">Alert tu tɛm ɛvride we di tɛmpracha rich di limit we yu dɔn sɛt</string>
+    <string name="rainfall_alert_desc">Alert ɛvride we di ren rich di limit we yu dɔn sɛt</string>
+    <string name="rainrate_alert_desc">Alɛt ɛvri awa if di ren rit rich di limit we yu dɔn sɛt</string>
 </resources>

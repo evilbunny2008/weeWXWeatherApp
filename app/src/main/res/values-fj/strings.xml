@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Vakasala ni katakata</string>
     <string name="rainfall_alert_str">iVakasala ni Uca</string>
     <string name="rainrate_alert_str">iVakasala ni Uca</string>
+    <string name="temperature_alert_desc">E vakaroti me vakarua ena veisiga ni sa yacova na ivakarau ni katakata na nomu iyalayala</string>
+    <string name="rainfall_alert_desc">Vakasalataki ena veisiga ni sa yacova na uca na nomu iyalayala</string>
+    <string name="rainrate_alert_desc">Vakasalataki ena vei auwa kevaka e yacova na nomu iyalayala ni uca</string>
 </resources>

@@ -1624,7 +1624,6 @@ public class MainActivity extends FragmentActivity
 
 			LogMessage("processSettings() forecastURL: " + forecastURL);
 
-			String bom3_endpoint = "daily";
 			if(!forecastURL.isBlank())
 			{
 				try
@@ -1637,7 +1636,9 @@ public class MainActivity extends FragmentActivity
 							forecastURL = forecastURL.substring(0, 6);
 
 						if(UpdateInterval > 0)
-							bom3_endpoint = "hourly";
+							fctype = "bom3hourly";
+						else
+							fctype = "bom3daily";
 					}
 
 					switch(fctype.toLowerCase(Locale.ENGLISH))
@@ -1876,24 +1877,38 @@ public class MainActivity extends FragmentActivity
 							LogMessage("processSettings() forecastURL: " + forecastURL);
 							LogMessage("processSettings() fctype: " + fctype);
 						}
-						case "bom3" ->
+						case "bom3hourly" ->
 						{
-							String newurl = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip();
-							String text = weeWXAppCommon.downloadString(newurl, false);
-							LogMessage("processSettings(): text: " + text);
+							boolean needUpdate = KeyValue.bomGeohash == null || KeyValue.bomGeohash.isBlank() ||
+							                     !KeyValue.bomGeohash.equals(forecastURL.strip()) ||
+							                     KeyValue.bomLocation == null || KeyValue.bomLocation.isBlank();
 
-							JSONObject jobj = new JSONObject(text);
-							if(jobj.has("data"))
+							if(needUpdate)
 							{
-								jobj = jobj.getJSONObject("data");
-								if(jobj.has("name") && jobj.has("state"))
+								KeyValue.bomGeohash = forecastURL.strip();
+								String newurl = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip();
+								String text = weeWXAppCommon.downloadString(newurl, false);
+								LogMessage("processSettings(): text: " + text);
+
+								JSONObject jobj = new JSONObject(text);
+								if(jobj.has("data"))
 								{
-									KeyValue.bomLocation = jobj.getString("name") + ", " + jobj.getString("state");
-									LogMessage("processSettings() BoM Location: " + KeyValue.bomLocation);
+									jobj = jobj.getJSONObject("data");
+									if(jobj.has("name") && jobj.has("state"))
+									{
+										KeyValue.bomLocation = jobj.getString("name") + ", " + jobj.getString("state");
+										LogMessage("processSettings() BoM Location: " + KeyValue.bomLocation);
+									}
 								}
 							}
 
-							forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip() + "/forecasts/" + bom3_endpoint;
+							forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip() + "/forecasts/hourly";
+							LogMessage("processSettings() forecastURL: " + forecastURL);
+							LogMessage("processSettings() fctype: " + fctype);
+						}
+						case "bom3daily" ->
+						{
+							forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip() + "/forecasts/daily";
 							LogMessage("processSettings() forecastURL: " + forecastURL);
 							LogMessage("processSettings() fctype: " + fctype);
 						}
@@ -2230,7 +2245,11 @@ public class MainActivity extends FragmentActivity
 			if(KeyValue.bomLocation != null && KeyValue.bomLocation.isBlank())
 				KeyValue.bomLocation = null;
 
+			if(KeyValue.bomGeohash != null && KeyValue.bomGeohash.isBlank())
+				KeyValue.bomGeohash = null;
+
 			KeyValue.putVar("bomLocation", KeyValue.bomLocation);
+			KeyValue.putVar("bomGeohash", KeyValue.bomGeohash);
 
 			KeyValue.putVar("SETTINGS_URL", settingsURL.getText().toString());
 			KeyValue.putVar("UpdateFrequency", UpdateFrequency);

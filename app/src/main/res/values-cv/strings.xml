@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Температура ҫинчен пӗлтерекен сигнал</string>
     <string name="rainfall_alert_str">Ҫумӑр ҫинчен систерӳ</string>
     <string name="rainrate_alert_str">Ҫумӑр ҫинчен систерекен сигнал</string>
+    <string name="temperature_alert_desc">Температура палӑртнӑ чикӗ патне ҫитсен кунне икӗ хутчен систерет</string>
+    <string name="rainfall_alert_desc">Ҫумӑр сирӗн палӑртнӑ виҫене ҫитсен кулленех систерет</string>
+    <string name="rainrate_alert_desc">Ҫумӑр хӑвӑртлӑхӗ сирӗн палӑртнӑ чикӗ патне ҫитсен сехетсерен систерет</string>
 </resources>

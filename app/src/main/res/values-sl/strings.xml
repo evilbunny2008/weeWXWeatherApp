@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperaturno opozorilo</string>
     <string name="rainfall_alert_str">Opozorilo o padavinah</string>
     <string name="rainrate_alert_str">Opozorilo o količini dežja</string>
+    <string name="temperature_alert_desc">Opozorilo do dvakrat dnevno, ko temperatura doseže vaše nastavljene meje</string>
+    <string name="rainfall_alert_desc">Opozorilo dnevno, ko količina padavin doseže nastavljeno mejo</string>
+    <string name="rainrate_alert_desc">Opozorilo vsako uro, če količina dežja doseže nastavljeno mejo</string>
 </resources>

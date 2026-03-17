@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">तापमान चेतावनी</string>
     <string name="rainfall_alert_str">वर्षा चेतावनी</string>
     <string name="rainrate_alert_str">रेनरेट अलर्ट</string>
+    <string name="temperature_alert_desc">जब तापक्रम तपाइँको निर्धारित सीमामा पुग्छ तब दिनको दुई पटक सम्म अलर्ट गर्दछ</string>
+    <string name="rainfall_alert_desc">तपाईंको निर्धारित सीमामा वर्षा पुग्दा दैनिक अलर्टहरू</string>
+    <string name="rainrate_alert_desc">यदि वर्षा दर तपाईंको निर्धारित सीमामा पुग्छ भने प्रति घण्टा अलर्ट</string>
 </resources>

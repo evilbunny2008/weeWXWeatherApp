@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Avvisu di timpiratura</string>
     <string name="rainfall_alert_str">Avvisu di chioggia</string>
     <string name="rainrate_alert_str">Avvisu di tassu di chioggia</string>
+    <string name="temperature_alert_desc">Avvisi nzinu a du\' voti ô jornu quannu la timpiratura arriva ê limiti fissati</string>
+    <string name="rainfall_alert_desc">Avvisi ogni jornu quannu la piòggia arriva ô limiti fissatu</string>
+    <string name="rainrate_alert_desc">Avvisi ogni ura si lu tassu di chioggia arriva ô limiti fissatu</string>
 </resources>

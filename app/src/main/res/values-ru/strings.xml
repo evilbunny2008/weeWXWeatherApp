@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Оповещение о температуре</string>
     <string name="rainfall_alert_str">Оповещение об осадках</string>
     <string name="rainrate_alert_str">Оповещение о скорости дождя</string>
+    <string name="temperature_alert_desc">Оповещения до двух раз в день, когда температура достигает установленных пределов</string>
+    <string name="rainfall_alert_desc">Оповещения ежедневно, когда количество осадков достигает установленного вами лимита</string>
+    <string name="rainrate_alert_desc">Оповещения ежечасно, если интенсивность дождя достигает установленного вами предела</string>
 </resources>

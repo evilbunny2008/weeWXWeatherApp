@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Lapataiga o le vevela</string>
     <string name="rainfall_alert_str">Lapata\'iga o timuga</string>
     <string name="rainrate_alert_str">Lapata\'iga o timuga</string>
+    <string name="temperature_alert_desc">Fa\'aliga fa\'alua i aso ta\'itasi pe a o\'o le vevela i au tapulaa fa\'atulagaina</string>
+    <string name="rainfall_alert_desc">Fa\'aliga i aso uma pe a o\'o le timu i lau tapulaa fa\'atulagaina</string>
+    <string name="rainrate_alert_desc">Lapata\'i itula pe a o\'o le timuga i lau tapulaa fa\'atulagaina</string>
 </resources>

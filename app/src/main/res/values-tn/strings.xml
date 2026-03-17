@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Tlhagiso ya Mogote</string>
     <string name="rainfall_alert_str">Tlhagiso ya Pula</string>
     <string name="rainrate_alert_str">Tlhagiso ya Seelo sa Pula</string>
+    <string name="temperature_alert_desc">Ditsiboso go fitlha go gabedi ka letsatsi fa thempheretšha e fitlha kwa selekanyong se o se beetseng</string>
+    <string name="rainfall_alert_desc">Ditsiboso letsatsi le letsatsi fa pula e fitlha kwa selekanyong se o se beetseng</string>
+    <string name="rainrate_alert_desc">Ditsiboso ura le ura fa selekanyo sa pula se fitlha kwa selekanyong se o se beetseng</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Tlhokomeliso ea Mocheso</string>
     <string name="rainfall_alert_str">Tlhokomeliso ea Pula</string>
     <string name="rainrate_alert_str">Tlhokomeliso ea Rainrate</string>
+    <string name="temperature_alert_desc">Litlhokomeliso ho fihlela habeli ka letsatsi ha mocheso o fihla litekanyong tsa hau tse behiloeng</string>
+    <string name="rainfall_alert_desc">Litemoso tsa letsatsi le letsatsi ha pula e fihla moeling o behiloeng</string>
+    <string name="rainrate_alert_desc">Litemoso ka hora haeba sekhahla sa pula se fihla moeling o behiloeng</string>
 </resources>

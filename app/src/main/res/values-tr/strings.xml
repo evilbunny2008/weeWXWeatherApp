@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Sıcaklık Uyarısı</string>
     <string name="rainfall_alert_str">Yağış Uyarısı</string>
     <string name="rainrate_alert_str">Yağmur Hızı Uyarısı</string>
+    <string name="temperature_alert_desc">Sıcaklık ayarladığınız limitlere ulaştığında günde iki defaya kadar uyarı verir</string>
+    <string name="rainfall_alert_desc">Yağış belirlenen limite ulaştığında günlük olarak uyarı verir</string>
+    <string name="rainrate_alert_desc">Yağmur oranı ayarladığınız limite ulaştığında saatlik olarak uyarı verir</string>
 </resources>

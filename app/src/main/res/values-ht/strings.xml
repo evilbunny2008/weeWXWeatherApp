@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alèt Tanperati</string>
     <string name="rainfall_alert_str">Alèt lapli</string>
     <string name="rainrate_alert_str">Alèt lapli</string>
+    <string name="temperature_alert_desc">Alèt jiska de fwa pa jou lè tanperati a rive nan limit ou yo</string>
+    <string name="rainfall_alert_desc">Alèt chak jou lè lapli a rive nan limit ou fikse</string>
+    <string name="rainrate_alert_desc">Alèt chak èdtan si to lapli a rive nan limit ou fikse</string>
 </resources>

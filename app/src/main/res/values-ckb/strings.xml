@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">ئاگادارکردنەوەی پلەی گەرمی</string>
     <string name="rainfall_alert_str">ئاگاداری بارانبارین</string>
     <string name="rainrate_alert_str">ئاگادارکردنەوەی ڕێژەی باران</string>
+    <string name="temperature_alert_desc">ڕۆژانە تا دوو جار ئاگادار دەکاتەوە کاتێک پلەی گەرمی دەگاتە سنوورە دیاریکراوەکانت</string>
+    <string name="rainfall_alert_desc">ڕۆژانە ئاگاداری دەکاتەوە کاتێک بارانبارین دەگاتە سنووری دیاریکراوی خۆت</string>
+    <string name="rainrate_alert_desc">کاتژمێرێک ئاگادار دەکاتەوە ئەگەر ڕێژەی بارانبارین بگاتە سنووری دیاریکراوی خۆت</string>
 </resources>

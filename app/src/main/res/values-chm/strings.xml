@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Температур нерген увертарымаш</string>
     <string name="rainfall_alert_str">Йӱр нерген шижтарымаш</string>
     <string name="rainrate_alert_str">Йӱр йӱрмӧ нерген шижтарымаш</string>
+    <string name="temperature_alert_desc">Температур тендан палемдыме чек марте шуын, кечыште кок гана марте шижтара</string>
+    <string name="rainfall_alert_desc">Йӱр йӱрмӧ тендан палемдыме лимит марте шумеке, кажне кечын шижтара</string>
+    <string name="rainrate_alert_desc">Йӱр тендан палемдыме чек марте шуэш гын, шагат еда увертарымаш</string>
 </resources>

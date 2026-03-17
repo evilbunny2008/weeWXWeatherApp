@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">ტემპერატურის გაფრთხილება</string>
     <string name="rainfall_alert_str">წვიმის გაფრთხილება</string>
     <string name="rainrate_alert_str">წვიმის გაფრთხილება</string>
+    <string name="temperature_alert_desc">აფრთხილებს დღეში ორჯერ, როდესაც ტემპერატურა მიაღწევს თქვენს დანიშნულ ლიმიტებს</string>
+    <string name="rainfall_alert_desc">ყოველდღიურად აფრთხილებს, როდესაც ნალექი თქვენს დადგენილ ლიმიტს მიაღწევს</string>
+    <string name="rainrate_alert_desc">აფრთხილებს საათობრივად, თუ წვიმის მაჩვენებელი თქვენს დადგენილ ლიმიტს მიაღწევს</string>
 </resources>

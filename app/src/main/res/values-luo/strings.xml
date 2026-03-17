@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Chik mar Liet</string>
     <string name="rainfall_alert_str">Chik mar koth</string>
     <string name="rainrate_alert_str">Chik mar Koth</string>
+    <string name="temperature_alert_desc">Onyiso nyaka nyadi riyo e odiechieng\' ka liet ochopo giko ma iketo</string>
+    <string name="rainfall_alert_desc">Onyiso pile ka pile ka koth ochopo giko ma iketo</string>
+    <string name="rainrate_alert_desc">Onyiso saa ka saa ka kwan mar koth ochopo giko ma iketo</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Siaga Suhu</string>
     <string name="rainfall_alert_str">Siaga Hujan</string>
     <string name="rainrate_alert_str">Siaga Hujan</string>
+    <string name="temperature_alert_desc">Ngageter nepi ka dua kali sadinten nalika suhu ngahontal wates set anjeun</string>
+    <string name="rainfall_alert_desc">Tanda unggal dinten nalika curah hujan ngahontal wates anu anjeun atur</string>
+    <string name="rainrate_alert_desc">Panggeuing unggal jam upami laju hujan ngahontal wates anu anjeun atur</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">താപനില മുന്നറിയിപ്പ്</string>
     <string name="rainfall_alert_str">മഴ മുന്നറിയിപ്പ്</string>
     <string name="rainrate_alert_str">റെയിൻറേറ്റ് അലേർട്ട്</string>
+    <string name="temperature_alert_desc">താപനില നിങ്ങളുടെ നിശ്ചിത പരിധിയിൽ എത്തുമ്പോൾ ദിവസത്തിൽ രണ്ടുതവണ വരെ മുന്നറിയിപ്പ് നൽകുന്നു</string>
+    <string name="rainfall_alert_desc">മഴ നിങ്ങളുടെ നിശ്ചിത പരിധിയിൽ എത്തുമ്പോൾ ദിവസേനയുള്ള അലേർട്ടുകൾ</string>
+    <string name="rainrate_alert_desc">മഴയുടെ തോത് നിങ്ങളുടെ നിശ്ചിത പരിധിയിൽ എത്തിയാൽ ഓരോ മണിക്കൂറിലും അലേർട്ടുകൾ</string>
 </resources>

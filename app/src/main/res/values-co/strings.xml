@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alerta di temperatura</string>
     <string name="rainfall_alert_str">Alerta di precipitazione</string>
     <string name="rainrate_alert_str">Alert Rainrate</string>
+    <string name="temperature_alert_desc">Alerts finu à duie volte à ghjornu quandu a temperatura righjunghji i vostri limiti stabiliti</string>
+    <string name="rainfall_alert_desc">Alerts ogni ghjornu quandu a precipitazione righjunghji u vostru limitu stabilitu</string>
+    <string name="rainrate_alert_desc">Alerts ogni ora se a precipitazione righjunghji u vostru limitu stabilitu</string>
 </resources>

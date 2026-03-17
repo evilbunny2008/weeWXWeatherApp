@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Rabhadh Teòthachd</string>
     <string name="rainfall_alert_str">Rabhadh sileadh</string>
     <string name="rainrate_alert_str">Rabhadh Rainrate</string>
+    <string name="temperature_alert_desc">Rabhadh suas ri dà uair san latha nuair a ruigeas an teòthachd na crìochan stèidhichte agad</string>
+    <string name="rainfall_alert_desc">Rabhadh gach latha nuair a ruigeas an t-uisge an ìre shuidhichte agad</string>
+    <string name="rainrate_alert_desc">Rabhadh san uair ma ruigeas an t-uisge a\' chrìoch stèidhichte agad</string>
 </resources>

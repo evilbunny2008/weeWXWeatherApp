@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Averto pri Temperaturo</string>
     <string name="rainfall_alert_str">Atentigo pri Pluvoj</string>
     <string name="rainrate_alert_str">Averto pri pluvofresio</string>
+    <string name="temperature_alert_desc">Atentigas ĝis dufoje ĉiutage kiam la temperaturo atingas viajn fiksitajn limojn</string>
+    <string name="rainfall_alert_desc">Atentigas ĉiutage kiam la pluvo atingas vian fiksitan limon</string>
+    <string name="rainrate_alert_desc">Atentigas ĉiuhore se la pluvokvanto atingas vian fiksitan limon</string>
 </resources>

@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">तापमान अलर्ट</string>
     <string name="rainfall_alert_str">वर्षा अलर्ट</string>
     <string name="rainrate_alert_str">वर्षा दर अलर्ट</string>
+    <string name="temperature_alert_desc">यदा तापमानं भवतः निर्धारितसीमां प्राप्नोति तदा प्रतिदिनं द्विवारं यावत् सचेष्टयति</string>
+    <string name="rainfall_alert_desc">यदा वर्षा भवतः निर्धारितसीमाम् अवाप्नोति तदा प्रतिदिनं सचेष्टयति</string>
+    <string name="rainrate_alert_desc">यदि वर्षादरः भवतः निर्धारितसीमाम् प्राप्नोति तर्हि प्रतिघण्टां सचेतयति</string>
 </resources>

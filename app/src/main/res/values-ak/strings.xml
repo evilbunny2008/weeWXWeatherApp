@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Ɔhyew Ho Kɔkɔbɔ</string>
     <string name="rainfall_alert_str">Osu a ɛtɔ ho kɔkɔbɔ</string>
     <string name="rainrate_alert_str">Osu a Ɛtɔ Ho Kɔkɔbɔ</string>
+    <string name="temperature_alert_desc">Ɛbɔ kɔkɔ kodu mprenu da biara bere a ɔhyew no adu wo anohyeto a woahyɛ no so no</string>
+    <string name="rainfall_alert_desc">Bɔ kɔkɔ da biara da bere a osu no adu nea woahyɛ no so no</string>
+    <string name="rainrate_alert_desc">Ɛbɔ kɔkɔ dɔnhwerew biara sɛ osu dodow no du anohyeto a wode asi hɔ no ho a</string>
 </resources>

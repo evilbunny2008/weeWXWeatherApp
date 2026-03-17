@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">هشدار دما</string>
     <string name="rainfall_alert_str">هشدار بارندگی</string>
     <string name="rainrate_alert_str">هشدار میزان باران</string>
+    <string name="temperature_alert_desc">زمانی که دما به حد مجاز شما می‌رسد، تا دو بار در روز هشدار می‌دهد</string>
+    <string name="rainfall_alert_desc">زمانی که بارندگی به حد مجاز تعیین شده شما برسد، هر روز هشدار می دهد</string>
+    <string name="rainrate_alert_desc">اگر میزان بارندگی به حد مجاز تعیین شده شما برسد هر ساعت هشدار می دهد</string>
 </resources>

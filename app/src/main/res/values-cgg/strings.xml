@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Okurabura aha bwire bw\'obwire</string>
     <string name="rainfall_alert_str">Okurabura aha kugwa kw\'enjura</string>
     <string name="rainrate_alert_str">Okurabura aha mubaro gw\'enjura</string>
+    <string name="temperature_alert_desc">Okurabura okuhitsya emirundi ebiri buri izooba obutagatsi bwahika aha bugarukiro obu oteireho</string>
+    <string name="rainfall_alert_desc">Nitumanyisa buri izooba enjura yahika aha kikomo eki oteireho</string>
+    <string name="rainrate_alert_desc">Nikirabura buri shaaha enjura yaaba neehika aha kikomo eki oteireho</string>
 </resources>

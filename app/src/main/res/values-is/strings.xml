@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Hitaviðvörun</string>
     <string name="rainfall_alert_str">Regnviðvörun</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
+    <string name="temperature_alert_desc">Gefur viðvörun allt að tvisvar á dag þegar hitastigið nær settum mörkum</string>
+    <string name="rainfall_alert_desc">Viðvörun daglega þegar úrkoman nær settum mörkum</string>
+    <string name="rainrate_alert_desc">Gefur viðvörun á klukkutíma fresti ef rigningin nær settum mörkum</string>
 </resources>

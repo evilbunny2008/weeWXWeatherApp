@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Alarm temperatury</string>
     <string name="rainfall_alert_str">Alarm opadowy</string>
     <string name="rainrate_alert_str">Alarm opadów</string>
+    <string name="temperature_alert_desc">Alerty do dwóch razy dziennie, gdy temperatura osiągnie ustawione limity</string>
+    <string name="rainfall_alert_desc">Codziennie powiadamia, gdy opady osiągną ustawiony limit</string>
+    <string name="rainrate_alert_desc">Alerty co godzinę, jeśli wielkość opadów osiągnie ustawiony limit</string>
 </resources>

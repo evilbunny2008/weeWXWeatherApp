@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">تېمپېراتۇرا ئاگاھلاندۇرۇشى</string>
     <string name="rainfall_alert_str">يامغۇردىن ئاگاھلاندۇرۇش</string>
     <string name="rainrate_alert_str">يامغۇرلۇق ئاگاھلاندۇرۇش</string>
+    <string name="temperature_alert_desc">تېمپېراتۇرا بەلگىلەنگەن چەككە يەتكەندە ھەر كۈنى ئىككى قېتىم ئاگاھلاندۇرۇش بېرىدۇ</string>
+    <string name="rainfall_alert_desc">ھۆل-يېغىن بەلگىلەنگەن چەككە يەتكەندە ھەر كۈنى ئاگاھلاندۇرۇش بېرىدۇ</string>
+    <string name="rainrate_alert_desc">ئەگەر يامغۇر مىقدارى بەلگىلەنگەن چەككە يەتسە ھەر سائەت ئاگاھلاندۇرۇش بېرىدۇ</string>
 </resources>

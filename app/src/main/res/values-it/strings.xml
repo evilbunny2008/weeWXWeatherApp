@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Avviso di temperatura</string>
     <string name="rainfall_alert_str">Allerta precipitazioni</string>
     <string name="rainrate_alert_str">Avviso di pioggia</string>
+    <string name="temperature_alert_desc">Avvisa fino a due volte al giorno quando la temperatura raggiunge i limiti impostati</string>
+    <string name="rainfall_alert_desc">Avvisi giornalieri quando la pioggia raggiunge il limite impostato</string>
+    <string name="rainrate_alert_desc">Avvisi ogni ora se il tasso di pioggia raggiunge il limite impostato</string>
 </resources>

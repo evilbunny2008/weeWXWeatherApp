@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">Temperaturalarm</string>
     <string name="rainfall_alert_str">Niederschlagswarnung</string>
     <string name="rainrate_alert_str">Regenratenalarm</string>
+    <string name="temperature_alert_desc">Alarmiert bis zu zweimal täglich, wenn die Temperatur Ihre eingestellten Grenzwerte erreicht</string>
+    <string name="rainfall_alert_desc">Warnt täglich, wenn die Niederschlagsmenge Ihr festgelegtes Limit erreicht</string>
+    <string name="rainrate_alert_desc">Warnt stündlich, wenn die Regenmenge Ihren eingestellten Grenzwert erreicht</string>
 </resources>

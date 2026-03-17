@@ -117,4 +117,7 @@
     <string name="temperature_alert_str">তাপমাত্রা সতর্কতা</string>
     <string name="rainfall_alert_str">বৃষ্টিপাতের সতর্কতা</string>
     <string name="rainrate_alert_str">বৃষ্টিপাতের সতর্কতা</string>
+    <string name="temperature_alert_desc">যখন তাপমাত্রা আপনার নির্ধারিত সীমাতে পৌঁছায় তখন প্রতিদিন দুবার পর্যন্ত সতর্কতা</string>
+    <string name="rainfall_alert_desc">বৃষ্টিপাত আপনার নির্ধারিত সীমাতে পৌঁছলে প্রতিদিন সতর্কতা</string>
+    <string name="rainrate_alert_desc">বৃষ্টির হার আপনার নির্ধারিত সীমাতে পৌঁছে গেলে প্রতি ঘণ্টায় সতর্কতা</string>
 </resources>
