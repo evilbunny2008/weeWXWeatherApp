@@ -1071,7 +1071,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			switch(fctype.toLowerCase(Locale.ENGLISH))
 			{
 				case "aemet.es" -> logo += "aemet.png";
-				case "bom2", "bom3" -> logo += "bom" + extSVG;
+				case "bom2", "bom3daily", "bom3hourly" -> logo += "bom" + extSVG;
 				case "dwd.de" -> logo += "dwd.png";
 				case "met.ie" -> logo += "met_ie" + extPNG;
 				case "met.no" -> logo += "met_no.png";

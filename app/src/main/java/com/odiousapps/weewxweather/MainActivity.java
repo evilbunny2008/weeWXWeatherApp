@@ -1155,6 +1155,7 @@ public class MainActivity extends FragmentActivity
 					v.setHintTextColor(fgColour);
 				}
 				case Slider v -> LogMessage("MainActivity.updateColours(): Slider detected");
+				case LinearLayout v -> LogMessage("MainActivity.updateColours(): LinearLayout detected");
 				default -> LogMessage("MainActivity.updateColours() Uncaught view type: " + view, KeyValue.w);
 			}
 		}

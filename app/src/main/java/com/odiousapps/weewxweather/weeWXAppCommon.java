@@ -1087,7 +1087,7 @@ class weeWXAppCommon
 			r2.days.add(r1day);
 		}
 
-		LogMessage("processBOM3(): Successfully merging BoM daily + hourly");
+		LogMessage("processBOM3(): Successfully merged BoM daily + hourly");
 
 		return r2;
 	}
@@ -3949,13 +3949,13 @@ class weeWXAppCommon
 
 	static String[] getGsonContent(String forecastGson, boolean showHeader)
 	{
-		LogMessage("Weather.loadWebView() forecastGson.length(): " + forecastGson.length());
+		LogMessage("weeWXAppCommon.getGsonContent() forecastGson.length(): " + forecastGson.length());
 
 		Gson gson = new Gson();
 		GsonHelper gh = gson.fromJson(forecastGson, GsonHelper.class);
 		if(gh == null || gh.days == null || gh.days.isEmpty())
 		{
-			LogMessage("Weather.loadWebView() #2 Failed to process WZ forecast data...");
+			LogMessage("weeWXAppCommon.getGsonContent() #2 Failed to process WZ forecast data...");
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data)};
 		}
 
@@ -3965,23 +3965,24 @@ class weeWXAppCommon
 		if(!gh.isDaily)
 			displayDays = filterByInterval(gh.days, modhour);
 
-		LogMessage("Weather.loadWebView() displayDays.size(): " + displayDays.size());
+		LogMessage("weeWXAppCommon.getGsonContent() displayDays.size(): " + displayDays.size());
 
 		String content = generateForecast(displayDays, gh.timestamp, showHeader, gh.isDaily || modhour == 24);
 		if(content == null || content.isBlank())
 		{
-			LogMessage("Weather.loadWebView() #3 Failed to process WZ forecast data...");
+			LogMessage("weeWXAppCommon.getGsonContent() #3 Failed to process forecast data...");
 			return new String[]{"error", weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data)};
 		}
 
-		LogMessage("Weather.loadWebView() WZ content.length(): " + content.length());
+		LogMessage("weeWXAppCommon.getGsonContent() content.length(): " + content.length());
+		LogMessage("weeWXAppCommon.getGsonContent() content: " + content);
 		return new String[]{null, content, gh.desc != null ? gh.desc : ""};
 	}
 
 	private static List<Day> filterByInterval(List<Day> allEntries, int modhour)
 	{
-//		LogMessage("filterByInterval(): modhour: " + modhour);
-//		LogMessage("filterByInterval(): allEntries: " + allEntries);
+		LogMessage("filterByInterval(): modhour: " + modhour);
+		LogMessage("filterByInterval(): allEntries: " + allEntries);
 
 		if(allEntries == null || allEntries.isEmpty())
 			return allEntries;
@@ -4005,7 +4006,7 @@ class weeWXAppCommon
 				filtered.add(day);
 		}
 
-//		LogMessage("filterByInterval(): filtered: " + filtered);
+		LogMessage("filterByInterval(): filtered: " + filtered);
 
 		return filtered;
 	}

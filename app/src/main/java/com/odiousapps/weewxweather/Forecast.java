@@ -629,7 +629,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			case "weather.gov" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wgov.png")));
 			case "weather.gc.ca", "weather.gc.ca-fr" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/wca.png")));
 			case "metoffice.gov.uk" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/met.png")));
-			case "bom2", "bom3" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/bom" + finalextSVG)));
+			case "bom2", "bom3daily", "bom3hourly" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/bom" + finalextSVG)));
 			case "aemet.es" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/aemet.png")));
 			case "dwd.de" -> im.post(() -> im.setImageBitmap(weeWXApp.loadBitmapFromAssets("logos/dwd.png")));
 			case "metservice.com" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/metservice" + finalextSVG)));
