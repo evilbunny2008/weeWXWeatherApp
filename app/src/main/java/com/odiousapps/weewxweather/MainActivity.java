@@ -897,14 +897,13 @@ public class MainActivity extends FragmentActivity
 		LogMessage("MainActivity.onCreate() loading NotificationManager...");
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(this, notificationObserver);
 
-		LogMessage("MainActivity.onCreate() has finished...");
-
 		if(!screen_elements.isEmpty())
 		{
 			Setting s = screen_elements.get(0);
 			weeWXAppCommon.LogColour(findViewById(s.ResId()), s.name());
 		}
 
+		LogMessage("MainActivity.onCreate() has finished...");
 		hasStarted = true;
 	}
 

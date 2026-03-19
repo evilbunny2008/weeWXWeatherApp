@@ -3,7 +3,10 @@ package com.odiousapps.weewxweather;
 import android.Manifest;
 import android.app.Application;
 import android.app.NotificationChannel;
+import android.app.NotificationChannelGroup;
 import android.app.NotificationManager;
+import android.content.ContentResolver;
+import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
@@ -15,6 +18,8 @@ import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.PictureDrawable;
+import android.media.AudioAttributes;
+import android.net.Uri;
 import android.os.Build;
 import android.os.LocaleList;
 import android.text.Layout;
@@ -38,7 +43,6 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
@@ -120,8 +124,8 @@ public class weeWXApp extends Application
 		wouldn't be possible otherwise.<br><br>
 		Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and
 		is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and
-		<a href='https://github.com/erikflowers/weather-icons'>Weather Font</a> by Erik Flowers and
-		<a href="https://www.vecteezy.com/free-vector/">Vectors by Vecteezy</a>
+		<a href="https://www.vecteezy.com/free-vector/">Vectors by Vecteezy</a> and
+		<a href="https://mixkit.co/">Alert sound from Mixkit.co</a>
 		<br><br>
 		Current WebView Library Version: WEBVIEWVER
 		<br/><br/>
@@ -280,17 +284,43 @@ public class weeWXApp extends Application
 
 	ForecastDefaults fcDef = null;
 
+	AudioAttributes audioAttributes;
+
+	Uri soundUri;
+
+	NotificationManager notificationManager;
+
 	@Override
 	public void onCreate()
 	{
 		instance = this;
 
+		// Create the channel with the custom sound
+		audioAttributes = new AudioAttributes.Builder()
+		    .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+		    .setUsage(AudioAttributes.USAGE_NOTIFICATION)
+		    .build();
+
+		soundUri = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + getPackageName() + "/raw/alert");
+
+		LogMessage("weeWXApp.onCreate() soundUri: " + soundUri);
+
+		notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+		{
+			notificationManager.createNotificationChannelGroup(
+					new NotificationChannelGroup(getPackageName(),
+							getAndroidString(R.string.app_name)));
+		}
+
 		createNotificationChannel("temperature_alerts",
 				weeWXApp.getAndroidString(R.string.temperature_alert_str),
 				weeWXApp.getAndroidString(R.string.temperature_alert_desc));
+
 		createNotificationChannel("rainfall_alert",
 				weeWXApp.getAndroidString(R.string.rainfall_alert_str),
 				weeWXApp.getAndroidString(R.string.rainfall_alert_desc));
+
 		createNotificationChannel("rainrate_alert",
 				weeWXApp.getAndroidString(R.string.rainrate_alert_str),
 				weeWXApp.getAndroidString(R.string.rainrate_alert_desc));
@@ -1033,18 +1063,16 @@ public class weeWXApp extends Application
 
 	private void createNotificationChannel(String id, String name, String description)
 	{
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-		{
-			NotificationChannel channel = new NotificationChannel(
-				id,
-				name,
-				NotificationManager.IMPORTANCE_HIGH
-			);
+		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+			return;
 
-			channel.setDescription(description);
-			NotificationManager manager = getSystemService(NotificationManager.class);
-			manager.createNotificationChannel(channel);
-		}
+		NotificationChannel channel = new NotificationChannel(id, name, NotificationManager.IMPORTANCE_HIGH);
+		channel.enableVibration(true);
+		channel.setVibrationPattern(new long[]{0, 500, 1000});
+		channel.setDescription(description);
+		channel.setGroup(getPackageName());
+		channel.setSound(soundUri, audioAttributes);
+		instance.notificationManager.createNotificationChannel(channel);
 	}
 
 	static void sendTemperatureAlert(float temperature, float limit, boolean isAfternoon)
@@ -1072,8 +1100,7 @@ public class weeWXApp extends Application
 	        .setPriority(NotificationCompat.PRIORITY_HIGH)
 	        .setAutoCancel(true);
 
-	    NotificationManagerCompat manager = NotificationManagerCompat.from(instance);
-		manager.notify(1001, builder.build());
+		instance.notificationManager.notify(1001, builder.build());
 	}
 
 	static void sendRainfallAlert(float rainfall, float rainfalllimit)
@@ -1096,8 +1123,7 @@ public class weeWXApp extends Application
 	        .setPriority(NotificationCompat.PRIORITY_HIGH)
 	        .setAutoCancel(true);
 
-	    NotificationManagerCompat manager = NotificationManagerCompat.from(instance);
-		manager.notify(1001, builder.build());
+		instance.notificationManager.notify(1002, builder.build());
 	}
 
 	static void sendRainrateAlert(float rainrate, float rainratelimit)
@@ -1120,7 +1146,6 @@ public class weeWXApp extends Application
 	        .setPriority(NotificationCompat.PRIORITY_HIGH)
 	        .setAutoCancel(true);
 
-	    NotificationManagerCompat manager = NotificationManagerCompat.from(instance);
-		manager.notify(1001, builder.build());
+		instance.notificationManager.notify(1003, builder.build());
 	}
 }

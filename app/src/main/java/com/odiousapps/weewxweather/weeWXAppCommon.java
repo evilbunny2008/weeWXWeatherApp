@@ -2953,7 +2953,7 @@ class weeWXAppCommon
 			float CurrTemp = temps[0];
 			float minTemp = temps[1];
 
-			if(CurrTemp >= morning_temp_limit && CurrTemp >= minTemp + 1)
+			if(CurrTemp >= morning_temp_limit && minTemp < morning_temp_limit)
 			{
 				KeyValue.putVar("LastMorningTempAlert", System.currentTimeMillis());
 				weeWXApp.sendTemperatureAlert(CurrTemp, morning_temp_limit, false);
@@ -2978,8 +2978,7 @@ class weeWXAppCommon
 			LogMessage("checkTempAlerts() afternoon_temp_alert set to true");
 
 			long last_afternoon_alert = (long)KeyValue.readVar("LastAfternoonTempAlert", 0L);
-			Date date1 = new Date(last_afternoon_alert);
-			cal1.setTime(date1);
+			cal1.setTimeInMillis(last_afternoon_alert);
 
 			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
 			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
@@ -2994,7 +2993,7 @@ class weeWXAppCommon
 			float CurrTemp = temps[0];
 			float maxTemp = temps[2];
 
-			if(CurrTemp <= afternoon_temp_limit && CurrTemp <= maxTemp - 1)
+			if(CurrTemp <= afternoon_temp_limit && maxTemp > afternoon_temp_limit)
 			{
 				KeyValue.putVar("LastAfternoonTempAlert", System.currentTimeMillis());
 				weeWXApp.sendTemperatureAlert(CurrTemp, afternoon_temp_limit, true);
