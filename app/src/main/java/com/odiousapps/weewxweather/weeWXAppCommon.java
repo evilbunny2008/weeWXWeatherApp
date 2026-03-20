@@ -71,8 +71,6 @@ import java.nio.file.StandardCopyOption;
 
 import java.text.SimpleDateFormat;
 
-import java.time.Duration;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -187,8 +185,8 @@ class weeWXAppCommon
 
 	private static Future<?> forecastTask, radarTask, weatherTask, webcamTask;
 
-	private static Instant lastUpdateCheck = Instant.ofEpochMilli(0);
-	private static Instant ftStart = lastUpdateCheck, rtStart = lastUpdateCheck,
+	private static long lastUpdateCheck = 0;
+	private static long ftStart = lastUpdateCheck, rtStart = lastUpdateCheck,
 			wcStart = lastUpdateCheck, wtStart = lastUpdateCheck;
 
 	private static final Set<String> processedMissingIcons = new HashSet<>();
@@ -1066,6 +1064,8 @@ class weeWXAppCommon
 			{
 				not_set_text_yet = true;
 				day.text = r1day.text;
+				day.min = r1day.min;
+				day.max = r1day.max;
 				r2.days.set(i, day);
 			}
 
@@ -2672,7 +2672,7 @@ class weeWXAppCommon
 	{
 		LogMessage("getWeather()...");
 
-		Instant now = Instant.now();
+		long now = System.currentTimeMillis();
 
 		if(!KeyValue.isPrefSet("BASE_URL"))
 		{
@@ -2703,7 +2703,7 @@ class weeWXAppCommon
 			}
 		}
 
-		long secDiff = Duration.between(lastUpdateCheck, now).toSeconds();
+		long secDiff = (now - lastUpdateCheck) / 1000;
 		if(!forced && secDiff < 30 && secDiff > 0)
 		{
 			LogMessage("getWeather() !forced && and updated less than 30s ago (" +
@@ -2743,14 +2743,14 @@ class weeWXAppCommon
 
 		if(weatherTask != null && !weatherTask.isDone())
 		{
-			if(Duration.between(wtStart, now).toSeconds() < 30)
+			if((now - wtStart) / 1000 < 30)
 			{
-				LogMessage("getWeather() weatherTask is less than 30s old (" + Duration.between(wtStart, now).toSeconds() +
+				LogMessage("getWeather() weatherTask is less than 30s old (" + (now - wtStart) / 1000 +
 				           "s), we'll skip this attempt...");
 				return true;
 			}
 
-			LogMessage("getWeather() weatherTask was more than 30s old (" + Duration.between(wtStart, now).toSeconds() +
+			LogMessage("getWeather() weatherTask was more than 30s old (" + (now - wtStart) / 1000 +
 			           "s) cancelling and restarting...");
 
 			weatherTask.cancel(true);
@@ -2781,20 +2781,20 @@ class weeWXAppCommon
 
 						LogMessage("getWeather() weatherTask.SendIntent(REFRESH_WEATHER_INTENT)");
 						SendIntent(REFRESH_WEATHER_INTENT);
-						wtStart = Instant.EPOCH;
+						wtStart = 0;
 						return;
 					}
 				} catch(Exception e) {
 					LogMessage("getWeather() Error! e: " + e, true, KeyValue.e);
 					KeyValue.putVar("LastWeatherError", e.getLocalizedMessage());
 					SendIntent(REFRESH_WEATHER_INTENT);
-					wtStart = Instant.EPOCH;
+					wtStart = 0;
 					return;
 				}
 
 				LogMessage("getWeather() weatherTask.SendIntent(STOP_WEATHER_INTENT)");
 				SendIntent(STOP_WEATHER_INTENT);
-				wtStart = Instant.EPOCH;
+				wtStart = 0;
 			});
 
 			return true;
@@ -2815,20 +2815,20 @@ class weeWXAppCommon
 
 					LogMessage("getWeather() weatherTask.SendIntent(REFRESH_WEATHER_INTENT)");
 					SendIntent(REFRESH_WEATHER_INTENT);
-					wtStart = Instant.EPOCH;
+					wtStart = 0;
 					return true;
 				}
 			} catch(Exception e) {
 				LogMessage("getWeather() Error! e: " + e, true, KeyValue.e);
 				KeyValue.putVar("LastWeatherError", e.getLocalizedMessage());
 				SendIntent(REFRESH_WEATHER_INTENT);
-				wtStart = Instant.EPOCH;
+				wtStart = 0;
 				return false;
 			}
 
 			LogMessage("getWeather() weatherTask.SendIntent(STOP_WEATHER_INTENT)");
 			SendIntent(STOP_WEATHER_INTENT);
-			wtStart = Instant.EPOCH;
+			wtStart = 0;
 			return false;
 		}
 	}
@@ -2991,9 +2991,45 @@ class weeWXAppCommon
 
 			float[] temps = get_curr_min_max_temp();
 			float CurrTemp = temps[0];
-			float maxTemp = temps[2];
+			float maxObservedTemp = temps[2];
 
-			if(CurrTemp <= afternoon_temp_limit && maxTemp > afternoon_temp_limit)
+			GsonHelper gh = String2Gson();
+			if(gh == null || gh.days == null || gh.days.isEmpty())
+			{
+				LogMessage("checkTempAlerts() No forecast available to work out if the temp has peaked already or not.");
+				return;
+			}
+
+			String max = gh.days.get(0).max;
+			if(max.contains("&"))
+				max = max.substring(0, max.indexOf("&"));
+
+			float maxForecastPeak = Float.parseFloat(max);
+
+			float effectivePeak = Math.max(maxForecastPeak, maxObservedTemp);
+
+			LogMessage("checkTempAlerts() maxForecastPeak: " + maxForecastPeak);
+
+			cal1.setTimeInMillis(gh.days.get(0).timestamp);
+
+			LogMessage("checkTempAlerts() cal1: " + cal1);
+
+			boolean isToday = cal1.get(Calendar.YEAR) == cal.get(Calendar.YEAR) &&
+			                  cal1.get(Calendar.DAY_OF_YEAR) == cal.get(Calendar.DAY_OF_YEAR);
+
+			boolean after4pm = isToday && cal.get(Calendar.HOUR_OF_DAY) >= 15;
+
+			LogMessage("checkTempAlerts() after4pm: " + after4pm);
+
+			boolean hasPeaked = CurrTemp < effectivePeak && (CurrTemp < maxObservedTemp || after4pm);
+
+			LogMessage("checkTempAlerts() hasPeaked: " + hasPeaked);
+
+			boolean hasCooledOff = hasPeaked && CurrTemp <= afternoon_temp_limit && maxObservedTemp > afternoon_temp_limit;
+
+			LogMessage("checkTempAlerts() hasCooledOff: " + hasCooledOff);
+
+			if(hasCooledOff)
 			{
 				KeyValue.putVar("LastAfternoonTempAlert", System.currentTimeMillis());
 				weeWXApp.sendTemperatureAlert(CurrTemp, afternoon_temp_limit, true);
@@ -3734,15 +3770,15 @@ class weeWXAppCommon
 			return true;
 		}
 
-		Instant now = Instant.now();
-		LogMessage("getForecast() current_time: " + now.toString());
+		long now = System.currentTimeMillis();
+		LogMessage("getForecast() current_time: " + now);
 
-		Instant rssCheckTime = Instant.ofEpochMilli(getRSSms());
-		LogMessage("getForecast() rssCheckTime: " + rssCheckTime.toString());
+		long rssCheckTime = getRSSms();
+		LogMessage("getForecast() rssCheckTime: " + rssCheckTime);
 
-		Instant lastAttemptedForecastDownload = Instant.ofEpochMilli(getLAFDms());
+		long lastAttemptedForecastDownload = getLAFDms();
 
-		if(rssCheckTime.getEpochSecond() == 0)
+		if(rssCheckTime == 0)
 		{
 			LogMessage("getForecast() Bad rssCheckTime, skipping...", KeyValue.d);
 
@@ -3757,11 +3793,11 @@ class weeWXAppCommon
 			return true;
 		}
 
-		if(!forced && lastAttemptedForecastDownload.getEpochSecond() > 0 &&
-				Duration.between(lastAttemptedForecastDownload, now).toSeconds() < fcDef.delay_before_downloading)
+		long dur = (now - lastAttemptedForecastDownload) / 1000;
+		if(!forced && lastAttemptedForecastDownload > 0 && dur < fcDef.delay_before_downloading)
 		{
-			LogMessage("getForecast() !forced and last attempt was less than " + fcDef.delay_before_downloading + "s ago (" +
-						           Duration.between(lastAttemptedForecastDownload, now).toSeconds() + "s ago)");
+			LogMessage("getForecast() !forced and last attempt was less than " + fcDef.delay_before_downloading +
+			           "s ago (" + dur + "s ago)");
 			if(hasForecastGson)
 				return true;
 
@@ -3770,10 +3806,11 @@ class weeWXAppCommon
 			return false;
 		}
 
-		if(!forced && hasForecastGson && Duration.between(Instant.ofEpochMilli(getRSSms()), now).toSeconds() < fcDef.default_forecast_refresh)
+		dur = (now - getRSSms()) / 1000;
+		if(!forced && hasForecastGson && dur < fcDef.default_forecast_refresh)
 		{
-			LogMessage("getForecast() !forced and hasForecastGson and cache isn't more than " + fcDef.default_forecast_refresh + "s old (" +
-			           Duration.between(Instant.ofEpochMilli(getRSSms()), now).toSeconds() + "s ago), skipping...");
+			LogMessage("getForecast() !forced and hasForecastGson and cache isn't more than " +
+			           fcDef.default_forecast_refresh + "s old (" + dur + "s ago), skipping...");
 			return true;
 		}
 
@@ -3791,12 +3828,13 @@ class weeWXAppCommon
 
 		int wait_time = fcDef.default_wait_before_killing_executor;
 
+		dur = (now - ftStart) / 1000;
 		if(forecastTask != null && !forecastTask.isDone())
 		{
-			if(Duration.between(ftStart, now).toSeconds() < wait_time)
+			if(dur < wait_time)
 			{
 				LogMessage("getForecast() forecastTask is less than " + wait_time + "s old (" +
-				           Duration.between(ftStart, now).toSeconds() + "s), we'll skip this attempt...", KeyValue.d);
+				           dur + "s), we'll skip this attempt...", KeyValue.d);
 
 				if(hasForecastGson)
 				{
@@ -3813,11 +3851,12 @@ class weeWXAppCommon
 			forecastTask = null;
 		}
 
+		dur = (now - rssCheckTime) / 1000;
 		LogMessage("getForecast() RSSCache_period_default: " + fcDef.default_forecast_refresh);
 		LogMessage("getForecast() current_time: " + now);
 		LogMessage("getForecast() rssCheckTime: " + rssCheckTime);
-		LogMessage("getForecast() Was forced or no forecast data or cache is more than " + fcDef.default_forecast_refresh +
-		           "s old (" + Duration.between(rssCheckTime, now).toSeconds() + "s)");
+		LogMessage("getForecast() Was forced or no forecast data or cache is more than " +
+		           fcDef.default_forecast_refresh + "s old (" + dur + "s)");
 
 		ftStart = now;
 
@@ -3834,7 +3873,7 @@ class weeWXAppCommon
 				else
 					SendIntent(STOP_FORECAST_INTENT);
 
-				ftStart = Instant.EPOCH;
+				ftStart = 0;
 			});
 
 			if(hasForecastGson)
@@ -3855,7 +3894,7 @@ class weeWXAppCommon
 			else
 				SendIntent(STOP_FORECAST_INTENT);
 
-			ftStart = Instant.EPOCH;
+			ftStart = 0;
 
 			return ret;
 		}
@@ -3946,27 +3985,47 @@ class weeWXAppCommon
 				.indentAmount(2).prettyPrint(true)).outerHtml();
 	}
 
-	static String[] getGsonContent(String forecastGson, boolean showHeader)
+	static GsonHelper String2Gson()
 	{
-		LogMessage("weeWXAppCommon.getGsonContent() forecastGson.length(): " + forecastGson.length());
+		int modhour = getIntervalTime()[1];
+		String forecastGson = (String)KeyValue.readVar("forecastGsonEncoded", "");
+		return String2Gson(forecastGson, modhour);
+	}
+
+	static GsonHelper String2Gson(String forecastGson, int modhour)
+	{
+		boolean hasForecastGson = forecastGson != null && forecastGson.length() > 128;
+
+		if(!hasForecastGson)
+			return null;
+
+		LogMessage("weeWXAppCommon.String2Gson() forecastGson.length(): " + forecastGson.length());
 
 		Gson gson = new Gson();
 		GsonHelper gh = gson.fromJson(forecastGson, GsonHelper.class);
 		if(gh == null || gh.days == null || gh.days.isEmpty())
 		{
-			LogMessage("weeWXAppCommon.getGsonContent() #2 Failed to process WZ forecast data...");
-			return new String[]{"error", weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data)};
+			LogMessage("weeWXAppCommon.String2Gson() #2 Failed to process WZ forecast data...");
+			return null;
 		}
 
+		if(!gh.isDaily)
+			gh.days = filterByInterval(gh.days, modhour);
+
+		LogMessage("weeWXAppCommon.String2Gson() displayDays.size(): " + gh.days.size());
+
+		return gh;
+	}
+
+	static String[] getGsonContent(String forecastGson, boolean showHeader)
+	{
 		int modhour = getIntervalTime()[1];
 
-		List<Day> displayDays = gh.days;
-		if(!gh.isDaily)
-			displayDays = filterByInterval(gh.days, modhour);
+		GsonHelper gh = String2Gson(forecastGson, modhour);
+		if(gh == null)
+			return new String[]{"error", weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data)};
 
-		LogMessage("weeWXAppCommon.getGsonContent() displayDays.size(): " + displayDays.size());
-
-		String content = generateForecast(displayDays, gh.timestamp, showHeader, gh.isDaily || modhour == 24);
+		String content = generateForecast(gh.days, gh.timestamp, showHeader, gh.isDaily || modhour == 24);
 		if(content == null || content.isBlank())
 		{
 			LogMessage("weeWXAppCommon.getGsonContent() #3 Failed to process forecast data...");
@@ -3980,8 +4039,8 @@ class weeWXAppCommon
 
 	private static List<Day> filterByInterval(List<Day> allEntries, int modhour)
 	{
-		LogMessage("filterByInterval(): modhour: " + modhour);
-		LogMessage("filterByInterval(): allEntries: " + allEntries);
+//		LogMessage("filterByInterval(): modhour: " + modhour);
+//		LogMessage("filterByInterval(): allEntries: " + allEntries);
 
 		if(allEntries == null || allEntries.isEmpty())
 			return allEntries;
@@ -4005,7 +4064,7 @@ class weeWXAppCommon
 				filtered.add(day);
 		}
 
-		LogMessage("filterByInterval(): filtered: " + filtered);
+//		LogMessage("filterByInterval(): filtered: " + filtered);
 
 		return filtered;
 	}
@@ -4319,26 +4378,26 @@ class weeWXAppCommon
 				return weeWXApp.textToBitmap(R.string.radar_still_downloading);
 		}
 
-		Instant now = Instant.now();
-		Instant lastRadarDownload = Instant.ofEpochMilli((long)KeyValue.readVar("lastRadarDownload", 0L));
+		long now = System.currentTimeMillis();
+		long lastRadarDownload = (long)KeyValue.readVar("lastRadarDownload", 0L);
 
 		long[] npwsll = getNPWSLL();
-		Instant ldt = Instant.ofEpochMilli(npwsll[5]);
-
-		if(!forced && bm != null && Duration.between(ldt, lastRadarDownload).toMillis() < npwsll[1])
+		long dur = npwsll[5] - lastRadarDownload;
+		if(!forced && bm != null && dur < npwsll[1])
 		{
 			LogMessage("getRadarImage() Not forced and bm != null and less than " + npwsll[1] +
-			           "ms (" + Duration.between(ldt, lastRadarDownload).toMillis() + "ms)...", KeyValue.d);
+			           "ms (" + dur + "ms)...", KeyValue.d);
 			return bm;
 		}
 
 		LogMessage("getRadarImage() Reload radar...");
 
+		dur = (now - rtStart) / 1000;
 		if(radarTask != null && !radarTask.isDone())
 		{
-			if(Duration.between(rtStart, now).toSeconds() < 30)
+			if(dur < 30)
 			{
-				LogMessage("getRadarImage() radarTask is less than 30s old (" + Duration.between(rtStart, now).toSeconds() +
+				LogMessage("getRadarImage() radarTask is less than 30s old (" + dur +
 				                          "s), we'll skip this attempt...", KeyValue.d);
 				return bm;
 			}
@@ -4364,7 +4423,7 @@ class weeWXAppCommon
 					{
 						KeyValue.putVar("lastRadarDownload", System.currentTimeMillis());
 						SendIntent(REFRESH_RADAR_INTENT);
-						rtStart = Instant.EPOCH;
+						rtStart = 0;
 						return;
 					}
 				} catch(Exception e) {
@@ -4372,7 +4431,7 @@ class weeWXAppCommon
 				}
 
 				SendIntent(STOP_RADAR_INTENT);
-				rtStart = Instant.EPOCH;
+				rtStart = 0;
 			});
 
 			return bm;
@@ -4387,7 +4446,7 @@ class weeWXAppCommon
 				{
 					KeyValue.putVar("lastRadarDownload", System.currentTimeMillis());
 					SendIntent(REFRESH_RADAR_INTENT);
-					rtStart = Instant.EPOCH;
+					rtStart = 0;
 					return bm;
 				}
 			} catch(Exception e) {
@@ -4395,7 +4454,7 @@ class weeWXAppCommon
 			}
 
 			SendIntent(STOP_RADAR_INTENT);
-			rtStart = Instant.EPOCH;
+			rtStart = 0;
 			return null;
 		}
 	}
@@ -4403,7 +4462,7 @@ class weeWXAppCommon
 	static Bitmap getWebcamImage(boolean forced, boolean calledFromweeWXApp, boolean noCache, boolean runningInBG)
 	{
 		Bitmap bm = null;
-		Instant now = Instant.now();
+		long now = System.currentTimeMillis();
 
 		try
 		{
@@ -4449,17 +4508,16 @@ class weeWXAppCommon
 			return weeWXApp.textToBitmap(R.string.webcam_url_url_not_set);
 		}
 
-		if(!forced && Duration.between(wcStart, now).toSeconds() < 30)
+		long dur = (now - wcStart) / 1000;
+		if(!forced && dur < 30)
 		{
 			if(bm == null)
 			{
-				LogMessage("getWebcamImage() Not forced and not 30s old (" +
-				           Duration.between(wcStart, now).toSeconds() + "s) and bm == null...");
+				LogMessage("getWebcamImage() Not forced and not 30s old (" + dur + "s) and bm == null...");
 				return weeWXApp.textToBitmap(R.string.webcam_still_downloading);
 
 			} else {
-				LogMessage("getWebcamImage() Not forced and not 30s old (" +
-				           Duration.between(wcStart, now).toSeconds() + "s) and bm != null...");
+				LogMessage("getWebcamImage() Not forced and not 30s old (" + dur + "s) and bm != null...");
 				return bm;
 			}
 		}
@@ -4475,24 +4533,22 @@ class weeWXAppCommon
 		}
 
 		long[] npwsll = getNPWSLL();
-		Instant lastWebcamDownload = Instant.ofEpochMilli((long)KeyValue.readVar("lastWebcamDownload", 0L));
-		Instant ldt = Instant.ofEpochMilli(npwsll[5]);
-
-		if(!forced && bm != null && Duration.between(ldt, lastWebcamDownload).toMillis() < npwsll[1])
+		long lastWebcamDownload = (long)KeyValue.readVar("lastWebcamDownload", 0L);
+		dur = npwsll[5] - lastWebcamDownload;
+		if(!forced && bm != null && dur < npwsll[1])
 		{
-			LogMessage("getWebcamImage() Not forced and bm != null and less than " + npwsll[1] + "ms (" +
-			           Duration.between(ldt, lastWebcamDownload).toMillis() + "ms)...");
+			LogMessage("getWebcamImage() Not forced and bm != null and less than " + npwsll[1] + "ms (" + dur + "ms)...");
 			return bm;
 		}
 
 		LogMessage("getWebcamImage() Reload webcam...");
 
+		dur = (now - wcStart) / 1000;
 		if(webcamTask != null && !webcamTask.isDone())
 		{
-			if(Duration.between(wcStart, now).toSeconds() < 30)
+			if(dur < 30)
 			{
-				LogMessage("getWebcamImage() webcamTask is less than 30s old (" +
-				           Duration.between(wcStart, now).toSeconds() + "s), we'll skip this attempt...");
+				LogMessage("getWebcamImage() webcamTask is less than 30s old (" + dur + "s), we'll skip this attempt...");
 				return bm;
 			}
 
@@ -4516,7 +4572,7 @@ class weeWXAppCommon
 						KeyValue.putVar("lastWebcamDownload", npwsll[4]);
 						LogMessage("getWebcamImage() Webcam image downloaded successfully...");
 						SendIntent(REFRESH_WEBCAM_INTENT);
-						wcStart = Instant.EPOCH;
+						wcStart = 0;
 						return;
 					}
 				} catch(Exception e) {
@@ -4525,7 +4581,7 @@ class weeWXAppCommon
 
 				LogMessage("getWebcamImage() Webcam image failed to download successfully...", KeyValue.w);
 				SendIntent(STOP_WEBCAM_INTENT);
-				wcStart = Instant.EPOCH;
+				wcStart = 0;
 			});
 
 			if(bm == null)
@@ -4544,7 +4600,7 @@ class weeWXAppCommon
 					KeyValue.putVar("lastWebcamDownload", npwsll[4]);
 					LogMessage("getWebcamImage() Webcam image downloaded successfully...");
 					SendIntent(REFRESH_WEBCAM_INTENT);
-					wcStart = Instant.EPOCH;
+					wcStart = 0;
 					return bm;
 				}
 			} catch(Exception e) {
@@ -4553,7 +4609,7 @@ class weeWXAppCommon
 
 			LogMessage("getWebcamImage() Webcam image failed to download successfully...", KeyValue.w);
 			SendIntent(STOP_WEBCAM_INTENT);
-			wcStart = Instant.EPOCH;
+			wcStart = 0;
 			return null;
 		}
 	}

@@ -10,9 +10,6 @@ import android.view.ViewParent;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 
-import java.time.Duration;
-import java.time.Instant;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -30,7 +27,7 @@ public class Custom extends Fragment
 	private SafeWebView wv;
 	private SwipeRefreshLayout swipeLayout;
 	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(wv.getScrollY() == 0);
-	private Instant lastRefresh = Instant.EPOCH;
+	private long lastRefresh = 0;
 
 	@Nullable
 	@Override
@@ -48,7 +45,7 @@ public class Custom extends Fragment
 			swipeLayout.setRefreshing(true);
 			LogMessage("onRefresh();");
 			loadCustom(true);
-			lastRefresh = Instant.now();
+			lastRefresh = System.currentTimeMillis();
 		});
 
 		if(wv == null)
@@ -183,9 +180,9 @@ public class Custom extends Fragment
 
 		if(str.equals(weeWXAppCommon.REFRESH_WEATHER_INTENT))
 		{
-			Instant now = Instant.now();
+			long now = System.currentTimeMillis();
 
-			if(Math.abs(Duration.between(lastRefresh, now).toSeconds()) < 30)
+			if((now - lastRefresh) / 1000 < 30)
 				return;
 
 			lastRefresh = now;

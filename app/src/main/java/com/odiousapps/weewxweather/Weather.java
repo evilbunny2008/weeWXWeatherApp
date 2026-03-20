@@ -14,8 +14,6 @@ import android.widget.TextView;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
 
-import java.time.Duration;
-import java.time.Instant;
 import java.util.Locale;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -48,7 +46,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(5);
 
-	private Instant lastRunForecast = Instant.EPOCH, lastRunRadar = Instant.EPOCH;
+	private long lastRunForecast = 0, lastRunRadar = 0;
 
 	public View onCreateView(@NonNull LayoutInflater inflater,
 	                         @Nullable ViewGroup container,
@@ -370,9 +368,9 @@ public class Weather extends Fragment implements View.OnClickListener
 		   (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) != weeWXApp.RadarOnHomeScreen)
 			return;
 
-		Instant now = Instant.now();
-
-		if(Math.abs(Duration.between(lastRunRadar, now).toSeconds()) < 5)
+		long now = System.currentTimeMillis();
+		long dur = (now - lastRunRadar) / 1000;
+		if(dur < 5)
 		{
 			LogMessage("We already ran less than 5s ago, skipping...", KeyValue.d);
 			if(!swipeLayout.isRefreshing())
@@ -805,7 +803,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	void loadWebViewURL(boolean forced, String url)
 	{
-		Instant now = Instant.now();
+		long now = System.currentTimeMillis();
 
 		LogMessage("loadWebViewURL() url: " + url);
 
@@ -825,7 +823,8 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		if(Math.abs(Duration.between(lastRunForecast, now).toSeconds()) < 5)
+		long dur = (now - lastRunForecast) / 1000;
+		if(dur < 5)
 		{
 			LogMessage("loadWebViewURL() ran less than 5s ago, skipping...", KeyValue.d);
 			stopRefreshing();

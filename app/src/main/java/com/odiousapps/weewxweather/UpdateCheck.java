@@ -10,8 +10,6 @@ import android.os.Build;
 import android.os.PowerManager;
 import android.provider.Settings;
 
-import java.time.Duration;
-import java.time.Instant;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -27,7 +25,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 	private static Future<?> backgroundTask;
 
-	private static Instant bgStart = Instant.EPOCH, bgLastRun = Instant.EPOCH;
+	private static long bgStart = 0, bgLastRun = 0;
 
 	@Override
 	public void onReceive(Context context, Intent i)
@@ -247,13 +245,13 @@ public class UpdateCheck extends BroadcastReceiver
 	{
 		LogMessage("UpdateCheck.runInTheBackground() Running the background updates...");
 
-		Instant now = Instant.now();
-
-		if(Math.abs(Duration.between(bgLastRun, now).toSeconds()) < 10)
+		long now = System.currentTimeMillis();
+		long dur = (now - bgLastRun) / 1000;
+		if(dur < 10)
 		{
 			{
 				LogMessage("UpdateCheck.runInTheBackground() this function was called less than 10s ago (" +
-				           Math.abs(Duration.between(bgLastRun, now).toSeconds()) + "s), skipping...");
+				           dur + "s), skipping...");
 				return;
 			}
 		}
@@ -353,11 +351,11 @@ public class UpdateCheck extends BroadcastReceiver
 
 		if(backgroundTask != null && !backgroundTask.isDone())
 		{
-			if(Math.abs(Duration.between(bgStart, now).toSeconds()) < fcDef.default_wait_before_killing_executor)
+			dur = (now - bgStart) / 1000;
+			if(dur < fcDef.default_wait_before_killing_executor)
 			{
 				LogMessage("UpdateCheck.runInTheBackground() runInTheBackground() executor is still running and is less than " +
-				           fcDef.default_wait_before_killing_executor + "s old (" +
-				           Math.abs(Duration.between(bgStart, now).toSeconds()) + "s), skipping...");
+				           fcDef.default_wait_before_killing_executor + "s old (" + dur + "s), skipping...");
 				return;
 			}
 
@@ -366,7 +364,7 @@ public class UpdateCheck extends BroadcastReceiver
 			backgroundTask = null;
 		}
 
-		LogMessage("UpdateCheck.runInTheBackground() bgLastRun = bgStart = " + now.toEpochMilli());
+		LogMessage("UpdateCheck.runInTheBackground() bgLastRun = bgStart = " + now);
 		bgLastRun = bgStart = now;
 
 		LogMessage("UpdateCheck.runInTheBackground() Starting the real work...");
@@ -428,7 +426,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 			LogMessage("UpdateCheck.runInTheBackground() Finished running the background updates, about to release the wake lock...");
 
-			bgStart = Instant.EPOCH;
+			bgStart = 0;
 
 			wl.release();
 		});
