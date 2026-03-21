@@ -45,6 +45,12 @@ class KeyValue
 
 	static boolean hasNotificationPerm = false;
 
+	static boolean debugging_on()
+	{
+		return isPrefSet("save_app_debug_logs") &&
+						(boolean)readVar("save_app_debug_logs", weeWXApp.save_app_debug_logs_default);
+	}
+
 	static boolean isPrefSet(String var)
 	{
 		for(int i = 0; i < prefs.size(); i++)

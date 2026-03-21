@@ -2823,7 +2823,7 @@ class weeWXAppCommon
 				KeyValue.putVar("LastWeatherError", e.getLocalizedMessage());
 				SendIntent(REFRESH_WEATHER_INTENT);
 				wtStart = 0;
-				return false;
+				return true;
 			}
 
 			LogMessage("getWeather() weatherTask.SendIntent(STOP_WEATHER_INTENT)");
@@ -2849,8 +2849,7 @@ class weeWXAppCommon
 		LogMessage("checkRainAlert() rainfall_alert set to true");
 
 		long last_rainfall_alert = (long)KeyValue.readVar("LastRainfallAlert", 0L);
-		Date date1 = new Date(last_rainfall_alert);
-		cal1.setTime(date1);
+		cal1.setTimeInMillis(last_rainfall_alert);
 
 		if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
 		   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
@@ -2929,6 +2928,7 @@ class weeWXAppCommon
 		Calendar cal = Calendar.getInstance();
 		Calendar cal1 = Calendar.getInstance();
 
+		// Don't trigger temp alerts before 6am
 		if(cal.get(Calendar.HOUR_OF_DAY) < 6)
 			return;
 
@@ -2937,8 +2937,7 @@ class weeWXAppCommon
 			LogMessage("checkTempAlerts() morning_temp_alert set to true");
 
 			long last_morning_alert = (long)KeyValue.readVar("LastMorningTempAlert", 0L);
-			Date date1 = new Date(last_morning_alert);
-			cal1.setTime(date1);
+			cal1.setTimeInMillis(last_morning_alert);
 
 			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
 			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
@@ -2951,9 +2950,49 @@ class weeWXAppCommon
 
 			float[] temps = get_curr_min_max_temp();
 			float CurrTemp = temps[0];
-			float minTemp = temps[1];
+			float minObservedTemp = temps[1];
 
-			if(CurrTemp >= morning_temp_limit && minTemp < morning_temp_limit)
+			minObservedTemp = Math.min(minObservedTemp, CurrTemp);
+
+			GsonHelper gh = String2Gson();
+			if(gh == null || gh.days == null || gh.days.isEmpty())
+			{
+				LogMessage("checkTempAlerts() No forecast available to work out if the temp has bottomed out already or not.");
+				return;
+			}
+
+			String min = gh.days.get(0).min;
+			if(min != null && min.contains("&"))
+				min = min.substring(0, min.indexOf("&"));
+
+			if(min == null || min.isBlank())
+			{
+				LogMessage("checkTempAlerts() No forecast minimum temperature available to work out if the temp has bottomed out already or not.");
+				return;
+			}
+
+			float minForecastTemp = Float.parseFloat(min);
+
+			float effectiveMin = Math.min(minForecastTemp, minObservedTemp);
+
+			LogMessage("checkTempAlerts() minForecastTemp: " + minForecastTemp);
+
+			cal1.setTimeInMillis(gh.days.get(0).timestamp);
+
+			LogMessage("checkTempAlerts() cal1: " + cal1);
+
+			boolean isToday = cal1.get(Calendar.YEAR) == cal.get(Calendar.YEAR) &&
+			                  cal1.get(Calendar.DAY_OF_YEAR) == cal.get(Calendar.DAY_OF_YEAR);
+
+			boolean hasBottomedOut = CurrTemp > effectiveMin && CurrTemp > minObservedTemp;
+
+			LogMessage("checkTempAlerts() hasBottomedOut: " + hasBottomedOut);
+
+			boolean hasWarmedUp = hasBottomedOut && CurrTemp >= morning_temp_limit && minObservedTemp < morning_temp_limit;
+
+			LogMessage("checkTempAlerts() hasWarmedUp: " + hasWarmedUp);
+
+			if(hasWarmedUp)
 			{
 				KeyValue.putVar("LastMorningTempAlert", System.currentTimeMillis());
 				weeWXApp.sendTemperatureAlert(CurrTemp, morning_temp_limit, false);
@@ -2993,6 +3032,8 @@ class weeWXAppCommon
 			float CurrTemp = temps[0];
 			float maxObservedTemp = temps[2];
 
+			maxObservedTemp = Math.max(maxObservedTemp, CurrTemp);
+
 			GsonHelper gh = String2Gson();
 			if(gh == null || gh.days == null || gh.days.isEmpty())
 			{
@@ -3001,8 +3042,14 @@ class weeWXAppCommon
 			}
 
 			String max = gh.days.get(0).max;
-			if(max.contains("&"))
+			if(max != null && max.contains("&"))
 				max = max.substring(0, max.indexOf("&"));
+
+			if(max == null || max.isBlank())
+			{
+				LogMessage("checkTempAlerts() No forecast maximum temperature available to work out if the temp has peaked already or not.");
+				return;
+			}
 
 			float maxForecastPeak = Float.parseFloat(max);
 
@@ -3017,7 +3064,7 @@ class weeWXAppCommon
 			boolean isToday = cal1.get(Calendar.YEAR) == cal.get(Calendar.YEAR) &&
 			                  cal1.get(Calendar.DAY_OF_YEAR) == cal.get(Calendar.DAY_OF_YEAR);
 
-			boolean after4pm = isToday && cal.get(Calendar.HOUR_OF_DAY) >= 15;
+			boolean after4pm = isToday && cal.get(Calendar.HOUR_OF_DAY) >= 16;
 
 			LogMessage("checkTempAlerts() after4pm: " + after4pm);
 
@@ -4033,7 +4080,7 @@ class weeWXAppCommon
 		}
 
 		LogMessage("weeWXAppCommon.getGsonContent() content.length(): " + content.length());
-		LogMessage("weeWXAppCommon.getGsonContent() content: " + content);
+//		LogMessage("weeWXAppCommon.getGsonContent() content: " + content);
 		return new String[]{null, content, gh.desc != null ? gh.desc : ""};
 	}
 
@@ -4081,9 +4128,6 @@ class weeWXAppCommon
 			KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.forecast_url_not_set));
 			return false;
 		}
-
-		boolean debugging_on = weeWXApp.DEBUG || (KeyValue.isPrefSet("save_app_debug_logs") &&
-				(boolean)KeyValue.readVar("save_app_debug_logs", weeWXApp.save_app_debug_logs_default));
 
 		KeyValue.putVar("lastAttemptedForecastDownloadTime", System.currentTimeMillis());
 
@@ -4135,7 +4179,7 @@ class weeWXAppCommon
 					if(wzHTML.startsWith("error|"))
 						break;
 
-					if(wzHTML.length() > 128 && !r2fromfile && debugging_on)
+					if(wzHTML.length() > 128 && !r2fromfile && KeyValue.debugging_on())
 						CustomDebug.writeDebug("weeWX", "R2_body.html", wzHTML);
 
 					LogMessage("reallyGetForecast() Got data from WZ, let's try to find forecast strings in it...");
@@ -4170,7 +4214,7 @@ class weeWXAppCommon
 
 			LogMessage("reallyGetForecast() Got forecast strings from WZ... rc: " + r2.rc());
 
-			if(weeWXApp.DEBUG)
+			if(weeWXApp.DEBUG && KeyValue.debugging_on())
 			{
 				try
 				{
@@ -4207,7 +4251,7 @@ class weeWXAppCommon
 					if(forecastData.startsWith("error|"))
 						break;
 
-					if(forecastData.length() > 128 && !r1fromfile && debugging_on)
+					if(forecastData.length() > 128 && !r1fromfile && KeyValue.debugging_on())
 						CustomDebug.writeDebug("weeWX", "R1_body.html", forecastData);
 
 					LogMessage("reallyGetForecast() Got data from WZ, let's try to find forecast blocks in it...");
@@ -4249,10 +4293,14 @@ class weeWXAppCommon
 				return false;
 			}
 
-			if(forecastData.length() > 128 && debugging_on)
+			if(forecastData.length() > 128 && KeyValue.debugging_on())
 			{
-				try { CustomDebug.writeDebug("weeWX", "forecast.html", forecastData); }
-				catch(Exception e) { LogMessage("reallyGetForecast() Debug write failed: " + e.getMessage(), KeyValue.w); }
+				try
+				{
+					CustomDebug.writeDebug("weeWX", "forecast.html", forecastData);
+				} catch(Exception e) {
+					LogMessage("reallyGetForecast() Debug write failed: " + e.getMessage(), KeyValue.w);
+				}
 			}
 
 			LogMessage("reallyGetForecast() forcecastData: " + forecastData);
