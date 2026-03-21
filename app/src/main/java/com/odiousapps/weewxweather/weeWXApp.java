@@ -1097,7 +1097,7 @@ public class weeWXApp extends Application
 
 	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "temperature_alerts")
 	        .setSmallIcon(iconID)
-	        .setContentTitle(getAndroidString(R.string.temperature))
+	        .setContentTitle(getAndroidString(R.string.temperature_alert_str))
 	        .setContentText(str)
 	        .setPriority(NotificationCompat.PRIORITY_HIGH)
 	        .setAutoCancel(true);
@@ -1120,7 +1120,7 @@ public class weeWXApp extends Application
 
 	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainfall_alert")
 	        .setSmallIcon(R.drawable.rain)
-	        .setContentTitle(getAndroidString(R.string.rainfall_alert))
+	        .setContentTitle(getAndroidString(R.string.rainfall_alert_str))
 	        .setContentText(str)
 	        .setPriority(NotificationCompat.PRIORITY_HIGH)
 	        .setAutoCancel(true);
@@ -1143,7 +1143,7 @@ public class weeWXApp extends Application
 
 	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainrate_alert")
 	        .setSmallIcon(R.drawable.rain)
-	        .setContentTitle(getAndroidString(R.string.rainrate_alert))
+	        .setContentTitle(getAndroidString(R.string.rainrate_alert_str))
 	        .setContentText(str)
 	        .setPriority(NotificationCompat.PRIORITY_HIGH)
 	        .setAutoCancel(true);
