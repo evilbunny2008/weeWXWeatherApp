@@ -2865,7 +2865,7 @@ class weeWXAppCommon
 		String[] bits = lastDownload.split("\\|");
 
 		float rainfall = Float.parseFloat(bits[20]);
-		if(!bits[158].isBlank())
+		if(bits.length > 158 && !bits[158].isBlank())
 			rainfall = Float.parseFloat(bits[158]);
 
 		float rainfall_limit = (int)KeyValue.readVar("RainfallLimit", weeWXApp.RainfallLimit_default) / 100f;
@@ -2905,13 +2905,25 @@ class weeWXAppCommon
 		if(lastDownload == null || lastDownload.isBlank())
 			return;
 
+		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
+		boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
+		float rainrate_limit = (int)KeyValue.readVar("RainrateLimit", weeWXApp.RainrateLimit_default) / 100f;
+
 		String[] bits = lastDownload.split("\\|");
 
 		float rainrate = Float.parseFloat(bits[24]);
 
-		float rainrate_limit = (int)KeyValue.readVar("RainrateLimit", weeWXApp.RainrateLimit_default) / 100f;
+		float rainfall = Float.parseFloat(bits[20]);
+		if(bits.length > 158 && !bits[158].isBlank())
+			rainfall = Float.parseFloat(bits[158]);
+		if(bits.length > 296 && !bits[296].isBlank())
+			rainfall = Float.parseFloat(bits[296]);
 
-		if(rainrate >= rainrate_limit)
+		float minRainfall = weeWXApp.minRainfall;
+		if(!metric || rainInInches)
+			minRainfall = Math.round(mm2in(minRainfall));
+
+		if(rainrate >= rainrate_limit && rainfall >= minRainfall / 100f)
 		{
 			KeyValue.putVar("LastRainrateAlert", now);
 			weeWXApp.sendRainrateAlert(rainrate, rainrate_limit);

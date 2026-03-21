@@ -243,7 +243,9 @@ public class weeWXApp extends Application
 	final static int RainfallLimit_default = 2500;
 
 	final static boolean rainrate_alert_default = false;
-	final static int RainrateLimit_default = 5000;
+	final static int RainrateLimit_default = 10000;
+
+	final static float minRainfall = 1000;
 
 	final static String radtype_default = "image";
 	final static String SETTINGS_URL_default = "https://example.com/weewx/inigo-settings.txt";

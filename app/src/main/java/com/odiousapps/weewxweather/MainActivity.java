@@ -158,8 +158,8 @@ public class MainActivity extends FragmentActivity
 	private int MorningTemp = 230;
 	private int AfternoonTemp = 260;
 
-	private int RainfallLimit = 1000;
-	private int RainrateLimit = 5000;
+	private int RainfallLimit = 2500;
+	private int RainrateLimit = 10000;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
