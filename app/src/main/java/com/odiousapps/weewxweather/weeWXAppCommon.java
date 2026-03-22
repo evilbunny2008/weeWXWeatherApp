@@ -199,6 +199,40 @@ class weeWXAppCommon
 
 	private static final String utf8 = "utf-8";
 
+	// Period indices
+	private static final int PERIOD_10MIN = 0;
+	private static final int PERIOD_30MIN = 1;
+	private static final int PERIOD_1HR   = 2;
+	private static final int PERIOD_6HR   = 3;
+	private static final int PERIOD_24HR  = 4;
+
+	// Alert level indices
+	private static final int LEVEL_WATCH   = 0;
+	private static final int LEVEL_WARNING = 1;
+	private static final int LEVEL_SEVERE  = 2;
+
+	// Thresholds in mm
+	private static final int[][] FLOOD_THRESHOLDS_MM = {
+	    { 600,   1000,  2000  },  // 10 min
+	    { 1500,  2500,  5000  },  // 30 min
+	    { 2500,  5000,  10000 },  // 1 hr
+	    { 6000,  11000, 20000 },  // 6 hr
+	    { 10000, 20000, 30000 }   // 24 hr
+	};
+
+	// Thresholds in 1/100ths inch
+	private static final int[][] FLOOD_THRESHOLDS_IN = {
+	    { 24,  39,  79   },  // 10 min
+	    { 59,  98,  197  },  // 30 min
+	    { 98,  197, 394  },  // 1 hr
+	    { 236, 433, 787  },  // 6 hr
+	    { 394, 787, 1181 }   // 24 hr
+	};
+
+	private static final int[] warning_delays = {
+		600, 1800, 3600, 21600, 86400
+	};
+
 	static
 	{
 		if(weeWXApp.DEBUG)
@@ -2842,11 +2876,11 @@ class weeWXAppCommon
 
 		if(!rainfall_alert)
 		{
-			LogMessage("checkRainAlert() rainfall_alert set to false");
+			LogMessage("checkRainfallAlert() rainfall_alert set to false");
 			return;
 		}
 
-		LogMessage("checkRainAlert() rainfall_alert set to true");
+		LogMessage("checkRainfallAlert() rainfall_alert set to true");
 
 		long last_rainfall_alert = (long)KeyValue.readVar("LastRainfallAlert", 0L);
 		cal1.setTimeInMillis(last_rainfall_alert);
@@ -2854,7 +2888,7 @@ class weeWXAppCommon
 		if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
 		   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
 		{
-			LogMessage("checkRainAlert() Rainfall notification already triggered today");
+			LogMessage("checkRainfallAlert() Rainfall notification already triggered today");
 			return;
 		}
 
@@ -2874,63 +2908,137 @@ class weeWXAppCommon
 		{
 			KeyValue.putVar("LastRainfallAlert", System.currentTimeMillis());
 			weeWXApp.sendRainfallAlert(rainfall, rainfall_limit);
-			LogMessage("checkRainAlert() rainfall (" + rainfall + ") >= rainfall_limit (" + rainfall_limit + ") notification triggered");
+			LogMessage("checkRainfallAlert() rainfall (" + rainfall + ") >= rainfall_limit (" + rainfall_limit + ") notification triggered");
 		} else {
-			LogMessage("checkRainAlert() rainfall (" + rainfall + ") < rainfall_limit (" + rainfall_limit + ") no notification triggered");
+			LogMessage("checkRainfallAlert() rainfall (" + rainfall + ") < rainfall_limit (" + rainfall_limit + ") no notification triggered");
 		}
 	}
 
 	static void checkRainrateAlert()
 	{
-		boolean rainrate_alert = (boolean)KeyValue.readVar("rainrate_alert", weeWXApp.rainrate_alert_default);
-
-		if(!rainrate_alert)
-		{
-			LogMessage("checkRainAlert() rainrate_alert set to false");
-			return;
-		}
-
-		LogMessage("checkRainAlert() rainrate_alert set to true");
-
-		long now = System.currentTimeMillis();
-		long last_rainrate_alert = (long)KeyValue.readVar("LastRainrateAlert", 0L);
-
-		if(now - last_rainrate_alert < 3_600_000L)
-		{
-			LogMessage("checkRainAlert() Rainrate notification already triggered in last hour");
-			return;
-		}
-
 		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
 		if(lastDownload == null || lastDownload.isBlank())
+		{
+			LogMessage("checkRainrateAlert() lastDownload == null || lastDownload.isBlank()");
 			return;
-
-		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
-		boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
-		float rainrate_limit = (int)KeyValue.readVar("RainrateLimit", weeWXApp.RainrateLimit_default) / 100f;
+		}
 
 		String[] bits = lastDownload.split("\\|");
 
+		checkRainrateAlert(bits);
+	}
+
+	static void checkRainrateAlert(String[] bits)
+	{
+		if(bits == null || bits.length == 0)
+		{
+			LogMessage("checkRainrateAlert() bits == null || bits.length == 0");
+			return;
+		}
+
+		boolean[] rainrate_alerts = {
+			(boolean)KeyValue.readVar("rainrate_alert_watch", weeWXApp.rainrate_alert_watch_default),
+			(boolean)KeyValue.readVar("rainrate_alert_warning", weeWXApp.rainrate_alert_warning_default),
+			(boolean)KeyValue.readVar("rainrate_alert_severe", weeWXApp.rainrate_alert_severe_default),
+		};
+
+		if(!rainrate_alerts[0] && !rainrate_alerts[1] && !rainrate_alerts[2])
+		{
+			LogMessage("checkRainrateAlert() rainrate_alert set to false");
+			return;
+		}
+
+		LogMessage("checkRainrateAlert() At least one rainrate alert is true");
+
+		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default) &&
+		                 !(boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
+
 		float rainrate = Float.parseFloat(bits[24]);
 
-		float rainfall = Float.parseFloat(bits[20]);
-		if(bits.length > 158 && !bits[158].isBlank())
-			rainfall = Float.parseFloat(bits[158]);
-		if(bits.length > 296 && !bits[296].isBlank())
-			rainfall = Float.parseFloat(bits[296]);
+		int[] totals = {
+			Math.round(getRainTotal(296, bits) * 100),
+			Math.round(getRainTotal(297, bits) * 100),
+			Math.round(getRainTotal(298, bits) * 100),
+			Math.round(getRainTotal(299, bits) * 100),
+			Math.round(getRainTotal(300, bits) * 100)
+		};
 
-		float minRainfall = weeWXApp.minRainfall;
-		if(!metric || rainInInches)
-			minRainfall = Math.round(mm2in(minRainfall));
+		long now = System.currentTimeMillis();
+		long last_rainrate_alert = (long)KeyValue.readVar("LastRainrateAlert", 0L);
+		int last_rainrate_level = (int)KeyValue.readVar("LastRainrateLevel", -1);
 
-		if(rainrate >= rainrate_limit && rainfall >= minRainfall / 100f)
+		String unit = "mm";
+		int[][] FLOOD_THRESHOLDS = FLOOD_THRESHOLDS_MM;
+		if(!metric)
+		{
+			unit = "in";
+			FLOOD_THRESHOLDS = FLOOD_THRESHOLDS_IN;
+		}
+
+		int[] alert = getAlertLevel(totals, FLOOD_THRESHOLDS, rainrate_alerts);
+		int level = alert[0];
+		int period = alert[1];
+
+		if(level < 0 || period < 0)
+		{
+			LogMessage("checkRainrateAlert() No current rainrate notification needed");
+			return;
+		}
+
+		String debugunit = "minutes";
+		String timelen_unit = weeWXApp.getAndroidString(R.string.minutes);
+		int timelen = warning_delays[period] % 60;
+		if(warning_delays[period] == 3_600)
+		{
+			debugunit = "hour";
+			timelen_unit = weeWXApp.getAndroidString(R.string.hour);
+			timelen = 1;
+		} else if(warning_delays[period] > 3_600) {
+			debugunit = "hours";
+			timelen_unit = weeWXApp.getAndroidString(R.string.hours);
+			timelen = warning_delays[period] % 3_600;
+		}
+
+		int time_ago = Math.round((now - last_rainrate_alert) / 1000f);
+
+		if(time_ago >= warning_delays[period] || level > last_rainrate_level)
 		{
 			KeyValue.putVar("LastRainrateAlert", now);
-			weeWXApp.sendRainrateAlert(rainrate, rainrate_limit);
-			LogMessage("checkRainAlert() rainrate (" + rainrate + ") >= rainrate_limit (" + rainrate_limit + ") notification triggered");
+			KeyValue.putVar("LastRainrateLevel", alert[0]);
+			weeWXApp.sendRainrateAlert(totals[period], level, timelen, timelen_unit, metric);
+			LogMessage("checkRainrateAlert() rainfall (" + totals[period] + unit +
+			           ") >= rainfall_limit (" + FLOOD_THRESHOLDS[period][level] + unit + ") " +
+			           "fell in " + timelen + " " + debugunit + " so notification triggered");
 		} else {
-			LogMessage("checkRainAlert() rainrate (" + rainrate + ") < rainrate_limit (" + rainrate_limit + ") no notification triggered");
+			LogMessage("checkRainrateAlert() No threshold reached, so no notification triggered");
 		}
+	}
+
+	private static int[] getAlertLevel(int[] totals, int[][] thresholds, boolean[] rainrate_alerts)
+	{
+		for(int level = LEVEL_SEVERE; level >= LEVEL_WATCH; level--)
+		{
+			if(!rainrate_alerts[level])
+				continue;
+
+			for(int period = 0; period < totals.length; period++)
+			{
+				if(totals[period] >= thresholds[period][level])
+				{
+					return new int[]{level, period};
+				}
+			}
+		}
+
+		return new int[]{-1, -1}; // no alert
+	}
+
+	private static float getRainTotal(int idx, String[] bits)
+	{
+		if(bits.length > idx && !bits[idx].isBlank())
+			return Float.parseFloat(bits[idx]);
+
+		return 0;
 	}
 
 	static void checkTempAlerts()
@@ -3135,6 +3243,25 @@ class weeWXAppCommon
 			int version = (int)Float.parseFloat(bits[0]);
 			if(version < weeWXApp.minimum_inigo_version || bits.length <= 100)
 			{
+				LogMessage("reallyGetWeather() sendAlert() triggered");
+				sendAlert();
+				return false;
+			}
+
+			boolean rainrate_alert_watch = KeyValue.isPrefSet("rainrate_alert_watch") &&
+			                         (boolean)KeyValue.readVar("rainrate_alert_watch", weeWXApp.rainrate_alert_watch_default);
+
+			boolean rainrate_alert_warning = KeyValue.isPrefSet("rainrate_alert_warning") &&
+			                         (boolean)KeyValue.readVar("rainrate_alert_warning", weeWXApp.rainrate_alert_warning_default);
+
+			boolean rainrate_alert_severe = KeyValue.isPrefSet("rainrate_alert_severe") &&
+			                         (boolean)KeyValue.readVar("rainrate_alert_severe", weeWXApp.rainrate_alert_severe_default);
+
+			boolean rainrate_alert = rainrate_alert_watch || rainrate_alert_warning || rainrate_alert_severe;
+
+			if(rainrate_alert && (version < weeWXApp.minimum_inigo_version_for_rainrate_alerts || bits.length < 300))
+			{
+				LogMessage("reallyGetWeather() sendAlert() triggered");
 				sendAlert();
 				return false;
 			}
@@ -3449,12 +3576,12 @@ class weeWXAppCommon
 		try(Response response = client.newCall(request).execute())
 		{
 			return response.isSuccessful();
-		} catch(Exception e) {
+		} catch(IOException ioe) {
 			if(retries < maximum_retries)
 			{
 				retries++;
 
-				LogMessage("reallyCheckURL() Error! e: " + e.getMessage() + ", retry: " + retries +
+				LogMessage("reallyCheckURL() Error! ioe: " + ioe.getMessage() + ", retry: " + retries +
 				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
 
 				try
@@ -3470,8 +3597,8 @@ class weeWXAppCommon
 				return reallyCheckURL(client, url, retries);
 			}
 
-			LogMessage("reallyCheckURL() Error! e: " + e.getMessage(), true, KeyValue.e);
-			throw e;
+			LogMessage("reallyCheckURL() Error! e: " + ioe.getMessage(), true, KeyValue.e);
+			throw ioe;
 		}
 	}
 
@@ -4315,7 +4442,7 @@ class weeWXAppCommon
 				}
 			}
 
-			LogMessage("reallyGetForecast() forcecastData: " + forecastData);
+//			LogMessage("reallyGetForecast() forcecastData: " + forecastData);
 		}
 
 		if(KeyValue.countyName != null && !KeyValue.countyName.isBlank())

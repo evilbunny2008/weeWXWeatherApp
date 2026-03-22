@@ -205,6 +205,7 @@ public class weeWXApp extends Application
 	private static int lastNightMode = -1;
 
 	final static int minimum_inigo_version = 4000;
+	final static int minimum_inigo_version_for_rainrate_alerts = 1000008;
 
 	final static boolean radarforecast_default = false;
 	final static boolean disableSwipeOnRadar_default = false;
@@ -242,10 +243,9 @@ public class weeWXApp extends Application
 	final static boolean rainfall_alert_default = false;
 	final static int RainfallLimit_default = 2500;
 
-	final static boolean rainrate_alert_default = false;
-	final static int RainrateLimit_default = 10000;
-
-	final static float minRainfall = 1000;
+	final static boolean rainrate_alert_watch_default = false;
+	final static boolean rainrate_alert_warning_default = false;
+	final static boolean rainrate_alert_severe_default = false;
 
 	final static String radtype_default = "image";
 	final static String SETTINGS_URL_default = "https://example.com/weewx/inigo-settings.txt";
@@ -284,6 +284,18 @@ public class weeWXApp extends Application
 
 	static final int max_alarms = 5;
 
+	private static final String[] alert_channels = {
+		"rainrate_alert_watch",
+		"rainrate_alert_warning",
+		"rainrate_alert_severe",
+	};
+
+	private static final int[] alert_strings = {
+		R.string.rainrate_alert_watch_str,
+		R.string.rainrate_alert_warning_str,
+		R.string.rainrate_alert_severe_str,
+	};
+
 	ForecastDefaults fcDef = null;
 
 	AudioAttributes audioAttributes;
@@ -316,16 +328,32 @@ public class weeWXApp extends Application
 		}
 
 		createNotificationChannel("temperature_alerts",
-				weeWXApp.getAndroidString(R.string.temperature_alert_str),
-				weeWXApp.getAndroidString(R.string.temperature_alert_desc));
+			weeWXApp.getAndroidString(R.string.temperature_alert_str),
+			weeWXApp.getAndroidString(R.string.temperature_alert_desc),
+			NotificationManager.IMPORTANCE_HIGH
+		);
 
 		createNotificationChannel("rainfall_alert",
-				weeWXApp.getAndroidString(R.string.rainfall_alert_str),
-				weeWXApp.getAndroidString(R.string.rainfall_alert_desc));
+			weeWXApp.getAndroidString(R.string.rainfall_alert_str),
+			weeWXApp.getAndroidString(R.string.rainfall_alert_desc),
+			NotificationManager.IMPORTANCE_HIGH
+		);
 
-		createNotificationChannel("rainrate_alert",
-				weeWXApp.getAndroidString(R.string.rainrate_alert_str),
-				weeWXApp.getAndroidString(R.string.rainrate_alert_desc));
+		createNotificationChannel(alert_channels[0],
+			weeWXApp.getAndroidString(R.string.rainrate_alert_watch_str),
+			weeWXApp.getAndroidString(R.string.rainrate_alert_watch_desc),
+			NotificationManager.IMPORTANCE_HIGH);
+
+		createNotificationChannel(alert_channels[1],
+			weeWXApp.getAndroidString(R.string.rainrate_alert_warning_str),
+			weeWXApp.getAndroidString(R.string.rainrate_alert_warning_desc),
+			NotificationManager.IMPORTANCE_MAX);
+
+		createNotificationChannel(alert_channels[2],
+			weeWXApp.getAndroidString(R.string.rainrate_alert_severe_str),
+			weeWXApp.getAndroidString(R.string.rainrate_alert_severe_desc),
+			NotificationManager.IMPORTANCE_MAX
+		);
 
 		ForecastDefaults fcdef = new ForecastDefaults();
 		fcdef.fctype = "weatherzone2";
@@ -1063,24 +1091,28 @@ public class weeWXApp extends Application
 		}
 	}
 
-	private void createNotificationChannel(String id, String name, String description)
+	private void createNotificationChannel(String id, String name, String description, int importance)
 	{
-		if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
+		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
+			   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
-		NotificationChannel channel = new NotificationChannel(id, name, NotificationManager.IMPORTANCE_HIGH);
+		NotificationChannel channel = new NotificationChannel(id, name, importance);
 		channel.enableVibration(true);
-		channel.setVibrationPattern(new long[]{0, 500, 1000});
 		channel.setDescription(description);
 		channel.setGroup(getPackageName());
 		channel.setSound(soundUri, audioAttributes);
+		channel.setVibrationPattern(new long[]{0, 500, 1000});
+
 		instance.notificationManager.createNotificationChannel(channel);
 	}
 
 	static void sendTemperatureAlert(float temperature, float limit, boolean isAfternoon)
 	{
-		if(ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
-		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
+		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
+			   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
@@ -1095,20 +1127,23 @@ public class weeWXApp extends Application
 			str = String.format(getAndroidString(R.string.afternoon_alert), temperature, unit, limit);
 		}
 
-	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "temperature_alerts")
-	        .setSmallIcon(iconID)
-	        .setContentTitle(getAndroidString(R.string.temperature_alert_str))
-	        .setContentText(str)
-	        .setPriority(NotificationCompat.PRIORITY_HIGH)
-	        .setAutoCancel(true);
+		NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "temperature_alerts")
+			.setAutoCancel(true)
+			.setContentText(str)
+			.setContentTitle(getAndroidString(R.string.temperature_alert_str))
+			.setPriority(NotificationCompat.PRIORITY_HIGH)
+			.setSmallIcon(iconID)
+			.setSound(instance.soundUri)
+			.setVibrate(new long[]{0, 500, 1000});
 
 		instance.notificationManager.notify(1001, builder.build());
 	}
 
 	static void sendRainfallAlert(float rainfall, float rainfalllimit)
 	{
-		if(ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
-		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
+		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
+			   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
@@ -1119,34 +1154,54 @@ public class weeWXApp extends Application
 		             String.format(getAndroidString(R.string.rainfall_alert_imperial), rainfall, "in", rainfalllimit);
 
 	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainfall_alert")
-	        .setSmallIcon(R.drawable.rain)
-	        .setContentTitle(getAndroidString(R.string.rainfall_alert_str))
-	        .setContentText(str)
-	        .setPriority(NotificationCompat.PRIORITY_HIGH)
-	        .setAutoCancel(true);
+			    .setAutoCancel(true)
+	            .setContentText(str)
+	            .setContentTitle(getAndroidString(R.string.rainfall_alert_str))
+	            .setPriority(NotificationCompat.PRIORITY_HIGH)
+	            .setSmallIcon(R.drawable.rain)
+	            .setSound(instance.soundUri)
+	            .setVibrate(new long[]{0, 500, 1000});
 
 		instance.notificationManager.notify(1002, builder.build());
 	}
 
-	static void sendRainrateAlert(float rainrate, float rainratelimit)
+	static void sendRainrateAlert(float rainfall, int level, int timelen, String timelen_unit, boolean metric)
 	{
-		if(ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
-		   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
+		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
+		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
+			   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
-		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
-		boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
+		int strid = R.string.rainrate_alert_metric_watch;
+		if(metric && level == 1)
+			strid = R.string.rainrate_alert_metric_warning;
 
-		String str = metric && !rainInInches ?
-		             String.format(getAndroidString(R.string.rainrate_alert_metric), rainrate, "mm", rainratelimit) :
-		             String.format(getAndroidString(R.string.rainrate_alert_imperial), rainrate, "in", rainratelimit);
+		if(metric && level == 2)
+			strid = R.string.rainrate_alert_metric_severe;
 
-	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainrate_alert")
-	        .setSmallIcon(R.drawable.rain)
-	        .setContentTitle(getAndroidString(R.string.rainrate_alert_str))
-	        .setContentText(str)
-	        .setPriority(NotificationCompat.PRIORITY_HIGH)
-	        .setAutoCancel(true);
+		if(!metric && level == 0)
+			strid = R.string.rainrate_alert_imperial_watch;
+
+		if(!metric && level == 1)
+			strid = R.string.rainrate_alert_imperial_warning;
+
+		if(!metric && level == 2)
+			strid = R.string.rainrate_alert_imperial_severe;
+
+		String str = String.format(getAndroidString(strid), rainfall, timelen, timelen_unit);
+
+		int priority = NotificationCompat.PRIORITY_HIGH;
+		if(level > 0)
+			priority = NotificationCompat.PRIORITY_MAX;
+
+	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, alert_channels[level])
+		    .setAutoCancel(true)
+            .setContentText(str)
+            .setContentTitle(getAndroidString(R.string.rainfall_alert_str))
+            .setPriority(priority)
+            .setSmallIcon(R.drawable.rain)
+            .setSound(instance.soundUri)
+            .setVibrate(new long[]{0, 500, 1000});
 
 		instance.notificationManager.notify(1003, builder.build());
 	}

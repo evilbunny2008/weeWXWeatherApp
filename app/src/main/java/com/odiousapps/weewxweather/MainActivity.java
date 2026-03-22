@@ -113,15 +113,15 @@ public class MainActivity extends FragmentActivity
 	private MaterialAutoCompleteTextView s1, s2, s3, s4;
 	private MaterialSwitch wifi_only, show_indoor, metric_forecasts, rain_in_inches,
 			use_exact_alarm, save_app_debug_logs, next_moon, force_dark_mode,
-			morning_temp_alert, afternoon_temp_alert, rainfall_alert, rainrate_alert;
+			morning_temp_alert, afternoon_temp_alert, rainfall_alert,
+			rainrate_alert_watch, rainrate_alert_warning, rainrate_alert_severe;
 	private MaterialRadioButton showRadar, showForecast;
 	private ViewPager2 mViewPager;
-	private Slider sliderMorningTemp, sliderAfternoonTemp, sliderRainfall, sliderRainrate;
+	private Slider sliderMorningTemp, sliderAfternoonTemp, sliderRainfall;
 
 	private AlertDialog dialog;
 
-	private LinearLayout settingLayout, aboutLayout, morning_temp_setting, afternoon_temp_setting,
-					rainfall_setting, rainrate_setting;
+	private LinearLayout settingLayout, aboutLayout, morning_temp_setting, afternoon_temp_setting, rainfall_setting;
 
 	private ScrollView scrollView;
 
@@ -159,7 +159,6 @@ public class MainActivity extends FragmentActivity
 	private int AfternoonTemp = 260;
 
 	private int RainfallLimit = 2500;
-	private int RainrateLimit = 10000;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -256,14 +255,9 @@ public class MainActivity extends FragmentActivity
 		screen_elements.add(new Setting("minRainfallLimit", R.id.minRainfallLimit));
 		screen_elements.add(new Setting("maxRainfallLimit", R.id.maxRainfallLimit));
 
-		screen_elements.add(new Setting("rainrate_alert", R.id.rainrate_alert));
-		screen_elements.add(new Setting("rainrate_setting", R.id.rainrate_setting));
-
-		screen_elements.add(new Setting("tvRainrateLimitLabel", R.id.tvRainrateLimitLabel));
-		screen_elements.add(new Setting("tvRainrateLimitValue", R.id.tvRainrateLimitValue));
-		screen_elements.add(new Setting("sliderRainrateLimit", R.id.sliderRainrateLimit));
-		screen_elements.add(new Setting("minRainrateLimit", R.id.minRainrateLimit));
-		screen_elements.add(new Setting("maxRainrateLimit", R.id.maxRainrateLimit));
+		screen_elements.add(new Setting("rainrate_alert_watch", R.id.rainrate_alert_watch));
+		screen_elements.add(new Setting("rainrate_alert_warning", R.id.rainrate_alert_warning));
+		screen_elements.add(new Setting("rainrate_alert_severe", R.id.rainrate_alert_severe));
 
 		LogMessage("MainActivity.onCreate() started...");
 
@@ -469,26 +463,22 @@ public class MainActivity extends FragmentActivity
 			if(hasStarted)
 			{
 				LogMessage("RainfallLimit: " + RainfallLimit);
-				LogMessage("RainrateLimit: " + RainrateLimit);
 
 				if(isChecked)
 				{
 					MorningTemp = Math.round(weeWXAppCommon.F2C(MorningTemp / 10f) * 10);
 					AfternoonTemp = Math.round(weeWXAppCommon.F2C(AfternoonTemp / 10f) * 10f);
 					RainfallLimit = Math.round(weeWXAppCommon.in2mm(RainfallLimit));
-					RainrateLimit = Math.round(weeWXAppCommon.in2mm(RainrateLimit));
 				} else {
 					MorningTemp = Math.round(weeWXAppCommon.C2F(MorningTemp / 10f) * 10);
 					AfternoonTemp = Math.round(weeWXAppCommon.C2F(AfternoonTemp / 10f) * 10);
 					RainfallLimit = Math.round(weeWXAppCommon.mm2in(RainfallLimit));
-					RainrateLimit = Math.round(weeWXAppCommon.mm2in(RainrateLimit));
 				}
 
 				LogMessage("RainfallLimit: " + RainfallLimit);
-				LogMessage("RainrateLimit: " + RainrateLimit);
 
 				updateSliders(isChecked, MorningTemp, AfternoonTemp);
-				updateSliders2(isChecked, RainfallLimit, RainrateLimit);
+				updateSliders2(isChecked, RainfallLimit);
 			}
 		});
 
@@ -597,22 +587,6 @@ public class MainActivity extends FragmentActivity
 				tvRainfallValue.setText(String.format(Locale.getDefault(), "%.2fin", (value / 100)));
 		});
 
-		sliderRainrate = findViewById(R.id.sliderRainrateLimit);
-		TextView tvRainrateValue = findViewById(R.id.tvRainrateLimitValue);
-
-		sliderRainrate.addOnChangeListener((s, value, fromUser) ->
-		{
-			RainrateLimit = Math.round(value);
-
-			String hour = String.format(weeWXApp.getAndroidString(R.string.hour));
-			String str = String.format(Locale.getDefault(), "%.1fmm/", (value/ 100)) + hour;
-
-			if(!metric_forecasts.isChecked() || rain_in_inches.isChecked())
-				str = String.format(Locale.getDefault(), "%.2fin/", (value / 100)) + hour;
-
-			tvRainrateValue.setText(str);
-		});
-
 		morning_temp_setting = findViewById(R.id.morning_temp_setting);
 		morning_temp_alert = findViewById(R.id.morning_temp_alert);
 		morning_temp_alert.setOnCheckedChangeListener((buttonView, isChecked) ->
@@ -652,25 +626,33 @@ public class MainActivity extends FragmentActivity
 		    }
 		});
 
-		rainrate_setting = findViewById(R.id.rainrate_setting);
-		rainrate_alert = findViewById(R.id.rainrate_alert);
-		rainrate_alert.setOnCheckedChangeListener((buttonView, isChecked) ->
+		rainrate_alert_watch = findViewById(R.id.rainrate_alert_watch);
+		rainrate_alert_watch.setOnCheckedChangeListener((buttonView, isChecked) ->
 		{
 		    if(isChecked)
-		    {
 				requestNotificationPermission();
-				rainrate_setting.setVisibility(View.VISIBLE);
-		    } else {
-				rainrate_setting.setVisibility(View.GONE);
-		    }
+		});
+
+		rainrate_alert_warning = findViewById(R.id.rainrate_alert_warning);
+		rainrate_alert_warning.setOnCheckedChangeListener((buttonView, isChecked) ->
+		{
+		    if(isChecked)
+				requestNotificationPermission();
+		});
+
+		rainrate_alert_severe = findViewById(R.id.rainrate_alert_severe);
+		rainrate_alert_severe.setOnCheckedChangeListener((buttonView, isChecked) ->
+		{
+		    if(isChecked)
+				requestNotificationPermission();
 		});
 
 		fgtil = findViewById(R.id.fgTextInputLayout);
 		bgtil = findViewById(R.id.bgTextInputLayout);
 
 		int fg, bg;
-		boolean wo, met, rii, si, sr, sf, uea, sadl, nm, fdm, mta, ata, rfa, rra;
-		int mt, at, rfl, rrl;
+		boolean wo, met, rii, si, sr, sf, uea, sadl, nm, fdm, mta, ata, rfa, rra_watch, rra_warning, rra_severe;
+		int mt, at, rfl;
 
 		UpdateFrequency = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
 		UpdateInterval = (int)KeyValue.readVar("UpdateInterval", weeWXApp.UpdateInterval_default);
@@ -702,8 +684,9 @@ public class MainActivity extends FragmentActivity
 		rfa = (boolean)KeyValue.readVar("rainfall_alert", weeWXApp.rainfall_alert_default);
 		rfl = (int)KeyValue.readVar("RainfallLimit", weeWXApp.RainfallLimit_default);
 
-		rra = (boolean)KeyValue.readVar("rainrate_alert", weeWXApp.rainfall_alert_default);
-		rrl = (int)KeyValue.readVar("RainrateLimit", weeWXApp.RainrateLimit_default);
+		rra_watch = (boolean)KeyValue.readVar("rainrate_alert_watch", weeWXApp.rainrate_alert_watch_default);
+		rra_warning = (boolean)KeyValue.readVar("rainrate_alert_warning", weeWXApp.rainrate_alert_warning_default);
+		rra_severe = (boolean)KeyValue.readVar("rainrate_alert_severe", weeWXApp.rainrate_alert_severe_default);
 
 		if(savedInstanceState != null)
 		{
@@ -740,8 +723,9 @@ public class MainActivity extends FragmentActivity
 			rfa = savedInstanceState.getBoolean("rfa", rfa);
 			rfl = savedInstanceState.getInt("rfl", rfl);
 
-			rra = savedInstanceState.getBoolean("rra", rra);
-			rrl = savedInstanceState.getInt("rrl", rrl);
+			rra_watch = savedInstanceState.getBoolean("rra_watch", rra_watch);
+			rra_warning = savedInstanceState.getBoolean("rra_warning", rra_warning);
+			rra_severe = savedInstanceState.getBoolean("rra_severe", rra_severe);
 
 			LogMessage("MainActivity.onCreate() DayNightMode: " + DayNightMode);
 		}
@@ -791,10 +775,11 @@ public class MainActivity extends FragmentActivity
 		rainfall_alert.setChecked(rfa);
 		RainfallLimit = rfl;
 
-		rainrate_alert.setChecked(rra);
-		RainrateLimit = rrl;
+		rainrate_alert_watch.setChecked(rra_watch);
+		rainrate_alert_warning.setChecked(rra_warning);
+		rainrate_alert_severe.setChecked(rra_severe);
 
-		updateSliders2(met, rfl, rrl);
+		updateSliders2(met, rfl);
 
 		LogMessage("MainActivity.onCreate() DayNightMode: " + DayNightMode);
 
@@ -961,16 +946,13 @@ public class MainActivity extends FragmentActivity
 		maxAfternoonTemp.setText(str);
 	}
 
-	private void updateSliders2(boolean met, float rainfall, float rainrate)
+	private void updateSliders2(boolean met, float rainfall)
 	{
 		LogMessage("met: " + met);
 		LogMessage("rainfall: " + rainfall);
-		LogMessage("rainrate: " + rainrate);
 
 		MaterialTextView minRainfallLimit = findViewById(R.id.minRainfallLimit);
 		MaterialTextView maxRainfallLimit = findViewById(R.id.maxRainfallLimit);
-		MaterialTextView minRainrateLimit = findViewById(R.id.minRainrateLimit);
-		MaterialTextView maxRainrateLimit = findViewById(R.id.maxRainrateLimit);
 
 		int step = 20;
 		int lowerlimit = step;
@@ -998,34 +980,17 @@ public class MainActivity extends FragmentActivity
 		sliderRainfall.setValueFrom(lowerlimit);
 		sliderRainfall.setValueTo(upperLimit);
 
-		sliderRainrate.setStepSize(step);
-		sliderRainrate.setValueTo(99999);
-
-		rainrate = Math.round(rainrate);
-
-		if(met)
-			rainrate = Math.round(rainrate / step) * step;
-
-		if(rainrate < lowerlimit || rainrate > upperLimit)
-			rainrate = weeWXApp.RainrateLimit_default;
-
-		sliderRainrate.setValue(rainrate);
-		sliderRainrate.setValueFrom(lowerlimit);
-		sliderRainrate.setValueTo(upperLimit);
-
 		String str = String.format(Locale.getDefault(), "%.1fmm", (lowerlimit / 100f));
 		if(!met)
 			str = String.format(Locale.getDefault(), "%.2fin", (lowerlimit / 100f));
 
 		minRainfallLimit.setText(str);
-		minRainrateLimit.setText(str);
 
 		str = String.format(Locale.getDefault(), "%.1fmm", (upperLimit / 100f));
 		if(!met)
 			str = String.format(Locale.getDefault(), "%.2fin", (upperLimit / 100f));
 
 		maxRainfallLimit.setText(str);
-		maxRainrateLimit.setText(str);
 	}
 
 	private void reduceViewPagerSwipeSensitivity(ViewPager2 viewPager)
@@ -1079,8 +1044,14 @@ public class MainActivity extends FragmentActivity
 			if(rainfall_alert.isChecked())
 				rainfall_alert.setChecked(false);
 
-			if(rainrate_alert.isChecked())
-				rainrate_alert.setChecked(false);
+			if(rainrate_alert_watch.isChecked())
+				rainrate_alert_watch.setChecked(false);
+
+			if(rainrate_alert_warning.isChecked())
+				rainrate_alert_warning.setChecked(false);
+
+			if(rainrate_alert_severe.isChecked())
+				rainrate_alert_severe.setChecked(false);
 		}
 
 		UpdateCheck.cancelAlarm();
@@ -1305,8 +1276,9 @@ public class MainActivity extends FragmentActivity
 		outState.putBoolean("rfa", rainfall_alert.isChecked());
 		outState.putInt("rfl", RainfallLimit);
 
-		outState.putBoolean("rra", rainrate_alert.isChecked());
-		outState.putInt("rrl", RainrateLimit);
+		outState.putBoolean("rra_watch", rainrate_alert_watch.isChecked());
+		outState.putBoolean("rra_warning", rainrate_alert_warning.isChecked());
+		outState.putBoolean("rra_severe", rainrate_alert_severe.isChecked());
 	}
 
 	private void setStrings()
@@ -1439,6 +1411,13 @@ public class MainActivity extends FragmentActivity
 
 	private void showUpdateAvailable()
 	{
+		int updateVer = Math.max(weeWXApp.minimum_inigo_version, weeWXApp.minimum_inigo_version_for_rainrate_alerts);
+
+		if((boolean)KeyValue.readVar("shownUpdate_" + updateVer, false))
+			return;
+
+		KeyValue.putVar("shownUpdate_" + updateVer, true);
+
 		final AlertDialog.Builder d = new AlertDialog.Builder(this);
 		d.setTitle(weeWXApp.getAndroidString(R.string.app_name));
 		d.setMessage(weeWXApp.getAndroidString(R.string.inigo_needs_updating));
@@ -2310,8 +2289,9 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("rainfall_alert", rainfall_alert.isChecked());
 			KeyValue.putVar("RainfallLimit", (int)sliderRainfall.getValue());
 
-			KeyValue.putVar("rainrate_alert", rainrate_alert.isChecked());
-			KeyValue.putVar("RainrateLimit", (int)sliderRainrate.getValue());
+			KeyValue.putVar("rainrate_alert_watch", rainrate_alert_watch.isChecked());
+			KeyValue.putVar("rainrate_alert_warning", rainrate_alert_warning.isChecked());
+			KeyValue.putVar("rainrate_alert_severe", rainrate_alert_severe.isChecked());
 
 			KeyValue.putVar("metric", metric_forecasts.isChecked());
 			KeyValue.putVar("rainInInches", rain_in_inches.isChecked());
@@ -2437,12 +2417,12 @@ public class MainActivity extends FragmentActivity
 	{
 		LogMessage("requestNotificationPermission()");
 
-	    if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
+		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU ||
 	       ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED)
-	    {
-		    KeyValue.hasNotificationPerm = true;
+		{
+			KeyValue.hasNotificationPerm = true;
 			return;
-	    }
+		}
 
 		LogMessage("requestNotificationPermission() Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU");
 
@@ -2457,22 +2437,22 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("hasAsked", true);
 
 	        // show explanation dialog first
-	        new AlertDialog.Builder(this)
-	            .setTitle(weeWXApp.getAndroidString(R.string.notification_permission))
-	            .setMessage(weeWXApp.getAndroidString(R.string.notifications_needed))
-	            .setPositiveButton(weeWXApp.getAndroidString(R.string.ok), (dialog, which) ->
-	            {
-		            LogMessage("requestNotificationPermission() User choose to retry notification permission");
-		            ActivityCompat.requestPermissions(this,
-			            new String[]{Manifest.permission.POST_NOTIFICATIONS},
-			            NOTIFICATION_PERMISSION_CODE);
-	            })
-	            .setNegativeButton(weeWXApp.getAndroidString(R.string.no), (dialog, which) ->
-	            {
-		            LogMessage("requestNotificationPermission() User choose not to retry notification permission");
-		            disableAlerts();
-	            })
-	            .show();
+			new AlertDialog.Builder(this)
+				.setTitle(weeWXApp.getAndroidString(R.string.notification_permission))
+				.setMessage(weeWXApp.getAndroidString(R.string.notifications_needed))
+				.setPositiveButton(weeWXApp.getAndroidString(R.string.ok), (dialog, which) ->
+				{
+				    LogMessage("requestNotificationPermission() User choose to retry notification permission");
+				    ActivityCompat.requestPermissions(this,
+				        new String[]{Manifest.permission.POST_NOTIFICATIONS},
+				        NOTIFICATION_PERMISSION_CODE);
+				})
+				.setNegativeButton(weeWXApp.getAndroidString(R.string.no), (dialog, which) ->
+				{
+				    LogMessage("requestNotificationPermission() User choose not to retry notification permission");
+				    disableAlerts();
+				})
+				.show();
 
 			return;
 	    }
@@ -2513,7 +2493,9 @@ public class MainActivity extends FragmentActivity
 		morning_temp_alert.setChecked(false);
 		afternoon_temp_alert.setChecked(false);
 		rainfall_alert.setChecked(false);
-		rainrate_alert.setChecked(false);
+		rainrate_alert_watch.setChecked(false);
+		rainrate_alert_warning.setChecked(false);
+		rainrate_alert_severe.setChecked(false);
 		KeyValue.hasNotificationPerm = false;
 	}
 
