@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Kä Alertni̱ Rainrɛt mi̱ di̱i̱t?</string>
     <string name="rainrate_alert_severe_desc">Alerts mi̱ ci̱ nhiaal wä nhial kä pek in di̱i̱t min ca ŋun kɛ pek nhiaal</string>
     <string name="rainrate_alert_severe_str">Thi̱bi̱ri̱ Rainrɛt Alert</string>
+    <string name="rainrate_alert_str">Rainrɛt Alert</string>
     <string name="rainrate_alert_warning">Kä la̱r naath Rainrɛt Alerts?</string>
     <string name="rainrate_alert_warning_desc">Alerts mi̱ ci̱ nhiaal wä nhial mi̱ ca lar i̱ ba la̱r lär kɛ gua̱a̱th in ci̱ nhiaal thuɔ̱k</string>
     <string name="rainrate_alert_warning_str">La̱r naath Rainrɛt Alert</string>

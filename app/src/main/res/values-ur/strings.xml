@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">شدید بارش کے انتباہات؟</string>
     <string name="rainrate_alert_severe_desc">اگر بارش کی شرح بارش کے دورانیے کی بنیاد پر شدید حد سے تجاوز کر جائے تو الرٹس</string>
     <string name="rainrate_alert_severe_str">شدید بارش کا الرٹ</string>
+    <string name="rainrate_alert_str">بارش کا انتباہ</string>
     <string name="rainrate_alert_warning">بارش کی شرح کے انتباہات؟</string>
     <string name="rainrate_alert_warning_desc">اگر بارش کی شرح بارش کے دورانیے کی بنیاد پر انتباہی حد سے تجاوز کر جائے تو الرٹس</string>
     <string name="rainrate_alert_warning_str">بارش کی شرح کا انتباہ</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">ଭୟଙ୍କର ବର୍ଷା ଆଲର୍ଟ?</string>
     <string name="rainrate_alert_severe_desc">ବର୍ଷା ଅବଧି ଉପରେ ଆଧାର କରି ଯଦି ବର୍ଷା ଘୋର ସୀମା ଅତିକ୍ରମ କରେ ତେବେ ସତର୍କ କର |</string>
     <string name="rainrate_alert_severe_str">ଭୟଙ୍କର ବର୍ଷା ଆଲର୍ଟ |</string>
+    <string name="rainrate_alert_str">ବର୍ଷା ଆଲର୍ଟ |</string>
     <string name="rainrate_alert_warning">ଚେତାବନୀ ବର୍ଷା ଆଲର୍ଟ?</string>
     <string name="rainrate_alert_warning_desc">ଯଦି ବର୍ଷା ବର୍ଷା ସମୟ ଉପରେ ଆଧାର କରି ଚେତାବନୀ ସୀମା ଅତିକ୍ରମ କରେ ତେବେ ସତର୍କ କର |</string>
     <string name="rainrate_alert_warning_str">ଚେତାବନୀ ବର୍ଷା ଆଲର୍ଟ |</string>

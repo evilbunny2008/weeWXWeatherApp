@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Хүсэтэй борооной һэргылэмжэ?</string>
     <string name="rainrate_alert_severe_desc">Хэрбээ борооной үргэлжэлэл дээрэ үндэһэлжэ, борооной хэмжээн хүндэ хизаарлалтаһаа дээшэ болоо һаань, һэргылэмжэ үгэнэ</string>
     <string name="rainrate_alert_severe_str">Хүсэтэй борооной һэргылэмжэ</string>
+    <string name="rainrate_alert_str">Борооной һэргылэмжэ</string>
     <string name="rainrate_alert_warning">Борооной һэргылэмжэ?</string>
     <string name="rainrate_alert_warning_desc">Хэрбээ борооной хэмжээн һэргылэмжын хизаарлалтаһаа дээшэ болоо һаань, борооной үргэлжэлэл дээрэ үндэһэлжэ һэргылэмжэ үгэнэ</string>
     <string name="rainrate_alert_warning_str">Һэргылэмжэ Борооной һэргылэмжэ</string>

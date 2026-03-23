@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Каты яңгыр турында хәбәрләр?</string>
     <string name="rainrate_alert_severe_desc">Яңгыр яву вакытына карап каты чиктән артса, хәбәрләр</string>
     <string name="rainrate_alert_severe_str">Каты яңгыр турында хәбәр</string>
+    <string name="rainrate_alert_str">Яңгыр</string>
     <string name="rainrate_alert_warning">Кисәтү яңгыры турында хәбәрләр?</string>
     <string name="rainrate_alert_warning_desc">Яңгыр яңгырының озынлыгы нигезендә кисәтү чикләреннән артса, хәбәрләр</string>
     <string name="rainrate_alert_warning_str">Кисәтү яңгыры турында хәбәр</string>

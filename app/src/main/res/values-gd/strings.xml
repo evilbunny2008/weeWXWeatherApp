@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Rabhaidhean fìor dhroch uisge?</string>
     <string name="rainrate_alert_severe_desc">Rabhadh ma tha an ìre uisge nas àirde na an ìre as àirde a rèir fad an uisge</string>
     <string name="rainrate_alert_severe_str">Rabhadh fìor dhroch uisge</string>
+    <string name="rainrate_alert_str">Rabhadh Rainrate</string>
     <string name="rainrate_alert_warning">Rabhadh Rabhadh Rainrate?</string>
     <string name="rainrate_alert_warning_desc">Rabhadh ma tha an ìre uisge nas àirde na a\' chrìoch rabhaidh stèidhichte air fad an uisge</string>
     <string name="rainrate_alert_warning_str">Rabhadh Rainrate Alert</string>

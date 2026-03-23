@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">तीव्र वर्षा दर अलर्ट?</string>
     <string name="rainrate_alert_severe_desc">वर्षाकालस्य आधारेण यदि वर्षायाः गतिः तीव्रसीमाम् अतिक्रमति तर्हि सचेतयति</string>
     <string name="rainrate_alert_severe_str">भयंकर वर्षा दर अलर्ट</string>
+    <string name="rainrate_alert_str">वर्षा दर अलर्ट</string>
     <string name="rainrate_alert_warning">चेतावनी वर्षादर अलर्ट?</string>
     <string name="rainrate_alert_warning_desc">वर्षाकालस्य आधारेण वर्षा-दरः चेतावनी-सीमाम् अतिक्रमति चेत् सचेष्टयति</string>
     <string name="rainrate_alert_warning_str">चेतावनी वर्षा दर अलर्ट</string>

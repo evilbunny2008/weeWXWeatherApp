@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">هشدارهای شدید باران؟</string>
     <string name="rainrate_alert_severe_desc">اگر میزان بارندگی از حد شدید بر اساس مدت بارندگی فراتر رود، هشدار می دهد</string>
     <string name="rainrate_alert_severe_str">هشدار شدید باران</string>
+    <string name="rainrate_alert_str">هشدار میزان باران</string>
     <string name="rainrate_alert_warning">هشدار میزان بارندگی؟</string>
     <string name="rainrate_alert_warning_desc">اگر میزان بارندگی از حد هشدار بر اساس مدت بارندگی فراتر رفت، هشدار می دهد</string>
     <string name="rainrate_alert_warning_str">هشدار میزان بارندگی</string>

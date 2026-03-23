@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Ditemošo tša Seelo sa Pula e Kgolo?</string>
     <string name="rainrate_alert_severe_desc">E lemoša ge e le gore tekanyo ya pula e feta tekanyo ye šoro yeo e theilwego godimo ga nako ya pula</string>
     <string name="rainrate_alert_severe_str">Tlhokomedišo ya Seelo sa Pula ye Kgolo</string>
+    <string name="rainrate_alert_str">Tlhokomedišo ya Seelo sa Pula</string>
     <string name="rainrate_alert_warning">Temošo Ditemošo tša Seelo sa Pula?</string>
     <string name="rainrate_alert_warning_desc">E lemoša ge e le gore tekanyo ya pula e feta tekanyo ya temošo yeo e theilwego godimo ga nako ya pula</string>
     <string name="rainrate_alert_warning_str">Temošo Tlhokomedišo ya Seelo sa Pula</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Grabe nga Rainrate Alerto?</string>
     <string name="rainrate_alert_severe_desc">Mga alerto kung ang pag-ulan molapas sa grabe nga limitasyon base sa gidugayon sa ulan</string>
     <string name="rainrate_alert_severe_str">Alerto sa Grabe nga Rainrate</string>
+    <string name="rainrate_alert_str">Alerto sa Ulan</string>
     <string name="rainrate_alert_warning">Pasidaan sa Rainrate Alerto?</string>
     <string name="rainrate_alert_warning_desc">Mga alerto kung ang ulan molapas sa limitasyon sa pasidaan base sa gidugayon sa ulan</string>
     <string name="rainrate_alert_warning_str">Pasidaan sa Rainrate Alert</string>

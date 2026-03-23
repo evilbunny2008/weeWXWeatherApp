@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Persinget kerna Udan si Parah?</string>
     <string name="rainrate_alert_severe_desc">Persinget adi udan melebihi batas si parah erpalasken durasi udan</string>
     <string name="rainrate_alert_severe_str">Persinget kerna Udan si Megara</string>
+    <string name="rainrate_alert_str">Persinget kerna Tingkat Udan</string>
     <string name="rainrate_alert_warning">Persinget Persinget Udan?</string>
     <string name="rainrate_alert_warning_desc">Persinget adi udan melebihi batas persinget erpalasken durasi udan</string>
     <string name="rainrate_alert_warning_str">Persinget Persinget Tingkat Udan</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Upozornenie na silný dážď?</string>
     <string name="rainrate_alert_severe_desc">Upozorní, ak množstvo zrážok prekročí prísny limit na základe trvania zrážok</string>
     <string name="rainrate_alert_severe_str">Upozornenie na silný dážď</string>
+    <string name="rainrate_alert_str">Upozornenie na dážď</string>
     <string name="rainrate_alert_warning">Upozornenie Upozornenia na dažde?</string>
     <string name="rainrate_alert_warning_desc">Upozorní, ak množstvo zrážok prekročí varovný limit na základe trvania zrážok</string>
     <string name="rainrate_alert_warning_str">Výstraha Výstraha pred dažďom</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Avvisi di tassu di chioggia forti?</string>
     <string name="rainrate_alert_severe_desc">Avvisi si la prubabbilità di chioggia supira lu limiti gravi \'n basi â durata di chioggia</string>
     <string name="rainrate_alert_severe_str">Avvisu di tassu di chioggia forti</string>
+    <string name="rainrate_alert_str">Avvisu di tassu di chioggia</string>
     <string name="rainrate_alert_warning">Avvisi di tassu di chioggia?</string>
     <string name="rainrate_alert_warning_desc">Avvisi si lu tassu di chioggia supira lu limiti d\'allarme \'n basi â durata di chioggia</string>
     <string name="rainrate_alert_warning_str">Avvertimentu Avvisu di tassu di chioggia</string>

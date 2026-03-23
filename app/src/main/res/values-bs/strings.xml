@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Upozorenja o jakoj kiši?</string>
     <string name="rainrate_alert_severe_desc">Upozorava ako količina kiše premašuje ozbiljnu granicu na osnovu trajanja padavina</string>
     <string name="rainrate_alert_severe_str">Upozorenje o jakoj kiši</string>
+    <string name="rainrate_alert_str">Rainrate Alert</string>
     <string name="rainrate_alert_warning">Upozorenje upozorenja o stopi kiše?</string>
     <string name="rainrate_alert_warning_desc">Upozorava ako količina kiše premašuje granicu upozorenja na osnovu trajanja padavina</string>
     <string name="rainrate_alert_warning_str">Upozorenje Upozorenje o brzini kiše</string>

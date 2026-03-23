@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Mga Alerto sa Grabeng Uran?</string>
     <string name="rainrate_alert_severe_desc">Mga alerto kun an rainrate minalampas sa grabeng limitasyon base sa lawig kan pag-uran</string>
     <string name="rainrate_alert_severe_str">Alerto sa Grabeng Uran</string>
+    <string name="rainrate_alert_str">Alerto sa Rainrate</string>
     <string name="rainrate_alert_warning">Mga Alerto sa Rainrate nin Patanid?</string>
     <string name="rainrate_alert_warning_desc">Mga alerto kun an rainrate minalampas sa limitasyon kan patanid base sa lawig kan pag-uran</string>
     <string name="rainrate_alert_warning_str">Patanid Rainrate Alert</string>

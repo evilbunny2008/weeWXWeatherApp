@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Nyevero yeKunaya Kwemvura Yakanyanya?</string>
     <string name="rainrate_alert_severe_desc">Yambiro kana mvura yadarika muganhu wakakomba zvichienderana nekunaya kwenguva</string>
     <string name="rainrate_alert_severe_str">Yakanyanya Kunaya Yechenjedzo</string>
+    <string name="rainrate_alert_str">Rainrate Alert</string>
     <string name="rainrate_alert_warning">Warning Rainrate Alerts?</string>
     <string name="rainrate_alert_warning_desc">Yambiro kana mwero wemvura wakadarika muganhu weyambiro zvichienderana nekunaya kwemvura</string>
     <string name="rainrate_alert_warning_str">Yambiro yeRainrate Alert</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Tecwayiso Telizinga Lemvula Lembi?</string>
     <string name="rainrate_alert_severe_desc">Tecwayiso uma ngabe lizinga lemvula lendlula umkhawulo lomkhulu ngekuya ngesikhatsi semvula</string>
     <string name="rainrate_alert_severe_str">Secwayiso Selizinga Lemvula Lembi</string>
+    <string name="rainrate_alert_str">Secwayiso selizinga lemvula</string>
     <string name="rainrate_alert_warning">Secwayiso Selizinga Lemvula?</string>
     <string name="rainrate_alert_warning_desc">Tecwayiso uma ngabe lizinga lemvula lendlula umkhawulo wesecwayiso ngekuya ngesikhatsi semvula</string>
     <string name="rainrate_alert_warning_str">Secwayiso Secwayiso Selizinga Lemvula</string>

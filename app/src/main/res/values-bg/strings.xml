@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Сигнали за силен дъжд?</string>
     <string name="rainrate_alert_severe_desc">Предупреждава, ако количеството на дъждовете надвишава строгото ограничение въз основа на продължителността на валежите</string>
     <string name="rainrate_alert_severe_str">Предупреждение за силен дъжд</string>
+    <string name="rainrate_alert_str">Предупреждение за дъжд</string>
     <string name="rainrate_alert_warning">Предупредителни сигнали за дъжд?</string>
     <string name="rainrate_alert_warning_desc">Предупреждава, ако нивото на дъжд надвиши лимита за предупреждение въз основа на продължителността на валежите</string>
     <string name="rainrate_alert_warning_str">Предупреждение за дъжд</string>

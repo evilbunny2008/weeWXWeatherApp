@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Lapata\'iga Mata\'utia Fa\'asau?</string>
     <string name="rainrate_alert_severe_desc">Lapata\'i pe a sili atu le timu i le tapula\'a ogaoga e fa\'atatau ile umi o timuga</string>
     <string name="rainrate_alert_severe_str">Lapata\'iga Mata\'utia o timuga</string>
+    <string name="rainrate_alert_str">Lapata\'iga o timuga</string>
     <string name="rainrate_alert_warning">Lapata\'iga Lapata\'iga o timuga?</string>
     <string name="rainrate_alert_warning_desc">Lapata\'i pe afai e sili atu le timu i le tapula\'a fa\'atatau ile umi o timuga</string>
     <string name="rainrate_alert_warning_str">Lapataiga Lapata\'iga o timuga</string>

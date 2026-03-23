@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Kuchli yomg\'ir haqida ogohlantirishmi?</string>
     <string name="rainrate_alert_severe_desc">Yomg\'ir miqdori yog\'ingarchilik davomiyligidan kelib chiqqan holda qattiq chegaradan oshib ketganda ogohlantiradi</string>
     <string name="rainrate_alert_severe_str">Kuchli yomg\'ir haqida ogohlantirish</string>
+    <string name="rainrate_alert_str">Yomg\'ir haqida ogohlantirish</string>
     <string name="rainrate_alert_warning">Yomg\'ir tezligi haqida ogohlantirishmi?</string>
     <string name="rainrate_alert_warning_desc">Yomg\'ir miqdori yog\'ingarchilik davomiyligidan kelib chiqqan holda ogohlantirish chegarasidan oshib ketganda ogohlantiradi</string>
     <string name="rainrate_alert_warning_str">Yomg\'ir tezligi haqida ogohlantirish</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">bann alert lo to lapli sever?</string>
     <string name="rainrate_alert_severe_desc">bann alert si to lapli i depas limit sever baze lo dirasyon lapli</string>
     <string name="rainrate_alert_severe_str">Alert lo to lapli sever</string>
+    <string name="rainrate_alert_str">Alert to lapli</string>
     <string name="rainrate_alert_warning">Alert lo to lapli?</string>
     <string name="rainrate_alert_warning_desc">bann alert si to lapli i depas limit lavertisman baze lo dirasyon lapli</string>
     <string name="rainrate_alert_warning_str">Alert lo to lapli</string>

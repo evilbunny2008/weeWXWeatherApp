@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Switsundzuxo swa Mpfula yo Tika?</string>
     <string name="rainrate_alert_severe_desc">Swi lemukisa loko mpimo wa mpfula wu tlula mpimo wo tika swinene hi ku ya hi nkarhi wa mpfula</string>
     <string name="rainrate_alert_severe_str">Xitsundzuxo xa Mpfula ya le Henhla</string>
+    <string name="rainrate_alert_str">Xitsundzuxo xa Mpfula</string>
     <string name="rainrate_alert_warning">Xilemukiso Switsundzuxo swa Mpfula?</string>
     <string name="rainrate_alert_warning_desc">Swi lemukisa loko mpimo wa mpfula wu tlula mpimo wa xilemukiso hi ku ya hi nkarhi wa mpfula</string>
     <string name="rainrate_alert_warning_str">Xitsundzuxo xa Mpfula ya Mpfula</string>

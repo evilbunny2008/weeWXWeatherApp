@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Упозорења о јакој киши?</string>
     <string name="rainrate_alert_severe_desc">Упозорава ако количина кише премашује озбиљну границу на основу трајања падавина</string>
     <string name="rainrate_alert_severe_str">Упозорење о јакој киши</string>
+    <string name="rainrate_alert_str">Раинрате Алерт</string>
     <string name="rainrate_alert_warning">Упозорење за упозорења о количини кише?</string>
     <string name="rainrate_alert_warning_desc">Упозорава ако количина кише премашује границу упозорења на основу трајања падавина</string>
     <string name="rainrate_alert_warning_str">Упозорење Упозорење о стопи кише</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Ҡаты ямғыр тураһында иҫкәртмәләр?</string>
     <string name="rainrate_alert_severe_desc">Ямғыр яуыу оҙайлылығына ҡарап, ямғыр тиҙлеге ҡаты сиктән артһа, иҫкәртә</string>
     <string name="rainrate_alert_severe_str">Ҡаты ямғыр тураһында иҫкәртмә</string>
+    <string name="rainrate_alert_str">Ямғыр тиҙлеге тураһында иҫкәртмә</string>
     <string name="rainrate_alert_warning">Иҫкәртмә Ямғыр тиҙлеге тураһында иҫкәртмәләр?</string>
     <string name="rainrate_alert_warning_desc">Ямғыр яуыу оҙайлылығына ҡарап, ямғыр тиҙлеге иҫкәрткес сигенән артһа, иҫкәртә</string>
     <string name="rainrate_alert_warning_str">Иҫкәртмә Ямғыр тиҙлеге тураһында иҫкәртмә</string>

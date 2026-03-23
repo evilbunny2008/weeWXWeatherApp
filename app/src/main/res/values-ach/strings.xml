@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Lok me kot matek?</string>
     <string name="rainrate_alert_severe_desc">Miiyo ngec ka kot okato rwom ma opore ma lubu kare ma kot tye ka cwer kwede</string>
     <string name="rainrate_alert_severe_str">Lok me kot matek</string>
+    <string name="rainrate_alert_str">Lok me rwom me kot</string>
     <string name="rainrate_alert_warning">Lok me poyo wic i kom kot?</string>
     <string name="rainrate_alert_warning_desc">Miiyo ngec ka kot okato wel ma ki miini ma lubu kare ma kot obi cwer kwede</string>
     <string name="rainrate_alert_warning_str">Lok me poyo wic pi kot</string>

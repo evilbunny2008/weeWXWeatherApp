@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Alarmy dotyczące dużych opadów?</string>
     <string name="rainrate_alert_severe_desc">Ostrzega, jeśli natężenie opadów przekroczy dotkliwy limit na podstawie czasu trwania opadów</string>
     <string name="rainrate_alert_severe_str">Alarm o silnych opadach deszczu</string>
+    <string name="rainrate_alert_str">Alarm opadów</string>
     <string name="rainrate_alert_warning">Ostrzeżenie Alarmy dotyczące opadów deszczu?</string>
     <string name="rainrate_alert_warning_desc">Ostrzega, jeśli wielkość opadów przekracza limit ostrzegawczy na podstawie czasu trwania opadów</string>
     <string name="rainrate_alert_warning_str">Ostrzeżenie Alarm dotyczący opadów deszczu</string>

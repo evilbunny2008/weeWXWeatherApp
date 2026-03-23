@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Waarskuwings vir ernstige reën?</string>
     <string name="rainrate_alert_severe_desc">Waarskuwings as die reëntempo die erge limiet oorskry gebaseer op reënvalduur</string>
     <string name="rainrate_alert_severe_str">Waarskuwing vir ernstige reën</string>
+    <string name="rainrate_alert_str">Reëntempo waarskuwing</string>
     <string name="rainrate_alert_warning">Waarskuwing Reëntempo-waarskuwings?</string>
     <string name="rainrate_alert_warning_desc">Waarskuwings as die reëntempo die waarskuwingsperk oorskry, gebaseer op reënvalduur</string>
     <string name="rainrate_alert_warning_str">Waarskuwing Reëntempo waarskuwing</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Varningar för kraftiga regn?</string>
     <string name="rainrate_alert_severe_desc">Varnar om nederbörden överskrider den allvarliga gränsen baserat på nederbördens varaktighet</string>
     <string name="rainrate_alert_severe_str">Varning för kraftig regn</string>
+    <string name="rainrate_alert_str">Regnhastighetsvarning</string>
     <string name="rainrate_alert_warning">Varning för regnhastighetsvarningar?</string>
     <string name="rainrate_alert_warning_desc">Varnar om regnhastigheten överskrider varningsgränsen baserat på nederbördens varaktighet</string>
     <string name="rainrate_alert_warning_str">Varning Regnhastighetsvarning</string>

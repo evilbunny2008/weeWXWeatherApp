@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Digniinta Roobabka daran?</string>
     <string name="rainrate_alert_severe_desc">Ogeysiis haddii heerka roobku dhaafo xadka daran ee ku salaysan muddada roobka</string>
     <string name="rainrate_alert_severe_str">Digniin Roobab Daran</string>
+    <string name="rainrate_alert_str">Digniinta Roobka</string>
     <string name="rainrate_alert_warning">Digniinta Digniinaha Roobka?</string>
     <string name="rainrate_alert_warning_desc">Ogeysiis haddii heerka roobku dhaafo xadka digniinta ee ku salaysan muddada roobka</string>
     <string name="rainrate_alert_warning_str">Digniinta Digniinta Roobabka</string>

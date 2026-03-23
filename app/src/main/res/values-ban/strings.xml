@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Painget Tingkat Ujan Parah?</string>
     <string name="rainrate_alert_severe_desc">Painget yéning ujan nglintangin wates parah manut galah ujan</string>
     <string name="rainrate_alert_severe_str">Painget Ujan Parah</string>
+    <string name="rainrate_alert_str">Painget Tingkat Ujan</string>
     <string name="rainrate_alert_warning">Painget Kirang Ujan?</string>
     <string name="rainrate_alert_warning_desc">Painget yéning ujan nglintangin wates peringatan manut galah ujan</string>
     <string name="rainrate_alert_warning_str">Painget Kirang Ujan</string>

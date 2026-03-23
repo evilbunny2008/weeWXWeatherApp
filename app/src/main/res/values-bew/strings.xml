@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Peringatan Hujan Parah?</string>
     <string name="rainrate_alert_severe_desc">Peringatan kalo hujan melebihi batas parah berdasarkan durasi curah hujan</string>
     <string name="rainrate_alert_severe_str">Waspada Hujan Parah</string>
+    <string name="rainrate_alert_str">Peringatan laju hujan</string>
     <string name="rainrate_alert_warning">Peringatan Laju Hujan?</string>
     <string name="rainrate_alert_warning_desc">Peringatan kalo hujan melebihi batas peringatan berdasarkan durasi curah hujan</string>
     <string name="rainrate_alert_warning_str">Peringatan Peringatan Laju Hujan</string>

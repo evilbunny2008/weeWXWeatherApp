@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Сповіщення про сильний дощ?</string>
     <string name="rainrate_alert_severe_desc">Попереджає, якщо кількість опадів перевищує суворе обмеження на основі тривалості опадів</string>
     <string name="rainrate_alert_severe_str">Сповіщення про сильний дощ</string>
+    <string name="rainrate_alert_str">Сповіщення про дощ</string>
     <string name="rainrate_alert_warning">Попередження про рівень дощу?</string>
     <string name="rainrate_alert_warning_desc">Попереджає, якщо кількість опадів перевищує межу попередження на основі тривалості опадів</string>
     <string name="rainrate_alert_warning_str">Попередження Rainrate Alert</string>

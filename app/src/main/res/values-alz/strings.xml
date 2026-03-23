@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Lembe mi koth ma tek?</string>
     <string name="rainrate_alert_severe_desc">Ponji ka koth ukadhu rwom ma malu malubiri ku kare pa koth</string>
     <string name="rainrate_alert_severe_str">Lembe mi koth ma tek</string>
+    <string name="rainrate_alert_str">Lembe mi koth</string>
     <string name="rainrate_alert_warning">Lembe mi poyo wic pa koth?</string>
     <string name="rainrate_alert_warning_desc">Poyo wic ka koth ukadhu rwom ma juketho malubiri ku kare pa koth</string>
     <string name="rainrate_alert_warning_str">Ponji pa koth</string>

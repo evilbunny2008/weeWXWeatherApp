@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Cảnh báo lượng mưa nghiêm trọng?</string>
     <string name="rainrate_alert_severe_desc">Cảnh báo nếu lượng mưa vượt quá giới hạn nghiêm trọng dựa trên thời gian mưa</string>
     <string name="rainrate_alert_severe_str">Cảnh báo lượng mưa nghiêm trọng</string>
+    <string name="rainrate_alert_str">Cảnh báo lượng mưa</string>
     <string name="rainrate_alert_warning">Cảnh báo Cảnh báo về lượng mưa?</string>
     <string name="rainrate_alert_warning_desc">Cảnh báo nếu lượng mưa vượt quá giới hạn cảnh báo dựa trên thời gian mưa</string>
     <string name="rainrate_alert_warning_str">Cảnh báo Cảnh báo lượng mưa</string>

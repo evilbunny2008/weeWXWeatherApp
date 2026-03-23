@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Alerte de ploi severe?</string>
     <string name="rainrate_alert_severe_desc">Alertă dacă rata ploii depășește limita severă în funcție de durata ploii</string>
     <string name="rainrate_alert_severe_str">Alertă de ploi severe</string>
+    <string name="rainrate_alert_str">Alertă de ploi</string>
     <string name="rainrate_alert_warning">Avertisment Alerte de ploi?</string>
     <string name="rainrate_alert_warning_desc">Alertă dacă rata ploii depășește limita de avertizare în funcție de durata ploii</string>
     <string name="rainrate_alert_warning_str">Avertisment Alertă de ploi</string>

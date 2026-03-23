@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Alarti pal-o baro brishind?</string>
     <string name="rainrate_alert_severe_desc">Alarmura kana o brishind nakhela o limito e phare bazirime pe duripe e brishindengo</string>
     <string name="rainrate_alert_severe_str">Alarmo pal-o baro brishind</string>
+    <string name="rainrate_alert_str">Alarmo pal-o brishind</string>
     <string name="rainrate_alert_warning">Varningo Rainrate Alerts?</string>
     <string name="rainrate_alert_warning_desc">Alarmura kana o brishind nakhela o limito e varningosko bazirime pe duripe e brishindengo</string>
     <string name="rainrate_alert_warning_str">Varningo Alerto pal-o brishind</string>

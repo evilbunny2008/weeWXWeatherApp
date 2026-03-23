@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Tahadhari kuhusu Mvua Kubwa?</string>
     <string name="rainrate_alert_severe_desc">Tahadhari ikiwa kiwango cha mvua kinazidi kikomo kali kulingana na muda wa mvua</string>
     <string name="rainrate_alert_severe_str">Tahadhari ya Mvua Kubwa</string>
+    <string name="rainrate_alert_str">Tahadhari ya Mvua</string>
     <string name="rainrate_alert_warning">Tahadhari kuhusu Kiwango cha mvua?</string>
     <string name="rainrate_alert_warning_desc">Tahadhari ikiwa kiwango cha mvua kinazidi kikomo cha onyo kulingana na muda wa mvua</string>
     <string name="rainrate_alert_warning_str">Tahadhari ya Kiwango cha Mvua</string>

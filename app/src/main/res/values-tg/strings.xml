@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Огоҳӣ дар бораи боронҳои шадид?</string>
     <string name="rainrate_alert_severe_desc">Огоҳӣ медиҳад, ки миқдори борон аз ҳадди шадид дар асоси давомнокии боришот зиёд бошад</string>
     <string name="rainrate_alert_severe_str">Огоҳӣ боронҳои шадид</string>
+    <string name="rainrate_alert_str">Огоҳии борон</string>
     <string name="rainrate_alert_warning">Огоҳӣ дар бораи суръати борон?</string>
     <string name="rainrate_alert_warning_desc">Огоҳӣ медиҳад, ки агар суръати борон аз меъёри огоҳӣ дар асоси давомнокии боришот зиёд бошад</string>
     <string name="rainrate_alert_warning_str">Огоҳӣ оид ба суръати борон</string>

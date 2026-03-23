@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">ከቢድ መጠን ዝናብ መጠንቀቕታታት?</string>
     <string name="rainrate_alert_severe_desc">ፍጥነት ዝናብ ኣብ ንውሓት ግዜ ዝናብ መሰረት ካብቲ ከቢድ ገደብ እንተሓሊፉ የጠንቅቕ</string>
     <string name="rainrate_alert_severe_str">ከቢድ መጠን ዝናብ መጠንቀቕታ</string>
+    <string name="rainrate_alert_str">መጠን ዝናብ መጠንቀቕታ</string>
     <string name="rainrate_alert_warning">መጠንቀቕታ መጠን ዝናብ መጠንቀቕታታት?</string>
     <string name="rainrate_alert_warning_desc">ፍጥነት ዝናብ ኣብ ንውሓት ግዜ ዝናብ መሰረት ካብቲ ናይ መጠንቀቕታ ገደብ እንተሓሊፉ የጠንቅቕ</string>
     <string name="rainrate_alert_warning_str">መጠንቀቕታ መጠን ዝናብ መጠንቀቕታ</string>

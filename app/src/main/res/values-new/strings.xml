@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">तच्वःगु वा वइगु दरया सतर्कता?</string>
     <string name="rainrate_alert_severe_desc">वा वइगु ईया लिधंसाय् वा वइगु दर तच्वःगु सीमा स्वयां अप्वः जुल धाःसा सचेत याइ ।</string>
     <string name="rainrate_alert_severe_str">तच्वःगु वा वइगु दरया सतर्कता</string>
+    <string name="rainrate_alert_str">वा वइगु दर सतर्कता</string>
     <string name="rainrate_alert_warning">चेतावनी वा वइगु दरया सतर्कता?</string>
     <string name="rainrate_alert_warning_desc">वा वइगु ईया लिधंसाय् वा वइगु दर चेतावनी सिमा स्वयां अप्वः जुल धाःसा सचेत याइ ।</string>
     <string name="rainrate_alert_warning_str">चेतावनी वा वइगु दर सतर्कता</string>

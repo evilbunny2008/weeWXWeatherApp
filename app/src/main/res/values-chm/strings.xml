@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Неле йӱр йӱрмӧ нерген увертарымаш?</string>
     <string name="rainrate_alert_severe_desc">Йӱр йӱрмӧ жаплан эҥертен, йӱр йӱрмӧ чот неле чек деч кугурак гын, шижтарымаш-влак</string>
     <string name="rainrate_alert_severe_str">Йӱр йӱрмӧ нерген шижтарымаш</string>
+    <string name="rainrate_alert_str">Йӱр йӱрмӧ нерген шижтарымаш</string>
     <string name="rainrate_alert_warning">Йӱр йӱрмӧ нерген шижтарымаш?</string>
     <string name="rainrate_alert_warning_desc">Йӱр йӱрмӧ жаплан эҥертен, йӱр йӱрмӧ нерген шижтарыме чек деч кугурак гын, шижтарымаш-влак</string>
     <string name="rainrate_alert_warning_str">Йӱр йӱрмӧ нерген шижтарымаш</string>

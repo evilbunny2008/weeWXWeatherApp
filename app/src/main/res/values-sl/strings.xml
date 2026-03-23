@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Opozorila o močni količini dežja?</string>
     <string name="rainrate_alert_severe_desc">Opozori, če količina dežja preseže strogo mejo na podlagi trajanja padavin</string>
     <string name="rainrate_alert_severe_str">Opozorilo o močnem nalivu</string>
+    <string name="rainrate_alert_str">Opozorilo o količini dežja</string>
     <string name="rainrate_alert_warning">Opozorilo Rainrate Alerts?</string>
     <string name="rainrate_alert_warning_desc">Opozori, če količina dežja preseže opozorilno mejo glede na trajanje padavin</string>
     <string name="rainrate_alert_warning_str">Opozorilo Rainrate Alert</string>

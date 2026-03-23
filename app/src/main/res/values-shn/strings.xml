@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">ၶေႃႈၾၢင်ႉၾူၼ်တူၵ်းႁၢဝ်ႈႁႅင်း?</string>
     <string name="rainrate_alert_severe_desc">ပၼ်ၾၢင်ႉ သင်ဝႃႈ ၾူၼ်တူၵ်းပူၼ်ႉလိူဝ် ၶွပ်ႇမၵ်းမၼ်ႈ ႁၢဝ်ႈႁႅင်း ဢိင်ၼိူဝ် ၶၢဝ်းယၢမ်းၾူၼ်တူၵ်း</string>
     <string name="rainrate_alert_severe_str">ၾၢင်ႉၾူၼ်တူၵ်းႁၢဝ်ႈႁႅင်း</string>
+    <string name="rainrate_alert_str">ၾၢင်ႉၾူၼ်တူၵ်း</string>
     <string name="rainrate_alert_warning">ပၼ်ၾၢင်ႉ ၾူၼ်တူၵ်း ပၼ်ၾၢင်ႉ?</string>
     <string name="rainrate_alert_warning_desc">ပၼ်ၾၢင်ႉ သင်ဝႃႈ ၾူၼ်တူၵ်းပူၼ်ႉလိူဝ် ၶွပ်ႇပိူင်ပၼ်ၾၢင်ႉ ဢိင်ၼိူဝ် ၶၢဝ်းယၢမ်းၾူၼ်တူၵ်း</string>
     <string name="rainrate_alert_warning_str">ပၼ်ၾၢင်ႉ ၾၢင်ႉၾူၼ်တူၵ်း</string>

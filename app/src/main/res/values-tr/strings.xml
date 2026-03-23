@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Şiddetli Yağmur Oranı Uyarıları?</string>
     <string name="rainrate_alert_severe_desc">Uyarılar%20eğer%20yağmur oranı%20%20şiddetli%20sınırı%20aşarsa%20%20yağmur%20süreye göre%20</string>
     <string name="rainrate_alert_severe_str">Şiddetli Yağmur Oranı Uyarısı</string>
+    <string name="rainrate_alert_str">Yağmur Hızı Uyarısı</string>
     <string name="rainrate_alert_warning">Uyarı Yağmur Oranı Uyarıları?</string>
     <string name="rainrate_alert_warning_desc">Yağmur oranının, yağış süresine bağlı olarak uyarı sınırını aşması durumunda uyarı verir</string>
     <string name="rainrate_alert_warning_str">Uyarı Yağmur Hızı Uyarısı</string>

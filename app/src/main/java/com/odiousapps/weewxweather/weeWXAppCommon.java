@@ -3048,6 +3048,11 @@ class weeWXAppCommon
 		Calendar cal = Calendar.getInstance();
 		Calendar cal1 = Calendar.getInstance();
 
+		float[] temps = get_curr_min_peak_temp();
+		float CurrTemp = temps[0];
+		float minObservedTemp = temps[1];
+		float peakTemp = temps[2];
+
 		// Don't trigger temp alerts before 6am
 		if(cal.get(Calendar.HOUR_OF_DAY) < 6)
 			return;
@@ -3068,43 +3073,11 @@ class weeWXAppCommon
 
 			float morning_temp_limit = (int)KeyValue.readVar("MorningTemp", weeWXApp.MorningTemp_default) / 10f;
 
-			float[] temps = get_curr_min_max_temp();
-			float CurrTemp = temps[0];
-			float minObservedTemp = temps[1];
-
 			minObservedTemp = Math.min(minObservedTemp, CurrTemp);
 
-			GsonHelper gh = String2Gson();
-			if(gh == null || gh.days == null || gh.days.isEmpty())
-			{
-				LogMessage("checkTempAlerts() No forecast available to work out if the temp has bottomed out already or not.");
-				return;
-			}
+			LogMessage("checkTempAlerts() minForecastTemp: " + minObservedTemp);
 
-			String min = gh.days.get(0).min;
-			if(min != null && min.contains("&"))
-				min = min.substring(0, min.indexOf("&"));
-
-			if(min == null || min.isBlank())
-			{
-				LogMessage("checkTempAlerts() No forecast minimum temperature available to work out if the temp has bottomed out already or not.");
-				return;
-			}
-
-			float minForecastTemp = Float.parseFloat(min);
-
-			float effectiveMin = Math.min(minForecastTemp, minObservedTemp);
-
-			LogMessage("checkTempAlerts() minForecastTemp: " + minForecastTemp);
-
-			cal1.setTimeInMillis(gh.days.get(0).timestamp);
-
-			LogMessage("checkTempAlerts() cal1: " + cal1);
-
-			boolean isToday = cal1.get(Calendar.YEAR) == cal.get(Calendar.YEAR) &&
-			                  cal1.get(Calendar.DAY_OF_YEAR) == cal.get(Calendar.DAY_OF_YEAR);
-
-			boolean hasBottomedOut = CurrTemp > effectiveMin && CurrTemp > minObservedTemp;
+			boolean hasBottomedOut = CurrTemp > minObservedTemp;
 
 			LogMessage("checkTempAlerts() hasBottomedOut: " + hasBottomedOut);
 
@@ -3139,60 +3112,22 @@ class weeWXAppCommon
 			long last_afternoon_alert = (long)KeyValue.readVar("LastAfternoonTempAlert", 0L);
 			cal1.setTimeInMillis(last_afternoon_alert);
 
-			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
-			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
-			{
-				LogMessage("checkTempAlerts() Notification already triggered this afternoon");
-				return;
-			}
+//			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
+//			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
+//			{
+//				LogMessage("checkTempAlerts() Notification already triggered this afternoon");
+//				return;
+//			}
 
 			float afternoon_temp_limit = (int)KeyValue.readVar("AfternoonTemp", weeWXApp.AfternoonTemp_default) / 10f;
 
-			float[] temps = get_curr_min_max_temp();
-			float CurrTemp = temps[0];
-			float maxObservedTemp = temps[2];
+			LogMessage("checkTempAlerts() peakTemp: " + peakTemp);
 
-			maxObservedTemp = Math.max(maxObservedTemp, CurrTemp);
-
-			GsonHelper gh = String2Gson();
-			if(gh == null || gh.days == null || gh.days.isEmpty())
-			{
-				LogMessage("checkTempAlerts() No forecast available to work out if the temp has peaked already or not.");
-				return;
-			}
-
-			String max = gh.days.get(0).max;
-			if(max != null && max.contains("&"))
-				max = max.substring(0, max.indexOf("&"));
-
-			if(max == null || max.isBlank())
-			{
-				LogMessage("checkTempAlerts() No forecast maximum temperature available to work out if the temp has peaked already or not.");
-				return;
-			}
-
-			float maxForecastPeak = Float.parseFloat(max);
-
-			float effectivePeak = Math.max(maxForecastPeak, maxObservedTemp);
-
-			LogMessage("checkTempAlerts() maxForecastPeak: " + maxForecastPeak);
-
-			cal1.setTimeInMillis(gh.days.get(0).timestamp);
-
-			LogMessage("checkTempAlerts() cal1: " + cal1);
-
-			boolean isToday = cal1.get(Calendar.YEAR) == cal.get(Calendar.YEAR) &&
-			                  cal1.get(Calendar.DAY_OF_YEAR) == cal.get(Calendar.DAY_OF_YEAR);
-
-			boolean after4pm = isToday && cal.get(Calendar.HOUR_OF_DAY) >= 16;
-
-			LogMessage("checkTempAlerts() after4pm: " + after4pm);
-
-			boolean hasPeaked = CurrTemp < effectivePeak && (CurrTemp < maxObservedTemp || after4pm);
+			boolean hasPeaked = CurrTemp < peakTemp;
 
 			LogMessage("checkTempAlerts() hasPeaked: " + hasPeaked);
 
-			boolean hasCooledOff = hasPeaked && CurrTemp <= afternoon_temp_limit && maxObservedTemp > afternoon_temp_limit;
+			boolean hasCooledOff = hasPeaked && CurrTemp <= afternoon_temp_limit;
 
 			LogMessage("checkTempAlerts() hasCooledOff: " + hasCooledOff);
 
@@ -3209,14 +3144,14 @@ class weeWXAppCommon
 		}
 	}
 
-	static float[] get_curr_min_max_temp()
+	static float[] get_curr_min_peak_temp()
 	{
 		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
 		if(lastDownload == null || lastDownload.isBlank())
 			return new float[]{-999, -999, -999};
 
 		String[] bits = lastDownload.split("\\|");
-		return new float[]{Float.parseFloat(bits[0]), Float.parseFloat(bits[1]), Float.parseFloat(bits[3])};
+		return new float[]{Float.parseFloat(bits[0]), Float.parseFloat(bits[1]), Float.parseFloat(bits[301])};
 	}
 
 	static String getElement(String[] bits, int element)

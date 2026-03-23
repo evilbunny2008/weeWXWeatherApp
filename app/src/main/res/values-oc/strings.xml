@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Alèrtas de pluèja fòrta?</string>
     <string name="rainrate_alert_severe_desc">Alèrtas se lo taus de pluèja despassa lo limit sevèr en foncion de la durada de las pluèjas</string>
     <string name="rainrate_alert_severe_str">Alèrta de taus de pluèja grèva</string>
+    <string name="rainrate_alert_str">Alèrta de taus de pluèja</string>
     <string name="rainrate_alert_warning">Alèrtas de taus de pluèja d\'avertiment?</string>
     <string name="rainrate_alert_warning_desc">Alèrtas se lo taus de pluèja despassa lo limit d\'avertiment en foncion de la durada de las pluèjas</string>
     <string name="rainrate_alert_warning_str">Alèrta de taus de pluèja d\'avertiment</string>

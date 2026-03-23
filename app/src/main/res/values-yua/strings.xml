@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Alertas u k\'a\'am cháak?</string>
     <string name="rainrate_alert_severe_desc">Alertas wa le tasa cháak supera le límite severo basado ti\' le ku bisik le cháak</string>
     <string name="rainrate_alert_severe_str">Alerta u k\'a\'am cháak</string>
+    <string name="rainrate_alert_str">Alerta u k\'áaxal ja\'</string>
     <string name="rainrate_alert_warning">Advertencia Alertas u tasa cháak?</string>
     <string name="rainrate_alert_warning_desc">Alertas wa le tasa cháak supera le límite advertencia basado ti\' le ku bisik le cháak</string>
     <string name="rainrate_alert_warning_str">Advertencia Alerta ti\' le tasa cháak</string>

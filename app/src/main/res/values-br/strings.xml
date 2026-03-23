@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Kemennadennoù diwar-benn ar glav kreñv?</string>
     <string name="rainrate_alert_severe_desc">Kemennadennoù ma tremen ar feur glav ar vevenn strizh diazezet war padelezh ar glav</string>
     <string name="rainrate_alert_severe_str">Kemennadenn diwar-benn ar glav kreñv</string>
+    <string name="rainrate_alert_str">Diwall ouzh ar feur glav</string>
     <string name="rainrate_alert_warning">Kemennadennoù war ar feur glav?</string>
     <string name="rainrate_alert_warning_desc">Kemennadennoù ma tremen ar feur glav ar vevenn evezhiañ diazezet war padelezh ar glav</string>
     <string name="rainrate_alert_warning_str">Kemennadenn war ar feur glav</string>

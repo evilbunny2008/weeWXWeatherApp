@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Ivyibutsa vy\'Imvura Ikomeye?</string>
     <string name="rainrate_alert_severe_desc">Imburi iyo imvura irenze urugero rukomeye rushingiye ku gihe imvura imara</string>
     <string name="rainrate_alert_severe_str">Imburi y\'imvura ikaze</string>
+    <string name="rainrate_alert_str">Imburi y\'igipimo c\'imvura</string>
     <string name="rainrate_alert_warning">Imburi y\'Imvura?</string>
     <string name="rainrate_alert_warning_desc">Imburi iyo imvura irenze urugero rw\'imburi bishingiye ku gihe imvura imara</string>
     <string name="rainrate_alert_warning_str">Imburi ku rugero rw\'imvura</string>

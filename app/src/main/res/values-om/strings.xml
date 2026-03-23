@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Akeekkachiisa Roobaa Hamaa?</string>
     <string name="rainrate_alert_severe_desc">Yeroo rooba irratti hundaa\'uun saffisi rooba daangaa hamaa yoo darbe akeekkachiisa</string>
     <string name="rainrate_alert_severe_str">Akeekkachiisa Roobaa Hamaa</string>
+    <string name="rainrate_alert_str">Akeekkachiisa Saffisa Roobaa</string>
     <string name="rainrate_alert_warning">Akeekkachiisa Akeekkachiisa Saffisa Roobaa?</string>
     <string name="rainrate_alert_warning_desc">Yeroo rooba irratti hundaa\'uun saffisi rooba daangaa akeekkachiisaa yoo caale akeekkachiisa</string>
     <string name="rainrate_alert_warning_str">Akeekkachiisa Akeekkachiisa Saffisa Roobaa</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Alerta sira kona-ba udan maka\'as?</string>
     <string name="rainrate_alert_severe_desc">Alerta sira se udan-been liu limite maka\'as bazeia ba durasaun udan-been nian</string>
     <string name="rainrate_alert_severe_str">Alerta ba udan maka\'as</string>
+    <string name="rainrate_alert_str">Alerta ba udan-been</string>
     <string name="rainrate_alert_warning">Alerta sira kona-ba taxa udan nian?</string>
     <string name="rainrate_alert_warning_desc">Alerta sira se udan-been liu limite alerta nian bazeia ba durasaun udan-been nian</string>
     <string name="rainrate_alert_warning_str">Alerta kona-ba udan-been</string>

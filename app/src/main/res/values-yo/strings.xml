@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Awọn titaniji Ojo nla?</string>
     <string name="rainrate_alert_severe_desc">Awọn itaniji ti iwọn ojo ba kọja opin ti o lagbara ti o da lori iye akoko ojo</string>
     <string name="rainrate_alert_severe_str">Itaniji Ojo nla</string>
+    <string name="rainrate_alert_str">Gbigbọn ojo ojo</string>
     <string name="rainrate_alert_warning">Awọn titaniji Ojo Ikilọ?</string>
     <string name="rainrate_alert_warning_desc">Awọn itaniji ti o ba jẹ pe oṣuwọn ojo kọja opin ikilọ ti o da lori iye akoko ojo</string>
     <string name="rainrate_alert_warning_str">Itaniji Ojo Ikilọ</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">قاتتىق يامغۇر ئاگاھلاندۇرۇشى؟</string>
     <string name="rainrate_alert_severe_desc">ئەگەر يامغۇر مىقدارى يامغۇر ۋاقتىغا ئاساسەن ئېغىر چەكتىن ئېشىپ كەتسە ئاگاھلاندۇرۇش بېرىدۇ</string>
     <string name="rainrate_alert_severe_str">قاتتىق يامغۇر ئاگاھلاندۇرۇشى</string>
+    <string name="rainrate_alert_str">يامغۇرلۇق ئاگاھلاندۇرۇش</string>
     <string name="rainrate_alert_warning">يامغۇرلۇق ئاگاھلاندۇرۇش ئاگاھلاندۇرۇشى؟</string>
     <string name="rainrate_alert_warning_desc">ئەگەر يامغۇر يېغىش ۋاقتىغا ئاساسەن ئاگاھلاندۇرۇش چېكىدىن ئېشىپ كەتسە ئاگاھلاندۇرۇش بېرىدۇ</string>
     <string name="rainrate_alert_warning_str">ئاگاھلاندۇرۇش يامغۇر ئاگاھلاندۇرۇشى</string>

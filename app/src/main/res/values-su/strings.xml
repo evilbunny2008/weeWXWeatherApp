@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Siaga Hujan Parah?</string>
     <string name="rainrate_alert_severe_desc">Waspada upami curah hujan ngaleuwihan wates parah dumasar kana durasi curah hujan</string>
     <string name="rainrate_alert_severe_str">Siaga Hujan Parah</string>
+    <string name="rainrate_alert_str">Siaga Hujan</string>
     <string name="rainrate_alert_warning">Awas Laju Hujan?</string>
     <string name="rainrate_alert_warning_desc">Waspada upami laju hujan ngaleuwihan wates peringatan dumasar kana durasi curah hujan</string>
     <string name="rainrate_alert_warning_str">Awas Laju Hujan</string>

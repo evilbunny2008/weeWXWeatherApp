@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Saray Alerto ed Graben Uran?</string>
     <string name="rainrate_alert_severe_desc">Saray alerto no say uran et onlampas ed graben limitasyon base ed karukey na uran</string>
     <string name="rainrate_alert_severe_str">Alerto ed Graben Uran</string>
+    <string name="rainrate_alert_str">Rainrate Alert</string>
     <string name="rainrate_alert_warning">Pasakbay Rainrate Alerts?</string>
     <string name="rainrate_alert_warning_desc">Saray alerto no say uran et onlampas ed limitasyon na pasakbay base ed karukey na uran</string>
     <string name="rainrate_alert_warning_str">Pasakbay Rainrate Alert</string>

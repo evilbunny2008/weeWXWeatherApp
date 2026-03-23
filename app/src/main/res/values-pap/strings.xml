@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Alertanan di áwaseru severo?</string>
     <string name="rainrate_alert_severe_desc">Alertanan si e tasa di áwaseru surpasá e límite severo basá riba durashon di áwaseru</string>
     <string name="rainrate_alert_severe_str">Alerta pa áwaseru severo</string>
+    <string name="rainrate_alert_str">Alerta di áwaseru</string>
     <string name="rainrate_alert_warning">Alertanan di Awaseru di Atvertensia?</string>
     <string name="rainrate_alert_warning_desc">Alertanan si e tasa di áwaseru surpasá e límite di atvertensia basá riba durashon di áwaseru</string>
     <string name="rainrate_alert_warning_str">Atvertensia Alerta di Awasero</string>

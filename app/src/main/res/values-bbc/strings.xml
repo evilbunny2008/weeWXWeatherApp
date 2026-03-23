@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Peringatan Udan Parah?</string>
     <string name="rainrate_alert_severe_desc">Peringatan molo tingkat udan melebihi batas parah berdasarkan leleng ni udan</string>
     <string name="rainrate_alert_severe_str">Peringatan Tingkat Udan Parah</string>
+    <string name="rainrate_alert_str">Peringatan Tingkat Udan</string>
     <string name="rainrate_alert_warning">Sipaingot Peringatan Tingkat Udan?</string>
     <string name="rainrate_alert_warning_desc">Peringatan molo tingkat udan melebihi batas peringatan berdasarkan leleng ni udan</string>
     <string name="rainrate_alert_warning_str">Peringatan Peringatan Tingkat Udan</string>

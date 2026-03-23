@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Къатты ягъмур акъкъында хаберлер?</string>
     <string name="rainrate_alert_severe_desc">Ягъмурнынъ девамлылыгъына коре ягъмурнынъ ольчюси агъыр сынъырдан зияде олса, хабердар эте</string>
     <string name="rainrate_alert_severe_str">Къатты ягъмур акъкъында хабердарлыкъ</string>
+    <string name="rainrate_alert_str">Ягъмур акъкъында хабердарлыкъ</string>
     <string name="rainrate_alert_warning">Укюм Ягъмур акъкъында хаберлер?</string>
     <string name="rainrate_alert_warning_desc">Ягъмурнынъ девамлылыгъына коре ягъмурнынъ ольчюси тенбиелев сынъырындан зияде олса, хабердар эте</string>
     <string name="rainrate_alert_warning_str">Укюм Ягъмур акъкъында хабердарлыкъ</string>

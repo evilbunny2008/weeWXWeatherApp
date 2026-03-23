@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Peringatan Udan na Parah?</string>
     <string name="rainrate_alert_severe_desc">Peringatan anggo udan lobih humbani batas na parah berdasarhon dokah ni udan</string>
     <string name="rainrate_alert_severe_str">Peringatan Udan na Parah</string>
+    <string name="rainrate_alert_str">Peringatan Udan</string>
     <string name="rainrate_alert_warning">Peringatan Laju Udan?</string>
     <string name="rainrate_alert_warning_desc">Peringatan anggo udan lobih humbani batas peringatan berdasarhon dokah ni udan</string>
     <string name="rainrate_alert_warning_str">Peringatan Peringatan Laju Udan</string>

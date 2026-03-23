@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">ਗੰਭੀਰ ਬਾਰਿਸ਼ ਦੀਆਂ ਚੇਤਾਵਨੀਆਂ?</string>
     <string name="rainrate_alert_severe_desc">ਬਾਰਿਸ਼ ਦੀ ਮਿਆਦ ਦੇ ਆਧਾਰ \'ਤੇ ਜੇਕਰ ਮੀਂਹ ਦੀ ਦਰ ਗੰਭੀਰ ਸੀਮਾ ਤੋਂ ਵੱਧ ਜਾਂਦੀ ਹੈ ਤਾਂ ਚੇਤਾਵਨੀਆਂ</string>
     <string name="rainrate_alert_severe_str">ਗੰਭੀਰ ਮੀਂਹ ਦੀ ਚਿਤਾਵਨੀ</string>
+    <string name="rainrate_alert_str">ਬਾਰਿਸ਼ ਦੀ ਚੇਤਾਵਨੀ</string>
     <string name="rainrate_alert_warning">ਚੇਤਾਵਨੀ ਰੇਨਰੇਟ ਅਲਰਟ?</string>
     <string name="rainrate_alert_warning_desc">ਚੇਤਾਵਨੀਆਂ ਜੇਕਰ ਬਾਰਸ਼ ਦੀ ਦਰ ਬਾਰਿਸ਼ ਦੀ ਮਿਆਦ ਦੇ ਅਧਾਰ \'ਤੇ ਚੇਤਾਵਨੀ ਸੀਮਾ ਤੋਂ ਵੱਧ ਜਾਂਦੀ ਹੈ</string>
     <string name="rainrate_alert_warning_str">ਚੇਤਾਵਨੀ ਮੀਂਹ ਦਰ ਚੇਤਾਵਨੀ</string>

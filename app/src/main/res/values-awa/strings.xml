@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">गंभीर बारिश के चेतावनी?</string>
     <string name="rainrate_alert_severe_desc">अगर वर्षा अवधि वर्षा अवधि के आधार पर वर्षा दर गंभीर सीमा से अधिक हो जात है तो अलर्ट</string>
     <string name="rainrate_alert_severe_str">गंभीर बारिश दर का चेतावनी</string>
+    <string name="rainrate_alert_str">बारिश दर चेतावनी</string>
     <string name="rainrate_alert_warning">चेतावनी बारिश दर अलर्ट?</string>
     <string name="rainrate_alert_warning_desc">बारिश के अवधि के आधार पर बारिश दर चेतावनी सीमा से अधिक हो जाय तो चेतावनी</string>
     <string name="rainrate_alert_warning_str">चेतावनी बारिश दर चेतावनी</string>

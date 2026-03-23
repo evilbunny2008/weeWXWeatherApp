@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">¿Alertas de precipitación severa?</string>
     <string name="rainrate_alert_severe_desc">Parapa ritmin sinchi limite nisqamanta aswan achka kaptinqa parapa unayniyuq kasqanman hinam willakun</string>
     <string name="rainrate_alert_severe_str">Alerta de ritmo severa de lluvia</string>
+    <string name="rainrate_alert_str">Alerta de ritmo de lluvia</string>
     <string name="rainrate_alert_warning">¿Alertas para ritmo nisqamanta willakuy?</string>
     <string name="rainrate_alert_warning_desc">Parapa ritminqa parapa hayka kasqanman hina advertencia nisqa limite nisqamanta aswan achka kaptinqa alertan</string>
     <string name="rainrate_alert_warning_str">Alerta de ritmo de lluvia nisqamanta willakuy</string>

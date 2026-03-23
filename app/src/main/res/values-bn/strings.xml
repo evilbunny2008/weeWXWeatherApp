@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">তীব্র বৃষ্টিপাতের সতর্কতা?</string>
     <string name="rainrate_alert_severe_desc">বৃষ্টিপাতের সময়কালের উপর ভিত্তি করে বৃষ্টির হার গুরুতর সীমা অতিক্রম করলে সতর্কতা</string>
     <string name="rainrate_alert_severe_str">তীব্র বৃষ্টিপাতের সতর্কতা</string>
+    <string name="rainrate_alert_str">বৃষ্টিপাতের সতর্কতা</string>
     <string name="rainrate_alert_warning">বৃষ্টিপাতের সতর্কতা সতর্কতা?</string>
     <string name="rainrate_alert_warning_desc">বৃষ্টিপাতের সময়কালের উপর ভিত্তি করে বৃষ্টির হার সতর্কতা সীমা অতিক্রম করলে সতর্কতা</string>
     <string name="rainrate_alert_warning_str">সতর্কীকরণ বৃষ্টিপাতের সতর্কতা</string>

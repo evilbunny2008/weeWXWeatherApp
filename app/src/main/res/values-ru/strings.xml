@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Оповещения о сильном дожде?</string>
     <string name="rainrate_alert_severe_desc">Предупреждает, если интенсивность дождя превышает строгий предел в зависимости от продолжительности дождя</string>
     <string name="rainrate_alert_severe_str">Оповещение о сильном дожде</string>
+    <string name="rainrate_alert_str">Оповещение о скорости дождя</string>
     <string name="rainrate_alert_warning">Предупреждения об уровне дождя?</string>
     <string name="rainrate_alert_warning_desc">Предупреждает, если интенсивность дождя превышает предел предупреждения в зависимости от продолжительности дождя</string>
     <string name="rainrate_alert_warning_str">Предупреждение об уровне дождя</string>

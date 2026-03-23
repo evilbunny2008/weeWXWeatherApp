@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">د شدید باران خبرتیا؟</string>
     <string name="rainrate_alert_severe_desc">خبرتیا که د باران کچه د باران د مودې پراساس له سخت حد څخه زیاته وي</string>
     <string name="rainrate_alert_severe_str">د سخت باران خبرداری</string>
+    <string name="rainrate_alert_str">د باران خبرتیا</string>
     <string name="rainrate_alert_warning">د باران د اورښت خبرتیا؟</string>
     <string name="rainrate_alert_warning_desc">خبرداری که د باران کچه د باران د مودې پراساس د خبرتیا حد څخه زیاته وي</string>
     <string name="rainrate_alert_warning_str">د باران د اورښت خبرتیا</string>

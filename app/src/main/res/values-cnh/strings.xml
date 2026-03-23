@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Ruah a sur tuk lai timi ralrin peknak?</string>
     <string name="rainrate_alert_severe_desc">Ruah sur caan sauhnak cung ah hram bunh in ruah sur ning nih a fak tukmi ri a lonh ahcun ralrin peknak</string>
     <string name="rainrate_alert_severe_str">Ruah fak tuk in a sur lai tiah ralrin peknak</string>
+    <string name="rainrate_alert_str">Ruah sur ralrin peknak</string>
     <string name="rainrate_alert_warning">Ralrinnak Ruahsurnak Ralrin peknak?</string>
     <string name="rainrate_alert_warning_desc">Ruah sur caan sauhnak cung ah hram bunh in ralrin peknak ri a lonh ahcun ralrin peknak</string>
     <string name="rainrate_alert_warning_str">Ralrinnak Ruahsur Ralrinnak</string>

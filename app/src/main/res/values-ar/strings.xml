@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">تنبيهات شديدة لمعدل المطر؟</string>
     <string name="rainrate_alert_severe_desc">تنبيهات إذا تجاوز معدل هطول الأمطار الحد الشديد بناءً على مدة هطول الأمطار</string>
     <string name="rainrate_alert_severe_str">تنبيه شديد لمعدل المطر</string>
+    <string name="rainrate_alert_str">تنبيه معدل المطر</string>
     <string name="rainrate_alert_warning">تحذير تنبيهات معدل هطول الأمطار؟</string>
     <string name="rainrate_alert_warning_desc">تنبيهات إذا تجاوز معدل المطر حد التحذير بناءً على مدة هطول الأمطار</string>
     <string name="rainrate_alert_warning_str">تحذير تنبيه معدل المطر</string>

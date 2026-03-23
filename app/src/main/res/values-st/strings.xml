@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Litlhokomeliso tsa Pula e Matla?</string>
     <string name="rainrate_alert_severe_desc">Litemoso haeba pula e feta moeli o matla ho latela nako ea pula</string>
     <string name="rainrate_alert_severe_str">Tlhokomeliso ea Pula e Matla</string>
+    <string name="rainrate_alert_str">Tlhokomeliso ea Rainrate</string>
     <string name="rainrate_alert_warning">Tlhokomeliso mabapi le Rainrate?</string>
     <string name="rainrate_alert_warning_desc">Litemoso haeba pula e feta moeli oa temoso ho latela nako ea pula</string>
     <string name="rainrate_alert_warning_str">Temoso ea Rainrate Alert</string>

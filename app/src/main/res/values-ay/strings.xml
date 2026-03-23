@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">¿Alertas de ritmo severa de lluvia ukax utjiti?</string>
     <string name="rainrate_alert_severe_desc">Jallu pachax sinti jach\'a límite ukat sipanx juk\'ampïspa ukhax jallu purintañ pachaparjamaw yatiyaraki</string>
     <string name="rainrate_alert_severe_str">Alerta de ritmo severa de lluvia ukax mä jach\'a uñacht\'äwiwa</string>
+    <string name="rainrate_alert_str">Jallu pachan Alerta</string>
     <string name="rainrate_alert_warning">¿Alertas de ritmo de lluvia ukanakat yatiyaña?</string>
     <string name="rainrate_alert_warning_desc">Jallu pachax jallu purintañapatakix límite de advertencia ukat sipanx juk\'ampïspa ukhax alertas</string>
     <string name="rainrate_alert_warning_str">Alerta de ritmo de lluvia ukan yatiyawipa</string>

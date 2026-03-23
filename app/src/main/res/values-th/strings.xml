@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">การแจ้งเตือนปริมาณฝนตกรุนแรง?</string>
     <string name="rainrate_alert_severe_desc">แจ้งเตือนหากปริมาณน้ำฝนเกินขีดจำกัดขั้นรุนแรงตามระยะเวลาฝนตก</string>
     <string name="rainrate_alert_severe_str">การแจ้งเตือนปริมาณน้ำฝนขั้นรุนแรง</string>
+    <string name="rainrate_alert_str">การแจ้งเตือนปริมาณน้ำฝน</string>
     <string name="rainrate_alert_warning">แจ้งเตือนปริมาณน้ำฝน?</string>
     <string name="rainrate_alert_warning_desc">การแจ้งเตือน%20if%20%20อัตราฝน%20เกิน%20the%20คำเตือน%20จำกัด%20ตาม%20กับ%20ปริมาณฝน%20ระยะเวลา</string>
     <string name="rainrate_alert_warning_str">การแจ้งเตือนการแจ้งเตือนปริมาณน้ำฝน</string>

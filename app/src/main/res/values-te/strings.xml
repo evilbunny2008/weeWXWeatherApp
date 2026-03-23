@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">తీవ్రమైన వర్షపాతం హెచ్చరికలు?</string>
     <string name="rainrate_alert_severe_desc">వర్షపాతం వ్యవధి ఆధారంగా తీవ్ర పరిమితిని మించి వర్షపాతం ఉంటే హెచ్చరికలు</string>
     <string name="rainrate_alert_severe_str">తీవ్రమైన వర్షపాతం హెచ్చరిక</string>
+    <string name="rainrate_alert_str">రెయిన్రేట్ హెచ్చరిక</string>
     <string name="rainrate_alert_warning">హెచ్చరిక రెయిన్రేట్ హెచ్చరికలు?</string>
     <string name="rainrate_alert_warning_desc">వర్షపాతం వ్యవధి ఆధారంగా వర్షపాతం హెచ్చరిక పరిమితిని మించి ఉంటే హెచ్చరికలు</string>
     <string name="rainrate_alert_warning_str">హెచ్చరిక రెయిన్రేట్ హెచ్చరిక</string>

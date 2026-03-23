@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">கடுமையான மழை எச்சரிக்கைகள்?</string>
     <string name="rainrate_alert_severe_desc">மழைப்பொழிவு காலத்தின் அடிப்படையில் மழைவீதம் கடுமையான வரம்பை மீறினால் எச்சரிக்கை</string>
     <string name="rainrate_alert_severe_str">கடுமையான மழை எச்சரிக்கை</string>
+    <string name="rainrate_alert_str">மழைவீழ்ச்சி எச்சரிக்கை</string>
     <string name="rainrate_alert_warning">எச்சரிக்கை மழைவீச்சு எச்சரிக்கைகள்?</string>
     <string name="rainrate_alert_warning_desc">மழைப்பொழிவு காலத்தின் அடிப்படையில் மழைவீதம் எச்சரிக்கை வரம்பை மீறினால் எச்சரிக்கைகள்</string>
     <string name="rainrate_alert_warning_str">எச்சரிக்கை மழைவீச்சு எச்சரிக்கை</string>

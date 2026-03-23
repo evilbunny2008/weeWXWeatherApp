@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Абвесткі аб моцным дажджы?</string>
     <string name="rainrate_alert_severe_desc">Папярэджвае, калі колькасць дажджу перавышае сур\'ёзны ліміт на аснове працягласці ападкаў</string>
     <string name="rainrate_alert_severe_str">Абвестка аб моцным дажджы</string>
+    <string name="rainrate_alert_str">Абвестка аб дажджы</string>
     <string name="rainrate_alert_warning">Папярэджанне Rainrate Alerts?</string>
     <string name="rainrate_alert_warning_desc">Абвесткі, калі колькасць дажджу перавышае ліміт папярэджання на аснове працягласці ападкаў</string>
     <string name="rainrate_alert_warning_str">Папярэджанне Rainrate Alert</string>

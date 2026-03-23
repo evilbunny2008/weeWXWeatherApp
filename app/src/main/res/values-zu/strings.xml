@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Izaziso Zemvula Enamandla?</string>
     <string name="rainrate_alert_severe_desc">Izexwayiso uma izinga lemvula lidlula umkhawulo onzima ngokusekelwe kubude besikhathi semvula</string>
     <string name="rainrate_alert_severe_str">Isexwayiso Semvula Enamandla</string>
+    <string name="rainrate_alert_str">Isexwayiso semvula</string>
     <string name="rainrate_alert_warning">Isexwayiso seRainrate?</string>
     <string name="rainrate_alert_warning_desc">Izexwayiso uma izinga lemvula lidlula umkhawulo oyisixwayiso ngokusekelwe esikhathini sokuna kwemvula</string>
     <string name="rainrate_alert_warning_str">Isexwayiso se-Rainrate Alert</string>

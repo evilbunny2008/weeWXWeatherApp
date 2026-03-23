@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Avvisi di Rainrate Severi?</string>
     <string name="rainrate_alert_severe_desc">Alerts se a precipitazione supera u limitu severu basatu annantu à a durata di a precipitazione</string>
     <string name="rainrate_alert_severe_str">Alerta di precipitazione severa</string>
+    <string name="rainrate_alert_str">Alert Rainrate</string>
     <string name="rainrate_alert_warning">Avvisu di Rainrate Alerts?</string>
     <string name="rainrate_alert_warning_desc">Alerts se a precipitazione supera u limitu di avvisu basatu annantu à a durata di a precipitazione</string>
     <string name="rainrate_alert_warning_str">Avvisu Alert Rainrate</string>

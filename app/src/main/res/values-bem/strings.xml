@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Ifishinbisho fya Mfula Iikalamba?</string>
     <string name="rainrate_alert_severe_desc">Icenjesho nga cakuti imfula yacila pa cipimo icakulisha ukulingana ne nshita ya mfula</string>
     <string name="rainrate_alert_severe_str">Ukucenjesha kwa Mfula Iikalamba</string>
+    <string name="rainrate_alert_str">Icebusho lya Mfula</string>
     <string name="rainrate_alert_warning">Ukucenjesha Ifyakucenjesha pa Mfula?</string>
     <string name="rainrate_alert_warning_desc">Ificenjesho nga cakuti imfula yacilapo pa cipimo cakucenjesha ukulingana ne nshita ya mfula</string>
     <string name="rainrate_alert_warning_str">Ukucenjesha Icicenjesho ca Mfula</string>

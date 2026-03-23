@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">දරුණු වැසි අනතුරු ඇඟවීම්?</string>
     <string name="rainrate_alert_severe_desc">වර්ෂාපතන කාලසීමාව මත පදනම්ව වර්ෂාපතනය දැඩි සීමාව ඉක්මවා ගියහොත් අනතුරු අඟවයි</string>
     <string name="rainrate_alert_severe_str">දරුණු වැසි අනතුරු ඇඟවීම</string>
+    <string name="rainrate_alert_str">වැස්ස අනතුරු ඇඟවීම</string>
     <string name="rainrate_alert_warning">අනතුරු ඇඟවීම් වැසි වාර ඇඟවීම්?</string>
     <string name="rainrate_alert_warning_desc">වර්ෂාපතන කාලසීමාව මත පදනම්ව වර්ෂාපතනය අනතුරු ඇඟවීමේ සීමාව ඉක්මවා ගියහොත් ඇඟවීම්</string>
     <string name="rainrate_alert_warning_str">අනතුරු ඇඟවීමේ වැසි සීග්‍ර ඇඟවීම</string>

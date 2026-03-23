@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Peringatan Hujeun Parah?</string>
     <string name="rainrate_alert_severe_desc">Peuingat meunyoe laju ujeuen leubeh nibak bataih brat berdasarkan durasi ujeuen</string>
     <string name="rainrate_alert_severe_str">Peringatan Ujeuen Parah</string>
+    <string name="rainrate_alert_str">Peringatan laju ujeun</string>
     <string name="rainrate_alert_warning">Peringatan Laju Hujeun Peringatan?</string>
     <string name="rainrate_alert_warning_desc">Peuingat meunyoe laju ujeuen leubeh nibak bataih peringatan berdasarkan durasi ujeuen</string>
     <string name="rainrate_alert_warning_str">Peringatan Peringatan Laju Ujeuen</string>

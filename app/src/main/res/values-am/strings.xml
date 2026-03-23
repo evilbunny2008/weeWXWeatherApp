@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">ከባድ የዝናብ መጠን ማንቂያዎች?</string>
     <string name="rainrate_alert_severe_desc">የዝናብ መጠኑ ከከባድ ገደብ በላይ ከሆነ በዝናብ ጊዜ ቆይታ ላይ ማንቂያዎች</string>
     <string name="rainrate_alert_severe_str">ከባድ የዝናብ መጠን ማንቂያ</string>
+    <string name="rainrate_alert_str">የዝናብ መጠን ማንቂያ</string>
     <string name="rainrate_alert_warning">የዝናብ መጠን ማንቂያዎች ማስጠንቀቂያ?</string>
     <string name="rainrate_alert_warning_desc">የዝናብ መጠኑ የዝናብ ጊዜን መሠረት በማድረግ የማስጠንቀቂያው ገደብ ካለፈ ማንቂያዎች</string>
     <string name="rainrate_alert_warning_str">የዝናብ መጠን ማንቂያ</string>

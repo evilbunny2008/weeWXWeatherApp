@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">A-alerte ti ngu-nzapa?</string>
     <string name="rainrate_alert_severe_desc">A yeke gboto mê ti azo tongana wungo ti ngu-nzapa ahon ndo ti ngangu so a fa na lege ti ngoi so ngu-nzapa apika</string>
     <string name="rainrate_alert_severe_str">Alerte ti ngangu ngu-nzapa</string>
+    <string name="rainrate_alert_str">Alerte ti ngu-nzapa</string>
     <string name="rainrate_alert_warning">A-alerte ti ngu-nzapa?</string>
     <string name="rainrate_alert_warning_desc">A yeke gboto mê ti azo tongana wungo ti ngu-nzapa ahon ndo ti wungo ti gbotongo mê so aluti na ndo ngoi so ngu-nzapa apika</string>
     <string name="rainrate_alert_warning_str">Gboto mê Alerte ti ngu-nzapa</string>

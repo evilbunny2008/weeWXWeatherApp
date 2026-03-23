@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">ئاگادارکردنەوە لە ڕێژەی بارانبارینی توند؟</string>
     <string name="rainrate_alert_severe_desc">ئاگاداری دەکاتەوە ئەگەر ڕێژەی بارانبارین سنووری توندی تێپەڕاند بە پشتبەستن بە ماوەی بارانبارین</string>
     <string name="rainrate_alert_severe_str">ئاگادارکردنەوەی ڕێژەی بارانبارینی توند</string>
+    <string name="rainrate_alert_str">ئاگادارکردنەوەی ڕێژەی باران</string>
     <string name="rainrate_alert_warning">ئاگادارکردنەوە ئاگادارکردنەوە لە ڕێژەی باران؟</string>
     <string name="rainrate_alert_warning_desc">ئاگادارکردنەوە دەدات ئەگەر ڕێژەی بارانبارین سنووری ئاگادارکردنەوە تێپەڕێنێت بە پشتبەستن بە ماوەی بارانبارین</string>
     <string name="rainrate_alert_warning_str">ئاگادارکردنەوە ئاگادارکردنەوەی ڕێژەی باران</string>

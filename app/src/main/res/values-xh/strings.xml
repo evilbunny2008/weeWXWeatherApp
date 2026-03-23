@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Izilumkiso zokuna kwemvula eNgamandla?</string>
     <string name="rainrate_alert_severe_desc">Izaziso ukuba imvula igqithile kumda oqatha ngokusekelwe kubude bexesha lemvula</string>
     <string name="rainrate_alert_severe_str">Isilumkiso seMvula eNgamandla</string>
+    <string name="rainrate_alert_str">Isilumkiso semvula</string>
     <string name="rainrate_alert_warning">Isilumkiso ngemvula?</string>
     <string name="rainrate_alert_warning_desc">Izaziso ukuba imvula igqithile kumda wesilumkiso ngokusekelwe kubude bexesha lemvula</string>
     <string name="rainrate_alert_warning_str">Warning Rainrate Alert</string>

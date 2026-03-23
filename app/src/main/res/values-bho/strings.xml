@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">गंभीर बरखा के दर के अलर्ट?</string>
     <string name="rainrate_alert_severe_desc">बरखा के अवधि के आधार पर बरखा के दर गंभीर सीमा से अधिका होखे पर अलर्ट करेला</string>
     <string name="rainrate_alert_severe_str">भयंकर बरखा के दर के अलर्ट</string>
+    <string name="rainrate_alert_str">रेनरेट अलर्ट के बा</string>
     <string name="rainrate_alert_warning">चेतावनी बरखा के दर के अलर्ट?</string>
     <string name="rainrate_alert_warning_desc">बरखा के अवधि के आधार पर बरखा के दर चेतावनी सीमा से अधिका होखे त अलर्ट करेला</string>
     <string name="rainrate_alert_warning_str">चेतावनी बरसात के दर के अलर्ट</string>

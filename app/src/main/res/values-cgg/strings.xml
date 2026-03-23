@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Okurabura kw\'enjura y\'amaani?</string>
     <string name="rainrate_alert_severe_desc">Okurabura enjura yaaba neerenga aha kikomo ky\'amaani kurugirira aha bwire bw\'enjura</string>
     <string name="rainrate_alert_severe_str">Okurabura kw\'enjura y\'amaani</string>
+    <string name="rainrate_alert_str">Okurabura aha mubaro gw\'enjura</string>
     <string name="rainrate_alert_warning">Okurabura aha nkora y\'enjura?</string>
     <string name="rainrate_alert_warning_desc">Okurabura enjura yaaba neerenga aha kikomo ky\'okurabura kurugiirira aha bwire bw\'enjura</string>
     <string name="rainrate_alert_warning_str">Okurabura aha mubaro gw\'enjura</string>

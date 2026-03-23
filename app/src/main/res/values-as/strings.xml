@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">তীব্ৰ বৰষুণৰ হাৰ সতৰ্কবাণী?</string>
     <string name="rainrate_alert_severe_desc">বৰষুণৰ সময়ৰ ওপৰত ভিত্তি কৰি বৰষুণৰ হাৰে তীব্ৰ সীমা অতিক্ৰম কৰিলে সতৰ্ক কৰি দিয়ে</string>
     <string name="rainrate_alert_severe_str">তীব্ৰ বৰষুণৰ হাৰ সতৰ্কবাণী</string>
+    <string name="rainrate_alert_str">বৰষুণৰ হাৰ সতৰ্কবাণী</string>
     <string name="rainrate_alert_warning">সতৰ্কবাণী বৰষুণৰ হাৰ সতৰ্কবাণী?</string>
     <string name="rainrate_alert_warning_desc">বৰষুণৰ সময়ৰ ওপৰত ভিত্তি কৰি বৰষুণৰ হাৰে সতৰ্কবাণী সীমা অতিক্ৰম কৰিলে সতৰ্ক কৰি দিয়ে</string>
     <string name="rainrate_alert_warning_str">সতৰ্কবাণী বৰষুণৰ হাৰ সতৰ্কবাণী</string>

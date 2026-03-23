@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Alertes de pluja severa?</string>
     <string name="rainrate_alert_severe_desc">Alertes si la taxa de pluja supera el límit sever en funció de la durada de la pluja</string>
     <string name="rainrate_alert_severe_str">Alerta de precipitació severa</string>
+    <string name="rainrate_alert_str">Alerta de pluja</string>
     <string name="rainrate_alert_warning">Avís, alertes de pluja?</string>
     <string name="rainrate_alert_warning_desc">Alertes si la taxa de pluja supera el límit d\'avís en funció de la durada de la pluja</string>
     <string name="rainrate_alert_warning_str">Avís Alerta de pluja</string>

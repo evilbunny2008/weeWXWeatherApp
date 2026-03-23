@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Güýçli ýagyş duýduryşlary?</string>
     <string name="rainrate_alert_severe_desc">Rainagyş ýagyşynyň dowamlylygyna baglylykda gaty çäkden geçse duýduryş</string>
     <string name="rainrate_alert_severe_str">Güýçli ýagyş duýduryşy</string>
+    <string name="rainrate_alert_str">Rainagyş duýduryşy</string>
     <string name="rainrate_alert_warning">Rainagyş duýduryşlary barada duýduryş?</string>
     <string name="rainrate_alert_warning_desc">Rainagyş ýagyşynyň dowamlylygyna baglylykda duýduryş çäginden ýokary bolsa duýduryş</string>
     <string name="rainrate_alert_warning_str">Duýduryş ýagyş duýduryşy</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">شديد برسات جي خبرداري؟</string>
     <string name="rainrate_alert_severe_desc">خبردارين جي صورت ۾ برسات جي شدت جي لحاظ کان سخت حد کان وڌي وڃي</string>
     <string name="rainrate_alert_severe_str">سخت برسات جي خبرداري</string>
+    <string name="rainrate_alert_str">برسات جي خبرداري</string>
     <string name="rainrate_alert_warning">ڊيڄاريندڙ برسات جي خبرداري؟</string>
     <string name="rainrate_alert_warning_desc">خبردارين جي صورت ۾ برسات جي مدت وارننگ جي حد کان وڌي وڃي</string>
     <string name="rainrate_alert_warning_str">وارننگ Rainrate Alert</string>

@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">שטרענג רעגן-ראַטע אַלערץ?</string>
     <string name="rainrate_alert_severe_desc">אַלערץ אויב די רעגן קורס יקסידז די שטרענג שיעור באזירט אויף רעגן געדויער</string>
     <string name="rainrate_alert_severe_str">שטרענג ראַינרייט אַלערט</string>
+    <string name="rainrate_alert_str">Rainrate Alert</string>
     <string name="rainrate_alert_warning">ווארענונג ריינראַטע אַלערץ?</string>
     <string name="rainrate_alert_warning_desc">אַלערץ אויב די רעגן קורס יקסידז די ווארענונג שיעור באזירט אויף רעגן געדויער</string>
     <string name="rainrate_alert_warning_str">ווארענונג ריינראַטע אַלערט</string>

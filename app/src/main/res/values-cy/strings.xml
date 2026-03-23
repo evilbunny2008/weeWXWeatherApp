@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Rhybuddion Difrifol Glaw?</string>
     <string name="rainrate_alert_severe_desc">Rhybuddion os yw\'r glawiad yn fwy na\'r terfyn difrifol yn seiliedig ar hyd y glawiad</string>
     <string name="rainrate_alert_severe_str">Rhybudd Llifogydd Difrifol</string>
+    <string name="rainrate_alert_str">Rhybudd Cyfraddau Glaw</string>
     <string name="rainrate_alert_warning">Rhybudd Rhybuddion Cyfraddau Glaw?</string>
     <string name="rainrate_alert_warning_desc">Rhybuddion os yw\'r glawiad yn fwy na\'r terfyn rhybudd yn seiliedig ar hyd y glawiad</string>
     <string name="rainrate_alert_warning_str">Rhybudd Cyfraddau Glaw</string>

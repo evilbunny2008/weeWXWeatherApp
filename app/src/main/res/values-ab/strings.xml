@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Ақәа ӷәӷәа азы агәҽанҵарақәа?</string>
     <string name="rainrate_alert_severe_desc">Ақәа ақәҭәара аамҭа инақәыршәаны ақәа амҽхак ӷәӷәоу аҳәаа иахысыр агәҽанҵарақәа</string>
     <string name="rainrate_alert_severe_str">Ақәа ӷәӷәа азы агәҽанҵара</string>
+    <string name="rainrate_alert_str">Ақәа амҽхак азы агәҽанҵара</string>
     <string name="rainrate_alert_warning">Агәҽанҵара Аӡа амҽхак Агәҽанҵарақәа?</string>
     <string name="rainrate_alert_warning_desc">Ақәа ақәҭәара аамҭа инақәыршәаны агәҽанҵаратә ԥкра иахысзар агәҽанҵарақәа</string>
     <string name="rainrate_alert_warning_str">Агәҽанҵара Ақәа амҽхак Агәҽанҵара</string>

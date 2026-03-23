@@ -205,7 +205,7 @@ public class weeWXApp extends Application
 	private static int lastNightMode = -1;
 
 	final static int minimum_inigo_version = 4000;
-	final static int minimum_inigo_version_for_rainrate_alerts = 1000008;
+	final static int minimum_inigo_version_for_rainrate_alerts = 1000009;
 
 	final static boolean radarforecast_default = false;
 	final static boolean disableSwipeOnRadar_default = false;
@@ -1197,7 +1197,7 @@ public class weeWXApp extends Application
 	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, alert_channels[level])
 		    .setAutoCancel(true)
             .setContentText(str)
-            .setContentTitle(getAndroidString(R.string.rainfall_alert_str))
+            .setContentTitle(getAndroidString(R.string.rainrate_alert_str))
             .setPriority(priority)
             .setSmallIcon(R.drawable.rain)
             .setSound(instance.soundUri)

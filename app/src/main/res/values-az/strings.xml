@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Şiddətli Yağış Xəbərdarlığı?</string>
     <string name="rainrate_alert_severe_desc">Yağış dərəcəsi yağışın müddəti əsasında şiddətli limiti keçərsə, xəbərdarlıq edir</string>
     <string name="rainrate_alert_severe_str">Şiddətli Yağış Siqnalı</string>
+    <string name="rainrate_alert_str">Yağış Xəbərdarlığı</string>
     <string name="rainrate_alert_warning">Xəbərdarlıq yağış sürəti barədə xəbərdarlıq?</string>
     <string name="rainrate_alert_warning_desc">Yağış dərəcəsi yağışın müddəti əsasında xəbərdarlıq limitini keçərsə, xəbərdarlıq edir</string>
     <string name="rainrate_alert_warning_str">Xəbərdarlıq Yağış Həddindən artıq xəbərdarlıq</string>

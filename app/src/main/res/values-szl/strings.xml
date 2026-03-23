@@ -86,6 +86,7 @@
     <string name="rainrate_alert_severe">Alarmy ô poważnych tympach dyszcza?</string>
     <string name="rainrate_alert_severe_desc">Ôstrzego, jeźli tympo dyszcza przekroczo poważno granica w zależności ôd czasu trwanio ôpadōw</string>
     <string name="rainrate_alert_severe_str">Alarm ô powożnym spōłczynniku dyszczu</string>
+    <string name="rainrate_alert_str">Alarm ô spōłczynniku dyszczu</string>
     <string name="rainrate_alert_warning">Ôstrzegawcze Alarmy ô spōłczynniku dyszczu?</string>
     <string name="rainrate_alert_warning_desc">Ôstrzegajōm, jeźli tympo dyszcza przekroczo limit ôstrzegawczy w zależności ôd czasu trwanio ôpadōw</string>
     <string name="rainrate_alert_warning_str">Ôstrzeżynie Alarm ô spōłczynniku dyszczu</string>
