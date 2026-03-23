@@ -3194,7 +3194,8 @@ class weeWXAppCommon
 
 			boolean rainrate_alert = rainrate_alert_watch || rainrate_alert_warning || rainrate_alert_severe;
 
-			if(rainrate_alert && (version < weeWXApp.minimum_inigo_version_for_rainrate_alerts || bits.length < 300))
+			if(rainrate_alert && (version < weeWXApp.minimum_inigo_version_for_rainrate_alerts ||
+			                      bits.length < weeWXApp.minimum_inigo_version_for_rainrate_alerts))
 			{
 				LogMessage("reallyGetWeather() sendAlert() triggered");
 				sendAlert();

@@ -206,6 +206,7 @@ public class weeWXApp extends Application
 
 	final static int minimum_inigo_version = 4000;
 	final static int minimum_inigo_version_for_rainrate_alerts = 1000009;
+	final static int minimum_inigo_bits_for_rainrate_alerts = 301;
 
 	final static boolean radarforecast_default = false;
 	final static boolean disableSwipeOnRadar_default = false;
