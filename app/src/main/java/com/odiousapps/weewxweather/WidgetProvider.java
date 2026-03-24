@@ -12,6 +12,7 @@ import android.widget.RemoteViews;
 import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getElement;
 
 public class WidgetProvider extends AppWidgetProvider
 {
@@ -133,18 +134,19 @@ public class WidgetProvider extends AppWidgetProvider
 		if(lastDownload != null && !lastDownload.isBlank())
 		{
 			String[] bits = lastDownload.split("\\|");
-			String rain = bits[20];
-			if(bits.length > 158 && !bits[158].isBlank())
-				rain = bits[158];
+			String rain = getElement(20, bits);
+			String str158 = getElement(158, bits);
+			if(!str158.isBlank())
+				rain = str158;
 
-			rain += bits[62];
+			rain += getElement(62, bits);
 
-			tempText = bits[0] + bits[60];
+			tempText = getElement(0, bits) + getElement(60, bits);
 			LogMessage("Temperature set to " + tempText);
 
-			views.setTextViewText(R.id.widget_location, bits[56]);
-			views.setTextViewText(R.id.widget_time, bits[55]);
-			views.setTextViewText(R.id.widget_wind, bits[25] + bits[61]);
+			views.setTextViewText(R.id.widget_location, getElement(56, bits));
+			views.setTextViewText(R.id.widget_time, getElement(55, bits));
+			views.setTextViewText(R.id.widget_wind, getElement(25, bits) + getElement(61, bits));
 			views.setTextViewText(R.id.widget_rain, rain);
 		} else {
 			LogMessage("Temperature set to Error!");

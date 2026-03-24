@@ -34,8 +34,15 @@ import java.util.regex.Pattern;
 import com.odiousapps.weewxweather.weeWXAppCommon.Result;
 import com.odiousapps.weewxweather.weeWXAppCommon.Result2;
 
+
+import static com.odiousapps.weewxweather.weeWXAppCommon.C2F;
+import static com.odiousapps.weewxweather.weeWXAppCommon.C2Fdeg;
+import static com.odiousapps.weewxweather.weeWXAppCommon.F2Cdeg;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getInt;
+import static com.odiousapps.weewxweather.weeWXAppCommon.roundFloat;
+import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 
 @SuppressWarnings({"SameParameterValue", "ApplySharedPref", "ConstantConditions", "SameReturnValue",
                    "BooleanMethodIsAlwaysInverted", "SetTextI18n", "StringBufferMayBeStringBuilder"})
@@ -187,8 +194,8 @@ class JsoupHelper
 
 								while(m2.find())
 								{
-									int f = (int)Float.parseFloat(m2.group(1));
-									String c = weeWXAppCommon.F2Cdeg(f);
+									int f = getInt(m2.group(1));
+									String c = F2Cdeg(f);
 									m2.appendReplacement(sb, c);
 								}
 
@@ -210,8 +217,8 @@ class JsoupHelper
 
 								while(m2.find())
 								{
-									int c = (int)Float.parseFloat(m2.group(1));
-									String f = weeWXAppCommon.C2Fdeg(c);
+									int c = getInt(m2.group(1));
+									String f = C2Fdeg(c);
 									m2.appendReplacement(sb, f);
 								}
 
@@ -257,12 +264,12 @@ class JsoupHelper
 							{
 								try
 								{
-									day.max = weeWXAppCommon.F2Cdeg(jobj.getInt("highTemperature"));
+									day.max = F2Cdeg(jobj.getInt("highTemperature"));
 								} catch(Exception ignored) {}
 
 								try
 								{
-									day.min = weeWXAppCommon.F2Cdeg(jobj.getInt("lowTemperature"));
+									day.min = F2Cdeg(jobj.getInt("lowTemperature"));
 								} catch(Exception ignored) {}
 
 							} else {
@@ -292,12 +299,12 @@ class JsoupHelper
 							} else {
 								try
 								{
-									day.max = weeWXAppCommon.C2Fdeg(jobj.getInt("highTemperature"));
+									day.max = C2Fdeg(jobj.getInt("highTemperature"));
 								} catch(Exception ignored) {}
 
 								try
 								{
-									day.min = weeWXAppCommon.F2Cdeg(jobj.getInt("lowTemperature"));
+									day.min = F2Cdeg(jobj.getInt("lowTemperature"));
 								} catch(Exception ignored) {}
 							}
 						}
@@ -368,11 +375,11 @@ class JsoupHelper
 					int height = 0;
 
 					if(svg.hasAttr("height"))
-						height = (int)Float.parseFloat(svg.attr("height"));
+						height = getInt(svg.attr("height"));
 
 					int width = 0;
 					if(svg.hasAttr("width"))
-						width = (int)Float.parseFloat(svg.attr("width"));
+						width = getInt(svg.attr("width"));
 
 					if(width > 0 && height > 0)
 						filenameOrig += "_" + height + "x" + width;
@@ -841,9 +848,9 @@ class JsoupHelper
 				day.min += "&deg;C";
 			} else {
 				if(!day.max.isBlank())
-					day.max += weeWXAppCommon.C2Fdeg((int)Float.parseFloat(day.max));
+					day.max += C2Fdeg(getInt(day.max));
 				if(!day.min.isBlank())
-					day.min += weeWXAppCommon.C2Fdeg((int)Float.parseFloat(day.min));
+					day.min += C2Fdeg(getInt(day.min));
 			}
 
 			if(day.max.isBlank() || day.max.startsWith("&deg;"))
@@ -875,8 +882,8 @@ class JsoupHelper
 
 				if(!metric)
 				{
-					day.max = weeWXAppCommon.C2Fdeg((int)Float.parseFloat(day.max));
-					day.min = weeWXAppCommon.C2Fdeg((int)Float.parseFloat(day.min));
+					day.max = C2Fdeg(getInt(day.max));
+					day.min = C2Fdeg(getInt(day.min));
 				}
 
 				days.add(day);
@@ -951,17 +958,17 @@ class JsoupHelper
 				if(td != null)
 				{
 					if(metric)
-						day.min = Math.round(Float.parseFloat(td.text().replace("°C", ""))) + "&deg;C";
+						day.min = roundFloat(td.text().replace("°C", "")) + "&deg;C";
 					else
-						day.min = (int)weeWXAppCommon.C2F(Float.parseFloat(td.text().replace("°C", ""))) + "&deg;F";
+						day.min = (int)C2F(roundFloat(td.text().replace("°C", ""))) + "&deg;F";
 				}
 
 				td = e.selectFirst("td.tempmax");
 				{
 					if(metric)
-						day.max = Math.round(Float.parseFloat(td.text().replace("°C", ""))) + "&deg;C";
+						day.max = roundFloat(td.text().replace("°C", "")) + "&deg;C";
 					else
-						day.max = (int)weeWXAppCommon.C2F(Float.parseFloat(td.text().replace("°C", ""))) + "&deg;F";
+						day.max = roundFloat(td.text().replace("°C", "")) + "&deg;F";
 				}
 
 				days.add(day);
@@ -1514,7 +1521,7 @@ class JsoupHelper
 
 					//LogMessage("processWZ2Forecasts() tm.group(1): " + tm.group(1));
 
-					int C = Math.round(weeWXAppCommon.str2Float(tm.group(1)));
+					int C = Math.round(str2Float(tm.group(1)));
 
 					if(metric)
 						temps.add(C + "&deg;C");
@@ -1696,7 +1703,7 @@ class JsoupHelper
 				possrain = bits[1].strip();
 
 				if(bits[0].contains("%"))
-					percent = "" + Math.round(weeWXAppCommon.str2Float(bits[0]));
+					percent = "" + Math.round(str2Float(bits[0]));
 			}
 		}
 
@@ -1713,12 +1720,12 @@ class JsoupHelper
 			String[] bits = possrain.split("-", 2);
 
 			if(bits[0] != null && !bits[0].isBlank())
-				bits[0] = "" + Math.round(weeWXAppCommon.str2Float(bits[0]));
+				bits[0] = "" + Math.round(str2Float(bits[0]));
 			else
 				bits[0] = null;
 
 			if(bits[1] != null && !bits[1].isBlank())
-				bits[1] = "" + Math.round(weeWXAppCommon.str2Float(bits[1]));
+				bits[1] = "" + Math.round(str2Float(bits[1]));
 			else
 				bits[1] = null;
 
@@ -1739,13 +1746,13 @@ class JsoupHelper
 			}
 		} else {
 			min = null;
-			max = "" + Math.round(weeWXAppCommon.str2Float(possrain));
+			max = "" + Math.round(str2Float(possrain));
 		}
 
 		if(min != null || max != null)
 		{
 			if(percent != null && !percent.isBlank())
-				output += Math.round(weeWXAppCommon.str2Float(percent)) + "% / ";
+				output += Math.round(str2Float(percent)) + "% / ";
 
 			if(lt)
 				output += "&lt;";
@@ -1762,10 +1769,10 @@ class JsoupHelper
 					output += max + "mm";
 			} else {
 				if(min != null)
-					min = "" + Math.round(weeWXAppCommon.mm2in(Float.parseFloat(min)));
+					min = "" + roundFloat(min);
 
 				if(max != null)
-					max = "" + Math.round(weeWXAppCommon.mm2in(Float.parseFloat(max)));
+					max = "" + roundFloat(max);
 
 				if(min != null)
 					output += min + "in to ";

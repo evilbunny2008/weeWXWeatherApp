@@ -93,6 +93,7 @@ import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 
 @SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag",
 		"UnsafeIntentLaunch", "NotifyDataSetChanged", "SourceLockedOrientationActivity",
@@ -1793,17 +1794,17 @@ public class MainActivity extends FragmentActivity
 										String val = URLDecoder.decode(pair.substring(idx + 1), utf8);
 
 										if(key.equals("lat"))
-											lat = Float.parseFloat(val);
+											lat = str2Float(val);
 
 										if(key.equals("lon"))
-											lon = Float.parseFloat(val);
+											lon = str2Float(val);
 									}
 								}
 							} else if(forecastURL.contains(",")) {
 								// Coordinates format: lat,lon
 								String[] llbits = forecastURL.split(",", 2);
-								lat = Float.parseFloat(llbits[0].strip());
-								lon = Float.parseFloat(llbits[1].strip());
+								lat = str2Float(llbits[0].strip());
+								lon = str2Float(llbits[1].strip());
 							}
 
 							if(lat != 0 && lon != 0)
@@ -1927,8 +1928,8 @@ public class MainActivity extends FragmentActivity
 						{
 							String[] llbits = forecastURL.split(",", 2);
 
-							float lat = Float.parseFloat(llbits[0]);
-							float lon = Float.parseFloat(llbits[1]);
+							float lat = str2Float(llbits[0]);
+							float lon = str2Float(llbits[1]);
 
 							if(lat != 0 && lon != 0)
 							{

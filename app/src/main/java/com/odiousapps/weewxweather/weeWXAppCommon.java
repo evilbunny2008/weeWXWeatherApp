@@ -1425,8 +1425,8 @@ class weeWXAppCommon
 
 			if(!metric)
 			{
-				day.max = C2Fdeg((int)Float.parseFloat(day.max));
-				day.min = C2Fdeg((int)Float.parseFloat(day.min));
+				day.max = C2Fdeg(getInt(day.max));
+				day.min = C2Fdeg(getInt(day.min));
 			}
 
 			days.add(day);
@@ -1482,14 +1482,14 @@ class weeWXAppCommon
 					{
 						String trim_line = line.strip();
 						String[] bits = trim_line.split("=", 2);
-						if(bits[0].strip().equals("i"))
-							fimg = "wgov" + bits[1].strip();
-						if(bits[0].strip().equals("j"))
-							simg = "wgov" + bits[1].strip();
-						if(bits[0].strip().equals("ip"))
-							fper = bits[1].strip();
-						if(bits[0].strip().equals("jp"))
-							sper = bits[1].strip();
+						if(getElement(0, bits).strip().equals("i"))
+							fimg = "wgov" + getElement(1, bits).strip();
+						if(getElement(0, bits).strip().equals("j"))
+							simg = "wgov" + getElement(1, bits).strip();
+						if(getElement(0, bits).strip().equals("ip"))
+							fper = getElement(1, bits).strip();
+						if(getElement(0, bits).strip().equals("jp"))
+							sper = getElement(1, bits).strip();
 					}
 
 					Bitmap bmp1 = loadImage(fimg + ".jpg");
@@ -1573,7 +1573,7 @@ class weeWXAppCommon
 				day.max = temperature.getString(i) + "&deg;F";
 
 				if(metric)
-					day.max = F2Cdeg((int)Float.parseFloat(temperature.getString(i)));
+					day.max = F2Cdeg(getInt(temperature.getString(i)));
 
 				day.text = weather.getString(i);
 				days.add(day);
@@ -1721,8 +1721,8 @@ class weeWXAppCommon
 
 				if(!metric)
 				{
-					day.max = C2Fdeg((int)Float.parseFloat(day.max));
-					day.min = C2Fdeg((int)Float.parseFloat(day.min));
+					day.max = C2Fdeg(getInt(day.max));
+					day.min = C2Fdeg(getInt(day.min));
 				}
 
 				days.add(day);
@@ -1750,7 +1750,7 @@ class weeWXAppCommon
 		{
 			String[] bits = data.split("<title>");
 			if(bits.length >= 2)
-				desc = bits[1].split("</title>")[0];
+				desc = getElement(1, bits).split("</title>")[0];
 			desc = desc.substring(desc.lastIndexOf(" - ") + 3).strip();
 			String string_time = data.split("<tr class='headRow'>", 2)[1].split("</tr>", 2)[0].strip();
 			String date = string_time.split("<td width='30%' class='stattime'>", 2)[1].split("</td>", 2)[0].strip();
@@ -1798,7 +1798,7 @@ class weeWXAppCommon
 				day.max = temp + "&deg;C";
 				day.min = "&deg;C";
 				if(!metric)
-					day.max = C2Fdeg((int)Float.parseFloat(temp));
+					day.max = C2Fdeg(getInt(temp));
 
 				days.add(day);
 				lastTS = day.timestamp;
@@ -1886,8 +1886,8 @@ class weeWXAppCommon
 
 				if(!metric)
 				{
-					day.max = C2Fdeg((int)Float.parseFloat(day.max));
-					day.min = C2Fdeg((int)Float.parseFloat(day.min));
+					day.max = C2Fdeg(getInt(day.max));
+					day.min = C2Fdeg(getInt(day.min));
 				}
 
 				day.text = estado_cielo.getString("descripcion");
@@ -2094,11 +2094,11 @@ class weeWXAppCommon
 					int UTChourOfDay = UTCcal.get(Calendar.HOUR_OF_DAY);
 					long utctimestamp = secondTimeFrom.getTime() - 86_400_000L;
 
-					float tmpTemp = Float.parseFloat(temp);
+					float tmpTemp = str2Float(temp);
 					if(maxTemp < tmpTemp)
 						maxTemp = tmpTemp;
 
-					possRainTotal += Float.parseFloat(rain);
+					possRainTotal += str2Float(rain);
 
 					if(UTChourOfDay != 0)
 					{
@@ -2155,7 +2155,7 @@ class weeWXAppCommon
 
 					boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
 					if(!metric || rainInInches)
-						day.min = mm2in(Float.parseFloat(rain)) + "in";
+						day.min = mm2in(str2Float(rain)) + "in";
 					else
 						day.min = rain + "mm";
 
@@ -2323,7 +2323,7 @@ class weeWXAppCommon
 			{
 				day.max = instant.getDouble("air_temperature") + "&deg;C";
 				if(!metric)
-					day.max = C2Fdeg(Float.parseFloat(day.max));
+					day.max = C2Fdeg(str2Float(day.max));
 			}
 
 			// Rain - prefer next_1_hours for short intervals, next_6_hours for daily
@@ -2579,8 +2579,8 @@ class weeWXAppCommon
 
 				if(!metric)
 				{
-					day.max = C2Fdeg((int)(float)str2Float(day.max)) + "&deg;F";
-					day.min = C2Fdeg((int)(float)str2Float(day.min)) + "&deg;F";
+					day.max = C2Fdeg(getInt(day.max)) + "&deg;F";
+					day.min = C2Fdeg(getInt(day.min)) + "&deg;F";
 				}
 
 				day.text = mydesc;
@@ -2899,9 +2899,11 @@ class weeWXAppCommon
 
 		String[] bits = lastDownload.split("\\|");
 
-		float rainfall = Float.parseFloat(bits[20]);
-		if(bits.length > 158 && !bits[158].isBlank())
-			rainfall = Float.parseFloat(bits[158]);
+		float rainfall = getFloat(20, bits);
+
+		String str158 = getElement(158, bits);
+		if(!str158.isBlank())
+			rainfall = str2Float(str158);
 
 		float rainfall_limit = (int)KeyValue.readVar("RainfallLimit", weeWXApp.RainfallLimit_default) / 100f;
 
@@ -2954,14 +2956,14 @@ class weeWXAppCommon
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default) &&
 		                 !(boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
 
-		float rainrate = Float.parseFloat(bits[24]);
+		float rainrate = getFloat(24, bits);
 
 		int[] totals = {
-			Math.round(getRainTotal(296, bits) * 100),
-			Math.round(getRainTotal(297, bits) * 100),
-			Math.round(getRainTotal(298, bits) * 100),
-			Math.round(getRainTotal(299, bits) * 100),
-			Math.round(getRainTotal(300, bits) * 100)
+			getInt100(296, bits),
+			getInt100(297, bits),
+			getInt100(298, bits),
+			getInt100(299, bits),
+			getInt100(300, bits)
 		};
 
 		long now = System.currentTimeMillis();
@@ -3032,14 +3034,6 @@ class weeWXAppCommon
 		}
 
 		return new int[]{-1, -1}; // no alert
-	}
-
-	private static float getRainTotal(int idx, String[] bits)
-	{
-		if(bits.length > idx && !bits[idx].isBlank())
-			return Float.parseFloat(bits[idx]);
-
-		return 0;
 	}
 
 	static void checkTempAlerts()
@@ -3155,13 +3149,80 @@ class weeWXAppCommon
 	{
 		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
 		if(lastDownload == null || lastDownload.isBlank())
-			return new TempResult(-999, -999, "steady", "steady", "steady", "steady", "steady");
+			return new TempResult(-999, -999, "steady", "steady",
+					"steady", "steady", "steady");
 
 		String[] bits = lastDownload.split("\\|");
-		return new TempResult(Float.parseFloat(bits[0]), Float.parseFloat(bits[1]), bits[301], bits[302], bits[303], bits[304], bits[305]);
+
+		String trend1 = getElement(301, bits, "steady");
+		String trend5 = getElement(302, bits, "steady");
+		String trend10 = getElement(303, bits, "steady");
+		String trend30 = getElement(304, bits, "steady");
+		String trend60 = getElement(305, bits, "steady");
+
+		return new TempResult(getFloat(0, bits), getFloat(1, bits),
+				trend1, trend5, trend10, trend30, trend60);
 	}
 
-	static String getElement(String[] bits, int element)
+	static int getInt100(String str)
+	{
+		return Math.round(str2Float(str) * 100);
+	}
+
+	static int getInt(String str)
+	{
+		try
+		{
+			return Math.round(str2Float(str));
+		} catch(Exception ignored) {}
+
+		return 0;
+	}
+
+	static int getInt100(int element, String[] bits)
+	{
+		try
+		{
+			return Math.round(getFloat(element, bits) * 100);
+		} catch(Exception ignored) {}
+
+		return 0;
+	}
+
+	static int getInt(int element, String[] bits)
+	{
+		try
+		{
+			return Math.round(getFloat(element, bits));
+		} catch(Exception ignored) {}
+
+		return 0;
+	}
+
+	static int roundFloat(String str)
+	{
+		if(str.isBlank())
+			return 0;
+
+		try
+		{
+			return (int)Math.round(Double.parseDouble(str));
+		} catch(Exception ignored) {}
+
+		return 0;
+	}
+
+	static float getFloat(int element, String[] bits)
+	{
+		return str2Float(getElement(element, bits));
+	}
+
+	static String getElement(int element, String[] bits)
+	{
+		return getElement(element, bits, "");
+	}
+
+	static String getElement(int element, String[] bits, String defVal)
 	{
 		try
 		{
@@ -3171,7 +3232,7 @@ class weeWXAppCommon
 			LogMessage("Error! e: " + e, true, KeyValue.e);
 		}
 
-		return "";
+		return defVal;
 	}
 
 	static boolean reallyGetWeather(String url) throws InterruptedException, IOException
@@ -3182,7 +3243,7 @@ class weeWXAppCommon
 		if(!line.isBlank() && line.contains("|"))
 		{
 			String[] bits = line.split("\\|");
-			int version = (int)Double.parseDouble(bits[0]);
+			int version = (int)Double.parseDouble(getElement(0, bits));
 			if(version < weeWXApp.minimum_inigo_version || bits.length <= 100)
 			{
 				LogMessage("reallyGetWeather() sendAlert() triggered because version (" + version +
@@ -3223,8 +3284,8 @@ class weeWXAppCommon
 			line = String.join("|", bits);
 			//LogMessage("reallyGetWeather() new line: " + line);
 
-			String ret = getElement(bits, 225);
-			long LastDownloadTime = ret != null && !ret.isBlank() ? (long)Double.parseDouble(bits[225]) * 1_000L : System.currentTimeMillis();
+			String ret = getElement(225, bits);
+			long LastDownloadTime = ret != null && !ret.isBlank() ? (long)Double.parseDouble(getElement(225, bits)) * 1_000L : System.currentTimeMillis();
 
 			KeyValue.putVar("LastDownload", line);
 			KeyValue.putVar("LastDownloadTime", LastDownloadTime);
@@ -3358,7 +3419,7 @@ class weeWXAppCommon
 			}
 
 			String[] bits = nws.getString(fimg).split("\\|");
-			switch (bits[1].strip())
+			switch (getElement(1, bits).strip())
 			{
 				case "L" -> bmp1 = Bitmap.createBitmap(bmp1, 0, 0, x1 / 2, y1);
 				case "R" -> bmp1 = Bitmap.createBitmap(bmp1, x1 / 2, 0, x1, y1);
@@ -3366,7 +3427,7 @@ class weeWXAppCommon
 			}
 
 			bits = nws.getString(simg).split("\\|");
-			switch (bits[1].strip())
+			switch (getElement(1, bits).strip())
 			{
 				case "L" -> bmp2 = Bitmap.createBitmap(bmp2, 0, 0, x2 / 2, y2);
 				case "R" -> bmp2 = Bitmap.createBitmap(bmp2, x2 / 2, 0, x2, y2);
@@ -4784,14 +4845,14 @@ class weeWXAppCommon
 		try
 		{
 			String[] bits = str.split(" ", 3);
-			if(bits.length < 2 || bits[1].isBlank())
+			if(bits.length < 2 || getElement(1, bits).isBlank())
 				return str;
 
-			int day = (int)Float.parseFloat(bits[1].strip());
+			int day = getInt(1, bits);
 			if(day > 31 || day < 1)
 				return str;
 
-			return bits[0] + " " + getDaySuffix(day);
+			return getElement(0, bits) + " " + getDaySuffix(day);
 		} catch(Exception e) {
 			doStackOutput(e);
 		}
@@ -5352,13 +5413,18 @@ class weeWXAppCommon
 		return C2F(C) + "&deg;F";
 	}
 
-	static Float str2Float(String f)
+	static float str2Float(String f)
 	{
 		String tmp = f.replaceAll("[^0-9-.]", "").strip();
 		if(tmp == null || tmp.isBlank())
-			return null;
+			return 0;
 
-		return Float.parseFloat(tmp);
+		try
+		{
+			return (float)Double.parseDouble(tmp);
+		} catch(Exception ignored) {}
+
+		return 0;
 	}
 
 	static float mm2in(float mm)

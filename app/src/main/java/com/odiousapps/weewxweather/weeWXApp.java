@@ -47,6 +47,7 @@ import androidx.core.content.ContextCompat;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getInt;
 
 @SuppressWarnings({"unused", "SameParameterValue"})
 public class weeWXApp extends Application
@@ -205,7 +206,7 @@ public class weeWXApp extends Application
 	private static int lastNightMode = -1;
 
 	final static int minimum_inigo_version = 4000;
-	final static int minimum_inigo_version_for_alerts = 1000010;
+	final static int minimum_inigo_version_for_alerts = 1000009;
 	final static int minimum_inigo_bits_for_alerts = 305;
 
 	final static boolean radarforecast_default = false;
@@ -415,7 +416,7 @@ public class weeWXApp extends Application
 			if(KeyValue.currWebViewVer != null && !KeyValue.currWebViewVer.isBlank())
 			{
 				String[] parts = KeyValue.currWebViewVer.split("\\.");
-				KeyValue.webview_major_version = (int)Float.parseFloat(parts[0]);
+				KeyValue.webview_major_version = getInt(parts[0]);
 			}
 		} catch(Exception e) {
 			Log.e(weeWXAppCommon.LOGTAG, "Error! e: " + e.getMessage(), e);
