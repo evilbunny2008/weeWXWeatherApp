@@ -3182,7 +3182,7 @@ class weeWXAppCommon
 		if(!line.isBlank() && line.contains("|"))
 		{
 			String[] bits = line.split("\\|");
-			int version = (int)Float.parseFloat(bits[0]);
+			int version = (int)Double.parseDouble(bits[0]);
 			if(version < weeWXApp.minimum_inigo_version || bits.length <= 100)
 			{
 				LogMessage("reallyGetWeather() sendAlert() triggered because version (" + version +
@@ -3216,7 +3216,7 @@ class weeWXAppCommon
 				           "bits.length (" + bits.length + ") < weeWXApp.minimum_inigo_bits_for_alerts (" +
 				           weeWXApp.minimum_inigo_bits_for_alerts + ")");
 				sendAlert();
-				return false;
+				//return false;
 			}
 
 			bits = Arrays.copyOfRange(bits, 1, bits.length);
