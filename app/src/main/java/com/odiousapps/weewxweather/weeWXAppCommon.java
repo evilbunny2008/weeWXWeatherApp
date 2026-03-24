@@ -196,6 +196,7 @@ class weeWXAppCommon
 
 	record Result(List<Day> days, String desc, long timestamp, boolean isDaily) {}
 	record Result2(String[] forecast_text, String desc, int rc) {}
+	record TempResult(float CurrTemp, float minObservedTemp, String trend1, String trend5, String trend10, String trend30, String trend60) {}
 
 	private static final String utf8 = "utf-8";
 
@@ -3048,10 +3049,7 @@ class weeWXAppCommon
 		Calendar cal = Calendar.getInstance();
 		Calendar cal1 = Calendar.getInstance();
 
-		float[] temps = get_curr_min_peak_temp();
-		float CurrTemp = temps[0];
-		float minObservedTemp = temps[1];
-		float peakTemp = temps[2];
+		TempResult temps = getTempResult();
 
 		// Don't trigger temp alerts before 6am
 		if(cal.get(Calendar.HOUR_OF_DAY) < 6)
@@ -3073,25 +3071,27 @@ class weeWXAppCommon
 
 			float morning_temp_limit = (int)KeyValue.readVar("MorningTemp", weeWXApp.MorningTemp_default) / 10f;
 
-			minObservedTemp = Math.min(minObservedTemp, CurrTemp);
+			float minObservedTemp = Math.min(temps.minObservedTemp, temps.CurrTemp);
 
 			LogMessage("checkTempAlerts() minForecastTemp: " + minObservedTemp);
 
-			boolean hasBottomedOut = CurrTemp > minObservedTemp;
+			boolean hasBottomedOut = temps.CurrTemp > minObservedTemp;
 
 			LogMessage("checkTempAlerts() hasBottomedOut: " + hasBottomedOut);
 
-			boolean hasWarmedUp = hasBottomedOut && CurrTemp >= morning_temp_limit && minObservedTemp < morning_temp_limit;
+			boolean hasWarmedUp = hasBottomedOut && temps.CurrTemp >= morning_temp_limit && minObservedTemp < morning_temp_limit;
 
 			LogMessage("checkTempAlerts() hasWarmedUp: " + hasWarmedUp);
 
 			if(hasWarmedUp)
 			{
 				KeyValue.putVar("LastMorningTempAlert", System.currentTimeMillis());
-				weeWXApp.sendTemperatureAlert(CurrTemp, morning_temp_limit, false);
-				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") >= morning_temp_limit (" + morning_temp_limit + ") notification triggered");
+				weeWXApp.sendTemperatureAlert(temps.CurrTemp, morning_temp_limit, false);
+				LogMessage("checkTempAlerts() CurrTemp (" + temps.CurrTemp + ") >= morning_temp_limit (" +
+				           morning_temp_limit + ") notification triggered");
 			} else {
-				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") < morning_temp_limit (" + morning_temp_limit + ") no notification triggered");
+				LogMessage("checkTempAlerts() CurrTemp (" + temps.CurrTemp + ") < morning_temp_limit (" +
+				           morning_temp_limit + ") no notification triggered");
 			}
 
 			return;
@@ -3112,46 +3112,53 @@ class weeWXAppCommon
 			long last_afternoon_alert = (long)KeyValue.readVar("LastAfternoonTempAlert", 0L);
 			cal1.setTimeInMillis(last_afternoon_alert);
 
-//			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
-//			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
-//			{
-//				LogMessage("checkTempAlerts() Notification already triggered this afternoon");
-//				return;
-//			}
+			if(cal.get(Calendar.YEAR) == cal1.get(Calendar.YEAR) &&
+			   cal.get(Calendar.DAY_OF_YEAR) == cal1.get(Calendar.DAY_OF_YEAR))
+			{
+				LogMessage("checkTempAlerts() Notification already triggered this afternoon");
+				return;
+			}
 
 			float afternoon_temp_limit = (int)KeyValue.readVar("AfternoonTemp", weeWXApp.AfternoonTemp_default) / 10f;
 
-			LogMessage("checkTempAlerts() peakTemp: " + peakTemp);
+			LogMessage("checkTempAlerts() trend1: " + temps.trend1);
+			LogMessage("checkTempAlerts() trend5: " + temps.trend5);
+			LogMessage("checkTempAlerts() trend10: " + temps.trend10);
+			LogMessage("checkTempAlerts() trend30: " + temps.trend30);
+			LogMessage("checkTempAlerts() trend60: " + temps.trend60);
 
-			boolean hasPeaked = CurrTemp < peakTemp;
+			boolean hasPeaked = (temps.trend1.equals("falling") && temps.trend5.equals("falling") && temps.trend10.equals("falling")) ||
+			                    cal.get(Calendar.HOUR_OF_DAY) >= 16;
 
 			LogMessage("checkTempAlerts() hasPeaked: " + hasPeaked);
 
-			boolean hasCooledOff = hasPeaked && CurrTemp <= afternoon_temp_limit;
+			boolean hasCooledOff = hasPeaked && temps.CurrTemp <= afternoon_temp_limit;
 
 			LogMessage("checkTempAlerts() hasCooledOff: " + hasCooledOff);
 
 			if(hasCooledOff)
 			{
 				KeyValue.putVar("LastAfternoonTempAlert", System.currentTimeMillis());
-				weeWXApp.sendTemperatureAlert(CurrTemp, afternoon_temp_limit, true);
-				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") <= afternoon_temp_limit (" + afternoon_temp_limit + ") notification triggered");
+				weeWXApp.sendTemperatureAlert(temps.CurrTemp, afternoon_temp_limit, true);
+				LogMessage("checkTempAlerts() CurrTemp (" + temps.CurrTemp + ") <= afternoon_temp_limit (" +
+				           afternoon_temp_limit + ") notification triggered");
 			} else {
-				LogMessage("checkTempAlerts() CurrTemp (" + CurrTemp + ") > afternoon_temp_limit (" + afternoon_temp_limit + ") no notification triggered");
+				LogMessage("checkTempAlerts() CurrTemp (" + temps.CurrTemp + ") > afternoon_temp_limit (" +
+				           afternoon_temp_limit + ") no notification triggered");
 			}
 		} else {
 			LogMessage("checkTempAlerts() afternoon_temp_alert set to false");
 		}
 	}
 
-	static float[] get_curr_min_peak_temp()
+	static TempResult getTempResult()
 	{
 		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
 		if(lastDownload == null || lastDownload.isBlank())
-			return new float[]{-999, -999, -999};
+			return new TempResult(-999, -999, "steady", "steady", "steady", "steady", "steady");
 
 		String[] bits = lastDownload.split("\\|");
-		return new float[]{Float.parseFloat(bits[0]), Float.parseFloat(bits[1]), Float.parseFloat(bits[301])};
+		return new TempResult(Float.parseFloat(bits[0]), Float.parseFloat(bits[1]), bits[301], bits[302], bits[303], bits[304], bits[305]);
 	}
 
 	static String getElement(String[] bits, int element)
@@ -3178,7 +3185,9 @@ class weeWXAppCommon
 			int version = (int)Float.parseFloat(bits[0]);
 			if(version < weeWXApp.minimum_inigo_version || bits.length <= 100)
 			{
-				LogMessage("reallyGetWeather() sendAlert() triggered");
+				LogMessage("reallyGetWeather() sendAlert() triggered because version (" + version +
+				           ") < weeWXApp.minimum_inigo_version (" + weeWXApp.minimum_inigo_version + ") || " +
+				           "bits.length (" + bits.length + ") < 100");
 				sendAlert();
 				return false;
 			}
@@ -3192,12 +3201,20 @@ class weeWXAppCommon
 			boolean rainrate_alert_severe = KeyValue.isPrefSet("rainrate_alert_severe") &&
 			                         (boolean)KeyValue.readVar("rainrate_alert_severe", weeWXApp.rainrate_alert_severe_default);
 
-			boolean rainrate_alert = rainrate_alert_watch || rainrate_alert_warning || rainrate_alert_severe;
+			boolean rainrate_alerts = rainrate_alert_watch || rainrate_alert_warning || rainrate_alert_severe;
 
-			if(rainrate_alert && (version < weeWXApp.minimum_inigo_version_for_rainrate_alerts ||
-			                      bits.length < weeWXApp.minimum_inigo_version_for_rainrate_alerts))
+			boolean afternoon_temp_alert = KeyValue.isPrefSet("afternoon_temp_alert") &&
+			                         (boolean)KeyValue.readVar("afternoon_temp_alert", weeWXApp.afternoon_temp_alert_default);
+
+			boolean show_alerts = rainrate_alerts || afternoon_temp_alert;
+
+			if(show_alerts && (version < weeWXApp.minimum_inigo_version_for_alerts ||
+			                      bits.length < weeWXApp.minimum_inigo_bits_for_alerts))
 			{
-				LogMessage("reallyGetWeather() sendAlert() triggered");
+				LogMessage("reallyGetWeather() sendAlert() triggered because version (" + version +
+				           ") < weeWXApp.minimum_inigo_version_for_alerts (" + weeWXApp.minimum_inigo_version_for_alerts + ") || " +
+				           "bits.length (" + bits.length + ") < weeWXApp.minimum_inigo_bits_for_alerts (" +
+				           weeWXApp.minimum_inigo_bits_for_alerts + ")");
 				sendAlert();
 				return false;
 			}

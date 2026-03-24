@@ -1411,7 +1411,7 @@ public class MainActivity extends FragmentActivity
 
 	private void showUpdateAvailable()
 	{
-		int updateVer = Math.max(weeWXApp.minimum_inigo_version, weeWXApp.minimum_inigo_version_for_rainrate_alerts);
+		int updateVer = Math.max(weeWXApp.minimum_inigo_version, weeWXApp.minimum_inigo_version_for_alerts);
 
 		if((boolean)KeyValue.readVar("shownUpdate_" + updateVer, false))
 			return;
