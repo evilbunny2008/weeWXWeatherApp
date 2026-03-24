@@ -205,9 +205,10 @@ class CustomDns implements Dns
 								}
 							}
 						}
-					} catch(SocketTimeoutException | SocketException ignored) {
+					} catch(SocketTimeoutException | SocketException se) {
+						doStackOutput(se);
 					} catch(Exception e) {
-						LogMessage("CustomDNS.lookup() Error! e: " + e.getMessage(), true, KeyValue.e);
+//						LogMessage("CustomDNS.lookup() Error! e: " + e.getMessage(), true, KeyValue.e);
 						doStackOutput(e);
 					}
 				}
@@ -216,7 +217,7 @@ class CustomDns implements Dns
 					return serverIPs;
 			}
 		} catch(Exception e) {
-			LogMessage("CustomDNS.lookup() Error! e: " + e.getMessage(), true, KeyValue.e);
+//			LogMessage("CustomDNS.lookup() Error! e: " + e.getMessage(), true, KeyValue.e);
 			doStackOutput(e);
 		}
 

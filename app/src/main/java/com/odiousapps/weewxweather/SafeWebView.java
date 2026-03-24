@@ -216,9 +216,10 @@ public class SafeWebView extends WebView
 						}
 
 						return new WebResourceResponse(mime, encoding, bais);
-					} catch(SocketTimeoutException | UnknownHostException ignored) {
+					} catch(SocketTimeoutException | UnknownHostException se) {
+						doStackOutput(se);
 					} catch(Exception e) {
-						LogMessage("SafeWebView.shouldInterceptRequest() Error! e: " + e, true, KeyValue.e);
+//						LogMessage("SafeWebView.shouldInterceptRequest() Error! e: " + e, true, KeyValue.e);
 						doStackOutput(e);
 					}
 

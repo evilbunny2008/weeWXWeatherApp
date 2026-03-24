@@ -196,7 +196,7 @@ class weeWXAppCommon
 
 	record Result(List<Day> days, String desc, long timestamp, boolean isDaily) {}
 	record Result2(String[] forecast_text, String desc, int rc) {}
-	record TempResult(float CurrTemp, float minObservedTemp, String trend1, String trend5, String trend10, String trend30, String trend60) {}
+	record TempResult(float CurrTemp, float minObservedTemp, int dropCount, boolean hasPeaked, float maxTemp) {}
 
 	private static final String utf8 = "utf-8";
 
@@ -3115,18 +3115,11 @@ class weeWXAppCommon
 
 			float afternoon_temp_limit = (int)KeyValue.readVar("AfternoonTemp", weeWXApp.AfternoonTemp_default) / 10f;
 
-			LogMessage("checkTempAlerts() trend1: " + temps.trend1);
-			LogMessage("checkTempAlerts() trend5: " + temps.trend5);
-			LogMessage("checkTempAlerts() trend10: " + temps.trend10);
-			LogMessage("checkTempAlerts() trend30: " + temps.trend30);
-			LogMessage("checkTempAlerts() trend60: " + temps.trend60);
-
-			boolean hasPeaked = (temps.trend1.equals("falling") && temps.trend5.equals("falling") && temps.trend10.equals("falling")) ||
-			                    cal.get(Calendar.HOUR_OF_DAY) >= 16;
+			boolean hasPeaked = (temps.hasPeaked || cal.get(Calendar.HOUR_OF_DAY) >= 16) && temps.CurrTemp < temps.maxTemp;
 
 			LogMessage("checkTempAlerts() hasPeaked: " + hasPeaked);
 
-			boolean hasCooledOff = hasPeaked && temps.CurrTemp <= afternoon_temp_limit;
+			boolean hasCooledOff = hasPeaked && temps.CurrTemp <= afternoon_temp_limit && temps.maxTemp > afternoon_temp_limit;
 
 			LogMessage("checkTempAlerts() hasCooledOff: " + hasCooledOff);
 
@@ -3149,19 +3142,12 @@ class weeWXAppCommon
 	{
 		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
 		if(lastDownload == null || lastDownload.isBlank())
-			return new TempResult(-999, -999, "steady", "steady",
-					"steady", "steady", "steady");
+			return new TempResult(-999, -999, 0, false, -999.9f);
 
 		String[] bits = lastDownload.split("\\|");
 
-		String trend1 = getElement(301, bits, "steady");
-		String trend5 = getElement(302, bits, "steady");
-		String trend10 = getElement(303, bits, "steady");
-		String trend30 = getElement(304, bits, "steady");
-		String trend60 = getElement(305, bits, "steady");
-
 		return new TempResult(getFloat(0, bits), getFloat(1, bits),
-				trend1, trend5, trend10, trend30, trend60);
+				getInt(301, bits), getBoolean(302, bits), getFloat(303, bits));
 	}
 
 	static int getInt100(String str)
@@ -3197,6 +3183,20 @@ class weeWXAppCommon
 		} catch(Exception ignored) {}
 
 		return 0;
+	}
+
+	static boolean getBoolean(int element, String[] bits)
+	{
+		try
+		{
+			String str = getElement(element, bits);
+			if(str.isBlank())
+				return false;
+
+			return Boolean.parseBoolean(str);
+		} catch(Exception ignored) {}
+
+		return false;
 	}
 
 	static int roundFloat(String str)
@@ -3595,8 +3595,8 @@ class weeWXAppCommon
 			{
 				retries++;
 
-				LogMessage("reallyCheckURL() Error! ioe: " + ioe.getMessage() + ", retry: " + retries +
-				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+//				LogMessage("reallyCheckURL() Error! ioe: " + ioe.getMessage() + ", retry: " + retries +
+//				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
 
 				try
 				{
@@ -3611,7 +3611,10 @@ class weeWXAppCommon
 				return reallyCheckURL(client, url, retries);
 			}
 
-			LogMessage("reallyCheckURL() Error! e: " + ioe.getMessage(), true, KeyValue.e);
+//			LogMessage("reallyCheckURL() Error! e: " + ioe.getMessage(), true, KeyValue.e);
+
+			doStackOutput(ioe);
+
 			throw ioe;
 		}
 	}
@@ -3649,27 +3652,34 @@ class weeWXAppCommon
 
 			return bodyStr;
 		} catch(Exception e) {
-			//doStackOutput(e);
-			if(retries < maximum_retries)
+			doStackOutput(e);
+
+			if(false)
 			{
-				retries++;
-
-				LogMessage("reallyDownloadString() Error! e: " + e.getMessage() + ", retry: " + retries +
-				           ", will sleep " + Math.round(retry_sleep_time / 1_000D) + " seconds and retry...", true);
-
-				try
+				if(retries < maximum_retries)
 				{
-					Thread.sleep(retry_sleep_time);
-				} catch (InterruptedException ie) {
-					Thread.currentThread().interrupt();
-					LogMessage("reallyDownloadString() Error! ie: " + ie.getMessage(), true, KeyValue.e);
-					throw ie;
+					retries++;
+
+	//				LogMessage("reallyDownloadString() Error! e: " + e.getMessage() + ", retry: " + retries +
+	//				           ", will sleep " + Math.round(retry_sleep_time / 1_000D) + " seconds and retry...", true);
+
+					try
+					{
+						Thread.sleep(retry_sleep_time);
+					} catch (InterruptedException ie) {
+						Thread.currentThread().interrupt();
+						LogMessage("reallyDownloadString() Error! ie: " + ie.getMessage(), true, KeyValue.e);
+						throw ie;
+					}
+
+					return reallyDownloadString(client, url, retries, nocache);
 				}
 
-				return reallyDownloadString(client, url, retries, nocache);
+	//			LogMessage("reallyDownloadString() Error! e: " + e.getMessage(), true, KeyValue.e);
+
+				doStackOutput(e);
 			}
 
-			LogMessage("reallyDownloadString() Error! e: " + e.getMessage(), true, KeyValue.e);
 			throw e;
 		}
 	}
@@ -3716,25 +3726,31 @@ class weeWXAppCommon
 				LogMessage("reallyDownloadString(url, args) Failed to upload something... response: " + bodyStr, true, KeyValue.w);
 			}
 		} catch(Exception e) {
-			if(retries < maximum_retries)
+
+			if(false)
 			{
-				retries++;
-
-				LogMessage("reallyDownloadString() Error! e: " + e.getMessage() + ", retry: " + retries +
-				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
-
-				try
+				if(retries < maximum_retries)
 				{
-					Thread.sleep(retry_sleep_time);
-				} catch (InterruptedException ie) {
-					Thread.currentThread().interrupt();
-					throw ie;
-				}
+					retries++;
 
-				return reallyDownloadString(client, requestBody, url, retries, noCache);
+	//				LogMessage("reallyDownloadString() Error! e: " + e.getMessage() + ", retry: " + retries +
+	//				           ", will sleep " + retry_sleep_time + " seconds and retry...", true);
+
+					try
+					{
+						Thread.sleep(retry_sleep_time);
+					} catch (InterruptedException ie) {
+						Thread.currentThread().interrupt();
+						throw ie;
+					}
+
+					return reallyDownloadString(client, requestBody, url, retries, noCache);
+				}
 			}
 
-			LogMessage("reallyDownloadString(url, args) Error! e: " + e.getMessage(), true, KeyValue.e);
+			//LogMessage("reallyDownloadString(url, args) Error! e: " + e.getMessage(), true, KeyValue.e);
+
+			doStackOutput(e);
 			throw e;
 		}
 
@@ -3805,28 +3821,32 @@ class weeWXAppCommon
 				LogMessage("reallyUploadString() Failed to upload something... response code: " + response.code() +
 				           ", body: " + bodyStr, true, KeyValue.w);
 		} catch(Exception e) {
-			lastException = e;
+			doStackOutput(e);
+//			lastException = e;
 		}
 
-		if(retries < maximum_retries)
+		if(lastException != null)
 		{
-			retries++;
-
-			if(lastException != null)
-				LogMessage("reallyUploadString() Error! lastException: " + lastException.getMessage() + ", retry: #" + retries +
-				           ", will sleep " + Math.round(retry_sleep_time / 1_000D) + "s and then retry...", true, KeyValue.w);
-
-			try
+			if(retries < maximum_retries)
 			{
-				Thread.sleep(retry_sleep_time);
-			} catch (InterruptedException ie) {
-				LogMessage("reallyUploadString() Error! ie: " + ie.getMessage(), true, KeyValue.e);
-				Thread.currentThread().interrupt();
+				retries++;
+
+				if(lastException != null)
+					LogMessage("reallyUploadString() Error! lastException: " + lastException.getMessage() + ", retry: #" + retries +
+					           ", will sleep " + Math.round(retry_sleep_time / 1_000D) + "s and then retry...", true, KeyValue.w);
+
+				try
+				{
+					Thread.sleep(retry_sleep_time);
+				} catch (InterruptedException ie) {
+					LogMessage("reallyUploadString() Error! ie: " + ie.getMessage(), true, KeyValue.e);
+					Thread.currentThread().interrupt();
+					return;
+				}
+
+				reallyUploadMissingIcon(client, requestBody, url, retries);
 				return;
 			}
-
-			reallyUploadMissingIcon(client, requestBody, url, retries);
-			return;
 		}
 
 		if(lastException != null)
@@ -5136,7 +5156,10 @@ class weeWXAppCommon
 				return reallyDownloadContent(client, url, retries, noCache);
 			}
 
-			LogMessage("reallyCheckURL() Error! e: " + e.getMessage(), true, KeyValue.e);
+//			LogMessage("reallyCheckURL() Error! e: " + e.getMessage(), true, KeyValue.e);
+
+			doStackOutput(e);
+
 			throw e;
 		}
 	}
@@ -5195,7 +5218,7 @@ class weeWXAppCommon
 
 	static Bitmap reallyGrabMjpegFrame(OkHttpClient client, String url, int retries, boolean noCache) throws InterruptedException, IOException
 	{
-		Exception lastException;
+		Exception lastException = null;
 		Bitmap bm;
 		InputStream urlStream = null;
 
@@ -5254,9 +5277,11 @@ class weeWXAppCommon
 				return bm;
 			}
 
-			lastException = new IOException("Failed to successfully grab a frame from a mjpeg stream...");
+			//lastException = new IOException("Failed to successfully grab a frame from a mjpeg stream...");
 		} catch(IOException e) {
-			lastException = e;
+			doStackOutput(e);
+			//lastException = e;
+			throw e;
 		} finally {
 			if(urlStream != null)
 				urlStream.close();
@@ -5285,13 +5310,18 @@ class weeWXAppCommon
 			return reallyGrabMjpegFrame(client, url, retries, noCache);
 		}
 
-		LogMessage("reallyCheckURL() Error! lastException: " + lastException.getMessage(), true, KeyValue.e);
-		try
+		if(lastException != null)
 		{
-			throw lastException;
-		} catch(Exception e) {
-			throw new RuntimeException(e);
+			LogMessage("reallyCheckURL() Error! lastException: " + lastException.getMessage(), true, KeyValue.e);
+			try
+			{
+				throw lastException;
+			} catch(Exception e) {
+				throw new RuntimeException(e);
+			}
 		}
+
+		return null;
 	}
 
 	static Activity getActivity()
