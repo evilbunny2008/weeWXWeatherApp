@@ -196,7 +196,7 @@ class weeWXAppCommon
 
 	record Result(List<Day> days, String desc, long timestamp, boolean isDaily) {}
 	record Result2(String[] forecast_text, String desc, int rc) {}
-	record TempResult(float CurrTemp, float minObservedTemp, int dropCount, boolean hasPeaked, float maxTemp, float minTemp) {}
+	record TempResult(float CurrTemp, float minObservedTemp, float maxObservedTemp, int dropCount, boolean hasPeaked, int riseCount) {}
 
 	private static final String utf8 = "utf-8";
 
@@ -3115,11 +3115,13 @@ class weeWXAppCommon
 
 			float afternoon_temp_limit = (int)KeyValue.readVar("AfternoonTemp", weeWXApp.AfternoonTemp_default) / 10f;
 
-			boolean hasPeaked = (temps.hasPeaked || cal.get(Calendar.HOUR_OF_DAY) >= 16) && temps.CurrTemp < temps.maxTemp;
+			float maxObservedTemp = Math.max(temps.CurrTemp, temps.maxObservedTemp);
+
+			boolean hasPeaked = (temps.hasPeaked || cal.get(Calendar.HOUR_OF_DAY) >= 16) && temps.CurrTemp < maxObservedTemp;
 
 			LogMessage("checkTempAlerts() hasPeaked: " + hasPeaked);
 
-			boolean hasCooledOff = hasPeaked && temps.CurrTemp <= afternoon_temp_limit && temps.maxTemp > afternoon_temp_limit;
+			boolean hasCooledOff = hasPeaked && temps.CurrTemp <= afternoon_temp_limit && maxObservedTemp > afternoon_temp_limit;
 
 			LogMessage("checkTempAlerts() hasCooledOff: " + hasCooledOff);
 
@@ -3142,13 +3144,13 @@ class weeWXAppCommon
 	{
 		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
 		if(lastDownload == null || lastDownload.isBlank())
-			return new TempResult(-999, -999, 0,
-					false, -999.9f, 999.9f);
+			return new TempResult(-999.9f, 999.9f, -999.9f,
+					-1, false, -1);
 
 		String[] bits = lastDownload.split("\\|");
 
-		return new TempResult(getFloat(0, bits), getFloat(1, bits), getInt(301, bits),
-				getBoolean(302, bits), getFloat(303, bits), getFloat(304, bits));
+		return new TempResult(getFloat(0, bits), getFloat(1, bits), getFloat(3, bits),
+				getInt(301, bits), getBoolean(302, bits), getInt(304, bits));
 	}
 
 	static int getInt100(String str)
