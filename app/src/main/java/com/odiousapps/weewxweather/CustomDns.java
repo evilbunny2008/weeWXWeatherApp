@@ -173,6 +173,7 @@ class CustomDns implements Dns
 					Request request = new Request.Builder()
 				        .url(url)
 				        .header("Accept", "application/dns-json")
+						.header("Connection", "close")
 				        .build();
 
 					//LogMessage("request: " + request);

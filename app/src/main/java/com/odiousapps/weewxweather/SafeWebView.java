@@ -181,7 +181,7 @@ public class SafeWebView extends WebView
 						}
 					}
 
-					Request.Builder b = new Request.Builder().url(url);
+					Request.Builder b = new Request.Builder().header("Connection", "close").url(url);
 					for(Map.Entry<String, String> h : request.getRequestHeaders().entrySet())
 						b.header(h.getKey(), h.getValue());
 

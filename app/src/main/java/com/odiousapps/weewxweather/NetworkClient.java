@@ -219,6 +219,7 @@ class NetworkClient
 				.header("Accept-Language", "en")
 				.header("Upgrade-Insecure-Requests", "1")
 				.header("Referer", referer)
+				.header("Connection", "close")
 				.url(url);
 
 		if(doHead)

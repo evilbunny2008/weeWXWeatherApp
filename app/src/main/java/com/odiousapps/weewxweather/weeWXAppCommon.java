@@ -196,7 +196,7 @@ class weeWXAppCommon
 
 	record Result(List<Day> days, String desc, long timestamp, boolean isDaily) {}
 	record Result2(String[] forecast_text, String desc, int rc) {}
-	record TempResult(float CurrTemp, float minObservedTemp, int dropCount, boolean hasPeaked, float maxTemp) {}
+	record TempResult(float CurrTemp, float minObservedTemp, int dropCount, boolean hasPeaked, float maxTemp, float minTemp) {}
 
 	private static final String utf8 = "utf-8";
 
@@ -3142,12 +3142,13 @@ class weeWXAppCommon
 	{
 		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
 		if(lastDownload == null || lastDownload.isBlank())
-			return new TempResult(-999, -999, 0, false, -999.9f);
+			return new TempResult(-999, -999, 0,
+					false, -999.9f, 999.9f);
 
 		String[] bits = lastDownload.split("\\|");
 
-		return new TempResult(getFloat(0, bits), getFloat(1, bits),
-				getInt(301, bits), getBoolean(302, bits), getFloat(303, bits));
+		return new TempResult(getFloat(0, bits), getFloat(1, bits), getInt(301, bits),
+				getBoolean(302, bits), getFloat(303, bits), getFloat(304, bits));
 	}
 
 	static int getInt100(String str)
