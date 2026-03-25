@@ -74,13 +74,9 @@ public class Stats extends Fragment
 		});
 
 		if(wv == null)
-			wv = weeWXApp.getInstance().wvpl.getWebView();
-
-		if(wv.getParent() != null)
-			((ViewGroup)wv.getParent()).removeView(wv);
+			wv = new SafeWebView(weeWXApp.getInstance());
 
 		FrameLayout fl = rootView.findViewById(R.id.webViewFrameLayout);
-		fl.removeAllViews();
 		fl.addView(wv);
 
 		wv.getViewTreeObserver().addOnScrollChangedListener(scl);
@@ -136,7 +132,7 @@ public class Stats extends Fragment
 
 			wv.getViewTreeObserver().removeOnScrollChangedListener(scl);
 
-			weeWXApp.getInstance().wvpl.recycleWebView(wv);
+			wv.destroy();
 
 			LogMessage("Stats.onDestroyView() recycled wv...");
 		}

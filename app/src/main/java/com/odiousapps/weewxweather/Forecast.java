@@ -99,29 +99,21 @@ public class Forecast extends Fragment implements View.OnClickListener
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		if(forecastWebView == null)
-			forecastWebView = weeWXApp.getInstance().wvpl.getWebView();
-
-		if(forecastWebView.getParent() != null)
-			((ViewGroup)forecastWebView.getParent()).removeView(forecastWebView);
-
-		if(forecastWebView != null)
+		{
+			forecastWebView = new SafeWebView(weeWXApp.getInstance());
 			forecastWebView.getViewTreeObserver().addOnScrollChangedListener(forecastScrollListener);
-
-		if(radarWebView != null)
-			radarWebView.getViewTreeObserver().addOnScrollChangedListener(radarScrollListener);
+		}
 
 		FrameLayout forecastFL = rootView.findViewById(R.id.forecastWebView);
-		forecastFL.removeAllViews();
 		forecastFL.addView(forecastWebView);
 
 		if(radarWebView == null)
-			radarWebView = weeWXApp.getInstance().wvpl.getWebView();
-
-		if(radarWebView.getParent() != null)
-			((ViewGroup)radarWebView.getParent()).removeView(radarWebView);
+		{
+			radarWebView = new SafeWebView(weeWXApp.getInstance());
+			radarWebView.getViewTreeObserver().addOnScrollChangedListener(radarScrollListener);
+		}
 
 		FrameLayout fl = rootView.findViewById(R.id.radarFrameLayout);
-		fl.removeAllViews();
 		fl.addView(radarWebView);
 
 		forecastWebView.setOnPageFinishedListener((v, url) ->
@@ -166,9 +158,11 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			forecastWebView.getViewTreeObserver().removeOnScrollChangedListener(forecastScrollListener);
 
-			weeWXApp.getInstance().wvpl.recycleWebView(forecastWebView);
+			forecastWebView.destroy();
 
-			LogMessage("Forecast.onDestroyView() recycled forecastWebView...");
+			forecastWebView = null;
+
+			LogMessage("Forecast.onDestroyView() forecastWebView destroyed...");
 		}
 
 		if(radarWebView != null)
@@ -179,9 +173,11 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			radarWebView.getViewTreeObserver().removeOnScrollChangedListener(radarScrollListener);
 
-			weeWXApp.getInstance().wvpl.recycleWebView(radarWebView);
+			radarWebView.destroy();
 
-			LogMessage("Forecast.onDestroyView() recycled radarWebView...");
+			radarWebView = null;
+
+			LogMessage("Forecast.onDestroyView() radarWebView destroyed...");
 		}
 	}
 

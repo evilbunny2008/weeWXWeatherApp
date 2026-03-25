@@ -2,11 +2,13 @@ package com.odiousapps.weewxweather;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.ConsoleMessage;
 import android.webkit.CookieManager;
+import android.webkit.RenderProcessGoneDetail;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebResourceResponse;
@@ -37,7 +39,13 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 @SuppressWarnings({"unused", "SequencedCollectionMethodCanBeUsed"})
 public class SafeWebView extends WebView
 {
-	private static final List<String> bad_paths = new ArrayList<>();
+	private final List<String> bad_paths = new ArrayList<>();
+	private String Url = null;
+	private String data = null;
+	private String baseUrl = null;
+	private String mimeType = null;
+	private String encoding = null;
+	private String historyUrl = null;
 
 	public SafeWebView(@NonNull Context context)
 	{
@@ -137,7 +145,25 @@ public class SafeWebView extends WebView
 	public void loadUrl(@NonNull String url)
 	{
 		LogMessage("Loading URL: " + url);
+		this.Url = url;
+		this.baseUrl = null;
+		this.data = null;
+		this.mimeType = null;
+		this.encoding = null;
+		this.historyUrl = null;
 		super.loadUrl(url);
+	}
+
+	public void loadDataWithBaseURL(String baseUrl, @NonNull String data, String mimeType, String encoding, String historyUrl)
+	{
+		LogMessage("SafeWebView.loadDataWithBaseURL() calling super.loadDataWithBaseURL()");
+		this.Url = null;
+		this.baseUrl = baseUrl;
+		this.data = data;
+		this.mimeType = mimeType;
+		this.encoding = encoding;
+		this.historyUrl = historyUrl;
+		super.loadDataWithBaseURL(baseUrl, data, mimeType, encoding, historyUrl);
 	}
 
 	public void setOnPageFinishedListener(final OnPageFinishedListener listener, final boolean overrideRequest)
@@ -146,6 +172,24 @@ public class SafeWebView extends WebView
 		{
 			setWebViewClient(new WebViewClient()
 			{
+				@Override
+			    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail detail)
+				{
+					if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+					{
+						if(!detail.didCrash())
+						{
+						    // OOM kill — clean up and recreate
+							restartWebview((SafeWebView)webView);
+
+							// true = handled, prevents app crash
+							return true;
+						}
+					}
+
+					return false; // crash — let it propagate
+			    }
+
 				@Override
 				public void onPageFinished(WebView view, String url)
 				{
@@ -230,6 +274,24 @@ public class SafeWebView extends WebView
 			setWebViewClient(new WebViewClient()
 			{
 				@Override
+			    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail detail)
+				{
+					if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
+					{
+						if(!detail.didCrash())
+						{
+						    // OOM kill — clean up and recreate
+							restartWebview((SafeWebView)webView);
+
+							// true = handled, prevents app crash
+						    return true;
+						}
+					}
+
+					return false; // crash — let it propagate
+			    }
+
+				@Override
 				public void onPageFinished(WebView view, String url)
 				{
 					super.onPageFinished(view, url);
@@ -237,6 +299,16 @@ public class SafeWebView extends WebView
 				}
 			});
 		}
+	}
+
+	private void restartWebview(SafeWebView webViewToRemake)
+	{
+		webViewToRemake.destroy();
+		webViewToRemake = new SafeWebView(weeWXApp.getInstance());
+		if(this.Url != null)
+			webViewToRemake.loadUrl(this.Url);
+		else if(this.data != null)
+			webViewToRemake.loadDataWithBaseURL(this.baseUrl, this.data, this.mimeType, this.encoding, this.historyUrl);
 	}
 
 	public interface OnPageFinishedListener

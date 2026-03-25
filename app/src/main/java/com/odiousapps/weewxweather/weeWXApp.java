@@ -271,8 +271,6 @@ public class weeWXApp extends Application
 
 	final static String charset = StandardCharsets.UTF_8.toString();
 
-	final WebViewPreloader wvpl = new WebViewPreloader();
-
 	static String torVer = null;
 
 	final static boolean DEBUG = com.odiousapps.weewxweather.BuildConfig.DEBUG;
@@ -481,9 +479,6 @@ public class weeWXApp extends Application
 
 		KeyValue.loadYahooRGB2SVGTable();
 		KeyValue.fillCounties();
-
-		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-			instance.wvpl.init(6);
 
 		applyTheme(false);
 

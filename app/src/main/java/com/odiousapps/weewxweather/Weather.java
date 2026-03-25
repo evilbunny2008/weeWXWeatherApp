@@ -95,7 +95,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		boolean disableSwipeOnRadar = (boolean)KeyValue.readVar("disableSwipeOnRadar", weeWXApp.disableSwipeOnRadar_default);
 		floatingCheckBox.setChecked(disableSwipeOnRadar);
 
-		swipeLayout.setRefreshing(true);
+		//swipeLayout.setRefreshing(false);
 
 		LogMessage("Weather.onViewCreated()-- adding notification manager...");
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
@@ -135,9 +135,11 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			current.getViewTreeObserver().removeOnScrollChangedListener(scl);
 
-			weeWXApp.getInstance().wvpl.recycleWebView(current);
+			current.destroy();
 
-			LogMessage("Weather.onDestroyView() recycled current...");
+			current = null;
+
+			LogMessage("Weather.onDestroyView() current destroyed...");
 		}
 
 		if(forecast != null)
@@ -146,9 +148,11 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(parent instanceof ViewGroup)
 				((ViewGroup)parent).removeView(forecast);
 
-			weeWXApp.getInstance().wvpl.recycleWebView(forecast);
+			forecast.destroy();
 
-			LogMessage("Weather.onDestroyView() recycled forecast...");
+			forecast = null;
+
+			LogMessage("Weather.onDestroyView() forecast destroyed...");
 		}
 	}
 
@@ -205,13 +209,9 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(wasNull)
 		{
 			LogMessage("Weather.java loadWebview() webView == null");
-			webView = weeWXApp.getInstance().wvpl.getWebView();
+			webView = new SafeWebView(weeWXApp.getInstance());
 		}
 
-		if(webView.getParent() != null)
-			((ViewGroup)webView.getParent()).removeView(webView);
-
-		frameLayout.removeAllViews();
 		frameLayout.addView(webView);
 
 		if(isCurrent)

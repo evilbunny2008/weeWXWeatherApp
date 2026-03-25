@@ -1,8 +1,6 @@
 package com.odiousapps.weewxweather;
 
 import android.app.Activity;
-import android.content.Context;
-import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.ViewGroup;
@@ -13,8 +11,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
@@ -24,7 +20,6 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 @SuppressWarnings({"unused", "SameParameterValue", "all"})
 public class WebViewPreloader
 {
-	private Queue<SafeWebView> preloadedWebViews = new LinkedList<>();
 	private boolean isRunning = false;
 	private CountDownLatch latch = null;
 	private String[] htmlHolder = null;
@@ -42,145 +37,9 @@ public class WebViewPreloader
 	WebViewPreloader()
 	{}
 
-	void init(int count)
-	{
-		if(Build.VERSION.SDK_INT < Build.VERSION_CODES.Q)
-			return;
-
-		try
-		{
-			for(int i = 0; i < count; i++)
-			{
-				SafeWebView webView = generateWebView();
-
-				synchronized(preloadedWebViews)
-				{
-					preloadedWebViews.add(webView);
-				}
-			}
-		} catch(Throwable t) {
-			doStackOutput(t);
-		}
-	}
-
-	private SafeWebView generateWebView()
-	{
-		try
-		{
-			return new SafeWebView(weeWXApp.getInstance());
-		} catch(Throwable t) {
-			doStackOutput(t);
-		}
-
-		return null;
-	}
-
-	SafeWebView getWebView()
-	{
-		try
-		{
-			synchronized(preloadedWebViews)
-			{
-				SafeWebView wv;
-
-				if(!preloadedWebViews.isEmpty())
-				{
-					wv = preloadedWebViews.poll();
-					if(wv != null)
-					{
-						wv.initSettings();
-						wv.onResume();
-						wv.resumeTimers();
-						return wv;
-					}
-				}
-
-				wv = generateWebView();
-				return wv;
-			}
-/*
-			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-			{
-			} else {
-				return generateWebView(context);
-			}
- */
-		} catch(Throwable t)
-		{
-			doStackOutput(t);
-		}
-
-		return null;
-	}
-
-	void recycleWebView(SafeWebView wv)
-	{
-		if(wv == null)
-			return;
-
-		try
-		{
-			wv.onPause();
-			synchronized(preloadedWebViews)
-			{
-				preloadedWebViews.add(wv);
-			}
-/*
-			if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
-			{
-			} else {
-				destroyWebView(wv);
-			}
-*/
-		} catch(Throwable t)
-		{
-			doStackOutput(t);
-		}
-	}
-
-	void destroyWebView(SafeWebView wv)
-	{
-		if(wv == null)
-			return;
-
-		try
-		{
-			wv.onPause();
-			wv.destroy();
-			wv = null;
-		} catch(Throwable t)
-		{
-			doStackOutput(t);
-		}
-	}
-
-	void destroyAll()
-	{
-		try
-		{
-			synchronized(preloadedWebViews)
-			{
-				for(SafeWebView wv: preloadedWebViews)
-					destroyWebView(wv);
-
-				preloadedWebViews.clear();
-			}
-		} catch(Throwable t) {
-			doStackOutput(t);
-		}
-	}
-
 	String getHTML(String url, String[] searchTerms, String[] mustNotContain, String[] orNotContain) throws IOException
 	{
 		LogMessage("WebViewPreloader.getHTML()...");
-
-		Context context = weeWXApp.getInstance();
-
-		if(context == null)
-		{
-			LogMessage("WebViewPreloader.getHTML() context == null, skipping...", KeyValue.w);
-			return null;
-		}
 
 		if(url == null || url.isBlank())
 		{
@@ -211,7 +70,7 @@ public class WebViewPreloader
 				if(wvContainer == null)
 				{
 					LogMessage("WebViewPreloader.getHTML() Creating wvContainer...");
-					wvContainer = new FrameLayout(context);
+					wvContainer = new FrameLayout(weeWXApp.getInstance());
 					wvContainer.setAlpha(0f);
 				}
 
@@ -233,7 +92,7 @@ public class WebViewPreloader
 
 				if(wv == null)
 				{
-					wv = new SafeWebView(context);
+					wv = new SafeWebView(weeWXApp.getInstance());
 					wv.setOnPageFinishedListener((wv, wvurl) ->
 					{
 						if(false)

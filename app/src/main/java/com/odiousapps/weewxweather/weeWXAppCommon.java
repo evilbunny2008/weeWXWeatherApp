@@ -4163,15 +4163,17 @@ class weeWXAppCommon
 			} catch(Exception ignored) {}
 		}
 
+		WebViewPreloader wvpl = new WebViewPreloader();
+
 		if(fcString)
-			return weeWXApp.getInstance().wvpl.getHTML(
+			return wvpl.getHTML(
 				url,
 				new String[]{"Districts"},
 				new String[]{"Page Not found", "Oops! We can't find the page you're looking for. Please check the URL you entered or"},
 				new String[]{"Oops! Unfortunately, there was an error on the page.", "Oops! We can't find the page you're looking for."}
 			);
 
-		return weeWXApp.getInstance().wvpl.getHTML(
+		return wvpl.getHTML(
 			url,
 			new String[]{"UPDATED", "Daily Forecast", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"},
 			new String[]{"Page Not found", "Oops! We can't find the page you're looking for. Please check the URL you entered or"},

@@ -49,10 +49,7 @@ public class Custom extends Fragment
 		});
 
 		if(wv == null)
-			wv = weeWXApp.getInstance().wvpl.getWebView();
-
-		if(wv.getParent() != null)
-			((ViewGroup)wv.getParent()).removeView(wv);
+			wv = new SafeWebView(weeWXApp.getInstance());
 
 		FrameLayout fl = view.findViewById(R.id.custom);
 		fl.removeAllViews();
@@ -136,9 +133,11 @@ public class Custom extends Fragment
 
 			wv.getViewTreeObserver().removeOnScrollChangedListener(scl);
 
-			weeWXApp.getInstance().wvpl.recycleWebView(wv);
+			wv.destroy();
 
-			LogMessage("Custom.onDestroyView() recycled wv...");
+			wv = null;
+
+			LogMessage("Custom.onDestroyView() wv destroyed...");
 		}
 	}
 
