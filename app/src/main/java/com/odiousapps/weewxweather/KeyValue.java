@@ -3,9 +3,12 @@ package com.odiousapps.weewxweather;
 import android.location.Location;
 import android.util.Log;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -44,6 +47,100 @@ class KeyValue
 	static String bomGeohash = null;
 
 	static boolean hasNotificationPerm = false;
+
+	static int since_hour = 0;
+
+	static HashMap<String, String> labels = new HashMap<>();
+	static HashMap<String, String> formats = new HashMap<>();
+
+	static JSONObject getDict(String dict_name, JSONObject jsonObject)
+	{
+		if(jsonObject == null || jsonObject.length() == 0)
+			return null;
+
+		if(!jsonObject.has(dict_name))
+			return null;
+
+		JSONObject jobj = jsonObject.optJSONObject(dict_name);
+		if(jobj == null || jobj.length() == 0)
+			return null;
+
+		return jobj;
+	}
+
+	static boolean parseDicts(JSONObject jsonObject)
+	{
+		if(jsonObject == null || jsonObject.length() == 0)
+			return false;
+
+		JSONObject group_dict = getDict("group_unit_dict", jsonObject);
+		JSONObject format_dict = getDict("unit_format_dict", jsonObject);
+		JSONObject label_dict = getDict("unit_label_dict", jsonObject);
+
+		if(group_dict == null || format_dict == null || label_dict == null)
+			return false;
+
+		Iterator<String> keys = group_dict.keys();
+		while(keys.hasNext())
+		{
+			String key = keys.next();
+			if(!key.startsWith("group_"))
+				continue;
+
+			String group_name = group_dict.optString(key);
+			if(group_name == null || group_name.isBlank())
+				continue;
+
+			if(label_dict.has(key) && format_dict.has(key))
+			{
+				String justkey = key.split("group_", 2)[1].strip();
+				labels.put(justkey, label_dict.optString(key).strip());
+				formats.put(justkey, format_dict.optString(key).strip());
+			}
+		}
+
+		return true;
+	}
+
+	static String getFormat(String key)
+	{
+		return formats.getOrDefault(key, "");
+	}
+
+	static String getLabel(String key, String defaultValue)
+	{
+		return labels.getOrDefault(key, defaultValue);
+	}
+
+	static String getKeyFromName(String name)
+	{
+		if(name.contains("_barometer_") || name.equals("current_barometer"))
+			return "pressure";
+
+		if(name.contains("_dewpoint_") || name.equals("current_dewpoint") ||
+		   name.contains("_inTemp_") || name.equals("current_inTemp") ||
+		   name.contains("_outTemp_") || name.equals("current_outTemp"))
+			return "temperature";
+
+		if(name.contains("_ET_") || name.contains("_rain_") ||
+		   name.equals("since_today") || name.equals("since_yesterday"))
+			return "rain";
+
+		if(name.contains("_inHumidity_") || name.equals("current_inHumidity") ||
+		   name.contains("_outHumidity_") || name.equals("current_outHumidity"))
+			return "percent";
+
+		if(name.contains("_radiation_") || name.equals("current_radiation"))
+			return "watt_per_meter_squared";
+
+		if(name.contains("_UV_") || name.equals("current_UV"))
+			return "uv_index";
+
+		if(name.contains("_wind_") || name.equals("current_windSpeed") || name.equals("current_windGust"))
+			return "speed";
+
+		return null;
+	}
 
 	static boolean debugging_on()
 	{

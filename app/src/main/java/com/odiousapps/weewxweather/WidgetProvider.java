@@ -12,7 +12,9 @@ import android.widget.RemoteViews;
 import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getElement;
+import static com.odiousapps.weewxweather.weeWXAppCommon.formatString;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getLocalTime;
 
 public class WidgetProvider extends AppWidgetProvider
 {
@@ -133,21 +135,24 @@ public class WidgetProvider extends AppWidgetProvider
 		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
 		if(lastDownload != null && !lastDownload.isBlank())
 		{
-			String[] bits = lastDownload.split("\\|");
-			String rain = getElement(20, bits);
-			String str158 = getElement(158, bits);
-			if(!str158.isBlank())
-				rain = str158;
+			String tempSym = KeyValue.getLabel("temperature", "°C");
+			String rainSym = KeyValue.getLabel("rain", "mm");
+			String speedSym = KeyValue.getLabel("speed", "km/h");
 
-			rain += getElement(62, bits);
+			String rain = formatString("day_rain_sum", 0f);
+			int since_hour = (int)getJson("since_hour", 0);
+			if(since_hour > 0)
+				rain = formatString("since_today", 0);
 
-			tempText = getElement(0, bits) + getElement(60, bits);
+			tempText = formatString("current_temperature", 0f) + tempSym;
 			LogMessage("Temperature set to " + tempText);
 
-			views.setTextViewText(R.id.widget_location, getElement(56, bits));
-			views.setTextViewText(R.id.widget_time, getElement(55, bits));
-			views.setTextViewText(R.id.widget_wind, getElement(25, bits) + getElement(61, bits));
-			views.setTextViewText(R.id.widget_rain, rain);
+			int now = (int)getJson("now", 0f);
+
+			views.setTextViewText(R.id.widget_location, (String)getJson("station_location", ""));
+			views.setTextViewText(R.id.widget_time, getLocalTime(now));
+			views.setTextViewText(R.id.widget_wind, formatString("current_windGust", 0f) + speedSym);
+			views.setTextViewText(R.id.widget_rain, rain + rainSym);
 		} else {
 			LogMessage("Temperature set to Error!");
 			tempText = "Error!";

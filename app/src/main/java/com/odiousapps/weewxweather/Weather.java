@@ -27,13 +27,19 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
-
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
-import static com.odiousapps.weewxweather.weeWXAppCommon.doMoon;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getElement;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getInt;
+import static com.odiousapps.weewxweather.weeWXAppCommon.formatString;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getDateTimeStr;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getHourMin;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getLocalDate;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getLocalTime;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getSinceHour;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getTimeMonth;
+import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
+import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
 @SuppressWarnings({"unused", "deprecation"})
 public class Weather extends Fragment implements View.OnClickListener
@@ -308,7 +314,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 					//doStackTrace(0);
 
-					int heightInPx = getInt(value.replaceAll("[\"']", ""));
+					int heightInPx = str2Int(value);
 					LogMessage("From Javascript heightInPx: " + heightInPx);
 
 					if(heightInPx == 0)
@@ -426,46 +432,30 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		LogMessage("drawWeather()");
 
-		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
-		if(lastDownload == null || lastDownload.isBlank())
+		if(!KeyValue.isPrefSet("LastJsonDownload"))
 		{
 			forceCurrentRefresh(R.string.attempting_to_download_data_txt);
 			return;
 		}
 
-		String[] bits = lastDownload.split("\\|");
+		int now = (int)getJson("now", 0);
+		String tempSym = KeyValue.getLabel("temperature", "°C");
+		String humSym = KeyValue.getLabel("humidity", "%");
+		String pressSym = KeyValue.getLabel("pressure", "hPa");
+		String speedSym = KeyValue.getLabel("speed", "km/h");
 
-		LogMessage("bits.length: " + bits.length, KeyValue.d);
-
-		if(bits.length <= 1)
-		{
-			LogMessage("bits.length <= 1", true, KeyValue.e);
-			forceCurrentRefresh(R.string.error_occurred_while_attempting_to_update);
-			return;
-		}
-		
-		if(bits.length < 65)
-		{
-			LogMessage("bits.length < 65", KeyValue.w);
-			forceCurrentRefresh(R.string.error_occurred_while_attempting_to_update);
-			return;
-		}
-
-		checkFields(tv1, getElement(56, bits));
-		checkFields(tv2, getElement(54, bits) + " " + getElement(55, bits));
+		checkFields(tv1, (String)getJson("station_location", ""));
+		checkFields(tv2, getLocalTime(now) + " " + getLocalDate(now));
 
 		final StringBuilder sb = new StringBuilder();
 		sb.append("\n<div class='todayCurrent'>\n");
 		sb.append("\t<div class='topRowCurrent'>\n");
 		sb.append("\t\t<div class='mainTemp'>");
-		sb.append(getElement(0, bits)).append(getElement(60, bits));
+		sb.append(formatString("current_outTemp", 0f)).append(tempSym);
 		sb.append("</div>\n");
 
 		sb.append("\t\t<div class='apparentTemp'>AT:<br/>");
-		if(bits.length > 203)
-			sb.append(getElement(203, bits)).append(getElement(60, bits));
-		else
-			sb.append(weeWXApp.emptyField);
+		sb.append(formatString("appTemp", 0f)).append(tempSym);
 		sb.append("</div>\n\t</div>\n\n");
 
 		sb.append("\t<div class='dataTableCurrent'>\n");
@@ -477,13 +467,13 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(getElement(25, bits))
-				.append(getElement(61, bits))
+				.append(formatString("current_windGust", 0f))
+				.append(speedSym)
 				.append("</div>\n");
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(getElement(37, bits))
-				.append(getElement(63, bits))
+				.append(getJson("current_barometer", 0f))
+				.append(pressSym)
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -492,42 +482,17 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
-		String str27 = getElement(27, bits);
-		if(str27.isBlank())
-			str27 = "N/A";
-
-		String str30 = getElement(30, bits);
-		if(str30.isBlank())
-			str30 = "N/A";
-
-		String dir = str30;
-		int direction = weeWXAppCommon.getDirection(dir);
-
-		try
-		{
-			if(!str27.equals("N/A"))
-				direction = getInt(str27);
-		} catch(NumberFormatException ignored) {}
-
-
-		String str293 = getElement(293, bits);
-		if(!str293.isBlank())
-		{
-			dir = str293;
-			direction = getInt(292, bits);
-		}
-
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(cssToSVG("wi-wind-deg", direction))
+				.append(cssToSVG("wi-wind-deg", (int)getJson("current_windGustDir", 0)))
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(dir)
+				.append((String)getJson("current_windGustDir_compass", "N/A"))
 				.append("</div>\n");
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(getElement(6, bits))
-				.append(getElement(64, bits))
+				.append(formatString("current.outHumidity", 0f))
+				.append(humSym)
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -536,11 +501,12 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
-		String rain = getElement(20, bits) + getElement(62, bits) + " " +
-		              weeWXApp.getAndroidString(R.string.since) + " mn";
-		if(bits.length > 160 && !getElement(160, bits).isBlank())
-			rain = getElement(158, bits) + getElement(62, bits) + " " +
-			       weeWXApp.getAndroidString(R.string.since) + " " + getElement(160, bits);
+		int since_hour = (int)getJson("since_hour", 0);
+		String since = getSinceHour(since_hour, R.string.since);
+		String rain = formatString("day_rain_sum", 0f);
+
+		if(since_hour > 0)
+			rain = formatString("since_today", 0);
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
 				.append(cssToSVG("wi-umbrella"))
@@ -548,10 +514,12 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")
 				.append(rain)
+				.append(since)
 				.append("</div>\n");
+
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(getElement(12, bits))
-				.append(getElement(60, bits))
+				.append(formatString("current_dewpoint", 0f))
+				.append(tempSym)
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -560,35 +528,33 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t</div>\n");
 
-		String str43 = getElement(43, bits);
-		if(str43.contains("N/A"))
-			str43 = "";
+		boolean hasRadiation = hasElement("current_radiation");
+		boolean hasUV = hasElement("current_UV");
 
-		String str45 = getElement(45, bits);
-		if(str45.isBlank() || str45.contains("N/A"))
-			str45 = "";
-
-		if(!str43.isBlank() || !str45.isBlank())
+		if(hasRadiation || hasUV)
 		{
 			sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-			if(!str45.isBlank())
+			if(hasUV)
 			{
 				sb.append("\t\t\t<div class='dataCellCurrent left'>")
 						.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"))
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
 						.append("\t\t\t<div class='dataCellCurrent left'>")
-						.append(str45)
-						.append(" UVI</div>\n");
+						.append(formatString("current_UV", 0f))
+						.append(KeyValue.getLabel("uv_index", "UVI"))
+						.append("</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
 
-			if(!str43.isBlank())
+			if(hasRadiation)
 			{
 				sb.append("\t\t\t<div class='dataCellCurrent right'>")
-						.append(str43).append(" W/m²</div>\n")
+						.append(formatString("current_radiation", 0f))
+						.append(KeyValue.getLabel("radiation", "W/m²"))
+						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
 						.append("\t\t\t<div class='dataCellCurrent right'>")
 						.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"))
@@ -600,34 +566,33 @@ public class Weather extends Fragment implements View.OnClickListener
 			sb.append("\t\t</div>\n");
 		}
 
-		String str60 = getElement(60, bits);
-		String str64 = getElement(64, bits);
-		String str161 = getElement(161, bits);
-		String str166 = getElement(166, bits);
-		if((!str161.isBlank() || !str166.isBlank()) &&
+		boolean hasInTemp = hasElement("current_inTemp");
+		boolean hasInHumidity = hasElement("current_inHumidity");
+
+		if((hasInTemp || hasInHumidity) &&
 		   (boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
 		{
 			sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-			if(!str161.isBlank())
+			if(hasInTemp)
 			{
 				sb.append("\t\t\t<div class='dataCellCurrent left'>")
 						.append(weeWXAppCommon.fiToSVG("flaticon-home-page"))
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
 						.append("\t\t\t<div class='dataCellCurrent left'>")
-						.append(str161)
-						.append(str60)
+						.append(formatString("current_inTemp", 0f))
+						.append(tempSym)
 						.append("</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
 			}
 
-			if(!str166.isBlank())
+			if(hasInHumidity)
 			{
 				sb.append("\t\t\t<div class='dataCellCurrent right'>")
-						.append(str166)
-						.append(str64)
+						.append(formatString("current_inHumidity", 0f))
+						.append(humSym)
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
 						.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -642,16 +607,19 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
+		int sunrise = (int)getJson("sun_rise", 0f);
+		int sunset = (int)getJson("sun_set", 0f);
+
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
 				.append(cssToSVG("wi-sunrise"))
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(getElement(57, bits))
+				.append(getDateTimeStr(sunrise, 0))
 				.append("</div>\n");
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(getElement(58, bits))
+				.append(getDateTimeStr(sunset, 0))
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -662,34 +630,41 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		boolean next_moon = (boolean)KeyValue.readVar("next_moon", weeWXApp.next_moon_default);
 
-		String str290 = getElement(290, bits);
-		String str291 = getElement(291, bits);
-		if(next_moon && !str290.isBlank() && !str291.isBlank())
+		boolean has_moon_next = hasElement("moon_next_rise") && hasElement("moon_next_set");
+
+		if(next_moon && has_moon_next)
 		{
+			int moon_next_rise = (int)getJson("moon_next_rise", 0f);
+			int moon_next_set = (int)getJson("moon_next_set", 0f);
+
 			sb.append("\t\t\t<div class='dataCellCurrent left'>")
 					.append(cssToSVG("wi-moonrise"))
 					.append("</div>\n")
 					.append(weeWXApp.currentSpacer)
 					.append("\t\t\t<div class='dataCellCurrent left'>")
-					.append(doMoon(str290))
+					.append(getTimeMonth(moon_next_rise))
 					.append("</div>\n");
 			sb.append("\t\t\t<div class='dataCellCurrent right'>")
-					.append(doMoon(str291))
+					.append(getTimeMonth(moon_next_rise))
 					.append("</div>\n")
 					.append(weeWXApp.currentSpacer)
 					.append("\t\t\t<div class='dataCellCurrent right'>")
 					.append(cssToSVG("wi-moonset"))
 					.append("</div>\n");
 		} else {
+
+			int moon_rise = (int)getJson("moon_rise", 0f);
+			int moon_set = (int)getJson("moon_set", 0f);
+
 			sb.append("\t\t\t<div class='dataCellCurrent left'>")
 					.append(cssToSVG("wi-moonrise"))
 					.append("</div>\n")
 					.append(weeWXApp.currentSpacer)
 					.append("\t\t\t<div class='dataCellCurrent left'>")
-					.append(getElement(47, bits))
+					.append(getHourMin(moon_rise))
 					.append("</div>\n");
 			sb.append("\t\t\t<div class='dataCellCurrent right'>")
-					.append(getElement(48, bits))
+					.append(getHourMin(moon_set))
 					.append("</div>\n")
 					.append(weeWXApp.currentSpacer)
 					.append("\t\t\t<div class='dataCellCurrent right'>")

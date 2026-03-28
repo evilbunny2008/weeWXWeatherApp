@@ -34,15 +34,14 @@ import java.util.regex.Pattern;
 import com.odiousapps.weewxweather.weeWXAppCommon.Result;
 import com.odiousapps.weewxweather.weeWXAppCommon.Result2;
 
-
-import static com.odiousapps.weewxweather.weeWXAppCommon.C2F;
 import static com.odiousapps.weewxweather.weeWXAppCommon.C2Fdeg;
+import static com.odiousapps.weewxweather.weeWXAppCommon.C2Fdeground;
 import static com.odiousapps.weewxweather.weeWXAppCommon.F2Cdeg;
+import static com.odiousapps.weewxweather.weeWXAppCommon.F2Cdeground;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getInt;
-import static com.odiousapps.weewxweather.weeWXAppCommon.roundFloat;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
+import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
 @SuppressWarnings({"SameParameterValue", "ApplySharedPref", "ConstantConditions", "SameReturnValue",
                    "BooleanMethodIsAlwaysInverted", "SetTextI18n", "StringBufferMayBeStringBuilder"})
@@ -194,8 +193,8 @@ class JsoupHelper
 
 								while(m2.find())
 								{
-									int f = getInt(m2.group(1));
-									String c = F2Cdeg(f);
+									int f = str2Int(m2.group(1));
+									String c = F2Cdeground(f);
 									m2.appendReplacement(sb, c);
 								}
 
@@ -217,8 +216,8 @@ class JsoupHelper
 
 								while(m2.find())
 								{
-									int c = getInt(m2.group(1));
-									String f = C2Fdeg(c);
+									int c = str2Int(m2.group(1));
+									String f = C2Fdeground(c);
 									m2.appendReplacement(sb, f);
 								}
 
@@ -375,11 +374,11 @@ class JsoupHelper
 					int height = 0;
 
 					if(svg.hasAttr("height"))
-						height = getInt(svg.attr("height"));
+						height = str2Int(svg.attr("height"));
 
 					int width = 0;
 					if(svg.hasAttr("width"))
-						width = getInt(svg.attr("width"));
+						width = str2Int(svg.attr("width"));
 
 					if(width > 0 && height > 0)
 						filenameOrig += "_" + height + "x" + width;
@@ -848,9 +847,9 @@ class JsoupHelper
 				day.min += "&deg;C";
 			} else {
 				if(!day.max.isBlank())
-					day.max += C2Fdeg(getInt(day.max));
+					day.max += C2Fdeground(str2Float(day.max));
 				if(!day.min.isBlank())
-					day.min += C2Fdeg(getInt(day.min));
+					day.min += C2Fdeground(str2Float(day.min));
 			}
 
 			if(day.max.isBlank() || day.max.startsWith("&deg;"))
@@ -882,8 +881,8 @@ class JsoupHelper
 
 				if(!metric)
 				{
-					day.max = C2Fdeg(getInt(day.max));
-					day.min = C2Fdeg(getInt(day.min));
+					day.max = C2Fdeground(str2Float(day.max));
+					day.min = C2Fdeground(str2Float(day.min));
 				}
 
 				days.add(day);
@@ -958,17 +957,17 @@ class JsoupHelper
 				if(td != null)
 				{
 					if(metric)
-						day.min = roundFloat(td.text().replace("°C", "")) + "&deg;C";
+						day.min = str2Int(td.text().replace("°C", "")) + "&deg;C";
 					else
-						day.min = (int)C2F(roundFloat(td.text().replace("°C", ""))) + "&deg;F";
+						day.min = C2Fdeground(str2Float(td.text().replace("°C", "")));
 				}
 
 				td = e.selectFirst("td.tempmax");
 				{
 					if(metric)
-						day.max = roundFloat(td.text().replace("°C", "")) + "&deg;C";
+						day.max = str2Int(td.text().replace("°C", "")) + "&deg;C";
 					else
-						day.max = roundFloat(td.text().replace("°C", "")) + "&deg;F";
+						day.max = C2Fdeground(str2Float(td.text().replace("°C", ""))) + "&deg;F";
 				}
 
 				days.add(day);
@@ -1769,10 +1768,10 @@ class JsoupHelper
 					output += max + "mm";
 			} else {
 				if(min != null)
-					min = "" + roundFloat(min);
+					min = "" + str2Int(min);
 
 				if(max != null)
-					max = "" + roundFloat(max);
+					max = "" + str2Int(max);
 
 				if(min != null)
 					output += min + "in to ";

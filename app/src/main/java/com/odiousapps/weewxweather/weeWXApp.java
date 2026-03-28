@@ -31,6 +31,8 @@ import com.caverock.androidsvg.PreserveAspectRatio;
 import com.caverock.androidsvg.SVG;
 import com.github.evilbunny2008.colourpicker.CPEditText;
 
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -47,7 +49,8 @@ import androidx.core.content.ContextCompat;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getInt;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
+import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
 @SuppressWarnings({"unused", "SameParameterValue"})
 public class weeWXApp extends Application
@@ -208,6 +211,7 @@ public class weeWXApp extends Application
 	final static int minimum_inigo_version = 4000;
 	final static int minimum_inigo_version_for_alerts = 1000009;
 	final static int minimum_inigo_bits_for_alerts = 305;
+	final static int minimum_inigo_json_version = 2000000;
 
 	final static boolean radarforecast_default = false;
 	final static boolean disableSwipeOnRadar_default = false;
@@ -328,30 +332,30 @@ public class weeWXApp extends Application
 		}
 
 		createNotificationChannel("temperature_alerts",
-			weeWXApp.getAndroidString(R.string.temperature_alert_str),
-			weeWXApp.getAndroidString(R.string.temperature_alert_desc),
+			getAndroidString(R.string.temperature_alert_str),
+			getAndroidString(R.string.temperature_alert_desc),
 			NotificationManager.IMPORTANCE_HIGH
 		);
 
 		createNotificationChannel("rainfall_alert",
-			weeWXApp.getAndroidString(R.string.rainfall_alert_str),
-			weeWXApp.getAndroidString(R.string.rainfall_alert_desc),
+			getAndroidString(R.string.rainfall_alert_str),
+			getAndroidString(R.string.rainfall_alert_desc),
 			NotificationManager.IMPORTANCE_HIGH
 		);
 
 		createNotificationChannel(alert_channels[0],
-			weeWXApp.getAndroidString(R.string.rainrate_alert_watch_str),
-			weeWXApp.getAndroidString(R.string.rainrate_alert_watch_desc),
+			getAndroidString(R.string.rainrate_alert_watch_str),
+			getAndroidString(R.string.rainrate_alert_watch_desc),
 			NotificationManager.IMPORTANCE_HIGH);
 
 		createNotificationChannel(alert_channels[1],
-			weeWXApp.getAndroidString(R.string.rainrate_alert_warning_str),
-			weeWXApp.getAndroidString(R.string.rainrate_alert_warning_desc),
+			getAndroidString(R.string.rainrate_alert_warning_str),
+			getAndroidString(R.string.rainrate_alert_warning_desc),
 			NotificationManager.IMPORTANCE_MAX);
 
 		createNotificationChannel(alert_channels[2],
-			weeWXApp.getAndroidString(R.string.rainrate_alert_severe_str),
-			weeWXApp.getAndroidString(R.string.rainrate_alert_severe_desc),
+			getAndroidString(R.string.rainrate_alert_severe_str),
+			getAndroidString(R.string.rainrate_alert_severe_desc),
 			NotificationManager.IMPORTANCE_MAX
 		);
 
@@ -414,7 +418,7 @@ public class weeWXApp extends Application
 			if(KeyValue.currWebViewVer != null && !KeyValue.currWebViewVer.isBlank())
 			{
 				String[] parts = KeyValue.currWebViewVer.split("\\.");
-				KeyValue.webview_major_version = getInt(parts[0]);
+				KeyValue.webview_major_version = str2Int(parts[0]);
 			}
 		} catch(Exception e) {
 			Log.e(weeWXAppCommon.LOGTAG, "Error! e: " + e.getMessage(), e);
@@ -482,12 +486,6 @@ public class weeWXApp extends Application
 
 		applyTheme(false);
 
-//		LogMessage("weeWXApp.java UpdateCheck.cancelAlarm()");
-//		UpdateCheck.cancelAlarm();
-//
-//		LogMessage("weeWXApp.java UpdateCheck.setNextAlarm()");
-//		UpdateCheck.setNextAlarm();
-
 		LogMessage("weeWXApp.java UpdateCheck.runInTheBackground(false, true)");
 		UpdateCheck.runInTheBackground(false, true);
 
@@ -496,6 +494,10 @@ public class weeWXApp extends Application
 		KeyValue.countyName = (String)KeyValue.readVar("CountyName", "");
 		KeyValue.bomLocation = (String)KeyValue.readVar("bomLocation", "");
 		KeyValue.bomGeohash = (String)KeyValue.readVar("bomGeohash", "");
+
+		JSONObject jsonObject = getJson();
+		if(jsonObject != null && jsonObject.length() > 0)
+			KeyValue.parseDicts(jsonObject);
 	}
 
 	@Override

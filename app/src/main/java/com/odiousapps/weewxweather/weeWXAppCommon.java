@@ -13,6 +13,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.Typeface;
+import android.icu.text.MessageFormat;
 import android.media.MediaScannerConnection;
 import android.net.ConnectivityManager;
 import android.net.Network;
@@ -69,6 +70,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 import java.util.ArrayList;
@@ -108,6 +110,9 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+
+
+import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 
 @SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref", "ConstantConditions",
                    "SameReturnValue", "BooleanMethodIsAlwaysInverted", "SetTextI18n",
@@ -174,6 +179,9 @@ class weeWXAppCommon
 	static final SimpleDateFormat sdf16 = new SimpleDateFormat("EEE d, HH:mm", Locale.getDefault());
 	static final SimpleDateFormat sdf17 = new SimpleDateFormat("EEE d, h:mm a", Locale.getDefault());
 
+	static final DateFormat localDate = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
+	static final DateFormat localTime = DateFormat.getTimeInstance(DateFormat.MEDIUM, Locale.getDefault());
+
 	private static final BitmapFactory.Options options = new BitmapFactory.Options();
 
 	private static JSONObject nws = null;
@@ -196,7 +204,8 @@ class weeWXAppCommon
 
 	record Result(List<Day> days, String desc, long timestamp, boolean isDaily) {}
 	record Result2(String[] forecast_text, String desc, int rc) {}
-	record TempResult(float CurrTemp, float minObservedTemp, float maxObservedTemp, int dropCount, boolean hasPeaked, int riseCount) {}
+	record TempResult(float CurrTemp, float minObservedTemp, float maxObservedTemp, int[] outTemp_trend_count,
+	                  int[] outTemp_trend_signal, int[] outTemp_trend_ts) {}
 
 	private static final String utf8 = "utf-8";
 
@@ -546,18 +555,18 @@ class weeWXAppCommon
 					getPrefSettings().edit().putBoolean(var, (boolean)val).commit();
 				} catch(Exception ignored) {}
 			}
-			case Integer i ->
-			{
-				try
-				{
-					getPrefSettings().edit().putInt(var, (int)val).commit();
-				} catch(Exception ignored) {}
-			}
 			case Float v ->
 			{
 				try
 				{
 					getPrefSettings().edit().putFloat(var, (float)val).commit();
+				} catch(Exception ignored) {}
+			}
+			case Integer i ->
+			{
+				try
+				{
+					getPrefSettings().edit().putInt(var, (int)val).commit();
 				} catch(Exception ignored) {}
 			}
 			case Long l ->
@@ -1425,8 +1434,8 @@ class weeWXAppCommon
 
 			if(!metric)
 			{
-				day.max = C2Fdeg(getInt(day.max));
-				day.min = C2Fdeg(getInt(day.min));
+				day.max = C2Fdeground(str2Float(day.max));
+				day.min = C2Fdeground(str2Float(day.min));
 			}
 
 			days.add(day);
@@ -1482,14 +1491,14 @@ class weeWXAppCommon
 					{
 						String trim_line = line.strip();
 						String[] bits = trim_line.split("=", 2);
-						if(getElement(0, bits).strip().equals("i"))
-							fimg = "wgov" + getElement(1, bits).strip();
-						if(getElement(0, bits).strip().equals("j"))
-							simg = "wgov" + getElement(1, bits).strip();
-						if(getElement(0, bits).strip().equals("ip"))
-							fper = getElement(1, bits).strip();
-						if(getElement(0, bits).strip().equals("jp"))
-							sper = getElement(1, bits).strip();
+						if(bits[0].strip().equals("i"))
+							fimg = "wgov" + bits[1].strip();
+						if(bits[0].strip().equals("j"))
+							simg = "wgov" + bits[1].strip();
+						if(bits[0].strip().equals("ip"))
+							fper = bits[1].strip();
+						if(bits[0].strip().equals("jp"))
+							sper = bits[1].strip();
 					}
 
 					Bitmap bmp1 = loadImage(fimg + ".jpg");
@@ -1573,7 +1582,7 @@ class weeWXAppCommon
 				day.max = temperature.getString(i) + "&deg;F";
 
 				if(metric)
-					day.max = F2Cdeg(getInt(temperature.getString(i)));
+					day.max = F2Cdeground(str2Float(temperature.getString(i)));
 
 				day.text = weather.getString(i);
 				days.add(day);
@@ -1721,8 +1730,8 @@ class weeWXAppCommon
 
 				if(!metric)
 				{
-					day.max = C2Fdeg(getInt(day.max));
-					day.min = C2Fdeg(getInt(day.min));
+					day.max = C2Fdeground(str2Float(day.max));
+					day.min = C2Fdeground(str2Float(day.min));
 				}
 
 				days.add(day);
@@ -1750,7 +1759,7 @@ class weeWXAppCommon
 		{
 			String[] bits = data.split("<title>");
 			if(bits.length >= 2)
-				desc = getElement(1, bits).split("</title>")[0];
+				desc = bits[1].split("</title>")[0];
 			desc = desc.substring(desc.lastIndexOf(" - ") + 3).strip();
 			String string_time = data.split("<tr class='headRow'>", 2)[1].split("</tr>", 2)[0].strip();
 			String date = string_time.split("<td width='30%' class='stattime'>", 2)[1].split("</td>", 2)[0].strip();
@@ -1798,7 +1807,7 @@ class weeWXAppCommon
 				day.max = temp + "&deg;C";
 				day.min = "&deg;C";
 				if(!metric)
-					day.max = C2Fdeg(getInt(temp));
+					day.max = C2Fdeground(str2Float(temp));
 
 				days.add(day);
 				lastTS = day.timestamp;
@@ -1886,8 +1895,8 @@ class weeWXAppCommon
 
 				if(!metric)
 				{
-					day.max = C2Fdeg(getInt(day.max));
-					day.min = C2Fdeg(getInt(day.min));
+					day.max = C2Fdeground(str2Float(day.max));
+					day.min = C2Fdeground(str2Float(day.min));
 				}
 
 				day.text = estado_cielo.getString("descripcion");
@@ -2579,8 +2588,8 @@ class weeWXAppCommon
 
 				if(!metric)
 				{
-					day.max = C2Fdeg(getInt(day.max)) + "&deg;F";
-					day.min = C2Fdeg(getInt(day.min)) + "&deg;F";
+					day.max = C2Fdeground(str2Float(day.max)) + "&deg;F";
+					day.min = C2Fdeground(str2Float(day.min)) + "&deg;F";
 				}
 
 				day.text = mydesc;
@@ -2899,11 +2908,16 @@ class weeWXAppCommon
 
 		String[] bits = lastDownload.split("\\|");
 
-		float rainfall = getFloat(20, bits);
+		float rainfall = (float)getJson("day_rain", 0.0f);
 
-		String str158 = getElement(158, bits);
-		if(!str158.isBlank())
-			rainfall = str2Float(str158);
+		int since_hour = (int)getJson("since_hour", 0);
+		if(since_hour < 0 || since_hour > 23)
+			since_hour = 0;
+
+		KeyValue.since_hour = since_hour;
+
+		if(since_hour > 0)
+			rainfall = (float)getJson("since_rain_today", 0.0f);
 
 		float rainfall_limit = (int)KeyValue.readVar("RainfallLimit", weeWXApp.RainfallLimit_default) / 100f;
 
@@ -2956,14 +2970,14 @@ class weeWXAppCommon
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default) &&
 		                 !(boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
 
-		float rainrate = getFloat(24, bits);
+		float rainrate = (float)getJson("rainRate", 0.0f);
 
 		int[] totals = {
-			getInt100(296, bits),
-			getInt100(297, bits),
-			getInt100(298, bits),
-			getInt100(299, bits),
-			getInt100(300, bits)
+			Math.round((float)getJson("rain_600", 0.0f) * 100),
+			Math.round((float)getJson("rain_1800", 0.0f) * 100),
+			Math.round((float)getJson("rain_3600", 0.0f) * 100),
+			Math.round((float)getJson("rain_21600", 0.0f) * 100),
+			Math.round((float)getJson("rain_86400", 0.0f) * 100),
 		};
 
 		long now = System.currentTimeMillis();
@@ -3117,11 +3131,12 @@ class weeWXAppCommon
 
 			float maxObservedTemp = Math.max(temps.CurrTemp, temps.maxObservedTemp);
 
-			boolean hasPeaked = (temps.hasPeaked || cal.get(Calendar.HOUR_OF_DAY) >= 16) && temps.CurrTemp < maxObservedTemp;
+			//boolean hasPeaked = (temps.hasPeaked || cal.get(Calendar.HOUR_OF_DAY) >= 16) && temps.CurrTemp < maxObservedTemp;
 
-			LogMessage("checkTempAlerts() hasPeaked: " + hasPeaked);
+			//LogMessage("checkTempAlerts() hasPeaked: " + hasPeaked);
 
-			boolean hasCooledOff = hasPeaked && temps.CurrTemp <= afternoon_temp_limit && maxObservedTemp > afternoon_temp_limit;
+			//boolean hasCooledOff = hasPeaked && temps.CurrTemp <= afternoon_temp_limit && maxObservedTemp > afternoon_temp_limit;
+			boolean hasCooledOff = false;
 
 			LogMessage("checkTempAlerts() hasCooledOff: " + hasCooledOff);
 
@@ -3142,165 +3157,215 @@ class weeWXAppCommon
 
 	static TempResult getTempResult()
 	{
-		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
-		if(lastDownload == null || lastDownload.isBlank())
-			return new TempResult(-999.9f, 999.9f, -999.9f,
-					-1, false, -1);
+		int[] empty = new int[]{};
 
-		String[] bits = lastDownload.split("\\|");
-
-		return new TempResult(getFloat(0, bits), getFloat(1, bits), getFloat(3, bits),
-				getInt(301, bits), getBoolean(302, bits), getInt(304, bits));
+		return new TempResult(
+				(float)getJson("current_outTemp", 0),
+				(float)getJson("day_outTemp_min", 0),
+				(float)getJson("day_outTemp_max", 0),
+				(int[])getJson("outTemp_trend_count", empty),
+				(int[])getJson("outTemp_trend_signal", empty),
+				(int[])getJson("outTemp_trend_ts", empty));
 	}
 
-	static int getInt100(String str)
+	static Object getElement(String element, JSONObject jsonObject, Object defaultValue)
 	{
-		return Math.round(str2Float(str) * 100);
-	}
-
-	static int getInt(String str)
-	{
-		try
+		switch(defaultValue)
 		{
-			return Math.round(str2Float(str));
-		} catch(Exception ignored) {}
+			case Boolean b ->
+			{
+				return jsonObject.optBoolean(element, b);
+			}
+			case Double d ->
+			{
+				return jsonObject.optDouble(element, d);
+			}
+			case Float f ->
+			{
+				return (float)jsonObject.optDouble(element, f);
+			}
+			case Integer i ->
+			{
+				return jsonObject.optInt(element, i);
+			}
+			case int[] iarr ->
+			{
+				if(!jsonObject.has(element))
+					return iarr;
 
-		return 0;
-	}
+				JSONArray temparr = jsonObject.optJSONArray(element);
+				if(temparr == null || temparr.length() == 0)
+					return iarr;
 
-	static int getInt100(int element, String[] bits)
-	{
-		try
-		{
-			return Math.round(getFloat(element, bits) * 100);
-		} catch(Exception ignored) {}
+				int[] numbers = new int[temparr.length()];
+				for(int i = 0; i < temparr.length(); ++i)
+					numbers[i] = temparr.optInt(i);
 
-		return 0;
-	}
+				return numbers;
+			}
+			case Long l ->
+			{
+				return jsonObject.optLong(element, l);
+			}
+			case String s ->
+			{
+				return jsonObject.optString(element, s).strip();
+			}
 
-	static int getInt(int element, String[] bits)
-	{
-		try
-		{
-			return Math.round(getFloat(element, bits));
-		} catch(Exception ignored) {}
-
-		return 0;
-	}
-
-	static boolean getBoolean(int element, String[] bits)
-	{
-		try
-		{
-			String str = getElement(element, bits);
-			if(str.isBlank())
-				return false;
-
-			return Boolean.parseBoolean(str);
-		} catch(Exception ignored) {}
-
-		return false;
-	}
-
-	static int roundFloat(String str)
-	{
-		if(str.isBlank())
-			return 0;
-
-		try
-		{
-			return (int)Math.round(Double.parseDouble(str));
-		} catch(Exception ignored) {}
-
-		return 0;
-	}
-
-	static float getFloat(int element, String[] bits)
-	{
-		return str2Float(getElement(element, bits));
-	}
-
-	static String getElement(int element, String[] bits)
-	{
-		return getElement(element, bits, "");
-	}
-
-	static String getElement(int element, String[] bits, String defVal)
-	{
-		try
-		{
-			if(bits.length > element)
-				return bits[element].strip();
-		} catch(Exception e) {
-			LogMessage("Error! e: " + e, true, KeyValue.e);
+			default -> {}
 		}
 
-		return defVal;
+		return null;
+	}
+
+	static String getDateTimeStr(int when, int timeMode)
+	{
+		String dateTimeStr = "";
+
+		if(timeMode == 0)
+			dateTimeStr = getHourMin(when);
+		else if(timeMode == 1)
+			dateTimeStr = getTimeMonth(when);
+		else if(timeMode == 2)
+			dateTimeStr = getTimeYear(when);
+		else if(timeMode == 3)
+			dateTimeStr = getAllTime(when);
+
+		return dateTimeStr;
+	}
+
+	static String getHourMin(int when)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("H:mm", Locale.getDefault());
+		return sdf.format(when * 1000L);
+	}
+
+	static String getOrdinal(String str)
+	{
+		MessageFormat mf = new MessageFormat("{0,ordinal}", Locale.getDefault());
+		return mf.format(str);
+	}
+
+	static String getTimeMonth(int when)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("d", Locale.getDefault());
+		String ret = sdf.format(when * 1000L);
+		return getOrdinal(ret);
+	}
+
+	static String getTimeYear(int when)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("d E", Locale.getDefault());
+		return sdf.format(when * 1000L);
+	}
+
+	static String getAllTime(int when)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("dMMyy", Locale.getDefault());
+		return sdf.format(when * 1000L);
+	}
+
+	static String getLocalDate(int when)
+	{
+		Calendar cal = Calendar.getInstance();
+		cal.setTimeInMillis(when);
+		return localDate.format(cal);
+	}
+
+	static String getLocalTime(int when)
+	{
+		Calendar cal = Calendar.getInstance();
+		cal.setTimeInMillis(when);
+		return localTime.format(cal);
+	}
+
+	static String formatString(String element, float defaultValue)
+	{
+		float f = (float)getJson(element, defaultValue);
+		String fmt = KeyValue.getFormat(KeyValue.getKeyFromName(element));
+		return String.format(fmt, f);
+	}
+
+	static String getSinceHour(int since_hour, int since_str)
+	{
+		if(since_hour == 0)
+			return getAndroidString(since_str) + " mn";
+
+		SimpleDateFormat sdf = new SimpleDateFormat("ha", Locale.getDefault());
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.HOUR_OF_DAY, since_hour);
+		return getAndroidString(since_str) + " " + sdf.format(cal.getTimeInMillis());
+	}
+
+	static boolean hasElement(String element)
+	{
+		JSONObject jsonObject = getJson();
+		if(jsonObject == null || jsonObject.length() == 0)
+			return false;
+
+		return jsonObject.has(element);
+	}
+
+	static Object getJson(String element, Object defaultValue)
+	{
+		JSONObject jsonObject = getJson();
+		return getElement(element, jsonObject, defaultValue);
+	}
+
+	static JSONObject getJson()
+	{
+		String line = (String)KeyValue.readVar("LastJsonDownload", "");
+		if(line != null && !line.isBlank())
+		{
+			try
+			{
+				return new JSONObject(line);
+			} catch(Exception ignored) {}
+		}
+
+		return null;
 	}
 
 	static boolean reallyGetWeather(String url) throws InterruptedException, IOException
 	{
 		LogMessage("reallyGetWeather() url: " + url);
+
 		String line = downloadString(url, true);
-		//LogMessage("reallyGetWeather() Got output, line: " + line);
-		if(!line.isBlank() && line.contains("|"))
+		if(line == null || line.isBlank())
+			return false;
+
+		JSONObject jsonObject = null;
+		try
 		{
-			String[] bits = line.split("\\|");
-			int version = (int)Double.parseDouble(getElement(0, bits));
-			if(version < weeWXApp.minimum_inigo_version || bits.length <= 100)
-			{
-				LogMessage("reallyGetWeather() sendAlert() triggered because version (" + version +
-				           ") < weeWXApp.minimum_inigo_version (" + weeWXApp.minimum_inigo_version + ") || " +
-				           "bits.length (" + bits.length + ") < 100");
-				sendAlert();
-				return false;
-			}
+			jsonObject = new JSONObject(line);
+		} catch(Exception ignored) {}
 
-			boolean rainrate_alert_watch = KeyValue.isPrefSet("rainrate_alert_watch") &&
-			                         (boolean)KeyValue.readVar("rainrate_alert_watch", weeWXApp.rainrate_alert_watch_default);
+		if(jsonObject == null || jsonObject.length() == 0 || !jsonObject.has("version"))
+			return false;
 
-			boolean rainrate_alert_warning = KeyValue.isPrefSet("rainrate_alert_warning") &&
-			                         (boolean)KeyValue.readVar("rainrate_alert_warning", weeWXApp.rainrate_alert_warning_default);
-
-			boolean rainrate_alert_severe = KeyValue.isPrefSet("rainrate_alert_severe") &&
-			                         (boolean)KeyValue.readVar("rainrate_alert_severe", weeWXApp.rainrate_alert_severe_default);
-
-			boolean rainrate_alerts = rainrate_alert_watch || rainrate_alert_warning || rainrate_alert_severe;
-
-			boolean afternoon_temp_alert = KeyValue.isPrefSet("afternoon_temp_alert") &&
-			                         (boolean)KeyValue.readVar("afternoon_temp_alert", weeWXApp.afternoon_temp_alert_default);
-
-			boolean show_alerts = rainrate_alerts || afternoon_temp_alert;
-
-			if(show_alerts && (version < weeWXApp.minimum_inigo_version_for_alerts ||
-			                      bits.length < weeWXApp.minimum_inigo_bits_for_alerts))
-			{
-				LogMessage("reallyGetWeather() sendAlert() triggered because version (" + version +
-				           ") < weeWXApp.minimum_inigo_version_for_alerts (" + weeWXApp.minimum_inigo_version_for_alerts + ") || " +
-				           "bits.length (" + bits.length + ") < weeWXApp.minimum_inigo_bits_for_alerts (" +
-				           weeWXApp.minimum_inigo_bits_for_alerts + ")");
-				sendAlert();
-				//return false;
-			}
-
-			bits = Arrays.copyOfRange(bits, 1, bits.length);
-			line = String.join("|", bits);
-			//LogMessage("reallyGetWeather() new line: " + line);
-
-			String ret = getElement(225, bits);
-			long LastDownloadTime = ret != null && !ret.isBlank() ? (long)Double.parseDouble(getElement(225, bits)) * 1_000L : System.currentTimeMillis();
-
-			KeyValue.putVar("LastDownload", line);
-			KeyValue.putVar("LastDownloadTime", LastDownloadTime);
-			KeyValue.putVar("LastWeatherError", null);
-
-			LogMessage("reallyGetWeather() Last Server Update Time: " + sdf14.format(LastDownloadTime));
-			LogMessage("reallyGetWeather() LastDownloadTime: " + sdf14.format(System.currentTimeMillis()));
-
-			return true;
+		int version = jsonObject.optInt("version", 0);
+		if(version < weeWXApp.minimum_inigo_json_version)
+		{
+			LogMessage("reallyGetWeather() sendAlert() triggered because version (" + version +
+			           ") < weeWXApp.minimum_inigo_version_for_alerts (" + weeWXApp.minimum_inigo_json_version + ")");
+			sendAlert();
+			return false;
 		}
 
-		return false;
+		boolean wasSuccessful = KeyValue.parseDicts(jsonObject);
+		if(!wasSuccessful)
+			return false;
+
+		int LastDownloadTime = jsonObject.optInt("now", 0);
+		KeyValue.putVar("LastDownload", null);
+		KeyValue.putVar("LastJsonDownload", line);
+		KeyValue.putVar("LastDownloadTime", LastDownloadTime);
+		KeyValue.putVar("LastWeatherError", null);
+
+		LogMessage("reallyGetWeather() Last Server Update Time: " + sdf14.format(LastDownloadTime));
+		LogMessage("reallyGetWeather() LastDownloadTime: " + sdf14.format(System.currentTimeMillis()));
+
+		return true;
 	}
 
 	//    https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
@@ -3422,7 +3487,7 @@ class weeWXAppCommon
 			}
 
 			String[] bits = nws.getString(fimg).split("\\|");
-			switch (getElement(1, bits).strip())
+			switch (bits[1].strip())
 			{
 				case "L" -> bmp1 = Bitmap.createBitmap(bmp1, 0, 0, x1 / 2, y1);
 				case "R" -> bmp1 = Bitmap.createBitmap(bmp1, x1 / 2, 0, x1, y1);
@@ -3430,7 +3495,7 @@ class weeWXAppCommon
 			}
 
 			bits = nws.getString(simg).split("\\|");
-			switch (getElement(1, bits).strip())
+			switch (bits[1].strip())
 			{
 				case "L" -> bmp2 = Bitmap.createBitmap(bmp2, 0, 0, x2 / 2, y2);
 				case "R" -> bmp2 = Bitmap.createBitmap(bmp2, x2 / 2, 0, x2, y2);
@@ -4857,53 +4922,6 @@ class weeWXAppCommon
 		return str;
 	}
 
-	static String doMoon(String str)
-	{
-		str = str.strip();
-
-		if(!str.contains(" "))
-			return str;
-
-		if(str.length() > 0 && str.startsWith("0"))
-			str = str.substring(1);
-
-		try
-		{
-			String[] bits = str.split(" ", 3);
-			if(bits.length < 2 || getElement(1, bits).isBlank())
-				return str;
-
-			int day = getInt(1, bits);
-			if(day > 31 || day < 1)
-				return str;
-
-			return getElement(0, bits) + " " + getDaySuffix(day);
-		} catch(Exception e) {
-			doStackOutput(e);
-		}
-
-		return str;
-	}
-
-	static String getDaySuffix(int day)
-	{
-		String suffix;
-		if(day >= 11 && day <= 13)
-		{
-			suffix = "th";
-		} else {
-			suffix = switch(day % 10)
-			{
-				case 1 -> "st";
-				case 2 -> "nd";
-				case 3 -> "rd";
-				default -> "th";
-			};
-		}
-
-		return day + suffix;
-	}
-
 	static byte[] bitmapToBytes(Bitmap bm)
 	{
 		ByteArrayOutputStream stream = new ByteArrayOutputStream();
@@ -5446,6 +5464,16 @@ class weeWXAppCommon
 	static String C2Fdeground(float C)
 	{
 		return C2F(C) + "&deg;F";
+	}
+
+	static String F2Cdeground(float F)
+	{
+		return F2C(F) + "&deg;C";
+	}
+
+	static int str2Int(String f)
+	{
+		return Math.round(str2Float(f));
 	}
 
 	static float str2Float(String f)
