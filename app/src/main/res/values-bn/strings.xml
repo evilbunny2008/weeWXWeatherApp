@@ -46,6 +46,7 @@
     <string name="interval_daily">দৈনিক</string>
     <string name="interval_hourly">ঘণ্টায়</string>
     <string name="invalid_update_interval">আপডেটের ব্যবধান অবৈধ, সেটিংস আপডেট করুন এবং তারপরে আবার চেষ্টা করুন</string>
+    <string name="json_formatted_data">%1$s-এর এখন %3$s সার্ভার থেকে একটি %2$s ডেটা ফাইল প্রয়োজন, এই অ্যাপটি সঠিকভাবে কাজ করার আগে আপনাকে %4$s আপডেট করতে হবে এবং %5$s ফাইল আপডেট করতে হবে৷ %6$s-এ আরও বিশদ বিবরণের জন্য ঠিক আছে ক্লিক করুন</string>
     <string name="last_month_stats">গত মাসের পরিসংখ্যান</string>
     <string name="last_year_stats">গত বছরের পরিসংখ্যান</string>
     <string name="light_theme">হালকা থিম</string>

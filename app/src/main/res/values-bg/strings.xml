@@ -46,6 +46,7 @@
     <string name="interval_daily">Ежедневно</string>
     <string name="interval_hourly">Почасово</string>
     <string name="invalid_update_interval">Интервалът на актуализиране е невалиден, актуализирайте настройките и опитайте отново</string>
+    <string name="json_formatted_data">%1$s сега изисква %2$s файл с данни от %3$s сървър, трябва да актуализирате %4$s и %5$s файл, преди това приложение да функционира правилно. Щракнете върху OK за повече подробности относно %6$s</string>
     <string name="last_month_stats">Статистика за последния месец</string>
     <string name="last_year_stats">Статистика за миналата година</string>
     <string name="light_theme">Светла тема</string>

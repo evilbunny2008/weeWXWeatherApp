@@ -46,6 +46,7 @@
     <string name="interval_daily">Daagliks</string>
     <string name="interval_hourly">Uurliks</string>
     <string name="invalid_update_interval">Opdateringsinterval is ongeldig, dateer instellings op en probeer dan weer</string>
+    <string name="json_formatted_data">Die %1$s vereis nou \'n %2$s datalêer vanaf %3$s bediener, jy moet die %4$s opdateer en die %5$s lêer opdateer voordat hierdie toepassing korrek sal funksioneer. Klik Ok vir meer besonderhede oor %6$s</string>
     <string name="last_month_stats">Verlede maand se statistieke</string>
     <string name="last_year_stats">Verlede jaar se statistieke</string>
     <string name="light_theme">Ligte tema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Wys voorspelling</string>
     <string name="show_radar">Wys Radar</string>
     <string name="since">sedert</string>
+    <string name="skip">Slaan oor</string>
     <string name="stats2">Statistiek</string>
     <string name="still_downloading_forecast_data">Laai nog voorspellingdata af</string>
     <string name="swipe_lock">Swiep Lock</string>

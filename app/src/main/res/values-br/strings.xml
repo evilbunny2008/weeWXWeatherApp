@@ -46,6 +46,7 @@
     <string name="interval_daily">Pemdeziek</string>
     <string name="interval_hourly">Bep eurvezh</string>
     <string name="invalid_update_interval">Didalvoudek eo an etrefas hizivaat, an arventennoù hizivaat ha goude-se adklask</string>
+    <string name="json_formatted_data">Ret eo d\'ar %1$s bremañ kaout ur restr roadennoù %2$s eus an dafariad %3$s, ret eo deoc\'h hizivaat ar restr %4$s hag hizivaat ar restr %5$s a-raok ma yafe an arload-mañ en-dro en un doare dereat. Klikit war Mat eo evit gouzout hiroc\'h diwar-benn %6$s</string>
     <string name="last_month_stats">Stadegoù miz tremenet</string>
     <string name="last_year_stats">Stadegoù ar bloaz paseet</string>
     <string name="light_theme">Tem ar gouloù</string>

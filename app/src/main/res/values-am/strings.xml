@@ -46,6 +46,7 @@
     <string name="interval_daily">በየቀኑ</string>
     <string name="interval_hourly">በየሰዓቱ</string>
     <string name="invalid_update_interval">የዘመናችን የጊዜ ልዩነት ልክ ያልሆነ, ቅንብሮች ያዘምኑ እና ከዚያ እንደገና እንደገና ይሞክሩ</string>
+    <string name="json_formatted_data">%1$s አሁን %2$s የውሂብ ፋይል ከ%3$s አገልጋይ ይፈልጋል።ይህ መተግበሪያ በትክክል ከመስራቱ በፊት %4$sን ማዘመን እና %5$s ፋይልን ማዘመን አለብህ። በ%6$s ላይ ተጨማሪ ዝርዝሮችን ለማግኘት እሺን ጠቅ ያድርጉ</string>
     <string name="last_month_stats">ያለፈው ወር ስታቲስቲክስ</string>
     <string name="last_year_stats">ያለፈው ዓመት ስታቲስቲክስ</string>
     <string name="light_theme">ቀላል ገጽታ</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">ትንበያ አሳይ</string>
     <string name="show_radar">ራዳር አሳይ</string>
     <string name="since">ከዚያን ጊዜ ጀምሮ</string>
+    <string name="skip">ዝለል</string>
     <string name="stats2">ስታቲስቲክስ</string>
     <string name="still_downloading_forecast_data">አሁንም ትንበያ ውሂብን በማውረድ ላይ</string>
     <string name="swipe_lock">መቆለፊያ</string>

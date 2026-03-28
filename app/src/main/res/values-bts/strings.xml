@@ -46,6 +46,7 @@
     <string name="interval_daily">Tiap ari</string>
     <string name="interval_hourly">Tiap jam</string>
     <string name="invalid_update_interval">Pembaruan interval lang sah, pengaturan pembaruan dob ai mundur</string>
+    <string name="json_formatted_data">%1$s sonari mamorluhon file data %2$s humbani server %3$s, porlu do iperbarui nasiam %4$s pakon iperbarui file %5$s paima boi marfungsi dear aplikasi on. Klik Ok ase lambin torang pasal %6$s</string>
     <string name="last_month_stats">Statistik ni Bulan na salpu</string>
     <string name="last_year_stats">Statistik Tahun na salpu</string>
     <string name="light_theme">Tema Maka</string>

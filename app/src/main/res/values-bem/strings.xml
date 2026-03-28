@@ -46,6 +46,7 @@
     <string name="interval_daily">Cilabushiku</string>
     <string name="interval_hourly">Cila nsa</string>
     <string name="invalid_update_interval">Iciputulwa ca nshita tacilinga, ukubwekeshapo ukubika kabili lyene ukwesha</string>
+    <string name="json_formatted_data">Ici %1$s nomba cilefwaya %2$s fayelo ya data ukufuma ku %3$s umubomfi, mufwile ukubwekeshapo %4$s no kubwekeshapo %5$s failo ilyo iyi app tailabomba bwino. Tinikeni Ok pakuti mwishibe ifingi pa %6$s</string>
     <string name="last_month_stats">Imitantikile ya Mweshi iyapitapo</string>
     <string name="last_year_stats">Imibele ya Mwaka Umwaka</string>
     <string name="light_theme">Umutwe wa lubuuto</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Langisheni Inte</string>
     <string name="show_radar">Langisheni Randa</string>
     <string name="since">ukufuma</string>
+    <string name="skip">Ukuciliila</string>
     <string name="stats2">ifipimo</string>
     <string name="still_downloading_forecast_data">Ukukonkanyapo ukukopa amashiwi ya kusesema</string>
     <string name="swipe_lock">Sewipeni</string>

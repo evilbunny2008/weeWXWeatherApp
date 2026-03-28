@@ -46,6 +46,7 @@
     <string name="interval_daily">Есыҽнытәи</string>
     <string name="interval_hourly">Сааҭла</string>
     <string name="invalid_update_interval">Арҿыцра абжьаӡара иашам, абжьаҵарақәа рырхиарақәа, нас еиҭаҿактәуп</string>
+    <string name="json_formatted_data">%1$s уажәшьҭа иаҭахуп %2$s данноқәа рфаил %3$s асервер аҟынтә, %4$s рҿыцтәуп, насгьы %5$s афаил рҿыцтәуп абри апрограмма ииашаны аус ауаанӡа. Еиҳаны адыррақәа рзы Ок ақәыӷәӷәара %6$s</string>
     <string name="last_month_stats">Иҳаҩсыз амза астатистика</string>
     <string name="last_year_stats">Иҳаҩсыз ашықәс астатистика</string>
     <string name="light_theme">Алашара атема</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Аԥхьагәаҭара</string>
     <string name="show_radar">Ирба Радар</string>
     <string name="since">аахыс</string>
+    <string name="skip">Аԥара</string>
     <string name="stats2">Астатистика</string>
     <string name="still_downloading_forecast_data">Аԥхьагәаҭаратә данноқәа раагара</string>
     <string name="swipe_lock">Исвип Алок</string>

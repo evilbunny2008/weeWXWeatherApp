@@ -46,6 +46,7 @@
     <string name="interval_daily">Don o don</string>
     <string name="interval_hourly">Lɛrɛ o lɛrɛ</string>
     <string name="invalid_update_interval">Update Interval ye tiɲɛ ye, a bɛ settings kurayali kɛ ka sɔrɔ ka segin a kan</string>
+    <string name="json_formatted_data">%1$s bɛ %2$s data file de wajibiya sisan ka bɔ %3$s server la, i ka kan ka %4$s kuraya ani ka %5$s file kura sani nin appli in ka baara kɛ ka ɲɛ. Ok digi walasa ka kunnafoni wɛrɛw sɔrɔ %6$s kan</string>
     <string name="last_month_stats">Kalo tɛmɛnen ka jatebɔw</string>
     <string name="last_year_stats">Salon jatebɔw</string>
     <string name="light_theme">Yeelen barokun</string>

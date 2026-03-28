@@ -46,6 +46,7 @@
     <string name="interval_daily">Ninu ki ninu</string>
     <string name="interval_hourly">Cawa acel acel</string>
     <string name="invalid_update_interval">Kare ma ki loko ni pe tiyo, loko kit ma ki keto kwede ki dong temo</string>
+    <string name="json_formatted_data">%1$s dong mito %2$s data file ki bot %3$s server, myero i lok %4$s ki %5$s file ma peya app man ocako tic maber. Dii Ok pi ngec mukene i kom %6$s</string>
     <string name="last_month_stats">Wel dwe ma okato ni</string>
     <string name="last_year_stats">Wel me mwaka ma okato ni</string>
     <string name="light_theme">Wir wic</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Nyut yub me Paiss</string>
     <string name="show_radar">Nyut Rader</string>
     <string name="since">ma naka</string>
+    <string name="skip">Kal</string>
     <string name="stats2">Wel</string>
     <string name="still_downloading_forecast_data">Pud tye ka nongo ngec ma ki nongo ki i anyim</string>
     <string name="swipe_lock">Swit Lock</string>

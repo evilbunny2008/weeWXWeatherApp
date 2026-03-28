@@ -46,6 +46,7 @@
     <string name="interval_daily">Tiap ari</string>
     <string name="interval_hourly">Per jam</string>
     <string name="invalid_update_interval">Selang waktu perbarui ga sah, pengaturan update trus coba ulang</string>
+    <string name="json_formatted_data">%1$s sekarang butuh file data %2$s dari server %3$s, lu perlu update %4$s dan update file %5$s sebelum aplikasi ini berfungsi dengan bener. Klik Ok buat lebih jelasnye tentang %6$s</string>
     <string name="last_month_stats">Statistik Bulan kemaren</string>
     <string name="last_year_stats">Statistik taun kemaren</string>
     <string name="light_theme">Tema Ringan</string>

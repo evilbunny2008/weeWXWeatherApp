@@ -46,6 +46,7 @@
     <string name="interval_daily">रोज</string>
     <string name="interval_hourly">घंटावार के बा</string>
     <string name="invalid_update_interval">अपडेट अंतराल अमान्य बा, सेटिंग अपडेट करीं आ ओकरा बाद दोबारा कोशिश करीं</string>
+    <string name="json_formatted_data">%1$s खातिर अब %3$s सर्वर से %2$s डेटा फाइल के जरूरत बा, ई ऐप सही तरीका से काम करे से पहिले रउआँ के %4$s के अपडेट करे के पड़ी आ %5$s फाइल के अपडेट करे के पड़ी। %6$s पर अउरी बिस्तार खातिर ठीक पर क्लिक करीं</string>
     <string name="last_month_stats">पिछला महीना के आँकड़ा</string>
     <string name="last_year_stats">पिछला साल के आँकड़ा</string>
     <string name="light_theme">हल्का थीम के बा</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Sabilang dina</string>
     <string name="interval_hourly">Nyabran jam</string>
     <string name="invalid_update_interval">Interval update nénten sah, setélan update lan raris kacoba malih</string>
+    <string name="json_formatted_data">%1$s mangkin merluang berkas data %2$s saking server %3$s, Sameton patut ngapdet %4$s lan ngapdet berkas %5$s sadurung aplikasi puniki mafungsi becik. Klik Ok anggén sejangkepnyané ring %6$s</string>
     <string name="last_month_stats">Statistik Bulan sane lintang</string>
     <string name="last_year_stats">Statistik warsa sané lintang</string>
     <string name="light_theme">Tema Terang</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Cemak Jempah</string>
     <string name="show_radar">Tampilang Radar</string>
     <string name="since">uli</string>
+    <string name="skip">Liwatin</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Masih ngunduh data ramalan</string>
     <string name="swipe_lock">Kun Kebangan</string>

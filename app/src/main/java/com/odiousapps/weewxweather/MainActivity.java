@@ -122,8 +122,6 @@ public class MainActivity extends FragmentActivity
 	private ViewPager2 mViewPager;
 	private Slider sliderMorningTemp, sliderAfternoonTemp, sliderRainfall;
 
-	private AlertDialog dialog;
-
 	private LinearLayout settingLayout, aboutLayout, morning_temp_setting, afternoon_temp_setting, rainfall_setting;
 
 	private ScrollView scrollView;
@@ -157,6 +155,8 @@ public class MainActivity extends FragmentActivity
 	private final List<Setting> screen_elements = new ArrayList<>();
 
 	ColorStateList strokeColors;
+
+	private AlertDialog dialog;
 
 	private int MorningTemp = 230;
 	private int AfternoonTemp = 260;
@@ -799,14 +799,16 @@ public class MainActivity extends FragmentActivity
 			b2.setEnabled(false);
 			closeKeyboard();
 
-			LogMessage("MainActivity.onCreate() show dialog");
-			AlertDialog.Builder builder = new AlertDialog.Builder(this);
-			builder.setCancelable(false);
+			int layout = R.layout.layout_loading_dialog_dark;
 			if(KeyValue.theme == R.style.AppTheme_weeWXApp_Light_Common)
-				builder.setView(R.layout.layout_loading_dialog_light);
-			else
-				builder.setView(R.layout.layout_loading_dialog_dark);
-			dialog = builder.create();
+				layout = R.layout.layout_loading_dialog_light;
+
+			LogMessage("MainActivity.onCreate() show dialog");
+			dialog = new AlertDialog.Builder(this)
+					.setCancelable(false)
+					.setView(layout)
+					.create();
+
 			dialog.show();
 
 			LogMessage("MainActivity.onCreate() Process settings!");
@@ -1421,66 +1423,65 @@ public class MainActivity extends FragmentActivity
 
 		KeyValue.putVar("shownUpdate_" + updateVer, true);
 
-		final AlertDialog.Builder d = new AlertDialog.Builder(this);
-		d.setTitle(getAndroidString(R.string.app_name));
-		d.setMessage(getAndroidString(R.string.inigo_needs_updating));
-		d.setPositiveButton(getAndroidString(R.string.ok), null);
-		d.setIcon(R.mipmap.ic_launcher_foreground);
-		d.show();
+		new AlertDialog.Builder(this)
+				.setCancelable(false)
+				.setIcon(R.mipmap.ic_launcher_foreground)
+				.setTitle(getAndroidString(R.string.app_name))
+				.setMessage(getAndroidString(R.string.inigo_needs_updating))
+				.setPositiveButton(getAndroidString(R.string.ok), null)
+				.create()
+				.show();
 	}
 
 	private void showUpdateAvailable2()
 	{
+		LogMessage("Will now show update2 dialog now...");
 		String str = getAndroidString(R.string.json_formatted_data);
 		str = String.format(str, "weeWX App", "JSON formatted", "weeWX", "Inigo Plugin", "inigo-settings.txt", "GitHub.com");
-		final AlertDialog.Builder d = new AlertDialog.Builder(this);
-		d.setTitle(getAndroidString(R.string.app_name));
-		d.setMessage(str);
-		d.setPositiveButton(getAndroidString(R.string.ok), (dialog_interface, i) ->
-		{
-			String url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/tag/1.99.108beta";
-			Intent urlIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
-			startActivity(urlIntent);
-			if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
-			{
-				LogMessage("MainActivity.handleBack() Let's end now... SDK < TIRAMISU");
-				obpc.setEnabled(false);
-				finish();
-			} else {
-				LogMessage("MainActivity.handleBack() SDK >= TIRAMISU... Let the system do it's thing...");
-				getOnBackPressedDispatcher().onBackPressed();
-			}
-		});
-		d.setIcon(R.mipmap.ic_launcher_foreground);
-		d.show();
+		new AlertDialog.Builder(this)
+				.setIcon(R.mipmap.ic_launcher_foreground)
+				.setTitle(getAndroidString(R.string.app_name))
+				.setMessage(str)
+				.setPositiveButton(getAndroidString(R.string.ok), (dialog_interface, i) ->
+				{
+					String url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/tag/1.99.108beta";
+					Intent urlIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+					startActivity(urlIntent);
+				})
+				.setNegativeButton(getAndroidString(R.string.skip), null)
+				.create()
+				.show();
+
+		LogMessage("update2 dialog should now be visible...");
 	}
 
 	private void checkReally()
 	{
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(getAndroidString(R.string.remove_all_data)).setCancelable(false)
-		.setPositiveButton(getAndroidString(R.string.ok), (dialog_interface, i) ->
-		{
-			String settings_url = settingsURL.getText() != null && !settingsURL.getText().toString().isBlank() ? settingsURL.getText().toString().strip() : "";
+		new AlertDialog.Builder(this)
+				.setMessage(getAndroidString(R.string.remove_all_data)).setCancelable(false)
+				.setPositiveButton(getAndroidString(R.string.ok), (dialog_interface, i) ->
+				{
+					String settings_url = settingsURL.getText() != null && !settingsURL.getText().toString().isBlank() ? settingsURL.getText().toString().strip() : "";
 
-			LogMessage("MainActivity.checkReally() Reset any widgets...");
-			WidgetProvider.resetAppWidget();
+					LogMessage("MainActivity.checkReally() Reset any widgets...");
+					WidgetProvider.resetAppWidget();
 
-			LogMessage("MainActivity.checkReally() trash the webcam and radar images if they exist...");
-			weeWXAppCommon.delImage(weeWXApp.webcamFilename);
-			weeWXAppCommon.delImage(weeWXApp.radarFilename);
+					LogMessage("MainActivity.checkReally() trash the webcam and radar images if they exist...");
+					weeWXAppCommon.delImage(weeWXApp.webcamFilename);
+					weeWXAppCommon.delImage(weeWXApp.radarFilename);
 
-			LogMessage("MainActivity.checkReally() trash all data and exit cleanly...");
-			((ActivityManager)getSystemService(ACTIVITY_SERVICE)).clearApplicationUserData();
+					LogMessage("MainActivity.checkReally() trash all data and exit cleanly...");
+					((ActivityManager)getSystemService(ACTIVITY_SERVICE)).clearApplicationUserData();
 
-			if(settings_url != null && !settings_url.isBlank())
-			{
-				LogMessage("MainActivity.checkReally() Save the settings URL before exitting...");
-				KeyValue.putVar("SETTINGS_URL", settings_url);
-			}
-		}).setNegativeButton(getAndroidString(R.string.no), (dialog_interface, i) -> dialog_interface.cancel());
-
-		builder.create().show();
+					if(settings_url != null && !settings_url.isBlank())
+					{
+						LogMessage("MainActivity.checkReally() Save the settings URL before exitting...");
+						KeyValue.putVar("SETTINGS_URL", settings_url);
+					}
+				})
+				.setNegativeButton(getAndroidString(R.string.no), (dialog_interface, i) -> dialog_interface.cancel())
+				.create()
+				.show();
 	}
 
 	private void resetScreen()
@@ -1547,8 +1548,9 @@ public class MainActivity extends FragmentActivity
 					new AlertDialog.Builder(this)
 							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_settings))
 							.setMessage(getAndroidString(R.string.url_was_default_or_empty))
-							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
-									(dialog, which) -> {}).show();
+							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+							.create()
+							.show();
 				});
 
 				bgStart = 0;
@@ -1622,8 +1624,9 @@ public class MainActivity extends FragmentActivity
 					new AlertDialog.Builder(this)
 							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_settings))
 							.setMessage(finalErrorStr)
-							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
-									(dialog, which) -> {}).show();
+							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+							.create()
+							.show();
 				});
 
 				bgStart = 0;
@@ -1787,8 +1790,9 @@ public class MainActivity extends FragmentActivity
 									new AlertDialog.Builder(this)
 											.setTitle(getAndroidString(R.string.wasnt_able_to_connect_or_download))
 											.setMessage(finalErrorStr)
-											.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
-													(dialog, which) -> {}).show();
+											.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+											.create()
+											.show();
 								});
 
 								bgStart = 0;
@@ -1998,8 +2002,9 @@ public class MainActivity extends FragmentActivity
 								new AlertDialog.Builder(this)
 										.setTitle(getAndroidString(R.string.wasnt_able_to_connect_forecast))
 										.setMessage(finalErrorStr)
-										.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-										{}).show();
+										.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+										.create()
+										.show();
 							});
 
 							bgStart = 0;
@@ -2041,8 +2046,9 @@ public class MainActivity extends FragmentActivity
 						new AlertDialog.Builder(this)
 								.setTitle(getAndroidString(R.string.wasnt_able_to_connect_forecast))
 								.setMessage(finalErrorStr)
-								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
-										(dialog, which) -> {}).show();
+								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+								.create()
+								.show();
 					});
 
 					bgStart = 0;
@@ -2060,8 +2066,9 @@ public class MainActivity extends FragmentActivity
 					new AlertDialog.Builder(this)
 							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_data_txt))
 							.setMessage(getAndroidString(R.string.data_url_was_blank))
-							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
-									(dialog, which) -> {}).show();
+							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+							.create()
+							.show();
 				});
 
 				bgStart = 0;
@@ -2089,8 +2096,9 @@ public class MainActivity extends FragmentActivity
 					new AlertDialog.Builder(this)
 							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_radar_image))
 							.setMessage(finalErrorStr)
-							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
-									(dialog, which) -> {}).show();
+							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+							.create()
+							.show();
 				});
 
 				bgStart = 0;
@@ -2124,8 +2132,9 @@ public class MainActivity extends FragmentActivity
 						new AlertDialog.Builder(this)
 								.setTitle(getAndroidString(R.string.wasnt_able_to_connect_radar_image))
 								.setMessage(finalErrorStr)
-								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
-										(dialog, which) -> {}).show();
+								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+								.create()
+								.show();
 					});
 
 					bgStart = 0;
@@ -2161,8 +2170,9 @@ public class MainActivity extends FragmentActivity
 							new AlertDialog.Builder(this)
 									.setTitle(getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
 									.setMessage(getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
-									.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
-											(dialog, which) -> {}).show();
+									.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+									.create()
+									.show();
 						});
 
 						bgStart = 0;
@@ -2207,8 +2217,9 @@ public class MainActivity extends FragmentActivity
 							new AlertDialog.Builder(this)
 									.setTitle(getAndroidString(R.string.wasnt_able_to_connect_custom_url))
 									.setMessage(finalErrorStr)
-									.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
-											(dialog, which) -> {}).show();
+									.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+									.create()
+									.show();
 						});
 
 						bgStart = 0;
@@ -2237,8 +2248,9 @@ public class MainActivity extends FragmentActivity
 						new AlertDialog.Builder(this)
 								.setTitle(getAndroidString(R.string.wasnt_able_to_connect_custom_url))
 								.setMessage(finalErrorStr)
-								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
-										(dialog, which) -> {}).show();
+								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+								.create()
+								.show();
 					});
 
 					bgStart = 0;
@@ -2469,21 +2481,23 @@ public class MainActivity extends FragmentActivity
 
 	        // show explanation dialog first
 			new AlertDialog.Builder(this)
-				.setTitle(getAndroidString(R.string.notification_permission))
-				.setMessage(getAndroidString(R.string.notifications_needed))
-				.setPositiveButton(getAndroidString(R.string.ok), (dialog, which) ->
-				{
-				    LogMessage("requestNotificationPermission() User choose to retry notification permission");
-				    ActivityCompat.requestPermissions(this,
-				        new String[]{Manifest.permission.POST_NOTIFICATIONS},
-				        NOTIFICATION_PERMISSION_CODE);
-				})
-				.setNegativeButton(getAndroidString(R.string.no), (dialog, which) ->
-				{
-				    LogMessage("requestNotificationPermission() User choose not to retry notification permission");
-				    disableAlerts();
-				})
-				.show();
+					.setCancelable(false)
+					.setTitle(getAndroidString(R.string.notification_permission))
+					.setMessage(getAndroidString(R.string.notifications_needed))
+					.setPositiveButton(getAndroidString(R.string.ok), (dialog, which) ->
+					{
+					    LogMessage("requestNotificationPermission() User choose to retry notification permission");
+					    ActivityCompat.requestPermissions(this,
+					        new String[]{Manifest.permission.POST_NOTIFICATIONS},
+					        NOTIFICATION_PERMISSION_CODE);
+					})
+					.setNegativeButton(getAndroidString(R.string.no), (dialog, which) ->
+					{
+					    LogMessage("requestNotificationPermission() User choose not to retry notification permission");
+					    disableAlerts();
+					})
+					.create()
+					.show();
 
 			return;
 	    }
@@ -2502,21 +2516,22 @@ public class MainActivity extends FragmentActivity
 		LogMessage("requestNotificationPermission() Permission not granted, but already asked twice.");
 
 		new AlertDialog.Builder(this)
-			.setTitle(getAndroidString(R.string.notification_permission))
-			.setMessage(getAndroidString(R.string.notifications_needed2))
-			.setPositiveButton(getAndroidString(R.string.ok), (dialog, which) ->
-			{
-				LogMessage("requestNotificationPermission() User choose to open settings");
-				Intent intent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
-				intent.putExtra(Settings.EXTRA_APP_PACKAGE, getPackageName());
-				startActivity(intent);
-			})
-			.setNegativeButton(getAndroidString(R.string.no), (dialog, which) ->
-			{
-				LogMessage("requestNotificationPermission() User choose to decline opening settings");
-				disableAlerts();
-			})
-			.show();
+				.setTitle(getAndroidString(R.string.notification_permission))
+				.setMessage(getAndroidString(R.string.notifications_needed2))
+				.setPositiveButton(getAndroidString(R.string.ok), (dialog, which) ->
+				{
+					LogMessage("requestNotificationPermission() User choose to open settings");
+					Intent intent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
+					intent.putExtra(Settings.EXTRA_APP_PACKAGE, getPackageName());
+					startActivity(intent);
+				})
+				.setNegativeButton(getAndroidString(R.string.no), (dialog, which) ->
+				{
+					LogMessage("requestNotificationPermission() User choose to decline opening settings");
+					disableAlerts();
+				})
+				.create()
+				.show();
 	}
 
 	void disableAlerts()

@@ -46,6 +46,7 @@
     <string name="interval_daily">Dnevno</string>
     <string name="interval_hourly">Po satu</string>
     <string name="invalid_update_interval">Interval ažuriranja je nevažeći, ažurirajte postavke i pokušajte ponovo</string>
+    <string name="json_formatted_data">%1$s sada zahtijeva %2$s datoteku podataka sa %3$s servera, morate ažurirati %4$s i ažurirati datoteku %5$s prije nego što ova aplikacija ispravno funkcionira. Kliknite Ok za više detalja o %6$s</string>
     <string name="last_month_stats">Statistika prošlog mjeseca</string>
     <string name="last_year_stats">Prošlogodišnja statistika</string>
     <string name="light_theme">Light Theme</string>

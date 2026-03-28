@@ -46,6 +46,7 @@
     <string name="interval_daily">Көндәлек</string>
     <string name="interval_hourly">Сәғәт һайын</string>
     <string name="invalid_update_interval">Яңыртыу интервалы дөрөҫ түгел, яңыртыу параметрҙары, ә һуңынан ҡайта</string>
+    <string name="json_formatted_data">%1$s хәҙер %2$s мәғлүмәт файлы талап итә %3$s сервер, һеҙгә кәрәк яңыртыу %4$s һәм яңыртыу %5$s файл был ҡушымта дөрөҫ эшләйәсәк. %6$s тураһында тулыраҡ мәғлүмәт өсөн Ок баҫығыҙ</string>
     <string name="last_month_stats">Һуңғы Ай статистикаһы</string>
     <string name="last_year_stats">Уҙған йыл статистикаһы</string>
     <string name="light_theme">Яҡтылыҡ темаһы</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Күрһәтергә Прогноз</string>
     <string name="show_radar">Радар күрһәтеү</string>
     <string name="since">бирле</string>
+    <string name="skip">Бармай ҡалырға</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Әле лә скачать прогноз мәғлүмәттәре</string>
     <string name="swipe_lock">Свайп Блок</string>

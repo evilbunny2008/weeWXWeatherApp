@@ -46,6 +46,7 @@
     <string name="interval_daily">Үдэр бүриин</string>
     <string name="interval_hourly">Час бүри</string>
     <string name="invalid_update_interval">Шэнэлэлтэ забһаргүй, шэнэлэлтэнүүдые шэнэлжэ, удаань дахин туршаха</string>
+    <string name="json_formatted_data">%1$s мүнөө %3$s серверһээ %2$s мэдээсэлэй файл хэрэгтэй, энэ апп зүбөөр хүдэлхын урда тээ %4$s-ые шэнэлжэ, %5$s файлые шэнэлхэ хэрэгтэй. %6$s тухай дэлгэрэнгы мэдээсэл абахын тула Ok дээрэ дараарайгты</string>
     <string name="last_month_stats">Үнгэрһэн һарын статистика</string>
     <string name="last_year_stats">Үнгэрһэн жэлэй тоо баримта</string>
     <string name="light_theme">Хүнгэн сэдэб</string>

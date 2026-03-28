@@ -46,6 +46,7 @@
     <string name="interval_daily">Gündəlik</string>
     <string name="interval_hourly">Saatlıq</string>
     <string name="invalid_update_interval">Yeniləmə intervalı etibarsızdır, parametrləri yeniləyin və yenidən cəhd edin</string>
+    <string name="json_formatted_data">%1$s indi %3$s serverindən %2$s data faylı tələb edir, bu proqramın düzgün işləməsi üçün siz %4$s-ı yeniləməli və %5$s faylını güncəlləşdirməlisiniz. %6$s haqqında ətraflı məlumat üçün Ok klikləyin</string>
     <string name="last_month_stats">Keçən ay statistikası</string>
     <string name="last_year_stats">Keçən il statistikası</string>
     <string name="light_theme">İşıq mövzusu</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Proqnozu göstərmək</string>
     <string name="show_radar">Radar göstərmək</string>
     <string name="since">o vaxtdan bəri</string>
+    <string name="skip">Keç</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Hələ proqnoz məlumatlarını yükləyir</string>
     <string name="swipe_lock">Sürmək</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Штодня</string>
     <string name="interval_hourly">Штогадзіны</string>
     <string name="invalid_update_interval">Інтэрвал абнаўлення несапраўдны, абнавіце налады і паўтарыце спробу</string>
+    <string name="json_formatted_data">Для %1$s цяпер патрабуецца файл даных %2$s з сервера %3$s, вам трэба абнавіць %4$s і абнавіць файл %5$s, перш чым гэта дадатак будзе працаваць правільна. Націсніце \'ОК\', каб атрымаць больш падрабязную інфармацыю аб %6$s</string>
     <string name="last_month_stats">Статыстыка за апошні месяц</string>
     <string name="last_year_stats">Статыстыка за мінулы год</string>
     <string name="light_theme">Светлая тэма</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Паказаць прагноз</string>
     <string name="show_radar">Паказаць радар</string>
     <string name="since">так як</string>
+    <string name="skip">Прапусціць</string>
     <string name="stats2">Статыстыка</string>
     <string name="still_downloading_forecast_data">Ідзе спампоўка прагнозных даных</string>
     <string name="swipe_lock">Блакаванне пальцам</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Da biara</string>
     <string name="interval_hourly">Dɔnhwerew biara</string>
     <string name="invalid_update_interval">Update interval no nyɛ adwuma, update nhyehyɛe na afei san sɔ hwɛ</string>
+    <string name="json_formatted_data">%1$s no seesei hwehwɛ %2$s data fael a ɛfiri %3$s server, ɛhia sɛ wo sesa %4$s na wo yɛ %5$s fael no foforɔ ansa na app yi ayɛ adwuma yie. Klik Ok na woanya nsɛm pii wɔ %6$s ho</string>
     <string name="last_month_stats">Ɔsram a etwaam no akontaabu</string>
     <string name="last_year_stats">Afe a etwaam no akontaabu</string>
     <string name="light_theme">Hann Asɛmti</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Kyerɛ nkɔmhyɛ</string>
     <string name="show_radar">Kyerɛ radar</string>
     <string name="since">firi</string>
+    <string name="skip">Bɔ tra</string>
     <string name="stats2">Akontaabu</string>
     <string name="still_downloading_forecast_data">Da so ara retwe nkɔmhyɛ data</string>
     <string name="swipe_lock">Swipe lock</string>

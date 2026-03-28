@@ -46,6 +46,7 @@
     <string name="interval_daily">Sapakuti</string>
     <string name="interval_hourly">Sapa hora</string>
     <string name="invalid_update_interval">Intervalo de actualización ukax jan waliwa, configuración ukar machaqar tukuyaña ukat ukjatx wasitat yant\'aña</string>
+    <string name="json_formatted_data">Jichhax %1$s ukax %2$s yatiyaw qillqat %3$s servidor ukan mayi, %4$s ukar machaqar tukuyañaw wakisi ukat %5$s qillqat machaqar tukuyañaw wakisi janïr aka app ukax sum irnaqañapataki. %6$s ukan juk\'amp yatxatañatakix Ok ukar ch\'iqt\'am</string>
     <string name="last_month_stats">Qhipa phaxsinx Estadísticas ukanakaw utji</string>
     <string name="last_year_stats">Nayra marax Estadísticas</string>
     <string name="light_theme">K\'acha Tema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Uñacht\'ayaña pronóstico</string>
     <string name="show_radar">Uñacht\'ayaña radar</string>
     <string name="since">ukhata</string>
+    <string name="skip">Willikipaña</string>
     <string name="stats2">Estadísticas ukanaka</string>
     <string name="still_downloading_forecast_data">Wali aski pronóstico datos ukanaka apsuñataki</string>
     <string name="swipe_lock">Ukax mä swipe llawintatawa</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Aro-aldaw</string>
     <string name="interval_hourly">Oras-oras</string>
     <string name="invalid_update_interval">An update na agwat bakong balido, mga kamugtakan na update dangan pagprobaran giraray</string>
+    <string name="json_formatted_data">The %1$s now requires a %2$s data file from %3$s server, you need to update the %4$s and update the %5$s file before this app will function correctly. I-click an Ok para sa dugang na detalye sa %6$s</string>
     <string name="last_month_stats">Kan nakaaging Bulan nin Estadistika</string>
     <string name="last_year_stats">Kan nakaaging Taon na Estadistika</string>
     <string name="light_theme">Tema sa Liwanag</string>

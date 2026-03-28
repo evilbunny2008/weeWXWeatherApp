@@ -47,6 +47,7 @@
     <string name="interval_daily">Daily</string>
     <string name="interval_hourly">Hourly</string>
     <string name="invalid_update_interval">Update interval is invalid, update settings and then retry</string>
+    <string name="json_formatted_data">The %1$s now requires a %2$s data file from %3$s server, you need to update the %4$s and update the %5$s file before this app will function correctly. Click Ok for more details on %6$s</string>
     <string name="last_month_stats">Last Month\'s Statistics</string>
     <string name="last_year_stats">Last Year\'s Statistics</string>
     <string name="light_theme">Light Theme</string>
@@ -102,6 +103,7 @@
     <string name="show_forecast">Show Forecast</string>
     <string name="show_radar">Show Radar</string>
     <string name="since">since</string>
+    <string name="skip">Skip</string>
     <string name="stats2">Statistics</string>
     <string name="still_downloading_forecast_data">Still downloading forecast data</string>
     <string name="swipe_lock">Swipe Lock</string>
@@ -133,5 +135,4 @@
     <string name="widget_theme">Widget Theme</string>
     <string name="wifi_not_available">Would have updated but Wi-Fi connection unavailable</string>
     <string name="yesterdayStats">Yesterday\'s Statistics</string>
-	<string name="json_formatted_data">The %1$s now requires a %2$s data file from %3$s server, you need to update the %4$s and update the %5$s file before this app will function correctly. Click Ok for more details on %6$s</string>
 </resources>

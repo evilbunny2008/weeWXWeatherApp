@@ -46,6 +46,7 @@
     <string name="interval_daily">Suwari-wari</string>
     <string name="interval_hourly">Jam-jam</string>
     <string name="invalid_update_interval">Interval pembaruan la sah, pengaturen update kenca si e retrit</string>
+    <string name="json_formatted_data">%1$s gundari perlu file data %2$s ibas server %3$s nari, perlu iperbarui %4$s ras iperbarui file %5$s ope denga aplikasi enda berfungsi alu mehuli. Klik Ok guna meteh terbuen kerna %6$s</string>
     <string name="last_month_stats">Statistik Bulan Terakhir</string>
     <string name="last_year_stats">Statistik Tahun si lewat</string>
     <string name="light_theme">Tema Terang</string>

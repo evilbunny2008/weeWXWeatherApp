@@ -46,6 +46,7 @@
     <string name="interval_daily">দৈনিক</string>
     <string name="interval_hourly">ঘণ্টাৰ পিছত ঘণ্টা</string>
     <string name="invalid_update_interval">আপডেইট ব্যৱধান অবৈধ, ছেটিংছ আপডেইট আৰু তাৰ পিছত পুনৰ চেষ্টা কৰক</string>
+    <string name="json_formatted_data">%1$s ৰ বাবে এতিয়া %3$s চাৰ্ভাৰৰ পৰা এটা %2$s ডাটা ফাইলৰ প্ৰয়োজন, এই এপটোৱে সঠিকভাৱে কাম কৰাৰ আগতে আপুনি %4$s আপডেইট কৰিব লাগিব আৰু %5$s ফাইল আপডেইট কৰিব লাগিব । %6$s ৰ অধিক বিৱৰণৰ বাবে ঠিক আছে ক্লিক কৰক</string>
     <string name="last_month_stats">যোৱা মাহৰ পৰিসংখ্যা</string>
     <string name="last_year_stats">যোৱা বছৰৰ পৰিসংখ্যা</string>
     <string name="light_theme">পোহৰৰ থিম</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">পূৰ্বাভাস দেখুৱাওক</string>
     <string name="show_radar">ৰাডাৰ দেখুৱাওক</string>
     <string name="since">যিহেতু</string>
+    <string name="skip">বাদ দিয়া</string>
     <string name="stats2">পৰিসংখ্যা পৰিসংখ্যা</string>
     <string name="still_downloading_forecast_data">এতিয়াও পূৰ্বাভাস তথ্য ডাউনলোড কৰি আছে</string>
     <string name="swipe_lock">চুইপ লক</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Diàriament</string>
     <string name="interval_hourly">Cada hora</string>
     <string name="invalid_update_interval">L\'interval d\'actualització no és vàlid, actualitzeu la configuració i torneu-ho a provar</string>
+    <string name="json_formatted_data">El %1$s ara requereix un fitxer de dades %2$s del servidor %3$s, cal que actualitzeu el %4$s i el fitxer %5$s perquè aquesta aplicació funcioni correctament. Feu clic a D\'acord per obtenir més informació sobre %6$s</string>
     <string name="last_month_stats">Estadístiques del mes passat</string>
     <string name="last_year_stats">Estadístiques de l\'any passat</string>
     <string name="light_theme">Tema lleuger</string>
