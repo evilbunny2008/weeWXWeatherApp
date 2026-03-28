@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 
 import androidx.annotation.NonNull;
 import okhttp3.Dns;
@@ -234,7 +235,7 @@ class CustomDns implements Dns
 		if(hostname.isBlank())
 			return results;
 
-		hostname = hostname.strip().toLowerCase();
+		hostname = hostname.toLowerCase(Locale.ENGLISH).strip();
 
 		if(bad_domains.contains(hostname))
 			return results;

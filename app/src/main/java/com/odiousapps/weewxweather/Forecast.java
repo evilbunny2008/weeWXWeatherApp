@@ -15,6 +15,8 @@ import android.widget.TextView;
 
 import com.google.android.material.checkbox.MaterialCheckBox;
 
+import java.util.Locale;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -610,7 +612,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		boolean isDarkTheme = (int)KeyValue.readVar("theme", weeWXApp.theme_default) == R.style.AppTheme_weeWXApp_Dark_Common;
 
-		switch(fctype.toLowerCase())
+		switch(fctype.toLowerCase(Locale.ENGLISH).strip())
 		{
 			case "yahoo" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/yahoo" + finalextSVG)));
 			case "weatherzone", "weatherzone2" -> im.post(() -> im.setImageDrawable(weeWXApp.loadSVGFromAssets("logos/wz" + finalextSVG)));

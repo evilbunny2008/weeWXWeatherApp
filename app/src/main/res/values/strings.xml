@@ -133,4 +133,5 @@
     <string name="widget_theme">Widget Theme</string>
     <string name="wifi_not_available">Would have updated but Wi-Fi connection unavailable</string>
     <string name="yesterdayStats">Yesterday\'s Statistics</string>
+	<string name="json_formatted_data">The %1$s now requires a %2$s data file from %3$s server, you need to update the %4$s and update the %5$s file before this app will function correctly. Click Ok for more details on %6$s</string>
 </resources>

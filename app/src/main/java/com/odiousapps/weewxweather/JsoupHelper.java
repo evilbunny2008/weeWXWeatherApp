@@ -110,7 +110,7 @@ class JsoupHelper
 
 	static Date parseItalianDate(String input)
 	{
-		String[] parts = input.toLowerCase(Locale.ITALIAN).split("\\s+");
+		String[] parts = input.toLowerCase(Locale.ITALIAN).strip().split("\\s+");
 
 		DayOfWeek targetDow = IT_DAYS.get(parts[0]);
 		int targetDay = Integer.parseInt(parts[1]);
@@ -1057,7 +1057,7 @@ class JsoupHelper
 					continue;
 				}
 
-				title = title.strip().replace(" ", "_").toLowerCase();
+				title = title.strip().replace(" ", "_").toLowerCase(Locale.ENGLISH).strip();
 
 				if(title.endsWith("_icon") || title.startsWith("wind_speed_") || title.startsWith("logo") ||
 				   title.startsWith("icon") || title.startsWith("layer_") || title.startsWith("miscellaneous_"))
@@ -1101,12 +1101,12 @@ class JsoupHelper
 				continue;
 
 			String text = normaliseText(child.text());
-			if(!(" " + text.toLowerCase() + " ").contains(" " + wordsToFind.toLowerCase() + " "))
+			if(!(" " + text.toLowerCase(Locale.ENGLISH) + " ").contains(" " + wordsToFind.toLowerCase(Locale.ENGLISH) + " "))
 				continue;
 
 			text = normaliseText(child.ownText());
 			if(text != null && !text.isBlank())
-				if((" " + text.toLowerCase() + " ").contains(" " + wordsToFind.toLowerCase() + " "))
+				if((" " + text.toLowerCase(Locale.ENGLISH) + " ").contains(" " + wordsToFind.toLowerCase(Locale.ENGLISH) + " "))
 					return child;
 
 			Element newchild = searchElemntForWords(lineCalledFrom, child, wordsToFind);
@@ -1597,7 +1597,10 @@ class JsoupHelper
 		if(title == null || title.isBlank())
 			return null;
 
-		title = normaliseText(title).replaceAll("[ -]", "_").replaceAll("_+", "_").toLowerCase();
+		title = normaliseText(title)
+				.replaceAll("[ -]", "_")
+				.replaceAll("_+", "_")
+				.toLowerCase(Locale.ENGLISH).strip();
 
 		if(title.endsWith("_icon") || title.startsWith("wind_speed_") || title.startsWith("logo") || title.startsWith("icon") ||
 		   title.startsWith("layer_") || title.startsWith("miscellaneous_"))

@@ -349,8 +349,8 @@ public class Stats extends Fragment
 
 	private String createSolarUV(String uv, String uvWhen, String solar, String solarWhen, int timeMode)
 	{
-		int UVWhen = (int)getJson(uvWhen, 0);
-		int SolarWhen = (int)getJson(solarWhen, 0);
+		int UVWhen = Math.round((float)getJson(uvWhen, 0f));
+		int SolarWhen = Math.round((float)getJson(solarWhen, 0f));
 
 		if(UVWhen == 0 && SolarWhen == 0)
 		{
@@ -358,8 +358,8 @@ public class Stats extends Fragment
 			return "";
 		}
 
-		String UV = formatString(uv, 0f);
-		String SOLAR = formatString(solar, 0f);
+		String UV = formatString(uv);
+		String SOLAR = formatString(solar);
 
 		String className = fiToSVG("flaticon-women-sunglasses");
 		String out = "";
@@ -409,35 +409,37 @@ public class Stats extends Fragment
 
 		String[] loop = {"outTemp", "dewpoint", "humidity", "barometer"};
 		String[] syms = {tempSym, tempSym, humSym, pressSym};
-		String[] css = {"flaticon-temperature", "wi-raindrop", "wi-humidity", "wi-barometer"};
+		String[] css = {fiToSVG("flaticon-temperature"),
+		                cssToSVG("wi-raindrop"),
+		                cssToSVG("wi-humidity"),
+		                cssToSVG("wi-barometer")};
 
 		for(int i = 0; i < loop.length; i++)
 		{
-			sb.append(createRow(fiToSVG(css[i]),
-					fiToSVG(css[i]),
-					formatString(timeperiod + "_" + loop[i] + "_max", 0f) + syms[i],
-					getDateTimeStr((int)getJson(timeperiod + "_" + loop[i] + "_maxtime", 0), timeMode),
-					getDateTimeStr((int)getJson(timeperiod + "_" + loop[i] + "_mintime", 0), timeMode),
-					formatString(timeperiod + "_" + loop[i] + "_min", 0f) + syms[i]));
+			sb.append(createRow(css[i], css[i],
+					formatString(timeperiod + "_" + loop[i] + "_max") + syms[i],
+					getDateTimeStr(Math.round((float)getJson(timeperiod + "_" + loop[i] + "_maxtime", 0f)), timeMode),
+					getDateTimeStr(Math.round((float)getJson(timeperiod + "_" + loop[i] + "_mintime", 0f)), timeMode),
+					formatString(timeperiod + "_" + loop[i] + "_min") + syms[i]));
 		}
 
 		if((boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
 		{
-			int maxtime = (int)getJson(timeperiod + "_inTemp_maxtime", 0);
-			int mintime = (int)getJson(timeperiod + "_inTemp_mintime", 0);
+			int maxtime = Math.round((float)getJson(timeperiod + "_inTemp_maxtime", 0f));
+			int mintime = Math.round((float)getJson(timeperiod + "_inTemp_mintime", 0f));
 			if(mintime > 0 && maxtime > 0)
 				sb.append(createRow(fiToSVG("flaticon-home-page"), fiToSVG("flaticon-home-page"),
-									formatString(timeperiod + "_" + "_inTemp_max", 0f) + tempSym,
+									formatString(timeperiod + "_" + "_inTemp_max") + tempSym,
 									getDateTimeStr(maxtime, timeMode), getDateTimeStr(mintime, timeMode),
-									formatString(timeperiod + "_" + "_inTemp_min", 0f) + tempSym));
+									formatString(timeperiod + "_" + "_inTemp_min") + tempSym));
 
-			maxtime = (int)getJson(timeperiod + "_inHumidity_maxtime", 0);
-			mintime = (int)getJson(timeperiod + "_inHumidity_mintime", 0);
+			maxtime = Math.round((float)getJson(timeperiod + "_inHumidity_maxtime", 0f));
+			mintime = Math.round((float)getJson(timeperiod + "_inHumidity_mintime", 0f));
 			if(mintime > 0 && maxtime > 0)
 				sb.append(createRow(fiToSVG("flaticon-home-page"), fiToSVG("flaticon-home-page"),
-									formatString(timeperiod + "_" + "_inHumidity_max", 0f) + humSym,
+									formatString(timeperiod + "_" + "_inHumidity_max") + humSym,
 									getDateTimeStr(maxtime, timeMode), getDateTimeStr(mintime, timeMode),
-									formatString(timeperiod + "_" + "_inHumidity_min", 0f) + humSym));
+									formatString(timeperiod + "_" + "_inHumidity_min") + humSym));
 		}
 
 		sb.append(createSolarUV(timeperiod + "_UV_max", timeperiod + "_UV_maxtime", timeperiod + "_radiation_max",
@@ -445,30 +447,30 @@ public class Stats extends Fragment
 
 		int since_hour = (int)getJson("since_hour", 0);
 		String since = "";
-		String rain = formatString(timeperiod + "_rain_sum", 0f);
+		String rain = formatString(timeperiod + "_rain_sum");
 
 		if(timeperiod.equals("day"))
 		{
 			if(since_hour > 0)
-				rain = formatString("since_today", 0);
+				rain = formatString("since_today");
 
 			since = getSinceHour(since_hour, R.string.since);
 		} else if(timeperiod.equals("yesterday")) {
 			if(since_hour > 0)
-				rain = formatString("since_yesterday", 0);
+				rain = formatString("since_yesterday");
 
 			since = getSinceHour(since_hour, R.string.before);
 		}
 
 		if(timeMode == 0)
-			sb.append(createRow(getJson(timeperiod + "_wind_max", 0f) + speedSym +
+			sb.append(createRow(formatString(timeperiod + "_wind_max") + speedSym +
 		                    " " + getJson(timeperiod + "_wind_gustdir_compass", "N/A") +
-		                    " " + getDateTimeStr((int)getJson(timeperiod + "_wind_maxtime", 0), timeMode),
+		                    " " + getDateTimeStr(Math.round((float)getJson(timeperiod + "_wind_maxtime", 0f)), timeMode),
 							since + " " + rain + rainSym));
 		else
-			sb.append(createRow2(getJson(timeperiod + "_wind_max", 0f) + speedSym +
+			sb.append(createRow2(formatString(timeperiod + "_wind_max") + speedSym +
 	                    " " + getJson(timeperiod + "_wind_gustdir_compass", "N/A") +
-	                    " " + getDateTimeStr((int)getJson(timeperiod + "_wind_maxtime", 0), 0),
+	                    " " + getDateTimeStr(Math.round((float)getJson(timeperiod + "_wind_maxtime", 0f)), timeMode),
 						since + " " + rain + rainSym));
 
 		return sb.toString();
@@ -498,7 +500,7 @@ public class Stats extends Fragment
 			return;
 		}
 
-		int now = (int)getJson("now", 0f);
+		int now = Math.round((float)getJson("now", 0f));
 
 		// Today Stats
 		checkFields(rootView.findViewById(R.id.textView), (String)getJson("station_location", ""));

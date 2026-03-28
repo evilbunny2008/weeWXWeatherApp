@@ -145,6 +145,7 @@ class weeWXAppCommon
 
 	static final String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
+	static final String JSON_INTENT = "com.odiousapps.weewxweather.JSON_UPDATE";
 
 	static final String UPDATECHECK = "com.odiousapps.weewxweather.UPDATECHECK";
 
@@ -1565,7 +1566,7 @@ class weeWXAppCommon
 					}
 				}
 
-				if(iconLink.getString(i).toLowerCase(Locale.ENGLISH).startsWith("http"))
+				if(iconLink.getString(i).toLowerCase(Locale.ENGLISH).strip().startsWith("http"))
 				{
 					String fileName = "wgov" + iconLink.getString(i).substring(iconLink.getString(i).lastIndexOf("/") + 1).strip().replaceAll("\\.png$", ".jpg");
 
@@ -2521,7 +2522,7 @@ class weeWXAppCommon
 			SimpleDateFormat sdf = new SimpleDateFormat("EEEE", locale);
 			String string_time = sdf.format(lastTS);
 			//LogMessage("string_time == " + string_time + ", dayName == " + dayName);
-			if(dayName.toLowerCase(Locale.ENGLISH).startsWith(string_time.toLowerCase(Locale.ENGLISH)))
+			if(dayName.toLowerCase(Locale.ENGLISH).strip().startsWith(string_time.toLowerCase(Locale.ENGLISH)))
 				return lastTS;
 
 			lastTS += 86_400_000L;
@@ -2908,7 +2909,7 @@ class weeWXAppCommon
 
 		String[] bits = lastDownload.split("\\|");
 
-		float rainfall = (float)getJson("day_rain", 0.0f);
+		float rainfall = (float)getJson("day_rain", 0f);
 
 		int since_hour = (int)getJson("since_hour", 0);
 		if(since_hour < 0 || since_hour > 23)
@@ -2917,7 +2918,7 @@ class weeWXAppCommon
 		KeyValue.since_hour = since_hour;
 
 		if(since_hour > 0)
-			rainfall = (float)getJson("since_rain_today", 0.0f);
+			rainfall = (float)getJson("since_rain_today", 0f);
 
 		float rainfall_limit = (int)KeyValue.readVar("RainfallLimit", weeWXApp.RainfallLimit_default) / 100f;
 
@@ -2970,14 +2971,14 @@ class weeWXAppCommon
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default) &&
 		                 !(boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
 
-		float rainrate = (float)getJson("rainRate", 0.0f);
+		float rainrate = (float)getJson("rainRate", 0f);
 
 		int[] totals = {
-			Math.round((float)getJson("rain_600", 0.0f) * 100),
-			Math.round((float)getJson("rain_1800", 0.0f) * 100),
-			Math.round((float)getJson("rain_3600", 0.0f) * 100),
-			Math.round((float)getJson("rain_21600", 0.0f) * 100),
-			Math.round((float)getJson("rain_86400", 0.0f) * 100),
+			Math.round((float)getJson("rain_600", 0f) * 100),
+			Math.round((float)getJson("rain_1800", 0f) * 100),
+			Math.round((float)getJson("rain_3600", 0f) * 100),
+			Math.round((float)getJson("rain_21600", 0f) * 100),
+			Math.round((float)getJson("rain_86400", 0f) * 100),
 		};
 
 		long now = System.currentTimeMillis();
@@ -3160,9 +3161,9 @@ class weeWXAppCommon
 		int[] empty = new int[]{};
 
 		return new TempResult(
-				(float)getJson("current_outTemp", 0),
-				(float)getJson("day_outTemp_min", 0),
-				(float)getJson("day_outTemp_max", 0),
+				(float)getJson("current_outTemp", 0f),
+				(float)getJson("day_outTemp_min", 0f),
+				(float)getJson("day_outTemp_max", 0f),
 				(int[])getJson("outTemp_trend_count", empty),
 				(int[])getJson("outTemp_trend_signal", empty),
 				(int[])getJson("outTemp_trend_ts", empty));
@@ -3170,6 +3171,9 @@ class weeWXAppCommon
 
 	static Object getElement(String element, JSONObject jsonObject, Object defaultValue)
 	{
+		if(jsonObject == null || jsonObject.length() == 0)
+			return defaultValue;
+
 		switch(defaultValue)
 		{
 			case Boolean b ->
@@ -3212,10 +3216,10 @@ class weeWXAppCommon
 				return jsonObject.optString(element, s).strip();
 			}
 
-			default -> {}
+			default -> LogMessage("Unknown Object type " + defaultValue.getClass());
 		}
 
-		return null;
+		return defaultValue;
 	}
 
 	static String getDateTimeStr(int when, int timeMode)
@@ -3237,51 +3241,48 @@ class weeWXAppCommon
 	static String getHourMin(int when)
 	{
 		SimpleDateFormat sdf = new SimpleDateFormat("H:mm", Locale.getDefault());
-		return sdf.format(when * 1000L);
+		return sdf.format(when * 1_000L);
 	}
 
-	static String getOrdinal(String str)
+	static String getOrdinal(int day)
 	{
+		Object[] testArgs = {day};
 		MessageFormat mf = new MessageFormat("{0,ordinal}", Locale.getDefault());
-		return mf.format(str);
+		return mf.format(testArgs);
 	}
 
 	static String getTimeMonth(int when)
 	{
 		SimpleDateFormat sdf = new SimpleDateFormat("d", Locale.getDefault());
-		String ret = sdf.format(when * 1000L);
-		return getOrdinal(ret);
+		int day = str2Int(sdf.format(when * 1_000L));
+		return getOrdinal(day);
 	}
 
 	static String getTimeYear(int when)
 	{
 		SimpleDateFormat sdf = new SimpleDateFormat("d E", Locale.getDefault());
-		return sdf.format(when * 1000L);
+		return sdf.format(when * 1_000L);
 	}
 
 	static String getAllTime(int when)
 	{
 		SimpleDateFormat sdf = new SimpleDateFormat("dMMyy", Locale.getDefault());
-		return sdf.format(when * 1000L);
+		return sdf.format(when * 1_000L);
 	}
 
 	static String getLocalDate(int when)
 	{
-		Calendar cal = Calendar.getInstance();
-		cal.setTimeInMillis(when);
-		return localDate.format(cal);
+		return localDate.format(new Date(when * 1_000L));
 	}
 
 	static String getLocalTime(int when)
 	{
-		Calendar cal = Calendar.getInstance();
-		cal.setTimeInMillis(when);
-		return localTime.format(cal);
+		return localTime.format(new Date(when * 1_000L));
 	}
 
-	static String formatString(String element, float defaultValue)
+	static String formatString(String element)
 	{
-		float f = (float)getJson(element, defaultValue);
+		float f = (float)getJson(element, 0f);
 		String fmt = KeyValue.getFormat(KeyValue.getKeyFromName(element));
 		return String.format(fmt, f);
 	}
@@ -3329,6 +3330,13 @@ class weeWXAppCommon
 	static boolean reallyGetWeather(String url) throws InterruptedException, IOException
 	{
 		LogMessage("reallyGetWeather() url: " + url);
+
+		if(!url.toLowerCase(Locale.ENGLISH).strip().endsWith(".json"))
+		{
+			LogMessage("reallyGetWeather() sendAlert2() triggered because URL (" + url + ") doesm't end in .json");
+			sendAlert2();
+			return false;
+		}
 
 		String line = downloadString(url, true);
 		if(line == null || line.isBlank())
@@ -3390,6 +3398,12 @@ class weeWXAppCommon
 	{
 		NotificationManager.updateNotificationMessage(INIGO_INTENT);
 		LogMessage("Send user note about upgrading the Inigo Plugin", KeyValue.d);
+	}
+
+	private static void sendAlert2()
+	{
+		NotificationManager.updateNotificationMessage(JSON_INTENT);
+		LogMessage("Send user note about upgrading the Inigo Plugin and settings file", KeyValue.d);
 	}
 
 	// https://stackoverflow.com/questions/8710515/reading-an-image-file-into-bitmap-from-sdcard-why-am-i-getting-a-nullpointerexc
@@ -5102,8 +5116,8 @@ class weeWXAppCommon
 		File file = getFile(filename);
 
 		LogMessage("Starting to download image from: " + url);
-		if(url.toLowerCase(Locale.ENGLISH).endsWith(".mjpeg") ||
-		   url.toLowerCase(Locale.ENGLISH).endsWith(".mjpg"))
+		if(url.toLowerCase(Locale.ENGLISH).strip().endsWith(".mjpeg") ||
+		   url.toLowerCase(Locale.ENGLISH).strip().endsWith(".mjpg"))
 		{
 			LogMessage("Trying to get a frame from a MJPEG stream and set bm to it...");
 			bm = grabMjpegFrame(url, false);

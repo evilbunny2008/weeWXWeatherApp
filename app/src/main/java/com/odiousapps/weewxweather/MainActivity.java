@@ -10,6 +10,7 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -91,6 +92,7 @@ import static androidx.core.view.WindowCompat.enableEdgeToEdge;
 import static com.github.evilbunny2008.colourpicker.Common.parseHexToColour;
 import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
+import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
@@ -428,17 +430,17 @@ public class MainActivity extends FragmentActivity
 		String[] tabTitles;
 		if(KeyValue.isPrefSet("radarforecast") &&
 		   (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default) == weeWXApp.RadarOnHomeScreen)
-			tabTitles = new String[]{weeWXApp.getAndroidString(R.string.weather2),
-			                         weeWXApp.getAndroidString(R.string.stats2),
-			                         weeWXApp.getAndroidString(R.string.forecast2),
-			                         weeWXApp.getAndroidString(R.string.webcam2),
-			                         weeWXApp.getAndroidString(R.string.custom2)};
+			tabTitles = new String[]{getAndroidString(R.string.weather2),
+			                         getAndroidString(R.string.stats2),
+			                         getAndroidString(R.string.forecast2),
+			                         getAndroidString(R.string.webcam2),
+			                         getAndroidString(R.string.custom2)};
 		else
-			tabTitles = new String[]{weeWXApp.getAndroidString(R.string.weather2),
-			                         weeWXApp.getAndroidString(R.string.stats2),
-			                         weeWXApp.getAndroidString(R.string.radar),
-			                         weeWXApp.getAndroidString(R.string.webcam2),
-			                         weeWXApp.getAndroidString(R.string.custom2)};
+			tabTitles = new String[]{getAndroidString(R.string.weather2),
+			                         getAndroidString(R.string.stats2),
+			                         getAndroidString(R.string.radar),
+			                         getAndroidString(R.string.webcam2),
+			                         getAndroidString(R.string.custom2)};
 
 		new TabLayoutMediator(tabLayout, mViewPager,
 				((tab, position) -> tab.setText(tabTitles[position]))).attach();
@@ -1420,9 +1422,35 @@ public class MainActivity extends FragmentActivity
 		KeyValue.putVar("shownUpdate_" + updateVer, true);
 
 		final AlertDialog.Builder d = new AlertDialog.Builder(this);
-		d.setTitle(weeWXApp.getAndroidString(R.string.app_name));
-		d.setMessage(weeWXApp.getAndroidString(R.string.inigo_needs_updating));
-		d.setPositiveButton(weeWXApp.getAndroidString(R.string.ok), null);
+		d.setTitle(getAndroidString(R.string.app_name));
+		d.setMessage(getAndroidString(R.string.inigo_needs_updating));
+		d.setPositiveButton(getAndroidString(R.string.ok), null);
+		d.setIcon(R.mipmap.ic_launcher_foreground);
+		d.show();
+	}
+
+	private void showUpdateAvailable2()
+	{
+		String str = getAndroidString(R.string.json_formatted_data);
+		str = String.format(str, "weeWX App", "JSON formatted", "weeWX", "Inigo Plugin", "inigo-settings.txt", "GitHub.com");
+		final AlertDialog.Builder d = new AlertDialog.Builder(this);
+		d.setTitle(getAndroidString(R.string.app_name));
+		d.setMessage(str);
+		d.setPositiveButton(getAndroidString(R.string.ok), (dialog_interface, i) ->
+		{
+			String url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/tag/1.99.108beta";
+			Intent urlIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+			startActivity(urlIntent);
+			if(Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU)
+			{
+				LogMessage("MainActivity.handleBack() Let's end now... SDK < TIRAMISU");
+				obpc.setEnabled(false);
+				finish();
+			} else {
+				LogMessage("MainActivity.handleBack() SDK >= TIRAMISU... Let the system do it's thing...");
+				getOnBackPressedDispatcher().onBackPressed();
+			}
+		});
 		d.setIcon(R.mipmap.ic_launcher_foreground);
 		d.show();
 	}
@@ -1430,8 +1458,8 @@ public class MainActivity extends FragmentActivity
 	private void checkReally()
 	{
 		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setMessage(weeWXApp.getAndroidString(R.string.remove_all_data)).setCancelable(false)
-		.setPositiveButton(weeWXApp.getAndroidString(R.string.ok), (dialog_interface, i) ->
+		builder.setMessage(getAndroidString(R.string.remove_all_data)).setCancelable(false)
+		.setPositiveButton(getAndroidString(R.string.ok), (dialog_interface, i) ->
 		{
 			String settings_url = settingsURL.getText() != null && !settingsURL.getText().toString().isBlank() ? settingsURL.getText().toString().strip() : "";
 
@@ -1450,7 +1478,7 @@ public class MainActivity extends FragmentActivity
 				LogMessage("MainActivity.checkReally() Save the settings URL before exitting...");
 				KeyValue.putVar("SETTINGS_URL", settings_url);
 			}
-		}).setNegativeButton(weeWXApp.getAndroidString(R.string.no), (dialog_interface, i) -> dialog_interface.cancel());
+		}).setNegativeButton(getAndroidString(R.string.no), (dialog_interface, i) -> dialog_interface.cancel());
 
 		builder.create().show();
 	}
@@ -1517,9 +1545,9 @@ public class MainActivity extends FragmentActivity
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
-							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_settings))
-							.setMessage(weeWXApp.getAndroidString(R.string.url_was_default_or_empty))
-							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_settings))
+							.setMessage(getAndroidString(R.string.url_was_default_or_empty))
+							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
 									(dialog, which) -> {}).show();
 				});
 
@@ -1552,13 +1580,13 @@ public class MainActivity extends FragmentActivity
 
 							switch(mb[0])
 							{
-								case "data" -> baseURL = mb[1];
-								case "radar" -> radarURL = mb[1];
-								case "radtype" -> radtype = mb[1].toLowerCase(Locale.ENGLISH);
-								case "forecast" -> forecastURL = mb[1];
-								case "fctype" -> fctype = mb[1].toLowerCase(Locale.ENGLISH);
-								case "webcam" -> webcamURL = mb[1];
-								case "custom" -> CustomURL = mb[1];
+								case "data" -> baseURL = mb[1].strip();
+								case "radar" -> radarURL = mb[1].strip();
+								case "radtype" -> radtype = mb[1].toLowerCase(Locale.ENGLISH).strip();
+								case "forecast" -> forecastURL = mb[1].strip();
+								case "fctype" -> fctype = mb[1].toLowerCase(Locale.ENGLISH).strip();
+								case "webcam" -> webcamURL = mb[1].strip();
+								case "custom" -> CustomURL = mb[1].strip();
 								default -> LogMessage("processSettings() Invalid setting: " + mb[0] +
 								                                     "=" + mb[1] + ", skipping...", true, KeyValue.w);
 							}
@@ -1592,9 +1620,9 @@ public class MainActivity extends FragmentActivity
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
-							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_settings))
+							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_settings))
 							.setMessage(finalErrorStr)
-							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
 									(dialog, which) -> {}).show();
 				});
 
@@ -1608,7 +1636,7 @@ public class MainActivity extends FragmentActivity
 			{
 				try
 				{
-					if(fctype.toLowerCase(Locale.ENGLISH).equals("bom3"))
+					if(fctype.toLowerCase(Locale.ENGLISH).strip().equals("bom3"))
 					{
 						forecastURL = forecastURL.strip();
 
@@ -1621,7 +1649,7 @@ public class MainActivity extends FragmentActivity
 							fctype = "bom3daily";
 					}
 
-					switch(fctype.toLowerCase(Locale.ENGLISH))
+					switch(fctype.toLowerCase(Locale.ENGLISH).strip())
 					{
 						case "weatherzone3" ->
 						{
@@ -1757,9 +1785,9 @@ public class MainActivity extends FragmentActivity
 									b2.setEnabled(true);
 									dialog.dismiss();
 									new AlertDialog.Builder(this)
-											.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_or_download))
+											.setTitle(getAndroidString(R.string.wasnt_able_to_connect_or_download))
 											.setMessage(finalErrorStr)
-											.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+											.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
 													(dialog, which) -> {}).show();
 								});
 
@@ -1961,18 +1989,17 @@ public class MainActivity extends FragmentActivity
 						{
 							LogMessage("processSettings() No forecast information...", KeyValue.w);
 
-							String finalErrorStr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
+							String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
 							runOnUiThread(() ->
 							{
 								b1.setEnabled(true);
 								b2.setEnabled(true);
 								dialog.dismiss();
 								new AlertDialog.Builder(this)
-										.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast))
+										.setTitle(getAndroidString(R.string.wasnt_able_to_connect_forecast))
 										.setMessage(finalErrorStr)
-										.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
-										{
-										}).show();
+										.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), (dialog, which) ->
+										{}).show();
 							});
 
 							bgStart = 0;
@@ -2003,7 +2030,7 @@ public class MainActivity extends FragmentActivity
 				if(!validURL3 || (errorStr != null && !errorStr.isBlank()))
 				{
 					if(errorStr == null || errorStr.isBlank())
-						errorStr = weeWXApp.getAndroidString(R.string.unknown_error_occurred);
+						errorStr = getAndroidString(R.string.unknown_error_occurred);
 
 					String finalErrorStr = errorStr;
 					runOnUiThread(() ->
@@ -2012,9 +2039,9 @@ public class MainActivity extends FragmentActivity
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(this)
-								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_forecast))
+								.setTitle(getAndroidString(R.string.wasnt_able_to_connect_forecast))
 								.setMessage(finalErrorStr)
-								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
 										(dialog, which) -> {}).show();
 					});
 
@@ -2031,9 +2058,9 @@ public class MainActivity extends FragmentActivity
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
-							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_data_txt))
-							.setMessage(weeWXApp.getAndroidString(R.string.data_url_was_blank))
-							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_data_txt))
+							.setMessage(getAndroidString(R.string.data_url_was_blank))
+							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
 									(dialog, which) -> {}).show();
 				});
 
@@ -2060,9 +2087,9 @@ public class MainActivity extends FragmentActivity
 					b2.setEnabled(true);
 					dialog.dismiss();
 					new AlertDialog.Builder(this)
-							.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_radar_image))
+							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_radar_image))
 							.setMessage(finalErrorStr)
-							.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
 									(dialog, which) -> {}).show();
 				});
 
@@ -2095,9 +2122,9 @@ public class MainActivity extends FragmentActivity
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(this)
-								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_radar_image))
+								.setTitle(getAndroidString(R.string.wasnt_able_to_connect_radar_image))
 								.setMessage(finalErrorStr)
-								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
 										(dialog, which) -> {}).show();
 					});
 
@@ -2132,9 +2159,9 @@ public class MainActivity extends FragmentActivity
 							b2.setEnabled(true);
 							dialog.dismiss();
 							new AlertDialog.Builder(this)
-									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
-									.setMessage(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
-									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+									.setTitle(getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
+									.setMessage(getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
+									.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
 											(dialog, which) -> {}).show();
 						});
 
@@ -2178,9 +2205,9 @@ public class MainActivity extends FragmentActivity
 							b2.setEnabled(true);
 							dialog.dismiss();
 							new AlertDialog.Builder(this)
-									.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_custom_url))
+									.setTitle(getAndroidString(R.string.wasnt_able_to_connect_custom_url))
 									.setMessage(finalErrorStr)
-									.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+									.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
 											(dialog, which) -> {}).show();
 						});
 
@@ -2208,9 +2235,9 @@ public class MainActivity extends FragmentActivity
 						b2.setEnabled(true);
 						dialog.dismiss();
 						new AlertDialog.Builder(this)
-								.setTitle(weeWXApp.getAndroidString(R.string.wasnt_able_to_connect_custom_url))
+								.setTitle(getAndroidString(R.string.wasnt_able_to_connect_custom_url))
 								.setMessage(finalErrorStr)
-								.setPositiveButton(weeWXApp.getAndroidString(R.string.ill_fix_and_try_again),
+								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again),
 										(dialog, which) -> {}).show();
 					});
 
@@ -2365,6 +2392,9 @@ public class MainActivity extends FragmentActivity
 
 		if(str.equals(weeWXAppCommon.INIGO_INTENT))
 			showUpdateAvailable();
+
+		if(str.equals(weeWXAppCommon.JSON_INTENT))
+			showUpdateAvailable2();
 	};
 
 	public boolean isViewPagerNull()
@@ -2439,16 +2469,16 @@ public class MainActivity extends FragmentActivity
 
 	        // show explanation dialog first
 			new AlertDialog.Builder(this)
-				.setTitle(weeWXApp.getAndroidString(R.string.notification_permission))
-				.setMessage(weeWXApp.getAndroidString(R.string.notifications_needed))
-				.setPositiveButton(weeWXApp.getAndroidString(R.string.ok), (dialog, which) ->
+				.setTitle(getAndroidString(R.string.notification_permission))
+				.setMessage(getAndroidString(R.string.notifications_needed))
+				.setPositiveButton(getAndroidString(R.string.ok), (dialog, which) ->
 				{
 				    LogMessage("requestNotificationPermission() User choose to retry notification permission");
 				    ActivityCompat.requestPermissions(this,
 				        new String[]{Manifest.permission.POST_NOTIFICATIONS},
 				        NOTIFICATION_PERMISSION_CODE);
 				})
-				.setNegativeButton(weeWXApp.getAndroidString(R.string.no), (dialog, which) ->
+				.setNegativeButton(getAndroidString(R.string.no), (dialog, which) ->
 				{
 				    LogMessage("requestNotificationPermission() User choose not to retry notification permission");
 				    disableAlerts();
@@ -2472,16 +2502,16 @@ public class MainActivity extends FragmentActivity
 		LogMessage("requestNotificationPermission() Permission not granted, but already asked twice.");
 
 		new AlertDialog.Builder(this)
-			.setTitle(weeWXApp.getAndroidString(R.string.notification_permission))
-			.setMessage(weeWXApp.getAndroidString(R.string.notifications_needed2))
-			.setPositiveButton(weeWXApp.getAndroidString(R.string.ok), (dialog, which) ->
+			.setTitle(getAndroidString(R.string.notification_permission))
+			.setMessage(getAndroidString(R.string.notifications_needed2))
+			.setPositiveButton(getAndroidString(R.string.ok), (dialog, which) ->
 			{
 				LogMessage("requestNotificationPermission() User choose to open settings");
 				Intent intent = new Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS);
 				intent.putExtra(Settings.EXTRA_APP_PACKAGE, getPackageName());
 				startActivity(intent);
 			})
-			.setNegativeButton(weeWXApp.getAndroidString(R.string.no), (dialog, which) ->
+			.setNegativeButton(getAndroidString(R.string.no), (dialog, which) ->
 			{
 				LogMessage("requestNotificationPermission() User choose to decline opening settings");
 				disableAlerts();

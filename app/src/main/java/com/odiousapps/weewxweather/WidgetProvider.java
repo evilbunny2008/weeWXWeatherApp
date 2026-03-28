@@ -139,19 +139,19 @@ public class WidgetProvider extends AppWidgetProvider
 			String rainSym = KeyValue.getLabel("rain", "mm");
 			String speedSym = KeyValue.getLabel("speed", "km/h");
 
-			String rain = formatString("day_rain_sum", 0f);
+			String rain = formatString("day_rain_sum");
 			int since_hour = (int)getJson("since_hour", 0);
 			if(since_hour > 0)
-				rain = formatString("since_today", 0);
+				rain = formatString("since_today");
 
-			tempText = formatString("current_temperature", 0f) + tempSym;
+			tempText = formatString("current_temperature") + tempSym;
 			LogMessage("Temperature set to " + tempText);
 
-			int now = (int)getJson("now", 0f);
+			int now = Math.round((float)getJson("now", 0f));
 
 			views.setTextViewText(R.id.widget_location, (String)getJson("station_location", ""));
 			views.setTextViewText(R.id.widget_time, getLocalTime(now));
-			views.setTextViewText(R.id.widget_wind, formatString("current_windGust", 0f) + speedSym);
+			views.setTextViewText(R.id.widget_wind, formatString("current_windGust") + speedSym);
 			views.setTextViewText(R.id.widget_rain, rain + rainSym);
 		} else {
 			LogMessage("Temperature set to Error!");

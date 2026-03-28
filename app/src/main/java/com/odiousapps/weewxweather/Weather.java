@@ -438,7 +438,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		int now = (int)getJson("now", 0);
+		int now = Math.round((float)getJson("now", 0f));
 		String tempSym = KeyValue.getLabel("temperature", "°C");
 		String humSym = KeyValue.getLabel("humidity", "%");
 		String pressSym = KeyValue.getLabel("pressure", "hPa");
@@ -451,11 +451,11 @@ public class Weather extends Fragment implements View.OnClickListener
 		sb.append("\n<div class='todayCurrent'>\n");
 		sb.append("\t<div class='topRowCurrent'>\n");
 		sb.append("\t\t<div class='mainTemp'>");
-		sb.append(formatString("current_outTemp", 0f)).append(tempSym);
+		sb.append(formatString("current_outTemp")).append(tempSym);
 		sb.append("</div>\n");
 
 		sb.append("\t\t<div class='apparentTemp'>AT:<br/>");
-		sb.append(formatString("appTemp", 0f)).append(tempSym);
+		sb.append(formatString("appTemp")).append(tempSym);
 		sb.append("</div>\n\t</div>\n\n");
 
 		sb.append("\t<div class='dataTableCurrent'>\n");
@@ -467,12 +467,12 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(formatString("current_windGust", 0f))
+				.append(formatString("current_windGust"))
 				.append(speedSym)
 				.append("</div>\n");
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(getJson("current_barometer", 0f))
+				.append(formatString("current_barometer"))
 				.append(pressSym)
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
@@ -491,7 +491,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append("</div>\n");
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(formatString("current.outHumidity", 0f))
+				.append(formatString("current.outHumidity"))
 				.append(humSym)
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
@@ -503,10 +503,10 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		int since_hour = (int)getJson("since_hour", 0);
 		String since = getSinceHour(since_hour, R.string.since);
-		String rain = formatString("day_rain_sum", 0f);
+		String rain = formatString("day_rain_sum");
 
 		if(since_hour > 0)
-			rain = formatString("since_today", 0);
+			rain = formatString("since_today");
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
 				.append(cssToSVG("wi-umbrella"))
@@ -518,7 +518,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append("</div>\n");
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(formatString("current_dewpoint", 0f))
+				.append(formatString("current_dewpoint"))
 				.append(tempSym)
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
@@ -542,7 +542,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
 						.append("\t\t\t<div class='dataCellCurrent left'>")
-						.append(formatString("current_UV", 0f))
+						.append(formatString("current_UV"))
 						.append(KeyValue.getLabel("uv_index", "UVI"))
 						.append("</div>\n");
 			} else {
@@ -552,7 +552,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(hasRadiation)
 			{
 				sb.append("\t\t\t<div class='dataCellCurrent right'>")
-						.append(formatString("current_radiation", 0f))
+						.append(formatString("current_radiation"))
 						.append(KeyValue.getLabel("radiation", "W/m²"))
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
@@ -581,7 +581,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
 						.append("\t\t\t<div class='dataCellCurrent left'>")
-						.append(formatString("current_inTemp", 0f))
+						.append(formatString("current_inTemp"))
 						.append(tempSym)
 						.append("</div>\n");
 			} else {
@@ -591,7 +591,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(hasInHumidity)
 			{
 				sb.append("\t\t\t<div class='dataCellCurrent right'>")
-						.append(formatString("current_inHumidity", 0f))
+						.append(formatString("current_inHumidity"))
 						.append(humSym)
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
@@ -607,8 +607,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		int sunrise = (int)getJson("sun_rise", 0f);
-		int sunset = (int)getJson("sun_set", 0f);
+		int sunrise = Math.round((float)getJson("sun_rise", 0f));
+		int sunset = Math.round((float)getJson("sun_set", 0f));
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
 				.append(cssToSVG("wi-sunrise"))
@@ -634,8 +634,8 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(next_moon && has_moon_next)
 		{
-			int moon_next_rise = (int)getJson("moon_next_rise", 0f);
-			int moon_next_set = (int)getJson("moon_next_set", 0f);
+			int moon_next_rise = Math.round((float)getJson("moon_next_rise", 0f));
+			int moon_next_set = Math.round((float)getJson("moon_next_set", 0f));
 
 			sb.append("\t\t\t<div class='dataCellCurrent left'>")
 					.append(cssToSVG("wi-moonrise"))
@@ -653,8 +653,8 @@ public class Weather extends Fragment implements View.OnClickListener
 					.append("</div>\n");
 		} else {
 
-			int moon_rise = (int)getJson("moon_rise", 0f);
-			int moon_set = (int)getJson("moon_set", 0f);
+			int moon_rise = Math.round((float)getJson("moon_rise", 0f));
+			int moon_set = Math.round((float)getJson("moon_set", 0f));
 
 			sb.append("\t\t\t<div class='dataCellCurrent left'>")
 					.append(cssToSVG("wi-moonrise"))
@@ -1050,7 +1050,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			}
 
 			String logo = "file:///android_asset/logos/";
-			switch(fctype.toLowerCase(Locale.ENGLISH))
+			switch(fctype.toLowerCase(Locale.ENGLISH).strip())
 			{
 				case "aemet.es" -> logo += "aemet.png";
 				case "bom2", "bom3daily", "bom3hourly" -> logo += "bom" + extSVG;
