@@ -826,6 +826,7 @@ public class MainActivity extends FragmentActivity
 
 		b3.setOnClickListener(arg0 ->
 		{
+			loadAboutText();
 			settingLayout.setVisibility(View.GONE);
 			aboutLayout.setVisibility(View.VISIBLE);
 			scrollView.smoothScrollTo(0, 0);
@@ -1031,6 +1032,29 @@ public class MainActivity extends FragmentActivity
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().removeObservers(this);
 	}
 
+	private void loadAboutText()
+	{
+		ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
+		ActivityManager am = (ActivityManager)getSystemService(ACTIVITY_SERVICE);
+		am.getMemoryInfo(memInfo);
+
+		// App's own memory usage
+		Runtime runtime = Runtime.getRuntime();
+		long usedMemory = runtime.totalMemory() - runtime.freeMemory();
+		long maxMemory = runtime.maxMemory();
+
+		float USEDMEMORY = usedMemory / 1_048_576f;
+		float MAXMEMORY = maxMemory / 1_048_576f;
+
+		MaterialTextView tv1 = findViewById(R.id.aboutText);
+		String about_blurb = weeWXApp.current_about_blurb
+				.replace("USEDMEMORY", String.format("%.1f MB", USEDMEMORY))
+				.replace("MAXMEMORY", String.format("%.1f MB", MAXMEMORY));
+
+		tv1.setText(HtmlCompat.fromHtml(about_blurb, HtmlCompat.FROM_HTML_MODE_COMPACT));
+		tv1.setMovementMethod(LinkMovementMethod.getInstance());
+	}
+
 	@Override
 	protected void onResume()
 	{
@@ -1071,26 +1095,6 @@ public class MainActivity extends FragmentActivity
 		UpdateCheck.setNextAlarm();
 
 		UpdateCheck.runInTheBackground(false, false);
-
-		ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
-		ActivityManager am = (ActivityManager)getSystemService(ACTIVITY_SERVICE);
-		am.getMemoryInfo(memInfo);
-
-		// App's own memory usage
-		Runtime runtime = Runtime.getRuntime();
-		long usedMemory = runtime.totalMemory() - runtime.freeMemory();
-		long maxMemory = runtime.maxMemory();
-
-		float USEDMEMORY = usedMemory / 1_048_576f;
-		float MAXMEMORY = maxMemory / 1_048_576f;
-
-		MaterialTextView tv1 = findViewById(R.id.aboutText);
-		String about_blurb = weeWXApp.current_about_blurb
-				.replace("USEDMEMORY", String.format("%.1f MB", USEDMEMORY))
-				.replace("MAXMEMORY", String.format("%.1f MB", MAXMEMORY));
-
-		tv1.setText(HtmlCompat.fromHtml(about_blurb, HtmlCompat.FROM_HTML_MODE_COMPACT));
-		tv1.setMovementMethod(LinkMovementMethod.getInstance());
 	}
 
 	@Override
