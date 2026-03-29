@@ -93,7 +93,7 @@ public class WebViewPreloader
 				if(wv == null)
 				{
 					wv = new SafeWebView(weeWXApp.getInstance());
-					wv.setOnPageFinishedListener((wv, wvurl) ->
+					wv.setOnCustomPageFinishedListener((wv, wvurl) ->
 					{
 						if(false)
 							LogMessage("Have a hit for wvurl: " + wvurl);

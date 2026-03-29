@@ -118,13 +118,13 @@ public class Forecast extends Fragment implements View.OnClickListener
 		FrameLayout fl = rootView.findViewById(R.id.radarFrameLayout);
 		fl.addView(radarWebView);
 
-		forecastWebView.setOnPageFinishedListener((v, url) ->
+		forecastWebView.setOnCustomPageFinishedListener((v, url) ->
 		{
 			LogMessage("forecastWebView.onPageFinished()");
 			stopRefreshing();
 		}, false);
 
-		radarWebView.setOnPageFinishedListener((v, url) ->
+		radarWebView.setOnCustomPageFinishedListener((v, url) ->
 		{
 			LogMessage("radarWebView.onPageFinished()");
 			stopRefreshing();

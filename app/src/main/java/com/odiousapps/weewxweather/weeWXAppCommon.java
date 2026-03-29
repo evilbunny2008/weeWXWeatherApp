@@ -70,7 +70,6 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 import java.util.ArrayList;
@@ -180,6 +179,7 @@ class weeWXAppCommon
 	static final SimpleDateFormat sdf17 = new SimpleDateFormat("EEE d, h:mm a", Locale.getDefault());
 	static final SimpleDateFormat sdf18 = new SimpleDateFormat("EEE d, MMMM yyyy h:mm a", Locale.getDefault());
 	static final SimpleDateFormat sdf19 = new SimpleDateFormat("h:mm a", Locale.getDefault());
+	static final SimpleDateFormat sdf20 = new SimpleDateFormat("h:mma", Locale.getDefault());
 
 	private static final BitmapFactory.Options options = new BitmapFactory.Options();
 
@@ -3040,13 +3040,6 @@ class weeWXAppCommon
 
 		TempResult temps = getTempResult();
 
-		for(int i = 0; i < temps.outTemp_trend_ts.length; i++)
-		{
-			LogMessage("outTemp_trend_ts[" + i + "]: " + sdf10.format(new Date(temps.outTemp_trend_ts[i])));
-			LogMessage("outTemp_trend_signal[" + i + "]: " + temps.outTemp_trend_signal[i]);
-			LogMessage("outTemp_trend_count[" + i + "]: " + temps.outTemp_trend_count[i]);
-		}
-
 		// Don't trigger temp alerts before 6am
 		if(cal.get(Calendar.HOUR_OF_DAY) < 6)
 			return;
@@ -3119,16 +3112,32 @@ class weeWXAppCommon
 
 			float maxObservedTemp = Math.max(temps.CurrTemp, temps.maxObservedTemp);
 
-			//boolean hasPeaked = (temps.hasPeaked || cal.get(Calendar.HOUR_OF_DAY) >= 16) && temps.CurrTemp < maxObservedTemp;
+			for(int i = 0; i < temps.outTemp_trend_ts.length; i++)
+			{
+				LogMessage("checkTempAlerts() outTemp_trend_ts[" + i + "]: " + sdf10.format(new Date(temps.outTemp_trend_ts[i])));
+				LogMessage("checkTempAlerts() outTemp_trend_signal[" + i + "]: " + temps.outTemp_trend_signal[i]);
+				LogMessage("checkTempAlerts() outTemp_trend_count[" + i + "]: " + temps.outTemp_trend_count[i]);
+			}
 
-			//LogMessage("checkTempAlerts() hasPeaked: " + hasPeaked);
+			if(temps.outTemp_trend_signal.length == 0)
+			{
+				LogMessage("checkTempAlerts() temps.outTemp_trend_signal.length == 0, skipping temp limit checks...");
+				return;
+			}
 
-			//boolean hasCooledOff = hasPeaked && temps.CurrTemp <= afternoon_temp_limit && maxObservedTemp > afternoon_temp_limit;
-			boolean hasCooledOff = false;
+			long last_ts = temps.outTemp_trend_ts[0];
+			int last_signal = temps.outTemp_trend_signal[0];
+			int last_count = temps.outTemp_trend_count[0];
 
-			LogMessage("checkTempAlerts() hasCooledOff: " + hasCooledOff);
+			boolean hasPeaked = (last_signal == -1 || cal.get(Calendar.HOUR_OF_DAY) >= 16) && temps.CurrTemp < maxObservedTemp;
 
-			if(hasCooledOff)
+			LogMessage("checkTempAlerts() hasPeaked: " + hasPeaked);
+
+			boolean hasCooledOffEnough = hasPeaked && temps.CurrTemp <= afternoon_temp_limit && maxObservedTemp > afternoon_temp_limit;
+
+			LogMessage("checkTempAlerts() hasCooledOffEnough: " + hasCooledOffEnough);
+
+			if(hasCooledOffEnough)
 			{
 				KeyValue.putVar("LastAfternoonTempAlert", System.currentTimeMillis());
 				weeWXApp.sendTemperatureAlert(temps.CurrTemp, afternoon_temp_limit, true);
@@ -3259,8 +3268,7 @@ class weeWXAppCommon
 		Calendar cal2 = Calendar.getInstance();
 		cal2.setTimeInMillis(when);
 
-		SimpleDateFormat sdf = new SimpleDateFormat("HH:mm", Locale.getDefault());
-		String str = sdf.format(when);
+		String str = sdf20.format(when);
 
 		if(cal1.get(Calendar.YEAR) != cal2.get(Calendar.YEAR) ||
 		   cal1.get(Calendar.DAY_OF_YEAR) != cal2.get(Calendar.DAY_OF_YEAR))
@@ -3301,7 +3309,7 @@ class weeWXAppCommon
 			mon = mon.substring(0, 3);
 
 		sdf = new SimpleDateFormat("yy", Locale.getDefault());
-		return mon + " " + sdf.format(when);
+		return mon + " '" + sdf.format(when);
 	}
 
 	static String formatString(String element)

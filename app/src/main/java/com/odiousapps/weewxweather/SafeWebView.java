@@ -71,7 +71,10 @@ public class SafeWebView extends WebView
 	void initSettings()
 	{
 		if(hasBeenDestroyed)
+		{
+			LogMessage("SafeWebView.initSettings() hasBeenDestroyed is true, stop actions on dead webviews...");
 			return;
+		}
 
 		bad_paths.add("favicon.ico");
 
@@ -113,45 +116,70 @@ public class SafeWebView extends WebView
 	public void destroy()
 	{
 		if(hasBeenDestroyed)
+		{
+			LogMessage("SafeWebView.destroy() hasBeenDestroyed is true, stop actions on dead webviews...");
 			return;
+		}
+
+		//LogMessage("SafeWebView.destroy() setting hasBeenDestroyed to true, finish destroying now...");
+		hasBeenDestroyed = true;
 
 		try
 		{
-			hasBeenDestroyed = true;
+			//LogMessage("SafeWebView.destroy() stopping WebView loading...");
 			stopLoading();
-			removeAllViews();
+		} catch(Exception ignored) {}
+
+		try
+		{
+			//LogMessage("SafeWebView.destroy() clearing cache, history and formdata...");
 			clearCache(true);
 			clearHistory();
 			clearFormData();
-			removeJavascriptInterface("AndroidBridge");
-
-			ViewGroup parent = (ViewGroup)getParent();
-			if(parent != null)
-				parent.removeView(this);
-
-			CookieManager cookieManager = CookieManager.getInstance();
-			cookieManager.removeAllCookies(null);
-			cookieManager.flush();
-
-			LogMessage("SafeWebView.destroy() Finished destroying myself!");
-		} catch(Exception e) {
-			doStackOutput(e);
-		}
+		} catch(Exception ignored) {}
 
 		try
 		{
-			LogMessage("SafeWebView.destroy() calling super.destroy()");
-			super.destroy();
+			//LogMessage("SafeWebView.destroy() wiping cookies...");
+			CookieManager cookieManager = CookieManager.getInstance();
+			cookieManager.removeAllCookies(null);
+			cookieManager.flush();
 		} catch(Exception ignored) {}
+
+		try
+		{
+			//LogMessage("SafeWebView.destroy() removing any bridges...");
+			removeJavascriptInterface("AndroidBridge");
+		} catch(Exception ignored) {}
+
+		try
+		{
+			//LogMessage("SafeWebView.destroy() removing from any parents...");
+			ViewGroup parent = (ViewGroup)getParent();
+			if(parent != null)
+				parent.removeView(this);
+		} catch(Exception ignored) {}
+
+		try
+		{
+			//LogMessage("SafeWebView.destroy() removing any views");
+			removeAllViews();
+		} catch(Exception ignored) {}
+
+		//LogMessage("SafeWebView.destroy() calling super.destroy()");
+		super.destroy();
 	}
 
 	@Override
 	public void loadUrl(@NonNull String url)
 	{
 		if(hasBeenDestroyed)
+		{
+			LogMessage("SafeWebView.loadUrl() hasBeenDestroyed is true, stop actions on dead webviews...");
 			return;
+		}
 
-		LogMessage("Loading URL: " + url);
+		//LogMessage("SafeWebView.loadUrl() Loading URL: " + url);
 		this.Url = url;
 		this.baseUrl = null;
 		this.data = null;
@@ -164,9 +192,12 @@ public class SafeWebView extends WebView
 	public void loadDataWithBaseURL(String baseUrl, @NonNull String data, String mimeType, String encoding, String historyUrl)
 	{
 		if(hasBeenDestroyed)
+		{
+			LogMessage("SafeWebView.loadDataWithBaseURL() hasBeenDestroyed is true, stop actions on dead webviews...");
 			return;
+		}
 
-		LogMessage("SafeWebView.loadDataWithBaseURL() calling super.loadDataWithBaseURL()");
+		//LogMessage("SafeWebView.loadDataWithBaseURL() calling super.loadDataWithBaseURL()");
 		this.Url = null;
 		this.baseUrl = baseUrl;
 		this.data = data;
@@ -176,7 +207,7 @@ public class SafeWebView extends WebView
 		super.loadDataWithBaseURL(baseUrl, data, mimeType, encoding, historyUrl);
 	}
 
-	public void setOnPageFinishedListener(final OnPageFinishedListener listener, final boolean overrideRequest)
+	public void setOnCustomPageFinishedListener(final OnCustomPageFinishedListener listener, final boolean overrideRequest)
 	{
 		if(overrideRequest)
 		{
@@ -186,7 +217,10 @@ public class SafeWebView extends WebView
 			    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail detail)
 				{
 					if(hasBeenDestroyed)
+					{
+						//LogMessage("SafeWebView.onRenderProcessGone() hasBeenDestroyed is true, stop actions on dead webviews...");
 						return false;
+					}
 
 					if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 					{
@@ -209,16 +243,22 @@ public class SafeWebView extends WebView
 					super.onPageFinished(view, url);
 
 					if(hasBeenDestroyed)
+					{
+						//LogMessage("SafeWebView.onPageFinished() hasBeenDestroyed is true, stop actions on dead webviews...");
 						return;
+					}
 
-					listener.onPageFinished(SafeWebView.this, url);
+					listener.onCustomPageFinished(SafeWebView.this, url);
 				}
 
 				@Override
 				public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request)
 				{
 					if(hasBeenDestroyed)
+					{
+						//LogMessage("SafeWebView.shouldInterceptRequest() hasBeenDestroyed is true, stop actions on dead webviews...");
 						return null;
+					}
 
 					String url = request.getUrl().toString().strip();
 					if(url.isBlank())
@@ -240,7 +280,7 @@ public class SafeWebView extends WebView
 
 						if(bad_paths.contains(path))
 						{
-							LogMessage("SafeWebView.shouldInterceptRequest() Bad path found: " + path);
+							//LogMessage("SafeWebView.shouldInterceptRequest() Bad path found: " + path);
 							return null;
 						}
 					}
@@ -260,7 +300,7 @@ public class SafeWebView extends WebView
 					{
 						byte[] bytes = response.body().bytes();
 
-						LogMessage("SafeWebView.shouldInterceptRequest() Got a response of " + bytes.length);
+						//LogMessage("SafeWebView.shouldInterceptRequest() Got a response of " + bytes.length);
 
 						ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
 
@@ -297,7 +337,10 @@ public class SafeWebView extends WebView
 			    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail detail)
 				{
 					if(hasBeenDestroyed)
+					{
+						//LogMessage("SafeWebView.onRenderProcessGone() hasBeenDestroyed is true, stop actions on dead webviews...");
 						return false;
+					}
 
 					if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 					{
@@ -320,9 +363,12 @@ public class SafeWebView extends WebView
 					super.onPageFinished(view, url);
 
 					if(hasBeenDestroyed)
+					{
+						//LogMessage("SafeWebView.onPageFinished() hasBeenDestroyed is true, stop actions on dead webviews...");
 						return;
+					}
 
-					listener.onPageFinished(SafeWebView.this, url);
+					listener.onCustomPageFinished(SafeWebView.this, url);
 				}
 			});
 		}
@@ -331,19 +377,26 @@ public class SafeWebView extends WebView
 	private void restartWebview(SafeWebView webViewToRemake)
 	{
 		if(hasBeenDestroyed)
+		{
+			//LogMessage("SafeWebView.restartWebview() hasBeenDestroyed is true, stop actions on dead webviews...");
 			return;
+		}
 
 		webViewToRemake.destroy();
 		webViewToRemake = new SafeWebView(weeWXApp.getInstance());
 		if(this.Url != null)
+		{
+			LogMessage("SafeWebView.restartWebview() restarting with URL: " + this.Url);
 			webViewToRemake.loadUrl(this.Url);
-		else if(this.data != null)
+		} else if(this.data != null) {
+			LogMessage("SafeWebView.restartWebview() restarting with data...");
 			webViewToRemake.loadDataWithBaseURL(this.baseUrl, this.data, this.mimeType, this.encoding, this.historyUrl);
+		}
 	}
 
-	public interface OnPageFinishedListener
+	public interface OnCustomPageFinishedListener
 	{
-		void onPageFinished(SafeWebView view, String url);
+		void onCustomPageFinished(SafeWebView view, String url);
 	}
 
 	static final class myWebChromeClient extends WebChromeClient
@@ -358,9 +411,9 @@ public class SafeWebView extends WebView
 			if(msg.startsWith("message="))
 			{
 				msg = msg.substring(8);
-				LogMessage("ConsoleMessage: " + msg, KeyValue.d);
+				LogMessage("SafeWebView.onConsoleMessage(): " + msg, KeyValue.d);
 			} else
-				LogMessage("ConsoleMessage: " + msg, KeyValue.v);
+				LogMessage("SafeWebView.onConsoleMessage(): " + msg, KeyValue.v);
 
 			return true;
 		}

@@ -86,7 +86,7 @@ public class Stats extends Fragment
 
 		wv.getViewTreeObserver().addOnScrollChangedListener(scl);
 
-		wv.setOnPageFinishedListener((v, url) ->
+		wv.setOnCustomPageFinishedListener((v, url) ->
 		{
 			LogMessage("Stats.setOnPageFinishedListener()");
 
@@ -464,7 +464,7 @@ public class Stats extends Fragment
 			if(since_hour > 0)
 				rain = formatString("since_yesterday");
 
-			since = getSinceHour(since_hour, R.string.before);
+			since = getSinceHour(since_hour, R.string.since);
 		}
 
 		if(timeMode == 0)

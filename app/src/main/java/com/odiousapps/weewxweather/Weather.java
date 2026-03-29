@@ -37,6 +37,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getSinceHour;
 import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
 import static com.odiousapps.weewxweather.weeWXAppCommon.sdf18;
+import static com.odiousapps.weewxweather.weeWXAppCommon.sdf20;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
 @SuppressWarnings({"unused", "deprecation"})
@@ -204,6 +205,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		//boolean dynamicSizing = viewid == R.id.current && weeWXApp.getWidth() < 1100;
 
+		LogMessage("Weather.java loadWebview() isCurrent: " + isCurrent);
 		LogMessage("Weather.java loadWebview() height: " + weeWXApp.getHeight());
 		LogMessage("Weather.java loadWebview() width: " + weeWXApp.getWidth());
 		LogMessage("Weather.java loadWebview() density: " + weeWXApp.getDensity());
@@ -224,7 +226,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(doSwipe)
 			webView.getViewTreeObserver().addOnScrollChangedListener(scl);
 
-		webView.setOnPageFinishedListener((v, url) ->
+		webView.setOnCustomPageFinishedListener((v, url) ->
 		{
 			if(url.strip().equals("data:text/html,"))
 			{
@@ -232,10 +234,11 @@ public class Weather extends Fragment implements View.OnClickListener
 				return;
 			}
 
-			LogMessage("Just loaded URL: " + url);
+			LogMessage("Weather.java loadWebview() Just loaded URL: " + url);
 
 			if(isCurrent)
 			{
+				LogMessage("Weather.java loadWebview() triggering newAttempt() resize code");
 				newAttempt(1, v);
 				return;
 			}
@@ -253,12 +256,12 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		if(attempt > 3)
 		{
-			LogMessage("newAttempt) Attempt #4, we'll stop refreshing and return...");
+			LogMessage("newAttempt() Attempt #4, we'll stop refreshing and return...");
 			stopRefreshing();
 			return;
 		}
 
-		LogMessage("newAttempt) Attempt #" + attempt + ", setting a new scheduler...");
+		LogMessage("newAttempt() Attempt #" + attempt + ", setting a new scheduler...");
 		scheduler.schedule(() -> adjustHeight(webView, attempt), attempt * 100L, TimeUnit.MILLISECONDS);
 	}
 
@@ -273,15 +276,19 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(webView == null || current == null)
 		{
+			LogMessage("adjustHeight() webView == null || current == null...");
 			stopRefreshing();
 			return;
 		}
 
+		LogMessage("adjustHeight() Processing attempt #" + attempt + "...");
+
 		LogMessage("adjustHeight() current.getHeight(): " + current.getHeight());
 		LogMessage("adjustHeight() swipeLayout.getHeight(): " + swipeLayout.getHeight());
 
-		if(current.getHeight() == 0 || swipeLayout.getHeight() == 0)
+		if(webView.getHeight() == 0 || swipeLayout.getHeight() == 0)
 		{
+			LogMessage("adjustHeight() webView.getHeight() == 0 || swipeLayout.getHeight() == 0");
 			newAttempt(attempt + 1, webView);
 			return;
 		}
@@ -311,11 +318,11 @@ public class Weather extends Fragment implements View.OnClickListener
 					})();
 					""", value ->
 				{
-					LogMessage("value: " + value);
+					LogMessage("adjustHeight() value: " + value);
 
 					if(value == null || value.isBlank() || value.equalsIgnoreCase("null"))
 					{
-						LogMessage("current.evaluateJavascript() value is null " +
+						LogMessage("adjustHeight() webView.evaluateJavascript() value is null " +
 						                          "or blank or equals 'null'", KeyValue.v);
 
 						newAttempt(attempt + 1, webView);
@@ -325,11 +332,11 @@ public class Weather extends Fragment implements View.OnClickListener
 					//doStackTrace(0);
 
 					int heightInPx = str2Int(value);
-					LogMessage("From Javascript heightInPx: " + heightInPx);
+					LogMessage("adjustHeight() From Javascript heightInPx: " + heightInPx);
 
 					if(heightInPx == 0)
 					{
-						LogMessage("heightInPx is 0 skipping...");
+						LogMessage("adjustHeight() heightInPx is 0 skipping...");
 
 						newAttempt(attempt + 1, webView);
 						return;
@@ -338,7 +345,7 @@ public class Weather extends Fragment implements View.OnClickListener
 //					if((heightInPx > 0 && heightInPx < 200) || heightInPx > 250)
 					if(heightInPx > 250)
 					{
-						LogMessage("heightInPx is out of bounds...");
+						LogMessage("adjustHeight() heightInPx is out of bounds...");
 						//current.post(() -> current.reload());
 						//current.post(() -> current.invalidate());
 						if(!current.isInLayout())
@@ -350,18 +357,18 @@ public class Weather extends Fragment implements View.OnClickListener
 
 					// Post a Runnable to make sure contentHeight is available
 					float density =  weeWXApp.getDensity();
-					LogMessage("1DP: " + density);
+					LogMessage("adjustHeight() 1DP: " + density);
 					int height = Math.round(heightInPx * density);
-					LogMessage("height in DP: " + height);
+					LogMessage("adjustHeight() height in DP: " + height);
 
 					int contentHeightPx = tv1.getHeight() + tv2.getHeight() + height;
-					LogMessage("contentHeightPx: " + contentHeightPx);
+					LogMessage("adjustHeight() contentHeightPx: " + contentHeightPx);
 
 					ViewGroup.LayoutParams params = swipeLayout.getLayoutParams();
 
 					if(params.height != contentHeightPx)
 					{
-						LogMessage("params.height != contentHeightPx");
+						LogMessage("adjustHeight() params.height != contentHeightPx");
 						params.height = contentHeightPx;
 						swipeLayout.post(() -> swipeLayout.setLayoutParams(params));
 						newAttempt(attempt + 1, webView);
@@ -665,10 +672,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
 		long sunrise = Math.round((double)getJson("sun_rise", 0D) * 1_000L);
-		long sunset = Math.round((double)getJson("sun_set", 0D) * 1_000L);
-
-		tmpStr = getDateTimeStr(sunrise, 0);
-		if(tmpStr == null || tmpStr.isBlank())
+		if(sunrise == 0)
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
@@ -676,15 +680,15 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(tmpStr)
+				.append(sdf20.format(new Date(sunrise)))
 				.append("</div>\n");
 
-		tmpStr = getDateTimeStr(sunset, 0);
-		if(tmpStr == null || tmpStr.isBlank())
+		long sunset = Math.round((double)getJson("sun_set", 0D) * 1_000L);
+		if(sunset == 0)
 			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(tmpStr)
+				.append(sdf20.format(new Date(sunset)))
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -749,7 +753,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		{
 			wv.post(() ->
 			{
-				LogMessage("text.length(): " + text.length());
+				LogMessage("loadAndShowWebView() text.length(): " + text.length());
 				wv.loadDataWithBaseURL("file:///android_asset/", text, "text/html", "utf-8", null);
 
 				if(isCurrnet)
@@ -757,21 +761,21 @@ public class Weather extends Fragment implements View.OnClickListener
 					wv.postDelayed(() ->
 					{
 						float density = weeWXApp.getDensity();
-						LogMessage("density: " + density);
-						LogMessage("current.getHeight(): " + current.getHeight());
+						LogMessage("loadAndShowWebView() density: " + density);
+						LogMessage("loadAndShowWebView() current.getHeight(): " + current.getHeight());
 
 						int heightInPx = Math.round(current.getHeight() / density);
-						LogMessage("heightInPx: " + heightInPx);
+						LogMessage("loadAndShowWebView() heightInPx: " + heightInPx);
 
 						if(heightInPx == 0)
 						{
-							LogMessage("heightInPx is 0 skipping...");
+							LogMessage("loadAndShowWebView() heightInPx is 0 skipping...");
 							return;
 						}
 
 						if(heightInPx < 120 || heightInPx > 250)
 						{
-							LogMessage("heightInPx is out of bounds " + heightInPx + ", reloading and invalidating...");
+							LogMessage("loadAndShowWebView() heightInPx is out of bounds " + heightInPx + ", reloading and invalidating...");
 							//current.post(() -> current.reload());
 							//current.post(() -> current.invalidate());
 							if(!current.isInLayout())
@@ -790,21 +794,21 @@ public class Weather extends Fragment implements View.OnClickListener
 				if(isCurrnet)
 				{
 					float density = weeWXApp.getDensity();
-					LogMessage("density: " + density);
-					LogMessage("current.getHeight(): " + current.getHeight());
+					LogMessage("loadAndShowWebView() density: " + density);
+					LogMessage("loadAndShowWebView() current.getHeight(): " + current.getHeight());
 
 					int heightInPx = Math.round(current.getHeight() / density);
-					LogMessage("heightInPx: " + heightInPx);
+					LogMessage("loadAndShowWebView() heightInPx: " + heightInPx);
 
 					if(heightInPx == 0)
 					{
-						LogMessage("heightInPx is 0 skipping...");
+						LogMessage("loadAndShowWebView() heightInPx is 0 skipping...");
 						return;
 					}
 
 					if(heightInPx < 120 || heightInPx > 250)
 					{
-						LogMessage("heightInPx is out of bounds " + heightInPx + "reloading and invalidating...");
+						LogMessage("loadAndShowWebView() heightInPx is out of bounds " + heightInPx + "reloading and invalidating...");
 						current.post(() -> current.reload());
 						//current.post(() -> current.invalidate());
 					}
@@ -820,21 +824,21 @@ public class Weather extends Fragment implements View.OnClickListener
 				if(isCurrnet)
 				{
 					float density = weeWXApp.getDensity();
-					LogMessage("density: " + density);
-					LogMessage("current.getHeight(): " + current.getHeight());
+					LogMessage("loadAndShowWebView() density: " + density);
+					LogMessage("loadAndShowWebView() current.getHeight(): " + current.getHeight());
 
 					int heightInPx = Math.round(current.getHeight() / density);
-					LogMessage("heightInPx: " + heightInPx);
+					LogMessage("loadAndShowWebView() heightInPx: " + heightInPx);
 
 					if(heightInPx == 0)
 					{
-						LogMessage("heightInPx is 0 skipping...");
+						LogMessage("loadAndShowWebView() heightInPx is 0 skipping...");
 						return;
 					}
 
 					if(heightInPx < 120 || heightInPx > 250)
 					{
-						LogMessage("heightInPx is out of bounds " + heightInPx + ", invalidating...");
+						LogMessage("loadAndShowWebView() heightInPx is out of bounds " + heightInPx + ", invalidating...");
 						current.post(() -> current.invalidate());
 					}
 				}
@@ -947,7 +951,8 @@ public class Weather extends Fragment implements View.OnClickListener
 		//	CustomDebug.writeOutput(requireContext(), "current_conditions", str, isVisible(), requireActivity());
 
 		loadAndShowWebView(current, str, null, true);
-		LogMessage("forceCurrentRefresh() calling loadAndShowWebView()");
+		newAttempt(1, current);
+		//LogMessage("forceCurrentRefresh() calling loadAndShowWebView()");
 	}
 
 	private void forceRefresh()
