@@ -2652,7 +2652,7 @@ class weeWXAppCommon
 		NotificationManager.updateNotificationMessage(action);
 	}
 
-	static Boolean passesRegularCheck(boolean forced, String lastDownload)
+	static Boolean passesRegularCheck(boolean forced, String lastJsonDownload)
 	{
 		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
 		LogMessage("passesRegularCheck() pos: " + pos + ", update interval set to: " +
@@ -2667,9 +2667,9 @@ class weeWXAppCommon
 
 		if(!forced && pos == 0)
 		{
-			if(lastDownload == null || lastDownload.isBlank())
+			if(lastJsonDownload == null || lastJsonDownload.isBlank())
 			{
-				LogMessage("passesRegularCheck() lastDownload is null or blank...", KeyValue.d);
+				LogMessage("passesRegularCheck() lastJsonDownload is null or blank...", KeyValue.d);
 				KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
 				return false;
 			}
@@ -2683,7 +2683,7 @@ class weeWXAppCommon
 		{
 			LogMessage("passesRegularCheck() Skipping, period is invalid or set to manual refresh only...", KeyValue.d);
 
-			if(lastDownload == null || lastDownload.isBlank())
+			if(lastJsonDownload == null || lastJsonDownload.isBlank())
 			{
 				KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
 				return false;
@@ -2696,7 +2696,7 @@ class weeWXAppCommon
 		{
 			LogMessage("passesRegularCheck() Skipping, lastDownloadTime == 0, app hasn't been setup...", KeyValue.d);
 
-			if(lastDownload == null || lastDownload.isBlank())
+			if(lastJsonDownload == null || lastJsonDownload.isBlank())
 			{
 				KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.no_download_or_app_not_setup));
 				return false;
@@ -2709,9 +2709,9 @@ class weeWXAppCommon
 		if(!forced && npwsll.lastDownloadTime > npwsll.lastStart)
 		{
 			LogMessage("passesRegularCheck() !forced && " + npwsll.lastDownloadTime + " > " + npwsll.lastStart + "...");
-			if(lastDownload != null && !lastDownload.isBlank())
+			if(lastJsonDownload != null && !lastJsonDownload.isBlank())
 			{
-				LogMessage("passesRegularCheck() lastDownload != null && !lastDownload.isBlank()... Skipping...", KeyValue.d);
+				LogMessage("passesRegularCheck() lastJsonDownload != null && !lastJsonDownload.isBlank()... Skipping...", KeyValue.d);
 				return true;
 			}
 		}
@@ -2725,17 +2725,17 @@ class weeWXAppCommon
 
 		long now = System.currentTimeMillis();
 
-		if(!KeyValue.isPrefSet("BASE_URL"))
+		if(!KeyValue.isPrefSet("JSON_URL"))
 		{
-			LogMessage("getWeather() baseURL isn't set...");
+			LogMessage("getWeather() jsonURL isn't set...");
 			KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.data_url_was_blank));
 			return false;
 		}
 
-		String baseURL = (String)KeyValue.readVar("BASE_URL", "");
+		String baseURL = (String)KeyValue.readVar("JSON_URL", "");
 		if(baseURL == null || baseURL.isBlank())
 		{
-			LogMessage("getWeather() baseURL == null || baseURL.isBlank()...");
+			LogMessage("getWeather() jsonURL == null || jsonURL.isBlank()...");
 			KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.data_url_was_blank));
 			return false;
 		}
@@ -2745,7 +2745,7 @@ class weeWXAppCommon
 		{
 			if(lastJsonDownload == null || lastJsonDownload.isBlank())
 			{
-				LogMessage("getWeather() lastDownload is null or blank...");
+				LogMessage("getWeather() lastJsonDownload is null or blank...");
 				KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.wifi_not_available));
 				return false;
 			} else {
@@ -2762,12 +2762,12 @@ class weeWXAppCommon
 
 			if(lastJsonDownload == null || lastJsonDownload.isBlank())
 			{
-				LogMessage("getWeather() lastDownload is null or blank...");
+				LogMessage("getWeather() lastJsonDownload is null or blank...");
 				KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.wifi_not_available));
 				return false;
 			}
 
-			LogMessage("getWeather() lastDownload is not null or blank...");
+			LogMessage("getWeather() lastJsonDownload is not null or blank...");
 			return true;
 		}
 
@@ -3404,13 +3404,6 @@ class weeWXAppCommon
 	static boolean reallyGetWeather(String url) throws InterruptedException, IOException
 	{
 		LogMessage("reallyGetWeather() url: " + url);
-
-		if(!url.toLowerCase(Locale.ENGLISH).strip().endsWith(".json"))
-		{
-			LogMessage("reallyGetWeather() sendAlert2() triggered because URL (" + url + ") doesm't end in .json");
-			sendAlert2();
-			return false;
-		}
 
 		long now = System.currentTimeMillis();
 

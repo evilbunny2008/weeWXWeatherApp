@@ -657,6 +657,13 @@ public class MainActivity extends FragmentActivity
 		boolean wo, met, rii, si, sr, sf, uea, sadl, nm, fdm, mta, ata, rfa, rra_watch, rra_warning, rra_severe;
 		int mt, at, rfl;
 
+		boolean hasJsonUrl = KeyValue.isPrefSet("JSON_URL");
+		if(!hasJsonUrl)
+		{
+			LogMessage("MainActivity.onCreate() showUpdateAvailable2() triggered because no JSON URL detected.");
+			showUpdateAvailable2();
+		}
+
 		UpdateFrequency = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
 		UpdateInterval = (int)KeyValue.readVar("UpdateInterval", weeWXApp.UpdateInterval_default);
 		DayNightMode = (int)KeyValue.readVar("DayNightMode", weeWXApp.DayNightMode_default);
@@ -1065,8 +1072,23 @@ public class MainActivity extends FragmentActivity
 
 		UpdateCheck.runInTheBackground(false, false);
 
+		ActivityManager.MemoryInfo memInfo = new ActivityManager.MemoryInfo();
+		ActivityManager am = (ActivityManager)getSystemService(ACTIVITY_SERVICE);
+		am.getMemoryInfo(memInfo);
+
+		// App's own memory usage
+		Runtime runtime = Runtime.getRuntime();
+		long usedMemory = runtime.totalMemory() - runtime.freeMemory();
+		long maxMemory = runtime.maxMemory();
+
+		float USEDMEMORY = usedMemory / 1_048_576f;
+		float MAXMEMORY = maxMemory / 1_048_576f;
+
 		MaterialTextView tv1 = findViewById(R.id.aboutText);
-		String about_blurb = weeWXApp.current_about_blurb;
+		String about_blurb = weeWXApp.current_about_blurb
+				.replace("USEDMEMORY", String.format("%.1f MB", USEDMEMORY))
+				.replace("MAXMEMORY", String.format("%.1f MB", MAXMEMORY));
+
 		tv1.setText(HtmlCompat.fromHtml(about_blurb, HtmlCompat.FROM_HTML_MODE_COMPACT));
 		tv1.setMovementMethod(LinkMovementMethod.getInstance());
 	}
@@ -1444,7 +1466,7 @@ public class MainActivity extends FragmentActivity
 				.setMessage(str)
 				.setPositiveButton(getAndroidString(R.string.ok), (dialog_interface, i) ->
 				{
-					String url = "https://github.com/evilbunny2008/weeWXWeatherApp/releases/tag/1.99.108beta";
+					String url = "https://github.com/evilbunny2008/weeWXWeatherApp/wiki/JSON-formatted-data-file";
 					Intent urlIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
 					startActivity(urlIntent);
 				})
@@ -1532,7 +1554,7 @@ public class MainActivity extends FragmentActivity
 			boolean validURL3 = false;
 			boolean validURL5;
 
-			String baseURL = "", radtype = "", radarURL = "", forecastURL = "",
+			String jsonURL = "", radtype = "", radarURL = "", forecastURL = "",
 					webcamURL = "", CustomURL = "", appCustomURL, fctype = "", bomtown = "";
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
@@ -1582,7 +1604,7 @@ public class MainActivity extends FragmentActivity
 
 							switch(mb[0])
 							{
-								case "data" -> baseURL = mb[1].strip();
+								case "jsondata" -> jsonURL = mb[1].strip();
 								case "radar" -> radarURL = mb[1].strip();
 								case "radtype" -> radtype = mb[1].toLowerCase(Locale.ENGLISH).strip();
 								case "forecast" -> forecastURL = mb[1].strip();
@@ -1594,7 +1616,7 @@ public class MainActivity extends FragmentActivity
 							}
 						}
 
-						if(baseURL != null && radarURL != null && radtype != null &&
+						if(jsonURL != null && radarURL != null && radtype != null &&
 						   forecastURL != null && fctype != null)
 							validURL = true;
 					}
@@ -1605,7 +1627,7 @@ public class MainActivity extends FragmentActivity
 				errorStr = e.getLocalizedMessage();
 			}
 
-			LogMessage("processSettings() baseURL: " + baseURL);
+			LogMessage("processSettings() jsonURL: " + jsonURL);
 			LogMessage("processSettings() radarURL: " + radarURL);
 			LogMessage("processSettings() radtype: " + radtype);
 			LogMessage("processSettings() forecastURL: " + forecastURL);
@@ -2056,7 +2078,7 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			if(baseURL == null || baseURL.isBlank())
+			if(jsonURL == null || jsonURL.isBlank())
 			{
 				runOnUiThread(() ->
 				{
@@ -2077,8 +2099,8 @@ public class MainActivity extends FragmentActivity
 
 			try
 			{
-				LogMessage("processSettings() Checking baseURL: " + baseURL);
-				validURL1 = weeWXAppCommon.reallyGetWeather(baseURL);
+				LogMessage("processSettings() Checking jsonURL: " + jsonURL);
+				validURL1 = weeWXAppCommon.reallyGetWeather(jsonURL);
 			} catch(Exception e) {
 				doStackOutput(e);
 				errorStr = e.getLocalizedMessage();
@@ -2275,7 +2297,7 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("SETTINGS_URL", settingsURL.getText().toString());
 			KeyValue.putVar("UpdateFrequency", UpdateFrequency);
 			KeyValue.putVar("UpdateInterval", UpdateInterval);
-			KeyValue.putVar("BASE_URL", baseURL);
+			KeyValue.putVar("JSON_URL", jsonURL);
 
 			if(forecastURL == null || forecastURL.isBlank())
 			{

@@ -134,6 +134,10 @@ public class weeWXApp extends Application
 		<br/><br/>
 		weeWX Weather App vAPPVERSION
 	    is by <a href='https://odiousapps.com'>OdiousApps</a>.
+		<br/>
+	    <b>Memory Statistics:</b>
+	    <br/>
+	    USEDMEMORY / MAXMEMORY
 	""";
 
 	final static String debug_html = """
@@ -306,6 +310,8 @@ public class weeWXApp extends Application
 	Uri soundUri;
 
 	NotificationManager notificationManager;
+
+	record MemoryStats(float usedMemory, float maxMemory) {}
 
 	@Override
 	public void onCreate()
