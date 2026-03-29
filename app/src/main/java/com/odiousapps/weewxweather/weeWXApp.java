@@ -49,7 +49,6 @@ import androidx.core.content.ContextCompat;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
 @SuppressWarnings({"unused", "SameParameterValue"})
@@ -311,7 +310,34 @@ public class weeWXApp extends Application
 	@Override
 	public void onCreate()
 	{
+		super.onCreate();
+
 		instance = this;
+
+		Log.d("weeWXApp", "Attempting to load JSON data from shared prefs...");
+
+		String line = (String)KeyValue.readVar("LastJsonDownload", "");
+
+		JSONObject jsonObject = null;
+
+		try
+		{
+			jsonObject = new JSONObject(line);
+			Log.d("weeWXApp", "Successfully loaded JSON data from shared prefs...");
+		} catch(Exception ignored) {}
+
+		if(jsonObject != null && jsonObject.length() > 0)
+		{
+			KeyValue.parseDicts(jsonObject);
+
+			if(jsonObject.has("version"))
+			{
+				int version = jsonObject.optInt("version", 0);
+				Log.d("weeWXApp", "Inigo plugin version: " + version);
+			}
+		} else {
+			Log.d("weeWXApp", "Error loading JSON data from shared prefs...");
+		}
 
 		// Create the channel with the custom sound
 		audioAttributes = new AudioAttributes.Builder()
@@ -384,15 +410,13 @@ public class weeWXApp extends Application
 
 		fc_defaults.add(fcdef);
 
-		try
-		{
-			// Preload the weeWXAppCommon, KeyValue and WebViewPreloader classes
-			Class.forName("com.odiousapps.weewxweather.weeWXAppCommon");
-			Class.forName("com.odiousapps.weewxweather.KeyValue");
-			Class.forName("com.odiousapps.weewxweather.WebViewPreloader");
-		} catch(ClassNotFoundException ignored) {}
-
-		super.onCreate();
+//		try
+//		{
+//			// Preload the weeWXAppCommon, KeyValue and WebViewPreloader classes
+//			Class.forName("com.odiousapps.weewxweather.weeWXAppCommon");
+//			Class.forName("com.odiousapps.weewxweather.KeyValue");
+//			Class.forName("com.odiousapps.weewxweather.WebViewPreloader");
+//		} catch(ClassNotFoundException ignored) {}
 
 		PackageManager pm = weeWXApp.getInstance().getPackageManager();
 
@@ -494,10 +518,6 @@ public class weeWXApp extends Application
 		KeyValue.countyName = (String)KeyValue.readVar("CountyName", "");
 		KeyValue.bomLocation = (String)KeyValue.readVar("bomLocation", "");
 		KeyValue.bomGeohash = (String)KeyValue.readVar("bomGeohash", "");
-
-		JSONObject jsonObject = getJson();
-		if(jsonObject != null && jsonObject.length() > 0)
-			KeyValue.parseDicts(jsonObject);
 	}
 
 	@Override

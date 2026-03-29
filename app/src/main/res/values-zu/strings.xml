@@ -46,6 +46,7 @@
     <string name="interval_daily">Nsuku zonke</string>
     <string name="interval_hourly">Ngehora</string>
     <string name="invalid_update_interval">Ukuvuselelwa kwesikhashana akuvumelekile, ukubuyekeza izilungiselelo bese uzama futhi</string>
+    <string name="json_formatted_data">I-%1$s manje idinga ifayela ledatha le-%2$s elisuka kuseva ye-%3$s, udinga ukubuyekeza i-%4$s futhi ubuyekeze ifayela le-%5$s ngaphambi kokuthi lolu hlelo lokusebenza lusebenze kahle. Chofoza okuthi Kulungile ukuze uthole imininingwane eyengeziwe ku-%6$s</string>
     <string name="last_month_stats">Izibalo zenyanga edlule</string>
     <string name="last_year_stats">Izibalo zonyaka odlule</string>
     <string name="light_theme">Isihloko esikhanyayo</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Khombisa Isimo sezulu</string>
     <string name="show_radar">Khombisa i-radar</string>
     <string name="since">selokhu</string>
+    <string name="skip">Yeqa</string>
     <string name="stats2">Izibalo zokubonisa ukuma kwendaba</string>
     <string name="still_downloading_forecast_data">Usalanda idatha yesimo sezulu</string>
     <string name="swipe_lock">Swipe Lock</string>

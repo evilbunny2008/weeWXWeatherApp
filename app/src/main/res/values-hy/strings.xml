@@ -46,6 +46,7 @@
     <string name="interval_daily">Ամենօրյա</string>
     <string name="interval_hourly">Ժամային</string>
     <string name="invalid_update_interval">Թարմացման ընդմիջումն անվավեր է, թարմացրեք կարգավորումները և նորից փորձեք</string>
+    <string name="json_formatted_data">%1$s-ն այժմ պահանջում է %2$s տվյալների ֆայլ %3$s սերվերից, դուք պետք է թարմացնեք %4$s-ը և թարմացնեք %5$s ֆայլը, մինչև այս հավելվածը ճիշտ գործի: Սեղմեք Լավ՝ %6$s-ի վերաբերյալ լրացուցիչ մանրամասների համար</string>
     <string name="last_month_stats">Անցյալ ամսվա վիճակագրություն</string>
     <string name="last_year_stats">Անցյալ տարվա վիճակագրություն</string>
     <string name="light_theme">Թեթև թեմա</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Ցույց տալ կանխատեսումը</string>
     <string name="show_radar">Ցույց տալ Ռադարը</string>
     <string name="since">քանի որ</string>
+    <string name="skip">Բաց թողնել</string>
     <string name="stats2">Վիճակագրություն</string>
     <string name="still_downloading_forecast_data">Դեռևս ներբեռնվում են կանխատեսումների տվյալները</string>
     <string name="swipe_lock">Սահեցրեք կողպեքը</string>

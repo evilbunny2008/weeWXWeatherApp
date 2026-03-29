@@ -46,6 +46,7 @@
     <string name="interval_daily">Kotru dīnu</string>
     <string name="interval_hourly">Stuņžu</string>
     <string name="invalid_update_interval">Atjaunuojums intervals ir nadereigs, atjaunuošonys īstatejumi i tod raugi</string>
+    <string name="json_formatted_data">%1$s niu vajag %2$s datu failu nu %3$s servera, vajag atjaunuot %4$s i atjaunuot %5$s failu, pyrma itei līta dorbuosīs pareizi. Nūspīd Ok, lai sajimtu plašuoku informaceju par %6$s</string>
     <string name="last_month_stats">Pādejuo mieneša statistika</string>
     <string name="last_year_stats">Pādejuo goda statistika</string>
     <string name="light_theme">Gaismys tema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Paruodeit prognoze</string>
     <string name="show_radar">paruodit radaru</string>
     <string name="since">kūpš</string>
+    <string name="skip">Izlaist</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">100 doc#1281 Vēļ lejupluodēt prognozis datus</string>
     <string name="swipe_lock">Swipe Slēgšona</string>

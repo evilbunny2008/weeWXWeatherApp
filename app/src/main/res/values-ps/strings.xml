@@ -46,6 +46,7 @@
     <string name="interval_daily">ورځنی</string>
     <string name="interval_hourly">په ساعت کې</string>
     <string name="invalid_update_interval">د تازه کولو وقفه ناسمه ده، ترتیبات تازه کړئ او بیا هڅه وکړئ</string>
+    <string name="json_formatted_data">%1$s اوس د %3$s سرور څخه د %2$s ډیټا فایل ته اړتیا لري، تاسو اړتیا لرئ چې %4$s تازه کړئ او د %5$s فایل تازه کړئ مخکې لدې چې دا ایپ سم کار وکړي. په %6$s کې د نورو جزیاتو لپاره په هو کې کلیک وکړئ</string>
     <string name="last_month_stats">د تیرې میاشتې احصایې</string>
     <string name="last_year_stats">د تیر کال احصایې</string>
     <string name="light_theme">رڼا موضوع</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">وړاندوینه ښکاره کړئ</string>
     <string name="show_radar">رادار ښکاره کړئ</string>
     <string name="since">له هغه وخته</string>
+    <string name="skip">پریږده</string>
     <string name="stats2">احصایې</string>
     <string name="still_downloading_forecast_data">لاهم د وړاندوینې ډاټا ډاونلوډ کول</string>
     <string name="swipe_lock">سوائپ لاک</string>

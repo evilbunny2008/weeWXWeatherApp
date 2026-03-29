@@ -46,6 +46,7 @@
     <string name="interval_daily">Sahari-ari</string>
     <string name="interval_hourly">Sajam</string>
     <string name="invalid_update_interval">Interval update indak sah, pangaturan pambaruan dan kamudian mancubo baliak</string>
+    <string name="json_formatted_data">%1$s kini mamaralukan file data %2$s dari server %3$s, Sanak paralu mampabarui %4$s jo mampabarui file %5$s sabalun aplikasi ko bafungsi sacaro tapek. Klik Ok untuak labiah jalehnyo pado %6$s</string>
     <string name="last_month_stats">Statistik Bulan nan lalu</string>
     <string name="last_year_stats">Statistik Tahun nan lalu</string>
     <string name="light_theme">Tema Cahaya</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Tunjuakkan Ranah</string>
     <string name="show_radar">Tunjuakkan Radar</string>
     <string name="since">sajak</string>
+    <string name="skip">Malewati</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Masih mangunduakan data ramalan</string>
     <string name="swipe_lock">Kunci gegap</string>

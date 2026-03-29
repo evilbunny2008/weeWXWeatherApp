@@ -46,6 +46,7 @@
     <string name="interval_daily">Kuljum</string>
     <string name="interval_hourly">Kull siegħa</string>
     <string name="invalid_update_interval">L-intervall tal-aġġornament huwa invalidu, aġġorna s-settings u mbagħad erġa\' pprova</string>
+    <string name="json_formatted_data">Il-%1$s issa jeħtieġ fajl tad-dejta %2$s minn %3$s server, trid taġġorna l-%4$s u taġġorna l-fajl %5$s qabel ma din l-app taħdem b\'mod korrett. Ikklikkja Ok għal aktar dettalji dwar %6$s</string>
     <string name="last_month_stats">Statistika tax-Xahar li għadda</string>
     <string name="last_year_stats">Statistika tas-Sena li għaddiet</string>
     <string name="light_theme">Tema Dawl</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Uri Tbassir</string>
     <string name="show_radar">Uri Radar</string>
     <string name="since">peress li</string>
+    <string name="skip">Aqbeż</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Għadu qed iniżżel id-dejta tat-tbassir</string>
     <string name="swipe_lock">Swipe Lock</string>

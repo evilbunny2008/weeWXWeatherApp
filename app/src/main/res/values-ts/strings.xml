@@ -46,6 +46,7 @@
     <string name="interval_daily">Siku na siku</string>
     <string name="interval_hourly">Hi awara na awara</string>
     <string name="invalid_update_interval">Nkarhi wo pfuxeta a wu tirhi, u pfuxeta swiyimiso ivi u ringeta nakambe</string>
+    <string name="json_formatted_data">%1$s sweswi yi lava fayili ya data ya %2$s ku suka eka sevha ya %3$s, u fanele ku pfuxeta %4$s na ku pfuxeta fayili ya %5$s app leyi yi nga si tirha kahle. Click Ok ku kuma vuxokoxoko byo tala eka %6$s</string>
     <string name="last_month_stats">Tinhlayo ta n\'hweti leyi hundzeke</string>
     <string name="last_year_stats">Tinhlayo ta lembe leri nga hundza</string>
     <string name="light_theme">Nhlokomhaka ya ku vonakala</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Show forecast</string>
     <string name="show_radar">Show radar</string>
     <string name="since">ku sukela</string>
+    <string name="skip">Tlula</string>
     <string name="stats2">Tinhlayohlayo</string>
     <string name="still_downloading_forecast_data">Still downloading data ya vuprofeta</string>
     <string name="swipe_lock">Swipe lock</string>

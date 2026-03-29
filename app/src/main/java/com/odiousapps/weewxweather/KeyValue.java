@@ -10,7 +10,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+
+
+import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "ConstantValue"})
 class KeyValue
@@ -50,8 +54,8 @@ class KeyValue
 
 	static int since_hour = 0;
 
-	static HashMap<String, String> labels = new HashMap<>();
-	static HashMap<String, String> formats = new HashMap<>();
+	static final HashMap<String, String> labels = new HashMap<>();
+	static final HashMap<String, String> formats = new HashMap<>();
 
 	static JSONObject getDict(String dict_name, JSONObject jsonObject)
 	{
@@ -77,26 +81,59 @@ class KeyValue
 		JSONObject format_dict = getDict("unit_format_dict", jsonObject);
 		JSONObject label_dict = getDict("unit_label_dict", jsonObject);
 
-		if(group_dict == null || format_dict == null || label_dict == null)
+		if(group_dict == null || group_dict.length() == 0)
+		{
+			LogMessage("group_dict == null || group_dict.length() == 0");
 			return false;
+		}
+
+		if(format_dict == null || format_dict.length() == 0)
+		{
+			LogMessage("format_dict == null || format_dict.length() == 0");
+			return false;
+		}
+
+
+		if(label_dict == null || label_dict.length() == 0)
+		{
+			LogMessage("label_dict == null || label_dict.length() == 0");
+			return false;
+		}
 
 		Iterator<String> keys = group_dict.keys();
 		while(keys.hasNext())
 		{
 			String key = keys.next();
+
 			if(!key.startsWith("group_"))
 				continue;
 
+			String justkey = key.split("group_", 2)[1].strip();
+
 			String group_name = group_dict.optString(key);
 			if(group_name == null || group_name.isBlank())
-				continue;
-
-			if(label_dict.has(key) && format_dict.has(key))
 			{
-				String justkey = key.split("group_", 2)[1].strip();
-				labels.put(justkey, label_dict.optString(key).strip());
-				formats.put(justkey, format_dict.optString(key).strip());
+				LogMessage("group_name == null || group_name.isBlank()");
+				continue;
 			}
+
+			if(label_dict.has(group_name) && format_dict.has(group_name))
+			{
+				String label = label_dict.optString(group_name).strip();
+				String format = format_dict.optString(group_name).strip();
+
+				labels.put(justkey, label);
+				formats.put(justkey, format);
+			}
+
+//			if(!label_dict.has(group_name) || !format_dict.has(group_name))
+//			{
+//				LogMessage("key: " + key);
+//				LogMessage("justkey: " + justkey);
+//				LogMessage("group_name: " + group_name);
+//				LogMessage("label_dict.has(group_name): " + label_dict.has(group_name));
+//				LogMessage("format_dict.has(group_name): " + format_dict.has(group_name));
+//			}
 		}
 
 		return true;
@@ -104,12 +141,12 @@ class KeyValue
 
 	static String getFormat(String key)
 	{
-		return formats.getOrDefault(key, "");
+		return formats.get(key);
 	}
 
 	static String getLabel(String key, String defaultValue)
 	{
-		return labels.getOrDefault(key, defaultValue);
+		return labels.get(key);
 	}
 
 	static String getKeyFromName(String name)
@@ -119,7 +156,8 @@ class KeyValue
 
 		if(name.contains("_dewpoint_") || name.equals("current_dewpoint") ||
 		   name.contains("_inTemp_") || name.equals("current_inTemp") ||
-		   name.contains("_outTemp_") || name.equals("current_outTemp"))
+		   name.contains("_outTemp_") || name.equals("current_outTemp") ||
+		   name.equals("appTemp"))
 			return "temperature";
 
 		if(name.contains("_ET_") || name.contains("_rain_") ||
@@ -131,13 +169,15 @@ class KeyValue
 			return "percent";
 
 		if(name.contains("_radiation_") || name.equals("current_radiation"))
-			return "watt_per_meter_squared";
+			return "radiation";
 
 		if(name.contains("_UV_") || name.equals("current_UV"))
-			return "uv_index";
+			return "uv";
 
 		if(name.contains("_wind_") || name.equals("current_windSpeed") || name.equals("current_windGust"))
 			return "speed";
+
+		LogMessage(name + " not matched!");
 
 		return null;
 	}

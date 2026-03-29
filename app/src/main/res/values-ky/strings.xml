@@ -46,6 +46,7 @@
     <string name="interval_daily">Күнүмдүк</string>
     <string name="interval_hourly">Саат сайын</string>
     <string name="invalid_update_interval">Жаңыртуунун интервалы жараксыз, жөндөөлөрдү жаңыртып, андан кийин кайталаңыз</string>
+    <string name="json_formatted_data">%1$s азыр %3$s серверинен %2$s маалымат файлын талап кылат, бул колдонмо туура иштеши үчүн %4$s жана %5$s файлын жаңыртышыңыз керек. %6$s боюнча кененирээк маалымат алуу үчүн Ok чыкылдатыңыз</string>
     <string name="last_month_stats">Өткөн айдын статистикасы</string>
     <string name="last_year_stats">Былтыр статистика</string>
     <string name="light_theme">Жарык темасы</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Болжолдоо көрсөт</string>
     <string name="show_radar">Шоу радар</string>
     <string name="since">бери</string>
+    <string name="skip">Өткөрүп жибер</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Дагы эле болжолдонгон маалыматтарды жүктөп алуу</string>
     <string name="swipe_lock">Кулпулоо</string>

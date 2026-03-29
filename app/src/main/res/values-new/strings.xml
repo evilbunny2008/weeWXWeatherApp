@@ -46,6 +46,7 @@
     <string name="interval_daily">न्हि न्हि</string>
     <string name="interval_hourly">घौपतिकं</string>
     <string name="invalid_update_interval">अपडेट अन्तराल अमान्य खः, सेटिङ्ग सेटिङ्ग अले हानं हानं कुतः या ।</string>
+    <string name="json_formatted_data">%1$s यात आः %3$s सर्भरं %2$s डाटा फाइल माः, थ्व एपं पाय् छि जुइक ज्या याये न्ह्यः %4$s अपडेट यायेमाः व %5$s फाइल अपडेट यायेमाः । %6$s एसय् अप्वः विवरणया निंतिं ओकेय् तियादिसँ ।</string>
     <string name="last_month_stats">लिपांगु महिनाया तथ्यांक</string>
     <string name="last_year_stats">वंगु दँया तथ्यांक</string>
     <string name="light_theme">हल्का</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">पूर्वानुमान क्यनादिसँ</string>
     <string name="show_radar">राडार</string>
     <string name="since">निर्से</string>
+    <string name="skip">अतये</string>
     <string name="stats2">तथ्यांक</string>
     <string name="still_downloading_forecast_data">अझ नं पूर्वानुमान डाटा डाउनलोड या ।</string>
     <string name="swipe_lock">स्वीप लक</string>

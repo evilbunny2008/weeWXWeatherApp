@@ -46,6 +46,7 @@
     <string name="interval_daily">Sapa punchaw</string>
     <string name="interval_hourly">Sapa hora</string>
     <string name="invalid_update_interval">Kunanchay chawpiqa mana allinchu, musuqchay churanakuna chaymanta wakmanta kallpachakuy</string>
+    <string name="json_formatted_data">%1$s kunan %2$s willay willañiqita %3$s sirwiqmanta munan, %4$s musuqchanayki tiyan chaymanta %5$s willañiqita musuqchanayki tiyan manaraq kay ruwana allinta llamk\'achkaptin. %6$s nisqamanta aswan sut\'inchanaykipaq Ok nisqapi ñit\'iy</string>
     <string name="last_month_stats">Qayna killa Estadísticas</string>
     <string name="last_year_stats">Qayna wata estadísticas</string>
     <string name="light_theme">K\'anchay tema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Pronóstico nisqapi qhaway</string>
     <string name="show_radar">Radar rikuchiy</string>
     <string name="since">chaymanta pacha</string>
+    <string name="skip">Paway</string>
     <string name="stats2">Estadísticas nisqa</string>
     <string name="still_downloading_forecast_data">Kunankamapas willakuy willakuykunata uraykachispa</string>
     <string name="swipe_lock">Swipe Lock</string>

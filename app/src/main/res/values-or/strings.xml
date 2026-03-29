@@ -46,6 +46,7 @@
     <string name="interval_daily">ଦ Daily ନିକ |</string>
     <string name="interval_hourly">ଘଣ୍ଟା</string>
     <string name="invalid_update_interval">ଅଦ୍ୟତନ ବ୍ୟବଧାନ ଅବ alid ଧ, ସେଟିଂସମୂହ ଅଦ୍ୟତନ କରନ୍ତୁ ଏବଂ ତାପରେ ପୁନ ry ଚେଷ୍ଟା କରନ୍ତୁ |</string>
+    <string name="json_formatted_data">%1$s ବର୍ତ୍ତମାନ%3$s ସର୍ଭରରୁ%2$s ଡାଟା ଫାଇଲ୍ ଆବଶ୍ୟକ କରେ, ଏହି ଆପ୍ ସଠିକ୍ ଭାବରେ କାର୍ଯ୍ୟ କରିବା ପୂର୍ବରୁ ଆପଣଙ୍କୁ %4$s ଅପଡେଟ୍ କରିବାକୁ ଏବଂ %5$s ଫାଇଲ୍ ଅପଡେଟ୍ କରିବାକୁ ପଡିବ | %6$s ଉପରେ ଅଧିକ ବିବରଣୀ ପାଇଁ Ok କ୍ଲିକ୍ କରନ୍ତୁ |</string>
     <string name="last_month_stats">ଗତ ମାସର ପରିସଂଖ୍ୟାନ |</string>
     <string name="last_year_stats">ଗତ ବର୍ଷର ପରିସଂଖ୍ୟାନ |</string>
     <string name="light_theme">ହାଲୁକା ଥିମ୍ |</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">ପୂର୍ବାନୁମାନ ଦେଖାନ୍ତୁ |</string>
     <string name="show_radar">ରାଡାର ଦେଖାନ୍ତୁ |</string>
     <string name="since">ପରଠାରୁ</string>
+    <string name="skip">ଛାଡିଦିଅ |</string>
     <string name="stats2">ପରିସଂଖ୍ୟାନ</string>
     <string name="still_downloading_forecast_data">ତଥାପି ପୂର୍ବାନୁମାନ ତଥ୍ୟ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
     <string name="swipe_lock">ସ୍ୱାଇପ୍ ଲକ୍ |</string>

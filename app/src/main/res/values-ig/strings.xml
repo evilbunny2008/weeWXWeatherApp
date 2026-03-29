@@ -46,6 +46,7 @@
     <string name="interval_daily">Kwa ụbọchị</string>
     <string name="interval_hourly">Oge elekere</string>
     <string name="invalid_update_interval">Mmelite na-emelite etiti ezighi ezi, melite ntọala wee laghachi</string>
+    <string name="json_formatted_data">%1$s chọrọ ugbu a faịlụ data %2$s sitere na sava %3$s, ị ga-emelite %4$s wee melite faịlụ %5$s tupu ngwa a arụ ọrụ nke ọma. Pịa OK maka nkọwa ndị ọzọ na %6$s</string>
     <string name="last_month_stats">Ọnụ ọgụgụ ọnwa gara aga</string>
     <string name="last_year_stats">Ọnụ ọgụgụ nke afọ gara aga</string>
     <string name="light_theme">Isiokwu</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Gosi Amụma</string>
     <string name="show_radar">Gosi igwe</string>
     <string name="since">kemgbe</string>
+    <string name="skip">Mafee</string>
     <string name="stats2">Statistiks</string>
     <string name="still_downloading_forecast_data">Ka na-ebubata data amụma</string>
     <string name="swipe_lock">Mkpọchi swipe</string>

@@ -46,6 +46,7 @@ public class SafeWebView extends WebView
 	private String mimeType = null;
 	private String encoding = null;
 	private String historyUrl = null;
+	private boolean hasBeenDestroyed = false;
 
 	public SafeWebView(@NonNull Context context)
 	{
@@ -69,6 +70,9 @@ public class SafeWebView extends WebView
 	@SuppressLint("SetJavaScriptEnabled")
 	void initSettings()
 	{
+		if(hasBeenDestroyed)
+			return;
+
 		bad_paths.add("favicon.ico");
 
 		try
@@ -108,13 +112,13 @@ public class SafeWebView extends WebView
 
 	public void destroy()
 	{
+		if(hasBeenDestroyed)
+			return;
+
 		try
 		{
-			loadData("", "text/html", "utf-8");
-
+			hasBeenDestroyed = true;
 			stopLoading();
-			pauseTimers();
-
 			removeAllViews();
 			clearCache(true);
 			clearHistory();
@@ -144,6 +148,9 @@ public class SafeWebView extends WebView
 	@Override
 	public void loadUrl(@NonNull String url)
 	{
+		if(hasBeenDestroyed)
+			return;
+
 		LogMessage("Loading URL: " + url);
 		this.Url = url;
 		this.baseUrl = null;
@@ -156,6 +163,9 @@ public class SafeWebView extends WebView
 
 	public void loadDataWithBaseURL(String baseUrl, @NonNull String data, String mimeType, String encoding, String historyUrl)
 	{
+		if(hasBeenDestroyed)
+			return;
+
 		LogMessage("SafeWebView.loadDataWithBaseURL() calling super.loadDataWithBaseURL()");
 		this.Url = null;
 		this.baseUrl = baseUrl;
@@ -175,6 +185,9 @@ public class SafeWebView extends WebView
 				@Override
 			    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail detail)
 				{
+					if(hasBeenDestroyed)
+						return false;
+
 					if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 					{
 						if(!detail.didCrash())
@@ -194,12 +207,19 @@ public class SafeWebView extends WebView
 				public void onPageFinished(WebView view, String url)
 				{
 					super.onPageFinished(view, url);
+
+					if(hasBeenDestroyed)
+						return;
+
 					listener.onPageFinished(SafeWebView.this, url);
 				}
 
 				@Override
 				public WebResourceResponse shouldInterceptRequest(WebView view, WebResourceRequest request)
 				{
+					if(hasBeenDestroyed)
+						return null;
+
 					String url = request.getUrl().toString().strip();
 					if(url.isBlank())
 						return null;
@@ -276,6 +296,9 @@ public class SafeWebView extends WebView
 				@Override
 			    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail detail)
 				{
+					if(hasBeenDestroyed)
+						return false;
+
 					if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
 					{
 						if(!detail.didCrash())
@@ -295,6 +318,10 @@ public class SafeWebView extends WebView
 				public void onPageFinished(WebView view, String url)
 				{
 					super.onPageFinished(view, url);
+
+					if(hasBeenDestroyed)
+						return;
+
 					listener.onPageFinished(SafeWebView.this, url);
 				}
 			});
@@ -303,6 +330,9 @@ public class SafeWebView extends WebView
 
 	private void restartWebview(SafeWebView webViewToRemake)
 	{
+		if(hasBeenDestroyed)
+			return;
+
 		webViewToRemake.destroy();
 		webViewToRemake = new SafeWebView(weeWXApp.getInstance());
 		if(this.Url != null)

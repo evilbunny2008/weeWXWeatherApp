@@ -46,6 +46,7 @@
     <string name="interval_daily">Ka letsatsi</string>
     <string name="interval_hourly">Ura le ura</string>
     <string name="invalid_update_interval">Ntšhwafatsa kgaotso ga e dire, go tlhabolola diseting mme morago ga moo o leke gape</string>
+    <string name="json_formatted_data">%1$s jaanong e tlhoka faele ya tshedimosetso ya %2$s go tswa mo sefareng ya %3$s, o tlhoka go tlhabolola %4$s le go tlhabolola faele ya %5$s pele ga tiriswa eno e tla dira sentle. Tobetsa Ok go bona dintlha tse dingwe ka %6$s</string>
     <string name="last_month_stats">Dipalopalo tsa Kgwedi ya Bofelo</string>
     <string name="last_year_stats">Dipalopalo tsa Ngwaga o o fetileng</string>
     <string name="light_theme">Setlhogo sa Lesedi</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Bontsha Ponelopele</string>
     <string name="show_radar">Bontsha Radara</string>
     <string name="since">e sa le</string>
+    <string name="skip">Tlolaka</string>
     <string name="stats2">Dipalopalo</string>
     <string name="still_downloading_forecast_data">Go sa ntse go laisolola tshedimosetso ya ponelopele</string>
     <string name="swipe_lock">Swipe Lock</string>

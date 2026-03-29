@@ -46,6 +46,7 @@
     <string name="interval_daily">טעגלעך</string>
     <string name="interval_hourly">אַורלי</string>
     <string name="invalid_update_interval">דער דערהייַנטיקן מעהאַלעך איז פאַרקריפּלט, דערהייַנטיקן סעטטינגס און פּרובירן ווידער</string>
+    <string name="json_formatted_data">דער %1$s איצט ריקווייערז אַ %2$s דאַטן טעקע פֿון %3$s סערווער, איר דאַרפֿן צו דערהייַנטיקן די %4$s און דערהייַנטיקן די %5$s טעקע איידער די אַפּ וועט פונקציאָנירן ריכטיק. דריקט OK פֿאַר מער דעטאַילס אויף %6$s</string>
     <string name="last_month_stats">לעצטע חודש ס סטאַטיסטיק</string>
     <string name="last_year_stats">לעצטע יאָר ס סטאַטיסטיק</string>
     <string name="light_theme">ליכט טעמע</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">ווייַזן פאָרעקאַסט</string>
     <string name="show_radar">ווייַזן ראַדאַר</string>
     <string name="since">זינט</string>
+    <string name="skip">האָפּקען</string>
     <string name="stats2">סטאַטיסטיק</string>
     <string name="still_downloading_forecast_data">נאָך דאַונלאָודינג פאָרויסזאָגן דאַטן</string>
     <string name="swipe_lock">לאַקכענען לאַק</string>

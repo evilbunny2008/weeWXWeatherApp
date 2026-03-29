@@ -46,6 +46,7 @@
     <string name="interval_daily">每日</string>
     <string name="interval_hourly">每小時</string>
     <string name="invalid_update_interval">更新間隔係無效嘅，更新設定然後重試</string>
+    <string name="json_formatted_data">%1$s 而家需要 %3$s 伺服器嘅 %2$s 資料檔案，你需要更新 %4$s 同更新 %5$s 檔案先至可以正常運作。撳一下 [ 確定 ] 就可以睇到更多有關 %6$s 嘅詳情</string>
     <string name="last_month_stats">上個月嘅統計資料</string>
     <string name="last_year_stats">上年統計</string>
     <string name="light_theme">光主題</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">顯示預測</string>
     <string name="show_radar">顯示雷達</string>
     <string name="since">從</string>
+    <string name="skip">跳過</string>
     <string name="stats2">統計</string>
     <string name="still_downloading_forecast_data">仍然下載預測資料</string>
     <string name="swipe_lock">滑鎖</string>

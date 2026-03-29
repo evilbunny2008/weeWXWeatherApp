@@ -46,6 +46,7 @@
     <string name="interval_daily">Kullum</string>
     <string name="interval_hourly">Sa\'a</string>
     <string name="invalid_update_interval">Sabuntawa tazara ba ta dace ba, saitunan ɗaukaka sannan kuma sake gwadawa</string>
+    <string name="json_formatted_data">%1$s yanzu yana buƙatar fayil ɗin bayanan %2$s daga sabar %3$s, kuna buƙatar sabunta %4$s kuma sabunta fayil ɗin %5$s kafin wannan app ɗin yayi aiki daidai. Danna Ok don ƙarin cikakkun bayanai akan %6$s</string>
     <string name="last_month_stats">Statisticdiddigar watan da ya gabata</string>
     <string name="last_year_stats">Statisticsididdigar bara</string>
     <string name="light_theme">Jigo mai haske</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Nuna hasashen</string>
     <string name="show_radar">Nuna radar</string>
     <string name="since">tun</string>
+    <string name="skip">Tsallake</string>
     <string name="stats2">Lissafi</string>
     <string name="still_downloading_forecast_data">Har yanzu zazzage bayanan hasashen</string>
     <string name="swipe_lock">Kulle swipe</string>

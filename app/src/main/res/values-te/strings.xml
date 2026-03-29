@@ -46,6 +46,7 @@
     <string name="interval_daily">రోజువారీ</string>
     <string name="interval_hourly">గంటకోసారి</string>
     <string name="invalid_update_interval">నవీకరణ విరామం చెల్లదు, సెట్టింగ్‌లను నవీకరించి, ఆపై మళ్లీ ప్రయత్నించండి</string>
+    <string name="json_formatted_data">%1$sకి ఇప్పుడు %3$s సర్వర్ నుండి %2$s డేటా ఫైల్ అవసరం, ఈ యాప్ సరిగ్గా పని చేయడానికి ముందు మీరు %4$sని అప్‌డేట్ చేయాలి మరియు %5$s ఫైల్‌ను అప్‌డేట్ చేయాలి. %6$sలో మరిన్ని వివరాల కోసం సరే క్లిక్ చేయండి</string>
     <string name="last_month_stats">గత నెల గణాంకాలు</string>
     <string name="last_year_stats">గత సంవత్సరం గణాంకాలు</string>
     <string name="light_theme">లైట్ థీమ్</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">సూచనను చూపు</string>
     <string name="show_radar">రాడార్ చూపించు</string>
     <string name="since">నుండి</string>
+    <string name="skip">దాటవేయి</string>
     <string name="stats2">గణాంకాలు</string>
     <string name="still_downloading_forecast_data">సూచన డేటాను ఇంకా డౌన్‌లోడ్ చేస్తోంది</string>
     <string name="swipe_lock">స్వైప్ లాక్</string>

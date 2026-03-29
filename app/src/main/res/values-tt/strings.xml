@@ -46,6 +46,7 @@
     <string name="interval_daily">Көн саен</string>
     <string name="interval_hourly">Сәгать саен</string>
     <string name="invalid_update_interval">Яңарту интервалы дөрес түгел, көйләүләрне яңарту, аннары кабатлап карагыз</string>
+    <string name="json_formatted_data">%1$s хәзер%3$s сервердан%2$s мәгълүмат файлын таләп итә, сезгә бу кушымта дөрес эшләгәнче %4$s яңартырга һәм %5$s файлын яңартырга кирәк. %6$s турында тулырак мәгълүмат өчен Ок төймәсенә басыгыз</string>
     <string name="last_month_stats">Узган ай статистика</string>
     <string name="last_year_stats">Узган ел статистикасы</string>
     <string name="light_theme">Җиңел тема</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Прогнозны күрсәтү</string>
     <string name="show_radar">Радар шоу</string>
     <string name="since">шуннан</string>
+    <string name="skip">Сикереп тор</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Һаман да фаразлау мәгълүматларын йөкләү</string>
     <string name="swipe_lock">Сөртү йозак</string>

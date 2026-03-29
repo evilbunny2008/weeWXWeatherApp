@@ -46,6 +46,7 @@
     <string name="interval_daily">Inaldaw</string>
     <string name="interval_hourly">Kada oras</string>
     <string name="invalid_update_interval">Ti update interval ket saan nga imbalido, update settings ken kalpasanna padasen manen</string>
+    <string name="json_formatted_data">Ti %1$s ket kasapulanna itan ti %2$s a data file manipud iti %3$s server, kasapulam nga i-update ti %4$s ken i-update ti %5$s a file sakbay nga umiso ti panagandar daytoy nga app. I-klik ti Ok para iti ad-adu pay a detalye iti %6$s</string>
     <string name="last_month_stats">Dagiti estadistika idi napan a bulan</string>
     <string name="last_year_stats">Dagiti estadistika idi napan a tawen</string>
     <string name="light_theme">Tema ti lawag</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Ipakita ti panagpakpakauna</string>
     <string name="show_radar">Ipakita ti radar</string>
     <string name="since">manipud</string>
+    <string name="skip">Laktawan</string>
     <string name="stats2">Estadistika</string>
     <string name="still_downloading_forecast_data">Ag-download pay laeng iti datos ti panagpakpakauna</string>
     <string name="swipe_lock">I-swipe ti kandado</string>

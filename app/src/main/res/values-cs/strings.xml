@@ -46,6 +46,7 @@
     <string name="interval_daily">Denní</string>
     <string name="interval_hourly">Hodinově</string>
     <string name="invalid_update_interval">Interval aktualizace je neplatný, aktualizujte nastavení a zkuste to znovu</string>
+    <string name="json_formatted_data">%1$s nyní vyžaduje datový soubor %2$s ze serveru %3$s. Než bude tato aplikace fungovat správně, musíte aktualizovat %4$s a aktualizovat soubor %5$s. Kliknutím na OK zobrazíte další podrobnosti o %6$s</string>
     <string name="last_month_stats">Statistiky za minulý měsíc</string>
     <string name="last_year_stats">Loňské statistiky</string>
     <string name="light_theme">Světlé téma</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Zobrazit předpověď</string>
     <string name="show_radar">Zobrazit radar</string>
     <string name="since">od</string>
+    <string name="skip">Přeskočit</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Stále se stahují data prognózy</string>
     <string name="swipe_lock">Zámek přejetím</string>

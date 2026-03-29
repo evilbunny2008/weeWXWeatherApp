@@ -46,6 +46,7 @@
     <string name="interval_daily">Tur dia</string>
     <string name="interval_hourly">Pa ora</string>
     <string name="invalid_update_interval">Intervalo di actualisacion ta invalido, configuracionnan di actualisacion y despues bolbe purba</string>
+    <string name="json_formatted_data">E %1$s awor ta rekerí un archivo di dato %2$s for di e servidor di %3$s, bo mester aktualisá e archivo %4$s i aktualisá e archivo %5$s promé ku e app aki por funshoná korektamente. Klik Ok pa mas detaye riba %6$s</string>
     <string name="last_month_stats">Estadístika di Ultimo Luna</string>
     <string name="last_year_stats">Estadístika di Aña pasá</string>
     <string name="light_theme">Tema di Lus</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Mustra Pronostico</string>
     <string name="show_radar">Mustra Radar</string>
     <string name="since">for di</string>
+    <string name="skip">Salta</string>
     <string name="stats2">Estadístika</string>
     <string name="still_downloading_forecast_data">Ainda ta download datonan di pronóstiko</string>
     <string name="swipe_lock">Swipe Lock</string>

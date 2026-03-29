@@ -46,6 +46,7 @@
     <string name="interval_daily">Igapäevane</string>
     <string name="interval_hourly">Tunni kaupa</string>
     <string name="invalid_update_interval">Värskendusintervall on kehtetu, värskendage sätteid ja proovige uuesti</string>
+    <string name="json_formatted_data">%1$s nõuab nüüd %2$s andmefaili %3$s serverist. Peate värskendama %4$s ja värskendama faili %5$s, enne kui see rakendus korralikult töötaks. %6$s kohta lisateabe saamiseks klõpsake nuppu OK</string>
     <string name="last_month_stats">Eelmise kuu statistika</string>
     <string name="last_year_stats">Eelmise aasta statistika</string>
     <string name="light_theme">Valguse teema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Näita prognoosi</string>
     <string name="show_radar">Näita radarit</string>
     <string name="since">aastast</string>
+    <string name="skip">Jäta vahele</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Prognoosiandmeid laaditakse endiselt alla</string>
     <string name="swipe_lock">Pühkige lukustus</string>

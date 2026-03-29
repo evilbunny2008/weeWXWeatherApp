@@ -46,6 +46,7 @@
     <string name="interval_daily">දිනපතා</string>
     <string name="interval_hourly">පැයකට වරක්</string>
     <string name="invalid_update_interval">යාවත්කාලීන කාල පරතරය වලංගු නැත, සැකසීම් යාවත්කාලීන කර නැවත උත්සාහ කරන්න</string>
+    <string name="json_formatted_data">%1$s හට දැන් %3$s සේවාදායකයෙන් %2$s දත්ත ගොනුවක් අවශ්‍ය වේ, මෙම යෙදුම නිවැරදිව ක්‍රියාත්මක වීමට පෙර ඔබ %4$s යාවත්කාලීන කර %5$s ගොනුව යාවත්කාලීන කළ යුතුය. %6$s පිළිබඳ වැඩි විස්තර සඳහා හරි ක්ලික් කරන්න</string>
     <string name="last_month_stats">පසුගිය මාසයේ සංඛ්යා ලේඛන</string>
     <string name="last_year_stats">පසුගිය වසරේ සංඛ්යා ලේඛන</string>
     <string name="light_theme">සැහැල්ලු තේමාව</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">අනාවැකි පෙන්වන්න</string>
     <string name="show_radar">රේඩාර් පෙන්වන්න</string>
     <string name="since">සිට</string>
+    <string name="skip">මඟ හරින්න</string>
     <string name="stats2">සංඛ්යාලේඛන</string>
     <string name="still_downloading_forecast_data">තවමත් අනාවැකි දත්ත බාගනිමින්</string>
     <string name="swipe_lock">ස්වයිප් අගුල</string>

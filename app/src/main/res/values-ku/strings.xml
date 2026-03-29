@@ -46,6 +46,7 @@
     <string name="interval_daily">Rojane</string>
     <string name="interval_hourly">Seetî</string>
     <string name="invalid_update_interval">Navbera nûvekirinê nederbasdar e, mîhengan nûve bikin û dûv re dîsa biceribînin</string>
+    <string name="json_formatted_data">Niha %1$s pelê daneya %2$s ji pêşkêşkara %3$s hewce dike, divê hûn %4$s-ê nûve bikin û pelê %5$s-ê nûve bikin berî ku ev sepan rast kar bike. Ji bo bêtir agahdarî li ser %6$s Ok bikirtînin</string>
     <string name="last_month_stats">Statîstîkên meha borî</string>
     <string name="last_year_stats">Statîstîkên sala borî</string>
     <string name="light_theme">Mijara Ronahî</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Pêşbîniyê nîşan bide</string>
     <string name="show_radar">Radar nîşan bide</string>
     <string name="since">ji ber ku</string>
+    <string name="skip">Hilperkîn</string>
     <string name="stats2">Jimare</string>
     <string name="still_downloading_forecast_data">Hê jî daneyên pêşbîniyê dakêşin</string>
     <string name="swipe_lock">Swipe Lock</string>

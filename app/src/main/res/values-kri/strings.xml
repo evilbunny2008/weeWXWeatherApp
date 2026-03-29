@@ -46,6 +46,7 @@
     <string name="interval_daily">Ɛnide</string>
     <string name="interval_hourly">Ɛvri awa ɛvri awa</string>
     <string name="invalid_update_interval">Update Interval nɔ go wok, ɔpdet sɛtin dɛn ɛn afta dat, yu fɔ tray bak</string>
+    <string name="json_formatted_data">Di %1$s naw nid %2$s data fayl frɔm %3$s sava, yu nid fɔ ɔpdet di %4$s ɛn ɔpdet di %5$s fayl bifo dis ap go wok kɔrɛkt wan. Klik Ok fɔ no mɔ bɔt %6$s</string>
     <string name="last_month_stats">Las mɔnt in statystik dɛn</string>
     <string name="last_year_stats">Las ia in statystiks</string>
     <string name="light_theme">Layt tim</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Show fɔkɔs</string>
     <string name="show_radar">Sho Radar</string>
     <string name="since">frɔm</string>
+    <string name="skip">Jɔmp</string>
     <string name="stats2">Statistikin</string>
     <string name="still_downloading_forecast_data">Still fɔ dawnlod fɔkɔs data</string>
     <string name="swipe_lock">Swip lok we yu de swip</string>

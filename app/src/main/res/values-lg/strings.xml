@@ -46,6 +46,7 @@
     <string name="interval_daily">Buli lunaku</string>
     <string name="interval_hourly">Buli ssaawa</string>
     <string name="invalid_update_interval">Update interval si ntuufu, update settings n\'oluvannyuma oddemu okugezaako</string>
+    <string name="json_formatted_data">%1$s kati yeetaaga fayiro ya data ya %2$s okuva ku seva ya %3$s, olina okulongoosa %4$s n\'okulongoosa fayiro ya %5$s nga app eno tennakola bulungi. Nywa ku Ok okumanya ebisingawo ku %6$s</string>
     <string name="last_month_stats">Ebibalo by\'omwezi oguwedde</string>
     <string name="last_year_stats">Ebibalo by\'omwaka oguwedde</string>
     <string name="light_theme">Omulamwa gw\'ekitangaala</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Show Okuteebereza</string>
     <string name="show_radar">Laga Radar</string>
     <string name="since">okuva</string>
+    <string name="skip">Okubuuka</string>
     <string name="stats2">Ebibalo</string>
     <string name="still_downloading_forecast_data">Akyawanula ebikwata ku kuteebereza</string>
     <string name="swipe_lock">Swipe kkufulu</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">प्रतिदिन</string>
     <string name="interval_hourly">प्रतिघण्टा</string>
     <string name="invalid_update_interval">अद्यतनं अन्तरालम् अमान्यम्, अद्यतनं सेटिंग्स् ततः पुनःस्वप्नम् अस्ति ।</string>
+    <string name="json_formatted_data">%1$s इदानीं %3$s सर्वरतः %2$s दत्तांशसञ्चिकायाः ​​आवश्यकता वर्तते, एतत् एप् सम्यक् कार्यं कर्तुं पूर्वं भवद्भिः %4$s अद्यतनं कर्तव्यं %5$s सञ्चिकां च अद्यतनं कर्तव्यम् । %6$s विषये अधिकविवरणार्थं Ok नुदन्तु</string>
     <string name="last_month_stats">गतमासस्य सांख्यिकी</string>
     <string name="last_year_stats">गतवर्षस्य सांख्यिकी</string>
     <string name="light_theme">प्रकाश विषय</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">पूर्वानुमान दिखाएँ 1</string>
     <string name="show_radar">रडारं दर्शयतु</string>
     <string name="since">यतः</string>
+    <string name="skip">क्षिपते</string>
     <string name="stats2">सांख्यिकी</string>
     <string name="still_downloading_forecast_data">अद्यापि पूर्वानुमानदत्तांशं डाउनलोड् करणम्</string>
     <string name="swipe_lock">स्वाइप लॉक 1</string>

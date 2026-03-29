@@ -102,6 +102,7 @@
     <string name="show_forecast">পূর্বাভাস দেখান</string>
     <string name="show_radar">রাডার দেখান</string>
     <string name="since">থেকে</string>
+    <string name="skip">এড়িয়ে যান</string>
     <string name="stats2">পরিসংখ্যান</string>
     <string name="still_downloading_forecast_data">এখনও পূর্বাভাসের ডেটা ডাউনলোড করা হচ্ছে</string>
     <string name="swipe_lock">সোয়াইপ লক</string>

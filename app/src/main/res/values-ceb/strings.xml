@@ -46,6 +46,7 @@
     <string name="interval_daily">Adlaw-adlaw</string>
     <string name="interval_hourly">kada oras</string>
     <string name="invalid_update_interval">Ang pag-update sa interval dili husto, pag-update sa mga setting ug dayon pag-usab</string>
+    <string name="json_formatted_data">Ang %1$s nanginahanglan na karon og %2$s data file gikan sa %3$s server, kinahanglan nimo nga i-update ang %4$s ug i-update ang %5$s nga payl sa dili pa kini nga app moandar sa husto. I-klik ang Ok para sa dugang detalye sa %6$s</string>
     <string name="last_month_stats">Mga Estadistika sa Miaging Bulan</string>
     <string name="last_year_stats">Mga Estadistika sa Miaging Tuig</string>
     <string name="light_theme">Kahayag nga tema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Ipakita ang forecast</string>
     <string name="show_radar">Ipakita ang radar</string>
     <string name="since">sukad pa</string>
+    <string name="skip">Laktaw</string>
     <string name="stats2">Istatistika</string>
     <string name="still_downloading_forecast_data">Pag-download gihapon sa datos sa forecast</string>
     <string name="swipe_lock">Hunonga ang Pag-swipe</string>

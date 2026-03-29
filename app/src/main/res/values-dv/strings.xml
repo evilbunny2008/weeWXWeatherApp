@@ -46,6 +46,7 @@
     <string name="interval_daily">ކޮންމެ ދުވަހަކު</string>
     <string name="interval_hourly">ގަޑިއަކު އެއްފަހަރު</string>
     <string name="invalid_update_interval">އަޕްޑޭޓް އިންޓަވަލް ސައްހަ ނޫން، އަޕްޑޭޓް ސެޓިންގސް އަދި ދެން ރީޓްރައި</string>
+    <string name="json_formatted_data">%1$s އަށް މިހާރު ބޭނުންވަނީ %3$s ސަރވަރ އިން %2$s ޑޭޓާ ފައިލް އެއް، މި އެޕް ރަނގަޅަށް މަސައްކަތް ކުރުމުގެ ކުރިން %4$s އަޕްޑޭޓްކޮށް %5$s ފައިލް އަޕްޑޭޓް ކުރަން ޖެހެއެވެ. %6$s ގެ އިތުރު ތަފްސީލަށް އޯކޭ އަށް ފިތާލާށެވެ</string>
     <string name="last_month_stats">މިދިޔަ މަހުގެ ތަފާސް ހިސާބުތައް</string>
     <string name="last_year_stats">މިދިޔަ އަހަރުގެ ތަފާސް ހިސާބުތައް</string>
     <string name="light_theme">ލައިޓް ތީމް</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">ދައްކާނެ ކަމަށް ލަފާކުރުން</string>
     <string name="show_radar">ރާޑަރ ދައްކާ</string>
     <string name="since">ސަބަބުން</string>
+    <string name="skip">ދޫކޮށްލުން</string>
     <string name="stats2">ތަފާސްހިސާބު</string>
     <string name="still_downloading_forecast_data">އަދިވެސް ޑައުންލޯޑް ކުރާ ފޯކަސް ޑޭޓާ</string>
     <string name="swipe_lock">ސްވައިޕް ލޮކް</string>

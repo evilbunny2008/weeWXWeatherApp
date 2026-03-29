@@ -46,6 +46,7 @@
     <string name="interval_daily">Daanɛ</string>
     <string name="interval_hourly">Daa ŋmɛlɛtswaa</string>
     <string name="invalid_update_interval">Nɔ ni atsake lɛ ejaaa, tsakemɔi ni ato ni no sɛɛ lɛ aka ekoŋŋ</string>
+    <string name="json_formatted_data">Amrɔ nɛɛ %1$s lɛ biɔ %2$s data faili kɛjɛ %3$s sɛɛva lɛ nɔ, ehe miihia ni otsake %4$s lɛ ni otsake %5$s faili lɛ dani app nɛɛ atsu nii jogbaŋŋ. Klikimɔ Ok kɛha saji krokomɛi yɛ %6$s</string>
     <string name="last_month_stats">Nyɔji lɛ akɔntaabuu</string>
     <string name="last_year_stats">Naagbee Afi Akɔntaabuu</string>
     <string name="light_theme">Kane tsɔɔmɔ</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Tsɔɔmɔ gbalɛ</string>
     <string name="show_radar">tsɔɔmɔ Radar</string>
     <string name="since">kɛjɛ</string>
+    <string name="skip">Tuuŋ</string>
     <string name="stats2">Akɔntaabuu</string>
     <string name="still_downloading_forecast_data">Kɛji oojie saji ni atsɔɔ hiɛ atsɔɔ lɛ lolo</string>
     <string name="swipe_lock">Swipe Lock</string>

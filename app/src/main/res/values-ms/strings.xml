@@ -46,6 +46,7 @@
     <string name="interval_daily">Setiap hari</string>
     <string name="interval_hourly">setiap jam</string>
     <string name="invalid_update_interval">Selang kemas kini tidak sah, kemas kini tetapan dan kemudian mencuba</string>
+    <string name="json_formatted_data">%1$s kini memerlukan fail data %2$s daripada pelayan %3$s, anda perlu mengemas kini %4$s dan mengemas kini fail %5$s sebelum apl ini berfungsi dengan betul. Klik Ok untuk butiran lanjut tentang %6$s</string>
     <string name="last_month_stats">Statistik bulan lalu</string>
     <string name="last_year_stats">Statistik tahun lepas</string>
     <string name="light_theme">Tema ringan</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Tunjukkan ramalan</string>
     <string name="show_radar">Tunjukkan radar</string>
     <string name="since">sejak</string>
+    <string name="skip">Langkau</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Masih memuat turun data ramalan</string>
     <string name="swipe_lock">Kunci leret</string>

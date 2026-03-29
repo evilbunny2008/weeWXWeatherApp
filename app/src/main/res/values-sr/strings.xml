@@ -46,6 +46,7 @@
     <string name="interval_daily">Даили</string>
     <string name="interval_hourly">По сату</string>
     <string name="invalid_update_interval">Интервал ажурирања је неважећи, ажурирајте подешавања и покушајте поново</string>
+    <string name="json_formatted_data">%1$s сада захтева %2$s датотеку са подацима са %3$s сервера, потребно је да ажурирате %4$s и ажурирате датотеку %5$s да би ова апликација функционисала исправно. Кликните на Ок за више детаља о %6$с</string>
     <string name="last_month_stats">Статистика прошлог месеца</string>
     <string name="last_year_stats">Прошлогодишња статистика</string>
     <string name="light_theme">Лигхт Тхеме</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Прикажи прогнозу</string>
     <string name="show_radar">Схов Радар</string>
     <string name="since">пошто</string>
+    <string name="skip">Скип</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">И даље се преузимају подаци прогнозе</string>
     <string name="swipe_lock">Превуците закључавање</string>

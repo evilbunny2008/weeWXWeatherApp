@@ -46,6 +46,7 @@
     <string name="interval_daily">Daagelijks</string>
     <string name="interval_hourly">Per oor</string>
     <string name="invalid_update_interval">Update interval is ongeldig, update instellinge en probeer vervolgens opnuuj</string>
+    <string name="json_formatted_data">De %1$s heet noe un %2$s-gegevensbestand vaan de %3$s-server nuudig, geer mot de %4$s en ut %5$s-bestand update veurtot dees app good functioneert. Klik op Ok veur mie informatie euver %6$s</string>
     <string name="last_month_stats">Afgeloupe Month\'s Statistiek</string>
     <string name="last_year_stats">Afgeloupe jaor</string>
     <string name="light_theme">Liecht Thema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Voorspelling</string>
     <string name="show_radar">Toon Radar</string>
     <string name="since">sins</string>
+    <string name="skip">Euversjloon</string>
     <string name="stats2">Statieke</string>
     <string name="still_downloading_forecast_data">Nog steeds downloade vaan veurspelde gegeves</string>
     <string name="swipe_lock">Zweet Lock</string>

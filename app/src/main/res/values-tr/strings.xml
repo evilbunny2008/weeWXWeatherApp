@@ -46,6 +46,7 @@
     <string name="interval_daily">Günlük</string>
     <string name="interval_hourly">Saatlik</string>
     <string name="invalid_update_interval">Güncelleme aralığı geçersiz, ayarları güncelleyip yeniden deneyin</string>
+    <string name="json_formatted_data">%1$s artık %3$s sunucusundan bir %2$s veri dosyası gerektiriyor; bu uygulamanın düzgün çalışması için önce %4$s dosyasını güncellemeniz ve %5$s dosyasını güncellemeniz gerekiyor. %6$s hakkında daha fazla ayrıntı için Tamam\'ı tıklayın</string>
     <string name="last_month_stats">Geçen Ayın İstatistikleri</string>
     <string name="last_year_stats">Geçen Yılın İstatistikleri</string>
     <string name="light_theme">Işık Teması</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Tahmini Göster</string>
     <string name="show_radar">Radarı Göster</string>
     <string name="since">o zamandan beri</string>
+    <string name="skip">Atlamak</string>
     <string name="stats2">İstatistikler</string>
     <string name="still_downloading_forecast_data">Tahmin verileri hâlâ indiriliyor</string>
     <string name="swipe_lock">Kaydırma Kilidi</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">روزانہ</string>
     <string name="interval_hourly">فی گھنٹہ</string>
     <string name="invalid_update_interval">اپ ڈیٹ وقفہ غلط ہے ، ترتیبات کو اپ ڈیٹ کریں اور پھر دوبارہ کوشش کریں</string>
+    <string name="json_formatted_data">%1$s کو اب %3$s سرور سے %2$s ڈیٹا فائل درکار ہے، آپ کو %4$s کو اپ ڈیٹ کرنے اور %5$s فائل کو اپ ڈیٹ کرنے کی ضرورت ہے اس سے پہلے کہ یہ ایپ صحیح طریقے سے کام کرے۔ %6$s پر مزید تفصیلات کے لیے ٹھیک ہے پر کلک کریں۔</string>
     <string name="last_month_stats">پچھلے مہینے کے اعدادوشمار</string>
     <string name="last_year_stats">پچھلے سال کے اعدادوشمار</string>
     <string name="light_theme">لائٹ تھیم</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">پیشن گوئی دکھائیں</string>
     <string name="show_radar">راڈار دکھائیں</string>
     <string name="since">چونکہ</string>
+    <string name="skip">چھوڑیں۔</string>
     <string name="stats2">اعداد و شمار</string>
     <string name="still_downloading_forecast_data">اب بھی پیش گوئی کا ڈیٹا ڈاؤن لوڈ کرنا</string>
     <string name="swipe_lock">سوائپ لاک</string>

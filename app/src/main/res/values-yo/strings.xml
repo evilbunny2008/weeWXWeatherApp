@@ -46,6 +46,7 @@
     <string name="interval_daily">Ojoojumọ</string>
     <string name="interval_hourly">Wakati</string>
     <string name="invalid_update_interval">AKIYESI ITAN TI O NI IBI, Awọn Eto imudojuiwọn ati lẹhinna Tun gbiyanju</string>
+    <string name="json_formatted_data">Awọn %1$s ni bayi nilo faili data %2$s lati ọdọ olupin %3$s, o nilo lati mu %4$s dojuiwọn ki o si mu faili %5$s dojuiwọn ṣaaju ki app yii yoo ṣiṣẹ deede. Tẹ Ok fun awọn alaye diẹ sii lori %6$s</string>
     <string name="last_month_stats">Awọn iṣiro oṣu ti o kọja</string>
     <string name="last_year_stats">Awọn iṣiro ti ọdun to kọja</string>
     <string name="light_theme">Akori ina</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Fihan asọtẹlẹ</string>
     <string name="show_radar">Fihan Reda</string>
     <string name="since">nitori</string>
+    <string name="skip">Rekọja</string>
     <string name="stats2">Eekaaṣii</string>
     <string name="still_downloading_forecast_data">Tun gbigba data asọtẹlẹ</string>
     <string name="swipe_lock">Ra titiipa</string>

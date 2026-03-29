@@ -46,6 +46,7 @@
     <string name="interval_daily">Saben dina</string>
     <string name="interval_hourly">saben jam</string>
     <string name="invalid_update_interval">Nganyari Interval ora sah, nganyari setelan banjur coba maneh</string>
+    <string name="json_formatted_data">%1$s saiki mbutuhake file data %2$s saka server %3$s, sampeyan kudu nganyari %4$s lan nganyari file %5$s sadurunge app iki bisa digunakake kanthi bener. Klik Ok kanggo rincian liyane babagan %6$s</string>
     <string name="last_month_stats">Statistik wulan kepungkur</string>
     <string name="last_year_stats">Statistik taun kepungkur</string>
     <string name="light_theme">Tema cahya</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Tampilake ramalan</string>
     <string name="show_radar">Tampilake radar</string>
     <string name="since">Wiwit</string>
+    <string name="skip">Skip</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Isih ndownload data ramalan</string>
     <string name="swipe_lock">Gesek kunci</string>

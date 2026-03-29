@@ -46,6 +46,7 @@
     <string name="interval_daily">Zilnic</string>
     <string name="interval_hourly">Orar</string>
     <string name="invalid_update_interval">Intervalul de actualizare este nevalid, actualizați setările și apoi reîncercați</string>
+    <string name="json_formatted_data">%1$s necesită acum un fișier de date %2$s de pe serverul %3$s, trebuie să actualizați fișierul %4$s și să actualizați fișierul %5$s înainte ca această aplicație să funcționeze corect. Faceți clic pe Ok pentru mai multe detalii despre %6$s</string>
     <string name="last_month_stats">Statisticile lunii trecute</string>
     <string name="last_year_stats">Statistica de anul trecut</string>
     <string name="light_theme">Tema ușoară</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Arată Prognoza</string>
     <string name="show_radar">Arată radar</string>
     <string name="since">din moment ce</string>
+    <string name="skip">Sari peste</string>
     <string name="stats2">Statistici</string>
     <string name="still_downloading_forecast_data">Încă se descarcă datele de prognoză</string>
     <string name="swipe_lock">Glisați Blocarea</string>

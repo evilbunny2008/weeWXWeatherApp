@@ -46,6 +46,7 @@
     <string name="interval_daily">รายวัน</string>
     <string name="interval_hourly">รายชั่วโมง</string>
     <string name="invalid_update_interval">ช่วงเวลาการอัปเดตไม่ถูกต้อง อัปเดตการตั้งค่าแล้วลองอีกครั้ง</string>
+    <string name="json_formatted_data">ขณะนี้ %1$s ต้องการไฟล์ข้อมูล %2$s จากเซิร์ฟเวอร์ %3$s คุณต้องอัปเดต %4$s และอัปเดตไฟล์ %5$s ก่อนที่แอปนี้จะทำงานได้อย่างถูกต้อง คลิกตกลงเพื่อดูรายละเอียดเพิ่มเติมเกี่ยวกับ %6$s</string>
     <string name="last_month_stats">สถิติของเดือนที่แล้ว</string>
     <string name="last_year_stats">สถิติปีที่แล้ว</string>
     <string name="light_theme">ธีมแสง</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">แสดงการพยากรณ์</string>
     <string name="show_radar">แสดงเรดาร์</string>
     <string name="since">เนื่องจาก</string>
+    <string name="skip">ข้าม</string>
     <string name="stats2">สถิติ</string>
     <string name="still_downloading_forecast_data">ยังคงดาวน์โหลดข้อมูลการคาดการณ์</string>
     <string name="swipe_lock">ปัดล็อค</string>

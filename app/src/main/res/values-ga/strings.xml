@@ -46,6 +46,7 @@
     <string name="interval_daily">laethúil</string>
     <string name="interval_hourly">in aghaidh na huaire</string>
     <string name="invalid_update_interval">Tá an t-eatramh nuashonraithe neamhbhailí, nuashonraigh socruithe agus ansin bain triail eile as</string>
+    <string name="json_formatted_data">Tá comhad sonraí %2$s ó fhreastalaí %3$s ag teastáil ó %1$s anois, ní mór duit %4$s a nuashonrú agus an comhad %5$s a nuashonrú sula bhfeidhmeoidh an aip seo i gceart. Cliceáil OK le haghaidh tuilleadh sonraí ar %6$s</string>
     <string name="last_month_stats">Staitisticí na Míosa seo caite</string>
     <string name="last_year_stats">Staitisticí na bliana seo caite</string>
     <string name="light_theme">Téama Solas</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Taispeáin Réamhaisnéis</string>
     <string name="show_radar">Taispeáin Radar</string>
     <string name="since">ó shin</string>
+    <string name="skip">Scipeáil</string>
     <string name="stats2">Staitisticí</string>
     <string name="still_downloading_forecast_data">Tá sonraí réamhaisnéise á n-íoslódáil go fóill</string>
     <string name="swipe_lock">Glais Swipe</string>

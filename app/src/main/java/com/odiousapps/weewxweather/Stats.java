@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import com.google.android.material.slider.Slider;
 
+import java.util.Date;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -28,9 +30,8 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.fiToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.formatString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getDateTimeStr;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getLocalDate;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getLocalTime;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getSinceHour;
+import static com.odiousapps.weewxweather.weeWXAppCommon.sdf18;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 
 public class Stats extends Fragment
@@ -349,8 +350,12 @@ public class Stats extends Fragment
 
 	private String createSolarUV(String uv, String uvWhen, String solar, String solarWhen, int timeMode)
 	{
-		int UVWhen = Math.round((float)getJson(uvWhen, 0f));
-		int SolarWhen = Math.round((float)getJson(solarWhen, 0f));
+		long UVWhen = Math.round((double)getJson(uvWhen, 0D) * 1_000L);
+		long SolarWhen = Math.round((double)getJson(solarWhen, 0D) * 1_000L);
+
+		LogMessage("createSolarUV() solar: " + solar);
+		LogMessage("createSolarUV() solarWhen: " + solarWhen);
+		LogMessage("createSolarUV() SolarWhen: " + SolarWhen);
 
 		if(UVWhen == 0 && SolarWhen == 0)
 		{
@@ -367,7 +372,7 @@ public class Stats extends Fragment
 		if(UVWhen != 0)
 		{
 			String dateTimeStr = getDateTimeStr(UVWhen, timeMode);
-			out += createRowLeft(className, UV + KeyValue.getLabel("uv_index", "UVI"), dateTimeStr);
+			out += createRowLeft(className, UV + KeyValue.getLabel("uv", "UVI").strip(), dateTimeStr);
 		} else {
 			out += createRowLeft();
 		}
@@ -402,12 +407,12 @@ public class Stats extends Fragment
 		sb.append("\n\t\t</div>\n\n");
 
 		String tempSym = KeyValue.getLabel("temperature", "°C");
-		String humSym = KeyValue.getLabel("humidity", "%");
+		String humSym = KeyValue.getLabel("percent", "%");
 		String pressSym = KeyValue.getLabel("pressure", "hPa");
 		String speedSym = KeyValue.getLabel("speed", "km/h");
 		String rainSym = KeyValue.getLabel("rain", "mm");
 
-		String[] loop = {"outTemp", "dewpoint", "humidity", "barometer"};
+		String[] loop = {"outTemp", "dewpoint", "outHumidity", "barometer"};
 		String[] syms = {tempSym, tempSym, humSym, pressSym};
 		String[] css = {fiToSVG("flaticon-temperature"),
 		                cssToSVG("wi-raindrop"),
@@ -418,32 +423,32 @@ public class Stats extends Fragment
 		{
 			sb.append(createRow(css[i], css[i],
 					formatString(timeperiod + "_" + loop[i] + "_max") + syms[i],
-					getDateTimeStr(Math.round((float)getJson(timeperiod + "_" + loop[i] + "_maxtime", 0f)), timeMode),
-					getDateTimeStr(Math.round((float)getJson(timeperiod + "_" + loop[i] + "_mintime", 0f)), timeMode),
+					getDateTimeStr(Math.round((double)getJson(timeperiod + "_" + loop[i] + "_maxtime", 0D) * 1_000L), timeMode),
+					getDateTimeStr(Math.round((double)getJson(timeperiod + "_" + loop[i] + "_mintime", 0D) * 1_000L), timeMode),
 					formatString(timeperiod + "_" + loop[i] + "_min") + syms[i]));
 		}
 
 		if((boolean)KeyValue.readVar("showIndoor", weeWXApp.showIndoor_default))
 		{
-			int maxtime = Math.round((float)getJson(timeperiod + "_inTemp_maxtime", 0f));
-			int mintime = Math.round((float)getJson(timeperiod + "_inTemp_mintime", 0f));
+			long maxtime = Math.round((double)getJson(timeperiod + "_inTemp_maxtime", 0D) * 1_000L);
+			long mintime = Math.round((double)getJson(timeperiod + "_inTemp_mintime", 0D) * 1_000L);
 			if(mintime > 0 && maxtime > 0)
 				sb.append(createRow(fiToSVG("flaticon-home-page"), fiToSVG("flaticon-home-page"),
-									formatString(timeperiod + "_" + "_inTemp_max") + tempSym,
+									formatString(timeperiod + "_inTemp_max") + tempSym,
 									getDateTimeStr(maxtime, timeMode), getDateTimeStr(mintime, timeMode),
-									formatString(timeperiod + "_" + "_inTemp_min") + tempSym));
+									formatString(timeperiod + "_inTemp_min") + tempSym));
 
-			maxtime = Math.round((float)getJson(timeperiod + "_inHumidity_maxtime", 0f));
-			mintime = Math.round((float)getJson(timeperiod + "_inHumidity_mintime", 0f));
+			maxtime = Math.round((double)getJson(timeperiod + "_inHumidity_maxtime", 0D) * 1_000L);
+			mintime = Math.round((double)getJson(timeperiod + "_inHumidity_mintime", 0D) * 1_000L);
 			if(mintime > 0 && maxtime > 0)
 				sb.append(createRow(fiToSVG("flaticon-home-page"), fiToSVG("flaticon-home-page"),
-									formatString(timeperiod + "_" + "_inHumidity_max") + humSym,
+									formatString(timeperiod + "_inHumidity_max") + humSym,
 									getDateTimeStr(maxtime, timeMode), getDateTimeStr(mintime, timeMode),
-									formatString(timeperiod + "_" + "_inHumidity_min") + humSym));
+									formatString(timeperiod + "_inHumidity_min") + humSym));
 		}
 
-		sb.append(createSolarUV(timeperiod + "_UV_max", timeperiod + "_UV_maxtime", timeperiod + "_radiation_max",
-				timeperiod + "_radiation_maxwhen", timeMode));
+		sb.append(createSolarUV(timeperiod + "_UV_max", timeperiod + "_UV_maxtime",
+				timeperiod + "_radiation_max", timeperiod + "_radiation_maxtime", timeMode));
 
 		int since_hour = (int)getJson("since_hour", 0);
 		String since = "";
@@ -465,12 +470,12 @@ public class Stats extends Fragment
 		if(timeMode == 0)
 			sb.append(createRow(formatString(timeperiod + "_wind_max") + speedSym +
 		                    " " + getJson(timeperiod + "_wind_gustdir_compass", "N/A") +
-		                    " " + getDateTimeStr(Math.round((float)getJson(timeperiod + "_wind_maxtime", 0f)), timeMode),
+		                    " " + getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
 							since + " " + rain + rainSym));
 		else
 			sb.append(createRow2(formatString(timeperiod + "_wind_max") + speedSym +
 	                    " " + getJson(timeperiod + "_wind_gustdir_compass", "N/A") +
-	                    " " + getDateTimeStr(Math.round((float)getJson(timeperiod + "_wind_maxtime", 0f)), timeMode),
+	                    " " + getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
 						since + " " + rain + rainSym));
 
 		return sb.toString();
@@ -500,11 +505,11 @@ public class Stats extends Fragment
 			return;
 		}
 
-		int now = Math.round((float)getJson("now", 0f));
+		long now = Math.round((double)getJson("now", 0D) * 1_000L);
 
 		// Today Stats
 		checkFields(rootView.findViewById(R.id.textView), (String)getJson("station_location", ""));
-		checkFields(rootView.findViewById(R.id.textView2), getLocalTime(now) + " " + getLocalDate(now));
+		checkFields(rootView.findViewById(R.id.textView2), sdf18.format(new Date(now)));
 
 		final StringBuilder sb = new StringBuilder();
 

@@ -46,6 +46,7 @@
     <string name="interval_daily">Dyddiol</string>
     <string name="interval_hourly">Yr awr</string>
     <string name="invalid_update_interval">Mae cyfwng diweddaru yn annilys, diweddarwch y gosodiadau ac yna rhowch gynnig arall arni</string>
+    <string name="json_formatted_data">Mae\'r %1$s nawr angen ffeil ddata %2$s gan weinydd %3$s, mae angen i chi ddiweddaru\'r %4$s a diweddaru\'r ffeil %5$s cyn i\'r ap hwn weithio\'n gywir. Cliciwch Iawn am fwy o fanylion ar %6$s</string>
     <string name="last_month_stats">Ystadegau y Mis diweddaf</string>
     <string name="last_year_stats">Ystadegau\'r llynedd</string>
     <string name="light_theme">Thema Ysgafn</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Dangos Rhagolwg</string>
     <string name="show_radar">Dangos Radar</string>
     <string name="since">ers</string>
+    <string name="skip">Sgipio</string>
     <string name="stats2">Ystadegau</string>
     <string name="still_downloading_forecast_data">Yn dal i lawrlwytho data rhagolygon</string>
     <string name="swipe_lock">Clo Swipe</string>

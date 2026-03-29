@@ -46,6 +46,7 @@
     <string name="interval_daily">Dagelijks</string>
     <string name="interval_hourly">Per uur</string>
     <string name="invalid_update_interval">Update-interval is ongeldig, update de instellingen en probeer het opnieuw</string>
+    <string name="json_formatted_data">De %1$s vereist nu een %2$s-gegevensbestand van de %3$s-server. U moet de %4$s en het %5$s-bestand bijwerken voordat deze app correct functioneert. Klik op OK voor meer details over %6$s</string>
     <string name="last_month_stats">Statistieken van de afgelopen maand</string>
     <string name="last_year_stats">Statistieken van vorig jaar</string>
     <string name="light_theme">Licht thema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Toon voorspelling</string>
     <string name="show_radar">Radar tonen</string>
     <string name="since">sinds</string>
+    <string name="skip">Overslaan</string>
     <string name="stats2">Statistieken</string>
     <string name="still_downloading_forecast_data">Er worden nog steeds prognosegegevens gedownload</string>
     <string name="swipe_lock">Veeg vergrendelen</string>

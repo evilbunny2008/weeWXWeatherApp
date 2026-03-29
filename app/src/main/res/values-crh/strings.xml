@@ -46,6 +46,7 @@
     <string name="interval_daily">Куньделик</string>
     <string name="interval_hourly">Саатлик</string>
     <string name="invalid_update_interval">Янъыланув аралыгъы догъру дегиль, янъыланув параметрлери ве сонъра янъыдан чалышмакъ</string>
+    <string name="json_formatted_data">%1$s энди %3$s серверинден %2$s малюмат файлыны талап эте, бу къулланма догъру чалышсын деп, %4$s ве %5$s файлыны янъыландырмакъ керек. %6$s акъкъында даа тафсилятлы малюмат ичюн Ок ны басынъыз</string>
     <string name="last_month_stats">Сонъки айнынъ статистикасы</string>
     <string name="last_year_stats">Кечкен йыл статистикасы</string>
     <string name="light_theme">Ярыкъ мевзусы</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Прогнозны косьтеринъиз</string>
     <string name="show_radar">Радарны косьтеринъиз</string>
     <string name="since">берли</string>
+    <string name="skip">Къалдырып кечмек</string>
     <string name="stats2">статистика</string>
     <string name="still_downloading_forecast_data">Даа прогноз малюматларыны юклемек</string>
     <string name="swipe_lock">Свипрованный килит</string>

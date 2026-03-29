@@ -46,6 +46,7 @@
     <string name="interval_daily">Quotidian</string>
     <string name="interval_hourly">Orari</string>
     <string name="invalid_update_interval">L\'interval de mesa a jorn es invalid, actualizatz los paramètres e puèi tornatz ensajar</string>
+    <string name="json_formatted_data">Lo %1$s demanda ara un fichièr de donadas %2$s del servidor %3$s, vos cal metre a jorn lo %4$s e metre a jorn lo fichièr %5$s abans qu\'aquesta aplicacion foncione corrèctament. Clicatz sus D\'acòrdi per mai de detalhs sus %6$s</string>
     <string name="last_month_stats">Estadísticas de la Última Mes</string>
     <string name="last_year_stats">Estadísticas de l\'an passat</string>
     <string name="light_theme">Tema de Luz</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Mostrar Prevision</string>
     <string name="show_radar">Mostrar lo radar</string>
     <string name="since">dempuèi</string>
+    <string name="skip">Sautar</string>
     <string name="stats2">Estadisticas</string>
     <string name="still_downloading_forecast_data">Encara descargar las donadas de prevision</string>
     <string name="swipe_lock">Bloquejament de vestits</string>

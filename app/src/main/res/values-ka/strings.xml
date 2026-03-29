@@ -46,6 +46,7 @@
     <string name="interval_daily">ყოველდღიური</string>
     <string name="interval_hourly">საათობრივი</string>
     <string name="invalid_update_interval">განახლების ინტერვალი არასწორია, განაახლეთ პარამეტრები და შემდეგ სცადეთ ხელახლა</string>
+    <string name="json_formatted_data">%1$s ახლა საჭიროებს %2$s მონაცემთა ფაილს %3$s სერვერიდან, თქვენ უნდა განაახლოთ %4$s და განაახლოთ %5$s ფაილი, სანამ ეს აპი სწორად იმუშავებს. დააწკაპუნეთ OK დამატებითი ინფორმაციისთვის %6$s-ზე</string>
     <string name="last_month_stats">გასული თვის სტატისტიკა</string>
     <string name="last_year_stats">გასული წლის სტატისტიკა</string>
     <string name="light_theme">მსუბუქი თემა</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">პროგნოზის ჩვენება</string>
     <string name="show_radar">რადარის ჩვენება</string>
     <string name="since">მას შემდეგ, რაც</string>
+    <string name="skip">გამოტოვება</string>
     <string name="stats2">სტატისტიკა</string>
     <string name="still_downloading_forecast_data">ჯერ კიდევ მიმდინარეობს პროგნოზის მონაცემების ჩამოტვირთვა</string>
     <string name="swipe_lock">გადაფურცლეთ ჩაკეტვა</string>

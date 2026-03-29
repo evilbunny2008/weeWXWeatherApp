@@ -46,6 +46,7 @@
     <string name="interval_daily">Lakualakue</string>
     <string name="interval_hourly">Ngbonga oko oko</string>
     <string name="invalid_update_interval">A-update interval ni ayeke na lege ni pëpe, a-paramètre ti mise à jour ni na pekoni a yeke sara ni</string>
+    <string name="json_formatted_data">A %1$s a hunda fadeso ti wara mbeni fichier ti asango ti %2$s so alondo na serveur ti %3$s, a lingbi mo sara si %4$s ni aga fini na %5$s ni kozoni si application so asara kua nzoni. Cliqué na ndö ti Ok ti wara ambeni sango na ndö ti %6$s</string>
     <string name="last_month_stats">A-étude ti nze ti ndangba nze</string>
     <string name="last_year_stats">Statistique ti ngu so ahon</string>
     <string name="light_theme">Tënë ti lumière</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Fa tënë ti fango tënë</string>
     <string name="show_radar">Fa Radar</string>
     <string name="since">depuis</string>
+    <string name="skip">Zia lege ni</string>
     <string name="stats2">Statistique</string>
     <string name="still_downloading_forecast_data">En ti téléchargé asango ti prévision</string>
     <string name="swipe_lock">Swipe Lock</string>

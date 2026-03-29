@@ -46,6 +46,7 @@
     <string name="interval_daily">Her gün</string>
     <string name="interval_hourly">Her sagat</string>
     <string name="invalid_update_interval">Täzelenme wersiýasy nädogry, sazlamalary täzeläň we gaýtadan synanyşyň</string>
+    <string name="json_formatted_data">%1$s indi%3$s serwerinden%2$s maglumat faýly talap edýär, bu programma dogry işlemezden ozal %4$s täzelenmeli we %5$s faýly täzelenmeli. %6$s barada has giňişleýin maglumat üçin Ok basyň</string>
     <string name="last_month_stats">Geçen aýyň statistikasy</string>
     <string name="last_year_stats">Geçen ýylky statistika</string>
     <string name="light_theme">Ýeňil mowzuk</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Çaklamasy görkez</string>
     <string name="show_radar">Radar görkeziň</string>
     <string name="since">şondan bäri</string>
+    <string name="skip">Geçmek</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Çaltlyk maglumatlaryny göçürip almak</string>
     <string name="swipe_lock">Süpürmek gulpy</string>

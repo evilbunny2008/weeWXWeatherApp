@@ -102,6 +102,7 @@
     <string name="show_forecast">Mostra Previsió</string>
     <string name="show_radar">Mostra el radar</string>
     <string name="since">des que</string>
+    <string name="skip">Saltar</string>
     <string name="stats2">Estadístiques</string>
     <string name="still_downloading_forecast_data">Encara s\'estan baixant dades de previsió</string>
     <string name="swipe_lock">Llisca el bloqueig</string>

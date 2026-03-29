@@ -282,8 +282,8 @@ public class Forecast extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		long[] npwsll = weeWXAppCommon.getNPWSLL();
-		if(!forced && npwsll[1] <= 0)
+		weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
+		if(!forced && npwsll.periodTime() <= 0)
 		{
 			LogMessage("Manual updating set, don't autoload the radar webpage...", KeyValue.w);
 			failedRadarWebViewDownload(R.string.manual_update_set_refresh_screen_to_load);

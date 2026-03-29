@@ -46,6 +46,7 @@
     <string name="interval_daily">Deistich</string>
     <string name="interval_hourly">Oeren</string>
     <string name="invalid_update_interval">Update-ynterval is ûnjildich, bywurkje ynstellings en besykje dan nochris</string>
+    <string name="json_formatted_data">De %1$s fereasket no in %2$s gegevensbestân fan %3$s tsjinner, jo moatte de %4$s bywurkje en it %5$s bestân bywurkje foardat dizze app goed wurket. Klik Ok foar mear details oer %6$s</string>
     <string name="last_month_stats">Statistiken fan ferline moanne</string>
     <string name="last_year_stats">Ferline jier Statistics</string>
     <string name="light_theme">Ljocht Tema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Lit Prognose sjen</string>
     <string name="show_radar">Radar sjen litte</string>
     <string name="since">sûnt</string>
+    <string name="skip">Oerslaan</string>
     <string name="stats2">Statistyk</string>
     <string name="still_downloading_forecast_data">Noch ynladen prognosegegevens</string>
     <string name="swipe_lock">Swipe Lock</string>

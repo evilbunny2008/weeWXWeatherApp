@@ -46,6 +46,7 @@
     <string name="interval_daily">Sehari-hari</string>
     <string name="interval_hourly">Per jam</string>
     <string name="invalid_update_interval">Interval pembaruan tidak valid, perbarui pengaturan lalu coba lagi</string>
+    <string name="json_formatted_data">%1$s sekarang memerlukan file data %2$s dari server %3$s, Anda perlu memperbarui %4$s dan memperbarui file %5$s sebelum aplikasi ini berfungsi dengan benar. Klik Oke untuk detail selengkapnya tentang %6$s</string>
     <string name="last_month_stats">Statistik Bulan Lalu</string>
     <string name="last_year_stats">Statistik Tahun Lalu</string>
     <string name="light_theme">Tema Ringan</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Tampilkan Prakiraan</string>
     <string name="show_radar">Tampilkan Radar</string>
     <string name="since">sejak</string>
+    <string name="skip">Melewati</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Masih mengunduh data perkiraan</string>
     <string name="swipe_lock">Gesek Kunci</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Tsiku ndi tsiku</string>
     <string name="interval_hourly">Ola lililonse</string>
     <string name="invalid_update_interval">Sinthani nthawi yayitali ndi yosavomerezeka, kusintha makonda kenako ndikuyesanso</string>
+    <string name="json_formatted_data">%1$s tsopano ikufunika %2$s fayilo ya data kuchokera pa seva ya %3$s, mukufunika kusintha %4$s ndikusintha fayilo ya %5$s pulogalamuyi isanayambe kugwira ntchito moyenera. Dinani Chabwino kuti mudziwe zambiri pa %6$s</string>
     <string name="last_month_stats">Ziwerengero za mwezi</string>
     <string name="last_year_stats">Ziwerengero za chaka chatha</string>
     <string name="light_theme">Mutu wowala</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Onetsani zamtsogolo</string>
     <string name="show_radar">Onetsani radar</string>
     <string name="since">kuyambira</string>
+    <string name="skip">Dumphani</string>
     <string name="stats2">Masamu</string>
     <string name="still_downloading_forecast_data">Kutsitsanso deta yakuneneratu</string>
     <string name="swipe_lock">Swipe loko</string>

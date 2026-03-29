@@ -46,6 +46,7 @@
     <string name="interval_daily">Nhial</string>
     <string name="interval_hourly">Thɛɛr</string>
     <string name="invalid_update_interval">Kë tɔ̈u nhial ee kë cïï lui, ye käŋ waar ku jal yaa dhukciëën</string>
+    <string name="json_formatted_data">%1$s ëmɛn akɔɔr %2$s ë wël ë lëk tënë %3$s ë thäät, yïn awïc ba %4$s tääu-pïny ku %5$s ë thäät ë thäät ë app kënë këc luui apath. Cɔl Ok ku yök wël juëc në %6$s</string>
     <string name="last_month_stats">Kä cï kek kueen në pɛɛi de rou yic</string>
     <string name="last_year_stats">Kä ye kueen në ruön wäär cï lɔ</string>
     <string name="light_theme">ba lööny</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Tik nhïïm</string>
     <string name="show_radar">Nyuan</string>
     <string name="since">rin cï</string>
+    <string name="skip">Lɔ̈ɔ̈m</string>
     <string name="stats2">kä cï röt looi</string>
     <string name="still_downloading_forecast_data">Ku ŋoot ke yök wël cï kek yök</string>
     <string name="swipe_lock">Kë cie yic</string>

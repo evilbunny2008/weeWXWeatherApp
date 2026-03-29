@@ -46,6 +46,7 @@
     <string name="interval_daily">Täglich</string>
     <string name="interval_hourly">Stündlich</string>
     <string name="invalid_update_interval">Das Aktualisierungsintervall ist ungültig. Aktualisieren Sie die Einstellungen und versuchen Sie es erneut</string>
+    <string name="json_formatted_data">%1$s erfordert jetzt eine %2$s-Datendatei vom %3$s-Server. Sie müssen %4$s und %5$s-Datei aktualisieren, bevor diese App ordnungsgemäß funktioniert. Klicken Sie auf \'OK\', um weitere Informationen zu %6$s zu erhalten</string>
     <string name="last_month_stats">Statistiken des letzten Monats</string>
     <string name="last_year_stats">Statistik des letzten Jahres</string>
     <string name="light_theme">Lichtthema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Prognose anzeigen</string>
     <string name="show_radar">Radar anzeigen</string>
     <string name="since">seit</string>
+    <string name="skip">Überspringen</string>
     <string name="stats2">Statistiken</string>
     <string name="still_downloading_forecast_data">Es werden immer noch Prognosedaten heruntergeladen</string>
     <string name="swipe_lock">Wischsperre</string>

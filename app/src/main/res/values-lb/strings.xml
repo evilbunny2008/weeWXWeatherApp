@@ -46,6 +46,7 @@
     <string name="interval_daily">Deeglech</string>
     <string name="interval_hourly">Stonneplang</string>
     <string name="invalid_update_interval">D\'Aktualiséierungsintervall ass ongëlteg, aktualiséieren Astellungen a probéiert dann erëm</string>
+    <string name="json_formatted_data">Den %1$s erfuerdert elo eng %2$s Datedatei vum %3$s Server, Dir musst den %4$s aktualiséieren an den %5$s Datei aktualiséieren ier dës App richteg funktionnéiert. Klickt Ok fir méi Detailer iwwer %6$s</string>
     <string name="last_month_stats">Statistike vum leschte Mount</string>
     <string name="last_year_stats">D\'lescht Joer Statistiken</string>
     <string name="light_theme">Liicht Thema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Show Prognosen</string>
     <string name="show_radar">Show Radar</string>
     <string name="since">zënter</string>
+    <string name="skip">Sprangen</string>
     <string name="stats2">Statistiken</string>
     <string name="still_downloading_forecast_data">Nach ëmmer Prognosendaten eroflueden</string>
     <string name="swipe_lock">Swipe Lock</string>

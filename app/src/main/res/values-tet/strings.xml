@@ -46,6 +46,7 @@
     <string name="interval_daily">Loroloron</string>
     <string name="interval_hourly">Oras-oras</string>
     <string name="invalid_update_interval">Intervalu atualizasaun la válidu, atualiza konfigurasaun no depois koko fali</string>
+    <string name="json_formatted_data">%1$s agora presiza arkivu dadus %2$s husi servidór %3$s, ita-boot presiza atu atualiza %4$s no atualiza arkivu %5$s molok aplikasaun ida-ne\'e funsiona ho loloos. Klik Ok ba detalle liután kona-ba %6$s</string>
     <string name="last_month_stats">Estatístika Fulan kotuk nian</string>
     <string name="last_year_stats">Estatístika Tinan kotuk nian</string>
     <string name="light_theme">Tema Naroman</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Hatudu Previzaun</string>
     <string name="show_radar">Hatudu Radar</string>
     <string name="since">desde</string>
+    <string name="skip">Hakat</string>
     <string name="stats2">Estatístika</string>
     <string name="still_downloading_forecast_data">Nafatin download dadus previzaun</string>
     <string name="swipe_lock">Trava Swipe</string>

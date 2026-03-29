@@ -46,6 +46,7 @@
     <string name="interval_daily">ਰੋਜ਼ਾਨਾ</string>
     <string name="interval_hourly">ਘੰਟਾ</string>
     <string name="invalid_update_interval">ਅੱਪਡੇਟ ਅੰਤਰਾਲ ਅਵੈਧ ਹੈ, ਸੈਟਿੰਗਾਂ ਅੱਪਡੇਟ ਕਰੋ ਅਤੇ ਫਿਰ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ</string>
+    <string name="json_formatted_data">%1$s ਨੂੰ ਹੁਣ %3$s ਸਰਵਰ ਤੋਂ ਇੱਕ %2$s ਡਾਟਾ ਫ਼ਾਈਲ ਦੀ ਲੋੜ ਹੈ, ਤੁਹਾਨੂੰ %4$s ਨੂੰ ਅੱਪਡੇਟ ਕਰਨ ਅਤੇ %5$s ਫ਼ਾਈਲ ਨੂੰ ਅੱਪਡੇਟ ਕਰਨ ਦੀ ਲੋੜ ਹੈ ਇਸ ਤੋਂ ਪਹਿਲਾਂ ਕਿ ਇਹ ਐਪ ਸਹੀ ਢੰਗ ਨਾਲ ਕੰਮ ਕਰੇ। %6$s \'ਤੇ ਹੋਰ ਵੇਰਵਿਆਂ ਲਈ ਠੀਕ \'ਤੇ ਕਲਿੱਕ ਕਰੋ</string>
     <string name="last_month_stats">ਪਿਛਲੇ ਮਹੀਨੇ ਦੇ ਅੰਕੜੇ</string>
     <string name="last_year_stats">ਪਿਛਲੇ ਸਾਲ ਦੇ ਅੰਕੜੇ</string>
     <string name="light_theme">ਹਲਕਾ ਥੀਮ</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">ਪੂਰਵ ਅਨੁਮਾਨ ਦਿਖਾਓ</string>
     <string name="show_radar">ਰਾਡਾਰ ਦਿਖਾਓ</string>
     <string name="since">ਤੋਂ</string>
+    <string name="skip">ਛੱਡੋ</string>
     <string name="stats2">ਅੰਕੜੇ</string>
     <string name="still_downloading_forecast_data">ਹਾਲੇ ਵੀ ਪੂਰਵ ਅਨੁਮਾਨ ਡਾਟਾ ਡਾਊਨਲੋਡ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ</string>
     <string name="swipe_lock">ਸਵਾਈਪ ਲੌਕ</string>

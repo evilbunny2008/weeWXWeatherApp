@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.google.android.material.checkbox.MaterialCheckBox;
 import com.google.android.material.textview.MaterialTextView;
 
+import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -32,13 +33,10 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.formatString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getDateTimeStr;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getHourMin;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getLocalDate;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getLocalTime;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getSinceHour;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getTimeMonth;
 import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
+import static com.odiousapps.weewxweather.weeWXAppCommon.sdf18;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
 
 @SuppressWarnings({"unused", "deprecation"})
@@ -55,7 +53,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	private final ViewTreeObserver.OnScrollChangedListener scl = () -> swipeLayout.setEnabled(current.getScrollY() == 0);
 
-	private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(5);
+	private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(50);
 
 	private long lastRunForecast = 0, lastRunRadar = 0;
 
@@ -238,9 +236,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			if(isCurrent)
 			{
-				scheduler.schedule(() -> adjustHeight(current, 1), 100, TimeUnit.MILLISECONDS);
-				scheduler.schedule(() -> adjustHeight(current, 2), 200, TimeUnit.MILLISECONDS);
-				scheduler.schedule(() -> adjustHeight(current, 3), 300, TimeUnit.MILLISECONDS);
+				newAttempt(1, v);
 				return;
 			}
 
@@ -253,24 +249,40 @@ public class Weather extends Fragment implements View.OnClickListener
 		return null;
 	}
 
-	private void adjustHeight(SafeWebView webView, int attempt)
+	private void newAttempt(int attempt, SafeWebView webView)
 	{
-		if(webView == null || current == null)
+		if(attempt > 3)
 		{
-			if(attempt >= 3)
-				stopRefreshing();
-
+			LogMessage("newAttempt) Attempt #4, we'll stop refreshing and return...");
+			stopRefreshing();
 			return;
 		}
 
-		LogMessage("current.getHeight(): " + current.getHeight());
-		LogMessage("swipeLayout.getHeight(): " + swipeLayout.getHeight());
+		LogMessage("newAttempt) Attempt #" + attempt + ", setting a new scheduler...");
+		scheduler.schedule(() -> adjustHeight(webView, attempt), attempt * 100L, TimeUnit.MILLISECONDS);
+	}
+
+	private void adjustHeight(SafeWebView webView, int attempt)
+	{
+		if(attempt > 3)
+		{
+			LogMessage("adjustHeight() Attempt #4, we'll stop refreshing and return...");
+			stopRefreshing();
+			return;
+		}
+
+		if(webView == null || current == null)
+		{
+			stopRefreshing();
+			return;
+		}
+
+		LogMessage("adjustHeight() current.getHeight(): " + current.getHeight());
+		LogMessage("adjustHeight() swipeLayout.getHeight(): " + swipeLayout.getHeight());
 
 		if(current.getHeight() == 0 || swipeLayout.getHeight() == 0)
 		{
-			if(attempt >= 3)
-				stopRefreshing();
-
+			newAttempt(attempt + 1, webView);
 			return;
 		}
 
@@ -279,13 +291,13 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		int heightMH = webView.getMeasuredHeight();
 
-		LogMessage("webView measured height: " + heightMH);
+		LogMessage("adjustHeight() webView measured height: " + heightMH);
 
 		float curdensity =  weeWXApp.getDensity();
 
 		int heightPx = Math.round(current.getHeight() / curdensity);
 
-		LogMessage("heightPx: " + heightPx);
+		LogMessage("adjustHeight() heightPx: " + heightPx);
 
 		webView.post(() -> webView.evaluateJavascript("""
 					(function()
@@ -306,9 +318,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						LogMessage("current.evaluateJavascript() value is null " +
 						                          "or blank or equals 'null'", KeyValue.v);
 
-						if(attempt >= 3)
-							stopRefreshing();
-
+						newAttempt(attempt + 1, webView);
 						return;
 					}
 
@@ -321,9 +331,7 @@ public class Weather extends Fragment implements View.OnClickListener
 					{
 						LogMessage("heightInPx is 0 skipping...");
 
-						if(attempt >= 3)
-							stopRefreshing();
-
+						newAttempt(attempt + 1, webView);
 						return;
 					}
 
@@ -336,9 +344,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						if(!current.isInLayout())
 							current.post(() -> current.requestLayout());
 
-						if(attempt >= 3)
-							stopRefreshing();
-
+						newAttempt(attempt + 1, webView);
 						return;
 					}
 
@@ -358,9 +364,8 @@ public class Weather extends Fragment implements View.OnClickListener
 						LogMessage("params.height != contentHeightPx");
 						params.height = contentHeightPx;
 						swipeLayout.post(() -> swipeLayout.setLayoutParams(params));
+						newAttempt(attempt + 1, webView);
 					}
-
-					stopRefreshing();
 				}
 		));
 	}
@@ -415,8 +420,8 @@ public class Weather extends Fragment implements View.OnClickListener
 				return;
 			}
 
-			long[] npwsll = weeWXAppCommon.getNPWSLL();
-			if(npwsll[1] <= 0)
+			weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
+			if(npwsll.periodTime() <= 0)
 			{
 				LogMessage("Manual updating set, don't autoload the radar webpage...", true, KeyValue.d);
 				loadWebViewContent(R.string.manual_update_set_refresh_screen_to_load);
@@ -438,41 +443,59 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		int now = Math.round((float)getJson("now", 0f));
+		int timeMode = 0;
+		long now = Math.round((double)getJson("now", 0D) * 1_000L);
 		String tempSym = KeyValue.getLabel("temperature", "°C");
-		String humSym = KeyValue.getLabel("humidity", "%");
+		String humSym = KeyValue.getLabel("percent", "%");
 		String pressSym = KeyValue.getLabel("pressure", "hPa");
 		String speedSym = KeyValue.getLabel("speed", "km/h");
+		String rainSym = KeyValue.getLabel("rain", "mm");
 
 		checkFields(tv1, (String)getJson("station_location", ""));
-		checkFields(tv2, getLocalTime(now) + " " + getLocalDate(now));
+		checkFields(tv2, sdf18.format(new Date(now)));
+
+		String tmpStr = formatString("current_outTemp");
+		if(tmpStr == null || tmpStr.isBlank())
+			return;
 
 		final StringBuilder sb = new StringBuilder();
 		sb.append("\n<div class='todayCurrent'>\n");
 		sb.append("\t<div class='topRowCurrent'>\n");
 		sb.append("\t\t<div class='mainTemp'>");
-		sb.append(formatString("current_outTemp")).append(tempSym);
+		sb.append(tmpStr).append(tempSym);
 		sb.append("</div>\n");
 
+		tmpStr = formatString("appTemp");
+		if(tmpStr == null || tmpStr.isBlank())
+			return;
+
 		sb.append("\t\t<div class='apparentTemp'>AT:<br/>");
-		sb.append(formatString("appTemp")).append(tempSym);
+		sb.append(tmpStr).append(tempSym);
 		sb.append("</div>\n\t</div>\n\n");
 
 		sb.append("\t<div class='dataTableCurrent'>\n");
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
+		tmpStr = formatString("current_windGust");
+		if(tmpStr == null || tmpStr.isBlank())
+			return;
+
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
 				.append(weeWXAppCommon.fiToSVG("flaticon-windy"))
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(formatString("current_windGust"))
+				.append(tmpStr)
 				.append(speedSym)
 				.append("</div>\n");
 
+		tmpStr = formatString("current_barometer");
+		if(tmpStr == null || tmpStr.isBlank())
+			return;
+
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(formatString("current_barometer"))
+				.append(tmpStr)
 				.append(pressSym)
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
@@ -482,16 +505,22 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
+		tmpStr = (String)getJson("current_windGustDir_compass", "N/A");
+		if(tmpStr == null || tmpStr.isBlank())
+			return;
+
+		tmpStr = tmpStr.strip();
+
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
 				.append(cssToSVG("wi-wind-deg", (int)getJson("current_windGustDir", 0)))
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append((String)getJson("current_windGustDir_compass", "N/A"))
+				.append(tmpStr)
 				.append("</div>\n");
 
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(formatString("current.outHumidity"))
+				.append(formatString("current_outHumidity"))
 				.append(humSym)
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
@@ -504,9 +533,17 @@ public class Weather extends Fragment implements View.OnClickListener
 		int since_hour = (int)getJson("since_hour", 0);
 		String since = getSinceHour(since_hour, R.string.since);
 		String rain = formatString("day_rain_sum");
+		if(rain == null || rain.isBlank())
+			return;
 
 		if(since_hour > 0)
+		{
 			rain = formatString("since_today");
+			if(rain == null || rain.isBlank())
+				return;
+		}
+
+		rain += rainSym + " ";
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
 				.append(cssToSVG("wi-umbrella"))
@@ -517,8 +554,12 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append(since)
 				.append("</div>\n");
 
+		tmpStr = formatString("current_dewpoint");
+		if(tmpStr == null || tmpStr.isBlank())
+			return;
+
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(formatString("current_dewpoint"))
+				.append(tmpStr)
 				.append(tempSym)
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
@@ -537,13 +578,17 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			if(hasUV)
 			{
+				tmpStr = formatString("current_UV");
+				if(tmpStr == null || tmpStr.isBlank())
+					return;
+
 				sb.append("\t\t\t<div class='dataCellCurrent left'>")
 						.append(weeWXAppCommon.fiToSVG("flaticon-women-sunglasses"))
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
 						.append("\t\t\t<div class='dataCellCurrent left'>")
-						.append(formatString("current_UV"))
-						.append(KeyValue.getLabel("uv_index", "UVI"))
+						.append(tmpStr)
+						.append(KeyValue.getLabel("uv", "UVI").strip())
 						.append("</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
@@ -551,8 +596,12 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			if(hasRadiation)
 			{
+				tmpStr = formatString("current_radiation");
+				if(tmpStr == null || tmpStr.isBlank())
+					return;
+
 				sb.append("\t\t\t<div class='dataCellCurrent right'>")
-						.append(formatString("current_radiation"))
+						.append(tmpStr)
 						.append(KeyValue.getLabel("radiation", "W/m²"))
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
@@ -576,12 +625,16 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			if(hasInTemp)
 			{
+				tmpStr = formatString("current_inTemp");
+				if(tmpStr == null || tmpStr.isBlank())
+					return;
+
 				sb.append("\t\t\t<div class='dataCellCurrent left'>")
 						.append(weeWXAppCommon.fiToSVG("flaticon-home-page"))
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
 						.append("\t\t\t<div class='dataCellCurrent left'>")
-						.append(formatString("current_inTemp"))
+						.append(tmpStr)
 						.append(tempSym)
 						.append("</div>\n");
 			} else {
@@ -590,8 +643,12 @@ public class Weather extends Fragment implements View.OnClickListener
 
 			if(hasInHumidity)
 			{
+				tmpStr = formatString("current_inHumidity");
+				if(tmpStr == null || tmpStr.isBlank())
+					return;
+
 				sb.append("\t\t\t<div class='dataCellCurrent right'>")
-						.append(formatString("current_inHumidity"))
+						.append(tmpStr)
 						.append(humSym)
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
@@ -607,19 +664,27 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		int sunrise = Math.round((float)getJson("sun_rise", 0f));
-		int sunset = Math.round((float)getJson("sun_set", 0f));
+		long sunrise = Math.round((double)getJson("sun_rise", 0D) * 1_000L);
+		long sunset = Math.round((double)getJson("sun_set", 0D) * 1_000L);
+
+		tmpStr = getDateTimeStr(sunrise, 0);
+		if(tmpStr == null || tmpStr.isBlank())
+			return;
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
 				.append(cssToSVG("wi-sunrise"))
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(getDateTimeStr(sunrise, 0))
+				.append(tmpStr)
 				.append("</div>\n");
 
+		tmpStr = getDateTimeStr(sunset, 0);
+		if(tmpStr == null || tmpStr.isBlank())
+			return;
+
 		sb.append("\t\t\t<div class='dataCellCurrent right'>")
-				.append(getDateTimeStr(sunset, 0))
+				.append(tmpStr)
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent right'>")
@@ -632,45 +697,38 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		boolean has_moon_next = hasElement("moon_next_rise") && hasElement("moon_next_set");
 
+		long moon_rise = Math.round((double)getJson("moon_rise", 0D) * 1_000L);
+		long moon_set = Math.round((double)getJson("moon_set", 0D) * 1_000L);
+
 		if(next_moon && has_moon_next)
 		{
-			int moon_next_rise = Math.round((float)getJson("moon_next_rise", 0f));
-			int moon_next_set = Math.round((float)getJson("moon_next_set", 0f));
-
-			sb.append("\t\t\t<div class='dataCellCurrent left'>")
-					.append(cssToSVG("wi-moonrise"))
-					.append("</div>\n")
-					.append(weeWXApp.currentSpacer)
-					.append("\t\t\t<div class='dataCellCurrent left'>")
-					.append(getTimeMonth(moon_next_rise))
-					.append("</div>\n");
-			sb.append("\t\t\t<div class='dataCellCurrent right'>")
-					.append(getTimeMonth(moon_next_rise))
-					.append("</div>\n")
-					.append(weeWXApp.currentSpacer)
-					.append("\t\t\t<div class='dataCellCurrent right'>")
-					.append(cssToSVG("wi-moonset"))
-					.append("</div>\n");
-		} else {
-
-			int moon_rise = Math.round((float)getJson("moon_rise", 0f));
-			int moon_set = Math.round((float)getJson("moon_set", 0f));
-
-			sb.append("\t\t\t<div class='dataCellCurrent left'>")
-					.append(cssToSVG("wi-moonrise"))
-					.append("</div>\n")
-					.append(weeWXApp.currentSpacer)
-					.append("\t\t\t<div class='dataCellCurrent left'>")
-					.append(getHourMin(moon_rise))
-					.append("</div>\n");
-			sb.append("\t\t\t<div class='dataCellCurrent right'>")
-					.append(getHourMin(moon_set))
-					.append("</div>\n")
-					.append(weeWXApp.currentSpacer)
-					.append("\t\t\t<div class='dataCellCurrent right'>")
-					.append(cssToSVG("wi-moonset"))
-					.append("</div>\n");
+			moon_rise = Math.round((double)getJson("moon_next_rise", 0D) * 1_000L);
+			moon_set = Math.round((double)getJson("moon_next_set", 0D) * 1_000L);
 		}
+
+		tmpStr = getDateTimeStr(moon_rise, 4);
+		if(tmpStr == null || tmpStr.isBlank())
+			return;
+
+		sb.append("\t\t\t<div class='dataCellCurrent left'>")
+				.append(cssToSVG("wi-moonrise"))
+				.append("</div>\n")
+				.append(weeWXApp.currentSpacer)
+				.append("\t\t\t<div class='dataCellCurrent left'>")
+				.append(tmpStr)
+				.append("</div>\n");
+
+		tmpStr = getDateTimeStr(moon_set, 4);
+		if(tmpStr == null || tmpStr.isBlank())
+			return;
+
+		sb.append("\t\t\t<div class='dataCellCurrent right'>")
+				.append(tmpStr)
+				.append("</div>\n")
+				.append(weeWXApp.currentSpacer)
+				.append("\t\t\t<div class='dataCellCurrent right'>")
+				.append(cssToSVG("wi-moonset"))
+				.append("</div>\n");
 
 		sb.append("\t\t</div>\n\n");
 
@@ -814,8 +872,8 @@ public class Weather extends Fragment implements View.OnClickListener
 			return;
 		}
 
-		long[] npwsll = weeWXAppCommon.getNPWSLL();
-		if(!forced && npwsll[1] <= 0)
+		weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
+		if(!forced && npwsll.periodTime() <= 0)
 		{
 			LogMessage("Manual updating set, don't autoload the radar webpage...", KeyValue.d);
 			loadWebViewContent(R.string.manual_update_set_refresh_screen_to_load);

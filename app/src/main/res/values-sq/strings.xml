@@ -46,6 +46,7 @@
     <string name="interval_daily">Ditore</string>
     <string name="interval_hourly">Për orë</string>
     <string name="invalid_update_interval">Intervali i përditësimit është i pavlefshëm, përditëso cilësimet dhe më pas provo sërish</string>
+    <string name="json_formatted_data">%1$s tani kërkon një skedar të dhënash %2$s nga serveri %3$s, duhet të përditësoni %4$s dhe të përditësoni skedarin %5$s përpara se ky aplikacion të funksionojë siç duhet. Kliko \'Në rregull\' për më shumë detaje mbi %6$s</string>
     <string name="last_month_stats">Statistikat e muajit të kaluar</string>
     <string name="last_year_stats">Statistikat e vitit të kaluar</string>
     <string name="light_theme">Tema e lehtë</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Shfaq parashikimin</string>
     <string name="show_radar">Shfaq Radarin</string>
     <string name="since">që nga viti</string>
+    <string name="skip">Kapërce</string>
     <string name="stats2">Statistikat</string>
     <string name="still_downloading_forecast_data">Ende po shkarkohen të dhënat e parashikimit</string>
     <string name="swipe_lock">Kyçja me rrëshqitje</string>

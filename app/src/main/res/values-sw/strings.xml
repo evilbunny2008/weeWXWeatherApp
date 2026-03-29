@@ -46,6 +46,7 @@
     <string name="interval_daily">Kila siku</string>
     <string name="interval_hourly">Kila saa</string>
     <string name="invalid_update_interval">Sasisha muda ni batili, sasisha mipangilio na kisha ujaribu tena</string>
+    <string name="json_formatted_data">%1$s sasa inahitaji faili ya data ya %2$s kutoka kwa seva ya %3$s, unahitaji kusasisha %4$s na kusasisha faili ya %5$s kabla ya programu hii kufanya kazi ipasavyo. Bofya Sawa kwa maelezo zaidi kuhusu %6$s</string>
     <string name="last_month_stats">Takwimu za mwezi uliopita</string>
     <string name="last_year_stats">Takwimu za mwaka jana</string>
     <string name="light_theme">Mandhari nyepesi</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Onyesha utabiri</string>
     <string name="show_radar">Onyesha rada</string>
     <string name="since">Tangu</string>
+    <string name="skip">Ruka</string>
     <string name="stats2">Takwimu</string>
     <string name="still_downloading_forecast_data">Bado kupakua data ya utabiri</string>
     <string name="swipe_lock">Swipe kufuli</string>

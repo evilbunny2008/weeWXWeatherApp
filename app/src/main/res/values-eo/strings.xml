@@ -46,6 +46,7 @@
     <string name="interval_daily">Ĉiutage</string>
     <string name="interval_hourly">Hore</string>
     <string name="invalid_update_interval">Ĝisdatigintervalo estas nevalida, ĝisdatigu agordojn kaj poste reprovu</string>
+    <string name="json_formatted_data">La %1$s nun postulas %2$s datumdosieron de %3$s servilo, vi devas ĝisdatigi la %4$s kaj ĝisdatigi la %5$s dosieron antaŭ ol ĉi tiu programo funkcios ĝuste. Alklaku Bone por pliaj detaloj pri %6$s</string>
     <string name="last_month_stats">Statistiko de la lasta Monato</string>
     <string name="last_year_stats">Lastjara Statistiko</string>
     <string name="light_theme">Luma Temo</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Montru Prognozon</string>
     <string name="show_radar">Montru Radaron</string>
     <string name="since">ekde</string>
+    <string name="skip">Saltu</string>
     <string name="stats2">Statistiko</string>
     <string name="still_downloading_forecast_data">Ankoraŭ elŝutas prognozajn datumojn</string>
     <string name="swipe_lock">Svingu Ŝlosu</string>

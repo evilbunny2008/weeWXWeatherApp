@@ -46,6 +46,7 @@
     <string name="interval_daily">일일</string>
     <string name="interval_hourly">시간별</string>
     <string name="invalid_update_interval">업데이트 간격이 잘못되었습니다. 설정을 업데이트한 후 다시 시도하세요</string>
+    <string name="json_formatted_data">이제 %1$s에는 %3$s 서버의 %2$s 데이터 파일이 필요합니다. 이 앱이 제대로 작동하려면 %4$s를 업데이트하고 %5$s 파일을 업데이트해야 합니다. %6$s에 대한 자세한 내용을 보려면 확인을 클릭하세요</string>
     <string name="last_month_stats">지난달 통계</string>
     <string name="last_year_stats">작년 통계</string>
     <string name="light_theme">라이트 테마</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">예측 표시</string>
     <string name="show_radar">레이더 표시</string>
     <string name="since">~부터</string>
+    <string name="skip">건너뛰다</string>
     <string name="stats2">통계</string>
     <string name="still_downloading_forecast_data">아직 예측 데이터를 다운로드하는 중입니다</string>
     <string name="swipe_lock">스와이프 잠금</string>

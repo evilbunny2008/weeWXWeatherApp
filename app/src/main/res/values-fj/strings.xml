@@ -46,6 +46,7 @@
     <string name="interval_daily">Veisiga</string>
     <string name="interval_hourly">Auwa</string>
     <string name="invalid_update_interval">Update e sa tiko na kena revurevu, na kena vakavoui ka qai retry […]</string>
+    <string name="json_formatted_data">Na%1$s ena gauna oqo e gadrevi kina e dua na faile ni itukutuku ni%2$s mai na%3$s dauveiqaravi, e dodonu mo vakavoutaka na%4$s ka vakavoutaka na faile ni%5$s ni bera ni cakacaka vakadodonu na app oqo. Kiliki Ok me baleta na ikuri ni itukutuku ena %6$s</string>
     <string name="last_month_stats">Na veikatu ni galala</string>
     <string name="last_year_stats">Na imatai ni siga e kena 1</string>
     <string name="light_theme">Na Rarama</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Digia na Iu</string>
     <string name="show_radar">Vakaraitaka vei Ra</string>
     <string name="since">me tekivu mai</string>
+    <string name="skip">Sivita</string>
     <string name="stats2">iyalayala</string>
     <string name="still_downloading_forecast_data">Stivenivolai ni itukutuku ni itukutuku</string>
     <string name="swipe_lock">iyaloyalo</string>

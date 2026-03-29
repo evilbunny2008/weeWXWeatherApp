@@ -46,6 +46,7 @@
     <string name="interval_daily">Ni cia̱ŋ</string>
     <string name="interval_hourly">Kɛ thaak</string>
     <string name="invalid_update_interval">Updatate bɛth bɛl ɛ mi̱ /thiɛl luɔt, update thɛttiŋni̱ kä kɛ kɔrɛ ba nyɔk kɛ thëm</string>
+    <string name="json_formatted_data">Kä %1$s ɛntäämɛ go̱o̱rɛ %2$s data pai̱l kä %3$s thärbä, bi̱ %4$s nyɔk kɛ lätni̱ kä bi̱ %5$s pai̱l nyɔk kɛ läth lät ɛ ŋot app ɛmɛ /kenɛ ni̱ lät ɛ gɔaa. Cɔl Ok kɛ kui̱ ruaacni̱ ti̱ ŋuan kä %6$s</string>
     <string name="last_month_stats">Month\'ä Month\'ä I̱thtati̱thtikni̱</string>
     <string name="last_year_stats">I̱thtati̱thtikni̱ tëë ci̱ wɔ̱</string>
     <string name="light_theme">Light</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">kä ta̱a̱ in lät kɛ naath</string>
     <string name="show_radar">Nyua̱n</string>
     <string name="since">ni mëë</string>
+    <string name="skip">Bäl</string>
     <string name="stats2">I̱thtati̱thtikni̱</string>
     <string name="still_downloading_forecast_data">Kä ŋotdɛ tekɛ data mi ca lar ŋotdɛ</string>
     <string name="swipe_lock">Swise Lock</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Mokolo na mokolo</string>
     <string name="interval_hourly">Ngonga na ngonga</string>
     <string name="invalid_update_interval">Intervalle ya mise à jour ezali invalide, mise à jour ya ba paramètres mpe na sima komeka lisusu</string>
+    <string name="json_formatted_data">%1$s esengaka sikoyo fichier ya ba données %2$s uta na serveur ya %3$s, esengeli o mettre à jour %4$s pe o mettre à jour fichier %5$s avant app oyo esala malamu. Finá Ok mpo na koyeba makambo mosusu na %6$s</string>
     <string name="last_month_stats">Statistiques ya sanza eleki</string>
     <string name="last_year_stats">Statistiques ya mbula eleki</string>
     <string name="light_theme">Motó ya likambo ya pole</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Lakisa pronostic</string>
     <string name="show_radar">Lakisa Radar</string>
     <string name="since">banda</string>
+    <string name="skip">Kokipe te</string>
     <string name="stats2">Statistiques</string>
     <string name="still_downloading_forecast_data">Encore télécharger ba données ya prévision</string>
     <string name="swipe_lock">Swipe Lock</string>

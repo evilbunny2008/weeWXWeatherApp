@@ -46,6 +46,7 @@
     <string name="interval_daily">Jurnaleru</string>
     <string name="interval_hourly">Orariu</string>
     <string name="invalid_update_interval">L\'agghiurnamentu di ntirbaḍḍu è nun validu, l\'agghiurnari li mpustazzioni e poi raffurzari</string>
+    <string name="json_formatted_data">Lu %1$s ora abbisogna di nu file di dati %2$s dû sirver %3$s, è nicissariu agghiurnari lu %4$s e lu file %5$s prima ca st\'app funziona currettamenti. Clicca Ok pi cchiù dittagghi supra %6$s</string>
     <string name="last_month_stats">Statìstica dû misi di l\'ùrtimu misi</string>
     <string name="last_year_stats">Li Statistichi di l\'Annu passatu</string>
     <string name="light_theme">Tema di lustru</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Mustra Privisioni</string>
     <string name="show_radar">Mustra Radar</string>
     <string name="since">di</string>
+    <string name="skip">Sautari</string>
     <string name="stats2">statistica</string>
     <string name="still_downloading_forecast_data">Ancora scaricamentu di dati di privisioni</string>
     <string name="swipe_lock">Swipe Lock</string>

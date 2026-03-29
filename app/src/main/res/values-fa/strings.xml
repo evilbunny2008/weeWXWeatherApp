@@ -46,6 +46,7 @@
     <string name="interval_daily">روزانه</string>
     <string name="interval_hourly">ساعتی</string>
     <string name="invalid_update_interval">فاصله زمانی به‌روزرسانی نامعتبر است، تنظیمات را به‌روزرسانی کنید و دوباره امتحان کنید</string>
+    <string name="json_formatted_data">%1$s اکنون به یک فایل داده %2$s از سرور %3$s نیاز دارد، قبل از اینکه این برنامه به درستی کار کند، باید %4$s را به روز کنید و فایل %5$s را به روز کنید. برای جزئیات بیشتر در مورد %6$s روی Ok کلیک کنید</string>
     <string name="last_month_stats">آمار ماه گذشته</string>
     <string name="last_year_stats">آمار سال گذشته</string>
     <string name="light_theme">تم سبک</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">نمایش پیش بینی</string>
     <string name="show_radar">نمایش رادار</string>
     <string name="since">از آنجایی که</string>
+    <string name="skip">پرش کنید</string>
     <string name="stats2">آمار</string>
     <string name="still_downloading_forecast_data">هنوز در حال دانلود داده های پیش بینی است</string>
     <string name="swipe_lock">قفل را بکشید</string>

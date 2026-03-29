@@ -46,6 +46,7 @@
     <string name="interval_daily">Chak jou</string>
     <string name="interval_hourly">Chak èdtan</string>
     <string name="invalid_update_interval">Entèval aktyalizasyon a pa valab, mete ajou paramèt ak Lè sa a, reesye</string>
+    <string name="json_formatted_data">%1$s la kounye a mande pou yon fichye done %2$s ki soti nan sèvè %3$s, ou bezwen mete ajou %4$s la epi mete ajou fichye %5$s la anvan aplikasyon sa a ap fonksyone kòrèkteman. Klike Ok pou plis detay sou %6$s</string>
     <string name="last_month_stats">Estatistik mwa pase a</string>
     <string name="last_year_stats">Estatistik ane pase a</string>
     <string name="light_theme">Tèm limyè</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Montre pwevwa</string>
     <string name="show_radar">Montre rada</string>
     <string name="since">depi</string>
+    <string name="skip">Sote</string>
     <string name="stats2">Estatistik</string>
     <string name="still_downloading_forecast_data">Toujou telechaje done prévisions</string>
     <string name="swipe_lock">Glise Lock</string>

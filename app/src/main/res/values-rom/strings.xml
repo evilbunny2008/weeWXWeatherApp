@@ -46,6 +46,7 @@
     <string name="interval_daily">Divesutno</string>
     <string name="interval_hourly">Sako ćaso</string>
     <string name="invalid_update_interval">O intervalo le aktualizaciako si invalidno, aktualizime settingura thaj pala kodo te zumaven</string>
+    <string name="json_formatted_data">O %1$s akana mangel jekh %2$s data lil katar o %3$s server, trubul te keres o %4$s thaj te keres o %5$s lil anglal so kadi aplikacia te kerel buti mishto. Klikisar Ok vaś maj but detalură pal-o %6$s</string>
     <string name="last_month_stats">E statistike e palune ćhonesko</string>
     <string name="last_year_stats">O paluno bersh si e Statistika</string>
     <string name="light_theme">Lumina e Thema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Sićuke</string>
     <string name="show_radar">Sikav Radar</string>
     <string name="since">kodolesqe</string>
+    <string name="skip">Xutel</string>
     <string name="stats2">E statìstike</string>
     <string name="still_downloading_forecast_data">Inke tele line prognosake dati</string>
     <string name="swipe_lock">Swipe Lock</string>

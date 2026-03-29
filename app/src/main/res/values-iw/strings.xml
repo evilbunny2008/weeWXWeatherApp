@@ -46,6 +46,7 @@
     <string name="interval_daily">יוֹמִי</string>
     <string name="interval_hourly">מדי שעה</string>
     <string name="invalid_update_interval">מרווח העדכון אינו חוקי, עדכן את ההגדרות ולאחר מכן נסה שוב</string>
+    <string name="json_formatted_data">ה-%1$s דורש כעת קובץ נתונים %2$s משרת %3$s, עליך לעדכן את ה-%4$s ולעדכן את הקובץ %5$s לפני שהאפליקציה הזו תפעל כהלכה. לחץ על אישור לפרטים נוספים על %6$s</string>
     <string name="last_month_stats">סטטיסטיקה של החודש שעבר</string>
     <string name="last_year_stats">סטטיסטיקה של שנה שעברה</string>
     <string name="light_theme">נושא קל</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">הצג תחזית</string>
     <string name="show_radar">הצג רדאר</string>
     <string name="since">מֵאָז</string>
+    <string name="skip">לְדַלֵג</string>
     <string name="stats2">סטָטִיסטִיקָה</string>
     <string name="still_downloading_forecast_data">עדיין מוריד נתוני תחזית</string>
     <string name="swipe_lock">נעילת החלקה</string>

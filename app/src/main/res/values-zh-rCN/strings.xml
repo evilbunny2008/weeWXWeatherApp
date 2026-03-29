@@ -46,6 +46,7 @@
     <string name="interval_daily">日常的</string>
     <string name="interval_hourly">每小时</string>
     <string name="invalid_update_interval">更新间隔无效，更新设置然后重试</string>
+    <string name="json_formatted_data">%1$s 现在需要来自 %3$s 服务器的 %2$s 数据文件，您需要更新 %4$s 并更新 %5$s 文件，此应用程序才能正常运行。单击\'确定\'以获取有关 %6$s 的更多详细信息</string>
     <string name="last_month_stats">上个月的统计数据</string>
     <string name="last_year_stats">去年的统计数据</string>
     <string name="light_theme">浅色主题</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">展会预测</string>
     <string name="show_radar">显示雷达</string>
     <string name="since">自从</string>
+    <string name="skip">跳过</string>
     <string name="stats2">统计数据</string>
     <string name="still_downloading_forecast_data">仍在下载预测数据</string>
     <string name="swipe_lock">滑动锁定</string>

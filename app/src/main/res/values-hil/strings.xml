@@ -46,6 +46,7 @@
     <string name="interval_daily">Kada adlaw</string>
     <string name="interval_hourly">Kada oras</string>
     <string name="invalid_update_interval">Ang update interval indi balido, mga setting sa pag-update kag dayon tilawi liwat</string>
+    <string name="json_formatted_data">Ang %1$s nagakinahanglan karon sang %2$s nga data file gikan sa %3$s nga server, kinahanglan mo nga i-update ang %4$s kag i-update ang %5$s nga file antes ini nga app mag-obra sing husto. I-klik ang Ok para sa dugang nga mga detalye sa %6$s</string>
     <string name="last_month_stats">Katapusan nga Estadistika sang Bulan</string>
     <string name="last_year_stats">Mga Estadistika sa Katapusan nga Tuig</string>
     <string name="light_theme">Kasanag nga Tema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Ipakita ang Pagtagna</string>
     <string name="show_radar">Ipakita si Radar</string>
     <string name="since">halin sang</string>
+    <string name="skip">Laktawan</string>
     <string name="stats2">Estadistika</string>
     <string name="still_downloading_forecast_data">Naga-download gihapon sang datos sang forecast</string>
     <string name="swipe_lock">Pag-swipe Lock</string>

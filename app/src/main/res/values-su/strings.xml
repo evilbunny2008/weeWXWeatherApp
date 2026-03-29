@@ -46,6 +46,7 @@
     <string name="interval_daily">Sapopoé</string>
     <string name="interval_hourly">Sajam</string>
     <string name="invalid_update_interval">Apdet aprit teu leres, update setélan teras mundur deui</string>
+    <string name="json_formatted_data">%1$s ayeuna merlukeun file data %2$s ti pangladén %3$s, anjeun kudu ngamutahirkeun %4$s jeung ngamutahirkeun file %5$s samemeh aplikasi ieu jalan kalawan bener. Pencét Ok pikeun detil langkung seueur ngeunaan %6$s</string>
     <string name="last_month_stats">Statistik bulan kamari</string>
     <string name="last_year_stats">Statistik taun ka tukang</string>
     <string name="light_theme">Téma lampu</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Nunjukkeun ramalan</string>
     <string name="show_radar">Tampilkeun radar</string>
     <string name="since">ti saprak</string>
+    <string name="skip">Skip</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Masih ngunduh data ramalan</string>
     <string name="swipe_lock">Konci konci</string>

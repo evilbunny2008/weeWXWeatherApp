@@ -46,6 +46,7 @@
     <string name="interval_daily">Ogni ghjornu</string>
     <string name="interval_hourly">Ogni ora</string>
     <string name="invalid_update_interval">L\'intervallu di l\'aghjurnamenti ùn hè micca validu, aghjurnà i paràmetri è poi riprova</string>
+    <string name="json_formatted_data">U %1$s avà bisognu di un file di dati %2$s da u servitore %3$s, avete bisognu di aghjurnà u %4$s è aghjurnà u schedariu %5$s prima chì sta app funziona bè. Cliccate Ok per più dettagli nantu à %6$s</string>
     <string name="last_month_stats">Statistiche di u mese passatu</string>
     <string name="last_year_stats">Statistiche di l\'annu passatu</string>
     <string name="light_theme">Tema di luce</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Mostra Previsioni</string>
     <string name="show_radar">Mostra Radar</string>
     <string name="since">postu chì</string>
+    <string name="skip">Saltà</string>
     <string name="stats2">Statistiche</string>
     <string name="still_downloading_forecast_data">Sempre scaricatu dati di previsione</string>
     <string name="swipe_lock">Swipe Lock</string>

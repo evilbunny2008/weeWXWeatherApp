@@ -143,8 +143,8 @@ public class Custom extends Fragment
 
 	private void loadCustom(boolean forced)
 	{
-		long[] npwsll = weeWXAppCommon.getNPWSLL();
-		if(!forced && npwsll[1] <= 0)
+		weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
+		if(!forced && npwsll.periodTime() <= 0)
 		{
 			String tmpStr = weeWXApp.current_dialog_html
 					.replace("WARNING_BODY", weeWXApp.getAndroidString(R.string.manual_update_set_refresh_screen_to_load));

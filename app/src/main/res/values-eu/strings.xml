@@ -46,6 +46,7 @@
     <string name="interval_daily">Egunero</string>
     <string name="interval_hourly">Orduka</string>
     <string name="invalid_update_interval">Eguneratzeko tartea baliogabea da, eguneratu ezarpenak eta saiatu berriro</string>
+    <string name="json_formatted_data">%1$s-ek %3$s zerbitzariko %2$s datu-fitxategi bat behar du orain, %4$s eguneratu eta %5$s fitxategia eguneratu behar duzu aplikazio honek behar bezala funtzionatu aurretik. Sakatu Ados %6$s-i buruzko xehetasun gehiago lortzeko</string>
     <string name="last_month_stats">Azken hilabeteko estatistikak</string>
     <string name="last_year_stats">Iazko Estatistika</string>
     <string name="light_theme">Argia Gaia</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Erakutsi iragarpena</string>
     <string name="show_radar">Erakutsi Radar</string>
     <string name="since">geroztik</string>
+    <string name="skip">Saltatu</string>
     <string name="stats2">Estatistikak</string>
     <string name="still_downloading_forecast_data">Oraindik iragarpen datuak deskargatzen</string>
     <string name="swipe_lock">Irristatu blokeoa</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Ҳар рӯз</string>
     <string name="interval_hourly">Соатӣ</string>
     <string name="invalid_update_interval">Фосилаи навсозӣ нодуруст аст, танзимоти навсозӣ ва сипас такрор кунед</string>
+    <string name="json_formatted_data">Ҳоло %1$s файли маълумотии %2$s-ро аз сервери %3$s талаб мекунад, шумо бояд %4$s-ро навсозӣ кунед ва файли %5$s-ро пеш аз он ки ин барнома дуруст кор кунад, навсозӣ кунед. Барои тафсилоти бештар дар %6$s Хуб клик кунед</string>
     <string name="last_month_stats">Омори моҳи гузашта</string>
     <string name="last_year_stats">Омори соли гузашта</string>
     <string name="light_theme">Мавзӯи сабук</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Намоиш пешгӯӣ</string>
     <string name="show_radar">Нишон додани радар</string>
     <string name="since">аз он ващт</string>
+    <string name="skip">Гузаштан</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Ҳанӯз зеркашии маълумоти пешгӯӣ</string>
     <string name="swipe_lock">Қулфи лағжанда</string>

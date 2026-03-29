@@ -46,6 +46,7 @@
     <string name="interval_daily">Dziynnie</string>
     <string name="interval_hourly">Co godzino</string>
     <string name="invalid_update_interval">Ôdstymp w Aktualizacyji je niyważny, aktualizacyje ustawiyń, a potym powtōrz</string>
+    <string name="json_formatted_data">%1$s wymogo teroz pliku danych %2$s z serwera %3$s, musisz zaktualizować %4$s i zaktualizować plik %5$s, podwiela ta aplikacyjo zacznie funkcjōniyrować noleżnie. Kliknij Ok, coby dostać wiyncyj szczegōłōw na tymat %6$s</string>
     <string name="last_month_stats">Ôstatniōm statystykōm ôstatnigo miesiōnca</string>
     <string name="last_year_stats">Ôstatni Rok Statystyki</string>
     <string name="light_theme">Do piykności</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Pokoż</string>
     <string name="show_radar">Pokaż Radar</string>
     <string name="since">ôd</string>
+    <string name="skip">Pōminōńć</string>
     <string name="stats2">Statystyki</string>
     <string name="still_downloading_forecast_data">Durch pobiyranie danych prognozujōncych</string>
     <string name="swipe_lock">Swipe Swipe</string>

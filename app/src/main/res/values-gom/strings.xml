@@ -46,6 +46,7 @@
     <string name="interval_daily">सद्दां</string>
     <string name="interval_hourly">वराक वराक</string>
     <string name="invalid_update_interval">अपडेट अंतर अवैध, अद्ययावत करप आनी मागीर परतून यत्न करप</string>
+    <string name="json_formatted_data">%1$s कडेन आतां %3$s सर्वरा कडल्यान %2$s डेटा फायल जाय, हो ऍप्लिकेशन योग्य रितीन काम करचे पयलीं तुमकां %4$s अद्ययावत करपाक जाय आनी %5$s फायल अद्ययावत करपाक जाय. %6$s चेर चड तपशीलां खातीर बरोबर क्लिक करात</string>
     <string name="last_month_stats">फाटल्या म्हयन्याची आंकडेवारी</string>
     <string name="last_year_stats">फाटल्या वर्साची आंकडेवारी</string>
     <string name="light_theme">उजवाड थीम 1</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">दाखवा अदमास</string>
     <string name="show_radar">शो रडार 1</string>
     <string name="since">सावंन</string>
+    <string name="skip">सोडप</string>
     <string name="stats2">आकडेवारी 1</string>
     <string name="still_downloading_forecast_data">अजुनूय डावनलोड करपाचो अदमास डेटा</string>
     <string name="swipe_lock">स्वाइप लॉक</string>

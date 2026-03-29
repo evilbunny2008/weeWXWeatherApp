@@ -46,6 +46,7 @@
     <string name="interval_daily">Daily</string>
     <string name="interval_hourly">Hourly</string>
     <string name="invalid_update_interval">Gadziridza nguva isingaonekwe, gadziriso yekugadzirisa uye wozoregedza</string>
+    <string name="json_formatted_data">%1$s yava kuda %2$s data faira kubva ku%3$s server, unofanira kugadzirisa %4$s nekugadzirisa %5$s faira iyi app isati yashanda nemazvo. Dzvanya Ok kuti uwane rumwe ruzivo nezve %6$s</string>
     <string name="last_month_stats">Nhamba dzemwedzi wapfuura</string>
     <string name="last_year_stats">Nhamba dzegore rapfuura</string>
     <string name="light_theme">Theme dingindira</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Ratidza Forecast</string>
     <string name="show_radar">Ratidza Radar</string>
     <string name="since">Kubva</string>
+    <string name="skip">Skip</string>
     <string name="stats2">Statistics</string>
     <string name="still_downloading_forecast_data">Ndichiri kudhanilodha data rekufanotaura</string>
     <string name="swipe_lock">Swipe kukiya</string>

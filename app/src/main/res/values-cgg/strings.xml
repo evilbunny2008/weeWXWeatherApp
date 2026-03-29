@@ -46,6 +46,7 @@
     <string name="interval_daily">Burijo</string>
     <string name="interval_hourly">Buri shaaha</string>
     <string name="invalid_update_interval">Okugaruka omu mwanya tikuriho, okugarura busya reero okagaruka okagyezaho</string>
+    <string name="json_formatted_data">%1$s hati neyenda %2$s data fairo kuruga ahari %3$s server, oine kugaruzaho %4$s kandi okagaruzaho %5$s fairo app egi etakatandikire kukora gye. Nyiga Ok kumanya ebirikukiraho ahari %6$s</string>
     <string name="last_month_stats">Ebibaro by\'okwezi okuhweire</string>
     <string name="last_year_stats">Ebibaro by\'omwaka oguhwaire</string>
     <string name="light_theme">Omutwe gw\'omushana</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Shoore</string>
     <string name="show_radar">Yoreka Radar</string>
     <string name="since">kwiha</string>
+    <string name="skip">Kuguruka</string>
     <string name="stats2">Ebibaro</string>
     <string name="still_downloading_forecast_data">Na hati okutunga amakuru g\'okutebereza</string>
     <string name="swipe_lock">Swipe Lock</string>

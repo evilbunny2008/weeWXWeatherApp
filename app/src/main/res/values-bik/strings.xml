@@ -102,6 +102,7 @@
     <string name="show_forecast">Ipahiling an Paghula</string>
     <string name="show_radar">Ipalabas Radar</string>
     <string name="since">puon</string>
+    <string name="skip">Laktaw</string>
     <string name="stats2">Estadistika</string>
     <string name="still_downloading_forecast_data">Pag-download pa gihapon sa datos sa paghula</string>
     <string name="swipe_lock">I-swipe an Lock</string>

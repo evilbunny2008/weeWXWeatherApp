@@ -46,6 +46,7 @@
     <string name="interval_daily">毎日</string>
     <string name="interval_hourly">毎時</string>
     <string name="invalid_update_interval">更新間隔が無効です。設定を更新してから再試行してください。</string>
+    <string name="json_formatted_data">%1$s には %3$s サーバーからの %2$s データ ファイルが必要です。このアプリが正しく機能するには、%4$s を更新し、%5$s ファイルを更新する必要があります。 %6$s の詳細については、「OK」をクリックしてください</string>
     <string name="last_month_stats">先月の統計</string>
     <string name="last_year_stats">昨年の統計</string>
     <string name="light_theme">ライトテーマ</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">天気予報を表示</string>
     <string name="show_radar">レーダーを表示する</string>
     <string name="since">以来</string>
+    <string name="skip">スキップ</string>
     <string name="stats2">統計</string>
     <string name="still_downloading_forecast_data">予測データをダウンロード中</string>
     <string name="swipe_lock">スワイプロック</string>

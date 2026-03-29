@@ -140,17 +140,29 @@ public class WidgetProvider extends AppWidgetProvider
 			String speedSym = KeyValue.getLabel("speed", "km/h");
 
 			String rain = formatString("day_rain_sum");
+			if(rain == null || rain.isBlank())
+				return;
+
 			int since_hour = (int)getJson("since_hour", 0);
 			if(since_hour > 0)
+			{
 				rain = formatString("since_today");
+				if(rain == null || rain.isBlank())
+					return;
+			}
 
-			tempText = formatString("current_temperature") + tempSym;
+			tempText = formatString("current_temperature");
+			if(tempText == null || tempText.isBlank())
+				return;
+
+			tempText += tempSym;
+
 			LogMessage("Temperature set to " + tempText);
 
 			int now = Math.round((float)getJson("now", 0f));
 
 			views.setTextViewText(R.id.widget_location, (String)getJson("station_location", ""));
-			views.setTextViewText(R.id.widget_time, getLocalTime(now));
+			views.setTextViewText(R.id.widget_time, getLocalTime(now, 0));
 			views.setTextViewText(R.id.widget_wind, formatString("current_windGust") + speedSym);
 			views.setTextViewText(R.id.widget_rain, rain + rainSym);
 		} else {

@@ -46,6 +46,7 @@
     <string name="interval_daily">Өдөр бүр</string>
     <string name="interval_hourly">Цаг тутамд</string>
     <string name="invalid_update_interval">Шинэчлэх интервал буруу байна, тохиргоог шинэчлэх, дараа нь дахин оролдоно уу</string>
+    <string name="json_formatted_data">%1$s-д одоо %3$s серверээс %2$s өгөгдлийн файл шаардлагатай байгаа тул та энэ программ зөв ажиллахаас өмнө %4$s-г шинэчилж, %5$s файлыг шинэчлэх хэрэгтэй. %6$s дээр илүү дэлгэрэнгүй мэдээлэл авах бол Ok дарна уу</string>
     <string name="last_month_stats">Өнгөрсөн сарын статистик</string>
     <string name="last_year_stats">Өнгөрсөн жилийн статистик</string>
     <string name="light_theme">Хөнгөн сэдэв</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Захиагаа харуул</string>
     <string name="show_radar">Радар шоу</string>
     <string name="since">тэр үеэс</string>
+    <string name="skip">Алгасах</string>
     <string name="stats2">Статистик</string>
     <string name="still_downloading_forecast_data">Урьдчилсан мэдээллийг татаж авсаар л байна</string>
     <string name="swipe_lock">Батгаа дэлгэрүүл</string>

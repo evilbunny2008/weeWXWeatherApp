@@ -46,6 +46,7 @@
     <string name="interval_daily">Kasdien</string>
     <string name="interval_hourly">Kas valandą</string>
     <string name="invalid_update_interval">Atnaujinimo intervalas netinkamas, atnaujinkite nustatymus ir bandykite dar kartą</string>
+    <string name="json_formatted_data">Dabar %1$s reikalingas %2$s duomenų failas iš %3$s serverio. Kad ši programa tinkamai veiktų, turite atnaujinti %4$s ir %5$s failą. Spustelėkite Gerai, jei norite gauti daugiau informacijos apie %6$s</string>
     <string name="last_month_stats">Praėjusio mėnesio statistika</string>
     <string name="last_year_stats">Praėjusių metų statistika</string>
     <string name="light_theme">Šviesos tema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Rodyti prognozę</string>
     <string name="show_radar">Rodyti radarą</string>
     <string name="since">nuo</string>
+    <string name="skip">Praleisti</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Vis dar atsisiunčiami prognozių duomenys</string>
     <string name="swipe_lock">Perbraukite užraktas</string>

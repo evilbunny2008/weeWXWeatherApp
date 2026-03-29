@@ -46,6 +46,7 @@
     <string name="interval_daily">Καθημερινά</string>
     <string name="interval_hourly">Ωριαίος</string>
     <string name="invalid_update_interval">Το διάστημα ενημέρωσης δεν είναι έγκυρο, ενημερώστε τις ρυθμίσεις και, στη συνέχεια, δοκιμάστε ξανά</string>
+    <string name="json_formatted_data">Το %1$s απαιτεί τώρα ένα αρχείο δεδομένων %2$s από τον διακομιστή %3$s, πρέπει να ενημερώσετε το %4$s και να ενημερώσετε το αρχείο %5$s για να λειτουργήσει σωστά αυτή η εφαρμογή. Κάντε κλικ στο Εντάξει για περισσότερες λεπτομέρειες στο %6$s</string>
     <string name="last_month_stats">Στατιστικά στοιχεία του περασμένου μήνα</string>
     <string name="last_year_stats">Στατιστικά στοιχεία του περασμένου έτους</string>
     <string name="light_theme">Ελαφρύ θέμα</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Εμφάνιση Πρόβλεψης</string>
     <string name="show_radar">Εμφάνιση ραντάρ</string>
     <string name="since">από</string>
+    <string name="skip">Παραλείπω</string>
     <string name="stats2">Στατιστική</string>
     <string name="still_downloading_forecast_data">Γίνεται ακόμα λήψη δεδομένων πρόβλεψης</string>
     <string name="swipe_lock">Κλείδωμα ολίσθησης</string>

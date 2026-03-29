@@ -50,14 +50,14 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		long[] npwsll = weeWXAppCommon.getNPWSLL();
-		if(npwsll[1] <= 0)
+		weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
+		if(npwsll.periodTime() <= 0)
 		{
 			LogMessage("UpdateCheck.onReceive() Skipping, period is invalid or set to manual refresh only...", KeyValue.d);
 			return;
 		}
 
-		if(npwsll[5] == 0)
+		if(npwsll.lastDownloadTime() == 0)
 		{
 			LogMessage("UpdateCheck.onReceive() Skipping, lastDownloadTime == 0, app hasn't been setup...", KeyValue.d);
 			return;
@@ -76,9 +76,9 @@ public class UpdateCheck extends BroadcastReceiver
 
 		setNextAlarm();
 
-		LogMessage("UpdateCheck.onReceive() " + npwsll[5]+ " < " + npwsll[4] + "?");
+		LogMessage("UpdateCheck.onReceive() " + npwsll.lastDownloadTime() + " < " + npwsll.lastStart() + "?");
 
-		if(npwsll[5] < npwsll[4])
+		if(npwsll.lastDownloadTime() < npwsll.lastStart())
 		{
 			LogMessage("UpdateCheck.onReceive() There should have been an update since last run, checking...");
 			runInTheBackground(true, false);
@@ -112,14 +112,14 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		long[] npwsll = weeWXAppCommon.getNPWSLL();
-		if(npwsll[1] <= 0)
+		weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
+		if(npwsll.periodTime() <= 0)
 		{
 			LogMessage("UpdateCheck.setNextAlarm() Skipping, period is invalid or set to manual refresh only...", KeyValue.d);
 			return;
 		}
 
-		if(npwsll[5] == 0)
+		if(npwsll.lastDownloadTime() == 0)
 		{
 			LogMessage("UpdateCheck.setNextAlarm() Skipping, lastDownloadTime == 0, app hasn't been setup...", KeyValue.d);
 			return;
@@ -132,22 +132,22 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		String string_time = weeWXAppCommon.sdf10.format(npwsll[0]);
+		String string_time = weeWXAppCommon.sdf10.format(npwsll.nowTime());
 		LogMessage("UpdateCheck.setNextAlarm() now: " + string_time);
 
-		string_time = weeWXAppCommon.sdf10.format(npwsll[3]);
+		string_time = weeWXAppCommon.sdf10.format(npwsll.startTime());
 		LogMessage("UpdateCheck.setNextAlarm() start: " + string_time);
-		LogMessage("UpdateCheck.setNextAlarm() period: " + Math.round(npwsll[1] / 1_000D) + "s");
-		LogMessage("UpdateCheck.setNextAlarm() wait: " + Math.round(npwsll[2] / 1_000D) + "s");
+		LogMessage("UpdateCheck.setNextAlarm() period: " + Math.round(npwsll.periodTime() / 1_000D) + "s");
+		LogMessage("UpdateCheck.setNextAlarm() wait: " + Math.round(npwsll.waitTime() / 1_000D) + "s");
 
-		LogMessage("UpdateCheck.setNextAlarm() secs to next start: " + Math.round((npwsll[3] - npwsll[0]) / 1_000D) + "s");
+		LogMessage("UpdateCheck.setNextAlarm() secs to next start: " + Math.round((npwsll.startTime() - npwsll.nowTime()) / 1_000D) + "s");
 
 		AlarmManager alarm = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
 
 		if(canSetExact(context))
-			setExactAlarm(context, alarm, npwsll[3], npwsll[1]);
+			setExactAlarm(context, alarm, npwsll.startTime(), npwsll.periodTime());
 		else
-			setInexactAlarm(context, alarm, npwsll[3], npwsll[1]);
+			setInexactAlarm(context, alarm, npwsll.startTime(), npwsll.periodTime());
 	}
 
 	static void promptForExact(Context context)
@@ -302,9 +302,9 @@ public class UpdateCheck extends BroadcastReceiver
 
 		if(onAppStart)
 		{
-			long[] npwsll = weeWXAppCommon.getNPWSLL();
+			weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
 
-			if(npwsll[1] <= 0)
+			if(npwsll.periodTime() <= 0)
 			{
 				LogMessage("UpdateCheck.runInTheBackground() Period is invalid or set to manual update only... skipping...", KeyValue.d);
 				if(!weeWXApp.hasBootedFully)
@@ -312,13 +312,13 @@ public class UpdateCheck extends BroadcastReceiver
 				return;
 			}
 
-			String string_time = weeWXAppCommon.sdf10.format(npwsll[5]);
+			String string_time = weeWXAppCommon.sdf10.format(npwsll.lastDownloadTime());
 			LogMessage("UpdateCheck.runInTheBackground() lastDownloadTime: " + string_time);
 
-			string_time = weeWXAppCommon.sdf10.format(npwsll[4]);
+			string_time = weeWXAppCommon.sdf10.format(npwsll.lastStart());
 			LogMessage("UpdateCheck.runInTheBackground() lastStart: " + string_time);
 
-			if(npwsll[5] > npwsll[4])
+			if(npwsll.lastDownloadTime() > npwsll.lastStart())
 			{
 				LogMessage("UpdateCheck.runInTheBackground() Updated since lastStart time... skipping...");
 				if(!weeWXApp.hasBootedFully)

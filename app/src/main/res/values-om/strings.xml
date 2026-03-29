@@ -46,6 +46,7 @@
     <string name="interval_daily">Guyyaa guyyaatti</string>
     <string name="interval_hourly">Sa\'aatii sa\'aatiin</string>
     <string name="invalid_update_interval">Update interval sirrii miti, qindaa\'inoota update fi sana booda irra deebi\'ii yaali</string>
+    <string name="json_formatted_data">%1$s amma faayilii deetaa %2$s sarvarii %3$s irraa barbaada, appiin kun sirritti hojjechuu isaa dura %4$s haaromsuu fi faayilii %5$s fooyyessuu qabda. %6$s irratti bal\'ina dabalataaf Ok cuqaasi</string>
     <string name="last_month_stats">Istaatistiksii ji\'a darbee</string>
     <string name="last_year_stats">Istaatistiksii bara darbee</string>
     <string name="light_theme">Mata duree ifaa</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Raaga agarsiisi</string>
     <string name="show_radar">Raadaara agarsiisi</string>
     <string name="since">erga</string>
+    <string name="skip">Irra darbuu</string>
     <string name="stats2">Istaatistiksii</string>
     <string name="still_downloading_forecast_data">Ammallee daataa tilmaama buufachuu</string>
     <string name="swipe_lock">Qulfii swipe</string>

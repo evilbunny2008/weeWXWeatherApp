@@ -46,6 +46,7 @@
     <string name="interval_daily">Yonke imihla</string>
     <string name="interval_hourly">Ngeyure</string>
     <string name="invalid_update_interval">Ukuhlaziya ixesha lokuphumla akuvumelekanga, hlaziya useto kwaye uzame kwakhona</string>
+    <string name="json_formatted_data">I-%1$s ngoku ifuna i-%2$s ifayile yedatha esuka kwi-%3$s iseva, kufuneka uhlaziye i-%4$s kwaye uhlaziye ifayile ye-%5$s phambi kokuba le app isebenze kakuhle. Cofa u-Kulungile ukufumana iinkcukacha ezithe vetshe kwi-%6$s</string>
     <string name="last_month_stats">Iinombolo zenyanga ezidlulileyo</string>
     <string name="last_year_stats">Inani lonyaka ophelileyo</string>
     <string name="light_theme">Umxholo wokukhanya</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Veza uqikelelo</string>
     <string name="show_radar">Bonisa i-radar</string>
     <string name="since">ukusukela</string>
+    <string name="skip">Tsiba</string>
     <string name="stats2">Amanani</string>
     <string name="still_downloading_forecast_data">Ukukhuphela idatha yemozulu</string>
     <string name="swipe_lock">I-Swipe Tock</string>

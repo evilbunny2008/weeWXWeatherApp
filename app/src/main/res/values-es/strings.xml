@@ -46,6 +46,7 @@
     <string name="interval_daily">A diario</string>
     <string name="interval_hourly">Cada hora</string>
     <string name="invalid_update_interval">El intervalo de actualización no es válido, actualice la configuración y luego vuelva a intentarlo</string>
+    <string name="json_formatted_data">El %1$s ahora requiere un archivo de datos %2$s del servidor %3$s, debes actualizar el %4$s y el archivo %5$s antes de que esta aplicación funcione correctamente. Haga clic en Aceptar para obtener más detalles sobre %6$s</string>
     <string name="last_month_stats">Estadísticas del último mes</string>
     <string name="last_year_stats">Estadísticas del año pasado</string>
     <string name="light_theme">Tema ligero</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Mostrar pronóstico</string>
     <string name="show_radar">Mostrar radar</string>
     <string name="since">desde</string>
+    <string name="skip">Saltar</string>
     <string name="stats2">Estadística</string>
     <string name="still_downloading_forecast_data">Todavía descargando datos de pronóstico</string>
     <string name="swipe_lock">Bloqueo de deslizamiento</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">ಪ್ರತಿದಿನ</string>
     <string name="interval_hourly">ಗಂಟೆಗೊಮ್ಮೆ</string>
     <string name="invalid_update_interval">ನವೀಕರಣ ಮಧ್ಯಂತರವು ಅಮಾನ್ಯವಾಗಿದೆ, ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ನವೀಕರಿಸಿ ಮತ್ತು ನಂತರ ಮರುಪ್ರಯತ್ನಿಸಿ</string>
+    <string name="json_formatted_data">%1$s ಗೆ ಈಗ %3$s ಸರ್ವರ್‌ನಿಂದ %2$s ಡೇಟಾ ಫೈಲ್ ಅಗತ್ಯವಿದೆ, ಈ ಅಪ್ಲಿಕೇಶನ್ ಸರಿಯಾಗಿ ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಮೊದಲು ನೀವು %4$s ಅನ್ನು ನವೀಕರಿಸಬೇಕು ಮತ್ತು %5$s ಫೈಲ್ ಅನ್ನು ನವೀಕರಿಸಬೇಕು. %6$s ನಲ್ಲಿ ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ ಸರಿ ಕ್ಲಿಕ್ ಮಾಡಿ</string>
     <string name="last_month_stats">ಕಳೆದ ತಿಂಗಳ ಅಂಕಿಅಂಶಗಳು</string>
     <string name="last_year_stats">ಕಳೆದ ವರ್ಷದ ಅಂಕಿಅಂಶಗಳು</string>
     <string name="light_theme">ಲೈಟ್ ಥೀಮ್</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">ಮುನ್ಸೂಚನೆಯನ್ನು ತೋರಿಸಿ</string>
     <string name="show_radar">ರಾಡಾರ್ ತೋರಿಸಿ</string>
     <string name="since">ರಿಂದ</string>
+    <string name="skip">ಬಿಟ್ಟುಬಿಡಿ</string>
     <string name="stats2">ಅಂಕಿಅಂಶಗಳು</string>
     <string name="still_downloading_forecast_data">ಇನ್ನೂ ಮುನ್ಸೂಚನೆ ಡೇಟಾವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ</string>
     <string name="swipe_lock">ಸ್ವೈಪ್ ಲಾಕ್</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">ڕۆژانە</string>
     <string name="interval_hourly">کاتژمێرێک</string>
     <string name="invalid_update_interval">update interval is invalid، ڕێکخستنەکانی نوێکردنەوە و پاشان هەوڵدان</string>
+    <string name="json_formatted_data">ئێستا %1$s پێویستی بە فایلێکی داتا %2$s هەیە لە سێرڤەری %3$sەوە، پێویستە %4$s نوێ بکەیتەوە و پەڕگەی %5$s نوێ بکەیتەوە پێش ئەوەی ئەم ئەپە بە دروستی کار بکات. بۆ زانیاری زیاتر لەسەر %6$s کلیک لە Ok بکە</string>
     <string name="last_month_stats">ئاماری مانگی ڕابردوو</string>
     <string name="last_year_stats">ئاماری ساڵی ڕابردوو</string>
     <string name="light_theme">تەوەرەی ڕووناکی</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">پێشبینی پێشبینی بکە</string>
     <string name="show_radar">ڕادار پیشان بدە</string>
     <string name="since">لەوەتەی</string>
+    <string name="skip">بازدان</string>
     <string name="stats2">ئامار</string>
     <string name="still_downloading_forecast_data">هێشتا داتای پێشبینیکردن دابەزێنە</string>
     <string name="swipe_lock">سوایپ قوفڵ</string>

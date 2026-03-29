@@ -46,6 +46,7 @@
     <string name="interval_daily">Hằng ngày</string>
     <string name="interval_hourly">Hàng giờ</string>
     <string name="invalid_update_interval">Khoảng thời gian cập nhật không hợp lệ, hãy cập nhật cài đặt rồi thử lại</string>
+    <string name="json_formatted_data">%1$s hiện yêu cầu tệp dữ liệu %2$s từ máy chủ %3$s, bạn cần cập nhật %4$s và cập nhật tệp %5$s trước khi ứng dụng này hoạt động chính xác. Nhấp vào Ok để biết thêm chi tiết về %6$s</string>
     <string name="last_month_stats">Thống kê của tháng trước</string>
     <string name="last_year_stats">Thống kê năm ngoái</string>
     <string name="light_theme">Chủ đề nhẹ nhàng</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Hiển thị dự báo</string>
     <string name="show_radar">Hiển thị Ra-đa</string>
     <string name="since">từ</string>
+    <string name="skip">Nhảy</string>
     <string name="stats2">Thống kê</string>
     <string name="still_downloading_forecast_data">Vẫn đang tải xuống dữ liệu dự báo</string>
     <string name="swipe_lock">Khóa vuốt</string>

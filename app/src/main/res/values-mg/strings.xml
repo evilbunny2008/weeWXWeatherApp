@@ -46,6 +46,7 @@
     <string name="interval_daily">Isan\'andro</string>
     <string name="interval_hourly">isan\'ora</string>
     <string name="invalid_update_interval">Ny fanavaozana ny elanelana dia tsy manan-kery, fanavaozana ny fanavaozana ary avy eo miverina</string>
+    <string name="json_formatted_data">Mitaky rakitra angona %2$s avy amin\'ny mpizara %3$s izao ny %1$s, mila manavao ny %4$s ianao ary manavao ny rakitra %5$s alohan\'ny handehanan\'ity fampiharana ity. Kitiho Ok raha mila fanazavana fanampiny momba ny %6$s</string>
     <string name="last_month_stats">Antontan\'isa tamin\'ny volana lasa teo</string>
     <string name="last_year_stats">Antontan\'isa tamin\'ny taon-dasa</string>
     <string name="light_theme">Lohahevitra maivana</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Asehoy ny Forecast</string>
     <string name="show_radar">Asehoy ny radar</string>
     <string name="since">KOA satria</string>
+    <string name="skip">Mifohaza</string>
     <string name="stats2">antontan\'isa</string>
     <string name="still_downloading_forecast_data">Mbola misintona data data forecast</string>
     <string name="swipe_lock">Swipe hidio</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Toulezour</string>
     <string name="interval_hourly">par erdtan</string>
     <string name="invalid_update_interval">Lenterval azour i pa valab, bann paramet azour e apre re-esey</string>
+    <string name="json_formatted_data">%1$s i aprezan demann en dosye lenformasyon %2$s sorti kot server %3$s, ou bezwen met azour %4$s e met azour dosye %5$s avan ki sa app i fonksyonn korekteman. Klik Ok pou plis detay lo %6$s</string>
     <string name="last_month_stats">Statistik mwan dernyen</string>
     <string name="last_year_stats">Statistik lannen pase</string>
     <string name="light_theme">Tenm lalimyer</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Montre Previzyon</string>
     <string name="show_radar">Montre Radaar</string>
     <string name="since">depi</string>
+    <string name="skip">Sote</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Ankor lenformasyon previzyon telesarz</string>
     <string name="swipe_lock">Lakors glise</string>

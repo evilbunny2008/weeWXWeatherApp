@@ -46,6 +46,7 @@
     <string name="interval_daily">ປະຈໍາວັນ</string>
     <string name="interval_hourly">ທຸກໆຊົ່ວໂມງ</string>
     <string name="invalid_update_interval">ໄລຍະຫ່າງການອັບເດດແມ່ນບໍ່ຖືກຕ້ອງ, ການປັບປຸງການຕັ້ງຄ່າແລະຫຼັງຈາກນັ້ນລອງໃຫມ່</string>
+    <string name="json_formatted_data">ຕອນນີ້ %1$s ຕ້ອງການໄຟລ໌ຂໍ້ມູນ %2$s ຈາກເຊີບເວີ %3$s, ທ່ານຕ້ອງອັບເດດ %4$s ແລະອັບເດດໄຟລ໌ %5$s ກ່ອນທີ່ແອັບນີ້ຈະເຮັດວຽກໄດ້ຢ່າງຖືກຕ້ອງ. ຄລິກຕົກລົງສຳລັບລາຍລະອຽດເພີ່ມເຕີມກ່ຽວກັບ %6$s</string>
     <string name="last_month_stats">ສະຖິຕິເດືອນທີ່ຜ່ານມາ</string>
     <string name="last_year_stats">ສະຖິຕິປີສຸດທ້າຍ</string>
     <string name="light_theme">ຫົວຂໍ້</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">ສະແດງການຄາດຄະເນ</string>
     <string name="show_radar">ສະແດງ radar</string>
     <string name="since">ຕັ້ງແຕ່</string>
+    <string name="skip">ຂ້າມ</string>
     <string name="stats2">ສະຖິຕິ</string>
     <string name="still_downloading_forecast_data">ຍັງດາວໂຫລດຂໍ້ມູນການຄາດຄະເນ</string>
     <string name="swipe_lock">ປຸ້ມ</string>

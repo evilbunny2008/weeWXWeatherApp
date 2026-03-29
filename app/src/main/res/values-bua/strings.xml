@@ -102,6 +102,7 @@
     <string name="show_forecast">Уридшалан мэдээсэл харуулха</string>
     <string name="show_radar">Радар харуулха</string>
     <string name="since">тэрэ үеһөө</string>
+    <string name="skip">Хаяха</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Уридшалан мэдээсэл татажа абахадаа, үшөөл</string>
     <string name="swipe_lock">Свипе түрмэ</string>

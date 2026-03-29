@@ -46,6 +46,7 @@
     <string name="interval_daily">தினசரி</string>
     <string name="interval_hourly">மணிநேரம்</string>
     <string name="invalid_update_interval">புதுப்பிப்பு இடைவெளி தவறானது, அமைப்புகளைப் புதுப்பித்து, மீண்டும் முயற்சிக்கவும்</string>
+    <string name="json_formatted_data">%1$sக்கு இப்போது %3$s சேவையகத்திலிருந்து %2$s தரவுக் கோப்பு தேவைப்படுகிறது, இந்த ஆப்ஸ் சரியாகச் செயல்படும் முன் %4$sஐப் புதுப்பித்து %5$s கோப்பைப் புதுப்பிக்க வேண்டும். %6$s பற்றிய கூடுதல் விவரங்களுக்கு சரி என்பதைக் கிளிக் செய்யவும்</string>
     <string name="last_month_stats">கடந்த மாத புள்ளிவிவரங்கள்</string>
     <string name="last_year_stats">கடந்த ஆண்டு புள்ளிவிவரங்கள்</string>
     <string name="light_theme">ஒளி தீம்</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">முன்னறிவிப்பைக் காட்டு</string>
     <string name="show_radar">ரேடார் காட்டு</string>
     <string name="since">இருந்து</string>
+    <string name="skip">தவிர்க்கவும்</string>
     <string name="stats2">புள்ளிவிவரங்கள்</string>
     <string name="still_downloading_forecast_data">முன்னறிவிப்புத் தரவை இன்னும் பதிவிறக்குகிறது</string>
     <string name="swipe_lock">ஸ்வைப் பூட்டு</string>

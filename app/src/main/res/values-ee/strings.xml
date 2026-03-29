@@ -46,6 +46,7 @@
     <string name="interval_daily">Gbe sia gbe</string>
     <string name="interval_hourly">Gaƒoƒo sia gaƒoƒo</string>
     <string name="invalid_update_interval">Update Interval mele dɔ wɔm o, wowɔ ɖoɖo ɖe ɖoɖowo ŋu eye emegbe nàgadze egɔme ake</string>
+    <string name="json_formatted_data">%1$s hiã %2$s nyatakaka faɛl tso %3$s dɔdzikpɔla gbɔ azɔ, ele be nàwɔ %4$s yeyee eye nàwɔ %5$s faɛl yeye hafi dɔwɔnu sia nawɔ dɔ nyuie. Zi Ok dzi hena nyatakaka bubuwo tso %6$s ŋu</string>
     <string name="last_month_stats">Ɣleti si va yi ƒe akɔntabubuwo</string>
     <string name="last_year_stats">Ƒe si va yi ƒe akɔntabubuwo</string>
     <string name="light_theme">Kekeli ƒe tanya</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Fia nyagblɔɖi</string>
     <string name="show_radar">Fia radar</string>
     <string name="since">esi wònye</string>
+    <string name="skip">Dzo to eta</string>
     <string name="stats2">Akɔntabubuwo</string>
     <string name="still_downloading_forecast_data">Nyagblɔɖi ƒe nyatakakawo ƒe kɔpi wɔwɔ gakpɔtɔ</string>
     <string name="swipe_lock">Swipe ƒe ʋuƒo</string>

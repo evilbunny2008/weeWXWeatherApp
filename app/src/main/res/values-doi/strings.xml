@@ -46,6 +46,7 @@
     <string name="interval_daily">रोजना</string>
     <string name="interval_hourly">हर घंटे</string>
     <string name="invalid_update_interval">अपडेट अंतराल अवैध ऐ, सेटिंग्स गी अपडेट करो ते फिर रिट्राई करो</string>
+    <string name="json_formatted_data">%1$s गी हून %3$s सर्वर थमां %2$s डेटा फाइल दी लोड़ ऐ, इस ऐप गी ठीक ढंगै कन्नै कम्म करने थमां पैह् ले तुसेंगी %4$s गी अपडेट करने ते %5$s फाइल गी अपडेट करने दी लोड़ ऐ. %6$s पर होर मती जानकारी आस्तै ठीक पर क्लिक करो</string>
     <string name="last_month_stats">पिछले महीने दे आंकड़े</string>
     <string name="last_year_stats">पिछले साल दे आंकड़े</string>
     <string name="light_theme">प्रकाश थीम</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">पूर्वानुमान दिखाओ</string>
     <string name="show_radar">दिखाओ रडार</string>
     <string name="since">थमां</string>
+    <string name="skip">छोड़ना</string>
     <string name="stats2">आँकड़े</string>
     <string name="still_downloading_forecast_data">अभी भी पूर्वानुमान डेटा डाउनलोड करें</string>
     <string name="swipe_lock">स्वाइप ताला</string>

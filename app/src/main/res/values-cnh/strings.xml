@@ -46,6 +46,7 @@
     <string name="interval_daily">Nifatin</string>
     <string name="interval_hourly">Suimilam fatin</string>
     <string name="invalid_update_interval">Update karlak cu a dik lo, settings kha update tuah hnu ah tuah ṭhan a si</string>
+    <string name="json_formatted_data">%1$s nih %3$s server in %2$s data file a herh cang, hi app nih ttha tein rian a ttuan khawh hlan ah %4$s le %5$s file kha na tharchuah a hau. %6$s kong tam deuh theih na duh ahcun Ok kha hmet</string>
     <string name="last_month_stats">A luan ciami thla hna ah Statistics</string>
     <string name="last_year_stats">A luan ciami kum 2019 nak in a si</string>
     <string name="light_theme">Ceunak Theme</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Forecast kha hmuhsak</string>
     <string name="show_radar">Radar hmuhsak tuah</string>
     <string name="since">lio in</string>
+    <string name="skip">Lanh tak</string>
     <string name="stats2">Statistics</string>
     <string name="still_downloading_forecast_data">Hmuhchungnak data download tuah rih</string>
     <string name="swipe_lock">Swipe</string>

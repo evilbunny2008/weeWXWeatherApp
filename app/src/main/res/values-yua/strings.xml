@@ -46,6 +46,7 @@
     <string name="interval_daily">Sáansamal</string>
     <string name="interval_hourly">Tu p\'isib</string>
     <string name="invalid_update_interval">Intervalo u ka\' jach inválido, ka\' configuración ka tu láak\' k\'a\' intentar</string>
+    <string name="json_formatted_data">Le %1$s bejla\'e\' k\'a\'abet jump\'éel archivo datos %2$s ti\' le servidor %3$s, k\'a\'abéet actualizar le %4$s yéetel actualizar le archivo %5$s Ma\'ili\' ti\' u le ka\'anatako\'ob funcionará belil. u beetik clic ti\' Ok utia\'al u asab detalles yóok\'ol %6$s</string>
     <string name="last_month_stats">Le estadísticas ts\'ook wi\'inal</string>
     <string name="last_year_stats">Le estadísticas ti\' le ja\'abo\' máano\'</string>
     <string name="light_theme">Sáasil yiit</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Weʼesik tsʼoʼok u máan kʼiin</string>
     <string name="show_radar">Weʼesik Radar</string>
     <string name="since">líik\'ul</string>
+    <string name="skip">Síit</string>
     <string name="stats2">Estadísticas</string>
     <string name="still_downloading_forecast_data">Láayli\' descarga datos pronóstico</string>
     <string name="swipe_lock">K\'ala\'an swipe</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Еда</string>
     <string name="interval_hourly">Шагат еда</string>
     <string name="invalid_update_interval">Уэмдыме интервал чын огыл, уэмдаш параметр-влак да вара угыч тӧчен</string>
+    <string name="json_formatted_data">%1$s ынде %3$s сервер гыч %2$s данный файлым йодеш, тиде приложений чын пашам ышташ тӱҥалме деч ончыч %4$s-ым уэмдыман да %5$s файлым уэмдыман. %6$s нерген утларак пален налашлан \'Ок\' темдал</string>
     <string name="last_month_stats">Пытартыш тылзе статистике</string>
     <string name="last_year_stats">Кодшо ийын статистике</string>
     <string name="light_theme">Йошкар теме</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Продолжение ончыкташ</string>
     <string name="show_radar">Радарым ончыкташ</string>
     <string name="since">дене</string>
+    <string name="skip">Колташ</string>
     <string name="stats2">Статистике</string>
     <string name="still_downloading_forecast_data">Эше скачать прогноз данный</string>
     <string name="swipe_lock">Свайп локтылалтше</string>

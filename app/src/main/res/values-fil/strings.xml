@@ -46,6 +46,7 @@
     <string name="interval_daily">Araw-araw</string>
     <string name="interval_hourly">Oras-oras</string>
     <string name="invalid_update_interval">Ang agwat ng pag -update ay hindi wasto, i -update ang mga setting at pagkatapos ay muling subukan</string>
+    <string name="json_formatted_data">Nangangailangan na ang %1$s ng %2$s data file mula sa %3$s server, kailangan mong i-update ang %4$s at i-update ang %5$s file bago gumana nang tama ang app na ito. I-click ang Ok para sa higit pang mga detalye sa %6$s</string>
     <string name="last_month_stats">Mga Estadistika ng Nakaraang Buwan</string>
     <string name="last_year_stats">Mga Estadistika ng Nakaraang Taon</string>
     <string name="light_theme">Magaan na tema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Ipakita ang forecast</string>
     <string name="show_radar">Ipakita ang radar</string>
     <string name="since">mula pa</string>
+    <string name="skip">Laktawan</string>
     <string name="stats2">Istatistika</string>
     <string name="still_downloading_forecast_data">Nag -download pa rin ng data ng forecast</string>
     <string name="swipe_lock">\' Itigil ang Pag-swipe\'</string>

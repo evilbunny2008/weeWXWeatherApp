@@ -46,6 +46,7 @@
     <string name="interval_daily">ཨ་རྟག་ར</string>
     <string name="interval_hourly">ཆུ་ཚོད།</string>
     <string name="invalid_update_interval">དུས་མཐུན་བར་མཚམས་འདི་ ནུས་མེད་ཨིནམ་དང་ དུས་མཐུན་སྒྲིག་སྟངས་ཚུ་དང་ དེ་ལས་ ལོག་འབད་རྩོལ་བསྐྱེད།</string>
+    <string name="json_formatted_data">ད་ལྟོ་ %1$s ལུ་ %3$s སར་བར་ལས་ %2$s གནད་སྡུད་ཡིག་སྣོད་དགོཔ་ཨིན་ ཁྱོད་ཀྱིས་ %4$s དུས་མཐུན་བཟོ་དགོཔ་དང་ %5$s ཡིག་སྣོད་འདི་ གློག་རིམ་འདི་གིས་ ངེས་བདེན་སྦེ་ ལཱ་མ་འབད་བའི་ཧེ་མ་ དུས་མཐུན་བཟོ་དགོ། %6$s གུ་ཁ་གསལ་གྱི་དོན་ལུ་ བཏུབ་ཨེབ་གཏང་།</string>
     <string name="last_month_stats">མཇུག་མཐའི་རྩིས་དཔྱད།</string>
     <string name="last_year_stats">ལོ་མཇུག་གི་རྩིས་དཔྱད།</string>
     <string name="light_theme">བརྗོད་དོན་ ོམ་ ་ ོ།</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">སྔོན་བཤད་སྟོན་པའི་སྔོན་བཤད་སྟོན།</string>
     <string name="show_radar">རེ་ཌར་སྟོན།</string>
     <string name="since">དེ་ལས་</string>
+    <string name="skip">མཆོང་ནི</string>
     <string name="stats2">གནས་བབ་ ི་ ིན།</string>
     <string name="still_downloading_forecast_data">ད་དུང་སྔོན་དཔག་གི་གནས་སྡུད་ཕབ་ལེན་འབད་དོ།</string>
     <string name="swipe_lock">ལྡེ་མིག་བཤུད་འབད།</string>

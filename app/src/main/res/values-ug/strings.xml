@@ -46,6 +46,7 @@
     <string name="interval_daily">كۈندىلىك</string>
     <string name="interval_hourly">سائەتلىك</string>
     <string name="invalid_update_interval">ئالاقىلىشىش ئارىلىقى ئىناۋەتسىز, تەڭشەكلەرنى يېڭىلاش, ئاندىن قايتا سىناڭ</string>
+    <string name="json_formatted_data">%1$s ھازىر %3$s مۇلازىمېتىردىن %2$s سانلىق مەلۇمات ھۆججىتىنى تەلەپ قىلىدۇ، %4$s نى يېڭىلاپ، %5$s ھۆججىتىنى يېڭىلاش كېرەك. %6$s توغرىسىدا تېخىمۇ كۆپ تەپسىلاتلارنى Ok نى چېكىڭ</string>
     <string name="last_month_stats">ئالدىنقى ئايدىكى ستاتىستىكا</string>
     <string name="last_year_stats">ئۆتكەن يىلىنىڭ ستاتىستىكىسى</string>
     <string name="light_theme">نۇر تېمىسى</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">ئالدىن پەرەز</string>
     <string name="show_radar">رادار كۆرسىتىش</string>
     <string name="since">شۇنىڭدىن باشلاپ</string>
+    <string name="skip">ئاتلاش</string>
     <string name="stats2">ستاتىستىكا</string>
     <string name="still_downloading_forecast_data">مۆلچەردىكى سانلىق مەلۇماتلارنى چۈشۈرۈش</string>
     <string name="swipe_lock">Swipe lock</string>

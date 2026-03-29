@@ -46,6 +46,7 @@
     <string name="interval_daily">Taachlich</string>
     <string name="interval_hourly">Stunde</string>
     <string name="invalid_update_interval">Aktualisiire interwaal is inwaliteet, aktualisiirunge instellunge un tan noch moolry</string>
+    <string name="json_formatted_data">Ti %1$s prauche yets en %2$s data-taate fon %3$s-Serwer, tuu prauchst ti %4$s un ti %5$s-taate aktualiseere eep tiise app richtich funtsioniire tuut. Klik Ok fer mee informatsioone iwer %6$s</string>
     <string name="last_month_stats">Ti Statistiks fon te Moonat fon te Moonat</string>
     <string name="last_year_stats">Tas letste yoer fon te Statistike</string>
     <string name="light_theme">Linke Theema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Forke</string>
     <string name="show_radar">Tsaych Radar</string>
     <string name="since">tsayt</string>
+    <string name="skip">Iwer keen</string>
     <string name="stats2">Statistiks</string>
     <string name="still_downloading_forecast_data">Noch download fer ti prokramatsioons data</string>
     <string name="swipe_lock">Xeen xlus</string>

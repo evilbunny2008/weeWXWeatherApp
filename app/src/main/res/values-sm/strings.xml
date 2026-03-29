@@ -46,6 +46,7 @@
     <string name="interval_daily">Aso uma</string>
     <string name="interval_hourly">Ta\'i itula</string>
     <string name="invalid_update_interval">Faʻafou le taimi o le Interval e le aoga, faʻafouga nofoaga ona toe taumafai lea</string>
+    <string name="json_formatted_data">Ua mana\'omia e le %1$s se faila fa\'amatalaga %2$s mai le server %3$s, e mana\'omia lou fa\'afou o le %4$s ma fa\'afou le faila %5$s a\'o le\'i fa\'aoga lelei lenei app. Kiliki Ok mo nisi fa\'amatalaga ile %6$s</string>
     <string name="last_month_stats">O le masina mulimuli o le masina talu ai</string>
     <string name="last_year_stats">O le tausaga talu ai</string>
     <string name="light_theme">Malamalama autu</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Faaalia vavalo</string>
     <string name="show_radar">Faaali radar</string>
     <string name="since">talu mai</string>
+    <string name="skip">Fa\'ase\'e</string>
     <string name="stats2">Fuainumera</string>
     <string name="still_downloading_forecast_data">O loʻo faʻapipiʻiina pea faʻamatalaga</string>
     <string name="swipe_lock">Swipe loka</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Күнделікті</string>
     <string name="interval_hourly">Сағат сайын</string>
     <string name="invalid_update_interval">Жаңарту аралығы жарамсыз, параметрлерді жаңартыңыз, содан кейін қайталаңыз</string>
+    <string name="json_formatted_data">%1$s енді %3$s серверінен %2$s деректер файлын қажет етеді, бұл қолданба дұрыс жұмыс істеуі үшін %4$s және %5$s файлын жаңарту керек. %6$s туралы қосымша мәліметтер алу үшін Жарайды түймесін басыңыз</string>
     <string name="last_month_stats">Өткен айдағы статистика</string>
     <string name="last_year_stats">Өткен жылғы статистика</string>
     <string name="light_theme">Жеңіл тақырып</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Болжау</string>
     <string name="show_radar">Радарды көрсету</string>
     <string name="since">содан бері</string>
+    <string name="skip">Өткізіп жіберу</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Әлі де болжамды деректерді жүктеу</string>
     <string name="swipe_lock">Саусақты құлыптау</string>

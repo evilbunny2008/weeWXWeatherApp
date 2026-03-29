@@ -46,6 +46,7 @@
     <string name="interval_daily">Ia rā</string>
     <string name="interval_hourly">Ia haora</string>
     <string name="invalid_update_interval">He muhu te whakaurunga, te whakahou i nga tautuhinga ka hoki whakamuri</string>
+    <string name="json_formatted_data">Inaianei kei te hiahia te %1$s he kōnae raraunga %2$s mai i te tūmau %3$s, me whakahōu koe i te %4$s me te whakahou i te kōnae %5$s i mua i te mahi tika o tenei taupānga. Pāwhiritia Ok mo etahi atu taipitopito mo %6$s</string>
     <string name="last_month_stats">Tatauranga o te marama kua hipa</string>
     <string name="last_year_stats">Tatauranga o te tau whakamutunga</string>
     <string name="light_theme">Kaupapa marama</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Whakaatuhia te matapae</string>
     <string name="show_radar">Whakaatuhia te radar</string>
     <string name="since">mai i</string>
+    <string name="skip">Tīpoka</string>
     <string name="stats2">Tatauranga</string>
     <string name="still_downloading_forecast_data">Ka tango tonu i nga raraunga matapae</string>
     <string name="swipe_lock">Katihia te raka</string>

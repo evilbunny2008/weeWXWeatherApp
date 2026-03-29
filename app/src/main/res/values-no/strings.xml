@@ -46,6 +46,7 @@
     <string name="interval_daily">Daglig</string>
     <string name="interval_hourly">Hver time</string>
     <string name="invalid_update_interval">Oppdateringsintervallet er ugyldig, oppdater innstillingene og prøv på nytt</string>
+    <string name="json_formatted_data">%1$s krever nå en %2$s datafil fra %3$s server, du må oppdatere %4$s og oppdatere %5$s filen før denne appen vil fungere korrekt. Klikk OK for mer informasjon om %6$s</string>
     <string name="last_month_stats">Siste måneds statistikk</string>
     <string name="last_year_stats">Fjorårets statistikk</string>
     <string name="light_theme">Lys tema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Vis værvarsel</string>
     <string name="show_radar">Vis radar</string>
     <string name="since">siden</string>
+    <string name="skip">Hopp over</string>
     <string name="stats2">Statistikk</string>
     <string name="still_downloading_forecast_data">Laster fortsatt ned prognosedata</string>
     <string name="swipe_lock">Sveip lås</string>

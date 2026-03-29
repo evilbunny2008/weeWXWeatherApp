@@ -46,6 +46,7 @@
     <string name="interval_daily">Txhua hnub</string>
     <string name="interval_hourly">Txhua teev</string>
     <string name="invalid_update_interval">Hloov kho ntu tsis raug, hloov chaw thiab tom qab ntawd rov ua dua</string>
+    <string name="json_formatted_data">Tam sim no %1$s xav tau %2$s cov ntaub ntawv los ntawm %3$s server, koj yuav tsum hloov kho %4$s thiab hloov kho %5$s cov ntaub ntawv ua ntej app no ​​yuav ua haujlwm kom raug. Nyem OK kom paub meej ntxiv ntawm %6$s</string>
     <string name="last_month_stats">Lub hli dhau los txheeb cais</string>
     <string name="last_year_stats">Xyoo tas los txheeb cais</string>
     <string name="light_theme">Lub Teeb Lub Ntsiab</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Qhia kev kwv yees</string>
     <string name="show_radar">Qhia txog radar</string>
     <string name="since">txij li</string>
+    <string name="skip">Hla</string>
     <string name="stats2">Cov naj npawb</string>
     <string name="still_downloading_forecast_data">Tseem rub tawm cov ntaub ntawv kwv yees</string>
     <string name="swipe_lock">Los so xauv</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">Dnevno</string>
     <string name="interval_hourly">Vsako uro</string>
     <string name="invalid_update_interval">Interval posodabljanja ni veljaven, posodobite nastavitve in poskusite znova</string>
+    <string name="json_formatted_data">%1$s zdaj zahteva podatkovno datoteko %2$s s strežnika %3$s, morate posodobiti %4$s in datoteko %5$s, preden bo ta aplikacija delovala pravilno. Kliknite V redu za več podrobnosti o %6$s</string>
     <string name="last_month_stats">Statistika prejšnjega meseca</string>
     <string name="last_year_stats">Lanska statistika</string>
     <string name="light_theme">Svetla tema</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Prikaži napoved</string>
     <string name="show_radar">Pokaži Radar</string>
     <string name="since">saj</string>
+    <string name="skip">Preskoči</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Podatki napovedi še potekajo</string>
     <string name="swipe_lock">Swipe Lock</string>

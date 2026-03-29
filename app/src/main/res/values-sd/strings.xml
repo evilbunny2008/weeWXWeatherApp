@@ -46,6 +46,7 @@
     <string name="interval_daily">روزاني</string>
     <string name="interval_hourly">ڪلاڪار</string>
     <string name="invalid_update_interval">اپڊيٽ وقفو غلط آهي، سيٽنگون تازه ڪاري ڪريو ۽ پوء ٻيهر ڪوشش ڪريو</string>
+    <string name="json_formatted_data">%1$s کي ھاڻي %3$s سرور مان %2$s ڊيٽا فائل جي ضرورت آھي، توھان کي %4$s کي اپڊيٽ ڪرڻو پوندو ۽ %5$s فائل کي اپڊيٽ ڪرڻ جي ضرورت آھي ان کان اڳ جو ھي ايپ صحيح طرح ڪم ڪري. %6$s تي وڌيڪ تفصيل لاءِ ٺيڪ تي ڪلڪ ڪريو</string>
     <string name="last_month_stats">گذريل مهيني جا انگ اکر</string>
     <string name="last_year_stats">گذريل سال جا انگ اکر</string>
     <string name="light_theme">هلڪو موضوع</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">اڳڪٿي ڏيکاريو</string>
     <string name="show_radar">ريڊار ڏيکاريو</string>
     <string name="since">کان وٺي</string>
+    <string name="skip">ڇڏڻ</string>
     <string name="stats2">شماريات</string>
     <string name="still_downloading_forecast_data">اڃا تائين اڳڪٿي ڊيٽا ڊائون لوڊ ڪري رهيو آهي</string>
     <string name="swipe_lock">سوائپ لاڪ</string>

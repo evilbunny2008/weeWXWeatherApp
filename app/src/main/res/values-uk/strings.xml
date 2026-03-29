@@ -46,6 +46,7 @@
     <string name="interval_daily">Щодня</string>
     <string name="interval_hourly">щогодини</string>
     <string name="invalid_update_interval">Інтервал оновлення недійсний, оновіть налаштування та повторіть спробу</string>
+    <string name="json_formatted_data">Для %1$s тепер потрібен файл даних %2$s із сервера %3$s. Вам потрібно оновити %4$s і файл %5$s, перш ніж ця програма працюватиме належним чином. Натисніть OK, щоб дізнатися більше про %6$s</string>
     <string name="last_month_stats">Статистика за останній місяць</string>
     <string name="last_year_stats">Статистика минулого року</string>
     <string name="light_theme">Світла тема</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Показати прогноз</string>
     <string name="show_radar">Показати радар</string>
     <string name="since">оскільки</string>
+    <string name="skip">Пропустити</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Триває завантаження прогнозних даних</string>
     <string name="swipe_lock">Swipe Lock</string>

@@ -46,6 +46,7 @@
     <string name="interval_daily">दैनिक</string>
     <string name="interval_hourly">प्रति घंटा</string>
     <string name="invalid_update_interval">अद्यतन अंतराल अमान्य है, सेटिंग्स अद्यतन करें और फिर पुनः प्रयास करें</string>
+    <string name="json_formatted_data">%1$s को अब %3$s सर्वर से %2$s डेटा फ़ाइल की आवश्यकता है, इस ऐप के सही ढंग से काम करने से पहले आपको %4$s को अपडेट करना होगा और %5$s फ़ाइल को अपडेट करना होगा। %6$s पर अधिक जानकारी के लिए ओके पर क्लिक करें</string>
     <string name="last_month_stats">पिछले महीने के आँकड़े</string>
     <string name="last_year_stats">पिछले वर्ष के आँकड़े</string>
     <string name="light_theme">लाइट थीम</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">पूर्वानुमान दिखाएँ</string>
     <string name="show_radar">राडार दिखाएँ</string>
     <string name="since">तब से</string>
+    <string name="skip">छोडना</string>
     <string name="stats2">आंकड़े</string>
     <string name="still_downloading_forecast_data">अभी भी पूर्वानुमान डेटा डाउनलोड हो रहा है</string>
     <string name="swipe_lock">स्वाइप लॉक</string>

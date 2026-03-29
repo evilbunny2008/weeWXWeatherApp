@@ -46,6 +46,7 @@
     <string name="interval_daily">नित्य</string>
     <string name="interval_hourly">घण्टा प्रति घंटा</string>
     <string name="invalid_update_interval">अद्यतन अंतराल अमान्य, अपडेट सेटिंग्स आ फेर RETRY अछि</string>
+    <string name="json_formatted_data">%1$s क लेल आब %3$s सर्वर स %2$s डाटा फाइल क आवश्यकता अछि, अहां कए %4$s कए अपडेट करबाक जरूरत अछि आओर %5$s फाइल कए अपडेट करबाक जरूरत अछि एहि स पहिने जे इ ऐप सही तरीका स काज करत. %6$s पर बेसी विवरणक लेल ठीक पर क्लिक करू</string>
     <string name="last_month_stats">पिछला महीना के आंकड़ा</string>
     <string name="last_year_stats">पिछला साल के आंकड़ा</string>
     <string name="light_theme">प्रकाश थीम 2019।</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">पूर्वानुमान दिखाएँ</string>
     <string name="show_radar">शो रडार 2019।</string>
     <string name="since">काहेकी</string>
+    <string name="skip">छोड़नाइ</string>
     <string name="stats2">आँकड़ा 2019।</string>
     <string name="still_downloading_forecast_data">अभी भी पूर्वानुमानित आँकड़ा डाउनलोड कर रहे हैं</string>
     <string name="swipe_lock">स्वाइप ताला 2019।</string>

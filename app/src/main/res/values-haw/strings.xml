@@ -46,6 +46,7 @@
     <string name="interval_daily">ʻO kēlā me kēia lā</string>
     <string name="interval_hourly">I kēlā me kēia hola</string>
     <string name="invalid_update_interval">ʻAʻole kūpono ka hōʻano houʻana i ka interval, hōʻano hou i nā hoʻonohonoho a laila hoʻihoʻi</string>
+    <string name="json_formatted_data">Ke koi nei ka %1$s i %2$s waihona ʻikepili mai ke kikowaena %3$s, pono ʻoe e hoʻohou i ka %4$s a hoʻohou i ka faila %5$s ma mua o ka holo pono ʻana o kēia polokalamu. Kaomi iā Ok no nā kikoʻī hou aku ma %6$s</string>
     <string name="last_month_stats">ʻO nā helu helu i hala</string>
     <string name="last_year_stats">ʻO nā helu kālā i hala</string>
     <string name="light_theme">KA MEA PILI</string>
@@ -101,6 +102,7 @@
     <string name="show_forecast">Hōʻike i ka wanana</string>
     <string name="show_radar">Hōʻike\'Oida</string>
     <string name="since">mai</string>
+    <string name="skip">Holoi</string>
     <string name="stats2">Helu\'ōlelo</string>
     <string name="still_downloading_forecast_data">Ke hoʻoiho nei i kaʻikepili wānana</string>
     <string name="swipe_lock">Laki laka</string>
