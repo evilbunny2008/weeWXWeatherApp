@@ -179,13 +179,7 @@ class weeWXAppCommon
 	static final SimpleDateFormat sdf16 = new SimpleDateFormat("EEE d, HH:mm", Locale.getDefault());
 	static final SimpleDateFormat sdf17 = new SimpleDateFormat("EEE d, h:mm a", Locale.getDefault());
 	static final SimpleDateFormat sdf18 = new SimpleDateFormat("EEE d, MMMM yyyy h:mm a", Locale.getDefault());
-
-	static final DateFormat localShortDate = DateFormat.getDateInstance(DateFormat.SHORT, Locale.getDefault());
-	static final DateFormat localShortTime = DateFormat.getTimeInstance(DateFormat.SHORT, Locale.getDefault());
-	static final DateFormat localMediumDate = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.getDefault());
-	static final DateFormat localMediumTime = DateFormat.getTimeInstance(DateFormat.MEDIUM, Locale.getDefault());
-	static final DateFormat localLongDate = DateFormat.getDateInstance(DateFormat.LONG, Locale.getDefault());
-	static final DateFormat localLongTime = DateFormat.getTimeInstance(DateFormat.LONG, Locale.getDefault());
+	static final SimpleDateFormat sdf19 = new SimpleDateFormat("h:mm a", Locale.getDefault());
 
 	private static final BitmapFactory.Options options = new BitmapFactory.Options();
 
@@ -210,7 +204,7 @@ class weeWXAppCommon
 	record Result(List<Day> days, String desc, long timestamp, boolean isDaily) {}
 	record Result2(String[] forecast_text, String desc, int rc) {}
 	record TempResult(float CurrTemp, float minObservedTemp, float maxObservedTemp, int[] outTemp_trend_count,
-	                  int[] outTemp_trend_signal, int[] outTemp_trend_ts) {}
+	                  int[] outTemp_trend_signal, long[] outTemp_trend_ts) {}
 	record NPWSLL(long nowTime, long periodTime, long waitTime, long startTime, long lastStart, long lastDownloadTime) {}
 
 	private static final String utf8 = "utf-8";
@@ -2711,10 +2705,10 @@ class weeWXAppCommon
 			return true;
 		}
 
-		LogMessage("passesRegularCheck() Last updated check, is " + npwsll.lastStart + " > " + npwsll.lastDownloadTime + "?");
-		if(!forced && npwsll.lastStart > npwsll.lastDownloadTime)
+		LogMessage("passesRegularCheck() Last updated check, is " + npwsll.lastDownloadTime + " > " + npwsll.lastStart + "?");
+		if(!forced && npwsll.lastDownloadTime > npwsll.lastStart)
 		{
-			LogMessage("passesRegularCheck() !forced && " + npwsll.lastStart + " > " + npwsll.lastDownloadTime + "...");
+			LogMessage("passesRegularCheck() !forced && " + npwsll.lastDownloadTime + " > " + npwsll.lastStart + "...");
 			if(lastDownload != null && !lastDownload.isBlank())
 			{
 				LogMessage("passesRegularCheck() lastDownload != null && !lastDownload.isBlank()... Skipping...", KeyValue.d);
@@ -2915,12 +2909,6 @@ class weeWXAppCommon
 			return;
 		}
 
-		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
-		if(lastDownload == null || lastDownload.isBlank())
-			return;
-
-		String[] bits = lastDownload.split("\\|");
-
 		float rainfall = (float)getJson("day_rain", 0f);
 
 		int since_hour = (int)getJson("since_hour", 0);
@@ -2946,26 +2934,6 @@ class weeWXAppCommon
 
 	static void checkRainrateAlert()
 	{
-		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
-		if(lastDownload == null || lastDownload.isBlank())
-		{
-			LogMessage("checkRainrateAlert() lastDownload == null || lastDownload.isBlank()");
-			return;
-		}
-
-		String[] bits = lastDownload.split("\\|");
-
-		checkRainrateAlert(bits);
-	}
-
-	static void checkRainrateAlert(String[] bits)
-	{
-		if(bits == null || bits.length == 0)
-		{
-			LogMessage("checkRainrateAlert() bits == null || bits.length == 0");
-			return;
-		}
-
 		boolean[] rainrate_alerts = {
 			(boolean)KeyValue.readVar("rainrate_alert_watch", weeWXApp.rainrate_alert_watch_default),
 			(boolean)KeyValue.readVar("rainrate_alert_warning", weeWXApp.rainrate_alert_warning_default),
@@ -3072,6 +3040,13 @@ class weeWXAppCommon
 
 		TempResult temps = getTempResult();
 
+		for(int i = 0; i < temps.outTemp_trend_ts.length; i++)
+		{
+			LogMessage("outTemp_trend_ts[" + i + "]: " + sdf10.format(new Date(temps.outTemp_trend_ts[i])));
+			LogMessage("outTemp_trend_signal[" + i + "]: " + temps.outTemp_trend_signal[i]);
+			LogMessage("outTemp_trend_count[" + i + "]: " + temps.outTemp_trend_count[i]);
+		}
+
 		// Don't trigger temp alerts before 6am
 		if(cal.get(Calendar.HOUR_OF_DAY) < 6)
 			return;
@@ -3170,18 +3145,19 @@ class weeWXAppCommon
 
 	static TempResult getTempResult()
 	{
-		int[] empty = new int[]{};
+		int[] emptyIntArr = new int[]{};
+		long[] emptyLongArr = new long[]{};
 
 		return new TempResult(
 				(float)getJson("current_outTemp", 0f),
 				(float)getJson("day_outTemp_min", 0f),
 				(float)getJson("day_outTemp_max", 0f),
-				(int[])getJson("outTemp_trend_count", empty),
-				(int[])getJson("outTemp_trend_signal", empty),
-				(int[])getJson("outTemp_trend_ts", empty));
+				(int[])getJson("outTemp_trend_count", emptyIntArr),
+				(int[])getJson("outTemp_trend_signal", emptyIntArr),
+				(long[])getJson("outTemp_trend_ts", emptyLongArr, true));
 	}
 
-	static Object getElement(String element, JSONObject jsonObject, Object defaultValue)
+	static Object getElement(String element, JSONObject jsonObject, Object defaultValue, boolean timeStamps)
 	{
 		if(jsonObject == null || jsonObject.length() == 0)
 			return defaultValue;
@@ -3222,6 +3198,25 @@ class weeWXAppCommon
 			case Long l ->
 			{
 				return jsonObject.optLong(element, l);
+			}
+			case long[] larr ->
+			{
+				long multiplier = 1L;
+				if(timeStamps)
+					multiplier = 1_000L;
+
+				if(!jsonObject.has(element))
+					return larr;
+
+				JSONArray temparr = jsonObject.optJSONArray(element);
+				if(temparr == null || temparr.length() == 0)
+					return larr;
+
+				long[] numbers = new long[temparr.length()];
+				for(int i = 0; i < temparr.length(); ++i)
+					numbers[i] = temparr.optLong(i) * multiplier;
+
+				return numbers;
 			}
 			case String s ->
 			{
@@ -3295,7 +3290,7 @@ class weeWXAppCommon
 		if(mon.length() > 3)
 			mon = mon.substring(0, 3);
 		sdf = new SimpleDateFormat("d", Locale.getDefault());
-		return sdf.format(when) + mon;
+		return sdf.format(when) + " " + mon;
 	}
 
 	static String getAllTime(long when)
@@ -3306,29 +3301,7 @@ class weeWXAppCommon
 			mon = mon.substring(0, 3);
 
 		sdf = new SimpleDateFormat("yy", Locale.getDefault());
-		return mon + sdf.format(when);
-	}
-
-	static String getLocalDate(long when, int type)
-	{
-		if(type == 0)
-			return localShortDate.format(new Date(when));
-
-		if(type == 1)
-			return localMediumDate.format(new Date(when));
-
-		return localLongDate.format(new Date(when));
-	}
-
-	static String getLocalTime(long when, int type)
-	{
-		if(type == 0)
-			return localShortTime.format(new Date(when));
-
-		if(type == 1)
-			return localMediumTime.format(new Date(when));
-
-		return localLongTime.format(new Date(when));
+		return mon + " " + sdf.format(when);
 	}
 
 	static String formatString(String element)
@@ -3363,14 +3336,14 @@ class weeWXAppCommon
 			return null;
 		}
 
-		if(element.toLowerCase(Locale.ENGLISH).contains("_intemp_"))
-		{
-			LogMessage("element: " + element);
-			LogMessage("f: " + f);
-			LogMessage("key: " + key);
-			LogMessage("fmt: " + fmt);
-			LogMessage("fmt_str: " + fmt_str);
-		}
+//		if(element.toLowerCase(Locale.ENGLISH).contains("_intemp_"))
+//		{
+//			LogMessage("element: " + element);
+//			LogMessage("f: " + f);
+//			LogMessage("key: " + key);
+//			LogMessage("fmt: " + fmt);
+//			LogMessage("fmt_str: " + fmt_str);
+//		}
 
 		return fmt_str;
 	}
@@ -3397,8 +3370,13 @@ class weeWXAppCommon
 
 	static Object getJson(String element, Object defaultValue)
 	{
+		return getJson(element, defaultValue, false);
+	}
+
+	static Object getJson(String element, Object defaultValue, boolean timestamps)
+	{
 		JSONObject jsonObject = getJson();
-		return getElement(element, jsonObject, defaultValue);
+		return getElement(element, jsonObject, defaultValue, timestamps);
 	}
 
 	static JSONObject getJson()
@@ -3431,7 +3409,10 @@ class weeWXAppCommon
 		long lastDownloadAttempt = (long)KeyValue.readVar("lastDownloadAttempt", 0L);
 
 		if(lastDownloadAttempt + 10_000L > now)
+		{
+			LogMessage("reallyGetWeather() lastDownloadAttempt (" + lastDownloadAttempt + ") + 10_000L > now (" + now + ")");
 			return false;
+		}
 
 		KeyValue.putVar("lastDownloadAttempt", now);
 
@@ -4482,7 +4463,17 @@ class weeWXAppCommon
 			return false;
 		}
 
-		KeyValue.putVar("lastAttemptedForecastDownloadTime", System.currentTimeMillis());
+		long now = System.currentTimeMillis();
+
+		long lastAttemptedForecastDownloadTime = (long)KeyValue.readVar("lastAttemptedForecastDownloadTime", 0L);
+
+		if(lastAttemptedForecastDownloadTime + 10_000L > now)
+		{
+			LogMessage("reallyGetWeather() lastAttemptedForecastDownloadTime (" + lastAttemptedForecastDownloadTime + ") + 10_000L > now (" + now + ")");
+			return false;
+		}
+
+		KeyValue.putVar("lastAttemptedForecastDownloadTime", now);
 
 		String forecastData = null;
 		Result r1 = null;
@@ -4872,6 +4863,16 @@ class weeWXAppCommon
 		} catch(Exception e) {
 			LogMessage("getWebcamImage() Error! e: " + e, true, KeyValue.e);
 		}
+
+		long lastDownloadWebcamAttempt = (long)KeyValue.readVar("lastDownloadWebcamAttempt", 0L);
+
+		if(lastDownloadWebcamAttempt + 10_000L > now)
+		{
+			LogMessage("reallyGetWeather() lastDownloadWebcamAttempt (" + lastDownloadWebcamAttempt + ") + 10_000L > now (" + now + ")");
+			return bm;
+		}
+
+		KeyValue.putVar("lastDownloadWebcamAttempt", now);
 
 		if(!checkConnection() && !forced)
 		{

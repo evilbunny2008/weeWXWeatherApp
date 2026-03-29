@@ -353,9 +353,9 @@ public class Stats extends Fragment
 		long UVWhen = Math.round((double)getJson(uvWhen, 0D) * 1_000L);
 		long SolarWhen = Math.round((double)getJson(solarWhen, 0D) * 1_000L);
 
-		LogMessage("createSolarUV() solar: " + solar);
-		LogMessage("createSolarUV() solarWhen: " + solarWhen);
-		LogMessage("createSolarUV() SolarWhen: " + SolarWhen);
+//		LogMessage("createSolarUV() solar: " + solar);
+//		LogMessage("createSolarUV() solarWhen: " + solarWhen);
+//		LogMessage("createSolarUV() SolarWhen: " + SolarWhen);
 
 		if(UVWhen == 0 && SolarWhen == 0)
 		{

@@ -9,12 +9,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.RemoteViews;
 
+import java.util.Date;
+
+
 import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.formatString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
-import static com.odiousapps.weewxweather.weeWXAppCommon.getLocalTime;
+import static com.odiousapps.weewxweather.weeWXAppCommon.sdf19;
 
 public class WidgetProvider extends AppWidgetProvider
 {
@@ -132,8 +135,8 @@ public class WidgetProvider extends AppWidgetProvider
 		String tempText;
 		//float approxCharWidthDp = 8f;
 
-		String lastDownload = (String)KeyValue.readVar("LastDownload", "");
-		if(lastDownload != null && !lastDownload.isBlank())
+		String lastJsonDownload = (String)KeyValue.readVar("LastJsonDownload", "");
+		if(lastJsonDownload != null && !lastJsonDownload.isBlank())
 		{
 			String tempSym = KeyValue.getLabel("temperature", "°C");
 			String rainSym = KeyValue.getLabel("rain", "mm");
@@ -141,28 +144,37 @@ public class WidgetProvider extends AppWidgetProvider
 
 			String rain = formatString("day_rain_sum");
 			if(rain == null || rain.isBlank())
+			{
+				LogMessage("rain == null || rain.isBlank()");
 				return;
+			}
 
 			int since_hour = (int)getJson("since_hour", 0);
 			if(since_hour > 0)
 			{
 				rain = formatString("since_today");
 				if(rain == null || rain.isBlank())
+				{
+					LogMessage("rain2 == null || rain2.isBlank()");
 					return;
+				}
 			}
 
-			tempText = formatString("current_temperature");
+			tempText = formatString("current_outTemp");
 			if(tempText == null || tempText.isBlank())
+			{
+				LogMessage("rain == null || rain.isBlank()");
 				return;
+			}
 
 			tempText += tempSym;
 
 			LogMessage("Temperature set to " + tempText);
 
-			int now = Math.round((float)getJson("now", 0f));
+			long now = Math.round((double)getJson("now", 0D) * 1_000L);
 
 			views.setTextViewText(R.id.widget_location, (String)getJson("station_location", ""));
-			views.setTextViewText(R.id.widget_time, getLocalTime(now, 0));
+			views.setTextViewText(R.id.widget_time, sdf19.format(new Date(now)));
 			views.setTextViewText(R.id.widget_wind, formatString("current_windGust") + speedSym);
 			views.setTextViewText(R.id.widget_rain, rain + rainSym);
 		} else {
