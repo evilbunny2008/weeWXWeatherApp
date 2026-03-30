@@ -180,6 +180,7 @@ class weeWXAppCommon
 	static final SimpleDateFormat sdf18 = new SimpleDateFormat("EEE d, MMMM yyyy h:mm a", Locale.getDefault());
 	static final SimpleDateFormat sdf19 = new SimpleDateFormat("h:mm a", Locale.getDefault());
 	static final SimpleDateFormat sdf20 = new SimpleDateFormat("h:mma", Locale.getDefault());
+	static final SimpleDateFormat sdf21 = new SimpleDateFormat("yyyy-MM-dd h:mm a", Locale.getDefault());
 
 	private static final BitmapFactory.Options options = new BitmapFactory.Options();
 
@@ -3291,14 +3292,25 @@ class weeWXAppCommon
 		return getOrdinal(day);
 	}
 
-	static String getTimeYear(long when)
+	static String widgetTime(long when)
+	{
+		return sdf19.format(new Date(when)) + " " + getTimeMonth(when) + " " + getShortMonth(when);
+	}
+
+	static String getShortMonth(long when)
 	{
 		SimpleDateFormat sdf = new SimpleDateFormat("MMM", Locale.getDefault());
 		String mon = sdf.format(when);
 		if(mon.length() > 3)
 			mon = mon.substring(0, 3);
-		sdf = new SimpleDateFormat("d", Locale.getDefault());
-		return sdf.format(when) + " " + mon;
+
+		return mon;
+	}
+
+	static String getTimeYear(long when)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("d", Locale.getDefault());
+		return sdf.format(when) + " " + getShortMonth(when);
 	}
 
 	static String getAllTime(long when)

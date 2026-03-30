@@ -145,9 +145,9 @@ public class UpdateCheck extends BroadcastReceiver
 		AlarmManager alarm = (AlarmManager)context.getSystemService(Context.ALARM_SERVICE);
 
 		if(canSetExact(context))
-			setExactAlarm(context, alarm, npwsll.startTime(), npwsll.periodTime());
+			setExactAlarm(context, alarm, npwsll.startTime());
 		else
-			setInexactAlarm(context, alarm, npwsll.startTime(), npwsll.periodTime());
+			setInexactAlarm(context, alarm, npwsll.startTime());
 	}
 
 	static void promptForExact(Context context)
@@ -170,12 +170,12 @@ public class UpdateCheck extends BroadcastReceiver
 		}
 	}
 
-	private static void setExactAlarm(Context context, AlarmManager alarm, long start, long period)
+	private static void setExactAlarm(Context context, AlarmManager alarm, long start)
 	{
 		long current_time = System.currentTimeMillis();
 		int reqcode = 0;
 
-		for(long i = start; i < start + period * weeWXApp.max_alarms; i += period)
+		for(long i = start; i < start + (15_000L * weeWXApp.max_alarms); i += 15_000L)
 		{
 			alarm.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, i, getPendingIntent(context, false, reqcode++));
 			LogMessage("UpdateCheck.setExactAlarm() Successfully set the exact alarm for " +
@@ -183,12 +183,12 @@ public class UpdateCheck extends BroadcastReceiver
 		}
 	}
 
-	private static void setInexactAlarm(Context context, AlarmManager alarm, long start, long period)
+	private static void setInexactAlarm(Context context, AlarmManager alarm, long start)
 	{
 		long current_time = System.currentTimeMillis();
 		int reqcode = 0;
 
-		for(long i = start; i < start + period * weeWXApp.max_alarms; i += period)
+		for(long i = start; i < start + 15_000L * weeWXApp.max_alarms; i += 15_000L)
 		{
 			alarm.set(AlarmManager.RTC_WAKEUP, i, getPendingIntent(context, false, reqcode++));
 			LogMessage("UpdateCheck.setInexactAlarm() Successfully set the inexact alarm for " +

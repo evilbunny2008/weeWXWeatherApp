@@ -9,15 +9,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.RemoteViews;
 
-import java.util.Date;
-
 
 import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.formatString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
-import static com.odiousapps.weewxweather.weeWXAppCommon.sdf19;
+import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
+import static com.odiousapps.weewxweather.weeWXAppCommon.widgetTime;
 
 public class WidgetProvider extends AppWidgetProvider
 {
@@ -135,8 +134,7 @@ public class WidgetProvider extends AppWidgetProvider
 		String tempText;
 		//float approxCharWidthDp = 8f;
 
-		String lastJsonDownload = (String)KeyValue.readVar("LastJsonDownload", "");
-		if(lastJsonDownload != null && !lastJsonDownload.isBlank())
+		if(hasElement("now"))
 		{
 			String tempSym = KeyValue.getLabel("temperature", "°C");
 			String rainSym = KeyValue.getLabel("rain", "mm");
@@ -174,7 +172,7 @@ public class WidgetProvider extends AppWidgetProvider
 			long now = Math.round((double)getJson("now", 0D) * 1_000L);
 
 			views.setTextViewText(R.id.widget_location, (String)getJson("station_location", ""));
-			views.setTextViewText(R.id.widget_time, sdf19.format(new Date(now)));
+			views.setTextViewText(R.id.widget_time, widgetTime(now));
 			views.setTextViewText(R.id.widget_wind, formatString("current_windGust") + speedSym);
 			views.setTextViewText(R.id.widget_rain, rain + rainSym);
 		} else {
