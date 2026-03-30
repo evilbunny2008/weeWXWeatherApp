@@ -452,11 +452,11 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		int timeMode = 0;
 		long now = Math.round((double)getJson("now", 0D) * 1_000L);
-		String tempSym = KeyValue.getLabel("temperature", "°C");
-		String humSym = KeyValue.getLabel("percent", "%");
-		String pressSym = KeyValue.getLabel("pressure", "hPa");
-		String speedSym = KeyValue.getLabel("speed", "km/h");
-		String rainSym = KeyValue.getLabel("rain", "mm");
+		String tempSym = KeyValue.getLabel("current_outTemp", "°C");
+		String humSym = KeyValue.getLabel("current_outHumidity", "%");
+		String pressSym = KeyValue.getLabel("current_barometer", "hPa");
+		String speedSym = KeyValue.getLabel("current_windGust", "km/h");
+		String rainSym = KeyValue.getLabel("day_rain_sum", "mm");
 
 		checkFields(tv1, (String)getJson("station_location", ""));
 		checkFields(tv2, sdf18.format(new Date(now)));
@@ -595,7 +595,7 @@ public class Weather extends Fragment implements View.OnClickListener
 						.append(weeWXApp.currentSpacer)
 						.append("\t\t\t<div class='dataCellCurrent left'>")
 						.append(tmpStr)
-						.append(KeyValue.getLabel("uv", "UVI").strip())
+						.append(KeyValue.getLabel("current_UV", "UVI").strip())
 						.append("</div>\n");
 			} else {
 				sb.append(weeWXApp.emptyField);
@@ -609,7 +609,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 				sb.append("\t\t\t<div class='dataCellCurrent right'>")
 						.append(tmpStr)
-						.append(KeyValue.getLabel("radiation", "W/m²"))
+						.append(KeyValue.getLabel("current_radiation", "W/m²"))
 						.append("</div>\n")
 						.append(weeWXApp.currentSpacer)
 						.append("\t\t\t<div class='dataCellCurrent right'>")

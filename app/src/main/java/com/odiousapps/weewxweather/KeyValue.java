@@ -10,7 +10,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 
@@ -54,6 +53,7 @@ class KeyValue
 
 	static int since_hour = 0;
 
+	static final HashMap<String, String> obsGroup = new HashMap<>();
 	static final HashMap<String, String> labels = new HashMap<>();
 	static final HashMap<String, String> formats = new HashMap<>();
 
@@ -74,12 +74,21 @@ class KeyValue
 
 	static boolean parseDicts(JSONObject jsonObject)
 	{
+		//LogMessage("KeyValue.parseDict(): Loading...");
+
 		if(jsonObject == null || jsonObject.length() == 0)
 			return false;
 
 		JSONObject group_dict = getDict("group_unit_dict", jsonObject);
+		JSONObject obs_group_dict = getDict("obs_group_dict", jsonObject);
 		JSONObject format_dict = getDict("unit_format_dict", jsonObject);
 		JSONObject label_dict = getDict("unit_label_dict", jsonObject);
+
+		if(obs_group_dict == null || obs_group_dict.length() == 0)
+		{
+			LogMessage("obs_group_dict == null || obs_group_dict.length() == 0");
+			return false;
+		}
 
 		if(group_dict == null || group_dict.length() == 0)
 		{
@@ -108,8 +117,6 @@ class KeyValue
 			if(!key.startsWith("group_"))
 				continue;
 
-			String justkey = key.split("group_", 2)[1].strip();
-
 			String group_name = group_dict.optString(key);
 			if(group_name == null || group_name.isBlank())
 			{
@@ -119,21 +126,32 @@ class KeyValue
 
 			if(label_dict.has(group_name) && format_dict.has(group_name))
 			{
+				String obs_group = obs_group_dict.optString(group_name).strip();
 				String label = label_dict.optString(group_name).strip();
 				String format = format_dict.optString(group_name).strip();
 
-				labels.put(justkey, label);
-				formats.put(justkey, format);
+				labels.put(key, label);
+				formats.put(key, format);
+			} else {
+				LogMessage("key: " + key);
+				LogMessage("group_name: " + group_name);
+				LogMessage("label_dict.has(group_name): " + label_dict.has(group_name));
+				LogMessage("format_dict.has(group_name): " + format_dict.has(group_name));
 			}
+		}
 
-//			if(!label_dict.has(group_name) || !format_dict.has(group_name))
-//			{
-//				LogMessage("key: " + key);
-//				LogMessage("justkey: " + justkey);
-//				LogMessage("group_name: " + group_name);
-//				LogMessage("label_dict.has(group_name): " + label_dict.has(group_name));
-//				LogMessage("format_dict.has(group_name): " + format_dict.has(group_name));
-//			}
+		keys = obs_group_dict.keys();
+		while(keys.hasNext())
+		{
+			String key = keys.next();
+			String group_name = obs_group_dict.optString(key);
+
+			if(!group_name.startsWith("group_"))
+				continue;
+
+			//LogMessage("KeyValue.parseDicts(): Adding key: " + key + ", group_name: " + group_name);
+
+			obsGroup.put(key, group_name);
 		}
 
 		return true;
@@ -146,38 +164,33 @@ class KeyValue
 
 	static String getLabel(String key, String defaultValue)
 	{
-		return labels.get(key);
+		String label = labels.get(key);
+
+		if(label == null || label.isBlank())
+		{
+			//LogMessage("KeyValue.getLabel(" + key + ") returned " + label);
+			String new_key = getKeyFromName(key);
+			label = labels.get(new_key);
+			if(label != null && !label.isBlank())
+				return label;
+
+			return defaultValue;
+		}
+
+		return label;
 	}
 
 	static String getKeyFromName(String name)
 	{
-		if(name.contains("_barometer_") || name.equals("current_barometer"))
-			return "pressure";
+		for(String key : obsGroup.keySet())
+		{
+			if(name.contains(key))
+			{
+				return obsGroup.get(key);
+			}
+		}
 
-		if(name.contains("_dewpoint_") || name.equals("current_dewpoint") ||
-		   name.contains("_inTemp_") || name.equals("current_inTemp") ||
-		   name.contains("_outTemp_") || name.equals("current_outTemp") ||
-		   name.equals("appTemp"))
-			return "temperature";
-
-		if(name.contains("_ET_") || name.contains("_rain_") ||
-		   name.equals("since_today") || name.equals("since_yesterday"))
-			return "rain";
-
-		if(name.contains("_inHumidity_") || name.equals("current_inHumidity") ||
-		   name.contains("_outHumidity_") || name.equals("current_outHumidity"))
-			return "percent";
-
-		if(name.contains("_radiation_") || name.equals("current_radiation"))
-			return "radiation";
-
-		if(name.contains("_UV_") || name.equals("current_UV"))
-			return "uv";
-
-		if(name.contains("_wind_") || name.equals("current_windSpeed") || name.equals("current_windGust"))
-			return "speed";
-
-		LogMessage(name + " not matched!");
+		LogMessage("KeyValue.getKeyFromName(): '" +name + "' not matched in obsGroup!");
 
 		return null;
 	}

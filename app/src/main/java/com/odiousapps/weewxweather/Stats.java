@@ -372,7 +372,7 @@ public class Stats extends Fragment
 		if(UVWhen != 0)
 		{
 			String dateTimeStr = getDateTimeStr(UVWhen, timeMode);
-			out += createRowLeft(className, UV + KeyValue.getLabel("uv", "UVI").strip(), dateTimeStr);
+			out += createRowLeft(className, UV + KeyValue.getLabel(uv, "UVI").strip(), dateTimeStr);
 		} else {
 			out += createRowLeft();
 		}
@@ -382,7 +382,7 @@ public class Stats extends Fragment
 		if(SolarWhen != 0)
 		{
 			String dateTimeStr = getDateTimeStr(SolarWhen, timeMode);
-			out += createRowRight(className, dateTimeStr, SOLAR + KeyValue.getLabel("radiation", "W/m²"));
+			out += createRowRight(className, dateTimeStr, SOLAR + KeyValue.getLabel(solar, "W/m²"));
 		} else {
 			out += createRowRight();
 		}
@@ -406,11 +406,11 @@ public class Stats extends Fragment
 		sb.append(getAndroidString(header));
 		sb.append("\n\t\t</div>\n\n");
 
-		String tempSym = KeyValue.getLabel("temperature", "°C");
-		String humSym = KeyValue.getLabel("percent", "%");
-		String pressSym = KeyValue.getLabel("pressure", "hPa");
-		String speedSym = KeyValue.getLabel("speed", "km/h");
-		String rainSym = KeyValue.getLabel("rain", "mm");
+		String tempSym = KeyValue.getLabel("day_outTemp_max", "°C");
+		String humSym = KeyValue.getLabel("day_outHumidity_max", "%");
+		String pressSym = KeyValue.getLabel("day_barometer_max", "hPa");
+		String speedSym = KeyValue.getLabel("day_wind_max", "km/h");
+		String rainSym = KeyValue.getLabel("day_rain_sum", "mm");
 
 		String[] loop = {"outTemp", "dewpoint", "outHumidity", "barometer"};
 		String[] syms = {tempSym, tempSym, humSym, pressSym};

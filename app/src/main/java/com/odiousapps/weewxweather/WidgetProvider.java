@@ -136,9 +136,9 @@ public class WidgetProvider extends AppWidgetProvider
 
 		if(hasElement("now"))
 		{
-			String tempSym = KeyValue.getLabel("temperature", "°C");
-			String rainSym = KeyValue.getLabel("rain", "mm");
-			String speedSym = KeyValue.getLabel("speed", "km/h");
+			String tempSym = KeyValue.getLabel("current_outTemp", "°C");
+			String rainSym = KeyValue.getLabel("day_rain_sum", "mm");
+			String speedSym = KeyValue.getLabel("current_windGust", "km/h");
 
 			String rain = formatString("day_rain_sum");
 			if(rain == null || rain.isBlank())
