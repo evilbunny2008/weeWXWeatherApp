@@ -110,6 +110,8 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 
+
+import static com.odiousapps.weewxweather.WidgetProvider.updateAppWidget;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 
 @SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref", "ConstantConditions",
@@ -784,12 +786,12 @@ class weeWXAppCommon
 
 	static long getLDTms()
 	{
-		LogMessage("Checking for var named 'LastDownloadTime'");
+		LogMessage("Checking for var named '" + json_keys[0] + "_time'");
 
-		if(!isPrefSet("LastDownloadTime"))
+		if(!isPrefSet(json_keys[0] + "_time"))
 			return 0L;
 
-		long LastDownloadTime = (long)KeyValue.readVar("LastDownloadTime", 0L);
+		long LastDownloadTime = (long)KeyValue.readVar(json_keys[0] + "_time", 0L);
 
 		LogMessage("getLDTms() Before: LastDownloadTime: " + LastDownloadTime);
 
@@ -797,15 +799,6 @@ class weeWXAppCommon
 			LastDownloadTime *= 1_000L;
 
 		LogMessage("getLDTms() After: LastDownloadTime: " + LastDownloadTime);
-
-		return LastDownloadTime;
-	}
-
-	static long getLDsecs()
-	{
-		long LastDownloadTime = getLDTms();
-		while(LastDownloadTime > 10_000_000_000L)
-			LastDownloadTime = Math.round(LastDownloadTime / 1_000D);
 
 		return LastDownloadTime;
 	}
@@ -820,15 +813,6 @@ class weeWXAppCommon
 		long lastAttemptedForecastDownloadTime = (long)KeyValue.readVar("lastAttemptedForecastDownloadTime", 0L);
 		while(lastAttemptedForecastDownloadTime < 10_000_000_000L)
 			lastAttemptedForecastDownloadTime *= 1_000L;
-
-		return lastAttemptedForecastDownloadTime;
-	}
-
-	static long getLAFDsecs()
-	{
-		long lastAttemptedForecastDownloadTime = getLAFDms();
-		while(lastAttemptedForecastDownloadTime > 10_000_000_000L)
-			lastAttemptedForecastDownloadTime = Math.round(lastAttemptedForecastDownloadTime / 1_000D);
 
 		return lastAttemptedForecastDownloadTime;
 	}
@@ -2850,10 +2834,7 @@ class weeWXAppCommon
 				if(i == 1 && ret == null)
 				{
 					processDicts = true;
-				}
-
-				if(!ret)
-				{
+				} else if(!ret) {
 					LogMessage("handleWeatherUpdate() SendIntent(STOP_WEATHER_INTENT)");
 					SendIntent(STOP_WEATHER_INTENT);
 					return false;
@@ -2879,7 +2860,7 @@ class weeWXAppCommon
 		}
 
 		LogMessage("handleWeatherUpdate() Update the widget");
-		WidgetProvider.updateAppWidget();
+		updateAppWidget();
 
 		checkTempAlerts();
 		checkRainfallAlert();
@@ -2895,33 +2876,49 @@ class weeWXAppCommon
 	{
 		JSONObject json_data, json_last, json_combined;
 
+		LogMessage("mergeJsonObjects() Loading " + json_keys[0] + "_str from SharedPrefs");
 		String json_data_str = (String)KeyValue.readVar(json_keys[0] + "_str", "");
 		if(json_data_str == null || json_data_str.isBlank())
+		{
+			LogMessage("mergeJsonObjects() json_data_str == null || json_data_str.isBlank()");
 			return false;
-
-		String json_last_str = (String)KeyValue.readVar(json_keys[2] + "_str", "");
-		if(json_last_str == null || json_last_str.isBlank())
-			return false;
+		}
 
 		try
 		{
 			json_data = new JSONObject(json_data_str);
 		} catch(JSONException je) {
+			LogMessage("mergeJsonObjects() Failed turing json_data_str into json_data, je: " + je.getMessage());
 			return false;
 		}
 
 		if(json_data == null || json_data.length() == 0)
+		{
+			LogMessage("mergeJsonObjects() json_data == null || json_data.length() == 0");
 			return false;
+		}
+
+		LogMessage("mergeJsonObjects() Loading " + json_keys[2] + "_str from SharedPrefs");
+		String json_last_str = (String)KeyValue.readVar(json_keys[2] + "_str", "");
+		if(json_last_str == null || json_last_str.isBlank())
+		{
+			LogMessage("mergeJsonObjects() json_last_str == null || json_last_str.isBlank()");
+			return false;
+		}
 
 		try
 		{
 			json_last = new JSONObject(json_last_str);
 		} catch(JSONException je) {
+			LogMessage("mergeJsonObjects() Failed turing json_last_str into json_last, je: " + je.getMessage());
 			return false;
 		}
 
 		if(json_last == null || json_last.length() == 0)
+		{
+			LogMessage("mergeJsonObjects() json_last == null || json_last.length() == 0");
 			return false;
+		}
 
 		try
 		{
@@ -2930,15 +2927,22 @@ class weeWXAppCommon
 		    while(keys.hasNext())
 			{
 		        String key = keys.next();
-		        json_combined.put(key, json_data.get(key));
+				Object value = json_data.get(key);
+				LogMessage("mergeJsonObjects() putting key: " + key + ", value: " + value);
+		        json_combined.put(key, value);
 		    }
 		} catch(JSONException je) {
+			LogMessage("mergeJsonObjects() Failed to merge json_data with json_last, je: + " + je.getMessage());
 			return false;
 		}
 
 		if(json_combined == null || json_combined.length() == 0)
+		{
+			LogMessage("mergeJsonObjects() json_combined == null || json_combined.length() == 0");
 			return false;
+		}
 
+		LogMessage("mergeJsonObjects() json_combined.toString(): " + json_combined);
 	    KeyValue.putVar("json_combined_str", json_combined.toString());
 
 		return true;
@@ -3460,10 +3464,10 @@ class weeWXAppCommon
 
 	static JSONObject getJson()
 	{
-		if(!KeyValue.isPrefSet("json_combined"))
+		if(!KeyValue.isPrefSet("json_combined_str"))
 			return null;
 
-		String line = (String)KeyValue.readVar("json_combined", "");
+		String line = (String)KeyValue.readVar("json_combined_str", "");
 		if(line != null && !line.isBlank())
 		{
 			try

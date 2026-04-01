@@ -38,6 +38,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.getDateTimeStr;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getJson;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getSinceHour;
 import static com.odiousapps.weewxweather.weeWXAppCommon.hasElement;
+import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 import static com.odiousapps.weewxweather.weeWXAppCommon.sdf18;
 import static com.odiousapps.weewxweather.weeWXAppCommon.sdf20;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
@@ -446,7 +447,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		LogMessage("drawWeather()");
 
-		if(!KeyValue.isPrefSet("LastJsonDownload"))
+		if(!KeyValue.isPrefSet(json_keys[0] + "_time"))
 		{
 			forceCurrentRefresh(R.string.attempting_to_download_data_txt);
 			return;
