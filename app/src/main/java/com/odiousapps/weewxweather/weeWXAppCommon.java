@@ -113,6 +113,7 @@ import okhttp3.Response;
 
 import static com.odiousapps.weewxweather.WidgetProvider.updateAppWidget;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXApp.hasBootedFully;
 
 @SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref", "ConstantConditions",
                    "SameReturnValue", "BooleanMethodIsAlwaysInverted", "SetTextI18n",
@@ -2738,9 +2739,9 @@ class weeWXAppCommon
 
 			if(!forced && !checkConnection())
 			{
-				if(has_json_combined)
+				if(!has_json_combined)
 				{
-					LogMessage("getWeather() lastJsonDownload is null or blank...");
+					LogMessage("getWeather() has_json_combined is false...");
 					KeyValue.putVar("LastWeatherError", getAndroidString(R.string.wifi_not_available));
 					return false;
 				}
@@ -2755,9 +2756,9 @@ class weeWXAppCommon
 				LogMessage("getWeather() !forced && and updated less than 30s ago (" +
 				           secDiff + "s)");
 
-				if(has_json_combined)
+				if(!has_json_combined)
 				{
-					LogMessage("getWeather() json_str[" + i + "] is null or blank...");
+					LogMessage("getWeather() has_json_combined is false...");
 					KeyValue.putVar("LastWeatherError", getAndroidString(R.string.wifi_not_available));
 					return false;
 				}
@@ -2777,7 +2778,7 @@ class weeWXAppCommon
 			}
 		}
 
-		if(!forced && !weeWXApp.hasBootedFully && !calledFromweeWXApp)
+		if(!forced && !hasBootedFully && !calledFromweeWXApp)
 		{
 			LogMessage("getWeather() Hasn't booted fully and wasn't called by weeWXApp and wasn't forced, skipping...");
 			KeyValue.putVar("LastWeatherError", getAndroidString(R.string.attempting_to_download_data_txt));
@@ -2943,7 +2944,7 @@ class weeWXAppCommon
 		}
 
 		LogMessage("mergeJsonObjects() json_combined.toString(): " + json_combined);
-	    KeyValue.putVar("json_combined_str", json_combined.toString());
+		KeyValue.putVar("json_combined_str", json_combined.toString());
 
 		return true;
 	}
@@ -4293,7 +4294,7 @@ class weeWXAppCommon
 			return true;
 		}
 
-		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp && !forced)
+		if(!hasBootedFully && !calledFromweeWXApp && !forced)
 		{
 			LogMessage("getForecast() not fully booted and not called from weeWXApp.class and not forced...", KeyValue.d);
 
@@ -4862,7 +4863,7 @@ class weeWXAppCommon
 			return weeWXApp.textToBitmap(tmp);
 		}
 
-		if(!weeWXApp.hasBootedFully && !calledFromweeWXApp && !forced)
+		if(!hasBootedFully && !calledFromweeWXApp && !forced)
 		{
 			if(bm != null)
 				return bm;
@@ -5024,7 +5025,7 @@ class weeWXAppCommon
 			}
 		}
 
-		if(!forced && !weeWXApp.hasBootedFully && !calledFromweeWXApp)
+		if(!forced && !hasBootedFully && !calledFromweeWXApp)
 		{
 			LogMessage("getWebcamImage() Not forced and hasBootedFully is false and calledFromweeWXApp is false...");
 
