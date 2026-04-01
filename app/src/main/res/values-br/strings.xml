@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Roadennoù URL war goullo</string>
     <string name="delete_all_data">Dilemel an holl roadennoù hag ar c\'heflusker</string>
     <string name="empty">Goullo</string>
+    <string name="error">Fazi!</string>
     <string name="error_occurred_while_attempting_to_update">Ur fazi a c\'hoarvezas pa oa o klask hizivaat an implij</string>
     <string name="every_5_minutes">Bep 5 munutenn</string>
     <string name="every_10_minutes">Bep 10 munutenn</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL a oa bet lakaet war an difazier pe war goullo</string>
     <string name="use_exact_alarm">Implijit an eurioù hizivaat rik</string>
     <string name="wasnt_able_to_connect_custom_url">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ diwar an URL personelaet spisaet</string>
-    <string name="wasnt_able_to_connect_data_txt">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ roadennoù.txt diwar ho servijer</string>
     <string name="wasnt_able_to_connect_forecast">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ ar rakweled</string>
-    <string name="wasnt_able_to_connect_or_download">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ ar rakweled</string>
+    <string name="wasnt_able_to_connect_or_download">N\'eo ket bet gouest da gevreañ pe da bellgargañ %1$s diouzh %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ skeudenn diwar internet</string>
     <string name="wasnt_able_to_connect_settings">N\'eo ket bet gouest da gevreañ pe da bellgargañ an arventennoù diwar ho servijer</string>
     <string name="wasnt_able_to_connect_webcam_url">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ ur skeudenn webcam diwar ho servijer</string>

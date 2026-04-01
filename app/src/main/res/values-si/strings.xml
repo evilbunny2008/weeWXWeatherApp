@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">දත්ත URL හිස් විය</string>
     <string name="delete_all_data">සියලුම දත්ත මකන්න සහ වසා දැමීම</string>
     <string name="empty">හිස්</string>
+    <string name="error">දෝෂයක්!</string>
     <string name="error_occurred_while_attempting_to_update">භාවිතය යාවත්කාලීන කිරීමට උත්සාහ කිරීමේදී දෝෂයක් ඇති විය</string>
     <string name="every_5_minutes">සෑම විනාඩි 5 කට වරක්</string>
     <string name="every_10_minutes">සෑම විනාඩි 10 කට වරක්</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL එක පෙරනිමියට සකසා හෝ හිස් විය</string>
     <string name="use_exact_alarm">නිවැරදි යාවත්කාලීන වේලාවන් භාවිතා කරන්න</string>
     <string name="wasnt_able_to_connect_custom_url">නිශ්චිතව දක්වා ඇති අභිරුචි URL වෙත සම්බන්ධ වීමට හෝ බාගැනීමට නොහැකි විය</string>
-    <string name="wasnt_able_to_connect_data_txt">ඔබගේ සේවාදායකයෙන් data.txt සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
     <string name="wasnt_able_to_connect_forecast">අනාවැකිය සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
-    <string name="wasnt_able_to_connect_or_download">අනාවැකිය සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s වෙතින් %1$s සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
     <string name="wasnt_able_to_connect_radar_image">අන්තර්ජාලයෙන් රේඩාර්= රූපය සම්බන්ධ කිරීමට හෝ බාගත කිරීමට නොහැකි විය</string>
     <string name="wasnt_able_to_connect_settings">ඔබගේ සේවාදායකයෙන් සැකසීම් සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
     <string name="wasnt_able_to_connect_webcam_url">ඔබගේ සේවාදායකයෙන් වෙබ් කැමරා රූපයක් සම්බන්ධ කිරීමට හෝ බාගත කිරීමට නොහැකි විය</string>

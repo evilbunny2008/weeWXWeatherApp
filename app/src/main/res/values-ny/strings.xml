@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Ulalo wa data unali wopanda kanthu</string>
     <string name="delete_all_data">Chotsani zonse ndi kuzimitsa</string>
     <string name="empty">Mopanda kanthu</string>
+    <string name="error">Zolakwika!</string>
     <string name="error_occurred_while_attempting_to_update">Vuto linachitika poyesa kusintha kugwiritsa ntchito</string>
     <string name="every_5_minutes">Mphindi 5 zilizonse</string>
     <string name="every_10_minutes">Mphindi 10 zilizonse</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Ulalo udakhazikitsidwa kuti ukhale wopanda pake kapena ulibe kanthu</string>
     <string name="use_exact_alarm">Gwiritsani ntchito nthawi yeniyeni</string>
     <string name="wasnt_able_to_connect_custom_url">Sanathe kulumikiza kapena kutsitsa kuchokera ku URL yomwe yatchulidwa</string>
-    <string name="wasnt_able_to_connect_data_txt">Sanathe kulumikizana kapena kutsitsa deta.txt kuchokera ku seva yanu</string>
     <string name="wasnt_able_to_connect_forecast">Sanathe kulumikizana kapena kutsitsa zonena za kuneneratu</string>
-    <string name="wasnt_able_to_connect_or_download">Sanathe kulumikizana kapena kutsitsa zonena za kuneneratu</string>
+    <string name="wasnt_able_to_connect_or_download">Sizinathe kulumikiza kapena kutsitsa %1$s kuchokera ku %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Sanathe kulumikizana kapena kutsitsa radar = chithunzi kuchokera pa intaneti</string>
     <string name="wasnt_able_to_connect_settings">Sanathe kulumikizana kapena kutsitsa makonda kuchokera ku seva yanu</string>
     <string name="wasnt_able_to_connect_webcam_url">Sanathe kulumikiza kapena kutsitsa chithunzi cha webusayiti kuchokera pa seva yanu</string>

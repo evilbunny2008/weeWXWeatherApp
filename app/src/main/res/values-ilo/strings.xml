@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Ti URL ti datos ket blangko</string>
     <string name="delete_all_data">Ikkaten amin a datos ken panagserra</string>
     <string name="empty">Ubbaw</string>
+    <string name="error">Biddut!</string>
     <string name="error_occurred_while_attempting_to_update">Napasamak ti biddut bayat ti panangpadas a mangpabaro iti pannakausar</string>
     <string name="every_5_minutes">Tunggal 5 a minuto</string>
     <string name="every_10_minutes">Tunggal 10 a minuto</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Ti URL ket naikabil iti default wenno awan ti kargana</string>
     <string name="use_exact_alarm">Usaren dagiti eksakto nga oras ti panagpabaro</string>
     <string name="wasnt_able_to_connect_custom_url">saan a nakakonekta wenno mai-download manipud iti custom URL a naikeddeng</string>
-    <string name="wasnt_able_to_connect_data_txt">saan a nakakonekta wenno maka-download iti data.txt manipud iti server-mo</string>
     <string name="wasnt_able_to_connect_forecast">saan a nakakonekta wenno mai-download ti forecast</string>
-    <string name="wasnt_able_to_connect_or_download">saan a nakakonekta wenno mai-download ti forecast</string>
+    <string name="wasnt_able_to_connect_or_download">Saan a nakakonekta wenno nai-download ti %1$s manipud iti %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Saan a nakakonekta wenno naka-download iti radar= image manipud iti Internet</string>
     <string name="wasnt_able_to_connect_settings">saan a nakakonekta wenno mai-download dagiti settings manipud iti server-mo</string>
     <string name="wasnt_able_to_connect_webcam_url">Saan a nakakonekta wenno naka-download iti webcam image manipud iti server-mo</string>

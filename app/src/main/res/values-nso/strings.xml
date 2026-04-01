@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL ya data e be e se na selo</string>
     <string name="delete_all_data">Phimola ya data yohle le shutdown</string>
     <string name="empty">Se nago selo</string>
+    <string name="error">Phošo!</string>
     <string name="error_occurred_while_attempting_to_update">Phošo e diregile ge a be a leka go mpshafatša tšhomišo</string>
     <string name="every_5_minutes">Metsotso e mengwe le e mengwe e 5</string>
     <string name="every_10_minutes">Metsotso e mengwe le e mengwe e 10</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL e be e beilwe go default goba e be e se na selo</string>
     <string name="use_exact_alarm">Diriša dinako tša go mpshafatša ka go nepagala</string>
     <string name="wasnt_able_to_connect_custom_url">ga se ya kgona go kgokagana goba go taonelouta go tšwa go URL ya tlwaelo yeo e laeditšwego</string>
-    <string name="wasnt_able_to_connect_data_txt">ga se ya kgona go kgokaganya goba go taonelouta data.txt go tšwa go seva ya gago</string>
     <string name="wasnt_able_to_connect_forecast">wasn\'t able to connect goba go taonelouta ponelopele</string>
-    <string name="wasnt_able_to_connect_or_download">wasn\'t able to connect goba go taonelouta ponelopele</string>
+    <string name="wasnt_able_to_connect_or_download">Ga se ya kgona go kgokaganya goba go taonelouta %1$s go tšwa go %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">ga se a kgona go kgokaganya goba go taonelouta radar= seswantšho go tšwa Inthaneteng</string>
     <string name="wasnt_able_to_connect_settings">E be e sa kgone go kgokaganya goba go taonelouta dipeakanyo go tšwa go seva ya gago</string>
     <string name="wasnt_able_to_connect_webcam_url">E be e sa kgone go kgokaganya goba go taonelouta seswantšho sa webcam go tšwa go seva ya gago</string>

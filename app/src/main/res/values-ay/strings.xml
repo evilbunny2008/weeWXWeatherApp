@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Datos url ukax ch\'usawjawa</string>
     <string name="delete_all_data">Taqi datos ukat jist\'antaña chhaqtayaña</string>
     <string name="empty">Ch\'usa</string>
+    <string name="error">Pantja!</string>
     <string name="error_occurred_while_attempting_to_update">Mä pantjasiwiw utjawayi, apnaqañ yant\'añkama</string>
     <string name="every_5_minutes">Sapa 5 t\'ijturjama</string>
     <string name="every_10_minutes">Sapa 10 t\'ijturjama</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ukax default ukar uñt\'ayatawa jan ukax ch\'usa</string>
     <string name="use_exact_alarm">Chiqapa actualización pacha apnaqaña</string>
     <string name="wasnt_able_to_connect_custom_url">janiw URL costumbre ukan uñt\'ayat ukanx conectar jan ukax descargarjamäkänti</string>
-    <string name="wasnt_able_to_connect_data_txt">janiw dates.txt ukax servidor ukan conectar jan ukax apkatañjamäkänti</string>
     <string name="wasnt_able_to_connect_forecast">janiw conectar jan ukax pronóstico ukar apkatañjamäkänti</string>
-    <string name="wasnt_able_to_connect_or_download">janiw conectar jan ukax pronóstico ukar apkatañjamäkänti</string>
+    <string name="wasnt_able_to_connect_or_download">Janiw %1$s ukax %2$s ukanx conectar jan ukax apkatañjamäkänti</string>
     <string name="wasnt_able_to_connect_radar_image">janiw Radar= uñacht\'äwix internet tuqit uñt\'ayasiñjamäkänti jan ukax apkatañjamäkänti</string>
     <string name="wasnt_able_to_connect_settings">janiw servidor ukan configuración ukar conectar jan ukax apkatañjamäkänti</string>
     <string name="wasnt_able_to_connect_webcam_url">janiw mä webcam uñacht\'äwi servidor ukan conectar jan ukax apkatañjamäkänti</string>

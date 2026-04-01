@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">ڊيٽا URL خالي هو</string>
     <string name="delete_all_data">سڀ ڊيٽا ختم ڪريو ۽ بند ڪريو</string>
     <string name="empty">خالي</string>
+    <string name="error">غلطي!</string>
     <string name="error_occurred_while_attempting_to_update">استعمال کي اپڊيٽ ڪرڻ جي ڪوشش دوران هڪ نقص پيدا ٿيو</string>
     <string name="every_5_minutes">هر 5 منٽ</string>
     <string name="every_10_minutes">هر 10 منٽ</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ڊفالٽ تي سيٽ ڪيو ويو يا خالي هو</string>
     <string name="use_exact_alarm">درست اپڊيٽ وقت استعمال ڪريو</string>
     <string name="wasnt_able_to_connect_custom_url">بيان ڪيل ڪسٽم URL مان ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
-    <string name="wasnt_able_to_connect_data_txt">توهان جي سرور مان data.txt ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
     <string name="wasnt_able_to_connect_forecast">اڳڪٿي کي ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
-    <string name="wasnt_able_to_connect_or_download">اڳڪٿي کي ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
+    <string name="wasnt_able_to_connect_or_download">%1$s کي %2$s مان ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
     <string name="wasnt_able_to_connect_radar_image">ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو radar= انٽرنيٽ تان تصوير</string>
     <string name="wasnt_able_to_connect_settings">توهان جي سرور مان سيٽنگون ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هئي</string>
     <string name="wasnt_able_to_connect_webcam_url">توهان جي سرور مان ويب ڪيم تصوير ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>

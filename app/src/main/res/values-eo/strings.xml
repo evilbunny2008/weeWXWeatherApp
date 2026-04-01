@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Datuma URL estis malplena</string>
     <string name="delete_all_data">Forigi Ĉiuj Datumoj kaj Malŝalto</string>
     <string name="empty">Malplena</string>
+    <string name="error">Eraro!</string>
     <string name="error_occurred_while_attempting_to_update">Okazis eraro dum provo ĝisdatigi uzadon</string>
     <string name="every_5_minutes">Ĉiu 5 Minutoj</string>
     <string name="every_10_minutes">Ĉiu 10 Minutoj</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL estis agordita al la defaŭlta aŭ estis malplena</string>
     <string name="use_exact_alarm">Uzu precizajn ĝisdatigajn tempojn</string>
     <string name="wasnt_able_to_connect_custom_url">Ne povis konekti aŭ elŝuti de la kutima URL specifita</string>
-    <string name="wasnt_able_to_connect_data_txt">Ne povis konekti aŭ elŝuti data.txt de via servilo</string>
     <string name="wasnt_able_to_connect_forecast">Ne povis konekti aŭ elŝuti la prognozon</string>
-    <string name="wasnt_able_to_connect_or_download">Ne povis konekti aŭ elŝuti la prognozon</string>
+    <string name="wasnt_able_to_connect_or_download">Ne povis konekti aŭ elŝuti %1$s de %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ne povis konekti aŭ elŝuti radar= bildon de la interreto</string>
     <string name="wasnt_able_to_connect_settings">Ne povis konekti aŭ elŝuti la agordojn de via servilo</string>
     <string name="wasnt_able_to_connect_webcam_url">Ne povis konekti aŭ elŝuti retkameraan bildon de via servilo</string>

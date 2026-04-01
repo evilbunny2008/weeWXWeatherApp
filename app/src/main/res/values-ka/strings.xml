@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">მონაცემთა URL ცარიელი იყო</string>
     <string name="delete_all_data">წაშალეთ ყველა მონაცემი და გამორთეთ</string>
     <string name="empty">ცარიელი</string>
+    <string name="error">შეცდომა!</string>
     <string name="error_occurred_while_attempting_to_update">გამოყენების განახლების მცდელობისას მოხდა შეცდომა</string>
     <string name="every_5_minutes">ყოველ 5 წუთში</string>
     <string name="every_10_minutes">ყოველ 10 წუთში</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL დაყენებული იყო ნაგულისხმევად ან ცარიელი იყო</string>
     <string name="use_exact_alarm">გამოიყენეთ განახლების ზუსტი დრო</string>
     <string name="wasnt_able_to_connect_custom_url">მითითებული მორგებული URL-დან დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
-    <string name="wasnt_able_to_connect_data_txt">თქვენი სერვერიდან data.txt-ის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="wasnt_able_to_connect_forecast">პროგნოზის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
-    <string name="wasnt_able_to_connect_or_download">პროგნოზის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
+    <string name="wasnt_able_to_connect_or_download">%1$s %2$s-დან დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="wasnt_able_to_connect_radar_image">ვერ მოხერხდა რადარის= სურათის დაკავშირება ან ჩამოტვირთვა ინტერნეტიდან</string>
     <string name="wasnt_able_to_connect_settings">თქვენი სერვერიდან პარამეტრების დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="wasnt_able_to_connect_webcam_url">ვერ მოხერხდა ვებკამერის სურათის დაკავშირება ან ჩამოტვირთვა თქვენი სერვერიდან</string>

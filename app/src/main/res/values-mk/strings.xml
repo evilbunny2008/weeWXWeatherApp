@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL-адресата на податоците беше празна</string>
     <string name="delete_all_data">Избришете ги сите податоци и исклучување</string>
     <string name="empty">Празен</string>
+    <string name="error">Грешка!</string>
     <string name="error_occurred_while_attempting_to_update">Настана грешка при обидот да се ажурира употребата</string>
     <string name="every_5_minutes">На секои 5 минути</string>
     <string name="every_10_minutes">На секои 10 минути</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL-то беше поставено на стандардно или беше празно</string>
     <string name="use_exact_alarm">Користете точно време на ажурирање</string>
     <string name="wasnt_able_to_connect_custom_url">Не можеше да се поврзе или преземе од наведената приспособена URL-адреса</string>
-    <string name="wasnt_able_to_connect_data_txt">Не можеше да се поврзе или преземе data.txt од вашиот сервер</string>
     <string name="wasnt_able_to_connect_forecast">Не можеше да се поврзе или преземе прогнозата</string>
-    <string name="wasnt_able_to_connect_or_download">Не можеше да се поврзе или преземе прогнозата</string>
+    <string name="wasnt_able_to_connect_or_download">Не можеше да се поврзе или преземе %1$s од %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Не можеше да се поврзе или преземе радар= слика од интернет</string>
     <string name="wasnt_able_to_connect_settings">Не можеше да се поврзе или преземе поставките од вашиот сервер</string>
     <string name="wasnt_able_to_connect_webcam_url">Не можеше да се поврзе или преземе слика од веб-камера од вашиот сервер</string>

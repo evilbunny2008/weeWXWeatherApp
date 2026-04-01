@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Gagnaslóð var auð</string>
     <string name="delete_all_data">Eyða öllum gögnum og loka</string>
     <string name="empty">Tómt</string>
+    <string name="error">Villa!</string>
     <string name="error_occurred_while_attempting_to_update">Villa kom upp þegar reynt var að uppfæra notkun</string>
     <string name="every_5_minutes">Á 5 mínútna fresti</string>
     <string name="every_10_minutes">Á 10 mínútna fresti</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL var stillt á sjálfgefið eða var tómt</string>
     <string name="use_exact_alarm">Notaðu nákvæma uppfærslutíma</string>
     <string name="wasnt_able_to_connect_custom_url">Gat ekki tengst eða hlaðið niður af sérsniðnu vefslóðinni sem tilgreind er</string>
-    <string name="wasnt_able_to_connect_data_txt">Gat ekki tengst eða hlaðið niður data.txt af þjóninum þínum</string>
     <string name="wasnt_able_to_connect_forecast">Gat ekki tengst eða hlaðið niður spánni</string>
-    <string name="wasnt_able_to_connect_or_download">Gat ekki tengst eða hlaðið niður spánni</string>
+    <string name="wasnt_able_to_connect_or_download">Gat ekki tengst eða hlaðið niður %1$s frá %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Gat ekki tengst eða hlaðið niður radar= mynd af netinu</string>
     <string name="wasnt_able_to_connect_settings">Gat ekki tengst eða hlaðið niður stillingum af þjóninum þínum</string>
     <string name="wasnt_able_to_connect_webcam_url">Gat ekki tengst eða hlaðið niður vefmyndavélarmynd af þjóninum þínum</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data URL ay blangko</string>
     <string name="delete_all_data">Buraen so Amin a Data tan Baley</string>
     <string name="empty">Andiay karga</string>
+    <string name="error">Lingo!</string>
     <string name="error_occurred_while_attempting_to_update">Agawa so sakey a lingo legan a sasalien dan i-update so pangusar</string>
     <string name="every_5_minutes">Kada 5 Mito</string>
     <string name="every_10_minutes">Kada 10 Saray Mito</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Say URL so niletneg ed ag-inkayadyari odino anggapoy karga to</string>
     <string name="use_exact_alarm">Usaren so eksakton oras na update</string>
     <string name="wasnt_able_to_connect_custom_url">Ag la makakonekta odino aka-download ed apasalan ya URL</string>
-    <string name="wasnt_able_to_connect_data_txt">Ag-akakonekta odino na-download iray data. text ed server yo</string>
     <string name="wasnt_able_to_connect_forecast">Ag to sarag ya ikonekta odino i-download so ipapasakbay</string>
-    <string name="wasnt_able_to_connect_or_download">Ag to sarag ya ikonekta odino i-download so ipapasakbay</string>
+    <string name="wasnt_able_to_connect_or_download">Ag nakonekta o na-download so %1$s manlapud %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ag la makakonekta odino makakonekta na download ) ya imahen manlapud internet</string>
     <string name="wasnt_able_to_connect_settings">Ag to sarag ya ikonekta odino i-download iray set server ed server yo</string>
     <string name="wasnt_able_to_connect_webcam_url">Ag to sarag ya ikonekta odino i-download so imahen na webmam ya imahin</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Kä cï yök URL acï bɛ̈n</string>
     <string name="delete_all_data">Tääu ë wël ku Kä cï röt looi kedhiɛ</string>
     <string name="empty">Kë rëëric abac</string>
+    <string name="error">Awuɔ̈c!</string>
     <string name="error_occurred_while_attempting_to_update">Kä cï röt wuɔ̈ɔ̈c aacï röt looi ke them bïk luɔɔi de käŋ ya cɔ̈kpiny</string>
     <string name="every_5_minutes">Ɣaka 5</string>
     <string name="every_10_minutes">Käk ë dhɛ̈ŋ 10</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL acï tääu në kë cï tääu thïn yic wala acï thiäŋ</string>
     <string name="use_exact_alarm">Luɔ̈ɔ̈i ë thɛɛr ë yam ë yic</string>
     <string name="wasnt_able_to_connect_custom_url">Acïï lëu bï yök wala bï yök tënë URL ë thäät cï lueel cï lueel</string>
-    <string name="wasnt_able_to_connect_data_txt">Acïï lëu bï yök ka yök wël.txt tënë raandu</string>
     <string name="wasnt_able_to_connect_forecast">Acïï lëu bï yök ka bï thööŋ de käŋ yök</string>
-    <string name="wasnt_able_to_connect_or_download">Acïï lëu bï yök ka bï thööŋ de käŋ yök</string>
+    <string name="wasnt_able_to_connect_or_download">Acï lëu bï yök wala bï %1$s yök tënë %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Acïn kë lëu bï yök wala bï radada= thura tääu në aliiric</string>
     <string name="wasnt_able_to_connect_settings">Acïï lëu bï yök wala bï kä cïke tääu thïn yök tënë raandu</string>
     <string name="wasnt_able_to_connect_webcam_url">Acïï lëu bï thöŋ ka yök në wɛbthait yic tënë raandu</string>

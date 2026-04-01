@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">डेटा URL रिक्त होती</string>
     <string name="delete_all_data">सर्व डेटा आणि शटडाउन हटवा</string>
     <string name="empty">रिकामे</string>
+    <string name="error">चूक!</string>
     <string name="error_occurred_while_attempting_to_update">वापर अद्यतनित करण्याचा प्रयत्न करताना एक त्रुटी आली</string>
     <string name="every_5_minutes">दर 5 मिनिटांनी</string>
     <string name="every_10_minutes">दर 10 मिनिटांनी</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL डीफॉल्टवर सेट केली होती किंवा रिकामी होती</string>
     <string name="use_exact_alarm">अचूक अपडेट वेळा वापरा</string>
     <string name="wasnt_able_to_connect_custom_url">निर्दिष्ट केलेल्या सानुकूल URL वरून कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
-    <string name="wasnt_able_to_connect_data_txt">तुमच्या सर्व्हरवरून data.txt कनेक्ट करण्यात किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
     <string name="wasnt_able_to_connect_forecast">अंदाज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>
-    <string name="wasnt_able_to_connect_or_download">अंदाज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s वरून %1$s कनेक्ट किंवा डाउनलोड करू शकलो नाही</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेटवरून radar= प्रतिमा कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
     <string name="wasnt_able_to_connect_settings">तुमच्या सर्व्हरवरून सेटिंग्ज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नव्हते</string>
     <string name="wasnt_able_to_connect_webcam_url">तुमच्या सर्व्हरवरून वेबकॅम इमेज कनेक्ट किंवा डाउनलोड करण्यात सक्षम नाही</string>

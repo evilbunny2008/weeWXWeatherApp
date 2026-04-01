@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">डेटा URL कोरीव आशिल्लो</string>
     <string name="delete_all_data">सगळो डेटा काडून उडोवचो आनी बंद करचो</string>
     <string name="empty">रिकामें</string>
+    <string name="error">चूक!</string>
     <string name="error_occurred_while_attempting_to_update">वापर अपडेट करपाचो यत्न करतना एक चूक जाली</string>
     <string name="every_5_minutes">दर 5 मिनटांनी 1000</string>
     <string name="every_10_minutes">दर 10 मिनटांनी 10 मिनिटे</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL मुलभूताचेर सेट केल्लो वा रितो आशिल्लो</string>
     <string name="use_exact_alarm">अचूक अद्ययावत वेळ वापरात</string>
     <string name="wasnt_able_to_connect_custom_url">निर्दिश्ट केल्ल्या सानुकूल URL वयल्यान जोडपाक वा डाउनलोड करपाक शकलो ना</string>
-    <string name="wasnt_able_to_connect_data_txt">तुमच्या सर्वरा वयल्यान data.txt कनॅक्ट वा डाउनलोड करूंक शकलो ना</string>
     <string name="wasnt_able_to_connect_forecast">अदमासाक जोडपाक वा डाउनलोड करपाक मेळनाशिल्लें</string>
-    <string name="wasnt_able_to_connect_or_download">अदमासाक जोडपाक वा डाउनलोड करपाक मेळनाशिल्लें</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s कडल्यान %1$s जोडपाक वा डाउनलोड करपाक शकलो ना</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनॅटा वयल्यान Radar= प्रतिमा जोडपाक वा डाउनलोड करपाक शकलो ना</string>
     <string name="wasnt_able_to_connect_settings">तुमच्या सर्वरा वयल्यान सेटिंग्ज जोडपाक वा डाउनलोड करूंक शकलो ना</string>
     <string name="wasnt_able_to_connect_webcam_url">तुमच्या सर्वरा वयल्यान वेबकॅम प्रतिमा जोडपाक वा डाउनलोड करूंक शकली ना</string>

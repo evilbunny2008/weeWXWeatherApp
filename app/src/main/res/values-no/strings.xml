@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Datanettadressen var tom</string>
     <string name="delete_all_data">Slett alle data og slå av</string>
     <string name="empty">Tømme</string>
+    <string name="error">Feil!</string>
     <string name="error_occurred_while_attempting_to_update">Det oppsto en feil under forsøk på å oppdatere bruk</string>
     <string name="every_5_minutes">Hvert 5. minutt</string>
     <string name="every_10_minutes">Hvert 10. minutt</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ble satt til standard eller var tom</string>
     <string name="use_exact_alarm">Bruk nøyaktige oppdateringstider</string>
     <string name="wasnt_able_to_connect_custom_url">Kunne ikke koble til eller laste ned fra den spesifiserte nettadressen</string>
-    <string name="wasnt_able_to_connect_data_txt">Kunne ikke koble til eller laste ned data.txt fra serveren din</string>
     <string name="wasnt_able_to_connect_forecast">Kunne ikke koble til eller laste ned prognosen</string>
-    <string name="wasnt_able_to_connect_or_download">Kunne ikke koble til eller laste ned prognosen</string>
+    <string name="wasnt_able_to_connect_or_download">Kunne ikke koble til eller laste ned %1$s fra %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Kunne ikke koble til eller laste ned radar=-bilde fra internett</string>
     <string name="wasnt_able_to_connect_settings">Kunne ikke koble til eller laste ned innstillingene fra serveren din</string>
     <string name="wasnt_able_to_connect_webcam_url">Kunne ikke koble til eller laste ned et webkamerabilde fra serveren din</string>

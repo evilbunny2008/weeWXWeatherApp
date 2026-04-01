@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">डाटा यूआरएल खाली छल</string>
     <string name="delete_all_data">सब डाटा आ बंद करू</string>
     <string name="empty">खाली</string>
+    <string name="error">दोष!</string>
     <string name="error_occurred_while_attempting_to_update">उपयोग अपडेट करबाक प्रयास करैत काल एकटा त्रुटि भेल</string>
     <string name="every_5_minutes">हर 5 मिनट पर</string>
     <string name="every_10_minutes">हर 10 मिनट पर</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">यूआरएल डिफ़ॉल्ट पर सेट कएल गेल छल वा खाली छल</string>
     <string name="use_exact_alarm">सटीक अपडेट समय का उपयोग करें</string>
     <string name="wasnt_able_to_connect_custom_url">कस्टम यूआरएल निर्दिष्ट स कनेक्ट अथवा डाउनलोड नहि कए सकैत छी निर्दिष्ट</string>
-    <string name="wasnt_able_to_connect_data_txt">अहाँक सर्वर सँ डाटा.txt केँ कनेक्ट वा डाउनलोड नहि क\' सकल छल</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमान के कनेक्ट या डाउनलोड नै क सकलौं।</string>
-    <string name="wasnt_able_to_connect_or_download">पूर्वानुमान के कनेक्ट या डाउनलोड नै क सकलौं।</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s सँ %1$s केँ कनेक्ट अथवा डाउनलोड नहि क\' सकलहुँ</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेट 2019 स राडार= छवि कनेक्ट या डाउनलोड नै क सकलौं छल।</string>
     <string name="wasnt_able_to_connect_settings">की अहाँक सर्वर सँ सेटिंग्स केँ कनेक्ट वा डाउनलोड नहि क\' सकल छल</string>
     <string name="wasnt_able_to_connect_webcam_url">की अहाँक सर्वर सँ कोनो वेबकैम छवि कनेक्ट वा डाउनलोड नहि क\' सकैत छल</string>

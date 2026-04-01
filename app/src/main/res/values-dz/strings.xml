@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">གནད་སྡུད་ཡུ་ཨར་ཨེལ་འདི་སྟོངམ་སྦེ་འདུག</string>
     <string name="delete_all_data">གནད་སྡུད་དང་བཀག་ཆ་ཆ་མཉམ་བཏོན་གཏང་།</string>
     <string name="empty">སྟོངམ</string>
+    <string name="error">འཛོལ༌བ!</string>
     <string name="error_occurred_while_attempting_to_update">ལག་ལེན་དུས་མཐུན་བཟོ་ནིའི་དཔའ་བཅམ་པའི་སྐབས་ འཛོལ་བ་ཅིག་བྱུང་ཡོདཔ།</string>
     <string name="every_5_minutes">སྐར་མ་ ༥ རེ།</string>
     <string name="every_10_minutes">སྐར་མ་ ༡༠ རེ།</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">ཡུ་ཨར་ཨེལ་འདི་ སྔོན་སྒྲིག་ལུ་གཞི་སྒྲིག་འབད་ཡོདཔ་ ཡང་ཅིན་ སྟོངམ་ཨིན་པས།</string>
     <string name="use_exact_alarm">དུས་མཐུན་བཟོ་བའི་དུས་ཚོད་ངེས་བདེན་ལག་ལེན་འཐབ།</string>
     <string name="wasnt_able_to_connect_custom_url">གསལ་བཀོད་འབད་ཡོད་པའི་སྲོལ་སྒྲིག་ཡུ་ཨར་ཨེལ་ལས་ མཐུད་ནི་ཡང་ན་ཕབ་ལེན་འབད་མ་ཚུགས།</string>
-    <string name="wasnt_able_to_connect_data_txt">ཁྱོད་རའི་སར་བར་ལས་ མཐུད་མ་ཚུགསཔ་ཡང་ན་ data.txt ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="wasnt_able_to_connect_forecast">མཐུད་མ་ཚུགསཔ་ཡང་ན་ སྔོན་བཤད་ཕབ་ལེན་འབད་མ་ཚུགས།</string>
-    <string name="wasnt_able_to_connect_or_download">མཐུད་མ་ཚུགསཔ་ཡང་ན་ སྔོན་བཤད་ཕབ་ལེན་འབད་མ་ཚུགས།</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s ནང་ལས་ %1$s མཐུད་ལམ་ ཡང་ན་ ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="wasnt_able_to_connect_radar_image">ཡོངས་འབྲེལ་ནང་ལས་ ར་ཌར་= གཟུགས་བརྙན་ཕབ་ལེན་འབད་མ་ཚུགསཔ་ཨིན་ན།</string>
     <string name="wasnt_able_to_connect_settings">ཁྱོད་རའི་སར་བར་ལས་ སྒྲིག་སྟངས་ཚུ་ མཐུད་མ་ཚུགསཔ་ ཡང་ན་ ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="wasnt_able_to_connect_webcam_url">ཁྱོད་རའི་སར་བར་ལས་ ཝེབ་ཀེམ་གྱི་གཟུགས་བརྙན་ཅིག་ མཐུད་མ་ཚུགསཔ་ ཡང་ན་ ཕབ་ལེན་འབད་མ་ཚུགས།</string>

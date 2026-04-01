@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL ya bansangu vandaka ya mpamba</string>
     <string name="delete_all_data">Kufwa Bansangu Yonso mpi Kukanga</string>
     <string name="empty">Mpamba</string>
+    <string name="error">Kifu!</string>
     <string name="error_occurred_while_attempting_to_update">Kifu mosi salamaka na ntangu yandi vandaka kumeka kutula na zulu mutindu ya kusadila</string>
     <string name="every_5_minutes">Na nima ya minuta 5</string>
     <string name="every_10_minutes">Na nima ya minuta 10</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Bo tulaka URL na kisika ya bo me tula yo to yo vandaka mpamba</string>
     <string name="use_exact_alarm">Sadila ntangu ya sikisiki ya kutula na zulu</string>
     <string name="wasnt_able_to_connect_custom_url">Yandi lendaka ve kukangama to kubaka na URL yina bo me yidika</string>
-    <string name="wasnt_able_to_connect_data_txt">Yau lendaka kukangama ve to kubaka bansangu.tt na serveur na nge</string>
     <string name="wasnt_able_to_connect_forecast">Yandi lendaka ve kukangama to kubaka mambu yina bo vandaka kuyindula</string>
-    <string name="wasnt_able_to_connect_or_download">Yandi lendaka ve kukangama to kubaka mambu yina bo vandaka kuyindula</string>
+    <string name="wasnt_able_to_connect_or_download">Kukonda kukangama to kubaka %1$s na %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Yandi lendaka kukangama ve to kubaka radar= kifwanisu na internet</string>
     <string name="wasnt_able_to_connect_settings">Yandi vandaka ve ti makuki ya kuvukisa to kubaka baparametre na serveur na beno</string>
     <string name="wasnt_able_to_connect_webcam_url">Yandi lendaka kuvukisa ve to kubaka kifwanisu ya web na serveur na nge</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data URL yali etaliimu kintu kyonna</string>
     <string name="delete_all_data">Ssaawo data yonna n\'okuggalawo</string>
     <string name="empty">Obukalu</string>
+    <string name="error">Ensobi!</string>
     <string name="error_occurred_while_attempting_to_update">Ensobi yabaddewo nga agezaako okuzza obuggya enkozesa</string>
     <string name="every_5_minutes">Buli ddakiika 5</string>
     <string name="every_10_minutes">Buli ddakiika 10</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL yateekebwa ku default oba yali njereere</string>
     <string name="use_exact_alarm">Kozesa ebiseera ebituufu eby\'okulongoosa</string>
     <string name="wasnt_able_to_connect_custom_url">Wasn\'t able to connect oba download okuva ku custom URL eragiddwa</string>
-    <string name="wasnt_able_to_connect_data_txt">Wasn\'t able okuyunga oba okuwanula data.txt okuva ku server yo</string>
     <string name="wasnt_able_to_connect_forecast">Wasn\'t able okuyunga oba okuwanula forecast</string>
-    <string name="wasnt_able_to_connect_or_download">Wasn\'t able okuyunga oba okuwanula forecast</string>
+    <string name="wasnt_able_to_connect_or_download">Teyasobola kuyunga oba kuwanula %1$s okuva ku %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Wasn\'t able okuyunga oba okuwanula radar= ekifaananyi okuva ku yintaneeti</string>
     <string name="wasnt_able_to_connect_settings">Wasn\'t able okuyunga oba okuwanula settings okuva ku server yo</string>
     <string name="wasnt_able_to_connect_webcam_url">Wasn\'t able kuyungako oba okuwanula webcam ekifaananyi okuva ku server yo</string>

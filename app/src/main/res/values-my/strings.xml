@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">ဒေတာ URL သည်ကွက်လပ်ဖြစ်သည်</string>
     <string name="delete_all_data">ဒေတာအားလုံးကိုဖျက်ပစ်ပါ</string>
     <string name="empty">ဗလာဖြစ်သော</string>
+    <string name="error">အမှား။</string>
     <string name="error_occurred_while_attempting_to_update">အသုံးပြုမှုကိုမွမ်းမံရန်ကြိုးစားစဉ်အမှားတစ်ခုဖြစ်ပွားခဲ့သည်</string>
     <string name="every_5_minutes">တိုင်း 5 မိနစ်</string>
     <string name="every_10_minutes">10 မိနစ်တိုင်း</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ကို default မှသတ်မှတ်ထားခြင်းသို့မဟုတ်ဗလာဖြစ်သည်</string>
     <string name="use_exact_alarm">အတိအကျ Update Times ကိုသုံးပါ</string>
     <string name="wasnt_able_to_connect_custom_url">သတ်မှတ်ထားသော Custom URL မှချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
-    <string name="wasnt_able_to_connect_data_txt">သင်၏ဆာဗာမှဒေတာများကိုချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
     <string name="wasnt_able_to_connect_forecast">ခန့်မှန်းချက်ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ခဲ့ပါ။</string>
-    <string name="wasnt_able_to_connect_or_download">ခန့်မှန်းချက်ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ခဲ့ပါ။</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s မှ %1$s ကို ချိတ်ဆက်ခြင်း သို့မဟုတ် ဒေါင်းလုဒ်လုပ်၍မရပါ။</string>
     <string name="wasnt_able_to_connect_radar_image">ရေဒါနှင့်ချိတ်ဆက်ရန် (သို့) ဒေါင်းလုပ်ဆွဲယူနိုင်ခဲ့သည်</string>
     <string name="wasnt_able_to_connect_settings">သင်၏ဆာဗာမှ settings ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ပါ</string>
     <string name="wasnt_able_to_connect_webcam_url">သင်၏ဆာဗာမှဝက်ဘ်ကင်မရာပုံရိပ်ကိုချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>

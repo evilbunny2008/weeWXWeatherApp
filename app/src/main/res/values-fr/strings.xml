@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">L\'URL des données était vide</string>
     <string name="delete_all_data">Supprimer toutes les données et arrêter</string>
     <string name="empty">Vide</string>
+    <string name="error">Erreur!</string>
     <string name="error_occurred_while_attempting_to_update">Une erreur s\'est produite lors de la tentative de mise à jour de l\'utilisation</string>
     <string name="every_5_minutes">Toutes les 5 minutes</string>
     <string name="every_10_minutes">Toutes les 10 minutes</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">L\'URL était définie par défaut ou était vide</string>
     <string name="use_exact_alarm">Utiliser des heures de mise à jour exactes</string>
     <string name="wasnt_able_to_connect_custom_url">Impossible de se connecter ou de télécharger à partir de l\'URL personnalisée spécifiée</string>
-    <string name="wasnt_able_to_connect_data_txt">Je n\'ai pas pu me connecter ou télécharger data.txt depuis votre serveur</string>
     <string name="wasnt_able_to_connect_forecast">Je n\'ai pas pu me connecter ou télécharger les prévisions</string>
-    <string name="wasnt_able_to_connect_or_download">Je n\'ai pas pu me connecter ou télécharger les prévisions</string>
+    <string name="wasnt_able_to_connect_or_download">Impossible de se connecter ou de télécharger %1$s depuis %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Impossible de se connecter ou de télécharger l\'image radar= depuis Internet</string>
     <string name="wasnt_able_to_connect_settings">Je n\'ai pas pu me connecter ou télécharger les paramètres depuis votre serveur</string>
     <string name="wasnt_able_to_connect_webcam_url">Impossible de se connecter ou de télécharger une image de webcam depuis votre serveur</string>

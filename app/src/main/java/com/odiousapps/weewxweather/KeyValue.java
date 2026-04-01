@@ -14,6 +14,7 @@ import java.util.Map;
 
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 
 @SuppressWarnings({"unused", "BooleanMethodIsAlwaysInverted", "ConstantValue"})
 class KeyValue
@@ -72,12 +73,24 @@ class KeyValue
 		return jobj;
 	}
 
-	static boolean parseDicts(JSONObject jsonObject)
+	static boolean parseDicts()
 	{
 		//LogMessage("KeyValue.parseDict(): Loading...");
 
-		if(jsonObject == null || jsonObject.length() == 0)
+		JSONObject jsonObject;
+
+		String json_str = (String)readVar(json_keys[1] + "_str", "");
+		if(json_str == null || json_str.isBlank())
 			return false;
+
+		try
+		{
+			jsonObject = new JSONObject(json_str);
+			if(jsonObject == null || jsonObject.length() == 0)
+				return false;
+		} catch(Exception r) {
+			return false;
+		}
 
 		JSONObject group_dict = getDict("group_unit_dict", jsonObject);
 		JSONObject obs_group_dict = getDict("obs_group_dict", jsonObject);

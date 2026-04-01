@@ -18,6 +18,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
+
+import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
@@ -147,7 +149,7 @@ public class Custom extends Fragment
 		if(!forced && npwsll.periodTime() <= 0)
 		{
 			String tmpStr = weeWXApp.current_dialog_html
-					.replace("WARNING_BODY", weeWXApp.getAndroidString(R.string.manual_update_set_refresh_screen_to_load));
+					.replace("WARNING_BODY", getAndroidString(R.string.manual_update_set_refresh_screen_to_load));
 
 			wv.post(() -> wv.loadDataWithBaseURL(null, tmpStr,
 					"text/html", "utf-8", null));
@@ -160,7 +162,7 @@ public class Custom extends Fragment
 		if((custom == null || custom.isBlank()) && (custom_url == null || custom_url.isBlank()))
 		{
 			String tmpStr = weeWXApp.current_dialog_html
-					.replace("WARNING_BODY", weeWXApp.getAndroidString(R.string.custom_url_not_set_or_blank));
+					.replace("WARNING_BODY", getAndroidString(R.string.custom_url_not_set_or_blank));
 
 			wv.post(() -> wv.loadDataWithBaseURL(null, tmpStr,
 					"text/html", "utf-8", null));

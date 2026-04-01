@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data-URL was leeg</string>
     <string name="delete_all_data">Vee alle data uit en sluit af</string>
     <string name="empty">Leeg</string>
+    <string name="error">Fout!</string>
     <string name="error_occurred_while_attempting_to_update">\'n Fout het voorgekom tydens die poging om gebruik op te dateer</string>
     <string name="every_5_minutes">Elke 5 minute</string>
     <string name="every_10_minutes">Elke 10 minute</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL is op die verstek gestel of was leeg</string>
     <string name="use_exact_alarm">Gebruik presiese opdateringstye</string>
     <string name="wasnt_able_to_connect_custom_url">Kon nie koppel of aflaai vanaf die gepasmaakte URL wat gespesifiseer is nie</string>
-    <string name="wasnt_able_to_connect_data_txt">Kon nie data.txt van jou bediener af koppel of aflaai nie</string>
     <string name="wasnt_able_to_connect_forecast">Kon nie die voorspelling koppel of aflaai nie</string>
-    <string name="wasnt_able_to_connect_or_download">Kon nie die voorspelling koppel of aflaai nie</string>
+    <string name="wasnt_able_to_connect_or_download">Kon nie %1$s van %2$s koppel of aflaai nie</string>
     <string name="wasnt_able_to_connect_radar_image">Kon nie radar=-beeld van die internet af koppel of aflaai nie</string>
     <string name="wasnt_able_to_connect_settings">Kon nie koppel of die instellings vanaf jou bediener aflaai nie</string>
     <string name="wasnt_able_to_connect_webcam_url">Kon nie \'n webkamera-beeld van jou bediener af koppel of aflaai nie</string>

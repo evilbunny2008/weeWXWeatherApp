@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data URL waar leetich</string>
     <string name="delete_all_data">Tuu ale data un Shutdown aus këpe</string>
     <string name="empty">Leyer</string>
+    <string name="error">Feeler!</string>
     <string name="error_occurred_while_attempting_to_update">Een feeler is pasiirt wën mer fersuucht hon ti penutsung aktualisiire</string>
     <string name="every_5_minutes">Yeete 5 Minute</string>
     <string name="every_10_minutes">Yeete 10 Minus</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL waar in te standard kextëlt kep orer waar leere</string>
     <string name="use_exact_alarm">Penuts eksakte aktualisiirunge</string>
     <string name="wasnt_able_to_connect_custom_url">Waar net in kontitsioon fer se ferklayche orer download mache fon te personaliseerte URL woo pextimt is</string>
-    <string name="wasnt_able_to_connect_data_txt">Waar nët in kontitsioon fer ti data.txt fon tayn serwer se ferklayche orer download mache</string>
     <string name="wasnt_able_to_connect_forecast">Waar nët in kontitsioon fer ti prokramatsioon se ferklayche orer se download mache</string>
-    <string name="wasnt_able_to_connect_or_download">Waar nët in kontitsioon fer ti prokramatsioon se ferklayche orer se download mache</string>
+    <string name="wasnt_able_to_connect_or_download">Waar net in kontitsioon fer %1$s fon %2$s se ferklayche ore download mache</string>
     <string name="wasnt_able_to_connect_radar_image">Waar nët in kontitsioon fer radar= pilt fon te internet se ferklayche orer download mache</string>
     <string name="wasnt_able_to_connect_settings">Waar net in kontitsioon fer ti instellunge fon tayn serwer se ferklayche orer download mache</string>
     <string name="wasnt_able_to_connect_webcam_url">Waar nët in kontitsioon fer een webcam pilt fon tayn serwer se ferklayche orer download mache</string>

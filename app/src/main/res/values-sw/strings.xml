@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL ya data ilikuwa tupu</string>
     <string name="delete_all_data">Futa data zote na kuzima</string>
     <string name="empty">Tupu</string>
+    <string name="error">Hitilafu!</string>
     <string name="error_occurred_while_attempting_to_update">Hitilafu ilitokea wakati wa kujaribu kusasisha matumizi</string>
     <string name="every_5_minutes">Kila dakika 5</string>
     <string name="every_10_minutes">Kila dakika 10</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL iliwekwa kwa chaguo -msingi au ilikuwa tupu</string>
     <string name="use_exact_alarm">Tumia nyakati halisi za sasisho</string>
     <string name="wasnt_able_to_connect_custom_url">Hakuweza kuunganisha au kupakua kutoka kwa URL ya kawaida iliyoainishwa</string>
-    <string name="wasnt_able_to_connect_data_txt">Hakuweza kuunganisha au kupakua data.txt kutoka kwa seva yako</string>
     <string name="wasnt_able_to_connect_forecast">Hakuweza kuunganisha au kupakua utabiri</string>
-    <string name="wasnt_able_to_connect_or_download">Hakuweza kuunganisha au kupakua utabiri</string>
+    <string name="wasnt_able_to_connect_or_download">Haikuweza kuunganisha au kupakua %1$s kutoka %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Hakuweza kuunganisha au kupakua rada = picha kutoka kwa mtandao</string>
     <string name="wasnt_able_to_connect_settings">Hakuweza kuunganisha au kupakua mipangilio kutoka kwa seva yako</string>
     <string name="wasnt_able_to_connect_webcam_url">Hakuweza kuunganisha au kupakua picha ya wavuti kutoka kwa seva yako</string>

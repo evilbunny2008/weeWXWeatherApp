@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Blangko an URL kan datos</string>
     <string name="delete_all_data">Buraon an Gabos na Datos asin Sira</string>
     <string name="empty">Mayong laog</string>
+    <string name="error">Sala!</string>
     <string name="error_occurred_while_attempting_to_update">Sarong sala an nangyari mantang nagpoprobar na i-update an paggamit</string>
     <string name="every_5_minutes">Kada 5 minuto</string>
     <string name="every_10_minutes">Kada 10 Minuto</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">An URL itinalaga sa mga default o mayo nin laog</string>
     <string name="use_exact_alarm">Gamiton an eksaktong mga oras nin update</string>
     <string name="wasnt_able_to_connect_custom_url">Dai nakakonekta o naka-download gikan sa pasadyang URL na pig-espesipikar</string>
-    <string name="wasnt_able_to_connect_data_txt">Dai nakapagkonektar o naka-download nin datos.txt hale sa saindong serbidor</string>
     <string name="wasnt_able_to_connect_forecast">Dai nakakonekta o naka-download kan hula</string>
-    <string name="wasnt_able_to_connect_or_download">Dai nakakonekta o naka-download kan hula</string>
+    <string name="wasnt_able_to_connect_or_download">Dai nakakonektar o nakapag-download nin %1$s gikan sa %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Dai nakakonekta o nakaka-download radar= imahe hale sa internet</string>
     <string name="wasnt_able_to_connect_settings">Dai nakakonekta o naka-download kan mga setting sa saindong server</string>
     <string name="wasnt_able_to_connect_webcam_url">Dai nakakonekta o naka-download nin webcam na imahe hale sa saindong server</string>

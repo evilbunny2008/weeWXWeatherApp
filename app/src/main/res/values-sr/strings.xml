@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">УРЛ података је био празан</string>
     <string name="delete_all_data">Избришите све податке и искључите</string>
     <string name="empty">Празан</string>
+    <string name="error">Грешка!</string>
     <string name="error_occurred_while_attempting_to_update">Дошло је до грешке при покушају ажурирања употребе</string>
     <string name="every_5_minutes">Сваких 5 минута</string>
     <string name="every_10_minutes">Сваких 10 минута</string>
@@ -46,7 +47,7 @@
     <string name="interval_daily">Даили</string>
     <string name="interval_hourly">По сату</string>
     <string name="invalid_update_interval">Интервал ажурирања је неважећи, ажурирајте подешавања и покушајте поново</string>
-    <string name="json_formatted_data">%1$s сада захтева %2$s датотеку са подацима са %3$s сервера, потребно је да ажурирате %4$s и ажурирате датотеку %5$s да би ова апликација функционисала исправно. Кликните на Ок за више детаља о %6$с</string>
+    <string name="json_formatted_data">%1$s сада захтева %2$s датотеку са подацима са %3$s сервера, потребно је да ажурирате %4$s и ажурирате датотеку %5$s да би ова апликација функционисала исправно. Кликните на Ок за више детаља о %6$s</string>
     <string name="last_month_stats">Статистика прошлог месеца</string>
     <string name="last_year_stats">Прошлогодишња статистика</string>
     <string name="light_theme">Лигхт Тхеме</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">УРЛ је подешен на подразумевани или је био празан</string>
     <string name="use_exact_alarm">Користите тачна времена ажурирања</string>
     <string name="wasnt_able_to_connect_custom_url">Нисам могао да се повежем или преузмем са наведеног прилагођеног УРЛ-а</string>
-    <string name="wasnt_able_to_connect_data_txt">Нисам могао да се повежем или преузмем дата.ткт са вашег сервера</string>
     <string name="wasnt_able_to_connect_forecast">Нисам могао да се повежем или преузмем прогнозу</string>
-    <string name="wasnt_able_to_connect_or_download">Нисам могао да се повежем или преузмем прогнозу</string>
+    <string name="wasnt_able_to_connect_or_download">Нисам могао да се повежем или преузмем %1$s са %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Нисам могао да се повежем или преузмем радар= слику са интернета</string>
     <string name="wasnt_able_to_connect_settings">Нисам могао да се повежем или преузмем подешавања са вашег сервера</string>
     <string name="wasnt_able_to_connect_webcam_url">Нисам могао да се повежем или преузмем слику веб камере са вашег сервера</string>

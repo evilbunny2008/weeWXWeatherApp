@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">I-URL yedatha yayingenalutho</string>
     <string name="delete_all_data">Susa yonke idatha nokuvalwa</string>
     <string name="empty">-Ngahlali lutho</string>
+    <string name="error">Iphutha!</string>
     <string name="error_occurred_while_attempting_to_update">Kuvele iphutha ngenkathi izama ukubuyekeza ukusetshenziswa</string>
     <string name="every_5_minutes">Njalo ngemizuzu engu-5</string>
     <string name="every_10_minutes">Njalo ngemizuzu eyi-10</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">I-URL yahlelwa kokuzenzakalelayo noma yayingenalutho</string>
     <string name="use_exact_alarm">Sebenzisa izikhathi zokuvuselela ngqo</string>
     <string name="wasnt_able_to_connect_custom_url">Ayikwazanga ukuxhuma noma ukulanda kusuka ku-URL yangokwezifiso echaziwe</string>
-    <string name="wasnt_able_to_connect_data_txt">Ayikwazanga ukuxhuma noma ukulanda idatha.txt kusuka kuseva yakho</string>
     <string name="wasnt_able_to_connect_forecast">Ayikwazanga ukuxhuma noma ukulanda isibikezelo</string>
-    <string name="wasnt_able_to_connect_or_download">Ayikwazanga ukuxhuma noma ukulanda isibikezelo</string>
+    <string name="wasnt_able_to_connect_or_download">Ayikwazanga ukuxhuma noma ukulanda i-%1$s kusuka ku-%2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ayikwazanga ukuxhuma noma ukulanda i-radar = isithombe kusuka kwi-Intanethi</string>
     <string name="wasnt_able_to_connect_settings">Ayikwazanga ukuxhuma noma ukulanda amasethingi kusuka kuseva yakho</string>
     <string name="wasnt_able_to_connect_webcam_url">Ayikwazanga ukuxhuma noma ukulanda isithombe se-webcam kusuka kuseva yakho</string>

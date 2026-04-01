@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">L\'URL de donadas foguèt en blanc</string>
     <string name="delete_all_data">Suprimir todas las Datos y Shutdown</string>
     <string name="empty">Vuèg</string>
+    <string name="error">Error!</string>
     <string name="error_occurred_while_attempting_to_update">Una error s\'es produsida al moment de l\'ensag d\'actualizar l\'utilizacion</string>
     <string name="every_5_minutes">Cada 5 Minutas</string>
     <string name="every_10_minutes">Cada 10 Minutos</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL foguèt definit al defaut o èra vuèg</string>
     <string name="use_exact_alarm">Utilizar de temps d\'actualizacion exactes</string>
     <string name="wasnt_able_to_connect_custom_url">Non èra capable de se connectar o de telecargar de l\'URL personalizat especificat</string>
-    <string name="wasnt_able_to_connect_data_txt">Era pas capable de connectar o de telecargar de donadas.txt de vòstre servidor</string>
     <string name="wasnt_able_to_connect_forecast">Era pas capable de connectar o de telecargar la prevision</string>
-    <string name="wasnt_able_to_connect_or_download">Era pas capable de connectar o de telecargar la prevision</string>
+    <string name="wasnt_able_to_connect_or_download">Es pas pogut connectar o telecargar %1$s dempuèi %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Era pas capable de connectar o de telecargar radar= imatge d\'internet</string>
     <string name="wasnt_able_to_connect_settings">Era pas capable de connectar o de telecargar los paramètres de vòstre servidor</string>
     <string name="wasnt_able_to_connect_webcam_url">Era pas capable de connectar o de telecargar una imatge webcam dempuèi vòstre servidor</string>

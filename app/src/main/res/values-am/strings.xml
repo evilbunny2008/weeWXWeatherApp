@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">የውሂብ ዩ አር ኤል ባዶ ነበር</string>
     <string name="delete_all_data">ሁሉንም ውሂብ እና መዝጋት</string>
     <string name="empty">ባዶ</string>
+    <string name="error">ስህተት!</string>
     <string name="error_occurred_while_attempting_to_update">አጠቃቀምን ለማዘመን በመሞከር ላይ ስህተት ተከስቷል</string>
     <string name="every_5_minutes">በየ 5 ደቂቃው</string>
     <string name="every_10_minutes">በየ 10 ደቂቃዎች</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">ዩ አር ኤል ወደ ነባሪው ተዘጋጅቷል ወይም ባዶ ነበር</string>
     <string name="use_exact_alarm">ትክክለኛውን የዝምፅ ጊዜያት ይጠቀሙ</string>
     <string name="wasnt_able_to_connect_custom_url">ከተጠቀሰው ብጁ ዩ.አር.ኤል. ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
-    <string name="wasnt_able_to_connect_data_txt">ከአገልጋይዎ ጋር የመረጃ ማገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_connect_forecast">ትንበያውን ማገናኘት ወይም ማውረድ አልተቻለም</string>
-    <string name="wasnt_able_to_connect_or_download">ትንበያውን ማገናኘት ወይም ማውረድ አልተቻለም</string>
+    <string name="wasnt_able_to_connect_or_download">%1$sን ከ%2$s ማገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_connect_radar_image">የራአር = ምስል ከበይነመረቡ ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_connect_settings">ቅንብሮቹን ከአገልጋይዎ ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_connect_webcam_url">የድር ካሜራዎን ከአገልጋይዎ ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Məlumat URL boş idi</string>
     <string name="delete_all_data">Bütün məlumatları və bağlama silmək</string>
     <string name="empty">Boş</string>
+    <string name="error">Xəta!</string>
     <string name="error_occurred_while_attempting_to_update">İstifadəni yeniləməyə cəhd edərkən xəta baş verdi</string>
     <string name="every_5_minutes">Hər 5 dəqiqədə</string>
     <string name="every_10_minutes">Hər 10 dəqiqədə</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL standart olaraq təyin edildi və ya boş idi</string>
     <string name="use_exact_alarm">Dəqiq yeniləmə vaxtlarından istifadə edin</string>
     <string name="wasnt_able_to_connect_custom_url">Müəyyən edilmiş xüsusi URL-dən qoşula və ya yükləyə bilmədi</string>
-    <string name="wasnt_able_to_connect_data_txt">Serverinizdən məlumat.txt-a qoşula və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_connect_forecast">Proqnozu bağlaya və ya yükləyə bilmədi</string>
-    <string name="wasnt_able_to_connect_or_download">Proqnozu bağlaya və ya yükləyə bilmədi</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s-dan %1$s-a qoşulmaq və ya endirmək mümkün olmadı</string>
     <string name="wasnt_able_to_connect_radar_image">Radar = şəkilləri internetdən birləşdirə və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_connect_settings">Parametrləri serverinizdən qoşmaq və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_connect_webcam_url">Serverinizdən bir veb-kamera şəklini bağlaya və ya yükləyə bilmədi</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data U URuda ma ng\'ato nyalo ng\'eyo maber</string>
     <string name="delete_all_data">Nyuthu lembe zo man</string>
     <string name="empty">Upe</string>
+    <string name="error">Bal!</string>
     <string name="error_occurred_while_attempting_to_update">Error moko ne otimore ka otemo loso</string>
     <string name="every_5_minutes">Kubang\' 5000</string>
     <string name="every_10_minutes">Kubang\' Mincil ceke</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ne oketo e default kata ma onge gimoro</string>
     <string name="use_exact_alarm">Ti ku saa mi tio ku lembe maeni</string>
     <string name="wasnt_able_to_connect_custom_url">Ne ok nyal tudruok kata ng\'ado bura kuom URL ma ne ochung\'ne</string>
-    <string name="wasnt_able_to_connect_data_txt">Ne ok nyal tudruok kata download data.txt kuom server mari</string>
     <string name="wasnt_able_to_connect_forecast">Ne ok nyal tudruok kata ng\'ado bura</string>
-    <string name="wasnt_able_to_connect_or_download">Ne ok nyal tudruok kata ng\'ado bura</string>
+    <string name="wasnt_able_to_connect_or_download">Ecopo ngo ni mako nyo kwanyo %1$s kud i %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ne ok nyal tudruok kata ng\'ado rad= cal ma wuok e intanet</string>
     <string name="wasnt_able_to_connect_settings">Ne ok nyal tudruok kata keto gik ma ne itiyogo e server mari</string>
     <string name="wasnt_able_to_connect_webcam_url">Ne ok nyal tudruok kata keto picha mar webcam kuom server mari</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">La URL de datos estaba en blanco</string>
     <string name="delete_all_data">Eliminar todos los datos y apagar</string>
     <string name="empty">Vacío</string>
+    <string name="error">¡Error!</string>
     <string name="error_occurred_while_attempting_to_update">Se produjo un error al intentar actualizar el uso</string>
     <string name="every_5_minutes">Cada 5 minutos</string>
     <string name="every_10_minutes">Cada 10 minutos</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">La URL estaba configurada como predeterminada o estaba vacía</string>
     <string name="use_exact_alarm">Utilice tiempos de actualización exactos</string>
     <string name="wasnt_able_to_connect_custom_url">No pude conectarme ni descargar desde la URL personalizada especificada</string>
-    <string name="wasnt_able_to_connect_data_txt">No pude conectarme ni descargar data.txt desde su servidor</string>
     <string name="wasnt_able_to_connect_forecast">No pude conectarme ni descargar el pronóstico</string>
-    <string name="wasnt_able_to_connect_or_download">No pude conectarme ni descargar el pronóstico</string>
+    <string name="wasnt_able_to_connect_or_download">No pude conectarme ni descargar %1$s de %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">No pude conectarme ni descargar la imagen radar= de Internet</string>
     <string name="wasnt_able_to_connect_settings">No pude conectarme ni descargar la configuración de su servidor</string>
     <string name="wasnt_able_to_connect_webcam_url">No pude conectarme ni descargar una imagen de cámara web desde su servidor</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL podataka bio je prazan</string>
     <string name="delete_all_data">Izbriši sve podatke i isključi</string>
     <string name="empty">Prazan</string>
+    <string name="error">Greška!</string>
     <string name="error_occurred_while_attempting_to_update">Došlo je do pogreške prilikom pokušaja ažuriranja upotrebe</string>
     <string name="every_5_minutes">Svakih 5 minuta</string>
     <string name="every_10_minutes">Svakih 10 minuta</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL je postavljen na zadani ili je prazan</string>
     <string name="use_exact_alarm">Koristite točna vremena ažuriranja</string>
     <string name="wasnt_able_to_connect_custom_url">Nije bilo moguće povezati se ili preuzeti s navedenog prilagođenog URL-a</string>
-    <string name="wasnt_able_to_connect_data_txt">Nije bilo moguće povezati se ili preuzeti data.txt s vašeg poslužitelja</string>
     <string name="wasnt_able_to_connect_forecast">Nije bilo moguće povezati se ili preuzeti prognozu</string>
-    <string name="wasnt_able_to_connect_or_download">Nije bilo moguće povezati se ili preuzeti prognozu</string>
+    <string name="wasnt_able_to_connect_or_download">Nije bilo moguće povezati se ili preuzeti %1$s s %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Nije bilo moguće povezati se ili preuzeti radarsku sliku s interneta</string>
     <string name="wasnt_able_to_connect_settings">Nije bilo moguće povezati se ili preuzeti postavke s vašeg poslužitelja</string>
     <string name="wasnt_able_to_connect_webcam_url">Nije bilo moguće povezati se ili preuzeti sliku web kamere s vašeg poslužitelja</string>

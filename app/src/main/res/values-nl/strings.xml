@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Gegevens-URL was leeg</string>
     <string name="delete_all_data">Verwijder alle gegevens en sluit af</string>
     <string name="empty">Leeg</string>
+    <string name="error">Fout!</string>
     <string name="error_occurred_while_attempting_to_update">Er is een fout opgetreden tijdens een poging het gebruik bij te werken</string>
     <string name="every_5_minutes">Elke 5 minuten</string>
     <string name="every_10_minutes">Elke 10 minuten</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL was ingesteld op de standaardwaarde of was leeg</string>
     <string name="use_exact_alarm">Gebruik exacte updatetijden</string>
     <string name="wasnt_able_to_connect_custom_url">Kan geen verbinding maken of downloaden vanaf de opgegeven aangepaste URL</string>
-    <string name="wasnt_able_to_connect_data_txt">Kon geen verbinding maken met of downloaden van data.txt van uw server</string>
     <string name="wasnt_able_to_connect_forecast">Kon geen verbinding maken of de voorspelling downloaden</string>
-    <string name="wasnt_able_to_connect_or_download">Kon geen verbinding maken of de voorspelling downloaden</string>
+    <string name="wasnt_able_to_connect_or_download">Kon geen verbinding maken met of downloaden van %1$s van %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Kon geen verbinding maken of radar=-afbeelding downloaden van internet</string>
     <string name="wasnt_able_to_connect_settings">Kan geen verbinding maken of de instellingen downloaden van uw server</string>
     <string name="wasnt_able_to_connect_webcam_url">Kan geen verbinding maken met of een webcambeeld downloaden van uw server</string>

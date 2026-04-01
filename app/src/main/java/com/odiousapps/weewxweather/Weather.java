@@ -28,6 +28,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
+
+import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
@@ -408,7 +410,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		if(radtype == null || radtype.isBlank())
 		{
 			LogMessage("radtype: " + radtype);
-			String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
+			String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
 			loadWebViewContent(tmp);
 			stopRefreshing();
 			return;
@@ -905,7 +907,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		LogMessage("loadWebViewContent() resId: " + resId);
 
-		String html = weeWXApp.current_dialog_html.replace("WARNING_BODY", weeWXApp.getAndroidString(resId));
+		String html = weeWXApp.current_dialog_html.replace("WARNING_BODY", getAndroidString(resId));
 
 		loadAndShowWebView(forecast, html, null, false);
 	}
@@ -925,7 +927,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 	void forceCurrentRefresh(int resId)
 	{
-		forceCurrentRefresh(weeWXApp.getAndroidString(resId));
+		forceCurrentRefresh(getAndroidString(resId));
 	}
 
 	void forceCurrentRefresh(String body)
@@ -970,7 +972,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				if(radarURL == null || radarURL.isBlank())
 				{
 					String html = weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-					              weeWXApp.getAndroidString(R.string.radar_url_not_set) +
+					              getAndroidString(R.string.radar_url_not_set) +
 					              weeWXApp.html_footer;
 					loadWebViewContent(html);
 				} else {
@@ -1011,7 +1013,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			{
 				LogMessage("Weather.loadWebView() radar type type is invalid: " + radtype, true, KeyValue.w);
 				updateFLL(View.GONE);
-				String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
+				String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
 				loadWebViewContent(tmp);
 				return;
 			}
@@ -1042,7 +1044,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			if(fctype == null || fctype.isBlank())
 			{
 				LogMessage("Weather.loadWebView() forecast type is invalid: " + fctype, true, KeyValue.w);
-				String finalErrorStr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
+				String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
 				loadWebViewContent(finalErrorStr);
 				return;
 			}
@@ -1061,7 +1063,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				if(tmpStr != null && !tmpStr.isBlank())
 					loadWebViewContent(tmpStr);
 				else
-					loadWebViewContent(weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data));
+					loadWebViewContent(getAndroidString(R.string.failed_to_process_forecast_data));
 
 				KeyValue.putVar("LastForecastError", null);
 				return;
@@ -1085,7 +1087,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				if(tmpStr != null && !tmpStr.isBlank())
 					loadWebViewContent(tmpStr);
 				else
-					loadWebViewContent(weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data));
+					loadWebViewContent(getAndroidString(R.string.failed_to_process_forecast_data));
 
 				KeyValue.putVar("LastForecastError", null);
 				return;
@@ -1106,7 +1108,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				if(tmpStr != null && !tmpStr.isBlank())
 					loadWebViewContent(tmpStr);
 				else
-					loadWebViewContent(weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data));
+					loadWebViewContent(getAndroidString(R.string.failed_to_process_forecast_data));
 
 				KeyValue.putVar("LastForecastError", null);
 				return;
@@ -1132,7 +1134,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				case "yahoo" -> logo += "yahoo" + extSVG;
 				default ->
 				{
-					String finalErrorStr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
+					String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
 					loadWebViewContent(finalErrorStr);
 					return;
 				}
@@ -1183,7 +1185,7 @@ public class Weather extends Fragment implements View.OnClickListener
 			} else {
 				LogMessage("Weather.reloadForecast() getForecast returned an unknown error...", true, KeyValue.w);
 				loadWebViewContent(weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-				                   weeWXApp.getAndroidString(R.string.unknown_error_occurred) +
+				                   getAndroidString(R.string.unknown_error_occurred) +
 				                   weeWXApp.html_footer);
 			}
 
@@ -1214,7 +1216,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		}
 
 		html = weeWXApp.current_html_headers + weeWXApp.html_header_rest +
-		       weeWXApp.getAndroidString(R.string.radar_still_downloading) +
+		       getAndroidString(R.string.radar_still_downloading) +
 		       weeWXApp.html_footer;
 		LogMessage("Weather.loadOrReloadRadarImage() Failed to download radar image", KeyValue.w);
 		loadWebViewContent(html);

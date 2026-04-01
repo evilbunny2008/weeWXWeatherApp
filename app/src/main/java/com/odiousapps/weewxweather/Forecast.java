@@ -25,6 +25,8 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.webkit.WebSettingsCompat;
 import androidx.webkit.WebViewFeature;
 
+
+import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
@@ -249,7 +251,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 		if(radtype == null || radtype.isBlank())
 		{
-			String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
+			String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
 			failedRadarWebViewDownload(tmp);
 			return;
 		}
@@ -299,7 +301,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 	private void failedRadarWebViewDownload(int resId)
 	{
-		String html = weeWXApp.current_dialog_html.replace("WARNING_BODY", weeWXApp.getAndroidString(resId));
+		String html = weeWXApp.current_dialog_html.replace("WARNING_BODY", getAndroidString(resId));
 
 		radarWebView.post(() -> radarWebView.loadDataWithBaseURL(null, html,
 				"text/html", "utf-8", null));
@@ -444,7 +446,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 				if(floatingCheckBox.getVisibility() != View.GONE)
 					floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.GONE));
 
-				String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
+				String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
 				failedRadarWebViewDownload(tmp);
 				return;
 			}
@@ -475,7 +477,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 				if(floatingCheckBox.getVisibility() != View.GONE)
 					floatingCheckBox.post(() -> floatingCheckBox.setVisibility(View.GONE));
 
-				String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
+				String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
 				failedRadarWebViewDownload(tmp);
 				return;
 			}
@@ -506,7 +508,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 				showTextFC(LastForecastError);
 			} else {
 				LogMessage("Forecast.getForecast() getForecast returned an unknown error...", KeyValue.w);
-				showTextFC(weeWXApp.getAndroidString(R.string.unknown_error_occurred));
+				showTextFC(getAndroidString(R.string.unknown_error_occurred));
 			}
 		}
 
@@ -523,7 +525,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(!hasForecastGson)
 		{
-			showTextFC(weeWXApp.getAndroidString(R.string.still_downloading_forecast_data));
+			showTextFC(getAndroidString(R.string.still_downloading_forecast_data));
 			stopRefreshing();
 			return;
 		}
@@ -531,7 +533,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 		String fctype = (String)KeyValue.readVar("fctype", "");
 		if(fctype == null || fctype.isBlank())
 		{
-			String finalErrorStr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
+			String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
 			showTextFC(finalErrorStr);
 			stopRefreshing();
 			return;
@@ -544,7 +546,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 			{
 				showTextFC(content[1]);
 			} else {
-				showTextFC(weeWXApp.getAndroidString(R.string.still_downloading_forecast_data));
+				showTextFC(getAndroidString(R.string.still_downloading_forecast_data));
 			}
 
 			stopRefreshing();
@@ -557,7 +559,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private void showTextFC(String text)
 	{
 		if(text == null || text.isBlank())
-			text = weeWXApp.getAndroidString(R.string.forecast_url_not_set);
+			text = getAndroidString(R.string.forecast_url_not_set);
 
 		String html = weeWXApp.current_html_headers +
 		              weeWXApp.html_header_rest + text +

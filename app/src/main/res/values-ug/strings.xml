@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">سانلىق مەلۇمات URLلىرى قۇرۇق ئىدى</string>
     <string name="delete_all_data">بارلىق سانلىق مەلۇماتلارنى ۋە تاقاشنى ئۆچۈرۈڭ</string>
     <string name="empty">قۇرۇق</string>
+    <string name="error">خاتالىق!</string>
     <string name="error_occurred_while_attempting_to_update">ئىشلىتىشنى يېڭىلىماقچى بولغاندا خاتالىق كۆرۈلدى</string>
     <string name="every_5_minutes">ھەر 5 مىنۇتتا</string>
     <string name="every_10_minutes">ھەر 10 مىنۇتتا</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL سۈكۈتتىكى ھالەتتە تەڭشەلدى ياكى قۇرۇق ئىدى</string>
     <string name="use_exact_alarm">ئېنىق يېڭىلاش ۋاقتىنى ئىشلىتىڭ</string>
     <string name="wasnt_able_to_connect_custom_url">كۆرسىتىلگەن ئىختىيارى URL دىن ئۇلانماسلىق ياكى چۈشۈرگىلى بولمىدى</string>
-    <string name="wasnt_able_to_connect_data_txt">مۇلازىمېتىردىن ئۇلىنىش ياكى چۈشۈرگىلى بولمىدى. مۇلازىمېتىرىڭىزدىن</string>
     <string name="wasnt_able_to_connect_forecast">بۇ پەرەزنى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
-    <string name="wasnt_able_to_connect_or_download">بۇ پەرەزنى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s دىن%1$s نى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
     <string name="wasnt_able_to_connect_radar_image">رادار = توردىن رادار = رەسىمنى ئۇلىيالمىدى</string>
     <string name="wasnt_able_to_connect_settings">مۇلازىمېتىردىن تەڭشەكلەرنى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
     <string name="wasnt_able_to_connect_webcam_url">مۇلازىمېتىردىن تور كامېراسى سۈرىتىنى ئۇلىيالمىدى ياكى چۈشۈرگىلى بولمايدۇ</string>

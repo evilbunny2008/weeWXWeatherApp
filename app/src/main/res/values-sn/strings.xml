@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data URL yaive isina</string>
     <string name="delete_all_data">Delete zvese data uye kuvhara</string>
     <string name="empty">Isina chinhu</string>
+    <string name="error">Error!</string>
     <string name="error_occurred_while_attempting_to_update">Kanganiso yakaitika panguva yekuedza kugadzirisa kushandiswa</string>
     <string name="every_5_minutes">Maminitsi mashanu ega ega</string>
     <string name="every_10_minutes">Maminitsi gumi ese</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL yakagadzirirwa kusarudzika kana isina chinhu</string>
     <string name="use_exact_alarm">Shandisa nguva chaiyo yekugadzirisa</string>
     <string name="wasnt_able_to_connect_custom_url">Haina kukwanisa kubatana kana kurodha kubva kune iyo tsika URL yakataurwa</string>
-    <string name="wasnt_able_to_connect_data_txt">Haina kukwanisa kubatana kana kurodha data.txt kubva kune yako server</string>
     <string name="wasnt_able_to_connect_forecast">Haina kukwanisa kubatanidza kana kurodha iyo fungidziro</string>
-    <string name="wasnt_able_to_connect_or_download">Haina kukwanisa kubatanidza kana kurodha iyo fungidziro</string>
+    <string name="wasnt_able_to_connect_or_download">Hatina kukwanisa kubatanidza kana kudhaunirodha %1$s kubva ku%2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Haina kukwanisa kubatana kana kurodha radar = mufananidzo kubva kuInternet</string>
     <string name="wasnt_able_to_connect_settings">Haina kukwanisa kubatana kana kurodha iyo marongero kubva kune yako server</string>
     <string name="wasnt_able_to_connect_webcam_url">Haina kukwanisa kubatana kana kurodha wewebhu mufananidzo kubva kune yako server</string>

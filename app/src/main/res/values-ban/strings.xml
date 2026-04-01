@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL data sampun puyung</string>
     <string name="delete_all_data">Icalang Sami Data lan Shutdown</string>
     <string name="empty">Kosong</string>
+    <string name="error">Éror!</string>
     <string name="error_occurred_while_attempting_to_update">Kaiwangan punika mamargi rikala mautsaha ngapdet kawigunan</string>
     <string name="every_5_minutes">Sabilang 5 Menit</string>
     <string name="every_10_minutes">Sabilang 10 Menit</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL sampun kagenahang ring default utawi kosong</string>
     <string name="use_exact_alarm">Anggén galah update sane tepat</string>
     <string name="wasnt_able_to_connect_custom_url">Nenten prasida nyambung utawi ngunduh saking URL adat sane sampun katentuang</string>
-    <string name="wasnt_able_to_connect_data_txt">Nénten prasida nyambung utawi ngunduh data.txt saking server Sametoné</string>
     <string name="wasnt_able_to_connect_forecast">Nenten prasida nyambung utawi ngunduh ramalan punika</string>
-    <string name="wasnt_able_to_connect_or_download">Nenten prasida nyambung utawi ngunduh ramalan punika</string>
+    <string name="wasnt_able_to_connect_or_download">Nénten prasida nyambung utawi ngunduh %1$s saking %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Nenten prasida nyambung utawi ngunduh radar= gambar saking internet</string>
     <string name="wasnt_able_to_connect_settings">Nénten prasida nyambung utawi ngunduh setélan saking server Sametoné</string>
     <string name="wasnt_able_to_connect_webcam_url">Nénten prasida nyambung utawi ngunduh gambar webcam saking server Sametoné</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">ଡାଟା URL ଖାଲି ଥିଲା |</string>
     <string name="delete_all_data">ସମସ୍ତ ଡାଟା ଏବଂ ସଟଡାଉନ୍ ଡିଲିଟ୍ କରନ୍ତୁ |</string>
     <string name="empty">ଖାଲି</string>
+    <string name="error">ତ୍ରୁଟି!</string>
     <string name="error_occurred_while_attempting_to_update">ବ୍ୟବହାର ଅପଡେଟ୍ କରିବାକୁ ଚେଷ୍ଟା କରିବାବେଳେ ଏକ ତ୍ରୁଟି ଘଟିଗଲା |</string>
     <string name="every_5_minutes">ପ୍ରତି 5 ମିନିଟ୍ |</string>
     <string name="every_10_minutes">ପ୍ରତି ୧୦ ମିନିଟ୍ |</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ଡିଫଲ୍ଟରେ ସେଟ୍ ହୋଇଥିଲା କିମ୍ବା ଖାଲି ଥିଲା |</string>
     <string name="use_exact_alarm">ସଠିକ୍ ଅଦ୍ୟତନ ସମୟ ବ୍ୟବହାର କରନ୍ତୁ |</string>
     <string name="wasnt_able_to_connect_custom_url">ନିର୍ଦ୍ଦିଷ୍ଟ କଷ୍ଟମ୍ URL ରୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
-    <string name="wasnt_able_to_connect_data_txt">ଆପଣଙ୍କ ସର୍ଭରରୁ data.txt କୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="wasnt_able_to_connect_forecast">ପୂର୍ବାନୁମାନକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
-    <string name="wasnt_able_to_connect_or_download">ପୂର୍ବାନୁମାନକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s ରୁ%1$s କୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="wasnt_able_to_connect_radar_image">ଇଣ୍ଟରନେଟରୁ ରାଡାର = ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="wasnt_able_to_connect_settings">ଆପଣଙ୍କ ସର୍ଭରରୁ ସେଟିଂସମୂହକୁ ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="wasnt_able_to_connect_webcam_url">ଆପଣଙ୍କ ସର୍ଭରରୁ ଏକ ୱେବକ୍ୟାମ ପ୍ରତିଛବି ସଂଯୋଗ କିମ୍ବା ଡାଉନଲୋଡ୍ କରିବାରେ ସକ୍ଷମ ନୁହେଁ |</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">డేటా URL ఖాళీగా ఉంది</string>
     <string name="delete_all_data">మొత్తం డేటా మరియు షట్‌డౌన్‌ను తొలగించండి</string>
     <string name="empty">ఖాళీ</string>
+    <string name="error">లోపం!</string>
     <string name="error_occurred_while_attempting_to_update">వినియోగాన్ని నవీకరించడానికి ప్రయత్నిస్తున్నప్పుడు లోపం సంభవించింది</string>
     <string name="every_5_minutes">ప్రతి 5 నిమిషాలు</string>
     <string name="every_10_minutes">ప్రతి 10 నిమిషాలు</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL డిఫాల్ట్‌కి సెట్ చేయబడింది లేదా ఖాళీగా ఉంది</string>
     <string name="use_exact_alarm">ఖచ్చితమైన నవీకరణ సమయాలను ఉపయోగించండి</string>
     <string name="wasnt_able_to_connect_custom_url">పేర్కొన్న అనుకూల URL నుండి కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
-    <string name="wasnt_able_to_connect_data_txt">మీ సర్వర్ నుండి data.txtని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="wasnt_able_to_connect_forecast">సూచనను కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
-    <string name="wasnt_able_to_connect_or_download">సూచనను కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s నుండి %1$sని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="wasnt_able_to_connect_radar_image">ఇంటర్నెట్ నుండి రాడార్= ఇమేజ్‌ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="wasnt_able_to_connect_settings">మీ సర్వర్ నుండి సెట్టింగ్‌లను కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="wasnt_able_to_connect_webcam_url">మీ సర్వర్ నుండి వెబ్‌క్యామ్ చిత్రాన్ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>

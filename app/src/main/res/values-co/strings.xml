@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">L\'URL di dati era viotu</string>
     <string name="delete_all_data">Sguassà tutti i dati è spegni</string>
     <string name="empty">Viotu</string>
+    <string name="error">Errore !</string>
     <string name="error_occurred_while_attempting_to_update">Un errore hè accadutu mentre pruvate d\'aghjurnà l\'usu</string>
     <string name="every_5_minutes">Ogni 5 Minuti</string>
     <string name="every_10_minutes">Ogni 10 Minuti</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">L\'URL hè stata impostata à u predeterminatu o era viota</string>
     <string name="use_exact_alarm">Aduprate i tempi d\'aghjurnamentu precisi</string>
     <string name="wasnt_able_to_connect_custom_url">Ùn hè statu capace di cunnette o scaricate da l\'URL persunalizata specificata</string>
-    <string name="wasnt_able_to_connect_data_txt">Ùn hè statu capace di cunnette o di scaricà data.txt da u vostru servitore</string>
     <string name="wasnt_able_to_connect_forecast">Ùn hè statu capace di cunnette o di scaricà a previsione</string>
-    <string name="wasnt_able_to_connect_or_download">Ùn hè statu capace di cunnette o di scaricà a previsione</string>
+    <string name="wasnt_able_to_connect_or_download">Ùn hè statu capace di cunnette o di scaricà %1$s da %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ùn hè statu capace di cunnette o di scaricà radar = imagine da Internet</string>
     <string name="wasnt_able_to_connect_settings">Ùn pudia micca cunnette o scaricà i paràmetri da u vostru servitore</string>
     <string name="wasnt_able_to_connect_webcam_url">Ùn hè statu capace di cunnette o scaricà una maghjina di webcam da u vostru servitore</string>

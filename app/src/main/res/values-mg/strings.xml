@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Blank ny URL data</string>
     <string name="delete_all_data">Fafao ny angon-drakitra rehetra sy ny fanakatonana</string>
     <string name="empty">foana</string>
+    <string name="error">Error!</string>
     <string name="error_occurred_while_attempting_to_update">Nisy hadisoana nitranga raha nanandrana nanavao ny fampiasana</string>
     <string name="every_5_minutes">Isaky ny 5 minitra</string>
     <string name="every_10_minutes">Isaky ny 10 minitra</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Ny URL dia napetraka tamin\'ny default na tsy misy na inona na inona</string>
     <string name="use_exact_alarm">Ampiasao ny fotoana fanavaozana marina</string>
     <string name="wasnt_able_to_connect_custom_url">Tsy afaka nampifandray na nisintona avy amin\'ny URL mahazatra voafaritra</string>
-    <string name="wasnt_able_to_connect_data_txt">Tsy afaka nampifandray na nandefa data.txt avy amin\'ny mpizara</string>
     <string name="wasnt_able_to_connect_forecast">Tsy afaka nampifandray na nandefa ny vinavina</string>
-    <string name="wasnt_able_to_connect_or_download">Tsy afaka nampifandray na nandefa ny vinavina</string>
+    <string name="wasnt_able_to_connect_or_download">Tsy afaka nifandray na nisintona %1$s avy amin\'ny %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Tsy afaka nifandray na nisintona radar = sary avy amin\'ny Internet</string>
     <string name="wasnt_able_to_connect_settings">Tsy afaka nampifandray na nandefa ny toe-javatra avy amin\'ny mpizara</string>
     <string name="wasnt_able_to_connect_webcam_url">Tsy afaka nifandray na nandefa sary webcam tamin\'ny mpizara</string>

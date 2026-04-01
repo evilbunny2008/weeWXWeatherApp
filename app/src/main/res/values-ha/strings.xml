@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL ɗin bayanai ba komai</string>
     <string name="delete_all_data">Share duk bayanan da rufewa</string>
     <string name="empty">M</string>
+    <string name="error">Kuskure!</string>
     <string name="error_occurred_while_attempting_to_update">Kuskure ya faru yayin ƙoƙarin sabunta amfani</string>
     <string name="every_5_minutes">Kowane minti 5</string>
     <string name="every_10_minutes">Kowane minti 10</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">An saita URL zuwa tsoho ko fanko</string>
     <string name="use_exact_alarm">Yi amfani da ainihin lokacin sabuntawa</string>
     <string name="wasnt_able_to_connect_custom_url">Bai sami damar haɗi ko saukarwa daga URL na al\'ada da aka ƙayyade ba</string>
-    <string name="wasnt_able_to_connect_data_txt">Bai sami damar haɗi ko sauke bayanai ba .txt daga sabar ku</string>
     <string name="wasnt_able_to_connect_forecast">Bai iya haɗi ba ko sauke hasashen</string>
-    <string name="wasnt_able_to_connect_or_download">Bai iya haɗi ba ko sauke hasashen</string>
+    <string name="wasnt_able_to_connect_or_download">Ba a iya haɗawa ko zazzage %1$s daga %2$s ba</string>
     <string name="wasnt_able_to_connect_radar_image">Bai iya haɗi ko saukar da rad = hoto daga Intanet ba</string>
     <string name="wasnt_able_to_connect_settings">Bai iya haɗa ko saukar da saitunan daga sabar ku ba</string>
     <string name="wasnt_able_to_connect_webcam_url">Bai iya haɗi ko saukar da hoton gidan yanar gizo daga sabar ku ba</string>

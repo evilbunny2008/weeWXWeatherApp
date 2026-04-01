@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Η διεύθυνση URL δεδομένων ήταν κενή</string>
     <string name="delete_all_data">Διαγραφή όλων των δεδομένων και τερματισμός λειτουργίας</string>
     <string name="empty">Αδειάζω</string>
+    <string name="error">Σφάλμα!</string>
     <string name="error_occurred_while_attempting_to_update">Παρουσιάστηκε σφάλμα κατά την προσπάθεια ενημέρωσης της χρήσης</string>
     <string name="every_5_minutes">Κάθε 5 λεπτά</string>
     <string name="every_10_minutes">Κάθε 10 λεπτά</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Η διεύθυνση URL ορίστηκε ως προεπιλογή ή ήταν κενή</string>
     <string name="use_exact_alarm">Χρησιμοποιήστε τους ακριβείς χρόνους ενημέρωσης</string>
     <string name="wasnt_able_to_connect_custom_url">Δεν ήταν δυνατή η σύνδεση ή η λήψη από την προσαρμοσμένη διεύθυνση URL που καθορίσατε</string>
-    <string name="wasnt_able_to_connect_data_txt">Δεν ήταν δυνατή η σύνδεση ή η λήψη του data.txt από τον διακομιστή σας</string>
     <string name="wasnt_able_to_connect_forecast">Δεν ήταν δυνατή η σύνδεση ή η λήψη της πρόβλεψης</string>
-    <string name="wasnt_able_to_connect_or_download">Δεν ήταν δυνατή η σύνδεση ή η λήψη της πρόβλεψης</string>
+    <string name="wasnt_able_to_connect_or_download">Δεν ήταν δυνατή η σύνδεση ή η λήψη του %1$s από το %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Δεν ήταν δυνατή η σύνδεση ή η λήψη εικόνας ραντάρ= από το διαδίκτυο</string>
     <string name="wasnt_able_to_connect_settings">Δεν ήταν δυνατή η σύνδεση ή η λήψη των ρυθμίσεων από τον διακομιστή σας</string>
     <string name="wasnt_able_to_connect_webcam_url">Δεν ήταν δυνατή η σύνδεση ή η λήψη εικόνας κάμερας web από τον διακομιστή σας</string>

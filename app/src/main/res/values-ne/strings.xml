@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">डाटा URL खाली थियो</string>
     <string name="delete_all_data">सबै डाटा र बन्द मेटाउनुहोस्</string>
     <string name="empty">खाली</string>
+    <string name="error">त्रुटि!</string>
     <string name="error_occurred_while_attempting_to_update">प्रयोग अपडेट गर्ने प्रयास गर्दा एउटा त्रुटि भयो</string>
     <string name="every_5_minutes">हरेक ५ मिनेटमा</string>
     <string name="every_10_minutes">हरेक १० मिनेटमा</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL पूर्वनिर्धारितमा सेट गरिएको थियो वा खाली थियो</string>
     <string name="use_exact_alarm">सटीक अपडेट समय प्रयोग गर्नुहोस्</string>
     <string name="wasnt_able_to_connect_custom_url">निर्दिष्ट गरिएको अनुकूलन URL बाट जडान वा डाउनलोड गर्न सक्षम भएन</string>
-    <string name="wasnt_able_to_connect_data_txt">तपाईँको सर्भरबाट data.txt जडान गर्न वा डाउनलोड गर्न सकिएन</string>
     <string name="wasnt_able_to_connect_forecast">जडान गर्न वा पूर्वानुमान डाउनलोड गर्न सक्षम भएन।</string>
-    <string name="wasnt_able_to_connect_or_download">जडान गर्न वा पूर्वानुमान डाउनलोड गर्न सक्षम भएन।</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s बाट %1$s जडान गर्न वा डाउनलोड गर्न सकिएन</string>
     <string name="wasnt_able_to_connect_radar_image">इन्टरनेटबाट radar= छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
     <string name="wasnt_able_to_connect_settings">तपाइँको सर्भरबाट सेटिङहरू जडान गर्न वा डाउनलोड गर्न सक्षम भएन</string>
     <string name="wasnt_able_to_connect_webcam_url">तपाईंको सर्भरबाट वेबक्याम छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>

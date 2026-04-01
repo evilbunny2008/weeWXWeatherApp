@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data URL lɛ bɛ nɔ ko</string>
     <string name="delete_all_data">Jiemɔ Data kɛ Gbelemɔ</string>
     <string name="empty">Ekobɛ mli</string>
+    <string name="error">Tɔmɔ!</string>
     <string name="error_occurred_while_attempting_to_update">Tɔmɔ ko ba be mli ni abɔɔ mɔdɛŋ ni atsake bɔ ni akɛtsuɔ nii ahaa lɛ</string>
     <string name="every_5_minutes">Minitii 5 fɛɛ 5</string>
     <string name="every_10_minutes">Minitii 10 fɛɛ 10</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Akɛ URL to nɔ ni ato lɛ he loo nɔ ko bɛ mli</string>
     <string name="use_exact_alarm">Kɛ tsakemɔ bei pɔtɛɛ atsu nii</string>
     <string name="wasnt_able_to_connect_custom_url">E nyɛ we nɛ e kɛ ngmɛɛ a URL nɛ tsɔɔ mi ɔ he</string>
-    <string name="wasnt_able_to_connect_data_txt">E nyɛ we nɛ o kɛ data.txt ɔ nɛ tsa loo e ngɔ</string>
     <string name="wasnt_able_to_connect_forecast">Enyɛɛɛ ekɛ nɔ ni atsɔɔ mli lɛ abɔ he loo okɛwo nɔ</string>
-    <string name="wasnt_able_to_connect_or_download">Enyɛɛɛ ekɛ nɔ ni atsɔɔ mli lɛ abɔ he loo okɛwo nɔ</string>
+    <string name="wasnt_able_to_connect_or_download">Enyɛɛɛ ekɛ %1$s abɔ loo ejie kɛjɛ %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Enyɛɛɛ ekɛ rada= mfoniri lɛ abɔ loo ejie kɛjɛ intanɛt lɛ nɔ</string>
     <string name="wasnt_able_to_connect_settings">E nyɛ we nɛ o kɛ to he loo e je sisije ɔ kɛ je o server ɔ mi</string>
     <string name="wasnt_able_to_connect_webcam_url">Enyɛɛɛ okɛ wɛbkaam mfoniri ko atsa loo okɛ o-websaiti lɛ nɔ</string>

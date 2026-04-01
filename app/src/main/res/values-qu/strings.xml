@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Willay URL ch\'usaqmi karqan</string>
     <string name="delete_all_data">Llapan willakuykunata hinaspa sayachiyta qulluy</string>
     <string name="empty">Mana imayuq</string>
+    <string name="error">Pantay!</string>
     <string name="error_occurred_while_attempting_to_update">Huk pantaymi karqan, llamk\'achiyta musuqchayta munachkaspa</string>
     <string name="every_5_minutes">Sapa 5 minutu</string>
     <string name="every_10_minutes">Sapa 10 minutu</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL nisqaqa ñawpaqmanta churasqaman churasqa karqan icha ch\'usaqmi karqan</string>
     <string name="use_exact_alarm">Utilizar tiempos de actualización exacta</string>
     <string name="wasnt_able_to_connect_custom_url">mana atirqanchu tinkiyta utaq uraykachiyta sapanchasqa URL nisqamanta</string>
-    <string name="wasnt_able_to_connect_data_txt">mana atirqanchu data.txt , sirwiqniykimanta t\'inkiyta utaq uraykachiyta</string>
     <string name="wasnt_able_to_connect_forecast">mana atirqanchu chay pronóstico nisqa t\'inkiyta nitaq uraykachiytapas</string>
-    <string name="wasnt_able_to_connect_or_download">mana atirqanchu chay pronóstico nisqa t\'inkiyta nitaq uraykachiytapas</string>
+    <string name="wasnt_able_to_connect_or_download">Mana %1$s %2$s nisqamanta tinkiyta icha uraykachiyta atirqanchu</string>
     <string name="wasnt_able_to_connect_radar_image">mana atirqanchu t\'inkiyta utaq uraykachiyta radar= siq\'ita internetmanta</string>
     <string name="wasnt_able_to_connect_settings">mana atirqanchu tinkiyta utaq uraykachiyta churanakunata servidorniykimanta</string>
     <string name="wasnt_able_to_connect_webcam_url">mana atirqanchu huk webcam siq\'ita sirwiqniykimanta tinkiyta utaq uraykachiyta</string>

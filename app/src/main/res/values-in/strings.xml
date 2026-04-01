@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL data kosong</string>
     <string name="delete_all_data">Hapus Semua Data dan Shutdown</string>
     <string name="empty">Kosong</string>
+    <string name="error">Kesalahan!</string>
     <string name="error_occurred_while_attempting_to_update">Terjadi kesalahan saat mencoba memperbarui penggunaan</string>
     <string name="every_5_minutes">Setiap 5 Menit</string>
     <string name="every_10_minutes">Setiap 10 Menit</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL disetel ke default atau kosong</string>
     <string name="use_exact_alarm">Gunakan waktu pembaruan yang tepat</string>
     <string name="wasnt_able_to_connect_custom_url">Tidak dapat terhubung atau mengunduh dari URL khusus yang ditentukan</string>
-    <string name="wasnt_able_to_connect_data_txt">Tidak dapat menyambungkan atau mengunduh data.txt dari server Anda</string>
     <string name="wasnt_able_to_connect_forecast">Tidak dapat menghubungkan atau mengunduh ramalan cuaca</string>
-    <string name="wasnt_able_to_connect_or_download">Tidak dapat menghubungkan atau mengunduh ramalan cuaca</string>
+    <string name="wasnt_able_to_connect_or_download">Tidak dapat menghubungkan atau mengunduh %1$s dari %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Tidak dapat menghubungkan atau mengunduh radar= gambar dari internet</string>
     <string name="wasnt_able_to_connect_settings">Tidak dapat menghubungkan atau mengunduh pengaturan dari server Anda</string>
     <string name="wasnt_able_to_connect_webcam_url">Tidak dapat menyambungkan atau mengunduh gambar webcam dari server Anda</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URLی داتا بە بەتاڵی بوو</string>
     <string name="delete_all_data">سڕینەوەی هەموو داتاکان و کوژاندنەوە</string>
     <string name="empty">بەتاڵ</string>
+    <string name="error">هەڵە!</string>
     <string name="error_occurred_while_attempting_to_update">هەڵەیەک ڕوویدا لەکاتی هەوڵدان بۆ نوێکردنەوەی بەکارهێنان</string>
     <string name="every_5_minutes">هەر ٥ خولەک جارێک</string>
     <string name="every_10_minutes">هەر ١٠ خولەکێک</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL بە شێوەی پێشوەختە دانرابوو یان بەتاڵ بوو</string>
     <string name="use_exact_alarm">کاتەکانی نوێکردنەوەی ورد بەکاربهێنە</string>
     <string name="wasnt_able_to_connect_custom_url">نەیتوانی پەیوەندی بکات یان دایبگرێت لە URLی تایبەت بەخۆت دیاری کراوە</string>
-    <string name="wasnt_able_to_connect_data_txt">نەیتوانی لە سێرڤەرەکەتەوە پەیوەندی بکات یان Data.txt دابەزێنیت</string>
     <string name="wasnt_able_to_connect_forecast">نەیتوانی پەیوەندی بکات یان پێشبینیەکە دابەزێنرێت</string>
-    <string name="wasnt_able_to_connect_or_download">نەیتوانی پەیوەندی بکات یان پێشبینیەکە دابەزێنرێت</string>
+    <string name="wasnt_able_to_connect_or_download">نەیتوانی پەیوەندی یان دابەزاندنی %1$s لە %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">نەیتوانیوە پەیوەندی بکات یان دابەزێنرێت Radar= لە ئینتەرنێتەوە</string>
     <string name="wasnt_able_to_connect_settings">نەیتوانی لە سێرڤەرەکەتەوە پەیوەندی بکات یان ڕێکخستنەکان دابەزێنێت</string>
     <string name="wasnt_able_to_connect_webcam_url">نەیتوانی وێنەیەکی وێبکام لە سێرڤەرەکەتەوە ببەستێتەوە یان دابەزێنرێت</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL ข้อมูลว่างเปล่า</string>
     <string name="delete_all_data">ลบข้อมูลทั้งหมดและการปิดระบบ</string>
     <string name="empty">ว่างเปล่า</string>
+    <string name="error">ข้อผิดพลาด!</string>
     <string name="error_occurred_while_attempting_to_update">เกิดข้อผิดพลาดขณะพยายามอัปเดตการใช้งาน</string>
     <string name="every_5_minutes">ทุก ๆ 5 นาที</string>
     <string name="every_10_minutes">ทุก ๆ 10 นาที</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ถูกตั้งค่าเป็นค่าเริ่มต้นหรือว่างเปล่า</string>
     <string name="use_exact_alarm">ใช้เวลาอัปเดตที่แน่นอน</string>
     <string name="wasnt_able_to_connect_custom_url">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดจาก URL ที่กำหนดเองที่ระบุ</string>
-    <string name="wasnt_able_to_connect_data_txt">ไม่สามารถเชื่อมต่อหรือดาวน์โหลด data.txt จากเซิร์ฟเวอร์ของคุณ</string>
     <string name="wasnt_able_to_connect_forecast">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดการคาดการณ์ได้</string>
-    <string name="wasnt_able_to_connect_or_download">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดการคาดการณ์ได้</string>
+    <string name="wasnt_able_to_connect_or_download">ไม่สามารถเชื่อมต่อหรือดาวน์โหลด %1$s จาก %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดภาพเรดาร์= จากอินเทอร์เน็ตได้</string>
     <string name="wasnt_able_to_connect_settings">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดการตั้งค่าจากเซิร์ฟเวอร์ของคุณได้</string>
     <string name="wasnt_able_to_connect_webcam_url">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดภาพเว็บแคมจากเซิร์ฟเวอร์ของคุณ</string>

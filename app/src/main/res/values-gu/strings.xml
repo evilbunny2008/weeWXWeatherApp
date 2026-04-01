@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">ડેટા URL ખાલી હતું</string>
     <string name="delete_all_data">બધા ડેટા અને શટડાઉન કાઢી નાખો</string>
     <string name="empty">ખાલી</string>
+    <string name="error">ભૂલ!</string>
     <string name="error_occurred_while_attempting_to_update">ઉપયોગ અપડેટ કરવાનો પ્રયાસ કરતી વખતે એક ભૂલ આવી</string>
     <string name="every_5_minutes">દર 5 મિનિટે</string>
     <string name="every_10_minutes">દર 10 મિનિટે</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ડિફૉલ્ટ પર સેટ હતું અથવા ખાલી હતું</string>
     <string name="use_exact_alarm">ચોક્કસ અપડેટ સમયનો ઉપયોગ કરો</string>
     <string name="wasnt_able_to_connect_custom_url">ઉલ્લેખિત કસ્ટમ URL થી કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
-    <string name="wasnt_able_to_connect_data_txt">તમારા સર્વરથી data.txt કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
     <string name="wasnt_able_to_connect_forecast">અનુમાન કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
-    <string name="wasnt_able_to_connect_or_download">અનુમાન કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s થી %1$s ને કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
     <string name="wasnt_able_to_connect_radar_image">ઈન્ટરનેટ પરથી radar= ઈમેજને કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
     <string name="wasnt_able_to_connect_settings">તમારા સર્વરથી સેટિંગ્સને કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>
     <string name="wasnt_able_to_connect_webcam_url">તમારા સર્વરથી વેબકેમ ઇમેજને કનેક્ટ અથવા ડાઉનલોડ કરવામાં સક્ષમ ન હતા</string>

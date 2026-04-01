@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">דאַטן URL איז ליידיק</string>
     <string name="delete_all_data">ויסמעקן אַלע דאַטן און שאַטדאַון</string>
     <string name="empty">ליידיק</string>
+    <string name="error">טעות!</string>
     <string name="error_occurred_while_attempting_to_update">א טעות איז פארגעקומען בשעת פּרווון צו דערהייַנטיקן באַניץ</string>
     <string name="every_5_minutes">יעדער 5 מינוט</string>
     <string name="every_10_minutes">יעדער 10 מינוט</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL איז באַשטימט צו די פעליקייַט אָדער איז געווען ליידיק</string>
     <string name="use_exact_alarm">ניצן פּינטלעך דערהייַנטיקן צייט</string>
     <string name="wasnt_able_to_connect_custom_url">קען נישט פאַרבינדן אָדער אראפקאפיע פֿון די ספּעסיפיעד מנהג URL</string>
-    <string name="wasnt_able_to_connect_data_txt">קען נישט פאַרבינדן אָדער אראפקאפיע דאַטאַ.טקסט פון דיין סערווער</string>
     <string name="wasnt_able_to_connect_forecast">קען נישט פאַרבינדן אָדער אראפקאפיע די פאָרויסזאָגן</string>
-    <string name="wasnt_able_to_connect_or_download">קען נישט פאַרבינדן אָדער אראפקאפיע די פאָרויסזאָגן</string>
+    <string name="wasnt_able_to_connect_or_download">קען נישט פאַרבינדן אָדער אראפקאפיע %1$s פֿון %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">קען נישט פאַרבינדן אָדער אראפקאפיע ראַדאַר= בילד פֿון דער אינטערנעץ</string>
     <string name="wasnt_able_to_connect_settings">קען נישט פאַרבינדן אָדער אראפקאפיע די סעטטינגס פון דיין סערווער</string>
     <string name="wasnt_able_to_connect_webcam_url">קען נישט פאַרבינדן אָדער אראפקאפיע אַ וועבקאַם בילד פֿון דיין סערווער</string>

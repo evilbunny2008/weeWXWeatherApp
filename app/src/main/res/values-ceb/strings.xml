@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Blangko ang Data URL</string>
     <string name="delete_all_data">Pagwagtang sa tanan nga datos ug pagsira</string>
     <string name="empty">Kuhaan ug sulod</string>
+    <string name="error">Sayop!</string>
     <string name="error_occurred_while_attempting_to_update">Usa ka sayup ang nahitabo samtang misulay sa pag-update sa paggamit</string>
     <string name="every_5_minutes">Matag 5 minutos</string>
     <string name="every_10_minutes">Matag 10 minutos</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Ang URL gitakda sa default o wala\'y sulod</string>
     <string name="use_exact_alarm">Paggamit eksaktong mga oras sa pag-update</string>
     <string name="wasnt_able_to_connect_custom_url">Wala makonekta o pag-download gikan sa naandan nga URL nga gitino</string>
-    <string name="wasnt_able_to_connect_data_txt">Wala makonektar o mag-download sa data.txt gikan sa imong server</string>
     <string name="wasnt_able_to_connect_forecast">Dili makonekta o i-download ang forecast</string>
-    <string name="wasnt_able_to_connect_or_download">Dili makonekta o i-download ang forecast</string>
+    <string name="wasnt_able_to_connect_or_download">Wala makakonektar o maka-download sa %1$s gikan sa %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Wala makonekta o download radar = imahe gikan sa internet</string>
     <string name="wasnt_able_to_connect_settings">Wala makonekta o i-download ang mga setting gikan sa imong server</string>
     <string name="wasnt_able_to_connect_webcam_url">Wala makonekta o mag-download sa usa ka imahe sa webcam gikan sa imong server</string>

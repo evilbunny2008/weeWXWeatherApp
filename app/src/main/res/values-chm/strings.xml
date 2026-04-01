@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Данный-влак URL-адрес яра лийын</string>
     <string name="delete_all_data">Чыла данныйым кораҥдаш да пуштмаш</string>
     <string name="empty">Пуста</string>
+    <string name="error">Йоҥылыш!</string>
     <string name="error_occurred_while_attempting_to_update">Йоҥылыш лийын, кучылтмо годым уэмдаш тӧчен</string>
     <string name="every_5_minutes">Кажне 5 минут</string>
     <string name="every_10_minutes">Кажне 10 минут</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL-адрес умолчание шынденыт але яра лийын</string>
     <string name="use_exact_alarm">Лач уэмдыме жапыште кучылташ</string>
     <string name="wasnt_able_to_connect_custom_url">Ончалаш ок лий але скачать гыч скачать шкешотан URL-адрес палемдыме</string>
-    <string name="wasnt_able_to_connect_data_txt">Тендан сервер гыч данный-влакым ушен але скачать ыштен кертын огыл.txt</string>
     <string name="wasnt_able_to_connect_forecast">Прогнозым ушен але скачать ыштен кертын огыл</string>
-    <string name="wasnt_able_to_connect_or_download">Прогнозым ушен але скачать ыштен кертын огыл</string>
+    <string name="wasnt_able_to_connect_or_download">%1$s-ым %2$s гыч ушен але скачатьлен кертын огыл</string>
     <string name="wasnt_able_to_connect_radar_image">Интернет гыч радар= образым ушен але скачать скачать лийын огыл</string>
     <string name="wasnt_able_to_connect_settings">Тендан сервер гыч настройкым ыштен але скачать лийын огыл</string>
     <string name="wasnt_able_to_connect_webcam_url">Тендан сервер гыч веб-камер образым ушен але скачать лийын огыл</string>

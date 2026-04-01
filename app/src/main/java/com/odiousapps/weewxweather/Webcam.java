@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
 public class Webcam extends Fragment
@@ -59,7 +60,7 @@ public class Webcam extends Fragment
 
 		if(bm == null)
 		{
-			noImageToShow(weeWXApp.getAndroidString(R.string.webcam_still_downloading));
+			noImageToShow(getAndroidString(R.string.webcam_still_downloading));
 			stopRefreshing();
 			return;
 		}
@@ -99,7 +100,7 @@ public class Webcam extends Fragment
 			if(bm != null)
 				showWebcamImage(bm);
 			else
-				noImageToShow(weeWXApp.getAndroidString(R.string.webcam_still_downloading));
+				noImageToShow(getAndroidString(R.string.webcam_still_downloading));
 		} catch(Exception e) {
 			LogMessage("loadWebcamImage() Error! e: " + e, true, KeyValue.e);
 			noImageToShow("Error: " + e);

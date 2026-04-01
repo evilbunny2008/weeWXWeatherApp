@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data URL रिक्तं आसीत् ।</string>
     <string name="delete_all_data">सर्वाणि आँकडानि च शट्डाउन च विलोपयन्तु ।</string>
     <string name="empty">रिक्तम्‌</string>
+    <string name="error">त्रुटि!</string>
     <string name="error_occurred_while_attempting_to_update">उपयोगस्य अद्यतनीकरणस्य प्रयासे त्रुटिः अभवत् ।</string>
     <string name="every_5_minutes">प्रत्येकं ५ निमेषेषु प्रत्येकं ५ निमेषः २</string>
     <string name="every_10_minutes">प्रत्येकं १० निमेषेषु प्रत्येकं १० निमेषः २</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL पूर्वनिर्धारितं सेट् कृतम् आसीत् अथवा रिक्तं आसीत् ।</string>
     <string name="use_exact_alarm">सटीक अद्यतन समय का उपयोग करें</string>
     <string name="wasnt_able_to_connect_custom_url">निर्दिष्टा कस्टम् URL तः कनेक्ट् कर्तुं वा डाउनलोड् कर्तुं वा न शक्नोति स्म ।</string>
-    <string name="wasnt_able_to_connect_data_txt">भवतः सर्वरतः data.txt इत्यस्य कनेक्ट् कर्तुं वा डाउनलोड् कर्तुं वा समर्थः नासीत् ।</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमानं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान्।</string>
-    <string name="wasnt_able_to_connect_or_download">पूर्वानुमानं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान्।</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s तः %1$s संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान्</string>
     <string name="wasnt_able_to_connect_radar_image">अन्तर्जालतः Radar= चित्रं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
     <string name="wasnt_able_to_connect_settings">भवतः सर्वरतः सेटिंग्स् संयोजयितुं डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
     <string name="wasnt_able_to_connect_webcam_url">भवतः सर्वरतः वेबकैम-चित्रं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>

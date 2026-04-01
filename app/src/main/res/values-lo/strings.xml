@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">url ຂໍ້ມູນແມ່ນຫວ່າງເປົ່າ</string>
     <string name="delete_all_data">ລົບລ້າງຂໍ້ມູນທັງຫມົດແລະປິດ</string>
     <string name="empty">ເປົ່າ</string>
+    <string name="error">ຜິດພາດ!</string>
     <string name="error_occurred_while_attempting_to_update">ມີຂໍ້ຜິດພາດເກີດຂື້ນໃນຂະນະທີ່ພະຍາຍາມປັບປຸງການນໍາໃຊ້</string>
     <string name="every_5_minutes">ທຸກໆ 5 ນາທີ</string>
     <string name="every_10_minutes">ທຸກໆ 10 ນາທີ</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ໄດ້ຖືກກໍານົດໃຫ້ເປັນຄ່າເລີ່ມຕົ້ນຫຼືຫວ່າງເປົ່າ</string>
     <string name="use_exact_alarm">ໃຊ້ເວລາປັບປຸງທີ່ແນ່ນອນ</string>
     <string name="wasnt_able_to_connect_custom_url">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດໄດ້ຈາກ URL ທີ່ກໍານົດໄວ້</string>
-    <string name="wasnt_able_to_connect_data_txt">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດຂໍ້ມູນໄດ້ .txt ຈາກເຄື່ອງແມ່ຂ່າຍຂອງທ່ານ</string>
     <string name="wasnt_able_to_connect_forecast">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດການຄາດຄະເນໄດ້</string>
-    <string name="wasnt_able_to_connect_or_download">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດການຄາດຄະເນໄດ້</string>
+    <string name="wasnt_able_to_connect_or_download">ບໍ່ສາມາດເຊື່ອມຕໍ່ ຫຼືດາວໂຫຼດ %1$s ຈາກ %2$s ໄດ້</string>
     <string name="wasnt_able_to_connect_radar_image">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດ Radar = ຈາກອິນເຕີເນັດ</string>
     <string name="wasnt_able_to_connect_settings">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດການຕັ້ງຄ່າຈາກເຊີບເວີຂອງທ່ານ</string>
     <string name="wasnt_able_to_connect_webcam_url">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດຮູບພາບ webcam ຈາກ server ຂອງທ່ານ</string>

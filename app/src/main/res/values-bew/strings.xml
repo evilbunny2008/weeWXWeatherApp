@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL data udah kosong</string>
     <string name="delete_all_data">Hapus Semua Data dan Ditetapkan</string>
     <string name="empty">Kosong</string>
+    <string name="error">Kesalahan!</string>
     <string name="error_occurred_while_attempting_to_update">Sebuah kesalahan terjadi saat nyoba update pemakaian</string>
     <string name="every_5_minutes">Tiap 5 Menit</string>
     <string name="every_10_minutes">Tiap 10 menit gue</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL itu diatur ke bawaan atau udah kosong</string>
     <string name="use_exact_alarm">Pake waktu update yang tepat</string>
     <string name="wasnt_able_to_connect_custom_url">Gak bisa nyambung atau download dari URL khusus yang ditentuin</string>
-    <string name="wasnt_able_to_connect_data_txt">Gak bisa nyambung atau download data.txt dari server lo</string>
     <string name="wasnt_able_to_connect_forecast">Gak bisa nyambung atau ngunduh ramalan</string>
-    <string name="wasnt_able_to_connect_or_download">Gak bisa nyambung atau ngunduh ramalan</string>
+    <string name="wasnt_able_to_connect_or_download">Kagak bisa nyambungin atau ngunduh %1$s dari %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Bukannya kagak bisa nyambung atau download radar= gambar dari internet</string>
     <string name="wasnt_able_to_connect_settings">Gak bisa nyambung atau ngunduh pengaturan dari server lo</string>
     <string name="wasnt_able_to_connect_webcam_url">Gak bisa nyambung atau ngunduh gambar webcam dari pelayan lo</string>

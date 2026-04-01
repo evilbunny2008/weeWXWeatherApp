@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL data wonnoo ko blank</string>
     <string name="delete_all_data">Mumtu denndaangal Doggi e Shutdown</string>
     <string name="empty">Wala kuje</string>
+    <string name="error">Harbol!</string>
     <string name="error_occurred_while_attempting_to_update">Juumre waɗi ko e etaade hesɗitinde kuutoragol</string>
     <string name="every_5_minutes">Kala 5 minitaaji</string>
     <string name="every_10_minutes">Kala 10 minitaaji</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL waɗaama e default walla ko meere</string>
     <string name="use_exact_alarm">Huutoro waktuuji kesi laaɓtuɗi</string>
     <string name="wasnt_able_to_connect_custom_url">Waawaa jokkondirde walla ƴettude e URL keeriiɗo toɗɗaaɗo</string>
-    <string name="wasnt_able_to_connect_data_txt">Waawaa jokkondirde walla ƴettude dokke.txt e serveer maa</string>
     <string name="wasnt_able_to_connect_forecast">Waawaa jokkondirde walla ƴettude teskagol ngol</string>
-    <string name="wasnt_able_to_connect_or_download">Waawaa jokkondirde walla ƴettude teskagol ngol</string>
+    <string name="wasnt_able_to_connect_or_download">Waawaano jokkondirde walla ƴettude %1$s e %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Wasaade jokkondirde walla ƴettude radar= natal e nder internet</string>
     <string name="wasnt_able_to_connect_settings">Waawaa jokkondirde walla ƴettude dottaaɗe ɗee e serveer maa</string>
     <string name="wasnt_able_to_connect_webcam_url">Waawaa jokkondirde walla ƴettude natal webcam e serveer maa</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">數據 URL 為空</string>
     <string name="delete_all_data">刪除所有數據並關機</string>
     <string name="empty">空的</string>
+    <string name="error">錯誤！</string>
     <string name="error_occurred_while_attempting_to_update">嘗試更新使用情況時發生錯誤</string>
     <string name="every_5_minutes">每 5 分鐘一班</string>
     <string name="every_10_minutes">每 10 分鐘一班</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL 已設置為默認值或為空</string>
     <string name="use_exact_alarm">使用準確的更新時間</string>
     <string name="wasnt_able_to_connect_custom_url">無法從指定的自定義 URL 連接或下載</string>
-    <string name="wasnt_able_to_connect_data_txt">無法連接或從您的服務器下載 data.txt</string>
     <string name="wasnt_able_to_connect_forecast">無法連接或下載天氣預報。</string>
-    <string name="wasnt_able_to_connect_or_download">無法連接或下載天氣預報。</string>
+    <string name="wasnt_able_to_connect_or_download">無法連線 %2$s 或從 %2$s 下載 %1$s</string>
     <string name="wasnt_able_to_connect_radar_image">無法從互聯網連接或下載雷達=圖像</string>
     <string name="wasnt_able_to_connect_settings">無法連接您的服務器或從您的服務器下載設置</string>
     <string name="wasnt_able_to_connect_webcam_url">無法連接或從您的服務器下載網絡攝像頭圖像</string>

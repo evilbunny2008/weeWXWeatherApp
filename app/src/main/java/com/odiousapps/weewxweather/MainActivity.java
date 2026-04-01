@@ -93,8 +93,13 @@ import static com.github.evilbunny2008.colourpicker.Common.parseHexToColour;
 import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXAppCommon.checkURL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
+import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
+import static com.odiousapps.weewxweather.weeWXAppCommon.json_labels;
+import static com.odiousapps.weewxweather.weeWXAppCommon.loadOrDownloadImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 
 @SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag",
@@ -451,7 +456,7 @@ public class MainActivity extends FragmentActivity
 			mViewPager.setCurrentItem(page, false);
 		}
 
-		if(!KeyValue.isPrefSet("BASE_URL"))
+		if(!KeyValue.isPrefSet(json_keys[0] + "_url"))
 			mDrawerLayout.openDrawer(GravityCompat.START);
 
 		settingLayout = findViewById(R.id.settingLayout);
@@ -657,11 +662,31 @@ public class MainActivity extends FragmentActivity
 		boolean wo, met, rii, si, sr, sf, uea, sadl, nm, fdm, mta, ata, rfa, rra_watch, rra_warning, rra_severe;
 		int mt, at, rfl;
 
-		boolean hasJsonUrl = KeyValue.isPrefSet("JSON_URL");
-		if(!hasJsonUrl)
+		boolean newDataUrlSet = KeyValue.isPrefSet(json_keys[0] + "_url");
+		if(newDataUrlSet)
 		{
-			LogMessage("MainActivity.onCreate() showUpdateAvailable2() triggered because no JSON URL detected.");
-			showUpdateAvailable2();
+			String dataURL = (String)KeyValue.readVar(json_keys[0] + "_url", "");
+			if(dataURL == null || dataURL.isBlank())
+				newDataUrlSet = false;
+		}
+
+		boolean lastDownloadSet = KeyValue.isPrefSet("LastDownload");
+		if(lastDownloadSet)
+		{
+			String lastDownload = (String)KeyValue.readVar("LastDownload", "");
+			if(lastDownload == null || lastDownload.isBlank())
+				lastDownloadSet = false;
+		}
+
+		if(lastDownloadSet)
+		{
+			if(!newDataUrlSet)
+			{
+				LogMessage("MainActivity.onCreate() showUpdateAvailable2() triggered because no JSON URL detected.");
+				showUpdateAvailable2();
+			} else {
+				KeyValue.putVar("LastDownload", null);
+			}
 		}
 
 		UpdateFrequency = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
@@ -1048,8 +1073,8 @@ public class MainActivity extends FragmentActivity
 
 		MaterialTextView tv1 = findViewById(R.id.aboutText);
 		String about_blurb = weeWXApp.current_about_blurb
-				.replace("USEDMEMORY", String.format("%.1f MB", USEDMEMORY))
-				.replace("MAXMEMORY", String.format("%.1f MB", MAXMEMORY));
+				.replace("USEDMEMORY", String.format(Locale.ENGLISH, "%.1f MB", USEDMEMORY))
+				.replace("MAXMEMORY", String.format(Locale.ENGLISH, "%.1f MB", MAXMEMORY));
 
 		tv1.setText(HtmlCompat.fromHtml(about_blurb, HtmlCompat.FROM_HTML_MODE_COMPACT));
 		tv1.setMovementMethod(LinkMovementMethod.getInstance());
@@ -1442,7 +1467,7 @@ public class MainActivity extends FragmentActivity
 
 	private void showUpdateAvailable()
 	{
-		int updateVer = Math.max(weeWXApp.minimum_inigo_version, weeWXApp.minimum_inigo_version_for_alerts);
+		int updateVer = Math.max(weeWXApp.minimum_inigo_version, weeWXApp.minimum_inigo_version);
 
 		if((boolean)KeyValue.readVar("shownUpdate_" + updateVer, false))
 			return;
@@ -1553,33 +1578,20 @@ public class MainActivity extends FragmentActivity
 			String forecastLocationName = KeyValue.countyName = null;
 
 			boolean validURL = false;
-			boolean validURL1;
-			boolean validURL2;
+			boolean validURL1 = false;
+			boolean validURL2 = false;
 			boolean validURL3 = false;
-			boolean validURL5;
+			boolean validURL5 = false;
 
-			String jsonURL = "", radtype = "", radarURL = "", forecastURL = "",
-					webcamURL = "", CustomURL = "", appCustomURL, fctype = "", bomtown = "";
+			String radtype = "", radarURL = "", forecastURL = "", webcamURL = "", CustomURL = "", appCustomURL, fctype = "", bomtown = "";
+			String[] json_urls = new String[json_keys.length];
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
 			LogMessage("processSettings() settings_url: " + settings_url);
 
 			if(settings_url.isBlank() || settings_url.equals(weeWXApp.SETTINGS_URL_default))
 			{
-				runOnUiThread(() ->
-				{
-					b1.setEnabled(true);
-					b2.setEnabled(true);
-					dialog.dismiss();
-					new AlertDialog.Builder(this)
-							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_settings))
-							.setMessage(getAndroidString(R.string.url_was_default_or_empty))
-							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
-							.create()
-							.show();
-				});
-
-				bgStart = 0;
+				errorDialog(getAndroidString(R.string.url_was_default_or_empty));
 				return;
 			}
 
@@ -1588,41 +1600,42 @@ public class MainActivity extends FragmentActivity
 				String settingsData = weeWXAppCommon.downloadSettings(settings_url).strip();
 				//LogMessage("processSettings() settingsData: " + settingsData);
 
-				if(settingsData != null && !settingsData.isBlank() && settingsData.length() > 128)
+				if(settingsData == null || settingsData.isBlank() || settingsData.length() < 128)
 				{
-					String[] bits = settingsData.split("\\n");
-					if(bits != null && bits.length > 1)
+					errorDialog(getAndroidString(R.string.wasnt_able_to_connect_settings));
+					return;
+				}
+
+				String[] bits = settingsData.split("\\n");
+				if(bits != null && bits.length > 1)
+				{
+					for(String bit : bits)
 					{
-						for(String bit : bits)
+						String line = bit.strip();
+						if(line.isBlank() || line.startsWith("#") || !line.contains("="))
+							continue;
+
+						String[] mb = line.split("=", 2);
+						mb[0] = mb[0].toLowerCase(Locale.ENGLISH).strip();
+						mb[1] = mb[1].strip();
+
+						LogMessage("processSettings() mb[0]: " + mb[0], KeyValue.d);
+						LogMessage("processSettings() mb[1]: " + mb[1], KeyValue.d);
+
+						switch(mb[0])
 						{
-							String line = bit.strip();
-							if(line.isBlank() || line.startsWith("#") || !line.contains("="))
-								continue;
-
-							String[] mb = line.split("=", 2);
-							mb[0] = mb[0].toLowerCase(Locale.ENGLISH).strip();
-							mb[1] = mb[1].strip();
-
-							LogMessage("processSettings() mb[0]: " + mb[0], KeyValue.d);
-							LogMessage("processSettings() mb[1]: " + mb[1], KeyValue.d);
-
-							switch(mb[0])
-							{
-								case "jsondata" -> jsonURL = mb[1].strip();
-								case "radar" -> radarURL = mb[1].strip();
-								case "radtype" -> radtype = mb[1].toLowerCase(Locale.ENGLISH).strip();
-								case "forecast" -> forecastURL = mb[1].strip();
-								case "fctype" -> fctype = mb[1].toLowerCase(Locale.ENGLISH).strip();
-								case "webcam" -> webcamURL = mb[1].strip();
-								case "custom" -> CustomURL = mb[1].strip();
-								default -> LogMessage("processSettings() Invalid setting: " + mb[0] +
-								                                     "=" + mb[1] + ", skipping...", true, KeyValue.w);
-							}
+							case "json-data" -> json_urls[0] = mb[1].strip();
+							case "json-dicts" -> json_urls[1] = mb[1].strip();
+							case "json-last" -> json_urls[2] = mb[1].strip();
+							case "radar" -> radarURL = mb[1].strip();
+							case "radtype" -> radtype = mb[1].toLowerCase(Locale.ENGLISH).strip();
+							case "forecast" -> forecastURL = mb[1].strip();
+							case "fctype" -> fctype = mb[1].toLowerCase(Locale.ENGLISH).strip();
+							case "webcam" -> webcamURL = mb[1].strip();
+							case "custom" -> CustomURL = mb[1].strip();
+							default -> LogMessage("processSettings() Invalid setting: " + mb[0] +
+							                                     "=" + mb[1] + ", skipping...", true, KeyValue.w);
 						}
-
-						if(jsonURL != null && radarURL != null && radtype != null &&
-						   forecastURL != null && fctype != null)
-							validURL = true;
 					}
 				}
 			} catch(Exception e) {
@@ -1631,657 +1644,530 @@ public class MainActivity extends FragmentActivity
 				errorStr = e.getLocalizedMessage();
 			}
 
-			LogMessage("processSettings() jsonURL: " + jsonURL);
+			if(errorStr != null && !errorStr.isBlank())
+			{
+				errorDialog(errorStr);
+				return;
+			}
+
+			if(radtype == null || radtype.isBlank())
+			{
+				errorDialog(getAndroidString(R.string.radar_type_is_invalid));
+				return;
+			}
+
+			if(!is_valid_url(radarURL))
+			{
+				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_radar_image));
+				return;
+			}
+
+			if(fctype == null || fctype.isBlank())
+			{
+				errorDialog(getAndroidString(R.string.forecast_type_is_invalid));
+				return;
+			}
+
+			if(forecastURL == null || forecastURL.isBlank())
+			{
+				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_forecast));
+				return;
+			}
+
+			for(int i = 0; i < json_urls.length; i++)
+				LogMessage("processSettings() " + json_labels[i] + ": " + json_urls[i]);
+
 			LogMessage("processSettings() radarURL: " + radarURL);
 			LogMessage("processSettings() radtype: " + radtype);
 			LogMessage("processSettings() forecastURL: " + forecastURL);
 			LogMessage("processSettings() fctype: " + fctype);
 			LogMessage("processSettings() webcamURL: " + webcamURL);
 			LogMessage("processSettings() CustomURL: " + CustomURL);
+			LogMessage("processSettings() forecastURL: " + forecastURL);
 
-			if(!validURL)
+			try
 			{
-				String finalErrorStr = errorStr;
-				runOnUiThread(() ->
+				if(fctype.toLowerCase(Locale.ENGLISH).strip().equals("bom3"))
 				{
-					b1.setEnabled(true);
-					b2.setEnabled(true);
-					dialog.dismiss();
-					new AlertDialog.Builder(this)
-							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_settings))
-							.setMessage(finalErrorStr)
-							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
-							.create()
-							.show();
-				});
+					forecastURL = forecastURL.strip();
 
-				bgStart = 0;
+					if(forecastURL.length() > 6)
+						forecastURL = forecastURL.substring(0, 6);
+
+					if(UpdateInterval > 0)
+						fctype = "bom3hourly";
+					else
+						fctype = "bom3daily";
+				}
+
+				switch(fctype.toLowerCase(Locale.ENGLISH).strip())
+				{
+					case "weatherzone3" ->
+					{
+						LogMessage("processSettings() fctype: " + fctype);
+
+						String[] URLs;
+
+						if(forecastURL.contains(","))
+							URLs = forecastURL.split(",");
+						else
+							URLs = new String[]{forecastURL};
+
+						if(URLs != null && URLs.length > 1)
+						{
+							URLs = Arrays.stream(URLs)
+									.distinct()
+									.toArray(String[]::new);
+						} else {
+							runOnUiThread(() ->
+							{
+								b1.setEnabled(true);
+								b2.setEnabled(true);
+								dialog.dismiss();
+							});
+
+							bgStart = 0;
+							return;
+						}
+
+						String[] allURLs = new String[URLs.length * 7];
+						Calendar cal = Calendar.getInstance();
+						Date d;
+						int rc = 0;
+						for(String url : URLs)
+						{
+							for(int i = 0; i < 7; i++)
+							{
+								long futureWhen = now + 86_400_000 * i;
+								LocalDate date = Instant.ofEpochMilli(futureWhen)
+										.atZone(ZoneId.systemDefault())
+										.toLocalDate();
+
+								allURLs[rc] = url;
+								if(i > 0)
+								{
+									allURLs[rc] += String.format(Locale.getDefault(), "?date=%04d", date.getYear());
+									allURLs[rc] += String.format(Locale.getDefault(), "-%02d", date.getMonthValue());
+									allURLs[rc] += String.format(Locale.getDefault(), "-%02d", date.getDayOfMonth());
+								}
+
+								rc++;
+							}
+						}
+
+						Collections.shuffle(Arrays.asList(allURLs));
+
+						int loops = 1;
+						for(String url : allURLs)
+						{
+							forecastURL = url;
+
+							LogMessage("processSettings() URL #" + loops + "/" + allURLs.length);
+							LogMessage("processSettings() forecastURL: " + forecastURL);
+
+							String wzHTML;
+							boolean addDelay = false;
+							int attempt = 1;
+							do
+							{
+								wzHTML = weeWXAppCommon.downloadWZHTML(forecastURL, addDelay, true);
+								addDelay = true;
+							} while((wzHTML == null || wzHTML.length() < 10_000) && attempt++ <= 3);
+
+							if(wzHTML == null || wzHTML.length() < 10_000)
+								continue;
+
+							LogMessage("processSettings() wzHTML.length(): " + wzHTML.length());
+							JsoupHelper.processWZhtml(url, wzHTML);
+
+							if(++loops <= allURLs.length)
+							{
+								int random = weeWXAppCommon.getNextRandom(5_000, 10_000);
+								LogMessage("processSettings() Sleeping for " + random + "ms...");
+								Thread.sleep(random);
+							}
+						}
+
+						runOnUiThread(() ->
+						{
+							b1.setEnabled(true);
+							b2.setEnabled(true);
+							dialog.dismiss();
+						});
+
+						bgStart = 0;
+						return;
+					}
+					case "metservice.com2" ->
+					{
+						LogMessage("processSettings() fctype: " + fctype);
+						LogMessage("processSettings() forecastURL:" + forecastURL);
+/*
+						String metService = weeWXApp.wvpl.getHTML(forecastURL);
+						if(metService != null && metService.length() > 1024)
+						{
+							String pretty = Jsoup.parse(metService).outputSettings(
+									new Document.OutputSettings().indentAmount(2).prettyPrint(true)
+							).outerHtml();
+
+							//CustomDebug.writeDebug("weeWX", "metservice.com.7day.html", pretty);
+							//LogMessage("processSettings() wrote content to metservice.com.7day.html");
+						}
+*/
+						runOnUiThread(() ->
+						{
+							b1.setEnabled(true);
+							b2.setEnabled(true);
+							dialog.dismiss();
+							closeDrawer();
+						});
+
+						bgStart = 0;
+						return;
+					}
+					case "weatherzone" ->
+					{
+						forecastURL = "https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecastURL + "&obs=0&fc=1&warn=0";
+						LogMessage("processSettings() forecastURL: " + forecastURL);
+						LogMessage("processSettings() fctype: " + fctype);
+					}
+					case "met.no" ->
+					{
+						LogMessage("processSettings() forecastURL: " + forecastURL);
+						LogMessage("processSettings() fctype: " + fctype);
+
+						float lat = 0, lon = 0;
+
+						if(forecastURL.startsWith("http"))
+						{
+							// Full URL provided, extract lat/lon from query params
+							URI uri = URI.create(forecastURL);
+
+							if(uri.getQuery() != null)
+							{
+								for(String pair : uri.getQuery().split("&"))
+								{
+									int idx = pair.indexOf('=');
+									String key = URLDecoder.decode(pair.substring(0, idx), utf8);
+									String val = URLDecoder.decode(pair.substring(idx + 1), utf8);
+
+									if(key.equals("lat"))
+										lat = str2Float(val);
+
+									if(key.equals("lon"))
+										lon = str2Float(val);
+								}
+							}
+						} else if(forecastURL.contains(",")) {
+							// Coordinates format: lat,lon
+							String[] llbits = forecastURL.split(",", 2);
+							lat = str2Float(llbits[0].strip());
+							lon = str2Float(llbits[1].strip());
+						}
+
+						if(lat != 0 && lon != 0)
+						{
+							forecastURL = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=" + lat + "&lon=" + lon;
+
+							String url = "https://odiousapps.com/get-location-name-by-ll.php";
+
+							forecastLocationName = weeWXAppCommon.downloadString(url, Map.of(
+									"lat", "" + lat,
+									"lon", "" + lon));
+
+							LogMessage("processSettings() forecastLocationName: " + forecastLocationName);
+						}
+
+						LogMessage("processSettings() met.no forecastURL: " + forecastURL);
+					}
+					case "yahoo", "weather.gc.ca", "weather.gc.ca-fr", "metoffice.gov.uk",
+					     "bom2", "aemet.es", "dwd.de", "tempoitalia.it", "weatherzone2" ->
+					{
+						LogMessage("processSettings() forecastURL: " + forecastURL);
+						LogMessage("processSettings() fctype: " + fctype);
+					}
+					case "wmo.int" ->
+					{
+						if(!forecastURL.startsWith("http"))
+							forecastURL = "https://worldweather.wmo.int/en/json/" + forecastURL.strip() + "_en.xml";
+						LogMessage("processSettings() forecastURL: " + forecastURL);
+						LogMessage("processSettings() fctype: " + fctype);
+					}
+					case "weather.gov" ->
+					{
+						String lat = "", lon = "";
+						if(forecastURL.contains("?"))
+							forecastURL = forecastURL.split("\\?", 2)[1].strip();
+						if(forecastURL.contains("lat") && forecastURL.contains("lon"))
+						{
+							String[] tmp = forecastURL.split("&");
+							for (String line : tmp)
+							{
+								if(line.split("=", 2)[0].equals("lat"))
+									lat = line.split("=", 2)[1].strip();
+								if(line.split("=", 2)[0].equals("lon"))
+									lon = line.split("=", 2)[1].strip();
+							}
+						} else {
+							lat = forecastURL.split(",")[0].strip();
+							lon = forecastURL.split(",")[1].strip();
+						}
+
+						forecastURL = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon=" + lon + "&unit=0&lg=english&FcstType=json";
+						LogMessage("processSettings() forecastURL: " + forecastURL);
+						LogMessage("processSettings() fctype: " + fctype);
+					}
+					case "bom3hourly" ->
+					{
+						boolean needUpdate = KeyValue.bomGeohash == null || KeyValue.bomGeohash.isBlank() ||
+						                     !KeyValue.bomGeohash.equals(forecastURL.strip()) ||
+						                     KeyValue.bomLocation == null || KeyValue.bomLocation.isBlank();
+
+						if(needUpdate)
+						{
+							KeyValue.bomGeohash = forecastURL.strip();
+							String newurl = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip();
+							String text = weeWXAppCommon.downloadString(newurl, false);
+							LogMessage("processSettings(): text: " + text);
+
+							JSONObject jobj = new JSONObject(text);
+							if(jobj.has("data"))
+							{
+								jobj = jobj.getJSONObject("data");
+								if(jobj.has("name") && jobj.has("state"))
+								{
+									KeyValue.bomLocation = jobj.getString("name") + ", " + jobj.getString("state");
+									LogMessage("processSettings() BoM Location: " + KeyValue.bomLocation);
+								}
+							}
+						}
+
+						forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip() + "/forecasts/hourly";
+						LogMessage("processSettings() forecastURL: " + forecastURL);
+						LogMessage("processSettings() fctype: " + fctype);
+					}
+					case "bom3daily" ->
+					{
+						forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip() + "/forecasts/daily";
+						LogMessage("processSettings() forecastURL: " + forecastURL);
+						LogMessage("processSettings() fctype: " + fctype);
+					}
+					case "metservice.com" ->
+					{
+						if(!forecastURL.startsWith("http"))
+							forecastURL = "https://www.metservice.com/publicData/localForecast" + forecastURL.strip();
+						LogMessage("processSettings() forecastURL: " + forecastURL);
+						LogMessage("processSettings() fctype: " + fctype);
+					}
+					case "openweathermap.org" ->
+					{
+						if(metric_forecasts.isChecked())
+							forecastURL += "&units=metric";
+						else
+							forecastURL += "&units=imperial";
+						forecastURL += "&lang=" + Locale.getDefault().getLanguage();
+						forecastURL += "&mode=json&cnt=16";
+
+						LogMessage("processSettings() forecastURL: " + forecastURL);
+						LogMessage("processSettings() fctype: " + fctype);
+					}
+					case "weather.com" ->
+					{
+						forecastURL = "https://api.weather.com/v3/wx/forecast/daily/10day?geocode=" + forecastURL + "&format=json&apiKey" +
+						              "=71f92ea9dd2f4790b92ea9dd2f779061";
+						if(metric_forecasts.isChecked())
+							forecastURL += "&units=m";
+						else
+							forecastURL += "&units=e";
+						forecastURL += "&language=" + Locale.getDefault().getLanguage() + "-" + Locale.getDefault().getCountry();
+						LogMessage("processSettings() forecastURL: " + forecastURL);
+						LogMessage("processSettings() fctype: " + fctype);
+					}
+					case "met.ie" ->
+					{
+						String[] llbits = forecastURL.split(",", 2);
+
+						float lat = str2Float(llbits[0]);
+						float lon = str2Float(llbits[1]);
+
+						if(lat != 0 && lon != 0)
+						{
+							forecastURL = "http://openaccess.pf.api.met.ie/metno-wdb2ts/locationforecast?" +
+							              "lat=" + lat + ";long=" + lon;
+
+							String url = "https://odiousapps.com/get-location-name-by-ll.php";
+
+							forecastLocationName = weeWXAppCommon.downloadString(url, Map.of(
+									"lat", "" + lat,
+									"lon", "" + lon));
+
+							LogMessage("forecastLocationName: " + forecastLocationName);
+
+							Object[] o = KeyValue.closestCounty(lat, lon);
+
+							if(o != null && o.length == 2)
+							{
+								KeyValue.countyName = ((KeyValue.County)o[0]).name;
+								LogMessage("processSettings() County Name: " + KeyValue.countyName);
+								LogMessage("processSettings() Distance: " + (float)o[1]);
+							}
+						}
+
+						LogMessage("processSettings() forecastURL: " + forecastURL);
+						LogMessage("processSettings() fctype: " + fctype);
+					}
+					default ->
+					{
+						LogMessage("processSettings() No forecast information...", KeyValue.w);
+						String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
+						errorDialog(finalErrorStr);
+						return;
+					}
+				}
+			} catch(Exception e) {
+				doStackOutput(e);
+				errorStr = e.getLocalizedMessage();
+			}
+
+			if(errorStr != null && !errorStr.isBlank())
+			{
+				errorDialog(errorStr);
 				return;
 			}
 
-			LogMessage("processSettings() forecastURL: " + forecastURL);
-
-			if(!forecastURL.isBlank())
+			for(int i = 0; i < json_urls.length; i++)
 			{
 				try
 				{
-					if(fctype.toLowerCase(Locale.ENGLISH).strip().equals("bom3"))
-					{
-						forecastURL = forecastURL.strip();
-
-						if(forecastURL.length() > 6)
-							forecastURL = forecastURL.substring(0, 6);
-
-						if(UpdateInterval > 0)
-							fctype = "bom3hourly";
-						else
-							fctype = "bom3daily";
-					}
-
-					switch(fctype.toLowerCase(Locale.ENGLISH).strip())
-					{
-						case "weatherzone3" ->
-						{
-							LogMessage("processSettings() fctype: " + fctype);
-
-							String[] URLs;
-
-							if(forecastURL.contains(","))
-								URLs = forecastURL.split(",");
-							else
-								URLs = new String[]{forecastURL};
-
-							if(URLs != null && URLs.length > 1)
-							{
-								URLs = Arrays.stream(URLs)
-										.distinct()
-										.toArray(String[]::new);
-							} else {
-								runOnUiThread(() ->
-								{
-									b1.setEnabled(true);
-									b2.setEnabled(true);
-									dialog.dismiss();
-								});
-
-								return;
-							}
-
-							String[] allURLs = new String[URLs.length * 7];
-							Calendar cal = Calendar.getInstance();
-							Date d;
-							int rc = 0;
-							for(String url : URLs)
-							{
-								for(int i = 0; i < 7; i++)
-								{
-									long futureWhen = now + 86_400_000 * i;
-									LocalDate date = Instant.ofEpochMilli(futureWhen)
-											.atZone(ZoneId.systemDefault())
-											.toLocalDate();
-
-									allURLs[rc] = url;
-									if(i > 0)
-									{
-										allURLs[rc] += String.format(Locale.getDefault(), "?date=%04d", date.getYear());
-										allURLs[rc] += String.format(Locale.getDefault(), "-%02d", date.getMonthValue());
-										allURLs[rc] += String.format(Locale.getDefault(), "-%02d", date.getDayOfMonth());
-									}
-
-									rc++;
-								}
-							}
-
-							Collections.shuffle(Arrays.asList(allURLs));
-
-							int loops = 1;
-							for(String url : allURLs)
-							{
-								forecastURL = url;
-
-								LogMessage("processSettings() URL #" + loops + "/" + allURLs.length);
-								LogMessage("processSettings() forecastURL: " + forecastURL);
-
-								String wzHTML;
-								boolean addDelay = false;
-								int attempt = 1;
-								do
-								{
-									wzHTML = weeWXAppCommon.downloadWZHTML(forecastURL, addDelay, true);
-									addDelay = true;
-								} while((wzHTML == null || wzHTML.length() < 10_000) && attempt++ <= 3);
-
-								if(wzHTML == null || wzHTML.length() < 10_000)
-									continue;
-
-								LogMessage("processSettings() wzHTML.length(): " + wzHTML.length());
-								JsoupHelper.processWZhtml(url, wzHTML);
-
-								if(++loops <= allURLs.length)
-								{
-									int random = weeWXAppCommon.getNextRandom(5_000, 10_000);
-									LogMessage("processSettings() Sleeping for " + random + "ms...");
-									Thread.sleep(random);
-								}
-							}
-
-							runOnUiThread(() ->
-							{
-								b1.setEnabled(true);
-								b2.setEnabled(true);
-								dialog.dismiss();
-							});
-
-							return;
-						}
-						case "metservice.com2" ->
-						{
-							LogMessage("processSettings() fctype: " + fctype);
-							LogMessage("processSettings() forecastURL:" + forecastURL);
-/*
-							String metService = weeWXApp.wvpl.getHTML(forecastURL);
-							if(metService != null && metService.length() > 1024)
-							{
-								String pretty = Jsoup.parse(metService).outputSettings(
-										new Document.OutputSettings().indentAmount(2).prettyPrint(true)
-								).outerHtml();
-
-								//CustomDebug.writeDebug("weeWX", "metservice.com.7day.html", pretty);
-								//LogMessage("processSettings() wrote content to metservice.com.7day.html");
-							}
-*/
-							runOnUiThread(() ->
-							{
-								b1.setEnabled(true);
-								b2.setEnabled(true);
-								dialog.dismiss();
-								closeDrawer();
-							});
-
-							bgStart = 0;
-							return;
-						}
-						case "yahoo" ->
-						{
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-							if(!forecastURL.startsWith("http"))
-							{
-								String finalErrorStr = "Yahoo API recently changed, you need to update your settings.";
-								runOnUiThread(() ->
-								{
-									b1.setEnabled(true);
-									b2.setEnabled(true);
-									dialog.dismiss();
-									new AlertDialog.Builder(this)
-											.setTitle(getAndroidString(R.string.wasnt_able_to_connect_or_download))
-											.setMessage(finalErrorStr)
-											.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
-											.create()
-											.show();
-								});
-
-								bgStart = 0;
-								return;
-							}
-						}
-						case "weatherzone" ->
-						{
-							forecastURL = "https://rss.weatherzone.com.au/?u=12994-1285&lt=aploc&lc=" + forecastURL + "&obs=0&fc=1&warn=0";
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-						}
-						case "met.no" ->
-						{
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-
-							float lat = 0, lon = 0;
-
-							if(forecastURL.startsWith("http"))
-							{
-								// Full URL provided, extract lat/lon from query params
-								URI uri = URI.create(forecastURL);
-
-								if(uri.getQuery() != null)
-								{
-									for(String pair : uri.getQuery().split("&"))
-									{
-										int idx = pair.indexOf('=');
-										String key = URLDecoder.decode(pair.substring(0, idx), utf8);
-										String val = URLDecoder.decode(pair.substring(idx + 1), utf8);
-
-										if(key.equals("lat"))
-											lat = str2Float(val);
-
-										if(key.equals("lon"))
-											lon = str2Float(val);
-									}
-								}
-							} else if(forecastURL.contains(",")) {
-								// Coordinates format: lat,lon
-								String[] llbits = forecastURL.split(",", 2);
-								lat = str2Float(llbits[0].strip());
-								lon = str2Float(llbits[1].strip());
-							}
-
-							if(lat != 0 && lon != 0)
-							{
-								forecastURL = "https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=" + lat + "&lon=" + lon;
-
-								String url = "https://odiousapps.com/get-location-name-by-ll.php";
-
-								forecastLocationName = weeWXAppCommon.downloadString(url, Map.of(
-										"lat", "" + lat,
-										"lon", "" + lon));
-
-								LogMessage("processSettings() forecastLocationName: " + forecastLocationName);
-							}
-
-							LogMessage("processSettings() met.no forecastURL: " + forecastURL);
-						}
-						case "weather.gc.ca", "weather.gc.ca-fr", "metoffice.gov.uk",
-						     "bom2", "aemet.es", "dwd.de", "tempoitalia.it", "weatherzone2" ->
-						{
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-						}
-						case "wmo.int" ->
-						{
-							if(!forecastURL.startsWith("http"))
-								forecastURL = "https://worldweather.wmo.int/en/json/" + forecastURL.strip() + "_en.xml";
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-						}
-						case "weather.gov" ->
-						{
-							String lat = "", lon = "";
-							if(forecastURL.contains("?"))
-								forecastURL = forecastURL.split("\\?", 2)[1].strip();
-							if(forecastURL.contains("lat") && forecastURL.contains("lon"))
-							{
-								String[] tmp = forecastURL.split("&");
-								for (String line : tmp)
-								{
-									if(line.split("=", 2)[0].equals("lat"))
-										lat = line.split("=", 2)[1].strip();
-									if(line.split("=", 2)[0].equals("lon"))
-										lon = line.split("=", 2)[1].strip();
-								}
-							} else {
-								lat = forecastURL.split(",")[0].strip();
-								lon = forecastURL.split(",")[1].strip();
-							}
-
-							forecastURL = "https://forecast.weather.gov/MapClick.php?lat=" + lat + "&lon=" + lon + "&unit=0&lg=english&FcstType=json";
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-						}
-						case "bom3hourly" ->
-						{
-							boolean needUpdate = KeyValue.bomGeohash == null || KeyValue.bomGeohash.isBlank() ||
-							                     !KeyValue.bomGeohash.equals(forecastURL.strip()) ||
-							                     KeyValue.bomLocation == null || KeyValue.bomLocation.isBlank();
-
-							if(needUpdate)
-							{
-								KeyValue.bomGeohash = forecastURL.strip();
-								String newurl = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip();
-								String text = weeWXAppCommon.downloadString(newurl, false);
-								LogMessage("processSettings(): text: " + text);
-
-								JSONObject jobj = new JSONObject(text);
-								if(jobj.has("data"))
-								{
-									jobj = jobj.getJSONObject("data");
-									if(jobj.has("name") && jobj.has("state"))
-									{
-										KeyValue.bomLocation = jobj.getString("name") + ", " + jobj.getString("state");
-										LogMessage("processSettings() BoM Location: " + KeyValue.bomLocation);
-									}
-								}
-							}
-
-							forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip() + "/forecasts/hourly";
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-						}
-						case "bom3daily" ->
-						{
-							forecastURL = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip() + "/forecasts/daily";
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-						}
-						case "metservice.com" ->
-						{
-							forecastURL = "https://www.metservice.com/publicData/localForecast" + forecastURL;
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-						}
-						case "openweathermap.org" ->
-						{
-							if(metric_forecasts.isChecked())
-								forecastURL += "&units=metric";
-							else
-								forecastURL += "&units=imperial";
-							forecastURL += "&lang=" + Locale.getDefault().getLanguage();
-							forecastURL += "&mode=json&cnt=16";
-
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-						}
-						case "weather.com" ->
-						{
-							forecastURL = "https://api.weather.com/v3/wx/forecast/daily/10day?geocode=" + forecastURL + "&format=json&apiKey" +
-							              "=71f92ea9dd2f4790b92ea9dd2f779061";
-							if(metric_forecasts.isChecked())
-								forecastURL += "&units=m";
-							else
-								forecastURL += "&units=e";
-							forecastURL += "&language=" + Locale.getDefault().getLanguage() + "-" + Locale.getDefault().getCountry();
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-						}
-						case "met.ie" ->
-						{
-							String[] llbits = forecastURL.split(",", 2);
-
-							float lat = str2Float(llbits[0]);
-							float lon = str2Float(llbits[1]);
-
-							if(lat != 0 && lon != 0)
-							{
-								forecastURL = "http://openaccess.pf.api.met.ie/metno-wdb2ts/locationforecast?" +
-								              "lat=" + lat + ";long=" + lon;
-
-								String url = "https://odiousapps.com/get-location-name-by-ll.php";
-
-								forecastLocationName = weeWXAppCommon.downloadString(url, Map.of(
-										"lat", "" + lat,
-										"lon", "" + lon));
-
-								LogMessage("forecastLocationName: " + forecastLocationName);
-
-								Object[] o = KeyValue.closestCounty(lat, lon);
-
-								if(o != null && o.length == 2)
-								{
-									KeyValue.countyName = ((KeyValue.County)o[0]).name;
-									LogMessage("processSettings() County Name: " + KeyValue.countyName);
-									LogMessage("processSettings() Distance: " + (float)o[1]);
-								}
-							}
-
-							LogMessage("processSettings() forecastURL: " + forecastURL);
-							LogMessage("processSettings() fctype: " + fctype);
-						}
-						default ->
-						{
-							LogMessage("processSettings() No forecast information...", KeyValue.w);
-
-							String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
-							runOnUiThread(() ->
-							{
-								b1.setEnabled(true);
-								b2.setEnabled(true);
-								dialog.dismiss();
-								new AlertDialog.Builder(this)
-										.setTitle(getAndroidString(R.string.wasnt_able_to_connect_forecast))
-										.setMessage(finalErrorStr)
-										.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
-										.create()
-										.show();
-							});
-
-							bgStart = 0;
-							return;
-						}
-					}
+					LogMessage("processSettings() Checking " + json_labels[i] + ": " + json_urls[i]);
+					validURL1 = weeWXAppCommon.reallyGetWeather(i, json_urls[i], true);
 				} catch(Exception e) {
 					doStackOutput(e);
 					errorStr = e.getLocalizedMessage();
 				}
-			}
 
-			if(!forecastURL.isBlank())
-			{
-				LogMessage("processSettings() forecast checking: " + forecastURL);
-				LogMessage("processSettings() fctype: " + fctype);
-				LogMessage("processSettings() UpdateInterval: " + UpdateInterval);
-
-				try
+				if(errorStr != null && !errorStr.isBlank())
 				{
-					validURL3 = weeWXAppCommon.reallyGetForecast(fctype, forecastURL, UpdateInterval);
-					//LogMessage("processSettings() tmpStr: " + tmpStr);
-				} catch(Exception e) {
-					//doStackOutput(e);
-					errorStr = e.getLocalizedMessage();
+					errorDialog(errorStr);
+					return;
 				}
 
-				if(!validURL3 || (errorStr != null && !errorStr.isBlank()))
+				if(!validURL1)
 				{
-					if(errorStr == null || errorStr.isBlank())
-						errorStr = getAndroidString(R.string.unknown_error_occurred);
-
-					String finalErrorStr = errorStr;
-					runOnUiThread(() ->
-					{
-						b1.setEnabled(true);
-						b2.setEnabled(true);
-						dialog.dismiss();
-						new AlertDialog.Builder(this)
-								.setTitle(getAndroidString(R.string.wasnt_able_to_connect_forecast))
-								.setMessage(finalErrorStr)
-								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
-								.create()
-								.show();
-					});
-
-					bgStart = 0;
+					String str = String.format(getAndroidString(R.string.wasnt_able_to_connect_or_download), json_labels[i], json_urls[i]);
+					errorDialog(str);
 					return;
 				}
 			}
 
-			if(jsonURL == null || jsonURL.isBlank())
-			{
-				runOnUiThread(() ->
-				{
-					b1.setEnabled(true);
-					b2.setEnabled(true);
-					dialog.dismiss();
-					new AlertDialog.Builder(this)
-							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_data_txt))
-							.setMessage(getAndroidString(R.string.data_url_was_blank))
-							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
-							.create()
-							.show();
-				});
+			LogMessage("processSettings() forecast checking: " + forecastURL);
+			LogMessage("processSettings() fctype: " + fctype);
+			LogMessage("processSettings() UpdateInterval: " + UpdateInterval);
 
-				bgStart = 0;
+			try
+			{
+				validURL3 = weeWXAppCommon.reallyGetForecast(fctype, forecastURL, UpdateInterval);
+				//LogMessage("processSettings() tmpStr: " + tmpStr);
+			} catch(Exception e) {
+				//doStackOutput(e);
+				errorStr = e.getLocalizedMessage();
+			}
+
+			if(errorStr != null && !errorStr.isBlank())
+			{
+				errorDialog(errorStr);
+				return;
+			}
+
+			if(!validURL3)
+			{
+				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_forecast));
 				return;
 			}
 
 			try
 			{
-				LogMessage("processSettings() Checking jsonURL: " + jsonURL);
-				validURL1 = weeWXAppCommon.reallyGetWeather(jsonURL);
+				if(radtype.equals("image"))
+					validURL2 = loadOrDownloadImage(radarURL, weeWXApp.radarFilename, false) != null;
+				else if(radtype.equals("webpage"))
+					validURL2 = checkURL(radarURL, false);
+				else
+					validURL2 = false;
 			} catch(Exception e) {
 				doStackOutput(e);
 				errorStr = e.getLocalizedMessage();
-				validURL1 = false;
 			}
 
-			if(!validURL1)
+			if(errorStr != null && !errorStr.isBlank())
 			{
-				String finalErrorStr = errorStr;
-				runOnUiThread(() ->
-				{
-					b1.setEnabled(true);
-					b2.setEnabled(true);
-					dialog.dismiss();
-					new AlertDialog.Builder(this)
-							.setTitle(getAndroidString(R.string.wasnt_able_to_connect_radar_image))
-							.setMessage(finalErrorStr)
-							.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
-							.create()
-							.show();
-				});
-
-				bgStart = 0;
+				errorDialog(errorStr);
 				return;
 			}
 
-			if(!radarURL.isBlank())
+			if(!validURL2)
 			{
-				try
-				{
-					if(radtype.equals("image"))
-						validURL2 = weeWXAppCommon.loadOrDownloadImage(radarURL, weeWXApp.radarFilename, false) != null;
-					else if(radtype.equals("webpage"))
-						validURL2 = weeWXAppCommon.checkURL(radarURL, false);
-					else
-						validURL2 = false;
-				} catch(Exception e) {
-					doStackOutput(e);
-					errorStr = e.getLocalizedMessage();
-					validURL2 = false;
-				}
-
-				if(!validURL2)
-				{
-					String finalErrorStr = errorStr;
-					runOnUiThread(() ->
-					{
-						b1.setEnabled(true);
-						b2.setEnabled(true);
-						dialog.dismiss();
-						new AlertDialog.Builder(this)
-								.setTitle(getAndroidString(R.string.wasnt_able_to_connect_radar_image))
-								.setMessage(finalErrorStr)
-								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
-								.create()
-								.show();
-					});
-
-					bgStart = 0;
-					return;
-				}
+				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_radar_image));
+				return;
 			}
 
-			if(!webcamURL.isBlank())
+			LogMessage("processSettings() checking: " + webcamURL);
+
+			Bitmap bm = null;
+
+			try
 			{
-				LogMessage("processSettings() checking: " + webcamURL);
+				bm = loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename, true);
+			} catch(Exception e) {
+				LogMessage("processSettings() Error! e: " + e.getMessage(), true, KeyValue.e);
+				//doStackOutput(e);
+				errorStr = e.getLocalizedMessage();
+			}
 
-				try
-				{
-					Bitmap bm = null;
+			if(errorStr != null && !errorStr.isBlank())
+			{
+				errorDialog(errorStr);
+				return;
+			}
 
-					try
-					{
-						bm = weeWXAppCommon.loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename, true);
-					} catch(Exception e) {
-						LogMessage("processSettings() Error! e: " + e.getMessage(), true, KeyValue.e);
-						doStackOutput(e);
-					}
-
-					if(bm == null)
-					{
-						LogMessage("processSettings() bm is null!", true, KeyValue.w);
-
-						runOnUiThread(() ->
-						{
-							b1.setEnabled(true);
-							b2.setEnabled(true);
-							dialog.dismiss();
-							new AlertDialog.Builder(this)
-									.setTitle(getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
-									.setMessage(getAndroidString(R.string.wasnt_able_to_connect_webcam_url))
-									.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
-									.create()
-									.show();
-						});
-
-						bgStart = 0;
-						return;
-					}
-				} catch(Exception e) {
-					LogMessage("processSettings() Error! e: " + e.getMessage(), true, KeyValue.e);
-					doStackOutput(e);
-				}
+			if(bm == null)
+			{
+				LogMessage("processSettings() bm is null!", true, KeyValue.w);
+				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_webcam_url));
+				return;
 			}
 
 			appCustomURL = customURL.getText() != null ? customURL.getText().toString().strip() : "";
-			if(appCustomURL.isBlank())
+			try
 			{
-				LogMessage("processSettings() Checking url: " + CustomURL);
-
-				if(!CustomURL.isBlank() && !CustomURL.equals(weeWXApp.CustomURL_default))
+				if(appCustomURL.isBlank())
 				{
-					try
+					if(!CustomURL.isBlank() && !CustomURL.equals(weeWXApp.CustomURL_default))
 					{
-						if(weeWXAppCommon.checkURL(CustomURL, false))
-						{
-							validURL5 = true;
-						} else {
+						LogMessage("processSettings() Checking url: " + CustomURL);
+						validURL5 = checkURL(CustomURL, false);
+						if(!validURL5)
 							KeyValue.putVar("custom_url", null);
-							validURL5 = false;
-						}
-					} catch(Exception e) {
-						doStackOutput(e);
-						errorStr = e.getLocalizedMessage();
-						validURL5 = false;
 					}
-
-					if(!validURL5)
-					{
-						String finalErrorStr = errorStr;
-						runOnUiThread(() ->
-						{
-							b1.setEnabled(true);
-							b2.setEnabled(true);
-							dialog.dismiss();
-							new AlertDialog.Builder(this)
-									.setTitle(getAndroidString(R.string.wasnt_able_to_connect_custom_url))
-									.setMessage(finalErrorStr)
-									.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
-									.create()
-									.show();
-						});
-
-						bgStart = 0;
-						return;
-					}
-				}
-			} else {
-				try
-				{
+				} else {
 					LogMessage("processSettings() Checking url: " + appCustomURL);
-					validURL5 = weeWXAppCommon.checkURL(appCustomURL, true);
-				} catch(Exception e) {
-					doStackOutput(e);
-					errorStr = e.getLocalizedMessage();
-					validURL5 = false;
+					validURL5 = checkURL(appCustomURL, false);
 				}
+			} catch(Exception e) {
+				doStackOutput(e);
+				errorStr = e.getLocalizedMessage();
+			}
 
-				if(!validURL5)
-				{
-					String finalErrorStr = errorStr;
-					runOnUiThread(() ->
-					{
-						b1.setEnabled(true);
-						b2.setEnabled(true);
-						dialog.dismiss();
-						new AlertDialog.Builder(this)
-								.setTitle(getAndroidString(R.string.wasnt_able_to_connect_custom_url))
-								.setMessage(finalErrorStr)
-								.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
-								.create()
-								.show();
-					});
+			if(errorStr != null && !errorStr.isBlank())
+			{
+				errorDialog(errorStr);
+				return;
+			}
 
-					bgStart = 0;
-					return;
-				}
+			if(!validURL5)
+			{
+				String finalErrorStr = errorStr;
+				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_custom_url));
+				return;
 			}
 
 			if(KeyValue.countyName != null && KeyValue.countyName.isBlank())
@@ -2301,7 +2187,9 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("SETTINGS_URL", settingsURL.getText().toString());
 			KeyValue.putVar("UpdateFrequency", UpdateFrequency);
 			KeyValue.putVar("UpdateInterval", UpdateInterval);
-			KeyValue.putVar("JSON_URL", jsonURL);
+
+			for(int i = 0; i < json_urls.length; i++)
+				KeyValue.putVar(json_keys[i] + "_url", json_urls[i]);
 
 			if(forecastURL == null || forecastURL.isBlank())
 			{
@@ -2419,6 +2307,23 @@ public class MainActivity extends FragmentActivity
 		});
 	}
 
+	void errorDialog(String errorStr)
+	{
+		bgStart = 0;
+		runOnUiThread(() ->
+		{
+			b1.setEnabled(true);
+			b2.setEnabled(true);
+			dialog.dismiss();
+			new AlertDialog.Builder(this)
+					.setTitle(getAndroidString(R.string.error))
+					.setMessage(errorStr)
+					.setPositiveButton(getAndroidString(R.string.ill_fix_and_try_again), null)
+					.create()
+					.show();
+		});
+	}
+
 	static void runDelayed(long delayMs, Runnable task)
 	{
 		new Handler(Looper.getMainLooper()).postDelayed(task, delayMs);
@@ -2430,9 +2335,6 @@ public class MainActivity extends FragmentActivity
 
 		if(str.equals(weeWXAppCommon.INIGO_INTENT))
 			showUpdateAvailable();
-
-		if(str.equals(weeWXAppCommon.JSON_INTENT))
-			showUpdateAvailable2();
 	};
 
 	public boolean isViewPagerNull()

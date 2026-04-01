@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL-ka xogta ayaa maran</string>
     <string name="delete_all_data">Tirtir dhammaan xogta iyo xiritaanka</string>
     <string name="empty">Maran ah</string>
+    <string name="error">Khalad!</string>
     <string name="error_occurred_while_attempting_to_update">Khalad ayaa dhacay intii la isku dayay in la cusbooneysiisto isticmaalka</string>
     <string name="every_5_minutes">5 daqiiqo kasta</string>
     <string name="every_10_minutes">10 daqiiqo kasta</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL waxaa loo dejiyay asalka ama madhnaaday</string>
     <string name="use_exact_alarm">Adeegso waqtiyada casriyeynta saxda ah</string>
     <string name="wasnt_able_to_connect_custom_url">Ma awoodin inuu ku xirmo ama ka soo dejiyo URL caadada ee la cayimay</string>
-    <string name="wasnt_able_to_connect_data_txt">Ma awoodin inuu ku xirmo ama kala sooco xogta.txt server-kaaga</string>
     <string name="wasnt_able_to_connect_forecast">Ma awoodin inuu isku xidho ama soo dejiyo saadaasha</string>
-    <string name="wasnt_able_to_connect_or_download">Ma awoodin inuu isku xidho ama soo dejiyo saadaasha</string>
+    <string name="wasnt_able_to_connect_or_download">Ma awoodin in uu ku xidho ama ka soo dejiyo %1$s %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ma awoodin inay ku xirato ama kala soo bixiso radar = muuqaal internetka</string>
     <string name="wasnt_able_to_connect_settings">Ma awoodin inuu ku xirmo ama ka soo dejiyo dejimaha server-kaaga</string>
     <string name="wasnt_able_to_connect_webcam_url">Ma awoodin inuu ku xirmo ama ka soo dejisto sawirka webcam server-kaaga</string>

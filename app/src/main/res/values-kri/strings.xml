@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data URL bin blank</string>
     <string name="delete_all_data">Dilit ɔl di data ɛn shutdɔwn</string>
     <string name="empty">Ɛmti</string>
+    <string name="error">Mistek!</string>
     <string name="error_occurred_while_attempting_to_update">Wan mistek bin apin we dɛn bin de tray fɔ ɔpdet usay dɛn de yuz am</string>
     <string name="every_5_minutes">Ɛvri 5 minit</string>
     <string name="every_10_minutes">Ɛvri 10 minit</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL bin set to di difɔlt ɔ bin ɛmti</string>
     <string name="use_exact_alarm">Yuz di rayt tɛm fɔ ɔpdet di tɛm</string>
     <string name="wasnt_able_to_connect_custom_url">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod frɔm di kɔstɔm URL we dɛn spɛsifa</string>
-    <string name="wasnt_able_to_connect_data_txt">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod data.txt frɔm yu sava</string>
     <string name="wasnt_able_to_connect_forecast">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod di fɔkɔs</string>
-    <string name="wasnt_able_to_connect_or_download">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod di fɔkɔs</string>
+    <string name="wasnt_able_to_connect_or_download">Nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod %1$s frɔm %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">No bin ebul fɔ kɔnɛkt ɔ dawnlod reda= imej frɔm di intanɛt</string>
     <string name="wasnt_able_to_connect_settings">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod di sɛtin dɛn frɔm yu sava</string>
     <string name="wasnt_able_to_connect_webcam_url">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod wan wɛbkam imej frɔm yu sava</string>

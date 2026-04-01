@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Blangko ang Data URL</string>
     <string name="delete_all_data">Delete Ang Tanan nga Data kag Pagpatay</string>
     <string name="empty">Wala sulod</string>
+    <string name="error">Kalautan!</string>
     <string name="error_occurred_while_attempting_to_update">Nahitabo ang isa ka sayop samtang ginatinguhaan nga i-update ang paggamit</string>
     <string name="every_5_minutes">Kada 5 Minutes</string>
     <string name="every_10_minutes">Kada 10 Minutes</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Ang URL ginbutang sa default ukon wala sing unod</string>
     <string name="use_exact_alarm">Gamita ang eksakto nga mga oras sa pag-update</string>
     <string name="wasnt_able_to_connect_custom_url">Indi makahimo sa pagkonektar ukon pag-download gikan sa custom URL nga gintumod</string>
-    <string name="wasnt_able_to_connect_data_txt">Indi makahimo sa pagkonektar ukon pag-download sang data.txt gikan sa imo server</string>
     <string name="wasnt_able_to_connect_forecast">Wala\'y mahimo nga magkonektar o mag-download sa forecast</string>
-    <string name="wasnt_able_to_connect_or_download">Wala\'y mahimo nga magkonektar o mag-download sa forecast</string>
+    <string name="wasnt_able_to_connect_or_download">Indi makakonektar ukon maka-download sang %1$s gikan sa %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Indi makahimo sa pagkonektar ukon pag-download sang radar= imahe gikan sa internet</string>
     <string name="wasnt_able_to_connect_settings">Indi makahimo sa pagkonektar ukon pag-download sang mga setting gikan sa imo server</string>
     <string name="wasnt_able_to_connect_webcam_url">Indi makahimo sa pagkonektar ukon pag-download sang isa ka imahe sang webcam gikan sa imo server</string>

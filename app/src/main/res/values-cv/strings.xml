@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Даннăйсен URL-адресĕ пушă пулнă</string>
     <string name="delete_all_data">Пур даннăйсене тата хупăнăва пĕтерĕр</string>
     <string name="empty">Пушӑ</string>
+    <string name="error">Йӑнӑш!</string>
     <string name="error_occurred_while_attempting_to_update">Усă курма çĕнетме хăтланнă чухне йăнăш пулнă</string>
     <string name="every_5_minutes">Кашни 5 минут</string>
     <string name="every_10_minutes">Кашни 10 минут</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL-адреса стандартлă е пушă пулнă</string>
     <string name="use_exact_alarm">Тĕрĕс çĕнетÿ вăхăчĕсемпе усă курăр</string>
     <string name="wasnt_able_to_connect_custom_url">Ятарлă URL-адресран çыхăнтарма е скачать тума пултарайман</string>
-    <string name="wasnt_able_to_connect_data_txt">Хăвăрăн сервертан даннăйсене çыхăнтарма е скачать тума пултарайман</string>
     <string name="wasnt_able_to_connect_forecast">Прогноза çыхăнтарма е скачать тума пултарайман</string>
-    <string name="wasnt_able_to_connect_or_download">Прогноза çыхăнтарма е скачать тума пултарайман</string>
+    <string name="wasnt_able_to_connect_or_download">%1$s-а %2$s-ран ҫыхӑнтарма е скачать тума май килмерӗ</string>
     <string name="wasnt_able_to_connect_radar_image">Интернетран радар= радар= ӳкерчӗке ҫыхӑнтарма е скачать тума пултарайман</string>
     <string name="wasnt_able_to_connect_settings">Настройкăсене сирĕн сервертан çыхăнтарма е скачать тума пултарайман</string>
     <string name="wasnt_able_to_connect_webcam_url">Сирĕн сервертан веб-камера ÿкерчĕкне çыхăнтарма е скачать тума пултарайман</string>

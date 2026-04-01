@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Адыррақәа URL ҭацәын</string>
     <string name="delete_all_data">Адыррақәа зегьы ԥыхтәуп, насгьы аҵәаӷәара</string>
     <string name="empty">Иҭацәу</string>
+    <string name="error">Агха!</string>
     <string name="error_occurred_while_attempting_to_update">Ахархәара арҿыцра аҽазышәараан агха ҟалеит</string>
     <string name="every_5_minutes">Минуҭцыԥхьаӡа 5</string>
     <string name="every_10_minutes">Минуҭцыԥхьаӡа 10</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL еиқәыршәан стандартла мамзаргьы иҭацәын</string>
     <string name="use_exact_alarm">Аҿыцра аамҭаҵәҟьа ахархәара</string>
     <string name="wasnt_able_to_connect_custom_url">Иарбоу URL аҟынтәи аидҳәалара ма ахәыҵаҵара алшара амамызт</string>
-    <string name="wasnt_able_to_connect_data_txt">Усервер аҟынтәи data.txt еидызкыло ма ихәыҵаҳәҳәар алымшеит</string>
     <string name="wasnt_able_to_connect_forecast">Аԥхьарбара аидҳәалара ма ахәыҵахра алшара амамызт</string>
-    <string name="wasnt_able_to_connect_or_download">Аԥхьарбара аидҳәалара ма ахәыҵахра алшара амамызт</string>
+    <string name="wasnt_able_to_connect_or_download">Аимадара ма ахагалара %1$s %2$s аҟынтә иалымшеит</string>
     <string name="wasnt_able_to_connect_radar_image">Интернет аҟынтәи радар=исахьа аҿаҳәара ма ахәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_settings">Усервер аҟынтәи архиарақәа реимадара ма рыхәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_webcam_url">Усервер аҟынтәи ауеб-камера асахьа аидҳәалара ма ахәыҵаҵара алшара амамызт</string>

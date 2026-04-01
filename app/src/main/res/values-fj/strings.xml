@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Ea nunu vinaka o Data URL</string>
     <string name="delete_all_data">Vakatulewa Na Data kei Sutdor</string>
     <string name="empty">Lala</string>
+    <string name="error">Cala!</string>
     <string name="error_occurred_while_attempting_to_update">E dua na cala e yaco ena nona tovolea me vakavoui na vakayagataki</string>
     <string name="every_5_minutes">Na 5 Mi 5 Mi 5 Mi</string>
     <string name="every_10_minutes">Ena veiya 10 Minuti</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">A tu vakarau na URL vei ira na vakaloloku se tawayaga</string>
     <string name="use_exact_alarm">Vakayagataka vinaka na gauna ni vakavoui na gauna</string>
     <string name="wasnt_able_to_connect_custom_url">Sa sega ni rawa ni semata se lavetaka mai na ivakarau ni kena ivakarau na URL</string>
-    <string name="wasnt_able_to_connect_data_txt">E sega ni rawa ni semata se lavetaka na itukutuku.txt mai na nomu cakacaka ni veiqaravi</string>
     <string name="wasnt_able_to_connect_forecast">Sa sega ni rawa me ra semata se lavetaka na itukutuku</string>
-    <string name="wasnt_able_to_connect_or_download">Sa sega ni rawa me ra semata se lavetaka na itukutuku</string>
+    <string name="wasnt_able_to_connect_or_download">E sega ni rawa ni semati se lavetaki na %1$s mai na %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">E sega ni rawa ni semata se lavetaka na iyaloyalo mai na internet</string>
     <string name="wasnt_able_to_connect_settings">Sa sega ni rawa me semati se lavetaka na ituvatuva mai na nomu cakacaka</string>
     <string name="wasnt_able_to_connect_webcam_url">Sa sega ni rawa me ra semata se lavetaka e dua na iyaloyalo ni webcam mai na nomu cakacaka ni cakacaka</string>

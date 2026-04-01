@@ -31,8 +31,6 @@ import com.caverock.androidsvg.PreserveAspectRatio;
 import com.caverock.androidsvg.SVG;
 import com.github.evilbunny2008.colourpicker.CPEditText;
 
-import org.json.JSONObject;
-
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -211,10 +209,7 @@ public class weeWXApp extends Application
 	private static Colours colours;
 	private static int lastNightMode = -1;
 
-	final static int minimum_inigo_version = 4000;
-	final static int minimum_inigo_version_for_alerts = 1000009;
-	final static int minimum_inigo_bits_for_alerts = 305;
-	final static int minimum_inigo_json_version = 2000000;
+	final static int minimum_inigo_version = 2000006;
 
 	final static boolean radarforecast_default = false;
 	final static boolean disableSwipeOnRadar_default = false;
@@ -321,29 +316,8 @@ public class weeWXApp extends Application
 		instance = this;
 
 		Log.d("weeWXApp", "Attempting to load JSON data from shared prefs...");
-
-		String line = (String)KeyValue.readVar("LastJsonDownload", "");
-
-		JSONObject jsonObject = null;
-
-		try
-		{
-			jsonObject = new JSONObject(line);
-			Log.d("weeWXApp", "Successfully loaded JSON data from shared prefs...");
-		} catch(Exception ignored) {}
-
-		if(jsonObject != null && jsonObject.length() > 0)
-		{
-			KeyValue.parseDicts(jsonObject);
-
-			if(jsonObject.has("version"))
-			{
-				int version = jsonObject.optInt("version", 0);
-				Log.d("weeWXApp", "Inigo plugin version: " + version);
-			}
-		} else {
-			Log.d("weeWXApp", "Error loading JSON data from shared prefs...");
-		}
+		if(!KeyValue.parseDicts())
+			Log.e("weeWXApp", "Failed to load JSON data from shared prefs...");
 
 		// Create the channel with the custom sound
 		audioAttributes = new AudioAttributes.Builder()
@@ -416,23 +390,15 @@ public class weeWXApp extends Application
 
 		fc_defaults.add(fcdef);
 
-//		try
-//		{
-//			// Preload the weeWXAppCommon, KeyValue and WebViewPreloader classes
-//			Class.forName("com.odiousapps.weewxweather.weeWXAppCommon");
-//			Class.forName("com.odiousapps.weewxweather.KeyValue");
-//			Class.forName("com.odiousapps.weewxweather.WebViewPreloader");
-//		} catch(ClassNotFoundException ignored) {}
-
 		PackageManager pm = weeWXApp.getInstance().getPackageManager();
 
 		int major = 0;
 		try
 		{
 			String[] possibleWebViews = {
-					"com.google.android.webview",
-					"com.android.webview",
-					"com.android.chrome"
+				"com.google.android.webview",
+				"com.android.webview",
+				"com.android.chrome"
 			};
 
 			for (String pkg : possibleWebViews) {
@@ -524,6 +490,8 @@ public class weeWXApp extends Application
 		KeyValue.countyName = (String)KeyValue.readVar("CountyName", "");
 		KeyValue.bomLocation = (String)KeyValue.readVar("bomLocation", "");
 		KeyValue.bomGeohash = (String)KeyValue.readVar("bomGeohash", "");
+
+		KeyValue.parseDicts();
 	}
 
 	@Override

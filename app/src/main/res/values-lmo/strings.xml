@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">I analist g\'han cumincià a duperà i dati</string>
     <string name="delete_all_data">Impara i dats e illustrazion de l\'ADN</string>
     <string name="empty">Vœid</string>
+    <string name="error">Error!</string>
     <string name="error_occurred_while_attempting_to_update">Un\'idea l\'è stada fada per la prima volta in del prucess de test</string>
     <string name="every_5_minutes">Tüt i dü i 2</string>
     <string name="every_10_minutes">Tüt i 100 chilo</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">L\'aprovaziun l\'è stada duperada per la prima volta in de la seziun</string>
     <string name="use_exact_alarm">Spero che l\'è la noster analista de la noster tecnologia de la noster lista</string>
     <string name="wasnt_able_to_connect_custom_url">L\'è minga facil per i utent de la scheda de la pagina del telefonin de la scheda</string>
-    <string name="wasnt_able_to_connect_data_txt">L\'installaziun de la scheda de credit l\'è minga dispunibel per la vòstra aplicaziun</string>
     <string name="wasnt_able_to_connect_forecast">L\'è minga facil per i utent de la scheda</string>
-    <string name="wasnt_able_to_connect_or_download">L\'è minga facil per i utent de la scheda</string>
+    <string name="wasnt_able_to_connect_or_download">L\'è minga stà bon de culegà o scaricà %1$s de %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">L\'installaziun de la fotocamera l\'è minga sultant un utent che g\'ha denter di dispusitif</string>
     <string name="wasnt_able_to_connect_settings">L\'installaziun de la scheda de credit pœu vèss duperà per la vòstra aplicaziun</string>
     <string name="wasnt_able_to_connect_webcam_url">L\'è minga facil per i utent che g\'he vœut de duperà i file de la pagina</string>

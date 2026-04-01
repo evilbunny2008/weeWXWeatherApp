@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL lenformasyon ti vid</string>
     <string name="delete_all_data">Efas tou lenformasyon ek arete</string>
     <string name="empty">Vid</string>
+    <string name="error">Lerer!</string>
     <string name="error_occurred_while_attempting_to_update">En lerer ti arive pandan ki i ti pe esey met li azour</string>
     <string name="every_5_minutes">Tou le 5 Minit</string>
     <string name="every_10_minutes">Tou le 10 Minit</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ti ganny mete lo defo oubyen ti vid</string>
     <string name="use_exact_alarm">Servi bann ler egzakt</string>
     <string name="wasnt_able_to_connect_custom_url">Pa ti kapab konekte oubyen telesarze sorti kot URL personnalize ki ti ganny spesifye</string>
-    <string name="wasnt_able_to_connect_data_txt">Pa ti kapab konekte oubyen telesarz lenformasyon.etks sorti kot ou server</string>
     <string name="wasnt_able_to_connect_forecast">Pa ti kapab konekte oubyen telesarz previzyon</string>
-    <string name="wasnt_able_to_connect_or_download">Pa ti kapab konekte oubyen telesarz previzyon</string>
+    <string name="wasnt_able_to_connect_or_download">pa\'n kapab konekte ou telesarz %1$s sorti kot %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Pa ti kapab konekte oubyen telesarz radar= zimaz sorti dan internet</string>
     <string name="wasnt_able_to_connect_settings">Pa ti kapab konekte oubyen telesarz bann paramet avek ou server</string>
     <string name="wasnt_able_to_connect_webcam_url">Pa ti kapab konekte oubyen telesarz en zimaz web avek ou server</string>

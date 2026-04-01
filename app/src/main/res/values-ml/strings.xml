@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">ഡാറ്റ URL ശൂന്യമായിരുന്നു</string>
     <string name="delete_all_data">എല്ലാ ഡാറ്റയും ഷട്ട്ഡൗണും ഇല്ലാതാക്കുക</string>
     <string name="empty">ശൂന്യം</string>
+    <string name="error">പിശക്!</string>
     <string name="error_occurred_while_attempting_to_update">ഉപയോഗം അപ്ഡേറ്റ് ചെയ്യാൻ ശ്രമിക്കുന്നതിനിടെ ഒരു പിശക് സംഭവിച്ചു</string>
     <string name="every_5_minutes">ഓരോ 5 മിനിറ്റിലും</string>
     <string name="every_10_minutes">ഓരോ 10 മിനിറ്റിലും</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL സ്ഥിരസ്ഥിതിയായി സജ്ജമാക്കി അല്ലെങ്കിൽ ശൂന്യമായിരുന്നു</string>
     <string name="use_exact_alarm">കൃത്യമായ അപ്ഡേറ്റ് സമയം ഉപയോഗിക്കുക</string>
     <string name="wasnt_able_to_connect_custom_url">വ്യക്തമാക്കിയ ഇഷ്‌ടാനുസൃത URL-ൽ നിന്ന് കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
-    <string name="wasnt_able_to_connect_data_txt">നിങ്ങളുടെ സെർവറിൽ നിന്ന് data.txt കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_forecast">പ്രവചനം ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
-    <string name="wasnt_able_to_connect_or_download">പ്രവചനം ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s-ൽ നിന്ന് %1$s കണക്റ്റ് ചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_radar_image">ഇൻ്റർനെറ്റിൽ നിന്ന് റഡാർ= ഇമേജ് ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_settings">നിങ്ങളുടെ സെർവറിൽ നിന്ന് ക്രമീകരണങ്ങൾ ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_webcam_url">നിങ്ങളുടെ സെർവറിൽ നിന്ന് ഒരു വെബ്‌ക്യാം ഇമേജ് കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>

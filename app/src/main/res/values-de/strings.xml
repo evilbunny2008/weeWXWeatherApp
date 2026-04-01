@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Die Daten-URL war leer</string>
     <string name="delete_all_data">Alle Daten löschen und herunterfahren</string>
     <string name="empty">Leer</string>
+    <string name="error">Fehler!</string>
     <string name="error_occurred_while_attempting_to_update">Beim Versuch, die Nutzung zu aktualisieren, ist ein Fehler aufgetreten</string>
     <string name="every_5_minutes">Alle 5 Minuten</string>
     <string name="every_10_minutes">Alle 10 Minuten</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Die URL wurde auf die Standardeinstellung gesetzt oder war leer</string>
     <string name="use_exact_alarm">Verwenden Sie genaue Aktualisierungszeiten</string>
     <string name="wasnt_able_to_connect_custom_url">Es konnte keine Verbindung hergestellt oder von der angegebenen benutzerdefinierten URL heruntergeladen werden</string>
-    <string name="wasnt_able_to_connect_data_txt">Es konnte keine Verbindung zu Ihrem Server hergestellt oder data.txt heruntergeladen werden</string>
     <string name="wasnt_able_to_connect_forecast">Es konnte keine Verbindung hergestellt oder die Prognose heruntergeladen werden</string>
-    <string name="wasnt_able_to_connect_or_download">Es konnte keine Verbindung hergestellt oder die Prognose heruntergeladen werden</string>
+    <string name="wasnt_able_to_connect_or_download">Es konnte keine Verbindung zu %1$s hergestellt oder von %2$s heruntergeladen werden</string>
     <string name="wasnt_able_to_connect_radar_image">Es konnte keine Verbindung hergestellt oder das Radar=Bild aus dem Internet heruntergeladen werden</string>
     <string name="wasnt_able_to_connect_settings">Es konnte keine Verbindung zu Ihrem Server hergestellt oder die Einstellungen von diesem heruntergeladen werden</string>
     <string name="wasnt_able_to_connect_webcam_url">Es konnte keine Verbindung zu Ihrem Server hergestellt oder ein Webcam-Bild von diesem heruntergeladen werden</string>

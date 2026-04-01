@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL ទិន្នន័យគឺទទេ</string>
     <string name="delete_all_data">លុបទិន្នន័យទាំងអស់ហើយបិទ</string>
     <string name="empty">តមនេរ</string>
+    <string name="error">កំហុស!</string>
     <string name="error_occurred_while_attempting_to_update">កំហុសមួយបានកើតឡើងខណៈពេលប៉ុនប៉ងធ្វើបច្ចុប្បន្នភាពការប្រើប្រាស់</string>
     <string name="every_5_minutes">រៀងរាល់ 5 នាទីម្តង</string>
     <string name="every_10_minutes">រៀងរាល់ 10 នាទីម្តង</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ត្រូវបានកំណត់ទៅលំនាំដើមឬទទេ</string>
     <string name="use_exact_alarm">ប្រើពេលវេលាធ្វើបច្ចុប្បន្នភាពពិតប្រាកដ</string>
     <string name="wasnt_able_to_connect_custom_url">មិនអាចភ្ជាប់ឬទាញយកពី URL ផ្ទាល់ខ្លួនដែលបានបញ្ជាក់</string>
-    <string name="wasnt_able_to_connect_data_txt">មិនអាចភ្ជាប់ឬទាញយកទិន្នន័យពីម៉ាស៊ីនមេរបស់អ្នកទេ</string>
     <string name="wasnt_able_to_connect_forecast">មិនអាចភ្ជាប់ឬទាញយកការព្យាករណ៍បានទេ។</string>
-    <string name="wasnt_able_to_connect_or_download">មិនអាចភ្ជាប់ឬទាញយកការព្យាករណ៍បានទេ។</string>
+    <string name="wasnt_able_to_connect_or_download">មិនអាចភ្ជាប់ ឬទាញយក %1$s ពី %2$s បានទេ។</string>
     <string name="wasnt_able_to_connect_radar_image">មិនអាចភ្ជាប់ឬទាញយករ៉ាដា = រូបភាពពីអ៊ីនធឺណិត</string>
     <string name="wasnt_able_to_connect_settings">មិនអាចភ្ជាប់ឬទាញយកការកំណត់ពីម៉ាស៊ីនមេរបស់អ្នកបានទេ</string>
     <string name="wasnt_able_to_connect_webcam_url">មិនអាចភ្ជាប់ឬទាញយករូបភាពវេបខេមពីម៉ាស៊ីនមេរបស់អ្នកទេ</string>

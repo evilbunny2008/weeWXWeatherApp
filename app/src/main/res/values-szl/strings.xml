@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Dane URL było prōzne</string>
     <string name="delete_all_data">Usuń wszyske dane i Shutdown</string>
     <string name="empty">Prōzny</string>
+    <string name="error">Błōnd!</string>
     <string name="error_occurred_while_attempting_to_update">Ukozoł sie błōnd przi prōbiyniu zaktualizowanio używanio</string>
     <string name="every_5_minutes">Kożdo 5 Minuty</string>
     <string name="every_10_minutes">Kożde 10 Minuty</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL bōł ustawiōny na domyślnie abo bōł prōzny</string>
     <string name="use_exact_alarm">Użyj akuratnych czasōw aktualizacyje</string>
     <string name="wasnt_able_to_connect_custom_url">Niy może sie łōnczyć ani pobrać ze niysztandardowego URL ôkryślōnego</string>
-    <string name="wasnt_able_to_connect_data_txt">Niy można połōnczyć ani pobiyrać dane.txt ze swojigo serwera</string>
     <string name="wasnt_able_to_connect_forecast">Niy może sie łōnczyć ani pobrać prognozy</string>
-    <string name="wasnt_able_to_connect_or_download">Niy może sie łōnczyć ani pobrać prognozy</string>
+    <string name="wasnt_able_to_connect_or_download">Niy mōg sie połōnczyć ani pobrać %1$s z %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Niy można połōnczyć ani pobiyrać ôbraz radar=</string>
     <string name="wasnt_able_to_connect_settings">Niy poradzić połōnczyć ani pobiyrać ustawiynia ze swojigo serwera</string>
     <string name="wasnt_able_to_connect_webcam_url">Niy może sie łōnczyć ani pobrać ôbrazu kamery internetowego ze swojigo serwera</string>

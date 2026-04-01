@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">ʻAʻole paʻa kaʻikepili o URL</string>
     <string name="delete_all_data">Hoʻopau i nāʻikepili āpau a pani</string>
     <string name="empty">Mauʻa</string>
+    <string name="error">Kupa!</string>
     <string name="error_occurred_while_attempting_to_update">Ua hala kekahi hewa i ka wā e ho\'āʻo ana e hoʻoponopono i ka hoʻohanaʻana</string>
     <string name="every_5_minutes">Kēlā me kēia 5 mau minuke</string>
     <string name="every_10_minutes">I kēlā me kēia 10 mau minuke</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Ua hoʻonohonohoʻiaʻo URL i ka pale a iʻoleʻole</string>
     <string name="use_exact_alarm">E hoʻohana i nā manawa hou</string>
     <string name="wasnt_able_to_connect_custom_url">ʻAʻole i hiki ke hoʻopili a hoʻoihoʻia paha mai ka URL maʻamau i kuhikuhiʻia</string>
-    <string name="wasnt_able_to_connect_data_txt">ʻAʻole i hiki ke hoʻopili a hoʻoiho i ka\'ikepili.Txt mai kāu kikowaena</string>
     <string name="wasnt_able_to_connect_forecast">ʻAʻole hiki ke hoʻopili a hoʻoiho i ka wānana</string>
-    <string name="wasnt_able_to_connect_or_download">ʻAʻole hiki ke hoʻopili a hoʻoiho i ka wānana</string>
+    <string name="wasnt_able_to_connect_or_download">ʻAʻole hiki iā ʻoe ke hoʻohui a hoʻoiho paha iā %1$s mai %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">ʻAʻole i hiki ke hoʻopili a hoʻoiho i ka radar = kiʻi mai ka pūnaewele</string>
     <string name="wasnt_able_to_connect_settings">ʻAʻole i hiki ke hoʻopili a hoʻoiho i nā hoʻonohonoho mai kāu kikowaena</string>
     <string name="wasnt_able_to_connect_webcam_url">ʻAʻole hiki iā ia ke hoʻopili a hoʻoiho i kahi kiʻi pūnaewele pūnaewele mai kāu kikowaena</string>

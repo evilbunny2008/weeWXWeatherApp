@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL datos ka\'ach ti\' sak</string>
     <string name="delete_all_data">Tselik tuláakal le datos yéetel le a\'alajil t\'aan</string>
     <string name="empty">Báasiyo</string>
+    <string name="error">K\'aas!</string>
     <string name="error_occurred_while_attempting_to_update">Ocurrió jump\'éel ba\'alo\' mientras u intenta actualizar búukinta\'al</string>
     <string name="every_5_minutes">Amal 5 Minutos</string>
     <string name="every_10_minutes">Cada 10 minutos</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL bin establecido ti\' le predeterminado wa ka\'ach vacío</string>
     <string name="use_exact_alarm">Utilizar k\'iinil ka\' exacto</string>
     <string name="wasnt_able_to_connect_custom_url">Ma\' bin capaz u conectar wa descargar ti\' le URL personalizada especificada</string>
-    <string name="wasnt_able_to_connect_data_txt">Ma\' bin capaz u conectar wa descargar datos.txt tak u servidor</string>
     <string name="wasnt_able_to_connect_forecast">Ma\' bin capaz u conectar wa descargar le pronóstico</string>
-    <string name="wasnt_able_to_connect_or_download">Ma\' bin capaz u conectar wa descargar le pronóstico</string>
+    <string name="wasnt_able_to_connect_or_download">Ma\' páajchaj u conectar mix u descargar %1$s ti\' %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ma\' bin capaz u conectar wa descargar radar = wíimbala\' tak internet</string>
     <string name="wasnt_able_to_connect_settings">Ma\' bin capaz u conectar wa descargar le ajustes tak u servidor</string>
     <string name="wasnt_able_to_connect_webcam_url">Ma\' bin capaz u conectar wa descargar jump\'éel wíimbala\' webcam tak u servidor</string>

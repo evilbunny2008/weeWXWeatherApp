@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Tietojen URL-osoite oli tyhjä</string>
     <string name="delete_all_data">Poista kaikki tiedot ja sammuta</string>
     <string name="empty">Tyhjä</string>
+    <string name="error">Virhe!</string>
     <string name="error_occurred_while_attempting_to_update">Virhe yritettäessä päivittää käyttöä</string>
     <string name="every_5_minutes">5 minuutin välein</string>
     <string name="every_10_minutes">10 minuutin välein</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL-osoite asetettiin oletusarvoon tai se oli tyhjä</string>
     <string name="use_exact_alarm">Käytä tarkkoja päivitysaikoja</string>
     <string name="wasnt_able_to_connect_custom_url">Ei voitu muodostaa yhteyttä tai ladata määritetystä muokatusta URL-osoitteesta</string>
-    <string name="wasnt_able_to_connect_data_txt">Data.txt-tiedostoa ei voitu muodostaa tai ladata palvelimeltasi</string>
     <string name="wasnt_able_to_connect_forecast">Ennusteen muodostaminen tai lataaminen ei onnistunut</string>
-    <string name="wasnt_able_to_connect_or_download">Ennusteen muodostaminen tai lataaminen ei onnistunut</string>
+    <string name="wasnt_able_to_connect_or_download">Ei voitu muodostaa yhteyttä tai ladata tiedostoa %1$s kohteesta %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ei voinut muodostaa yhteyttä tai ladata tutkakuvaa Internetistä</string>
     <string name="wasnt_able_to_connect_settings">Yhteyden muodostaminen tai asetusten lataaminen palvelimeltasi ei onnistunut</string>
     <string name="wasnt_able_to_connect_webcam_url">Yhteyden muodostaminen tai verkkokamerakuvan lataaminen palvelimeltasi ei onnistunut</string>

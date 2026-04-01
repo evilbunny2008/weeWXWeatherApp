@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">डेटा यूआरएल खाली था</string>
     <string name="delete_all_data">सभी डेटा हटाएँ और शटडाउन करें</string>
     <string name="empty">खाली</string>
+    <string name="error">गलती!</string>
     <string name="error_occurred_while_attempting_to_update">उपयोग को अद्यतन करने का प्रयास करते समय एक त्रुटि उत्पन्न हुई</string>
     <string name="every_5_minutes">हर 5 मिनट में</string>
     <string name="every_10_minutes">हर 10 मिनट में</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">यूआरएल डिफ़ॉल्ट पर सेट था या खाली था</string>
     <string name="use_exact_alarm">सटीक अद्यतन समय का उपयोग करें</string>
     <string name="wasnt_able_to_connect_custom_url">निर्दिष्ट कस्टम यूआरएल से कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
-    <string name="wasnt_able_to_connect_data_txt">आपके सर्वर से data.txt कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
     <string name="wasnt_able_to_connect_forecast">पूर्वानुमान को कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
-    <string name="wasnt_able_to_connect_or_download">पूर्वानुमान को कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s से %1$s को कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
     <string name="wasnt_able_to_connect_radar_image">इंटरनेट से रडार = छवि को कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
     <string name="wasnt_able_to_connect_settings">आपके सर्वर से सेटिंग्स कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>
     <string name="wasnt_able_to_connect_webcam_url">आपके सर्वर से वेबकैम छवि कनेक्ट या डाउनलोड करने में सक्षम नहीं था</string>

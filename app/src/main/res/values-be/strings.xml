@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL даных быў пустым</string>
     <string name="delete_all_data">Выдаліць усе дадзеныя і выключыць</string>
     <string name="empty">Пусты</string>
+    <string name="error">Памылка!</string>
     <string name="error_occurred_while_attempting_to_update">Пры спробе абнавіць выкарыстанне адбылася памылка</string>
     <string name="every_5_minutes">Кожныя 5 хвілін</string>
     <string name="every_10_minutes">Кожныя 10 хвілін</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL быў усталяваны па змаўчанні або пусты</string>
     <string name="use_exact_alarm">Выкарыстоўвайце дакладны час абнаўлення</string>
     <string name="wasnt_able_to_connect_custom_url">Не ўдалося падключыцца або спампаваць з указанага карыстальніцкага URL</string>
-    <string name="wasnt_able_to_connect_data_txt">Не ўдалося падключыцца або загрузіць data.txt з вашага сервера</string>
     <string name="wasnt_able_to_connect_forecast">Не ўдалося падключыцца або спампаваць прагноз</string>
-    <string name="wasnt_able_to_connect_or_download">Не ўдалося падключыцца або спампаваць прагноз</string>
+    <string name="wasnt_able_to_connect_or_download">Не ўдалося падключыцца або спампаваць %1$s з %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Не ўдалося падключыцца або загрузіць radar= выяву з Інтэрнэту</string>
     <string name="wasnt_able_to_connect_settings">Не ўдалося падключыцца або загрузіць налады з вашага сервера</string>
     <string name="wasnt_able_to_connect_webcam_url">Не ўдалося падключыцца або спампаваць выяву вэб-камеры з вашага сервера</string>

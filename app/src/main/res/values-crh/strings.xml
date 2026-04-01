@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Малюмат URL бош эди</string>
     <string name="delete_all_data">Бутюн малюматны ве джельп этмекни ёкъ этинъиз</string>
     <string name="empty">Бош</string>
+    <string name="error">Хата!</string>
     <string name="error_occurred_while_attempting_to_update">Къулланувны янъыландырмагъа тырышкъанда хата олып кечти</string>
     <string name="every_5_minutes">Эр 5 дакъкъа</string>
     <string name="every_10_minutes">Эр 10 дакъкъада</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL стандарткъа къоюлды я да бош эди</string>
     <string name="use_exact_alarm">Янъыланув вакъытларыны догъру къулланынъыз</string>
     <string name="wasnt_able_to_connect_custom_url">Косьтерильген махсус URL-ден багълап я да юклеп оламады</string>
-    <string name="wasnt_able_to_connect_data_txt">Серверинъизден data.txt багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_connect_forecast">Прогнозны багълап я да юклеп оламады</string>
-    <string name="wasnt_able_to_connect_or_download">Прогнозны багълап я да юклеп оламады</string>
+    <string name="wasnt_able_to_connect_or_download">%1$s ни %2$s дан багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_connect_radar_image">Интернеттен радар= ресимни багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_connect_settings">Серверинъизден параметрлерни багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_connect_webcam_url">Серверинъизден веб-камера ресимини багълап я да юклеп оламады</string>

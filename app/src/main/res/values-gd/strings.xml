@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Bha URL an dàta falamh</string>
     <string name="delete_all_data">Sguab às a h-uile dàta agus dùnadh</string>
     <string name="empty">Falamh</string>
+    <string name="error">Mearachd!</string>
     <string name="error_occurred_while_attempting_to_update">Thachair mearachd fhad \'s a bha sinn a\' feuchainn ri cleachdadh ùrachadh</string>
     <string name="every_5_minutes">A h-uile 5 mionaidean</string>
     <string name="every_10_minutes">A h-uile 10 mionaidean</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Chaidh URL a shuidheachadh mar an àbhaist no bha e falamh</string>
     <string name="use_exact_alarm">Cleachd amannan ùrachadh mionaideach</string>
     <string name="wasnt_able_to_connect_custom_url">Cha b\' urrainn dhuinn ceangal no luchdachadh a-nuas bhon URL gnàthaichte a chaidh a shònrachadh</string>
-    <string name="wasnt_able_to_connect_data_txt">Cha b\' urrainn dhuinn data.txt a cheangal no a luchdachadh sìos bhon fhrithealaiche agad</string>
     <string name="wasnt_able_to_connect_forecast">Cha b\' urrainn dhuinn an ro-aithris a cheangal no a luchdachadh sìos</string>
-    <string name="wasnt_able_to_connect_or_download">Cha b\' urrainn dhuinn an ro-aithris a cheangal no a luchdachadh sìos</string>
+    <string name="wasnt_able_to_connect_or_download">Cha b\' urrainn dhuinn %1$s a cheangal no a luchdadh a-nuas o %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Cha b\' urrainn dhuinn radar=image a cheangal no a luchdachadh sìos bhon eadar-lìon</string>
     <string name="wasnt_able_to_connect_settings">Cha b\' urrainn dhuinn na roghainnean a cheangal no a luchdachadh sìos bhon t-seirbheisiche agad</string>
     <string name="wasnt_able_to_connect_webcam_url">Cha b\' urrainn dhuinn dealbh camara-lìn a cheangal no a luchdachadh sìos bhon t-seirbheisiche agad</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data URL ɛ baŋ</string>
     <string name="delete_all_data">La̱tdɛ Kä Data kɛnɛ Thutdown</string>
     <string name="empty">Tëë ba̱ŋ</string>
+    <string name="error">Duër!</string>
     <string name="error_occurred_while_attempting_to_update">Ɛn riɛk mi̱ ci̱ tuɔɔk mi̱ caa ɣɔ̱n i̱ ba la̱t kɛ ɣöö ba la̱tdɛ nyɔk kɛ lätni̱</string>
     <string name="every_5_minutes">Nɛy diaal 5</string>
     <string name="every_10_minutes">ni 10 Mitustes diaal</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL cua la̱th kä depuɔlt kiɛ cuɛ te baaŋ</string>
     <string name="use_exact_alarm">La̱tdɛ kɛ gua̱a̱th mi̱ pay tuɔɔk</string>
     <string name="wasnt_able_to_connect_custom_url">/Cɛ rɔ luäŋ kɛ mat kiɛ ba ka̱m raar kä URL ëë ca la̱th lät</string>
-    <string name="wasnt_able_to_connect_data_txt">/Cɛ rɔ luäŋ kɛ mat kiɛ deri data.txt ka̱m raar kä thärbädu</string>
     <string name="wasnt_able_to_connect_forecast">/Cɛ luäŋ kɛ mat kiɛ bɛ min ca gɔ̱r piny kulɛ ka̱m raar</string>
-    <string name="wasnt_able_to_connect_or_download">/Cɛ luäŋ kɛ mat kiɛ bɛ min ca gɔ̱r piny kulɛ ka̱m raar</string>
+    <string name="wasnt_able_to_connect_or_download">/Ka̱n jɛ luäŋ kɛ röm kiɛ ka̱m raar %1$s kä %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">/Cɛ rɔ luäŋ kɛ mat kiɛ deri radar= thurɛ min bä kä intɛrnɛt</string>
     <string name="wasnt_able_to_connect_settings">/Cɛ rɔ luäŋ kɛ mat kiɛ deri jɛ mat kä serverdu</string>
     <string name="wasnt_able_to_connect_webcam_url">/Cɛ rɔ luäŋ kɛ mat kiɛ deri thurɛ min ca gɔ̱r kä webcam ka̱m raar kä thärberdu</string>

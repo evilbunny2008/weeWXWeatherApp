@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">I-URL yedatha beyingenalutfo</string>
     <string name="delete_all_data">Cisha Yonkhe Idatha Nekucishana</string>
     <string name="empty">Lelite</string>
+    <string name="error">Liphutsa!</string>
     <string name="error_occurred_while_attempting_to_update">Kwenteka liphutsa ngesikhatsi uzama kuvuselela kusetjentiswa</string>
     <string name="every_5_minutes">Njalo 5 Minutes</string>
     <string name="every_10_minutes">Njalo 10 Minutes</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">I-URL beyibekwe kutsi ivele noma beyingenalutho</string>
     <string name="use_exact_alarm">Sebentisa tikhatsi leticondzile tekuvuselela</string>
     <string name="wasnt_able_to_connect_custom_url">Akazange akwati kuxhumana nobe kulandza ku-URL yesiko lecacisiwe</string>
-    <string name="wasnt_able_to_connect_data_txt">Akazange akwati kuxhuma nobe kulandza idatha.txt kuseva yakho</string>
     <string name="wasnt_able_to_connect_forecast">Akazange akwati kuxhumana nobe kulandza lesibiketelo</string>
-    <string name="wasnt_able_to_connect_or_download">Akazange akwati kuxhumana nobe kulandza lesibiketelo</string>
+    <string name="wasnt_able_to_connect_or_download">Angizange ngikhone kuxhuma noma kulandza %1$s kusuka ku %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Akazange akwati kuxhumana nobe kulandza i-radar= sitfombe kusuka ku-inthanethi</string>
     <string name="wasnt_able_to_connect_settings">Akazange akwati kuxhumana nobe kulandza emasethingi kuseva yakho</string>
     <string name="wasnt_able_to_connect_webcam_url">Akazange akwati kuxhuma nobe kulandza sitfombe se-webcam kuseva yakho</string>

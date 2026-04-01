@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL ya fyebo yali iya fye</string>
     <string name="delete_all_data">Fumyeni Amashiwi yonse no Kupwisha</string>
     <string name="empty">Icabulwamo</string>
+    <string name="error">Icilubo!</string>
     <string name="error_occurred_while_attempting_to_update">Ubwafya bwacitike ilyo uleesha ukubwekeshapo ukubomfya</string>
     <string name="every_5_minutes">Cila Mimana 5 Amaminiti</string>
     <string name="every_10_minutes">Cila Mimana 10 Amaminiti</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL yalibikwe ku ca kubalilapo nelyo yali fye iya fye</string>
     <string name="use_exact_alarm">Bomfyeni inshita shakubwekeshapo isha cine cine</string>
     <string name="wasnt_able_to_connect_custom_url">Tacaali na maka yakusuntinkanya nangu ukukopolola ukufuma ku URL iyalinga iyalumbulwa</string>
-    <string name="wasnt_able_to_connect_data_txt">Tacaali na maka yakusuntinkanya nangu ukukopa amashiwi.txt ukufuma ku cibombelo cenu</string>
     <string name="wasnt_able_to_connect_forecast">Tacaali na maka ya kulundanya nelyo ukukopa ifya ku ntanshi</string>
-    <string name="wasnt_able_to_connect_or_download">Tacaali na maka ya kulundanya nelyo ukukopa ifya ku ntanshi</string>
+    <string name="wasnt_able_to_connect_or_download">Tatwakwanishe ukusuntinkanya nangula ukusenda %1$s ukufuma pali %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Tacaali na maka yakusuntinkanya nangu ukukopa radar= icikope ukufuma pali intaneti</string>
     <string name="wasnt_able_to_connect_settings">Tacaali na maka ya kulundanya nelyo ukukopa ifyo mulepanga</string>
     <string name="wasnt_able_to_connect_webcam_url">Tacaali na maka yakusuntinkanya nangu ukukopa icikope ca webu ukufuma kuli server wenu</string>

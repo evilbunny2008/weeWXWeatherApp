@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">데이터 URL이 비어 있습니다</string>
     <string name="delete_all_data">모든 데이터 삭제 및 종료</string>
     <string name="empty">비어 있는</string>
+    <string name="error">오류!</string>
     <string name="error_occurred_while_attempting_to_update">사용량을 업데이트하는 중 오류가 발생했습니다</string>
     <string name="every_5_minutes">5분마다</string>
     <string name="every_10_minutes">10분마다</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL이 기본값으로 설정되었거나 비어 있었습니다</string>
     <string name="use_exact_alarm">정확한 업데이트 시간 사용</string>
     <string name="wasnt_able_to_connect_custom_url">지정된 맞춤 URL에서 연결하거나 다운로드할 수 없습니다</string>
-    <string name="wasnt_able_to_connect_data_txt">서버에서 data.txt를 연결하거나 다운로드할 수 없습니다</string>
     <string name="wasnt_able_to_connect_forecast">일기예보를 연결하거나 다운로드할 수 없습니다</string>
-    <string name="wasnt_able_to_connect_or_download">일기예보를 연결하거나 다운로드할 수 없습니다</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s에서 %1$s을(를) 연결하거나 다운로드할 수 없습니다</string>
     <string name="wasnt_able_to_connect_radar_image">인터넷에서 레이더= 이미지를 연결하거나 다운로드할 수 없습니다</string>
     <string name="wasnt_able_to_connect_settings">서버에 연결하거나 설정을 다운로드할 수 없습니다</string>
     <string name="wasnt_able_to_connect_webcam_url">서버에서 웹캠 이미지를 연결하거나 다운로드할 수 없습니다</string>

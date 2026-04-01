@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Roedd URL data yn wag</string>
     <string name="delete_all_data">Dileu Pob Data a Shutdown</string>
     <string name="empty">Gwag</string>
+    <string name="error">Gwall!</string>
     <string name="error_occurred_while_attempting_to_update">Digwyddodd gwall wrth geisio diweddaru defnydd</string>
     <string name="every_5_minutes">Bob 5 Munud</string>
     <string name="every_10_minutes">Bob 10 Munud</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Gosodwyd URL i\'r rhagosodiad neu roedd yn wag</string>
     <string name="use_exact_alarm">Defnyddiwch yr union amseroedd diweddaru</string>
     <string name="wasnt_able_to_connect_custom_url">Methu â chysylltu neu lawrlwytho o\'r URL personol a nodwyd</string>
-    <string name="wasnt_able_to_connect_data_txt">Methu â chysylltu na lawrlwytho data.txt o\'ch gweinydd</string>
     <string name="wasnt_able_to_connect_forecast">Methu â chysylltu na lawrlwytho\'r rhagolwg</string>
-    <string name="wasnt_able_to_connect_or_download">Methu â chysylltu na lawrlwytho\'r rhagolwg</string>
+    <string name="wasnt_able_to_connect_or_download">Methu cysylltu neu lawrlwytho %1$s o %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Methu â chysylltu na lawrlwytho delwedd radar= o\'r rhyngrwyd</string>
     <string name="wasnt_able_to_connect_settings">Methu â chysylltu neu lawrlwytho\'r gosodiadau o\'ch gweinydd</string>
     <string name="wasnt_able_to_connect_webcam_url">Methu â chysylltu na lawrlwytho delwedd gwe-gamera o\'ch gweinydd</string>

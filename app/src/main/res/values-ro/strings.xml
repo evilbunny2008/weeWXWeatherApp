@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Adresa URL a datelor era goală</string>
     <string name="delete_all_data">Ștergeți toate datele și opriți</string>
     <string name="empty">Gol</string>
+    <string name="error">Eroare!</string>
     <string name="error_occurred_while_attempting_to_update">A apărut o eroare la încercarea de a actualiza utilizarea</string>
     <string name="every_5_minutes">La fiecare 5 minute</string>
     <string name="every_10_minutes">La fiecare 10 minute</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Adresa URL a fost setată la valoarea implicită sau era goală</string>
     <string name="use_exact_alarm">Utilizați orele exacte de actualizare</string>
     <string name="wasnt_able_to_connect_custom_url">Nu s-a putut conecta sau descărca de la adresa URL personalizată specificată</string>
-    <string name="wasnt_able_to_connect_data_txt">Nu am putut să mă conectez sau să descărcați data.txt de pe serverul dvs</string>
     <string name="wasnt_able_to_connect_forecast">Nu am putut să mă conectez sau să descărcați prognoza</string>
-    <string name="wasnt_able_to_connect_or_download">Nu am putut să mă conectez sau să descărcați prognoza</string>
+    <string name="wasnt_able_to_connect_or_download">Nu s-a putut conecta sau descărca %1$s de la %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Nu am putut să mă conectez sau să descărcați imaginea radar= de pe internet</string>
     <string name="wasnt_able_to_connect_settings">Nu am putut să mă conectez sau să descărcați setările de pe serverul dvs</string>
     <string name="wasnt_able_to_connect_webcam_url">Nu am putut să mă conectez sau să descărcați o imagine de cameră web de pe serverul dvs</string>

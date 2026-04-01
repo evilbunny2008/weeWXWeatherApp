@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL ya ba données ezalaki ya pamba</string>
     <string name="delete_all_data">Bolongola ba données nionso na arrêt</string>
     <string name="empty">Mpamba</string>
+    <string name="error">Libunga!</string>
     <string name="error_occurred_while_attempting_to_update">Erreur esalemaki tango ya koluka ko mettre à jour usage</string>
     <string name="every_5_minutes">Chaque 5 minutes</string>
     <string name="every_10_minutes">Na miniti 10 nyonso</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL etiamaki na default to ezalaki vide</string>
     <string name="use_exact_alarm">Salelá bantango ya sika ya sika</string>
     <string name="wasnt_able_to_connect_custom_url">azalaki na makoki te ya ko connecter to ko télécharger na URL personnalisé oyo elakisami</string>
-    <string name="wasnt_able_to_connect_data_txt">azalaki na makoki te ya ko connecter to ko télécharger data.txt na serveur na yo</string>
     <string name="wasnt_able_to_connect_forecast">azalaki na makoki te ya ko connecter to ko télécharger prévision</string>
-    <string name="wasnt_able_to_connect_or_download">azalaki na makoki te ya ko connecter to ko télécharger prévision</string>
+    <string name="wasnt_able_to_connect_or_download">Ezalaki na makoki te ya ko connecter to ko télécharger %1$s na %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">azalaki na makoki te ya ko connecter to ko télécharger radar= image na internet</string>
     <string name="wasnt_able_to_connect_settings">azalaki na makoki te ya ko connecter to ko télécharger ba paramètres na serveur na yo</string>
     <string name="wasnt_able_to_connect_webcam_url">azalaki na makoki te ya ko connecter to ko télécharger image ya webcam na serveur na yo</string>

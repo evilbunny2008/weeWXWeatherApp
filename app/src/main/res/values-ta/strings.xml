@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">தரவு URL காலியாக இருந்தது</string>
     <string name="delete_all_data">அனைத்து தரவையும் நீக்கவும் மற்றும் பணிநிறுத்தம்</string>
     <string name="empty">காலி</string>
+    <string name="error">பிழை!</string>
     <string name="error_occurred_while_attempting_to_update">பயன்பாட்டைப் புதுப்பிக்க முயற்சிக்கும்போது பிழை ஏற்பட்டது</string>
     <string name="every_5_minutes">ஒவ்வொரு 5 நிமிடங்களுக்கும்</string>
     <string name="every_10_minutes">ஒவ்வொரு 10 நிமிடங்களுக்கும்</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL இயல்புநிலையாக அமைக்கப்பட்டது அல்லது காலியாக இருந்தது</string>
     <string name="use_exact_alarm">சரியான புதுப்பிப்பு நேரங்களைப் பயன்படுத்தவும்</string>
     <string name="wasnt_able_to_connect_custom_url">குறிப்பிடப்பட்ட தனிப்பயன் URL இலிருந்து இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
-    <string name="wasnt_able_to_connect_data_txt">உங்கள் சர்வரிலிருந்து data.txtஐ இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="wasnt_able_to_connect_forecast">முன்னறிவிப்பை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
-    <string name="wasnt_able_to_connect_or_download">முன்னறிவிப்பை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s இலிருந்து %1$sஐ இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="wasnt_able_to_connect_radar_image">இணையத்திலிருந்து ரேடார்= படத்தை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="wasnt_able_to_connect_settings">உங்கள் சேவையகத்திலிருந்து அமைப்புகளை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>
     <string name="wasnt_able_to_connect_webcam_url">உங்கள் சர்வரிலிருந்து வெப்கேம் படத்தை இணைக்கவோ பதிவிறக்கவோ முடியவில்லை</string>

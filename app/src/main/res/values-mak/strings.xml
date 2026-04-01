@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data URL kosong</string>
     <string name="delete_all_data">Pa\'la\'bangi sikontu Data siagang Shudong</string>
     <string name="empty">Kosong</string>
+    <string name="error">Kesalahan!</string>
     <string name="error_occurred_while_attempting_to_update">Se\'re kasalang kajariang ri wattu a\'boyana cara untu\' ampakabajiki pa\'gunang</string>
     <string name="every_5_minutes">Sikontu 5 Menulus</string>
     <string name="every_10_minutes">Sikontu 10 Menit</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL niaki ri default yareka kosong</string>
     <string name="use_exact_alarm">Pakei cara tepat</string>
     <string name="wasnt_able_to_connect_custom_url">Tena nakkulle a\'lampa yareka a\'download battu ri URL adat le\'baka nipattantu</string>
-    <string name="wasnt_able_to_connect_data_txt">Tena nakkulle a\'lampa mange ri data.txt battu ri servernu</string>
     <string name="wasnt_able_to_connect_forecast">Tena nakkulle a\'lampa yareka a\'download anjo ramalanna</string>
-    <string name="wasnt_able_to_connect_or_download">Tena nakkulle a\'lampa yareka a\'download anjo ramalanna</string>
+    <string name="wasnt_able_to_connect_or_download">Tena nakkulle assileo yareka angngurangi %1$s battu ri %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Tena nakkulle a\'lampa yareka a\'download radar= gambara\' battu ri internet</string>
     <string name="wasnt_able_to_connect_settings">Tena nakkulle a\'lampa yareka a\'download settingang battu ri servernu</string>
     <string name="wasnt_able_to_connect_webcam_url">Tena nakkulle a\'lampa yareka a\'download gambara\' webcam battu ri servernu</string>

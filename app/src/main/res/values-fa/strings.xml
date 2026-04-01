@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL داده خالی بود</string>
     <string name="delete_all_data">تمام داده ها را حذف کنید و خاموش کنید</string>
     <string name="empty">خالی</string>
+    <string name="error">خطا!</string>
     <string name="error_occurred_while_attempting_to_update">هنگام تلاش برای به‌روزرسانی استفاده، خطایی روی داد</string>
     <string name="every_5_minutes">هر 5 دقیقه</string>
     <string name="every_10_minutes">هر 10 دقیقه</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL روی پیش فرض تنظیم شده بود یا خالی بود</string>
     <string name="use_exact_alarm">از زمان های دقیق به روز رسانی استفاده کنید</string>
     <string name="wasnt_able_to_connect_custom_url">اتصال یا دانلود از URL سفارشی مشخص شده امکان پذیر نیست</string>
-    <string name="wasnt_able_to_connect_data_txt">قادر به اتصال یا دانلود data.txt از سرور شما نبود</string>
     <string name="wasnt_able_to_connect_forecast">امکان اتصال یا دانلود پیش‌بینی وجود نداشت</string>
-    <string name="wasnt_able_to_connect_or_download">امکان اتصال یا دانلود پیش‌بینی وجود نداشت</string>
+    <string name="wasnt_able_to_connect_or_download">قادر به اتصال یا دانلود %1$s از %2$s نبود</string>
     <string name="wasnt_able_to_connect_radar_image">قادر به اتصال یا دانلود رادار= تصویر از اینترنت نبود</string>
     <string name="wasnt_able_to_connect_settings">قادر به اتصال یا دانلود تنظیمات از سرور شما نبود</string>
     <string name="wasnt_able_to_connect_webcam_url">قادر به اتصال یا دانلود تصویر وب کم از سرور شما نبود</string>

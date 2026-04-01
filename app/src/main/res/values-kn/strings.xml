@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">ಡೇಟಾ URL ಖಾಲಿಯಾಗಿದೆ</string>
     <string name="delete_all_data">ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ಅಳಿಸಿ ಮತ್ತು ಸ್ಥಗಿತಗೊಳಿಸಿ</string>
     <string name="empty">ಖಾಲಿ</string>
+    <string name="error">ದೋಷ!</string>
     <string name="error_occurred_while_attempting_to_update">ಬಳಕೆಯನ್ನು ನವೀಕರಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿರುವಾಗ ದೋಷ ಸಂಭವಿಸಿದೆ</string>
     <string name="every_5_minutes">ಪ್ರತಿ 5 ನಿಮಿಷಗಳು</string>
     <string name="every_10_minutes">ಪ್ರತಿ 10 ನಿಮಿಷಗಳು</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ಅನ್ನು ಡೀಫಾಲ್ಟ್‌ಗೆ ಹೊಂದಿಸಲಾಗಿದೆ ಅಥವಾ ಖಾಲಿಯಾಗಿದೆ</string>
     <string name="use_exact_alarm">ನಿಖರವಾದ ನವೀಕರಣ ಸಮಯವನ್ನು ಬಳಸಿ</string>
     <string name="wasnt_able_to_connect_custom_url">ನಿರ್ದಿಷ್ಟಪಡಿಸಿದ ಕಸ್ಟಮ್ URL ನಿಂದ ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
-    <string name="wasnt_able_to_connect_data_txt">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ data.txt ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="wasnt_able_to_connect_forecast">ಮುನ್ಸೂಚನೆಯನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
-    <string name="wasnt_able_to_connect_or_download">ಮುನ್ಸೂಚನೆಯನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s ನಿಂದ %1$s ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="wasnt_able_to_connect_radar_image">ಇಂಟರ್ನೆಟ್‌ನಿಂದ ರೇಡಾರ್= ಇಮೇಜ್ ಅನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="wasnt_able_to_connect_settings">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="wasnt_able_to_connect_webcam_url">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರವನ್ನು ಸಂಪರ್ಕಿಸಲು ಅಥವಾ ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">L\'URL di dæti o l\'ea veuo</string>
     <string name="delete_all_data">Cancellâ tutti i dæti e o Shutdown</string>
     <string name="empty">Veua</string>
+    <string name="error">Errô!</string>
     <string name="error_occurred_while_attempting_to_update">Un errô o l\'é avvegnuo tanto che se çerca d\'aggiornamento de l\'uso</string>
     <string name="every_5_minutes">Ògni 5 menuti</string>
     <string name="every_10_minutes">Ògni 10 menuti</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">L\'URL o l\'ea misso in sce l\'inadempimento ò o l\'ea veuo</string>
     <string name="use_exact_alarm">Utilizzâ i tempi d\'aggiornamento esatto</string>
     <string name="wasnt_able_to_connect_custom_url">No l\'é stæto bon de connettise ò scaricâ da l\'URL in sce mesua</string>
-    <string name="wasnt_able_to_connect_data_txt">No l\'ea bon de connettise ò scaricâ di dæti.txt da-o seu server</string>
     <string name="wasnt_able_to_connect_forecast">No l\'ea bon de connettise ò scaricâ a previxon</string>
-    <string name="wasnt_able_to_connect_or_download">No l\'ea bon de connettise ò scaricâ a previxon</string>
+    <string name="wasnt_able_to_connect_or_download">No l\'é stæto poscibile connettise ò scaricâ %1$s da %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">No l\'ea bon de connettise ò scaricâ o radar= imagine da l\'Internet</string>
     <string name="wasnt_able_to_connect_settings">No l\'ea bon de connettise ò scaricâ e impostaçioin da-o seu server</string>
     <string name="wasnt_able_to_connect_webcam_url">No l\'ea bon de connettise ò scaricâ unn\'imagine webcam da-o seu server</string>

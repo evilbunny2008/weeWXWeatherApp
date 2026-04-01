@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Мэдээллийн URL хоосон байв</string>
     <string name="delete_all_data">Бүх өгөгдлийг устгах, унтраах</string>
     <string name="empty">Хоосон</string>
+    <string name="error">Алдаа!</string>
     <string name="error_occurred_while_attempting_to_update">Хэрэглээг шинэчлэхийг оролдож байх үед алдаа гарлаа</string>
     <string name="every_5_minutes">5 минут тутамд</string>
     <string name="every_10_minutes">10 минут тутамд</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL нь анхдагч эсвэл хоосон байсан</string>
     <string name="use_exact_alarm">Шинэчлэлтийн цагийг ашиглана уу</string>
     <string name="wasnt_able_to_connect_custom_url">Заасан захиалгын URL-ээс холбогдож, татаж авах боломжгүй байсан</string>
-    <string name="wasnt_able_to_connect_data_txt">Data.txt-ийг татаж авах эсвэл татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_forecast">Урьдчилсан мэдээг холбож, татаж авах боломжгүй байсан</string>
-    <string name="wasnt_able_to_connect_or_download">Урьдчилсан мэдээг холбож, татаж авах боломжгүй байсан</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s-с %1$s-г холбож эсвэл татаж чадсангүй</string>
     <string name="wasnt_able_to_connect_radar_image">Интернетээс холбогдож, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_settings">Таны серверээс тохиргоог холбож, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_webcam_url">Таны серверээс вэбкамик зургийг холбох, татаж авах боломжгүй байсан</string>

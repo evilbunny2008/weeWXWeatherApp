@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL data kosong</string>
     <string name="delete_all_data">Hapus sadaya data sareng mareuman</string>
     <string name="empty">Kosong</string>
+    <string name="error">Kasalahan!</string>
     <string name="error_occurred_while_attempting_to_update">Aya kasalahan nalika nyobian ngapdet panggunaan</string>
     <string name="every_5_minutes">Unggal 5 menit</string>
     <string name="every_10_minutes">Unggal 10 menit</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL disetel ka standar atanapi kosong</string>
     <string name="use_exact_alarm">Anggo waktos apdet</string>
     <string name="wasnt_able_to_connect_custom_url">Teu tiasa nyambung atanapi undeuran ti URL khusus anu dieusian</string>
-    <string name="wasnt_able_to_connect_data_txt">Teu tiasa nyambung atanapi ngundeur data.txt ti server anjeun</string>
     <string name="wasnt_able_to_connect_forecast">Henteu tiasa nyambung atanapi unduh ramalan</string>
-    <string name="wasnt_able_to_connect_or_download">Henteu tiasa nyambung atanapi unduh ramalan</string>
+    <string name="wasnt_able_to_connect_or_download">Teu bisa nyambung atawa ngundeur %1$s ti %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Henteu tiasa nyambungkeun atanapi unduh radar = gambar tina internét</string>
     <string name="wasnt_able_to_connect_settings">Henteu tiasa nyambung atanapi unduh setélan tina server anjeun</string>
     <string name="wasnt_able_to_connect_webcam_url">Teu tiasa nyambung atanapi ngundeur gambar webcam tina server anjeun</string>

@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Duomenų URL laukas buvo tuščias</string>
     <string name="delete_all_data">Ištrinkite visus duomenis ir išjunkite</string>
     <string name="empty">Tuščia</string>
+    <string name="error">Klaida!</string>
     <string name="error_occurred_while_attempting_to_update">Bandant atnaujinti naudojimą įvyko klaida</string>
     <string name="every_5_minutes">Kas 5 minutes</string>
     <string name="every_10_minutes">Kas 10 minučių</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL buvo nustatytas kaip numatytasis arba buvo tuščias</string>
     <string name="use_exact_alarm">Naudokite tikslius atnaujinimo laikus</string>
     <string name="wasnt_able_to_connect_custom_url">Nepavyko prisijungti arba atsisiųsti iš nurodyto tinkinto URL</string>
-    <string name="wasnt_able_to_connect_data_txt">Nepavyko prisijungti arba atsisiųsti data.txt iš jūsų serverio</string>
     <string name="wasnt_able_to_connect_forecast">Nepavyko prisijungti arba atsisiųsti prognozės</string>
-    <string name="wasnt_able_to_connect_or_download">Nepavyko prisijungti arba atsisiųsti prognozės</string>
+    <string name="wasnt_able_to_connect_or_download">Nepavyko prisijungti arba atsisiųsti %1$s iš %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Nepavyko prisijungti arba atsisiųsti radar= vaizdo iš interneto</string>
     <string name="wasnt_able_to_connect_settings">Nepavyko prisijungti arba atsisiųsti nustatymų iš jūsų serverio</string>
     <string name="wasnt_able_to_connect_webcam_url">Nepavyko prisijungti arba atsisiųsti žiniatinklio kameros vaizdo iš jūsų serverio</string>

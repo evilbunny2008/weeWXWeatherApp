@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Мэдээсэлэй URL хооһон байгаа</string>
     <string name="delete_all_data">Бүхы мэдээсэл ба зурлаануудые усадхаха</string>
     <string name="empty">Хооһон</string>
+    <string name="error">Алдуу!</string>
     <string name="error_occurred_while_attempting_to_update">Хэрэглэхэ арга шэнэлхэ гэжэ оролдоходоо алдуу гараба</string>
     <string name="every_5_minutes">5 минута бүхэндэ</string>
     <string name="every_10_minutes">10 минутын туршада</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL стандартда табигдаһан гү, али хооһон байгаа</string>
     <string name="use_exact_alarm">Нарин шэнэлхэ сагые хэрэглэхэ</string>
     <string name="wasnt_able_to_connect_custom_url">Заһабарилагдаһан захиалгаар URL-һээ холбоо гү, али татажа абаха аргагүй байгаа</string>
-    <string name="wasnt_able_to_connect_data_txt">Танай серверһээ data.txt холбохо гү, али татажа абаха аргагүй байгаа</string>
     <string name="wasnt_able_to_connect_forecast">Уридшалан мэдээсэл холбожо, татажа абаха аргагүй байгаа</string>
-    <string name="wasnt_able_to_connect_or_download">Уридшалан мэдээсэл холбожо, татажа абаха аргагүй байгаа</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s-һээ %1$s холбожо гү, али татажа шадаагүй</string>
     <string name="wasnt_able_to_connect_radar_image">Интернет сооһоо радар= зураг холбоо гү, али татажа абаха аргагүй байгаа</string>
     <string name="wasnt_able_to_connect_settings">Танай серверһээ тохиргоонуудые холбохо гү, али татажа абаха аргагүй байгаа</string>
     <string name="wasnt_able_to_connect_webcam_url">Танай серверһээ веб-камерын зураг холбохо гү, али татажа абаха аргагүй байгаа</string>

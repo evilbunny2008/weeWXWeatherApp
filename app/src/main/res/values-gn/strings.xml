@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL de datos ha\'e kuri en blanco</string>
     <string name="delete_all_data">Ombogue opaite marandu ha ñemboty</string>
     <string name="empty">Nandi</string>
+    <string name="error">Jejavy!</string>
     <string name="error_occurred_while_attempting_to_update">Oiko peteĩ jejavy oñeha\'ãvo ombopyahu jepuru</string>
     <string name="every_5_minutes">Káda 5 minuto</string>
     <string name="every_10_minutes">Káda 10 minuto</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL oñemohendava\'ekue pe default-pe térã oĩ vacío</string>
     <string name="use_exact_alarm">Eipuru umi tiempo de actualización exacta</string>
     <string name="wasnt_able_to_connect_custom_url">Ndaikatúikuri oñembojoaju térã ojegueru URL jeporupyre oje\'évagui</string>
-    <string name="wasnt_able_to_connect_data_txt">Ndaikatúikuri oñembojoaju térã omboguejy data.txt nde servidor-gui</string>
     <string name="wasnt_able_to_connect_forecast">Ndaikatúikuri oñembojoaju térã omboguejy pe pronóstico</string>
-    <string name="wasnt_able_to_connect_or_download">Ndaikatúikuri oñembojoaju térã omboguejy pe pronóstico</string>
+    <string name="wasnt_able_to_connect_or_download">Ndaikatúikuri oñembojoaju térã omboguejy %1$s %2$s-gui</string>
     <string name="wasnt_able_to_connect_radar_image">Ndaikatúikuri oñembojoaju térã omboguejy radar= ta\'ãnga internet-gui</string>
     <string name="wasnt_able_to_connect_settings">Ndaikatúikuri ombojoaju térã omboguejy umi ñemboheko nde servidor-gui</string>
     <string name="wasnt_able_to_connect_webcam_url">Ndaikatúikuri oñembojoaju térã omboguejy peteĩ webcam ra\'ãnga nde servidor-gui</string>

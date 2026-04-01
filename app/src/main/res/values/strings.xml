@@ -19,6 +19,7 @@
     <string name="data_url_was_blank">Data URL was blank</string>
     <string name="delete_all_data">Delete All Data and Shutdown</string>
     <string name="empty">Empty</string>
+    <string name="error">Error!</string>
     <string name="error_occurred_while_attempting_to_update">An error occurred while attempting to update usage</string>
     <string name="every_5_minutes">Every 5 Minutes</string>
     <string name="every_10_minutes">Every 10 Minutes</string>
@@ -122,9 +123,8 @@
     <string name="url_was_default_or_empty">URL was set to the default or was empty</string>
     <string name="use_exact_alarm">Use exact update times</string>
     <string name="wasnt_able_to_connect_custom_url">Wasn\'t able to connect or download from the custom URL specified</string>
-    <string name="wasnt_able_to_connect_data_txt">Wasn\'t able to connect or download data.txt from your server</string>
     <string name="wasnt_able_to_connect_forecast">Wasn\'t able to connect or download the forecast.</string>
-    <string name="wasnt_able_to_connect_or_download">Wasn\'t able to connect or download the forecast.</string>
+    <string name="wasnt_able_to_connect_or_download">Wasn\'t able to connect or download %1$s from %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Wasn\'t able to connect or download radar= image from the internet</string>
     <string name="wasnt_able_to_connect_settings">Wasn\'t able to connect or download the settings from your server</string>
     <string name="wasnt_able_to_connect_webcam_url">Wasn\'t able to connect or download a webcam image from your server</string>

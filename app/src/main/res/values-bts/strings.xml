@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Data URL kosong</string>
     <string name="delete_all_data">Hapus ma ganup Data pakon Shutdown</string>
     <string name="empty">Kosong</string>
+    <string name="error">Maseda!</string>
     <string name="error_occurred_while_attempting_to_update">Sada kesalahan terjadi sanggah marusaha memperbarui penggunaan</string>
     <string name="every_5_minutes">Tiap 5 Menit</string>
     <string name="every_10_minutes">Tiap 10 Menit</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ibahen bani default atap kosong</string>
     <string name="use_exact_alarm">Pakei ma panorang update update</string>
     <string name="wasnt_able_to_connect_custom_url">Lang boi marhubungan atap download humbani URL khusus na dob itontuhon</string>
-    <string name="wasnt_able_to_connect_data_txt">Anggo lang boi ihubungkon atap i-download data.txt humbani server nasiam</string>
     <string name="wasnt_able_to_connect_forecast">Lang boi marhubungan atap download ramalan ai</string>
-    <string name="wasnt_able_to_connect_or_download">Lang boi marhubungan atap download ramalan ai</string>
+    <string name="wasnt_able_to_connect_or_download">Lang boi manghubungkon atap mangunduh %1$s humbani %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Lang boi manghubungkon atap download radar= gambar humbani internet</string>
     <string name="wasnt_able_to_connect_settings">Anggo lang boi marsaor atap download pengaturan humbani server nasiam</string>
     <string name="wasnt_able_to_connect_webcam_url">Anggo lang boi ihubungkon atap i- download gambar webcam humbani server nasiam</string>

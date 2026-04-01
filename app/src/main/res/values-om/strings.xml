@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL deetaa duwwaa ture</string>
     <string name="delete_all_data">Deetaa hunda haquu fi cufuu</string>
     <string name="empty">Duwwaa</string>
+    <string name="error">Dogoggora!</string>
     <string name="error_occurred_while_attempting_to_update">Fayyadama haaromsuuf yeroo yaaltan dogongorri uumame</string>
     <string name="every_5_minutes">Daqiiqaa 5 hunda</string>
     <string name="every_10_minutes">Daqiiqaa 10 hunda</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL gara durtiitti qindaa\'e ykn duwwaa ture</string>
     <string name="use_exact_alarm">Yeroo fooyya\'iinsa sirrii fayyadamaa</string>
     <string name="wasnt_able_to_connect_custom_url">URL amala ibsame irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
-    <string name="wasnt_able_to_connect_data_txt">data.txt server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="wasnt_able_to_connect_forecast">Raaga sana wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
-    <string name="wasnt_able_to_connect_or_download">Raaga sana wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s irraa %1$s walqabsiisuu ykn buufachuu hin dandeenye</string>
     <string name="wasnt_able_to_connect_radar_image">Radar= image interneetii irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="wasnt_able_to_connect_settings">settings server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>
     <string name="wasnt_able_to_connect_webcam_url">Fakkii webcam server keessan irraa wal qunnamsiisuu ykn buufachuu hin dandeenye</string>

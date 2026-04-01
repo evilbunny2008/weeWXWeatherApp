@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL Data pun kosong</string>
     <string name="delete_all_data">Hapus Sagalo Data jo Rapikan</string>
     <string name="empty">Kosong</string>
+    <string name="error">Kasilapan!</string>
     <string name="error_occurred_while_attempting_to_update">Kasalahan tajadi katiko mancubo mampabarui pamakaian</string>
     <string name="every_5_minutes">Tiok 5 minik</string>
     <string name="every_10_minutes">Tiok 10 Menit</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL diatur ka default atau kosong</string>
     <string name="use_exact_alarm">Gunoan wakatu pambaruan nan tapek</string>
     <string name="wasnt_able_to_connect_custom_url">Indak dapek mahubuangkan atau mangunduakan dari URL adat nan ditantukan</string>
-    <string name="wasnt_able_to_connect_data_txt">Indak dapek manyambuang atau mangunduakan data.txt dari server Sanak</string>
     <string name="wasnt_able_to_connect_forecast">Indak dapek mahubuangkan atau mangunduakan ramalan</string>
-    <string name="wasnt_able_to_connect_or_download">Indak dapek mahubuangkan atau mangunduakan ramalan</string>
+    <string name="wasnt_able_to_connect_or_download">Indak dapek manyambuang atau mangunduakan %1$s dari %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Indak mampu manyambuang atau mandownload radar= gambar dari internet</string>
     <string name="wasnt_able_to_connect_settings">Indak dapek mahubuangkan atau mangunduakan pangaturan dari server Sanak</string>
     <string name="wasnt_able_to_connect_webcam_url">Indak dapek mahubuangkan atau mangunduakan gambar webcam dari server Sanak</string>

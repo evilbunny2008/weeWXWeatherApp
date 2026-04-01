@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Na avanoa faamatalaga URL</string>
     <string name="delete_all_data">Aveese uma faʻamaumauga ma tapuni</string>
     <string name="empty">Gaogao</string>
+    <string name="error">Sese!</string>
     <string name="error_occurred_while_attempting_to_update">O se mea sese na tupu a o taumafai e toe faaleleia le faaaogaina</string>
     <string name="every_5_minutes">Uma 5 minute</string>
     <string name="every_10_minutes">Uma 10 minute</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Na sauni URL i le le mautonu pe gaogao</string>
     <string name="use_exact_alarm">Faʻaaoga taimi saʻo</string>
     <string name="wasnt_able_to_connect_custom_url">E le mafai ona fesoʻotaʻi pe download mai le masani masani URL faʻapitoa</string>
-    <string name="wasnt_able_to_connect_data_txt">Le mafai ona fesoʻotaʻi pe download faʻamaumauga .txt mai lau server</string>
     <string name="wasnt_able_to_connect_forecast">Le mafai ona fesoʻotaʻi pe download le vaʻaiga</string>
-    <string name="wasnt_able_to_connect_or_download">Le mafai ona fesoʻotaʻi pe download le vaʻaiga</string>
+    <string name="wasnt_able_to_connect_or_download">Ua le mafai ona fa\'afeso\'ota\'i pe la\'u mai le %1$s mai le %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Le mafai ona fesoʻotaʻi pe download radar = ata mai le initaneti</string>
     <string name="wasnt_able_to_connect_settings">Le mafai ona fesoʻotaʻi pe download le seti mai lau server</string>
     <string name="wasnt_able_to_connect_webcam_url">Le mafai ona fesoʻotaʻi pe download se webcam ata mai lau server</string>

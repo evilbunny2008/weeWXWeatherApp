@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">د معلوماتو URL خالي و</string>
     <string name="delete_all_data">ټول ډاټا او بندول حذف کړئ</string>
     <string name="empty">خالي</string>
+    <string name="error">تېروتنه!</string>
     <string name="error_occurred_while_attempting_to_update">د کارونې تازه کولو په هڅه کې یوه تېروتنه رامنځته شوه</string>
     <string name="every_5_minutes">هر 5 دقیقې</string>
     <string name="every_10_minutes">هر 10 دقیقې</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL ډیفالټ ته ټاکل شوی یا خالي و</string>
     <string name="use_exact_alarm">دقیق تازه وختونه وکاروئ</string>
     <string name="wasnt_able_to_connect_custom_url">د مشخص شوي دودیز URL څخه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
-    <string name="wasnt_able_to_connect_data_txt">ستاسو د سرور څخه د data.txt د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_connect_forecast">وړاندوینه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
-    <string name="wasnt_able_to_connect_or_download">وړاندوینه د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
+    <string name="wasnt_able_to_connect_or_download">د %2$s څخه %1$s د نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_connect_radar_image">د انټرنیټ څخه د رادار = عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_connect_settings">ستاسو د سرور څخه تنظیمات وصل یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_connect_webcam_url">ستاسو د سرور څخه د ویب کیم عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>

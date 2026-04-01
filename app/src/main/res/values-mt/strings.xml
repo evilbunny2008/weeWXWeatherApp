@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">L-URL tad-dejta kien vojt</string>
     <string name="delete_all_data">Ħassar id-Data Kollha u Tfiq</string>
     <string name="empty">Vojta</string>
+    <string name="error">Żball!</string>
     <string name="error_occurred_while_attempting_to_update">Sar żball waqt li ppruvat taġġorna l-użu</string>
     <string name="every_5_minutes">Kull 5 Minuti</string>
     <string name="every_10_minutes">Kull 10 Minuti</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL kien issettjat bħala default jew kien vojt</string>
     <string name="use_exact_alarm">Uża ħinijiet eżatti ta\' aġġornament</string>
     <string name="wasnt_able_to_connect_custom_url">Ma setgħetx tikkonnettja jew tniżżel mill-URL personalizzat speċifikat</string>
-    <string name="wasnt_able_to_connect_data_txt">Ma setgħetx tikkonnettja jew tniżżel data.txt mis-server tiegħek</string>
     <string name="wasnt_able_to_connect_forecast">Ma setax jgħaqqad jew tniżżel it-tbassir</string>
-    <string name="wasnt_able_to_connect_or_download">Ma setax jgħaqqad jew tniżżel it-tbassir</string>
+    <string name="wasnt_able_to_connect_or_download">Ma setax jikkonnettja jew tniżżel %1$s minn %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ma setgħetx tikkonnettja jew tniżżel ir-radar= immaġini mill-internet</string>
     <string name="wasnt_able_to_connect_settings">Ma setgħetx tikkonnettja jew tniżżel is-settings mis-server tiegħek</string>
     <string name="wasnt_able_to_connect_webcam_url">Ma setgħetx tikkonnettja jew tniżżel immaġni tal-webcam mis-server tiegħek</string>

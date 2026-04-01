@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Podatkovni URL je bil prazen</string>
     <string name="delete_all_data">Izbriši vse podatke in zaustavi</string>
     <string name="empty">prazno</string>
+    <string name="error">Napaka!</string>
     <string name="error_occurred_while_attempting_to_update">Med poskusom posodobitve uporabe je prišlo do napake</string>
     <string name="every_5_minutes">Vsakih 5 minut</string>
     <string name="every_10_minutes">Vsakih 10 minut</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL je bil nastavljen na privzeto ali je bil prazen</string>
     <string name="use_exact_alarm">Uporabite točen čas posodobitve</string>
     <string name="wasnt_able_to_connect_custom_url">Ni bilo mogoče vzpostaviti povezave ali prenesti z navedenega URL-ja po meri</string>
-    <string name="wasnt_able_to_connect_data_txt">Ni bilo mogoče vzpostaviti povezave ali prenesti data.txt iz vašega strežnika</string>
     <string name="wasnt_able_to_connect_forecast">Ni bilo mogoče vzpostaviti povezave ali prenesti napovedi</string>
-    <string name="wasnt_able_to_connect_or_download">Ni bilo mogoče vzpostaviti povezave ali prenesti napovedi</string>
+    <string name="wasnt_able_to_connect_or_download">Ni bilo mogoče vzpostaviti povezave ali prenesti %1$s iz %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ni bilo mogoče vzpostaviti povezave ali prenesti radarske slike iz interneta</string>
     <string name="wasnt_able_to_connect_settings">Ni bilo mogoče vzpostaviti povezave ali prenesti nastavitev s strežnika</string>
     <string name="wasnt_able_to_connect_webcam_url">Ni bilo mogoče vzpostaviti povezave ali prenesti slike spletne kamere iz vašega strežnika</string>

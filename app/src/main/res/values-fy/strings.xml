@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Gegevens-URL wie leech</string>
     <string name="delete_all_data">Alle gegevens wiskje en ôfslute</string>
     <string name="empty">Leech</string>
+    <string name="error">Fersin!</string>
     <string name="error_occurred_while_attempting_to_update">Der barde in flater by it besykjen om gebrûk te aktualisearjen</string>
     <string name="every_5_minutes">Elke 5 minuten</string>
     <string name="every_10_minutes">Elke 10 minuten</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL wie ynsteld op de standert of wie leech</string>
     <string name="use_exact_alarm">Brûk krekte update tiden</string>
     <string name="wasnt_able_to_connect_custom_url">Koe net ferbine of downloade fan de oantsjutte oanpaste URL</string>
-    <string name="wasnt_able_to_connect_data_txt">Koe data.txt net ferbine of downloade fan jo tsjinner</string>
     <string name="wasnt_able_to_connect_forecast">Koe de prognose net ferbine of downloade</string>
-    <string name="wasnt_able_to_connect_or_download">Koe de prognose net ferbine of downloade</string>
+    <string name="wasnt_able_to_connect_or_download">Koe %1$s net ferbine of downloade fan %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Koe gjin ferbining meitsje of radar=-ôfbylding fan it ynternet downloade</string>
     <string name="wasnt_able_to_connect_settings">Koe de ynstellings net ferbine of downloade fan jo tsjinner</string>
     <string name="wasnt_able_to_connect_webcam_url">Koe gjin ferbining meitsje of in webcamôfbylding fan jo tsjinner downloade</string>

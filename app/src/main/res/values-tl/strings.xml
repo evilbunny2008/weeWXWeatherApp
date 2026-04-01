@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Ang Data URL ay blangko</string>
     <string name="delete_all_data">Tanggalin ang lahat ng data at pag -shutdown</string>
     <string name="empty">Walang laman</string>
+    <string name="error">Error!</string>
     <string name="error_occurred_while_attempting_to_update">May naganap na error habang sinusubukang i -update ang paggamit</string>
     <string name="every_5_minutes">Tuwing 5 minuto</string>
     <string name="every_10_minutes">Tuwing 10 minuto</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">Ang URL ay nakatakda sa default o walang laman</string>
     <string name="use_exact_alarm">Gumamit ng eksaktong mga oras ng pag -update</string>
     <string name="wasnt_able_to_connect_custom_url">Hindi nakakonekta o mag -download mula sa tinukoy na pasadyang URL</string>
-    <string name="wasnt_able_to_connect_data_txt">Hindi nakakonekta o mag -download ng data.txt mula sa iyong server</string>
     <string name="wasnt_able_to_connect_forecast">Hindi nakakonekta o i -download ang forecast</string>
-    <string name="wasnt_able_to_connect_or_download">Hindi nakakonekta o i -download ang forecast</string>
+    <string name="wasnt_able_to_connect_or_download">Hindi makakonekta o makapag-download ng %1$s mula sa %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Hindi nakakonekta o mag -download ng radar = imahe mula sa internet</string>
     <string name="wasnt_able_to_connect_settings">Hindi nakakonekta o i -download ang mga setting mula sa iyong server</string>
     <string name="wasnt_able_to_connect_webcam_url">Hindi nakakonekta o mag -download ng isang imahe ng webcam mula sa iyong server</string>

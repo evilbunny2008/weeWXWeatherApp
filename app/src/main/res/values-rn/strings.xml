@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">URL y\'amakuru yari ubusa</string>
     <string name="delete_all_data">Gukuraho Amakuru yose n\'Ivyiyumviro</string>
     <string name="empty">Ubusa</string>
+    <string name="error">Ikosa!</string>
     <string name="error_occurred_while_attempting_to_update">Ikosa ryabaye igihe bagerageza guhindura ikoreshwa</string>
     <string name="every_5_minutes">Buri 5 mino mito</string>
     <string name="every_10_minutes">Buri 10 Minutes</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL yashizwe ku rugero canke yari ubusa</string>
     <string name="use_exact_alarm">Koresha ibihe vy\'ukuri</string>
     <string name="wasnt_able_to_connect_custom_url">Ntiyashoboye guhuza canke gukura kuri URL y\'umugenzo yavuzwe</string>
-    <string name="wasnt_able_to_connect_data_txt">Ntiyashoboye guhuza canke gukuraho amakuru.txt kuri server yawe</string>
     <string name="wasnt_able_to_connect_forecast">Ntiyashoboye guhuza canke gukuraho ivy\'imbere y\'igihe</string>
-    <string name="wasnt_able_to_connect_or_download">Ntiyashoboye guhuza canke gukuraho ivy\'imbere y\'igihe</string>
+    <string name="wasnt_able_to_connect_or_download">Ntiyashoboye guhuza canke gukuraho %1$s kuri %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ntiyashoboye guhuza canke gukuraho radar= ishusho kuri internet</string>
     <string name="wasnt_able_to_connect_settings">Ntiyashoboye guhuza canke gukuraho ivyagezwe kuri server yawe</string>
     <string name="wasnt_able_to_connect_webcam_url">Ntiyashoboye guhuza canke gukuraho ishusho y\'urubuga kuri server yawe</string>

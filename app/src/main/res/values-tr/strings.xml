@@ -18,6 +18,7 @@
     <string name="data_url_was_blank">Veri URL\'si boştu</string>
     <string name="delete_all_data">Tüm Verileri Sil ve Kapat</string>
     <string name="empty">Boş</string>
+    <string name="error">Hata!</string>
     <string name="error_occurred_while_attempting_to_update">Kullanımı güncellemeye çalışırken bir hata oluştu</string>
     <string name="every_5_minutes">Her 5 Dakikada Bir</string>
     <string name="every_10_minutes">Her 10 Dakikada Bir</string>
@@ -121,9 +122,8 @@
     <string name="url_was_default_or_empty">URL varsayılana ayarlandı veya boştu</string>
     <string name="use_exact_alarm">Tam güncelleme zamanlarını kullanın</string>
     <string name="wasnt_able_to_connect_custom_url">Belirtilen özel URL\'den bağlanılamadı veya indirilemedi</string>
-    <string name="wasnt_able_to_connect_data_txt">Sunucunuza bağlanılamadı veya data.txt dosyası indirilemedi</string>
     <string name="wasnt_able_to_connect_forecast">Tahmin bağlanamadı veya indirilemedi</string>
-    <string name="wasnt_able_to_connect_or_download">Tahmin bağlanamadı veya indirilemedi</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s\'den %1$s\'a bağlanılamadı veya indirilemedi</string>
     <string name="wasnt_able_to_connect_radar_image">İnternetten radar= resmi bağlanamadı veya indirilemedi</string>
     <string name="wasnt_able_to_connect_settings">Sunucunuza bağlanılamadı veya ayarlar indirilemedi</string>
     <string name="wasnt_able_to_connect_webcam_url">Sunucunuza bağlanılamadı veya web kamerası görüntüsü indirilemedi</string>

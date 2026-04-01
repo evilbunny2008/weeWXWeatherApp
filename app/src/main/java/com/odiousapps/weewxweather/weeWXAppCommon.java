@@ -143,7 +143,6 @@ class weeWXAppCommon
 
 	static final String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
-	static final String JSON_INTENT = "com.odiousapps.weewxweather.JSON_UPDATE";
 
 	static final String UPDATECHECK = "com.odiousapps.weewxweather.UPDATECHECK";
 
@@ -159,6 +158,9 @@ class weeWXAppCommon
 	static final String STOP_WEBCAM_INTENT = "com.odiousapps.weewxweather.STOP_WEBCAM_INTENT";
 
 	static final String WIDGET_THEME_MODE = "widget_theme_mode";
+
+	final static String[] json_labels = {"JSON Data", "JSON Dicts", "JSON Last"};
+	final static String[] json_keys = {"json_data", "json_dicts", "json_last"};
 
 	static final SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssXXX", Locale.getDefault());
 	static final SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE d", Locale.getDefault());
@@ -885,7 +887,7 @@ class weeWXAppCommon
 				sb.append(weeWXApp.currentSpacer);
 			}
 
-			sb.append("\t\t<div class='wordToday'>").append(weeWXApp.getAndroidString(R.string.today)).append("</div>\n");
+			sb.append("\t\t<div class='wordToday'>").append(getAndroidString(R.string.today)).append("</div>\n");
 
 			sb.append("\t\t<div class='bigTemp'>\n");
 
@@ -939,7 +941,7 @@ class weeWXAppCommon
 			if(daily)
 			{
 				if(i == 0)
-					sb.append(weeWXApp.getAndroidString(R.string.today));
+					sb.append(getAndroidString(R.string.today));
 				else
 					sb.append(weeWXAppCommon.sdf2.format(day.timestamp));
 			} else {
@@ -2653,7 +2655,7 @@ class weeWXAppCommon
 		NotificationManager.updateNotificationMessage(action);
 	}
 
-	static Boolean passesRegularCheck(boolean forced, String lastJsonDownload)
+	static Boolean passesRegularCheck(boolean forced, boolean has_json_combined)
 	{
 		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
 		LogMessage("passesRegularCheck() pos: " + pos + ", update interval set to: " +
@@ -2662,16 +2664,16 @@ class weeWXAppCommon
 		if(pos < 0)
 		{
 			LogMessage("passesRegularCheck() Invalid update frequency...", KeyValue.d);
-			KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.invalid_update_interval));
+			KeyValue.putVar("LastWeatherError", getAndroidString(R.string.invalid_update_interval));
 			return false;
 		}
 
 		if(!forced && pos == 0)
 		{
-			if(lastJsonDownload == null || lastJsonDownload.isBlank())
+			if(has_json_combined)
 			{
 				LogMessage("passesRegularCheck() lastJsonDownload is null or blank...", KeyValue.d);
-				KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
+				KeyValue.putVar("LastWeatherError", getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
 				return false;
 			}
 
@@ -2684,9 +2686,9 @@ class weeWXAppCommon
 		{
 			LogMessage("passesRegularCheck() Skipping, period is invalid or set to manual refresh only...", KeyValue.d);
 
-			if(lastJsonDownload == null || lastJsonDownload.isBlank())
+			if(has_json_combined)
 			{
-				KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
+				KeyValue.putVar("LastWeatherError", getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
 				return false;
 			}
 
@@ -2697,9 +2699,9 @@ class weeWXAppCommon
 		{
 			LogMessage("passesRegularCheck() Skipping, lastDownloadTime == 0, app hasn't been setup...", KeyValue.d);
 
-			if(lastJsonDownload == null || lastJsonDownload.isBlank())
+			if(has_json_combined)
 			{
-				KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.no_download_or_app_not_setup));
+				KeyValue.putVar("LastWeatherError", getAndroidString(R.string.no_download_or_app_not_setup));
 				return false;
 			}
 
@@ -2710,7 +2712,7 @@ class weeWXAppCommon
 		if(!forced && npwsll.lastDownloadTime > npwsll.lastStart)
 		{
 			LogMessage("passesRegularCheck() !forced && " + npwsll.lastDownloadTime + " > " + npwsll.lastStart + "...");
-			if(lastJsonDownload != null && !lastJsonDownload.isBlank())
+			if(has_json_combined)
 			{
 				LogMessage("passesRegularCheck() lastJsonDownload != null && !lastJsonDownload.isBlank()... Skipping...", KeyValue.d);
 				return true;
@@ -2726,70 +2728,75 @@ class weeWXAppCommon
 
 		long now = System.currentTimeMillis();
 
-		if(!KeyValue.isPrefSet("JSON_URL"))
-		{
-			LogMessage("getWeather() jsonURL isn't set...");
-			KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.data_url_was_blank));
-			return false;
-		}
+		boolean has_json_combined = false;
 
-		String baseURL = (String)KeyValue.readVar("JSON_URL", "");
-		if(baseURL == null || baseURL.isBlank())
-		{
-			LogMessage("getWeather() jsonURL == null || jsonURL.isBlank()...");
-			KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.data_url_was_blank));
-			return false;
-		}
+		JSONObject jsonObject = getJson();
+		if(jsonObject != null && jsonObject.length() != 0)
+			has_json_combined = true;
 
-		String lastJsonDownload = (String)KeyValue.readVar("LastJsonDownload", "");
-		if(!forced && !checkConnection())
+		String[] json_url = new String[json_keys.length];
+		for(int i = 0; i < json_keys.length; i++)
 		{
-			if(lastJsonDownload == null || lastJsonDownload.isBlank())
+			if(!KeyValue.isPrefSet(json_keys[i] + "_url"))
 			{
-				LogMessage("getWeather() lastJsonDownload is null or blank...");
-				KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.wifi_not_available));
+				LogMessage("getWeather() json_keys[" + i + "]_url isn't set...");
+				KeyValue.putVar("LastWeatherError", getAndroidString(R.string.data_url_was_blank));
 				return false;
-			} else {
+			}
+
+			json_url[i] = (String)KeyValue.readVar(json_keys[i] + "_url", "");
+			if(json_url[i] == null || json_url[i].isBlank())
+			{
+				LogMessage("getWeather() json_keys[" + i + "]_url == null || json_keys[" + i + "]_url.isBlank()...");
+				KeyValue.putVar("LastWeatherError", getAndroidString(R.string.data_url_was_blank));
+				return false;
+			}
+
+			if(!forced && !checkConnection())
+			{
+				if(has_json_combined)
+				{
+					LogMessage("getWeather() lastJsonDownload is null or blank...");
+					KeyValue.putVar("LastWeatherError", getAndroidString(R.string.wifi_not_available));
+					return false;
+				}
+
 				LogMessage("getWeather() Not forced and WiFi needed but not available");
+				return true;
+			}
+
+			long secDiff = (now - lastUpdateCheck) / 1000;
+			if(!forced && secDiff < 30 && secDiff > 0)
+			{
+				LogMessage("getWeather() !forced && and updated less than 30s ago (" +
+				           secDiff + "s)");
+
+				if(has_json_combined)
+				{
+					LogMessage("getWeather() json_str[" + i + "] is null or blank...");
+					KeyValue.putVar("LastWeatherError", getAndroidString(R.string.wifi_not_available));
+					return false;
+				}
+
+				LogMessage("getWeather() json_str[" + i + "] is not null or blank...");
 				return true;
 			}
 		}
 
-		long secDiff = (now - lastUpdateCheck) / 1000;
-		if(!forced && secDiff < 30 && secDiff > 0)
+		if(has_json_combined)
 		{
-			LogMessage("getWeather() !forced && and updated less than 30s ago (" +
-			           secDiff + "s)");
-
-			if(lastJsonDownload == null || lastJsonDownload.isBlank())
+			Boolean passes = passesRegularCheck(forced, has_json_combined);
+			if(passes != null)
 			{
-				LogMessage("getWeather() lastJsonDownload is null or blank...");
-				KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.wifi_not_available));
-				return false;
+				LogMessage("getWeather() passesRegularCheck(): " + passes);
+				return passes;
 			}
-
-			LogMessage("getWeather() lastJsonDownload is not null or blank...");
-			return true;
-		}
-
-		Boolean passes = passesRegularCheck(forced, lastJsonDownload);
-		if(passes != null)
-		{
-			LogMessage("getWeather() passesRegularCheck(): " + passes);
-			return passes;
 		}
 
 		if(!forced && !weeWXApp.hasBootedFully && !calledFromweeWXApp)
 		{
 			LogMessage("getWeather() Hasn't booted fully and wasn't called by weeWXApp and wasn't forced, skipping...");
-
-			if(lastJsonDownload != null && !lastJsonDownload.isBlank())
-			{
-				KeyValue.putVar("LastWeatherError", lastJsonDownload);
-				return true;
-			}
-
-			KeyValue.putVar("LastWeatherError", weeWXApp.getAndroidString(R.string.attempting_to_download_data_txt));
+			KeyValue.putVar("LastWeatherError", getAndroidString(R.string.attempting_to_download_data_txt));
 			return false;
 		}
 
@@ -2818,71 +2825,123 @@ class weeWXAppCommon
 		{
 			weatherTask = executor.submit(() ->
 			{
-				LogMessage("getWeather() Weather checking: " + baseURL);
-
-				try
-				{
-					if(reallyGetWeather(baseURL))
-					{
-						LogMessage("getWeather() Update the widget");
-						WidgetProvider.updateAppWidget();
-
-						checkTempAlerts();
-						checkRainfallAlert();
-						checkRainrateAlert();
-
-						LogMessage("getWeather() weatherTask.SendIntent(REFRESH_WEATHER_INTENT)");
-						SendIntent(REFRESH_WEATHER_INTENT);
-						wtStart = 0;
-						return;
-					}
-				} catch(Exception e) {
-					LogMessage("getWeather() Error! e: " + e, true, KeyValue.e);
-					KeyValue.putVar("LastWeatherError", e.getLocalizedMessage());
-					SendIntent(REFRESH_WEATHER_INTENT);
-					wtStart = 0;
-					return;
-				}
-
-				LogMessage("getWeather() weatherTask.SendIntent(STOP_WEATHER_INTENT)");
-				SendIntent(STOP_WEATHER_INTENT);
+				handleWeatherUpdate(json_url);
 				wtStart = 0;
 			});
 
 			return true;
 		} else {
-			lastUpdateCheck = now;
-			wtStart = now;
+			boolean ret = handleWeatherUpdate(json_url);
+			wtStart = 0;
+			return ret;
+		}
+	}
+
+	static boolean handleWeatherUpdate(String[] json_url)
+	{
+		boolean processDicts = false;
+		for(int i = 0; i < json_url.length; i++)
+		{
+			LogMessage("handleWeatherUpdate() Weather checking: " + json_url[i]);
 
 			try
 			{
-				if(reallyGetWeather(baseURL))
+				Boolean ret = reallyGetWeather(i, json_url[i], false);
+				if(i == 1 && ret == null)
 				{
-					LogMessage("getWeather() Update the widget");
-					WidgetProvider.updateAppWidget();
+					processDicts = true;
+				}
 
-					checkTempAlerts();
-					checkRainfallAlert();
-					checkRainrateAlert();
-
-					LogMessage("getWeather() weatherTask.SendIntent(REFRESH_WEATHER_INTENT)");
-					SendIntent(REFRESH_WEATHER_INTENT);
-					wtStart = 0;
-					return true;
+				if(!ret)
+				{
+					LogMessage("handleWeatherUpdate() SendIntent(STOP_WEATHER_INTENT)");
+					SendIntent(STOP_WEATHER_INTENT);
+					return false;
 				}
 			} catch(Exception e) {
-				LogMessage("getWeather() Error! e: " + e, true, KeyValue.e);
+				LogMessage("handleWeatherUpdate() Error! e: " + e, true, KeyValue.e);
 				KeyValue.putVar("LastWeatherError", e.getLocalizedMessage());
-				SendIntent(REFRESH_WEATHER_INTENT);
-				wtStart = 0;
-				return true;
+				SendIntent(STOP_WEATHER_INTENT);
+				return false;
 			}
+		}
 
-			LogMessage("getWeather() weatherTask.SendIntent(STOP_WEATHER_INTENT)");
-			SendIntent(STOP_WEATHER_INTENT);
-			wtStart = 0;
+		if(processDicts && !KeyValue.parseDicts())
+		{
+			LogMessage("handleWeatherUpdate() KeyValue.parseDicts() == false");
 			return false;
 		}
+
+		if(!mergeJsonObjects())
+		{
+			LogMessage("handleWeatherUpdate() mergeJsonObjects() == false");
+			return false;
+		}
+
+		LogMessage("handleWeatherUpdate() Update the widget");
+		WidgetProvider.updateAppWidget();
+
+		checkTempAlerts();
+		checkRainfallAlert();
+		checkRainrateAlert();
+
+		LogMessage("handleWeatherUpdate() SendIntent(REFRESH_WEATHER_INTENT)");
+		SendIntent(REFRESH_WEATHER_INTENT);
+
+		return true;
+	}
+
+	static boolean mergeJsonObjects()
+	{
+		JSONObject json_data, json_last, json_combined;
+
+		String json_data_str = (String)KeyValue.readVar(json_keys[0] + "_str", "");
+		if(json_data_str == null || json_data_str.isBlank())
+			return false;
+
+		String json_last_str = (String)KeyValue.readVar(json_keys[2] + "_str", "");
+		if(json_last_str == null || json_last_str.isBlank())
+			return false;
+
+		try
+		{
+			json_data = new JSONObject(json_data_str);
+		} catch(JSONException je) {
+			return false;
+		}
+
+		if(json_data == null || json_data.length() == 0)
+			return false;
+
+		try
+		{
+			json_last = new JSONObject(json_last_str);
+		} catch(JSONException je) {
+			return false;
+		}
+
+		if(json_last == null || json_last.length() == 0)
+			return false;
+
+		try
+		{
+		    json_combined = json_last;
+		    Iterator<String> keys = json_data.keys();
+		    while(keys.hasNext())
+			{
+		        String key = keys.next();
+		        json_combined.put(key, json_data.get(key));
+		    }
+		} catch(JSONException je) {
+			return false;
+		}
+
+		if(json_combined == null || json_combined.length() == 0)
+			return false;
+
+	    KeyValue.putVar("json_combined_str", json_combined.toString());
+
+		return true;
 	}
 
 	static void checkRainfallAlert()
@@ -2985,16 +3044,16 @@ class weeWXAppCommon
 		}
 
 		String debugunit = "minutes";
-		String timelen_unit = weeWXApp.getAndroidString(R.string.minutes);
+		String timelen_unit = getAndroidString(R.string.minutes);
 		int timelen = warning_delays[period] % 60;
 		if(warning_delays[period] == 3_600)
 		{
 			debugunit = "hour";
-			timelen_unit = weeWXApp.getAndroidString(R.string.hour);
+			timelen_unit = getAndroidString(R.string.hour);
 			timelen = 1;
 		} else if(warning_delays[period] > 3_600) {
 			debugunit = "hours";
-			timelen_unit = weeWXApp.getAndroidString(R.string.hours);
+			timelen_unit = getAndroidString(R.string.hours);
 			timelen = warning_delays[period] % 3_600;
 		}
 
@@ -3401,7 +3460,10 @@ class weeWXAppCommon
 
 	static JSONObject getJson()
 	{
-		String line = (String)KeyValue.readVar("LastJsonDownload", "");
+		if(!KeyValue.isPrefSet("json_combined"))
+			return null;
+
+		String line = (String)KeyValue.readVar("json_combined", "");
 		if(line != null && !line.isBlank())
 		{
 			try
@@ -3413,55 +3475,83 @@ class weeWXAppCommon
 		return null;
 	}
 
-	static boolean reallyGetWeather(String url) throws InterruptedException, IOException
+	static boolean is_valid_url(String url)
 	{
-		LogMessage("reallyGetWeather() url: " + url);
+		return url != null && !url.isBlank() && (url.startsWith("http://") || url.startsWith("https://"));
+	}
+
+	static Boolean reallyGetWeather(int id, String url, boolean force) throws InterruptedException, IOException
+	{
+		LogMessage("reallyGetWeather(" + id + ") url: " + url);
 
 		long now = System.currentTimeMillis();
 
-		long lastDownloadAttempt = (long)KeyValue.readVar("lastDownloadAttempt", 0L);
+		long lastJsonDataDownloadAttempt = (long)KeyValue.readVar("lastJsonDataDownloadAttempt_" + id, 0L);
 
-		if(lastDownloadAttempt + 10_000L > now)
+		if(lastJsonDataDownloadAttempt + 10_000L > now)
 		{
-			LogMessage("reallyGetWeather() lastDownloadAttempt (" + lastDownloadAttempt + ") + 10_000L > now (" + now + ")");
+			LogMessage("reallyGetWeather() lastJsonDataDownloadAttempt_" + id + " (" +
+			           lastJsonDataDownloadAttempt + ") + 10_000L > now (" + now + ")");
 			return false;
 		}
 
-		KeyValue.putVar("lastDownloadAttempt", now);
+		KeyValue.putVar("lastJsonDataDownloadAttempt_" + id, now);
+
+		if(!force)
+		{
+			long json_time = (long)KeyValue.readVar(json_keys[id] + "_time", 0L);
+			if(id == 1 && json_time > 0)
+				return true;
+
+			if(id == 2 && json_time > 0)
+			{
+				Calendar cal1 = Calendar.getInstance();
+				Calendar cal2 = Calendar.getInstance();
+				cal2.setTimeInMillis(json_time);
+
+				if(cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+				   cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR))
+					return true;
+			}
+		}
 
 		String line = downloadString(url, true);
 		if(line == null || line.isBlank())
 			return false;
 
-		JSONObject jsonObject = null;
+		JSONObject jsonObject;
 		try
 		{
 			jsonObject = new JSONObject(line);
-		} catch(Exception ignored) {}
+		} catch(Exception e) {
+			LogMessage("reallyGetWeather() Error! e: " + e.getMessage());
+			return false;
+		}
 
 		if(jsonObject == null || jsonObject.length() == 0 || !jsonObject.has("version"))
+		{
+			LogMessage("reallyGetWeather() jsonObject == null || jsonObject.length() == 0 || jsonObject didn't have a version");
 			return false;
+		}
 
 		int version = jsonObject.optInt("version", 0);
-		if(version < weeWXApp.minimum_inigo_json_version)
+		if(version < weeWXApp.minimum_inigo_version)
 		{
 			LogMessage("reallyGetWeather() sendAlert() triggered because version (" + version +
-			           ") < weeWXApp.minimum_inigo_version_for_alerts (" + weeWXApp.minimum_inigo_json_version + ")");
+			           ") < weeWXApp.minimum_inigo_version (" + weeWXApp.minimum_inigo_version + ")");
 			sendAlert();
 			return false;
 		}
 
-		boolean wasSuccessful = KeyValue.parseDicts(jsonObject);
-		if(!wasSuccessful)
-			return false;
-
-		KeyValue.putVar("LastDownload", null);
-		KeyValue.putVar("LastJsonDownload", line);
-		KeyValue.putVar("LastDownloadTime", System.currentTimeMillis());
+		KeyValue.putVar(json_keys[id] + "_time", now);
+		KeyValue.putVar(json_keys[id] + "_str", jsonObject.toString());
 		KeyValue.putVar("LastWeatherError", null);
 
 		LogMessage("reallyGetWeather() Last Server Update Time: " + sdf14.format(jsonObject.optInt("now") * 1_000L));
-		LogMessage("reallyGetWeather() LastDownloadTime: " + sdf14.format(System.currentTimeMillis()));
+		LogMessage("reallyGetWeather() LastDownloadTime: " + sdf14.format(now));
+
+		if(id == 1)
+			return null;
 
 		return true;
 	}
@@ -3490,14 +3580,7 @@ class weeWXAppCommon
 		LogMessage("Send user note about upgrading the Inigo Plugin", KeyValue.d);
 	}
 
-	private static void sendAlert2()
-	{
-		NotificationManager.updateNotificationMessage(JSON_INTENT);
-		LogMessage("Send user note about upgrading the Inigo Plugin and settings file", KeyValue.d);
-	}
-
 	// https://stackoverflow.com/questions/8710515/reading-an-image-file-into-bitmap-from-sdcard-why-am-i-getting-a-nullpointerexc
-
 	private static Bitmap combineImage(Bitmap bmp1, String fnum, String snum)
 	{
 		Context context = weeWXApp.getInstance();
@@ -4097,7 +4180,7 @@ class weeWXAppCommon
 		if(fctype == null || fctype.isBlank())
 		{
 			LogMessage("getForecast() fctype == null || fctype.isBlank(), skipping...", KeyValue.d);
-			String fmtErr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
+			String fmtErr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
 			KeyValue.putVar("LastForecastError", fmtErr);
 			return false;
 		}
@@ -4115,7 +4198,7 @@ class weeWXAppCommon
 		if(fctype.equals("weatherzone3") || fctype.equals("metservice2"))
 		{
 			LogMessage("getForecast() fctype == weatherzone3 || metservice2, skipping...", KeyValue.d);
-			KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.forecast_type_is_invalid));
+			KeyValue.putVar("LastForecastError", getAndroidString(R.string.forecast_type_is_invalid));
 			return false;
 		}
 
@@ -4123,7 +4206,7 @@ class weeWXAppCommon
 		if(forecast_url == null || forecast_url.isBlank())
 		{
 			LogMessage("getForecast() FORECAST_URL == null || isBlank(), skipping...", KeyValue.w);
-			KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.forecast_url_not_set));
+			KeyValue.putVar("LastForecastError", getAndroidString(R.string.forecast_url_not_set));
 			return false;
 		}
 
@@ -4138,7 +4221,7 @@ class weeWXAppCommon
 			if(!hasForecastGson)
 			{
 				LogMessage("getForecast() hasForecastGson is false, skipping...");
-				KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.wifi_not_available));
+				KeyValue.putVar("LastForecastError", getAndroidString(R.string.wifi_not_available));
 				return false;
 			}
 
@@ -4154,7 +4237,7 @@ class weeWXAppCommon
 			if(!hasForecastGson)
 			{
 				LogMessage("getForecast() hasForecastGson is false, skipping...");
-				KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
+				KeyValue.putVar("LastForecastError", getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
 				return false;
 			}
 
@@ -4177,7 +4260,7 @@ class weeWXAppCommon
 			if(!hasForecastGson)
 			{
 				LogMessage("getForecast() hasForecastGson is false, skipping...");
-				KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data));
+				KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
 				return false;
 			}
 
@@ -4194,7 +4277,7 @@ class weeWXAppCommon
 				return true;
 
 			LogMessage("getForecast() hasForecastGson is false, skipping...");
-			KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data));
+			KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
 			return false;
 		}
 
@@ -4214,7 +4297,7 @@ class weeWXAppCommon
 				return true;
 
 			LogMessage("getForecast() hasForecastGson is false, skipping...");
-			KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data));
+			KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
 			return false;
 		}
 
@@ -4235,7 +4318,7 @@ class weeWXAppCommon
 				}
 
 				LogMessage("getForecast() fctype is weatherzone2 and hasForecastGson is false, skipping...");
-				KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data));
+				KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
 				return false;
 			}
 
@@ -4275,7 +4358,7 @@ class weeWXAppCommon
 			}
 
 			LogMessage("getForecast() hasForecastGson is false...", KeyValue.d);
-			KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.still_downloading_forecast_data));
+			KeyValue.putVar("LastForecastError", getAndroidString(R.string.still_downloading_forecast_data));
 
 			return true;
 		} else {
@@ -4417,13 +4500,13 @@ class weeWXAppCommon
 
 		GsonHelper gh = String2Gson(forecastGson, modhour);
 		if(gh == null)
-			return new String[]{"error", weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data)};
+			return new String[]{"error", getAndroidString(R.string.failed_to_process_forecast_data)};
 
 		String content = generateForecast(gh.days, gh.timestamp, showHeader, gh.isDaily || modhour == 24);
 		if(content == null || content.isBlank())
 		{
 			LogMessage("weeWXAppCommon.getGsonContent() #3 Failed to process forecast data...");
-			return new String[]{"error", weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data)};
+			return new String[]{"error", getAndroidString(R.string.failed_to_process_forecast_data)};
 		}
 
 		LogMessage("weeWXAppCommon.getGsonContent() content.length(): " + content.length());
@@ -4472,7 +4555,7 @@ class weeWXAppCommon
 
 		if(url == null || url.isBlank())
 		{
-			KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.forecast_url_not_set));
+			KeyValue.putVar("LastForecastError", getAndroidString(R.string.forecast_url_not_set));
 			return false;
 		}
 
@@ -4646,7 +4729,7 @@ class weeWXAppCommon
 			if(forecastData == null || forecastData.isBlank())
 			{
 				LogMessage("reallyGetForecast() Failed to get any forecast blocks after 3 attempts... giving up...", KeyValue.w);
-				KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data));
+				KeyValue.putVar("LastForecastError", getAndroidString(R.string.failed_to_process_forecast_data));
 				return false;
 			}
 
@@ -4693,7 +4776,7 @@ class weeWXAppCommon
 			default ->
 			{
 				LogMessage("reallyGetForecast() Failed to process forecast, fctype is invalid: " + fctype);
-				String fmtStr = String.format(weeWXApp.getAndroidString(R.string.forecast_type_is_invalid), fctype);
+				String fmtStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
 				KeyValue.putVar("LastForecastError", fmtStr);
 				return false;
 			}
@@ -4705,7 +4788,7 @@ class weeWXAppCommon
 //				CustomDebug.writeDebug("weeWX", "forecast.html", forecastData);
 
 			LogMessage("reallyGetForecast() Failed to process forecast data, giving up...", KeyValue.w);
-			KeyValue.putVar("LastForecastError", weeWXApp.getAndroidString(R.string.failed_to_process_forecast_data));
+			KeyValue.putVar("LastForecastError", getAndroidString(R.string.failed_to_process_forecast_data));
 			return false;
 		}
 
@@ -4771,7 +4854,7 @@ class weeWXAppCommon
 		String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 		if(radtype == null || (!radtype.equals("image") && !radtype.equals("webpage")))
 		{
-			String tmp = String.format(weeWXApp.getAndroidString(R.string.radar_type_is_invalid), radtype);
+			String tmp = String.format(getAndroidString(R.string.radar_type_is_invalid), radtype);
 			return weeWXApp.textToBitmap(tmp);
 		}
 
