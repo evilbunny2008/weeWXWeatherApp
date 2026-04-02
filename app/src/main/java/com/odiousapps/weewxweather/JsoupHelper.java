@@ -81,9 +81,12 @@ class JsoupHelper
 	private static int indexFromToday(DayOfWeek target)
 	{
 		DayOfWeek today = LocalDate.now().getDayOfWeek();
+
 		int diff = target.getValue() - today.getValue();
-		if(diff < 0)
+
+		while(diff < 0)
 			diff += 7;
+
 		return diff;   // 0..6
 	}
 

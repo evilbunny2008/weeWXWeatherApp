@@ -2642,16 +2642,25 @@ class weeWXAppCommon
 
 	static Boolean passesRegularCheck(boolean forced, boolean has_json_combined)
 	{
+		if(!forced && !KeyValue.isPrefSet("UpdateFrequency"))
+		{
+			if(has_json_combined)
+			{
+				LogMessage("passesRegularCheck() lastJsonDownload is null or blank...", KeyValue.d);
+				KeyValue.putVar("LastWeatherError", getAndroidString(R.string.update_set_to_manual_but_no_content_cached));
+				return false;
+			}
+
+			LogMessage("passesRegularCheck() Not forced and set to manual updates...");
+			return true;
+		}
+
 		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
+		if(pos < 0 || pos >= weeWXApp.updateOptions.length)
+			pos = weeWXApp.UpdateFrequency_default;
+
 		LogMessage("passesRegularCheck() pos: " + pos + ", update interval set to: " +
 		           weeWXApp.updateOptions[pos] + ", forced set to: " + forced);
-
-		if(pos < 0)
-		{
-			LogMessage("passesRegularCheck() Invalid update frequency...", KeyValue.d);
-			KeyValue.putVar("LastWeatherError", getAndroidString(R.string.invalid_update_interval));
-			return false;
-		}
 
 		if(!forced && pos == 0)
 		{
@@ -4841,11 +4850,8 @@ class weeWXAppCommon
 
 		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
 		LogMessage("getRadarImage() pos: " + pos + ", update interval set to: " + weeWXApp.updateOptions[pos] + ", forced set to: " + forced);
-		if(pos < 0)
-		{
-			LogMessage("getRadarImage() Invalid update frequency...", KeyValue.d);
-			return weeWXApp.textToBitmap(R.string.invalid_update_interval);
-		}
+		if(pos < 0 || pos >= weeWXApp.updateOptions.length)
+			pos = weeWXApp.UpdateFrequency_default;
 
 		if(!forced && pos == 0)
 		{
@@ -4974,7 +4980,7 @@ class weeWXAppCommon
 
 		if(lastDownloadWebcamAttempt + 10_000L > now)
 		{
-			LogMessage("reallyGetWeather() lastDownloadWebcamAttempt (" + lastDownloadWebcamAttempt + ") + 10_000L > now (" + now + ")");
+			LogMessage("getWebcamImage() lastDownloadWebcamAttempt (" + lastDownloadWebcamAttempt + ") + 10_000L > now (" + now + ")");
 			return bm;
 		}
 
@@ -4988,14 +4994,18 @@ class weeWXAppCommon
 			return bm;
 		}
 
-		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
-		LogMessage("getWebcamImage() pos: " + pos + ", update interval set to: " +
-		           weeWXApp.updateOptions[pos] + ", forced set to: " + forced);
-		if(pos < 0)
+		if(!KeyValue.isPrefSet("webcamInterval"))
 		{
 			LogMessage("getWebcamImage() Invalid update frequency...");
 			return weeWXApp.textToBitmap(R.string.invalid_update_interval);
 		}
+
+		int pos = (int)KeyValue.readVar("webcamInterval", weeWXApp.webcamInterval_default);
+		if(pos < 0 || pos >= weeWXApp.webcamRefreshOptions.length)
+			pos = weeWXApp.webcamInterval_default;
+
+		LogMessage("getWebcamImage() pos: " + pos + ", update interval set to: " +
+		           weeWXApp.webcamRefreshOptions[pos] + ", forced set to: " + forced);
 
 		if(!forced && pos == 0)
 		{

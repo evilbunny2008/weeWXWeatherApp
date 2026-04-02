@@ -32,9 +32,9 @@ public class Webcam extends Fragment
 	    @Override
 	    public void run()
 	    {
-		    getWebcamImage(true, false, true, false);
+			getWebcamImage(true, false, true, false);
 			if(updateInterval > 0)
-		        handler.postDelayed(this, updateInterval);
+				handler.postDelayed(this, updateInterval);
 	    }
 	};
 
@@ -67,7 +67,7 @@ public class Webcam extends Fragment
 
 	public void onResume()
 	{
-	    super.onResume();
+		super.onResume();
 		setLoopInterval();
 	}
 
@@ -79,14 +79,20 @@ public class Webcam extends Fragment
 
 	void setLoopInterval()
 	{
+		if(!KeyValue.isPrefSet("webcamInterval"))
+			return;
+
 		int webcamRefreshInterval = (int)KeyValue.readVar("webcamInterval", weeWXApp.webcamInterval_default);
+		if(webcamRefreshInterval < 0 || webcamRefreshInterval >= weeWXApp.webcamRefreshOptions.length)
+			webcamRefreshInterval = weeWXApp.webcamInterval_default;
+
 		switch(webcamRefreshInterval)
 		{
+			case 0 -> updateInterval = 0;
 			case 1 -> updateInterval = 10_000;
 			case 2 -> updateInterval = 30_000;
 			case 3 -> updateInterval = 60_000;
-			case 4 -> updateInterval = 300_000;
-			default -> updateInterval = 0;
+			default -> updateInterval = 300_000;
 		}
 
 		if(updateInterval > 0)

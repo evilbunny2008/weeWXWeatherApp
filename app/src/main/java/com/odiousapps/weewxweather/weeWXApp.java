@@ -11,7 +11,6 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -45,6 +44,9 @@ import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.os.ConfigurationCompat;
+import androidx.core.os.LocaleListCompat;
+
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
@@ -233,7 +235,7 @@ public class weeWXApp extends Application
 
 	final static int UpdateFrequency_default = 1;
 	final static int UpdateInterval_default = 0;
-	final static int webcamInterval_default = 0;
+	final static int webcamInterval_default = 4;
 	final static int mySlider_default = 100;
 	final static int DayNightMode_default = 2;
 	final static int widget_theme_mode_default = 4;
@@ -308,7 +310,7 @@ public class weeWXApp extends Application
 
 	NotificationManager notificationManager;
 
-	private Resources englishResources;
+	private Context englishContext;
 
 	@Override
 	public void onCreate()
@@ -318,9 +320,9 @@ public class weeWXApp extends Application
 		instance = this;
 
 		Configuration config = new Configuration(getResources().getConfiguration());
-		config.setLocale(Locale.ENGLISH);
-		Context englishContext = createConfigurationContext(config);
-		englishResources = englishContext.getResources();
+		LocaleListCompat localeList = LocaleListCompat.create(Locale.ENGLISH);
+		ConfigurationCompat.setLocales(config, localeList);
+		englishContext = createConfigurationContext(config);
 
 		Log.d("weeWXApp", "Attempting to load JSON data from shared prefs...");
 		if(!KeyValue.parseDicts())
@@ -817,7 +819,7 @@ public class weeWXApp extends Application
 
 	static String getEnglishAndroidString(int resId)
 	{
-		return instance.englishResources.getString(resId);
+		return instance.englishContext.getString(resId);
 	}
 
 	static int smallestScreenWidth()

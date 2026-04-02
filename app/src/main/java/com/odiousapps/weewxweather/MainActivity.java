@@ -1410,13 +1410,13 @@ public class MainActivity extends FragmentActivity
 		adapter3.notifyDataSetChanged();
 
 		if(UpdateFrequency < 0 || UpdateFrequency >= weeWXApp.updateOptions.length)
-			UpdateFrequency = 1;
+			UpdateFrequency = weeWXApp.UpdateFrequency_default;
 
 		if(UpdateInterval < 0 || UpdateInterval >= weeWXApp.updateInterval.length)
-			UpdateInterval = 0;
+			UpdateInterval = weeWXApp.UpdateInterval_default;
 
 		if(webcamInterval < 0 || webcamInterval >= weeWXApp.webcamRefreshOptions.length)
-			webcamInterval = 0;
+			webcamInterval = weeWXApp.webcamInterval_default;
 
 		final int uf = UpdateFrequency;
 		final int ui = UpdateInterval;

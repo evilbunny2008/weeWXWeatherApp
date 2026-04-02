@@ -266,14 +266,6 @@ public class UpdateCheck extends BroadcastReceiver
 		}
 
 		int pos = (int)KeyValue.readVar("UpdateFrequency", weeWXApp.UpdateFrequency_default);
-		if(pos < 0)
-		{
-			LogMessage("UpdateCheck.runInTheBackground() Invalid update frequency...", KeyValue.d);
-			if(!weeWXApp.hasBootedFully)
-				weeWXApp.hasBootedFully = true;
-			return;
-		}
-
 		if(pos == 0)
 		{
 			LogMessage("UpdateCheck.runInTheBackground() Update interval set to manual update... skipping...", KeyValue.d);

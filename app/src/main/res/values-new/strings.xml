@@ -31,7 +31,7 @@
     <string name="every_hour">प्रत्येक</string>
     <string name="failed_to_merge_weather_data">%1$s डाटायात %2$s डाटालिसे स्वाके मफुत ।</string>
     <string name="failed_to_process_forecast_data">पूर्वानुमान डाटायात प्रोसेस यायेत ताःलात ।</string>
-    <string name="failed_to_process_weather_data">छिगु सर्भरं मौसम डाटायात पाय् छि जुइक प्रोसेस यायेत असफल जुल, विशेष यानाः %1$ एस डाटा</string>
+    <string name="failed_to_process_weather_data">छिगु सर्भरं मौसम डाटायात पाय् छि जुइक प्रोसेस यायेत असफल जुल, विशेष यानाः %1$s एस डाटा</string>
     <string name="fgColour">विजेट फोरग्राउण्ड कलर पिकर</string>
     <string name="fileURL">छिगु सेटिङ्गय् यूआरएल दुथ्याकादिसँ ।</string>
     <string name="force_dark_mode">बल डार्क मोड</string>
