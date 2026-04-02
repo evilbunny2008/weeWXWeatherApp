@@ -4965,6 +4965,11 @@ class weeWXAppCommon
 
 	static Bitmap getWebcamImage(boolean forced, boolean calledFromweeWXApp, boolean noCache, boolean runningInBG)
 	{
+		return getWebcamImage(forced, calledFromweeWXApp, noCache, runningInBG, true);
+	}
+
+	static Bitmap getWebcamImage(boolean forced, boolean calledFromweeWXApp, boolean noCache, boolean runningInBG, boolean requireIntent)
+	{
 		Bitmap bm = null;
 		long now = System.currentTimeMillis();
 
@@ -4981,6 +4986,8 @@ class weeWXAppCommon
 		if(lastDownloadWebcamAttempt + 5_000L > now)
 		{
 			LogMessage("getWebcamImage() lastDownloadWebcamAttempt (" + lastDownloadWebcamAttempt + ") + 5_000L > now (" + now + ")");
+			if(requireIntent)
+				SendIntent(STOP_WEBCAM_INTENT);
 			return bm;
 		}
 
@@ -4990,13 +4997,16 @@ class weeWXAppCommon
 		{
 			if(bm == null)
 				return weeWXApp.textToBitmap(R.string.wifi_not_available);
-
+			if(requireIntent)
+				SendIntent(STOP_WEBCAM_INTENT);
 			return bm;
 		}
 
 		if(!KeyValue.isPrefSet("webcamInterval"))
 		{
 			LogMessage("getWebcamImage() Invalid update frequency...");
+			if(requireIntent)
+				SendIntent(STOP_WEBCAM_INTENT);
 			return weeWXApp.textToBitmap(R.string.invalid_update_interval);
 		}
 
@@ -5013,7 +5023,8 @@ class weeWXAppCommon
 
 			if(bm == null)
 				return weeWXApp.textToBitmap(R.string.update_set_to_manual_but_no_content_cached);
-
+			if(requireIntent)
+				SendIntent(STOP_WEBCAM_INTENT);
 			return bm;
 		}
 
@@ -5023,6 +5034,8 @@ class weeWXAppCommon
 		if(webcamURL == null || webcamURL.isBlank())
 		{
 			LogMessage("getWebcamImage() Webcam URL not set...");
+			if(requireIntent)
+				SendIntent(STOP_WEBCAM_INTENT);
 			return weeWXApp.textToBitmap(R.string.webcam_url_url_not_set);
 		}
 
@@ -5032,10 +5045,14 @@ class weeWXAppCommon
 			if(bm == null)
 			{
 				LogMessage("getWebcamImage() Not forced and not 30s old (" + dur + "s) and bm == null...");
+				if(requireIntent)
+					SendIntent(STOP_WEBCAM_INTENT);
 				return weeWXApp.textToBitmap(R.string.webcam_still_downloading);
 
 			} else {
 				LogMessage("getWebcamImage() Not forced and not 30s old (" + dur + "s) and bm != null...");
+				if(requireIntent)
+					SendIntent(STOP_WEBCAM_INTENT);
 				return bm;
 			}
 		}
@@ -5043,6 +5060,9 @@ class weeWXAppCommon
 		if(!forced && !hasBootedFully && !calledFromweeWXApp)
 		{
 			LogMessage("getWebcamImage() Not forced and hasBootedFully is false and calledFromweeWXApp is false...");
+
+			if(requireIntent)
+				SendIntent(STOP_WEBCAM_INTENT);
 
 			if(bm != null)
 				return bm;
@@ -5056,6 +5076,8 @@ class weeWXAppCommon
 		if(!forced && bm != null && dur < npwsll.periodTime)
 		{
 			LogMessage("getWebcamImage() Not forced and bm != null and less than " + npwsll.periodTime + "ms (" + dur + "ms)...");
+			if(requireIntent)
+				SendIntent(STOP_WEBCAM_INTENT);
 			return bm;
 		}
 
@@ -5067,6 +5089,8 @@ class weeWXAppCommon
 			if(dur < 30)
 			{
 				LogMessage("getWebcamImage() webcamTask is less than 30s old (" + dur + "s), we'll skip this attempt...");
+				if(requireIntent)
+					SendIntent(STOP_WEBCAM_INTENT);
 				return bm;
 			}
 
@@ -5103,7 +5127,14 @@ class weeWXAppCommon
 			});
 
 			if(bm == null)
+			{
+				if(requireIntent)
+					SendIntent(STOP_WEBCAM_INTENT);
 				return weeWXApp.textToBitmap(R.string.webcam_still_downloading);
+			}
+
+			if(requireIntent)
+				SendIntent(STOP_WEBCAM_INTENT);
 
 			return bm;
 		} else {
