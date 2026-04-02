@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Tiëp 15 Minute</string>
     <string name="every_30_minutes">Tiëp 30 Minut</string>
     <string name="every_hour">Tiep Jam</string>
-	<string name="failed_to_process_forecast_data">Gagal keu geuproses data ramalan</string>
+    <string name="failed_to_merge_weather_data">Gagal meugabong data %1$s ngon data %2$s</string>
+    <string name="failed_to_process_forecast_data">Gagal keu geuproses data ramalan</string>
     <string name="failed_to_process_weather_data">Gagal bak geuproses deungon beutoi data cuaca dari server droeneuh, khusus jih data %1$s</string>
     <string name="fgColour">Widget Pencuri Warna Lintas</string>
     <string name="fileURL">Tapeutamong URL keu pengaturan droeneuh.txt</string>

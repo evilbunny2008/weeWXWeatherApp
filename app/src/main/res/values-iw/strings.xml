@@ -25,7 +25,9 @@
     <string name="every_15_minutes">כל 15 דקות</string>
     <string name="every_30_minutes">כל 30 דקות</string>
     <string name="every_hour">כל שעה</string>
+    <string name="failed_to_merge_weather_data">מיזוג הנתונים של %1$s עם הנתונים של %2$s נכשל</string>
     <string name="failed_to_process_forecast_data">עיבוד נתוני התחזית נכשל</string>
+    <string name="failed_to_process_weather_data">נכשל עיבוד נכון של נתוני מזג האוויר מהשרת שלך, במיוחד הנתונים של %1$s</string>
     <string name="fgColour">בוחר צבעי חזית יישומון</string>
     <string name="fileURL">הזן את כתובת האתר ל- settings.txt שלך</string>
     <string name="force_dark_mode">כפה מצב כהה</string>

@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Cila maminiti 15 Amaminiti</string>
     <string name="every_30_minutes">Cila maminiti 30 Amaminiti</string>
     <string name="every_hour">Intanda yonse</string>
-	<string name="failed_to_process_forecast_data">Ukufilwa ukubomba amashiwi ya kusesema</string>
+    <string name="failed_to_merge_weather_data">Cafilwa ukubika pamo %1$s amashiwi na %2$s amashiwi</string>
+    <string name="failed_to_process_forecast_data">Ukufilwa ukubomba amashiwi ya kusesema</string>
     <string name="failed_to_process_weather_data">Cafilwa ukubomba bwino amashiwi ya miceele ukufuma ku cifulo cakubikamo, ukucilisha amashiwi ya %1$s</string>
     <string name="fgColour">Icipe ca ku ntanshi ica Makumbi ya pa Muulu</string>
     <string name="fileURL">Ingisheni URL ku mipangilwe yenu.txt</string>

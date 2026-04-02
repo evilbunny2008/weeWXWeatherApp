@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Kada 15 Minuto</string>
     <string name="every_30_minutes">Kada 30 Minuto</string>
     <string name="every_hour">Kada Oras</string>
-	<string name="failed_to_process_forecast_data">Napalya sa pagproseso sa paghulat sa datos</string>
+    <string name="failed_to_merge_weather_data">Dai napagsararo an %1$s na datos sa %2$s na datos</string>
+    <string name="failed_to_process_forecast_data">Napalya sa pagproseso sa paghulat sa datos</string>
     <string name="failed_to_process_weather_data">Dai naproseso nin tama an datos kan panahon gikan sa saimong server, partikularmente an datos kan %1$s</string>
     <string name="fgColour">Welor Palimpre sa Kolor sa Pangenotan</string>
     <string name="fileURL">Ilaog an URL sa saindong mga setting.txt</string>

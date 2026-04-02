@@ -25,7 +25,9 @@
     <string name="every_15_minutes">هر 15 دقیقه</string>
     <string name="every_30_minutes">هر 30 دقیقه</string>
     <string name="every_hour">هر ساعت</string>
+    <string name="failed_to_merge_weather_data">ادغام داده‌های %1$s با داده‌های %2$s انجام نشد</string>
     <string name="failed_to_process_forecast_data">پردازش داده های پیش بینی انجام نشد</string>
+    <string name="failed_to_process_weather_data">پردازش صحیح داده های آب و هوا از سرور شما، به ویژه داده های %1$s انجام نشد</string>
     <string name="fgColour">انتخابگر رنگ پیش زمینه ویجت</string>
     <string name="fileURL">URL را به settings.txt خود وارد کنید</string>
     <string name="force_dark_mode">اجباری حالت تاریک</string>

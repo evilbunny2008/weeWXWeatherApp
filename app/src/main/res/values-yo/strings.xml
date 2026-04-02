@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Gbogbo iṣẹju 15</string>
     <string name="every_30_minutes">Gbogbo iṣẹju 30</string>
     <string name="every_hour">Ni gbogbo wakati</string>
+    <string name="failed_to_merge_weather_data">O kuna lati dapọ %1$s data pẹlu %2$s data</string>
     <string name="failed_to_process_forecast_data">Kuna lati ṣe ilana data asọtẹlẹ</string>
+    <string name="failed_to_process_weather_data">O kuna lati ṣe ilana data oju ojo to tọ lati ọdọ olupin rẹ, pataki %1$s data</string>
     <string name="fgColour">Ẹrọ ailorukọ forteund awọ</string>
     <string name="fileURL">Tẹ URL si Eto Eto rẹ.txt</string>
     <string name="force_dark_mode">Ipa dudu</string>

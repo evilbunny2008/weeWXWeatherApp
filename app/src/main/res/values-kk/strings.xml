@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Әр 15 минут сайын</string>
     <string name="every_30_minutes">Әр 30 минут сайын</string>
     <string name="every_hour">Әр сағат сайын</string>
+    <string name="failed_to_merge_weather_data">%1$s деректерін %2$s деректерімен біріктіру сәтсіз аяқталды</string>
     <string name="failed_to_process_forecast_data">Болжамдық деректерді өңдей алмады</string>
+    <string name="failed_to_process_weather_data">Серверіңіздегі ауа райы деректерін, әсіресе %1$s деректерін дұрыс өңдеу мүмкін болмады</string>
     <string name="fgColour">Виджет алдыңғы түсті таңдау</string>
     <string name="fileURL">URL мекенжайын параметрлерге енгізіңіз.txt</string>
     <string name="force_dark_mode">Күңгірт күші</string>

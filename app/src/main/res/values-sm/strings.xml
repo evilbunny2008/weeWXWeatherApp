@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Uma 15 minute</string>
     <string name="every_30_minutes">Uma 30 minute</string>
     <string name="every_hour">I itula uma</string>
+    <string name="failed_to_merge_weather_data">Ua le mafai ona tu\'ufa\'atasia le %1$s fa\'amaumauga ma le %2$s fa\'amaumauga</string>
     <string name="failed_to_process_forecast_data">Ua le mafai ona faʻagasologa faʻamatalaga faʻamatalaga</string>
+    <string name="failed_to_process_weather_data">Ua le mafai ona sa\'o le fa\'agaioia o fa\'amaumauga o le tau mai lau \'au\'aunaga, aemaise le %1$s fa\'amaumauga</string>
     <string name="fgColour">Whiteget i luma mai lanu lanu piki</string>
     <string name="fileURL">Ulufale le URL i lau tulaga.txt</string>
     <string name="force_dark_mode">Faamalosia le pogisa auala</string>

@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Sabilang 15 Menit</string>
     <string name="every_30_minutes">Sabilang 30 Menit</string>
     <string name="every_hour">Sabilang Jam</string>
-	<string name="failed_to_process_forecast_data">Gagal ring data ramalan proses</string>
+    <string name="failed_to_merge_weather_data">Gagal ngadungang data %1$s sareng data %2$s</string>
+    <string name="failed_to_process_forecast_data">Gagal ring data ramalan proses</string>
     <string name="failed_to_process_weather_data">Gagal ngolah data cuaca saking server Sametoné manut, khususnyané data %1$s</string>
     <string name="fgColour">Banja Ajeg Widget</string>
     <string name="fileURL">Unggahang URL ka setélan Sametoné.txt</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Kada Minutu 15</string>
     <string name="every_30_minutes">Kada Minutu 30</string>
     <string name="every_hour">Oras ida-idak</string>
+    <string name="failed_to_merge_weather_data">La konsege tau hamutuk dadus %1$s ho dadus %2$s</string>
     <string name="failed_to_process_forecast_data">La konsege prosesa dadus previzaun</string>
+    <string name="failed_to_process_weather_data">La konsege prosesa ho loloos dadus tempu nian husi ita-boot nia servidór, espesífikamente dadus %1$s</string>
     <string name="fgColour">Widget Foreground Color Picker</string>
     <string name="fileURL">Hatama URL ba ita nia settings.txt</string>
     <string name="force_dark_mode">Forsa Modu Nakukun</string>

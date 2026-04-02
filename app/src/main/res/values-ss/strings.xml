@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Njalo ngemuva kwemizuzu lengu-15</string>
     <string name="every_30_minutes">Njalo ngemizuzu lengu-30</string>
     <string name="every_hour">Njalo Li-Hour</string>
+    <string name="failed_to_merge_weather_data">Kwehlulekile kuhlanganisa idatha ye %1$s nedatha ye %2$s</string>
     <string name="failed_to_process_forecast_data">Kwehlulekile kucubungula idatha yekubiketela</string>
+    <string name="failed_to_process_weather_data">Kwehlulekile kucubungula kahle idatha yesimo selitulu kusuka kuseva yakho, ikakhulukati idatha ye-%1$s</string>
     <string name="fgColour">I-Widget Foreground Color Picker</string>
     <string name="fileURL">Faka i-URL kumasethingi akho.txt</string>
     <string name="force_dark_mode">Indlela Yemandla Lemnyama</string>

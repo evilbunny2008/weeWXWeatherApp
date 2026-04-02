@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Buri Muhanda 15</string>
     <string name="every_30_minutes">Buri Minute 30</string>
     <string name="every_hour">Buri Eshaha</string>
+    <string name="failed_to_merge_weather_data">Kiremirwe kugaita %1$s data na %2$s data</string>
     <string name="failed_to_process_forecast_data">Okuremwa kukora aha makuru</string>
+    <string name="failed_to_process_weather_data">Kiremirwe kukora gye aha makuru g\'embeera y\'obwire kuruga aha saava yaawe, namunonga %1$s makuru</string>
     <string name="fgColour">Erangi y\'omukibira Picker</string>
     <string name="fileURL">Tamu URL omu ntebeekanisa yaawe</string>
     <string name="force_dark_mode">Force Dark</string>

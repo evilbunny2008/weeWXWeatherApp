@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Na nima ya minuta 15</string>
     <string name="every_30_minutes">Na nima ya minuta 30</string>
     <string name="every_hour">Konso ngunga</string>
+    <string name="failed_to_merge_weather_data">Kukonda kuvukisa bansangu ya %1$s ti bansangu ya %2$s</string>
     <string name="failed_to_process_forecast_data">Kukonda kusadila bansangu ya ke kwisa na ntwala</string>
+    <string name="failed_to_process_weather_data">Kukonda kusadila mbote bansangu ya meteo ya serveur na nge, mingi-mingi bansangu ya %1$s</string>
     <string name="fgColour">Mukubu ya Nsi ya Widger ya Ntwala</string>
     <string name="fileURL">Kota na URL na baparametre na nge.tt</string>
     <string name="force_dark_mode">Mode ya Mpimpa ya Ngolo</string>

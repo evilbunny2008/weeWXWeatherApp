@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Isaky ny 15 minitra</string>
     <string name="every_30_minutes">Isaky ny 30 minitra</string>
     <string name="every_hour">Isan\'ora</string>
+    <string name="failed_to_merge_weather_data">Tsy nahomby ny nanambatra ny angona %1$s amin\'ny angona %2$s</string>
     <string name="failed_to_process_forecast_data">Tsy nahomby ny fizotran\'ny angon-drakitra</string>
+    <string name="failed_to_process_weather_data">Tsy nahavita nandamina tsara ny angona toetrandro avy amin\'ny mpizaranao, indrindra ny angona %1$s</string>
     <string name="fgColour">Mpisambotra loko miloko Widget mialoha</string>
     <string name="fileURL">Ampidiro ny URL amin\'ny setting.txt</string>
     <string name="force_dark_mode">Terena ny maoderina maizina</string>

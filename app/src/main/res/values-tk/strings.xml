@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Her 15 minutda</string>
     <string name="every_30_minutes">Her 30 minutda</string>
     <string name="every_hour">Her sagat</string>
+    <string name="failed_to_merge_weather_data">%1$s maglumatlary%2$s maglumatlary bilen birleşdirip bilmedi</string>
     <string name="failed_to_process_forecast_data">Çaklamany çaklamak şowsuz boldy</string>
+    <string name="failed_to_process_weather_data">Serweriňizdäki howa maglumatyny, esasanam%1$s maglumatlary dogry işläp bilmedi</string>
     <string name="fgColour">Widgetiň öňdäki reňk saýlaýjy</string>
     <string name="fileURL">URL-ni sazlamaňyza giriziň</string>
     <string name="force_dark_mode">Garaňky re modeim bilen mejbur ediň</string>

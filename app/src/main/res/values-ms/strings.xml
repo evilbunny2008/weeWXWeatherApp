@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Setiap 15 minit</string>
     <string name="every_30_minutes">Setiap 30 minit</string>
     <string name="every_hour">Setiap jam</string>
+    <string name="failed_to_merge_weather_data">Gagal menggabungkan data %1$s dengan data %2$s</string>
     <string name="failed_to_process_forecast_data">Gagal memproses data ramalan</string>
+    <string name="failed_to_process_weather_data">Gagal memproses data cuaca daripada pelayan anda dengan betul, khususnya data %1$s</string>
     <string name="fgColour">Pemetik warna latar depan widget</string>
     <string name="fileURL">Masukkan URL ke tetapan anda.txt anda</string>
     <string name="force_dark_mode">Memaksa mod gelap</string>

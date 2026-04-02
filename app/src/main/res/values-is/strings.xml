@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Á 15 mínútna fresti</string>
     <string name="every_30_minutes">Á 30 mínútna fresti</string>
     <string name="every_hour">Á hverri klukkustund</string>
+    <string name="failed_to_merge_weather_data">Mistókst að sameina %1$s gögnin við %2$s gögnin</string>
     <string name="failed_to_process_forecast_data">Mistókst að vinna úr spágögnum</string>
+    <string name="failed_to_process_weather_data">Mistókst að vinna úr veðurgögnum frá þjóninum þínum, sérstaklega %1$s gögnunum</string>
     <string name="fgColour">Græja forgrunnslitavali</string>
     <string name="fileURL">Sláðu inn slóðina á settings.txt</string>
     <string name="force_dark_mode">Þvingaðu Dark Mode</string>

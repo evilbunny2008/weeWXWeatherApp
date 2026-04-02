@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Endzhaku ka timinete tin\'wana ni tin\'wana ta 15</string>
     <string name="every_30_minutes">Endzhaku ka timinete tin\'wana ni tin\'wana ta 30</string>
     <string name="every_hour">awara yin\'wana ni yin\'wana</string>
+    <string name="failed_to_merge_weather_data">Ku tsandzekile ku hlanganisa datha ya %1$s na datha ya %2$s</string>
     <string name="failed_to_process_forecast_data">Ku tsandzekile ku tirhisa datha ya vuprofeta</string>
+    <string name="failed_to_process_weather_data">Ku tsandzekile ku tirhisa kahle datha ya maxelo ku suka eka sevha ya wena, hi ku kongoma datha ya %1$s</string>
     <string name="fgColour">Widget Foreground Muhlayisi wa Mihlovo</string>
     <string name="fileURL">Nghenisa URL eka settings.txt ya wena</string>
     <string name="force_dark_mode">Force Dark mode</string>

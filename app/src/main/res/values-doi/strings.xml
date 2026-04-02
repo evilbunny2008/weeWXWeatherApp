@@ -25,7 +25,9 @@
     <string name="every_15_minutes">हर 15 मिनट च</string>
     <string name="every_30_minutes">हर 30 मिनट च</string>
     <string name="every_hour">हर घड़ी</string>
+    <string name="failed_to_merge_weather_data">%1$s डेटा गी %2$s डेटा कन्नै मर्ज करने च असफल</string>
     <string name="failed_to_process_forecast_data">पूर्वानुमान डेटा गी संसाधित करने च असफल रेहा</string>
+    <string name="failed_to_process_weather_data">तुंदे सर्वर थमां मौसम डेटा गी ठीक ढंगै कन्नै संसाधित करने च असफल रेहा, खास करियै %1$s डेटा</string>
     <string name="fgColour">विजेट अग्रभूमि रंग पिकर</string>
     <string name="fileURL">अपनी सेटिंग्स च URL दर्ज करो.TXT</string>
     <string name="force_dark_mode">बल डार्क मोड</string>

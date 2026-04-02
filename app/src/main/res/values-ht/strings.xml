@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Chak 15 minit</string>
     <string name="every_30_minutes">Chak 30 minit</string>
     <string name="every_hour">Chak Lè</string>
+    <string name="failed_to_merge_weather_data">Echwe pou rantre done %1$s yo ak done %2$s yo</string>
     <string name="failed_to_process_forecast_data">Echwe pou trete done previzyon yo</string>
+    <string name="failed_to_process_weather_data">Echwe pou trete done metewolojik ki soti nan sèvè w la kòrèkteman, espesyalman done %1$s yo</string>
     <string name="fgColour">Widget premye plan koulè picker</string>
     <string name="fileURL">Antre URL nan settings.txt ou a</string>
     <string name="force_dark_mode">Fòs mòd nwa</string>

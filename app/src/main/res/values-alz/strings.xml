@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Kubang\' oro 15</string>
     <string name="every_30_minutes">Kubang\' 30</string>
     <string name="every_hour">Ng\'ato kawa</string>
-	<string name="failed_to_process_forecast_data">Ka wawinjo lembe ma jukiewo i lembe maeni</string>
+    <string name="failed_to_merge_weather_data">Etimo ngo rwom pa %1$s ku %2$s data</string>
+    <string name="failed_to_process_forecast_data">Ka wawinjo lembe ma jukiewo i lembe maeni</string>
     <string name="failed_to_process_weather_data">Etimo ngo tic maber ku lembe mi koth kud i server peri, asaga lembe pa %1$s</string>
     <string name="fgColour">Jadit mi ot yath mi ng\'om zoo</string>
     <string name="fileURL">Keth URL i kabedo peri.txt</string>

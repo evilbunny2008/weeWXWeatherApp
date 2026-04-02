@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Har 15 daqiqada</string>
     <string name="every_30_minutes">Har 30 daqiqada</string>
     <string name="every_hour">Har soatda</string>
+    <string name="failed_to_merge_weather_data">%1$s maʼlumotlarini %2$s maʼlumotlari bilan birlashtirib boʻlmadi</string>
     <string name="failed_to_process_forecast_data">Prognoz ma\'lumotlarini qayta ishlay olmadi</string>
+    <string name="failed_to_process_weather_data">Serveringizdagi ob-havo maʼlumotlarini, xususan %1$s maʼlumotlarini toʻgʻri qayta ishlab boʻlmadi</string>
     <string name="fgColour">Vidjet oldingi rang teruvchisini</string>
     <string name="fileURL">Sozlamalar.txt-ga URL manzilini kiriting</string>
     <string name="force_dark_mode">Qorong\'u rejimni majburlang</string>

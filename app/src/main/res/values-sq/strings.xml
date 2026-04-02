@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Çdo 15 minuta</string>
     <string name="every_30_minutes">Çdo 30 minuta</string>
     <string name="every_hour">Çdo orë</string>
+    <string name="failed_to_merge_weather_data">Dështoi bashkimi i të dhënave %1$s me të dhënat %2$s</string>
     <string name="failed_to_process_forecast_data">Përpunimi i të dhënave të parashikimit dështoi</string>
+    <string name="failed_to_process_weather_data">Dështoi në përpunimin e saktë të të dhënave të motit nga serveri juaj, veçanërisht të dhënat %1$s</string>
     <string name="fgColour">Zgjedhësi i ngjyrës së planit të parë të miniaplikacionit</string>
     <string name="fileURL">Futni URL-në në settings.txt tuaj</string>
     <string name="force_dark_mode">Forco modalitetin e errët</string>

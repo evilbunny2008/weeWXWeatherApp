@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ପ୍ରତି 15 ମିନିଟ୍ |</string>
     <string name="every_30_minutes">ପ୍ରତି 30 ମିନିଟ୍ |</string>
     <string name="every_hour">ପ୍ରତ୍ୟେକ ଘଣ୍ଟା |</string>
+    <string name="failed_to_merge_weather_data">%1$s ତଥ୍ୟକୁ%2$s ତଥ୍ୟ ସହିତ ମିଶ୍ରଣ କରିବାରେ ବିଫଳ ହେଲା |</string>
     <string name="failed_to_process_forecast_data">ପୂର୍ବାନୁମାନ ତଥ୍ୟ ପ୍ରକ୍ରିୟାକରଣ କରିବାରେ ବିଫଳ |</string>
+    <string name="failed_to_process_weather_data">ଆପଣଙ୍କ ସର୍ଭରରୁ ପାଣିପାଗ ତଥ୍ୟକୁ ସଠିକ୍ ଭାବରେ ପ୍ରକ୍ରିୟାକରଣ କରିବାରେ ବିଫଳ, ବିଶେଷ ଭାବରେ%1$s ତଥ୍ୟ |</string>
     <string name="fgColour">ୱିଜେଟ୍ ଫରଗ୍ରାଉଣ୍ଡ୍ ରଙ୍ଗ ପିକର୍ |</string>
     <string name="fileURL">ଆପଣଙ୍କର ସେଟିଂସମୂହକୁ URL ପ୍ରବେଶ କରନ୍ତୁ |</string>
     <string name="force_dark_mode">ଡାର୍କ ମୋଡ୍ ଫୋର୍ସ କରନ୍ତୁ |</string>

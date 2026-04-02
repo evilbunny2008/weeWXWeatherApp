@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Toutes les 15 minutes</string>
     <string name="every_30_minutes">Toutes les 30 minutes</string>
     <string name="every_hour">Chaque heure</string>
+    <string name="failed_to_merge_weather_data">Échec de la fusion des données %1$s avec les données %2$s</string>
     <string name="failed_to_process_forecast_data">Échec du traitement des données de prévision</string>
+    <string name="failed_to_process_weather_data">Échec du traitement correct des données météorologiques de votre serveur, en particulier les données %1$s</string>
     <string name="fgColour">Sélecteur de couleurs de premier plan du widget</string>
     <string name="fileURL">Entrez l\'URL de votre fichier settings.txt</string>
     <string name="force_dark_mode">Forcer le mode sombre</string>

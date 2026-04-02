@@ -134,7 +134,7 @@ public class WidgetProvider extends AppWidgetProvider
 		String tempText;
 		//float approxCharWidthDp = 8f;
 
-		if(hasElement("now"))
+		if(hasElement("report_time"))
 		{
 			String tempSym = KeyValue.getLabel("current_outTemp", "°C");
 			String rainSym = KeyValue.getLabel("day_rain_sum", "mm");
@@ -169,10 +169,10 @@ public class WidgetProvider extends AppWidgetProvider
 
 			LogMessage("Temperature set to " + tempText);
 
-			long now = Math.round((double)getJson("now", 0D) * 1_000L);
+			long report_time = Math.round((double)getJson("report_time", 0D) * 1_000L);
 
 			views.setTextViewText(R.id.widget_location, (String)getJson("station_location", ""));
-			views.setTextViewText(R.id.widget_time, widgetTime(now));
+			views.setTextViewText(R.id.widget_time, widgetTime(report_time));
 			views.setTextViewText(R.id.widget_wind, formatString("current_windGust") + speedSym);
 			views.setTextViewText(R.id.widget_rain, rain + rainSym);
 		} else {

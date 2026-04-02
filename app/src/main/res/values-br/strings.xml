@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Bep 15 munutenn</string>
     <string name="every_30_minutes">Bep 30 munutenn</string>
     <string name="every_hour">Bep Eurvezh</string>
+    <string name="failed_to_merge_weather_data">C\'hwitadenn war kenstagañ ar roadennoù %1$s gant ar roadennoù %2$s</string>
     <string name="failed_to_process_forecast_data">C\'hwitet en deus da dreuzfurmiñ roadennoù ar rakweled</string>
+    <string name="failed_to_process_weather_data">C\'hwitet en deus treuzfurmet mat roadennoù an amzer eus ho servijer, dreist-holl ar roadennoù %1$s</string>
     <string name="fgColour">Widget eo ar c\'hentañ plas evit al liv</string>
     <string name="fileURL">Lakait an URL d\'hoc\'h arventennoù.txt</string>
     <string name="force_dark_mode">Mod teñval an nerzh</string>

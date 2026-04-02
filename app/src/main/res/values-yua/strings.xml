@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Cada 15 Minutos</string>
     <string name="every_30_minutes">Cada 30 Minutos</string>
     <string name="every_hour">Tuláakal P\'isib</string>
+    <string name="failed_to_merge_weather_data">Ma\' páajchaj u nupikubáa le datos %1$s yéetel le datos %2$s</string>
     <string name="failed_to_process_forecast_data">Falló ti\' procesar datos pronósticos</string>
+    <string name="failed_to_process_weather_data">Ma\' béeyak u procesar belil le datos k\'iin ti\' u servidor, específicamente le datos %1$s</string>
     <string name="fgColour">Widget yáax plano u boonil Picker</string>
     <string name="fileURL">Introduzca le URL ti\' u configuración.txt</string>
     <string name="force_dark_mode">Muuk\' Modo éek\'joch\'e\'en</string>

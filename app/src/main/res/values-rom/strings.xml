@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Sako 15 Minutura</string>
     <string name="every_30_minutes">Sako 30 Minutura</string>
     <string name="every_hour">Sako Kàso</string>
+    <string name="failed_to_merge_weather_data">Naśti te ćhivel pes o %1$s dàto e %2$s datengo</string>
     <string name="failed_to_process_forecast_data">Nashti te procesirinel pe prognozake data</string>
+    <string name="failed_to_process_weather_data">Naśti te procesisarel pes miśto e vràmaqe dàte katar tumaro server, specifiko e %1$s dàte</string>
     <string name="fgColour">O Picker foreuj Color Picker</string>
     <string name="fileURL">Entra o URL pe tumaro settings.txt</string>
     <string name="force_dark_mode">Modo Mode</string>

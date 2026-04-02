@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Ògni 15 menuti</string>
     <string name="every_30_minutes">Ògni 30 menuti</string>
     <string name="every_hour">Ògni Oa</string>
+    <string name="failed_to_merge_weather_data">No l\'é riescio à azzonze i dæti %1$s co-i dæti %2$s</string>
     <string name="failed_to_process_forecast_data">Falli à elaborâ i dæti de previxon</string>
+    <string name="failed_to_process_weather_data">No l\'é stæto poscibile elaborâ correttamente i dæti meteo da-o seu server, into dettaggio i dæti %1$s</string>
     <string name="fgColour">Piccin de cô in antiçipo</string>
     <string name="fileURL">Entra l\'URL a-e vòstre impostaçioin.txt</string>
     <string name="force_dark_mode">Modo Scuo</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Dakika 15 ka dwe 15</string>
     <string name="every_30_minutes">Dakika 30 ka dakika</string>
     <string name="every_hour">Saa ka Saa</string>
+    <string name="failed_to_merge_weather_data">Ok nyal keto kanyakla weche mag %1$s gi weche mag %2$s</string>
     <string name="failed_to_process_forecast_data">Ka ok otiyo gi weche ma ng\'ato nyalo ng\'eyogo</string>
+    <string name="failed_to_process_weather_data">Ne ok nyal tiyo maber e wi weche mag kor lwasi kowuok e sava mari, ahinya weche mag %1$s</string>
     <string name="fgColour">Rangi mag bungu ma ni e piny ma oko mar Rangi</string>
     <string name="fileURL">Inyalo keto URL e chenro mari</string>
     <string name="force_dark_mode">Goch Mode mar Dhoot</string>

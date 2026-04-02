@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Elke 15 minute</string>
     <string name="every_30_minutes">Elke 30 minute</string>
     <string name="every_hour">Elke Uur</string>
-	<string name="failed_to_process_forecast_data">Kon nie voorspellingsdata verwerk nie</string>
+    <string name="failed_to_merge_weather_data">Kon nie die %1$s data saamvoeg met die %2$s data nie</string>
+    <string name="failed_to_process_forecast_data">Kon nie voorspellingsdata verwerk nie</string>
     <string name="failed_to_process_weather_data">Kon nie die weerdata van jou bediener af korrek verwerk nie, spesifiek die %1$s data</string>
     <string name="fgColour">Widget Voorgrond Kleur Kieser</string>
     <string name="fileURL">Voer die URL na jou settings.txt in</string>

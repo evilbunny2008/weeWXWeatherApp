@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Bob 15 Munud</string>
     <string name="every_30_minutes">Bob 30 Munud</string>
     <string name="every_hour">Bob Awr</string>
+    <string name="failed_to_merge_weather_data">Wedi methu ag uno data %1$s â data %2$s</string>
     <string name="failed_to_process_forecast_data">Wedi methu prosesu data rhagolwg</string>
+    <string name="failed_to_process_weather_data">Wedi methu prosesu\'r data tywydd o\'ch gweinydd yn gywir, yn benodol y data %1$s</string>
     <string name="fgColour">Dewisydd Lliw Blaendir Widget</string>
     <string name="fileURL">Rhowch yr URL i\'ch gosodiadau.txt</string>
     <string name="force_dark_mode">Gorfodi Modd Tywyll</string>

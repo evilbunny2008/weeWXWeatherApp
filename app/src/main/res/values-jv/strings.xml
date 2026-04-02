@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Saben 15 menit</string>
     <string name="every_30_minutes">Saben 30 menit</string>
     <string name="every_hour">Saben jam</string>
+    <string name="failed_to_merge_weather_data">Gagal nggabungake data %1$s karo data %2$s</string>
     <string name="failed_to_process_forecast_data">Gagal ngolah data ramalan</string>
+    <string name="failed_to_process_weather_data">Gagal ngolah data cuaca saka server sampeyan kanthi bener, khususe data %1$s</string>
     <string name="fgColour">Widget latar warna pemilih</string>
     <string name="fileURL">Ketik URL menyang Setting.Txt</string>
     <string name="force_dark_mode">Meksa mode peteng</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Kä 15 kä intuss diaal</string>
     <string name="every_30_minutes">Ɛni̱ karuciɔn</string>
     <string name="every_hour">Kä ro̱</string>
+    <string name="failed_to_merge_weather_data">Cuɛ pa̱k kɛ mat %1$s data kɛnɛ %2$s data</string>
     <string name="failed_to_process_forecast_data">Mi ci thiɛl luɔt kɛ läth data ni̱ tin ca lar i̱ ba lar</string>
+    <string name="failed_to_process_weather_data">Cuɛ pa̱k kɛ läthdɛ lät ɛ gɔaa kɛ data ni̱ ɣɔaa kä thärbädu, ɛ lotdɛ ni̱ %1$s data</string>
     <string name="fgColour">Wi̱gɛnɛgi̱rɔɔn Kɔör Picker</string>
     <string name="fileURL">Gɔ̱ri URL kä gua̱th tin lätdi.txt</string>
     <string name="force_dark_mode">Cua Force Dark Mode</string>

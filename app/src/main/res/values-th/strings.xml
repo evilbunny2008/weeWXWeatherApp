@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ทุก ๆ 15 นาที</string>
     <string name="every_30_minutes">ทุก ๆ 30 นาที</string>
     <string name="every_hour">ทุกชั่วโมง</string>
+    <string name="failed_to_merge_weather_data">ไม่สามารถรวมข้อมูล %1$s กับข้อมูล %2$s</string>
     <string name="failed_to_process_forecast_data">ล้มเหลวในการประมวลผลข้อมูลการคาดการณ์</string>
+    <string name="failed_to_process_weather_data">ไม่สามารถประมวลผลข้อมูลสภาพอากาศจากเซิร์ฟเวอร์ของคุณได้อย่างถูกต้อง โดยเฉพาะข้อมูล %1$s</string>
     <string name="fgColour">เครื่องมือเลือกสีพื้นหน้าวิดเจ็ต</string>
     <string name="fileURL">ป้อน URL ไปที่ settings.txt ของคุณ</string>
     <string name="force_dark_mode">บังคับโหมดมืด</string>

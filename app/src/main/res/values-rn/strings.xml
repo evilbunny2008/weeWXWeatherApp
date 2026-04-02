@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Iminshi 15</string>
     <string name="every_30_minutes">Iminshi 30</string>
     <string name="every_hour">Isaha</string>
+    <string name="failed_to_merge_weather_data">Inaniwe gufatanya amakuru ya %1$s n\'amakuru ya %2$s</string>
     <string name="failed_to_process_forecast_data">Yananiwe gukora amakuru y\'ivyaha</string>
+    <string name="failed_to_process_weather_data">Inaniwe gukora neza amakuru y\'ikirere avuye kuri server yawe, cane cane amakuru y\'%1$s</string>
     <string name="fgColour">Igipfukisho c\'Ibumba</string>
     <string name="fileURL">Injira URL ku ma settings.txt</string>
     <string name="force_dark_mode">Inkomezi z\'umwiza</string>

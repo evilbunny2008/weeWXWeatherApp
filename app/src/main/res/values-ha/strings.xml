@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Kowane mintuna 15</string>
     <string name="every_30_minutes">Kowane minti 30</string>
     <string name="every_hour">Kowane awa</string>
+    <string name="failed_to_merge_weather_data">An kasa haɗa bayanan %1$s tare da bayanan %2$s</string>
     <string name="failed_to_process_forecast_data">Ba a yi nasarar adana bayanan hasashe ba</string>
+    <string name="failed_to_process_weather_data">An kasa aiwatar da bayanan yanayi daidai daga uwar garken ku, musamman bayanan %1$s</string>
     <string name="fgColour">Mai wasan Widget mai haske</string>
     <string name="fileURL">Shigar da URL zuwa saitunan ka.txt</string>
     <string name="force_dark_mode">Karfi da duhu</string>

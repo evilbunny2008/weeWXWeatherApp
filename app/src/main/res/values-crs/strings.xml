@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Tou le 15 Minit</string>
     <string name="every_30_minutes">Tou le 30 Minit</string>
     <string name="every_hour">Sak Er erdtan</string>
+    <string name="failed_to_merge_weather_data">pa\'n reisi zwenn lenformasyon %1$s avek lenformasyon %2$s</string>
     <string name="failed_to_process_forecast_data">Pa reisi pou proses lenformasyon</string>
+    <string name="failed_to_process_weather_data">pa\'n reisi proses korekteman lenformasyon letan lo ou server, spesifikman lenformasyon %1$s</string>
     <string name="fgColour">Pikater avan plan lo kouler</string>
     <string name="fileURL">Rantre dan URL dan ou bann paramet.txt</string>
     <string name="force_dark_mode">Mod Lafors Nwar</string>

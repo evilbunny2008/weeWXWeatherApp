@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ஒவ்வொரு 15 நிமிடங்களுக்கும்</string>
     <string name="every_30_minutes">ஒவ்வொரு 30 நிமிடங்களுக்கும்</string>
     <string name="every_hour">ஒவ்வொரு மணிநேரமும்</string>
+    <string name="failed_to_merge_weather_data">%1$s தரவை %2$s தரவுடன் இணைப்பதில் தோல்வி</string>
     <string name="failed_to_process_forecast_data">முன்னறிவிப்புத் தரவைச் செயலாக்க முடியவில்லை</string>
+    <string name="failed_to_process_weather_data">உங்கள் சர்வரிலிருந்து வானிலைத் தரவை, குறிப்பாக %1$s தரவைச் சரியாகச் செயல்படுத்துவதில் தோல்வி</string>
     <string name="fgColour">விட்ஜெட் முன்புற வண்ணத் தேர்வி</string>
     <string name="fileURL">உங்கள் settings.txt இல் URL ஐ உள்ளிடவும்</string>
     <string name="force_dark_mode">கட்டாய டார்க் பயன்முறை</string>

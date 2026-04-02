@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Minute oko oko</string>
     <string name="every_30_minutes">Minute oko oko</string>
     <string name="every_hour">L\'heure oko oko</string>
+    <string name="failed_to_merge_weather_data">A lingbi ti bungbi asango ti %1$s na asango ti %2$s</string>
     <string name="failed_to_process_forecast_data">A yeke pëpe ti sara kua na asango ti prévision</string>
+    <string name="failed_to_process_weather_data">A lingbi ti sara kua nzoni na asango ti météo so alondo na serveur ti mo, mbilimbili asango ti %1$s</string>
     <string name="fgColour">Widget Couleur Picker</string>
     <string name="fileURL">Zia URL ni na yâ ti paramètre ti mo.txt</string>
     <string name="force_dark_mode">Force Mode ti bingo</string>

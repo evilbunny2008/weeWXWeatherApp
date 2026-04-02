@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Minitii 15 fɛɛ 15</string>
     <string name="every_30_minutes">Minitii 30 fɛɛ 30</string>
     <string name="every_hour">Daa ŋmɛlɛtswai</string>
+    <string name="failed_to_merge_weather_data">Eyeee akɛ ekɛ %1$s data lɛ kɛ %2$s data lɛ baafata he</string>
     <string name="failed_to_process_forecast_data">Efeee nɔ ko ni tsɔɔ saji ni atsɔɔ mli</string>
+    <string name="failed_to_process_weather_data">Enyɛŋ etsu kɔɔyɔŋ tsakemɔ he saji kɛjɛ osɛɛva lɛ nɔ jogbaŋŋ, titri lɛ %1$s saji lɛ</string>
     <string name="fgColour">Widget Foreund su picker</string>
     <string name="fileURL">Ŋmaa URL kɛya ogbɛjianɔtoo lɛ mli.txt</string>
     <string name="force_dark_mode">Hewalɛ Dade Mode</string>

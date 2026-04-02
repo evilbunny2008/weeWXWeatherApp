@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Sikontu 15 Menit</string>
     <string name="every_30_minutes">Sikontu 30 Menit</string>
     <string name="every_hour">abbala</string>
+    <string name="failed_to_merge_weather_data">Tena nakkulle a\'se\'re data %1$s siagang data %2$s</string>
     <string name="failed_to_process_forecast_data">Punna nia\' tau a\'lampa mange ri prosesna</string>
+    <string name="failed_to_process_weather_data">Tena nakkulle nigaukang data cuaca battu ri servernu, khususna data %1$s</string>
     <string name="fgColour">Pa\'baeng-baeng Warna Angkatan Latar Belakang</string>
     <string name="fileURL">Antama\'mi URL ri settingnu.txt</string>
     <string name="force_dark_mode">Mode Gelap Gaya</string>

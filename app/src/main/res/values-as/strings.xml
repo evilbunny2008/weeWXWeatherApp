@@ -25,7 +25,8 @@
     <string name="every_15_minutes">প্ৰতি ১৫ মিনিটৰ মূৰে মূৰে ৷</string>
     <string name="every_30_minutes">প্ৰতি ৩০ মিনিটৰ মূৰে মূৰে ৷</string>
     <string name="every_hour">প্ৰতি ঘণ্টাত</string>
-	<string name="failed_to_process_forecast_data">পূৰ্বাভাস তথ্য প্ৰক্ৰিয়াকৰণ কৰাত ব্যৰ্থ</string>
+    <string name="failed_to_merge_weather_data">%1$s তথ্য %2$s তথ্যৰ সৈতে একত্ৰিত কৰাত ব্যৰ্থ</string>
+    <string name="failed_to_process_forecast_data">পূৰ্বাভাস তথ্য প্ৰক্ৰিয়াকৰণ কৰাত ব্যৰ্থ</string>
     <string name="failed_to_process_weather_data">আপোনাৰ চাৰ্ভাৰৰ পৰা বতৰ তথ্য সঠিকভাৱে প্ৰক্ৰিয়া কৰাত ব্যৰ্থ, বিশেষকৈ %1$s তথ্য</string>
     <string name="fgColour">ৱিজেট ফ\'ৰগ্ৰাউণ্ড ৰং পিকাৰ</string>
     <string name="fileURL">আপোনাৰ Settings.txt ত URL সুমুৱাওক</string>

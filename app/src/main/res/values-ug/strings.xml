@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ھەر 15 مىنۇتتا</string>
     <string name="every_30_minutes">ھەر 30 مىنۇتتا</string>
     <string name="every_hour">ھەر سائەت</string>
+    <string name="failed_to_merge_weather_data">%1$s سانلىق مەلۇمات بىلەن%2$s سانلىق مەلۇماتنى بىرلەشتۈرەلمىدى</string>
     <string name="failed_to_process_forecast_data">تەكشۈرۈش سانلىق مەلۇماتلىرىنى بىر تەرەپ قىلالمىدى</string>
+    <string name="failed_to_process_weather_data">مۇلازىمېتىرىڭىزنىڭ ھاۋارايى سانلىق مەلۇماتلىرىنى توغرا بىر تەرەپ قىلالمىدى ، بولۇپمۇ%1$s سانلىق مەلۇمات</string>
     <string name="fgColour">كىچىك قورال</string>
     <string name="fileURL">تەڭشەكلىرىڭىزنى URL كىرگۈزۈڭ .txt</string>
     <string name="force_dark_mode">قېنىق ھالەت</string>

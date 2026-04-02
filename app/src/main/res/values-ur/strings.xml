@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ہر 15 منٹ میں</string>
     <string name="every_30_minutes">ہر 30 منٹ میں</string>
     <string name="every_hour">ہر گھنٹے</string>
+    <string name="failed_to_merge_weather_data">%1$s ڈیٹا کو %2$s ڈیٹا کے ساتھ ضم کرنے میں ناکام</string>
     <string name="failed_to_process_forecast_data">پیشن گوئی کے اعداد و شمار پر کارروائی کرنے میں ناکام</string>
+    <string name="failed_to_process_weather_data">آپ کے سرور سے موسم کے ڈیٹا، خاص طور پر %1$s ڈیٹا پر صحیح طریقے سے کارروائی کرنے میں ناکام</string>
     <string name="fgColour">ویجیٹ کے پیش منظر کا رنگ چننے والا</string>
     <string name="fileURL">اپنی ترتیبات ڈاٹ ٹی ایکس ٹی پر یو آر ایل درج کریں</string>
     <string name="force_dark_mode">ڈارک وضع کو مجبور کریں</string>

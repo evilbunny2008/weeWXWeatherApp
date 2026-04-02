@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Miniti 15 o miniti 15</string>
     <string name="every_30_minutes">Miniti 30 o miniti 30</string>
     <string name="every_hour">Lɛrɛ kelen-kelen bɛɛ</string>
+    <string name="failed_to_merge_weather_data">A ma se ka %1$s kunnafoniw fara ɲɔgɔn kan ni %2$s kunnafoniw ye</string>
     <string name="failed_to_process_forecast_data">A ma se ka kunnafoniw baara</string>
+    <string name="failed_to_process_weather_data">A ma se ka waati kunnafoniw baara ka ɲɛ ka bɔ i ka baarakɛminɛn na, kɛrɛnkɛrɛnnenya la %1$s kunnafoniw</string>
     <string name="fgColour">Widget Foreground Color Picker</string>
     <string name="fileURL">URL don i ka settings.txt kɔnɔ</string>
     <string name="force_dark_mode">Force dibi cogoya</string>

@@ -17,16 +17,16 @@
 			android:layout_height="match_parent"
 			android:orientation="vertical">
 
-	        <com.google.android.material.textview.MaterialTextView
-	            android:id="@+id/textView"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-		        android:text="My Place, My Country"
-	            android:gravity="center"
-	            android:textSize="28sp"
-		        tools:ignore="HardcodedText" />
+			<com.google.android.material.textview.MaterialTextView
+				android:id="@+id/textView"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:text="My Place, My Country"
+				android:textSize="28sp"
+				tools:ignore="HardcodedText" />
 
-	        <com.google.android.material.textview.MaterialTextView
+			<com.google.android.material.textview.MaterialTextView
 	            android:id="@+id/textView2"
 	            android:layout_width="match_parent"
 	            android:layout_height="wrap_content"

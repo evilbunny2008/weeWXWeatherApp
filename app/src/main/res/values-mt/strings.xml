@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Kull 15-il Minuta</string>
     <string name="every_30_minutes">Kull 30 Minuta</string>
     <string name="every_hour">Kull Siegha</string>
+    <string name="failed_to_merge_weather_data">Naqas milli jingħaqad id-dejta %1$s mad-dejta %2$s</string>
     <string name="failed_to_process_forecast_data">Naqas milli jipproċessa d-dejta tat-tbassir</string>
+    <string name="failed_to_process_weather_data">Naqas milli tipproċessa b\'mod korrett id-dejta tat-temp mis-server tiegħek, speċifikament id-dejta %1$s</string>
     <string name="fgColour">Picker tal-Kulur tat-Tagħrif Mifrux tal-Widget</string>
     <string name="fileURL">Daħħal il-URL fis-settings.txt tiegħek</string>
     <string name="force_dark_mode">Force Dark Mode</string>

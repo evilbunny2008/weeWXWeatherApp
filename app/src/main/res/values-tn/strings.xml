@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Metsotso mengwe le mengwe e le 15</string>
     <string name="every_30_minutes">Metsotso nngwe le nngwe e le 30</string>
     <string name="every_hour">Ura nngwe le nngwe</string>
+    <string name="failed_to_merge_weather_data">Go paletswe ke go kopanya tshedimosetso ya %1$s le tshedimosetso ya %2$s</string>
     <string name="failed_to_process_forecast_data">Go palelwa ke go dirisa tshedimosetso e e bonelwang pele</string>
+    <string name="failed_to_process_weather_data">E paletswe ke go bereka ka tshwanelo tshedimosetso ya maemo a bosa go tswa mo sefareng ya gago, segolobogolo tshedimosetso ya %1$s</string>
     <string name="fgColour">Motlhopi wa Mmala wa Mebala ya Dilo Tse di Kwa Tsamalatsa</string>
     <string name="fileURL">Tsenya URL mo diseting tsa gago.txt</string>
     <string name="force_dark_mode">Maatla a Lefifi</string>

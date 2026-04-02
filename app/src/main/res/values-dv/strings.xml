@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ކޮންމެ 15 މިނެޓަކުން</string>
     <string name="every_30_minutes">ކޮންމެ 30 މިނެޓަކުން</string>
     <string name="every_hour">ކޮންމެ ގަޑިއެއް</string>
+    <string name="failed_to_merge_weather_data">%1$s ޑޭޓާ %2$s ޑޭޓާއާ އެއްކޮށްލުމަށް ނާކާމިޔާބުވިއެވެ</string>
     <string name="failed_to_process_forecast_data">ފޯކަސްޓް ޑޭޓާ ޕްރޮސެސް ކުރަން ނާކާމިޔާބު</string>
+    <string name="failed_to_process_weather_data">ތިބާގެ ސަރވަރ އިން މޫސުމީ ޑޭޓާ ރަނގަޅަށް ޕްރޮސެސް ނުކުރެވި، ޚާއްޞަކޮށް %1$s ޑޭޓާ</string>
     <string name="fgColour">ވިޖެޓް ފޯގްރައުންޑް ކަލަރ ޕިކަރ</string>
     <string name="fileURL">ތިބާގެ ސެޓިންގސް އަށް ޔޫ.އާރ.އެލް ލިޔެލާށެވެ.TXT</string>
     <string name="force_dark_mode">ފޯސް ޑާކް މޯޑް</string>

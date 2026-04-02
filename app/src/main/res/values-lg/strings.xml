@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Buli ddakiika 15</string>
     <string name="every_30_minutes">Buli ddakiika 30</string>
     <string name="every_hour">Buli ssaawa</string>
+    <string name="failed_to_merge_weather_data">Eremereddwa okugatta data ya %1$s ne data ya %2$s</string>
     <string name="failed_to_process_forecast_data">eremereddwa okukola ku bikwata ku kuteebereza</string>
+    <string name="failed_to_process_weather_data">Eremereddwa okukola obulungi ku data y\'obudde okuva ku seva yo, naddala data ya %1$s</string>
     <string name="fgColour">Widget foreground langi elonda langi</string>
     <string name="fileURL">Yingiza URL ku settings zo.txt</string>
     <string name="force_dark_mode">Force dark mode</string>

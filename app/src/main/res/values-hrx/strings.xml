@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Yeete 15 Minus</string>
     <string name="every_30_minutes">Yeete 30 Minus</string>
     <string name="every_hour">Yeete xtun</string>
+    <string name="failed_to_merge_weather_data">Es is net kefun kep fer ti %1$s data mit te %2$s data se ferklayche</string>
     <string name="failed_to_process_forecast_data">Ferkheerte fer ti protuktsioon fon te data</string>
+    <string name="failed_to_process_weather_data">Es hot net keholef ti weter data fon tayn serwer richtich ferprayte, spetsiifix ti %1$s data</string>
     <string name="fgColour">Widget Feel Farbe Picker</string>
     <string name="fileURL">Tuu ti URL in tayn instellunge.txt</string>
     <string name="force_dark_mode">Kraft Mode</string>

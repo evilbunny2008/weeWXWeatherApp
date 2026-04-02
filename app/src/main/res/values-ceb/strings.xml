@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Matag 15 minutos</string>
     <string name="every_30_minutes">Kada 30 minuto</string>
     <string name="every_hour">Matag oras</string>
+    <string name="failed_to_merge_weather_data">Napakyas sa paghiusa sa %1$s nga datos sa %2$s nga datos</string>
     <string name="failed_to_process_forecast_data">Napakyas sa pagproseso sa datos sa forecast</string>
+    <string name="failed_to_process_weather_data">Napakyas sa hustong pagproseso sa datos sa panahon gikan sa imong server, ilabi na sa %1$s nga datos</string>
     <string name="fgColour">Ang Widget Foreground Color Picker</string>
     <string name="fileURL">Pagsulod sa URL sa imong mga setting.txt</string>
     <string name="force_dark_mode">Forall mode</string>

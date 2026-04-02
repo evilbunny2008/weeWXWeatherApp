@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Sapa 15 minutu</string>
     <string name="every_30_minutes">Sapa 30 minutu</string>
     <string name="every_hour">Sapa hora</string>
+    <string name="failed_to_merge_weather_data">%1$s willayta %2$s willaywan hukllachayta manam atirqanchu</string>
     <string name="failed_to_process_forecast_data">Mana atirqanchu willakuy willakuykunata ruwayta</string>
+    <string name="failed_to_process_weather_data">Mana allintachu pacha willayta sirwiqniykimanta llamk\'achiyta atirqan, chiqamanta %1$s willayta</string>
     <string name="fgColour">Widget Ñawpaq kaq llimp\'i picker</string>
     <string name="fileURL">URL nisqata churay Ajustes.txt nisqaman</string>
     <string name="force_dark_mode">Fuerza Tuta Modo</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Alle 15 Minuten</string>
     <string name="every_30_minutes">Alle 30 Minuten</string>
     <string name="every_hour">Stündlich</string>
+    <string name="failed_to_merge_weather_data">Die %1$s-Daten konnten nicht mit den %2$s-Daten zusammengeführt werden</string>
     <string name="failed_to_process_forecast_data">Prognosedaten konnten nicht verarbeitet werden</string>
+    <string name="failed_to_process_weather_data">Die Wetterdaten von Ihrem Server, insbesondere die %1$s-Daten, konnten nicht korrekt verarbeitet werden</string>
     <string name="fgColour">Widget-Vordergrundfarbauswahl</string>
     <string name="fileURL">Geben Sie die URL zu Ihrer Settings.txt ein</string>
     <string name="force_dark_mode">Dunklen Modus erzwingen</string>

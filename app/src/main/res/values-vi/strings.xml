@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Cứ sau 15 phút</string>
     <string name="every_30_minutes">Cứ sau 30 phút</string>
     <string name="every_hour">Mỗi giờ</string>
+    <string name="failed_to_merge_weather_data">Không thể hợp nhất dữ liệu %1$s với dữ liệu %2$s</string>
     <string name="failed_to_process_forecast_data">Không thể xử lý dữ liệu dự báo</string>
+    <string name="failed_to_process_weather_data">Không thể xử lý chính xác dữ liệu thời tiết từ máy chủ của bạn, cụ thể là dữ liệu %1$s</string>
     <string name="fgColour">Bộ chọn màu nền trước của widget</string>
     <string name="fileURL">Nhập URL vào settings.txt của bạn</string>
     <string name="force_dark_mode">Buộc chế độ tối</string>

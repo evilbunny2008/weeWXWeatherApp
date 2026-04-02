@@ -25,7 +25,8 @@
     <string name="every_15_minutes">I nge dakika 15, 15 i nge dakika 15</string>
     <string name="every_30_minutes">I nge dakika 30 ducu,</string>
     <string name="every_hour">Cawa mo keken</string>
-	<string name="failed_to_process_forecast_data">Ka pe kitiyo ki ngec me byeko ngec</string>
+    <string name="failed_to_merge_weather_data">Pe twero ribo ngec pa %1$s ki ngec pa %2$s</string>
+    <string name="failed_to_process_forecast_data">Ka pe kitiyo ki ngec me byeko ngec</string>
     <string name="failed_to_process_weather_data">Pe tiyo maber ki ngec me piny ki i cim ni, tutwale ngec me %1$s</string>
     <string name="fgColour">Kala me deyo ma pe kitiyo kwede</string>
     <string name="fileURL">Coo URL i kabedo ma itye iye</string>

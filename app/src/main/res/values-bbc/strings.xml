@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Ganup 15 Menit</string>
     <string name="every_30_minutes">Setiap 30 Menit</string>
     <string name="every_hour">Setiap Jam</string>
-	<string name="failed_to_process_forecast_data">Gagal mangolah data ramalan</string>
+    <string name="failed_to_merge_weather_data">Gagal do padomuhon data %1$s dohot data %2$s</string>
+    <string name="failed_to_process_forecast_data">Gagal mangolah data ramalan</string>
     <string name="failed_to_process_weather_data">Gagal do denggan mangolah data cuaca sian servermuna, khususna data %1$s</string>
     <string name="fgColour">Warna Latar Mula Depan Pemilihan</string>
     <string name="fileURL">Masukkon ma URL tu pengaturan muna.txt</string>

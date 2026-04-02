@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Káda 15 minuto</string>
     <string name="every_30_minutes">Káda 30 minuto</string>
     <string name="every_hour">Káda óra</string>
+    <string name="failed_to_merge_weather_data">Ndojejapói oñembojoaju hag̃ua %1$s marandu %2$s marandu ndive</string>
     <string name="failed_to_process_forecast_data">Ndojejapói umi dato pronóstico rehegua</string>
+    <string name="failed_to_process_weather_data">Ndojejapói hekopete arapyha marandu nde servidor-gui, específicamente %1$s marandu</string>
     <string name="fgColour">Widget primer plano color picker</string>
     <string name="fileURL">Emoinge URL nde ñembohekorãme.txt</string>
     <string name="force_dark_mode">Fuerza Modo Pytũmbýpe</string>

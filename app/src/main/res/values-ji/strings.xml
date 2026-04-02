@@ -25,7 +25,9 @@
     <string name="every_15_minutes">יעדער 15 מינוט</string>
     <string name="every_30_minutes">יעדער 30 מינוט</string>
     <string name="every_hour">יעדער שעה</string>
+    <string name="failed_to_merge_weather_data">ניט אַנדערש צו צונויפגיסן די %1$s דאַטן מיט די %2$s דאַטן</string>
     <string name="failed_to_process_forecast_data">ניט אַנדערש צו פּראָצעס פאָרויסזאָגן דאַטן</string>
+    <string name="failed_to_process_weather_data">ניט אַנדערש צו ריכטיק פּראָצעס די וועטער דאַטן פון דיין סערווער, ספּאַסיפיקלי די %1$s דאַטן</string>
     <string name="fgColour">ווידזשיט פאָרגראַונד קאָליר פּיקער</string>
     <string name="fileURL">אַרייַן די URL צו דיין סעטטינגס.טקסט</string>
     <string name="force_dark_mode">צווינגען דאַרק מאָדע</string>

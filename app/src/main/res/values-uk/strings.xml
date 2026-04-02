@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Кожні 15 хвилин</string>
     <string name="every_30_minutes">Кожні 30 хвилин</string>
     <string name="every_hour">Кожну годину</string>
+    <string name="failed_to_merge_weather_data">Не вдалося об\'єднати дані %1$s із даними %2$s</string>
     <string name="failed_to_process_forecast_data">Не вдалося обробити дані прогнозу</string>
+    <string name="failed_to_process_weather_data">Не вдалося правильно обробити дані про погоду з вашого сервера, зокрема дані %1$s</string>
     <string name="fgColour">Вибір кольору переднього плану віджета</string>
     <string name="fileURL">Введіть URL-адресу файлу settings.txt</string>
     <string name="force_dark_mode">Примусовий темний режим</string>

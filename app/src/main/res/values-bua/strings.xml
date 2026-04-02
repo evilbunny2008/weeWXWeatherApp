@@ -25,7 +25,9 @@
     <string name="every_15_minutes">15 минутын туршада</string>
     <string name="every_30_minutes">30 минутын туршада</string>
     <string name="every_hour">Час бүхэн</string>
+    <string name="failed_to_merge_weather_data">%1$s мэдээсэлые %2$s мэдээсэлтэй ниилүүлжэ шадаагүй</string>
     <string name="failed_to_process_forecast_data">Уридшалан уридшалан мэдэхэ мэдээсэл болбосоруулхагүй</string>
+    <string name="failed_to_process_weather_data">Танай серверһээ уларил тухай мэдээсэлые, илангаяа %1$s мэдээсэлые зүбөөр болбосоруулжа шадаагүй</string>
     <string name="fgColour">Виджет Уридшалан үнгын шэлэгдэмэл</string>
     <string name="fileURL">URL-ые өөрынгөө тохиргоонуудта оруулха.txt</string>
     <string name="force_dark_mode">Хүсэ Хара горим</string>

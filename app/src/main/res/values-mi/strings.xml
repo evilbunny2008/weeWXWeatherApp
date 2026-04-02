@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Ia 15 meneti</string>
     <string name="every_30_minutes">Ia 30 meneti</string>
     <string name="every_hour">Haora katoa</string>
+    <string name="failed_to_merge_weather_data">I rahua te hanumi i te raraunga %1$s me te raraunga %2$s</string>
     <string name="failed_to_process_forecast_data">I rahua te tukatuka i nga raraunga tohu</string>
+    <string name="failed_to_process_weather_data">I rahua te tukatuka tika i nga raraunga huarere mai i to tuumau, ina koa ko nga raraunga %1$s</string>
     <string name="fgColour">Te papa perehana papaa</string>
     <string name="fileURL">Whakauruhia te URL ki o tautuhinga.txt</string>
     <string name="force_dark_mode">Te aratau pouri pouri</string>

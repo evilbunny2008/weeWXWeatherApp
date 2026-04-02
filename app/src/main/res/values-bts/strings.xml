@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Tiap 15 Menit</string>
     <string name="every_30_minutes">Tiap 30 Menit</string>
     <string name="every_hour">Ganup Jam</string>
+    <string name="failed_to_merge_weather_data">Gagal padomuhon data %1$s pakon data %2$s</string>
     <string name="failed_to_process_forecast_data">Gagal laho mangolah data laho mangolah data</string>
+    <string name="failed_to_process_weather_data">Gagal mamproses data cuaca humbani server nassiam, khususni data %1$s</string>
     <string name="fgColour">Picker Warna Lebih Dasar</string>
     <string name="fileURL">Masukkon ma URL ai bani pengaturanmu.txt</string>
     <string name="force_dark_mode">Mode Golap Mode</string>

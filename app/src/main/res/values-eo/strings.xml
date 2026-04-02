@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Ĉiu 15 Minutoj</string>
     <string name="every_30_minutes">Ĉiu 30 Minutoj</string>
     <string name="every_hour">Ĉiu Horo</string>
+    <string name="failed_to_merge_weather_data">Malsukcesis kunfandi la %1$s datumojn kun la %2$s datumoj</string>
     <string name="failed_to_process_forecast_data">Malsukcesis prilabori prognozajn datumojn</string>
+    <string name="failed_to_process_weather_data">Malsukcesis ĝuste prilabori la veterdatumojn de via servilo, specife la %1$s datumoj</string>
     <string name="fgColour">Fenestraĵo Malfono Koloro Picker</string>
     <string name="fileURL">Enigu la URL al via settings.txt</string>
     <string name="force_dark_mode">Forto Malhela Reĝimo</string>

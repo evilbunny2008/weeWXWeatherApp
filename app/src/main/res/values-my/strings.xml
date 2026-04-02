@@ -25,7 +25,9 @@
     <string name="every_15_minutes">15 မိနစ်တိုင်း</string>
     <string name="every_30_minutes">မိနစ် 30 တိုင်း</string>
     <string name="every_hour">နာရီတိုင်း</string>
+    <string name="failed_to_merge_weather_data">%1$s ဒေတာကို %2$s ဒေတာနှင့် ပေါင်းစည်းရန် မအောင်မြင်ပါ။</string>
     <string name="failed_to_process_forecast_data">ခန့်မှန်းချက်ဒေတာလုပ်ငန်းစဉ်မအောင်မြင်ပါ</string>
+    <string name="failed_to_process_weather_data">အထူးသဖြင့် %1$s ဒေတာသည် သင့်ဆာဗာမှ မိုးလေဝသဒေတာကို မှန်ကန်စွာလုပ်ဆောင်ခြင်း မအောင်မြင်ပါ။</string>
     <string name="fgColour">ဝစ်ဂျက် foreground အရောင်ကောက်ယူ</string>
     <string name="fileURL">သင်၏ settings.txt သို့ URL ကိုရိုက်ထည့်ပါ</string>
     <string name="force_dark_mode">force dark mode ကို</string>

@@ -505,11 +505,11 @@ public class Stats extends Fragment
 			return;
 		}
 
-		long now = Math.round((double)getJson("now", 0D) * 1_000L);
+		long report_time = Math.round((double)getJson("report_time", 0D) * 1_000L);
 
 		// Today Stats
 		checkFields(rootView.findViewById(R.id.textView), (String)getJson("station_location", ""));
-		checkFields(rootView.findViewById(R.id.textView2), sdf18.format(new Date(now)));
+		checkFields(rootView.findViewById(R.id.textView2), sdf18.format(new Date(report_time)));
 
 		final StringBuilder sb = new StringBuilder();
 

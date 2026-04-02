@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Mphindi 15 zilizonse</string>
     <string name="every_30_minutes">Mphindi 30 zilizonse</string>
     <string name="every_hour">Ola lililonse</string>
+    <string name="failed_to_merge_weather_data">Zalephera kuphatikiza data ya %1$s ndi data ya %2$s</string>
     <string name="failed_to_process_forecast_data">Talephera kukonza deta yachizolowezi</string>
+    <string name="failed_to_process_weather_data">Zalephera kukonza bwino zanyengo kuchokera pa seva yanu, makamaka data ya %1$s</string>
     <string name="fgColour">Gicker kutsogolo</string>
     <string name="fileURL">Lowetsani ulalo wa makonda anu.txt</string>
     <string name="force_dark_mode">Kukakamiza kwamdima</string>

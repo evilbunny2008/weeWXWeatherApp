@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Kożde 15 Minuty</string>
     <string name="every_30_minutes">Kożde 30 Minuty</string>
     <string name="every_hour">Kożdy Damiyń</string>
+    <string name="failed_to_merge_weather_data">Niy udało sie łōnczyć danych %1$s z danymi %2$s</string>
     <string name="failed_to_process_forecast_data">Niy podarzi sie przetworzić dane prognozujōnce</string>
+    <string name="failed_to_process_weather_data">Niy udało sie noleżnie przetworzić danych pogodowych z twojigo serwera, ôsobliwie danych %1$s</string>
     <string name="fgColour">Widget Fore grŏfowy Picker</string>
     <string name="fileURL">Wkludź URL do ustawiyń.txt</string>
     <string name="force_dark_mode">Barzo modernizacyjo Modes</string>

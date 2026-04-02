@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Ik pēc 15 minūtēm</string>
     <string name="every_30_minutes">Ik pēc 30 minūtēm</string>
     <string name="every_hour">Katru stundu</string>
+    <string name="failed_to_merge_weather_data">Neizdevās sapludināt %1$s datus ar %2$s datiem</string>
     <string name="failed_to_process_forecast_data">Neizdevās apstrādāt prognožu datus</string>
+    <string name="failed_to_process_weather_data">Neizdevās pareizi apstrādāt laikapstākļu datus no jūsu servera, īpaši %1$s datus</string>
     <string name="fgColour">Logrīka priekšplāna krāsu atlasītājs</string>
     <string name="fileURL">Ievadiet failā settings.txt URL</string>
     <string name="force_dark_mode">Piespiest tumšo režīmu</string>

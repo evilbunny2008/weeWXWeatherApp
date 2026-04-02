@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Co 15 minut</string>
     <string name="every_30_minutes">Co 30 minut</string>
     <string name="every_hour">Co godzinę</string>
+    <string name="failed_to_merge_weather_data">Nie udało się połączyć danych %1$s z danymi %2$s</string>
     <string name="failed_to_process_forecast_data">Nie udało się przetworzyć danych prognozy</string>
+    <string name="failed_to_process_weather_data">Nie udało się poprawnie przetworzyć danych o pogodzie z Twojego serwera, w szczególności danych %1$s</string>
     <string name="fgColour">Widżet Próbnik kolorów pierwszego planu</string>
     <string name="fileURL">Wprowadź adres URL pliku settings.txt</string>
     <string name="force_dark_mode">Wymuś tryb ciemny</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Iga 15 minuti järel</string>
     <string name="every_30_minutes">Iga 30 minuti järel</string>
     <string name="every_hour">Iga tund</string>
+    <string name="failed_to_merge_weather_data">%1$s andmete liitmine %2$s andmetega ebaõnnestus</string>
     <string name="failed_to_process_forecast_data">Prognoosiandmete töötlemine ebaõnnestus</string>
+    <string name="failed_to_process_weather_data">Teie serveri ilmaandmete, täpsemalt %1$s andmete korrektne töötlemine ebaõnnestus</string>
     <string name="fgColour">Vidina esiplaani värvivalija</string>
     <string name="fileURL">Sisestage faili settings.txt URL</string>
     <string name="force_dark_mode">Sundige tume režiim</string>

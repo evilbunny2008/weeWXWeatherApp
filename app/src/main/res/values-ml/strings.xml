@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ഓരോ 15 മിനിറ്റിലും</string>
     <string name="every_30_minutes">ഓരോ 30 മിനിറ്റിലും</string>
     <string name="every_hour">ഓരോ മണിക്കൂറിലും</string>
+    <string name="failed_to_merge_weather_data">%1$s ഡാറ്റ %2$s ഡാറ്റയുമായി ലയിപ്പിക്കുന്നതിൽ പരാജയപ്പെട്ടു</string>
     <string name="failed_to_process_forecast_data">പ്രവചന ഡാറ്റ പ്രോസസ്സ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു</string>
+    <string name="failed_to_process_weather_data">നിങ്ങളുടെ സെർവറിൽ നിന്നുള്ള കാലാവസ്ഥാ ഡാറ്റ ശരിയായി പ്രോസസ്സ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു, പ്രത്യേകിച്ച് %1$s ഡാറ്റ</string>
     <string name="fgColour">വിജറ്റ് ഫോർഗ്രൗണ്ട് കളർ പിക്കർ</string>
     <string name="fileURL">നിങ്ങളുടെ settings.txt-ലേക്ക് URL നൽകുക</string>
     <string name="force_dark_mode">ഡാർക്ക് മോഡ് നിർബന്ധിക്കുക</string>

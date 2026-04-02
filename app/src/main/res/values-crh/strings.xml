@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Эр 15 дакъкъада</string>
     <string name="every_30_minutes">Эр 30 дакъкъада</string>
     <string name="every_hour">Эр бир саат</string>
+    <string name="failed_to_merge_weather_data">%1$s малюматны %2$s малюматнен бирлештирмек мумкюн олмады</string>
     <string name="failed_to_process_forecast_data">Прогноз малюматларыны ишлемеге мумкюн олмады</string>
+    <string name="failed_to_process_weather_data">Серверинъизден ава малюматларыны, хусусан %1$s малюматларыны догъру ишлеп оламады</string>
     <string name="fgColour">Виджетнинъ форварды Ренъкни сечип алмакъ</string>
     <string name="fileURL">URL-ни параметрлеринъизге кирсетинъиз.txt</string>
     <string name="force_dark_mode">Кучь Къаранлыкъ режим</string>

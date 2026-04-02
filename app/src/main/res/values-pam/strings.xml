@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Balang 15 Minunu</string>
     <string name="every_30_minutes">Balang 30 Minunu</string>
     <string name="every_hour">Balang oras</string>
+    <string name="failed_to_merge_weather_data">Mebigu yang isamut ing %1$s data keng %2$s data</string>
     <string name="failed_to_process_forecast_data">Bigo yang magprosesu king pamaghula kareng datos</string>
+    <string name="failed_to_process_weather_data">E me aprosesu ing weather data ibat keng kekang server, partikular ing %1$s data</string>
     <string name="fgColour">Awit ning Paunang Pigpupul</string>
     <string name="fileURL">Isulat me ing URL kareng kekang setting.txt</string>
     <string name="force_dark_mode">Modang Pwersa Daram</string>

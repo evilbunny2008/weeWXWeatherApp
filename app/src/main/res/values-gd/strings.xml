@@ -25,7 +25,9 @@
     <string name="every_15_minutes">A h-uile 15 mionaid</string>
     <string name="every_30_minutes">A h-uile 30 mionaid</string>
     <string name="every_hour">A h-uile Uair</string>
+    <string name="failed_to_merge_weather_data">Dh\'fhàillig co-aonadh an dàta %1$s leis an dàta %2$s</string>
     <string name="failed_to_process_forecast_data">Dh\'fhàillig làimhseachadh dàta ro-aithris</string>
+    <string name="failed_to_process_weather_data">Dh\'fhàillig làimhseachadh dàta na h-aimsire on fhrithealaiche agad, gu sònraichte an dàta %1$s</string>
     <string name="fgColour">Neach-togail dath aghaidh widget</string>
     <string name="fileURL">Cuir a-steach an URL gu do roghainnean.txt</string>
     <string name="force_dark_mode">Feachd am modh dorcha</string>

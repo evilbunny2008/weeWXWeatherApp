@@ -25,7 +25,9 @@
     <string name="every_15_minutes">සෑම විනාඩි 15 කට වරක්</string>
     <string name="every_30_minutes">සෑම විනාඩි 30 කට වරක්</string>
     <string name="every_hour">සෑම පැයකටම</string>
+    <string name="failed_to_merge_weather_data">%1$s දත්ත %2$s දත්ත සමඟ ඒකාබද්ධ කිරීමට අසමත් විය</string>
     <string name="failed_to_process_forecast_data">පුරෝකථන දත්ත සැකසීමට අසමත් විය</string>
+    <string name="failed_to_process_weather_data">ඔබගේ සේවාදායකයෙන් කාලගුණ දත්ත නිවැරදිව සැකසීමට අසමත් විය, විශේෂයෙන් %1$s දත්ත</string>
     <string name="fgColour">විජට් පෙරබිම් වර්ණ තෝරකය</string>
     <string name="fileURL">ඔබගේ settings.txt වෙත URL එක ඇතුලත් කරන්න</string>
     <string name="force_dark_mode">අඳුරු මාදිලිය බල කරන්න</string>

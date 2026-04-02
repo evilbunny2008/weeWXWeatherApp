@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Ogni 15 minuti</string>
     <string name="every_30_minutes">Ogni 30 minuti</string>
     <string name="every_hour">Ogni ura</string>
+    <string name="failed_to_merge_weather_data">Nun arriniscìu a junciri li dati %1$s cu li dati %2$s</string>
     <string name="failed_to_process_forecast_data">Fallitu pi prucissari li dati di privisioni</string>
+    <string name="failed_to_process_weather_data">Nun arriniscìu a prucissari currettamenti li dati dû tempu dû server, ntô spicìficu li dati %1$s</string>
     <string name="fgColour">Picker di culuri dû widget</string>
     <string name="fileURL">Diggìri l\'URL ê vostri paràmitri.Txt</string>
     <string name="force_dark_mode">Modu Scuru dâ forza</string>

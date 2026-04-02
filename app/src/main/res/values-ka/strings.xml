@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ყოველ 15 წუთში</string>
     <string name="every_30_minutes">ყოველ 30 წუთში</string>
     <string name="every_hour">ყოველ საათში</string>
+    <string name="failed_to_merge_weather_data">%1$s მონაცემების %2$s მონაცემებთან გაერთიანება ვერ მოხერხდა</string>
     <string name="failed_to_process_forecast_data">პროგნოზის მონაცემების დამუშავება ვერ მოხერხდა</string>
+    <string name="failed_to_process_weather_data">ვერ მოხერხდა ამინდის მონაცემების სწორად დამუშავება თქვენი სერვერიდან, კონკრეტულად %1$s მონაცემები</string>
     <string name="fgColour">ვიჯეტის წინა პლანზე ფერის ამომრჩევი</string>
     <string name="fileURL">შეიყვანეთ URL თქვენი settings.txt</string>
     <string name="force_dark_mode">იძულებითი მუქი რეჟიმი</string>

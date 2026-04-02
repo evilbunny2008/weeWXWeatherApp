@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Minute 15 dan ah voikhat</string>
     <string name="every_30_minutes">Minute 30 dan ah voikhat</string>
     <string name="every_hour">Suimilam pakhat ah</string>
+    <string name="failed_to_merge_weather_data">%1$s data le %2$s data fonh khawh a si lo</string>
     <string name="failed_to_process_forecast_data">Hmuhchungnak data kha tuaktan khawh lo</string>
+    <string name="failed_to_process_weather_data">Na server chungin nikhua konglam kha ningcang tein tuah khawh a si lo, a bik in %1$s konglam</string>
     <string name="fgColour">Widget Foreground Color Picker</string>
     <string name="fileURL">Na settings ah URL kha khumh.txt</string>
     <string name="force_dark_mode">Force Dark Mode</string>

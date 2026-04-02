@@ -25,7 +25,9 @@
     <string name="every_15_minutes">All 15 Minutten</string>
     <string name="every_30_minutes">All 30 Minutten</string>
     <string name="every_hour">All Stonn</string>
+    <string name="failed_to_merge_weather_data">Konnt d\'Daten %1$s mat den Daten %2$s fusionéieren</string>
     <string name="failed_to_process_forecast_data">Ausgefall fir Prognosendaten ze veraarbecht</string>
+    <string name="failed_to_process_weather_data">Konnt d\'Wiederdaten vun Ärem Server net korrekt veraarbecht, speziell d\'%1$s Daten</string>
     <string name="fgColour">Widget Virdergrond Faarf Picker</string>
     <string name="fileURL">Gitt d\'URL op Är settings.txt</string>
     <string name="force_dark_mode">Force Dark Mode</string>

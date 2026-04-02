@@ -25,7 +25,9 @@
     <string name="every_15_minutes">I nā minuke 15</string>
     <string name="every_30_minutes">I kēlā me kēia 30 mau minuke</string>
     <string name="every_hour">I kēlā me kēia hola</string>
+    <string name="failed_to_merge_weather_data">ʻAʻole hiki ke hoʻohui i ka ʻikepili %1$s me ka ʻikepili %2$s</string>
     <string name="failed_to_process_forecast_data">ʻAʻole hikiʻole ke hoʻokō i nāʻikepili</string>
+    <string name="failed_to_process_weather_data">ʻAʻole hiki ke hoʻoponopono pololei i ka ʻikepili ʻano mai kāu kikowaena, ʻo ia hoʻi ka ʻikepili %1$s</string>
     <string name="fgColour">Hoʻihoʻiʻia ka pā\'ālua kala kala</string>
     <string name="fileURL">E hoʻokomo i ka URL i kāu mau hoʻonohonoho.Txt</string>
     <string name="force_dark_mode">Hoʻoikaika i keʻanoʻeleʻele</string>

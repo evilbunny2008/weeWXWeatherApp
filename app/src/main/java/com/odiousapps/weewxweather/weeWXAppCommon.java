@@ -211,7 +211,7 @@ class weeWXAppCommon
 	record Result2(String[] forecast_text, String desc, int rc) {}
 	record TempResult(float CurrTemp, float minObservedTemp, float maxObservedTemp, int[] outTemp_trend_count,
 	                  int[] outTemp_trend_signal, long[] outTemp_trend_ts) {}
-	record NPWSLL(long nowTime, long periodTime, long waitTime, long startTime, long lastStart, long lastDownloadTime) {}
+	record NPWSLL(long nowTime, long periodTime, long waitTime, long startTime, long lastStart, long report_time) {}
 
 	private static final String utf8 = "utf-8";
 
@@ -2680,9 +2680,9 @@ class weeWXAppCommon
 			return true;
 		}
 
-		if(!forced && npwsll.lastDownloadTime == 0)
+		if(!forced && npwsll.report_time == 0)
 		{
-			LogMessage("passesRegularCheck() Skipping, lastDownloadTime == 0, app hasn't been setup...", KeyValue.d);
+			LogMessage("passesRegularCheck() Skipping, report_time == 0, app hasn't been setup...", KeyValue.d);
 
 			if(has_json_combined)
 			{
@@ -2693,10 +2693,10 @@ class weeWXAppCommon
 			return true;
 		}
 
-		LogMessage("passesRegularCheck() Last updated check, is " + npwsll.lastDownloadTime + " > " + npwsll.lastStart + "?");
-		if(!forced && npwsll.lastDownloadTime > npwsll.lastStart)
+		LogMessage("passesRegularCheck() Last updated check, is " + npwsll.report_time + " > " + npwsll.lastStart + "?");
+		if(!forced && npwsll.report_time > npwsll.lastStart)
 		{
-			LogMessage("passesRegularCheck() !forced && " + npwsll.lastDownloadTime + " > " + npwsll.lastStart + "...");
+			LogMessage("passesRegularCheck() !forced && " + npwsll.report_time + " > " + npwsll.lastStart + "...");
 			if(has_json_combined)
 			{
 				LogMessage("passesRegularCheck() lastJsonDownload != null && !lastJsonDownload.isBlank()... Skipping...", KeyValue.d);
@@ -2943,8 +2943,10 @@ class weeWXAppCommon
 			return false;
 		}
 
-		LogMessage("mergeJsonObjects() json_combined.toString(): " + json_combined);
-		KeyValue.putVar("json_combined_str", json_combined.toString());
+		String json_combined_str = json_combined.toString();
+
+		LogMessage("mergeJsonObjects() json_combined_str: " + json_combined_str);
+		KeyValue.putVar("json_combined_str", json_combined_str);
 
 		return true;
 	}
@@ -3552,10 +3554,10 @@ class weeWXAppCommon
 		KeyValue.putVar(json_keys[id] + "_str", jsonObject.toString());
 		KeyValue.putVar("LastWeatherError", null);
 
-		LogMessage("reallyGetWeather() Last Server Update Time: " + sdf14.format(jsonObject.optInt("now") * 1_000L));
+		LogMessage("reallyGetWeather() Last Server Update Time: " + sdf14.format(jsonObject.optInt("report_time") * 1_000L));
 		LogMessage("reallyGetWeather() LastDownloadTime: " + sdf14.format(now));
 
-		if(id == 1)
+		if(!force && id == 1)
 			return null;
 
 		return true;
@@ -4878,7 +4880,7 @@ class weeWXAppCommon
 		long lastRadarDownload = (long)KeyValue.readVar("lastRadarDownload", 0L);
 
 		NPWSLL npwsll = getNPWSLL();
-		long dur = npwsll.lastDownloadTime - lastRadarDownload;
+		long dur = npwsll.report_time - lastRadarDownload;
 		if(!forced && bm != null && dur < npwsll.periodTime)
 		{
 			LogMessage("getRadarImage() Not forced and bm != null and less than " + npwsll.periodTime +
@@ -5040,7 +5042,7 @@ class weeWXAppCommon
 
 		NPWSLL npwsll = getNPWSLL();
 		long lastWebcamDownload = (long)KeyValue.readVar("lastWebcamDownload", 0L);
-		dur = npwsll.lastDownloadTime - lastWebcamDownload;
+		dur = npwsll.report_time - lastWebcamDownload;
 		if(!forced && bm != null && dur < npwsll.periodTime)
 		{
 			LogMessage("getWebcamImage() Not forced and bm != null and less than " + npwsll.periodTime + "ms (" + dur + "ms)...");
@@ -5831,13 +5833,13 @@ class weeWXAppCommon
 
 		//LogMessage("Here1");
 
-		long lastDownloadTime = getLDTms() + wait;
+		long report_time = getLDTms() + wait;
 
-		string_time = sdf8.format(lastDownloadTime);
-		LogMessage("getNPWSLL() lastDownloadTime: " + string_time);
+		string_time = sdf8.format(report_time);
+		LogMessage("getNPWSLL() report_time: " + string_time);
 
 		if(period <= 0)
-			return new NPWSLL(now, period, wait, 0L, 0L, lastDownloadTime);
+			return new NPWSLL(now, period, wait, 0L, 0L, report_time);
 
 		//LogMessage("Here2");
 
@@ -5862,7 +5864,7 @@ class weeWXAppCommon
 		string_time = sdf8.format(lastStart);
 		LogMessage("getNPWSLL() lastStart: " + string_time);
 
-		return new NPWSLL(now, period, wait, start, lastStart, lastDownloadTime);
+		return new NPWSLL(now, period, wait, start, lastStart, report_time);
 	}
 
 	static class NotificationLiveData extends LiveData<String>

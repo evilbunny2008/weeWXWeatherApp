@@ -25,7 +25,9 @@
     <string name="every_15_minutes">هەر ١٥ خولەکێک</string>
     <string name="every_30_minutes">هەر ٣٠ خولەکێک</string>
     <string name="every_hour">هەر کاتژمێرێک</string>
+    <string name="failed_to_merge_weather_data">شکستی هێنا لە تێکەڵکردنی داتاکانی %1$s لەگەڵ داتاکانی %2$s</string>
     <string name="failed_to_process_forecast_data">شکستی هێنا لە پرۆسێسکردنی داتاکانی پێشبینی</string>
+    <string name="failed_to_process_weather_data">شکستی هێنا لە پرۆسێسکردنی دروستی داتاکانی کەشوهەوا لە سێرڤەرەکەتەوە، بە تایبەتی داتاکانی %1$s</string>
     <string name="fgColour">ڕەنگی پێشەوەی ویجت</string>
     <string name="fileURL">URLەکە دابنێ بۆ settings.txt</string>
     <string name="force_dark_mode">دۆخی Dark Force</string>

@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Кожныя 15 хвілін</string>
     <string name="every_30_minutes">Кожныя 30 хвілін</string>
     <string name="every_hour">Кожную гадзіну</string>
-	<string name="failed_to_process_forecast_data">Не ўдалося апрацаваць даныя прагнозу</string>
+    <string name="failed_to_merge_weather_data">Не ўдалося аб\'яднаць даныя %1$s з данымі %2$s</string>
+    <string name="failed_to_process_forecast_data">Не ўдалося апрацаваць даныя прагнозу</string>
     <string name="failed_to_process_weather_data">Не ўдалося правільна апрацаваць даныя надвор\'я з вашага сервера, у прыватнасці даныя %1$s</string>
     <string name="fgColour">Выбар колеру пярэдняга плана віджэта</string>
     <string name="fileURL">Увядзіце URL у файл settings.txt</string>

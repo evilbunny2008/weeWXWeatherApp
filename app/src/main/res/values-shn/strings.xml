@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ၵူႈ 15 မိၼိတ်ႉ</string>
     <string name="every_30_minutes">ၵူႈ 30 မိၼိတ်ႉ</string>
     <string name="every_hour">ၵူႈၸူဝ်ႈမူင်းၵူႈၸူဝ်ႈမူင်း</string>
+    <string name="failed_to_merge_weather_data">ဢမ်ႇၸၢင်ႈဢဝ်ၶေႃႈမုၼ်း %1$s မႃးႁူမ်ႈၵၼ်တင်း ၶေႃႈမုၼ်း %2$s လႆႈ</string>
     <string name="failed_to_process_forecast_data">ဢမ်ႇႁဵတ်းၵၢၼ်ၶေႃႈမုၼ်း ဢၼ်လၢမ်းၶၢတ်ႈဝႆႉ</string>
+    <string name="failed_to_process_weather_data">ဢမ်ႇၸၢင်ႈႁဵတ်းၵၢၼ်လႆႈ ၶေႃႈမုၼ်းၾိင်ႈၾႃႉရႃႇသီႇ ဢၼ်လုၵ်ႉတီႈ server ၸဝ်ႈၵဝ်ႇၼၼ်ႉ ႁႂ်ႈမႅၼ်ႈ၊ ဢၼ်တႅတ်ႈၼႅတ်ႈမၼ်း ၶေႃႈမုၼ်း %1$s</string>
     <string name="fgColour">သီၽွၼ်ႉၽွၼ်ႉ ပိၵ်ႉၵႃႇ</string>
     <string name="fileURL">သႂ်ႇပၼ် URL တီႈၼႂ်း Settings ၸဝ်ႈၵဝ်ႇ.txt</string>
     <string name="force_dark_mode">မုၵ်ႉၸုမ်း Dark Mode</string>

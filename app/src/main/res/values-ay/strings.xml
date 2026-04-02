@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Sapa 15 t\'ijturjama</string>
     <string name="every_30_minutes">Sapa 30 t\'ijturjama</string>
     <string name="every_hour">Sapa hora</string>
-	<string name="failed_to_process_forecast_data">Janiwa pronóstico de datos ukanaka phuqhañakiti</string>
+    <string name="failed_to_merge_weather_data">%1$s ukat %2$s ukat yatiyawinak mayacht\'añax janiw ch\'amäkiti</string>
+    <string name="failed_to_process_forecast_data">Janiwa pronóstico de datos ukanaka phuqhañakiti</string>
     <string name="failed_to_process_weather_data">Servidor ukan pacha yatiyawinak chiqapar lurañax janiw ch\'amäkiti, chiqpachanx %1$s ukan yatiyawinakap</string>
     <string name="fgColour">Widget Foreground Color Picker ukax mä jach\'a uñacht\'äwiwa</string>
     <string name="fileURL">URL ukax settings.txt ukar mantañapawa</string>

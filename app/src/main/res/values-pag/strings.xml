@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Kada 15 Meno</string>
     <string name="every_30_minutes">Kada 30 Saray Mito</string>
     <string name="every_hour">Kada Oras</string>
+    <string name="failed_to_merge_weather_data">Ag-agawa so %1$s ya data ed %2$s ya data</string>
     <string name="failed_to_process_forecast_data">Ag-improseso pian ipasakbay iray data</string>
+    <string name="failed_to_process_weather_data">Ag naproseso so weather data manlapud server yo, lalo la ed %1$s data</string>
     <string name="fgColour">Saray Kolor ed Dalan na Liket ed Dalan</string>
     <string name="fileURL">Onloob ed URL ed saray pasen mo.txt</string>
     <string name="force_dark_mode">Puersa na Mabilungetan ya Mode</string>

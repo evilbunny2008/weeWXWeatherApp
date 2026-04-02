@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Vsakih 15 minut</string>
     <string name="every_30_minutes">Vsakih 30 minut</string>
     <string name="every_hour">Vsako uro</string>
+    <string name="failed_to_merge_weather_data">Podatkov %1$s ni bilo mogoče združiti s podatki %2$s</string>
     <string name="failed_to_process_forecast_data">Podatkov napovedi ni bilo mogoče obdelati</string>
+    <string name="failed_to_process_weather_data">Vremenskih podatkov iz vašega strežnika ni bilo mogoče pravilno obdelati, natančneje podatkov %1$s</string>
     <string name="fgColour">Izbirnik barv ospredja pripomočka</string>
     <string name="fileURL">Vnesite URL v datoteko settings.txt</string>
     <string name="force_dark_mode">Vsili temni način</string>

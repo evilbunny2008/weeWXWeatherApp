@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Кажне 15 минут</string>
     <string name="every_30_minutes">Кажне 30 минут</string>
     <string name="every_hour">Кажне шагат</string>
+    <string name="failed_to_merge_weather_data">%1$s данныйым %2$s данный дене ушен кертын огыл</string>
     <string name="failed_to_process_forecast_data">Прогноз данныйым обрабатыватлаш лийдыме</string>
+    <string name="failed_to_process_weather_data">Сервер гыч игече нерген данныйым, рашрак %1$s данныйым, чын обрабатыватлаш лийдыме</string>
     <string name="fgColour">Виджет фортезная тӱс пикер</string>
     <string name="fileURL">URL-адресым пурто тендан настройко-влак.txt</string>
     <string name="force_dark_mode">Вий Пычкемыш Режим</string>

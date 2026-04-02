@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Ар бир 15 мүнөт</string>
     <string name="every_30_minutes">Ар бир 30 мүнөт</string>
     <string name="every_hour">Ар бир саат</string>
+    <string name="failed_to_merge_weather_data">%1$s дайынын %2$s дайыны менен бириктирүү ишке ашкан жок</string>
     <string name="failed_to_process_forecast_data">Болжолдонгон маалыматтарды иштеп чыга алган жок</string>
+    <string name="failed_to_process_weather_data">Сервериңизден аба ырайы дайындары, өзгөчө %1$s дайындары туура иштетилбей калды</string>
     <string name="fgColour">Виджет алдыңкы орус Picker</string>
     <string name="fileURL">URL дарегин жөндөөлөрүңүзгө киргизиңиз</string>
     <string name="force_dark_mode">Күчтүү караңгы режим</string>

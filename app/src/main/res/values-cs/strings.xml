@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Každých 15 minut</string>
     <string name="every_30_minutes">Každých 30 minut</string>
     <string name="every_hour">Každou hodinu</string>
+    <string name="failed_to_merge_weather_data">Nepodařilo se sloučit data %1$s s daty %2$s</string>
     <string name="failed_to_process_forecast_data">Data prognózy se nepodařilo zpracovat</string>
+    <string name="failed_to_process_weather_data">Nepodařilo se správně zpracovat data o počasí z vašeho serveru, konkrétně data %1$s</string>
     <string name="fgColour">Widget pro výběr barvy popředí</string>
     <string name="fileURL">Zadejte adresu URL do souboru settings.txt</string>
     <string name="force_dark_mode">Vynutit tmavý režim</string>

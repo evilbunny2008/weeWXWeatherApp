@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Ամեն 15 րոպեն մեկ</string>
     <string name="every_30_minutes">Ամեն 30 րոպեն մեկ</string>
     <string name="every_hour">Ամեն Ժամ</string>
+    <string name="failed_to_merge_weather_data">Չհաջողվեց միավորել %1$s տվյալները %2$s տվյալների հետ</string>
     <string name="failed_to_process_forecast_data">Չհաջողվեց մշակել կանխատեսման տվյալները</string>
+    <string name="failed_to_process_weather_data">Չհաջողվեց ճիշտ մշակել եղանակի տվյալները ձեր սերվերից, մասնավորապես՝ %1$s տվյալները</string>
     <string name="fgColour">Վիդջեթի առաջին պլանի գույնի ընտրիչ</string>
     <string name="fileURL">Մուտքագրեք ձեր settings.txt-ի URL-ը</string>
     <string name="force_dark_mode">Ստիպել մութ ռեժիմը</string>

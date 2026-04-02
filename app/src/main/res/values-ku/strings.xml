@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Her 15 Deqeyan</string>
     <string name="every_30_minutes">Her 30 Minutes</string>
     <string name="every_hour">Her Saet</string>
+    <string name="failed_to_merge_weather_data">Nekarî daneya %1$s bi daneya %2$s re bike yek</string>
     <string name="failed_to_process_forecast_data">Pêvajoya daneyên pêşbîniyê bi ser neket</string>
+    <string name="failed_to_process_weather_data">Pêvajoya rast daneyên hewayê ji servera we, bi taybetî daneyên %1$s bi ser neket</string>
     <string name="fgColour">Widget Hilbijêra Rengê Pêşî</string>
     <string name="fileURL">URL-a xwe binivîse settings.txt</string>
     <string name="force_dark_mode">Force Dark Mode</string>

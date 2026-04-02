@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ທຸກໆ 15 ນາທີ</string>
     <string name="every_30_minutes">ທຸກໆ 30 ນາທີ</string>
     <string name="every_hour">ທຸກໆຊົ່ວໂມງ</string>
+    <string name="failed_to_merge_weather_data">ລົ້ມເຫລວໃນການຮວມຂໍ້ມູນ %1$s ກັບຂໍ້ມູນ %2$s</string>
     <string name="failed_to_process_forecast_data">ລົ້ມເຫລວໃນການປະມວນຜົນຂໍ້ມູນການຄາດຄະເນ</string>
+    <string name="failed_to_process_weather_data">ລົ້ມເຫລວໃນການປະມວນຜົນຂໍ້ມູນສະພາບອາກາດຈາກເຊີບເວີຂອງທ່ານຢ່າງຖືກຕ້ອງ, ໂດຍສະເພາະຂໍ້ມູນ %1$s</string>
     <string name="fgColour">ເຄື່ອງເກັບສີ</string>
     <string name="fileURL">ໃສ່ URL ເຂົ້າໃນການຕັ້ງຄ່າຂອງທ່ານ .txt</string>
     <string name="force_dark_mode">ບັງຄັບໃຫ້ໂຫມດຊ້ໍາ</string>

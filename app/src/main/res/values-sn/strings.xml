@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Maminitsi gumi nemashanu</string>
     <string name="every_30_minutes">Maminetsi makumi matatu nemanheru</string>
     <string name="every_hour">Nguva imwe neimwe</string>
+    <string name="failed_to_merge_weather_data">Tatadza kubatanidza %1$s data ne%2$s data</string>
     <string name="failed_to_process_forecast_data">Yakundikana kugadzirisa data rekufunga</string>
+    <string name="failed_to_process_weather_data">Yatadza kunyatsogadzirisa mamiriro ekunze kubva paserver yako, kunyanya iyo %1$s data</string>
     <string name="fgColour">Weigge Fortlow Ruvara Mutengesi</string>
     <string name="fileURL">Isa iyo URL kune yako Zviratidzo.txt</string>
     <string name="force_dark_mode">Kumanikidza yakasviba maitiro</string>

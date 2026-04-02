@@ -25,7 +25,8 @@
     <string name="every_15_minutes">كل 15 دقيقة</string>
     <string name="every_30_minutes">كل 30 دقيقة</string>
     <string name="every_hour">كل ساعة</string>
-	<string name="failed_to_process_forecast_data">فشل في معالجة بيانات التنبؤ</string>
+    <string name="failed_to_merge_weather_data">فشل دمج بيانات %1$s مع بيانات %2$s</string>
+    <string name="failed_to_process_forecast_data">فشل في معالجة بيانات التنبؤ</string>
     <string name="failed_to_process_weather_data">فشلت معالجة بيانات الطقس من الخادم الخاص بك بشكل صحيح، وتحديدًا بيانات %1$s</string>
     <string name="fgColour">القطعة منتقي الألوان الأمامية</string>
     <string name="fileURL">أدخل عنوان URL إلى ملف settings.txt الخاص بك</string>

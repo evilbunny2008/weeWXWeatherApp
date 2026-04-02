@@ -25,7 +25,8 @@
     <string name="every_15_minutes">በየ 15 ደቂቃው</string>
     <string name="every_30_minutes">በየ 30 ደቂቃዎች</string>
     <string name="every_hour">በየሰዓቱ</string>
-	<string name="failed_to_process_forecast_data">ትንበያ ውሂብን ማከናወን አልተሳካም</string>
+    <string name="failed_to_merge_weather_data">የ%1$s ውሂብን ከ%2$s ውሂብ ጋር ማዋሃድ አልተሳካም።</string>
+    <string name="failed_to_process_forecast_data">ትንበያ ውሂብን ማከናወን አልተሳካም</string>
     <string name="failed_to_process_weather_data">የአየር ሁኔታ ውሂብን ከአገልጋይዎ በተለይም የ%1$s ውሂብን በትክክል ማካሄድ አልተሳካም።</string>
     <string name="fgColour">የግርጌ ማስታወሻዎች የፊት ቀለም</string>
     <string name="fileURL">ወደ ቅንብሮችዎ ዩአርኤል ያስገቡ</string>

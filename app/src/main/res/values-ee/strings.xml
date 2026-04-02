@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Aɖabaƒoƒo 15 ɖesiaɖe</string>
     <string name="every_30_minutes">Aɖabaƒoƒo 30 ɖesiaɖe</string>
     <string name="every_hour">Gaƒoƒo ɖesiaɖe</string>
+    <string name="failed_to_merge_weather_data">Do kpo %1$s nyatakakawo ƒoƒo ƒu kple %2$s nyatakakawo</string>
     <string name="failed_to_process_forecast_data">Do kpo nyagblɔɖi ƒe nyatakakawo ŋudɔwɔwɔ</string>
+    <string name="failed_to_process_weather_data">Do kpo yame ƒe nɔnɔme ŋuti nyatakakawo ŋudɔwɔwɔ nyuie tso wò dɔwɔƒea, vevietɔ %1$s nyatakakawo</string>
     <string name="fgColour">Widget ƒe ŋgɔgbekpa ƒe amadede tiatia</string>
     <string name="fileURL">Ŋlɔ URL la ɖe wò settings.txt</string>
     <string name="force_dark_mode">Ŋusẽ Viviti ƒe Nɔnɔme</string>

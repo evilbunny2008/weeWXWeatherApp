@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Ogni 15 Minuti</string>
     <string name="every_30_minutes">Ogni 30 Minuti</string>
     <string name="every_hour">Ogni ora</string>
+    <string name="failed_to_merge_weather_data">Impossibile unisce i dati %1$s cù i dati %2$s</string>
     <string name="failed_to_process_forecast_data">Impossibile processà i dati di previsione</string>
+    <string name="failed_to_process_weather_data">Fiascatu à trattà currettamente i dati climatichi da u vostru servitore, in particulare i dati %1$s</string>
     <string name="fgColour">Selettore di culori di primu pianu di u widget</string>
     <string name="fileURL">Inserite l\'URL à u vostru settings.txt</string>
     <string name="force_dark_mode">Force Dark Mode</string>

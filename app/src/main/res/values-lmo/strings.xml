@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Tüt i 10 kg</string>
     <string name="every_30_minutes">Tüt i 30 an</string>
     <string name="every_hour">Çò \'l é la plupart</string>
+    <string name="failed_to_merge_weather_data">L\'è minga sta pusibel unir i dati %1$s cunt i dati %2$s</string>
     <string name="failed_to_process_forecast_data">Avità i dats de l\'aprovazion del sistema</string>
+    <string name="failed_to_process_weather_data">L\'è minga sta pusibel elaborà en mod giüst i dati meteorologich del server, en particular i dati %1$s</string>
     <string name="fgColour">Godeta un\'ocasional de la zona de l\'aeroport</string>
     <string name="fileURL">Seleziuna el tò conto in de la tò putenza</string>
     <string name="force_dark_mode">se</string>

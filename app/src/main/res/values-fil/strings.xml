@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Tuwing 15 minuto</string>
     <string name="every_30_minutes">Tuwing 30 minuto</string>
     <string name="every_hour">Bawat oras</string>
+    <string name="failed_to_merge_weather_data">Nabigong pagsamahin ang %1$s data sa %2$s data</string>
     <string name="failed_to_process_forecast_data">Nabigong iproseso ang data ng pagtataya</string>
+    <string name="failed_to_process_weather_data">Nabigong iproseso nang tama ang data ng panahon mula sa iyong server, partikular ang %1$s data</string>
     <string name="fgColour">Widget foreground color picker</string>
     <string name="fileURL">Ipasok ang URL sa iyong mga setting.txt</string>
     <string name="force_dark_mode">Pilitin ang madilim na mode</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Metsotso e mengwe le e mengwe e 15</string>
     <string name="every_30_minutes">Metsotso e mengwe le e mengwe e 30</string>
     <string name="every_hour">Iri e nngwe le e nngwe</string>
+    <string name="failed_to_merge_weather_data">E paletšwe ke go kopanya datha ya %1$s le datha ya %2$s</string>
     <string name="failed_to_process_forecast_data">E paletšwe ke go šoma ka datha ya ponelopele</string>
+    <string name="failed_to_process_weather_data">E paletšwe ke go šoma gabotse datha ya boso go tšwa go seva ya gago, ka go lebanya datha ya %1$s</string>
     <string name="fgColour">Widget foreground mmala picker</string>
     <string name="fileURL">Tsenya URL go dipeakanyo tša gago.txt</string>
     <string name="force_dark_mode">qobella mokgwa wa lefifi</string>

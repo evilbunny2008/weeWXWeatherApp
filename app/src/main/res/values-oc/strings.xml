@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Cada 15 Minutas</string>
     <string name="every_30_minutes">Cada 30 Minutos</string>
     <string name="every_hour">Cada Ora</string>
+    <string name="failed_to_merge_weather_data">Fracàs al moment de fusionar las donadas %1$s amb las donadas %2$s</string>
     <string name="failed_to_process_forecast_data">Fracassat a tractar las donadas de prevision</string>
+    <string name="failed_to_process_weather_data">Fracàs al tractament corrèctament de las donadas meteorologicas de vòstre servidor, concretament las donadas %1$s</string>
     <string name="fgColour">Picker de Color de Primo Esterro</string>
     <string name="fileURL">Picatz l\'URL a vòstres paramètres.txt</string>
     <string name="force_dark_mode">Mode fosc de fòrça</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Elke 15 Minutes</string>
     <string name="every_30_minutes">Elke 30 Minutes</string>
     <string name="every_hour">Edere Our</string>
+    <string name="failed_to_merge_weather_data">De %1$s-gegevens neet samevoge mit de %2$s-gegevens</string>
     <string name="failed_to_process_forecast_data">Vergeleke um veurspelde gegeves te verwèrke</string>
+    <string name="failed_to_process_weather_data">De weergegevens vaan eur server, in \'t biezoonder de %1$s-gegevens, is neet good verwerk</string>
     <string name="fgColour">Widget Voorgrond Kleur Kies</string>
     <string name="fileURL">Vul de URL in op uw instellinge.txt</string>
     <string name="force_dark_mode">Force Duusteremodus</string>

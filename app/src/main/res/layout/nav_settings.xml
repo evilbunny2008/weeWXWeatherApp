@@ -347,6 +347,117 @@
 		</com.google.android.material.textfield.TextInputLayout>
 
 		<com.google.android.material.materialswitch.MaterialSwitch
+			android:id="@+id/rainrate_alert_watch"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="48dp"
+			android:checked="false"
+			android:text="@string/rainrate_alert_watch"
+			android:textSize="20sp"
+			android:layout_marginTop="10dp"
+			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+
+		<com.google.android.material.materialswitch.MaterialSwitch
+			android:id="@+id/rainrate_alert_warning"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="48dp"
+			android:checked="false"
+			android:text="@string/rainrate_alert_warning"
+			android:textSize="20sp"
+			android:layout_marginTop="10dp"
+			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+
+		<com.google.android.material.materialswitch.MaterialSwitch
+			android:id="@+id/rainrate_alert_severe"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="48dp"
+			android:checked="false"
+			android:text="@string/rainrate_alert_severe"
+			android:textSize="20sp"
+			android:layout_marginTop="10dp"
+			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+
+		<com.google.android.material.materialswitch.MaterialSwitch
+			android:id="@+id/rainfall_alert"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="48dp"
+			android:checked="false"
+			android:text="@string/rainfall_alert"
+			android:textSize="20sp"
+			android:layout_marginTop="10dp"
+			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
+
+		<LinearLayout
+			android:id="@+id/rainfall_setting"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:visibility="gone">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				android:layout_marginTop="10dp">
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.DisplaySmall"
+					android:id="@+id/tvRainfallLimitLabel"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:text="@string/rainfall_limit"
+					android:textSize="20sp"
+					android:gravity="start" />
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.DisplaySmall"
+					android:id="@+id/tvRainfallLimitValue"
+					android:layout_height="wrap_content"
+					android:layout_width="wrap_content"
+					android:textSize="20sp"
+					android:gravity="end" />
+
+			</LinearLayout>
+
+			<com.google.android.material.slider.Slider
+				android:id="@+id/sliderRainfallLimit"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:stepSize="1"
+				app:labelBehavior="floating"
+				app:haloRadius="0dp"/>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.BodySmall"
+					android:id="@+id/minRainfallLimit"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:textSize="20sp"
+					android:gravity="start" />
+
+				<com.google.android.material.textview.MaterialTextView
+					style="@style/TextAppearance.Material3.BodySmall"
+					android:id="@+id/maxRainfallLimit"
+					android:layout_height="wrap_content"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:textSize="20sp"
+					android:gravity="end" />
+
+			</LinearLayout>
+		</LinearLayout>
+
+		<com.google.android.material.materialswitch.MaterialSwitch
 			android:id="@+id/morning_temp_alert"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -501,117 +612,6 @@
 
 			</LinearLayout>
 		</LinearLayout>
-
-		<com.google.android.material.materialswitch.MaterialSwitch
-			android:id="@+id/rainfall_alert"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:minHeight="48dp"
-			android:checked="false"
-			android:text="@string/rainfall_alert"
-			android:textSize="20sp"
-			android:layout_marginTop="10dp"
-			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
-
-		<LinearLayout
-			android:id="@+id/rainfall_setting"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:orientation="vertical"
-			android:visibility="gone">
-
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal"
-				android:layout_marginTop="10dp">
-
-				<com.google.android.material.textview.MaterialTextView
-					style="@style/TextAppearance.Material3.DisplaySmall"
-					android:id="@+id/tvRainfallLimitLabel"
-					android:layout_height="wrap_content"
-					android:layout_width="0dp"
-					android:layout_weight="1"
-					android:text="@string/rainfall_limit"
-					android:textSize="20sp"
-					android:gravity="start" />
-
-				<com.google.android.material.textview.MaterialTextView
-					style="@style/TextAppearance.Material3.DisplaySmall"
-					android:id="@+id/tvRainfallLimitValue"
-					android:layout_height="wrap_content"
-					android:layout_width="wrap_content"
-					android:textSize="20sp"
-					android:gravity="end" />
-
-			</LinearLayout>
-
-			<com.google.android.material.slider.Slider
-				android:id="@+id/sliderRainfallLimit"
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:stepSize="1"
-				app:labelBehavior="floating"
-				app:haloRadius="0dp"/>
-
-			<LinearLayout
-				android:layout_width="match_parent"
-				android:layout_height="wrap_content"
-				android:orientation="horizontal">
-
-				<com.google.android.material.textview.MaterialTextView
-					style="@style/TextAppearance.Material3.BodySmall"
-					android:id="@+id/minRainfallLimit"
-					android:layout_height="wrap_content"
-					android:layout_width="0dp"
-					android:layout_weight="1"
-					android:textSize="20sp"
-					android:gravity="start" />
-
-				<com.google.android.material.textview.MaterialTextView
-					style="@style/TextAppearance.Material3.BodySmall"
-					android:id="@+id/maxRainfallLimit"
-					android:layout_height="wrap_content"
-					android:layout_width="0dp"
-					android:layout_weight="1"
-					android:textSize="20sp"
-					android:gravity="end" />
-
-			</LinearLayout>
-		</LinearLayout>
-
-		<com.google.android.material.materialswitch.MaterialSwitch
-			android:id="@+id/rainrate_alert_watch"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:minHeight="48dp"
-			android:checked="false"
-			android:text="@string/rainrate_alert_watch"
-			android:textSize="20sp"
-			android:layout_marginTop="10dp"
-			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
-
-		<com.google.android.material.materialswitch.MaterialSwitch
-			android:id="@+id/rainrate_alert_warning"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:minHeight="48dp"
-			android:checked="false"
-			android:text="@string/rainrate_alert_warning"
-			android:textSize="20sp"
-			android:layout_marginTop="10dp"
-			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
-
-		<com.google.android.material.materialswitch.MaterialSwitch
-			android:id="@+id/rainrate_alert_severe"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:minHeight="48dp"
-			android:checked="false"
-			android:text="@string/rainrate_alert_severe"
-			android:textSize="20sp"
-			android:layout_marginTop="10dp"
-			tools:ignore="VisualLintButtonSize,VisualLintBounds" />
 	</LinearLayout>
 
 	<LinearLayout

@@ -454,7 +454,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		}
 
 		int timeMode = 0;
-		long now = Math.round((double)getJson("now", 0D) * 1_000L);
+		long report_time = Math.round((double)getJson("report_time", 0D) * 1_000L);
 		String tempSym = KeyValue.getLabel("current_outTemp", "°C");
 		String humSym = KeyValue.getLabel("current_outHumidity", "%");
 		String pressSym = KeyValue.getLabel("current_barometer", "hPa");
@@ -462,7 +462,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		String rainSym = KeyValue.getLabel("day_rain_sum", "mm");
 
 		checkFields(tv1, (String)getJson("station_location", ""));
-		checkFields(tv2, sdf18.format(new Date(now)));
+		checkFields(tv2, sdf18.format(new Date(report_time)));
 
 		String tmpStr = formatString("current_outTemp");
 		if(tmpStr == null || tmpStr.isBlank())

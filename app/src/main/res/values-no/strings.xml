@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Hvert 15. minutt</string>
     <string name="every_30_minutes">Hvert 30. minutt</string>
     <string name="every_hour">Hver time</string>
+    <string name="failed_to_merge_weather_data">Kunne ikke slå sammen %1$s-dataene med %2$s-dataene</string>
     <string name="failed_to_process_forecast_data">Kunne ikke behandle prognosedata</string>
+    <string name="failed_to_process_weather_data">Kunne ikke behandle værdataene fra serveren din, spesielt %1$s-dataene</string>
     <string name="fgColour">Widget Forgrunnsfargevelger</string>
     <string name="fileURL">Skriv inn nettadressen til settings.txt</string>
     <string name="force_dark_mode">Tving mørk modus</string>

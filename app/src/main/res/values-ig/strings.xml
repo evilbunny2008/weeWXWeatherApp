@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Nkeji iri na ise ọ bụla</string>
     <string name="every_30_minutes">Kwa nkeji iri atọ</string>
     <string name="every_hour">Kwa oge</string>
+    <string name="failed_to_merge_weather_data">Ejikọtaghị data %1$s na %2$s data</string>
     <string name="failed_to_process_forecast_data">Emeghị ka ịhazi data</string>
+    <string name="failed_to_process_weather_data">Ịhazighị data ihu igwe sitere na sava gị nke ọma, kpọmkwem data %1$s</string>
     <string name="fgColour">Wijetị Chargen For na-ahọrọ</string>
     <string name="fileURL">Tinye URL na ntọala gị.txt</string>
     <string name="force_dark_mode">Ike ọchịchịrị</string>

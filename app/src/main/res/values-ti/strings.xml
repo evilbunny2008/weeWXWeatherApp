@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ኣብ ነፍሲ ወከፍ 15 ደቓይቕ</string>
     <string name="every_30_minutes">ኣብ ነፍሲ ወከፍ 30 ደቓይቕ</string>
     <string name="every_hour">ኣብ ነፍሲ ወከፍ ሰዓት</string>
+    <string name="failed_to_merge_weather_data">ነቲ %1$s ዳታ ምስ %2$s ዳታ ምውህሃድ ኣይከኣለን</string>
     <string name="failed_to_process_forecast_data">ትንበያ ዳታ ምምስራሕ ኣይተኻእለን ።</string>
+    <string name="failed_to_process_weather_data">ካብ ኣገልጋሊኻ ዝመጽእ ናይ ኩነታት ኣየር ዳታ ብትኽክል ክሰርሕ ኣይከኣለን፣ ብፍላይ ድማ ናይ %1$s ዳታ</string>
     <string name="fgColour">ዊጀት ቅድሚት መሬት ሕብሪ ምልቃም</string>
     <string name="fileURL">ናብ ቅጥዕታትካ URL ኣእቱ።txt</string>
     <string name="force_dark_mode">ሓይሊ ጸሊም ሞድ</string>

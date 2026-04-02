@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Kala 15 Hojomaaji</string>
     <string name="every_30_minutes">Kala 30 minit</string>
     <string name="every_hour">Waktuuji kala</string>
+    <string name="failed_to_merge_weather_data">Waawaa hawrude e domen %1$s e domen %2$s</string>
     <string name="failed_to_process_forecast_data">Ina ŋakki e dokke teskagol</string>
+    <string name="failed_to_process_weather_data">Waawaa huutoraade no moƴƴi dokke weeyo ummoraade e serwer maa, teeŋti noon e dokke %1$s</string>
     <string name="fgColour">Widget Color Color Color</string>
     <string name="fileURL">Naat URL e dottaaɗe maa.txt</string>
     <string name="force_dark_mode">Mode doole niɓɓere</string>

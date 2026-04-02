@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Gach 15 Nóiméad</string>
     <string name="every_30_minutes">Gach 30 Nóiméad</string>
     <string name="every_hour">Gach Uair</string>
+    <string name="failed_to_merge_weather_data">Theip ar chumasc na sonraí %1$s leis na sonraí %2$s</string>
     <string name="failed_to_process_forecast_data">Theip ar phróiseáil sonraí réamhaisnéise</string>
+    <string name="failed_to_process_weather_data">Theip ar phróiseáil cheart na sonraí aimsire ó do fhreastalaí, go háirithe na sonraí %1$s</string>
     <string name="fgColour">Roghnóir Dathanna Tulra Giuirléid</string>
     <string name="fileURL">Cuir isteach an URL chuig do settings.txt</string>
     <string name="force_dark_mode">Fórsa Mód Dark</string>

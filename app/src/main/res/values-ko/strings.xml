@@ -25,7 +25,9 @@
     <string name="every_15_minutes">15분마다</string>
     <string name="every_30_minutes">30분마다</string>
     <string name="every_hour">매시간</string>
+    <string name="failed_to_merge_weather_data">%1$s 데이터를 %2$s 데이터와 병합하지 못했습니다</string>
     <string name="failed_to_process_forecast_data">예측 데이터를 처리하지 못했습니다</string>
+    <string name="failed_to_process_weather_data">서버의 날씨 데이터, 특히 %1$s 데이터를 올바르게 처리하지 못했습니다</string>
     <string name="fgColour">위젯 전경색 선택기</string>
     <string name="fileURL">settings.txt에 URL을 입력하세요</string>
     <string name="force_dark_mode">강제 다크 모드</string>

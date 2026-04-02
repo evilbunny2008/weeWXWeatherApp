@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Kada 15 Minutos</string>
     <string name="every_30_minutes">Kada 30 Minutos</string>
     <string name="every_hour">Kada Oras</string>
+    <string name="failed_to_merge_weather_data">Napaslawan sa pagtingob sang %1$s nga datos sa %2$s nga datos</string>
     <string name="failed_to_process_forecast_data">Napakyas sa pagproseso sa datos sa forecast</string>
+    <string name="failed_to_process_weather_data">Napaslawan sa pagproseso sing husto sang datos sang panahon gikan sa imo server, ilabi na ang %1$s nga datos</string>
     <string name="fgColour">Widget sa Dughan nga Kolor nga Picker</string>
     <string name="fileURL">Isulod ang URL sa imo mga setting.txt</string>
     <string name="force_dark_mode">Pwersa nga Madulom nga Mode</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Tunggal 15 a minuto</string>
     <string name="every_30_minutes">Tunggal 30 a minuto</string>
     <string name="every_hour">Tunggal oras</string>
+    <string name="failed_to_merge_weather_data">Napaay a mangitipon ti datos ti %1$s iti datos ti %2$s</string>
     <string name="failed_to_process_forecast_data">Nalpasen ti panangproseso ti datos ti panagpakpakauna</string>
+    <string name="failed_to_process_weather_data">Napaay a siuumiso a mangproseso ti datos ti paniempo manipud iti serbidormo, espesipiko ti datos ti %1$s</string>
     <string name="fgColour">Widget nga foreground nga picker sa kolor</string>
     <string name="fileURL">Iserrek ti URL iti settings.txt mo</string>
     <string name="force_dark_mode">puersa Nasipnget nga Modo</string>

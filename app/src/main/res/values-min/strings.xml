@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Tiok 15 minik</string>
     <string name="every_30_minutes">Tiok 30 Menit</string>
     <string name="every_hour">Satiok Jam</string>
+    <string name="failed_to_merge_weather_data">Gagal manggabuangkan data %1$s jo data %2$s</string>
     <string name="failed_to_process_forecast_data">Digagalan jo data ramalan proses</string>
+    <string name="failed_to_process_weather_data">Gagal mamproses sacaro tapek data cuaco dari server Sanak, khususnyo data %1$s</string>
     <string name="fgColour">Picker Warna Latar Widget</string>
     <string name="fileURL">Masuakkan URL ka pangaturan Sanak.txt</string>
     <string name="force_dark_mode">Mode Gelap Angkatan</string>

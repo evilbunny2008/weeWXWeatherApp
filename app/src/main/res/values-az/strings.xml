@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Hər 15 dəqiqədə</string>
     <string name="every_30_minutes">Hər 30 dəqiqədə</string>
     <string name="every_hour">Hər saat</string>
-	<string name="failed_to_process_forecast_data">Proqnoz məlumatlarını emal edə bilmədi</string>
+    <string name="failed_to_merge_weather_data">%1$s datasını %2$s datası ilə birləşdirmək alınmadı</string>
+    <string name="failed_to_process_forecast_data">Proqnoz məlumatlarını emal edə bilmədi</string>
     <string name="failed_to_process_weather_data">Serverinizdən hava məlumatlarını, xüsusən %1$s datasını düzgün emal etmək alınmadı</string>
     <string name="fgColour">Widget ön rəng seçici</string>
     <string name="fileURL">URL-ni parametrlərinizə daxil edin.txt</string>

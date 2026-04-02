@@ -25,7 +25,9 @@
     <string name="every_15_minutes">15 daqiiqo kasta</string>
     <string name="every_30_minutes">30 daqiiqo kasta</string>
     <string name="every_hour">Saacad kasta</string>
+    <string name="failed_to_merge_weather_data">Ku guuldareystay in lagu daro xogta %1$s iyo %2$s xogta</string>
     <string name="failed_to_process_forecast_data">Ku guuldareystay in la socodsiiyo xogta saadaasha</string>
+    <string name="failed_to_process_weather_data">Ku guul daraystay in uu si sax ah uga shaqeeyo xogta cimilada seerfarkaaga, gaar ahaan xogta %1$s</string>
     <string name="fgColour">Qalabka faddaxa hore ee widget</string>
     <string name="fileURL">Gali URL-ka goobahaaga.txt</string>
     <string name="force_dark_mode">Ku qasbi qaab mugdi ah</string>

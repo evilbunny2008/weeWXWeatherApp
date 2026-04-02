@@ -25,7 +25,9 @@
     <string name="every_15_minutes">दर 15 मिनिटांनी</string>
     <string name="every_30_minutes">प्रत्येक 30 मिनिटांनी</string>
     <string name="every_hour">प्रत्येक तासाला</string>
+    <string name="failed_to_merge_weather_data">%1$s डेटा %2$s डेटासह विलीन करण्यात अयशस्वी</string>
     <string name="failed_to_process_forecast_data">अंदाज डेटावर प्रक्रिया करण्यात अयशस्वी</string>
+    <string name="failed_to_process_weather_data">तुमच्या सर्व्हरवरील हवामान डेटावर, विशेषतः %1$s डेटावर योग्यरित्या प्रक्रिया करण्यात अयशस्वी</string>
     <string name="fgColour">विजेट फोरग्राउंड कलर पिकर</string>
     <string name="fileURL">तुमच्या settings.txt वर URL एंटर करा</string>
     <string name="force_dark_mode">गडद मोड सक्ती करा</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">ప్రతి 15 నిమిషాలు</string>
     <string name="every_30_minutes">ప్రతి 30 నిమిషాలు</string>
     <string name="every_hour">ప్రతి గంట</string>
+    <string name="failed_to_merge_weather_data">%1$s డేటాను %2$s డేటాతో విలీనం చేయడంలో విఫలమైంది</string>
     <string name="failed_to_process_forecast_data">సూచన డేటాను ప్రాసెస్ చేయడంలో విఫలమైంది</string>
+    <string name="failed_to_process_weather_data">మీ సర్వర్ నుండి వాతావరణ డేటాను సరిగ్గా ప్రాసెస్ చేయడంలో విఫలమైంది, ప్రత్యేకంగా %1$s డేటా</string>
     <string name="fgColour">విడ్జెట్ ముందుభాగం రంగు ఎంపిక</string>
     <string name="fileURL">మీ settings.txtకి URLని నమోదు చేయండి</string>
     <string name="force_dark_mode">ఫోర్స్ డార్క్ మోడ్</string>

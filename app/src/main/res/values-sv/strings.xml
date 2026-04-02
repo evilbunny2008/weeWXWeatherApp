@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Var 15:e minut</string>
     <string name="every_30_minutes">Var 30:e minut</string>
     <string name="every_hour">Varje timme</string>
+    <string name="failed_to_merge_weather_data">Det gick inte att sammanfoga %1$s-data med %2$s-data</string>
     <string name="failed_to_process_forecast_data">Det gick inte att bearbeta prognosdata</string>
+    <string name="failed_to_process_weather_data">Det gick inte att korrekt bearbeta väderdata från din server, särskilt %1$s data</string>
     <string name="fgColour">Widget Förgrundsfärgväljare</string>
     <string name="fileURL">Ange URL:en till din settings.txt</string>
     <string name="force_dark_mode">Force Dark Mode</string>

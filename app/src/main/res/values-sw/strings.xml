@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Kila dakika 15</string>
     <string name="every_30_minutes">Kila dakika 30</string>
     <string name="every_hour">Kila saa</string>
+    <string name="failed_to_merge_weather_data">Imeshindwa kuunganisha data ya %1$s na data ya %2$s</string>
     <string name="failed_to_process_forecast_data">Imeshindwa kusindika data ya utabiri</string>
+    <string name="failed_to_process_weather_data">Imeshindwa kuchakata kwa usahihi data ya hali ya hewa kutoka kwa seva yako, haswa data ya %1$s</string>
     <string name="fgColour">Mchanganyiko wa rangi ya mbele</string>
     <string name="fileURL">Ingiza URL kwa mipangilio yako.txt</string>
     <string name="force_dark_mode">Nguvu hali ya giza</string>

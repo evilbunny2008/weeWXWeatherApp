@@ -57,9 +57,9 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		if(npwsll.lastDownloadTime() == 0)
+		if(npwsll.report_time() == 0)
 		{
-			LogMessage("UpdateCheck.onReceive() Skipping, lastDownloadTime == 0, app hasn't been setup...", KeyValue.d);
+			LogMessage("UpdateCheck.onReceive() Skipping, report_time == 0, app hasn't been setup...", KeyValue.d);
 			return;
 		}
 
@@ -76,9 +76,9 @@ public class UpdateCheck extends BroadcastReceiver
 
 		setNextAlarm();
 
-		LogMessage("UpdateCheck.onReceive() " + npwsll.lastDownloadTime() + " < " + npwsll.lastStart() + "?");
+		LogMessage("UpdateCheck.onReceive() " + npwsll.report_time() + " < " + npwsll.lastStart() + "?");
 
-		if(npwsll.lastDownloadTime() < npwsll.lastStart())
+		if(npwsll.report_time() < npwsll.lastStart())
 		{
 			LogMessage("UpdateCheck.onReceive() There should have been an update since last run, checking...");
 			runInTheBackground(true, false);
@@ -119,9 +119,9 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		if(npwsll.lastDownloadTime() == 0)
+		if(npwsll.report_time() == 0)
 		{
-			LogMessage("UpdateCheck.setNextAlarm() Skipping, lastDownloadTime == 0, app hasn't been setup...", KeyValue.d);
+			LogMessage("UpdateCheck.setNextAlarm() Skipping, report_time == 0, app hasn't been setup...", KeyValue.d);
 			return;
 		}
 
@@ -312,13 +312,13 @@ public class UpdateCheck extends BroadcastReceiver
 				return;
 			}
 
-			String string_time = weeWXAppCommon.sdf10.format(npwsll.lastDownloadTime());
-			LogMessage("UpdateCheck.runInTheBackground() lastDownloadTime: " + string_time);
+			String string_time = weeWXAppCommon.sdf10.format(npwsll.report_time());
+			LogMessage("UpdateCheck.runInTheBackground() report_time: " + string_time);
 
 			string_time = weeWXAppCommon.sdf10.format(npwsll.lastStart());
 			LogMessage("UpdateCheck.runInTheBackground() lastStart: " + string_time);
 
-			if(npwsll.lastDownloadTime() > npwsll.lastStart())
+			if(npwsll.report_time() > npwsll.lastStart())
 			{
 				LogMessage("UpdateCheck.runInTheBackground() Updated since lastStart time... skipping...");
 				if(!weeWXApp.hasBootedFully)

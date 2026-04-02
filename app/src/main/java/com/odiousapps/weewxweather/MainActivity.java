@@ -93,6 +93,7 @@ import static com.github.evilbunny2008.colourpicker.Common.parseHexToColour;
 import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.checkURL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
@@ -1575,12 +1576,12 @@ public class MainActivity extends FragmentActivity
 		{
 			LogMessage("processSettings() bg executor started...");
 
-			String tmpStr, errorStr = "";
+			String tmpStr;
 			String forecastLocationName = KeyValue.countyName = null;
 
 			boolean validURL = false;
-			boolean validURL2 = false;
-			boolean validURL3 = false;
+			boolean validURL2;
+			boolean validURL3;
 			boolean validURL5 = false;
 
 			String oldData = null, jsonData = null, radtype = "", radarURL = "", forecastURL = "", webcamURL = "",
@@ -1592,7 +1593,7 @@ public class MainActivity extends FragmentActivity
 
 			if(settings_url.isBlank() || settings_url.equals(weeWXApp.SETTINGS_URL_default))
 			{
-				errorDialog(getAndroidString(R.string.url_was_default_or_empty));
+				errorDialog(R.string.url_was_default_or_empty);
 				return;
 			}
 
@@ -1603,7 +1604,7 @@ public class MainActivity extends FragmentActivity
 
 				if(settingsData == null || settingsData.isBlank() || settingsData.length() < 128)
 				{
-					errorDialog(getAndroidString(R.string.wasnt_able_to_connect_settings));
+					errorDialog(R.string.wasnt_able_to_connect_settings);
 					return;
 				}
 
@@ -1641,106 +1642,110 @@ public class MainActivity extends FragmentActivity
 						}
 					}
 				}
+
+				LogMessage("processSettings() here0!");
 			} catch(Exception e) {
 				LogMessage("processSettings() Error! e: " + e.getMessage(), true, KeyValue.e);
 				doStackOutput(e);
-				errorStr = e.getLocalizedMessage();
-			}
-
-			if(errorStr != null && !errorStr.isBlank())
-			{
-				errorDialog(errorStr);
+				errorDialog(e);
 				return;
 			}
+
+			LogMessage("processSettings() here0a!");
 
 			if(!is_valid_url(json_urls[0]) || !is_valid_url(json_urls[1]) || !is_valid_url(json_urls[2]))
 			{
 				if(is_valid_url(jsonData))
 				{
 					json_urls[0] = jsonData;
-					json_urls[1] = jsonData.replace("inigot-data", "inigo-dicts");
-					json_urls[2] = jsonData.replace("inigot-data", "inigo-last");
+					json_urls[1] = jsonData.replace("inigo-data", "inigo-dicts");
+					json_urls[2] = jsonData.replace("inigo-data", "inigo-last");
 				} else if(is_valid_url(oldData)) {
-					json_urls[0] = jsonData.replace("inigot-data.txt", "inigot-data.json");
-					json_urls[1] = jsonData.replace("inigot-data", "inigo-dicts");
-					json_urls[2] = jsonData.replace("inigot-data", "inigo-last");
+					oldData = oldData.replace("inigo-data.txt", "inigo-data.json");
+					json_urls[0] = oldData;
+					json_urls[1] = oldData.replace("inigo-data", "inigo-dicts");
+					json_urls[2] = oldData.replace("inigo-data", "inigo-last");
 				}
 			}
 
+			LogMessage("processSettings() here0b!");
+
 			for(int i = 0; i < json_urls.length; i++)
 			{
+				LogMessage("processSettings() json_urls[" + i + "]: " + json_urls[i]);
 				if(!is_valid_url(json_urls[i]))
 				{
-					String str = getAndroidString(R.string.wasnt_able_to_download_url_is_blank);
-					errorDialog(String.format(Locale.getDefault(), str, json_labels[i]));
+					errorDialog(R.string.wasnt_able_to_download_url_is_blank, json_labels[i]);
 					return;
 				}
-			}
 
-			for(int i = 0; i < json_urls.length; i++)
-			{
-				boolean validURL1 = false;
+				boolean validURL1;
 				try
 				{
 					LogMessage("processSettings() Checking " + json_labels[i] + ": " + json_urls[i]);
 					validURL1 = weeWXAppCommon.reallyGetWeather(i, json_urls[i], true);
 				} catch(Exception e) {
 					doStackOutput(e);
-					errorStr = e.getLocalizedMessage();
-				}
-
-				if(errorStr != null && !errorStr.isBlank())
-				{
-					errorDialog(errorStr);
+					errorDialog(e);
 					return;
 				}
 
 				if(!validURL1)
 				{
-					String str = String.format(getAndroidString(R.string.wasnt_able_to_connect_or_download), json_labels[i], json_urls[i]);
-					errorDialog(str);
+					errorDialog(R.string.wasnt_able_to_connect_or_download, json_labels[i], json_urls[i]);
 					return;
 				}
 			}
 
+			LogMessage("processSettings() here1!");
+
 			if(!mergeJsonObjects())
 			{
-				String str = getAndroidString(R.string.failed_to_merge_weather_data);
-				errorDialog(String.format(Locale.getDefault(), str, json_labels[0], json_labels[2]));
+				errorDialog(R.string.failed_to_merge_weather_data, json_labels[0], json_labels[2]);
 				return;
 			}
+
+			LogMessage("processSettings() here2!");
 
 			if(!KeyValue.parseDicts())
 			{
-				String str = getAndroidString(R.string.failed_to_process_weather_data);
-				errorDialog(String.format(Locale.getDefault(), str, json_labels[1]));
+				errorDialog(R.string.failed_to_process_weather_data, json_labels[1]);
 				return;
 			}
 
+			LogMessage("processSettings() here3!");
 
 			if(radtype == null || radtype.isBlank())
 			{
-				errorDialog(getAndroidString(R.string.radar_type_is_invalid));
+				errorDialog(R.string.radar_type_is_invalid);
 				return;
 			}
+
+			LogMessage("processSettings() here4!");
 
 			if(!is_valid_url(radarURL))
 			{
-				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_radar_image));
+				errorDialog(R.string.wasnt_able_to_connect_radar_image);
 				return;
 			}
+
+			LogMessage("processSettings() here5!");
 
 			if(fctype == null || fctype.isBlank())
 			{
-				errorDialog(getAndroidString(R.string.forecast_type_is_invalid));
+				errorDialog(R.string.forecast_type_is_invalid);
 				return;
 			}
 
+			LogMessage("processSettings() here6!");
+
 			if(forecastURL == null || forecastURL.isBlank())
 			{
-				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_forecast));
+				errorDialog(R.string.wasnt_able_to_connect_forecast);
 				return;
 			}
+
+			LogMessage("processSettings() here7!");
 
 			for(int i = 0; i < json_urls.length; i++)
 				LogMessage("processSettings() " + json_labels[i] + ": " + json_urls[i]);
@@ -2087,19 +2092,13 @@ public class MainActivity extends FragmentActivity
 					default ->
 					{
 						LogMessage("processSettings() No forecast information...", KeyValue.w);
-						String finalErrorStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
-						errorDialog(finalErrorStr);
+						errorDialog(R.string.forecast_type_is_invalid, fctype);
 						return;
 					}
 				}
 			} catch(Exception e) {
 				doStackOutput(e);
-				errorStr = e.getLocalizedMessage();
-			}
-
-			if(errorStr != null && !errorStr.isBlank())
-			{
-				errorDialog(errorStr);
+				errorDialog(e);
 				return;
 			}
 
@@ -2113,18 +2112,13 @@ public class MainActivity extends FragmentActivity
 				//LogMessage("processSettings() tmpStr: " + tmpStr);
 			} catch(Exception e) {
 				//doStackOutput(e);
-				errorStr = e.getLocalizedMessage();
-			}
-
-			if(errorStr != null && !errorStr.isBlank())
-			{
-				errorDialog(errorStr);
+				errorDialog(e);
 				return;
 			}
 
 			if(!validURL3)
 			{
-				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_forecast));
+				errorDialog(R.string.wasnt_able_to_connect_forecast);
 				return;
 			}
 
@@ -2138,24 +2132,19 @@ public class MainActivity extends FragmentActivity
 					validURL2 = false;
 			} catch(Exception e) {
 				doStackOutput(e);
-				errorStr = e.getLocalizedMessage();
-			}
-
-			if(errorStr != null && !errorStr.isBlank())
-			{
-				errorDialog(errorStr);
+				errorDialog(e);
 				return;
 			}
 
 			if(!validURL2)
 			{
-				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_radar_image));
+				errorDialog(R.string.wasnt_able_to_connect_radar_image);
 				return;
 			}
 
 			LogMessage("processSettings() checking: " + webcamURL);
 
-			Bitmap bm = null;
+			Bitmap bm;
 
 			try
 			{
@@ -2163,19 +2152,14 @@ public class MainActivity extends FragmentActivity
 			} catch(Exception e) {
 				LogMessage("processSettings() Error! e: " + e.getMessage(), true, KeyValue.e);
 				//doStackOutput(e);
-				errorStr = e.getLocalizedMessage();
-			}
-
-			if(errorStr != null && !errorStr.isBlank())
-			{
-				errorDialog(errorStr);
+				errorDialog(e);
 				return;
 			}
 
 			if(bm == null)
 			{
 				LogMessage("processSettings() bm is null!", true, KeyValue.w);
-				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_webcam_url));
+				errorDialog(R.string.wasnt_able_to_connect_webcam_url);
 				return;
 			}
 
@@ -2197,19 +2181,13 @@ public class MainActivity extends FragmentActivity
 				}
 			} catch(Exception e) {
 				doStackOutput(e);
-				errorStr = e.getLocalizedMessage();
-			}
-
-			if(errorStr != null && !errorStr.isBlank())
-			{
-				errorDialog(errorStr);
+				errorDialog(e);
 				return;
 			}
 
 			if(!validURL5)
 			{
-				String finalErrorStr = errorStr;
-				errorDialog(getAndroidString(R.string.wasnt_able_to_connect_custom_url));
+				errorDialog(R.string.wasnt_able_to_connect_custom_url);
 				return;
 			}
 
@@ -2350,8 +2328,14 @@ public class MainActivity extends FragmentActivity
 		});
 	}
 
-	void errorDialog(String errorStr)
+	void errorDialog(Exception e)
 	{
+		errorDialog(e.getLocalizedMessage(), e.getMessage());
+	}
+
+	void errorDialog(String errorStr, String logStr)
+	{
+		LogMessage("errorDialog(): logStr: " + logStr);
 		bgStart = 0;
 		runOnUiThread(() ->
 		{
@@ -2365,6 +2349,13 @@ public class MainActivity extends FragmentActivity
 					.create()
 					.show();
 		});
+	}
+
+	void errorDialog(int strid, String... vars)
+	{
+		String errorStr = String.format(Locale.getDefault(), getAndroidString(strid), (Object[]) vars);
+		String logStr = String.format(Locale.ENGLISH, getEnglishAndroidString(strid), (Object[]) vars);
+		errorDialog(errorStr, logStr);
 	}
 
 	static void runDelayed(long delayMs, Runnable task)

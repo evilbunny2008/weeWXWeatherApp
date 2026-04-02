@@ -25,7 +25,9 @@
     <string name="every_15_minutes">15分ごと</string>
     <string name="every_30_minutes">30分ごと</string>
     <string name="every_hour">毎時</string>
+    <string name="failed_to_merge_weather_data">%1$s データと %2$s データをマージできませんでした</string>
     <string name="failed_to_process_forecast_data">予測データの処理に失敗しました</string>
+    <string name="failed_to_process_weather_data">サーバーからの気象データ、特に %1$s データを正しく処理できませんでした</string>
     <string name="fgColour">ウィジェットの前景色ピッカー</string>
     <string name="fileURL">settings.txt の URL を入力します。</string>
     <string name="force_dark_mode">ダークモードを強制する</string>

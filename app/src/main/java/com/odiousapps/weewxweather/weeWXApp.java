@@ -11,6 +11,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -306,7 +307,7 @@ public class weeWXApp extends Application
 
 	NotificationManager notificationManager;
 
-	record MemoryStats(float usedMemory, float maxMemory) {}
+	private Resources englishResources;
 
 	@Override
 	public void onCreate()
@@ -314,6 +315,11 @@ public class weeWXApp extends Application
 		super.onCreate();
 
 		instance = this;
+
+		Configuration config = new Configuration(getResources().getConfiguration());
+		config.setLocale(Locale.ENGLISH);
+		Context englishContext = createConfigurationContext(config);
+		englishResources = englishContext.getResources();
 
 		Log.d("weeWXApp", "Attempting to load JSON data from shared prefs...");
 		if(!KeyValue.parseDicts())
@@ -797,6 +803,11 @@ public class weeWXApp extends Application
 	static String getAndroidString(int resId)
 	{
 		return instance.getString(resId);
+	}
+
+	static String getEnglishAndroidString(int resId)
+	{
+		return instance.englishResources.getString(resId);
 	}
 
 	static int smallestScreenWidth()

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Yonke imizuzu eli-15</string>
     <string name="every_30_minutes">Yonke imizuzu engama-30</string>
     <string name="every_hour">Iyure nganye</string>
+    <string name="failed_to_merge_weather_data">Ayiphumelelanga ukudibanisa i-%1$s yedatha kunye nedatha ye-%2$s</string>
     <string name="failed_to_process_forecast_data">Ayiphumelelanga ukuqhuba idatha yemo</string>
+    <string name="failed_to_process_weather_data">Ayiphumelelanga ukuqhubekeka ngokuchanekileyo idatha yemozulu kwiseva yakho, ngakumbi i-%1$s yedatha</string>
     <string name="fgColour">I-Poipget Shicial Picker Picker</string>
     <string name="fileURL">Ngenisa i-URL kwizicwangciso zakho.txt</string>
     <string name="force_dark_mode">Nyanzela indlela emnyama</string>

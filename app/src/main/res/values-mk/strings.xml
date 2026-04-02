@@ -25,7 +25,9 @@
     <string name="every_15_minutes">На секои 15 минути</string>
     <string name="every_30_minutes">На секои 30 минути</string>
     <string name="every_hour">Секој час</string>
+    <string name="failed_to_merge_weather_data">Не успеа да се спојат податоците %1$s со податоците %2$s</string>
     <string name="failed_to_process_forecast_data">Не успеа да се обработат прогнозните податоци</string>
+    <string name="failed_to_process_weather_data">Не успеа правилно да ги обработи временските податоци од вашиот сервер, особено податоците %1$s</string>
     <string name="fgColour">Виџети Избирач на бои во преден план</string>
     <string name="fileURL">Внесете ја URL-то на вашиот settings.txt</string>
     <string name="force_dark_mode">Присилете го темниот режим</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Һәр 15 минут саен</string>
     <string name="every_30_minutes">30 минут саен</string>
     <string name="every_hour">Everyәр сәгать</string>
+    <string name="failed_to_merge_weather_data">%1$s мәгълүматларын%2$s мәгълүматлары белән берләштерә алмады</string>
     <string name="failed_to_process_forecast_data">Прогноз мәгълүматларын эшкәртә алмады</string>
+    <string name="failed_to_process_weather_data">Сезнең сервердан һава торышы турындагы мәгълүматны, аеруча%1$s мәгълүматларын дөрес эшкәртә алмады</string>
     <string name="fgColour">Виджетның алгы төс сайлаучысы</string>
     <string name="fileURL">Сезнең көйләүләргә URL кертегез.txt</string>
     <string name="force_dark_mode">Көчле режим</string>

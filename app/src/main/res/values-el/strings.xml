@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Κάθε 15 λεπτά</string>
     <string name="every_30_minutes">Κάθε 30 λεπτά</string>
     <string name="every_hour">Κάθε Ώρα</string>
+    <string name="failed_to_merge_weather_data">Αποτυχία συγχώνευσης των δεδομένων %1$s με τα δεδομένα %2$s</string>
     <string name="failed_to_process_forecast_data">Απέτυχε η επεξεργασία των δεδομένων πρόβλεψης</string>
+    <string name="failed_to_process_weather_data">Απέτυχε η σωστή επεξεργασία των δεδομένων καιρού από τον διακομιστή σας, συγκεκριμένα των δεδομένων %1$s</string>
     <string name="fgColour">Εργαλείο επιλογής χρώματος προσκηνίου</string>
     <string name="fileURL">Εισαγάγετε τη διεύθυνση URL στο settings.txt</string>
     <string name="force_dark_mode">Αναγκαστική σκοτεινή λειτουργία</string>

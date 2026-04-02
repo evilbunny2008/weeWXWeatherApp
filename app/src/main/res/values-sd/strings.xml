@@ -25,7 +25,9 @@
     <string name="every_15_minutes">هر 15 منٽ</string>
     <string name="every_30_minutes">هر 30 منٽ</string>
     <string name="every_hour">هر ڪلاڪ</string>
+    <string name="failed_to_merge_weather_data">%1$s ڊيٽا کي %2$s ڊيٽا سان ملائڻ ۾ ناڪام ٿيو</string>
     <string name="failed_to_process_forecast_data">اڳڪٿي ڊيٽا کي پروسيس ڪرڻ ۾ ناڪام ٿيو</string>
+    <string name="failed_to_process_weather_data">توهان جي سرور مان موسم جي ڊيٽا کي صحيح طريقي سان پروسيس ڪرڻ ۾ ناڪام ٿيو، خاص طور تي %1$s ڊيٽا</string>
     <string name="fgColour">Widget Foreround Color Picker</string>
     <string name="fileURL">پنھنجي settings.txt ۾ URL داخل ڪريو</string>
     <string name="force_dark_mode">ڊارڪ موڊ کي زور ڏيو</string>

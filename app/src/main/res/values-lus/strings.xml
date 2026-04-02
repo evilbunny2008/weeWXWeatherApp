@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Minute 15 danah</string>
     <string name="every_30_minutes">Minute 30 danah</string>
     <string name="every_hour">Darkar tin</string>
+    <string name="failed_to_merge_weather_data">%1$s data chu %2$s data nen a inzawm khawm thei lo</string>
     <string name="failed_to_process_forecast_data">Forecast data a process theih loh</string>
+    <string name="failed_to_process_weather_data">I server atanga weather data dik taka process theih loh, a bik takin %1$s data</string>
     <string name="fgColour">widget foreground rawng picker</string>
     <string name="fileURL">URL chu i settings ah ziak lut rawh.txt</string>
     <string name="force_dark_mode">Force Dark Mode</string>

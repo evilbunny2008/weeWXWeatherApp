@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Kɔc ëbɛ̈n 15</string>
     <string name="every_30_minutes">Kɔc ke 30</string>
     <string name="every_hour">wɛ̈ɛ̈r ëbën</string>
+    <string name="failed_to_merge_weather_data">Acï löny bï %1$s wël mat kenë %2$s wël</string>
     <string name="failed_to_process_forecast_data">Ke kë cï looi bï kä cï yök looi</string>
+    <string name="failed_to_process_weather_data">Acï thök bï wël ke pïu ë pinynhom ëbɛ̈n looi apath tënë këduun ye käŋ tɔ̈ɔ̈u, ëya dɛ̈t wël ke %1$s</string>
     <string name="fgColour">Wëdgk Sürë Pänd Pickër</string>
     <string name="fileURL">Lɔ në URL yic në lööŋku yiic.txt</string>
     <string name="force_dark_mode">Thöl ë jäl ë pïu ë pïu ë pïu</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Ɛvri 15 minit</string>
     <string name="every_30_minutes">Ɛvri 30 minit</string>
     <string name="every_hour">Ɛvri awa</string>
+    <string name="failed_to_merge_weather_data">Fail fɔ jɔyn di %1$s data wit di %2$s data</string>
     <string name="failed_to_process_forecast_data">Failed fɔ prosɛs fɔkɔs data</string>
+    <string name="failed_to_process_weather_data">Fail fɔ kɔrɛkt wan fɔ prosɛs di wɛda data frɔm yu sava, spɛshal wan di %1$s data</string>
     <string name="fgColour">Widget forreground color picker</string>
     <string name="fileURL">Ɛntay di URL to yu sɛtin dɛn.txt</string>
     <string name="force_dark_mode">Fos dak mod</string>

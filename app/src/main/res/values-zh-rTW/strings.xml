@@ -25,7 +25,9 @@
     <string name="every_15_minutes">每 15 分鐘一班</string>
     <string name="every_30_minutes">每 30 分鐘一班</string>
     <string name="every_hour">每小時</string>
+    <string name="failed_to_merge_weather_data">無法將 %1$s 資料與 %2$s 資料合併</string>
     <string name="failed_to_process_forecast_data">處理預測數據失敗</string>
+    <string name="failed_to_process_weather_data">無法正確處理來自您伺服器的天氣數據，特別是 %1$s 數據</string>
     <string name="fgColour">小部件前景色選擇器</string>
     <string name="fileURL">輸入您的 settings.txt 的 URL</string>
     <string name="force_dark_mode">強制深色模式</string>

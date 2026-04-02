@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Kas 15 minučių</string>
     <string name="every_30_minutes">Kas 30 minučių</string>
     <string name="every_hour">Kiekvieną valandą</string>
+    <string name="failed_to_merge_weather_data">Nepavyko sujungti %1$s duomenų su %2$s duomenimis</string>
     <string name="failed_to_process_forecast_data">Nepavyko apdoroti prognozės duomenų</string>
+    <string name="failed_to_process_weather_data">Nepavyko tinkamai apdoroti orų duomenų iš jūsų serverio, ypač %1$s duomenų</string>
     <string name="fgColour">Valdiklio priekinio plano spalvų parinkiklis</string>
     <string name="fileURL">Įveskite savo settings.txt URL</string>
     <string name="force_dark_mode">Įjungti tamsųjį režimą</string>

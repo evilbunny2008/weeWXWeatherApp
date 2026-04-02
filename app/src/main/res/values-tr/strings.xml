@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Her 15 Dakikada Bir</string>
     <string name="every_30_minutes">Her 30 Dakikada Bir</string>
     <string name="every_hour">Her Saat</string>
+    <string name="failed_to_merge_weather_data">%1$s verileri %2$s verileriyle birleştirilemedi</string>
     <string name="failed_to_process_forecast_data">Tahmin verileri işlenemedi</string>
+    <string name="failed_to_process_weather_data">Sunucunuzdaki hava durumu verileri, özellikle %1$s verileri doğru şekilde işlenemedi</string>
     <string name="fgColour">Widget Ön Plan Renk Seçici</string>
     <string name="fileURL">Settings.txt dosyanızın URL\'sini girin</string>
     <string name="force_dark_mode">Karanlık Modu Zorla</string>

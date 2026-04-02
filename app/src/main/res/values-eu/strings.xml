@@ -25,7 +25,9 @@
     <string name="every_15_minutes">15 minuturo</string>
     <string name="every_30_minutes">30 minuturo</string>
     <string name="every_hour">Orduro</string>
+    <string name="failed_to_merge_weather_data">Ezin izan dira batu %1$s datuak %2$s datuekin</string>
     <string name="failed_to_process_forecast_data">Ezin izan dira prozesatu iragarpen-datuak</string>
+    <string name="failed_to_process_weather_data">Ezin izan dira prozesatu zure zerbitzariko eguraldiaren datuak, zehazki %1$s datuak</string>
     <string name="fgColour">Widgetaren lehen planoko kolore-hautatzailea</string>
     <string name="fileURL">Sartu URLa zure settings.txt-en</string>
     <string name="force_dark_mode">Indar iluna modua</string>

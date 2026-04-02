@@ -25,7 +25,9 @@
     <string name="every_15_minutes">La fiecare 15 minute</string>
     <string name="every_30_minutes">La fiecare 30 de minute</string>
     <string name="every_hour">În fiecare oră</string>
+    <string name="failed_to_merge_weather_data">Nu s-au putut îmbina datele %1$s cu datele %2$s</string>
     <string name="failed_to_process_forecast_data">Nu s-au procesat datele de prognoză</string>
+    <string name="failed_to_process_weather_data">Nu s-au procesat corect datele meteo de pe serverul dvs., în special datele %1$s</string>
     <string name="fgColour">Selector de culori din prim-plan pentru widget</string>
     <string name="fileURL">Introduceți adresa URL la settings.txt</string>
     <string name="force_dark_mode">Force Dark Mode</string>

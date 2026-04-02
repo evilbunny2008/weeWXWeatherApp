@@ -25,7 +25,9 @@
     <string name="every_15_minutes">प्रत्येकं १५ निमेषेषु प्रत्येकं १५ निमेषः २</string>
     <string name="every_30_minutes">प्रत्येकं ३० निमेषेषु प्रत्येकं ३० निमेषः २</string>
     <string name="every_hour">प्रत्येकं घण्टा 1</string>
+    <string name="failed_to_merge_weather_data">%1$s दत्तांशं %2$s दत्तांशसहितं विलीनीकरणे असफलम्</string>
     <string name="failed_to_process_forecast_data">पूर्वानुमानदत्तांशं संसाधितुं विफलम्</string>
+    <string name="failed_to_process_weather_data">भवतः सर्वरतः मौसमदत्तांशं सम्यक् संसाधितुं असफलम्, विशेषतः %1$s दत्तांशं</string>
     <string name="fgColour">विजेट अग्रभूमि रंग पिकर</string>
     <string name="fileURL">स्वस्य सेटिंग्स् मध्ये URL प्रविष्टं कुर्वन्तु।txt</string>
     <string name="force_dark_mode">बल डार्क मोड</string>

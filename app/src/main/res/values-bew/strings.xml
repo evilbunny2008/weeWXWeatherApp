@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Tiap 15 menit gue</string>
     <string name="every_30_minutes">Tiap 30 Menit</string>
     <string name="every_hour">Tiap Jam</string>
-	<string name="failed_to_process_forecast_data">Gagal buat ngolah data ramalan</string>
+    <string name="failed_to_merge_weather_data">Gagal buat nyatuin data %1$s ama data %2$s</string>
+    <string name="failed_to_process_forecast_data">Gagal buat ngolah data ramalan</string>
     <string name="failed_to_process_weather_data">Gagal ngolah data cuaca dari server lu dengan bener, khususnya data %1$s</string>
     <string name="fgColour">Pemilih Warna Tanah Widget Widget</string>
     <string name="fileURL">Masukin URL ke pengaturan.txt lo</string>

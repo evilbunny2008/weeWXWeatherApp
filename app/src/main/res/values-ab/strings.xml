@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Минуҭцыԥхьаӡа 15</string>
     <string name="every_30_minutes">Минуҭ 30 зегьы</string>
     <string name="every_hour">Сааҭцыԥхьаӡа</string>
-	<string name="failed_to_process_forecast_data">Аԥхьагәаҭаратә дыррақәа аус рыдулара алыршахеит</string>
+    <string name="failed_to_merge_weather_data">Иалымшеит %1$s адыррақәа реидҵара %2$s адыррақәа рыла</string>
+    <string name="failed_to_process_forecast_data">Аԥхьагәаҭаратә дыррақәа аус рыдулара алыршахеит</string>
     <string name="failed_to_process_weather_data">Аҳауатә дыррақәа шәсервер аҟынтәи ииашаны аус рыдулара ауам, ҷыдала %1$s адыррақәа</string>
     <string name="fgColour">Авиджет Ԥасатәи Аԥштәы апикер</string>
     <string name="fileURL">Иҭажәгал URL colrands.txt</string>

@@ -25,7 +25,9 @@
     <string name="every_15_minutes">Nsima ya miniti 15 nyonso</string>
     <string name="every_30_minutes">Na miniti 30 nyonso</string>
     <string name="every_hour">Ngonga nyonso</string>
+    <string name="failed_to_merge_weather_data">Elongi te kosangisa ba données ya %1$s na ba données ya %2$s</string>
     <string name="failed_to_process_forecast_data">Elongaki te kosala ba données ya prévision</string>
+    <string name="failed_to_process_weather_data">Elongi te kosala malamu ba données ya météo oyo ewutaki na serveur na yo, précisément ba données ya %1$s</string>
     <string name="fgColour">widget ya liboso ya kosala ba couleurs</string>
     <string name="fileURL">Tyá URL na paramètres na yo.txt</string>
     <string name="force_dark_mode">Mode ya molili ya makasi</string>

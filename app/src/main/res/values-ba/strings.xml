@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Һәр 15 минут һайын</string>
     <string name="every_30_minutes">Һәр 30 минут һайын</string>
     <string name="every_hour">Һәр сәғәт</string>
-	<string name="failed_to_process_forecast_data">Прогноз мәғлүмәттәрен эшкәртергә өлгөрмәгән</string>
+    <string name="failed_to_merge_weather_data">%1$s мәғлүмәттәрен %2$s мәғлүмәттәр менән берләштереү мөмкин булманы</string>
+    <string name="failed_to_process_forecast_data">Прогноз мәғлүмәттәрен эшкәртергә өлгөрмәгән</string>
     <string name="failed_to_process_weather_data">Һеҙҙең серверҙан һауа торошо мәғлүмәттәрен дөрөҫ эшкәртә алманы, аныҡ ҡына әйткәндә, %1$s мәғлүмәттәре</string>
     <string name="fgColour">Виджет алғы планы төҫө Пикер</string>
     <string name="fileURL">URL-адресығыҙҙы һеҙҙең параметрҙарға индерегеҙ.txt</string>
