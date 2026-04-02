@@ -21,9 +21,13 @@
     <string name="error">Kifu!</string>
     <string name="error_occurred_while_attempting_to_update">Kifu mosi salamaka na ntangu yandi vandaka kumeka kutula na zulu mutindu ya kusadila</string>
     <string name="every_5_minutes">Na nima ya minuta 5</string>
+    <string name="every_5_seconds">Na nima ya Basegonde 5</string>
     <string name="every_10_minutes">Na nima ya minuta 10</string>
+    <string name="every_10_seconds">Na nima ya Basegonde 10</string>
     <string name="every_15_minutes">Na nima ya minuta 15</string>
     <string name="every_30_minutes">Na nima ya minuta 30</string>
+    <string name="every_30_seconds">Na nima ya Basegonde 30</string>
+    <string name="every_60_seconds">Na nima ya Basegonde 60</string>
     <string name="every_hour">Konso ngunga</string>
     <string name="failed_to_merge_weather_data">Kukonda kuvukisa bansangu ya %1$s ti bansangu ya %2$s</string>
     <string name="failed_to_process_forecast_data">Kukonda kusadila bansangu ya ke kwisa na ntwala</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Kukonda kubaka %1$s sambu URL vandaka mpamba</string>
     <string name="weather2">Climat</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Ntangu ya Kuvutula Camera Web</string>
     <string name="webcam_still_downloading">Kifwanisu ya web kele kaka na kubaka</string>
     <string name="webcam_url_url_not_set">URL ya Webcam kele ve ya kuyidika to ya mpamba</string>
     <string name="widget_theme">Ntu-Diambu ya Widgent</string>

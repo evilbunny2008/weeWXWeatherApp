@@ -21,9 +21,13 @@
     <string name="error">Rusak!</string>
     <string name="error_occurred_while_attempting_to_update">Sada kesalahen terjadi sanga iusahakenna mpelimbarui penggunaan</string>
     <string name="every_5_minutes">Tiap 5 Menit</string>
+    <string name="every_5_seconds">Tiap 5 Detik</string>
     <string name="every_10_minutes">Tiap 10 Menit</string>
+    <string name="every_10_seconds">Tiap 10 Detik</string>
     <string name="every_15_minutes">Tiap 15 Menit</string>
     <string name="every_30_minutes">Tiap 30 Menit</string>
+    <string name="every_30_seconds">Tiap 30 Detik</string>
+    <string name="every_60_seconds">Tiap 60 Detik</string>
     <string name="every_hour">Tiap Jam</string>
     <string name="failed_to_merge_weather_data">Gagal nggabungken data %1$s ras data %2$s</string>
     <string name="failed_to_process_forecast_data">Gagal ngolah data ramalen</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Labo banci iunduh %1$s erkiteken URLna kosong</string>
     <string name="weather2">Tewen</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Waktu Penyegaran Webcam</string>
     <string name="webcam_still_downloading">Gambar Webcam enda tetap download</string>
     <string name="webcam_url_url_not_set">URL Webcam enda enggo itetapken ntah pe kosong</string>
     <string name="widget_theme">Tema Widget</string>

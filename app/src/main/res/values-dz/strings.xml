@@ -21,9 +21,13 @@
     <string name="error">འཛོལ༌བ!</string>
     <string name="error_occurred_while_attempting_to_update">ལག་ལེན་དུས་མཐུན་བཟོ་ནིའི་དཔའ་བཅམ་པའི་སྐབས་ འཛོལ་བ་ཅིག་བྱུང་ཡོདཔ།</string>
     <string name="every_5_minutes">སྐར་མ་ ༥ རེ།</string>
+    <string name="every_5_seconds">སྐར་ཆ་༥རེ་རེ།</string>
     <string name="every_10_minutes">སྐར་མ་ ༡༠ རེ།</string>
+    <string name="every_10_seconds">སྐར་ཆ་ ༡༠ རེ་རེ།</string>
     <string name="every_15_minutes">སྐར་མ་ ༡༥ རེ།</string>
     <string name="every_30_minutes">སྐར་མ་ ༣༠ རེ།</string>
+    <string name="every_30_seconds">སྐར་ཆ་ ༣༠ རེ་རེ།</string>
+    <string name="every_60_seconds">སྐར་ཆ་ ༦༠ རེ་རེ།</string>
     <string name="every_hour">ཆུ་ཚོད་རེ་རེ།</string>
     <string name="failed_to_merge_weather_data">%1$s གནད་སྡུད་འདི་ %2$s གནད་སྡུད་དང་གཅིག་ཁར་མཉམ་བསྡོམས་འབད་ནི་ལུ་འཐུས་ཤོར་འབྱུང་ཡོདཔ།</string>
     <string name="failed_to_process_forecast_data">སྔོན་བཤད་གནས་སྡུད་ལས་སྦྱོར་འབད་ནི་ལུ་འཐུས་ཤོར་བྱུང་ཡོདཔ།</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">ཡུ་ཨར་ཨེལ་སྟོངམ་འབདཝ་ལས་ %1$s ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="weather2">གནམ་གཤིས་གནས་སྟངས</string>
     <string name="webcam2">ཝེབ།</string>
+    <string name="webcam_refresh_time">ཝེབ་པར་ཆས་གསར་བཟོའི་དུས་ཚོད།</string>
     <string name="webcam_still_downloading">ཝེབ་ཀེམ་གྱི་པར་རིས་ད་ལྟོ་ཡང་ཕབ་ལེན་འབད་དོ།</string>
     <string name="webcam_url_url_not_set">ཝེབ་ཀེམ་ཡུ་ཨར་ཨེལ་འདི་གཞི་སྒྲིག་འབད་མེདཔ་ཨིན་ན་ ཡང་ན་ སྟོངམ་ཨིན།</string>
     <string name="widget_theme">ཝིཌི་གེཊ་བརྗོད་དོན་།</string>

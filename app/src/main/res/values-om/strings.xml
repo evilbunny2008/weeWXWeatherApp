@@ -21,9 +21,13 @@
     <string name="error">Dogoggora!</string>
     <string name="error_occurred_while_attempting_to_update">Fayyadama haaromsuuf yeroo yaaltan dogongorri uumame</string>
     <string name="every_5_minutes">Daqiiqaa 5 hunda</string>
+    <string name="every_5_seconds">Sekondii 5 Tokkoon</string>
     <string name="every_10_minutes">Daqiiqaa 10 hunda</string>
+    <string name="every_10_seconds">Sekondii 10 Tokkoon</string>
     <string name="every_15_minutes">Daqiiqaa 15 hunda</string>
     <string name="every_30_minutes">Daqiiqaa 30 hunda</string>
+    <string name="every_30_seconds">Sekondii 30 Tokkoon</string>
+    <string name="every_60_seconds">Sekondii 60 Tokkoon</string>
     <string name="every_hour">Sa\'aatii hunda</string>
     <string name="failed_to_merge_weather_data">Deetaa %1$s deetaa %2$s waliin walitti makuu hin dandeenye</string>
     <string name="failed_to_process_forecast_data">Daataa tilmaama adeemsisuu hin dandeenye</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL duwwaa waan tureef %1$s buufachuu hin dandeenye</string>
     <string name="weather2">Haala qilleensaa</string>
     <string name="webcam2">Kaameeraa weebsaayitii</string>
+    <string name="webcam_refresh_time">Yeroo Haaromsa Webcam</string>
     <string name="webcam_still_downloading">Fakkiin webcam ammallee buufachaa jira</string>
     <string name="webcam_url_url_not_set">URL webcam hin qindaa\'u ykn duwwaa dha</string>
     <string name="widget_theme">Mata duree Widget</string>

@@ -21,9 +21,13 @@
     <string name="error">Хата!</string>
     <string name="error_occurred_while_attempting_to_update">Яңыртырға тырышҡанда хата килеп сыҡты</string>
     <string name="every_5_minutes">Һәр 5 минут</string>
+    <string name="every_5_seconds">секунд һайын</string>
     <string name="every_10_minutes">Һәр 10 минут һайын</string>
+    <string name="every_10_seconds">секунд һайын</string>
     <string name="every_15_minutes">Һәр 15 минут һайын</string>
     <string name="every_30_minutes">Һәр 30 минут һайын</string>
+    <string name="every_30_seconds">секунд һайын</string>
+    <string name="every_60_seconds">секунд һайын</string>
     <string name="every_hour">Һәр сәғәт</string>
     <string name="failed_to_merge_weather_data">%1$s мәғлүмәттәрен %2$s мәғлүмәттәр менән берләштереү мөмкин булманы</string>
     <string name="failed_to_process_forecast_data">Прогноз мәғлүмәттәрен эшкәртергә өлгөрмәгән</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s скачать итә алманы, сөнки URL-адресы буш ине</string>
     <string name="weather2">Һауа</string>
     <string name="webcam2">Веб-камера</string>
+    <string name="webcam_refresh_time">Веб-камера яңыртыу ваҡыты</string>
     <string name="webcam_still_downloading">Веб-камера һүрәте әле лә скачать</string>
     <string name="webcam_url_url_not_set">Веб-камера URL ҡуйылмаған йәки буш тора</string>
     <string name="widget_theme">Виджет темаһы</string>

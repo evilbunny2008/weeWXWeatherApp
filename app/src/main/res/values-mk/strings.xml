@@ -21,9 +21,13 @@
     <string name="error">Грешка!</string>
     <string name="error_occurred_while_attempting_to_update">Настана грешка при обидот да се ажурира употребата</string>
     <string name="every_5_minutes">На секои 5 минути</string>
+    <string name="every_5_seconds">На секои 5 секунди</string>
     <string name="every_10_minutes">На секои 10 минути</string>
+    <string name="every_10_seconds">На секои 10 секунди</string>
     <string name="every_15_minutes">На секои 15 минути</string>
     <string name="every_30_minutes">На секои 30 минути</string>
+    <string name="every_30_seconds">На секои 30 секунди</string>
+    <string name="every_60_seconds">На секои 60 секунди</string>
     <string name="every_hour">Секој час</string>
     <string name="failed_to_merge_weather_data">Не успеа да се спојат податоците %1$s со податоците %2$s</string>
     <string name="failed_to_process_forecast_data">Не успеа да се обработат прогнозните податоци</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Не можеше да се преземе %1$s бидејќи URL-то беше празно</string>
     <string name="weather2">Времето</string>
     <string name="webcam2">Веб камера</string>
+    <string name="webcam_refresh_time">Време на освежување на веб камерата</string>
     <string name="webcam_still_downloading">Сликата од веб-камера сè уште се презема</string>
     <string name="webcam_url_url_not_set">URL-адресата на веб-камерата не е поставена или е празна</string>
     <string name="widget_theme">Тема за виџети</string>

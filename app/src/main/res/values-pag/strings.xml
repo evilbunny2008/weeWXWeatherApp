@@ -21,9 +21,13 @@
     <string name="error">Lingo!</string>
     <string name="error_occurred_while_attempting_to_update">Agawa so sakey a lingo legan a sasalien dan i-update so pangusar</string>
     <string name="every_5_minutes">Kada 5 Mito</string>
+    <string name="every_5_seconds">Kada 5 Segundo</string>
     <string name="every_10_minutes">Kada 10 Saray Mito</string>
+    <string name="every_10_seconds">Kada 10 Segundo</string>
     <string name="every_15_minutes">Kada 15 Meno</string>
     <string name="every_30_minutes">Kada 30 Saray Mito</string>
+    <string name="every_30_seconds">Kada 30 Segundo</string>
+    <string name="every_60_seconds">Kada 60 Segundo</string>
     <string name="every_hour">Kada Oras</string>
     <string name="failed_to_merge_weather_data">Ag-agawa so %1$s ya data ed %2$s ya data</string>
     <string name="failed_to_process_forecast_data">Ag-improseso pian ipasakbay iray data</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ag na-download so %1$s ta anggapoy URL to</string>
     <string name="weather2">Panaon</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Panaon na Pan-refresh na Webcam</string>
     <string name="webcam_still_downloading">Say imahen na websim so siansia nin man-uulat</string>
     <string name="webcam_url_url_not_set">Say Webcam URL et ag-aka-set odino blangko</string>
     <string name="widget_theme">Say Tema</string>

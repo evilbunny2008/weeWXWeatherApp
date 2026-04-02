@@ -21,9 +21,13 @@
     <string name="error">오류!</string>
     <string name="error_occurred_while_attempting_to_update">사용량을 업데이트하는 중 오류가 발생했습니다</string>
     <string name="every_5_minutes">5분마다</string>
+    <string name="every_5_seconds">5초마다</string>
     <string name="every_10_minutes">10분마다</string>
+    <string name="every_10_seconds">10초마다</string>
     <string name="every_15_minutes">15분마다</string>
     <string name="every_30_minutes">30분마다</string>
+    <string name="every_30_seconds">30초마다</string>
+    <string name="every_60_seconds">60초마다</string>
     <string name="every_hour">매시간</string>
     <string name="failed_to_merge_weather_data">%1$s 데이터를 %2$s 데이터와 병합하지 못했습니다</string>
     <string name="failed_to_process_forecast_data">예측 데이터를 처리하지 못했습니다</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL이 비어 있어서 %1$s을(를) 다운로드할 수 없습니다</string>
     <string name="weather2">날씨</string>
     <string name="webcam2">웹캠</string>
+    <string name="webcam_refresh_time">웹캠 새로 고침 시간</string>
     <string name="webcam_still_downloading">웹캠 이미지가 아직 다운로드 중입니다</string>
     <string name="webcam_url_url_not_set">웹캠 URL이 설정되지 않았거나 비어 있습니다</string>
     <string name="widget_theme">위젯 테마</string>

@@ -21,9 +21,13 @@
     <string name="error">Kesalahan!</string>
     <string name="error_occurred_while_attempting_to_update">Terjadi kesalahan saat mencoba memperbarui penggunaan</string>
     <string name="every_5_minutes">Setiap 5 Menit</string>
+    <string name="every_5_seconds">Setiap 5 Detik</string>
     <string name="every_10_minutes">Setiap 10 Menit</string>
+    <string name="every_10_seconds">Setiap 10 Detik</string>
     <string name="every_15_minutes">Setiap 15 Menit</string>
     <string name="every_30_minutes">Setiap 30 Menit</string>
+    <string name="every_30_seconds">Setiap 30 Detik</string>
+    <string name="every_60_seconds">Setiap 60 Detik</string>
     <string name="every_hour">Setiap Jam</string>
     <string name="failed_to_merge_weather_data">Gagal menggabungkan data %1$s dengan data %2$s</string>
     <string name="failed_to_process_forecast_data">Gagal memproses data perkiraan</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Tidak dapat mengunduh %1$s karena URL-nya kosong</string>
     <string name="weather2">Cuaca</string>
     <string name="webcam2">Kamera web</string>
+    <string name="webcam_refresh_time">Waktu Penyegaran Webcam</string>
     <string name="webcam_still_downloading">Gambar webcam masih diunduh</string>
     <string name="webcam_url_url_not_set">URL webcam tidak disetel atau kosong</string>
     <string name="widget_theme">Tema Widget</string>

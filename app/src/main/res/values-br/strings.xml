@@ -21,9 +21,13 @@
     <string name="error">Fazi!</string>
     <string name="error_occurred_while_attempting_to_update">Ur fazi a c\'hoarvezas pa oa o klask hizivaat an implij</string>
     <string name="every_5_minutes">Bep 5 munutenn</string>
+    <string name="every_5_seconds">Bep 5 eilenn</string>
     <string name="every_10_minutes">Bep 10 munutenn</string>
+    <string name="every_10_seconds">Bep 10 eilenn</string>
     <string name="every_15_minutes">Bep 15 munutenn</string>
     <string name="every_30_minutes">Bep 30 munutenn</string>
+    <string name="every_30_seconds">Bep 30 eilenn</string>
+    <string name="every_60_seconds">Bep 60 eilenn</string>
     <string name="every_hour">Bep Eurvezh</string>
     <string name="failed_to_merge_weather_data">C\'hwitadenn war kenstagañ ar roadennoù %1$s gant ar roadennoù %2$s</string>
     <string name="failed_to_process_forecast_data">C\'hwitet en deus da dreuzfurmiñ roadennoù ar rakweled</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">N\'eo ket bet gouest da bellgargañ an %1$s rak goullo e oa an URL</string>
     <string name="weather2">Amzer</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Amzer nevesaat ar c\'hameraoù web</string>
     <string name="webcam_still_downloading">Pellgargañ a ra skeudenn Webcam c\'hoazh</string>
     <string name="webcam_url_url_not_set">N\'eo ket lakaet URL Webcam pe n\'eo ket goullo</string>
     <string name="widget_theme">Tem ar widget</string>

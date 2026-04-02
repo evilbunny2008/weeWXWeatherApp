@@ -21,9 +21,13 @@
     <string name="error">Vodada!</string>
     <string name="error_occurred_while_attempting_to_update">Vodada aɖe dzɔ esime wonɔ agbagba dzem be yewoatrɔ asi le wo zazã ŋu</string>
     <string name="every_5_minutes">Aɖabaƒoƒo 5 ɖesiaɖe</string>
+    <string name="every_5_seconds">Sɛkɛnd 5 ɖesiaɖe</string>
     <string name="every_10_minutes">Aɖabaƒoƒo 10 ɖesiaɖe</string>
+    <string name="every_10_seconds">Sɛkɛnd 10 ɖesiaɖe</string>
     <string name="every_15_minutes">Aɖabaƒoƒo 15 ɖesiaɖe</string>
     <string name="every_30_minutes">Aɖabaƒoƒo 30 ɖesiaɖe</string>
+    <string name="every_30_seconds">Sɛkɛnd 30 ɖesiaɖe</string>
+    <string name="every_60_seconds">Sɛkɛnd 60 Ðesiaɖe</string>
     <string name="every_hour">Gaƒoƒo ɖesiaɖe</string>
     <string name="failed_to_merge_weather_data">Do kpo %1$s nyatakakawo ƒoƒo ƒu kple %2$s nyatakakawo</string>
     <string name="failed_to_process_forecast_data">Do kpo nyagblɔɖi ƒe nyatakakawo ŋudɔwɔwɔ</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Meteŋu ɖe %1$s la ƒe kɔpi o elabena URL la nɔ ƒuƒlu</string>
     <string name="weather2">Ya me</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Webcam Gbugbɔgawɔ Ɣeyiɣi</string>
     <string name="webcam_still_downloading">Webcam ƒe nɔnɔmetata la gakpɔtɔ le eƒe kɔpi wɔm</string>
     <string name="webcam_url_url_not_set">Webcam URL mele ɖoɖo nu o alo le ƒuƒlu</string>
     <string name="widget_theme">Widget ƒe tanya</string>

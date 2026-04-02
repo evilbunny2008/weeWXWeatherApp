@@ -21,9 +21,13 @@
     <string name="error">Kier!</string>
     <string name="error_occurred_while_attempting_to_update">Kosa mar ketho notimore e kinde ma ne atemo loso gik ma ne itiyogo</string>
     <string name="every_5_minutes">Dakika 5 ka Dakika 5</string>
+    <string name="every_5_seconds">Sekon 5 ka Sekon</string>
     <string name="every_10_minutes">Dakika 10 ka dakika</string>
+    <string name="every_10_seconds">Sekon 10 ka Sekon</string>
     <string name="every_15_minutes">Dakika 15 ka dwe 15</string>
     <string name="every_30_minutes">Dakika 30 ka dakika</string>
+    <string name="every_30_seconds">Sekon 30 ka Sekon</string>
+    <string name="every_60_seconds">Sekon 60 ka Sekon</string>
     <string name="every_hour">Saa ka Saa</string>
     <string name="failed_to_merge_weather_data">Ok nyal keto kanyakla weche mag %1$s gi weche mag %2$s</string>
     <string name="failed_to_process_forecast_data">Ka ok otiyo gi weche ma ng\'ato nyalo ng\'eyogo</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ne ok anyal golo %1$s nikech URL ne ni nono</string>
     <string name="weather2">Kor lwasi</string>
     <string name="webcam2">Wend</string>
+    <string name="webcam_refresh_time">Seche mag loso websait</string>
     <string name="webcam_still_downloading">Picha mar mbui pod oting\'o</string>
     <string name="webcam_url_url_not_set">URL mar websait ok oket kata onge gimoro</string>
     <string name="widget_theme">Thuolo mar dhao</string>

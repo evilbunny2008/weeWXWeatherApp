@@ -21,9 +21,13 @@
     <string name="error">Bal mo!</string>
     <string name="error_occurred_while_attempting_to_update">Bal mo otimme i kare ma tye ka temo loko kit me tic kwede</string>
     <string name="every_5_minutes">I nge dakika 5, dakika 5</string>
+    <string name="every_5_seconds">I ceken 5 weng</string>
     <string name="every_10_minutes">I nge dakika 10, 10 i nge dakika 10</string>
+    <string name="every_10_seconds">I nge ceken 10 weng</string>
     <string name="every_15_minutes">I nge dakika 15, 15 i nge dakika 15</string>
     <string name="every_30_minutes">I nge dakika 30 ducu,</string>
+    <string name="every_30_seconds">I nge ceken 30 weng</string>
+    <string name="every_60_seconds">I nge ceken 60 weng</string>
     <string name="every_hour">Cawa mo keken</string>
     <string name="failed_to_merge_weather_data">Pe twero ribo ngec pa %1$s ki ngec pa %2$s</string>
     <string name="failed_to_process_forecast_data">Ka pe kitiyo ki ngec me byeko ngec</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Pe ki twero kwanyo %1$s pien URL onwongo tye nono</string>
     <string name="weather2">Kit ma ping tye kwede</string>
     <string name="webcam2">Yub me web</string>
+    <string name="webcam_refresh_time">Cawa me dwoko cen Webcam</string>
     <string name="webcam_still_downloading">Cal me webcaam pud tye ka kwanyo</string>
     <string name="webcam_url_url_not_set">Yube me webka pe ki keto onyo pe ki coyo</string>
     <string name="widget_theme">Wi lok ma nyutu</string>

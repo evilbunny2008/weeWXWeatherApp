@@ -21,9 +21,13 @@
     <string name="error">പിശക്!</string>
     <string name="error_occurred_while_attempting_to_update">ഉപയോഗം അപ്ഡേറ്റ് ചെയ്യാൻ ശ്രമിക്കുന്നതിനിടെ ഒരു പിശക് സംഭവിച്ചു</string>
     <string name="every_5_minutes">ഓരോ 5 മിനിറ്റിലും</string>
+    <string name="every_5_seconds">ഓരോ 5 സെക്കൻഡിലും</string>
     <string name="every_10_minutes">ഓരോ 10 മിനിറ്റിലും</string>
+    <string name="every_10_seconds">ഓരോ 10 സെക്കൻഡിലും</string>
     <string name="every_15_minutes">ഓരോ 15 മിനിറ്റിലും</string>
     <string name="every_30_minutes">ഓരോ 30 മിനിറ്റിലും</string>
+    <string name="every_30_seconds">ഓരോ 30 സെക്കൻഡിലും</string>
+    <string name="every_60_seconds">ഓരോ 60 സെക്കൻഡിലും</string>
     <string name="every_hour">ഓരോ മണിക്കൂറിലും</string>
     <string name="failed_to_merge_weather_data">%1$s ഡാറ്റ %2$s ഡാറ്റയുമായി ലയിപ്പിക്കുന്നതിൽ പരാജയപ്പെട്ടു</string>
     <string name="failed_to_process_forecast_data">പ്രവചന ഡാറ്റ പ്രോസസ്സ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL ശൂന്യമായതിനാൽ %1$s ഡൗൺലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല</string>
     <string name="weather2">കാലാവസ്ഥ</string>
     <string name="webcam2">വെബ്ക്യാം</string>
+    <string name="webcam_refresh_time">വെബ്‌ക്യാം പുതുക്കിയ സമയം</string>
     <string name="webcam_still_downloading">വെബ്‌ക്യാം ചിത്രം ഇപ്പോഴും ഡൗൺലോഡ് ചെയ്യുന്നു</string>
     <string name="webcam_url_url_not_set">വെബ്‌ക്യാം URL സജ്ജമാക്കിയിട്ടില്ല അല്ലെങ്കിൽ ശൂന്യമാണ്</string>
     <string name="widget_theme">വിജറ്റ് തീം</string>

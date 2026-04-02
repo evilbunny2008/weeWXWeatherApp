@@ -21,9 +21,13 @@
     <string name="error">Error!</string>
     <string name="error_occurred_while_attempting_to_update">Nisy hadisoana nitranga raha nanandrana nanavao ny fampiasana</string>
     <string name="every_5_minutes">Isaky ny 5 minitra</string>
+    <string name="every_5_seconds">Isaky ny 5 segondra</string>
     <string name="every_10_minutes">Isaky ny 10 minitra</string>
+    <string name="every_10_seconds">Isaky ny 10 segondra</string>
     <string name="every_15_minutes">Isaky ny 15 minitra</string>
     <string name="every_30_minutes">Isaky ny 30 minitra</string>
+    <string name="every_30_seconds">Isaky ny 30 segondra</string>
+    <string name="every_60_seconds">Isaky ny 60 segondra</string>
     <string name="every_hour">Isan\'ora</string>
     <string name="failed_to_merge_weather_data">Tsy nahomby ny nanambatra ny angona %1$s amin\'ny angona %2$s</string>
     <string name="failed_to_process_forecast_data">Tsy nahomby ny fizotran\'ny angon-drakitra</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Tsy afaka misintona ny %1$s satria banga ny URL</string>
     <string name="weather2">Weather</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Webcam Refresh Time</string>
     <string name="webcam_still_downloading">Ny sary Webcam dia mbola misintona</string>
     <string name="webcam_url_url_not_set">Webcam URL tsy napetraka na tsy misy banga</string>
     <string name="widget_theme">Widget Theme</string>

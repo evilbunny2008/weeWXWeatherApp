@@ -21,9 +21,13 @@
     <string name="error">Eror!</string>
     <string name="error_occurred_while_attempting_to_update">Un eror a sosodé miéntras ku a purba di aktualisá uso</string>
     <string name="every_5_minutes">Cada 5 Minuut</string>
+    <string name="every_5_seconds">Kada 5 Segundo</string>
     <string name="every_10_minutes">Cada 10 Minuut</string>
+    <string name="every_10_seconds">Kada 10 Segundo</string>
     <string name="every_15_minutes">Cada 15 Minuut</string>
     <string name="every_30_minutes">Cada 30 Minuut</string>
+    <string name="every_30_seconds">Kada 30 Segundo</string>
+    <string name="every_60_seconds">Kada 60 Segundo</string>
     <string name="every_hour">Tur Ora</string>
     <string name="failed_to_merge_weather_data">No a logra uni e datonan di %1$s ku e datonan di %2$s</string>
     <string name="failed_to_process_forecast_data">Falta di procesa datonan di pronostico</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">No por a download e %1$s pasobra e URL tabata blanku</string>
     <string name="weather2">Wer</string>
     <string name="webcam2">Webkam</string>
+    <string name="webcam_refresh_time">Tempu di Refreskamentu di Webcam</string>
     <string name="webcam_still_downloading">Imagen di webcam ainda ta download</string>
     <string name="webcam_url_url_not_set">URL di webcam no ta set òf ta blanku</string>
     <string name="widget_theme">Tema di Widget</string>

@@ -21,9 +21,13 @@
     <string name="error">Villa!</string>
     <string name="error_occurred_while_attempting_to_update">Villa kom upp þegar reynt var að uppfæra notkun</string>
     <string name="every_5_minutes">Á 5 mínútna fresti</string>
+    <string name="every_5_seconds">Á 5 sekúndna fresti</string>
     <string name="every_10_minutes">Á 10 mínútna fresti</string>
+    <string name="every_10_seconds">Á 10 sekúndna fresti</string>
     <string name="every_15_minutes">Á 15 mínútna fresti</string>
     <string name="every_30_minutes">Á 30 mínútna fresti</string>
+    <string name="every_30_seconds">Á 30 sekúndna fresti</string>
+    <string name="every_60_seconds">Á 60 sekúndna fresti</string>
     <string name="every_hour">Á hverri klukkustund</string>
     <string name="failed_to_merge_weather_data">Mistókst að sameina %1$s gögnin við %2$s gögnin</string>
     <string name="failed_to_process_forecast_data">Mistókst að vinna úr spágögnum</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Gat ekki hlaðið niður %1$s vegna þess að vefslóðin var auð</string>
     <string name="weather2">Veður</string>
     <string name="webcam2">Vefmyndavél</string>
+    <string name="webcam_refresh_time">Uppfærslutími vefmyndavélar</string>
     <string name="webcam_still_downloading">Myndavél er enn að hlaðast niður</string>
     <string name="webcam_url_url_not_set">Vefslóð vefmyndavélar er ekki stillt eða er auð</string>
     <string name="widget_theme">Græjuþema</string>

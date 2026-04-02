@@ -21,9 +21,13 @@
     <string name="error">Mistek!</string>
     <string name="error_occurred_while_attempting_to_update">Wan mistek bin apin we dɛn bin de tray fɔ ɔpdet usay dɛn de yuz am</string>
     <string name="every_5_minutes">Ɛvri 5 minit</string>
+    <string name="every_5_seconds">Ɛvri 5 Sɛkɔn</string>
     <string name="every_10_minutes">Ɛvri 10 minit</string>
+    <string name="every_10_seconds">Ɛvri 10 Sɛkɔn</string>
     <string name="every_15_minutes">Ɛvri 15 minit</string>
     <string name="every_30_minutes">Ɛvri 30 minit</string>
+    <string name="every_30_seconds">Ɛvri 30 Sɛkɔn</string>
+    <string name="every_60_seconds">Ɛvri 60 Sɛkɔn</string>
     <string name="every_hour">Ɛvri awa</string>
     <string name="failed_to_merge_weather_data">Fail fɔ jɔyn di %1$s data wit di %2$s data</string>
     <string name="failed_to_process_forecast_data">Failed fɔ prosɛs fɔkɔs data</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Nɔ bin ebul fɔ dawnlod di %1$s dɛn bikɔs di URL bin blank</string>
     <string name="weather2">Wɛda</string>
     <string name="webcam2">Wɛbkam</string>
+    <string name="webcam_refresh_time">Wɛbkam Rifresh Taym</string>
     <string name="webcam_still_downloading">Webcam pikchɔ stil de dawnlod</string>
     <string name="webcam_url_url_not_set">Webcam URL nɔ sɛt ɔ na blank</string>
     <string name="widget_theme">Di tim fɔ widget</string>

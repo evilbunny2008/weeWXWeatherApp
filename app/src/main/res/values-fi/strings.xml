@@ -21,9 +21,13 @@
     <string name="error">Virhe!</string>
     <string name="error_occurred_while_attempting_to_update">Virhe yritettäessä päivittää käyttöä</string>
     <string name="every_5_minutes">5 minuutin välein</string>
+    <string name="every_5_seconds">5 sekunnin välein</string>
     <string name="every_10_minutes">10 minuutin välein</string>
+    <string name="every_10_seconds">10 sekunnin välein</string>
     <string name="every_15_minutes">15 minuutin välein</string>
     <string name="every_30_minutes">30 minuutin välein</string>
+    <string name="every_30_seconds">30 sekunnin välein</string>
+    <string name="every_60_seconds">60 sekunnin välein</string>
     <string name="every_hour">Joka tunti</string>
     <string name="failed_to_merge_weather_data">%1$s-tietojen yhdistäminen %2$s-tietoihin epäonnistui</string>
     <string name="failed_to_process_forecast_data">Ennustetietojen käsittely epäonnistui</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Tiedostoa %1$s ei voitu ladata, koska URL-osoite oli tyhjä</string>
     <string name="weather2">Sää</string>
     <string name="webcam2">Verkkokamera</string>
+    <string name="webcam_refresh_time">Verkkokameran päivitysaika</string>
     <string name="webcam_still_downloading">Verkkokameran kuvaa ladataan edelleen</string>
     <string name="webcam_url_url_not_set">Verkkokameran URL-osoitetta ei ole asetettu tai se on tyhjä</string>
     <string name="widget_theme">Widget-teema</string>

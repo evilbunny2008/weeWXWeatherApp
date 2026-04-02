@@ -21,9 +21,13 @@
     <string name="error">ຜິດພາດ!</string>
     <string name="error_occurred_while_attempting_to_update">ມີຂໍ້ຜິດພາດເກີດຂື້ນໃນຂະນະທີ່ພະຍາຍາມປັບປຸງການນໍາໃຊ້</string>
     <string name="every_5_minutes">ທຸກໆ 5 ນາທີ</string>
+    <string name="every_5_seconds">ທຸກໆ 5 ວິນາທີ</string>
     <string name="every_10_minutes">ທຸກໆ 10 ນາທີ</string>
+    <string name="every_10_seconds">ທຸກໆ 10 ວິນາທີ</string>
     <string name="every_15_minutes">ທຸກໆ 15 ນາທີ</string>
     <string name="every_30_minutes">ທຸກໆ 30 ນາທີ</string>
+    <string name="every_30_seconds">ທຸກໆ 30 ວິນາທີ</string>
+    <string name="every_60_seconds">ທຸກໆ 60 ວິນາທີ</string>
     <string name="every_hour">ທຸກໆຊົ່ວໂມງ</string>
     <string name="failed_to_merge_weather_data">ລົ້ມເຫລວໃນການຮວມຂໍ້ມູນ %1$s ກັບຂໍ້ມູນ %2$s</string>
     <string name="failed_to_process_forecast_data">ລົ້ມເຫລວໃນການປະມວນຜົນຂໍ້ມູນການຄາດຄະເນ</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">ບໍ່ສາມາດດາວໂຫຼດ %1$s ໄດ້ເນື່ອງຈາກ URL ຫວ່າງເປົ່າ</string>
     <string name="weather2">ສະພາບອາກາດ</string>
     <string name="webcam2">webcam</string>
+    <string name="webcam_refresh_time">ເວ​ລາ​ໂຫຼດ​ຫນ້າ​ຈໍ​ເວັບ​ແຄມ</string>
     <string name="webcam_still_downloading">ຮູບພາບ webcam ຍັງຄົງດາວໂຫລດຢູ່</string>
     <string name="webcam_url_url_not_set">URL WebCam ບໍ່ໄດ້ຖືກກໍານົດຫຼືວ່າງເປົ່າ</string>
     <string name="widget_theme">ຫົວຂໍ້ Widget</string>

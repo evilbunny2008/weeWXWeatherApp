@@ -21,9 +21,13 @@
     <string name="error">تېروتنه!</string>
     <string name="error_occurred_while_attempting_to_update">د کارونې تازه کولو په هڅه کې یوه تېروتنه رامنځته شوه</string>
     <string name="every_5_minutes">هر 5 دقیقې</string>
+    <string name="every_5_seconds">هر 5 ثانیې</string>
     <string name="every_10_minutes">هر 10 دقیقې</string>
+    <string name="every_10_seconds">هر 10 ثانیې</string>
     <string name="every_15_minutes">هر 15 دقیقې</string>
     <string name="every_30_minutes">هر 30 دقیقې</string>
+    <string name="every_30_seconds">په هر 30 ثانیو کې</string>
+    <string name="every_60_seconds">په هر 60 ثانیو کې</string>
     <string name="every_hour">هر ساعت</string>
     <string name="failed_to_merge_weather_data">د %1$s ډیټا د %2$s ډیټا سره یوځای کولو کې پاتې راغلی</string>
     <string name="failed_to_process_forecast_data">د وړاندوینې ډاټا پروسس کولو کې پاتې راغلی</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">د %1$s ډاونلوډ کولو توان نه درلود ځکه چې URL خالي و</string>
     <string name="weather2">هوا</string>
     <string name="webcam2">ویب کیم</string>
+    <string name="webcam_refresh_time">د ویب کیم ریفریش وخت</string>
     <string name="webcam_still_downloading">د ویب کیم عکس لاهم ډاونلوډ کیږي</string>
     <string name="webcam_url_url_not_set">د ویب کیم URL نه دی ټاکل شوی یا خالي دی</string>
     <string name="widget_theme">د ویجټ موضوع</string>

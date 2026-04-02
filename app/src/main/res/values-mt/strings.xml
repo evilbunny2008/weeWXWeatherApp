@@ -21,9 +21,13 @@
     <string name="error">Żball!</string>
     <string name="error_occurred_while_attempting_to_update">Sar żball waqt li ppruvat taġġorna l-użu</string>
     <string name="every_5_minutes">Kull 5 Minuti</string>
+    <string name="every_5_seconds">Kull 5 Sekondi</string>
     <string name="every_10_minutes">Kull 10 Minuti</string>
+    <string name="every_10_seconds">Kull 10 Sekondi</string>
     <string name="every_15_minutes">Kull 15-il Minuta</string>
     <string name="every_30_minutes">Kull 30 Minuta</string>
+    <string name="every_30_seconds">Kull 30 Sekondi</string>
+    <string name="every_60_seconds">Kull 60 Sekondi</string>
     <string name="every_hour">Kull Siegha</string>
     <string name="failed_to_merge_weather_data">Naqas milli jingħaqad id-dejta %1$s mad-dejta %2$s</string>
     <string name="failed_to_process_forecast_data">Naqas milli jipproċessa d-dejta tat-tbassir</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ma setax tniżżel il-%1$s minħabba li l-URL kien vojt</string>
     <string name="weather2">Temp</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Ħin ta\' Aġġornar tal-Webcam</string>
     <string name="webcam_still_downloading">L-immaġni tal-webcam għadha qed titniżżel</string>
     <string name="webcam_url_url_not_set">Il-URL tal-webcam mhuwiex issettjat jew huwa vojt</string>
     <string name="widget_theme">Widget Tema</string>

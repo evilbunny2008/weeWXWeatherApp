@@ -21,9 +21,13 @@
     <string name="error">Sayop!</string>
     <string name="error_occurred_while_attempting_to_update">Usa ka sayup ang nahitabo samtang misulay sa pag-update sa paggamit</string>
     <string name="every_5_minutes">Matag 5 minutos</string>
+    <string name="every_5_seconds">Matag 5 ka Segundo</string>
     <string name="every_10_minutes">Matag 10 minutos</string>
+    <string name="every_10_seconds">Matag 10 ka Segundo</string>
     <string name="every_15_minutes">Matag 15 minutos</string>
     <string name="every_30_minutes">Kada 30 minuto</string>
+    <string name="every_30_seconds">Matag 30 segundos</string>
+    <string name="every_60_seconds">Matag 60 segundos</string>
     <string name="every_hour">Matag oras</string>
     <string name="failed_to_merge_weather_data">Napakyas sa paghiusa sa %1$s nga datos sa %2$s nga datos</string>
     <string name="failed_to_process_forecast_data">Napakyas sa pagproseso sa datos sa forecast</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Wala ma-download ang %1$s tungod kay blangko ang URL</string>
     <string name="weather2">Panahon</string>
     <string name="webcam2">Monbuman</string>
+    <string name="webcam_refresh_time">Oras sa Pag-refresh sa Webcam</string>
     <string name="webcam_still_downloading">Ang imahe sa webcam nag-download gihapon</string>
     <string name="webcam_url_url_not_set">Ang URL sa Webcam wala gitakda o blangko</string>
     <string name="widget_theme">Tema sa Widget</string>

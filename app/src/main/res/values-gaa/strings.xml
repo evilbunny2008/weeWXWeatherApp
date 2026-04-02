@@ -21,9 +21,13 @@
     <string name="error">Tɔmɔ!</string>
     <string name="error_occurred_while_attempting_to_update">Tɔmɔ ko ba be mli ni abɔɔ mɔdɛŋ ni atsake bɔ ni akɛtsuɔ nii ahaa lɛ</string>
     <string name="every_5_minutes">Minitii 5 fɛɛ 5</string>
+    <string name="every_5_seconds">Daa Sɛkɛndii 5</string>
     <string name="every_10_minutes">Minitii 10 fɛɛ 10</string>
+    <string name="every_10_seconds">Daa Sɛkɛndii 10</string>
     <string name="every_15_minutes">Minitii 15 fɛɛ 15</string>
     <string name="every_30_minutes">Minitii 30 fɛɛ 30</string>
+    <string name="every_30_seconds">Daa Sɛkɛndii 30</string>
+    <string name="every_60_seconds">Daa Sɛkɛndii 60</string>
     <string name="every_hour">Daa ŋmɛlɛtswai</string>
     <string name="failed_to_merge_weather_data">Eyeee akɛ ekɛ %1$s data lɛ kɛ %2$s data lɛ baafata he</string>
     <string name="failed_to_process_forecast_data">Efeee nɔ ko ni tsɔɔ saji ni atsɔɔ mli</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Enyɛɛɛ ejie %1$s lɛ ejaakɛ URL lɛ bɛ nɔ ko nɔ ko</string>
     <string name="weather2">Kɔɔyɔŋ tsakemɔ</string>
     <string name="webcam2">Webkam</string>
+    <string name="webcam_refresh_time">Wɛbkaam Heemɔ Be</string>
     <string name="webcam_still_downloading">Webcam mfoniri lɛ miijie lolo</string>
     <string name="webcam_url_url_not_set">Webcam URL lɛ jeee nɔ ni atooo loo ebɛ nɔ ko</string>
     <string name="widget_theme">Wiji saneyitso</string>

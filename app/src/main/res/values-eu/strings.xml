@@ -21,9 +21,13 @@
     <string name="error">Errorea!</string>
     <string name="error_occurred_while_attempting_to_update">Errore bat gertatu da erabilera eguneratzen saiatzean</string>
     <string name="every_5_minutes">5 minuturo</string>
+    <string name="every_5_seconds">5 segundoro</string>
     <string name="every_10_minutes">10 minuturo</string>
+    <string name="every_10_seconds">10 segundoro</string>
     <string name="every_15_minutes">15 minuturo</string>
     <string name="every_30_minutes">30 minuturo</string>
+    <string name="every_30_seconds">30 segundoro</string>
+    <string name="every_60_seconds">60 segundoro</string>
     <string name="every_hour">Orduro</string>
     <string name="failed_to_merge_weather_data">Ezin izan dira batu %1$s datuak %2$s datuekin</string>
     <string name="failed_to_process_forecast_data">Ezin izan dira prozesatu iragarpen-datuak</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ezin izan da %1$s deskargatu URLa hutsik zegoelako</string>
     <string name="weather2">Eguraldia</string>
     <string name="webcam2">Webkamera</string>
+    <string name="webcam_refresh_time">Webkamera freskatzeko ordua</string>
     <string name="webcam_still_downloading">Webkameraren irudia deskargatzen ari da oraindik</string>
     <string name="webcam_url_url_not_set">Webkameraren URLa ez dago ezarrita edo hutsik dago</string>
     <string name="widget_theme">Widget Gaia</string>

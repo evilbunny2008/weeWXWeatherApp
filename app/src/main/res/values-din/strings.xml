@@ -21,9 +21,13 @@
     <string name="error">Awuɔ̈c!</string>
     <string name="error_occurred_while_attempting_to_update">Kä cï röt wuɔ̈ɔ̈c aacï röt looi ke them bïk luɔɔi de käŋ ya cɔ̈kpiny</string>
     <string name="every_5_minutes">Ɣaka 5</string>
+    <string name="every_5_seconds">Në thää kaa 5 yiic</string>
     <string name="every_10_minutes">Käk ë dhɛ̈ŋ 10</string>
+    <string name="every_10_seconds">Në thää kaa 10 yiic</string>
     <string name="every_15_minutes">Kɔc ëbɛ̈n 15</string>
     <string name="every_30_minutes">Kɔc ke 30</string>
+    <string name="every_30_seconds">Në thää kaa 30 yiic</string>
+    <string name="every_60_seconds">Në thää kaa 60 yiic</string>
     <string name="every_hour">wɛ̈ɛ̈r ëbën</string>
     <string name="failed_to_merge_weather_data">Acï löny bï %1$s wël mat kenë %2$s wël</string>
     <string name="failed_to_process_forecast_data">Ke kë cï looi bï kä cï yök looi</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Acï lëu bï %1$s nyaai rin URL acïn kë tɔ̈u thïn</string>
     <string name="weather2">Aliir</string>
     <string name="webcam2">Webɔi;ta</string>
+    <string name="webcam_refresh_time">Thaar de Cökpiny de Webcam</string>
     <string name="webcam_still_downloading">Thura de wɛbthait aŋot ke ye tääu piny</string>
     <string name="webcam_url_url_not_set">URL de kompiöta acie tɔ̈ ke cë tääu piny ka cë thök</string>
     <string name="widget_theme">Tiɛ̈ŋ de</string>

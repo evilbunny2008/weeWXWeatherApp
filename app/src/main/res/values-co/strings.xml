@@ -21,9 +21,13 @@
     <string name="error">Errore !</string>
     <string name="error_occurred_while_attempting_to_update">Un errore hè accadutu mentre pruvate d\'aghjurnà l\'usu</string>
     <string name="every_5_minutes">Ogni 5 Minuti</string>
+    <string name="every_5_seconds">Ogni 5 Secondi</string>
     <string name="every_10_minutes">Ogni 10 Minuti</string>
+    <string name="every_10_seconds">Ogni 10 Secondi</string>
     <string name="every_15_minutes">Ogni 15 Minuti</string>
     <string name="every_30_minutes">Ogni 30 Minuti</string>
+    <string name="every_30_seconds">Ogni 30 Secondi</string>
+    <string name="every_60_seconds">Ogni 60 Secondi</string>
     <string name="every_hour">Ogni ora</string>
     <string name="failed_to_merge_weather_data">Impossibile unisce i dati %1$s cù i dati %2$s</string>
     <string name="failed_to_process_forecast_data">Impossibile processà i dati di previsione</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ùn hè statu capace di scaricà u %1$s perchè l\'URL era viotu</string>
     <string name="weather2">Tempu</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Webcam Refresh Time</string>
     <string name="webcam_still_downloading">L\'immagine di a webcam hè sempre in scaricamentu</string>
     <string name="webcam_url_url_not_set">L\'URL di a webcam ùn hè micca stabilitu o hè viotu</string>
     <string name="widget_theme">Tema Widget</string>

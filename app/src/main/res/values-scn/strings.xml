@@ -21,9 +21,13 @@
     <string name="error">Erruri!</string>
     <string name="error_occurred_while_attempting_to_update">N\'erruri ci fu n\'erruri mentri circava di agghiurnari l\'usu</string>
     <string name="every_5_minutes">Ogni 5 minuti</string>
+    <string name="every_5_seconds">Ogni 5 Sicunni</string>
     <string name="every_10_minutes">Ogni 10 minuti</string>
+    <string name="every_10_seconds">Ogni 10 Sicunni</string>
     <string name="every_15_minutes">Ogni 15 minuti</string>
     <string name="every_30_minutes">Ogni 30 minuti</string>
+    <string name="every_30_seconds">Ogni 30 Sicunni</string>
+    <string name="every_60_seconds">Ogni 60 Sicunni</string>
     <string name="every_hour">Ogni ura</string>
     <string name="failed_to_merge_weather_data">Nun arriniscìu a junciri li dati %1$s cu li dati %2$s</string>
     <string name="failed_to_process_forecast_data">Fallitu pi prucissari li dati di privisioni</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Nun fu capaci di scaricari li %1$s picchì l\'URL era vacanti</string>
     <string name="weather2">Clima</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Tempu di rinfriscamentu dâ webcam</string>
     <string name="webcam_still_downloading">L\'immaggini Webcam sta ancora scaricannu</string>
     <string name="webcam_url_url_not_set">L\'URL web nun eni misa o bivu</string>
     <string name="widget_theme">Tema di Widget</string>

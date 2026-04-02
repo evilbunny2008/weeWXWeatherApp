@@ -21,9 +21,13 @@
     <string name="error">Хата!</string>
     <string name="error_occurred_while_attempting_to_update">Къулланувны янъыландырмагъа тырышкъанда хата олып кечти</string>
     <string name="every_5_minutes">Эр 5 дакъкъа</string>
+    <string name="every_5_seconds">Эр 5 саниеде</string>
     <string name="every_10_minutes">Эр 10 дакъкъада</string>
+    <string name="every_10_seconds">Эр 10 саниеде</string>
     <string name="every_15_minutes">Эр 15 дакъкъада</string>
     <string name="every_30_minutes">Эр 30 дакъкъада</string>
+    <string name="every_30_seconds">Эр 30 саниеде</string>
+    <string name="every_60_seconds">Эр 60 саниеде</string>
     <string name="every_hour">Эр бир саат</string>
     <string name="failed_to_merge_weather_data">%1$s малюматны %2$s малюматнен бирлештирмек мумкюн олмады</string>
     <string name="failed_to_process_forecast_data">Прогноз малюматларыны ишлемеге мумкюн олмады</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s юклеп оламады, чюнки URL бош эди</string>
     <string name="weather2">Ава вазиети</string>
     <string name="webcam2">Веб-камера</string>
+    <string name="webcam_refresh_time">Веб-камеранынъ янъылангъан вакъты</string>
     <string name="webcam_still_downloading">Веб-камера ресими шимди де юклей</string>
     <string name="webcam_url_url_not_set">Веб-камералы URL къоюлмай я да бош</string>
     <string name="widget_theme">Виджет мевзусы</string>

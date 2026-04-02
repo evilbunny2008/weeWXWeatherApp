@@ -21,9 +21,13 @@
     <string name="error">Chyba!</string>
     <string name="error_occurred_while_attempting_to_update">Pri pokuse o aktualizáciu využitia sa vyskytla chyba</string>
     <string name="every_5_minutes">Každých 5 minút</string>
+    <string name="every_5_seconds">Každých 5 sekúnd</string>
     <string name="every_10_minutes">Každých 10 minút</string>
+    <string name="every_10_seconds">Každých 10 sekúnd</string>
     <string name="every_15_minutes">Každých 15 minút</string>
     <string name="every_30_minutes">Každých 30 minút</string>
+    <string name="every_30_seconds">Každých 30 sekúnd</string>
+    <string name="every_60_seconds">Každých 60 sekúnd</string>
     <string name="every_hour">Každú hodinu</string>
     <string name="failed_to_merge_weather_data">Nepodarilo sa zlúčiť údaje %1$s s údajmi %2$s</string>
     <string name="failed_to_process_forecast_data">Údaje prognózy sa nepodarilo spracovať</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Nepodarilo sa stiahnuť %1$s, pretože adresa URL bola prázdna</string>
     <string name="weather2">Počasie</string>
     <string name="webcam2">Webová kamera</string>
+    <string name="webcam_refresh_time">Čas obnovenia webovej kamery</string>
     <string name="webcam_still_downloading">Obrázok webovej kamery sa stále sťahuje</string>
     <string name="webcam_url_url_not_set">Webová adresa webovej kamery nie je nastavená alebo je prázdna</string>
     <string name="widget_theme">Téma widgetu</string>

@@ -21,9 +21,13 @@
     <string name="error">ስህተት!</string>
     <string name="error_occurred_while_attempting_to_update">አጠቃቀምን ለማዘመን በመሞከር ላይ ስህተት ተከስቷል</string>
     <string name="every_5_minutes">በየ 5 ደቂቃው</string>
+    <string name="every_5_seconds">በየ5 ሰከንድ</string>
     <string name="every_10_minutes">በየ 10 ደቂቃዎች</string>
+    <string name="every_10_seconds">በየ10 ሰከንድ</string>
     <string name="every_15_minutes">በየ 15 ደቂቃው</string>
     <string name="every_30_minutes">በየ 30 ደቂቃዎች</string>
+    <string name="every_30_seconds">በየ30 ሰከንድ</string>
+    <string name="every_60_seconds">በየ60 ሰከንድ</string>
     <string name="every_hour">በየሰዓቱ</string>
     <string name="failed_to_merge_weather_data">የ%1$s ውሂብን ከ%2$s ውሂብ ጋር ማዋሃድ አልተሳካም።</string>
     <string name="failed_to_process_forecast_data">ትንበያ ውሂብን ማከናወን አልተሳካም</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL ባዶ ስለነበር %1$sን ማውረድ አልቻልኩም</string>
     <string name="weather2">የአየር ሁኔታ</string>
     <string name="webcam2">ዌብ ካሜራ</string>
+    <string name="webcam_refresh_time">የድር ካሜራ እድሳት ጊዜ</string>
     <string name="webcam_still_downloading">የድር ካሜራ ምስል አሁንም ያውርዱ</string>
     <string name="webcam_url_url_not_set">የድር ካሜራ ዩ አር ኤል አልተዋቀረም ወይም ባዶ ነው</string>
     <string name="widget_theme">ንዑስ ፕሮግራም ጭብጥ</string>

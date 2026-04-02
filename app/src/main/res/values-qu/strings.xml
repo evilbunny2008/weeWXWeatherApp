@@ -21,9 +21,13 @@
     <string name="error">Pantay!</string>
     <string name="error_occurred_while_attempting_to_update">Huk pantaymi karqan, llamk\'achiyta musuqchayta munachkaspa</string>
     <string name="every_5_minutes">Sapa 5 minutu</string>
+    <string name="every_5_seconds">Sapa 5 Segundos</string>
     <string name="every_10_minutes">Sapa 10 minutu</string>
+    <string name="every_10_seconds">Sapa 10 Segundos</string>
     <string name="every_15_minutes">Sapa 15 minutu</string>
     <string name="every_30_minutes">Sapa 30 minutu</string>
+    <string name="every_30_seconds">Sapa 30 Segundos</string>
+    <string name="every_60_seconds">Sapa 60 Segundos</string>
     <string name="every_hour">Sapa hora</string>
     <string name="failed_to_merge_weather_data">%1$s willayta %2$s willaywan hukllachayta manam atirqanchu</string>
     <string name="failed_to_process_forecast_data">Mana atirqanchu willakuy willakuykunata ruwayta</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Mana %1$s uraykachiyta atirqanchu URL ch\'usaq kasqanrayku</string>
     <string name="weather2">Llapiya</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Webcam musuqyachiy pacha</string>
     <string name="webcam_still_downloading">Webcam siq\'iqa kunankamapas uraykachichkanraqmi</string>
     <string name="webcam_url_url_not_set">Webcam URL mana churasqachu utaq ch\'usaqchu kachkan</string>
     <string name="widget_theme">Widget tema</string>

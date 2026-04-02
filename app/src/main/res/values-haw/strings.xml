@@ -21,9 +21,13 @@
     <string name="error">Kupa!</string>
     <string name="error_occurred_while_attempting_to_update">Ua hala kekahi hewa i ka wā e ho\'āʻo ana e hoʻoponopono i ka hoʻohanaʻana</string>
     <string name="every_5_minutes">Kēlā me kēia 5 mau minuke</string>
+    <string name="every_5_seconds">ʻO kēlā me kēia 5 kekona</string>
     <string name="every_10_minutes">I kēlā me kēia 10 mau minuke</string>
+    <string name="every_10_seconds">ʻO kēlā me kēia 10 Kekona</string>
     <string name="every_15_minutes">I nā minuke 15</string>
     <string name="every_30_minutes">I kēlā me kēia 30 mau minuke</string>
+    <string name="every_30_seconds">ʻO kēlā me kēia 30 Kekona</string>
+    <string name="every_60_seconds">ʻO kēlā me kēia 60 kekona</string>
     <string name="every_hour">I kēlā me kēia hola</string>
     <string name="failed_to_merge_weather_data">ʻAʻole hiki ke hoʻohui i ka ʻikepili %1$s me ka ʻikepili %2$s</string>
     <string name="failed_to_process_forecast_data">ʻAʻole hikiʻole ke hoʻokō i nāʻikepili</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">ʻAʻole hiki ke hoʻoiho i ka %1$s no ka mea ua hakahaka ka URL</string>
     <string name="weather2">Aloha hime</string>
     <string name="webcam2">Lā Pūnaewele</string>
+    <string name="webcam_refresh_time">ʻO ka manawa hou o ka Webcam</string>
     <string name="webcam_still_downloading">Ke kiʻi nei i ke kiʻi WebCam</string>
     <string name="webcam_url_url_not_set">ʻAʻole paʻa a paʻaʻole ka URCAM URL</string>
     <string name="widget_theme">Kumuhana kumuhana</string>

@@ -21,9 +21,13 @@
     <string name="error">Gabim!</string>
     <string name="error_occurred_while_attempting_to_update">Ndodhi një gabim gjatë përpjekjes për të përditësuar përdorimin</string>
     <string name="every_5_minutes">Çdo 5 minuta</string>
+    <string name="every_5_seconds">Çdo 5 sekonda</string>
     <string name="every_10_minutes">Çdo 10 minuta</string>
+    <string name="every_10_seconds">Çdo 10 sekonda</string>
     <string name="every_15_minutes">Çdo 15 minuta</string>
     <string name="every_30_minutes">Çdo 30 minuta</string>
+    <string name="every_30_seconds">Çdo 30 sekonda</string>
+    <string name="every_60_seconds">Çdo 60 sekonda</string>
     <string name="every_hour">Çdo orë</string>
     <string name="failed_to_merge_weather_data">Dështoi bashkimi i të dhënave %1$s me të dhënat %2$s</string>
     <string name="failed_to_process_forecast_data">Përpunimi i të dhënave të parashikimit dështoi</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s nuk mund të shkarkohej sepse URL-ja ishte bosh</string>
     <string name="weather2">Moti</string>
     <string name="webcam2">Webkamera</string>
+    <string name="webcam_refresh_time">Koha e rifreskimit të kamerës</string>
     <string name="webcam_still_downloading">Imazhi i kamerës së uebit është ende duke u shkarkuar</string>
     <string name="webcam_url_url_not_set">URL-ja e kamerës së uebit nuk është vendosur ose është bosh</string>
     <string name="widget_theme">Tema e miniaplikacionit</string>

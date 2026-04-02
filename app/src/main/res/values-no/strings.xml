@@ -21,9 +21,13 @@
     <string name="error">Feil!</string>
     <string name="error_occurred_while_attempting_to_update">Det oppsto en feil under forsøk på å oppdatere bruk</string>
     <string name="every_5_minutes">Hvert 5. minutt</string>
+    <string name="every_5_seconds">Hvert 5. sekund</string>
     <string name="every_10_minutes">Hvert 10. minutt</string>
+    <string name="every_10_seconds">Hvert 10. sekund</string>
     <string name="every_15_minutes">Hvert 15. minutt</string>
     <string name="every_30_minutes">Hvert 30. minutt</string>
+    <string name="every_30_seconds">Hvert 30. sekund</string>
+    <string name="every_60_seconds">Hvert 60. sekund</string>
     <string name="every_hour">Hver time</string>
     <string name="failed_to_merge_weather_data">Kunne ikke slå sammen %1$s-dataene med %2$s-dataene</string>
     <string name="failed_to_process_forecast_data">Kunne ikke behandle prognosedata</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Kunne ikke laste ned %1$s fordi nettadressen var tom</string>
     <string name="weather2">Vær</string>
     <string name="webcam2">Webkamera</string>
+    <string name="webcam_refresh_time">Oppdateringstid for webkamera</string>
     <string name="webcam_still_downloading">Webkamerabildet lastes fortsatt ned</string>
     <string name="webcam_url_url_not_set">Webkamera-URL er ikke angitt eller er tom</string>
     <string name="widget_theme">Widget-tema</string>

@@ -21,9 +21,13 @@
     <string name="error">Hiba!</string>
     <string name="error_occurred_while_attempting_to_update">Hiba történt a használat frissítésének kísérlete közben</string>
     <string name="every_5_minutes">5 percenként</string>
+    <string name="every_5_seconds">5 másodpercenként</string>
     <string name="every_10_minutes">10 percenként</string>
+    <string name="every_10_seconds">10 másodpercenként</string>
     <string name="every_15_minutes">15 percenként</string>
     <string name="every_30_minutes">30 percenként</string>
+    <string name="every_30_seconds">30 másodpercenként</string>
+    <string name="every_60_seconds">60 másodpercenként</string>
     <string name="every_hour">Minden órában</string>
     <string name="failed_to_merge_weather_data">Nem sikerült egyesíteni a %1$s adatokat a %2$s adatokkal</string>
     <string name="failed_to_process_forecast_data">Nem sikerült feldolgozni az előrejelzési adatokat</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Nem sikerült letölteni a %1$s fájlt, mert az URL üres volt</string>
     <string name="weather2">Időjárás</string>
     <string name="webcam2">Webkamera</string>
+    <string name="webcam_refresh_time">Webkamera frissítési idő</string>
     <string name="webcam_still_downloading">A webkamera képének letöltése még folyamatban van</string>
     <string name="webcam_url_url_not_set">A webkamera URL-je nincs beállítva, vagy üres</string>
     <string name="widget_theme">Widget téma</string>

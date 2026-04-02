@@ -21,9 +21,13 @@
     <string name="error">Error!</string>
     <string name="error_occurred_while_attempting_to_update">Kanganiso yakaitika panguva yekuedza kugadzirisa kushandiswa</string>
     <string name="every_5_minutes">Maminitsi mashanu ega ega</string>
+    <string name="every_5_seconds">Masekonzi mashanu ese</string>
     <string name="every_10_minutes">Maminitsi gumi ese</string>
+    <string name="every_10_seconds">Ese 10 Sekondi</string>
     <string name="every_15_minutes">Maminitsi gumi nemashanu</string>
     <string name="every_30_minutes">Maminetsi makumi matatu nemanheru</string>
+    <string name="every_30_seconds">Ese makumi matatu masekonzi</string>
+    <string name="every_60_seconds">Ese 60 Sekondi</string>
     <string name="every_hour">Nguva imwe neimwe</string>
     <string name="failed_to_merge_weather_data">Tatadza kubatanidza %1$s data ne%2$s data</string>
     <string name="failed_to_process_forecast_data">Yakundikana kugadzirisa data rekufunga</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Hatina kukwanisa kudhaunirodha %1$s nekuti URL yanga isina chinhu</string>
     <string name="weather2">Weather</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Webcam Refresh Time</string>
     <string name="webcam_still_downloading">Webcam mufananidzo uchiri kurodha pasi</string>
     <string name="webcam_url_url_not_set">Webcam URL haina kuiswa kana isina chinhu</string>
     <string name="widget_theme">Widget theme</string>

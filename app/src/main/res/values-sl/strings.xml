@@ -21,9 +21,13 @@
     <string name="error">Napaka!</string>
     <string name="error_occurred_while_attempting_to_update">Med poskusom posodobitve uporabe je prišlo do napake</string>
     <string name="every_5_minutes">Vsakih 5 minut</string>
+    <string name="every_5_seconds">Vsakih 5 sekund</string>
     <string name="every_10_minutes">Vsakih 10 minut</string>
+    <string name="every_10_seconds">Vsakih 10 sekund</string>
     <string name="every_15_minutes">Vsakih 15 minut</string>
     <string name="every_30_minutes">Vsakih 30 minut</string>
+    <string name="every_30_seconds">Vsakih 30 sekund</string>
+    <string name="every_60_seconds">Vsakih 60 sekund</string>
     <string name="every_hour">Vsako uro</string>
     <string name="failed_to_merge_weather_data">Podatkov %1$s ni bilo mogoče združiti s podatki %2$s</string>
     <string name="failed_to_process_forecast_data">Podatkov napovedi ni bilo mogoče obdelati</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ni bilo mogoče prenesti %1$s, ker je bil URL prazen</string>
     <string name="weather2">Vreme</string>
     <string name="webcam2">Spletna kamera</string>
+    <string name="webcam_refresh_time">Čas osveževanja spletne kamere</string>
     <string name="webcam_still_downloading">Slika spletne kamere se še vedno prenaša</string>
     <string name="webcam_url_url_not_set">URL spletne kamere ni nastavljen ali je prazen</string>
     <string name="widget_theme">Tema pripomočka</string>

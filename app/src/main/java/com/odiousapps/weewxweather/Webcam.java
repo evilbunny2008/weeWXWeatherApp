@@ -2,6 +2,8 @@ package com.odiousapps.weewxweather;
 
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,13 +16,27 @@ import androidx.lifecycle.Observer;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXApp.textToBitmap;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getWebcamImage;
 
 public class Webcam extends Fragment
 {
 	private RotateLayout rl;
 	private ImageView iv;
 	private SwipeRefreshLayout swipeLayout;
+	private int updateInterval = 0;
+	private final Handler handler = new Handler(Looper.getMainLooper());
+	private final Runnable updateRunnable = new Runnable()
+	{
+	    @Override
+	    public void run()
+	    {
+		    getWebcamImage(true, false, true, false);
+			if(updateInterval > 0)
+		        handler.postDelayed(this, updateInterval);
+	    }
+	};
 
 	public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
 	{
@@ -37,14 +53,44 @@ public class Webcam extends Fragment
 		{
 			LogMessage("Webcam.java weeWXAppCommon.getWebcamImage(true, false);");
 			swipeLayout.setRefreshing(true);
-			weeWXAppCommon.getWebcamImage(true, false, true, false);
+			getWebcamImage(true, false, true, false);
 		});
+
+		setLoopInterval();
 
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		loadWebcamImage();
 
 		return rootView;
+	}
+
+	public void onResume()
+	{
+	    super.onResume();
+		setLoopInterval();
+	}
+
+	public void onPause()
+	{
+		super.onPause();
+		handler.removeCallbacks(updateRunnable);
+	}
+
+	void setLoopInterval()
+	{
+		int webcamRefreshInterval = (int)KeyValue.readVar("webcamInterval", weeWXApp.webcamInterval_default);
+		switch(webcamRefreshInterval)
+		{
+			case 1 -> updateInterval = 10_000;
+			case 2 -> updateInterval = 30_000;
+			case 3 -> updateInterval = 60_000;
+			case 4 -> updateInterval = 300_000;
+			default -> updateInterval = 0;
+		}
+
+		if(updateInterval > 0)
+			handler.post(updateRunnable);
 	}
 
 	void stopRefreshing()
@@ -83,7 +129,6 @@ public class Webcam extends Fragment
 		iv.post(() ->
 		{
 			iv.setImageBitmap(bm);
-			//iv.invalidate();
 			stopRefreshing();
 		});
 
@@ -96,7 +141,7 @@ public class Webcam extends Fragment
 
 		try
 		{
-			Bitmap bm = weeWXAppCommon.getWebcamImage(false, false, true, false);
+			Bitmap bm = getWebcamImage(false, false, true, false);
 			if(bm != null)
 				showWebcamImage(bm);
 			else
@@ -125,7 +170,7 @@ public class Webcam extends Fragment
 
 	private void noImageToShow(String text)
 	{
-		Bitmap bm = weeWXApp.textToBitmap(text);
+		Bitmap bm = textToBitmap(text);
 		iv.post(() ->
 		{
 			iv.setImageBitmap(bm);

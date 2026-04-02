@@ -21,9 +21,13 @@
     <string name="error">Mfomsoɔ!</string>
     <string name="error_occurred_while_attempting_to_update">Mfomso bi sii bere a na wɔrebɔ mmɔden sɛ wɔbɛma dwuma a wɔde di no ayɛ foforo</string>
     <string name="every_5_minutes">Simma 5 biara</string>
+    <string name="every_5_seconds">Sekan 5 Biara</string>
     <string name="every_10_minutes">Simma 10 biara</string>
+    <string name="every_10_seconds">Sekan 10 Biara</string>
     <string name="every_15_minutes">Simma 15 biara</string>
     <string name="every_30_minutes">Simma 30 biara</string>
+    <string name="every_30_seconds">Sikɔne 30 Biara</string>
+    <string name="every_60_seconds">Sikɔne 60 Biara</string>
     <string name="every_hour">Dɔnhwerew biara</string>
     <string name="failed_to_merge_weather_data">Entumi mfa %1$s data no ne %2$s data no nkabom</string>
     <string name="failed_to_process_forecast_data">antumi anni nsɛm a wɔahyɛ ho nkɔm ho dwuma ho dwuma</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Wontumi ntwe %1$s no efisɛ na URL no yɛ blank</string>
     <string name="weather2">Wiem bɔberɛ</string>
     <string name="webcam2">wɛbsaet kamera</string>
+    <string name="webcam_refresh_time">Webcam Refresh Bere a Wɔde Yɛ Adwuma</string>
     <string name="webcam_still_downloading">Webcam mfonini no da so ara retwe</string>
     <string name="webcam_url_url_not_set">Webcam URL no nyɛ nea wɔahyehyɛ anaasɛ ɛnyɛ hwee</string>
     <string name="widget_theme">widget asɛmti</string>

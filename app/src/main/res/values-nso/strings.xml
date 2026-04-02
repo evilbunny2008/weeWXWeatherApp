@@ -21,9 +21,13 @@
     <string name="error">Phošo!</string>
     <string name="error_occurred_while_attempting_to_update">Phošo e diregile ge a be a leka go mpshafatša tšhomišo</string>
     <string name="every_5_minutes">Metsotso e mengwe le e mengwe e 5</string>
+    <string name="every_5_seconds">Metsotswana e mengwe le e mengwe e 5</string>
     <string name="every_10_minutes">Metsotso e mengwe le e mengwe e 10</string>
+    <string name="every_10_seconds">Metsotswana e mengwe le e mengwe e 10</string>
     <string name="every_15_minutes">Metsotso e mengwe le e mengwe e 15</string>
     <string name="every_30_minutes">Metsotso e mengwe le e mengwe e 30</string>
+    <string name="every_30_seconds">Metsotswana e mengwe le e mengwe e 30</string>
+    <string name="every_60_seconds">Metsotswana e mengwe le e mengwe e 60</string>
     <string name="every_hour">Iri e nngwe le e nngwe</string>
     <string name="failed_to_merge_weather_data">E paletšwe ke go kopanya datha ya %1$s le datha ya %2$s</string>
     <string name="failed_to_process_forecast_data">E paletšwe ke go šoma ka datha ya ponelopele</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ga se ya kgona go taonelouta %1$s ka gobane URL e be e se na selo</string>
     <string name="weather2">Boso</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Nako ya go Hlabolla Webcam</string>
     <string name="webcam_still_downloading">Webcam setšoantšo e ntse e thowuni</string>
     <string name="webcam_url_url_not_set">Webcam URL ga se ya bewa goba ga e na selo</string>
     <string name="widget_theme">Sehlogo sa Widget</string>

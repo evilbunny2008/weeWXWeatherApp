@@ -21,9 +21,13 @@
     <string name="error">Libunga!</string>
     <string name="error_occurred_while_attempting_to_update">Erreur esalemaki tango ya koluka ko mettre à jour usage</string>
     <string name="every_5_minutes">Chaque 5 minutes</string>
+    <string name="every_5_seconds">Nsima ya 5 Secondes</string>
     <string name="every_10_minutes">Na miniti 10 nyonso</string>
+    <string name="every_10_seconds">Nsima ya Segɔnde 10</string>
     <string name="every_15_minutes">Nsima ya miniti 15 nyonso</string>
     <string name="every_30_minutes">Na miniti 30 nyonso</string>
+    <string name="every_30_seconds">Nsima ya Segɔnde 30</string>
+    <string name="every_60_seconds">Nsima ya Segɔnde 60</string>
     <string name="every_hour">Ngonga nyonso</string>
     <string name="failed_to_merge_weather_data">Elongi te kosangisa ba données ya %1$s na ba données ya %2$s</string>
     <string name="failed_to_process_forecast_data">Elongaki te kosala ba données ya prévision</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ezalaki na makoki te ya kozwa ba %1$s mpo URL ezalaki mpamba</string>
     <string name="weather2">Mopepe</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Tango ya kozongisa sika kamera ya Web</string>
     <string name="webcam_still_downloading">Webcam image ezali kaka ko télécharger</string>
     <string name="webcam_url_url_not_set">URL ya webcam etiamaki te to ezali ya pamba</string>
     <string name="widget_theme">Théma ya widget</string>

@@ -21,9 +21,13 @@
     <string name="error">Liphutsa!</string>
     <string name="error_occurred_while_attempting_to_update">Kwenteka liphutsa ngesikhatsi uzama kuvuselela kusetjentiswa</string>
     <string name="every_5_minutes">Njalo 5 Minutes</string>
+    <string name="every_5_seconds">Njalo ngemuva kwemizuzwana lengu-5</string>
     <string name="every_10_minutes">Njalo 10 Minutes</string>
+    <string name="every_10_seconds">Njalo ngemuva kwemizuzwana lelishumi</string>
     <string name="every_15_minutes">Njalo ngemuva kwemizuzu lengu-15</string>
     <string name="every_30_minutes">Njalo ngemizuzu lengu-30</string>
+    <string name="every_30_seconds">Njalo ngemuva kwemizuzwana lengu-30</string>
+    <string name="every_60_seconds">Njalo ngemuva kwemizuzwana lengu-60</string>
     <string name="every_hour">Njalo Li-Hour</string>
     <string name="failed_to_merge_weather_data">Kwehlulekile kuhlanganisa idatha ye %1$s nedatha ye %2$s</string>
     <string name="failed_to_process_forecast_data">Kwehlulekile kucubungula idatha yekubiketela</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Angizange ngikhone kulandza i%1$s ngoba i-URL beyingenalutfo</string>
     <string name="weather2">Simo selitulu</string>
     <string name="webcam2">SiWebcam</string>
+    <string name="webcam_refresh_time">Sikhatsi Sekuvuselela I-Webcam</string>
     <string name="webcam_still_downloading">Sitfombe se-Webcam sisalandvwa</string>
     <string name="webcam_url_url_not_set">I-URL yeWebcam ayikho noma ayinalutho</string>
     <string name="widget_theme">Ingcikitsi Yelidget</string>

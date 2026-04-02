@@ -21,9 +21,13 @@
     <string name="error">Fersin!</string>
     <string name="error_occurred_while_attempting_to_update">Der barde in flater by it besykjen om gebrûk te aktualisearjen</string>
     <string name="every_5_minutes">Elke 5 minuten</string>
+    <string name="every_5_seconds">Elke 5 sekonden</string>
     <string name="every_10_minutes">Elke 10 minuten</string>
+    <string name="every_10_seconds">Elke 10 sekonden</string>
     <string name="every_15_minutes">Elke 15 minuten</string>
     <string name="every_30_minutes">Elke 30 minuten</string>
+    <string name="every_30_seconds">Elke 30 sekonden</string>
+    <string name="every_60_seconds">Elke 60 sekonden</string>
     <string name="every_hour">Elke oere</string>
     <string name="failed_to_merge_weather_data">It gearfoegjen fan de %1$s gegevens mei de %2$s gegevens is net slagge</string>
     <string name="failed_to_process_forecast_data">It ferwurkjen fan prognosegegevens is net slagge</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Koe de %1$s net downloade omdat de URL leech wie</string>
     <string name="weather2">Wetter</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Webcam Refresh Tiid</string>
     <string name="webcam_still_downloading">Webcam-ôfbylding wurdt noch ynladen</string>
     <string name="webcam_url_url_not_set">Webcam-URL is net ynsteld of is leech</string>
     <string name="widget_theme">Widget Tema</string>

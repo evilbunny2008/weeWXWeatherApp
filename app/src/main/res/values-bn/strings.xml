@@ -21,9 +21,13 @@
     <string name="error">ত্রুটি!</string>
     <string name="error_occurred_while_attempting_to_update">ব্যবহার আপডেট করার চেষ্টা করার সময় একটি ত্রুটি ঘটেছে৷</string>
     <string name="every_5_minutes">প্রতি 5 মিনিটে</string>
+    <string name="every_5_seconds">প্রতি 5 সেকেন্ডে</string>
     <string name="every_10_minutes">প্রতি 10 মিনিটে</string>
+    <string name="every_10_seconds">প্রতি 10 সেকেন্ডে</string>
     <string name="every_15_minutes">প্রতি 15 মিনিটে</string>
     <string name="every_30_minutes">প্রতি 30 মিনিটে</string>
+    <string name="every_30_seconds">প্রতি 30 সেকেন্ডে</string>
+    <string name="every_60_seconds">প্রতি 60 সেকেন্ডে</string>
     <string name="every_hour">প্রতি ঘণ্টায়</string>
     <string name="failed_to_merge_weather_data">%1$s ডেটাকে %2$s ডেটার সাথে মার্জ করতে ব্যর্থ হয়েছে৷</string>
     <string name="failed_to_process_forecast_data">পূর্বাভাস তথ্য প্রক্রিয়া করতে ব্যর্থ</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URLটি ফাঁকা থাকার কারণে %1$s ডাউনলোড করতে পারিনি৷</string>
     <string name="weather2">আবহাওয়া</string>
     <string name="webcam2">ওয়েবক্যাম</string>
+    <string name="webcam_refresh_time">ওয়েবক্যাম রিফ্রেশ সময়</string>
     <string name="webcam_still_downloading">ওয়েবক্যামের ছবি এখনও ডাউনলোড হচ্ছে।</string>
     <string name="webcam_url_url_not_set">ওয়েবক্যাম URL সেট করা নেই বা ফাঁকা</string>
     <string name="widget_theme">উইজেট থিম</string>

@@ -21,9 +21,13 @@
     <string name="error">Cala!</string>
     <string name="error_occurred_while_attempting_to_update">E dua na cala e yaco ena nona tovolea me vakavoui na vakayagataki</string>
     <string name="every_5_minutes">Na 5 Mi 5 Mi 5 Mi</string>
+    <string name="every_5_seconds">Ena vei 5 na sekodi</string>
     <string name="every_10_minutes">Ena veiya 10 Minuti</string>
+    <string name="every_10_seconds">Ena vei 10 na sekodi</string>
     <string name="every_15_minutes">E 15 na Minunu</string>
     <string name="every_30_minutes">Vei ira kece e 30 Minute</string>
+    <string name="every_30_seconds">Ena vei 30 na sekodi</string>
+    <string name="every_60_seconds">Ena vei 60 na sekodi</string>
     <string name="every_hour">Na Nodrautou Nakisa Na Veilewai Kei Na iNaki kecega Na Sovasolo ni Veikiukitou</string>
     <string name="failed_to_merge_weather_data">E sega ni rawa ni cokovata na itukutuku ni %1$s kei na itukutuku ni %2$s</string>
     <string name="failed_to_process_forecast_data">Maqosa na kena cakacakataki na itukutuku</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">E sega ni rawa ni lavetaki na %1$s baleta ni sa lala tu na URL</string>
     <string name="weather2">Draki</string>
     <string name="webcam2">duka</string>
+    <string name="webcam_refresh_time">Gauna ni Vakavoui ni Webcam</string>
     <string name="webcam_still_downloading">Sa lavetaki tiko ga na iyaloyalo ni kena lavetaki</string>
     <string name="webcam_url_url_not_set">Na Webcam URL e sega ni sevu se e bela</string>
     <string name="widget_theme">Na Lako mai e</string>

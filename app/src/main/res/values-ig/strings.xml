@@ -21,9 +21,13 @@
     <string name="error">Njehie!</string>
     <string name="error_occurred_while_attempting_to_update">Njehie mere mgbe ị na-anwa imelite ojiji</string>
     <string name="every_5_minutes">Kwa nkeji ise</string>
+    <string name="every_5_seconds">Sekọnd 5 ọ bụla</string>
     <string name="every_10_minutes">Kwa nkeji iri</string>
+    <string name="every_10_seconds">Sekọnd 10 ọ bụla</string>
     <string name="every_15_minutes">Nkeji iri na ise ọ bụla</string>
     <string name="every_30_minutes">Kwa nkeji iri atọ</string>
+    <string name="every_30_seconds">Nkeji 30 ọ bụla</string>
+    <string name="every_60_seconds">Sekọnd 60 ọ bụla</string>
     <string name="every_hour">Kwa oge</string>
     <string name="failed_to_merge_weather_data">Ejikọtaghị data %1$s na %2$s data</string>
     <string name="failed_to_process_forecast_data">Emeghị ka ịhazi data</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Enweghị ike ibudata %1$s n\'ihi na URL ahụ ghe oghe</string>
     <string name="weather2">Udidiubochi</string>
     <string name="webcam2">Kameram</string>
+    <string name="webcam_refresh_time">Oge ume ọhụrụ kamera weebụ</string>
     <string name="webcam_still_downloading">Imagemam webcam ka na-ebudata</string>
     <string name="webcam_url_url_not_set">Edeghị URL URL ma ọ bụ tọgbọ chakoo</string>
     <string name="widget_theme">Isiokwu Wijetị</string>

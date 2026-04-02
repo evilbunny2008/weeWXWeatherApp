@@ -21,9 +21,13 @@
     <string name="error">Kuskure!</string>
     <string name="error_occurred_while_attempting_to_update">Kuskure ya faru yayin ƙoƙarin sabunta amfani</string>
     <string name="every_5_minutes">Kowane minti 5</string>
+    <string name="every_5_seconds">Kowane daƙiƙa 5</string>
     <string name="every_10_minutes">Kowane minti 10</string>
+    <string name="every_10_seconds">Kowane dakika 10</string>
     <string name="every_15_minutes">Kowane mintuna 15</string>
     <string name="every_30_minutes">Kowane minti 30</string>
+    <string name="every_30_seconds">Kowane Dakika 30</string>
+    <string name="every_60_seconds">Kowane daƙiƙa 60</string>
     <string name="every_hour">Kowane awa</string>
     <string name="failed_to_merge_weather_data">An kasa haɗa bayanan %1$s tare da bayanan %2$s</string>
     <string name="failed_to_process_forecast_data">Ba a yi nasarar adana bayanan hasashe ba</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ba a iya sauke %1$s ba saboda URL ɗin babu kowa</string>
     <string name="weather2">Yanayin iska</string>
     <string name="webcam2">Gidan yanar gizo</string>
+    <string name="webcam_refresh_time">Lokacin Farfaɗo Kamara</string>
     <string name="webcam_still_downloading">Hoton Webcam har yanzu download</string>
     <string name="webcam_url_url_not_set">Ba a saita URCAM URCAM ko ba komai</string>
     <string name="widget_theme">Taron Widget</string>

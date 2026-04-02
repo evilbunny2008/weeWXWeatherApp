@@ -21,9 +21,13 @@
     <string name="error">Kasalaan!</string>
     <string name="error_occurred_while_attempting_to_update">Metung a kamalian ing milyari kabang pagsikapan nang i-update ing pamangamit</string>
     <string name="every_5_minutes">Balang 5 Minunu</string>
+    <string name="every_5_seconds">balang 5 segundo</string>
     <string name="every_10_minutes">Balang 10 Minunu</string>
+    <string name="every_10_seconds">Balang 10 Segundu</string>
     <string name="every_15_minutes">Balang 15 Minunu</string>
     <string name="every_30_minutes">Balang 30 Minunu</string>
+    <string name="every_30_seconds">Balang 30 Segundu</string>
+    <string name="every_60_seconds">Balang 60 Segundu</string>
     <string name="every_hour">Balang oras</string>
     <string name="failed_to_merge_weather_data">Mebigu yang isamut ing %1$s data keng %2$s data</string>
     <string name="failed_to_process_forecast_data">Bigo yang magprosesu king pamaghula kareng datos</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Eku agyung i-download ing %1$s uling blanku ya ing URL</string>
     <string name="weather2">Panahun</string>
     <string name="webcam2">Wibcam</string>
+    <string name="webcam_refresh_time">Oras ning pamag-refresh keng webcam</string>
     <string name="webcam_still_downloading">Ing larawan ning Webcam pa rin ing pamagdownload</string>
     <string name="webcam_url_url_not_set">Ing webcam URL e ya mitakda o blanku</string>
     <string name="widget_theme">Tema ning Awis</string>

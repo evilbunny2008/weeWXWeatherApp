@@ -21,9 +21,13 @@
     <string name="error">Ensobi!</string>
     <string name="error_occurred_while_attempting_to_update">Ensobi yabaddewo nga agezaako okuzza obuggya enkozesa</string>
     <string name="every_5_minutes">Buli ddakiika 5</string>
+    <string name="every_5_seconds">Buli Sikonda 5</string>
     <string name="every_10_minutes">Buli ddakiika 10</string>
+    <string name="every_10_seconds">Buli Sikonda 10</string>
     <string name="every_15_minutes">Buli ddakiika 15</string>
     <string name="every_30_minutes">Buli ddakiika 30</string>
+    <string name="every_30_seconds">Buli Sikonda 30</string>
+    <string name="every_60_seconds">Buli Sikonda 60</string>
     <string name="every_hour">Buli ssaawa</string>
     <string name="failed_to_merge_weather_data">Eremereddwa okugatta data ya %1$s ne data ya %2$s</string>
     <string name="failed_to_process_forecast_data">eremereddwa okukola ku bikwata ku kuteebereza</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Teyasobodde kuwanula %1$s kubanga URL yali njereere</string>
     <string name="weather2">Obudde</string>
     <string name="webcam2">webcam</string>
+    <string name="webcam_refresh_time">Obudde bw\'okuzza obuggya Webcam</string>
     <string name="webcam_still_downloading">Webcam ekifaananyi kikyawanula</string>
     <string name="webcam_url_url_not_set">Webcam URL teteekeddwa oba nga ya bwereere</string>
     <string name="widget_theme">Omulamwa gwa Widget</string>

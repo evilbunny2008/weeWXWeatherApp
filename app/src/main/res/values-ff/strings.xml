@@ -21,9 +21,13 @@
     <string name="error">Harbol!</string>
     <string name="error_occurred_while_attempting_to_update">Juumre waɗi ko e etaade hesɗitinde kuutoragol</string>
     <string name="every_5_minutes">Kala 5 minitaaji</string>
+    <string name="every_5_seconds">Kala Leƴƴanɗe 5</string>
     <string name="every_10_minutes">Kala 10 minitaaji</string>
+    <string name="every_10_seconds">Kala Leƴƴanɗe 10</string>
     <string name="every_15_minutes">Kala 15 Hojomaaji</string>
     <string name="every_30_minutes">Kala 30 minit</string>
+    <string name="every_30_seconds">Kala 30 Leƴƴannde</string>
+    <string name="every_60_seconds">Kala 60 Leƴƴannde</string>
     <string name="every_hour">Waktuuji kala</string>
     <string name="failed_to_merge_weather_data">Waawaa hawrude e domen %1$s e domen %2$s</string>
     <string name="failed_to_process_forecast_data">Ina ŋakki e dokke teskagol</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Waawaano ƴettude %1$s sabu URL oo ina woodi</string>
     <string name="weather2">Wakati</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Wakkati hesɗitinki kamera web</string>
     <string name="webcam_still_downloading">Natal webcam ina jokki e ƴettude haa jooni</string>
     <string name="webcam_url_url_not_set">Webcam URL settaaka walla ko ɓuuɓɗo</string>
     <string name="widget_theme">Widget theme</string>

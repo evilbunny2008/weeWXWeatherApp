@@ -21,9 +21,13 @@
     <string name="error">Hitilafu!</string>
     <string name="error_occurred_while_attempting_to_update">Hitilafu ilitokea wakati wa kujaribu kusasisha matumizi</string>
     <string name="every_5_minutes">Kila dakika 5</string>
+    <string name="every_5_seconds">Kila Sekunde 5</string>
     <string name="every_10_minutes">Kila dakika 10</string>
+    <string name="every_10_seconds">Kila Sekunde 10</string>
     <string name="every_15_minutes">Kila dakika 15</string>
     <string name="every_30_minutes">Kila dakika 30</string>
+    <string name="every_30_seconds">Kila Sekunde 30</string>
+    <string name="every_60_seconds">Kila Sekunde 60</string>
     <string name="every_hour">Kila saa</string>
     <string name="failed_to_merge_weather_data">Imeshindwa kuunganisha data ya %1$s na data ya %2$s</string>
     <string name="failed_to_process_forecast_data">Imeshindwa kusindika data ya utabiri</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Haikuweza kupakua %1$s kwa sababu URL ilikuwa tupu</string>
     <string name="weather2">Hali ya hewa</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Wakati wa Kuonyesha Kamera ya Wavuti</string>
     <string name="webcam_still_downloading">Picha ya Webcam bado inapakua</string>
     <string name="webcam_url_url_not_set">URL ya Webcam haijawekwa au iko wazi</string>
     <string name="widget_theme">Mandhari ya widget</string>

@@ -21,9 +21,13 @@
     <string name="error">Erè!</string>
     <string name="error_occurred_while_attempting_to_update">Yon erè te fèt pandan y ap eseye mete ajou itilizasyon</string>
     <string name="every_5_minutes">Chak 5 minit</string>
+    <string name="every_5_seconds">Chak 5 segonn</string>
     <string name="every_10_minutes">Chak 10 minit</string>
+    <string name="every_10_seconds">Chak 10 segonn</string>
     <string name="every_15_minutes">Chak 15 minit</string>
     <string name="every_30_minutes">Chak 30 minit</string>
+    <string name="every_30_seconds">Chak 30 segonn</string>
+    <string name="every_60_seconds">Chak 60 segonn</string>
     <string name="every_hour">Chak Lè</string>
     <string name="failed_to_merge_weather_data">Echwe pou rantre done %1$s yo ak done %2$s yo</string>
     <string name="failed_to_process_forecast_data">Echwe pou trete done previzyon yo</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Pa t \'kapab telechaje %1$s yo paske URL la te vid</string>
     <string name="weather2">Tan</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Tan rafrechi Webcam</string>
     <string name="webcam_still_downloading">Imaj webcam toujou ap telechaje</string>
     <string name="webcam_url_url_not_set">URL Webcam pa mete oswa vid</string>
     <string name="widget_theme">Tèm Widget</string>

@@ -21,9 +21,13 @@
     <string name="error">خطأ!</string>
     <string name="error_occurred_while_attempting_to_update">حدث خطأ أثناء محاولة تحديث الاستخدام</string>
     <string name="every_5_minutes">كل 5 دقائق</string>
+    <string name="every_5_seconds">كل 5 ثواني</string>
     <string name="every_10_minutes">كل 10 دقائق</string>
+    <string name="every_10_seconds">كل 10 ثواني</string>
     <string name="every_15_minutes">كل 15 دقيقة</string>
     <string name="every_30_minutes">كل 30 دقيقة</string>
+    <string name="every_30_seconds">كل 30 ثانية</string>
+    <string name="every_60_seconds">كل 60 ثانية</string>
     <string name="every_hour">كل ساعة</string>
     <string name="failed_to_merge_weather_data">فشل دمج بيانات %1$s مع بيانات %2$s</string>
     <string name="failed_to_process_forecast_data">فشل في معالجة بيانات التنبؤ</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">لم أتمكن من تنزيل %1$s لأن عنوان URL كان فارغًا</string>
     <string name="weather2">طقس</string>
     <string name="webcam2">كاميرا ويب</string>
+    <string name="webcam_refresh_time">وقت تحديث كاميرا الويب</string>
     <string name="webcam_still_downloading">لا تزال صورة كاميرا الويب قيد التنزيل</string>
     <string name="webcam_url_url_not_set">لم يتم تعيين عنوان URL لكاميرا الويب أو أنه فارغ</string>
     <string name="widget_theme">موضوع القطعة</string>

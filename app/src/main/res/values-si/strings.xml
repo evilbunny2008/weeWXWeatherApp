@@ -21,9 +21,13 @@
     <string name="error">දෝෂයක්!</string>
     <string name="error_occurred_while_attempting_to_update">භාවිතය යාවත්කාලීන කිරීමට උත්සාහ කිරීමේදී දෝෂයක් ඇති විය</string>
     <string name="every_5_minutes">සෑම විනාඩි 5 කට වරක්</string>
+    <string name="every_5_seconds">සෑම තත්පර 5 කට වරක්</string>
     <string name="every_10_minutes">සෑම විනාඩි 10 කට වරක්</string>
+    <string name="every_10_seconds">සෑම තත්පර 10 කට වරක්</string>
     <string name="every_15_minutes">සෑම විනාඩි 15 කට වරක්</string>
     <string name="every_30_minutes">සෑම විනාඩි 30 කට වරක්</string>
+    <string name="every_30_seconds">සෑම තත්පර 30කට වරක්</string>
+    <string name="every_60_seconds">සෑම තත්පර 60කට වරක්</string>
     <string name="every_hour">සෑම පැයකටම</string>
     <string name="failed_to_merge_weather_data">%1$s දත්ත %2$s දත්ත සමඟ ඒකාබද්ධ කිරීමට අසමත් විය</string>
     <string name="failed_to_process_forecast_data">පුරෝකථන දත්ත සැකසීමට අසමත් විය</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL එක හිස් නිසා %1$s බාගැනීමට නොහැකි විය</string>
     <string name="weather2">කාලගුණය</string>
     <string name="webcam2">වෙබ් කෑමය</string>
+    <string name="webcam_refresh_time">වෙබ් කැමරාව නැවුම් කිරීමේ කාලය</string>
     <string name="webcam_still_downloading">වෙබ් කැමරාවේ රූපය තවමත් බාගත වෙමින් පවතී</string>
     <string name="webcam_url_url_not_set">වෙබ් කැමරා URL සකසා නැත හෝ හිස් ය</string>
     <string name="widget_theme">විජට් තේමාව</string>

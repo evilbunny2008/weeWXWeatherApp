@@ -21,9 +21,13 @@
     <string name="error">შეცდომა!</string>
     <string name="error_occurred_while_attempting_to_update">გამოყენების განახლების მცდელობისას მოხდა შეცდომა</string>
     <string name="every_5_minutes">ყოველ 5 წუთში</string>
+    <string name="every_5_seconds">ყოველ 5 წამში</string>
     <string name="every_10_minutes">ყოველ 10 წუთში</string>
+    <string name="every_10_seconds">ყოველ 10 წამში</string>
     <string name="every_15_minutes">ყოველ 15 წუთში</string>
     <string name="every_30_minutes">ყოველ 30 წუთში</string>
+    <string name="every_30_seconds">ყოველ 30 წამში</string>
+    <string name="every_60_seconds">ყოველ 60 წამში</string>
     <string name="every_hour">ყოველ საათში</string>
     <string name="failed_to_merge_weather_data">%1$s მონაცემების %2$s მონაცემებთან გაერთიანება ვერ მოხერხდა</string>
     <string name="failed_to_process_forecast_data">პროგნოზის მონაცემების დამუშავება ვერ მოხერხდა</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s-ის ჩამოტვირთვა ვერ მოხერხდა, რადგან URL ცარიელი იყო</string>
     <string name="weather2">ამინდი</string>
     <string name="webcam2">ვებკამერა</string>
+    <string name="webcam_refresh_time">ვებკამერის განახლების დრო</string>
     <string name="webcam_still_downloading">ვებკამერის სურათი ჯერ კიდევ იტვირთება</string>
     <string name="webcam_url_url_not_set">ვებკამერის URL არ არის დაყენებული ან ცარიელია</string>
     <string name="widget_theme">ვიჯეტის თემა</string>

@@ -21,9 +21,13 @@
     <string name="error">Bal!</string>
     <string name="error_occurred_while_attempting_to_update">Error moko ne otimore ka otemo loso</string>
     <string name="every_5_minutes">Kubang\' 5000</string>
+    <string name="every_5_seconds">Ikind ceken 5</string>
     <string name="every_10_minutes">Kubang\' Mincil ceke</string>
+    <string name="every_10_seconds">Ikind ceken 10</string>
     <string name="every_15_minutes">Kubang\' oro 15</string>
     <string name="every_30_minutes">Kubang\' 30</string>
+    <string name="every_30_seconds">Ikind ceken 30</string>
+    <string name="every_60_seconds">Ikind ceken 60</string>
     <string name="every_hour">Ng\'ato kawa</string>
     <string name="failed_to_merge_weather_data">Etimo ngo rwom pa %1$s ku %2$s data</string>
     <string name="failed_to_process_forecast_data">Ka wawinjo lembe ma jukiewo i lembe maeni</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Acopo ngo ni golo %1$s kum URL ne ubedu nono</string>
     <string name="weather2">Aloka loka pa polo</string>
     <string name="webcam2">Kum</string>
+    <string name="webcam_refresh_time">Saa mi dwoko Webcam manyen</string>
     <string name="webcam_still_downloading">Kite ma watio ko ku kusika mwa mir Internet ubekadhu kud i ie</string>
     <string name="webcam_url_url_not_set">Webcam URL utie ngo ma juketho kunoke ma ng\'ic</string>
     <string name="widget_theme">Winye</string>

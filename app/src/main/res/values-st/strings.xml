@@ -21,9 +21,13 @@
     <string name="error">Phoso!</string>
     <string name="error_occurred_while_attempting_to_update">Phoso e etsahetse ha u ntse u leka ho ntlafatsa ts\'ebeliso</string>
     <string name="every_5_minutes">Metsotso e meng le e meng e meng e le \'ngoe</string>
+    <string name="every_5_seconds">Metsotsoana e meng le e meng e 5</string>
     <string name="every_10_minutes">Metsotso e meng le e meng e 10</string>
+    <string name="every_10_seconds">Metsotsoana e meng le e meng e 10</string>
     <string name="every_15_minutes">Metsotso e meng le e meng e 15</string>
     <string name="every_30_minutes">Metsotso e meng le e meng e 30</string>
+    <string name="every_30_seconds">Metsotsoana e meng le e meng e 30</string>
+    <string name="every_60_seconds">Metsotsoana e meng le e meng e 60</string>
     <string name="every_hour">Hora e \'ngoe le e\' ngoe</string>
     <string name="failed_to_merge_weather_data">E hlolehile ho kopanya %1$s data le %2$s data</string>
     <string name="failed_to_process_forecast_data">Ha rea ​​atleha ho sebetsana le data ea bolepi</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ha rea ​​atleha ho khoasolla %1$s hobane URL e ne e se na letho</string>
     <string name="weather2">Meteo</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Nako ea ho nchafatsa khamera ea webo</string>
     <string name="webcam_still_downloading">Setšoantšo sa Webcam se ntse se jarolla</string>
     <string name="webcam_url_url_not_set">Webcam URL ha e beoe kapa e se na letho</string>
     <string name="widget_theme">Sehlooho sa Widget</string>

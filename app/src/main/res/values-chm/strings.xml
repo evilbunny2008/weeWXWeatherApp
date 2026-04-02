@@ -21,9 +21,13 @@
     <string name="error">Йоҥылыш!</string>
     <string name="error_occurred_while_attempting_to_update">Йоҥылыш лийын, кучылтмо годым уэмдаш тӧчен</string>
     <string name="every_5_minutes">Кажне 5 минут</string>
+    <string name="every_5_seconds">Кажне 5 секундышто</string>
     <string name="every_10_minutes">Кажне 10 минут</string>
+    <string name="every_10_seconds">Кажне 10 секундышто</string>
     <string name="every_15_minutes">Кажне 15 минут</string>
     <string name="every_30_minutes">Кажне 30 минут</string>
+    <string name="every_30_seconds">Кажне 30 секундышто</string>
+    <string name="every_60_seconds">Кажне 60 секундышто</string>
     <string name="every_hour">Кажне шагат</string>
     <string name="failed_to_merge_weather_data">%1$s данныйым %2$s данный дене ушен кертын огыл</string>
     <string name="failed_to_process_forecast_data">Прогноз данныйым обрабатыватлаш лийдыме</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s-ым скачать ыштен кертын огыл, вет URL-адрес яра лийын</string>
     <string name="weather2">Игече</string>
     <string name="webcam2">Веб-камер</string>
+    <string name="webcam_refresh_time">Веб-камерым уэмдыме жап</string>
     <string name="webcam_still_downloading">Веб-камер образ эше скачать</string>
     <string name="webcam_url_url_not_set">Веб-камер URL-адрес шындыме огыл але яра</string>
     <string name="widget_theme">Виджет теме</string>

@@ -21,9 +21,13 @@
     <string name="error">Palhnak!</string>
     <string name="error_occurred_while_attempting_to_update">Hmannak update tuah aa zuam lio ah palhnak a um</string>
     <string name="every_5_minutes">Minute 5 hnu ah</string>
+    <string name="every_5_seconds">Second 5 hnu hnu ah</string>
     <string name="every_10_minutes">Minute 10 dan ah voikhat</string>
+    <string name="every_10_seconds">Second 10 dan ah</string>
     <string name="every_15_minutes">Minute 15 dan ah voikhat</string>
     <string name="every_30_minutes">Minute 30 dan ah voikhat</string>
+    <string name="every_30_seconds">Second 30 hnu hnu ah</string>
+    <string name="every_60_seconds">Second 60 hnu ah</string>
     <string name="every_hour">Suimilam pakhat ah</string>
     <string name="failed_to_merge_weather_data">%1$s data le %2$s data fonh khawh a si lo</string>
     <string name="failed_to_process_forecast_data">Hmuhchungnak data kha tuaktan khawh lo</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL a thiang caah %1$s cu download tuah khawh a si lo</string>
     <string name="weather2">A si lo ah</string>
     <string name="webcam2">webcam</string>
+    <string name="webcam_refresh_time">Webcam tharchuah caan</string>
     <string name="webcam_still_downloading">Webcam hmanthlak cu download a si rih</string>
     <string name="webcam_url_url_not_set">Webcam URL cu set a si lo asiloah a thiang lo</string>
     <string name="widget_theme">Widget Theme</string>

@@ -21,9 +21,13 @@
     <string name="error">အမှား။</string>
     <string name="error_occurred_while_attempting_to_update">အသုံးပြုမှုကိုမွမ်းမံရန်ကြိုးစားစဉ်အမှားတစ်ခုဖြစ်ပွားခဲ့သည်</string>
     <string name="every_5_minutes">တိုင်း 5 မိနစ်</string>
+    <string name="every_5_seconds">5 စက္ကန့်တိုင်း</string>
     <string name="every_10_minutes">10 မိနစ်တိုင်း</string>
+    <string name="every_10_seconds">10 စက္ကန့်တိုင်း</string>
     <string name="every_15_minutes">15 မိနစ်တိုင်း</string>
     <string name="every_30_minutes">မိနစ် 30 တိုင်း</string>
+    <string name="every_30_seconds">စက္ကန့် 30 တိုင်း</string>
+    <string name="every_60_seconds">စက္ကန့် 60 တိုင်း</string>
     <string name="every_hour">နာရီတိုင်း</string>
     <string name="failed_to_merge_weather_data">%1$s ဒေတာကို %2$s ဒေတာနှင့် ပေါင်းစည်းရန် မအောင်မြင်ပါ။</string>
     <string name="failed_to_process_forecast_data">ခန့်မှန်းချက်ဒေတာလုပ်ငန်းစဉ်မအောင်မြင်ပါ</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL သည် ဗလာဖြစ်နေသောကြောင့် %1$s ကို ဒေါင်းလုဒ်လုပ်၍မရပါ။</string>
     <string name="weather2">ရာသီဉတု</string>
     <string name="webcam2">ဝက်ဘ်ကမ်</string>
+    <string name="webcam_refresh_time">Webcam ပြန်လည်စတင်ချိန်</string>
     <string name="webcam_still_downloading">Webcam ပုံသည်ဒေါင်းလုပ်လုပ်နေသည်။</string>
     <string name="webcam_url_url_not_set">Webcam URL သည်သတ်မှတ်ထားခြင်းမရှိပါ</string>
     <string name="widget_theme">ဝစ်ဂျက် Theme</string>

@@ -21,9 +21,13 @@
     <string name="error">Maseda!</string>
     <string name="error_occurred_while_attempting_to_update">Sada kesalahan terjadi sanggah marusaha memperbarui penggunaan</string>
     <string name="every_5_minutes">Tiap 5 Menit</string>
+    <string name="every_5_seconds">Ganup 5 Detik</string>
     <string name="every_10_minutes">Tiap 10 Menit</string>
+    <string name="every_10_seconds">Ganup 10 Detik</string>
     <string name="every_15_minutes">Tiap 15 Menit</string>
     <string name="every_30_minutes">Tiap 30 Menit</string>
+    <string name="every_30_seconds">Ganup 30 Detik</string>
+    <string name="every_60_seconds">Ganup 60 Detik</string>
     <string name="every_hour">Ganup Jam</string>
     <string name="failed_to_merge_weather_data">Gagal padomuhon data %1$s pakon data %2$s</string>
     <string name="failed_to_process_forecast_data">Gagal laho mangolah data laho mangolah data</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Lang boi i-download %1$s halani kosong URL-ni</string>
     <string name="weather2">Panorang</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Panorang Paimbaruhon Webcam</string>
     <string name="webcam_still_downloading">Gambar Webcam totap do i- download</string>
     <string name="webcam_url_url_not_set">URL Webcam lang ibahen atap kosong</string>
     <string name="widget_theme">Tema Jejak</string>

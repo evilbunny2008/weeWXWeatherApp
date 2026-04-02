@@ -21,9 +21,13 @@
     <string name="error">Error!</string>
     <string name="error_occurred_while_attempting_to_update">May naganap na error habang sinusubukang i -update ang paggamit</string>
     <string name="every_5_minutes">Tuwing 5 minuto</string>
+    <string name="every_5_seconds">Bawat 5 Segundo</string>
     <string name="every_10_minutes">Tuwing 10 minuto</string>
+    <string name="every_10_seconds">Bawat 10 Segundo</string>
     <string name="every_15_minutes">Tuwing 15 minuto</string>
     <string name="every_30_minutes">Tuwing 30 minuto</string>
+    <string name="every_30_seconds">Bawat 30 Segundo</string>
+    <string name="every_60_seconds">Bawat 60 Segundo</string>
     <string name="every_hour">Bawat oras</string>
     <string name="failed_to_merge_weather_data">Nabigong pagsamahin ang %1$s data sa %2$s data</string>
     <string name="failed_to_process_forecast_data">Nabigong iproseso ang data ng pagtataya</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Hindi na-download ang %1$s dahil blangko ang URL</string>
     <string name="weather2">Panahon</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Oras ng Pag-refresh ng Webcam</string>
     <string name="webcam_still_downloading">Ang imahe ng webcam ay nag -download pa rin</string>
     <string name="webcam_url_url_not_set">Ang Webcam URL ay hindi nakatakda o blangko</string>
     <string name="widget_theme">Tema ng Widget</string>

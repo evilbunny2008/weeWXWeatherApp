@@ -21,9 +21,13 @@
     <string name="error">Йӑнӑш!</string>
     <string name="error_occurred_while_attempting_to_update">Усă курма çĕнетме хăтланнă чухне йăнăш пулнă</string>
     <string name="every_5_minutes">Кашни 5 минут</string>
+    <string name="every_5_seconds">Кашни 5 ҫеккунтра</string>
     <string name="every_10_minutes">Кашни 10 минут</string>
+    <string name="every_10_seconds">Кашни 10 ҫеккунтра</string>
     <string name="every_15_minutes">Кашни 15 минут</string>
     <string name="every_30_minutes">Кашни 30 минут</string>
+    <string name="every_30_seconds">Кашни 30 ҫеккунтра</string>
+    <string name="every_60_seconds">Кашни 60 ҫеккунтра</string>
     <string name="every_hour">Кашни сехет</string>
     <string name="failed_to_merge_weather_data">%1$s даннӑйсене %2$s даннӑйсемпе пӗрлештерме май килмерӗ</string>
     <string name="failed_to_process_forecast_data">Прогноз даннăйĕсене ĕçлесе хатĕрлеме май килмен</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL пушӑ пулнӑран %1$s скачать тума май килмерӗ</string>
     <string name="weather2">Ҫут-ҫанталӑк</string>
     <string name="webcam2">Веб-камера</string>
+    <string name="webcam_refresh_time">Веб-камерӑна ҫӗнетмелли вӑхӑт</string>
     <string name="webcam_still_downloading">Веб-камерăн ÿкерчĕкĕ халĕ те скачать тăвать</string>
     <string name="webcam_url_url_not_set">Webcam URL-адресĕ лартман е пушă</string>
     <string name="widget_theme">Виджет теми</string>

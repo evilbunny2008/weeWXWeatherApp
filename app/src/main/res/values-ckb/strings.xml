@@ -21,9 +21,13 @@
     <string name="error">هەڵە!</string>
     <string name="error_occurred_while_attempting_to_update">هەڵەیەک ڕوویدا لەکاتی هەوڵدان بۆ نوێکردنەوەی بەکارهێنان</string>
     <string name="every_5_minutes">هەر ٥ خولەک جارێک</string>
+    <string name="every_5_seconds">هەر ٥ چرکە جارێک</string>
     <string name="every_10_minutes">هەر ١٠ خولەکێک</string>
+    <string name="every_10_seconds">هەر ١٠ چرکە جارێک</string>
     <string name="every_15_minutes">هەر ١٥ خولەکێک</string>
     <string name="every_30_minutes">هەر ٣٠ خولەکێک</string>
+    <string name="every_30_seconds">هەر ٣٠ چرکە جارێک</string>
+    <string name="every_60_seconds">هەر ٦٠ چرکەیەک</string>
     <string name="every_hour">هەر کاتژمێرێک</string>
     <string name="failed_to_merge_weather_data">شکستی هێنا لە تێکەڵکردنی داتاکانی %1$s لەگەڵ داتاکانی %2$s</string>
     <string name="failed_to_process_forecast_data">شکستی هێنا لە پرۆسێسکردنی داتاکانی پێشبینی</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">نەیتوانی %1$s دابەزێنم چونکە URLەکە بەتاڵ بوو</string>
     <string name="weather2">کەشوهەوا</string>
     <string name="webcam2">وێبکام</string>
+    <string name="webcam_refresh_time">کاتی نوێکردنەوەی وێبکام</string>
     <string name="webcam_still_downloading">وێنەی وێبکام هێشتا دابەزاندن</string>
     <string name="webcam_url_url_not_set">وێبکام URL دانەنراوە یان سپییە</string>
     <string name="widget_theme">ویجت تەوەرە</string>

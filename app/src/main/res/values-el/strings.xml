@@ -21,9 +21,13 @@
     <string name="error">Σφάλμα!</string>
     <string name="error_occurred_while_attempting_to_update">Παρουσιάστηκε σφάλμα κατά την προσπάθεια ενημέρωσης της χρήσης</string>
     <string name="every_5_minutes">Κάθε 5 λεπτά</string>
+    <string name="every_5_seconds">Κάθε 5 δευτερόλεπτα</string>
     <string name="every_10_minutes">Κάθε 10 λεπτά</string>
+    <string name="every_10_seconds">Κάθε 10 δευτερόλεπτα</string>
     <string name="every_15_minutes">Κάθε 15 λεπτά</string>
     <string name="every_30_minutes">Κάθε 30 λεπτά</string>
+    <string name="every_30_seconds">Κάθε 30 δευτερόλεπτα</string>
+    <string name="every_60_seconds">Κάθε 60 δευτερόλεπτα</string>
     <string name="every_hour">Κάθε Ώρα</string>
     <string name="failed_to_merge_weather_data">Αποτυχία συγχώνευσης των δεδομένων %1$s με τα δεδομένα %2$s</string>
     <string name="failed_to_process_forecast_data">Απέτυχε η επεξεργασία των δεδομένων πρόβλεψης</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Δεν ήταν δυνατή η λήψη του %1$s επειδή η διεύθυνση URL ήταν κενή</string>
     <string name="weather2">Καιρός</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Χρόνος ανανέωσης κάμερας web</string>
     <string name="webcam_still_downloading">Η λήψη της εικόνας της κάμερας web εξακολουθεί να γίνεται</string>
     <string name="webcam_url_url_not_set">Η διεύθυνση URL της κάμερας web δεν έχει οριστεί ή είναι κενή</string>
     <string name="widget_theme">Θέμα widget</string>

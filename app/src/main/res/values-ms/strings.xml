@@ -21,9 +21,13 @@
     <string name="error">Ralat!</string>
     <string name="error_occurred_while_attempting_to_update">Ralat berlaku semasa cuba mengemas kini penggunaan</string>
     <string name="every_5_minutes">Setiap 5 minit</string>
+    <string name="every_5_seconds">Setiap 5 Saat</string>
     <string name="every_10_minutes">Setiap 10 minit</string>
+    <string name="every_10_seconds">Setiap 10 Saat</string>
     <string name="every_15_minutes">Setiap 15 minit</string>
     <string name="every_30_minutes">Setiap 30 minit</string>
+    <string name="every_30_seconds">Setiap 30 Saat</string>
+    <string name="every_60_seconds">Setiap 60 Saat</string>
     <string name="every_hour">Setiap jam</string>
     <string name="failed_to_merge_weather_data">Gagal menggabungkan data %1$s dengan data %2$s</string>
     <string name="failed_to_process_forecast_data">Gagal memproses data ramalan</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Tidak dapat memuat turun %1$s kerana URL kosong</string>
     <string name="weather2">Cuaca</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Masa Segar Semula Webcam</string>
     <string name="webcam_still_downloading">Imej webcam masih dimuat turun</string>
     <string name="webcam_url_url_not_set">URL webcam tidak ditetapkan atau kosong</string>
     <string name="widget_theme">Tema widget</string>

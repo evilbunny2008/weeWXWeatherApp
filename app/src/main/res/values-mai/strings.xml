@@ -21,9 +21,13 @@
     <string name="error">दोष!</string>
     <string name="error_occurred_while_attempting_to_update">उपयोग अपडेट करबाक प्रयास करैत काल एकटा त्रुटि भेल</string>
     <string name="every_5_minutes">हर 5 मिनट पर</string>
+    <string name="every_5_seconds">हर 5 सेकंड में</string>
     <string name="every_10_minutes">हर 10 मिनट पर</string>
+    <string name="every_10_seconds">हर 10 सेकंड में</string>
     <string name="every_15_minutes">हर 15 मिनट पर</string>
     <string name="every_30_minutes">हर ३० मिनट पर २</string>
+    <string name="every_30_seconds">हर 30 सेकंड में</string>
+    <string name="every_60_seconds">हर 60 सेकंड में</string>
     <string name="every_hour">हर घंटा 1999।</string>
     <string name="failed_to_merge_weather_data">%1$s डाटा केँ %2$s डाटा क\' संग मर्ज करबा मे विफल</string>
     <string name="failed_to_process_forecast_data">पूर्वानुमानित आंकड़ा के संसाधित करय मे विफल</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s डाउनलोड नहि क\' सकलहुँ किएक यूआरएल खाली छल</string>
     <string name="weather2">मौसम</string>
     <string name="webcam2">वेबकैम 2019।</string>
+    <string name="webcam_refresh_time">वेबकैम ताज़ा समय</string>
     <string name="webcam_still_downloading">वेबकैम छवि एखनो डाउनलोड क रहल अछि।</string>
     <string name="webcam_url_url_not_set">वेबकैम यूआरएल सेट नहि अछि या खाली अछि</string>
     <string name="widget_theme">विजेट थीम 2019।</string>

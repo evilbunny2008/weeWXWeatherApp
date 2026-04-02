@@ -21,9 +21,13 @@
     <string name="error">Fel!</string>
     <string name="error_occurred_while_attempting_to_update">Ett fel uppstod vid försök att uppdatera användningen</string>
     <string name="every_5_minutes">Var 5:e minut</string>
+    <string name="every_5_seconds">Var 5:e sekund</string>
     <string name="every_10_minutes">Var 10:e minut</string>
+    <string name="every_10_seconds">Var 10:e sekund</string>
     <string name="every_15_minutes">Var 15:e minut</string>
     <string name="every_30_minutes">Var 30:e minut</string>
+    <string name="every_30_seconds">Var 30:e sekund</string>
+    <string name="every_60_seconds">Var 60:e sekund</string>
     <string name="every_hour">Varje timme</string>
     <string name="failed_to_merge_weather_data">Det gick inte att sammanfoga %1$s-data med %2$s-data</string>
     <string name="failed_to_process_forecast_data">Det gick inte att bearbeta prognosdata</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Det gick inte att ladda ned %1$s eftersom webbadressen var tom</string>
     <string name="weather2">Väder</string>
     <string name="webcam2">Webbkamera</string>
+    <string name="webcam_refresh_time">Webbkameras uppdateringstid</string>
     <string name="webcam_still_downloading">Webbkamerabilden laddas fortfarande ned</string>
     <string name="webcam_url_url_not_set">Webbkamera-URL är inte inställd eller är tom</string>
     <string name="widget_theme">Widget-tema</string>

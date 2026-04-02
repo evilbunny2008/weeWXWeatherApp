@@ -21,9 +21,13 @@
     <string name="error">Errô!</string>
     <string name="error_occurred_while_attempting_to_update">Un errô o l\'é avvegnuo tanto che se çerca d\'aggiornamento de l\'uso</string>
     <string name="every_5_minutes">Ògni 5 menuti</string>
+    <string name="every_5_seconds">Ògni 5 Secondi</string>
     <string name="every_10_minutes">Ògni 10 menuti</string>
+    <string name="every_10_seconds">Ògni 10 Secondi</string>
     <string name="every_15_minutes">Ògni 15 menuti</string>
     <string name="every_30_minutes">Ògni 30 menuti</string>
+    <string name="every_30_seconds">Ògni 30 Secondi</string>
+    <string name="every_60_seconds">Ògni 60 Segondi</string>
     <string name="every_hour">Ògni Oa</string>
     <string name="failed_to_merge_weather_data">No l\'é riescio à azzonze i dæti %1$s co-i dæti %2$s</string>
     <string name="failed_to_process_forecast_data">Falli à elaborâ i dæti de previxon</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">No l\'é stæto poscibile scaricâ i %1$s perché l\'URL o l\'ea veuo</string>
     <string name="weather2">Climma</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Tempo d\'aggiornamento da webcam</string>
     <string name="webcam_still_downloading">L\'imagine webcam a l\'é ancon o download</string>
     <string name="webcam_url_url_not_set">L\'URL do Webcam o no l\'é impostou ò o l\'é veuo</string>
     <string name="widget_theme">Tema de widget</string>

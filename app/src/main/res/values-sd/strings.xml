@@ -21,9 +21,13 @@
     <string name="error">غلطي!</string>
     <string name="error_occurred_while_attempting_to_update">استعمال کي اپڊيٽ ڪرڻ جي ڪوشش دوران هڪ نقص پيدا ٿيو</string>
     <string name="every_5_minutes">هر 5 منٽ</string>
+    <string name="every_5_seconds">هر 5 سيڪنڊ</string>
     <string name="every_10_minutes">هر 10 منٽ</string>
+    <string name="every_10_seconds">هر 10 سيڪنڊ</string>
     <string name="every_15_minutes">هر 15 منٽ</string>
     <string name="every_30_minutes">هر 30 منٽ</string>
+    <string name="every_30_seconds">هر 30 سيڪنڊ</string>
+    <string name="every_60_seconds">هر 60 سيڪنڊ</string>
     <string name="every_hour">هر ڪلاڪ</string>
     <string name="failed_to_merge_weather_data">%1$s ڊيٽا کي %2$s ڊيٽا سان ملائڻ ۾ ناڪام ٿيو</string>
     <string name="failed_to_process_forecast_data">اڳڪٿي ڊيٽا کي پروسيس ڪرڻ ۾ ناڪام ٿيو</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s ڊائون لوڊ نه ٿي سگهيو ڇاڪاڻ ته URL خالي هو</string>
     <string name="weather2">موسم</string>
     <string name="webcam2">ويب ڪيم</string>
+    <string name="webcam_refresh_time">ويب ڪيم ريفريش وقت</string>
     <string name="webcam_still_downloading">ويب ڪيم تصوير اڃا ڊائون لوڊ ٿي رهي آهي</string>
     <string name="webcam_url_url_not_set">ويب ڪيم URL سيٽ نه آهي يا خالي آهي</string>
     <string name="widget_theme">وجيٽ موضوع</string>

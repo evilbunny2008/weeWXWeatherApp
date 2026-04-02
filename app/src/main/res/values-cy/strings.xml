@@ -21,9 +21,13 @@
     <string name="error">Gwall!</string>
     <string name="error_occurred_while_attempting_to_update">Digwyddodd gwall wrth geisio diweddaru defnydd</string>
     <string name="every_5_minutes">Bob 5 Munud</string>
+    <string name="every_5_seconds">Bob 5 eiliad</string>
     <string name="every_10_minutes">Bob 10 Munud</string>
+    <string name="every_10_seconds">Bob 10 Eiliad</string>
     <string name="every_15_minutes">Bob 15 Munud</string>
     <string name="every_30_minutes">Bob 30 Munud</string>
+    <string name="every_30_seconds">Bob 30 Eiliad</string>
+    <string name="every_60_seconds">Bob 60 Eiliad</string>
     <string name="every_hour">Bob Awr</string>
     <string name="failed_to_merge_weather_data">Wedi methu ag uno data %1$s â data %2$s</string>
     <string name="failed_to_process_forecast_data">Wedi methu prosesu data rhagolwg</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Methu lawrlwytho\'r %1$s oherwydd bod yr URL yn wag</string>
     <string name="weather2">Tywydd</string>
     <string name="webcam2">Gwegamera</string>
+    <string name="webcam_refresh_time">Amser Gloywi Gwegamera</string>
     <string name="webcam_still_downloading">Mae delwedd gwe-gamera yn dal i gael ei lawrlwytho</string>
     <string name="webcam_url_url_not_set">Nid yw URL gwegamera wedi\'i osod neu mae\'n wag</string>
     <string name="widget_theme">Thema Teclyn</string>

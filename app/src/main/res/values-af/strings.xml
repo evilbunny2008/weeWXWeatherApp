@@ -21,9 +21,13 @@
     <string name="error">Fout!</string>
     <string name="error_occurred_while_attempting_to_update">\'n Fout het voorgekom tydens die poging om gebruik op te dateer</string>
     <string name="every_5_minutes">Elke 5 minute</string>
+    <string name="every_5_seconds">Elke 5 sekondes</string>
     <string name="every_10_minutes">Elke 10 minute</string>
+    <string name="every_10_seconds">Elke 10 sekondes</string>
     <string name="every_15_minutes">Elke 15 minute</string>
     <string name="every_30_minutes">Elke 30 minute</string>
+    <string name="every_30_seconds">Elke 30 sekondes</string>
+    <string name="every_60_seconds">Elke 60 sekondes</string>
     <string name="every_hour">Elke Uur</string>
     <string name="failed_to_merge_weather_data">Kon nie die %1$s data saamvoeg met die %2$s data nie</string>
     <string name="failed_to_process_forecast_data">Kon nie voorspellingsdata verwerk nie</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Kon nie die %1$s aflaai nie omdat die URL leeg was</string>
     <string name="weather2">Weer</string>
     <string name="webcam2">Webkamera</string>
+    <string name="webcam_refresh_time">Webkamera Verversingstyd</string>
     <string name="webcam_still_downloading">Webkamera-prent word steeds afgelaai</string>
     <string name="webcam_url_url_not_set">Webkamera-URL is nie gestel nie of is leeg</string>
     <string name="widget_theme">Widget Tema</string>

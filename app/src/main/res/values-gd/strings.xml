@@ -21,9 +21,13 @@
     <string name="error">Mearachd!</string>
     <string name="error_occurred_while_attempting_to_update">Thachair mearachd fhad \'s a bha sinn a\' feuchainn ri cleachdadh ùrachadh</string>
     <string name="every_5_minutes">A h-uile 5 mionaidean</string>
+    <string name="every_5_seconds">A h-uile 5 diog</string>
     <string name="every_10_minutes">A h-uile 10 mionaidean</string>
+    <string name="every_10_seconds">A h-uile 10 diog</string>
     <string name="every_15_minutes">A h-uile 15 mionaid</string>
     <string name="every_30_minutes">A h-uile 30 mionaid</string>
+    <string name="every_30_seconds">A h-uile 30 diog</string>
+    <string name="every_60_seconds">A h-uile 60 diog</string>
     <string name="every_hour">A h-uile Uair</string>
     <string name="failed_to_merge_weather_data">Dh\'fhàillig co-aonadh an dàta %1$s leis an dàta %2$s</string>
     <string name="failed_to_process_forecast_data">Dh\'fhàillig làimhseachadh dàta ro-aithris</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Cha b\' urrainn dhuinn %1$s a luchdadh a-nuas a chionn \'s gu robh an URL bàn</string>
     <string name="weather2">Aimsir</string>
     <string name="webcam2">Camara-lìn</string>
+    <string name="webcam_refresh_time">Ùine ath-nuadhachaidh camara-lìn</string>
     <string name="webcam_still_downloading">Tha dealbh camara-lìn fhathast ga luchdachadh sìos</string>
     <string name="webcam_url_url_not_set">Chan eil URL camara-lìn air a shuidheachadh no falamh</string>
     <string name="widget_theme">Cuspair widget</string>

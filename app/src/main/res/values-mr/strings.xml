@@ -21,9 +21,13 @@
     <string name="error">चूक!</string>
     <string name="error_occurred_while_attempting_to_update">वापर अद्यतनित करण्याचा प्रयत्न करताना एक त्रुटी आली</string>
     <string name="every_5_minutes">दर 5 मिनिटांनी</string>
+    <string name="every_5_seconds">प्रत्येक 5 सेकंद</string>
     <string name="every_10_minutes">दर 10 मिनिटांनी</string>
+    <string name="every_10_seconds">प्रत्येक 10 सेकंद</string>
     <string name="every_15_minutes">दर 15 मिनिटांनी</string>
     <string name="every_30_minutes">प्रत्येक 30 मिनिटांनी</string>
+    <string name="every_30_seconds">प्रत्येक 30 सेकंद</string>
+    <string name="every_60_seconds">प्रत्येक 60 सेकंद</string>
     <string name="every_hour">प्रत्येक तासाला</string>
     <string name="failed_to_merge_weather_data">%1$s डेटा %2$s डेटासह विलीन करण्यात अयशस्वी</string>
     <string name="failed_to_process_forecast_data">अंदाज डेटावर प्रक्रिया करण्यात अयशस्वी</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL रिक्त असल्यामुळे %1$s डाउनलोड करू शकलो नाही</string>
     <string name="weather2">हवामान</string>
     <string name="webcam2">वेबकॅम</string>
+    <string name="webcam_refresh_time">वेबकॅम रिफ्रेश वेळ</string>
     <string name="webcam_still_downloading">वेबकॅम प्रतिमा अद्याप डाउनलोड होत आहे</string>
     <string name="webcam_url_url_not_set">वेबकॅम URL सेट केलेली नाही किंवा रिक्त आहे</string>
     <string name="widget_theme">विजेट थीम</string>

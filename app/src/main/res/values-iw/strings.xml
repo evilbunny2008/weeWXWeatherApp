@@ -21,9 +21,13 @@
     <string name="error">שְׁגִיאָה!</string>
     <string name="error_occurred_while_attempting_to_update">אירעה שגיאה בעת ניסיון לעדכן את השימוש</string>
     <string name="every_5_minutes">כל 5 דקות</string>
+    <string name="every_5_seconds">כל 5 שניות</string>
     <string name="every_10_minutes">כל 10 דקות</string>
+    <string name="every_10_seconds">כל 10 שניות</string>
     <string name="every_15_minutes">כל 15 דקות</string>
     <string name="every_30_minutes">כל 30 דקות</string>
+    <string name="every_30_seconds">כל 30 שניות</string>
+    <string name="every_60_seconds">כל 60 שניות</string>
     <string name="every_hour">כל שעה</string>
     <string name="failed_to_merge_weather_data">מיזוג הנתונים של %1$s עם הנתונים של %2$s נכשל</string>
     <string name="failed_to_process_forecast_data">עיבוד נתוני התחזית נכשל</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">לא ניתן היה להוריד את %1$s מכיוון שכתובת האתר הייתה ריקה</string>
     <string name="weather2">מֶזֶג אֲוִיר</string>
     <string name="webcam2">מצלמת אינטרנט</string>
+    <string name="webcam_refresh_time">זמן רענון מצלמת אינטרנט</string>
     <string name="webcam_still_downloading">תמונת מצלמת האינטרנט עדיין מורידה</string>
     <string name="webcam_url_url_not_set">כתובת האתר של מצלמת האינטרנט לא מוגדרת או שהיא ריקה</string>
     <string name="widget_theme">ערכת נושא של ווידג\'ט</string>

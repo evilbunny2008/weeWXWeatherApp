@@ -21,9 +21,13 @@
     <string name="error">Doś!</string>
     <string name="error_occurred_while_attempting_to_update">Jekh greško kerdas pes kana zumavel pes te aktualizirinel pes o utilisaripe</string>
     <string name="every_5_minutes">Sako 5 Minutura</string>
+    <string name="every_5_seconds">Sako 5 sekunde</string>
     <string name="every_10_minutes">Sako 10 Minutura</string>
+    <string name="every_10_seconds">Sako 10 sekunde</string>
     <string name="every_15_minutes">Sako 15 Minutura</string>
     <string name="every_30_minutes">Sako 30 Minutura</string>
+    <string name="every_30_seconds">Sako 30 sekunde</string>
+    <string name="every_60_seconds">Sako 60 sekunde</string>
     <string name="every_hour">Sako Kàso</string>
     <string name="failed_to_merge_weather_data">Naśti te ćhivel pes o %1$s dàto e %2$s datengo</string>
     <string name="failed_to_process_forecast_data">Nashti te procesirinel pe prognozake data</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Nashti te lav tele o %1$s soske o URL sas putardo</string>
     <string name="weather2">Vrjama</string>
     <string name="webcam2">O Webcamo</string>
+    <string name="webcam_refresh_time">Vrama te laćharel pes i webkamera</string>
     <string name="webcam_still_downloading">Webcam-imago si inke tele tele</string>
     <string name="webcam_url_url_not_set">Webcam URL na si phanglo vaj si blanko</string>
     <string name="widget_theme">Tema widget tema</string>

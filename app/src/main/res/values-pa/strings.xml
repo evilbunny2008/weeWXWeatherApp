@@ -21,9 +21,13 @@
     <string name="error">ਗਲਤੀ!</string>
     <string name="error_occurred_while_attempting_to_update">ਵਰਤੋਂ ਨੂੰ ਅੱਪਡੇਟ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਸਮੇਂ ਇੱਕ ਤਰੁੱਟੀ ਉਤਪੰਨ ਹੋਈ</string>
     <string name="every_5_minutes">ਹਰ 5 ਮਿੰਟ</string>
+    <string name="every_5_seconds">ਹਰ 5 ਸਕਿੰਟ</string>
     <string name="every_10_minutes">ਹਰ 10 ਮਿੰਟ</string>
+    <string name="every_10_seconds">ਹਰ 10 ਸਕਿੰਟ</string>
     <string name="every_15_minutes">ਹਰ 15 ਮਿੰਟ</string>
     <string name="every_30_minutes">ਹਰ 30 ਮਿੰਟ</string>
+    <string name="every_30_seconds">ਹਰ 30 ਸਕਿੰਟਾਂ ਵਿੱਚ</string>
+    <string name="every_60_seconds">ਹਰ 60 ਸਕਿੰਟ</string>
     <string name="every_hour">ਹਰ ਘੰਟੇ</string>
     <string name="failed_to_merge_weather_data">%1$s ਡੇਟਾ ਨੂੰ %2$s ਡੇਟਾ ਨਾਲ ਮਿਲਾਉਣ ਵਿੱਚ ਅਸਫਲ</string>
     <string name="failed_to_process_forecast_data">ਪੂਰਵ ਅਨੁਮਾਨ ਡੇਟਾ ਦੀ ਪ੍ਰਕਿਰਿਆ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s ਨੂੰ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ ਕਿਉਂਕਿ URL ਖਾਲੀ ਸੀ</string>
     <string name="weather2">ਮੌਸਮ</string>
     <string name="webcam2">ਵੈਬਕੈਮ</string>
+    <string name="webcam_refresh_time">ਵੈਬਕੈਮ ਰਿਫਰੈਸ਼ ਸਮਾਂ</string>
     <string name="webcam_still_downloading">ਵੈਬਕੈਮ ਚਿੱਤਰ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ।</string>
     <string name="webcam_url_url_not_set">ਵੈਬਕੈਮ URL ਸੈੱਟ ਨਹੀਂ ਹੈ ਜਾਂ ਖਾਲੀ ਹੈ</string>
     <string name="widget_theme">ਵਿਜੇਟ ਥੀਮ</string>

@@ -21,9 +21,13 @@
     <string name="error">Error!</string>
     <string name="error_occurred_while_attempting_to_update">Un\'idea l\'è stada fada per la prima volta in del prucess de test</string>
     <string name="every_5_minutes">Tüt i dü i 2</string>
+    <string name="every_5_seconds">Ogni 5 segund</string>
     <string name="every_10_minutes">Tüt i 100 chilo</string>
+    <string name="every_10_seconds">Ogni 10 segund</string>
     <string name="every_15_minutes">Tüt i 10 kg</string>
     <string name="every_30_minutes">Tüt i 30 an</string>
+    <string name="every_30_seconds">Ogni 30 segund</string>
+    <string name="every_60_seconds">Ogni 60 segund</string>
     <string name="every_hour">Çò \'l é la plupart</string>
     <string name="failed_to_merge_weather_data">L\'è minga sta pusibel unir i dati %1$s cunt i dati %2$s</string>
     <string name="failed_to_process_forecast_data">Avità i dats de l\'aprovazion del sistema</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">L\'è minga stà bon de scaricà giò i %1$ perché l\'URL l\'era en vœui</string>
     <string name="weather2">Clima</string>
     <string name="webcam2">se</string>
+    <string name="webcam_refresh_time">Temp de rinfrescament de la webcam</string>
     <string name="webcam_still_downloading">Clicca sü la fotocamera che g\'he sun</string>
     <string name="webcam_url_url_not_set">El schermu l\'è minga el nomm de la seziun</string>
     <string name="widget_theme">\'el</string>

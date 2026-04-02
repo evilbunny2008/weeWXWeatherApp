@@ -21,9 +21,13 @@
     <string name="error">Kasilapan!</string>
     <string name="error_occurred_while_attempting_to_update">Kasalahan tajadi katiko mancubo mampabarui pamakaian</string>
     <string name="every_5_minutes">Tiok 5 minik</string>
+    <string name="every_5_seconds">Satiok 5 Datiak</string>
     <string name="every_10_minutes">Tiok 10 Menit</string>
+    <string name="every_10_seconds">Satiok 10 Datiak</string>
     <string name="every_15_minutes">Tiok 15 minik</string>
     <string name="every_30_minutes">Tiok 30 Menit</string>
+    <string name="every_30_seconds">Satiok 30 Datiak</string>
+    <string name="every_60_seconds">Satiok 60 Datiak</string>
     <string name="every_hour">Satiok Jam</string>
     <string name="failed_to_merge_weather_data">Gagal manggabuangkan data %1$s jo data %2$s</string>
     <string name="failed_to_process_forecast_data">Digagalan jo data ramalan proses</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Indak dapek mangunduakan %1$s karano URLnyo kosong</string>
     <string name="weather2">Cuaca</string>
     <string name="webcam2">Simanan</string>
+    <string name="webcam_refresh_time">Wakatu Panyagaran Kamera Web</string>
     <string name="webcam_still_downloading">Gambar webcam masih mangunduakan</string>
     <string name="webcam_url_url_not_set">Webcam URL indak diatur atau kosong</string>
     <string name="widget_theme">Tema Widget</string>

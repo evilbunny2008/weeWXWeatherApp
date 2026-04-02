@@ -21,9 +21,13 @@
     <string name="error">Enshobi!</string>
     <string name="error_occurred_while_attempting_to_update">Enshobi ekabaho obwo arikugyezaho kugaruza busya okukozesa</string>
     <string name="every_5_minutes">Buri Muhanda 5</string>
+    <string name="every_5_seconds">Buri sekondi 5</string>
     <string name="every_10_minutes">Buri Minute 10</string>
+    <string name="every_10_seconds">Buri sekondi 10</string>
     <string name="every_15_minutes">Buri Muhanda 15</string>
     <string name="every_30_minutes">Buri Minute 30</string>
+    <string name="every_30_seconds">Buri sekondi 30</string>
+    <string name="every_60_seconds">Buri sekondi 60</string>
     <string name="every_hour">Buri Eshaha</string>
     <string name="failed_to_merge_weather_data">Kiremirwe kugaita %1$s data na %2$s data</string>
     <string name="failed_to_process_forecast_data">Okuremwa kukora aha makuru</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Tibarabaasize kutunga %1$s ahabwokuba URL ekaba eri busha</string>
     <string name="weather2">Kujerenisa</string>
     <string name="webcam2">Webuka</string>
+    <string name="webcam_refresh_time">Obwire bw\'okugaruzaho kamera</string>
     <string name="webcam_still_downloading">Ekishushani kya Webcam kikiine</string>
     <string name="webcam_url_url_not_set">URL ya Webcam teteirweho ninga eri busha</string>
     <string name="widget_theme">Marima Omutwe</string>

@@ -21,9 +21,13 @@
     <string name="error">त्रुटि!</string>
     <string name="error_occurred_while_attempting_to_update">प्रयोग अपडेट गर्ने प्रयास गर्दा एउटा त्रुटि भयो</string>
     <string name="every_5_minutes">हरेक ५ मिनेटमा</string>
+    <string name="every_5_seconds">हरेक ५ सेकेन्डमा</string>
     <string name="every_10_minutes">हरेक १० मिनेटमा</string>
+    <string name="every_10_seconds">प्रत्येक 10 सेकेन्डमा</string>
     <string name="every_15_minutes">हरेक १५ मिनेटमा</string>
     <string name="every_30_minutes">हरेक ३० मिनेटमा</string>
+    <string name="every_30_seconds">प्रत्येक ३० सेकेन्डमा</string>
+    <string name="every_60_seconds">हरेक ६० सेकेन्डमा</string>
     <string name="every_hour">हरेक घण्टा</string>
     <string name="failed_to_merge_weather_data">%1$s डाटालाई %2$s डाटासँग मर्ज गर्न असफल भयो</string>
     <string name="failed_to_process_forecast_data">पूर्वानुमान डेटा प्रशोधन गर्न असफल</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL खाली भएकोले %1$s डाउनलोड गर्न सकिएन</string>
     <string name="weather2">मौसम</string>
     <string name="webcam2">वेबक्याम</string>
+    <string name="webcam_refresh_time">वेबक्याम रिफ्रेस समय</string>
     <string name="webcam_still_downloading">वेबक्याम छवि अझै डाउनलोड भइरहेको छ।</string>
     <string name="webcam_url_url_not_set">वेबक्याम URL सेट गरिएको छैन वा खाली छ</string>
     <string name="widget_theme">विजेट विषयवस्तु</string>

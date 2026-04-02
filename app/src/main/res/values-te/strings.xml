@@ -21,9 +21,13 @@
     <string name="error">లోపం!</string>
     <string name="error_occurred_while_attempting_to_update">వినియోగాన్ని నవీకరించడానికి ప్రయత్నిస్తున్నప్పుడు లోపం సంభవించింది</string>
     <string name="every_5_minutes">ప్రతి 5 నిమిషాలు</string>
+    <string name="every_5_seconds">ప్రతి 5 సెకన్లు</string>
     <string name="every_10_minutes">ప్రతి 10 నిమిషాలు</string>
+    <string name="every_10_seconds">ప్రతి 10 సెకన్లు</string>
     <string name="every_15_minutes">ప్రతి 15 నిమిషాలు</string>
     <string name="every_30_minutes">ప్రతి 30 నిమిషాలు</string>
+    <string name="every_30_seconds">ప్రతి 30 సెకన్లు</string>
+    <string name="every_60_seconds">ప్రతి 60 సెకన్లు</string>
     <string name="every_hour">ప్రతి గంట</string>
     <string name="failed_to_merge_weather_data">%1$s డేటాను %2$s డేటాతో విలీనం చేయడంలో విఫలమైంది</string>
     <string name="failed_to_process_forecast_data">సూచన డేటాను ప్రాసెస్ చేయడంలో విఫలమైంది</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL ఖాళీగా ఉన్నందున %1$sని డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="weather2">వాతావరణం</string>
     <string name="webcam2">వెబ్‌క్యామ్</string>
+    <string name="webcam_refresh_time">వెబ్‌క్యామ్ రిఫ్రెష్ సమయం</string>
     <string name="webcam_still_downloading">వెబ్‌క్యామ్ చిత్రం ఇప్పటికీ డౌన్‌లోడ్ అవుతోంది</string>
     <string name="webcam_url_url_not_set">వెబ్‌క్యామ్ URL సెట్ చేయబడలేదు లేదా ఖాళీగా ఉంది</string>
     <string name="widget_theme">విడ్జెట్ థీమ్</string>

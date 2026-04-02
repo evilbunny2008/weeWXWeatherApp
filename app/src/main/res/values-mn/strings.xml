@@ -21,9 +21,13 @@
     <string name="error">Алдаа!</string>
     <string name="error_occurred_while_attempting_to_update">Хэрэглээг шинэчлэхийг оролдож байх үед алдаа гарлаа</string>
     <string name="every_5_minutes">5 минут тутамд</string>
+    <string name="every_5_seconds">5 секунд тутамд</string>
     <string name="every_10_minutes">10 минут тутамд</string>
+    <string name="every_10_seconds">10 секунд тутамд</string>
     <string name="every_15_minutes">15 минут тутамд</string>
     <string name="every_30_minutes">30 минут тутамд</string>
+    <string name="every_30_seconds">30 секунд тутамд</string>
+    <string name="every_60_seconds">60 секунд тутамд</string>
     <string name="every_hour">Цаг болгон</string>
     <string name="failed_to_merge_weather_data">%1$s өгөгдлийг %2$s өгөгдөлтэй нэгтгэж чадсангүй</string>
     <string name="failed_to_process_forecast_data">Урьдчилан тооцоолох өгөгдлийг боловсруулж чадсангүй</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL хоосон байсан тул %1$s-г татаж авч чадсангүй</string>
     <string name="weather2">Цаг агаар</string>
     <string name="webcam2">Сокктер</string>
+    <string name="webcam_refresh_time">Вэбкамерыг сэргээх цаг</string>
     <string name="webcam_still_downloading">WebCAM зураг татаж байна</string>
     <string name="webcam_url_url_not_set">WebCam URL тохируулагдаагүй эсвэл хоосон байна</string>
     <string name="widget_theme">Виджет сэдэв</string>

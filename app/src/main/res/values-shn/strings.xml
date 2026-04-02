@@ -21,9 +21,13 @@
     <string name="error">ပဵၼ်လူႉ!</string>
     <string name="error_occurred_while_attempting_to_update">လွင်ႈၽိတ်းပိူင်ႈ ဢၼ်ပဵၼ်မႃး ၽွင်းမိူဝ်ႈ ၶတ်းၸႂ် တႃႇတေ ႁဵတ်းႁႂ်ႈ လွင်ႈၸႂ်ႉတိုဝ်း မႂ်ႇ</string>
     <string name="every_5_minutes">ၵူႈ 5 မိၼိတ်ႉ</string>
+    <string name="every_5_seconds">ၵူႈ 5 ၸူဝ်ႈမူင်း</string>
     <string name="every_10_minutes">ၵူႈ 10 မိၼိတ်ႉ</string>
+    <string name="every_10_seconds">ၵူႈ 10 ၸူဝ်ႈမူင်း</string>
     <string name="every_15_minutes">ၵူႈ 15 မိၼိတ်ႉ</string>
     <string name="every_30_minutes">ၵူႈ 30 မိၼိတ်ႉ</string>
+    <string name="every_30_seconds">ၵူႈ 30 ၸူဝ်ႈမူင်း</string>
+    <string name="every_60_seconds">ၵူႈ 60 ၸူဝ်ႈမူင်း</string>
     <string name="every_hour">ၵူႈၸူဝ်ႈမူင်းၵူႈၸူဝ်ႈမူင်း</string>
     <string name="failed_to_merge_weather_data">ဢမ်ႇၸၢင်ႈဢဝ်ၶေႃႈမုၼ်း %1$s မႃးႁူမ်ႈၵၼ်တင်း ၶေႃႈမုၼ်း %2$s လႆႈ</string>
     <string name="failed_to_process_forecast_data">ဢမ်ႇႁဵတ်းၵၢၼ်ၶေႃႈမုၼ်း ဢၼ်လၢမ်းၶၢတ်ႈဝႆႉ</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">ဢမ်ႇၸၢင်ႈလူင်းလႆႈ %1$s ယွၼ်ႉဝႃႈ URL မၼ်းပဝ်ႇဝႆႉ</string>
     <string name="weather2">ၾိင်ႈၾႃႉ</string>
     <string name="webcam2">ဝႅပ်ႉသၢႆႉ</string>
+    <string name="webcam_refresh_time">ၶၢဝ်းယၢမ်းႁဵတ်းႁႂ်ႈဝႅပ်ႉသၢႆႉမႂ်ႇ</string>
     <string name="webcam_still_downloading">ၶႅပ်းႁၢင်ႈ Webcam တိုၵ်ႉလူင်းဝႆႉယူႇၶႃႈ</string>
     <string name="webcam_url_url_not_set">Webcam URL ဢမ်ႇလႆႈတမ်းဝၢင်းဝႆႉ ဢမ်ႇၼၼ် ပဵၼ်ပဝ်ႇ</string>
     <string name="widget_theme">ၽူႈႁပ်ႉပၢၵ်ႇ</string>

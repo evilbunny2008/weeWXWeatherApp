@@ -21,9 +21,13 @@
     <string name="error">Éror!</string>
     <string name="error_occurred_while_attempting_to_update">Kaiwangan punika mamargi rikala mautsaha ngapdet kawigunan</string>
     <string name="every_5_minutes">Sabilang 5 Menit</string>
+    <string name="every_5_seconds">Sabilang 5 Detik</string>
     <string name="every_10_minutes">Sabilang 10 Menit</string>
+    <string name="every_10_seconds">Sabilang 10 Detik</string>
     <string name="every_15_minutes">Sabilang 15 Menit</string>
     <string name="every_30_minutes">Sabilang 30 Menit</string>
+    <string name="every_30_seconds">Sabilang 30 Detik</string>
+    <string name="every_60_seconds">Sabilang 60 Detik</string>
     <string name="every_hour">Sabilang Jam</string>
     <string name="failed_to_merge_weather_data">Gagal ngadungang data %1$s sareng data %2$s</string>
     <string name="failed_to_process_forecast_data">Gagal ring data ramalan proses</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Nénten prasida ngunduh %1$s santukan URLnyané puyung</string>
     <string name="weather2">Cuaca</string>
     <string name="webcam2">Basa Webcam</string>
+    <string name="webcam_refresh_time">Galah nyegerang webcam</string>
     <string name="webcam_still_downloading">Gambar Webcam kantun ngunduh</string>
     <string name="webcam_url_url_not_set">URL Webcam nenten kagenahang utawi puyung</string>
     <string name="widget_theme">Tema Widget</string>

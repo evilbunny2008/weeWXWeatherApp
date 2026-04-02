@@ -21,9 +21,13 @@
     <string name="error">Սխալ</string>
     <string name="error_occurred_while_attempting_to_update">Օգտագործումը թարմացնելու փորձի ժամանակ սխալ առաջացավ</string>
     <string name="every_5_minutes">Ամեն 5 րոպեն մեկ</string>
+    <string name="every_5_seconds">Յուրաքանչյուր 5 վայրկյան</string>
     <string name="every_10_minutes">Ամեն 10 րոպեն մեկ</string>
+    <string name="every_10_seconds">Ամեն 10 վայրկյանը մեկ</string>
     <string name="every_15_minutes">Ամեն 15 րոպեն մեկ</string>
     <string name="every_30_minutes">Ամեն 30 րոպեն մեկ</string>
+    <string name="every_30_seconds">Յուրաքանչյուր 30 վայրկյան</string>
+    <string name="every_60_seconds">Յուրաքանչյուր 60 վայրկյան</string>
     <string name="every_hour">Ամեն Ժամ</string>
     <string name="failed_to_merge_weather_data">Չհաջողվեց միավորել %1$s տվյալները %2$s տվյալների հետ</string>
     <string name="failed_to_process_forecast_data">Չհաջողվեց մշակել կանխատեսման տվյալները</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Չհաջողվեց ներբեռնել %1$s-ը, քանի որ URL-ը դատարկ էր</string>
     <string name="weather2">Եղանակ</string>
     <string name="webcam2">Վեբ տեսախցիկ</string>
+    <string name="webcam_refresh_time">Տեսախցիկի թարմացման ժամանակը</string>
     <string name="webcam_still_downloading">Տեսախցիկի պատկերը դեռ ներբեռնվում է:</string>
     <string name="webcam_url_url_not_set">Վեբ-տեսախցիկի URL-ը սահմանված չէ կամ դատարկ է</string>
     <string name="widget_theme">Վիջեթի թեմա</string>

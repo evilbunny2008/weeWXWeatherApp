@@ -21,9 +21,13 @@
     <string name="error">আঁসোৱাহ!</string>
     <string name="error_occurred_while_attempting_to_update">ব্যৱহাৰ আপডেইট কৰিবলে চেষ্টা কৰাৰ সময়ত এটা ভুল হৈছিল</string>
     <string name="every_5_minutes">প্ৰতি ৫ মিনিটৰ মূৰে মূৰে</string>
+    <string name="every_5_seconds">প্ৰতি ৫ ছেকেণ্ডৰ মূৰে মূৰে</string>
     <string name="every_10_minutes">প্ৰতি ১০ মিনিটৰ মূৰে মূৰে ৷</string>
+    <string name="every_10_seconds">প্ৰতি ১০ ছেকেণ্ডৰ মূৰে মূৰে</string>
     <string name="every_15_minutes">প্ৰতি ১৫ মিনিটৰ মূৰে মূৰে ৷</string>
     <string name="every_30_minutes">প্ৰতি ৩০ মিনিটৰ মূৰে মূৰে ৷</string>
+    <string name="every_30_seconds">প্ৰতি ৩০ ছেকেণ্ডৰ মূৰে মূৰে</string>
+    <string name="every_60_seconds">প্ৰতি ৬০ ছেকেণ্ডৰ মূৰে মূৰে</string>
     <string name="every_hour">প্ৰতি ঘণ্টাত</string>
     <string name="failed_to_merge_weather_data">%1$s তথ্য %2$s তথ্যৰ সৈতে একত্ৰিত কৰাত ব্যৰ্থ</string>
     <string name="failed_to_process_forecast_data">পূৰ্বাভাস তথ্য প্ৰক্ৰিয়াকৰণ কৰাত ব্যৰ্থ</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s ডাউনল\'ড কৰিব পৰা নাছিল কাৰণ URL খালী আছিল</string>
     <string name="weather2">বতৰ</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">ৱেবকেম সতেজ কৰাৰ সময়</string>
     <string name="webcam_still_downloading">WebCam image এতিয়াও ডাউনলোড কৰি আছে।</string>
     <string name="webcam_url_url_not_set">WebCam URL ছেট কৰা হোৱা নাই বা খালী কৰা হৈছে</string>
     <string name="widget_theme">ৱিজেট থিম</string>

@@ -21,9 +21,13 @@
     <string name="error">Eroare!</string>
     <string name="error_occurred_while_attempting_to_update">A apărut o eroare la încercarea de a actualiza utilizarea</string>
     <string name="every_5_minutes">La fiecare 5 minute</string>
+    <string name="every_5_seconds">La fiecare 5 secunde</string>
     <string name="every_10_minutes">La fiecare 10 minute</string>
+    <string name="every_10_seconds">La fiecare 10 secunde</string>
     <string name="every_15_minutes">La fiecare 15 minute</string>
     <string name="every_30_minutes">La fiecare 30 de minute</string>
+    <string name="every_30_seconds">La fiecare 30 de secunde</string>
+    <string name="every_60_seconds">La fiecare 60 de secunde</string>
     <string name="every_hour">În fiecare oră</string>
     <string name="failed_to_merge_weather_data">Nu s-au putut îmbina datele %1$s cu datele %2$s</string>
     <string name="failed_to_process_forecast_data">Nu s-au procesat datele de prognoză</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Nu am putut descărca %1$s deoarece adresa URL era goală</string>
     <string name="weather2">Vreme</string>
     <string name="webcam2">Cameră web</string>
+    <string name="webcam_refresh_time">Timp de reîmprospătare a camerei web</string>
     <string name="webcam_still_downloading">Imaginea camerei web încă se descarcă</string>
     <string name="webcam_url_url_not_set">Adresa URL a camerei web nu este setată sau este goală</string>
     <string name="widget_theme">Tema widgetului</string>

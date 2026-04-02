@@ -21,9 +21,13 @@
     <string name="error">Памылка!</string>
     <string name="error_occurred_while_attempting_to_update">Пры спробе абнавіць выкарыстанне адбылася памылка</string>
     <string name="every_5_minutes">Кожныя 5 хвілін</string>
+    <string name="every_5_seconds">Кожныя 5 секунд</string>
     <string name="every_10_minutes">Кожныя 10 хвілін</string>
+    <string name="every_10_seconds">Кожныя 10 секунд</string>
     <string name="every_15_minutes">Кожныя 15 хвілін</string>
     <string name="every_30_minutes">Кожныя 30 хвілін</string>
+    <string name="every_30_seconds">Кожныя 30 секунд</string>
+    <string name="every_60_seconds">Кожныя 60 секунд</string>
     <string name="every_hour">Кожную гадзіну</string>
     <string name="failed_to_merge_weather_data">Не ўдалося аб\'яднаць даныя %1$s з данымі %2$s</string>
     <string name="failed_to_process_forecast_data">Не ўдалося апрацаваць даныя прагнозу</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Не ўдалося загрузіць %1$s, таму што URL быў пустым</string>
     <string name="weather2">Надвор\'е</string>
     <string name="webcam2">вэб-камера</string>
+    <string name="webcam_refresh_time">Час абнаўлення вэб-камеры</string>
     <string name="webcam_still_downloading">Выява з вэб-камеры ўсё яшчэ спампоўваецца</string>
     <string name="webcam_url_url_not_set">URL вэб-камеры не зададзены або пусты</string>
     <string name="widget_theme">Тэма віджэтаў</string>

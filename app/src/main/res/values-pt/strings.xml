@@ -21,9 +21,13 @@
     <string name="error">Erro!</string>
     <string name="error_occurred_while_attempting_to_update">Ocorreu um erro ao tentar atualizar o uso</string>
     <string name="every_5_minutes">A cada 5 minutos</string>
+    <string name="every_5_seconds">A cada 5 segundos</string>
     <string name="every_10_minutes">A cada 10 minutos</string>
+    <string name="every_10_seconds">A cada 10 segundos</string>
     <string name="every_15_minutes">A cada 15 minutos</string>
     <string name="every_30_minutes">A cada 30 minutos</string>
+    <string name="every_30_seconds">A cada 30 segundos</string>
+    <string name="every_60_seconds">A cada 60 segundos</string>
     <string name="every_hour">A cada hora</string>
     <string name="failed_to_merge_weather_data">Falha ao mesclar os dados de %1$s com os dados de %2$s</string>
     <string name="failed_to_process_forecast_data">Falha ao processar dados de previsão</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Não foi possível baixar %1$s porque o URL estava em branco</string>
     <string name="weather2">Clima</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Tempo de atualização da webcam</string>
     <string name="webcam_still_downloading">A imagem da webcam ainda está sendo baixada</string>
     <string name="webcam_url_url_not_set">O URL da webcam não está definido ou está em branco</string>
     <string name="widget_theme">Tema de widget</string>

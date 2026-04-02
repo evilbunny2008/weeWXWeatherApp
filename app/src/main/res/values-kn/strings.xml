@@ -21,9 +21,13 @@
     <string name="error">ದೋಷ!</string>
     <string name="error_occurred_while_attempting_to_update">ಬಳಕೆಯನ್ನು ನವೀಕರಿಸಲು ಪ್ರಯತ್ನಿಸುತ್ತಿರುವಾಗ ದೋಷ ಸಂಭವಿಸಿದೆ</string>
     <string name="every_5_minutes">ಪ್ರತಿ 5 ನಿಮಿಷಗಳು</string>
+    <string name="every_5_seconds">ಪ್ರತಿ 5 ಸೆಕೆಂಡುಗಳು</string>
     <string name="every_10_minutes">ಪ್ರತಿ 10 ನಿಮಿಷಗಳು</string>
+    <string name="every_10_seconds">ಪ್ರತಿ 10 ಸೆಕೆಂಡುಗಳು</string>
     <string name="every_15_minutes">ಪ್ರತಿ 15 ನಿಮಿಷಗಳು</string>
     <string name="every_30_minutes">ಪ್ರತಿ 30 ನಿಮಿಷಗಳು</string>
+    <string name="every_30_seconds">ಪ್ರತಿ 30 ಸೆಕೆಂಡುಗಳು</string>
+    <string name="every_60_seconds">ಪ್ರತಿ 60 ಸೆಕೆಂಡುಗಳು</string>
     <string name="every_hour">ಪ್ರತಿ ಗಂಟೆಗೆ</string>
     <string name="failed_to_merge_weather_data">%1$s ಡೇಟಾವನ್ನು %2$s ಡೇಟಾದೊಂದಿಗೆ ವಿಲೀನಗೊಳಿಸಲು ವಿಫಲವಾಗಿದೆ</string>
     <string name="failed_to_process_forecast_data">ಮುನ್ಸೂಚನೆ ಡೇಟಾವನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ವಿಫಲವಾಗಿದೆ</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL ಖಾಲಿಯಾಗಿರುವುದರಿಂದ %1$s ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ</string>
     <string name="weather2">ಹವಾಮಾನ</string>
     <string name="webcam2">ವೆಬ್ಕ್ಯಾಮ್</string>
+    <string name="webcam_refresh_time">ವೆಬ್‌ಕ್ಯಾಮ್ ರಿಫ್ರೆಶ್ ಸಮಯ</string>
     <string name="webcam_still_downloading">ವೆಬ್‌ಕ್ಯಾಮ್ ಚಿತ್ರ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ</string>
     <string name="webcam_url_url_not_set">ವೆಬ್‌ಕ್ಯಾಮ್ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ ಅಥವಾ ಖಾಲಿಯಾಗಿದೆ</string>
     <string name="widget_theme">ವಿಜೆಟ್ ಥೀಮ್</string>

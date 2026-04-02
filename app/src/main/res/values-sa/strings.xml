@@ -21,9 +21,13 @@
     <string name="error">त्रुटि!</string>
     <string name="error_occurred_while_attempting_to_update">उपयोगस्य अद्यतनीकरणस्य प्रयासे त्रुटिः अभवत् ।</string>
     <string name="every_5_minutes">प्रत्येकं ५ निमेषेषु प्रत्येकं ५ निमेषः २</string>
+    <string name="every_5_seconds">प्रत्येकं ५ सेकेण्ड्</string>
     <string name="every_10_minutes">प्रत्येकं १० निमेषेषु प्रत्येकं १० निमेषः २</string>
+    <string name="every_10_seconds">प्रत्येकं १० सेकेण्ड्</string>
     <string name="every_15_minutes">प्रत्येकं १५ निमेषेषु प्रत्येकं १५ निमेषः २</string>
     <string name="every_30_minutes">प्रत्येकं ३० निमेषेषु प्रत्येकं ३० निमेषः २</string>
+    <string name="every_30_seconds">प्रत्येकं ३० सेकेण्ड्</string>
+    <string name="every_60_seconds">प्रत्येकं ६० सेकेण्ड्</string>
     <string name="every_hour">प्रत्येकं घण्टा 1</string>
     <string name="failed_to_merge_weather_data">%1$s दत्तांशं %2$s दत्तांशसहितं विलीनीकरणे असफलम्</string>
     <string name="failed_to_process_forecast_data">पूर्वानुमानदत्तांशं संसाधितुं विफलम्</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s अवतरणं कर्तुं न शक्तवान् यतः URL रिक्तम् आसीत्</string>
     <string name="weather2">वातावरणम्‌</string>
     <string name="webcam2">वेबकैम 2019।</string>
+    <string name="webcam_refresh_time">वेबकैम ताजगी समय</string>
     <string name="webcam_still_downloading">WebCam इमेज अद्यापि डाउनलोड् भवति।</string>
     <string name="webcam_url_url_not_set">WebCam URL सेट् न भवति अथवा रिक्तं भवति ।</string>
     <string name="widget_theme">विजेट विषय 1</string>

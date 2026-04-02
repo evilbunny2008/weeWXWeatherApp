@@ -21,9 +21,13 @@
     <string name="error">Jejavy!</string>
     <string name="error_occurred_while_attempting_to_update">Oiko peteĩ jejavy oñeha\'ãvo ombopyahu jepuru</string>
     <string name="every_5_minutes">Káda 5 minuto</string>
+    <string name="every_5_seconds">Káda 5 Segundo-pe</string>
     <string name="every_10_minutes">Káda 10 minuto</string>
+    <string name="every_10_seconds">Káda 10 Segundo-pe</string>
     <string name="every_15_minutes">Káda 15 minuto</string>
     <string name="every_30_minutes">Káda 30 minuto</string>
+    <string name="every_30_seconds">Káda 30 Segúndope</string>
+    <string name="every_60_seconds">Káda 60 Segúndope</string>
     <string name="every_hour">Káda óra</string>
     <string name="failed_to_merge_weather_data">Ndojejapói oñembojoaju hag̃ua %1$s marandu %2$s marandu ndive</string>
     <string name="failed_to_process_forecast_data">Ndojejapói umi dato pronóstico rehegua</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ndaikatúikuri omboguejy umi %1$s URL oĩgui mbytépe</string>
     <string name="weather2">Ára</string>
     <string name="webcam2">Webcam rehegua</string>
+    <string name="webcam_refresh_time">Webcam Ñembopyahu Aravo</string>
     <string name="webcam_still_downloading">Ta\'ãnga webcam omboguejy gueteri</string>
     <string name="webcam_url_url_not_set">URL webcam noñemohendai térã oĩ en blanco</string>
     <string name="widget_theme">Tema de Widget rehegua</string>

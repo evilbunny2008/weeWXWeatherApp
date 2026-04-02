@@ -21,9 +21,13 @@
     <string name="error">Khalad!</string>
     <string name="error_occurred_while_attempting_to_update">Khalad ayaa dhacay intii la isku dayay in la cusbooneysiisto isticmaalka</string>
     <string name="every_5_minutes">5 daqiiqo kasta</string>
+    <string name="every_5_seconds">5 ilbiriqsi kasta</string>
     <string name="every_10_minutes">10 daqiiqo kasta</string>
+    <string name="every_10_seconds">10 ilbiriqsi kasta</string>
     <string name="every_15_minutes">15 daqiiqo kasta</string>
     <string name="every_30_minutes">30 daqiiqo kasta</string>
+    <string name="every_30_seconds">30 ilbiriqsi kasta</string>
+    <string name="every_60_seconds">60 ilbiriqsi kasta</string>
     <string name="every_hour">Saacad kasta</string>
     <string name="failed_to_merge_weather_data">Ku guuldareystay in lagu daro xogta %1$s iyo %2$s xogta</string>
     <string name="failed_to_process_forecast_data">Ku guuldareystay in la socodsiiyo xogta saadaasha</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ma awoodin inuu soo dejiyo %1$s sababtoo ah URL-ku wuu maran yahay</string>
     <string name="weather2">Cimilo</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Wakhtiga Soo Celinta Kaamirada Shabakadda</string>
     <string name="webcam_still_downloading">Image webcam wali waa soo dejisaneysaa</string>
     <string name="webcam_url_url_not_set">Webcam URL lama dejinayo ama madhnaan</string>
     <string name="widget_theme">Mawduuca widget</string>

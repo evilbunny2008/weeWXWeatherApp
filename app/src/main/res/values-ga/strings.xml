@@ -21,9 +21,13 @@
     <string name="error">Earráid!</string>
     <string name="error_occurred_while_attempting_to_update">Tharla earráid agus iarracht á déanamh úsáid a nuashonrú</string>
     <string name="every_5_minutes">Gach 5 Nóiméad</string>
+    <string name="every_5_seconds">Gach 5 Soicind</string>
     <string name="every_10_minutes">Gach 10 Nóiméad</string>
+    <string name="every_10_seconds">Gach 10 Soicind</string>
     <string name="every_15_minutes">Gach 15 Nóiméad</string>
     <string name="every_30_minutes">Gach 30 Nóiméad</string>
+    <string name="every_30_seconds">Gach 30 Soicind</string>
+    <string name="every_60_seconds">Gach 60 Soicind</string>
     <string name="every_hour">Gach Uair</string>
     <string name="failed_to_merge_weather_data">Theip ar chumasc na sonraí %1$s leis na sonraí %2$s</string>
     <string name="failed_to_process_forecast_data">Theip ar phróiseáil sonraí réamhaisnéise</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Níorbh fhéidir %1$s a íoslódáil toisc go raibh an URL bán</string>
     <string name="weather2">Aimsir</string>
     <string name="webcam2">Ceamara gréasáin</string>
+    <string name="webcam_refresh_time">Am athnuachan ceamara gréasáin</string>
     <string name="webcam_still_downloading">Tá íomhá ceamara gréasáin á íoslódáil go fóill</string>
     <string name="webcam_url_url_not_set">Níl URL ceamara gréasáin socraithe nó bán</string>
     <string name="widget_theme">Téama Giuirléid</string>

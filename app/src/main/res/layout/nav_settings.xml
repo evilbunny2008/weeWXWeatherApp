@@ -164,6 +164,34 @@
 
 		<com.google.android.material.textfield.TextInputLayout
 			style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+			android:id="@+id/til7"
+			android:labelFor="@id/spinner5"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="@string/webcam_refresh_time"
+			android:textSize="20sp"
+			android:layout_marginTop="10dp"
+			app:boxBackgroundMode="outline"
+			app:boxStrokeColor="@color/Black"
+			app:boxStrokeWidth="1dp"
+			tools:ignore="VisualLintBounds">
+
+			<com.google.android.material.textfield.MaterialAutoCompleteTextView
+				android:id="@+id/spinner5"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:clickable="true"
+				android:focusable="false"
+				android:importantForAutofill="no"
+				android:inputType="none"
+				android:textSize="20sp"
+				android:saveEnabled="false"
+				tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize,TouchTargetSizeCheck" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
 			android:id="@+id/til3"
 			android:labelFor="@id/spinner4"
 			android:layout_width="match_parent"

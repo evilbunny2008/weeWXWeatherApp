@@ -21,9 +21,13 @@
     <string name="error">Viga!</string>
     <string name="error_occurred_while_attempting_to_update">Kasutuse värskendamise katsel ilmnes viga</string>
     <string name="every_5_minutes">Iga 5 minuti järel</string>
+    <string name="every_5_seconds">Iga 5 sekundi järel</string>
     <string name="every_10_minutes">Iga 10 minuti järel</string>
+    <string name="every_10_seconds">Iga 10 sekundi järel</string>
     <string name="every_15_minutes">Iga 15 minuti järel</string>
     <string name="every_30_minutes">Iga 30 minuti järel</string>
+    <string name="every_30_seconds">Iga 30 sekundi järel</string>
+    <string name="every_60_seconds">Iga 60 sekundi järel</string>
     <string name="every_hour">Iga tund</string>
     <string name="failed_to_merge_weather_data">%1$s andmete liitmine %2$s andmetega ebaõnnestus</string>
     <string name="failed_to_process_forecast_data">Prognoosiandmete töötlemine ebaõnnestus</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Faili %1$s ei saanud alla laadida, kuna URL oli tühi</string>
     <string name="weather2">Ilm</string>
     <string name="webcam2">Veebikaamera</string>
+    <string name="webcam_refresh_time">Veebikaamera värskendusaeg</string>
     <string name="webcam_still_downloading">Veebikaamera pilti laaditakse endiselt alla</string>
     <string name="webcam_url_url_not_set">Veebikaamera URL ei ole määratud või on tühi</string>
     <string name="widget_theme">Vidinateema</string>

@@ -21,9 +21,12 @@
     <string name="error">Erru!</string>
     <string name="error_occurred_while_attempting_to_update">Erru ida akontese bainhira tenta atu atualiza utilizasaun</string>
     <string name="every_5_minutes">Kada Minutu 5</string>
+    <string name="every_5_seconds">Kada Segundu 5</string>
     <string name="every_10_minutes">Kada Minutu 10</string>
+    <string name="every_10_seconds">Kada Segundu 10</string>
     <string name="every_15_minutes">Kada Minutu 15</string>
     <string name="every_30_minutes">Kada Minutu 30</string>
+    <string name="every_30_seconds">Kada Segundu 30</string>
     <string name="every_hour">Oras ida-idak</string>
     <string name="failed_to_merge_weather_data">La konsege tau hamutuk dadus %1$s ho dadus %2$s</string>
     <string name="failed_to_process_forecast_data">La konsege prosesa dadus previzaun</string>

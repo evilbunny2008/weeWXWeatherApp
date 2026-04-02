@@ -233,6 +233,7 @@ public class weeWXApp extends Application
 
 	final static int UpdateFrequency_default = 1;
 	final static int UpdateInterval_default = 0;
+	final static int webcamInterval_default = 0;
 	final static int mySlider_default = 100;
 	final static int DayNightMode_default = 2;
 	final static int widget_theme_mode_default = 4;
@@ -266,7 +267,7 @@ public class weeWXApp extends Application
 	final static boolean RadarOnForecastScreen = !RadarOnHomeScreen;
 	final static boolean ForecastOnForecastScreen = RadarOnHomeScreen;
 
-	static String[] updateOptions, themeOptions, widgetThemeOptions, updateInterval;
+	static String[] updateOptions, themeOptions, widgetThemeOptions, updateInterval, webcamRefreshOptions;
 
 	static boolean hasBootedFully = false;
 
@@ -467,6 +468,15 @@ public class weeWXApp extends Application
 			getAndroidString(R.string.interval_6h),
 			getAndroidString(R.string.interval_3h),
 			getAndroidString(R.string.interval_hourly),
+		};
+
+		webcamRefreshOptions = new String[]
+		{
+			getAndroidString(R.string.manual_update),
+			getAndroidString(R.string.every_10_seconds),
+			getAndroidString(R.string.every_30_seconds),
+			getAndroidString(R.string.every_60_seconds),
+			getAndroidString(R.string.every_5_minutes),
 		};
 
 		if((boolean)KeyValue.readVar("save_app_debug_logs", save_app_debug_logs_default))

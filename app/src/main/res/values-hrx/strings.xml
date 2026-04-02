@@ -21,9 +21,13 @@
     <string name="error">Feeler!</string>
     <string name="error_occurred_while_attempting_to_update">Een feeler is pasiirt wën mer fersuucht hon ti penutsung aktualisiire</string>
     <string name="every_5_minutes">Yeete 5 Minute</string>
+    <string name="every_5_seconds">Yeete 5 Sekunte</string>
     <string name="every_10_minutes">Yeete 10 Minus</string>
+    <string name="every_10_seconds">Yeete 10 sekunte</string>
     <string name="every_15_minutes">Yeete 15 Minus</string>
     <string name="every_30_minutes">Yeete 30 Minus</string>
+    <string name="every_30_seconds">Yeete 30 sekunte</string>
+    <string name="every_60_seconds">Yeete 60 sekunte</string>
     <string name="every_hour">Yeete xtun</string>
     <string name="failed_to_merge_weather_data">Es is net kefun kep fer ti %1$s data mit te %2$s data se ferklayche</string>
     <string name="failed_to_process_forecast_data">Ferkheerte fer ti protuktsioon fon te data</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Waar net in kontitsioon fer ti %1$s download mache wayl ti URL leese waar</string>
     <string name="weather2">Weter</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Webcam uffrissungs tsayt</string>
     <string name="webcam_still_downloading">Webcam pilt is noch am download mache</string>
     <string name="webcam_url_url_not_set">Webcam URL is niet of is leen</string>
     <string name="widget_theme">Wedget Theema</string>

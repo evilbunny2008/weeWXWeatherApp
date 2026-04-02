@@ -22,9 +22,13 @@
     <string name="error">Error!</string>
     <string name="error_occurred_while_attempting_to_update">An error occurred while attempting to update usage</string>
     <string name="every_5_minutes">Every 5 Minutes</string>
+    <string name="every_5_seconds">Every 5 Seconds</string>
     <string name="every_10_minutes">Every 10 Minutes</string>
+    <string name="every_10_seconds">Every 10 Seconds</string>
     <string name="every_15_minutes">Every 15 Minutes</string>
     <string name="every_30_minutes">Every 30 Minutes</string>
+    <string name="every_30_seconds">Every 30 Seconds</string>
+    <string name="every_60_seconds">Every 60 Seconds</string>
     <string name="every_hour">Every Hour</string>
     <string name="failed_to_merge_weather_data">Failed to merge the %1$s data with the %2$s data</string>
     <string name="failed_to_process_forecast_data">Failed to process forecast data</string>
@@ -133,6 +137,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Wasn\'t able to download the %1$s because the URL was blank</string>
     <string name="weather2">Weather</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Webcam Refresh Time</string>
     <string name="webcam_still_downloading">Webcam image is still downloading.</string>
     <string name="webcam_url_url_not_set">Webcam URL is not set or is blank</string>
     <string name="widget_theme">Widget Theme</string>

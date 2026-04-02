@@ -21,9 +21,13 @@
     <string name="error">ତ୍ରୁଟି!</string>
     <string name="error_occurred_while_attempting_to_update">ବ୍ୟବହାର ଅପଡେଟ୍ କରିବାକୁ ଚେଷ୍ଟା କରିବାବେଳେ ଏକ ତ୍ରୁଟି ଘଟିଗଲା |</string>
     <string name="every_5_minutes">ପ୍ରତି 5 ମିନିଟ୍ |</string>
+    <string name="every_5_seconds">ପ୍ରତି 5 ସେକେଣ୍ଡରେ |</string>
     <string name="every_10_minutes">ପ୍ରତି ୧୦ ମିନିଟ୍ |</string>
+    <string name="every_10_seconds">ପ୍ରତି 10 ସେକେଣ୍ଡରେ |</string>
     <string name="every_15_minutes">ପ୍ରତି 15 ମିନିଟ୍ |</string>
     <string name="every_30_minutes">ପ୍ରତି 30 ମିନିଟ୍ |</string>
+    <string name="every_30_seconds">ପ୍ରତି 30 ସେକେଣ୍ଡରେ |</string>
+    <string name="every_60_seconds">ପ୍ରତି 60 ସେକେଣ୍ଡରେ |</string>
     <string name="every_hour">ପ୍ରତ୍ୟେକ ଘଣ୍ଟା |</string>
     <string name="failed_to_merge_weather_data">%1$s ତଥ୍ୟକୁ%2$s ତଥ୍ୟ ସହିତ ମିଶ୍ରଣ କରିବାରେ ବିଫଳ ହେଲା |</string>
     <string name="failed_to_process_forecast_data">ପୂର୍ବାନୁମାନ ତଥ୍ୟ ପ୍ରକ୍ରିୟାକରଣ କରିବାରେ ବିଫଳ |</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL ଖାଲି ଥିବାରୁ%1$s ଡାଉନଲୋଡ୍ କରିବାକୁ ସକ୍ଷମ ନୁହେଁ |</string>
     <string name="weather2">ପାଣିପାଗ</string>
     <string name="webcam2">ୱେବକ୍ୟାମ |</string>
+    <string name="webcam_refresh_time">ୱେବକ୍ୟାମ ସତେଜ ସମୟ |</string>
     <string name="webcam_still_downloading">ୱେବକ୍ୟାମ ପ୍ରତିଛବି ଏପର୍ଯ୍ୟନ୍ତ ଡାଉନଲୋଡ୍ କରୁଛି |</string>
     <string name="webcam_url_url_not_set">ୱେବକ୍ୟାମ URL ସେଟ୍ ହୋଇନାହିଁ କିମ୍ବା ଖାଲି ଅଛି |</string>
     <string name="widget_theme">ୱିଜେଟ୍ ଥିମ୍ |</string>

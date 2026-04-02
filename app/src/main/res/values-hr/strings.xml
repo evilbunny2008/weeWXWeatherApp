@@ -21,9 +21,13 @@
     <string name="error">Greška!</string>
     <string name="error_occurred_while_attempting_to_update">Došlo je do pogreške prilikom pokušaja ažuriranja upotrebe</string>
     <string name="every_5_minutes">Svakih 5 minuta</string>
+    <string name="every_5_seconds">Svakih 5 sekundi</string>
     <string name="every_10_minutes">Svakih 10 minuta</string>
+    <string name="every_10_seconds">Svakih 10 sekundi</string>
     <string name="every_15_minutes">Svakih 15 minuta</string>
     <string name="every_30_minutes">Svakih 30 minuta</string>
+    <string name="every_30_seconds">Svakih 30 sekundi</string>
+    <string name="every_60_seconds">Svakih 60 sekundi</string>
     <string name="every_hour">Svaki sat</string>
     <string name="failed_to_merge_weather_data">Nije uspjelo spajanje podataka %1$s s podacima %2$s</string>
     <string name="failed_to_process_forecast_data">Obrada podataka predviđanja nije uspjela</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Nije bilo moguće preuzeti %1$s jer je URL bio prazan</string>
     <string name="weather2">Vrijeme</string>
     <string name="webcam2">Web kamera</string>
+    <string name="webcam_refresh_time">Vrijeme osvježavanja web kamere</string>
     <string name="webcam_still_downloading">Slika s web kamere još uvijek se preuzima</string>
     <string name="webcam_url_url_not_set">URL web kamere nije postavljen ili je prazan</string>
     <string name="widget_theme">Tema widgeta</string>
