@@ -100,6 +100,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_labels;
 import static com.odiousapps.weewxweather.weeWXAppCommon.loadOrDownloadImage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.mergeJsonObjects;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 
 @SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag",
@@ -1578,12 +1579,12 @@ public class MainActivity extends FragmentActivity
 			String forecastLocationName = KeyValue.countyName = null;
 
 			boolean validURL = false;
-			boolean validURL1 = false;
 			boolean validURL2 = false;
 			boolean validURL3 = false;
 			boolean validURL5 = false;
 
-			String radtype = "", radarURL = "", forecastURL = "", webcamURL = "", CustomURL = "", appCustomURL, fctype = "", bomtown = "";
+			String oldData = null, jsonData = null, radtype = "", radarURL = "", forecastURL = "", webcamURL = "",
+					CustomURL = "", appCustomURL, fctype = "", bomtown = "";
 			String[] json_urls = new String[json_keys.length];
 
 			String settings_url = settingsURL.getText() != null ? settingsURL.getText().toString().strip() : "";
@@ -1624,6 +1625,8 @@ public class MainActivity extends FragmentActivity
 
 						switch(mb[0])
 						{
+							case "data" -> oldData = mb[1].strip();
+							case "jsondata" -> jsonData = mb[1].strip();
 							case "json-data" -> json_urls[0] = mb[1].strip();
 							case "json-dicts" -> json_urls[1] = mb[1].strip();
 							case "json-last" -> json_urls[2] = mb[1].strip();
@@ -1649,6 +1652,71 @@ public class MainActivity extends FragmentActivity
 				errorDialog(errorStr);
 				return;
 			}
+
+			if(!is_valid_url(json_urls[0]) || !is_valid_url(json_urls[1]) || !is_valid_url(json_urls[2]))
+			{
+				if(is_valid_url(jsonData))
+				{
+					json_urls[0] = jsonData;
+					json_urls[1] = jsonData.replace("inigot-data", "inigo-dicts");
+					json_urls[2] = jsonData.replace("inigot-data", "inigo-last");
+				} else if(is_valid_url(oldData)) {
+					json_urls[0] = jsonData.replace("inigot-data.txt", "inigot-data.json");
+					json_urls[1] = jsonData.replace("inigot-data", "inigo-dicts");
+					json_urls[2] = jsonData.replace("inigot-data", "inigo-last");
+				}
+			}
+
+			for(int i = 0; i < json_urls.length; i++)
+			{
+				if(!is_valid_url(json_urls[i]))
+				{
+					String str = getAndroidString(R.string.wasnt_able_to_download_url_is_blank);
+					errorDialog(String.format(Locale.getDefault(), str, json_labels[i]));
+					return;
+				}
+			}
+
+			for(int i = 0; i < json_urls.length; i++)
+			{
+				boolean validURL1 = false;
+				try
+				{
+					LogMessage("processSettings() Checking " + json_labels[i] + ": " + json_urls[i]);
+					validURL1 = weeWXAppCommon.reallyGetWeather(i, json_urls[i], true);
+				} catch(Exception e) {
+					doStackOutput(e);
+					errorStr = e.getLocalizedMessage();
+				}
+
+				if(errorStr != null && !errorStr.isBlank())
+				{
+					errorDialog(errorStr);
+					return;
+				}
+
+				if(!validURL1)
+				{
+					String str = String.format(getAndroidString(R.string.wasnt_able_to_connect_or_download), json_labels[i], json_urls[i]);
+					errorDialog(str);
+					return;
+				}
+			}
+
+			if(!mergeJsonObjects())
+			{
+				String str = getAndroidString(R.string.failed_to_merge_weather_data);
+				errorDialog(String.format(Locale.getDefault(), str, json_labels[0], json_labels[2]));
+				return;
+			}
+
+			if(!KeyValue.parseDicts())
+			{
+				String str = getAndroidString(R.string.failed_to_process_weather_data);
+				errorDialog(String.format(Locale.getDefault(), str, json_labels[1]));
+				return;
+			}
+
 
 			if(radtype == null || radtype.isBlank())
 			{
@@ -2033,31 +2101,6 @@ public class MainActivity extends FragmentActivity
 			{
 				errorDialog(errorStr);
 				return;
-			}
-
-			for(int i = 0; i < json_urls.length; i++)
-			{
-				try
-				{
-					LogMessage("processSettings() Checking " + json_labels[i] + ": " + json_urls[i]);
-					validURL1 = weeWXAppCommon.reallyGetWeather(i, json_urls[i], true);
-				} catch(Exception e) {
-					doStackOutput(e);
-					errorStr = e.getLocalizedMessage();
-				}
-
-				if(errorStr != null && !errorStr.isBlank())
-				{
-					errorDialog(errorStr);
-					return;
-				}
-
-				if(!validURL1)
-				{
-					String str = String.format(getAndroidString(R.string.wasnt_able_to_connect_or_download), json_labels[i], json_urls[i]);
-					errorDialog(str);
-					return;
-				}
 			}
 
 			LogMessage("processSettings() forecast checking: " + forecastURL);

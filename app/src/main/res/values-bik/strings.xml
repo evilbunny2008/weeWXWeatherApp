@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Kada 15 Minuto</string>
     <string name="every_30_minutes">Kada 30 Minuto</string>
     <string name="every_hour">Kada Oras</string>
-    <string name="failed_to_process_forecast_data">Napalya sa pagproseso sa paghulat sa datos</string>
+	<string name="failed_to_process_forecast_data">Napalya sa pagproseso sa paghulat sa datos</string>
+    <string name="failed_to_process_weather_data">Dai naproseso nin tama an datos kan panahon gikan sa saimong server, partikularmente an datos kan %1$s</string>
     <string name="fgColour">Welor Palimpre sa Kolor sa Pangenotan</string>
     <string name="fileURL">Ilaog an URL sa saindong mga setting.txt</string>
     <string name="force_dark_mode">Puwersang Madiklom na Mode</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">Dai nakakonekta o nakaka-download radar= imahe hale sa internet</string>
     <string name="wasnt_able_to_connect_settings">Dai nakakonekta o naka-download kan mga setting sa saindong server</string>
     <string name="wasnt_able_to_connect_webcam_url">Dai nakakonekta o naka-download nin webcam na imahe hale sa saindong server</string>
+    <string name="wasnt_able_to_download_url_is_blank">Dai na-download an %1$s huli ta blangko an URL</string>
     <string name="weather2">Kamugtakan nin panahon</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Nag-dodownload pa an imahen sa Webcam</string>

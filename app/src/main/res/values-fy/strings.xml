@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Koe gjin ferbining meitsje of radar=-ôfbylding fan it ynternet downloade</string>
     <string name="wasnt_able_to_connect_settings">Koe de ynstellings net ferbine of downloade fan jo tsjinner</string>
     <string name="wasnt_able_to_connect_webcam_url">Koe gjin ferbining meitsje of in webcamôfbylding fan jo tsjinner downloade</string>
+    <string name="wasnt_able_to_download_url_is_blank">Koe de %1$s net downloade omdat de URL leech wie</string>
     <string name="weather2">Wetter</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Webcam-ôfbylding wurdt noch ynladen</string>

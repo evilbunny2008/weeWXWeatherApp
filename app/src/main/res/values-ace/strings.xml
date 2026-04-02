@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Tiëp 15 Minute</string>
     <string name="every_30_minutes">Tiëp 30 Minut</string>
     <string name="every_hour">Tiep Jam</string>
-    <string name="failed_to_process_forecast_data">Gagal keu geuproses data ramalan</string>
+	<string name="failed_to_process_forecast_data">Gagal keu geuproses data ramalan</string>
+    <string name="failed_to_process_weather_data">Gagal bak geuproses deungon beutoi data cuaca dari server droeneuh, khusus jih data %1$s</string>
     <string name="fgColour">Widget Pencuri Warna Lintas</string>
     <string name="fileURL">Tapeutamong URL keu pengaturan droeneuh.txt</string>
     <string name="force_dark_mode">Sat Mode Gelap</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">Hana jeuet meuhubong atawa download radar= gamba dari internet</string>
     <string name="wasnt_able_to_connect_settings">Hana jeuet meuhubong atawa download pengaturan dari server droeneuh</string>
     <string name="wasnt_able_to_connect_webcam_url">Hana jeuet meuhubong atawa download gamba webcam dari server droeneuh</string>
+    <string name="wasnt_able_to_download_url_is_blank">Hana jeuet neu-download %1$s sabab URL jih kosong</string>
     <string name="weather2">Kutika</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Gambar Webcam mantong download</string>

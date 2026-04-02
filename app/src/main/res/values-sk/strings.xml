@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Nepodarilo sa pripojiť alebo stiahnuť radar= obrázok z internetu</string>
     <string name="wasnt_able_to_connect_settings">Nepodarilo sa pripojiť alebo stiahnuť nastavenia z vášho servera</string>
     <string name="wasnt_able_to_connect_webcam_url">Nepodarilo sa pripojiť alebo stiahnuť obrázok webovej kamery z vášho servera</string>
+    <string name="wasnt_able_to_download_url_is_blank">Nepodarilo sa stiahnuť %1$s, pretože adresa URL bola prázdna</string>
     <string name="weather2">Počasie</string>
     <string name="webcam2">Webová kamera</string>
     <string name="webcam_still_downloading">Obrázok webovej kamery sa stále sťahuje</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Tsis muaj peev xwm txuas lossis rub tawm radar = duab los ntawm is taws nem</string>
     <string name="wasnt_able_to_connect_settings">Tsis muaj peev xwm txuas lossis rub tawm cov chaw ntawm koj lub server</string>
     <string name="wasnt_able_to_connect_webcam_url">Tsis muaj peev xwm txuas lossis rub tawm lub webcam duab los ntawm koj lub server</string>
+    <string name="wasnt_able_to_download_url_is_blank">Tsis muaj peev xwm rub tawm %1$s vim qhov URL tsis muaj</string>
     <string name="weather2">Huab cua</string>
     <string name="webcam2">Lub webcam</string>
     <string name="webcam_still_downloading">Webcam duab tseem rub tawm</string>

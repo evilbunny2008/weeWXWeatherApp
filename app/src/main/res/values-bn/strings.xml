@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ইন্টারনেট থেকে রাডার = ইমেজ সংযোগ বা ডাউনলোড করতে সক্ষম হয়নি</string>
     <string name="wasnt_able_to_connect_settings">আপনার সার্ভার থেকে সেটিংস সংযোগ বা ডাউনলোড করতে সক্ষম ছিল না</string>
     <string name="wasnt_able_to_connect_webcam_url">আপনার সার্ভার থেকে একটি ওয়েবক্যাম ছবি সংযোগ বা ডাউনলোড করতে সক্ষম হয়নি৷</string>
+    <string name="wasnt_able_to_download_url_is_blank">URLটি ফাঁকা থাকার কারণে %1$s ডাউনলোড করতে পারিনি৷</string>
     <string name="weather2">আবহাওয়া</string>
     <string name="webcam2">ওয়েবক্যাম</string>
     <string name="webcam_still_downloading">ওয়েবক্যামের ছবি এখনও ডাউনলোড হচ্ছে।</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">رادار = توردىن رادار = رەسىمنى ئۇلىيالمىدى</string>
     <string name="wasnt_able_to_connect_settings">مۇلازىمېتىردىن تەڭشەكلەرنى ئۇلىيالمىدى ياكى چۈشۈرەلمىدى</string>
     <string name="wasnt_able_to_connect_webcam_url">مۇلازىمېتىردىن تور كامېراسى سۈرىتىنى ئۇلىيالمىدى ياكى چۈشۈرگىلى بولمايدۇ</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL بوش بولغاچقا%1$s نى چۈشۈرەلمىدى</string>
     <string name="weather2">ھاۋارايى</string>
     <string name="webcam2">تور كامېراسى</string>
     <string name="webcam_still_downloading">تور كامېراسى يەنىلا چۈشۈرۈۋاتىدۇ</string>

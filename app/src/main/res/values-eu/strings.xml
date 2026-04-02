@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ezin izan da konektatu edo deskargatu radar= irudia Internetetik</string>
     <string name="wasnt_able_to_connect_settings">Ezin izan dira zure zerbitzaritik konektatu edo deskargatu ezarpenak</string>
     <string name="wasnt_able_to_connect_webcam_url">Ezin izan da zure zerbitzaritik konektatu edo deskargatu webcam irudi bat</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ezin izan da %1$s deskargatu URLa hutsik zegoelako</string>
     <string name="weather2">Eguraldia</string>
     <string name="webcam2">Webkamera</string>
     <string name="webcam_still_downloading">Webkameraren irudia deskargatzen ari da oraindik</string>

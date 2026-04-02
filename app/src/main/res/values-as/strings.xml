@@ -25,7 +25,8 @@
     <string name="every_15_minutes">প্ৰতি ১৫ মিনিটৰ মূৰে মূৰে ৷</string>
     <string name="every_30_minutes">প্ৰতি ৩০ মিনিটৰ মূৰে মূৰে ৷</string>
     <string name="every_hour">প্ৰতি ঘণ্টাত</string>
-    <string name="failed_to_process_forecast_data">পূৰ্বাভাস তথ্য প্ৰক্ৰিয়াকৰণ কৰাত ব্যৰ্থ</string>
+	<string name="failed_to_process_forecast_data">পূৰ্বাভাস তথ্য প্ৰক্ৰিয়াকৰণ কৰাত ব্যৰ্থ</string>
+    <string name="failed_to_process_weather_data">আপোনাৰ চাৰ্ভাৰৰ পৰা বতৰ তথ্য সঠিকভাৱে প্ৰক্ৰিয়া কৰাত ব্যৰ্থ, বিশেষকৈ %1$s তথ্য</string>
     <string name="fgColour">ৱিজেট ফ\'ৰগ্ৰাউণ্ড ৰং পিকাৰ</string>
     <string name="fileURL">আপোনাৰ Settings.txt ত URL সুমুৱাওক</string>
     <string name="force_dark_mode">ফোৰ্চ ডাৰ্ক মোড</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">ইণ্টাৰনেটৰ পৰা Radar= ছবি সংযোগ বা ডাউনলোড কৰিব পৰা নাছিল</string>
     <string name="wasnt_able_to_connect_settings">আপোনাৰ চাৰ্ভাৰৰ পৰা সংহতিসমূহ সংযোগ বা ডাউনল\'ড কৰিব পৰা নাছিল</string>
     <string name="wasnt_able_to_connect_webcam_url">আপোনাৰ চাৰ্ভাৰৰ পৰা এটা WebCam ছবি সংযোগ বা ডাউনল\'ড কৰিব পৰা নাছিল</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s ডাউনল\'ড কৰিব পৰা নাছিল কাৰণ URL খালী আছিল</string>
     <string name="weather2">বতৰ</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">WebCam image এতিয়াও ডাউনলোড কৰি আছে।</string>

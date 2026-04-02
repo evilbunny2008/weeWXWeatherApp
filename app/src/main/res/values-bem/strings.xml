@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Cila maminiti 15 Amaminiti</string>
     <string name="every_30_minutes">Cila maminiti 30 Amaminiti</string>
     <string name="every_hour">Intanda yonse</string>
-    <string name="failed_to_process_forecast_data">Ukufilwa ukubomba amashiwi ya kusesema</string>
+	<string name="failed_to_process_forecast_data">Ukufilwa ukubomba amashiwi ya kusesema</string>
+    <string name="failed_to_process_weather_data">Cafilwa ukubomba bwino amashiwi ya miceele ukufuma ku cifulo cakubikamo, ukucilisha amashiwi ya %1$s</string>
     <string name="fgColour">Icipe ca ku ntanshi ica Makumbi ya pa Muulu</string>
     <string name="fileURL">Ingisheni URL ku mipangilwe yenu.txt</string>
     <string name="force_dark_mode">Inkondo yafiita</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">Tacaali na maka yakusuntinkanya nangu ukukopa radar= icikope ukufuma pali intaneti</string>
     <string name="wasnt_able_to_connect_settings">Tacaali na maka ya kulundanya nelyo ukukopa ifyo mulepanga</string>
     <string name="wasnt_able_to_connect_webcam_url">Tacaali na maka yakusuntinkanya nangu ukukopa icikope ca webu ukufuma kuli server wenu</string>
+    <string name="wasnt_able_to_download_url_is_blank">Tatwakwanishe ukusenda %1$s pantu URL yali iyabulamo nangu cimo</string>
     <string name="weather2">Imiceele</string>
     <string name="webcam2">Intaneti</string>
     <string name="webcam_still_downloading">Icikope ca pa Intaneti cicili cilekopololwa</string>

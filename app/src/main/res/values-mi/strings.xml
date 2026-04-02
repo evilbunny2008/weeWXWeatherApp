@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Kaore i taea te hono atu ranei ki te tango i te radar = whakaahua mai i te Ipurangi</string>
     <string name="wasnt_able_to_connect_settings">Kaore i taea te hono atu ranei ki te tango i nga tautuhinga mai i to kaitono</string>
     <string name="wasnt_able_to_connect_webcam_url">Kaore i taea te hono atu ranei ki te tango i tetahi whakaahua Webcam mai i to kaituku</string>
+    <string name="wasnt_able_to_download_url_is_blank">Kāore i taea te tango i te %1$s nā te mea he pātea te URL</string>
     <string name="weather2">Āhua o te rangi</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Ko te whakaahua Webcam kei te tango tonu</string>

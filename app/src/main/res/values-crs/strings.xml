@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Pa ti kapab konekte oubyen telesarz radar= zimaz sorti dan internet</string>
     <string name="wasnt_able_to_connect_settings">Pa ti kapab konekte oubyen telesarz bann paramet avek ou server</string>
     <string name="wasnt_able_to_connect_webcam_url">Pa ti kapab konekte oubyen telesarz en zimaz web avek ou server</string>
+    <string name="wasnt_able_to_download_url_is_blank">pa ti kapab telesarz %1$s akoz URL ti vid</string>
     <string name="weather2">Letan</string>
     <string name="webcam2">En web</string>
     <string name="webcam_still_downloading">Zimaz web i ankor telesarz</string>

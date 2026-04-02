@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Интернеттен радар= ресимни багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_connect_settings">Серверинъизден параметрлерни багълап я да юклеп оламады</string>
     <string name="wasnt_able_to_connect_webcam_url">Серверинъизден веб-камера ресимини багълап я да юклеп оламады</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s юклеп оламады, чюнки URL бош эди</string>
     <string name="weather2">Ава вазиети</string>
     <string name="webcam2">Веб-камера</string>
     <string name="webcam_still_downloading">Веб-камера ресими шимди де юклей</string>

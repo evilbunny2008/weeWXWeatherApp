@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Radar= a inzawm thei lo va, a download thei lo bawk</string>
     <string name="wasnt_able_to_connect_settings">i server atanga settings connect emaw download emaw theih a ni lo</string>
     <string name="wasnt_able_to_connect_webcam_url">I server atanga webcam image connect emaw download emaw theih a ni lo</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL a blank avangin %1$s chu a download thei lo</string>
     <string name="weather2">Khawchin</string>
     <string name="webcam2">Webcam 100 a ni</string>
     <string name="webcam_still_downloading">Webcam image chu a la download zel a</string>

@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Kubang\' oro 15</string>
     <string name="every_30_minutes">Kubang\' 30</string>
     <string name="every_hour">Ng\'ato kawa</string>
-    <string name="failed_to_process_forecast_data">Ka wawinjo lembe ma jukiewo i lembe maeni</string>
+	<string name="failed_to_process_forecast_data">Ka wawinjo lembe ma jukiewo i lembe maeni</string>
+    <string name="failed_to_process_weather_data">Etimo ngo tic maber ku lembe mi koth kud i server peri, asaga lembe pa %1$s</string>
     <string name="fgColour">Jadit mi ot yath mi ng\'om zoo</string>
     <string name="fileURL">Keth URL i kabedo peri.txt</string>
     <string name="force_dark_mode">Ka ng\'ato otimo kamano, obiro bedo gi geno mar timo kamano</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ne ok nyal tudruok kata ng\'ado rad= cal ma wuok e intanet</string>
     <string name="wasnt_able_to_connect_settings">Ne ok nyal tudruok kata keto gik ma ne itiyogo e server mari</string>
     <string name="wasnt_able_to_connect_webcam_url">Ne ok nyal tudruok kata keto picha mar webcam kuom server mari</string>
+    <string name="wasnt_able_to_download_url_is_blank">Acopo ngo ni golo %1$s kum URL ne ubedu nono</string>
     <string name="weather2">Aloka loka pa polo</string>
     <string name="webcam2">Kum</string>
     <string name="webcam_still_downloading">Kite ma watio ko ku kusika mwa mir Internet ubekadhu kud i ie</string>

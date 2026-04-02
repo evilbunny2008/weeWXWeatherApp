@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Ganup 15 Menit</string>
     <string name="every_30_minutes">Setiap 30 Menit</string>
     <string name="every_hour">Setiap Jam</string>
-    <string name="failed_to_process_forecast_data">Gagal mangolah data ramalan</string>
+	<string name="failed_to_process_forecast_data">Gagal mangolah data ramalan</string>
+    <string name="failed_to_process_weather_data">Gagal do denggan mangolah data cuaca sian servermuna, khususna data %1$s</string>
     <string name="fgColour">Warna Latar Mula Depan Pemilihan</string>
     <string name="fileURL">Masukkon ma URL tu pengaturan muna.txt</string>
     <string name="force_dark_mode">Paksa Mode Gelap</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">Dang boi sambung manang mangunduh radar= gambar sian internet</string>
     <string name="wasnt_able_to_connect_settings">Ndang boi dihubungkon manang diunduh hamu pengaturan sian server muna</string>
     <string name="wasnt_able_to_connect_webcam_url">Ndang boi dihubungkon manang diunduh hamu gambar webcam sian server muna</string>
+    <string name="wasnt_able_to_download_url_is_blank">Dang boi diunduh %1$s ala kosong URL na</string>
     <string name="weather2">Ari</string>
     <string name="webcam2">Webem</string>
     <string name="webcam_still_downloading">Gambar Webm tong do diunduh</string>

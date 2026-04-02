@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Saan a nakakonekta wenno naka-download iti radar= image manipud iti Internet</string>
     <string name="wasnt_able_to_connect_settings">saan a nakakonekta wenno mai-download dagiti settings manipud iti server-mo</string>
     <string name="wasnt_able_to_connect_webcam_url">Saan a nakakonekta wenno naka-download iti webcam image manipud iti server-mo</string>
+    <string name="wasnt_able_to_download_url_is_blank">Saan a nai-download ti %1$s gapu ta blangko ti URL</string>
     <string name="weather2">Tiempo</string>
     <string name="webcam2">webcam</string>
     <string name="webcam_still_downloading">Ti ladawan ti webcam ket ag-download pay laeng</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ഇൻ്റർനെറ്റിൽ നിന്ന് റഡാർ= ഇമേജ് ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_settings">നിങ്ങളുടെ സെർവറിൽ നിന്ന് ക്രമീകരണങ്ങൾ ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_webcam_url">നിങ്ങളുടെ സെർവറിൽ നിന്ന് ഒരു വെബ്‌ക്യാം ഇമേജ് കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL ശൂന്യമായതിനാൽ %1$s ഡൗൺലോഡ് ചെയ്യാൻ കഴിഞ്ഞില്ല</string>
     <string name="weather2">കാലാവസ്ഥ</string>
     <string name="webcam2">വെബ്ക്യാം</string>
     <string name="webcam_still_downloading">വെബ്‌ക്യാം ചിത്രം ഇപ്പോഴും ഡൗൺലോഡ് ചെയ്യുന്നു</string>

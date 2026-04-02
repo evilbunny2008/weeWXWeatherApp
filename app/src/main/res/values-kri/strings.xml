@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">No bin ebul fɔ kɔnɛkt ɔ dawnlod reda= imej frɔm di intanɛt</string>
     <string name="wasnt_able_to_connect_settings">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod di sɛtin dɛn frɔm yu sava</string>
     <string name="wasnt_able_to_connect_webcam_url">nɔ bin ebul fɔ kɔnɛkt ɔ dawnlod wan wɛbkam imej frɔm yu sava</string>
+    <string name="wasnt_able_to_download_url_is_blank">Nɔ bin ebul fɔ dawnlod di %1$s dɛn bikɔs di URL bin blank</string>
     <string name="weather2">Wɛda</string>
     <string name="webcam2">Wɛbkam</string>
     <string name="webcam_still_downloading">Webcam pikchɔ stil de dawnlod</string>

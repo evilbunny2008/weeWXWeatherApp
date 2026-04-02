@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ვერ მოხერხდა რადარის= სურათის დაკავშირება ან ჩამოტვირთვა ინტერნეტიდან</string>
     <string name="wasnt_able_to_connect_settings">თქვენი სერვერიდან პარამეტრების დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="wasnt_able_to_connect_webcam_url">ვერ მოხერხდა ვებკამერის სურათის დაკავშირება ან ჩამოტვირთვა თქვენი სერვერიდან</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s-ის ჩამოტვირთვა ვერ მოხერხდა, რადგან URL ცარიელი იყო</string>
     <string name="weather2">ამინდი</string>
     <string name="webcam2">ვებკამერა</string>
     <string name="webcam_still_downloading">ვებკამერის სურათი ჯერ კიდევ იტვირთება</string>

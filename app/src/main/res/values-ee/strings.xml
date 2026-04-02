@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Mete ŋu do ka alo wɔ radar= nɔnɔmetata tso internet dzi o</string>
     <string name="wasnt_able_to_connect_settings">Mete ŋu do ka alo wɔ ɖoɖoawo tso wò server dzi o</string>
     <string name="wasnt_able_to_connect_webcam_url">Mete ŋu do ka alo wɔ webcam nɔnɔmetata aɖe tso wò server dzi o</string>
+    <string name="wasnt_able_to_download_url_is_blank">Meteŋu ɖe %1$s la ƒe kɔpi o elabena URL la nɔ ƒuƒlu</string>
     <string name="weather2">Ya me</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Webcam ƒe nɔnɔmetata la gakpɔtɔ le eƒe kɔpi wɔm</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ora bisa nyambung utawa ndownload radar = gambar saka internet</string>
     <string name="wasnt_able_to_connect_settings">Ora bisa nyambung utawa ndownload setelan saka server sampeyan</string>
     <string name="wasnt_able_to_connect_webcam_url">Ora bisa nyambung utawa ndownload gambar webcam saka server sampeyan</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ora bisa ngundhuh %1$s amarga URL kosong</string>
     <string name="weather2">Cuaca</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Gambar Webcam isih download</string>

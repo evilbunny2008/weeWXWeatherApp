@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">喺互聯網上面連接唔到或者下載 radar = 圖片</string>
     <string name="wasnt_able_to_connect_settings">唔可以喺伺服器連接或者下載設定</string>
     <string name="wasnt_able_to_connect_webcam_url">喺伺服器上面連接唔到或者下載網絡攝影機圖片</string>
+    <string name="wasnt_able_to_download_url_is_blank">因為網址係空白，所以下載唔到 %1$s</string>
     <string name="weather2">天氣</string>
     <string name="webcam2">網絡攝影機</string>
     <string name="webcam_still_downloading">網絡攝影機圖片仲係下載緊。</string>

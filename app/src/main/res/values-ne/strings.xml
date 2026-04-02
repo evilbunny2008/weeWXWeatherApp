@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">इन्टरनेटबाट radar= छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
     <string name="wasnt_able_to_connect_settings">तपाइँको सर्भरबाट सेटिङहरू जडान गर्न वा डाउनलोड गर्न सक्षम भएन</string>
     <string name="wasnt_able_to_connect_webcam_url">तपाईंको सर्भरबाट वेबक्याम छवि जडान वा डाउनलोड गर्न सक्षम भएन</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL खाली भएकोले %1$s डाउनलोड गर्न सकिएन</string>
     <string name="weather2">मौसम</string>
     <string name="webcam2">वेबक्याम</string>
     <string name="webcam_still_downloading">वेबक्याम छवि अझै डाउनलोड भइरहेको छ।</string>

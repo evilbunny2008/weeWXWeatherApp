@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">לא הצליח להתחבר או להוריד תמונת radar= מהאינטרנט</string>
     <string name="wasnt_able_to_connect_settings">לא הצליח להתחבר או להוריד את ההגדרות מהשרת שלך</string>
     <string name="wasnt_able_to_connect_webcam_url">לא הצליח להתחבר או להוריד תמונת מצלמת אינטרנט מהשרת שלך</string>
+    <string name="wasnt_able_to_download_url_is_blank">לא ניתן היה להוריד את %1$s מכיוון שכתובת האתר הייתה ריקה</string>
     <string name="weather2">מֶזֶג אֲוִיר</string>
     <string name="webcam2">מצלמת אינטרנט</string>
     <string name="webcam_still_downloading">תמונת מצלמת האינטרנט עדיין מורידה</string>

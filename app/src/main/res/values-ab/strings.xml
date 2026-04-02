@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Минуҭцыԥхьаӡа 15</string>
     <string name="every_30_minutes">Минуҭ 30 зегьы</string>
     <string name="every_hour">Сааҭцыԥхьаӡа</string>
-    <string name="failed_to_process_forecast_data">Аԥхьагәаҭаратә дыррақәа аус рыдулара алыршахеит</string>
+	<string name="failed_to_process_forecast_data">Аԥхьагәаҭаратә дыррақәа аус рыдулара алыршахеит</string>
+    <string name="failed_to_process_weather_data">Аҳауатә дыррақәа шәсервер аҟынтәи ииашаны аус рыдулара ауам, ҷыдала %1$s адыррақәа</string>
     <string name="fgColour">Авиджет Ԥасатәи Аԥштәы апикер</string>
     <string name="fileURL">Иҭажәгал URL colrands.txt</string>
     <string name="force_dark_mode">Амчхаратә режим амч</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">Интернет аҟынтәи радар=исахьа аҿаҳәара ма ахәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_settings">Усервер аҟынтәи архиарақәа реимадара ма рыхәыҵаҵара алшара амамызт</string>
     <string name="wasnt_able_to_connect_webcam_url">Усервер аҟынтәи ауеб-камера асахьа аидҳәалара ма ахәыҵаҵара алшара амамызт</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s ақәгара алымшеит, избан акәзар URL ҭацәын</string>
     <string name="weather2">Амш зеиԥшроу</string>
     <string name="webcam2">Ауебкамера</string>
     <string name="webcam_still_downloading">Webcam асахьа уажәгьы ихәыҵгоит</string>

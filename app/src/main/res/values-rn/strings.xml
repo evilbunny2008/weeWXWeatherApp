@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ntiyashoboye guhuza canke gukuraho radar= ishusho kuri internet</string>
     <string name="wasnt_able_to_connect_settings">Ntiyashoboye guhuza canke gukuraho ivyagezwe kuri server yawe</string>
     <string name="wasnt_able_to_connect_webcam_url">Ntiyashoboye guhuza canke gukuraho ishusho y\'urubuga kuri server yawe</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ntiyashoboye gukuraho %1$s kuko URL yari ubusa</string>
     <string name="weather2">Ikirere</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Ishusho ya Webcam iracariko irakura</string>

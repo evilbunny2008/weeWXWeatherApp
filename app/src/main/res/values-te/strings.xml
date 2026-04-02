@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ఇంటర్నెట్ నుండి రాడార్= ఇమేజ్‌ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="wasnt_able_to_connect_settings">మీ సర్వర్ నుండి సెట్టింగ్‌లను కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="wasnt_able_to_connect_webcam_url">మీ సర్వర్ నుండి వెబ్‌క్యామ్ చిత్రాన్ని కనెక్ట్ చేయడం లేదా డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL ఖాళీగా ఉన్నందున %1$sని డౌన్‌లోడ్ చేయడం సాధ్యపడలేదు</string>
     <string name="weather2">వాతావరణం</string>
     <string name="webcam2">వెబ్‌క్యామ్</string>
     <string name="webcam_still_downloading">వెబ్‌క్యామ్ చిత్రం ఇప్పటికీ డౌన్‌లోడ్ అవుతోంది</string>

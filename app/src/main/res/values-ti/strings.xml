@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ራዳር= ምስሊ ካብ ኢንተርነት ንምትእስሳር ወይ ምውራድ ኣይከኣለን</string>
     <string name="wasnt_able_to_connect_settings">ካብ ሰርቨርካ ነቲ ቅጥዕታት ከተራኽቦ ወይ ከተውርዶ ኣይከኣለን ።</string>
     <string name="wasnt_able_to_connect_webcam_url">ካብ ሰርቨርካ ናይ ዌብካም ምስሊ ከተራኽብ ወይ ከተውርዶ ኣይከኣለትን</string>
+    <string name="wasnt_able_to_download_url_is_blank">እቲ URL ባዶ ስለ ዝነበረ %1$s ከውርድ ኣይከኣለን</string>
     <string name="weather2">አየር</string>
     <string name="webcam2">ዌብካም</string>
     <string name="webcam_still_downloading">ናይ ዌብካም ምስሊ ገና ይወርድ ኣሎ።</string>

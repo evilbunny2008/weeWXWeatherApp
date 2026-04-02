@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ʻAʻole i hiki ke hoʻopili a hoʻoiho i ka radar = kiʻi mai ka pūnaewele</string>
     <string name="wasnt_able_to_connect_settings">ʻAʻole i hiki ke hoʻopili a hoʻoiho i nā hoʻonohonoho mai kāu kikowaena</string>
     <string name="wasnt_able_to_connect_webcam_url">ʻAʻole hiki iā ia ke hoʻopili a hoʻoiho i kahi kiʻi pūnaewele pūnaewele mai kāu kikowaena</string>
+    <string name="wasnt_able_to_download_url_is_blank">ʻAʻole hiki ke hoʻoiho i ka %1$s no ka mea ua hakahaka ka URL</string>
     <string name="weather2">Aloha hime</string>
     <string name="webcam2">Lā Pūnaewele</string>
     <string name="webcam_still_downloading">Ke kiʻi nei i ke kiʻi WebCam</string>

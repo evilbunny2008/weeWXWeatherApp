@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Нисам могао да се повежем или преузмем радар= слику са интернета</string>
     <string name="wasnt_able_to_connect_settings">Нисам могао да се повежем или преузмем подешавања са вашег сервера</string>
     <string name="wasnt_able_to_connect_webcam_url">Нисам могао да се повежем или преузмем слику веб камере са вашег сервера</string>
+    <string name="wasnt_able_to_download_url_is_blank">Није било могуће преузети %1$s јер је УРЛ био празан</string>
     <string name="weather2">Време</string>
     <string name="webcam2">Веб камера</string>
     <string name="webcam_still_downloading">Слика са веб камере се још увек преузима</string>

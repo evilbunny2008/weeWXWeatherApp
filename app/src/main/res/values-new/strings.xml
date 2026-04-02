@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">इन्टरनेटं राडार= किपा स्वाये बाय् डाउनलोड याये मफुत ।</string>
     <string name="wasnt_able_to_connect_settings">छिगु सर्भरं सेटिङ्गयात स्वाये मफुत बाय् डाउनलोड याये मफुत ।</string>
     <string name="wasnt_able_to_connect_webcam_url">छिगु सर्भरं वेबक्यामया किपा स्वाये मफुत बाय् डाउनलोड याये मफुत ।</string>
+    <string name="wasnt_able_to_download_url_is_blank">यूआरएल प्वंगु जूगुलिं %1$s डाउनलोड याये मफुत ।</string>
     <string name="weather2">मौसम</string>
     <string name="webcam2">वेबक्यानल</string>
     <string name="webcam_still_downloading">वेबक्याम इमेज आः नं डाउनलोड यानाच्वंगु दु ।</string>

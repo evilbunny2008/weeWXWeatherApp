@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Kunne ikke oprette forbindelse eller downloade radar=-billede fra internettet</string>
     <string name="wasnt_able_to_connect_settings">Kunne ikke oprette forbindelse eller downloade indstillingerne fra din server</string>
     <string name="wasnt_able_to_connect_webcam_url">Kunne ikke oprette forbindelse eller downloade et webcam-billede fra din server</string>
+    <string name="wasnt_able_to_download_url_is_blank">Kunne ikke downloade %1$s, fordi URL\'en var tom</string>
     <string name="weather2">Vejr</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Webcam-billedet downloades stadig</string>

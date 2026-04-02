@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ei voinut muodostaa yhteyttä tai ladata tutkakuvaa Internetistä</string>
     <string name="wasnt_able_to_connect_settings">Yhteyden muodostaminen tai asetusten lataaminen palvelimeltasi ei onnistunut</string>
     <string name="wasnt_able_to_connect_webcam_url">Yhteyden muodostaminen tai verkkokamerakuvan lataaminen palvelimeltasi ei onnistunut</string>
+    <string name="wasnt_able_to_download_url_is_blank">Tiedostoa %1$s ei voitu ladata, koska URL-osoite oli tyhjä</string>
     <string name="weather2">Sää</string>
     <string name="webcam2">Verkkokamera</string>
     <string name="webcam_still_downloading">Verkkokameran kuvaa ladataan edelleen</string>

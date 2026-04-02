@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو radar= انٽرنيٽ تان تصوير</string>
     <string name="wasnt_able_to_connect_settings">توهان جي سرور مان سيٽنگون ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هئي</string>
     <string name="wasnt_able_to_connect_webcam_url">توهان جي سرور مان ويب ڪيم تصوير ڳنڍڻ يا ڊائون لوڊ ڪرڻ جي قابل نه هو</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s ڊائون لوڊ نه ٿي سگهيو ڇاڪاڻ ته URL خالي هو</string>
     <string name="weather2">موسم</string>
     <string name="webcam2">ويب ڪيم</string>
     <string name="webcam_still_downloading">ويب ڪيم تصوير اڃا ڊائون لوڊ ٿي رهي آهي</string>

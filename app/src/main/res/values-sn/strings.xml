@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Haina kukwanisa kubatana kana kurodha radar = mufananidzo kubva kuInternet</string>
     <string name="wasnt_able_to_connect_settings">Haina kukwanisa kubatana kana kurodha iyo marongero kubva kune yako server</string>
     <string name="wasnt_able_to_connect_webcam_url">Haina kukwanisa kubatana kana kurodha wewebhu mufananidzo kubva kune yako server</string>
+    <string name="wasnt_able_to_download_url_is_blank">Hatina kukwanisa kudhaunirodha %1$s nekuti URL yanga isina chinhu</string>
     <string name="weather2">Weather</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Webcam mufananidzo uchiri kurodha pasi</string>

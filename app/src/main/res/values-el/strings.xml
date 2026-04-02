@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Δεν ήταν δυνατή η σύνδεση ή η λήψη εικόνας ραντάρ= από το διαδίκτυο</string>
     <string name="wasnt_able_to_connect_settings">Δεν ήταν δυνατή η σύνδεση ή η λήψη των ρυθμίσεων από τον διακομιστή σας</string>
     <string name="wasnt_able_to_connect_webcam_url">Δεν ήταν δυνατή η σύνδεση ή η λήψη εικόνας κάμερας web από τον διακομιστή σας</string>
+    <string name="wasnt_able_to_download_url_is_blank">Δεν ήταν δυνατή η λήψη του %1$s επειδή η διεύθυνση URL ήταν κενή</string>
     <string name="weather2">Καιρός</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Η λήψη της εικόνας της κάμερας web εξακολουθεί να γίνεται</string>

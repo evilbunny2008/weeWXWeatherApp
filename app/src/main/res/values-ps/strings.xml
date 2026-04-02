@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">د انټرنیټ څخه د رادار = عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_connect_settings">ستاسو د سرور څخه تنظیمات وصل یا ډاونلوډ کولو توان نه درلود</string>
     <string name="wasnt_able_to_connect_webcam_url">ستاسو د سرور څخه د ویب کیم عکس سره نښلولو یا ډاونلوډ کولو توان نه درلود</string>
+    <string name="wasnt_able_to_download_url_is_blank">د %1$s ډاونلوډ کولو توان نه درلود ځکه چې URL خالي و</string>
     <string name="weather2">هوا</string>
     <string name="webcam2">ویب کیم</string>
     <string name="webcam_still_downloading">د ویب کیم عکس لاهم ډاونلوډ کیږي</string>

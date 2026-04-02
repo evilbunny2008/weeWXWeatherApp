@@ -25,7 +25,8 @@
     <string name="every_15_minutes">በየ 15 ደቂቃው</string>
     <string name="every_30_minutes">በየ 30 ደቂቃዎች</string>
     <string name="every_hour">በየሰዓቱ</string>
-    <string name="failed_to_process_forecast_data">ትንበያ ውሂብን ማከናወን አልተሳካም</string>
+	<string name="failed_to_process_forecast_data">ትንበያ ውሂብን ማከናወን አልተሳካም</string>
+    <string name="failed_to_process_weather_data">የአየር ሁኔታ ውሂብን ከአገልጋይዎ በተለይም የ%1$s ውሂብን በትክክል ማካሄድ አልተሳካም።</string>
     <string name="fgColour">የግርጌ ማስታወሻዎች የፊት ቀለም</string>
     <string name="fileURL">ወደ ቅንብሮችዎ ዩአርኤል ያስገቡ</string>
     <string name="force_dark_mode">ጨካኝ ሁነታን ያስገድዱ</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">የራአር = ምስል ከበይነመረቡ ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_connect_settings">ቅንብሮቹን ከአገልጋይዎ ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
     <string name="wasnt_able_to_connect_webcam_url">የድር ካሜራዎን ከአገልጋይዎ ጋር መገናኘት ወይም ማውረድ አልተቻለም</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL ባዶ ስለነበር %1$sን ማውረድ አልቻልኩም</string>
     <string name="weather2">የአየር ሁኔታ</string>
     <string name="webcam2">ዌብ ካሜራ</string>
     <string name="webcam_still_downloading">የድር ካሜራ ምስል አሁንም ያውርዱ</string>

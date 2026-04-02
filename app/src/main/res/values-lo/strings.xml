@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດ Radar = ຈາກອິນເຕີເນັດ</string>
     <string name="wasnt_able_to_connect_settings">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດການຕັ້ງຄ່າຈາກເຊີບເວີຂອງທ່ານ</string>
     <string name="wasnt_able_to_connect_webcam_url">ບໍ່ສາມາດເຊື່ອມຕໍ່ຫຼືດາວໂຫລດຮູບພາບ webcam ຈາກ server ຂອງທ່ານ</string>
+    <string name="wasnt_able_to_download_url_is_blank">ບໍ່ສາມາດດາວໂຫຼດ %1$s ໄດ້ເນື່ອງຈາກ URL ຫວ່າງເປົ່າ</string>
     <string name="weather2">ສະພາບອາກາດ</string>
     <string name="webcam2">webcam</string>
     <string name="webcam_still_downloading">ຮູບພາບ webcam ຍັງຄົງດາວໂຫລດຢູ່</string>

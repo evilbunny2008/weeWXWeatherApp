@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">インターネットに接続できなかった、またはレーダー=画像をインターネットからダウンロードできませんでした</string>
     <string name="wasnt_able_to_connect_settings">サーバーに接続できなかったり、サーバーから設定をダウンロードできませんでした</string>
     <string name="wasnt_able_to_connect_webcam_url">サーバーに接続できなかったり、サーバーから Web カメラ画像をダウンロードできませんでした</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL が空白のため、%1$s をダウンロードできませんでした</string>
     <string name="weather2">天気</string>
     <string name="webcam2">ウェブカメラ</string>
     <string name="webcam_still_downloading">ウェブカメラの画像はまだダウンロード中です。</string>

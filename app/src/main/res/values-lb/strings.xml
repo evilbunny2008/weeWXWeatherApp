@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Konnt net konnektéieren oder Radar= Bild vum Internet eroflueden</string>
     <string name="wasnt_able_to_connect_settings">Konnt d\'Astellunge vun Ärem Server net konnektéieren oder eroflueden</string>
     <string name="wasnt_able_to_connect_webcam_url">Konnt net e Webcambild vun Ärem Server verbannen oder eroflueden</string>
+    <string name="wasnt_able_to_download_url_is_blank">Konnt den %1$s net eroflueden well d\'URL eidel war</string>
     <string name="weather2">Wieder</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Webcam Bild gëtt nach ëmmer erofgelueden</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">İnternetten radar= resmi bağlanamadı veya indirilemedi</string>
     <string name="wasnt_able_to_connect_settings">Sunucunuza bağlanılamadı veya ayarlar indirilemedi</string>
     <string name="wasnt_able_to_connect_webcam_url">Sunucunuza bağlanılamadı veya web kamerası görüntüsü indirilemedi</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL boş olduğundan %1$s indirilemedi</string>
     <string name="weather2">Hava durumu</string>
     <string name="webcam2">Web kamerası</string>
     <string name="webcam_still_downloading">Web kamerası görüntüsü hâlâ indiriliyor</string>

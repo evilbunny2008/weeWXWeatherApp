@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Nu am putut să mă conectez sau să descărcați imaginea radar= de pe internet</string>
     <string name="wasnt_able_to_connect_settings">Nu am putut să mă conectez sau să descărcați setările de pe serverul dvs</string>
     <string name="wasnt_able_to_connect_webcam_url">Nu am putut să mă conectez sau să descărcați o imagine de cameră web de pe serverul dvs</string>
+    <string name="wasnt_able_to_download_url_is_blank">Nu am putut descărca %1$s deoarece adresa URL era goală</string>
     <string name="weather2">Vreme</string>
     <string name="webcam2">Cameră web</string>
     <string name="webcam_still_downloading">Imaginea camerei web încă se descarcă</string>

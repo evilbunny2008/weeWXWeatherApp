@@ -3833,7 +3833,7 @@ class weeWXAppCommon
 
 	static boolean checkURL(String url, boolean nocache) throws InterruptedException, IOException
 	{
-		if(url == null || url.isBlank())
+		if(!is_valid_url(url))
 			return false;
 
 		OkHttpClient client = NetworkClient.getInstance(url, nocache);
@@ -3881,6 +3881,9 @@ class weeWXAppCommon
 
 	static String downloadString(String url, boolean nocache) throws InterruptedException, IOException
 	{
+		if(!is_valid_url(url))
+			return null;
+
 		OkHttpClient client = NetworkClient.getInstance(url, nocache);
 
 		return reallyDownloadString(client, url, 0, nocache);

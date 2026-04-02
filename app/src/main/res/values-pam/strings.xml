@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">E ya mekapagkonekta o makababa ing radar= larawan ibat king internet</string>
     <string name="wasnt_able_to_connect_settings">E ya mekapagkonekta o mag-download kareng setses ibat king server mu</string>
     <string name="wasnt_able_to_connect_webcam_url">E ya mekapagkonekta o makadownload ing metung a larawan a webcam ibat king server mu</string>
+    <string name="wasnt_able_to_download_url_is_blank">Eku agyung i-download ing %1$s uling blanku ya ing URL</string>
     <string name="weather2">Panahun</string>
     <string name="webcam2">Wibcam</string>
     <string name="webcam_still_downloading">Ing larawan ning Webcam pa rin ing pamagdownload</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Methu â chysylltu na lawrlwytho delwedd radar= o\'r rhyngrwyd</string>
     <string name="wasnt_able_to_connect_settings">Methu â chysylltu neu lawrlwytho\'r gosodiadau o\'ch gweinydd</string>
     <string name="wasnt_able_to_connect_webcam_url">Methu â chysylltu na lawrlwytho delwedd gwe-gamera o\'ch gweinydd</string>
+    <string name="wasnt_able_to_download_url_is_blank">Methu lawrlwytho\'r %1$s oherwydd bod yr URL yn wag</string>
     <string name="weather2">Tywydd</string>
     <string name="webcam2">Gwegamera</string>
     <string name="webcam_still_downloading">Mae delwedd gwe-gamera yn dal i gael ei lawrlwytho</string>

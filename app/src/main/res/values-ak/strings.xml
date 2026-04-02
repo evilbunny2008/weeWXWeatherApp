@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Simma 15 biara</string>
     <string name="every_30_minutes">Simma 30 biara</string>
     <string name="every_hour">Dɔnhwerew biara</string>
-    <string name="failed_to_process_forecast_data">antumi anni nsɛm a wɔahyɛ ho nkɔm ho dwuma ho dwuma</string>
+	<string name="failed_to_process_forecast_data">antumi anni nsɛm a wɔahyɛ ho nkɔm ho dwuma ho dwuma</string>
+    <string name="failed_to_process_weather_data">Entumi anni wim tebea ho nsɛm a efi wo server no so no ho dwuma yiye, titiriw %1$s data no</string>
     <string name="fgColour">Widget anim kɔla picker</string>
     <string name="fileURL">Hyehyɛ URL no wɔ wo nhyehyɛe mu.TXT</string>
     <string name="force_dark_mode">Hyɛ dark mode</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">Na ontumi mfa radar= mfonini mfi Intanɛt so anaasɛ ɔntwe</string>
     <string name="wasnt_able_to_connect_settings">Na ontumi mfa nhyehyɛe no nkɔ anaasɛ ɔntwe mfi wo server no so</string>
     <string name="wasnt_able_to_connect_webcam_url">Na ontumi mfa webcam mfonini bi nkɔ anaasɛ ɔntwe mfi wo server so</string>
+    <string name="wasnt_able_to_download_url_is_blank">Wontumi ntwe %1$s no efisɛ na URL no yɛ blank</string>
     <string name="weather2">Wiem bɔberɛ</string>
     <string name="webcam2">wɛbsaet kamera</string>
     <string name="webcam_still_downloading">Webcam mfonini no da so ara retwe</string>

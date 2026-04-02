@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Nun putìa cunnèttiri o scaricari radar= mmàggini di internet</string>
     <string name="wasnt_able_to_connect_settings">Non putìa cunnetti o scaricari li paràmitri dû server</string>
     <string name="wasnt_able_to_connect_webcam_url">Non putìa cunnetti o scaricari n\'immaggini dâ webcam dû to sirver</string>
+    <string name="wasnt_able_to_download_url_is_blank">Nun fu capaci di scaricari li %1$s picchì l\'URL era vacanti</string>
     <string name="weather2">Clima</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">L\'immaggini Webcam sta ancora scaricannu</string>

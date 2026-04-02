@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">انٹرنیٹ سے ریڈار = امیج کو جوڑنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
     <string name="wasnt_able_to_connect_settings">آپ کے سرور سے ترتیبات سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
     <string name="wasnt_able_to_connect_webcam_url">آپ کے سرور سے ویب کیم امیج سے رابطہ قائم کرنے یا ڈاؤن لوڈ کرنے کے قابل نہیں تھا</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s کو ڈاؤن لوڈ کرنے کے قابل نہیں تھا کیونکہ URL خالی تھا۔</string>
     <string name="weather2">موسم</string>
     <string name="webcam2">ویب کیم</string>
     <string name="webcam_still_downloading">ویب کیم امیج ابھی بھی ڈاؤن لوڈ ہورہا ہے۔</string>

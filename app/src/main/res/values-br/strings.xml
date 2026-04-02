@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ skeudenn diwar internet</string>
     <string name="wasnt_able_to_connect_settings">N\'eo ket bet gouest da gevreañ pe da bellgargañ an arventennoù diwar ho servijer</string>
     <string name="wasnt_able_to_connect_webcam_url">N\'eo ket bet gouest da genderc\'hel pe da bellgargañ ur skeudenn webcam diwar ho servijer</string>
+    <string name="wasnt_able_to_download_url_is_blank">N\'eo ket bet gouest da bellgargañ an %1$s rak goullo e oa an URL</string>
     <string name="weather2">Amzer</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Pellgargañ a ra skeudenn Webcam c\'hoazh</string>

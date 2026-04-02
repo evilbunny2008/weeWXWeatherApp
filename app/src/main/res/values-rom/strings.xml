@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Nashti te konektirinel pes vaj te lav radar= image katar o interneto</string>
     <string name="wasnt_able_to_connect_settings">Nashti te konektirinel vaj te tele lel e settingura katar tumaro server</string>
     <string name="wasnt_able_to_connect_webcam_url">Nashti te konektirinelpe vaj te lav tele jekh webcam image katar o server</string>
+    <string name="wasnt_able_to_download_url_is_blank">Nashti te lav tele o %1$s soske o URL sas putardo</string>
     <string name="weather2">Vrjama</string>
     <string name="webcam2">O Webcamo</string>
     <string name="webcam_still_downloading">Webcam-imago si inke tele tele</string>

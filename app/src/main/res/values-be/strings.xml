@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Кожныя 15 хвілін</string>
     <string name="every_30_minutes">Кожныя 30 хвілін</string>
     <string name="every_hour">Кожную гадзіну</string>
-    <string name="failed_to_process_forecast_data">Не ўдалося апрацаваць даныя прагнозу</string>
+	<string name="failed_to_process_forecast_data">Не ўдалося апрацаваць даныя прагнозу</string>
+    <string name="failed_to_process_weather_data">Не ўдалося правільна апрацаваць даныя надвор\'я з вашага сервера, у прыватнасці даныя %1$s</string>
     <string name="fgColour">Выбар колеру пярэдняга плана віджэта</string>
     <string name="fileURL">Увядзіце URL у файл settings.txt</string>
     <string name="force_dark_mode">Уключыць цёмны рэжым</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">Не ўдалося падключыцца або загрузіць radar= выяву з Інтэрнэту</string>
     <string name="wasnt_able_to_connect_settings">Не ўдалося падключыцца або загрузіць налады з вашага сервера</string>
     <string name="wasnt_able_to_connect_webcam_url">Не ўдалося падключыцца або спампаваць выяву вэб-камеры з вашага сервера</string>
+    <string name="wasnt_able_to_download_url_is_blank">Не ўдалося загрузіць %1$s, таму што URL быў пустым</string>
     <string name="weather2">Надвор\'е</string>
     <string name="webcam2">вэб-камера</string>
     <string name="webcam_still_downloading">Выява з вэб-камеры ўсё яшчэ спампоўваецца</string>

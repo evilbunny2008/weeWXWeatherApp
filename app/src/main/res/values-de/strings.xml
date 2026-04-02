@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Es konnte keine Verbindung hergestellt oder das Radar=Bild aus dem Internet heruntergeladen werden</string>
     <string name="wasnt_able_to_connect_settings">Es konnte keine Verbindung zu Ihrem Server hergestellt oder die Einstellungen von diesem heruntergeladen werden</string>
     <string name="wasnt_able_to_connect_webcam_url">Es konnte keine Verbindung zu Ihrem Server hergestellt oder ein Webcam-Bild von diesem heruntergeladen werden</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s konnten nicht heruntergeladen werden, da die URL leer war</string>
     <string name="weather2">Wetter</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Das Webcam-Bild wird noch heruntergeladen</string>

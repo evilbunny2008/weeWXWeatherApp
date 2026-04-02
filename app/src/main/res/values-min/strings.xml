@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Indak mampu manyambuang atau mandownload radar= gambar dari internet</string>
     <string name="wasnt_able_to_connect_settings">Indak dapek mahubuangkan atau mangunduakan pangaturan dari server Sanak</string>
     <string name="wasnt_able_to_connect_webcam_url">Indak dapek mahubuangkan atau mangunduakan gambar webcam dari server Sanak</string>
+    <string name="wasnt_able_to_download_url_is_blank">Indak dapek mangunduakan %1$s karano URLnyo kosong</string>
     <string name="weather2">Cuaca</string>
     <string name="webcam2">Simanan</string>
     <string name="webcam_still_downloading">Gambar webcam masih mangunduakan</string>

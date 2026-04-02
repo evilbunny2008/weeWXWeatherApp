@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ne povis konekti aŭ elŝuti radar= bildon de la interreto</string>
     <string name="wasnt_able_to_connect_settings">Ne povis konekti aŭ elŝuti la agordojn de via servilo</string>
     <string name="wasnt_able_to_connect_webcam_url">Ne povis konekti aŭ elŝuti retkameraan bildon de via servilo</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ne povis elŝuti la %1$s ĉar la URL estis malplena</string>
     <string name="weather2">Vetero</string>
     <string name="webcam2">Retkamerao</string>
     <string name="webcam_still_downloading">Retkamera bildo ankoraŭ elŝutas</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">No l\'ea bon de connettise ò scaricâ o radar= imagine da l\'Internet</string>
     <string name="wasnt_able_to_connect_settings">No l\'ea bon de connettise ò scaricâ e impostaçioin da-o seu server</string>
     <string name="wasnt_able_to_connect_webcam_url">No l\'ea bon de connettise ò scaricâ unn\'imagine webcam da-o seu server</string>
+    <string name="wasnt_able_to_download_url_is_blank">No l\'é stæto poscibile scaricâ i %1$s perché l\'URL o l\'ea veuo</string>
     <string name="weather2">Climma</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">L\'imagine webcam a l\'é ancon o download</string>

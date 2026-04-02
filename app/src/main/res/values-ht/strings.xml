@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Pa t \'kapab konekte oswa telechaje rada = imaj soti nan entènèt la</string>
     <string name="wasnt_able_to_connect_settings">Pa t \'kapab konekte oswa telechaje anviwònman yo nan sèvè ou a</string>
     <string name="wasnt_able_to_connect_webcam_url">Pa t \'kapab konekte oswa telechaje yon imaj webcam nan sèvè ou a</string>
+    <string name="wasnt_able_to_download_url_is_blank">Pa t \'kapab telechaje %1$s yo paske URL la te vid</string>
     <string name="weather2">Tan</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Imaj webcam toujou ap telechaje</string>

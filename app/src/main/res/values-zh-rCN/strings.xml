@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">无法从互联网连接或下载雷达=图像</string>
     <string name="wasnt_able_to_connect_settings">无法连接您的服务器或从您的服务器下载设置</string>
     <string name="wasnt_able_to_connect_webcam_url">无法连接或从您的服务器下载网络摄像头图像</string>
+    <string name="wasnt_able_to_download_url_is_blank">由于 URL 为空，无法下载 %1$s</string>
     <string name="weather2">天气</string>
     <string name="webcam2">摄像头</string>
     <string name="webcam_still_downloading">网络摄像头图像仍在下载。</string>

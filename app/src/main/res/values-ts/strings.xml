@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">a nga swi kotanga ku hlanganisa kumbe ku kopa xifaniso xa radar= ku suka eka inthanete</string>
     <string name="wasnt_able_to_connect_settings">a nga swi kotanga ku hlanganisa kumbe ku kopa swiletelo eka sevha ya wena</string>
     <string name="wasnt_able_to_connect_webcam_url">A nga swi kotanga ku hlanganisa kumbe ku kopa xifaniso xa webcam eka sevha ya wena</string>
+    <string name="wasnt_able_to_download_url_is_blank">A yi swi kotanga ku kopa %1$s hikuva URL a yi nga ri na nchumu</string>
     <string name="weather2">Maxelo</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Xifaniso xa webcam xa ha downloada</string>

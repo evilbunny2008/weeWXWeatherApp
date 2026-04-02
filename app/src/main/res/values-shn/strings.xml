@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ဢမ်ႇမေႃၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈ radar= ၶႅပ်းႁၢင်ႈ တီႈၼႂ်းဢိၼ်ႇတႃႇၼႅတ်ႉ</string>
     <string name="wasnt_able_to_connect_settings">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် ၸၼ်ဢဝ် လွင်ႈတင်ႈၶိုၼ်ႈ တီႈၼႂ်း Server ၸဝ်ႈၵဝ်ႇၼၼ်ႉ</string>
     <string name="wasnt_able_to_connect_webcam_url">ဢမ်ႇၸၢင်ႈၵပ်းသိုပ်ႇ ဢမ်ႇၼၼ် လူင်းလႆႈ ၶႅပ်းႁၢင်ႈ ဝႅပ်ႉသၢႆႉ တီႈၼႂ်း Server ၸဝ်ႈၵဝ်ႇ</string>
+    <string name="wasnt_able_to_download_url_is_blank">ဢမ်ႇၸၢင်ႈလူင်းလႆႈ %1$s ယွၼ်ႉဝႃႈ URL မၼ်းပဝ်ႇဝႆႉ</string>
     <string name="weather2">ၾိင်ႈၾႃႉ</string>
     <string name="webcam2">ဝႅပ်ႉသၢႆႉ</string>
     <string name="webcam_still_downloading">ၶႅပ်းႁၢင်ႈ Webcam တိုၵ်ႉလူင်းဝႆႉယူႇၶႃႈ</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">100 doc#1159 Nabeja spiejeigs savīnuot voi lejupluodēt radaru= attāls nu interneta</string>
     <string name="wasnt_able_to_connect_settings">100 doc#1159 Nabeja spiejeiga savīnuot voi lejupluodēt īstatejumus nu jūs servera</string>
     <string name="wasnt_able_to_connect_webcam_url">100 doc#1159 Nabeja spiejeiga savīnuot voi lejupluodēt škārsteikla kamerys attālu nu jūs servera</string>
+    <string name="wasnt_able_to_download_url_is_blank">Navarēja lejupluodēt %1$s, partū ka URL beja tukšs</string>
     <string name="weather2">Laikapstuokli</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Tīšsaistis attāls vēļ lejupluodej</string>

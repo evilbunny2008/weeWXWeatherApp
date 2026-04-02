@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ayikwazanga ukuqhagamshela okanye ukukhuphela i-radar = umfanekiso ovela kwi-Intanethi</string>
     <string name="wasnt_able_to_connect_settings">Ayikwazanga ukuqhagamshela okanye ukhuphele useto kwiseva yakho</string>
     <string name="wasnt_able_to_connect_webcam_url">Ayikwazanga ukuqhagamshela okanye ukhuphele umfanekiso wewebhu kwiseva yakho</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ayikwazanga kukhuphela i-%1$s kuba i-URL ibingenanto</string>
     <string name="weather2">Imozulu</string>
     <string name="webcam2">Iwebcam</string>
     <string name="webcam_still_downloading">Umfanekiso wewebhu weWebcam usazikhuphela</string>

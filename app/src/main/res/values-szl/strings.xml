@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Niy można połōnczyć ani pobiyrać ôbraz radar=</string>
     <string name="wasnt_able_to_connect_settings">Niy poradzić połōnczyć ani pobiyrać ustawiynia ze swojigo serwera</string>
     <string name="wasnt_able_to_connect_webcam_url">Niy może sie łōnczyć ani pobrać ôbrazu kamery internetowego ze swojigo serwera</string>
+    <string name="wasnt_able_to_download_url_is_blank">Niy mōg pobrać %1$s, pōniywoż URL bōł prōzny</string>
     <string name="weather2">Pogoda</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Ôbraz internetowy durch sie ściyro</string>

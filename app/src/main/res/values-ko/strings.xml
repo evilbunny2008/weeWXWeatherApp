@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">인터넷에서 레이더= 이미지를 연결하거나 다운로드할 수 없습니다</string>
     <string name="wasnt_able_to_connect_settings">서버에 연결하거나 설정을 다운로드할 수 없습니다</string>
     <string name="wasnt_able_to_connect_webcam_url">서버에서 웹캠 이미지를 연결하거나 다운로드할 수 없습니다</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL이 비어 있어서 %1$s을(를) 다운로드할 수 없습니다</string>
     <string name="weather2">날씨</string>
     <string name="webcam2">웹캠</string>
     <string name="webcam_still_downloading">웹캠 이미지가 아직 다운로드 중입니다</string>

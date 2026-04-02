@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Интернетээс холбогдож, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_settings">Таны серверээс тохиргоог холбож, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_webcam_url">Таны серверээс вэбкамик зургийг холбох, татаж авах боломжгүй байсан</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL хоосон байсан тул %1$s-г татаж авч чадсангүй</string>
     <string name="weather2">Цаг агаар</string>
     <string name="webcam2">Сокктер</string>
     <string name="webcam_still_downloading">WebCAM зураг татаж байна</string>

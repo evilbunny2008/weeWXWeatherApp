@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">E ne e sa khone ho hokela kapa ho jarolla radar = setšoantšo se tsoang inthaneteng</string>
     <string name="wasnt_able_to_connect_settings">E ne e sa khone ho hokela kapa ho jarolla litlhophiso ho seva ea hau</string>
     <string name="wasnt_able_to_connect_webcam_url">E ne e sa khone ho hokela kapa ho jarolla setšoantšo sa webcam ho tsoa ho seva ea hau</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ha rea ​​atleha ho khoasolla %1$s hobane URL e ne e se na letho</string>
     <string name="weather2">Meteo</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Setšoantšo sa Webcam se ntse se jarolla</string>

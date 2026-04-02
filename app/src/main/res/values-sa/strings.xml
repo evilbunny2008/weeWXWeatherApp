@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">अन्तर्जालतः Radar= चित्रं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
     <string name="wasnt_able_to_connect_settings">भवतः सर्वरतः सेटिंग्स् संयोजयितुं डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
     <string name="wasnt_able_to_connect_webcam_url">भवतः सर्वरतः वेबकैम-चित्रं संयोजयितुं वा डाउनलोड् कर्तुं वा न शक्तवान् आसीत् ।</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s अवतरणं कर्तुं न शक्तवान् यतः URL रिक्तम् आसीत्</string>
     <string name="weather2">वातावरणम्‌</string>
     <string name="webcam2">वेबकैम 2019।</string>
     <string name="webcam_still_downloading">WebCam इमेज अद्यापि डाउनलोड् भवति।</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Nie udało się połączyć ani pobrać obrazu radar= z Internetu</string>
     <string name="wasnt_able_to_connect_settings">Nie udało się połączyć lub pobrać ustawień z Twojego serwera</string>
     <string name="wasnt_able_to_connect_webcam_url">Nie udało się połączyć lub pobrać obrazu z kamery internetowej z Twojego serwera</string>
+    <string name="wasnt_able_to_download_url_is_blank">Nie udało się pobrać %1$s, ponieważ adres URL był pusty</string>
     <string name="weather2">Pogoda</string>
     <string name="webcam2">Kamera internetowa</string>
     <string name="webcam_still_downloading">Obraz z kamery internetowej jest nadal pobierany</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Интернет гыч радар= образым ушен але скачать скачать лийын огыл</string>
     <string name="wasnt_able_to_connect_settings">Тендан сервер гыч настройкым ыштен але скачать лийын огыл</string>
     <string name="wasnt_able_to_connect_webcam_url">Тендан сервер гыч веб-камер образым ушен але скачать лийын огыл</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s-ым скачать ыштен кертын огыл, вет URL-адрес яра лийын</string>
     <string name="weather2">Игече</string>
     <string name="webcam2">Веб-камер</string>
     <string name="webcam_still_downloading">Веб-камер образ эше скачать</string>

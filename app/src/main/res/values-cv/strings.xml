@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Интернетран радар= радар= ӳкерчӗке ҫыхӑнтарма е скачать тума пултарайман</string>
     <string name="wasnt_able_to_connect_settings">Настройкăсене сирĕн сервертан çыхăнтарма е скачать тума пултарайман</string>
     <string name="wasnt_able_to_connect_webcam_url">Сирĕн сервертан веб-камера ÿкерчĕкне çыхăнтарма е скачать тума пултарайман</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL пушӑ пулнӑран %1$s скачать тума май килмерӗ</string>
     <string name="weather2">Ҫут-ҫанталӑк</string>
     <string name="webcam2">Веб-камера</string>
     <string name="webcam_still_downloading">Веб-камерăн ÿкерчĕкĕ халĕ те скачать тăвать</string>

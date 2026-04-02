@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">azalaki na makoki te ya ko connecter to ko télécharger radar= image na internet</string>
     <string name="wasnt_able_to_connect_settings">azalaki na makoki te ya ko connecter to ko télécharger ba paramètres na serveur na yo</string>
     <string name="wasnt_able_to_connect_webcam_url">azalaki na makoki te ya ko connecter to ko télécharger image ya webcam na serveur na yo</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ezalaki na makoki te ya kozwa ba %1$s mpo URL ezalaki mpamba</string>
     <string name="weather2">Mopepe</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Webcam image ezali kaka ko télécharger</string>

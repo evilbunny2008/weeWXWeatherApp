@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ndaikatúikuri oñembojoaju térã omboguejy radar= ta\'ãnga internet-gui</string>
     <string name="wasnt_able_to_connect_settings">Ndaikatúikuri ombojoaju térã omboguejy umi ñemboheko nde servidor-gui</string>
     <string name="wasnt_able_to_connect_webcam_url">Ndaikatúikuri oñembojoaju térã omboguejy peteĩ webcam ra\'ãnga nde servidor-gui</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ndaikatúikuri omboguejy umi %1$s URL oĩgui mbytépe</string>
     <string name="weather2">Ára</string>
     <string name="webcam2">Webcam rehegua</string>
     <string name="webcam_still_downloading">Ta\'ãnga webcam omboguejy gueteri</string>

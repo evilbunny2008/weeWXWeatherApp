@@ -26,7 +26,9 @@
     <string name="every_15_minutes">Every 15 Minutes</string>
     <string name="every_30_minutes">Every 30 Minutes</string>
     <string name="every_hour">Every Hour</string>
-    <string name="failed_to_process_forecast_data">Failed to process forecast data</string>
+	<string name="failed_to_merge_weather_data">Failed to merge the %1$s data with the %2$s data</string>
+	<string name="failed_to_process_forecast_data">Failed to process forecast data</string>
+    <string name="failed_to_process_weather_data">Failed to correctly process the weather data from your server, specifically the %1$s data</string>
     <string name="fgColour">Widget Foreground Colour Picker</string>
     <string name="fileURL">Enter the URL to your settings.txt</string>
     <string name="force_dark_mode">Force Dark Mode</string>
@@ -128,6 +130,7 @@
     <string name="wasnt_able_to_connect_radar_image">Wasn\'t able to connect or download radar= image from the internet</string>
     <string name="wasnt_able_to_connect_settings">Wasn\'t able to connect or download the settings from your server</string>
     <string name="wasnt_able_to_connect_webcam_url">Wasn\'t able to connect or download a webcam image from your server</string>
+    <string name="wasnt_able_to_download_url_is_blank">Wasn\'t able to download the %1$s because the URL was blank</string>
     <string name="weather2">Weather</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Webcam image is still downloading.</string>

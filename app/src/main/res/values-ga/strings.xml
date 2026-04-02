@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Níorbh fhéidir íomhá radar= a nascadh ná a íoslódáil ón Idirlíon</string>
     <string name="wasnt_able_to_connect_settings">Níorbh fhéidir na socruithe a nascadh nó a íoslódáil ó do fhreastalaí</string>
     <string name="wasnt_able_to_connect_webcam_url">Níorbh fhéidir íomhá ceamara gréasáin a nascadh nó a íoslódáil ó do fhreastalaí</string>
+    <string name="wasnt_able_to_download_url_is_blank">Níorbh fhéidir %1$s a íoslódáil toisc go raibh an URL bán</string>
     <string name="weather2">Aimsir</string>
     <string name="webcam2">Ceamara gréasáin</string>
     <string name="webcam_still_downloading">Tá íomhá ceamara gréasáin á íoslódáil go fóill</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Hakuweza kuunganisha au kupakua rada = picha kutoka kwa mtandao</string>
     <string name="wasnt_able_to_connect_settings">Hakuweza kuunganisha au kupakua mipangilio kutoka kwa seva yako</string>
     <string name="wasnt_able_to_connect_webcam_url">Hakuweza kuunganisha au kupakua picha ya wavuti kutoka kwa seva yako</string>
+    <string name="wasnt_able_to_download_url_is_blank">Haikuweza kupakua %1$s kwa sababu URL ilikuwa tupu</string>
     <string name="weather2">Hali ya hewa</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Picha ya Webcam bado inapakua</string>

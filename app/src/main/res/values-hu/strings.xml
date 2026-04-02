@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Nem sikerült csatlakozni vagy letölteni a radar=képet az internetről</string>
     <string name="wasnt_able_to_connect_settings">Nem sikerült csatlakozni vagy letölteni a beállításokat a szerverről</string>
     <string name="wasnt_able_to_connect_webcam_url">Nem sikerült csatlakozni vagy letölteni a webkamera képét a szerverről</string>
+    <string name="wasnt_able_to_download_url_is_blank">Nem sikerült letölteni a %1$s fájlt, mert az URL üres volt</string>
     <string name="weather2">Időjárás</string>
     <string name="webcam2">Webkamera</string>
     <string name="webcam_still_downloading">A webkamera képének letöltése még folyamatban van</string>

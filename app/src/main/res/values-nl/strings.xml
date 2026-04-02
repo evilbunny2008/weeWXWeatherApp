@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Kon geen verbinding maken of radar=-afbeelding downloaden van internet</string>
     <string name="wasnt_able_to_connect_settings">Kan geen verbinding maken of de instellingen downloaden van uw server</string>
     <string name="wasnt_able_to_connect_webcam_url">Kan geen verbinding maken met of een webcambeeld downloaden van uw server</string>
+    <string name="wasnt_able_to_download_url_is_blank">Kon de %1$s niet downloaden omdat de URL leeg was</string>
     <string name="weather2">Weer</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Het webcambeeld wordt nog steeds gedownload</string>

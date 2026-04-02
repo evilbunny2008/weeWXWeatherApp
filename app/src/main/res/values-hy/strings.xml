@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Չհաջողվեց միացնել կամ ներբեռնել Radar= պատկերը ինտերնետից</string>
     <string name="wasnt_able_to_connect_settings">Չհաջողվեց միացնել կամ ներբեռնել կարգավորումները ձեր սերվերից</string>
     <string name="wasnt_able_to_connect_webcam_url">Չհաջողվեց միացնել կամ ներբեռնել վեբ-տեսախցիկի պատկերը ձեր սերվերից</string>
+    <string name="wasnt_able_to_download_url_is_blank">Չհաջողվեց ներբեռնել %1$s-ը, քանի որ URL-ը դատարկ էր</string>
     <string name="weather2">Եղանակ</string>
     <string name="webcam2">Վեբ տեսախցիկ</string>
     <string name="webcam_still_downloading">Տեսախցիկի պատկերը դեռ ներբեռնվում է:</string>

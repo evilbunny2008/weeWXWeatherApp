@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Wasn\'t able okuyunga oba okuwanula radar= ekifaananyi okuva ku yintaneeti</string>
     <string name="wasnt_able_to_connect_settings">Wasn\'t able okuyunga oba okuwanula settings okuva ku server yo</string>
     <string name="wasnt_able_to_connect_webcam_url">Wasn\'t able kuyungako oba okuwanula webcam ekifaananyi okuva ku server yo</string>
+    <string name="wasnt_able_to_download_url_is_blank">Teyasobodde kuwanula %1$s kubanga URL yali njereere</string>
     <string name="weather2">Obudde</string>
     <string name="webcam2">webcam</string>
     <string name="webcam_still_downloading">Webcam ekifaananyi kikyawanula</string>

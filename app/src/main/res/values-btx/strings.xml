@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Labo ngasup menyambungken ntah pe download radar= gambar ibas internet</string>
     <string name="wasnt_able_to_connect_settings">Labo banci ihubungken ntah pe i-download pengaturen i bas serverndu nari</string>
     <string name="wasnt_able_to_connect_webcam_url">Labo banci ihubungken ntah pe i-downloadndu gambar webcam i bas serverndu nari</string>
+    <string name="wasnt_able_to_download_url_is_blank">Labo banci iunduh %1$s erkiteken URLna kosong</string>
     <string name="weather2">Tewen</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Gambar Webcam enda tetap download</string>

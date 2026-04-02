@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Tikabaasa kukwatanisa nari okutunga ekishushani kya radar= kuruga aha intaneeti</string>
     <string name="wasnt_able_to_connect_settings">Tikabaasa kukwatanisa nari okutunga ebitebeekanisiibwe kuruga ahari server yaawe</string>
     <string name="wasnt_able_to_connect_webcam_url">Tikabaasa kukwatanisa nari okutunga ekishushani kya weebu kuruga aha server yaawe</string>
+    <string name="wasnt_able_to_download_url_is_blank">Tibarabaasize kutunga %1$s ahabwokuba URL ekaba eri busha</string>
     <string name="weather2">Kujerenisa</string>
     <string name="webcam2">Webuka</string>
     <string name="webcam_still_downloading">Ekishushani kya Webcam kikiine</string>

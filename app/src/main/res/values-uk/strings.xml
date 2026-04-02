@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Не вдалося підключитися або завантажити радар = зображення з Інтернету</string>
     <string name="wasnt_able_to_connect_settings">Не вдалося підключитися або завантажити налаштування з вашого сервера</string>
     <string name="wasnt_able_to_connect_webcam_url">Не вдалося підключитися або завантажити зображення веб-камери з вашого сервера</string>
+    <string name="wasnt_able_to_download_url_is_blank">Не вдалося завантажити %1$s, оскільки URL-адреса була пустою</string>
     <string name="weather2">Погода</string>
     <string name="webcam2">веб-камера</string>
     <string name="webcam_still_downloading">Зображення веб-камери все ще завантажується</string>

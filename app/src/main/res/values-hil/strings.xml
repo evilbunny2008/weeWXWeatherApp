@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Indi makahimo sa pagkonektar ukon pag-download sang radar= imahe gikan sa internet</string>
     <string name="wasnt_able_to_connect_settings">Indi makahimo sa pagkonektar ukon pag-download sang mga setting gikan sa imo server</string>
     <string name="wasnt_able_to_connect_webcam_url">Indi makahimo sa pagkonektar ukon pag-download sang isa ka imahe sang webcam gikan sa imo server</string>
+    <string name="wasnt_able_to_download_url_is_blank">Indi ma-download ang %1$s bangod blangko ang URL</string>
     <string name="weather2">Klima</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Naga-download pa ang imahe sang webcam</string>

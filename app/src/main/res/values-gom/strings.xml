@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">इंटरनॅटा वयल्यान Radar= प्रतिमा जोडपाक वा डाउनलोड करपाक शकलो ना</string>
     <string name="wasnt_able_to_connect_settings">तुमच्या सर्वरा वयल्यान सेटिंग्ज जोडपाक वा डाउनलोड करूंक शकलो ना</string>
     <string name="wasnt_able_to_connect_webcam_url">तुमच्या सर्वरा वयल्यान वेबकॅम प्रतिमा जोडपाक वा डाउनलोड करूंक शकली ना</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL रिकामे आशिल्ल्यान %1$s डाउनलोड करूंक शकलो ना</string>
     <string name="weather2">हवामान</string>
     <string name="webcam2">वेबकॅम 1</string>
     <string name="webcam_still_downloading">वेबकॅम इमेज अजूनय डाउनलोड करपाक लागल्या</string>

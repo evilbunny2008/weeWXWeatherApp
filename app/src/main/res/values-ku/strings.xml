@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Nikaribû ku wêneyê radar= ji înternetê ve girêbide an dakêşîne</string>
     <string name="wasnt_able_to_connect_settings">Nekarî mîhengan ji servera xwe ve girêbide an dakêşîne</string>
     <string name="wasnt_able_to_connect_webcam_url">Nekarî wêneyek webcamê ji servera xwe ve girêbide an dakêşîne</string>
+    <string name="wasnt_able_to_download_url_is_blank">Nekarî %1$s daxe ji ber ku URL vala bû</string>
     <string name="weather2">Hewa</string>
     <string name="webcam2">Webkamera</string>
     <string name="webcam_still_downloading">Wêneyê Webkamera hê jî tê daxistin</string>

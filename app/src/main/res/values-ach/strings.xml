@@ -25,7 +25,8 @@
     <string name="every_15_minutes">I nge dakika 15, 15 i nge dakika 15</string>
     <string name="every_30_minutes">I nge dakika 30 ducu,</string>
     <string name="every_hour">Cawa mo keken</string>
-    <string name="failed_to_process_forecast_data">Ka pe kitiyo ki ngec me byeko ngec</string>
+	<string name="failed_to_process_forecast_data">Ka pe kitiyo ki ngec me byeko ngec</string>
+    <string name="failed_to_process_weather_data">Pe tiyo maber ki ngec me piny ki i cim ni, tutwale ngec me %1$s</string>
     <string name="fgColour">Kala me deyo ma pe kitiyo kwede</string>
     <string name="fileURL">Coo URL i kabedo ma itye iye</string>
     <string name="force_dark_mode">Lami dic</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">Pe onongo atwero keto nyo kwanyo radar= ki i intanet</string>
     <string name="wasnt_able_to_connect_settings">Pe onongo atwero keto nyo kwanyo jami ma kiketo i server-ri</string>
     <string name="wasnt_able_to_connect_webcam_url">Pe onongo atwero keto nyo keto cal me webcake ki i kom latic-ci</string>
+    <string name="wasnt_able_to_download_url_is_blank">Pe ki twero kwanyo %1$s pien URL onwongo tye nono</string>
     <string name="weather2">Kit ma ping tye kwede</string>
     <string name="webcam2">Yub me web</string>
     <string name="webcam_still_downloading">Cal me webcaam pud tye ka kwanyo</string>

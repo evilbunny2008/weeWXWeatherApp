@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Enyɛɛɛ ekɛ rada= mfoniri lɛ abɔ loo ejie kɛjɛ intanɛt lɛ nɔ</string>
     <string name="wasnt_able_to_connect_settings">E nyɛ we nɛ o kɛ to he loo e je sisije ɔ kɛ je o server ɔ mi</string>
     <string name="wasnt_able_to_connect_webcam_url">Enyɛɛɛ okɛ wɛbkaam mfoniri ko atsa loo okɛ o-websaiti lɛ nɔ</string>
+    <string name="wasnt_able_to_download_url_is_blank">Enyɛɛɛ ejie %1$s lɛ ejaakɛ URL lɛ bɛ nɔ ko nɔ ko</string>
     <string name="weather2">Kɔɔyɔŋ tsakemɔ</string>
     <string name="webcam2">Webkam</string>
     <string name="webcam_still_downloading">Webcam mfoniri lɛ miijie lolo</string>

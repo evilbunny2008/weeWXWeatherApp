@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Sanathe kulumikizana kapena kutsitsa radar = chithunzi kuchokera pa intaneti</string>
     <string name="wasnt_able_to_connect_settings">Sanathe kulumikizana kapena kutsitsa makonda kuchokera ku seva yanu</string>
     <string name="wasnt_able_to_connect_webcam_url">Sanathe kulumikiza kapena kutsitsa chithunzi cha webusayiti kuchokera pa seva yanu</string>
+    <string name="wasnt_able_to_download_url_is_blank">Sitinathe kutsitsa %1$s chifukwa ulalo wake unali wopanda kanthu</string>
     <string name="weather2">Nyengo</string>
     <string name="webcam2">Webukamu</string>
     <string name="webcam_still_downloading">Chithunzi cha Webcam chikutsitsa</string>

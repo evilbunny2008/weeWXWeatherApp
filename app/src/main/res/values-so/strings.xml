@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ma awoodin inay ku xirato ama kala soo bixiso radar = muuqaal internetka</string>
     <string name="wasnt_able_to_connect_settings">Ma awoodin inuu ku xirmo ama ka soo dejiyo dejimaha server-kaaga</string>
     <string name="wasnt_able_to_connect_webcam_url">Ma awoodin inuu ku xirmo ama ka soo dejisto sawirka webcam server-kaaga</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ma awoodin inuu soo dejiyo %1$s sababtoo ah URL-ku wuu maran yahay</string>
     <string name="weather2">Cimilo</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Image webcam wali waa soo dejisaneysaa</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Tsy afaka nifandray na nisintona radar = sary avy amin\'ny Internet</string>
     <string name="wasnt_able_to_connect_settings">Tsy afaka nampifandray na nandefa ny toe-javatra avy amin\'ny mpizara</string>
     <string name="wasnt_able_to_connect_webcam_url">Tsy afaka nifandray na nandefa sary webcam tamin\'ny mpizara</string>
+    <string name="wasnt_able_to_download_url_is_blank">Tsy afaka misintona ny %1$s satria banga ny URL</string>
     <string name="weather2">Weather</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Ny sary Webcam dia mbola misintona</string>

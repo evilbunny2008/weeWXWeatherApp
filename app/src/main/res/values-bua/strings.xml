@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Интернет сооһоо радар= зураг холбоо гү, али татажа абаха аргагүй байгаа</string>
     <string name="wasnt_able_to_connect_settings">Танай серверһээ тохиргоонуудые холбохо гү, али татажа абаха аргагүй байгаа</string>
     <string name="wasnt_able_to_connect_webcam_url">Танай серверһээ веб-камерын зураг холбохо гү, али татажа абаха аргагүй байгаа</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL хооһон байһан тула %1$s татажа шадаагүй</string>
     <string name="weather2">Уларил</string>
     <string name="webcam2">Вебкам</string>
     <string name="webcam_still_downloading">Webcam зураг үшөөл татажа байна</string>

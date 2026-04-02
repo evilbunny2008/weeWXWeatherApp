@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ਇੰਟਰਨੈੱਟ ਤੋਂ radar= ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
     <string name="wasnt_able_to_connect_settings">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ ਸੈਟਿੰਗਾਂ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
     <string name="wasnt_able_to_connect_webcam_url">ਤੁਹਾਡੇ ਸਰਵਰ ਤੋਂ ਵੈਬਕੈਮ ਚਿੱਤਰ ਨੂੰ ਕਨੈਕਟ ਜਾਂ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s ਨੂੰ ਡਾਊਨਲੋਡ ਕਰਨ ਦੇ ਯੋਗ ਨਹੀਂ ਸੀ ਕਿਉਂਕਿ URL ਖਾਲੀ ਸੀ</string>
     <string name="weather2">ਮੌਸਮ</string>
     <string name="webcam2">ਵੈਬਕੈਮ</string>
     <string name="webcam_still_downloading">ਵੈਬਕੈਮ ਚਿੱਤਰ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ।</string>

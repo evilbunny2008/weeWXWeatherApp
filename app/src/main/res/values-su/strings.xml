@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Henteu tiasa nyambungkeun atanapi unduh radar = gambar tina internét</string>
     <string name="wasnt_able_to_connect_settings">Henteu tiasa nyambung atanapi unduh setélan tina server anjeun</string>
     <string name="wasnt_able_to_connect_webcam_url">Teu tiasa nyambung atanapi ngundeur gambar webcam tina server anjeun</string>
+    <string name="wasnt_able_to_download_url_is_blank">Teu tiasa ngaunduh %1$s sabab URLna kosong</string>
     <string name="weather2">Cuaca</string>
     <string name="webcam2">Kaméra wéb</string>
     <string name="webcam_still_downloading">Gambar Webcam masih diunduh</string>

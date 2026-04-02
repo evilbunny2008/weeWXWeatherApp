@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Tidak dapat menyambung atau memuat turun radar = imej dari internet</string>
     <string name="wasnt_able_to_connect_settings">Tidak dapat menyambung atau memuat turun tetapan dari pelayan anda</string>
     <string name="wasnt_able_to_connect_webcam_url">Tidak dapat menyambung atau memuat turun gambar webcam dari pelayan anda</string>
+    <string name="wasnt_able_to_download_url_is_blank">Tidak dapat memuat turun %1$s kerana URL kosong</string>
     <string name="weather2">Cuaca</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Imej webcam masih dimuat turun</string>

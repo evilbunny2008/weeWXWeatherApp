@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Nuk mund të lidhej ose të shkarkohej imazhi i radarit= nga interneti</string>
     <string name="wasnt_able_to_connect_settings">Nuk mundi të lidhej ose shkarkonte cilësimet nga serveri yt</string>
     <string name="wasnt_able_to_connect_webcam_url">Nuk mund të lidhej ose të shkarkohej një imazh i kamerës së internetit nga serveri yt</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s nuk mund të shkarkohej sepse URL-ja ishte bosh</string>
     <string name="weather2">Moti</string>
     <string name="webcam2">Webkamera</string>
     <string name="webcam_still_downloading">Imazhi i kamerës së uebit është ende duke u shkarkuar</string>

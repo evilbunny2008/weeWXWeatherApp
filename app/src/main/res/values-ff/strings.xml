@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Wasaade jokkondirde walla ƴettude radar= natal e nder internet</string>
     <string name="wasnt_able_to_connect_settings">Waawaa jokkondirde walla ƴettude dottaaɗe ɗee e serveer maa</string>
     <string name="wasnt_able_to_connect_webcam_url">Waawaa jokkondirde walla ƴettude natal webcam e serveer maa</string>
+    <string name="wasnt_able_to_download_url_is_blank">Waawaano ƴettude %1$s sabu URL oo ina woodi</string>
     <string name="weather2">Wakati</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Natal webcam ina jokki e ƴettude haa jooni</string>

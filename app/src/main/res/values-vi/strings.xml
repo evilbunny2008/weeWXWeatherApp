@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Không thể kết nối hoặc tải xuống hình ảnh radar= từ internet</string>
     <string name="wasnt_able_to_connect_settings">Không thể kết nối hoặc tải xuống cài đặt từ máy chủ của bạn</string>
     <string name="wasnt_able_to_connect_webcam_url">Không thể kết nối hoặc tải xuống hình ảnh webcam từ máy chủ của bạn</string>
+    <string name="wasnt_able_to_download_url_is_blank">Không thể tải xuống %1$s vì URL trống</string>
     <string name="weather2">Thời tiết</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Hình ảnh webcam vẫn đang được tải xuống</string>

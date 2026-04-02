@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Zou neet in staot zien um radar= afbeelding vaan \'t internet te verbinde of te downloade</string>
     <string name="wasnt_able_to_connect_settings">Zou de instellinge neet kinne verbinde of downloade vaan uw server</string>
     <string name="wasnt_able_to_connect_webcam_url">Zou neet in staot zien um \'n webcam-afbeelding te verbinde of downloade vaan uw server</string>
+    <string name="wasnt_able_to_download_url_is_blank">Kon de %1$s neet downloade umdat de URL leeg waor</string>
     <string name="weather2">Wèr</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Webcam-beeld downloadt nog steeds</string>

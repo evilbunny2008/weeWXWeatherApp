@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Kunde inte ansluta eller ladda ner radar=-bild från internet</string>
     <string name="wasnt_able_to_connect_settings">Kunde inte ansluta eller ladda ner inställningarna från din server</string>
     <string name="wasnt_able_to_connect_webcam_url">Kunde inte ansluta eller ladda ner en webbkamerabild från din server</string>
+    <string name="wasnt_able_to_download_url_is_blank">Det gick inte att ladda ned %1$s eftersom webbadressen var tom</string>
     <string name="weather2">Väder</string>
     <string name="webcam2">Webbkamera</string>
     <string name="webcam_still_downloading">Webbkamerabilden laddas fortfarande ned</string>

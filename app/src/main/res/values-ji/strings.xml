@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">קען נישט פאַרבינדן אָדער אראפקאפיע ראַדאַר= בילד פֿון דער אינטערנעץ</string>
     <string name="wasnt_able_to_connect_settings">קען נישט פאַרבינדן אָדער אראפקאפיע די סעטטינגס פון דיין סערווער</string>
     <string name="wasnt_able_to_connect_webcam_url">קען נישט פאַרבינדן אָדער אראפקאפיע אַ וועבקאַם בילד פֿון דיין סערווער</string>
+    <string name="wasnt_able_to_download_url_is_blank">קען נישט אראפקאפיע די %1$s ווייַל די URL איז ליידיק</string>
     <string name="weather2">וועטער</string>
     <string name="webcam2">וועבקאַם</string>
     <string name="webcam_still_downloading">וועבקאַם בילד איז נאָך דאַונלאָודינג</string>

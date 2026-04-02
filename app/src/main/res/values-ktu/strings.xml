@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Yandi lendaka kukangama ve to kubaka radar= kifwanisu na internet</string>
     <string name="wasnt_able_to_connect_settings">Yandi vandaka ve ti makuki ya kuvukisa to kubaka baparametre na serveur na beno</string>
     <string name="wasnt_able_to_connect_webcam_url">Yandi lendaka kuvukisa ve to kubaka kifwanisu ya web na serveur na nge</string>
+    <string name="wasnt_able_to_download_url_is_blank">Kukonda kubaka %1$s sambu URL vandaka mpamba</string>
     <string name="weather2">Climat</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Kifwanisu ya web kele kaka na kubaka</string>

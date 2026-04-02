@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Acïn kë lëu bï yök wala bï radada= thura tääu në aliiric</string>
     <string name="wasnt_able_to_connect_settings">Acïï lëu bï yök wala bï kä cïke tääu thïn yök tënë raandu</string>
     <string name="wasnt_able_to_connect_webcam_url">Acïï lëu bï thöŋ ka yök në wɛbthait yic tënë raandu</string>
+    <string name="wasnt_able_to_download_url_is_blank">Acï lëu bï %1$s nyaai rin URL acïn kë tɔ̈u thïn</string>
     <string name="weather2">Aliir</string>
     <string name="webcam2">Webɔi;ta</string>
     <string name="webcam_still_downloading">Thura de wɛbthait aŋot ke ye tääu piny</string>

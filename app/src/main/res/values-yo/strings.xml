@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ko ni anfani lati sopọ tabi igbasilẹ radar = aworan lati intanẹẹti</string>
     <string name="wasnt_able_to_connect_settings">Ko ni anfani lati sopọ tabi gba awọn eto lati ọdọ olupin rẹ</string>
     <string name="wasnt_able_to_connect_webcam_url">Ko ni anfani lati sopọ tabi ṣe igbasilẹ aworan wẹẹbu kan lati ọdọ olupin rẹ</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ko le ṣe igbasilẹ %1$s nitori URL ti ṣofo</string>
     <string name="weather2">Oju ọjọ</string>
     <string name="webcam2">Wẹẹbu</string>
     <string name="webcam_still_downloading">Aworan Webcam aworan tun nṣe igbasilẹ</string>

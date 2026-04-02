@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">mana atirqanchu t\'inkiyta utaq uraykachiyta radar= siq\'ita internetmanta</string>
     <string name="wasnt_able_to_connect_settings">mana atirqanchu tinkiyta utaq uraykachiyta churanakunata servidorniykimanta</string>
     <string name="wasnt_able_to_connect_webcam_url">mana atirqanchu huk webcam siq\'ita sirwiqniykimanta tinkiyta utaq uraykachiyta</string>
+    <string name="wasnt_able_to_download_url_is_blank">Mana %1$s uraykachiyta atirqanchu URL ch\'usaq kasqanrayku</string>
     <string name="weather2">Llapiya</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Webcam siq\'iqa kunankamapas uraykachichkanraqmi</string>

@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ei saanud ühendust luua ega Internetist radar=pilti alla laadida</string>
     <string name="wasnt_able_to_connect_settings">Teie serverist ei saanud ühendust luua ega seadeid alla laadida</string>
     <string name="wasnt_able_to_connect_webcam_url">Teie serverist ei saanud ühendust luua ega veebikaamera pilti alla laadida</string>
+    <string name="wasnt_able_to_download_url_is_blank">Faili %1$s ei saanud alla laadida, kuna URL oli tühi</string>
     <string name="weather2">Ilm</string>
     <string name="webcam2">Veebikaamera</string>
     <string name="webcam_still_downloading">Veebikaamera pilti laaditakse endiselt alla</string>

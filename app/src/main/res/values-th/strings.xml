@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดภาพเรดาร์= จากอินเทอร์เน็ตได้</string>
     <string name="wasnt_able_to_connect_settings">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดการตั้งค่าจากเซิร์ฟเวอร์ของคุณได้</string>
     <string name="wasnt_able_to_connect_webcam_url">ไม่สามารถเชื่อมต่อหรือดาวน์โหลดภาพเว็บแคมจากเซิร์ฟเวอร์ของคุณ</string>
+    <string name="wasnt_able_to_download_url_is_blank">ไม่สามารถดาวน์โหลด %1$s ได้เนื่องจาก URL ว่างเปล่า</string>
     <string name="weather2">สภาพอากาศ</string>
     <string name="webcam2">เว็บแคม</string>
     <string name="webcam_still_downloading">รูปภาพเว็บแคมยังคงดาวน์โหลดอยู่</string>

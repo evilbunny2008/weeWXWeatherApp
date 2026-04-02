@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ma setgħetx tikkonnettja jew tniżżel ir-radar= immaġini mill-internet</string>
     <string name="wasnt_able_to_connect_settings">Ma setgħetx tikkonnettja jew tniżżel is-settings mis-server tiegħek</string>
     <string name="wasnt_able_to_connect_webcam_url">Ma setgħetx tikkonnettja jew tniżżel immaġni tal-webcam mis-server tiegħek</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ma setax tniżżel il-%1$s minħabba li l-URL kien vojt</string>
     <string name="weather2">Temp</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">L-immaġni tal-webcam għadha qed titniżżel</string>

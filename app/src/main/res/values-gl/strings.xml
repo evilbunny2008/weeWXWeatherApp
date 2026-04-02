@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Non se puido conectar nin descargar a imaxe radar= de Internet</string>
     <string name="wasnt_able_to_connect_settings">Non se puido conectar nin descargar a configuración do teu servidor</string>
     <string name="wasnt_able_to_connect_webcam_url">Non se puido conectar nin descargar unha imaxe da cámara web do teu servidor</string>
+    <string name="wasnt_able_to_download_url_is_blank">Non se puido descargar o %1$s porque o URL estaba en branco</string>
     <string name="weather2">Tempo</string>
     <string name="webcam2">Cámara web</string>
     <string name="webcam_still_downloading">A imaxe da cámara web aínda está descargando</string>

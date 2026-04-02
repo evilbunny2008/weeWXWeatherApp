@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Gat ekki tengst eða hlaðið niður radar= mynd af netinu</string>
     <string name="wasnt_able_to_connect_settings">Gat ekki tengst eða hlaðið niður stillingum af þjóninum þínum</string>
     <string name="wasnt_able_to_connect_webcam_url">Gat ekki tengst eða hlaðið niður vefmyndavélarmynd af þjóninum þínum</string>
+    <string name="wasnt_able_to_download_url_is_blank">Gat ekki hlaðið niður %1$s vegna þess að vefslóðin var auð</string>
     <string name="weather2">Veður</string>
     <string name="webcam2">Vefmyndavél</string>
     <string name="webcam_still_downloading">Myndavél er enn að hlaðast niður</string>

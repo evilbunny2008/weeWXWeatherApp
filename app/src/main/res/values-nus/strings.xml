@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">/Cɛ rɔ luäŋ kɛ mat kiɛ deri radar= thurɛ min bä kä intɛrnɛt</string>
     <string name="wasnt_able_to_connect_settings">/Cɛ rɔ luäŋ kɛ mat kiɛ deri jɛ mat kä serverdu</string>
     <string name="wasnt_able_to_connect_webcam_url">/Cɛ rɔ luäŋ kɛ mat kiɛ deri thurɛ min ca gɔ̱r kä webcam ka̱m raar kä thärberdu</string>
+    <string name="wasnt_able_to_download_url_is_blank">/Ka̱n jɛ luäŋ kɛ ka̱m raar kä %1$s kɛ ɣöö ɛn URL cɛ baŋ</string>
     <string name="weather2">Ta̱̱a̱ pua̱ri</string>
     <string name="webcam2">pek gua̱th</string>
     <string name="webcam_still_downloading">Thurɛ min ca la̱t ɛ Webma ŋotdɛ la jɛ laa ka̱mkɛ raar</string>

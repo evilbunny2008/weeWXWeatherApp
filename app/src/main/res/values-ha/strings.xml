@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Bai iya haɗi ko saukar da rad = hoto daga Intanet ba</string>
     <string name="wasnt_able_to_connect_settings">Bai iya haɗa ko saukar da saitunan daga sabar ku ba</string>
     <string name="wasnt_able_to_connect_webcam_url">Bai iya haɗi ko saukar da hoton gidan yanar gizo daga sabar ku ba</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ba a iya sauke %1$s ba saboda URL ɗin babu kowa</string>
     <string name="weather2">Yanayin iska</string>
     <string name="webcam2">Gidan yanar gizo</string>
     <string name="webcam_still_downloading">Hoton Webcam har yanzu download</string>

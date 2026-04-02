@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">E sega ni rawa ni semata se lavetaka na iyaloyalo mai na internet</string>
     <string name="wasnt_able_to_connect_settings">Sa sega ni rawa me semati se lavetaka na ituvatuva mai na nomu cakacaka</string>
     <string name="wasnt_able_to_connect_webcam_url">Sa sega ni rawa me ra semata se lavetaka e dua na iyaloyalo ni webcam mai na nomu cakacaka ni cakacaka</string>
+    <string name="wasnt_able_to_download_url_is_blank">E sega ni rawa ni lavetaki na %1$s baleta ni sa lala tu na URL</string>
     <string name="weather2">Draki</string>
     <string name="webcam2">duka</string>
     <string name="webcam_still_downloading">Sa lavetaki tiko ga na iyaloyalo ni kena lavetaki</string>

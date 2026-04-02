@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ཡོངས་འབྲེལ་ནང་ལས་ ར་ཌར་= གཟུགས་བརྙན་ཕབ་ལེན་འབད་མ་ཚུགསཔ་ཨིན་ན།</string>
     <string name="wasnt_able_to_connect_settings">ཁྱོད་རའི་སར་བར་ལས་ སྒྲིག་སྟངས་ཚུ་ མཐུད་མ་ཚུགསཔ་ ཡང་ན་ ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="wasnt_able_to_connect_webcam_url">ཁྱོད་རའི་སར་བར་ལས་ ཝེབ་ཀེམ་གྱི་གཟུགས་བརྙན་ཅིག་ མཐུད་མ་ཚུགསཔ་ ཡང་ན་ ཕབ་ལེན་འབད་མ་ཚུགས།</string>
+    <string name="wasnt_able_to_download_url_is_blank">ཡུ་ཨར་ཨེལ་སྟོངམ་འབདཝ་ལས་ %1$s ཕབ་ལེན་འབད་མ་ཚུགས།</string>
     <string name="weather2">གནམ་གཤིས་གནས་སྟངས</string>
     <string name="webcam2">ཝེབ།</string>
     <string name="webcam_still_downloading">ཝེབ་ཀེམ་གྱི་པར་རིས་ད་ལྟོ་ཡང་ཕབ་ལེན་འབད་དོ།</string>

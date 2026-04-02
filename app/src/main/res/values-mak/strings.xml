@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Tena nakkulle a\'lampa yareka a\'download radar= gambara\' battu ri internet</string>
     <string name="wasnt_able_to_connect_settings">Tena nakkulle a\'lampa yareka a\'download settingang battu ri servernu</string>
     <string name="wasnt_able_to_connect_webcam_url">Tena nakkulle a\'lampa yareka a\'download gambara\' webcam battu ri servernu</string>
+    <string name="wasnt_able_to_download_url_is_blank">Tena nakkulle ni unduh %1$s nasaba URLna kosong</string>
     <string name="weather2">Rammang</string>
     <string name="webcam2">Siba</string>
     <string name="webcam_still_downloading">Anjo gambara\'na Webcam tuli niaki ri ampi\'na</string>

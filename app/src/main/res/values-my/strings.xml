@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ရေဒါနှင့်ချိတ်ဆက်ရန် (သို့) ဒေါင်းလုပ်ဆွဲယူနိုင်ခဲ့သည်</string>
     <string name="wasnt_able_to_connect_settings">သင်၏ဆာဗာမှ settings ကိုချိတ်ဆက်ရန်သို့မဟုတ် download မလုပ်နိုင်ပါ</string>
     <string name="wasnt_able_to_connect_webcam_url">သင်၏ဆာဗာမှဝက်ဘ်ကင်မရာပုံရိပ်ကိုချိတ်ဆက်ရန်သို့မဟုတ်ဒေါင်းလုပ်ဆွဲနိုင်ခဲ့သည်</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL သည် ဗလာဖြစ်နေသောကြောင့် %1$s ကို ဒေါင်းလုဒ်လုပ်၍မရပါ။</string>
     <string name="weather2">ရာသီဉတု</string>
     <string name="webcam2">ဝက်ဘ်ကမ်</string>
     <string name="webcam_still_downloading">Webcam ပုံသည်ဒေါင်းလုပ်လုပ်နေသည်။</string>

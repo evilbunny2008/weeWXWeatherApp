@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Cha b\' urrainn dhuinn radar=image a cheangal no a luchdachadh sìos bhon eadar-lìon</string>
     <string name="wasnt_able_to_connect_settings">Cha b\' urrainn dhuinn na roghainnean a cheangal no a luchdachadh sìos bhon t-seirbheisiche agad</string>
     <string name="wasnt_able_to_connect_webcam_url">Cha b\' urrainn dhuinn dealbh camara-lìn a cheangal no a luchdachadh sìos bhon t-seirbheisiche agad</string>
+    <string name="wasnt_able_to_download_url_is_blank">Cha b\' urrainn dhuinn %1$s a luchdadh a-nuas a chionn \'s gu robh an URL bàn</string>
     <string name="weather2">Aimsir</string>
     <string name="webcam2">Camara-lìn</string>
     <string name="webcam_still_downloading">Tha dealbh camara-lìn fhathast ga luchdachadh sìos</string>

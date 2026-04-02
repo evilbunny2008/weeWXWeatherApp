@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">අන්තර්ජාලයෙන් රේඩාර්= රූපය සම්බන්ධ කිරීමට හෝ බාගත කිරීමට නොහැකි විය</string>
     <string name="wasnt_able_to_connect_settings">ඔබගේ සේවාදායකයෙන් සැකසීම් සම්බන්ධ කිරීමට හෝ බාගැනීමට නොහැකි විය</string>
     <string name="wasnt_able_to_connect_webcam_url">ඔබගේ සේවාදායකයෙන් වෙබ් කැමරා රූපයක් සම්බන්ධ කිරීමට හෝ බාගත කිරීමට නොහැකි විය</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL එක හිස් නිසා %1$s බාගැනීමට නොහැකි විය</string>
     <string name="weather2">කාලගුණය</string>
     <string name="webcam2">වෙබ් කෑමය</string>
     <string name="webcam_still_downloading">වෙබ් කැමරාවේ රූපය තවමත් බාගත වෙමින් පවතී</string>

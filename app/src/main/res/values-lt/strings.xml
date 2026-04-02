@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Nepavyko prisijungti arba atsisiųsti radar= vaizdo iš interneto</string>
     <string name="wasnt_able_to_connect_settings">Nepavyko prisijungti arba atsisiųsti nustatymų iš jūsų serverio</string>
     <string name="wasnt_able_to_connect_webcam_url">Nepavyko prisijungti arba atsisiųsti žiniatinklio kameros vaizdo iš jūsų serverio</string>
+    <string name="wasnt_able_to_download_url_is_blank">Nepavyko atsisiųsti %1$s, nes URL buvo tuščias</string>
     <string name="weather2">Orai</string>
     <string name="webcam2">Interneto kamera</string>
     <string name="webcam_still_downloading">Internetinės kameros vaizdas vis dar atsisiunčiamas</string>

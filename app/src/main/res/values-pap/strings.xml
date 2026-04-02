@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">No tabata por a konektá òf download radar= imágen for di internet</string>
     <string name="wasnt_able_to_connect_settings">No por a konektá òf download e settings di bo servidor</string>
     <string name="wasnt_able_to_connect_webcam_url">No por a konektá òf download un imágen di webcam for di bo servidor</string>
+    <string name="wasnt_able_to_download_url_is_blank">No por a download e %1$s pasobra e URL tabata blanku</string>
     <string name="weather2">Wer</string>
     <string name="webcam2">Webkam</string>
     <string name="webcam_still_downloading">Imagen di webcam ainda ta download</string>

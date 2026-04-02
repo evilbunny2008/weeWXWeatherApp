@@ -25,7 +25,8 @@
     <string name="every_15_minutes">Sapa 15 t\'ijturjama</string>
     <string name="every_30_minutes">Sapa 30 t\'ijturjama</string>
     <string name="every_hour">Sapa hora</string>
-    <string name="failed_to_process_forecast_data">Janiwa pronóstico de datos ukanaka phuqhañakiti</string>
+	<string name="failed_to_process_forecast_data">Janiwa pronóstico de datos ukanaka phuqhañakiti</string>
+    <string name="failed_to_process_weather_data">Servidor ukan pacha yatiyawinak chiqapar lurañax janiw ch\'amäkiti, chiqpachanx %1$s ukan yatiyawinakap</string>
     <string name="fgColour">Widget Foreground Color Picker ukax mä jach\'a uñacht\'äwiwa</string>
     <string name="fileURL">URL ukax settings.txt ukar mantañapawa</string>
     <string name="force_dark_mode">Ch\'amaka Modo ukar ch\'amanchaña</string>
@@ -127,6 +128,7 @@
     <string name="wasnt_able_to_connect_radar_image">janiw Radar= uñacht\'äwix internet tuqit uñt\'ayasiñjamäkänti jan ukax apkatañjamäkänti</string>
     <string name="wasnt_able_to_connect_settings">janiw servidor ukan configuración ukar conectar jan ukax apkatañjamäkänti</string>
     <string name="wasnt_able_to_connect_webcam_url">janiw mä webcam uñacht\'äwi servidor ukan conectar jan ukax apkatañjamäkänti</string>
+    <string name="wasnt_able_to_download_url_is_blank">Janiw %1$s ukar apkatañjamäkänti kunatix URL ukax ch\'usakiwa</string>
     <string name="weather2">Pacha</string>
     <string name="webcam2">Webcam ukax 1.1</string>
     <string name="webcam_still_downloading">Webcam ukan uñacht\'äwipax wali askipuniwa</string>

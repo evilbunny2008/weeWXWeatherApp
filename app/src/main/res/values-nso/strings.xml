@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">ga se a kgona go kgokaganya goba go taonelouta radar= seswantšho go tšwa Inthaneteng</string>
     <string name="wasnt_able_to_connect_settings">E be e sa kgone go kgokaganya goba go taonelouta dipeakanyo go tšwa go seva ya gago</string>
     <string name="wasnt_able_to_connect_webcam_url">E be e sa kgone go kgokaganya goba go taonelouta seswantšho sa webcam go tšwa go seva ya gago</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ga se ya kgona go taonelouta %1$s ka gobane URL e be e se na selo</string>
     <string name="weather2">Boso</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Webcam setšoantšo e ntse e thowuni</string>

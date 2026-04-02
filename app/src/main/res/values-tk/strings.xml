@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">\'Radar =\' -den birigip ýa-da göçürip alyp bolmaýardy ýa-da göçürip alyp bilmedi</string>
     <string name="wasnt_able_to_connect_settings">Serweriňizden sazlamalary birleşdirip ýa-da göçürip alyp bilmedi</string>
     <string name="wasnt_able_to_connect_webcam_url">Serweriňizden web kamerasyny birleşdirip ýa-da göçürip alyp bilmedi</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL boş bolany üçin%1$s göçürip alyp bilmedim</string>
     <string name="weather2">Howa</string>
     <string name="webcam2">Web kamerasy</string>
     <string name="webcam_still_downloading">Webcam şekili henizem göçürip alýar</string>

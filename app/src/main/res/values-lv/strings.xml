@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Nevarēja izveidot savienojumu vai lejupielādēt radar= attēlu no interneta</string>
     <string name="wasnt_able_to_connect_settings">Nevarēja izveidot savienojumu vai lejupielādēt iestatījumus no jūsu servera</string>
     <string name="wasnt_able_to_connect_webcam_url">Nevarēja izveidot savienojumu vai lejupielādēt tīmekļa kameras attēlu no jūsu servera</string>
+    <string name="wasnt_able_to_download_url_is_blank">Nevarēja lejupielādēt failu %1$s, jo URL bija tukšs</string>
     <string name="weather2">Laikapstākļi</string>
     <string name="webcam2">Tīmekļa kamera</string>
     <string name="webcam_still_downloading">Tīmekļa kameras attēls joprojām tiek lejupielādēts</string>

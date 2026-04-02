@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ma\' bin capaz u conectar wa descargar radar = wíimbala\' tak internet</string>
     <string name="wasnt_able_to_connect_settings">Ma\' bin capaz u conectar wa descargar le ajustes tak u servidor</string>
     <string name="wasnt_able_to_connect_webcam_url">Ma\' bin capaz u conectar wa descargar jump\'éel wíimbala\' webcam tak u servidor</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ma\' páajchaj u yéemel le %1$s tumen mina\'an mixba\'al ti\' le URL</string>
     <string name="weather2">K\'iin</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_still_downloading">Webcam wíimbala\' láayli\' táan u descargando</string>

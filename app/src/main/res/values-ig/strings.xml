@@ -127,6 +127,7 @@
     <string name="wasnt_able_to_connect_radar_image">Enweghị ike ijikọ ma ọ bụ budata Radar = onyonyo site na ịntanetị</string>
     <string name="wasnt_able_to_connect_settings">Enweghị ike ijikọ ma ọ bụ budata ntọala na sava gị</string>
     <string name="wasnt_able_to_connect_webcam_url">Enweghị ike ijikọ ma ọ bụ budata onyonyo weebụ na sava gị</string>
+    <string name="wasnt_able_to_download_url_is_blank">Enweghị ike ibudata %1$s n\'ihi na URL ahụ ghe oghe</string>
     <string name="weather2">Udidiubochi</string>
     <string name="webcam2">Kameram</string>
     <string name="webcam_still_downloading">Imagemam webcam ka na-ebudata</string>
