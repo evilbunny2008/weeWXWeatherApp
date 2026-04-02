@@ -4978,9 +4978,9 @@ class weeWXAppCommon
 
 		long lastDownloadWebcamAttempt = (long)KeyValue.readVar("lastDownloadWebcamAttempt", 0L);
 
-		if(lastDownloadWebcamAttempt + 10_000L > now)
+		if(lastDownloadWebcamAttempt + 5_000L > now)
 		{
-			LogMessage("getWebcamImage() lastDownloadWebcamAttempt (" + lastDownloadWebcamAttempt + ") + 10_000L > now (" + now + ")");
+			LogMessage("getWebcamImage() lastDownloadWebcamAttempt (" + lastDownloadWebcamAttempt + ") + 5_000L > now (" + now + ")");
 			return bm;
 		}
 

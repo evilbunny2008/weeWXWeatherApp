@@ -56,8 +56,6 @@ public class Webcam extends Fragment
 			getWebcamImage(true, false, true, false);
 		});
 
-		setLoopInterval();
-
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
 		loadWebcamImage();
@@ -97,6 +95,8 @@ public class Webcam extends Fragment
 
 		if(updateInterval > 0)
 			handler.post(updateRunnable);
+
+		getWebcamImage(true, false, true, false);
 	}
 
 	void stopRefreshing()

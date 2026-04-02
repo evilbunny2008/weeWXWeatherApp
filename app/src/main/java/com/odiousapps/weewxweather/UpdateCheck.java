@@ -404,8 +404,8 @@ public class UpdateCheck extends BroadcastReceiver
 				LogMessage("UpdateCheck.runInTheBackground() weeWXAppCommon.getWeather(false, " + onAppStart + ", true)...");
 				weeWXAppCommon.getWeather(false, onAppStart, true);
 
-				LogMessage("UpdateCheck.runInTheBackground() weeWXAppCommon.getWebcam(false, " + onAppStart + ", true, true)...");
-				weeWXAppCommon.getWebcamImage(false, onAppStart, true, true);
+				//LogMessage("UpdateCheck.runInTheBackground() weeWXAppCommon.getWebcam(false, " + onAppStart + ", true, true)...");
+				//weeWXAppCommon.getWebcamImage(false, onAppStart, true, true);
 			} catch(Exception e) {
 				LogMessage("UpdateCheck.runInTheBackground() Error! e: " + e, true, KeyValue.e);
 			}
