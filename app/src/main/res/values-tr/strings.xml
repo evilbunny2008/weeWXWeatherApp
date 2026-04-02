@@ -21,9 +21,13 @@
     <string name="error">Hata!</string>
     <string name="error_occurred_while_attempting_to_update">Kullanımı güncellemeye çalışırken bir hata oluştu</string>
     <string name="every_5_minutes">Her 5 Dakikada Bir</string>
+    <string name="every_5_seconds">Her 5 Saniyede Bir</string>
     <string name="every_10_minutes">Her 10 Dakikada Bir</string>
+    <string name="every_10_seconds">Her 10 Saniyede Bir</string>
     <string name="every_15_minutes">Her 15 Dakikada Bir</string>
     <string name="every_30_minutes">Her 30 Dakikada Bir</string>
+    <string name="every_30_seconds">Her 30 Saniyede Bir</string>
+    <string name="every_60_seconds">Her 60 Saniyede Bir</string>
     <string name="every_hour">Her Saat</string>
     <string name="failed_to_merge_weather_data">%1$s verileri %2$s verileriyle birleştirilemedi</string>
     <string name="failed_to_process_forecast_data">Tahmin verileri işlenemedi</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL boş olduğundan %1$s indirilemedi</string>
     <string name="weather2">Hava durumu</string>
     <string name="webcam2">Web kamerası</string>
+    <string name="webcam_refresh_time">Web Kamerası Yenileme Zamanı</string>
     <string name="webcam_still_downloading">Web kamerası görüntüsü hâlâ indiriliyor</string>
     <string name="webcam_url_url_not_set">Web kamerası URL\'si ayarlanmamış veya boş</string>
     <string name="widget_theme">Widget Teması</string>

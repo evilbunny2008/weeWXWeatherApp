@@ -21,9 +21,13 @@
     <string name="error">ስሕተት!</string>
     <string name="error_occurred_while_attempting_to_update">ኣጠቓቕማ ንምዕራፍ ኣብ ዝፈተነሉ እዋን ጌጋ ኣጋጢሙ ።</string>
     <string name="every_5_minutes">ኣብ ነፍሲ ወከፍ 5 ደቓይቕ</string>
+    <string name="every_5_seconds">ኣብ ነፍሲ ወከፍ 5 ካልኢት</string>
     <string name="every_10_minutes">ኣብ ነፍሲ ወከፍ 10 ደቓይቕ</string>
+    <string name="every_10_seconds">ኣብ ነፍሲ ወከፍ 10 ካልኢት</string>
     <string name="every_15_minutes">ኣብ ነፍሲ ወከፍ 15 ደቓይቕ</string>
     <string name="every_30_minutes">ኣብ ነፍሲ ወከፍ 30 ደቓይቕ</string>
+    <string name="every_30_seconds">ኣብ ነፍሲ ወከፍ 30 ካልኢት</string>
+    <string name="every_60_seconds">ኣብ ነፍሲ ወከፍ 60 ካልኢት</string>
     <string name="every_hour">ኣብ ነፍሲ ወከፍ ሰዓት</string>
     <string name="failed_to_merge_weather_data">ነቲ %1$s ዳታ ምስ %2$s ዳታ ምውህሃድ ኣይከኣለን</string>
     <string name="failed_to_process_forecast_data">ትንበያ ዳታ ምምስራሕ ኣይተኻእለን ።</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">እቲ URL ባዶ ስለ ዝነበረ %1$s ከውርድ ኣይከኣለን</string>
     <string name="weather2">አየር</string>
     <string name="webcam2">ዌብካም</string>
+    <string name="webcam_refresh_time">ናይ ዌብካም ምሕዳስ ግዜ</string>
     <string name="webcam_still_downloading">ናይ ዌብካም ምስሊ ገና ይወርድ ኣሎ።</string>
     <string name="webcam_url_url_not_set">ዌብካም URL ኣይተቐመጠን ወይ ባዶ እዩ</string>
     <string name="widget_theme">ዊጀት ቴማ</string>

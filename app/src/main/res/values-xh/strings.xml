@@ -21,9 +21,13 @@
     <string name="error">Impazamo!</string>
     <string name="error_occurred_while_attempting_to_update">Impazamo yenzekile ngelixa kuzanywa ukuhlaziya ukusetyenziswa</string>
     <string name="every_5_minutes">Yonke imizuzu emi-5</string>
+    <string name="every_5_seconds">Yonke imizuzwana emi-5</string>
     <string name="every_10_minutes">Yonke imizuzu eli-10</string>
+    <string name="every_10_seconds">Yonke imizuzwana eyi-10</string>
     <string name="every_15_minutes">Yonke imizuzu eli-15</string>
     <string name="every_30_minutes">Yonke imizuzu engama-30</string>
+    <string name="every_30_seconds">Yonke imizuzwana engama-30</string>
+    <string name="every_60_seconds">Yonke imizuzwana engama-60</string>
     <string name="every_hour">Iyure nganye</string>
     <string name="failed_to_merge_weather_data">Ayiphumelelanga ukudibanisa i-%1$s yedatha kunye nedatha ye-%2$s</string>
     <string name="failed_to_process_forecast_data">Ayiphumelelanga ukuqhuba idatha yemo</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ayikwazanga kukhuphela i-%1$s kuba i-URL ibingenanto</string>
     <string name="weather2">Imozulu</string>
     <string name="webcam2">Iwebcam</string>
+    <string name="webcam_refresh_time">Ixesha lokuhlaziya iWebcam</string>
     <string name="webcam_still_downloading">Umfanekiso wewebhu weWebcam usazikhuphela</string>
     <string name="webcam_url_url_not_set">I-webcam ye-webcam ayibekwanga okanye ayinanto</string>
     <string name="widget_theme">Umxholo we-Word</string>

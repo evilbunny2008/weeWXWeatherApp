@@ -21,9 +21,13 @@
     <string name="error">Roralňyşlyk!</string>
     <string name="error_occurred_while_attempting_to_update">Ulanyşy täzelemäge synanyşanda säwlik ýüze çykdy</string>
     <string name="every_5_minutes">Her 5 minutda</string>
+    <string name="every_5_seconds">Her 5 sekuntda</string>
     <string name="every_10_minutes">Her 10 minutda</string>
+    <string name="every_10_seconds">Her 10 sekuntda</string>
     <string name="every_15_minutes">Her 15 minutda</string>
     <string name="every_30_minutes">Her 30 minutda</string>
+    <string name="every_30_seconds">Her 30 sekuntda</string>
+    <string name="every_60_seconds">Her 60 sekuntda</string>
     <string name="every_hour">Her sagat</string>
     <string name="failed_to_merge_weather_data">%1$s maglumatlary%2$s maglumatlary bilen birleşdirip bilmedi</string>
     <string name="failed_to_process_forecast_data">Çaklamany çaklamak şowsuz boldy</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL boş bolany üçin%1$s göçürip alyp bilmedim</string>
     <string name="weather2">Howa</string>
     <string name="webcam2">Web kamerasy</string>
+    <string name="webcam_refresh_time">Web kamera wagtyny täzeläň</string>
     <string name="webcam_still_downloading">Webcam şekili henizem göçürip alýar</string>
     <string name="webcam_url_url_not_set">Webcam URL gurulmaýar ýa-da boş</string>
     <string name="widget_theme">Widjet temasy</string>

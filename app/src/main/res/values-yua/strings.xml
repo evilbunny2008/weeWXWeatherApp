@@ -21,9 +21,13 @@
     <string name="error">K\'aas!</string>
     <string name="error_occurred_while_attempting_to_update">Ocurrió jump\'éel ba\'alo\' mientras u intenta actualizar búukinta\'al</string>
     <string name="every_5_minutes">Amal 5 Minutos</string>
+    <string name="every_5_seconds">Amal 5 segundos</string>
     <string name="every_10_minutes">Cada 10 minutos</string>
+    <string name="every_10_seconds">Amal 10 segundos</string>
     <string name="every_15_minutes">Cada 15 Minutos</string>
     <string name="every_30_minutes">Cada 30 Minutos</string>
+    <string name="every_30_seconds">Amal 30 segundos</string>
+    <string name="every_60_seconds">Amal 60 segundos</string>
     <string name="every_hour">Tuláakal P\'isib</string>
     <string name="failed_to_merge_weather_data">Ma\' páajchaj u nupikubáa le datos %1$s yéetel le datos %2$s</string>
     <string name="failed_to_process_forecast_data">Falló ti\' procesar datos pronósticos</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ma\' páajchaj u yéemel le %1$s tumen mina\'an mixba\'al ti\' le URL</string>
     <string name="weather2">K\'iin</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">K\'iinil u túumbenkuunsa\'al le webcam</string>
     <string name="webcam_still_downloading">Webcam wíimbala\' láayli\' táan u descargando</string>
     <string name="webcam_url_url_not_set">URL Webcam ma\' táan establecido wa táan ti\' sak</string>
     <string name="widget_theme">Widget Teme</string>

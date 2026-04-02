@@ -21,9 +21,13 @@
     <string name="error">Помилка!</string>
     <string name="error_occurred_while_attempting_to_update">Під час спроби оновити дані про використання сталася помилка</string>
     <string name="every_5_minutes">Кожні 5 хвилин</string>
+    <string name="every_5_seconds">Кожні 5 секунд</string>
     <string name="every_10_minutes">Кожні 10 хвилин</string>
+    <string name="every_10_seconds">Кожні 10 секунд</string>
     <string name="every_15_minutes">Кожні 15 хвилин</string>
     <string name="every_30_minutes">Кожні 30 хвилин</string>
+    <string name="every_30_seconds">Кожні 30 секунд</string>
+    <string name="every_60_seconds">Кожні 60 секунд</string>
     <string name="every_hour">Кожну годину</string>
     <string name="failed_to_merge_weather_data">Не вдалося об\'єднати дані %1$s із даними %2$s</string>
     <string name="failed_to_process_forecast_data">Не вдалося обробити дані прогнозу</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Не вдалося завантажити %1$s, оскільки URL-адреса була пустою</string>
     <string name="weather2">Погода</string>
     <string name="webcam2">веб-камера</string>
+    <string name="webcam_refresh_time">Час оновлення веб-камери</string>
     <string name="webcam_still_downloading">Зображення веб-камери все ще завантажується</string>
     <string name="webcam_url_url_not_set">URL-адреса веб-камери не встановлена ​​або пуста</string>
     <string name="widget_theme">Тема віджета</string>

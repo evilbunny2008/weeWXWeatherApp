@@ -27,6 +27,7 @@
     <string name="every_15_minutes">Kada Minutu 15</string>
     <string name="every_30_minutes">Kada Minutu 30</string>
     <string name="every_30_seconds">Kada Segundu 30</string>
+    <string name="every_60_seconds">Kada Segundu 60</string>
     <string name="every_hour">Oras ida-idak</string>
     <string name="failed_to_merge_weather_data">La konsege tau hamutuk dadus %1$s ho dadus %2$s</string>
     <string name="failed_to_process_forecast_data">La konsege prosesa dadus previzaun</string>
@@ -135,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">La konsege download %1$s tanba URL mamuk</string>
     <string name="weather2">Klima</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Tempu Atualiza Webcam</string>
     <string name="webcam_still_downloading">Imajen Webcam sei download hela</string>
     <string name="webcam_url_url_not_set">Webcam URL la tau ka mamuk</string>
     <string name="widget_theme">Tema Widget</string>

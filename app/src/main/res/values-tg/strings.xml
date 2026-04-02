@@ -21,9 +21,13 @@
     <string name="error">Хатогӣ!</string>
     <string name="error_occurred_while_attempting_to_update">Ҳангоми кӯшиши истифодаи истифодабарӣ хато рӯй дод</string>
     <string name="every_5_minutes">Ҳар 5 дақиқа</string>
+    <string name="every_5_seconds">Ҳар 5 сония</string>
     <string name="every_10_minutes">Ҳар 10 дақиқа</string>
+    <string name="every_10_seconds">Ҳар 10 сония</string>
     <string name="every_15_minutes">Ҳар як 15 дақиқа</string>
     <string name="every_30_minutes">Ҳар 30 дақиқа</string>
+    <string name="every_30_seconds">Ҳар 30 сония</string>
+    <string name="every_60_seconds">Ҳар 60 сония</string>
     <string name="every_hour">Ҳар соат</string>
     <string name="failed_to_merge_weather_data">Якҷоя кардани маълумоти %1$s бо маълумоти %2$s муяссар нашуд</string>
     <string name="failed_to_process_forecast_data">Маълумоти пешакии маълумотро иҷро накард</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s-ро зеркашӣ карда натавонист, зеро URL холӣ буд</string>
     <string name="weather2">Обу ҳаво</string>
     <string name="webcam2">Вебкам</string>
+    <string name="webcam_refresh_time">Вақти навсозии веб-камера</string>
     <string name="webcam_still_downloading">Веб-камера ҳоло ҳам зеркашӣ шудааст</string>
     <string name="webcam_url_url_not_set">Urlam URL насб карда нашудааст ё холӣ аст</string>
     <string name="widget_theme">Мавзӯъи виҷҷ</string>

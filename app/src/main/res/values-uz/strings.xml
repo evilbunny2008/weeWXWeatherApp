@@ -21,9 +21,13 @@
     <string name="error">Xato!</string>
     <string name="error_occurred_while_attempting_to_update">Foydalanishni yangilashga urinishda xatolik yuz berdi</string>
     <string name="every_5_minutes">Har 5 daqiqa</string>
+    <string name="every_5_seconds">Har 5 soniyada</string>
     <string name="every_10_minutes">Har 10 daqiqada</string>
+    <string name="every_10_seconds">Har 10 soniyada</string>
     <string name="every_15_minutes">Har 15 daqiqada</string>
     <string name="every_30_minutes">Har 30 daqiqada</string>
+    <string name="every_30_seconds">Har 30 soniyada</string>
+    <string name="every_60_seconds">Har 60 soniyada</string>
     <string name="every_hour">Har soatda</string>
     <string name="failed_to_merge_weather_data">%1$s maʼlumotlarini %2$s maʼlumotlari bilan birlashtirib boʻlmadi</string>
     <string name="failed_to_process_forecast_data">Prognoz ma\'lumotlarini qayta ishlay olmadi</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">%1$s yuklab olinmadi, chunki URL bo\'sh edi</string>
     <string name="weather2">Ob-havo</string>
     <string name="webcam2">Vebkamera</string>
+    <string name="webcam_refresh_time">Veb-kamerani yangilash vaqti</string>
     <string name="webcam_still_downloading">WebCam tasviri hali ham yuklab olinmoqda</string>
     <string name="webcam_url_url_not_set">WebCam URL manzillari o\'rnatilmagan yoki bo\'sh</string>
     <string name="widget_theme">Vidjet mavzusi</string>

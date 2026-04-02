@@ -21,9 +21,13 @@
     <string name="error">خاتالىق!</string>
     <string name="error_occurred_while_attempting_to_update">ئىشلىتىشنى يېڭىلىماقچى بولغاندا خاتالىق كۆرۈلدى</string>
     <string name="every_5_minutes">ھەر 5 مىنۇتتا</string>
+    <string name="every_5_seconds">ھەر 5 سېكۇنت</string>
     <string name="every_10_minutes">ھەر 10 مىنۇتتا</string>
+    <string name="every_10_seconds">ھەر 10 سېكۇنت</string>
     <string name="every_15_minutes">ھەر 15 مىنۇتتا</string>
     <string name="every_30_minutes">ھەر 30 مىنۇتتا</string>
+    <string name="every_30_seconds">ھەر 30 سېكۇنت</string>
+    <string name="every_60_seconds">ھەر 60 سېكۇنت</string>
     <string name="every_hour">ھەر سائەت</string>
     <string name="failed_to_merge_weather_data">%1$s سانلىق مەلۇمات بىلەن%2$s سانلىق مەلۇماتنى بىرلەشتۈرەلمىدى</string>
     <string name="failed_to_process_forecast_data">تەكشۈرۈش سانلىق مەلۇماتلىرىنى بىر تەرەپ قىلالمىدى</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">URL بوش بولغاچقا%1$s نى چۈشۈرەلمىدى</string>
     <string name="weather2">ھاۋارايى</string>
     <string name="webcam2">تور كامېراسى</string>
+    <string name="webcam_refresh_time">تور كامېراسى يېڭىلاش ۋاقتى</string>
     <string name="webcam_still_downloading">تور كامېراسى يەنىلا چۈشۈرۈۋاتىدۇ</string>
     <string name="webcam_url_url_not_set">WebCam URL تەڭشەلمىگەن ياكى قۇرۇق ئەمەس</string>
     <string name="widget_theme">Wililget تېما</string>

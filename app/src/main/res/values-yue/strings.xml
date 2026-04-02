@@ -21,9 +21,13 @@
     <string name="error">錯誤！</string>
     <string name="error_occurred_while_attempting_to_update">嘗試更新使用時發生錯誤</string>
     <string name="every_5_minutes">每 5 分鐘</string>
+    <string name="every_5_seconds">每 5 秒</string>
     <string name="every_10_minutes">每 10 分鐘</string>
+    <string name="every_10_seconds">每10秒</string>
     <string name="every_15_minutes">每 15 分鐘</string>
     <string name="every_30_minutes">每 30 分鐘</string>
+    <string name="every_30_seconds">每30秒</string>
+    <string name="every_60_seconds">每60秒</string>
     <string name="every_hour">每個鐘</string>
     <string name="failed_to_merge_weather_data">將 %1$s 數據同 %2$s 數據合併失敗</string>
     <string name="failed_to_process_forecast_data">未能處理預測資料</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">因為網址係空白，所以下載唔到 %1$s</string>
     <string name="weather2">天氣</string>
     <string name="webcam2">網絡攝影機</string>
+    <string name="webcam_refresh_time">網絡攝影機刷新時間</string>
     <string name="webcam_still_downloading">網絡攝影機圖片仲係下載緊。</string>
     <string name="webcam_url_url_not_set">網絡攝影機網址唔係設定或者係空白</string>
     <string name="widget_theme">小工具主題</string>

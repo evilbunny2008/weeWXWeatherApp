@@ -21,9 +21,13 @@
     <string name="error">Phoso!</string>
     <string name="error_occurred_while_attempting_to_update">Go ne ga nna le phoso fa go ntse go leka go tlhabolola tiriso</string>
     <string name="every_5_minutes">Metsotso mengwe le mengwe e le 5</string>
+    <string name="every_5_seconds">Metsotswana mengwe le mengwe e le 5</string>
     <string name="every_10_minutes">Metsotso nngwe le nngwe e le 10</string>
+    <string name="every_10_seconds">Metsotswana mengwe le mengwe e le 10</string>
     <string name="every_15_minutes">Metsotso mengwe le mengwe e le 15</string>
     <string name="every_30_minutes">Metsotso nngwe le nngwe e le 30</string>
+    <string name="every_30_seconds">Metsotswana mengwe le mengwe e le 30</string>
+    <string name="every_60_seconds">Metsotswana mengwe le mengwe e le 60</string>
     <string name="every_hour">Ura nngwe le nngwe</string>
     <string name="failed_to_merge_weather_data">Go paletswe ke go kopanya tshedimosetso ya %1$s le tshedimosetso ya %2$s</string>
     <string name="failed_to_process_forecast_data">Go palelwa ke go dirisa tshedimosetso e e bonelwang pele</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Ga ke a kgona go laisolola %1$s ka gonne URL e ne e se na sepe</string>
     <string name="weather2">Bosa</string>
     <string name="webcam2">Webo</string>
+    <string name="webcam_refresh_time">Nako ya go Lapolosa Khemera ya Webo</string>
     <string name="webcam_still_downloading">Webcam setshwantsho se ntse se jarolla</string>
     <string name="webcam_url_url_not_set">URL ya Webcam ga e a bewa kgotsa ga e na sepe</string>
     <string name="widget_theme">Setlhogo sa Morero wa Sediriswa</string>

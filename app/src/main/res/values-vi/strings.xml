@@ -21,9 +21,13 @@
     <string name="error">Lỗi!</string>
     <string name="error_occurred_while_attempting_to_update">Đã xảy ra lỗi khi cố gắng cập nhật mức sử dụng</string>
     <string name="every_5_minutes">Cứ sau 5 phút</string>
+    <string name="every_5_seconds">Cứ sau 5 giây</string>
     <string name="every_10_minutes">Cứ sau 10 phút</string>
+    <string name="every_10_seconds">Cứ sau 10 giây</string>
     <string name="every_15_minutes">Cứ sau 15 phút</string>
     <string name="every_30_minutes">Cứ sau 30 phút</string>
+    <string name="every_30_seconds">Cứ sau 30 giây</string>
+    <string name="every_60_seconds">Cứ sau 60 giây</string>
     <string name="every_hour">Mỗi giờ</string>
     <string name="failed_to_merge_weather_data">Không thể hợp nhất dữ liệu %1$s với dữ liệu %2$s</string>
     <string name="failed_to_process_forecast_data">Không thể xử lý dữ liệu dự báo</string>
@@ -132,6 +136,7 @@
     <string name="wasnt_able_to_download_url_is_blank">Không thể tải xuống %1$s vì URL trống</string>
     <string name="weather2">Thời tiết</string>
     <string name="webcam2">Webcam</string>
+    <string name="webcam_refresh_time">Thời gian làm mới webcam</string>
     <string name="webcam_still_downloading">Hình ảnh webcam vẫn đang được tải xuống</string>
     <string name="webcam_url_url_not_set">URL webcam chưa được đặt hoặc trống</string>
     <string name="widget_theme">Chủ đề tiện ích</string>
