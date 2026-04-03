@@ -3569,7 +3569,7 @@ class weeWXAppCommon
 				KeyValue.putVar("ProcessingErrorID", id);
 
 				for(int i = 0; i < jarr.length(); i++)
-					LogMessage("reallyGetWeather() Error in " + json_labels[id] + ": " + jarr.optString(i));
+					LogMessage("reallyGetWeather() Error in " + json_labels[id] + ": " + jarr.optString(i), KeyValue.e);
 
 				SendIntent(PROCESSING_ERRORS);
 				return false;
