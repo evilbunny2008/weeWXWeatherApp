@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">За</string>
     <string name="about_app">За апликацијата</string>
     <string name="afternoon_alert">Температурата %1$.1f°%2$s се спушти до вашата граница од %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Бидејќи двапати ја одбивте дозволата за известување, наместо тоа треба да ја овозможите во поставките, стартувајте ги поставките?</string>
     <string name="ok">Во ред</string>
     <string name="please_wait_verify_url">Ве молиме почекајте додека ја потврдиме URL-адресата што ја испративте</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Откриени се %1$d грешки во датотеката %2$s, погледнете ја датотеката %2$s пронајдена на %3$s или погледнете ја евиденцијата %4$s за детали</string>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Не успеа да се преземе сликата на радарот</string>
     <string name="radar_still_downloading">Сликата од радарот сè уште се презема</string>

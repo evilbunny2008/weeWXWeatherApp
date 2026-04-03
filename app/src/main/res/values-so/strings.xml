@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Ku saabsan</string>
     <string name="about_app">Ku saabsan barnaamijka</string>
     <string name="afternoon_alert">Heerkulka %1$.1f°%2$s ayaa hoos ugu dhacay xadkaaga %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Mar haddii aad diidday oggolaanshaha ogeysiinta laba jeer, waxaad u baahan tahay inaad karti u geliso Settings beddelkeeda, bilaw Settings?</string>
     <string name="ok">Hagaag</string>
     <string name="please_wait_verify_url">Fadlan sug inta aan xaqiijineyno url aad gudbisay</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Waxaa jiray %1$d khaladaad laga helay faylka %2$s, eeg faylka %2$s ee laga helay %3$s ama eeg %4$s diiwaanka faahfaahinta</string>
     <string name="radar">Raadaar</string>
     <string name="radar_download_failed">Ku guuldareystay soo dejisashada muuqaalka radar</string>
     <string name="radar_still_downloading">Sawirka Radar ayaa wali soo dejinaya</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Diwar-benn</string>
     <string name="about_app">Diwar-benn an App</string>
     <string name="afternoon_alert">Diskennet eo an temperadur %1$.1f°%2$s betek ho bevenn a %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Dre ma\'z oc\'h bet nac\'het div wech an aotre da gemenn, ret eo deoc\'h he gweredekaat en arventennoù e-lec\'h, arventennoù lañsañ?</string>
     <string name="ok">Mat eo</string>
     <string name="please_wait_verify_url">Gortozit pa vo gwiriet an URL hoc\'h eus kinniget</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Kavet ez eus bet %1$d fazi er restr %2$s, sellit ouzh ar restr %2$s bet kavet e %3$s pe sellit ouzh marilhoù %4$s evit ar munudoù</string>
     <string name="radar">radar</string>
     <string name="radar_download_failed">C\'hwitet e voe da bellgargañ ar skeudenn radar</string>
     <string name="radar_still_downloading">Emañ skeudenn Radar o pellgargañ c\'hoazh</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">तकरीबन</string>
     <string name="about_app">ऐप दे बारे च</string>
     <string name="afternoon_alert">तापमान %1$.1f°%2$s तुंदी सीमा %3$.1f°%2$s तगर घट्ट होई गेआ ऐ</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">चूंकि तुसें सूचना दी अनुमति गी दो बारी मना करी दित्ता ऐ, इसलेई तुसेंगी इसदे बजाय सेटिंग्स च सक्षम करने दी लोड़ ऐ, सेटिंग्स लॉन्च करो?</string>
     <string name="ok">ठीक ऐ</string>
     <string name="please_wait_verify_url">कृपा करियै इंतजार करो जिसलै अस तुंदे आसेआ पेश कीते गेदे URL दी सत्यापन करदे आं।</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">फ़ाइल च %1$d त्रुटियां पाईयां गेइयां हियां, %2$s फाइल गी %3$s पर पाई गेदी दिक्खो जां ब्यौरे आस्तै %4$s लॉग दिक्खो</string>
     <string name="radar">रडार ऐ</string>
     <string name="radar_download_failed">रडार छवि डाउनलोड करने च असफल रेहा</string>
     <string name="radar_still_downloading">रडार छवि अजें बी डाउनलोड कीती जा करदी ऐ।</string>

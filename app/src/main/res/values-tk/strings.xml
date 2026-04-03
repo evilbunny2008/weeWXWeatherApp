@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Hakda</string>
     <string name="about_app">Programma hakda</string>
     <string name="afternoon_alert">Temperatura%1$.1f°%2$s siziň çägiňize düşdi%3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Duýduryş rugsadyny iki gezek ret edeniňiz üçin, ony ýerine sazlamalarda işletmeli, sazlamalary işe girizmeli?</string>
     <string name="ok">Bolýar</string>
     <string name="please_wait_verify_url">Berlen URL-ni tassyklaýarys diýip garaşyň</string>
+	<string name="processing_errors" tools:ignore="PluralsCandidate">%2$s faýlynda %1$d ýalňyşlyklar ýüze çykaryldy, %3$s den tapylan %2$s faýly görüň ýa-da jikme-jiklikler üçin %4$s gündeligini görüň</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Radar suratyny göçürip alyp bilmedi</string>
     <string name="radar_still_downloading">Radar suraty henizem göçürip alýarlar</string>

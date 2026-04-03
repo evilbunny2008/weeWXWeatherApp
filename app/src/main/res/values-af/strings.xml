@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Oor</string>
     <string name="about_app">Oor die App</string>
     <string name="afternoon_alert">Temperatuur %1$.1f°%2$s het tot jou limiet van %3$.1f°%2$s gedaal</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Aangesien jy die kennisgewingtoestemming twee keer geweier het, moet jy dit eerder in instellings aktiveer, instellings begin?</string>
     <string name="ok">Goed</string>
     <string name="please_wait_verify_url">Wag asseblief terwyl ons die URL wat jy ingedien het, verifieer</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Daar was %1$d foute bespeur in die %2$s lêer, bekyk die %2$s lêer gevind by %3$s of bekyk %4$s logs vir die besonderhede</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Kon nie die radarprent aflaai nie</string>
     <string name="radar_still_downloading">Radarbeeld word steeds afgelaai</string>

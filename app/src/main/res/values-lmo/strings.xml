@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Incirca</string>
     <string name="about_app">In de la NFL</string>
     <string name="afternoon_alert">La temperadüra %1$.1f°%2$s l\'è calada al limit de %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Cuma g\'he refudà el permess de la notifikaziun dü volt, g\'he vœu de abilital in di impostaziun, slanzà i impostaziun?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Per piasér, g\'he de vèss sicür che g\'he stà descrivü el tò nomm</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">G\'he sun stà %1$d erur rilevà in del file %2$s, varda el file %2$s truvà a %3$s o varda i registr %4$s per i detai</string>
     <string name="radar">emad</string>
     <string name="radar_download_failed">Impara i foto de la fotocamera de la fotocamera</string>
     <string name="radar_still_downloading">El giœugh l\'è el punt püsee volt de la fotocamera</string>

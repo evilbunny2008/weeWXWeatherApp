@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Ɣɔ̈n</string>
     <string name="about_app">Cït mɛn de Apple</string>
     <string name="afternoon_alert">Atuɔ̈c %1$.1f°%2$s acï lɔ piny tën thökdu ë %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Cï mɛn cï yïn lööŋ ke lëk jäi në door yiic kaa rou, yïn awïc ba puɔ̈l në ajuɛɛr yic në thɛɛr kɔ̈k, jɔ̈k ajuɛɛr?</string>
     <string name="ok">Eyen</string>
     <string name="please_wait_verify_url">Tïŋ ë thää wën cï ɣok URL cï yïn tääu thïn yök</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï keek yök në %2$s ë athör yic, tïŋ %2$s ë athör cï yök në %3$s wala tïŋ %4$s ë lööŋ ë thööŋ ë wël ë thööŋ</string>
     <string name="radar">Röl</string>
     <string name="radar_download_failed">Acï wïc ba thura de radar yök</string>
     <string name="radar_still_downloading">Radar thura aŋot ke cë yök</string>

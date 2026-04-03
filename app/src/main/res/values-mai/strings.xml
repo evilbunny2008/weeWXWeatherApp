@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">विषय में</string>
     <string name="about_app">एप्प के बारे में</string>
     <string name="afternoon_alert">तापमान %1$.1f°%2$s अहाँक सीमा %3$.1f°%2$s पर खसि गेल अछि</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">चूँकि अहाँ दू बेर सूचना अनुमति केँ अस्वीकार केलहुँ, अहाँ केँ एकरा बदला मे सेटिंग्स मे सक्षम करबाक आवश्यकता अछि, सेटिंग्स लॉन्च करबाक चाही?</string>
     <string name="ok">ठीक छैै</string>
     <string name="please_wait_verify_url">कृपया प्रतीक्षा करू जखन कि हम अहाँक द्वारा प्रस्तुत यूआरएल के सत्यापन करू।</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">फाइल मे %1$d त्रुटि पता चलल छल, %3$s पर भेटल %2$s फाइल देखू अथवा विवरण क लेल %4$s लॉग देखू</string>
     <string name="radar">रडार 10।</string>
     <string name="radar_download_failed">रडार छवि डाउनलोड करबा मे असफल रहल</string>
     <string name="radar_still_downloading">रडार छवि एखनो डाउनलोड क रहल अछि।</string>

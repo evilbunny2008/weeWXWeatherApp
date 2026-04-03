@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">について</string>
     <string name="about_app">アプリについて</string>
     <string name="afternoon_alert">温度 %1$.1f°%2$s が制限値 %3$.1f°%2$s まで低下しました</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">通知許可を 2 回拒否したため、代わりに設定で通知許可を有効にする必要があります。設定を起動しますか?</string>
     <string name="ok">わかりました</string>
     <string name="please_wait_verify_url">送信された URL を確認するまでお待ちください。</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">ファイルで %1$d 個のエラーが検出されました。詳細については、%3$s にある %2$s ファイルを表示するか、%4$s ログを表示してください。</string>
     <string name="radar">レーダー</string>
     <string name="radar_download_failed">レーダー画像のダウンロードに失敗しました</string>
     <string name="radar_still_downloading">レーダー画像はまだダウンロード中です。</string>

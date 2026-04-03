@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Iwwer</string>
     <string name="about_app">Iwwer d\'App</string>
     <string name="afternoon_alert">Temperatur %1$.1f°%2$s ass op Är Limit vun %3$.1f°%2$s erofgaang</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Zënter datt Dir d\'Notifikatiounserlaabnes zweemol ofgeleent hutt, musst Dir et an Astellungen aktivéieren amplaz, Astellungen starten?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Waart w.e.g. wärend mir d\'URL verifizéieren déi Dir aginn hutt</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Et goufen %1$d Feeler an der %2$s Datei entdeckt, kuckt de %2$s Datei fonnt op %3$s oder kuckt %4$s Logbicher fir d\'Detailer</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Ausgefall fir d\'Radarbild erofzelueden</string>
     <string name="radar_still_downloading">Radarbild gëtt nach ëmmer erofgelueden</string>

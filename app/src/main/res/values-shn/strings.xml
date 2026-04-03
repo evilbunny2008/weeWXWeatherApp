@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">လွင်ႈတၢင်း</string>
     <string name="about_app">เกี่ยวกับ ဢႅပ်ႉ</string>
     <string name="afternoon_alert">တၢင်းမႆႈ %1$.1f°%2$s လူတ်းလူင်းထိုင် တီႈမၵ်းၶႅၼ်ႈ ၸဝ်ႈၵဝ်ႇ %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">ယွၼ်ႉဝႃႈ ၸဝ်ႈၵဝ်ႇ ဢမ်ႇယွမ်းႁပ်ႉ ၶႂၢင်ႉ လွင်ႈပၼ်ၶၢဝ်ႇ သွင်ပွၵ်ႈလႄႈ ၸဝ်ႈၵဝ်ႇ လူဝ်ႇလႆႈ ပိုတ်ႇပၼ် ၼႂ်း settings တႅၼ်းတီႈမၼ်း ပိုတ်ႇ settings ႁိုဝ်?</string>
     <string name="ok">လႆႈယူႇ</string>
     <string name="please_wait_verify_url">ၶႅၼ်းတေႃႈပႂ်ႉယၢမ်းၽွင်းႁဝ်းမၵ်းမၼ်ႈ URL ဢၼ်ၸဝ်ႈၵဝ်ႇတၢင်ႇယိုၼ်ႈဝႆႉၼၼ်ႉ။</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">ၼႂ်း %2$s ၼၼ်ႉ လႆႈႁၼ် လွင်ႈၽိတ်းပိူင်ႈ %1$d သေ တူၺ်း %2$s ဢၼ်လႆႈႁၼ် တီႈ %3$s ဢမ်ႇၼၼ် တူၺ်း %4$s logs တႃႇႁူႉလွင်ႈတၢင်းမၼ်း</string>
     <string name="radar">ရႃႇတႃႇ</string>
     <string name="radar_download_failed">ဢမ်ႇလူင်းဢဝ်ၶႅပ်းႁၢင်ႈ ရေႇတႃႇ</string>
     <string name="radar_still_downloading">ၶႅပ်းႁၢင်ႈ Radar ၵေႃႈ တိုၵ်ႉလူင်းဝႆႉယူႇ။</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Nezve</string>
     <string name="about_app">Nezve app</string>
     <string name="afternoon_alert">Tembiricha %1$.1f°%2$s yadzikira kusvika paunogumira pa %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Sezvo iwe waramba mvumo yekuzivisa kaviri, unofanirwa kuigonesa muzvirongwa panzvimbo, tanga marongero?</string>
     <string name="ok">Zvakanaka</string>
     <string name="please_wait_verify_url">Ndapota mirira isu tinosimbisa iyo URL yawakatumira</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Pane %1$d zvakakanganisika pa %2$s faira, ona %2$s faira rawanikwa pa %3$s kana kuona %4$s log kuti uwane humbowo</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Kukundikana kutora iyo radar mufananidzo</string>
     <string name="radar_still_downloading">Radar mufananidzo achiri kurodha</string>

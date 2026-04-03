@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Kan</string>
     <string name="about_app">Application ko la</string>
     <string name="afternoon_alert">Funteni %1$.1f°%2$s jigira ka se i dan ma min ye %3$.1f°%2$s ye</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Komin i banna kunnafonidi yamaruya la siɲɛ fila, i ka kan k\'a daminɛ settings kɔnɔ o nɔ na, ​​lancement settings?</string>
     <string name="ok">N sɔnna</string>
     <string name="please_wait_verify_url">Aw ye kɔnɔni kɛ k\'a sɔrɔ an bɛ URL min di, aw bɛ o sɛgɛsɛgɛ</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">%1$d filiw kɔlɔsira %2$s filen kɔnɔ, ka %2$s filen lajɛ min sɔrɔla %3$s la walima ka %4$s sɛbɛnw lajɛ walasa ka kunnafoni sɔrɔ</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">A ma se ka rada ja telesarse</string>
     <string name="radar_still_downloading">Radar ja bɛ ka telesarse hali bi</string>

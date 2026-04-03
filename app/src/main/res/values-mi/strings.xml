@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Mō</string>
     <string name="about_app">Mo te taupānga</string>
     <string name="afternoon_alert">Kua heke te pāmahana %1$.1f°%2$s ki tō tepe o %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">I te mea e rua nga wa i paopao koe i te whakaaetanga whakamohiotanga, me whakaahei koe i roto i nga tautuhinga hei utu, whakarewahia nga tautuhinga?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Tēnā tatari ka tirohia e mātou te URL i tukuna e koe</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</string>
     <string name="radar">Irirangi whakaata</string>
     <string name="radar_download_failed">I rahua te tango i te ahua radar</string>
     <string name="radar_still_downloading">Kei te tango tonu te whakaahua radar</string>

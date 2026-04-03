@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Om</string>
     <string name="about_app">Om appen</string>
     <string name="afternoon_alert">Temperaturen %1$.1f°%2$s er faldet til din grænse på %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Da du afviste meddelelsestilladelsen to gange, skal du aktivere den i indstillinger i stedet, starte indstillinger?</string>
     <string name="ok">Okay</string>
     <string name="please_wait_verify_url">Vent venligst, mens vi bekræfter den URL, du har indsendt</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Der blev fundet %1$d fejl i %2$s-filen, se %2$s-filen fundet på %3$s eller se %4$s logfiler for detaljer</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Kunne ikke downloade radarbilledet</string>
     <string name="radar_still_downloading">Radarbilledet downloades stadig</string>

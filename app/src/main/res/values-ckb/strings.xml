@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">دەربارەی</string>
     <string name="about_app">دەربارەی ئەپەکە</string>
     <string name="afternoon_alert">پلەی گەرمی %1$.1f°%2$s دابەزیوە بۆ سنووری تۆ کە %3$.1f°%2$s یە</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">بەو پێیەی دوو جار مۆڵەتی ئاگادارکردنەوەکەت ڕەتکردەوە، پێویستە لەبری ئەوە لە ڕێکخستنەکاندا چالاک بکەیت، ڕێکخستنەکانی دەستپێبکە؟</string>
     <string name="ok">باشە</string>
     <string name="please_wait_verify_url">تکایە چاوەڕوان بن لە کاتێکدا ئێمە ئەو URL ەی کە تۆ پێشکەشت کردووە پشتڕاستی دەکەینەوە</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">هەڵەی %1$d لە پەڕگەی %2$s دۆزرایەوە، پەڕگەی %2$s ببینە کە لە %3$s دۆزرایەوە یان لۆگەکانی %4$s ببینە بۆ وردەکارییەکان</string>
     <string name="radar">ڕادار</string>
     <string name="radar_download_failed">شکستی هێنا لە دابەزاندنی وێنەی ڕادار</string>
     <string name="radar_still_downloading">وێنەی ڕادار هێشتا دابەزاندن</string>

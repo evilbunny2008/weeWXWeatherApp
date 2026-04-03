@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Maqondana</string>
     <string name="about_app">Mayelana nohlelo lokusebenza</string>
     <string name="afternoon_alert">Izinga lokushisa %1$.1f°%2$s lehlile lafika kumkhawulo wakho ongu-%3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Njengoba unqabe imvume yesaziso kabili, udinga ukusivumela kuzilungiselelo esikhundleni salokho, uqalise izilungiselelo?</string>
     <string name="ok">Kulungile</string>
     <string name="please_wait_verify_url">Sicela ulinde ngenkathi siqinisekisa i-URL oyithumele</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Kube namaphutha angu-%1$d atholwe kufayela le-%2$s, buka ifayela le-%2$s elitholwe kokuthi %3$s noma ubuke amalogi angu-%4$s ukuze uthole imininingwane</string>
     <string name="radar">Ireda</string>
     <string name="radar_download_failed">Yehlulekile ukulanda isithombe se-radar</string>
     <string name="radar_still_downloading">Izithombe ze-radar zisalanda</string>

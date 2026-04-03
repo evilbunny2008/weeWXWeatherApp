@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Nipaakar ed</string>
     <string name="about_app">Nipaakar ed App</string>
     <string name="afternoon_alert">Say temperatura %1$.1f°%2$s et inmepas ed limitasyon mo ya %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Lapud amidua mon inawat so permiso ed pakaamta, kaukolan mon i-enable itan ed settings imbes, launch settings?</string>
     <string name="ok">Okay</string>
     <string name="please_wait_verify_url">Paki alagar mi legan min papaneknekan so URL ya insumite yo</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Walay %1$d ya error ya anengneng ed %2$s file, nengnengen so %2$s file ya anengneng ed %3$s odino nengnengen so %4$s logs parad saray detalye</string>
     <string name="radar">Radrar</string>
     <string name="radar_download_failed">Ag-indownload so radar ya imahen</string>
     <string name="radar_still_downloading">Say maples ya imahen so man-download</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">შესახებ</string>
     <string name="about_app">აპლიკაციის შესახებ</string>
     <string name="afternoon_alert">ტემპერატურა %1$.1f°%2$s დაეცა თქვენს ლიმიტამდე %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">მას შემდეგ, რაც თქვენ ორჯერ თქვით შეტყობინების ნებართვა, უნდა ჩართოთ ის პარამეტრებში, გაუშვათ პარამეტრები?</string>
     <string name="ok">კარგი</string>
     <string name="please_wait_verify_url">გთხოვთ, დაელოდოთ სანამ ჩვენ დავადასტურებთ თქვენ მიერ გაგზავნილ URL-ს</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">ფაილში აღმოჩენილია %1$d შეცდომა, იხილეთ %2$s ფაილი ნაპოვნი %3$s-ზე ან ნახეთ %4$s ჟურნალები დეტალებისთვის</string>
     <string name="radar">რადარი</string>
     <string name="radar_download_failed">რადარის სურათის ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="radar_still_downloading">რადარის სურათი ჯერ კიდევ იტვირთება</string>

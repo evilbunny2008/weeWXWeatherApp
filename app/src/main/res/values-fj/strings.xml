@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Rauta ni</string>
     <string name="about_app">Me baleta na iKu</string>
     <string name="afternoon_alert">Na ivakarau ni katakata %1$.1f°%2$s sa lutu ki na nomu iyalayala ni %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Me vaka ni o sa vakasuka na veivakadonui ni veivakadeitaki vakarua, e dodonu mo vakatara ena ituvatuva ena kena isosomi, ituvatuva ni launch?</string>
     <string name="ok">Vinaka</string>
     <string name="please_wait_verify_url">Kerei me da wawa ni da vakadeitaka na URL o sa vakamalumalumu</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">E tiko na %1$d cala e kunei ena faile ni%2$s, raica na faile ni%2$s e kune ena%3$s se raica na itukutuku ni%4$s me baleta na kena itukutuku matailalai</string>
     <string name="radar">rara</string>
     <string name="radar_download_failed">Vauci me lavetaki na iyaloyalo ni radar</string>
     <string name="radar_still_downloading">Se lavetaka tiko ga na iyaloyalo ni kena lavetaki</string>

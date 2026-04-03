@@ -58,8 +58,6 @@ public class Webcam extends Fragment
 
 		weeWXAppCommon.NotificationManager.getNotificationLiveData().observe(getViewLifecycleOwner(), notificationObserver);
 
-		loadWebcamImage();
-
 		return rootView;
 	}
 

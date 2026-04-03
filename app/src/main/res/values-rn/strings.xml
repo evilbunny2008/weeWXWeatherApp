@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Hafi</string>
     <string name="about_app">Ivyerekeye App</string>
     <string name="afternoon_alert">Ubushuhe %1$.1f°%2$s bwagabanutse ku rugero rwawe rwa %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Ko wanse uruhusha rwo kumenyesha incuro zibiri, ukeneye kurushoboza mu mitunganyirize aho, gutanguza imitunganyirize?</string>
     <string name="ok">Vyiza</string>
     <string name="please_wait_verify_url">Turagusavye urindire mu gihe turiko turasuzuma URL mwashizeho</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Hariho amakosa %1$d yabonetse muri dosiye %2$s, raba dosiye %2$s yabonetse kuri %3$s canke raba inyandiko %4$s kugira ngo ubone ibisobanuro</string>
     <string name="radar">Radari</string>
     <string name="radar_download_failed">Utanguriye gukura ishusho ya radar</string>
     <string name="radar_still_downloading">Ishusho ya Radar iracariko irakura</string>

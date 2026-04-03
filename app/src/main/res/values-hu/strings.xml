@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Körülbelül</string>
     <string name="about_app">Az alkalmazásról</string>
     <string name="afternoon_alert">A %1$.1f°%2$s hőmérséklet a %3$.1f°%2$s határértékre esett</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Mivel kétszer elutasította az értesítési engedélyt, inkább engedélyeznie kell a beállításokban, elindítja a beállításokat?</string>
     <string name="ok">Rendben</string>
     <string name="please_wait_verify_url">Kérjük, várjon, amíg ellenőrizzük a beküldött URL-t</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">%1$d hibát észleltünk a(z) %2$s fájlban. A részletekért tekintse meg a(z) %2$s fájlt a(z) %3$s helyen, vagy tekintse meg a(z) %4$s naplót</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Nem sikerült letölteni a radarképet</string>
     <string name="radar_still_downloading">A radarkép letöltése még folyamatban van</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">關於</string>
     <string name="about_app">關於應用程序</string>
     <string name="afternoon_alert">溫度 %1$.1f°%2$s 已降至您的限制 %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">由於您兩次拒絕通知權限，因此您需要在設定中啟用它，啟動設定嗎？</string>
     <string name="ok">好的</string>
     <string name="please_wait_verify_url">我們正在驗證您提交的網址，請稍候。</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">在 %2$s 檔案中檢測到 %1$d 個錯誤，請查看在 %3$s 找到的 %2$s 檔案或查看 %4$s 日誌以獲取詳細信息</string>
     <string name="radar">雷達</string>
     <string name="radar_download_failed">雷達圖像下載失敗</string>
     <string name="radar_still_downloading">雷達圖像仍在下載中。</string>

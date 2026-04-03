@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">विषये</string>
     <string name="about_app">App इत्यस्य विषये</string>
     <string name="afternoon_alert">तापमानं %1$.1f°%2$s भवतः %3$.1f°%2$s इति सीमां यावत् पतितम् अस्ति</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">यतः भवान् द्विवारं सूचनानुमतिं अङ्गीकृतवान्, तस्मात् भवद्भिः तस्य स्थाने सेटिङ्ग्स् मध्ये सक्षमीकरणं करणीयम्, सेटिङ्ग्स् प्रारम्भः?</string>
     <string name="ok">अस्तु</string>
     <string name="please_wait_verify_url">कृपया प्रतीक्ष्यताम् यदा वयं भवता प्रदत्तं URL सत्यापयामः।</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">सञ्चिकायां %1$d त्रुटयः ज्ञाताः, %3$s इत्यत्र प्राप्तं %2$s सञ्चिकां पश्यन्तु अथवा विवरणार्थं %4$s लॉग्स् पश्यन्तु</string>
     <string name="radar">रडार 1</string>
     <string name="radar_download_failed">रडार-चित्रं डाउनलोड् कर्तुं असफलः अभवत् ।</string>
     <string name="radar_still_downloading">रडार इमेज अद्यापि डाउनलोड् करोति।</string>

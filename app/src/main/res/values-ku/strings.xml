@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Ji dor</string>
     <string name="about_app">Der barê App</string>
     <string name="afternoon_alert">Germahiya %1$.1f°%2$s daketiye sînorê te %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Ji ber ku we du caran destûrnameya agahdarkirinê red kir, hûn hewce ne ku wê di şûna mîhengan de çalak bikin, mîhengan bidin destpêkirin?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Ji kerema xwe li bendê bimînin dema ku em URL-ya ku we şandiye rast bikin</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Di pela %2$s de %1$d xeletî hatin dîtin, pelê %2$s ku li %3$s hat dîtin bibînin an jî ji bo hûragahiyan têketinên %4$s bibînin</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Daxistina wêneya radarê bi ser neket</string>
     <string name="radar_still_downloading">Wêneyê radarê hîna tê daxistin</string>

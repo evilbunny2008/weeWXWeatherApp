@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">കുറിച്ച്</string>
     <string name="about_app">ആപ്പിനെക്കുറിച്ച്</string>
     <string name="afternoon_alert">%1$.1f°%2$s എന്ന താപനില നിങ്ങളുടെ പരിധിയായ %3$.1f°%2$s-ലേക്ക് കുറഞ്ഞു</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">നിങ്ങൾ അറിയിപ്പ് അനുമതി രണ്ടുതവണ നിരസിച്ചതിനാൽ, പകരം ക്രമീകരണങ്ങളിൽ അത് പ്രവർത്തനക്ഷമമാക്കേണ്ടതുണ്ട്, ക്രമീകരണങ്ങൾ സമാരംഭിക്കണോ?</string>
     <string name="ok">ശരി</string>
     <string name="please_wait_verify_url">നിങ്ങൾ സമർപ്പിച്ച URL ഞങ്ങൾ പരിശോധിക്കുമ്പോൾ ദയവായി കാത്തിരിക്കുക</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">ഫയലിൽ %1$d പിശകുകൾ കണ്ടെത്തി, %3$s-ൽ കണ്ടെത്തിയ %2$s ഫയൽ കാണുക അല്ലെങ്കിൽ വിശദാംശങ്ങൾക്ക് %4$s ലോഗുകൾ കാണുക</string>
     <string name="radar">റഡാർ</string>
     <string name="radar_download_failed">റഡാർ ചിത്രം ഡൗൺലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു</string>
     <string name="radar_still_downloading">റഡാർ ചിത്രം ഇപ്പോഴും ഡൗൺലോഡ് ചെയ്യുന്നു</string>

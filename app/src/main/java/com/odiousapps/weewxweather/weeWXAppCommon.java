@@ -146,6 +146,7 @@ class weeWXAppCommon
 
 	static final String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
+	static final String PROCESSING_ERRORS = "com.odiousapps.weewxweather.PROCESSING_ERRORS";
 
 	static final String UPDATECHECK = "com.odiousapps.weewxweather.UPDATECHECK";
 
@@ -2886,7 +2887,7 @@ class weeWXAppCommon
 	{
 		JSONObject json_data, json_last, json_combined;
 
-		LogMessage("mergeJsonObjects() Loading " + json_keys[0] + "_str from SharedPrefs");
+		//LogMessage("mergeJsonObjects() Loading " + json_keys[0] + "_str from SharedPrefs");
 		String json_data_str = (String)KeyValue.readVar(json_keys[0] + "_str", "");
 		if(json_data_str == null || json_data_str.isBlank())
 		{
@@ -2908,7 +2909,7 @@ class weeWXAppCommon
 			return false;
 		}
 
-		LogMessage("mergeJsonObjects() Loading " + json_keys[2] + "_str from SharedPrefs");
+		//LogMessage("mergeJsonObjects() Loading " + json_keys[2] + "_str from SharedPrefs");
 		String json_last_str = (String)KeyValue.readVar(json_keys[2] + "_str", "");
 		if(json_last_str == null || json_last_str.isBlank())
 		{
@@ -2938,7 +2939,7 @@ class weeWXAppCommon
 			{
 		        String key = keys.next();
 				Object value = json_data.get(key);
-				LogMessage("mergeJsonObjects() putting key: " + key + ", value: " + value);
+				//LogMessage("mergeJsonObjects() putting key: " + key + ", value: " + value);
 		        json_combined.put(key, value);
 		    }
 		} catch(JSONException je) {
@@ -2954,7 +2955,7 @@ class weeWXAppCommon
 
 		String json_combined_str = json_combined.toString();
 
-		LogMessage("mergeJsonObjects() json_combined_str: " + json_combined_str);
+		//LogMessage("mergeJsonObjects() json_combined_str: " + json_combined_str);
 		KeyValue.putVar("json_combined_str", json_combined_str);
 
 		return true;
@@ -3559,6 +3560,23 @@ class weeWXAppCommon
 			return false;
 		}
 
+		if(jsonObject.has("processingErrors"))
+		{
+			JSONArray jarr = jsonObject.optJSONArray("processingErrors");
+			if(jarr != null && jarr.length() > 0)
+			{
+				KeyValue.putVar("ProcessingErrorCount", jarr.length());
+				KeyValue.putVar("ProcessingErrorID", id);
+
+				for(int i = 0; i < jarr.length(); i++)
+					LogMessage("reallyGetWeather() Error in " + json_labels[id] + ": " + jarr.optString(i));
+
+				SendIntent(PROCESSING_ERRORS);
+				return false;
+			}
+		}
+
+
 		KeyValue.putVar(json_keys[id] + "_time", now);
 		KeyValue.putVar(json_keys[id] + "_str", jsonObject.toString());
 		KeyValue.putVar("LastWeatherError", null);
@@ -3914,6 +3932,7 @@ class weeWXAppCommon
 
 			LogMessage("response: " + response);
 			//LogMessage("Returned string: " + bodyStr);
+			//LogMessage("response.code(): " + response.code());
 
 			if(!response.isSuccessful())
 			{

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Kuom</string>
     <string name="about_app">Kaluwore gi App</string>
     <string name="afternoon_alert">Liet mar %1$.1f°%2$s osedok piny nyaka giko mari mar %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Kaka ne idagi ratiro mar lendo nyadi riyo, be dwarore ni ikete e chenro kar mano, ichak chenro?</string>
     <string name="ok">Oo</string>
     <string name="please_wait_verify_url">Yie mondo irit ka wan bende wafwenyo URL ma ne ioro</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Ne nitie %1$d makosa ma ne oyudre e fail mar %2$s, ne fail mar %2$s ma ne oyudre e %3$s kata ne %4$s logs mondo iyud weche matut</string>
     <string name="radar">raboar</string>
     <string name="radar_download_failed">Oherore mondo ochop e picha mar radir</string>
     <string name="radar_still_downloading">Picha mar Radar pod ng\'eny</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Pali</string>
     <string name="about_app">Pa lwa App</string>
     <string name="afternoon_alert">Ukukaba %1$.1f°2$s kwacepa ukufika pa cipimo cenu ica %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Apo mwakana insambu sha kwishibisha imiku ibili, bushe mufwile ukucisuminisha mu fipekanishiwe mu cifulo ca fyo, ukutendeka ifipekanishiwe?</string>
     <string name="ok">Ee</string>
     <string name="please_wait_verify_url">Mukwai lindilila ilyo tuleshininkisha URL iyo mwatumine</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Kwaliko ifilubo %1$d ifyasangilwe muli failo ya %2$s, moneni failo ya %2$s iyasangwa pa %3$s nangu moneni ifitabo fya %4$s pakuti mumone ifya kufumamo</string>
     <string name="radar">Rakara</string>
     <string name="radar_download_failed">Ukufilwa ukukopa icikope ca radar</string>
     <string name="radar_still_downloading">Icikope ca cikope cicili cilekopololwa</string>

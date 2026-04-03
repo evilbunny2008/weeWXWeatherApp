@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Konsènan</string>
     <string name="about_app">Konsènan App a</string>
     <string name="afternoon_alert">Tanperati %1$.1f°%2$s desann nan limit ou nan %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Depi ou refize pèmisyon notifikasyon an de fwa, ou bezwen aktive li nan anviwònman olye, lanse anviwònman?</string>
     <string name="ok">Oke</string>
     <string name="please_wait_verify_url">Tanpri tann pandan n ap verifye URL ou te voye a</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Te gen %1$d erè detekte nan %2$s fichye a, gade %2$s fichye a ki te jwenn nan %3$s oswa gade %4$s mòso bwa pou detay yo</string>
     <string name="radar">Rada</string>
     <string name="radar_download_failed">Echwe pou telechaje imaj rada a</string>
     <string name="radar_still_downloading">Imaj rada toujou ap telechaje</string>

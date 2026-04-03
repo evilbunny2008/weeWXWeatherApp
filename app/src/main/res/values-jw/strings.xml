@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Babagan</string>
     <string name="about_app">Babagan App</string>
     <string name="afternoon_alert">Suhu %1$.1f°%2$s wis mudhun nganti watesan sampeyan %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Awit sampeyan nolak ijin kabar kaping pindho, sampeyan kudu ngaktifake ing setelan tinimbang, miwiti setelan?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Mangga ngenteni nalika kita verifikasi URL sing dikirim</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Ana %1$d kesalahan sing dideteksi ing file %2$s, deleng file %2$s sing ditemokake ing %3$s utawa deleng %4$s log kanggo rincian</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Gagal download gambar radar</string>
     <string name="radar_still_downloading">Gambar radar isih diunduh</string>

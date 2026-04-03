@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Ma kwako</string>
     <string name="about_app">I kom App</string>
     <string name="afternoon_alert">Lyeto %1$.1f°%2$s opoto piny nio wa i rwom me %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Kit ma i kwero twero me miyo ngec ni tyen aryo, omyera i ket i yub me tic, yub me yabo?</string>
     <string name="ok">Aya</string>
     <string name="please_wait_verify_url">Wakwayi ni ikur kun wa moko ni URL ma icwalo</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Tye bal %1$d ma kinongo i %2$s file, nen %2$s file ma kinongo i %3$s onyo nen %4$s logs pi ngec mukene</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Ka onongo pe atwero kwanyo cal me jadar meno</string>
     <string name="radar_still_downloading">Cal ma pe nen maber pud tye ka nen</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Ahari</string>
     <string name="about_app">Ebikwatiraine na App</string>
     <string name="afternoon_alert">Ebirikuba biriho %1$.1f°%2$s byagaruka ahansi kuhika aha kikomo kyawe kya %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Ahabw\'okugira ngu okayanga orusa rw\'okumanyisibwa emirundi ebiri, nooyetenga kukiikiriza omu ntebeekanisa omu mwanya gw\'ekyo, okutandikaho ntebeekanisa?</string>
     <string name="ok">Kare</string>
     <string name="please_wait_verify_url">Nyabura we rinda obwo turikuhamya URL ei waahayo</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Hariho enshobi %1$d ezashangirwe omu fairo ya %2$s, reeba fairo ya %2$s eyashangirwe ahari %3$s nari reeba ebihandiiko bya %4$s ahabw\'ebirikukiraho</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Okuremwa kutunga ekishushani kya radar</string>
     <string name="radar_still_downloading">Ekishushani kya radar nikikikwata</string>

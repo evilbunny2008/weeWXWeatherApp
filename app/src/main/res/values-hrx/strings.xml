@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Iwich</string>
     <string name="about_app">Iwer ti App</string>
     <string name="afternoon_alert">Ti temperatuur %1$.1f°%2$s is runer kang uf ti xpits fon %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Wayl tuu ti notisye erlaupnis tswaay mool ap kelos host, prauchst tuu tas in te instellunge in xtele, instellunge lanseere?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Bitte waart wën mer ti URL woos tuu kexikt host se ferxteen</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Es waare %1$d xlechte kewoonheete in te %2$s xrift, kuk ti %2$s xrift woo uf %3$s kefun kep waar orer kuk ti %4$s prokrame fer ti detaile</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Fer nët tas radar pilt download mache</string>
     <string name="radar_still_downloading">Radar pilt is noch am download mache</string>

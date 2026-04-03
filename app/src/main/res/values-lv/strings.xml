@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Par</string>
     <string name="about_app">Par lietotni</string>
     <string name="afternoon_alert">Temperatūra %1$.1f°%2$s ir noslīdējusi līdz robežai %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Tā kā jūs divreiz noraidījāt paziņojumu atļauju, tā ir jāiespējo iestatījumos, vai palaist iestatījumus?</string>
     <string name="ok">Labi</string>
     <string name="please_wait_verify_url">Lūdzu, uzgaidiet, kamēr mēs pārbaudīsim jūsu iesniegto URL</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">failā tika konstatētas %1$d kļūdas, skatiet %2$s failu, kas atrasts %3$s, vai skatiet %4$s žurnālus, lai iegūtu sīkāku informāciju</string>
     <string name="radar">Radars</string>
     <string name="radar_download_failed">Neizdevās lejupielādēt radara attēlu</string>
     <string name="radar_still_downloading">Joprojām notiek radara attēla lejupielāde</string>

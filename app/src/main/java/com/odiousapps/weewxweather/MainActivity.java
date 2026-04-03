@@ -1490,20 +1490,51 @@ public class MainActivity extends FragmentActivity
 		}
 	}
 
+	private void showProcessingErrors()
+	{
+		int errorCount = (int)KeyValue.readVar("ProcessingErrorCount", -1);
+		if(errorCount < 1)
+			return;
+
+		int json_id = (int)KeyValue.readVar("ProcessingErrorID", -1);
+		if(json_id < 0 || json_id >= json_keys.length)
+			return;
+
+		String json_url = (String)KeyValue.readVar(json_keys[json_id] + "_url", "");
+		if(json_url == null || json_url.isBlank())
+			return;
+
+		KeyValue.putVar("ProcessingErrorCount", null);
+		KeyValue.putVar("ProcessingErrorID", null);
+
+		String errorStr = String.format(Locale.getDefault(), getAndroidString(R.string.processing_errors),
+				errorCount, json_labels[json_id], json_url, getEnglishAndroidString(R.string.app_name));
+		String logStr = String.format(Locale.ENGLISH, getEnglishAndroidString(R.string.processing_errors),
+						errorCount, json_labels[json_id], json_url, getEnglishAndroidString(R.string.app_name));
+		showAlertDialog(errorStr, logStr);
+	}
+
 	private void showUpdateAvailable()
 	{
-		int updateVer = Math.max(weeWXApp.minimum_inigo_version, weeWXApp.minimum_inigo_version);
+		int updateVer = weeWXApp.minimum_inigo_version;
 
 		if((boolean)KeyValue.readVar("shownUpdate_" + updateVer, false))
 			return;
 
 		KeyValue.putVar("shownUpdate_" + updateVer, true);
 
+		String errorStr = getAndroidString(R.string.inigo_needs_updating);
+		String logStr = getEnglishAndroidString(R.string.inigo_needs_updating);
+		showAlertDialog(errorStr, logStr);
+	}
+
+	private void showAlertDialog(String errorStr, String logStr)
+	{
 		new AlertDialog.Builder(this)
 				.setCancelable(false)
 				.setIcon(R.mipmap.ic_launcher_foreground)
-				.setTitle(getAndroidString(R.string.app_name))
-				.setMessage(getAndroidString(R.string.inigo_needs_updating))
+				.setTitle(getEnglishAndroidString(R.string.app_name))
+				.setMessage(errorStr)
 				.setPositiveButton(getAndroidString(R.string.ok), null)
 				.create()
 				.show();
@@ -1512,7 +1543,7 @@ public class MainActivity extends FragmentActivity
 	private void showUpdateAvailable2()
 	{
 		LogMessage("Will now show update2 dialog now...");
-		String str = getAndroidString(R.string.json_formatted_data);
+		String str = getEnglishAndroidString(R.string.json_formatted_data);
 		str = String.format(str, "weeWX App", "JSON formatted", "weeWX", "Inigo Plugin", "inigo-settings.txt", "GitHub.com");
 		new AlertDialog.Builder(this)
 				.setIcon(R.mipmap.ic_launcher_foreground)
@@ -2394,6 +2425,9 @@ public class MainActivity extends FragmentActivity
 
 		if(str.equals(weeWXAppCommon.INIGO_INTENT))
 			showUpdateAvailable();
+
+		if(str.equals(weeWXAppCommon.PROCESSING_ERRORS))
+			showProcessingErrors();
 	};
 
 	public boolean isViewPagerNull()

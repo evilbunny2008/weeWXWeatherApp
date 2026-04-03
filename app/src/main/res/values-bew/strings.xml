@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Soal</string>
     <string name="about_app">Soal App</string>
     <string name="afternoon_alert">Suhu %1$.1f°%2$s udah turun ke batas lu %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Karena lu nolak izin pemberitahuan dua kali, lu harus ngaktifin di pengaturan, pengaturan peluncuran?</string>
     <string name="ok">Oke</string>
     <string name="please_wait_verify_url">Tolong tungguin pas kita verifikasi URL yang lo ajuin</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Ada %1$d kesalahan yang terdeteksi di file %2$s, liat file %2$s yang ditemuin di %3$s atau liat log %4$s buat detailnya</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Gagal buat ngunduh gambar radar</string>
     <string name="radar_still_downloading">Radar gambar masih aja download</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">За</string>
     <string name="about_app">Относно приложението</string>
     <string name="afternoon_alert">Температурата %1$.1f°%2$s падна до вашия лимит от %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Тъй като отказахте разрешението за уведомяване два пъти, трябва вместо това да го активирате в настройките, настройките за стартиране?</string>
     <string name="ok">добре</string>
     <string name="please_wait_verify_url">Моля, изчакайте, докато проверим изпратения от вас URL адрес</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Имаше %1$d открити грешки във файла %2$s, вижте файла %2$s, намерен в %3$s, или прегледайте регистрационните файлове на %4$s за подробности</string>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Неуспешно изтегляне на радарното изображение</string>
     <string name="radar_still_downloading">Радарното изображение все още се изтегля</string>

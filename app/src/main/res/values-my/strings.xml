@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">အကေြာင်း</string>
     <string name="about_app">app အကြောင်း</string>
     <string name="afternoon_alert">အပူချိန် %1$.1f°%2$s သည် သင့်ကန့်သတ်ချက် %3$.1f°%2$s သို့ ကျဆင်းသွားသည်</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">အကြောင်းကြားချက်ခွင့်ပြုချက်ကို နှစ်ကြိမ်တိုင်တိုင် ငြင်းပယ်ခဲ့သောကြောင့်၊ ၎င်းအစား ဆက်တင်များတွင် ၎င်းကိုဖွင့်ရန်၊ ဆက်တင်များကိုဖွင့်ရန် လိုအပ်ပါသလား။</string>
     <string name="ok">အိုကေ</string>
     <string name="please_wait_verify_url">သင်တင်သွင်းထားသော URL ကိုကျွန်ုပ်တို့အတည်ပြုနေစဉ်ခဏစောင့်ပါ။</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">ဖိုင်တွင် အမှားအယွင်း %1$d တွေ့ရှိရပါသည်၊ %3$s တွင်တွေ့ရသော %2$s ဖိုင်ကိုကြည့်ပါ သို့မဟုတ် အသေးစိတ်အတွက် %4$s မှတ်တမ်းများကို ကြည့်ရှုပါ</string>
     <string name="radar">ရေဒါ</string>
     <string name="radar_download_failed">ရေဒါပုံရိပ်ကိုဒေါင်းလုပ်ဆွဲရန်မအောင်မြင်ပါ</string>
     <string name="radar_still_downloading">ရေဒါပုံရိပ်နေဆဲဒေါင်းလုပ်လုပ်နေသည်။</string>

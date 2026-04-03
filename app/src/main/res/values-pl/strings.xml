@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">O</string>
     <string name="about_app">O aplikacji</string>
     <string name="afternoon_alert">Temperatura %1$.1f°%2$s spadła do limitu %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Ponieważ dwukrotnie odrzuciłeś pozwolenie na powiadomienia, musisz zamiast tego włączyć je w ustawieniach, uruchomić ustawienia?</string>
     <string name="ok">OK</string>
     <string name="please_wait_verify_url">Poczekaj, aż zweryfikujemy przesłany adres URL</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Wykryto %1$d błędów w pliku %2$s. Przejrzyj plik %2$s znaleziony w %3$s lub przejrzyj dzienniki %4$s, aby uzyskać szczegółowe informacje</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Nie udało się pobrać obrazu radarowego</string>
     <string name="radar_still_downloading">Obraz radarowy nadal się pobiera</string>

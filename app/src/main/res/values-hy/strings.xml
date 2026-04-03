@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Մոտ</string>
     <string name="about_app">Հավելվածի մասին</string>
     <string name="afternoon_alert">%1$.1f°%2$s ջերմաստիճանն իջել է մինչև ձեր սահմանաչափը՝ %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Քանի որ դուք երկու անգամ մերժել եք ծանուցման թույլտվությունը, դրա փոխարեն պետք է միացնե՞ք այն կարգավորումներում, գործարկե՞լ կարգավորումները:</string>
     <string name="ok">Լավ</string>
     <string name="please_wait_verify_url">Խնդրում ենք սպասել, մինչև մենք հաստատենք ձեր ուղարկած URL-ը:</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">ֆայլում հայտնաբերվել են %1$d սխալներ, դիտեք %2$s ֆայլը, որը գտնվել է %3$s-ում կամ դիտեք %4$s մատյանները մանրամասների համար</string>
     <string name="radar">Ռադար</string>
     <string name="radar_download_failed">Չհաջողվեց ներբեռնել ռադարի պատկերը</string>
     <string name="radar_still_downloading">Ռադարի պատկերը դեռ ներբեռնվում է:</string>

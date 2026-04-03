@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">เกี่ยวกับ</string>
     <string name="about_app">เกี่ยวกับแอพ</string>
     <string name="afternoon_alert">อุณหภูมิ %1$.1f°%2$s ลดลงถึงขีดจำกัดของคุณที่ %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">เนื่องจากคุณปฏิเสธการอนุญาตการแจ้งเตือนสองครั้ง คุณต้องเปิดใช้งานในการตั้งค่าแทน เปิดการตั้งค่าหรือไม่</string>
     <string name="ok">ตกลง</string>
     <string name="please_wait_verify_url">โปรดรอในขณะที่เราตรวจสอบ URL ที่คุณส่งมา</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">พบข้อผิดพลาด %1$d ในไฟล์ %2$s ดูไฟล์ %2$s ที่พบใน %3$s หรือดูบันทึก %4$s เพื่อดูรายละเอียด</string>
     <string name="radar">เรดาร์</string>
     <string name="radar_download_failed">ดาวน์โหลดภาพเรดาร์ไม่สำเร็จ</string>
     <string name="radar_still_downloading">ภาพเรดาร์ยังคงดาวน์โหลดอยู่</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Malunga</string>
     <string name="about_app">Malunga ne-app</string>
     <string name="afternoon_alert">Iqondo lobushushu %1$.1f°%2$s lehlile kumda wakho we-%3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Ukusukela ukuba uyalile imvume yesaziso kabini, ufuna ukuyenza kwisetingi endaweni yoko, sungula useto?</string>
     <string name="ok">Kulungile</string>
     <string name="please_wait_verify_url">Nceda ulinde ngelixa siqinisekisa i-URL oyingenisileyo</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Bekukho iimpazamo ze-%1$d ezichongiweyo kwifayile ye-%2$s, bona ifayile ye-%2$s efunyenwe kwi-%3$s okanye ujonge i-%4$s logs ukuze ufumane iinkcukacha</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Ayiphumelelanga ukukhuphela umfanekiso we-radar</string>
     <string name="radar_still_downloading">Umfanekiso we-radar usazikhuphela</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Fa ho</string>
     <string name="about_app">Ɛfa app no ​​ho</string>
     <string name="afternoon_alert">Ɔhyew %1$.1f°%2$s akɔ fam akodu wo anohyeto a ɛyɛ %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Esiane sɛ wopow notification permission no mprenu nti, ɛsɛ sɛ wo ma ɛyɛ adwuma wɔ nhyehyɛe mu mmom, fi ase nhyehyɛe?</string>
     <string name="ok">Yoo</string>
     <string name="please_wait_verify_url">Yɛsrɛ sɛ twɛn bere a yɛrehwɛ sɛ URL a wode kɔe no yɛ nokware no</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">%1$d mfomsoɔ bi wɔ hɔ a wɔhunuu wɔ %2$s fael no mu, hwɛ %2$s fael a wɔhunuu wɔ %3$s anaa hwɛ %4$s logs ma nsɛm no</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">antumi antwe radar mfonini no</string>
     <string name="radar_still_downloading">Radar mfonini no da so ara retwe</string>

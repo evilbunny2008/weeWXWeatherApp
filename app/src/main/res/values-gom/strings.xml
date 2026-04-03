@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">संबंदीं</string>
     <string name="about_app">अॅपा विशीं 1000 विशीं</string>
     <string name="afternoon_alert">तापमान %1$.1f°%2$s तुमच्या %3$.1f°%2$s मर्यादेमेरेन देंवलां</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">तुमी अधिसुचोवणी परवानगी दोन फावटीं नाका म्हणिल्ल्यान, तुमकां ताचे बदला मांडावळींनी सक्षम करपाची गरज आसा, मांडावळी सुरू करात?</string>
     <string name="ok">बरें</string>
     <string name="please_wait_verify_url">उपकार करून तुमी सादर केल्लो URL आमी सत्यापीत करतना वाट पळयात</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">फायलीन %1$d त्रुटी सोदून काडल्यात, %3$s हांगा मेळिल्ली %2$s फायल पळोवची वा तपशीलांखातीर %4$s लॉग पळोवचे</string>
     <string name="radar">रडार 1</string>
     <string name="radar_download_failed">रडाराची प्रतिमा डाउनलोड करपाक अपेस आयलें</string>
     <string name="radar_still_downloading">रडाराची प्रतिमा अजूनय डाउनलोड करपाक लागल्या</string>

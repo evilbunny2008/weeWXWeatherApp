@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">ਬਾਰੇ</string>
     <string name="about_app">ਐਪ ਬਾਰੇ</string>
     <string name="afternoon_alert">ਤਾਪਮਾਨ %1$.1f°%2$s ਤੁਹਾਡੀ ਸੀਮਾ %3$.1f°%2$s ਤੱਕ ਡਿੱਗ ਗਿਆ ਹੈ</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">ਕਿਉਂਕਿ ਤੁਸੀਂ ਨੋਟੀਫਿਕੇਸ਼ਨ ਅਨੁਮਤੀ ਨੂੰ ਦੋ ਵਾਰ ਅਸਵੀਕਾਰ ਕੀਤਾ ਹੈ, ਤੁਹਾਨੂੰ ਇਸ ਦੀ ਬਜਾਏ ਸੈਟਿੰਗਾਂ ਵਿੱਚ ਇਸਨੂੰ ਸਮਰੱਥ ਕਰਨ ਦੀ ਲੋੜ ਹੈ, ਸੈਟਿੰਗਾਂ ਲਾਂਚ ਕਰੋ?</string>
     <string name="ok">ਠੀਕ ਹੈ</string>
     <string name="please_wait_verify_url">ਕਿਰਪਾ ਕਰਕੇ ਉਡੀਕ ਕਰੋ ਜਦੋਂ ਤੱਕ ਅਸੀਂ ਤੁਹਾਡੇ ਦੁਆਰਾ ਸਪੁਰਦ ਕੀਤੇ URL ਦੀ ਪੁਸ਼ਟੀ ਕਰਦੇ ਹਾਂ।</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">ਫ਼ਾਈਲ ਵਿੱਚ %1$d ਤਰੁੱਟੀਆਂ ਲੱਭੀਆਂ ਗਈਆਂ, %3$s \'ਤੇ ਮਿਲੀ %2$s ਫ਼ਾਈਲ ਨੂੰ ਦੇਖੋ ਜਾਂ ਵੇਰਵਿਆਂ ਲਈ %4$s ਲੌਗ ਦੇਖੋ</string>
     <string name="radar">ਰਾਡਾਰ</string>
     <string name="radar_download_failed">ਰਾਡਾਰ ਚਿੱਤਰ ਨੂੰ ਡਾਊਨਲੋਡ ਕਰਨ ਵਿੱਚ ਅਸਫਲ</string>
     <string name="radar_still_downloading">ਰਾਡਾਰ ਚਿੱਤਰ ਅਜੇ ਵੀ ਡਾਊਨਲੋਡ ਹੋ ਰਿਹਾ ਹੈ।</string>

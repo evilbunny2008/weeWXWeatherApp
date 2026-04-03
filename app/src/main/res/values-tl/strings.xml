@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Tungkol sa</string>
     <string name="about_app">Tungkol sa app</string>
     <string name="afternoon_alert">Ang temperaturang %1$.1f°%2$s ay bumaba sa iyong limitasyon na %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Dahil dalawang beses mong tinanggihan ang pahintulot sa notification, kailangan mo itong paganahin sa mga setting sa halip, ilunsad ang mga setting?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Mangyaring maghintay habang pinatunayan namin ang URL na iyong isinumite</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Mayroong %1$d error na nakita sa %2$s file, tingnan ang %2$s file na nakita sa %3$s o tingnan ang %4$s log para sa mga detalye</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Nabigong i -download ang imahe ng radar</string>
     <string name="radar_still_downloading">Ang imahe ng radar ay nag -download pa rin</string>

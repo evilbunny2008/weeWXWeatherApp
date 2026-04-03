@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Deng</string>
     <string name="about_app">App kong cu</string>
     <string name="afternoon_alert">Lungthawhnak %1$.1f°%2$s cu na ri %3$.1f°%2$s tiang a tla</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Theihternak nawl voihnih na al caah, cu nakin settings ah na on a hau, settings thawk?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Na pekmi URL kan verify lio ah rak hngak rih</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">file ah %1$d palhnak hmuh a si, %3$s ah hmuhmi %2$s file kha zoh asiloah a tawinak caah %4$s logs kha zoh</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Radar hmanthlak download tuah khawh a si lo</string>
     <string name="radar_still_downloading">Radar hmanthlak cu download a si rih</string>

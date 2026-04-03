@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">पेखेलं</string>
     <string name="about_app">एपया बारे</string>
     <string name="afternoon_alert">तापक्रम %1$.1f%2$s छिगु सिमा %3$.1f%2$s तक कुहां वन</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">छिं निक्वःतक सुचंया अनुमति अस्वीकार यानादीगुलिं, उकिया पलेसा सेटिङ्गय् सक्षम यायेमाःगु दु, सेटिङ्ग न्ह्याकादिसँ ।</string>
     <string name="ok">ज्यू</string>
     <string name="please_wait_verify_url">छिं पेश यानादीगु यूआरएलयात प्रमाणित यायेगु झ्वलय् पियादिसँ ।</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</string>
     <string name="radar">राडार</string>
     <string name="radar_download_failed">रडार इमेज डाउनलोड यायेत ताःलात ।</string>
     <string name="radar_still_downloading">रडार इमेज आःतकं डाउनलोड यानाच्वंगु दु ।</string>

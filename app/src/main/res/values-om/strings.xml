@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Waa\'ee</string>
     <string name="about_app">Waa\'ee appii kanaa</string>
     <string name="afternoon_alert">Ho\'i %1$.1f°%2$s gara daangaa kee %3$.1f°%2$s gadi bu\'eera</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Hayyama beeksisa yeroo lama waan diddeef, kanaa mannaa qindaa\'inoota keessatti dandeessisuun si barbaachisa, qindaa\'inoota eegaluu?</string>
     <string name="ok">Tole</string>
     <string name="please_wait_verify_url">Mee URL isin galchitan yeroo mirkaneessinu eegaa</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Faayilii %2$s keessatti dogongorri %1$d argame, faayilii %2$s %3$s irratti argame ilaali ykn bal\'inaaf galmee %4$s ilaali</string>
     <string name="radar">Raadaara</string>
     <string name="radar_download_failed">Fakkii raadaraa buufachuu dadhabe</string>
     <string name="radar_still_downloading">Fakkiin raadaraa ammallee buufachaa jira</string>

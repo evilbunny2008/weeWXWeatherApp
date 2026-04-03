@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Nipa</string>
     <string name="about_app">Nipa app naa</string>
     <string name="afternoon_alert">Iwọn otutu %1$.1f°%2$s ti lọ silẹ si opin rẹ ti %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Niwọn igba ti o ti kọ igbanilaaye iwifunni lẹẹmeji, o nilo lati mu ṣiṣẹ ni awọn eto dipo, awọn eto ifilọlẹ?</string>
     <string name="ok">Dara</string>
     <string name="please_wait_verify_url">Jọwọ duro lakoko ti a mọ daju URL ti o fi silẹ</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Awọn aṣiṣe %1$d wa ninu faili %2$s, wo faili %2$s ti a rii ni %3$s tabi wo awọn akọọlẹ %4$s fun awọn alaye</string>
     <string name="radar">Afiweye</string>
     <string name="radar_download_failed">O kuna lati ṣe igbasilẹ aworan Reda</string>
     <string name="radar_still_downloading">Aworan Reda nla tun n gba lati ayelujara</string>

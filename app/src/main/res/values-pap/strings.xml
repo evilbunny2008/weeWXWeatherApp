@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Tokante</string>
     <string name="about_app">Tocante e App</string>
     <string name="afternoon_alert">Temperatura %1$.1f°%2$s a baha te na bo límite di %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Komo ku bo a rechasá e pèrmit di notifikashon dos biaha, bo mester aktiv\'é den settingnan en bes di esei, settingnan di lansamentu?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Por fabor warda miéntras nos ta verifiká e URL ku bo a entregá</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Tabatin %1$d eror detektá den e archivo %2$s, wak e archivo %2$s hañá na %3$s òf wak e lognan di %4$s pa e detayenan</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Falta di download e imagen di radar</string>
     <string name="radar_still_downloading">Imagen di radar ainda ta download</string>

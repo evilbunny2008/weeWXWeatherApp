@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Haqqında</string>
     <string name="about_app">Tətbiq haqqında</string>
     <string name="afternoon_alert">%1$.1f°%2$s temperaturu %3$.1f°%2$s limitinizə düşüb</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Bildiriş icazəsini iki dəfə rədd etdiyinizə görə, bunun əvəzinə onu parametrlərdə aktivləşdirməlisiniz, parametrlər işə salınsın?</string>
     <string name="ok">Tamam</string>
     <string name="please_wait_verify_url">Zəhmət olmasa, təqdim etdiyiniz URL-i yoxlayarkən gözləyin</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">faylında %1$d xəta aşkar edildi, %3$s ünvanında tapılan %2$s faylına baxın və ya təfərrüatlar üçün %4$s jurnalına baxın</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Radar görüntüsünü yükləyə bilmədi</string>
     <string name="radar_still_downloading">Radar görüntüsü hələ də yüklənir</string>

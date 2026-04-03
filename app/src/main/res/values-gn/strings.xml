@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Upéva rehegua</string>
     <string name="about_app">app rehegua</string>
     <string name="afternoon_alert">Temperatura %1$.1f°%2$s oguejy nde límite %3$.1f°%2$s peve</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Embotovégui mokõi jey pe permiso momarandurã, tekotevẽ emboguata ñembohekorãme hendaguépe, emoñepyrũ ñemboheko?</string>
     <string name="ok">Oĩma</string>
     <string name="please_wait_verify_url">Eha\'arõmi romoañete aja URL remondova\'ekue</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Ojejuhúkuri %1$d jejavy %2$s vore\'ípe, ehecha %2$s vore ojejuhúva %3$s-pe térã ehecha %4$s registro umi detalle rehegua</string>
     <string name="radar">Radar rehegua</string>
     <string name="radar_download_failed">Ndohupytýi ojegueru haguã radar ta\'angamýi</string>
     <string name="radar_still_downloading">Ta\'anga radar omboguejy gueteri</string>

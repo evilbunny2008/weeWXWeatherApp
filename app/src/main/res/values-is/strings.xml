@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Um</string>
     <string name="about_app">Um appið</string>
     <string name="afternoon_alert">Hitastig %1$.1f°%2$s hefur farið niður í %3$.1f°%2$s mörkin þín</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Þar sem þú afþakkaðir tilkynningaheimildina tvisvar, þarftu að virkja það í stillingum í staðinn, ræsa stillingar?</string>
     <string name="ok">Allt í lagi</string>
     <string name="please_wait_verify_url">Vinsamlegast bíddu á meðan við staðfestum vefslóðina sem þú sendir inn</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Það fundust %1$d villur í %2$s skránni, skoðaðu %2$s skrána sem fannst á %3$s eða skoðaðu %4$s annála til að fá upplýsingar</string>
     <string name="radar">Ratsjá</string>
     <string name="radar_download_failed">Mistókst að hlaða niður ratsjármyndinni</string>
     <string name="radar_still_downloading">Ratsjármynd er enn að hlaðast niður</string>

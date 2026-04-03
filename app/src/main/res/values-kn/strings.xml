@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">ಬಗ್ಗೆ</string>
     <string name="about_app">ಅಪ್ಲಿಕೇಶನ್ ಬಗ್ಗೆ</string>
     <string name="afternoon_alert">ತಾಪಮಾನ %1$.1f°%2$s ನಿಮ್ಮ ಮಿತಿ %3$.1f°%2$s ಗೆ ಇಳಿದಿದೆ</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">ನೀವು ಅಧಿಸೂಚನೆಯ ಅನುಮತಿಯನ್ನು ಎರಡು ಬಾರಿ ನಿರಾಕರಿಸಿರುವುದರಿಂದ, ನೀವು ಅದನ್ನು ಸೆಟ್ಟಿಂಗ್‌ಗಳಲ್ಲಿ ಸಕ್ರಿಯಗೊಳಿಸಬೇಕೇ, ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಪ್ರಾರಂಭಿಸುವುದೇ?</string>
     <string name="ok">ಸರಿ</string>
     <string name="please_wait_verify_url">ನೀವು ಸಲ್ಲಿಸಿದ URL ಅನ್ನು ನಾವು ಪರಿಶೀಲಿಸುವವರೆಗೆ ದಯವಿಟ್ಟು ನಿರೀಕ್ಷಿಸಿ</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">ಫೈಲ್‌ನಲ್ಲಿ %1$d ದೋಷಗಳು ಪತ್ತೆಯಾಗಿವೆ, %3$s ನಲ್ಲಿ ಕಂಡುಬರುವ %2$s ಫೈಲ್ ಅನ್ನು ವೀಕ್ಷಿಸಿ ಅಥವಾ ವಿವರಗಳಿಗಾಗಿ %4$s ಲಾಗ್‌ಗಳನ್ನು ವೀಕ್ಷಿಸಿ</string>
     <string name="radar">ರಾಡಾರ್</string>
     <string name="radar_download_failed">ರಾಡಾರ್ ಚಿತ್ರವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ವಿಫಲವಾಗಿದೆ</string>
     <string name="radar_still_downloading">ರಾಡಾರ್ ಚಿತ್ರ ಇನ್ನೂ ಡೌನ್‌ಲೋಡ್ ಆಗುತ್ತಿದೆ</string>

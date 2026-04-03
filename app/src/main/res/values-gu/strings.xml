@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">વિશે</string>
     <string name="about_app">એપ્લિકેશન વિશે</string>
     <string name="afternoon_alert">તાપમાન %1$.1f°%2$s %3$.1f°%2$s ની તમારી મર્યાદા સુધી ઘટી ગયું છે</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">તમે નોટિફિકેશનની પરવાનગીને બે વાર નકારી દીધી હોવાથી, તમારે તેને બદલે સેટિંગમાં ચાલુ કરવાની જરૂર છે, સેટિંગ શરૂ કરો?</string>
     <string name="ok">ઓકે</string>
     <string name="please_wait_verify_url">તમે સબમિટ કરેલ URL અમે ચકાસીએ ત્યાં સુધી કૃપા કરીને રાહ જુઓ</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">ફાઇલમાં %1$d ભૂલો મળી હતી, %3$s પર મળેલી %2$s ફાઇલ જુઓ અથવા વિગતો માટે %4$s લોગ જુઓ</string>
     <string name="radar">રડાર</string>
     <string name="radar_download_failed">રડાર છબી ડાઉનલોડ કરવામાં નિષ્ફળ</string>
     <string name="radar_still_downloading">રડાર ઇમેજ હજી ડાઉનલોડ થઈ રહી છે</string>

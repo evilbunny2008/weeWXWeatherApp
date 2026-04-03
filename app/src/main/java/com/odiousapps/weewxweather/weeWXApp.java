@@ -343,7 +343,7 @@ public class weeWXApp extends Application
 		{
 			notificationManager.createNotificationChannelGroup(
 					new NotificationChannelGroup(getPackageName(),
-							getAndroidString(R.string.app_name)));
+							getEnglishAndroidString(R.string.app_name)));
 		}
 
 		createNotificationChannel("temperature_alerts",

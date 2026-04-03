@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">عن</string>
     <string name="about_app">حول التطبيق</string>
     <string name="afternoon_alert">انخفضت درجة الحرارة %1$.1f°%2$s إلى الحد المسموح به وهو %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">نظرًا لأنك رفضت إذن الإشعارات مرتين، فأنت بحاجة إلى تمكينه في الإعدادات بدلاً من ذلك، هل تريد تشغيل الإعدادات؟</string>
     <string name="ok">نعم</string>
     <string name="please_wait_verify_url">يرجى الانتظار حتى نتحقق من عنوان URL الذي أرسلته</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">تم اكتشاف %1$d أخطاء في الملف %2$s، قم بعرض الملف %2$s الموجود في %3$s أو قم بعرض سجلات %4$s للحصول على التفاصيل</string>
     <string name="radar">رادار</string>
     <string name="radar_download_failed">فشل في تنزيل صورة الرادار</string>
     <string name="radar_still_downloading">لا تزال صورة الرادار قيد التنزيل</string>

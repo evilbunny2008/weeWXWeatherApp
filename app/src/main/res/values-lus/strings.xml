@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Lam</string>
     <string name="about_app">App chungchang</string>
     <string name="afternoon_alert">Temperature %1$.1f°%2$s chu i limit %3$.1f°%2$s ah a tlahniam ta</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Notification permission vawi hnih i decline avangin settings ah enable a ngai zawk a, launch settings?</string>
     <string name="ok">A tha e</string>
     <string name="please_wait_verify_url">URL i submit kha kan verify lai hian lo nghak rih rawh</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">file-ah %1$d error hmuhchhuah a ni a, %3$s-a %2$s file hmuh chu en la, a chipchiar zawkna atan %4$s logs en rawh</string>
     <string name="radar">Radar 100 a ni</string>
     <string name="radar_download_failed">Radar download theih loh a ni</string>
     <string name="radar_still_downloading">Radar image chu a la download zel a</string>

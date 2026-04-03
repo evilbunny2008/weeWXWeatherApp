@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Жөнінде</string>
     <string name="about_app">Бағдарлама туралы</string>
     <string name="afternoon_alert">%1$.1f°%2$s температурасы %3$.1f°%2$s шегіне дейін төмендеді</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Хабарландыру рұқсатынан екі рет бас тартқандықтан, оның орнына параметрлерде оны қосу керек, параметрлерді іске қосу керек пе?</string>
     <string name="ok">Жарайды</string>
     <string name="please_wait_verify_url">Сіз жіберген URL мекенжайын тексергенше күте тұрыңыз</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">файлында %1$d қате анықталды, %3$s мекенжайында табылған %2$s файлын қараңыз немесе мәліметтер үшін %4$s журналдарын қараңыз</string>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Радар кескінін жүктеу сәтсіз аяқталды</string>
     <string name="radar_still_downloading">Радар кескіні әлі де жүктеледі</string>

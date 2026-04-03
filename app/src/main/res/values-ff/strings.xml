@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Do</string>
     <string name="about_app">Ko faati e App</string>
     <string name="afternoon_alert">Nguleeki %1$.1f°%2$s ustiima haa keerol maa %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Nde tawnoo a saliima yamiroore humpito laabi ɗiɗi, aɗa foti softinde ɗum e dottaaɗe e nokku, udditaa dottaaɗe?</string>
     <string name="ok">To</string>
     <string name="please_wait_verify_url">Ejowo e je ki n n ṣe ati rẹ ṣe ṣe ṣe ṣe ṣẹ́ ṣẹ̀</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Won %1$d boowal yiytaa e nder fiilde %2$s, ƴeew fiilde %2$s tawaande e %3$s walla ƴeew %4$s binndanɗe ngam humpitaade</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Feewniraa ko ƴettude natal radar</string>
     <string name="radar_still_downloading">Natal Radar ina ƴetta haa jooni</string>

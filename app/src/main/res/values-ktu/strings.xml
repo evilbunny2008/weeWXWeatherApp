@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Kiteso ya</string>
     <string name="about_app">Na yina me tala App</string>
     <string name="afternoon_alert">Tiya %1$.1f°%2$s me kulumuka na ndilu na nge ya %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Sambu nge me buya nswa ya nsangu mbala zole, nge fwete kangula yo na baparametre na kisika ya kukangula baparametre?</string>
     <string name="ok">Mpidina</string>
     <string name="please_wait_verify_url">Pardon vingila ntangu beto ke zikisa URL yina nge me tinda</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Kuvandaka ti bifu %1$d yina bo monaka na kati ya fichier %2$s, tala fichier %2$s yina bo monaka na %3$s to tala mikanda ya %4$s sambu na bansangu ya fioti-fioti</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Kukonda kubaka kifwanisu ya radar</string>
     <string name="radar_still_downloading">Kifwanisu ya radar kele kaka na kubaka</string>

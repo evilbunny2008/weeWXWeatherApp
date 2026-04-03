@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">About</string>
     <string name="about_app">About the App</string>
     <string name="afternoon_alert">Temperature %1$.1f°%2$s has dropped to your limit of %3$.1f°%2$s</string>
@@ -73,6 +73,7 @@
     <string name="notifications_needed2">Since you declined the notification permission twice, you need to enable it in settings instead, launch settings?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Please wait while we verify the URL you submitted.</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Failed to download the radar image</string>
     <string name="radar_still_downloading">Radar image is still downloading.</string>

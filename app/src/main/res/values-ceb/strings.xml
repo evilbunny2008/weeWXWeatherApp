@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Labot sa</string>
     <string name="about_app">Bahin sa app</string>
     <string name="afternoon_alert">Ang temperatura nga %1$.1f°%2$s mius-os sa imong limitasyon nga %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Tungod kay gibalibaran nimo ang pagtugot sa pagpahibalo sa makaduha, kinahanglan nimo nga i-enable kini sa mga setting sa baylo, mga setting sa paglansad?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Palihug maghulat samtang gipamatud-an namon ang URL nga imong gisumite</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Napakyas sa pag-download sa imahe sa radar</string>
     <string name="radar_still_downloading">Ang imahe sa radar gi-download pa</string>

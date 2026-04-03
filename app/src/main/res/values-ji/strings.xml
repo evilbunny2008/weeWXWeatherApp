@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">וועגן</string>
     <string name="about_app">וועגן די אַפּ</string>
     <string name="afternoon_alert">טעמפּעראַטור %1$.1f°%2$s איז געפאלן צו דיין שיעור פון %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">זינט איר דיקליינד די אָנזאָג דערלויבעניש צוויי מאָל, איר דאַרפֿן צו געבן עס אין סעטטינגס אַנשטאָט, קאַטער סעטטינגס?</string>
     <string name="ok">אקעי</string>
     <string name="please_wait_verify_url">ביטע וואַרטן בשעת מיר באַשטעטיקן די URL וואָס איר האָט דערלאנגט</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">עס זענען געווען %1$d ערראָרס דיטעקטאַד אין דער %2$s טעקע, קוק די %2$s טעקע געפֿונען אין %3$s אָדער קוק %4$s לאָגס פֿאַר די דעטאַילס</string>
     <string name="radar">ראַדאַר</string>
     <string name="radar_download_failed">ניט אַנדערש צו אָפּלאָדירן די ראַדאַר בילד</string>
     <string name="radar_still_downloading">ראַדאַר בילד איז נאָך דאַונלאָודינג</string>

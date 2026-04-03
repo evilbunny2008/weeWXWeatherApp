@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Txog</string>
     <string name="about_app">Hais txog lub</string>
     <string name="afternoon_alert">Kub %1$.1f°%2$s tau poob rau koj qhov txwv ntawm %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Txij li thaum koj tsis kam lees txais kev tso cai ob zaug, koj yuav tsum tau qhib nws hauv kev teeb tsa, tso tawm qhov chaw?</string>
     <string name="ok">Ua li cas</string>
     <string name="please_wait_verify_url">Thov tos thaum peb txheeb xyuas qhov URL uas koj xa mus</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Muaj %1$d yuam kev hauv %2$s cov ntaub ntawv, saib cov ntaub ntawv %2$s pom ntawm %3$s lossis saib %4$s cov ntaub ntawv kom paub meej</string>
     <string name="radar">Khoom uas muaj radar</string>
     <string name="radar_download_failed">Ua tsis tiav download lub radar duab</string>
     <string name="radar_still_downloading">Cov duab radar tseem rub tawm</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Tantang</string>
     <string name="about_app">Tantang App</string>
     <string name="afternoon_alert">Suhu %1$.1f°%2$s alah turun ka bateh sanak %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Karano Sanak manulak izin pamberitahuan duo kali, Sanak paralu maaktifkannyo di pangaturan sabagai gantinyo, pangaturan luncuran?</string>
     <string name="ok">Jadih</string>
     <string name="please_wait_verify_url">Silahkan tunggu sambia kami verifikasi URL nan Sanak ajukan</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Ado %1$d kasalahan nan tadeteksi dalam berkas %2$s, caliak berkas %2$s nan ditamukan pado %3$s atau caliak log %4$s untuak rinciannyo</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Gagal untuak mangunduakan gambar radarnyo</string>
     <string name="radar_still_downloading">Gambar radar masih mangunduakan</string>

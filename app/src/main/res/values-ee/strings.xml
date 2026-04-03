@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Ku ɖe</string>
     <string name="about_app">Ku ɖe app la ŋu</string>
     <string name="afternoon_alert">Dzoxɔxɔ %1$.1f°%2$s ɖiɖi va ɖo wò seɖoƒe si nye %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Esi nègbe gbeƒãɖeɖe ƒe mɔɖeɖea zi eve ta la, ele be nàwɔe le ɖoɖowo me boŋ, dze ɖoɖowo gɔmea?</string>
     <string name="ok">Enyo</string>
     <string name="please_wait_verify_url">Taflatse lala esime míele URL si nèɖo ɖa la dzi ɖom</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Wokpɔ %1$d vodadawo le %2$s faɛl me, kpɔ %2$s faɛl si wokpɔ le %3$s alo kpɔ %4$s ƒe nuŋlɔɖiwo hena nyatakakawo</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Do kpo radar ƒe nɔnɔmetata la ƒe kɔpi wɔwɔ</string>
     <string name="radar_still_downloading">Radar ƒe nɔnɔmetata gakpɔtɔ le eƒe kɔpi wɔm</string>

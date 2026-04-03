@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Haqida</string>
     <string name="about_app">Ilova haqida</string>
     <string name="afternoon_alert">Harorat %1$.1f°%2$s chegarangizgacha tushib ketdi: %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Ikki marta bildirishnoma ruxsatini rad etganingiz uchun uni sozlamalarda yoqishingiz kerak, sozlamalar ishga tushirilsinmi?</string>
     <string name="ok">Kelishdikmi</string>
     <string name="please_wait_verify_url">Iltimos, siz yuborgan URL manzilini tekshirganimizni kuting</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">faylida %1$d xatolik aniqlandi, %3$s da topilgan %2$s faylni ko\'ring yoki tafsilotlar uchun %4$s jurnalini ko\'ring</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Radar rasmini yuklab olmadi</string>
     <string name="radar_still_downloading">Radar tasviri hali ham yuklab olinmoqda</string>

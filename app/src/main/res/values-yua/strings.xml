@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Yo\'osal</string>
     <string name="about_app">Tu yo\'olal le App</string>
     <string name="afternoon_alert">Temperatura %1$.1f°%2$s ts\'o\'ok u yéemel tak u límite %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Ts\'o\'ok u rechazado le permiso notificación ka\'ap\'éel Óoxten, k\'a\'abéet u habilitar ti\' configuración tu kúuchilo\'ob, configuración lanzamiento?</string>
     <string name="ok">Ma\'alob</string>
     <string name="please_wait_verify_url">Béet pa\'atik ka\' jo\'op\' u verificar le URL tu túuxtaj yaal</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Yaan ka\'ach %1$d errores detectados ti\' le archivo %2$s, wil le archivo %2$s encontrado ti\' %3$s wa wil %4$s registros utia\'al u detalles</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Falló u descargar le wíimbala\' radar</string>
     <string name="radar_still_downloading">wíimbala\' Radar láayli\' táan u descargando</string>

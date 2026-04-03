@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Rreth</string>
     <string name="about_app">Rreth aplikacionit</string>
     <string name="afternoon_alert">Temperatura %1$.1f°%2$s ka rënë në kufirin tuaj prej %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Meqenëse e refuzuat lejen e njoftimit dy herë, duhet ta aktivizoni atë te cilësimet në vend të kësaj, nisni cilësimet?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Ju lutemi prisni derisa të verifikojmë URL-në që keni dorëzuar</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">U zbuluan %1$d gabime në skedarin %2$s, shikoni skedarin %2$s të gjetur në %3$s ose shikoni regjistrat e %4$s për detajet</string>
     <string name="radar">Radari</string>
     <string name="radar_download_failed">Shkarkimi i imazhit të radarit dështoi</string>
     <string name="radar_still_downloading">Imazhi i radarit është ende duke u shkarkuar</string>

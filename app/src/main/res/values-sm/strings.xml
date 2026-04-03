@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Uiga</string>
     <string name="about_app">E uiga i le app</string>
     <string name="afternoon_alert">Ua pa\'ū le vevela %1$.1f°%2$s i lau tapulaa o le %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Talu ai ona e faalua ona e teena le faʻatagaga faʻasilasilaga, e tatau ona e faʻatagaina i faʻatulagaga nai lo, faʻalauiloa tulaga?</string>
     <string name="ok">Ua lelei</string>
     <string name="please_wait_verify_url">Faʻamolemole faʻatali ao matou faʻamaonia le URL na e lafoina</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">E %1$d fa\'aletonu na maua i le %2$s faila, va\'ai le %2$s faila na maua i le %3$s pe va\'ai %4$s ogalaau mo fa\'amatalaga</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Le mafai ona download le radar ata</string>
     <string name="radar_still_downloading">Ralar ata o loo download pea</string>

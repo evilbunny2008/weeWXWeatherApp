@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Apie</string>
     <string name="about_app">Apie Programėlę</string>
     <string name="afternoon_alert">Temperatūra %1$.1f°%2$s nukrito iki %3$.1f°%2$s ribos</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Kadangi du kartus atmetėte pranešimų leidimą, turite jį įjungti nustatymuose, paleisti nustatymus?</string>
     <string name="ok">Gerai</string>
     <string name="please_wait_verify_url">Palaukite, kol patvirtinsime jūsų pateiktą URL</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">faile aptikta %1$d klaidų, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</string>
     <string name="radar">Radaras</string>
     <string name="radar_download_failed">Nepavyko atsisiųsti radaro vaizdo</string>
     <string name="radar_still_downloading">Radaro vaizdas vis dar atsisiunčiamas</string>

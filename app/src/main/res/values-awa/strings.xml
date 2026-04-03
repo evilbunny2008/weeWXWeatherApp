@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">बारेम</string>
     <string name="about_app">ऐप के बारे म</string>
     <string name="afternoon_alert">तापमान %1$.1f°%2$s आपकी सीमा %3$.1f°%2$s तक गिर गवा है</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">चूंकि आपने अधिसूचना अनुमति का दुइ बार अस्वीकार किहिन है, यहिसे आपका एकर बजाय सेटिंग्स मा सक्षम करै के जरूरत है, सेटिंग्स लॉन्च करा?</string>
     <string name="ok">ठीक</string>
     <string name="please_wait_verify_url">कृपया इंतजार करौ जबकि हम अपने द्वारा जमा यूआरएल का सत्यापन करत हैं।</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">फ़ाइल मा %1$d त्रुटि पावा गा रहा, %3$s मा मिली %2$s फ़ाइल का देखौ या विवरण के लिए %4$s लॉग देखौ</string>
     <string name="radar">रडार</string>
     <string name="radar_download_failed">रडार छवि डाउनलोड करै मा असफल रहा</string>
     <string name="radar_still_downloading">रडार छवि अब भी डाउनलोड कर रहा है।</string>

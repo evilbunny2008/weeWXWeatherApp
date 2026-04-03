@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Жөнүндө</string>
     <string name="about_app">Колдонмо жөнүндө</string>
     <string name="afternoon_alert">%1$.1f°%2$s температурасы сиздин %3$.1f°%2$s чегиңизге түштү</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Эскертме уруксатын эки жолу четке какканыңыз үчүн, анын ордуна жөндөөлөрдөн иштетишиңиз керек, жөндөөлөрдү ишке киргизиңизби?</string>
     <string name="ok">Макул</string>
     <string name="please_wait_verify_url">Сиз берген URL\'ди текшерип жатканда күтө туруңуз</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">файлында %1$d ката табылды, %3$s дарегинде табылган %2$s файлын көрүңүз же чоо-жайы үчүн %4$s журналдарын көрүңүз</string>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Радар сүрөтүн жүктөп алган жок</string>
     <string name="radar_still_downloading">Радар сүрөтү дагы эле жүктөлүүдө</string>

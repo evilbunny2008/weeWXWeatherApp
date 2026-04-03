@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Buruz</string>
     <string name="about_app">Aplikazioari buruz</string>
     <string name="afternoon_alert">%1$.1f°%2$s tenperatura zure %3$.1f°%2$s mugara jaitsi da</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Jakinarazpen-baimena bi aldiz ukatu duzunez, ezarpenetan gaitu behar duzu, ezarpenak abiarazi?</string>
     <string name="ok">Ados</string>
     <string name="please_wait_verify_url">Mesedez, itxaron bidali duzun URLa egiaztatzen dugun bitartean</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">%1$d akats detektatu dira %2$s fitxategian, ikusi %2$s fitxategia %3$s helbidean edo ikusi %4$s erregistroak xehetasunetarako</string>
     <string name="radar">Radarra</string>
     <string name="radar_download_failed">Ezin izan da deskargatu radar-irudia</string>
     <string name="radar_still_downloading">Radar irudia deskargatzen ari da oraindik</string>

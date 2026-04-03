@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Um</string>
     <string name="about_app">Über die App</string>
     <string name="afternoon_alert">Die Temperatur %1$.1f°%2$s ist auf Ihren Grenzwert von %3$.1f°%2$s gefallen</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Da Sie die Benachrichtigungsberechtigung zweimal abgelehnt haben, müssen Sie sie stattdessen in den Einstellungen aktivieren. Einstellungen starten?</string>
     <string name="ok">OK</string>
     <string name="please_wait_verify_url">Bitte warten Sie, während wir die von Ihnen übermittelte URL überprüfen</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">In der Datei %2$s wurden %1$d Fehler erkannt. Einzelheiten finden Sie in der Datei %2$s unter %3$s oder in den Protokollen %4$s</string>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Das Radarbild konnte nicht heruntergeladen werden</string>
     <string name="radar_still_downloading">Das Radarbild wird noch heruntergeladen</string>

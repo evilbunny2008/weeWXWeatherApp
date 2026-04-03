@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Çинчен</string>
     <string name="about_app">Приложени çинчен</string>
     <string name="afternoon_alert">Температура %1$.1f°%2$s сирӗн чикӗ %3$.1f°%2$s таран анчӗ</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Пӗлтерӳ ирӗкне икӗ хутчен йышӑнманран ӑна настройкӑсенче ӗҫлеттермелле-и, настройкӑсене пуҫламалла-и?</string>
     <string name="ok">Юрӗ</string>
     <string name="please_wait_verify_url">Эсир ярса панă URL-адреса тĕрĕсленĕ вăхăтра кĕтмелле</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">файлра %1$d йӑнӑш тупнӑ, %3$s-ра тупнӑ %2$s файла пӑхӑр е тӗплӗнрех %4$s журналӗсене пӑхӑр</string>
     <string name="radar">Радарла</string>
     <string name="radar_download_failed">Радар ÿкерчĕкне скачать тума май килмен</string>
     <string name="radar_still_downloading">Радар ÿкерчĕкĕ халĕ те скачать тăвать</string>

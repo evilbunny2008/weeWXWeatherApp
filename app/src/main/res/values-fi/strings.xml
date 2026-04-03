@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Noin</string>
     <string name="about_app">Tietoja sovelluksesta</string>
     <string name="afternoon_alert">Lämpötila %1$.1f°%2$s on laskenut rajallesi %3$.1f°%2$s</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Koska hylkäsit ilmoitusluvan kahdesti, sinun on otettava se käyttöön asetuksista, käynnistää asetukset?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Odota, kun vahvistamme lähettämäsi URL-osoitteen</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Tiedostossa %2$s havaittiin %1$d virhettä, tarkastele %2$s-tiedostoa, joka löytyi osoitteesta %3$s, tai katso lisätietoja %4$s lokista</string>
     <string name="radar">Tutka</string>
     <string name="radar_download_failed">Tutkakuvan lataaminen epäonnistui</string>
     <string name="radar_still_downloading">Tutkakuvaa ladataan edelleen</string>

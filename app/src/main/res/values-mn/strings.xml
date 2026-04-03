@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Тухай</string>
     <string name="about_app">Апп-ийн тухай</string>
     <string name="afternoon_alert">Температур %1$.1f°%2$s таны хязгаар болох %3$.1f°%2$s хүртэл буурсан байна</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Та мэдэгдлийн зөвшөөрлөөс хоёр удаа татгалзсан тул тохиргооноос үүнийг идэвхжүүлэх шаардлагатай. Тохиргоог эхлүүлэх үү?</string>
     <string name="ok">Бас</string>
     <string name="please_wait_verify_url">Бид таны оруулсан URL-г шалгаж байгаарай</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">файлд %1$d алдаа илэрсэн, %3$s дээрээс олсон %2$s файлыг харах эсвэл %4$s логийг дэлгэрэнгүй үзэх боломжтой</string>
     <string name="radar">Радиолокац</string>
     <string name="radar_download_failed">Радарын зургийг татаж авч чадсангүй</string>
     <string name="radar_still_downloading">RADAR зураг татаж байгаа хэвээр байна</string>

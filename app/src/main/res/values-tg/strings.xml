@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Дар атрофи</string>
     <string name="about_app">Дар бораи барнома</string>
     <string name="afternoon_alert">Ҳарорат %1$.1f°%2$s то ҳадди %3$.1f°%2$s паст шуд</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Азбаски шумо ду маротиба иҷозати огоҳиномаро рад кардед, шумо бояд онро дар танзимот фаъол созед, танзимотро оғоз кунед?</string>
     <string name="ok">Дуруст</string>
     <string name="please_wait_verify_url">Лутфан мунтазир шавед, агар мо URL-ро пешниҳод мекунем</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">Дар файли %2$s %1$d хато ошкор карда шуд, файли %2$s-ро дар %3$s бубинед ё барои тафсилот сабтҳои %4$s-ро бубинед</string>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Тасвири радариро зеркашӣ кард</string>
     <string name="radar_still_downloading">Тасвири радаркорӣ ҳоло ҳам зеркашӣ аст</string>

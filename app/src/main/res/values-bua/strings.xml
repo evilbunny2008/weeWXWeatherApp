@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Тухай</string>
     <string name="about_app">Апп тухай</string>
     <string name="afternoon_alert">%1$.1f°%2$s температура %3$.1f°%2$s хизаарлалта хүрэтэр буураа</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Мэдэгдэлэй зүбшөөл хоёр дахин арсаһан тула, орондонь тохиргоонууд соо нээхэ хэрэгтэй гү, тохиргоонуудые эхилхэ гү?</string>
     <string name="ok">За</string>
     <string name="please_wait_verify_url">Танай оруулһан URL-ые шалгажа байхадаа хүлеэжэ байгты</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">файл соо %1$d алдуунууд элирүүлэгдэһэн байна, %3$s-да олоһон %2$s файл хараха гү, али дэлгэрэнгы мэдээсэл абахын тулада %4$s логуудые хараха</string>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Радарай зураг татажа абаха аргагүй болоһон</string>
     <string name="radar_still_downloading">Радар зураг үшөөл татажа байна</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="about">Жөнүндө</string>
     <string name="about_app">Приложений нерген</string>
     <string name="afternoon_alert">%1$.1f°%2$s температур тендан %3$.1f°%2$s марте волен</string>
@@ -72,6 +72,7 @@
     <string name="notifications_needed2">Увертарымаш разрешенийым кок гана отказым пуымо деч вара, тудым настройкыште йӧным ыштыман, настройкым почаш?</string>
     <string name="ok">Макул</string>
     <string name="please_wait_verify_url">Пожалуйста, вучаш, кунам ме тергыме URL-адресым тергыме</string>
+    <string name="processing_errors" tools:ignore="PluralsCandidate">файлыште %1$d йоҥылыш лийын, %2$s файлым %3$s-ыште мумо але %4$s журнал-влакым ончалза</string>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Радар образым скачать ыштен кертдыме</string>
     <string name="radar_still_downloading">Радар образым эше скачать</string>
