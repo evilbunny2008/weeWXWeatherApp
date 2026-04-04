@@ -475,7 +475,7 @@ public class Weather extends Fragment implements View.OnClickListener
 		sb.append(tmpStr).append(tempSym);
 		sb.append("</div>\n");
 
-		tmpStr = formatString("appTemp");
+		tmpStr = formatString("current_appTemp");
 		if(tmpStr == null || tmpStr.isBlank())
 			return;
 
@@ -674,7 +674,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t<div class='dataRowCurrent'>\n");
 
-		long sunrise = Math.round((double)getJson("sun_rise", 0D) * 1_000L);
+		long sunrise = Math.round((double)getJson("day_sun_rise", 0D) * 1_000L);
 		if(sunrise == 0)
 			return;
 
@@ -686,7 +686,7 @@ public class Weather extends Fragment implements View.OnClickListener
 				.append(sdf20.format(new Date(sunrise)))
 				.append("</div>\n");
 
-		long sunset = Math.round((double)getJson("sun_set", 0D) * 1_000L);
+		long sunset = Math.round((double)getJson("day_sun_set", 0D) * 1_000L);
 		if(sunset == 0)
 			return;
 
@@ -702,15 +702,15 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		boolean next_moon = (boolean)KeyValue.readVar("next_moon", weeWXApp.next_moon_default);
 
-		boolean has_moon_next = hasElement("moon_next_rise") && hasElement("moon_next_set");
+		boolean has_moon_next = hasElement("day_moon_next_rise") && hasElement("day_moon_next_set");
 
-		long moon_rise = Math.round((double)getJson("moon_rise", 0D) * 1_000L);
-		long moon_set = Math.round((double)getJson("moon_set", 0D) * 1_000L);
+		long moon_rise = Math.round((double)getJson("day_moon_rise", 0D) * 1_000L);
+		long moon_set = Math.round((double)getJson("day_moon_set", 0D) * 1_000L);
 
 		if(next_moon && has_moon_next)
 		{
-			moon_rise = Math.round((double)getJson("moon_next_rise", 0D) * 1_000L);
-			moon_set = Math.round((double)getJson("moon_next_set", 0D) * 1_000L);
+			moon_rise = Math.round((double)getJson("day_moon_next_rise", 0D) * 1_000L);
+			moon_set = Math.round((double)getJson("day_moon_next_set", 0D) * 1_000L);
 		}
 
 		tmpStr = getDateTimeStr(moon_rise, 4);
