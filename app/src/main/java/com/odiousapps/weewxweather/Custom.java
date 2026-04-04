@@ -22,6 +22,7 @@ import androidx.webkit.WebViewFeature;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 
 @SuppressWarnings("deprecation")
 public class Custom extends Fragment
@@ -53,13 +54,15 @@ public class Custom extends Fragment
 		if(wv == null)
 			wv = new SafeWebView(weeWXApp.getInstance());
 
+		wv.setDebugLogging(true);
+
 		FrameLayout fl = view.findViewById(R.id.custom);
 		fl.removeAllViews();
 		fl.addView(wv);
 
 		wv.getViewTreeObserver().addOnScrollChangedListener(scl);
 
-		wv.setOnCustomPageFinishedListener((v, url) -> swipeLayout.setRefreshing(false), false);
+		wv.setOnCustomPageFinishedListener((v, url) -> swipeLayout.setRefreshing(false), true);
 
 		wv.setOnKeyListener((v, keyCode, event) ->
 		{
@@ -145,7 +148,7 @@ public class Custom extends Fragment
 
 	private void loadCustom(boolean forced)
 	{
-		weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
+		weeWXAppCommon.NPWSLL npwsll = getNPWSLL();
 		if(!forced && npwsll.periodTime() <= 0)
 		{
 			String tmpStr = weeWXApp.current_dialog_html
@@ -159,6 +162,9 @@ public class Custom extends Fragment
 		String custom = (String)KeyValue.readVar("CUSTOM_URL", "");
 		String custom_url = (String)KeyValue.readVar("custom_url", "");
 
+		LogMessage("loadCustom() custom: " + custom);
+		LogMessage("loadCustom() custom_url: " + custom_url);
+
 		if((custom == null || custom.isBlank()) && (custom_url == null || custom_url.isBlank()))
 		{
 			String tmpStr = weeWXApp.current_dialog_html
@@ -168,6 +174,8 @@ public class Custom extends Fragment
 					"text/html", "utf-8", null));
 			return;
 		}
+
+		wv.stopLoading();
 
 		if(custom_url != null && !custom_url.isBlank())
 			wv.post(() -> wv.loadUrl(custom_url));

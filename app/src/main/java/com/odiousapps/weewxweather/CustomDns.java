@@ -45,7 +45,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 class CustomDns implements Dns
 {
 	// Mini domain block list
-	final List<String> bad_domains = new ArrayList<>(Arrays.asList(
+	final static List<String> bad_domains = new ArrayList<>(Arrays.asList(
 			"3lift.com",
 			"4dex.io",
 			"adnxs.com",
@@ -82,6 +82,7 @@ class CustomDns implements Dns
 			"rubiconproject.com",
 			"seedtag.com",
 			"servenobid.com",
+			"siteimproveanalytics.com",
 			"smartadserver.com",
 			"sonobi.com",
 			"spellknight.com",
