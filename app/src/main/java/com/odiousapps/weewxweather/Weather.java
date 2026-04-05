@@ -31,6 +31,7 @@ import androidx.webkit.WebViewFeature;
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
+import static com.odiousapps.weewxweather.weeWXAppCommon.deg2Str;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.formatString;
@@ -515,14 +516,14 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		sb.append("\t\t</div>\n\t\t<div class='dataRowCurrent'>\n");
 
-		tmpStr = (String)getJson("current_windGustDir_compass", "N/A");
+		tmpStr = deg2Str("current_windGustDir", "current_windGust");
 		if(tmpStr == null || tmpStr.isBlank())
 			return;
 
 		tmpStr = tmpStr.strip();
 
 		sb.append("\t\t\t<div class='dataCellCurrent left'>")
-				.append(cssToSVG("wi-wind-deg", (int)getJson("current_windGustDir", 0)))
+				.append(cssToSVG("wi-wind-deg", Math.round((float)getJson("current_windGustDir", 0f))))
 				.append("</div>\n")
 				.append(weeWXApp.currentSpacer)
 				.append("\t\t\t<div class='dataCellCurrent left'>")

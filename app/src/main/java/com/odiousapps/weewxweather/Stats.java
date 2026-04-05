@@ -26,6 +26,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.cssToSVG;
+import static com.odiousapps.weewxweather.weeWXAppCommon.deg2Str;
 import static com.odiousapps.weewxweather.weeWXAppCommon.fiToSVG;
 import static com.odiousapps.weewxweather.weeWXAppCommon.formatString;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getDateTimeStr;
@@ -469,14 +470,14 @@ public class Stats extends Fragment
 
 		if(timeMode == 0)
 			sb.append(createRow(formatString(timeperiod + "_wind_max") + speedSym +
-		                    " " + getJson(timeperiod + "_wind_gustdir_compass", "N/A") +
-		                    " " + getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
-							since + " " + rain + rainSym));
+			                    " " + deg2Str(timeperiod + "_wind_maxdir", timeperiod + "_wind_max") +
+			                    " " + getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
+								since + " " + rain + rainSym));
 		else
 			sb.append(createRow2(formatString(timeperiod + "_wind_max") + speedSym +
-	                    " " + getJson(timeperiod + "_wind_gustdir_compass", "N/A") +
-	                    " " + getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
-						since + " " + rain + rainSym));
+			                     " " + deg2Str(timeperiod + "_wind_maxdir", timeperiod + "_wind_max") +
+			                     " " + getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
+								 since + " " + rain + rainSym));
 
 		return sb.toString();
 	}

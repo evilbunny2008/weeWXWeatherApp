@@ -250,6 +250,9 @@ class weeWXAppCommon
 		600, 1800, 3600, 21600, 86400
 	};
 
+	final static String[] direction_labels = new String[]{"N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE",
+															"S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"};
+
 	static
 	{
 		if(weeWXApp.DEBUG)
@@ -5949,5 +5952,21 @@ class weeWXAppCommon
 		{
 			return notificationLiveData;
 		}
+	}
+
+	static String deg2Str(String degree_element, String speed_element)
+	{
+		if(!hasElement(degree_element) || !hasElement(speed_element))
+			return "N/A";
+
+		float speed = (float)getJson(speed_element, 0f);
+
+		if(speed <= 0)
+			return "N/A";
+
+		float degrees = (float)getJson(degree_element, 0f);
+
+		int index = (int)Math.round(degrees / 22.5) % 16;
+		return direction_labels[index];
 	}
 }
