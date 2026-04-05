@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.widget.RemoteViews;
 
 
-import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
+import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.to_ARGB_hex;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.formatString;
@@ -23,8 +23,7 @@ public class WidgetProvider extends AppWidgetProvider
 	@Override
 	public void onReceive(Context context, Intent intent)
 	{
-		LogMessage("WidgetProvider.onReceive() called.. intent.getAction()=" +
-		                          intent.getAction());
+		LogMessage("WidgetProvider.onReceive() called.. intent.getAction()=" + intent.getAction());
 
 		AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
 		int[] appWidgetIds = intent.getIntArrayExtra("appWidgetIds");

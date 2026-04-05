@@ -91,10 +91,8 @@ dependencies
 
 	// The following line suppresses version warnings when using commit IDs for the version...
 	//noinspection GradleDependency
-	implementation("com.github.evilbunny2008:ColourPicker:2.0.15")
 	//implementation files("library-release.aar")
+	implementation("com.github.evilbunny2008:ColourPicker:2.0.18")
 
-	//noinspection GradleDependency
 	implementation("com.github.evilbunny2008:XmlToJson:2.0.2")
-	//implementation files("library-release.aar")
 }

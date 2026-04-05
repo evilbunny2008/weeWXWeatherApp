@@ -89,8 +89,8 @@ import org.json.JSONObject;
 
 import static androidx.core.view.WindowCompat.enableEdgeToEdge;
 
-import static com.github.evilbunny2008.colourpicker.Common.parseHexToColour;
-import static com.github.evilbunny2008.colourpicker.Common.to_ARGB_hex;
+import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.parseHexToColour;
+import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.to_ARGB_hex;
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
@@ -104,9 +104,9 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.loadOrDownloadImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.mergeJsonObjects;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
 
-@SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag",
-		"UnsafeIntentLaunch", "NotifyDataSetChanged", "SourceLockedOrientationActivity",
-		"ConstantConditions", "SameParameterValue", "SequencedCollectionMethodCanBeUsed"})
+@SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag", "UnsafeIntentLaunch",
+                   "SourceLockedOrientationActivity", "ConstantConditions", "SameParameterValue",
+                   "SequencedCollectionMethodCanBeUsed"})
 public class MainActivity extends FragmentActivity
 {
 	private static MainActivity instance;
@@ -125,6 +125,11 @@ public class MainActivity extends FragmentActivity
 			use_exact_alarm, save_app_debug_logs, next_moon, force_dark_mode,
 			morning_temp_alert, afternoon_temp_alert, rainfall_alert,
 			rainrate_alert_watch, rainrate_alert_warning, rainrate_alert_severe;
+	private ArrayAdapter<String> adapter1;
+	private ArrayAdapter<String> adapter2;
+	private ArrayAdapter<String> adapter3;
+	private ArrayAdapter<String> adapter4;
+	private ArrayAdapter<String> adapter5;
 	private MaterialRadioButton showRadar, showForecast;
 	private ViewPager2 mViewPager;
 	private Slider sliderMorningTemp, sliderAfternoonTemp, sliderRainfall;
@@ -567,7 +572,6 @@ public class MainActivity extends FragmentActivity
 
 		sliderMorningTemp = findViewById(R.id.sliderMorningTemp);
 		TextView tvMorningTempValue = findViewById(R.id.tvMorningTempValue);
-
 		sliderMorningTemp.addOnChangeListener((s, value, fromUser) ->
 		{
 			String tempUnit = "C";
@@ -581,7 +585,6 @@ public class MainActivity extends FragmentActivity
 
 		sliderAfternoonTemp = findViewById(R.id.sliderAfternoonTemp);
 		TextView tvAfternoonTempValue = findViewById(R.id.tvAfternoonTempValue);
-
 		sliderAfternoonTemp.addOnChangeListener((s, value, fromUser) ->
 		{
 			String tempUnit = "C";
@@ -779,6 +782,15 @@ public class MainActivity extends FragmentActivity
 			LogMessage("MainActivity.onCreate() DayNightMode: " + DayNightMode);
 		}
 
+		if(UpdateFrequency < 0 || UpdateFrequency >= weeWXApp.updateOptions.length)
+			UpdateFrequency = weeWXApp.UpdateFrequency_default;
+
+		if(UpdateInterval < 0 || UpdateInterval >= weeWXApp.updateInterval.length)
+			UpdateInterval = weeWXApp.UpdateInterval_default;
+
+		if(webcamInterval < 0 || webcamInterval >= weeWXApp.webcamRefreshOptions.length)
+			webcamInterval = weeWXApp.webcamInterval_default;
+
 		// https://github.com/Pes8/android-material-color-picker-dialog
 		String hex = CPEditText.getFixedChar() + String.format("%08X", bg).toUpperCase();
 		LogMessage("MainActivity.onCreate() Setting widgetBG to " + to_ARGB_hex(hex));
@@ -922,11 +934,40 @@ public class MainActivity extends FragmentActivity
 			root.getViewTreeObserver().addOnGlobalLayoutListener(listener);
 		});
 
+		adapter1 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.updateOptions);
+		adapter2 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.themeOptions);
+		adapter3 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.widgetThemeOptions);
+		adapter4 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.updateInterval);
+		adapter5 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.webcamRefreshOptions);
+
+		s1.setAdapter(adapter1);
+		s1.setText(weeWXApp.updateOptions[UpdateFrequency], false);
+
+		s2.setAdapter(adapter2);
+		s2.setText(weeWXApp.themeOptions[DayNightMode], false);
+
+		if(widget_theme_mode == 4)
+		{
+			fgtil.setVisibility(View.VISIBLE);
+			bgtil.setVisibility(View.VISIBLE);
+		} else {
+			fgtil.setVisibility(View.GONE);
+			bgtil.setVisibility(View.GONE);
+		}
+
+		s3.setAdapter(adapter3);
+		s3.setText(weeWXApp.widgetThemeOptions[widget_theme_mode], false);
+
+		s4.setAdapter(adapter4);
+		s4.setText(weeWXApp.updateInterval[UpdateInterval], false);
+
+		s5.setAdapter(adapter5);
+		s5.setText(weeWXApp.webcamRefreshOptions[webcamInterval], false);
+
 		enableEdgeToEdge(window);
 
 		setStrings();
 		updateHamburger();
-		updateDropDowns();
 		updateColours();
 		WidgetProvider.updateAppWidget();
 
@@ -1397,67 +1438,6 @@ public class MainActivity extends FragmentActivity
 		};
 	}
 
-	private void updateDropDowns()
-	{
-		ArrayAdapter<String> adapter1 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.updateOptions);
-		ArrayAdapter<String> adapter2 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.themeOptions);
-		ArrayAdapter<String> adapter3 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.widgetThemeOptions);
-		ArrayAdapter<String> adapter4 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.updateInterval);
-		ArrayAdapter<String> adapter5 = newArrayAdapter(R.layout.spinner_layout, weeWXApp.webcamRefreshOptions);
-
-		adapter1.notifyDataSetChanged();
-		adapter2.notifyDataSetChanged();
-		adapter3.notifyDataSetChanged();
-
-		if(UpdateFrequency < 0 || UpdateFrequency >= weeWXApp.updateOptions.length)
-			UpdateFrequency = weeWXApp.UpdateFrequency_default;
-
-		if(UpdateInterval < 0 || UpdateInterval >= weeWXApp.updateInterval.length)
-			UpdateInterval = weeWXApp.UpdateInterval_default;
-
-		if(webcamInterval < 0 || webcamInterval >= weeWXApp.webcamRefreshOptions.length)
-			webcamInterval = weeWXApp.webcamInterval_default;
-
-		final int uf = UpdateFrequency;
-		final int ui = UpdateInterval;
-		final int wi = webcamInterval;
-		final int dnm = DayNightMode;
-		final int wtm = widget_theme_mode;
-
-		runOnUiThread(() ->
-		{
-			LogMessage("MainActivity.updateDropDowns() UpdateFrequency: " + uf);
-			LogMessage("MainActivity.updateDropDowns() UpdateInterval: " + ui);
-			LogMessage("MainActivity.updateDropDowns() webcamInterval: " + wi);
-			LogMessage("MainActivity.updateDropDowns() DayNightMode: " + dnm);
-			LogMessage("MainActivity.updateDropDowns() widget_theme_mode: " + wtm);
-
-			s1.setAdapter(adapter1);
-			s1.setText(weeWXApp.updateOptions[uf], false);
-
-			s2.setAdapter(adapter2);
-			s2.setText(weeWXApp.themeOptions[dnm], false);
-
-			if(wtm == 4)
-			{
-				fgtil.setVisibility(View.VISIBLE);
-				bgtil.setVisibility(View.VISIBLE);
-			} else {
-				fgtil.setVisibility(View.GONE);
-				bgtil.setVisibility(View.GONE);
-			}
-
-			s3.setAdapter(adapter3);
-			s3.setText(weeWXApp.widgetThemeOptions[wtm], false);
-
-			s4.setAdapter(adapter4);
-			s4.setText(weeWXApp.updateInterval[ui], false);
-
-			s5.setAdapter(adapter5);
-			s5.setText(weeWXApp.webcamRefreshOptions[wi], false);
-		});
-	}
-
 	void closeKeyboard()
 	{
 		View focus = getCurrentFocus();
@@ -1490,18 +1470,10 @@ public class MainActivity extends FragmentActivity
 		}
 	}
 
-	private void showProcessingErrors()
+	private void showProcessingErrors(int json_id, String json_url)
 	{
 		int errorCount = (int)KeyValue.readVar("ProcessingErrorCount", -1);
 		if(errorCount < 1)
-			return;
-
-		int json_id = (int)KeyValue.readVar("ProcessingErrorID", -1);
-		if(json_id < 0 || json_id >= json_keys.length)
-			return;
-
-		String json_url = (String)KeyValue.readVar(json_keys[json_id] + "_url", "");
-		if(json_url == null || json_url.isBlank())
 			return;
 
 		KeyValue.putVar("ProcessingErrorCount", null);
@@ -1511,6 +1483,7 @@ public class MainActivity extends FragmentActivity
 				errorCount, json_labels[json_id], json_url, getEnglishAndroidString(R.string.app_name));
 		String logStr = String.format(Locale.ENGLISH, getEnglishAndroidString(R.string.processing_errors),
 						errorCount, json_labels[json_id], json_url, getEnglishAndroidString(R.string.app_name));
+
 		showAlertDialog(errorStr, logStr);
 	}
 
@@ -1733,7 +1706,7 @@ public class MainActivity extends FragmentActivity
 					return;
 				}
 
-				boolean validURL1;
+				Boolean validURL1;
 				try
 				{
 					LogMessage("processSettings() Checking " + json_labels[i] + ": " + json_urls[i]);
@@ -1742,6 +1715,26 @@ public class MainActivity extends FragmentActivity
 					doStackOutput(e);
 					errorDialog(e);
 					return;
+				}
+
+				if(validURL1 == null)
+				{
+					int errorCount = (int)KeyValue.readVar("ProcessingErrorCount", -1);
+					if(errorCount > 0)
+					{
+						int final_i = i;
+
+						bgStart = 0;
+						runOnUiThread(() ->
+						{
+							b1.setEnabled(true);
+							b2.setEnabled(true);
+							dialog.dismiss();
+							showProcessingErrors(final_i, json_urls[final_i]);
+						});
+
+						return;
+					}
 				}
 
 				if(!validURL1)
@@ -2427,7 +2420,21 @@ public class MainActivity extends FragmentActivity
 			showUpdateAvailable();
 
 		if(str.equals(weeWXAppCommon.PROCESSING_ERRORS))
-			showProcessingErrors();
+		{
+			int errorCount = (int)KeyValue.readVar("ProcessingErrorCount", -1);
+			if(errorCount < 1)
+				return;
+
+			int json_id = (int)KeyValue.readVar("ProcessingErrorID", -1);
+			if(json_id < 0 || json_id >= json_keys.length)
+				return;
+
+			String json_url = (String)KeyValue.readVar(json_keys[json_id] + "_url", "");
+			if(json_url == null || json_url.isBlank())
+				return;
+
+			showProcessingErrors(json_id, json_url);
+		}
 	};
 
 	public boolean isViewPagerNull()

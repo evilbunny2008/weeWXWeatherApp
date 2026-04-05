@@ -486,7 +486,7 @@ public class SafeWebView extends WebView
 				@Override
                 public void onLoadResource(WebView view, String url)
 				{
-                    super.onLoadResource(view, url);
+					super.onLoadResource(view, url);
 
 					if(outputDebugLogs)
 						LogMessage("onLoadResource() url: " + url + ", progress: " + view.getProgress());

@@ -3575,10 +3575,9 @@ class weeWXAppCommon
 					LogMessage("reallyGetWeather() Error in " + json_labels[id] + ": " + jarr.optString(i), KeyValue.e);
 
 				SendIntent(PROCESSING_ERRORS);
-				return false;
+				return null;
 			}
 		}
-
 
 		KeyValue.putVar(json_keys[id] + "_time", now);
 		KeyValue.putVar(json_keys[id] + "_str", jsonObject.toString());

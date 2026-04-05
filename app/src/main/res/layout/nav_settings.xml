@@ -7,6 +7,7 @@
 	android:layout_height="0dp"
 	android:layout_weight="1"
 	android:orientation="vertical"
+	android:importantForAutofill="noExcludeDescendants"
 	tools:ignore="VisualLintBounds">
 
 	<LinearLayout
@@ -154,7 +155,6 @@
 				android:layout_height="wrap_content"
 				android:clickable="true"
 				android:focusable="false"
-				android:importantForAutofill="no"
 				android:inputType="none"
 				android:textSize="20sp"
 				android:saveEnabled="false"
@@ -182,7 +182,6 @@
 				android:layout_height="wrap_content"
 				android:clickable="true"
 				android:focusable="false"
-				android:importantForAutofill="no"
 				android:inputType="none"
 				android:textSize="20sp"
 				android:saveEnabled="false"
@@ -210,7 +209,6 @@
 				android:layout_height="wrap_content"
 				android:clickable="true"
 				android:focusable="false"
-				android:importantForAutofill="no"
 				android:inputType="none"
 				android:textSize="20sp"
 				android:saveEnabled="false"
@@ -238,7 +236,6 @@
 				android:layout_height="wrap_content"
 				android:clickable="true"
 				android:focusable="false"
-				android:importantForAutofill="no"
 				android:inputType="none"
 				android:textSize="20sp"
 				android:saveEnabled="false"
@@ -265,7 +262,6 @@
 				android:layout_height="wrap_content"
 				android:clickable="true"
 				android:focusable="false"
-				android:importantForAutofill="no"
 				android:inputType="none"
 				android:textSize="20sp"
 				android:saveEnabled="false"
