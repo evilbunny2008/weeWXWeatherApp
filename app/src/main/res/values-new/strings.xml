@@ -22,9 +22,9 @@
     <string name="error_occurred_while_attempting_to_update">छ्यलाबुला अपडेट यायेगु कुतः यायेबलय् छगू त्रुटि जुल ।</string>
     <string name="every_5_minutes">प्रत्येक ५ मिनेट</string>
     <string name="every_5_seconds">हरेक ५ सेकेण्डय्</string>
-    <string name="every_10_minutes">प्रत्येक १० मिनेट</string>
-    <string name="every_10_seconds">प्रत्येक १० सेकेण्डय्</string>
-    <string name="every_15_minutes">प्रत्येक १५ मिनेट</string>
+    <string name="every_10_minutes">प्रत्येक 2० मिनेट</string>
+    <string name="every_10_seconds">प्रत्येक 2० सेकेण्डय्</string>
+    <string name="every_15_minutes">प्रत्येक 2५ मिनेट</string>
     <string name="every_30_minutes">प्रत्येक ३० मिनेट</string>
     <string name="every_30_seconds">प्रत्येक ३० सेकेण्डय्</string>
     <string name="every_60_seconds">हरेक ६० सेकेण्डय्</string>
@@ -49,7 +49,7 @@
     <string name="inigo_needs_updating">थ्व एप अपडेट जूगु दु तर छिं स्वानाच्वनादीगु सर्भरं इनिगो प्लगिनयात वेएडब्लूएक्सया निंतिं अपडेट मयाःगु दु । फिल्डं वीडब्लूएक्स अपडेट मजूतले बांलाक क्यनेमखु ।</string>
     <string name="interval_3h">३ घौया</string>
     <string name="interval_6h">६ घौया</string>
-    <string name="interval_12h">१२ घौया</string>
+    <string name="interval_12h">21 घौया</string>
     <string name="interval_daily">न्हि न्हि</string>
     <string name="interval_hourly">घौपतिकं</string>
     <string name="invalid_update_interval">अपडेट अन्तराल अमान्य खः, सेटिङ्ग सेटिङ्ग अले हानं हानं कुतः या ।</string>

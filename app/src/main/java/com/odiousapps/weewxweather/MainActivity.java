@@ -14,6 +14,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.LocaleList;
 import android.os.Looper;
 import android.provider.Settings;
 import android.text.Editable;
@@ -190,6 +191,13 @@ public class MainActivity extends FragmentActivity
 			startActivity(intent);
 			finish();
 			return;
+		}
+
+		LocaleList localeList = LocaleList.getDefault();
+		for(int i = 0; i < localeList.size(); i++)
+		{
+			Locale l = localeList.get(i);
+			LogMessage("MainActivity.onCreate(): l.toString(): " + l.toString());
 		}
 
 		theme = (int)KeyValue.readVar("theme", weeWXApp.theme_default);

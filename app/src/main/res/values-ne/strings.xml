@@ -22,9 +22,9 @@
     <string name="error_occurred_while_attempting_to_update">प्रयोग अपडेट गर्ने प्रयास गर्दा एउटा त्रुटि भयो</string>
     <string name="every_5_minutes">हरेक ५ मिनेटमा</string>
     <string name="every_5_seconds">हरेक ५ सेकेन्डमा</string>
-    <string name="every_10_minutes">हरेक १० मिनेटमा</string>
+    <string name="every_10_minutes">हरेक 2० मिनेटमा</string>
     <string name="every_10_seconds">प्रत्येक 10 सेकेन्डमा</string>
-    <string name="every_15_minutes">हरेक १५ मिनेटमा</string>
+    <string name="every_15_minutes">हरेक 2५ मिनेटमा</string>
     <string name="every_30_minutes">हरेक ३० मिनेटमा</string>
     <string name="every_30_seconds">प्रत्येक ३० सेकेन्डमा</string>
     <string name="every_60_seconds">हरेक ६० सेकेन्डमा</string>

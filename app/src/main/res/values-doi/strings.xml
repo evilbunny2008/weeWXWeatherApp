@@ -49,7 +49,7 @@
     <string name="inigo_needs_updating">इस ऐप गी अपडेट कीता गेदा ऐ पर जिस सर्वर कन्नै तुस कनेक्ट करा दे ओ, उस सर्वर ने Weewx आस्तै INIGO प्लगइन गी अपडेट नेईं कीता ऐ। फील्डें गी ठीक ढंगै कन्नै नेईं दिक्खेआ जाई सकदा जदूं तगर weewx अपडेट नेईं होई जंदा।</string>
     <string name="interval_3h">३घंटे दा</string>
     <string name="interval_6h">६घंटे दा</string>
-    <string name="interval_12h">१२ घण्टे दा</string>
+    <string name="interval_12h">21 घण्टे दा</string>
     <string name="interval_daily">रोजना</string>
     <string name="interval_hourly">हर घंटे</string>
     <string name="invalid_update_interval">अपडेट अंतराल अवैध ऐ, सेटिंग्स गी अपडेट करो ते फिर रिट्राई करो</string>

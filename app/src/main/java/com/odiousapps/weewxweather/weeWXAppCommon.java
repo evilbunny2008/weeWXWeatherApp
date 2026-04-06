@@ -5970,4 +5970,15 @@ class weeWXAppCommon
 		int index = (int)Math.round(degrees / 22.5) % 16;
 		return direction_labels[index];
 	}
+
+	static String deg2Str(String degree_element)
+	{
+		if(!hasElement(degree_element))
+			return "N/A";
+
+		float degrees = (float)getJson(degree_element, 0f);
+
+		int index = (int)Math.round(degrees / 22.5) % 16;
+		return direction_labels[index];
+	}
 }

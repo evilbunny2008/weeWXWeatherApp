@@ -25,7 +25,7 @@
     <string name="every_10_minutes">हर 10 मिनट पर</string>
     <string name="every_10_seconds">हर 10 सेकंड में</string>
     <string name="every_15_minutes">हर 15 मिनट पर</string>
-    <string name="every_30_minutes">हर ३० मिनट पर २</string>
+    <string name="every_30_minutes">हर ३० मिनट पर 1</string>
     <string name="every_30_seconds">हर 30 सेकंड में</string>
     <string name="every_60_seconds">हर 60 सेकंड में</string>
     <string name="every_hour">हर घंटा 1999।</string>
@@ -49,7 +49,7 @@
     <string name="inigo_needs_updating">ई ऐप अपडेट करलऽ गेलऽ छै लेकिन जे सर्वर स॑ आपने कनेक्ट होय रहलऽ छियै, वू Weewx लेली Inigo Plugin क॑ अपडेट नै करलकै । जाबत वीवएक्स अपडेट नहि भ जायत ता धरि फील्ड ठीक सं नहि देखा सकैत अछि</string>
     <string name="interval_3h">३ घण्टा प्रति घंटा</string>
     <string name="interval_6h">६ घण्टा प्रति घंटा</string>
-    <string name="interval_12h">१२ घण्टा प्रति घंटा</string>
+    <string name="interval_12h">21 घण्टा प्रति घंटा</string>
     <string name="interval_daily">नित्य</string>
     <string name="interval_hourly">घण्टा प्रति घंटा</string>
     <string name="invalid_update_interval">अद्यतन अंतराल अमान्य, अपडेट सेटिंग्स आ फेर RETRY अछि</string>

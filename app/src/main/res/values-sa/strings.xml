@@ -20,12 +20,12 @@
     <string name="empty">रिक्तम्‌</string>
     <string name="error">त्रुटि!</string>
     <string name="error_occurred_while_attempting_to_update">उपयोगस्य अद्यतनीकरणस्य प्रयासे त्रुटिः अभवत् ।</string>
-    <string name="every_5_minutes">प्रत्येकं ५ निमेषेषु प्रत्येकं ५ निमेषः २</string>
+    <string name="every_5_minutes">प्रत्येकं ५ निमेषेषु प्रत्येकं ५ निमेषः 1</string>
     <string name="every_5_seconds">प्रत्येकं ५ सेकेण्ड्</string>
-    <string name="every_10_minutes">प्रत्येकं १० निमेषेषु प्रत्येकं १० निमेषः २</string>
-    <string name="every_10_seconds">प्रत्येकं १० सेकेण्ड्</string>
-    <string name="every_15_minutes">प्रत्येकं १५ निमेषेषु प्रत्येकं १५ निमेषः २</string>
-    <string name="every_30_minutes">प्रत्येकं ३० निमेषेषु प्रत्येकं ३० निमेषः २</string>
+    <string name="every_10_minutes">प्रत्येकं 2० निमेषेषु प्रत्येकं 2० निमेषः 1</string>
+    <string name="every_10_seconds">प्रत्येकं 2० सेकेण्ड्</string>
+    <string name="every_15_minutes">प्रत्येकं 2५ निमेषेषु प्रत्येकं 2५ निमेषः 1</string>
+    <string name="every_30_minutes">प्रत्येकं ३० निमेषेषु प्रत्येकं ३० निमेषः 1</string>
     <string name="every_30_seconds">प्रत्येकं ३० सेकेण्ड्</string>
     <string name="every_60_seconds">प्रत्येकं ६० सेकेण्ड्</string>
     <string name="every_hour">प्रत्येकं घण्टा 1</string>
@@ -39,7 +39,7 @@
     <string name="forecast2">पूर्वानुमान</string>
     <string name="forecast_6hourly">६ प्रतिघण्टा</string>
     <string name="forecast_daily">प्रतिदिन</string>
-    <string name="forecast_interval">पूर्वानुमानान्तरम् (यदि प्रयोज्यम्) २</string>
+    <string name="forecast_interval">पूर्वानुमानान्तरम् (यदि प्रयोज्यम्) 1</string>
     <string name="forecast_type_is_invalid">पूर्वानुमानप्रकारः \'%1$s\' अमान्यः अस्ति, स्वस्य सेटिंग्स् सञ्चिकां परीक्ष्य पुनः प्रयासं कुर्वन्तु ।</string>
     <string name="forecast_url_not_set">पूर्वानुमान URL न सेट्, edit Settings.txt परिवर्तयन्तु</string>
     <string name="hour">घटकः</string>
@@ -49,7 +49,7 @@
     <string name="inigo_needs_updating">इदं एप् अद्यतनं कृतम् अस्ति किन्तु यत् सर्वरं भवन्तः संयोजयन्ति तत् Weewx कृते inigo प्लगइन अपडेट् न कृतम् अस्ति। फील्ड्स् यावत् Weewx अद्यतनं न भवति तावत् सम्यक् न दृश्यते ।</string>
     <string name="interval_3h">३ प्रतिघण्टा</string>
     <string name="interval_6h">६ प्रतिघण्टा</string>
-    <string name="interval_12h">१२ प्रतिघण्टा</string>
+    <string name="interval_12h">21 प्रतिघण्टा</string>
     <string name="interval_daily">प्रतिदिन</string>
     <string name="interval_hourly">प्रतिघण्टा</string>
     <string name="invalid_update_interval">अद्यतनं अन्तरालम् अमान्यम्, अद्यतनं सेटिंग्स् ततः पुनःस्वप्नम् अस्ति ।</string>
@@ -85,7 +85,7 @@
     <string name="radar_still_downloading">रडार इमेज अद्यापि डाउनलोड् करोति।</string>
     <string name="radar_type_is_invalid">Radar प्रकार \'%1$s\' अमान्य है, अपनी सेटिंग्स फाइल जाँच करें और पुनः प्रयास करें।</string>
     <string name="radar_url_not_set">रडार URL सेट नहीं। परिवर्तनार्थं भवान् सेटिङ्ग्स् मध्ये गन्तुं शक्नोति ।</string>
-    <string name="radarforecast">मुख्य स्क्रीन पर : १</string>
+    <string name="radarforecast">मुख्य स्क्रीन पर : 2</string>
     <string name="rain_in_inches">इञ्चेषु वर्षा?</string>
     <string name="rainfall_alert">वर्षा अलर्ट?</string>
     <string name="rainfall_alert_desc">यदा वर्षा भवतः निर्धारितसीमाम् अवाप्नोति तदा प्रतिदिनं सचेष्टयति</string>
