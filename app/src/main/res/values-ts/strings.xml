@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Hi</string>
     <string name="about_app">Malunghana na app</string>
     <string name="afternoon_alert">Mahiselo ya %1$.1f°%2$s ya yile ehansi kuya eka mpimo wa wena wa %3$.1f°%2$s</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Leswi u aleke mpfumelelo wa xitiviso kambirhi, u fanele u wu pfumelela eka swiyimiso ematshan\'weni ya sweswo, ku sungula swiyimiso?</string>
     <string name="ok">Lulamile</string>
     <string name="please_wait_verify_url">Hi kombela mi yimela loko hi ri karhi hi tiyisisa URL leyi mi yi rhumeleke</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Ku vile na swihoxo swa %1$d leswi kumiweke eka fayili ya %2$s, languta fayili ya %2$s leyi kumiweke eka %3$s kumbe languta tilog ta %4$s ku kuma vuxokoxoko</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Ku vile na xihoxo xa %1$d lexi kumiweke eka fayili ya %2$s, languta fayili ya %2$s leyi kumiweke eka %3$s kumbe languta tilog ta %4$s ku kuma vuxokoxoko</item>
+        <item quantity="other">Ku vile na swihoxo swa %1$d leswi kumiweke eka fayili ya %2$s, languta fayili ya %2$s leyi kumiweke eka %3$s kumbe languta tilog ta %4$s ku kuma vuxokoxoko</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Ku tsandzekile ku kopa xifaniso xa radar</string>
     <string name="radar_still_downloading">Radar image ya ha downloada</string>

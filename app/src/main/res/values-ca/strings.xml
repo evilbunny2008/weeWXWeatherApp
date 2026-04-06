@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Sobre</string>
     <string name="about_app">Sobre l\'aplicació</string>
     <string name="afternoon_alert">La temperatura %1$.1f°%2$s ha baixat fins al vostre límit de %3$.1f°%2$s</string>
@@ -72,7 +72,11 @@
     <string name="notifications_needed2">Com que heu rebutjat el permís de notificació dues vegades, heu d\'activar-lo a la configuració, iniciar la configuració?</string>
     <string name="ok">D\'acord</string>
     <string name="please_wait_verify_url">Espereu mentre verifiquem l\'URL que heu enviat</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">S\'han detectat %1$d errors al fitxer %2$s, visualitzeu el fitxer %2$s trobat a %3$s o visualitzeu els registres de %4$s per obtenir els detalls</string>
+    <plurals name="processing_errors">
+        <item quantity="many">S\'han detectat %1$d errors al fitxer %2$s, visualitzeu el fitxer %2$s trobat a %3$s o consulteu els registres de %4$s per obtenir els detalls</item>
+        <item quantity="one">S\'ha detectat %1$d error al fitxer %2$s, visualitzeu el fitxer %2$s trobat a %3$s o consulteu els registres de %4$s per obtenir els detalls</item>
+        <item quantity="other">S\'han detectat %1$d errors al fitxer %2$s, visualitzeu el fitxer %2$s trobat a %3$s o consulteu els registres de %4$s per obtenir els detalls</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">No s\'ha pogut descarregar la imatge del radar</string>
     <string name="radar_still_downloading">La imatge del radar encara s\'està baixant</string>

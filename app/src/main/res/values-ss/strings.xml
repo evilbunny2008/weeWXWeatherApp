@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Nge</string>
     <string name="about_app">Mayelana ne-App</string>
     <string name="afternoon_alert">Lizinga lekushisa %1$.1f°%2$s lehle lafika emkhawulweni wakho we %3$.1f°%2$s</string>
@@ -31,7 +31,7 @@
     <string name="every_hour">Njalo Li-Hour</string>
     <string name="failed_to_merge_weather_data">Kwehlulekile kuhlanganisa idatha ye %1$s nedatha ye %2$s</string>
     <string name="failed_to_process_forecast_data">Kwehlulekile kucubungula idatha yekubiketela</string>
-    <string name="failed_to_process_weather_data">Kwehlulekile kucubungula kahle idatha yesimo selitulu kusuka kuseva yakho, ikakhulukati idatha ye-%1$s</string>
+    <string name="failed_to_process_weather_data">Kwehlulekile kucubungula kahle idatha yesimo selitulu kusuka kuseva yakho, ikakhulukati idatha ye %1$s</string>
     <string name="fgColour">I-Widget Foreground Color Picker</string>
     <string name="fileURL">Faka i-URL kumasethingi akho.txt</string>
     <string name="force_dark_mode">Indlela Yemandla Lemnyama</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Onkhe malanga</string>
     <string name="interval_hourly">Ngelihora</string>
     <string name="invalid_update_interval">Sikhatsi sekuvuselela asisebenti, tilungiselelo tekuvuselela bese tiphindze tizame</string>
-    <string name="json_formatted_data">I-%1$s manje idzinga ifayela lemininingwane ye-%2$s kusuka ku-%3$s server, kufanele uvuselele i-%4$s bese uvuselela lifayela le-%5$s ngaphambi kwekutsi le-app isebente kahle. Chafata Kulungile kute utfole imininingwane leminyenti ku %6$s</string>
+    <string name="json_formatted_data">I %1$s manje idzinga ifayela lemininingwane ye %2$s kusuka ku %3$s server, kufanele uvuselele i %4$s bese uvuselela lifayela le %5$s ngaphambi kwekutsi le-app isebente kahle. Chafata Kulungile kute utfole imininingwane leminyenti ku %6$s</string>
     <string name="last_month_stats">Tibalo Tenyanga Tekugcina</string>
     <string name="last_year_stats">Tibalo Temnyaka lophelile</string>
     <string name="light_theme">Ingcikitsi Lelula</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Njengobe wala imvume yesatiso kabili, kufanele uyivumele kumasethingi esikhundleni saloko, kwetfula emasethingi?</string>
     <string name="ok">Kulungile</string>
     <string name="please_wait_verify_url">Sicela ulindze ngesikhatsi sicinisekisa i-URL loyifakile</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Bekunemaphutsa langu %1$d latfolakala kufayela le %2$s, buka lifayela le %2$s lelitfolakala ku %3$s noma buka emalogi langu %4$s kute utfole imininingwane</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Bekuneliphutsa le %1$d lelitfolakele kufayela le %2$s, buka lifayela le %2$s lelitfolakala ku %3$s noma buka emalogi e %4$s kute utfole imininingwane</item>
+        <item quantity="other">Bekunemaphutsa langu %1$d latfolakala kufayela le %2$s, buka lifayela le %2$s lelitfolakala ku %3$s noma buka emalogi langu %4$s kute utfole imininingwane</item>
+    </plurals>
     <string name="radar">Radari</string>
     <string name="radar_download_failed">Kwehlulekile kulandza sitfombe se-radar</string>
     <string name="radar_still_downloading">Sitfombe se-Radar sisalayisha</string>
@@ -86,10 +89,10 @@
     <string name="rainfall_alert_metric">Imvula %1$.1f%2$s ihambisane nemkhawulo wakho we %3$.1f%2$s</string>
     <string name="rainfall_alert_str">Secwayiso seMvula</string>
     <string name="rainfall_limit">Umkhawulo Wemvula</string>
-    <string name="rainrate_alert_imperial_severe">Lizinga lemvula le-%1$.2fin ku-%2$d %3$s yekugcina lifike esigabeni \'Lesimatima\'</string>
+    <string name="rainrate_alert_imperial_severe">Lizinga lemvula le %1$.2fin ku %2$d %3$s yekugcina lifike esigabeni \'Lesimatima\'</string>
     <string name="rainrate_alert_imperial_warning">Lizinga lemvula lelingu %1$.2fin ku %2$d %3$s leyengcile lifike esigabeni se \'Secwayiso\'</string>
-    <string name="rainrate_alert_imperial_watch">Lizinga lemvula le-%1$.2fin ku-%2$d %3$s leyengcile lishaye lizinga le-\'Buka\'</string>
-    <string name="rainrate_alert_metric_severe">Lizinga lemvula le-%1$.1fmm ku-%2$d %3$s leyengcile lifike esigabeni \'Lesimatima\'</string>
+    <string name="rainrate_alert_imperial_watch">Lizinga lemvula le %1$.2fin ku %2$d %3$s leyengcile lishaye lizinga le-\'Buka\'</string>
+    <string name="rainrate_alert_metric_severe">Lizinga lemvula le %1$.1fmm ku %2$d %3$s leyengcile lifike esigabeni \'Lesimatima\'</string>
     <string name="rainrate_alert_metric_warning">Lizinga lemvula lelingu %1$.1fmm ku %2$d %3$s leyengcile lifike esigabeni se \'Secwayiso\'</string>
     <string name="rainrate_alert_metric_watch">Imvula lengu %1$.1fmm ku %2$d %3$s yekugcina seyifike esigabeni se \'Kubuka\'</string>
     <string name="rainrate_alert_severe">Tecwayiso Telizinga Lemvula Lembi?</string>

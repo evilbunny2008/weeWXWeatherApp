@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Акъкъында</string>
     <string name="about_app">Апп акъкъында</string>
     <string name="afternoon_alert">Сыджакълыкъ %1$.1f°%2$s сизинъ %3$.1f°%2$s сынъырынъызгъа тюшти</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Хабердарлыкъ рухсети эки кере ред эттинъиз, онынъ ерине параметрлерде оны чалыштырмакъ керек, параметрлерни чалыштырмакъ керекми?</string>
     <string name="ok">Яхшы</string>
     <string name="please_wait_verify_url">Лютфен, биз сиз берген URL-ни тешкергенде бекленъиз</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">файлында %1$d хата тапылды, %3$s ерде тапылгъан %2$s файлыны бакъынъыз я да тафсилятлар ичюн %4$s журналларыны бакъынъыз</string>
+    <plurals name="processing_errors">
+        <item quantity="few">%2$s файлында %1$d хата тапылды, %3$s ерде тапылгъан %2$s файлыны бакъынъыз я да тафсилятлар ичюн %4$s журналларыны бакъынъыз</item>
+        <item quantity="many">%2$s файлында %1$d хата тапылды, %3$s ерде тапылгъан %2$s файлыны бакъынъыз я да тафсилятлар ичюн %4$s журналларыны бакъынъыз</item>
+        <item quantity="one">%2$s файлында %1$d хата тапылды, %3$s ерде тапылгъан %2$s файлыны бакъынъыз я да тафсилятлар ичюн %4$s журналларыны бакъынъыз</item>
+        <item quantity="other">%2$s файлында %1$d хата тапылды, %3$s ерде тапылгъан %2$s файлыны бакъынъыз я да тафсилятлар ичюн %4$s журналларыны бакъынъыз</item>
+        <item quantity="two">%2$s файлында %1$d хата тапылды, %3$s ерде тапылгъан %2$s файлыны бакъынъыз я да тафсилятлар ичюн %4$s журналларыны бакъынъыз</item>
+        <item quantity="zero">%2$s файлында %1$d хата тапылды, %3$s ерде тапылгъан %2$s файлыны бакъынъыз я да тафсилятлар ичюн %4$s журналларыны бакъынъыз</item>
+    </plurals>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Радар ресимини юклемек мумкюн олмады</string>
     <string name="radar_still_downloading">Радар образы даа юклей</string>

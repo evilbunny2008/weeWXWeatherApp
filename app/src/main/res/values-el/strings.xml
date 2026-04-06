@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Για</string>
     <string name="about_app">Σχετικά με την εφαρμογή</string>
     <string name="afternoon_alert">Η θερμοκρασία %1$.1f°%2$s έχει πέσει στο όριο των %3$.1f°%2$s</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Εφόσον απορρίψατε την άδεια ειδοποίησης δύο φορές, πρέπει να την ενεργοποιήσετε στις ρυθμίσεις</string>
     <string name="ok">Εντάξει</string>
     <string name="please_wait_verify_url">Περιμένετε μέχρι να επαληθεύσουμε τη διεύθυνση URL που υποβάλατε</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Εντοπίστηκαν %1$d σφάλματα στο αρχείο %2$s, δείτε το αρχείο %2$s που βρέθηκε στο %3$s ή δείτε τα αρχεία καταγραφής %4$s για λεπτομέρειες</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Εντοπίστηκε %1$d σφάλμα στο αρχείο %2$s, δείτε το αρχείο %2$s που βρέθηκε στο %3$s ή δείτε τα αρχεία καταγραφής %4$s για λεπτομέρειες</item>
+        <item quantity="other">Εντοπίστηκαν %1$d σφάλματα στο αρχείο %2$s, δείτε το αρχείο %2$s που βρέθηκε στο %3$s ή δείτε τα αρχεία καταγραφής %4$s για λεπτομέρειες</item>
+    </plurals>
     <string name="radar">Ραντάρ</string>
     <string name="radar_download_failed">Αποτυχία λήψης της εικόνας ραντάρ</string>
     <string name="radar_still_downloading">Η εικόνα ραντάρ εξακολουθεί να γίνεται λήψη</string>

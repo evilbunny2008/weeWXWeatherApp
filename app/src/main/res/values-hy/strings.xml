@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Մոտ</string>
     <string name="about_app">Հավելվածի մասին</string>
     <string name="afternoon_alert">%1$.1f°%2$s ջերմաստիճանն իջել է մինչև ձեր սահմանաչափը՝ %3$.1f°%2$s</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Ամենօրյա</string>
     <string name="interval_hourly">Ժամային</string>
     <string name="invalid_update_interval">Թարմացման ընդմիջումն անվավեր է, թարմացրեք կարգավորումները և նորից փորձեք</string>
-    <string name="json_formatted_data">%1$s-ն այժմ պահանջում է %2$s տվյալների ֆայլ %3$s սերվերից, դուք պետք է թարմացնեք %4$s-ը և թարմացնեք %5$s ֆայլը, մինչև այս հավելվածը ճիշտ գործի: Սեղմեք Լավ՝ %6$s-ի վերաբերյալ լրացուցիչ մանրամասների համար</string>
+    <string name="json_formatted_data">%1$s ն այժմ պահանջում է %2$s տվյալների ֆայլ %3$s սերվերից, դուք պետք է թարմացնեք %4$s ը և թարմացնեք %5$s ֆայլը, մինչև այս հավելվածը ճիշտ գործի: Սեղմեք Լավ՝ %6$s ի վերաբերյալ լրացուցիչ մանրամասների համար</string>
     <string name="last_month_stats">Անցյալ ամսվա վիճակագրություն</string>
     <string name="last_year_stats">Անցյալ տարվա վիճակագրություն</string>
     <string name="light_theme">Թեթև թեմա</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Քանի որ դուք երկու անգամ մերժել եք ծանուցման թույլտվությունը, դրա փոխարեն պետք է միացնե՞ք այն կարգավորումներում, գործարկե՞լ կարգավորումները:</string>
     <string name="ok">Լավ</string>
     <string name="please_wait_verify_url">Խնդրում ենք սպասել, մինչև մենք հաստատենք ձեր ուղարկած URL-ը:</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">ֆայլում հայտնաբերվել են %1$d սխալներ, դիտեք %2$s ֆայլը, որը գտնվել է %3$s-ում կամ դիտեք %4$s մատյանները մանրամասների համար</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s ֆայլում հայտնաբերվեց %1$d սխալ, դիտեք %2$s ֆայլը, որը գտնվել է %3$s ում կամ դիտեք %4$s մատյանները մանրամասների համար</item>
+        <item quantity="other">%2$s ֆայլում հայտնաբերվել են %1$d սխալներ, դիտեք %2$s ֆայլը, որը գտնվել է %3$s ում կամ դիտեք %4$s մատյանները մանրամասների համար</item>
+    </plurals>
     <string name="radar">Ռադար</string>
     <string name="radar_download_failed">Չհաջողվեց ներբեռնել ռադարի պատկերը</string>
     <string name="radar_still_downloading">Ռադարի պատկերը դեռ ներբեռնվում է:</string>
@@ -86,12 +89,12 @@
     <string name="rainfall_alert_metric">Անձրևը %1$.1f%2$s համապատասխանում է ձեր սահմանաչափին՝ %3$.1f%2$s</string>
     <string name="rainfall_alert_str">Անձրևի մասին ահազանգ</string>
     <string name="rainfall_limit">Անձրևի սահմանաչափ</string>
-    <string name="rainrate_alert_imperial_severe">Անձրևի արագությունը %1$.2fin է %2$d %3$s-ում ամենաշատը հասել է \'Դաժան\' մակարդակին</string>
-    <string name="rainrate_alert_imperial_warning">%1$.2fin անձրևի արագությունը %2$d %3$s-ում հասել է \'Զգուշացման\' մակարդակին</string>
-    <string name="rainrate_alert_imperial_watch">Անձրևի արագությունը %1$.2fin է, երբ %2$d %3$s-ը չի հասել \'Դիտել\' մակարդակին</string>
-    <string name="rainrate_alert_metric_severe">Անձրևի արագությունը %1$.1fmm է %2$d %3$s-ում ամենաշատը հասել է \'Դաժան\' մակարդակին</string>
-    <string name="rainrate_alert_metric_warning">Անձրևի արագությունը %1$.1fmm է, որ %2$d %3$s-ը չհասնի \'Զգուշացման\' մակարդակին</string>
-    <string name="rainrate_alert_metric_watch">Անձրևի արագությունը %1$.1fmm է, երբ %2$d %3$s-ը չի հասել \'Դիտել\' մակարդակին</string>
+    <string name="rainrate_alert_imperial_severe">Անձրևի արագությունը %1$.2fin է %2$d %3$s ում ամենաշատը հասել է \'Դաժան\' մակարդակին</string>
+    <string name="rainrate_alert_imperial_warning">%1$.2fin անձրևի արագությունը %2$d %3$s ում հասել է \'Զգուշացման\' մակարդակին</string>
+    <string name="rainrate_alert_imperial_watch">Անձրևի արագությունը %1$.2fin է, երբ %2$d %3$s ը չի հասել \'Դիտել\' մակարդակին</string>
+    <string name="rainrate_alert_metric_severe">Անձրևի արագությունը %1$.1fmm է %2$d %3$s ում ամենաշատը հասել է \'Դաժան\' մակարդակին</string>
+    <string name="rainrate_alert_metric_warning">Անձրևի արագությունը %1$.1fmm է, որ %2$d %3$s ը չհասնի \'Զգուշացման\' մակարդակին</string>
+    <string name="rainrate_alert_metric_watch">Անձրևի արագությունը %1$.1fmm է, երբ %2$d %3$s ը չի հասել \'Դիտել\' մակարդակին</string>
     <string name="rainrate_alert_severe">Ծանր անձրևի մասին ահազանգեր:</string>
     <string name="rainrate_alert_severe_desc">Զգուշացնում է, եթե անձրևի մակարդակը գերազանցում է խիստ սահմանը՝ կախված տեղումների տևողությունից</string>
     <string name="rainrate_alert_severe_str">Դաժան անձրևի մասին ահազանգ</string>
@@ -130,11 +133,11 @@
     <string name="use_exact_alarm">Օգտագործեք թարմացման ճշգրիտ ժամանակները</string>
     <string name="wasnt_able_to_connect_custom_url">Չհաջողվեց միանալ կամ ներբեռնել նշված հատուկ URL-ից</string>
     <string name="wasnt_able_to_connect_forecast">Չհաջողվեց միացնել կամ ներբեռնել կանխատեսումը:</string>
-    <string name="wasnt_able_to_connect_or_download">Չհաջողվեց միացնել կամ ներբեռնել %1$s %2$s-ից</string>
+    <string name="wasnt_able_to_connect_or_download">Չհաջողվեց միացնել կամ ներբեռնել %1$s %2$s ից</string>
     <string name="wasnt_able_to_connect_radar_image">Չհաջողվեց միացնել կամ ներբեռնել Radar= պատկերը ինտերնետից</string>
     <string name="wasnt_able_to_connect_settings">Չհաջողվեց միացնել կամ ներբեռնել կարգավորումները ձեր սերվերից</string>
     <string name="wasnt_able_to_connect_webcam_url">Չհաջողվեց միացնել կամ ներբեռնել վեբ-տեսախցիկի պատկերը ձեր սերվերից</string>
-    <string name="wasnt_able_to_download_url_is_blank">Չհաջողվեց ներբեռնել %1$s-ը, քանի որ URL-ը դատարկ էր</string>
+    <string name="wasnt_able_to_download_url_is_blank">Չհաջողվեց ներբեռնել %1$s ը, քանի որ URL-ը դատարկ էր</string>
     <string name="weather2">Եղանակ</string>
     <string name="webcam2">Վեբ տեսախցիկ</string>
     <string name="webcam_refresh_time">Տեսախցիկի թարմացման ժամանակը</string>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Pali</string>
     <string name="about_app">Pa lwa App</string>
-    <string name="afternoon_alert">Ukukaba %1$.1f°2$s kwacepa ukufika pa cipimo cenu ica %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Ukukaba %1$.1f°%2$s kwacepa ukufika pa cipimo cenu ica %3$.1f°%2$s</string>
     <string name="afternoon_temp_alert">Ukucenjesha kwa cungulo?</string>
     <string name="all_time_stats">Imitantikile yonse iya Nshita</string>
     <string name="app_theme">Umutwe wa App</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Ukulinganisha Appp</string>
     <string name="metric">Ubomfye Ifya Kupangapanga?</string>
     <string name="minutes">ba mineti</string>
-    <string name="morning_alert">Ukukaba %1$.1f°2$s kwakulilako ukufika pa cipimo cenu ica %3$.1f°%2$s</string>
+    <string name="morning_alert">Ukukaba %1$.1f°%2$s kwakulilako ukufika pa cipimo cenu ica %3$.1f°%2$s</string>
     <string name="morning_temp_alert">Ukucenjesha kwa mu cungulo?</string>
     <string name="next_moon">Ificitika fya mweshi ifyakonkapo?</string>
     <string name="no">Awe</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Apo mwakana insambu sha kwishibisha imiku ibili, bushe mufwile ukucisuminisha mu fipekanishiwe mu cifulo ca fyo, ukutendeka ifipekanishiwe?</string>
     <string name="ok">Ee</string>
     <string name="please_wait_verify_url">Mukwai lindilila ilyo tuleshininkisha URL iyo mwatumine</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Kwaliko ifilubo %1$d ifyasangilwe muli failo ya %2$s, moneni failo ya %2$s iyasangwa pa %3$s nangu moneni ifitabo fya %4$s pakuti mumone ifya kufumamo</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Kwaliko ifilubo %1$d ifyasangilwe muli failo ya %2$s, moneni failo ya %2$s iyasangwa pa %3$s nangu moneni ifitabo fya %4$s pakuti mumone ifya kufumamo</item>
+        <item quantity="many">Kwaliko ifilubo %1$d ifyasangilwe muli failo ya %2$s, moneni failo ya %2$s iyasangwa pa %3$s nangu moneni ifitabo fya %4$s pakuti mumone ifya kufumamo</item>
+        <item quantity="one">Paali %1$d ububifi bwasangilwe mu failo ya %2$s, moneni failo ya %2$s iyasangwa pa %3$s nangu moneni ifitabo fya %4$s pakuti mumone ifya kufumamo</item>
+        <item quantity="other">Kwaliko ifilubo %1$d ifyasangilwe muli failo ya %2$s, moneni failo ya %2$s iyasangwa pa %3$s nangu moneni ifitabo fya %4$s pakuti mumone ifya kufumamo</item>
+        <item quantity="two">Kwaliko ifilubo %1$d ifyasangilwe muli failo ya %2$s, moneni failo ya %2$s iyasangwa pa %3$s nangu moneni ifitabo fya %4$s pakuti mumone ifya kufumamo</item>
+        <item quantity="zero">Kwaliko ifilubo %1$d ifyasangilwe muli failo ya %2$s, moneni failo ya %2$s iyasangwa pa %3$s nangu moneni ifitabo fya %4$s pakuti mumone ifya kufumamo</item>
+    </plurals>
     <string name="radar">Rakara</string>
     <string name="radar_download_failed">Ukufilwa ukukopa icikope ca radar</string>
     <string name="radar_still_downloading">Icikope ca cikope cicili cilekopololwa</string>

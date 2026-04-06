@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Par</string>
     <string name="about_app">Par App</string>
     <string name="afternoon_alert">Temperatura %1$.1f°%2$s ir nūkrituse leidz jūs rūbežam %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Tai kai div reizis atsasaceji nu paziņuojuma atļuovis, tod tuo vītā vajag tū īspējuot īstatejumūs, palaist īstatejumus?</string>
     <string name="ok">Labi</string>
     <string name="please_wait_verify_url">Lyudzu, pagaidit, cikom mes puorbaudom īsnīgtū URL</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">failā tyka atkluotys %1$d klaidys, apsaver %2$s failu, kas atrosts %3$s voi apsaver %4$s žurnalus detaļuos</string>
+    <plurals name="processing_errors">
+        <item quantity="few">%2$s failā tyka atkluotys %1$d klaidys, apsaver %2$s failu, kas atrosts %3$s voi apsaver %4$s žurnalus detaļuos</item>
+        <item quantity="many">%2$s failā tyka atkluotys %1$d klaidys, apsaver %2$s failu, kas atrosts %3$s voi apsaver %4$s žurnalus detaļuos</item>
+        <item quantity="one">%2$s failā tyka atkluota %1$d klaida, apsaver %2$s failu, kas atrosts %3$s voi apsaver %4$s žurnalus detaļuos</item>
+        <item quantity="other">%2$s failā tyka atkluotys %1$d klaidys, apsaver %2$s failu, kas atrosts %3$s voi apsaver %4$s žurnalus detaļuos</item>
+        <item quantity="two">%2$s failā tyka atkluotys %1$d klaidys, apsaver %2$s failu, kas atrosts %3$s voi apsaver %4$s žurnalus detaļuos</item>
+        <item quantity="zero">%2$s failā tyka atkluotys %1$d klaidys, apsaver %2$s failu, kas atrosts %3$s voi apsaver %4$s žurnalus detaļuos</item>
+    </plurals>
     <string name="radar">radars</string>
     <string name="radar_download_failed">100 doc#1159 Naizadeve lejupluodēt radara attālu</string>
     <string name="radar_still_downloading">Radara attāls vēļ lejupluodej</string>

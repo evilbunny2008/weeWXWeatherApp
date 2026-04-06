@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">గురించి</string>
     <string name="about_app">యాప్ గురించి</string>
     <string name="afternoon_alert">ఉష్ణోగ్రత %1$.1f°%2$s మీ పరిమితి %3$.1f°%2$sకి పడిపోయింది</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">మీరు నోటిఫికేషన్ అనుమతిని రెండుసార్లు తిరస్కరించినందున, మీరు దానికి బదులుగా సెట్టింగ్‌లలో దీన్ని ప్రారంభించాలి, సెట్టింగ్‌లను ప్రారంభించాలా?</string>
     <string name="ok">సరే</string>
     <string name="please_wait_verify_url">మీరు సమర్పించిన URLని మేము ధృవీకరించే వరకు దయచేసి వేచి ఉండండి</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">ఫైల్‌లో %1$d లోపాలు కనుగొనబడ్డాయి, %3$sలో కనుగొనబడిన %2$s ఫైల్‌ను వీక్షించండి లేదా వివరాల కోసం %4$s లాగ్‌లను వీక్షించండి</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s ఫైల్‌లో %1$d లోపం కనుగొనబడింది, %3$s వద్ద కనుగొనబడిన %2$s ఫైల్‌ను వీక్షించండి లేదా వివరాల కోసం %4$s లాగ్‌లను వీక్షించండి</item>
+        <item quantity="other">%2$s ఫైల్‌లో %1$d లోపాలు కనుగొనబడ్డాయి, %3$sలో కనుగొనబడిన %2$s ఫైల్‌ను వీక్షించండి లేదా వివరాల కోసం %4$s లాగ్‌లను వీక్షించండి</item>
+    </plurals>
     <string name="radar">రాడార్</string>
     <string name="radar_download_failed">రాడార్ చిత్రాన్ని డౌన్‌లోడ్ చేయడంలో విఫలమైంది</string>
     <string name="radar_still_downloading">రాడార్ చిత్రం ఇప్పటికీ డౌన్‌లోడ్ అవుతోంది</string>

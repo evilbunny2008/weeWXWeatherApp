@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">ھەققىدە</string>
     <string name="about_app">بۇ دېتال ھەققىدە</string>
     <string name="afternoon_alert">تېمپېراتۇرا%1$.1f°%2$s سىزنىڭ چېكىڭىزگە چۈشۈپ قالدى%3$.1f°%2$s</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">ئۇقتۇرۇش ئىجازىتىنى ئىككى قېتىم رەت قىلغانلىقىڭىز ئۈچۈن ، ئۇنى تەڭشەك ، قوزغىتىش تەڭشىكىدە قوزغىتىشىڭىز كېرەكمۇ؟</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">سىز تاپشۇرغان URL نى دەلىللەۋاتقاندا ساقلاڭ</string>
-	<string name="processing_errors" tools:ignore="PluralsCandidate">%2$s ھۆججىتىدە %1$d خاتالىق بايقالدى، %3$s دىن تېپىلغان %2$s ھۆججىتىنى كۆرۈڭ ياكى تەپسىلاتلار ئۈچۈن %4$s خاتىرىسىنى كۆرۈڭ</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s ھۆججىتىدە% %1$d خاتالىق بايقالدى ،%3$s دىن تېپىلغان%2$s ھۆججىتىنى كۆرۈڭ ياكى تەپسىلاتلار ئۈچۈن%4$s خاتىرىسىنى كۆرۈڭ</item>
+        <item quantity="other">%2$s ھۆججىتىدە% %1$d خاتالىق بايقالدى ،%3$s دىن تېپىلغان%2$s ھۆججىتىنى كۆرۈڭ ياكى تەپسىلاتلار ئۈچۈن%4$s خاتىرىسىنى كۆرۈڭ</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">رادار رەسىمنى چۈشۈرەلمىدى</string>
     <string name="radar_still_downloading">رادار سۈرىتى يەنىلا چۈشۈرۈۋاتىدۇ</string>

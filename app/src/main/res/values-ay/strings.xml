@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Ukxata</string>
     <string name="about_app">Uka app tuqitwa</string>
     <string name="afternoon_alert">Temperatura %1$.1f°%2$s ukaxa %3$.1f°%2$s ukjamawa</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Kunjamakitix pä kutiw yatiyaw permiso ukax jan iyaw sawaykchixa, ukax configuración ukan activañaw wakisi uka lantix, configuración de lanzamiento?</string>
     <string name="ok">Waliki</string>
     <string name="please_wait_verify_url">URL ukan uñt\'ayat ukar chiqanchañkamax suyt\'apxañamawa</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">%1$d pantjasiwinakax %2$s qillqatanx jikxatasiwayi, %2$s qillqatan %3$s ukan jikxataski uk uñakipt\'aña jan ukax %4$s qillqatanakat uñakipt\'aña</string>
+    <plurals name="processing_errors">
+        <item quantity="few">%1$d pantjasiwinakax %2$s qillqatanx jikxatasiwayi, %2$s qillqatan %3$s ukan jikxataski uk uñakipt\'aña jan ukax %4$s qillqatanakat uñakipt\'aña</item>
+        <item quantity="many">%1$d pantjasiwinakax %2$s qillqatanx jikxatasiwayi, %2$s qillqatan %3$s ukan jikxataski uk uñakipt\'aña jan ukax %4$s qillqatanakat uñakipt\'aña</item>
+        <item quantity="one">%1$d pantjasiwix %2$s qillqatanx jikxatasiwayi, %2$s qillqatan %3$s ukan jikxataski uk uñakipt\'aña jan ukax %4$s qillqat uñakipt\'aña</item>
+        <item quantity="other">%1$d pantjasiwinakax %2$s qillqatanx jikxatasiwayi, %2$s qillqatan %3$s ukan jikxataski uk uñakipt\'aña jan ukax %4$s qillqatanakat uñakipt\'aña</item>
+        <item quantity="two">%1$d pantjasiwinakax %2$s qillqatanx jikxatasiwayi, %2$s qillqatan %3$s ukan jikxataski uk uñakipt\'aña jan ukax %4$s qillqatanakat uñakipt\'aña</item>
+        <item quantity="zero">%1$d pantjasiwinakax %2$s qillqatanx jikxatasiwayi, %2$s qillqatan %3$s ukan jikxataski uk uñakipt\'aña jan ukax %4$s qillqatanakat uñakipt\'aña</item>
+    </plurals>
     <string name="radar">radar ukax</string>
     <string name="radar_download_failed">Radar ukan uñacht\'äwipax janiw apkatañjamäkiti</string>
     <string name="radar_still_downloading">Radar ukan uñacht\'äwipax wali ch\'amawa</string>

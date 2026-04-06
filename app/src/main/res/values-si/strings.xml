@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">ගැන</string>
     <string name="about_app">යෙදුම ගැන</string>
     <string name="afternoon_alert">උෂ්ණත්වය %1$.1f°%2$s ඔබේ සීමාව %3$.1f°%2$s දක්වා පහත වැටී ඇත</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">ඔබ දැනුම්දීම් අවසරය දෙවරක් ප්‍රතික්ෂේප කළ බැවින්, ඒ වෙනුවට ඔබට එය සැකසීම් තුළ සබල කිරීමට අවශ්‍ය වේ, සැකසීම් දියත් කරන්නද?</string>
     <string name="ok">හරි</string>
     <string name="please_wait_verify_url">අපි ඔබ ඉදිරිපත් කළ URL එක සත්‍යාපනය කරන තෙක් කරුණාකර රැඳී සිටින්න</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">ගොනුවේ දෝෂ %1$dක් අනාවරණය වී ඇත, %3$s හි ඇති %2$s ගොනුව බලන්න හෝ විස්තර සඳහා ලොග %4$s බලන්න</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s ගොනුවේ %1$d දෝෂයක් අනාවරණය විය, %3$s හි ඇති %2$s ගොනුව බලන්න හෝ විස්තර සඳහා %4$s ලොග බලන්න</item>
+        <item quantity="other">%2$s ගොනුවේ දෝෂ %1$dක් අනාවරණය වී ඇත, %3$s හි ඇති %2$s ගොනුව බලන්න හෝ විස්තර සඳහා ලොග %4$s බලන්න</item>
+    </plurals>
     <string name="radar">රේඩාර්</string>
     <string name="radar_download_failed">රේඩාර් රූපය බාගැනීම අසාර්ථක විය</string>
     <string name="radar_still_downloading">රේඩාර් රූපය තවමත් බාගත වෙමින් පවතී</string>

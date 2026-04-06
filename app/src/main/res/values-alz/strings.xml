@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Ikum</string>
     <string name="about_app">App maeni i kum lembe maeni</string>
     <string name="afternoon_alert">Lieth %1$.1f°%2$s udok piny ni %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Calu ma ikwero twero mi lwongo wang aryo, umitu iketh i settings kakare, launch settings?</string>
     <string name="ok">Aya do</string>
     <string name="please_wait_verify_url">Wakwayu nia ibed ikur saa ma wubiketho URL m\'ioro iri</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Ubedo ku %1$d ma rac ma junwango i %2$s file, nen %2$s file ma junwango i %3$s nyo nen %4$s logs pi lembe matung tung</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Ubedo ku %1$d ma rac ma junwango i %2$s file, nen %2$s file ma junwango i %3$s nyo nen %4$s logs pi lembe matung tung</item>
+        <item quantity="many">Ubedo ku %1$d ma rac ma junwango i %2$s file, nen %2$s file ma junwango i %3$s nyo nen %4$s logs pi lembe matung tung</item>
+        <item quantity="one">Ubedo ku %1$d ma rac ma junwango i %2$s file, nen %2$s file ma junwango i %3$s nyo nen %4$s logs pi lembe matung tung</item>
+        <item quantity="other">Ubedo ku %1$d ma rac ma junwango i %2$s file, nen %2$s file ma junwango i %3$s nyo nen %4$s logs pi lembe matung tung</item>
+        <item quantity="two">Ubedo ku %1$d ma rac ma junwango i %2$s file, nen %2$s file ma junwango i %3$s nyo nen %4$s logs pi lembe matung tung</item>
+        <item quantity="zero">Ubedo ku %1$d ma rac ma junwango i %2$s file, nen %2$s file ma junwango i %3$s nyo nen %4$s logs pi lembe matung tung</item>
+    </plurals>
     <string name="radar">oloyo</string>
     <string name="radar_download_failed">Ka ng\'ato odhi ng\'iewo picha mar rad</string>
     <string name="radar_still_downloading">Radal picha pod odong\'</string>

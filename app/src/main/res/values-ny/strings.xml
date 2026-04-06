@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Za</string>
     <string name="about_app">Za pulogalamuyi</string>
     <string name="afternoon_alert">Kutentha %1$.1f°%2$s kwatsika kufika pa %3$.1f°%2$s</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Popeza mudakana chilolezo cha zidziwitso kawiri, muyenera kuyitsetsa pazokonda m\'malo mwake, yambitsani zokonda?</string>
     <string name="ok">Chabwino</string>
     <string name="please_wait_verify_url">Chonde dikirani pomwe tikutsimikizira URL yomwe mudapereka</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Panali zolakwika %1$d zomwe zapezedwa mufayilo ya %2$s, onani %2$s fayilo yopezeka pa %3$s kapena onani malogi %4$s kuti mudziwe zambiri</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Panali zolakwika %1$d zomwe zapezeka mufayilo ya %2$s, onani %2$s fayilo yomwe yapezeka pa %3$s kapena onani malogi %4$s kuti mudziwe zambiri</item>
+        <item quantity="other">Panali zolakwika %1$d zomwe zapezedwa mufayilo ya %2$s, onani %2$s fayilo yopezeka pa %3$s kapena onani malogi %4$s kuti mudziwe zambiri</item>
+    </plurals>
     <string name="radar">Makina amlengalenga</string>
     <string name="radar_download_failed">Talephera kutsitsa chithunzi cha radar</string>
     <string name="radar_still_downloading">Chithunzi cha Radar chidatsitsabe</string>

@@ -817,9 +817,19 @@ public class weeWXApp extends Application
 		return instance.getString(resId);
 	}
 
+	static String getPlural(int resId, int count)
+	{
+		return instance.getResources().getQuantityString(resId, count, count, count, count, count, count);
+	}
+
 	static String getEnglishAndroidString(int resId)
 	{
 		return instance.englishContext.getString(resId);
+	}
+
+	static String getEnglishPlural(int resId, int count)
+	{
+		return instance.englishContext.getResources().getQuantityString(resId, count, count, count, count, count, count);
 	}
 
 	static int smallestScreenWidth()

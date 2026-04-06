@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Турында</string>
     <string name="about_app">Кушымта турында</string>
     <string name="afternoon_alert">Температура%1$.1f°%2$s сезнең лимитка төште%3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Ике тапкыр хәбәр итү рөхсәтеннән баш тартканга, сез аны көйләүләрдә, көйләүләрне эшләтеп җибәрергә тиеш?</string>
     <string name="ok">Ярар</string>
     <string name="please_wait_verify_url">Сез тапшырган URL-ны тикшергәндә көтегез</string>
-	<string name="processing_errors" tools:ignore="PluralsCandidate">%2$s файлында %1$d хаталары табылды, %3$s тапкан %2$s файлны карагыз яки детальләр өчен %4$s журналларын карагыз</string>
+    <plurals name="processing_errors">
+        <item quantity="few">%2$s файлында% %1$d хаталары табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+        <item quantity="many">%2$s файлында% %1$d хаталары табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+        <item quantity="one">%2$s файлында% %1$d хата табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+        <item quantity="other">%2$s файлында% %1$d хаталары табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+        <item quantity="two">%2$s файлында% %1$d хаталары табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+        <item quantity="zero">%2$s файлында% %1$d хаталары табылды %3$s тапкан%2$s файлны карагыз яки детальләр өчен%4$s журналларын карагыз</item>
+    </plurals>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Радар образын йөкли алмады</string>
     <string name="radar_still_downloading">Радар образы әле дә йөкләнә</string>
@@ -130,7 +137,7 @@
     <string name="use_exact_alarm">Төгәл яңартуны кулланыгыз</string>
     <string name="wasnt_able_to_connect_custom_url">Күрсәтелгән махсус URL-тан йөкләнә алмадым</string>
     <string name="wasnt_able_to_connect_forecast">Фаразны тоташтыра яки йөкли алмады</string>
-    <string name="wasnt_able_to_connect_or_download">%2$s-тан%1$s тоташтыра яки йөкли алмады</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s тан%1$s тоташтыра яки йөкли алмады</string>
     <string name="wasnt_able_to_connect_radar_image">Радарны тоташтыра яки йөкли алмый = Интернеттан рәсем</string>
     <string name="wasnt_able_to_connect_settings">Сезнең сервердан көйләүләрне тоташтыра яки йөкли алмый</string>
     <string name="wasnt_able_to_connect_webcam_url">Сезнең сервердан веб-камера образын тоташтыра яки йөкли алмады</string>

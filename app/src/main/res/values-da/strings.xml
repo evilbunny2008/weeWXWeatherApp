@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Om</string>
     <string name="about_app">Om appen</string>
     <string name="afternoon_alert">Temperaturen %1$.1f°%2$s er faldet til din grænse på %3$.1f°%2$s</string>
@@ -29,9 +29,9 @@
     <string name="every_30_seconds">Hvert 30. sekund</string>
     <string name="every_60_seconds">Hvert 60. sekund</string>
     <string name="every_hour">Hver Time</string>
-    <string name="failed_to_merge_weather_data">Kunne ikke flette %1$s-dataene med %2$s-dataene</string>
+    <string name="failed_to_merge_weather_data">Kunne ikke flette %1$s dataene med %2$s dataene</string>
     <string name="failed_to_process_forecast_data">Kunne ikke behandle prognosedata</string>
-    <string name="failed_to_process_weather_data">Kunne ikke behandle vejrdataene fra din server korrekt, specifikt %1$s-dataene</string>
+    <string name="failed_to_process_weather_data">Kunne ikke behandle vejrdataene fra din server korrekt, specifikt %1$s dataene</string>
     <string name="fgColour">Widget Forgrundsfarvevælger</string>
     <string name="fileURL">Indtast URL\'en til din settings.txt</string>
     <string name="force_dark_mode">Tving mørk tilstand</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Da du afviste meddelelsestilladelsen to gange, skal du aktivere den i indstillinger i stedet, starte indstillinger?</string>
     <string name="ok">Okay</string>
     <string name="please_wait_verify_url">Vent venligst, mens vi bekræfter den URL, du har indsendt</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Der blev fundet %1$d fejl i %2$s-filen, se %2$s-filen fundet på %3$s eller se %4$s logfiler for detaljer</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Der blev fundet %1$d fejl i %2$s filen, se %2$s filen fundet på %3$s eller se %4$s logfiler for detaljer</item>
+        <item quantity="other">Der blev fundet %1$d fejl i %2$s filen, se %2$s filen fundet på %3$s eller se %4$s logfiler for detaljer</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Kunne ikke downloade radarbilledet</string>
     <string name="radar_still_downloading">Radarbilledet downloades stadig</string>

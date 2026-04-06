@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">À propositu</string>
     <string name="about_app">Circa l\'App</string>
     <string name="afternoon_alert">A temperatura %1$.1f°%2$s hè cascata à u vostru limitu di %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Siccomu avete rifiutatu u permessu di notificazione duie volte, avete bisognu di attivà in i paràmetri invece, lanciate i paràmetri?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Per piacè aspettate mentre verificamu l\'URL chì avete inviatu</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Ci sò stati %1$d errori rilevati in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede %4$s logs per i dettagli</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Ci sò stati %1$d errori rilevati in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede i logs %4$s per i dettagli</item>
+        <item quantity="many">Ci sò stati %1$d errori rilevati in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede i logs %4$s per i dettagli</item>
+        <item quantity="one">Ci hè statu %1$d errore rilevatu in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede %4$s logs per i dettagli</item>
+        <item quantity="other">Ci sò stati %1$d errori rilevati in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede i logs %4$s per i dettagli</item>
+        <item quantity="two">Ci sò stati %1$d errori rilevati in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede i logs %4$s per i dettagli</item>
+        <item quantity="zero">Ci sò stati %1$d errori rilevati in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede i logs %4$s per i dettagli</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Fallu di scaricà l\'imaghjini radar</string>
     <string name="radar_still_downloading">L\'immagine radar hè sempre scaricata</string>

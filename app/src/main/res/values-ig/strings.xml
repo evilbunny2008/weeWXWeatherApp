@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Maka</string>
     <string name="about_app">Banyere ngwa</string>
     <string name="afternoon_alert">Okpomọkụ %1$.1f°%2$s adaala ruo oke gị nke %3$.1f°%2$s</string>
@@ -72,7 +72,9 @@
     <string name="notifications_needed2">Ebe ị jụrụ ikike ngosi ugboro abụọ, ịkwesịrị ịme ya na ntọala kama, malite ntọala?</string>
     <string name="ok">Ọ dị mma</string>
     <string name="please_wait_verify_url">Biko chere ka anyị nyochaa URL ị nyefere</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Achọpụtara mperi %1$d na faịlụ %2$s, lelee faịlụ %2$s achọtara na %3$s ma ọ bụ lelee ndekọ %4$s maka nkọwapụta</string>
+    <plurals name="processing_errors">
+        <item quantity="other">Achọpụtara mperi %1$d na faịlụ %2$s, lelee faịlụ %2$s achọtara na %3$s ma ọ bụ lelee ndekọ %4$s maka nkọwapụta</item>
+    </plurals>
     <string name="radar">Igwe na-aza eluigwe</string>
     <string name="radar_download_failed">Emeghị ka ibudata ihe ngosi Radar</string>
     <string name="radar_still_downloading">Ihe onyonyo radar ka na-ebudata</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Bɔt</string>
     <string name="about_app">Na bɔt di ap</string>
     <string name="afternoon_alert">Tɛmpratura %1$.1f°%2$s dɔn drɔp to yu limit we na %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Bikɔs yu nɔ gri fɔ gi di notis pɔmishɔn tu tɛm, yu nid fɔ ɛnabul am na sɛtin insted, lanch sɛtin?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Duya wet we wi de chɛk di URL we yu sɛn</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">%1$d mistek dɛn bin de we dɛn bin detekt na di %2$s fayl, si di %2$s fayl we dɛn fɛn na %3$s ɔ si %4$s lɔg fɔ di ditel dɛn</string>
+    <plurals name="processing_errors">
+        <item quantity="few">%1$d mistek dɛn bin de we dɛn bin detekt na di %2$s fayl, si di %2$s fayl we dɛn fɛn na %3$s ɔ si %4$s lɔg fɔ di ditel dɛn</item>
+        <item quantity="many">%1$d mistek dɛn bin de we dɛn bin detekt na di %2$s fayl, si di %2$s fayl we dɛn fɛn na %3$s ɔ si %4$s lɔg fɔ di ditel dɛn</item>
+        <item quantity="one">Dɛn bin detekt %1$d mistek na di %2$s fayl, si di %2$s fayl we dɛn fɛn na %3$s ɔ si %4$s lɔg fɔ di ditel dɛn</item>
+        <item quantity="other">%1$d mistek dɛn bin de we dɛn bin detekt na di %2$s fayl, si di %2$s fayl we dɛn fɛn na %3$s ɔ si %4$s lɔg fɔ di ditel dɛn</item>
+        <item quantity="two">%1$d mistek dɛn bin de we dɛn bin detekt na di %2$s fayl, si di %2$s fayl we dɛn fɛn na %3$s ɔ si %4$s lɔg fɔ di ditel dɛn</item>
+        <item quantity="zero">%1$d mistek dɛn bin de we dɛn bin detekt na di %2$s fayl, si di %2$s fayl we dɛn fɛn na %3$s ɔ si %4$s lɔg fɔ di ditel dɛn</item>
+    </plurals>
     <string name="radar">Reda we dɛn de yuz fɔ mek reda</string>
     <string name="radar_download_failed">Failed fɔ dawnlod di reda imej</string>
     <string name="radar_still_downloading">Radar Image stil de dawnlod</string>

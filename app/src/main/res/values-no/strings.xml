@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Om</string>
     <string name="about_app">Om appen</string>
     <string name="afternoon_alert">Temperaturen %1$.1f°%2$s har sunket til grensen din på %3$.1f°%2$s</string>
@@ -29,9 +29,9 @@
     <string name="every_30_seconds">Hvert 30. sekund</string>
     <string name="every_60_seconds">Hvert 60. sekund</string>
     <string name="every_hour">Hver time</string>
-    <string name="failed_to_merge_weather_data">Kunne ikke slå sammen %1$s-dataene med %2$s-dataene</string>
+    <string name="failed_to_merge_weather_data">Kunne ikke slå sammen %1$s dataene med %2$s dataene</string>
     <string name="failed_to_process_forecast_data">Kunne ikke behandle prognosedata</string>
-    <string name="failed_to_process_weather_data">Kunne ikke behandle værdataene fra serveren din, spesielt %1$s-dataene</string>
+    <string name="failed_to_process_weather_data">Kunne ikke behandle værdataene fra serveren din, spesielt %1$s dataene</string>
     <string name="fgColour">Widget Forgrunnsfargevelger</string>
     <string name="fileURL">Skriv inn nettadressen til settings.txt</string>
     <string name="force_dark_mode">Tving mørk modus</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Siden du avslo varslingstillatelsen to ganger, må du aktivere den i innstillingene i stedet, starte innstillinger?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Vent mens vi bekrefter nettadressen du sendte inn</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Det ble oppdaget %1$d feil i %2$s-filen, se %2$s-filen funnet på %3$s eller vis %4$s-logger for detaljer</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Det ble oppdaget %1$d feil i %2$s filen, se %2$s filen funnet på %3$s eller vis %4$s logger for detaljer</item>
+        <item quantity="other">Det ble oppdaget %1$d feil i %2$s filen, se %2$s filen funnet på %3$s eller vis %4$s logger for detaljer</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Kunne ikke laste ned radarbildet</string>
     <string name="radar_still_downloading">Radarbildet lastes fortsatt ned</string>

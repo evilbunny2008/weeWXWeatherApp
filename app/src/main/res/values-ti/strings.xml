@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">ብዝዕባ</string>
     <string name="about_app">ብዛዕባ እቲ ኣፕ</string>
     <string name="afternoon_alert">ሙቐት %1$.1f°%2$s ናብ ደረትካ %3$.1f°%2$s ወሪዱ ኣሎ።</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">ክልተ ግዜ ነቲ ናይ መፍለጢ ፍቓድ ስለ ዝነጸግካዮ፡ ኣብ ክንድኡ ኣብ ቅጥዕታት ከተኽእሎ ኣለካ፡ ቅጥዕታት ምጅማር?</string>
     <string name="ok">እሺ</string>
     <string name="please_wait_verify_url">በጃኹም ነቲ ዘቕረብኩሞ URL ከነረጋግጽ ከለና ተጸበዩ።</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">ኣብ %2$s ፋይል %1$d ጌጋታት ተረኺቦም፣ ኣብ %3$s ዝተረኽበ %2$s ፋይል ርአ ወይ ንዝርዝር %4$s ምዝገባታት ርአ</string>
+    <plurals name="processing_errors">
+        <item quantity="one">ኣብ %2$s ፋይል %1$d ጌጋ ተረኺቡ፣ ኣብ %3$s ዝተረኽበ %2$s ፋይል ርአ ወይ ንዝርዝራት %4$s ምዝገባታት ርአ</item>
+        <item quantity="other">ኣብ %2$s ፋይል %1$d ጌጋታት ተረኺቦም፣ ኣብ %3$s ዝተረኽበ %2$s ፋይል ርአ ወይ ንዝርዝር %4$s ምዝገባታት ርአ</item>
+    </plurals>
     <string name="radar">ራዳር</string>
     <string name="radar_download_failed">ናይ ራዳር ምስሊ ምውራድ ኣይከኣለን</string>
     <string name="radar_still_downloading">ራዳር ምስሊ ገና ይወርድ ኣሎ።</string>

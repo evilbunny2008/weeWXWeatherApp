@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">കുറിച്ച്</string>
     <string name="about_app">ആപ്പിനെക്കുറിച്ച്</string>
-    <string name="afternoon_alert">%1$.1f°%2$s എന്ന താപനില നിങ്ങളുടെ പരിധിയായ %3$.1f°%2$s-ലേക്ക് കുറഞ്ഞു</string>
+    <string name="afternoon_alert">%1$.1f°%2$s എന്ന താപനില നിങ്ങളുടെ പരിധിയായ %3$.1f°%2$s ലേക്ക് കുറഞ്ഞു</string>
     <string name="afternoon_temp_alert">ഉച്ചയ്ക്ക് ശേഷമുള്ള അലേർട്ട്?</string>
     <string name="all_time_stats">എല്ലാ സമയ സ്ഥിതിവിവരക്കണക്കുകളും</string>
     <string name="app_theme">ആപ്പ് തീം</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">ദിവസേന</string>
     <string name="interval_hourly">മണിക്കൂറിൽ</string>
     <string name="invalid_update_interval">അപ്‌ഡേറ്റ് ഇടവേള അസാധുവാണ്, ക്രമീകരണങ്ങൾ അപ്‌ഡേറ്റ് ചെയ്‌തതിന് ശേഷം വീണ്ടും ശ്രമിക്കുക</string>
-    <string name="json_formatted_data">%1$s-ന് ഇപ്പോൾ %3$s സെർവറിൽ നിന്ന് %2$s ഡാറ്റ ഫയൽ ആവശ്യമാണ്, ഈ ആപ്പ് ശരിയായി പ്രവർത്തിക്കുന്നതിന് മുമ്പ് നിങ്ങൾ %4$s അപ്‌ഡേറ്റ് ചെയ്യുകയും %5$s ഫയൽ അപ്‌ഡേറ്റ് ചെയ്യുകയും വേണം. %6$s-ലെ കൂടുതൽ വിവരങ്ങൾക്ക് ശരി ക്ലിക്കുചെയ്യുക</string>
+    <string name="json_formatted_data">%1$s ന് ഇപ്പോൾ %3$s സെർവറിൽ നിന്ന് %2$s ഡാറ്റ ഫയൽ ആവശ്യമാണ്, ഈ ആപ്പ് ശരിയായി പ്രവർത്തിക്കുന്നതിന് മുമ്പ് നിങ്ങൾ %4$s അപ്‌ഡേറ്റ് ചെയ്യുകയും %5$s ഫയൽ അപ്‌ഡേറ്റ് ചെയ്യുകയും വേണം. %6$s ലെ കൂടുതൽ വിവരങ്ങൾക്ക് ശരി ക്ലിക്കുചെയ്യുക</string>
     <string name="last_month_stats">കഴിഞ്ഞ മാസത്തെ സ്ഥിതിവിവരക്കണക്കുകൾ</string>
     <string name="last_year_stats">കഴിഞ്ഞ വർഷത്തെ സ്ഥിതിവിവരക്കണക്കുകൾ</string>
     <string name="light_theme">ലൈറ്റ് തീം</string>
@@ -62,7 +62,7 @@
     <string name="match_app">മാച്ച് ആപ്പ്</string>
     <string name="metric">മെട്രിക് ഉപയോഗിക്കണോ?</string>
     <string name="minutes">മിനിറ്റ്</string>
-    <string name="morning_alert">%1$.1f°%2$s എന്ന താപനില നിങ്ങളുടെ പരിധിയായ %3$.1f°%2$s-ലേക്ക് ഉയർന്നു</string>
+    <string name="morning_alert">%1$.1f°%2$s എന്ന താപനില നിങ്ങളുടെ പരിധിയായ %3$.1f°%2$s ലേക്ക് ഉയർന്നു</string>
     <string name="morning_temp_alert">പ്രഭാത അലേർട്ട്?</string>
     <string name="next_moon">അടുത്ത ചാന്ദ്ര സംഭവങ്ങൾ?</string>
     <string name="no">ഇല്ല</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">നിങ്ങൾ അറിയിപ്പ് അനുമതി രണ്ടുതവണ നിരസിച്ചതിനാൽ, പകരം ക്രമീകരണങ്ങളിൽ അത് പ്രവർത്തനക്ഷമമാക്കേണ്ടതുണ്ട്, ക്രമീകരണങ്ങൾ സമാരംഭിക്കണോ?</string>
     <string name="ok">ശരി</string>
     <string name="please_wait_verify_url">നിങ്ങൾ സമർപ്പിച്ച URL ഞങ്ങൾ പരിശോധിക്കുമ്പോൾ ദയവായി കാത്തിരിക്കുക</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">ഫയലിൽ %1$d പിശകുകൾ കണ്ടെത്തി, %3$s-ൽ കണ്ടെത്തിയ %2$s ഫയൽ കാണുക അല്ലെങ്കിൽ വിശദാംശങ്ങൾക്ക് %4$s ലോഗുകൾ കാണുക</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s ഫയലിൽ %1$d പിശക് കണ്ടെത്തി, %3$s ൽ കണ്ടെത്തിയ %2$s ഫയൽ കാണുക അല്ലെങ്കിൽ വിശദാംശങ്ങൾക്ക് %4$s ലോഗുകൾ കാണുക</item>
+        <item quantity="other">%2$s ഫയലിൽ %1$d പിശകുകൾ കണ്ടെത്തി, %3$s ൽ കണ്ടെത്തിയ %2$s ഫയൽ കാണുക അല്ലെങ്കിൽ വിശദാംശങ്ങൾക്ക് %4$s ലോഗുകൾ കാണുക</item>
+    </plurals>
     <string name="radar">റഡാർ</string>
     <string name="radar_download_failed">റഡാർ ചിത്രം ഡൗൺലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു</string>
     <string name="radar_still_downloading">റഡാർ ചിത്രം ഇപ്പോഴും ഡൗൺലോഡ് ചെയ്യുന്നു</string>
@@ -89,7 +92,7 @@
     <string name="rainrate_alert_imperial_severe">കഴിഞ്ഞ %2$d %3$s ലെ %1$.2fin എന്ന മഴയുടെ തോത് \'കടുത്ത\' നിലയിലെത്തി</string>
     <string name="rainrate_alert_imperial_warning">കഴിഞ്ഞ %2$d %3$s ലെ %1$.2fin എന്ന മഴയുടെ തോത് \'മുന്നറിയിപ്പ്\' നിലയിലെത്തി</string>
     <string name="rainrate_alert_imperial_watch">കഴിഞ്ഞ %2$d %3$s ലെ %1$.2fin എന്ന മഴയുടെ നിരക്ക് \'വാച്ച്\' ലെവലിൽ എത്തി</string>
-    <string name="rainrate_alert_metric_severe">കഴിഞ്ഞ %2$d %3$s-ലെ %1$.1fmm മഴയുടെ നിരക്ക് \'കടുത്ത\' നിലയിലെത്തി</string>
+    <string name="rainrate_alert_metric_severe">കഴിഞ്ഞ %2$d %3$s ലെ %1$.1fmm മഴയുടെ നിരക്ക് \'കടുത്ത\' നിലയിലെത്തി</string>
     <string name="rainrate_alert_metric_warning">കഴിഞ്ഞ %2$d %3$s ലെ %1$.1fmm മഴയുടെ നിരക്ക് \'മുന്നറിയിപ്പ്\' നിലയിലെത്തി</string>
     <string name="rainrate_alert_metric_watch">കഴിഞ്ഞ %2$d %3$s ലെ %1$.1fmm മഴയുടെ നിരക്ക് \'വാച്ച്\' ലെവലിൽ എത്തി</string>
     <string name="rainrate_alert_severe">കനത്ത മഴയെക്കുറിച്ചുള്ള മുന്നറിയിപ്പുകൾ?</string>
@@ -130,7 +133,7 @@
     <string name="use_exact_alarm">കൃത്യമായ അപ്ഡേറ്റ് സമയം ഉപയോഗിക്കുക</string>
     <string name="wasnt_able_to_connect_custom_url">വ്യക്തമാക്കിയ ഇഷ്‌ടാനുസൃത URL-ൽ നിന്ന് കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_forecast">പ്രവചനം ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
-    <string name="wasnt_able_to_connect_or_download">%2$s-ൽ നിന്ന് %1$s കണക്റ്റ് ചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s ൽ നിന്ന് %1$s കണക്റ്റ് ചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_radar_image">ഇൻ്റർനെറ്റിൽ നിന്ന് റഡാർ= ഇമേജ് ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_settings">നിങ്ങളുടെ സെർവറിൽ നിന്ന് ക്രമീകരണങ്ങൾ ബന്ധിപ്പിക്കാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>
     <string name="wasnt_able_to_connect_webcam_url">നിങ്ങളുടെ സെർവറിൽ നിന്ന് ഒരു വെബ്‌ക്യാം ഇമേജ് കണക്റ്റുചെയ്യാനോ ഡൗൺലോഡ് ചെയ്യാനോ കഴിഞ്ഞില്ല</string>

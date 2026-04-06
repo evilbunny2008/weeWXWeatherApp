@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Soal</string>
     <string name="about_app">Pasal App</string>
     <string name="afternoon_alert">Suhu %1$.1f°%2$s domma turun hu batasmu %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Halani domma dua hali ham manolak ijin pemberitahuan, porlu do iaktifkon ham ai bani pengaturan, pengaturan peluncuran?</string>
     <string name="ok">Boi</string>
     <string name="please_wait_verify_url">Paimahon hanami ma sanggah verifikasi hanami URL na ibere nasiam</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Adong %1$d kesalahan na tardeteksi bani file %2$s, torih ma file %2$s na jumpah bani %3$s atap torih ma log %4$s untuk rincian</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Adong %1$d kesalahan na tardeteksi bani file %2$s, torih ma file %2$s na jumpah bani %3$s atap torih ma log %4$s untuk rincian</item>
+        <item quantity="many">Adong %1$d kesalahan na tardeteksi bani file %2$s, torih ma file %2$s na jumpah bani %3$s atap torih ma log %4$s untuk rincian</item>
+        <item quantity="one">Adong %1$d kesalahan na tardeteksi bani file %2$s, torih ma file %2$s na jumpah bani %3$s atap torih ma log %4$s untuk rincian</item>
+        <item quantity="other">Adong %1$d kesalahan na tardeteksi bani file %2$s, torih ma file %2$s na jumpah bani %3$s atap torih ma log %4$s untuk rincian</item>
+        <item quantity="two">Adong %1$d kesalahan na tardeteksi bani file %2$s, torih ma file %2$s na jumpah bani %3$s atap torih ma log %4$s untuk rincian</item>
+        <item quantity="zero">Adong %1$d kesalahan na tardeteksi bani file %2$s, torih ma file %2$s na jumpah bani %3$s atap torih ma log %4$s untuk rincian</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Gagal laho mandownload gambar radar</string>
     <string name="radar_still_downloading">Gambar radar ai ope na mandownload</string>

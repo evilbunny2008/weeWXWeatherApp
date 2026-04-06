@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">کے بارے میں</string>
     <string name="about_app">ایپ کے بارے میں</string>
     <string name="afternoon_alert">درجہ حرارت %1$.1f°%2$s آپ کی %3$.1f°%2$s کی حد تک گر گیا ہے</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">چونکہ آپ نے نوٹیفکیشن کی اجازت کو دو بار مسترد کیا ہے، اس لیے آپ کو اسے سیٹنگز میں فعال کرنے کی ضرورت ہے، سیٹنگز لانچ کریں؟</string>
     <string name="ok">ٹھیک ہے</string>
     <string name="please_wait_verify_url">براہ کرم انتظار کریں جب ہم آپ کے جمع کردہ یو آر ایل کی تصدیق کرتے ہیں۔</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">فائل میں %1$d خرابیاں پائی گئیں، %3$s پر پائی گئی %2$s فائل دیکھیں یا تفصیلات کے لیے %4$s لاگز دیکھیں</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s فائل میں %1$d خرابی پائی گئی، %3$s پر پائی گئی %2$s فائل دیکھیں یا تفصیلات کے لیے %4$s لاگز دیکھیں</item>
+        <item quantity="other">%2$s فائل میں %1$d خرابیاں پائی گئیں، %3$s پر پائی گئی %2$s فائل دیکھیں یا تفصیلات کے لیے %4$s لاگز دیکھیں</item>
+    </plurals>
     <string name="radar">ریڈار</string>
     <string name="radar_download_failed">ریڈار امیج ڈاؤن لوڈ کرنے میں ناکام</string>
     <string name="radar_still_downloading">ریڈار امیج ابھی بھی ڈاؤن لوڈ ہورہا ہے۔</string>

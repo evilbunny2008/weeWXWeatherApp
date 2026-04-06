@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Mabapi le</string>
     <string name="about_app">Mabapi le app e</string>
     <string name="afternoon_alert">Thempheretšha %1$.1f°%2$s e theogile go fihla moeding wa gago wa %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Ka ge o ganne tumelelo ya tsebišo gabedi, o swanetše go e kgontšha ka dipeakanyo go e na le moo, thoma dipeakanyo?</string>
     <string name="ok">Go lokile</string>
     <string name="please_wait_verify_url">Ke kgopela le eme ge re dutše re netefatša URL yeo o e rometšego</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
+        <item quantity="many">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
+        <item quantity="one">Go be go na le phošo ya %1$d yeo e lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
+        <item quantity="other">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
+        <item quantity="two">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
+        <item quantity="zero">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">E paletšwe ke go taonelouta seswantšho sa radar</string>
     <string name="radar_still_downloading">Radar setšoantšo e ntse e thowuni</string>

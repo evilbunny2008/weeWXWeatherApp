@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Haqqında</string>
     <string name="about_app">Tətbiq haqqında</string>
     <string name="afternoon_alert">%1$.1f°%2$s temperaturu %3$.1f°%2$s limitinizə düşüb</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Gündəlik</string>
     <string name="interval_hourly">Saatlıq</string>
     <string name="invalid_update_interval">Yeniləmə intervalı etibarsızdır, parametrləri yeniləyin və yenidən cəhd edin</string>
-    <string name="json_formatted_data">%1$s indi %3$s serverindən %2$s data faylı tələb edir, bu proqramın düzgün işləməsi üçün siz %4$s-ı yeniləməli və %5$s faylını güncəlləşdirməlisiniz. %6$s haqqında ətraflı məlumat üçün Ok klikləyin</string>
+    <string name="json_formatted_data">%1$s indi %3$s serverindən %2$s data faylı tələb edir, bu proqramın düzgün işləməsi üçün siz %4$s ı yeniləməli və %5$s faylını güncəlləşdirməlisiniz. %6$s haqqında ətraflı məlumat üçün Ok klikləyin</string>
     <string name="last_month_stats">Keçən ay statistikası</string>
     <string name="last_year_stats">Keçən il statistikası</string>
     <string name="light_theme">İşıq mövzusu</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Bildiriş icazəsini iki dəfə rədd etdiyinizə görə, bunun əvəzinə onu parametrlərdə aktivləşdirməlisiniz, parametrlər işə salınsın?</string>
     <string name="ok">Tamam</string>
     <string name="please_wait_verify_url">Zəhmət olmasa, təqdim etdiyiniz URL-i yoxlayarkən gözləyin</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">faylında %1$d xəta aşkar edildi, %3$s ünvanında tapılan %2$s faylına baxın və ya təfərrüatlar üçün %4$s jurnalına baxın</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s faylında %1$d xəta aşkarlandı, %3$s ünvanında tapılan %2$s faylına baxın və ya təfərrüatlar üçün %4$s qeydlərinə baxın</item>
+        <item quantity="other">%2$s faylında %1$d xəta aşkar edildi, %3$s ünvanında tapılan %2$s faylına baxın və ya təfərrüatlar üçün %4$s qeydlərinə baxın</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Radar görüntüsünü yükləyə bilmədi</string>
     <string name="radar_still_downloading">Radar görüntüsü hələ də yüklənir</string>
@@ -87,7 +90,7 @@
     <string name="rainfall_alert_str">Yağış Xəbərdarlığı</string>
     <string name="rainfall_limit">Yağış limiti</string>
     <string name="rainrate_alert_imperial_severe">%1$.2fin yağış sürəti ən azı %2$d %3$s \'Ağır\' səviyyəyə çatıb</string>
-    <string name="rainrate_alert_imperial_warning">%2$d %3$s-da %1$.2fin yağış sürəti \'Xəbərdarlıq\' səviyyəsinə çatıb</string>
+    <string name="rainrate_alert_imperial_warning">%2$d %3$s da %1$.2fin yağış sürəti \'Xəbərdarlıq\' səviyyəsinə çatıb</string>
     <string name="rainrate_alert_imperial_watch">%1$.2fin yağış sürəti ən azı %2$d %3$s \'Baxış\' səviyyəsinə çatıb</string>
     <string name="rainrate_alert_metric_severe">%1$.1fmm yağışın sürəti ən azı %2$d %3$s \'Ağır\' səviyyəyə çatıb</string>
     <string name="rainrate_alert_metric_warning">%1$.1fmm yağışın sürəti ən azı %2$d %3$s \'Xəbərdarlıq\' səviyyəsinə çatıb</string>
@@ -130,7 +133,7 @@
     <string name="use_exact_alarm">Dəqiq yeniləmə vaxtlarından istifadə edin</string>
     <string name="wasnt_able_to_connect_custom_url">Müəyyən edilmiş xüsusi URL-dən qoşula və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_connect_forecast">Proqnozu bağlaya və ya yükləyə bilmədi</string>
-    <string name="wasnt_able_to_connect_or_download">%2$s-dan %1$s-a qoşulmaq və ya endirmək mümkün olmadı</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s dan %1$s a qoşulmaq və ya endirmək mümkün olmadı</string>
     <string name="wasnt_able_to_connect_radar_image">Radar = şəkilləri internetdən birləşdirə və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_connect_settings">Parametrləri serverinizdən qoşmaq və ya yükləyə bilmədi</string>
     <string name="wasnt_able_to_connect_webcam_url">Serverinizdən bir veb-kamera şəklini bağlaya və ya yükləyə bilmədi</string>

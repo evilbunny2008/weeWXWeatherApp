@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">אוֹדוֹת</string>
     <string name="about_app">לגבי האפליקציה</string>
     <string name="afternoon_alert">הטמפרטורה %1$.1f°%2$s ירדה למגבלה של %3$.1f°%2$s</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">יוֹמִי</string>
     <string name="interval_hourly">מדי שעה</string>
     <string name="invalid_update_interval">מרווח העדכון אינו חוקי, עדכן את ההגדרות ולאחר מכן נסה שוב</string>
-    <string name="json_formatted_data">ה-%1$s דורש כעת קובץ נתונים %2$s משרת %3$s, עליך לעדכן את ה-%4$s ולעדכן את הקובץ %5$s לפני שהאפליקציה הזו תפעל כהלכה. לחץ על אישור לפרטים נוספים על %6$s</string>
+    <string name="json_formatted_data">ה %1$s דורש כעת קובץ נתונים %2$s משרת %3$s, עליך לעדכן את ה %4$s ולעדכן את הקובץ %5$s לפני שהאפליקציה הזו תפעל כהלכה. לחץ על אישור לפרטים נוספים על %6$s</string>
     <string name="last_month_stats">סטטיסטיקה של החודש שעבר</string>
     <string name="last_year_stats">סטטיסטיקה של שנה שעברה</string>
     <string name="light_theme">נושא קל</string>
@@ -72,7 +72,11 @@
     <string name="notifications_needed2">מכיוון שדחית את הרשאת ההתראה פעמיים, עליך להפעיל אותה בהגדרות במקום זאת, להפעיל הגדרות?</string>
     <string name="ok">בְּסֵדֶר</string>
     <string name="please_wait_verify_url">אנא המתן בזמן שאנו מאמתים את כתובת האתר ששלחת</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">זוהו %1$d שגיאות בקובץ %2$s, הצג את הקובץ %2$s שנמצא ב-%3$s או הצג %4$s יומנים לקבלת הפרטים</string>
+    <plurals name="processing_errors">
+        <item quantity="one">זוהתה שגיאה %1$d בקובץ %2$s, הצג את הקובץ %2$s שנמצא ב %3$s או הצג %4$s יומנים לקבלת הפרטים</item>
+        <item quantity="other">זוהו %1$d שגיאות בקובץ %2$s, הצג את הקובץ %2$s שנמצא ב %3$s או הצג %4$s יומנים לקבלת הפרטים</item>
+        <item quantity="two">זוהו %1$d שגיאות בקובץ %2$s, הצג את הקובץ %2$s שנמצא ב %3$s או הצג %4$s יומנים לקבלת הפרטים</item>
+    </plurals>
     <string name="radar">מכ\'ם</string>
     <string name="radar_download_failed">הורדת תמונת הרדאר נכשלה</string>
     <string name="radar_still_downloading">תמונת הרדאר עדיין יורדת</string>
@@ -86,12 +90,12 @@
     <string name="rainfall_alert_metric">כמות המשקעים %1$.1f%2$s תואמת למגבלה שלך של %3$.1f%2$s</string>
     <string name="rainfall_alert_str">התראת גשם</string>
     <string name="rainfall_limit">מגבלת גשם</string>
-    <string name="rainrate_alert_imperial_severe">קצב הגשם של %1$.2fin ב-%2$d האחרון %3$s הגיע לרמה \'חמורה\'</string>
-    <string name="rainrate_alert_imperial_warning">קצב גשם של %1$.2fin ב-%2$d האחרון %3$s הגיע לרמת \'אזהרה\'</string>
-    <string name="rainrate_alert_imperial_watch">קצב גשם של %1$.2fin ב-%2$d האחרון %3$s הגיע לרמת \'צפה\'</string>
-    <string name="rainrate_alert_metric_severe">קצב גשם של %1$.1fmm ב-%2$d האחרון %3$s הגיע לרמה \'חמורה\'</string>
-    <string name="rainrate_alert_metric_warning">קצב גשם של %1$.1fmm ב-%2$d האחרון %3$s הגיע לרמת \'אזהרה\'</string>
-    <string name="rainrate_alert_metric_watch">קצב גשם של %1$.1fmm ב-%2$d האחרון %3$s הגיע לרמת \'צפה\'</string>
+    <string name="rainrate_alert_imperial_severe">קצב הגשם של %1$.2fin ב %2$d האחרון %3$s הגיע לרמה \'חמורה\'</string>
+    <string name="rainrate_alert_imperial_warning">קצב גשם של %1$.2fin ב %2$d האחרון %3$s הגיע לרמת \'אזהרה\'</string>
+    <string name="rainrate_alert_imperial_watch">קצב גשם של %1$.2fin ב %2$d האחרון %3$s הגיע לרמת \'צפה\'</string>
+    <string name="rainrate_alert_metric_severe">קצב גשם של %1$.1fmm ב %2$d האחרון %3$s הגיע לרמה \'חמורה\'</string>
+    <string name="rainrate_alert_metric_warning">קצב גשם של %1$.1fmm ב %2$d האחרון %3$s הגיע לרמת \'אזהרה\'</string>
+    <string name="rainrate_alert_metric_watch">קצב גשם של %1$.1fmm ב %2$d האחרון %3$s הגיע לרמת \'צפה\'</string>
     <string name="rainrate_alert_severe">התראות על שיעורי גשם קשים?</string>
     <string name="rainrate_alert_severe_desc">מתריע אם קצב הגשם חורג מהמגבלה החמורה על סמך משך הגשם</string>
     <string name="rainrate_alert_severe_str">התראת גשם חמורה</string>
@@ -130,7 +134,7 @@
     <string name="use_exact_alarm">השתמש בזמני עדכון מדויקים</string>
     <string name="wasnt_able_to_connect_custom_url">לא הייתה אפשרות להתחבר או להוריד מכתובת האתר המותאמת אישית שצוינה</string>
     <string name="wasnt_able_to_connect_forecast">לא הצליח להתחבר או להוריד את התחזית</string>
-    <string name="wasnt_able_to_connect_or_download">לא הייתה אפשרות להתחבר או להוריד את %1$s מ-%2$s</string>
+    <string name="wasnt_able_to_connect_or_download">לא הייתה אפשרות להתחבר או להוריד את %1$s מ %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">לא הצליח להתחבר או להוריד תמונת radar= מהאינטרנט</string>
     <string name="wasnt_able_to_connect_settings">לא הצליח להתחבר או להוריד את ההגדרות מהשרת שלך</string>
     <string name="wasnt_able_to_connect_webcam_url">לא הצליח להתחבר או להוריד תמונת מצלמת אינטרנט מהשרת שלך</string>

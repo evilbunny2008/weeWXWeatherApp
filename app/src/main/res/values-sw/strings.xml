@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Kuhusu</string>
     <string name="about_app">Kuhusu programu</string>
     <string name="afternoon_alert">Halijoto %1$.1f°%2$s imeshuka hadi kikomo chako cha %3$.1f°%2$s</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Kwa kuwa ulikataa ruhusa ya arifa mara mbili, unahitaji kuiwasha katika mipangilio badala yake, uzindua mipangilio?</string>
     <string name="ok">Sawa</string>
     <string name="please_wait_verify_url">Tafadhali subiri wakati tunathibitisha URL uliyowasilisha</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Kulikuwa na hitilafu %1$d zilizogunduliwa katika faili ya %2$s, angalia faili %2$s inayopatikana katika %3$s au angalia kumbukumbu %4$s kwa maelezo</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Kulikuwa na hitilafu %1$d iliyogunduliwa katika faili ya %2$s, tazama faili %2$s inayopatikana katika %3$s au angalia kumbukumbu %4$s kwa maelezo</item>
+        <item quantity="other">Kulikuwa na hitilafu %1$d zilizogunduliwa katika faili ya %2$s, angalia faili %2$s inayopatikana katika %3$s au angalia kumbukumbu %4$s kwa maelezo</item>
+    </plurals>
     <string name="radar">Rada</string>
     <string name="radar_download_failed">Imeshindwa kupakua picha ya rada</string>
     <string name="radar_still_downloading">Picha ya Radar bado inapakua</string>

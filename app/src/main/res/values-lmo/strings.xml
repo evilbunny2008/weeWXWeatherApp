@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Incirca</string>
     <string name="about_app">In de la NFL</string>
     <string name="afternoon_alert">La temperadüra %1$.1f°%2$s l\'è calada al limit de %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Cuma g\'he refudà el permess de la notifikaziun dü volt, g\'he vœu de abilital in di impostaziun, slanzà i impostaziun?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Per piasér, g\'he de vèss sicür che g\'he stà descrivü el tò nomm</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">G\'he sun stà %1$d erur rilevà in del file %2$s, varda el file %2$s truvà a %3$s o varda i registr %4$s per i detai</string>
+    <plurals name="processing_errors">
+        <item quantity="few">G\'he sun stà %1$d erur rilevà in del file %2$s, varda el file %2$s truvà a %3$s o varda i registr %4$s per i detai</item>
+        <item quantity="many">G\'he sun stà %1$d erur rilevà in del file %2$s, varda el file %2$s truvà a %3$s o varda i registr %4$s per i detai</item>
+        <item quantity="one">G\'he sun stà rilevà un errur %1$d in del file %2$s, varda el file %2$s truvà a %3$s o varda i registr %4$s per i detai</item>
+        <item quantity="other">G\'he sun stà %1$d erur rilevà in del file %2$s, varda el file %2$s truvà a %3$s o varda i registr %4$s per i detai</item>
+        <item quantity="two">G\'he sun stà %1$d erur rilevà in del file %2$s, varda el file %2$s truvà a %3$s o varda i registr %4$s per i detai</item>
+        <item quantity="zero">G\'he sun stà %1$d erur rilevà in del file %2$s, varda el file %2$s truvà a %3$s o varda i registr %4$s per i detai</item>
+    </plurals>
     <string name="radar">emad</string>
     <string name="radar_download_failed">Impara i foto de la fotocamera de la fotocamera</string>
     <string name="radar_still_downloading">El giœugh l\'è el punt püsee volt de la fotocamera</string>
@@ -134,7 +141,7 @@
     <string name="wasnt_able_to_connect_radar_image">L\'installaziun de la fotocamera l\'è minga sultant un utent che g\'ha denter di dispusitif</string>
     <string name="wasnt_able_to_connect_settings">L\'installaziun de la scheda de credit pœu vèss duperà per la vòstra aplicaziun</string>
     <string name="wasnt_able_to_connect_webcam_url">L\'è minga facil per i utent che g\'he vœut de duperà i file de la pagina</string>
-    <string name="wasnt_able_to_download_url_is_blank">L\'è minga stà bon de scaricà giò i %1$ perché l\'URL l\'era en vœui</string>
+    <string name="wasnt_able_to_download_url_is_blank">L\'è minga stà bon de scaricà giò i %1$s perché l\'URL l\'era en vœui</string>
     <string name="weather2">Clima</string>
     <string name="webcam2">se</string>
     <string name="webcam_refresh_time">Temp de rinfrescament de la webcam</string>

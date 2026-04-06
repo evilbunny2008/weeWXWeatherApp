@@ -72,8 +72,13 @@
     <string name="notifications_needed2">Keďže ste povolenie upozornení odmietli dvakrát, musíte ho povoliť v nastaveniach, spustiť nastavenia?</string>
     <string name="ok">Dobre</string>
     <string name="please_wait_verify_url">Počkajte, kým overíme adresu URL, ktorú ste odoslali</string>
-	<string name="processing_errors">V súbore %2$s bolo zistených %1$d chýb, podrobnosti nájdete v súbore %2$s, ktorý sa nachádza na adrese %3$s, alebo v protokoloch %4$s</string>
-	<string name="radar">Radar</string>
+    <plurals name="processing_errors">
+        <item quantity="few">V súbore %2$s bolo zistených %1$d chýb, podrobnosti nájdete v súbore %2$s, ktorý sa nachádza na adrese %3$s, alebo v protokoloch %4$s</item>
+        <item quantity="many">V súbore %2$s bolo zistených %1$d chýb, podrobnosti nájdete v súbore %2$s, ktorý sa nachádza na adrese %3$s, alebo v protokoloch %4$s</item>
+        <item quantity="one">V súbore %2$s sa zistila chyba %1$d, pozrite si súbor %2$s nájdený na %3$s alebo si pozrite denníky %4$s, kde nájdete podrobnosti</item>
+        <item quantity="other">V súbore %2$s bolo zistených %1$d chýb, podrobnosti nájdete v súbore %2$s, ktorý sa nachádza na adrese %3$s, alebo v protokoloch %4$s</item>
+    </plurals>
+    <string name="radar">Radar</string>
     <string name="radar_download_failed">Stiahnutie radarovej snímky zlyhalo</string>
     <string name="radar_still_downloading">Radarový obraz sa stále sťahuje</string>
     <string name="radar_type_is_invalid">Typ radaru \'%1$s\' je neplatný, skontrolujte súbor nastavení a skúste to znova</string>

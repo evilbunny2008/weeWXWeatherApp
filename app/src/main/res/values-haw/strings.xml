@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">E pili ana</string>
     <string name="about_app">E pili ana i ka app</string>
     <string name="afternoon_alert">Ua emi ka mahana %1$.1f°%2$s i kou palena o %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Ma muli o kou hōʻole ʻana i ka ʻae hoʻolaha i ʻelua manawa, pono ʻoe e ʻae iā ia i nā hoʻonohonoho ma kahi o nā hoʻonohonoho hoʻomaka?</string>
     <string name="ok">OK</string>
     <string name="please_wait_verify_url">E kali e kali i ka wā e hōʻoia ai mākou i ka URL āu i hāʻawi ai</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</string>
+    <plurals name="processing_errors">
+        <item quantity="few">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
+        <item quantity="many">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
+        <item quantity="one">He %1$d hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
+        <item quantity="other">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
+        <item quantity="two">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
+        <item quantity="zero">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
+    </plurals>
     <string name="radar">ʻO Radar</string>
     <string name="radar_download_failed">ʻAʻole hikiʻole ke kiʻi i ke kiʻi radar</string>
     <string name="radar_still_downloading">Ke kiʻi neiʻo Radar kiʻi</string>

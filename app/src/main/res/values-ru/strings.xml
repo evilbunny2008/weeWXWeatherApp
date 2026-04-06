@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">О</string>
     <string name="about_app">О приложении</string>
     <string name="afternoon_alert">Температура %1$.1f°%2$s упала до вашего предела %3$.1f°%2$s</string>
@@ -72,7 +72,12 @@
     <string name="notifications_needed2">Поскольку вы дважды отклонили разрешение на уведомление, вам нужно вместо этого включить его в настройках, запустить настройки?</string>
     <string name="ok">Хорошо</string>
     <string name="please_wait_verify_url">Подождите, пока мы проверим отправленный вами URL</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">В файле %2$s обнаружено %1$d ошибок. Для получения подробной информации просмотрите файл %2$s, найденный в %3$s, или просмотрите журналы %4$s</string>
+    <plurals name="processing_errors">
+        <item quantity="few">В файле %2$s обнаружено %1$d ошибок. Подробные сведения см. в файле %2$s, найденном в %3$s, или в журналах %4$s</item>
+        <item quantity="many">В файле %2$s обнаружено %1$d ошибок. Подробные сведения см. в файле %2$s, найденном в %3$s, или в журналах %4$s</item>
+        <item quantity="one">В файле %2$s обнаружена ошибка %1$d. Подробности можно найти в файле %2$s, найденном в %3$s, или в журналах %4$s</item>
+        <item quantity="other">В файле %2$s обнаружено %1$d ошибок. Подробные сведения см. в файле %2$s, найденном в %3$s, или в журналах %4$s</item>
+    </plurals>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Не удалось загрузить радарное изображение</string>
     <string name="radar_still_downloading">Радарное изображение все еще загружается</string>

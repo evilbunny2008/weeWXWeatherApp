@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Om</string>
     <string name="about_app">Om appen</string>
     <string name="afternoon_alert">Temperaturen %1$.1f°%2$s har sjunkit till din gräns på %3$.1f°%2$s</string>
@@ -29,7 +29,7 @@
     <string name="every_30_seconds">Var 30:e sekund</string>
     <string name="every_60_seconds">Var 60:e sekund</string>
     <string name="every_hour">Varje timme</string>
-    <string name="failed_to_merge_weather_data">Det gick inte att sammanfoga %1$s-data med %2$s-data</string>
+    <string name="failed_to_merge_weather_data">Det gick inte att sammanfoga %1$s data med %2$s data</string>
     <string name="failed_to_process_forecast_data">Det gick inte att bearbeta prognosdata</string>
     <string name="failed_to_process_weather_data">Det gick inte att korrekt bearbeta väderdata från din server, särskilt %1$s data</string>
     <string name="fgColour">Widget Förgrundsfärgväljare</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Eftersom du tackade nej till aviseringsbehörighet två gånger, måste du aktivera den i inställningar istället, starta inställningar?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Vänta medan vi verifierar webbadressen du skickade in</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Det fanns %1$d fel upptäckta i %2$s-filen, visa %2$s-filen som hittades på %3$s eller visa %4$s loggar för detaljer</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Det upptäcktes %1$d fel i %2$s filen, visa %2$s filen som hittades på %3$s eller visa %4$s loggar för detaljer</item>
+        <item quantity="other">Det fanns %1$d fel upptäckta i %2$s filen, visa %2$s filen som hittades på %3$s eller visa %4$s loggar för detaljer</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Det gick inte att ladda ner radarbilden</string>
     <string name="radar_still_downloading">Radarbilden laddas fortfarande ned</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Hakda</string>
     <string name="about_app">Programma hakda</string>
     <string name="afternoon_alert">Temperatura%1$.1f°%2$s siziň çägiňize düşdi%3$.1f°%2$s</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Duýduryş rugsadyny iki gezek ret edeniňiz üçin, ony ýerine sazlamalarda işletmeli, sazlamalary işe girizmeli?</string>
     <string name="ok">Bolýar</string>
     <string name="please_wait_verify_url">Berlen URL-ni tassyklaýarys diýip garaşyň</string>
-	<string name="processing_errors" tools:ignore="PluralsCandidate">%2$s faýlynda %1$d ýalňyşlyklar ýüze çykaryldy, %3$s den tapylan %2$s faýly görüň ýa-da jikme-jiklikler üçin %4$s gündeligini görüň</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s faýlynda% %1$d ýalňyşlyk tapyldy, %3$s den tapylan%2$s faýly görüň ýa-da jikme-jiklikler üçin%4$s gündeligini görüň</item>
+        <item quantity="other">%2$s faýlynda% %1$d ýalňyşlyklar ýüze çykaryldy, %3$s den tapylan%2$s faýly görüň ýa-da jikme-jiklikler üçin%4$s gündeligini görüň</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Radar suratyny göçürip alyp bilmedi</string>
     <string name="radar_still_downloading">Radar suraty henizem göçürip alýarlar</string>
@@ -130,7 +133,7 @@
     <string name="use_exact_alarm">Takyk täzeleniş wagtlaryny ulanyň</string>
     <string name="wasnt_able_to_connect_custom_url">Görkezilen URL-den birikdirip ýa-da göçürip alyp bolmaýardy</string>
     <string name="wasnt_able_to_connect_forecast">Çaklamany birleşdirip ýa-da göçürip alyp bilmedi</string>
-    <string name="wasnt_able_to_connect_or_download">%2$s-den%1$s birikdirip ýa-da göçürip alyp bilmedim</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s den%1$s birikdirip ýa-da göçürip alyp bilmedim</string>
     <string name="wasnt_able_to_connect_radar_image">\'Radar =\' -den birigip ýa-da göçürip alyp bolmaýardy ýa-da göçürip alyp bilmedi</string>
     <string name="wasnt_able_to_connect_settings">Serweriňizden sazlamalary birleşdirip ýa-da göçürip alyp bilmedi</string>
     <string name="wasnt_able_to_connect_webcam_url">Serweriňizden web kamerasyny birleşdirip ýa-da göçürip alyp bilmedi</string>

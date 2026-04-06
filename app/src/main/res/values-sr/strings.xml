@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Абоут</string>
     <string name="about_app">О апликацији</string>
     <string name="afternoon_alert">Температура %1$.1f°%2$s је пала на вашу границу од %3$.1f°%2$s</string>
@@ -72,7 +72,11 @@
     <string name="notifications_needed2">Пошто сте двапут одбили дозволу за обавештења, треба да је омогућите у подешавањима, да покренете подешавања?</string>
     <string name="ok">Ок</string>
     <string name="please_wait_verify_url">Сачекајте док верификујемо УРЛ који сте послали</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Откривено је %1$d грешака у датотеци %2$s, погледајте %2$s датотеку пронађену на %3$s или погледајте %4$s евиденције за детаље</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Откривено је %1$d грешака у датотеци %2$s, погледајте %2$s датотеку пронађену на %3$s или погледајте %4$s евиденције за детаље</item>
+        <item quantity="one">Откривена је %1$d грешка у датотеци %2$s, погледајте %2$s датотеку пронађену на %3$s или погледајте %4$s евиденције за детаље</item>
+        <item quantity="other">Откривено је %1$d грешака у датотеци %2$s, погледајте %2$s датотеку пронађену на %3$s или погледајте %4$s евиденције за детаље</item>
+    </plurals>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Преузимање радарске слике није успело</string>
     <string name="radar_still_downloading">Радарска слика се још увек преузима</string>

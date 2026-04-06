@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Dwar</string>
     <string name="about_app">Dwar l-App</string>
     <string name="afternoon_alert">It-temperatura %1$.1f°%2$s niżlet sal-limitu tiegħek ta\' %3$.1f°%2$s</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Kuljum</string>
     <string name="interval_hourly">Kull siegħa</string>
     <string name="invalid_update_interval">L-intervall tal-aġġornament huwa invalidu, aġġorna s-settings u mbagħad erġa\' pprova</string>
-    <string name="json_formatted_data">Il-%1$s issa jeħtieġ fajl tad-dejta %2$s minn %3$s server, trid taġġorna l-%4$s u taġġorna l-fajl %5$s qabel ma din l-app taħdem b\'mod korrett. Ikklikkja Ok għal aktar dettalji dwar %6$s</string>
+    <string name="json_formatted_data">Il %1$s issa jeħtieġ fajl tad-dejta %2$s minn %3$s server, trid taġġorna l %4$s u taġġorna l-fajl %5$s qabel ma din l-app taħdem b\'mod korrett. Ikklikkja Ok għal aktar dettalji dwar %6$s</string>
     <string name="last_month_stats">Statistika tax-Xahar li għadda</string>
     <string name="last_year_stats">Statistika tas-Sena li għaddiet</string>
     <string name="light_theme">Tema Dawl</string>
@@ -72,7 +72,13 @@
     <string name="notifications_needed2">Peress li rrifjutajt il-permess ta\' notifika darbtejn, trid tagħmilha fis-settings minflok, tniedi settings?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Jekk jogħġbok stenna waqt li nivverifikaw il-URL li ssottomettijt</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Kien hemm %1$d żbalji misjuba fil-fajl %2$s, ara l-fajl %2$s misjub f\'%3$s jew ara %4$s logs għad-dettalji</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Kien hemm %1$d żbalji misjuba fil-fajl %2$s, ara l-fajl %2$s misjub f\'%3$s jew ara %4$s logs għad-dettalji</item>
+        <item quantity="many">Kien hemm %1$d żbalji misjuba fil-fajl %2$s, ara l-fajl %2$s misjub f\'%3$s jew ara %4$s logs għad-dettalji</item>
+        <item quantity="one">Kien hemm %1$d żball misjub fil-fajl %2$s, ara l-fajl %2$s misjub f\'%3$s jew ara %4$s logs għad-dettalji</item>
+        <item quantity="other">Kien hemm %1$d żbalji misjuba fil-fajl %2$s, ara l-fajl %2$s misjub f\'%3$s jew ara %4$s logs għad-dettalji</item>
+        <item quantity="two">Kien hemm %1$d żbalji misjuba fil-fajl %2$s, ara l-fajl %2$s misjub f\'%3$s jew ara %4$s logs għad-dettalji</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Naqas milli tniżżel l-immaġni tar-radar</string>
     <string name="radar_still_downloading">L-immaġni tar-radar għadha qed titniżżel</string>
@@ -134,7 +140,7 @@
     <string name="wasnt_able_to_connect_radar_image">Ma setgħetx tikkonnettja jew tniżżel ir-radar= immaġini mill-internet</string>
     <string name="wasnt_able_to_connect_settings">Ma setgħetx tikkonnettja jew tniżżel is-settings mis-server tiegħek</string>
     <string name="wasnt_able_to_connect_webcam_url">Ma setgħetx tikkonnettja jew tniżżel immaġni tal-webcam mis-server tiegħek</string>
-    <string name="wasnt_able_to_download_url_is_blank">Ma setax tniżżel il-%1$s minħabba li l-URL kien vojt</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ma setax tniżżel il %1$s minħabba li l-URL kien vojt</string>
     <string name="weather2">Temp</string>
     <string name="webcam2">Webcam</string>
     <string name="webcam_refresh_time">Ħin ta\' Aġġornar tal-Webcam</string>

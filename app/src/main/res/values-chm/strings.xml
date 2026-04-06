@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Жөнүндө</string>
     <string name="about_app">Приложений нерген</string>
     <string name="afternoon_alert">%1$.1f°%2$s температур тендан %3$.1f°%2$s марте волен</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Еда</string>
     <string name="interval_hourly">Шагат еда</string>
     <string name="invalid_update_interval">Уэмдыме интервал чын огыл, уэмдаш параметр-влак да вара угыч тӧчен</string>
-    <string name="json_formatted_data">%1$s ынде %3$s сервер гыч %2$s данный файлым йодеш, тиде приложений чын пашам ышташ тӱҥалме деч ончыч %4$s-ым уэмдыман да %5$s файлым уэмдыман. %6$s нерген утларак пален налашлан \'Ок\' темдал</string>
+    <string name="json_formatted_data">%1$s ынде %3$s сервер гыч %2$s данный файлым йодеш, тиде приложений чын пашам ышташ тӱҥалме деч ончыч %4$s ым уэмдыман да %5$s файлым уэмдыман. %6$s нерген утларак пален налашлан \'Ок\' темдал</string>
     <string name="last_month_stats">Пытартыш тылзе статистике</string>
     <string name="last_year_stats">Кодшо ийын статистике</string>
     <string name="light_theme">Йошкар теме</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Увертарымаш разрешенийым кок гана отказым пуымо деч вара, тудым настройкыште йӧным ыштыман, настройкым почаш?</string>
     <string name="ok">Макул</string>
     <string name="please_wait_verify_url">Пожалуйста, вучаш, кунам ме тергыме URL-адресым тергыме</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">файлыште %1$d йоҥылыш лийын, %2$s файлым %3$s-ыште мумо але %4$s журнал-влакым ончалза</string>
+    <plurals name="processing_errors">
+        <item quantity="few">%2$s файлыште %1$d йоҥылышым палемдыме, %2$s файлым %3$s ыште мумо але %4$s журнал-влакым ончалза</item>
+        <item quantity="many">%2$s файлыште %1$d йоҥылышым палемдыме, %2$s файлым %3$s ыште мумо але %4$s журнал-влакым ончалза</item>
+        <item quantity="one">%2$s файлыште %1$d йоҥылыш палемдалтын, %2$s файлым %3$s ыште мумо але %4$s журнал-влакым ончалза</item>
+        <item quantity="other">%2$s файлыште %1$d йоҥылышым палемдыме, %2$s файлым %3$s ыште мумо але %4$s журнал-влакым ончалза</item>
+        <item quantity="two">%2$s файлыште %1$d йоҥылышым палемдыме, %2$s файлым %3$s ыште мумо але %4$s журнал-влакым ончалза</item>
+        <item quantity="zero">%2$s файлыште %1$d йоҥылышым палемдыме, %2$s файлым %3$s ыште мумо але %4$s журнал-влакым ончалза</item>
+    </plurals>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Радар образым скачать ыштен кертдыме</string>
     <string name="radar_still_downloading">Радар образым эше скачать</string>
@@ -90,8 +97,8 @@
     <string name="rainrate_alert_imperial_warning">Пытартыш %2$d %3$s жапыште %1$.2fin йӱр \'Шарнымаш\' кӱкшытыш шуын</string>
     <string name="rainrate_alert_imperial_watch">Пытартыш %2$d %3$s жапыште %1$.2fin йӱр \'Watch\' кӱкшытыш шуын</string>
     <string name="rainrate_alert_metric_severe">Пытартыш %2$d %3$s жапыште %1$.1fmm йӱр \'Неле\' кӱкшытыш шуын</string>
-    <string name="rainrate_alert_metric_warning">Пытартыш %2$d %3$s-ыште %1$.1fmm йӱр \'Шарнымаш\' кӱкшытыш шуын</string>
-    <string name="rainrate_alert_metric_watch">Пытартыш %2$d %3$s-ыште %1$.1fmm йӱр \'Watch\' кӱкшытыш шуын</string>
+    <string name="rainrate_alert_metric_warning">Пытартыш %2$d %3$s ыште %1$.1fmm йӱр \'Шарнымаш\' кӱкшытыш шуын</string>
+    <string name="rainrate_alert_metric_watch">Пытартыш %2$d %3$s ыште %1$.1fmm йӱр \'Watch\' кӱкшытыш шуын</string>
     <string name="rainrate_alert_severe">Неле йӱр йӱрмӧ нерген увертарымаш?</string>
     <string name="rainrate_alert_severe_desc">Йӱр йӱрмӧ жаплан эҥертен, йӱр йӱрмӧ чот неле чек деч кугурак гын, шижтарымаш-влак</string>
     <string name="rainrate_alert_severe_str">Йӱр йӱрмӧ нерген шижтарымаш</string>
@@ -130,11 +137,11 @@
     <string name="use_exact_alarm">Лач уэмдыме жапыште кучылташ</string>
     <string name="wasnt_able_to_connect_custom_url">Ончалаш ок лий але скачать гыч скачать шкешотан URL-адрес палемдыме</string>
     <string name="wasnt_able_to_connect_forecast">Прогнозым ушен але скачать ыштен кертын огыл</string>
-    <string name="wasnt_able_to_connect_or_download">%1$s-ым %2$s гыч ушен але скачатьлен кертын огыл</string>
+    <string name="wasnt_able_to_connect_or_download">%1$s ым %2$s гыч ушен але скачатьлен кертын огыл</string>
     <string name="wasnt_able_to_connect_radar_image">Интернет гыч радар= образым ушен але скачать скачать лийын огыл</string>
     <string name="wasnt_able_to_connect_settings">Тендан сервер гыч настройкым ыштен але скачать лийын огыл</string>
     <string name="wasnt_able_to_connect_webcam_url">Тендан сервер гыч веб-камер образым ушен але скачать лийын огыл</string>
-    <string name="wasnt_able_to_download_url_is_blank">%1$s-ым скачать ыштен кертын огыл, вет URL-адрес яра лийын</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s ым скачать ыштен кертын огыл, вет URL-адрес яра лийын</string>
     <string name="weather2">Игече</string>
     <string name="webcam2">Веб-камер</string>
     <string name="webcam_refresh_time">Веб-камерым уэмдыме жап</string>

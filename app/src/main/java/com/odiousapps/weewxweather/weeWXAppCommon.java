@@ -147,6 +147,7 @@ class weeWXAppCommon
 	static final String EXIT_INTENT = "com.odiousapps.weewxweather.EXIT_INTENT";
 	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
 	static final String PROCESSING_ERRORS = "com.odiousapps.weewxweather.PROCESSING_ERRORS";
+	static final String FAILED_TO_MERGE = "com.odiousapps.weewxweather.FAILED_TO_MERGE";
 
 	static final String UPDATECHECK = "com.odiousapps.weewxweather.UPDATECHECK";
 
@@ -2844,11 +2845,11 @@ class weeWXAppCommon
 
 			try
 			{
-				Boolean ret = reallyGetWeather(i, json_url[i], false);
-				if(i == 1 && ret == null)
+				int ret = reallyGetWeather(i, json_url[i], false);
+				if(ret == 3)
 				{
 					processDicts = true;
-				} else if(!ret) {
+				} else if(ret == 0) {
 					LogMessage("handleWeatherUpdate() SendIntent(STOP_WEATHER_INTENT)");
 					SendIntent(STOP_WEATHER_INTENT);
 					return false;
@@ -2864,6 +2865,7 @@ class weeWXAppCommon
 		if(processDicts && !KeyValue.parseDicts())
 		{
 			LogMessage("handleWeatherUpdate() KeyValue.parseDicts() == false");
+			SendIntent(FAILED_TO_MERGE);
 			return false;
 		}
 
@@ -3500,7 +3502,7 @@ class weeWXAppCommon
 		return url != null && !url.isBlank() && (url.startsWith("http://") || url.startsWith("https://"));
 	}
 
-	static Boolean reallyGetWeather(int id, String url, boolean force) throws InterruptedException, IOException
+	static int reallyGetWeather(int id, String url, boolean force) throws InterruptedException, IOException
 	{
 		LogMessage("reallyGetWeather(" + id + ") url: " + url);
 
@@ -3512,7 +3514,7 @@ class weeWXAppCommon
 		{
 			LogMessage("reallyGetWeather() lastJsonDataDownloadAttempt_" + id + " (" +
 			           lastJsonDataDownloadAttempt + ") + 10_000L > now (" + now + ")");
-			return false;
+			return 0;
 		}
 
 		KeyValue.putVar("lastJsonDataDownloadAttempt_" + id, now);
@@ -3521,7 +3523,7 @@ class weeWXAppCommon
 		{
 			long json_time = (long)KeyValue.readVar(json_keys[id] + "_time", 0L);
 			if(id == 1 && json_time > 0)
-				return true;
+				return 1;
 
 			if(id == 2 && json_time > 0)
 			{
@@ -3531,13 +3533,13 @@ class weeWXAppCommon
 
 				if(cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
 				   cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR))
-					return true;
+					return 1;
 			}
 		}
 
 		String line = downloadString(url, true);
 		if(line == null || line.isBlank())
-			return false;
+			return 0;
 
 		JSONObject jsonObject;
 		try
@@ -3545,13 +3547,13 @@ class weeWXAppCommon
 			jsonObject = new JSONObject(line);
 		} catch(Exception e) {
 			LogMessage("reallyGetWeather() Error! e: " + e.getMessage());
-			return false;
+			return 0;
 		}
 
 		if(jsonObject == null || jsonObject.length() == 0 || !jsonObject.has("version"))
 		{
 			LogMessage("reallyGetWeather() jsonObject == null || jsonObject.length() == 0 || jsonObject didn't have a version");
-			return false;
+			return 0;
 		}
 
 		int version = jsonObject.optInt("version", 0);
@@ -3560,7 +3562,7 @@ class weeWXAppCommon
 			LogMessage("reallyGetWeather() sendAlert() triggered because version (" + version +
 			           ") < weeWXApp.minimum_inigo_version (" + weeWXApp.minimum_inigo_version + ")");
 			sendAlert();
-			return false;
+			return 0;
 		}
 
 		if(jsonObject.has("processingErrors"))
@@ -3575,7 +3577,7 @@ class weeWXAppCommon
 					LogMessage("reallyGetWeather() Error in " + json_labels[id] + ": " + jarr.optString(i), KeyValue.e);
 
 				SendIntent(PROCESSING_ERRORS);
-				return null;
+				return 2;
 			}
 		}
 
@@ -3586,10 +3588,10 @@ class weeWXAppCommon
 		LogMessage("reallyGetWeather() Last Server Update Time: " + sdf14.format(jsonObject.optInt("report_time") * 1_000L));
 		LogMessage("reallyGetWeather() LastDownloadTime: " + sdf14.format(now));
 
-		if(!force && id == 1)
-			return null;
+		if(id == 1)
+			return 3;
 
-		return true;
+		return 1;
 	}
 
 	//    https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android

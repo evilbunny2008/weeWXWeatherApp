@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Noin</string>
     <string name="about_app">Tietoja sovelluksesta</string>
     <string name="afternoon_alert">Lämpötila %1$.1f°%2$s on laskenut rajallesi %3$.1f°%2$s</string>
@@ -29,9 +29,9 @@
     <string name="every_30_seconds">30 sekunnin välein</string>
     <string name="every_60_seconds">60 sekunnin välein</string>
     <string name="every_hour">Joka tunti</string>
-    <string name="failed_to_merge_weather_data">%1$s-tietojen yhdistäminen %2$s-tietoihin epäonnistui</string>
+    <string name="failed_to_merge_weather_data">%1$s tietojen yhdistäminen %2$s tietoihin epäonnistui</string>
     <string name="failed_to_process_forecast_data">Ennustetietojen käsittely epäonnistui</string>
-    <string name="failed_to_process_weather_data">Palvelimesi säätietoja, erityisesti %1$s-tietoja, ei voitu käsitellä oikein</string>
+    <string name="failed_to_process_weather_data">Palvelimesi säätietoja, erityisesti %1$s tietoja, ei voitu käsitellä oikein</string>
     <string name="fgColour">Widgetin etualan värinvalitsin</string>
     <string name="fileURL">Kirjoita settings.txt-tiedostosi URL-osoite</string>
     <string name="force_dark_mode">Pakota tumma tila</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Päivittäin</string>
     <string name="interval_hourly">Tunneittain</string>
     <string name="invalid_update_interval">Päivitysväli on virheellinen, päivitä asetukset ja yritä sitten uudelleen</string>
-    <string name="json_formatted_data">%1$s vaatii nyt %2$s-datatiedoston %3$s-palvelimelta. Sinun on päivitettävä %4$s ja päivitettävä tiedosto %5$s, ennen kuin tämä sovellus toimii oikein. Napsauta OK saadaksesi lisätietoja kohteesta %6$s</string>
+    <string name="json_formatted_data">%1$s vaatii nyt %2$s datatiedoston %3$s palvelimelta. Sinun on päivitettävä %4$s ja päivitettävä tiedosto %5$s, ennen kuin tämä sovellus toimii oikein. Napsauta OK saadaksesi lisätietoja kohteesta %6$s</string>
     <string name="last_month_stats">Viime kuun tilastot</string>
     <string name="last_year_stats">Viime vuoden tilastot</string>
     <string name="light_theme">Kevyt teema</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Koska hylkäsit ilmoitusluvan kahdesti, sinun on otettava se käyttöön asetuksista, käynnistää asetukset?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Odota, kun vahvistamme lähettämäsi URL-osoitteen</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Tiedostossa %2$s havaittiin %1$d virhettä, tarkastele %2$s-tiedostoa, joka löytyi osoitteesta %3$s, tai katso lisätietoja %4$s lokista</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Tiedostossa %2$s havaittiin %1$d virhe. Tarkastele %2$s tiedostoa, joka löytyi osoitteesta %3$s, tai katso lisätietoja %4$s lokista</item>
+        <item quantity="other">Tiedostossa %2$s havaittiin %1$d virhettä, tarkastele %2$s tiedostoa, joka löytyi osoitteesta %3$s, tai katso lisätietoja %4$s lokista</item>
+    </plurals>
     <string name="radar">Tutka</string>
     <string name="radar_download_failed">Tutkakuvan lataaminen epäonnistui</string>
     <string name="radar_still_downloading">Tutkakuvaa ladataan edelleen</string>

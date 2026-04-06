@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Mō</string>
     <string name="about_app">Mo te taupānga</string>
     <string name="afternoon_alert">Kua heke te pāmahana %1$.1f°%2$s ki tō tepe o %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">I te mea e rua nga wa i paopao koe i te whakaaetanga whakamohiotanga, me whakaahei koe i roto i nga tautuhinga hei utu, whakarewahia nga tautuhinga?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Tēnā tatari ka tirohia e mātou te URL i tukuna e koe</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</string>
+    <plurals name="processing_errors">
+        <item quantity="few">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
+        <item quantity="many">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
+        <item quantity="one">I kitea he hapa %1$d i te kōnae %2$s, tirohia te kōnae %2$s i kitea i %3$s, tirohia ranei %4$s nga raarangi mo nga taipitopito</item>
+        <item quantity="other">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
+        <item quantity="two">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
+        <item quantity="zero">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
+    </plurals>
     <string name="radar">Irirangi whakaata</string>
     <string name="radar_download_failed">I rahua te tango i te ahua radar</string>
     <string name="radar_still_downloading">Kei te tango tonu te whakaahua radar</string>

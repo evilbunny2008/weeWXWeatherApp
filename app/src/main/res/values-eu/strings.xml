@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Buruz</string>
     <string name="about_app">Aplikazioari buruz</string>
     <string name="afternoon_alert">%1$.1f°%2$s tenperatura zure %3$.1f°%2$s mugara jaitsi da</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Egunero</string>
     <string name="interval_hourly">Orduka</string>
     <string name="invalid_update_interval">Eguneratzeko tartea baliogabea da, eguneratu ezarpenak eta saiatu berriro</string>
-    <string name="json_formatted_data">%1$s-ek %3$s zerbitzariko %2$s datu-fitxategi bat behar du orain, %4$s eguneratu eta %5$s fitxategia eguneratu behar duzu aplikazio honek behar bezala funtzionatu aurretik. Sakatu Ados %6$s-i buruzko xehetasun gehiago lortzeko</string>
+    <string name="json_formatted_data">%1$s ek %3$s zerbitzariko %2$s datu-fitxategi bat behar du orain, %4$s eguneratu eta %5$s fitxategia eguneratu behar duzu aplikazio honek behar bezala funtzionatu aurretik. Sakatu Ados %6$s i buruzko xehetasun gehiago lortzeko</string>
     <string name="last_month_stats">Azken hilabeteko estatistikak</string>
     <string name="last_year_stats">Iazko Estatistika</string>
     <string name="light_theme">Argia Gaia</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Jakinarazpen-baimena bi aldiz ukatu duzunez, ezarpenetan gaitu behar duzu, ezarpenak abiarazi?</string>
     <string name="ok">Ados</string>
     <string name="please_wait_verify_url">Mesedez, itxaron bidali duzun URLa egiaztatzen dugun bitartean</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">%1$d akats detektatu dira %2$s fitxategian, ikusi %2$s fitxategia %3$s helbidean edo ikusi %4$s erregistroak xehetasunetarako</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%1$d errore detektatu da %2$s fitxategian, ikusi %3$s helbidean aurkitutako %2$s fitxategia edo ikusi %4$s erregistroak xehetasunetarako</item>
+        <item quantity="other">%1$d akats detektatu dira %2$s fitxategian, ikusi %2$s fitxategia %3$s helbidean edo ikusi %4$s erregistroak xehetasunetarako</item>
+    </plurals>
     <string name="radar">Radarra</string>
     <string name="radar_download_failed">Ezin izan da deskargatu radar-irudia</string>
     <string name="radar_still_downloading">Radar irudia deskargatzen ari da oraindik</string>
@@ -82,16 +85,16 @@
     <string name="rain_in_inches">Euria hazbetetan?</string>
     <string name="rainfall_alert">Euri-alerta?</string>
     <string name="rainfall_alert_desc">Euria ezarritako mugara iristen denean alertak egunero</string>
-    <string name="rainfall_alert_imperial">%1$.2f%2$s prezipitazioak zure %3$.2f%2$s-ko mugarekin bat egin du</string>
-    <string name="rainfall_alert_metric">%1$.1f%2$s prezipitazioak zure %3$.1f%2$s-ko mugarekin bat egin du</string>
+    <string name="rainfall_alert_imperial">%1$.2f%2$s prezipitazioak zure %3$.2f%2$s ko mugarekin bat egin du</string>
+    <string name="rainfall_alert_metric">%1$.1f%2$s prezipitazioak zure %3$.1f%2$s ko mugarekin bat egin du</string>
     <string name="rainfall_alert_str">Euri-Alerta</string>
     <string name="rainfall_limit">Prezipitazio muga</string>
-    <string name="rainrate_alert_imperial_severe">%1$.2fin azken %2$d %3$s-ko euri-tasa \'Larria\' mailara iritsi da</string>
-    <string name="rainrate_alert_imperial_warning">%1$.2fin azken %2$d %3$s-ko euri-tasa \'Abisua\' mailara iritsi da</string>
-    <string name="rainrate_alert_imperial_watch">%1$.2fin azken %2$d %3$s-ko euri-tasa \'Ikusi\' mailara iritsi da</string>
+    <string name="rainrate_alert_imperial_severe">%1$.2fin azken %2$d %3$s ko euri-tasa \'Larria\' mailara iritsi da</string>
+    <string name="rainrate_alert_imperial_warning">%1$.2fin azken %2$d %3$s ko euri-tasa \'Abisua\' mailara iritsi da</string>
+    <string name="rainrate_alert_imperial_watch">%1$.2fin azken %2$d %3$s ko euri-tasa \'Ikusi\' mailara iritsi da</string>
     <string name="rainrate_alert_metric_severe">%1$.1fmm-ko %2$d %3$s azkeneko %2$d euri-tasa \'Larria\' mailara iritsi da</string>
-    <string name="rainrate_alert_metric_warning">Azken %2$d %3$s-ko %1$.1fmm-ko euri-tasa \'Abisua\' mailara iritsi da</string>
-    <string name="rainrate_alert_metric_watch">Azken %2$d %3$s-ko %1$.1fmm-ko euri-tasa \'Ikusi\' mailara iritsi da</string>
+    <string name="rainrate_alert_metric_warning">Azken %2$d %3$s ko %1$.1fmm-ko euri-tasa \'Abisua\' mailara iritsi da</string>
+    <string name="rainrate_alert_metric_watch">Azken %2$d %3$s ko %1$.1fmm-ko euri-tasa \'Ikusi\' mailara iritsi da</string>
     <string name="rainrate_alert_severe">Euri-tasa larrien alertak?</string>
     <string name="rainrate_alert_severe_desc">Alertak ematen ditu euri-mailak muga larria gainditzen badu euriteen iraupenaren arabera</string>
     <string name="rainrate_alert_severe_str">Euri-tasa larriaren alerta</string>
@@ -130,7 +133,7 @@
     <string name="use_exact_alarm">Erabili eguneratze ordu zehatzak</string>
     <string name="wasnt_able_to_connect_custom_url">Ezin izan da zehaztutako URL pertsonalizatutik konektatu edo deskargatu</string>
     <string name="wasnt_able_to_connect_forecast">Ezin izan da iragarpena konektatu edo deskargatu</string>
-    <string name="wasnt_able_to_connect_or_download">Ezin izan da %2$s-tik %1$s konektatu edo deskargatu</string>
+    <string name="wasnt_able_to_connect_or_download">Ezin izan da %2$s tik %1$s konektatu edo deskargatu</string>
     <string name="wasnt_able_to_connect_radar_image">Ezin izan da konektatu edo deskargatu radar= irudia Internetetik</string>
     <string name="wasnt_able_to_connect_settings">Ezin izan dira zure zerbitzaritik konektatu edo deskargatu ezarpenak</string>
     <string name="wasnt_able_to_connect_webcam_url">Ezin izan da zure zerbitzaritik konektatu edo deskargatu webcam irudi bat</string>

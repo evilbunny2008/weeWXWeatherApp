@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">درباره</string>
     <string name="about_app">درباره برنامه</string>
     <string name="afternoon_alert">دمای %1$.1f°%2$s به حد مجاز %3$.1f°%2$s شما کاهش یافته است</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">از آنجایی که شما دو بار مجوز اعلان را رد کردید، باید آن را در تنظیمات فعال کنید، تنظیمات را راه اندازی کنید؟</string>
     <string name="ok">باشه</string>
     <string name="please_wait_verify_url">لطفاً صبر کنید تا URL ارسالی شما را تأیید کنیم</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">%1$d خطا در فایل %2$s شناسایی شد، فایل %2$s موجود در %3$s را مشاهده کنید یا گزارش‌های %4$s را برای جزئیات مشاهده کنید</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%1$d خطا در فایل %2$s شناسایی شد، فایل %2$s موجود در %3$s را مشاهده کنید یا گزارش‌های %4$s را برای جزئیات مشاهده کنید</item>
+        <item quantity="other">%1$d خطا در فایل %2$s شناسایی شد، فایل %2$s موجود در %3$s را مشاهده کنید یا گزارش‌های %4$s را برای جزئیات مشاهده کنید</item>
+    </plurals>
     <string name="radar">رادار</string>
     <string name="radar_download_failed">تصویر رادار دانلود نشد</string>
     <string name="radar_still_downloading">تصویر رادار همچنان در حال دانلود است</string>

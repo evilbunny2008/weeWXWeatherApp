@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Tungkul</string>
     <string name="about_app">Tungkul king App</string>
     <string name="afternoon_alert">Ing temperatura %1$.1f°%2$s miras ya keng limit a %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">uling adwang besis meng tinanggi ing notification permission, kailangan meng i-enable keng settings, launch settings?</string>
     <string name="ok">Wa</string>
     <string name="please_wait_verify_url">Manaya kayu pu kabang ating patutuanan ing URL a pepasakup yu</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
+        <item quantity="many">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
+        <item quantity="one">Atin %1$d a error a meyakit keng %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
+        <item quantity="other">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
+        <item quantity="two">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
+        <item quantity="zero">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Bigo yang mag-download ing larawan ning radar</string>
     <string name="radar_still_downloading">Ing imahen ning radar makababa ya pa rin</string>

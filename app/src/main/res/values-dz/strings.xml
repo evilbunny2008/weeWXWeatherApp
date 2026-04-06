@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">སྐོར་ལས</string>
     <string name="about_app">App གི་སྐོར།</string>
     <string name="afternoon_alert">དྲོད་ཚད་ %1$.1f°%2$s ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.1f°%2$s ལུ་བབས་ཡོད།</string>
@@ -72,7 +72,9 @@
     <string name="notifications_needed2">ཁྱོད་ཀྱིས་ བརྡ་དོན་གནང་བ་འདི་ ཚར་གཉིས་ ངོས་ལེན་མ་འབད་བར་ཡོདཔ་ལས་ དེ་གི་ཚབ་ལུ་ སྒྲིག་སྟངས་ཚུ་ནང་ ལྕོགས་ཅན་བཟོ་དགོཔ་ཨིན་ན་ སྒྲིག་སྟངས་ཚུ་ འགོ་བཙུགས།</string>
     <string name="ok">བཏུབ</string>
     <string name="please_wait_verify_url">ཁྱོད་ཀྱིས་ཕུལ་མི་ ཡུ་ཨར་ཨེལ་འདི་ བདེན་དཔྱད་འབད་བའི་སྐབས་ བསྒུག་གནང་།</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">ཡིག་སྣོད་ནང་ འཛོལ་བ་%1$d བརྟག་ཞིབ་འབད་ཡོདཔ་ཨིན་ %3$s ལུ་མཐོང་མི་ %2$s ཡིག་སྣོད་བལྟ ཡང་ན་ ཁ་གསལ་གྱི་དོན་ལུ་ %4$s དྲན་ཐོ་ཚུ་བལྟ།</string>
+    <plurals name="processing_errors">
+        <item quantity="other">%2$s ཡིག་སྣོད་ནང་ འཛོལ་བ་%1$d བརྟག་ཞིབ་འབད་ཡོདཔ་ཨིན་ %3$s ལུ་མཐོང་མི་ %2$s ཡིག་སྣོད་བལྟ ཡང་ན་ ཁ་གསལ་གྱི་དོན་ལུ་ %4$s དྲན་ཐོ་ཚུ་བལྟ།</item>
+    </plurals>
     <string name="radar">ར་ཌར་</string>
     <string name="radar_download_failed">རེ་ཌར་གཟུགས་བརྙན་ཕབ་ལེན་འབད་མ་ཚུགས་པས།</string>
     <string name="radar_still_downloading">རེ་ཌར་གཟུགས་བརྙན་འདི་ད་ལྟོ་ཡང་ཕབ་ལེན་འབད་དོ་ཡོདཔ་ཨིན།</string>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Тухай</string>
     <string name="about_app">Апп тухай</string>
     <string name="afternoon_alert">%1$.1f°%2$s температура %3$.1f°%2$s хизаарлалта хүрэтэр буураа</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Үдэр бүриин</string>
     <string name="interval_hourly">Час бүри</string>
     <string name="invalid_update_interval">Шэнэлэлтэ забһаргүй, шэнэлэлтэнүүдые шэнэлжэ, удаань дахин туршаха</string>
-    <string name="json_formatted_data">%1$s мүнөө %3$s серверһээ %2$s мэдээсэлэй файл хэрэгтэй, энэ апп зүбөөр хүдэлхын урда тээ %4$s-ые шэнэлжэ, %5$s файлые шэнэлхэ хэрэгтэй. %6$s тухай дэлгэрэнгы мэдээсэл абахын тула Ok дээрэ дараарайгты</string>
+    <string name="json_formatted_data">%1$s мүнөө %3$s серверһээ %2$s мэдээсэлэй файл хэрэгтэй, энэ апп зүбөөр хүдэлхын урда тээ %4$s ые шэнэлжэ, %5$s файлые шэнэлхэ хэрэгтэй. %6$s тухай дэлгэрэнгы мэдээсэл абахын тула Ok дээрэ дараарайгты</string>
     <string name="last_month_stats">Үнгэрһэн һарын статистика</string>
     <string name="last_year_stats">Үнгэрһэн жэлэй тоо баримта</string>
     <string name="light_theme">Хүнгэн сэдэб</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Мэдэгдэлэй зүбшөөл хоёр дахин арсаһан тула, орондонь тохиргоонууд соо нээхэ хэрэгтэй гү, тохиргоонуудые эхилхэ гү?</string>
     <string name="ok">За</string>
     <string name="please_wait_verify_url">Танай оруулһан URL-ые шалгажа байхадаа хүлеэжэ байгты</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">файл соо %1$d алдуунууд элирүүлэгдэһэн байна, %3$s-да олоһон %2$s файл хараха гү, али дэлгэрэнгы мэдээсэл абахын тулада %4$s логуудые хараха</string>
+    <plurals name="processing_errors">
+        <item quantity="few">%2$s файл соо %1$d алдуунууд элирүүлэгдэһэн байна, %3$s да олоһон %2$s файл хараха гү, али дэлгэрэнгы мэдээсэл абахын тулада %4$s логуудые хараха</item>
+        <item quantity="many">%2$s файл соо %1$d алдуунууд элирүүлэгдэһэн байна, %3$s да олоһон %2$s файл хараха гү, али дэлгэрэнгы мэдээсэл абахын тулада %4$s логуудые хараха</item>
+        <item quantity="one">%2$s файл соо %1$d алдуу элирүүлэгдэһэн байна, %3$s да олоһон %2$s файлые хараха гү, али дэлгэрэнгы мэдээсэл абахын тулада %4$s эй логуудые хараха</item>
+        <item quantity="other">%2$s файл соо %1$d алдуунууд элирүүлэгдэһэн байна, %3$s да олоһон %2$s файл хараха гү, али дэлгэрэнгы мэдээсэл абахын тулада %4$s логуудые хараха</item>
+        <item quantity="two">%2$s файл соо %1$d алдуунууд элирүүлэгдэһэн байна, %3$s да олоһон %2$s файл хараха гү, али дэлгэрэнгы мэдээсэл абахын тулада %4$s логуудые хараха</item>
+        <item quantity="zero">%2$s файл соо %1$d алдуунууд элирүүлэгдэһэн байна, %3$s да олоһон %2$s файл хараха гү, али дэлгэрэнгы мэдээсэл абахын тулада %4$s логуудые хараха</item>
+    </plurals>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Радарай зураг татажа абаха аргагүй болоһон</string>
     <string name="radar_still_downloading">Радар зураг үшөөл татажа байна</string>
@@ -130,7 +137,7 @@
     <string name="use_exact_alarm">Нарин шэнэлхэ сагые хэрэглэхэ</string>
     <string name="wasnt_able_to_connect_custom_url">Заһабарилагдаһан захиалгаар URL-һээ холбоо гү, али татажа абаха аргагүй байгаа</string>
     <string name="wasnt_able_to_connect_forecast">Уридшалан мэдээсэл холбожо, татажа абаха аргагүй байгаа</string>
-    <string name="wasnt_able_to_connect_or_download">%2$s-һээ %1$s холбожо гү, али татажа шадаагүй</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s һээ %1$s холбожо гү, али татажа шадаагүй</string>
     <string name="wasnt_able_to_connect_radar_image">Интернет сооһоо радар= зураг холбоо гү, али татажа абаха аргагүй байгаа</string>
     <string name="wasnt_able_to_connect_settings">Танай серверһээ тохиргоонуудые холбохо гү, али татажа абаха аргагүй байгаа</string>
     <string name="wasnt_able_to_connect_webcam_url">Танай серверһээ веб-камерын зураг холбохо гү, али татажа абаха аргагүй байгаа</string>

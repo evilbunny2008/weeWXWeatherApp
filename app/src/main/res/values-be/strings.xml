@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Аб</string>
     <string name="about_app">Аб дадатку</string>
     <string name="afternoon_alert">Тэмпература %1$.1f°%2$s апусцілася да вашай мяжы %3$.1f°%2$s</string>
@@ -72,7 +72,12 @@
     <string name="notifications_needed2">Паколькі вы двойчы адхілялі дазвол на апавяшчэнне, вам трэба ўключыць яго ў наладах, запусціць налады?</string>
     <string name="ok">добра</string>
     <string name="please_wait_verify_url">Калі ласка, пачакайце, пакуль мы праверым дасланы вамі URL</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">У файле %2$s выяўлена %1$d памылак, падрабязней праглядзіце файл %2$s, знойдзены ў %3$s, або праглядзіце журналы %4$s</string>
+    <plurals name="processing_errors">
+        <item quantity="few">У файле %2$s выяўлена %1$d памылак, падрабязней праглядзіце файл %2$s, знойдзены ў %3$s, або праглядзіце журналы %4$s</item>
+        <item quantity="many">У файле %2$s выяўлена %1$d памылак, падрабязней праглядзіце файл %2$s, знойдзены ў %3$s, або праглядзіце журналы %4$s</item>
+        <item quantity="one">Была выяўлена %1$d памылка ў файле %2$s, праглядзіце файл %2$s, знойдзены ў %3$s або праглядзіце журналы %4$s для атрымання падрабязнай інфармацыі</item>
+        <item quantity="other">У файле %2$s выяўлена %1$d памылак, падрабязней праглядзіце файл %2$s, знойдзены ў %3$s, або праглядзіце журналы %4$s</item>
+    </plurals>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Не ўдалося спампаваць радыёлакацыйную выяву</string>
     <string name="radar_still_downloading">Радарная выява ўсё яшчэ спампоўваецца</string>

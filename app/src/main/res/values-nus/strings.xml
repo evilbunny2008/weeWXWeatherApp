@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Kɛ kui̱ kä</string>
     <string name="about_app">Kɛ kui̱ app</string>
     <string name="afternoon_alert">Tɛmpi̱rɛciɛr %1$.1f°%2$s cɛ wä piny ɛ wä kä %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Ni̱ mëë ci̱ ji̱n nhɔk ni̱ ɣöö ba ji̱ la̱r lär lo̱k ni̱ kä rɛɛw, go̱o̱ri ɣöö biɛ la̱th lät rɛy thɛtni̱ ni̱ ɣöö, launch thɛtni̱?</string>
     <string name="ok">Gɔ̱a̱̱</string>
     <string name="please_wait_verify_url">Ɣän göörä ɣöö bä ŋot kɛ mi̱ guic nɛy URL min ci̱ ji̱ la̱r lär</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Cuɛ tekɛ %1$d ti̱ ci̱ duer rɛy %2$s pai̱li̱, guic %2$s pai̱l min ca jiek kä %3$s kiɛ guic %4$s lögni̱ kɛ kui̱ latdɛ kɛɛliw</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Cuɛ tekɛ %1$d ti̱ ci̱ duer rɛy %2$s pai̱li̱, guic %2$s pai̱l min ca jiek kä %3$s kiɛ guic %4$s lögni̱ kɛ kui̱ latdɛ kɛɛliw</item>
+        <item quantity="many">Cuɛ tekɛ %1$d ti̱ ci̱ duer rɛy %2$s pai̱li̱, guic %2$s pai̱l min ca jiek kä %3$s kiɛ guic %4$s lögni̱ kɛ kui̱ latdɛ kɛɛliw</item>
+        <item quantity="one">Cuɛ tekɛ %1$d mi̱ ci̱ duer jiek rɛy %2$s pai̱li̱, guic %2$s pai̱l min ca jiek kä %3$s kiɛ guic %4$s lögni̱ kɛ kui̱ latdɛ kɛɛliw</item>
+        <item quantity="other">Cuɛ tekɛ %1$d ti̱ ci̱ duer rɛy %2$s pai̱li̱, guic %2$s pai̱l min ca jiek kä %3$s kiɛ guic %4$s lögni̱ kɛ kui̱ latdɛ kɛɛliw</item>
+        <item quantity="two">Cuɛ tekɛ %1$d ti̱ ci̱ duer rɛy %2$s pai̱li̱, guic %2$s pai̱l min ca jiek kä %3$s kiɛ guic %4$s lögni̱ kɛ kui̱ latdɛ kɛɛliw</item>
+        <item quantity="zero">Cuɛ tekɛ %1$d ti̱ ci̱ duer rɛy %2$s pai̱li̱, guic %2$s pai̱l min ca jiek kä %3$s kiɛ guic %4$s lögni̱ kɛ kui̱ latdɛ kɛɛliw</item>
+    </plurals>
     <string name="radar">thok Radard</string>
     <string name="radar_download_failed">/Cɛ rɔ moc kɛ ɣöö bɛ thurɛ radar</string>
     <string name="radar_still_downloading">Kä thurɛ Radar ŋotdɛ ka̱nkɛ</string>

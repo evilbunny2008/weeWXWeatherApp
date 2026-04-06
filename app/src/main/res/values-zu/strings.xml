@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Maqondana</string>
     <string name="about_app">Mayelana nohlelo lokusebenza</string>
-    <string name="afternoon_alert">Izinga lokushisa %1$.1f°%2$s lehlile lafika kumkhawulo wakho ongu-%3$.1f°%2$s</string>
+    <string name="afternoon_alert">Izinga lokushisa %1$.1f°%2$s lehlile lafika kumkhawulo wakho ongu %3$.1f°%2$s</string>
     <string name="afternoon_temp_alert">Isexwayiso santambama?</string>
     <string name="all_time_stats">Zonke Izibalo</string>
     <string name="app_theme">Isihloko sohlelo lokusebenza</string>
@@ -29,9 +29,9 @@
     <string name="every_30_seconds">Njalo ngemizuzwana engama-30</string>
     <string name="every_60_seconds">Njalo ngemizuzwana engama-60</string>
     <string name="every_hour">Njalo ngehora</string>
-    <string name="failed_to_merge_weather_data">Yehlulekile ukuhlanganisa idatha ye-%1$s nedatha ye-%2$s</string>
+    <string name="failed_to_merge_weather_data">Yehlulekile ukuhlanganisa idatha ye %1$s nedatha ye %2$s</string>
     <string name="failed_to_process_forecast_data">Yehlulekile ukucubungula idatha yesimo sezulu</string>
-    <string name="failed_to_process_weather_data">Yehlulekile ukucubungula kahle idatha yesimo sezulu evela kuseva yakho, ikakhulukazi idatha ye-%1$s</string>
+    <string name="failed_to_process_weather_data">Yehlulekile ukucubungula kahle idatha yesimo sezulu evela kuseva yakho, ikakhulukazi idatha ye %1$s</string>
     <string name="fgColour">Umbala we-Widget ongaphambili</string>
     <string name="fileURL">Faka i-URL kuzilungiselelo zakho.txt</string>
     <string name="force_dark_mode">Cindezela imodi emnyama</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Nsuku zonke</string>
     <string name="interval_hourly">Ngehora</string>
     <string name="invalid_update_interval">Ukuvuselelwa kwesikhashana akuvumelekile, ukubuyekeza izilungiselelo bese uzama futhi</string>
-    <string name="json_formatted_data">I-%1$s manje idinga ifayela ledatha le-%2$s elisuka kuseva ye-%3$s, udinga ukubuyekeza i-%4$s futhi ubuyekeze ifayela le-%5$s ngaphambi kokuthi lolu hlelo lokusebenza lusebenze kahle. Chofoza okuthi Kulungile ukuze uthole imininingwane eyengeziwe ku-%6$s</string>
+    <string name="json_formatted_data">I %1$s manje idinga ifayela ledatha le %2$s elisuka kuseva ye %3$s, udinga ukubuyekeza i %4$s futhi ubuyekeze ifayela le %5$s ngaphambi kokuthi lolu hlelo lokusebenza lusebenze kahle. Chofoza okuthi Kulungile ukuze uthole imininingwane eyengeziwe ku %6$s</string>
     <string name="last_month_stats">Izibalo zenyanga edlule</string>
     <string name="last_year_stats">Izibalo zonyaka odlule</string>
     <string name="light_theme">Isihloko esikhanyayo</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Umdlalo wokulinganisa</string>
     <string name="metric">Sebenzisa Metric?</string>
     <string name="minutes">imizuzu</string>
-    <string name="morning_alert">Izinga lokushisa %1$.1f°%2$s likhuphukele kumkhawulo wakho ongu-%3$.1f°%2$s</string>
+    <string name="morning_alert">Izinga lokushisa %1$.1f°%2$s likhuphukele kumkhawulo wakho ongu %3$.1f°%2$s</string>
     <string name="morning_temp_alert">Isexwayiso sasekuseni?</string>
     <string name="next_moon">Imicimbi Elandelayo Yenyanga?</string>
     <string name="no">-Nokuba</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Njengoba unqabe imvume yesaziso kabili, udinga ukusivumela kuzilungiselelo esikhundleni salokho, uqalise izilungiselelo?</string>
     <string name="ok">Kulungile</string>
     <string name="please_wait_verify_url">Sicela ulinde ngenkathi siqinisekisa i-URL oyithumele</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Kube namaphutha angu-%1$d atholwe kufayela le-%2$s, buka ifayela le-%2$s elitholwe kokuthi %3$s noma ubuke amalogi angu-%4$s ukuze uthole imininingwane</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Kube nephutha elingu %1$d elitholwe kufayela le %2$s, buka ifayela le %2$s elitholwe kokuthi %3$s noma ubuke amalogi angu %4$s ukuze uthole imininingwane</item>
+        <item quantity="other">Kube namaphutha angu %1$d atholwe kufayela le %2$s, buka ifayela le %2$s elitholwe kokuthi %3$s noma ubuke amalogi angu %4$s ukuze uthole imininingwane</item>
+    </plurals>
     <string name="radar">Ireda</string>
     <string name="radar_download_failed">Yehlulekile ukulanda isithombe se-radar</string>
     <string name="radar_still_downloading">Izithombe ze-radar zisalanda</string>
@@ -82,16 +85,16 @@
     <string name="rain_in_inches">Imvula ngama-intshi?</string>
     <string name="rainfall_alert">Isexwayiso Ngemvula?</string>
     <string name="rainfall_alert_desc">Izexwayiso nsuku zonke lapho imvula ifinyelela umkhawulo owumisiwe</string>
-    <string name="rainfall_alert_imperial">Imvula engu-%1$.2f%2$s ifane nomkhawulo wakho ongu-%3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Imvula engu-%1$.1f%2$s ifane nomkhawulo wakho ongu-%3$.1f%2$s</string>
+    <string name="rainfall_alert_imperial">Imvula engu %1$.2f%2$s ifane nomkhawulo wakho ongu %3$.2f%2$s</string>
+    <string name="rainfall_alert_metric">Imvula engu %1$.1f%2$s ifane nomkhawulo wakho ongu %3$.1f%2$s</string>
     <string name="rainfall_alert_str">Isexwayiso Semvula</string>
     <string name="rainfall_limit">Umkhawulo Wemvula</string>
-    <string name="rainrate_alert_imperial_severe">Imvula engu-%1$.2fin kokugcina okungu-%2$d %3$s ifinyelele ileveli ethi \'Kunzima\'</string>
-    <string name="rainrate_alert_imperial_warning">Imvula engu-%1$.2fin kokugcina okungu-%2$d %3$s ifinyelele ileveli \'Yesexwayiso\'</string>
-    <string name="rainrate_alert_imperial_watch">Imvula engu-%1$.2fin kokugcina okungu-%2$d %3$s ifinyelele ileveli ethi \'Buka\'</string>
-    <string name="rainrate_alert_metric_severe">Imvula engu-%1$.1fmm kokugcina okungu-%2$d %3$s ifinyelele ileveli ethi \'Kunzima\'</string>
-    <string name="rainrate_alert_metric_warning">Imvula engu-%1$.1fmm kokugcina okungu-%2$d %3$s ifinyelele ileveli \'Yesexwayiso\'</string>
-    <string name="rainrate_alert_metric_watch">Imvula engu-%1$.1fmm kokugcina okungu-%2$d %3$s ifinyelele ileveli \'Yokubuka\'</string>
+    <string name="rainrate_alert_imperial_severe">Imvula engu %1$.2fin kokugcina okungu %2$d %3$s ifinyelele ileveli ethi \'Kunzima\'</string>
+    <string name="rainrate_alert_imperial_warning">Imvula engu %1$.2fin kokugcina okungu %2$d %3$s ifinyelele ileveli \'Yesexwayiso\'</string>
+    <string name="rainrate_alert_imperial_watch">Imvula engu %1$.2fin kokugcina okungu %2$d %3$s ifinyelele ileveli ethi \'Buka\'</string>
+    <string name="rainrate_alert_metric_severe">Imvula engu %1$.1fmm kokugcina okungu %2$d %3$s ifinyelele ileveli ethi \'Kunzima\'</string>
+    <string name="rainrate_alert_metric_warning">Imvula engu %1$.1fmm kokugcina okungu %2$d %3$s ifinyelele ileveli \'Yesexwayiso\'</string>
+    <string name="rainrate_alert_metric_watch">Imvula engu %1$.1fmm kokugcina okungu %2$d %3$s ifinyelele ileveli \'Yokubuka\'</string>
     <string name="rainrate_alert_severe">Izaziso Zemvula Enamandla?</string>
     <string name="rainrate_alert_severe_desc">Izexwayiso uma izinga lemvula lidlula umkhawulo onzima ngokusekelwe kubude besikhathi semvula</string>
     <string name="rainrate_alert_severe_str">Isexwayiso Semvula Enamandla</string>
@@ -130,11 +133,11 @@
     <string name="use_exact_alarm">Sebenzisa izikhathi zokuvuselela ngqo</string>
     <string name="wasnt_able_to_connect_custom_url">Ayikwazanga ukuxhuma noma ukulanda kusuka ku-URL yangokwezifiso echaziwe</string>
     <string name="wasnt_able_to_connect_forecast">Ayikwazanga ukuxhuma noma ukulanda isibikezelo</string>
-    <string name="wasnt_able_to_connect_or_download">Ayikwazanga ukuxhuma noma ukulanda i-%1$s kusuka ku-%2$s</string>
+    <string name="wasnt_able_to_connect_or_download">Ayikwazanga ukuxhuma noma ukulanda i %1$s kusuka ku %2$s</string>
     <string name="wasnt_able_to_connect_radar_image">Ayikwazanga ukuxhuma noma ukulanda i-radar = isithombe kusuka kwi-Intanethi</string>
     <string name="wasnt_able_to_connect_settings">Ayikwazanga ukuxhuma noma ukulanda amasethingi kusuka kuseva yakho</string>
     <string name="wasnt_able_to_connect_webcam_url">Ayikwazanga ukuxhuma noma ukulanda isithombe se-webcam kusuka kuseva yakho</string>
-    <string name="wasnt_able_to_download_url_is_blank">Ayikwazanga ukulanda i-%1$s ngoba i-URL ibingenalutho</string>
+    <string name="wasnt_able_to_download_url_is_blank">Ayikwazanga ukulanda i %1$s ngoba i-URL ibingenalutho</string>
     <string name="weather2">Isimo sezulu</string>
     <string name="webcam2">I-webcam</string>
     <string name="webcam_refresh_time">Isikhathi Sokuvuselela Ikhamera Yewebhu</string>

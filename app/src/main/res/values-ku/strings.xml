@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Ji dor</string>
     <string name="about_app">Der barê App</string>
     <string name="afternoon_alert">Germahiya %1$.1f°%2$s daketiye sînorê te %3$.1f°%2$s</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Rojane</string>
     <string name="interval_hourly">Seetî</string>
     <string name="invalid_update_interval">Navbera nûvekirinê nederbasdar e, mîhengan nûve bikin û dûv re dîsa biceribînin</string>
-    <string name="json_formatted_data">Niha %1$s pelê daneya %2$s ji pêşkêşkara %3$s hewce dike, divê hûn %4$s-ê nûve bikin û pelê %5$s-ê nûve bikin berî ku ev sepan rast kar bike. Ji bo bêtir agahdarî li ser %6$s Ok bikirtînin</string>
+    <string name="json_formatted_data">Niha %1$s pelê daneya %2$s ji pêşkêşkara %3$s hewce dike, divê hûn %4$s ê nûve bikin û pelê %5$s ê nûve bikin berî ku ev sepan rast kar bike. Ji bo bêtir agahdarî li ser %6$s Ok bikirtînin</string>
     <string name="last_month_stats">Statîstîkên meha borî</string>
     <string name="last_year_stats">Statîstîkên sala borî</string>
     <string name="light_theme">Mijara Ronahî</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Ji ber ku we du caran destûrnameya agahdarkirinê red kir, hûn hewce ne ku wê di şûna mîhengan de çalak bikin, mîhengan bidin destpêkirin?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Ji kerema xwe li bendê bimînin dema ku em URL-ya ku we şandiye rast bikin</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Di pela %2$s de %1$d xeletî hatin dîtin, pelê %2$s ku li %3$s hat dîtin bibînin an jî ji bo hûragahiyan têketinên %4$s bibînin</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Di pela %2$s de %1$d xeletî hat dîtin, pelê %2$s ku li %3$s hat dîtin bibînin an jî ji bo hûragahiyan têketinên %4$s bibînin</item>
+        <item quantity="other">Di pela %2$s de %1$d xeletî hatin dîtin, pelê %2$s ku li %3$s hat dîtin bibînin an jî ji bo hûragahiyan têketinên %4$s bibînin</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Daxistina wêneya radarê bi ser neket</string>
     <string name="radar_still_downloading">Wêneyê radarê hîna tê daxistin</string>

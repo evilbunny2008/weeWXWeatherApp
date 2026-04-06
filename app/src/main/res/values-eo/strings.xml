@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Pri</string>
     <string name="about_app">Pri la Apo</string>
     <string name="afternoon_alert">Temperaturo %1$.1f°%2$s malaltiĝis al via limo de %3$.1f°%2$s</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Ĉar vi malakceptis la sciigan permeson dufoje, vi devas ebligi ĝin en agordoj anstataŭe, lanĉi agordojn?</string>
     <string name="ok">Bone</string>
     <string name="please_wait_verify_url">Bonvolu atendi dum ni kontrolas la URL kiun vi sendis</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Estis %1$d eraroj detektitaj en la %2$s dosiero, vidu la %2$s dosieron trovitan ĉe %3$s aŭ vidu %4$s protokolojn por la detaloj</string>
+    <plurals name="processing_errors">
+        <item quantity="one">Estis %1$d eraro detektita en la %2$s dosiero, vidu la %2$s dosieron trovitan ĉe %3$s aŭ vidu %4$s protokolojn por la detaloj</item>
+        <item quantity="other">Estis %1$d eraroj detektitaj en la %2$s dosiero, vidu la %2$s dosieron trovitan ĉe %3$s aŭ vidu %4$s protokolojn por la detaloj</item>
+    </plurals>
     <string name="radar">Radaro</string>
     <string name="radar_download_failed">Malsukcesis elŝuti la radarbildon</string>
     <string name="radar_still_downloading">Radara bildo ankoraŭ elŝutas</string>

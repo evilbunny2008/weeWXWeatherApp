@@ -94,6 +94,8 @@ import static com.github.evilbunny2008.colourpicker.ColourPickerCommon.to_ARGB_h
 
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
+import static com.odiousapps.weewxweather.weeWXApp.getEnglishPlural;
+import static com.odiousapps.weewxweather.weeWXApp.getPlural;
 import static com.odiousapps.weewxweather.weeWXAppCommon.checkURL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
@@ -1479,14 +1481,26 @@ public class MainActivity extends FragmentActivity
 		KeyValue.putVar("ProcessingErrorCount", null);
 		KeyValue.putVar("ProcessingErrorID", null);
 
-		String errorStr = String.format(Locale.getDefault(), getAndroidString(R.string.processing_errors),
+		String plural = getPlural(R.plurals.processing_errors, errorCount);
+		String englishPlural = getEnglishPlural(R.plurals.processing_errors, errorCount);
+
+		String errorStr = String.format(Locale.getDefault(), plural,
 				errorCount, json_labels[json_id], json_url, getEnglishAndroidString(R.string.app_name));
-		String logStr = String.format(Locale.ENGLISH, getEnglishAndroidString(R.string.processing_errors),
+		String logStr = String.format(Locale.ENGLISH, englishPlural,
 						errorCount, json_labels[json_id], json_url, getEnglishAndroidString(R.string.app_name));
 
 		showAlertDialog(errorStr, logStr);
 	}
 
+	private void showMergeError()
+	{
+		String errorStr = String.format(Locale.getDefault(), getAndroidString(R.string.failed_to_merge_weather_data),
+				json_labels[0], json_labels[2]);
+		String logStr = String.format(Locale.ENGLISH, getAndroidString(R.string.failed_to_merge_weather_data),
+				json_labels[0], json_labels[2]);
+
+		showAlertDialog(errorStr, logStr);
+	}
 	private void showUpdateAvailable()
 	{
 		int updateVer = weeWXApp.minimum_inigo_version;
@@ -1696,7 +1710,6 @@ public class MainActivity extends FragmentActivity
 			}
 
 			LogMessage("processSettings() here0b!");
-
 			for(int i = 0; i < json_urls.length; i++)
 			{
 				LogMessage("processSettings() json_urls[" + i + "]: " + json_urls[i]);
@@ -1706,7 +1719,7 @@ public class MainActivity extends FragmentActivity
 					return;
 				}
 
-				Boolean validURL1;
+				int validURL1;
 				try
 				{
 					LogMessage("processSettings() Checking " + json_labels[i] + ": " + json_urls[i]);
@@ -1717,7 +1730,7 @@ public class MainActivity extends FragmentActivity
 					return;
 				}
 
-				if(validURL1 == null)
+				if(validURL1 == 2)
 				{
 					int errorCount = (int)KeyValue.readVar("ProcessingErrorCount", -1);
 					if(errorCount > 0)
@@ -1737,7 +1750,7 @@ public class MainActivity extends FragmentActivity
 					}
 				}
 
-				if(!validURL1)
+				if(validURL1 == 0)
 				{
 					errorDialog(R.string.wasnt_able_to_connect_or_download, json_labels[i], json_urls[i]);
 					return;
@@ -1748,7 +1761,15 @@ public class MainActivity extends FragmentActivity
 
 			if(!mergeJsonObjects())
 			{
-				errorDialog(R.string.failed_to_merge_weather_data, json_labels[0], json_labels[2]);
+				bgStart = 0;
+				runOnUiThread(() ->
+				{
+					b1.setEnabled(true);
+					b2.setEnabled(true);
+					dialog.dismiss();
+					showMergeError();
+				});
+
 				return;
 			}
 
@@ -2435,6 +2456,9 @@ public class MainActivity extends FragmentActivity
 
 			showProcessingErrors(json_id, json_url);
 		}
+
+		if(str.equals(weeWXAppCommon.FAILED_TO_MERGE))
+			showMergeError();
 	};
 
 	public boolean isViewPagerNull()

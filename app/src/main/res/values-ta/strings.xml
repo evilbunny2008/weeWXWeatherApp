@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">பற்றி</string>
     <string name="about_app">ஆப் பற்றி</string>
     <string name="afternoon_alert">வெப்பநிலை %1$.1f°%2$s உங்கள் வரம்பான %3$.1f°%2$sக்கு குறைந்துள்ளது</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">இரண்டு முறை அறிவிப்பு அனுமதியை மறுத்துள்ளதால், அதற்குப் பதிலாக அமைப்புகளில் அதை இயக்க வேண்டும், அமைப்புகளைத் தொடங்கவா?</string>
     <string name="ok">சரி</string>
     <string name="please_wait_verify_url">நீங்கள் சமர்ப்பித்த URL ஐ நாங்கள் சரிபார்க்கும் வரை காத்திருக்கவும்</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">கோப்பில் %1$d பிழைகள் கண்டறியப்பட்டுள்ளன, %3$s இல் காணப்படும் %2$s கோப்பைப் பார்க்கவும் அல்லது விவரங்களுக்கு %4$s பதிவுகளைப் பார்க்கவும்</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s கோப்பில் %1$d பிழை கண்டறியப்பட்டது, %3$s இல் காணப்படும் %2$s கோப்பைப் பார்க்கவும் அல்லது விவரங்களுக்கு %4$s பதிவுகளைப் பார்க்கவும்</item>
+        <item quantity="other">%2$s கோப்பில் %1$d பிழைகள் கண்டறியப்பட்டுள்ளன, %3$s இல் காணப்படும் %2$s கோப்பைப் பார்க்கவும் அல்லது விவரங்களுக்கு %4$s பதிவுகளைப் பார்க்கவும்</item>
+    </plurals>
     <string name="radar">ரேடார்</string>
     <string name="radar_download_failed">ரேடார் படத்தைப் பதிவிறக்குவதில் தோல்வி</string>
     <string name="radar_still_downloading">ராடார் படம் இன்னும் பதிவிறக்கம் செய்யப்படுகிறது</string>

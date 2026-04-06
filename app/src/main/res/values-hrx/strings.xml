@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Iwich</string>
     <string name="about_app">Iwer ti App</string>
     <string name="afternoon_alert">Ti temperatuur %1$.1f°%2$s is runer kang uf ti xpits fon %3$.1f°%2$s</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Taachlich</string>
     <string name="interval_hourly">Stunde</string>
     <string name="invalid_update_interval">Aktualisiire interwaal is inwaliteet, aktualisiirunge instellunge un tan noch moolry</string>
-    <string name="json_formatted_data">Ti %1$s prauche yets en %2$s data-taate fon %3$s-Serwer, tuu prauchst ti %4$s un ti %5$s-taate aktualiseere eep tiise app richtich funtsioniire tuut. Klik Ok fer mee informatsioone iwer %6$s</string>
+    <string name="json_formatted_data">Ti %1$s prauche yets en %2$s data-taate fon %3$s Serwer, tuu prauchst ti %4$s un ti %5$s taate aktualiseere eep tiise app richtich funtsioniire tuut. Klik Ok fer mee informatsioone iwer %6$s</string>
     <string name="last_month_stats">Ti Statistiks fon te Moonat fon te Moonat</string>
     <string name="last_year_stats">Tas letste yoer fon te Statistike</string>
     <string name="light_theme">Linke Theema</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Wayl tuu ti notisye erlaupnis tswaay mool ap kelos host, prauchst tuu tas in te instellunge in xtele, instellunge lanseere?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Bitte waart wën mer ti URL woos tuu kexikt host se ferxteen</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Es waare %1$d xlechte kewoonheete in te %2$s xrift, kuk ti %2$s xrift woo uf %3$s kefun kep waar orer kuk ti %4$s prokrame fer ti detaile</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Es waare %1$d xlechte kewoonheete in te %2$s xrift, kuk ti %2$s xrift woo uf %3$s kefun kep waar orer kuk ti %4$s prokrame fer ti detaile</item>
+        <item quantity="many">Es waare %1$d xlechte kewoonheete in te %2$s xrift, kuk ti %2$s xrift woo uf %3$s kefun kep waar orer kuk ti %4$s prokrame fer ti detaile</item>
+        <item quantity="one">Es waare %1$d xlechte kewoonheete in te %2$s xrift, kuk ti %2$s xrift woo uf %3$s kefun kep waar orer kuk ti %4$s prokrame fer ti detaile</item>
+        <item quantity="other">Es waare %1$d xlechte kewoonheete in te %2$s xrift, kuk ti %2$s xrift woo uf %3$s kefun kep waar orer kuk ti %4$s prokrame fer ti detaile</item>
+        <item quantity="two">Es waare %1$d xlechte kewoonheete in te %2$s xrift, kuk ti %2$s xrift woo uf %3$s kefun kep waar orer kuk ti %4$s prokrame fer ti detaile</item>
+        <item quantity="zero">Es waare %1$d xlechte kewoonheete in te %2$s xrift, kuk ti %2$s xrift woo uf %3$s kefun kep waar orer kuk ti %4$s prokrame fer ti detaile</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Fer nët tas radar pilt download mache</string>
     <string name="radar_still_downloading">Radar pilt is noch am download mache</string>

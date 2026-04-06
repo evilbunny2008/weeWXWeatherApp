@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">বিষয়ে</string>
     <string name="about_app">এপটোৰ বিষয়ে</string>
     <string name="afternoon_alert">তাপমাত্ৰা %1$.1f°%2$s আপোনাৰ সীমা %3$.1f°%2$s লৈ হ্ৰাস পাইছে</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">যিহেতু আপুনি অধিসূচনাৰ অনুমতি দুবাৰ অস্বীকাৰ কৰিছে, আপুনি ইয়াক ছেটিংছত সামৰ্থবান কৰিব লাগিব ইয়াৰ পৰিবৰ্তে, ছেটিংছ আৰম্ভ কৰক?</string>
     <string name="ok">ঠিক আছে</string>
     <string name="please_wait_verify_url">আপুনি জমা দিয়া URL টো আমি পৰীক্ষা কৰি থাকোঁতে অপেক্ষা কৰক।</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">নথিপত্ৰত %1$d ভুল ধৰা পৰিছে, %3$s ত পোৱা %2$s নথিপত্ৰ চাওক বা বিৱৰণৰ বাবে %4$s লগ চাওক</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s নথিপত্ৰত %1$d ত্ৰুটি ধৰা পৰিছে, %3$s ত পোৱা %2$s নথিপত্ৰ চাওক বা বিৱৰণৰ বাবে %4$s লগ চাওক</item>
+        <item quantity="other">%2$s নথিপত্ৰত %1$d ভুল ধৰা পৰিছে, %3$s ত পোৱা %2$s নথিপত্ৰ চাওক বা বিৱৰণৰ বাবে %4$s লগ চাওক</item>
+    </plurals>
     <string name="radar">ৰাডাৰ</string>
     <string name="radar_download_failed">ৰাডাৰৰ ছবিখন ডাউনলোড কৰাত ব্যৰ্থ</string>
     <string name="radar_still_downloading">ৰাডাৰৰ ছবি এতিয়াও ডাউনলোড কৰি আছে।</string>

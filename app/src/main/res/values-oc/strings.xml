@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">A prepaus</string>
     <string name="about_app">Acerca de la App</string>
     <string name="afternoon_alert">La temperatura %1$.1f°%2$s a davalat a vòstre limit de %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Coma avètz refusat l\'autorizacion de notificacion dos còps, vos cal l\'activar dins los paramètres a la plaça, los paramètres de lançament?</string>
     <string name="ok">Òc ben</string>
     <string name="please_wait_verify_url">Esperatz mentre que verificam l\'URL que presentatz</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</string>
+    <plurals name="processing_errors">
+        <item quantity="few">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
+        <item quantity="many">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
+        <item quantity="one">I aguèt %1$d error detectada dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
+        <item quantity="other">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
+        <item quantity="two">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
+        <item quantity="zero">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
+    </plurals>
     <string name="radar">radar</string>
     <string name="radar_download_failed">Fracàs de descargar l\'imatge radar</string>
     <string name="radar_still_downloading">Imagen de radar es encara en descarga</string>

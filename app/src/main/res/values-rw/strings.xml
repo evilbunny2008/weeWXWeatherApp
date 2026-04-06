@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Hafi</string>
     <string name="about_app">Ibyerekeye Porogaramu</string>
     <string name="afternoon_alert">Ubushyuhe%1$.1f°%2$s yagabanutse kugera kumupaka wa%3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Kuva wanze uruhushya rwo kumenyesha inshuro ebyiri, ugomba kubushoboza mumiterere aho, gutangiza igenamiterere?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Nyamuneka tegereza mugihe tugenzura URL watanze</string>
-	<string name="processing_errors" tools:ignore="PluralsCandidate">%2$s Hariho %1$d amakosa yagaragaye muri dosiye ya %2$s, reba dosiye iboneka kuri %3$s cyangwa urebe %4$s ibiti kubisobanuro birambuye</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
+        <item quantity="many">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
+        <item quantity="one">Hariho% %1$d ikosa ryagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
+        <item quantity="other">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
+        <item quantity="two">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
+        <item quantity="zero">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Kunanirwa gukuramo ishusho ya radar</string>
     <string name="radar_still_downloading">Ishusho ya radar iracyakuramo</string>

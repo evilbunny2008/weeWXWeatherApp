@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">बारे</string>
     <string name="about_app">एपको बारेमा</string>
     <string name="afternoon_alert">तापक्रम %1$.1f°%2$s %3$.1f°%2$s को तपाईंको सीमामा झरेको छ</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">तपाईंले अधिसूचना अनुमति दुई पटक अस्वीकार गर्नुभएकोले, तपाईंले यसलाई सेटिङहरूमा सक्षम गर्न आवश्यक छ, सेटिङहरू सुरु गर्नुहोस्?</string>
     <string name="ok">ठीक छ</string>
     <string name="please_wait_verify_url">हामीले तपाईंले पेस गर्नुभएको URL प्रमाणीकरण गर्दा कृपया पर्खनुहोस्।</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">फाइलमा %1$d त्रुटिहरू फेला परेका थिए, %3$s मा फेला परेको %2$s फाइल हेर्नुहोस् वा विवरणहरूको लागि %4$s लगहरू हेर्नुहोस्</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s फाइलमा %1$d त्रुटि फेला पर्‍यो, %3$s मा फेला परेको %2$s फाइल हेर्नुहोस् वा विवरणहरूको लागि %4$s लगहरू हेर्नुहोस्</item>
+        <item quantity="other">%2$s फाइलमा %1$d त्रुटिहरू फेला परेका थिए, %3$s मा फेला परेको %2$s फाइल हेर्नुहोस् वा विवरणहरूको लागि %4$s लगहरू हेर्नुहोस्</item>
+    </plurals>
     <string name="radar">राडार</string>
     <string name="radar_download_failed">राडार छवि डाउनलोड गर्न असफल भयो</string>
     <string name="radar_still_downloading">राडार छवि अझै डाउनलोड भइरहेको छ।</string>

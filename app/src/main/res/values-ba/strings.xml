@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Турала</string>
     <string name="about_app">App тураһында</string>
     <string name="afternoon_alert">Температура %1$.1f°%2$s һеҙҙең сиккә тиклем төштө %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Һеҙ ике тапҡыр хәбәр итеү рөхсәтенән баш тартҡандан бирле, һеҙгә уны урынына параметрҙарҙа индереү кәрәк, параметрҙарҙы эшләтеп ебәрергә?</string>
     <string name="ok">Ярар</string>
     <string name="please_wait_verify_url">Зинһар, көтөгөҙ, ә беҙ һеҙ тапшырған URL-адресты раҫлайбыҙ</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">%1$d хаталар асыҡланды %2$s файлында, ҡарау %2$s файл табылған %3$s йәки ҡарау %4$s журналдар өсөн ентекле мәғлүмәт</string>
+    <plurals name="processing_errors">
+        <item quantity="few">%1$d хаталар асыҡланды %2$s файлында, ҡарау %2$s файл табылған %3$s йәки ҡарау %4$s журналдар өсөн ентекле мәғлүмәт</item>
+        <item quantity="many">%1$d хаталар асыҡланды %2$s файлында, ҡарау %2$s файл табылған %3$s йәки ҡарау %4$s журналдар өсөн ентекле мәғлүмәт</item>
+        <item quantity="one">%1$d хатаһы асыҡланды %2$s файлында, ҡарау %2$s файл табылған %3$s йәки ҡарау %4$s журналдар өсөн ентекле мәғлүмәт</item>
+        <item quantity="other">%1$d хаталар асыҡланды %2$s файлында, ҡарау %2$s файл табылған %3$s йәки ҡарау %4$s журналдар өсөн ентекле мәғлүмәт</item>
+        <item quantity="two">%1$d хаталар асыҡланды %2$s файлында, ҡарау %2$s файл табылған %3$s йәки ҡарау %4$s журналдар өсөн ентекле мәғлүмәт</item>
+        <item quantity="zero">%1$d хаталар асыҡланды %2$s файлында, ҡарау %2$s файл табылған %3$s йәки ҡарау %4$s журналдар өсөн ентекле мәғлүмәт</item>
+    </plurals>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Радар һүрәтен скачать итеү мөмкинлеге булмаған</string>
     <string name="radar_still_downloading">Радар һүрәте һаман да скачать</string>
@@ -130,7 +137,7 @@
     <string name="use_exact_alarm">Теүәл яңыртыу ваҡыты ҡулланыу</string>
     <string name="wasnt_able_to_connect_custom_url">Ҡулланыусы URL-адрестан тоташтырыу йәки скачать мөмкин түгел ине</string>
     <string name="wasnt_able_to_connect_forecast">Прогнозды тоташтыра йәки скачать итә алманы</string>
-    <string name="wasnt_able_to_connect_or_download">%1$s-ты %2$s-тан тоташтыра йәки скачать итә алманы</string>
+    <string name="wasnt_able_to_connect_or_download">%1$s ты %2$s тан тоташтыра йәки скачать итә алманы</string>
     <string name="wasnt_able_to_connect_radar_image">Радар тоташтырыу йәки скачать мөмкин түгел ине радар= һүрәт интернеттан</string>
     <string name="wasnt_able_to_connect_settings">Һеҙҙең серверҙан параметрҙарҙы тоташтыра йәки скачать итә алманы</string>
     <string name="wasnt_able_to_connect_webcam_url">Һеҙҙең серверҙан веб-камера һүрәтен тоташтыра йәки скачать итә алманы</string>

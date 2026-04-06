@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">關於</string>
     <string name="about_app">關於 App</string>
     <string name="afternoon_alert">溫度 %1$.1f°%2$s 已經降到你嘅極限 %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">由於你拒絕咗兩次通知權限，你需要喺設定入面啟用佢，而唔係啟動設定？</string>
     <string name="ok">得</string>
     <string name="please_wait_verify_url">請等我哋驗證你提交嘅網址嘅時候。</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">喺 %2$s 檔案入面偵測到 %1$d 啲錯誤，睇吓喺 %3$s 搵到嘅 %2$s 檔案，或者睇吓 %4$s 記錄嚟了解詳情</string>
+    <plurals name="processing_errors">
+        <item quantity="few">喺 %2$s 檔案入面偵測到 %1$d 啲錯誤，睇吓喺 %3$s 搵到嘅 %2$s 檔案，或者睇吓 %4$s 記錄嚟了解詳情</item>
+        <item quantity="many">喺 %2$s 檔案入面偵測到 %1$d 啲錯誤，睇吓喺 %3$s 搵到嘅 %2$s 檔案，或者睇吓 %4$s 記錄嚟了解詳情</item>
+        <item quantity="one">喺 %2$s 檔案入面偵測到有 %1$d 啲錯誤，睇吓喺 %3$s 搵到嘅 %2$s 檔案，或者睇吓 %4$s 記錄嚟了解詳情</item>
+        <item quantity="other">喺 %2$s 檔案入面偵測到 %1$d 啲錯誤，睇吓喺 %3$s 搵到嘅 %2$s 檔案，或者睇吓 %4$s 記錄嚟了解詳情</item>
+        <item quantity="two">喺 %2$s 檔案入面偵測到 %1$d 啲錯誤，睇吓喺 %3$s 搵到嘅 %2$s 檔案，或者睇吓 %4$s 記錄嚟了解詳情</item>
+        <item quantity="zero">喺 %2$s 檔案入面偵測到 %1$d 啲錯誤，睇吓喺 %3$s 搵到嘅 %2$s 檔案，或者睇吓 %4$s 記錄嚟了解詳情</item>
+    </plurals>
     <string name="radar">雷達</string>
     <string name="radar_download_failed">未能下載雷達圖片</string>
     <string name="radar_still_downloading">雷達圖片仲係下載緊。</string>

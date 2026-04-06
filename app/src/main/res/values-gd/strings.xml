@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Mu dheidhinn</string>
     <string name="about_app">Mu dheidhinn an App</string>
     <string name="afternoon_alert">Tha an teòthachd %1$.1f°%2$s air tuiteam chun ìre as àirde de %3$.1f°%2$s</string>
@@ -72,7 +72,12 @@
     <string name="notifications_needed2">Leis gun do dhiùlt thu an cead fios dà uair, feumaidh tu a chomasachadh ann an roghainnean na àite, cuir air bhog roghainnean?</string>
     <string name="ok">Ceart gu leòr</string>
     <string name="please_wait_verify_url">Fuirich ort fhad \'s a dhearbhas sinn an URL a chuir thu a-steach</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Chaidh %1$d mearachdan a lorg san fhaidhle %2$s, seall am faidhle %2$s a chaidh a lorg aig %3$s no seall logaichean %4$s airson mion-fhiosrachadh</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Chaidh %1$d mearachdan a lorg san fhaidhle %2$s, seall am faidhle %2$s a chaidh a lorg aig %3$s no seall logaichean %4$s airson mion-fhiosrachadh</item>
+        <item quantity="one">Chaidh mearachd %1$d a lorg san fhaidhle %2$s, seall am faidhle %2$s a chaidh a lorg aig %3$s no seall logaichean %4$s airson mion-fhiosrachadh</item>
+        <item quantity="other">Chaidh %1$d mearachdan a lorg san fhaidhle %2$s, seall am faidhle %2$s a chaidh a lorg aig %3$s no seall logaichean %4$s airson mion-fhiosrachadh</item>
+        <item quantity="two">Chaidh %1$d mearachdan a lorg san fhaidhle %2$s, seall am faidhle %2$s a chaidh a lorg aig %3$s no seall logaichean %4$s airson mion-fhiosrachadh</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Dh\'fhàillig luchdadh a-nuas an dealbh radar</string>
     <string name="radar_still_downloading">Tha an dealbh radar ga luchdachadh sìos</string>

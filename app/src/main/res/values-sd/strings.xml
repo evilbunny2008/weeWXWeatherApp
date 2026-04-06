@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">بابت</string>
     <string name="about_app">ايپ بابت</string>
     <string name="afternoon_alert">گرمي پد %1$.1f°%2$s توهان جي %3$.1f°%2$s جي حد تائين گهٽجي ويو آهي</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">جتان توھان نوٽيفڪيشن جي اجازت کي ٻه ڀيرا رد ڪيو، توھان کي ان کي سيٽنگن ۾ فعال ڪرڻ جي ضرورت آھي، سيٽنگون لانچ ڪريو؟</string>
     <string name="ok">ٺيڪ</string>
     <string name="please_wait_verify_url">مھرباني ڪري انتظار ڪريو جيستائين اسان توھان جي ڏنل URL جي تصديق ڪريون</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">فائل ۾ %1$d غلطيون مليون، %3$s تي مليل %2$s فائل ڏسو يا تفصيل لاءِ %4$s لاگ ڏسو</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s فائل ۾ %1$d نقص مليا، %3$s تي مليل %2$s فائل ڏسو يا تفصيل لاءِ %4$s لاگ ڏسو</item>
+        <item quantity="other">%2$s فائل ۾ %1$d غلطيون مليون، %3$s تي مليل %2$s فائل ڏسو يا تفصيل لاءِ %4$s لاگ ڏسو</item>
+    </plurals>
     <string name="radar">ريڊار</string>
     <string name="radar_download_failed">رادار تصوير ڊائون لوڊ ڪرڻ ۾ ناڪام ٿيو</string>
     <string name="radar_still_downloading">رادار تصوير اڃا تائين ڊائون لوڊ ڪري رهيو آهي</string>

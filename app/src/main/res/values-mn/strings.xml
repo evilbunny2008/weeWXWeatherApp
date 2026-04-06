@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Тухай</string>
     <string name="about_app">Апп-ийн тухай</string>
     <string name="afternoon_alert">Температур %1$.1f°%2$s таны хязгаар болох %3$.1f°%2$s хүртэл буурсан байна</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Өдөр бүр</string>
     <string name="interval_hourly">Цаг тутамд</string>
     <string name="invalid_update_interval">Шинэчлэх интервал буруу байна, тохиргоог шинэчлэх, дараа нь дахин оролдоно уу</string>
-    <string name="json_formatted_data">%1$s-д одоо %3$s серверээс %2$s өгөгдлийн файл шаардлагатай байгаа тул та энэ программ зөв ажиллахаас өмнө %4$s-г шинэчилж, %5$s файлыг шинэчлэх хэрэгтэй. %6$s дээр илүү дэлгэрэнгүй мэдээлэл авах бол Ok дарна уу</string>
+    <string name="json_formatted_data">%1$s д одоо %3$s серверээс %2$s өгөгдлийн файл шаардлагатай байгаа тул та энэ программ зөв ажиллахаас өмнө %4$s г шинэчилж, %5$s файлыг шинэчлэх хэрэгтэй. %6$s дээр илүү дэлгэрэнгүй мэдээлэл авах бол Ok дарна уу</string>
     <string name="last_month_stats">Өнгөрсөн сарын статистик</string>
     <string name="last_year_stats">Өнгөрсөн жилийн статистик</string>
     <string name="light_theme">Хөнгөн сэдэв</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">Та мэдэгдлийн зөвшөөрлөөс хоёр удаа татгалзсан тул тохиргооноос үүнийг идэвхжүүлэх шаардлагатай. Тохиргоог эхлүүлэх үү?</string>
     <string name="ok">Бас</string>
     <string name="please_wait_verify_url">Бид таны оруулсан URL-г шалгаж байгаарай</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">файлд %1$d алдаа илэрсэн, %3$s дээрээс олсон %2$s файлыг харах эсвэл %4$s логийг дэлгэрэнгүй үзэх боломжтой</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s файлд %1$d алдаа илэрсэн, %3$s дээрээс олсон %2$s файлыг харах эсвэл %4$s логийг дэлгэрэнгүй үзэх боломжтой</item>
+        <item quantity="other">%2$s файлд %1$d алдаа илэрсэн, %3$s дээрээс олсон %2$s файлыг харах эсвэл %4$s логийг дэлгэрэнгүй үзэх боломжтой</item>
+    </plurals>
     <string name="radar">Радиолокац</string>
     <string name="radar_download_failed">Радарын зургийг татаж авч чадсангүй</string>
     <string name="radar_still_downloading">RADAR зураг татаж байгаа хэвээр байна</string>
@@ -82,8 +85,8 @@
     <string name="rain_in_inches">Инчээр бороо орох уу?</string>
     <string name="rainfall_alert">Хур тунадасны сэрэмжлүүлэг?</string>
     <string name="rainfall_alert_desc">Хур тунадасны хэмжээ таны тогтоосон хязгаарт хүрэхэд өдөр бүр мэдэгдэнэ</string>
-    <string name="rainfall_alert_imperial">Хур тунадас %1$.2f%2$s таны %3$.2f%2$s-н хязгаарт таарч байна</string>
-    <string name="rainfall_alert_metric">Хур тунадас %1$.1f%2$s таны %3$.1f%2$s-н хязгаарт таарч байна</string>
+    <string name="rainfall_alert_imperial">Хур тунадас %1$.2f%2$s таны %3$.2f%2$s хязгаарт таарч байна</string>
+    <string name="rainfall_alert_metric">Хур тунадас %1$.1f%2$s таны %3$.1f%2$s хязгаарт таарч байна</string>
     <string name="rainfall_alert_str">Хур тунадасны сэрэмжлүүлэг</string>
     <string name="rainfall_limit">Хур тунадасны хязгаар</string>
     <string name="rainrate_alert_imperial_severe">Сүүлийн %2$d %3$s %1$.2fin борооны хэмжээ \'Хүнд\' түвшинд хүрсэн байна</string>
@@ -130,11 +133,11 @@
     <string name="use_exact_alarm">Шинэчлэлтийн цагийг ашиглана уу</string>
     <string name="wasnt_able_to_connect_custom_url">Заасан захиалгын URL-ээс холбогдож, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_forecast">Урьдчилсан мэдээг холбож, татаж авах боломжгүй байсан</string>
-    <string name="wasnt_able_to_connect_or_download">%2$s-с %1$s-г холбож эсвэл татаж чадсангүй</string>
+    <string name="wasnt_able_to_connect_or_download">%2$s с %1$s г холбож эсвэл татаж чадсангүй</string>
     <string name="wasnt_able_to_connect_radar_image">Интернетээс холбогдож, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_settings">Таны серверээс тохиргоог холбож, татаж авах боломжгүй байсан</string>
     <string name="wasnt_able_to_connect_webcam_url">Таны серверээс вэбкамик зургийг холбох, татаж авах боломжгүй байсан</string>
-    <string name="wasnt_able_to_download_url_is_blank">URL хоосон байсан тул %1$s-г татаж авч чадсангүй</string>
+    <string name="wasnt_able_to_download_url_is_blank">URL хоосон байсан тул %1$s г татаж авч чадсангүй</string>
     <string name="weather2">Цаг агаар</string>
     <string name="webcam2">Сокктер</string>
     <string name="webcam_refresh_time">Вэбкамерыг сэргээх цаг</string>

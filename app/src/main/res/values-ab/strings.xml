@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Аоӷан</string>
     <string name="about_app">Апрограмма иазкны</string>
     <string name="afternoon_alert">Аԥхарра %1$.1f°%2$s еиҵахеит уҳәаа %3$.1f°%2$s</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Ҩынтә ардырра азин мап ацәышәкит, уи аҭыԥан архиарақәа рҿы аус арутәуп, архиарақәа ралагара?</string>
     <string name="ok">Ибзиоуп</string>
     <string name="please_wait_verify_url">Ишәышьҭыз URL ҳгәаҭо аамҭазы шәазыԥшыз</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Иҟан %1$d агха ԥшаан %2$s афаил аҟны, %2$s афаил шәахәаԥш %3$s аҟны иԥшааз мамзаргьы шәахәаԥш %4$s ажурналқәа адеталқәа рзы</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Иҟан %1$d агха ԥшаан %2$s афаил аҟны, иԥшаатәуп %2$s афаил %3$s аҟны иԥшааз мамзаргьы иахәаԥштәуп %4$s ажурналқәа адеталқәа рзы</item>
+        <item quantity="many">Иҟан %1$d агха ԥшаан %2$s афаил аҟны, иԥшаатәуп %2$s афаил %3$s аҟны иԥшааз мамзаргьы иахәаԥштәуп %4$s ажурналқәа адеталқәа рзы</item>
+        <item quantity="one">%2$s афаил аҟны %1$d агха ԥшаан, %3$s аҟны иԥшааз афаил %2$s мамзаргьы %4$s ажәабжьҭаҩрақәа шәахәаԥш еиҳаны адыррақәа рзы</item>
+        <item quantity="other">Иҟан %1$d агха ԥшаан %2$s афаил аҟны, иԥшаатәуп %2$s афаил %3$s аҟны иԥшааз мамзаргьы иахәаԥштәуп %4$s ажурналқәа адеталқәа рзы</item>
+        <item quantity="two">Иҟан %1$d агха ԥшаан %2$s афаил аҟны, иԥшаатәуп %2$s афаил %3$s аҟны иԥшааз мамзаргьы иахәаԥштәуп %4$s ажурналқәа адеталқәа рзы</item>
+        <item quantity="zero">Иҟан %1$d агха ԥшаан %2$s афаил аҟны, иԥшаатәуп %2$s афаил %3$s аҟны иԥшааз мамзаргьы иахәаԥштәуп %4$s ажурналқәа адеталқәа рзы</item>
+    </plurals>
     <string name="radar">Арадар</string>
     <string name="radar_download_failed">Арадартә сахьа ахәыҵагалатәӡам</string>
     <string name="radar_still_downloading">Арадартә сахьа уажәгьы ихәыҵгоит</string>

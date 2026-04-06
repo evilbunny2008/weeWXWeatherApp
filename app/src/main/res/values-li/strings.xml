@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Euver</string>
     <string name="about_app">Euver de App</string>
     <string name="afternoon_alert">De temperatuur %1$.1f°%2$s is gedaald tot eur limiet vaan %3$.1f°%2$s</string>
@@ -29,9 +29,9 @@
     <string name="every_30_seconds">Elke 30 seconde</string>
     <string name="every_60_seconds">Elke 60 seconde</string>
     <string name="every_hour">Edere Our</string>
-    <string name="failed_to_merge_weather_data">De %1$s-gegevens neet samevoge mit de %2$s-gegevens</string>
+    <string name="failed_to_merge_weather_data">De %1$s gegevens neet samevoge mit de %2$s gegevens</string>
     <string name="failed_to_process_forecast_data">Vergeleke um veurspelde gegeves te verwèrke</string>
-    <string name="failed_to_process_weather_data">De weergegevens vaan eur server, in \'t biezoonder de %1$s-gegevens, is neet good verwerk</string>
+    <string name="failed_to_process_weather_data">De weergegevens vaan eur server, in \'t biezoonder de %1$s gegevens, is neet good verwerk</string>
     <string name="fgColour">Widget Voorgrond Kleur Kies</string>
     <string name="fileURL">Vul de URL in op uw instellinge.txt</string>
     <string name="force_dark_mode">Force Duusteremodus</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Daagelijks</string>
     <string name="interval_hourly">Per oor</string>
     <string name="invalid_update_interval">Update interval is ongeldig, update instellinge en probeer vervolgens opnuuj</string>
-    <string name="json_formatted_data">De %1$s heet noe un %2$s-gegevensbestand vaan de %3$s-server nuudig, geer mot de %4$s en ut %5$s-bestand update veurtot dees app good functioneert. Klik op Ok veur mie informatie euver %6$s</string>
+    <string name="json_formatted_data">De %1$s heet noe un %2$s gegevensbestand vaan de %3$s server nuudig, geer mot de %4$s en ut %5$s bestand update veurtot dees app good functioneert. Klik op Ok veur mie informatie euver %6$s</string>
     <string name="last_month_stats">Afgeloupe Month\'s Statistiek</string>
     <string name="last_year_stats">Afgeloupe jaor</string>
     <string name="light_theme">Liecht Thema</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Umtot geej de meldingstoestumming twie kier heet aafgeweze, mot geer \'t in plaats daovan in de insjtellinge insjakele, insjtellinge starte?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Wach aub terwijl v\'r de URL verifiëre die u heet ingediend</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">D\'r zien %1$d foute gedetecteerd in \'t %2$s-bestand, bekiek \'t %2$s-bestand dat is gevoonde op %3$s of bekiek de %4$s-logs veur de details</string>
+    <plurals name="processing_errors">
+        <item quantity="few">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
+        <item quantity="many">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
+        <item quantity="one">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
+        <item quantity="other">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
+        <item quantity="two">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
+        <item quantity="zero">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
+    </plurals>
     <string name="radar">Radar</string>
     <string name="radar_download_failed">Verwaarloos um de radar-afbeelding te downloade</string>
     <string name="radar_still_downloading">Radar-afbeelding download nog steeds</string>

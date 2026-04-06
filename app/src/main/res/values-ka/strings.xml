@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">შესახებ</string>
     <string name="about_app">აპლიკაციის შესახებ</string>
     <string name="afternoon_alert">ტემპერატურა %1$.1f°%2$s დაეცა თქვენს ლიმიტამდე %3$.1f°%2$s</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">ყოველდღიური</string>
     <string name="interval_hourly">საათობრივი</string>
     <string name="invalid_update_interval">განახლების ინტერვალი არასწორია, განაახლეთ პარამეტრები და შემდეგ სცადეთ ხელახლა</string>
-    <string name="json_formatted_data">%1$s ახლა საჭიროებს %2$s მონაცემთა ფაილს %3$s სერვერიდან, თქვენ უნდა განაახლოთ %4$s და განაახლოთ %5$s ფაილი, სანამ ეს აპი სწორად იმუშავებს. დააწკაპუნეთ OK დამატებითი ინფორმაციისთვის %6$s-ზე</string>
+    <string name="json_formatted_data">%1$s ახლა საჭიროებს %2$s მონაცემთა ფაილს %3$s სერვერიდან, თქვენ უნდა განაახლოთ %4$s და განაახლოთ %5$s ფაილი, სანამ ეს აპი სწორად იმუშავებს. დააწკაპუნეთ OK დამატებითი ინფორმაციისთვის %6$s ზე</string>
     <string name="last_month_stats">გასული თვის სტატისტიკა</string>
     <string name="last_year_stats">გასული წლის სტატისტიკა</string>
     <string name="light_theme">მსუბუქი თემა</string>
@@ -72,7 +72,10 @@
     <string name="notifications_needed2">მას შემდეგ, რაც თქვენ ორჯერ თქვით შეტყობინების ნებართვა, უნდა ჩართოთ ის პარამეტრებში, გაუშვათ პარამეტრები?</string>
     <string name="ok">კარგი</string>
     <string name="please_wait_verify_url">გთხოვთ, დაელოდოთ სანამ ჩვენ დავადასტურებთ თქვენ მიერ გაგზავნილ URL-ს</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">ფაილში აღმოჩენილია %1$d შეცდომა, იხილეთ %2$s ფაილი ნაპოვნი %3$s-ზე ან ნახეთ %4$s ჟურნალები დეტალებისთვის</string>
+    <plurals name="processing_errors">
+        <item quantity="one">%2$s ფაილში აღმოჩენილია %1$d შეცდომა, იხილეთ %2$s ფაილი ნაპოვნი %3$s ზე ან ნახეთ %4$s ჟურნალები დეტალებისთვის</item>
+        <item quantity="other">%2$s ფაილში აღმოჩენილია %1$d შეცდომა, იხილეთ %2$s ფაილი ნაპოვნი %3$s ზე ან ნახეთ %4$s ჟურნალები დეტალებისთვის</item>
+    </plurals>
     <string name="radar">რადარი</string>
     <string name="radar_download_failed">რადარის სურათის ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="radar_still_downloading">რადარის სურათი ჯერ კიდევ იტვირთება</string>
@@ -86,7 +89,7 @@
     <string name="rainfall_alert_metric">ნალექი %1$.1f%2$s დაემთხვა თქვენს %3$.1f%2$s ლიმიტს</string>
     <string name="rainfall_alert_str">წვიმის გაფრთხილება</string>
     <string name="rainfall_limit">ნალექის ლიმიტი</string>
-    <string name="rainrate_alert_imperial_severe">წვიმის მაჩვენებელი %1$.2fin ბოლო %2$d %3$s-ში მიაღწია \'ძლიერ\' დონეს</string>
+    <string name="rainrate_alert_imperial_severe">წვიმის მაჩვენებელი %1$.2fin ბოლო %2$d %3$s ში მიაღწია \'ძლიერ\' დონეს</string>
     <string name="rainrate_alert_imperial_warning">წვიმის %1$.2fin ბოლო %2$d %3$s მიაღწია \'გაფრთხილების\' დონეს</string>
     <string name="rainrate_alert_imperial_watch">წვიმის %1$.2fin ბოლო %2$d %3$s მიაღწია \'ყურების\' დონეს</string>
     <string name="rainrate_alert_metric_severe">წვიმის სიხშირე %1$.1fmm ბოლო %2$d %3$s მიაღწია \'მკაცრ\' დონეს</string>
@@ -130,11 +133,11 @@
     <string name="use_exact_alarm">გამოიყენეთ განახლების ზუსტი დრო</string>
     <string name="wasnt_able_to_connect_custom_url">მითითებული მორგებული URL-დან დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="wasnt_able_to_connect_forecast">პროგნოზის დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
-    <string name="wasnt_able_to_connect_or_download">%1$s %2$s-დან დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
+    <string name="wasnt_able_to_connect_or_download">%1$s %2$s დან დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="wasnt_able_to_connect_radar_image">ვერ მოხერხდა რადარის= სურათის დაკავშირება ან ჩამოტვირთვა ინტერნეტიდან</string>
     <string name="wasnt_able_to_connect_settings">თქვენი სერვერიდან პარამეტრების დაკავშირება ან ჩამოტვირთვა ვერ მოხერხდა</string>
     <string name="wasnt_able_to_connect_webcam_url">ვერ მოხერხდა ვებკამერის სურათის დაკავშირება ან ჩამოტვირთვა თქვენი სერვერიდან</string>
-    <string name="wasnt_able_to_download_url_is_blank">%1$s-ის ჩამოტვირთვა ვერ მოხერხდა, რადგან URL ცარიელი იყო</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s ის ჩამოტვირთვა ვერ მოხერხდა, რადგან URL ცარიელი იყო</string>
     <string name="weather2">ამინდი</string>
     <string name="webcam2">ვებკამერა</string>
     <string name="webcam_refresh_time">ვებკამერის განახლების დრო</string>

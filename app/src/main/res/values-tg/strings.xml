@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="about">Дар атрофи</string>
     <string name="about_app">Дар бораи барнома</string>
     <string name="afternoon_alert">Ҳарорат %1$.1f°%2$s то ҳадди %3$.1f°%2$s паст шуд</string>
@@ -53,7 +53,7 @@
     <string name="interval_daily">Ҳар рӯз</string>
     <string name="interval_hourly">Соатӣ</string>
     <string name="invalid_update_interval">Фосилаи навсозӣ нодуруст аст, танзимоти навсозӣ ва сипас такрор кунед</string>
-    <string name="json_formatted_data">Ҳоло %1$s файли маълумотии %2$s-ро аз сервери %3$s талаб мекунад, шумо бояд %4$s-ро навсозӣ кунед ва файли %5$s-ро пеш аз он ки ин барнома дуруст кор кунад, навсозӣ кунед. Барои тафсилоти бештар дар %6$s Хуб клик кунед</string>
+    <string name="json_formatted_data">Ҳоло %1$s файли маълумотии %2$s ро аз сервери %3$s талаб мекунад, шумо бояд %4$s ро навсозӣ кунед ва файли %5$s ро пеш аз он ки ин барнома дуруст кор кунад, навсозӣ кунед. Барои тафсилоти бештар дар %6$s Хуб клик кунед</string>
     <string name="last_month_stats">Омори моҳи гузашта</string>
     <string name="last_year_stats">Омори соли гузашта</string>
     <string name="light_theme">Мавзӯи сабук</string>
@@ -72,7 +72,14 @@
     <string name="notifications_needed2">Азбаски шумо ду маротиба иҷозати огоҳиномаро рад кардед, шумо бояд онро дар танзимот фаъол созед, танзимотро оғоз кунед?</string>
     <string name="ok">Дуруст</string>
     <string name="please_wait_verify_url">Лутфан мунтазир шавед, агар мо URL-ро пешниҳод мекунем</string>
-    <string name="processing_errors" tools:ignore="PluralsCandidate">Дар файли %2$s %1$d хато ошкор карда шуд, файли %2$s-ро дар %3$s бубинед ё барои тафсилот сабтҳои %4$s-ро бубинед</string>
+    <plurals name="processing_errors">
+        <item quantity="few">Дар файли %2$s %1$d хато ошкор карда шуд, файли %2$s ро дар %3$s бубинед ё барои тафсилот сабтҳои %4$s ро бубинед</item>
+        <item quantity="many">Дар файли %2$s %1$d хато ошкор карда шуд, файли %2$s ро дар %3$s бубинед ё барои тафсилот сабтҳои %4$s ро бубинед</item>
+        <item quantity="one">Дар файли %2$s %1$d хато ошкор карда шуд, файли %2$s ро дар %3$s бубинед ё барои тафсилот сабтҳои %4$s ро бубинед</item>
+        <item quantity="other">Дар файли %2$s %1$d хато ошкор карда шуд, файли %2$s ро дар %3$s бубинед ё барои тафсилот сабтҳои %4$s ро бубинед</item>
+        <item quantity="two">Дар файли %2$s %1$d хато ошкор карда шуд, файли %2$s ро дар %3$s бубинед ё барои тафсилот сабтҳои %4$s ро бубинед</item>
+        <item quantity="zero">Дар файли %2$s %1$d хато ошкор карда шуд, файли %2$s ро дар %3$s бубинед ё барои тафсилот сабтҳои %4$s ро бубинед</item>
+    </plurals>
     <string name="radar">Радар</string>
     <string name="radar_download_failed">Тасвири радариро зеркашӣ кард</string>
     <string name="radar_still_downloading">Тасвири радаркорӣ ҳоло ҳам зеркашӣ аст</string>
@@ -130,11 +137,11 @@
     <string name="use_exact_alarm">Вақтҳои дақиқро истифода баред</string>
     <string name="wasnt_able_to_connect_custom_url">Наметавонад аз URL-и фармоишӣ пайваст ё зеркашӣ кунад</string>
     <string name="wasnt_able_to_connect_forecast">Наметавонад пешгӯӣ ё зеркашӣ кунад</string>
-    <string name="wasnt_able_to_connect_or_download">%1$s-ро аз %2$s пайваст кардан ё зеркашӣ карда натавонист</string>
+    <string name="wasnt_able_to_connect_or_download">%1$s ро аз %2$s пайваст кардан ё зеркашӣ карда натавонист</string>
     <string name="wasnt_able_to_connect_radar_image">Натавонистанд Радар = Тасвирро аз Интернет</string>
     <string name="wasnt_able_to_connect_settings">Наметавонад каналҳоро аз сервери худ зеркашӣ кунад ё зеркашӣ кунад</string>
     <string name="wasnt_able_to_connect_webcam_url">Натавонист, ки тасвири веб-камераро аз сервери худ зеркашӣ кунад ё зеркашӣ кунад</string>
-    <string name="wasnt_able_to_download_url_is_blank">%1$s-ро зеркашӣ карда натавонист, зеро URL холӣ буд</string>
+    <string name="wasnt_able_to_download_url_is_blank">%1$s ро зеркашӣ карда натавонист, зеро URL холӣ буд</string>
     <string name="weather2">Обу ҳаво</string>
     <string name="webcam2">Вебкам</string>
     <string name="webcam_refresh_time">Вақти навсозии веб-камера</string>
