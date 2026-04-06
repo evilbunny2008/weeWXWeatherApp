@@ -122,4 +122,27 @@
     <string name="temperature_alert_str">Fakatokanga Mafana</string>
     <string name="this_months_stats">Ko e Sitetisitika \'o e Mahina ni</string>
     <string name="this_year_stats">Ko e Sitetisitika \'o e Ta\'u ni</string>
+    <string name="today">Ahó ni</string>
+    <string name="todayStats">Ko e Sitetisitika \'o e \'aho ni</string>
+    <string name="unknown_error_occurred">Na\'e hoko ha fehalaaki ta\'e\'iloa</string>
+    <string name="update_over_wifi">Fakafo\'ou pe \'i he Wi-Fi?</string>
+    <string name="update_set_to_manual_but_no_content_cached">Seti ki he ngaahi fakafo\'ou tohi, ka \'oku te\'eki ke \'i ai ha me\'a \'oku cached</string>
+    <string name="update_while_running">Fakafo\'ou lolotonga \'oku lele</string>
+    <string name="url_was_default_or_empty">Na\'e seti \'a e URL ki he default pe na\'e \'ata\'ataa</string>
+    <string name="use_exact_alarm">Faka\'aonga\'i \'a e ngaahi taimi fakafo\'ou pau</string>
+    <string name="wasnt_able_to_connect_custom_url">Na\'e \'ikai lava ke fehokotaki pe download mei he URL angamaheni kuo fakapapau\'i</string>
+    <string name="wasnt_able_to_connect_forecast">Na\'e \'ikai lava ke fehokotaki pe download \'a e vavalo</string>
+    <string name="wasnt_able_to_connect_or_download">Na\'e \'ikai lava ke fehokotaki pe download \'a e %1$s mei he %2$s</string>
+    <string name="wasnt_able_to_connect_radar_image">Na\'e \'ikai lava ke fehokotaki pe download \'a e radar= \'imisi mei he \'initaneti</string>
+    <string name="wasnt_able_to_connect_settings">Na\'e \'ikai lava ke fehokotaki pe download \'a e ngaahi settings mei ho\'o server</string>
+    <string name="wasnt_able_to_connect_webcam_url">Na\'e \'ikai lava ke fakafehokotaki pe download ha \'imisi \'o e webcam mei ho\'o server</string>
+    <string name="wasnt_able_to_download_url_is_blank">Na\'e \'ikai lava ke download \'a e %1$s koe\'uhi na\'e \'ata\'ataa \'a e URL</string>
+    <string name="weather2">Tu\'u \'a e \'eá</string>
+    <string name="webcam2">Uepi</string>
+    <string name="webcam_refresh_time">Taimi Fakafo\'ou \'o e Webcam</string>
+    <string name="webcam_still_downloading">\'Oku kei download \'a e \'imisi \'o e Webcam</string>
+    <string name="webcam_url_url_not_set">\'Oku \'ikai ke seti \'a e URL \'o e Webcam pe \'oku \'ata\'ataa</string>
+    <string name="widget_theme">Kaveinga Widget</string>
+    <string name="wifi_not_available">Na\'e mei fakafo\'ou ka \'oku \'ikai ke ma\'u \'a e fehokotaki\'anga Wi-Fi</string>
+    <string name="yesterdayStats">Ko e Sitetisitika \'o e \'aneafi</string>
 </resources>
