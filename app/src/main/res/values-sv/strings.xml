@@ -95,11 +95,11 @@
     <string name="rainrate_alert_str">Regnhastighetsvarning</string>
     <string name="rainrate_alert_warning">Varning för regnhastighetsvarningar?</string>
     <string name="rainrate_alert_warning_desc">Varnar om regnhastigheten överskrider varningsgränsen baserat på nederbördens varaktighet</string>
-    <string name="rainrate_alert_warning_notification">Regnhastigheten på %1$s under de senaste %2$d %3$s har nått \'Varning\'-nivån</string>
+    <string name="rainrate_alert_warning_notification">Regnhastigheten på %1$s under de senaste %2$d %3$s har nått \'Varning\' nivån</string>
     <string name="rainrate_alert_warning_str">Varning Regnhastighetsvarning</string>
     <string name="rainrate_alert_watch">Titta på Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Varnar om regnhastigheten överskrider bevakningsgränsen baserat på nederbördens varaktighet</string>
-    <string name="rainrate_alert_watch_notification">Regnhastigheten på %1$s under de senaste %2$d %3$s har nått \'Titta\'-nivån</string>
+    <string name="rainrate_alert_watch_notification">Regnhastigheten på %1$s under de senaste %2$d %3$s har nått \'Titta\' nivån</string>
     <string name="rainrate_alert_watch_str">Titta på Rainrate Alert</string>
     <string name="refresh_time">Välj Uppdatera tid</string>
     <string name="remove_all_data">Är du säker på att du vill ta bort all data?</string>

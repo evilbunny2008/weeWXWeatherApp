@@ -99,11 +99,11 @@
     <string name="rainrate_alert_str">Regefrequentiewarning</string>
     <string name="rainrate_alert_warning">Waarsjchuwing Regefrequentiewarnings?</string>
     <string name="rainrate_alert_warning_desc">Warnings es de neersnelheid de waarsjuwingsgrens euversjrijf gebaseerd op de duur vaan de neerslag</string>
-    <string name="rainrate_alert_warning_notification">De neersnelheid vaan %1$s in de lètste %2$d %3$s heet \'Waarsjchuwing\'-niveau bereik</string>
+    <string name="rainrate_alert_warning_notification">De neersnelheid vaan %1$s in de lètste %2$d %3$s heet \'Waarsjchuwing\' niveau bereik</string>
     <string name="rainrate_alert_warning_str">Waarsjchuwing Regefrequentiewarning</string>
     <string name="rainrate_alert_watch">Kiek op Regefrequentiewarninge?</string>
     <string name="rainrate_alert_watch_desc">Warnings es de neersnelheid de wachlimiet euversjrijf, gebaseerd op de duur vaan de neerslag</string>
-    <string name="rainrate_alert_watch_notification">De neersnelheid vaan %1$s in de lètste %2$d %3$s heet \'Watch\'-niveau bereik</string>
+    <string name="rainrate_alert_watch_notification">De neersnelheid vaan %1$s in de lètste %2$d %3$s heet \'Watch\' niveau bereik</string>
     <string name="rainrate_alert_watch_str">Kiek nao Regefrequentiewaarsjouwing</string>
     <string name="refresh_time">Kies Herfres tied</string>
     <string name="remove_all_data">Zien jullie zeker dat u alle gegeves wilt verwijdere?</string>

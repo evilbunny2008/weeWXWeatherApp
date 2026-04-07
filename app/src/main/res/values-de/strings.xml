@@ -99,7 +99,7 @@
     <string name="rainrate_alert_warning_str">Warnung: Regenratenalarm</string>
     <string name="rainrate_alert_watch">Regenratenwarnungen ansehen?</string>
     <string name="rainrate_alert_watch_desc">Warnt, wenn die Regenmenge das Überwachungslimit basierend auf der Niederschlagsdauer überschreitet</string>
-    <string name="rainrate_alert_watch_notification">Die Regenrate von %1$s in den letzten %2$d %3$s hat das \'Beobachten\'-Niveau erreicht</string>
+    <string name="rainrate_alert_watch_notification">Die Regenrate von %1$s in den letzten %2$d %3$s hat das \'Beobachten\' Niveau erreicht</string>
     <string name="rainrate_alert_watch_str">Sehen Sie sich den Niederschlagsalarm an</string>
     <string name="refresh_time">Wählen Sie Aktualisierungszeit</string>
     <string name="remove_all_data">Sind Sie sicher, dass Sie alle Daten entfernen möchten?</string>

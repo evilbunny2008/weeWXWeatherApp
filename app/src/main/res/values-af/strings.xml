@@ -95,11 +95,11 @@
     <string name="rainrate_alert_str">Reëntempo waarskuwing</string>
     <string name="rainrate_alert_warning">Waarskuwing Reëntempo-waarskuwings?</string>
     <string name="rainrate_alert_warning_desc">Waarskuwings as die reëntempo die waarskuwingsperk oorskry, gebaseer op reënvalduur</string>
-    <string name="rainrate_alert_warning_notification">Reëntempo van %1$s in die laaste %2$d %3$s het \'Waarskuwing\'-vlak bereik</string>
+    <string name="rainrate_alert_warning_notification">Reëntempo van %1$s in die laaste %2$d %3$s het \'Waarskuwing\' vlak bereik</string>
     <string name="rainrate_alert_warning_str">Waarskuwing Reëntempo waarskuwing</string>
     <string name="rainrate_alert_watch">Kyk na Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Waarskuwings as die reëntempo die waglimiet oorskry op grond van reënvalduur</string>
-    <string name="rainrate_alert_watch_notification">Reëntempo van %1$s in die laaste %2$d %3$s het \'Kyk\'-vlak bereik</string>
+    <string name="rainrate_alert_watch_notification">Reëntempo van %1$s in die laaste %2$d %3$s het \'Kyk\' vlak bereik</string>
     <string name="rainrate_alert_watch_str">Kyk Rainrate Alert</string>
     <string name="refresh_time">Kies Herlaai tyd</string>
     <string name="remove_all_data">Is jy seker jy wil alle data verwyder?</string>

@@ -95,11 +95,11 @@
     <string name="rainrate_alert_str">Rainrate Alert</string>
     <string name="rainrate_alert_warning">Advarsel om regnhastighedsadvarsler?</string>
     <string name="rainrate_alert_warning_desc">Advarer, hvis regnhastigheden overstiger advarselsgrænsen baseret på nedbørens varighed</string>
-    <string name="rainrate_alert_warning_notification">Regnmængde på %1$s i de sidste %2$d %3$s har nået \'Advarsel\'-niveau</string>
+    <string name="rainrate_alert_warning_notification">Regnmængde på %1$s i de sidste %2$d %3$s har nået \'Advarsel\' niveau</string>
     <string name="rainrate_alert_warning_str">Advarsel om regnhastighed</string>
     <string name="rainrate_alert_watch">Se Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Advarer, hvis regnmængden overstiger vagtgrænsen baseret på nedbørsvarighed</string>
-    <string name="rainrate_alert_watch_notification">Regnmængde på %1$s i de sidste %2$d %3$s har nået \'Se\'-niveau</string>
+    <string name="rainrate_alert_watch_notification">Regnmængde på %1$s i de sidste %2$d %3$s har nået \'Se\' niveau</string>
     <string name="rainrate_alert_watch_str">Se Rainrate Alert</string>
     <string name="refresh_time">Vælg Opdateringstid</string>
     <string name="remove_all_data">Er du sikker på, at du vil fjerne alle data?</string>

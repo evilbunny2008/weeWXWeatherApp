@@ -95,11 +95,11 @@
     <string name="rainrate_alert_str">Regensnelheidswaarschuwing</string>
     <string name="rainrate_alert_warning">Waarschuwende regenwaarschuwingen?</string>
     <string name="rainrate_alert_warning_desc">Waarschuwt als de regensnelheid de waarschuwingslimiet overschrijdt op basis van de regenduur</string>
-    <string name="rainrate_alert_warning_notification">Regenpercentage van %1$s in de afgelopen %2$d %3$s heeft het \'Waarschuwing\'-niveau bereikt</string>
+    <string name="rainrate_alert_warning_notification">Regenpercentage van %1$s in de afgelopen %2$d %3$s heeft het \'Waarschuwing\' niveau bereikt</string>
     <string name="rainrate_alert_warning_str">Waarschuwing regensnelheidswaarschuwing</string>
     <string name="rainrate_alert_watch">Regensnelheidswaarschuwingen bekijken?</string>
     <string name="rainrate_alert_watch_desc">Waarschuwt als de regensnelheid de observatielimiet overschrijdt op basis van de regenduur</string>
-    <string name="rainrate_alert_watch_notification">Het regenpercentage van %1$s in de afgelopen %2$d %3$s heeft het \'Bekijk\'-niveau bereikt</string>
+    <string name="rainrate_alert_watch_notification">Het regenpercentage van %1$s in de afgelopen %2$d %3$s heeft het \'Bekijk\' niveau bereikt</string>
     <string name="rainrate_alert_watch_str">Kijk Regenwaarschuwing</string>
     <string name="refresh_time">Kies Vernieuwingstijd</string>
     <string name="remove_all_data">Weet u zeker dat u alle gegevens wilt verwijderen?</string>
