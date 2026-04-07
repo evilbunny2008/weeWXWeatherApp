@@ -288,7 +288,7 @@ public class Stats extends Fragment
 		       weeWXApp.currentSpacer +
 		       "\t\t\t<div class='statsDataCell midleft'>" + str1 + "</div>\n" +
 		       weeWXApp.currentSpacer +
-		       "\t\t\t<div class='statsDataCell midleft'>" + str2 + "</div>\n";
+		       "\t\t\t<div class='statsDataCell midright'>" + str2 + "</div>\n";
 	}
 
 	private String createRowRight()
@@ -298,7 +298,7 @@ public class Stats extends Fragment
 
 	private String createRowRight2(String icon, String str3, String str4)
 	{
-		return "\t\t\t<div class='statsDataCell midright'>" + str3 + "</div>\n" +
+		return "\t\t\t<div class='statsDataCell midleft'>" + str3 + "</div>\n" +
 		       weeWXApp.currentSpacer +
 		       "\t\t\t<div class='statsDataCell midright'>" + str4 + "</div>\n" +
 		       weeWXApp.currentSpacer +
@@ -329,18 +329,29 @@ public class Stats extends Fragment
 		       createRowRight(class2, str3, str4);
 	}
 
-	private String createRowLeft(String class1, int degree, String str1)
+	private String createRowLeft(int degree, String str1, String dateTime)
+	{
+		return "\t\t<div class='statsDataRow'>\n" +
+		       "\t\t\t<div class='statsDataCell left'>" +
+		       cssToSVG("wi-wind-deg", degree) + "</div>\n" +
+		       weeWXApp.currentSpacer +
+		       "\t\t\t<div class='statsDataCell midleft'>" + str1 + "</div>\n" +
+		       weeWXApp.currentSpacer +
+		       "\t\t\t<div class='statsDataCell midright'>" + dateTime + "</div>\n";
+	}
+
+	private String createRowLeft(int degree, String str1)
 	{
 		return "\t\t<div class='statsDataRow'>\n" +
 		       "\t\t\t<div class='statsDataCell left'>" +
 		       cssToSVG("wi-wind-deg", degree) +
 		       "</div>\n\t\t\t" + weeWXApp.currentSpacer +
-		       "\t\t\t<div class='statsDataCell " + class1 + "'>" + str1 + "</div>\n";
+		       "\t\t\t<div class='statsDataCell Wind2'>" + str1 + "</div>\n";
 	}
 
-	private String createRowRight(String class2, String str2)
+	private String createRowRight(String str2)
 	{
-		return "\t\t\t<div class='statsDataCell " + class2 + "'>" +
+		return "\t\t\t<div class='statsDataCell Rain2'>" +
 		       str2 +
 		       "</div>\n\t\t\t" + weeWXApp.currentSpacer +
 		       "\t\t\t<div class='statsDataCell right'>" +
@@ -348,16 +359,16 @@ public class Stats extends Fragment
 		       "</div>\n\t\t</div>\n\n";
 	}
 
-	private String createRow(int degree, String str1, String str2)
+	private String createRow(int degree, String str1, String dateTime, String since, String str2)
 	{
-		return createRowLeft("Wind", degree, str1) +
+		return createRowLeft(degree, str1, dateTime) +
 		       weeWXApp.currentSpacer +
-		       createRowRight("Rain", str2);
+		       createRowRight("wi-umbrella", since, str2);
 	}
 
 	private String createRow2(int degree, String str1, String str2)
 	{
-		return createRowLeft("Wind2", degree, str1) + createRowRight("Rain2", str2);
+		return createRowLeft(degree, str1) + createRowRight(str2);
 	}
 
 	private String createSolarUV(String uv, String uvWhen, String solar, String solarWhen, int timeMode)
@@ -496,24 +507,24 @@ public class Stats extends Fragment
 			sb.append(weeWXApp.currentSpacer);
 
 			if(hasET)
-				sb.append(createRowRight(cssToSVG("evaporation"), "ET", formatString(timeperiod + "_ET_sum") + rainSym));
+				sb.append(createRowRight2(cssToSVG("evaporation"), "ET",
+						formatString(timeperiod + "_ET_sum") + rainSym));
 			else
 				sb.append(createRowRight());
-
 		}
 
-		if(timeMode == 0)
+		if(timeMode == 0 || timeMode == 1)
 			sb.append(createRow(Math.round((float)getJson(timeperiod + "_wind_maxdir", 0f)),
 					formatString(timeperiod + "_wind_max") + speedSym +
-					" " + deg2Str(timeperiod + "_wind_maxdir", timeperiod + "_wind_max") +
-					" " + getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
-					since + " " + rain + rainSym));
+					" " + deg2Str(timeperiod + "_wind_maxdir", timeperiod + "_wind_max"),
+					getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
+					since, rain + rainSym));
 		else
 			sb.append(createRow2(Math.round((float)getJson(timeperiod + "_wind_maxdir", 0f)),
 					formatString(timeperiod + "_wind_max") + speedSym +
 					" " + deg2Str(timeperiod + "_wind_maxdir", timeperiod + "_wind_max") +
 					" " + getDateTimeStr(Math.round((double)getJson(timeperiod + "_wind_maxtime", 0D) * 1_000L), timeMode),
-					since + " " + rain + rainSym));
+					rain + rainSym));
 
 		return sb.toString();
 	}
