@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Dwar</string>
     <string name="about_app">Dwar l-App</string>
-	<string name="afternoon_temp_alert">Twissija ta\' wara nofsinhar?</string>
+    <string name="afternoon_alert">It-temperatura %1$s niżlet sal-limitu tiegħek ta\' %2$s</string>
+    <string name="afternoon_temp_alert">Twissija ta\' wara nofsinhar?</string>
     <string name="all_time_stats">L-Istatistika tal-Ħin Kollha</string>
     <string name="app_theme">Tema App</string>
     <string name="avg">medja</string>
@@ -61,7 +62,8 @@
     <string name="match_app">App taqbila</string>
     <string name="metric">Uża metrika?</string>
     <string name="minutes">minuti</string>
-	<string name="morning_temp_alert">Twissija ta\' Filgħodu?</string>
+    <string name="morning_alert">It-temperatura %1$s telgħet sal-limitu tiegħek ta\' %2$s</string>
+    <string name="morning_temp_alert">Twissija ta\' Filgħodu?</string>
     <string name="next_moon">Avvenimenti tal-qamar li jmiss?</string>
     <string name="no">Nru</string>
     <string name="no_download_or_app_not_setup">L-ebda tniżżil jew app ma ġietx setup</string>
@@ -86,17 +88,21 @@
     <string name="rain_in_inches">Xita f\'pulzieri?</string>
     <string name="rainfall_alert">Twissija dwar ix-xita?</string>
     <string name="rainfall_alert_desc">Twissijiet kuljum meta x-xita tilħaq il-limitu stabbilit tiegħek</string>
-	<string name="rainfall_alert_str">Twissija dwar ix-xita</string>
+    <string name="rainfall_alert_notification">Ix-xita %1$s qablet mal-limitu tiegħek ta\' %2$s</string>
+    <string name="rainfall_alert_str">Twissija dwar ix-xita</string>
     <string name="rainfall_limit">Limitu tax-xita</string>
-	<string name="rainrate_alert_severe">Twissijiet Severi Rainrate?</string>
+    <string name="rainrate_alert_severe">Twissijiet Severi Rainrate?</string>
     <string name="rainrate_alert_severe_desc">Twissijiet jekk ir-rata tax-xita taqbeż il-limitu sever ibbażat fuq it-tul tax-xita</string>
+    <string name="rainrate_alert_severe_notification">Ir-rata tax-xita ta\' %1$s fl-aħħar %2$d %3$s laħqet il-livell \'Sever\'</string>
     <string name="rainrate_alert_severe_str">Twissija Sever Rainrate</string>
     <string name="rainrate_alert_str">Twissija Rainrate</string>
     <string name="rainrate_alert_warning">Twissija Twissijiet dwar ir-rata tax-xita?</string>
     <string name="rainrate_alert_warning_desc">Twissijiet jekk ir-rata tax-xita taqbeż il-limitu ta\' twissija abbażi tat-tul ta\' żmien tax-xita</string>
+    <string name="rainrate_alert_warning_notification">Ir-rata tax-xita ta\' %1$s fl-aħħar %2$d %3$s laħqet il-livell ta\' \'Twissija\'</string>
     <string name="rainrate_alert_warning_str">Twissija Twissija dwar ir-rata tax-xita</string>
     <string name="rainrate_alert_watch">Ara Twissijiet dwar ir-rata tax-xita?</string>
     <string name="rainrate_alert_watch_desc">Twissijiet jekk ir-rata tax-xita taqbeż il-limitu tal-għassa abbażi tat-tul tax-xita</string>
+    <string name="rainrate_alert_watch_notification">Ir-rata tax-xita ta\' %1$s fl-aħħar %2$d %3$s laħqet il-livell ta\' \'Watch\'</string>
     <string name="rainrate_alert_watch_str">Ara Rainrate Twissija</string>
     <string name="refresh_time">Agħżel Aġġorna l-Ħin</string>
     <string name="remove_all_data">Int żgur li trid tneħħi d-dejta kollha?</string>

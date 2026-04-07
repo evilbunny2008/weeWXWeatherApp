@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Om</string>
     <string name="about_app">Om appen</string>
-	<string name="afternoon_temp_alert">Ettermiddagsvarsel?</string>
+    <string name="afternoon_alert">Temperaturen %1$s har sunket til grensen din på %2$s</string>
+    <string name="afternoon_temp_alert">Ettermiddagsvarsel?</string>
     <string name="all_time_stats">Alle tiders statistikk</string>
     <string name="app_theme">App-tema</string>
     <string name="avg">snitt</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match app</string>
     <string name="metric">Vil du bruke beregning?</string>
     <string name="minutes">minutter</string>
-	<string name="morning_temp_alert">Morgenvarsel?</string>
+    <string name="morning_alert">Temperaturen %1$s har steget til grensen din på %2$s</string>
+    <string name="morning_temp_alert">Morgenvarsel?</string>
     <string name="next_moon">Neste månebegivenheter?</string>
     <string name="no">Ingen</string>
     <string name="no_download_or_app_not_setup">Ingen nedlasting eller app er ikke konfigurert</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Regn i tommer?</string>
     <string name="rainfall_alert">Varsel om nedbør?</string>
     <string name="rainfall_alert_desc">Varsler daglig når nedbøren når den angitte grensen</string>
-	<string name="rainfall_alert_str">Varsel om nedbør</string>
+    <string name="rainfall_alert_notification">Nedbør %1$s har matchet grensen din på %2$s</string>
+    <string name="rainfall_alert_str">Varsel om nedbør</string>
     <string name="rainfall_limit">Nedbørsgrense</string>
-	<string name="rainrate_alert_severe">Varsler om kraftig regn?</string>
+    <string name="rainrate_alert_severe">Varsler om kraftig regn?</string>
     <string name="rainrate_alert_severe_desc">Varsler hvis nedbørsmengden overskrider den alvorlige grensen basert på nedbørens varighet</string>
+    <string name="rainrate_alert_severe_notification">Regnmengde på %1$s i de siste %2$d %3$s har nådd \'Alvorlig\' nivå</string>
     <string name="rainrate_alert_severe_str">Alarm for kraftig regn</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
     <string name="rainrate_alert_warning">Advarsel om regnhastighetsvarsler?</string>
     <string name="rainrate_alert_warning_desc">Varsler hvis nedbørsmengden overskrider advarselsgrensen basert på nedbørens varighet</string>
+    <string name="rainrate_alert_warning_notification">Regnmengde på %1$s i de siste %2$d %3$s har nådd \'Advarsel\'-nivå</string>
     <string name="rainrate_alert_warning_str">Advarsel om regnmengdevarsel</string>
     <string name="rainrate_alert_watch">Se Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Varsler hvis nedbørsmengden overskrider vaktgrensen basert på nedbørens varighet</string>
+    <string name="rainrate_alert_watch_notification">Regnmengde på %1$s de siste %2$d %3$s har nådd \'Se\'-nivå</string>
     <string name="rainrate_alert_watch_str">Se Rainrate Alert</string>
     <string name="refresh_time">Velg Oppdater tid</string>
     <string name="remove_all_data">Er du sikker på at du vil fjerne alle data?</string>

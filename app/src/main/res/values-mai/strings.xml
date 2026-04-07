@@ -2,7 +2,8 @@
 <resources>
     <string name="about">विषय में</string>
     <string name="about_app">एप्प के बारे में</string>
-	<string name="afternoon_temp_alert">दुपहर के अलर्ट?</string>
+    <string name="afternoon_alert">तापमान %1$s अहाँक सीमा %2$s धरि खसि पड़ल अछि</string>
+    <string name="afternoon_temp_alert">दुपहर के अलर्ट?</string>
     <string name="all_time_stats">सब समय के आँकड़े</string>
     <string name="app_theme">ऐप थीम 2019।</string>
     <string name="avg">औसत।</string>
@@ -24,7 +25,7 @@
     <string name="every_10_minutes">हर 10 मिनट पर</string>
     <string name="every_10_seconds">हर 10 सेकंड में</string>
     <string name="every_15_minutes">हर 15 मिनट पर</string>
-    <string name="every_30_minutes">हर ३० मिनट पर 1</string>
+    <string name="every_30_minutes">हर 3० मिनट पर 1</string>
     <string name="every_30_seconds">हर 30 सेकंड में</string>
     <string name="every_60_seconds">हर 60 सेकंड में</string>
     <string name="every_hour">हर घंटा 1999।</string>
@@ -46,7 +47,7 @@
     <string name="ill_fix_and_try_again">हम एकरा ठीक करब आ फेर प्रयास करब</string>
     <string name="indoor_readings">इंडोर रीडिंग देखाउ?</string>
     <string name="inigo_needs_updating">ई ऐप अपडेट करलऽ गेलऽ छै लेकिन जे सर्वर स॑ आपने कनेक्ट होय रहलऽ छियै, वू Weewx लेली Inigo Plugin क॑ अपडेट नै करलकै । जाबत वीवएक्स अपडेट नहि भ जायत ता धरि फील्ड ठीक सं नहि देखा सकैत अछि</string>
-    <string name="interval_3h">३ घण्टा प्रति घंटा</string>
+    <string name="interval_3h">3 घण्टा प्रति घंटा</string>
     <string name="interval_6h">६ घण्टा प्रति घंटा</string>
     <string name="interval_12h">21 घण्टा प्रति घंटा</string>
     <string name="interval_daily">नित्य</string>
@@ -61,7 +62,8 @@
     <string name="match_app">मैच एप्प 2019।</string>
     <string name="metric">मीट्रिक के प्रयोग करू?</string>
     <string name="minutes">मिनट</string>
-	<string name="morning_temp_alert">भोरका अलर्ट?</string>
+    <string name="morning_alert">तापमान %1$s अहाँक सीमा %2$s धरि बढ़ि गेल अछि</string>
+    <string name="morning_temp_alert">भोरका अलर्ट?</string>
     <string name="next_moon">अगिला चन्द्रमाक आयोजन?</string>
     <string name="no">नहि</string>
     <string name="no_download_or_app_not_setup">कोनो डाउनलोड वा ऐप सेटअप नहि कएल गेल अछि</string>
@@ -87,17 +89,21 @@
     <string name="rain_in_inches">इंच में बरखा?</string>
     <string name="rainfall_alert">वर्षा के अलर्ट?</string>
     <string name="rainfall_alert_desc">जखन बरखा अहां कें निर्धारित सीमा पर पहुंच जायत छै तखन रोज अलर्ट करएयत छै</string>
-	<string name="rainfall_alert_str">वर्षा अलर्ट</string>
+    <string name="rainfall_alert_notification">वर्षा %1$s अहाँक सीमा %2$s सँ मेल खा गेल अछि</string>
+    <string name="rainfall_alert_str">वर्षा अलर्ट</string>
     <string name="rainfall_limit">वर्षा सीमा</string>
-	<string name="rainrate_alert_severe">गंभीर वर्षा दर के अलर्ट?</string>
+    <string name="rainrate_alert_severe">गंभीर वर्षा दर के अलर्ट?</string>
     <string name="rainrate_alert_severe_desc">बरखा कें अवधि कें आधार पर अगर वर्षा कें दर गंभीर सीमा सं बेसि भ जायत छै त अलर्ट करय छै</string>
+    <string name="rainrate_alert_severe_notification">पिछला %2$d %3$s मे %1$s के वर्षा दर \'गंभीर\' स्तर पर आबि गेल अछि</string>
     <string name="rainrate_alert_severe_str">भयंकर वर्षा दर अलर्ट</string>
     <string name="rainrate_alert_str">वर्षा दर अलर्ट</string>
     <string name="rainrate_alert_warning">चेतावनी वर्षा दर अलर्ट?</string>
     <string name="rainrate_alert_warning_desc">बरखा कें अवधि कें आधार पर यदि वर्षा दर चेतावनी सीमा सं बेसि भ जायत छै त अलर्ट करय छै</string>
+    <string name="rainrate_alert_warning_notification">पिछला %2$d %3$s मे %1$s के वर्षा दर \'चेतावनी\' स्तर पर आबि गेल अछि</string>
     <string name="rainrate_alert_warning_str">चेतावनी वर्षा दर अलर्ट</string>
     <string name="rainrate_alert_watch">वर्षा दर के अलर्ट देखें?</string>
     <string name="rainrate_alert_watch_desc">बरखा के अवधि के आधार पर बरखा के दर घड़ी के सीमा सं बेसी भ गेल त अलर्ट करैत अछि</string>
+    <string name="rainrate_alert_watch_notification">पिछला %2$d %3$s मे %1$s के वर्षा दर \'देखू\' स्तर पर आबि गेल अछि</string>
     <string name="rainrate_alert_watch_str">देखिये रेनरेट अलर्ट</string>
     <string name="refresh_time">रिफ्रेश समय चुनू</string>
     <string name="remove_all_data">की अहां निश्चित छी जे अहां सभ डाटा हटाबय चाहय छी?</string>

@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Lam</string>
     <string name="about_app">App chungchang</string>
-	<string name="afternoon_temp_alert">Chawhnu lam Alert?</string>
+    <string name="afternoon_alert">Temperature %1$s chu i limit %2$s thlengin a tlahniam ta</string>
+    <string name="afternoon_temp_alert">Chawhnu lam Alert?</string>
     <string name="all_time_stats">Hun zawng zawng Statistics</string>
     <string name="app_theme">App Theme 100 a ni</string>
     <string name="avg">avg</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match app a ni a, app 100 a ni</string>
     <string name="metric">Metric hmang em?</string>
     <string name="minutes">te tak te te</string>
-	<string name="morning_temp_alert">Zing Alert a ni em?</string>
+    <string name="morning_alert">Temperature %1$s chu i limit %2$s thlengin a sang tawh</string>
+    <string name="morning_temp_alert">Zing Alert a ni em?</string>
     <string name="next_moon">Next Moon events?</string>
     <string name="no">Aih</string>
     <string name="no_download_or_app_not_setup">No Download emaw App emaw pawh a la awm lo</string>
@@ -87,17 +89,21 @@
     <string name="rain_in_inches">Ruah hi Inches in a tla em?</string>
     <string name="rainfall_alert">Ruahtui tlak dan tur Alert?</string>
     <string name="rainfall_alert_desc">Ruah surin i set limit a thlen chuan nitin alert thin</string>
-	<string name="rainfall_alert_str">Ruahtui tlak dan tur hriattirna</string>
+    <string name="rainfall_alert_notification">Ruahtui tla %1$s chu i limit %2$s nen a inmil tawh</string>
+    <string name="rainfall_alert_str">Ruahtui tlak dan tur hriattirna</string>
     <string name="rainfall_limit">Ruahtui tlak theihna tur Limit</string>
-	<string name="rainrate_alert_severe">Ruahsur nasa lutuk tur hriattirna?</string>
+    <string name="rainrate_alert_severe">Ruahsur nasa lutuk tur hriattirna?</string>
     <string name="rainrate_alert_severe_desc">Ruahtui tlak hun chhung a zirin ruahtui tlak zatin severe limit a pelh chuan a hriattir thin</string>
+    <string name="rainrate_alert_severe_notification">%2$d hnuhnung ber %3$s chhunga ruahtui tlaksak dan %1$s chu \'Tihkhawp\' level a thleng tawh</string>
     <string name="rainrate_alert_severe_str">Ruahsur nasa tak a awm dawn tih hriattirna</string>
     <string name="rainrate_alert_str">Ruahtui tlak dan tur Alert</string>
     <string name="rainrate_alert_warning">Warning Rainrate Alerts a awm em?</string>
     <string name="rainrate_alert_warning_desc">Ruahtui tlak hun chhung a zirin ruahtui tlak zatin warning limit a pelh chuan a hriattir thin</string>
+    <string name="rainrate_alert_warning_notification">%2$d %3$s hnuhnung bera ruahtui tlak zat %1$s chuan \'Ralrinna\' level a thleng ta</string>
     <string name="rainrate_alert_warning_str">Ruahtui tlak dan tur hriattirna</string>
     <string name="rainrate_alert_watch">Ruahtui tlak dan tur hriattirna en rawh?</string>
     <string name="rainrate_alert_watch_desc">Ruahtui tlak hun chhung a zirin ruahtui tlak zatin watch limit a pelh chuan a hriattir thin</string>
+    <string name="rainrate_alert_watch_notification">%2$d hnuhnung ber %3$s chhunga ruahtui tlaksak dan %1$s chu \'Enkawlna\' level a thleng tawh</string>
     <string name="rainrate_alert_watch_str">Ruahtui tlak dan Alert en rawh</string>
     <string name="refresh_time">Refresh hun tur thlang rawh</string>
     <string name="remove_all_data">Data zawng zawng remove vek i duh em?</string>

@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Um</string>
     <string name="about_app">Um appið</string>
-	<string name="afternoon_temp_alert">Síðdegisviðvörun?</string>
+    <string name="afternoon_alert">Hitastig %1$s hefur farið niður í %2$s hámarkið</string>
+    <string name="afternoon_temp_alert">Síðdegisviðvörun?</string>
     <string name="all_time_stats">Tölfræði allra tíma</string>
     <string name="app_theme">App þema</string>
     <string name="avg">meðaltal</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match app</string>
     <string name="metric">Nota mæligildi?</string>
     <string name="minutes">mínútur</string>
-	<string name="morning_temp_alert">Morgunviðvörun?</string>
+    <string name="morning_alert">Hitastig %1$s hefur farið upp í %2$s hámarkið</string>
+    <string name="morning_temp_alert">Morgunviðvörun?</string>
     <string name="next_moon">Næstu tunglviðburðir?</string>
     <string name="no">Nei</string>
     <string name="no_download_or_app_not_setup">Ekkert niðurhal eða forrit hefur ekki verið sett upp</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Rigning í tommum?</string>
     <string name="rainfall_alert">Regnviðvörun?</string>
     <string name="rainfall_alert_desc">Viðvörun daglega þegar úrkoman nær settum mörkum</string>
-	<string name="rainfall_alert_str">Regnviðvörun</string>
+    <string name="rainfall_alert_notification">Úrkoma %1$s hefur passað við mörkin þín upp á %2$s</string>
+    <string name="rainfall_alert_str">Regnviðvörun</string>
     <string name="rainfall_limit">Regnunarmörk</string>
-	<string name="rainrate_alert_severe">Viðvaranir um miklar rigningar?</string>
+    <string name="rainrate_alert_severe">Viðvaranir um miklar rigningar?</string>
     <string name="rainrate_alert_severe_desc">Gefur viðvörun ef rigning fer yfir alvarleg mörk miðað við lengd úrkomu</string>
+    <string name="rainrate_alert_severe_notification">Rigning %1$s á síðustu %2$d %3$s hefur náð \'Alvarlegt\' stig</string>
     <string name="rainrate_alert_severe_str">Viðvörun um mikla rigningu</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
     <string name="rainrate_alert_warning">Viðvörun um regnhraða?</string>
     <string name="rainrate_alert_warning_desc">Gefur viðvörun ef rigning fer yfir viðvörunarmörk miðað við lengd úrkomu</string>
+    <string name="rainrate_alert_warning_notification">Rigning %1$s á síðustu %2$d %3$s hefur náð \'Viðvörun\'</string>
     <string name="rainrate_alert_warning_str">Viðvörun um regnhraða</string>
     <string name="rainrate_alert_watch">Horfa á Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Gefur viðvörun ef rigningin fer yfir vaktmörk miðað við lengd úrkomu</string>
+    <string name="rainrate_alert_watch_notification">Rigning %1$s á síðustu %2$d %3$s hefur náð \'Horfa\' stig</string>
     <string name="rainrate_alert_watch_str">Horfðu á Rainrate Alert</string>
     <string name="refresh_time">Veldu Refresh Time</string>
     <string name="remove_all_data">Ertu viss um að þú viljir fjarlægja öll gögn?</string>

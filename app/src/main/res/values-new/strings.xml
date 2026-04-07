@@ -2,7 +2,8 @@
 <resources>
     <string name="about">पेखेलं</string>
     <string name="about_app">एपया बारे</string>
-	<string name="afternoon_temp_alert">न्हिनय् सतर्कता?</string>
+    <string name="afternoon_alert">तापक्रम %1$s छिगु सिमा %2$s तक कुहां वन ।</string>
+    <string name="afternoon_temp_alert">न्हिनय् सतर्कता?</string>
     <string name="all_time_stats">दक्वं ई तथ्यांक</string>
     <string name="app_theme">आय् पं</string>
     <string name="avg">औसत</string>
@@ -24,8 +25,8 @@
     <string name="every_10_minutes">प्रत्येक 2० मिनेट</string>
     <string name="every_10_seconds">प्रत्येक 2० सेकेण्डय्</string>
     <string name="every_15_minutes">प्रत्येक 2५ मिनेट</string>
-    <string name="every_30_minutes">प्रत्येक ३० मिनेट</string>
-    <string name="every_30_seconds">प्रत्येक ३० सेकेण्डय्</string>
+    <string name="every_30_minutes">प्रत्येक 3० मिनेट</string>
+    <string name="every_30_seconds">प्रत्येक 3० सेकेण्डय्</string>
     <string name="every_60_seconds">हरेक ६० सेकेण्डय्</string>
     <string name="every_hour">प्रत्येक</string>
     <string name="failed_to_merge_weather_data">%1$s डाटायात %2$s डाटालिसे स्वाके मफुत ।</string>
@@ -46,7 +47,7 @@
     <string name="ill_fix_and_try_again">जिं थ्वयात फिक्स याये अले हानं कुतः याये ।</string>
     <string name="indoor_readings">इन्डोर रिडिङ्ग क्यनादिसँ?</string>
     <string name="inigo_needs_updating">थ्व एप अपडेट जूगु दु तर छिं स्वानाच्वनादीगु सर्भरं इनिगो प्लगिनयात वेएडब्लूएक्सया निंतिं अपडेट मयाःगु दु । फिल्डं वीडब्लूएक्स अपडेट मजूतले बांलाक क्यनेमखु ।</string>
-    <string name="interval_3h">३ घौया</string>
+    <string name="interval_3h">3 घौया</string>
     <string name="interval_6h">६ घौया</string>
     <string name="interval_12h">21 घौया</string>
     <string name="interval_daily">न्हि न्हि</string>
@@ -61,7 +62,8 @@
     <string name="match_app">म्याच एप</string>
     <string name="metric">मेट्रिक छ्यल ला?</string>
     <string name="minutes">मिनेट</string>
-	<string name="morning_temp_alert">सुथसिया सतर्कता?</string>
+    <string name="morning_alert">तापक्रम %1$s छिगु सिमा %2$s तक थहां वन ।</string>
+    <string name="morning_temp_alert">सुथसिया सतर्कता?</string>
     <string name="next_moon">मेगु चन्द्रमाया घटना?</string>
     <string name="no">मज्यु</string>
     <string name="no_download_or_app_not_setup">डाउनलोड बाय् एप सेटअप मजूनि बाय् एप मदु ।</string>
@@ -87,17 +89,21 @@
     <string name="rain_in_inches">इन्चय् वा वइ ला?</string>
     <string name="rainfall_alert">वा वइगु सतर्कता?</string>
     <string name="rainfall_alert_desc">वा वइगु छिं क्वःछिनातःगु सिमाय् थ्यनकि न्हिथं सचेत यानादिसँ ।</string>
-	<string name="rainfall_alert_str">वा वइगु सतर्कता</string>
+    <string name="rainfall_alert_notification">वा वइगु %1$s छिगु सिमा %2$s नापं ज्वःलाः</string>
+    <string name="rainfall_alert_str">वा वइगु सतर्कता</string>
     <string name="rainfall_limit">वा वइगु सीमा</string>
-	<string name="rainrate_alert_severe">तच्वःगु वा वइगु दरया सतर्कता?</string>
+    <string name="rainrate_alert_severe">तच्वःगु वा वइगु दरया सतर्कता?</string>
     <string name="rainrate_alert_severe_desc">वा वइगु ईया लिधंसाय् वा वइगु दर तच्वःगु सीमा स्वयां अप्वः जुल धाःसा सचेत याइ ।</string>
+    <string name="rainrate_alert_severe_notification">वंगु %2$दि %3$य् %1$s वा वःगु दर \'तच्वःगु\' तहलय् थ्यन ।</string>
     <string name="rainrate_alert_severe_str">तच्वःगु वा वइगु दरया सतर्कता</string>
     <string name="rainrate_alert_str">वा वइगु दर सतर्कता</string>
     <string name="rainrate_alert_warning">चेतावनी वा वइगु दरया सतर्कता?</string>
     <string name="rainrate_alert_warning_desc">वा वइगु ईया लिधंसाय् वा वइगु दर चेतावनी सिमा स्वयां अप्वः जुल धाःसा सचेत याइ ।</string>
+    <string name="rainrate_alert_warning_notification">वंगु %2$d %3$य् %1$s वा वःगु दर \'चेतावनी\' स्तरय् थ्यन</string>
     <string name="rainrate_alert_warning_str">चेतावनी वा वइगु दर सतर्कता</string>
     <string name="rainrate_alert_watch">रेनरेट अलर्ट स्वयादिसँ?</string>
     <string name="rainrate_alert_watch_desc">वा वइगु ईया लिधंसाय् वा वइगु दर स्वयेगु सीमा स्वयां अप्वः जुल धाःसा सचेत याइ ।</string>
+    <string name="rainrate_alert_watch_notification">वंगु %2$d %3$य् %1$s वा वःगु दर \'स्व\' स्तरय् थ्यन</string>
     <string name="rainrate_alert_watch_str">रेनरेट अलर्ट स्व ।</string>
     <string name="refresh_time">रिफ्रेस टाइम ल्ययादिसँ ।</string>
     <string name="remove_all_data">छं पक्का खः ला कि छं दक्वं डाटा लिकाये मास्ति वः ला?</string>

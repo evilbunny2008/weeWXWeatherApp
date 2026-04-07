@@ -2,10 +2,11 @@
 <resources>
     <string name="about">Acerca de</string>
     <string name="about_app">Acerca de la aplicación</string>
-	<string name="afternoon_temp_alert">¿Alerta de la tarde?</string>
+    <string name="afternoon_alert">La temperatura %1$s ha bajado a su límite de %2$s</string>
+    <string name="afternoon_temp_alert">¿Alerta de la tarde?</string>
     <string name="all_time_stats">Estadísticas de todos los tiempos</string>
     <string name="app_theme">Tema de la aplicación</string>
-    <string name="avg">prom.</string>
+    <string name="avg">prom</string>
     <string name="battery_warning">Advertencia: Habilitar la opción anterior puede agotar la batería más rápido de lo habitual</string>
     <string name="before">antes</string>
     <string name="bgColour">Selector de color de fondo del widget</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Aplicación de partidos</string>
     <string name="metric">¿Usar métrica?</string>
     <string name="minutes">minutos</string>
-	<string name="morning_temp_alert">¿Alerta matutina?</string>
+    <string name="morning_alert">La temperatura %1$s ha aumentado hasta su límite de %2$s</string>
+    <string name="morning_temp_alert">¿Alerta matutina?</string>
     <string name="next_moon">¿Próximos eventos lunares?</string>
     <string name="no">No</string>
     <string name="no_download_or_app_not_setup">No se ha descargado o no se ha configurado la aplicación</string>
@@ -84,17 +86,21 @@
     <string name="rain_in_inches">¿Lluvia en pulgadas?</string>
     <string name="rainfall_alert">¿Alerta de lluvia?</string>
     <string name="rainfall_alert_desc">Alertas diarias cuando la lluvia alcanza el límite establecido</string>
-	<string name="rainfall_alert_str">Alerta de lluvia</string>
+    <string name="rainfall_alert_notification">Las precipitaciones %1$s han coincidido con tu límite de %2$s</string>
+    <string name="rainfall_alert_str">Alerta de lluvia</string>
     <string name="rainfall_limit">Límite de lluvia</string>
-	<string name="rainrate_alert_severe">¿Alertas de lluvia intensa?</string>
+    <string name="rainrate_alert_severe">¿Alertas de lluvia intensa?</string>
     <string name="rainrate_alert_severe_desc">Alertas si la tasa de lluvia excede el límite severo según la duración de la lluvia</string>
+    <string name="rainrate_alert_severe_notification">La tasa de lluvia de %1$s en los últimos %2$d %3$s ha alcanzado el nivel \'Severo\'</string>
     <string name="rainrate_alert_severe_str">Alerta de lluvia severa</string>
     <string name="rainrate_alert_str">Alerta de lluvia</string>
     <string name="rainrate_alert_warning">Advertencia ¿Alertas de índice de lluvia?</string>
     <string name="rainrate_alert_warning_desc">Alertas si la tasa de lluvia excede el límite de advertencia según la duración de la lluvia</string>
+    <string name="rainrate_alert_warning_notification">La tasa de lluvia de %1$s en los últimos %2$d %3$s ha alcanzado el nivel de \'Advertencia\'</string>
     <string name="rainrate_alert_warning_str">Advertencia Alerta de lluvia</string>
     <string name="rainrate_alert_watch">¿Ver alertas de índice de lluvia?</string>
     <string name="rainrate_alert_watch_desc">Alerta si la tasa de lluvia excede el límite de vigilancia según la duración de la lluvia</string>
+    <string name="rainrate_alert_watch_notification">La tasa de lluvia de %1$s en los últimos %2$d %3$s ha alcanzado el nivel \'Vigilancia\'</string>
     <string name="rainrate_alert_watch_str">Ver alerta de índice de lluvia</string>
     <string name="refresh_time">Elija el tiempo de actualización</string>
     <string name="remove_all_data">¿Estás seguro de que deseas eliminar todos los datos?</string>

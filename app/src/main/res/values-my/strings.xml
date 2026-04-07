@@ -2,7 +2,8 @@
 <resources>
     <string name="about">အကေြာင်း</string>
     <string name="about_app">app အကြောင်း</string>
-	<string name="afternoon_temp_alert">နေ့ခင်းသတိပေးချက်?</string>
+    <string name="afternoon_alert">အပူချိန် %1$s သည် သင့်ကန့်သတ်ချက် %2$s သို့ ကျဆင်းသွားပါသည်။</string>
+    <string name="afternoon_temp_alert">နေ့ခင်းသတိပေးချက်?</string>
     <string name="all_time_stats">အားလုံးအချိန်စာရင်းအင်း</string>
     <string name="app_theme">app ကိုအခင်းအကျင်း</string>
     <string name="avg">ပျမ်းမျှ</string>
@@ -61,7 +62,8 @@
     <string name="match_app">ပွဲစဉ် app</string>
     <string name="metric">မက်ထရစ်ကိုသုံးပါသလား</string>
     <string name="minutes">မိနစ်</string>
-	<string name="morning_temp_alert">မနက်ခင်း သတိပေးချက်</string>
+    <string name="morning_alert">အပူချိန် %1$s သည် သင့်ကန့်သတ်ချက် %2$s သို့ တိုးသွားပါပြီ။</string>
+    <string name="morning_temp_alert">မနက်ခင်း သတိပေးချက်</string>
     <string name="next_moon">နောက်လာမည့်ဖြစ်ရပ်များ?</string>
     <string name="no">မဟုတ်</string>
     <string name="no_download_or_app_not_setup">ဒေါင်းလုဒ်မရှိပါ သို့မဟုတ် အက်ပ်ကို ထည့်သွင်းမထားပါ။</string>
@@ -82,17 +84,21 @@
     <string name="rain_in_inches">လက်မနဲ့ မိုးရွာမလား?</string>
     <string name="rainfall_alert">မိုးရွာသွန်းမှု သတိပေးချက်</string>
     <string name="rainfall_alert_desc">မိုးရွာသွန်းမှု ကန့်သတ်ချက် ပြည့်သွားသည့်အခါ နေ့စဉ်သတိပေးချက်များ</string>
-	<string name="rainfall_alert_str">မိုးရွာသွန်းမှု သတိပေးချက်</string>
+    <string name="rainfall_alert_notification">မိုးရေချိန် %1$s သည် သင့်ကန့်သတ်ချက် %2$s နှင့် ကိုက်ညီပါသည်။</string>
+    <string name="rainfall_alert_str">မိုးရွာသွန်းမှု သတိပေးချက်</string>
     <string name="rainfall_limit">မိုးရေချိန်ကန့်သတ်ချက်</string>
-	<string name="rainrate_alert_severe">ပြင်းထန်သော မိုးရွာသွန်းမှု သတိပေးချက်များ။</string>
+    <string name="rainrate_alert_severe">ပြင်းထန်သော မိုးရွာသွန်းမှု သတိပေးချက်များ။</string>
     <string name="rainrate_alert_severe_desc">မိုးရွာသွန်းမှုကြာချိန်ပေါ်မူတည်၍ မိုးရေချိန်ကန့်သတ်ချက်ထက် ပြင်းထန်ပါက သတိပေးသည်။</string>
+    <string name="rainrate_alert_severe_notification">နောက်ဆုံး %2$d %3$s တွင် %1$s ၏ မိုးရေချိန်သည် \'ပြင်းထန်သော\' အဆင့်သို့ ရောက်သည်</string>
     <string name="rainrate_alert_severe_str">မိုးသည်းထန်စွာရွာသွန်းမှု သတိပေးချက်</string>
     <string name="rainrate_alert_str">မိုးရေချိန်သတိပေးချက်</string>
     <string name="rainrate_alert_warning">မိုးရွာသွန်းမှု သတိပေးချက်များ သတိပေးချက်။</string>
     <string name="rainrate_alert_warning_desc">မိုးရွာသွန်းမှုကြာချိန်ပေါ်မူတည်၍ မိုးရေချိန်သည် သတိပေးချက်ကန့်သတ်ချက်ထက်ကျော်လွန်ပါက သတိပေးသည်။</string>
+    <string name="rainrate_alert_warning_notification">နောက်ဆုံး %2$d %3$s တွင် %1$s ၏ မိုးရေချိန်သည် \'သတိပေးချက်\' အဆင့်သို့ ရောက်သည်</string>
     <string name="rainrate_alert_warning_str">သတိပေးချက် မိုးရေချိန်သတိပေးချက်</string>
     <string name="rainrate_alert_watch">မိုးရေချိန်သတိပေးချက်များကို ကြည့်မလား။</string>
     <string name="rainrate_alert_watch_desc">မိုးရွာသွန်းမှုကြာချိန်ပေါ်မူတည်၍ မိုးရေချိန်သည် နာရီကန့်သတ်ချက်ထက်ကျော်လွန်ပါက သတိပေးသည်။</string>
+    <string name="rainrate_alert_watch_notification">နောက်ဆုံး %2$d %3$s တွင် %1$s ၏ မိုးရေချိန်သည် \'Watch\' အဆင့်သို့ ရောက်သည်</string>
     <string name="rainrate_alert_watch_str">မိုးရေချိန်သတိပေးချက်ကို ကြည့်ပါ။</string>
     <string name="refresh_time">Refresh အချိန်ကိုရွေးချယ်ပါ</string>
     <string name="remove_all_data">ဒေတာအားလုံးကိုဖယ်ရှားချင်တာသေချာလား။</string>

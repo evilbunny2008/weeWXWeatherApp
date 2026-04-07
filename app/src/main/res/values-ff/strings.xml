@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Do</string>
     <string name="about_app">Ko faati e App</string>
-	<string name="afternoon_temp_alert">Jeertinaango kikiiɗe?</string>
+    <string name="afternoon_alert">Tempere %1$s ustiima haa keerol maa %2$s</string>
+    <string name="afternoon_temp_alert">Jeertinaango kikiiɗe?</string>
     <string name="all_time_stats">Denndaangal limtooji Waktu</string>
     <string name="app_theme">App Theme</string>
     <string name="avg">hakkundeere</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match App</string>
     <string name="metric">Huutoro Metric?</string>
     <string name="minutes">minti</string>
-	<string name="morning_temp_alert">Jeertinaango subaka?</string>
+    <string name="morning_alert">Tempere %1$s ɓeydiima haa keerol maa %2$s</string>
+    <string name="morning_temp_alert">Jeertinaango subaka?</string>
     <string name="next_moon">Kewuuji lewru garooji?</string>
     <string name="no">Kay</string>
     <string name="no_download_or_app_not_setup">Alaa ƴettugol walla app alaa ko setup</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Toɓo e nder Inɗe?</string>
     <string name="rainfall_alert">Jeertinaango toɓo?</string>
     <string name="rainfall_alert_desc">Jeertinaango ñalnde kala so toɓo ngoo yettiima keerol ngol njiɗ-ɗaa</string>
-	<string name="rainfall_alert_str">Jeertinaango toɓo</string>
+    <string name="rainfall_alert_notification">Toɓo %1$s hawrii e keerol maa %2$s</string>
+    <string name="rainfall_alert_str">Jeertinaango toɓo</string>
     <string name="rainfall_limit">Keeri Toɓo</string>
-	<string name="rainrate_alert_severe">Jeertinaali toɓooli tiiɗɗi?</string>
+    <string name="rainrate_alert_severe">Jeertinaali toɓooli tiiɗɗi?</string>
     <string name="rainrate_alert_severe_desc">Jeertinaango so tawii toɓo ngoo ɓurii keerol tiiɗngol tuugnaade e dumunna toɓo</string>
+    <string name="rainrate_alert_severe_notification">Toɓo %1$s e nder %2$d %3$s ɓennuɗo oo yanii e tolno \'Severe\'</string>
     <string name="rainrate_alert_severe_str">Jeertinaango Toɓo tiiɗngo</string>
     <string name="rainrate_alert_str">Jeertinaango toɓo</string>
     <string name="rainrate_alert_warning">Jeertinaango Toɓo?</string>
     <string name="rainrate_alert_warning_desc">Jeertinaango so tawii toɓo ngoo ɓurii keerol jeertinaango tuugnaade e dumunna toɓo</string>
+    <string name="rainrate_alert_warning_notification">Toɓo %1$s e nder %2$d %3$s ɓennuɗo oo yanii e tolno \'Jeertinaango\'</string>
     <string name="rainrate_alert_warning_str">Jeertinaango Toɓo Jeertinaango</string>
     <string name="rainrate_alert_watch">Yeewtu jeertinaango toɓo?</string>
     <string name="rainrate_alert_watch_desc">Jeertinaango so tawii toɓo ngoo ɓurii keerol waktuuji tuugiiɗi e dumunna toɓo</string>
+    <string name="rainrate_alert_watch_notification">Toɓo %1$s e nder %2$d %3$s ɓennuɗo oo yanii e tolno \'Watch\'</string>
     <string name="rainrate_alert_watch_str">Yeewtu Jeertinaango Toɓo</string>
     <string name="refresh_time">Suɓo Waktu Refresh</string>
     <string name="remove_all_data">Mbele aɗa sikki aɗa yiɗi ittude denndaangal dokke?</string>

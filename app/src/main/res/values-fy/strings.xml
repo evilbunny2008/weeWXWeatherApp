@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Oer</string>
     <string name="about_app">Oer de App</string>
-	<string name="afternoon_temp_alert">Middeis warskôging?</string>
+    <string name="afternoon_alert">Temperatuer %1$s is sakke nei jo limyt fan %2$s</string>
+    <string name="afternoon_temp_alert">Middeis warskôging?</string>
     <string name="all_time_stats">Alle tiid Statistics</string>
     <string name="app_theme">App Tema</string>
     <string name="avg">gem</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match App</string>
     <string name="metric">Metrysk brûke?</string>
     <string name="minutes">minuten</string>
-	<string name="morning_temp_alert">Moarn warskôging?</string>
+    <string name="morning_alert">Temperatuer %1$s is omheech gien nei jo limyt fan %2$s</string>
+    <string name="morning_temp_alert">Moarn warskôging?</string>
     <string name="next_moon">Folgjende moanne eveneminten?</string>
     <string name="no">Nee</string>
     <string name="no_download_or_app_not_setup">Gjin download of app is net ynsteld</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Rein yn Inches?</string>
     <string name="rainfall_alert">Rainfall Alert?</string>
     <string name="rainfall_alert_desc">Alerts alle dagen as de delslach jo ynstelde limyt berikt</string>
-	<string name="rainfall_alert_str">Rainfall Alert</string>
+    <string name="rainfall_alert_notification">Reinfal %1$s komt oerien mei jo limyt fan %2$s</string>
+    <string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainfall_limit">Rainfall Limit</string>
-	<string name="rainrate_alert_severe">Warskôgings foar swiere reinwetter?</string>
+    <string name="rainrate_alert_severe">Warskôgings foar swiere reinwetter?</string>
     <string name="rainrate_alert_severe_desc">Warskôget as de reinrate de swiere limyt grutter is op basis fan de doer fan delslach</string>
+    <string name="rainrate_alert_severe_notification">Rainrate fan %1$s yn \'e lêste %2$d %3$s hat \'Swier\' nivo berikt</string>
     <string name="rainrate_alert_severe_str">Alarm foar swiere rein</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
     <string name="rainrate_alert_warning">Warskôging Rainrate Alerts?</string>
     <string name="rainrate_alert_warning_desc">Warskôget as de reinrate de warskôgingslimyt grutter is op basis fan de doer fan delslach</string>
+    <string name="rainrate_alert_warning_notification">Rainrate fan %1$s yn de lêste %2$d %3$s hat \'Warskôging\' nivo berikt</string>
     <string name="rainrate_alert_warning_str">Warskôging Rainrate Alert</string>
     <string name="rainrate_alert_watch">Sjoch Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Warskôget as de reinrate de wachtlimyt grutter is op basis fan de doer fan delslach</string>
+    <string name="rainrate_alert_watch_notification">Rainrate fan %1$s yn de lêste %2$d %3$s hat it nivo \'Besjoch\' berikt</string>
     <string name="rainrate_alert_watch_str">Sjoch Rainrate Alert</string>
     <string name="refresh_time">Kies Tiid ferfarskje</string>
     <string name="remove_all_data">Binne jo wis dat jo alle gegevens fuortsmite wolle?</string>

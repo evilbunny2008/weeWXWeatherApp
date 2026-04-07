@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Kayi</string>
     <string name="about_app">Game da app</string>
-	<string name="afternoon_temp_alert">Jijjiga La\'asar?</string>
+    <string name="afternoon_alert">Zazzabi %1$s ya ragu zuwa iyakar %2$s</string>
+    <string name="afternoon_temp_alert">Jijjiga La\'asar?</string>
     <string name="all_time_stats">Duk Statime States</string>
     <string name="app_theme">Takardar App</string>
     <string name="avg">m</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Dace da app</string>
     <string name="metric">Yi amfani da awo?</string>
     <string name="minutes">mintuna</string>
-	<string name="morning_temp_alert">Faɗakarwar Safiya?</string>
+    <string name="morning_alert">Zazzabi %1$s ya tashi zuwa iyakar %2$s</string>
+    <string name="morning_temp_alert">Faɗakarwar Safiya?</string>
     <string name="next_moon">Abubuwan da suka faru na gaba?</string>
     <string name="no">A\'a</string>
     <string name="no_download_or_app_not_setup">Babu zazzagewa ko ƙa\'idar da ba a saita ba</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Ruwan sama a Inci?</string>
     <string name="rainfall_alert">Faɗakarwar ruwan sama?</string>
     <string name="rainfall_alert_desc">Faɗakarwa kullum lokacin da ruwan sama ya kai iyakar da aka saita</string>
-	<string name="rainfall_alert_str">Faɗakarwar ruwan sama</string>
+    <string name="rainfall_alert_notification">Ruwan sama %1$s ya yi daidai da iyakar ku na %2$s</string>
+    <string name="rainfall_alert_str">Faɗakarwar ruwan sama</string>
     <string name="rainfall_limit">Iyakar ruwan sama</string>
-	<string name="rainrate_alert_severe">Tsananin faɗakarwar ruwan sama?</string>
+    <string name="rainrate_alert_severe">Tsananin faɗakarwar ruwan sama?</string>
     <string name="rainrate_alert_severe_desc">Fadakarwa idan yawan ruwan sama ya wuce iyaka mai tsanani dangane da tsawon lokacin ruwan sama</string>
+    <string name="rainrate_alert_severe_notification">Ruwan sama na %1$s a cikin %2$d %3$s na ƙarshe ya kai matakin \'Mai tsanani\'</string>
     <string name="rainrate_alert_severe_str">Tsananin faɗakarwar ruwan sama</string>
     <string name="rainrate_alert_str">Faɗakarwar ruwan sama</string>
     <string name="rainrate_alert_warning">Faɗakarwar Rain Ruwa?</string>
     <string name="rainrate_alert_warning_desc">Fadakarwa idan yawan ruwan sama ya wuce iyakar gargadi bisa tsawon lokacin ruwan sama</string>
+    <string name="rainrate_alert_warning_notification">Ruwan sama na %1$s a cikin %2$d %3$s na ƙarshe ya kai matakin \'Gargadi\'</string>
     <string name="rainrate_alert_warning_str">Faɗakarwar Ruwan Sama Gargaɗi</string>
     <string name="rainrate_alert_watch">Kalli Faɗakarwar Ruwan Sama?</string>
     <string name="rainrate_alert_watch_desc">Fadakarwa idan yawan ruwan sama ya wuce iyakar agogo bisa tsawon lokacin ruwan sama</string>
+    <string name="rainrate_alert_watch_notification">Ruwan sama na %1$s a cikin %2$d %3$s na ƙarshe ya kai matakin \'Watch\'</string>
     <string name="rainrate_alert_watch_str">Kalli faɗakarwar ruwan sama</string>
     <string name="refresh_time">Zabi lokacin shakatawa</string>
     <string name="remove_all_data">Kuna da tabbas kuna son cire duk bayanan?</string>

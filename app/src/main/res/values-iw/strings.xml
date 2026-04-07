@@ -2,7 +2,8 @@
 <resources>
     <string name="about">אוֹדוֹת</string>
     <string name="about_app">לגבי האפליקציה</string>
-	<string name="afternoon_temp_alert">התראה אחר הצהריים?</string>
+    <string name="afternoon_alert">הטמפרטורה %1$s ירדה למגבלה של %2$s</string>
+    <string name="afternoon_temp_alert">התראה אחר הצהריים?</string>
     <string name="all_time_stats">סטטיסטיקות של כל הזמנים</string>
     <string name="app_theme">ערכת נושא לאפליקציה</string>
     <string name="avg">ממוצע</string>
@@ -61,7 +62,8 @@
     <string name="match_app">אפליקציית התאמה</string>
     <string name="metric">להשתמש במדד?</string>
     <string name="minutes">פּרוֹטוֹקוֹל</string>
-	<string name="morning_temp_alert">התראה בבוקר?</string>
+    <string name="morning_alert">הטמפרטורה %1$s עלתה למגבלה של %2$s</string>
+    <string name="morning_temp_alert">התראה בבוקר?</string>
     <string name="next_moon">אירועי הירח הבא?</string>
     <string name="no">לֹא</string>
     <string name="no_download_or_app_not_setup">אין הורדה או אפליקציה שלא הוגדרה</string>
@@ -84,17 +86,21 @@
     <string name="rain_in_inches">גשם בסנטימטרים?</string>
     <string name="rainfall_alert">התראת גשם?</string>
     <string name="rainfall_alert_desc">מתריע מדי יום כאשר כמות הגשמים מגיעה לגבול המוגדר</string>
-	<string name="rainfall_alert_str">התראת גשם</string>
+    <string name="rainfall_alert_notification">כמות הגשם %1$s התאימה למגבלה של %2$s</string>
+    <string name="rainfall_alert_str">התראת גשם</string>
     <string name="rainfall_limit">מגבלת גשם</string>
-	<string name="rainrate_alert_severe">התראות על שיעורי גשם קשים?</string>
+    <string name="rainrate_alert_severe">התראות על שיעורי גשם קשים?</string>
     <string name="rainrate_alert_severe_desc">מתריע אם קצב הגשם חורג מהמגבלה החמורה על סמך משך הגשם</string>
+    <string name="rainrate_alert_severe_notification">קצב הגשם של %1$s ב %2$d האחרון %3$s הגיע לרמה \'חמורה\'</string>
     <string name="rainrate_alert_severe_str">התראת גשם חמורה</string>
     <string name="rainrate_alert_str">התראת גשם</string>
     <string name="rainrate_alert_warning">אזהרות על קצב גשם?</string>
     <string name="rainrate_alert_warning_desc">מתריע אם קצב הגשם חורג ממגבלת האזהרה על סמך משך הגשם</string>
+    <string name="rainrate_alert_warning_notification">קצב הגשם של %1$s ב %2$d האחרון %3$s הגיע לרמת \'אזהרה\'</string>
     <string name="rainrate_alert_warning_str">אזהרה על קצב גשם</string>
     <string name="rainrate_alert_watch">לצפות בהתראות קצב גשם?</string>
     <string name="rainrate_alert_watch_desc">מתריע אם קצב הגשם חורג ממגבלת השעון בהתבסס על משך הגשם</string>
+    <string name="rainrate_alert_watch_notification">קצב הגשם של %1$s ב %2$d האחרון %3$s הגיע לרמת \'צפה\'</string>
     <string name="rainrate_alert_watch_str">צפו בהתראה על קצב גשם</string>
     <string name="refresh_time">בחר זמן רענון</string>
     <string name="remove_all_data">האם אתה בטוח שברצונך להסיר את כל הנתונים?</string>

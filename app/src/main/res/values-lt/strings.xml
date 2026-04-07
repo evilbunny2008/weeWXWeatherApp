@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Apie</string>
     <string name="about_app">Apie Programėlę</string>
-	<string name="afternoon_temp_alert">Popietinis įspėjimas?</string>
+    <string name="afternoon_alert">Temperatūra %1$s nukrito iki %2$s ribos</string>
+    <string name="afternoon_temp_alert">Popietinis įspėjimas?</string>
     <string name="all_time_stats">Visų laikų statistika</string>
     <string name="app_theme">Programos tema</string>
     <string name="avg">vid</string>
@@ -61,7 +62,8 @@
     <string name="match_app">\'Match\' programa</string>
     <string name="metric">Naudoti metriką?</string>
     <string name="minutes">minučių</string>
-	<string name="morning_temp_alert">Rytinis įspėjimas?</string>
+    <string name="morning_alert">Temperatūra %1$s pakilo iki %2$s ribos</string>
+    <string name="morning_temp_alert">Rytinis įspėjimas?</string>
     <string name="next_moon">Kito mėnulio įvykiai?</string>
     <string name="no">Nr</string>
     <string name="no_download_or_app_not_setup">Joks atsisiuntimas arba programa nebuvo nustatyta</string>
@@ -85,17 +87,21 @@
     <string name="rain_in_inches">Lietus coliais?</string>
     <string name="rainfall_alert">Įspėjimas dėl lietaus?</string>
     <string name="rainfall_alert_desc">Kasdien įspėja, kai kritulių kiekis pasiekia nustatytą ribą</string>
-	<string name="rainfall_alert_str">Įspėjimas dėl lietaus</string>
+    <string name="rainfall_alert_notification">Kritulių kiekis %1$s atitiko %2$s limitą</string>
+    <string name="rainfall_alert_str">Įspėjimas dėl lietaus</string>
     <string name="rainfall_limit">Kritulių limitas</string>
-	<string name="rainrate_alert_severe">Įspėjimai apie didelį lietaus greitį?</string>
+    <string name="rainrate_alert_severe">Įspėjimai apie didelį lietaus greitį?</string>
     <string name="rainrate_alert_severe_desc">Įspėja, jei kritulių kiekis viršija griežtą ribą, atsižvelgiant į kritulių trukmę</string>
+    <string name="rainrate_alert_severe_notification">%1$s kritulių norma per paskutinius %2$d %3$s pasiekė \'stiprų\' lygį</string>
     <string name="rainrate_alert_severe_str">Įspėjimas dėl didelio lietaus</string>
     <string name="rainrate_alert_str">Įspėjimas apie lietaus greitį</string>
     <string name="rainrate_alert_warning">Įspėjamieji įspėjimai apie lietaus greitį?</string>
     <string name="rainrate_alert_warning_desc">Įspėja, jei kritulių kiekis viršija perspėjimo ribą pagal kritulių trukmę</string>
+    <string name="rainrate_alert_warning_notification">%1$s lietaus norma per paskutinius %2$d %3$s pasiekė įspėjimo lygį</string>
     <string name="rainrate_alert_warning_str">Įspėjimas apie lietaus greitį</string>
     <string name="rainrate_alert_watch">Žiūrėti įspėjimus apie lietaus greitį?</string>
     <string name="rainrate_alert_watch_desc">Įspėja, jei kritulių kiekis viršija ribą pagal kritulių trukmę</string>
+    <string name="rainrate_alert_watch_notification">%1$s lietaus norma per paskutinius %2$d %3$s pasiekė žiūrėjimo lygį</string>
     <string name="rainrate_alert_watch_str">Žiūrėkite įspėjimą apie lietaus greitį</string>
     <string name="refresh_time">Pasirinkite Atnaujinimo laikas</string>
     <string name="remove_all_data">Ar tikrai norite pašalinti visus duomenis?</string>

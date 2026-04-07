@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Pene</string>
     <string name="about_app">Na ntina na appli yango</string>
-	<string name="afternoon_temp_alert">Alerte ya nsima ya midi?</string>
+    <string name="afternoon_alert">Température %1$s ekiti na limite na yo ya %2$s</string>
+    <string name="afternoon_temp_alert">Alerte ya nsima ya midi?</string>
     <string name="all_time_stats">Statistiques ya tango nionso</string>
     <string name="app_theme">Motó ya likambo ya APP</string>
     <string name="avg">avg</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Application ya match</string>
     <string name="metric">Salelá métrique?</string>
     <string name="minutes">miniti</string>
-	<string name="morning_temp_alert">Alerte ya tongo?</string>
+    <string name="morning_alert">Température %1$s emati na limite na yo ya %2$s</string>
+    <string name="morning_temp_alert">Alerte ya tongo?</string>
     <string name="next_moon">Makambo ya sanza oyo ekolanda?</string>
     <string name="no">Te</string>
     <string name="no_download_or_app_not_setup">Download to app moko te esalemi te</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Mbula na ba Pouces?</string>
     <string name="rainfall_alert">Alerte ya mbula?</string>
     <string name="rainfall_alert_desc">Ezali kokebisa mokolo na mokolo ntango mbula ekomi na ndelo oyo otye</string>
-	<string name="rainfall_alert_str">Alerte ya mbula</string>
+    <string name="rainfall_alert_notification">Mbula %1$s ekokani na ndelo na yo ya %2$s</string>
+    <string name="rainfall_alert_str">Alerte ya mbula</string>
     <string name="rainfall_limit">Limite ya mbula</string>
-	<string name="rainrate_alert_severe">Ba alertes ya ba taux ya mbula makasi?</string>
+    <string name="rainrate_alert_severe">Ba alertes ya ba taux ya mbula makasi?</string>
     <string name="rainrate_alert_severe_desc">Ezali kokebisa soki mbangu ya mbula eleki ndelo ya makasi na kotalaka ntango molai ya mbula</string>
+    <string name="rainrate_alert_severe_notification">Taux ya mbula ya %1$s na %2$d ya suka %3$s ezui niveau ya \'Severe\'</string>
     <string name="rainrate_alert_severe_str">Alerte ya mbula makasi</string>
     <string name="rainrate_alert_str">Alerte ya mbula ya mbula</string>
     <string name="rainrate_alert_warning">Kebisa Ba Alertes ya taux ya mbula?</string>
     <string name="rainrate_alert_warning_desc">Ezali kokebisa soki mbula eleki ndelo ya likebisi na kotalaka ntango molai ya mbula</string>
+    <string name="rainrate_alert_warning_notification">Taux ya mbula ya %1$s na %2$d ya suka %3$s ezui niveau ya \'Warning\'</string>
     <string name="rainrate_alert_warning_str">Alerte ya mbangu ya mbula ya likebisi</string>
     <string name="rainrate_alert_watch">Botala ba Alertes ya taux ya mbula?</string>
     <string name="rainrate_alert_watch_desc">Ezali kokebisa soki mbula eleki ndelo ya montre na kotalela ntango molai ya mbula</string>
+    <string name="rainrate_alert_watch_notification">Taux ya mbula ya %1$s na %2$d ya suka %3$s ezui niveau ya \'Watch\'</string>
     <string name="rainrate_alert_watch_str">Botala Alerte ya mbula ya mbula</string>
     <string name="refresh_time">Pona temps ya ko refresher</string>
     <string name="remove_all_data">Ozali sûr que olingi olongola ba données nionso?</string>

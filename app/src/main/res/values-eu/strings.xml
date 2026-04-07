@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Buruz</string>
     <string name="about_app">Aplikazioari buruz</string>
-	<string name="afternoon_temp_alert">Arratsaldeko alerta?</string>
+    <string name="afternoon_alert">%1$s tenperatura zure %2$s ko mugara jaitsi da</string>
+    <string name="afternoon_temp_alert">Arratsaldeko alerta?</string>
     <string name="all_time_stats">Denbora guztietako estatistikak</string>
     <string name="app_theme">Aplikazioaren gaia</string>
     <string name="avg">batez beste</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match aplikazioa</string>
     <string name="metric">Metric erabili?</string>
     <string name="minutes">minutuak</string>
-	<string name="morning_temp_alert">Goizeko alerta?</string>
+    <string name="morning_alert">%1$s tenperatura zure %2$s ko mugaraino igo da</string>
+    <string name="morning_temp_alert">Goizeko alerta?</string>
     <string name="next_moon">Hurrengo ilargiko gertaerak?</string>
     <string name="no">Ez</string>
     <string name="no_download_or_app_not_setup">Ez da deskargarik edo aplikaziorik konfiguratu</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Euria hazbetetan?</string>
     <string name="rainfall_alert">Euri-alerta?</string>
     <string name="rainfall_alert_desc">Euria ezarritako mugara iristen denean alertak egunero</string>
-	<string name="rainfall_alert_str">Euri-Alerta</string>
+    <string name="rainfall_alert_notification">%1$s prezipitazioak zure %2$s ko mugarekin bat egin du</string>
+    <string name="rainfall_alert_str">Euri-Alerta</string>
     <string name="rainfall_limit">Prezipitazio muga</string>
-	<string name="rainrate_alert_severe">Euri-tasa larrien alertak?</string>
+    <string name="rainrate_alert_severe">Euri-tasa larrien alertak?</string>
     <string name="rainrate_alert_severe_desc">Alertak ematen ditu euri-mailak muga larria gainditzen badu euriteen iraupenaren arabera</string>
+    <string name="rainrate_alert_severe_notification">Azken %2$d %3$s ko %1$s ko euri-tasa \'Larria\' mailara iritsi da</string>
     <string name="rainrate_alert_severe_str">Euri-tasa larriaren alerta</string>
     <string name="rainrate_alert_str">Euri-tasa alerta</string>
     <string name="rainrate_alert_warning">Abisua Euri tasaren alertak?</string>
     <string name="rainrate_alert_warning_desc">Alertak ematen ditu euri-tasak abisu-muga gainditzen badu euriteen iraupenaren arabera</string>
+    <string name="rainrate_alert_warning_notification">Azken %2$d %3$s ko %1$s ko euri-tasa \'Abisua\' mailara iritsi da</string>
     <string name="rainrate_alert_warning_str">Abisua Euri-tasa alerta</string>
     <string name="rainrate_alert_watch">Euri-tasaren alertak ikusi?</string>
     <string name="rainrate_alert_watch_desc">Alertak ematen ditu euri-mailak erlojuaren muga gainditzen badu, prezipitazioen iraupenaren arabera</string>
+    <string name="rainrate_alert_watch_notification">Azken %2$d %3$s ko %1$s ko euri-tasa \'Ikusi\' mailara iritsi da</string>
     <string name="rainrate_alert_watch_str">Ikusi Rainrate Alert</string>
     <string name="refresh_time">Aukeratu Freskatzeko denbora</string>
     <string name="remove_all_data">Ziur datu guztiak kendu nahi dituzula?</string>

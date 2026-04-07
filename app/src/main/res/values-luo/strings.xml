@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Kuom</string>
     <string name="about_app">Kaluwore gi App</string>
-	<string name="afternoon_temp_alert">Chieng\' mar otieno?</string>
+    <string name="afternoon_alert">Liet mar %1$s osedok piny nyaka giko mari mar %2$s</string>
+    <string name="afternoon_temp_alert">Chieng\' mar otieno?</string>
     <string name="all_time_stats">Namba duto mag Saa</string>
     <string name="app_theme">Apom mapiyo</string>
     <string name="avg">kwan</string>
@@ -61,7 +62,8 @@
     <string name="match_app">App mar kwan</string>
     <string name="metric">Ti kod gige thieth?</string>
     <string name="minutes">dakika</string>
-	<string name="morning_temp_alert">Chik mar Odhiambo?</string>
+    <string name="morning_alert">Liet %1$s osemedore nyaka giko mari mar %2$s</string>
+    <string name="morning_temp_alert">Chik mar Odhiambo?</string>
     <string name="next_moon">Gik ma biro timore e dwe mabiro?</string>
     <string name="no">Ooyo</string>
     <string name="no_download_or_app_not_setup">Onge ng\'at ma nyalo ng\'ado bura kata ma pok oket</string>
@@ -87,17 +89,21 @@
     <string name="rain_in_inches">Koth chwe e Inchi?</string>
     <string name="rainfall_alert">Chiembo mar Koth?</string>
     <string name="rainfall_alert_desc">Onyiso pile ka pile ka koth ochopo giko ma iketo</string>
-	<string name="rainfall_alert_str">Chik mar koth</string>
+    <string name="rainfall_alert_notification">Koth ma chwe %1$s osechopo gi giko mari mar %2$s</string>
+    <string name="rainfall_alert_str">Chik mar koth</string>
     <string name="rainfall_limit">Giko mar Koth</string>
-	<string name="rainrate_alert_severe">Be Alars mag Koth Mapek?</string>
+    <string name="rainrate_alert_severe">Be Alars mag Koth Mapek?</string>
     <string name="rainrate_alert_severe_desc">Chiwo paro ka kwan mar koth okalo giko mapek kaluwore gi kinde ma koth chwee</string>
+    <string name="rainrate_alert_severe_notification">Kidieny mar koth ma romo %1$s e dweche %2$d mokalo %3$s osechopo e rang\'iny mar \'Mapek\'</string>
     <string name="rainrate_alert_severe_str">Chik mar Koth Matek</string>
     <string name="rainrate_alert_str">Chik mar Koth</string>
     <string name="rainrate_alert_warning">Osiem mag Kido mar Koth?</string>
     <string name="rainrate_alert_warning_desc">Onyiso ka kwan mar koth okalo giko mar siem kaluwore gi kinde ma koth chwee</string>
+    <string name="rainrate_alert_warning_notification">Kidieny mar koth ma romo %1$s e %2$d mokalo %3$s osechopo e okang\' mar \'Chiemo\'</string>
     <string name="rainrate_alert_warning_str">Chiembo Kido mar Koth</string>
     <string name="rainrate_alert_watch">Inyalo neno gik ma nyiso ni koth chwe?</string>
     <string name="rainrate_alert_watch_desc">Chiwo paro ka kwan mar koth okalo giko mar saa kaluwore gi kinde ma koth chwee</string>
+    <string name="rainrate_alert_watch_notification">Kidieny mar koth ma romo %1$s e dweche %2$d mokalo %3$s osechopo e rango mar \'Neno\'</string>
     <string name="rainrate_alert_watch_str">Neno Chik mar Koth</string>
     <string name="refresh_time">Yier Seche ma itiyogo e rito ler</string>
     <string name="remove_all_data">Be in gadier ni idwaro golo data duto?</string>

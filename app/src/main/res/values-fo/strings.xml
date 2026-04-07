@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Um</string>
     <string name="about_app">Um appina</string>
-	<string name="afternoon_temp_alert">Ávaring seinnapart?</string>
+    <string name="afternoon_alert">Hiti %1$s er farin til títt mark á %2$s</string>
+    <string name="afternoon_temp_alert">Ávaring seinnapart?</string>
     <string name="all_time_stats">Allar tíðir hagtøl</string>
     <string name="app_theme">App Tema</string>
     <string name="avg">miðal</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Samsvara app</string>
     <string name="metric">Brúka metrikk?</string>
     <string name="minutes">minuttir</string>
-	<string name="morning_temp_alert">Morgunávaring?</string>
+    <string name="morning_alert">Hiti %1$s er hækkaður til títt mark á %2$s</string>
+    <string name="morning_temp_alert">Morgunávaring?</string>
     <string name="next_moon">Hendingar í næsta mána?</string>
     <string name="no">Nei</string>
     <string name="no_download_or_app_not_setup">Eingin niðurtøka ella app er ikki sett upp</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Regn í tummum?</string>
     <string name="rainfall_alert">Ávaring um regn?</string>
     <string name="rainfall_alert_desc">Ávarar teg dagliga, um avfallið røkkur tínum ásetta marki</string>
-	<string name="rainfall_alert_str">Ávaring um regn</string>
+    <string name="rainfall_alert_notification">Avfall %1$s hevur samsvarað við títt mark á %2$s</string>
+    <string name="rainfall_alert_str">Ávaring um regn</string>
     <string name="rainfall_limit">Regnmark</string>
-	<string name="rainrate_alert_severe">Ávaring um álvarsligar regntíð?</string>
+    <string name="rainrate_alert_severe">Ávaring um álvarsligar regntíð?</string>
     <string name="rainrate_alert_severe_desc">Ávaring um regntíðin fer upp um harða markið grundað á regntíðina</string>
+    <string name="rainrate_alert_severe_notification">Regnstøðið á %1$s seinastu %2$d %3$s hevur rakt \'Alvorligt\' stig</string>
     <string name="rainrate_alert_severe_str">Ávaring um ógvusligan regntíð</string>
     <string name="rainrate_alert_str">Ávaring um regntíð</string>
     <string name="rainrate_alert_warning">Ávaring Ávaring um regntíð?</string>
     <string name="rainrate_alert_warning_desc">Ávaring um regntíðin fer upp um ávaringsmarkið grundað á regntíðina</string>
+    <string name="rainrate_alert_warning_notification">Regnstøðið á %1$s í seinastu %2$d %3$s hevur rakt \'Ávaring\' støðið</string>
     <string name="rainrate_alert_warning_str">Ávaring Ávaring um regntíð</string>
     <string name="rainrate_alert_watch">Hygg eftir ávaringum um regntíð?</string>
     <string name="rainrate_alert_watch_desc">Ávaring um regntíðin fer upp um vaktmarkið grundað á regntíðina</string>
+    <string name="rainrate_alert_watch_notification">Regnstig á %1$s seinastu %2$d %3$s hevur rakt \'Watch\' støðið</string>
     <string name="rainrate_alert_watch_str">Hygg eftir regntíðarávaring</string>
     <string name="refresh_time">Vel Uppfríska tíð</string>
     <string name="remove_all_data">Ert tú vísur í, at tú vilt strika allar dátur?</string>

@@ -2,7 +2,8 @@
 <resources>
     <string name="about">ກ່ຽວກັບ</string>
     <string name="about_app">ກ່ຽວກັບ app</string>
-	<string name="afternoon_temp_alert">ແຈ້ງເຕືອນຕອນບ່າຍ?</string>
+    <string name="afternoon_alert">ອຸນຫະພູມ %1$s ຫຼຸດລົງເຖິງຂີດຈຳກັດ %2$s ຂອງທ່ານ</string>
+    <string name="afternoon_temp_alert">ແຈ້ງເຕືອນຕອນບ່າຍ?</string>
     <string name="all_time_stats">ສະຖິຕິເວລາທັງຫມົດ</string>
     <string name="app_theme">ຫົວຂໍ້ App</string>
     <string name="avg">ສະເລ່ຍ</string>
@@ -61,7 +62,8 @@
     <string name="match_app">match match</string>
     <string name="metric">ໃຊ້ metric?</string>
     <string name="minutes">ນາທີ</string>
-	<string name="morning_temp_alert">ແຈ້ງເຕືອນຕອນເຊົ້າ?</string>
+    <string name="morning_alert">ອຸນຫະພູມ %1$s ເພີ່ມຂຶ້ນເຖິງຂີດຈຳກັດ %2$s ຂອງທ່ານ</string>
+    <string name="morning_temp_alert">ແຈ້ງເຕືອນຕອນເຊົ້າ?</string>
     <string name="next_moon">ເຫດການດວງເດືອນຕໍ່ໄປ?</string>
     <string name="no">ບໍ່</string>
     <string name="no_download_or_app_not_setup">ບໍ່ມີການດາວໂຫຼດ ຫຼືແອັບຍັງບໍ່ໄດ້ຖືກຕັ້ງຄ່າ</string>
@@ -82,17 +84,21 @@
     <string name="rain_in_inches">ຝົນໃນນິ້ວ?</string>
     <string name="rainfall_alert">ແຈ້ງເຕືອນຝົນຕົກ?</string>
     <string name="rainfall_alert_desc">ແຈ້ງເຕືອນທຸກວັນເມື່ອຝົນຕົກຮອດກຳນົດທີ່ກຳນົດໄວ້</string>
-	<string name="rainfall_alert_str">ແຈ້ງເຕືອນຝົນຕົກ</string>
+    <string name="rainfall_alert_notification">ນໍ້າຝົນ %1$s ກົງກັບຂີດຈຳກັດ %2$s ຂອງທ່ານ</string>
+    <string name="rainfall_alert_str">ແຈ້ງເຕືອນຝົນຕົກ</string>
     <string name="rainfall_limit">ຈຳກັດປະລິມານນ້ຳຝົນ</string>
-	<string name="rainrate_alert_severe">ແຈ້ງເຕືອນຝົນຕົກໜັກບໍ?</string>
+    <string name="rainrate_alert_severe">ແຈ້ງເຕືອນຝົນຕົກໜັກບໍ?</string>
     <string name="rainrate_alert_severe_desc">ແຈ້ງເຕືອນຖ້າປະລິມານຝົນຕົກເກີນຂອບເຂດທີ່ຮຸນແຮງໂດຍອີງໃສ່ໄລຍະເວລາຝົນຕົກ</string>
+    <string name="rainrate_alert_severe_notification">ອັດຕາຝົນ %1$s ໃນ %2$d %3$s ສຸດທ້າຍໄດ້ຮອດລະດັບ \'ຮ້າຍແຮງ\'</string>
     <string name="rainrate_alert_severe_str">ແຈ້ງເຕືອນຝົນຕົກໜັກ</string>
     <string name="rainrate_alert_str">ແຈ້ງເຕືອນຝົນຕົກ</string>
     <string name="rainrate_alert_warning">ເຕືອນໄພຝົນຕົກບໍ?</string>
     <string name="rainrate_alert_warning_desc">ແຈ້ງເຕືອນຖ້າປະລິມານຝົນຕົກເກີນຂອບເຂດການເຕືອນໂດຍອີງໃສ່ໄລຍະເວລາຝົນຕົກ</string>
+    <string name="rainrate_alert_warning_notification">ອັດຕາຝົນ %1$s ໃນ %2$d %3$s ສຸດທ້າຍໄດ້ຮອດລະດັບ \'ຄຳເຕືອນ\'</string>
     <string name="rainrate_alert_warning_str">ເຕືອນໄພຝົນຕົກ</string>
     <string name="rainrate_alert_watch">ເບິ່ງການແຈ້ງເຕືອນຝົນຕົກບໍ?</string>
     <string name="rainrate_alert_watch_desc">ແຈ້ງເຕືອນຖ້າອັດຕາຝົນເກີນຂີດຈຳກັດໂມງອີງຕາມໄລຍະເວລາຝົນຕົກ</string>
+    <string name="rainrate_alert_watch_notification">ອັດຕາຝົນ %1$s ໃນ %2$d %3$s ສຸດທ້າຍໄດ້ຮອດລະດັບ \'ເບິ່ງ\'</string>
     <string name="rainrate_alert_watch_str">ເບິ່ງແຈ້ງເຕືອນຝົນຕົກ</string>
     <string name="refresh_time">ເລືອກເວລາສົດຊື່ນ</string>
     <string name="remove_all_data">ທ່ານແນ່ໃຈບໍ່ວ່າທ່ານຕ້ອງການລຶບຂໍ້ມູນທັງຫມົດອອກ?</string>

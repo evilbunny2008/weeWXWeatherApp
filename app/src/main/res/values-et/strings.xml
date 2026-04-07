@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Umbes</string>
     <string name="about_app">Teave rakenduse kohta</string>
-	<string name="afternoon_temp_alert">Pärastlõunane hoiatus?</string>
+    <string name="afternoon_alert">Temperatuur %1$s on langenud teie piirini %2$s</string>
+    <string name="afternoon_temp_alert">Pärastlõunane hoiatus?</string>
     <string name="all_time_stats">Kogu aegade statistika</string>
     <string name="app_theme">Rakenduse teema</string>
     <string name="avg">keskm</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match App</string>
     <string name="metric">Kas kasutada mõõdikut?</string>
     <string name="minutes">minutit</string>
-	<string name="morning_temp_alert">Hommikune hoiatus?</string>
+    <string name="morning_alert">Temperatuur %1$s on tõusnud teie piirini %2$s</string>
+    <string name="morning_temp_alert">Hommikune hoiatus?</string>
     <string name="next_moon">Järgmise kuu sündmused?</string>
     <string name="no">Ei</string>
     <string name="no_download_or_app_not_setup">Ühtegi allalaadimist ega rakendust pole seadistatud</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Vihm tollides?</string>
     <string name="rainfall_alert">Vihmahoiatus?</string>
     <string name="rainfall_alert_desc">Hoiatab iga päev, kui sademete hulk jõuab seatud piirini</string>
-	<string name="rainfall_alert_str">Vihmahoiatus</string>
+    <string name="rainfall_alert_notification">Vihmahulk %1$s on ühtinud teie limiidiga %2$s</string>
+    <string name="rainfall_alert_str">Vihmahoiatus</string>
     <string name="rainfall_limit">Sademete piirmäär</string>
-	<string name="rainrate_alert_severe">Tõsise vihmamäära hoiatused?</string>
+    <string name="rainrate_alert_severe">Tõsise vihmamäära hoiatused?</string>
     <string name="rainrate_alert_severe_desc">Hoiatab, kui sademete hulk ületab sademete kestvuse põhjal kehtestatud piirmäära</string>
+    <string name="rainrate_alert_severe_notification">Viimase %2$d %3$s vihmamäär %1$s on saavutanud \'raske\' taseme</string>
     <string name="rainrate_alert_severe_str">Tõsise vihmasaju hoiatus</string>
     <string name="rainrate_alert_str">Vihmahoiatus</string>
     <string name="rainrate_alert_warning">Hoiatab vihmamäära hoiatusi?</string>
     <string name="rainrate_alert_warning_desc">Annab märku, kui sademete hulk ületab sademete kestusest tuleneva hoiatuslimiidi</string>
+    <string name="rainrate_alert_warning_notification">Viimase %2$d %3$s vihmamäär %1$s on saavutanud hoiatustaseme</string>
     <string name="rainrate_alert_warning_str">Hoiatus vihmamäärade eest</string>
     <string name="rainrate_alert_watch">Kas vaadata vihmamärgu hoiatusi?</string>
     <string name="rainrate_alert_watch_desc">Annab märku, kui sademete hulk ületab sademete kestuse alusel lubatud piirmäära</string>
+    <string name="rainrate_alert_watch_notification">Viimase %2$d %3$s vihmamäär %1$s on jõudnud vaatamistasemele</string>
     <string name="rainrate_alert_watch_str">Vaadake vihmahoiatust</string>
     <string name="refresh_time">Valige Värskendusaeg</string>
     <string name="remove_all_data">Kas olete kindel, et soovite kõik andmed eemaldada?</string>

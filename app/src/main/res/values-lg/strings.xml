@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Ku</string>
     <string name="about_app">Ebikwata ku App</string>
-	<string name="afternoon_temp_alert">Okulabula kw\'emisana?</string>
+    <string name="afternoon_alert">Ebbugumu %1$s likendedde okutuuka ku kkomo lyo erya %2$s</string>
+    <string name="afternoon_temp_alert">Okulabula kw\'emisana?</string>
     <string name="all_time_stats">Ebibalo by\'ebiseera byonna</string>
     <string name="app_theme">Omulamwa gwa App</string>
     <string name="avg">avg</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match App</string>
     <string name="metric">Kozesa Metric?</string>
     <string name="minutes">dakikka</string>
-	<string name="morning_temp_alert">Okulabula ku makya?</string>
+    <string name="morning_alert">Ebbugumu %1$s lirinnye okutuuka ku kkomo lyo erya %2$s</string>
+    <string name="morning_temp_alert">Okulabula ku makya?</string>
     <string name="next_moon">Ebibaddewo mu mwezi oguddako?</string>
     <string name="no">Nedda</string>
     <string name="no_download_or_app_not_setup">Tewali kuwanula oba app tebadde setup</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Enkuba etonnya mu Yinsi?</string>
     <string name="rainfall_alert">Okulabula kw\'enkuba?</string>
     <string name="rainfall_alert_desc">Alabula buli lunaku ng\'enkuba etuuse ku kkomo lyo lye wateekawo</string>
-	<string name="rainfall_alert_str">Okulabula kw\'enkuba</string>
+    <string name="rainfall_alert_notification">Enkuba %1$s ekwatagana n\'ekkomo lyo erya %2$s</string>
+    <string name="rainfall_alert_str">Okulabula kw\'enkuba</string>
     <string name="rainfall_limit">Ekkomo ku nkuba</string>
-	<string name="rainrate_alert_severe">Okulabula kw\'enkuba ey\'amaanyi?</string>
+    <string name="rainrate_alert_severe">Okulabula kw\'enkuba ey\'amaanyi?</string>
     <string name="rainrate_alert_severe_desc">Alabula singa enkuba esukka ekkomo ery\'amaanyi okusinziira ku bbanga ly\'enkuba ly\'etonnya</string>
+    <string name="rainrate_alert_severe_notification">Enkuba ya %1$s mu %2$d %3$s ezisembyeyo etuuse ku ddaala lya \'Severe\'</string>
     <string name="rainrate_alert_severe_str">Okulabula kw\'enkuba ey\'amaanyi</string>
     <string name="rainrate_alert_str">Okulabula kw\'enkuba etonnya</string>
     <string name="rainrate_alert_warning">Okulabula Okulabula ku mutindo gw\'enkuba?</string>
     <string name="rainrate_alert_warning_desc">Alabula singa enkuba esukka ekkomo ery\'okulabula okusinziira ku bbanga ly\'enkuba ly\'etonnya</string>
+    <string name="rainrate_alert_warning_notification">Enkuba ya %1$s mu %2$d %3$s ezisembyeyo etuuse ku ddaala lya \'Okulabula\'</string>
     <string name="rainrate_alert_warning_str">Okulabula Okulabula ku mutindo gw\'enkuba</string>
     <string name="rainrate_alert_watch">Watch Okulabula kw\'enkuba?</string>
     <string name="rainrate_alert_watch_desc">Alabula singa enkuba esukka ekkomo ly\'essaawa okusinziira ku bbanga ly\'enkuba ly\'etonnya</string>
+    <string name="rainrate_alert_watch_notification">Enkuba ya %1$s mu %2$d %3$s ezisembyeyo etuuse ku ddaala lya \'Watch\'</string>
     <string name="rainrate_alert_watch_str">Laba Okulabula kw\'enkuba</string>
     <string name="refresh_time">Londa obudde bw\'okuzza obuggya</string>
     <string name="remove_all_data">Okakasa nti oyagala kuggyawo data yonna?</string>

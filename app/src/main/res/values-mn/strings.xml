@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Тухай</string>
     <string name="about_app">Апп-ийн тухай</string>
-	<string name="afternoon_temp_alert">Үдээс хойш сэрэмжлүүлэх үү?</string>
+    <string name="afternoon_alert">Температур %1$s таны %2$s хүртэл буурсан байна</string>
+    <string name="afternoon_temp_alert">Үдээс хойш сэрэмжлүүлэх үү?</string>
     <string name="all_time_stats">Бүх цагийн статистик</string>
     <string name="app_theme">Програмын сэдэв</string>
     <string name="avg">дундаж</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Тохирон бүхий дамжуулагч</string>
     <string name="metric">Хэмжигдэхүүнийг ашиглах уу?</string>
     <string name="minutes">минут</string>
-	<string name="morning_temp_alert">Өглөөний сэрэмжлүүлэг?</string>
+    <string name="morning_alert">Температур %1$s таны %2$s хязгаарт хүрсэн байна</string>
+    <string name="morning_temp_alert">Өглөөний сэрэмжлүүлэг?</string>
     <string name="next_moon">Дараагийн сарны арга хэмжээ?</string>
     <string name="no">-Гүй / -битгий</string>
     <string name="no_download_or_app_not_setup">Ямар ч таталт эсвэл програмыг тохируулаагүй байна</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Инчээр бороо орох уу?</string>
     <string name="rainfall_alert">Хур тунадасны сэрэмжлүүлэг?</string>
     <string name="rainfall_alert_desc">Хур тунадасны хэмжээ таны тогтоосон хязгаарт хүрэхэд өдөр бүр мэдэгдэнэ</string>
-	<string name="rainfall_alert_str">Хур тунадасны сэрэмжлүүлэг</string>
+    <string name="rainfall_alert_notification">%1$s хур тунадас таны %2$s хязгаарт таарч байна</string>
+    <string name="rainfall_alert_str">Хур тунадасны сэрэмжлүүлэг</string>
     <string name="rainfall_limit">Хур тунадасны хязгаар</string>
-	<string name="rainrate_alert_severe">Хүчтэй борооны дохио байна уу?</string>
+    <string name="rainrate_alert_severe">Хүчтэй борооны дохио байна уу?</string>
     <string name="rainrate_alert_severe_desc">Борооны хэмжээ хур тунадасны үргэлжлэх хугацаанаас хамааран хэт их хэмжээний хязгаараас хэтэрсэн тохиолдолд сэрэмжлүүлэг өгнө</string>
+    <string name="rainrate_alert_severe_notification">Сүүлийн %2$d %3$s д орсон %1$s борооны хэмжээ \'Хүнд\' түвшинд хүрсэн байна</string>
     <string name="rainrate_alert_severe_str">Хүчтэй борооны дохио</string>
     <string name="rainrate_alert_str">Борооны дохио</string>
     <string name="rainrate_alert_warning">Борооны хурдыг анхааруулж байна уу?</string>
     <string name="rainrate_alert_warning_desc">Борооны хэмжээ нь борооны үргэлжлэх хугацаанаас хамаарч анхааруулах хязгаараас хэтэрсэн тохиолдолд сэрэмжлүүлдэг</string>
+    <string name="rainrate_alert_warning_notification">Сүүлийн %2$d %3$s д орсон %1$s борооны хэмжээ \'Анхааруулга\' түвшинд хүрсэн байна</string>
     <string name="rainrate_alert_warning_str">Борооны хурдны сэрэмжлүүлэг</string>
     <string name="rainrate_alert_watch">Rainrate Alerts үзэх үү?</string>
     <string name="rainrate_alert_watch_desc">Борооны хэмжээ борооны үргэлжлэх хугацаанаас хамааран цагийн хязгаараас хэтэрсэн тохиолдолд анхааруулга</string>
+    <string name="rainrate_alert_watch_notification">Сүүлийн %2$d %3$s д орсон %1$s борооны хэмжээ \'Үзэх\' түвшинд хүрсэн байна</string>
     <string name="rainrate_alert_watch_str">Rainrate Alert үзэх</string>
     <string name="refresh_time">Сэргээх хугацааг сонгоно уу</string>
     <string name="remove_all_data">Та бүх өгөгдлийг арилгахыг хүсч байна уу?</string>

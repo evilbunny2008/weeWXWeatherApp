@@ -2,7 +2,8 @@
 <resources>
     <string name="about">וועגן</string>
     <string name="about_app">וועגן די אַפּ</string>
-	<string name="afternoon_temp_alert">נאָכמיטאָג אַלערט?</string>
+    <string name="afternoon_alert">טעמפּעראַטור %1$s איז געפאלן צו דיין שיעור פון %2$s</string>
+    <string name="afternoon_temp_alert">נאָכמיטאָג אַלערט?</string>
     <string name="all_time_stats">אַלע צייט סטאַטיסטיק</string>
     <string name="app_theme">אַפּ טעמע</string>
     <string name="avg">אַווג</string>
@@ -61,7 +62,8 @@
     <string name="match_app">גלייַכן אַפּ</string>
     <string name="metric">ניצן מעטריק?</string>
     <string name="minutes">מינוט</string>
-	<string name="morning_temp_alert">מאָרגן אַלערט?</string>
+    <string name="morning_alert">טעמפּעראַטור %1$s איז געשטיגן צו דיין שיעור פון %2$s</string>
+    <string name="morning_temp_alert">מאָרגן אַלערט?</string>
     <string name="next_moon">קומענדיקע לבנה געשעענישן?</string>
     <string name="no">ניין</string>
     <string name="no_download_or_app_not_setup">קיין אראפקאפיע אָדער אַפּ איז נישט סעטאַפּ</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">רעגן אין אינטשעס?</string>
     <string name="rainfall_alert">רעגן אַלערט?</string>
     <string name="rainfall_alert_desc">אַלערץ טעגלעך ווען די רעגן ריטשאַז דיין באַשטימט שיעור</string>
-	<string name="rainfall_alert_str">רעגן אַלערט</string>
+    <string name="rainfall_alert_notification">רעגן %1$s איז געשטיגן צו דיין שיעור פון %2$s</string>
+    <string name="rainfall_alert_str">רעגן אַלערט</string>
     <string name="rainfall_limit">רעגן לימיט</string>
-	<string name="rainrate_alert_severe">שטרענג רעגן-ראַטע אַלערץ?</string>
+    <string name="rainrate_alert_severe">שטרענג רעגן-ראַטע אַלערץ?</string>
     <string name="rainrate_alert_severe_desc">אַלערץ אויב די רעגן קורס יקסידז די שטרענג שיעור באזירט אויף רעגן געדויער</string>
+    <string name="rainrate_alert_severe_notification">רעגן ראטע פון ​​%1$s אין די לעצטע %2$d %3$s האט געטראגן \'שטרענג\' מדרגה</string>
     <string name="rainrate_alert_severe_str">שטרענג ראַינרייט אַלערט</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
     <string name="rainrate_alert_warning">ווארענונג ריינראַטע אַלערץ?</string>
     <string name="rainrate_alert_warning_desc">אַלערץ אויב די רעגן קורס יקסידז די ווארענונג שיעור באזירט אויף רעגן געדויער</string>
+    <string name="rainrate_alert_warning_notification">רעגן ראטע פון ​​%1$s אין די לעצטע %2$d %3$s האט דערגרייכט \'ווארענונג\' מדרגה</string>
     <string name="rainrate_alert_warning_str">ווארענונג ריינראַטע אַלערט</string>
     <string name="rainrate_alert_watch">וואַך Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">אַלערץ אויב די רעגן קורס יקסידז די וואַך שיעור באזירט אויף רעגן געדויער</string>
+    <string name="rainrate_alert_watch_notification">רעגן ראטע פון ​​%1$s אין די לעצטע %2$d %3$s האט געטראגן צו \'היטן\' מדרגה</string>
     <string name="rainrate_alert_watch_str">וואַך Rainrate Alert</string>
     <string name="refresh_time">קלייַבן דערפרישן צייט</string>
     <string name="remove_all_data">זענט איר זיכער אַז איר ווילן צו באַזייַטיקן אַלע דאַטן?</string>

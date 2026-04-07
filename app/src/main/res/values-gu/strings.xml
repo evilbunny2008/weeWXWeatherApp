@@ -2,7 +2,8 @@
 <resources>
     <string name="about">વિશે</string>
     <string name="about_app">એપ્લિકેશન વિશે</string>
-	<string name="afternoon_temp_alert">બપોરે ચેતવણી?</string>
+    <string name="afternoon_alert">તાપમાન %1$s %2$s ની તમારી મર્યાદા સુધી ઘટી ગયું છે</string>
+    <string name="afternoon_temp_alert">બપોરે ચેતવણી?</string>
     <string name="all_time_stats">બધા સમયના આંકડા</string>
     <string name="app_theme">એપ્લિકેશન થીમ</string>
     <string name="avg">સરેરાશ</string>
@@ -61,7 +62,8 @@
     <string name="match_app">મેચ એપ્લિકેશન</string>
     <string name="metric">મેટ્રિકનો ઉપયોગ કરીએ?</string>
     <string name="minutes">મિનિટ</string>
-	<string name="morning_temp_alert">મોર્નિંગ એલર્ટ?</string>
+    <string name="morning_alert">તાપમાન %1$s વધીને તમારી %2$s ની મર્યાદા સુધી પહોંચી ગયું છે</string>
+    <string name="morning_temp_alert">મોર્નિંગ એલર્ટ?</string>
     <string name="next_moon">આગામી ચંદ્ર ઘટનાઓ?</string>
     <string name="no">ના</string>
     <string name="no_download_or_app_not_setup">કોઈ ડાઉનલોડ કે એપ સેટઅપ કરવામાં આવી નથી</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">ઇંચ વરસાદ?</string>
     <string name="rainfall_alert">વરસાદની ચેતવણી?</string>
     <string name="rainfall_alert_desc">જ્યારે વરસાદ તમારી નિર્ધારિત મર્યાદા સુધી પહોંચે ત્યારે દરરોજ ચેતવણીઓ</string>
-	<string name="rainfall_alert_str">વરસાદની ચેતવણી</string>
+    <string name="rainfall_alert_notification">વરસાદ %1$s તમારી %2$s ની મર્યાદા સાથે મેળ ખાય છે</string>
+    <string name="rainfall_alert_str">વરસાદની ચેતવણી</string>
     <string name="rainfall_limit">વરસાદની મર્યાદા</string>
-	<string name="rainrate_alert_severe">ગંભીર વરસાદની ચેતવણીઓ?</string>
+    <string name="rainrate_alert_severe">ગંભીર વરસાદની ચેતવણીઓ?</string>
     <string name="rainrate_alert_severe_desc">જો વરસાદની અવધિના આધારે વરસાદનો દર ગંભીર મર્યાદા કરતાં વધી જાય તો ચેતવણીઓ</string>
+    <string name="rainrate_alert_severe_notification">છેલ્લા %2$d %3$s માં %1$s નો વરસાદ \'ગંભીર\' સ્તરે પહોંચ્યો છે</string>
     <string name="rainrate_alert_severe_str">ગંભીર વરસાદની ચેતવણી</string>
     <string name="rainrate_alert_str">રેઈનરેટ એલર્ટ</string>
     <string name="rainrate_alert_warning">ચેતવણી રેઈનરેટ ચેતવણીઓ?</string>
     <string name="rainrate_alert_warning_desc">જો વરસાદની અવધિના આધારે વરસાદનો દર ચેતવણી મર્યાદા કરતાં વધી જાય તો ચેતવણીઓ</string>
+    <string name="rainrate_alert_warning_notification">છેલ્લા %2$d %3$s માં %1$s નો વરસાદ \'ચેતવણી\' સ્તરે પહોંચ્યો છે</string>
     <string name="rainrate_alert_warning_str">ચેતવણી વરસાદના દરની ચેતવણી</string>
     <string name="rainrate_alert_watch">રેઇનરેટ ચેતવણીઓ જુઓ?</string>
     <string name="rainrate_alert_watch_desc">જો વરસાદની અવધિના આધારે વરસાદનો દર ઘડિયાળની મર્યાદા કરતાં વધી જાય તો ચેતવણીઓ</string>
+    <string name="rainrate_alert_watch_notification">છેલ્લા %2$d %3$s માં %1$s નો વરસાદ \'વોચ\' લેવલ પર પહોંચ્યો છે</string>
     <string name="rainrate_alert_watch_str">રેઈનરેટ એલર્ટ જુઓ</string>
     <string name="refresh_time">તાજું કરવાનો સમય પસંદ કરો</string>
     <string name="remove_all_data">શું તમે ખરેખર તમામ ડેટા દૂર કરવા માંગો છો?</string>

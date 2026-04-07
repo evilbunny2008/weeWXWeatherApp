@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Par</string>
     <string name="about_app">Par lietotni</string>
-	<string name="afternoon_temp_alert">Pēcpusdienas brīdinājums?</string>
+    <string name="afternoon_alert">Temperatūra %1$s ir noslīdējusi līdz jūsu ierobežojumam %2$s</string>
+    <string name="afternoon_temp_alert">Pēcpusdienas brīdinājums?</string>
     <string name="all_time_stats">Visu laiku statistika</string>
     <string name="app_theme">Lietotnes motīvs</string>
     <string name="avg">vid</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match App</string>
     <string name="metric">Vai izmantot metriku?</string>
     <string name="minutes">minūtes</string>
-	<string name="morning_temp_alert">Rīta brīdinājums?</string>
+    <string name="morning_alert">Temperatūra %1$s ir pieaugusi līdz jūsu ierobežojumam %2$s</string>
+    <string name="morning_temp_alert">Rīta brīdinājums?</string>
     <string name="next_moon">Nākamā mēness notikumi?</string>
     <string name="no">Nē</string>
     <string name="no_download_or_app_not_setup">Nav iestatīta neviena lejupielāde vai lietotne</string>
@@ -84,17 +86,21 @@
     <string name="rain_in_inches">Lietus collās?</string>
     <string name="rainfall_alert">Brīdinājums par nokrišņiem?</string>
     <string name="rainfall_alert_desc">Brīdina katru dienu, kad nokrišņu daudzums sasniedz iestatīto ierobežojumu</string>
-	<string name="rainfall_alert_str">Brīdinājums par nokrišņiem</string>
+    <string name="rainfall_alert_notification">Nokrišņu daudzums %1$s atbilst jūsu ierobežojumam %2$s</string>
+    <string name="rainfall_alert_str">Brīdinājums par nokrišņiem</string>
     <string name="rainfall_limit">Nokrišņu limits</string>
-	<string name="rainrate_alert_severe">Brīdinājumi par nopietnu lietus ātrumu?</string>
+    <string name="rainrate_alert_severe">Brīdinājumi par nopietnu lietus ātrumu?</string>
     <string name="rainrate_alert_severe_desc">Brīdina, ja lietus daudzums pārsniedz stingro robežu, pamatojoties uz nokrišņu ilgumu</string>
+    <string name="rainrate_alert_severe_notification">Lietus līmenis %1$s pēdējos %2$d %3$s ir sasniedzis smagu līmeni</string>
     <string name="rainrate_alert_severe_str">Brīdinājums par spēcīgu lietus ātrumu</string>
     <string name="rainrate_alert_str">Brīdinājums par lietus ātrumu</string>
     <string name="rainrate_alert_warning">Brīdinājums par lietus ātrumu?</string>
     <string name="rainrate_alert_warning_desc">Brīdina, ja lietus daudzums pārsniedz brīdinājuma robežu, pamatojoties uz lietus ilgumu</string>
+    <string name="rainrate_alert_warning_notification">Lietus ātrums %1$s pēdējās %2$d %3$s ir sasniedzis brīdinājuma līmeni</string>
     <string name="rainrate_alert_warning_str">Brīdinājums par lietus ātrumu</string>
     <string name="rainrate_alert_watch">Vai skatāties brīdinājumus par lietus ātrumu?</string>
     <string name="rainrate_alert_watch_desc">Brīdina, ja lietus daudzums pārsniedz pulksteņa ierobežojumu, pamatojoties uz lietus ilgumu</string>
+    <string name="rainrate_alert_watch_notification">Lietus līmenis %1$s pēdējos %2$d %3$s ir sasniedzis skatīšanās līmeni</string>
     <string name="rainrate_alert_watch_str">Skatieties brīdinājumu par lietus ātrumu</string>
     <string name="refresh_time">Izvēlieties Atsvaidzināšanas laiks</string>
     <string name="remove_all_data">Vai tiešām vēlaties noņemt visus datus?</string>

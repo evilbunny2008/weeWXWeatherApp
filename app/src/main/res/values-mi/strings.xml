@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Mō</string>
     <string name="about_app">Mo te taupānga</string>
-	<string name="afternoon_temp_alert">Matohi o te ahiahi?</string>
+    <string name="afternoon_alert">Kua heke te pāmahana %1$s ki tō tepe o %2$s</string>
+    <string name="afternoon_temp_alert">Matohi o te ahiahi?</string>
     <string name="all_time_stats">Tauanga Katoa</string>
     <string name="app_theme">Kaupapa taupānga</string>
     <string name="avg">toharite</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Taupānga ōrite</string>
     <string name="metric">Whakamahia te metric?</string>
     <string name="minutes">meneti</string>
-	<string name="morning_temp_alert">Matohi Ata?</string>
+    <string name="morning_alert">Kua piki te pāmahana %1$s ki tō tepe o %2$s</string>
+    <string name="morning_temp_alert">Matohi Ata?</string>
     <string name="next_moon">Nga huihuinga o te marama e whai ake nei?</string>
     <string name="no">Kāo</string>
     <string name="no_download_or_app_not_setup">Karekau he tango, he taupānga ranei kaore ano kia tatū</string>
@@ -87,17 +89,21 @@
     <string name="rain_in_inches">Te ua i roto Inihi?</string>
     <string name="rainfall_alert">Matohi ua?</string>
     <string name="rainfall_alert_desc">He matohi ia ra ina tae te ua ki to rohe kua whakaritea</string>
-	<string name="rainfall_alert_str">Matohi ua</string>
+    <string name="rainfall_alert_notification">Kua tau te ua %1$s ki to rohe o %2$s</string>
+    <string name="rainfall_alert_str">Matohi ua</string>
     <string name="rainfall_limit">Tepe ua</string>
-	<string name="rainrate_alert_severe">Nga Matohi Te Raina Nui?</string>
+    <string name="rainrate_alert_severe">Nga Matohi Te Raina Nui?</string>
     <string name="rainrate_alert_severe_desc">He matohi mena ka nui ake te ua i te rohe nui i runga i te roanga ua</string>
+    <string name="rainrate_alert_severe_notification">Ko te ua o %1$s i te %2$d %3$s kua pa ki te taumata \'Paua\'</string>
     <string name="rainrate_alert_severe_str">Matohi Te Ua Tino</string>
     <string name="rainrate_alert_str">Matohi Te ua</string>
     <string name="rainrate_alert_warning">Whakatupato i nga Matohi Raina?</string>
     <string name="rainrate_alert_warning_desc">He matohi mehemea ka nui ake te ua i te rohe whakatupato i runga i te roanga ua</string>
+    <string name="rainrate_alert_warning_notification">Ko te ua o %1$s i te %2$d %3$s kua pa ki te taumata \'Whakatupato\'</string>
     <string name="rainrate_alert_warning_str">Whakatupato i te ua matohi</string>
     <string name="rainrate_alert_watch">Matakitaki i nga Matohi Rainrate?</string>
     <string name="rainrate_alert_watch_desc">He matohi mehemea ka nui ake te ua i te rohe mataaratanga i runga i te roanga ua</string>
+    <string name="rainrate_alert_watch_notification">Ko te ua o %1$s i te %2$d %3$s kua pa ki te taumata \'Matataki\'</string>
     <string name="rainrate_alert_watch_str">Kia mataara Rainrate Alert</string>
     <string name="refresh_time">Whiriwhiria te wa whakahou</string>
     <string name="remove_all_data">Kei te hiahia koe ki te tango i nga raraunga katoa?</string>

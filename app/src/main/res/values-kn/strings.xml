@@ -2,7 +2,8 @@
 <resources>
     <string name="about">ಬಗ್ಗೆ</string>
     <string name="about_app">ಅಪ್ಲಿಕೇಶನ್ ಬಗ್ಗೆ</string>
-	<string name="afternoon_temp_alert">ಮಧ್ಯಾಹ್ನದ ಎಚ್ಚರಿಕೆ?</string>
+    <string name="afternoon_alert">%1$s ತಾಪಮಾನವು ನಿಮ್ಮ ಮಿತಿಯಾದ %2$s ಗೆ ಇಳಿದಿದೆ</string>
+    <string name="afternoon_temp_alert">ಮಧ್ಯಾಹ್ನದ ಎಚ್ಚರಿಕೆ?</string>
     <string name="all_time_stats">ಸಾರ್ವಕಾಲಿಕ ಅಂಕಿಅಂಶಗಳು</string>
     <string name="app_theme">ಅಪ್ಲಿಕೇಶನ್ ಥೀಮ್</string>
     <string name="avg">ಸರಾಸರಿ</string>
@@ -61,7 +62,8 @@
     <string name="match_app">ಹೊಂದಾಣಿಕೆ ಅಪ್ಲಿಕೇಶನ್</string>
     <string name="metric">ಮೆಟ್ರಿಕ್ ಬಳಸುವುದೇ?</string>
     <string name="minutes">ನಿಮಿಷಗಳು</string>
-	<string name="morning_temp_alert">ಬೆಳಗಿನ ಎಚ್ಚರಿಕೆ?</string>
+    <string name="morning_alert">%1$s ತಾಪಮಾನವು ನಿಮ್ಮ ಮಿತಿ %2$s ಗೆ ಏರಿದೆ</string>
+    <string name="morning_temp_alert">ಬೆಳಗಿನ ಎಚ್ಚರಿಕೆ?</string>
     <string name="next_moon">ಮುಂದಿನ ಚಂದ್ರನ ಘಟನೆಗಳು?</string>
     <string name="no">ಸಂ</string>
     <string name="no_download_or_app_not_setup">ಯಾವುದೇ ಡೌನ್‌ಲೋಡ್ ಅಥವಾ ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">ಇಂಚುಗಳಲ್ಲಿ ಮಳೆ?</string>
     <string name="rainfall_alert">ಮಳೆಯ ಎಚ್ಚರಿಕೆ?</string>
     <string name="rainfall_alert_desc">ಮಳೆಯು ನಿಮ್ಮ ನಿಗದಿತ ಮಿತಿಯನ್ನು ತಲುಪಿದಾಗ ದೈನಂದಿನ ಎಚ್ಚರಿಕೆಗಳು</string>
-	<string name="rainfall_alert_str">ಮಳೆಯ ಎಚ್ಚರಿಕೆ</string>
+    <string name="rainfall_alert_notification">%1$s ಮಳೆಯು ನಿಮ್ಮ %2$s ಮಿತಿಗೆ ಹೊಂದಿಕೆಯಾಗಿದೆ</string>
+    <string name="rainfall_alert_str">ಮಳೆಯ ಎಚ್ಚರಿಕೆ</string>
     <string name="rainfall_limit">ಮಳೆಯ ಮಿತಿ</string>
-	<string name="rainrate_alert_severe">ತೀವ್ರ ಮಳೆಯ ಎಚ್ಚರಿಕೆಗಳು?</string>
+    <string name="rainrate_alert_severe">ತೀವ್ರ ಮಳೆಯ ಎಚ್ಚರಿಕೆಗಳು?</string>
     <string name="rainrate_alert_severe_desc">ಮಳೆಯ ಅವಧಿಯನ್ನು ಆಧರಿಸಿ ಮಳೆಯ ಪ್ರಮಾಣವು ತೀವ್ರ ಮಿತಿಯನ್ನು ಮೀರಿದರೆ ಎಚ್ಚರಿಕೆ ನೀಡುತ್ತದೆ</string>
+    <string name="rainrate_alert_severe_notification">ಕಳೆದ %2$d %3$s ನಲ್ಲಿ %1$s ರ ಮಳೆಯ ಪ್ರಮಾಣವು \'ತೀವ್ರ\' ಮಟ್ಟವನ್ನು ತಲುಪಿದೆ</string>
     <string name="rainrate_alert_severe_str">ತೀವ್ರ ಮಳೆಯ ಎಚ್ಚರಿಕೆ</string>
     <string name="rainrate_alert_str">ರೈನ್ರೇಟ್ ಎಚ್ಚರಿಕೆ</string>
     <string name="rainrate_alert_warning">ವಾರ್ನಿಂಗ್ ರೈನ್ರೇಟ್ ಎಚ್ಚರಿಕೆಗಳು?</string>
     <string name="rainrate_alert_warning_desc">ಮಳೆಯ ಅವಧಿಯನ್ನು ಆಧರಿಸಿ ಮಳೆಯ ಪ್ರಮಾಣವು ಎಚ್ಚರಿಕೆಯ ಮಿತಿಯನ್ನು ಮೀರಿದರೆ ಎಚ್ಚರಿಕೆ ನೀಡುತ್ತದೆ</string>
+    <string name="rainrate_alert_warning_notification">ಕಳೆದ %2$d %3$s ನಲ್ಲಿ %1$s ರ ಮಳೆಯ ಪ್ರಮಾಣವು \'ಎಚ್ಚರಿಕೆ\' ಮಟ್ಟವನ್ನು ತಲುಪಿದೆ</string>
     <string name="rainrate_alert_warning_str">ಎಚ್ಚರಿಕೆ ಮಳೆಯ ಪ್ರಮಾಣ ಎಚ್ಚರಿಕೆ</string>
     <string name="rainrate_alert_watch">ಮಳೆ ಬೀಳುವ ಎಚ್ಚರಿಕೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ?</string>
     <string name="rainrate_alert_watch_desc">ಮಳೆಯ ಅವಧಿಯನ್ನು ಆಧರಿಸಿ ಮಳೆಯ ಪ್ರಮಾಣವು ವೀಕ್ಷಣೆ ಮಿತಿಯನ್ನು ಮೀರಿದರೆ ಎಚ್ಚರಿಕೆ ನೀಡುತ್ತದೆ</string>
+    <string name="rainrate_alert_watch_notification">ಕಳೆದ %2$d %3$s ನಲ್ಲಿ %1$s ರ ಮಳೆಯ ಪ್ರಮಾಣವು \'ವಾಚ್\' ಮಟ್ಟವನ್ನು ತಲುಪಿದೆ</string>
     <string name="rainrate_alert_watch_str">ರೈನ್‌ರೇಟ್ ಎಚ್ಚರಿಕೆಯನ್ನು ವೀಕ್ಷಿಸಿ</string>
     <string name="refresh_time">ರಿಫ್ರೆಶ್ ಸಮಯವನ್ನು ಆಯ್ಕೆಮಾಡಿ</string>
     <string name="remove_all_data">ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ತೆಗೆದುಹಾಕಲು ನೀವು ಖಚಿತವಾಗಿ ಬಯಸುವಿರಾ?</string>

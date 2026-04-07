@@ -2,10 +2,11 @@
 <resources>
     <string name="about">Over</string>
     <string name="about_app">Over de app</string>
-	<string name="afternoon_temp_alert">Middagwaarschuwing?</string>
+    <string name="afternoon_alert">Temperatuur %1$s is gedaald tot uw limiet van %2$s</string>
+    <string name="afternoon_temp_alert">Middagwaarschuwing?</string>
     <string name="all_time_stats">Statistieken aller tijden</string>
     <string name="app_theme">App-thema</string>
-    <string name="avg">gem.</string>
+    <string name="avg">gem</string>
     <string name="battery_warning">Waarschuwing: als u de bovenstaande optie inschakelt, kan uw batterij sneller leeglopen dan normaal</string>
     <string name="before">voor</string>
     <string name="bgColour">Achtergrondkleurkiezer voor widgets</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match-app</string>
     <string name="metric">Metrisch gebruiken?</string>
     <string name="minutes">notulen</string>
-	<string name="morning_temp_alert">Ochtendwaarschuwing?</string>
+    <string name="morning_alert">Temperatuur %1$s is gestegen tot uw limiet van %2$s</string>
+    <string name="morning_temp_alert">Ochtendwaarschuwing?</string>
     <string name="next_moon">Volgende maanevenementen?</string>
     <string name="no">Nee</string>
     <string name="no_download_or_app_not_setup">Er is geen download of app ingesteld</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Regen in centimeters?</string>
     <string name="rainfall_alert">Neerslagwaarschuwing?</string>
     <string name="rainfall_alert_desc">Waarschuwt dagelijks wanneer de regenval de door u ingestelde limiet bereikt</string>
-	<string name="rainfall_alert_str">Neerslagwaarschuwing</string>
+    <string name="rainfall_alert_notification">De regenval %1$s komt overeen met uw limiet van %2$s</string>
+    <string name="rainfall_alert_str">Neerslagwaarschuwing</string>
     <string name="rainfall_limit">Neerslaglimiet</string>
-	<string name="rainrate_alert_severe">Waarschuwingen voor ernstige regenval?</string>
+    <string name="rainrate_alert_severe">Waarschuwingen voor ernstige regenval?</string>
     <string name="rainrate_alert_severe_desc">Waarschuwt als de regensnelheid de ernstige limiet overschrijdt op basis van de regenduur</string>
+    <string name="rainrate_alert_severe_notification">Het regenpercentage van %1$s in de afgelopen %2$d %3$s heeft het niveau \'Ernstig\' bereikt</string>
     <string name="rainrate_alert_severe_str">Waarschuwing voor ernstige regenval</string>
     <string name="rainrate_alert_str">Regensnelheidswaarschuwing</string>
     <string name="rainrate_alert_warning">Waarschuwende regenwaarschuwingen?</string>
     <string name="rainrate_alert_warning_desc">Waarschuwt als de regensnelheid de waarschuwingslimiet overschrijdt op basis van de regenduur</string>
+    <string name="rainrate_alert_warning_notification">Regenpercentage van %1$s in de afgelopen %2$d %3$s heeft het \'Waarschuwing\'-niveau bereikt</string>
     <string name="rainrate_alert_warning_str">Waarschuwing regensnelheidswaarschuwing</string>
     <string name="rainrate_alert_watch">Regensnelheidswaarschuwingen bekijken?</string>
     <string name="rainrate_alert_watch_desc">Waarschuwt als de regensnelheid de observatielimiet overschrijdt op basis van de regenduur</string>
+    <string name="rainrate_alert_watch_notification">Het regenpercentage van %1$s in de afgelopen %2$d %3$s heeft het \'Bekijk\'-niveau bereikt</string>
     <string name="rainrate_alert_watch_str">Kijk Regenwaarschuwing</string>
     <string name="refresh_time">Kies Vernieuwingstijd</string>
     <string name="remove_all_data">Weet u zeker dat u alle gegevens wilt verwijderen?</string>

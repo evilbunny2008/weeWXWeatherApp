@@ -2,7 +2,8 @@
 <resources>
     <string name="about">შესახებ</string>
     <string name="about_app">აპლიკაციის შესახებ</string>
-	<string name="afternoon_temp_alert">შუადღის გაფრთხილება?</string>
+    <string name="afternoon_alert">ტემპერატურა %1$s დაეცა თქვენს %2$s ლიმიტამდე</string>
+    <string name="afternoon_temp_alert">შუადღის გაფრთხილება?</string>
     <string name="all_time_stats">ყველა დროის სტატისტიკა</string>
     <string name="app_theme">აპლიკაციის თემა</string>
     <string name="avg">საშ</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match App</string>
     <string name="metric">გამოიყენო Metric?</string>
     <string name="minutes">წუთები</string>
-	<string name="morning_temp_alert">დილის გაფრთხილება?</string>
+    <string name="morning_alert">ტემპერატურა %1$s გაიზარდა თქვენს %2$s ლიმიტამდე</string>
+    <string name="morning_temp_alert">დილის გაფრთხილება?</string>
     <string name="next_moon">შემდეგი მთვარის მოვლენები?</string>
     <string name="no">არა</string>
     <string name="no_download_or_app_not_setup">ჩამოტვირთვა ან აპი არ არის დაყენებული</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">წვიმა ინჩებში?</string>
     <string name="rainfall_alert">გაფრთხილება წვიმის შესახებ?</string>
     <string name="rainfall_alert_desc">ყოველდღიურად აფრთხილებს, როდესაც ნალექი თქვენს დადგენილ ლიმიტს მიაღწევს</string>
-	<string name="rainfall_alert_str">წვიმის გაფრთხილება</string>
+    <string name="rainfall_alert_notification">ნალექი %1$s დაემთხვა თქვენს %2$s ლიმიტს</string>
+    <string name="rainfall_alert_str">წვიმის გაფრთხილება</string>
     <string name="rainfall_limit">ნალექის ლიმიტი</string>
-	<string name="rainrate_alert_severe">ძლიერი წვიმის გაფრთხილება?</string>
+    <string name="rainrate_alert_severe">ძლიერი წვიმის გაფრთხილება?</string>
     <string name="rainrate_alert_severe_desc">აფრთხილებს, თუ წვიმის სიხშირე აჭარბებს მკაცრ ზღვარს წვიმის ხანგრძლივობის მიხედვით</string>
+    <string name="rainrate_alert_severe_notification">%1$s წვიმის სიხშირე ბოლო %2$d %3$s ში მიაღწია \'ძლიერ\' დონეს</string>
     <string name="rainrate_alert_severe_str">ძლიერი წვიმის გაფრთხილება</string>
     <string name="rainrate_alert_str">წვიმის გაფრთხილება</string>
     <string name="rainrate_alert_warning">გაფრთხილება წვიმის სიხშირის შესახებ?</string>
     <string name="rainrate_alert_warning_desc">აფრთხილებს, თუ წვიმის სიხშირე აჭარბებს გაფრთხილების ლიმიტს წვიმის ხანგრძლივობის მიხედვით</string>
+    <string name="rainrate_alert_warning_notification">%1$s წვიმის სიხშირე ბოლო %2$d %3$s ში მიაღწია \'გაფრთხილების\' დონეს</string>
     <string name="rainrate_alert_warning_str">გაფრთხილება წვიმის სიხშირის შესახებ</string>
     <string name="rainrate_alert_watch">უყურეთ წვიმის გაფრთხილებებს?</string>
     <string name="rainrate_alert_watch_desc">აფრთხილებს, თუ წვიმის მაჩვენებელი აჭარბებს საათის ლიმიტს წვიმის ხანგრძლივობის მიხედვით</string>
+    <string name="rainrate_alert_watch_notification">წვიმის %1$s ბოლო %2$d %3$s მიაღწია \'ყურების\' დონეს</string>
     <string name="rainrate_alert_watch_str">უყურეთ წვიმის გაფრთხილებას</string>
     <string name="refresh_time">აირჩიეთ განახლების დრო</string>
     <string name="remove_all_data">დარწმუნებული ხართ, რომ გსურთ წაშალოთ ყველა მონაცემი?</string>

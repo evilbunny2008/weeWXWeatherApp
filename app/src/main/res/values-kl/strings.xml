@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Tunngassuteqarpoq</string>
     <string name="about_app">App pillugu</string>
-	<string name="afternoon_temp_alert">Ualeqqaarnerani Alert?</string>
+    <string name="afternoon_alert">Kissarneq %1$s %2$s imut killigititamut appariarsimavoq</string>
+    <string name="afternoon_temp_alert">Ualeqqaarnerani Alert?</string>
     <string name="all_time_stats">Piffissaq tamakkerlugu kisitsisit</string>
     <string name="app_theme">App Tema</string>
     <string name="avg">agguaqatigiissillugu</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match App</string>
     <string name="metric">Metrik atorlugu?</string>
     <string name="minutes">minutsit</string>
-	<string name="morning_temp_alert">Ullaakkorsiutit?</string>
+    <string name="morning_alert">Kissarnera %1$s %2$s imut killigititamut qaffassimavoq</string>
+    <string name="morning_temp_alert">Ullaakkorsiutit?</string>
     <string name="next_moon">Qaammat tulleq pisussat?</string>
     <string name="no">Naamik</string>
     <string name="no_download_or_app_not_setup">Download-imik imaluunniit app-imik atortoqanngilaq</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Inches-ini sila?</string>
     <string name="rainfall_alert">Rainfall-imik mianersoqqussut?</string>
     <string name="rainfall_alert_desc">Ullut tamaasa ilisimatitsissutigisarpatit, sila killigititaq aalajangersimasoq qaangerneqarpat</string>
-	<string name="rainfall_alert_str">Rainfall-imik mianersoqqussut</string>
+    <string name="rainfall_alert_notification">Rainfall %1$s %2$s imik killigititamut naleqquppoq</string>
+    <string name="rainfall_alert_str">Rainfall-imik mianersoqqussut</string>
     <string name="rainfall_limit">Rainfall-imik killissarititaq</string>
-	<string name="rainrate_alert_severe">Annertuumik silap pissusaanik mianersoqqussut?</string>
+    <string name="rainrate_alert_severe">Annertuumik silap pissusaanik mianersoqqussut?</string>
     <string name="rainrate_alert_severe_desc">Silap pissusaata sivisussusaa tunngavigalugu silap pissusaa sakkortuumik killissamik qaangerneqarpat mianersoqqussut</string>
+    <string name="rainrate_alert_severe_notification">Rainrate %1$s imik kingullermik %2$d %3$s imi \'Severe\'-mik niveau-mut tikippoq</string>
     <string name="rainrate_alert_severe_str">Annertuumik silap pissusaa pillugu mianersoqqussut</string>
     <string name="rainrate_alert_str">Rainrate-mik mianersoqqussut</string>
     <string name="rainrate_alert_warning">Misissueqqissaarneq Rainrate-mik mianersoqqussut?</string>
     <string name="rainrate_alert_warning_desc">Silap pissusaata allanngoriartornerata sivisussusaa tunngavigalugu mianersoqqussummik killigititaq qaangerneqarpat mianersoqqussutit</string>
+    <string name="rainrate_alert_warning_notification">Rainrate %1$s imik kingullermik %2$d %3$s imi \'Misissueqqissaarneq\'-mik niveau-mut tikippoq</string>
     <string name="rainrate_alert_warning_str">Misissueqqissaarneq Rainrate Alert</string>
     <string name="rainrate_alert_watch">Rainrate-mik nalunaarutit takukkit?</string>
     <string name="rainrate_alert_watch_desc">Silap pissusaata sivisussusaa tunngavigalugu silap pissusaata killigititaq qaangerneqarpat mianersoqqussutit</string>
+    <string name="rainrate_alert_watch_notification">Rainrate %1$s kingullermi %2$d %3$s \'Watch\' niveaumut tikippoq</string>
     <string name="rainrate_alert_watch_str">Rainrate Alert takuuk</string>
     <string name="refresh_time">Piffissaq nutarterlugu toqqaruk</string>
     <string name="remove_all_data">Qularnanngilaq datat tamarmik peerniarlugit?</string>

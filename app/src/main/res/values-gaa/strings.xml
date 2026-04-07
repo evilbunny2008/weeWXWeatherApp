@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Ehe</string>
     <string name="about_app">Yɛ app lɛ he</string>
-	<string name="afternoon_temp_alert">Gbi gbɛkɛ kɔkɔbɔɔ?</string>
+    <string name="afternoon_alert">Temperature %1$s eba shi kɛyashɛ ohusu ni ji %2$s lɛ nɔ</string>
+    <string name="afternoon_temp_alert">Gbi gbɛkɛ kɔkɔbɔɔ?</string>
     <string name="all_time_stats">Be he akɔntaabuu fɛɛ</string>
     <string name="app_theme">app Yitso</string>
     <string name="avg">mlijaa</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Teemɔ app</string>
     <string name="metric">Okɛ Metric atsu nii?</string>
     <string name="minutes">miniti</string>
-	<string name="morning_temp_alert">Leebi kɔkɔbɔɔ?</string>
+    <string name="morning_alert">Temperature %1$s etee ŋwɛi kɛyashɛ ohusu ni ji %2$s</string>
+    <string name="morning_temp_alert">Leebi kɔkɔbɔɔ?</string>
     <string name="next_moon">Nyɔŋtsere lɛ nifeemɔi ni nyiɛ sɛɛ lɛ?</string>
     <string name="no">daabi</string>
     <string name="no_download_or_app_not_setup">Akɛ nɔ ko ni ajieɔ loo app ko etoko</string>
@@ -87,17 +89,21 @@
     <string name="rain_in_inches">Nugbɔ yɛ Inch mli?</string>
     <string name="rainfall_alert">Nugbɔshiimɔ He Kɔkɔbɔɔ?</string>
     <string name="rainfall_alert_desc">Kɔkɔbɔɔ daa gbi kɛji nugbɔ lɛ shɛ husu ni okɛto lɛ he</string>
-	<string name="rainfall_alert_str">Nugbɔshiimɔ He Kɔkɔbɔɔ</string>
+    <string name="rainfall_alert_notification">Nugbɔshiimɔ %1$s kɛ ohusu ni ji %2$s lɛ kpã gbee</string>
+    <string name="rainfall_alert_str">Nugbɔshiimɔ He Kɔkɔbɔɔ</string>
     <string name="rainfall_limit">Nugbɔshiimɔ Husu</string>
-	<string name="rainrate_alert_severe">Nugbɔshiimɔ ni naa wa he kɔkɔbɔɔi?</string>
+    <string name="rainrate_alert_severe">Nugbɔshiimɔ ni naa wa he kɔkɔbɔɔi?</string>
     <string name="rainrate_alert_severe_desc">Kɔkɔbɔɔ kɛji nugbɔ lɛ fa fe husu ni naa wa ni damɔ nugbɔ lɛ be nɔ</string>
+    <string name="rainrate_alert_severe_notification">Nugbɔ ni nɛɔ %1$s yɛ naagbee %2$d %3$s eshɛ \'Naa wa\' he</string>
     <string name="rainrate_alert_severe_str">Nugbɔshiimɔ ni Naa Wa He Kɔkɔbɔɔ</string>
     <string name="rainrate_alert_str">Nugbɔshiimɔ He Kɔkɔbɔɔ</string>
     <string name="rainrate_alert_warning">Kɔkɔbɔɔ Nugbɔshiimɔ He Kɔkɔbɔɔi?</string>
     <string name="rainrate_alert_warning_desc">Kɔkɔbɔɔ kɛji nugbɔ ni nɛɔ lɛ fe kɔkɔbɔɔ husu ni damɔ nugbɔshiimɔ be nɔ</string>
+    <string name="rainrate_alert_warning_notification">Nugbɔ ni nɛɔ %1$s lɛ naagbee %2$d %3$s lɛ eba \'Kɔkɔbɔɔ\' he</string>
     <string name="rainrate_alert_warning_str">Kɔkɔbɔɔ Nugbɔshiimɔ He Kɔkɔbɔɔ</string>
     <string name="rainrate_alert_watch">Kwɛmɔ Nugbɔshiimɔ He Kɔkɔbɔɔi?</string>
     <string name="rainrate_alert_watch_desc">Kɔkɔbɔɔ kɛji nugbɔ lɛ fa fe watsi husu ni damɔ nugbɔ lɛ be nɔ</string>
+    <string name="rainrate_alert_watch_notification">Nugbɔ ni nɛɔ %1$s yɛ naagbee %2$d %3$s eshɛ \'Kwɛmɔ\' he</string>
     <string name="rainrate_alert_watch_str">Kwɛmɔ Nugbɔshiimɔ He Kɔkɔbɔɔ</string>
     <string name="refresh_time">Halamɔ Be Hejɔɔmɔ Be</string>
     <string name="remove_all_data">Ani oyɛ nɔmimaa akɛ oosumɔ ni ojie data fɛɛ?</string>

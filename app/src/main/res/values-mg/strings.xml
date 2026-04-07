@@ -2,7 +2,8 @@
 <resources>
     <string name="about">About</string>
     <string name="about_app">Momba ny fampiharana</string>
-	<string name="afternoon_temp_alert">Fanairana tolakandro?</string>
+    <string name="afternoon_alert">Nidina ho %2$s ny maripanao %1$s</string>
+    <string name="afternoon_temp_alert">Fanairana tolakandro?</string>
     <string name="all_time_stats">Ny antontan\'isa rehetra</string>
     <string name="app_theme">Lohahevitra fampiharana</string>
     <string name="avg">avg</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Ampifandraiso amin\'ny fampiharana</string>
     <string name="metric">Mampiasà metric?</string>
     <string name="minutes">minitra</string>
-	<string name="morning_temp_alert">Fanairana maraina?</string>
+    <string name="morning_alert">Niakatra ho %2$s ny maripanao %1$s</string>
+    <string name="morning_temp_alert">Fanairana maraina?</string>
     <string name="next_moon">Hetsika manaraka ny volana?</string>
     <string name="no">tsy misy</string>
     <string name="no_download_or_app_not_setup">Tsy misy fampidinana na fampiharana mbola tsy namboarina</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Orana inches?</string>
     <string name="rainfall_alert">Fanairana rotsak\'orana?</string>
     <string name="rainfall_alert_desc">Fampandrenesana isan\'andro rehefa mahatratra ny fetra napetrakao ny rotsak\'orana</string>
-	<string name="rainfall_alert_str">Fanairana rotsak\'orana</string>
+    <string name="rainfall_alert_notification">Ny rotsak\'orana %1$s dia nifanaraka tamin\'ny fetranao %2$s</string>
+    <string name="rainfall_alert_str">Fanairana rotsak\'orana</string>
     <string name="rainfall_limit">Fetra rotsak\'orana</string>
-	<string name="rainrate_alert_severe">Fanairana amin\'ny firotsahan\'ny orana?</string>
+    <string name="rainrate_alert_severe">Fanairana amin\'ny firotsahan\'ny orana?</string>
     <string name="rainrate_alert_severe_desc">Fampandrenesana raha mihoatra ny fetra henjana ny tahan\'ny orana mifototra amin\'ny faharetan\'ny orana</string>
+    <string name="rainrate_alert_severe_notification">Ny rotsak\'orana %1$s tamin\'ny %2$d %3$s farany dia nahatratra ny haavon\'ny \'Mafy\'</string>
     <string name="rainrate_alert_severe_str">Fanairana avy amin\'ny orana mahery</string>
     <string name="rainrate_alert_str">Fanairana ny orana</string>
     <string name="rainrate_alert_warning">Fampitandremana ny tahan\'ny orana?</string>
     <string name="rainrate_alert_warning_desc">Fampandrenesana raha mihoatra ny fetran\'ny fampitandremana ny rotsak\'orana noho ny faharetan\'ny orana</string>
+    <string name="rainrate_alert_warning_notification">Ny rotsak\'orana %1$s tamin\'ny %2$d %3$s farany dia nahatratra ny haavon\'ny \'Fampitandremana\'</string>
     <string name="rainrate_alert_warning_str">Fampitandremana momba ny orana</string>
     <string name="rainrate_alert_watch">Jereo ny fanairana amin\'ny orana?</string>
     <string name="rainrate_alert_watch_desc">Fampandrenesana raha mihoatra ny fetran\'ny fiambenana noho ny faharetan\'ny rotsak\'orana</string>
+    <string name="rainrate_alert_watch_notification">Ny rotsak\'orana %1$s tamin\'ny %2$d %3$s farany dia nahatratra ny haavon\'ny \'Fijerena\'</string>
     <string name="rainrate_alert_watch_str">Jereo ny fanairana ny orana</string>
     <string name="refresh_time">Safidio ny famelomana fotoana</string>
     <string name="remove_all_data">Azo antoka ve fa te hanaisotra ny data rehetra ianao?</string>

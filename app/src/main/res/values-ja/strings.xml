@@ -2,7 +2,8 @@
 <resources>
     <string name="about">について</string>
     <string name="about_app">アプリについて</string>
-	<string name="afternoon_temp_alert">午後の警報？</string>
+    <string name="afternoon_alert">温度 %1$s が制限値 %2$s まで低下しました</string>
+    <string name="afternoon_temp_alert">午後の警報？</string>
     <string name="all_time_stats">すべての時間の統計</string>
     <string name="app_theme">アプリのテーマ</string>
     <string name="avg">平均</string>
@@ -61,7 +62,8 @@
     <string name="match_app">マッチングアプリ</string>
     <string name="metric">メトリックを使用しますか?</string>
     <string name="minutes">分</string>
-	<string name="morning_temp_alert">朝の警報？</string>
+    <string name="morning_alert">温度 %1$s が制限値 %2$s まで上昇しました</string>
+    <string name="morning_temp_alert">朝の警報？</string>
     <string name="next_moon">来月のイベントは？</string>
     <string name="no">いいえ</string>
     <string name="no_download_or_app_not_setup">ダウンロードがないか、アプリがセットアップされていません</string>
@@ -82,17 +84,21 @@
     <string name="rain_in_inches">インチ単位の雨?</string>
     <string name="rainfall_alert">大雨警報？</string>
     <string name="rainfall_alert_desc">降雨量が設定した制限に達すると毎日アラートが送信されます</string>
-	<string name="rainfall_alert_str">降雨警報</string>
+    <string name="rainfall_alert_notification">降雨量 %1$s が制限値 %2$s に一致しました</string>
+    <string name="rainfall_alert_str">降雨警報</string>
     <string name="rainfall_limit">降雨量制限</string>
-	<string name="rainrate_alert_severe">深刻な降雨量警報?</string>
+    <string name="rainrate_alert_severe">深刻な降雨量警報?</string>
     <string name="rainrate_alert_severe_desc">降雨期間に基づいて降雨量が厳しい制限を超えた場合にアラートを送信します</string>
+    <string name="rainrate_alert_severe_notification">過去 %2$d %3$s の降雨率 %1$s が「深刻」レベルに達しました</string>
     <string name="rainrate_alert_severe_str">激しい雨量警報</string>
     <string name="rainrate_alert_str">降雨量アラート</string>
     <string name="rainrate_alert_warning">降雨量アラートを警告しますか?</string>
     <string name="rainrate_alert_warning_desc">降雨継続時間に基づいて降雨量が警告限界を超えた場合にアラートを送信します</string>
+    <string name="rainrate_alert_warning_notification">過去 %2$d %3$s の降雨率 %1$s が「警告」レベルに達しました</string>
     <string name="rainrate_alert_warning_str">警報降雨量アラート</string>
     <string name="rainrate_alert_watch">降雨量アラートを監視しますか?</string>
     <string name="rainrate_alert_watch_desc">降雨時間に基づいて降雨量が監視制限を超えた場合にアラートを送信します</string>
+    <string name="rainrate_alert_watch_notification">過去 %2$d %3$s の降雨率 %1$s が「監視」レベルに達しました</string>
     <string name="rainrate_alert_watch_str">降雨量アラートを監視する</string>
     <string name="refresh_time">更新時間を選択してください</string>
     <string name="remove_all_data">すべてのデータを削除してもよろしいですか?</string>

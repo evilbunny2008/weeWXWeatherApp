@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Maka</string>
     <string name="about_app">Banyere ngwa</string>
-	<string name="afternoon_temp_alert">Njikere ehihie?</string>
+    <string name="afternoon_alert">Okpomọkụ %1$s agbadala na oke gị nke %2$s</string>
+    <string name="afternoon_temp_alert">Njikere ehihie?</string>
     <string name="all_time_stats">Oge niile</string>
     <string name="app_theme">Okwu</string>
     <string name="avg">nkezi</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Ngwakọta ngwa</string>
     <string name="metric">Eji metroc?</string>
     <string name="minutes">nkeji</string>
-	<string name="morning_temp_alert">Ntị ụtụtụ?</string>
+    <string name="morning_alert">Okpomọkụ %1$s arịgoro ruo oke gị nke %2$s</string>
+    <string name="morning_temp_alert">Ntị ụtụtụ?</string>
     <string name="next_moon">Ọ na-esote ọnwa?</string>
     <string name="no">Mba</string>
     <string name="no_download_or_app_not_setup">Enweghị nbudata ma ọ bụ ngwa edobebeghị</string>
@@ -82,17 +84,21 @@
     <string name="rain_in_inches">Mmiri ozuzo na sentimita?</string>
     <string name="rainfall_alert">Mkpu maka mmiri ozuzo?</string>
     <string name="rainfall_alert_desc">Na-ama ọkwa kwa ụbọchị mgbe mmiri ozuzo ruru oke gị</string>
-	<string name="rainfall_alert_str">Nleba anya mmiri ozuzo</string>
+    <string name="rainfall_alert_notification">Mmiri ozuzo %1$s dabara na oke %2$s gị</string>
+    <string name="rainfall_alert_str">Nleba anya mmiri ozuzo</string>
     <string name="rainfall_limit">Oke mmiri ozuzo</string>
-	<string name="rainrate_alert_severe">Mkpu siri ike nke mmiri ozuzo?</string>
+    <string name="rainrate_alert_severe">Mkpu siri ike nke mmiri ozuzo?</string>
     <string name="rainrate_alert_severe_desc">Na-ama ọkwa ma ọ bụrụ na oke mmiri ozuzo gafere oke oke dabere na oge mmiri ozuzo</string>
+    <string name="rainrate_alert_severe_notification">Oke mmiri ozuzo nke %1$s n\'ime %2$d %3$s ikpeazụ eruola ọkwa \'Severe\'</string>
     <string name="rainrate_alert_severe_str">Mkpesa oke mmiri ozuzo</string>
     <string name="rainrate_alert_str">Nleba anya mmiri ozuzo</string>
     <string name="rainrate_alert_warning">Ịdọ aka ná ntị banyere oke mmiri ozuzo?</string>
     <string name="rainrate_alert_warning_desc">Na-ama ọkwa ma ọ bụrụ na oke mmiri ozuzo gafere oke ịdọ aka ná ntị dabere na oge mmiri ozuzo</string>
+    <string name="rainrate_alert_warning_notification">Oke mmiri ozuzo nke %1$s na %2$d %3$s ikpeazụ eruola ọkwa \'Ịdọ aka ná ntị\'</string>
     <string name="rainrate_alert_warning_str">Ịdọ aka ná ntị banyere oke mmiri ozuzo</string>
     <string name="rainrate_alert_watch">Lelee ọkwa ọkwa mmiri ozuzo?</string>
     <string name="rainrate_alert_watch_desc">Na-ama ọkwa ma ọ bụrụ na oke mmiri ozuzo gafere oke nche dabere na oge mmiri ozuzo</string>
+    <string name="rainrate_alert_watch_notification">Oke mmiri ozuzo nke %1$s na %2$d %3$s ikpeazụ eruola ọkwa \'Watch\'</string>
     <string name="rainrate_alert_watch_str">Lelee ọkwa mmiri ozuzo</string>
     <string name="refresh_time">Họrọ oge ume</string>
     <string name="remove_all_data">Ì ji n\'aka na ịchọrọ iwepu data niile?</string>

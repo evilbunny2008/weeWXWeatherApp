@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Babagan</string>
     <string name="about_app">Babagan App</string>
-	<string name="afternoon_temp_alert">Lansiran Sore?</string>
+    <string name="afternoon_alert">Suhu %1$s wis mudhun nganti watesan sampeyan %2$s</string>
+    <string name="afternoon_temp_alert">Lansiran Sore?</string>
     <string name="all_time_stats">Kabeh Statistik Wektu</string>
     <string name="app_theme">Tema Aplikasi</string>
     <string name="avg">rata-rata</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Aplikasi Cocokan</string>
     <string name="metric">Gunakake Metrik?</string>
     <string name="minutes">menit</string>
-	<string name="morning_temp_alert">Tandha esuk?</string>
+    <string name="morning_alert">Suhu %1$s wis munggah nganti watesan sampeyan %2$s</string>
+    <string name="morning_temp_alert">Tandha esuk?</string>
     <string name="next_moon">Sabanjure acara?</string>
     <string name="no">Ora</string>
     <string name="no_download_or_app_not_setup">Ora ana undhuhan utawa app sing durung disetel</string>
@@ -82,17 +84,21 @@
     <string name="rain_in_inches">Udan ing Inci?</string>
     <string name="rainfall_alert">Tandha Udan?</string>
     <string name="rainfall_alert_desc">Tandha saben dina nalika udan tekan wates sing disetel</string>
-	<string name="rainfall_alert_str">Tandha Udan</string>
+    <string name="rainfall_alert_notification">Curah udan %1$s wis cocog karo watesan sampeyan %2$s</string>
+    <string name="rainfall_alert_str">Tandha Udan</string>
     <string name="rainfall_limit">Watesan udan</string>
-	<string name="rainrate_alert_severe">Lansiran Laju Udan Parah?</string>
+    <string name="rainrate_alert_severe">Lansiran Laju Udan Parah?</string>
     <string name="rainrate_alert_severe_desc">Tandha yen tingkat udan ngluwihi wates sing abot adhedhasar durasi udan</string>
+    <string name="rainrate_alert_severe_notification">Udan %1$s ing pungkasan %2$d %3$s wis tekan tingkat \'Parah\'</string>
     <string name="rainrate_alert_severe_str">Tandha Rainrate Awrat</string>
     <string name="rainrate_alert_str">Tandha Rainrate</string>
     <string name="rainrate_alert_warning">Awas Laju Udan?</string>
     <string name="rainrate_alert_warning_desc">Tandha yen tingkat udan ngluwihi wates bebaya adhedhasar durasi udan</string>
+    <string name="rainrate_alert_warning_notification">Udan %1$s ing pungkasan %2$d %3$s wis tekan tingkat \'Pènget\'</string>
     <string name="rainrate_alert_warning_str">Warning Rainrate Alert</string>
     <string name="rainrate_alert_watch">Nonton Lansiran Rainrate?</string>
     <string name="rainrate_alert_watch_desc">Tandha yen tingkat udan ngluwihi watesan nonton adhedhasar durasi udan</string>
+    <string name="rainrate_alert_watch_notification">Udan %1$s ing pungkasan %2$d %3$s wis tekan tingkat \'Nonton\'</string>
     <string name="rainrate_alert_watch_str">Nonton Rainrate Alert</string>
     <string name="refresh_time">Pilih wektu refresh</string>
     <string name="remove_all_data">Apa sampeyan pengin mbusak kabeh data?</string>

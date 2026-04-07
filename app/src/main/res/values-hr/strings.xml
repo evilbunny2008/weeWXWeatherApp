@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Oko</string>
     <string name="about_app">O aplikaciji</string>
-	<string name="afternoon_temp_alert">Popodnevna uzbuna?</string>
+    <string name="afternoon_alert">Temperatura %1$s pala je na vašu granicu od %2$s</string>
+    <string name="afternoon_temp_alert">Popodnevna uzbuna?</string>
     <string name="all_time_stats">Statistika svih vremena</string>
     <string name="app_theme">Tema aplikacije</string>
     <string name="avg">prosj</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Aplikacija podudaranja</string>
     <string name="metric">Koristiti metriku?</string>
     <string name="minutes">minuta</string>
-	<string name="morning_temp_alert">Jutarnja uzbuna?</string>
+    <string name="morning_alert">Temperatura %1$s porasla je do vaše granice od %2$s</string>
+    <string name="morning_temp_alert">Jutarnja uzbuna?</string>
     <string name="next_moon">Događaji na sljedećem mjesecu?</string>
     <string name="no">Ne</string>
     <string name="no_download_or_app_not_setup">Nema preuzimanja ili aplikacija nije postavljena</string>
@@ -84,17 +86,21 @@
     <string name="rain_in_inches">Kiša u inčima?</string>
     <string name="rainfall_alert">Upozorenje o kiši?</string>
     <string name="rainfall_alert_desc">Svakodnevna upozorenja kada količina padalina dosegne postavljenu granicu</string>
-	<string name="rainfall_alert_str">Upozorenje o padalinama</string>
+    <string name="rainfall_alert_notification">Količina padalina %1$s dostigla je vaše ograničenje od %2$s</string>
+    <string name="rainfall_alert_str">Upozorenje o padalinama</string>
     <string name="rainfall_limit">Ograničenje padalina</string>
-	<string name="rainrate_alert_severe">Upozorenja o jakoj kiši?</string>
+    <string name="rainrate_alert_severe">Upozorenja o jakoj kiši?</string>
     <string name="rainrate_alert_severe_desc">Upozorava ako količina kiše premaši ozbiljno ograničenje na temelju trajanja padalina</string>
+    <string name="rainrate_alert_severe_notification">Stopa kiše od %1$s u posljednjih %2$d %3$s dosegla je razinu \'Jako\'</string>
     <string name="rainrate_alert_severe_str">Upozorenje o jakoj kiši</string>
     <string name="rainrate_alert_str">Upozorenje o količini kiše</string>
     <string name="rainrate_alert_warning">Upozorenja o količini kiše?</string>
     <string name="rainrate_alert_warning_desc">Upozorava ako količina kiše premaši granicu upozorenja na temelju trajanja padalina</string>
+    <string name="rainrate_alert_warning_notification">Stopa kiše od %1$s u posljednjih %2$d %3$s dosegla je razinu \'Upozorenje\'</string>
     <string name="rainrate_alert_warning_str">Upozorenje o količini kiše</string>
     <string name="rainrate_alert_watch">Gledati Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Upozorava ako količina kiše premaši ograničenje promatranja na temelju trajanja padalina</string>
+    <string name="rainrate_alert_watch_notification">Stopa kiše od %1$s u posljednjih %2$d %3$s dosegla je razinu \'Promatraj\'</string>
     <string name="rainrate_alert_watch_str">Pogledajte Rainrate Alert</string>
     <string name="refresh_time">Odaberite Vrijeme osvježavanja</string>
     <string name="remove_all_data">Jeste li sigurni da želite ukloniti sve podatke?</string>

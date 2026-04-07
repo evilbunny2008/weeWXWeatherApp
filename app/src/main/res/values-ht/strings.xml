@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Konsènan</string>
     <string name="about_app">Konsènan App a</string>
-	<string name="afternoon_temp_alert">Alèt apremidi?</string>
+    <string name="afternoon_alert">Tanperati %1$s desann nan limit ou a nan %2$s</string>
+    <string name="afternoon_temp_alert">Alèt apremidi?</string>
     <string name="all_time_stats">Estatistik tout tan</string>
     <string name="app_theme">Tèm aplikasyon an</string>
     <string name="avg">mwayèn</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Match App</string>
     <string name="metric">Sèvi ak metrik?</string>
     <string name="minutes">minit</string>
-	<string name="morning_temp_alert">Alèt maten?</string>
+    <string name="morning_alert">Tanperati %1$s monte nan limit ou a nan %2$s</string>
+    <string name="morning_temp_alert">Alèt maten?</string>
     <string name="next_moon">Evènman pwochen lalin?</string>
     <string name="no">Non</string>
     <string name="no_download_or_app_not_setup">Pa gen telechaje oswa aplikasyon pa te konfigirasyon</string>
@@ -87,17 +89,21 @@
     <string name="rain_in_inches">Lapli an pous?</string>
     <string name="rainfall_alert">Alèt lapli?</string>
     <string name="rainfall_alert_desc">Alèt chak jou lè lapli a rive nan limit ou fikse</string>
-	<string name="rainfall_alert_str">Alèt lapli</string>
+    <string name="rainfall_alert_notification">Lapli %1$s rive nan limit ou a nan %2$s</string>
+    <string name="rainfall_alert_str">Alèt lapli</string>
     <string name="rainfall_limit">Limit lapli</string>
-	<string name="rainrate_alert_severe">Alèt Gwo Lapli?</string>
+    <string name="rainrate_alert_severe">Alèt Gwo Lapli?</string>
     <string name="rainrate_alert_severe_desc">Avètisman si to lapli a depase limit grav selon dire lapli a</string>
+    <string name="rainrate_alert_severe_notification">Pousantaj lapli %1$s nan dènye %2$d %3$s yo te frape nivo \'Sevè\'</string>
     <string name="rainrate_alert_severe_str">Alèt Gwo Lapli</string>
     <string name="rainrate_alert_str">Alèt lapli</string>
     <string name="rainrate_alert_warning">Avètisman Avètisman lapli?</string>
     <string name="rainrate_alert_warning_desc">Alèt si to lapli a depase limit avètisman an ki baze sou dire lapli a</string>
+    <string name="rainrate_alert_warning_notification">Pousantaj lapli %1$s nan dènye %2$d %3$s yo te frape nivo \'Avètisman\'</string>
     <string name="rainrate_alert_warning_str">Avètisman Alèt lapli</string>
     <string name="rainrate_alert_watch">Gade Avètisman Rainrate?</string>
     <string name="rainrate_alert_watch_desc">Alèt si to lapli a depase limit siveyans la ki baze sou dire lapli a</string>
+    <string name="rainrate_alert_watch_notification">Pousantaj lapli %1$s nan dènye %2$d %3$s yo te frape nivo \'Gade\'</string>
     <string name="rainrate_alert_watch_str">Gade Avètisman Rainrate</string>
     <string name="refresh_time">Chwazi tan rafrechi</string>
     <string name="remove_all_data">Èske w sèten ou vle retire tout done yo?</string>

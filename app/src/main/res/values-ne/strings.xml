@@ -2,7 +2,8 @@
 <resources>
     <string name="about">बारे</string>
     <string name="about_app">एपको बारेमा</string>
-	<string name="afternoon_temp_alert">दिउँसो अलर्ट?</string>
+    <string name="afternoon_alert">तापक्रम %1$s %2$s को तपाईंको सीमामा झरेको छ</string>
+    <string name="afternoon_temp_alert">दिउँसो अलर्ट?</string>
     <string name="all_time_stats">सबै समय तथ्याङ्क</string>
     <string name="app_theme">एप थिम</string>
     <string name="avg">औसत</string>
@@ -24,8 +25,8 @@
     <string name="every_10_minutes">हरेक 2० मिनेटमा</string>
     <string name="every_10_seconds">प्रत्येक 10 सेकेन्डमा</string>
     <string name="every_15_minutes">हरेक 2५ मिनेटमा</string>
-    <string name="every_30_minutes">हरेक ३० मिनेटमा</string>
-    <string name="every_30_seconds">प्रत्येक ३० सेकेन्डमा</string>
+    <string name="every_30_minutes">हरेक 3० मिनेटमा</string>
+    <string name="every_30_seconds">प्रत्येक 3० सेकेन्डमा</string>
     <string name="every_60_seconds">हरेक ६० सेकेन्डमा</string>
     <string name="every_hour">हरेक घण्टा</string>
     <string name="failed_to_merge_weather_data">%1$s डाटालाई %2$s डाटासँग मर्ज गर्न असफल भयो</string>
@@ -46,7 +47,7 @@
     <string name="ill_fix_and_try_again">म यसलाई ठीक गर्छु र फेरि प्रयास गर्छु</string>
     <string name="indoor_readings">भित्री पठनहरू देखाउने हो?</string>
     <string name="inigo_needs_updating">यो एप अपडेट गरिएको छ तर तपाईंले जडान गरिरहनुभएको सर्भरले weeWX को लागि Inigo प्लगइन अपडेट गरेको छैन। weeWX अद्यावधिक नभएसम्म फिल्डहरू राम्ररी नदेखिन सक्छन्।</string>
-    <string name="interval_3h">३ घण्टामा</string>
+    <string name="interval_3h">3 घण्टामा</string>
     <string name="interval_6h">६ घण्टामा</string>
     <string name="interval_12h">12 घण्टा</string>
     <string name="interval_daily">दैनिक</string>
@@ -61,7 +62,8 @@
     <string name="match_app">मिलान एप</string>
     <string name="metric">मेट्रिक प्रयोग गर्ने हो?</string>
     <string name="minutes">मिनेट</string>
-	<string name="morning_temp_alert">बिहानको चेतावनी?</string>
+    <string name="morning_alert">तापक्रम %1$s %2$s को तपाईंको सीमामा बढेको छ</string>
+    <string name="morning_temp_alert">बिहानको चेतावनी?</string>
     <string name="next_moon">अर्को चन्द्रमा घटनाहरू?</string>
     <string name="no">छैन</string>
     <string name="no_download_or_app_not_setup">कुनै डाउनलोड वा एप सेटअप गरिएको छैन</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">इन्चमा वर्षा हुन्छ?</string>
     <string name="rainfall_alert">वर्षा चेतावनी?</string>
     <string name="rainfall_alert_desc">तपाईंको निर्धारित सीमामा वर्षा पुग्दा दैनिक अलर्टहरू</string>
-	<string name="rainfall_alert_str">वर्षा चेतावनी</string>
+    <string name="rainfall_alert_notification">वर्षा %1$s तपाईंको %2$s को सीमासँग मेल खाएको छ</string>
+    <string name="rainfall_alert_str">वर्षा चेतावनी</string>
     <string name="rainfall_limit">वर्षा सीमा</string>
-	<string name="rainrate_alert_severe">गम्भीर वर्षादर अलर्टहरू?</string>
+    <string name="rainrate_alert_severe">गम्भीर वर्षादर अलर्टहरू?</string>
     <string name="rainrate_alert_severe_desc">वर्षा अवधिको आधारमा वर्षा दरले गम्भीर सीमा नाघ्यो भने सतर्कता</string>
+    <string name="rainrate_alert_severe_notification">पछिल्लो %2$d %3$s मा %1$s को वर्षाले \'गम्भीर\' स्तरमा पुगेको छ</string>
     <string name="rainrate_alert_severe_str">गम्भीर वर्षाको चेतावनी</string>
     <string name="rainrate_alert_str">रेनरेट अलर्ट</string>
     <string name="rainrate_alert_warning">चेतावनी वर्षादर अलर्टहरू?</string>
     <string name="rainrate_alert_warning_desc">यदि वर्षाको अवधि वर्षाको अवधिमा आधारित चेतावनी सीमा नाघ्यो भने सतर्कता</string>
+    <string name="rainrate_alert_warning_notification">पछिल्लो %2$d %3$s मा %1$s को वर्षाले \'चेतावनी\' स्तरमा पुगेको छ</string>
     <string name="rainrate_alert_warning_str">चेतावनी वर्षादर अलर्ट</string>
     <string name="rainrate_alert_watch">रेनरेट अलर्टहरू हेर्ने हो?</string>
     <string name="rainrate_alert_watch_desc">सतर्कताहरू यदि वर्षाको अवधि वर्षाको अवधिमा आधारित वाच सीमा नाघ्यो भने</string>
+    <string name="rainrate_alert_watch_notification">पछिल्लो %2$d %3$s मा %1$s को वर्षाले \'वाच\' स्तरमा पुगेको छ</string>
     <string name="rainrate_alert_watch_str">रेनरेट अलर्ट हेर्नुहोस्</string>
     <string name="refresh_time">रिफ्रेस समय छान्नुहोस्</string>
     <string name="remove_all_data">के तपाइँ निश्चित हुनुहुन्छ कि तपाइँ सबै डेटा हटाउन चाहनुहुन्छ?</string>

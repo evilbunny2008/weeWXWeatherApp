@@ -2,7 +2,8 @@
 <resources>
     <string name="about">За</string>
     <string name="about_app">За апликацијата</string>
-	<string name="afternoon_temp_alert">Попладневно предупредување?</string>
+    <string name="afternoon_alert">Температурата %1$s се спушти до вашата граница од %2$s</string>
+    <string name="afternoon_temp_alert">Попладневно предупредување?</string>
     <string name="all_time_stats">Статистика за сите времиња</string>
     <string name="app_theme">Тема на апликацијата</string>
     <string name="avg">просечно</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Апликација за натпревар</string>
     <string name="metric">Да се ​​користи Metric?</string>
     <string name="minutes">минути</string>
-	<string name="morning_temp_alert">Утринско предупредување?</string>
+    <string name="morning_alert">Температурата %1$s се зголеми до вашата граница од %2$s</string>
+    <string name="morning_temp_alert">Утринско предупредување?</string>
     <string name="next_moon">Следни настани на месечината?</string>
     <string name="no">бр</string>
     <string name="no_download_or_app_not_setup">Ниту едно преземање или апликација не е поставена</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Дожд во инчи?</string>
     <string name="rainfall_alert">Предупредување за врнежи?</string>
     <string name="rainfall_alert_desc">Секојдневно известува кога врнежите ќе ја достигнат поставената граница</string>
-	<string name="rainfall_alert_str">Известување за врнежи</string>
+    <string name="rainfall_alert_notification">Врнежите %1$s се совпаѓаат со вашата граница од %2$s</string>
+    <string name="rainfall_alert_str">Известување за врнежи</string>
     <string name="rainfall_limit">Ограничување на врнежите</string>
-	<string name="rainrate_alert_severe">Предупредувања за сериозни врнежи?</string>
+    <string name="rainrate_alert_severe">Предупредувања за сериозни врнежи?</string>
     <string name="rainrate_alert_severe_desc">Предупредува ако стапката на дожд ја надминува строгата граница врз основа на времетраењето на врнежите</string>
+    <string name="rainrate_alert_severe_notification">Стапката на дожд од %1$s во последното %2$d %3$s го достигна нивото \'Тешка\'</string>
     <string name="rainrate_alert_severe_str">Предупредување за силен дожд</string>
     <string name="rainrate_alert_str">Предупредување за врнежи од дожд</string>
     <string name="rainrate_alert_warning">Предупредување за предупредувања за врнежи?</string>
     <string name="rainrate_alert_warning_desc">Предупредува ако стапката на дожд ја надминува границата за предупредување врз основа на времетраењето на врнежите</string>
+    <string name="rainrate_alert_warning_notification">Стапката на дожд од %1$s во последното %2$d %3$s го достигна нивото \'Предупредување\'</string>
     <string name="rainrate_alert_warning_str">Предупредување за врнежи од дожд</string>
     <string name="rainrate_alert_watch">Гледајте предупредувања за стапката на дожд?</string>
     <string name="rainrate_alert_watch_desc">Предупредува ако стапката на дожд ја надминува границата на часовникот врз основа на времетраењето на врнежите</string>
+    <string name="rainrate_alert_watch_notification">Стапката на дожд од %1$s во последното %2$d %3$s го достигна нивото \'Гледање\'</string>
     <string name="rainrate_alert_watch_str">Гледајте предупредување за стапка на дожд</string>
     <string name="refresh_time">Изберете Време на освежување</string>
     <string name="remove_all_data">Дали сте сигурни дека сакате да ги отстраните сите податоци?</string>

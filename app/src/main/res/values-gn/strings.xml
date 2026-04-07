@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Upéva rehegua</string>
     <string name="about_app">app rehegua</string>
-	<string name="afternoon_temp_alert">¿Alerta Asaje rehegua?</string>
+    <string name="afternoon_alert">Temperatura %1$s oguejy nde límite %2$s peve</string>
+    <string name="afternoon_temp_alert">¿Alerta Asaje rehegua?</string>
     <string name="all_time_stats">Opaichagua tiempo rehegua</string>
     <string name="app_theme">App Tema</string>
     <string name="avg">promedio</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Ombojoaju App</string>
     <string name="metric">Oipuru métrica?</string>
     <string name="minutes">aravo\'i</string>
-	<string name="morning_temp_alert">¿Alerta pyharevegua?</string>
+    <string name="morning_alert">Temperatura %1$s ojupi nde límite %2$s peve</string>
+    <string name="morning_temp_alert">¿Alerta pyharevegua?</string>
     <string name="next_moon">¿Oúva Jasy Acontecimientos?</string>
     <string name="no">nahániri</string>
     <string name="no_download_or_app_not_setup">No se ha app no ​​se ha sido configuración</string>
@@ -87,17 +89,21 @@
     <string name="rain_in_inches">¿Oky en Pulgadas?</string>
     <string name="rainfall_alert">¿Alerta Ama rehegua?</string>
     <string name="rainfall_alert_desc">Oalerta ára ha ára oky jave oguahëvo límite omoîva</string>
-	<string name="rainfall_alert_str">Alerta Ama rehegua</string>
+    <string name="rainfall_alert_notification">Ama %1$s ojoaju nde límite %2$s ndive</string>
+    <string name="rainfall_alert_str">Alerta Ama rehegua</string>
     <string name="rainfall_limit">Límite de lluvia</string>
-	<string name="rainrate_alert_severe">¿Alertas de ritmo severa de lluvia?</string>
+    <string name="rainrate_alert_severe">¿Alertas de ritmo severa de lluvia?</string>
     <string name="rainrate_alert_severe_desc">Oalerta ritmo de lluvia ohasáramo límite severo oñemopyendáva duración de lluvia</string>
+    <string name="rainrate_alert_severe_notification">Oky ritmo %1$s %2$d %3$s paha ohupyty nivel \'Severo\'</string>
     <string name="rainrate_alert_severe_str">Alerta de ritmo de lluvia vaiete</string>
     <string name="rainrate_alert_str">Alerta de precipitación de lluvia rehegua</string>
     <string name="rainrate_alert_warning">¿Alertas de precisión de lluvia rehegua advertencia?</string>
     <string name="rainrate_alert_warning_desc">Oalerta ritmo de lluvia ohasáramo límite de advertencia oñemopyendáva duración de lluvia</string>
+    <string name="rainrate_alert_warning_notification">Oky ritmo %1$s %2$d %3$s paha ohupyty nivel \'Advertencia\'</string>
     <string name="rainrate_alert_warning_str">Advertencia Alerta de Rasa de lluvia rehegua</string>
     <string name="rainrate_alert_watch">¿Ehecha umi Alerta de precisión de lluvia?</string>
     <string name="rainrate_alert_watch_desc">Oalerta ritmo de lluvia ohasáramo límite de reloj oñemopyendáva duración de lluvia</string>
+    <string name="rainrate_alert_watch_notification">Oky ritmo %1$s %2$d %3$s pahaitépe ohupyty nivel \'Emaña\'</string>
     <string name="rainrate_alert_watch_str">Ojesareko Alerta de precipitación rehe</string>
     <string name="refresh_time">Eiporavo Ñembopyahu Aravo</string>
     <string name="remove_all_data">¿Ere seguro reipe\'aseha opaite dato?</string>

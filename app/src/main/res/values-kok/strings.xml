@@ -2,7 +2,8 @@
 <resources>
     <string name="about">संबंदीं</string>
     <string name="about_app">अॅपा विशीं</string>
-	<string name="afternoon_temp_alert">दनपारां इशारो?</string>
+    <string name="afternoon_alert">तापमान %1$s तुमच्या %2$s मर्यादेमेरेन देंवलां</string>
+    <string name="afternoon_temp_alert">दनपारां इशारो?</string>
     <string name="all_time_stats">सगळ्या वेळाची आंकडेवारी</string>
     <string name="app_theme">अॅप थीम</string>
     <string name="avg">सरासरी</string>
@@ -46,7 +47,7 @@
     <string name="ill_fix_and_try_again">हांव तें सुदारून परतून यत्न करतलों</string>
     <string name="indoor_readings">घरांतले वाचन दाखोवचे?</string>
     <string name="inigo_needs_updating">हो ऍप्लिकेशन अपडेट केला पूण तुमी जोडटात त्या सर्वरान weeWX खातीर Inigo प्लगइन अपडेट करूंक ना. weeWX अद्ययावत जाय मेरेन क्षेत्रां सारकीं दाखोवंक शकनात</string>
-    <string name="interval_3h">३ वराक</string>
+    <string name="interval_3h">3 वराक</string>
     <string name="interval_6h">६ वराक</string>
     <string name="interval_12h">21 वराक</string>
     <string name="interval_daily">सद्दां</string>
@@ -61,7 +62,8 @@
     <string name="match_app">जुळोवणी अॅप</string>
     <string name="metric">मेट्रीक वापरप?</string>
     <string name="minutes">मिण्टां</string>
-	<string name="morning_temp_alert">सकाळीं इशारो?</string>
+    <string name="morning_alert">तापमान %1$s तुमच्या %2$s मर्यादेमेरेन वाडलां</string>
+    <string name="morning_temp_alert">सकाळीं इशारो?</string>
     <string name="next_moon">फुडल्या चंद्राच्यो घडणुको?</string>
     <string name="no">ना</string>
     <string name="no_download_or_app_not_setup">खंयचोच डाउनलोड वा अॅप सेटअप केल्लो ना</string>
@@ -87,17 +89,21 @@
     <string name="rain_in_inches">इंचांत पावस?</string>
     <string name="rainfall_alert">पावसाची सावधानताय?</string>
     <string name="rainfall_alert_desc">पावस तुमच्या थारायिल्ल्या मर्यादेमेरेन पावलो जाल्यार दर दिसा तुमकां सावधान करता</string>
-	<string name="rainfall_alert_str">पावसाची इशारो</string>
+    <string name="rainfall_alert_notification">पावस %1$s तुमच्या %2$s मर्यादेकडेन जुळ्ळा</string>
+    <string name="rainfall_alert_str">पावसाची इशारो</string>
     <string name="rainfall_limit">पावसाची मर्यादा</string>
-	<string name="rainrate_alert_severe">खर पावसाच्या दरान सावधानताय?</string>
+    <string name="rainrate_alert_severe">खर पावसाच्या दरान सावधानताय?</string>
     <string name="rainrate_alert_severe_desc">पावसाच्या काळाचेर आदारून पावसाचे दर खर मर्यादे परस चड आसल्यार सावधान करता</string>
+    <string name="rainrate_alert_severe_notification">निमाण्या %2$d %3$s च्या %1$s पावसाच्या दरान \'तीव्र\' पातळेचेर पावला</string>
     <string name="rainrate_alert_severe_str">खर पावसाची इशारो</string>
     <string name="rainrate_alert_str">पावसाच्या दरान इशारो</string>
     <string name="rainrate_alert_warning">शिटकावणी पावसाच्या दरान सावधानताय?</string>
     <string name="rainrate_alert_warning_desc">पावसाच्या काळाचेर आदारीत पावसाचे दर शिटकावणी मर्यादे परस चड आसल्यार सावधान करता</string>
+    <string name="rainrate_alert_warning_notification">निमाण्या %2$d %3$s च्या %1$s पावसाच्या दरान \'शिटकावणी\' पातळेचेर पावला</string>
     <string name="rainrate_alert_warning_str">शिटकावणी पावसाच्या दराची इशारो</string>
     <string name="rainrate_alert_watch">पावसाचे दराचे अलर्ट पळयात?</string>
     <string name="rainrate_alert_watch_desc">पावसाच्या काळाचेर आदारीत पावसाचे दर घड्याळ मर्यादे परस चड आसल्यार सावधान करता</string>
+    <string name="rainrate_alert_watch_notification">निमाण्या %2$d %3$s च्या %1$s पावसाच्या दरान \'पळयात\' पातळेचेर पावला</string>
     <string name="rainrate_alert_watch_str">रेनरेट अलर्ट पळयात</string>
     <string name="refresh_time">ताजें वेळ निवडात</string>
     <string name="remove_all_data">तुमकां सगळो डेटा काडून उडोवपाचो आसा हाची खात्री आसा?</string>

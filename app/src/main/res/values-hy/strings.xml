@@ -2,7 +2,8 @@
 <resources>
     <string name="about">Մոտ</string>
     <string name="about_app">Հավելվածի մասին</string>
-	<string name="afternoon_temp_alert">Կեսօրվա ահազանգ?</string>
+    <string name="afternoon_alert">%1$s ջերմաստիճանն իջել է մինչև ձեր սահմանաչափը՝ %2$s</string>
+    <string name="afternoon_temp_alert">Կեսօրվա ահազանգ?</string>
     <string name="all_time_stats">Բոլոր ժամանակների վիճակագրություն</string>
     <string name="app_theme">Հավելվածի թեմա</string>
     <string name="avg">միջին</string>
@@ -61,7 +62,8 @@
     <string name="match_app">Համապատասխան հավելված</string>
     <string name="metric">Օգտագործե՞լ Metric-ը:</string>
     <string name="minutes">րոպե</string>
-	<string name="morning_temp_alert">Առավոտյան ահազանգ?</string>
+    <string name="morning_alert">%1$s ջերմաստիճանը բարձրացել է մինչև ձեր սահմանաչափը՝ %2$s</string>
+    <string name="morning_temp_alert">Առավոտյան ահազանգ?</string>
     <string name="next_moon">Հաջորդ լուսնի իրադարձությունները</string>
     <string name="no">Ոչ</string>
     <string name="no_download_or_app_not_setup">Ոչ մի ներբեռնում կամ հավելված չի կարգավորվել</string>
@@ -83,17 +85,21 @@
     <string name="rain_in_inches">Անձրևը դյույմներով</string>
     <string name="rainfall_alert">Անձրևի մասին ահազանգ?</string>
     <string name="rainfall_alert_desc">Ամեն օր ահազանգեր, երբ տեղումները հասնում են ձեր սահմանված սահմանաչափին</string>
-	<string name="rainfall_alert_str">Անձրևի մասին ահազանգ</string>
+    <string name="rainfall_alert_notification">%1$s անձրևը համապատասխանում է ձեր սահմանաչափին՝ %2$s</string>
+    <string name="rainfall_alert_str">Անձրևի մասին ահազանգ</string>
     <string name="rainfall_limit">Անձրևի սահմանաչափ</string>
-	<string name="rainrate_alert_severe">Ծանր անձրևի մասին ահազանգեր:</string>
+    <string name="rainrate_alert_severe">Ծանր անձրևի մասին ահազանգեր:</string>
     <string name="rainrate_alert_severe_desc">Զգուշացնում է, եթե անձրևի մակարդակը գերազանցում է խիստ սահմանը՝ կախված տեղումների տևողությունից</string>
+    <string name="rainrate_alert_severe_notification">%1$s անձրևի արագությունը վերջին %2$d %3$s ում հասել է \'դաժան\' մակարդակին</string>
     <string name="rainrate_alert_severe_str">Դաժան անձրևի մասին ահազանգ</string>
     <string name="rainrate_alert_str">Անձրևի տեմպերի ահազանգ</string>
     <string name="rainrate_alert_warning">Զգուշացնու՞մ եք անձրևի տեմպերի մասին ահազանգեր:</string>
     <string name="rainrate_alert_warning_desc">Զգուշացնում է, եթե անձրևի մակարդակը գերազանցում է նախազգուշացման սահմանաչափը՝ ելնելով տեղումների տևողությունից</string>
+    <string name="rainrate_alert_warning_notification">%1$s անձրևի արագությունը վերջին %2$d %3$s ում հասել է \'Զգուշացման\' մակարդակին</string>
     <string name="rainrate_alert_warning_str">Զգուշացում՝ անձրևի արագության մասին</string>
     <string name="rainrate_alert_watch">Դիտե՞լ անձրևի ծանուցումները:</string>
     <string name="rainrate_alert_watch_desc">Զգուշացնում է, եթե անձրևի արագությունը գերազանցում է ժամացույցի սահմանաչափը՝ ելնելով տեղումների տևողությունից</string>
+    <string name="rainrate_alert_watch_notification">%1$s անձրևի արագությունը վերջին %2$d %3$s ում հասել է \'Դիտել\' մակարդակին</string>
     <string name="rainrate_alert_watch_str">Դիտեք Անձրևի տեմպերի ահազանգը</string>
     <string name="refresh_time">Ընտրեք թարմացման ժամանակը</string>
     <string name="remove_all_data">Իսկապե՞ս ուզում եք հեռացնել բոլոր տվյալները:</string>
