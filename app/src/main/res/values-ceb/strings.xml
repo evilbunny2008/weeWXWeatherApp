@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Labot sa</string>
     <string name="about_app">Bahin sa app</string>
-    <string name="afternoon_alert">Ang temperatura nga %1$.1f°%2$s mius-os sa imong limitasyon nga %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Ang temperatura nga %1$s mius-os sa imong limitasyon nga %2$s</string>
     <string name="afternoon_temp_alert">Alerto sa hapon?</string>
     <string name="all_time_stats">Tanan nga mga estadistika sa oras</string>
     <string name="app_theme">Tema sa Aplikasyon</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Aplikasyon sa Pagpares</string>
     <string name="metric">Paggamit METRIC?</string>
     <string name="minutes">minuto</string>
-    <string name="morning_alert">Ang temperatura nga %1$.1f°%2$s misaka sa imong limitasyon nga %3$.1f°%2$s</string>
+    <string name="morning_alert">Ang temperatura nga %1$s misaka sa imong limitasyon nga %2$s</string>
     <string name="morning_temp_alert">Alerto sa buntag?</string>
     <string name="next_moon">Sunod nga mga panghitabo sa bulan?</string>
     <string name="no">Wala</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Ulan sa pulgada?</string>
     <string name="rainfall_alert">Alerto sa Ulan?</string>
     <string name="rainfall_alert_desc">Mga alerto kada adlaw kung moabot na ang ulan sa imong gitakdang limitasyon</string>
-    <string name="rainfall_alert_imperial">Ang ulan %1$.2f%2$s mitakdo sa imong limitasyon nga %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Ang ulan %1$.1f%2$s mitakdo sa imong limitasyon nga %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Ang ulan %1$s nitakdo sa imong limitasyon nga %2$s</string>
     <string name="rainfall_alert_str">Alerto sa Ulan</string>
     <string name="rainfall_limit">Limitasyon sa Ulan</string>
-    <string name="rainrate_alert_imperial_severe">Rainrate nga %1$.2fin sa miaging %2$d %3$s naigo sa \'Severe\' level</string>
-    <string name="rainrate_alert_imperial_warning">Ang pag-ulan nga %1$.2fin sa miaging %2$d %3$s naigo sa lebel sa \'Warning\'</string>
-    <string name="rainrate_alert_imperial_watch">Rainrate nga %1$.2fin sa miaging %2$d %3$s naigo sa \'Watch\' level</string>
-    <string name="rainrate_alert_metric_severe">Ang pag-ulan nga %1$.1fmm sa miaging %2$d %3$s naigo sa \'Grabe\' nga lebel</string>
-    <string name="rainrate_alert_metric_warning">Ulan nga %1$.1fmm sa miaging %2$d %3$s naigo sa lebel sa \'Pahimangno\'</string>
-    <string name="rainrate_alert_metric_watch">Ang pag-ulan nga %1$.1fmm sa miaging %2$d %3$s naigo sa lebel sa \'Watch\'</string>
     <string name="rainrate_alert_severe">Grabe nga Rainrate Alerto?</string>
     <string name="rainrate_alert_severe_desc">Mga alerto kung ang pag-ulan molapas sa grabe nga limitasyon base sa gidugayon sa ulan</string>
+    <string name="rainrate_alert_severe_notification">Ang pag-ulan nga %1$s sa miaging %2$d %3$s naigo sa \'Grabe\' nga lebel</string>
     <string name="rainrate_alert_severe_str">Alerto sa Grabe nga Rainrate</string>
     <string name="rainrate_alert_str">Alerto sa Ulan</string>
     <string name="rainrate_alert_warning">Pasidaan sa Rainrate Alerto?</string>
     <string name="rainrate_alert_warning_desc">Mga alerto kung ang ulan molapas sa limitasyon sa pasidaan base sa gidugayon sa ulan</string>
+    <string name="rainrate_alert_warning_notification">Ang pag-ulan nga %1$s sa miaging %2$d %3$s naigo sa lebel sa \'Pahimangno\'</string>
     <string name="rainrate_alert_warning_str">Pasidaan sa Rainrate Alert</string>
     <string name="rainrate_alert_watch">Tan-awa ang Rainrate Alerto?</string>
     <string name="rainrate_alert_watch_desc">Mga alerto kung ang ulan molapas sa limitasyon sa pagbantay base sa gidugayon sa ulan</string>
+    <string name="rainrate_alert_watch_notification">Ang pag-ulan nga %1$s sa miaging %2$d %3$s naigo sa lebel sa \'Watch\'</string>
     <string name="rainrate_alert_watch_str">Tan-awa ang Rainrate Alert</string>
     <string name="refresh_time">Pilia ang oras sa pag-refresh</string>
     <string name="remove_all_data">Sigurado ka nga gusto nimo nga kuhaon ang tanan nga datos?</string>

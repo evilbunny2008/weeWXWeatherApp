@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Về</string>
     <string name="about_app">Giới thiệu về ứng dụng</string>
-    <string name="afternoon_alert">Nhiệt độ %1$.1f°%2$s đã giảm xuống giới hạn của bạn là %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Cảnh báo buổi chiều?</string>
+	<string name="afternoon_temp_alert">Cảnh báo buổi chiều?</string>
     <string name="all_time_stats">Thống kê mọi thời đại</string>
     <string name="app_theme">Chủ đề ứng dụng</string>
 	<string name="avg">tb.</string>
@@ -59,8 +58,7 @@
     <string name="match_app">Ứng dụng phù hợp</string>
     <string name="metric">Sử dụng số liệu?</string>
     <string name="minutes">phút</string>
-    <string name="morning_alert">Nhiệt độ %1$.1f°%2$s đã tăng lên đến giới hạn của bạn là %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Cảnh báo buổi sáng?</string>
+	<string name="morning_temp_alert">Cảnh báo buổi sáng?</string>
     <string name="next_moon">Sự kiện trăng tiếp theo?</string>
     <string name="no">KHÔNG</string>
     <string name="no_download_or_app_not_setup">Chưa tải xuống hoặc ứng dụng chưa được thiết lập</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Mưa tính bằng inch?</string>
     <string name="rainfall_alert">Cảnh báo lượng mưa?</string>
     <string name="rainfall_alert_desc">Cảnh báo hàng ngày khi lượng mưa đạt đến giới hạn đã đặt</string>
-    <string name="rainfall_alert_imperial">Lượng mưa %1$.2f%2$s đã khớp với giới hạn %3$.2f%2$s của bạn</string>
-    <string name="rainfall_alert_metric">Lượng mưa %1$.1f%2$s đã khớp với giới hạn %3$.1f%2$s của bạn</string>
-    <string name="rainfall_alert_str">Cảnh báo lượng mưa</string>
+	<string name="rainfall_alert_str">Cảnh báo lượng mưa</string>
     <string name="rainfall_limit">Giới hạn lượng mưa</string>
-    <string name="rainrate_alert_imperial_severe">Tỷ lệ mưa %1$.2fin trong %2$d %3$s vừa qua đã đạt mức \'Nghiêm trọng\'</string>
-    <string name="rainrate_alert_imperial_warning">Tỷ lệ mưa %1$.2fin trong %2$d %3$s gần đây nhất đã đạt đến mức \'Cảnh báo\'</string>
-    <string name="rainrate_alert_imperial_watch">Tỷ lệ mưa %1$.2fin trong %2$d %3$s vừa qua đã đạt đến mức \'Xem\'</string>
-    <string name="rainrate_alert_metric_severe">Tỷ lệ mưa %1$.1fmm trong %2$d %3$s vừa qua đã đạt mức \'Nghiêm trọng\'</string>
-    <string name="rainrate_alert_metric_warning">Tỷ lệ mưa %1$.1fmm trong %2$d %3$s vừa qua đã đạt đến mức \'Cảnh báo\'</string>
-    <string name="rainrate_alert_metric_watch">Tỷ lệ mưa %1$.1fmm trong %2$d %3$s vừa qua đã đạt đến mức \'Xem\'</string>
-    <string name="rainrate_alert_severe">Cảnh báo lượng mưa nghiêm trọng?</string>
+	<string name="rainrate_alert_severe">Cảnh báo lượng mưa nghiêm trọng?</string>
     <string name="rainrate_alert_severe_desc">Cảnh báo nếu lượng mưa vượt quá giới hạn nghiêm trọng dựa trên thời gian mưa</string>
     <string name="rainrate_alert_severe_str">Cảnh báo lượng mưa nghiêm trọng</string>
     <string name="rainrate_alert_str">Cảnh báo lượng mưa</string>

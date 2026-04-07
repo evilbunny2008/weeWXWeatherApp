@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Mygeayrt</string>
     <string name="about_app">Mychione yn App</string>
-    <string name="afternoon_alert">Ta\'n temperaght %1$.1f°%2$s er n\'gholl sheese gys y chrosh %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alert ny lurg?</string>
+	<string name="afternoon_temp_alert">Alert ny lurg?</string>
     <string name="all_time_stats">Statistys Ooilley Traa</string>
     <string name="app_theme">Team App</string>
     <string name="avg">mean</string>
@@ -62,8 +61,7 @@
     <string name="match_app">App co-chosney</string>
     <string name="metric">Cleaysh Metric?</string>
     <string name="minutes">giare-hennaghys</string>
-    <string name="morning_alert">Ta\'n temperaght %1$.1f°%2$s er n\'irree gys y chrosh %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Raad y Moghrey?</string>
+	<string name="morning_temp_alert">Raad y Moghrey?</string>
     <string name="next_moon">Taghyrtyn y gheay ry-heet?</string>
     <string name="no">Cha nel</string>
     <string name="no_download_or_app_not_setup">Cha nel ymmyd ny app erbee er ny rheynn</string>
@@ -88,17 +86,9 @@
     <string name="rain_in_inches">Floo ayns Inch?</string>
     <string name="rainfall_alert">Raaidyn Floo?</string>
     <string name="rainfall_alert_desc">T\'eh cur fys dhyt gagh laa my ta\'n fliaghey er n\'gholl gys y limmey t\'ou er n\'yannoo</string>
-    <string name="rainfall_alert_imperial">Ta\'n fliaghey %1$.2f%2$s er chosney rish dty chrosh %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Ta\'n fliaghey %1$.1f%2$s co-cheangailt rish dty limmey %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Raaidyn Floo</string>
+	<string name="rainfall_alert_str">Raaidyn Floo</string>
     <string name="rainfall_limit">Lioar y Floo</string>
-    <string name="rainrate_alert_imperial_severe">Ta\'n rang-floo %1$.2fin ayns ny %2$d %3$s shoh er n\'eiyrt gys level \'Drome\'</string>
-    <string name="rainrate_alert_imperial_warning">Ta\'n rang-floo %1$.2fin \'sy %2$d %3$s\'jerree er n\'eiyrt gys level \'Raad\'</string>
-    <string name="rainrate_alert_imperial_watch">Ta\'n rang-floo %1$.2fin \'sy %2$d %3$s\'jerree er n\'eiyrt gys level \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Ta\'n rang-floo %1$.1fmm ayns ny %2$d %3$s shoh er n\'eiyrt gys level \'Drome\'</string>
-    <string name="rainrate_alert_metric_warning">Ta\'n rang-floo %1$.1fmm \'sy %2$d %3$s\'jerree er n\'eiyrt gys level \'Raad\'</string>
-    <string name="rainrate_alert_metric_watch">Ta\'n %1$.1fmm \'sy %2$d %3$s\'jerree er n\'eiyrt gys level \'Watch\'</string>
-    <string name="rainrate_alert_severe">Alertyn Rainrate Trome?</string>
+	<string name="rainrate_alert_severe">Alertyn Rainrate Trome?</string>
     <string name="rainrate_alert_severe_desc">Raadaghyn my ta\'n rang-floo goll harrish y chrosh trome er y fa dy vel y fliaghey</string>
     <string name="rainrate_alert_severe_str">Raad-floo trome</string>
     <string name="rainrate_alert_str">Raad Reesht Floo</string>

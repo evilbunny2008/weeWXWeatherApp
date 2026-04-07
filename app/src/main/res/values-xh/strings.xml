@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Malunga</string>
     <string name="about_app">Malunga ne-app</string>
-    <string name="afternoon_alert">Iqondo lobushushu %1$.1f°%2$s lehlile kumda wakho we %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Isivuseleli sasemva kwemini?</string>
+	<string name="afternoon_temp_alert">Isivuseleli sasemva kwemini?</string>
     <string name="all_time_stats">Onke amanani Amanani</string>
     <string name="app_theme">Umxholo we-APP</string>
 	<string name="battery_warning">Isilumkiso: Ukwenza ukuba ukhetho olungentla lunokuphambukisa ibhetri yakho ngokukhawuleza kunesiqhelo</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Tshatisa usetyenziso</string>
     <string name="metric">Sebenzisa uMetric?</string>
     <string name="minutes">imizuzu</string>
-    <string name="morning_alert">Iqondo lobushushu %1$.1f°%2$s linyukile lafikelela kumda wakho we %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Isivuseleli sasekuseni?</string>
+	<string name="morning_temp_alert">Isivuseleli sasekuseni?</string>
     <string name="next_moon">Iziganeko zeNyanga ezayo?</string>
     <string name="no">Hayi</string>
     <string name="no_download_or_app_not_setup">Akukho khuphelo okanye usetyenziso olungamiselwanga</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Imvula ngee-Intshi?</string>
     <string name="rainfall_alert">Isilumkiso ngemvula?</string>
     <string name="rainfall_alert_desc">Izilumkiso mihla le xa imvula ifikelela kumda obekiweyo</string>
-    <string name="rainfall_alert_imperial">Imvula %1$.2f%2$s ihambelana nomda wakho we %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Imvula %1$.1f%2$s ihambelana nomda wakho we %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Isilumkiso ngemvula</string>
+	<string name="rainfall_alert_str">Isilumkiso ngemvula</string>
     <string name="rainfall_limit">Umlinganiselo wemvula</string>
-    <string name="rainrate_alert_imperial_severe">Imvula ye %1$.2fin yokugqibela %2$d %3$s ibethe inqanaba \'Emandundu\'</string>
-    <string name="rainrate_alert_imperial_warning">Imvula ye %1$.2fin yokugqibela %2$d %3$s ibethe \'isilumkiso\' kwinqanaba</string>
-    <string name="rainrate_alert_imperial_watch">Imvula ye %1$.2fin yokugqibela %2$d %3$s ibethe inqanaba elithi \'Bukela\'</string>
-    <string name="rainrate_alert_metric_severe">Imvula ye %1$.1fmm yokugqibela %2$d %3$s ibethe inqanaba \'Emandundu\'</string>
-    <string name="rainrate_alert_metric_warning">Imvula ye %1$.1fmm yokugqibela %2$d %3$s ibethe \'isilumkiso\' kwinqanaba</string>
-    <string name="rainrate_alert_metric_watch">Imvula ye %1$.1fmm yokugqibela %2$d %3$s ibethe inqanaba elithi \'Bukela\'</string>
-    <string name="rainrate_alert_severe">Izilumkiso zokuna kwemvula eNgamandla?</string>
+	<string name="rainrate_alert_severe">Izilumkiso zokuna kwemvula eNgamandla?</string>
     <string name="rainrate_alert_severe_desc">Izaziso ukuba imvula igqithile kumda oqatha ngokusekelwe kubude bexesha lemvula</string>
     <string name="rainrate_alert_severe_str">Isilumkiso seMvula eNgamandla</string>
     <string name="rainrate_alert_str">Isilumkiso semvula</string>

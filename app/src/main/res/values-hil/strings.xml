@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Parte sa</string>
     <string name="about_app">Tuhoy sa App</string>
-    <string name="afternoon_alert">Ang temperatura %1$.1f°%2$s nagnubo sa imo limitasyon nga %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alerto sa Hapon?</string>
+	<string name="afternoon_temp_alert">Alerto sa Hapon?</string>
     <string name="all_time_stats">Ang tanan nga Estadistika sa Panahon</string>
     <string name="app_theme">Tema sa App</string>
     <string name="avg">avg</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Katumbas nga App</string>
     <string name="metric">Gamita ang Metric?</string>
     <string name="minutes">minutos</string>
-    <string name="morning_alert">Ang temperatura %1$.1f°%2$s nagtaas sa imo limitasyon nga %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alerto sa Aga?</string>
+	<string name="morning_temp_alert">Alerto sa Aga?</string>
     <string name="next_moon">Sunod nga mga hitabo sa bulan?</string>
     <string name="no">Indi</string>
     <string name="no_download_or_app_not_setup">Wala pa sang na-setup nga download ukon app</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">Ulan sa Pulgada?</string>
     <string name="rainfall_alert">Alerto sa Pag-ulan?</string>
     <string name="rainfall_alert_desc">Mga alerto adlaw-adlaw kon ang ulan maglab-ot sa imo gintalana nga limitasyon</string>
-    <string name="rainfall_alert_imperial">Ang pag-ulan %1$.2f%2$s nagtupong sa imo limitasyon nga %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Ang pag-ulan %1$.1f%2$s nakatupong sa imo limitasyon nga %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alerto sa Pag-ulan</string>
+	<string name="rainfall_alert_str">Alerto sa Pag-ulan</string>
     <string name="rainfall_limit">Limitasyon sa Pag-ulan</string>
-    <string name="rainrate_alert_imperial_severe">Ang rainrate nga %1$.2fin sa katapusan nga %2$d %3$s nag-igo sa \'Grabe\' nga lebel</string>
-    <string name="rainrate_alert_imperial_warning">Ang rainrate nga %1$.2fin sa katapusan nga %2$d %3$s nag-igo sa \'Warning\' nga lebel</string>
-    <string name="rainrate_alert_imperial_watch">Ang rainrate nga %1$.2fin sa katapusan nga %2$d %3$s nag-igo sa \'Watch\' nga lebel</string>
-    <string name="rainrate_alert_metric_severe">Ang rainrate nga %1$.1fmm sa katapusan nga %2$d %3$s nag-igo sa \'Grabe\' nga lebel</string>
-    <string name="rainrate_alert_metric_warning">Ang rainrate nga %1$.1fmm sa katapusan nga %2$d %3$s nag-igo sa \'Warning\' nga lebel</string>
-    <string name="rainrate_alert_metric_watch">Ang rainrate nga %1$.1fmm sa katapusan nga %2$d %3$s nag-igo sa \'Watch\' nga lebel</string>
-    <string name="rainrate_alert_severe">Mga Alerto sa Grabe nga Ulan?</string>
+	<string name="rainrate_alert_severe">Mga Alerto sa Grabe nga Ulan?</string>
     <string name="rainrate_alert_severe_desc">Mga alerto kon ang rainrate magsobra sa grabe nga limitasyon base sa kalawigon sang pag-ulan</string>
     <string name="rainrate_alert_severe_str">Alerto sa Grabe nga Pag-ulan</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>

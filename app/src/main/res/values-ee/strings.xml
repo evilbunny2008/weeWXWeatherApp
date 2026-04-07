@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Ku ɖe</string>
     <string name="about_app">Ku ɖe app la ŋu</string>
-    <string name="afternoon_alert">Dzoxɔxɔ %1$.1f°%2$s ɖiɖi va ɖo wò seɖoƒe si nye %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Dzoxɔxɔ %1$s ɖiɖi va ɖo wò seɖoƒe si nye %2$s</string>
     <string name="afternoon_temp_alert">Ŋdɔ me Nuxlɔ̃amea?</string>
     <string name="all_time_stats">Ɣeyiɣiwo Katã ƒe Akɔntabubuwo</string>
     <string name="app_theme">App ƒe tanya</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Match app</string>
     <string name="metric">Zã metrik?</string>
     <string name="minutes">aɖabaƒoƒo</string>
-    <string name="morning_alert">Dzoxɔxɔ %1$.1f°%2$s ɖe edzi va ɖo wò seɖoƒe si nye %3$.1f°%2$s</string>
+    <string name="morning_alert">Dzoxɔxɔ %1$s dzi ɖe edzi va ɖo wò seɖoƒe si nye %2$s</string>
     <string name="morning_temp_alert">Ŋdi ƒe Nuxlɔ̃amea?</string>
     <string name="next_moon">Ɣleti ƒe nudzɔdzɔ siwo kplɔe ɖo?</string>
     <string name="no">Ao</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">Tsidzadza le Inches mea?</string>
     <string name="rainfall_alert">Tsidzadza ƒe Nuxlɔ̃amea?</string>
     <string name="rainfall_alert_desc">Xlɔ̃a nu gbesiagbe ne tsidzadzaa ɖo seɖoƒe si nèɖo</string>
-    <string name="rainfall_alert_imperial">Tsidzadza %1$.2f%2$s sɔ kple wò seɖoƒe si nye %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Tsidzadza %1$.1f%2$s sɔ kple wò seɖoƒe si nye %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Tsidzadza %1$s sɔ kple wò seɖoƒe si nye %2$s</string>
     <string name="rainfall_alert_str">Tsidzadza ƒe Nuxlɔ̃ame</string>
     <string name="rainfall_limit">Tsidzadza ƒe Seɖoƒe</string>
-    <string name="rainrate_alert_imperial_severe">Tsidzadza ƒe agbɔsɔsɔme si nye %1$.2fin le %2$d %3$s mamlɛawo me ɖo \'Severe\' ƒe seƒe</string>
-    <string name="rainrate_alert_imperial_warning">Tsidzadza ƒe agbɔsɔsɔme si nye %1$.2fin le %2$d %3$s mamlɛawo me ɖo \'Nuxlɔ̃ame\' ƒe seƒe</string>
-    <string name="rainrate_alert_imperial_watch">Tsidzadza ƒe agbɔsɔsɔme si nye %1$.2fin le %2$d %3$s mamlɛawo me ɖo \'Kpɔ\' ƒe ɖoƒe</string>
-    <string name="rainrate_alert_metric_severe">Tsidzadza ƒe agbɔsɔsɔme si nye %1$.1fmm le %2$d %3$s mamlɛawo me ɖo \'Severe\' ƒe seƒe</string>
-    <string name="rainrate_alert_metric_warning">Tsidzadza ƒe agbɔsɔsɔme si nye %1$.1fmm le %2$d %3$s mamlɛawo me ɖo \'Nuxlɔ̃ame\' ƒe seƒe</string>
-    <string name="rainrate_alert_metric_watch">Tsidzadza ƒe agbɔsɔsɔme si nye %1$.1fmm le %2$d %3$s mamlɛawo me ɖo \'Kpɔ\' ƒe seƒe</string>
     <string name="rainrate_alert_severe">Tsidzadza Sesẽ ƒe Nuxlɔ̃amewoa?</string>
     <string name="rainrate_alert_severe_desc">Xlɔ̃a nu ne tsidzadza ƒe agbɔsɔsɔme wu seɖoƒe sesẽ si wotu ɖe tsidzadza ƒe ɣeyiɣi didi dzi</string>
+    <string name="rainrate_alert_severe_notification">Tsidzadza ƒe agbɔsɔsɔme si nye %1$s le %2$d %3$s mamlɛawo me ɖo \'Severe\' ƒe seƒe</string>
     <string name="rainrate_alert_severe_str">Tsidzadza Sesẽ ƒe Nuxlɔ̃ame</string>
     <string name="rainrate_alert_str">Tsidzadza ƒe Nuxlɔ̃ame</string>
     <string name="rainrate_alert_warning">Nuxlɔ̃ame Tsidzadza ƒe Nuxlɔ̃amewo?</string>
     <string name="rainrate_alert_warning_desc">Xlɔ̃a nu ne tsidzadza ƒe agbɔsɔsɔme wu nuxlɔ̃ame ƒe seɖoƒe si wotu ɖe tsidzadza ƒe ɣeyiɣi didi dzi</string>
+    <string name="rainrate_alert_warning_notification">Tsidzadza ƒe agbɔsɔsɔme si nye %1$s le %2$d %3$s mamlɛawo me ɖo \'Nuxlɔ̃ame\' ƒe seƒe</string>
     <string name="rainrate_alert_warning_str">Nuxlɔ̃ame Tsidzadza ƒe Nuxlɔ̃ame</string>
     <string name="rainrate_alert_watch">Kpɔ Tsidzadza ƒe Nuxlɔ̃amewoa?</string>
     <string name="rainrate_alert_watch_desc">Xlɔ̃a nu ne tsidzadza ƒe agbɔsɔsɔme wu gaƒoɖokui ƒe seɖoƒe si wotu ɖe tsidzadza ƒe ɣeyiɣi didi dzi</string>
+    <string name="rainrate_alert_watch_notification">Tsidzadza ƒe agbɔsɔsɔme si nye %1$s le %2$d %3$s mamlɛawo me ɖo \'Kpɔ\' ƒe ɖoƒe</string>
     <string name="rainrate_alert_watch_str">Kpɔ Tsidzadza ƒe Nuxlɔ̃ame</string>
     <string name="refresh_time">Tia ɣeyiɣi si nàgbugbɔ awɔ</string>
     <string name="remove_all_data">Èka ɖe edzi be yedi be yeaɖe nyatakakawo katã ɖaa?</string>

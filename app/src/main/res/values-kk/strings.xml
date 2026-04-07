@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Жөнінде</string>
     <string name="about_app">Бағдарлама туралы</string>
-    <string name="afternoon_alert">%1$.1f°%2$s температурасы %3$.1f°%2$s шегіне дейін төмендеді</string>
-    <string name="afternoon_temp_alert">Түстен кейінгі ескерту?</string>
+	<string name="afternoon_temp_alert">Түстен кейінгі ескерту?</string>
     <string name="all_time_stats">Барлық уақыттағы статистика</string>
     <string name="app_theme">Қолданба тақырыбы</string>
     <string name="avg">орт</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Сәйкестік қосымшасы</string>
     <string name="metric">К рсеткішті пайдаланың?</string>
     <string name="minutes">минут</string>
-    <string name="morning_alert">%1$.1f°%2$s температурасы %3$.1f°%2$s шегіне дейін көтерілді</string>
-    <string name="morning_temp_alert">Таңертеңгі ескерту?</string>
+	<string name="morning_temp_alert">Таңертеңгі ескерту?</string>
     <string name="next_moon">Келесі ай оқиғалары?</string>
     <string name="no">Ешқандай</string>
     <string name="no_download_or_app_not_setup">Ешбір жүктеу немесе қолданба орнатылмаған</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Жаңбыр дюйммен ме?</string>
     <string name="rainfall_alert">Жауын-шашын туралы ескерту?</string>
     <string name="rainfall_alert_desc">Жауын-шашын белгіленген шекке жеткенде күнделікті ескертеді</string>
-    <string name="rainfall_alert_imperial">%1$.2f%2$s жауын-шашын мөлшері сіздің %3$.2f%2$s шегіне сәйкес келді</string>
-    <string name="rainfall_alert_metric">%1$.1f%2$s жауын-шашын мөлшері сіздің %3$.1f%2$s шегіне сәйкес келді</string>
-    <string name="rainfall_alert_str">Жауын-шашын туралы ескерту</string>
+	<string name="rainfall_alert_str">Жауын-шашын туралы ескерту</string>
     <string name="rainfall_limit">Жауын-шашынның шегі</string>
-    <string name="rainrate_alert_imperial_severe">Соңғы %2$d %3$s ішіндегі %1$.2fin жаңбыр жылдамдығы \'ауыр\' деңгейге жетті</string>
-    <string name="rainrate_alert_imperial_warning">Соңғы %2$d %3$s ішіндегі %1$.2fin жаңбыр жылдамдығы \'Ескерту\' деңгейіне жетті</string>
-    <string name="rainrate_alert_imperial_watch">Соңғы %2$d %3$s ішіндегі %1$.2fin жаңбыр жылдамдығы \'Көру\' деңгейіне жетті</string>
-    <string name="rainrate_alert_metric_severe">Соңғы %2$d %3$s ішінде %1$.1fmm жаңбыр жаууы \'ауыр\' деңгейге жетті</string>
-    <string name="rainrate_alert_metric_warning">Соңғы %2$d %3$s ішіндегі %1$.1fmm жаңбыр жылдамдығы \'Ескерту\' деңгейіне жетті</string>
-    <string name="rainrate_alert_metric_watch">Соңғы %2$d %3$s ішіндегі %1$.1fmm жаңбыр жылдамдығы \'Көру\' деңгейіне жетті</string>
-    <string name="rainrate_alert_severe">Қатты жаңбыр туралы ескертулер ме?</string>
+	<string name="rainrate_alert_severe">Қатты жаңбыр туралы ескертулер ме?</string>
     <string name="rainrate_alert_severe_desc">Жаңбыр жылдамдығы жауын-шашын ұзақтығына негізделген шектен асып кетсе, ескертеді</string>
     <string name="rainrate_alert_severe_str">Қатты жаңбыр туралы ескерту</string>
     <string name="rainrate_alert_str">Жаңбыр туралы ескерту</string>

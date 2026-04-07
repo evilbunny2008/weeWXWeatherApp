@@ -2,8 +2,7 @@
 <resources>
     <string name="about">विषय में</string>
     <string name="about_app">एप्प के बारे में</string>
-    <string name="afternoon_alert">तापमान %1$.1f°%2$s अहाँक सीमा %3$.1f°%2$s पर खसि गेल अछि</string>
-    <string name="afternoon_temp_alert">दुपहर के अलर्ट?</string>
+	<string name="afternoon_temp_alert">दुपहर के अलर्ट?</string>
     <string name="all_time_stats">सब समय के आँकड़े</string>
     <string name="app_theme">ऐप थीम 2019।</string>
     <string name="avg">औसत।</string>
@@ -62,8 +61,7 @@
     <string name="match_app">मैच एप्प 2019।</string>
     <string name="metric">मीट्रिक के प्रयोग करू?</string>
     <string name="minutes">मिनट</string>
-    <string name="morning_alert">तापमान %1$.1f°%2$s अहाँक सीमा %3$.1f°%2$s धरि बढ़ि गेल अछि</string>
-    <string name="morning_temp_alert">भोरका अलर्ट?</string>
+	<string name="morning_temp_alert">भोरका अलर्ट?</string>
     <string name="next_moon">अगिला चन्द्रमाक आयोजन?</string>
     <string name="no">नहि</string>
     <string name="no_download_or_app_not_setup">कोनो डाउनलोड वा ऐप सेटअप नहि कएल गेल अछि</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">इंच में बरखा?</string>
     <string name="rainfall_alert">वर्षा के अलर्ट?</string>
     <string name="rainfall_alert_desc">जखन बरखा अहां कें निर्धारित सीमा पर पहुंच जायत छै तखन रोज अलर्ट करएयत छै</string>
-    <string name="rainfall_alert_imperial">वर्षा %1$.2f%2$s अहाँक सीमा %3$.2f%2$s सँ मेल खा गेल अछि</string>
-    <string name="rainfall_alert_metric">वर्षा %1$.1f%2$s अहाँक सीमा %3$.1f%2$s सँ मेल खा गेल अछि</string>
-    <string name="rainfall_alert_str">वर्षा अलर्ट</string>
+	<string name="rainfall_alert_str">वर्षा अलर्ट</string>
     <string name="rainfall_limit">वर्षा सीमा</string>
-    <string name="rainrate_alert_imperial_severe">पिछला %2$d %3$s मे %1$.2fin के वर्षा दर \'गंभीर\' स्तर पर आबि गेल अछि</string>
-    <string name="rainrate_alert_imperial_warning">पिछला %2$d %3$s मे %1$.2fin के वर्षा दर \'चेतावनी\' स्तर पर आबि गेल अछि</string>
-    <string name="rainrate_alert_imperial_watch">पिछला %2$d %3$s मे %1$.2fin के वर्षा दर \'देखू\' स्तर पर आबि गेल अछि</string>
-    <string name="rainrate_alert_metric_severe">पिछला %2$d %3$s मे %1$.1fmm के वर्षा दर \'गंभीर\' स्तर पर आबि गेल अछि</string>
-    <string name="rainrate_alert_metric_warning">पिछला %2$d %3$s मे %1$.1fmm के वर्षा दर \'चेतावनी\' स्तर पर आबि गेल अछि</string>
-    <string name="rainrate_alert_metric_watch">पिछला %2$d %3$s मे %1$.1fmm के वर्षा दर \'देखू\' स्तर पर आबि गेल अछि</string>
-    <string name="rainrate_alert_severe">गंभीर वर्षा दर के अलर्ट?</string>
+	<string name="rainrate_alert_severe">गंभीर वर्षा दर के अलर्ट?</string>
     <string name="rainrate_alert_severe_desc">बरखा कें अवधि कें आधार पर अगर वर्षा कें दर गंभीर सीमा सं बेसि भ जायत छै त अलर्ट करय छै</string>
     <string name="rainrate_alert_severe_str">भयंकर वर्षा दर अलर्ट</string>
     <string name="rainrate_alert_str">वर्षा दर अलर्ट</string>

@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Tantang</string>
     <string name="about_app">Tantang App</string>
-    <string name="afternoon_alert">Suhu %1$.1f°%2$s alah turun ka bateh sanak %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Waspada Siang?</string>
+	<string name="afternoon_temp_alert">Waspada Siang?</string>
     <string name="all_time_stats">Sagalo Statistik Wakatu</string>
     <string name="app_theme">Tema Aplikasi</string>
     <string name="avg">rato-rato</string>
@@ -62,8 +61,7 @@
     <string name="match_app">App</string>
     <string name="metric">Pakai Metrik?</string>
     <string name="minutes">minik</string>
-    <string name="morning_alert">Suhu %1$.1f°%2$s alah naiak ka bateh sanak %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Waspada Pagi?</string>
+	<string name="morning_temp_alert">Waspada Pagi?</string>
     <string name="next_moon">Kajadian bulan barikuiknyo?</string>
     <string name="no">Indak</string>
     <string name="no_download_or_app_not_setup">Indak ado download atau aplikasi alun setup</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">Hujan di Inci?</string>
     <string name="rainfall_alert">Waspada Curah Hujan?</string>
     <string name="rainfall_alert_desc">Peringatan harian katiko curah hujan mancapai bateh nan alah ditetapkan</string>
-    <string name="rainfall_alert_imperial">Curah hujan %1$.2f%2$s alah cocok jo bateh sanak %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Curah hujan %1$.1f%2$s alah cocok jo bateh sanak %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Waspada Curah Hujan</string>
+	<string name="rainfall_alert_str">Waspada Curah Hujan</string>
     <string name="rainfall_limit">Bateh Curah Hujan</string>
-    <string name="rainrate_alert_imperial_severe">Tingkat hujan %1$.2fin dalam %2$d %3$s tarakhia alah mancapai tingkek \'Parah\'</string>
-    <string name="rainrate_alert_imperial_warning">Tingkat hujan %1$.2fin pado %2$d %3$s tarakhia alah mancapai tingkek \'Peringatan\'</string>
-    <string name="rainrate_alert_imperial_watch">Tingkat hujan %1$.2fin dalam %2$d %3$s tarakhia alah mancapai tingkek \'Tonton\'</string>
-    <string name="rainrate_alert_metric_severe">Tingkat hujan %1$.1fmm dalam %2$d %3$s tarakhia alah mancapai tingkek \'Parah\'</string>
-    <string name="rainrate_alert_metric_warning">Tingkat hujan %1$.1fmm dalam %2$d %3$s tarakhia alah mancapai tingkek \'Peringatan\'</string>
-    <string name="rainrate_alert_metric_watch">Laju hujan %1$.1fmm dalam %2$d %3$s tarakhia alah mancapai tingkek \'Tonton\'</string>
-    <string name="rainrate_alert_severe">Peringatan Hujan Parah?</string>
+	<string name="rainrate_alert_severe">Peringatan Hujan Parah?</string>
     <string name="rainrate_alert_severe_desc">Peringatan jikok curah hujan malabihi bateh parah badasarkan lamo curah hujan</string>
     <string name="rainrate_alert_severe_str">Waspada Hujan Parah</string>
     <string name="rainrate_alert_str">Waspada Kadar Hujan</string>

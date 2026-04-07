@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Тухай</string>
     <string name="about_app">Апп тухай</string>
-    <string name="afternoon_alert">%1$.1f°%2$s температура %3$.1f°%2$s хизаарлалта хүрэтэр буураа</string>
+    <string name="afternoon_alert">%1$s температура %2$s хүрэтэр буураа</string>
     <string name="afternoon_temp_alert">Үдэрэй һэргылэмжэ?</string>
     <string name="all_time_stats">Бүхы сагай тоо баримтанууд</string>
     <string name="app_theme">Апп сэдэб</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Таараха апп</string>
     <string name="metric">Метрикэ хэрэглэхэ гү?</string>
     <string name="minutes">минутанууд</string>
-    <string name="morning_alert">%1$.1f°%2$s дулаан %3$.1f°%2$s хүрэтэр дээшэлээ</string>
+    <string name="morning_alert">%1$s температура танай %2$s хизаар хүрэтэр нэмэгдэбэ</string>
     <string name="morning_temp_alert">Үглөөнэй һэргылэмжэ?</string>
     <string name="next_moon">Удаадахи һарын үйлэ хэрэгүүд?</string>
     <string name="no">Үгы</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Дюймээр бороо орохо гү?</string>
     <string name="rainfall_alert">Борооной һэргылэмжэ?</string>
     <string name="rainfall_alert_desc">Хура бороогой табигдаһан хизаарта хүрэхэдөө үдэр бүри һэргылнэ</string>
-    <string name="rainfall_alert_imperial">Бороо %1$.2f%2$s танай %3$.2f%2$s хизаарлалтада таарана</string>
-    <string name="rainfall_alert_metric">Бороо %1$.1f%2$s танай %3$.1f%2$s хизаарлалтада таарана</string>
+    <string name="rainfall_alert_notification">Бороо %1$s танай %2$s хизаарлалтада таарана</string>
     <string name="rainfall_alert_str">Хур борооной һэргылэмжэ</string>
     <string name="rainfall_limit">Хура борооной хизаарлалта</string>
-    <string name="rainrate_alert_imperial_severe">Һүүлшын %2$d %3$s соо %1$.2fin борооной хурдадхал \'Хүндэ\' хэмжээндэ хүрэбэ</string>
-    <string name="rainrate_alert_imperial_warning">Һүүлшын %2$d %3$s соо %1$.2fin борооной хурдадхал \'Һэргылэмжын\' хэмжээндэ хүрэбэ</string>
-    <string name="rainrate_alert_imperial_watch">Һүүлшын %2$d %3$s соо %1$.2fin борооной хурдадхал \'Watch\' түбшэндэ хүрэбэ</string>
-    <string name="rainrate_alert_metric_severe">Һүүлшын %2$d %3$s соо %1$.1fmm борооной хурдадхал \'Хүндэ\' хэмжээндэ хүрэбэ</string>
-    <string name="rainrate_alert_metric_warning">Һүүлшын %2$d %3$s соо %1$.1fmm борооной хурдадхал \'Һэргылэмжын\' хэмжээндэ хүрэбэ</string>
-    <string name="rainrate_alert_metric_watch">Һүүлшын %2$d %3$s соо %1$.1fmm борооной хурдадхал \'Watch\' түбшэндэ хүрэбэ</string>
     <string name="rainrate_alert_severe">Хүсэтэй борооной һэргылэмжэ?</string>
     <string name="rainrate_alert_severe_desc">Хэрбээ борооной үргэлжэлэл дээрэ үндэһэлжэ, борооной хэмжээн хүндэ хизаарлалтаһаа дээшэ болоо һаань, һэргылэмжэ үгэнэ</string>
+    <string name="rainrate_alert_severe_notification">Һүүлшын %2$d %3$s соо %1$s борооной хурдадхал \'Хүндэ\' хэмжээндэ хүрэбэ</string>
     <string name="rainrate_alert_severe_str">Хүсэтэй борооной һэргылэмжэ</string>
     <string name="rainrate_alert_str">Борооной һэргылэмжэ</string>
     <string name="rainrate_alert_warning">Борооной һэргылэмжэ?</string>
     <string name="rainrate_alert_warning_desc">Хэрбээ борооной хэмжээн һэргылэмжын хизаарлалтаһаа дээшэ болоо һаань, борооной үргэлжэлэл дээрэ үндэһэлжэ һэргылэмжэ үгэнэ</string>
+    <string name="rainrate_alert_warning_notification">Һүүлшын %2$d %3$s соо %1$s борооной хурдадхал \'Һэргылэмжын\' хэмжээндэ хүрэбэ</string>
     <string name="rainrate_alert_warning_str">Һэргылэмжэ Борооной һэргылэмжэ</string>
     <string name="rainrate_alert_watch">Борооной һэргылэмжэ хараха гү?</string>
     <string name="rainrate_alert_watch_desc">Хэрбээ хура борооной үргэлжэлэл дээрэ үндэһэлжэ, хура бороогой хэмжээн харуулха хизаарлалтаһаа дээшэ болоо һаань, һэргылэмжэ үгэнэ</string>
+    <string name="rainrate_alert_watch_notification">Һүүлшын %2$d %3$s соо %1$s борооной хурдадхал \'Watch\' түбшэндэ хүрэбэ</string>
     <string name="rainrate_alert_watch_str">Борооной һэргылэмжэ харагты</string>
     <string name="refresh_time">Һэргээхэ саг шэлэхэ</string>
     <string name="remove_all_data">Бүхы мэдээсэлнүүдые усадхаха һанаатай гүт гэжэ бата найданабта?</string>

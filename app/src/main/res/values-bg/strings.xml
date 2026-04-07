@@ -2,7 +2,7 @@
 <resources>
     <string name="about">За</string>
     <string name="about_app">Относно приложението</string>
-    <string name="afternoon_alert">Температурата %1$.1f°%2$s падна до вашия лимит от %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Температурата %1$s падна до ограничението ви от %2$s</string>
     <string name="afternoon_temp_alert">Следобеден сигнал?</string>
     <string name="all_time_stats">Статистика за всички времена</string>
     <string name="app_theme">Тема на приложението</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Използване на показател?</string>
     <string name="minutes">минути</string>
-    <string name="morning_alert">Температурата %1$.1f°%2$s се повиши до вашата граница от %3$.1f°%2$s</string>
+    <string name="morning_alert">Температурата %1$s се покачи до лимита ви от %2$s</string>
     <string name="morning_temp_alert">Сутрешна тревога?</string>
     <string name="next_moon">Събития на следващата луна?</string>
     <string name="no">не</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">Дъжд в инчове?</string>
     <string name="rainfall_alert">Предупреждение за валежи?</string>
     <string name="rainfall_alert_desc">Предупреждава всеки ден, когато валежите достигнат зададения ви лимит</string>
-    <string name="rainfall_alert_imperial">Валежите %1$.2f%2$s съответстват на лимита ви от %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Валежите %1$.1f%2$s съответстват на лимита ви от %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Валежите %1$s съответстват на лимита ви от %2$s</string>
     <string name="rainfall_alert_str">Предупреждение за валежи</string>
     <string name="rainfall_limit">Ограничение на валежите</string>
-    <string name="rainrate_alert_imperial_severe">Интензивността на дъжда от %1$.2fin през последните %2$d %3$s достигна ниво на \'Сериозно\'</string>
-    <string name="rainrate_alert_imperial_warning">Инвалид на дъжд от %1$.2fin през последните %2$d %3$s достигна ниво \'Предупреждение\'</string>
-    <string name="rainrate_alert_imperial_watch">Интензивност на дъжда от %1$.2fin през последните %2$d %3$s достигна ниво \'Наблюдение\'</string>
-    <string name="rainrate_alert_metric_severe">Инвалид на дъжд от %1$.1fmm през последните %2$d %3$s е достигнал ниво на \'тежко\'</string>
-    <string name="rainrate_alert_metric_warning">Инвалид на дъжд от %1$.1fmm през последните %2$d %3$s достигна ниво \'Предупреждение\'</string>
-    <string name="rainrate_alert_metric_watch">Инвалид на дъжд от %1$.1fmm през последните %2$d %3$s достигна ниво \'Наблюдение\'</string>
     <string name="rainrate_alert_severe">Сигнали за силен дъжд?</string>
     <string name="rainrate_alert_severe_desc">Предупреждава, ако количеството на дъждовете надвишава строгото ограничение въз основа на продължителността на валежите</string>
+    <string name="rainrate_alert_severe_notification">Интензивността на дъжда от %1$s през последните %2$d %3$s е достигнала ниво на \'тежко\'</string>
     <string name="rainrate_alert_severe_str">Предупреждение за силен дъжд</string>
     <string name="rainrate_alert_str">Предупреждение за дъжд</string>
     <string name="rainrate_alert_warning">Предупредителни сигнали за дъжд?</string>
     <string name="rainrate_alert_warning_desc">Предупреждава, ако нивото на дъжд надвиши лимита за предупреждение въз основа на продължителността на валежите</string>
+    <string name="rainrate_alert_warning_notification">Инвалидът на дъжд от %1$s през последните %2$d %3$s достигна ниво \'Предупреждение\'</string>
     <string name="rainrate_alert_warning_str">Предупреждение за дъжд</string>
     <string name="rainrate_alert_watch">Да гледате Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Предупреждава, ако количеството дъжд надвишава ограничението за наблюдение въз основа на продължителността на валежите</string>
+    <string name="rainrate_alert_watch_notification">Интензитет на дъжд от %1$s през последните %2$d %3$s достигна ниво \'Наблюдение\'</string>
     <string name="rainrate_alert_watch_str">Гледайте Rainrate Alert</string>
     <string name="refresh_time">Изберете Време за опресняване</string>
     <string name="remove_all_data">Сигурни ли сте, че искате да премахнете всички данни?</string>

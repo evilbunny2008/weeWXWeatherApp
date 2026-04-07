@@ -2,8 +2,7 @@
 <resources>
     <string name="about">ਬਾਰੇ</string>
     <string name="about_app">ਐਪ ਬਾਰੇ</string>
-    <string name="afternoon_alert">ਤਾਪਮਾਨ %1$.1f°%2$s ਤੁਹਾਡੀ ਸੀਮਾ %3$.1f°%2$s ਤੱਕ ਡਿੱਗ ਗਿਆ ਹੈ</string>
-    <string name="afternoon_temp_alert">ਦੁਪਹਿਰ ਦੀ ਚੇਤਾਵਨੀ?</string>
+	<string name="afternoon_temp_alert">ਦੁਪਹਿਰ ਦੀ ਚੇਤਾਵਨੀ?</string>
     <string name="all_time_stats">ਹਰ ਸਮੇਂ ਦੇ ਅੰਕੜੇ</string>
     <string name="app_theme">ਐਪ ਥੀਮ</string>
 	<string name="battery_warning">ਚੇਤਾਵਨੀ: ਉਪਰੋਕਤ ਵਿਕਲਪ ਨੂੰ ਸਮਰੱਥ ਕਰਨ ਨਾਲ ਤੁਹਾਡੀ ਬੈਟਰੀ ਆਮ ਨਾਲੋਂ ਤੇਜ਼ੀ ਨਾਲ ਖਤਮ ਹੋ ਸਕਦੀ ਹੈ</string>
@@ -58,8 +57,7 @@
     <string name="match_app">ਮੈਚ ਐਪ</string>
     <string name="metric">ਕੀ ਮੀਟ੍ਰਿਕ ਦੀ ਵਰਤੋਂ ਕਰੋ?</string>
     <string name="minutes">ਮਿੰਟ</string>
-    <string name="morning_alert">ਤਾਪਮਾਨ %1$.1f°%2$s ਤੁਹਾਡੀ ਸੀਮਾ %3$.1f°%2$s ਤੱਕ ਵੱਧ ਗਿਆ ਹੈ</string>
-    <string name="morning_temp_alert">ਸਵੇਰ ਦੀ ਚੇਤਾਵਨੀ?</string>
+	<string name="morning_temp_alert">ਸਵੇਰ ਦੀ ਚੇਤਾਵਨੀ?</string>
     <string name="next_moon">ਅਗਲੇ ਚੰਦਰਮਾ ਦੀਆਂ ਘਟਨਾਵਾਂ?</string>
     <string name="no">ਨੰ</string>
     <string name="no_download_or_app_not_setup">ਕੋਈ ਡਾਊਨਲੋਡ ਜਾਂ ਐਪ ਸੈੱਟਅੱਪ ਨਹੀਂ ਕੀਤਾ ਗਿਆ ਹੈ</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">ਇੰਚਾਂ ਵਿੱਚ ਮੀਂਹ?</string>
     <string name="rainfall_alert">ਮੀਂਹ ਦੀ ਚੇਤਾਵਨੀ?</string>
     <string name="rainfall_alert_desc">ਜਦੋਂ ਬਾਰਸ਼ ਤੁਹਾਡੀ ਨਿਰਧਾਰਤ ਸੀਮਾ ਤੱਕ ਪਹੁੰਚ ਜਾਂਦੀ ਹੈ ਤਾਂ ਰੋਜ਼ਾਨਾ ਚੇਤਾਵਨੀਆਂ</string>
-    <string name="rainfall_alert_imperial">ਬਾਰਸ਼ %1$.2f%2$s ਤੁਹਾਡੀ %3$.2f%2$s ਦੀ ਸੀਮਾ ਨਾਲ ਮੇਲ ਖਾਂਦੀ ਹੈ</string>
-    <string name="rainfall_alert_metric">ਬਾਰਸ਼ %1$.1f%2$s ਤੁਹਾਡੀ %3$.1f%2$s ਦੀ ਸੀਮਾ ਨਾਲ ਮੇਲ ਖਾਂਦੀ ਹੈ</string>
-    <string name="rainfall_alert_str">ਮੀਂਹ ਦੀ ਚਿਤਾਵਨੀ</string>
+	<string name="rainfall_alert_str">ਮੀਂਹ ਦੀ ਚਿਤਾਵਨੀ</string>
     <string name="rainfall_limit">ਮੀਂਹ ਦੀ ਸੀਮਾ</string>
-    <string name="rainrate_alert_imperial_severe">ਪਿਛਲੇ %2$d %3$s ਵਿੱਚ %1$.2fin ਦੇ ਮੀਂਹ ਦੀ ਦਰ \'ਗੰਭੀਰ\' ਪੱਧਰ \'ਤੇ ਪਹੁੰਚ ਗਈ ਹੈ</string>
-    <string name="rainrate_alert_imperial_warning">ਪਿਛਲੇ %2$d %3$s ਵਿੱਚ %1$.2fin ਦੇ ਮੀਂਹ ਦੀ ਦਰ \'ਚੇਤਾਵਨੀ\' ਪੱਧਰ \'ਤੇ ਪਹੁੰਚ ਗਈ ਹੈ</string>
-    <string name="rainrate_alert_imperial_watch">ਪਿਛਲੇ %2$d %3$s ਵਿੱਚ %1$.2fin ਦੀ ਬਾਰਿਸ਼ \'ਵਾਚ\' ਪੱਧਰ \'ਤੇ ਪਹੁੰਚ ਗਈ ਹੈ</string>
-    <string name="rainrate_alert_metric_severe">ਪਿਛਲੇ %2$d %3$s ਵਿੱਚ %1$.1fmm ਦੀ ਬਾਰਿਸ਼ \'ਗੰਭੀਰ\' ਪੱਧਰ \'ਤੇ ਪਹੁੰਚ ਗਈ ਹੈ</string>
-    <string name="rainrate_alert_metric_warning">ਪਿਛਲੇ %2$d %3$s ਵਿੱਚ %1$.1fmm ਦੀ ਬਾਰਿਸ਼ \'ਚੇਤਾਵਨੀ\' ਪੱਧਰ \'ਤੇ ਪਹੁੰਚ ਗਈ ਹੈ</string>
-    <string name="rainrate_alert_metric_watch">ਪਿਛਲੇ %2$d %3$s ਵਿੱਚ %1$.1fmm ਦੀ ਬਾਰਿਸ਼ \'ਵਾਚ\' ਪੱਧਰ \'ਤੇ ਪਹੁੰਚ ਗਈ ਹੈ</string>
-    <string name="rainrate_alert_severe">ਗੰਭੀਰ ਬਾਰਿਸ਼ ਦੀਆਂ ਚੇਤਾਵਨੀਆਂ?</string>
+	<string name="rainrate_alert_severe">ਗੰਭੀਰ ਬਾਰਿਸ਼ ਦੀਆਂ ਚੇਤਾਵਨੀਆਂ?</string>
     <string name="rainrate_alert_severe_desc">ਬਾਰਿਸ਼ ਦੀ ਮਿਆਦ ਦੇ ਆਧਾਰ \'ਤੇ ਜੇਕਰ ਮੀਂਹ ਦੀ ਦਰ ਗੰਭੀਰ ਸੀਮਾ ਤੋਂ ਵੱਧ ਜਾਂਦੀ ਹੈ ਤਾਂ ਚੇਤਾਵਨੀਆਂ</string>
     <string name="rainrate_alert_severe_str">ਗੰਭੀਰ ਮੀਂਹ ਦੀ ਚਿਤਾਵਨੀ</string>
     <string name="rainrate_alert_str">ਬਾਰਿਸ਼ ਦੀ ਚੇਤਾਵਨੀ</string>

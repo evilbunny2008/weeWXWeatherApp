@@ -2,8 +2,7 @@
 <resources>
     <string name="about">विषये</string>
     <string name="about_app">App इत्यस्य विषये</string>
-    <string name="afternoon_alert">तापमानं %1$.1f°%2$s भवतः %3$.1f°%2$s इति सीमां यावत् पतितम् अस्ति</string>
-    <string name="afternoon_temp_alert">अपराह्ण सचेतना?</string>
+	<string name="afternoon_temp_alert">अपराह्ण सचेतना?</string>
     <string name="all_time_stats">सर्वकालिक सांख्यिकी</string>
     <string name="app_theme">एप् विषयवस्तु</string>
 	<string name="battery_warning">चेतावनी: उपर्युक्त विकल्प को सक्षम करना भवतः बैटरी को सामान्यतः शीघ्रता से शीघ्रता दे सकता है</string>
@@ -58,8 +57,7 @@
     <string name="match_app">app app 1</string>
     <string name="metric">मेट्रिकस्य उपयोगः?</string>
     <string name="minutes">पन्चनिमेषः</string>
-    <string name="morning_alert">तापमानं %1$.1f°%2$s भवतः %3$.1f°%2$s सीमां यावत् वर्धितम् अस्ति</string>
-    <string name="morning_temp_alert">प्रातःकाले सचेतना?</string>
+	<string name="morning_temp_alert">प्रातःकाले सचेतना?</string>
     <string name="next_moon">अगला चन्द्र events?</string>
     <string name="no">नहि</string>
     <string name="no_download_or_app_not_setup">No Download or app setup न कृता अस्ति।</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">इञ्चेषु वर्षा?</string>
     <string name="rainfall_alert">वर्षा अलर्ट?</string>
     <string name="rainfall_alert_desc">यदा वर्षा भवतः निर्धारितसीमाम् अवाप्नोति तदा प्रतिदिनं सचेष्टयति</string>
-    <string name="rainfall_alert_imperial">वर्षा %1$.2f%2$s भवतः %3$.2f%2$s सीमायाः सङ्गतिः अभवत्</string>
-    <string name="rainfall_alert_metric">वर्षा %1$.1f%2$s भवतः %3$.1f%2$s सीमायाः सङ्गतिः अभवत्</string>
-    <string name="rainfall_alert_str">वर्षा अलर्ट</string>
+	<string name="rainfall_alert_str">वर्षा अलर्ट</string>
     <string name="rainfall_limit">वर्षा सीमा</string>
-    <string name="rainrate_alert_imperial_severe">अन्तिमेषु %2$d %3$s मध्ये %1$.2fin इत्यस्य वर्षादरः \'Severe\' स्तरं प्राप्तवान्</string>
-    <string name="rainrate_alert_imperial_warning">अन्तिमेषु %2$d %3$s मध्ये %1$.2fin इत्यस्य वर्षादरः \'चेतावनी\' स्तरं प्राप्तवान्</string>
-    <string name="rainrate_alert_imperial_watch">अन्तिमेषु %2$d %3$s मध्ये %1$.2fin इत्यस्य वर्षादरः \'Watch\' स्तरं प्राप्तवान्</string>
-    <string name="rainrate_alert_metric_severe">अन्तिमेषु %2$d %3$s मध्ये %1$.1fmm इत्यस्य वर्षा-दरः \'Severe\' स्तरं प्राप्तवान्</string>
-    <string name="rainrate_alert_metric_warning">अन्तिमेषु %2$d %3$s मध्ये %1$.1fmm इत्यस्य वर्षादरः \'चेतावनी\' स्तरं प्राप्तवान्</string>
-    <string name="rainrate_alert_metric_watch">अन्तिमेषु %2$d %3$s मध्ये %1$.1fmm इत्यस्य वर्षादरः \'Watch\' स्तरं प्राप्तवान्</string>
-    <string name="rainrate_alert_severe">तीव्र वर्षा दर अलर्ट?</string>
+	<string name="rainrate_alert_severe">तीव्र वर्षा दर अलर्ट?</string>
     <string name="rainrate_alert_severe_desc">वर्षाकालस्य आधारेण यदि वर्षायाः गतिः तीव्रसीमाम् अतिक्रमति तर्हि सचेतयति</string>
     <string name="rainrate_alert_severe_str">भयंकर वर्षा दर अलर्ट</string>
     <string name="rainrate_alert_str">वर्षा दर अलर्ट</string>

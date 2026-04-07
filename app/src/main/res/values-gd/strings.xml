@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Mu dheidhinn</string>
     <string name="about_app">Mu dheidhinn an App</string>
-    <string name="afternoon_alert">Tha an teòthachd %1$.1f°%2$s air tuiteam chun ìre as àirde de %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Rabhadh Feasgar?</string>
+	<string name="afternoon_temp_alert">Rabhadh Feasgar?</string>
     <string name="all_time_stats">Staitistig Làn-ùine</string>
     <string name="app_theme">Cuspair an aplacaid</string>
     <string name="avg">avg</string>
@@ -62,8 +61,7 @@
     <string name="match_app">App Match</string>
     <string name="metric">Cleachd Metric?</string>
     <string name="minutes">mionaidean</string>
-    <string name="morning_alert">Tha an teòthachd %1$.1f°%2$s air èirigh chun ìre as àirde de %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Rabhadh Madainn?</string>
+	<string name="morning_temp_alert">Rabhadh Madainn?</string>
     <string name="next_moon">Tachartasan an ath ghealach?</string>
     <string name="no">Chan eil</string>
     <string name="no_download_or_app_not_setup">Cha deach luchdachadh sìos no app a shuidheachadh</string>
@@ -87,17 +85,9 @@
     <string name="rain_in_inches">Uisge anns na h-Inches?</string>
     <string name="rainfall_alert">Rabhadh sileadh?</string>
     <string name="rainfall_alert_desc">Rabhadh gach latha nuair a ruigeas an t-uisge an ìre shuidhichte agad</string>
-    <string name="rainfall_alert_imperial">Tha an t-sileadh %1$.2f%2$s air a mhaidseadh ris a\' chrìoch agad de %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Tha an t-sileadh %1$.1f%2$s air a rèir do chrìoch de %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Rabhadh sileadh</string>
+	<string name="rainfall_alert_str">Rabhadh sileadh</string>
     <string name="rainfall_limit">Crìochan sileadh</string>
-    <string name="rainrate_alert_imperial_severe">Ìre-uisge de %1$.2fin san %2$d %3$s mu dheireadh air ìre \'Droch\' a bhualadh</string>
-    <string name="rainrate_alert_imperial_warning">Ìre-uisge de %1$.2fin san %2$d %3$s mu dheireadh air ìre \'Rabhadh\' a bhualadh</string>
-    <string name="rainrate_alert_imperial_watch">Ìre-uisge de %1$.2fin san %2$d %3$s mu dheireadh air ìre \'Faire\' a bhualadh</string>
-    <string name="rainrate_alert_metric_severe">Ìre-uisge de %1$.1fmm san %2$d %3$s mu dheireadh air ìre \'Droch\' a bhualadh</string>
-    <string name="rainrate_alert_metric_warning">Ìre-uisge de %1$.1fmm san %2$d %3$s mu dheireadh air ìre \'Rabhadh\' a bhualadh</string>
-    <string name="rainrate_alert_metric_watch">Ìre-uisge de %1$.1fmm san %2$d %3$s mu dheireadh air ìre \'Faire\' a bhualadh</string>
-    <string name="rainrate_alert_severe">Rabhaidhean fìor dhroch uisge?</string>
+	<string name="rainrate_alert_severe">Rabhaidhean fìor dhroch uisge?</string>
     <string name="rainrate_alert_severe_desc">Rabhadh ma tha an ìre uisge nas àirde na an ìre as àirde a rèir fad an uisge</string>
     <string name="rainrate_alert_severe_str">Rabhadh fìor dhroch uisge</string>
     <string name="rainrate_alert_str">Rabhadh Rainrate</string>

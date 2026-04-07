@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Um</string>
     <string name="about_app">Um appið</string>
-    <string name="afternoon_alert">Hitastig %1$.1f°%2$s hefur farið niður í %3$.1f°%2$s mörkin þín</string>
-    <string name="afternoon_temp_alert">Síðdegisviðvörun?</string>
+	<string name="afternoon_temp_alert">Síðdegisviðvörun?</string>
     <string name="all_time_stats">Tölfræði allra tíma</string>
     <string name="app_theme">App þema</string>
     <string name="avg">meðaltal</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Match app</string>
     <string name="metric">Nota mæligildi?</string>
     <string name="minutes">mínútur</string>
-    <string name="morning_alert">Hitastig %1$.1f°%2$s hefur hækkað að mörkum þínum upp á %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Morgunviðvörun?</string>
+	<string name="morning_temp_alert">Morgunviðvörun?</string>
     <string name="next_moon">Næstu tunglviðburðir?</string>
     <string name="no">Nei</string>
     <string name="no_download_or_app_not_setup">Ekkert niðurhal eða forrit hefur ekki verið sett upp</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Rigning í tommum?</string>
     <string name="rainfall_alert">Regnviðvörun?</string>
     <string name="rainfall_alert_desc">Viðvörun daglega þegar úrkoman nær settum mörkum</string>
-    <string name="rainfall_alert_imperial">Úrkoma %1$.2f%2$s hefur passað við mörkin þín upp á %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Úrkoma %1$.1f%2$s hefur passað við mörkin þín upp á %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Regnviðvörun</string>
+	<string name="rainfall_alert_str">Regnviðvörun</string>
     <string name="rainfall_limit">Regnunarmörk</string>
-    <string name="rainrate_alert_imperial_severe">Rigning %1$.2fin á síðustu %2$d %3$s hefur náð \'Alvarlegt\' stig</string>
-    <string name="rainrate_alert_imperial_warning">Rigning %1$.2fin á síðustu %2$d %3$s hefur náð \'Viðvörun\'</string>
-    <string name="rainrate_alert_imperial_watch">Rigning %1$.2fin á síðustu %2$d %3$s hefur náð \'Horfa\' stig</string>
-    <string name="rainrate_alert_metric_severe">Rigning upp á %1$.1fmm á síðustu %2$d %3$s hefur náð \'Alvarlegt\' stig</string>
-    <string name="rainrate_alert_metric_warning">Rigning upp á %1$.1fmm á síðustu %2$d %3$s hefur náð \'Viðvörun\'</string>
-    <string name="rainrate_alert_metric_watch">Rigning upp á %1$.1fmm á síðustu %2$d %3$s hefur náð \'Horfa\' stig</string>
-    <string name="rainrate_alert_severe">Viðvaranir um miklar rigningar?</string>
+	<string name="rainrate_alert_severe">Viðvaranir um miklar rigningar?</string>
     <string name="rainrate_alert_severe_desc">Gefur viðvörun ef rigning fer yfir alvarleg mörk miðað við lengd úrkomu</string>
     <string name="rainrate_alert_severe_str">Viðvörun um mikla rigningu</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>

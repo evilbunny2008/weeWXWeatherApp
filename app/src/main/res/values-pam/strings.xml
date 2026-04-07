@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Tungkul</string>
     <string name="about_app">Tungkul king App</string>
-    <string name="afternoon_alert">Ing temperatura %1$.1f°%2$s miras ya keng limit a %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alerto keng gatpanapun?</string>
+	<string name="afternoon_temp_alert">Alerto keng gatpanapun?</string>
     <string name="all_time_stats">Estadistika ning Sab</string>
     <string name="app_theme">Tema ning App</string>
 	<string name="battery_warning">Babala: Ing pamagpabilis king opsyun king babo malyari yang mas mabilis i-drain ing baterya kesa king karaniwan</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Malagung app</string>
     <string name="metric">Gumamit metric?</string>
     <string name="minutes">minutu</string>
-    <string name="morning_alert">Ing temperatura %1$.1f°%2$s miras ya keng limit a %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Morning Alert?</string>
+	<string name="morning_temp_alert">Morning Alert?</string>
     <string name="next_moon">Susunod a bulan ing malilyari?</string>
     <string name="no">Ali</string>
     <string name="no_download_or_app_not_setup">Ala pang me-setup download o app</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">uran keng pulgada?</string>
     <string name="rainfall_alert">Rainfall Alert?</string>
     <string name="rainfall_alert_desc">Alerto aldo-aldo nung ing uran miras ya keng kekang set limit</string>
-    <string name="rainfall_alert_imperial">Ing uran %1$.2f%2$s metung yang limit a %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Ing uran %1$.1f%2$s metung yang limit a %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Rainfall Alert</string>
+	<string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainfall_limit">Limit ning Uran</string>
-    <string name="rainrate_alert_imperial_severe">Ing uran a %1$.2fin keng milabas a %2$d %3$s miras yang \'Severe\' level</string>
-    <string name="rainrate_alert_imperial_warning">Ing uran a %1$.2fin keng milabas a %2$d %3$s miras ne keng \'Warning\' level</string>
-    <string name="rainrate_alert_imperial_watch">Ing rainrate a %1$.2fin keng milabas a %2$d %3$s miras ne keng \'Watch\' level</string>
-    <string name="rainrate_alert_metric_severe">Ing rainrate a %1$.1fmm keng milabas a %2$d %3$s miras ne keng \'Severe\' level</string>
-    <string name="rainrate_alert_metric_warning">Ing uran a %1$.1fmm keng tauling %2$d %3$s miras ne keng \'Warning\' level</string>
-    <string name="rainrate_alert_metric_watch">Ing rainrate a %1$.1fmm keng milabas a %2$d %3$s miras ne keng \'Watch\' level</string>
-    <string name="rainrate_alert_severe">Alerto keng matinding uran?</string>
+	<string name="rainrate_alert_severe">Alerto keng matinding uran?</string>
     <string name="rainrate_alert_severe_desc">Alerto nung ing uran lampas ya keng grabing limit base keng rainfall duration</string>
     <string name="rainrate_alert_severe_str">Alerto keng matinding uran</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>

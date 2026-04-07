@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Sobre</string>
     <string name="about_app">Sobre l\'aplicació</string>
-    <string name="afternoon_alert">La temperatura %1$.1f°%2$s ha baixat fins al vostre límit de %3$.1f°%2$s</string>
+    <string name="afternoon_alert">La temperatura %1$s ha baixat fins al vostre límit de %2$s</string>
     <string name="afternoon_temp_alert">Alerta a la tarda?</string>
     <string name="all_time_stats">Estadístiques de tots els temps</string>
     <string name="app_theme">Tema de l\'aplicació</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Aplicació Match</string>
     <string name="metric">Utilitzeu mètriques?</string>
     <string name="minutes">minuts</string>
-    <string name="morning_alert">La temperatura %1$.1f°%2$s ha augmentat fins al vostre límit de %3$.1f°%2$s</string>
+    <string name="morning_alert">La temperatura %1$s ha augmentat fins al vostre límit de %2$s</string>
     <string name="morning_temp_alert">Alerta matinal?</string>
     <string name="next_moon">Esdeveniments de la propera lluna?</string>
     <string name="no">No</string>
@@ -86,25 +86,21 @@
     <string name="rain_in_inches">Pluja en polzades?</string>
     <string name="rainfall_alert">Alerta de pluja?</string>
     <string name="rainfall_alert_desc">Alertes diàries quan la pluja arriba al límit establert</string>
-    <string name="rainfall_alert_imperial">La pluja %1$.2f%2$s ha coincidit amb el vostre límit de %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">La pluja %1$.1f%2$s ha coincidit amb el vostre límit de %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">La pluja %1$s ha coincidit amb el vostre límit de %2$s</string>
     <string name="rainfall_alert_str">Alerta de pluja</string>
     <string name="rainfall_limit">Límit de pluja</string>
-    <string name="rainrate_alert_imperial_severe">La taxa de pluja de %1$.2fin durant els darrers %2$d %3$s ha arribat al nivell \'Sever\'</string>
-    <string name="rainrate_alert_imperial_warning">La taxa de pluja de %1$.2fin durant els darrers %2$d %3$s ha arribat al nivell \'Avís\'</string>
-    <string name="rainrate_alert_imperial_watch">La taxa de pluja de %1$.2fin durant els darrers %2$d %3$s ha arribat al nivell \'Vigila\'</string>
-    <string name="rainrate_alert_metric_severe">La taxa de pluja de %1$.1fmm durant els darrers %2$d %3$s ha arribat al nivell \'Sever\'</string>
-    <string name="rainrate_alert_metric_warning">La taxa de pluja de %1$.1fmm durant els darrers %2$d %3$s ha arribat al nivell \'Avís\'</string>
-    <string name="rainrate_alert_metric_watch">La taxa de pluja de %1$.1fmm durant els darrers %2$d %3$s ha arribat al nivell \'Vigila\'</string>
     <string name="rainrate_alert_severe">Alertes de pluja severa?</string>
     <string name="rainrate_alert_severe_desc">Alertes si la taxa de pluja supera el límit sever en funció de la durada de la pluja</string>
+    <string name="rainrate_alert_severe_notification">La taxa de pluja de %1$s durant els darrers %2$d %3$s ha arribat al nivell \'Sever\'</string>
     <string name="rainrate_alert_severe_str">Alerta de precipitació severa</string>
     <string name="rainrate_alert_str">Alerta de pluja</string>
     <string name="rainrate_alert_warning">Avís, alertes de pluja?</string>
     <string name="rainrate_alert_warning_desc">Alertes si la taxa de pluja supera el límit d\'avís en funció de la durada de la pluja</string>
+    <string name="rainrate_alert_warning_notification">La taxa de pluja de %1$s a l\'últim %2$d %3$s ha arribat al nivell \'Avís\'</string>
     <string name="rainrate_alert_warning_str">Avís Alerta de pluja</string>
     <string name="rainrate_alert_watch">Mira les alertes de taxa de pluja?</string>
     <string name="rainrate_alert_watch_desc">Alertes si la taxa de pluja supera el límit de rellotge en funció de la durada de la pluja</string>
+    <string name="rainrate_alert_watch_notification">La taxa de pluja de %1$s durant els darrers %2$d %3$s ha arribat al nivell \'Vigila\'</string>
     <string name="rainrate_alert_watch_str">Veure l\'alerta de pluja</string>
     <string name="refresh_time">Trieu Temps d\'actualització</string>
     <string name="remove_all_data">Esteu segur que voleu eliminar totes les dades?</string>

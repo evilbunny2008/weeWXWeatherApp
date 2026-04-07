@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Nezve</string>
     <string name="about_app">Nezve app</string>
-    <string name="afternoon_alert">Tembiricha %1$.1f°%2$s yadzikira kusvika paunogumira pa %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Masikati Alert?</string>
+	<string name="afternoon_temp_alert">Masikati Alert?</string>
     <string name="all_time_stats">Zvese zvenguva yehuwandu</string>
     <string name="app_theme">Theme dingindira</string>
 	<string name="battery_warning">Yambiro: Kugonesa iyo iri pamusoro sarudzo inogona kudhirowa bhatiri rako nekukurumidza kupfuura nguva dzose</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Match app</string>
     <string name="metric">Shandisa metric?</string>
     <string name="minutes">maminitsi</string>
-    <string name="morning_alert">Tembiricha %1$.1f°%2$s yakwira kusvika paunogumira pa %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Morning Alert?</string>
+	<string name="morning_temp_alert">Morning Alert?</string>
     <string name="next_moon">Zviitiko zvemwedzi zvinotevera?</string>
     <string name="no">Aihwa</string>
     <string name="no_download_or_app_not_setup">Hapana kudhawunirodha kana app isati yagadzirwa</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Kunaya muMasendimita?</string>
     <string name="rainfall_alert">Yambiro yeKunaya kwemvura?</string>
     <string name="rainfall_alert_desc">Yambiro zuva nezuva kana mvura yanaya yasvika paunogumira</string>
-    <string name="rainfall_alert_imperial">Kunaya kwemvura %1$.2f%2$s yaenderana newaunogumira pa %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Kunaya kwemvura %1$.1f%2$s kwaenderana newaunogumira pa %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Rainfall Alert</string>
+	<string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainfall_limit">Rainfall Limit</string>
-    <string name="rainrate_alert_imperial_severe">Kunaya kwe %1$.2fin mu %2$d %3$s yapfuura kwasvika \'Zvakaoma\'</string>
-    <string name="rainrate_alert_imperial_warning">Kunaya kwe %1$.2fin mu%2$d %3$s yapfuura kwasvika \'Yambiro\'</string>
-    <string name="rainrate_alert_imperial_watch">Kunaya kwe %1$.2fin mu %2$d %3$s yadarika yasvika pa \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Kunaya kwe %1$.1fmm mu %2$d %3$s yadarika yasvika \'Zvakaoma\'</string>
-    <string name="rainrate_alert_metric_warning">Kunaya kwe %1$.1fmm mu%2$d %3$s yapfuura kwasvika \'Yambiro\'</string>
-    <string name="rainrate_alert_metric_watch">Kunaya kwe %1$.1fmm mu %2$d %3$s yadarika yasvika pa \'Watch\'</string>
-    <string name="rainrate_alert_severe">Nyevero yeKunaya Kwemvura Yakanyanya?</string>
+	<string name="rainrate_alert_severe">Nyevero yeKunaya Kwemvura Yakanyanya?</string>
     <string name="rainrate_alert_severe_desc">Yambiro kana mvura yadarika muganhu wakakomba zvichienderana nekunaya kwenguva</string>
     <string name="rainrate_alert_severe_str">Yakanyanya Kunaya Yechenjedzo</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>

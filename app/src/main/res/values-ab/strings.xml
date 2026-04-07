@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Аоӷан</string>
     <string name="about_app">Апрограмма иазкны</string>
-    <string name="afternoon_alert">Аԥхарра %1$.1f°%2$s еиҵахеит уҳәаа %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Аԥхарра %1$s еиҵахеит уҳәаа %2$s аҟынӡа</string>
     <string name="afternoon_temp_alert">Шьыбжьонтәи агәҽанҵара?</string>
     <string name="all_time_stats">Аамҭа зегьы астатистика</string>
     <string name="app_theme">Апрограмма атема</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Апрограмма аиқәшәара</string>
     <string name="metric">Аметрика ахархәара?</string>
     <string name="minutes">аминуҭқәа</string>
-    <string name="morning_alert">Аԥхарра %1$.1f°%2$s уҳәаа %3$.1f°%2$s аҟынӡа иҳаракхеит</string>
+    <string name="morning_alert">Аԥхарра %1$s уара уҳәаа %2$s аҟынӡа иҳаракхеит</string>
     <string name="morning_temp_alert">Ашьыжьтәи агәҽанҵара?</string>
     <string name="next_moon">Анаҩстәи амза ахҭысқәа?</string>
     <string name="no">Мамоу</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Ақәа Инчла?</string>
     <string name="rainfall_alert">Ақәа ақәҭәара агәҽанҵара?</string>
     <string name="rainfall_alert_desc">Есыҽны агәҽанҵарақәа ҟанаҵоит ақәа леира иаԥуҵаз аҳәаа анааиуа</string>
-    <string name="rainfall_alert_imperial">Ақәа %1$.2f%2$s уара уҳәаа %3$.2f%2$s иақәшәоит</string>
-    <string name="rainfall_alert_metric">Ақәа %1$.1f%2$s уара уҳәаа %3$.1f%2$s иақәшәоит</string>
+    <string name="rainfall_alert_notification">Ақәа ақәҭәара %1$s уара уҳәаа %2$s иақәшәоит</string>
     <string name="rainfall_alert_str">Ақәаршҩы азы агәҽанҵара</string>
     <string name="rainfall_limit">Ақәоура аҳәаа</string>
-    <string name="rainrate_alert_imperial_severe">Ақәа %1$.2fin %2$d %3$s \'Иӷәӷәоу\' аҩаӡара иахьӡеит</string>
-    <string name="rainrate_alert_imperial_warning">Ақәа амҽхак %1$.2fin %2$d %3$s \'Агәҽанҵара\' аҩаӡара аҟынӡа инеит</string>
-    <string name="rainrate_alert_imperial_watch">Ақәа амҽхак %1$.2fin еиҳа имаҷны %2$d %3$s \'Ахылаԥшра\' аҩаӡара иахьӡеит</string>
-    <string name="rainrate_alert_metric_severe">Ақәа амҽхак %1$.1fmm %2$d %3$s \'Иӷәӷәоу\' аҩаӡара иахьӡеит</string>
-    <string name="rainrate_alert_metric_warning">Ақәа амҽхак %1$.1fmm %2$d %3$s \'Агәҽанҵара\' аҩаӡара иахьӡеит</string>
-    <string name="rainrate_alert_metric_watch">Ақәа амҽхак %1$.1fmm %2$d %3$s \'Ахылаԥшра\' аҩаӡара иахьӡеит</string>
     <string name="rainrate_alert_severe">Ақәа ӷәӷәа азы агәҽанҵарақәа?</string>
     <string name="rainrate_alert_severe_desc">Ақәа ақәҭәара аамҭа инақәыршәаны ақәа амҽхак ӷәӷәоу аҳәаа иахысыр агәҽанҵарақәа</string>
+    <string name="rainrate_alert_severe_notification">Аӡы ақәҭәара %1$s аҵыхәтәантәи %2$d %3$s \'Иӷәӷәоу\' аҩаӡара аҟынӡа инеит</string>
     <string name="rainrate_alert_severe_str">Ақәа ӷәӷәа азы агәҽанҵара</string>
     <string name="rainrate_alert_str">Ақәа амҽхак азы агәҽанҵара</string>
     <string name="rainrate_alert_warning">Агәҽанҵара Аӡа амҽхак Агәҽанҵарақәа?</string>
     <string name="rainrate_alert_warning_desc">Ақәа ақәҭәара аамҭа инақәыршәаны агәҽанҵаратә ԥкра иахысзар агәҽанҵарақәа</string>
+    <string name="rainrate_alert_warning_notification">Ақәа амҽхак %1$s аҵыхәтәантәи %2$d %3$s \'Агәҽанҵара\' аҩаӡара иахьӡеит</string>
     <string name="rainrate_alert_warning_str">Агәҽанҵара Ақәа амҽхак Агәҽанҵара</string>
     <string name="rainrate_alert_watch">Ақәа амҽхак агәҽанҵарақәа шәрыхәаԥш?</string>
     <string name="rainrate_alert_watch_desc">Ақәа ақәҭәара аамҭа инақәыршәаны ақәа амҽхак асааҭ аҳәаа иахысуазар агәҽанҵарақәа</string>
+    <string name="rainrate_alert_watch_notification">Ақәа амҽхак %1$s аҵыхәтәантәи %2$d %3$s \'Ахылаԥшра\' аҩаӡара иахьӡеит</string>
     <string name="rainrate_alert_watch_str">Ақәа амҽхак агәҽанҵара шәахәаԥш</string>
     <string name="refresh_time">Иалышәх аамҭа арҿыцра</string>
     <string name="remove_all_data">Адыррақәа зегьы раԥыхра шуҭаху агәра ганы уҟоума?</string>

@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Uiga</string>
     <string name="about_app">E uiga i le app</string>
-    <string name="afternoon_alert">Ua pa\'ū le vevela %1$.1f°%2$s i lau tapulaa o le %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alalaga i le aoauli?</string>
+	<string name="afternoon_temp_alert">Alalaga i le aoauli?</string>
     <string name="all_time_stats">Taimi uma fuainumera</string>
     <string name="app_theme">App autu</string>
 	<string name="battery_warning">Lapataiga: Faʻaputuputu le filifiliga i luga e mafai ona faʻalautele lau maa saoasaoa nai lo masani</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Fetaui polokalama</string>
     <string name="metric">Faaaoga metric?</string>
     <string name="minutes">minute</string>
-    <string name="morning_alert">Ua si\'itia le vevela %1$.1f°%2$s i lau tapulaa o le %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alalaga i le taeao?</string>
+	<string name="morning_temp_alert">Alalaga i le taeao?</string>
     <string name="next_moon">O le isi masina na tutupu?</string>
     <string name="no">Leai</string>
     <string name="no_download_or_app_not_setup">E le\'i fa\'atulaga se laiga po\'o se app</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Timuga i Inisi?</string>
     <string name="rainfall_alert">Lapata\'i Timuga?</string>
     <string name="rainfall_alert_desc">Fa\'aliga i aso uma pe a o\'o le timu i lau tapulaa fa\'atulagaina</string>
-    <string name="rainfall_alert_imperial">Timuga %1$.2f%2$s ua fetaui ma lau tapulaa o le %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Timuga %1$.1f%2$s ua fetaui ma lau tapulaa o le %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Lapata\'iga o timuga</string>
+	<string name="rainfall_alert_str">Lapata\'iga o timuga</string>
     <string name="rainfall_limit">Tapulaa o timuga</string>
-    <string name="rainrate_alert_imperial_severe">O timuga e %1$.2fin i le %2$d %3$s talu ai ua o\'o i le tulaga \'Tino\'</string>
-    <string name="rainrate_alert_imperial_warning">O timuga e %1$.2fin i le %2$d %3$s talu ai ua o\'o i le tulaga o le \'Lapataiga\'</string>
-    <string name="rainrate_alert_imperial_watch">O timuga o le %1$.2fin i le %2$d %3$s talu ai ua o\'o i le tulaga \'Mata\'ai\'</string>
-    <string name="rainrate_alert_metric_severe">O timuga o le %1$.1fmm i le %2$d %3$s talu ai ua o\'o i le tulaga \'Tino\'</string>
-    <string name="rainrate_alert_metric_warning">O timuga e %1$.1fmm i le %2$d %3$s talu ai ua o\'o i le tulaga o le \'Lapataiga\'</string>
-    <string name="rainrate_alert_metric_watch">O timuga o le %1$.1fmm i le %2$d %3$s talu ai ua o\'o i le tulaga \'Mata\'ai\'</string>
-    <string name="rainrate_alert_severe">Lapata\'iga Mata\'utia Fa\'asau?</string>
+	<string name="rainrate_alert_severe">Lapata\'iga Mata\'utia Fa\'asau?</string>
     <string name="rainrate_alert_severe_desc">Lapata\'i pe a sili atu le timu i le tapula\'a ogaoga e fa\'atatau ile umi o timuga</string>
     <string name="rainrate_alert_severe_str">Lapata\'iga Mata\'utia o timuga</string>
     <string name="rainrate_alert_str">Lapata\'iga o timuga</string>

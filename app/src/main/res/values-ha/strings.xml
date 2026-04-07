@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Kayi</string>
     <string name="about_app">Game da app</string>
-    <string name="afternoon_alert">Zazzabi %1$.1f°%2$s ya ragu zuwa iyakar ku na %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Jijjiga La\'asar?</string>
+	<string name="afternoon_temp_alert">Jijjiga La\'asar?</string>
     <string name="all_time_stats">Duk Statime States</string>
     <string name="app_theme">Takardar App</string>
     <string name="avg">m</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Dace da app</string>
     <string name="metric">Yi amfani da awo?</string>
     <string name="minutes">mintuna</string>
-    <string name="morning_alert">Zazzabi %1$.1f°%2$s ya tashi zuwa iyakar ku na %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Faɗakarwar Safiya?</string>
+	<string name="morning_temp_alert">Faɗakarwar Safiya?</string>
     <string name="next_moon">Abubuwan da suka faru na gaba?</string>
     <string name="no">A\'a</string>
     <string name="no_download_or_app_not_setup">Babu zazzagewa ko ƙa\'idar da ba a saita ba</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Ruwan sama a Inci?</string>
     <string name="rainfall_alert">Faɗakarwar ruwan sama?</string>
     <string name="rainfall_alert_desc">Faɗakarwa kullum lokacin da ruwan sama ya kai iyakar da aka saita</string>
-    <string name="rainfall_alert_imperial">Ruwan sama %1$.2f%2$s ya yi daidai da iyakar ku na %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Ruwan sama %1$.1f%2$s ya yi daidai da iyakar ku na %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Faɗakarwar ruwan sama</string>
+	<string name="rainfall_alert_str">Faɗakarwar ruwan sama</string>
     <string name="rainfall_limit">Iyakar ruwan sama</string>
-    <string name="rainrate_alert_imperial_severe">Ruwan sama na %1$.2fin a cikin %2$d %3$s na ƙarshe ya kai matakin \'Mai tsanani\'</string>
-    <string name="rainrate_alert_imperial_warning">Ruwan sama na %1$.2fin a cikin %2$d %3$s na ƙarshe ya kai matakin \'Gargadi\'</string>
-    <string name="rainrate_alert_imperial_watch">Ruwan sama na %1$.2fin a cikin %2$d %3$s na ƙarshe ya kai matakin \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Ruwan sama na %1$.1fmm a cikin %2$d %3$s na ƙarshe ya kai matakin \'Mai tsanani\'</string>
-    <string name="rainrate_alert_metric_warning">Ruwan sama na %1$.1fmm a cikin %2$d %3$s na ƙarshe ya kai matakin \'Gargadi\'</string>
-    <string name="rainrate_alert_metric_watch">Ruwan sama na %1$.1fmm a cikin %2$d %3$s na ƙarshe ya kai matakin \'Watch\'</string>
-    <string name="rainrate_alert_severe">Tsananin faɗakarwar ruwan sama?</string>
+	<string name="rainrate_alert_severe">Tsananin faɗakarwar ruwan sama?</string>
     <string name="rainrate_alert_severe_desc">Fadakarwa idan yawan ruwan sama ya wuce iyaka mai tsanani dangane da tsawon lokacin ruwan sama</string>
     <string name="rainrate_alert_severe_str">Tsananin faɗakarwar ruwan sama</string>
     <string name="rainrate_alert_str">Faɗakarwar ruwan sama</string>

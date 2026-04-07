@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Kan</string>
     <string name="about_app">Application ko la</string>
-    <string name="afternoon_alert">Funteni %1$.1f°%2$s jigira ka se i dan ma min ye %3$.1f°%2$s ye</string>
+    <string name="afternoon_alert">Funteni %1$s jigira ka se i ka dancɛ ma min ye %2$s ye</string>
     <string name="afternoon_temp_alert">Tilegan fɛ Lakɔlɔsi?</string>
     <string name="all_time_stats">Waati jatebɔ bɛɛ</string>
     <string name="app_theme">App barokun</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Match app</string>
     <string name="metric">Baara kɛ ni Metric ye wa?</string>
     <string name="minutes">ɲɔgɔnyesɛbɛn</string>
-    <string name="morning_alert">Funteni %1$.1f°%2$s wulila ka se i dan ma min ye %3$.1f°%2$s ye</string>
+    <string name="morning_alert">Funteni %1$s wulila ka se i dan ma min ye %2$s ye</string>
     <string name="morning_temp_alert">Sɔgɔmadafɛla Lakɔlɔsi?</string>
     <string name="next_moon">Kalo nata ko kɛlenw?</string>
     <string name="no">Ayi</string>
@@ -84,25 +84,21 @@
     <string name="rain_in_inches">Sanji bɛ na ni Insi ye wa?</string>
     <string name="rainfall_alert">Sanjiko lasɔmini?</string>
     <string name="rainfall_alert_desc">A bɛ lasɔmi don o don ni sanji sera i ka dan hakɛ latigɛlen ma</string>
-    <string name="rainfall_alert_imperial">Sanji %1$.2f%2$s bɛnna i ka dancɛ ma min ye %3$.2f%2$s ye</string>
-    <string name="rainfall_alert_metric">Sanji %1$.1f%2$s bɛnna i ka dancɛ ma min ye %3$.1f%2$s ye</string>
+    <string name="rainfall_alert_notification">Sanji %1$s bɛnna i ka dancɛ ma min ye %2$s ye</string>
     <string name="rainfall_alert_str">Sanjiko Lakɔlɔsili</string>
     <string name="rainfall_limit">Sanjiko Dan</string>
-    <string name="rainrate_alert_imperial_severe">Sanji hakɛ min ye %1$.2fin ye %2$d %3$s labanw na o ye \'Severe\' hakɛ sɔrɔ</string>
-    <string name="rainrate_alert_imperial_warning">Sanji hakɛ min ye %1$.2fin ye %2$d %3$s labanw na o ye \'Ladilikan\' hakɛ sɔrɔ</string>
-    <string name="rainrate_alert_imperial_watch">Sanji hakɛ min ye %1$.2fin ye %2$d %3$s labanw na o ye \'Watch\' hakɛ sɔrɔ</string>
-    <string name="rainrate_alert_metric_severe">Sanji hakɛ min ye %1$.1fmm ye %2$d %3$s labanw na o ye \'Severe\' hakɛ sɔrɔ</string>
-    <string name="rainrate_alert_metric_warning">Sanji hakɛ min ye %1$.1fmm ye %2$d %3$s labanw na o ye \'Ladilikan\' hakɛ sɔrɔ</string>
-    <string name="rainrate_alert_metric_watch">Sanji hakɛ min ye %1$.1fmm ye lest %2$d %3$s ye \'Watch\' hakɛ sɔrɔ</string>
     <string name="rainrate_alert_severe">Sanjiba lasɔminiw?</string>
     <string name="rainrate_alert_severe_desc">A bɛ lasɔmini kɛ ni sanji hakɛ tɛmɛna dan jugumanba kan ka da sanji hakɛ kan</string>
+    <string name="rainrate_alert_severe_notification">Sanji hakɛ min ye %1$s ye %2$d %3$s labanw na o ye \'Severe\' hakɛ sɔrɔ</string>
     <string name="rainrate_alert_severe_str">Sanjiba lasɔmini</string>
     <string name="rainrate_alert_str">Sanji hakɛ Lakɔlɔsili</string>
     <string name="rainrate_alert_warning">Lakɔlɔsili Sanji hakɛ lasɔminiw?</string>
     <string name="rainrate_alert_warning_desc">A bɛ lasɔmini kɛ ni sanji hakɛ tɛmɛna lasɔmini dan kan ka da sanji hakɛ kan</string>
+    <string name="rainrate_alert_warning_notification">Sanji hakɛ min ye %1$s ye %2$d %3$s labanw na o ye \'Ladilikan\' hakɛ sɔrɔ</string>
     <string name="rainrate_alert_warning_str">Lakɔlɔsili Sanji hakɛ Lakɔlɔsili</string>
     <string name="rainrate_alert_watch">Aw ye sanji hakɛ lasɔminiw lajɛ?</string>
     <string name="rainrate_alert_watch_desc">A bɛ lasɔmi ni sanji hakɛ tɛmɛna kɔlɔsili dan kan ka da sanji waati kan</string>
+    <string name="rainrate_alert_watch_notification">Sanji hakɛ min ye %1$s ye %2$d %3$s labanw na o ye \'Watch\' hakɛ sɔrɔ</string>
     <string name="rainrate_alert_watch_str">Aw ye Sanji hakɛ Lakɔlɔsili lajɛ</string>
     <string name="refresh_time">Sugandili kɛ Refresh Time</string>
     <string name="remove_all_data">Yala i b\'a fɛ ka kunnafoniw bɛɛ bɔ yen wa?</string>

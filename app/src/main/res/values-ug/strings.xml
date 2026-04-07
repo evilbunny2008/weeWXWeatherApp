@@ -2,8 +2,7 @@
 <resources>
     <string name="about">ھەققىدە</string>
     <string name="about_app">بۇ دېتال ھەققىدە</string>
-    <string name="afternoon_alert">تېمپېراتۇرا%1$.1f°%2$s سىزنىڭ چېكىڭىزگە چۈشۈپ قالدى%3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">چۈشتىن كېيىن ئاگاھلاندۇرۇش؟</string>
+	<string name="afternoon_temp_alert">چۈشتىن كېيىن ئاگاھلاندۇرۇش؟</string>
     <string name="all_time_stats">بارلىق ۋاقىت ستاتىستىكىسى</string>
     <string name="app_theme">ئەپ تېمىسى</string>
 	<string name="battery_warning">ئاگاھلاندۇرۇش: يۇقارقى تاللاشنى قوزغىتىش باتارېيەڭىزنى ئادەتتىكىدىن تېزلىكتە سۈرۈشى مۇمكىن</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Match دېتالى</string>
     <string name="metric">ئۆلچەمنى ئىشلىتىڭ?</string>
     <string name="minutes">مىنۇت</string>
-    <string name="morning_alert">تېمپېراتۇرا%1$.1f°%2$s سىزنىڭ%3$.1f°%2$s نىڭ چېكىگە يەتتى</string>
-    <string name="morning_temp_alert">ئەتىگەنلىك ئاگاھلاندۇرۇش؟</string>
+	<string name="morning_temp_alert">ئەتىگەنلىك ئاگاھلاندۇرۇش؟</string>
     <string name="next_moon">كېيىنكى ئاي پائالىيەتلىرى?</string>
     <string name="no">ياق</string>
     <string name="no_download_or_app_not_setup">چۈشۈرۈش ياكى ئەپ ئورنىتىلمىغان</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Inch in Rain?</string>
     <string name="rainfall_alert">يامغۇردىن ئاگاھلاندۇرۇش؟</string>
     <string name="rainfall_alert_desc">ھۆل-يېغىن بەلگىلەنگەن چەككە يەتكەندە ھەر كۈنى ئاگاھلاندۇرۇش بېرىدۇ</string>
-    <string name="rainfall_alert_imperial">ھۆل-يېغىن%1$.2f%2$s سىزنىڭ%3$.2f%2$s چېكىڭىزگە ماسلاشتى</string>
-    <string name="rainfall_alert_metric">ھۆل-يېغىن%1$.1f%2$s سىزنىڭ%3$.1f%2$s چېكىڭىزگە ماس كەلدى</string>
-    <string name="rainfall_alert_str">يامغۇردىن ئاگاھلاندۇرۇش</string>
+	<string name="rainfall_alert_str">يامغۇردىن ئاگاھلاندۇرۇش</string>
     <string name="rainfall_limit">يامغۇر مىقدارى</string>
-    <string name="rainrate_alert_imperial_severe">يېقىنقى %2$d %3$s دىكى%1$.2fin نىڭ يامغۇر مىقدارى \'ئېغىر\' سەۋىيىگە يەتتى</string>
-    <string name="rainrate_alert_imperial_warning">يېقىنقى %2$d %3$s دىكى%1$.2fin نىڭ يامغۇر مىقدارى \'ئاگاھلاندۇرۇش\' دەرىجىسىگە يەتتى</string>
-    <string name="rainrate_alert_imperial_watch">ئەڭ ئاخىرقى %2$d %3$s دىكى يامغۇرنىڭ%1$.2fin</string>
-    <string name="rainrate_alert_metric_severe">ئەڭ ئاخىرقى %2$d %3$s دىكى%1$.1fmm نىڭ يامغۇر مىقدارى \'ئېغىر\' سەۋىيىگە يەتتى</string>
-    <string name="rainrate_alert_metric_warning">يامغۇر%1$.1fmm ئەڭ ئاخىرقى %2$d %3$s \'ئاگاھلاندۇرۇش\' دەرىجىسىگە يەتتى</string>
-    <string name="rainrate_alert_metric_watch">ئەڭ ئاخىرقى %2$d %3$s دىكى%1$.1fmm نىڭ يامغۇر مىقدارى \'Watch\' دەرىجىسىگە يەتتى</string>
-    <string name="rainrate_alert_severe">قاتتىق يامغۇر ئاگاھلاندۇرۇشى؟</string>
+	<string name="rainrate_alert_severe">قاتتىق يامغۇر ئاگاھلاندۇرۇشى؟</string>
     <string name="rainrate_alert_severe_desc">ئەگەر يامغۇر مىقدارى يامغۇر ۋاقتىغا ئاساسەن ئېغىر چەكتىن ئېشىپ كەتسە ئاگاھلاندۇرۇش بېرىدۇ</string>
     <string name="rainrate_alert_severe_str">قاتتىق يامغۇر ئاگاھلاندۇرۇشى</string>
     <string name="rainrate_alert_str">يامغۇرلۇق ئاگاھلاندۇرۇش</string>

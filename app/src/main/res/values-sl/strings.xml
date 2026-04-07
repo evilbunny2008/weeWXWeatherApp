@@ -2,8 +2,7 @@
 <resources>
     <string name="about">O tem</string>
     <string name="about_app">O aplikaciji</string>
-    <string name="afternoon_alert">Temperatura %1$.1f°%2$s je padla na vašo mejo %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Popoldansko opozorilo?</string>
+	<string name="afternoon_temp_alert">Popoldansko opozorilo?</string>
     <string name="all_time_stats">Statistika vseh časov</string>
     <string name="app_theme">Tema aplikacije</string>
 	<string name="battery_warning">Opozorilo: Če omogočite zgornjo možnost, se lahko baterija izprazni hitreje kot običajno</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Uporabite metriko?</string>
     <string name="minutes">minut</string>
-    <string name="morning_alert">Temperatura %1$.1f°%2$s se je dvignila na vašo mejo %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Jutranje opozorilo?</string>
+	<string name="morning_temp_alert">Jutranje opozorilo?</string>
     <string name="next_moon">Dogodki na naslednji luni?</string>
     <string name="no">št</string>
     <string name="no_download_or_app_not_setup">Noben prenos ali aplikacija ni bila nastavljena</string>
@@ -83,17 +81,9 @@
     <string name="rain_in_inches">Dež v palcih?</string>
     <string name="rainfall_alert">Opozorilo o padavinah?</string>
     <string name="rainfall_alert_desc">Opozorilo dnevno, ko količina padavin doseže nastavljeno mejo</string>
-    <string name="rainfall_alert_imperial">Količina padavin %1$.2f%2$s se ujema z vašo omejitvijo %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Količina padavin %1$.1f%2$s se ujema z vašo omejitvijo %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Opozorilo o padavinah</string>
+	<string name="rainfall_alert_str">Opozorilo o padavinah</string>
     <string name="rainfall_limit">Omejitev padavin</string>
-    <string name="rainrate_alert_imperial_severe">Stopnja dežja %1$.2fin v zadnjih %2$d %3$s je dosegla stopnjo \'hudo\'</string>
-    <string name="rainrate_alert_imperial_warning">Stopnja dežja %1$.2fin v zadnjih %2$d %3$s je dosegla stopnjo \'Opozorilo\'</string>
-    <string name="rainrate_alert_imperial_watch">Stopnja dežja %1$.2fin v zadnjih %2$d %3$s je dosegla raven \'Ogled\'</string>
-    <string name="rainrate_alert_metric_severe">Stopnja dežja %1$.1fmm v zadnjih %2$d %3$s je dosegla stopnjo \'hudo\'</string>
-    <string name="rainrate_alert_metric_warning">Stopnja dežja %1$.1fmm v zadnjih %2$d %3$s je dosegla stopnjo \'Opozorilo\'</string>
-    <string name="rainrate_alert_metric_watch">Stopnja dežja %1$.1fmm v zadnjih %2$d %3$s je dosegla raven \'Ogled\'</string>
-    <string name="rainrate_alert_severe">Opozorila o močni količini dežja?</string>
+	<string name="rainrate_alert_severe">Opozorila o močni količini dežja?</string>
     <string name="rainrate_alert_severe_desc">Opozori, če količina dežja preseže strogo mejo na podlagi trajanja padavin</string>
     <string name="rainrate_alert_severe_str">Opozorilo o močnem nalivu</string>
     <string name="rainrate_alert_str">Opozorilo o količini dežja</string>

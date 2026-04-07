@@ -2,8 +2,7 @@
 <resources>
     <string name="about">ᱵᱟᱵᱚᱛ</string>
     <string name="about_app">ᱮᱯ ᱵᱟᱨᱮᱛᱮ</string>
-    <string name="afternoon_alert">ᱞᱚᱞᱚ ᱫᱚ %1$.1f°%2$s ᱟᱢᱟᱜ ᱥᱤᱢᱟᱹ ᱨᱮ ᱧᱩᱨ ᱟᱠᱟᱱᱟ %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">ᱛᱟᱨᱟᱥᱤᱧ ᱵᱮᱲᱟ ᱮᱞᱟᱨᱴ?</string>
+	<string name="afternoon_temp_alert">ᱛᱟᱨᱟᱥᱤᱧ ᱵᱮᱲᱟ ᱮᱞᱟᱨᱴ?</string>
     <string name="all_time_stats">ᱥᱟᱱᱟᱢ ᱚᱠᱛᱚ ᱨᱮᱭᱟᱜ ᱥᱟᱝᱠᱷᱟᱭᱤᱠ</string>
     <string name="app_theme">ᱮᱯ ᱛᱷᱤᱢ</string>
 	<string name="battery_warning">ᱪᱮᱦᱟᱣᱱᱟ: ᱪᱮᱛᱟᱱ ᱨᱮ ᱮᱢ ᱟᱠᱟᱱ ᱵᱤᱠᱚᱞᱯ ᱪᱟᱹᱞᱩ ᱠᱷᱟᱱ ᱟᱢᱟᱜ ᱵᱮᱴᱟᱨᱤ ᱥᱟᱫᱷᱟᱨᱚᱱ ᱠᱷᱚᱱ ᱞᱚᱜᱚᱱ ᱪᱟᱵᱟᱜᱼᱟ</string>
@@ -58,8 +57,7 @@
     <string name="match_app">ᱢᱮᱪ ᱮᱯ</string>
     <string name="metric">ᱢᱮᱴᱨᱤᱠ ᱵᱮᱵᱷᱟᱨ ᱢᱮ?</string>
     <string name="minutes">ᱴᱤᱲᱤᱡ</string>
-    <string name="morning_alert">ᱞᱚᱞᱚ ᱫᱚ %1$.1f°%2$s ᱟᱢᱟᱜ ᱥᱤᱢᱟᱹ ᱛᱮ ᱵᱟᱲᱦᱟᱣ ᱟᱠᱟᱱᱟ %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">ᱥᱮᱛᱟᱜ ᱮᱞᱟᱨᱴ?</string>
+	<string name="morning_temp_alert">ᱥᱮᱛᱟᱜ ᱮᱞᱟᱨᱴ?</string>
     <string name="next_moon">ᱫᱚᱥᱟᱨ ᱪᱟᱸᱫᱚ ᱨᱮᱭᱟᱜ ᱜᱷᱚᱴᱚᱱ ᱠᱚ?</string>
     <string name="no">ᱵᱟᱝ</string>
     <string name="no_download_or_app_not_setup">ᱪᱮᱫ ᱰᱟᱩᱱᱞᱳᱰ ᱵᱟᱝ ᱥᱮ ᱮᱯ ᱵᱟᱝ ᱥᱮᱴᱟᱯ ᱦᱩᱭ ᱟᱠᱟᱱᱟ</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">ᱤᱧᱪ ᱨᱮ ᱡᱟᱹᱯᱩᱫ?</string>
     <string name="rainfall_alert">ᱡᱟᱹᱯᱩᱫ ᱧᱩᱨᱦᱟᱹᱜ ᱮᱞᱟᱨᱴᱥ?</string>
     <string name="rainfall_alert_desc">ᱡᱩᱫᱤ ᱡᱟᱹᱯᱩᱫ ᱟᱢᱟᱜ ᱴᱷᱟᱹᱣᱠᱟᱹ ᱥᱤᱢᱟᱹ ᱨᱮ ᱥᱮᱴᱮᱨᱚᱜ ᱠᱷᱟᱱ ᱫᱤᱱᱟᱹᱢ ᱜᱮ ᱥᱚᱱᱛᱚᱨ ᱢᱮᱭᱟ</string>
-    <string name="rainfall_alert_imperial">ᱡᱟᱹᱯᱩᱫ %1$.2f%2$s ᱟᱢᱟᱜ ᱥᱤᱢᱟᱹ ᱥᱟᱶ ᱢᱤᱞᱟᱹᱣ ᱟᱠᱟᱱᱟ %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">ᱡᱟ.ᱯᱩᱫ %1$.1f%2$s ᱟᱢᱟᱜ ᱥᱤᱢᱟᱹ ᱥᱟᱶ ᱢᱤᱞᱟᱹᱣ ᱟᱠᱟᱱᱟ %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">ᱡᱟ.ᱯᱩᱫ ᱮᱞᱟᱨᱴ</string>
+	<string name="rainfall_alert_str">ᱡᱟ.ᱯᱩᱫ ᱮᱞᱟᱨᱴ</string>
     <string name="rainfall_limit">ᱡᱟ.ᱯᱩᱫ ᱥᱤᱢᱟᱹ</string>
-    <string name="rainrate_alert_imperial_severe">ᱪᱟᱞᱟᱣᱮᱱ %2$d %3$s ᱨᱮ %1$.2fin ᱨᱮᱭᱟᱜ ᱡᱟᱹᱯᱩᱫ ᱫᱚᱨ ᱫᱚ \'ᱛᱟᱹᱯᱤᱥ\' ᱞᱮᱵᱮᱞ ᱨᱮ ᱥᱮᱴᱮᱨ ᱟᱠᱟᱱᱟ</string>
-    <string name="rainrate_alert_imperial_warning">ᱪᱟᱞᱟᱣᱮᱱ %2$d %3$s ᱨᱮ %1$.2fin ᱨᱮᱭᱟᱜ ᱡᱟᱹᱲᱤ ᱫᱚᱨ ᱫᱚ \'ᱪᱮᱦᱟᱣᱱᱟ\' ᱞᱮᱵᱮᱞ ᱨᱮ ᱥᱮᱴᱮᱨ ᱟᱠᱟᱱᱟ</string>
-    <string name="rainrate_alert_imperial_watch">ᱪᱟᱞᱟᱣᱮᱱ %2$d %3$s ᱨᱮ %1$.2fin ᱨᱮᱭᱟᱜ ᱡᱟᱹᱯᱩᱫ ᱫᱚᱨ ᱫᱚ \'ᱧᱮᱞ\' ᱞᱮᱵᱮᱞ ᱨᱮ ᱥᱮᱴᱮᱨ ᱟᱠᱟᱱᱟ</string>
-    <string name="rainrate_alert_metric_severe">ᱪᱟᱞᱟᱣᱮᱱ %2$d %3$s ᱨᱮ %1$.1fmm ᱨᱮᱭᱟᱜ ᱡᱟᱹᱯᱩᱫ ᱫᱚᱨ ᱫᱚ \'ᱛᱟᱹᱯᱤᱥ\' ᱞᱮᱵᱮᱞ ᱨᱮ ᱥᱮᱴᱮᱨ ᱟᱠᱟᱱᱟ</string>
-    <string name="rainrate_alert_metric_warning">ᱪᱟᱞᱟᱣᱮᱱ %2$d %3$s ᱨᱮ %1$.1fmm ᱨᱮᱭᱟᱜ ᱡᱟᱹᱯᱩᱫ ᱫᱚᱨ ᱫᱚ \'ᱪᱮᱦᱟᱣᱱᱟ\' ᱞᱮᱵᱮᱞ ᱨᱮ ᱥᱮᱴᱮᱨ ᱟᱠᱟᱱᱟ</string>
-    <string name="rainrate_alert_metric_watch">ᱪᱟᱞᱟᱣᱮᱱ %2$d %3$s ᱨᱮ %1$.1fmm ᱨᱮᱭᱟᱜ ᱡᱟᱹᱯᱩᱫ ᱫᱚᱨ ᱫᱚ \'ᱧᱮᱞ\' ᱞᱮᱵᱮᱞ ᱨᱮ ᱥᱮᱴᱮᱨ ᱟᱠᱟᱱᱟ</string>
-    <string name="rainrate_alert_severe">ᱛᱟᱹᱯᱤᱥ ᱡᱟᱹᱯᱩᱫ ᱫᱚᱨ ᱮᱞᱟᱨᱴ ᱠᱚ?</string>
+	<string name="rainrate_alert_severe">ᱛᱟᱹᱯᱤᱥ ᱡᱟᱹᱯᱩᱫ ᱫᱚᱨ ᱮᱞᱟᱨᱴ ᱠᱚ?</string>
     <string name="rainrate_alert_severe_desc">ᱡᱟ.ᱯᱩᱫ ᱚᱠᱛᱚ ᱞᱮᱠᱟᱛᱮ ᱡᱟ.ᱯᱩᱫ ᱫᱚᱨ ᱛᱟᱹᱯᱤᱥ ᱥᱤᱢᱟᱹ ᱠᱷᱚᱱ ᱵᱟᱹᱲᱛᱤᱜ-ᱟ ᱛᱚᱵᱮ ᱥᱚᱱᱛᱚᱨ ᱢᱮ</string>
     <string name="rainrate_alert_severe_str">ᱛᱟᱹᱯᱤᱥ ᱡᱟᱹᱯᱩᱫ ᱫᱚᱨ ᱮᱞᱟᱨᱴ</string>
     <string name="rainrate_alert_str">ᱨᱮᱱᱨᱮᱴ ᱮᱞᱟᱨᱴ</string>

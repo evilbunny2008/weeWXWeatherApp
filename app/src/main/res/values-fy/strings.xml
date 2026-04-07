@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Oer</string>
     <string name="about_app">Oer de App</string>
-    <string name="afternoon_alert">Temperatuer %1$.1f°%2$s is sakke nei jo limyt fan %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Middeis warskôging?</string>
+	<string name="afternoon_temp_alert">Middeis warskôging?</string>
     <string name="all_time_stats">Alle tiid Statistics</string>
     <string name="app_theme">App Tema</string>
     <string name="avg">gem</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Metrysk brûke?</string>
     <string name="minutes">minuten</string>
-    <string name="morning_alert">Temperatuer %1$.1f°%2$s is omheech gien nei jo limyt fan %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Moarn warskôging?</string>
+	<string name="morning_temp_alert">Moarn warskôging?</string>
     <string name="next_moon">Folgjende moanne eveneminten?</string>
     <string name="no">Nee</string>
     <string name="no_download_or_app_not_setup">Gjin download of app is net ynsteld</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Rein yn Inches?</string>
     <string name="rainfall_alert">Rainfall Alert?</string>
     <string name="rainfall_alert_desc">Alerts alle dagen as de delslach jo ynstelde limyt berikt</string>
-    <string name="rainfall_alert_imperial">Reinfal %1$.2f%2$s komt oerien mei jo limyt fan %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Reinfal %1$.1f%2$s komt oerien mei jo limyt fan %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Rainfall Alert</string>
+	<string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainfall_limit">Rainfall Limit</string>
-    <string name="rainrate_alert_imperial_severe">Rainrate fan %1$.2fin yn de lêste %2$d %3$s hat \'Svere\' nivo berikt</string>
-    <string name="rainrate_alert_imperial_warning">Rainrate fan %1$.2fin yn de lêste %2$d %3$s hat \'Warskôging\' nivo berikt</string>
-    <string name="rainrate_alert_imperial_watch">Rainrate fan %1$.2fin yn de lêste %2$d %3$s hat it nivo \'Watch\' berikt</string>
-    <string name="rainrate_alert_metric_severe">Rainrate fan %1$.1fmm yn de lêste %2$d %3$s hat \'Svere\' nivo berikt</string>
-    <string name="rainrate_alert_metric_warning">Rainrate fan %1$.1fmm yn \'e lêste %2$d %3$s hat \'Warskôging\' nivo berikt</string>
-    <string name="rainrate_alert_metric_watch">Rainrate fan %1$.1fmm yn \'e lêste %2$d %3$s hat \'Watch\' nivo berikt</string>
-    <string name="rainrate_alert_severe">Warskôgings foar swiere reinwetter?</string>
+	<string name="rainrate_alert_severe">Warskôgings foar swiere reinwetter?</string>
     <string name="rainrate_alert_severe_desc">Warskôget as de reinrate de swiere limyt grutter is op basis fan de doer fan delslach</string>
     <string name="rainrate_alert_severe_str">Alarm foar swiere rein</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>

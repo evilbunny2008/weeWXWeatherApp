@@ -2,7 +2,7 @@
 <resources>
     <string name="about">O</string>
     <string name="about_app">O aplikaciji</string>
-    <string name="afternoon_alert">Temperatura %1$.1f°%2$s je pala na vašu granicu od %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperatura %1$s je pala na vašu granicu od %2$s</string>
     <string name="afternoon_temp_alert">Popodnevno upozorenje?</string>
     <string name="all_time_stats">Statistika svih vremena</string>
     <string name="app_theme">App Theme</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Koristiti metriku?</string>
     <string name="minutes">minuta</string>
-    <string name="morning_alert">Temperatura %1$.1f°%2$s je porasla na vašu granicu od %3$.1f°%2$s</string>
+    <string name="morning_alert">Temperatura %1$s je porasla na vašu granicu od %2$s</string>
     <string name="morning_temp_alert">Morning Alert?</string>
     <string name="next_moon">Događaji sljedećeg mjeseca?</string>
     <string name="no">br</string>
@@ -86,25 +86,21 @@
     <string name="rain_in_inches">Kiša u inčima?</string>
     <string name="rainfall_alert">Rainfall Alert?</string>
     <string name="rainfall_alert_desc">Obavještava vas svaki dan kada kiša dosegne postavljenu granicu</string>
-    <string name="rainfall_alert_imperial">Kiša %1$.2f%2$s odgovara vašem ograničenju od %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Kiša %1$.1f%2$s odgovara vašem ograničenju od %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Kiša %1$s odgovara vašem ograničenju od %2$s</string>
     <string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainfall_limit">Ograničenje padavina</string>
-    <string name="rainrate_alert_imperial_severe">Stopa kiše od %1$.2fin u posljednjih %2$d %3$s dostigla je nivo \'teške\'</string>
-    <string name="rainrate_alert_imperial_warning">Stopa kiše od %1$.2fin u posljednjih %2$d %3$s dostigla je nivo \'Upozorenje\'</string>
-    <string name="rainrate_alert_imperial_watch">Stopa kiše od %1$.2fin u posljednjih %2$d %3$s dostigla je nivo \'Gledajte\'</string>
-    <string name="rainrate_alert_metric_severe">Stopa kiše od %1$.1fmm u posljednjih %2$d %3$s dostigla je nivo \'teške\'</string>
-    <string name="rainrate_alert_metric_warning">Stopa kiše od %1$.1fmm u posljednjih %2$d %3$s dostigla je nivo \'Upozorenje\'</string>
-    <string name="rainrate_alert_metric_watch">Stopa kiše od %1$.1fmm u posljednjih %2$d %3$s dostigla je nivo \'Gledajte\'</string>
     <string name="rainrate_alert_severe">Upozorenja o jakoj kiši?</string>
     <string name="rainrate_alert_severe_desc">Upozorava ako količina kiše premašuje ozbiljnu granicu na osnovu trajanja padavina</string>
+    <string name="rainrate_alert_severe_notification">Stopa kiše od %1$s u posljednjih %2$d %3$s dostigla je nivo \'Jakog\'</string>
     <string name="rainrate_alert_severe_str">Upozorenje o jakoj kiši</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
     <string name="rainrate_alert_warning">Upozorenje upozorenja o stopi kiše?</string>
     <string name="rainrate_alert_warning_desc">Upozorava ako količina kiše premašuje granicu upozorenja na osnovu trajanja padavina</string>
+    <string name="rainrate_alert_warning_notification">Stopa kiše od %1$s u posljednjih %2$d %3$s dostigla je nivo \'Upozorenje\'</string>
     <string name="rainrate_alert_warning_str">Upozorenje Upozorenje o brzini kiše</string>
     <string name="rainrate_alert_watch">Gledati upozorenja o stopi kiše?</string>
     <string name="rainrate_alert_watch_desc">Upozorava ako količina kiše premašuje ograničenje gledanja na osnovu trajanja padavina</string>
+    <string name="rainrate_alert_watch_notification">Stopa kiše od %1$s u posljednjih %2$d %3$s dostigla je nivo \'Gledajte\'</string>
     <string name="rainrate_alert_watch_str">Gledajte upozorenje o stopi kiše</string>
     <string name="refresh_time">Odaberite Vrijeme osvježavanja</string>
     <string name="remove_all_data">Jeste li sigurni da želite ukloniti sve podatke?</string>

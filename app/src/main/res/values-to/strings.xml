@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Fekauʻaki</string>
     <string name="about_app">Fekau\'aki mo e App</string>
-    <string name="afternoon_alert">Kuo holo hifo \'a e mafana %1$.1f°%2$s ki ho\'o fakangatangata \'o e %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Fakatokanga Hoʻatā?</string>
+	<string name="afternoon_temp_alert">Fakatokanga Hoʻatā?</string>
     <string name="all_time_stats">Ngaahi Sitetisitika Taimi Kotoa</string>
     <string name="app_theme">Kaveinga App</string>
 	<string name="battery_warning">Fakatokanga: Ko hono fakaʻatā ʻo e fili ʻi ʻolungá ʻe vave ange ʻene ʻosi hoʻo pātí ʻi he angamahení</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Fakafehoanaki App</string>
     <string name="metric">Ngāueʻaki ʻa e Metiki?</string>
     <string name="minutes">ngaahi miniti</string>
-    <string name="morning_alert">Kuo hiki hake \'a e mafana %1$.1f°%2$s ki ho\'o fakangatangata \'o e %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Fakatokanga Pongipongi?</string>
+	<string name="morning_temp_alert">Fakatokanga Pongipongi?</string>
     <string name="next_moon">Ngaahi meʻa ʻe hoko ʻi he māhina hokó?</string>
     <string name="no">ʻIkai</string>
     <string name="no_download_or_app_not_setup">\'Oku te\'eki ke setup ha download pe app</string>
@@ -80,17 +78,9 @@
     <string name="rain_in_inches">\'Uha \'i he \'Inisi?</string>
     <string name="rainfall_alert">Ngaahi Fakatokanga ʻUha?</string>
     <string name="rainfall_alert_desc">Fakatokanga\'i koe faka\'aho kapau \'e a\'u \'a e \'uha ki ho\'o fakangatangata kuo fokotu\'u</string>
-    <string name="rainfall_alert_imperial">Kuo tatau \'a e \'uha %1$.2f%2$s mo ho\'o fakangatangata \'o e %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Kuo tatau \'a e \'uha %1$.1f%2$s mo ho\'o fakangatangata \'o e %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Fakatokanga \'uha</string>
+	<string name="rainfall_alert_str">Fakatokanga \'uha</string>
     <string name="rainfall_limit">Fakangatangata \'o e \'Uha</string>
-    <string name="rainrate_alert_imperial_severe">Ko e \'uha \'o e %1$.2fin \'i he %2$d fakamuimuitaha %3$s kuo a\'u ki he tu\'unga \'Mamahi\'</string>
-    <string name="rainrate_alert_imperial_warning">Ko e \'uha \'o e %1$.2fin \'i he %2$d %3$s fakamuimuitaha kuo ne a\'u ki he tu\'unga \'Fakatokanga\'</string>
-    <string name="rainrate_alert_imperial_watch">Ko e \'uha \'o e %1$.2fin \'i he %2$d fakamuimuitaha %3$s kuo ne taa\'i \'a e tu\'unga \'Sio\'</string>
-    <string name="rainrate_alert_metric_severe">Ko e \'uha \'o e %1$.1fmm \'i he %2$d %3$s fakamuimuitaha kuo ne a\'u ki he tu\'unga \'Mamahi\'</string>
-    <string name="rainrate_alert_metric_warning">Ko e \'uha \'o e %1$.1fmm \'i he %2$d %3$s fakamuimuitaha kuo ne a\'u ki he tu\'unga \'Fakatokanga\'</string>
-    <string name="rainrate_alert_metric_watch">Ko e \'uha \'o e %1$.1fmm \'i he %2$d fakamuimuitaha %3$s kuo ne taa\'i \'a e tu\'unga \'o e \'Watch\'</string>
-    <string name="rainrate_alert_severe">Ngaahi Fakatokanga \'Uha Lahi?</string>
+	<string name="rainrate_alert_severe">Ngaahi Fakatokanga \'Uha Lahi?</string>
     <string name="rainrate_alert_severe_desc">Fakatokanga kapau \'oku laka hake \'a e \'uha \'i he fakangatangata lahi \'o makatu\'unga \'i he loloa \'o e \'uha</string>
     <string name="rainrate_alert_severe_str">Fakatokanga \'Uha Lahi</string>
     <string name="rainrate_alert_str">Fakatokanga ki he \'Uha</string>

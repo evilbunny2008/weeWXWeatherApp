@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Palal</string>
     <string name="about_app">O App</string>
-    <string name="afternoon_alert">I temperatura %1$.1f°%2$s resli źi ko limito %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alerto palal o mizmeri?</string>
+	<string name="afternoon_temp_alert">Alerto palal o mizmeri?</string>
     <string name="all_time_stats">Sa e statistike vash e vrama</string>
     <string name="app_theme">App tema</string>
 	<string name="battery_warning">Varning: Te shaj avel o opcia opral shaj te cirdel avri e bateria maj sigo sar so si obichaj</string>
@@ -58,8 +57,7 @@
     <string name="match_app">App App</string>
     <string name="metric">Utilizisar o Metrica?</string>
     <string name="minutes">verbàlo procèso</string>
-    <string name="morning_alert">I temperatura %1$.1f°%2$s vazdili źi ko limito %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alerta e divesesqi?</string>
+	<string name="morning_temp_alert">Alerta e divesesqi?</string>
     <string name="next_moon">Palal e eventura e lunaqe?</string>
     <string name="no">Na</string>
     <string name="no_download_or_app_not_setup">Nici download sau apa nu am se condup</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Brishind ande inćura?</string>
     <string name="rainfall_alert">Alarmo pal-o brishind?</string>
     <string name="rainfall_alert_desc">Alarmura sakodives kana o brishind resel o limito savo si thodino</string>
-    <string name="rainfall_alert_imperial">O brishind %1$.2f%2$s si phanglo e limitosa %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">O brishind %1$.1f%2$s si phanglo e limitosa %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alerto pal-o brishind</string>
+	<string name="rainfall_alert_str">Alerto pal-o brishind</string>
     <string name="rainfall_limit">Limito e brishindesqo</string>
-    <string name="rainrate_alert_imperial_severe">O brishind %1$.2fin ko palune %2$d %3$s resljarda o nivelo \'Severe\'</string>
-    <string name="rainrate_alert_imperial_warning">O brishind %1$.2fin ko paluno %2$d %3$s resljarda o nivelo \'Avertisaripe\'</string>
-    <string name="rainrate_alert_imperial_watch">O brishind %1$.2fin ko paluno %2$d %3$s resljas o nivelo \'Dikh\'</string>
-    <string name="rainrate_alert_metric_severe">O brishind %1$.1fmm ano paluno %2$d %3$s resljarda o nivelo \'Severe\'</string>
-    <string name="rainrate_alert_metric_warning">O brishind %1$.1fmm ano paluno %2$d %3$s resljas o nivelo \'Avertisaripe\'</string>
-    <string name="rainrate_alert_metric_watch">O brishind %1$.1fmm ano paluno %2$d %3$s resljas o nivelo \'Dikh\'</string>
-    <string name="rainrate_alert_severe">Alarti pal-o baro brishind?</string>
+	<string name="rainrate_alert_severe">Alarti pal-o baro brishind?</string>
     <string name="rainrate_alert_severe_desc">Alarmura kana o brishind nakhela o limito e phare bazirime pe duripe e brishindengo</string>
     <string name="rainrate_alert_severe_str">Alarmo pal-o baro brishind</string>
     <string name="rainrate_alert_str">Alarmo pal-o brishind</string>

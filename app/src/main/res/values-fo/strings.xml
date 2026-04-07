@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Um</string>
     <string name="about_app">Um appina</string>
-    <string name="afternoon_alert">Hiti %1$.1f°%2$s er komin til títt mark á %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Ávaring seinnapart?</string>
+	<string name="afternoon_temp_alert">Ávaring seinnapart?</string>
     <string name="all_time_stats">Allar tíðir hagtøl</string>
     <string name="app_theme">App Tema</string>
     <string name="avg">miðal</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Samsvara app</string>
     <string name="metric">Brúka metrikk?</string>
     <string name="minutes">minuttir</string>
-    <string name="morning_alert">Hiti %1$.1f°%2$s er hækkað til títt mark á %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Morgunávaring?</string>
+	<string name="morning_temp_alert">Morgunávaring?</string>
     <string name="next_moon">Hendingar í næsta mána?</string>
     <string name="no">Nei</string>
     <string name="no_download_or_app_not_setup">Eingin niðurtøka ella app er ikki sett upp</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Regn í tummum?</string>
     <string name="rainfall_alert">Ávaring um regn?</string>
     <string name="rainfall_alert_desc">Ávarar teg dagliga, um avfallið røkkur tínum ásetta marki</string>
-    <string name="rainfall_alert_imperial">Avfall %1$.2f%2$s hevur passað til títt mark á %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Avfall %1$.1f%2$s hevur passað til títt mark á %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Ávaring um regn</string>
+	<string name="rainfall_alert_str">Ávaring um regn</string>
     <string name="rainfall_limit">Regnmark</string>
-    <string name="rainrate_alert_imperial_severe">Regnstøðið á %1$.2fin seinastu %2$d %3$s hevur rakt \'Alvorligt\' stig</string>
-    <string name="rainrate_alert_imperial_warning">Regnstøðið á %1$.2fin seinastu %2$d %3$s hevur rakt \'Ávaring\' støðið</string>
-    <string name="rainrate_alert_imperial_watch">Regnstøðið á %1$.2fin seinastu %2$d %3$s hevur rakt \'Watch\' støðið</string>
-    <string name="rainrate_alert_metric_severe">Regntíð á %1$.1fmm seinastu %2$d %3$s hevur rakt \'Alvorligt\' stig</string>
-    <string name="rainrate_alert_metric_warning">Regntíð á %1$.1fmm seinastu %2$d %3$s hevur rakt \'Ávaring\' støðið</string>
-    <string name="rainrate_alert_metric_watch">Regnstøðið á %1$.1fmm í seinastu %2$d %3$s hevur rakt \'Hygg\' støðið</string>
-    <string name="rainrate_alert_severe">Ávaring um álvarsligar regntíð?</string>
+	<string name="rainrate_alert_severe">Ávaring um álvarsligar regntíð?</string>
     <string name="rainrate_alert_severe_desc">Ávaring um regntíðin fer upp um harða markið grundað á regntíðina</string>
     <string name="rainrate_alert_severe_str">Ávaring um ógvusligan regntíð</string>
     <string name="rainrate_alert_str">Ávaring um regntíð</string>

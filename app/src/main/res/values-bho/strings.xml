@@ -2,7 +2,7 @@
 <resources>
     <string name="about">बारे में</string>
     <string name="about_app">एप के बारे में</string>
-    <string name="afternoon_alert">तापमान %1$.1f°%2$s आपके सीमा %3$.1f°%2$s तक गिर गईल बा</string>
+    <string name="afternoon_alert">तापमान %1$s राउर सीमा %2$s तक गिर गइल बा</string>
     <string name="afternoon_temp_alert">दुपहरिया के अलर्ट बा?</string>
     <string name="all_time_stats">सभ समय के आँकड़ा</string>
     <string name="app_theme">एप थीम के बा</string>
@@ -62,7 +62,7 @@
     <string name="match_app">मैच के ऐप बा</string>
     <string name="metric">मीट्रिक के इस्तेमाल करीं?</string>
     <string name="minutes">मिनट</string>
-    <string name="morning_alert">तापमान %1$.1f°%2$s आपके सीमा %3$.1f°%2$s तक बढ़ गईल बा</string>
+    <string name="morning_alert">तापमान %1$s राउर सीमा %2$s तक बढ़ गइल बा</string>
     <string name="morning_temp_alert">सबेरे के अलर्ट बा?</string>
     <string name="next_moon">अगिला चंद्रमा के घटना के बारे में बतावल गइल बा?</string>
     <string name="no">ना</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">इंच में बरखा हो रहल बा?</string>
     <string name="rainfall_alert">बरखा के अलर्ट बा?</string>
     <string name="rainfall_alert_desc">जब बरखा आपके निर्धारित सीमा तक पहुंच जाला त रोज अलर्ट करेला</string>
-    <string name="rainfall_alert_imperial">बरखा %1$.2f%2$s आपके सीमा %3$.2f%2$s से मेल खा चुकल बा</string>
-    <string name="rainfall_alert_metric">बरखा %1$.1f%2$s राउर सीमा %3$.1f%2$s से मेल खा गइल बा</string>
+    <string name="rainfall_alert_notification">बरखा %1$s राउर सीमा %2$s से मेल खा गइल बा</string>
     <string name="rainfall_alert_str">बरखा के अलर्ट दिहल गइल बा</string>
     <string name="rainfall_limit">बरखा के सीमा बा</string>
-    <string name="rainrate_alert_imperial_severe">पिछला %2$d %3$s में %1$.2fin के बरखा दर \'गंभीर\' स्तर पर पहुँच गइल बा</string>
-    <string name="rainrate_alert_imperial_warning">पिछला %2$d %3$s में %1$.2fin के बरखा दर \'चेतावनी\' स्तर पर पहुँच गइल बा</string>
-    <string name="rainrate_alert_imperial_watch">पिछला %2$d %3$s में %1$.2fin के बरखा दर \'देखीं\' स्तर पर पहुँच गइल बा</string>
-    <string name="rainrate_alert_metric_severe">पिछला %2$d %3$s में %1$.1fmm के बरखा दर \'गंभीर\' स्तर पर पहुँच गइल बा</string>
-    <string name="rainrate_alert_metric_warning">पिछला %2$d %3$s में %1$.1fmm के बरखा दर \'चेतावनी\' स्तर पर पहुँच गइल बा</string>
-    <string name="rainrate_alert_metric_watch">पिछला %2$d %3$s में %1$.1fmm के बरखा दर \'देखीं\' स्तर पर पहुँच गइल बा</string>
     <string name="rainrate_alert_severe">गंभीर बरखा के दर के अलर्ट?</string>
     <string name="rainrate_alert_severe_desc">बरखा के अवधि के आधार पर बरखा के दर गंभीर सीमा से अधिका होखे पर अलर्ट करेला</string>
+    <string name="rainrate_alert_severe_notification">पिछला %2$d %3$s में %1$s के बरखा दर \'गंभीर\' स्तर पर पहुँच गइल बा</string>
     <string name="rainrate_alert_severe_str">भयंकर बरखा के दर के अलर्ट</string>
     <string name="rainrate_alert_str">रेनरेट अलर्ट के बा</string>
     <string name="rainrate_alert_warning">चेतावनी बरखा के दर के अलर्ट?</string>
     <string name="rainrate_alert_warning_desc">बरखा के अवधि के आधार पर बरखा के दर चेतावनी सीमा से अधिका होखे त अलर्ट करेला</string>
+    <string name="rainrate_alert_warning_notification">पिछला %2$d %3$s में %1$s के बरखा दर \'चेतावनी\' स्तर पर पहुँच गइल बा</string>
     <string name="rainrate_alert_warning_str">चेतावनी बरसात के दर के अलर्ट</string>
     <string name="rainrate_alert_watch">बरखा के दर के अलर्ट देखल जाव?</string>
     <string name="rainrate_alert_watch_desc">बरखा के अवधि के आधार पर बरखा के दर घड़ी के सीमा से अधिका होखे पर अलर्ट करेला</string>
+    <string name="rainrate_alert_watch_notification">पिछला %2$d %3$s में %1$s के बरखा दर \'देखीं\' स्तर पर पहुँच गइल बा</string>
     <string name="rainrate_alert_watch_str">रेनरेट अलर्ट देखल जाव</string>
     <string name="refresh_time">रिफ्रेश टाइम चुनीं</string>
     <string name="remove_all_data">का रउवा सभे के पक्का विश्वास बा कि रउआ सभे डेटा के हटावल चाहत बानी?</string>

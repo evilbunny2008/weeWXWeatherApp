@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Circa</string>
     <string name="about_app">Supra l\'App</string>
-    <string name="afternoon_alert">La timpiratura %1$.1f°%2$s è calata ô vostru limiti di %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Avvisu dû pomeriggiu?</string>
+	<string name="afternoon_temp_alert">Avvisu dû pomeriggiu?</string>
     <string name="all_time_stats">Tutti li Statistichi dû tempu</string>
     <string name="app_theme">Tema di l\'App</string>
 	<string name="battery_warning">Attenzioni: Attivari l\'upzzioni supra pò scaricari cchiù velocimenti la battirìa</string>
@@ -58,8 +57,7 @@
     <string name="match_app">App</string>
     <string name="metric">Usa Mètrica?</string>
     <string name="minutes">minuti</string>
-    <string name="morning_alert">La timpiratura %1$.1f°%2$s aumintau ô vostru limiti di %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Avvisu dû matina?</string>
+	<string name="morning_temp_alert">Avvisu dû matina?</string>
     <string name="next_moon">Eventi la luna appressu?</string>
     <string name="no">no</string>
     <string name="no_download_or_app_not_setup">Nuḍḍa scarica o app nun fu cunfigurata</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Chioggia \'n pullici?</string>
     <string name="rainfall_alert">Avvisu di chioggia?</string>
     <string name="rainfall_alert_desc">Avvisi ogni jornu quannu la piòggia arriva ô limiti fissatu</string>
-    <string name="rainfall_alert_imperial">Piòggia %1$.2f%2$s currispunnìu ô vostru limiti di %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Piòggia %1$.1f%2$s currispunnìu ô vostru limiti di %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Avvisu di chioggia</string>
+	<string name="rainfall_alert_str">Avvisu di chioggia</string>
     <string name="rainfall_limit">Limiti di piòggia</string>
-    <string name="rainrate_alert_imperial_severe">Lu tassu di chioggia di %1$.2fin nnî ùrtimi %2$d %3$s arrivau ô liveddu \'Gravi\'</string>
-    <string name="rainrate_alert_imperial_warning">Lu tassu di chioggia di %1$.2fin nnî ùrtimi %2$d %3$s arrivau ô liveddu di \'Avvisu\'</string>
-    <string name="rainrate_alert_imperial_watch">Lu tassu di chioggia di %1$.2fin nnî ùrtimi %2$d %3$s arrivau ô liveddu di \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">La prubabbilità di chioggia di %1$.1fmm nnî ùrtimi %2$d %3$s arrivau ô liveddu \'Gravi\'</string>
-    <string name="rainrate_alert_metric_warning">La prubabbilità di chioggia di %1$.1fmm nta l\'urtimi %2$d %3$s arrivau ô liveddu di \'Avvisu\'</string>
-    <string name="rainrate_alert_metric_watch">La prubabbilità di chioggia di %1$.1fmm nta l\'urtimi %2$d %3$s arrivau ô liveddu di \'Watch\'</string>
-    <string name="rainrate_alert_severe">Avvisi di tassu di chioggia forti?</string>
+	<string name="rainrate_alert_severe">Avvisi di tassu di chioggia forti?</string>
     <string name="rainrate_alert_severe_desc">Avvisi si la prubabbilità di chioggia supira lu limiti gravi \'n basi â durata di chioggia</string>
     <string name="rainrate_alert_severe_str">Avvisu di tassu di chioggia forti</string>
     <string name="rainrate_alert_str">Avvisu di tassu di chioggia</string>

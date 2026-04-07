@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Haqida</string>
     <string name="about_app">Ilova haqida</string>
-    <string name="afternoon_alert">Harorat %1$.1f°%2$s chegarangizgacha tushib ketdi: %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Peshindan keyin ogohlantirishmi?</string>
+	<string name="afternoon_temp_alert">Peshindan keyin ogohlantirishmi?</string>
     <string name="all_time_stats">Barcha vaqt statistika</string>
     <string name="app_theme">Ilova mavzusi</string>
 	<string name="battery_warning">Ogohlantirish: Yuqoridagi variantni yoqish, odatdagidan ko\'ra batareyangizni tezroq chiqarishi mumkin</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Uchrashuv ilovasi</string>
     <string name="metric">Metrikani ishlatasizmi?</string>
     <string name="minutes">daqiqa</string>
-    <string name="morning_alert">Harorat %1$.1f°%2$s sizning chegarangizga koʻtarildi: %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Ertalab ogohlantirishmi?</string>
+	<string name="morning_temp_alert">Ertalab ogohlantirishmi?</string>
     <string name="next_moon">Keyingi oy voqealari?</string>
     <string name="no">Yo\'q</string>
     <string name="no_download_or_app_not_setup">Hech qanday yuklab olish yoki dastur sozlanmagan</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Dyuymdagi yomg\'irmi?</string>
     <string name="rainfall_alert">Yomg\'ir haqida ogohlantirishmi?</string>
     <string name="rainfall_alert_desc">Yomg\'ir miqdori belgilangan chegaraga yetganda har kuni ogohlantiriladi</string>
-    <string name="rainfall_alert_imperial">Yomg\'ir miqdori %1$.2f%2$s sizning limitingizga mos keldi: %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Yomg\'ir miqdori %1$.1f%2$s sizning limitingizga mos keldi: %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Yomg\'ir haqida ogohlantirish</string>
+	<string name="rainfall_alert_str">Yomg\'ir haqida ogohlantirish</string>
     <string name="rainfall_limit">Yomg\'ir chegarasi</string>
-    <string name="rainrate_alert_imperial_severe">Oxirgi %2$d %3$s ichida %1$.2fin yomg\'ir yog\'ishi \'Og\'ir\' darajaga yetdi</string>
-    <string name="rainrate_alert_imperial_warning">Oxirgi %2$d %3$s ichida %1$.2fin yomgʻir yogʻishi \'Ogohlantirish\' darajasiga yetdi</string>
-    <string name="rainrate_alert_imperial_watch">Oxirgi %2$d %3$s ichida %1$.2fin yomgʻir yogʻishi \'Tomosha qilish\' darajasiga yetdi</string>
-    <string name="rainrate_alert_metric_severe">Oxirgi %2$d %3$s ichida %1$.1fmm yomg\'ir yog\'ishi \'Og\'ir\' darajaga yetdi</string>
-    <string name="rainrate_alert_metric_warning">Oxirgi %2$d %3$s ichida %1$.1fmm yomgʻir yogʻishi \'Ogohlantirish\' darajasiga yetdi</string>
-    <string name="rainrate_alert_metric_watch">Oxirgi %2$d %3$s ichida %1$.1fmm yomgʻir yogʻishi \'Tomosha qilish\' darajasiga yetdi</string>
-    <string name="rainrate_alert_severe">Kuchli yomg\'ir haqida ogohlantirishmi?</string>
+	<string name="rainrate_alert_severe">Kuchli yomg\'ir haqida ogohlantirishmi?</string>
     <string name="rainrate_alert_severe_desc">Yomg\'ir miqdori yog\'ingarchilik davomiyligidan kelib chiqqan holda qattiq chegaradan oshib ketganda ogohlantiradi</string>
     <string name="rainrate_alert_severe_str">Kuchli yomg\'ir haqida ogohlantirish</string>
     <string name="rainrate_alert_str">Yomg\'ir haqida ogohlantirish</string>

@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Nge</string>
     <string name="about_app">Mayelana ne-App</string>
-    <string name="afternoon_alert">Lizinga lekushisa %1$.1f°%2$s lehle lafika emkhawulweni wakho we %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Secwayiso santambama?</string>
+	<string name="afternoon_temp_alert">Secwayiso santambama?</string>
     <string name="all_time_stats">Tonkhe Tibalo Tesikhatsi</string>
     <string name="app_theme">Ingcikitsi Yekusebenta</string>
 	<string name="battery_warning">Secwayiso: Kunika emandla lenketho lengenhla kungakhipha ibhethri yakho ngekushesha kunalokuvamile</string>
@@ -58,8 +57,7 @@
     <string name="match_app">I-App Yemdlalo</string>
     <string name="metric">Sebentisa iMetric?</string>
     <string name="minutes">imizuzu</string>
-    <string name="morning_alert">Lizinga lekushisa %1$.1f°%2$s likhuphukele emkhawulweni wakho we %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Secwayiso sasekuseni?</string>
+	<string name="morning_temp_alert">Secwayiso sasekuseni?</string>
     <string name="next_moon">Tigameko letilandzelako tenyanga?</string>
     <string name="no">Cha</string>
     <string name="no_download_or_app_not_setup">Kute lokulandvwako noma lokusebenta lokungakabi kusetha</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Imvula ngeMasentimitha?</string>
     <string name="rainfall_alert">Secwayiso Semvula?</string>
     <string name="rainfall_alert_desc">Ticwayiso onkhe malanga nangabe imvula ifika emkhawulweni wakho lobekiwe</string>
-    <string name="rainfall_alert_imperial">Imvula %1$.2f%2$s ihambisane nemkhawulo wakho we %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Imvula %1$.1f%2$s ihambisane nemkhawulo wakho we %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Secwayiso seMvula</string>
+	<string name="rainfall_alert_str">Secwayiso seMvula</string>
     <string name="rainfall_limit">Umkhawulo Wemvula</string>
-    <string name="rainrate_alert_imperial_severe">Lizinga lemvula le %1$.2fin ku %2$d %3$s yekugcina lifike esigabeni \'Lesimatima\'</string>
-    <string name="rainrate_alert_imperial_warning">Lizinga lemvula lelingu %1$.2fin ku %2$d %3$s leyengcile lifike esigabeni se \'Secwayiso\'</string>
-    <string name="rainrate_alert_imperial_watch">Lizinga lemvula le %1$.2fin ku %2$d %3$s leyengcile lishaye lizinga le-\'Buka\'</string>
-    <string name="rainrate_alert_metric_severe">Lizinga lemvula le %1$.1fmm ku %2$d %3$s leyengcile lifike esigabeni \'Lesimatima\'</string>
-    <string name="rainrate_alert_metric_warning">Lizinga lemvula lelingu %1$.1fmm ku %2$d %3$s leyengcile lifike esigabeni se \'Secwayiso\'</string>
-    <string name="rainrate_alert_metric_watch">Imvula lengu %1$.1fmm ku %2$d %3$s yekugcina seyifike esigabeni se \'Kubuka\'</string>
-    <string name="rainrate_alert_severe">Tecwayiso Telizinga Lemvula Lembi?</string>
+	<string name="rainrate_alert_severe">Tecwayiso Telizinga Lemvula Lembi?</string>
     <string name="rainrate_alert_severe_desc">Tecwayiso uma ngabe lizinga lemvula lendlula umkhawulo lomkhulu ngekuya ngesikhatsi semvula</string>
     <string name="rainrate_alert_severe_str">Secwayiso Selizinga Lemvula Lembi</string>
     <string name="rainrate_alert_str">Secwayiso selizinga lemvula</string>

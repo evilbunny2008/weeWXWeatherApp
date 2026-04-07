@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Акъкъында</string>
     <string name="about_app">Апп акъкъында</string>
-    <string name="afternoon_alert">Сыджакълыкъ %1$.1f°%2$s сизинъ %3$.1f°%2$s сынъырынъызгъа тюшти</string>
+    <string name="afternoon_alert">%1$s арарет сизинъ %2$s сынъырынъызгъа тюшти</string>
     <string name="afternoon_temp_alert">Куньдюзки хабердарлыкъ?</string>
     <string name="all_time_stats">Бутюн вакъыт статистикасы</string>
     <string name="app_theme">Къулланма мевзусы</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Матч ярдымынен</string>
     <string name="metric">Метриканы къулланмакъ?</string>
     <string name="minutes">дакъкъалар</string>
-    <string name="morning_alert">Сыджакълыкъ %1$.1f°%2$s сизинъ %3$.1f°%2$s сынъырынъызгъа котерильди</string>
+    <string name="morning_alert">Сыджакълыкъ %1$s сизинъ сынъырынъызгъа котерильди %2$s</string>
     <string name="morning_temp_alert">Сабалыкъ хабердарлыкъ?</string>
     <string name="next_moon">Невбеттеки ай вакъиалары?</string>
     <string name="no">Ëкъ</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Ягъмур дюймлернен?</string>
     <string name="rainfall_alert">Ягъмур акъкъында хабердарлыкъ?</string>
     <string name="rainfall_alert_desc">Ягъмур сиз бельгилеген сынъыргъа етсе, эр кунь хабердар эте</string>
-    <string name="rainfall_alert_imperial">Ягъмур %1$.2f%2$s сизинъ %3$.2f%2$s сынъырынъызгъа келишти</string>
-    <string name="rainfall_alert_metric">Ягъмур %1$.1f%2$s сизинъ %3$.1f%2$s сынъырынъызгъа келишти</string>
+    <string name="rainfall_alert_notification">Ягъмур %1$s сизинъ %2$s сынъырынъызгъа келишти</string>
     <string name="rainfall_alert_str">Ягъмур акъкъында хабер</string>
     <string name="rainfall_limit">Ягъмурларнынъ сынъыры</string>
-    <string name="rainrate_alert_imperial_severe">Сонъки %2$d %3$sс ичинде %1$.2fин ягъмур ольчюси \'Агъыр\' севиесине етти</string>
-    <string name="rainrate_alert_imperial_warning">Сонъки %2$d %3$s ичинде %1$.2fin ягъмур ольчюси \'Икяе\' севиесине чыкъты</string>
-    <string name="rainrate_alert_imperial_watch">Сонъки %2$d %3$sс ичинде %1$.2fin ягъмур ольчюси \'Сакъламакъ\' севиесине етти</string>
-    <string name="rainrate_alert_metric_severe">Сонъки %2$d %3$sс ичинде %1$.1fмм ягъмур ольчюси \'Агъыр\' севиесине етти</string>
-    <string name="rainrate_alert_metric_warning">Сонъки %2$d %3$s ичинде %1$.1fmm ягъмур \'Дикъкъат\' севиесине етти</string>
-    <string name="rainrate_alert_metric_watch">Сонъки %2$d %3$sс ичинде %1$.1fмм ягъмур \'Сакъламакъ\' севиесине етти</string>
     <string name="rainrate_alert_severe">Къатты ягъмур акъкъында хаберлер?</string>
     <string name="rainrate_alert_severe_desc">Ягъмурнынъ девамлылыгъына коре ягъмурнынъ ольчюси агъыр сынъырдан зияде олса, хабердар эте</string>
+    <string name="rainrate_alert_severe_notification">Сонъки %2$d %3$s ичинде %1$s ягъмур ольчюси \'Агъыр\' севиесине етти</string>
     <string name="rainrate_alert_severe_str">Къатты ягъмур акъкъында хабердарлыкъ</string>
     <string name="rainrate_alert_str">Ягъмур акъкъында хабердарлыкъ</string>
     <string name="rainrate_alert_warning">Укюм Ягъмур акъкъында хаберлер?</string>
     <string name="rainrate_alert_warning_desc">Ягъмурнынъ девамлылыгъына коре ягъмурнынъ ольчюси тенбиелев сынъырындан зияде олса, хабердар эте</string>
+    <string name="rainrate_alert_warning_notification">Сонъки %2$d %3$s ичинде %1$s ягъмур ольчюси \'Икяе\' севиесине етти</string>
     <string name="rainrate_alert_warning_str">Укюм Ягъмур акъкъында хабердарлыкъ</string>
     <string name="rainrate_alert_watch">Ягъмур акъкъында хаберлерни сейир этинъиз?</string>
     <string name="rainrate_alert_watch_desc">Ягъмурнынъ девамлылыгъына коре ягъмурнынъ ольчюси саат сынъырындан зияде олса, хабердар эте</string>
+    <string name="rainrate_alert_watch_notification">Сонъки %2$d %3$s ичинде %1$s ягъмур ольчюси \'Сакъламакъ\' севиесине етти</string>
     <string name="rainrate_alert_watch_str">Ягъмур акъкъында хаберни сейир этинъиз</string>
     <string name="refresh_time">Янъыланма вакътыны сечип алынъыз</string>
     <string name="remove_all_data">Бутюн малюматны ёкъ этмек истегенинъизге эминсинъизми?</string>

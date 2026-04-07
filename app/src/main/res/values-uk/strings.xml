@@ -2,8 +2,7 @@
 <resources>
     <string name="about">про</string>
     <string name="about_app">Про додаток</string>
-    <string name="afternoon_alert">Температура %1$.1f°%2$s впала до вашого ліміту %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Оповіщення після обіду?</string>
+	<string name="afternoon_temp_alert">Оповіщення після обіду?</string>
     <string name="all_time_stats">Статистика за весь час</string>
     <string name="app_theme">Тема програми</string>
 	<string name="avg">сер.</string>
@@ -59,8 +58,7 @@
     <string name="match_app">Матч App</string>
     <string name="metric">Використовувати метрику?</string>
     <string name="minutes">хвилин</string>
-    <string name="morning_alert">Температура %1$.1f°%2$s піднялася до вашого ліміту %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Ранкова тривога?</string>
+	<string name="morning_temp_alert">Ранкова тривога?</string>
     <string name="next_moon">Події наступного місяця?</string>
     <string name="no">немає</string>
     <string name="no_download_or_app_not_setup">Немає завантажень або додаток не налаштовано</string>
@@ -84,17 +82,9 @@
     <string name="rain_in_inches">Дощ у дюймах?</string>
     <string name="rainfall_alert">Сповіщення про дощ?</string>
     <string name="rainfall_alert_desc">Сповіщення щодня, коли кількість опадів досягає встановленого ліміту</string>
-    <string name="rainfall_alert_imperial">Кількість опадів %1$.2f%2$s досягла вашого обмеження в %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Кількість опадів %1$.1f%2$s досягла вашого ліміту %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Сповіщення про дощ</string>
+	<string name="rainfall_alert_str">Сповіщення про дощ</string>
     <string name="rainfall_limit">Обмеження кількості опадів</string>
-    <string name="rainrate_alert_imperial_severe">Рівень дощу %1$.2fin за останні %2$d %3$s досяг рівня \'Сильного\'</string>
-    <string name="rainrate_alert_imperial_warning">Дощ %1$.2fin за останні %2$d %3$s досяг рівня \'Попередження\'</string>
-    <string name="rainrate_alert_imperial_watch">Рівень дощу в %1$.2fin за останні %2$d %3$s досяг рівня \'Переглянути\'</string>
-    <string name="rainrate_alert_metric_severe">Рівень дощу в %1$.1fmm за останні %2$d %3$s сягнув рівня \'сильного\'</string>
-    <string name="rainrate_alert_metric_warning">Рівень дощу %1$.1fmm за останні %2$d %3$s досяг рівня \'Попередження\'</string>
-    <string name="rainrate_alert_metric_watch">Кількість опадів %1$.1fmm за останні %2$d %3$s досягла рівня \'Перегляд\'</string>
-    <string name="rainrate_alert_severe">Сповіщення про сильний дощ?</string>
+	<string name="rainrate_alert_severe">Сповіщення про сильний дощ?</string>
     <string name="rainrate_alert_severe_desc">Попереджає, якщо кількість опадів перевищує суворе обмеження на основі тривалості опадів</string>
     <string name="rainrate_alert_severe_str">Сповіщення про сильний дощ</string>
     <string name="rainrate_alert_str">Сповіщення про дощ</string>

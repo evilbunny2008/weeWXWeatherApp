@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Fa ho</string>
     <string name="about_app">Ɛfa app no ​​ho</string>
-    <string name="afternoon_alert">Ɔhyew %1$.1f°%2$s akɔ fam akodu wo anohyeto a ɛyɛ %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperature %1$s akɔ fam akodu wo anohyeto a ɛyɛ %2$s</string>
     <string name="afternoon_temp_alert">Awia Kɔkɔbɔ?</string>
     <string name="all_time_stats">Bere akontaabu nyinaa</string>
     <string name="app_theme">App asɛmti</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Match app</string>
     <string name="metric">Fa metric di dwuma?</string>
     <string name="minutes">sima</string>
-    <string name="morning_alert">Ɔhyew %1$.1f°%2$s akɔ soro akodu wo anohyeto a ɛyɛ %3$.1f°%2$s</string>
+    <string name="morning_alert">Temperature %1$s akɔ soro akodu wo anohyeto a ɛyɛ %2$s</string>
     <string name="morning_temp_alert">Anɔpa Kɔkɔbɔ?</string>
     <string name="next_moon">Ɔsram a edi hɔ no mu nsɛm a esisi?</string>
     <string name="no">Daabi</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">Osu a ɛtɔ wɔ Inches mu?</string>
     <string name="rainfall_alert">Osu a ɛtɔ ho kɔkɔbɔ?</string>
     <string name="rainfall_alert_desc">Bɔ kɔkɔ da biara da bere a osu no adu nea woahyɛ no so no</string>
-    <string name="rainfall_alert_imperial">Osuo %1$.2f%2$s ne wo anohyetoɔ a ɛyɛ %3$.2f%2$s no ahyia</string>
-    <string name="rainfall_alert_metric">Osuo %1$.1f%2$s ne wo anohyetoɔ a ɛyɛ %3$.1f%2$s no ahyia</string>
+    <string name="rainfall_alert_notification">Osuo %1$s ne wo anohyetoɔ a ɛyɛ %2$s no ahyia</string>
     <string name="rainfall_alert_str">Osu a ɛtɔ ho kɔkɔbɔ</string>
     <string name="rainfall_limit">Osu a Ɛtɔ Anohyeto</string>
-    <string name="rainrate_alert_imperial_severe">Osuo dodoɔ a ɛyɛ %1$.2fin wɔ %2$d %3$s a atwam no mu no akɔ \'Severe\' level</string>
-    <string name="rainrate_alert_imperial_warning">Osuo dodoɔ a ɛyɛ %1$.2fin wɔ %2$d %3$s a atwam no mu no akɔ \'Kɔkɔbɔ\' gyinabea</string>
-    <string name="rainrate_alert_imperial_watch">Osuo dodoɔ a ɛyɛ %1$.2fin wɔ %2$d %3$s a atwam no mu no akɔ \'Watch\' level</string>
-    <string name="rainrate_alert_metric_severe">Osuo a ɛtɔ %1$.1fmm wɔ %2$d %3$s a atwam no mu no akɔ \'Severe\' level</string>
-    <string name="rainrate_alert_metric_warning">Osuo a ɛtɔ %1$.1fmm wɔ %2$d %3$s a atwam no mu no akɔ \'Kɔkɔbɔ\' gyinabea</string>
-    <string name="rainrate_alert_metric_watch">Osuo a ɛtɔ %1$.1fmm wɔ %2$d %3$s a atwam no mu no akɔ \'Watch\' level</string>
     <string name="rainrate_alert_severe">Osu a Ɛtɔ So Kɛse Ho Kɔkɔbɔ?</string>
     <string name="rainrate_alert_severe_desc">Ɛbɔ kɔkɔ sɛ osu dodow boro anohyeto a emu yɛ den a egyina bere tenten a osu tɔ so</string>
+    <string name="rainrate_alert_severe_notification">Osuo dodoɔ a ɛyɛ %1$s wɔ %2$d %3$s a atwam no mu no akɔ \'Severe\' level</string>
     <string name="rainrate_alert_severe_str">Osu a Ɛtɔ So Kɛse Ho Kɔkɔbɔ</string>
     <string name="rainrate_alert_str">Osu a Ɛtɔ Ho Kɔkɔbɔ</string>
     <string name="rainrate_alert_warning">Kɔkɔbɔ Osu a Ɛtɔ Ho Kɔkɔbɔ?</string>
     <string name="rainrate_alert_warning_desc">Ɛbɔ kɔkɔ sɛ osu dodow boro kɔkɔbɔ anohyeto a egyina bere tenten a osu tɔ so</string>
+    <string name="rainrate_alert_warning_notification">Osuo dodoɔ a ɛyɛ %1$s wɔ %2$d %3$s a atwam no mu no akɔ \'Kɔkɔbɔ\' gyinabea</string>
     <string name="rainrate_alert_warning_str">Kɔkɔbɔ Osu a Ɛtɔ Ho Kɔkɔbɔ</string>
     <string name="rainrate_alert_watch">Hwɛ Osu a Ɛtɔ Ho Kɔkɔbɔ?</string>
     <string name="rainrate_alert_watch_desc">Ɛbɔ kɔkɔ sɛ osu dodow boro ɔwɛn anohyeto a egyina bere tenten a osu tɔ so</string>
+    <string name="rainrate_alert_watch_notification">Osuo dodoɔ a ɛyɛ %1$s wɔ %2$d %3$s a atwam no mu no akɔ \'Watch\' level</string>
     <string name="rainrate_alert_watch_str">Hwɛ Osu a Ɛtɔ Ho Kɔkɔbɔ</string>
     <string name="refresh_time">Paw bere a wɔde yɛ foforo</string>
     <string name="remove_all_data">Wogye di sɛ wopɛ sɛ wuyi data nyinaa fi hɔ?</string>

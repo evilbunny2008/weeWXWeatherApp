@@ -2,8 +2,7 @@
 <resources>
     <string name="about">About</string>
     <string name="about_app">Mabapi le app</string>
-    <string name="afternoon_alert">Thempereichara %1$.1f°%2$s e theohetse ho %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Tlhokomeliso ea Thapama?</string>
+	<string name="afternoon_temp_alert">Tlhokomeliso ea Thapama?</string>
     <string name="all_time_stats">Liphatlalatso tsohle tsa nako</string>
     <string name="app_theme">Sehlooho sa app</string>
 	<string name="battery_warning">Temoso: Ho thusa khetho e kaholimo ho ka ntša betri ea hau kapele ho feta e tloaelehileng</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Match APP</string>
     <string name="metric">Sebelisa metric?</string>
     <string name="minutes">metsotso</string>
-    <string name="morning_alert">Mocheso %1$.1f°%2$s o nyolohetse ho %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Tlhokomeliso ea Hoseng?</string>
+	<string name="morning_temp_alert">Tlhokomeliso ea Hoseng?</string>
     <string name="next_moon">Liketsahalo tse latelang tsa khoeli?</string>
     <string name="no">Che</string>
     <string name="no_download_or_app_not_setup">Ha ho sesebelisoa kapa sesebelisoa se so ka se hlophisoa</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Pula ka Li-inch?</string>
     <string name="rainfall_alert">Tlhokomeliso ka Pula?</string>
     <string name="rainfall_alert_desc">Litemoso tsa letsatsi le letsatsi ha pula e fihla moeling o behiloeng</string>
-    <string name="rainfall_alert_imperial">Pula %1$.2f%2$s e tsamaellana le moeli oa hau oa %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Pula %1$.1f%2$s e tsamaellana le moeli oa hau oa %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Tlhokomeliso ea Pula</string>
+	<string name="rainfall_alert_str">Tlhokomeliso ea Pula</string>
     <string name="rainfall_limit">Moedi wa Pula</string>
-    <string name="rainrate_alert_imperial_severe">Pula ea %1$.2fin ho %2$d %3$s e fetileng e fihlile boemong ba \'Mathata\'</string>
-    <string name="rainrate_alert_imperial_warning">Pula ea %1$.2fin ho %2$d %3$s e fetileng e fihlile boemong ba \'Tlhokomeliso\'</string>
-    <string name="rainrate_alert_imperial_watch">Pula ea %1$.2fin ho %2$d %3$s e fetileng e fihlile boemong ba \'Sheba\'</string>
-    <string name="rainrate_alert_metric_severe">Pula ea %1$.1fmm ho %2$d %3$s e fetileng e fihlile boemong ba \'Mathata\'</string>
-    <string name="rainrate_alert_metric_warning">Pula ea %1$.1fmm ho %2$d %3$s e fetileng e fihlile boemong ba \'Tlhokomeliso\'</string>
-    <string name="rainrate_alert_metric_watch">Pula ea %1$.1fmm ho %2$d %3$s e fetileng e fihlile boemong ba \'Sheba\'</string>
-    <string name="rainrate_alert_severe">Litlhokomeliso tsa Pula e Matla?</string>
+	<string name="rainrate_alert_severe">Litlhokomeliso tsa Pula e Matla?</string>
     <string name="rainrate_alert_severe_desc">Litemoso haeba pula e feta moeli o matla ho latela nako ea pula</string>
     <string name="rainrate_alert_severe_str">Tlhokomeliso ea Pula e Matla</string>
     <string name="rainrate_alert_str">Tlhokomeliso ea Rainrate</string>

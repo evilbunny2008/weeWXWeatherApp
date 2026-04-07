@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Туһунан</string>
     <string name="about_app">Приложение туһунан</string>
-    <string name="afternoon_alert">Температура %1$.1f°%2$s %3$.1f°%2$s диэри түстэ</string>
-    <string name="afternoon_temp_alert">Күнүс сэрэтии?</string>
+	<string name="afternoon_temp_alert">Күнүс сэрэтии?</string>
     <string name="all_time_stats">Бары кэм статистиката</string>
     <string name="app_theme">Приложение тиэмэтэ</string>
 	<string name="battery_warning">Сэрэтии: Үөһээ этиллибит варианы холбоотоххуна, батареяҥ үгэстэрдээҕэр түргэнник ыһыллыан сөп</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Метриканы туттуоххун дуо?</string>
     <string name="minutes">мүнүүтэлэр</string>
-    <string name="morning_alert">Температура %1$.1f°%2$s %3$.1f°%2$s диэри үрдээтэ</string>
-    <string name="morning_temp_alert">Сарсыардааҥҥы сэрэтии?</string>
+	<string name="morning_temp_alert">Сарсыардааҥҥы сэрэтии?</string>
     <string name="next_moon">Кэлэр ый түгэннэрэ?</string>
     <string name="no">Суох</string>
     <string name="no_download_or_app_not_setup">Биир да скачивание эбэтэр приложение туруоруллубатах</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Дюймынан ардах?</string>
     <string name="rainfall_alert">Ардах туһунан сэрэтиилэр?</string>
     <string name="rainfall_alert_desc">Ардах кээмэйэ ыйыллыбыт кээмэйгэр тиийдэҕинэ, күн аайы сэрэтэр</string>
-    <string name="rainfall_alert_imperial">Ардах %1$.2f%2$s эн %3$.2f%2$s лимитигэр сөп түбэстэ</string>
-    <string name="rainfall_alert_metric">Ардах %1$.1f%2$s эн %3$.1f%2$s лимитигэр сөп түбэстэ</string>
-    <string name="rainfall_alert_str">Ардах туһунан сэрэтии</string>
+	<string name="rainfall_alert_str">Ардах туһунан сэрэтии</string>
     <string name="rainfall_limit">Ардах кээмэйэ</string>
-    <string name="rainrate_alert_imperial_severe">Кэнники %2$d %3$s иһигэр %1$.2fin ардах \'Ыарахан\' таһымҥа тиийдэ</string>
-    <string name="rainrate_alert_imperial_warning">Кэнники %2$d %3$s %1$.2fin ардах кээмэйэ \'Сэрэтии\' таһымыгар тиийдэ</string>
-    <string name="rainrate_alert_imperial_watch">Кэнники %2$d %3$s %1$.2fin ардах кээмэйэ \'Watch\' таһымҥа тиийдэ</string>
-    <string name="rainrate_alert_metric_severe">Кэнники %2$d %3$s %1$.1fmm ардах түһүүтэ \'Ыарахан\' таһымҥа тиийдэ</string>
-    <string name="rainrate_alert_metric_warning">Кэнники %2$d %3$s %1$.1fmm ардах кээмэйэ \'Сэрэтии\' таһымыгар тиийдэ</string>
-    <string name="rainrate_alert_metric_watch">Кэнники %2$d %3$s %1$.1fmm ардах кээмэйэ \'Көрүү\' таһымыгар тиийдэ</string>
-    <string name="rainrate_alert_severe">Күүстээх ардах туһунан сэрэтиилэр?</string>
+	<string name="rainrate_alert_severe">Күүстээх ардах туһунан сэрэтиилэр?</string>
     <string name="rainrate_alert_severe_desc">Ардах кээмэйэ улахан кээмэйи аһардаҕына, ардах уһунугар олоҕуран сэрэтэр</string>
     <string name="rainrate_alert_severe_str">Күүстээх ардах туһунан сэрэтии</string>
     <string name="rainrate_alert_str">Ардах кээмэйин туһунан сэрэтии</string>

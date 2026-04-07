@@ -2,8 +2,7 @@
 <resources>
     <string name="about">గురించి</string>
     <string name="about_app">యాప్ గురించి</string>
-    <string name="afternoon_alert">ఉష్ణోగ్రత %1$.1f°%2$s మీ పరిమితి %3$.1f°%2$sకి పడిపోయింది</string>
-    <string name="afternoon_temp_alert">మధ్యాహ్నం అలర్ట్?</string>
+	<string name="afternoon_temp_alert">మధ్యాహ్నం అలర్ట్?</string>
     <string name="all_time_stats">ఆల్ టైమ్ స్టాటిస్టిక్స్</string>
     <string name="app_theme">యాప్ థీమ్</string>
 	<string name="battery_warning">హెచ్చరిక: పై ఎంపికను ప్రారంభించడం వలన మీ బ్యాటరీ సాధారణం కంటే వేగంగా డ్రెయిన్ కావచ్చు</string>
@@ -58,8 +57,7 @@
     <string name="match_app">అనువర్తనాన్ని సరిపోల్చండి</string>
     <string name="metric">మెట్రిక్ ఉపయోగించాలా?</string>
     <string name="minutes">నిమిషాలు</string>
-    <string name="morning_alert">ఉష్ణోగ్రత %1$.1f°%2$s మీ పరిమితి %3$.1f°%2$sకి పెరిగింది</string>
-    <string name="morning_temp_alert">మార్నింగ్ అలర్ట్?</string>
+	<string name="morning_temp_alert">మార్నింగ్ అలర్ట్?</string>
     <string name="next_moon">తదుపరి చంద్రుని సంఘటనలు?</string>
     <string name="no">నం</string>
     <string name="no_download_or_app_not_setup">డౌన్‌లోడ్ లేదా యాప్ సెటప్ చేయబడలేదు</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">అంగుళాలలో వర్షం?</string>
     <string name="rainfall_alert">వర్షపాతం హెచ్చరిక?</string>
     <string name="rainfall_alert_desc">వర్షపాతం మీ సెట్ పరిమితిని చేరుకున్నప్పుడు ప్రతిరోజూ హెచ్చరికలు</string>
-    <string name="rainfall_alert_imperial">వర్షపాతం %1$.2f%2$s మీ పరిమితి %3$.2f%2$sకి సరిపోలింది</string>
-    <string name="rainfall_alert_metric">వర్షపాతం %1$.1f%2$s మీ పరిమితి %3$.1f%2$sకి సరిపోలింది</string>
-    <string name="rainfall_alert_str">వర్షపాతం హెచ్చరిక</string>
+	<string name="rainfall_alert_str">వర్షపాతం హెచ్చరిక</string>
     <string name="rainfall_limit">వర్షపాత పరిమితి</string>
-    <string name="rainrate_alert_imperial_severe">గత %2$d %3$sలో %1$.2fin వర్షపాతం \'తీవ్రమైన\' స్థాయికి చేరుకుంది</string>
-    <string name="rainrate_alert_imperial_warning">గత %2$d %3$sలో %1$.2fin వర్షపాతం \'హెచ్చరిక\' స్థాయికి చేరుకుంది</string>
-    <string name="rainrate_alert_imperial_watch">గత %2$d %3$sలో %1$.2fin వర్షపాతం \'వాచ్\' స్థాయికి చేరుకుంది</string>
-    <string name="rainrate_alert_metric_severe">గత %2$d %3$sలో %1$.1fmm వర్షపాతం \'తీవ్రమైన\' స్థాయికి చేరుకుంది</string>
-    <string name="rainrate_alert_metric_warning">గత %2$d %3$sలో %1$.1fmm వర్షపాతం \'హెచ్చరిక\' స్థాయికి చేరుకుంది</string>
-    <string name="rainrate_alert_metric_watch">గత %2$d %3$sలో %1$.1fmm వర్షపాతం \'వాచ్\' స్థాయికి చేరుకుంది</string>
-    <string name="rainrate_alert_severe">తీవ్రమైన వర్షపాతం హెచ్చరికలు?</string>
+	<string name="rainrate_alert_severe">తీవ్రమైన వర్షపాతం హెచ్చరికలు?</string>
     <string name="rainrate_alert_severe_desc">వర్షపాతం వ్యవధి ఆధారంగా తీవ్ర పరిమితిని మించి వర్షపాతం ఉంటే హెచ్చరికలు</string>
     <string name="rainrate_alert_severe_str">తీవ్రమైన వర్షపాతం హెచ్చరిక</string>
     <string name="rainrate_alert_str">రెయిన్రేట్ హెచ్చరిక</string>

@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Дар атрофи</string>
     <string name="about_app">Дар бораи барнома</string>
-    <string name="afternoon_alert">Ҳарорат %1$.1f°%2$s то ҳадди %3$.1f°%2$s паст шуд</string>
-    <string name="afternoon_temp_alert">Огоҳии нисфирӯзӣ?</string>
+	<string name="afternoon_temp_alert">Огоҳии нисфирӯзӣ?</string>
     <string name="all_time_stats">Ҳама вақт омор</string>
     <string name="app_theme">Мавзӯъи барнома</string>
 	<string name="battery_warning">Огоҳӣ: Ин имкон медиҳад, ки варианти дар боло зикршуда батареяро тезтар аз маъмулӣ холӣ кунад</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Барномаи мувофиқ</string>
     <string name="metric">Метрро истифода баред?</string>
     <string name="minutes">дақиқа</string>
-    <string name="morning_alert">Ҳарорат %1$.1f°%2$s то ҳадди шумо аз %3$.1f°%2$s баланд шуд</string>
-    <string name="morning_temp_alert">Огоҳии субҳ?</string>
+	<string name="morning_temp_alert">Огоҳии субҳ?</string>
     <string name="next_moon">Муваффақиятҳои моҳи оянда?</string>
     <string name="no">Нест</string>
     <string name="no_download_or_app_not_setup">Ҳеҷ зеркашӣ ё барнома насб нашудааст</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Борон дар инч?</string>
     <string name="rainfall_alert">Огоҳӣ дар бораи борон?</string>
     <string name="rainfall_alert_desc">Ҳар рӯз ҳушдор медиҳад, ки боришот ба ҳадди муқарраркардаи шумо мерасад</string>
-    <string name="rainfall_alert_imperial">Боришоти %1$.2f%2$s ба меъёри %3$.2f%2$s мувофиқат кард</string>
-    <string name="rainfall_alert_metric">Боришоти %1$.1f%2$s ба меъёри %3$.1f%2$s мувофиқ омад</string>
-    <string name="rainfall_alert_str">Огоҳӣ дар бораи борон</string>
+	<string name="rainfall_alert_str">Огоҳӣ дар бораи борон</string>
     <string name="rainfall_limit">Маҳдудияти боришот</string>
-    <string name="rainrate_alert_imperial_severe">Меъёри боришоти %1$.2fin дар %2$d %3$s охир ба сатҳи \'сахт\' расид</string>
-    <string name="rainrate_alert_imperial_warning">Боришоти %1$.2fin дар %2$d %3$s охир ба сатҳи \'Огоҳӣ\' расид</string>
-    <string name="rainrate_alert_imperial_watch">Боришоти %1$.2fin дар %2$d %3$s охир ба сатҳи \'Тамошо\' расид</string>
-    <string name="rainrate_alert_metric_severe">Меъёри боришоти %1$.1fmm дар %2$d %3$s охир ба сатҳи \'сахт\' расид</string>
-    <string name="rainrate_alert_metric_warning">Боришоти %1$.1fmm дар %2$d %3$s охир ба сатҳи \'Огоҳӣ\' расид</string>
-    <string name="rainrate_alert_metric_watch">Боришоти %1$.1fmm дар %2$d %3$s охир ба сатҳи \'Тамошо\' расид</string>
-    <string name="rainrate_alert_severe">Огоҳӣ дар бораи боронҳои шадид?</string>
+	<string name="rainrate_alert_severe">Огоҳӣ дар бораи боронҳои шадид?</string>
     <string name="rainrate_alert_severe_desc">Огоҳӣ медиҳад, ки миқдори борон аз ҳадди шадид дар асоси давомнокии боришот зиёд бошад</string>
     <string name="rainrate_alert_severe_str">Огоҳӣ боронҳои шадид</string>
     <string name="rainrate_alert_str">Огоҳии борон</string>

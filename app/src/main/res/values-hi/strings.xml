@@ -2,8 +2,7 @@
 <resources>
     <string name="about">के बारे में</string>
     <string name="about_app">ऐप के बारे में</string>
-    <string name="afternoon_alert">तापमान %1$.1f°%2$s आपकी सीमा %3$.1f°%2$s तक गिर गया है</string>
-    <string name="afternoon_temp_alert">दोपहर की चेतावनी?</string>
+	<string name="afternoon_temp_alert">दोपहर की चेतावनी?</string>
     <string name="all_time_stats">सर्वकालिक आँकड़े</string>
     <string name="app_theme">ऐप थीम</string>
     <string name="avg">औसत</string>
@@ -62,8 +61,7 @@
     <string name="match_app">मैच ऐप</string>
     <string name="metric">मेट्रिक का उपयोग करें?</string>
     <string name="minutes">मिनट</string>
-    <string name="morning_alert">तापमान %1$.1f°%2$s आपकी सीमा %3$.1f°%2$s तक बढ़ गया है</string>
-    <string name="morning_temp_alert">सुबह की चेतावनी?</string>
+	<string name="morning_temp_alert">सुबह की चेतावनी?</string>
     <string name="next_moon">अगले चंद्रमा की घटनाएँ?</string>
     <string name="no">नहीं</string>
     <string name="no_download_or_app_not_setup">कोई डाउनलोड या ऐप सेटअप नहीं किया गया है</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">बारिश इंच में?</string>
     <string name="rainfall_alert">वर्षा चेतावनी?</string>
     <string name="rainfall_alert_desc">जब वर्षा आपकी निर्धारित सीमा तक पहुँच जाए तो प्रतिदिन अलर्ट करें</string>
-    <string name="rainfall_alert_imperial">वर्षा %1$.2f%2$s आपकी %3$.2f%2$s की सीमा से मेल खाती है</string>
-    <string name="rainfall_alert_metric">वर्षा %1$.1f%2$s आपकी %3$.1f%2$s की सीमा से मेल खाती है</string>
-    <string name="rainfall_alert_str">वर्षा चेतावनी</string>
+	<string name="rainfall_alert_str">वर्षा चेतावनी</string>
     <string name="rainfall_limit">वर्षा सीमा</string>
-    <string name="rainrate_alert_imperial_severe">पिछले %2$d %3$s में %1$.2fin की वर्षा दर \'गंभीर\' स्तर पर पहुंच गई है</string>
-    <string name="rainrate_alert_imperial_warning">पिछले %2$d %3$s में %1$.2fin की वर्षा दर \'चेतावनी\' स्तर पर पहुंच गई है</string>
-    <string name="rainrate_alert_imperial_watch">पिछले %2$d %3$s में %1$.2fin की वर्षा दर \'वॉच\' स्तर पर पहुंच गई है</string>
-    <string name="rainrate_alert_metric_severe">पिछले %2$d %3$s में %1$.1fmm की वर्षा दर \'गंभीर\' स्तर पर पहुंच गई है</string>
-    <string name="rainrate_alert_metric_warning">पिछले %2$d %3$s में %1$.1fmm की वर्षा दर \'चेतावनी\' स्तर पर पहुंच गई है</string>
-    <string name="rainrate_alert_metric_watch">पिछले %2$d %3$s में %1$.1fmm की वर्षा दर \'देखें\' स्तर पर पहुंच गई है</string>
-    <string name="rainrate_alert_severe">गंभीर वर्षा दर की चेतावनी?</string>
+	<string name="rainrate_alert_severe">गंभीर वर्षा दर की चेतावनी?</string>
     <string name="rainrate_alert_severe_desc">यदि वर्षा की अवधि के आधार पर वर्षा की दर गंभीर सीमा से अधिक हो जाती है तो अलर्ट</string>
     <string name="rainrate_alert_severe_str">गंभीर वर्षा दर की चेतावनी</string>
     <string name="rainrate_alert_str">वर्षा दर चेतावनी</string>

@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Турында</string>
     <string name="about_app">Кушымта турында</string>
-    <string name="afternoon_alert">Температура%1$.1f°%2$s сезнең лимитка төште%3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Көндезге хәбәр?</string>
+	<string name="afternoon_temp_alert">Көндезге хәбәр?</string>
     <string name="all_time_stats">Барлык вакыт статистикасы</string>
     <string name="app_theme">Кушымта темасы</string>
 	<string name="battery_warning">Кисәтү: aboveгарыдагы вариантны ачу сезнең батареяны гадәттәгедән тизрәк агызырга мөмкин</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Матч кушымтасы</string>
     <string name="metric">Метриканы кулланыгыз?</string>
     <string name="minutes">минут</string>
-    <string name="morning_alert">Температура%1$.1f°%2$s сезнең лимитка күтәрелде%3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Таң хәбәре?</string>
+	<string name="morning_temp_alert">Таң хәбәре?</string>
     <string name="next_moon">Киләсе ай вакыйгалары?</string>
     <string name="no">Юк</string>
     <string name="no_download_or_app_not_setup">Йөкләү яки кушымта урнаштырылмаган</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Яңгыр?</string>
     <string name="rainfall_alert">Яңгыр турында хәбәр?</string>
     <string name="rainfall_alert_desc">Яңгырлар билгеләнгән чиккә җиткәч, көн саен хәбәрләр</string>
-    <string name="rainfall_alert_imperial">Яңгыр%1$.2f%2$s сезнең лимитка туры килде%3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Яңгыр%1$.1f%2$s сезнең лимитка туры килде%3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Яңгырлар турында хәбәр</string>
+	<string name="rainfall_alert_str">Яңгырлар турында хәбәр</string>
     <string name="rainfall_limit">Яңгыр чикләре</string>
-    <string name="rainrate_alert_imperial_severe">Соңгы %2$d %3$s %1$.2fin яңгыры \'Каты\' дәрәҗәсенә җитте</string>
-    <string name="rainrate_alert_imperial_warning">Соңгы %2$d %3$s %1$.2fin яңгыры \'Кисәтү\' дәрәҗәсенә җитте</string>
-    <string name="rainrate_alert_imperial_watch">Соңгы %2$d %3$s %1$.2fin яңгыры \'Күзәтү\' дәрәҗәсенә җитте</string>
-    <string name="rainrate_alert_metric_severe">Соңгы %2$d %3$s%1$.1fmm яңгыры \'Каты\' дәрәҗәсенә җитте</string>
-    <string name="rainrate_alert_metric_warning">Соңгы %2$d %3$s%1$.1fmm яңгыры \'Кисәтү\' дәрәҗәсенә җитте</string>
-    <string name="rainrate_alert_metric_watch">Соңгы %2$d %3$s%1$.1fmm яңгыры \'Күзәтү\' дәрәҗәсенә җитте</string>
-    <string name="rainrate_alert_severe">Каты яңгыр турында хәбәрләр?</string>
+	<string name="rainrate_alert_severe">Каты яңгыр турында хәбәрләр?</string>
     <string name="rainrate_alert_severe_desc">Яңгыр яву вакытына карап каты чиктән артса, хәбәрләр</string>
     <string name="rainrate_alert_severe_str">Каты яңгыр турында хәбәр</string>
     <string name="rainrate_alert_str">Яңгыр</string>

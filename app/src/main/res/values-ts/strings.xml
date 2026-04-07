@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Hi</string>
     <string name="about_app">Malunghana na app</string>
-    <string name="afternoon_alert">Mahiselo ya %1$.1f°%2$s ya yile ehansi kuya eka mpimo wa wena wa %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Xitsundzuxo xa Madyambu?</string>
+	<string name="afternoon_temp_alert">Xitsundzuxo xa Madyambu?</string>
     <string name="all_time_stats">Tinhlayo hinkwato ta nkarhi</string>
     <string name="app_theme">APP Nhlokomhaka ya APP</string>
 	<string name="battery_warning">XILERISO: Ku pfumelela ndlela leyi nga laha henhla swi nga ha heta betri ya wena hi ku hatlisa ku tlula leswi tolovelekeke</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Xifaniso xa Match App</string>
     <string name="metric">Tirhisa metric?</string>
     <string name="minutes">timinete</string>
-    <string name="morning_alert">Mahiselo ya %1$.1f°%2$s ya tlakuke kuya eka mpimo wa wena wa %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Xitsundzuxo xa Mixo?</string>
+	<string name="morning_temp_alert">Xitsundzuxo xa Mixo?</string>
     <string name="next_moon">Swiendlakalo swa Next Moon?</string>
     <string name="no">E-e</string>
     <string name="no_download_or_app_not_setup">No download kumbe app a yi se vekiwa</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Mpfula yi na hi Tisentimitara?</string>
     <string name="rainfall_alert">Xitsundzuxo xa Mpfula?</string>
     <string name="rainfall_alert_desc">Yi lemukisa siku na siku loko mpfula yi fika eka mpimo lowu u wu vekeke</string>
-    <string name="rainfall_alert_imperial">Mpfula ya %1$.2f%2$s yi fambelanile na mpimo wa wena wa %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Mpfula ya %1$.1f%2$s yi fambelanile na mpimo wa wena wa %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Xitsundzuxo xa Mpfula</string>
+	<string name="rainfall_alert_str">Xitsundzuxo xa Mpfula</string>
     <string name="rainfall_limit">Mpfula ya Mpfula</string>
-    <string name="rainrate_alert_imperial_severe">Mpfula ya %1$.2fin eka %2$d %3$s yo hetelela yi fikelele xiyimo xa \'Severe\'</string>
-    <string name="rainrate_alert_imperial_warning">Mpfula ya %1$.2fin eka %2$d %3$s yo hetelela yi fikelele xiyimo xa \'Xilemukiso\'</string>
-    <string name="rainrate_alert_imperial_watch">Mpfula ya %1$.2fin eka %2$d %3$s yo hetelela yi fikelele xiyimo xa \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Mpfula ya %1$.1fmm eka %2$d %3$s yo hetelela yi fikelele xiyimo xa \'Severe\'</string>
-    <string name="rainrate_alert_metric_warning">Mpfula ya %1$.1fmm eka %2$d %3$s yo hetelela yi fikelele xiyimo xa \'Xitsundzuxo\'</string>
-    <string name="rainrate_alert_metric_watch">Mpfula ya %1$.1fmm eka %2$d %3$s yo hetelela yi fikelele xiyimo xa \'Watch\'</string>
-    <string name="rainrate_alert_severe">Switsundzuxo swa Mpfula yo Tika?</string>
+	<string name="rainrate_alert_severe">Switsundzuxo swa Mpfula yo Tika?</string>
     <string name="rainrate_alert_severe_desc">Swi lemukisa loko mpimo wa mpfula wu tlula mpimo wo tika swinene hi ku ya hi nkarhi wa mpfula</string>
     <string name="rainrate_alert_severe_str">Xitsundzuxo xa Mpfula ya le Henhla</string>
     <string name="rainrate_alert_str">Xitsundzuxo xa Mpfula</string>

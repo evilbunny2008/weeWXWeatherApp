@@ -2,8 +2,7 @@
 <resources>
     <string name="about">A prepaus</string>
     <string name="about_app">Acerca de la App</string>
-    <string name="afternoon_alert">La temperatura %1$.1f°%2$s a davalat a vòstre limit de %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alèrta de l\'après-miègjorn?</string>
+	<string name="afternoon_temp_alert">Alèrta de l\'après-miègjorn?</string>
     <string name="all_time_stats">Todas las Estadisticas del tiempo</string>
     <string name="app_theme">Tema de App</string>
 	<string name="battery_warning">Avertiment: Permetre l\'opcion susmencionada pòt drenar vòstra batariá mai rapidament que d\'acostuma</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Aplicacion de partida</string>
     <string name="metric">Utilizar la Metrica?</string>
     <string name="minutes">minutas</string>
-    <string name="morning_alert">La temperatura %1$.1f°%2$s a pujat a vòstre limit de %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alèrta del matin?</string>
+	<string name="morning_temp_alert">Alèrta del matin?</string>
     <string name="next_moon">Los eveniments de la luna que venon?</string>
     <string name="no">Non</string>
     <string name="no_download_or_app_not_setup">Pas de descarga o d\'aplicacion es pas estada configurat</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Pluèja en polças?</string>
     <string name="rainfall_alert">Alèrta de pluèja?</string>
     <string name="rainfall_alert_desc">Alèrtas cada jorn quand las pluèjas atenh vòstre limit fixat</string>
-    <string name="rainfall_alert_imperial">La pluèja %1$.2f%2$s a correspondut a vòstre limit de %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">La pluèja %1$.1f%2$s a correspondut a vòstre limit de %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alèrta de pluèjas</string>
+	<string name="rainfall_alert_str">Alèrta de pluèjas</string>
     <string name="rainfall_limit">Limit de pluèja</string>
-    <string name="rainrate_alert_imperial_severe">Lo taus de pluèja de %1$.2fin dins los darrièrs %2$d %3$s a atench lo nivèl \'Grèu\'</string>
-    <string name="rainrate_alert_imperial_warning">Lo taus de pluèja de %1$.2fin dins los darrièrs %2$d %3$s a atench lo nivèl \'Avertiment\'</string>
-    <string name="rainrate_alert_imperial_watch">Lo taus de pluèja de %1$.2fin dins los darrièrs %2$d %3$s a atench lo nivèl \'Regardar\'</string>
-    <string name="rainrate_alert_metric_severe">Lo taus de pluèja de %1$.1fmm dins los darrièrs %2$d %3$s a atench lo nivèl \'Grèu\'</string>
-    <string name="rainrate_alert_metric_warning">Lo taus de pluèja de %1$.1fmm dins los darrièrs %2$d %3$s a atench lo nivèl \'Avertiment\'</string>
-    <string name="rainrate_alert_metric_watch">Lo taus de pluèja de %1$.1fmm dins los darrièrs %2$d %3$s a atench lo nivèl \'Regardar\'</string>
-    <string name="rainrate_alert_severe">Alèrtas de pluèja fòrta?</string>
+	<string name="rainrate_alert_severe">Alèrtas de pluèja fòrta?</string>
     <string name="rainrate_alert_severe_desc">Alèrtas se lo taus de pluèja despassa lo limit sevèr en foncion de la durada de las pluèjas</string>
     <string name="rainrate_alert_severe_str">Alèrta de taus de pluèja grèva</string>
     <string name="rainrate_alert_str">Alèrta de taus de pluèja</string>

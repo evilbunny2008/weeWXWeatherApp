@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Indik</string>
     <string name="about_app">Indik Aplikasi</string>
-    <string name="afternoon_alert">Suhu %1$.1f°%2$s sampun tedun ngantos wates semetone %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$s sampun tedun ngantos wates Sametoné %2$s</string>
     <string name="afternoon_temp_alert">Painget Sore?</string>
     <string name="all_time_stats">Makasami Statistik Galah</string>
     <string name="app_theme">Tema Aplikasi</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Aplikasi Cocok</string>
     <string name="metric">Anggen Metrik?</string>
     <string name="minutes">menit</string>
-    <string name="morning_alert">Suhu %1$.1f°%2$s sampun nincap ngantos wates semetone %3$.1f°%2$s</string>
+    <string name="morning_alert">Suhu %1$s sampun menek ngantos wates Sametoné %2$s</string>
     <string name="morning_temp_alert">Painget Semeng?</string>
     <string name="next_moon">Acara bulan selanturnyane?</string>
     <string name="no">Ten</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Ujan ring Inci?</string>
     <string name="rainfall_alert">Painget Ujan?</string>
     <string name="rainfall_alert_desc">Painget nyabran rahina yéning ujan sampun ngantos wates sané sampun katetapang</string>
-    <string name="rainfall_alert_imperial">Curah hujan %1$.2f%2$s sampun cocok sareng wates semetone %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Curah hujan %1$.1f%2$s sampun cocok sareng wates semetone %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Curah hujan %1$s sampun cocok sareng wates Sameton %2$s</string>
     <string name="rainfall_alert_str">Painget Ujan</string>
     <string name="rainfall_limit">Wates Curah Ujan</string>
-    <string name="rainrate_alert_imperial_severe">Tingkat ujan %1$.2fin ring paling kidik %2$d %3$s sampun ngantos tingkat \'Parah\'</string>
-    <string name="rainrate_alert_imperial_warning">Tingkat ujan %1$.2fin ring %2$d %3$s sampun ngantos tingkat \'Peringatan\'</string>
-    <string name="rainrate_alert_imperial_watch">Tingkat ujan %1$.2fin ring paling kidik %2$d %3$s sampun neked ring tingkat \'Tonton\'</string>
-    <string name="rainrate_alert_metric_severe">Tingkat ujan %1$.1fmm ring paling kidik %2$d %3$s sampun ngantos tingkat \'Parah\'</string>
-    <string name="rainrate_alert_metric_warning">Tingkat ujan %1$.1fmm ring paling kidik %2$d %3$s sampun ngantos tingkat \'Peringatan\'</string>
-    <string name="rainrate_alert_metric_watch">Tingkat ujan %1$.1fmm ring paling kidik %2$d %3$s sampun ngantos ring tingkat \'Tonton\'</string>
     <string name="rainrate_alert_severe">Painget Tingkat Ujan Parah?</string>
     <string name="rainrate_alert_severe_desc">Painget yéning ujan nglintangin wates parah manut galah ujan</string>
+    <string name="rainrate_alert_severe_notification">Tingkat ujan %1$s ring %2$d %3$s sané lintang sampun ngantos ring undagan \'Parah\'</string>
     <string name="rainrate_alert_severe_str">Painget Ujan Parah</string>
     <string name="rainrate_alert_str">Painget Tingkat Ujan</string>
     <string name="rainrate_alert_warning">Painget Kirang Ujan?</string>
     <string name="rainrate_alert_warning_desc">Painget yéning ujan nglintangin wates peringatan manut galah ujan</string>
+    <string name="rainrate_alert_warning_notification">Tingkat ujan %1$s ring %2$d %3$s sané lintang sampun ngantos ring undagan \'Peringatan\'</string>
     <string name="rainrate_alert_warning_str">Painget Kirang Ujan</string>
     <string name="rainrate_alert_watch">Tonton Painget Tingkat Ujan?</string>
     <string name="rainrate_alert_watch_desc">Painget yéning ujan nglintangin wates jam tangan manut galah ujan</string>
+    <string name="rainrate_alert_watch_notification">Tingkat ujan %1$s ring %2$d %3$s sané lintang sampun ngantos ring undagan \'Tonton\'</string>
     <string name="rainrate_alert_watch_str">Tonton Painget Tingkat Ujan</string>
     <string name="refresh_time">Pilih Galah Seger</string>
     <string name="remove_all_data">Napiké Sameton pastika jagi ngicalang makasami data?</string>

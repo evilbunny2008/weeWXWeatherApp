@@ -2,8 +2,7 @@
 <resources>
     <string name="about">بابت</string>
     <string name="about_app">ايپ بابت</string>
-    <string name="afternoon_alert">گرمي پد %1$.1f°%2$s توهان جي %3$.1f°%2$s جي حد تائين گهٽجي ويو آهي</string>
-    <string name="afternoon_temp_alert">شام جو الرٽ؟</string>
+	<string name="afternoon_temp_alert">شام جو الرٽ؟</string>
     <string name="all_time_stats">سڀ وقت جي شماريات</string>
     <string name="app_theme">ايپ موضوع</string>
 	<string name="battery_warning">خبردار: مٿي ڏنل آپشن کي فعال ڪرڻ سان توهان جي بيٽري معمول کان وڌيڪ تيز ٿي سگهي ٿي</string>
@@ -58,8 +57,7 @@
     <string name="match_app">ملائڻ ايپ</string>
     <string name="metric">ميٽرڪ استعمال ڪريو؟</string>
     <string name="minutes">منٽ</string>
-    <string name="morning_alert">گرمي پد %1$.1f°%2$s توهان جي حد تائين وڌي ويو آهي %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">صبح جو الرٽ؟</string>
+	<string name="morning_temp_alert">صبح جو الرٽ؟</string>
     <string name="next_moon">ايندڙ چنڊ واقعا؟</string>
     <string name="no">نه</string>
     <string name="no_download_or_app_not_setup">ڪابه ڊائون لوڊ يا ايپ سيٽ اپ نه ڪئي وئي آهي</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">انچن ۾ برسات؟</string>
     <string name="rainfall_alert">برسات جي خبرداري؟</string>
     <string name="rainfall_alert_desc">روزانه الرٽ جڏهن برسات توهان جي مقرر ڪيل حد تائين پهچي ٿي</string>
-    <string name="rainfall_alert_imperial">برسات %1$.2f%2$s توهان جي %3$.2f%2$s جي حد سان ملي وئي آهي</string>
-    <string name="rainfall_alert_metric">برسات %1$.1f%2$s توهان جي %3$.1f%2$s جي حد سان ملي وئي آهي</string>
-    <string name="rainfall_alert_str">برسات جي خبرداري</string>
+	<string name="rainfall_alert_str">برسات جي خبرداري</string>
     <string name="rainfall_limit">برسات جي حد</string>
-    <string name="rainrate_alert_imperial_severe">گذريل %2$d %3$s ۾ %1$.2fin جي برسات \'سخت\' سطح تي اچي وئي آهي</string>
-    <string name="rainrate_alert_imperial_warning">آخري %2$d %3$s ۾ %1$.2fin جي برسات \'خبردار\' جي سطح تي اچي وئي آهي</string>
-    <string name="rainrate_alert_imperial_watch">آخري %2$d %3$s ۾ %1$.2fin جي برسات \'واچ\' جي سطح تي اچي وئي آهي</string>
-    <string name="rainrate_alert_metric_severe">گذريل %2$d %3$s ۾ %1$.1fmm جي برسات \'سخت\' سطح تي اچي وئي آهي</string>
-    <string name="rainrate_alert_metric_warning">گذريل %2$d %3$s ۾ %1$.1fmm جي برسات \'خبردار\' جي سطح تي پهچي وئي آهي</string>
-    <string name="rainrate_alert_metric_watch">گذريل %2$d %3$s ۾ %1$.1fmm جي برسات \'واچ\' جي سطح تي اچي وئي آهي</string>
-    <string name="rainrate_alert_severe">شديد برسات جي خبرداري؟</string>
+	<string name="rainrate_alert_severe">شديد برسات جي خبرداري؟</string>
     <string name="rainrate_alert_severe_desc">خبردارين جي صورت ۾ برسات جي شدت جي لحاظ کان سخت حد کان وڌي وڃي</string>
     <string name="rainrate_alert_severe_str">سخت برسات جي خبرداري</string>
     <string name="rainrate_alert_str">برسات جي خبرداري</string>

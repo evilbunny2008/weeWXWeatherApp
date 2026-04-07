@@ -2,7 +2,7 @@
 <resources>
     <string name="about">སྐོར་ལས</string>
     <string name="about_app">App གི་སྐོར།</string>
-    <string name="afternoon_alert">དྲོད་ཚད་ %1$.1f°%2$s ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.1f°%2$s ལུ་བབས་ཡོད།</string>
+    <string name="afternoon_alert">དྲོད་ཚད་ %1$s ཁྱོད་ཀྱི་ཚད་གཞི་ %2$s ལུ་བབས་ཡོད།</string>
     <string name="afternoon_temp_alert">ཉིན་མའི་ཉེན་བརྡ་?</string>
     <string name="all_time_stats">དུས་ཚོད་ཀྱི་རྩིས་དཔྱད་ཆ་མཉམ།</string>
     <string name="app_theme">App བརྗོད་གཞི།</string>
@@ -62,7 +62,7 @@
     <string name="match_app">མཐུན་འགྲན་ App</string>
     <string name="metric">མེ་ཊིག་ལག་ལེན་འཐབ་ག?</string>
     <string name="minutes">གྲོས་ཆོད་</string>
-    <string name="morning_alert">དྲོད་ཚད་ %1$.1f°%2$s ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.1f°%2$s ལ་འཕར་ཡོད།</string>
+    <string name="morning_alert">དྲོད་ཚད་ %1$s ཁྱོད་ཀྱི་ཚད་གཞི་ %2$s ལུ་འཕར་ཡོད།</string>
     <string name="morning_temp_alert">དྲོ་པ་ཉེན་བརྡ་?</string>
     <string name="next_moon">ཤུལ་མམ་གྱི་ཟླ་བའི་བྱུང་རིམ་ཚུ་?</string>
     <string name="no">མིང༌དགོ༌</string>
@@ -84,25 +84,21 @@
     <string name="rain_in_inches">ཆརཔ་ཨིན་ཅི་ནང་?</string>
     <string name="rainfall_alert">ཆརཔ་ཉེན་བརྡ་?</string>
     <string name="rainfall_alert_desc">ཆརཔ་རྐྱབ་ཚད་འདི་ ཁྱོད་རའི་ཚད་གཞི་ལུ་ལྷོདཔ་ད་ ཉིན་བསྟར་གྱི་ཉེན་བརྡ་འབདཝ་ཨིན།</string>
-    <string name="rainfall_alert_imperial">ཆར་འབབ་ཚད་ %1$.2f%2$s དེ་ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.2f%2$s དང་མཐུན་ཡོད།</string>
-    <string name="rainfall_alert_metric">ཆར་འབབ་ཚད་ %1$.1f%2$s དེ་ཁྱོད་ཀྱི་ཚད་གཞི་ %3$.1f%2$s དང་མཐུན་ཡོད།</string>
+    <string name="rainfall_alert_notification">ཆར་འབབ་ཚད་ %1$s དེ་ཁྱོད་ཀྱི་ཚད་གཞི་ %2$s དང་མཐུན་ཡོད།</string>
     <string name="rainfall_alert_str">ཆར་ཆུའི་ཉེན་བརྡ།</string>
     <string name="rainfall_limit">ཆར་ཆུའི་ཚད་གཞི།</string>
-    <string name="rainrate_alert_imperial_severe">འདས་པའི་%2$d %3$s ནང་ %1$.2fin གི་ཆར་ཚད་ \'ཚབས་ཆེན\' གནས་ཚད་ལུ་ལྷོད་ཡོདཔ།</string>
-    <string name="rainrate_alert_imperial_warning">འདས་པའི་%2$d %3$s ནང་ %1$.2fin གི་ཆར་ཚད་འདི་ \'ཉེན་བརྡ\' གནས་རིམ་ལུ་ལྷོད་ཡོདཔ།</string>
-    <string name="rainrate_alert_imperial_watch">འདས་པའི་%2$d %3$s ནང་ %1$.2fin གི་ཆར་ཚད་ \'Watch\' གནས་རིམ་ལུ་ལྷོད་ཡོདཔ།</string>
-    <string name="rainrate_alert_metric_severe">མཐའ་མའི་ %2$d %3$s ནང་ %1$.1fmm གི་ཆར་ཚད་ \'ཚབས་ཆེན\' གནས་ཚད་ལུ་ལྷོད་ཡོདཔ།</string>
-    <string name="rainrate_alert_metric_warning">མཐའ་མའི་ %2$d %3$s ནང་ %1$.1fmm གི་ཆར་ཚད་འདི་ \'ཉེན་བརྡ\' གནས་རིམ་ལུ་ལྷོད་ཡོདཔ།</string>
-    <string name="rainrate_alert_metric_watch">འདས་པའི་%2$d %3$s ནང་ %1$.1fmm གི་ཆར་ཚད་ \'Watch\' གནས་རིམ་ལུ་ལྷོད་ཡོདཔ།</string>
     <string name="rainrate_alert_severe">ཆརཔ་ཤུགས་ཆེ་བའི་ཉེན་བརྡ་?</string>
     <string name="rainrate_alert_severe_desc">ཆརཔ་རྐྱབ་པའི་དུས་ཡུན་ལུ་གཞི་བཞག་སྟེ་ ཆརཔ་གི་ཚད་ཚབས་ཆེན་གྱི་ཚད་གཞི་ལས་བརྒལ་བ་ཅིན་ ཉེན་བརྡ།</string>
+    <string name="rainrate_alert_severe_notification">འདས་པའི་%2$d ནང་ %1$s གི་ཆར་ཚད་ %3$s གིས་ \'ཚབས་ཆེན\' གནས་ཚད་ལུ་ལྷོད་ཡོདཔ།</string>
     <string name="rainrate_alert_severe_str">ཆརཔ་ཤུགས་ཆེ་བའི་ཉེན་བརྡ།</string>
     <string name="rainrate_alert_str">ཆར་ཆུའི་ཉེན་བརྡ།</string>
     <string name="rainrate_alert_warning">ཉེན་བརྡའི་ཆརཔ་གི་དྲན་སྐུལ་ཚུ་?</string>
     <string name="rainrate_alert_warning_desc">ཆརཔ་རྐྱབ་པའི་དུས་ཡུན་ལུ་གཞི་བཞག་སྟེ་ ཆརཔ་གི་ཚད་དེ་ ཉེན་བརྡའི་ཚད་གཞི་ལས་བརྒལ་བ་ཅིན་ ཉེན་བརྡ།</string>
+    <string name="rainrate_alert_warning_notification">མཐའ་མའི་ %2$d ནང་ %1$s གི་ཆར་ཚད་ %3$s གིས་ \'ཉེན་བརྡ\' གནས་རིམ་ལུ་ལྷོད་ཡོདཔ།</string>
     <string name="rainrate_alert_warning_str">ཉེན་བརྡ་ཆར་ཆུའི་ཚད་ཉེན་བརྡ།</string>
     <string name="rainrate_alert_watch">Watch ཆརཔ་གི་ཉེན་བརྡ་ཚུ་?</string>
     <string name="rainrate_alert_watch_desc">ཆརཔ་རྐྱབ་པའི་དུས་ཡུན་ལུ་གཞི་བཞག་སྟེ་ ཆརཔ་གི་ཚད་གཞི་འདི་ ཆུ་ཚོད་ཚད་གཞི་ལས་བརྒལ་བ་ཅིན་ ཉེན་བརྡ་འབདཝ་ཨིན།</string>
+    <string name="rainrate_alert_watch_notification">འདས་པའི་ %2$d ནང་ %1$s གི་ཆར་ཚད་ %3$s གིས་ \'Watch\' གནས་རིམ་ལུ་ལྷོད་ཡོདཔ།</string>
     <string name="rainrate_alert_watch_str">Watch ཆར་ཆུའི་ཉེན་བརྡ།</string>
     <string name="refresh_time">གསར་བསྐྲུན་དུས་ཚོད་ གདམ་ཁ་རྐྱབས།</string>
     <string name="remove_all_data">ཁྱོད་ཀྱིས་ གནད་སྡུད་ཆ་མཉམ་རྩ་བསྐྲད་གཏང་ནི་ ངེས་ཏིག་ཨིན་ན?</string>

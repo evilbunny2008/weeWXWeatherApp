@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Жөнүндө</string>
     <string name="about_app">Колдонмо жөнүндө</string>
-    <string name="afternoon_alert">%1$.1f°%2$s температурасы сиздин %3$.1f°%2$s чегиңизге түштү</string>
-    <string name="afternoon_temp_alert">Түштөн кийин эскертүү?</string>
+	<string name="afternoon_temp_alert">Түштөн кийин эскертүү?</string>
     <string name="all_time_stats">Бардык убакыт статистикасы</string>
     <string name="app_theme">Колдонмо темасы</string>
     <string name="avg">орт</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Матч колдонмосу</string>
     <string name="metric">Метрикалык колдоносузбу?</string>
     <string name="minutes">мүнөт</string>
-    <string name="morning_alert">%1$.1f°%2$s температурасы сиздин %3$.1f°%2$s чегиңизге көтөрүлдү</string>
-    <string name="morning_temp_alert">Таңкы эскертүү?</string>
+	<string name="morning_temp_alert">Таңкы эскертүү?</string>
     <string name="next_moon">Кийинки ай?</string>
     <string name="no">Жок</string>
     <string name="no_download_or_app_not_setup">Эч бир жүктөп алуу же колдонмо жөндөлгөн жок</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Дюйм менен жаанбы?</string>
     <string name="rainfall_alert">Жаан жөнүндө эскертүүбү?</string>
     <string name="rainfall_alert_desc">Жаан-чачын белгиленген чекке жеткенде күн сайын эскертмелер</string>
-    <string name="rainfall_alert_imperial">Жаан-чачын %1$.2f%2$s сиздин %3$.2f%2$s чегиңизге дал келди</string>
-    <string name="rainfall_alert_metric">Жаан-чачын %1$.1f%2$s сиздин %3$.1f%2$s чегиңизге дал келди</string>
-    <string name="rainfall_alert_str">Жаан жөнүндө эскертүү</string>
+	<string name="rainfall_alert_str">Жаан жөнүндө эскертүү</string>
     <string name="rainfall_limit">Жаан-чачындын чеги</string>
-    <string name="rainrate_alert_imperial_severe">Акыркы %2$d %3$s ичинде %1$.2fin жамгырдын ылдамдыгы \'Катуу\' деңгээлге жетти</string>
-    <string name="rainrate_alert_imperial_warning">Акыркы %2$d %3$s ичинде %1$.2fin жамгырдын ылдамдыгы \'Эскертүү\' деңгээлине жетти</string>
-    <string name="rainrate_alert_imperial_watch">Акыркы %2$d %3$s ичинде %1$.2fin жамгырдын ылдамдыгы \'Көрүү\' деңгээлине жетти</string>
-    <string name="rainrate_alert_metric_severe">Акыркы %2$d %3$s ичинде %1$.1fmm жамгырдын ылдамдыгы \'Катуу\' деңгээлге жетти</string>
-    <string name="rainrate_alert_metric_warning">Акыркы %2$d %3$s ичинде %1$.1fmm жамгырдын ылдамдыгы \'Эскертүү\' деңгээлине жетти</string>
-    <string name="rainrate_alert_metric_watch">Акыркы %2$d %3$s ичинде %1$.1fmm жамгырдын ылдамдыгы \'Көрүү\' деңгээлине жетти</string>
-    <string name="rainrate_alert_severe">Катуу жаан тууралуу эскертүүлөрбү?</string>
+	<string name="rainrate_alert_severe">Катуу жаан тууралуу эскертүүлөрбү?</string>
     <string name="rainrate_alert_severe_desc">Жаан-чачындын узактыгына жараша катуу чектен ашып кетсе, эскертет</string>
     <string name="rainrate_alert_severe_str">Катуу жаан тууралуу эскертүү</string>
     <string name="rainrate_alert_str">Жамгырдын ылдамдыгы жөнүндө эскертүү</string>

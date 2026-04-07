@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Mabapi le</string>
     <string name="about_app">Mabapi le app e</string>
-    <string name="afternoon_alert">Thempheretšha %1$.1f°%2$s e theogile go fihla moeding wa gago wa %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Tlhokomedišo ya Thapama?</string>
+	<string name="afternoon_temp_alert">Tlhokomedišo ya Thapama?</string>
     <string name="all_time_stats">Dipalopalo ka moka tša nako</string>
     <string name="app_theme">Sehlogo sa App</string>
 	<string name="battery_warning">TLHOKOMELISO: Go kgontsha kgetho ya ka godimo go ka ntsha betri ya gago ka lebelo go feta ka tlwaelo</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Diriša metric?</string>
     <string name="minutes">metsotso</string>
-    <string name="morning_alert">Thempheretšha %1$.1f°%2$s e hlatlogile go fihla moeding wa gago wa %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Tlhokomedišo ya Mesong?</string>
+	<string name="morning_temp_alert">Tlhokomedišo ya Mesong?</string>
     <string name="next_moon">Ditiragalo tše di latelago tša Ngwedi?</string>
     <string name="no">Aowa</string>
     <string name="no_download_or_app_not_setup">Ga go na go taonelouta goba tirišo ga se ya ka ya hlongwa</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Pula ka Disenthimithara?</string>
     <string name="rainfall_alert">Tlhokomedišo ya Pula?</string>
     <string name="rainfall_alert_desc">E lemoša letšatši le letšatši ge pula e fihla moeding wa gago wo o beilwego</string>
-    <string name="rainfall_alert_imperial">Pula ya %1$.2f%2$s e swana le moedi wa gago wa %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Pula ya %1$.1f%2$s e swana le moedi wa gago wa %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Tlhokomedišo ya Pula</string>
+	<string name="rainfall_alert_str">Tlhokomedišo ya Pula</string>
     <string name="rainfall_limit">Moedi wa Pula</string>
-    <string name="rainrate_alert_imperial_severe">Rainrate ya %1$.2fin ka %2$d %3$s ya mafelelo e hlabile maemo a \'E šoro\'</string>
-    <string name="rainrate_alert_imperial_warning">Rainrate ya %1$.2fin ka %2$d %3$s ya mafelelo e hlabile maemo a \'Temošo\'</string>
-    <string name="rainrate_alert_imperial_watch">Rainrate ya %1$.2fin ka %2$d %3$s ya mafelelo e hlabile maemo a \'Bogela\'</string>
-    <string name="rainrate_alert_metric_severe">Rainrate ya %1$.1fmm ka %2$d %3$s ya mafelelo e hlabile maemo a \'E šoro\'</string>
-    <string name="rainrate_alert_metric_warning">Rainrate ya %1$.1fmm ka %2$d %3$s ya mafelelo e hlabile maemo a \'Temošo\'</string>
-    <string name="rainrate_alert_metric_watch">Rainrate ya %1$.1fmm ka ho qetela %2$d %3$s otla \'Watch\' boemo</string>
-    <string name="rainrate_alert_severe">Ditemošo tša Seelo sa Pula e Kgolo?</string>
+	<string name="rainrate_alert_severe">Ditemošo tša Seelo sa Pula e Kgolo?</string>
     <string name="rainrate_alert_severe_desc">E lemoša ge e le gore tekanyo ya pula e feta tekanyo ye šoro yeo e theilwego godimo ga nako ya pula</string>
     <string name="rainrate_alert_severe_str">Tlhokomedišo ya Seelo sa Pula ye Kgolo</string>
     <string name="rainrate_alert_str">Tlhokomedišo ya Seelo sa Pula</string>

@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Lam</string>
     <string name="about_app">App chungchang</string>
-    <string name="afternoon_alert">Temperature %1$.1f°%2$s chu i limit %3$.1f°%2$s ah a tlahniam ta</string>
-    <string name="afternoon_temp_alert">Chawhnu lam Alert?</string>
+	<string name="afternoon_temp_alert">Chawhnu lam Alert?</string>
     <string name="all_time_stats">Hun zawng zawng Statistics</string>
     <string name="app_theme">App Theme 100 a ni</string>
     <string name="avg">avg</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Match app a ni a, app 100 a ni</string>
     <string name="metric">Metric hmang em?</string>
     <string name="minutes">te tak te te</string>
-    <string name="morning_alert">Temperature %1$.1f°%2$s chu i limit %3$.1f°%2$s thlengin a sang tawh</string>
-    <string name="morning_temp_alert">Zing Alert a ni em?</string>
+	<string name="morning_temp_alert">Zing Alert a ni em?</string>
     <string name="next_moon">Next Moon events?</string>
     <string name="no">Aih</string>
     <string name="no_download_or_app_not_setup">No Download emaw App emaw pawh a la awm lo</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">Ruah hi Inches in a tla em?</string>
     <string name="rainfall_alert">Ruahtui tlak dan tur Alert?</string>
     <string name="rainfall_alert_desc">Ruah surin i set limit a thlen chuan nitin alert thin</string>
-    <string name="rainfall_alert_imperial">Ruahtui tla %1$.2f%2$s chu i limit %3$.2f%2$s nen a inmil tawh</string>
-    <string name="rainfall_alert_metric">Ruahtui tla %1$.1f%2$s chu i limit %3$.1f%2$s nen a inmil tawh</string>
-    <string name="rainfall_alert_str">Ruahtui tlak dan tur hriattirna</string>
+	<string name="rainfall_alert_str">Ruahtui tlak dan tur hriattirna</string>
     <string name="rainfall_limit">Ruahtui tlak theihna tur Limit</string>
-    <string name="rainrate_alert_imperial_severe">%2$d %3$s hnuhnung bera ruahtui tlak zat %1$.2fin chuan \'Severe\' level a thleng tawh</string>
-    <string name="rainrate_alert_imperial_warning">%2$d %3$s hnuhnung berah ruahtui tla zat %1$.2fin chuan \'Warning\' level a thleng ta</string>
-    <string name="rainrate_alert_imperial_watch">%2$d %3$s hnuhnung bera ruahtui tlak zat %1$.2fin chuan \'Watch\' level a thleng ta</string>
-    <string name="rainrate_alert_metric_severe">%2$d %3$s hnuhnung berah ruahtui tla zat %1$.1fmm chuan \'Severe\' level a thleng tawh</string>
-    <string name="rainrate_alert_metric_warning">%2$d %3$s hnuhnung berah ruahtui tla zat %1$.1fmm chuan \'Warning\' level a thleng ta</string>
-    <string name="rainrate_alert_metric_watch">%2$d %3$s hnuhnung berah ruahtui tla zat %1$.1fmm chuan \'Watch\' level a thleng ta</string>
-    <string name="rainrate_alert_severe">Ruahsur nasa lutuk tur hriattirna?</string>
+	<string name="rainrate_alert_severe">Ruahsur nasa lutuk tur hriattirna?</string>
     <string name="rainrate_alert_severe_desc">Ruahtui tlak hun chhung a zirin ruahtui tlak zatin severe limit a pelh chuan a hriattir thin</string>
     <string name="rainrate_alert_severe_str">Ruahsur nasa tak a awm dawn tih hriattirna</string>
     <string name="rainrate_alert_str">Ruahtui tlak dan tur Alert</string>

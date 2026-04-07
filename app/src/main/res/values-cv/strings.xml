@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Çинчен</string>
     <string name="about_app">Приложени çинчен</string>
-    <string name="afternoon_alert">Температура %1$.1f°%2$s сирӗн чикӗ %3$.1f°%2$s таран анчӗ</string>
+    <string name="afternoon_alert">Температура %1$s сирӗн чикӗ %2$s таран анчӗ</string>
     <string name="afternoon_temp_alert">Кӑнтӑрлахи сигнал?</string>
     <string name="all_time_stats">Пур вăхăт статистики</string>
     <string name="app_theme">Приложени теми</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Матч приложенийĕ</string>
     <string name="metric">Метрикăпа усă курăр-и?</string>
     <string name="minutes">протокол</string>
-    <string name="morning_alert">Температура %1$.1f°%2$s сирӗн чикӗре %3$.1f°%2$s ҫитрӗ</string>
+    <string name="morning_alert">Температура %1$s сирӗн чикӗ %2$s таран хӑпарнӑ</string>
     <string name="morning_temp_alert">Ирхи сигнал?</string>
     <string name="next_moon">Çитес уйăх пулăмĕсем-и?</string>
     <string name="no">Çук</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Ҫумӑр дюймпа?</string>
     <string name="rainfall_alert">Ҫумӑр ҫинчен систерӳ?</string>
     <string name="rainfall_alert_desc">Ҫумӑр сирӗн палӑртнӑ виҫене ҫитсен кулленех систерет</string>
-    <string name="rainfall_alert_imperial">Ҫумӑр %1$.2f%2$s сирӗн %3$.2f%2$s чикӗпе танлашнӑ</string>
-    <string name="rainfall_alert_metric">Ҫумӑр %1$.1f%2$s сирӗн %3$.1f%2$s чикӗпе танлашнӑ</string>
+    <string name="rainfall_alert_notification">Ҫумӑр %1$s сирӗн %2$s чикӗпе танлашрӗ</string>
     <string name="rainfall_alert_str">Ҫумӑр ҫинчен систерӳ</string>
     <string name="rainfall_limit">Ҫумӑр чикки</string>
-    <string name="rainrate_alert_imperial_severe">Юлашки %2$d %3$s хушшинче %1$.2fin ҫумӑр \'Severe\' шайне ҫитнӗ</string>
-    <string name="rainrate_alert_imperial_warning">Юлашки %2$d %3$s хушшинче %1$.2fin ҫумӑр хӑвӑртлӑхӗ \'Асӑрхаттару\' шайне ҫитнӗ</string>
-    <string name="rainrate_alert_imperial_watch">Юлашки %2$d %3$s хушшинче %1$.2fin ҫумӑр хӑвӑртлӑхӗ \'Watch\' шайне ҫитнӗ</string>
-    <string name="rainrate_alert_metric_severe">Юлашки %2$d %3$s хушшинче %1$.1fmm ҫумӑр \'Severe\' шайне ҫитнӗ</string>
-    <string name="rainrate_alert_metric_warning">Юлашки %2$d %3$s хушшинче %1$.1fmm ҫумӑр хӑвӑртлӑхӗ \'Асӑрхаттару\' шайне ҫитрӗ</string>
-    <string name="rainrate_alert_metric_watch">Юлашки %2$d %3$s хушшинче %1$.1fmm ҫумӑр хӑвӑртлӑхӗ \'Watch\' шайне ҫитнӗ</string>
     <string name="rainrate_alert_severe">Хытӑ ҫумӑр ҫинчен систереҫҫӗ-и?</string>
     <string name="rainrate_alert_severe_desc">Ҫумӑр вӑхӑчӗ тӑрӑх ҫумӑр шайӗ хӑватлӑ чикӗрен ытларах пулсан систерет</string>
+    <string name="rainrate_alert_severe_notification">Юлашки %2$d %3$s хушшинче %1$s ҫумӑр хӑвӑртлӑхӗ \'Severe\' шайне ҫитнӗ</string>
     <string name="rainrate_alert_severe_str">Хытӑ ҫумӑр ҫинчен систерӳ</string>
     <string name="rainrate_alert_str">Ҫумӑр ҫинчен систерекен сигнал</string>
     <string name="rainrate_alert_warning">Ҫумӑр ҫинчен асӑрхаттарни?</string>
     <string name="rainrate_alert_warning_desc">Ҫумӑр вӑхӑчӗ тӑрӑх ҫумӑр шайӗ асӑрхаттару чиккинчен ытларах пулсан систерет</string>
+    <string name="rainrate_alert_warning_notification">Юлашки %2$d %3$s хушшинче %1$s ҫумӑр хӑвӑртлӑхӗ \'Асӑрхаттару\' шайне ҫитнӗ</string>
     <string name="rainrate_alert_warning_str">Ҫумӑр ҫинчен асӑрхаттарни</string>
     <string name="rainrate_alert_watch">Ҫумӑр ҫинчен пӗлтерекен хыпарсене пӑхӑр-и?</string>
     <string name="rainrate_alert_watch_desc">Ҫумӑр вӑхӑчӗ тӑрӑх ҫумӑр шайӗ сӑнамалли чикӗрен ытларах пулсан систерет</string>
+    <string name="rainrate_alert_watch_notification">Юлашки %2$d %3$s хушшинче %1$s ҫумӑр хӑвӑртлӑхӗ \'Watch\' шайне ҫитнӗ</string>
     <string name="rainrate_alert_watch_str">Ҫумӑр ҫинчен пӗлтернине пӑхӑр</string>
     <string name="refresh_time">Çĕнĕрен çĕнетмелли вăхăта суйласа илĕр</string>
     <string name="remove_all_data">Эсир пур даннăйсене те кăларасшăн-и?</string>

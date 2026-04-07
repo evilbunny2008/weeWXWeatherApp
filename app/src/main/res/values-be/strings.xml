@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Аб</string>
     <string name="about_app">Аб дадатку</string>
-    <string name="afternoon_alert">Тэмпература %1$.1f°%2$s апусцілася да вашай мяжы %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Тэмпература %1$s апусцілася да вашай мяжы %2$s</string>
     <string name="afternoon_temp_alert">Папярэджанне пасля абеду?</string>
     <string name="all_time_stats">Статыстыка за ўвесь час</string>
     <string name="app_theme">Тэма прыкладання</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Прыкладанне для матчаў</string>
     <string name="metric">Выкарыстоўваць метрыку?</string>
     <string name="minutes">хвілін</string>
-    <string name="morning_alert">Тэмпература %1$.1f°%2$s паднялася да вашай мяжы ў %3$.1f°%2$s</string>
+    <string name="morning_alert">Тэмпература %1$s паднялася да вашай мяжы ў %2$s</string>
     <string name="morning_temp_alert">Ранішняя трывога?</string>
     <string name="next_moon">Наступныя месячныя падзеі?</string>
     <string name="no">няма</string>
@@ -87,25 +87,21 @@
     <string name="rain_in_inches">Дождж у цалях?</string>
     <string name="rainfall_alert">Абвестка пра ападкі?</string>
     <string name="rainfall_alert_desc">Абвесткі штодня, калі колькасць ападкаў дасягае зададзенага ліміту</string>
-    <string name="rainfall_alert_imperial">Колькасць ападкаў %1$.2f%2$s дасягнула вашага ліміту ў %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Колькасць ападкаў %1$.1f%2$s дасягнула вашага ліміту ў %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Колькасць ападкаў %1$s дасягнула вашага ліміту ў %2$s</string>
     <string name="rainfall_alert_str">Абвестка пра ападкі</string>
     <string name="rainfall_limit">Ліміт ападкаў</string>
-    <string name="rainrate_alert_imperial_severe">Узровень дажджу %1$.2fin за апошнія %2$d %3$s дасягнуў узроўню \'Сур\'ёзны\'</string>
-    <string name="rainrate_alert_imperial_warning">Колькасць дажджу %1$.2fin за апошнія %2$d %3$s дасягнула ўзроўню \'Папярэджанне\'</string>
-    <string name="rainrate_alert_imperial_watch">Колькасць дажджу ў %1$.2fin за апошнія %2$d %3$s дасягнула ўзроўню \'Назіраць\'</string>
-    <string name="rainrate_alert_metric_severe">Колькасць дажджу ў %1$.1fmm за апошнія %2$d %3$s дасягнула ўзроўню \'Суровага\'</string>
-    <string name="rainrate_alert_metric_warning">Колькасць дажджу %1$.1fmm за апошнія %2$d %3$s дасягнула ўзроўню \'Папярэджанне\'</string>
-    <string name="rainrate_alert_metric_watch">Колькасць дажджу %1$.1fmm за апошнія %2$d %3$s дасягнула ўзроўню \'Назіраць\'</string>
     <string name="rainrate_alert_severe">Абвесткі аб моцным дажджы?</string>
     <string name="rainrate_alert_severe_desc">Папярэджвае, калі колькасць дажджу перавышае сур\'ёзны ліміт на аснове працягласці ападкаў</string>
+    <string name="rainrate_alert_severe_notification">Колькасць дажджу ў %1$s за апошнія %2$d %3$s дасягнула ўзроўню \'Сур\'ёзны\'</string>
     <string name="rainrate_alert_severe_str">Абвестка аб моцным дажджы</string>
     <string name="rainrate_alert_str">Абвестка аб дажджы</string>
     <string name="rainrate_alert_warning">Папярэджанне Rainrate Alerts?</string>
     <string name="rainrate_alert_warning_desc">Абвесткі, калі колькасць дажджу перавышае ліміт папярэджання на аснове працягласці ападкаў</string>
+    <string name="rainrate_alert_warning_notification">Колькасць дажджу %1$s за апошнія %2$d %3$s дасягнула ўзроўню \'Папярэджанне\'</string>
     <string name="rainrate_alert_warning_str">Папярэджанне Rainrate Alert</string>
     <string name="rainrate_alert_watch">Глядзець Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Абвесткі, калі колькасць дажджу перавышае ліміт назірання на аснове працягласці ападкаў</string>
+    <string name="rainrate_alert_watch_notification">Колькасць дажджу %1$s за апошнія %2$d %3$s дасягнула ўзроўню \'Назіраць\'</string>
     <string name="rainrate_alert_watch_str">Глядзець Rainrate Alert</string>
     <string name="refresh_time">Выберыце Час абнаўлення</string>
     <string name="remove_all_data">Вы ўпэўнены, што хочаце выдаліць усе даныя?</string>

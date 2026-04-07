@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Pali</string>
     <string name="about_app">Pa lwa App</string>
-    <string name="afternoon_alert">Ukukaba %1$.1f°%2$s kwacepa ukufika pa cipimo cenu ica %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Ukutenta %1$s kwacepa ukufika pa cipimo cenu ica %2$s</string>
     <string name="afternoon_temp_alert">Ukucenjesha kwa cungulo?</string>
     <string name="all_time_stats">Imitantikile yonse iya Nshita</string>
     <string name="app_theme">Umutwe wa App</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Ukulinganisha Appp</string>
     <string name="metric">Ubomfye Ifya Kupangapanga?</string>
     <string name="minutes">ba mineti</string>
-    <string name="morning_alert">Ukukaba %1$.1f°%2$s kwakulilako ukufika pa cipimo cenu ica %3$.1f°%2$s</string>
+    <string name="morning_alert">Ukutenta %1$s kwakulilako ukufika ku cipimo cenu ica %2$s</string>
     <string name="morning_temp_alert">Ukucenjesha kwa mu cungulo?</string>
     <string name="next_moon">Ificitika fya mweshi ifyakonkapo?</string>
     <string name="no">Awe</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Imfula mu Mainchi?</string>
     <string name="rainfall_alert">Icebusho lya Mfula?</string>
     <string name="rainfall_alert_desc">Ukucenjesha cila bushiku ilyo imfula yafika pa cipimo ico mwabika</string>
-    <string name="rainfall_alert_imperial">Imfula %1$.2f%2$s yalilingana ne cipimo cenu ica %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Imfula %1$.1f%2$s yalilingana ne cipimo cenu ica %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Imfula %1$s yalilingana ne cipimo cenu ica %2$s</string>
     <string name="rainfall_alert_str">Icebusho lya Mfula</string>
     <string name="rainfall_limit">Ukufika pa Mfula</string>
-    <string name="rainrate_alert_imperial_severe">Imfula iya %1$.2fin mu %2$d iyapitapo %3$s yafika pa cipimo ca \'Icabipisha\'</string>
-    <string name="rainrate_alert_imperial_warning">Imfula iya %1$.2fin mu %2$d %3$s iyapitapo naifika pa mulingo wa \'Ukucenjesha\'</string>
-    <string name="rainrate_alert_imperial_watch">Imfula iya %1$.2fin mu %2$d %3$s iyapitapo naifika pa mulingo wa \'Moneni\'</string>
-    <string name="rainrate_alert_metric_severe">Imfula iya %1$.1fmm mu %2$d %3$s iyapitapo naifika pa cipimo ca \'Icabipisha\'</string>
-    <string name="rainrate_alert_metric_warning">Imfula iya %1$.1fmm mu %2$d %3$s iyapitapo naifika pa mulingo wa \'Ukucenjesha\'</string>
-    <string name="rainrate_alert_metric_watch">Imfula iya %1$.1fmm mu %2$d iyapitapo %3$s yafika pa mulingo wa \'Moneni\'</string>
     <string name="rainrate_alert_severe">Ifishinbisho fya Mfula Iikalamba?</string>
     <string name="rainrate_alert_severe_desc">Icenjesho nga cakuti imfula yacila pa cipimo icakulisha ukulingana ne nshita ya mfula</string>
+    <string name="rainrate_alert_severe_notification">Imfula iya %1$s mu %2$d iyapitapo %3$s yafika pa cipimo ca \'Icabipisha\'</string>
     <string name="rainrate_alert_severe_str">Ukucenjesha kwa Mfula Iikalamba</string>
     <string name="rainrate_alert_str">Icebusho lya Mfula</string>
     <string name="rainrate_alert_warning">Ukucenjesha Ifyakucenjesha pa Mfula?</string>
     <string name="rainrate_alert_warning_desc">Ificenjesho nga cakuti imfula yacilapo pa cipimo cakucenjesha ukulingana ne nshita ya mfula</string>
+    <string name="rainrate_alert_warning_notification">Imfula iya %1$s mu %2$d iyapitapo %3$s yafika pa mulingo wa \'Ukucenjesha\'</string>
     <string name="rainrate_alert_warning_str">Ukucenjesha Icicenjesho ca Mfula</string>
     <string name="rainrate_alert_watch">Moneni Ifishinbisho fya Mfula?</string>
     <string name="rainrate_alert_watch_desc">Icenjesho nga cakuti imfula yacilapo pa cipimo cakulolesha ukulingana ne nshita ya mfula</string>
+    <string name="rainrate_alert_watch_notification">Imfula iya %1$s mu %2$d iyapitapo %3$s yafika pa mulingo wa \'Moneni\'</string>
     <string name="rainrate_alert_watch_str">Moneni Icishibisho ca Mfula</string>
     <string name="refresh_time">Saleni Inshita ya Kubwekeshapo</string>
     <string name="remove_all_data">Bushe nashininkisha ukuti mulefwaya ukufumyapo amashiwi yonse?</string>

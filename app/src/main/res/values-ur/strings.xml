@@ -2,8 +2,7 @@
 <resources>
     <string name="about">کے بارے میں</string>
     <string name="about_app">ایپ کے بارے میں</string>
-    <string name="afternoon_alert">درجہ حرارت %1$.1f°%2$s آپ کی %3$.1f°%2$s کی حد تک گر گیا ہے</string>
-    <string name="afternoon_temp_alert">دوپہر کا الرٹ؟</string>
+	<string name="afternoon_temp_alert">دوپہر کا الرٹ؟</string>
     <string name="all_time_stats">ہر وقت کے اعدادوشمار</string>
     <string name="app_theme">ایپ تھیم</string>
 	<string name="battery_warning">انتباہ: مذکورہ بالا آپشن کو چالو کرنے سے آپ کی بیٹری معمول سے زیادہ تیزی سے ختم ہوسکتی ہے</string>
@@ -58,8 +57,7 @@
     <string name="match_app">میچ ایپ</string>
     <string name="metric">میٹرک استعمال کریں؟</string>
     <string name="minutes">منٹ</string>
-    <string name="morning_alert">درجہ حرارت %1$.1f°%2$s آپ کی حد %3$.1f°%2$s تک بڑھ گیا ہے</string>
-    <string name="morning_temp_alert">صبح کا انتباہ؟</string>
+	<string name="morning_temp_alert">صبح کا انتباہ؟</string>
     <string name="next_moon">اگلے چاند کے واقعات؟</string>
     <string name="no">نہیں</string>
     <string name="no_download_or_app_not_setup">کوئی ڈاؤن لوڈ یا ایپ سیٹ اپ نہیں کی گئی ہے</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">انچوں میں بارش؟</string>
     <string name="rainfall_alert">بارش کا الرٹ؟</string>
     <string name="rainfall_alert_desc">جب بارش آپ کی مقررہ حد تک پہنچ جاتی ہے تو روزانہ الرٹس</string>
-    <string name="rainfall_alert_imperial">بارش %1$.2f%2$s آپ کی %3$.2f%2$s کی حد سے مماثل ہے</string>
-    <string name="rainfall_alert_metric">بارش %1$.1f%2$s آپ کی %3$.1f%2$s کی حد سے مماثل ہے</string>
-    <string name="rainfall_alert_str">بارش کا الرٹ</string>
+	<string name="rainfall_alert_str">بارش کا الرٹ</string>
     <string name="rainfall_limit">بارش کی حد</string>
-    <string name="rainrate_alert_imperial_severe">گزشتہ %2$d %3$s میں %1$.2fin کی بارش کی شرح \'شدید\' سطح پر پہنچ گئی ہے</string>
-    <string name="rainrate_alert_imperial_warning">گزشتہ %2$d %3$s میں %1$.2fin کی بارش کی شرح \'انتباہی\' کی سطح پر پہنچ گئی ہے</string>
-    <string name="rainrate_alert_imperial_watch">گزشتہ %2$d %3$s میں %1$.2fin کی بارش کی شرح \'دیکھنے\' کی سطح پر پہنچ گئی ہے</string>
-    <string name="rainrate_alert_metric_severe">گزشتہ %2$d %3$s میں %1$.1fmm کی بارش کی شرح \'شدید\' سطح پر پہنچ گئی ہے</string>
-    <string name="rainrate_alert_metric_warning">گزشتہ %2$d %3$s میں %1$.1fmm بارش کی شرح \'انتباہی\' کی سطح پر پہنچ گئی ہے</string>
-    <string name="rainrate_alert_metric_watch">گزشتہ %2$d %3$s میں %1$.1fmm بارش کی شرح \'دیکھنے\' کی سطح پر پہنچ گئی ہے</string>
-    <string name="rainrate_alert_severe">شدید بارش کے انتباہات؟</string>
+	<string name="rainrate_alert_severe">شدید بارش کے انتباہات؟</string>
     <string name="rainrate_alert_severe_desc">اگر بارش کی شرح بارش کے دورانیے کی بنیاد پر شدید حد سے تجاوز کر جائے تو الرٹس</string>
     <string name="rainrate_alert_severe_str">شدید بارش کا الرٹ</string>
     <string name="rainrate_alert_str">بارش کا انتباہ</string>

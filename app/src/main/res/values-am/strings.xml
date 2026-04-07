@@ -2,7 +2,7 @@
 <resources>
     <string name="about">ስለ</string>
     <string name="about_app">ስለ መተግበሪያው</string>
-    <string name="afternoon_alert">የሙቀት መጠን %1$.1f°%2$s ወደ %3$.1f°%2$s ገደብ ወርዷል</string>
+    <string name="afternoon_alert">የሙቀት መጠን %1$s ወደ እርስዎ የ%2$s ገደብ ወርዷል</string>
     <string name="afternoon_temp_alert">ከሰአት ማንቂያ?</string>
     <string name="all_time_stats">ሁሉም ጊዜ ስታቲስቲክስ</string>
     <string name="app_theme">የመተግበሪያ ገጽታ</string>
@@ -62,7 +62,7 @@
     <string name="match_app">አወዳድሮ መተግበሪያ</string>
     <string name="metric">ሜትሪክን ይጠቀሙ?</string>
     <string name="minutes">ደቂቃዎች</string>
-    <string name="morning_alert">የሙቀት መጠን %1$.1f°%2$s ገደብዎ %3$.1f°%2$s ደርሷል</string>
+    <string name="morning_alert">የሙቀት መጠን %1$s ወደ %2$s ገደብ ከፍ ብሏል።</string>
     <string name="morning_temp_alert">የጠዋት ማንቂያ?</string>
     <string name="next_moon">የሚቀጥለው ጨረቃ ክስተቶች?</string>
     <string name="no">አይ</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">በ ኢንች ውስጥ ዝናብ?</string>
     <string name="rainfall_alert">የዝናብ መጠን ማንቂያ?</string>
     <string name="rainfall_alert_desc">የዝናብ መጠን የወሰንከው ገደብ ላይ ሲደርስ በየቀኑ ማንቂያዎች</string>
-    <string name="rainfall_alert_imperial">የ %1$.2f%2$s የዝናብ መጠን ከ%3$.2f%2$s ገደብ ጋር ይዛመዳል</string>
-    <string name="rainfall_alert_metric">የ %1$.1f%2$s የዝናብ መጠን ከ%3$.1f%2$s ገደብ ጋር ይዛመዳል</string>
+    <string name="rainfall_alert_notification">የ%1$s የዝናብ መጠን ከ%2$s ገደብዎ ጋር ይዛመዳል</string>
     <string name="rainfall_alert_str">የዝናብ መጠን ማንቂያ</string>
     <string name="rainfall_limit">የዝናብ መጠን ገደብ</string>
-    <string name="rainrate_alert_imperial_severe">የ %2$d %3$s የ %1$.2fin የዝናብ መጠን \'ከባድ\' ደረጃ ላይ ደርሷል።</string>
-    <string name="rainrate_alert_imperial_warning">በ%2$d %3$s ውስጥ የ%1$.2fin የዝናብ መጠን \'ማስጠንቀቂያ\' ደረጃ ላይ ደርሷል</string>
-    <string name="rainrate_alert_imperial_watch">የ%1$.2fin የዝናብ መጠን %2$d %3$s የ\'Watch\' ደረጃ ላይ እንዳይደርስ</string>
-    <string name="rainrate_alert_metric_severe">የ%1$.1fmm የዝናብ መጠን %2$d %3$s \'ከባድ\' ደረጃ ላይ ደርሷል።</string>
-    <string name="rainrate_alert_metric_warning">የ%1$.1fmm የዝናብ መጠን %2$d %3$s \'ማስጠንቀቂያ\' ደረጃ ላይ ደርሷል።</string>
-    <string name="rainrate_alert_metric_watch">የ%1$.1fmm የዝናብ መጠን %2$d %3$s በ\'ተመልከት\' ደረጃ ላይ ደርሷል።</string>
     <string name="rainrate_alert_severe">ከባድ የዝናብ መጠን ማንቂያዎች?</string>
     <string name="rainrate_alert_severe_desc">የዝናብ መጠኑ ከከባድ ገደብ በላይ ከሆነ በዝናብ ጊዜ ቆይታ ላይ ማንቂያዎች</string>
+    <string name="rainrate_alert_severe_notification">ባለፈው %2$d %3$s የ%1$s የዝናብ መጠን \'ከባድ\' ደረጃ ላይ ደርሷል</string>
     <string name="rainrate_alert_severe_str">ከባድ የዝናብ መጠን ማንቂያ</string>
     <string name="rainrate_alert_str">የዝናብ መጠን ማንቂያ</string>
     <string name="rainrate_alert_warning">የዝናብ መጠን ማንቂያዎች ማስጠንቀቂያ?</string>
     <string name="rainrate_alert_warning_desc">የዝናብ መጠኑ የዝናብ ጊዜን መሠረት በማድረግ የማስጠንቀቂያው ገደብ ካለፈ ማንቂያዎች</string>
+    <string name="rainrate_alert_warning_notification">ባለፈው %2$d %3$s የ%1$s የዝናብ መጠን \'ማስጠንቀቂያ\' ደረጃ ላይ ደርሷል</string>
     <string name="rainrate_alert_warning_str">የዝናብ መጠን ማንቂያ</string>
     <string name="rainrate_alert_watch">የዝናብ መጠን ማንቂያዎችን ይመልከቱ?</string>
     <string name="rainrate_alert_watch_desc">የዝናብ መጠኑ ከዝናብ ቆይታው ገደብ በላይ ካለፈ ማንቂያዎች</string>
+    <string name="rainrate_alert_watch_notification">ባለፈው %2$d %3$s የነበረው የ%1$s የዝናብ መጠን በ\'ተመልከት\' ደረጃ ላይ ደርሷል።</string>
     <string name="rainrate_alert_watch_str">የዝናብ መጠን ማንቂያን ይመልከቱ</string>
     <string name="refresh_time">ጊዜን ይምረጡ</string>
     <string name="remove_all_data">እርግጠኛ ነዎት ሁሉንም ውሂብ ለማስወገድ ይፈልጋሉ?</string>

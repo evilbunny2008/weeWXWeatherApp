@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Ukxata</string>
     <string name="about_app">Uka app tuqitwa</string>
-    <string name="afternoon_alert">Temperatura %1$.1f°%2$s ukaxa %3$.1f°%2$s ukjamawa</string>
+    <string name="afternoon_alert">Temperatura %1$s ukax %2$s ukjaruw jilxattawayi</string>
     <string name="afternoon_temp_alert">¿Alerta tarde uruxa?</string>
     <string name="all_time_stats">Taqi pacha Estadísticas ukanaka</string>
     <string name="app_theme">App ukax tema ukawa</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Mä app</string>
     <string name="metric">¿Métrica apnaqañamawa?</string>
     <string name="minutes">k\'athanaka</string>
-    <string name="morning_alert">Temperatura %1$.1f°%2$s ukaxa %3$.1f°%2$s ukjamawa</string>
+    <string name="morning_alert">Temperatura %1$s ukax %2$s ukjaruw jilxattawayi</string>
     <string name="morning_temp_alert">¿Alwat Alerta?</string>
     <string name="next_moon">Jutïr Phaxsi Eventos?</string>
     <string name="no">Janiwa</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">¿Jallux Pulgadas ukanx puriniti?</string>
     <string name="rainfall_alert">Jallu pachat yatiyañataki?</string>
     <string name="rainfall_alert_desc">Sapa uruw alertas kunapachatix jallux límite ukar purinxi ukhaxa</string>
-    <string name="rainfall_alert_imperial">Jallu pacha %1$.2f%2$s ukax %3$.2f%2$s uka límite ukar uñtasitawa</string>
-    <string name="rainfall_alert_metric">Jallu pacha %1$.1f%2$s ukax %3$.1f%2$s uka límite ukar uñtasitawa</string>
+    <string name="rainfall_alert_notification">Jallu pacha %1$s ukax %2$s uka límite ukar uñtasitawa</string>
     <string name="rainfall_alert_str">Jallu pacha tuqita Alerta</string>
     <string name="rainfall_limit">Jallu pacha Límite</string>
-    <string name="rainrate_alert_imperial_severe">Jallu pachax %1$.2fin ukat lest %2$d %3$s ukax \'Severe\' nivel ukaruw puri</string>
-    <string name="rainrate_alert_imperial_warning">Jallu pachan %1$.2fin ukax %2$d %3$s ukanx \'Advertencia\' nivel ukaruw puri</string>
-    <string name="rainrate_alert_imperial_watch">Jallu pachax %1$.2fin ukat lest %2$d %3$s ukax \'Watch\' nivel ukaruw puri</string>
-    <string name="rainrate_alert_metric_severe">Jallu pachax %1$.1fmm ukat lest %2$d %3$s ukax \'Severe\' nivel ukaruw puri</string>
-    <string name="rainrate_alert_metric_warning">Jallu pachax %1$.1fmm ukat lest %2$d %3$s ukax \'Advertencia\' nivel ukaruw puri</string>
-    <string name="rainrate_alert_metric_watch">Jallu pachax %1$.1fmm ukat lest %2$d %3$s ukax \'Watch\' nivel ukaruw puri</string>
     <string name="rainrate_alert_severe">¿Alertas de ritmo severa de lluvia ukax utjiti?</string>
     <string name="rainrate_alert_severe_desc">Jallu pachax sinti jach\'a límite ukat sipanx juk\'ampïspa ukhax jallu purintañ pachaparjamaw yatiyaraki</string>
+    <string name="rainrate_alert_severe_notification">Jallu pachan %1$s qhipa %2$d %3$s ukax \'Severe\' nivel ukaruw puri</string>
     <string name="rainrate_alert_severe_str">Alerta de ritmo severa de lluvia ukax mä jach\'a uñacht\'äwiwa</string>
     <string name="rainrate_alert_str">Jallu pachan Alerta</string>
     <string name="rainrate_alert_warning">¿Alertas de ritmo de lluvia ukanakat yatiyaña?</string>
     <string name="rainrate_alert_warning_desc">Jallu pachax jallu purintañapatakix límite de advertencia ukat sipanx juk\'ampïspa ukhax alertas</string>
+    <string name="rainrate_alert_warning_notification">Jallu pachax %1$s qhipa %2$d %3$s ukanx \'Advertencia\' nivel ukaruw puri</string>
     <string name="rainrate_alert_warning_str">Alerta de ritmo de lluvia ukan yatiyawipa</string>
     <string name="rainrate_alert_watch">¿Alertas de ritmo de lluvia uñch\'ukipxtati?</string>
     <string name="rainrate_alert_watch_desc">Jallu pachax jallu purintañapatakix límite de vigilancia ukat sipanx juk\'ampïchi ukhax alertas</string>
+    <string name="rainrate_alert_watch_notification">Jallu pachax %1$s qhipa %2$d %3$s ukanx \'Uñch\'ukiñ\' nivel ukar puriwayi</string>
     <string name="rainrate_alert_watch_str">Uñxatt\'añataki Alerta de Rainrate</string>
     <string name="refresh_time">Refresco tiempo ajlliñani</string>
     <string name="remove_all_data">¿Jumaxa taqi datos ukanaka apsuña munasmati?</string>

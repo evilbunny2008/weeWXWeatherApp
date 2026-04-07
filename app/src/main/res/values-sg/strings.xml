@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Na ndo ni</string>
     <string name="about_app">Na ndo ti App ni</string>
-    <string name="afternoon_alert">Température ti %1$.1f°%2$s ti mo ayeke %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alerte ti peko ti midi?</string>
+	<string name="afternoon_temp_alert">Alerte ti peko ti midi?</string>
     <string name="all_time_stats">A-étude ti ngoi kue</string>
     <string name="app_theme">Application theme</string>
 	<string name="battery_warning">Gboto mê: Ti sala si option so ayeke na nduzu ge alingbi ti hunzi batterie ti mo hio ahon ti kozo</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Lo Metric?</string>
     <string name="minutes">angbonga</string>
-    <string name="morning_alert">Température ti %1$.1f°%2$s ti gue na li ni ti si na %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alerte ti ndapre?</string>
+	<string name="morning_temp_alert">Alerte ti ndapre?</string>
     <string name="next_moon">Na peko ti aye so ayeke si na yâ ti nze?</string>
     <string name="no">En-en</string>
     <string name="no_download_or_app_not_setup">A yeke pëpe téléchargement wala application la a leke ni pëpe</string>
@@ -80,17 +78,9 @@
     <string name="rain_in_inches">Ngu-nzapa na Pouce?</string>
     <string name="rainfall_alert">Alerte ti ngu-nzapa?</string>
     <string name="rainfall_alert_desc">A yeke gboto mê lâ oko oko tongana ngu-nzapa asi na wungo so mo zia</string>
-    <string name="rainfall_alert_imperial">Ngu-nzapa %1$.2f%2$s alingbi na limite ti mo ti %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Ngu-nzapa %1$.1f%2$s alingbi na limite ti mo ti %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alerte ti ngu-nzapa</string>
+	<string name="rainfall_alert_str">Alerte ti ngu-nzapa</string>
     <string name="rainfall_limit">Limite ti ngu-nzapa</string>
-    <string name="rainrate_alert_imperial_severe">Ngu-nzapa ti %1$.2fin na yâ ti angu so ahon %2$d %3$s asi na niveau ti \'Severe\'</string>
-    <string name="rainrate_alert_imperial_warning">Ngu-nzapa ti %1$.2fin na yâ ti angu so ahon %2$d %3$s asi na niveau ti \'Avertissement\'</string>
-    <string name="rainrate_alert_imperial_watch">Rainrate ti %1$.2fin na yâ ti ndangba %2$d %3$s ti \'Bâ\' nivo</string>
-    <string name="rainrate_alert_metric_severe">Ngu-nzapa ti %1$.1fmm na yâ ti ndangba %2$d %3$s asi na niveau ti \'Severe\'</string>
-    <string name="rainrate_alert_metric_warning">Ngu-nzapa ti %1$.1fmm na yâ ti ndangba %2$d %3$s asi na niveau ti \'Avertissement\'</string>
-    <string name="rainrate_alert_metric_watch">Ngu-nzapa ti %1$.1fmm na yâ ti angu so ahon %2$d %3$s asi na nivo ti \'Bâ\'</string>
-    <string name="rainrate_alert_severe">A-alerte ti ngu-nzapa?</string>
+	<string name="rainrate_alert_severe">A-alerte ti ngu-nzapa?</string>
     <string name="rainrate_alert_severe_desc">A yeke gboto mê ti azo tongana wungo ti ngu-nzapa ahon ndo ti ngangu so a fa na lege ti ngoi so ngu-nzapa apika</string>
     <string name="rainrate_alert_severe_str">Alerte ti ngangu ngu-nzapa</string>
     <string name="rainrate_alert_str">Alerte ti ngu-nzapa</string>

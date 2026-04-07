@@ -2,7 +2,7 @@
 <resources>
     <string name="about">عن</string>
     <string name="about_app">حول التطبيق</string>
-    <string name="afternoon_alert">انخفضت درجة الحرارة %1$.1f°%2$s إلى الحد المسموح به وهو %3$.1f°%2$s</string>
+    <string name="afternoon_alert">انخفضت درجة الحرارة %1$s إلى الحد المسموح به وهو %2$s</string>
     <string name="afternoon_temp_alert">تنبيه بعد الظهر؟</string>
     <string name="all_time_stats">جميع إحصائيات الوقت</string>
     <string name="app_theme">موضوع التطبيق</string>
@@ -62,7 +62,7 @@
     <string name="match_app">تطبيق المباراة</string>
     <string name="metric">استخدام متري؟</string>
     <string name="minutes">دقائق</string>
-    <string name="morning_alert">ارتفعت درجة الحرارة %1$.1f°%2$s إلى الحد المسموح به وهو %3$.1f°%2$s</string>
+    <string name="morning_alert">ارتفعت درجة الحرارة %1$s إلى الحد المسموح به وهو %2$s</string>
     <string name="morning_temp_alert">تنبيه الصباح؟</string>
     <string name="next_moon">أحداث القمر القادمة؟</string>
     <string name="no">لا</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">المطر في بوصة؟</string>
     <string name="rainfall_alert">تنبيه هطول الأمطار؟</string>
     <string name="rainfall_alert_desc">تنبيهات يومية عندما يصل هطول الأمطار إلى الحد المحدد</string>
-    <string name="rainfall_alert_imperial">لقد تطابق هطول الأمطار %1$.2f%2$s مع الحد المسموح به وهو %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">لقد تطابق هطول الأمطار %1$.1f%2$s مع الحد الذي حددته وهو %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">لقد تطابق هطول الأمطار %1$s مع الحد المسموح به وهو %2$s</string>
     <string name="rainfall_alert_str">تنبيه هطول الأمطار</string>
     <string name="rainfall_limit">حد هطول الأمطار</string>
-    <string name="rainrate_alert_imperial_severe">معدل المطر %1$.2fin في %2$d %3$s قد وصل إلى المستوى \'الخطير\'</string>
-    <string name="rainrate_alert_imperial_warning">معدل المطر %1$.2fin في %2$d %3$s وصل إلى مستوى \'تحذير\'</string>
-    <string name="rainrate_alert_imperial_watch">معدل المطر %1$.2fin في %2$d %3$s وصل إلى مستوى \'المشاهدة\'</string>
-    <string name="rainrate_alert_metric_severe">معدل المطر %1$.1fmm في %2$d %3$s وصل إلى المستوى \'الخطير\'</string>
-    <string name="rainrate_alert_metric_warning">معدل المطر %1$.1fmm في %2$d %3$s وصل إلى مستوى \'التحذير\'</string>
-    <string name="rainrate_alert_metric_watch">معدل المطر %1$.1fmm في %2$d %3$s وصل إلى مستوى \'المشاهدة\'</string>
     <string name="rainrate_alert_severe">تنبيهات شديدة لمعدل المطر؟</string>
     <string name="rainrate_alert_severe_desc">تنبيهات إذا تجاوز معدل هطول الأمطار الحد الشديد بناءً على مدة هطول الأمطار</string>
+    <string name="rainrate_alert_severe_notification">معدل هطول الأمطار %1$s في آخر %2$d %3$s وصل إلى مستوى \'شديد\'</string>
     <string name="rainrate_alert_severe_str">تنبيه شديد لمعدل المطر</string>
     <string name="rainrate_alert_str">تنبيه معدل المطر</string>
     <string name="rainrate_alert_warning">تحذير تنبيهات معدل هطول الأمطار؟</string>
     <string name="rainrate_alert_warning_desc">تنبيهات إذا تجاوز معدل المطر حد التحذير بناءً على مدة هطول الأمطار</string>
+    <string name="rainrate_alert_warning_notification">معدل هطول الأمطار %1$s في آخر %2$d %3$s وصل إلى مستوى \'التحذير\'</string>
     <string name="rainrate_alert_warning_str">تحذير تنبيه معدل المطر</string>
     <string name="rainrate_alert_watch">مشاهدة تنبيهات معدل المطر؟</string>
     <string name="rainrate_alert_watch_desc">تنبيهات إذا تجاوز معدل المطر حد المراقبة بناءً على مدة هطول الأمطار</string>
+    <string name="rainrate_alert_watch_notification">معدل المطر %1$s في آخر %2$d %3$s وصل إلى مستوى \'المشاهدة\'</string>
     <string name="rainrate_alert_watch_str">شاهد تنبيه معدل المطر</string>
     <string name="refresh_time">اختر وقت التحديث</string>
     <string name="remove_all_data">هل أنت متأكد أنك تريد إزالة كافة البيانات؟</string>

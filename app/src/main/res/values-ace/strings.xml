@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Teuntang</string>
     <string name="about_app">Soal App</string>
-    <string name="afternoon_alert">Suhu %1$.1f°%2$s ka jitron u bataih droeneuh %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$s ka jitron u bataih droeneuh %2$s</string>
     <string name="afternoon_temp_alert">Waspada Siang?</string>
     <string name="all_time_stats">Mandum Statistik Masa</string>
     <string name="app_theme">Aplikasi Aplikasi</string>
@@ -62,7 +62,7 @@
     <string name="match_app">App Match</string>
     <string name="metric">Pakèk Metrik?</string>
     <string name="minutes">minet</string>
-    <string name="morning_alert">Suhu %1$.1f°%2$s ka meutamah bak bataih droeneuh %3$.1f°%2$s</string>
+    <string name="morning_alert">Suhu %1$s ka meutamah bak bataih droeneuh %2$s</string>
     <string name="morning_temp_alert">Siaga Beungoh?</string>
     <string name="next_moon">Acara buleun selanjut jih?</string>
     <string name="no">keun</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Ujeuen lam Inci?</string>
     <string name="rainfall_alert">Waspada Curah Hujan?</string>
     <string name="rainfall_alert_desc">Peuingat tiep uroe watee curah ujeuen troh bataih nyang ka neutetapkan</string>
-    <string name="rainfall_alert_imperial">Curah ujeuen %1$.2f%2$s ka cocok ngon bataih droeneuh %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Curah ujeuen %1$.1f%2$s ka cocok ngon bataih droeneuh %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Curah ujeuen %1$s ka cocok ngon bataih droeneuh %2$s</string>
     <string name="rainfall_alert_str">Peringatan Curah Ujeuen</string>
     <string name="rainfall_limit">Batas Curah Ujeuen</string>
-    <string name="rainrate_alert_imperial_severe">Laju ujeuen %1$.2fin lam paleng kureung %2$d %3$s ka trok tingkat \'Parah\'</string>
-    <string name="rainrate_alert_imperial_warning">Laju ujeuen %1$.2fin lam %2$d %3$s ka troh bak tingkat \'Peringatan\'</string>
-    <string name="rainrate_alert_imperial_watch">Laju ujeuen %1$.2fin lam paleng kureung %2$d %3$s ka trok tingkat \'Tonton\'</string>
-    <string name="rainrate_alert_metric_severe">Laju ujeuen %1$.1fmm lam paleng kureung %2$d %3$s ka troh tingkat \'Parah\'</string>
-    <string name="rainrate_alert_metric_warning">Laju ujeuen %1$.1fmm lam paleng le %2$d %3$s ka trok tingkat \'Peringatan\'</string>
-    <string name="rainrate_alert_metric_watch">Laju ujeuen %1$.1fmm lam paleng kureung %2$d %3$s ka trok tingkat \'Tonton\'</string>
     <string name="rainrate_alert_severe">Peringatan Hujeun Parah?</string>
     <string name="rainrate_alert_severe_desc">Peuingat meunyoe laju ujeuen leubeh nibak bataih brat berdasarkan durasi ujeuen</string>
+    <string name="rainrate_alert_severe_notification">Laju ujeuen %1$s lam %2$d %3$s nyang ka u likôt ka trok u tingkat \'Parah\'</string>
     <string name="rainrate_alert_severe_str">Peringatan Ujeuen Parah</string>
     <string name="rainrate_alert_str">Peringatan laju ujeun</string>
     <string name="rainrate_alert_warning">Peringatan Laju Hujeun Peringatan?</string>
     <string name="rainrate_alert_warning_desc">Peuingat meunyoe laju ujeuen leubeh nibak bataih peringatan berdasarkan durasi ujeuen</string>
+    <string name="rainrate_alert_warning_notification">Laju ujeuen %1$s lam %2$d %3$s nyang ka u likôt ka troh bak tingkat \'Peringatan\'</string>
     <string name="rainrate_alert_warning_str">Peringatan Peringatan Laju Ujeuen</string>
     <string name="rainrate_alert_watch">Tonton Peringatan Laju Hujeun?</string>
     <string name="rainrate_alert_watch_desc">Peuingat meunyoe laju ujeuen leubeh nibak bataih jam berdasarkan durasi ujeuen</string>
+    <string name="rainrate_alert_watch_notification">Laju ujeuen %1$s lam %2$d %3$s nyang ka u likôt ka troh bak tingkat \'Watch\'</string>
     <string name="rainrate_alert_watch_str">Neu kalon Peringatan Laju Ujeuen</string>
     <string name="refresh_time">Pileh Wate Refresh</string>
     <string name="remove_all_data">Peu keuh droeneuh yakin droeneuh neuk peugadeh mandum data?</string>

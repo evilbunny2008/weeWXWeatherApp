@@ -2,8 +2,7 @@
 <resources>
     <string name="about">וועגן</string>
     <string name="about_app">וועגן די אַפּ</string>
-    <string name="afternoon_alert">טעמפּעראַטור %1$.1f°%2$s איז געפאלן צו דיין שיעור פון %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">נאָכמיטאָג אַלערט?</string>
+	<string name="afternoon_temp_alert">נאָכמיטאָג אַלערט?</string>
     <string name="all_time_stats">אַלע צייט סטאַטיסטיק</string>
     <string name="app_theme">אַפּ טעמע</string>
     <string name="avg">אַווג</string>
@@ -62,8 +61,7 @@
     <string name="match_app">גלייַכן אַפּ</string>
     <string name="metric">ניצן מעטריק?</string>
     <string name="minutes">מינוט</string>
-    <string name="morning_alert">טעמפּעראַטור %1$.1f°%2$s איז געשטיגן צו דיין שיעור פון %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">מאָרגן אַלערט?</string>
+	<string name="morning_temp_alert">מאָרגן אַלערט?</string>
     <string name="next_moon">קומענדיקע לבנה געשעענישן?</string>
     <string name="no">ניין</string>
     <string name="no_download_or_app_not_setup">קיין אראפקאפיע אָדער אַפּ איז נישט סעטאַפּ</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">רעגן אין אינטשעס?</string>
     <string name="rainfall_alert">רעגן אַלערט?</string>
     <string name="rainfall_alert_desc">אַלערץ טעגלעך ווען די רעגן ריטשאַז דיין באַשטימט שיעור</string>
-    <string name="rainfall_alert_imperial">רעגן %1$.2f%2$s איז מאַטשט צו דיין שיעור פון %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">רעגן %1$.1f%2$s איז מאַטשט צו דיין שיעור פון %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">רעגן אַלערט</string>
+	<string name="rainfall_alert_str">רעגן אַלערט</string>
     <string name="rainfall_limit">רעגן לימיט</string>
-    <string name="rainrate_alert_imperial_severe">רעגן קורס פון %1$.2fin אין די לעצטע %2$d %3$s האט געטראָפן \'שטערן\' מדרגה</string>
-    <string name="rainrate_alert_imperial_warning">רעגן קורס פון %1$.2fin אין די לעצטע %2$d %3$s האט געטראגן \'ווארענונג\' מדרגה</string>
-    <string name="rainrate_alert_imperial_watch">רעגן ראַטע פון ​​%1$.2fin אין די לעצטע %2$d %3$s האט שלאָגן \'היט\' מדרגה</string>
-    <string name="rainrate_alert_metric_severe">רעגן קורס פון %1$.1fmm אין די לעצטע %2$d %3$s האט געטראָפן \'שטערן\' מדרגה</string>
-    <string name="rainrate_alert_metric_warning">רעגן ראַטע פון ​​%1$.1fmm אין די לעצטע %2$d %3$s האט שלאָגן \'ווארענונג\' מדרגה</string>
-    <string name="rainrate_alert_metric_watch">רעגן ראַטע פון ​​%1$.1fmm אין די לעצטע %2$d %3$s האט שלאָגן \'היט\' מדרגה</string>
-    <string name="rainrate_alert_severe">שטרענג רעגן-ראַטע אַלערץ?</string>
+	<string name="rainrate_alert_severe">שטרענג רעגן-ראַטע אַלערץ?</string>
     <string name="rainrate_alert_severe_desc">אַלערץ אויב די רעגן קורס יקסידז די שטרענג שיעור באזירט אויף רעגן געדויער</string>
     <string name="rainrate_alert_severe_str">שטרענג ראַינרייט אַלערט</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>

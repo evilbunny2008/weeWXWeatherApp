@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Ynghylch</string>
     <string name="about_app">Am yr Ap</string>
-    <string name="afternoon_alert">Mae tymheredd %1$.1f°%2$s wedi gostwng i\'ch terfyn o %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Mae tymheredd %1$s wedi gostwng i\'ch terfyn o %2$s</string>
     <string name="afternoon_temp_alert">Rhybudd Prynhawn?</string>
     <string name="all_time_stats">Ystadegau Pob Amser</string>
     <string name="app_theme">Thema Ap</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Ap Match</string>
     <string name="metric">Defnyddio Metrig?</string>
     <string name="minutes">munudau</string>
-    <string name="morning_alert">Mae tymheredd %1$.1f°%2$s wedi codi i\'ch terfyn o %3$.1f°%2$s</string>
+    <string name="morning_alert">Mae tymheredd %1$s wedi codi i\'ch terfyn o %2$s</string>
     <string name="morning_temp_alert">Rhybudd Bore?</string>
     <string name="next_moon">Digwyddiadau lleuad nesaf?</string>
     <string name="no">Nac ydw</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Glaw mewn modfeddi?</string>
     <string name="rainfall_alert">Rhybudd Glawiad?</string>
     <string name="rainfall_alert_desc">Rhybuddion dyddiol pan fydd y glawiad yn cyrraedd eich terfyn penodol</string>
-    <string name="rainfall_alert_imperial">Mae glawiad %1$.2f%2$s wedi cyfateb i\'ch terfyn o %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Mae glawiad %1$.1f%2$s wedi cyfateb i\'ch terfyn o %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Mae glawiad %1$s wedi cyfateb i\'ch terfyn o %2$s</string>
     <string name="rainfall_alert_str">Rhybudd Glawiad</string>
     <string name="rainfall_limit">Terfyn Glawiad</string>
-    <string name="rainrate_alert_imperial_severe">Cyfradd law o %1$.2fin yn y %2$d diwethaf %3$s wedi cyrraedd lefel \'Difrifol\'</string>
-    <string name="rainrate_alert_imperial_warning">Cyfradd law o %1$.2fin yn y %2$d %3$s diwethaf wedi cyrraedd lefel \'Rhybudd\'</string>
-    <string name="rainrate_alert_imperial_watch">Cyfradd law o %1$.2fin yn y %2$d diwethaf %3$s wedi cyrraedd lefel \'Gwylio\'</string>
-    <string name="rainrate_alert_metric_severe">Cyfradd law o %1$.1fmm yn y %2$d %3$s diwethaf wedi cyrraedd lefel \'Difrifol\'</string>
-    <string name="rainrate_alert_metric_warning">Cyfradd law o %1$.1fmm yn y %2$d %3$s diwethaf wedi cyrraedd lefel \'Rhybudd\'</string>
-    <string name="rainrate_alert_metric_watch">Cyfradd law o %1$.1fmm yn y %2$d %3$s diwethaf wedi cyrraedd lefel \'Watch\'</string>
     <string name="rainrate_alert_severe">Rhybuddion Difrifol Glaw?</string>
     <string name="rainrate_alert_severe_desc">Rhybuddion os yw\'r glawiad yn fwy na\'r terfyn difrifol yn seiliedig ar hyd y glawiad</string>
+    <string name="rainrate_alert_severe_notification">Cyfradd law o %1$s yn y %2$d diwethaf %3$s wedi cyrraedd lefel \'Difrifol\'</string>
     <string name="rainrate_alert_severe_str">Rhybudd Llifogydd Difrifol</string>
     <string name="rainrate_alert_str">Rhybudd Cyfraddau Glaw</string>
     <string name="rainrate_alert_warning">Rhybudd Rhybuddion Cyfraddau Glaw?</string>
     <string name="rainrate_alert_warning_desc">Rhybuddion os yw\'r glawiad yn fwy na\'r terfyn rhybudd yn seiliedig ar hyd y glawiad</string>
+    <string name="rainrate_alert_warning_notification">Cyfradd law o %1$s yn y %2$d diwethaf %3$s wedi cyrraedd lefel \'Rhybudd\'</string>
     <string name="rainrate_alert_warning_str">Rhybudd Cyfraddau Glaw</string>
     <string name="rainrate_alert_watch">Gwylio Rhybuddion Glaw?</string>
     <string name="rainrate_alert_watch_desc">Rhybuddion os yw\'r glawiad yn fwy na\'r terfyn gwylio yn seiliedig ar hyd y glawiad</string>
+    <string name="rainrate_alert_watch_notification">Cyfradd law o %1$s yn y %2$d diwethaf %3$s wedi cyrraedd lefel \'Gwylio\'</string>
     <string name="rainrate_alert_watch_str">Gwyliwch Rainrate Alert</string>
     <string name="refresh_time">Dewiswch Amser Adnewyddu</string>
     <string name="remove_all_data">Ydych chi\'n siŵr eich bod am ddileu\'r holl ddata?</string>

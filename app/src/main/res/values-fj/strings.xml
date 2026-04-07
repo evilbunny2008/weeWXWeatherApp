@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Rauta ni</string>
     <string name="about_app">Me baleta na iKu</string>
-    <string name="afternoon_alert">Na ivakarau ni katakata %1$.1f°%2$s sa lutu ki na nomu iyalayala ni %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Vakasala ni Yakavi?</string>
+	<string name="afternoon_temp_alert">Vakasala ni Yakavi?</string>
     <string name="all_time_stats">Na Gaunataki</string>
     <string name="app_theme">vakalawa e</string>
     <string name="avg">veimama</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Wilika na iVura</string>
     <string name="metric">Vinaka vakalevu na yaga?</string>
     <string name="minutes">miniti</string>
-    <string name="morning_alert">Na ivakarau ni katakata %1$.1f°%2$s sa tubu cake ki na nomu iyalayala ni %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Vakasala ni Mataka?</string>
+	<string name="morning_temp_alert">Vakasala ni Mataka?</string>
     <string name="next_moon">E yaco na vula qo?</string>
     <string name="no">Sega</string>
     <string name="no_download_or_app_not_setup">E sega ni dua na lavetaka se app e se bera ni tauyavutaki</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">Uca ena Idi?</string>
     <string name="rainfall_alert">Vakasalataki ni uca?</string>
     <string name="rainfall_alert_desc">Vakasalataki ena veisiga ni sa yacova na uca na nomu iyalayala</string>
-    <string name="rainfall_alert_imperial">Na uca %1$.2f%2$s sa veiganiti kei na nomu iyalayala ni %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Na uca %1$.1f%2$s sa veiganiti kei na nomu iyalayala ni %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">iVakasala ni Uca</string>
+	<string name="rainfall_alert_str">iVakasala ni Uca</string>
     <string name="rainfall_limit">iYalayala ni Uca</string>
-    <string name="rainrate_alert_imperial_severe">Na uca ni %1$.2fin ena iotioti ni %2$d %3$s sa yacova na ivakatagedegede ni \'Kaukaua\'</string>
-    <string name="rainrate_alert_imperial_warning">Na uca ni %1$.2fin ena iotioti ni %2$d %3$s sa yacova na ivakatagedegede ni \'ivakasala\'</string>
-    <string name="rainrate_alert_imperial_watch">Na uca ni %1$.2fin ena iotioti ni %2$d %3$s sa yacova na ivakatagedegede ni \'Raica\'</string>
-    <string name="rainrate_alert_metric_severe">Na uca ni %1$.1fmm ena iotioti ni %2$d %3$s sa yacova na ivakatagedegede ni \'Kaukaua\'</string>
-    <string name="rainrate_alert_metric_warning">Na uca ni %1$.1fmm ena iotioti ni %2$d %3$s sa yacova na ivakatagedegede ni \'Vakasala\'</string>
-    <string name="rainrate_alert_metric_watch">Na uca ni %1$.1fmm ena iotioti ni %2$d %3$s sa yacova na ivakatagedegede ni \'Raica\'</string>
-    <string name="rainrate_alert_severe">Na veivakaroti ni uca kaukauwa?</string>
+	<string name="rainrate_alert_severe">Na veivakaroti ni uca kaukauwa?</string>
     <string name="rainrate_alert_severe_desc">Vakasalataki kevaka e sivia na iyalayala bibi ni uca e yavutaki ena balavu ni uca</string>
     <string name="rainrate_alert_severe_str">iVakasala ni Uca Bibi</string>
     <string name="rainrate_alert_str">iVakasala ni Uca</string>

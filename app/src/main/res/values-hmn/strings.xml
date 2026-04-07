@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Txog</string>
     <string name="about_app">Hais txog lub</string>
-    <string name="afternoon_alert">Kub %1$.1f°%2$s tau poob rau koj qhov txwv ntawm %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Hmo ntuj ceeb toom?</string>
+	<string name="afternoon_temp_alert">Hmo ntuj ceeb toom?</string>
     <string name="all_time_stats">Txhua Lub Sijhawm Txheeb Xyuas</string>
     <string name="app_theme">App ntsiab</string>
     <string name="avg">avg</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Match app</string>
     <string name="metric">Siv metric?</string>
     <string name="minutes">feeb</string>
-    <string name="morning_alert">Kub %1$.1f°%2$s tau nce rau koj qhov txwv ntawm %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Sawv ntxov ceeb toom?</string>
+	<string name="morning_temp_alert">Sawv ntxov ceeb toom?</string>
     <string name="next_moon">Lub hli tom ntej no?</string>
     <string name="no">Tsis muaj</string>
     <string name="no_download_or_app_not_setup">Tsis muaj download lossis app tsis tau teeb tsa</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">Los nag hauv Inches?</string>
     <string name="rainfall_alert">Rainfall Alert?</string>
     <string name="rainfall_alert_desc">Kev ceeb toom txhua hnub thaum dej nag nce mus txog koj qhov kev txwv</string>
-    <string name="rainfall_alert_imperial">Los nag %1$.2f%2$s tau phim rau koj qhov txwv ntawm %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Los nag %1$.1f%2$s tau phim rau koj qhov txwv ntawm %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Rainfall Alert</string>
+	<string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainfall_limit">Kev txwv dej nag</string>
-    <string name="rainrate_alert_imperial_severe">Rainrate of %1$.2fin in the last %2$d %3$s has hit the \'Severe\' level</string>
-    <string name="rainrate_alert_imperial_warning">Rainrate ntawm %1$.2fin nyob rau hauv lub xeem %2$d %3$s tau ntaus \'Ceeb toom\' theem</string>
-    <string name="rainrate_alert_imperial_watch">Rainrate ntawm %1$.2fin nyob rau hauv lub xeem %2$d %3$s tau ntaus \'Saib\' theem</string>
-    <string name="rainrate_alert_metric_severe">Rainrate ntawm %1$.1fmm nyob rau hauv lub xeem %2$d %3$s tau ntaus \'Severe\' theem</string>
-    <string name="rainrate_alert_metric_warning">Rainrate ntawm %1$.1fmm nyob rau hauv lub xeem %2$d %3$s tau ntaus \'Ceeb toom\' theem</string>
-    <string name="rainrate_alert_metric_watch">Rainrate ntawm %1$.1fmm nyob rau hauv lub xeem %2$d %3$s tau ntaus \'Saib\' theem</string>
-    <string name="rainrate_alert_severe">Kev ceeb toom los nag loj heev?</string>
+	<string name="rainrate_alert_severe">Kev ceeb toom los nag loj heev?</string>
     <string name="rainrate_alert_severe_desc">Kev ceeb toom yog tias cov nag ntau tshaj qhov txwv hnyav raws li lub sijhawm los nag</string>
     <string name="rainrate_alert_severe_str">Kev ceeb toom hnyav los nag</string>
     <string name="rainrate_alert_str">Rainrate ceeb toom</string>

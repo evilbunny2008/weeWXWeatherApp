@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Lu jëm ci</string>
     <string name="about_app">Lu jëm ci App bi</string>
-    <string name="afternoon_alert">Tàngoor wi %1$.1f°%2$s wàccina ba %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alert ci boori tisbaar?</string>
+	<string name="afternoon_temp_alert">Alert ci boori tisbaar?</string>
     <string name="all_time_stats">Limu jamono yépp</string>
     <string name="app_theme">Temu aplikaasioŋ</string>
 	<string name="battery_warning">Àrtu: Soo amalee tànneef bi ci kaw, sa batëri mën na gaaw jeex</string>
@@ -58,8 +57,7 @@
     <string name="match_app">App Match</string>
     <string name="metric">Jëfandikool Metrik?</string>
     <string name="minutes">ay simili</string>
-    <string name="morning_alert">Tàngoor wi %1$.1f°%2$s yéeg na ba %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alert bu suba?</string>
+	<string name="morning_temp_alert">Alert bu suba?</string>
     <string name="next_moon">Xew-xewu weer wi ci topp?</string>
     <string name="no">Déedéet</string>
     <string name="no_download_or_app_not_setup">Amul benn yebbi wala aplikaasioŋ buñ tabb</string>
@@ -80,17 +78,9 @@
     <string name="rain_in_inches">Taw ci pouce?</string>
     <string name="rainfall_alert">Àrtu ci taw?</string>
     <string name="rainfall_alert_desc">Daf lay yëgal bis bu nekk sudee taw bi yegg na ci linga tëral</string>
-    <string name="rainfall_alert_imperial">Taw %1$.2f%2$s méngoo na ak sa yam ci %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Taw %1$.1f%2$s méngoo na ak sa yam ci %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Àrtu ci taw</string>
+	<string name="rainfall_alert_str">Àrtu ci taw</string>
     <string name="rainfall_limit">Limitu taw</string>
-    <string name="rainrate_alert_imperial_severe">Taw bu %1$.2fin ci %2$d %3$s yi mujj yegg na ci \'Taw bu tar\'</string>
-    <string name="rainrate_alert_imperial_warning">Taw bu tollu ci %1$.2fin ci %2$d %3$s yu mujj yegg na ci \'Àrtu\'</string>
-    <string name="rainrate_alert_imperial_watch">Taw bu tollu ci %1$.2fin ci %2$d %3$s yu mujj yegg na ci niveau \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Taw bu tollu ci %1$.1fmm ci %2$d %3$s yu mujj yegg na ci \'Taw bu tar\'</string>
-    <string name="rainrate_alert_metric_warning">Taw bu tollu ci %1$.1fmm ci %2$d %3$s yu mujj yegg na ci \'Àrtu\'</string>
-    <string name="rainrate_alert_metric_watch">Taw bu tollu ci %1$.1fmm ci %2$d %3$s yu mujj yegg na ci niveau \'Seetaan\'</string>
-    <string name="rainrate_alert_severe">Àrtu ci taw yu metti?</string>
+	<string name="rainrate_alert_severe">Àrtu ci taw yu metti?</string>
     <string name="rainrate_alert_severe_desc">Àrtu sudee taw bi dafa weesu àppu tar bi lalu ci diiru taw bi</string>
     <string name="rainrate_alert_severe_str">Àrtu Taw bu metti</string>
     <string name="rainrate_alert_str">Àrtu ci taw</string>

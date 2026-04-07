@@ -1143,14 +1143,17 @@ public class weeWXApp extends Application
 
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
 
-		String unit = metric ? "C" : "F";
+		String temp = String.format(Locale.getDefault(), "%.1f", temperature);
+		String templimit = String.format(Locale.getDefault(), "%.1f", limit);
+
+		String unit = metric ? "°C" : "°F";
 
 		int iconID = R.drawable.hot;
-		String str = String.format(getAndroidString(R.string.morning_alert), temperature, unit, limit);
+		String str = String.format(getAndroidString(R.string.morning_alert), temp + unit, templimit + unit);
 		if(isAfternoon)
 		{
 			iconID = R.drawable.cold;
-			str = String.format(getAndroidString(R.string.afternoon_alert), temperature, unit, limit);
+			str = String.format(getAndroidString(R.string.afternoon_alert), temp + unit, templimit + unit);
 		}
 
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "temperature_alerts")
@@ -1175,10 +1178,17 @@ public class weeWXApp extends Application
 		boolean metric = (boolean)KeyValue.readVar("metric", weeWXApp.metric_default);
 		boolean rainInInches = (boolean)KeyValue.readVar("rainInInches", weeWXApp.rain_in_inches_default);
 
-		String str = metric && !rainInInches ?
-		             String.format(getAndroidString(R.string.rainfall_alert_metric), rainfall, "mm", rainfalllimit) :
-		             String.format(getAndroidString(R.string.rainfall_alert_imperial), rainfall, "in", rainfalllimit);
+		String tmpStr = getAndroidString(R.string.rainfall_alert_notification);
 
+		String rf = String.format(Locale.getDefault(), "%.1f", rainfall) + "mm";
+		String rfl = String.format(Locale.getDefault(), "%.1f", rainfalllimit) + "mm";
+		if(!metric || !rainInInches)
+		{
+			rf = String.format(Locale.getDefault(), "%.2f", rainfall) + "in";
+			rfl = String.format(Locale.getDefault(), "%.2f", rainfalllimit) + "in";
+		}
+
+		String str = String.format(Locale.getDefault(), tmpStr, rf, rfl);
 	    NotificationCompat.Builder builder = new NotificationCompat.Builder(instance, "rainfall_alert")
 			    .setAutoCancel(true)
 	            .setContentText(str)
@@ -1191,28 +1201,18 @@ public class weeWXApp extends Application
 		instance.notificationManager.notify(1002, builder.build());
 	}
 
-	static void sendRainrateAlert(float rainfall, int level, int timelen, String timelen_unit, boolean metric)
+	static void sendRainrateAlert(String rainfall, int level, int timelen, String timelen_unit)
 	{
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O &&
 		   ActivityCompat.checkSelfPermission(instance, Manifest.permission.POST_NOTIFICATIONS)
 			   != PackageManager.PERMISSION_GRANTED && !KeyValue.hasNotificationPerm)
 			return;
 
-		int strid = R.string.rainrate_alert_metric_watch;
-		if(metric && level == 1)
-			strid = R.string.rainrate_alert_metric_warning;
-
-		if(metric && level == 2)
-			strid = R.string.rainrate_alert_metric_severe;
-
-		if(!metric && level == 0)
-			strid = R.string.rainrate_alert_imperial_watch;
-
-		if(!metric && level == 1)
-			strid = R.string.rainrate_alert_imperial_warning;
-
-		if(!metric && level == 2)
-			strid = R.string.rainrate_alert_imperial_severe;
+		int strid = R.string.rainrate_alert_watch_notification;
+		if(level == 1)
+			strid = R.string.rainrate_alert_warning_notification;
+		else if(level == 2)
+			strid = R.string.rainrate_alert_severe_notification;
 
 		String str = String.format(getAndroidString(strid), rainfall, timelen, timelen_unit);
 

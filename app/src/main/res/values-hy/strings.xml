@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Մոտ</string>
     <string name="about_app">Հավելվածի մասին</string>
-    <string name="afternoon_alert">%1$.1f°%2$s ջերմաստիճանն իջել է մինչև ձեր սահմանաչափը՝ %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Կեսօրվա ահազանգ?</string>
+	<string name="afternoon_temp_alert">Կեսօրվա ահազանգ?</string>
     <string name="all_time_stats">Բոլոր ժամանակների վիճակագրություն</string>
     <string name="app_theme">Հավելվածի թեմա</string>
     <string name="avg">միջին</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Համապատասխան հավելված</string>
     <string name="metric">Օգտագործե՞լ Metric-ը:</string>
     <string name="minutes">րոպե</string>
-    <string name="morning_alert">%1$.1f°%2$s ջերմաստիճանը բարձրացել է մինչև ձեր սահմանաչափը՝ %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Առավոտյան ահազանգ?</string>
+	<string name="morning_temp_alert">Առավոտյան ահազանգ?</string>
     <string name="next_moon">Հաջորդ լուսնի իրադարձությունները</string>
     <string name="no">Ոչ</string>
     <string name="no_download_or_app_not_setup">Ոչ մի ներբեռնում կամ հավելված չի կարգավորվել</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Անձրևը դյույմներով</string>
     <string name="rainfall_alert">Անձրևի մասին ահազանգ?</string>
     <string name="rainfall_alert_desc">Ամեն օր ահազանգեր, երբ տեղումները հասնում են ձեր սահմանված սահմանաչափին</string>
-    <string name="rainfall_alert_imperial">Անձրևը %1$.2f%2$s համապատասխանում է ձեր սահմանաչափին՝ %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Անձրևը %1$.1f%2$s համապատասխանում է ձեր սահմանաչափին՝ %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Անձրևի մասին ահազանգ</string>
+	<string name="rainfall_alert_str">Անձրևի մասին ահազանգ</string>
     <string name="rainfall_limit">Անձրևի սահմանաչափ</string>
-    <string name="rainrate_alert_imperial_severe">Անձրևի արագությունը %1$.2fin է %2$d %3$s ում ամենաշատը հասել է \'Դաժան\' մակարդակին</string>
-    <string name="rainrate_alert_imperial_warning">%1$.2fin անձրևի արագությունը %2$d %3$s ում հասել է \'Զգուշացման\' մակարդակին</string>
-    <string name="rainrate_alert_imperial_watch">Անձրևի արագությունը %1$.2fin է, երբ %2$d %3$s ը չի հասել \'Դիտել\' մակարդակին</string>
-    <string name="rainrate_alert_metric_severe">Անձրևի արագությունը %1$.1fmm է %2$d %3$s ում ամենաշատը հասել է \'Դաժան\' մակարդակին</string>
-    <string name="rainrate_alert_metric_warning">Անձրևի արագությունը %1$.1fmm է, որ %2$d %3$s ը չհասնի \'Զգուշացման\' մակարդակին</string>
-    <string name="rainrate_alert_metric_watch">Անձրևի արագությունը %1$.1fmm է, երբ %2$d %3$s ը չի հասել \'Դիտել\' մակարդակին</string>
-    <string name="rainrate_alert_severe">Ծանր անձրևի մասին ահազանգեր:</string>
+	<string name="rainrate_alert_severe">Ծանր անձրևի մասին ահազանգեր:</string>
     <string name="rainrate_alert_severe_desc">Զգուշացնում է, եթե անձրևի մակարդակը գերազանցում է խիստ սահմանը՝ կախված տեղումների տևողությունից</string>
     <string name="rainrate_alert_severe_str">Դաժան անձրևի մասին ահազանգ</string>
     <string name="rainrate_alert_str">Անձրևի տեմպերի ահազանգ</string>

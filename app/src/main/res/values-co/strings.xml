@@ -2,7 +2,7 @@
 <resources>
     <string name="about">À propositu</string>
     <string name="about_app">Circa l\'App</string>
-    <string name="afternoon_alert">A temperatura %1$.1f°%2$s hè cascata à u vostru limitu di %3$.1f°%2$s</string>
+    <string name="afternoon_alert">A temperatura %1$s hè cascata à u vostru limitu di %2$s</string>
     <string name="afternoon_temp_alert">Alerta dopu meziornu?</string>
     <string name="all_time_stats">Statistiche All Time</string>
     <string name="app_theme">Tema di l\'app</string>
@@ -62,7 +62,7 @@
     <string name="match_app">App Match</string>
     <string name="metric">Aduprà Metric?</string>
     <string name="minutes">minuti</string>
-    <string name="morning_alert">A temperatura %1$.1f°%2$s hà righjuntu u vostru limitu di %3$.1f°%2$s</string>
+    <string name="morning_alert">A temperatura %1$s hà righjuntu u vostru limitu di %2$s</string>
     <string name="morning_temp_alert">Alerta matina?</string>
     <string name="next_moon">Avvenimenti di a prossima luna?</string>
     <string name="no">Innò</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Pioggia in pollici?</string>
     <string name="rainfall_alert">Alerta di precipitazione?</string>
     <string name="rainfall_alert_desc">Alerts ogni ghjornu quandu a precipitazione righjunghji u vostru limitu stabilitu</string>
-    <string name="rainfall_alert_imperial">A precipitazione %1$.2f%2$s hè ghjunta à u vostru limitu di %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">A precipitazione %1$.1f%2$s hè ghjunta à u vostru limitu di %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">A precipitazione %1$s hè ghjunta à u vostru limitu di %2$s</string>
     <string name="rainfall_alert_str">Alerta di precipitazione</string>
     <string name="rainfall_limit">Limite di precipitazione</string>
-    <string name="rainrate_alert_imperial_severe">A precipitazione di %1$.2fin in l\'ultime %2$d %3$s hà righjuntu u livellu \'Severe\'</string>
-    <string name="rainrate_alert_imperial_warning">A piovana di %1$.2fin in l\'ultime %2$d %3$s hà righjuntu u livellu \'Avvisu\'</string>
-    <string name="rainrate_alert_imperial_watch">A precipitazione di %1$.2fin in l\'ultime %2$d %3$s hà righjuntu u livellu \'Guarda\'</string>
-    <string name="rainrate_alert_metric_severe">A precipitazione di %1$.1fmm in l\'ultime %2$d %3$s hà righjuntu u livellu \'Severe\'</string>
-    <string name="rainrate_alert_metric_warning">A precipitazione di %1$.1fmm in l\'ultime %2$d %3$s hà righjuntu u livellu \'Avvisu\'</string>
-    <string name="rainrate_alert_metric_watch">A precipitazione di %1$.1fmm in l\'ultime %2$d %3$s hà righjuntu u livellu \'Guarda\'</string>
     <string name="rainrate_alert_severe">Avvisi di Rainrate Severi?</string>
     <string name="rainrate_alert_severe_desc">Alerts se a precipitazione supera u limitu severu basatu annantu à a durata di a precipitazione</string>
+    <string name="rainrate_alert_severe_notification">A precipitazione di %1$s in l\'ultime %2$d %3$s hà righjuntu u livellu \'Severe\'</string>
     <string name="rainrate_alert_severe_str">Alerta di precipitazione severa</string>
     <string name="rainrate_alert_str">Alert Rainrate</string>
     <string name="rainrate_alert_warning">Avvisu di Rainrate Alerts?</string>
     <string name="rainrate_alert_warning_desc">Alerts se a precipitazione supera u limitu di avvisu basatu annantu à a durata di a precipitazione</string>
+    <string name="rainrate_alert_warning_notification">A precipitazione di %1$s in l\'ultime %2$d %3$s hà righjuntu u livellu \'Avvisu\'</string>
     <string name="rainrate_alert_warning_str">Avvisu Alert Rainrate</string>
     <string name="rainrate_alert_watch">Fighjate l\'Alerte di Rainrate?</string>
     <string name="rainrate_alert_watch_desc">Alerts se a precipitazione supera u limitu di vigilazione basatu annantu à a durata di a pioggia</string>
+    <string name="rainrate_alert_watch_notification">A precipitazione di %1$s in l\'ultime %2$d %3$s hà righjuntu u livellu \'Guarda\'</string>
     <string name="rainrate_alert_watch_str">Fighjate l\'alerta di Rainrate</string>
     <string name="refresh_time">Sceglite Refresh Time</string>
     <string name="remove_all_data">Sò sicuru chì vulete sguassà tutte e dati?</string>

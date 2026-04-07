@@ -2,8 +2,7 @@
 <resources>
     <string name="about">കുറിച്ച്</string>
     <string name="about_app">ആപ്പിനെക്കുറിച്ച്</string>
-    <string name="afternoon_alert">%1$.1f°%2$s എന്ന താപനില നിങ്ങളുടെ പരിധിയായ %3$.1f°%2$s ലേക്ക് കുറഞ്ഞു</string>
-    <string name="afternoon_temp_alert">ഉച്ചയ്ക്ക് ശേഷമുള്ള അലേർട്ട്?</string>
+	<string name="afternoon_temp_alert">ഉച്ചയ്ക്ക് ശേഷമുള്ള അലേർട്ട്?</string>
     <string name="all_time_stats">എല്ലാ സമയ സ്ഥിതിവിവരക്കണക്കുകളും</string>
     <string name="app_theme">ആപ്പ് തീം</string>
     <string name="avg">ശരാശരി</string>
@@ -62,8 +61,7 @@
     <string name="match_app">മാച്ച് ആപ്പ്</string>
     <string name="metric">മെട്രിക് ഉപയോഗിക്കണോ?</string>
     <string name="minutes">മിനിറ്റ്</string>
-    <string name="morning_alert">%1$.1f°%2$s എന്ന താപനില നിങ്ങളുടെ പരിധിയായ %3$.1f°%2$s ലേക്ക് ഉയർന്നു</string>
-    <string name="morning_temp_alert">പ്രഭാത അലേർട്ട്?</string>
+	<string name="morning_temp_alert">പ്രഭാത അലേർട്ട്?</string>
     <string name="next_moon">അടുത്ത ചാന്ദ്ര സംഭവങ്ങൾ?</string>
     <string name="no">ഇല്ല</string>
     <string name="no_download_or_app_not_setup">ഡൗൺലോഡ് അല്ലെങ്കിൽ ആപ്പ് സജ്ജീകരിച്ചിട്ടില്ല</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">ഇഞ്ചിൽ മഴ?</string>
     <string name="rainfall_alert">മഴ മുന്നറിയിപ്പ്?</string>
     <string name="rainfall_alert_desc">മഴ നിങ്ങളുടെ നിശ്ചിത പരിധിയിൽ എത്തുമ്പോൾ ദിവസേനയുള്ള അലേർട്ടുകൾ</string>
-    <string name="rainfall_alert_imperial">%1$.2f%2$s മഴ നിങ്ങളുടെ %3$.2f%2$s എന്ന പരിധിയുമായി പൊരുത്തപ്പെട്ടു</string>
-    <string name="rainfall_alert_metric">%1$.1f%2$s മഴ നിങ്ങളുടെ %3$.1f%2$s എന്ന പരിധിയുമായി പൊരുത്തപ്പെട്ടു</string>
-    <string name="rainfall_alert_str">മഴ മുന്നറിയിപ്പ്</string>
+	<string name="rainfall_alert_str">മഴ മുന്നറിയിപ്പ്</string>
     <string name="rainfall_limit">മഴയുടെ പരിധി</string>
-    <string name="rainrate_alert_imperial_severe">കഴിഞ്ഞ %2$d %3$s ലെ %1$.2fin എന്ന മഴയുടെ തോത് \'കടുത്ത\' നിലയിലെത്തി</string>
-    <string name="rainrate_alert_imperial_warning">കഴിഞ്ഞ %2$d %3$s ലെ %1$.2fin എന്ന മഴയുടെ തോത് \'മുന്നറിയിപ്പ്\' നിലയിലെത്തി</string>
-    <string name="rainrate_alert_imperial_watch">കഴിഞ്ഞ %2$d %3$s ലെ %1$.2fin എന്ന മഴയുടെ നിരക്ക് \'വാച്ച്\' ലെവലിൽ എത്തി</string>
-    <string name="rainrate_alert_metric_severe">കഴിഞ്ഞ %2$d %3$s ലെ %1$.1fmm മഴയുടെ നിരക്ക് \'കടുത്ത\' നിലയിലെത്തി</string>
-    <string name="rainrate_alert_metric_warning">കഴിഞ്ഞ %2$d %3$s ലെ %1$.1fmm മഴയുടെ നിരക്ക് \'മുന്നറിയിപ്പ്\' നിലയിലെത്തി</string>
-    <string name="rainrate_alert_metric_watch">കഴിഞ്ഞ %2$d %3$s ലെ %1$.1fmm മഴയുടെ നിരക്ക് \'വാച്ച്\' ലെവലിൽ എത്തി</string>
-    <string name="rainrate_alert_severe">കനത്ത മഴയെക്കുറിച്ചുള്ള മുന്നറിയിപ്പുകൾ?</string>
+	<string name="rainrate_alert_severe">കനത്ത മഴയെക്കുറിച്ചുള്ള മുന്നറിയിപ്പുകൾ?</string>
     <string name="rainrate_alert_severe_desc">മഴയുടെ ദൈർഘ്യം അനുസരിച്ച് മഴയുടെ തോത് കടുത്ത പരിധി കവിഞ്ഞാൽ മുന്നറിയിപ്പ് നൽകുന്നു</string>
     <string name="rainrate_alert_severe_str">കനത്ത മഴയെക്കുറിച്ചുള്ള മുന്നറിയിപ്പ്</string>
     <string name="rainrate_alert_str">റെയിൻറേറ്റ് അലേർട്ട്</string>

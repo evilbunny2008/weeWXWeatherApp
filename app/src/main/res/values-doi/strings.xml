@@ -2,7 +2,7 @@
 <resources>
     <string name="about">तकरीबन</string>
     <string name="about_app">ऐप दे बारे च</string>
-    <string name="afternoon_alert">तापमान %1$.1f°%2$s तुंदी सीमा %3$.1f°%2$s तगर घट्ट होई गेआ ऐ</string>
+    <string name="afternoon_alert">तापमान %1$s तुंदी %2$s दी सीमा तगर घट्ट होई गेदा ऐ</string>
     <string name="afternoon_temp_alert">दोपहर दा अलर्ट?</string>
     <string name="all_time_stats">सारे समय आँकड़े</string>
     <string name="app_theme">ऐप थीम ऐ</string>
@@ -47,7 +47,7 @@
     <string name="ill_fix_and_try_again">मैं इस गी ठीक करां ते फिर कोशिश करां</string>
     <string name="indoor_readings">इनडोर रीडिंग दिखाओ?</string>
     <string name="inigo_needs_updating">इस ऐप गी अपडेट कीता गेदा ऐ पर जिस सर्वर कन्नै तुस कनेक्ट करा दे ओ, उस सर्वर ने Weewx आस्तै INIGO प्लगइन गी अपडेट नेईं कीता ऐ। फील्डें गी ठीक ढंगै कन्नै नेईं दिक्खेआ जाई सकदा जदूं तगर weewx अपडेट नेईं होई जंदा।</string>
-    <string name="interval_3h">३घंटे दा</string>
+    <string name="interval_3h">3घंटे दा</string>
     <string name="interval_6h">६घंटे दा</string>
     <string name="interval_12h">21 घण्टे दा</string>
     <string name="interval_daily">रोजना</string>
@@ -62,7 +62,7 @@
     <string name="match_app">मैच ऐप</string>
     <string name="metric">मीट्रिक दा इस्तेमाल करो?</string>
     <string name="minutes">मिंट्ट</string>
-    <string name="morning_alert">तापमान %1$.1f°%2$s तुंदी सीमा %3$.1f°%2$s तगर बधी गेदा ऐ</string>
+    <string name="morning_alert">तापमान %1$s तुंदी %2$s दी सीमा तगर बधी गेदा ऐ</string>
     <string name="morning_temp_alert">सुबह दा अलर्ट?</string>
     <string name="next_moon">अगला चंद्रमा दी घटनाएं?</string>
     <string name="no">नेईं</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">इंच में बरखा?</string>
     <string name="rainfall_alert">बरखा दा अलर्ट?</string>
     <string name="rainfall_alert_desc">बरखा तुंदी निर्धारित सीमा तगर पुज्जने पर रोजाना अलर्ट करदा ऐ</string>
-    <string name="rainfall_alert_imperial">बरखा %1$.2f%2$s तुंदी सीमा %3$.2f%2$s कन्नै मेल खंदा ऐ</string>
-    <string name="rainfall_alert_metric">बरखा %1$.1f%2$s तुंदी सीमा %3$.1f%2$s कन्नै मेल खंदा ऐ</string>
+    <string name="rainfall_alert_notification">बरखा %1$s तुंदी %2$s दी सीमा कन्नै मेल खंदा ऐ</string>
     <string name="rainfall_alert_str">बरखा दा अलर्ट</string>
     <string name="rainfall_limit">बरखा की सीमा</string>
-    <string name="rainrate_alert_imperial_severe">पिछले %2$d %3$s च %1$.2fin दी बरखा दर ने \'गंभीर\' स्तर पर पुज्जी गेई ऐ</string>
-    <string name="rainrate_alert_imperial_warning">पिछले %2$d %3$s च %1$.2fin दी बरखा दर ने \'चेतावनी\' स्तर पर पुज्जी गेई ऐ</string>
-    <string name="rainrate_alert_imperial_watch">पिछले %2$d %3$s च %1$.2fin दी बरखा दर ने \'देखो\' स्तर पर पुज्जी गेई ऐ</string>
-    <string name="rainrate_alert_metric_severe">पिछले %2$d %3$s च %1$.1fmm दी बरखा दर ने \'गंभीर\' स्तर पर पुज्जी गेई ऐ</string>
-    <string name="rainrate_alert_metric_warning">पिछले %2$d %3$s च %1$.1fmm दी बरखा दर ने \'चेतावनी\' स्तर पर पुज्जी गेई ऐ</string>
-    <string name="rainrate_alert_metric_watch">पिछले %2$d %3$s च %1$.1fmm दी बरखा दर ने \'देखो\' स्तर पर पुज्जी गेई ऐ</string>
     <string name="rainrate_alert_severe">गंभीर बरखा दर अलर्ट?</string>
     <string name="rainrate_alert_severe_desc">बरखा दी अवधि दे आधार उप्पर बरखा दी दर गंभीर सीमा शा मती होने पर अलर्ट करदा ऐ</string>
+    <string name="rainrate_alert_severe_notification">पिछले %2$d %3$s च %1$s दी बरखा दर ने \'गंभीर\' स्तर पर पुज्जी गेई ऐ</string>
     <string name="rainrate_alert_severe_str">गंभीर बरखा दर अलर्ट</string>
     <string name="rainrate_alert_str">रेनरेट अलर्ट</string>
     <string name="rainrate_alert_warning">चेतावनी बरखा दर अलर्ट?</string>
     <string name="rainrate_alert_warning_desc">बरखा दी अवधि दे आधार उप्पर जेकर बरखा दी दर चेतावनी सीमा शा मती ऐ तां अलर्ट करदा ऐ</string>
+    <string name="rainrate_alert_warning_notification">पिछले %2$d %3$s च %1$s दी बरखा दर ने \'चेतावनी\' स्तर पर पुज्जी गेई ऐ</string>
     <string name="rainrate_alert_warning_str">चेतावनी बरसात दर अलर्ट</string>
     <string name="rainrate_alert_watch">बारिश दर दे अलर्ट देखो?</string>
     <string name="rainrate_alert_watch_desc">बरखा दी अवधि दे आधार उप्पर जेकर बरखा दी दर घड़ी दी सीमा शा मती ऐ तां अलर्ट करदा ऐ</string>
+    <string name="rainrate_alert_watch_notification">पिछले %2$d %3$s च %1$s दी बरखा दर ने \'देखो\' स्तर पर पुज्जी गेई ऐ</string>
     <string name="rainrate_alert_watch_str">देखो रेनरेट अलर्ट</string>
     <string name="refresh_time">रिफ्रेश टाइम चुनें</string>
     <string name="remove_all_data">क्या तुस यकीन करदे ओ जे तुस सारे डेटा गी हटाना चांह् दे ओ?</string>

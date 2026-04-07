@@ -2,8 +2,7 @@
 <resources>
     <string name="about">လွင်ႈတၢင်း</string>
     <string name="about_app">เกี่ยวกับ ဢႅပ်ႉ</string>
-    <string name="afternoon_alert">တၢင်းမႆႈ %1$.1f°%2$s လူတ်းလူင်းထိုင် တီႈမၵ်းၶႅၼ်ႈ ၸဝ်ႈၵဝ်ႇ %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">ၾၢင်ႉၵၢင်ၼႂ်?</string>
+	<string name="afternoon_temp_alert">ၾၢင်ႉၵၢင်ၼႂ်?</string>
     <string name="all_time_stats">သဵၼ်ႈမၢႆၶၢဝ်းယၢမ်းၵူႈလွင်ႈ</string>
     <string name="app_theme">App Theme</string>
 	<string name="battery_warning">ၶေႃႈပၼ်ၾၢင်ႉ - ပိုတ်ႇပၼ် တၢင်းလိူၵ်ႈပႃႈၼိူဝ်ၼႆႉ ၸၢင်ႈႁဵတ်းႁႂ်ႈ ပႅတ်ႉထီးရီးယႃး ၸဝ်ႈၵဝ်ႇ ဝႆးလိူဝ် မိူဝ်ႈၵူႈပွၵ်ႈ</string>
@@ -58,8 +57,7 @@
     <string name="match_app">App</string>
     <string name="metric">ၸႂ်ႉမႅတ်ႉထရိၵ်ႉ?</string>
     <string name="minutes">မဵတ်ႉ</string>
-    <string name="morning_alert">တၢင်းမႆႈ %1$.1f°%2$s ၶိုၼ်ႈထိုင် တီႈမၵ်းၶႅၼ်ႈ ၸဝ်ႈၵဝ်ႇ %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">ၾၢင်ႉၵၢင်ၼႂ်?</string>
+	<string name="morning_temp_alert">ၾၢင်ႉၵၢင်ၼႂ်?</string>
     <string name="next_moon">ပၢင်ပွႆးလိူၼ်ၼႃႈထႅင်ႈႁႃႉ?</string>
     <string name="no">ဢမ်ႇ</string>
     <string name="no_download_or_app_not_setup">ဢမ်ႇမီး Download ဢမ်ႇၼၼ် ဢႅပ်ႉ ပႆႇလႆႈ Setup</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">ၾူၼ်တူၵ်း ၼႂ်းဢိၼ်ႇၸိမ်ႇႁႃႉ?</string>
     <string name="rainfall_alert">ၾၢင်ႉၾူၼ်တူၵ်း?</string>
     <string name="rainfall_alert_desc">ပၼ်ၾၢင်ႉၵူႈဝၼ်း မိူဝ်ႈၾူၼ်တူၵ်းထိုင်တီႈမၵ်းမၼ်ႈဝႆႉ</string>
-    <string name="rainfall_alert_imperial">ၾူၼ်တူၵ်း %1$.2f%2$s လႆႈထုၵ်ႇမႅၼ်ႈၵၼ်တင်း ၶွပ်ႇလႅၼ်ၸဝ်ႈၵဝ်ႇ %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">ၾူၼ်တူၵ်း %1$.1f%2$s ၼႆႉ မၼ်းထုၵ်ႇမႅၼ်ႈၸွမ်း လွင်ႈမၵ်းၶႅၼ်ႈ %3$.1f%2$s ၸဝ်ႈၵဝ်ႇယဝ်ႉ</string>
-    <string name="rainfall_alert_str">ၾၢင်ႉၾူၼ်တူၵ်း</string>
+	<string name="rainfall_alert_str">ၾၢင်ႉၾူၼ်တူၵ်း</string>
     <string name="rainfall_limit">ၶွပ်ႇၾူၼ်တူၵ်း</string>
-    <string name="rainrate_alert_imperial_severe">ၾူၼ်တူၵ်း %1$.2fin ၼႂ်းၶၢဝ်းတၢင်း %2$d %3$s ဢၼ်ပူၼ်ႉမႃးၼၼ်ႉ လႆႈထိုင်ၸၼ်ႉ \'ႁၢဝ်ႈႁႅင်း\'</string>
-    <string name="rainrate_alert_imperial_warning">ၾူၼ်တူၵ်း %1$.2fin ၼႂ်းၶၢဝ်းတၢင်း %2$d %3$s ဢၼ်ပူၼ်ႉမႃးၼၼ်ႉ လႆႈထိုင်ၸၼ်ႉ \'ပၼ်ၾၢင်ႉ\'</string>
-    <string name="rainrate_alert_imperial_watch">ၾူၼ်တူၵ်း %1$.2fin ၼႂ်း %2$d %3$s ဢၼ်ပူၼ်ႉမႃးၼၼ်ႉ လႆႈထိုင်ၸၼ်ႉ \'တူၺ်း\'</string>
-    <string name="rainrate_alert_metric_severe">ၾူၼ်တူၵ်း %1$.1fmm ၼႂ်းၶၢဝ်းတၢင်း %2$d %3$s ဢၼ်ပူၼ်ႉမႃးၼၼ်ႉ လႆႈထိုင်ၸၼ်ႉ \'ႁၢဝ်ႈႁႅင်း\'</string>
-    <string name="rainrate_alert_metric_warning">ၾူၼ်တူၵ်း %1$.1fmm ၼႂ်းၶၢဝ်းတၢင်း %2$d %3$s ဢၼ်ပူၼ်ႉမႃးၼၼ်ႉ လႆႈထိုင်ၸၼ်ႉ \'ပၼ်ၾၢင်ႉ\'</string>
-    <string name="rainrate_alert_metric_watch">ၾူၼ်တူၵ်း %1$.1fmm ၼႂ်း %2$d %3$s ဢၼ်ပူၼ်ႉမႃးၼၼ်ႉ လႆႈထိုင်ၸၼ်ႉ \'တူၺ်း\'</string>
-    <string name="rainrate_alert_severe">ၶေႃႈၾၢင်ႉၾူၼ်တူၵ်းႁၢဝ်ႈႁႅင်း?</string>
+	<string name="rainrate_alert_severe">ၶေႃႈၾၢင်ႉၾူၼ်တူၵ်းႁၢဝ်ႈႁႅင်း?</string>
     <string name="rainrate_alert_severe_desc">ပၼ်ၾၢင်ႉ သင်ဝႃႈ ၾူၼ်တူၵ်းပူၼ်ႉလိူဝ် ၶွပ်ႇမၵ်းမၼ်ႈ ႁၢဝ်ႈႁႅင်း ဢိင်ၼိူဝ် ၶၢဝ်းယၢမ်းၾူၼ်တူၵ်း</string>
     <string name="rainrate_alert_severe_str">ၾၢင်ႉၾူၼ်တူၵ်းႁၢဝ်ႈႁႅင်း</string>
     <string name="rainrate_alert_str">ၾၢင်ႉၾူၼ်တူၵ်း</string>

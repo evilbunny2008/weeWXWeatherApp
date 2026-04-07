@@ -2,8 +2,7 @@
 <resources>
     <string name="about">O</string>
     <string name="about_app">O aplikácii</string>
-    <string name="afternoon_alert">Teplota %1$.1f°%2$s klesla na váš limit %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Popoludňajšie upozornenie?</string>
+	<string name="afternoon_temp_alert">Popoludňajšie upozornenie?</string>
     <string name="all_time_stats">Všetky časové štatistiky</string>
     <string name="app_theme">Téma aplikácie</string>
 	<string name="avg">priem.</string>
@@ -59,8 +58,7 @@
     <string name="match_app">Aplikácia Match</string>
     <string name="metric">Použiť metriku?</string>
     <string name="minutes">minút</string>
-    <string name="morning_alert">Teplota %1$.1f°%2$s stúpla na váš limit %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Ranné upozornenie?</string>
+	<string name="morning_temp_alert">Ranné upozornenie?</string>
     <string name="next_moon">Ďalšie udalosti na Mesiaci?</string>
     <string name="no">Nie</string>
     <string name="no_download_or_app_not_setup">Nebolo nastavené žiadne sťahovanie ani aplikácia</string>
@@ -84,17 +82,9 @@
     <string name="rain_in_inches">Dážď v palcoch?</string>
     <string name="rainfall_alert">Upozornenie na zrážky?</string>
     <string name="rainfall_alert_desc">Denne vás upozorní, keď zrážky dosiahnu váš nastavený limit</string>
-    <string name="rainfall_alert_imperial">Zrážky %1$.2f%2$s zodpovedali vášmu limitu %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Zrážky %1$.1f%2$s zodpovedali vášmu limitu %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Upozornenie na zrážky</string>
+	<string name="rainfall_alert_str">Upozornenie na zrážky</string>
     <string name="rainfall_limit">Limit zrážok</string>
-    <string name="rainrate_alert_imperial_severe">Miera zrážok %1$.2fin za posledných %2$d %3$s dosiahla úroveň \'závažná\'</string>
-    <string name="rainrate_alert_imperial_warning">Miera zrážok %1$.2fin za posledných %2$d %3$s dosiahla úroveň \'upozornenie\'</string>
-    <string name="rainrate_alert_imperial_watch">Miera zrážok %1$.2fin za posledných %2$d %3$s dosiahla úroveň \'Pozerať\'</string>
-    <string name="rainrate_alert_metric_severe">Miera zrážok %1$.1fmm za posledných %2$d %3$s dosiahla úroveň \'závažná\'</string>
-    <string name="rainrate_alert_metric_warning">Miera zrážok %1$.1fmm za posledných %2$d %3$s dosiahla úroveň \'upozornenie\'</string>
-    <string name="rainrate_alert_metric_watch">Miera zrážok %1$.1fmm za posledných %2$d %3$s dosiahla úroveň \'Pozerať\'</string>
-    <string name="rainrate_alert_severe">Upozornenie na silný dážď?</string>
+	<string name="rainrate_alert_severe">Upozornenie na silný dážď?</string>
     <string name="rainrate_alert_severe_desc">Upozorní, ak množstvo zrážok prekročí prísny limit na základe trvania zrážok</string>
     <string name="rainrate_alert_severe_str">Upozornenie na silný dážď</string>
     <string name="rainrate_alert_str">Upozornenie na dážď</string>

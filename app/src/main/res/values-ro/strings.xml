@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Despre</string>
     <string name="about_app">Despre aplicație</string>
-    <string name="afternoon_alert">Temperatura %1$.1f°%2$s a scăzut la limita dvs. de %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alertă de după-amiază?</string>
+	<string name="afternoon_temp_alert">Alertă de după-amiază?</string>
     <string name="all_time_stats">Statistici All Time</string>
     <string name="app_theme">Tema aplicației</string>
 	<string name="avg">med.</string>
@@ -59,8 +58,7 @@
     <string name="match_app">Aplicația de potrivire</string>
     <string name="metric">Folosiți metrica?</string>
     <string name="minutes">minute</string>
-    <string name="morning_alert">Temperatura %1$.1f°%2$s a crescut până la limita dvs. de %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alertă de dimineață?</string>
+	<string name="morning_temp_alert">Alertă de dimineață?</string>
     <string name="next_moon">Evenimente de pe luna viitoare?</string>
     <string name="no">Nu</string>
     <string name="no_download_or_app_not_setup">Nicio descărcare sau aplicație nu a fost configurată</string>
@@ -83,17 +81,9 @@
     <string name="rain_in_inches">Ploaie în inci?</string>
     <string name="rainfall_alert">Alertă de precipitații?</string>
     <string name="rainfall_alert_desc">Alerte zilnice când precipitațiile ating limita stabilită</string>
-    <string name="rainfall_alert_imperial">Precipitațiile %1$.2f%2$s au ajuns la limita dvs. de %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Precipitațiile %1$.1f%2$s au ajuns la limita dvs. de %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alertă de precipitații</string>
+	<string name="rainfall_alert_str">Alertă de precipitații</string>
     <string name="rainfall_limit">Limita de precipitații</string>
-    <string name="rainrate_alert_imperial_severe">Rata ploii de %1$.2fin în ultimele %2$d %3$s a atins nivelul \'Sever\'</string>
-    <string name="rainrate_alert_imperial_warning">Rata ploii de %1$.2fin în ultimele %2$d %3$s a atins nivelul \'Avertisment\'</string>
-    <string name="rainrate_alert_imperial_watch">Rata ploii de %1$.2fin în ultimele %2$d %3$s a atins nivelul \'Urmăriți\'</string>
-    <string name="rainrate_alert_metric_severe">Rata ploii de %1$.1fmm în ultimele %2$d %3$s a atins nivelul \'Sever\'</string>
-    <string name="rainrate_alert_metric_warning">Rata ploii de %1$.1fmm în ultimele %2$d %3$s a atins nivelul \'Avertisment\'</string>
-    <string name="rainrate_alert_metric_watch">Rata ploii de %1$.1fmm în ultimele %2$d %3$s a atins nivelul \'Urmăriți\'</string>
-    <string name="rainrate_alert_severe">Alerte de ploi severe?</string>
+	<string name="rainrate_alert_severe">Alerte de ploi severe?</string>
     <string name="rainrate_alert_severe_desc">Alertă dacă rata ploii depășește limita severă în funcție de durata ploii</string>
     <string name="rainrate_alert_severe_str">Alertă de ploi severe</string>
     <string name="rainrate_alert_str">Alertă de ploi</string>

@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Για</string>
     <string name="about_app">Σχετικά με την εφαρμογή</string>
-    <string name="afternoon_alert">Η θερμοκρασία %1$.1f°%2$s έχει πέσει στο όριο των %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Η θερμοκρασία %1$s έχει πέσει στο όριο των %2$s</string>
     <string name="afternoon_temp_alert">Απογευματινή ειδοποίηση;</string>
     <string name="all_time_stats">Στατιστικά όλων των εποχών</string>
     <string name="app_theme">Θέμα εφαρμογής</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Χρήση Metric;</string>
     <string name="minutes">πρακτικά</string>
-    <string name="morning_alert">Η θερμοκρασία %1$.1f°%2$s έχει αυξηθεί στο όριο των %3$.1f°%2$s</string>
+    <string name="morning_alert">Η θερμοκρασία %1$s έχει αυξηθεί στο όριο των %2$s</string>
     <string name="morning_temp_alert">Πρωινή ειδοποίηση;</string>
     <string name="next_moon">Γεγονότα του επόμενου φεγγαριού;</string>
     <string name="no">Οχι</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">Βροχή σε ίντσες;</string>
     <string name="rainfall_alert">Ειδοποίηση βροχοπτώσεων;</string>
     <string name="rainfall_alert_desc">Ειδοποιήσεις καθημερινά όταν η βροχόπτωση φτάσει στο καθορισμένο όριο</string>
-    <string name="rainfall_alert_imperial">Η βροχόπτωση %1$.2f%2$s αντιστοιχεί στο όριο των %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Η βροχόπτωση %1$.1f%2$s αντιστοιχεί στο όριο των %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Η βροχόπτωση %1$s αντιστοιχεί στο όριο των %2$s</string>
     <string name="rainfall_alert_str">Ειδοποίηση βροχοπτώσεων</string>
     <string name="rainfall_limit">Όριο βροχοπτώσεων</string>
-    <string name="rainrate_alert_imperial_severe">Ο ρυθμός βροχής %1$.2fin στο τελευταίο %2$d Το %3$s έφτασε στο επίπεδο \'Σοβαρό\'</string>
-    <string name="rainrate_alert_imperial_warning">Ο ρυθμός βροχής %1$.2fin στο τελευταίο %2$d Το %3$s έφτασε στο επίπεδο \'Προειδοποίηση\'</string>
-    <string name="rainrate_alert_imperial_watch">Ο ρυθμός βροχής %1$.2fin στο τελευταίο %2$d Το %3$s έφτασε στο επίπεδο \'Παρακολούθηση\'</string>
-    <string name="rainrate_alert_metric_severe">Ο ρυθμός βροχής %1$.1fmm στο τελευταίο %2$d Το %3$s έφτασε στο επίπεδο \'Σοβαρό\'</string>
-    <string name="rainrate_alert_metric_warning">Ο ρυθμός βροχής %1$.1fmm στο τελευταίο %2$d Το %3$s έφτασε στο επίπεδο \'Προειδοποίηση\'</string>
-    <string name="rainrate_alert_metric_watch">Ο ρυθμός βροχής %1$.1fmm στο τελευταίο %2$d Το %3$s έφτασε στο επίπεδο \'Παρακολούθηση\'</string>
     <string name="rainrate_alert_severe">Ειδοποιήσεις σοβαρής βροχής;</string>
     <string name="rainrate_alert_severe_desc">Ειδοποιεί εάν η βροχόπτωση υπερβαίνει το αυστηρό όριο με βάση τη διάρκεια βροχόπτωσης</string>
+    <string name="rainrate_alert_severe_notification">Ο ρυθμός βροχής %1$s στο τελευταίο %2$d Το %3$s έφτασε στο επίπεδο \'Σοβαρό\'</string>
     <string name="rainrate_alert_severe_str">Ειδοποίηση για σοβαρή βροχόπτωση</string>
     <string name="rainrate_alert_str">Ειδοποίηση ρυθμού βροχής</string>
     <string name="rainrate_alert_warning">Προειδοποίηση για ειδοποιήσεις βροχής;</string>
     <string name="rainrate_alert_warning_desc">Ειδοποιεί εάν η βροχόπτωση υπερβαίνει το προειδοποιητικό όριο με βάση τη διάρκεια βροχόπτωσης</string>
+    <string name="rainrate_alert_warning_notification">Ο ρυθμός βροχής %1$s στο τελευταίο %2$d Το %3$s έφτασε στο επίπεδο \'Προειδοποίηση\'</string>
     <string name="rainrate_alert_warning_str">Προειδοποίηση ειδοποίησης βροχής</string>
     <string name="rainrate_alert_watch">Παρακολουθήστε το Rainrate Alerts;</string>
     <string name="rainrate_alert_watch_desc">Ειδοποιεί εάν ο ρυθμός βροχής υπερβαίνει το όριο παρακολούθησης με βάση τη διάρκεια βροχόπτωσης</string>
+    <string name="rainrate_alert_watch_notification">Ο ρυθμός βροχής %1$s στο τελευταίο %2$d Το %3$s έφτασε στο επίπεδο \'Παρακολούθηση\'</string>
     <string name="rainrate_alert_watch_str">Παρακολουθήστε το Rainrate Alert</string>
     <string name="refresh_time">Επιλέξτε Χρόνος ανανέωσης</string>
     <string name="remove_all_data">Είστε βέβαιοι ότι θέλετε να καταργήσετε όλα τα δεδομένα;</string>

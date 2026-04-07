@@ -2,8 +2,7 @@
 <resources>
     <string name="about">เกี่ยวกับ</string>
     <string name="about_app">เกี่ยวกับแอพ</string>
-    <string name="afternoon_alert">อุณหภูมิ %1$.1f°%2$s ลดลงถึงขีดจำกัดของคุณที่ %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">แจ้งเตือนช่วงบ่าย?</string>
+	<string name="afternoon_temp_alert">แจ้งเตือนช่วงบ่าย?</string>
     <string name="all_time_stats">สถิติเวลาทั้งหมด</string>
     <string name="app_theme">ธีมแอป</string>
 	<string name="avg">เฉลี่ย</string>
@@ -59,8 +58,7 @@
     <string name="match_app">แอพจับคู่</string>
     <string name="metric">ใช้เมตริก?</string>
     <string name="minutes">นาที</string>
-    <string name="morning_alert">อุณหภูมิ %1$.1f°%2$s เพิ่มขึ้นถึงขีดจำกัดของคุณที่ %3$.1f°%2$s แล้ว</string>
-    <string name="morning_temp_alert">การแจ้งเตือนตอนเช้า?</string>
+	<string name="morning_temp_alert">การแจ้งเตือนตอนเช้า?</string>
     <string name="next_moon">เหตุการณ์พระจันทร์หน้า?</string>
     <string name="no">เลขที่</string>
     <string name="no_download_or_app_not_setup">ไม่มีการดาวน์โหลดหรือยังไม่ได้ตั้งค่าแอป</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">ฝนตกเป็นนิ้ว?</string>
     <string name="rainfall_alert">แจ้งเตือนปริมาณน้ำฝน?</string>
     <string name="rainfall_alert_desc">แจ้งเตือนทุกวันเมื่อปริมาณน้ำฝนถึงขีดจำกัดที่คุณตั้งไว้</string>
-    <string name="rainfall_alert_imperial">ปริมาณน้ำฝน %1$.2f%2$s ตรงกับขีดจำกัดของคุณที่ %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">ปริมาณน้ำฝน %1$.1f%2$s ตรงกับขีดจำกัดของคุณที่ %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">การแจ้งเตือนปริมาณน้ำฝน</string>
+	<string name="rainfall_alert_str">การแจ้งเตือนปริมาณน้ำฝน</string>
     <string name="rainfall_limit">ขีดจำกัดปริมาณน้ำฝน</string>
-    <string name="rainrate_alert_imperial_severe">อัตราฝนตก %1$.2fin ในช่วง %2$d %3$s ที่ผ่านมาถึงระดับ \'รุนแรง\'</string>
-    <string name="rainrate_alert_imperial_warning">อัตราฝนตก %1$.2fin ในช่วง %2$d %3$s ที่ผ่านมาถึงระดับ \'คำเตือน\'</string>
-    <string name="rainrate_alert_imperial_watch">อัตราฝนตก %1$.2fin ในช่วง %2$d %3$s ที่ผ่านมาถึงระดับ \'เฝ้าดู\'</string>
-    <string name="rainrate_alert_metric_severe">อัตราฝนตก %1$.1fmm ในช่วง %2$d %3$s ที่ผ่านมาถึงระดับ \'รุนแรง\'</string>
-    <string name="rainrate_alert_metric_warning">อัตราฝนตก %1$.1fmm ในช่วง %2$d %3$s ที่ผ่านมาถึงระดับ \'คำเตือน\'</string>
-    <string name="rainrate_alert_metric_watch">อัตราฝนตก %1$.1fmm ในช่วง %2$d %3$s ที่ผ่านมาถึงระดับ \'เฝ้าดู\'</string>
-    <string name="rainrate_alert_severe">การแจ้งเตือนปริมาณฝนตกรุนแรง?</string>
+	<string name="rainrate_alert_severe">การแจ้งเตือนปริมาณฝนตกรุนแรง?</string>
     <string name="rainrate_alert_severe_desc">แจ้งเตือนหากปริมาณน้ำฝนเกินขีดจำกัดขั้นรุนแรงตามระยะเวลาฝนตก</string>
     <string name="rainrate_alert_severe_str">การแจ้งเตือนปริมาณน้ำฝนขั้นรุนแรง</string>
     <string name="rainrate_alert_str">การแจ้งเตือนปริมาณน้ำฝน</string>

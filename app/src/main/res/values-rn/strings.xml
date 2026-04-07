@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Hafi</string>
     <string name="about_app">Ivyerekeye App</string>
-    <string name="afternoon_alert">Ubushuhe %1$.1f°%2$s bwagabanutse ku rugero rwawe rwa %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Inyuma y\'umuhingamo?</string>
+	<string name="afternoon_temp_alert">Inyuma y\'umuhingamo?</string>
     <string name="all_time_stats">Imibare yose y\'Igihe</string>
     <string name="app_theme">Insiguro ya App</string>
 	<string name="battery_warning">Imburi: Gukoresha iyo nzira iri hejuru birashobora gutuma bateri yawe igenda vuba kuruta uko bisanzwe</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Guhuza App</string>
     <string name="metric">Koresha Metric?</string>
     <string name="minutes">iminota</string>
-    <string name="morning_alert">Ubushuhe %1$.1f°%2$s bwadutse ku rugero rwawe rwa %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Imburi yo mu gitondo?</string>
+	<string name="morning_temp_alert">Imburi yo mu gitondo?</string>
     <string name="next_moon">Ibirori vy\'ukwezi bikurikira?</string>
     <string name="no">Oya</string>
     <string name="no_download_or_app_not_setup">Nta gukuraho canke app ntivyashizweho</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Imvura mu Inches?</string>
     <string name="rainfall_alert">Imburi y\'imvura?</string>
     <string name="rainfall_alert_desc">Imenyesha buri musi iyo imvura ishitse ku rugero rwategekanije</string>
-    <string name="rainfall_alert_imperial">Imvura %1$.2f%2$s yahuye n\'umupaka wawe wa %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Imvura %1$.1f%2$s yahuye n\'umupaka wawe wa %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Imburi y\'imvura</string>
+	<string name="rainfall_alert_str">Imburi y\'imvura</string>
     <string name="rainfall_limit">Imvura ishobora kugwa</string>
-    <string name="rainrate_alert_imperial_severe">Imvura ya %1$.2fin mu %2$d %3$s iheze yashitse ku rugero \'Rukaze\'</string>
-    <string name="rainrate_alert_imperial_warning">Imvura ya %1$.2fin mu %2$d %3$s iheze yashitse ku rugero rwa \'Imburi\'</string>
-    <string name="rainrate_alert_imperial_watch">Imvura ya %1$.2fin mu %2$d %3$s iheze yashitse ku rugero rwa \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Imvura ya %1$.1fmm mu %2$d %3$s iheze yashitse ku rugero rwa \'Ikaze\'</string>
-    <string name="rainrate_alert_metric_warning">Imvura ya %1$.1fmm mu %2$d %3$s iheze yashitse ku rugero rwa \'Imburi\'</string>
-    <string name="rainrate_alert_metric_watch">Imvura ya %1$.1fmm mu %2$d %3$s iheze yashitse ku rugero rwa \'Iraba\'</string>
-    <string name="rainrate_alert_severe">Ivyibutsa vy\'Imvura Ikomeye?</string>
+	<string name="rainrate_alert_severe">Ivyibutsa vy\'Imvura Ikomeye?</string>
     <string name="rainrate_alert_severe_desc">Imburi iyo imvura irenze urugero rukomeye rushingiye ku gihe imvura imara</string>
     <string name="rainrate_alert_severe_str">Imburi y\'imvura ikaze</string>
     <string name="rainrate_alert_str">Imburi y\'igipimo c\'imvura</string>

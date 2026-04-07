@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Sobre</string>
     <string name="about_app">Sobre a aplicación</string>
-    <string name="afternoon_alert">A temperatura %1$.1f°%2$s baixou ata o teu límite de %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alerta pola tarde?</string>
+	<string name="afternoon_temp_alert">Alerta pola tarde?</string>
     <string name="all_time_stats">Estatísticas de todos os tempos</string>
     <string name="app_theme">Tema da aplicación</string>
     <string name="avg">media</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Aplicación Match</string>
     <string name="metric">Usar métrica?</string>
     <string name="minutes">minutos</string>
-    <string name="morning_alert">A temperatura %1$.1f°%2$s aumentou ata o teu límite de %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alerta da mañá?</string>
+	<string name="morning_temp_alert">Alerta da mañá?</string>
     <string name="next_moon">Eventos da próxima lúa?</string>
     <string name="no">Non</string>
     <string name="no_download_or_app_not_setup">Non hai ningunha descarga ou aplicación non configurada</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Choiva en polgadas?</string>
     <string name="rainfall_alert">Alerta de chuvia?</string>
     <string name="rainfall_alert_desc">Alertas diariamente cando a precipitación alcanza o límite establecido</string>
-    <string name="rainfall_alert_imperial">A precipitación %1$.2f%2$s coincidiu co teu límite de %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">A precipitación %1$.1f%2$s coincidiu co teu límite de %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alerta de precipitacións</string>
+	<string name="rainfall_alert_str">Alerta de precipitacións</string>
     <string name="rainfall_limit">Límite de precipitacións</string>
-    <string name="rainrate_alert_imperial_severe">A taxa de choiva de %1$.2fin nos últimos %2$d %3$s alcanzou o nivel \'grave\'</string>
-    <string name="rainrate_alert_imperial_warning">A taxa de choiva de %1$.2fin nos últimos %2$d %3$s alcanzou o nivel de \'Aviso\'</string>
-    <string name="rainrate_alert_imperial_watch">A taxa de choiva de %1$.2fin nos últimos %2$d %3$s alcanzou o nivel de \'Ver\'</string>
-    <string name="rainrate_alert_metric_severe">A taxa de choiva de %1$.1fmm nos últimos %2$d %3$s alcanzou o nivel \'grave\'</string>
-    <string name="rainrate_alert_metric_warning">A taxa de choiva de %1$.1fmm nos últimos %2$d %3$s alcanzou o nivel de \'Aviso\'</string>
-    <string name="rainrate_alert_metric_watch">A taxa de choiva de %1$.1fmm nos últimos %2$d %3$s alcanzou o nivel de \'Ver\'</string>
-    <string name="rainrate_alert_severe">Alertas de chuvia severa?</string>
+	<string name="rainrate_alert_severe">Alertas de chuvia severa?</string>
     <string name="rainrate_alert_severe_desc">Alerta se a taxa de chuvia supera o límite severo en función da duración da choiva</string>
     <string name="rainrate_alert_severe_str">Alerta de chuvia severa</string>
     <string name="rainrate_alert_str">Alerta de chuvia</string>

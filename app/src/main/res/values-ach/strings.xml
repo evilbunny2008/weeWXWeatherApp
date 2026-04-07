@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Ma kwako</string>
     <string name="about_app">I kom App</string>
-    <string name="afternoon_alert">Lyeto %1$.1f°%2$s opoto piny nio wa i rwom me %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Lyeto %1$s opoto piny nio wa i rwom me %2$s</string>
     <string name="afternoon_temp_alert">Lok me dyeceng?</string>
     <string name="all_time_stats">Jami ma time kare weng</string>
     <string name="app_theme">Pwony me lwongo</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Apc ma ki yubu ki mac</string>
     <string name="metric">Tic kwede?</string>
     <string name="minutes">dakika</string>
-    <string name="morning_alert">Lyeto %1$.1f°%2$s omede wa i rwom me %3$.1f°%2$s</string>
+    <string name="morning_alert">Lyeto %1$s omede wa i rwom me %2$s</string>
     <string name="morning_temp_alert">Lok me odiko?</string>
     <string name="next_moon">I kare me dwe ma lubo meno?</string>
     <string name="no">Ku</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Kot i inci?</string>
     <string name="rainfall_alert">Lok me kot?</string>
     <string name="rainfall_alert_desc">Miiyo ngec nino ducu ka kot oo i rwom ma imito</string>
-    <string name="rainfall_alert_imperial">Kot %1$.2f%2$s orwate ki rwom me %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Kot %1$.1f%2$s orwate ki rwom me %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Rainfall %1$s orwate ki rwom me %2$s</string>
     <string name="rainfall_alert_str">Lok me kot</string>
     <string name="rainfall_limit">wel kot ma twero cwer</string>
-    <string name="rainrate_alert_imperial_severe">Rainrate me %1$.2fin i kin %2$d %3$s ma nok oo i rwom me \'Matek\'</string>
-    <string name="rainrate_alert_imperial_warning">Rainrate me %1$.2fin i %2$d %3$s oo i rwom me \'Warning\'</string>
-    <string name="rainrate_alert_imperial_watch">Rainrate me %1$.2fin i kare ma %2$d %3$s pe oo i rwom me \'Nen\'</string>
-    <string name="rainrate_alert_metric_severe">Rainrate me %1$.1fmm i kin %2$d %3$s ma nok oo i rwom me \'Matek\'</string>
-    <string name="rainrate_alert_metric_warning">Rainrate me %1$.1fmm i kare ma %2$d %3$s pe oo i rwom me \'Warning\'</string>
-    <string name="rainrate_alert_metric_watch">Rainrate me %1$.1fmm i kare ma %2$d %3$s pe oo i rwom me \'Nen\'</string>
     <string name="rainrate_alert_severe">Lok me kot matek?</string>
     <string name="rainrate_alert_severe_desc">Miiyo ngec ka kot okato rwom ma opore ma lubu kare ma kot tye ka cwer kwede</string>
+    <string name="rainrate_alert_severe_notification">Rainrate me %1$s i %2$d %3$s ma okato ni oo i rwom me \'Matek\'</string>
     <string name="rainrate_alert_severe_str">Lok me kot matek</string>
     <string name="rainrate_alert_str">Lok me rwom me kot</string>
     <string name="rainrate_alert_warning">Lok me poyo wic i kom kot?</string>
     <string name="rainrate_alert_warning_desc">Miiyo ngec ka kot okato wel ma ki miini ma lubu kare ma kot obi cwer kwede</string>
+    <string name="rainrate_alert_warning_notification">Rainrate me %1$s i %2$d %3$s ma okato ni oo i rwom me \'Warning\'</string>
     <string name="rainrate_alert_warning_str">Lok me poyo wic pi kot</string>
     <string name="rainrate_alert_watch">Nen Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Miiyo ngec ka kot okato wel ma ki keto me neno ni lubu kare ma kot tye ka cwer kwede</string>
+    <string name="rainrate_alert_watch_notification">Rainrate me %1$s i %2$d %3$s ma okato ni oo i rwom me \'Nen\'</string>
     <string name="rainrate_alert_watch_str">Nen lok ma mako kot</string>
     <string name="refresh_time">Yer cawa me bedo me ic</string>
     <string name="remove_all_data">Tika itye ki gen ni imito kwanyo ngec ducu?</string>

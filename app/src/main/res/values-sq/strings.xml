@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Rreth</string>
     <string name="about_app">Rreth aplikacionit</string>
-    <string name="afternoon_alert">Temperatura %1$.1f°%2$s ka rënë në kufirin tuaj prej %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alarmi pasdite?</string>
+	<string name="afternoon_temp_alert">Alarmi pasdite?</string>
     <string name="all_time_stats">Statistikat e të gjitha kohërave</string>
     <string name="app_theme">Tema e aplikacionit</string>
 	<string name="battery_warning">Paralajmërim: Aktivizimi i opsionit të mësipërm mund ta shkarkojë baterinë tuaj më shpejt se zakonisht</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Aplikacioni i ndeshjes</string>
     <string name="metric">Të përdoret Metrica?</string>
     <string name="minutes">minuta</string>
-    <string name="morning_alert">Temperatura %1$.1f°%2$s është rritur në kufirin tuaj prej %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alarmi në mëngjes?</string>
+	<string name="morning_temp_alert">Alarmi në mëngjes?</string>
     <string name="next_moon">Ngjarjet e hënës së ardhshme?</string>
     <string name="no">Nr</string>
     <string name="no_download_or_app_not_setup">Asnjë shkarkim ose aplikacion nuk është konfiguruar</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Shi në inç?</string>
     <string name="rainfall_alert">Alarmi për reshje?</string>
     <string name="rainfall_alert_desc">Alarmet çdo ditë kur reshjet arrijnë kufirin tuaj të caktuar</string>
-    <string name="rainfall_alert_imperial">Reshjet %1$.2f%2$s janë përputhur me kufirin tuaj prej %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Reshjet %1$.1f%2$s janë përputhur me kufirin tuaj prej %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alarmi për reshje</string>
+	<string name="rainfall_alert_str">Alarmi për reshje</string>
     <string name="rainfall_limit">Kufiri i reshjeve</string>
-    <string name="rainrate_alert_imperial_severe">Shkalla e shiut prej %1$.2fin në %2$d më pak %3$s ka arritur nivelin \'E rëndë\'</string>
-    <string name="rainrate_alert_imperial_warning">Shkalla e shiut prej %1$.2fin në %2$d %3$s ka goditur nivelin \'Paralajmërim\'</string>
-    <string name="rainrate_alert_imperial_watch">Shkalla e shiut prej %1$.2fin në %2$d që %3$s të mos ketë arritur nivelin \'Shiko\'</string>
-    <string name="rainrate_alert_metric_severe">Shkalla e shiut prej %1$.1fmm në nivelin më të ulët %2$d %3$s që ka arritur nivelin \'E rëndë\'</string>
-    <string name="rainrate_alert_metric_warning">Shkalla e shiut prej %1$.1fmm në më pak se %2$d %3$s ka arritur nivelin \'Paralajmërim\'</string>
-    <string name="rainrate_alert_metric_watch">Shkalla e shiut prej %1$.1fmm në %2$d që %3$s të mos ketë arritur nivelin \'Shiko\'</string>
-    <string name="rainrate_alert_severe">Sinjalizime të rënda të shiut?</string>
+	<string name="rainrate_alert_severe">Sinjalizime të rënda të shiut?</string>
     <string name="rainrate_alert_severe_desc">Paralajmëron nëse shkalla e shiut tejkalon kufirin e rëndë bazuar në kohëzgjatjen e reshjeve</string>
     <string name="rainrate_alert_severe_str">Alarmi për reshjet e rënda të shiut</string>
     <string name="rainrate_alert_str">Sinjalizim për normat e shiut</string>

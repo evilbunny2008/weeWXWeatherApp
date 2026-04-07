@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Upéva rehegua</string>
     <string name="about_app">app rehegua</string>
-    <string name="afternoon_alert">Temperatura %1$.1f°%2$s oguejy nde límite %3$.1f°%2$s peve</string>
-    <string name="afternoon_temp_alert">¿Alerta Asaje rehegua?</string>
+	<string name="afternoon_temp_alert">¿Alerta Asaje rehegua?</string>
     <string name="all_time_stats">Opaichagua tiempo rehegua</string>
     <string name="app_theme">App Tema</string>
     <string name="avg">promedio</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Ombojoaju App</string>
     <string name="metric">Oipuru métrica?</string>
     <string name="minutes">aravo\'i</string>
-    <string name="morning_alert">Temperatura %1$.1f°%2$s ojupi nde límite %3$.1f°%2$s peve</string>
-    <string name="morning_temp_alert">¿Alerta pyharevegua?</string>
+	<string name="morning_temp_alert">¿Alerta pyharevegua?</string>
     <string name="next_moon">¿Oúva Jasy Acontecimientos?</string>
     <string name="no">nahániri</string>
     <string name="no_download_or_app_not_setup">No se ha app no ​​se ha sido configuración</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">¿Oky en Pulgadas?</string>
     <string name="rainfall_alert">¿Alerta Ama rehegua?</string>
     <string name="rainfall_alert_desc">Oalerta ára ha ára oky jave oguahëvo límite omoîva</string>
-    <string name="rainfall_alert_imperial">Ama %1$.2f%2$s ojoaju nde límite %3$.2f%2$s ndive</string>
-    <string name="rainfall_alert_metric">Ama %1$.1f%2$s ombojoaju nde límite %3$.1f%2$s ndive</string>
-    <string name="rainfall_alert_str">Alerta Ama rehegua</string>
+	<string name="rainfall_alert_str">Alerta Ama rehegua</string>
     <string name="rainfall_limit">Límite de lluvia</string>
-    <string name="rainrate_alert_imperial_severe">Oky jave %1$.2fin %2$d %3$s pahaitépe ohupyty nivel \'Severo\'</string>
-    <string name="rainrate_alert_imperial_warning">Oky jave %1$.2fin %2$d %3$s paha ohupyty nivel \'Advertencia\'</string>
-    <string name="rainrate_alert_imperial_watch">Oky jave %1$.2fin %2$d %3$s pahaitépe ohupyty nivel \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Oky ritmo %1$.1fmm %2$d %3$s paha ohupyty nivel \'Severo\'</string>
-    <string name="rainrate_alert_metric_warning">Oky ritmo %1$.1fmm %2$d %3$s paha ohupyty nivel \'Advertencia\'</string>
-    <string name="rainrate_alert_metric_watch">Oky ritmo %1$.1fmm %2$d %3$s pahaitépe ohupyty nivel \'Watch\'</string>
-    <string name="rainrate_alert_severe">¿Alertas de ritmo severa de lluvia?</string>
+	<string name="rainrate_alert_severe">¿Alertas de ritmo severa de lluvia?</string>
     <string name="rainrate_alert_severe_desc">Oalerta ritmo de lluvia ohasáramo límite severo oñemopyendáva duración de lluvia</string>
     <string name="rainrate_alert_severe_str">Alerta de ritmo de lluvia vaiete</string>
     <string name="rainrate_alert_str">Alerta de precipitación de lluvia rehegua</string>

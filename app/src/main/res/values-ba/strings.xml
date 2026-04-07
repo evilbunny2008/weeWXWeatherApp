@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Турала</string>
     <string name="about_app">App тураһында</string>
-    <string name="afternoon_alert">Температура %1$.1f°%2$s һеҙҙең сиккә тиклем төштө %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Температура %1$s һеҙҙең сиккә төштө %2$s</string>
     <string name="afternoon_temp_alert">Төштән һуң иҫкәртмә?</string>
     <string name="all_time_stats">Бөтә ваҡыт статистикаһы</string>
     <string name="app_theme">App Teme</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Матч App</string>
     <string name="metric">Метрик ҡулланырға?</string>
     <string name="minutes">минуттар</string>
-    <string name="morning_alert">Температура %1$.1f°%2$s һеҙҙең сиккә күтәрелде %3$.1f°%2$s</string>
+    <string name="morning_alert">Температура %1$s һеҙҙең сиккә күтәрелде %2$s</string>
     <string name="morning_temp_alert">Иртәнге уятыу?</string>
     <string name="next_moon">Киләһе ай ваҡиғалары?</string>
     <string name="no">Юҡ</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Ямғыр дюймдарҙа?</string>
     <string name="rainfall_alert">Ямғыр тураһында иҫкәртмә?</string>
     <string name="rainfall_alert_desc">Яуым-төшөм һеҙҙең билдәләнгән сиккә еткәндә көн һайын иҫкәртә</string>
-    <string name="rainfall_alert_imperial">Яуым-төшөм %1$.2f%2$s һеҙҙең сиккә тап килде %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Яуым-төшөм %1$.1f%2$s һеҙҙең сиккә тап килде %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Яуым-төшөм %1$s һеҙҙең сиккә тап килде %2$s</string>
     <string name="rainfall_alert_str">Яуым-төшөм тураһында иҫкәртмә</string>
     <string name="rainfall_limit">Яуым-төшөм сиге</string>
-    <string name="rainrate_alert_imperial_severe">Ямғыр тиҙлеге %1$.2fin һуңғы %2$d %3$s \'Ҡаты\' кимәленә етте</string>
-    <string name="rainrate_alert_imperial_warning">Ямғыр тиҙлеге %1$.2fin һуңғы %2$d %3$s \'Иҫкәртмә\' кимәленә етте</string>
-    <string name="rainrate_alert_imperial_watch">Ямғыр тиҙлеге %1$.2fin һуңғы %2$d %3$s \'Күҙәтеү\' кимәленә етте</string>
-    <string name="rainrate_alert_metric_severe">Ямғыр тиҙлеге %1$.1fmm һуңғы %2$d %3$s \'Ҡаты\' кимәленә етте</string>
-    <string name="rainrate_alert_metric_warning">Ямғыр тиҙлеге %1$.1fmm һуңғы %2$d %3$s \'Иҫкәртмә\' кимәленә етте</string>
-    <string name="rainrate_alert_metric_watch">Ямғыр тиҙлеге %1$.1fmm һуңғы %2$d %3$s \'Күҙәтеү\' кимәленә етте</string>
     <string name="rainrate_alert_severe">Ҡаты ямғыр тураһында иҫкәртмәләр?</string>
     <string name="rainrate_alert_severe_desc">Ямғыр яуыу оҙайлылығына ҡарап, ямғыр тиҙлеге ҡаты сиктән артһа, иҫкәртә</string>
+    <string name="rainrate_alert_severe_notification">Ямғыр тиҙлеге %1$s һуңғы %2$d %3$s \'Ҡаты\' кимәленә етте</string>
     <string name="rainrate_alert_severe_str">Ҡаты ямғыр тураһында иҫкәртмә</string>
     <string name="rainrate_alert_str">Ямғыр тиҙлеге тураһында иҫкәртмә</string>
     <string name="rainrate_alert_warning">Иҫкәртмә Ямғыр тиҙлеге тураһында иҫкәртмәләр?</string>
     <string name="rainrate_alert_warning_desc">Ямғыр яуыу оҙайлылығына ҡарап, ямғыр тиҙлеге иҫкәрткес сигенән артһа, иҫкәртә</string>
+    <string name="rainrate_alert_warning_notification">Ямғыр тиҙлеге %1$s һуңғы %2$d %3$s \'Иҫкәртмә\' кимәленә етте</string>
     <string name="rainrate_alert_warning_str">Иҫкәртмә Ямғыр тиҙлеге тураһында иҫкәртмә</string>
     <string name="rainrate_alert_watch">Ямғыр тиҙлеге тураһында иҫкәртмәләрҙе ҡарағыҙ?</string>
     <string name="rainrate_alert_watch_desc">Ямғыр яуыу оҙайлылығына ҡарап, ямғыр тиҙлеге күҙәтеү сигенән артып китһә, иҫкәртә</string>
+    <string name="rainrate_alert_watch_notification">Ямғыр тиҙлеге %1$s һуңғы %2$d %3$s \'Күҙәтеү\' кимәленә етте</string>
     <string name="rainrate_alert_watch_str">Ямғыр тиҙлеге тураһында иҫкәртмәне ҡарағыҙ</string>
     <string name="refresh_time">Яңыртыу ваҡыты һайлағыҙ</string>
     <string name="remove_all_data">Һеҙ ышанаһығыҙмы, һеҙ бөтә мәғлүмәттәрҙе юйырға теләйһегеҙме?</string>

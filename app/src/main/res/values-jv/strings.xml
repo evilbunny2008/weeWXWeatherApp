@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Babagan</string>
     <string name="about_app">Babagan App</string>
-    <string name="afternoon_alert">Suhu %1$.1f°%2$s wis mudhun nganti watesan sampeyan %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Lansiran Sore?</string>
+	<string name="afternoon_temp_alert">Lansiran Sore?</string>
     <string name="all_time_stats">Kabeh Statistik Wektu</string>
     <string name="app_theme">Tema Aplikasi</string>
     <string name="avg">rata-rata</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Aplikasi Cocokan</string>
     <string name="metric">Gunakake Metrik?</string>
     <string name="minutes">menit</string>
-    <string name="morning_alert">Suhu %1$.1f°%2$s wis munggah nganti watesan sampeyan %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Tandha esuk?</string>
+	<string name="morning_temp_alert">Tandha esuk?</string>
     <string name="next_moon">Sabanjure acara?</string>
     <string name="no">Ora</string>
     <string name="no_download_or_app_not_setup">Ora ana undhuhan utawa app sing durung disetel</string>
@@ -84,17 +82,9 @@
     <string name="rain_in_inches">Udan ing Inci?</string>
     <string name="rainfall_alert">Tandha Udan?</string>
     <string name="rainfall_alert_desc">Tandha saben dina nalika udan tekan wates sing disetel</string>
-    <string name="rainfall_alert_imperial">Curah udan %1$.2f%2$s wis cocog karo watesan sampeyan %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Curah udan %1$.1f%2$s wis cocog karo watesan sampeyan %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Tandha Udan</string>
+	<string name="rainfall_alert_str">Tandha Udan</string>
     <string name="rainfall_limit">Watesan udan</string>
-    <string name="rainrate_alert_imperial_severe">Udan %1$.2fin ing pungkasan %2$d %3$s wis tekan tingkat \'Parah\'</string>
-    <string name="rainrate_alert_imperial_warning">Udan %1$.2fin ing pungkasan %2$d %3$s wis tekan tingkat \'Pènget\'</string>
-    <string name="rainrate_alert_imperial_watch">Udan %1$.2fin ing pungkasan %2$d %3$s wis tekan tingkat \'Nonton\'</string>
-    <string name="rainrate_alert_metric_severe">Udan %1$.1fmm ing pungkasan %2$d %3$s wis tekan tingkat \'Parah\'</string>
-    <string name="rainrate_alert_metric_warning">Udan %1$.1fmm ing pungkasan %2$d %3$s wis tekan tingkat \'Pènget\'</string>
-    <string name="rainrate_alert_metric_watch">Udan %1$.1fmm ing pungkasan %2$d %3$s wis tekan tingkat \'Nonton\'</string>
-    <string name="rainrate_alert_severe">Lansiran Laju Udan Parah?</string>
+	<string name="rainrate_alert_severe">Lansiran Laju Udan Parah?</string>
     <string name="rainrate_alert_severe_desc">Tandha yen tingkat udan ngluwihi wates sing abot adhedhasar durasi udan</string>
     <string name="rainrate_alert_severe_str">Tandha Rainrate Awrat</string>
     <string name="rainrate_alert_str">Tandha Rainrate</string>

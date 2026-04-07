@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Tungkol sa</string>
     <string name="about_app">Tungkol sa app</string>
-    <string name="afternoon_alert">Ang temperaturang %1$.1f°%2$s ay bumaba sa iyong limitasyon na %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alerto sa hapon?</string>
+	<string name="afternoon_temp_alert">Alerto sa hapon?</string>
     <string name="all_time_stats">Lahat ng mga istatistika ng oras</string>
     <string name="app_theme">Tema ng app</string>
 	<string name="battery_warning">Babala: Ang pagpapagana sa pagpipilian sa itaas ay maaaring maubos ang iyong baterya nang mas mabilis kaysa sa dati</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Itugma ang app</string>
     <string name="metric">Gumamit ng sukatan?</string>
     <string name="minutes">minuto</string>
-    <string name="morning_alert">Ang temperaturang %1$.1f°%2$s ay tumaas sa iyong limitasyon na %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alerto sa Umaga?</string>
+	<string name="morning_temp_alert">Alerto sa Umaga?</string>
     <string name="next_moon">Susunod na mga kaganapan sa buwan?</string>
     <string name="no">Hindi</string>
     <string name="no_download_or_app_not_setup">Walang pag-download o app na hindi pa nase-setup</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Ulan sa pulgada?</string>
     <string name="rainfall_alert">Alerto sa Ulan?</string>
     <string name="rainfall_alert_desc">Araw-araw na mga alerto kapag naabot ng ulan ang iyong itinakdang limitasyon</string>
-    <string name="rainfall_alert_imperial">Ang ulan %1$.2f%2$s ay tumugma sa iyong limitasyon na %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Ang ulan %1$.1f%2$s ay tumugma sa iyong limitasyon na %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alerto sa Pag-ulan</string>
+	<string name="rainfall_alert_str">Alerto sa Pag-ulan</string>
     <string name="rainfall_limit">Limitasyon sa Pag-ulan</string>
-    <string name="rainrate_alert_imperial_severe">Rainrate ng %1$.2fin sa huling %2$d %3$s ay tumama sa \'Severe\' level</string>
-    <string name="rainrate_alert_imperial_warning">Rainrate ng %1$.2fin sa huling %2$d %3$s ay tumama sa antas ng \'Babala\'</string>
-    <string name="rainrate_alert_imperial_watch">Rainrate ng %1$.2fin sa huling %2$d %3$s ay tumama sa \'Watch\' level</string>
-    <string name="rainrate_alert_metric_severe">Rainrate ng %1$.1fmm sa huling %2$d %3$s ay tumama sa \'Severe\' level</string>
-    <string name="rainrate_alert_metric_warning">Rainrate na %1$.1fmm sa huling %2$d %3$s ay tumama sa antas ng \'Babala\'</string>
-    <string name="rainrate_alert_metric_watch">Rainrate ng %1$.1fmm sa huling %2$d %3$s ay tumama sa \'Watch\' level</string>
-    <string name="rainrate_alert_severe">Mga Alerto sa Matinding Ulan?</string>
+	<string name="rainrate_alert_severe">Mga Alerto sa Matinding Ulan?</string>
     <string name="rainrate_alert_severe_desc">Mga alerto kung lumampas ang rate ng ulan sa matinding limitasyon batay sa tagal ng pag-ulan</string>
     <string name="rainrate_alert_severe_str">Alerto sa Matinding Ulan</string>
     <string name="rainrate_alert_str">Alerto sa Rainrate</string>

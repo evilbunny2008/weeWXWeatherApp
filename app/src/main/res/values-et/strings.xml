@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Umbes</string>
     <string name="about_app">Teave rakenduse kohta</string>
-    <string name="afternoon_alert">Temperatuur %1$.1f°%2$s on langenud teie piirini %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Pärastlõunane hoiatus?</string>
+	<string name="afternoon_temp_alert">Pärastlõunane hoiatus?</string>
     <string name="all_time_stats">Kogu aegade statistika</string>
     <string name="app_theme">Rakenduse teema</string>
     <string name="avg">keskm</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Kas kasutada mõõdikut?</string>
     <string name="minutes">minutit</string>
-    <string name="morning_alert">Temperatuur %1$.1f°%2$s on tõusnud teie piirini %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Hommikune hoiatus?</string>
+	<string name="morning_temp_alert">Hommikune hoiatus?</string>
     <string name="next_moon">Järgmise kuu sündmused?</string>
     <string name="no">Ei</string>
     <string name="no_download_or_app_not_setup">Ühtegi allalaadimist ega rakendust pole seadistatud</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Vihm tollides?</string>
     <string name="rainfall_alert">Vihmahoiatus?</string>
     <string name="rainfall_alert_desc">Hoiatab iga päev, kui sademete hulk jõuab seatud piirini</string>
-    <string name="rainfall_alert_imperial">Vihmahulk %1$.2f%2$s on ühtinud teie limiidiga %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Vihmahulk %1$.1f%2$s on ühtinud teie limiidiga %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Vihmahoiatus</string>
+	<string name="rainfall_alert_str">Vihmahoiatus</string>
     <string name="rainfall_limit">Sademete piirmäär</string>
-    <string name="rainrate_alert_imperial_severe">Viimase %2$d %3$s vihmamäär %1$.2fin on saavutanud \'raske\' taseme</string>
-    <string name="rainrate_alert_imperial_warning">Viimase %2$d %3$s vihmamäär %1$.2fin on saavutanud hoiatustaseme</string>
-    <string name="rainrate_alert_imperial_watch">Viimase %2$d %3$s vihmamäär %1$.2fin on jõudnud vaatamistasemele</string>
-    <string name="rainrate_alert_metric_severe">Viimase %2$d %3$s sajumäär %1$.1fmm on saavutanud \'raske\' taseme</string>
-    <string name="rainrate_alert_metric_warning">Viimase %2$d %3$s vihmamäär %1$.1fmm on saavutanud hoiatustaseme</string>
-    <string name="rainrate_alert_metric_watch">Viimase %2$d %3$s vihmamäär %1$.1fmm on jõudnud vaatamistasemeni</string>
-    <string name="rainrate_alert_severe">Tõsise vihmamäära hoiatused?</string>
+	<string name="rainrate_alert_severe">Tõsise vihmamäära hoiatused?</string>
     <string name="rainrate_alert_severe_desc">Hoiatab, kui sademete hulk ületab sademete kestvuse põhjal kehtestatud piirmäära</string>
     <string name="rainrate_alert_severe_str">Tõsise vihmasaju hoiatus</string>
     <string name="rainrate_alert_str">Vihmahoiatus</string>

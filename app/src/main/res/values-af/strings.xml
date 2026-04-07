@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Oor</string>
     <string name="about_app">Oor die App</string>
-    <string name="afternoon_alert">Temperatuur %1$.1f°%2$s het tot jou limiet van %3$.1f°%2$s gedaal</string>
+    <string name="afternoon_alert">Temperatuur %1$s het tot jou limiet van %2$s gedaal</string>
     <string name="afternoon_temp_alert">Middagwaarskuwing?</string>
     <string name="all_time_stats">Alle tye Statistiek</string>
     <string name="app_theme">App Tema</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Pas App</string>
     <string name="metric">Gebruik metrieke?</string>
     <string name="minutes">minute</string>
-    <string name="morning_alert">Temperatuur %1$.1f°%2$s het tot jou limiet van %3$.1f°%2$s gestyg</string>
+    <string name="morning_alert">Temperatuur %1$s het tot jou limiet van %2$s gestyg</string>
     <string name="morning_temp_alert">Oggendwaarskuwing?</string>
     <string name="next_moon">Volgende maan gebeure?</string>
     <string name="no">Nee</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">Reën in duim?</string>
     <string name="rainfall_alert">Reënvalwaarskuwing?</string>
     <string name="rainfall_alert_desc">Waarskuwings daagliks wanneer die reënval jou vasgestelde limiet bereik</string>
-    <string name="rainfall_alert_imperial">Reënval %1$.2f%2$s het ooreenstem met jou limiet van %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Reënval %1$.1f%2$s het ooreenstem met jou limiet van %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Reënval %1$s het ooreenstem met jou limiet van %2$s</string>
     <string name="rainfall_alert_str">Reënval waarskuwing</string>
     <string name="rainfall_limit">Reënval beperking</string>
-    <string name="rainrate_alert_imperial_severe">Reëntempo van %1$.2fin, anders het %2$d %3$s \'Ernstige\' vlak bereik</string>
-    <string name="rainrate_alert_imperial_warning">Reëntempo van %1$.2fin in %2$d %3$s het \'Waarskuwing\'-vlak bereik</string>
-    <string name="rainrate_alert_imperial_watch">Reëntempo van %1$.2fin in die uitsondering dat %2$d %3$s \'Kyk\'-vlak bereik het</string>
-    <string name="rainrate_alert_metric_severe">Reëntempo van %1$.1fmm in die uitsondering dat %2$d %3$s \'Ernstige\' vlak bereik het</string>
-    <string name="rainrate_alert_metric_warning">Reëntempo van %1$.1fmm in die uitsondering dat %2$d %3$s \'Waarskuwing\'-vlak bereik het</string>
-    <string name="rainrate_alert_metric_watch">Reëntempo van %1$.1fmm in die minder dat %2$d %3$s \'Kyk\'-vlak bereik het</string>
     <string name="rainrate_alert_severe">Waarskuwings vir ernstige reën?</string>
     <string name="rainrate_alert_severe_desc">Waarskuwings as die reëntempo die erge limiet oorskry gebaseer op reënvalduur</string>
+    <string name="rainrate_alert_severe_notification">Reëntempo van %1$s in die laaste %2$d %3$s het \'Ernstige\' vlak bereik</string>
     <string name="rainrate_alert_severe_str">Waarskuwing vir ernstige reën</string>
     <string name="rainrate_alert_str">Reëntempo waarskuwing</string>
     <string name="rainrate_alert_warning">Waarskuwing Reëntempo-waarskuwings?</string>
     <string name="rainrate_alert_warning_desc">Waarskuwings as die reëntempo die waarskuwingsperk oorskry, gebaseer op reënvalduur</string>
+    <string name="rainrate_alert_warning_notification">Reëntempo van %1$s in die laaste %2$d %3$s het \'Waarskuwing\'-vlak bereik</string>
     <string name="rainrate_alert_warning_str">Waarskuwing Reëntempo waarskuwing</string>
     <string name="rainrate_alert_watch">Kyk na Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Waarskuwings as die reëntempo die waglimiet oorskry op grond van reënvalduur</string>
+    <string name="rainrate_alert_watch_notification">Reëntempo van %1$s in die laaste %2$d %3$s het \'Kyk\'-vlak bereik</string>
     <string name="rainrate_alert_watch_str">Kyk Rainrate Alert</string>
     <string name="refresh_time">Kies Herlaai tyd</string>
     <string name="remove_all_data">Is jy seker jy wil alle data verwyder?</string>

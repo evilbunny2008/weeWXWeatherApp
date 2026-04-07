@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Injo hubbu</string>
     <string name="about_app">Ri sesena</string>
-    <string name="afternoon_alert">Suhu %1$.1f°%2$s naung mange ri batasnu %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Waspada sore?</string>
+	<string name="afternoon_temp_alert">Waspada sore?</string>
     <string name="all_time_stats">Sikontu Statistik Time</string>
     <string name="app_theme">appering</string>
     <string name="avg">rata-rata</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Pep</string>
     <string name="metric">Pakei anjo passalaka?</string>
     <string name="minutes">manni</string>
-    <string name="morning_alert">Suhu %1$.1f°%2$s nai\'mi mange ri batasnu %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Waspada bari\'basa?</string>
+	<string name="morning_temp_alert">Waspada bari\'basa?</string>
     <string name="next_moon">Acara bulang ribokoanganna?</string>
     <string name="no">Tena</string>
     <string name="no_download_or_app_not_setup">Tena na\'download yareka apps tenapa na\'jari</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">Bosi ri inci?</string>
     <string name="rainfall_alert">Waspada bosi?</string>
     <string name="rainfall_alert_desc">Pappiu\'rangi allo-allo punna bosi narapi\'i batasa nu lebba\'</string>
-    <string name="rainfall_alert_imperial">Bosi %1$.2f%2$s sangkammai siagang batasnu %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Bosi %1$.1f%2$s sangkammai siagang batasnu %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Peringatan bosi</string>
+	<string name="rainfall_alert_str">Peringatan bosi</string>
     <string name="rainfall_limit">Batas bosi</string>
-    <string name="rainrate_alert_imperial_severe">Rainrate %1$.2fin ri %2$d %3$s ribokoangna narapi\'mi tingka\' \'parah\'</string>
-    <string name="rainrate_alert_imperial_warning">Rainrate %1$.2fin ri %2$d %3$s ribokoangna narapi\'mi tingka\' \'Peringatan\'</string>
-    <string name="rainrate_alert_imperial_watch">Rainrate %1$.2fin ri %2$d %3$s ribokoangna narapi\'mi tingka\' \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Rainrate %1$.1fmm ri %2$d %3$s ribokoangna narapi\'mi tingka\' \'parah\'</string>
-    <string name="rainrate_alert_metric_warning">Rainrate %1$.1fmm ri %2$d %3$s ribokoangna narapi\'mi tingka\' \'Peringatan\'</string>
-    <string name="rainrate_alert_metric_watch">Rainrate %1$.1fmm ri %2$d %3$s ribokoangna narapi\'mi tingka\' \'Tonton\'</string>
-    <string name="rainrate_alert_severe">Peringatan laju bosi parah?</string>
+	<string name="rainrate_alert_severe">Peringatan laju bosi parah?</string>
     <string name="rainrate_alert_severe_desc">Pappiu\'rangi punna bosi labbiangngangi batas parahna situru\' wattu bosi</string>
     <string name="rainrate_alert_severe_str">Waspada bosi parah</string>
     <string name="rainrate_alert_str">Peringatan laju bosi</string>

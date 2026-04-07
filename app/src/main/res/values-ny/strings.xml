@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Za</string>
     <string name="about_app">Za pulogalamuyi</string>
-    <string name="afternoon_alert">Kutentha %1$.1f°%2$s kwatsika kufika pa %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Chidziwitso Cha Masana?</string>
+	<string name="afternoon_temp_alert">Chidziwitso Cha Masana?</string>
     <string name="all_time_stats">Nthawi zonse ziwerengero</string>
     <string name="app_theme">Mutu wa App</string>
 	<string name="battery_warning">CHENJEZO: KUTHANDIZA KUTI MUZINTHA KWAULERE KWAULERE KWAULERE KWAULERE KWAULERE KWAULERE</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Gwirizanani ndi pulogalamu</string>
     <string name="metric">Kugwiritsa ntchito metric?</string>
     <string name="minutes">mphindi</string>
-    <string name="morning_alert">Kutentha %1$.1f°%2$s kwakwera kufika pa %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Chidziwitso Cham\'mawa?</string>
+	<string name="morning_temp_alert">Chidziwitso Cham\'mawa?</string>
     <string name="next_moon">Zochitika pamwezi?</string>
     <string name="no">Ayi</string>
     <string name="no_download_or_app_not_setup">Palibe kutsitsa kapena pulogalamu yomwe sinakhazikitsidwe</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Mvula mwa mainchesi?</string>
     <string name="rainfall_alert">Chenjezo la Mvula?</string>
     <string name="rainfall_alert_desc">Zidziwitso tsiku lililonse mvula ikafika pamlingo womwe munakhazikitsa</string>
-    <string name="rainfall_alert_imperial">Mvula %1$.2f%2$s yafanana ndi malire anu a %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Mvula %1$.1f%2$s yafanana ndi malire anu a %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Chenjezo la Mvula</string>
+	<string name="rainfall_alert_str">Chenjezo la Mvula</string>
     <string name="rainfall_limit">Malire a Mvula</string>
-    <string name="rainrate_alert_imperial_severe">Mvula ya %1$.2fin mu %2$d %3$s yomaliza yafika pamlingo wa \'Yowawa\'</string>
-    <string name="rainrate_alert_imperial_warning">Mvula ya %1$.2fin mu %2$d %3$s yomaliza yafika pa \'Chenjezo\'</string>
-    <string name="rainrate_alert_imperial_watch">Mvula ya %1$.2fin mu %2$d %3$s yomaliza yafika pamlingo wa \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Mvula ya %1$.1fmm mu %2$d %3$s yomaliza yafika pamlingo wa \'Koopsa\'</string>
-    <string name="rainrate_alert_metric_warning">Mvula ya %1$.1fmm mu %2$d %3$s yomaliza yafika pa \'Chenjezo\'</string>
-    <string name="rainrate_alert_metric_watch">Mvula ya %1$.1fmm m\'nthawi yomaliza ya %2$d %3$s yafika pamlingo wa \'Watch\'</string>
-    <string name="rainrate_alert_severe">Zidziwitso za Mvula Yambiri?</string>
+	<string name="rainrate_alert_severe">Zidziwitso za Mvula Yambiri?</string>
     <string name="rainrate_alert_severe_desc">Zidziwitso ngati mvula ipitilira malire kutengera kutalika kwa mvula</string>
     <string name="rainrate_alert_severe_str">Chenjezo la Mvula Yambiri</string>
     <string name="rainrate_alert_str">Chidziwitso cha Mvula</string>

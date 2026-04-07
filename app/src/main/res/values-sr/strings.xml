@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Абоут</string>
     <string name="about_app">О апликацији</string>
-    <string name="afternoon_alert">Температура %1$.1f°%2$s је пала на вашу границу од %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Поподневно упозорење?</string>
+	<string name="afternoon_temp_alert">Поподневно упозорење?</string>
     <string name="all_time_stats">Статистика свих времена</string>
     <string name="app_theme">Апп Тхеме</string>
 	<string name="battery_warning">Упозорење: Омогућавање горње опције може да испразни батерију брже него иначе</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Матцх Апп</string>
     <string name="metric">Користити метрику?</string>
     <string name="minutes">минута</string>
-    <string name="morning_alert">Температура %1$.1f°%2$s је порасла на вашу границу од %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Морнинг Алерт?</string>
+	<string name="morning_temp_alert">Морнинг Алерт?</string>
     <string name="next_moon">Догађаји следећег месеца?</string>
     <string name="no">бр</string>
     <string name="no_download_or_app_not_setup">Ниједно преузимање или апликација није подешена</string>
@@ -82,17 +80,9 @@
     <string name="rain_in_inches">Киша у инчима?</string>
     <string name="rainfall_alert">Раинфалл Алерт?</string>
     <string name="rainfall_alert_desc">Обавештава вас свакодневно када киша достигне постављено ограничење</string>
-    <string name="rainfall_alert_imperial">Киша %1$.2f%2$s се поклопила са вашим ограничењем од %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Киша %1$.1f%2$s се поклопила са вашим ограничењем од %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Раинфалл Алерт</string>
+	<string name="rainfall_alert_str">Раинфалл Алерт</string>
     <string name="rainfall_limit">Ограничење падавина</string>
-    <string name="rainrate_alert_imperial_severe">Стопа кише од %1$.2fin у последњих %2$d %3$s достигла је ниво \'озбиљан\'</string>
-    <string name="rainrate_alert_imperial_warning">Стопа кише од %1$.2fin у последњих %2$d %3$s је достигла ниво \'Упозорење\'</string>
-    <string name="rainrate_alert_imperial_watch">Стопа кише од %1$.2fin у последњих %2$d %3$s је достигла ниво \'Гледајте\'</string>
-    <string name="rainrate_alert_metric_severe">Стопа кише од %1$.1mm у последњих %2$d %3$s је достигла \'озбиљан\' ниво</string>
-    <string name="rainrate_alert_metric_warning">Стопа кише од %1$.1mm у последњих %2$d %3$s је достигла ниво \'Упозорење\'</string>
-    <string name="rainrate_alert_metric_watch">Стопа кише од %1$.1mm у последњих %2$d %3$s је достигла ниво \'Гледајте\'</string>
-    <string name="rainrate_alert_severe">Упозорења о јакој киши?</string>
+	<string name="rainrate_alert_severe">Упозорења о јакој киши?</string>
     <string name="rainrate_alert_severe_desc">Упозорава ако количина кише премашује озбиљну границу на основу трајања падавина</string>
     <string name="rainrate_alert_severe_str">Упозорење о јакој киши</string>
     <string name="rainrate_alert_str">Раинрате Алерт</string>

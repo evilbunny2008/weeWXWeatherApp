@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Ku saabsan</string>
     <string name="about_app">Ku saabsan barnaamijka</string>
-    <string name="afternoon_alert">Heerkulka %1$.1f°%2$s ayaa hoos ugu dhacay xadkaaga %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Digniin Galabta?</string>
+	<string name="afternoon_temp_alert">Digniin Galabta?</string>
     <string name="all_time_stats">Tirakoobka waqtiga oo dhan</string>
     <string name="app_theme">Mowduuca app</string>
 	<string name="battery_warning">DIGNIIN: Awood u yeelashada ikhtiyaarka kore wuxuu ka daadin karaa batteriga si ka dhakhso badan sidii caadiga ahayd</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Ciyaarta ciyaarta</string>
     <string name="metric">Adeegso mitirka?</string>
     <string name="minutes">daqiiqado</string>
-    <string name="morning_alert">Heerkulka %1$.1f°%2$s ayaa kor u kacay ilaa xadkaaga %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Digniin Subax?</string>
+	<string name="morning_temp_alert">Digniin Subax?</string>
     <string name="next_moon">Dhacdooyinka Dayaxa ee xigta?</string>
     <string name="no">Maya</string>
     <string name="no_download_or_app_not_setup">Ma jiro soo dejin ama abka lama dejin</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Roobka Inches?</string>
     <string name="rainfall_alert">Digniin Roobab?</string>
     <string name="rainfall_alert_desc">Digniin maalinle ah marka roobku gaadho xadkaaga go\'an</string>
-    <string name="rainfall_alert_imperial">Roobabka %1$.2f%2$s ayaa u dhigma xadkaaga %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Roobabka %1$.1f%2$s ayaa u dhigma xadkaaga %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Digniinta Roobka</string>
+	<string name="rainfall_alert_str">Digniinta Roobka</string>
     <string name="rainfall_limit">Xadka Roobabka</string>
-    <string name="rainrate_alert_imperial_severe">Heerka roobka %1$.2fin ee %2$d %3$s ee udambeeyay ayaa gaadhay heer \'daran\'</string>
-    <string name="rainrate_alert_imperial_warning">Heerka roobka %1$.2fin ee u dambeeyay %2$d %3$s ayaa gaadhay heerka \'Digniinka\'</string>
-    <string name="rainrate_alert_imperial_watch">Heerka roobka %1$.2fin ee u dambeeyay %2$d %3$s ayaa gaadhay heerka \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Heerarka %1$.1fmm ee u dambeeyay %2$d %3$s ayaa gaadhay heer \'Daran\'</string>
-    <string name="rainrate_alert_metric_warning">Heerka roobka %1$.1fmm ee u dambeeyay %2$d %3$s ayaa gaadhay heerka \'Digniinka\'</string>
-    <string name="rainrate_alert_metric_watch">Heerka roobka %1$.1fmm ee u dambeeyay %2$d %3$s ayaa gaadhay heerka \'Watch\'</string>
-    <string name="rainrate_alert_severe">Digniinta Roobabka daran?</string>
+	<string name="rainrate_alert_severe">Digniinta Roobabka daran?</string>
     <string name="rainrate_alert_severe_desc">Ogeysiis haddii heerka roobku dhaafo xadka daran ee ku salaysan muddada roobka</string>
     <string name="rainrate_alert_severe_str">Digniin Roobab Daran</string>
     <string name="rainrate_alert_str">Digniinta Roobka</string>

@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Acerca de</string>
     <string name="about_app">Acerca de la aplicación</string>
-    <string name="afternoon_alert">La temperatura %1$.1f°%2$s ha bajado a su límite de %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">¿Alerta de la tarde?</string>
+	<string name="afternoon_temp_alert">¿Alerta de la tarde?</string>
     <string name="all_time_stats">Estadísticas de todos los tiempos</string>
     <string name="app_theme">Tema de la aplicación</string>
     <string name="avg">prom.</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Aplicación de partidos</string>
     <string name="metric">¿Usar métrica?</string>
     <string name="minutes">minutos</string>
-    <string name="morning_alert">La temperatura %1$.1f°%2$s ha aumentado hasta tu límite de %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">¿Alerta matutina?</string>
+	<string name="morning_temp_alert">¿Alerta matutina?</string>
     <string name="next_moon">¿Próximos eventos lunares?</string>
     <string name="no">No</string>
     <string name="no_download_or_app_not_setup">No se ha descargado o no se ha configurado la aplicación</string>
@@ -86,17 +84,9 @@
     <string name="rain_in_inches">¿Lluvia en pulgadas?</string>
     <string name="rainfall_alert">¿Alerta de lluvia?</string>
     <string name="rainfall_alert_desc">Alertas diarias cuando la lluvia alcanza el límite establecido</string>
-    <string name="rainfall_alert_imperial">Las precipitaciones %1$.2f%2$s han coincidido con tu límite de %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Las precipitaciones %1$.1f%2$s han coincidido con tu límite de %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alerta de lluvia</string>
+	<string name="rainfall_alert_str">Alerta de lluvia</string>
     <string name="rainfall_limit">Límite de lluvia</string>
-    <string name="rainrate_alert_imperial_severe">La tasa de lluvia de %1$.2fin en los últimos %2$d %3$s ha alcanzado el nivel \'Severo\'</string>
-    <string name="rainrate_alert_imperial_warning">La tasa de lluvia de %1$.2fin en los últimos %2$d %3$s ha alcanzado el nivel de \'Advertencia\'</string>
-    <string name="rainrate_alert_imperial_watch">La tasa de lluvia de %1$.2fin en los últimos %2$d %3$s ha alcanzado el nivel \'Vigilancia\'</string>
-    <string name="rainrate_alert_metric_severe">La tasa de lluvia de %1$.1fmm en los últimos %2$d %3$s alcanzó el nivel \'Severo\'</string>
-    <string name="rainrate_alert_metric_warning">La tasa de lluvia de %1$.1fmm en los últimos %2$d %3$s alcanzó el nivel de \'Advertencia\'</string>
-    <string name="rainrate_alert_metric_watch">La tasa de lluvia de %1$.1fmm en los últimos %2$d %3$s alcanzó el nivel \'Vigilancia\'</string>
-    <string name="rainrate_alert_severe">¿Alertas de lluvia intensa?</string>
+	<string name="rainrate_alert_severe">¿Alertas de lluvia intensa?</string>
     <string name="rainrate_alert_severe_desc">Alertas si la tasa de lluvia excede el límite severo según la duración de la lluvia</string>
     <string name="rainrate_alert_severe_str">Alerta de lluvia severa</string>
     <string name="rainrate_alert_str">Alerta de lluvia</string>

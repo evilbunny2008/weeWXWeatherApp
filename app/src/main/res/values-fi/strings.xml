@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Noin</string>
     <string name="about_app">Tietoja sovelluksesta</string>
-    <string name="afternoon_alert">Lämpötila %1$.1f°%2$s on laskenut rajallesi %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Iltapäivän hälytys?</string>
+	<string name="afternoon_temp_alert">Iltapäivän hälytys?</string>
     <string name="all_time_stats">Kaikkien aikojen tilastot</string>
     <string name="app_theme">Sovelluksen teema</string>
     <string name="avg">ka.</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Käytätkö metriikkaa?</string>
     <string name="minutes">minuuttia</string>
-    <string name="morning_alert">Lämpötila %1$.1f°%2$s on noussut rajallesi %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Aamuvaroitus?</string>
+	<string name="morning_temp_alert">Aamuvaroitus?</string>
     <string name="next_moon">Ensi kuun tapahtumat?</string>
     <string name="no">Ei</string>
     <string name="no_download_or_app_not_setup">Mitään latausta tai sovellusta ei ole määritetty</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Sadetta tuumaa?</string>
     <string name="rainfall_alert">Varoitus sateesta?</string>
     <string name="rainfall_alert_desc">Hälyttää päivittäin, kun sademäärä saavuttaa asettamasi rajan</string>
-    <string name="rainfall_alert_imperial">Sademäärä %1$.2f%2$s on vastannut rajaasi %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Sademäärä %1$.1f%2$s on vastannut rajaasi %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Varoitus sateesta</string>
+	<string name="rainfall_alert_str">Varoitus sateesta</string>
     <string name="rainfall_limit">Sademäärän raja</string>
-    <string name="rainrate_alert_imperial_severe">%1$.2fin sademäärä viimeisen %2$d %3$s aikana on saavuttanut vakavan tason</string>
-    <string name="rainrate_alert_imperial_warning">%1$.2fin sademäärä viimeisen %2$d %3$s aikana on saavuttanut varoitustason</string>
-    <string name="rainrate_alert_imperial_watch">%1$.2fin sademäärä viimeisen %2$d %3$s aikana on saavuttanut \'Katso\'-tason</string>
-    <string name="rainrate_alert_metric_severe">%1$.1fmm sademäärä viimeisen %2$d %3$s aikana on saavuttanut vakavan tason</string>
-    <string name="rainrate_alert_metric_warning">%1$.1fmm sademäärä viimeisen %2$d %3$s aikana on saavuttanut varoitustason</string>
-    <string name="rainrate_alert_metric_watch">%1$.1fmm sademäärä viimeisen %2$d %3$s aikana on saavuttanut \'Katso\'-tason</string>
-    <string name="rainrate_alert_severe">Vakavat sademäärähälytykset?</string>
+	<string name="rainrate_alert_severe">Vakavat sademäärähälytykset?</string>
     <string name="rainrate_alert_severe_desc">Hälyttää, jos sademäärä ylittää sateen kestoon perustuvan ankaran rajan</string>
     <string name="rainrate_alert_severe_str">Varoitus vakavasta sademäärästä</string>
     <string name="rainrate_alert_str">Varoitus sademäärästä</string>

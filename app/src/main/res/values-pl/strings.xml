@@ -2,8 +2,7 @@
 <resources>
     <string name="about">O</string>
     <string name="about_app">O aplikacji</string>
-    <string name="afternoon_alert">Temperatura %1$.1f°%2$s spadła do limitu %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Popołudniowy alarm?</string>
+	<string name="afternoon_temp_alert">Popołudniowy alarm?</string>
     <string name="all_time_stats">Statystyki wszechczasów</string>
     <string name="app_theme">Motyw aplikacji</string>
 	<string name="avg">śr.</string>
@@ -59,8 +58,7 @@
     <string name="match_app">Dopasuj aplikację</string>
     <string name="metric">Użyć danych?</string>
     <string name="minutes">protokół</string>
-    <string name="morning_alert">Temperatura %1$.1f°%2$s wzrosła do limitu %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Poranny alarm?</string>
+	<string name="morning_temp_alert">Poranny alarm?</string>
     <string name="next_moon">Następne wydarzenia na Księżycu?</string>
     <string name="no">NIE</string>
     <string name="no_download_or_app_not_setup">Brak pobierania lub aplikacja nie została skonfigurowana</string>
@@ -84,17 +82,9 @@
     <string name="rain_in_inches">Deszcz w calach?</string>
     <string name="rainfall_alert">Alarm opadowy?</string>
     <string name="rainfall_alert_desc">Codziennie powiadamia, gdy opady osiągną ustawiony limit</string>
-    <string name="rainfall_alert_imperial">Opady deszczu %1$.2f%2$s osiągnęły limit %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Opady deszczu %1$.1f%2$s osiągnęły limit %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alarm opadowy</string>
+	<string name="rainfall_alert_str">Alarm opadowy</string>
     <string name="rainfall_limit">Limit opadów</string>
-    <string name="rainrate_alert_imperial_severe">Poziom opadów wynoszący %1$.2fin w ciągu ostatnich %2$d %3$s osiągnął poziom \'Poważny\'</string>
-    <string name="rainrate_alert_imperial_warning">Poziom opadów wynoszący %1$.2fin w ciągu ostatnich %2$d %3$s osiągnął poziom \'Ostrzeżenie\'</string>
-    <string name="rainrate_alert_imperial_watch">Poziom opadów wynoszący %1$.2fin w ciągu ostatnich %2$d %3$s osiągnął poziom \'Obserwuj\'</string>
-    <string name="rainrate_alert_metric_severe">Poziom opadów wynoszący %1$.1fmm w ciągu ostatnich %2$d %3$s osiągnął poziom \'Poważny\'</string>
-    <string name="rainrate_alert_metric_warning">Poziom opadów wynoszący %1$.1fmm w ciągu ostatnich %2$d %3$s osiągnął poziom \'Ostrzeżenie\'</string>
-    <string name="rainrate_alert_metric_watch">Poziom opadów wynoszący %1$.1fmm w ciągu ostatnich %2$d %3$s osiągnął poziom \'Watch\'</string>
-    <string name="rainrate_alert_severe">Alarmy dotyczące dużych opadów?</string>
+	<string name="rainrate_alert_severe">Alarmy dotyczące dużych opadów?</string>
     <string name="rainrate_alert_severe_desc">Ostrzega, jeśli natężenie opadów przekroczy dotkliwy limit na podstawie czasu trwania opadów</string>
     <string name="rainrate_alert_severe_str">Alarm o silnych opadach deszczu</string>
     <string name="rainrate_alert_str">Alarm opadów</string>

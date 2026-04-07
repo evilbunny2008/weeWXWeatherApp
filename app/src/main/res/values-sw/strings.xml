@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Kuhusu</string>
     <string name="about_app">Kuhusu programu</string>
-    <string name="afternoon_alert">Halijoto %1$.1f°%2$s imeshuka hadi kikomo chako cha %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Arifa ya Alasiri?</string>
+	<string name="afternoon_temp_alert">Arifa ya Alasiri?</string>
     <string name="all_time_stats">Takwimu zote za wakati</string>
     <string name="app_theme">Mandhari ya programu</string>
 	<string name="battery_warning">Onyo: kuwezesha chaguo hapo juu kunaweza kufuta betri yako haraka kuliko kawaida</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Mechi ya programu</string>
     <string name="metric">Tumia metric?</string>
     <string name="minutes">dakika</string>
-    <string name="morning_alert">Halijoto %1$.1f°%2$s imepanda hadi kikomo chako cha %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Tahadhari ya Asubuhi?</string>
+	<string name="morning_temp_alert">Tahadhari ya Asubuhi?</string>
     <string name="next_moon">Matukio ya mwezi ujao?</string>
     <string name="no">Hapana</string>
     <string name="no_download_or_app_not_setup">Hakuna upakuaji au programu ambayo haijasanidiwa</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Mvua kwa Inchi?</string>
     <string name="rainfall_alert">Tahadhari kuhusu Mvua?</string>
     <string name="rainfall_alert_desc">Arifa kila siku mvua inapofikia kikomo chako ulichoweka</string>
-    <string name="rainfall_alert_imperial">Mvua %1$.2f%2$s imelingana na kikomo chako cha %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Mvua %1$.1f%2$s imelingana na kikomo chako cha %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Tahadhari ya Kunyesha kwa Mvua</string>
+	<string name="rainfall_alert_str">Tahadhari ya Kunyesha kwa Mvua</string>
     <string name="rainfall_limit">Kikomo cha Mvua</string>
-    <string name="rainrate_alert_imperial_severe">Mvua ya %1$.2fin katika %2$d %3$s iliyopita imefikia kiwango cha \'Kali\'</string>
-    <string name="rainrate_alert_imperial_warning">Mvua ya %1$.2fin katika %2$d %3$s iliyopita imefikia kiwango cha \'Onyo\'</string>
-    <string name="rainrate_alert_imperial_watch">Mvua ya %1$.2fin katika %2$d %3$s iliyopita imefikia kiwango cha \'Saa\'</string>
-    <string name="rainrate_alert_metric_severe">Mvua ya %1$.1fmm katika %2$d %3$s iliyopita imefikia kiwango cha \'Kali\'</string>
-    <string name="rainrate_alert_metric_warning">Mvua ya %1$.1fmm katika %2$d %3$s iliyopita imefikia kiwango cha \'Onyo\'</string>
-    <string name="rainrate_alert_metric_watch">Mvua ya %1$.1fmm katika %2$d %3$s iliyopita imefikia kiwango cha \'Saa\'</string>
-    <string name="rainrate_alert_severe">Tahadhari kuhusu Mvua Kubwa?</string>
+	<string name="rainrate_alert_severe">Tahadhari kuhusu Mvua Kubwa?</string>
     <string name="rainrate_alert_severe_desc">Tahadhari ikiwa kiwango cha mvua kinazidi kikomo kali kulingana na muda wa mvua</string>
     <string name="rainrate_alert_severe_str">Tahadhari ya Mvua Kubwa</string>
     <string name="rainrate_alert_str">Tahadhari ya Mvua</string>

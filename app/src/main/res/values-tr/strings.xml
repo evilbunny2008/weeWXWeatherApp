@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Hakkında</string>
     <string name="about_app">Uygulama Hakkında</string>
-    <string name="afternoon_alert">%1$.1f°%2$s sıcaklığı %3$.1f°%2$s sınırınıza düştü</string>
-    <string name="afternoon_temp_alert">Öğleden Sonra Uyarısı?</string>
+	<string name="afternoon_temp_alert">Öğleden Sonra Uyarısı?</string>
     <string name="all_time_stats">Tüm Zamanların İstatistikleri</string>
     <string name="app_theme">Uygulama Teması</string>
 	<string name="battery_warning">Uyarı: Yukarıdaki seçeneğin etkinleştirilmesi pilinizin normalden daha hızlı tükenmesine neden olabilir</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Maç Uygulaması</string>
     <string name="metric">Metrik kullanılsın mı?</string>
     <string name="minutes">dakika</string>
-    <string name="morning_alert">%1$.1f°%2$s sıcaklığı %3$.1f°%2$s sınırınıza yükseldi</string>
-    <string name="morning_temp_alert">Sabah Uyarısı?</string>
+	<string name="morning_temp_alert">Sabah Uyarısı?</string>
     <string name="next_moon">Sonraki ay etkinlikleri?</string>
     <string name="no">HAYIR</string>
     <string name="no_download_or_app_not_setup">Hiçbir indirme yapılmadı veya uygulama kurulmadı</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">İnç cinsinden yağmur mu?</string>
     <string name="rainfall_alert">Yağış Uyarısı?</string>
     <string name="rainfall_alert_desc">Yağış belirlenen limite ulaştığında günlük olarak uyarı verir</string>
-    <string name="rainfall_alert_imperial">%1$.2f%2$s yağış %3$.2f%2$s sınırınıza ulaştı</string>
-    <string name="rainfall_alert_metric">%1$.1f%2$s yağış %3$.1f%2$s sınırınıza ulaştı</string>
-    <string name="rainfall_alert_str">Yağış Uyarısı</string>
+	<string name="rainfall_alert_str">Yağış Uyarısı</string>
     <string name="rainfall_limit">Yağış Sınırı</string>
-    <string name="rainrate_alert_imperial_severe">Son %2$d %3$s\'de %1$.2fin yağmur oranı \'Şiddetli\' seviyeye ulaştı</string>
-    <string name="rainrate_alert_imperial_warning">Son %2$d %3$s\'deki %1$.2fin yağmur oranı \'Uyarı\' seviyesine ulaştı</string>
-    <string name="rainrate_alert_imperial_watch">Son %2$d %3$s\'deki %1$.2fin yağmur oranı \'İzleme\' seviyesine ulaştı</string>
-    <string name="rainrate_alert_metric_severe">Son %2$d %3$s\'de %1$.1fmm yağmur oranı \'Şiddetli\' seviyeye ulaştı</string>
-    <string name="rainrate_alert_metric_warning">Son %2$d %3$s\'deki %1$.1fmm yağmur oranı \'Uyarı\' seviyesine ulaştı</string>
-    <string name="rainrate_alert_metric_watch">Son %2$d %3$s\'deki %1$.1fmm yağmur oranı \'İzle\' seviyesine ulaştı</string>
-    <string name="rainrate_alert_severe">Şiddetli Yağmur Oranı Uyarıları?</string>
+	<string name="rainrate_alert_severe">Şiddetli Yağmur Oranı Uyarıları?</string>
     <string name="rainrate_alert_severe_desc">Uyarılar%20eğer%20yağmur oranı%20%20şiddetli%20sınırı%20aşarsa%20%20yağmur%20süreye göre%20</string>
     <string name="rainrate_alert_severe_str">Şiddetli Yağmur Oranı Uyarısı</string>
     <string name="rainrate_alert_str">Yağmur Hızı Uyarısı</string>

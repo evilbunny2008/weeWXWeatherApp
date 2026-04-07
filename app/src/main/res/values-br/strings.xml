@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Diwar-benn</string>
     <string name="about_app">Diwar-benn an App</string>
-    <string name="afternoon_alert">Diskennet eo an temperadur %1$.1f°%2$s betek ho bevenn a %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Diskennet eo gwrezverk %1$s betek ho bevenn a %2$s</string>
     <string name="afternoon_temp_alert">Kemenn goude merenn?</string>
     <string name="all_time_stats">Stadegoù an amzer a-bezh</string>
     <string name="app_theme">Tem an app</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Match app</string>
     <string name="metric">Implijout Metrik?</string>
     <string name="minutes">munutoù</string>
-    <string name="morning_alert">Savet eo an temperadur %1$.1f°%2$s betek ho bevenn a %3$.1f°%2$s</string>
+    <string name="morning_alert">Aet eo an temperadur %1$s betek ho bevenn a %2$s</string>
     <string name="morning_temp_alert">Kemennadenn ar mintin?</string>
     <string name="next_moon">Darvoudoù al loar da heul?</string>
     <string name="no">Ket</string>
@@ -88,25 +88,21 @@
     <string name="rain_in_inches">Glav e poulloù?</string>
     <string name="rainfall_alert">Kemennadenn glav?</string>
     <string name="rainfall_alert_desc">Kemennadennoù bemdez pa vez tizhet ar vevenn lakaet gant ar glav</string>
-    <string name="rainfall_alert_imperial">Ar glaveier %1$.2f%2$s en deus kevatal d\'ho bevenn %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Ar glaveier %1$.1f%2$s en deus kevatal d\'ho termen %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Ar glaveier %1$s a glot gant ho bevenn %2$s</string>
     <string name="rainfall_alert_str">Kemennadenn glav</string>
     <string name="rainfall_limit">Bevenn ar glaveier</string>
-    <string name="rainrate_alert_imperial_severe">Ar feur glav a %1$.2fin e-kerzh an %2$d %3$s diwezhañ en deus tizhet al live \'Grevus\'</string>
-    <string name="rainrate_alert_imperial_warning">Ar feur glav a %1$.2fin e-kerzh an %2$d %3$s diwezhañ en deus tizhet al live \'Diwallit\'</string>
-    <string name="rainrate_alert_imperial_watch">Ar feur glav a %1$.2fin e-kerzh an %2$d %3$s diwezhañ en deus tizhet al live \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Ar feur glav a %1$.1fmm e-kerzh an %2$d %3$s diwezhañ en deus tizhet al live \'Kreñv\'</string>
-    <string name="rainrate_alert_metric_warning">Ar feur glav a %1$.1fmm e-kerzh an %2$d %3$s diwezhañ en deus tizhet al live \'Diwallit\'</string>
-    <string name="rainrate_alert_metric_watch">Ar feur glav a %1$.1fmm e-kerzh an %2$d %3$s diwezhañ en deus tizhet al live \'Sellet\'</string>
     <string name="rainrate_alert_severe">Kemennadennoù diwar-benn ar glav kreñv?</string>
     <string name="rainrate_alert_severe_desc">Kemennadennoù ma tremen ar feur glav ar vevenn strizh diazezet war padelezh ar glav</string>
+    <string name="rainrate_alert_severe_notification">Ar feur glav a %1$s e-kerzh an %2$d %3$s diwezhañ en deus tizhet al live \'Grevus\'</string>
     <string name="rainrate_alert_severe_str">Kemennadenn diwar-benn ar glav kreñv</string>
     <string name="rainrate_alert_str">Diwall ouzh ar feur glav</string>
     <string name="rainrate_alert_warning">Kemennadennoù war ar feur glav?</string>
     <string name="rainrate_alert_warning_desc">Kemennadennoù ma tremen ar feur glav ar vevenn evezhiañ diazezet war padelezh ar glav</string>
+    <string name="rainrate_alert_warning_notification">Ar feur glav %1$s e-kerzh an %2$d %3$s diwezhañ en deus tizhet al live \'Diwallit\'</string>
     <string name="rainrate_alert_warning_str">Kemennadenn war ar feur glav</string>
     <string name="rainrate_alert_watch">Sellet ouzh ar c\'hemennoù glav?</string>
     <string name="rainrate_alert_watch_desc">Kemennadennoù ma tremen ar feur glav ar vevenn evezhiañ diouzh padelezh ar glav</string>
+    <string name="rainrate_alert_watch_notification">Ar feur glav %1$s e-kerzh an %2$d %3$s diwezhañ en deus tizhet al live \'Sellet\'</string>
     <string name="rainrate_alert_watch_str">Sellit ouzh ar c\'hemenn glav</string>
     <string name="refresh_time">Dibab amzer fresk</string>
     <string name="remove_all_data">Sur oc\'h e fell deoc\'h lemel an holl roadennoù?</string>

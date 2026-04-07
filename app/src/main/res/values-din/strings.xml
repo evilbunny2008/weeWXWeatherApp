@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Ɣɔ̈n</string>
     <string name="about_app">Cït mɛn de Apple</string>
-    <string name="afternoon_alert">Atuɔ̈c %1$.1f°%2$s acï lɔ piny tën thökdu ë %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Tɛ̈m %1$s acï lɔ piny tën thökdu %2$s</string>
     <string name="afternoon_temp_alert">Alert de akɔ̈l ciɛlic?</string>
     <string name="all_time_stats">Käk ë thää ëbɛ̈n</string>
     <string name="app_theme">Kë ye luɔ̈i ke</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Mäth Yïn</string>
     <string name="metric">Luɔi Meric?</string>
     <string name="minutes">ye minutes</string>
-    <string name="morning_alert">Atuɔ̈c %1$.1f°%2$s acï rot juak agut cï thökdu ë %3$.1f°%2$s</string>
+    <string name="morning_alert">Tɛ̈m %1$s acï rot juak agut cï thökdu %2$s</string>
     <string name="morning_temp_alert">Kë ye kɔc lɛ̈k miäkduur?</string>
     <string name="next_moon">Kä kɔ̈k ke pɛ̈i ke pɛɛi?</string>
     <string name="no">jai</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Deŋ në Inch?</string>
     <string name="rainfall_alert">Kë ye kɔc lɛ̈k deŋ?</string>
     <string name="rainfall_alert_desc">Ye kɔc lɛ̈k në köölthok të cïnë deŋ ɣet të cïnë ye tääu thïn</string>
-    <string name="rainfall_alert_imperial">Deŋ %1$.2f%2$s acï thöŋ keke thökdu ë %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Deŋ %1$.1f%2$s acï thöŋ kek thökdu ë %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Deŋ ë %1$s acï thöŋ ke thökdu ë %2$s</string>
     <string name="rainfall_alert_str">Lööŋ de Deŋ</string>
     <string name="rainfall_limit">Akër de Deŋ</string>
-    <string name="rainrate_alert_imperial_severe">Deŋ de %1$.2fin në thök de %2$d %3$s acï \'Kë ril\' yök</string>
-    <string name="rainrate_alert_imperial_warning">Deŋ de %1$.2fin në %2$d cï lɔ %3$s acï \'Tɔ̈ɔ̈u\' yök</string>
-    <string name="rainrate_alert_imperial_watch">Deŋ de %1$.2fin në thök de %2$d %3$s acï \'Tïŋ\' thök</string>
-    <string name="rainrate_alert_metric_severe">Deŋ de %1$.1fmm në thök de %2$d %3$s acï \'Kë ril\' yök</string>
-    <string name="rainrate_alert_metric_warning">Deŋ de %1$.1fmm në %2$d cï lɔ %3$s acï \'Tɔ̈ɔ̈u\' yök</string>
-    <string name="rainrate_alert_metric_watch">Deŋ de %1$.1fmm në thök de %2$d %3$s acï \'Tïŋ\' thök</string>
     <string name="rainrate_alert_severe">Käk ë lëk ë deŋ dït apɛi?</string>
     <string name="rainrate_alert_severe_desc">Kä ye kɔc lɛ̈k naa cï deŋ thök dït apɛi tëëk ye rot gɛɛi në thɛɛr ke deŋ</string>
+    <string name="rainrate_alert_severe_notification">Deŋ de %1$s në thök de %2$d %3$s acï \'Kë ril\' yök</string>
     <string name="rainrate_alert_severe_str">Ajuɛɛr de Deŋ Rilic</string>
     <string name="rainrate_alert_str">Tɛ̈ŋ de deŋ</string>
     <string name="rainrate_alert_warning">Wël ë lëk ë pïu ë pïu?</string>
     <string name="rainrate_alert_warning_desc">Kä ye kɔc lɛ̈k naa cï deŋ thök de jiɛ̈ɛ̈m tëëk në thɛɛr ke deŋ</string>
+    <string name="rainrate_alert_warning_notification">Deŋ de %1$s në %2$d cï lɔ %3$s acï \'Tɔ̈ɔ̈u\' yök</string>
     <string name="rainrate_alert_warning_str">Jöt de Deŋ</string>
     <string name="rainrate_alert_watch">Tïŋ Lëk de Rainräte?</string>
     <string name="rainrate_alert_watch_desc">Kä ye kɔc lɛ̈k naa cï deŋ thök de daai tëëk ye rot gɛɛi në thɛɛr ke deŋ</string>
+    <string name="rainrate_alert_watch_notification">Deŋ de %1$s në %2$d cï lɔ %3$s acï \'Tïŋ\' thök</string>
     <string name="rainrate_alert_watch_str">Tïŋ kë ye kɔc lɛ̈k deŋ</string>
     <string name="refresh_time">Kuɛ̈ny de thaar</string>
     <string name="remove_all_data">Ye ŋic lɔn wïc yïn ba käŋ ëbɛ̈n nyaai?</string>

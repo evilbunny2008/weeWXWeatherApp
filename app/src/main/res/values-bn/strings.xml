@@ -2,7 +2,7 @@
 <resources>
     <string name="about">সম্পর্কে</string>
     <string name="about_app">অ্যাপ সম্পর্কে</string>
-    <string name="afternoon_alert">তাপমাত্রা %1$.1f°%2$s আপনার %3$.1f°%2$s সীমাতে নেমে গেছে</string>
+    <string name="afternoon_alert">তাপমাত্রা %1$s আপনার %2$s সীমাতে নেমে গেছে</string>
     <string name="afternoon_temp_alert">বিকেলের সতর্কতা?</string>
     <string name="all_time_stats">সর্বকালের পরিসংখ্যান</string>
     <string name="app_theme">অ্যাপ থিম</string>
@@ -62,7 +62,7 @@
     <string name="match_app">ম্যাচ অ্যাপ</string>
     <string name="metric">মেট্রিক ব্যবহার করবেন?</string>
     <string name="minutes">মিনিট</string>
-    <string name="morning_alert">তাপমাত্রা %1$.1f°%2$s আপনার %3$.1f°%2$s সীমাতে বেড়েছে</string>
+    <string name="morning_alert">তাপমাত্রা %1$s আপনার %2$s সীমাতে বেড়েছে</string>
     <string name="morning_temp_alert">সকালের সতর্কতা?</string>
     <string name="next_moon">পরবর্তী চাঁদের ঘটনা?</string>
     <string name="no">না</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">ইঞ্চি বৃষ্টি?</string>
     <string name="rainfall_alert">বৃষ্টিপাতের সতর্কতা?</string>
     <string name="rainfall_alert_desc">বৃষ্টিপাত আপনার নির্ধারিত সীমাতে পৌঁছলে প্রতিদিন সতর্কতা</string>
-    <string name="rainfall_alert_imperial">বৃষ্টিপাত %1$.2f%2$s আপনার %3$.2f%2$s সীমার সাথে মিলেছে</string>
-    <string name="rainfall_alert_metric">বৃষ্টিপাত %1$.1f%2$s আপনার %3$.1f%2$s সীমার সাথে মিলেছে</string>
+    <string name="rainfall_alert_notification">বৃষ্টিপাত %1$s আপনার %2$s সীমার সাথে মিলেছে</string>
     <string name="rainfall_alert_str">বৃষ্টিপাতের সতর্কতা</string>
     <string name="rainfall_limit">বৃষ্টিপাতের সীমা</string>
-    <string name="rainrate_alert_imperial_severe">গত %2$d %3$s এ %1$.2fin এর বৃষ্টিপাত \'গুরুতর\' স্তরে পৌঁছেছে</string>
-    <string name="rainrate_alert_imperial_warning">গত %2$d %3$s এ %1$.2fin এর বৃষ্টিপাত \'সতর্কতা\' স্তরে পৌঁছেছে</string>
-    <string name="rainrate_alert_imperial_watch">গত %2$d %3$s এ %1$.2fin বৃষ্টির হার \'ওয়াচ\' স্তরে পৌঁছেছে</string>
-    <string name="rainrate_alert_metric_severe">গত %2$d %3$s এ %1$.1fmm বৃষ্টিপাত \'গুরুতর\' স্তরে পৌঁছেছে</string>
-    <string name="rainrate_alert_metric_warning">গত %2$d %3$s এ %1$.1fmm বৃষ্টিপাত \'সতর্কতা\' স্তরে পৌঁছেছে</string>
-    <string name="rainrate_alert_metric_watch">গত %2$d %3$s এ %1$.1fmm বৃষ্টিপাত \'ওয়াচ\' স্তরে পৌঁছেছে</string>
     <string name="rainrate_alert_severe">তীব্র বৃষ্টিপাতের সতর্কতা?</string>
     <string name="rainrate_alert_severe_desc">বৃষ্টিপাতের সময়কালের উপর ভিত্তি করে বৃষ্টির হার গুরুতর সীমা অতিক্রম করলে সতর্কতা</string>
+    <string name="rainrate_alert_severe_notification">গত %2$d %3$s এ %1$s এর বৃষ্টিপাত \'গুরুতর\' স্তরে পৌঁছেছে</string>
     <string name="rainrate_alert_severe_str">তীব্র বৃষ্টিপাতের সতর্কতা</string>
     <string name="rainrate_alert_str">বৃষ্টিপাতের সতর্কতা</string>
     <string name="rainrate_alert_warning">বৃষ্টিপাতের সতর্কতা সতর্কতা?</string>
     <string name="rainrate_alert_warning_desc">বৃষ্টিপাতের সময়কালের উপর ভিত্তি করে বৃষ্টির হার সতর্কতা সীমা অতিক্রম করলে সতর্কতা</string>
+    <string name="rainrate_alert_warning_notification">গত %2$d %3$s এ %1$s এর বৃষ্টিপাত \'সতর্কতা\' স্তরে পৌঁছেছে</string>
     <string name="rainrate_alert_warning_str">সতর্কীকরণ বৃষ্টিপাতের সতর্কতা</string>
     <string name="rainrate_alert_watch">বৃষ্টিপাতের সতর্কতা দেখুন?</string>
     <string name="rainrate_alert_watch_desc">বৃষ্টিপাতের সময়কালের উপর ভিত্তি করে বৃষ্টিপাত ঘড়ির সীমা অতিক্রম করলে সতর্কতা</string>
+    <string name="rainrate_alert_watch_notification">গত %2$d %3$s এ %1$s এর বৃষ্টিপাত \'ওয়াচ\' স্তরে পৌঁছেছে</string>
     <string name="rainrate_alert_watch_str">রেইনরেট অ্যালার্ট দেখুন</string>
     <string name="refresh_time">রিফ্রেশ সময় নির্বাচন করুন</string>
     <string name="remove_all_data">আপনি কি নিশ্চিত যে আপনি সমস্ত ডেটা সরাতে চান?</string>

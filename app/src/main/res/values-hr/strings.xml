@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Oko</string>
     <string name="about_app">O aplikaciji</string>
-    <string name="afternoon_alert">Temperatura %1$.1f°%2$s pala je na vašu granicu od %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Popodnevna uzbuna?</string>
+	<string name="afternoon_temp_alert">Popodnevna uzbuna?</string>
     <string name="all_time_stats">Statistika svih vremena</string>
     <string name="app_theme">Tema aplikacije</string>
     <string name="avg">prosj</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Aplikacija podudaranja</string>
     <string name="metric">Koristiti metriku?</string>
     <string name="minutes">minuta</string>
-    <string name="morning_alert">Temperatura %1$.1f°%2$s porasla je do vaše granice od %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Jutarnja uzbuna?</string>
+	<string name="morning_temp_alert">Jutarnja uzbuna?</string>
     <string name="next_moon">Događaji na sljedećem mjesecu?</string>
     <string name="no">Ne</string>
     <string name="no_download_or_app_not_setup">Nema preuzimanja ili aplikacija nije postavljena</string>
@@ -86,17 +84,9 @@
     <string name="rain_in_inches">Kiša u inčima?</string>
     <string name="rainfall_alert">Upozorenje o kiši?</string>
     <string name="rainfall_alert_desc">Svakodnevna upozorenja kada količina padalina dosegne postavljenu granicu</string>
-    <string name="rainfall_alert_imperial">Količina padalina %1$.2f%2$s poklopila se s vašim ograničenjem od %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Količina padalina %1$.1f%2$s poklopila se s vašim ograničenjem od %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Upozorenje o padalinama</string>
+	<string name="rainfall_alert_str">Upozorenje o padalinama</string>
     <string name="rainfall_limit">Ograničenje padalina</string>
-    <string name="rainrate_alert_imperial_severe">Stopa kiše od %1$.2fin u posljednjih %2$d %3$s dosegla je razinu \'Jako\'</string>
-    <string name="rainrate_alert_imperial_warning">Stopa kiše od %1$.2fin u posljednjih %2$d %3$s dosegla je razinu \'Upozorenje\'</string>
-    <string name="rainrate_alert_imperial_watch">Stopa kiše od %1$.2fin u posljednjih %2$d %3$s dosegla je razinu \'Promatraj\'</string>
-    <string name="rainrate_alert_metric_severe">Stopa kiše od %1$.1fmm u posljednjih %2$d %3$s dosegla je razinu \'Jako\'</string>
-    <string name="rainrate_alert_metric_warning">Stopa kiše od %1$.1fmm u posljednjih %2$d %3$s dosegla je razinu \'Upozorenje\'</string>
-    <string name="rainrate_alert_metric_watch">Stopa kiše od %1$.1fmm u posljednjih %2$d %3$s dosegla je razinu \'Promatraj\'</string>
-    <string name="rainrate_alert_severe">Upozorenja o jakoj kiši?</string>
+	<string name="rainrate_alert_severe">Upozorenja o jakoj kiši?</string>
     <string name="rainrate_alert_severe_desc">Upozorava ako količina kiše premaši ozbiljno ograničenje na temelju trajanja padalina</string>
     <string name="rainrate_alert_severe_str">Upozorenje o jakoj kiši</string>
     <string name="rainrate_alert_str">Upozorenje o količini kiše</string>

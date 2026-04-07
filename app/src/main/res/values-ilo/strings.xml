@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Maipapan</string>
     <string name="about_app">Maipapan iti app</string>
-    <string name="afternoon_alert">Ti temperatura a %1$.1f°%2$s ket bimmaba iti limitasionmo a %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alerto iti Malem?</string>
+	<string name="afternoon_temp_alert">Alerto iti Malem?</string>
     <string name="all_time_stats">Amin nga Estadistika ti Panawen</string>
     <string name="app_theme">Tema ti App</string>
     <string name="avg">avg</string>
@@ -62,8 +61,7 @@
     <string name="match_app">App ti Panagtunos</string>
     <string name="metric">Usaren ti Metric?</string>
     <string name="minutes">minutos</string>
-    <string name="morning_alert">Ti temperatura a %1$.1f°%2$s ket ngimmato iti limitasionmo a %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alerto iti Agsapa?</string>
+	<string name="morning_temp_alert">Alerto iti Agsapa?</string>
     <string name="next_moon">Sumaruno a bulan a pasamak?</string>
     <string name="no">Saan</string>
     <string name="no_download_or_app_not_setup">Awan ti download wenno app a saan a na-setup</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">Tudo iti Pulgada?</string>
     <string name="rainfall_alert">Alerto ti Tudo?</string>
     <string name="rainfall_alert_desc">Inaldaw nga alerto no makadanon ti tudo iti naikeddeng a limitasionmo</string>
-    <string name="rainfall_alert_imperial">Ti tudo a %1$.2f%2$s ket naipada iti limitasionmo a %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Ti tudo a %1$.1f%2$s ket naipada iti limitasionmo a %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alerto ti Tudo</string>
+	<string name="rainfall_alert_str">Alerto ti Tudo</string>
     <string name="rainfall_limit">Limit ti Tudo</string>
-    <string name="rainrate_alert_imperial_severe">Ti rate ti tudo ti %1$.2fin iti naudi a %2$d %3$s ket nakadanon iti \'Nakaro\' a lebel</string>
-    <string name="rainrate_alert_imperial_warning">Ti rate ti tudo ti %1$.2fin iti naudi a %2$d %3$s ket nakadanon iti lebel ti \'Pakdaar\'</string>
-    <string name="rainrate_alert_imperial_watch">Ti rate ti tudo ti %1$.2fin iti naudi a %2$d %3$s ket nakadanon iti lebel ti \'Buybuya\'</string>
-    <string name="rainrate_alert_metric_severe">Ti rate ti tudo ti %1$.1fmm iti naudi a %2$d %3$s ket nakadanon iti \'Nakaro\' a lebel</string>
-    <string name="rainrate_alert_metric_warning">Ti rate ti tudo a %1$.1fmm iti naudi a %2$d %3$s ket nakadanon iti \'Pakdaar\' a lebel</string>
-    <string name="rainrate_alert_metric_watch">Ti rate ti tudo ti %1$.1fmm iti naudi a %2$d %3$s ket nakadanon iti lebel ti \'Buybuya\'</string>
-    <string name="rainrate_alert_severe">Nakaro nga Alerto ti Rainrate?</string>
+	<string name="rainrate_alert_severe">Nakaro nga Alerto ti Rainrate?</string>
     <string name="rainrate_alert_severe_desc">Alerto no ti rainrate ket lumablabas iti nakaro a limitasion maibatay iti kapaut ti tudo</string>
     <string name="rainrate_alert_severe_str">Nakaro nga Alerto ti Rainrate</string>
     <string name="rainrate_alert_str">Alerto ti Rainrate</string>

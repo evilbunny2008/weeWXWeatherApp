@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Tentang</string>
     <string name="about_app">Tentang Aplikasi</string>
-    <string name="afternoon_alert">Suhu %1$.1f°%2$s telah turun hingga batas Anda %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Peringatan Sore?</string>
+	<string name="afternoon_temp_alert">Peringatan Sore?</string>
     <string name="all_time_stats">Statistik Sepanjang Masa</string>
     <string name="app_theme">Tema Aplikasi</string>
     <string name="avg">rata2</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Aplikasi Pertandingan</string>
     <string name="metric">Gunakan Metrik?</string>
     <string name="minutes">menit</string>
-    <string name="morning_alert">Suhu %1$.1f°%2$s telah meningkat hingga batas Anda %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Peringatan Pagi?</string>
+	<string name="morning_temp_alert">Peringatan Pagi?</string>
     <string name="next_moon">Peristiwa bulan depan?</string>
     <string name="no">TIDAK</string>
     <string name="no_download_or_app_not_setup">Tidak ada unduhan atau aplikasi yang belum disiapkan</string>
@@ -84,17 +82,9 @@
     <string name="rain_in_inches">Hujan dalam Inci?</string>
     <string name="rainfall_alert">Peringatan Curah Hujan?</string>
     <string name="rainfall_alert_desc">Peringatan setiap hari ketika curah hujan mencapai batas yang Anda tetapkan</string>
-    <string name="rainfall_alert_imperial">Curah hujan %1$.2f%2$s telah sesuai dengan batas Anda yaitu %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Curah hujan %1$.1f%2$s telah sesuai dengan batas Anda yaitu %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Peringatan Curah Hujan</string>
+	<string name="rainfall_alert_str">Peringatan Curah Hujan</string>
     <string name="rainfall_limit">Batas Curah Hujan</string>
-    <string name="rainrate_alert_imperial_severe">Tingkat hujan %1$.2fin dalam %2$d %3$s terakhir telah mencapai level \'Parah\'</string>
-    <string name="rainrate_alert_imperial_warning">Tingkat hujan %1$.2fin dalam %2$d %3$s terakhir telah mencapai tingkat \'Peringatan\'</string>
-    <string name="rainrate_alert_imperial_watch">Tingkat hujan %1$.2fin dalam %2$d %3$s terakhir telah mencapai level \'Tonton\'</string>
-    <string name="rainrate_alert_metric_severe">Tingkat hujan sebesar %1$.1fmm dalam %2$d %3$s terakhir telah mencapai level \'Parah\'</string>
-    <string name="rainrate_alert_metric_warning">Tingkat hujan sebesar %1$.1fmm dalam %2$d %3$s terakhir telah mencapai tingkat \'Peringatan\'</string>
-    <string name="rainrate_alert_metric_watch">Tingkat hujan sebesar %1$.1fmm dalam %2$d %3$s terakhir telah mencapai level \'Tonton\'</string>
-    <string name="rainrate_alert_severe">Peringatan Curah Hujan Parah?</string>
+	<string name="rainrate_alert_severe">Peringatan Curah Hujan Parah?</string>
     <string name="rainrate_alert_severe_desc">Peringatan jika curah hujan melebihi batas parah berdasarkan durasi curah hujan</string>
     <string name="rainrate_alert_severe_str">Peringatan Tingkat Hujan Parah</string>
     <string name="rainrate_alert_str">Peringatan Tingkat Hujan</string>

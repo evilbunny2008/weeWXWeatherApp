@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Um</string>
     <string name="about_app">Über die App</string>
-    <string name="afternoon_alert">Die Temperatur %1$.1f°%2$s ist auf Ihren Grenzwert von %3$.1f°%2$s gefallen</string>
+    <string name="afternoon_alert">Die Temperatur %1$s ist auf Ihren Grenzwert von %2$s gefallen</string>
     <string name="afternoon_temp_alert">Nachmittagsalarm?</string>
     <string name="all_time_stats">Allzeitstatistiken</string>
     <string name="app_theme">App-Theme</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Match-App</string>
     <string name="metric">Metrik verwenden?</string>
     <string name="minutes">Minuten</string>
-    <string name="morning_alert">Die Temperatur %1$.1f°%2$s ist auf Ihren Grenzwert von %3$.1f°%2$s gestiegen</string>
+    <string name="morning_alert">Die Temperatur %1$s ist auf Ihren Grenzwert von %2$s gestiegen</string>
     <string name="morning_temp_alert">Morgenalarm?</string>
     <string name="next_moon">Nächste Mondereignisse?</string>
     <string name="no">NEIN</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">Regen in Zoll?</string>
     <string name="rainfall_alert">Regenwarnung?</string>
     <string name="rainfall_alert_desc">Warnt täglich, wenn die Niederschlagsmenge Ihr festgelegtes Limit erreicht</string>
-    <string name="rainfall_alert_imperial">Die Niederschlagsmenge %1$.2f%2$s hat Ihren Grenzwert von %3$.2f%2$s erreicht</string>
-    <string name="rainfall_alert_metric">Die Niederschlagsmenge %1$.1f%2$s hat Ihren Grenzwert von %3$.1f%2$s erreicht</string>
+    <string name="rainfall_alert_notification">Die Niederschlagsmenge %1$s hat Ihr Limit von %2$s erreicht</string>
     <string name="rainfall_alert_str">Niederschlagswarnung</string>
     <string name="rainfall_limit">Niederschlagsgrenze</string>
-    <string name="rainrate_alert_imperial_severe">Die Regenrate von %1$.2fin in den letzten %2$d %3$s hat die Stufe \'Schwerwiegend\' erreicht</string>
-    <string name="rainrate_alert_imperial_warning">Die Regenrate von %1$.2fin in den letzten %2$d %3$s hat die Stufe \'Warnung\' erreicht</string>
-    <string name="rainrate_alert_imperial_watch">Die Regenrate von %1$.2fin in den letzten %2$d %3$s hat das \'Beobachten\'-Niveau erreicht</string>
-    <string name="rainrate_alert_metric_severe">Die Regenrate von %1$.1fmm in den letzten %2$d %3$s hat die Stufe \'Schwerwiegend\' erreicht</string>
-    <string name="rainrate_alert_metric_warning">Die Regenrate von %1$.1fmm in den letzten %2$d %3$s hat die Stufe \'Warnung\' erreicht</string>
-    <string name="rainrate_alert_metric_watch">Die Regenrate von %1$.1fmm in den letzten %2$d %3$s hat das \'Beobachten\'-Niveau erreicht</string>
     <string name="rainrate_alert_severe">Warnungen vor starken Regenfällen?</string>
     <string name="rainrate_alert_severe_desc">Warnt, wenn die Niederschlagsmenge den strengen Grenzwert basierend auf der Niederschlagsdauer überschreitet</string>
+    <string name="rainrate_alert_severe_notification">Die Regenrate von %1$s in den letzten %2$d %3$s hat die Stufe \'Schwerwiegend\' erreicht</string>
     <string name="rainrate_alert_severe_str">Warnung vor starkem Niederschlag</string>
     <string name="rainrate_alert_str">Regenratenalarm</string>
     <string name="rainrate_alert_warning">Warnung: Regenratenwarnungen?</string>
     <string name="rainrate_alert_warning_desc">Warnt, wenn die Regenmenge die Warngrenze basierend auf der Niederschlagsdauer überschreitet</string>
+    <string name="rainrate_alert_warning_notification">Die Regenrate von %1$s in den letzten %2$d %3$s hat die Stufe \'Warnung\' erreicht</string>
     <string name="rainrate_alert_warning_str">Warnung: Regenratenalarm</string>
     <string name="rainrate_alert_watch">Regenratenwarnungen ansehen?</string>
     <string name="rainrate_alert_watch_desc">Warnt, wenn die Regenmenge das Überwachungslimit basierend auf der Niederschlagsdauer überschreitet</string>
+    <string name="rainrate_alert_watch_notification">Die Regenrate von %1$s in den letzten %2$d %3$s hat das \'Beobachten\'-Niveau erreicht</string>
     <string name="rainrate_alert_watch_str">Sehen Sie sich den Niederschlagsalarm an</string>
     <string name="refresh_time">Wählen Sie Aktualisierungszeit</string>
     <string name="remove_all_data">Sind Sie sicher, dass Sie alle Daten entfernen möchten?</string>

@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Manungod</string>
     <string name="about_app">Manungod sa App</string>
-    <string name="afternoon_alert">An temperatura %1$.1f°%2$s buminagsak sa saimong limitasyon na %3$.1f°%2$s</string>
+    <string name="afternoon_alert">An temperatura %1$s buminaba sa saimong limitasyon na %2$s</string>
     <string name="afternoon_temp_alert">Alerto sa Hapon?</string>
     <string name="all_time_stats">Gabos na Estadistika sa Panahon</string>
     <string name="app_theme">Tema sa Apela</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Tugma App App</string>
     <string name="metric">Gamiton an Metriko?</string>
     <string name="minutes">mga minuto</string>
-    <string name="morning_alert">An temperatura %1$.1f°%2$s naglangkaw na sa saimong limitasyon na %3$.1f°%2$s</string>
+    <string name="morning_alert">An temperatura %1$s naglangkaw na sa saimong limitasyon na %2$s</string>
     <string name="morning_temp_alert">Alerto sa Aga?</string>
     <string name="next_moon">Sunod na bulan mga pangyayari?</string>
     <string name="no">Dai</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Uran sa Pulgada?</string>
     <string name="rainfall_alert">Alerto sa Pag-uran?</string>
     <string name="rainfall_alert_desc">Mga alerto aroaldaw kun an pag-uran minaabot sa saimong itinalaan na limitasyon</string>
-    <string name="rainfall_alert_imperial">An pag-uran %1$.2f%2$s nakatugma sa saimong limitasyon na %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">An pag-uran %1$.1f%2$s nakatugma sa saimong limitasyon na %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">An pag-uran %1$s nakatugma sa saimong limitasyon na %2$s</string>
     <string name="rainfall_alert_str">Alerto sa Pag-uran</string>
     <string name="rainfall_limit">Limitasyon nin Pag-uran</string>
-    <string name="rainrate_alert_imperial_severe">An rainrate na %1$.2fin sa huring %2$d %3$s nakaabot na sa \'Grabe\' na lebel</string>
-    <string name="rainrate_alert_imperial_warning">An rainrate na %1$.2fin sa huring %2$d %3$s nakaabot na sa lebel nin \'Patanid\'</string>
-    <string name="rainrate_alert_imperial_watch">An rainrate na %1$.2fin sa huring %2$d %3$s nakaabot na sa lebel nin \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">An rainrate na %1$.1fmm sa huring %2$d %3$s nakaabot na sa \'Grabe\' na lebel</string>
-    <string name="rainrate_alert_metric_warning">An rainrate na %1$.1fmm sa huring %2$d %3$s nakaabot na sa lebel nin \'Patanid\'</string>
-    <string name="rainrate_alert_metric_watch">An rainrate na %1$.1fmm sa huring %2$d %3$s nakaabot na sa lebel nin \'Watch\'</string>
     <string name="rainrate_alert_severe">Mga Alerto sa Grabeng Uran?</string>
     <string name="rainrate_alert_severe_desc">Mga alerto kun an rainrate minalampas sa grabeng limitasyon base sa lawig kan pag-uran</string>
+    <string name="rainrate_alert_severe_notification">An rainrate na %1$s sa huring %2$d %3$s nakaabot na sa \'Grabe\' na lebel</string>
     <string name="rainrate_alert_severe_str">Alerto sa Grabeng Uran</string>
     <string name="rainrate_alert_str">Alerto sa Rainrate</string>
     <string name="rainrate_alert_warning">Mga Alerto sa Rainrate nin Patanid?</string>
     <string name="rainrate_alert_warning_desc">Mga alerto kun an rainrate minalampas sa limitasyon kan patanid base sa lawig kan pag-uran</string>
+    <string name="rainrate_alert_warning_notification">An rainrate na %1$s sa huring %2$d %3$s nakaabot na sa lebel nin \'Patanid\'</string>
     <string name="rainrate_alert_warning_str">Patanid Rainrate Alert</string>
     <string name="rainrate_alert_watch">Hilingon an mga Alerto sa Rainrate?</string>
     <string name="rainrate_alert_watch_desc">Mga alerto kun an rainrate minalampas sa limitasyon kan pagbantay base sa lawig kan pag-uran</string>
+    <string name="rainrate_alert_watch_notification">An rainrate na %1$s sa huring %2$d %3$s nakaabot na sa \'Watch\' na lebel</string>
     <string name="rainrate_alert_watch_str">Hilingon an Rainrate Alert</string>
     <string name="refresh_time">Pilion an Panahon nin Represko</string>
     <string name="remove_all_data">Sigurado ka na gusto mong halion an gabos na datos?</string>

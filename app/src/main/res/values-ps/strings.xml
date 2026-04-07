@@ -2,8 +2,7 @@
 <resources>
     <string name="about">په اړه</string>
     <string name="about_app">د اپلیکیشن په اړه</string>
-    <string name="afternoon_alert">د تودوخې درجه %1$.1f°%2$s ستاسو حد %3$.1f°%2$s ته راښکته شوې ده</string>
-    <string name="afternoon_temp_alert">د ماسپښین خبرتیا؟</string>
+	<string name="afternoon_temp_alert">د ماسپښین خبرتیا؟</string>
     <string name="all_time_stats">ټول وخت احصایې</string>
     <string name="app_theme">د اپلیکیشن موضوع</string>
 	<string name="battery_warning">خبرداری: د پورتني اختیار فعالول ممکن ستاسو بیټرۍ د معمول په پرتله ګړندي وچوي</string>
@@ -58,8 +57,7 @@
     <string name="match_app">د میچ ایپ</string>
     <string name="metric">میټریک وکاروئ؟</string>
     <string name="minutes">دقیقې</string>
-    <string name="morning_alert">د تودوخې درجه %1$.1f°%2$s ستاسو حد %3$.1f°%2$s ته لوړه شوې ده</string>
-    <string name="morning_temp_alert">د سهار خبرتیا؟</string>
+	<string name="morning_temp_alert">د سهار خبرتیا؟</string>
     <string name="next_moon">د راتلونکي سپوږمۍ پیښې؟</string>
     <string name="no">نه</string>
     <string name="no_download_or_app_not_setup">هیڅ ډاونلوډ یا اپلیکیشن ندی ترتیب شوی</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">باران په انچو کې؟</string>
     <string name="rainfall_alert">د باران خبرتیا؟</string>
     <string name="rainfall_alert_desc">هره ورځ خبرداری ورکوي کله چې باران ستاسو ټاکل شوي حد ته ورسیږي</string>
-    <string name="rainfall_alert_imperial">باران %1$.2f%2$s ستاسو د %3$.2f%2$s حد سره سمون خوري</string>
-    <string name="rainfall_alert_metric">باران %1$.1f%2$s ستاسو د %3$.1f%2$s حد سره سمون خوري</string>
-    <string name="rainfall_alert_str">د باران خبرتیا</string>
+	<string name="rainfall_alert_str">د باران خبرتیا</string>
     <string name="rainfall_limit">د باران حد</string>
-    <string name="rainrate_alert_imperial_severe">په وروستي %2$d %3$s کې د %1$.2fin د باران کچه \'سخت\' کچې ته رسیدلې ده</string>
-    <string name="rainrate_alert_imperial_warning">په وروستي %2$d %3$s کې د %1$.2fin د باران کچه د خبرتیا کچې ته رسیدلې ده</string>
-    <string name="rainrate_alert_imperial_watch">په وروستي %2$d %3$s کې د %1$.2fin باران د \'واچ\' کچې ته رسیدلی دی</string>
-    <string name="rainrate_alert_metric_severe">په وروستي %2$d %3$s کې د %1$.1fmm باران د \'سخت\' کچې ته رسیدلی دی</string>
-    <string name="rainrate_alert_metric_warning">په وروستي %2$d %3$s کې د %1$.1fmm باران د خبرداري کچې ته رسیدلی دی</string>
-    <string name="rainrate_alert_metric_watch">په وروستي %2$d %3$s کې د %1$.1fmm باران د \'واچ\' کچې ته رسیدلی دی</string>
-    <string name="rainrate_alert_severe">د شدید باران خبرتیا؟</string>
+	<string name="rainrate_alert_severe">د شدید باران خبرتیا؟</string>
     <string name="rainrate_alert_severe_desc">خبرتیا که د باران کچه د باران د مودې پراساس له سخت حد څخه زیاته وي</string>
     <string name="rainrate_alert_severe_str">د سخت باران خبرداری</string>
     <string name="rainrate_alert_str">د باران خبرتیا</string>

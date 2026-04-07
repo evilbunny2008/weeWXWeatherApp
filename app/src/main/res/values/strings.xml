@@ -2,12 +2,12 @@
 <resources>
     <string name="about">About</string>
     <string name="about_app">About the App</string>
-    <string name="afternoon_alert">Temperature %1$.1f°%2$s has dropped to your limit of %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperature %1$s has dropped to your limit of %2$s</string>
     <string name="afternoon_temp_alert">Afternoon Alert?</string>
     <string name="all_time_stats">All Time Statistics</string>
     <string name="app_name" translatable="false">weeWX App</string>
     <string name="app_theme">App Theme</string>
-    <string name="avg">avg.</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Warning: Enabling the above option may drain your battery faster than usual</string>
     <string name="before">before</string>
     <string name="bgColour">Widget Background Colour Picker</string>
@@ -63,7 +63,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Use Metric?</string>
     <string name="minutes">minutes</string>
-    <string name="morning_alert">Temperature %1$.1f°%2$s has risen to your limit of %3$.1f°%2$s</string>
+    <string name="morning_alert">Temperature %1$s has risen to your limit of %2$s</string>
     <string name="morning_temp_alert">Morning Alert?</string>
     <string name="next_moon">Next moon events?</string>
     <string name="no">No</string>
@@ -90,25 +90,21 @@
     <string name="rain_in_inches">Rain in Inches?</string>
     <string name="rainfall_alert">Rainfall Alerts?</string>
     <string name="rainfall_alert_desc">Alerts you daily if the rainfall reaches your set limit</string>
-    <string name="rainfall_alert_imperial">Rainfall %1$.2f%2$s has matched to your limit of %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Rainfall %1$.1f%2$s has matched to your limit of %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Rainfall %1$s has matched to your limit of %2$s</string>
     <string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainfall_limit">Rainfall Limit</string>
-    <string name="rainrate_alert_imperial_severe">Rainrate of %1$.2fin in the last %2$d %3$s has hit \'Severe\' level</string>
-    <string name="rainrate_alert_imperial_warning">Rainrate of %1$.2fin in the last %2$d %3$s has hit \'Warning\' level</string>
-    <string name="rainrate_alert_imperial_watch">Rainrate of %1$.2fin in the last %2$d %3$s has hit \'Watch\' level</string>
-    <string name="rainrate_alert_metric_severe">Rainrate of %1$.1fmm in the last %2$d %3$s has hit \'Severe\' level</string>
-    <string name="rainrate_alert_metric_warning">Rainrate of %1$.1fmm in the last %2$d %3$s has hit \'Warning\' level</string>
-    <string name="rainrate_alert_metric_watch">Rainrate of %1$.1fmm in the last %2$d %3$s has hit \'Watch\' level</string>
     <string name="rainrate_alert_severe">Severe Rainrate Alerts?</string>
     <string name="rainrate_alert_severe_desc">Alerts if the rainrate exceeds the severe limit based on rainfall duration</string>
+    <string name="rainrate_alert_severe_notification">Rainrate of %1$s in the last %2$d %3$s has hit \'Severe\' level</string>
     <string name="rainrate_alert_severe_str">Severe Rainrate Alert</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>
     <string name="rainrate_alert_warning">Warning Rainrate Alerts?</string>
     <string name="rainrate_alert_warning_desc">Alerts if the rainrate exceeds the warning limit based on rainfall duration</string>
+    <string name="rainrate_alert_warning_notification">Rainrate of %1$s in the last %2$d %3$s has hit \'Warning\' level</string>
     <string name="rainrate_alert_warning_str">Warning Rainrate Alert</string>
     <string name="rainrate_alert_watch">Watch Rainrate Alerts?</string>
     <string name="rainrate_alert_watch_desc">Alerts if the rainrate exceeds the watch limit based on rainfall duration</string>
+    <string name="rainrate_alert_watch_notification">Rainrate of %1$s in the last %2$d %3$s has hit \'Watch\' level</string>
     <string name="rainrate_alert_watch_str">Watch Rainrate Alert</string>
     <string name="refresh_time">Choose Refresh Time</string>
     <string name="remove_all_data">Are you sure you want to remove all data?</string>

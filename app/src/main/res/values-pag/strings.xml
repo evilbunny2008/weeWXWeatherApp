@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Nipaakar ed</string>
     <string name="about_app">Nipaakar ed App</string>
-    <string name="afternoon_alert">Say temperatura %1$.1f°%2$s et inmepas ed limitasyon mo ya %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alerto ed ngarem?</string>
+	<string name="afternoon_temp_alert">Alerto ed ngarem?</string>
     <string name="all_time_stats">Amin ya Panaon ya Estadistika</string>
     <string name="app_theme">Appyo</string>
 	<string name="battery_warning">Pasakbay: Say pangipaalagey ed opsyon ed tagey so nayarin mamakapuy ed baterya mo nen say dati</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Itunton App</string>
     <string name="metric">Mangusar na Meryenti?</string>
     <string name="minutes">saray minuto</string>
-    <string name="morning_alert">Say temperatura %1$.1f°%2$s et inmatagey ed limitasyon ya %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alerto ed kabuasan?</string>
+	<string name="morning_temp_alert">Alerto ed kabuasan?</string>
     <string name="next_moon">Diad ontumbok iran ebento na bulan?</string>
     <string name="no">Andi</string>
     <string name="no_download_or_app_not_setup">Wala ray download odino app ya ag-akaseptup</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Uran ed Pulgada?</string>
     <string name="rainfall_alert">Rainfall Alert?</string>
     <string name="rainfall_alert_desc">Inagew-agew ya manalerto no say uran et onsabi ed limitasyon mo</string>
-    <string name="rainfall_alert_imperial">Say uran %1$.2f%2$s et akaparaan ed limitasyon mo ya %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Say uran %1$.1f%2$s et akaparaan ed limitasyon mo ya %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alerto ed Uran</string>
+	<string name="rainfall_alert_str">Alerto ed Uran</string>
     <string name="rainfall_limit">Limitasyon na Uran</string>
-    <string name="rainrate_alert_imperial_severe">Say rainrate ya %1$.2fin ed apalabas ya %2$d %3$s et akasabi ed \'Severe\' level</string>
-    <string name="rainrate_alert_imperial_warning">Say rainrate ya %1$.2fin ed apalabas ya %2$d %3$s et akasabi ed \'Warning\' level</string>
-    <string name="rainrate_alert_imperial_watch">Say rainrate ya %1$.2fin ed apalabas ya %2$d %3$s et akasabi ed \'Watch\' level</string>
-    <string name="rainrate_alert_metric_severe">Say rainrate ya %1$.1fmm ed apalabas ya %2$d %3$s et akasabi ed \'Severe\' level</string>
-    <string name="rainrate_alert_metric_warning">Say rainrate ya %1$.1fmm ed apalabas ya %2$d %3$s et akasabi ed \'Warning\' level</string>
-    <string name="rainrate_alert_metric_watch">Say rainrate ya %1$.1fmm ed apalabas ya %2$d %3$s et akasabi ed \'Watch\' level</string>
-    <string name="rainrate_alert_severe">Saray Alerto ed Graben Uran?</string>
+	<string name="rainrate_alert_severe">Saray Alerto ed Graben Uran?</string>
     <string name="rainrate_alert_severe_desc">Saray alerto no say uran et onlampas ed graben limitasyon base ed karukey na uran</string>
     <string name="rainrate_alert_severe_str">Alerto ed Graben Uran</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>

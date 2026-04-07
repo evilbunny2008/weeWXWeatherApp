@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Rivuart</string>
     <string name="about_app">A rivuart de Aplicazion</string>
-    <string name="afternoon_alert">La temperadure %1$.1f°%2$s e je scjampade al to limit di %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alerte dal dopodisnà?</string>
+	<string name="afternoon_temp_alert">Alerte dal dopodisnà?</string>
     <string name="all_time_stats">Statistichis di ducj i timps</string>
     <string name="app_theme">Tema de aplicazion</string>
     <string name="avg">medie</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Aplicazion corispondente</string>
     <string name="metric">Utilizâ la metriche?</string>
     <string name="minutes">minûts</string>
-    <string name="morning_alert">La temperadure %1$.1f°%2$s e je cressude al to limit di %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alerte de matine?</string>
+	<string name="morning_temp_alert">Alerte de matine?</string>
     <string name="next_moon">Events de lune vignude?</string>
     <string name="no">No</string>
     <string name="no_download_or_app_not_setup">Nissun scaricament o aplicazion no je stade configurade</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">Ploie in centimetris?</string>
     <string name="rainfall_alert">Alertis di plois?</string>
     <string name="rainfall_alert_desc">Ti viôt ogni dì se lis plois a rivin al limit fissât</string>
-    <string name="rainfall_alert_imperial">La ploie %1$.2f%2$s e je corispondente al to limit di %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">La ploie %1$.1f%2$s e je corispondente al to limit di %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alerte di plois</string>
+	<string name="rainfall_alert_str">Alerte di plois</string>
     <string name="rainfall_limit">Limit des plois</string>
-    <string name="rainrate_alert_imperial_severe">Il tas di ploie di %1$.2fin intai ultins %2$d %3$s al à tocjât il nivel \'Grave\'</string>
-    <string name="rainrate_alert_imperial_warning">Il tas di ploie di %1$.2fin intai ultins %2$d %3$s al à tocjât il nivel di \'Avertiment\'</string>
-    <string name="rainrate_alert_imperial_watch">Il tas di ploie di %1$.2fin intai ultins %2$d %3$s al à tocjât il nivel di \'Viôt\'</string>
-    <string name="rainrate_alert_metric_severe">Il tas di ploie di %1$.1fmm intai ultins %2$d %3$s al à tocjât il nivel \'Grave\'</string>
-    <string name="rainrate_alert_metric_warning">Il tas di ploie di %1$.1fmm tai ultins %2$d %3$s al à tocjât il nivel di \'Avertiment\'</string>
-    <string name="rainrate_alert_metric_watch">Il tas di ploie di %1$.1fmm intai ultins %2$d %3$s al à tocjât il nivel di \'Viôt\'</string>
-    <string name="rainrate_alert_severe">Alertis di ploie fuarte?</string>
+	<string name="rainrate_alert_severe">Alertis di ploie fuarte?</string>
     <string name="rainrate_alert_severe_desc">Alertis se il tas di ploie al supere il limit fuart su la fonde de durade des plois</string>
     <string name="rainrate_alert_severe_str">Alerte di ploie fuarte</string>
     <string name="rainrate_alert_str">Alerte di tas di ploie</string>

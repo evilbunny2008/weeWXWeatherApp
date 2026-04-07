@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Anggo</string>
     <string name="about_app">Taringot tu App</string>
-    <string name="afternoon_alert">Suhu %1$.1f°%2$s nunga turun tu batasmu %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Suhu %1$s nunga turun tu batasmu %2$s</string>
     <string name="afternoon_temp_alert">Siaga Siang?</string>
     <string name="all_time_stats">Sude Statistik Waktu</string>
     <string name="app_theme">Aplikasi Tema</string>
@@ -62,7 +62,7 @@
     <string name="match_app">App Jodoh</string>
     <string name="metric">Pake Metrik?</string>
     <string name="minutes">minut</string>
-    <string name="morning_alert">Suhu %1$.1f°%2$s nunga naik tu batasmu %3$.1f°%2$s</string>
+    <string name="morning_alert">Suhu %1$s nunga naik tu batasmu %2$s</string>
     <string name="morning_temp_alert">Siaga Pagi?</string>
     <string name="next_moon">Acara bulan selanjutna?</string>
     <string name="no">Daong</string>
@@ -89,25 +89,21 @@
     <string name="rain_in_inches">Udan di Inci?</string>
     <string name="rainfall_alert">Siaga Udan?</string>
     <string name="rainfall_alert_desc">Peringatan ganup ari molo sahat udan tu batas naung ditontuhon hamu</string>
-    <string name="rainfall_alert_imperial">Udan %1$.2f%2$s nunga hombar tu batasmu %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Udan %1$.1f%2$s nunga hombar tu batasmu %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Udan %1$s nunga hombar tu batasmu %2$s</string>
     <string name="rainfall_alert_str">Siaga Udan</string>
     <string name="rainfall_limit">Batas Curah Udan</string>
-    <string name="rainrate_alert_imperial_severe">Tingkat udan %1$.2fin di %2$d %3$s terakhir nunga mencapai tingkat \'Parah\'</string>
-    <string name="rainrate_alert_imperial_warning">Tingkat udan %1$.2fin di %2$d %3$s na parpudi nunga sahat tu tingkat \'Peringatan\'</string>
-    <string name="rainrate_alert_imperial_watch">Tingkat udan %1$.2fin di %2$d %3$s na parpudi nunga sahat tu tingkat \'Tonton\'</string>
-    <string name="rainrate_alert_metric_severe">Tingkat udan %1$.1fmm di %2$d %3$s na parpudi nunga sahat tu tingkat \'Parah\'</string>
-    <string name="rainrate_alert_metric_warning">Tingkat udan %1$.1fmm di %2$d %3$s na parpudi nunga sahat tu tingkat \'Peringatan\'</string>
-    <string name="rainrate_alert_metric_watch">Tingkat udan %1$.1fmm di %2$d %3$s na parpudi nunga sahat tu tingkat \'Tonton\'</string>
     <string name="rainrate_alert_severe">Peringatan Udan Parah?</string>
     <string name="rainrate_alert_severe_desc">Peringatan molo tingkat udan melebihi batas parah berdasarkan leleng ni udan</string>
+    <string name="rainrate_alert_severe_notification">Tingkat udan %1$s di %2$d %3$s na parpudi nunga sahat tu tingkat \'Para\'</string>
     <string name="rainrate_alert_severe_str">Peringatan Tingkat Udan Parah</string>
     <string name="rainrate_alert_str">Peringatan Tingkat Udan</string>
     <string name="rainrate_alert_warning">Sipaingot Peringatan Tingkat Udan?</string>
     <string name="rainrate_alert_warning_desc">Peringatan molo tingkat udan melebihi batas peringatan berdasarkan leleng ni udan</string>
+    <string name="rainrate_alert_warning_notification">Tingkat udan %1$s di %2$d %3$s na parpudi nunga sahat tu tingkat \'Peringatan\'</string>
     <string name="rainrate_alert_warning_str">Peringatan Peringatan Tingkat Udan</string>
     <string name="rainrate_alert_watch">Tonton ma Peringatan Tingkat Udan?</string>
     <string name="rainrate_alert_watch_desc">Peringatan molo tingkat udan melebihi batas jam tangan berdasarkan leleng ni udan</string>
+    <string name="rainrate_alert_watch_notification">Tingkat udan %1$s di %2$d %3$s na parpudi nunga sahat tu tingkat \'Tonton\'</string>
     <string name="rainrate_alert_watch_str">Tonton Peringatan Tingkat Udan</string>
     <string name="refresh_time">Pillit ma Tingki Pembenda</string>
     <string name="remove_all_data">Pos do rohamuna naeng padaohon sude data?</string>

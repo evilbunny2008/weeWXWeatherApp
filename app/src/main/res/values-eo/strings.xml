@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Pri</string>
     <string name="about_app">Pri la Apo</string>
-    <string name="afternoon_alert">Temperaturo %1$.1f°%2$s malaltiĝis al via limo de %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Temperaturo %1$s malaltiĝis al via limo de %2$s</string>
     <string name="afternoon_temp_alert">Posttagmeza Atentigo?</string>
     <string name="all_time_stats">Ĉiatempa Statistiko</string>
     <string name="app_theme">Aplika Temo</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Ĉu uzi metrikon?</string>
     <string name="minutes">minutoj</string>
-    <string name="morning_alert">Temperaturo %1$.1f°%2$s altiĝis ĝis via limo de %3$.1f°%2$s</string>
+    <string name="morning_alert">Temperaturo %1$s altiĝis ĝis via limo de %2$s</string>
     <string name="morning_temp_alert">Matena Atentigo?</string>
     <string name="next_moon">Okazaĵoj de la venonta luno?</string>
     <string name="no">Ne</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">Pluvo en Coloj?</string>
     <string name="rainfall_alert">Atentigo pri Pluvo?</string>
     <string name="rainfall_alert_desc">Atentigas ĉiutage kiam la pluvo atingas vian fiksitan limon</string>
-    <string name="rainfall_alert_imperial">Pluvokvanto %1$.2f%2$s kongruis kun via limo de %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Pluvo %1$.1f%2$s kongruis kun via limo de %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">Pluvo %1$s kongruis kun via limo de %2$s</string>
     <string name="rainfall_alert_str">Atentigo pri Pluvoj</string>
     <string name="rainfall_limit">Limo de Pluvo</string>
-    <string name="rainrate_alert_imperial_severe">Pluvokvanto de %1$.2fin en la lasta %2$d %3$s atingis \'Severa\' nivelon</string>
-    <string name="rainrate_alert_imperial_warning">Pluvokvanto de %1$.2fin en la lasta %2$d %3$s atingis la nivelon \'Averto\'</string>
-    <string name="rainrate_alert_imperial_watch">Pluvokvanto de %1$.2fin en la lasta %2$d %3$s atingis la nivelon \'Rigardi\'</string>
-    <string name="rainrate_alert_metric_severe">Pluvokvanto de %1$.1fmm en la lastaj %2$d %3$s atingis \'Severa\' nivelon</string>
-    <string name="rainrate_alert_metric_warning">Pluvokvanto de %1$.1fmm en la lasta %2$d %3$s atingis la nivelon de \'Averto\'</string>
-    <string name="rainrate_alert_metric_watch">Pluvokvanto de %1$.1fmm en la lasta %2$d %3$s atingis la nivelon \'Rigardi\'</string>
     <string name="rainrate_alert_severe">Atentigoj pri severa pluvofresio?</string>
     <string name="rainrate_alert_severe_desc">Atentigas se la pluvokvanto superas la severan limon bazitan sur pluvokvantodaŭro</string>
+    <string name="rainrate_alert_severe_notification">Pluvokvanto de %1$s en la lasta %2$d %3$s atingis \'Severa\' nivelon</string>
     <string name="rainrate_alert_severe_str">Averto de Severa Pluvokvanto</string>
     <string name="rainrate_alert_str">Averto pri pluvofresio</string>
     <string name="rainrate_alert_warning">Averto pri Pluvprocentaj Atentigoj?</string>
     <string name="rainrate_alert_warning_desc">Atentigas se la pluvokvanto superas la avertan limon bazitan sur pluvokvantodaŭro</string>
+    <string name="rainrate_alert_warning_notification">Pluvokvanto de %1$s en la lasta %2$d %3$s atingis \'Averton\' nivelon</string>
     <string name="rainrate_alert_warning_str">Averto Alerta pri pluvofresio</string>
     <string name="rainrate_alert_watch">Rigardi Atentigojn pri Pluvoj?</string>
     <string name="rainrate_alert_watch_desc">Atentigas se la pluvokvanto superas la horloĝan limon surbaze de pluvokvantodaŭro</string>
+    <string name="rainrate_alert_watch_notification">La pluvokvanto de %1$s en la lasta %2$d %3$s atingis la nivelon \'Watch\'</string>
     <string name="rainrate_alert_watch_str">Spektu Atenton pri Pluvoj</string>
     <string name="refresh_time">Elektu Refreŝigi Tempon</string>
     <string name="remove_all_data">Ĉu vi certas, ke vi volas forigi ĉiujn datumojn?</string>

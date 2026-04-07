@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Maidir</string>
     <string name="about_app">Maidir leis an App</string>
-    <string name="afternoon_alert">Thit an teocht %1$.1f°%2$s go dtí an teorainn atá agat de %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Foláireamh Tráthnóna?</string>
+	<string name="afternoon_temp_alert">Foláireamh Tráthnóna?</string>
     <string name="all_time_stats">Staitisticí Gach Am</string>
     <string name="app_theme">Téama App</string>
     <string name="avg">meánlíon</string>
@@ -62,8 +61,7 @@
     <string name="match_app">App Match</string>
     <string name="metric">Úsáid méadrach?</string>
     <string name="minutes">nóiméad</string>
-    <string name="morning_alert">D\'ardaigh teocht %1$.1f°%2$s go dtí an teorainn atá agat de %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Foláireamh Maidin?</string>
+	<string name="morning_temp_alert">Foláireamh Maidin?</string>
     <string name="next_moon">Imeachtaí na gealaí seo chugainn?</string>
     <string name="no">Níl</string>
     <string name="no_download_or_app_not_setup">Níl aon íoslódáil nó níor socraíodh aip</string>
@@ -88,17 +86,9 @@
     <string name="rain_in_inches">Báisteach in Orlach?</string>
     <string name="rainfall_alert">Foláireamh Báistí?</string>
     <string name="rainfall_alert_desc">Foláirimh laethúil nuair a shroicheann an bháisteach an teorainn socraithe agat</string>
-    <string name="rainfall_alert_imperial">Tháinig báisteach %1$.2f%2$s le do theorainn %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Tháinig báisteach %1$.1f%2$s le do theorainn %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Foláireamh Báistí</string>
+	<string name="rainfall_alert_str">Foláireamh Báistí</string>
     <string name="rainfall_limit">Teorainn Báistí</string>
-    <string name="rainrate_alert_imperial_severe">Ráta báistí de %1$.2fin le %2$d %3$s deiridh bainte amach ag leibhéal \'Géar\'</string>
-    <string name="rainrate_alert_imperial_warning">Ráta báistí de %1$.2fin le %2$d %3$s deiridh tar éis leibhéal \'Rabhadh\' a bhaint amach</string>
-    <string name="rainrate_alert_imperial_watch">Ráta báistí de %1$.2fin le %2$d %3$s deiridh tar éis leibhéal \'Faire\' a bhaint amach</string>
-    <string name="rainrate_alert_metric_severe">Ráta báistí de %1$.1fmm le %2$d %3$s deiridh bainte amach ag leibhéal \'Géar\'</string>
-    <string name="rainrate_alert_metric_warning">Ráta báistí %1$.1fmm le %2$d %3$s deiridh tar éis leibhéal \'Rabhadh\' a bhaint amach</string>
-    <string name="rainrate_alert_metric_watch">Ráta báistí %1$.1fmm le %2$d %3$s deiridh tar éis an leibhéal \'Faire\' a bhaint amach</string>
-    <string name="rainrate_alert_severe">Foláirimh Throm Báistí?</string>
+	<string name="rainrate_alert_severe">Foláirimh Throm Báistí?</string>
     <string name="rainrate_alert_severe_desc">Foláirimh má sháraíonn an ráta báistí an teorainn throm bunaithe ar fhad na báistí</string>
     <string name="rainrate_alert_severe_str">Foláireamh Báisteach Tromchúiseach</string>
     <string name="rainrate_alert_str">Foláireamh Báisteach</string>

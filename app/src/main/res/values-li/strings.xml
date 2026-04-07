@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Euver</string>
     <string name="about_app">Euver de App</string>
-    <string name="afternoon_alert">De temperatuur %1$.1f°%2$s is gedaald tot eur limiet vaan %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Middagwaarsjuwing?</string>
+	<string name="afternoon_temp_alert">Middagwaarsjuwing?</string>
     <string name="all_time_stats">Alle tiedstatistieke</string>
     <string name="app_theme">Apparaat ze</string>
     <string name="avg">gemiddeld</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Gebruuk Metric?</string>
     <string name="minutes">minuute</string>
-    <string name="morning_alert">De temperatuur %1$.1f°%2$s is gesteeg tot de grens vaan %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Ochtendwaarsjuwing?</string>
+	<string name="morning_temp_alert">Ochtendwaarsjuwing?</string>
     <string name="next_moon">Volgende maongebeurtenisse?</string>
     <string name="no">Nei</string>
     <string name="no_download_or_app_not_setup">Gein download of app is neet ingesjtèld</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">Rege in inches?</string>
     <string name="rainfall_alert">Regewaarsjuwing?</string>
     <string name="rainfall_alert_desc">Warnings dageleks es de neerslag de ingestelde grens bereik</string>
-    <string name="rainfall_alert_imperial">Neerslag %1$.2f%2$s heet euvereingekomme mit eur grens vaan %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Neerslag %1$.1f%2$s is euvereinkomme mit eur grens vaan %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Regewaarsjuwing</string>
+	<string name="rainfall_alert_str">Regewaarsjuwing</string>
     <string name="rainfall_limit">Neerslaggrens</string>
-    <string name="rainrate_alert_imperial_severe">De neersnelheid vaan %1$.2fin in de aafgeloupe %2$d %3$s heet \'Sernstig\' niveau bereik</string>
-    <string name="rainrate_alert_imperial_warning">De neersnelheid vaan %1$.2fin in de lètste %2$d %3$s heet \'Waarsjchuwing\'-niveau bereik</string>
-    <string name="rainrate_alert_imperial_watch">De neersnelheid vaan %1$.2fin in de lètste %2$d %3$s heet \'Watch\'-niveau bereik</string>
-    <string name="rainrate_alert_metric_severe">De neersnelheid vaan %1$.1fmm in de aafgeloupe %2$d %3$s heet \'t \'Ernstig\' niveau bereik</string>
-    <string name="rainrate_alert_metric_warning">De neersnelheid vaan %1$.1fmm in de lètste %2$d %3$s heet \'Waarsjchuwing\'-niveau bereik</string>
-    <string name="rainrate_alert_metric_watch">De neersnelheid vaan %1$.1fmm in de lètste %2$d %3$s heet \'Watch\'-niveau bereik</string>
-    <string name="rainrate_alert_severe">Waarsjchuwinge euver zware rege?</string>
+	<string name="rainrate_alert_severe">Waarsjchuwinge euver zware rege?</string>
     <string name="rainrate_alert_severe_desc">Warnings es de neersnelheid de zware grens euversjrijf, gebaseerd op de duur vaan de neerslag</string>
     <string name="rainrate_alert_severe_str">Warning veur zware rege</string>
     <string name="rainrate_alert_str">Regefrequentiewarning</string>

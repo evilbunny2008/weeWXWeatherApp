@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Körülbelül</string>
     <string name="about_app">Az alkalmazásról</string>
-    <string name="afternoon_alert">A %1$.1f°%2$s hőmérséklet a %3$.1f°%2$s határértékre esett</string>
-    <string name="afternoon_temp_alert">Délutáni riasztás?</string>
+	<string name="afternoon_temp_alert">Délutáni riasztás?</string>
     <string name="all_time_stats">Minden idők statisztika</string>
     <string name="app_theme">App téma</string>
     <string name="avg">átl.</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Használja a metrikát?</string>
     <string name="minutes">jegyzőkönyv</string>
-    <string name="morning_alert">A %1$.1f°%2$s hőmérséklet elérte a %3$.1f°%2$s határértéket</string>
-    <string name="morning_temp_alert">Reggeli riasztás?</string>
+	<string name="morning_temp_alert">Reggeli riasztás?</string>
     <string name="next_moon">Következő hold eseményei?</string>
     <string name="no">Nem</string>
     <string name="no_download_or_app_not_setup">Nincs letöltés vagy alkalmazás nincs beállítva</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Eső hüvelykben?</string>
     <string name="rainfall_alert">Eső riasztás?</string>
     <string name="rainfall_alert_desc">Naponta figyelmeztet, ha a csapadék eléri a beállított határértéket</string>
-    <string name="rainfall_alert_imperial">A(z) %1$.2f%2$s csapadék elérte a %3$.2f%2$s korlátot</string>
-    <string name="rainfall_alert_metric">A(z) %1$.1f%2$s csapadék elérte a %3$.1f%2$s korlátot</string>
-    <string name="rainfall_alert_str">Eső riasztás</string>
+	<string name="rainfall_alert_str">Eső riasztás</string>
     <string name="rainfall_limit">Csapadékkorlát</string>
-    <string name="rainrate_alert_imperial_severe">Az elmúlt %2$d %3$s %1$.2fin esőaránya elérte a \'súlyos\' szintet</string>
-    <string name="rainrate_alert_imperial_warning">Az elmúlt %2$d %3$s %1$.2fin esőzése elérte a \'Figyelmeztetés\' szintet</string>
-    <string name="rainrate_alert_imperial_watch">Az elmúlt %2$d %3$s %1$.2fin esőzése elérte a \'Megtekintés\' szintet</string>
-    <string name="rainrate_alert_metric_severe">Az elmúlt %2$d %3$s %1$.1fmm esőaránya elérte a \'súlyos\' szintet</string>
-    <string name="rainrate_alert_metric_warning">Az elmúlt %2$d %3$s %1$.1fmm esőaránya elérte a \'Figyelmeztetés\' szintet</string>
-    <string name="rainrate_alert_metric_watch">Az elmúlt %2$d %3$s %1$.1fmm esőaránya elérte a \'Megtekintés\' szintet</string>
-    <string name="rainrate_alert_severe">Súlyos esőzési riasztások?</string>
+	<string name="rainrate_alert_severe">Súlyos esőzési riasztások?</string>
     <string name="rainrate_alert_severe_desc">Figyelmeztetés, ha a csapadékmennyiség meghaladja a csapadék időtartama alapján meghatározott szigorú határértéket</string>
     <string name="rainrate_alert_severe_str">Súlyos esőzési riasztás</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>

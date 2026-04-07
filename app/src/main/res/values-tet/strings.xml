@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Kona-ba</string>
     <string name="about_app">Kona-ba App</string>
-    <string name="afternoon_alert">Temperatura %1$.1f°%2$s tun ona ba ita-boot nia limite %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alerta loraik nian?</string>
+	<string name="afternoon_temp_alert">Alerta loraik nian?</string>
     <string name="all_time_stats">Estatístika Tempu hotu-hotu</string>
     <string name="app_theme">Tema App</string>
 	<string name="battery_warning">Avisu: Hakbiit opsaun iha leten bele halakon ita-nia bateria lalais liu fali baibain</string>
@@ -58,8 +57,7 @@
     <string name="match_app">App Match App</string>
     <string name="metric">Uza Métrika?</string>
     <string name="minutes">minutu</string>
-    <string name="morning_alert">Temperatura %1$.1f°%2$s sa\'e ona ba ita-boot nia limite %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alerta dadeer nian?</string>
+	<string name="morning_temp_alert">Alerta dadeer nian?</string>
     <string name="next_moon">Eventu fulan tuir mai?</string>
     <string name="no">Lae</string>
     <string name="no_download_or_app_not_setup">Laiha download ka app seidauk setup</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Udan iha Polegadas?</string>
     <string name="rainfall_alert">Alerta ba udan-been?</string>
     <string name="rainfall_alert_desc">Alerta loroloron bainhira udan-been atinji ita-boot nia limite ne\'ebé estabelese ona</string>
-    <string name="rainfall_alert_imperial">Udan been %1$.2f%2$s koresponde ona ho ita-boot nia limite %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Udan-been %1$.1f%2$s koresponde ona ho ita-boot nia limite %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alerta ba udan-been</string>
+	<string name="rainfall_alert_str">Alerta ba udan-been</string>
     <string name="rainfall_limit">Limite udan been</string>
-    <string name="rainrate_alert_imperial_severe">Taxa udan %1$.2fin iha %2$d %3$s ikus atinji ona nivel \'Grave\'</string>
-    <string name="rainrate_alert_imperial_warning">Taxa udan nian %1$.2fin iha %2$d %3$s ikus atinji ona nivel \'Alerta\'</string>
-    <string name="rainrate_alert_imperial_watch">Rainrate %1$.2fin iha %2$d %3$s ikus atinji ona nivel \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Taxa udan nian %1$.1fmm iha %2$d %3$s ikus atinji ona nivel \'Grave\'</string>
-    <string name="rainrate_alert_metric_warning">Taxa udan nian %1$.1fmm iha %2$d %3$s ikus atinji ona nivel \'Alerta\'</string>
-    <string name="rainrate_alert_metric_watch">Rainrate %1$.1fmm iha %2$d %3$s ikus atinji ona nivel \'Watch\'</string>
-    <string name="rainrate_alert_severe">Alerta sira kona-ba udan maka\'as?</string>
+	<string name="rainrate_alert_severe">Alerta sira kona-ba udan maka\'as?</string>
     <string name="rainrate_alert_severe_desc">Alerta sira se udan-been liu limite maka\'as bazeia ba durasaun udan-been nian</string>
     <string name="rainrate_alert_severe_str">Alerta ba udan maka\'as</string>
     <string name="rainrate_alert_str">Alerta ba udan-been</string>

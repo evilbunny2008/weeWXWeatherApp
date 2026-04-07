@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Om</string>
     <string name="about_app">Om appen</string>
-    <string name="afternoon_alert">Temperaturen %1$.1f°%2$s har sjunkit till din gräns på %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Eftermiddagsvarning?</string>
+	<string name="afternoon_temp_alert">Eftermiddagsvarning?</string>
     <string name="all_time_stats">All Time Statistics</string>
     <string name="app_theme">App-tema</string>
 	<string name="avg">gen.</string>
@@ -59,8 +58,7 @@
     <string name="match_app">Match app</string>
     <string name="metric">Använd Metric?</string>
     <string name="minutes">minuter</string>
-    <string name="morning_alert">Temperaturen %1$.1f°%2$s har stigit till din gräns på %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Morgonvarning?</string>
+	<string name="morning_temp_alert">Morgonvarning?</string>
     <string name="next_moon">Nästa månhändelser?</string>
     <string name="no">Inga</string>
     <string name="no_download_or_app_not_setup">Ingen nedladdning eller app har inte konfigurerats</string>
@@ -82,17 +80,9 @@
     <string name="rain_in_inches">Regn i tum?</string>
     <string name="rainfall_alert">Regnvarning?</string>
     <string name="rainfall_alert_desc">Varningar dagligen när nederbörden når din inställda gräns</string>
-    <string name="rainfall_alert_imperial">Nederbörden %1$.2f%2$s har matchat din gräns på %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Nederbörden %1$.1f%2$s har matchat din gräns på %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Regnvarning</string>
+	<string name="rainfall_alert_str">Regnvarning</string>
     <string name="rainfall_limit">Nederbördsgräns</string>
-    <string name="rainrate_alert_imperial_severe">Regnhastigheten på %1$.2fin under de senaste %2$d %3$s har nått \'allvarlig\' nivå</string>
-    <string name="rainrate_alert_imperial_warning">Regnhastigheten på %1$.2fin under de senaste %2$d %3$s har nått \'Varning\'-nivån</string>
-    <string name="rainrate_alert_imperial_watch">Regnhastigheten på %1$.2fin under de senaste %2$d %3$s har nått \'Titta\'-nivån</string>
-    <string name="rainrate_alert_metric_severe">Regnhastigheten på %1$.1fmm under de senaste %2$d %3$s har nått \'allvarlig\' nivå</string>
-    <string name="rainrate_alert_metric_warning">Regnhastighet på %1$.1fmm under de senaste %2$d %3$s har nått \'Varning\'-nivån</string>
-    <string name="rainrate_alert_metric_watch">Regnhastighet på %1$.1fmm under de senaste %2$d %3$s har nått \'Titta\'-nivå</string>
-    <string name="rainrate_alert_severe">Varningar för kraftiga regn?</string>
+	<string name="rainrate_alert_severe">Varningar för kraftiga regn?</string>
     <string name="rainrate_alert_severe_desc">Varnar om nederbörden överskrider den allvarliga gränsen baserat på nederbördens varaktighet</string>
     <string name="rainrate_alert_severe_str">Varning för kraftig regn</string>
     <string name="rainrate_alert_str">Regnhastighetsvarning</string>

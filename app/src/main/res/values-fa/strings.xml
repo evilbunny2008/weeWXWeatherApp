@@ -2,8 +2,7 @@
 <resources>
     <string name="about">درباره</string>
     <string name="about_app">درباره برنامه</string>
-    <string name="afternoon_alert">دمای %1$.1f°%2$s به حد مجاز %3$.1f°%2$s شما کاهش یافته است</string>
-    <string name="afternoon_temp_alert">هشدار بعدازظهر؟</string>
+	<string name="afternoon_temp_alert">هشدار بعدازظهر؟</string>
     <string name="all_time_stats">آمار همه زمان ها</string>
     <string name="app_theme">تم برنامه</string>
     <string name="avg">میانگین</string>
@@ -62,8 +61,7 @@
     <string name="match_app">برنامه مطابقت</string>
     <string name="metric">استفاده از متریک؟</string>
     <string name="minutes">دقیقه</string>
-    <string name="morning_alert">دمای %1$.1f°%2$s به حد مجاز %3$.1f°%2$s شما افزایش یافته است</string>
-    <string name="morning_temp_alert">هشدار صبحگاهی؟</string>
+	<string name="morning_temp_alert">هشدار صبحگاهی؟</string>
     <string name="next_moon">رویدادهای ماه بعدی؟</string>
     <string name="no">خیر</string>
     <string name="no_download_or_app_not_setup">هیچ دانلود یا برنامه ای راه اندازی نشده است</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">باران در اینچ؟</string>
     <string name="rainfall_alert">هشدار بارندگی؟</string>
     <string name="rainfall_alert_desc">زمانی که بارندگی به حد مجاز تعیین شده شما برسد، هر روز هشدار می دهد</string>
-    <string name="rainfall_alert_imperial">میزان بارندگی %1$.2f%2$s با محدودیت %3$.2f%2$s شما مطابقت دارد</string>
-    <string name="rainfall_alert_metric">میزان بارندگی %1$.1f%2$s با محدودیت %3$.1f%2$s شما مطابقت دارد</string>
-    <string name="rainfall_alert_str">هشدار بارندگی</string>
+	<string name="rainfall_alert_str">هشدار بارندگی</string>
     <string name="rainfall_limit">محدودیت بارندگی</string>
-    <string name="rainrate_alert_imperial_severe">میزان بارندگی %1$.2fin در آخرین %2$d %3$s به سطح \'شدید\' رسیده است</string>
-    <string name="rainrate_alert_imperial_warning">میزان بارندگی %1$.2fin در آخرین %2$d %3$s به سطح \'هشدار\' رسیده است</string>
-    <string name="rainrate_alert_imperial_watch">میزان بارندگی %1$.2fin در آخرین %2$d %3$s به سطح \'تماشا\' رسیده است</string>
-    <string name="rainrate_alert_metric_severe">میزان بارندگی %1$.1fmm در آخرین %2$d %3$s به سطح \'شدید\' رسیده است</string>
-    <string name="rainrate_alert_metric_warning">میزان بارندگی %1$.1fmm در %2$d گذشته %3$s به سطح \'هشدار\' رسیده است</string>
-    <string name="rainrate_alert_metric_watch">میزان بارندگی %1$.1fmm در آخرین %2$d %3$s به سطح \'تماشا\' رسیده است</string>
-    <string name="rainrate_alert_severe">هشدارهای شدید باران؟</string>
+	<string name="rainrate_alert_severe">هشدارهای شدید باران؟</string>
     <string name="rainrate_alert_severe_desc">اگر میزان بارندگی از حد شدید بر اساس مدت بارندگی فراتر رود، هشدار می دهد</string>
     <string name="rainrate_alert_severe_str">هشدار شدید باران</string>
     <string name="rainrate_alert_str">هشدار میزان باران</string>

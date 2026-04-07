@@ -2,7 +2,7 @@
 <resources>
     <string name="about">ཉེ་སྐོར་དུ</string>
     <string name="about_app">མཉེན་ཆས་ཀྱི་སྐོར།</string>
-    <string name="afternoon_alert">དྲོད་ཚད་%1$.1f°%2$s ཁྱེད་ཀྱི་ཚད་གཞི་%3$.1f°%2$s བར་ཆག་ཡོད།</string>
+    <string name="afternoon_alert">དྲོད་ཚད %1$s ཁྱེད་ཀྱི་ཚད་གཞི་ %2$s ལ་བབས་ཡོད།</string>
     <string name="afternoon_temp_alert">ཕྱི་དྲོའི་ཉེན་བརྡ།</string>
     <string name="all_time_stats">དུས་ཚོད་ཚང་མའི་གྲངས་གཞི།</string>
     <string name="app_theme">མཉེན་ཆས་ཀྱི་བརྗོད་གཞི།</string>
@@ -62,7 +62,7 @@
     <string name="match_app">མཐུན་སྒྲིག་མཉེན་ཆས།</string>
     <string name="metric">མེ་ཊིག་བེད་སྤྱོད་བྱེད་དམ།</string>
     <string name="minutes">སྐར་མ</string>
-    <string name="morning_alert">དྲོད་ཚད་%1$.1f°%2$s ཁྱེད་ཀྱི་ཚད་གཞི་%3$.1f°%2$s བར་འཕར་ཡོད།</string>
+    <string name="morning_alert">དྲོད་ཚད %1$s ཁྱེད་ཀྱི་ཚད་གཞི %2$s བར་འཕར་ཡོད།</string>
     <string name="morning_temp_alert">ཞོགས་པའི་ཉེན་བརྡ།</string>
     <string name="next_moon">ཟླ་བ་རྗེས་མའི་བྱུང་རིམ།</string>
     <string name="no">མིན</string>
@@ -84,25 +84,21 @@
     <string name="rain_in_inches">དབྱིན་ཚུན་ནང་ཆར་བ་བབས་སམ།</string>
     <string name="rainfall_alert">ཆར་ཆུ་འབབ་པའི་ཉེན་བརྡ།</string>
     <string name="rainfall_alert_desc">ཆར་ཆུ་འབབ་ཚད་ཁྱེད་ཀྱི་གཏན་འཁེལ་བྱས་པའི་ཚད་གཞི་ལ་སླེབས་ཚེ་ཉིན་ལྟར་ཁྱེད་ལ་དྲན་སྐུལ་བྱེད།</string>
-    <string name="rainfall_alert_imperial">ཆར་འབབ་ཚད་%1$.2f%2$s ཁྱེད་ཀྱི་ཚད་གཞི་%3$.2f%2$s དང་མཐུན་ཡོད།</string>
-    <string name="rainfall_alert_metric">ཆར་འབབ་ཚད་%1$.1f%2$s ཁྱེད་ཀྱི་ཚད་གཞི་%3$.1f%2$s དང་མཐུན་ཡོད།</string>
+    <string name="rainfall_alert_notification">ཆར་འབབ་ཚད་ %1$s ཁྱེད་ཀྱི་ཚད་གཞི་ %2$s དང་མཐུན་ཡོད།</string>
     <string name="rainfall_alert_str">ཆར་ཆུའི་ཉེན་བརྡ།</string>
     <string name="rainfall_limit">ཆར་ཆུ་འབབ་ཚད་ཀྱི་ཚད་གཞི།</string>
-    <string name="rainrate_alert_imperial_severe">ཆར་ཆུ་འབབ་ཚད་%1$.2fin འདས་པའི་%2$d %3$s \'ཚབས་ཆེན\' ཚད་གཞིར་སླེབས་ཡོད།</string>
-    <string name="rainrate_alert_imperial_warning">ཆར་ཆུ་འབབ་ཚད་%1$.2fin འདས་པའི་%2$d %3$s \'ཉེན་བརྡ\'ཚད་གཞིར་སླེབས་ཡོད།</string>
-    <string name="rainrate_alert_imperial_watch">ཆར་ཆུ་འབབ་ཚད་%1$.2fin འདས་པའི་%2$d %3$s \'བལྟ་རྟོག\' ཚད་གཞིར་སླེབས་ཡོད།</string>
-    <string name="rainrate_alert_metric_severe">ཆར་ཆུ་འབབ་ཚད་%1$.1fmm %2$d %3$s \'ཚབས་ཆེན\' ཚད་གཞིར་སླེབས་ཡོད།</string>
-    <string name="rainrate_alert_metric_warning">ཉེ་བའི་ཆར་ཆུའི་ཚད་%1$.1fmm %2$d %3$s \'ཉེན་བརྡ\'ཚད་གཞིར་སླེབས་ཡོད།</string>
-    <string name="rainrate_alert_metric_watch">ཆར་ཆུ་འབབ་ཚད་%1$.1fmm %2$d %3$s \'ལྟ་རྟོག\' ཚད་གཞིར་སླེབས་ཡོད།</string>
     <string name="rainrate_alert_severe">ཆར་ཆུ་ཚབས་ཆེན་གྱི་ཉེན་བརྡ་རེད་དམ།</string>
     <string name="rainrate_alert_severe_desc">ཆར་ཆུ་འབབ་ཚད་ལ་གཞིགས་ནས་ཚབས་ཆེ་བའི་ཚད་གཞི་ལས་བརྒལ་ཚེ་ཉེན་བརྡ།</string>
+    <string name="rainrate_alert_severe_notification">ཉེ་བའི་ཆར་ཆུ་འབབ་ཚད་%1$s %2$d %3$s \'ཚབས་ཆེན\' ཚད་གཞིར་སླེབས་ཡོད།</string>
     <string name="rainrate_alert_severe_str">དྲག་ཆར་འབབ་ཚད་ཉེན་བརྡ།</string>
     <string name="rainrate_alert_str">ཆར་ཆུ་འབབ་ཚད་ཉེན་བརྡ།</string>
     <string name="rainrate_alert_warning">ཉེན་བརྡའི་ཆར་ཆུའི་ཚད་ཀྱི་ཉེན་བརྡ།</string>
     <string name="rainrate_alert_warning_desc">ཆར་ཆུ་འབབ་ཚད་ལ་གཞིགས་ནས་ཉེན་བརྡའི་ཚད་གཞི་ལས་བརྒལ་ཚེ་ཉེན་བརྡ།</string>
+    <string name="rainrate_alert_warning_notification">ཆར་པ་འབབ་ཚད%1$s ཉེ་བའི་%2$d %3$s \'ཉེན་བརྡ\'ཚད་གཞིར་སླེབས་ཡོད།</string>
     <string name="rainrate_alert_warning_str">ཉེན་བརྡའི་ཆར་ཆུ་འབབ་ཚད་ཉེན་བརྡ།</string>
     <string name="rainrate_alert_watch">ཆར་ཆུའི་ཚད་ཀྱི་ཉེན་བརྡ་ལ་ལྟོས།</string>
     <string name="rainrate_alert_watch_desc">ཆར་ཆུ་འབབ་ཚད་ལ་གཞིགས་ནས་ཆར་ཆུ་འབབ་ཚད་ཆུ་ཚོད་ཀྱི་ཚད་གཞི་ལས་བརྒལ་ན་ཉེན་བརྡ་གཏོང་བ།</string>
+    <string name="rainrate_alert_watch_notification">ཆར་ཆུ་འབབ་ཚད་%1$s ཉེ་བའི་%2$d %3$s \'བལྟ་རྟོག\' ཚད་གཞིར་སླེབས་ཡོད།</string>
     <string name="rainrate_alert_watch_str">Watch ཆར་ཆུའི་ཚད་གཞིའི་ཉེན་བརྡ།</string>
     <string name="refresh_time">གསར་བརྗེའི་དུས་ཚོད་འདེམས།</string>
     <string name="remove_all_data">ཁྱོད་ཀྱིས་གཞི་གྲངས་ཚང་མ་མེད་པར་བཟོ་འདོད་ཡོད་དམ།</string>

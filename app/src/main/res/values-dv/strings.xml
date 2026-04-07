@@ -2,7 +2,7 @@
 <resources>
     <string name="about">ގުޅިގެން</string>
     <string name="about_app">އެޕް އާއި ބެހޭ ގޮތުން</string>
-    <string name="afternoon_alert">%1$.1f°%2$s ގެ ފިނިހޫނުމިން ތިބާގެ ލިމިޓް %3$.1f°%2$s އަށް ވެއްޓިއްޖެއެވެ</string>
+    <string name="afternoon_alert">ޓެމްޕަރޭޗަރ %1$s ތިބާގެ ލިމިޓް %2$s އަށް ވެއްޓިއްޖެއެވެ</string>
     <string name="afternoon_temp_alert">މެންދުރު އެލާޓް؟</string>
     <string name="all_time_stats">ހުރިހާ ވަގުތެއްގައިވެސް ތަފާސްހިސާބު</string>
     <string name="app_theme">އެޕް ތީމް</string>
@@ -62,7 +62,7 @@
     <string name="match_app">މެޗް އެޕް</string>
     <string name="metric">މެޓްރިކް ބޭނުން ހެއްޔެވެ؟</string>
     <string name="minutes">މިނެޓް</string>
-    <string name="morning_alert">ފިނިހޫނުމިން %1$.1f°%2$s ތިބާގެ ލިމިޓް %3$.1f°%2$s އަށް މައްޗަށް ގޮސްފިއެވެ</string>
+    <string name="morning_alert">ފިނިހޫނުމިން %1$s ތިބާގެ ލިމިޓް %2$s އަށް މައްޗަށް ގޮސްފިއެވެ</string>
     <string name="morning_temp_alert">ހެނދުނުގެ އެލާޓް؟</string>
     <string name="next_moon">ދެން ހަނދުގެ އިވެންޓްތައް؟</string>
     <string name="no">ނޫން</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">އިންޗިން ވާރޭ ވެހޭނެ ހެއްޔެވެ؟</string>
     <string name="rainfall_alert">ރެއިންފޯލް އެލާޓް؟</string>
     <string name="rainfall_alert_desc">ކޮންމެ ދުވަހަކު ވާރޭ ވެހޭ މިންވަރު ކަނޑައެޅިފައިވާ ލިމިޓަށް ވާސިލްވުމުން އެލާޓް ކުރެއެވެ</string>
-    <string name="rainfall_alert_imperial">ވާރޭ ވެހޭ މިންވަރު %1$.2f%2$s އާއި ތިބާގެ ލިމިޓް %3$.2f%2$s އާއި ގުޅިއްޖެއެވެ</string>
-    <string name="rainfall_alert_metric">ވާރޭ ވެހޭ މިންވަރު %1$.1f%2$s އާއި ތިބާގެ ލިމިޓް %3$.1f%2$s އާއި ގުޅިއްޖެއެވެ</string>
+    <string name="rainfall_alert_notification">ވާރޭ ވެހޭ މިންވަރު %1$s ތިބާގެ ލިމިޓް %2$s އާއި ގުޅިއްޖެއެވެ</string>
     <string name="rainfall_alert_str">ރެއިންފޯލް އެލާޓް</string>
     <string name="rainfall_limit">ވާރޭވެހުމުގެ ލިމިޓް</string>
-    <string name="rainrate_alert_imperial_severe">އެންމެ ފަހުގެ %2$d %3$s ގައި %1$.2fin ގެ ވާރޭ ރޭޓް \'ސީވަރ\' ލެވެލް އަށް އަރާފައިވެއެވެ</string>
-    <string name="rainrate_alert_imperial_warning">އެންމެ ފަހުގެ %2$d %3$s ގައި %1$.2fin ގެ ވާރޭ ރޭޓް \'އިންޒާރު\' ލެވެލް އަށް އަރާފައިވެއެވެ</string>
-    <string name="rainrate_alert_imperial_watch">އެންމެ ފަހުގެ %2$d %3$s ގައި %1$.2fin ގެ ވާރޭ ރޭޓް \'ވޮޗް\' ލެވެލް އަށް އަރާފައިވެއެވެ</string>
-    <string name="rainrate_alert_metric_severe">މިދިޔަ %2$d %3$s ގައި %1$.1fmm ގެ ވާރޭ ރޭޓް \'ސީވަރ\' ލެވެލް އަށް އަރާފައިވެއެވެ</string>
-    <string name="rainrate_alert_metric_warning">އެންމެ ފަހުން %2$d %3$s ގައި %1$.1fmm ގެ ވާރޭ ވެހޭ މިންވަރު ވަނީ \'އިންޒާރު\' ލެވެލް އަށް އަރާފައެވެ</string>
-    <string name="rainrate_alert_metric_watch">އެންމެ ފަހުގެ %2$d %3$s ގައި %1$.1fmm ގެ ވާރޭ ރޭޓް \'ވޮޗް\' ލެވެލް އަށް އަރާފައިވެއެވެ</string>
     <string name="rainrate_alert_severe">ގަދަ ވިއްސާރައިގެ އެލާޓްތަކެއް؟</string>
     <string name="rainrate_alert_severe_desc">ވާރޭ ވެހޭ މުއްދަތަށް ބަލައިގެން ވާރޭ ވެހޭ މިންވަރު ސީރިއަސް ލިމިޓަށް ވުރެ އިތުރުވެއްޖެނަމަ އެލާޓް ދިނުން</string>
+    <string name="rainrate_alert_severe_notification">އެންމެ ފަހުގެ %2$d %3$s ގައި %1$s ގެ ވާރޭ ރޭޓް \'ސީވަރ\' ލެވެލް އަށް އަރާފައިވެއެވެ</string>
     <string name="rainrate_alert_severe_str">ސީރިއަސް ރެއިންރޭޓް އެލާޓް</string>
     <string name="rainrate_alert_str">ރެއިންރޭޓް އެލާޓް</string>
     <string name="rainrate_alert_warning">އިންޒާރު ރެއިންރޭޓް އެލާޓްސް؟</string>
     <string name="rainrate_alert_warning_desc">ވާރޭ ވެހޭ މުއްދަތަށް ބަލައިގެން ވާރޭވެހޭ މިންވަރު އިންޒާރުދޭ މިންވަރަށް ވުރެ އިތުރުވެއްޖެނަމަ އެލާޓް ދިނުން</string>
+    <string name="rainrate_alert_warning_notification">އެންމެ ފަހުގެ %2$d %3$s ގައި %1$s ގެ ވާރޭ ރޭޓް \'އިންޒާރު\' ލެވެލް އަށް އަރާފައިވެއެވެ</string>
     <string name="rainrate_alert_warning_str">އިންޒާރު ރެއިންރޭޓް އެލާޓް</string>
     <string name="rainrate_alert_watch">ރެއިންރޭޓް އެލާޓްސް ބައްލަވާލައްވާ؟</string>
     <string name="rainrate_alert_watch_desc">ވާރޭ ވެހޭ މުއްދަތަށް ބަލާފައި ވާރޭ ވެހޭ މިންވަރު ގަޑި ލިމިޓަށް ވުރެ އިތުރުވެއްޖެނަމަ އެލާޓް ކުރެއެވެ</string>
+    <string name="rainrate_alert_watch_notification">އެންމެ ފަހުގެ %2$d %3$s ގައި %1$s ގެ ވާރޭ ރޭޓް \'ވޮޗް\' ލެވެލް އަށް އަރާފައިވެއެވެ</string>
     <string name="rainrate_alert_watch_str">ރެއިންރޭޓް އެލާޓް ބައްލަވާށެވެ</string>
     <string name="refresh_time">ރިފްރެޝް ޓައިމް ހޮވާށެވެ</string>
     <string name="remove_all_data">ހުރިހާ ޑޭޓާއެއް ނައްތާލަން ބޭނުންވާކަން ޔަގީން ހެއްޔެވެ؟</string>

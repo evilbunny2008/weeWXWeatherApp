@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Ji dor</string>
     <string name="about_app">Der barê App</string>
-    <string name="afternoon_alert">Germahiya %1$.1f°%2$s daketiye sînorê te %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alert piştî nîvro?</string>
+	<string name="afternoon_temp_alert">Alert piştî nîvro?</string>
     <string name="all_time_stats">All Time Statistics</string>
     <string name="app_theme">Mijara App</string>
     <string name="avg">avg</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Metric bikar bînin?</string>
     <string name="minutes">minutes</string>
-    <string name="morning_alert">Germahiya %1$.1f°%2$s gihîştiye sînorê weya %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Morning Alert?</string>
+	<string name="morning_temp_alert">Morning Alert?</string>
     <string name="next_moon">Bûyerên din ên heyvê?</string>
     <string name="no">Na</string>
     <string name="no_download_or_app_not_setup">Tu dakêşandin an serîlêdan nehatiye saz kirin</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Baran bi Inches?</string>
     <string name="rainfall_alert">Rainfall Alert?</string>
     <string name="rainfall_alert_desc">Dema ku baran digihîje sînorê weya destnîşankirî rojane hişyar dike</string>
-    <string name="rainfall_alert_imperial">Barîna %1$.2f%2$s bi sînorê te yê %3$.2f%2$s re hat hev</string>
-    <string name="rainfall_alert_metric">Barîna %1$.1f%2$s bi sînorê te yê %3$.1f%2$s re li hev hat</string>
-    <string name="rainfall_alert_str">Rainfall Alert</string>
+	<string name="rainfall_alert_str">Rainfall Alert</string>
     <string name="rainfall_limit">Sînora baranê</string>
-    <string name="rainrate_alert_imperial_severe">Rêjeya baranê ya %1$.2fin di %2$d ya dawîn de %3$s ket asta \'Girtî\'</string>
-    <string name="rainrate_alert_imperial_warning">Rêjeya baranê ya %1$.2fin di %2$d ya dawîn de %3$s ket asta \'Hişyarî\'</string>
-    <string name="rainrate_alert_imperial_watch">Rêjeya baranê ya %1$.2finê di %2$d ya dawîn de %3$s ket asta \'Temaşê\'</string>
-    <string name="rainrate_alert_metric_severe">Rêjeya baranê ya %1$.1fmm di %2$d ya dawîn de %3$s ketiye asta \'Girt\'</string>
-    <string name="rainrate_alert_metric_warning">Rêjeya baranê ya %1$.1fmm di %2$d ya dawîn de %3$s ket asta \'Hişyarî\'</string>
-    <string name="rainrate_alert_metric_watch">Rêjeya baranê ya %1$.1fmm di %2$d ya dawîn de %3$s ketiye asta \'Temaşê\'</string>
-    <string name="rainrate_alert_severe">Hişyariyên Rêjeya Baranê ya Zehf?</string>
+	<string name="rainrate_alert_severe">Hişyariyên Rêjeya Baranê ya Zehf?</string>
     <string name="rainrate_alert_severe_desc">Ger rêjeya baranê ji sînorê giran derbas bibe li gorî dirêjahiya baranê hişyar dike</string>
     <string name="rainrate_alert_severe_str">Hişyariya baranê ya giran</string>
     <string name="rainrate_alert_str">Rainrate Alert</string>

@@ -2,8 +2,7 @@
 <resources>
     <string name="about">ກ່ຽວກັບ</string>
     <string name="about_app">ກ່ຽວກັບ app</string>
-    <string name="afternoon_alert">ອຸນຫະພູມ %1$.1f°%2$s ໄດ້ຫຼຸດລົງເຖິງຂີດຈຳກັດຂອງທ່ານທີ່ %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">ແຈ້ງເຕືອນຕອນບ່າຍ?</string>
+	<string name="afternoon_temp_alert">ແຈ້ງເຕືອນຕອນບ່າຍ?</string>
     <string name="all_time_stats">ສະຖິຕິເວລາທັງຫມົດ</string>
     <string name="app_theme">ຫົວຂໍ້ App</string>
     <string name="avg">ສະເລ່ຍ</string>
@@ -62,8 +61,7 @@
     <string name="match_app">match match</string>
     <string name="metric">ໃຊ້ metric?</string>
     <string name="minutes">ນາທີ</string>
-    <string name="morning_alert">ອຸນຫະພູມ %1$.1f°%2$s ເພີ່ມຂຶ້ນຮອດຂີດຈຳກັດຂອງທ່ານທີ່ %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">ແຈ້ງເຕືອນຕອນເຊົ້າ?</string>
+	<string name="morning_temp_alert">ແຈ້ງເຕືອນຕອນເຊົ້າ?</string>
     <string name="next_moon">ເຫດການດວງເດືອນຕໍ່ໄປ?</string>
     <string name="no">ບໍ່</string>
     <string name="no_download_or_app_not_setup">ບໍ່ມີການດາວໂຫຼດ ຫຼືແອັບຍັງບໍ່ໄດ້ຖືກຕັ້ງຄ່າ</string>
@@ -84,17 +82,9 @@
     <string name="rain_in_inches">ຝົນໃນນິ້ວ?</string>
     <string name="rainfall_alert">ແຈ້ງເຕືອນຝົນຕົກ?</string>
     <string name="rainfall_alert_desc">ແຈ້ງເຕືອນທຸກວັນເມື່ອຝົນຕົກຮອດກຳນົດທີ່ກຳນົດໄວ້</string>
-    <string name="rainfall_alert_imperial">ຝົນຕົກ %1$.2f%2$s ກົງກັບຂີດຈຳກັດ %3$.2f%2$s ຂອງທ່ານ</string>
-    <string name="rainfall_alert_metric">ຝົນຕົກ %1$.1f%2$s ກົງກັບຂີດຈຳກັດ %3$.1f%2$s ຂອງທ່ານ</string>
-    <string name="rainfall_alert_str">ແຈ້ງເຕືອນຝົນຕົກ</string>
+	<string name="rainfall_alert_str">ແຈ້ງເຕືອນຝົນຕົກ</string>
     <string name="rainfall_limit">ຈຳກັດປະລິມານນ້ຳຝົນ</string>
-    <string name="rainrate_alert_imperial_severe">ອັດຕາຝົນ %1$.2fin ໃນ %2$d %3$s ສຸດທ້າຍໄດ້ຮອດລະດັບ \'ຮ້າຍແຮງ\'</string>
-    <string name="rainrate_alert_imperial_warning">ອັດຕາຝົນ %1$.2fin ໃນ %2$d %3$s ສຸດທ້າຍໄດ້ຮອດລະດັບ \'ຄຳເຕືອນ\'</string>
-    <string name="rainrate_alert_imperial_watch">ອັດຕາຝົນ %1$.2fin ໃນ %2$d %3$s ສຸດທ້າຍໄດ້ຮອດລະດັບ \'ເບິ່ງ\'</string>
-    <string name="rainrate_alert_metric_severe">ອັດຕາຝົນ %1$.1fmm ໃນ %2$d %3$s ສຸດທ້າຍໄດ້ຮອດລະດັບ \'ຮ້າຍແຮງ\'</string>
-    <string name="rainrate_alert_metric_warning">ອັດຕາຝົນ %1$.1fmm ໃນ %2$d %3$s ສຸດທ້າຍໄດ້ຮອດລະດັບ \'ຄຳເຕືອນ\'</string>
-    <string name="rainrate_alert_metric_watch">ອັດຕາຝົນ %1$.1fmm ໃນ %2$d %3$s ສຸດທ້າຍໄດ້ຮອດລະດັບ \'ເບິ່ງ\'</string>
-    <string name="rainrate_alert_severe">ແຈ້ງເຕືອນຝົນຕົກໜັກບໍ?</string>
+	<string name="rainrate_alert_severe">ແຈ້ງເຕືອນຝົນຕົກໜັກບໍ?</string>
     <string name="rainrate_alert_severe_desc">ແຈ້ງເຕືອນຖ້າປະລິມານຝົນຕົກເກີນຂອບເຂດທີ່ຮຸນແຮງໂດຍອີງໃສ່ໄລຍະເວລາຝົນຕົກ</string>
     <string name="rainrate_alert_severe_str">ແຈ້ງເຕືອນຝົນຕົກໜັກ</string>
     <string name="rainrate_alert_str">ແຈ້ງເຕືອນຝົນຕົກ</string>

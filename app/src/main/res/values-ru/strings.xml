@@ -2,8 +2,7 @@
 <resources>
     <string name="about">О</string>
     <string name="about_app">О приложении</string>
-    <string name="afternoon_alert">Температура %1$.1f°%2$s упала до вашего предела %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Послеобеденное оповещение?</string>
+	<string name="afternoon_temp_alert">Послеобеденное оповещение?</string>
     <string name="all_time_stats">Статистика за все время</string>
     <string name="app_theme">Тема приложения</string>
 	<string name="avg">ср.</string>
@@ -59,8 +58,7 @@
     <string name="match_app">Приложение \'Матч\'</string>
     <string name="metric">Использовать метрику?</string>
     <string name="minutes">минуты</string>
-    <string name="morning_alert">Температура %1$.1f°%2$s достигла предела %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Утреннее оповещение?</string>
+	<string name="morning_temp_alert">Утреннее оповещение?</string>
     <string name="next_moon">События следующей луны?</string>
     <string name="no">Нет</string>
     <string name="no_download_or_app_not_setup">Нет загрузки или приложение не установлено</string>
@@ -84,17 +82,9 @@
     <string name="rain_in_inches">Дождь в дюймах?</string>
     <string name="rainfall_alert">Оповещение о ливне?</string>
     <string name="rainfall_alert_desc">Оповещения ежедневно, когда количество осадков достигает установленного вами лимита</string>
-    <string name="rainfall_alert_imperial">Количество осадков %1$.2f%2$s соответствует вашему лимиту в %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Количество осадков %1$.1f%2$s соответствует вашему лимиту в %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Оповещение об осадках</string>
+	<string name="rainfall_alert_str">Оповещение об осадках</string>
     <string name="rainfall_limit">Предел количества осадков</string>
-    <string name="rainrate_alert_imperial_severe">Уровень дождя %1$.2fin за последние %2$d %3$s достиг уровня \'Сильный\'</string>
-    <string name="rainrate_alert_imperial_warning">Уровень дождя %1$.2fin за последние %2$d %3$s достиг уровня \'Предупреждение\'</string>
-    <string name="rainrate_alert_imperial_watch">Уровень дождя %1$.2fin за последние %2$d %3$s достиг уровня \'Наблюдение\'</string>
-    <string name="rainrate_alert_metric_severe">Уровень дождя %1$.1fmm за последние %2$d %3$s достиг уровня \'Сильный\'</string>
-    <string name="rainrate_alert_metric_warning">Уровень дождя %1$.1fmm за последние %2$d %3$s достиг уровня \'Предупреждение\'</string>
-    <string name="rainrate_alert_metric_watch">Уровень дождя %1$.1fmm за последние %2$d %3$s достиг уровня \'Наблюдение\'</string>
-    <string name="rainrate_alert_severe">Оповещения о сильном дожде?</string>
+	<string name="rainrate_alert_severe">Оповещения о сильном дожде?</string>
     <string name="rainrate_alert_severe_desc">Предупреждает, если интенсивность дождя превышает строгий предел в зависимости от продолжительности дождя</string>
     <string name="rainrate_alert_severe_str">Оповещение о сильном дожде</string>
     <string name="rainrate_alert_str">Оповещение о скорости дождя</string>

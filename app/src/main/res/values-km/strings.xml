@@ -2,8 +2,7 @@
 <resources>
     <string name="about">អមបី</string>
     <string name="about_app">អំពីកម្មវិធី</string>
-    <string name="afternoon_alert">សីតុណ្ហភាព %1$.1f°%2$s បានធ្លាក់ចុះដល់ដែនកំណត់របស់អ្នក %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">ជូនដំណឹងពេលរសៀល?</string>
+	<string name="afternoon_temp_alert">ជូនដំណឹងពេលរសៀល?</string>
     <string name="all_time_stats">ស្ថិតិគ្រប់ពេល</string>
     <string name="app_theme">ស្បែកកម្មវិធី</string>
     <string name="avg">មធ្យម</string>
@@ -62,8 +61,7 @@
     <string name="match_app">កម្មវិធីប្រកួត</string>
     <string name="metric">ប្រើម៉ែត្រ?</string>
     <string name="minutes">នាទី</string>
-    <string name="morning_alert">សីតុណ្ហភាព %1$.1f°%2$s បានកើនឡើងដល់ដែនកំណត់របស់អ្នក %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">ការជូនដំណឹងពេលព្រឹក?</string>
+	<string name="morning_temp_alert">ការជូនដំណឹងពេលព្រឹក?</string>
     <string name="next_moon">ព្រឹត្តិការណ៍ព្រះច័ន្ទបន្ទាប់?</string>
     <string name="no">ដេលក្ផាន</string>
     <string name="no_download_or_app_not_setup">គ្មានការទាញយក ឬកម្មវិធីមិនត្រូវបានដំឡើងទេ។</string>
@@ -84,17 +82,9 @@
     <string name="rain_in_inches">ភ្លៀង​ក្នុង​អ៊ីញ?</string>
     <string name="rainfall_alert">ជំនន់ទឹកភ្លៀង?</string>
     <string name="rainfall_alert_desc">ការជូនដំណឹងជារៀងរាល់ថ្ងៃ នៅពេលដែលទឹកភ្លៀងឈានដល់កម្រិតកំណត់របស់អ្នក។</string>
-    <string name="rainfall_alert_imperial">ទឹកភ្លៀង %1$.2f%2$s ត្រូវនឹងដែនកំណត់របស់អ្នក %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">ទឹកភ្លៀង %1$.1f%2$s ត្រូវនឹងដែនកំណត់របស់អ្នក %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">ការជូនដំណឹងអំពីទឹកភ្លៀង</string>
+	<string name="rainfall_alert_str">ការជូនដំណឹងអំពីទឹកភ្លៀង</string>
     <string name="rainfall_limit">ដែនកំណត់ទឹកភ្លៀង</string>
-    <string name="rainrate_alert_imperial_severe">អត្រាភ្លៀងនៃ %1$.2fin ក្នុង %2$d %3$s ចុងក្រោយបានឈានដល់កម្រិត \'ធ្ងន់ធ្ងរ\'</string>
-    <string name="rainrate_alert_imperial_warning">អត្រាភ្លៀងនៃ %1$.2fin ក្នុង %2$d %3$s ចុងក្រោយបានឈានដល់កម្រិត \'ការព្រមាន\'</string>
-    <string name="rainrate_alert_imperial_watch">អត្រាភ្លៀងនៃ %1$.2fin ក្នុង %2$d %3$s ចុងក្រោយបានឈានដល់កម្រិត \'មើល\'</string>
-    <string name="rainrate_alert_metric_severe">អត្រាទឹកភ្លៀង %1$.1fmm ក្នុង %2$d %3$s ចុងក្រោយបានឈានដល់កម្រិត \'ធ្ងន់ធ្ងរ\'</string>
-    <string name="rainrate_alert_metric_warning">អត្រាទឹកភ្លៀង %1$.1fmm ក្នុង %2$d %3$s ចុងក្រោយបានឈានដល់កម្រិត \'ការព្រមាន\'</string>
-    <string name="rainrate_alert_metric_watch">អត្រាទឹកភ្លៀង %1$.1fmm ក្នុង %2$d %3$s ចុងក្រោយបានឈានដល់កម្រិត \'មើល\'</string>
-    <string name="rainrate_alert_severe">ការជូនដំណឹងអំពីភ្លៀងធ្លាក់ខ្លាំង?</string>
+	<string name="rainrate_alert_severe">ការជូនដំណឹងអំពីភ្លៀងធ្លាក់ខ្លាំង?</string>
     <string name="rainrate_alert_severe_desc">ការជូនដំណឹងប្រសិនបើអត្រាទឹកភ្លៀងលើសពីដែនកំណត់ធ្ងន់ធ្ងរ ដោយផ្អែកលើរយៈពេលទឹកភ្លៀង</string>
     <string name="rainrate_alert_severe_str">ការជូនដំណឹងអំពីភ្លៀងធ្លាក់ខ្លាំង</string>
     <string name="rainrate_alert_str">ការជូនដំណឹងអំពីភ្លៀង</string>

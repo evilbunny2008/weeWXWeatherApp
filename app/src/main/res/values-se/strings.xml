@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Birra</string>
     <string name="about_app">Áppa birra</string>
-    <string name="afternoon_alert">Temperatuvra %1$.1f°%2$s lea njiedjan du rádjái mii lea %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Maŋŋelgaskabeaivvi váruhus?</string>
+	<string name="afternoon_temp_alert">Maŋŋelgaskabeaivvi váruhus?</string>
     <string name="all_time_stats">Olles áiggi statistihkka</string>
     <string name="app_theme">Áppa fáddá</string>
 	<string name="battery_warning">Váruhus: Go álggahat ovddit válljema, de sáhttá du batteriija nohkat jođáneappot go dábálaččat</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Geavat go metrihka?</string>
     <string name="minutes">beavdegirji</string>
-    <string name="morning_alert">Temperatuvra %1$.1f°%2$s lea loktanan du rádjái %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Iđitváruhus?</string>
+	<string name="morning_temp_alert">Iđitváruhus?</string>
     <string name="next_moon">Boahtte mánu dáhpáhusat?</string>
     <string name="no">Ii</string>
     <string name="no_download_or_app_not_setup">Ii oktage viežžan dahje app leat biddjon johtui</string>
@@ -82,17 +80,9 @@
     <string name="rain_in_inches">Duollet dálle tuvssain?</string>
     <string name="rainfall_alert">Duollet dálleváruhusat?</string>
     <string name="rainfall_alert_desc">Dieđiha du beaivválaččat jus dulvi juksá du mearriduvvon ráji</string>
-    <string name="rainfall_alert_imperial">%1$.2f%2$s dulvi lea heivehan du rádjai %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">%1$.1f%2$s dulvi lea heivehan du rádjai %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Uđasváruhus</string>
+	<string name="rainfall_alert_str">Uđasváruhus</string>
     <string name="rainfall_limit">Dulvemearri</string>
-    <string name="rainrate_alert_imperial_severe">%1$.2fin dulvi maŋimuš %2$d %3$s lea olahan \'Garras\' dássái</string>
-    <string name="rainrate_alert_imperial_warning">%1$.2fin dulvi maŋimuš %2$d %3$s lea olahan \'Váruhus\' dássái</string>
-    <string name="rainrate_alert_imperial_watch">%1$.2fin dulvi maŋimuš %2$d %3$s lea olahan \'Watch\' dássái</string>
-    <string name="rainrate_alert_metric_severe">Maŋimuš %2$d %3$s lea %1$.1fmm dulvi mii lea šaddan \'Garras\' dássái</string>
-    <string name="rainrate_alert_metric_warning">%1$.1fmm dulvi maŋimuš %2$d %3$s lea olahan \'Váruhus\' dássái</string>
-    <string name="rainrate_alert_metric_watch">%1$.1fmm dulvi maŋimuš %2$d %3$s lea olahan \'Watch\' dássái</string>
-    <string name="rainrate_alert_severe">Garra dulveváruhusat?</string>
+	<string name="rainrate_alert_severe">Garra dulveváruhusat?</string>
     <string name="rainrate_alert_severe_desc">Váruhit jus dulvi badjelmeare garra ráji mii vuođđuduvvá dulveáigodahkii</string>
     <string name="rainrate_alert_severe_str">Garra dulveváruhus</string>
     <string name="rainrate_alert_str">Duoddara váruhus</string>

@@ -2,7 +2,7 @@
 <resources>
     <string name="about">বিষয়ে</string>
     <string name="about_app">এপটোৰ বিষয়ে</string>
-    <string name="afternoon_alert">তাপমাত্ৰা %1$.1f°%2$s আপোনাৰ সীমা %3$.1f°%2$s লৈ হ্ৰাস পাইছে</string>
+    <string name="afternoon_alert">%1$s তাপমাত্ৰা আপোনাৰ %2$s সীমালৈ নামি গৈছে</string>
     <string name="afternoon_temp_alert">দুপৰীয়াৰ সতৰ্কবাণী?</string>
     <string name="all_time_stats">সকলো সময়ৰ পৰিসংখ্যা</string>
     <string name="app_theme">App থিম</string>
@@ -62,7 +62,7 @@
     <string name="match_app">এপ মেচ এপ</string>
     <string name="metric">মেট্ৰিক ব্যৱহাৰ কৰক?</string>
     <string name="minutes">মিনিটবোৰ</string>
-    <string name="morning_alert">তাপমাত্ৰা %1$.1f°%2$s আপোনাৰ সীমা %3$.1f°%2$s লৈ বৃদ্ধি পাইছে</string>
+    <string name="morning_alert">%1$s তাপমাত্ৰা আপোনাৰ %2$s সীমালৈ বৃদ্ধি পাইছে</string>
     <string name="morning_temp_alert">ৰাতিপুৱাৰ সতৰ্কবাণী?</string>
     <string name="next_moon">নেক্সট মুন ইভেন্ট?</string>
     <string name="no">নহয়</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">ইঞ্চিত বৰষুণ?</string>
     <string name="rainfall_alert">বৰষুণৰ সতৰ্কবাণী?</string>
     <string name="rainfall_alert_desc">বৰষুণে আপোনাৰ নিৰ্ধাৰিত সীমাত উপনীত হ\'লে দৈনিক সতৰ্ক কৰি দিয়ে</string>
-    <string name="rainfall_alert_imperial">বৰষুণ %1$.2f%2$s আপোনাৰ %3$.2f%2$s সীমাৰ সৈতে মিল আছে</string>
-    <string name="rainfall_alert_metric">বৰষুণ %1$.1f%2$s আপোনাৰ %3$.1f%2$s সীমাৰ সৈতে মিল আছে</string>
+    <string name="rainfall_alert_notification">বৰষুণ %1$s আপোনাৰ %2$s সীমাৰ সৈতে মিল আছে</string>
     <string name="rainfall_alert_str">বৰষুণৰ সতৰ্কবাণী</string>
     <string name="rainfall_limit">বৰষুণৰ সীমা</string>
-    <string name="rainrate_alert_imperial_severe">%2$d %3$s ত %1$.2fin বৰষুণৰ হাৰে \'গুৰুতৰী\' স্তৰত উপনীত হৈছে</string>
-    <string name="rainrate_alert_imperial_warning">%2$d %3$s ত %1$.2fin বৰষুণৰ হাৰে \'সতৰ্কবাণী\' স্তৰত উপনীত হৈছে</string>
-    <string name="rainrate_alert_imperial_watch">%1$.2f %2$d %3$s ৰ বৰষুণৰ হাৰে \'Watch\' স্তৰত উপনীত হ\'ব নোৱাৰ</string>
-    <string name="rainrate_alert_metric_severe">%2$d %3$s ত %1$.1fmm বৰষুণৰ হাৰে \'গুৰুতৰ\' স্তৰত উপনীত হৈছে</string>
-    <string name="rainrate_alert_metric_warning">%2$d %3$s ত %1$.1fmm বৰষুণৰ হাৰে \'সতৰ্কবাণী\' স্তৰত উপনীত হৈছে</string>
-    <string name="rainrate_alert_metric_watch">%2$d %3$s ত %1$.1fmm বৰষুণৰ হাৰে \'Watch\' স্তৰত উপনীত হৈছে</string>
     <string name="rainrate_alert_severe">তীব্ৰ বৰষুণৰ হাৰ সতৰ্কবাণী?</string>
     <string name="rainrate_alert_severe_desc">বৰষুণৰ সময়ৰ ওপৰত ভিত্তি কৰি বৰষুণৰ হাৰে তীব্ৰ সীমা অতিক্ৰম কৰিলে সতৰ্ক কৰি দিয়ে</string>
+    <string name="rainrate_alert_severe_notification">যোৱা %2$d %3$s ত %1$s ৰ বৰষুণৰ হাৰে \'গুৰুতৰ\' স্তৰত উপনীত হৈছে</string>
     <string name="rainrate_alert_severe_str">তীব্ৰ বৰষুণৰ হাৰ সতৰ্কবাণী</string>
     <string name="rainrate_alert_str">বৰষুণৰ হাৰ সতৰ্কবাণী</string>
     <string name="rainrate_alert_warning">সতৰ্কবাণী বৰষুণৰ হাৰ সতৰ্কবাণী?</string>
     <string name="rainrate_alert_warning_desc">বৰষুণৰ সময়ৰ ওপৰত ভিত্তি কৰি বৰষুণৰ হাৰে সতৰ্কবাণী সীমা অতিক্ৰম কৰিলে সতৰ্ক কৰি দিয়ে</string>
+    <string name="rainrate_alert_warning_notification">যোৱা %2$d %3$s ত %1$s ৰ বৰষুণৰ হাৰে \'সতৰ্কবাণী\' স্তৰত উপনীত হৈছে</string>
     <string name="rainrate_alert_warning_str">সতৰ্কবাণী বৰষুণৰ হাৰ সতৰ্কবাণী</string>
     <string name="rainrate_alert_watch">বৰষুণৰ হাৰ সতৰ্কবাণী চাওক?</string>
     <string name="rainrate_alert_watch_desc">বৰষুণৰ সময়ৰ ওপৰত ভিত্তি কৰি বৰষুণৰ হাৰে ঘড়ীৰ সীমা অতিক্ৰম কৰিলে সতৰ্ক কৰি দিয়ে</string>
+    <string name="rainrate_alert_watch_notification">যোৱা %2$d %3$s ত %1$s ৰ বৰষুণৰ হাৰে \'Watch\' স্তৰত উপনীত হৈছে</string>
     <string name="rainrate_alert_watch_str">বৰষুণৰ হাৰ সতৰ্কবাণী চাওক</string>
     <string name="refresh_time">সময় সতেজ কৰক নিৰ্ব্বাচন কৰক</string>
     <string name="remove_all_data">আপুনি সকলো তথ্য আঁতৰাব বিচাৰে বুলি নিশ্চিত নেকি?</string>

@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Hakda</string>
     <string name="about_app">Programma hakda</string>
-    <string name="afternoon_alert">Temperatura%1$.1f°%2$s siziň çägiňize düşdi%3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Günortanlyk duýduryşy?</string>
+	<string name="afternoon_temp_alert">Günortanlyk duýduryşy?</string>
     <string name="all_time_stats">Hemme döwür statistikasy</string>
     <string name="app_theme">Programmam mowzugy</string>
 	<string name="battery_warning">DUNDURYŞ: ýokardaky opsiýany açmak, batareýaňyzy adatdakysyndan has çalt zaýalap biler</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Programma bilen deňeşdiriň</string>
     <string name="metric">Ölçegini ulanyňmy?</string>
     <string name="minutes">minut</string>
-    <string name="morning_alert">Temperatura%1$.1f °%2$s siziň çägiňize ýetdi%3$.1f °%2$s</string>
-    <string name="morning_temp_alert">Irden duýduryş?</string>
+	<string name="morning_temp_alert">Irden duýduryş?</string>
     <string name="next_moon">Indiki Aý wakalary?</string>
     <string name="no">Ýok</string>
     <string name="no_download_or_app_not_setup">Hiç hili göçürip almak ýa-da programma gurulmady</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Inçlerde ýagyş?</string>
     <string name="rainfall_alert">Rainagyş duýduryşy?</string>
     <string name="rainfall_alert_desc">Fallagyş bellenen çäklere ýetende her gün duýduryş beriň</string>
-    <string name="rainfall_alert_imperial">Fallagyş%1$.2f%2$s siziň%3$.2f%2$s çägiňize laýyk geldi</string>
-    <string name="rainfall_alert_metric">Fallagyş%1$.1f%2$s siziň%3$.1f%2$s çägiňize laýyk geldi</string>
-    <string name="rainfall_alert_str">Rainagyş duýduryşy</string>
+	<string name="rainfall_alert_str">Rainagyş duýduryşy</string>
     <string name="rainfall_limit">Fallagyşyň çäkleri</string>
-    <string name="rainrate_alert_imperial_severe">Soňky %2$d %3$s de%1$.2fin ýagyşy \'agyr\' derejesine ýetdi</string>
-    <string name="rainrate_alert_imperial_warning">Soňky %2$d %3$s de%1$.2fin ýagyşy \'Duýduryş\' derejesine ýetdi</string>
-    <string name="rainrate_alert_imperial_watch">Soňky %2$d %3$s de%1$.2fin ýagyşy \'Gözeg\' derejesine ýetdi</string>
-    <string name="rainrate_alert_metric_severe">Soňky %2$d %3$s de%1$.1fmm ýagyş \'agyr\' derejesine ýetdi</string>
-    <string name="rainrate_alert_metric_warning">Soňky %2$d %3$s de%1$.1fmm ýagyş \'Duýduryş\' derejesine ýetdi</string>
-    <string name="rainrate_alert_metric_watch">Soňky %2$d %3$s de%1$.1fmm ýagyş \'Gözeg\' derejesine ýetdi</string>
-    <string name="rainrate_alert_severe">Güýçli ýagyş duýduryşlary?</string>
+	<string name="rainrate_alert_severe">Güýçli ýagyş duýduryşlary?</string>
     <string name="rainrate_alert_severe_desc">Rainagyş ýagyşynyň dowamlylygyna baglylykda gaty çäkden geçse duýduryş</string>
     <string name="rainrate_alert_severe_str">Güýçli ýagyş duýduryşy</string>
     <string name="rainrate_alert_str">Rainagyş duýduryşy</string>

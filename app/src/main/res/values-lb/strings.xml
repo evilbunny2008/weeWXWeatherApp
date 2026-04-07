@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Iwwer</string>
     <string name="about_app">Iwwer d\'App</string>
-    <string name="afternoon_alert">Temperatur %1$.1f°%2$s ass op Är Limit vun %3$.1f°%2$s erofgaang</string>
-    <string name="afternoon_temp_alert">Nomëtteg Alarm?</string>
+	<string name="afternoon_temp_alert">Nomëtteg Alarm?</string>
     <string name="all_time_stats">All Zäit Statistiken</string>
     <string name="app_theme">App Thema</string>
     <string name="avg">avg</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Match App</string>
     <string name="metric">Benotzt Metric?</string>
     <string name="minutes">Minutten</string>
-    <string name="morning_alert">Temperatur %1$.1f°%2$s ass op Är Limit vun %3$.1f°%2$s geklommen</string>
-    <string name="morning_temp_alert">Moien Alarm?</string>
+	<string name="morning_temp_alert">Moien Alarm?</string>
     <string name="next_moon">Nächste Mound Evenementer?</string>
     <string name="no">Nee</string>
     <string name="no_download_or_app_not_setup">Keen Download oder App ass net konfiguréiert</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Reen an Zoll?</string>
     <string name="rainfall_alert">Nidderschlag Alarm?</string>
     <string name="rainfall_alert_desc">Alarméiert all Dag wann de Nidderschlag Är gesat Limit erreecht</string>
-    <string name="rainfall_alert_imperial">Nidderschlag %1$.2f%2$s passt op Är Limit vun %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Nidderschlag %1$.1f%2$s passt op Är Limit vun %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Nidderschlag Alarm</string>
+	<string name="rainfall_alert_str">Nidderschlag Alarm</string>
     <string name="rainfall_limit">Nidderschlag Limit</string>
-    <string name="rainrate_alert_imperial_severe">Reenrate vun %1$.2fin an de leschten %2$d %3$s huet den \'Severe\' Niveau erreecht</string>
-    <string name="rainrate_alert_imperial_warning">Reenrate vun %1$.2fin an de leschten %2$d %3$s huet den \'Warnung\' Niveau erreecht</string>
-    <string name="rainrate_alert_imperial_watch">Reenrate vun %1$.2fin an de leschten %2$d %3$s huet den Niveau \'Watch\' erreecht</string>
-    <string name="rainrate_alert_metric_severe">Reenrate vun %1$.1fmm an de leschten %2$d %3$s huet den \'Severe\' Niveau erreecht</string>
-    <string name="rainrate_alert_metric_warning">Reenrate vun %1$.1fmm an de leschten %2$d %3$s huet den \'Warnung\' Niveau erreecht</string>
-    <string name="rainrate_alert_metric_watch">Reenrate vun %1$.1fmm an de leschten %2$d %3$s huet den Niveau \'Watch\' erreecht</string>
-    <string name="rainrate_alert_severe">Alarmer fir schwéier Reen?</string>
+	<string name="rainrate_alert_severe">Alarmer fir schwéier Reen?</string>
     <string name="rainrate_alert_severe_desc">Alarméiert wann de Reenrate déi schwéier Limit iwwerschreift baséiert op der Nidderschlagsdauer</string>
     <string name="rainrate_alert_severe_str">Alarm fir staark Reen</string>
     <string name="rainrate_alert_str">Rainrate Alarm</string>

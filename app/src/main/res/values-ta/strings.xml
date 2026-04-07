@@ -2,8 +2,7 @@
 <resources>
     <string name="about">பற்றி</string>
     <string name="about_app">ஆப் பற்றி</string>
-    <string name="afternoon_alert">வெப்பநிலை %1$.1f°%2$s உங்கள் வரம்பான %3$.1f°%2$sக்கு குறைந்துள்ளது</string>
-    <string name="afternoon_temp_alert">மதியம் எச்சரிக்கை?</string>
+	<string name="afternoon_temp_alert">மதியம் எச்சரிக்கை?</string>
     <string name="all_time_stats">அனைத்து நேர புள்ளிவிவரங்கள்</string>
     <string name="app_theme">பயன்பாட்டு தீம்</string>
 	<string name="battery_warning">எச்சரிக்கை: மேலே உள்ள விருப்பத்தை இயக்குவது உங்கள் பேட்டரி வழக்கத்தை விட வேகமாக வெளியேறக்கூடும்</string>
@@ -58,8 +57,7 @@
     <string name="match_app">பொருத்த ஆப்</string>
     <string name="metric">மெட்ரிக் பயன்படுத்தவா?</string>
     <string name="minutes">நிமிடங்கள்</string>
-    <string name="morning_alert">%1$.1f°%2$s வெப்பநிலை உங்கள் வரம்பான %3$.1f°%2$sக்கு உயர்ந்துள்ளது</string>
-    <string name="morning_temp_alert">காலை எச்சரிக்கை?</string>
+	<string name="morning_temp_alert">காலை எச்சரிக்கை?</string>
     <string name="next_moon">அடுத்த நிலவு நிகழ்வுகள்?</string>
     <string name="no">இல்லை</string>
     <string name="no_download_or_app_not_setup">பதிவிறக்கம் அல்லது பயன்பாடு எதுவும் அமைக்கப்படவில்லை</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">அங்குலத்தில் மழையா?</string>
     <string name="rainfall_alert">மழை எச்சரிக்கை?</string>
     <string name="rainfall_alert_desc">மழைப்பொழிவு உங்கள் நிர்ணயிக்கப்பட்ட வரம்பை அடையும் போது தினசரி எச்சரிக்கைகள்</string>
-    <string name="rainfall_alert_imperial">%1$.2f%2$s மழைப்பொழிவு உங்கள் வரம்பான %3$.2f%2$s உடன் பொருந்தியது</string>
-    <string name="rainfall_alert_metric">%1$.1f%2$s மழைப்பொழிவு உங்கள் வரம்பான %3$.1f%2$s உடன் பொருந்தியது</string>
-    <string name="rainfall_alert_str">மழை எச்சரிக்கை</string>
+	<string name="rainfall_alert_str">மழை எச்சரிக்கை</string>
     <string name="rainfall_limit">மழை வரம்பு</string>
-    <string name="rainrate_alert_imperial_severe">கடந்த %2$d %3$s இல் %1$.2fin மழைவீதம் \'கடுமையான\' நிலையை எட்டியுள்ளது</string>
-    <string name="rainrate_alert_imperial_warning">கடந்த %2$d %3$s இல் %1$.2fin மழைவீதம் \'எச்சரிக்கை\' நிலையை எட்டியுள்ளது</string>
-    <string name="rainrate_alert_imperial_watch">கடந்த %2$d %3$s இல் %1$.2fin மழைவீதம் \'வாட்ச்\' நிலையை எட்டியுள்ளது</string>
-    <string name="rainrate_alert_metric_severe">கடந்த %2$d %3$s இல் %1$.1fmm மழைவீதம் \'கடுமையான\' நிலையை எட்டியுள்ளது</string>
-    <string name="rainrate_alert_metric_warning">கடந்த %2$d %3$s இல் %1$.1fmm மழைவீதம் \'எச்சரிக்கை\' நிலையை எட்டியுள்ளது</string>
-    <string name="rainrate_alert_metric_watch">கடந்த %2$d %3$s இல் %1$.1fmm மழைவீதம் \'வாட்ச்\' நிலையை எட்டியுள்ளது</string>
-    <string name="rainrate_alert_severe">கடுமையான மழை எச்சரிக்கைகள்?</string>
+	<string name="rainrate_alert_severe">கடுமையான மழை எச்சரிக்கைகள்?</string>
     <string name="rainrate_alert_severe_desc">மழைப்பொழிவு காலத்தின் அடிப்படையில் மழைவீதம் கடுமையான வரம்பை மீறினால் எச்சரிக்கை</string>
     <string name="rainrate_alert_severe_str">கடுமையான மழை எச்சரிக்கை</string>
     <string name="rainrate_alert_str">மழைவீழ்ச்சி எச்சரிக்கை</string>

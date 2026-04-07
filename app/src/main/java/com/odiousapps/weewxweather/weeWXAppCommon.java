@@ -3089,7 +3089,12 @@ class weeWXAppCommon
 		{
 			KeyValue.putVar("LastRainrateAlert", now);
 			KeyValue.putVar("LastRainrateLevel", alert[0]);
-			weeWXApp.sendRainrateAlert(totals[period], level, timelen, timelen_unit, metric);
+
+			String tmpStr = String.format(Locale.getDefault(), "%.1f", totals[period] / 100f) + "mm";
+			if(!metric)
+				tmpStr = String.format(Locale.getDefault(), "%.2f", totals[period] / 100f) + "in";
+
+			weeWXApp.sendRainrateAlert(tmpStr, level, timelen, timelen_unit);
 			LogMessage("checkRainrateAlert() rainfall (" + totals[period] + unit +
 			           ") >= rainfall_limit (" + FLOOD_THRESHOLDS[period][level] + unit + ") " +
 			           "fell in " + timelen + " " + debugunit + " so notification triggered");

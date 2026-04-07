@@ -2,8 +2,7 @@
 <resources>
     <string name="about">關於</string>
     <string name="about_app">關於應用程序</string>
-    <string name="afternoon_alert">溫度 %1$.1f°%2$s 已降至您的限制 %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">下午警報？</string>
+	<string name="afternoon_temp_alert">下午警報？</string>
     <string name="all_time_stats">所有時間統計</string>
     <string name="app_theme">應用主題</string>
 	<string name="avg">平均</string>
@@ -59,8 +58,7 @@
     <string name="match_app">比賽應用程序</string>
     <string name="metric">使用公制？</string>
     <string name="minutes">分分鐘</string>
-    <string name="morning_alert">溫度 %1$.1f°%2$s 已升至您的限制 %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">早上警報？</string>
+	<string name="morning_temp_alert">早上警報？</string>
     <string name="next_moon">下一次月球事件？</string>
     <string name="no">不</string>
     <string name="no_download_or_app_not_setup">未下載或尚未安裝應用程序</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">雨量以英吋為單位？</string>
     <string name="rainfall_alert">降雨警報？</string>
     <string name="rainfall_alert_desc">當降雨量達到您設定的限制時每天發出警報</string>
-    <string name="rainfall_alert_imperial">降雨量 %1$.2f%2$s 已達到您的 %3$.2f%2$s 限制</string>
-    <string name="rainfall_alert_metric">降雨量 %1$.1f%2$s 已達到您的 %3$.1f%2$s 限制</string>
-    <string name="rainfall_alert_str">降雨警報</string>
+	<string name="rainfall_alert_str">降雨警報</string>
     <string name="rainfall_limit">降雨量限制</string>
-    <string name="rainrate_alert_imperial_severe">最近 %2$d %3$s %1$.2fin 的降雨量已達到「嚴重」級別</string>
-    <string name="rainrate_alert_imperial_warning">最近 %2$d %3$s %1$.2fin 的降雨量已達到「警告」級別</string>
-    <string name="rainrate_alert_imperial_watch">最近 %2$d %3$s %1$.2fin 的降雨量已達到「觀察」級別</string>
-    <string name="rainrate_alert_metric_severe">最近 %2$d %3$s 的降雨量為 %1$.1fmm 已達到「嚴重」級別</string>
-    <string name="rainrate_alert_metric_warning">最近 %2$d %3$s 的降雨量為 %1$.1fmm 已達到「警告」級別</string>
-    <string name="rainrate_alert_metric_watch">最近 %2$d %3$s 的降雨量為 %1$.1fmm 已達到「觀察」級別</string>
-    <string name="rainrate_alert_severe">強降雨警報？</string>
+	<string name="rainrate_alert_severe">強降雨警報？</string>
     <string name="rainrate_alert_severe_desc">根據降雨持續時間，如果降雨率超過嚴重限制，則會發出警報</string>
     <string name="rainrate_alert_severe_str">強降雨警報</string>
     <string name="rainrate_alert_str">降雨警報</string>

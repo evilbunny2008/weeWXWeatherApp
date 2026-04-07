@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Tokante</string>
     <string name="about_app">Tocante e App</string>
-    <string name="afternoon_alert">Temperatura %1$.1f°%2$s a baha te na bo límite di %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Alerta di atardi?</string>
+	<string name="afternoon_temp_alert">Alerta di atardi?</string>
     <string name="all_time_stats">Tur Estadístika di Tempu</string>
     <string name="app_theme">App Tema</string>
 	<string name="battery_warning">Advertencia: Habilitá e opcion ariba por drena bo bateria mas lihé cu normal</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Partido App</string>
     <string name="metric">Uza Metric?</string>
     <string name="minutes">minütnan</string>
-    <string name="morning_alert">Temperatura %1$.1f°%2$s a subi te na bo límite di %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Alerta di Mainta?</string>
+	<string name="morning_temp_alert">Alerta di Mainta?</string>
     <string name="next_moon">Susesonan di siguiente luna?</string>
     <string name="no">No</string>
     <string name="no_download_or_app_not_setup">No download òf app no ​​a wòrdu setup</string>
@@ -85,17 +83,9 @@
     <string name="rain_in_inches">Awasero den Inch?</string>
     <string name="rainfall_alert">Alerta di áwaseru?</string>
     <string name="rainfall_alert_desc">Alerta tur dia ora e áwaseru yega bo límite stipulá</string>
-    <string name="rainfall_alert_imperial">Awasero %1$.2f%2$s a kuadra ku bo límite di %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Awasero %1$.1f%2$s a kuadra ku bo límite di %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Alerta di áwaseru</string>
+	<string name="rainfall_alert_str">Alerta di áwaseru</string>
     <string name="rainfall_limit">Límite di áwaseru</string>
-    <string name="rainrate_alert_imperial_severe">Un frekuensha di áwaseru di %1$.2fin den e último %2$d %3$s a alkansá e nivel \'Severo\'</string>
-    <string name="rainrate_alert_imperial_warning">Un frekuensha di áwaseru di %1$.2fin den e último %2$d %3$s a alkansá e nivel di \'Advertensia\'</string>
-    <string name="rainrate_alert_imperial_watch">Rainrate di %1$.2fin den e último %2$d %3$s a alkansá e nivel di \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Un frekuensha di áwaseru di %1$.1fmm den e último %2$d %3$s a alkansá e nivel \'Severo\'</string>
-    <string name="rainrate_alert_metric_warning">Un frekuensha di áwaseru di %1$.1fmm den e último %2$d %3$s a alkansá e nivel di \'Advertensia\'</string>
-    <string name="rainrate_alert_metric_watch">Rainrate di %1$.1fmm den e último %2$d %3$s a alkansá e nivel di \'Watch\'</string>
-    <string name="rainrate_alert_severe">Alertanan di áwaseru severo?</string>
+	<string name="rainrate_alert_severe">Alertanan di áwaseru severo?</string>
     <string name="rainrate_alert_severe_desc">Alertanan si e tasa di áwaseru surpasá e límite severo basá riba durashon di áwaseru</string>
     <string name="rainrate_alert_severe_str">Alerta pa áwaseru severo</string>
     <string name="rainrate_alert_str">Alerta di áwaseru</string>

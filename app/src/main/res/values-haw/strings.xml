@@ -2,8 +2,7 @@
 <resources>
     <string name="about">E pili ana</string>
     <string name="about_app">E pili ana i ka app</string>
-    <string name="afternoon_alert">Ua emi ka mahana %1$.1f°%2$s i kou palena o %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Makaʻala ahiahi?</string>
+	<string name="afternoon_temp_alert">Makaʻala ahiahi?</string>
     <string name="all_time_stats">Nā helu helu āpau</string>
     <string name="app_theme">KAMEHI</string>
     <string name="avg">avg</string>
@@ -62,8 +61,7 @@
     <string name="match_app">Match app</string>
     <string name="metric">E hoʻohana i ka metric?</string>
     <string name="minutes">minuke</string>
-    <string name="morning_alert">Ua piʻi ka mahana %1$.1f°%2$s i kāu palena o %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Makaʻala kakahiaka?</string>
+	<string name="morning_temp_alert">Makaʻala kakahiaka?</string>
     <string name="next_moon">Nā Kūlana Kūlana Ord?</string>
     <string name="no">ʻAʻole</string>
     <string name="no_download_or_app_not_setup">ʻAʻohe hoʻoiho a i ʻole polokalamu i hoʻonohonoho ʻia</string>
@@ -89,17 +87,9 @@
     <string name="rain_in_inches">Ua inches?</string>
     <string name="rainfall_alert">Makaʻala ua?</string>
     <string name="rainfall_alert_desc">Hoʻolaha i kēlā me kēia lā ke hiki ka ua i kāu palena i kau ʻia</string>
-    <string name="rainfall_alert_imperial">Ua like ka ua %1$.2f%2$s i kou palena o %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Ua like ka ua %1$.1f%2$s i kou palena o %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Makaʻala ua</string>
+	<string name="rainfall_alert_str">Makaʻala ua</string>
     <string name="rainfall_limit">Ka palena ua</string>
-    <string name="rainrate_alert_imperial_severe">Ua loaʻa ka ua o %1$.2fin i ka %2$d %3$s i hala iho nei i ka pae \'Severe\'</string>
-    <string name="rainrate_alert_imperial_warning">Ua loaʻa ka ua o %1$.2fin i ka %2$d %3$s i hala iho nei i ka pae \'Ala\'</string>
-    <string name="rainrate_alert_imperial_watch">Ua loaʻa ka ua o %1$.2fin i ka %2$d %3$s i hala iho nei i ka pae \'Watch\'</string>
-    <string name="rainrate_alert_metric_severe">Ua loaʻa ka ua o %1$.1fmm i ka %2$d %3$s i hala iho nei i ka pae \'Severe\'</string>
-    <string name="rainrate_alert_metric_warning">Ua loaʻa ka ua o %1$.1fmm i ka %2$d %3$s i hala iho nei i ka pae \'Warning\'</string>
-    <string name="rainrate_alert_metric_watch">Ua loaʻa ka ua o %1$.1fmm i ka %2$d %3$s i hala iho nei i ka pae \'Watch\'</string>
-    <string name="rainrate_alert_severe">Nā ʻōlelo aʻoaʻo ua nui?</string>
+	<string name="rainrate_alert_severe">Nā ʻōlelo aʻoaʻo ua nui?</string>
     <string name="rainrate_alert_severe_desc">Hoʻomaopopo inā ʻoi aku ka ua ma mua o ka palena koʻikoʻi ma muli o ka lōʻihi o ka ua</string>
     <string name="rainrate_alert_severe_str">Makaʻala ua nui</string>
     <string name="rainrate_alert_str">Makaʻala ka ua</string>

@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Waa\'ee</string>
     <string name="about_app">Waa\'ee appii kanaa</string>
-    <string name="afternoon_alert">Ho\'i %1$.1f°%2$s gara daangaa kee %3$.1f°%2$s gadi bu\'eera</string>
-    <string name="afternoon_temp_alert">Akeekkachiisa Waaree boodaa?</string>
+	<string name="afternoon_temp_alert">Akeekkachiisa Waaree boodaa?</string>
     <string name="all_time_stats">Istaatistiksii yeroo hunda</string>
     <string name="app_theme">Mata duree appii</string>
 	<string name="battery_warning">HUBACHIISA: Filannoo armaan olii dandeessisuun baatirii keessan yeroo biraa caalaa saffisaan dhangalaasuu danda\'a</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Appii Walsimsiisaa</string>
     <string name="metric">Meetirikii fayyadamaa?</string>
     <string name="minutes">daqiiqaawwan</string>
-    <string name="morning_alert">Ho\'i %1$.1f°%2$s gara daangaa kee %3$.1f°%2$s ol ka\'eera</string>
-    <string name="morning_temp_alert">Akeekkachiisa Ganama?</string>
+	<string name="morning_temp_alert">Akeekkachiisa Ganama?</string>
     <string name="next_moon">Taateewwan Ji\'aa itti aanan?</string>
     <string name="no">Lakki</string>
     <string name="no_download_or_app_not_setup">No download ykn app setup hin taane</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Roobni Inchiitiin Roobaa?</string>
     <string name="rainfall_alert">Akeekkachiisa Roobaa?</string>
     <string name="rainfall_alert_desc">Guyyaa guyyaan yeroo roobni daangaa ati murtaa\'e irra ga\'u akeekkachiisa</string>
-    <string name="rainfall_alert_imperial">Roobni %1$.2f%2$s daangaa kee %3$.2f%2$s wajjin walsimsiiseera</string>
-    <string name="rainfall_alert_metric">Roobni %1$.1f%2$s daangaa kee %3$.1f%2$s waliin walsimsiiseera</string>
-    <string name="rainfall_alert_str">Akeekkachiisa Roobaa</string>
+	<string name="rainfall_alert_str">Akeekkachiisa Roobaa</string>
     <string name="rainfall_limit">Daangaa Roobaa</string>
-    <string name="rainrate_alert_imperial_severe">Saffisi rooba %1$.2fin %2$d %3$s dhumaa keessatti sadarkaa \'Severe\' rukuteera</string>
-    <string name="rainrate_alert_imperial_warning">Saffisi rooba %1$.2fin %2$d %3$s dhumaa keessatti sadarkaa \'Akeekkachiisa\' rukuteera</string>
-    <string name="rainrate_alert_imperial_watch">Saffisi rooba %1$.2fin %2$d %3$s dhumaa keessatti sadarkaa \'Watch\' rukuteera</string>
-    <string name="rainrate_alert_metric_severe">Saffisi rooba %1$.1fmm %2$d %3$s darban keessatti sadarkaa \'Severe\' rukuteera</string>
-    <string name="rainrate_alert_metric_warning">Saffisi rooba %1$.1fmm %2$d %3$s darban keessatti sadarkaa \'Akeekkachiisa\' rukuteera</string>
-    <string name="rainrate_alert_metric_watch">Saffisi rooba %1$.1fmm %2$d %3$s dhumaa keessatti sadarkaa \'Watch\' rukuteera</string>
-    <string name="rainrate_alert_severe">Akeekkachiisa Roobaa Hamaa?</string>
+	<string name="rainrate_alert_severe">Akeekkachiisa Roobaa Hamaa?</string>
     <string name="rainrate_alert_severe_desc">Yeroo rooba irratti hundaa\'uun saffisi rooba daangaa hamaa yoo darbe akeekkachiisa</string>
     <string name="rainrate_alert_severe_str">Akeekkachiisa Roobaa Hamaa</string>
     <string name="rainrate_alert_str">Akeekkachiisa Saffisa Roobaa</string>

@@ -2,8 +2,7 @@
 <resources>
     <string name="about">Тыххæй</string>
     <string name="about_app">Æфтуаны тыххæй</string>
-    <string name="afternoon_alert">Температурæ %1$.1f°%2$s æрхауд дæ арæнмæ %3$.1f°%2$s</string>
-    <string name="afternoon_temp_alert">Боныцъæхты хъусынгæнинаг?</string>
+	<string name="afternoon_temp_alert">Боныцъæхты хъусынгæнинаг?</string>
     <string name="all_time_stats">Æппæт рæстæджы статистикæ</string>
     <string name="app_theme">Æфтуаны темæ</string>
 	<string name="battery_warning">Фæдзæхст: Уæлдæр ранымад опци куы æххæст кæнай, уæд дæ батарейæ æнæхъæнæй дæр тагъддæр фесафдзæн</string>
@@ -58,8 +57,7 @@
     <string name="match_app">Æмдзу кæныны æфтуан</string>
     <string name="metric">Пайда кæнын метрикæйæ?</string>
     <string name="minutes">минуттæ</string>
-    <string name="morning_alert">Температурæ %1$.1f°%2$s схызт дæ арæнмæ %3$.1f°%2$s</string>
-    <string name="morning_temp_alert">Райсомы хъусынгæнинаг?</string>
+	<string name="morning_temp_alert">Райсомы хъусынгæнинаг?</string>
     <string name="next_moon">Иннæ мæйы цаутæ?</string>
     <string name="no">Нæйы</string>
     <string name="no_download_or_app_not_setup">Нæй æрбакæнын кæнæ æфтуан нæй æвæрд</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">Къæвда дюймты?</string>
     <string name="rainfall_alert">Къæвдайы тыххæй хъусынгæнинæгтæ?</string>
     <string name="rainfall_alert_desc">Æрвылбон дæ фæдзæхсы, кæд æмæ къæвда дæ нысангонд арæнмæ ахæццæ уа</string>
-    <string name="rainfall_alert_imperial">Къæвда %1$.2f%2$s æмбæлд дæ арæн %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">Къæвда %1$.1f%2$s æмбæлд дæ арæн %3$.1f%2$s</string>
-    <string name="rainfall_alert_str">Къæвдайы тыххæй хъусынгæнинаг</string>
+	<string name="rainfall_alert_str">Къæвдайы тыххæй хъусынгæнинаг</string>
     <string name="rainfall_limit">Къæвдаты арæн</string>
-    <string name="rainrate_alert_imperial_severe">Фæстаг %2$d %3$s ы %1$.2fin къæвдайы нымæц æрхæццæ \'Кæрз\' æмвæзадмæ</string>
-    <string name="rainrate_alert_imperial_warning">Фæстаг %2$d %3$s ы %1$.2fin ы æмвæзад æрхæццæ ис \'Фæдзæхсты\' æмвæзадмæ</string>
-    <string name="rainrate_alert_imperial_watch">Фæстаг %2$d %3$s ы %1$.2fin ы æмвæзад æрхæццæ \'Watch\'-ы æмвæзадмæ</string>
-    <string name="rainrate_alert_metric_severe">Къæвдайы нымæц %1$.1fmm фæстаг %2$d %3$s æрхæццæ \'Кæрз\' æмвæзадмæ</string>
-    <string name="rainrate_alert_metric_warning">Къæвдайы нымæц %1$.1fmm фæстаг %2$d %3$s æрхæццæ \'Фæдзæхсты\' æмвæзадмæ</string>
-    <string name="rainrate_alert_metric_watch">Фæстаг %2$d %3$s ы %1$.1fmm къæвдайы нымæц æрхæццæ \'Watch\' æмвæзадмæ</string>
-    <string name="rainrate_alert_severe">Тыхджын къæвдайы тыххæй хъусынгæнинæгтæ?</string>
+	<string name="rainrate_alert_severe">Тыхджын къæвдайы тыххæй хъусынгæнинæгтæ?</string>
     <string name="rainrate_alert_severe_desc">Фæдзæхстытæ, кæд æмæ къæвдайы бæрц ахиза карз арæнæй, къæвдаты дæргъвæтиндзинадмæ гæсгæ</string>
     <string name="rainrate_alert_severe_str">Тыхджын къæвдайы тыххæй хъусынгæнинаг</string>
     <string name="rainrate_alert_str">Къæвдайы тыххæй хъусынгæнинаг</string>

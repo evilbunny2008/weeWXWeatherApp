@@ -2,7 +2,7 @@
 <resources>
     <string name="about">Лаьцна</string>
     <string name="about_app">Аппах лаьцна</string>
-    <string name="afternoon_alert">Температура %1$.1f°%2$s охьаяьлла хьан дозане кхаччалц %3$.1f°%2$s</string>
+    <string name="afternoon_alert">Температура %1$s охьаяьлла хьан %2$s дозане кхаччалц</string>
     <string name="afternoon_temp_alert">Делкъал тӀаьхьа алар?</string>
     <string name="all_time_stats">Массо а хенан статистика</string>
     <string name="app_theme">Апп Тема</string>
@@ -62,7 +62,7 @@
     <string name="match_app">Матч Апп</string>
     <string name="metric">Метрика лелош юй?</string>
     <string name="minutes">миноташ</string>
-    <string name="morning_alert">Температура %1$.1f°%2$s хьалаяьлла хьан дозане кхаччалц %3$.1f°%2$s</string>
+    <string name="morning_alert">Температура %1$s хьалаяьлла хьан %2$s дозане кхаччалц</string>
     <string name="morning_temp_alert">Ӏуьйранна лардеш?</string>
     <string name="next_moon">ТӀебогӀучу беттан хиламаш?</string>
     <string name="no">ХӀан-хӀа</string>
@@ -85,25 +85,21 @@
     <string name="rain_in_inches">ДогӀа дюймашкахь дуй?</string>
     <string name="rainfall_alert">ДогӀанан лардар?</string>
     <string name="rainfall_alert_desc">Денна хаам бо хьуна, нагахь санна догӀанан барам ахь билгалдаьккхинчу дозане кхачахь</string>
-    <string name="rainfall_alert_imperial">ДогӀанан барам %1$.2f%2$s нисбелла хьан дозанца %3$.2f%2$s</string>
-    <string name="rainfall_alert_metric">ДогӀанан барам %1$.1f%2$s нисбелла хьан дозанца %3$.1f%2$s</string>
+    <string name="rainfall_alert_notification">ДогӀа %1$s нийса догӀуш ду хьан дозанца %2$s</string>
     <string name="rainfall_alert_str">ДогӀанан лардар</string>
     <string name="rainfall_limit">ДогӀанан доза</string>
-    <string name="rainrate_alert_imperial_severe">ТӀаьххьарчу %2$d %3$s чохь %1$.2fin догӀанан барам \'Люьра\' тӀегӀане кхаьчна</string>
-    <string name="rainrate_alert_imperial_warning">ТӀаьххьарчу %2$d %3$s чохь %1$.2fin догӀанан барам кхаьчна \'Варе\' тӀегӀане</string>
-    <string name="rainrate_alert_imperial_watch">ТӀаьххьарчу %2$d %3$s чохь %1$.2fin догӀанан барам \'Watch\' тӀегӀане кхаьчна</string>
-    <string name="rainrate_alert_metric_severe">ТӀаьххьарчу %2$d %3$s чохь %1$.1fmm догӀанан ницкъ \'Луьра\' тӀегӀане кхаьчна</string>
-    <string name="rainrate_alert_metric_warning">ТӀаьххьарчу %2$d %3$s чохь %1$.1fmm догӀанан барам кхаьчна \'Варе\' тӀегӀане</string>
-    <string name="rainrate_alert_metric_watch">ТӀаьххьарчу %2$d %3$s %1$.1fmm догӀанан ницкъ \'Хьажа\' тӀегӀане кхаьчна</string>
     <string name="rainrate_alert_severe">Луьра догӀанан низам алар?</string>
     <string name="rainrate_alert_severe_desc">ДогӀанан ханна тӀе а тевжаш, догӀанан барам луьрачу дозанал совбалахь, хаам бо</string>
+    <string name="rainrate_alert_severe_notification">ТӀаьххьарчу %2$d %3$s чохь %1$s догӀанан барам \'Луьра\' тӀегӀане кхаьчна</string>
     <string name="rainrate_alert_severe_str">Луьра догӀанан низам</string>
     <string name="rainrate_alert_str">ДогӀанан низам</string>
     <string name="rainrate_alert_warning">Варе деш догӀанан низам алар?</string>
     <string name="rainrate_alert_warning_desc">Нагахь санна догӀанан барам догӀанан ханна тӀе а тевжаш, лардархойн дозанал совбалахь, хаам бо</string>
+    <string name="rainrate_alert_warning_notification">ТӀаьххьарчу %2$d %3$s чохь %1$s догӀанан барам \'Варе\' тӀегӀане кхаьчна</string>
     <string name="rainrate_alert_warning_str">Варе деш догӀанан ницкъ</string>
     <string name="rainrate_alert_watch">Хьовса догӀанан низам лардар?</string>
     <string name="rainrate_alert_watch_desc">ДогӀанан барам догӀанан ханна тӀе а тевжаш, сахьтан дозанал совбалахь, хаам бо</string>
+    <string name="rainrate_alert_watch_notification">ТӀаьххьарчу %2$d %3$s %1$s догӀанан барам \'Хьажа\' тӀегӀане кхаьчна</string>
     <string name="rainrate_alert_watch_str">Хьовса догӀанан ницкъ алар</string>
     <string name="refresh_time">Карладаккхаран хан харжа</string>
     <string name="remove_all_data">Хьо тешна вуй массо даннаш дӀадаха лаьий хьуна?</string>

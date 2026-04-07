@@ -2,8 +2,7 @@
 <resources>
     <string name="about">ගැන</string>
     <string name="about_app">යෙදුම ගැන</string>
-    <string name="afternoon_alert">උෂ්ණත්වය %1$.1f°%2$s ඔබේ සීමාව %3$.1f°%2$s දක්වා පහත වැටී ඇත</string>
-    <string name="afternoon_temp_alert">දහවල් අනතුරු ඇඟවීම?</string>
+	<string name="afternoon_temp_alert">දහවල් අනතුරු ඇඟවීම?</string>
     <string name="all_time_stats">සර්වකාලීන සංඛ්‍යාලේඛන</string>
     <string name="app_theme">යෙදුම් තේමාව</string>
 	<string name="battery_warning">අවවාදයයි: ඉහත විකල්පය සබල කිරීමෙන් ඔබේ බැටරිය වෙනදාට වඩා වේගයෙන් බැස යා හැක</string>
@@ -58,8 +57,7 @@
     <string name="match_app">ගැලපෙන යෙදුම</string>
     <string name="metric">මෙට්රික් භාවිතා කරන්නද?</string>
     <string name="minutes">මිනිත්තු</string>
-    <string name="morning_alert">උෂ්ණත්වය %1$.1f°%2$s ඔබේ සීමාව වන %3$.1f°%2$s දක්වා ඉහළ ගොස් ඇත</string>
-    <string name="morning_temp_alert">උදෑසන අනතුරු ඇඟවීම?</string>
+	<string name="morning_temp_alert">උදෑසන අනතුරු ඇඟවීම?</string>
     <string name="next_moon">ඊළඟ සඳ සිදුවීම්?</string>
     <string name="no">නැත</string>
     <string name="no_download_or_app_not_setup">බාගැනීමක් හෝ යෙදුමක් සකසා නැත</string>
@@ -81,17 +79,9 @@
     <string name="rain_in_inches">අඟල් වලින් වැස්ස?</string>
     <string name="rainfall_alert">වර්ෂාපතන අනතුරු ඇඟවීමක්ද?</string>
     <string name="rainfall_alert_desc">වර්ෂාපතනය ඔබේ නියමිත සීමාවට ළඟා වන විට දිනපතා ඇඟවීම්</string>
-    <string name="rainfall_alert_imperial">වර්ෂාපතනය %1$.2f%2$s ඔබේ %3$.2f%2$s සීමාවට ගැලපේ</string>
-    <string name="rainfall_alert_metric">වර්ෂාපතනය %1$.1f%2$s ඔබේ %3$.1f%2$s සීමාවට ගැලපේ</string>
-    <string name="rainfall_alert_str">වර්ෂාපතන අනතුරු ඇඟවීම</string>
+	<string name="rainfall_alert_str">වර්ෂාපතන අනතුරු ඇඟවීම</string>
     <string name="rainfall_limit">වර්ෂාපතන සීමාව</string>
-    <string name="rainrate_alert_imperial_severe">අවසාන %2$d %3$s හි %1$.2fin වර්ෂාපතනය \'දරුණු\' මට්ටමට පැමිණ ඇත</string>
-    <string name="rainrate_alert_imperial_warning">අවසාන %2$d %3$s හි %1$.2fin වර්ෂාපතනය \'අවවාද\' මට්ටමට පැමිණ ඇත</string>
-    <string name="rainrate_alert_imperial_watch">අවසාන %2$d %3$s හි %1$.2fin වර්ෂාපතනය \'නැරඹුම්\' මට්ටමට පැමිණ ඇත</string>
-    <string name="rainrate_alert_metric_severe">අවසාන %2$d %3$s හි %1$.1fmm වර්ෂාපතනය \'දරුණු\' මට්ටමට පැමිණ ඇත</string>
-    <string name="rainrate_alert_metric_warning">අවසන් %2$d %3$s හි %1$.1fmm වර්ෂාපතනය \'අවවාද\' මට්ටමට පැමිණ ඇත</string>
-    <string name="rainrate_alert_metric_watch">අවසාන %2$d %3$s හි %1$.1fmm වර්ෂාපතනය \'නැරඹුම්\' මට්ටමට පැමිණ ඇත</string>
-    <string name="rainrate_alert_severe">දරුණු වැසි අනතුරු ඇඟවීම්?</string>
+	<string name="rainrate_alert_severe">දරුණු වැසි අනතුරු ඇඟවීම්?</string>
     <string name="rainrate_alert_severe_desc">වර්ෂාපතන කාලසීමාව මත පදනම්ව වර්ෂාපතනය දැඩි සීමාව ඉක්මවා ගියහොත් අනතුරු අඟවයි</string>
     <string name="rainrate_alert_severe_str">දරුණු වැසි අනතුරු ඇඟවීම</string>
     <string name="rainrate_alert_str">වැස්ස අනතුරු ඇඟවීම</string>
