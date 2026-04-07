@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Үдээс хойш сэрэмжлүүлэх үү?</string>
     <string name="all_time_stats">Бүх цагийн статистик</string>
     <string name="app_theme">Програмын сэдэв</string>
-    <string name="attempting_to_download_data_txt">Дата татаж авах.txt-ыг серверээс татаж авах</string>
+    <string name="avg">дундаж</string>
     <string name="battery_warning">АНХААРУУЛГА: Дээрх сонголтыг идэвхжүүлэх нь таны зайг ердийнхөөс илүү хурдан урсаж болно</string>
     <string name="before">өмнө нь</string>
     <string name="bgColour">Виджет арын өнгөний зураг сонгогч</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Заавал биш: Захиалгат URL</string>
     <string name="custom_url_not_set_or_blank">Захиалгат URL нь тохируулагдаагүй, эсвэл хоосон байна. Та Custom URL нэмэх тохиргоонд орж болно</string>
     <string name="dark_theme">Харанхуй сэдэв</string>
-    <string name="data_url_was_blank">Мэдээллийн URL хоосон байв</string>
+    <string name="data_url_was_blank">%1$s URL хоосон байсан тул %2$s файлаа шалгаад дахин оролдоно уу</string>
     <string name="delete_all_data">Бүх өгөгдлийг устгах, унтраах</string>
     <string name="empty">Хоосон</string>
     <string name="error">Алдаа!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Урьдчилан тооцоолох өгөгдлийг боловсруулж чадсангүй</string>
     <string name="failed_to_process_weather_data">Таны серверээс цаг агаарын мэдээлэл, ялангуяа %1$s өгөгдлийг зөв боловсруулж чадсангүй</string>
     <string name="fgColour">Урд талын өнгөт өнгөт сонгогч</string>
-    <string name="fileURL">Тохиргоондоо URL-г оруулна уу</string>
+    <string name="fileURL">%1$s руу URL оруулна уу</string>
     <string name="force_dark_mode">Харанхуй горимыг хүчээр</string>
     <string name="forecast">Урьдчилсан хуудас</string>
     <string name="forecast2">Урөдчилан хэлэх</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Өдөр бүр</string>
     <string name="forecast_interval">Урьдчилан таамаглах интервал (хэрэв байгаа бол)</string>
     <string name="forecast_type_is_invalid">Урьдчилан таамаглах \'%1$s\' буруу байна, Тохиргоо файлаа шалгаад дахин оролдоно уу</string>
-    <string name="forecast_url_not_set">Урьдчилсан URL-ийг тохируулаагүй, тохиргоог засах, өөрчлөх</string>
+    <string name="forecast_url_not_set">Урьдчилан таамаглах URL-г тохируулаагүй тул %1$s дотор тохируулна уу</string>
     <string name="hour">цаг</string>
     <string name="hours">цаг</string>
     <string name="ill_fix_and_try_again">Би үүнийг засах, дахин оролдоно уу</string>
@@ -116,6 +116,7 @@
     <string name="skip">Алгасах</string>
     <string name="stats2">Статистик</string>
     <string name="still_downloading_forecast_data">Урьдчилсан мэдээллийг татаж авсаар л байна</string>
+    <string name="still_downloading_weather_data">Цаг агаарын мэдээллийг татаж авсаар байна</string>
     <string name="swipe_lock">Батгаа дэлгэрүүл</string>
     <string name="system_default">SO системийг тогтооно</string>
     <string name="temperature">Температур</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Pēcpusdienas brīdinājums?</string>
     <string name="all_time_stats">Visu laiku statistika</string>
     <string name="app_theme">Lietotnes motīvs</string>
-    <string name="attempting_to_download_data_txt">No jūsu servera tiek mēģināts lejupielādēt failu data.txt</string>
+    <string name="avg">vid</string>
     <string name="battery_warning">Brīdinājums. Iespējojot iepriekš minēto opciju, akumulators var izlādēties ātrāk nekā parasti</string>
     <string name="before">pirms tam</string>
     <string name="bgColour">Logrīku fona krāsu atlasītājs</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Neobligāti: pielāgots URL</string>
     <string name="custom_url_not_set_or_blank">Pielāgotais URL nav iestatīts vai ir tukšs. Varat atvērt iestatījumus, lai pievienotu pielāgotu URL</string>
     <string name="dark_theme">Tumšā tēma</string>
-    <string name="data_url_was_blank">Datu URL lauks bija tukšs</string>
+    <string name="data_url_was_blank">%1$s URL bija tukšs. Lūdzu, pārbaudiet savu %2$s failu un mēģiniet vēlreiz</string>
     <string name="delete_all_data">Visu datu dzēšana un izslēgšana</string>
     <string name="empty">Tukšs</string>
     <string name="error">Kļūda!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Neizdevās apstrādāt prognožu datus</string>
     <string name="failed_to_process_weather_data">Neizdevās pareizi apstrādāt laikapstākļu datus no jūsu servera, īpaši %1$s datus</string>
     <string name="fgColour">Logrīka priekšplāna krāsu atlasītājs</string>
-    <string name="fileURL">Ievadiet failā settings.txt URL</string>
+    <string name="fileURL">Ievadiet vietrādi URL uz %1$s</string>
     <string name="force_dark_mode">Piespiest tumšo režīmu</string>
     <string name="forecast">Prognožu lapa</string>
     <string name="forecast2">Prognoze</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Ikdienas</string>
     <string name="forecast_interval">Prognozes intervāls (ja piemērojams)</string>
     <string name="forecast_type_is_invalid">Prognozes veids \'%1$s\' nav derīgs, pārbaudiet iestatījumu failu un mēģiniet vēlreiz</string>
-    <string name="forecast_url_not_set">Prognozes URL nav iestatīts. Lai to mainītu, rediģējiet failu settings.txt</string>
+    <string name="forecast_url_not_set">Prognozes URL nav iestatīts, iestatiet to %1$s</string>
     <string name="hour">stundu</string>
     <string name="hours">stundas</string>
     <string name="ill_fix_and_try_again">Es to izlabošu un mēģināšu vēlreiz</string>
@@ -117,6 +117,7 @@
     <string name="skip">Izlaist</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Joprojām notiek prognožu datu lejupielāde</string>
+    <string name="still_downloading_weather_data">Joprojām notiek laikapstākļu datu lejupielāde</string>
     <string name="swipe_lock">Velciet Bloķēt</string>
     <string name="system_default">Sistēmas noklusējums</string>
     <string name="temperature">Temperatūra</string>

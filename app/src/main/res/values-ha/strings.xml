@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Jijjiga La\'asar?</string>
     <string name="all_time_stats">Duk Statime States</string>
     <string name="app_theme">Takardar App</string>
-    <string name="attempting_to_download_data_txt">Yunƙurin saukar da bayanai.txt daga sabar ku</string>
+    <string name="avg">m</string>
     <string name="battery_warning">GARGADI: Yawo ga zaɓi na sama na iya magudana batirinku da sauri fiye da yadda aka saba</string>
     <string name="before">kafin</string>
     <string name="bgColour">Widget na Farko na Farko</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Zabi: URL na al\'ada</string>
     <string name="custom_url_not_set_or_blank">Ba a saita URL na al\'ada ba, ko kuma babu komai. Kuna iya shiga cikin saiti don ƙara URL na al\'ada</string>
     <string name="dark_theme">Dark Jigo</string>
-    <string name="data_url_was_blank">URL ɗin bayanai ba komai</string>
+    <string name="data_url_was_blank">URL ɗin %1$s babu komai, da fatan za a duba fayil ɗin ku %2$s kuma a sake gwadawa</string>
     <string name="delete_all_data">Share duk bayanan da rufewa</string>
     <string name="empty">M</string>
     <string name="error">Kuskure!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Ba a yi nasarar adana bayanan hasashe ba</string>
     <string name="failed_to_process_weather_data">An kasa aiwatar da bayanan yanayi daidai daga uwar garken ku, musamman bayanan %1$s</string>
     <string name="fgColour">Mai wasan Widget mai haske</string>
-    <string name="fileURL">Shigar da URL zuwa saitunan ka.txt</string>
+    <string name="fileURL">Shigar da URL zuwa %1$s</string>
     <string name="force_dark_mode">Karfi da duhu</string>
     <string name="forecast">Shafin shafin hasashe</string>
     <string name="forecast2">Jigajanci</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Kullum</string>
     <string name="forecast_interval">Tazarar Hasashen (idan an zartar)</string>
     <string name="forecast_type_is_invalid">Nau\'in hasashe \'%1$s\' ba shi da inganci, duba fayil ɗin saitunan ku kuma sake gwadawa</string>
-    <string name="forecast_url_not_set">Hasashen URL ɗin ba saita, shirya saiti.txt don canzawa</string>
+    <string name="forecast_url_not_set">Ba a saita URL ɗin hasashen ba, saita shi cikin %1$s</string>
     <string name="hour">awa</string>
     <string name="hours">hours</string>
     <string name="ill_fix_and_try_again">Zan gyara shi kuma a sake gwadawa</string>
@@ -116,6 +116,7 @@
     <string name="skip">Tsallake</string>
     <string name="stats2">Lissafi</string>
     <string name="still_downloading_forecast_data">Har yanzu zazzage bayanan hasashen</string>
+    <string name="still_downloading_weather_data">Har yanzu ana zazzage bayanan yanayi</string>
     <string name="swipe_lock">Kulle swipe</string>
     <string name="system_default">Tsarin tsoho</string>
     <string name="temperature">Zazzabi</string>

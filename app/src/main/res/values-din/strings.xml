@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alert de akɔ̈l ciɛlic?</string>
     <string name="all_time_stats">Käk ë thää ëbɛ̈n</string>
     <string name="app_theme">Kë ye luɔ̈i ke</string>
-    <string name="attempting_to_download_data_txt">Tɛ̈m de wël ë yök.txt tënë server du</string>
+    <string name="avg">ciɛɛl</string>
     <string name="battery_warning">Wël ë lëk: Luɔi de kë tɔ̈ nhial alëu bï battery du lac thök awär thɛɛr</string>
     <string name="before">tueŋ</string>
     <string name="bgColour">Wëdgätës Bäldng pëëd</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Kë lëu bï ya lɔc: URL ë thëm ë thëm</string>
     <string name="custom_url_not_set_or_blank">URL acie tɔ̈u, wala ee kë cïn kë tɔ̈u thïn. Yïn alëu ba lɔ në thëm yic ba URL ë thäät ë thäät mat thïn</string>
     <string name="dark_theme">Riɛ̈ŋ</string>
-    <string name="data_url_was_blank">Kä cï yök URL acï bɛ̈n</string>
+    <string name="data_url_was_blank">URL de %1$s acï thök, thiëcku ba athör duɔ̈ɔ̈n de %2$s tïŋ ku them ba bɛɛr them</string>
     <string name="delete_all_data">Tääu ë wël ku Kä cï röt looi kedhiɛ</string>
     <string name="empty">Kë rëëric abac</string>
     <string name="error">Awuɔ̈c!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Ke kë cï looi bï kä cï yök looi</string>
     <string name="failed_to_process_weather_data">Acï thök bï wël ke pïu ë pinynhom ëbɛ̈n looi apath tënë këduun ye käŋ tɔ̈ɔ̈u, ëya dɛ̈t wël ke %1$s</string>
     <string name="fgColour">Wëdgk Sürë Pänd Pickër</string>
-    <string name="fileURL">Lɔ në URL yic në lööŋku yiic.txt</string>
+    <string name="fileURL">Tääu URL tën %1$s</string>
     <string name="force_dark_mode">Thöl ë jäl ë pïu ë pïu ë pïu</string>
     <string name="forecast">Page cï gɔ̈t</string>
     <string name="forecast2">Tɛ̈n cenë kek röt luɔɔi thïn</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Nhial</string>
     <string name="forecast_interval">Thɛɛr ke thööŋ (naa luui)</string>
     <string name="forecast_type_is_invalid">Tɛ̈n ë yök \'%1$s\' ee kë cie thɔ̈ɔ̈ŋ, tïŋ ë lööŋku ku them ba bɛɛr</string>
-    <string name="forecast_url_not_set">URL cï yök acïï tɔ̈u, acï tɛ̈ɛ̈u ë käŋ waar.txt bï rot waar</string>
+    <string name="forecast_url_not_set">URL de kë bï bɛ̈n tueŋ akëc tääu, tääu në %1$s</string>
     <string name="hour">thaa</string>
     <string name="hours">läi</string>
     <string name="ill_fix_and_try_again">Ɣɛn bï Fix I ku them ba bɛ̈n bei</string>
@@ -120,6 +120,7 @@
     <string name="skip">Lɔ̈ɔ̈m</string>
     <string name="stats2">kä cï röt looi</string>
     <string name="still_downloading_forecast_data">Ku ŋoot ke yök wël cï kek yök</string>
+    <string name="still_downloading_weather_data">Aŋot ke yï yök wël ke piny</string>
     <string name="swipe_lock">Kë cie yic</string>
     <string name="system_default">Deeth</string>
     <string name="temperature">Liɛrë piny</string>

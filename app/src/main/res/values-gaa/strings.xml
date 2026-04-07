@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Gbi gbɛkɛ kɔkɔbɔɔ?</string>
     <string name="all_time_stats">Be he akɔntaabuu fɛɛ</string>
     <string name="app_theme">app Yitso</string>
-    <string name="attempting_to_download_data_txt">Mɔdɛŋ ni okɛ data aba.txt kɛjɛ osɛɛva</string>
+    <string name="avg">mlijaa</string>
     <string name="battery_warning">Kɔkɔbɔɔ: Kɛ́ okɛ nɔ ni yɔɔ ŋwɛi nɛɛ tsu nii lɛ, ebaanyɛ ekɛ batri lɛ atsu nii oya fe bɔ ni ofeɔ daa lɛ</string>
     <string name="before">dani</string>
     <string name="bgColour">Kɔɔyɔɔ ni yɔɔ sɛɛgbɛ Su Picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Nɔ ni abaanyɛ ahala: Kusum URL</string>
     <string name="custom_url_not_set_or_blank">Custom URL lɛ jeee nɔ ni ato, loo ebɛ nɔ ko nɔ ko. Obaanyɛ oya gbɛjianɔtoo mli koni okɛ URL ni afee lɛ diɛŋtsɛ afata he</string>
     <string name="dark_theme">Yitsoŋ hela</string>
-    <string name="data_url_was_blank">Data URL lɛ bɛ nɔ ko</string>
+    <string name="data_url_was_blank">%1$s URL lɛ bɛ nɔ ko nɔ ko, ofainɛ kwɛmɔ o %2$s faili lɛ ni oka ekoŋŋ</string>
     <string name="delete_all_data">Jiemɔ Data kɛ Gbelemɔ</string>
     <string name="empty">Ekobɛ mli</string>
     <string name="error">Tɔmɔ!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Efeee nɔ ko ni tsɔɔ saji ni atsɔɔ mli</string>
     <string name="failed_to_process_weather_data">Enyɛŋ etsu kɔɔyɔŋ tsakemɔ he saji kɛjɛ osɛɛva lɛ nɔ jogbaŋŋ, titri lɛ %1$s saji lɛ</string>
     <string name="fgColour">Widget Foreund su picker</string>
-    <string name="fileURL">Ŋmaa URL kɛya ogbɛjianɔtoo lɛ mli.txt</string>
+    <string name="fileURL">Ŋmaa URL lɛ kɛya %1$s</string>
     <string name="force_dark_mode">Hewalɛ Dade Mode</string>
     <string name="forecast">Fɔmɔ ni atsɔɔ hiɛ</string>
     <string name="forecast2">Gbaa</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Daanɛ</string>
     <string name="forecast_interval">Gbɛtsɔɔmɔ teŋ (kɛji ehi)</string>
     <string name="forecast_type_is_invalid">Nɔ ni atsɔɔ hiɛ atsɔɔ \'%1$s\' lɛ ejaaa, kwɛmɔ ogbɛjianɔtoo faili lɛ ni oka ekoŋŋ</string>
-    <string name="forecast_url_not_set">Nɔ ni tsɔɔ hiɛ URL jeee set, tsakemɔ gbɛjianɔtoo.txt kɛha tsakemɔ</string>
+    <string name="forecast_url_not_set">Atooo URL ni tsɔɔ nɔ ni baaba lɛ, too yɛ %1$s</string>
     <string name="hour">ŋmɛlɛtswa</string>
     <string name="hours">ŋmɛlɛtswaa</string>
     <string name="ill_fix_and_try_again">Mibaasaa Mi ni oka ekoŋŋ</string>
@@ -120,6 +120,7 @@
     <string name="skip">Tuuŋ</string>
     <string name="stats2">Akɔntaabuu</string>
     <string name="still_downloading_forecast_data">Kɛji oojie saji ni atsɔɔ hiɛ atsɔɔ lɛ lolo</string>
+    <string name="still_downloading_weather_data">Miihe kɔɔyɔŋ tsakemɔ he saji lolo</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">Gbɛjianɔtoo lɛ mli saji</string>
     <string name="temperature">Dɔlɛ</string>

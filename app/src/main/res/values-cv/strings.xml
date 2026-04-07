@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Кӑнтӑрлахи сигнал?</string>
     <string name="all_time_stats">Пур вăхăт статистики</string>
     <string name="app_theme">Приложени теми</string>
-    <string name="attempting_to_download_data_txt">Хăтланăр скачать даннăйĕсем.txt сирĕн сервертан</string>
+    <string name="avg">вӑтам</string>
     <string name="battery_warning">Асăрхаттару: Çÿлерехри опцие ĕçе кĕртни батарейăна ытти чухнехинчен хăвăртрах сирсе яма пултарать</string>
     <string name="before">умӗн</string>
     <string name="bgColour">Виджет фонĕ тĕсĕ Пикер</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Опционаллă: Ятарлă URL</string>
     <string name="custom_url_not_set_or_blank">Ятарлă URL-адрес мар, е пушă. Ятарлă URL-адрес хушма настройкăсене кĕме пулать</string>
     <string name="dark_theme">Тĕттĕм темăпа</string>
-    <string name="data_url_was_blank">Даннăйсен URL-адресĕ пушă пулнă</string>
+    <string name="data_url_was_blank">%1$s URL пушӑ пулнӑ, %2$s файла тӗрӗслӗр те тепӗр хут тытӑнӑр</string>
     <string name="delete_all_data">Пур даннăйсене тата хупăнăва пĕтерĕр</string>
     <string name="empty">Пушӑ</string>
     <string name="error">Йӑнӑш!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Прогноз даннăйĕсене ĕçлесе хатĕрлеме май килмен</string>
     <string name="failed_to_process_weather_data">Сирӗн сервертан ҫанталӑк даннӑйӗсене, уйрӑмах %1$s даннӑйӗсене, тӗрӗс ӗҫлеме май килмерӗ</string>
     <string name="fgColour">Тĕлĕкĕмĕн малти планĕн тĕсĕ Пикер</string>
-    <string name="fileURL">URL-адреса хăвăрăн настройкăсене кĕртмелле.txt</string>
+    <string name="fileURL">%1$s адресне кӗртӗр</string>
     <string name="force_dark_mode">Вăй тĕттĕм режимĕ</string>
     <string name="forecast">Прогноз страници</string>
     <string name="forecast2">Малтанах каласа хур</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Кулленхи</string>
     <string name="forecast_interval">Прогноз интервалӗ (пур пулсан)</string>
     <string name="forecast_type_is_invalid">Прогноз типĕ \'%1$s\' тĕрĕс мар, настройкăсен файла тĕрĕслесе пăхăр та тепĕр хут хăтланса пăхăр</string>
-    <string name="forecast_url_not_set">Прогноз URL не нспингра, регулятор tsips.txt улшăнма</string>
+    <string name="forecast_url_not_set">Прогноз URL лартман, ӑна %1$s лартӑр</string>
     <string name="hour">сехет</string>
     <string name="hours">сехет</string>
     <string name="ill_fix_and_try_again">Эпĕ ăна тÿрлетĕп тата тепĕр хут тăрăшăп</string>
@@ -120,6 +120,7 @@
     <string name="skip">Сиктерсе хӑвар</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Халĕ те прогноз даннăйĕсене скачать тăвасси</string>
+    <string name="still_downloading_weather_data">Ҫанталӑк даннӑйӗсене халӗ те скачать тӑватӑп</string>
     <string name="swipe_lock">Швейцар лока</string>
     <string name="system_default">Системăн стандартлă</string>
     <string name="temperature">Температура</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">오후 알림?</string>
     <string name="all_time_stats">전체 시간 통계</string>
     <string name="app_theme">앱 테마</string>
-    <string name="attempting_to_download_data_txt">서버에서 data.txt 다운로드를 시도하는 중입니다</string>
+    <string name="avg">평균</string>
     <string name="battery_warning">경고: 위 옵션을 활성화하면 평소보다 배터리가 더 빨리 소모될 수 있습니다</string>
     <string name="before">~ 전에</string>
     <string name="bgColour">위젯 배경색 선택기</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">선택사항: 맞춤 URL</string>
     <string name="custom_url_not_set_or_blank">맞춤 URL이 설정되지 않았거나 비어 있습니다. 설정으로 이동하여 맞춤 URL을 추가할 수 있습니다</string>
     <string name="dark_theme">어두운 테마</string>
-    <string name="data_url_was_blank">데이터 URL이 비어 있습니다</string>
+    <string name="data_url_was_blank">%1$s URL이 비어 있습니다. %2$s 파일을 확인하고 다시 시도하십시오</string>
     <string name="delete_all_data">모든 데이터 삭제 및 종료</string>
     <string name="empty">비어 있는</string>
     <string name="error">오류!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">예측 데이터를 처리하지 못했습니다</string>
     <string name="failed_to_process_weather_data">서버의 날씨 데이터, 특히 %1$s 데이터를 올바르게 처리하지 못했습니다</string>
     <string name="fgColour">위젯 전경색 선택기</string>
-    <string name="fileURL">settings.txt에 URL을 입력하세요</string>
+    <string name="fileURL">%1$s의 URL을 입력하세요</string>
     <string name="force_dark_mode">강제 다크 모드</string>
     <string name="forecast">예측 페이지</string>
     <string name="forecast2">예측</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">일일</string>
     <string name="forecast_interval">예측 간격(해당하는 경우)</string>
     <string name="forecast_type_is_invalid">예측 유형 \'%1$s\'이(가) 잘못되었습니다. 설정 파일을 확인하고 다시 시도하세요</string>
-    <string name="forecast_url_not_set">예측 URL이 설정되지 않았습니다. 변경하려면 settings.txt를 수정하세요</string>
+    <string name="forecast_url_not_set">예측 URL이 설정되지 않았습니다. %1$s에서 설정하세요</string>
     <string name="hour">시간</string>
     <string name="hours">시간</string>
     <string name="ill_fix_and_try_again">고치고 다시 시도해보겠습니다</string>
@@ -115,6 +115,7 @@
     <string name="skip">건너뛰다</string>
     <string name="stats2">통계</string>
     <string name="still_downloading_forecast_data">아직 예측 데이터를 다운로드하는 중입니다</string>
+    <string name="still_downloading_weather_data">아직 날씨 데이터를 다운로드하는 중입니다</string>
     <string name="swipe_lock">스와이프 잠금</string>
     <string name="system_default">시스템 기본값</string>
     <string name="temperature">온도</string>

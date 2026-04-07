@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Makaʻala ahiahi?</string>
     <string name="all_time_stats">Nā helu helu āpau</string>
     <string name="app_theme">KAMEHI</string>
-    <string name="attempting_to_download_data_txt">Ka ho\'āʻoʻana i kaʻikepili download data.Txt mai kāu kikowaena</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">ʻO ka\'ōleloʻana: E hana i ka koho ma luna aʻe e wikiwiki i kāu pākeke ma mua o ka mea maʻamau</string>
     <string name="before">mamua</string>
     <string name="bgColour">ʻO ke kāʻei kelepona helu kelepona</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Ke koho: URL Kūʻai Kūʻai</string>
     <string name="custom_url_not_set_or_blank">ʻAʻole hoʻonohonohoʻiaʻo URL URL, a iʻole he palaka. Hiki iāʻoe ke hele i nā hoʻonohonoho e hoʻohui i kahi URL maʻamau</string>
     <string name="dark_theme">ʻO ke\'anoʻeleʻele</string>
-    <string name="data_url_was_blank">ʻAʻole paʻa kaʻikepili o URL</string>
+    <string name="data_url_was_blank">Ua hakahaka ka %1$s URL, e ʻoluʻolu e nānā i kāu faila %2$s a hoʻāʻo hou</string>
     <string name="delete_all_data">Hoʻopau i nāʻikepili āpau a pani</string>
     <string name="empty">Mauʻa</string>
     <string name="error">Kupa!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">ʻAʻole hikiʻole ke hoʻokō i nāʻikepili</string>
     <string name="failed_to_process_weather_data">ʻAʻole hiki ke hoʻoponopono pololei i ka ʻikepili ʻano mai kāu kikowaena, ʻo ia hoʻi ka ʻikepili %1$s</string>
     <string name="fgColour">Hoʻihoʻiʻia ka pā\'ālua kala kala</string>
-    <string name="fileURL">E hoʻokomo i ka URL i kāu mau hoʻonohonoho.Txt</string>
+    <string name="fileURL">E hookomo i ka HKH ma %1$s</string>
     <string name="force_dark_mode">Hoʻoikaika i keʻanoʻeleʻele</string>
     <string name="forecast">ʻIke Kuhi\'āina</string>
     <string name="forecast2">Kākoʻo</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">ʻO kēlā me kēia lā</string>
     <string name="forecast_interval">Ka wā wānana (inā pili)</string>
     <string name="forecast_type_is_invalid">ʻAʻole pololei ka\'ōlelo huna \'%1$s\' iʻole, e nānā i kāu faila hoʻonohonoho a ho\'āʻo hou</string>
-    <string name="forecast_url_not_set">ʻAʻole i hoʻonohonohoʻiaʻo URL, Hoʻoponopono i nā hoʻonohonoho.Txt e hoʻololi</string>
+    <string name="forecast_url_not_set">ʻAʻole i hoʻonohonoho ʻia ka URL wānana, hoʻonoho iā ia ma %1$s</string>
     <string name="hour">hola</string>
     <string name="hours">hola</string>
     <string name="ill_fix_and_try_again">E hoʻoponopono wau iā ia a ho\'āʻo hou</string>
@@ -120,6 +120,7 @@
     <string name="skip">Holoi</string>
     <string name="stats2">Helu\'ōlelo</string>
     <string name="still_downloading_forecast_data">Ke hoʻoiho nei i kaʻikepili wānana</string>
+    <string name="still_downloading_weather_data">Ke hoʻoiho mau nei i ka ʻikepili o ka wā</string>
     <string name="swipe_lock">Laki laka</string>
     <string name="system_default">Pūnaehana Pūnaewele</string>
     <string name="temperature">Mahana</string>

@@ -450,7 +450,7 @@ public class Weather extends Fragment implements View.OnClickListener
 
 		if(!KeyValue.isPrefSet(json_keys[0] + "_time"))
 		{
-			forceCurrentRefresh(R.string.attempting_to_download_data_txt);
+			forceCurrentRefresh(R.string.still_downloading_weather_data);
 			return;
 		}
 

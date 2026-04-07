@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Middagwaarsjuwing?</string>
     <string name="all_time_stats">Alle tiedstatistieke</string>
     <string name="app_theme">Apparaat ze</string>
-    <string name="attempting_to_download_data_txt">\'t Probere vaan downloadgegeves.txt vaan uw server</string>
+    <string name="avg">gemiddeld</string>
     <string name="battery_warning">Waarsjchuwing: \'t Instelle vaan de bovestaonde optie kin uw batterie sneller drainere daan normaal</string>
     <string name="before">veur</string>
     <string name="bgColour">Widget Achtergroond Kleur Kies</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Optioneel: Aongepas URL</string>
     <string name="custom_url_not_set_or_blank">Aangepaste URL is neet ingesjtèld, of is leeg. U kin in instellinge goon um \'n aonpasde URL touw te voge</string>
     <string name="dark_theme">Duustere zes</string>
-    <string name="data_url_was_blank">Data URL waor leeg</string>
+    <string name="data_url_was_blank">De %1$s URL waor leeg, controleer eur %2$s bestand en probeer nog ummer</string>
     <string name="delete_all_data">Verwijder alle gegeves en Shutdown</string>
     <string name="empty">Lêg</string>
     <string name="error">Fout!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Vergeleke um veurspelde gegeves te verwèrke</string>
     <string name="failed_to_process_weather_data">De weergegevens vaan eur server, in \'t biezoonder de %1$s gegevens, is neet good verwerk</string>
     <string name="fgColour">Widget Voorgrond Kleur Kies</string>
-    <string name="fileURL">Vul de URL in op uw instellinge.txt</string>
+    <string name="fileURL">Voer de URL in veur %1$s</string>
     <string name="force_dark_mode">Force Duusteremodus</string>
     <string name="forecast">Voortgangspagina</string>
     <string name="forecast2">Veursjpelling</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Daagelijks</string>
     <string name="forecast_interval">Voorspellingsinterval (indien van toepassing)</string>
     <string name="forecast_type_is_invalid">Voorbaoke type \'%1$s\' is ongeldig, controleer uw instellinge bestand en probeer \'t nog \'ns</string>
-    <string name="forecast_url_not_set">Voorkast URL neet instèlle, bewerk instellinge.txt um te verandere</string>
+    <string name="forecast_url_not_set">Voorspellings-URL neet ingestèld, stel deze in %1$s</string>
     <string name="hour">oer</string>
     <string name="hours">oere</string>
     <string name="ill_fix_and_try_again">Ich zal \'t vinde en Probeer weer</string>
@@ -120,6 +120,7 @@
     <string name="skip">Euversjloon</string>
     <string name="stats2">Statieke</string>
     <string name="still_downloading_forecast_data">Nog steeds downloade vaan veurspelde gegeves</string>
+    <string name="still_downloading_weather_data">Nog steeds weergegevens te downloade</string>
     <string name="swipe_lock">Zweet Lock</string>
     <string name="system_default">Systeem Standaard</string>
     <string name="temperature">Températuur</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Iltapäivän hälytys?</string>
     <string name="all_time_stats">Kaikkien aikojen tilastot</string>
     <string name="app_theme">Sovelluksen teema</string>
-    <string name="attempting_to_download_data_txt">Yritetään ladata data.txt palvelimeltasi</string>
+    <string name="avg">ka.</string>
     <string name="battery_warning">Varoitus: Yllä olevan vaihtoehdon ottaminen käyttöön voi tyhjentää akun normaalia nopeammin</string>
     <string name="before">ennen</string>
     <string name="bgColour">Widgetin taustavärin valitsin</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Valinnainen: Muokattu URL-osoite</string>
     <string name="custom_url_not_set_or_blank">Muokattua URL-osoitetta ei ole asetettu tai se on tyhjä. Voit lisätä mukautetun URL-osoitteen siirtymällä asetuksiin</string>
     <string name="dark_theme">Tumma teema</string>
-    <string name="data_url_was_blank">Tietojen URL-osoite oli tyhjä</string>
+    <string name="data_url_was_blank">URL-osoite %1$s oli tyhjä. Tarkista tiedostosi %2$s ja yritä uudelleen</string>
     <string name="delete_all_data">Poista kaikki tiedot ja sammuta</string>
     <string name="empty">Tyhjä</string>
     <string name="error">Virhe!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Ennustetietojen käsittely epäonnistui</string>
     <string name="failed_to_process_weather_data">Palvelimesi säätietoja, erityisesti %1$s tietoja, ei voitu käsitellä oikein</string>
     <string name="fgColour">Widgetin etualan värinvalitsin</string>
-    <string name="fileURL">Kirjoita settings.txt-tiedostosi URL-osoite</string>
+    <string name="fileURL">Anna URL-osoite osoitteeseen %1$s</string>
     <string name="force_dark_mode">Pakota tumma tila</string>
     <string name="forecast">Ennuste sivu</string>
     <string name="forecast2">Ennuste</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Päivittäin</string>
     <string name="forecast_interval">Ennusteväli (jos sovellettavissa)</string>
     <string name="forecast_type_is_invalid">Ennustetyyppi \'%1$s\' on virheellinen, tarkista asetustiedostosi ja yritä uudelleen</string>
-    <string name="forecast_url_not_set">Ennusteen URL-osoitetta ei ole asetettu. Muuta tiedostoa settings.txt</string>
+    <string name="forecast_url_not_set">Ennusteen URL-osoitetta ei ole asetettu, aseta se kohtaan %1$s</string>
     <string name="hour">tunnin</string>
     <string name="hours">tuntia</string>
     <string name="ill_fix_and_try_again">Korjaan sen ja yritän uudelleen</string>
@@ -116,6 +116,7 @@
     <string name="skip">Ohita</string>
     <string name="stats2">Tilastot</string>
     <string name="still_downloading_forecast_data">Ennustetietoja ladataan edelleen</string>
+    <string name="still_downloading_weather_data">Säätietoja ladataan edelleen</string>
     <string name="swipe_lock">Pyyhkäise lukitus</string>
     <string name="system_default">Järjestelmän oletusarvo</string>
     <string name="temperature">Lämpötila</string>

@@ -11,8 +11,8 @@ android
         applicationId = "com.odiousapps.weewxweather"
         minSdk = 24
         targetSdk = 37
-	    versionName = "1.99.117beta"
-        versionCode = 1099117
+	    versionName = "1.99.118beta"
+        versionCode = 1099118
     }
 
 	buildFeatures
@@ -92,7 +92,7 @@ dependencies
 	// The following line suppresses version warnings when using commit IDs for the version...
 	//noinspection GradleDependency
 	//implementation files("library-release.aar")
-	implementation("com.github.evilbunny2008:ColourPicker:2.0.18")
+	implementation("com.github.evilbunny2008:ColourPicker:2.0.19")
 
 	implementation("com.github.evilbunny2008:XmlToJson:2.0.2")
 }

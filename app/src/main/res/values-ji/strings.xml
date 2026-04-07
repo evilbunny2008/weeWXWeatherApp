@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">נאָכמיטאָג אַלערט?</string>
     <string name="all_time_stats">אַלע צייט סטאַטיסטיק</string>
     <string name="app_theme">אַפּ טעמע</string>
-    <string name="attempting_to_download_data_txt">פּרוּווט אראפקאפיע דאַטאַ.טקסט פון דיין סערווער</string>
+    <string name="avg">אַווג</string>
     <string name="battery_warning">ווארענונג: געבן די אויבן אָפּציע קען פליסן דיין באַטאַרייע פאַסטער ווי געוויינטלעך</string>
     <string name="before">פריער</string>
     <string name="bgColour">ווידזשיט הינטערגרונט קאָליר פּיקער</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">אָפּטיאָנאַל: מנהג URL</string>
     <string name="custom_url_not_set_or_blank">מנהג URL איז נישט באַשטימט, אָדער איז ליידיק. איר קענט גיין צו סעטטינגס צו לייגן אַ מנהג URL</string>
     <string name="dark_theme">טונקל טים</string>
-    <string name="data_url_was_blank">דאַטן URL איז ליידיק</string>
+    <string name="data_url_was_blank">די %1$s URL איז ליידיק, ביטע טשעק דיין %2$s טעקע און פּרוּווט ווידער</string>
     <string name="delete_all_data">ויסמעקן אַלע דאַטן און שאַטדאַון</string>
     <string name="empty">ליידיק</string>
     <string name="error">טעות!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">ניט אַנדערש צו פּראָצעס פאָרויסזאָגן דאַטן</string>
     <string name="failed_to_process_weather_data">ניט אַנדערש צו ריכטיק פּראָצעס די וועטער דאַטן פון דיין סערווער, ספּאַסיפיקלי די %1$s דאַטן</string>
     <string name="fgColour">ווידזשיט פאָרגראַונד קאָליר פּיקער</string>
-    <string name="fileURL">אַרייַן די URL צו דיין סעטטינגס.טקסט</string>
+    <string name="fileURL">אַרייַן די URL צו %1$s</string>
     <string name="force_dark_mode">צווינגען דאַרק מאָדע</string>
     <string name="forecast">פאָרויסזאָגן בלאַט</string>
     <string name="forecast2">פאָרויסזאָגן</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">טעגלעך</string>
     <string name="forecast_interval">פאָרויסזאָגן ינטערוואַל (אויב אָנווענדלעך)</string>
     <string name="forecast_type_is_invalid">פאָרויסזאָגן טיפּ \'%1$s\' איז פאַרקריפּלט, טשעק דיין סעטטינגס טעקע און פּרובירן ווידער</string>
-    <string name="forecast_url_not_set">פאָרויסזאָגן URL איז נישט באַשטימט, רעדאַגירן סעטטינגס.טקסט צו טוישן</string>
+    <string name="forecast_url_not_set">פאָרויסזאָגן URL איז נישט באַשטימט, שטעלן עס אין %1$s</string>
     <string name="hour">שעה</string>
     <string name="hours">שעה</string>
     <string name="ill_fix_and_try_again">איך וועט פאַרריכטן עס און פּרובירן ווידער</string>
@@ -116,6 +116,7 @@
     <string name="skip">האָפּקען</string>
     <string name="stats2">סטאַטיסטיק</string>
     <string name="still_downloading_forecast_data">נאָך דאַונלאָודינג פאָרויסזאָגן דאַטן</string>
+    <string name="still_downloading_weather_data">נאָך דאַונלאָודינג וועטער דאַטן</string>
     <string name="swipe_lock">לאַקכענען לאַק</string>
     <string name="system_default">סיסטעם פעליקייַט</string>
     <string name="temperature">טעמפּעראַטור</string>

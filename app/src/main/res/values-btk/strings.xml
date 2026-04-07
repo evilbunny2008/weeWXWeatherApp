@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Siaga Siang?</string>
     <string name="all_time_stats">Sude Statistik Waktu</string>
     <string name="app_theme">Aplikasi Tema</string>
-    <string name="attempting_to_download_data_txt">Mempercobaan data.txs sian server muna</string>
+    <string name="avg">rata-rata</string>
     <string name="battery_warning">Sipasingot: Mangalap opsi na di ginjang i boi do hatop habis bateraimuna sian na somal</string>
     <string name="before">andorang so</string>
     <string name="bgColour">Warna Latar Belakang Pilihan</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opsional: URL Khusus</string>
     <string name="custom_url_not_set_or_blank">URL Adat ndang diatur, manang kosong. Boi do hamu masuk tu pengaturan laho manambai URL khusus</string>
     <string name="dark_theme">Tema na Golap</string>
-    <string name="data_url_was_blank">URL Data kosong</string>
+    <string name="data_url_was_blank">URL %1$s kosong, pareso ma file %2$s muna jala coba muse</string>
     <string name="delete_all_data">Hapus Sude Data dohot Lungun</string>
     <string name="empty">Rumar</string>
     <string name="error">Hasalaan!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Gagal mangolah data ramalan</string>
     <string name="failed_to_process_weather_data">Gagal do denggan mangolah data cuaca sian servermuna, khususna data %1$s</string>
     <string name="fgColour">Warna Latar Mula Depan Pemilihan</string>
-    <string name="fileURL">Masukkon ma URL tu pengaturan muna.txt</string>
+    <string name="fileURL">Masukkon URL tu %1$s</string>
     <string name="force_dark_mode">Paksa Mode Gelap</string>
     <string name="forecast">Ramalan Halaman</string>
     <string name="forecast2">Ulpukan</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Satiop ari</string>
     <string name="forecast_interval">Selang Ramalan (molo adong)</string>
     <string name="forecast_type_is_invalid">Jenis ramalan \'%1$s\' ndang sah, pareso ma file pengaturanmuna jala coba ma muse</string>
-    <string name="forecast_url_not_set">Ramalan URL na so diatur, edit ma pengaturan.txt asa muba</string>
+    <string name="forecast_url_not_set">URL ramalan ndang diatur, atur ma di %1$s</string>
     <string name="hour">jom</string>
     <string name="hours">jom</string>
     <string name="ill_fix_and_try_again">Hupature ma jala Coba ma muse</string>
@@ -120,6 +120,7 @@
     <string name="skip">Mangalangkap</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Tong mangunduh data ramalan</string>
+    <string name="still_downloading_weather_data">Tong dope mangunduh data cuaca</string>
     <string name="swipe_lock">Kunci Geser</string>
     <string name="system_default">System Bawaan</string>
     <string name="temperature">Milas</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Fanairana tolakandro?</string>
     <string name="all_time_stats">Ny antontan\'isa rehetra</string>
     <string name="app_theme">Lohahevitra fampiharana</string>
-    <string name="attempting_to_download_data_txt">Manandrana misintona data.txt avy amin\'ny mpizara</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">FANDROSOANA: Ny fahazoana ny safidy etsy ambony dia mety hanarona haingana ny baterinao noho ny mahazatra</string>
     <string name="before">TALOHAN\'NY</string>
     <string name="bgColour">Mpikambana miloko ivelany Widget</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Safidy: URL mahazatra</string>
     <string name="custom_url_not_set_or_blank">Tsy napetraka ny URL mahazatra, na tsy misy banga. Afaka miditra ao anaty filaharana ianao hampiditra URL mahazatra</string>
     <string name="dark_theme">Lohahevitra maizina</string>
-    <string name="data_url_was_blank">Blank ny URL data</string>
+    <string name="data_url_was_blank">Foana ny URL %1$s, jereo azafady ny rakitra %2$s anao ary andramo indray</string>
     <string name="delete_all_data">Fafao ny angon-drakitra rehetra sy ny fanakatonana</string>
     <string name="empty">foana</string>
     <string name="error">Error!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Tsy nahomby ny fizotran\'ny angon-drakitra</string>
     <string name="failed_to_process_weather_data">Tsy nahavita nandamina tsara ny angona toetrandro avy amin\'ny mpizaranao, indrindra ny angona %1$s</string>
     <string name="fgColour">Mpisambotra loko miloko Widget mialoha</string>
-    <string name="fileURL">Ampidiro ny URL amin\'ny setting.txt</string>
+    <string name="fileURL">Ampidiro ao amin\'ny %1$s ny URL</string>
     <string name="force_dark_mode">Terena ny maoderina maizina</string>
     <string name="forecast">Pejy fanamarinana</string>
     <string name="forecast2">Forecast</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Isan\'andro</string>
     <string name="forecast_interval">Elanelanelan\'ny vinavina (raha azo atao)</string>
     <string name="forecast_type_is_invalid">Ny karazana vinavina \'%1$s\' dia tsy manan-kery, jereo ny rakitrao ary andramo indray</string>
-    <string name="forecast_url_not_set">Ny URL Forecast URL tsy napetraka, fanovana.txt hiova</string>
+    <string name="forecast_url_not_set">URL vinavina tsy napetraka, apetraho ao amin\'ny %1$s</string>
     <string name="hour">ora</string>
     <string name="hours">ORA</string>
     <string name="ill_fix_and_try_again">Hanamboatra azy aho ary hanandrana indray</string>
@@ -116,6 +116,7 @@
     <string name="skip">Mifohaza</string>
     <string name="stats2">antontan\'isa</string>
     <string name="still_downloading_forecast_data">Mbola misintona data data forecast</string>
+    <string name="still_downloading_weather_data">Mbola misintona angona momba ny toetrandro</string>
     <string name="swipe_lock">Swipe hidio</string>
     <string name="system_default">System default</string>
     <string name="temperature">hafanana</string>

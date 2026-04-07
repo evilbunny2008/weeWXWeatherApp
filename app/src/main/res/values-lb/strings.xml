@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Nomëtteg Alarm?</string>
     <string name="all_time_stats">All Zäit Statistiken</string>
     <string name="app_theme">App Thema</string>
-    <string name="attempting_to_download_data_txt">Probéiert d\'Data.txt vun Ärem Server erofzelueden</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Opgepasst: Wann Dir déi uewe genannte Optioun aktivéiert, kann Är Batterie méi séier wéi soss entlaaschten</string>
     <string name="before">virun</string>
     <string name="bgColour">Widget Hannergrondfaarf Picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Optional: Benotzerdefinéiert URL</string>
     <string name="custom_url_not_set_or_blank">Benotzerdefinéiert URL ass net gesat oder ass eidel. Dir kënnt an d\'Astellunge goen fir eng personaliséiert URL ze addéieren</string>
     <string name="dark_theme">Däischter Thema</string>
-    <string name="data_url_was_blank">Donnéeën URL war eidel</string>
+    <string name="data_url_was_blank">D\'URL %1$s war eidel, kontrolléiert w.e.g. Är %2$s Datei a probéiert nach eng Kéier</string>
     <string name="delete_all_data">Läschen All Daten a Shutdown</string>
     <string name="empty">Eidel</string>
     <string name="error">Feeler!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Ausgefall fir Prognosendaten ze veraarbecht</string>
     <string name="failed_to_process_weather_data">Konnt d\'Wiederdaten vun Ärem Server net korrekt veraarbecht, speziell d\'%1$s Daten</string>
     <string name="fgColour">Widget Virdergrond Faarf Picker</string>
-    <string name="fileURL">Gitt d\'URL op Är settings.txt</string>
+    <string name="fileURL">Gitt d\'URL un %1$s un</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="forecast">Prognosen Säit</string>
     <string name="forecast2">Prognosen</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Deeglech</string>
     <string name="forecast_interval">Prognoseintervall (wann zoutreffend)</string>
     <string name="forecast_type_is_invalid">Prognosetyp \'%1$s\' ass ongëlteg, kontrolléiert Är Astellungsdatei a probéiert nach eng Kéier</string>
-    <string name="forecast_url_not_set">Prognose URL net gesat, edit settings.txt änneren</string>
+    <string name="forecast_url_not_set">Prognostizéiert URL net gesat, set se op %1$s</string>
     <string name="hour">Stonn</string>
     <string name="hours">Stonnen</string>
     <string name="ill_fix_and_try_again">Ech fixéieren et a probéieren nach eng Kéier</string>
@@ -116,6 +116,7 @@
     <string name="skip">Sprangen</string>
     <string name="stats2">Statistiken</string>
     <string name="still_downloading_forecast_data">Nach ëmmer Prognosendaten eroflueden</string>
+    <string name="still_downloading_weather_data">Weiderliesen Wiederdaten</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">System Standard</string>
     <string name="temperature">Temperatur</string>

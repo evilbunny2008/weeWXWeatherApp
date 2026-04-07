@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Делкъал тӀаьхьа алар?</string>
     <string name="all_time_stats">Массо а хенан статистика</string>
     <string name="app_theme">Апп Тема</string>
-    <string name="attempting_to_download_data_txt">Хьайн сервер тӀера data.txt схьаэца гӀерташ ву</string>
+    <string name="avg">юккъера</string>
     <string name="battery_warning">Варе деш: лакхахь йийцина опци дӀахӀоттийча, хьан батарейка хьалха хиллачул сиха дӀаяла тарло</string>
     <string name="before">хьалха</string>
     <string name="bgColour">Виджет фонан басарш къастор</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Лаамехь: леррина URL</string>
     <string name="custom_url_not_set_or_blank">Къовсам URL дӀахӀоттийна яц, я еса ю. Хьан йиш ю настройкаш чу ваха, хьайна луъург URL тӀетоха</string>
     <string name="dark_theme">Бодане тема</string>
-    <string name="data_url_was_blank">Дата URL еса яра</string>
+    <string name="data_url_was_blank">%1$s URL еса яра, хьайн %2$s файл хьажа, юха хьажа</string>
     <string name="delete_all_data">Дерриге а даннаш дӀадаха а, дӀакъовла а</string>
     <string name="empty">Еса</string>
     <string name="error">ГӀалат!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Прогнозан хаамаш дӀабахьа аьтто ца баьлла</string>
     <string name="failed_to_process_weather_data">Хьан серверера хенан хӀоттаман хаамаш нийса дӀабахьа аьтто ца баьлла, къаьсттина %1$s хаамаш</string>
     <string name="fgColour">Виджет хьалхарчу планан басарш къасторан гӀирс</string>
-    <string name="fileURL">Хьайн settings.txt чу URL язъе</string>
+    <string name="fileURL">URL язъе %1$s</string>
     <string name="force_dark_mode">Ницкъ бодане режим</string>
     <string name="forecast">Прогнозийн агӀо</string>
     <string name="forecast2">Прогноз</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">ХӀора денна</string>
     <string name="forecast_interval">Прогнозан интервал (нагахь санна лелаш елахь)</string>
     <string name="forecast_type_is_invalid">Прогнозийн тайпа \'%1$s\' нийса дац, хьайн настройкийн файл хьажа, юха хьажа</string>
-    <string name="forecast_url_not_set">Прогнозан URL хӀоттийна яц, хийца settings.txt хийца</string>
+    <string name="forecast_url_not_set">Прогнозан URL хӀоттийна яц, %1$s чохь хӀоттае</string>
     <string name="hour">сахьт</string>
     <string name="hours">сахьташ</string>
     <string name="ill_fix_and_try_again">Ас нисдийр ду, юха а хьовсур ду</string>
@@ -116,6 +116,7 @@
     <string name="skip">Чекхдалийтар</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">ХӀинца а прогнозийн хаамаш чубохуш бу</string>
+    <string name="still_downloading_weather_data">ХӀинца а хенан хӀоттаман хаамаш схьаоьцуш бу</string>
     <string name="swipe_lock">Свайп дӀакъовлар</string>
     <string name="system_default">Системан стандарт</string>
     <string name="temperature">Температура</string>

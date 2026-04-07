@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">दनपारां इशारो?</string>
     <string name="all_time_stats">सगळ्या वेळाची आंकडेवारी</string>
     <string name="app_theme">अॅप थीम</string>
-    <string name="attempting_to_download_data_txt">तुमच्या सर्वरा वयल्यान data.txt डाउनलोड करपाचो यत्न</string>
+    <string name="avg">सरासरी</string>
     <string name="battery_warning">चेतावणी: वयलो पर्याय सक्षम केल्यार तुमची बॅटरी सदचे परस बेगीन सोंपूं येता</string>
     <string name="before">आदीं</string>
     <string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">पर्यायी: सानुकूल URL</string>
     <string name="custom_url_not_set_or_blank">सानुकूल URL सेट केल्लो ना, वा रितो आसा. तुमी सानुकूल URL जोडपाक सेटिंग्जांत वचूंक शकतात</string>
     <string name="dark_theme">डार्क थीम</string>
-    <string name="data_url_was_blank">डेटा URL रितो आशिल्लो</string>
+    <string name="data_url_was_blank">%1$s URL रितो आशिल्लो, उपकार करून तुमची %2$s फायल तपासात आनी परतून यत्न करात</string>
     <string name="delete_all_data">सगळो डेटा काडून उडोवचो आनी बंद करचो</string>
     <string name="empty">रिकामें</string>
     <string name="error">चूक!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">अदमास डेटाचेर प्रक्रिया करपाक अपेस आयलें</string>
     <string name="failed_to_process_weather_data">तुमच्या सर्वरा कडल्यान हवामान डेटाचेर योग्य रितीन प्रक्रिया करपाक अपेस आयलें, खास करून %1$s डेटा</string>
     <string name="fgColour">विजेट अग्रभूमि रंग पिकर</string>
-    <string name="fileURL">तुमच्या settings.txt कडेन URL दाखयात</string>
+    <string name="fileURL">%1$s कडेन URL दाखयात</string>
     <string name="force_dark_mode">फोर्स डार्क मोड</string>
     <string name="forecast">अदमास पान</string>
     <string name="forecast2">अदमास</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">सद्दां</string>
     <string name="forecast_interval">अदमास अंतर (लागू आसल्यार) 1.1</string>
     <string name="forecast_type_is_invalid">अदमास प्रकार \'%1$s\' अवैध आसा, तुमची मांडावळी फायल तपासात आनी परतून यत्न करात</string>
-    <string name="forecast_url_not_set">अदमास URL सेट करूंक ना, बदलपाक settings.txt संपादीत करात</string>
+    <string name="forecast_url_not_set">अदमास URL सेट करूंक ना, तो %1$s त सेट करचो</string>
     <string name="hour">वर</string>
     <string name="hours">वरां</string>
     <string name="ill_fix_and_try_again">हांव तें सुदारून परतून यत्न करतलों</string>
@@ -120,6 +120,7 @@
     <string name="skip">सोडप</string>
     <string name="stats2">आंकडेवारी</string>
     <string name="still_downloading_forecast_data">अजूनय अदमास डेटा डाउनलोड करतात</string>
+    <string name="still_downloading_weather_data">अजूनय हवामान डेटा डाउनलोड करतात</string>
     <string name="swipe_lock">स्वाइप लॉक करचें</string>
     <string name="system_default">प्रणाली मुलभूत</string>
     <string name="temperature">तापमान</string>

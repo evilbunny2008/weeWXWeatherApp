@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Popoludňajšie upozornenie?</string>
     <string name="all_time_stats">Všetky časové štatistiky</string>
     <string name="app_theme">Téma aplikácie</string>
-    <string name="attempting_to_download_data_txt">Prebieha pokus o stiahnutie súboru data.txt z vášho servera</string>
+	<string name="avg">priem.</string>
     <string name="battery_warning">Upozornenie: Povolenie vyššie uvedenej možnosti môže vybiť batériu rýchlejšie ako zvyčajne</string>
     <string name="before">predtým</string>
     <string name="bgColour">Widget na výber farby pozadia</string>
@@ -15,8 +15,7 @@
     <string name="custom_url">Voliteľné: Vlastná adresa URL</string>
     <string name="custom_url_not_set_or_blank">Vlastná adresa URL nie je nastavená alebo je prázdna. Môžete prejsť do nastavení a pridať vlastnú adresu URL</string>
     <string name="dark_theme">Tmavá téma</string>
-    <string name="data_url_was_blank">Adresa URL údajov bola prázdna</string>
-    <string name="delete_all_data">Odstrániť všetky údaje a vypnúť</string>
+	<string name="delete_all_data">Odstrániť všetky údaje a vypnúť</string>
     <string name="empty">Prázdny</string>
     <string name="error">Chyba!</string>
     <string name="error_occurred_while_attempting_to_update">Pri pokuse o aktualizáciu využitia sa vyskytla chyba</string>
@@ -33,16 +32,14 @@
     <string name="failed_to_process_forecast_data">Údaje prognózy sa nepodarilo spracovať</string>
     <string name="failed_to_process_weather_data">Nepodarilo sa správne spracovať údaje o počasí z vášho servera, konkrétne údaje %1$s</string>
     <string name="fgColour">Widget na výber farby popredia</string>
-    <string name="fileURL">Zadajte webovú adresu do súboru settings.txt</string>
-    <string name="force_dark_mode">Vynútiť tmavý režim</string>
+	<string name="force_dark_mode">Vynútiť tmavý režim</string>
     <string name="forecast">Stránka s predpoveďou</string>
     <string name="forecast2">Predpoveď</string>
     <string name="forecast_6hourly">6 hodinovo</string>
     <string name="forecast_daily">Denne</string>
     <string name="forecast_interval">Interval predpovede (ak je k dispozícii)</string>
     <string name="forecast_type_is_invalid">Typ predpovede \'%1$s\' je neplatný, skontrolujte súbor nastavení a skúste to znova</string>
-    <string name="forecast_url_not_set">Webová adresa prognózy nie je nastavená. Ak ju chcete zmeniť, upravte súbor settings.txt</string>
-    <string name="hour">hodina</string>
+	<string name="hour">hodina</string>
     <string name="hours">hodiny</string>
     <string name="ill_fix_and_try_again">Opravím to a skúsim to znova</string>
     <string name="indoor_readings">Zobraziť vnútorné čítania?</string>

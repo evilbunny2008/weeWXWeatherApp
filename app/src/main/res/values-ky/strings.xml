@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Түштөн кийин эскертүү?</string>
     <string name="all_time_stats">Бардык убакыт статистикасы</string>
     <string name="app_theme">Колдонмо темасы</string>
-    <string name="attempting_to_download_data_txt">Сервериңизден Data.txt жүктөө аракети</string>
+    <string name="avg">орт</string>
     <string name="battery_warning">Эскертүү: Жогорудагы опцияны көздөгөн вариант батарейкаңызды адаттагыдан тезирээк тазалашы мүмкүн</string>
     <string name="before">чейин</string>
     <string name="bgColour">Виджет фон түсү Пикер</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Кошумча: Custom URL</string>
     <string name="custom_url_not_set_or_blank">Ыңгайлаштырылган URL орнотулган жок же бош эмес. Ыңгайлаштырылган URL кошуу үчүн жөндөөлөргө кире аласыз</string>
     <string name="dark_theme">Караңгы тема</string>
-    <string name="data_url_was_blank">Маалыматтар URL бош болчу</string>
+    <string name="data_url_was_blank">%1$s URL бош болчу, %2$s файлыңызды текшерип, кайра аракет кылыңыз</string>
     <string name="delete_all_data">Бардык маалыматтарды жок кылуу жана өчүрүү</string>
     <string name="empty">Бош</string>
     <string name="error">Ката!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Болжолдонгон маалыматтарды иштеп чыга алган жок</string>
     <string name="failed_to_process_weather_data">Сервериңизден аба ырайы дайындары, өзгөчө %1$s дайындары туура иштетилбей калды</string>
     <string name="fgColour">Виджет алдыңкы орус Picker</string>
-    <string name="fileURL">URL дарегин жөндөөлөрүңүзгө киргизиңиз</string>
+    <string name="fileURL">%1$s үчүн URL киргизиңиз</string>
     <string name="force_dark_mode">Күчтүү караңгы режим</string>
     <string name="forecast">Болжолдоо баракчасы</string>
     <string name="forecast2">Божомол</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Күнүмдүк</string>
     <string name="forecast_interval">Болжолдоо аралыгы (эгер бар болсо)</string>
     <string name="forecast_type_is_invalid">\'%1$s\'болжолдоолору жараксыз, жөндөөлөрүңүздүн файлыңызды текшерип, дагы бир жолу аракет кылып көрүңүз</string>
-    <string name="forecast_url_not_set">Болжолдоо URL орнотулган жок, жөндөөлөрдү өзгөртүү үчүн Жөндөөлөрдү түзөт</string>
+    <string name="forecast_url_not_set">Божомол URL коюлган жок, аны %1$s ичинде коюңуз</string>
     <string name="hour">саат</string>
     <string name="hours">саат</string>
     <string name="ill_fix_and_try_again">Мен аны оңдоп, дагы бир жолу аракет кылам</string>
@@ -116,6 +116,7 @@
     <string name="skip">Өткөрүп жибер</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Дагы эле болжолдонгон маалыматтарды жүктөп алуу</string>
+    <string name="still_downloading_weather_data">Аба ырайы маалыматы дагы эле жүктөлүүдө</string>
     <string name="swipe_lock">Кулпулоо</string>
     <string name="system_default">Тутуму</string>
     <string name="temperature">Температура</string>

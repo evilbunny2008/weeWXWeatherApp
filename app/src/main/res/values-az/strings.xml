@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Günorta Siqnalı?</string>
     <string name="all_time_stats">Bütün vaxt statistikası</string>
     <string name="app_theme">Tətbiq mövzusu</string>
-    <string name="attempting_to_download_data_txt">Serverinizdən Data.txt yükləməsinə cəhd edin</string>
+    <string name="avg">orta</string>
     <string name="battery_warning">Xəbərdarlıq: Yuxarıdakı seçimi aktivləşdirmək batareyanı adi haldan daha sürətli qurtara bilər</string>
     <string name="before">əvvəlki</string>
     <string name="bgColour">Widget fon rəng seçicisi</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">İsteğe bağlı: Xüsusi URL</string>
     <string name="custom_url_not_set_or_blank">Xüsusi URL qurulmamış və ya boş deyil. Xüsusi URL əlavə etmək üçün parametrlərə daxil ola bilərsiniz</string>
     <string name="dark_theme">Qaranlıq mövzu</string>
-    <string name="data_url_was_blank">Məlumat URL boş idi</string>
+    <string name="data_url_was_blank">%1$s URL boş idi, %2$s faylınızı yoxlayın və yenidən cəhd edin</string>
     <string name="delete_all_data">Bütün məlumatları və bağlama silmək</string>
     <string name="empty">Boş</string>
     <string name="error">Xəta!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Proqnoz məlumatlarını emal edə bilmədi</string>
     <string name="failed_to_process_weather_data">Serverinizdən hava məlumatlarını, xüsusən %1$s datasını düzgün emal etmək alınmadı</string>
     <string name="fgColour">Widget ön rəng seçici</string>
-    <string name="fileURL">URL-ni parametrlərinizə daxil edin.txt</string>
+    <string name="fileURL">%1$s ünvanına URL daxil edin</string>
     <string name="force_dark_mode">Qaranlıq rejimi məcbur edin</string>
     <string name="forecast">Proqnoz səhifəsi</string>
     <string name="forecast2">Proqnozlaşdırmaq</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Gündəlik</string>
     <string name="forecast_interval">Proqnoz Aralığı (əgər varsa)</string>
     <string name="forecast_type_is_invalid">Proqnoz növü \'%1$s\' etibarsızdır, parametrlər faylını yoxlayın və yenidən cəhd edin</string>
-    <string name="forecast_url_not_set">Proqnoz URL təyin olunmadı, dəyişdirmək üçün Parametrləri düzəldin.txt</string>
+    <string name="forecast_url_not_set">Proqnoz URL təyin edilməyib, onu %1$s da quraşdırın</string>
     <string name="hour">saat</string>
     <string name="hours">saat</string>
     <string name="ill_fix_and_try_again">Mən düzəldəcəyəm və yenidən cəhd edəcəm</string>
@@ -116,6 +116,7 @@
     <string name="skip">Keç</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Hələ proqnoz məlumatlarını yükləyir</string>
+    <string name="still_downloading_weather_data">Hələ də hava məlumatları endirilir</string>
     <string name="swipe_lock">Sürmək</string>
     <string name="system_default">Sistem Defolt</string>
     <string name="temperature">Temperatur</string>

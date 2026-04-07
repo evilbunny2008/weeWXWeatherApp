@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">બપોરે ચેતવણી?</string>
     <string name="all_time_stats">બધા સમયના આંકડા</string>
     <string name="app_theme">એપ્લિકેશન થીમ</string>
-    <string name="attempting_to_download_data_txt">તમારા સર્વર પરથી data.txt ડાઉનલોડ કરવાનો પ્રયાસ કરી રહ્યાં છીએ</string>
+    <string name="avg">સરેરાશ</string>
     <string name="battery_warning">ચેતવણી: ઉપરોક્ત વિકલ્પ સક્ષમ કરવાથી તમારી બેટરી સામાન્ય કરતાં વધુ ઝડપથી નીકળી શકે છે</string>
     <string name="before">પહેલાં</string>
     <string name="bgColour">વિજેટ પૃષ્ઠભૂમિ રંગ પીકર</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">વૈકલ્પિક: કસ્ટમ URL</string>
     <string name="custom_url_not_set_or_blank">કસ્ટમ URL સેટ કરેલ નથી અથવા ખાલી છે. તમે કસ્ટમ URL ઉમેરવા માટે સેટિંગ્સમાં જઈ શકો છો</string>
     <string name="dark_theme">ડાર્ક થીમ</string>
-    <string name="data_url_was_blank">ડેટા URL ખાલી હતું</string>
+    <string name="data_url_was_blank">%1$s URL ખાલી હતું, કૃપા કરીને તમારી %2$s ફાઇલ તપાસો અને ફરી પ્રયાસ કરો</string>
     <string name="delete_all_data">બધા ડેટા અને શટડાઉન કાઢી નાખો</string>
     <string name="empty">ખાલી</string>
     <string name="error">ભૂલ!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">આગાહી ડેટા પર પ્રક્રિયા કરવામાં નિષ્ફળ</string>
     <string name="failed_to_process_weather_data">તમારા સર્વરમાંથી હવામાન ડેટાની યોગ્ય રીતે પ્રક્રિયા કરવામાં નિષ્ફળ, ખાસ કરીને %1$s ડેટા</string>
     <string name="fgColour">વિજેટ ફોરગ્રાઉન્ડ કલર પીકર</string>
-    <string name="fileURL">તમારી settings.txt પર URL દાખલ કરો</string>
+    <string name="fileURL">%1$s માટે URL દાખલ કરો</string>
     <string name="force_dark_mode">ડાર્ક મોડને ફોર્સ કરો</string>
     <string name="forecast">આગાહી પૃષ્ઠ</string>
     <string name="forecast2">આગાહી</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">દૈનિક</string>
     <string name="forecast_interval">આગાહી અંતરાલ (જો લાગુ હોય તો)</string>
     <string name="forecast_type_is_invalid">અનુમાન પ્રકાર \'%1$s\' અમાન્ય છે, તમારી સેટિંગ્સ ફાઇલ તપાસો અને ફરી પ્રયાસ કરો</string>
-    <string name="forecast_url_not_set">અનુમાન URL સેટ નથી, બદલવા માટે settings.txt સંપાદિત કરો</string>
+    <string name="forecast_url_not_set">અનુમાન URL સેટ નથી, તેને %1$s માં સેટ કરો</string>
     <string name="hour">કલાક</string>
     <string name="hours">કલાક</string>
     <string name="ill_fix_and_try_again">હું તેને ઠીક કરીશ અને ફરી પ્રયાસ કરીશ</string>
@@ -116,6 +116,7 @@
     <string name="skip">છોડો</string>
     <string name="stats2">આંકડા</string>
     <string name="still_downloading_forecast_data">હજુ પણ આગાહીનો ડેટા ડાઉનલોડ કરી રહ્યાં છીએ</string>
+    <string name="still_downloading_weather_data">હજુ પણ હવામાન ડેટા ડાઉનલોડ કરી રહ્યાં છીએ</string>
     <string name="swipe_lock">સ્વાઇપ લોક</string>
     <string name="system_default">સિસ્ટમ ડિફોલ્ટ</string>
     <string name="temperature">તાપમાન</string>

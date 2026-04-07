@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Түстен кейінгі ескерту?</string>
     <string name="all_time_stats">Барлық уақыттағы статистика</string>
     <string name="app_theme">Қолданба тақырыбы</string>
-    <string name="attempting_to_download_data_txt">Деректерді жүктеу әрекеті, серверден</string>
+    <string name="avg">орт</string>
     <string name="battery_warning">ЕСКЕРТУ: Жоғарыда көрсетілген опцияны қосу батареяны әдеттегіден тезірек ағызуы мүмкін</string>
     <string name="before">дейін</string>
     <string name="bgColour">Виджет фон түсі</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Қосымша: Жеке URL мекенжайы</string>
     <string name="custom_url_not_set_or_blank">Реттелетін URL мекенжайы орнатылмаған немесе бос емес. Жеке URL мекенжайын қосу үшін параметрлерге кіре аласыз</string>
     <string name="dark_theme">Қараңғы тақырып</string>
-    <string name="data_url_was_blank">Деректер URL мекенжайы бос болды</string>
+    <string name="data_url_was_blank">%1$s URL мекенжайы бос болды, %2$s файлыңызды тексеріп, әрекетті қайталаңыз</string>
     <string name="delete_all_data">Барлық деректерді жою және өшіру</string>
     <string name="empty">Ойрандау</string>
     <string name="error">Қате!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Болжамдық деректерді өңдей алмады</string>
     <string name="failed_to_process_weather_data">Серверіңіздегі ауа райы деректерін, әсіресе %1$s деректерін дұрыс өңдеу мүмкін болмады</string>
     <string name="fgColour">Виджет алдыңғы түсті таңдау</string>
-    <string name="fileURL">URL мекенжайын параметрлерге енгізіңіз.txt</string>
+    <string name="fileURL">URL мекенжайын %1$s енгізіңіз</string>
     <string name="force_dark_mode">Күңгірт күші</string>
     <string name="forecast">Болжам беті</string>
     <string name="forecast2">Болжау</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Күнделікті</string>
     <string name="forecast_interval">Болжам аралығы (бар болса)</string>
     <string name="forecast_type_is_invalid">\'%1$s\' болжамы жарамсыз, параметрлер файлын тексеріп, әрекетті қайталаңыз</string>
-    <string name="forecast_url_not_set">Болжамды URL мекенжайын орнатпаған, параметрлерді өзгерту үшін өңдеңіз</string>
+    <string name="forecast_url_not_set">Болжам URL мекенжайы орнатылмаған, оны %1$s ішінде орнатыңыз</string>
     <string name="hour">сағат</string>
     <string name="hours">сағат</string>
     <string name="ill_fix_and_try_again">Мен оны түзетіп, қайталап көріңіз</string>
@@ -116,6 +116,7 @@
     <string name="skip">Өткізіп жіберу</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Әлі де болжамды деректерді жүктеу</string>
+    <string name="still_downloading_weather_data">Ауа райы деректері әлі жүктелуде</string>
     <string name="swipe_lock">Саусақты құлыптау</string>
     <string name="system_default">Жүйе әдепкі</string>
     <string name="temperature">Температура</string>

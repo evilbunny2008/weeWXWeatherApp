@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Шьыбжьонтәи агәҽанҵара?</string>
     <string name="all_time_stats">Аамҭа зегьы астатистика</string>
     <string name="app_theme">Апрограмма атема</string>
-    <string name="attempting_to_download_data_txt">Аҭагалара аҽазышәара data.txt усервер аҟынтәи</string>
+    <string name="avg">абжьаратәи</string>
     <string name="battery_warning">Агәҽанҵара: Хыхь зыӡбахә ҳәоу авариант аус арура убатареиа еиҳа ирласны иҭнахуеит</string>
     <string name="before">аԥхьа</string>
     <string name="bgColour">Авиджет Аҵыхәтәа Аԥштәы апикер</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Иаҭахым: URL ҷыда</string>
     <string name="custom_url_not_set_or_blank">Ахатә URL еиқәыршәаӡам, мамзаргьы иҭацәуп. Уара архиарақәа рахь унеир улшоит еиқәыршәоу URL ацҵаразы</string>
     <string name="dark_theme">Атема лашьца</string>
-    <string name="data_url_was_blank">Адыррақәа URL ҭацәын</string>
+    <string name="data_url_was_blank">%1$s URL ҭацәын, шәфаил %2$s гәаҭаны даҽазнык шәҽазышәшәа</string>
     <string name="delete_all_data">Адыррақәа зегьы ԥыхтәуп, насгьы аҵәаӷәара</string>
     <string name="empty">Иҭацәу</string>
     <string name="error">Агха!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Аԥхьагәаҭаратә дыррақәа аус рыдулара алыршахеит</string>
     <string name="failed_to_process_weather_data">Аҳауатә дыррақәа шәсервер аҟынтәи ииашаны аус рыдулара ауам, ҷыдала %1$s адыррақәа</string>
     <string name="fgColour">Авиджет Ԥасатәи Аԥштәы апикер</string>
-    <string name="fileURL">Иҭажәгал URL colrands.txt</string>
+    <string name="fileURL">Иҭажәгал URL %1$s ахь</string>
     <string name="force_dark_mode">Амчхаратә режим амч</string>
     <string name="forecast">Аԥааимбаражәа Адаҟьа</string>
     <string name="forecast2">Арбара</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Есыҽнытәи</string>
     <string name="forecast_interval">Аԥхьагәаҭара абжьаӡара (иаҭахызар)</string>
     <string name="forecast_type_is_invalid">Аԥааимбаражәа ахкы \'%1$s\' ииашам, шәырхиарақәа рфаил гәаҭаны даҽазнык шәҽазышәшәа</string>
-    <string name="forecast_url_not_set">Аԥхьагәаҭара URL еиқәыршәам, аредакциа архиарақәа.txt аԥсахразы</string>
+    <string name="forecast_url_not_set">Аԥааимбаражәа URL еиқәыршәам, ишьақәыргылатәуп %1$s аҟны</string>
     <string name="hour">асааҭ</string>
     <string name="hours">асааҭқәа</string>
     <string name="ill_fix_and_try_again">Сара Исзыҟасҵоит, насгьы даҽазнык сҽазысшәоит</string>
@@ -120,6 +120,7 @@
     <string name="skip">Аԥара</string>
     <string name="stats2">Астатистика</string>
     <string name="still_downloading_forecast_data">Аԥхьагәаҭаратә данноқәа раагара</string>
+    <string name="still_downloading_weather_data">Аҳауатә дыррақәа уажәгьы иҭагалахоит</string>
     <string name="swipe_lock">Исвип Алок</string>
     <string name="system_default">Асистема ахьӡ</string>
     <string name="temperature">Атемпература</string>

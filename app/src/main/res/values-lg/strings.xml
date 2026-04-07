@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Okulabula kw\'emisana?</string>
     <string name="all_time_stats">Ebibalo by\'ebiseera byonna</string>
     <string name="app_theme">Omulamwa gwa App</string>
-    <string name="attempting_to_download_data_txt">Okugezaako okuwanula data.txt okuva ku seva yo</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">OKULABULA: Okusobozesa eky\'okukola ekyo waggulu kiyinza okufulumya bbaatule yo amangu okusinga bulijjo</string>
     <string name="before">mu kusooka</string>
     <string name="bgColour">Widget Background Langi Picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Okwesalirawo: URL eya bulijjo</string>
     <string name="custom_url_not_set_or_blank">URL eya custom teteekeddwa, oba eba njereere. Osobola okugenda mu Settings okugattako URL eya custom</string>
     <string name="dark_theme">Omulamwa gw\'ekizikiza</string>
-    <string name="data_url_was_blank">Data URL yali etaliimu kintu kyonna</string>
+    <string name="data_url_was_blank">URL ya %1$s yali njereere, nsaba okebere fayiro yo eya %2$s era ogezeeko nate</string>
     <string name="delete_all_data">Ssaawo data yonna n\'okuggalawo</string>
     <string name="empty">Obukalu</string>
     <string name="error">Ensobi!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">eremereddwa okukola ku bikwata ku kuteebereza</string>
     <string name="failed_to_process_weather_data">Eremereddwa okukola obulungi ku data y\'obudde okuva ku seva yo, naddala data ya %1$s</string>
     <string name="fgColour">Widget foreground langi elonda langi</string>
-    <string name="fileURL">Yingiza URL ku settings zo.txt</string>
+    <string name="fileURL">Yingiza URL ku %1$s</string>
     <string name="force_dark_mode">Force dark mode</string>
     <string name="forecast">Omuko gw\'okuteebereza</string>
     <string name="forecast2">Okuteebereza</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Buli lunaku</string>
     <string name="forecast_interval">Obudde bw\'okuteebereza (bwe kiba kisoboka)</string>
     <string name="forecast_type_is_invalid">Ekika ky\'okuteebereza \'%1$sS\' si kituufu, kebera fayiro yo ey\'okuteekawo era oddemu ogezeeko</string>
-    <string name="forecast_url_not_set">Forecast URL Tegiteekawo, kyusa Settings.txt okukyusa</string>
+    <string name="forecast_url_not_set">URL y\'okuteebereza teteekebwawo, giteeke mu %1$s</string>
     <string name="hour">essaawa</string>
     <string name="hours">saawa</string>
     <string name="ill_fix_and_try_again">Nja kugitereeza era nzigezeeko nate</string>
@@ -116,6 +116,7 @@
     <string name="skip">Okubuuka</string>
     <string name="stats2">Ebibalo</string>
     <string name="still_downloading_forecast_data">Akyawanula ebikwata ku kuteebereza</string>
+    <string name="still_downloading_weather_data">Nga tukyawanula data y\'obudde</string>
     <string name="swipe_lock">Swipe kkufulu</string>
     <string name="system_default">Enkola esookerwako</string>
     <string name="temperature">Ebbugumu</string>

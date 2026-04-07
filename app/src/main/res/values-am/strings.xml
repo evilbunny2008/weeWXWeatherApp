@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">ከሰአት ማንቂያ?</string>
     <string name="all_time_stats">ሁሉም ጊዜ ስታቲስቲክስ</string>
     <string name="app_theme">የመተግበሪያ ገጽታ</string>
-    <string name="attempting_to_download_data_txt">ከአገልጋይዎ ጋር የውሂብ .txt ን ማውረድ በመሞከር ላይ</string>
+    <string name="avg">አማካኝ</string>
     <string name="battery_warning">ማስጠንቀቂያ ከላይ የተጠቀሰውን አማራጭ ማንቃት ከተለመደው የበለጠ ባትሪዎን በፍጥነት ሊያስደስት ይችላል</string>
     <string name="before">ከዚህ በፊት</string>
     <string name="bgColour">የጀርባ ትምህርት ቤት የቀለም መራጭ</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">ከተፈለገ: - ብጁ ዩ አር ኤል</string>
     <string name="custom_url_not_set_or_blank">ብጁ ዩ.አር.ኤል. አልተዋቀረም ወይም ባዶ ነው. ብጁ ዩ.አር.ኤል. ለማከል ወደ ቅንብሮች መሄድ ይችላሉ</string>
     <string name="dark_theme">ጥቁር ጭብጥ</string>
-    <string name="data_url_was_blank">የውሂብ ዩ አር ኤል ባዶ ነበር</string>
+    <string name="data_url_was_blank">የ%1$s URL ባዶ ነበር፣ እባክህ የ%2$s ፋይልህን ፈትሽ እና እንደገና ሞክር</string>
     <string name="delete_all_data">ሁሉንም ውሂብ እና መዝጋት</string>
     <string name="empty">ባዶ</string>
     <string name="error">ስህተት!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">ትንበያ ውሂብን ማከናወን አልተሳካም</string>
     <string name="failed_to_process_weather_data">የአየር ሁኔታ ውሂብን ከአገልጋይዎ በተለይም የ%1$s ውሂብን በትክክል ማካሄድ አልተሳካም።</string>
     <string name="fgColour">የግርጌ ማስታወሻዎች የፊት ቀለም</string>
-    <string name="fileURL">ወደ ቅንብሮችዎ ዩአርኤል ያስገቡ</string>
+    <string name="fileURL">ዩአርኤሉን ወደ %1$s አስገባ</string>
     <string name="force_dark_mode">ጨካኝ ሁነታን ያስገድዱ</string>
     <string name="forecast">ትንበያ ገጽ</string>
     <string name="forecast2">ትንበያ</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">በየቀኑ</string>
     <string name="forecast_interval">የትንበያ ክፍተት (የሚመለከተው ከሆነ)</string>
     <string name="forecast_type_is_invalid">ትንበያ አይነት \'%1$sልክ ያልሆነ ነው, የቅንብሮች ፋይልዎን ይፈትሹ እና እንደገና ይሞክሩ</string>
-    <string name="forecast_url_not_set">ትንበያ ዩ.አር.ኤል አልተዋቀረ, ቅንብሮች አርትዕ</string>
+    <string name="forecast_url_not_set">የትንበያ ዩአርኤል አልተዘጋጀም፣ በ%1$s ውስጥ ያቀናብሩት።</string>
     <string name="hour">ሰአት</string>
     <string name="hours">ሰዓታት</string>
     <string name="ill_fix_and_try_again">አስተካክለዋለሁ እና እንደገና እሞክራለሁ</string>
@@ -116,6 +116,7 @@
     <string name="skip">ዝለል</string>
     <string name="stats2">ስታቲስቲክስ</string>
     <string name="still_downloading_forecast_data">አሁንም ትንበያ ውሂብን በማውረድ ላይ</string>
+    <string name="still_downloading_weather_data">አሁንም የአየር ሁኔታ መረጃን በማውረድ ላይ</string>
     <string name="swipe_lock">መቆለፊያ</string>
     <string name="system_default">ስርዓት ነባሪ</string>
     <string name="temperature">የሙቀት መጠን</string>

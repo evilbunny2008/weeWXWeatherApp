@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Lansiran Sore?</string>
     <string name="all_time_stats">Kabeh Statistik Wektu</string>
     <string name="app_theme">Tema Aplikasi</string>
-    <string name="attempting_to_download_data_txt">Nyoba download data.txt saka server sampeyan</string>
+    <string name="avg">rata-rata</string>
     <string name="battery_warning">PARNNGET: Ngaktifake pilihan ing ndhuwur bisa uga luwih cepet baterei luwih cepet tinimbang biasane</string>
     <string name="before">sadurunge</string>
     <string name="bgColour">Widget Warna Widget Picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opsional: URL adat</string>
     <string name="custom_url_not_set_or_blank">URL adat ora disetel, utawa kosong. Sampeyan bisa pindhah menyang Setelan kanggo nambah URL khusus</string>
     <string name="dark_theme">Tema Peteng</string>
-    <string name="data_url_was_blank">URL data kosong</string>
+    <string name="data_url_was_blank">URL %1$s kosong, priksa file %2$s sampeyan lan coba maneh</string>
     <string name="delete_all_data">Mbusak kabeh data lan mati</string>
     <string name="empty">Kosong</string>
     <string name="error">Kesalahan!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Gagal ngolah data ramalan</string>
     <string name="failed_to_process_weather_data">Gagal ngolah data cuaca saka server sampeyan kanthi bener, khususe data %1$s</string>
     <string name="fgColour">Widget latar warna pemilih</string>
-    <string name="fileURL">Ketik URL menyang Setting.Txt</string>
+    <string name="fileURL">Ketik URL menyang %1$s</string>
     <string name="force_dark_mode">Meksa mode peteng</string>
     <string name="forecast">Halaman ramalan</string>
     <string name="forecast2">Ramalan</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Saben dina</string>
     <string name="forecast_interval">Interval Prakiraan (yen ana)</string>
     <string name="forecast_type_is_invalid">Tipe jinis \'%1$s\' ora bener, priksa file setelan banjur coba maneh</string>
-    <string name="forecast_url_not_set">URL Ramalan Ora Setel, Owahi Setting.TXT kanggo Ganti</string>
+    <string name="forecast_url_not_set">URL ramalan ora disetel, setel ing %1$s</string>
     <string name="hour">jam</string>
     <string name="hours">jam</string>
     <string name="ill_fix_and_try_again">Aku bakal ndandani lan coba maneh</string>
@@ -115,6 +115,7 @@
     <string name="skip">Skip</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Isih ndownload data ramalan</string>
+    <string name="still_downloading_weather_data">Isih ngundhuh data cuaca</string>
     <string name="swipe_lock">Gesek Kunci</string>
     <string name="system_default">Sistem Default</string>
     <string name="temperature">Suhu</string>

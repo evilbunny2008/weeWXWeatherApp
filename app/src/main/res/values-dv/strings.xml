@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">މެންދުރު އެލާޓް؟</string>
     <string name="all_time_stats">ހުރިހާ ވަގުތެއްގައިވެސް ތަފާސްހިސާބު</string>
     <string name="app_theme">އެޕް ތީމް</string>
-    <string name="attempting_to_download_data_txt">ތިމާގެ ސަރވަރ އިން DATO.TXT ޑައުންލޯޑް ކުރަން އުޅުން</string>
+    <string name="avg">އެވްރެޖްކޮށް</string>
     <string name="battery_warning">އިންޒާރު: މަތީގައިވާ ގޮތް އެނެބަލް ކުރުމުން ބެޓެރީ އާންމު ގޮތަކަށް ވުރެ އަވަހަށް ފޭބޭނެ އެވެ</string>
     <string name="before">ކުރިން</string>
     <string name="bgColour">ވިޖެޓް ބެކްގްރައުންޑް ކުލަ ޕިކަރ</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">އިޚްތިޔާރީ: ކަސްޓަމް ޔޫއާރްއެލް</string>
     <string name="custom_url_not_set_or_blank">ކަސްޓަމް ޔޫ.އާރ.އެލް ސެޓް ނުކޮށް، ނުވަތަ ހުސްކޮށް. ކަސްޓަމް ޔޫ.އާރ.އެލް އެއް އިތުރު ކުރުމަށް ސެޓިންގސް އަށް ވަދެވޭނެއެވެ</string>
     <string name="dark_theme">ޑާކް ތީމް</string>
-    <string name="data_url_was_blank">ޑޭޓާ ޔޫއާރްއެލް ހުސްވީ</string>
+    <string name="data_url_was_blank">%1$s URL ހުސްވެފައި އޮތީ، %2$s ފައިލް ޗެކްކޮށް އަލުން މަސައްކަތް ކުރައްވާށެވެ</string>
     <string name="delete_all_data">ހުރިހާ ޑޭޓާއެއް ޑިލީޓްކޮށް ޝަޓްޑައުން ކުރުން</string>
     <string name="empty">ހުސްވެފަ</string>
     <string name="error">ކުށް!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">ފޯކަސްޓް ޑޭޓާ ޕްރޮސެސް ކުރަން ނާކާމިޔާބު</string>
     <string name="failed_to_process_weather_data">ތިބާގެ ސަރވަރ އިން މޫސުމީ ޑޭޓާ ރަނގަޅަށް ޕްރޮސެސް ނުކުރެވި، ޚާއްޞަކޮށް %1$s ޑޭޓާ</string>
     <string name="fgColour">ވިޖެޓް ފޯގްރައުންޑް ކަލަރ ޕިކަރ</string>
-    <string name="fileURL">ތިބާގެ ސެޓިންގސް އަށް ޔޫ.އާރ.އެލް ލިޔެލާށެވެ.TXT</string>
+    <string name="fileURL">%1$s އަށް ޔޫއާރްއެލް ލިޔެލާށެވެ</string>
     <string name="force_dark_mode">ފޯސް ޑާކް މޯޑް</string>
     <string name="forecast">ފޯކަސްޓް ޕޭޖް</string>
     <string name="forecast2">ފޯކާސްޓް</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">ކޮންމެ ދުވަހަކު</string>
     <string name="forecast_interval">ފޯކަސްޓް އިންޓަވަލް (އެކަށީގެންވާނަމަ)</string>
     <string name="forecast_type_is_invalid">ފޯކަސްޓް ޓައިޕް \'%1$sS\' އަކީ ސައްހަ ނޫން އެއްޗެއް ކަމުން، ސެޓިންގސް ފައިލް ޗެކްކޮށް އަލުން މަސައްކަތް ކުރާށެވެ</string>
-    <string name="forecast_url_not_set">ފޯކަސްޓް ޔޫ.އާރ.އެލް ސެޓް ނުކޮށް، SETTINGS.TXT އަށް ބަދަލު ގެނައުން</string>
+    <string name="forecast_url_not_set">ފޯކަސް ޔޫއާރްއެލް ސެޓް ނުކުރެވި، %1$s ގައި ސެޓްކުރުން</string>
     <string name="hour">ގަޑިއިރު</string>
     <string name="hours">ގަޑިއިރުތަކެއް</string>
     <string name="ill_fix_and_try_again">އަހަރެން އެކަން ރަނގަޅުކޮށް އަނެއްކާވެސް ޓްރައި ކުރާނަން</string>
@@ -116,6 +116,7 @@
     <string name="skip">ދޫކޮށްލުން</string>
     <string name="stats2">ތަފާސްހިސާބު</string>
     <string name="still_downloading_forecast_data">އަދިވެސް ޑައުންލޯޑް ކުރާ ފޯކަސް ޑޭޓާ</string>
+    <string name="still_downloading_weather_data">އަދިވެސް މޫސުމުގެ މައުލޫމާތު ޑައުންލޯޑް ކުރަމުން އެބަދެއެވެ</string>
     <string name="swipe_lock">ސްވައިޕް ލޮކް</string>
     <string name="system_default">ސިސްޓަމް ޑިފޯލްޓް</string>
     <string name="temperature">ފިނިހޫނުމިން</string>

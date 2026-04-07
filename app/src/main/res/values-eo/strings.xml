@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Posttagmeza Atentigo?</string>
     <string name="all_time_stats">Ĉiatempa Statistiko</string>
     <string name="app_theme">Aplika Temo</string>
-    <string name="attempting_to_download_data_txt">Provante elŝuti data.txt de via servilo</string>
+    <string name="avg">averg</string>
     <string name="battery_warning">Averto: Ebligi la ĉi-supran opcion povas malplenigi vian kuirilaron pli rapide ol kutime</string>
     <string name="before">antaŭe</string>
     <string name="bgColour">Fenestraĵo Fona Koloro Elektilo</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Laŭvola: Propra URL</string>
     <string name="custom_url_not_set_or_blank">Propra URL ne estas agordita aŭ estas malplena. Vi povas iri en agordojn por aldoni kutiman URL</string>
     <string name="dark_theme">Malhela Temo</string>
-    <string name="data_url_was_blank">Datuma URL estis malplena</string>
+    <string name="data_url_was_blank">La %1$s URL estis malplena, bonvolu kontroli vian %2$s dosieron kaj provi denove</string>
     <string name="delete_all_data">Forigi Ĉiuj Datumoj kaj Malŝalto</string>
     <string name="empty">Malplena</string>
     <string name="error">Eraro!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Malsukcesis prilabori prognozajn datumojn</string>
     <string name="failed_to_process_weather_data">Malsukcesis ĝuste prilabori la veterdatumojn de via servilo, specife la %1$s datumoj</string>
     <string name="fgColour">Fenestraĵo Malfono Koloro Picker</string>
-    <string name="fileURL">Enigu la URL al via settings.txt</string>
+    <string name="fileURL">Enigu la URL al %1$s</string>
     <string name="force_dark_mode">Forto Malhela Reĝimo</string>
     <string name="forecast">Prognoza Paĝo</string>
     <string name="forecast2">Prognozo</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Ĉiutage</string>
     <string name="forecast_interval">Prognoza Intervalo (se aplikebla)</string>
     <string name="forecast_type_is_invalid">Prognoza tipo \'%1$s\' estas nevalida, kontrolu vian agordan dosieron kaj provu denove</string>
-    <string name="forecast_url_not_set">Prognoza URL ne agordita, redaktu settings.txt por ŝanĝi</string>
+    <string name="forecast_url_not_set">Prognoza URL ne agordita, agordu ĝin en %1$s</string>
     <string name="hour">horo</string>
     <string name="hours">horoj</string>
     <string name="ill_fix_and_try_again">Mi Riparos Ĝin kaj Provos Denove</string>
@@ -116,6 +116,7 @@
     <string name="skip">Saltu</string>
     <string name="stats2">Statistiko</string>
     <string name="still_downloading_forecast_data">Ankoraŭ elŝutas prognozajn datumojn</string>
+    <string name="still_downloading_weather_data">Ankoraŭ elŝutas veterdatenojn</string>
     <string name="swipe_lock">Svingu Ŝlosu</string>
     <string name="system_default">Sistemo Defaŭlto</string>
     <string name="temperature">Temperaturo</string>

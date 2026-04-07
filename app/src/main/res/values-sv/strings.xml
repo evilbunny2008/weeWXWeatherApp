@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Eftermiddagsvarning?</string>
     <string name="all_time_stats">All Time Statistics</string>
     <string name="app_theme">App-tema</string>
-    <string name="attempting_to_download_data_txt">Försöker ladda ner data.txt från din server</string>
+	<string name="avg">gen.</string>
     <string name="battery_warning">Varning: Aktivering av ovanstående alternativ kan ta ur batteriet snabbare än vanligt</string>
     <string name="before">före</string>
     <string name="bgColour">Widget bakgrundsfärgväljare</string>
@@ -15,8 +15,7 @@
     <string name="custom_url">Valfritt: Anpassad webbadress</string>
     <string name="custom_url_not_set_or_blank">Anpassad webbadress är inte angiven eller är tom. Du kan gå in i inställningarna för att lägga till en anpassad URL</string>
     <string name="dark_theme">mörkt tema</string>
-    <string name="data_url_was_blank">Data-URL var tom</string>
-    <string name="delete_all_data">Ta bort all data och stäng av</string>
+	<string name="delete_all_data">Ta bort all data och stäng av</string>
     <string name="empty">Tömma</string>
     <string name="error">Fel!</string>
     <string name="error_occurred_while_attempting_to_update">Ett fel uppstod vid försök att uppdatera användningen</string>
@@ -33,16 +32,14 @@
     <string name="failed_to_process_forecast_data">Det gick inte att bearbeta prognosdata</string>
     <string name="failed_to_process_weather_data">Det gick inte att korrekt bearbeta väderdata från din server, särskilt %1$s data</string>
     <string name="fgColour">Widget Förgrundsfärgväljare</string>
-    <string name="fileURL">Ange URL:en till din settings.txt</string>
-    <string name="force_dark_mode">Force Dark Mode</string>
+	<string name="force_dark_mode">Force Dark Mode</string>
     <string name="forecast">Prognossida</string>
     <string name="forecast2">Prognos</string>
     <string name="forecast_6hourly">6 Varje timme</string>
     <string name="forecast_daily">Dagligen</string>
     <string name="forecast_interval">Prognosintervall (om tillämpligt)</string>
     <string name="forecast_type_is_invalid">Prognostypen \'%1$s\' är ogiltig, kontrollera din inställningsfil och försök igen</string>
-    <string name="forecast_url_not_set">Prognos-URL inte angiven, redigera settings.txt för att ändra</string>
-    <string name="hour">timme</string>
+	<string name="hour">timme</string>
     <string name="hours">timmar</string>
     <string name="ill_fix_and_try_again">Jag fixar det och försöker igen</string>
     <string name="indoor_readings">Visa avläsningar inomhus?</string>

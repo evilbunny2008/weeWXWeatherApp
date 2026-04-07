@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Waspada Siang?</string>
     <string name="all_time_stats">Sagalo Statistik Wakatu</string>
     <string name="app_theme">Tema Aplikasi</string>
-    <string name="attempting_to_download_data_txt">Mancubo data unduhan.txt dari server Sanak</string>
+    <string name="avg">rato-rato</string>
     <string name="battery_warning">Peringatan: Mamungkinkan pilihan di ateh dapek manguras baterai labiah capek dari biaso</string>
     <string name="before">sabalun</string>
     <string name="bgColour">Widget Latar Pitiah Warna</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opsional: URL Adat</string>
     <string name="custom_url_not_set_or_blank">URL Adat indak diatur, atau kosong. Sanak dapek masuak ka dalam pangaturan untuak manambah URL khusus</string>
     <string name="dark_theme">Tema Gelap</string>
-    <string name="data_url_was_blank">URL Data pun kosong</string>
+    <string name="data_url_was_blank">URL %1$s kosong, pareso berkas %2$s Sanak dan cubo baliak</string>
     <string name="delete_all_data">Hapus Sagalo Data jo Rapikan</string>
     <string name="empty">Kosong</string>
     <string name="error">Kasilapan!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Digagalan jo data ramalan proses</string>
     <string name="failed_to_process_weather_data">Gagal mamproses sacaro tapek data cuaco dari server Sanak, khususnyo data %1$s</string>
     <string name="fgColour">Picker Warna Latar Widget</string>
-    <string name="fileURL">Masuakkan URL ka pangaturan Sanak.txt</string>
+    <string name="fileURL">Masuakkan URL ka %1$s</string>
     <string name="force_dark_mode">Mode Gelap Angkatan</string>
     <string name="forecast">Halaman Ramalan</string>
     <string name="forecast2">Ramalan</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Sahari-ari</string>
     <string name="forecast_interval">Selang Ramalan (jiko ado)</string>
     <string name="forecast_type_is_invalid">Tipu tipe \'%1$s\' indak sah, pareso file pangaturan Sanak dan cubo baliak</string>
-    <string name="forecast_url_not_set">Ramalan URL indak diatur, pangaturan suntiangan.txt untuak diubah</string>
+    <string name="forecast_url_not_set">URL ramalan indak diatur, atur dalam %1$s</string>
     <string name="hour">wakatu</string>
     <string name="hours">jam</string>
     <string name="ill_fix_and_try_again">Ambo Ka Perbaiki dan Cubolah Baliak</string>
@@ -120,6 +120,7 @@
     <string name="skip">Malewati</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Masih mangunduakan data ramalan</string>
+    <string name="still_downloading_weather_data">Masih mangunduakan data cuaco</string>
     <string name="swipe_lock">Kunci gegap</string>
     <string name="system_default">Sistem Default</string>
     <string name="temperature">Suhu</string>

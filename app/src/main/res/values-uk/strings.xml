@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Оповіщення після обіду?</string>
     <string name="all_time_stats">Статистика за весь час</string>
     <string name="app_theme">Тема програми</string>
-    <string name="attempting_to_download_data_txt">Спроба завантажити data.txt із вашого сервера</string>
+	<string name="avg">сер.</string>
     <string name="battery_warning">Попередження: увімкнення вищезазначеної опції може розряджати акумулятор швидше, ніж зазвичай</string>
     <string name="before">раніше</string>
     <string name="bgColour">Вибір кольору фону віджета</string>
@@ -15,8 +15,7 @@
     <string name="custom_url">Необов\'язково: спеціальна URL-адреса</string>
     <string name="custom_url_not_set_or_blank">Спеціальна URL-адреса не встановлена ​​або пуста. Ви можете зайти в налаштування, щоб додати спеціальну URL-адресу</string>
     <string name="dark_theme">Темна тема</string>
-    <string name="data_url_was_blank">URL-адреса даних була пустою</string>
-    <string name="delete_all_data">Видалити всі дані та завершити роботу</string>
+	<string name="delete_all_data">Видалити всі дані та завершити роботу</string>
     <string name="empty">Порожній</string>
     <string name="error">Помилка!</string>
     <string name="error_occurred_while_attempting_to_update">Під час спроби оновити дані про використання сталася помилка</string>
@@ -33,16 +32,14 @@
     <string name="failed_to_process_forecast_data">Не вдалося обробити дані прогнозу</string>
     <string name="failed_to_process_weather_data">Не вдалося правильно обробити дані про погоду з вашого сервера, зокрема дані %1$s</string>
     <string name="fgColour">Вибір кольору переднього плану віджета</string>
-    <string name="fileURL">Введіть URL-адресу файлу settings.txt</string>
-    <string name="force_dark_mode">Примусовий темний режим</string>
+	<string name="force_dark_mode">Примусовий темний режим</string>
     <string name="forecast">Сторінка прогнозу</string>
     <string name="forecast2">Прогноз</string>
     <string name="forecast_6hourly">6 щогодини</string>
     <string name="forecast_daily">Щодня</string>
     <string name="forecast_interval">Інтервал прогнозу (якщо застосовно)</string>
     <string name="forecast_type_is_invalid">Тип прогнозу \'%1$s\' недійсний, перевірте файл налаштувань і повторіть спробу</string>
-    <string name="forecast_url_not_set">URL-адресу прогнозу не встановлено, відредагуйте файл settings.txt, щоб змінити його</string>
-    <string name="hour">година</string>
+	<string name="hour">година</string>
     <string name="hours">години</string>
     <string name="ill_fix_and_try_again">Я виправлю це та спробую ще раз</string>
     <string name="indoor_readings">Показувати показання в приміщенні?</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Popołudniowy alarm?</string>
     <string name="all_time_stats">Statystyki wszechczasów</string>
     <string name="app_theme">Motyw aplikacji</string>
-    <string name="attempting_to_download_data_txt">Próba pobrania pliku data.txt z Twojego serwera</string>
+	<string name="avg">śr.</string>
     <string name="battery_warning">Ostrzeżenie: włączenie powyższej opcji może spowodować szybsze niż zwykle zużycie baterii</string>
     <string name="before">zanim</string>
     <string name="bgColour">Próbnik koloru tła widgetu</string>
@@ -15,8 +15,7 @@
     <string name="custom_url">Opcjonalnie: niestandardowy adres URL</string>
     <string name="custom_url_not_set_or_blank">Niestandardowy adres URL nie jest ustawiony lub jest pusty. Możesz przejść do ustawień, aby dodać niestandardowy adres URL</string>
     <string name="dark_theme">Ciemny motyw</string>
-    <string name="data_url_was_blank">Adres URL danych był pusty</string>
-    <string name="delete_all_data">Usuń wszystkie dane i wyłącz</string>
+	<string name="delete_all_data">Usuń wszystkie dane i wyłącz</string>
     <string name="empty">Pusty</string>
     <string name="error">Błąd!</string>
     <string name="error_occurred_while_attempting_to_update">Wystąpił błąd podczas próby aktualizacji użycia</string>
@@ -33,16 +32,14 @@
     <string name="failed_to_process_forecast_data">Nie udało się przetworzyć danych prognozy</string>
     <string name="failed_to_process_weather_data">Nie udało się poprawnie przetworzyć danych o pogodzie z Twojego serwera, w szczególności danych %1$s</string>
     <string name="fgColour">Widżet Próbnik kolorów pierwszego planu</string>
-    <string name="fileURL">Wprowadź adres URL pliku settings.txt</string>
-    <string name="force_dark_mode">Wymuś tryb ciemny</string>
+	<string name="force_dark_mode">Wymuś tryb ciemny</string>
     <string name="forecast">Strona prognozy</string>
     <string name="forecast2">Prognoza</string>
     <string name="forecast_6hourly">6 Co godzinę</string>
     <string name="forecast_daily">Codziennie</string>
     <string name="forecast_interval">Przedział prognozy (jeśli dotyczy)</string>
     <string name="forecast_type_is_invalid">Typ prognozy \'%1$s\' jest nieprawidłowy. Sprawdź plik ustawień i spróbuj ponownie</string>
-    <string name="forecast_url_not_set">Nie ustawiono adresu URL prognozy. Edytuj plik settings.txt, aby go zmienić</string>
-    <string name="hour">godzina</string>
+	<string name="hour">godzina</string>
     <string name="hours">godziny</string>
     <string name="ill_fix_and_try_again">Naprawię to i spróbuję ponownie</string>
     <string name="indoor_readings">Pokazać odczyty w pomieszczeniu?</string>

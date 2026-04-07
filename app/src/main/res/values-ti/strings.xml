@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">ናይ ድሕሪ ቀትሪ መጠንቀቕታ?</string>
     <string name="all_time_stats">ናይ ኩሉ ግዜ ስታቲስቲክስ</string>
     <string name="app_theme">ኣፕ ቴማ</string>
-    <string name="attempting_to_download_data_txt">ካብ ሰርቨርካ Data.txt download data.txt</string>
+	<string name="avg">ort.</string>
     <string name="battery_warning">መጠንቀቕታ: ነዚ ኣብ ላዕሊ ዘሎ ኣማራጺ ምኽኣል ካብቲ ልሙድ ንላዕሊ ንባትሪኻ ከጥፍኦ ይኽእል እዩ</string>
     <string name="before">ቅድሚ</string>
     <string name="bgColour">ዊጀት ድሕረ ባይታ ሕብሪ ምልቃም</string>
@@ -15,8 +15,7 @@
     <string name="custom_url">ኣማራጺ: ብሕታዊ URL</string>
     <string name="custom_url_not_set_or_blank">ብሕታዊ URL ኣይተቐመጠን፣ ወይ ባዶ እዩ። ብሕታዊ URL ንምውሳኽ ናብ ቅጥዕታት ክትኣቱ ትኽእል ኢኻ ።</string>
     <string name="dark_theme">ጸሊም ቴማ</string>
-    <string name="data_url_was_blank">ዳታ URL ባዶ እዩ ነይሩ።</string>
-    <string name="delete_all_data">ኩሉ ዳታ ምድምሳስን ምዕጻውን</string>
+	<string name="delete_all_data">ኩሉ ዳታ ምድምሳስን ምዕጻውን</string>
     <string name="empty">ባዶ</string>
     <string name="error">ስሕተት!</string>
     <string name="error_occurred_while_attempting_to_update">ኣጠቓቕማ ንምዕራፍ ኣብ ዝፈተነሉ እዋን ጌጋ ኣጋጢሙ ።</string>
@@ -33,16 +32,14 @@
     <string name="failed_to_process_forecast_data">ትንበያ ዳታ ምምስራሕ ኣይተኻእለን ።</string>
     <string name="failed_to_process_weather_data">ካብ ኣገልጋሊኻ ዝመጽእ ናይ ኩነታት ኣየር ዳታ ብትኽክል ክሰርሕ ኣይከኣለን፣ ብፍላይ ድማ ናይ %1$s ዳታ</string>
     <string name="fgColour">ዊጀት ቅድሚት መሬት ሕብሪ ምልቃም</string>
-    <string name="fileURL">ናብ ቅጥዕታትካ URL ኣእቱ።txt</string>
-    <string name="force_dark_mode">ሓይሊ ጸሊም ሞድ</string>
+	<string name="force_dark_mode">ሓይሊ ጸሊም ሞድ</string>
     <string name="forecast">ገጽ ትንበያ</string>
     <string name="forecast2">ትንበያ</string>
     <string name="forecast_6hourly">6 ኣብ ሰዓት</string>
     <string name="forecast_daily">መዓልታዊ</string>
     <string name="forecast_interval">ትንበያ ፍልልይ (ኣድላዪ እንተኾይኑ)</string>
     <string name="forecast_type_is_invalid">Type \'%1$s\' ትኽክል ኣይኮነን፣ ናይ ቅጥዕታት ፋይልካ መርምሮ እሞ እንደገና ፈትን።</string>
-    <string name="forecast_url_not_set">URL ኣይተቐመጡን፣ ቅጥዕታት ኣርትዕ.txt ንለውጢ</string>
-    <string name="hour">ሰዓት</string>
+	<string name="hour">ሰዓት</string>
     <string name="hours">ሰዓታት</string>
     <string name="ill_fix_and_try_again">ክእርሞ እየ ዳግማይ ክፍትን እየ</string>
     <string name="indoor_readings">ኣብ ውሽጢ ገዛ ንባባት ምርኣይ?</string>

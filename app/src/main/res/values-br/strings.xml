@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Kemenn goude merenn?</string>
     <string name="all_time_stats">Stadegoù an amzer a-bezh</string>
     <string name="app_theme">Tem an app</string>
-    <string name="attempting_to_download_data_txt">Klask pellgargañ roadennoù.txt diwar ho servijer</string>
+    <string name="avg">keitat</string>
     <string name="battery_warning">Diwallit : Gweredekaat an dibab a-us a c\'hell dreiñ ho pilenn buanoc\'h eget ar c\'hiz</string>
     <string name="before">a-raok</string>
     <string name="bgColour">Widget en-dro ar c\'hoari liv Widget</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Dibarzh : URL personelaet</string>
     <string name="custom_url_not_set_or_blank">N\'eo ket lakaet URL personelaet, pe goullo eo. Gallout a rit mont e-barzh arventennoù evit ouzhpennañ un URL personelaet</string>
     <string name="dark_theme">Tem teñval</string>
-    <string name="data_url_was_blank">Roadennoù URL war goullo</string>
+    <string name="data_url_was_blank">Goullo e oa URL %1$s, gwiriit ho restr %2$s ha klaskit en-dro</string>
     <string name="delete_all_data">Dilemel an holl roadennoù hag ar c\'heflusker</string>
     <string name="empty">Goullo</string>
     <string name="error">Fazi!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">C\'hwitet en deus da dreuzfurmiñ roadennoù ar rakweled</string>
     <string name="failed_to_process_weather_data">C\'hwitet en deus treuzfurmet mat roadennoù an amzer eus ho servijer, dreist-holl ar roadennoù %1$s</string>
     <string name="fgColour">Widget eo ar c\'hentañ plas evit al liv</string>
-    <string name="fileURL">Lakait an URL d\'hoc\'h arventennoù.txt</string>
+    <string name="fileURL">Lakait chomlec\'h da %1$s</string>
     <string name="force_dark_mode">Mod teñval an nerzh</string>
     <string name="forecast">Pajenn rakwelet</string>
     <string name="forecast2">Diaweladenn</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Pemdeziek</string>
     <string name="forecast_interval">Etread rakwelet (ma vez arveret)</string>
     <string name="forecast_type_is_invalid">Didalvoudek eo ar seurt rakwelet \'%1$s\', gwiriit ho restr arventennoù ha klaskit en-dro</string>
-    <string name="forecast_url_not_set">URL rakwelet n\'eo ket bet lakaet, kemmañ arventennoù.txt evit cheñch</string>
+    <string name="forecast_url_not_set">URL ar rakwelet n\'eo ket arventennet, lakait anezhañ e %1$s</string>
     <string name="hour">eur</string>
     <string name="hours">eurioù</string>
     <string name="ill_fix_and_try_again">Me \'ra Fix it et Clasc a-nevez</string>
@@ -119,6 +119,7 @@
     <string name="skip">Lammat</string>
     <string name="stats2">Stadegoù</string>
     <string name="still_downloading_forecast_data">Pellgargañ roadennoù rakwelet c\'hoazh</string>
+    <string name="still_downloading_weather_data">O pellgargañ roadennoù an amzer c\'hoazh</string>
     <string name="swipe_lock">Swipe prennañ</string>
     <string name="system_default">Dre ziouer ar reizhiad</string>
     <string name="temperature">Gwrez</string>

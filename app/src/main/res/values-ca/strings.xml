@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alerta a la tarda?</string>
     <string name="all_time_stats">Estadístiques de tots els temps</string>
     <string name="app_theme">Tema de l\'aplicació</string>
-    <string name="attempting_to_download_data_txt">S\'està intentant baixar data.txt del vostre servidor</string>
+    <string name="avg">mitjana</string>
     <string name="battery_warning">Avís: activar l\'opció anterior pot esgotar la bateria més ràpidament de l\'habitual</string>
     <string name="before">abans</string>
     <string name="bgColour">Selector de color de fons del widget</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opcional: URL personalitzat</string>
     <string name="custom_url_not_set_or_blank">L\'URL personalitzat no està definit o està en blanc. Podeu anar a la configuració per afegir un URL personalitzat</string>
     <string name="dark_theme">Tema fosc</string>
-    <string name="data_url_was_blank">L\'URL de les dades estava en blanc</string>
+    <string name="data_url_was_blank">L\'URL de %1$s estava en blanc, comproveu el vostre fitxer %2$s i torneu-ho a provar</string>
     <string name="delete_all_data">Suprimiu totes les dades i apagueu</string>
     <string name="empty">Buit</string>
     <string name="error">Error!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">No s\'han pogut processar les dades de previsió</string>
     <string name="failed_to_process_weather_data">No s\'han pogut processar correctament les dades meteorològiques del vostre servidor, concretament les dades %1$s</string>
     <string name="fgColour">Selector de color de primer pla del widget</string>
-    <string name="fileURL">Introduïu l\'URL del vostre settings.txt</string>
+    <string name="fileURL">Introduïu l\'URL de %1$s</string>
     <string name="force_dark_mode">Força el mode fosc</string>
     <string name="forecast">Pàgina de previsió</string>
     <string name="forecast2">Previsió</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Diàriament</string>
     <string name="forecast_interval">Interval de previsió (si escau)</string>
     <string name="forecast_type_is_invalid">El tipus de previsió \'%1$s\' no és vàlid, comproveu el fitxer de configuració i torneu-ho a provar</string>
-    <string name="forecast_url_not_set">L\'URL de previsió no s\'ha definit, editeu settings.txt per canviar-lo</string>
+    <string name="forecast_url_not_set">L\'URL de previsió no s\'ha definit, estableix-lo a %1$s</string>
     <string name="hour">hora</string>
     <string name="hours">hores</string>
     <string name="ill_fix_and_try_again">Ho arreglaré i ho tornaré a provar</string>
@@ -117,6 +117,7 @@
     <string name="skip">Saltar</string>
     <string name="stats2">Estadístiques</string>
     <string name="still_downloading_forecast_data">Encara s\'estan baixant dades de previsió</string>
+    <string name="still_downloading_weather_data">Encara s\'està baixant dades meteorològiques</string>
     <string name="swipe_lock">Llisca el bloqueig</string>
     <string name="system_default">Sistema per defecte</string>
     <string name="temperature">Temperatura</string>

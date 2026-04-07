@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alèt apremidi?</string>
     <string name="all_time_stats">Estatistik tout tan</string>
     <string name="app_theme">Tèm aplikasyon an</string>
-    <string name="attempting_to_download_data_txt">Eseye telechaje data.txt sou sèvè w la</string>
+    <string name="avg">mwayèn</string>
     <string name="battery_warning">Avètisman: Pèmèt opsyon ki anwo a ka vide batri ou pi vit pase nòmal</string>
     <string name="before">anvan</string>
     <string name="bgColour">Widget Background Koulè Seleksyon</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Si ou vle: URL Custom</string>
     <string name="custom_url_not_set_or_blank">URL Custom pa mete, oswa li vid. Ou ka ale nan anviwònman yo ajoute yon URL koutim</string>
     <string name="dark_theme">Tèm nwa</string>
-    <string name="data_url_was_blank">URL done yo te vid</string>
+    <string name="data_url_was_blank">URL %1$s la te vid, tanpri tcheke fichye %2$s ou a epi eseye ankò</string>
     <string name="delete_all_data">Efase tout done ak fèmen</string>
     <string name="empty">Vide</string>
     <string name="error">Erè!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Echwe pou trete done previzyon yo</string>
     <string name="failed_to_process_weather_data">Echwe pou trete done metewolojik ki soti nan sèvè w la kòrèkteman, espesyalman done %1$s yo</string>
     <string name="fgColour">Widget premye plan koulè picker</string>
-    <string name="fileURL">Antre URL nan settings.txt ou a</string>
+    <string name="fileURL">Antre URL nan %1$s</string>
     <string name="force_dark_mode">Fòs mòd nwa</string>
     <string name="forecast">Paj pwevwa</string>
     <string name="forecast2">Pwevwa</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Chak jou</string>
     <string name="forecast_interval">Entèval Previzyon (si sa aplikab)</string>
     <string name="forecast_type_is_invalid">Kalite previzyon \'%1$s\' pa valab, tcheke dosye paramèt ou a epi eseye ankò</string>
-    <string name="forecast_url_not_set">URL pwevwa pa mete, modifye settings.txt pou chanje</string>
+    <string name="forecast_url_not_set">URL previzyon pa tabli, mete l nan %1$s</string>
     <string name="hour">èdtan</string>
     <string name="hours">èdtan</string>
     <string name="ill_fix_and_try_again">Mwen pral ranje li epi eseye ankò</string>
@@ -120,6 +120,7 @@
     <string name="skip">Sote</string>
     <string name="stats2">Estatistik</string>
     <string name="still_downloading_forecast_data">Toujou telechaje done prévisions</string>
+    <string name="still_downloading_weather_data">Toujou telechaje done metewolojik</string>
     <string name="swipe_lock">Glise Lock</string>
     <string name="system_default">Sistèm Default</string>
     <string name="temperature">Tanperati</string>

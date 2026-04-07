@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alerte ya nsima ya midi?</string>
     <string name="all_time_stats">Statistiques ya tango nionso</string>
     <string name="app_theme">Motó ya likambo ya APP</string>
-    <string name="attempting_to_download_data_txt">Komeka kozwa data.txt na serveur na yo</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">KEKELE: Kofungola option oyo ezali likolo ekoki ko drainer pile na yo noki koleka ndenge omesanaka</string>
     <string name="before">liboso</string>
     <string name="bgColour">widget fond ya langi picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Optionnel: URL personnalisée</string>
     <string name="custom_url_not_set_or_blank">URL personnalisé ezali te, to ezali ya pamba. Okoki kokɔta na ba paramètres mpo na kobakisa URL oyo esalemi na kolanda bamposa ya moto</string>
     <string name="dark_theme">Motó ya likambo ya molili</string>
-    <string name="data_url_was_blank">URL ya ba données ezalaki ya pamba</string>
+    <string name="data_url_was_blank">URL ya %1$s ezalaki mpamba, tala fisyé na yo ya %2$s mpe meka lisusu</string>
     <string name="delete_all_data">Bolongola ba données nionso na arrêt</string>
     <string name="empty">Mpamba</string>
     <string name="error">Libunga!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Elongaki te kosala ba données ya prévision</string>
     <string name="failed_to_process_weather_data">Elongi te kosala malamu ba données ya météo oyo ewutaki na serveur na yo, précisément ba données ya %1$s</string>
     <string name="fgColour">widget ya liboso ya kosala ba couleurs</string>
-    <string name="fileURL">Tyá URL na paramètres na yo.txt</string>
+    <string name="fileURL">Tyá URL na %1$s</string>
     <string name="force_dark_mode">Mode ya molili ya makasi</string>
     <string name="forecast">Página de pronostic</string>
     <string name="forecast2">Oyo tozokanisa kosala</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Mokolo na mokolo</string>
     <string name="forecast_interval">Intervalle ya prévision (soki esengeli)</string>
     <string name="forecast_type_is_invalid">Lolenge ya pronostic \'%1$s\' ezali ya malamu te, tala fichier ya ba paramètres na yo mpe meka lisusu</string>
-    <string name="forecast_url_not_set">URL ya pronostic Ezali te, bongisa Paramètres.txt mpo na kobongola</string>
+    <string name="forecast_url_not_set">URL ya pronostic etiamaki te, tia yango na %1$s</string>
     <string name="hour">ngonga</string>
     <string name="hours">bangonga</string>
     <string name="ill_fix_and_try_again">Nako bongisa yango pe nako meka lisusu</string>
@@ -116,6 +116,7 @@
     <string name="skip">Kokipe te</string>
     <string name="stats2">Statistiques</string>
     <string name="still_downloading_forecast_data">Encore télécharger ba données ya prévision</string>
+    <string name="still_downloading_weather_data">Encore ko télécharger ba données ya météo</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">Système ya liboso ya système</string>
     <string name="temperature">Molunge</string>

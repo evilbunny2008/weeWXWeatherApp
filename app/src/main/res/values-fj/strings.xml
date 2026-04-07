@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Vakasala ni Yakavi?</string>
     <string name="all_time_stats">Na Gaunataki</string>
     <string name="app_theme">vakalawa e</string>
-    <string name="attempting_to_download_data_txt">Tabaka ni lavetaki</string>
+    <string name="avg">veimama</string>
     <string name="battery_warning">Vakasala: Na digidigi e toka e cake e rawa ni vakadrodroi kina na nomu battery mai na kena ivakarau</string>
     <string name="before">liu</string>
     <string name="bgColour">Rai vakaveitaravi kei na colo ni Cocker Cocketr Pecker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Digidigi: Na iVurevure ni URIL</string>
     <string name="custom_url_not_set_or_blank">E sega ni tauyavutaki, se me lagalagati. E rawa ni o lako ki na ituvatuva mo vakuria kina e dua na URL</string>
     <string name="dark_theme">Ciqo Vaka na cake vei au</string>
-    <string name="data_url_was_blank">Ea nunu vinaka o Data URL</string>
+    <string name="data_url_was_blank">Na %1$s URL e lala tu, yalovinaka raica na nomu faile ni %2$s ka tovolea tale</string>
     <string name="delete_all_data">Vakatulewa Na Data kei Sutdor</string>
     <string name="empty">Lala</string>
     <string name="error">Cala!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Maqosa na kena cakacakataki na itukutuku</string>
     <string name="failed_to_process_weather_data">E sega ni rawa ni vakadodonutaki na itukutuku ni draki mai na nomu dauveiqaravi, vakabibi na itukutuku ni%1$s</string>
     <string name="fgColour">Dauvanua vinaka |</string>
-    <string name="fileURL">Taura na URL ki na nomu ituvatuva.txt</string>
+    <string name="fileURL">Vakacuruma na URL ki na %1$s</string>
     <string name="force_dark_mode">iTi ki na tutu ni mataka</string>
     <string name="forecast">Itukutuku raraba ni Veivakatautauvatataki</string>
     <string name="forecast2">Veika na yaco</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Veisiga</string>
     <string name="forecast_interval">Na gauna ni parofisai (kevaka e ganita)</string>
     <string name="forecast_type_is_invalid">Na mataqali \'%1$s\' e tawayalani, raica na nomu ituvatuva ni ituvatuva ka tovolea tale</string>
-    <string name="forecast_url_not_set">Onocastst URL e sega ni ituvatuva, edita na ituvatuva.txt me veisau</string>
+    <string name="forecast_url_not_set">URL ni parofisai sega ni vakarautaki, vakarautaki ena %1$s</string>
     <string name="hour">auwa</string>
     <string name="hours">aua</string>
     <string name="ill_fix_and_try_again">Au na Marau Kina Sa Vakatovotovo</string>
@@ -120,6 +120,7 @@
     <string name="skip">Sivita</string>
     <string name="stats2">iyalayala</string>
     <string name="still_downloading_forecast_data">Stivenivolai ni itukutuku ni itukutuku</string>
+    <string name="still_downloading_weather_data">Se lavetaki tikoga na itukutuku ni draki</string>
     <string name="swipe_lock">iyaloyalo</string>
     <string name="system_default">vinaka duadua</string>
     <string name="temperature">Katakata</string>

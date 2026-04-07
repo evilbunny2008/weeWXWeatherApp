@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Njikere ehihie?</string>
     <string name="all_time_stats">Oge niile</string>
     <string name="app_theme">Okwu</string>
-    <string name="attempting_to_download_data_txt">Ịnwa ibudata data.txt na sava gị</string>
+    <string name="avg">nkezi</string>
     <string name="battery_warning">Warndọ aka na ntị: na-enyere gị aka ịhọrọ batrị gị karịa ka ọ dị na mbụ</string>
     <string name="before">tupu</string>
     <string name="bgColour">Wijetị na-ahụ maka egwuregwu</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Nhọrọ: URL omenala</string>
     <string name="custom_url_not_set_or_blank">URL ọdịnala anaghị edobe, ma ọ bụ na-enweghị oghere. Can nwere ike ịbanye na ntọala iji tinye URL omenala</string>
     <string name="dark_theme">Isiokwu gbara ọchịchịrị</string>
-    <string name="data_url_was_blank">URL data bụ oghere</string>
+    <string name="data_url_was_blank">URL %1$s ghe oghe, biko lelee faịlụ %2$s gị wee nwaa ọzọ</string>
     <string name="delete_all_data">Hichapụ data niile na mmechi</string>
     <string name="empty">Efu</string>
     <string name="error">Njehie!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Emeghị ka ịhazi data</string>
     <string name="failed_to_process_weather_data">Ịhazighị data ihu igwe sitere na sava gị nke ọma, kpọmkwem data %1$s</string>
     <string name="fgColour">Wijetị Chargen For na-ahọrọ</string>
-    <string name="fileURL">Tinye URL na ntọala gị.txt</string>
+    <string name="fileURL">Tinye URL na %1$s</string>
     <string name="force_dark_mode">Ike ọchịchịrị</string>
     <string name="forecast">Peeji Peeji</string>
     <string name="forecast2">Amuma</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Kwa ụbọchị</string>
     <string name="forecast_interval">Ogologo oge amụma (ọ bụrụ na ọdabara)</string>
     <string name="forecast_type_is_invalid">Amụma dị iche iche \'%1$s\' abaghị uru, lelee faịlụ ntọala gị wee nwaa ọzọ</string>
-    <string name="forecast_url_not_set">Emebeghị URL URL, Dezie ntọala.TXT ịgbanwe</string>
+    <string name="forecast_url_not_set">Edobeghi URL amụma, tọọ ya na %1$s</string>
     <string name="hour">awa</string>
     <string name="hours">awa</string>
     <string name="ill_fix_and_try_again">M ga-edozi ya ma nwaa ọzọ</string>
@@ -115,6 +115,7 @@
     <string name="skip">Mafee</string>
     <string name="stats2">Statistiks</string>
     <string name="still_downloading_forecast_data">Ka na-ebubata data amụma</string>
+    <string name="still_downloading_weather_data">Ka na-ebudata data ihu igwe</string>
     <string name="swipe_lock">Mkpọchi swipe</string>
     <string name="system_default">Ndabara ndabara</string>
     <string name="temperature">Okpomọkụ</string>

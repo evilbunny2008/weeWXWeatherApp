@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">दोपहर की चेतावनी?</string>
     <string name="all_time_stats">सर्वकालिक आँकड़े</string>
     <string name="app_theme">ऐप थीम</string>
-    <string name="attempting_to_download_data_txt">आपके सर्वर से data.txt डाउनलोड करने का प्रयास किया जा रहा है</string>
+    <string name="avg">औसत</string>
     <string name="battery_warning">चेतावनी: उपरोक्त विकल्प को सक्षम करने से आपकी बैटरी सामान्य से अधिक तेजी से खत्म हो सकती है</string>
     <string name="before">पहले</string>
     <string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
     <string name="custom_url_not_set_or_blank">कस्टम URL सेट नहीं है, या रिक्त है. कस्टम यूआरएल जोड़ने के लिए आप सेटिंग्स में जा सकते हैं</string>
     <string name="dark_theme">डार्क थीम</string>
-    <string name="data_url_was_blank">डेटा यूआरएल खाली था</string>
+    <string name="data_url_was_blank">%1$s URL रिक्त था, कृपया अपनी %2$s फ़ाइल जांचें और पुनः प्रयास करें</string>
     <string name="delete_all_data">सभी डेटा हटाएँ और शटडाउन करें</string>
     <string name="empty">खाली</string>
     <string name="error">गलती!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">पूर्वानुमान डेटा संसाधित करने में विफल</string>
     <string name="failed_to_process_weather_data">आपके सर्वर से मौसम डेटा, विशेष रूप से %1$s डेटा को सही ढंग से संसाधित करने में विफल</string>
     <string name="fgColour">विजेट अग्रभूमि रंग चयनकर्ता</string>
-    <string name="fileURL">अपनी सेटिंग्स.txt में URL दर्ज करें</string>
+    <string name="fileURL">%1$s में यूआरएल दर्ज करें</string>
     <string name="force_dark_mode">फोर्स डार्क मोड</string>
     <string name="forecast">पूर्वानुमान पृष्ठ</string>
     <string name="forecast2">पूर्वानुमान</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">दैनिक</string>
     <string name="forecast_interval">पूर्वानुमान अंतराल (यदि लागू हो)</string>
     <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य है, अपनी सेटिंग फ़ाइल जांचें और पुनः प्रयास करें।</string>
-    <string name="forecast_url_not_set">पूर्वानुमान यूआरएल सेट नहीं है, बदलने के लिए सेटिंग्स.txt संपादित करें</string>
+    <string name="forecast_url_not_set">पूर्वानुमान URL सेट नहीं है, इसे %1$s में सेट करें</string>
     <string name="hour">घंटा</string>
     <string name="hours">घंटे</string>
     <string name="ill_fix_and_try_again">मैं इसे ठीक कर दूँगा और पुनः प्रयास करूँगा</string>
@@ -116,6 +116,7 @@
     <string name="skip">छोडना</string>
     <string name="stats2">आंकड़े</string>
     <string name="still_downloading_forecast_data">अभी भी पूर्वानुमान डेटा डाउनलोड हो रहा है</string>
+    <string name="still_downloading_weather_data">अभी भी मौसम डेटा डाउनलोड हो रहा है</string>
     <string name="swipe_lock">स्वाइप लॉक</string>
     <string name="system_default">प्रणालीगत चूक</string>
     <string name="temperature">तापमान</string>

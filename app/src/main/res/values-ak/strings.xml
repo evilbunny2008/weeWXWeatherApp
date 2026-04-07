@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Awia Kɔkɔbɔ?</string>
     <string name="all_time_stats">Bere akontaabu nyinaa</string>
     <string name="app_theme">App asɛmti</string>
-    <string name="attempting_to_download_data_txt">a worebɔ mmɔden sɛ wobɛtwe data.txt afi wo server so</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Kɔkɔbɔ: Sɛ wobɛma atifi hɔ nhyehyɛe no atumi ayɛ adwuma a, ebetumi ama wo batere no ayow ntɛmntɛm sen sɛnea ɛtaa yɛ no</string>
     <string name="before">ansa na</string>
     <string name="bgColour">widget akyi kɔla picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Sɛ wopɛ a: URL a wɔahyɛ da ayɛ</string>
     <string name="custom_url_not_set_or_blank">Custom URL no nnyɛ set, anaasɛ ɛyɛ blank. Wubetumi akɔ nhyehyɛe mu de URL a wɔahyɛ da ayɛ aka ho</string>
     <string name="dark_theme">Asɛmti a ɛyɛ sum</string>
-    <string name="data_url_was_blank">Data URL no yɛ blank</string>
+    <string name="data_url_was_blank">Na %1$s URL no yɛ blank, yɛsrɛ wo hwɛ wo %2$s fael no na sɔ hwɛ bio</string>
     <string name="delete_all_data">Popa data ne shutdown nyinaa</string>
     <string name="empty">Hunu</string>
     <string name="error">Mfomsoɔ!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">antumi anni nsɛm a wɔahyɛ ho nkɔm ho dwuma ho dwuma</string>
     <string name="failed_to_process_weather_data">Entumi anni wim tebea ho nsɛm a efi wo server no so no ho dwuma yiye, titiriw %1$s data no</string>
     <string name="fgColour">Widget anim kɔla picker</string>
-    <string name="fileURL">Hyehyɛ URL no wɔ wo nhyehyɛe mu.TXT</string>
+    <string name="fileURL">Hyehyɛ URL no kɔ %1$s</string>
     <string name="force_dark_mode">Hyɛ dark mode</string>
     <string name="forecast">Nsɛm a Wɔabɔ ho Nkɔmhyɛ Kratafa</string>
     <string name="forecast2">Fa ani bu</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Da biara</string>
     <string name="forecast_interval">Forecast Interval (sɛ ɛfata a)</string>
     <string name="forecast_type_is_invalid">Forecast Type \'%1$s\' no nyɛ adwuma, hwɛ wo settings fael no na sɔ hwɛ bio</string>
-    <string name="forecast_url_not_set">Nkɔmhyɛ URL no Nsiesie, Sesa Settings.txt na sesa</string>
+    <string name="forecast_url_not_set">Forecast URL a wɔanhyehyɛ, hyehyɛ no wɔ %1$s mu</string>
     <string name="hour">dɔnhwere</string>
     <string name="hours">nnɔnhwere</string>
     <string name="ill_fix_and_try_again">Mebɛsiesie na mabɔ mmɔden bio</string>
@@ -116,6 +116,7 @@
     <string name="skip">Bɔ tra</string>
     <string name="stats2">Akontaabu</string>
     <string name="still_downloading_forecast_data">Da so ara retwe nkɔmhyɛ data</string>
+    <string name="still_downloading_weather_data">Wɔda so ara retwe wim tebea ho nsɛm</string>
     <string name="swipe_lock">Swipe lock</string>
     <string name="system_default">System default</string>
     <string name="temperature">Ahoɔhyeɛ</string>

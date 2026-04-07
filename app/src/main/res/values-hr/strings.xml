@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Popodnevna uzbuna?</string>
     <string name="all_time_stats">Statistika svih vremena</string>
     <string name="app_theme">Tema aplikacije</string>
-    <string name="attempting_to_download_data_txt">Pokušaj preuzimanja data.txt s vašeg poslužitelja</string>
+    <string name="avg">prosj</string>
     <string name="battery_warning">Upozorenje: Omogućavanje gornje opcije može isprazniti bateriju brže nego inače</string>
     <string name="before">prije</string>
     <string name="bgColour">Alat za odabir pozadinske boje widgeta</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Izborno: prilagođeni URL</string>
     <string name="custom_url_not_set_or_blank">Prilagođeni URL nije postavljen ili je prazan. Možete otići u postavke da dodate prilagođeni URL</string>
     <string name="dark_theme">Tamna tema</string>
-    <string name="data_url_was_blank">URL podataka bio je prazan</string>
+    <string name="data_url_was_blank">%1$s URL je bio prazan, provjerite %2$s datoteku i pokušajte ponovno</string>
     <string name="delete_all_data">Izbriši sve podatke i isključi</string>
     <string name="empty">Prazan</string>
     <string name="error">Greška!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Obrada podataka predviđanja nije uspjela</string>
     <string name="failed_to_process_weather_data">Nije uspjela točna obrada vremenskih podataka s vašeg poslužitelja, posebno podataka %1$s</string>
     <string name="fgColour">Alat za odabir boja prednjeg plana widgeta</string>
-    <string name="fileURL">Unesite URL svoje postavke.txt</string>
+    <string name="fileURL">Unesite URL za %1$s</string>
     <string name="force_dark_mode">Prisilni tamni način rada</string>
     <string name="forecast">Stranica s prognozom</string>
     <string name="forecast2">Prognoza</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Dnevno</string>
     <string name="forecast_interval">Interval predviđanja (ako je primjenjivo)</string>
     <string name="forecast_type_is_invalid">Vrsta prognoze \'%1$s\' nije važeća, provjerite datoteku s postavkama i pokušajte ponovno</string>
-    <string name="forecast_url_not_set">URL predviđanja nije postavljen, uredite settings.txt za promjenu</string>
+    <string name="forecast_url_not_set">URL predviđanja nije postavljen, postavite ga u %1$s</string>
     <string name="hour">sat</string>
     <string name="hours">sati</string>
     <string name="ill_fix_and_try_again">Popravit ću to i pokušati ponovno</string>
@@ -117,6 +117,7 @@
     <string name="skip">Preskočiti</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Još uvijek se preuzimaju podaci predviđanja</string>
+    <string name="still_downloading_weather_data">Još uvijek se preuzimaju vremenski podaci</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">Zadane postavke sustava</string>
     <string name="temperature">Temperatura</string>

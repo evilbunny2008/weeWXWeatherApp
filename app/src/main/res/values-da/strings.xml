@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Eftermiddagsalarm?</string>
     <string name="all_time_stats">Alle tiders statistik</string>
     <string name="app_theme">App-tema</string>
-    <string name="attempting_to_download_data_txt">Forsøger at downloade data.txt fra din server</string>
+    <string name="avg">gns.</string>
     <string name="battery_warning">Advarsel: Aktivering af ovenstående mulighed kan aflade dit batteri hurtigere end normalt</string>
     <string name="before">før</string>
     <string name="bgColour">Widget Baggrundsfarvevælger</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Valgfrit: Tilpasset webadresse</string>
     <string name="custom_url_not_set_or_blank">Tilpasset webadresse er ikke angivet eller er tom. Du kan gå ind i indstillinger for at tilføje en brugerdefineret URL</string>
     <string name="dark_theme">Mørkt tema</string>
-    <string name="data_url_was_blank">Data-URL var tom</string>
+    <string name="data_url_was_blank">%1$s URL var tom. Tjek venligst din %2$s fil og prøv igen</string>
     <string name="delete_all_data">Slet alle data og luk ned</string>
     <string name="empty">Tom</string>
     <string name="error">Fejl!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Kunne ikke behandle prognosedata</string>
     <string name="failed_to_process_weather_data">Kunne ikke behandle vejrdataene fra din server korrekt, specifikt %1$s dataene</string>
     <string name="fgColour">Widget Forgrundsfarvevælger</string>
-    <string name="fileURL">Indtast URL\'en til din settings.txt</string>
+    <string name="fileURL">Indtast URL\'en til %1$s</string>
     <string name="force_dark_mode">Tving mørk tilstand</string>
     <string name="forecast">Forecast side</string>
     <string name="forecast2">Vejrudsigt</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Daglig</string>
     <string name="forecast_interval">Prognoseinterval (hvis relevant)</string>
     <string name="forecast_type_is_invalid">Prognosetypen \'%1$s\' er ugyldig. Tjek din indstillingsfil, og prøv igen</string>
-    <string name="forecast_url_not_set">Prognose-URL ikke angivet, rediger settings.txt for at ændre</string>
+    <string name="forecast_url_not_set">Prognose-URL ikke angivet. Indstil den i %1$s</string>
     <string name="hour">time</string>
     <string name="hours">timer</string>
     <string name="ill_fix_and_try_again">Jeg ordner det og prøver igen</string>
@@ -116,6 +116,7 @@
     <string name="skip">Springe</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Downloader stadig prognosedata</string>
+    <string name="still_downloading_weather_data">Downloader stadig vejrdata</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">Systemstandard</string>
     <string name="temperature">Temperatur</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Síðdegisviðvörun?</string>
     <string name="all_time_stats">Tölfræði allra tíma</string>
     <string name="app_theme">App þema</string>
-    <string name="attempting_to_download_data_txt">Reynir að hlaða niður data.txt af þjóninum þínum</string>
+    <string name="avg">meðaltal</string>
     <string name="battery_warning">Viðvörun: Ef valkosturinn hér að ofan er virkur gæti rafhlaðan tæmdst hraðar en venjulega</string>
     <string name="before">áður</string>
     <string name="bgColour">Bakgrunnslitaval búnaðar</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Valfrjálst: Sérsniðin vefslóð</string>
     <string name="custom_url_not_set_or_blank">Sérsniðin vefslóð er ekki stillt eða hún er auð. Þú getur farið í stillingar til að bæta við sérsniðinni vefslóð</string>
     <string name="dark_theme">Myrkt þema</string>
-    <string name="data_url_was_blank">Gagnaslóð var auð</string>
+    <string name="data_url_was_blank">Vefslóðin %1$s var auð, vinsamlegast athugaðu %2$s skrána þína og reyndu aftur</string>
     <string name="delete_all_data">Eyða öllum gögnum og loka</string>
     <string name="empty">Tómt</string>
     <string name="error">Villa!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Mistókst að vinna úr spágögnum</string>
     <string name="failed_to_process_weather_data">Mistókst að vinna úr veðurgögnum frá þjóninum þínum, sérstaklega %1$s gögnunum</string>
     <string name="fgColour">Græja forgrunnslitavali</string>
-    <string name="fileURL">Sláðu inn slóðina á settings.txt</string>
+    <string name="fileURL">Sláðu inn slóðina á %1$s</string>
     <string name="force_dark_mode">Þvingaðu Dark Mode</string>
     <string name="forecast">Spásíða</string>
     <string name="forecast2">Spá</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Daglega</string>
     <string name="forecast_interval">Spábil (ef við á)</string>
     <string name="forecast_type_is_invalid">Spágerðin \'%1$s\' er ógild, athugaðu stillingaskrána þína og reyndu aftur</string>
-    <string name="forecast_url_not_set">Spávefslóð ekki stillt, breyttu settings.txt til að breyta</string>
+    <string name="forecast_url_not_set">Spávefslóð ekki stillt, stilltu hana í %1$s</string>
     <string name="hour">klukkustund</string>
     <string name="hours">klukkustundir</string>
     <string name="ill_fix_and_try_again">Ég laga það og reyni aftur</string>
@@ -116,6 +116,7 @@
     <string name="skip">Sleppa</string>
     <string name="stats2">Tölfræði</string>
     <string name="still_downloading_forecast_data">Enn að hlaða niður spágögnum</string>
+    <string name="still_downloading_weather_data">Enn að hlaða niður veðurgögnum</string>
     <string name="swipe_lock">Strjúktu læsingu</string>
     <string name="system_default">Kerfi Sjálfgefið</string>
     <string name="temperature">Hitastig</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Tilegan fɛ Lakɔlɔsi?</string>
     <string name="all_time_stats">Waati jatebɔ bɛɛ</string>
     <string name="app_theme">App barokun</string>
-    <string name="attempting_to_download_data_txt">A ɲini ka data.txt telesarse ka bɔ i ka sèrwɛri la</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Ladilikan: Ni aw bɛ se ka sanfɛla sugandi, o bɛ se ka aw ka batiri bɔ joona ka tɛmɛ a cogo kɔrɔ kan</string>
     <string name="before">fɔlɔ</string>
     <string name="bgColour">Widget Background Kulɛri Picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">A bɛ se ka kɛ: URL ladamulen</string>
     <string name="custom_url_not_set_or_blank">Custom URL tɛ set, walima a ye blank ye. Aw bɛ se ka don settings kɔnɔ walasa ka URL ladamulen dɔ fara a kan</string>
     <string name="dark_theme">Barokun dibiman</string>
-    <string name="data_url_was_blank">Data URL tun ye blank ye</string>
+    <string name="data_url_was_blank">%1$s URL tun ye yɔrɔ lankolon ye, i ka i ka %2$s filen lajɛ ka segin a kan</string>
     <string name="delete_all_data">Donanw bɛɛ ani u ka baara dabila</string>
     <string name="empty">Lankolon</string>
     <string name="error">Filijuru!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">A ma se ka kunnafoniw baara</string>
     <string name="failed_to_process_weather_data">A ma se ka waati kunnafoniw baara ka ɲɛ ka bɔ i ka baarakɛminɛn na, kɛrɛnkɛrɛnnenya la %1$s kunnafoniw</string>
     <string name="fgColour">Widget Foreground Color Picker</string>
-    <string name="fileURL">URL don i ka settings.txt kɔnɔ</string>
+    <string name="fileURL">URL don %1$s kɔnɔ</string>
     <string name="force_dark_mode">Force dibi cogoya</string>
     <string name="forecast">Forecast page</string>
     <string name="forecast2">Ɲɛbila</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Don o don</string>
     <string name="forecast_interval">Forecast Interval (ni a bɛ se ka kɛ)</string>
     <string name="forecast_type_is_invalid">Forecast type \'%1$s\' tɛ baara la, i ka settings file lajɛ ani ka segin a kan</string>
-    <string name="forecast_url_not_set">URL min ma sigi sen kan, o ma se ka kɛ, ka settings.txt ladilan walasa ka fɛn caman Changer</string>
+    <string name="forecast_url_not_set">Foroba URL ma sigi, a bila %1$s kɔnɔ</string>
     <string name="hour">lɛrɛ</string>
     <string name="hours">lɛrɛw</string>
     <string name="ill_fix_and_try_again">N b\'a labɛn ka a lajɛ kokura</string>
@@ -115,6 +115,7 @@
     <string name="skip">Ka lasogo</string>
     <string name="stats2">Statistiques</string>
     <string name="still_downloading_forecast_data">Hali bi ka kunnafoniw telesarse minnu bɛ fɔ ka ɲɛ</string>
+    <string name="still_downloading_weather_data">Hali bi, a bɛ ka waati kunnafoniw telesarse</string>
     <string name="swipe_lock">Swipe lock</string>
     <string name="system_default">Sisεmεti default</string>
     <string name="temperature">Goniyahakɛ</string>

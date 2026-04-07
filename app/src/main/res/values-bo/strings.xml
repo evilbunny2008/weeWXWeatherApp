@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">ཕྱི་དྲོའི་ཉེན་བརྡ།</string>
     <string name="all_time_stats">དུས་ཚོད་ཚང་མའི་གྲངས་གཞི།</string>
     <string name="app_theme">མཉེན་ཆས་ཀྱི་བརྗོད་གཞི།</string>
-    <string name="attempting_to_download_data_txt">ཁྱེད་རང་གི་སར་བར་ནས་ data.txt ཕབ་ལེན་བྱེད་རྩིས་ཡོད།</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">དྲན་སྐུལ། གོང་གསལ་གྱི་གདམ་ག་དེ་ལག་བསྟར་བྱས་ན་གློག་རྫས་ནམ་རྒྱུན་ལས་མགྱོགས་པོ་ཆུད་སྲིད།</string>
     <string name="before">སྔོན་དུ</string>
     <string name="bgColour">རྒྱབ་ལྗོངས་ཚོས་གཞི་འདེམས་མཁན།</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">འདམ་ཀ།: རང་སྒྲིག་URL</string>
     <string name="custom_url_not_set_or_blank">སྲོལ་སྒྲིག་URLསྒྲིག་མེད་པའམ་ཡང་ན་སྟོང་པ་རེད་ ཁྱོད་ཀྱིས་སྒྲིག་སྟངས་ནང་དུ་སོང་ནས་སྲོལ་རྒྱུན་གྱི་URLཁ་སྣོན་བྱེད་ཐུབ།</string>
     <string name="dark_theme">མུན་ནག་གི་བརྗོད་གཞི།</string>
-    <string name="data_url_was_blank">གཞི་གྲངས་URLསྟོང་པ་རེད་</string>
+    <string name="data_url_was_blank">%1$s URL དེ་སྟོང་པ་རེད་འདུག ཁྱེད་རང་གི་ %2$s ཡིག་ཆ་ལ་ཞིབ་བཤེར་བྱས་ནས་བསྐྱར་དུ་ཚོད་ལྟ་བྱེད་རོགས།</string>
     <string name="delete_all_data">གཞི་གྲངས་ཚང་མ་བསུབ་ནས་སྒོ་བརྒྱབ་པ།</string>
     <string name="empty">སྟོང་བ</string>
     <string name="error">ནོར་འཁྲུལ!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">སྔོན་དཔག་གཞི་གྲངས་ལས་སྣོན་བྱེད་མ་ཐུབ་པ།</string>
     <string name="failed_to_process_weather_data">ཁྱེད་རང་གི་སར་བར་ནས་གནམ་གཤིས་གཞི་གྲངས་དང་ལྷག་པར་དུ་%1$sགཞི་གྲངས་ནོར་འཁྲུལ་མེད་པར་བཟོ་ཐུབ།</string>
     <string name="fgColour">ཝི་ཇེཊ་མདུན་ངོས་ཚོས་གཞི་འདེམས་མཁན།</string>
-    <string name="fileURL">ཁྱེད་རང་གི་སྒྲིག་སྟངས་.txt ལ་URLབླུགས།</string>
+    <string name="fileURL">%1$s ལ་URLབླུགས།</string>
     <string name="force_dark_mode">མུན་ནག་གི་ཐབས་ལམ་བཙན་ཤེད།</string>
     <string name="forecast">སྔོན་བརྡ་ལྡེབ།</string>
     <string name="forecast2">སྔོན་བརྡ</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">ཉིན་ལྟར</string>
     <string name="forecast_interval">སྔོན་བརྡའི་བར་མཚམས། (གལ་ཏེ་འཚམ་ན།)</string>
     <string name="forecast_type_is_invalid">སྔོན་བརྡ་རིགས་ \'%1$s\' ནུས་མེད་ཡིན་པས་སྒྲིག་སྟངས་ཡིག་ཆ་ལ་ཞིབ་བཤེར་བྱས་རྗེས་ཡང་བསྐྱར་ཚོད་ལྟ་བྱོས།</string>
-    <string name="forecast_url_not_set">སྔོན་བརྡའི་URLསྒྲིག་འཇུག་བྱས་མེད། བསྒྱུར་བཅོས་བྱེད་པར་settings.txtརྩོམ་སྒྲིག་བྱོས།</string>
+    <string name="forecast_url_not_set">སྔོན་བརྡ་ URL སྒྲིག་མི་འདུག དེ་ %1$s ནང་སྒྲིག་དགོས།</string>
     <string name="hour">ཆུ་ཚོད</string>
     <string name="hours">ཆུ་ཚོད</string>
     <string name="ill_fix_and_try_again">ངས་བཅོས་ནས་བསྐྱར་དུ་ཚོད་ལྟ་བྱེད།</string>
@@ -115,6 +115,7 @@
     <string name="skip">མཆོང་པ</string>
     <string name="stats2">བསྡོམས་རྩིས་དཔྱད་གཞི།</string>
     <string name="still_downloading_forecast_data">ད་དུང་སྔོན་དཔག་གཞི་གྲངས་ཕབ་ལེན་བྱེད་བཞིན་ཡོད།</string>
+    <string name="still_downloading_weather_data">ད་དུང་གནམ་གཤིས་གཞི་གྲངས་ཕབ་ལེན་བྱེད་བཞིན་ཡོད།</string>
     <string name="swipe_lock">ལྡེ་མིག་བཤུད་པ།</string>
     <string name="system_default">མ་ལག་སྔོན་སྒྲིག</string>
     <string name="temperature">ཚ་ཚད</string>

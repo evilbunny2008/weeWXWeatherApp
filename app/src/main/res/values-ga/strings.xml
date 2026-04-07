@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Foláireamh Tráthnóna?</string>
     <string name="all_time_stats">Staitisticí Gach Am</string>
     <string name="app_theme">Téama App</string>
-    <string name="attempting_to_download_data_txt">Ag iarraidh data.txt a íoslódáil ó do fhreastalaí</string>
+    <string name="avg">meánlíon</string>
     <string name="battery_warning">Rabhadh: Má chuirtear an rogha thuas ar chumas, d\'fhéadfaí do cheallraí a dhraenáil níos tapúla ná mar is gnách</string>
     <string name="before">roimhe</string>
     <string name="bgColour">Roghnóir Dath Cúlra Giuirléid</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Roghnach: URL saincheaptha</string>
     <string name="custom_url_not_set_or_blank">Níl URL saincheaptha socraithe, nó tá sé bán. Is féidir leat dul isteach i socruithe chun URL saincheaptha a chur leis</string>
     <string name="dark_theme">Téama Dorcha</string>
-    <string name="data_url_was_blank">Bhí an URL sonraí bán</string>
+    <string name="data_url_was_blank">Bhí URL %1$s bán, seiceáil do chomhad %2$s agus bain triail eile as</string>
     <string name="delete_all_data">Scrios Gach Sonraí agus Múchadh</string>
     <string name="empty">Folamh</string>
     <string name="error">Earráid!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Theip ar phróiseáil sonraí réamhaisnéise</string>
     <string name="failed_to_process_weather_data">Theip ar phróiseáil cheart na sonraí aimsire ó do fhreastalaí, go háirithe na sonraí %1$s</string>
     <string name="fgColour">Roghnóir Dathanna Tulra Giuirléid</string>
-    <string name="fileURL">Cuir isteach an URL chuig do settings.txt</string>
+    <string name="fileURL">Cuir isteach an URL go %1$s</string>
     <string name="force_dark_mode">Fórsa Mód Dark</string>
     <string name="forecast">Leathanach Réamhaisnéise</string>
     <string name="forecast2">Réamhaisnéis</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">laethúil</string>
     <string name="forecast_interval">Eatramh Réamhaisnéise (má bhaineann)</string>
     <string name="forecast_type_is_invalid">Tá an cineál réamhaisnéise \'%1$s\' neamhbhailí, seiceáil do chomhad socruithe agus bain triail eile as</string>
-    <string name="forecast_url_not_set">Níl an URL réamhaisnéise socraithe, cuir socruithe in eagar.txt le hathrú</string>
+    <string name="forecast_url_not_set">URL na réamhaisnéise gan socrú, socraigh i %1$s é</string>
     <string name="hour">uair an chloig</string>
     <string name="hours">uair an chloig</string>
     <string name="ill_fix_and_try_again">Deisigh mé é agus Bain triail eile as</string>
@@ -119,6 +119,7 @@
     <string name="skip">Scipeáil</string>
     <string name="stats2">Staitisticí</string>
     <string name="still_downloading_forecast_data">Tá sonraí réamhaisnéise á n-íoslódáil go fóill</string>
+    <string name="still_downloading_weather_data">Íoslódáil sonraí aimsire fós</string>
     <string name="swipe_lock">Glais Swipe</string>
     <string name="system_default">Réamhshocrú Córais</string>
     <string name="temperature">Teocht</string>

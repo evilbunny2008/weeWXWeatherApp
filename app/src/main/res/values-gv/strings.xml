@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alert ny lurg?</string>
     <string name="all_time_stats">Statistys Ooilley Traa</string>
     <string name="app_theme">Team App</string>
-    <string name="attempting_to_download_data_txt">Ta mee jannoo ymmyd jeh data.txt veih dty serveyr</string>
+    <string name="avg">mean</string>
     <string name="battery_warning">Raad: Fakin dy vel y roshtyn shoh er ny choyrt stiagh, t\'eh dy vod y battery y ghlenney ny s\'faggys da\'n aght t\'ou uss</string>
     <string name="before">me</string>
     <string name="bgColour">Taghteyr Daah Tashtey Widget</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Roghnagh: URL custom</string>
     <string name="custom_url_not_set_or_blank">Cha nel URL custom set, ny blank. Faggys da goll stiagh ayns ny soilshaghyn dy chur URL custom rish</string>
     <string name="dark_theme">Theme Dooghyssagh</string>
-    <string name="data_url_was_blank">Va URL ny cooishyn foshlit</string>
+    <string name="data_url_was_blank">Va\'n URL %1$s follym, jean jeeaghyn er dty choadan %2$s as prowal reesht</string>
     <string name="delete_all_data">Smooinee er dy chooilley Data as Shutdown</string>
     <string name="empty">Endearment</string>
     <string name="error">Neuchiartys!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Failleil dy phroseasaghey coontey ro-ynsee</string>
     <string name="failed_to_process_weather_data">Cha dod eh jannoo ymmyd jeh\'n coontey-aer veih\'n serveyr, goaill stiagh coontey %1$s</string>
     <string name="fgColour">Taghteyr Daah Foddey Widget</string>
-    <string name="fileURL">Cur stiagh yn URL gys dty rheynn.txt</string>
+    <string name="fileURL">Cur stiagh yn URL gys %1$s</string>
     <string name="force_dark_mode">Mood Dooghyssagh</string>
     <string name="forecast">Duillag Roish</string>
     <string name="forecast2">Faaishnys</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Cour-y-laa</string>
     <string name="forecast_interval">Eaddagh Roisht (my ta shen ry-gheddyn)</string>
     <string name="forecast_type_is_invalid">Ta\'n sorçh \'%1$s\' neu-ghooghyssagh, jeeagh er dty choadan soilshaghyn as feddyn magh reesht</string>
-    <string name="forecast_url_not_set">Cha nel URL y ronsaghey er ny choyrt, cur stiagh settings.txt dy chaghlaa</string>
+    <string name="forecast_url_not_set">Cha nel URL y rheynn, rheynn eh ayns %1$s</string>
     <string name="hour">oor</string>
     <string name="hours">ooraghyn</string>
     <string name="ill_fix_and_try_again">Reesht-ym eh as feddyn-ym eh reesht</string>
@@ -119,6 +119,7 @@
     <string name="skip">Goaillmagh</string>
     <string name="stats2">Statistys</string>
     <string name="still_downloading_forecast_data">Ta\'n data ry-hoi ry-loadaghey foast</string>
+    <string name="still_downloading_weather_data">Ta mee foast cur stiagh coontey yn aer</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">System ry-hoi</string>
     <string name="temperature">Tappey</string>

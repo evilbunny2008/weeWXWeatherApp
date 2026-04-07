@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Куньдюзки хабердарлыкъ?</string>
     <string name="all_time_stats">Бутюн вакъыт статистикасы</string>
     <string name="app_theme">Къулланма мевзусы</string>
-    <string name="attempting_to_download_data_txt">Серверинъизден data.txt dest.txt</string>
+    <string name="avg">орта эсапнен</string>
     <string name="battery_warning">Дикъкъат: Юкъарыдаки вариантны чалыштырмакъ батареяны адеттекиден тездже сувсыз ала биле</string>
     <string name="before">эвель</string>
     <string name="bgColour">Виджет Фон Ренкли пикер</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Ихтиярий: Герчилик УРЛ</string>
     <string name="custom_url_not_set_or_blank">Хусусан URL къоюлмай, я да бош. Сиз махсус URL къошмакъ ичюн параметрлерге кирмек мумкюнсинъиз</string>
     <string name="dark_theme">Къаранлыкъ мевзу</string>
-    <string name="data_url_was_blank">Малюмат URL бош эди</string>
+    <string name="data_url_was_blank">%1$s URL адреси бош эди, лутфен, %2$s файлынъызны тешкеринъиз ве текрар тырышынъыз</string>
     <string name="delete_all_data">Бутюн малюматны ве джельп этмекни ёкъ этинъиз</string>
     <string name="empty">Бош</string>
     <string name="error">Хата!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Прогноз малюматларыны ишлемеге мумкюн олмады</string>
     <string name="failed_to_process_weather_data">Серверинъизден ава малюматларыны, хусусан %1$s малюматларыны догъру ишлеп оламады</string>
     <string name="fgColour">Виджетнинъ форварды Ренъкни сечип алмакъ</string>
-    <string name="fileURL">URL-ни параметрлеринъизге кирсетинъиз.txt</string>
+    <string name="fileURL">%1$s адресини кирсетинъиз</string>
     <string name="force_dark_mode">Кучь Къаранлыкъ режим</string>
     <string name="forecast">Прогноз саифеси</string>
     <string name="forecast2">Тахмин</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Куньделик</string>
     <string name="forecast_interval">Прогноз аралыгъы (эгер олса)</string>
     <string name="forecast_type_is_invalid">\'%1$s\' прогноз чешити догъру дегиль, параметрлер файлынъызны тешкеринъиз ве кене тырышынъыз</string>
-    <string name="forecast_url_not_set">Прогноз URL къоймамакъ, денъиштирмелерни денъиштирмек ичюн</string>
+    <string name="forecast_url_not_set">Прогноз URL адреси къоюлмады, оны %1$s ичинде къойынъыз</string>
     <string name="hour">саат</string>
     <string name="hours">саатлар</string>
     <string name="ill_fix_and_try_again">Мен оны тюзетеджегим ве кене де тырышырым</string>
@@ -120,6 +120,7 @@
     <string name="skip">Къалдырып кечмек</string>
     <string name="stats2">статистика</string>
     <string name="still_downloading_forecast_data">Даа прогноз малюматларыны юклемек</string>
+    <string name="still_downloading_weather_data">Ава акъкъында малюматны даа юклеймиз</string>
     <string name="swipe_lock">Свипрованный килит</string>
     <string name="system_default">Системадан чекильме</string>
     <string name="temperature">Сыджакълыкъ</string>

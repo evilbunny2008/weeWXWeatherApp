@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Ŋdɔ me Nuxlɔ̃amea?</string>
     <string name="all_time_stats">Ɣeyiɣiwo Katã ƒe Akɔntabubuwo</string>
     <string name="app_theme">App ƒe tanya</string>
-    <string name="attempting_to_download_data_txt">Agbagbadzedze be nàɖe nyatakakawo.txt tso wò server dzi</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Nuxlɔ̃ame: Ne èna tiatia si le etame la nate ŋu ana wò batri nakɔ kabakaba wu alesi wònɔna ɖaa</string>
     <string name="before">do ŋgɔ</string>
     <string name="bgColour">Widget ƒe megbenyawo ƒe amadede tiatia</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Tiatiawɔblɔɖe: URL si wowɔ ɖe ɖoɖo nu</string>
     <string name="custom_url_not_set_or_blank">URL si wowɔ ɖe ɖoɖo nu la menye esi woɖo o, alo le ƒuƒlu. Àte ŋu ayi ɖe ɖoɖowo me atsɔ URL si wowɔ ɖe ɖoɖo nu akpe ɖe eŋu</string>
     <string name="dark_theme">Tanya Viviti</string>
-    <string name="data_url_was_blank">Data URL nɔ ƒuƒlu</string>
+    <string name="data_url_was_blank">%1$s URL la nɔ ƒuƒlu, taflatse lé ŋku ɖe wò %2$s faɛl ŋu eye nàgadze agbagba ake</string>
     <string name="delete_all_data">Tsɔ nyatakakawo katã ɖa eye nàtsi wo nu</string>
     <string name="empty">Ƒuƒlu</string>
     <string name="error">Vodada!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Do kpo nyagblɔɖi ƒe nyatakakawo ŋudɔwɔwɔ</string>
     <string name="failed_to_process_weather_data">Do kpo yame ƒe nɔnɔme ŋuti nyatakakawo ŋudɔwɔwɔ nyuie tso wò dɔwɔƒea, vevietɔ %1$s nyatakakawo</string>
     <string name="fgColour">Widget ƒe ŋgɔgbekpa ƒe amadede tiatia</string>
-    <string name="fileURL">Ŋlɔ URL la ɖe wò settings.txt</string>
+    <string name="fileURL">Ŋlɔ URL la ɖe %1$s me</string>
     <string name="force_dark_mode">Ŋusẽ Viviti ƒe Nɔnɔme</string>
     <string name="forecast">Nyagblɔɖi ƒe axa</string>
     <string name="forecast2">Gblɔe ɖi</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Gbe sia gbe</string>
     <string name="forecast_interval">Nyagblɔɖi ƒe Dometsotso (ne esɔ)</string>
     <string name="forecast_type_is_invalid">Nyagblɔɖi ƒe ƒomevi \'%1$s\' mele eteƒe o, lé ŋku ɖe wò settings file ŋu eye nàgadze agbagba ake</string>
-    <string name="forecast_url_not_set">Nyagblɔɖi ƒe URL womeɖo o, trɔ asi le settings.txt ŋu be nàtrɔ</string>
+    <string name="forecast_url_not_set">Nyagblɔɖi URL si womeɖo o, ɖoe ɖe %1$s me</string>
     <string name="hour">gaƒoƒo</string>
     <string name="hours">gaƒoƒowo</string>
     <string name="ill_fix_and_try_again">Maɖɔe ɖo eye magadze agbagba ake</string>
@@ -116,6 +116,7 @@
     <string name="skip">Dzo to eta</string>
     <string name="stats2">Akɔntabubuwo</string>
     <string name="still_downloading_forecast_data">Nyagblɔɖi ƒe nyatakakawo ƒe kɔpi wɔwɔ gakpɔtɔ</string>
+    <string name="still_downloading_weather_data">Yame ƒe nɔnɔme ŋuti nyatakakawo gakpɔtɔ le kɔpi wɔm</string>
     <string name="swipe_lock">Swipe ƒe ʋuƒo</string>
     <string name="system_default">System Default</string>
     <string name="temperature">Dzoxɔxɔ</string>

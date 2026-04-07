@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">দুপৰীয়াৰ সতৰ্কবাণী?</string>
     <string name="all_time_stats">সকলো সময়ৰ পৰিসংখ্যা</string>
     <string name="app_theme">App থিম</string>
-    <string name="attempting_to_download_data_txt">আপোনাৰ চাৰ্ভাৰৰ পৰা Data.txt ডাউনলোড কৰাৰ চেষ্টা কৰা</string>
+    <string name="avg">গড়।</string>
     <string name="battery_warning">সতৰ্কবাণী: ওপৰৰ বিকল্প সামৰ্থবান কৰিলে আপোনাৰ বেটাৰী সাধাৰণতকৈ দ্ৰুতভাৱে ড্ৰেইন কৰিব পাৰে</string>
     <string name="before">আগতে</string>
     <string name="bgColour">ৱিজেট পটভূমিৰ ৰং পিকাৰ</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">ঐচ্ছিক: স্বনিৰ্বাচিত URL</string>
     <string name="custom_url_not_set_or_blank">কাষ্টম URL ছেট কৰা হোৱা নাই, বা খালী। আপুনি এটা স্বনিৰ্বাচিত URL যোগ কৰিবলৈ ছেটিংছলৈ যাব পাৰে</string>
     <string name="dark_theme">ডাৰ্ক থিম</string>
-    <string name="data_url_was_blank">ডাটা URL খালী আছিল</string>
+    <string name="data_url_was_blank">%1$s URL খালী আছিল, অনুগ্ৰহ কৰি আপোনাৰ %2$s নথিপত্ৰ পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক</string>
     <string name="delete_all_data">সকলো তথ্য আৰু বন্ধ মচি পেলাওক</string>
     <string name="empty">খালী</string>
     <string name="error">আঁসোৱাহ!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">পূৰ্বাভাস তথ্য প্ৰক্ৰিয়াকৰণ কৰাত ব্যৰ্থ</string>
     <string name="failed_to_process_weather_data">আপোনাৰ চাৰ্ভাৰৰ পৰা বতৰ তথ্য সঠিকভাৱে প্ৰক্ৰিয়া কৰাত ব্যৰ্থ, বিশেষকৈ %1$s তথ্য</string>
     <string name="fgColour">ৱিজেট ফ\'ৰগ্ৰাউণ্ড ৰং পিকাৰ</string>
-    <string name="fileURL">আপোনাৰ Settings.txt ত URL সুমুৱাওক</string>
+    <string name="fileURL">URL %1$s লৈ সুমুৱাওক</string>
     <string name="force_dark_mode">ফোৰ্চ ডাৰ্ক মোড</string>
     <string name="forecast">পূৰ্বাভাস পৃষ্ঠা</string>
     <string name="forecast2">পুৰ্বানুমান</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">দৈনিক</string>
     <string name="forecast_interval">পূৰ্বাভাসৰ ব্যৱধান (যদি প্ৰযোজ্য)</string>
     <string name="forecast_type_is_invalid">পূৰ্বাভাসৰ ধৰণ \'%1$s\' অবৈধ, আপোনাৰ ছেটিংছ ফাইল পৰীক্ষা কৰক আৰু পুনৰ চেষ্টা কৰক।</string>
-    <string name="forecast_url_not_set">পূৰ্বাভাস URL ছেট কৰা হোৱা নাই, সলনি কৰিবলৈ Settings.txt সম্পাদনা কৰক</string>
+    <string name="forecast_url_not_set">পূৰ্বাভাস URL সংহতি কৰা হোৱা নাই, ইয়াক %1$s ত সংহতি কৰক</string>
     <string name="hour">ঘণ্টা</string>
     <string name="hours">ঘণ্টা</string>
     <string name="ill_fix_and_try_again">মই ঠিক কৰি আকৌ চেষ্টা কৰিম ৷</string>
@@ -116,6 +116,7 @@
     <string name="skip">বাদ দিয়া</string>
     <string name="stats2">পৰিসংখ্যা পৰিসংখ্যা</string>
     <string name="still_downloading_forecast_data">এতিয়াও পূৰ্বাভাস তথ্য ডাউনলোড কৰি আছে</string>
+    <string name="still_downloading_weather_data">এতিয়াও বতৰৰ তথ্য ডাউনলোড কৰি আছে</string>
     <string name="swipe_lock">চুইপ লক</string>
     <string name="system_default">ব্যৱস্থাপ্ৰণালীৰ অবিকল্পিত</string>
     <string name="temperature">তাপমান</string>

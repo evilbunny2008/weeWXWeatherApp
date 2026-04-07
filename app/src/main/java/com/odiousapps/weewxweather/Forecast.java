@@ -559,7 +559,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 	private void showTextFC(String text)
 	{
 		if(text == null || text.isBlank())
-			text = getAndroidString(R.string.forecast_url_not_set);
+			text = String.format(Locale.getDefault(),getAndroidString(R.string.forecast_url_not_set), "inigo-settings.txt");
 
 		String html = weeWXApp.current_html_headers +
 		              weeWXApp.html_header_rest + text +

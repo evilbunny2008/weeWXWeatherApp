@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alerte dal dopodisnà?</string>
     <string name="all_time_stats">Statistichis di ducj i timps</string>
     <string name="app_theme">Tema de aplicazion</string>
-    <string name="attempting_to_download_data_txt">Provant a scaricâ data.txt dal to servidôr</string>
+    <string name="avg">medie</string>
     <string name="battery_warning">Atenzion: abilitâ la opzion parsore al pues sburtâ vie la baterie plui di corse di solit</string>
     <string name="before">prime</string>
     <string name="bgColour">Selezionadôr di colôrs di sfont dal widget</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opzionâl: URL personalizât</string>
     <string name="custom_url_not_set_or_blank">L\'URL personalizât nol è metût o al è vueit. Tu puedis jentrâ intes impostazions par zontâ un URL personalizât</string>
     <string name="dark_theme">Tema scur</string>
-    <string name="data_url_was_blank">L\'URL dai dâts al jere vueit</string>
+    <string name="data_url_was_blank">L\'URL di %1$s al jere vueit, par plasê controlâ il file di %2$s e provâ di gnûf</string>
     <string name="delete_all_data">Elimina ducj i dâts e Arrêt</string>
     <string name="empty">Vueit</string>
     <string name="error">Erôr!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Nol è rivât a processâ i dâts des prognosis</string>
     <string name="failed_to_process_weather_data">Nol è rivât a processâ in mût coret i dâts dal clime dal vuestri servidôr, in mût specific i dâts %1$s</string>
     <string name="fgColour">Selezionadôr di colôrs di prin plan dal widget</string>
-    <string name="fileURL">Inserî l\'URL des impostazions.txt</string>
+    <string name="fileURL">Inserî l\'URL a %1$s</string>
     <string name="force_dark_mode">Mode scure di fuarce</string>
     <string name="forecast">Pagjine di prognosi</string>
     <string name="forecast2">Prevision</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Zornalîr</string>
     <string name="forecast_interval">Interval di prognosi (se al è pussibil)</string>
     <string name="forecast_type_is_invalid">Il tip di prognosi \'%1$s\' nol è valit, controlâ il file des impostazions e provâ di gnûf</string>
-    <string name="forecast_url_not_set">L\'URL de prognosi nol è metût, modificâ settings.txt par cambiâ</string>
+    <string name="forecast_url_not_set">L\'URL de prognosi nol è metût, metilu in %1$s</string>
     <string name="hour">ore</string>
     <string name="hours">oris</string>
     <string name="ill_fix_and_try_again">O la ripararò e o provarò di gnûf</string>
@@ -120,6 +120,7 @@
     <string name="skip">Saltâ</string>
     <string name="stats2">Statistichis</string>
     <string name="still_downloading_forecast_data">Ancjemò daûr a scaricâ i dâts des prognosis</string>
+    <string name="still_downloading_weather_data">Ancjemò daûr a scaricâ i dâts dal clime</string>
     <string name="swipe_lock">Blocjâ il sburt</string>
     <string name="system_default">Predefinît dal sisteme</string>
     <string name="temperature">Temperadure</string>

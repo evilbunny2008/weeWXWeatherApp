@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Odpolední upozornění?</string>
     <string name="all_time_stats">Statistiky všech dob</string>
     <string name="app_theme">Téma aplikace</string>
-    <string name="attempting_to_download_data_txt">Pokus o stažení souboru data.txt z vašeho serveru</string>
+    <string name="avg">prům.</string>
     <string name="battery_warning">Upozornění: Povolení výše uvedené možnosti může vybíjet baterii rychleji než obvykle</string>
     <string name="before">před</string>
     <string name="bgColour">Widget pro výběr barvy pozadí</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Volitelné: Vlastní adresa URL</string>
     <string name="custom_url_not_set_or_blank">Vlastní adresa URL není nastavena nebo je prázdná. Můžete přejít do nastavení a přidat vlastní adresu URL</string>
     <string name="dark_theme">Temné téma</string>
-    <string name="data_url_was_blank">Adresa URL dat byla prázdná</string>
+    <string name="data_url_was_blank">Adresa URL %1$s byla prázdná. Zkontrolujte prosím soubor %2$s a zkuste to znovu</string>
     <string name="delete_all_data">Smazat všechna data a vypnout</string>
     <string name="empty">Prázdný</string>
     <string name="error">Chyba!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Data prognózy se nepodařilo zpracovat</string>
     <string name="failed_to_process_weather_data">Nepodařilo se správně zpracovat data o počasí z vašeho serveru, konkrétně data %1$s</string>
     <string name="fgColour">Widget pro výběr barvy popředí</string>
-    <string name="fileURL">Zadejte adresu URL do souboru settings.txt</string>
+    <string name="fileURL">Zadejte adresu URL %1$s</string>
     <string name="force_dark_mode">Vynutit tmavý režim</string>
     <string name="forecast">Stránka předpovědi</string>
     <string name="forecast2">Předpověď</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Denní</string>
     <string name="forecast_interval">Interval předpovědi (pokud existuje)</string>
     <string name="forecast_type_is_invalid">Typ předpovědi \'%1$s\' je neplatný, zkontrolujte soubor nastavení a zkuste to znovu</string>
-    <string name="forecast_url_not_set">Adresa URL prognózy není nastavena. Chcete-li ji změnit, upravte soubor settings.txt</string>
+    <string name="forecast_url_not_set">Adresa URL prognózy není nastavena, nastavte ji v %1$s</string>
     <string name="hour">hodina</string>
     <string name="hours">hodin</string>
     <string name="ill_fix_and_try_again">Opravím to a zkusím to znovu</string>
@@ -118,6 +118,7 @@
     <string name="skip">Přeskočit</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Stále se stahují data prognózy</string>
+    <string name="still_downloading_weather_data">Stále se stahují údaje o počasí</string>
     <string name="swipe_lock">Zámek přejetím</string>
     <string name="system_default">Výchozí nastavení systému</string>
     <string name="temperature">Teplota</string>

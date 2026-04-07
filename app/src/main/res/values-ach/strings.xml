@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Lok me dyeceng?</string>
     <string name="all_time_stats">Jami ma time kare weng</string>
     <string name="app_theme">Pwony me lwongo</string>
-    <string name="attempting_to_download_data_txt">Temo keto ngec i kom jami ma kikwanyo ki bot ladit tic-ci</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Jami: Weko ki yo ma malo-ni twero weko mac me mac bot mac-ni bedo yot loyo kit ma onongo tye kwede con</string>
     <string name="before">ma pwod</string>
     <string name="bgColour">Kala ma ki yubu ki jami</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Pe kimoko: URL ma tye ki ngec</string>
     <string name="custom_url_not_set_or_blank">URL ma tye ki ngec pe kiketo, nyo tye nono. Itwero donyo i yub me medo URL ma rwate</string>
     <string name="dark_theme">Pwony ma col</string>
-    <string name="data_url_was_blank">URL me ngec onongo tye nono</string>
+    <string name="data_url_was_blank">%1$s URL onwongo tye nono, tim ber inen %2$s file ni ki tem doki</string>
     <string name="delete_all_data">Oweko ngec ducu ki dok piny</string>
     <string name="empty">Iye nono</string>
     <string name="error">Bal mo!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Ka pe kitiyo ki ngec me byeko ngec</string>
     <string name="failed_to_process_weather_data">Pe tiyo maber ki ngec me piny ki i cim ni, tutwale ngec me %1$s</string>
     <string name="fgColour">Kala me deyo ma pe kitiyo kwede</string>
-    <string name="fileURL">Coo URL i kabedo ma itye iye</string>
+    <string name="fileURL">Ket URL bot %1$s</string>
     <string name="force_dark_mode">Lami dic</string>
     <string name="forecast">Pot karatac ma nyutu jami ma ki nyutu ki dano</string>
     <string name="forecast2">Tito kit m\'obi bedo kwede</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Ninu ki ninu</string>
     <string name="forecast_interval">kare me byeko anyim (ka tye)</string>
     <string name="forecast_type_is_invalid">Labol me%1$s\' pe tiyo, nen ni file ma kiketo dok item dok</string>
-    <string name="forecast_url_not_set">URL ma ki nyutu i anyim pe ki keto, ki yubu.tek me loko</string>
+    <string name="forecast_url_not_set">URL me anyim pe ki keto, ket i %1$s</string>
     <string name="hour">cawa</string>
     <string name="hours">cawa</string>
     <string name="ill_fix_and_try_again">Abiketo ne dok abitemo doki</string>
@@ -120,6 +120,7 @@
     <string name="skip">Kal</string>
     <string name="stats2">Wel</string>
     <string name="still_downloading_forecast_data">Pud tye ka nongo ngec ma ki nongo ki i anyim</string>
+    <string name="still_downloading_weather_data">Pud tye ka kwanyo ngec ma mako piny</string>
     <string name="swipe_lock">Swit Lock</string>
     <string name="system_default">Bal</string>
     <string name="temperature">Lyeto ki ngicu</string>

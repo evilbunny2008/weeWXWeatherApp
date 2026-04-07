@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Следобеден сигнал?</string>
     <string name="all_time_stats">Статистика за всички времена</string>
     <string name="app_theme">Тема на приложението</string>
-    <string name="attempting_to_download_data_txt">Опит за изтегляне на data.txt от вашия сървър</string>
+    <string name="avg">ср</string>
     <string name="battery_warning">Предупреждение: Активирането на горната опция може да изтощи батерията ви по-бързо от обикновено</string>
     <string name="before">преди</string>
     <string name="bgColour">Инструмент за избор на фонов цвят на джаджа</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">По избор: Персонализиран URL адрес</string>
     <string name="custom_url_not_set_or_blank">Персонализираният URL адрес не е зададен или е празен. Можете да влезете в настройките, за да добавите персонализиран URL адрес</string>
     <string name="dark_theme">Тъмна тема</string>
-    <string name="data_url_was_blank">URL адресът на данните беше празен</string>
+    <string name="data_url_was_blank">URL адресът %1$s беше празен, моля, проверете файла %2$s и опитайте отново</string>
     <string name="delete_all_data">Изтриване на всички данни и изключване</string>
     <string name="empty">празна</string>
     <string name="error">грешка!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Неуспешна обработка на прогнозни данни</string>
     <string name="failed_to_process_weather_data">Неуспешна обработка на данните за времето от вашия сървър, по-специално на данните от %1$s</string>
     <string name="fgColour">Избор на цвят на преден план на джаджа</string>
-    <string name="fileURL">Въведете URL адреса на вашия settings.txt</string>
+    <string name="fileURL">Въведете URL адреса на %1$s</string>
     <string name="force_dark_mode">Принудителен тъмен режим</string>
     <string name="forecast">Страница с прогнози</string>
     <string name="forecast2">Прогноза</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Ежедневно</string>
     <string name="forecast_interval">Интервал на прогнозата (ако е приложимо)</string>
     <string name="forecast_type_is_invalid">Типът прогноза \'%1$s\' е невалиден, проверете файла с настройки и опитайте отново</string>
-    <string name="forecast_url_not_set">URL адресът на прогнозата не е зададен, редактирайте settings.txt, за да промените</string>
+    <string name="forecast_url_not_set">URL адресът на прогнозата не е зададен, задайте го в %1$s</string>
     <string name="hour">час</string>
     <string name="hours">часове</string>
     <string name="ill_fix_and_try_again">Ще го поправя и ще опитам отново</string>
@@ -116,6 +116,7 @@
     <string name="skip">Пропускане</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Прогнозните данни все още се изтеглят</string>
+    <string name="still_downloading_weather_data">Данните за времето все още се изтеглят</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">Системни настройки по подразбиране</string>
     <string name="temperature">температура</string>

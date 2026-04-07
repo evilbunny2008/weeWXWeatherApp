@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Rabhadh Feasgar?</string>
     <string name="all_time_stats">Staitistig Làn-ùine</string>
     <string name="app_theme">Cuspair an aplacaid</string>
-    <string name="attempting_to_download_data_txt">A\' feuchainn ri data.txt a luchdachadh sìos bhon t-seirbheisiche agad</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Rabhadh: Le bhith a\' comasachadh an roghainn gu h-àrd faodaidh e do bhataraidh a dhrèanadh nas luaithe na an àbhaist</string>
     <string name="before">roimhe</string>
     <string name="bgColour">Neach-togail dath cùl-raon widget</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Roghainneil: URL gnàthaichte</string>
     <string name="custom_url_not_set_or_blank">Chan eil URL gnàthaichte air a shuidheachadh, no tha e bàn. Faodaidh tu a dhol a-steach do roghainnean gus URL gnàthaichte a chuir ris</string>
     <string name="dark_theme">Cuspair Dorcha</string>
-    <string name="data_url_was_blank">Bha URL an dàta falamh</string>
+    <string name="data_url_was_blank">Bha an URL %1$s bàn, feuch an toir thu sùil air an fhaidhle %2$s agad is feuch ris a-rithist</string>
     <string name="delete_all_data">Sguab às a h-uile dàta agus dùnadh</string>
     <string name="empty">Falamh</string>
     <string name="error">Mearachd!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Dh\'fhàillig làimhseachadh dàta ro-aithris</string>
     <string name="failed_to_process_weather_data">Dh\'fhàillig làimhseachadh dàta na h-aimsire on fhrithealaiche agad, gu sònraichte an dàta %1$s</string>
     <string name="fgColour">Neach-togail dath aghaidh widget</string>
-    <string name="fileURL">Cuir a-steach an URL gu do roghainnean.txt</string>
+    <string name="fileURL">Cuir a-steach an URL gu %1$s</string>
     <string name="force_dark_mode">Feachd am modh dorcha</string>
     <string name="forecast">Duilleag Ro-shealladh</string>
     <string name="forecast2">Ro-shealladh</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Gach latha</string>
     <string name="forecast_interval">Eadar-ama ro-shealladh (ma tha sin iomchaidh)</string>
     <string name="forecast_type_is_invalid">Tha an seòrsa ro-shealladh \'%1$s\' mì-dhligheach, thoir sùil air an fhaidhle roghainnean agad is feuch ris a-rithist</string>
-    <string name="forecast_url_not_set">URL ro-shealladh gun a shuidheachadh, deasaich roghainnean.txt airson atharrachadh</string>
+    <string name="forecast_url_not_set">URL ro-shealladh gun a shuidheachadh, suidhich e ann an %1$s</string>
     <string name="hour">uair</string>
     <string name="hours">uairean</string>
     <string name="ill_fix_and_try_again">Ceartaichidh mi e agus feuchaidh mi a-rithist e</string>
@@ -118,6 +118,7 @@
     <string name="skip">Leum</string>
     <string name="stats2">Staitistig</string>
     <string name="still_downloading_forecast_data">Luchdaich sìos dàta ro-aithris fhathast</string>
+    <string name="still_downloading_weather_data">Luchdaich a-nuas aimsir fhathast</string>
     <string name="swipe_lock">Glasadh Sguabaidh</string>
     <string name="system_default">Default siostam</string>
     <string name="temperature">Teòthachd</string>

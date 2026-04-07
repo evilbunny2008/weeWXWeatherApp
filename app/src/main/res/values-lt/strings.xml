@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Popietinis įspėjimas?</string>
     <string name="all_time_stats">Visų laikų statistika</string>
     <string name="app_theme">Programos tema</string>
-    <string name="attempting_to_download_data_txt">Bandoma atsisiųsti data.txt iš jūsų serverio</string>
+    <string name="avg">vid</string>
     <string name="battery_warning">Įspėjimas: įjungus pirmiau nurodytą parinktį, baterija gali išeikvoti greičiau nei įprastai</string>
     <string name="before">prieš</string>
     <string name="bgColour">Valdiklio fono spalvos parinkiklis</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Pasirenkama: tinkintas URL</string>
     <string name="custom_url_not_set_or_blank">Tinkintas URL nenustatytas arba yra tuščias. Galite pereiti į nustatymus, kad pridėtumėte tinkintą URL</string>
     <string name="dark_theme">Tamsi tema</string>
-    <string name="data_url_was_blank">Duomenų URL laukas buvo tuščias</string>
+    <string name="data_url_was_blank">%1$s URL buvo tuščias, patikrinkite %2$s failą ir bandykite dar kartą</string>
     <string name="delete_all_data">Ištrinkite visus duomenis ir išjunkite</string>
     <string name="empty">Tuščia</string>
     <string name="error">Klaida!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Nepavyko apdoroti prognozės duomenų</string>
     <string name="failed_to_process_weather_data">Nepavyko tinkamai apdoroti orų duomenų iš jūsų serverio, ypač %1$s duomenų</string>
     <string name="fgColour">Valdiklio priekinio plano spalvų parinkiklis</string>
-    <string name="fileURL">Įveskite savo settings.txt URL</string>
+    <string name="fileURL">Įveskite URL į %1$s</string>
     <string name="force_dark_mode">Įjungti tamsųjį režimą</string>
     <string name="forecast">Prognozės puslapis</string>
     <string name="forecast2">Prognozė</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Kasdien</string>
     <string name="forecast_interval">Prognozės intervalas (jei taikoma)</string>
     <string name="forecast_type_is_invalid">Prognozės tipas \'%1$s\' netinkamas, patikrinkite nustatymų failą ir bandykite dar kartą</string>
-    <string name="forecast_url_not_set">Prognozės URL nenustatytas, norėdami pakeisti, redaguokite settings.txt</string>
+    <string name="forecast_url_not_set">Prognozės URL nenustatytas, nustatykite jį %1$s</string>
     <string name="hour">valandą</string>
     <string name="hours">valandų</string>
     <string name="ill_fix_and_try_again">Pataisysiu ir bandysiu dar kartą</string>
@@ -118,6 +118,7 @@
     <string name="skip">Praleisti</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Vis dar atsisiunčiami prognozių duomenys</string>
+    <string name="still_downloading_weather_data">Vis dar atsisiunčiami orų duomenys</string>
     <string name="swipe_lock">Perbraukite užraktas</string>
     <string name="system_default">Numatytoji sistema</string>
     <string name="temperature">Temperatūra</string>

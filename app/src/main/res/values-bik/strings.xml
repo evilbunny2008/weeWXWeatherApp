@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alerto sa Hapon?</string>
     <string name="all_time_stats">Gabos na Estadistika sa Panahon</string>
     <string name="app_theme">Tema sa Apela</string>
-    <string name="attempting_to_download_data_txt">Pagprobar na mag-download datos sa saindong serbidor</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Patanid: An pagpangyari sa opsyon sa itaas puedeng mag-ubos kan saindong baterya nin mas marikas kisa dati</string>
     <string name="before">bago</string>
     <string name="bgColour">Wedyt Likod sa Bukid sa Kolor sa Badoy</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opsyonal: Pasadyang URL</string>
     <string name="custom_url_not_set_or_blank">An URL kan pasadya dai nakabugtak, o blangko. Pwede kamong maglaog sa mga setting para magdagdag nin pasadyang URL</string>
     <string name="dark_theme">Maitom na Tema</string>
-    <string name="data_url_was_blank">Blangko an URL kan datos</string>
+    <string name="data_url_was_blank">Blangko an %1$s URL, tabi helingon an saimong %2$s na sagunson asin probaran giraray</string>
     <string name="delete_all_data">Buraon an Gabos na Datos asin Sira</string>
     <string name="empty">Mayong laog</string>
     <string name="error">Sala!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Napalya sa pagproseso sa paghulat sa datos</string>
     <string name="failed_to_process_weather_data">Dai naproseso nin tama an datos kan panahon gikan sa saimong server, partikularmente an datos kan %1$s</string>
     <string name="fgColour">Welor Palimpre sa Kolor sa Pangenotan</string>
-    <string name="fileURL">Ilaog an URL sa saindong mga setting.txt</string>
+    <string name="fileURL">Ilaog an URL pasiring sa %1$s</string>
     <string name="force_dark_mode">Puwersang Madiklom na Mode</string>
     <string name="forecast">Pahina</string>
     <string name="forecast2">Hula</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Aro-aldaw</string>
     <string name="forecast_interval">Forecast Interval (kun aplikable)</string>
     <string name="forecast_type_is_invalid">An tipo nin paghula \'%1$s\' bakong balido, helingon an saindong mga setting file asin purbaran giraray</string>
-    <string name="forecast_url_not_set">An URL kan URL sa paghula dai naka-set, mag-edit nin mga setting.txt tanganing magbago</string>
+    <string name="forecast_url_not_set">Dai nakabugtak an URL kan forecast, ibugtak ini sa %1$s</string>
     <string name="hour">oras</string>
     <string name="hours">mga oras</string>
     <string name="ill_fix_and_try_again">I-aayos Ko Ini asin Magprobar giraray</string>
@@ -120,6 +120,7 @@
     <string name="skip">Laktaw</string>
     <string name="stats2">Estadistika</string>
     <string name="still_downloading_forecast_data">Pag-download pa gihapon sa datos sa paghula</string>
+    <string name="still_downloading_weather_data">Nagda-download pa nin datos kan panahon</string>
     <string name="swipe_lock">I-swipe an Lock</string>
     <string name="system_default">Sistema Difault</string>
     <string name="temperature">Temperatura</string>

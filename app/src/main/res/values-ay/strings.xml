@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">¿Alerta tarde uruxa?</string>
     <string name="all_time_stats">Taqi pacha Estadísticas ukanaka</string>
     <string name="app_theme">App ukax tema ukawa</string>
-    <string name="attempting_to_download_data_txt">Data.txt ukax servidor ukan apkatatawa</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">AKHAM LURASMA: Aka patat opción ukar yanaptʼañax sapa kutit sipansa jukʼamp jankʼakiw pilax chhaqtaspa</string>
     <string name="before">nayrja</string>
     <string name="bgColour">Widget ukax mä color picker ukhamawa</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Ukax akham sañ muni: URL costumbre</string>
     <string name="custom_url_not_set_or_blank">URL costumbre ukax janiw utt\'ayatakiti, jan ukax ch\'usawjawa. Mä URL costumbre ukar yapxatañatakix configuración ukar mantasmawa</string>
     <string name="dark_theme">Ch\'amaka tema</string>
-    <string name="data_url_was_blank">Datos url ukax ch\'usawjawa</string>
+    <string name="data_url_was_blank">%1$s URL ukax ch\'usawa, %2$s qillqat uñakipt\'aña ukat mayamp yant\'aña</string>
     <string name="delete_all_data">Taqi datos ukat jist\'antaña chhaqtayaña</string>
     <string name="empty">Ch\'usa</string>
     <string name="error">Pantja!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Janiwa pronóstico de datos ukanaka phuqhañakiti</string>
     <string name="failed_to_process_weather_data">Servidor ukan pacha yatiyawinak chiqapar lurañax janiw ch\'amäkiti, chiqpachanx %1$s ukan yatiyawinakap</string>
     <string name="fgColour">Widget Foreground Color Picker ukax mä jach\'a uñacht\'äwiwa</string>
-    <string name="fileURL">URL ukax settings.txt ukar mantañapawa</string>
+    <string name="fileURL">URL ukax %1$s ukar qillqt\'atawa</string>
     <string name="force_dark_mode">Ch\'amaka Modo ukar ch\'amanchaña</string>
     <string name="forecast">pronóstico ukax 1.1</string>
     <string name="forecast2">Chiqt\'aña</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Sapakuti</string>
     <string name="forecast_interval">Intervalo de Pronóstico (ukaxa wakisiwa)</string>
     <string name="forecast_type_is_invalid">Pronóstico Tipo \'%1$s\' ukax janiw askïkiti, configuración de configuración ukar uñakipt\'añamawa ukat mayamp yant\'añamawa</string>
-    <string name="forecast_url_not_set">URL pronóstico ukax janiw utt\'ayatäkiti, editar settings.txt mayjt\'ayañataki</string>
+    <string name="forecast_url_not_set">URL pronóstico ukax janiw utt\'ayatakiti, %1$s ukan utt\'ayatawa</string>
     <string name="hour">pacha</string>
     <string name="hours">pachanaka</string>
     <string name="ill_fix_and_try_again">Nayax askichä ukat mayamp yant\'ä</string>
@@ -120,6 +120,7 @@
     <string name="skip">Willikipaña</string>
     <string name="stats2">Estadísticas ukanaka</string>
     <string name="still_downloading_forecast_data">Wali aski pronóstico datos ukanaka apsuñataki</string>
+    <string name="still_downloading_weather_data">Wali pacha yatiyawinak apkatañataki</string>
     <string name="swipe_lock">Ukax mä swipe llawintatawa</string>
     <string name="system_default">Sistema default ukax 1.1</string>
     <string name="temperature">Timpiratura</string>

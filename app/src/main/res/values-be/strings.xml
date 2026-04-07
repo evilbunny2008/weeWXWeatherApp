@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Папярэджанне пасля абеду?</string>
     <string name="all_time_stats">Статыстыка за ўвесь час</string>
     <string name="app_theme">Тэма прыкладання</string>
-    <string name="attempting_to_download_data_txt">Спроба спампаваць data.txt з вашага сервера</string>
+    <string name="avg">сярэдні</string>
     <string name="battery_warning">Папярэджанне: уключэнне вышэйзгаданай опцыі можа разрадзіць акумулятар хутчэй, чым звычайна</string>
     <string name="before">раней</string>
     <string name="bgColour">Выбар колеру фону віджэта</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Дадаткова: карыстальніцкі URL</string>
     <string name="custom_url_not_set_or_blank">Карыстальніцкі URL-адрас не зададзены або пусты. Вы можаце зайсці ў налады, каб дадаць уласны URL</string>
     <string name="dark_theme">Цёмная тэма</string>
-    <string name="data_url_was_blank">URL даных быў пустым</string>
+    <string name="data_url_was_blank">URL-адрас %1$s быў пустым, праверце свой файл %2$s і паўтарыце спробу</string>
     <string name="delete_all_data">Выдаліць усе дадзеныя і выключыць</string>
     <string name="empty">Пусты</string>
     <string name="error">Памылка!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Не ўдалося апрацаваць даныя прагнозу</string>
     <string name="failed_to_process_weather_data">Не ўдалося правільна апрацаваць даныя надвор\'я з вашага сервера, у прыватнасці даныя %1$s</string>
     <string name="fgColour">Выбар колеру пярэдняга плана віджэта</string>
-    <string name="fileURL">Увядзіце URL у файл settings.txt</string>
+    <string name="fileURL">Увядзіце URL да %1$s</string>
     <string name="force_dark_mode">Уключыць цёмны рэжым</string>
     <string name="forecast">Старонка прагнозу</string>
     <string name="forecast2">Прагноз</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Штодня</string>
     <string name="forecast_interval">Інтэрвал прагнозу (калі дастасавальна)</string>
     <string name="forecast_type_is_invalid">Тып прагнозу \'%1$s\' несапраўдны, праверце файл налад і паўтарыце спробу</string>
-    <string name="forecast_url_not_set">URL-адрас прагнозу не зададзены, адрэдагуйце settings.txt, каб змяніць яго</string>
+    <string name="forecast_url_not_set">Прагназаваны URL не зададзены, задайце яго ў %1$s</string>
     <string name="hour">гадзіну</string>
     <string name="hours">гадзіны</string>
     <string name="ill_fix_and_try_again">Я выпраўлю гэта і паспрабую яшчэ раз</string>
@@ -118,6 +118,7 @@
     <string name="skip">Прапусціць</string>
     <string name="stats2">Статыстыка</string>
     <string name="still_downloading_forecast_data">Ідзе спампоўка прагнозных даных</string>
+    <string name="still_downloading_weather_data">Даныя пра надвор\'е яшчэ спампоўваюцца</string>
     <string name="swipe_lock">Блакаванне пальцам</string>
     <string name="system_default">Сістэма па змаўчанні</string>
     <string name="temperature">тэмпература</string>

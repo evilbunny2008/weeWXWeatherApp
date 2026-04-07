@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Peringatan Sore?</string>
     <string name="all_time_stats">Statistik Sepanjang Masa</string>
     <string name="app_theme">Tema Aplikasi</string>
-    <string name="attempting_to_download_data_txt">Mencoba mengunduh data.txt dari server Anda</string>
+    <string name="avg">rata2</string>
     <string name="battery_warning">Peringatan: Mengaktifkan opsi di atas dapat menguras baterai Anda lebih cepat dari biasanya</string>
     <string name="before">sebelum</string>
     <string name="bgColour">Pemilih Warna Latar Belakang Widget</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opsional: URL Khusus</string>
     <string name="custom_url_not_set_or_blank">URL khusus tidak disetel, atau kosong. Anda dapat masuk ke pengaturan untuk menambahkan URL khusus</string>
     <string name="dark_theme">Tema Gelap</string>
-    <string name="data_url_was_blank">URL data kosong</string>
+    <string name="data_url_was_blank">URL %1$s kosong, silakan periksa file %2$s Anda dan coba lagi</string>
     <string name="delete_all_data">Hapus Semua Data dan Shutdown</string>
     <string name="empty">Kosong</string>
     <string name="error">Kesalahan!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Gagal memproses data perkiraan</string>
     <string name="failed_to_process_weather_data">Gagal memproses data cuaca dari server Anda dengan benar, khususnya data %1$s</string>
     <string name="fgColour">Pemilih Warna Latar Depan Widget</string>
-    <string name="fileURL">Masukkan URL ke settings.txt Anda</string>
+    <string name="fileURL">Masukkan URL ke %1$s</string>
     <string name="force_dark_mode">Paksa Mode Gelap</string>
     <string name="forecast">Halaman Prakiraan</string>
     <string name="forecast2">Ramalan</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Sehari-hari</string>
     <string name="forecast_interval">Interval Perkiraan (jika ada)</string>
     <string name="forecast_type_is_invalid">Jenis perkiraan \'%1$s\' tidak valid, periksa file pengaturan Anda dan coba lagi</string>
-    <string name="forecast_url_not_set">URL perkiraan tidak disetel, edit settings.txt untuk mengubahnya</string>
+    <string name="forecast_url_not_set">URL perkiraan tidak disetel, setel di %1$s</string>
     <string name="hour">jam</string>
     <string name="hours">jam</string>
     <string name="ill_fix_and_try_again">Saya akan Memperbaikinya dan Mencoba Lagi</string>
@@ -115,6 +115,7 @@
     <string name="skip">Melewati</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Masih mengunduh data perkiraan</string>
+    <string name="still_downloading_weather_data">Masih mengunduh data cuaca</string>
     <string name="swipe_lock">Gesek Kunci</string>
     <string name="system_default">Bawaan Sistem</string>
     <string name="temperature">Suhu</string>

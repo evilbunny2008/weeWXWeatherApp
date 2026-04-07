@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">ഉച്ചയ്ക്ക് ശേഷമുള്ള അലേർട്ട്?</string>
     <string name="all_time_stats">എല്ലാ സമയ സ്ഥിതിവിവരക്കണക്കുകളും</string>
     <string name="app_theme">ആപ്പ് തീം</string>
-    <string name="attempting_to_download_data_txt">നിങ്ങളുടെ സെർവറിൽ നിന്ന് data.txt ഡൗൺലോഡ് ചെയ്യാൻ ശ്രമിക്കുന്നു</string>
+    <string name="avg">ശരാശരി</string>
     <string name="battery_warning">മുന്നറിയിപ്പ്: മുകളിലെ ഓപ്‌ഷൻ പ്രവർത്തനക്ഷമമാക്കുന്നത് നിങ്ങളുടെ ബാറ്ററി പതിവിലും വേഗത്തിൽ തീർന്നേക്കാം</string>
     <string name="before">മുമ്പ്</string>
     <string name="bgColour">വിജറ്റ് പശ്ചാത്തല വർണ്ണ പിക്കർ</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">ഓപ്ഷണൽ: ഇഷ്‌ടാനുസൃത URL</string>
     <string name="custom_url_not_set_or_blank">ഇഷ്‌ടാനുസൃത URL സജ്ജമാക്കിയിട്ടില്ല, അല്ലെങ്കിൽ ശൂന്യമാണ്. ഒരു ഇഷ്‌ടാനുസൃത URL ചേർക്കാൻ നിങ്ങൾക്ക് ക്രമീകരണത്തിലേക്ക് പോകാം</string>
     <string name="dark_theme">ഇരുണ്ട തീം</string>
-    <string name="data_url_was_blank">ഡാറ്റ URL ശൂന്യമായിരുന്നു</string>
+    <string name="data_url_was_blank">%1$s URL ശൂന്യമാണ്, ദയവായി നിങ്ങളുടെ %2$s ഫയൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക</string>
     <string name="delete_all_data">എല്ലാ ഡാറ്റയും ഷട്ട്ഡൗണും ഇല്ലാതാക്കുക</string>
     <string name="empty">ശൂന്യം</string>
     <string name="error">പിശക്!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">പ്രവചന ഡാറ്റ പ്രോസസ്സ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു</string>
     <string name="failed_to_process_weather_data">നിങ്ങളുടെ സെർവറിൽ നിന്നുള്ള കാലാവസ്ഥാ ഡാറ്റ ശരിയായി പ്രോസസ്സ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടു, പ്രത്യേകിച്ച് %1$s ഡാറ്റ</string>
     <string name="fgColour">വിജറ്റ് ഫോർഗ്രൗണ്ട് കളർ പിക്കർ</string>
-    <string name="fileURL">നിങ്ങളുടെ settings.txt-ലേക്ക് URL നൽകുക</string>
+    <string name="fileURL">%1$s എന്നതിലേക്കുള്ള URL നൽകുക</string>
     <string name="force_dark_mode">ഡാർക്ക് മോഡ് നിർബന്ധിക്കുക</string>
     <string name="forecast">പ്രവചന പേജ്</string>
     <string name="forecast2">പ്രവചനം</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">ദിവസേന</string>
     <string name="forecast_interval">പ്രവചന ഇടവേള (ബാധകമെങ്കിൽ)</string>
     <string name="forecast_type_is_invalid">പ്രവചന തരം \'%1$s\' അസാധുവാണ്, നിങ്ങളുടെ ക്രമീകരണ ഫയൽ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക</string>
-    <string name="forecast_url_not_set">പ്രവചന URL സജ്ജീകരിച്ചിട്ടില്ല, മാറ്റാൻ settings.txt എഡിറ്റ് ചെയ്യുക</string>
+    <string name="forecast_url_not_set">പ്രവചന URL സജ്ജീകരിച്ചിട്ടില്ല, അത് %1$s ൽ സജ്ജമാക്കുക</string>
     <string name="hour">മണിക്കൂർ</string>
     <string name="hours">മണിക്കൂറുകൾ</string>
     <string name="ill_fix_and_try_again">ഞാൻ അത് ശരിയാക്കി വീണ്ടും ശ്രമിക്കാം</string>
@@ -116,6 +116,7 @@
     <string name="skip">ഒഴിവാക്കുക</string>
     <string name="stats2">സ്ഥിതിവിവരക്കണക്കുകൾ</string>
     <string name="still_downloading_forecast_data">പ്രവചന ഡാറ്റ ഇപ്പോഴും ഡൗൺലോഡ് ചെയ്യുന്നു</string>
+    <string name="still_downloading_weather_data">ഇപ്പോഴും കാലാവസ്ഥാ ഡാറ്റ ഡൗൺലോഡ് ചെയ്യുന്നു</string>
     <string name="swipe_lock">സ്വൈപ്പ് ലോക്ക്</string>
     <string name="system_default">സിസ്റ്റം ഡിഫോൾട്ട്</string>
     <string name="temperature">താപനില</string>

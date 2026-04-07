@@ -488,7 +488,8 @@ public class Stats extends Fragment
 				sb.append(createRowLeft2(cssToSVG("wi-wind-deg",
 						Math.round((float)getJson(timeperiod + "_wind_vecdir", 0f))),
 						formatString(timeperiod + "_wind_avg") + speedSym +
-						" " + deg2Str(timeperiod + "_wind_vecdir"), "Avg"));
+						" " + deg2Str(timeperiod + "_wind_vecdir"),
+						getAndroidString(R.string.avg)));
 			else
 				sb.append(createRowLeft());
 

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">ແຈ້ງເຕືອນຕອນບ່າຍ?</string>
     <string name="all_time_stats">ສະຖິຕິເວລາທັງຫມົດ</string>
     <string name="app_theme">ຫົວຂໍ້ App</string>
-    <string name="attempting_to_download_data_txt">ການພະຍາຍາມດາວໂຫລດຂໍ້ມູນ .txt ຈາກ server ຂອງທ່ານ</string>
+    <string name="avg">ສະເລ່ຍ</string>
     <string name="battery_warning">ຄໍາເຕືອນ: ເຮັດໃຫ້ຕົວເລືອກທີ່ກ່າວມາຂ້າງເທິງອາດຈະຖອກແບັດເຕີຣີຂອງທ່ານໃຫ້ໄວກ່ວາປົກກະຕິ</string>
     <string name="before">ທີ່ຈະ</string>
     <string name="bgColour">ເຄື່ອງເກັບສີພື້ນຫລັງຂອງ Widget</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">ທາງເລືອກ: URL ທີ່ກໍາຫນົດເອງ</string>
     <string name="custom_url_not_set_or_blank">URL ທີ່ກໍານົດເອງບໍ່ໄດ້ຖືກກໍານົດ, ຫຼືຫວ່າງເປົ່າ. ທ່ານສາມາດເຂົ້າໄປໃນການຕັ້ງຄ່າເພື່ອເພີ່ມ URL ທີ່ກໍານົດເອງ</string>
     <string name="dark_theme">ຫົວຂໍ້ມືດ</string>
-    <string name="data_url_was_blank">url ຂໍ້ມູນແມ່ນຫວ່າງເປົ່າ</string>
+    <string name="data_url_was_blank">URL %1$s ຫວ່າງເປົ່າ, ກະລຸນາກວດເບິ່ງໄຟລ໌ %2$s ຂອງທ່ານແລ້ວລອງໃໝ່ອີກຄັ້ງ</string>
     <string name="delete_all_data">ລົບລ້າງຂໍ້ມູນທັງຫມົດແລະປິດ</string>
     <string name="empty">ເປົ່າ</string>
     <string name="error">ຜິດພາດ!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">ລົ້ມເຫລວໃນການປະມວນຜົນຂໍ້ມູນການຄາດຄະເນ</string>
     <string name="failed_to_process_weather_data">ລົ້ມເຫລວໃນການປະມວນຜົນຂໍ້ມູນສະພາບອາກາດຈາກເຊີບເວີຂອງທ່ານຢ່າງຖືກຕ້ອງ, ໂດຍສະເພາະຂໍ້ມູນ %1$s</string>
     <string name="fgColour">ເຄື່ອງເກັບສີ</string>
-    <string name="fileURL">ໃສ່ URL ເຂົ້າໃນການຕັ້ງຄ່າຂອງທ່ານ .txt</string>
+    <string name="fileURL">ໃສ່ URL ໃສ່ %1$s</string>
     <string name="force_dark_mode">ບັງຄັບໃຫ້ໂຫມດຊ້ໍາ</string>
     <string name="forecast">ຫນ້າຫຼັກ</string>
     <string name="forecast2">ການຄາດຄະເນ</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">ປະຈໍາວັນ</string>
     <string name="forecast_interval">ໄລຍະການພະຍາກອນ (ຖ້າມີ)</string>
     <string name="forecast_type_is_invalid">ການຄາດຄະເນປະເພດ \'%1$s\' ບໍ່ຖືກຕ້ອງ, ກວດເບິ່ງເອກະສານການຕັ້ງຄ່າຂອງທ່ານແລະລອງໃຫມ່ອີກຄັ້ງ</string>
-    <string name="forecast_url_not_set">ການຄາດຄະເນ URL ທີ່ບໍ່ໄດ້ກໍານົດໄວ້, ດັດແກ້ Settings.txt ເພື່ອປ່ຽນ</string>
+    <string name="forecast_url_not_set">ການພະຍາກອນ URL ບໍ່ໄດ້ຕັ້ງ, ຕັ້ງມັນເປັນ %1$s</string>
     <string name="hour">ຊົ່ວໂມງ</string>
     <string name="hours">ຊົ່ວໂມງ</string>
     <string name="ill_fix_and_try_again">ຂ້ອຍຈະແກ້ໄຂມັນແລະລອງໃຫມ່ອີກຄັ້ງ</string>
@@ -115,6 +115,7 @@
     <string name="skip">ຂ້າມ</string>
     <string name="stats2">ສະຖິຕິ</string>
     <string name="still_downloading_forecast_data">ຍັງດາວໂຫລດຂໍ້ມູນການຄາດຄະເນ</string>
+    <string name="still_downloading_weather_data">ຍັງດາວໂຫຼດຂໍ້ມູນສະພາບອາກາດຢູ່</string>
     <string name="swipe_lock">ປຸ້ມ</string>
     <string name="system_default">ລະບົບຄ່າເລີ່ມຕົ້ນ</string>
     <string name="temperature">ອຸນຫະພູມ</string>

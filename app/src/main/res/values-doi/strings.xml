@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">दोपहर दा अलर्ट?</string>
     <string name="all_time_stats">सारे समय आँकड़े</string>
     <string name="app_theme">ऐप थीम ऐ</string>
-    <string name="attempting_to_download_data_txt">अपने सर्वर थमां Data.txt डाउनलोड करने दी कोशश करना</string>
+    <string name="avg">औसतन।</string>
     <string name="battery_warning">चेतावनी: उपर्युक्त विकल्प गी सक्षम करने कन्नै तुंदी बैटरी गी सामान्य थमां तेजी कन्नै ड्रेन करी सकदा ऐ</string>
     <string name="before">पैहलें</string>
     <string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
     <string name="custom_url_not_set_or_blank">कस्टम URL सेट नेईं ऐ, जां खाली ऐ। तुस इक कस्टम URL जोड़ने लेई सेटिंग्स च जाई सकदे ओ</string>
     <string name="dark_theme">काला थीम</string>
-    <string name="data_url_was_blank">डेटा URL खाली था</string>
+    <string name="data_url_was_blank">%1$s URL खाली हा, कृपा करियै अपनी %2$s फाइल दी जांच करो ते दुबारा कोशश करो</string>
     <string name="delete_all_data">सारे डेटा गी हटाओ ते बंद करो</string>
     <string name="empty">खा\'ल्ली</string>
     <string name="error">गलती!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">पूर्वानुमान डेटा गी संसाधित करने च असफल रेहा</string>
     <string name="failed_to_process_weather_data">तुंदे सर्वर थमां मौसम डेटा गी ठीक ढंगै कन्नै संसाधित करने च असफल रेहा, खास करियै %1$s डेटा</string>
     <string name="fgColour">विजेट अग्रभूमि रंग पिकर</string>
-    <string name="fileURL">अपनी सेटिंग्स च URL दर्ज करो.TXT</string>
+    <string name="fileURL">%1$s च URL दर्ज करो</string>
     <string name="force_dark_mode">बल डार्क मोड</string>
     <string name="forecast">पूर्वानुमान पृष्ठ</string>
     <string name="forecast2">पेशनगोई</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">रोजना</string>
     <string name="forecast_interval">पूर्वानुमान अंतराल (जेकर लागू ऐ तां)</string>
     <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अवैध ऐ, अपनी सेटिंग्स फाइल दी जांच करो ते दुबारा कोशश करो</string>
-    <string name="forecast_url_not_set">पूर्वानुमान URL सेट नेईं, सेटिंग्स गी संपादत करो.txt बदलने लेई</string>
+    <string name="forecast_url_not_set">पूर्वानुमान URL सेट नेईं कीता गेदा, इसगी %1$s च सेट करो</string>
     <string name="hour">घैंटा</string>
     <string name="hours">घैंटे</string>
     <string name="ill_fix_and_try_again">मैं इस गी ठीक करां ते फिर कोशिश करां</string>
@@ -120,6 +120,7 @@
     <string name="skip">छोड़ना</string>
     <string name="stats2">आँकड़े</string>
     <string name="still_downloading_forecast_data">अभी भी पूर्वानुमान डेटा डाउनलोड करें</string>
+    <string name="still_downloading_weather_data">अजे बी मौसम दा डाटा डाउनलोड कीता जा करदा ऐ</string>
     <string name="swipe_lock">स्वाइप ताला</string>
     <string name="system_default">सिस्टम डिफ़ॉल्ट ऐ</string>
     <string name="temperature">तापमान</string>

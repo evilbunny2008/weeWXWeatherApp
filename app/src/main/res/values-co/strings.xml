@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alerta dopu meziornu?</string>
     <string name="all_time_stats">Statistiche All Time</string>
     <string name="app_theme">Tema di l\'app</string>
-    <string name="attempting_to_download_data_txt">Tentativu di scaricà data.txt da u vostru servitore</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Attenzione: L\'attivazione di l\'opzione sopra pò drenu a vostra bateria più veloce di u solitu</string>
     <string name="before">prima</string>
     <string name="bgColour">Selettore di culore di fondu di u widget</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opcional: URL persunalizatu</string>
     <string name="custom_url_not_set_or_blank">L\'URL persunalizatu ùn hè micca stabilitu, o hè viotu. Pudete andà in i paràmetri per aghjunghje un URL persunalizatu</string>
     <string name="dark_theme">Tema scuru</string>
-    <string name="data_url_was_blank">L\'URL di dati era viotu</string>
+    <string name="data_url_was_blank">L\'URL %1$s era vuotu, per piacè verificate u vostru %2$s file è pruvate di novu</string>
     <string name="delete_all_data">Sguassà tutti i dati è spegni</string>
     <string name="empty">Viotu</string>
     <string name="error">Errore !</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Impossibile processà i dati di previsione</string>
     <string name="failed_to_process_weather_data">Fiascatu à trattà currettamente i dati climatichi da u vostru servitore, in particulare i dati %1$s</string>
     <string name="fgColour">Selettore di culori di primu pianu di u widget</string>
-    <string name="fileURL">Inserite l\'URL à u vostru settings.txt</string>
+    <string name="fileURL">Inserite l\'URL à %1$s</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="forecast">Pagina di previsione</string>
     <string name="forecast2">Previsione</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Ogni ghjornu</string>
     <string name="forecast_interval">Intervallu di previsione (se applicabile)</string>
     <string name="forecast_type_is_invalid">U tipu di previsione \'%1$s\' ùn hè micca validu, verificate u vostru schedariu di paràmetri è pruvate di novu</string>
-    <string name="forecast_url_not_set">L\'URL di previsione ùn hè micca stabilitu, edità settings.txt per cambià</string>
+    <string name="forecast_url_not_set">L\'URL di previsione ùn hè micca stabilitu, mette in %1$s</string>
     <string name="hour">ora</string>
     <string name="hours">ore</string>
     <string name="ill_fix_and_try_again">Ripararaghju è pruvà di novu</string>
@@ -120,6 +120,7 @@
     <string name="skip">Saltà</string>
     <string name="stats2">Statistiche</string>
     <string name="still_downloading_forecast_data">Sempre scaricatu dati di previsione</string>
+    <string name="still_downloading_weather_data">Sempre scaricatu dati meteorologici</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">Sistema Default</string>
     <string name="temperature">Temperature</string>

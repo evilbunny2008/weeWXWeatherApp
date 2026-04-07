@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Кечывал деч варасе тревога?</string>
     <string name="all_time_stats">Чыла жапыште статистике</string>
     <string name="app_theme">Приложений теме</string>
-    <string name="attempting_to_download_data_txt">Тендан сервер гыч скачать данный.txt</string>
+    <string name="avg">кокла шот дене</string>
     <string name="battery_warning">Шарналташ: Ӱлнӧ вариант-влак йӧным ыштен кертеш тендан батарейышке мӧҥгешла деч писын</string>
     <string name="before">марте</string>
     <string name="bgColour">Виджет фон тӱс пикер</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Необязательный: Йӱла URL-адрес</string>
     <string name="custom_url_not_set_or_blank">Йӧндартыш URL-адрес огеш лий, але яра. Те каен кертыда настройкыш ешарен шкешотан URL-адрес</string>
     <string name="dark_theme">Пычкемыш теме</string>
-    <string name="data_url_was_blank">Данный-влак URL-адрес яра лийын</string>
+    <string name="data_url_was_blank">%1$s URL яра лийын, пожалуйста, %2$s файлым тергыза да угыч тӧчен ончо</string>
     <string name="delete_all_data">Чыла данныйым кораҥдаш да пуштмаш</string>
     <string name="empty">Пуста</string>
     <string name="error">Йоҥылыш!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Прогноз данныйым обрабатыватлаш лийдыме</string>
     <string name="failed_to_process_weather_data">Сервер гыч игече нерген данныйым, рашрак %1$s данныйым, чын обрабатыватлаш лийдыме</string>
     <string name="fgColour">Виджет фортезная тӱс пикер</string>
-    <string name="fileURL">URL-адресым пурто тендан настройко-влак.txt</string>
+    <string name="fileURL">%1$s лан URL-адресым пурто</string>
     <string name="force_dark_mode">Вий Пычкемыш Режим</string>
     <string name="forecast">Прогноз лаштык</string>
     <string name="forecast2">Прогноз</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Еда</string>
     <string name="forecast_interval">Прогноз интервал (уке гын)</string>
     <string name="forecast_type_is_invalid">Прогноз тип \'%1$s\' чын огыл, шке настройкым файлым тергымаш да угыч тӧчен</string>
-    <string name="forecast_url_not_set">Прогнозироватлаш URL-адрес огыл шынден, тӧрлаташ настройкым.txt вашталташ</string>
+    <string name="forecast_url_not_set">Прогноз URL шындыме огыл, %1$s шындыза</string>
     <string name="hour">шагат</string>
     <string name="hours">шагат паша</string>
     <string name="ill_fix_and_try_again">Мый тудым тӧрлаташ да угыч тыршен</string>
@@ -120,6 +120,7 @@
     <string name="skip">Колташ</string>
     <string name="stats2">Статистике</string>
     <string name="still_downloading_forecast_data">Эше скачать прогноз данный</string>
+    <string name="still_downloading_weather_data">Игече нерген данныйым эше скачать</string>
     <string name="swipe_lock">Свайп локтылалтше</string>
     <string name="system_default">Система умолчание</string>
     <string name="temperature">Температур</string>

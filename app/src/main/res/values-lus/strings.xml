@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Chawhnu lam Alert?</string>
     <string name="all_time_stats">Hun zawng zawng Statistics</string>
     <string name="app_theme">App Theme 100 a ni</string>
-    <string name="attempting_to_download_data_txt">I server atanga download data.txt tih tum</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Warning: A chunga option hi enable la, i battery chu a tlangpui aia rangin a drain thei</string>
     <string name="before">hmaah</string>
     <string name="bgColour">widget background rawng chi hrang hrang a awm bawk</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">A duh duh: Custom URL</string>
     <string name="custom_url_not_set_or_blank">Custom URL hi a set lo a, a blank pawh a ni. Settings ah i lut thei ang a, custom URL 1000 add theih ang</string>
     <string name="dark_theme">Dark Theme</string>
-    <string name="data_url_was_blank">Data URL chu a blank a</string>
+    <string name="data_url_was_blank">%1$s URL kha blank a ni a, khawngaihin i %2$s file kha check la, han try leh teh</string>
     <string name="delete_all_data">Data leh shutdown zawng zawng delete vek rawh</string>
     <string name="empty">Ruak</string>
     <string name="error">Dik lo!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Forecast data a process theih loh</string>
     <string name="failed_to_process_weather_data">I server atanga weather data dik taka process theih loh, a bik takin %1$s data</string>
     <string name="fgColour">widget foreground rawng picker</string>
-    <string name="fileURL">URL chu i settings ah ziak lut rawh.txt</string>
+    <string name="fileURL">URL chu %1$s ah ziak lut rawh</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="forecast">Forecast page 100 a awm bawk</string>
     <string name="forecast2">Hmuhlawk</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Nitin</string>
     <string name="forecast_interval">Forecast Interval (a hman theih chuan) 1.1</string>
     <string name="forecast_type_is_invalid">Forecast type \'%1$s\' a dik lo a, i settings file kha check la, han try leh teh</string>
-    <string name="forecast_url_not_set">Forecast URL Set a ni lo, Edit settings.txt a thlak tur a ni</string>
+    <string name="forecast_url_not_set">Forecast URL set a nih loh avangin %1$s ah set rawh</string>
     <string name="hour">darkar</string>
     <string name="hours">darkar</string>
     <string name="ill_fix_and_try_again">Ka siam tha ang a, ka tum leh ang</string>
@@ -120,6 +120,7 @@
     <string name="skip">Bawhkan</string>
     <string name="stats2">Statistics 1000 a ni</string>
     <string name="still_downloading_forecast_data">Forecast data a la download reng a ni</string>
+    <string name="still_downloading_weather_data">Weather data a la download reng a ni</string>
     <string name="swipe_lock">Swipe lock a ni a, lock a ni</string>
     <string name="system_default">system a awm lo</string>
     <string name="temperature">Lum leh vawt tehna</string>

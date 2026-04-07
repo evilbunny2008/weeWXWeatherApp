@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Hmo ntuj ceeb toom?</string>
     <string name="all_time_stats">Txhua Lub Sijhawm Txheeb Xyuas</string>
     <string name="app_theme">App ntsiab</string>
-    <string name="attempting_to_download_data_txt">Sim rub tawm data.txt los ntawm koj lub server</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">CEEB TOOM: Ua kom cov kev xaiv saum toj no yuav tso koj cov roj teeb sai dua li ib txwm</string>
     <string name="before">ua ntej</string>
     <string name="bgColour">Ntsis keeb kwm xim picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Yeem: URL Nchuav</string>
     <string name="custom_url_not_set_or_blank">Kev cai URL tsis yog teeb tsa, lossis yog seem. Koj tuaj yeem mus rau hauv cov chaw teeb tsa los ntxiv qhov kev cai URL</string>
     <string name="dark_theme">Tsaus ntsiab lus</string>
-    <string name="data_url_was_blank">Cov ntaub ntawv URL yog dawb paug</string>
+    <string name="data_url_was_blank">%1$s URL tsis muaj, thov xyuas koj cov ntaub ntawv %2$s thiab sim dua</string>
     <string name="delete_all_data">Rho tawm txhua cov ntaub ntawv thiab kaw</string>
     <string name="empty">Khoob</string>
     <string name="error">yuam kev!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Ua tsis tiav cov ntaub ntawv qhia txog cov ntaub ntawv</string>
     <string name="failed_to_process_weather_data">Ua tsis tiav cov ntaub ntawv huab cua los ntawm koj lub server, tshwj xeeb yog %1$s cov ntaub ntawv</string>
     <string name="fgColour">Widget foreground xim picker</string>
-    <string name="fileURL">Sau qhov URL rau koj lub settings.txt</string>
+    <string name="fileURL">Nkag mus rau qhov URL rau %1$s</string>
     <string name="force_dark_mode">Yuam kev tsaus nti</string>
     <string name="forecast">Kab yees duab Nplooj</string>
     <string name="forecast2">Qhia yav tom ntej</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Txhua hnub</string>
     <string name="forecast_interval">Huab cua ncua sij hawm (yog tias tsim nyog)</string>
     <string name="forecast_type_is_invalid">Huab cua hom \'%1$s\' tsis raug, xyuas koj cov ntaub ntawv chaw thiab sim dua</string>
-    <string name="forecast_url_not_set">Kev kwv yees URL tsis teeb tsa, kho kom raug teeb meem.txt hloov</string>
+    <string name="forecast_url_not_set">Kev kwv yees URL tsis tau teeb tsa, teeb tsa hauv %1$s</string>
     <string name="hour">teev</string>
     <string name="hours">teev</string>
     <string name="ill_fix_and_try_again">Kuv mam kho nws thiab sim dua</string>
@@ -120,6 +120,7 @@
     <string name="skip">Hla</string>
     <string name="stats2">Cov naj npawb</string>
     <string name="still_downloading_forecast_data">Tseem rub tawm cov ntaub ntawv kwv yees</string>
+    <string name="still_downloading_weather_data">Tseem rub tawm cov ntaub ntawv huab cua</string>
     <string name="swipe_lock">Los so xauv</string>
     <string name="system_default">Kev kaw lub ntiaj teb</string>
     <string name="temperature">Kub</string>

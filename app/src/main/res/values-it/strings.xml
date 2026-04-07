@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Avviso pomeridiano?</string>
     <string name="all_time_stats">Statistiche di tutti i tempi</string>
     <string name="app_theme">Tema dell\'app</string>
-    <string name="attempting_to_download_data_txt">Tentativo di scaricare data.txt dal tuo server</string>
+    <string name="avg">med.</string>
     <string name="battery_warning">Avvertenza: l\'attivazione dell\'opzione precedente potrebbe scaricare la batteria più velocemente del solito</string>
     <string name="before">Prima</string>
     <string name="bgColour">Selettore colore di sfondo del widget</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Facoltativo: URL personalizzato</string>
     <string name="custom_url_not_set_or_blank">L\'URL personalizzato non è impostato o è vuoto. Puoi accedere alle impostazioni per aggiungere un URL personalizzato</string>
     <string name="dark_theme">Tema oscuro</string>
-    <string name="data_url_was_blank">L\'URL dei dati era vuoto</string>
+    <string name="data_url_was_blank">L\'URL %1$s era vuoto, controlla il file %2$s e riprova</string>
     <string name="delete_all_data">Elimina tutti i dati e spegni</string>
     <string name="empty">Vuoto</string>
     <string name="error">Errore!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Impossibile elaborare i dati di previsione</string>
     <string name="failed_to_process_weather_data">Impossibile elaborare correttamente i dati meteo dal tuo server, in particolare i dati %1$s</string>
     <string name="fgColour">Selettore colore di primo piano del widget</string>
-    <string name="fileURL">Inserisci l\'URL del tuo file settings.txt</string>
+    <string name="fileURL">Inserisci l\'URL di %1$s</string>
     <string name="force_dark_mode">Forza la modalità oscura</string>
     <string name="forecast">Pagina delle previsioni</string>
     <string name="forecast2">Previsione</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Quotidiano</string>
     <string name="forecast_interval">Intervallo di previsione (se applicabile)</string>
     <string name="forecast_type_is_invalid">Il tipo di previsione \'%1$s\' non è valido, controlla il file delle impostazioni e riprova</string>
-    <string name="forecast_url_not_set">URL della previsione non impostato, modifica settings.txt per cambiare</string>
+    <string name="forecast_url_not_set">URL della previsione non impostato, impostalo in %1$s</string>
     <string name="hour">ora</string>
     <string name="hours">ore</string>
     <string name="ill_fix_and_try_again">Risolverò il problema e riproverò</string>
@@ -117,6 +117,7 @@
     <string name="skip">Saltare</string>
     <string name="stats2">Statistiche</string>
     <string name="still_downloading_forecast_data">Sto ancora scaricando i dati delle previsioni</string>
+    <string name="still_downloading_weather_data">Sto ancora scaricando i dati meteo</string>
     <string name="swipe_lock">Blocco scorrimento</string>
     <string name="system_default">Predefinito del sistema</string>
     <string name="temperature">Temperatura</string>

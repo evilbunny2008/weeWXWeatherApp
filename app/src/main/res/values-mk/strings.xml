@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Попладневно предупредување?</string>
     <string name="all_time_stats">Статистика за сите времиња</string>
     <string name="app_theme">Тема на апликацијата</string>
-    <string name="attempting_to_download_data_txt">Обид за преземање data.txt од вашиот сервер</string>
+    <string name="avg">просечно</string>
     <string name="battery_warning">Предупредување: Овозможувањето на горната опција може да ја испразни батеријата побрзо од вообичаеното</string>
     <string name="before">пред</string>
     <string name="bgColour">Избирач на боја на заднина на виџети</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Изборно: Прилагодено URL</string>
     <string name="custom_url_not_set_or_blank">Приспособената URL-адреса не е поставена или е празна. Може да отидете во поставките за да додадете сопствена URL-адреса</string>
     <string name="dark_theme">Темна тема</string>
-    <string name="data_url_was_blank">URL-адресата на податоците беше празна</string>
+    <string name="data_url_was_blank">URL-адресата на %1$s беше празна, проверете ја вашата датотека %2$s и обидете се повторно</string>
     <string name="delete_all_data">Избришете ги сите податоци и исклучување</string>
     <string name="empty">Празен</string>
     <string name="error">Грешка!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Не успеа да се обработат прогнозните податоци</string>
     <string name="failed_to_process_weather_data">Не успеа правилно да ги обработи временските податоци од вашиот сервер, особено податоците %1$s</string>
     <string name="fgColour">Виџети Избирач на бои во преден план</string>
-    <string name="fileURL">Внесете ја URL-то на вашиот settings.txt</string>
+    <string name="fileURL">Внесете ја URL-то на %1$s</string>
     <string name="force_dark_mode">Присилете го темниот режим</string>
     <string name="forecast">Страница за прогноза</string>
     <string name="forecast2">Прогноза</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Дневно</string>
     <string name="forecast_interval">Прогнозиран интервал (ако е применливо)</string>
     <string name="forecast_type_is_invalid">Типот на прогноза \'%1$s\' е неважечки, проверете ја датотеката со поставки и обидете се повторно</string>
-    <string name="forecast_url_not_set">URL-адресата за прогноза не е поставена, изменете го settings.txt за да го промените</string>
+    <string name="forecast_url_not_set">URL-адресата за прогноза не е поставена, поставете ја во %1$s</string>
     <string name="hour">час</string>
     <string name="hours">часови</string>
     <string name="ill_fix_and_try_again">Ќе го поправам и ќе пробам повторно</string>
@@ -116,6 +116,7 @@
     <string name="skip">Прескокни</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Сè уште се преземаат прогнозните податоци</string>
+    <string name="still_downloading_weather_data">Сè уште се преземаат временските податоци</string>
     <string name="swipe_lock">Заклучување со лизгање</string>
     <string name="system_default">Стандарден систем</string>
     <string name="temperature">Температура</string>

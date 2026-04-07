@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Waspada sore?</string>
     <string name="all_time_stats">Sikontu Statistik Time</string>
     <string name="app_theme">appering</string>
-    <string name="attempting_to_download_data_txt">Nampa nasuromi ke\'nanga a\'lampa mange ri servernu</string>
+    <string name="avg">rata-rata</string>
     <string name="battery_warning">Pappiu\'rangi: A\'jari pa\'baeng-baeng irateanganna akkullei a\'jari la\'bi linta\' batena a\'batere\' na biasaya</string>
     <string name="before">riolo</string>
     <string name="bgColour">Latar Belakang Latar Belakang</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opsional: URL Kiasa</string>
     <string name="custom_url_not_set_or_blank">URL kuas teai set, yareka kosong. Ikatte akkullei antama\' ri setting untu\' a\'tambai URL adat</string>
     <string name="dark_theme">Gelap</string>
-    <string name="data_url_was_blank">Data URL kosong</string>
+    <string name="data_url_was_blank">URL %1$s kosong, paressai file %2$snu nampa nucoba pole</string>
     <string name="delete_all_data">Pa\'la\'bangi sikontu Data siagang Shudong</string>
     <string name="empty">Kosong</string>
     <string name="error">Kesalahan!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Punna nia\' tau a\'lampa mange ri prosesna</string>
     <string name="failed_to_process_weather_data">Tena nakkulle nigaukang data cuaca battu ri servernu, khususna data %1$s</string>
     <string name="fgColour">Pa\'baeng-baeng Warna Angkatan Latar Belakang</string>
-    <string name="fileURL">Antama\'mi URL ri settingnu.txt</string>
+    <string name="fileURL">Pa\'nassaang URL mange ri %1$s</string>
     <string name="force_dark_mode">Mode Gelap Gaya</string>
     <string name="forecast">Pa\'baeng-baeng Pa\'bajuang</string>
     <string name="forecast2">Ramalan</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Allo allo</string>
     <string name="forecast_interval">Interval ramalan (punna rie\')</string>
     <string name="forecast_type_is_invalid">Rute tipe \'%1$s\' anre\' na\'kulle nisala, paressai file settingnu nampa nucoba pole</string>
-    <string name="forecast_url_not_set">URL Angkasa\' teai set, a\'jari pa\'baeng-baeng.txt untu\' a\'jari beru</string>
+    <string name="forecast_url_not_set">URL ramalanna tena ni atoroki, atoroki ri %1$s</string>
     <string name="hour">jam</string>
     <string name="hours">jam</string>
     <string name="ill_fix_and_try_again">Kupasangkammai siagang siagang Kucobai pole</string>
@@ -120,6 +120,7 @@
     <string name="skip">Allaloi</string>
     <string name="stats2">Siatistik</string>
     <string name="still_downloading_forecast_data">Mingka ramalanna a\'download</string>
+    <string name="still_downloading_weather_data">Tena ija na download data cuaca</string>
     <string name="swipe_lock">Kacinnang Sway</string>
     <string name="system_default">Sistem Desal</string>
     <string name="temperature">Suhu</string>

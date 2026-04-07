@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Үдэрэй һэргылэмжэ?</string>
     <string name="all_time_stats">Бүхы сагай тоо баримтанууд</string>
     <string name="app_theme">Апп сэдэб</string>
-    <string name="attempting_to_download_data_txt">data data.txt-ые өөрынгөө серверһээ туршаха</string>
+    <string name="avg">дунда зэргын</string>
     <string name="battery_warning">Һэргылэмжэ: Дээрэхи арга боломжо олгохо гээшэ батарейн батарейнгаа ерээдүйһээ түргэн шүүжэ болохо</string>
     <string name="before">урда</string>
     <string name="bgColour">Виджет Ара үнгэ үнгэ шэлэхэ</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Нэмэлтэ: Захиалгаар URL</string>
     <string name="custom_url_not_set_or_blank">Захиалгаар URL тогтоогдоогүй, али хооһон. Та захиалгаар URL нэмэжэ, настройконуудта орожо болохо</string>
     <string name="dark_theme">Харанхы сэдэб</string>
-    <string name="data_url_was_blank">Мэдээсэлэй URL хооһон байгаа</string>
+    <string name="data_url_was_blank">%1$s URL хооһон байгаа, %2$s файлаа шалгаад, дахин туршагты</string>
     <string name="delete_all_data">Бүхы мэдээсэл ба зурлаануудые усадхаха</string>
     <string name="empty">Хооһон</string>
     <string name="error">Алдуу!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Уридшалан уридшалан мэдэхэ мэдээсэл болбосоруулхагүй</string>
     <string name="failed_to_process_weather_data">Танай серверһээ уларил тухай мэдээсэлые, илангаяа %1$s мэдээсэлые зүбөөр болбосоруулжа шадаагүй</string>
     <string name="fgColour">Виджет Уридшалан үнгын шэлэгдэмэл</string>
-    <string name="fileURL">URL-ые өөрынгөө тохиргоонуудта оруулха.txt</string>
+    <string name="fileURL">%1$s руу URL оруулха</string>
     <string name="force_dark_mode">Хүсэ Хара горим</string>
     <string name="forecast">Уридшалан мэдээсэл хуудаһа</string>
     <string name="forecast2">Прогноз</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Үдэр бүриин</string>
     <string name="forecast_interval">Уридшалан мэдэгдэхэ забһар (хэрэглэхэ аргатай һаа)</string>
     <string name="forecast_type_is_invalid">Уридшалан мэдээсэл \'%1$s\' хүсэнгүй, өөрынгөө тохиргоонуудай файл шалгаад, дахин туршагты</string>
-    <string name="forecast_url_not_set">Уридшалан мэдээсэхэ URL тогтоогдоогүй, тохиргоонуудые заһабарилха.txt хубилха</string>
+    <string name="forecast_url_not_set">Уридшалан мэдээсэлэй URL табигдаагүй, %1$s ээр табигты</string>
     <string name="hour">саг</string>
     <string name="hours">саг</string>
     <string name="ill_fix_and_try_again">Би тэрэнээ заһахаб, Дахин туршахаб</string>
@@ -120,6 +120,7 @@
     <string name="skip">Хаяха</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Уридшалан мэдээсэл татажа абахадаа, үшөөл</string>
+    <string name="still_downloading_weather_data">Сагай уларил тухай мэдээсэл татажа байна</string>
     <string name="swipe_lock">Свипе түрмэ</string>
     <string name="system_default">Системнэ стандарт</string>
     <string name="temperature">Халуун</string>

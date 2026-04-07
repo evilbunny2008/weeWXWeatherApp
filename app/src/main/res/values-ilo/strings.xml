@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alerto iti Malem?</string>
     <string name="all_time_stats">Amin nga Estadistika ti Panawen</string>
     <string name="app_theme">Tema ti App</string>
-    <string name="attempting_to_download_data_txt">Panagpadas ti Download Data.txt manipud iti servermo</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Pakdaar: Ti panangipalubos iti pagpilian iti ngato ket mabalin a naparpartak a mang-drain iti bateriam ngem iti gagangay</string>
     <string name="before">sakbay</string>
     <string name="bgColour">widget background nga kolor picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opsional: Kostumbre nga URL</string>
     <string name="custom_url_not_set_or_blank">Ti kostumbre nga URL ket saan a naikeddeng, wenno blangko. Mabalinmo ti mapan kadagiti setting tapno mangnayon iti custom URL</string>
     <string name="dark_theme">Nasipnget a tema</string>
-    <string name="data_url_was_blank">Ti URL ti datos ket blangko</string>
+    <string name="data_url_was_blank">Blangko idi ti %1$s URL, pangngaasim ta kitaem ti %2$s a papelesmo ken padasem manen</string>
     <string name="delete_all_data">Ikkaten amin a datos ken panagserra</string>
     <string name="empty">Ubbaw</string>
     <string name="error">Biddut!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Nalpasen ti panangproseso ti datos ti panagpakpakauna</string>
     <string name="failed_to_process_weather_data">Napaay a siuumiso a mangproseso ti datos ti paniempo manipud iti serbidormo, espesipiko ti datos ti %1$s</string>
     <string name="fgColour">Widget nga foreground nga picker sa kolor</string>
-    <string name="fileURL">Iserrek ti URL iti settings.txt mo</string>
+    <string name="fileURL">Iserrek ti URL iti %1$s</string>
     <string name="force_dark_mode">puersa Nasipnget nga Modo</string>
     <string name="forecast">Panid ti panagpakpakauna</string>
     <string name="forecast2">Ipadles</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Inaldaw</string>
     <string name="forecast_interval">Forecast Interval (no mayaplikar)</string>
     <string name="forecast_type_is_invalid">Ti kita ti panagpakpakauna a \'%1$sS\' ket saan nga imbalido, kitaen ti file ti Settings-mo ken padasem manen</string>
-    <string name="forecast_url_not_set">Ti URL ti panagpakpakauna ket saan nga ikeddeng, i-edit dagiti setting.txt tapno agbaliw</string>
+    <string name="forecast_url_not_set">Ti URL ti panagpakpakauna ket saan a naikeddeng, ikeddeng daytoy iti %1$s</string>
     <string name="hour">oras</string>
     <string name="hours">dagiti oras</string>
     <string name="ill_fix_and_try_again">Ilintegko dayta ket padasek manen</string>
@@ -120,6 +120,7 @@
     <string name="skip">Laktawan</string>
     <string name="stats2">Estadistika</string>
     <string name="still_downloading_forecast_data">Ag-download pay laeng iti datos ti panagpakpakauna</string>
+    <string name="still_downloading_weather_data">Ag-download pay laeng iti datos ti paniempo</string>
     <string name="swipe_lock">I-swipe ti kandado</string>
     <string name="system_default">Sistema ti default</string>
     <string name="temperature">Temperatura</string>

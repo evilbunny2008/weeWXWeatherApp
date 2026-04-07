@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Ualeqqaarnerani Alert?</string>
     <string name="all_time_stats">Piffissaq tamakkerlugu kisitsisit</string>
     <string name="app_theme">App Tema</string>
-    <string name="attempting_to_download_data_txt">Serverimiit data.txt-imik aallaasinissamik misiliineq</string>
+    <string name="avg">agguaqatigiissillugu</string>
     <string name="battery_warning">Misissueqqissaarneq: Qulaani toqqagassaq atulerpat batteriit nalinginnaasumit sukkanerusumik nungussinnaavoq</string>
     <string name="before">siorna</string>
     <string name="bgColour">Widget-ip tunuliaqutaasup qalipaataanik toqqaasoq</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Pisinnaavoq: URL-imik atuineq</string>
     <string name="custom_url_not_set_or_blank">URL-i atuuttoq inissinneqanngilaq, imaluunniit imaqanngilaq. URL-imik naleqqussagaasumik ilanngussaqarnissamut inissititernermut isesinnaavutit</string>
     <string name="dark_theme">Tema Dark</string>
-    <string name="data_url_was_blank">Data URL-i imaqanngilaq</string>
+    <string name="data_url_was_blank">%1$s URL imaqanngilaq, qinnuigissavakkit %2$s filit misissoruk misileqqillugulu</string>
     <string name="delete_all_data">Datat tamarmik piiakkit aamma Shutdown</string>
     <string name="empty">Imaqanngilaq</string>
     <string name="error">Ajutoorneq!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Siulittuutissatut paasissutissat suliarineqarnissaat iluatsinngilaq</string>
     <string name="failed_to_process_weather_data">Serverimiit silap pissusaa pillugu paasissutissat eqqortumik suliarineqarsinnaasimanngillat, immikkut %1$s ip paasissutissat</string>
     <string name="fgColour">Widget Forgrundsfarve-mik toqqaasoq</string>
-    <string name="fileURL">URL-i allaguk settings.txt-imut</string>
+    <string name="fileURL">URL-i %1$s imut allaguk</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="forecast">Siulittuut Side</string>
     <string name="forecast2">Silassaq</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Ullormut</string>
     <string name="forecast_interval">Naatsorsuutigineqartoq (atuuttuuppat)</string>
     <string name="forecast_type_is_invalid">Siulittuut type \'%1$s\' atuunneqanngilaq, inissititersimasatit misissukkit misiliillutillu</string>
-    <string name="forecast_url_not_set">Siulittuut URL-i inissinneqanngilaq, allanngortinniarlugu settings.txt allanngortiguk</string>
+    <string name="forecast_url_not_set">Siulittuut URL-i inissinneqanngilaq, %1$s imi inissinneqarpoq</string>
     <string name="hour">nalunaaquttap akunnera</string>
     <string name="hours">nalunaaquttap akunneri</string>
     <string name="ill_fix_and_try_again">Aaqqissaarpara Misilittarlugulu</string>
@@ -116,6 +116,7 @@
     <string name="skip">Qaangiinnaruk</string>
     <string name="stats2">Kisitsisit</string>
     <string name="still_downloading_forecast_data">Suli siulittuutit paasissutissat aaneqartarmata</string>
+    <string name="still_downloading_weather_data">Suli silap pissusaa pillugu paasissutissat aallaavigalugit</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">Systemip atorneqarnera</string>
     <string name="temperature">Kissassuseq</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Nachmittagsalarm?</string>
     <string name="all_time_stats">Allzeitstatistiken</string>
     <string name="app_theme">App-Theme</string>
-    <string name="attempting_to_download_data_txt">Ich versuche, data.txt von Ihrem Server herunterzuladen</string>
+    <string name="avg">Ø</string>
     <string name="battery_warning">Warnung: Wenn Sie die obige Option aktivieren, wird Ihr Akku möglicherweise schneller als gewöhnlich entladen</string>
     <string name="before">vor</string>
     <string name="bgColour">Widget-Hintergrundfarbauswahl</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Optional: Benutzerdefinierte URL</string>
     <string name="custom_url_not_set_or_blank">Die benutzerdefinierte URL ist nicht festgelegt oder leer. Sie können in den Einstellungen eine benutzerdefinierte URL hinzufügen</string>
     <string name="dark_theme">Dunkles Thema</string>
-    <string name="data_url_was_blank">Die Daten-URL war leer</string>
+    <string name="data_url_was_blank">Die %1$s URL war leer. Bitte überprüfen Sie Ihre %2$s Datei und versuchen Sie es erneut</string>
     <string name="delete_all_data">Alle Daten löschen und herunterfahren</string>
     <string name="empty">Leer</string>
     <string name="error">Fehler!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Prognosedaten konnten nicht verarbeitet werden</string>
     <string name="failed_to_process_weather_data">Die Wetterdaten von Ihrem Server, insbesondere die %1$s Daten, konnten nicht korrekt verarbeitet werden</string>
     <string name="fgColour">Widget-Vordergrundfarbauswahl</string>
-    <string name="fileURL">Geben Sie die URL zu Ihrer Settings.txt ein</string>
+    <string name="fileURL">Geben Sie die URL zu %1$s ein</string>
     <string name="force_dark_mode">Dunklen Modus erzwingen</string>
     <string name="forecast">Prognoseseite</string>
     <string name="forecast2">Vorhersage</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Täglich</string>
     <string name="forecast_interval">Prognoseintervall (falls zutreffend)</string>
     <string name="forecast_type_is_invalid">Der Prognosetyp \'%1$s\' ist ungültig. Überprüfen Sie Ihre Einstellungsdatei und versuchen Sie es erneut</string>
-    <string name="forecast_url_not_set">Prognose-URL nicht festgelegt. Bearbeiten Sie die Datei \'settings.txt\', um sie zu ändern</string>
+    <string name="forecast_url_not_set">Prognose-URL nicht festgelegt, legen Sie sie in %1$s fest</string>
     <string name="hour">Stunde</string>
     <string name="hours">Std</string>
     <string name="ill_fix_and_try_again">Ich werde es reparieren und es erneut versuchen</string>
@@ -116,6 +116,7 @@
     <string name="skip">Überspringen</string>
     <string name="stats2">Statistiken</string>
     <string name="still_downloading_forecast_data">Es werden immer noch Prognosedaten heruntergeladen</string>
+    <string name="still_downloading_weather_data">Es werden immer noch Wetterdaten heruntergeladen</string>
     <string name="swipe_lock">Wischsperre</string>
     <string name="system_default">Systemstandard</string>
     <string name="temperature">Temperatur</string>

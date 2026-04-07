@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Төштән һуң иҫкәртмә?</string>
     <string name="all_time_stats">Бөтә ваҡыт статистикаһы</string>
     <string name="app_theme">App Teme</string>
-    <string name="attempting_to_download_data_txt">Һеҙҙең серверҙан скачать cavic</string>
+    <string name="avg">уртаса</string>
     <string name="battery_warning">Иҫкәртмә: өҫтәге вариантты индереү һеҙҙең батарея тиҙ генә ғәҙәттәгенән тиҙерәк дренировать мөмкин</string>
     <string name="before">тиклем</string>
     <string name="bgColour">Виджет фон төҫө Пикер</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Һорау алыу: Ҡулланыусы URL</string>
     <string name="custom_url_not_set_or_blank">Ҡулланыусылар URL-адрес ҡуйылмай, йәки буш. Һеҙ параметрҙарға инә ала, өҫтәү өсөн ҡулланыусылар URL</string>
     <string name="dark_theme">Ҡара тема</string>
-    <string name="data_url_was_blank">Мәғлүмәттәр URL буш булды</string>
+    <string name="data_url_was_blank">%1$s URL-адресы буш ине, зинһар, %2$s файлығыҙҙы тикшерегеҙ һәм яңынан тырышығыҙ</string>
     <string name="delete_all_data">Бөтә мәғлүмәттәрҙе юйырға һәм ябыу</string>
     <string name="empty">Буш</string>
     <string name="error">Хата!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Прогноз мәғлүмәттәрен эшкәртергә өлгөрмәгән</string>
     <string name="failed_to_process_weather_data">Һеҙҙең серверҙан һауа торошо мәғлүмәттәрен дөрөҫ эшкәртә алманы, аныҡ ҡына әйткәндә, %1$s мәғлүмәттәре</string>
     <string name="fgColour">Виджет алғы планы төҫө Пикер</string>
-    <string name="fileURL">URL-адресығыҙҙы һеҙҙең параметрҙарға индерегеҙ.txt</string>
+    <string name="fileURL">URL-адресты %1$s индерегеҙ</string>
     <string name="force_dark_mode">Көс Ҡараңғы режим</string>
     <string name="forecast">Прогноз Бит</string>
     <string name="forecast2">Алдан әйтеп ҡуйыу</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Көндәлек</string>
     <string name="forecast_interval">Прогноз арауығы (әгәр ҙә кәрәк булһа)</string>
     <string name="forecast_type_is_invalid">Прогноз тибы \'%1$s\' дөрөҫ түгел, параметрҙар файлын тикшерегеҙ һәм яңынан тырышығыҙ</string>
-    <string name="forecast_url_not_set">Прогноз URL ҡуйылмаған, мөхәррирләү sets.txt үҙгәртеү өсөн</string>
+    <string name="forecast_url_not_set">Прогноз URL-адресы ҡуйылмаған, уны %1$s итеп ҡуйығыҙ</string>
     <string name="hour">сәғәт</string>
     <string name="hours">сәғәт</string>
     <string name="ill_fix_and_try_again">Мин уны төҙәтергә һәм тағы ла һынап ҡарайым</string>
@@ -120,6 +120,7 @@
     <string name="skip">Бармай ҡалырға</string>
     <string name="stats2">Статистика</string>
     <string name="still_downloading_forecast_data">Әле лә скачать прогноз мәғлүмәттәре</string>
+    <string name="still_downloading_weather_data">Һаман да һауа торошо мәғлүмәттәрен скачать итәбеҙ</string>
     <string name="swipe_lock">Свайп Блок</string>
     <string name="system_default">Система ғәҙәттәгесә</string>
     <string name="temperature">Температура</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alertă de după-amiază?</string>
     <string name="all_time_stats">Statistici All Time</string>
     <string name="app_theme">Tema aplicației</string>
-    <string name="attempting_to_download_data_txt">Se încearcă descărcarea data.txt de pe serverul dvs</string>
+	<string name="avg">med.</string>
     <string name="battery_warning">Avertisment: activarea opțiunii de mai sus vă poate descărca bateria mai repede decât de obicei</string>
     <string name="before">înainte</string>
     <string name="bgColour">Selector de culori de fundal widget</string>
@@ -15,8 +15,7 @@
     <string name="custom_url">Opțional: URL personalizată</string>
     <string name="custom_url_not_set_or_blank">Adresa URL personalizată nu este setată sau este goală. Puteți accesa setări pentru a adăuga o adresă URL personalizată</string>
     <string name="dark_theme">Tema întunecată</string>
-    <string name="data_url_was_blank">Adresa URL a datelor era goală</string>
-    <string name="delete_all_data">Ștergeți toate datele și opriți</string>
+	<string name="delete_all_data">Ștergeți toate datele și opriți</string>
     <string name="empty">Gol</string>
     <string name="error">Eroare!</string>
     <string name="error_occurred_while_attempting_to_update">A apărut o eroare la încercarea de a actualiza utilizarea</string>
@@ -33,16 +32,14 @@
     <string name="failed_to_process_forecast_data">Nu s-au procesat datele de prognoză</string>
     <string name="failed_to_process_weather_data">Nu s-au procesat corect datele meteo de pe serverul dvs., în special datele %1$s</string>
     <string name="fgColour">Selector de culori din prim-plan pentru widget</string>
-    <string name="fileURL">Introduceți adresa URL la settings.txt</string>
-    <string name="force_dark_mode">Force Dark Mode</string>
+	<string name="force_dark_mode">Force Dark Mode</string>
     <string name="forecast">Pagina de prognoză</string>
     <string name="forecast2">Prognoza</string>
     <string name="forecast_6hourly">6 din oră</string>
     <string name="forecast_daily">Zilnic</string>
     <string name="forecast_interval">Intervalul de prognoză (dacă este cazul)</string>
     <string name="forecast_type_is_invalid">Tipul de prognoză \'%1$s\' este nevalid, verificați fișierul de setări și încercați din nou</string>
-    <string name="forecast_url_not_set">Adresa URL de prognoză nu este setată, editați settings.txt pentru a modifica</string>
-    <string name="hour">oră</string>
+	<string name="hour">oră</string>
     <string name="hours">ore</string>
     <string name="ill_fix_and_try_again">O voi repara și voi încerca din nou</string>
     <string name="indoor_readings">Afișați lecturi în interior?</string>

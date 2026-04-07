@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Painget Sore?</string>
     <string name="all_time_stats">Makasami Statistik Galah</string>
     <string name="app_theme">Tema Aplikasi</string>
-    <string name="attempting_to_download_data_txt">Ngrereh data download.txt saking server Sametoné</string>
+    <string name="avg">rata-rata</string>
     <string name="battery_warning">Peringatan: Ngalahang opsi ring ajeng prasida nguras baterai Sameton gelisan saking biasa</string>
     <string name="before">sebelum</string>
     <string name="bgColour">Warna Latar Belakang Picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opsional: URL khusus</string>
     <string name="custom_url_not_set_or_blank">URL khusus nenten kaatur, utawi puyung. Sameton dados ngranjing ring setélan jagi ngawewehin URL khusus</string>
     <string name="dark_theme">Tema Gelap</string>
-    <string name="data_url_was_blank">URL data sampun puyung</string>
+    <string name="data_url_was_blank">URL %1$s puyung, turéksain berkas %2$s Sameton lan indayang malih</string>
     <string name="delete_all_data">Icalang Sami Data lan Shutdown</string>
     <string name="empty">Kosong</string>
     <string name="error">Éror!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Gagal ring data ramalan proses</string>
     <string name="failed_to_process_weather_data">Gagal ngolah data cuaca saking server Sametoné manut, khususnyané data %1$s</string>
     <string name="fgColour">Banja Ajeg Widget</string>
-    <string name="fileURL">Unggahang URL ka setélan Sametoné.txt</string>
+    <string name="fileURL">Unggahang URL ka %1$s</string>
     <string name="force_dark_mode">saking Mode Gelap</string>
     <string name="forecast">Halaman Ranah</string>
     <string name="forecast2">Ngeramalang</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Sabilang dina</string>
     <string name="forecast_interval">Interval ramalan (yéning wénten)</string>
     <string name="forecast_type_is_invalid">Jenis fonecast \'%1$s\' nénten sah, tureksain file setélan Sametoné lan indayang malih</string>
-    <string name="forecast_url_not_set">URL rapal nénten ngatur, pangaturan.txt.txt anggén nguwah</string>
+    <string name="forecast_url_not_set">URL ramalan nénten kaatur, atur ring %1$s</string>
     <string name="hour">jam</string>
     <string name="hours">jam</string>
     <string name="ill_fix_and_try_again">Tiang jagi Mecikang lan Indayang malih</string>
@@ -120,6 +120,7 @@
     <string name="skip">Liwatin</string>
     <string name="stats2">Statistik</string>
     <string name="still_downloading_forecast_data">Masih ngunduh data ramalan</string>
+    <string name="still_downloading_weather_data">Kantun ngunduh data cuaca</string>
     <string name="swipe_lock">Kun Kebangan</string>
     <string name="system_default">Default Sistem</string>
     <string name="temperature">Suhu</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Pärastlõunane hoiatus?</string>
     <string name="all_time_stats">Kogu aegade statistika</string>
     <string name="app_theme">Rakenduse teema</string>
-    <string name="attempting_to_download_data_txt">Püütakse faili data.txt teie serverist alla laadida</string>
+    <string name="avg">keskm</string>
     <string name="battery_warning">Hoiatus. Ülaltoodud valiku lubamine võib aku tavapärasest kiiremini tühjendada</string>
     <string name="before">enne</string>
     <string name="bgColour">Vidina taustavärvi valija</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Valikuline: kohandatud URL</string>
     <string name="custom_url_not_set_or_blank">Kohandatud URL pole määratud või on tühi. Kohandatud URL-i lisamiseks võite minna seadetesse</string>
     <string name="dark_theme">Tume teema</string>
-    <string name="data_url_was_blank">Andmete URL oli tühi</string>
+    <string name="data_url_was_blank">%1$s URL oli tühi, kontrollige faili %2$s ja proovige uuesti</string>
     <string name="delete_all_data">Kustutage kõik andmed ja lülitage välja</string>
     <string name="empty">Tühi</string>
     <string name="error">Viga!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Prognoosiandmete töötlemine ebaõnnestus</string>
     <string name="failed_to_process_weather_data">Teie serveri ilmaandmete, täpsemalt %1$s andmete korrektne töötlemine ebaõnnestus</string>
     <string name="fgColour">Vidina esiplaani värvivalija</string>
-    <string name="fileURL">Sisestage faili settings.txt URL</string>
+    <string name="fileURL">Sisestage URL aadressile %1$s</string>
     <string name="force_dark_mode">Sundige tume režiim</string>
     <string name="forecast">Prognoosi leht</string>
     <string name="forecast2">Prognoos</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Igapäevane</string>
     <string name="forecast_interval">Prognoosi intervall (kui see on kohaldatav)</string>
     <string name="forecast_type_is_invalid">Prognoosi tüüp \'%1$s\' on kehtetu, kontrollige oma seadete faili ja proovige uuesti</string>
-    <string name="forecast_url_not_set">Prognoosi URL-i pole määratud, muutmiseks muutke faili settings.txt</string>
+    <string name="forecast_url_not_set">Prognoosi URL-i pole määratud, määrake see asukohas %1$s</string>
     <string name="hour">tund</string>
     <string name="hours">tundi</string>
     <string name="ill_fix_and_try_again">Ma parandan selle ja proovin uuesti</string>
@@ -116,6 +116,7 @@
     <string name="skip">Jäta vahele</string>
     <string name="stats2">Statistika</string>
     <string name="still_downloading_forecast_data">Prognoosiandmeid laaditakse endiselt alla</string>
+    <string name="still_downloading_weather_data">Ilmaandmete allalaadimine</string>
     <string name="swipe_lock">Pühkige lukustus</string>
     <string name="system_default">Süsteemi vaikeseade</string>
     <string name="temperature">Temperatuur</string>

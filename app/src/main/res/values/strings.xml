@@ -7,7 +7,7 @@
     <string name="all_time_stats">All Time Statistics</string>
     <string name="app_name" translatable="false">weeWX App</string>
     <string name="app_theme">App Theme</string>
-    <string name="attempting_to_download_data_txt">Attempting download data.txt from your server</string>
+    <string name="avg">avg.</string>
     <string name="battery_warning">Warning: Enabling the above option may drain your battery faster than usual</string>
     <string name="before">before</string>
     <string name="bgColour">Widget Background Colour Picker</string>
@@ -16,7 +16,7 @@
     <string name="custom_url">Optional: Custom URL</string>
     <string name="custom_url_not_set_or_blank">Custom URL isn\'t set, or is blank. You can go into settings to add a custom URL</string>
     <string name="dark_theme">Dark Theme</string>
-    <string name="data_url_was_blank">Data URL was blank</string>
+    <string name="data_url_was_blank">The %1$s URL was blank, please check your %2$s file and try again</string>
     <string name="delete_all_data">Delete All Data and Shutdown</string>
     <string name="empty">Empty</string>
     <string name="error">Error!</string>
@@ -34,7 +34,7 @@
     <string name="failed_to_process_forecast_data">Failed to process forecast data</string>
     <string name="failed_to_process_weather_data">Failed to correctly process the weather data from your server, specifically the %1$s data</string>
     <string name="fgColour">Widget Foreground Colour Picker</string>
-    <string name="fileURL">Enter the URL to your settings.txt</string>
+    <string name="fileURL">Enter the URL to %1$s</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="forecast">Forecast Page</string>
     <string name="forecast2">Forecast</string>
@@ -42,7 +42,7 @@
     <string name="forecast_daily">Daily</string>
     <string name="forecast_interval">Forecast Interval (if applicable)</string>
     <string name="forecast_type_is_invalid">Forecast type \'%1$s\' is invalid, check your settings file and try again</string>
-    <string name="forecast_url_not_set">Forecast URL not set, edit settings.txt to change</string>
+    <string name="forecast_url_not_set">Forecast URL not set, set it in %1$s</string>
     <string name="hour">hour</string>
     <string name="hours">hours</string>
     <string name="ill_fix_and_try_again">I\'ll Fix It and Try Again</string>
@@ -121,6 +121,7 @@
     <string name="skip">Skip</string>
     <string name="stats2">Statistics</string>
     <string name="still_downloading_forecast_data">Still downloading forecast data</string>
+    <string name="still_downloading_weather_data">Still downloading weather data</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">System Default</string>
     <string name="temperature">Temperature</string>

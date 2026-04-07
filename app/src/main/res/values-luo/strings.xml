@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Chieng\' mar otieno?</string>
     <string name="all_time_stats">Namba duto mag Saa</string>
     <string name="app_theme">Apom mapiyo</string>
-    <string name="attempting_to_download_data_txt">Kuong\'o data mar donjo.txt kowuok kuom sava mari</string>
+    <string name="avg">kwan</string>
     <string name="battery_warning">Chiwo Sign: Tiyo gi yo ma owach malo kanyo nyalo miyo betri obed mapiyo moloyo kaka pile</string>
     <string name="before">kapok</string>
     <string name="bgColour">Rangi mar Yach mar Loch mar Piny</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Gima dwarore: URL mar ng\'ato</string>
     <string name="custom_url_not_set_or_blank">URL mar ng\'ato ok oket, kata onge gimoro. Inyalo donjo e chenro mondo imed URL ma idwaro</string>
     <string name="dark_theme">Thuolo Mang\'eny</string>
-    <string name="data_url_was_blank">URL mar data ne en ma onge gimoro</string>
+    <string name="data_url_was_blank">URL mar %1$s ne ni nono, yie mondo irang fail mari mar %2$s kendo item kendo</string>
     <string name="delete_all_data">Dwar Data Duto kod Duto</string>
     <string name="empty">Ni nono</string>
     <string name="error">Kier!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Ka ok otiyo gi weche ma ng\'ato nyalo ng\'eyogo</string>
     <string name="failed_to_process_weather_data">Ne ok nyal tiyo maber e wi weche mag kor lwasi kowuok e sava mari, ahinya weche mag %1$s</string>
     <string name="fgColour">Rangi mag bungu ma ni e piny ma oko mar Rangi</string>
-    <string name="fileURL">Inyalo keto URL e chenro mari</string>
+    <string name="fileURL">Dwok URL nyaka %1$s</string>
     <string name="force_dark_mode">Goch Mode mar Dhoot</string>
     <string name="forecast">Page mar Oboke</string>
     <string name="forecast2">Nyiso</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Pilepile</string>
     <string name="forecast_interval">Kinde mar geno (ka nyalore)</string>
     <string name="forecast_type_is_invalid">\'%1$s\' Gima ng\'ato nyalo timo mondo oyud geno mar dak nyaka chieng\' en ng\'ado bura ne ng\'ato ka ng\'ato</string>
-    <string name="forecast_url_not_set">URL ma ok oket, loso chenro mag loso.tet mondo olok</string>
+    <string name="forecast_url_not_set">URL mar geno ok oketi, oketi e %1$s</string>
     <string name="hour">saa</string>
     <string name="hours">seche</string>
     <string name="ill_fix_and_try_again">Abiro Fweny kendo Tem kendo</string>
@@ -120,6 +120,7 @@
     <string name="skip">Kadho</string>
     <string name="stats2">kwano</string>
     <string name="still_downloading_forecast_data">Podi keto weche ma ji ng\'ado e wi gik ma ng\'ato nyalo timo</string>
+    <string name="still_downloading_weather_data">Podi agolo weche mag chal mar kor lwasi</string>
     <string name="swipe_lock">Rito Loch mar Sowi</string>
     <string name="system_default">Kido mar Rapar</string>
     <string name="temperature">Liet</string>

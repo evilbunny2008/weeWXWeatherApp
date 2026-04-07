@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">هشدار بعدازظهر؟</string>
     <string name="all_time_stats">آمار همه زمان ها</string>
     <string name="app_theme">تم برنامه</string>
-    <string name="attempting_to_download_data_txt">در حال تلاش برای دانلود data.txt از سرور شما</string>
+    <string name="avg">میانگین</string>
     <string name="battery_warning">هشدار: فعال کردن گزینه بالا ممکن است باتری شما را سریعتر از حد معمول تخلیه کند</string>
     <string name="before">قبل از</string>
     <string name="bgColour">انتخابگر رنگ پس زمینه ویجت</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">اختیاری: URL سفارشی</string>
     <string name="custom_url_not_set_or_blank">URL سفارشی تنظیم نشده است یا خالی است. برای افزودن یک URL سفارشی می توانید به تنظیمات بروید</string>
     <string name="dark_theme">تم تاریک</string>
-    <string name="data_url_was_blank">URL داده خالی بود</string>
+    <string name="data_url_was_blank">URL %1$s خالی بود، لطفاً فایل %2$s خود را بررسی کرده و دوباره امتحان کنید</string>
     <string name="delete_all_data">تمام داده ها را حذف کنید و خاموش کنید</string>
     <string name="empty">خالی</string>
     <string name="error">خطا!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">پردازش داده های پیش بینی انجام نشد</string>
     <string name="failed_to_process_weather_data">پردازش صحیح داده های آب و هوا از سرور شما، به ویژه داده های %1$s انجام نشد</string>
     <string name="fgColour">انتخابگر رنگ پیش زمینه ویجت</string>
-    <string name="fileURL">URL را به settings.txt خود وارد کنید</string>
+    <string name="fileURL">URL %1$s را وارد کنید</string>
     <string name="force_dark_mode">اجباری حالت تاریک</string>
     <string name="forecast">صفحه پیش بینی</string>
     <string name="forecast2">پیش بینی</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">روزانه</string>
     <string name="forecast_interval">فاصله پیش بینی (در صورت وجود)</string>
     <string name="forecast_type_is_invalid">نوع پیش‌بینی \'%1$s\' نامعتبر است، فایل تنظیمات خود را بررسی کنید و دوباره امتحان کنید</string>
-    <string name="forecast_url_not_set">URL پیش‌بینی تنظیم نشده است، settings.txt را برای تغییر ویرایش کنید</string>
+    <string name="forecast_url_not_set">URL پیش‌بینی تنظیم نشده است، آن را در %1$s تنظیم کنید</string>
     <string name="hour">ساعت</string>
     <string name="hours">ساعت</string>
     <string name="ill_fix_and_try_again">درستش میکنم و دوباره امتحان میکنم</string>
@@ -116,6 +116,7 @@
     <string name="skip">پرش کنید</string>
     <string name="stats2">آمار</string>
     <string name="still_downloading_forecast_data">هنوز در حال دانلود داده های پیش بینی است</string>
+    <string name="still_downloading_weather_data">هنوز در حال دانلود اطلاعات آب و هوا</string>
     <string name="swipe_lock">قفل را بکشید</string>
     <string name="system_default">پیش فرض سیستم</string>
     <string name="temperature">دما</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">午後の警報？</string>
     <string name="all_time_stats">すべての時間の統計</string>
     <string name="app_theme">アプリのテーマ</string>
-    <string name="attempting_to_download_data_txt">サーバーから data.txt をダウンロードしようとしています</string>
+    <string name="avg">平均</string>
     <string name="battery_warning">警告: 上記のオプションを有効にすると、バッテリーの消耗が通常より早くなる可能性があります</string>
     <string name="before">前に</string>
     <string name="bgColour">ウィジェットの背景カラーピッカー</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">オプション: カスタム URL</string>
     <string name="custom_url_not_set_or_blank">カスタム URL が設定されていないか、空白です。設定に移動してカスタム URL を追加できます</string>
     <string name="dark_theme">ダークテーマ</string>
-    <string name="data_url_was_blank">データ URL が空白でした</string>
+    <string name="data_url_was_blank">%1$s URL が空白でした。%2$s ファイルを確認して、もう一度試してください。</string>
     <string name="delete_all_data">すべてのデータを削除してシャットダウンする</string>
     <string name="empty">空の</string>
     <string name="error">エラー！</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">予測データの処理に失敗しました</string>
     <string name="failed_to_process_weather_data">サーバーからの気象データ、特に %1$s データを正しく処理できませんでした</string>
     <string name="fgColour">ウィジェットの前景色ピッカー</string>
-    <string name="fileURL">settings.txt の URL を入力します。</string>
+    <string name="fileURL">%1$s に URL を入力してください</string>
     <string name="force_dark_mode">ダークモードを強制する</string>
     <string name="forecast">予測ページ</string>
     <string name="forecast2">予報</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">毎日</string>
     <string name="forecast_interval">予測間隔 (該当する場合)</string>
     <string name="forecast_type_is_invalid">予測タイプ \'%1$s\' は無効です。設定ファイルを確認して、再試行してください。</string>
-    <string name="forecast_url_not_set">予測 URL が設定されていません。settings.txt を編集して変更してください</string>
+    <string name="forecast_url_not_set">予測 URL が設定されていません。%1$s に設定してください</string>
     <string name="hour">時間</string>
     <string name="hours">時間</string>
     <string name="ill_fix_and_try_again">修正してやり直します</string>
@@ -115,6 +115,7 @@
     <string name="skip">スキップ</string>
     <string name="stats2">統計</string>
     <string name="still_downloading_forecast_data">予測データをダウンロード中</string>
+    <string name="still_downloading_weather_data">気象データをダウンロード中</string>
     <string name="swipe_lock">スワイプロック</string>
     <string name="system_default">システムのデフォルト</string>
     <string name="temperature">温度</string>

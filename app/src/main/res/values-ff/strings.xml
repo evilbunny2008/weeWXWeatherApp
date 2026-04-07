@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Jeertinaango kikiiɗe?</string>
     <string name="all_time_stats">Denndaangal limtooji Waktu</string>
     <string name="app_theme">App Theme</string>
-    <string name="attempting_to_download_data_txt">Etaade ƴettude dokke.txt e serveer maa</string>
+    <string name="avg">hakkundeere</string>
     <string name="battery_warning">Jeertinaango: Sobar cuɓal dow ngal ina waawi ustude batte maa ko ɓuri yaawde e ko woowaa</string>
     <string name="before">hideko</string>
     <string name="bgColour">Widget Background Picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Cuɓal: URL Anndu</string>
     <string name="custom_url_not_set_or_blank">URL custom settaaka, walla ko ɓuuɓɗo. Aɗa waawi naatde e dottaaɗe ngam ɓeydude URL keeriiɗo</string>
     <string name="dark_theme">Theme Thark Theme</string>
-    <string name="data_url_was_blank">URL data wonnoo ko blank</string>
+    <string name="data_url_was_blank">URL %1$s ena memi, tiiɗno ƴeewto fiilde maa %2$s enndito</string>
     <string name="delete_all_data">Mumtu denndaangal Doggi e Shutdown</string>
     <string name="empty">Wala kuje</string>
     <string name="error">Harbol!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Ina ŋakki e dokke teskagol</string>
     <string name="failed_to_process_weather_data">Waawaa huutoraade no moƴƴi dokke weeyo ummoraade e serwer maa, teeŋti noon e dokke %1$s</string>
     <string name="fgColour">Widget Color Color Color</string>
-    <string name="fileURL">Naat URL e dottaaɗe maa.txt</string>
+    <string name="fileURL">Winndu URL oo to %1$s</string>
     <string name="force_dark_mode">Mode doole niɓɓere</string>
     <string name="forecast">Hello Forecast</string>
     <string name="forecast2">Larugo ko warata</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Ko wetti</string>
     <string name="forecast_interval">Hakkunde Teskagol (so ina woodi)</string>
     <string name="forecast_type_is_invalid">Nokkuure nde fotaani wonde \'%1$s\' ina moƴƴi, ƴeewto fiilde dottaaɗe maa, ƴeewto-ɗaa kadi</string>
-    <string name="forecast_url_not_set">URL Forecast settaaka, waylude dottaaɗe.txt ngam waylude</string>
+    <string name="forecast_url_not_set">URL teskaare waɗaaka, waɗ ɗum e %1$s</string>
     <string name="hour">njamdi</string>
     <string name="hours">njamɗe</string>
     <string name="ill_fix_and_try_again">Mi Fix It mi etoo kadi</string>
@@ -116,6 +116,7 @@
     <string name="skip">Juwugo</string>
     <string name="stats2">Limlebbi</string>
     <string name="still_downloading_forecast_data">Haa jooni ƴettude dokke teskaaɗe</string>
+    <string name="still_downloading_weather_data">Haa jooni ina ƴetta dokke weeyo</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">Default Siistem</string>
     <string name="temperature">Wulol</string>

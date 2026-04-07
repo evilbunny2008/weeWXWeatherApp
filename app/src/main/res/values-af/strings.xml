@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Middagwaarskuwing?</string>
     <string name="all_time_stats">Alle tye Statistiek</string>
     <string name="app_theme">App Tema</string>
-    <string name="attempting_to_download_data_txt">Probeer tans om data.txt van jou bediener af te laai</string>
+    <string name="avg">gem</string>
     <string name="battery_warning">Waarskuwing: As u bogenoemde opsie aktiveer, kan u battery vinniger as gewoonlik leegmaak</string>
     <string name="before">voor</string>
     <string name="bgColour">Widget agtergrondkleurkieser</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opsioneel: Gepasmaakte URL</string>
     <string name="custom_url_not_set_or_blank">Gepasmaakte URL is nie gestel nie, of is leeg. Jy kan na instellings gaan om \'n pasgemaakte URL by te voeg</string>
     <string name="dark_theme">Donker Tema</string>
-    <string name="data_url_was_blank">Data-URL was leeg</string>
+    <string name="data_url_was_blank">Die %1$s URL was leeg, gaan asseblief jou %2$s lêer na en probeer weer</string>
     <string name="delete_all_data">Vee alle data uit en sluit af</string>
     <string name="empty">Leeg</string>
     <string name="error">Fout!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Kon nie voorspellingsdata verwerk nie</string>
     <string name="failed_to_process_weather_data">Kon nie die weerdata van jou bediener af korrek verwerk nie, spesifiek die %1$s data</string>
     <string name="fgColour">Widget Voorgrond Kleur Kieser</string>
-    <string name="fileURL">Voer die URL na jou settings.txt in</string>
+    <string name="fileURL">Voer die URL na %1$s in</string>
     <string name="force_dark_mode">Dwing donker modus</string>
     <string name="forecast">Voorspelling Bladsy</string>
     <string name="forecast2">Voorspelling</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Daagliks</string>
     <string name="forecast_interval">Voorspellingsinterval (indien van toepassing)</string>
     <string name="forecast_type_is_invalid">Voorspelling tipe \'%1$s\' is ongeldig, gaan jou instellingslêer na en probeer weer</string>
-    <string name="forecast_url_not_set">Voorspelling-URL nie gestel nie, wysig settings.txt om te verander</string>
+    <string name="forecast_url_not_set">Voorspelling-URL nie gestel nie, stel dit in %1$s</string>
     <string name="hour">uur</string>
     <string name="hours">ure</string>
     <string name="ill_fix_and_try_again">Ek sal dit regmaak en weer probeer</string>
@@ -116,6 +116,7 @@
     <string name="skip">Slaan oor</string>
     <string name="stats2">Statistiek</string>
     <string name="still_downloading_forecast_data">Laai nog voorspellingdata af</string>
+    <string name="still_downloading_weather_data">Laai nog steeds weerdata af</string>
     <string name="swipe_lock">Swiep Lock</string>
     <string name="system_default">Stelsel verstek</string>
     <string name="temperature">Temperatuur</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">दुपहर के अलर्ट?</string>
     <string name="all_time_stats">सब समय के आँकड़े</string>
     <string name="app_theme">ऐप थीम 2019।</string>
-    <string name="attempting_to_download_data_txt">अपन सर्वर सँ Download data.txt के प्रयास करब</string>
+    <string name="avg">औसत।</string>
     <string name="battery_warning">चेतावनी: उपरोक्त विकल्प कें सक्षम बनानाय अहां कें बैटरी कें सामान्य सं बेसि तेजी सं निकाल सकएय छै</string>
     <string name="before">पहिने</string>
     <string name="bgColour">विजेट पृष्ठभूमि रंग पिकर</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">वैकल्पिक: कस्टम यूआरएल</string>
     <string name="custom_url_not_set_or_blank">कस्टम यूआरएल सेट नहि अछि, वा खाली अछि. अहाँ एकटा कस्टम यूआरएल जोड़बाक लेल सेटिंग मे जा सकैत छी</string>
     <string name="dark_theme">डार्क थीम 2019।</string>
-    <string name="data_url_was_blank">डाटा यूआरएल खाली छल</string>
+    <string name="data_url_was_blank">%1$s URL खाली छल, कृपया अपन %2$s फाइलकेँ जाँचू आओर फेरसँ प्रयास करू</string>
     <string name="delete_all_data">सब डाटा आ बंद करू</string>
     <string name="empty">खाली</string>
     <string name="error">दोष!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">पूर्वानुमानित आंकड़ा के संसाधित करय मे विफल</string>
     <string name="failed_to_process_weather_data">अहाँक सर्वर सँ मौसम डाटा केँ सही ढंग सँ संसाधित करबा मे विफल रहल, विशेष रूप सँ %1$s डाटा</string>
     <string name="fgColour">विजेट अग्रभूमि रंग पिकर</string>
-    <string name="fileURL">अपन सेटिंग्स पर यूआरएल दर्ज करू.txt</string>
+    <string name="fileURL">%1$s मे यूआरएल दर्ज करू</string>
     <string name="force_dark_mode">बल डार्क मोड 1।</string>
     <string name="forecast">पूर्वानुमान पृष्ठ 2019।</string>
     <string name="forecast2">पुर्वानुमान</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">नित्य</string>
     <string name="forecast_interval">पूर्वानुमान अंतराल (यदि लागू हो) 1.1</string>
     <string name="forecast_type_is_invalid">पूर्वानुमान प्रकार \'%1$s\' अमान्य अछि, अपन सेटिंग्स फाइल चेक करू आ फेरसँ प्रयास करू</string>
-    <string name="forecast_url_not_set">पूर्वानुमान यूआरएल सेट नहि करू, बदलबाक लेल सेटिंग्स.txt संपादित करू</string>
+    <string name="forecast_url_not_set">पूर्वानुमान URL सेट नहि, एकरा %1$s मे सेट करू</string>
     <string name="hour">घंटा</string>
     <string name="hours">घंटा</string>
     <string name="ill_fix_and_try_again">हम एकरा ठीक करब आ फेर प्रयास करब</string>
@@ -120,6 +120,7 @@
     <string name="skip">छोड़नाइ</string>
     <string name="stats2">आँकड़ा 2019।</string>
     <string name="still_downloading_forecast_data">अभी भी पूर्वानुमानित आँकड़ा डाउनलोड कर रहे हैं</string>
+    <string name="still_downloading_weather_data">एखनो मौसमक आंकड़ा डाउनलोड क रहल अछि</string>
     <string name="swipe_lock">स्वाइप ताला 2019।</string>
     <string name="system_default">सिस्टम डिफ़ॉल्ट</string>
     <string name="temperature">तापमान</string>

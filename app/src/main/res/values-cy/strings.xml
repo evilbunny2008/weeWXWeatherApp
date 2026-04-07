@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Rhybudd Prynhawn?</string>
     <string name="all_time_stats">Ystadegau Pob Amser</string>
     <string name="app_theme">Thema Ap</string>
-    <string name="attempting_to_download_data_txt">Ceisio lawrlwytho data.txt o\'ch gweinydd</string>
+    <string name="avg">cyf</string>
     <string name="battery_warning">Rhybudd: Gall galluogi\'r opsiwn uchod ddraenio\'ch batri yn gyflymach nag arfer</string>
     <string name="before">o\'r blaen</string>
     <string name="bgColour">Dewisydd Lliw Cefndir Teclyn</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Dewisol: URL personol</string>
     <string name="custom_url_not_set_or_blank">Nid yw URL personol wedi\'i osod, neu mae\'n wag. Gallwch chi fynd i mewn i leoliadau i ychwanegu URL personol</string>
     <string name="dark_theme">Thema Dywyll</string>
-    <string name="data_url_was_blank">Roedd URL data yn wag</string>
+    <string name="data_url_was_blank">Roedd URL %1$s yn wag, gwiriwch eich ffeil %2$s a cheisiwch eto</string>
     <string name="delete_all_data">Dileu Pob Data a Shutdown</string>
     <string name="empty">Gwag</string>
     <string name="error">Gwall!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Wedi methu prosesu data rhagolwg</string>
     <string name="failed_to_process_weather_data">Wedi methu prosesu\'r data tywydd o\'ch gweinydd yn gywir, yn benodol y data %1$s</string>
     <string name="fgColour">Dewisydd Lliw Blaendir Widget</string>
-    <string name="fileURL">Rhowch yr URL i\'ch gosodiadau.txt</string>
+    <string name="fileURL">Rhowch yr URL i %1$s</string>
     <string name="force_dark_mode">Gorfodi Modd Tywyll</string>
     <string name="forecast">Tudalen Rhagolwg</string>
     <string name="forecast2">Rhagolwg</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Dyddiol</string>
     <string name="forecast_interval">Cyfnod Rhagolwg (os yw\'n berthnasol)</string>
     <string name="forecast_type_is_invalid">Mae math rhagolwg \'%1$s\' yn annilys, gwiriwch eich ffeil gosodiadau a cheisiwch eto</string>
-    <string name="forecast_url_not_set">URL rhagolwg heb ei osod, golygu settings.txt i\'w newid</string>
+    <string name="forecast_url_not_set">URL rhagolwg heb ei osod, gosodwch ef yn %1$s</string>
     <string name="hour">awr</string>
     <string name="hours">oriau</string>
     <string name="ill_fix_and_try_again">\'N annhymerus\' Atgyweirio a Ceisiwch Eto</string>
@@ -120,6 +120,7 @@
     <string name="skip">Sgipio</string>
     <string name="stats2">Ystadegau</string>
     <string name="still_downloading_forecast_data">Yn dal i lawrlwytho data rhagolygon</string>
+    <string name="still_downloading_weather_data">Yn dal i lawrlwytho data tywydd</string>
     <string name="swipe_lock">Clo Swipe</string>
     <string name="system_default">System ddiofyn</string>
     <string name="temperature">Tymheredd</string>

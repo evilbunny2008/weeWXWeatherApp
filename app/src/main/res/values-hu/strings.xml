@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Délutáni riasztás?</string>
     <string name="all_time_stats">Minden idők statisztika</string>
     <string name="app_theme">App téma</string>
-    <string name="attempting_to_download_data_txt">A data.txt fájl letöltése a szerverről</string>
+    <string name="avg">átl.</string>
     <string name="battery_warning">Figyelmeztetés: A fenti opció engedélyezése a szokásosnál gyorsabban lemerítheti az akkumulátort</string>
     <string name="before">előtt</string>
     <string name="bgColour">Widget háttérszínválasztó</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Nem kötelező: Egyéni URL</string>
     <string name="custom_url_not_set_or_blank">Az egyéni URL nincs beállítva, vagy üres. Egyéni URL hozzáadásához lépjen a beállításokba</string>
     <string name="dark_theme">Sötét téma</string>
-    <string name="data_url_was_blank">Az adatok URL-címe üres volt</string>
+    <string name="data_url_was_blank">A %1$s URL üres volt. Kérjük, ellenőrizze a %2$s fájlt, és próbálja újra</string>
     <string name="delete_all_data">Minden adat törlése és leállítás</string>
     <string name="empty">Üres</string>
     <string name="error">Hiba!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Nem sikerült feldolgozni az előrejelzési adatokat</string>
     <string name="failed_to_process_weather_data">Nem sikerült megfelelően feldolgozni a szerveréről származó időjárási adatokat, különösen a %1$s adatokat</string>
     <string name="fgColour">Widget előtér színválasztója</string>
-    <string name="fileURL">Írja be a settings.txt URL-címét</string>
+    <string name="fileURL">Adja meg a %1$s URL-jét</string>
     <string name="force_dark_mode">Sötét mód kényszerítése</string>
     <string name="forecast">Előrejelzés oldal</string>
     <string name="forecast2">Előrejelzés</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Napi</string>
     <string name="forecast_interval">Előrejelzési intervallum (ha van)</string>
     <string name="forecast_type_is_invalid">A \'%1$s\' előrejelzéstípus érvénytelen, ellenőrizze a beállításfájlt, és próbálkozzon újra</string>
-    <string name="forecast_url_not_set">Az előrejelzési URL nincs beállítva. A módosításhoz szerkessze a settings.txt fájlt</string>
+    <string name="forecast_url_not_set">Az előrejelzési URL nincs beállítva, állítsa be a következőben: %1$s</string>
     <string name="hour">óra</string>
     <string name="hours">óra</string>
     <string name="ill_fix_and_try_again">Megjavítom, és megpróbálom újra</string>
@@ -116,6 +116,7 @@
     <string name="skip">Kihagyás</string>
     <string name="stats2">Statisztika</string>
     <string name="still_downloading_forecast_data">Az előrejelzési adatok letöltése még folyamatban van</string>
+    <string name="still_downloading_weather_data">Még folyamatban van az időjárási adatok letöltése</string>
     <string name="swipe_lock">Csúsztassa el a Zárolást</string>
     <string name="system_default">Rendszer alapértelmezett</string>
     <string name="temperature">Hőmérséklet</string>

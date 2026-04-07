@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Middagwaarschuwing?</string>
     <string name="all_time_stats">Statistieken aller tijden</string>
     <string name="app_theme">App-thema</string>
-    <string name="attempting_to_download_data_txt">Er wordt geprobeerd data.txt van uw server te downloaden</string>
+	<string name="avg">gem.</string>
     <string name="battery_warning">Waarschuwing: als u de bovenstaande optie inschakelt, kan uw batterij sneller leeglopen dan normaal</string>
     <string name="before">voor</string>
     <string name="bgColour">Achtergrondkleurkiezer voor widgets</string>
@@ -15,8 +15,7 @@
     <string name="custom_url">Optioneel: aangepaste URL</string>
     <string name="custom_url_not_set_or_blank">Aangepaste URL is niet ingesteld of is leeg. U kunt naar de instellingen gaan om een ​​aangepaste URL toe te voegen</string>
     <string name="dark_theme">Donker thema</string>
-    <string name="data_url_was_blank">Gegevens-URL was leeg</string>
-    <string name="delete_all_data">Verwijder alle gegevens en sluit af</string>
+	<string name="delete_all_data">Verwijder alle gegevens en sluit af</string>
     <string name="empty">Leeg</string>
     <string name="error">Fout!</string>
     <string name="error_occurred_while_attempting_to_update">Er is een fout opgetreden tijdens een poging het gebruik bij te werken</string>
@@ -33,16 +32,14 @@
     <string name="failed_to_process_forecast_data">Kan prognosegegevens niet verwerken</string>
     <string name="failed_to_process_weather_data">Kan de weersgegevens van uw server, met name de %1$s gegevens, niet correct verwerken</string>
     <string name="fgColour">Widget-voorgrondkleurkiezer</string>
-    <string name="fileURL">Voer de URL naar uw settings.txt in</string>
-    <string name="force_dark_mode">Forceer de donkere modus</string>
+	<string name="force_dark_mode">Forceer de donkere modus</string>
     <string name="forecast">Prognosepagina</string>
     <string name="forecast2">Voorspelling</string>
     <string name="forecast_6hourly">6 uur</string>
     <string name="forecast_daily">Dagelijks</string>
     <string name="forecast_interval">Prognose-interval (indien van toepassing)</string>
     <string name="forecast_type_is_invalid">Prognosetype \'%1$s\' is ongeldig. Controleer uw instellingenbestand en probeer het opnieuw</string>
-    <string name="forecast_url_not_set">Prognose-URL niet ingesteld. Bewerk settings.txt om dit te wijzigen</string>
-    <string name="hour">uur</string>
+	<string name="hour">uur</string>
     <string name="hours">uur</string>
     <string name="ill_fix_and_try_again">Ik zal het oplossen en het opnieuw proberen</string>
     <string name="indoor_readings">Binnenmetingen weergeven?</string>

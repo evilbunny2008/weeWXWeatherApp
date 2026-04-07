@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">ಮಧ್ಯಾಹ್ನದ ಎಚ್ಚರಿಕೆ?</string>
     <string name="all_time_stats">ಸಾರ್ವಕಾಲಿಕ ಅಂಕಿಅಂಶಗಳು</string>
     <string name="app_theme">ಅಪ್ಲಿಕೇಶನ್ ಥೀಮ್</string>
-    <string name="attempting_to_download_data_txt">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ data.txt ಅನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲು ಪ್ರಯತ್ನಿಸಲಾಗುತ್ತಿದೆ</string>
+    <string name="avg">ಸರಾಸರಿ</string>
     <string name="battery_warning">ಎಚ್ಚರಿಕೆ: ಮೇಲಿನ ಆಯ್ಕೆಯನ್ನು ಸಕ್ರಿಯಗೊಳಿಸುವುದರಿಂದ ನಿಮ್ಮ ಬ್ಯಾಟರಿಯು ಸಾಮಾನ್ಯಕ್ಕಿಂತ ವೇಗವಾಗಿ ಖಾಲಿಯಾಗಬಹುದು</string>
     <string name="before">ಮೊದಲು</string>
     <string name="bgColour">ವಿಜೆಟ್ ಹಿನ್ನೆಲೆ ಬಣ್ಣ ಪಿಕ್ಕರ್</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">ಐಚ್ಛಿಕ: ಕಸ್ಟಮ್ URL</string>
     <string name="custom_url_not_set_or_blank">ಕಸ್ಟಮ್ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ ಅಥವಾ ಖಾಲಿಯಾಗಿದೆ. ಕಸ್ಟಮ್ URL ಅನ್ನು ಸೇರಿಸಲು ನೀವು ಸೆಟ್ಟಿಂಗ್‌ಗಳಿಗೆ ಹೋಗಬಹುದು</string>
     <string name="dark_theme">ಡಾರ್ಕ್ ಥೀಮ್</string>
-    <string name="data_url_was_blank">ಡೇಟಾ URL ಖಾಲಿಯಾಗಿದೆ</string>
+    <string name="data_url_was_blank">%1$s URL ಖಾಲಿಯಾಗಿದೆ, ದಯವಿಟ್ಟು ನಿಮ್ಮ %2$s ಫೈಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ ಹಾಗೂ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
     <string name="delete_all_data">ಎಲ್ಲಾ ಡೇಟಾವನ್ನು ಅಳಿಸಿ ಮತ್ತು ಸ್ಥಗಿತಗೊಳಿಸಿ</string>
     <string name="empty">ಖಾಲಿ</string>
     <string name="error">ದೋಷ!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">ಮುನ್ಸೂಚನೆ ಡೇಟಾವನ್ನು ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ವಿಫಲವಾಗಿದೆ</string>
     <string name="failed_to_process_weather_data">ನಿಮ್ಮ ಸರ್ವರ್‌ನಿಂದ ಹವಾಮಾನ ಡೇಟಾವನ್ನು ಸರಿಯಾಗಿ ಪ್ರಕ್ರಿಯೆಗೊಳಿಸಲು ವಿಫಲವಾಗಿದೆ, ನಿರ್ದಿಷ್ಟವಾಗಿ %1$s ಡೇಟಾ</string>
     <string name="fgColour">ವಿಜೆಟ್ ಫೋರ್ಗ್ರೌಂಡ್ ಕಲರ್ ಪಿಕ್ಕರ್</string>
-    <string name="fileURL">ನಿಮ್ಮ settings.txt ಗೆ URL ಅನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="fileURL">URL ಅನ್ನು %1$s ಗೆ ನಮೂದಿಸಿ</string>
     <string name="force_dark_mode">ಫೋರ್ಸ್ ಡಾರ್ಕ್ ಮೋಡ್</string>
     <string name="forecast">ಮುನ್ಸೂಚನೆ ಪುಟ</string>
     <string name="forecast2">ಮುನ್ಸೂಚನೆ</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">ಪ್ರತಿದಿನ</string>
     <string name="forecast_interval">ಮುನ್ಸೂಚನೆಯ ಮಧ್ಯಂತರ (ಅನ್ವಯಿಸಿದರೆ)</string>
     <string name="forecast_type_is_invalid">ಮುನ್ಸೂಚನೆ ಪ್ರಕಾರ \'%1$s\' ಅಮಾನ್ಯವಾಗಿದೆ, ನಿಮ್ಮ ಸೆಟ್ಟಿಂಗ್‌ಗಳ ಫೈಲ್ ಅನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
-    <string name="forecast_url_not_set">ಮುನ್ಸೂಚನೆ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ, ಬದಲಾಯಿಸಲು settings.txt ಅನ್ನು ಎಡಿಟ್ ಮಾಡಿ</string>
+    <string name="forecast_url_not_set">ಮುನ್ಸೂಚನೆ URL ಅನ್ನು ಹೊಂದಿಸಲಾಗಿಲ್ಲ, ಅದನ್ನು %1$s ನಲ್ಲಿ ಹೊಂದಿಸಿ</string>
     <string name="hour">ಗಂಟೆ</string>
     <string name="hours">ಗಂಟೆಗಳು</string>
     <string name="ill_fix_and_try_again">ನಾನು ಅದನ್ನು ಸರಿಪಡಿಸುತ್ತೇನೆ ಮತ್ತು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸುತ್ತೇನೆ</string>
@@ -116,6 +116,7 @@
     <string name="skip">ಬಿಟ್ಟುಬಿಡಿ</string>
     <string name="stats2">ಅಂಕಿಅಂಶಗಳು</string>
     <string name="still_downloading_forecast_data">ಇನ್ನೂ ಮುನ್ಸೂಚನೆ ಡೇಟಾವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ</string>
+    <string name="still_downloading_weather_data">ಇನ್ನೂ ಹವಾಮಾನ ಡೇಟಾವನ್ನು ಡೌನ್‌ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ</string>
     <string name="swipe_lock">ಸ್ವೈಪ್ ಲಾಕ್</string>
     <string name="system_default">ಸಿಸ್ಟಮ್ ಡೀಫಾಲ್ಟ್</string>
     <string name="temperature">ತಾಪಮಾನ</string>

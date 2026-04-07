@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Middeis warskôging?</string>
     <string name="all_time_stats">Alle tiid Statistics</string>
     <string name="app_theme">App Tema</string>
-    <string name="attempting_to_download_data_txt">Besiket te downloaden data.txt fan jo tsjinner</string>
+    <string name="avg">gem</string>
     <string name="battery_warning">Warskôging: It ynskeakeljen fan de boppesteande opsje kin jo batterij rapper leegje dan normaal</string>
     <string name="before">foar</string>
     <string name="bgColour">Widget Background Color Picker</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Opsjoneel: Oanpaste URL</string>
     <string name="custom_url_not_set_or_blank">Oanpaste URL is net ynsteld, of is leech. Jo kinne yn ynstellings gean om in oanpaste URL ta te foegjen</string>
     <string name="dark_theme">Dark Tema</string>
-    <string name="data_url_was_blank">Gegevens-URL wie leech</string>
+    <string name="data_url_was_blank">De %1$s URL wie leech, kontrolearje jo %2$s triem en besykje it nochris</string>
     <string name="delete_all_data">Alle gegevens wiskje en ôfslute</string>
     <string name="empty">Leech</string>
     <string name="error">Fersin!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">It ferwurkjen fan prognosegegevens is net slagge</string>
     <string name="failed_to_process_weather_data">Mislearre om de waargegevens fan jo tsjinner goed te ferwurkjen, spesifyk de %1$s gegevens</string>
     <string name="fgColour">Widget Foargrûn Color Picker</string>
-    <string name="fileURL">Fier de URL yn nei jo settings.txt</string>
+    <string name="fileURL">Fier de URL yn nei %1$s</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="forecast">Foarsizzing Side</string>
     <string name="forecast2">Foarsizzing</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Deistich</string>
     <string name="forecast_interval">Prognose-ynterval (as fan tapassing)</string>
     <string name="forecast_type_is_invalid">Foarsizzingstype \'%1$s\' is ûnjildich, kontrolearje jo ynstellingsbestân en besykje it nochris</string>
-    <string name="forecast_url_not_set">Prognose URL net ynsteld, bewurkje settings.txt om te feroarjen</string>
+    <string name="forecast_url_not_set">Prognose URL net ynsteld, set it yn %1$s</string>
     <string name="hour">oere</string>
     <string name="hours">oeren</string>
     <string name="ill_fix_and_try_again">Ik reparearje it en besykje it nochris</string>
@@ -116,6 +116,7 @@
     <string name="skip">Oerslaan</string>
     <string name="stats2">Statistyk</string>
     <string name="still_downloading_forecast_data">Noch ynladen prognosegegevens</string>
+    <string name="still_downloading_weather_data">Wettergegevens noch downloade</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">Systeem Standert</string>
     <string name="temperature">Temperatuer</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alerte de l\'après-midi?</string>
     <string name="all_time_stats">Statistiques de tous les temps</string>
     <string name="app_theme">Thème de l\'application</string>
-    <string name="attempting_to_download_data_txt">Tentative de téléchargement data.txt depuis votre serveur</string>
+    <string name="avg">moy.</string>
     <string name="battery_warning">Attention : l\'activation de l\'option ci-dessus peut vider votre batterie plus rapidement que d\'habitude</string>
     <string name="before">avant</string>
     <string name="bgColour">Sélecteur de couleur d\'arrière-plan du widget</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Facultatif : URL personnalisée</string>
     <string name="custom_url_not_set_or_blank">L\'URL personnalisée n\'est pas définie ou est vide. Vous pouvez accéder aux paramètres pour ajouter une URL personnalisée</string>
     <string name="dark_theme">Thème sombre</string>
-    <string name="data_url_was_blank">L\'URL des données était vide</string>
+    <string name="data_url_was_blank">L\'URL %1$s était vide, veuillez vérifier votre fichier %2$s et réessayer</string>
     <string name="delete_all_data">Supprimer toutes les données et arrêter</string>
     <string name="empty">Vide</string>
     <string name="error">Erreur!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Échec du traitement des données de prévision</string>
     <string name="failed_to_process_weather_data">Échec du traitement correct des données météorologiques de votre serveur, en particulier les données %1$s</string>
     <string name="fgColour">Sélecteur de couleurs de premier plan du widget</string>
-    <string name="fileURL">Entrez l\'URL de votre fichier settings.txt</string>
+    <string name="fileURL">Entrez l\'URL de %1$s</string>
     <string name="force_dark_mode">Forcer le mode sombre</string>
     <string name="forecast">Page de prévisions</string>
     <string name="forecast2">Prévision</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Tous les jours</string>
     <string name="forecast_interval">Intervalle de prévision (le cas échéant)</string>
     <string name="forecast_type_is_invalid">Le type de prévision \'%1$s\' n\'est pas valide, vérifiez votre fichier de paramètres et réessayez</string>
-    <string name="forecast_url_not_set">URL de prévision non définie, modifiez settings.txt pour la modifier</string>
+    <string name="forecast_url_not_set">L\'URL de prévision n\'est pas définie, définissez-la dans %1$s</string>
     <string name="hour">heure</string>
     <string name="hours">heures</string>
     <string name="ill_fix_and_try_again">Je vais le réparer et réessayer</string>
@@ -117,6 +117,7 @@
     <string name="skip">Sauter</string>
     <string name="stats2">Statistiques</string>
     <string name="still_downloading_forecast_data">Je télécharge toujours les données de prévision</string>
+    <string name="still_downloading_weather_data">Je télécharge toujours les données météo</string>
     <string name="swipe_lock">Verrouillage par balayage</string>
     <string name="system_default">Système par défaut</string>
     <string name="temperature">Température</string>

@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Arratsaldeko alerta?</string>
     <string name="all_time_stats">Denbora guztietako estatistikak</string>
     <string name="app_theme">Aplikazioaren gaia</string>
-    <string name="attempting_to_download_data_txt">Data.txt zure zerbitzaritik deskargatzen saiatzen</string>
+    <string name="avg">batez beste</string>
     <string name="battery_warning">Abisua: goiko aukera gaituz gero, baliteke bateria ohi baino azkarrago agortzea</string>
     <string name="before">aurretik</string>
     <string name="bgColour">Widgetaren atzeko planoko kolore-hautatzailea</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Aukerakoa: URL pertsonalizatua</string>
     <string name="custom_url_not_set_or_blank">URL pertsonalizatua ez dago ezarrita edo hutsik dago. Ezarpenetara joan zaitezke URL pertsonalizatu bat gehitzeko</string>
     <string name="dark_theme">Gai iluna</string>
-    <string name="data_url_was_blank">Datuen URLa hutsik zegoen</string>
+    <string name="data_url_was_blank">%1$s URLa hutsik zegoen. Egiaztatu %2$s fitxategia eta saiatu berriro</string>
     <string name="delete_all_data">Ezabatu datu guztiak eta itzali</string>
     <string name="empty">Hutsik</string>
     <string name="error">Errorea!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Ezin izan dira prozesatu iragarpen-datuak</string>
     <string name="failed_to_process_weather_data">Ezin izan dira prozesatu zure zerbitzariko eguraldiaren datuak, zehazki %1$s datuak</string>
     <string name="fgColour">Widgetaren lehen planoko kolore-hautatzailea</string>
-    <string name="fileURL">Sartu URLa zure settings.txt-en</string>
+    <string name="fileURL">Sartu %1$s helbiderako URLa</string>
     <string name="force_dark_mode">Indar iluna modua</string>
     <string name="forecast">Aurreikuspen orria</string>
     <string name="forecast2">Iragarpena</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Egunero</string>
     <string name="forecast_interval">Iragarpen tartea (hala badagokio)</string>
     <string name="forecast_type_is_invalid">\'%1$s\' iragarpen mota ez da baliozkoa, egiaztatu ezarpenen fitxategia eta saiatu berriro</string>
-    <string name="forecast_url_not_set">Iragarpen URLa ez da ezarri, editatu settings.txt aldatzeko</string>
+    <string name="forecast_url_not_set">Iragarpenaren URLa ez da ezarri, ezarri %1$s en</string>
     <string name="hour">ordua</string>
     <string name="hours">orduak</string>
     <string name="ill_fix_and_try_again">Konpondu eta berriro saiatuko naiz</string>
@@ -116,6 +116,7 @@
     <string name="skip">Saltatu</string>
     <string name="stats2">Estatistikak</string>
     <string name="still_downloading_forecast_data">Oraindik iragarpen datuak deskargatzen</string>
+    <string name="still_downloading_weather_data">Oraindik eguraldiaren datuak deskargatzen</string>
     <string name="swipe_lock">Irristatu blokeoa</string>
     <string name="system_default">Sistema lehenetsia</string>
     <string name="temperature">Tenperatura</string>

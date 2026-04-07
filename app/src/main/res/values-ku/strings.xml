@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Alert piştî nîvro?</string>
     <string name="all_time_stats">All Time Statistics</string>
     <string name="app_theme">Mijara App</string>
-    <string name="attempting_to_download_data_txt">Hewl didin data.txt ji servera we dakêşin</string>
+    <string name="avg">avg</string>
     <string name="battery_warning">Hişyarî: Çalakkirina vebijarka jorîn dibe ku battera we ji ya berê zûtir zuha bike</string>
     <string name="before">berî</string>
     <string name="bgColour">Hilbijêra Rengê Paşgira Wîdgetê</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Bijarî: URL-ya xwerû</string>
     <string name="custom_url_not_set_or_blank">URL-ya xwerû nehatiye danîn, an jî vala ye. Hûn dikarin biçin mîhengan da ku URLek xwerû lê zêde bikin</string>
     <string name="dark_theme">Mijara tarî</string>
-    <string name="data_url_was_blank">URLa daneyê vala bû</string>
+    <string name="data_url_was_blank">URLa %1$s vala bû, ji kerema xwe pelê %2$s xwe kontrol bike û dîsa biceribîne</string>
     <string name="delete_all_data">Hemî Daneyên jêbirin û Rakirin</string>
     <string name="empty">Vala</string>
     <string name="error">Şaşî!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">Pêvajoya daneyên pêşbîniyê bi ser neket</string>
     <string name="failed_to_process_weather_data">Pêvajoya rast daneyên hewayê ji servera we, bi taybetî daneyên %1$s bi ser neket</string>
     <string name="fgColour">Widget Hilbijêra Rengê Pêşî</string>
-    <string name="fileURL">URL-a xwe binivîse settings.txt</string>
+    <string name="fileURL">URLa %1$s binivîsin</string>
     <string name="force_dark_mode">Force Dark Mode</string>
     <string name="forecast">Rûpelê Pêşbîniyê</string>
     <string name="forecast2">Pêşgotin</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Rojane</string>
     <string name="forecast_interval">Navbera Pêşbîniyê (heke hebe)</string>
     <string name="forecast_type_is_invalid">Cureya pêşbîniya \'%1$s\' nederbasdar e, pelê mîhengên xwe kontrol bikin û dîsa biceribînin</string>
-    <string name="forecast_url_not_set">URL-ya pêşbîniyê nehatiye danîn, settings.txt biguherîne ku biguhere</string>
+    <string name="forecast_url_not_set">URL-ya pêşbîniyê nehatiye danîn, wê li %1$s saz bike</string>
     <string name="hour">seet</string>
     <string name="hours">saetan</string>
     <string name="ill_fix_and_try_again">Ez ê wê rast bikim û dîsa biceribînim</string>
@@ -116,6 +116,7 @@
     <string name="skip">Hilperkîn</string>
     <string name="stats2">Jimare</string>
     <string name="still_downloading_forecast_data">Hê jî daneyên pêşbîniyê dakêşin</string>
+    <string name="still_downloading_weather_data">Hê jî daneyên hewayê dakêşin</string>
     <string name="swipe_lock">Swipe Lock</string>
     <string name="system_default">System Default</string>
     <string name="temperature">Germî</string>

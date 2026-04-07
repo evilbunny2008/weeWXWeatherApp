@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">বিকেলের সতর্কতা?</string>
     <string name="all_time_stats">সর্বকালের পরিসংখ্যান</string>
     <string name="app_theme">অ্যাপ থিম</string>
-    <string name="attempting_to_download_data_txt">আপনার সার্ভার থেকে data.txt ডাউনলোড করার চেষ্টা করা হচ্ছে</string>
+    <string name="avg">গড়</string>
     <string name="battery_warning">সতর্কতা: উপরের বিকল্পটি সক্ষম করলে আপনার ব্যাটারি স্বাভাবিকের চেয়ে দ্রুত নিষ্কাশন হতে পারে</string>
     <string name="before">আগে</string>
     <string name="bgColour">উইজেট ব্যাকগ্রাউন্ড কালার পিকার</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">ঐচ্ছিক: কাস্টম URL</string>
     <string name="custom_url_not_set_or_blank">কাস্টম URL সেট করা নেই, বা ফাঁকা। আপনি একটি কাস্টম URL যোগ করতে সেটিংসে যেতে পারেন৷</string>
     <string name="dark_theme">ডার্ক থিম</string>
-    <string name="data_url_was_blank">ডেটা URL ফাঁকা ছিল</string>
+    <string name="data_url_was_blank">%1$s URLটি ফাঁকা ছিল, অনুগ্রহ করে আপনার %2$s ফাইলটি পরীক্ষা করে আবার চেষ্টা করুন৷</string>
     <string name="delete_all_data">সমস্ত ডেটা এবং শাটডাউন মুছুন</string>
     <string name="empty">খালি</string>
     <string name="error">ত্রুটি!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">পূর্বাভাস তথ্য প্রক্রিয়া করতে ব্যর্থ</string>
     <string name="failed_to_process_weather_data">আপনার সার্ভার থেকে আবহাওয়ার ডেটা সঠিকভাবে প্রক্রিয়া করতে ব্যর্থ হয়েছে, বিশেষ করে %1$s ডেটা৷</string>
     <string name="fgColour">উইজেট ফোরগ্রাউন্ড কালার পিকার</string>
-    <string name="fileURL">আপনার settings.txt-এ URL লিখুন</string>
+    <string name="fileURL">%1$s এ URL লিখুন</string>
     <string name="force_dark_mode">ফোর্স ডার্ক মোড</string>
     <string name="forecast">পূর্বাভাস পৃষ্ঠা</string>
     <string name="forecast2">পূর্বাভাস</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">দৈনিক</string>
     <string name="forecast_interval">পূর্বাভাসের ব্যবধান (যদি প্রযোজ্য হয়)</string>
     <string name="forecast_type_is_invalid">পূর্বাভাসের ধরন \'%1$s\' অবৈধ, আপনার সেটিংস ফাইল চেক করুন এবং আবার চেষ্টা করুন।</string>
-    <string name="forecast_url_not_set">পূর্বাভাস URL সেট করা হয়নি, পরিবর্তন করতে settings.txt সম্পাদনা করুন</string>
+    <string name="forecast_url_not_set">পূর্বাভাস URL সেট করা হয়নি, এটি %1$s এ সেট করুন৷</string>
     <string name="hour">ঘন্টা</string>
     <string name="hours">ঘন্টা</string>
     <string name="ill_fix_and_try_again">আমি এটা ঠিক করব এবং আবার চেষ্টা করব</string>
@@ -116,6 +116,7 @@
     <string name="skip">এড়িয়ে যান</string>
     <string name="stats2">পরিসংখ্যান</string>
     <string name="still_downloading_forecast_data">এখনও পূর্বাভাসের ডেটা ডাউনলোড করা হচ্ছে</string>
+    <string name="still_downloading_weather_data">এখনও আবহাওয়ার ডেটা ডাউনলোড করা হচ্ছে</string>
     <string name="swipe_lock">সোয়াইপ লক</string>
     <string name="system_default">সিস্টেম ডিফল্ট</string>
     <string name="temperature">তাপমাত্রা</string>

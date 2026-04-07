@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">Matohi o te ahiahi?</string>
     <string name="all_time_stats">Tauanga Katoa</string>
     <string name="app_theme">Kaupapa taupānga</string>
-    <string name="attempting_to_download_data_txt">Te ngana i te tango raraunga.txt mai i to kaituku</string>
+    <string name="avg">toharite</string>
     <string name="battery_warning">Whakatupato: Ka taea e te whiringa i runga ake nei ka tere te rere o to pākahiko i te waa</string>
     <string name="before">i mua</string>
     <string name="bgColour">Widget papamuri papamuri tae</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">Kōwhiringa: URL ritenga</string>
     <string name="custom_url_not_set_or_blank">Kaore i te tautuhia te URL ritenga, he waatea ranei. Ka taea e koe te haere ki nga tautuhinga ki te taapiri i tetahi URL ritenga</string>
     <string name="dark_theme">Kaupapa pouri</string>
-    <string name="data_url_was_blank">Ko te URL Raraunga he waatea</string>
+    <string name="data_url_was_blank">Ko te %1$s URL i takoto kau, tirohia to kōnae %2$s ka ngana ano</string>
     <string name="delete_all_data">Mukua nga raraunga katoa me te kati</string>
     <string name="empty">Tahanga</string>
     <string name="error">Hapa!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">I rahua te tukatuka i nga raraunga tohu</string>
     <string name="failed_to_process_weather_data">I rahua te tukatuka tika i nga raraunga huarere mai i to tuumau, ina koa ko nga raraunga %1$s</string>
     <string name="fgColour">Te papa perehana papaa</string>
-    <string name="fileURL">Whakauruhia te URL ki o tautuhinga.txt</string>
+    <string name="fileURL">Whakauruhia te URL ki %1$s</string>
     <string name="force_dark_mode">Te aratau pouri pouri</string>
     <string name="forecast">Whārangi matapae</string>
     <string name="forecast2">Matakite</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">Ia rā</string>
     <string name="forecast_interval">Wā Matapae (mehemea e hāngai ana)</string>
     <string name="forecast_type_is_invalid">Momo matapae \'%1$s\' he muhu, tirohia to kōnae tautuhinga ka ngana ano</string>
-    <string name="forecast_url_not_set">URL matapae kaore i te tautuhia, whakatika settings.txt ki te huri</string>
+    <string name="forecast_url_not_set">Karekau i tautuhia te URL matapae, tautuhia ki %1$s</string>
     <string name="hour">haora</string>
     <string name="hours">haora</string>
     <string name="ill_fix_and_try_again">Ka whakatika ahau ka ngana ano</string>
@@ -120,6 +120,7 @@
     <string name="skip">Tīpoka</string>
     <string name="stats2">Tatauranga</string>
     <string name="still_downloading_forecast_data">Ka tango tonu i nga raraunga matapae</string>
+    <string name="still_downloading_weather_data">Kei te tikiake tonu nga raraunga huarere</string>
     <string name="swipe_lock">Katihia te raka</string>
     <string name="system_default">Te taunoa o te punaha</string>
     <string name="temperature">Te pāmahana</string>

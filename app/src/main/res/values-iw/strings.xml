@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">התראה אחר הצהריים?</string>
     <string name="all_time_stats">סטטיסטיקות של כל הזמנים</string>
     <string name="app_theme">ערכת נושא לאפליקציה</string>
-    <string name="attempting_to_download_data_txt">מנסה להוריד data.txt מהשרת שלך</string>
+    <string name="avg">ממוצע</string>
     <string name="battery_warning">אזהרה: הפעלת האפשרות לעיל עלולה לרוקן את הסוללה מהר מהרגיל</string>
     <string name="before">לִפנֵי</string>
     <string name="bgColour">בוחר צבעי רקע יישומון</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">אופציונלי: כתובת אתר מותאמת אישית</string>
     <string name="custom_url_not_set_or_blank">כתובת אתר מותאמת אישית לא מוגדרת, או שהיא ריקה. אתה יכול להיכנס להגדרות כדי להוסיף כתובת אתר מותאמת אישית</string>
     <string name="dark_theme">נושא אפל</string>
-    <string name="data_url_was_blank">כתובת האתר של הנתונים הייתה ריקה</string>
+    <string name="data_url_was_blank">כתובת האתר %1$s הייתה ריקה, אנא בדוק את קובץ %2$s ונסה שוב</string>
     <string name="delete_all_data">מחק את כל הנתונים וכיבוי</string>
     <string name="empty">רֵיק</string>
     <string name="error">שְׁגִיאָה!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">עיבוד נתוני התחזית נכשל</string>
     <string name="failed_to_process_weather_data">נכשל עיבוד נכון של נתוני מזג האוויר מהשרת שלך, במיוחד הנתונים של %1$s</string>
     <string name="fgColour">בוחר צבעי חזית יישומון</string>
-    <string name="fileURL">הזן את כתובת האתר ל- settings.txt שלך</string>
+    <string name="fileURL">הזן את כתובת האתר אל %1$s</string>
     <string name="force_dark_mode">כפה מצב כהה</string>
     <string name="forecast">עמוד תחזית</string>
     <string name="forecast2">תַחֲזִית</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">יוֹמִי</string>
     <string name="forecast_interval">מרווח תחזית (אם רלוונטי)</string>
     <string name="forecast_type_is_invalid">סוג התחזית \'%1$s\' אינו חוקי, בדוק את קובץ ההגדרות ונסה שוב</string>
-    <string name="forecast_url_not_set">כתובת האתר לתחזית לא מוגדרת, ערוך את settings.txt כדי לשנות</string>
+    <string name="forecast_url_not_set">כתובת אתר תחזית לא מוגדרת, הגדר אותה ב %1$s</string>
     <string name="hour">שָׁעָה</string>
     <string name="hours">שעות</string>
     <string name="ill_fix_and_try_again">אני אתקן ואנסה שוב</string>
@@ -117,6 +117,7 @@
     <string name="skip">לְדַלֵג</string>
     <string name="stats2">סטָטִיסטִיקָה</string>
     <string name="still_downloading_forecast_data">עדיין מוריד נתוני תחזית</string>
+    <string name="still_downloading_weather_data">עדיין מוריד נתוני מזג אוויר</string>
     <string name="swipe_lock">נעילת החלקה</string>
     <string name="system_default">מערכת ברירת מחדל</string>
     <string name="temperature">טֶמפֶּרָטוּרָה</string>

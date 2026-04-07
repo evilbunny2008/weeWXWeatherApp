@@ -2733,13 +2733,16 @@ class weeWXAppCommon
 		if(jsonObject != null && jsonObject.length() != 0)
 			has_json_combined = true;
 
+		String data_url = getAndroidString(R.string.data_url_was_blank);
+
 		String[] json_url = new String[json_keys.length];
 		for(int i = 0; i < json_keys.length; i++)
 		{
 			if(!KeyValue.isPrefSet(json_keys[i] + "_url"))
 			{
 				LogMessage("getWeather() json_keys[" + i + "]_url isn't set...");
-				KeyValue.putVar("LastWeatherError", getAndroidString(R.string.data_url_was_blank));
+				KeyValue.putVar("LastWeatherError", String.format(Locale.getDefault(), data_url,
+						json_labels[i], "inigo-settings.txt"));
 				return false;
 			}
 
@@ -2747,7 +2750,8 @@ class weeWXAppCommon
 			if(json_url[i] == null || json_url[i].isBlank())
 			{
 				LogMessage("getWeather() json_keys[" + i + "]_url == null || json_keys[" + i + "]_url.isBlank()...");
-				KeyValue.putVar("LastWeatherError", getAndroidString(R.string.data_url_was_blank));
+				KeyValue.putVar("LastWeatherError", String.format(Locale.getDefault(), data_url,
+										json_labels[i], "inigo-settings.txt"));
 				return false;
 			}
 
@@ -2795,7 +2799,7 @@ class weeWXAppCommon
 		if(!forced && !hasBootedFully && !calledFromweeWXApp)
 		{
 			LogMessage("getWeather() Hasn't booted fully and wasn't called by weeWXApp and wasn't forced, skipping...");
-			KeyValue.putVar("LastWeatherError", getAndroidString(R.string.attempting_to_download_data_txt));
+			KeyValue.putVar("LastWeatherError", getAndroidString(R.string.still_downloading_weather_data));
 			return false;
 		}
 
@@ -4247,8 +4251,10 @@ class weeWXAppCommon
 		String forecast_url = (String)KeyValue.readVar("FORECAST_URL", "");
 		if(forecast_url == null || forecast_url.isBlank())
 		{
+			String tmpStr = getAndroidString(R.string.forecast_url_not_set);
+			tmpStr = String.format(Locale.getDefault(), tmpStr, "inigo-settings.txt");
 			LogMessage("getForecast() FORECAST_URL == null || isBlank(), skipping...", KeyValue.w);
-			KeyValue.putVar("LastForecastError", getAndroidString(R.string.forecast_url_not_set));
+			KeyValue.putVar("LastForecastError", tmpStr);
 			return false;
 		}
 
@@ -4597,7 +4603,9 @@ class weeWXAppCommon
 
 		if(url == null || url.isBlank())
 		{
-			KeyValue.putVar("LastForecastError", getAndroidString(R.string.forecast_url_not_set));
+			String tmpStr = getAndroidString(R.string.forecast_url_not_set);
+			tmpStr = String.format(Locale.getDefault(), tmpStr, "inigo-settings.txt");
+			KeyValue.putVar("LastForecastError", tmpStr);
 			return false;
 		}
 

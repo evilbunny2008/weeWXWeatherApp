@@ -145,12 +145,12 @@ class KeyValue
 
 				labels.put(key, label);
 				formats.put(key, format);
-			} else {
-				LogMessage("key: " + key);
-				LogMessage("group_name: " + group_name);
-				LogMessage("label_dict.has(group_name): " + label_dict.has(group_name));
-				LogMessage("format_dict.has(group_name): " + format_dict.has(group_name));
 			}
+
+//				LogMessage("key: " + key);
+//				LogMessage("group_name: " + group_name);
+//				LogMessage("label_dict.has(group_name): " + label_dict.has(group_name));
+//				LogMessage("format_dict.has(group_name): " + format_dict.has(group_name));
 		}
 
 		keys = obs_group_dict.keys();

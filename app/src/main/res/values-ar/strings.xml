@@ -6,7 +6,7 @@
     <string name="afternoon_temp_alert">تنبيه بعد الظهر؟</string>
     <string name="all_time_stats">جميع إحصائيات الوقت</string>
     <string name="app_theme">موضوع التطبيق</string>
-    <string name="attempting_to_download_data_txt">محاولة تنزيل data.txt من الخادم الخاص بك</string>
+    <string name="avg">متوسط</string>
     <string name="battery_warning">تحذير: قد يؤدي تمكين الخيار أعلاه إلى استنزاف البطارية بشكل أسرع من المعتاد</string>
     <string name="before">قبل</string>
     <string name="bgColour">القطعة لون الخلفية المنتقى</string>
@@ -15,7 +15,7 @@
     <string name="custom_url">اختياري: عنوان URL مخصص</string>
     <string name="custom_url_not_set_or_blank">لم يتم تعيين عنوان URL المخصص، أو أنه فارغ. يمكنك الدخول إلى الإعدادات لإضافة عنوان URL مخصص</string>
     <string name="dark_theme">موضوع الظلام</string>
-    <string name="data_url_was_blank">عنوان URL للبيانات كان فارغًا</string>
+    <string name="data_url_was_blank">عنوان URL %1$s كان فارغًا، يرجى التحقق من ملف %2$s والمحاولة مرة أخرى</string>
     <string name="delete_all_data">حذف كافة البيانات وإيقاف التشغيل</string>
     <string name="empty">فارغ</string>
     <string name="error">خطأ!</string>
@@ -33,7 +33,7 @@
     <string name="failed_to_process_forecast_data">فشل في معالجة بيانات التنبؤ</string>
     <string name="failed_to_process_weather_data">فشلت معالجة بيانات الطقس من الخادم الخاص بك بشكل صحيح، وتحديدًا بيانات %1$s</string>
     <string name="fgColour">القطعة منتقي الألوان الأمامية</string>
-    <string name="fileURL">أدخل عنوان URL إلى ملف settings.txt الخاص بك</string>
+    <string name="fileURL">أدخل عنوان URL لـ %1$s</string>
     <string name="force_dark_mode">فرض الوضع المظلم</string>
     <string name="forecast">صفحة التوقعات</string>
     <string name="forecast2">تنبؤ بالمناخ</string>
@@ -41,7 +41,7 @@
     <string name="forecast_daily">يوميًا</string>
     <string name="forecast_interval">الفاصل الزمني للتنبؤ (إن أمكن)</string>
     <string name="forecast_type_is_invalid">نوع التوقع \'%1$s\' غير صالح، تحقق من ملف الإعدادات وحاول مرة أخرى</string>
-    <string name="forecast_url_not_set">لم يتم تعيين عنوان URL المتوقع، قم بتحرير ملف settings.txt لتغييره</string>
+    <string name="forecast_url_not_set">لم يتم تعيين عنوان URL المتوقع، قم بتعيينه في %1$s</string>
     <string name="hour">ساعة</string>
     <string name="hours">ساعات</string>
     <string name="ill_fix_and_try_again">سأصلح الأمر وأحاول مرة أخرى</string>
@@ -120,6 +120,7 @@
     <string name="skip">يتخطى</string>
     <string name="stats2">إحصائيات</string>
     <string name="still_downloading_forecast_data">لا يزال تنزيل بيانات التوقعات مستمرًا</string>
+    <string name="still_downloading_weather_data">لا يزال يتم تنزيل بيانات الطقس</string>
     <string name="swipe_lock">انتقد قفل</string>
     <string name="system_default">النظام الافتراضي</string>
     <string name="temperature">درجة حرارة</string>
