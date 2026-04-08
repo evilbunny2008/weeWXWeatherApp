@@ -1,7 +1,6 @@
 package com.odiousapps.weewxweather;
 
 import android.app.Activity;
-import android.app.NotificationManager;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
@@ -3618,7 +3617,7 @@ class weeWXAppCommon
 			if(urls.isEmpty())
 				return;
 
-			ParallelDownloader downloader = new ParallelDownloader(urls.size(), false);
+			ParallelDownloader downloader = new ParallelDownloader(urls.size());
 			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
 
 			boolean allOk = results.stream().allMatch(r -> r.success);

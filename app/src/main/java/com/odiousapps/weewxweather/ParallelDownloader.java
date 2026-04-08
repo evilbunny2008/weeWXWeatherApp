@@ -31,12 +31,10 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 public class ParallelDownloader
 {
 	private final ExecutorService executor;
-	private final boolean onAppStart;
 
-    public ParallelDownloader(int threadCount, boolean onAppStart)
+    public ParallelDownloader(int threadCount)
     {
         this.executor = Executors.newFixedThreadPool(threadCount);
-		this.onAppStart = onAppStart;
     }
 
     public static class DownloadResult
@@ -53,12 +51,12 @@ public class ParallelDownloader
         public DownloadResult(int id, String url, boolean success, String error, String contentType, long length, String string, Bitmap bm)
         {
 			this.id = id;
-            this.url = url;
-            this.success = success;
-            this.error = error;
+			this.url = url;
+			this.success = success;
+			this.error = error;
 			this.contentType = contentType;
 			this.length = length;
-            this.string = string;
+			this.string = string;
 			this.bm = bm;
         }
     }
@@ -103,8 +101,8 @@ public class ParallelDownloader
 		if(url == null)
 			return new DownloadResult(id, url, true, "Skipped", contentType, 0, null, null);
 
-        if(!is_valid_url(url))
-            return new DownloadResult(id, url, false, "Invalid URL", "ERROR", 0, null, null);
+		if(!is_valid_url(url))
+			return new DownloadResult(id, url, false, "Invalid URL", "ERROR", 0, null, null);
 
 		LogMessage("ParallelDownloader.getContent(" + id + ") id: " + id);
 	    LogMessage("ParallelDownloader.getContent(" + id + ") contentType: " + contentType);
@@ -121,9 +119,9 @@ public class ParallelDownloader
 				if(!response.isSuccessful())
 				{
 					String bodyStr = response.body().string();
-	                String error = "HTTP error " + response;
-	                if(!bodyStr.isBlank())
-	                    error += ", body: " + bodyStr;
+					String error = "HTTP error " + response;
+					if(!bodyStr.isBlank())
+						error += ", body: " + bodyStr;
 
 					LogMessage("ParallelDownloader.getContent(" + id + ") Error! error: " + error, KeyValue.e);
 
@@ -233,23 +231,23 @@ public class ParallelDownloader
 	        {
 	            String string = response.body().string();
 
-	            if(!response.isSuccessful())
+				if(!response.isSuccessful())
 	            {
 	                String error = "HTTP error " + response;
-	                if(!string.isBlank())
+					if(!string.isBlank())
 	                    error += ", body: " + string;
 
-		            LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + error, KeyValue.e);
+					LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + error, KeyValue.e);
 	                return new DownloadResult(id, url, false, error, "ERROR", 0, null, null);
 	            } else if(string.length() == 0) {
 		            LogMessage("ParallelDownloader.getContent(" + id + ") Error! Download size was 0 bytes", KeyValue.e);
 		            return new DownloadResult(id, url, false, "Download size was 0 bytes", "ERROR", 0, null, null);
 	            }
 
-		        LogMessage("ParallelDownloader.getContent(" + id + ") Returning content of " + string.length() + " length");
+				LogMessage("ParallelDownloader.getContent(" + id + ") Returning content of " + string.length() + " length");
 	            return new DownloadResult(id, url, true, null, contentType, string.length(), string, null);
 	        } catch (Exception e) {
-		        LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
+				LogMessage("ParallelDownloader.getContent(" + id + ") Error! " + e.getMessage(), KeyValue.e);
 				return new DownloadResult(id, url, false, e.getLocalizedMessage(), "ERROR", 0, null, null);
 	        }
 	    }

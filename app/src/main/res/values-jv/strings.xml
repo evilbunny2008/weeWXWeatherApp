@@ -72,6 +72,9 @@
     <string name="notifications_needed2">Awit sampeyan nolak ijin kabar kaping pindho, sampeyan kudu ngaktifake ing setelan tinimbang, miwiti setelan?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Mangga ngenteni nalika kita verifikasi URL sing dikirim</string>
+    <plurals name="processing_errors2">
+        <item quantity="other">Ana %1$d kasalahan sing dideteksi nalika nganyari, deleng %2$s log kanggo rincian</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="other">Ana %1$d kesalahan sing dideteksi ing file %2$s, deleng file %2$s sing ditemokake ing %3$s utawa deleng %4$s log kanggo rincian</item>
     </plurals>

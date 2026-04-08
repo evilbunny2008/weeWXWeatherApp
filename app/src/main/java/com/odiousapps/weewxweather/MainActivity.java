@@ -2199,7 +2199,7 @@ public class MainActivity extends FragmentActivity
 					6
 			);
 
-			ParallelDownloader downloader = new ParallelDownloader(urls.size(), false);
+			ParallelDownloader downloader = new ParallelDownloader(urls.size());
 			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
 
 			boolean allOk = results.stream().allMatch(r -> r.success);

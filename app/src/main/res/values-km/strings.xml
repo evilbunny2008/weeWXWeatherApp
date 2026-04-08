@@ -72,6 +72,9 @@
     <string name="notifications_needed2">ចាប់តាំងពីអ្នកបានបដិសេធការអនុញ្ញាតការជូនដំណឹងពីរដង អ្នកត្រូវបើកវានៅក្នុងការកំណត់ជំនួសវិញ បើកការកំណត់មែនទេ?</string>
     <string name="ok">យល់ព្រម</string>
     <string name="please_wait_verify_url">សូមរង់ចាំខណៈពេលដែលយើងផ្ទៀងផ្ទាត់ URL ដែលអ្នកបានដាក់ស្នើ។</string>
+    <plurals name="processing_errors2">
+        <item quantity="other">បានរកឃើញកំហុស %1$d ពេលកំពុងអាប់ដេត សូមមើលកំណត់ហេតុ %2$s សម្រាប់ព័ត៌មានលម្អិត</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="other">មានកំហុស %1$d ត្រូវបានរកឃើញនៅក្នុងឯកសារ %2$s មើលឯកសារ %2$s ដែលបានរកឃើញនៅ %3$s ឬមើលកំណត់ហេតុ %4$s សម្រាប់ព័ត៌មានលម្អិត</item>
     </plurals>
