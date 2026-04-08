@@ -42,7 +42,7 @@ class CustomDebug
 
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
 		{
-			String mimetype = "text/plain";
+			String mimetype = weeWXApp.CONTENT_TYPE;
 
 			filename = filename.strip();
 
@@ -70,7 +70,7 @@ class CustomDebug
 			return readFromMediaStore(dir, filename);
 		} else {
 			StringBuilder sb = new StringBuilder();
-			File f = weeWXAppCommon.getExtFile("weeWX", "R2_body.html");
+			File f = weeWXAppCommon.getExtFile(weeWXApp.WEEWX_DIR, "R2_body.html");
 			if(f.exists() && f.canRead() && f.length() > 0)
 			{
 				FileInputStream fis = new FileInputStream(f);
@@ -125,7 +125,7 @@ class CustomDebug
 	private static void copyFile(String inFile, String filename, int depth)
 	{
 		File outFile;
-		String dir = "weeWX";
+		String dir = weeWXApp.WEEWX_DIR;
 
 		if(depth > 20)
 			return;
@@ -201,7 +201,7 @@ class CustomDebug
 				return true;
 			}
 		} catch(Exception e) {
-			LogMessage("Error! e: " + e, true, KeyValue.e);
+			LogMessage(weeWXApp.ERROR_E + e, true, KeyValue.e);
 		}
 
 		return false;
@@ -214,7 +214,7 @@ class CustomDebug
 			if(file.exists())
 				return Math.round(file.lastModified() / 1_000D);
 		} catch(Exception e) {
-			LogMessage("Error! e: " + e, true, KeyValue.e);
+			LogMessage(weeWXApp.ERROR_E + e, true, KeyValue.e);
 		}
 
 		return 0;
@@ -228,7 +228,7 @@ class CustomDebug
 
 		try
 		{
-			outFile = weeWXAppCommon.getExtFile("weeWX", filename);
+			outFile = weeWXAppCommon.getExtFile(weeWXApp.WEEWX_DIR, filename);
 			CustomDebug.writeDebug(outFile, output);
 			String theOutFile = outFile.getAbsolutePath();
 

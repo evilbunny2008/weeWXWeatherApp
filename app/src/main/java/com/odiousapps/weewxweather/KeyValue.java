@@ -210,8 +210,8 @@ class KeyValue
 
 	static boolean debugging_on()
 	{
-		return isPrefSet("save_app_debug_logs") &&
-						(boolean)readVar("save_app_debug_logs", weeWXApp.save_app_debug_logs_default);
+		return isPrefSet(weeWXApp.SAVE_APP_DEBUG_LOGS) &&
+		       (boolean)readVar(weeWXApp.SAVE_APP_DEBUG_LOGS, weeWXApp.save_app_debug_logs_default);
 	}
 
 	static boolean isPrefSet(String var)

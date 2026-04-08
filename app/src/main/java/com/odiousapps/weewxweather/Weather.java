@@ -448,7 +448,7 @@ public class Weather extends Fragment implements View.OnClickListener
 	{
 		LogMessage("drawWeather()");
 
-		if(!KeyValue.isPrefSet(json_keys[0] + "_time"))
+		if(!KeyValue.isPrefSet(json_keys[0] + weeWXApp.TIME_EXT))
 		{
 			forceCurrentRefresh(R.string.still_downloading_weather_data);
 			return;

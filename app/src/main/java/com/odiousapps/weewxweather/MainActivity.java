@@ -101,6 +101,7 @@ import static com.odiousapps.weewxweather.weeWXAppCommon.FAILED_TO_MERGE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.INIGO_INTENT;
 import static com.odiousapps.weewxweather.weeWXAppCommon.PROCESSING_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATE_ERRORS;
+import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
@@ -243,7 +244,7 @@ public class MainActivity extends FragmentActivity
 		screen_elements.add(new Setting("mtv2", R.id.mtv2));
 		screen_elements.add(new Setting("next_moon", R.id.next_moon));
 		screen_elements.add(new Setting("rain_in_inches", R.id.rain_in_inches));
-		screen_elements.add(new Setting("save_app_debug_logs", R.id.save_app_debug_logs));
+		screen_elements.add(new Setting(weeWXApp.SAVE_APP_DEBUG_LOGS, R.id.save_app_debug_logs));
 		screen_elements.add(new Setting("settings", R.id.settings));
 		screen_elements.add(new Setting("showRadar", R.id.showRadar));
 		screen_elements.add(new Setting("showForecast", R.id.showForecast));
@@ -292,9 +293,9 @@ public class MainActivity extends FragmentActivity
 		screen_elements.add(new Setting("minRainfallLimit", R.id.minRainfallLimit));
 		screen_elements.add(new Setting("maxRainfallLimit", R.id.maxRainfallLimit));
 
-		screen_elements.add(new Setting("rainrate_alert_watch", R.id.rainrate_alert_watch));
-		screen_elements.add(new Setting("rainrate_alert_warning", R.id.rainrate_alert_warning));
-		screen_elements.add(new Setting("rainrate_alert_severe", R.id.rainrate_alert_severe));
+		screen_elements.add(new Setting(weeWXApp.RAINRATE_ALERT_WATCH, R.id.rainrate_alert_watch));
+		screen_elements.add(new Setting(weeWXApp.RAINRATE_ALERT_WARNING, R.id.rainrate_alert_warning));
+		screen_elements.add(new Setting(weeWXApp.RAINRATE_ALERT_SEVERE, R.id.rainrate_alert_severe));
 
 		LogMessage("MainActivity.onCreate() started...");
 
@@ -727,7 +728,7 @@ public class MainActivity extends FragmentActivity
 		UpdateInterval = (int)KeyValue.readVar("UpdateInterval", weeWXApp.UpdateInterval_default);
 		webcamInterval = (int)KeyValue.readVar("webcamInterval", weeWXApp.webcamInterval_default);
 		DayNightMode = (int)KeyValue.readVar("DayNightMode", weeWXApp.DayNightMode_default);
-		widget_theme_mode =	(int)KeyValue.readVar(weeWXAppCommon.WIDGET_THEME_MODE, weeWXApp.widget_theme_mode_default);
+		widget_theme_mode =	(int)KeyValue.readVar(WIDGET_THEME_MODE, weeWXApp.widget_theme_mode_default);
 
 		LogMessage("MainActivity.onCreate() DayNightMode: " + DayNightMode);
 
@@ -741,7 +742,7 @@ public class MainActivity extends FragmentActivity
 		sr = (boolean)KeyValue.readVar("radarforecast", weeWXApp.radarforecast_default);
 
 		uea = (boolean)KeyValue.readVar("use_exact_alarm", weeWXApp.use_exact_alarm_default);
-		sadl = (boolean)KeyValue.readVar("save_app_debug_logs", weeWXApp.save_app_debug_logs_default);
+		sadl = (boolean)KeyValue.readVar(weeWXApp.SAVE_APP_DEBUG_LOGS, weeWXApp.save_app_debug_logs_default);
 		nm = (boolean)KeyValue.readVar("next_moon", weeWXApp.next_moon_default);
 		fdm = (boolean)KeyValue.readVar(FORCE_DARK_MODE, weeWXApp.force_dark_mode_default);
 
@@ -754,9 +755,9 @@ public class MainActivity extends FragmentActivity
 		rfa = (boolean)KeyValue.readVar("rainfall_alert", weeWXApp.rainfall_alert_default);
 		rfl = (int)KeyValue.readVar("RainfallLimit", weeWXApp.RainfallLimit_default);
 
-		rra_watch = (boolean)KeyValue.readVar("rainrate_alert_watch", weeWXApp.rainrate_alert_watch_default);
-		rra_warning = (boolean)KeyValue.readVar("rainrate_alert_warning", weeWXApp.rainrate_alert_warning_default);
-		rra_severe = (boolean)KeyValue.readVar("rainrate_alert_severe", weeWXApp.rainrate_alert_severe_default);
+		rra_watch = (boolean)KeyValue.readVar(weeWXApp.RAINRATE_ALERT_WATCH, weeWXApp.rainrate_alert_watch_default);
+		rra_warning = (boolean)KeyValue.readVar(weeWXApp.RAINRATE_ALERT_WARNING, weeWXApp.rainrate_alert_warning_default);
+		rra_severe = (boolean)KeyValue.readVar(weeWXApp.RAINRATE_ALERT_SEVERE, weeWXApp.rainrate_alert_severe_default);
 
 		if(savedInstanceState != null)
 		{
@@ -765,7 +766,7 @@ public class MainActivity extends FragmentActivity
 			UpdateInterval = savedInstanceState.getInt("UpdateInterval", UpdateInterval);
 			webcamInterval = savedInstanceState.getInt("webcamInterval", webcamInterval);
 			DayNightMode = savedInstanceState.getInt("DayNightMode", DayNightMode);
-			widget_theme_mode = savedInstanceState.getInt("widget_theme_mode", widget_theme_mode);
+			widget_theme_mode = savedInstanceState.getInt(WIDGET_THEME_MODE, widget_theme_mode);
 
 			LogMessage("MainActivity.onCreate() UpdateFrequency: " + UpdateFrequency);
 			LogMessage("MainActivity.onCreate() UpdateInterval: " + UpdateInterval);
@@ -1364,7 +1365,7 @@ public class MainActivity extends FragmentActivity
 		outState.putInt("UpdateInterval", UpdateInterval);
 		outState.putInt("webcamInterval", webcamInterval);
 		outState.putInt("DayNightMode", DayNightMode);
-		outState.putInt("widget_theme_mode", widget_theme_mode);
+		outState.putInt(WIDGET_THEME_MODE, widget_theme_mode);
 
 		LogMessage("MainActivity.onSaveInstanceState() UpdateFrequency: " + UpdateFrequency);
 		LogMessage("MainActivity.onSaveInstanceState() UpdateInterval: " + UpdateInterval);
@@ -1574,7 +1575,7 @@ public class MainActivity extends FragmentActivity
 	{
 		LogMessage("Will now show update2 dialog now...");
 		String str = getEnglishAndroidString(R.string.json_formatted_data);
-		str = String.format(str, "weeWX App", "JSON formatted", "weeWX", "Inigo Plugin", "inigo-settings.txt", "GitHub.com");
+		str = String.format(str, "weeWX App", "JSON formatted", weeWXApp.WEEWX_DIR, "Inigo Plugin", "inigo-settings.txt", "GitHub.com");
 		new AlertDialog.Builder(this)
 				.setIcon(R.mipmap.ic_launcher_foreground)
 				.setTitle(getAndroidString(R.string.app_name))
@@ -2295,7 +2296,7 @@ public class MainActivity extends FragmentActivity
 						bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
 						LogMessage("Got past the save... ");
 					} catch(Exception e) {
-						LogMessage("Error! e: " + e, true, KeyValue.e);
+						LogMessage(weeWXApp.ERROR_E + e, true, KeyValue.e);
 						errorDialog(e);
 						return;
 					}
@@ -2308,7 +2309,7 @@ public class MainActivity extends FragmentActivity
 						bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
 						LogMessage("Got past the save... ");
 					} catch(Exception e) {
-						LogMessage("Error! e: " + e, true, KeyValue.e);
+						LogMessage(weeWXApp.ERROR_E + e, true, KeyValue.e);
 						errorDialog(e);
 						return;
 					}
@@ -2383,9 +2384,9 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("rainfall_alert", rainfall_alert.isChecked());
 			KeyValue.putVar("RainfallLimit", (int)sliderRainfall.getValue());
 
-			KeyValue.putVar("rainrate_alert_watch", rainrate_alert_watch.isChecked());
-			KeyValue.putVar("rainrate_alert_warning", rainrate_alert_warning.isChecked());
-			KeyValue.putVar("rainrate_alert_severe", rainrate_alert_severe.isChecked());
+			KeyValue.putVar(weeWXApp.RAINRATE_ALERT_WATCH, rainrate_alert_watch.isChecked());
+			KeyValue.putVar(weeWXApp.RAINRATE_ALERT_WARNING, rainrate_alert_warning.isChecked());
+			KeyValue.putVar(weeWXApp.RAINRATE_ALERT_SEVERE, rainrate_alert_severe.isChecked());
 
 			KeyValue.putVar("metric", metric_forecasts.isChecked());
 			KeyValue.putVar("rainInInches", rain_in_inches.isChecked());
@@ -2394,11 +2395,11 @@ public class MainActivity extends FragmentActivity
 			KeyValue.putVar("onlyWIFI", wifi_only.isChecked());
 			KeyValue.putVar("radarforecast", showRadar.isChecked());
 			KeyValue.putVar("use_exact_alarm", use_exact_alarm.isChecked());
-			KeyValue.putVar("save_app_debug_logs", save_app_debug_logs.isChecked());
+			KeyValue.putVar(weeWXApp.SAVE_APP_DEBUG_LOGS, save_app_debug_logs.isChecked());
 			KeyValue.putVar("next_moon", next_moon.isChecked());
 			KeyValue.putVar(FORCE_DARK_MODE, force_dark_mode.isChecked());
 
-			KeyValue.putVar(weeWXAppCommon.WIDGET_THEME_MODE, widget_theme_mode);
+			KeyValue.putVar(WIDGET_THEME_MODE, widget_theme_mode);
 
 			Editable edit = widgetBG.getText();
 			if(edit != null && edit.length() > 0)

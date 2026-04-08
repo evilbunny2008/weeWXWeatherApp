@@ -48,6 +48,8 @@ import androidx.core.os.ConfigurationCompat;
 import androidx.core.os.LocaleListCompat;
 
 
+import static com.odiousapps.weewxweather.weeWXAppCommon.LOGTAG;
+import static com.odiousapps.weewxweather.weeWXAppCommon.WIDGET_THEME_MODE;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Int;
@@ -121,6 +123,16 @@ public class weeWXApp extends Application
 	static final String SKIPPING = ", skipping...";
 	static final String SKIPPING_S = "s), skipping...";
 	static final String FCTYPE = "fctype";
+	static final String RAINRATE_ALERT_WATCH = "rainrate_alert_watch";
+	static final String RAINRATE_ALERT_WARNING = "rainrate_alert_warning";
+	static final String RAINRATE_ALERT_SEVERE = "rainrate_alert_severe";
+	static final String ERROR_E = "Error! e: ";
+	static final String SAVE_APP_DEBUG_LOGS = "save_app_debug_logs";
+	static final String FAILED_TO_CREATE_LOG_FILE_IN_MEDIA_STORE_FILES = "Failed to create log file in MediaStore.Files";
+	static final String CONTENT_TYPE = "text/plain";
+	static final String WEEWX_DIR = "weeWX";
+	static final String RSS_CHECK = "rssCheck";
+	static final String TIME_EXT = "_time";
 
 	static String inline_arrow = inline_arrow_light;
 
@@ -129,23 +141,22 @@ public class weeWXApp extends Application
 									  </html>
 									  """;
 
-	private static final String about_blurb = """
-											  	Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app
-											  	wouldn't be possible otherwise.<br><br>
-											  	Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and
-											  	is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and
-											  	<a href="https://www.vecteezy.com/free-vector/">Vectors by Vecteezy</a> and
-											  	<a href="https://mixkit.co/">Alert sound from Mixkit.co</a>
-											  	<br><br>
-											  	Current WebView Library Version: WEBVIEWVER
-											  	<br/><br/>
-											  	weeWX Weather App vAPPVERSION
-												  is by <a href='https://odiousapps.com'>OdiousApps</a>.
-											  	<br/>
-												  <b>Memory Statistics:</b>
-												  <br/>
-												  USEDMEMORY / MAXMEMORY
-											  """;
+	private static final String about_blurb =   """
+												Big thanks to the <a href='https://weewx.com'>weeWX project</a>, as this app
+												wouldn't be possible otherwise.<br><br>
+												Weather Icons from <a href='https://www.flaticon.com/'>FlatIcon</a> and
+												is licensed under <a href='https://creativecommons.org/licenses/by/3.0/'>CC 3.0 BY</a> and
+												<a href="https://www.vecteezy.com/free-vector/">Vectors by Vecteezy</a> and
+												<a href="https://mixkit.co/">Alert sound from Mixkit.co</a>
+												<br><br>
+												Current WebView Library Version: WEBVIEWVER
+												<br/><br/>
+												weeWX Weather App vAPPVERSION is by <a href='https://odiousapps.com'>OdiousApps</a>.
+												<br/>
+												<b>Memory Statistics:</b>
+												<br/>
+												USEDMEMORY / MAXMEMORY
+												""";
 
 	final static String debug_html = """
 									 		<div id='widthDisplay'
@@ -203,9 +214,7 @@ public class weeWXApp extends Application
 														  </html>
 														  """;
 
-	record Setting(String Key, Object Val)
-	{
-	}
+	record Setting(String Key, Object Val) {}
 
 	static String current_html_headers;
 
@@ -283,7 +292,7 @@ public class weeWXApp extends Application
 
 	private static Integer currentTheme = null;
 
-	final static String charset = StandardCharsets.UTF_8.toString();
+	private final static String charset = StandardCharsets.UTF_8.toString();
 
 	static String torVer = null;
 
@@ -292,16 +301,15 @@ public class weeWXApp extends Application
 	final static String APPLICATION_ID = com.odiousapps.weewxweather.BuildConfig.APPLICATION_ID;
 
 	static final CustomDns customDns = new CustomDns();
-	static Boolean fallback_to_DoH = null;
 
-	static final List<ForecastDefaults> fc_defaults = new ArrayList<>();
+	private static final List<ForecastDefaults> fc_defaults = new ArrayList<>(0);
 
 	static final int max_alarms = 5;
 
 	private static final String[] alert_channels = {
-			"rainrate_alert_watch",
-			"rainrate_alert_warning",
-			"rainrate_alert_severe",
+			RAINRATE_ALERT_WATCH,
+			RAINRATE_ALERT_WARNING,
+			RAINRATE_ALERT_SEVERE,
 			};
 
 	private static final int[] alert_strings = {
@@ -332,9 +340,9 @@ public class weeWXApp extends Application
 		ConfigurationCompat.setLocales(config, localeList);
 		englishContext = createConfigurationContext(config);
 
-		Log.d("weeWXApp", "Attempting to load JSON data from shared prefs...");
+		Log.d(LOGTAG, "Attempting to load JSON data from shared prefs...");
 		if(!KeyValue.parseDicts())
-			Log.e("weeWXApp", "Failed to load JSON data from shared prefs...");
+			Log.e(LOGTAG, "Failed to load JSON data from shared prefs...");
 
 		// Create the channel with the custom sound
 		audioAttributes = new AudioAttributes.Builder()
@@ -439,7 +447,7 @@ public class weeWXApp extends Application
 			}
 		} catch(Exception e)
 		{
-			Log.e(weeWXAppCommon.LOGTAG, "Error! e: " + e.getMessage(), e);
+			Log.e(weeWXAppCommon.LOGTAG, ERROR_E + e.getMessage(), e);
 		}
 
 		// Let's assume no value is actually ok and the package name has changed or something similar...
@@ -494,14 +502,14 @@ public class weeWXApp extends Application
 						getAndroidString(R.string.every_5_minutes),
 						};
 
-		if((boolean)KeyValue.readVar("save_app_debug_logs", save_app_debug_logs_default))
+		if((boolean)KeyValue.readVar(SAVE_APP_DEBUG_LOGS, save_app_debug_logs_default))
 			LogMessage("Debug logging enabled...", true, KeyValue.i);
 		else
 			LogMessage("Debug logging disabled...", true, KeyValue.i);
 
 		LogMessage("weeWXApp.java app_version: " + VERSION_NAME + " starting...", KeyValue.i);
 
-		if(weeWXAppCommon.fixTypes())
+		if(weeWXAppCommon.fixtypes())
 			LogMessage("weeWXApp.java successfully converted preference object types...", KeyValue.d);
 		else
 			LogMessage("weeWXApp.java didn't need to convert preference object types...", KeyValue.d);
@@ -962,7 +970,7 @@ public class weeWXApp extends Application
 
 		int current_theme = (int)KeyValue.readVar("theme", theme_default);
 		int current_mode = (int)KeyValue.readVar("mode", mode_default);
-		int widget_theme_mode = (int)KeyValue.readVar("widget_theme_mode", widget_theme_mode_default);
+		int widget_theme_mode = (int)KeyValue.readVar(WIDGET_THEME_MODE, widget_theme_mode_default);
 		int current_bgColour = (int)KeyValue.readVar("bgColour", bgColour_default);
 		int current_fgColour = (int)KeyValue.readVar("fgColour", fgColour_default);
 		int current_widgetBG = (int)KeyValue.readVar("widgetBG", widgetBG_default);
@@ -1086,7 +1094,7 @@ public class weeWXApp extends Application
 
 		settings.add(new Setting("theme", theme));
 		settings.add(new Setting("mode", mode));
-		settings.add(new Setting("widget_theme_mode", widget_theme_mode));
+		settings.add(new Setting(WIDGET_THEME_MODE, widget_theme_mode));
 
 		settings.add(new Setting("bgColour", bgColour));
 		settings.add(new Setting("fgColour", fgColour));

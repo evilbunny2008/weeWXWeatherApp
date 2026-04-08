@@ -347,7 +347,7 @@ public class SafeWebView extends WebView
 
 					String method = request.getMethod();
 					if(method.equalsIgnoreCase("options"))
-						return new WebResourceResponse("text/plain", "UTF-8", new ByteArrayInputStream(new byte[0]));
+						return new WebResourceResponse(weeWXApp.CONTENT_TYPE, "UTF-8", new ByteArrayInputStream(new byte[0]));
 
 					// Simple host/URL Path blocking
 					HttpUrl url2 = HttpUrl.parse(url);
@@ -387,7 +387,7 @@ public class SafeWebView extends WebView
 						ByteArrayInputStream bais = new ByteArrayInputStream(bytes);
 
 						String encoding = "UTF-8";
-						String mime = "text/plain";
+						String mime = weeWXApp.CONTENT_TYPE;
 
 						MediaType mt = response.body().contentType();
 						if(mt != null)

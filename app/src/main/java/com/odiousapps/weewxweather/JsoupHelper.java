@@ -230,7 +230,7 @@ class JsoupHelper
 							}
 						}
 					} catch(Exception e) {
-						LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
+						LogMessage(weeWXApp.ERROR_E + e.getMessage(), true, KeyValue.e);
 						doStackOutput(e);
 					}
 
@@ -502,7 +502,7 @@ class JsoupHelper
 				}
 			});
 		} catch(Exception e) {
-			LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
+			LogMessage(weeWXApp.ERROR_E + e.getMessage(), true, KeyValue.e);
 			doStackOutput(e);
 		}
 	}
@@ -1210,7 +1210,7 @@ class JsoupHelper
 
 				String nowTS = nowTS();
 				LogMessage("processWZ2GetForecastStrings() Writting to WZtest_ndb_body_" + nowTS + ".html");
-				CustomDebug.writeDebug("weeWX", "WZtest_ndb_body_" + nowTS + ".html", body.html());
+				CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_ndb_body_" + nowTS + ".html", body.html());
 
 				return null;
 			}
@@ -1230,7 +1230,7 @@ class JsoupHelper
 
 				String nowTS = nowTS();
 				LogMessage("processWZ2GetForecastStrings() Writting to WZtest_nf_parent_" + nowTS + ".html");
-				CustomDebug.writeDebug("weeWX", "WZtest_nf_parent_" + nowTS + ".html", parent.html());
+				CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_nf_parent_" + nowTS + ".html", parent.html());
 
 				return null;
 			}
@@ -1284,7 +1284,7 @@ class JsoupHelper
 				{
 					String nowTS = nowTS();
 					LogMessage("processWZ2GetForecastStrings() Writting to WZtest_previous_element_" + i + "_" + nowTS + ".html");
-					CustomDebug.writeDebug("weeWX", "WZtest_previous_element_" + i + "_" + nowTS + ".html", previous_element.html());
+					CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_previous_element_" + i + "_" + nowTS + ".html", previous_element.html());
 					continue;
 				}
 
@@ -1406,7 +1406,7 @@ class JsoupHelper
 
 			String nowTS = nowTS();
 			LogMessage("processWZ2Forecasts() Writting to WZtest_no_daily_forecast_block_body_" + nowTS + ".html");
-			CustomDebug.writeDebug("weeWX", "WZtest_no_daily_forecast_block_body_" + nowTS + ".html", body.html());
+			CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_no_daily_forecast_block_body_" + nowTS + ".html", body.html());
 
 			return new Result(null, null, 0L, true);
 		}
@@ -1416,7 +1416,7 @@ class JsoupHelper
 		{
 			String nowTS = nowTS();
 			LogMessage("processWZ2Forecasts() Writting to WZtest_no_svg_found_" + nowTS + ".html");
-			CustomDebug.writeDebug("weeWX", "WZtest_no_svg_found_" + nowTS + ".html", daily_forecast_block.outerHtml());
+			CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_no_svg_found_" + nowTS + ".html", daily_forecast_block.outerHtml());
 
 			return new Result(null, null, 0L, true);
 		}
@@ -1503,7 +1503,7 @@ class JsoupHelper
 			} else {
 				String nowTS = nowTS();
 				LogMessage("processWZ2Forecasts() Writting to WZtest_no_day_matched_dayEl_" + i + "_" + nowTS + ".html");
-				CustomDebug.writeDebug("weeWX", "WZtest_no_day_matched_dayEl_" + i + "_" + nowTS + ".html", dayEl.outerHtml());
+				CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_no_day_matched_dayEl_" + i + "_" + nowTS + ".html", dayEl.outerHtml());
 				continue;
 			}
 
@@ -1543,7 +1543,7 @@ class JsoupHelper
 			{
 				String nowTS = nowTS();
 				LogMessage("processWZ2Forecasts() Writting to WZtest_no_temps_block_" + nowTS + ".html");
-				CustomDebug.writeDebug("weeWX", "WZtest_no_temps_block_" + nowTS + ".html", dayEl.html());
+				CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_no_temps_block_" + nowTS + ".html", dayEl.html());
 				continue;
 			}
 
@@ -1555,7 +1555,7 @@ class JsoupHelper
 			{
 				String nowTS = nowTS();
 				LogMessage("processWZ2Forecasts() Writting to WZtest_no_rainEl_" + nowTS + ".html");
-				CustomDebug.writeDebug("weeWX", "WZtest_no_rainEl_" + nowTS + ".html", rainEl.html());
+				CustomDebug.writeDebug(weeWXApp.WEEWX_DIR, "WZtest_no_rainEl_" + nowTS + ".html", rainEl.html());
 				continue;
 			}
 
@@ -1634,7 +1634,7 @@ class JsoupHelper
 
 		try
 		{
-			f = weeWXAppCommon.getExtFile("weeWX", title);
+			f = weeWXAppCommon.getExtFile(weeWXApp.WEEWX_DIR, title);
 			if(f.exists() && f.length() > 0 && f.length() == len)
 			{
 				if(foundPNG)
