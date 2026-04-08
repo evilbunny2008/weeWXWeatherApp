@@ -3735,7 +3735,10 @@ class weeWXAppCommon
 				if(sendIntents)
 				{
 					if(updatedWeather)
+					{
 						SendIntent(REFRESH_WEATHER_INTENT);
+						updateAppWidget();
+					}
 
 					if(updatedForecast)
 						SendIntent(REFRESH_FORECAST_INTENT);

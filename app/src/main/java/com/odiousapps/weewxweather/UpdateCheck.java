@@ -17,6 +17,10 @@ import java.util.concurrent.Future;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+import static com.odiousapps.weewxweather.weeWXAppCommon.NPWSLL;
+import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATECHECK;
+import static com.odiousapps.weewxweather.weeWXAppCommon.checkConnection;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getNPWSLL;
 import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdates;
 
 public class UpdateCheck extends BroadcastReceiver
@@ -38,19 +42,19 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		if(!weeWXAppCommon.UPDATECHECK.equals(i.getAction()))
+		if(!UPDATECHECK.equals(i.getAction()))
 		{
-			LogMessage(i.getAction() + " != " + weeWXAppCommon.UPDATECHECK + ", skipping...", KeyValue.d);
+			LogMessage(i.getAction() + " != " + UPDATECHECK + ", skipping...", KeyValue.d);
 			return;
 		}
 
-		if(!weeWXAppCommon.checkConnection())
+		if(!checkConnection())
 		{
 			LogMessage("UpdateCheck.onReceive() Skipping update due to wifi setting.", KeyValue.d);
 			return;
 		}
 
-		weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
+		NPWSLL npwsll = getNPWSLL();
 		if(npwsll.periodTime() <= 0)
 		{
 			LogMessage("UpdateCheck.onReceive() Skipping, period is invalid or set to manual refresh only...", KeyValue.d);
@@ -91,7 +95,7 @@ public class UpdateCheck extends BroadcastReceiver
 	private static PendingIntent getPendingIntent(Context context, boolean doNoCreate, int reqcode)
 	{
 		Intent intent = new Intent(context, UpdateCheck.class);
-		intent.setAction(weeWXAppCommon.UPDATECHECK);
+		intent.setAction(UPDATECHECK);
 
 		int flags = PendingIntent.FLAG_IMMUTABLE;
 
@@ -112,7 +116,7 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
+		weeWXAppCommon.NPWSLL npwsll = getNPWSLL();
 		if(npwsll.periodTime() <= 0)
 		{
 			LogMessage("UpdateCheck.setNextAlarm() Skipping, period is invalid or set to manual refresh only...", KeyValue.d);
@@ -282,7 +286,7 @@ public class UpdateCheck extends BroadcastReceiver
 			return;
 		}
 
-		if(!weeWXAppCommon.checkConnection())
+		if(!checkConnection())
 		{
 			LogMessage("UpdateCheck.runInTheBackground() WiFi needed but unavailable... skipping...", KeyValue.d);
 			if(!weeWXApp.hasBootedFully)
@@ -294,7 +298,7 @@ public class UpdateCheck extends BroadcastReceiver
 
 		if(onAppStart)
 		{
-			weeWXAppCommon.NPWSLL npwsll = weeWXAppCommon.getNPWSLL();
+			weeWXAppCommon.NPWSLL npwsll = getNPWSLL();
 
 			if(npwsll.periodTime() <= 0)
 			{
