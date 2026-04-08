@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about">Micé afé</string>
+    <string name="about_app">App xa fe ra</string>
+    <string name="afternoon_alert">Temperature %1$s bara goro han %2$s</string>
+    <string name="afternoon_temp_alert">Kɔɛ ra?</string>
+    <string name="all_time_stats">Waxati birin xasabi</string>
+    <string name="app_theme">App theme</string>
+    <string name="avg">avg</string>
+    <string name="battery_warning">Wo xa a kolon: wo yi sugandi raba fe wo xa batEri ma fura mafuren dangife a singe ra</string>
+    <string name="before">singué</string>
+    <string name="bgColour">Widget Background Color Picker</string>
+    <string name="custom2">Namounyi</string>
+    <string name="custom_setting">gningi gbegbe</string>
+    <string name="custom_url">Xa wo wama: URL wo yEtE bE</string>
+    <string name="custom_url_not_set_or_blank">URL mu saxi, xa na mu a mu na. Wo nOma siga de paramEtrE kui ala ko wo xa URL sa a fari</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="data_url_was_blank">%1$s URL mu nu na, wo xa wo xa %2$s file mato wo man xa a mato</string>
+    <string name="delete_all_data">Donse birin kanafe a nun a balanfe</string>
+    <string name="empty">Cemakoui</string>
+    <string name="error">Tantanyi!</string>
+    <string name="error_occurred_while_attempting_to_update">Fe nde bara raba wo nu katafe wo xa yi wali rawali</string>
+    <string name="every_5_minutes">miniti suli birin</string>
+    <string name="every_5_seconds">Sekan 5 birin</string>
+    <string name="every_10_minutes">miniti 10 birin</string>
+    <string name="every_10_seconds">Sekan 10 birin</string>
+    <string name="every_15_minutes">miniti 15 birin</string>
+    <string name="every_30_minutes">miniti tongo saxan birin</string>
+    <string name="every_30_seconds">Sekan 30 birin</string>
+    <string name="every_60_seconds">Sekan 60 birin</string>
+    <string name="every_hour">waxati birin</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">%1$d nan nu na a ra naxan nu na a ra tEmui, wo %2$s mato ala ko wo xa a kolon</item>
+        <item quantity="many">%1$d nan nu na a ra naxan nu na a ra tEmui, wo %2$s mato ala ko wo xa a kolon</item>
+        <item quantity="one">%1$d fe kobi toxi nE a ra tEmui, wo %2$s mato ala ko wo xa a kolon</item>
+        <item quantity="other">%1$d nan nu na a ra naxan nu na a ra tEmui, wo %2$s mato ala ko wo xa a kolon</item>
+        <item quantity="two">%1$d nan nu na a ra naxan nu na a ra tEmui, wo %2$s mato ala ko wo xa a kolon</item>
+        <item quantity="zero">%1$d nan nu na a ra naxan nu na a ra tEmui, wo %2$s mato ala ko wo xa a kolon</item>
+    </plurals>
+    <plurals name="processing_errors">
+        <item quantity="few">%1$d nan nu na %2$s file kui, wo %2$s file mato naxan nu na %3$s kui xa na mu wo %4$s logs mato ala ko wo xa a kolon</item>
+        <item quantity="many">%1$d nan nu na %2$s file kui, wo %2$s file mato naxan nu na %3$s kui xa na mu wo %4$s logs mato ala ko wo xa a kolon</item>
+        <item quantity="one">%1$d nan toxi %2$s file kui, wo %2$s file mato naxan na %3$s xa na mu wo %4$s logs mato ala ko wo xa a kolon</item>
+        <item quantity="other">%1$d nan nu na %2$s file kui, wo %2$s file mato naxan nu na %3$s kui xa na mu wo %4$s logs mato ala ko wo xa a kolon</item>
+        <item quantity="two">%1$d nan nu na %2$s file kui, wo %2$s file mato naxan nu na %3$s kui xa na mu wo %4$s logs mato ala ko wo xa a kolon</item>
+        <item quantity="zero">%1$d nan nu na %2$s file kui, wo %2$s file mato naxan nu na %3$s kui xa na mu wo %4$s logs mato ala ko wo xa a kolon</item>
+    </plurals>
+</resources>
