@@ -72,7 +72,12 @@
     <string name="notifications_needed2">Bildirim iznini iki kez reddettiğiniz için bunun yerine ayarlarda etkinleştirmeniz mi gerekiyor, ayarları başlatalım mı?</string>
     <string name="ok">Tamam</string>
     <string name="please_wait_verify_url">Gönderdiğiniz URL doğrulanırken lütfen bekleyin</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">Güncelleme sırasında %1$d hata algılandı, ayrıntılar için %2$s günlüğünü görüntüleyin</item>
+        <item quantity="other">Güncelleme sırasında %1$d hata algılandı, ayrıntılar için %2$s günlüğünü görüntüleyin</item>
+    </plurals>
     <plurals name="processing_errors">
+        <item quantity="one">%2$s dosyasında %1$d hata algılandı, ayrıntılar için %3$s konumunda bulunan %2$s dosyasını görüntüleyin veya %4$s günlüklerini görüntüleyin</item>
         <item quantity="other">%2$s dosyasında %1$d hata algılandı, ayrıntılar için %3$s adresinde bulunan %2$s dosyasını görüntüleyin veya %4$s günlüklerini görüntüleyin</item>
     </plurals>
     <string name="radar">Radar</string>

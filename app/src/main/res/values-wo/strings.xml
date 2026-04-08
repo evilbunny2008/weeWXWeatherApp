@@ -72,6 +72,9 @@
     <string name="notifications_needed2">Ginaaw ñaari yoon nga bañ ndigalu yëgle bi, fàww nga may ko ci jekkal yi, nga tàmbali jekkal yi?</string>
     <string name="ok">Baax na</string>
     <string name="please_wait_verify_url">Baalnu nga xaar ba nu xool URL bi nga yonne</string>
+    <plurals name="processing_errors2">
+        <item quantity="other">Amoon na %1$d njuumte yuñu gis bi ñuy yeesal, xoolal %2$s logs ngir am ci leeralal</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="other">Amoon na %1$d njuumte yuñu gis ci fichier %2$s, xoolal fichier %2$s biñ fekk ci %3$s wala xoolal %4$s log yi ngir am ci leeralal</item>
     </plurals>

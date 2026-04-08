@@ -72,6 +72,9 @@
     <string name="notifications_needed2">Niwọn igba ti o ti kọ igbanilaaye iwifunni lẹẹmeji, o nilo lati mu ṣiṣẹ ni awọn eto dipo, awọn eto ifilọlẹ?</string>
     <string name="ok">Dara</string>
     <string name="please_wait_verify_url">Jọwọ duro lakoko ti a mọ daju URL ti o fi silẹ</string>
+    <plurals name="processing_errors2">
+        <item quantity="other">Awọn aṣiṣe %1$d wa lakoko mimu dojuiwọn, wo awọn akọọlẹ%2$s fun awọn alaye naa</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="other">Awọn aṣiṣe %1$d wa ninu faili %2$s, wo faili %2$s ti a rii ni %3$s tabi wo awọn akọọlẹ%4$s fun awọn alaye</item>
     </plurals>

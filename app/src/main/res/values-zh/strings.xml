@@ -72,6 +72,9 @@
     <string name="notifications_needed2">由於您兩次拒絕通知權限，因此您需要在設定中啟用它，啟動設定嗎？</string>
     <string name="ok">好的</string>
     <string name="please_wait_verify_url">我們正在驗證您提交的網址，請稍候。</string>
+    <plurals name="processing_errors2">
+        <item quantity="other">更新時偵測到 %1$d 個錯誤，請查看 %2$s 日誌以取得詳細信息</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="other">在 %2$s 檔案中檢測到 %1$d 個錯誤，請查看在 %3$s 找到的 %2$s 檔案或查看 %4$s 日誌以獲取詳細信息</item>
     </plurals>

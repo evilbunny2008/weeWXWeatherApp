@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about">Anggo</string>
+    <string name="about_app">Taringot tu Aplikasi</string>
+    <string name="afternoon_alert">Suhu %1$s nunga turun tu batasmu %2$s</string>
+    <string name="afternoon_temp_alert">Siaga Siang?</string>
+    <string name="all_time_stats">Statistik Sude Tingki</string>
+    <string name="app_theme">Tema Aplikasi</string>
+    <string name="avg">rata-rata</string>
+    <string name="battery_warning">Sipasingot: Molo diaktifhon hamu opsi na di ginjang i, boi do hatop habis bateremuna sian na somal</string>
+    <string name="before">andorang so</string>
+    <string name="bgColour">Widget Pemilih Warna Latar Belakang</string>
+    <string name="custom2">Hasomalon</string>
+    <string name="custom_setting">Warna Khusus</string>
+    <string name="custom_url">Ndang pola: URL khusus</string>
+    <string name="custom_url_not_set_or_blank">URL khusus ndang diatur, manang kosong. Boi do hamu masuk tu pengaturan laho manambai URL khusus</string>
+    <string name="dark_theme">Tema Golap</string>
+    <string name="data_url_was_blank">URL %1$s kosong, pareso ma file %2$s muna jala coba muse</string>
+    <string name="delete_all_data">Hapus Sude Data jala Tutup</string>
+    <string name="empty">Rumar</string>
+    <string name="error">Hasalaan!</string>
+    <string name="error_occurred_while_attempting_to_update">Adong do hasalaan na masa tingki manguji paimbaruhon pangkeon</string>
+    <string name="every_5_minutes">Setiap 5 Menit</string>
+    <string name="every_5_seconds">Setiap 5 Detik</string>
+    <string name="every_10_minutes">Setiap 10 Menit</string>
+    <string name="every_10_seconds">Setiap 10 Detik</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
+        <item quantity="many">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
+        <item quantity="one">Adong do %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
+        <item quantity="other">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
+        <item quantity="two">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
+        <item quantity="zero">Adong %1$d hasalaan na diida tingki paimbaruhon, ida ma log %2$s laho mamboto hatorangan na dumenggan</item>
+    </plurals>
+    <plurals name="processing_errors">
+        <item quantity="few">Adong %1$d hasalaan na diida di berkas %2$s, ida ma berkas %2$s na dapot di %3$s manang ida ma log %4$s laho mamboto hatorangan na dumenggan</item>
+        <item quantity="many">Adong %1$d hasalaan na diida di berkas %2$s, ida ma berkas %2$s na dapot di %3$s manang ida ma log %4$s laho mamboto hatorangan na dumenggan</item>
+        <item quantity="one">Adong do %1$d hasalaan na diida di berkas %2$s, ida ma berkas %2$s na dapot di %3$s manang ida ma log %4$s laho mamboto rincianna</item>
+        <item quantity="other">Adong %1$d hasalaan na diida di berkas %2$s, ida ma berkas %2$s na dapot di %3$s manang ida ma log %4$s laho mamboto hatorangan na dumenggan</item>
+        <item quantity="two">Adong %1$d hasalaan na diida di berkas %2$s, ida ma berkas %2$s na dapot di %3$s manang ida ma log %4$s laho mamboto hatorangan na dumenggan</item>
+        <item quantity="zero">Adong %1$d hasalaan na diida di berkas %2$s, ida ma berkas %2$s na dapot di %3$s manang ida ma log %4$s laho mamboto hatorangan na dumenggan</item>
+    </plurals>
+</resources>
