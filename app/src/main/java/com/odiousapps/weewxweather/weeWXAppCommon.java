@@ -3606,6 +3606,17 @@ class weeWXAppCommon
 					String JSONurl = (String)KeyValue.readVar(json_keys[i] + "_url", "");
 					if(!JSONurl.isBlank() && is_valid_url(JSONurl))
 					{
+						Calendar cal1 = Calendar.getInstance();
+						Calendar cal2 = Calendar.getInstance();
+						cal2.setTimeInMillis((long)KeyValue.readVar(json_keys[i] + "_time", 0L));
+
+						if(i == 1 && cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR))
+							continue;
+
+						if(i == 2 && cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+						   cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR))
+							continue;
+
 						idtype.add(i);
 						urls.add(JSONurl);
 						contentTypes.add("JSON");
@@ -3616,6 +3627,11 @@ class weeWXAppCommon
 
 			if(urls.isEmpty())
 				return;
+
+			boolean updatedWeather = false;
+			boolean updatedForecast = false;
+			boolean updatedRadar = false;
+			boolean updatedWebcam = false;
 
 			ParallelDownloader downloader = new ParallelDownloader(urls.size());
 			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
@@ -3645,6 +3661,7 @@ class weeWXAppCommon
 				List<ParallelDownloader.DownloadResult> succeeded = results.stream().toList();
 				for(ParallelDownloader.DownloadResult r : succeeded)
 				{
+					LogMessage("processUpdates() r.id: " + r.id);
 					if(0 <= r.id && r.id <= 2)
 					{
 						Boolean ret = processWeather(r.id, r.string);
@@ -3653,8 +3670,10 @@ class weeWXAppCommon
 							noteError(R.string.failed_to_process_weather_data, new Object[]{json_labels[r.id]});
 						} else if(ret) {
 							if(r.id != 1)
+							{
+								updatedWeather = true;
 								needToMerge = true;
-							else if(!KeyValue.parseDicts())
+							} else if(!KeyValue.parseDicts())
 								noteError(R.string.failed_to_merge_weather_data);
 						}
 					}
@@ -3669,6 +3688,8 @@ class weeWXAppCommon
 
 							if(!r3.succeeded())
 								noteError(r3.error());
+							else
+								updatedForecast = true;
 						}
 					}
 
@@ -3681,6 +3702,7 @@ class weeWXAppCommon
 							LogMessage("Attempting to save to " + file.getAbsoluteFile());
 							bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
 							LogMessage("Got past the save... ");
+							updatedRadar = true;
 						} catch(Exception e) {
 							LogMessage("Error! e: " + e, true, KeyValue.e);
 							noteError(e);
@@ -3696,6 +3718,7 @@ class weeWXAppCommon
 							LogMessage("Attempting to save to " + file.getAbsoluteFile());
 							bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
 							LogMessage("Got past the save... ");
+							updatedWebcam = true;
 						} catch(Exception e) {
 							LogMessage("Error! e: " + e, true, KeyValue.e);
 							noteError(e);
@@ -3708,6 +3731,21 @@ class weeWXAppCommon
 
 				if(errorCount() > 0 && sendIntents)
 					SendIntent(UPDATE_ERRORS);
+
+				if(sendIntents)
+				{
+					if(updatedWeather)
+						SendIntent(REFRESH_WEATHER_INTENT);
+
+					if(updatedForecast)
+						SendIntent(REFRESH_FORECAST_INTENT);
+
+					if(updatedRadar)
+						SendIntent(REFRESH_RADAR_INTENT);
+
+					if(updatedWebcam)
+						SendIntent(REFRESH_WEBCAM_INTENT);
+				}
 			}
 		} catch(Exception e) {
 			LogMessage("UpdateCheck.runInTheBackground() Error! e: " + e, true, KeyValue.e);
