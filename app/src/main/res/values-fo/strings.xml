@@ -72,7 +72,12 @@
     <string name="notifications_needed2">Av tí at tú noktaði fráboðanarloyvinum tvær ferðir, mást tú virkja tað í innstillingum ístaðin, seta innstillingar í gongd?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Vinarliga bíða, meðan vit vátta slóðina, sum tú hevur sent inn</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">Tað var %1$d feilur uppdagaður meðan dagført varð, síggj %2$s loggar fyri smálutirnar</item>
+        <item quantity="other">Tað vóru %1$d feilir uppdagaðir meðan dagført varð, sí %2$s loggar fyri smálutirnar</item>
+    </plurals>
     <plurals name="processing_errors">
+        <item quantity="one">Tað var %1$d feilur uppdagaður í %2$s fíluni, síggj %2$s fíluna funnin á %3$s ella síggj %4$s loggar fyri smálutirnar</item>
         <item quantity="other">Tað vóru %1$d feilir uppdagaðir í %2$s fíluni, síggj %2$s fíluna funnin á %3$s ella síggj %4$s loggar fyri smálutirnar</item>
     </plurals>
     <string name="radar">Radari</string>

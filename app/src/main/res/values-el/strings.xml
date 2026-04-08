@@ -72,7 +72,12 @@
     <string name="notifications_needed2">Εφόσον απορρίψατε την άδεια ειδοποίησης δύο φορές, πρέπει να την ενεργοποιήσετε στις ρυθμίσεις</string>
     <string name="ok">Εντάξει</string>
     <string name="please_wait_verify_url">Περιμένετε μέχρι να επαληθεύσουμε τη διεύθυνση URL που υποβάλατε</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">Εντοπίστηκε %1$d σφάλμα κατά την ενημέρωση, δείτε τα αρχεία καταγραφής %2$s για λεπτομέρειες</item>
+        <item quantity="other">Εντοπίστηκαν %1$d σφάλματα κατά την ενημέρωση, δείτε τα αρχεία καταγραφής %2$s για λεπτομέρειες</item>
+    </plurals>
     <plurals name="processing_errors">
+        <item quantity="one">Εντοπίστηκε %1$d σφάλμα στο αρχείο %2$s, δείτε το αρχείο %2$s που βρέθηκε στο %3$s ή δείτε τα αρχεία καταγραφής %4$s για λεπτομέρειες</item>
         <item quantity="other">Εντοπίστηκαν %1$d σφάλματα στο αρχείο %2$s, δείτε το αρχείο %2$s που βρέθηκε στο %3$s ή δείτε τα αρχεία καταγραφής %4$s για λεπτομέρειες</item>
     </plurals>
     <string name="radar">Ραντάρ</string>

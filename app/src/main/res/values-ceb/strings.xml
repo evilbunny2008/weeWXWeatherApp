@@ -72,9 +72,18 @@
     <string name="notifications_needed2">Tungod kay gibalibaran nimo ang pagtugot sa pagpahibalo sa makaduha, kinahanglan nimo nga i-enable kini sa mga setting sa baylo, mga setting sa paglansad?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Palihug maghulat samtang gipamatud-an namon ang URL nga imong gisumite</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye</item>
+        <item quantity="many">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye</item>
+        <item quantity="one">Adunay %1$d error nga nakita samtang nag-update, tan-awa ang %2$s logs para sa mga detalye</item>
+        <item quantity="other">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye</item>
+        <item quantity="two">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye</item>
+        <item quantity="zero">Adunay %1$d kasaypanan nga nakita samtang nag-update, tan-awa ang %2$s nga mga log alang sa mga detalye</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
         <item quantity="many">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
+        <item quantity="one">Adunay %1$d error nga nakita sa %2$s file, tan-awa ang %2$s file nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
         <item quantity="other">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
         <item quantity="two">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
         <item quantity="zero">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>

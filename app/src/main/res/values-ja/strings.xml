@@ -72,6 +72,9 @@
     <string name="notifications_needed2">通知許可を 2 回拒否したため、代わりに設定で通知許可を有効にする必要があります。設定を起動しますか?</string>
     <string name="ok">わかりました</string>
     <string name="please_wait_verify_url">送信された URL を確認するまでお待ちください。</string>
+    <plurals name="processing_errors2">
+        <item quantity="other">更新中に %1$d エラーが検出されました。詳細については %2$s ログを参照してください</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="other">%2$s ファイルで %1$d 個のエラーが検出されました。詳細については、%3$s にある %2$s ファイルを表示するか、%4$s ログを表示してください。</item>
     </plurals>

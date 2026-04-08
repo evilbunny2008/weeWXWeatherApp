@@ -72,7 +72,12 @@
     <string name="notifications_needed2">તમે નોટિફિકેશનની પરવાનગીને બે વાર નકારી દીધી હોવાથી, તમારે તેને બદલે સેટિંગમાં ચાલુ કરવાની જરૂર છે, સેટિંગ શરૂ કરો?</string>
     <string name="ok">ઓકે</string>
     <string name="please_wait_verify_url">તમે સબમિટ કરેલ URL અમે ચકાસીએ ત્યાં સુધી કૃપા કરીને રાહ જુઓ</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">અપડેટ કરતી વખતે %1$d ભૂલ મળી, વિગતો માટે %2$s લોગ જુઓ</item>
+        <item quantity="other">અપડેટ કરતી વખતે %1$d ભૂલો મળી, વિગતો માટે %2$s લોગ જુઓ</item>
+    </plurals>
     <plurals name="processing_errors">
+        <item quantity="one">%2$s ફાઇલમાં %1$d ભૂલ મળી, %3$s પર મળેલી %2$s ફાઇલ જુઓ અથવા વિગતો માટે %4$s લોગ જુઓ</item>
         <item quantity="other">%2$s ફાઇલમાં %1$d ભૂલો મળી હતી, %3$s પર મળેલી %2$s ફાઇલ જુઓ અથવા વિગતો માટે %4$s લોગ જુઓ</item>
     </plurals>
     <string name="radar">રડાર</string>

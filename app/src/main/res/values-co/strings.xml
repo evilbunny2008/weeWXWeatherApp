@@ -72,9 +72,18 @@
     <string name="notifications_needed2">Siccomu avete rifiutatu u permessu di notificazione duie volte, avete bisognu di attivà in i paràmetri invece, lanciate i paràmetri?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Per piacè aspettate mentre verificamu l\'URL chì avete inviatu</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Ci sò stati %1$d errori rilevati durante l\'aghjurnamentu, vede %2$s logs per i dettagli</item>
+        <item quantity="many">Ci sò stati %1$d errori rilevati durante l\'aghjurnamentu, vede %2$s logs per i dettagli</item>
+        <item quantity="one">Ci hè statu %1$d errore rilevatu durante l\'aghjurnamentu, vede %2$s logs per i dettagli</item>
+        <item quantity="other">Ci sò stati %1$d errori rilevati durante l\'aghjurnamentu, vede %2$s logs per i dettagli</item>
+        <item quantity="two">Ci sò stati %1$d errori rilevati durante l\'aghjurnamentu, vede %2$s logs per i dettagli</item>
+        <item quantity="zero">Ci sò stati %1$d errori rilevati durante l\'aghjurnamentu, vede %2$s logs per i dettagli</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">Ci sò stati %1$d errori rilevati in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede i logs %4$s per i dettagli</item>
         <item quantity="many">Ci sò stati %1$d errori rilevati in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede i logs %4$s per i dettagli</item>
+        <item quantity="one">Ci hè statu %1$d errore rilevatu in u schedariu %2$s, vede u schedariu %2$s truvatu in %3$s o vede %4$s logs per i dettagli</item>
         <item quantity="other">Ci sò stati %1$d errori rilevati in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede i logs %4$s per i dettagli</item>
         <item quantity="two">Ci sò stati %1$d errori rilevati in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede i logs %4$s per i dettagli</item>
         <item quantity="zero">Ci sò stati %1$d errori rilevati in u schedariu %2$s, vede u schedariu %2$s trovu in %3$s o vede i logs %4$s per i dettagli</item>

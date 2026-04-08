@@ -72,8 +72,14 @@
     <string name="notifications_needed2">Dado que rechazó el permiso de notificación dos veces, debe habilitarlo en la configuración, ¿iniciar la configuración?</string>
     <string name="ok">De acuerdo</string>
     <string name="please_wait_verify_url">Espere mientras verificamos la URL que envió</string>
+    <plurals name="processing_errors2">
+        <item quantity="many">Se detectaron %1$d errores durante la actualización; consulte los registros de %2$s para obtener más detalles</item>
+        <item quantity="one">Se detectó %1$d error durante la actualización; consulte los registros de %2$s para obtener más detalles</item>
+        <item quantity="other">Se detectaron %1$d errores durante la actualización; consulte los registros de %2$s para obtener más detalles</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="many">Se detectaron %1$d errores en el archivo %2$s. Consulte el archivo %2$s encontrado en %3$s o consulte los registros de %4$s para obtener más detalles</item>
+        <item quantity="one">Se detectó %1$d error en el archivo %2$s. Consulte el archivo %2$s encontrado en %3$s o consulte los registros de %4$s para obtener más detalles</item>
         <item quantity="other">Se detectaron %1$d errores en el archivo %2$s. Consulte el archivo %2$s encontrado en %3$s o consulte los registros de %4$s para obtener más detalles</item>
     </plurals>
     <string name="radar">Radar</string>

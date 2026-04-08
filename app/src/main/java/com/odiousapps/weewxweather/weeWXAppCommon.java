@@ -1,6 +1,7 @@
 package com.odiousapps.weewxweather;
 
 import android.app.Activity;
+import android.app.NotificationManager;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
@@ -3558,6 +3559,12 @@ class weeWXAppCommon
 
 	static void processUpdates(boolean onReceivedUpdate, boolean onAppStart)
 	{
+		processUpdates(false, onReceivedUpdate, onAppStart, true, true, true, true, true);
+	}
+
+	static void processUpdates(boolean forced, boolean onReceivedUpdate, boolean onAppStart, boolean sendIntents,
+	                           boolean weather, boolean forecast, boolean radar, boolean webcam)
+	{
 		try
 		{
 			List<Integer> idtype = new ArrayList<>();
@@ -3565,39 +3572,51 @@ class weeWXAppCommon
 			List<String> contentTypes = new ArrayList<>();
 			List<Object> PossibleErrors = new ArrayList<>();
 
-			String forecastURL = (String)KeyValue.readVar("FORECAST_URL", "");
-			if(!forecastURL.isBlank() && is_valid_url(forecastURL))
+			if(forecast)
 			{
-				idtype.add(3);
-				urls.add(forecastURL);
-				contentTypes.add("HTML");
-				PossibleErrors.add(R.string.wasnt_able_to_connect_forecast);
-			}
-
-			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
-			if(radtype != null && radtype.equals("image"))
-			{
-				String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
-				if(radarURL != null && !radarURL.isBlank())
+				String forecastURL = (String)KeyValue.readVar("FORECAST_URL", "");
+				if(!forecastURL.isBlank() && is_valid_url(forecastURL))
 				{
-					idtype.add(4);
-					urls.add(radarURL);
-					contentTypes.add("IMAGE");
+					idtype.add(3);
+					urls.add(forecastURL);
+					contentTypes.add("HTML");
 					PossibleErrors.add(R.string.wasnt_able_to_connect_forecast);
 				}
 			}
 
-			for(int i = 0; i < 3; i++)
+			if(radar)
 			{
-				String JSONurl = (String)KeyValue.readVar(json_keys[i] + "_url", "");
-				if(!JSONurl.isBlank() && is_valid_url(JSONurl))
+				String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
+				if(radtype != null && radtype.equals("image"))
 				{
-					idtype.add(i);
-					urls.add(JSONurl);
-					contentTypes.add("JSON");
-					PossibleErrors.add(new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[i], JSONurl}});
+					String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
+					if(radarURL != null && !radarURL.isBlank())
+					{
+						idtype.add(4);
+						urls.add(radarURL);
+						contentTypes.add("IMAGE");
+						PossibleErrors.add(R.string.wasnt_able_to_connect_forecast);
+					}
 				}
 			}
+
+			if(weather)
+			{
+				for(int i = 0; i < 3; i++)
+				{
+					String JSONurl = (String)KeyValue.readVar(json_keys[i] + "_url", "");
+					if(!JSONurl.isBlank() && is_valid_url(JSONurl))
+					{
+						idtype.add(i);
+						urls.add(JSONurl);
+						contentTypes.add("JSON");
+						PossibleErrors.add(new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[i], JSONurl}});
+					}
+				}
+			}
+
+			if(urls.isEmpty())
+				return;
 
 			ParallelDownloader downloader = new ParallelDownloader(urls.size(), false);
 			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
@@ -3627,41 +3646,35 @@ class weeWXAppCommon
 				List<ParallelDownloader.DownloadResult> succeeded = results.stream().toList();
 				for(ParallelDownloader.DownloadResult r : succeeded)
 				{
-					if(r.id == 0 || r.id == 2)
+					if(0 <= r.id && r.id <= 2)
 					{
 						Boolean ret = processWeather(r.id, r.string);
 						if(ret == null)
-							Processing_Errors = true;
-						else if(ret)
-							needToMerge = true;
-					}
-
-					if(r.id == 1)
-					{
-						Boolean ret = processWeather(r.id, r.string);
-						if(ret == null)
-							Processing_Errors = true;
-						else if(ret && !KeyValue.parseDicts())
-							noteError(R.string.failed_to_process_weather_data, new Object[]{json_labels[1]});
-					}
-
-					String fctype = (String)KeyValue.readVar("fctype", "");
-					if(fctype == null || fctype.isBlank())
-					{
-						LogMessage("UpdateCheck.runInTheBackground() fctype is null or blank, skipping...");
-						if(!weeWXApp.hasBootedFully)
-							weeWXApp.hasBootedFully = true;
-
-						return;
+						{
+							noteError(R.string.failed_to_process_weather_data, new Object[]{json_labels[r.id]});
+						} else if(ret) {
+							if(r.id != 1)
+								needToMerge = true;
+							else if(!KeyValue.parseDicts())
+								noteError(R.string.failed_to_merge_weather_data);
+						}
 					}
 
 					if(r.id == 3)
 					{
-						Result3 r3 = processForecast(modhour, fctype, r.string, forecastURL);
+						String forecastURL = (String)KeyValue.readVar("FORECAST_URL", "");
+						String fctype = (String)KeyValue.readVar("fctype", "");
+						if(fctype != null && !fctype.isBlank() && forecastURL != null && !forecastURL.isBlank())
+						{
+							Result3 r3 = processForecast(modhour, fctype, r.string, forecastURL);
 
-						if(!r3.succeeded())
-							noteError(r3.error());
-					} else if(r.id == 4 && r.contentType.equals("IMAGE")) {
+							if(!r3.succeeded())
+								noteError(r3.error());
+						}
+					}
+
+					if(r.id == 4 && r.contentType.equals("IMAGE"))
+					{
 						Bitmap bm = r.bm;
 						File file = getFile(weeWXApp.radarFilename);
 						try(FileOutputStream out = new FileOutputStream(file))
@@ -3673,7 +3686,10 @@ class weeWXAppCommon
 							LogMessage("Error! e: " + e, true, KeyValue.e);
 							noteError(e);
 						}
-					} else if(r.id == 5) {
+					}
+
+					if(r.id == 5)
+					{
 						Bitmap bm = r.bm;
 						File file = getFile(weeWXApp.radarFilename);
 						try(FileOutputStream out = new FileOutputStream(file))
@@ -3688,7 +3704,10 @@ class weeWXAppCommon
 					}
 				}
 
-				if(errorCount() > 0)
+				if(needToMerge && !mergeJsonObjects())
+					noteError(R.string.failed_to_merge_weather_data);
+
+				if(errorCount() > 0 && sendIntents)
 					SendIntent(UPDATE_ERRORS);
 			}
 		} catch(Exception e) {
@@ -4942,21 +4961,21 @@ class weeWXAppCommon
 				return r3;
 
 			r1 = r3.result();
-		}
-
-		if(forecastData == null || forecastData.isBlank())
-		{
-			LogMessage("reallyGetForecast() Failed to get any forecast blocks after 3 attempts... giving up...", KeyValue.w);
-			return new Result3(false, getAndroidString(R.string.failed_to_process_forecast_data), null);
-		}
-
-		if(forecastData.length() > 128 && KeyValue.debugging_on())
-		{
-			try
+		} else {
+			if(forecastData == null || forecastData.isBlank())
 			{
-				CustomDebug.writeDebug("weeWX", "forecast.html", forecastData);
-			} catch(Exception e) {
-				LogMessage("reallyGetForecast() Debug write failed: " + e.getMessage(), KeyValue.w);
+				LogMessage("reallyGetForecast() Failed to get any forecast blocks after 3 attempts... giving up...", KeyValue.w);
+				return new Result3(false, getAndroidString(R.string.failed_to_process_forecast_data), null);
+			}
+
+			if(forecastData.length() > 128 && KeyValue.debugging_on())
+			{
+				try
+				{
+					CustomDebug.writeDebug("weeWX", "forecast.html", forecastData);
+				} catch(Exception e) {
+					LogMessage("reallyGetForecast() Debug write failed: " + e.getMessage(), KeyValue.w);
+				}
 			}
 		}
 

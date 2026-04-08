@@ -72,9 +72,16 @@
     <string name="notifications_needed2">Vzhledem k tomu, že jste dvakrát odmítli oprávnění k oznámení, musíte je místo toho povolit v nastavení, spustit nastavení?</string>
     <string name="ok">Dobře</string>
     <string name="please_wait_verify_url">Počkejte prosím, než ověříme vámi odeslanou adresu URL</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Při aktualizaci bylo zjištěno %1$d chyb, podrobnosti naleznete v protokolech %2$s</item>
+        <item quantity="many">Při aktualizaci bylo zjištěno %1$d chyb, podrobnosti naleznete v protokolech %2$s</item>
+        <item quantity="one">Při aktualizaci byla zjištěna %1$d chyba, podrobnosti naleznete v protokolech %2$s</item>
+        <item quantity="other">Při aktualizaci bylo zjištěno %1$d chyb, podrobnosti naleznete v protokolech %2$s</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">V souboru %2$s bylo zjištěno %1$d chyb, prohlédněte si soubor %2$s nalezený na %3$s nebo si prohlédněte protokoly %4$s, kde najdete podrobnosti</item>
         <item quantity="many">V souboru %2$s bylo zjištěno %1$d chyb, prohlédněte si soubor %2$s nalezený na %3$s nebo si prohlédněte protokoly %4$s, kde najdete podrobnosti</item>
+        <item quantity="one">V souboru %2$s byla zjištěna %1$d chyba, prohlédněte si soubor %2$s nalezený na %3$s nebo si prohlédněte protokoly %4$s, kde najdete podrobnosti</item>
         <item quantity="other">V souboru %2$s bylo zjištěno %1$d chyb, prohlédněte si soubor %2$s nalezený na %3$s nebo si prohlédněte protokoly %4$s, kde najdete podrobnosti</item>
     </plurals>
     <string name="radar">Radar</string>

@@ -72,9 +72,18 @@
     <string name="notifications_needed2">Cï mɛn cï yïn lööŋ ke lëk jäi në door yiic kaa rou, yïn awïc ba puɔ̈l në ajuɛɛr yic në thɛɛr kɔ̈k, jɔ̈k ajuɛɛr?</string>
     <string name="ok">Eyen</string>
     <string name="please_wait_verify_url">Tïŋ ë thää wën cï ɣok URL cï yïn tääu thïn yök</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï keek yök ke yïn ë tɛ̈ɛ̈u ë käŋ yiic, tïŋ %2$s ë lööŋ ë thäät yiic</item>
+        <item quantity="many">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï keek yök ke yïn ë tɛ̈ɛ̈u ë käŋ yiic, tïŋ %2$s ë lööŋ ë thäät yiic</item>
+        <item quantity="one">Anɔŋ %1$d cï yök ke cï rot waar, tïŋ %2$s ë lööŋ ë thäät ë thäät</item>
+        <item quantity="other">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï keek yök ke yïn ë tɛ̈ɛ̈u ë käŋ yiic, tïŋ %2$s ë lööŋ ë thäät yiic</item>
+        <item quantity="two">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï keek yök ke yïn ë tɛ̈ɛ̈u ë käŋ yiic, tïŋ %2$s ë lööŋ ë thäät yiic</item>
+        <item quantity="zero">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï keek yök ke yïn ë tɛ̈ɛ̈u ë käŋ yiic, tïŋ %2$s ë lööŋ ë thäät yiic</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï ke yök në %2$s ë athör yic, tïŋ %2$s ë athör cï yök në %3$s wala tïŋ %4$s ë lööŋ cï keek yök në wël ë lëk yiic</item>
         <item quantity="many">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï ke yök në %2$s ë athör yic, tïŋ %2$s ë athör cï yök në %3$s wala tïŋ %4$s ë lööŋ cï keek yök në wël ë lëk yiic</item>
+        <item quantity="one">Anɔŋ %1$d cï yök ke cï yök në %2$s yic, tïŋ %2$s cï yök në %3$s yic wala tïŋ %4$s cï gɔ̈t në wël juëc yiic</item>
         <item quantity="other">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï ke yök në %2$s ë athör yic, tïŋ %2$s ë athör cï yök në %3$s wala tïŋ %4$s ë lööŋ cï keek yök në wël ë lëk yiic</item>
         <item quantity="two">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï ke yök në %2$s ë athör yic, tïŋ %2$s ë athör cï yök në %3$s wala tïŋ %4$s ë lööŋ cï keek yök në wël ë lëk yiic</item>
         <item quantity="zero">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï ke yök në %2$s ë athör yic, tïŋ %2$s ë athör cï yök në %3$s wala tïŋ %4$s ë lööŋ cï keek yök në wël ë lëk yiic</item>

@@ -72,7 +72,12 @@
     <string name="notifications_needed2">Ахь шозза хаам бан бакъо ца елла дела, цуьнан метта настройкашкахь дӀахӀотто деза, настройкаш дӀайолае?</string>
     <string name="ok">Мегар ду</string>
     <string name="please_wait_verify_url">Дехар ду, ахь дӀакхачийна URL оха тӀечӀагӀъеш собар де</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">Карладаккхарехь %1$d гӀалаташ гучудевлира, хьажа %2$s журналашка детальшна</item>
+        <item quantity="other">Карладаккхарехь %1$d гӀалаташ гучудевлира, хьажа %2$s журналашка деталь</item>
+    </plurals>
     <plurals name="processing_errors">
+        <item quantity="one">%1$d гӀалаташ гучудевлира %2$s файлехь, хьажа %2$s файле карийна %3$s я хьажа %4$s журналашка детальшна</item>
         <item quantity="other">%1$d гӀалаташ гучудевлира %2$s файлехь, хьажа %2$s файле карийна %3$s я хьажа %4$s журналашка детальшна</item>
     </plurals>
     <string name="radar">Радар</string>

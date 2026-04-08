@@ -72,7 +72,12 @@
     <string name="notifications_needed2">Nde tawnoo a saliima yamiroore humpito laabi ɗiɗi, aɗa foti softinde ɗum e dottaaɗe e nokku, udditaa dottaaɗe?</string>
     <string name="ok">To</string>
     <string name="please_wait_verify_url">Ejowo e je ki n n ṣe ati rẹ ṣe ṣe ṣe ṣe ṣẹ́ ṣẹ̀</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">Won %1$d boowal yiytaa e kesɗitingol, ƴeew %2$s binndanɗe ngam humpitaade</item>
+        <item quantity="other">Won %1$d boowal yiytaa e kesɗitingol, ƴeew %2$s binndanɗe ngam humpitaade</item>
+    </plurals>
     <plurals name="processing_errors">
+        <item quantity="one">Won %1$d boowal yiytaa e nder fiilde %2$s, ƴeew fiilde %2$s tawaande e %3$s walla ƴeew %4$s logs ngam humpitaade</item>
         <item quantity="other">Won %1$d boowal yiytaa e nder fiilde %2$s, ƴeew fiilde %2$s tawaande e %3$s walla ƴeew %4$s binndanɗe ngam humpitaade</item>
     </plurals>
     <string name="radar">Radar</string>

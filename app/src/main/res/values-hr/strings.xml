@@ -72,8 +72,14 @@
     <string name="notifications_needed2">Budući da ste dvaput odbili dopuštenje za obavijesti, morate ga umjesto toga omogućiti u postavkama, pokrenuti postavke?</string>
     <string name="ok">U redu</string>
     <string name="please_wait_verify_url">Pričekajte dok ne provjerimo URL koji ste poslali</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Bilo je %1$d grešaka otkrivenih tijekom ažuriranja, pogledajte %2$s zapisnike za detalje</item>
+        <item quantity="one">Tijekom ažuriranja otkrivena je %1$d pogreška, pogledajte zapise %2$s za detalje</item>
+        <item quantity="other">Bilo je %1$d grešaka otkrivenih tijekom ažuriranja, pogledajte %2$s zapisnike za detalje</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">Bilo je %1$d grešaka otkrivenih u %2$s datoteci, pogledajte %2$s datoteku pronađenu na %3$s ili pogledajte %4$s zapisnike za detalje</item>
+        <item quantity="one">Otkrivena je %1$d pogreška u %2$s datoteci, pogledajte %2$s datoteku pronađenu na %3$s ili pogledajte %4$s zapisnike za detalje</item>
         <item quantity="other">Bilo je %1$d grešaka otkrivenih u %2$s datoteci, pogledajte %2$s datoteku pronađenu na %3$s ili pogledajte %4$s zapisnike za detalje</item>
     </plurals>
     <string name="radar">Radar</string>

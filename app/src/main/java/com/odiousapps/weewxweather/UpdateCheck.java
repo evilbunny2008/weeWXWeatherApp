@@ -379,6 +379,12 @@ public class UpdateCheck extends BroadcastReceiver
 					Thread.sleep(weeWXAppCommon.default_wait_on_boot);
 				} catch(InterruptedException e) {
 					LogMessage("UpdateCheck.runInTheBackground() Sleep interrupted by a thrown InterruptedException, is this normal?");
+					wl.release();
+					bgStart = 0;
+					if(!weeWXApp.hasBootedFully)
+						weeWXApp.hasBootedFully = true;
+
+					return;
 				}
 			}
 

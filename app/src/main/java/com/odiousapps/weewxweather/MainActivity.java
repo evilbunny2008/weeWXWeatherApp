@@ -2256,6 +2256,12 @@ public class MainActivity extends FragmentActivity
 						errorDialog(e);
 						return;
 					}
+
+					if(r.id == 1 && !KeyValue.parseDicts())
+					{
+						errorDialog(R.string.failed_to_process_weather_data, new Object[]{json_labels[1]});
+						return;
+					}
 				}
 
 				if(r.id == 3)
@@ -2306,12 +2312,6 @@ public class MainActivity extends FragmentActivity
 						return;
 					}
 				}
-			}
-
-			if(!KeyValue.parseDicts())
-			{
-				errorDialog(R.string.failed_to_process_weather_data, new Object[]{json_labels[1]});
-				return;
 			}
 
 			if(!mergeJsonObjects())

@@ -72,7 +72,12 @@
     <string name="notifications_needed2">از آنجایی که شما دو بار مجوز اعلان را رد کردید، باید آن را در تنظیمات فعال کنید، تنظیمات را راه اندازی کنید؟</string>
     <string name="ok">باشه</string>
     <string name="please_wait_verify_url">لطفاً صبر کنید تا URL ارسالی شما را تأیید کنیم</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">هنگام به‌روزرسانی %1$d خطا شناسایی شد، گزارش‌های %2$s را برای جزئیات مشاهده کنید</item>
+        <item quantity="other">هنگام به‌روزرسانی %1$d خطا شناسایی شد، گزارش‌های %2$s را برای جزئیات مشاهده کنید</item>
+    </plurals>
     <plurals name="processing_errors">
+        <item quantity="one">%1$d خطا در فایل %2$s شناسایی شد، فایل %2$s موجود در %3$s را مشاهده کنید یا گزارش‌های %4$s را برای جزئیات مشاهده کنید</item>
         <item quantity="other">%1$d خطا در فایل %2$s شناسایی شد، فایل %2$s موجود در %3$s را مشاهده کنید یا گزارش‌های %4$s را برای جزئیات مشاهده کنید</item>
     </plurals>
     <string name="radar">رادار</string>
