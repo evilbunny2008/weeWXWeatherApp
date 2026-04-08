@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about">Tentang</string>
+    <string name="about_app">Parkara App</string>
+    <string name="afternoon_alert">Suhu %1$s ampon toron ka bates %2$s</string>
+    <string name="afternoon_temp_alert">Waspada Sore?</string>
+    <string name="all_time_stats">Statistik Sakabbhina Bâkto</string>
+    <string name="app_theme">Tema Aplikasi</string>
+    <string name="avg">rata-rata</string>
+    <string name="battery_warning">Peringatan: Ngaktifaghi opsi è attas bisa aghâbây baterai lebbi ghâncang dâri biyasana</string>
+    <string name="before">sabelluna</string>
+    <string name="bgColour">Pemilih Warna Latar Widget</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Bâdâ %1$d kasala\'an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian</item>
+        <item quantity="many">Bâdâ %1$d kasala\'an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian</item>
+        <item quantity="one">Bâdâ %1$d kasala\'an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian</item>
+        <item quantity="other">Bâdâ %1$d kasala\'an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian</item>
+        <item quantity="two">Bâdâ %1$d kasala\'an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian</item>
+        <item quantity="zero">Bâdâ %1$d kasala\'an sè èdeteksi è bâkto mabâru, bâca %2$s log kaangghuy rincian</item>
+    </plurals>
+    <plurals name="processing_errors">
+        <item quantity="few">Bâdâ %1$d kasala\'an sè ètemmoè è file %2$s, èbâca file %2$s sè ètemmoè è %3$s otabâ èbâca log %4$s kaangghuy rincian</item>
+        <item quantity="many">Bâdâ %1$d kasala\'an sè ètemmoè è file %2$s, èbâca file %2$s sè ètemmoè è %3$s otabâ èbâca log %4$s kaangghuy rincian</item>
+        <item quantity="one">Bâdâ %1$d kasala\'an sè èdeteksi è file %2$s, èbâca file %2$s sè ètemmoè è %3$s otabâ èbâca log %4$s kaangghuy rincian</item>
+        <item quantity="other">Bâdâ %1$d kasala\'an sè ètemmoè è file %2$s, èbâca file %2$s sè ètemmoè è %3$s otabâ èbâca log %4$s kaangghuy rincian</item>
+        <item quantity="two">Bâdâ %1$d kasala\'an sè ètemmoè è file %2$s, èbâca file %2$s sè ètemmoè è %3$s otabâ èbâca log %4$s kaangghuy rincian</item>
+        <item quantity="zero">Bâdâ %1$d kasala\'an sè ètemmoè è file %2$s, èbâca file %2$s sè ètemmoè è %3$s otabâ èbâca log %4$s kaangghuy rincian</item>
+    </plurals>
+</resources>
