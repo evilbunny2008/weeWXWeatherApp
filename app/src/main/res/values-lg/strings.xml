@@ -72,7 +72,12 @@
     <string name="notifications_needed2">Okuva bwe wagaana olukusa lw\'okumanyisa emirundi ebiri, olina okulusobozesa mu nteekateeka mu kifo ky\'ekyo, okutongoza ensengeka?</string>
     <string name="ok">Kale</string>
     <string name="please_wait_verify_url">Nsaba mulinde nga tukakasa URL gyewawaayo</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">Waaliwo ensobi ya %1$d eyazuulibwa nga olongoosa, laba ebiwandiiko bya %2$s okumanya ebisingawo</item>
+        <item quantity="other">Waaliwo ensobi za %1$d ezazuulibwa nga olongoosa, laba ebiwandiiko bya %2$s okumanya ebisingawo</item>
+    </plurals>
     <plurals name="processing_errors">
+        <item quantity="one">Waaliwo ensobi %1$d ezuuliddwa mu fayiro ya %2$s, laba fayiro ya %2$s esangibwa ku %3$s oba laba ebiwandiiko bya %4$s okumanya ebisingawo</item>
         <item quantity="other">Waaliwo ensobi za %1$d ezazuulibwa mu fayiro ya %2$s, laba fayiro ya %2$s esangibwa ku %3$s oba laba ebiwandiiko bya %4$s okumanya ebisingawo</item>
     </plurals>
     <string name="radar">Radar</string>

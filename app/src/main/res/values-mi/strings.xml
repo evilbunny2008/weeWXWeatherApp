@@ -72,9 +72,18 @@
     <string name="notifications_needed2">I te mea e rua nga wa i paopao koe i te whakaaetanga whakamohiotanga, me whakaahei koe i roto i nga tautuhinga hei utu, whakarewahia nga tautuhinga?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Tēnā tatari ka tirohia e mātou te URL i tukuna e koe</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">E %1$d nga hapa i kitea i te wa e whakahōu ana, tirohia %2$s nga raarangi mo nga taipitopito</item>
+        <item quantity="many">E %1$d nga hapa i kitea i te wa e whakahōu ana, tirohia %2$s nga raarangi mo nga taipitopito</item>
+        <item quantity="one">He %1$d te hapa i kitea i te wa e whakahōu ana, tirohia nga %2$s rangitaki mo nga taipitopito</item>
+        <item quantity="other">E %1$d nga hapa i kitea i te wa e whakahōu ana, tirohia %2$s nga raarangi mo nga taipitopito</item>
+        <item quantity="two">E %1$d nga hapa i kitea i te wa e whakahōu ana, tirohia %2$s nga raarangi mo nga taipitopito</item>
+        <item quantity="zero">E %1$d nga hapa i kitea i te wa e whakahōu ana, tirohia %2$s nga raarangi mo nga taipitopito</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
         <item quantity="many">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
+        <item quantity="one">He hapa %1$d i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
         <item quantity="other">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
         <item quantity="two">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
         <item quantity="zero">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>

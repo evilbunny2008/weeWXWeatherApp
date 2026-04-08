@@ -72,9 +72,18 @@
     <string name="notifications_needed2">Nasaba nu tolak izin pemberitahuan rua pissang, paralluko ampa aktifkangi ri setting, setting peluncuran?</string>
     <string name="ok">Oke</string>
     <string name="please_wait_verify_url">Punna rie\' pa\'pau, a\'kulle to\'ko a\'pa\'nassaang URL nu\'pa\'sareanga</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Nia %1$d kasalang nideteksi ri wattu ni update, cini %2$s log untuk rincianna</item>
+        <item quantity="many">Nia %1$d kasalang nideteksi ri wattu ni update, cini %2$s log untuk rincianna</item>
+        <item quantity="one">Nia %1$d kasalang nideteksi ri wattu ni update, cini %2$s log untuk rincianna</item>
+        <item quantity="other">Nia %1$d kasalang nideteksi ri wattu ni update, cini %2$s log untuk rincianna</item>
+        <item quantity="two">Nia %1$d kasalang nideteksi ri wattu ni update, cini %2$s log untuk rincianna</item>
+        <item quantity="zero">Nia %1$d kasalang nideteksi ri wattu ni update, cini %2$s log untuk rincianna</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">Nia %1$d kasalang ni gappa ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>
         <item quantity="many">Nia %1$d kasalang ni gappa ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>
+        <item quantity="one">Nia %1$d kasalang nideteksi ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>
         <item quantity="other">Nia %1$d kasalang ni gappa ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>
         <item quantity="two">Nia %1$d kasalang ni gappa ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>
         <item quantity="zero">Nia %1$d kasalang ni gappa ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>

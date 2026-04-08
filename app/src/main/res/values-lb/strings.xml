@@ -72,7 +72,12 @@
     <string name="notifications_needed2">Zënter datt Dir d\'Notifikatiounserlaabnes zweemol ofgeleent hutt, musst Dir et an Astellungen aktivéieren amplaz, Astellungen starten?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Waart w.e.g. wärend mir d\'URL verifizéieren déi Dir aginn hutt</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">Et gouf %1$d Feeler entdeckt beim Update, kuckt %2$s Logbicher fir d\'Detailer</item>
+        <item quantity="other">Et goufen %1$d Feeler entdeckt beim Update, kuckt %2$s Logbicher fir d\'Detailer</item>
+    </plurals>
     <plurals name="processing_errors">
+        <item quantity="one">Et gouf %1$d Feeler an der %2$s Datei entdeckt, kuckt de %2$s Datei fonnt op %3$s oder kuckt %4$s Logbicher fir d\'Detailer</item>
         <item quantity="other">Et goufen %1$d Feeler an der %2$s Datei entdeckt, kuckt de %2$s Datei fonnt op %3$s oder kuckt %4$s Logbicher fir d\'Detailer</item>
     </plurals>
     <string name="radar">Radar</string>

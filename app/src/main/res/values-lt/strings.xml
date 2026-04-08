@@ -72,9 +72,16 @@
     <string name="notifications_needed2">Kadangi du kartus atmetėte pranešimų leidimą, turite jį įjungti nustatymuose, paleisti nustatymus?</string>
     <string name="ok">Gerai</string>
     <string name="please_wait_verify_url">Palaukite, kol patvirtinsime jūsų pateiktą URL</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Atnaujinant aptikta %1$d klaidų. Daugiau informacijos rasite %2$s žurnaluose</item>
+        <item quantity="many">Atnaujinant aptikta %1$d klaidų. Daugiau informacijos rasite %2$s žurnaluose</item>
+        <item quantity="one">Atnaujinant aptikta %1$d klaida. Daugiau informacijos rasite %2$s žurnaluose</item>
+        <item quantity="other">Atnaujinant aptikta %1$d klaidų. Daugiau informacijos rasite %2$s žurnaluose</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">Faile %2$s aptikta %1$d klaidų, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
         <item quantity="many">Faile %2$s aptikta %1$d klaidų, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
+        <item quantity="one">%2$s faile aptikta %1$d klaida, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
         <item quantity="other">Faile %2$s aptikta %1$d klaidų, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
     </plurals>
     <string name="radar">Radaras</string>
