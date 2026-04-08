@@ -2698,10 +2698,10 @@ class weeWXAppCommon
 			return true;
 		}
 
-		LogMessage("passesRegularCheck() Last updated check, is " + npwsll.report_time + " > " + npwsll.lastStart + "?");
+		LogMessage("passesRegularCheck() Last updated check, is " + npwsll.report_time + " < " + npwsll.lastStart + "?");
 		if(!forced && npwsll.report_time > npwsll.lastStart)
 		{
-			LogMessage("passesRegularCheck() !forced && " + npwsll.report_time + " > " + npwsll.lastStart + "...");
+			LogMessage("passesRegularCheck() !forced && " + npwsll.report_time + " < " + npwsll.lastStart + "...");
 			if(has_json_combined)
 			{
 				LogMessage("passesRegularCheck() lastJsonDownload != null && !lastJsonDownload.isBlank()... Skipping...", KeyValue.d);
