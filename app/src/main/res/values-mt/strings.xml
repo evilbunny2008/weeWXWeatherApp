@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Kien hemm %1$d żbalji misjuba fil-fajl %2$s, ara l-fajl %2$s misjub f\'%3$s jew ara %4$s logs għad-dettalji</item>
         <item quantity="many">Kien hemm %1$d żbalji misjuba fil-fajl %2$s, ara l-fajl %2$s misjub f\'%3$s jew ara %4$s logs għad-dettalji</item>
-        <item quantity="one">Kien hemm %1$d żball misjub fil-fajl %2$s, ara l-fajl %2$s misjub f\'%3$s jew ara %4$s logs għad-dettalji</item>
         <item quantity="other">Kien hemm %1$d żbalji misjuba fil-fajl %2$s, ara l-fajl %2$s misjub f\'%3$s jew ara %4$s logs għad-dettalji</item>
         <item quantity="two">Kien hemm %1$d żbalji misjuba fil-fajl %2$s, ara l-fajl %2$s misjub f\'%3$s jew ara %4$s logs għad-dettalji</item>
     </plurals>

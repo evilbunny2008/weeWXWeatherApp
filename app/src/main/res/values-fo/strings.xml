@@ -73,7 +73,6 @@
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Vinarliga bíða, meðan vit vátta slóðina, sum tú hevur sent inn</string>
     <plurals name="processing_errors">
-        <item quantity="one">Tað vóru %1$d feilir uppdagaðir í %2$s fíluni, síggj %2$s fíluna funnin á %3$s ella síggj %4$s loggar fyri smálutirnar</item>
         <item quantity="other">Tað vóru %1$d feilir uppdagaðir í %2$s fíluni, síggj %2$s fíluna funnin á %3$s ella síggj %4$s loggar fyri smálutirnar</item>
     </plurals>
     <string name="radar">Radari</string>

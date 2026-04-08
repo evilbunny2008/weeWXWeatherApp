@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Nia %1$d kasalang ni gappa ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>
         <item quantity="many">Nia %1$d kasalang ni gappa ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>
-        <item quantity="one">Nia %1$d kasalang nideteksi ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>
         <item quantity="other">Nia %1$d kasalang ni gappa ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>
         <item quantity="two">Nia %1$d kasalang ni gappa ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>
         <item quantity="zero">Nia %1$d kasalang ni gappa ri %2$s file, cini %2$s file ni gappa ri %3$s atau cini %4$s log untuk rincianna</item>

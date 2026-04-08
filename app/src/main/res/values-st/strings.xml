@@ -73,7 +73,6 @@
     <string name="ok">Ho lokile</string>
     <string name="please_wait_verify_url">Ka kopo emela ha re ntse re netefatsa url eo u e romelletseng</string>
     <plurals name="processing_errors">
-        <item quantity="one">Ho bile le phoso %1$d faeleng ea %2$s, sheba faele ea %2$s e fumanoeng ho %3$s kapa sheba lintlha tse %4$s ho fumana lintlha</item>
         <item quantity="other">Ho bile le liphoso tse %1$d faeleng ea %2$s, sheba faele ea %2$s e fumanoeng ho %3$s kapa sheba lintlha tse %4$s ho fumana lintlha</item>
     </plurals>
     <string name="radar">Radar</string>

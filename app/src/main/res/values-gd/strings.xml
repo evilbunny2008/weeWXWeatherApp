@@ -74,7 +74,6 @@
     <string name="please_wait_verify_url">Fuirich ort fhad \'s a dhearbhas sinn an URL a chuir thu a-steach</string>
     <plurals name="processing_errors">
         <item quantity="few">Chaidh %1$d mearachdan a lorg san fhaidhle %2$s, seall am faidhle %2$s a chaidh a lorg aig %3$s no seall logaichean %4$s airson mion-fhiosrachadh</item>
-        <item quantity="one">Chaidh mearachd %1$d a lorg san fhaidhle %2$s, seall am faidhle %2$s a chaidh a lorg aig %3$s no seall logaichean %4$s airson mion-fhiosrachadh</item>
         <item quantity="other">Chaidh %1$d mearachdan a lorg san fhaidhle %2$s, seall am faidhle %2$s a chaidh a lorg aig %3$s no seall logaichean %4$s airson mion-fhiosrachadh</item>
         <item quantity="two">Chaidh %1$d mearachdan a lorg san fhaidhle %2$s, seall am faidhle %2$s a chaidh a lorg aig %3$s no seall logaichean %4$s airson mion-fhiosrachadh</item>
     </plurals>

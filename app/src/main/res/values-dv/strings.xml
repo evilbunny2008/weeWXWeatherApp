@@ -73,7 +73,6 @@
     <string name="ok">އެންމެ ރަނގަޅު</string>
     <string name="please_wait_verify_url">ތިޔަ ހުށަހެޅުއްވި ޔޫ.އާރ.އެލް އަޅުގަނޑުމެން ވަރިހަމަ ކުރައްވާއިރު މަޑުކޮށްލައްވާ</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s ފައިލްގައި %1$d އެރަރ ފެނިފައި، %3$s އިން ފެނުނު %2$s ފައިލް ބަލާ ނުވަތަ ތަފްސީލުތަކަށް %4$s ލޮގްތައް ބަލާށެވެ</item>
         <item quantity="other">%2$s ފައިލްގައި %1$d އެރަރސް ފެނިފައިވާއިރު، %3$s އިން ފެނުނު %2$s ފައިލް ބަލާ ނުވަތަ ތަފްސީލުތަކަށް %4$s ލޮގްތައް ބަލާށެވެ</item>
     </plurals>
     <string name="radar">ރަޑަރ</string>

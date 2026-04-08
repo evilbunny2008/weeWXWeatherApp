@@ -72,6 +72,9 @@
     <string name="notifications_needed2">Komin i banna kunnafonidi yamaruya la siɲɛ fila, i ka kan k\'a daminɛ settings kɔnɔ o nɔ na, ​​lancement settings?</string>
     <string name="ok">N sɔnna</string>
     <string name="please_wait_verify_url">Aw ye kɔnɔni kɛ k\'a sɔrɔ an bɛ URL min di, aw bɛ o sɛgɛsɛgɛ</string>
+    <plurals name="processing_errors2">
+        <item quantity="other">%1$d filiw sɔrɔla k\'a sɔrɔ u bɛ ladamuni kɛ, ka %2$s sɛbɛnw lajɛ walasa ka kunnafoniw sɔrɔ</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="other">%1$d filiw kɔlɔsira %2$s filen kɔnɔ, ka %2$s filen lajɛ min sɔrɔla %3$s la walima ka %4$s sɛbɛnw lajɛ walasa ka kunnafoni sɔrɔ</item>
     </plurals>

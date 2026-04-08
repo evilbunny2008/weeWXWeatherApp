@@ -73,7 +73,6 @@
     <string name="ok">Kulungile</string>
     <string name="please_wait_verify_url">Nceda ulinde ngelixa siqinisekisa i-URL oyingenisileyo</string>
     <plurals name="processing_errors">
-        <item quantity="one">Bekukho impazamo eyi %1$d efunyenweyo kwifayile ye %2$s, bona ifayile ye %2$s efunyenwe kwi %3$s okanye ujonge i %4$s logs ukuze ufumane iinkcukacha</item>
         <item quantity="other">Bekukho iimpazamo ze %1$d ezichongiweyo kwifayile ye %2$s, bona ifayile ye %2$s efunyenwe kwi %3$s okanye ujonge i %4$s logs ukuze ufumane iinkcukacha</item>
     </plurals>
     <string name="radar">Radar</string>

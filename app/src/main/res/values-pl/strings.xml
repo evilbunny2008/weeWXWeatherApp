@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Wykryto %1$d błędów w pliku %2$s. Przejrzyj plik %2$s znaleziony w %3$s lub przejrzyj dzienniki %4$s, aby uzyskać szczegółowe informacje</item>
         <item quantity="many">Wykryto %1$d błędów w pliku %2$s. Przejrzyj plik %2$s znaleziony w %3$s lub przejrzyj dzienniki %4$s, aby uzyskać szczegółowe informacje</item>
-        <item quantity="one">Wykryto błąd %1$d w pliku %2$s. Przejrzyj plik %2$s znaleziony w %3$s lub przejrzyj dzienniki %4$s, aby uzyskać szczegółowe informacje</item>
         <item quantity="other">Wykryto %1$d błędów w pliku %2$s. Przejrzyj plik %2$s znaleziony w %3$s lub przejrzyj dzienniki %4$s, aby uzyskać szczegółowe informacje</item>
     </plurals>
     <string name="radar">Radar</string>

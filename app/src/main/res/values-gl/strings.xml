@@ -73,7 +73,6 @@
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Agarde mentres verificamos o URL que enviou</string>
     <plurals name="processing_errors">
-        <item quantity="one">Detectouse %1$d erro no ficheiro %2$s, consulte o ficheiro %2$s atopado en %3$s ou consulte os rexistros de %4$s para obter máis información</item>
         <item quantity="other">Detectáronse %1$d erros no ficheiro %2$s, consulte o ficheiro %2$s atopado en %3$s ou consulte os rexistros de %4$s para obter máis información</item>
     </plurals>
     <string name="radar">Radar</string>

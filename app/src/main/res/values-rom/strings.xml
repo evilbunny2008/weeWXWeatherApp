@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Sas %1$d xatărimata arakhline anθ-o lil %2$s, dikh o lil %2$s arakhlo anθ-o %3$s vaj dikh o lil %4$s vaś e detalură</item>
         <item quantity="many">Sas %1$d xatărimata arakhline anθ-o lil %2$s, dikh o lil %2$s arakhlo anθ-o %3$s vaj dikh o lil %4$s vaś e detalură</item>
-        <item quantity="one">Sas %1$d xatăripen arakhlo anθ-o lil %2$s, dikh o lil %2$s arakhlo anθ-o %3$s vaj dikh o lil %4$s vaś e detalură</item>
         <item quantity="other">Sas %1$d xatărimata arakhline anθ-o lil %2$s, dikh o lil %2$s arakhlo anθ-o %3$s vaj dikh o lil %4$s vaś e detalură</item>
         <item quantity="two">Sas %1$d xatărimata arakhline anθ-o lil %2$s, dikh o lil %2$s arakhlo anθ-o %3$s vaj dikh o lil %4$s vaś e detalură</item>
         <item quantity="zero">Sas %1$d xatărimata arakhline anθ-o lil %2$s, dikh o lil %2$s arakhlo anθ-o %3$s vaj dikh o lil %4$s vaś e detalură</item>

@@ -73,7 +73,6 @@
     <string name="ok">Ko</string>
     <string name="please_wait_verify_url">Da fatan za a jira yayin da muke tabbatar da URL ɗin da kuka ƙaddamar</string>
     <plurals name="processing_errors">
-        <item quantity="one">An gano kuskuren %1$d a cikin fayil ɗin %2$s, duba fayil ɗin %2$s da aka samo a %3$s ko duba rajistan ayyukan %4$s don cikakkun bayanai</item>
         <item quantity="other">An gano kurakurai %1$d a cikin fayil ɗin %2$s, duba fayil ɗin %2$s da aka samo a %3$s ko duba rajistan ayyukan %4$s don cikakkun bayanai</item>
     </plurals>
     <string name="radar">Injin radar</string>

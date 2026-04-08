@@ -73,7 +73,6 @@
     <string name="ok">ٹھیک ہے</string>
     <string name="please_wait_verify_url">براہ کرم انتظار کریں جب ہم آپ کے جمع کردہ یو آر ایل کی تصدیق کرتے ہیں۔</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s فائل میں %1$d خرابی پائی گئی، %3$s پر پائی گئی %2$s فائل دیکھیں یا تفصیلات کے لیے %4$s لاگز دیکھیں</item>
         <item quantity="other">%2$s فائل میں %1$d خرابیاں پائی گئیں، %3$s پر پائی گئی %2$s فائل دیکھیں یا تفصیلات کے لیے %4$s لاگز دیکھیں</item>
     </plurals>
     <string name="radar">ریڈار</string>

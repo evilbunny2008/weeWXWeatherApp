@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
         <item quantity="many">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
-        <item quantity="one">I kitea he hapa %1$d i te kōnae %2$s, tirohia te kōnae %2$s i kitea i %3$s, tirohia ranei %4$s nga raarangi mo nga taipitopito</item>
         <item quantity="other">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
         <item quantity="two">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>
         <item quantity="zero">He %1$d nga hapa i kitea i roto i te konae %2$s, tirohia te konae %2$s i kitea i %3$s, tirohia ranei nga raarangi %4$s mo nga taipitopito</item>

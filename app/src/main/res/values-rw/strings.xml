@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
         <item quantity="many">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
-        <item quantity="one">Hariho% %1$d ikosa ryagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
         <item quantity="other">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
         <item quantity="two">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>
         <item quantity="zero">Hariho% %1$d amakosa yagaragaye muri dosiye ya%2$s, reba%2$s dosiye iboneka kuri%3$s cyangwa urebe%4$s ibiti kubisobanuro birambuye</item>

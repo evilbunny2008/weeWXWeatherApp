@@ -73,7 +73,6 @@
     <string name="ok">בְּסֵדֶר</string>
     <string name="please_wait_verify_url">אנא המתן בזמן שאנו מאמתים את כתובת האתר ששלחת</string>
     <plurals name="processing_errors">
-        <item quantity="one">זוהתה שגיאה %1$d בקובץ %2$s, הצג את הקובץ %2$s שנמצא ב %3$s או הצג %4$s יומנים לקבלת הפרטים</item>
         <item quantity="other">זוהו %1$d שגיאות בקובץ %2$s, הצג את הקובץ %2$s שנמצא ב %3$s או הצג %4$s יומנים לקבלת הפרטים</item>
         <item quantity="two">זוהו %1$d שגיאות בקובץ %2$s, הצג את הקובץ %2$s שנמצא ב %3$s או הצג %4$s יומנים לקבלת הפרטים</item>
     </plurals>

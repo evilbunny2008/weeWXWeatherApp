@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">E %1$d fa\'aletonu na maua i le %2$s faila, va\'ai le %2$s faila na maua i le %3$s pe va\'ai %4$s ogalaau mo fa\'amatalaga</item>
         <item quantity="many">E %1$d fa\'aletonu na maua i le %2$s faila, va\'ai le %2$s faila na maua i le %3$s pe va\'ai %4$s ogalaau mo fa\'amatalaga</item>
-        <item quantity="one">E %1$d fa\'aletonu na maua i le %2$s faila, va\'ai le %2$s faila na maua i le %3$s pe va\'ai %4$s ogalaau mo fa\'amatalaga</item>
         <item quantity="other">E %1$d fa\'aletonu na maua i le %2$s faila, va\'ai le %2$s faila na maua i le %3$s pe va\'ai %4$s ogalaau mo fa\'amatalaga</item>
         <item quantity="two">E %1$d fa\'aletonu na maua i le %2$s faila, va\'ai le %2$s faila na maua i le %3$s pe va\'ai %4$s ogalaau mo fa\'amatalaga</item>
         <item quantity="zero">E %1$d fa\'aletonu na maua i le %2$s faila, va\'ai le %2$s faila na maua i le %3$s pe va\'ai %4$s ogalaau mo fa\'amatalaga</item>

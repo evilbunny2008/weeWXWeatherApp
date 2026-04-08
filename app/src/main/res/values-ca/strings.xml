@@ -74,7 +74,6 @@
     <string name="please_wait_verify_url">Espereu mentre verifiquem l\'URL que heu enviat</string>
     <plurals name="processing_errors">
         <item quantity="many">S\'han detectat %1$d errors al fitxer %2$s, visualitzeu el fitxer %2$s trobat a %3$s o consulteu els registres de %4$s per obtenir els detalls</item>
-        <item quantity="one">S\'ha detectat %1$d error al fitxer %2$s, visualitzeu el fitxer %2$s trobat a %3$s o consulteu els registres de %4$s per obtenir els detalls</item>
         <item quantity="other">S\'han detectat %1$d errors al fitxer %2$s, visualitzeu el fitxer %2$s trobat a %3$s o consulteu els registres de %4$s per obtenir els detalls</item>
     </plurals>
     <string name="radar">Radar</string>

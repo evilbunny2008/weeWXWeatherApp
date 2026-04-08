@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Walay %1$d ya error ya anengneng ed %2$s file, nengnengen so %2$s file ya anengneng ed %3$s odino nengnengen so %4$s logs parad saray detalye</item>
         <item quantity="many">Walay %1$d ya error ya anengneng ed %2$s file, nengnengen so %2$s file ya anengneng ed %3$s odino nengnengen so %4$s logs parad saray detalye</item>
-        <item quantity="one">Walay %1$d ya error ya anengneng ed %2$s file, nengnengen so %2$s file ya anengneng ed %3$s odino nengnengen so %4$s logs parad saray detalye</item>
         <item quantity="other">Walay %1$d ya error ya anengneng ed %2$s file, nengnengen so %2$s file ya anengneng ed %3$s odino nengnengen so %4$s logs parad saray detalye</item>
         <item quantity="two">Walay %1$d ya error ya anengneng ed %2$s file, nengnengen so %2$s file ya anengneng ed %3$s odino nengnengen so %4$s logs parad saray detalye</item>
         <item quantity="zero">Walay %1$d ya error ya anengneng ed %2$s file, nengnengen so %2$s file ya anengneng ed %3$s odino nengnengen so %4$s logs parad saray detalye</item>

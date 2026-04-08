@@ -74,7 +74,6 @@
     <string name="please_wait_verify_url">Počakajte, da preverimo URL, ki ste ga poslali</string>
     <plurals name="processing_errors">
         <item quantity="few">V datoteki %2$s je bilo odkritih %1$d napak, oglejte si datoteko %2$s, najdeno na %3$s, ali si oglejte dnevnike %4$s za podrobnosti</item>
-        <item quantity="one">V datoteki %2$s je bila zaznana %1$d napaka, za podrobnosti si oglejte datoteko %2$s, najdeno na %3$s, ali si oglejte dnevnike %4$s</item>
         <item quantity="other">V datoteki %2$s je bilo odkritih %1$d napak, oglejte si datoteko %2$s, najdeno na %3$s, ali si oglejte dnevnike %4$s za podrobnosti</item>
         <item quantity="two">V datoteki %2$s je bilo odkritih %1$d napak, oglejte si datoteko %2$s, najdeno na %3$s, ali si oglejte dnevnike %4$s za podrobnosti</item>
     </plurals>

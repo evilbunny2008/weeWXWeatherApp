@@ -72,6 +72,9 @@
     <string name="notifications_needed2">ཁྱེད་ཀྱིས་བརྡ་ཐོའི་ཆོག་མཆན་ཐེངས་གཉིས་ཁས་མ་བླངས་པས་ཁྱེད་ཀྱིས་སྒྲིག་སྟངས་ནང་དུ་དེ་ལག་བསྟར་བྱེད་དགོས་སམ། སྒྲིག་སྟངས་འགོ་འཛུགས་དགོས་སམ།</string>
     <string name="ok">ཆོག</string>
     <string name="please_wait_verify_url">ཁྱེད་ཀྱིས་བསྐུར་བའི་URLབདེན་དཔང་བྱེད་པར་སྒུག་རོགས།</string>
+    <plurals name="processing_errors2">
+        <item quantity="other">གསར་བཅོས་བྱེད་སྐབས་ནོར་འཁྲུལ་%1$dཤེས་རྟོགས་བྱུང་འདུག ཞིབ་ཕྲའི་ཆེད་དུ་%2$sདྲན་ཐོ་ལ་གཟིགས།</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="other">%2$sཡིག་ཆའི་ནང་ནོར་འཁྲུལ་%1$dཤེས་རྟོགས་བྱུང་འདུག %3$sལ་རྙེད་པའི་ཡིག་ཆ་%2$sལ་ལྟོས། ཡང་ན་ཞིབ་ཕྲའི་གནས་ཚུལ་ལ་%4$sཡི་དྲན་ཐོ་ལ་ལྟོས།</item>
     </plurals>

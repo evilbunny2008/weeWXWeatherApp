@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Te gen %1$d erè detekte nan %2$s fichye a, gade %2$s fichye a ki te jwenn nan %3$s oswa gade %4$s mòso bwa pou detay yo</item>
         <item quantity="many">Te gen %1$d erè detekte nan %2$s fichye a, gade %2$s fichye a ki te jwenn nan %3$s oswa gade %4$s mòso bwa pou detay yo</item>
-        <item quantity="one">Te gen %1$d erè detekte nan %2$s fichye a, gade %2$s fichye a ki te jwenn nan %3$s oswa gade %4$s mòso bwa pou detay yo</item>
         <item quantity="other">Te gen %1$d erè detekte nan %2$s fichye a, gade %2$s fichye a ki te jwenn nan %3$s oswa gade %4$s mòso bwa pou detay yo</item>
         <item quantity="two">Te gen %1$d erè detekte nan %2$s fichye a, gade %2$s fichye a ki te jwenn nan %3$s oswa gade %4$s mòso bwa pou detay yo</item>
         <item quantity="zero">Te gen %1$d erè detekte nan %2$s fichye a, gade %2$s fichye a ki te jwenn nan %3$s oswa gade %4$s mòso bwa pou detay yo</item>

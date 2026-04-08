@@ -81,7 +81,7 @@ dependencies
 	implementation("com.caverock:androidsvg:1.4")
 
 	implementation("com.squareup.okhttp3:okhttp:5.3.2")
-	implementation("org.nanohttpd:nanohttpd:2.3.1")
+	//implementation("org.nanohttpd:nanohttpd:2.3.1")
 
 	implementation("dnsjava:dnsjava:3.6.4")
 	implementation("org.slf4j:slf4j-api:2.0.17")

@@ -73,7 +73,6 @@
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">URL-imik nassiussavit uppernarsarnissaanut utaqqigit</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s imi %1$d-mik kukkusoqarpoq, %2$s imi nassaarineqartoq %3$s imi takuuk imaluunniit %4$s imi log-it takukkit paasissutissat pissarsiariniarlugit</item>
         <item quantity="other">%2$s imi %1$d-mik kukkusoqarpoq, %2$s imi nassaarineqartoq %3$s imi takuuk imaluunniit %4$s imi log-it takukkit paasissutissat pissarsiariniarlugit</item>
     </plurals>
     <string name="radar">Radari</string>

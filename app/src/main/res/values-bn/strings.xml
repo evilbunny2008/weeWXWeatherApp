@@ -72,6 +72,10 @@
     <string name="notifications_needed2">যেহেতু আপনি বিজ্ঞপ্তির অনুমতি দুইবার প্রত্যাখ্যান করেছেন, আপনার পরিবর্তে সেটিংসে এটি চালু করতে হবে, সেটিংস চালু করতে হবে?</string>
     <string name="ok">ঠিক আছে</string>
     <string name="please_wait_verify_url">আমরা আপনার জমা দেওয়া URL যাচাই করা পর্যন্ত অপেক্ষা করুন।</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">আপডেট করার সময় %1$d ত্রুটি শনাক্ত হয়েছে, বিশদ বিবরণের জন্য %2$s লগ দেখুন</item>
+        <item quantity="other">আপডেট করার সময় %1$dটি ত্রুটি শনাক্ত হয়েছে, বিশদ বিবরণের জন্য %2$s লগ দেখুন</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="one">%2$s ফাইলে %1$d ত্রুটি শনাক্ত হয়েছে, %3$s এ পাওয়া %2$s ফাইলটি দেখুন বা বিশদ বিবরণের জন্য %4$s লগ দেখুন</item>
         <item quantity="other">%2$s ফাইলে %1$dটি ত্রুটি শনাক্ত হয়েছে, %3$s এ পাওয়া %2$s ফাইলটি দেখুন বা বিশদ বিবরণের জন্য %4$s লগ দেখুন</item>

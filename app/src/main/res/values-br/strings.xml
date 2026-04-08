@@ -72,6 +72,13 @@
     <string name="notifications_needed2">Dre ma\'z oc\'h bet nac\'het div wech an aotre da gemenn, ret eo deoc\'h he gweredekaat en arventennoù e-lec\'h, arventennoù lañsañ?</string>
     <string name="ok">Mat eo</string>
     <string name="please_wait_verify_url">Gortozit pa vo gwiriet an URL hoc\'h eus kinniget</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">Kavet ez eus bet %1$d fazi e-pad an hizivaat, sellit ouzh marilhoù %2$s evit ar munudoù</item>
+        <item quantity="many">Kavet ez eus bet %1$d fazi e-pad an hizivaat, sellit ouzh marilhoù %2$s evit ar munudoù</item>
+        <item quantity="one">Kavet ez eus bet %1$d fazi e-pad an hizivaat, sellit ouzh marilhoù %2$s evit ar munudoù</item>
+        <item quantity="other">Kavet ez eus bet %1$d fazi e-pad an hizivaat, sellit ouzh marilhoù %2$s evit ar munudoù</item>
+        <item quantity="two">Kavet ez eus bet %1$d fazi e-pad an hizivaat, sellit ouzh marilhoù %2$s evit ar munudoù</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">Kavet ez eus bet %1$d fazi er restr %2$s, sellit ouzh ar restr %2$s bet kavet e %3$s pe sellit ouzh marilhoù %4$s evit ar munudoù</item>
         <item quantity="many">Kavet ez eus bet %1$d fazi er restr %2$s, sellit ouzh ar restr %2$s bet kavet e %3$s pe sellit ouzh marilhoù %4$s evit ar munudoù</item>

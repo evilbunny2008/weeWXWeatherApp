@@ -73,7 +73,6 @@
     <string name="ok">Хорз</string>
     <string name="please_wait_verify_url">Дæ хорзæхæй, æнхъæлмæ кæс, цалынмæ дæ æрбавдыст URL сбæлвырд кæнæм</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s файлы рабæрæг %1$d рæдыд, æркæсут %2$s файлмæ, кæцы ссардæуыд %3$s ы кæнæ та æркæсут %4$s ы логтæм детæлттæн</item>
         <item quantity="other">%2$s файлы рабæрæг %1$d рæдыды, æркæсут %2$s файлмæ, кæцы ссардæуыд %3$s ы кæнæ та æркæсут %4$s ы логтæм детæлттæн</item>
     </plurals>
     <string name="radar">Радар</string>

@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
         <item quantity="many">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
-        <item quantity="one">%1$d फाइलय् %2$s इरर खनेदत, %3$s स लुयावःगु %2$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
         <item quantity="other">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
         <item quantity="two">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
         <item quantity="zero">%1$d फाइलय् %2$s द्वंगु खनेदत, विवरणया निंतिं %3$s फाइल स्व बाय् विवरणया निंतिं %4$s लग स्व ।</item>
@@ -94,7 +93,7 @@
     <string name="rainfall_limit">वा वइगु सीमा</string>
     <string name="rainrate_alert_severe">तच्वःगु वा वइगु दरया सतर्कता?</string>
     <string name="rainrate_alert_severe_desc">वा वइगु ईया लिधंसाय् वा वइगु दर तच्वःगु सीमा स्वयां अप्वः जुल धाःसा सचेत याइ ।</string>
-    <string name="rainrate_alert_severe_notification">वंगु %2$s दि %3$s य् %1$s वा वःगु दर \'तच्वःगु\' तहलय् थ्यन ।</string>
+    <string name="rainrate_alert_severe_notification">वंगु %2$d दि %3$s य् %1$s वा वःगु दर \'तच्वःगु\' तहलय् थ्यन ।</string>
     <string name="rainrate_alert_severe_str">तच्वःगु वा वइगु दरया सतर्कता</string>
     <string name="rainrate_alert_str">वा वइगु दर सतर्कता</string>
     <string name="rainrate_alert_warning">चेतावनी वा वइगु दरया सतर्कता?</string>

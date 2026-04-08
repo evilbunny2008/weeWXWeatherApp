@@ -73,7 +73,6 @@
     <string name="ok">Bolýar</string>
     <string name="please_wait_verify_url">Berlen URL-ni tassyklaýarys diýip garaşyň</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s faýlynda% %1$d ýalňyşlyk tapyldy, %3$s den tapylan%2$s faýly görüň ýa-da jikme-jiklikler üçin%4$s gündeligini görüň</item>
         <item quantity="other">%2$s faýlynda% %1$d ýalňyşlyklar ýüze çykaryldy, %3$s den tapylan%2$s faýly görüň ýa-da jikme-jiklikler üçin%4$s gündeligini görüň</item>
     </plurals>
     <string name="radar">Radar</string>

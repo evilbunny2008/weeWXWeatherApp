@@ -73,7 +73,6 @@
     <string name="ok">Kale</string>
     <string name="please_wait_verify_url">Nsaba mulinde nga tukakasa URL gyewawaayo</string>
     <plurals name="processing_errors">
-        <item quantity="one">Waaliwo ensobi ya %1$d eyazuulibwa mu fayiro ya %2$s, laba fayiro ya %2$s esangibwa ku %3$s oba laba ebiwandiiko bya %4$s okumanya ebisingawo</item>
         <item quantity="other">Waaliwo ensobi za %1$d ezazuulibwa mu fayiro ya %2$s, laba fayiro ya %2$s esangibwa ku %3$s oba laba ebiwandiiko bya %4$s okumanya ebisingawo</item>
     </plurals>
     <string name="radar">Radar</string>

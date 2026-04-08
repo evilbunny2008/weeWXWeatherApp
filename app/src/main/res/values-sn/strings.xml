@@ -73,7 +73,6 @@
     <string name="ok">Zvakanaka</string>
     <string name="please_wait_verify_url">Ndapota mirira isu tinosimbisa iyo URL yawakatumira</string>
     <plurals name="processing_errors">
-        <item quantity="one">Paita %1$d kukanganisa kwaonekwa mufaira re%2$s, ona %2$s faira rawanikwa pa%3$s kana kuona %4$s log kuti uwane humbowo</item>
         <item quantity="other">Pane %1$d zvakakanganisika pa %2$s faira, ona %2$s faira rawanikwa pa %3$s kana kuona %4$s log kuti uwane humbowo</item>
     </plurals>
     <string name="radar">Radar</string>

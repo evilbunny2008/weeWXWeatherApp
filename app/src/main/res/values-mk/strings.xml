@@ -73,7 +73,6 @@
     <string name="ok">Во ред</string>
     <string name="please_wait_verify_url">Ве молиме почекајте додека ја потврдиме URL-адресата што ја испративте</string>
     <plurals name="processing_errors">
-        <item quantity="one">Откриена е %1$d грешка во датотеката %2$s, погледнете ја датотеката %2$s пронајдена на %3$s или погледнете ја евиденцијата %4$s за детали</item>
         <item quantity="other">Откриени се %1$d грешки во датотеката %2$s, погледнете ја датотеката %2$s пронајдена на %3$s или погледнете ја евиденцијата %4$s за детали</item>
     </plurals>
     <string name="radar">Радар</string>

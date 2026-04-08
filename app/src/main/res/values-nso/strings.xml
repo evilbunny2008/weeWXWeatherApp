@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
         <item quantity="many">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
-        <item quantity="one">Go be go na le phošo ya %1$d yeo e lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
         <item quantity="other">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
         <item quantity="two">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>
         <item quantity="zero">Go be go na le diphošo tša %1$d tšeo di lemogilwego ka faeleng ya %2$s, lebelela faele ya %2$s yeo e hweditšwego go %3$s goba lebelela dilog tša %4$s bakeng sa dintlha</item>

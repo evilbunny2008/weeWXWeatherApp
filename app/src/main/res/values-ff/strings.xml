@@ -73,7 +73,6 @@
     <string name="ok">To</string>
     <string name="please_wait_verify_url">Ejowo e je ki n n ṣe ati rẹ ṣe ṣe ṣe ṣe ṣẹ́ ṣẹ̀</string>
     <plurals name="processing_errors">
-        <item quantity="one">Won %1$d boowal yiytaa e nder fiilde %2$s, ƴeew fiilde %2$s tawaande e %3$s walla ƴeew %4$s binndanɗe ngam humpitaade</item>
         <item quantity="other">Won %1$d boowal yiytaa e nder fiilde %2$s, ƴeew fiilde %2$s tawaande e %3$s walla ƴeew %4$s binndanɗe ngam humpitaade</item>
     </plurals>
     <string name="radar">Radar</string>

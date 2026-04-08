@@ -73,7 +73,6 @@
     <string name="ok">Chabwino</string>
     <string name="please_wait_verify_url">Chonde dikirani pomwe tikutsimikizira URL yomwe mudapereka</string>
     <plurals name="processing_errors">
-        <item quantity="one">Panali zolakwika %1$d zomwe zapezeka mufayilo ya %2$s, onani %2$s fayilo yomwe yapezeka pa %3$s kapena onani malogi %4$s kuti mudziwe zambiri</item>
         <item quantity="other">Panali zolakwika %1$d zomwe zapezedwa mufayilo ya %2$s, onani %2$s fayilo yopezeka pa %3$s kapena onani malogi %4$s kuti mudziwe zambiri</item>
     </plurals>
     <string name="radar">Makina amlengalenga</string>

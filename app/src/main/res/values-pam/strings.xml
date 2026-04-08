@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
         <item quantity="many">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
-        <item quantity="one">Atin %1$d a error a meyakit keng %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
         <item quantity="other">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
         <item quantity="two">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>
         <item quantity="zero">Atin yang %1$d a error ing %2$s file, lawan me ing %2$s file a akit keng %3$s o lawan me ing %4$s logs para kareng detalye</item>

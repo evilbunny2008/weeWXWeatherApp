@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
         <item quantity="many">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
-        <item quantity="one">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li registri %4$s pî dittagghi</item>
         <item quantity="other">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
         <item quantity="two">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>
         <item quantity="zero">Ci foru %1$d erruri rilivati ​​nnô file %2$s, vidi lu file %2$s truvatu a %3$s o vidi li log %4$s pî dittagghi</item>

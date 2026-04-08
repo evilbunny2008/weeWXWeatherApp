@@ -73,7 +73,6 @@
     <string name="ok">Enyo</string>
     <string name="please_wait_verify_url">Taflatse lala esime míele URL si nèɖo ɖa la dzi ɖom</string>
     <plurals name="processing_errors">
-        <item quantity="one">Wokpɔ %1$d vodada le %2$s faɛl me, kpɔ %2$s faɛl si wokpɔ le %3$s alo kpɔ %4$s ƒe nuŋlɔɖiwo hena nyatakakawo</item>
         <item quantity="other">Wokpɔ %1$d vodadawo le %2$s faɛl me, kpɔ %2$s faɛl si wokpɔ le %3$s alo kpɔ %4$s ƒe nuŋlɔɖiwo hena nyatakakawo</item>
     </plurals>
     <string name="radar">Radar</string>

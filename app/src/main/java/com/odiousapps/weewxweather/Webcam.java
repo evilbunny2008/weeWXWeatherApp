@@ -94,7 +94,7 @@ public class Webcam extends Fragment
 		if(updateInterval > 0)
 			handler.post(updateRunnable);
 
-		getWebcamImage(true, false, true, false);
+		loadWebcamImage();
 	}
 
 	void stopRefreshing()

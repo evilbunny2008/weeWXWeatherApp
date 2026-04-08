@@ -73,7 +73,6 @@
     <string name="ok">Bone</string>
     <string name="please_wait_verify_url">Bonvolu atendi dum ni kontrolas la URL kiun vi sendis</string>
     <plurals name="processing_errors">
-        <item quantity="one">Estis %1$d eraro detektita en la %2$s dosiero, vidu la %2$s dosieron trovitan ĉe %3$s aŭ vidu %4$s protokolojn por la detaloj</item>
         <item quantity="other">Estis %1$d eraroj detektitaj en la %2$s dosiero, vidu la %2$s dosieron trovitan ĉe %3$s aŭ vidu %4$s protokolojn por la detaloj</item>
     </plurals>
     <string name="radar">Radaro</string>

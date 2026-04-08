@@ -73,7 +73,6 @@
     <string name="ok">సరే</string>
     <string name="please_wait_verify_url">మీరు సమర్పించిన URLని మేము ధృవీకరించే వరకు దయచేసి వేచి ఉండండి</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s ఫైల్‌లో %1$d లోపం కనుగొనబడింది, %3$s వద్ద కనుగొనబడిన %2$s ఫైల్‌ను వీక్షించండి లేదా వివరాల కోసం %4$s లాగ్‌లను వీక్షించండి</item>
         <item quantity="other">%2$s ఫైల్‌లో %1$d లోపాలు కనుగొనబడ్డాయి, %3$sలో కనుగొనబడిన %2$s ఫైల్‌ను వీక్షించండి లేదా వివరాల కోసం %4$s లాగ్‌లను వీక్షించండి</item>
     </plurals>
     <string name="radar">రాడార్</string>

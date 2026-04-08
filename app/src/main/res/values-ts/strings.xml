@@ -73,7 +73,6 @@
     <string name="ok">Lulamile</string>
     <string name="please_wait_verify_url">Hi kombela mi yimela loko hi ri karhi hi tiyisisa URL leyi mi yi rhumeleke</string>
     <plurals name="processing_errors">
-        <item quantity="one">Ku vile na xihoxo xa %1$d lexi kumiweke eka fayili ya %2$s, languta fayili ya %2$s leyi kumiweke eka %3$s kumbe languta tilog ta %4$s ku kuma vuxokoxoko</item>
         <item quantity="other">Ku vile na swihoxo swa %1$d leswi kumiweke eka fayili ya %2$s, languta fayili ya %2$s leyi kumiweke eka %3$s kumbe languta tilog ta %4$s ku kuma vuxokoxoko</item>
     </plurals>
     <string name="radar">Radar</string>

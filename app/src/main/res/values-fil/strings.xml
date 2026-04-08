@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Mayroong %1$d error na nakita sa %2$s file, tingnan ang %2$s file na nakita sa %3$s o tingnan ang %4$s log para sa mga detalye</item>
         <item quantity="many">Mayroong %1$d error na nakita sa %2$s file, tingnan ang %2$s file na nakita sa %3$s o tingnan ang %4$s log para sa mga detalye</item>
-        <item quantity="one">Nagkaroon ng %1$d error na nakita sa %2$s file, tingnan ang %2$s file na natagpuan sa %3$s o tingnan ang %4$s log para sa mga detalye</item>
         <item quantity="other">Mayroong %1$d error na nakita sa %2$s file, tingnan ang %2$s file na nakita sa %3$s o tingnan ang %4$s log para sa mga detalye</item>
         <item quantity="two">Mayroong %1$d error na nakita sa %2$s file, tingnan ang %2$s file na nakita sa %3$s o tingnan ang %4$s log para sa mga detalye</item>
         <item quantity="zero">Mayroong %1$d error na nakita sa %2$s file, tingnan ang %2$s file na nakita sa %3$s o tingnan ang %4$s log para sa mga detalye</item>

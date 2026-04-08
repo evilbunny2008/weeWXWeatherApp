@@ -73,7 +73,6 @@
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Mangyaring maghintay habang pinatunayan namin ang URL na iyong isinumite</string>
     <plurals name="processing_errors">
-        <item quantity="one">Nagkaroon ng %1$d error na nakita sa %2$s file, tingnan ang %2$s file na natagpuan sa %3$s o tingnan ang %4$s log para sa mga detalye</item>
         <item quantity="other">Mayroong %1$d error na nakita sa %2$s file, tingnan ang %2$s file na nakita sa %3$s o tingnan ang %4$s log para sa mga detalye</item>
     </plurals>
     <string name="radar">Radar</string>

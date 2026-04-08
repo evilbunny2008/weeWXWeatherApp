@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">%2$s file-ah %1$d error hmuhchhuah a ni a, %3$s a %2$s file hmuh chu en emaw, a chipchiar zawkna tur %4$s logs en emaw a ni</item>
         <item quantity="many">%2$s file-ah %1$d error hmuhchhuah a ni a, %3$s a %2$s file hmuh chu en emaw, a chipchiar zawkna tur %4$s logs en emaw a ni</item>
-        <item quantity="one">%2$s file-ah %1$d error hmuhchhuah a ni a, %3$s a %2$s file hmuh chu en la, a chipchiar zawngin %4$s logs en rawh</item>
         <item quantity="other">%2$s file-ah %1$d error hmuhchhuah a ni a, %3$s a %2$s file hmuh chu en emaw, a chipchiar zawkna tur %4$s logs en emaw a ni</item>
         <item quantity="two">%2$s file-ah %1$d error hmuhchhuah a ni a, %3$s a %2$s file hmuh chu en emaw, a chipchiar zawkna tur %4$s logs en emaw a ni</item>
         <item quantity="zero">%2$s file-ah %1$d error hmuhchhuah a ni a, %3$s a %2$s file hmuh chu en emaw, a chipchiar zawkna tur %4$s logs en emaw a ni</item>

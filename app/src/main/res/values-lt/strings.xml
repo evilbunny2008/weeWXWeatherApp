@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Faile %2$s aptikta %1$d klaidų, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
         <item quantity="many">Faile %2$s aptikta %1$d klaidų, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
-        <item quantity="one">%2$s faile aptikta %1$d klaida, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
         <item quantity="other">Faile %2$s aptikta %1$d klaidų, peržiūrėkite %2$s failą, rastą adresu %3$s, arba peržiūrėkite %4$s žurnalus, kad sužinotumėte daugiau</item>
     </plurals>
     <string name="radar">Radaras</string>

@@ -74,7 +74,6 @@
     <string name="please_wait_verify_url">Vă rugăm să așteptați până când verificăm adresa URL pe care ați trimis-o</string>
     <plurals name="processing_errors">
         <item quantity="few">Au fost detectate %1$d erori în fișierul %2$s, vizualizați fișierul %2$s găsit la %3$s sau vedeți jurnalele %4$s pentru detalii</item>
-        <item quantity="one">Au fost detectate %1$d eroare în fișierul %2$s, vizualizați fișierul %2$s găsit la %3$s sau vedeți jurnalele %4$s pentru detalii</item>
         <item quantity="other">Au fost detectate %1$d erori în fișierul %2$s, vizualizați fișierul %2$s găsit la %3$s sau vedeți jurnalele %4$s pentru detalii</item>
     </plurals>
     <string name="radar">Radar</string>

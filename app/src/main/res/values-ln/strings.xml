@@ -73,7 +73,6 @@
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Svp bozela tango tozali ko vérifier URL oyo botindaki</string>
     <plurals name="processing_errors">
-        <item quantity="one">Ezalaki na libunga %1$d ezwami na fisyé %2$s, tala fisyé %2$s ezwami na %3$s to tala ba journal ya %4$s mpo na makambo ya mikemike</item>
         <item quantity="other">Ezalaki na mabunga ya %1$d oyo emonanaki na fisyé %2$s, tala fisyé %2$s oyo ezwami na %3$s to tala ba journal ya %4$s mpo na makambo ya mikemike</item>
     </plurals>
     <string name="radar">Radar</string>

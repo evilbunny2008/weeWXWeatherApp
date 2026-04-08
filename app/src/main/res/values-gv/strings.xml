@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Va %1$d faultyn ry-akin ayns y coadan %2$s, cur-my-ner y coadan %2$s ry-akin ec %3$s ny jeeagh er loggyn %4$s son ny mioyryn</item>
         <item quantity="many">Va %1$d faultyn ry-akin ayns y coadan %2$s, cur-my-ner y coadan %2$s ry-akin ec %3$s ny jeeagh er loggyn %4$s son ny mioyryn</item>
-        <item quantity="one">Va %1$d foalsey er ny lhoobaghey ayns y coadan %2$s, cur-my-ner y coadan %2$s v\'er ny gheddyn ec %3$s ny jeeagh er loggyn %4$s son ny mioyryn</item>
         <item quantity="other">Va %1$d faultyn ry-akin ayns y coadan %2$s, cur-my-ner y coadan %2$s ry-akin ec %3$s ny jeeagh er loggyn %4$s son ny mioyryn</item>
         <item quantity="two">Va %1$d faultyn ry-akin ayns y coadan %2$s, cur-my-ner y coadan %2$s ry-akin ec %3$s ny jeeagh er loggyn %4$s son ny mioyryn</item>
     </plurals>

@@ -73,7 +73,6 @@
     <string name="ok">Kulungile</string>
     <string name="please_wait_verify_url">Sicela ulinde ngenkathi siqinisekisa i-URL oyithumele</string>
     <plurals name="processing_errors">
-        <item quantity="one">Kube nephutha elingu %1$d elitholwe kufayela le %2$s, buka ifayela le %2$s elitholwe kokuthi %3$s noma ubuke amalogi angu %4$s ukuze uthole imininingwane</item>
         <item quantity="other">Kube namaphutha angu %1$d atholwe kufayela le %2$s, buka ifayela le %2$s elitholwe kokuthi %3$s noma ubuke amalogi angu %4$s ukuze uthole imininingwane</item>
     </plurals>
     <string name="radar">Ireda</string>

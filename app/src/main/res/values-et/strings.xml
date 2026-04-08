@@ -73,7 +73,6 @@
     <string name="ok">Okei</string>
     <string name="please_wait_verify_url">Palun oodake, kuni kinnitame teie esitatud URL-i</string>
     <plurals name="processing_errors">
-        <item quantity="one">Failis %2$s tuvastati %1$d viga, vaadake faili %2$s, mis leiti saidilt %3$s või vaadake üksikasju %4$s logist</item>
         <item quantity="other">Failis %2$s tuvastati %1$d viga, vaadake faili %2$s, mis leiti saidilt %3$s või vaadake üksikasju %4$s logist</item>
     </plurals>
     <string name="radar">Radar</string>

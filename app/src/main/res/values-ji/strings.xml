@@ -73,7 +73,6 @@
     <string name="ok">אקעי</string>
     <string name="please_wait_verify_url">ביטע וואַרטן בשעת מיר באַשטעטיקן די URL וואָס איר האָט דערלאנגט</string>
     <plurals name="processing_errors">
-        <item quantity="one">עס זענען געווען %1$d טעות דיטעקטאַד אין דער %2$s טעקע, קוק די %2$s טעקע געפונען בייַ %3$s אָדער קוק %4$s לאָגס פֿאַר די דעטאַילס</item>
         <item quantity="other">עס זענען געווען %1$d ערראָרס דיטעקטאַד אין דער %2$s טעקע, קוק די %2$s טעקע געפונען בייַ %3$s אָדער קוק %4$s לאָגס פֿאַר די דעטאַילס</item>
     </plurals>
     <string name="radar">ראַדאַר</string>

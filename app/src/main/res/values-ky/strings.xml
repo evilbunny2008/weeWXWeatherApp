@@ -73,7 +73,6 @@
     <string name="ok">Макул</string>
     <string name="please_wait_verify_url">Сиз берген URL\'ди текшерип жатканда күтө туруңуз</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s файлында %1$d ката табылды, %3$s дарегинде табылган %2$s файлын көрүңүз же чоо-жайы үчүн %4$s журналдарын көрүңүз</item>
         <item quantity="other">%2$s файлында %1$d ката табылды, %3$s дарегинде табылган %2$s файлын көрүңүз же чоо-жайы үчүн %4$s журналдарын көрүңүз</item>
     </plurals>
     <string name="radar">Радар</string>

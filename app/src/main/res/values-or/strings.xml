@@ -73,7 +73,6 @@
     <string name="ok">ଠିକ ଅଛି |</string>
     <string name="please_wait_verify_url">ଆପଣ ଦାଖଲ କରିଥିବା URL ଯାଞ୍ଚ କରିବାବେଳେ ଦୟାକରି ଅପେକ୍ଷା କରନ୍ତୁ |</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s ଫାଇଲରେ% %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଛି %3$s ରେ ମିଳୁଥିବା%2$s ଫାଇଲକୁ ଦେଖନ୍ତୁ କିମ୍ବା ବିବରଣୀ ପାଇଁ%4$s ଲଗ୍ ଦେଖନ୍ତୁ |</item>
         <item quantity="other">%2$s ଫାଇଲରେ% %1$d ତ୍ରୁଟି ଚିହ୍ନଟ ହୋଇଥିଲା %3$s ରେ ମିଳୁଥିବା%2$s ଫାଇଲକୁ ଦେଖନ୍ତୁ କିମ୍ବା ବିବରଣୀ ପାଇଁ%4$s ଲଗ ଦେଖନ୍ତୁ |</item>
     </plurals>
     <string name="radar">ରାଡାର |</string>

@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">E tiko na %1$d cala e kunei ena faile ni%2$s, raica na faile ni%2$s e kune ena%3$s se raica na itukutuku ni%4$s me baleta na kena itukutuku matailalai</item>
         <item quantity="many">E tiko na %1$d cala e kunei ena faile ni%2$s, raica na faile ni%2$s e kune ena%3$s se raica na itukutuku ni%4$s me baleta na kena itukutuku matailalai</item>
-        <item quantity="one">E tiko na % %1$d cala e kunei ena %2$s faile, raica na %2$s faile e kunei ena %3$s se raica na %4$s na itukutuku me baleta na kena itukutuku matailalai</item>
         <item quantity="other">E tiko na %1$d cala e kunei ena faile ni%2$s, raica na faile ni%2$s e kune ena%3$s se raica na itukutuku ni%4$s me baleta na kena itukutuku matailalai</item>
         <item quantity="two">E tiko na %1$d cala e kunei ena faile ni%2$s, raica na faile ni%2$s e kune ena%3$s se raica na itukutuku ni%4$s me baleta na kena itukutuku matailalai</item>
         <item quantity="zero">E tiko na %1$d cala e kunei ena faile ni%2$s, raica na faile ni%2$s e kune ena%3$s se raica na itukutuku ni%4$s me baleta na kena itukutuku matailalai</item>

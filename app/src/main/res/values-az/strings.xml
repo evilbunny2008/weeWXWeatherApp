@@ -72,8 +72,12 @@
     <string name="notifications_needed2">Bildiriş icazəsini iki dəfə rədd etdiyinizə görə, bunun əvəzinə onu parametrlərdə aktivləşdirməlisiniz, parametrlər işə salınsın?</string>
     <string name="ok">Tamam</string>
     <string name="please_wait_verify_url">Zəhmət olmasa, təqdim etdiyiniz URL-i yoxlayarkən gözləyin</string>
+    <plurals name="processing_errors2">
+        <item quantity="one">Yeniləmə zamanı %1$d xəta aşkarlandı, təfərrüatlar üçün %2$s jurnalına baxın</item>
+        <item quantity="other">Yeniləmə zamanı %1$d xəta aşkar edildi, təfərrüatlar üçün %2$s jurnalına baxın</item>
+    </plurals>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s faylında %1$d xəta aşkarlandı, %3$s ünvanında tapılan %2$s faylına baxın və ya təfərrüatlar üçün %4$s qeydlərinə baxın</item>
+        <item quantity="one">%2$s faylında %1$d xəta aşkar edildi, %3$s ünvanında tapılan %2$s faylına baxın və ya təfərrüatlar üçün %4$s qeydlərinə baxın</item>
         <item quantity="other">%2$s faylında %1$d xəta aşkar edildi, %3$s ünvanında tapılan %2$s faylına baxın və ya təfərrüatlar üçün %4$s qeydlərinə baxın</item>
     </plurals>
     <string name="radar">Radar</string>

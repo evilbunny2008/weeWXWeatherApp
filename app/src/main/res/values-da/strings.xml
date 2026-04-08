@@ -73,7 +73,6 @@
     <string name="ok">Okay</string>
     <string name="please_wait_verify_url">Vent venligst, mens vi bekræfter den URL, du har indsendt</string>
     <plurals name="processing_errors">
-        <item quantity="one">Der blev fundet %1$d fejl i %2$s filen, se %2$s filen fundet på %3$s eller se %4$s logfiler for detaljer</item>
         <item quantity="other">Der blev fundet %1$d fejl i %2$s filen, se %2$s filen fundet på %3$s eller se %4$s logfiler for detaljer</item>
     </plurals>
     <string name="radar">Radar</string>

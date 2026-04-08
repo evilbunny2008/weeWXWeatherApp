@@ -73,7 +73,6 @@
     <string name="ok">හරි</string>
     <string name="please_wait_verify_url">අපි ඔබ ඉදිරිපත් කළ URL එක සත්‍යාපනය කරන තෙක් කරුණාකර රැඳී සිටින්න</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s ගොනුවේ %1$d දෝෂයක් අනාවරණය විය, %3$s හි ඇති %2$s ගොනුව බලන්න හෝ විස්තර සඳහා %4$s ලොග බලන්න</item>
         <item quantity="other">%2$s ගොනුවේ දෝෂ %1$dක් අනාවරණය වී ඇත, %3$s හි ඇති %2$s ගොනුව බලන්න හෝ විස්තර සඳහා ලොග %4$s බලන්න</item>
     </plurals>
     <string name="radar">රේඩාර්</string>

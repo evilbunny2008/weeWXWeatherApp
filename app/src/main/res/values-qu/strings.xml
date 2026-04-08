@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">%2$s willañiqipi %1$d pantasqakuna tarisqa karqan, %2$s willañiqita %3$s nisqapi tarisqa qhaway icha %4$s qillqakunata qhaway sut\'inchaykunapaq</item>
         <item quantity="many">%2$s willañiqipi %1$d pantasqakuna tarisqa karqan, %2$s willañiqita %3$s nisqapi tarisqa qhaway icha %4$s qillqakunata qhaway sut\'inchaykunapaq</item>
-        <item quantity="one">%2$s willañiqipi %1$d pantasqa tarisqa karqan, %2$s willañiqita %3$s nisqapi tarisqa qhaway icha %4$s qillqakunata qhaway sut\'inchaykunapaq</item>
         <item quantity="other">%2$s willañiqipi %1$d pantasqakuna tarisqa karqan, %2$s willañiqita %3$s nisqapi tarisqa qhaway icha %4$s qillqakunata qhaway sut\'inchaykunapaq</item>
         <item quantity="two">%2$s willañiqipi %1$d pantasqakuna tarisqa karqan, %2$s willañiqita %3$s nisqapi tarisqa qhaway icha %4$s qillqakunata qhaway sut\'inchaykunapaq</item>
         <item quantity="zero">%2$s willañiqipi %1$d pantasqakuna tarisqa karqan, %2$s willañiqita %3$s nisqapi tarisqa qhaway icha %4$s qillqakunata qhaway sut\'inchaykunapaq</item>

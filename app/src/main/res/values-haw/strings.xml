@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
         <item quantity="many">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
-        <item quantity="one">He %1$d hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
         <item quantity="other">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
         <item quantity="two">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>
         <item quantity="zero">He %1$d nā hewa i ʻike ʻia ma ka waihona %2$s, e nānā i ka faila %2$s i loaʻa ma %3$s a i ʻole e nānā i nā moʻolelo %4$s no nā kikoʻī</item>

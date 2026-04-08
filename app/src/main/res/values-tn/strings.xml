@@ -73,7 +73,6 @@
     <string name="ok">Go siame</string>
     <string name="please_wait_verify_url">Tsweetswee leta fa re ntse re netefatsa URL e o e rometseng</string>
     <plurals name="processing_errors">
-        <item quantity="one">Go lemogilwe phoso ya %1$d mo faeleng ya %2$s, leba faele ya %2$s e e fitlhetsweng kwa %3$s kgotsa leba dipego tsa %4$s go bona dintlha</item>
         <item quantity="other">Go ne go lemogilwe diphoso di le %1$d mo faeleng ya %2$s, leba faele ya %2$s e e bonweng mo go %3$s kgotsa leba dipegelo tsa %4$s go bona dintlha</item>
     </plurals>
     <string name="radar">Radara</string>

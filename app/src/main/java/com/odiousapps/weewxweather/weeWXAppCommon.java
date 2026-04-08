@@ -99,6 +99,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
 import androidx.core.text.HtmlCompat;
@@ -113,6 +114,7 @@ import okhttp3.Response;
 
 import static com.odiousapps.weewxweather.WidgetProvider.updateAppWidget;
 import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
+import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.hasBootedFully;
 
 @SuppressWarnings({"unused", "SameParameterValue", "ApplySharedPref", "ConstantConditions",
@@ -130,7 +132,7 @@ class weeWXAppCommon
 	private final static String PREFS_NAME = "WeeWxWeatherPrefs";
 	final static String LOGTAG = "weeWXApp";
 	static int debug_level = KeyValue.i;
-	final static boolean debug_html = true;
+	final static boolean debug_html = false;
 	final static boolean web_debug_on = false;
 	private final static int maxLogLength = 5_000;
 
@@ -148,6 +150,7 @@ class weeWXAppCommon
 	static final String INIGO_INTENT = "com.odiousapps.weewxweather.INIGO_UPDATE";
 	static final String PROCESSING_ERRORS = "com.odiousapps.weewxweather.PROCESSING_ERRORS";
 	static final String FAILED_TO_MERGE = "com.odiousapps.weewxweather.FAILED_TO_MERGE";
+	static final String UPDATE_ERRORS = "com.odiousapps.weewxweather.UPDATE_ERRORS";
 
 	static final String UPDATECHECK = "com.odiousapps.weewxweather.UPDATECHECK";
 
@@ -211,6 +214,7 @@ class weeWXAppCommon
 
 	record Result(List<Day> days, String desc, long timestamp, boolean isDaily) {}
 	record Result2(String[] forecast_text, String desc, int rc) {}
+	record Result3(boolean succeeded, String error, Result result) {}
 	record TempResult(float CurrTemp, float minObservedTemp, float maxObservedTemp, int[] outTemp_trend_count,
 	                  int[] outTemp_trend_signal, long[] outTemp_trend_ts) {}
 	record NPWSLL(long nowTime, long periodTime, long waitTime, long startTime, long lastStart, long report_time) {}
@@ -1015,11 +1019,10 @@ class weeWXAppCommon
 		return null;
 	}
 
-	static Result processBOM3(int UpdateInterval, String data, String url) throws IOException, InterruptedException
+	static Result processBOM3(int modhour, String data, String url) throws IOException, InterruptedException
 	{
 		LogMessage("processBOM3()");
 
-		int modhour = getIntervalTime(UpdateInterval)[1];
 		long now = System.currentTimeMillis();
 
 		Result r1 = null;
@@ -1041,7 +1044,7 @@ class weeWXAppCommon
 			if(!url2.isBlank() && !url2.equals(url))
 			{
 				LogMessage("processBOM3(): Getting BoM daily");
-				fcdata = downloadString(url2, false);
+				fcdata = downloadString(url2);
 			}
 
 			if(fcdata != null && !fcdata.isBlank())
@@ -1091,18 +1094,6 @@ class weeWXAppCommon
 			Day r1day = getDayByDate(r1.days, day.timestamp);
 			if(r1day == null)
 				continue;
-
-//			if(!not_set_text_yet)
-//			{
-//				LogMessage("cal.get(Calendar.YEAR): " + cal.get(Calendar.YEAR));
-//				LogMessage("today.get(Calendar.YEAR): " + today.get(Calendar.YEAR));
-//				LogMessage("cal.get(Calendar.DAY_OF_YEAR): " + cal.get(Calendar.DAY_OF_YEAR));
-//				LogMessage("today.get(Calendar.DAY_OF_YEAR): " + today.get(Calendar.DAY_OF_YEAR));
-//
-//				LogMessage("hour: " + hour);
-//				LogMessage("modhour: " + modhour);
-//				LogMessage("hour % modhour: " + hour % modhour);
-//			}
 
 			if(isToday && hour % modhour == 0 && !not_set_text_yet)
 			{
@@ -2849,11 +2840,11 @@ class weeWXAppCommon
 
 			try
 			{
-				int ret = reallyGetWeather(i, json_url[i], false);
-				if(ret == 3)
+				Boolean ret = reallyGetWeather(i, json_url[i], false);
+				if(ret == null)
 				{
 					processDicts = true;
-				} else if(ret == 0) {
+				} else if(!ret) {
 					LogMessage("handleWeatherUpdate() SendIntent(STOP_WEATHER_INTENT)");
 					SendIntent(STOP_WEATHER_INTENT);
 					return false;
@@ -3506,72 +3497,225 @@ class weeWXAppCommon
 		return null;
 	}
 
+	static JSONArray getJSONerrors()
+	{
+		JSONArray jsonArray;
+
+		String line = (String)KeyValue.readVar("JSONerrors", "");
+		if(line != null && !line.isBlank())
+		{
+			try
+			{
+				jsonArray = new JSONArray(line);
+			} catch(Exception e) {
+				jsonArray = new JSONArray();
+			}
+		} else
+			jsonArray = new JSONArray();
+
+		return jsonArray;
+	}
+
+	static void saveJSONerrors(@NonNull JSONArray jsonArray)
+	{
+		KeyValue.putVar("JSONerrors", jsonArray.toString());
+	}
+
 	static boolean is_valid_url(String url)
 	{
 		return url != null && !url.isBlank() && (url.startsWith("http://") || url.startsWith("https://"));
 	}
 
-	static int reallyGetWeather(int id, String url, boolean force) throws InterruptedException, IOException
+	static void noteError(Exception e)
 	{
-		LogMessage("reallyGetWeather(" + id + ") url: " + url);
+		LogMessage("UpdateCheck.noteError() Error! " + e.getMessage());
+		noteError(e.getLocalizedMessage());
+	}
 
-		long now = System.currentTimeMillis();
+	static void noteError(int resId)
+	{
+		noteError(getAndroidString(resId));
+	}
 
-		long lastJsonDataDownloadAttempt = (long)KeyValue.readVar("lastJsonDataDownloadAttempt_" + id, 0L);
+	static void noteError(String error)
+	{
+		JSONArray jsonArray = getJSONerrors();
+		jsonArray.put(error);
+		saveJSONerrors(jsonArray);
+	}
 
-		if(lastJsonDataDownloadAttempt + 10_000L > now)
-		{
-			LogMessage("reallyGetWeather() lastJsonDataDownloadAttempt_" + id + " (" +
-			           lastJsonDataDownloadAttempt + ") + 10_000L > now (" + now + ")");
-			return 0;
-		}
+	static void noteError(int resId, Object[] vars)
+	{
+		LogMessage("UpdateCheck.noteError() Error! " + String.format(Locale.ENGLISH, getEnglishAndroidString(resId), vars));
+		noteError(String.format(Locale.getDefault(), getAndroidString(resId), vars));
+	}
 
-		KeyValue.putVar("lastJsonDataDownloadAttempt_" + id, now);
+	static int errorCount()
+	{
+		JSONArray jsonArray = getJSONerrors();
+		return jsonArray.length();
+	}
 
-		if(!force)
-		{
-			long json_time = (long)KeyValue.readVar(json_keys[id] + "_time", 0L);
-			if(id == 1 && json_time > 0)
-				return 1;
-
-			if(id == 2 && json_time > 0)
-			{
-				Calendar cal1 = Calendar.getInstance();
-				Calendar cal2 = Calendar.getInstance();
-				cal2.setTimeInMillis(json_time);
-
-				if(cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
-				   cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR))
-					return 1;
-			}
-		}
-
-		String line = downloadString(url, true);
-		if(line == null || line.isBlank())
-			return 0;
-
-		JSONObject jsonObject;
+	static void processUpdates(boolean onReceivedUpdate, boolean onAppStart)
+	{
 		try
 		{
-			jsonObject = new JSONObject(line);
+			List<Integer> idtype = new ArrayList<>();
+			List<String> urls = new ArrayList<>();
+			List<String> contentTypes = new ArrayList<>();
+			List<Object> PossibleErrors = new ArrayList<>();
+
+			String forecastURL = (String)KeyValue.readVar("FORECAST_URL", "");
+			if(!forecastURL.isBlank() && is_valid_url(forecastURL))
+			{
+				idtype.add(3);
+				urls.add(forecastURL);
+				contentTypes.add("HTML");
+				PossibleErrors.add(R.string.wasnt_able_to_connect_forecast);
+			}
+
+			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
+			if(radtype != null && radtype.equals("image"))
+			{
+				String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
+				if(radarURL != null && !radarURL.isBlank())
+				{
+					idtype.add(4);
+					urls.add(radarURL);
+					contentTypes.add("IMAGE");
+					PossibleErrors.add(R.string.wasnt_able_to_connect_forecast);
+				}
+			}
+
+			for(int i = 0; i < 3; i++)
+			{
+				String JSONurl = (String)KeyValue.readVar(json_keys[i] + "_url", "");
+				if(!JSONurl.isBlank() && is_valid_url(JSONurl))
+				{
+					idtype.add(i);
+					urls.add(JSONurl);
+					contentTypes.add("JSON");
+					PossibleErrors.add(new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[i], JSONurl}});
+				}
+			}
+
+			ParallelDownloader downloader = new ParallelDownloader(urls.size(), false);
+			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
+
+			boolean allOk = results.stream().allMatch(r -> r.success);
+			if(!allOk)
+			{
+				List<ParallelDownloader.DownloadResult> failed = results.stream().filter(r -> !r.success).toList();
+				for(ParallelDownloader.DownloadResult r : failed)
+				{
+					LogMessage("MainActivity.processSettings(" + r.id + ") Error! " + r.error, KeyValue.e);
+
+					Object obj = PossibleErrors.get(r.id);
+					if(obj instanceof Object[] objects)
+					{
+						noteError((int)objects[0], (Object[])objects[1]);
+
+					} else if(obj instanceof Integer errorId)
+						noteError(errorId);
+				}
+			} else {
+				int UpdateInterval = (int)KeyValue.readVar("UpdateInterval", 0);
+				int modhour = getIntervalTime(UpdateInterval)[1];
+
+				boolean needToMerge = false;
+				boolean Processing_Errors = false;
+				List<ParallelDownloader.DownloadResult> succeeded = results.stream().toList();
+				for(ParallelDownloader.DownloadResult r : succeeded)
+				{
+					if(r.id == 0 || r.id == 2)
+					{
+						Boolean ret = processWeather(r.id, r.string);
+						if(ret == null)
+							Processing_Errors = true;
+						else if(ret)
+							needToMerge = true;
+					}
+
+					if(r.id == 1)
+					{
+						Boolean ret = processWeather(r.id, r.string);
+						if(ret == null)
+							Processing_Errors = true;
+						else if(ret && !KeyValue.parseDicts())
+							noteError(R.string.failed_to_process_weather_data, new Object[]{json_labels[1]});
+					}
+
+					String fctype = (String)KeyValue.readVar("fctype", "");
+					if(fctype == null || fctype.isBlank())
+					{
+						LogMessage("UpdateCheck.runInTheBackground() fctype is null or blank, skipping...");
+						if(!weeWXApp.hasBootedFully)
+							weeWXApp.hasBootedFully = true;
+
+						return;
+					}
+
+					if(r.id == 3)
+					{
+						Result3 r3 = processForecast(modhour, fctype, r.string, forecastURL);
+
+						if(!r3.succeeded())
+							noteError(r3.error());
+					} else if(r.id == 4 && r.contentType.equals("IMAGE")) {
+						Bitmap bm = r.bm;
+						File file = getFile(weeWXApp.radarFilename);
+						try(FileOutputStream out = new FileOutputStream(file))
+						{
+							LogMessage("Attempting to save to " + file.getAbsoluteFile());
+							bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
+							LogMessage("Got past the save... ");
+						} catch(Exception e) {
+							LogMessage("Error! e: " + e, true, KeyValue.e);
+							noteError(e);
+						}
+					} else if(r.id == 5) {
+						Bitmap bm = r.bm;
+						File file = getFile(weeWXApp.radarFilename);
+						try(FileOutputStream out = new FileOutputStream(file))
+						{
+							LogMessage("Attempting to save to " + file.getAbsoluteFile());
+							bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
+							LogMessage("Got past the save... ");
+						} catch(Exception e) {
+							LogMessage("Error! e: " + e, true, KeyValue.e);
+							noteError(e);
+						}
+					}
+				}
+
+				if(errorCount() > 0)
+					SendIntent(UPDATE_ERRORS);
+			}
 		} catch(Exception e) {
-			LogMessage("reallyGetWeather() Error! e: " + e.getMessage());
-			return 0;
+			LogMessage("UpdateCheck.runInTheBackground() Error! e: " + e, true, KeyValue.e);
 		}
+	}
+
+	static Boolean processWeather(int id, String weatherStr) throws JSONException
+	{
+		if(weatherStr == null || weatherStr.isBlank())
+			return false;
+
+		JSONObject jsonObject = new JSONObject(weatherStr);
 
 		if(jsonObject == null || jsonObject.length() == 0 || !jsonObject.has("version"))
 		{
-			LogMessage("reallyGetWeather() jsonObject == null || jsonObject.length() == 0 || jsonObject didn't have a version");
-			return 0;
+			LogMessage("processWeather() jsonObject == null || jsonObject.length() == 0 || jsonObject didn't have a version");
+			return false;
 		}
 
 		int version = jsonObject.optInt("version", 0);
 		if(version < weeWXApp.minimum_inigo_version)
 		{
-			LogMessage("reallyGetWeather() sendAlert() triggered because version (" + version +
+			LogMessage("processWeather() sendAlert() triggered because version (" + version +
 			           ") < weeWXApp.minimum_inigo_version (" + weeWXApp.minimum_inigo_version + ")");
-			sendAlert();
-			return 0;
+			SendIntent(INIGO_INTENT);
+			return false;
 		}
 
 		if(jsonObject.has("processingErrors"))
@@ -3583,24 +3727,68 @@ class weeWXAppCommon
 				KeyValue.putVar("ProcessingErrorID", id);
 
 				for(int i = 0; i < jarr.length(); i++)
-					LogMessage("reallyGetWeather() Error in " + json_labels[id] + ": " + jarr.optString(i), KeyValue.e);
+					LogMessage("processWeather() Error in " + json_labels[id] + ": " + jarr.optString(i), KeyValue.e);
 
-				SendIntent(PROCESSING_ERRORS);
-				return 2;
+				return null;
 			}
 		}
+
+		long now = System.currentTimeMillis();
 
 		KeyValue.putVar(json_keys[id] + "_time", now);
 		KeyValue.putVar(json_keys[id] + "_str", jsonObject.toString());
 		KeyValue.putVar("LastWeatherError", null);
 
-		LogMessage("reallyGetWeather() Last Server Update Time: " + sdf14.format(jsonObject.optInt("report_time") * 1_000L));
-		LogMessage("reallyGetWeather() LastDownloadTime: " + sdf14.format(now));
+		LogMessage("processWeather() Last Server Update Time: " + sdf14.format(jsonObject.optInt("report_time") * 1_000L));
+		LogMessage("processWeather() LastDownloadTime: " + sdf14.format(now));
 
-		if(id == 1)
-			return 3;
+		return true;
+	}
 
-		return 1;
+	static Boolean reallyGetWeather(int id, String url, boolean force) throws InterruptedException, IOException, JSONException
+	{
+		LogMessage("reallyGetWeather(" + id + ") url: " + url);
+
+		long now = System.currentTimeMillis();
+
+		long lastJsonDataDownloadAttempt = (long)KeyValue.readVar("lastJsonDataDownloadAttempt_" + id, 0L);
+
+		if(lastJsonDataDownloadAttempt + 10_000L > now)
+		{
+			LogMessage("reallyGetWeather() lastJsonDataDownloadAttempt_" + id + " (" +
+			           lastJsonDataDownloadAttempt + ") + 10_000L > now (" + now + ")");
+			return false;
+		}
+
+		KeyValue.putVar("lastJsonDataDownloadAttempt_" + id, now);
+
+		if(!force)
+		{
+			long json_time = (long)KeyValue.readVar(json_keys[id] + "_time", 0L);
+			if(id == 1 && json_time > 0)
+				return true;
+
+			if(id == 2 && json_time > 0)
+			{
+				Calendar cal1 = Calendar.getInstance();
+				Calendar cal2 = Calendar.getInstance();
+				cal2.setTimeInMillis(json_time);
+
+				if(cal1.get(Calendar.YEAR) == cal2.get(Calendar.YEAR) &&
+				   cal1.get(Calendar.DAY_OF_YEAR) == cal2.get(Calendar.DAY_OF_YEAR))
+					return true;
+			}
+		}
+
+		String line = downloadString(url);
+		Boolean ret = processWeather(id, line);
+		if(ret == null)
+		{
+			SendIntent(PROCESSING_ERRORS);
+			return ret;
+		}
+
+		return ret;
 	}
 
 	//    https://stackoverflow.com/questions/3841317/how-do-i-see-if-wi-fi-is-connected-on-android
@@ -3862,7 +4050,7 @@ class weeWXAppCommon
 	{
 		KeyValue.putVar("SETTINGS_URL", url);
 
-		String cfg = downloadString(url, true);
+		String cfg = downloadString(url);
 
 		if(cfg == null)
 			return null;
@@ -3873,12 +4061,12 @@ class weeWXAppCommon
 		return cfg;
 	}
 
-	static boolean checkURL(String url, boolean nocache) throws InterruptedException, IOException
+	static boolean checkURL(String url) throws InterruptedException, IOException
 	{
 		if(!is_valid_url(url))
 			return false;
 
-		OkHttpClient client = NetworkClient.getInstance(url, nocache);
+		OkHttpClient client = NetworkClient.getInstance(url);
 
 		return reallyCheckURL(client, url, 0);
 	}
@@ -3887,7 +4075,7 @@ class weeWXAppCommon
 	{
 		LogMessage("reallyCheckURL() checking if url  " + url + " is valid, attempt " + (retries + 1));
 
-		Request request = NetworkClient.getRequest(true, url, false);
+		Request request = NetworkClient.getRequest(true, url);
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -3921,20 +4109,20 @@ class weeWXAppCommon
 		}
 	}
 
-	static String downloadString(String url, boolean nocache) throws InterruptedException, IOException
+	static String downloadString(String url) throws InterruptedException, IOException
 	{
 		if(!is_valid_url(url))
 			return null;
 
-		OkHttpClient client = NetworkClient.getInstance(url, nocache);
+		OkHttpClient client = NetworkClient.getInstance(url);
 
-		return reallyDownloadString(client, url, 0, nocache);
+		return reallyDownloadString(client, url, 0);
 	}
 
-	private static String reallyDownloadString(OkHttpClient client, String url, int retries, boolean nocache) throws InterruptedException, IOException
+	private static String reallyDownloadString(OkHttpClient client, String url, int retries) throws InterruptedException, IOException
 	{
 		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
-		Request request = NetworkClient.getRequest(false, url, nocache);
+		Request request = NetworkClient.getRequest(false, url);
 
 		if(request == null)
 			throw new IOException("Failed to build request for URL: " + url);
@@ -3978,7 +4166,7 @@ class weeWXAppCommon
 						throw ie;
 					}
 
-					return reallyDownloadString(client, url, retries, nocache);
+					return reallyDownloadString(client, url, retries);
 				}
 
 	//			LogMessage("reallyDownloadString() Error! e: " + e.getMessage(), true, KeyValue.e);
@@ -4008,17 +4196,17 @@ class weeWXAppCommon
 
 		RequestBody requestBody = fb.build();
 
-		OkHttpClient client = NetworkClient.getInstance(url, true);
+		OkHttpClient client = NetworkClient.getInstance(url);
 
-		return reallyDownloadString(client, requestBody, url, 0, true);
+		return reallyDownloadString(client, requestBody, url, 0);
 	}
 
 	private static String reallyDownloadString(OkHttpClient client, RequestBody requestBody,
-                       String url, int retries, boolean noCache) throws InterruptedException, IOException
+                       String url, int retries) throws InterruptedException, IOException
 	{
 		LogMessage("reallyDownloadString() checking if url  " + url + " is valid, attempt " + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url, noCache)
+		Request request = NetworkClient.getRequest(false, url)
 				.newBuilder().post(requestBody).build();
 
 		try(Response response = client.newCall(request).execute())
@@ -4050,7 +4238,7 @@ class weeWXAppCommon
 						throw ie;
 					}
 
-					return reallyDownloadString(client, requestBody, url, retries, noCache);
+					return reallyDownloadString(client, requestBody, url, retries);
 				}
 			}
 
@@ -4093,7 +4281,7 @@ class weeWXAppCommon
 		{
 			RequestBody requestBody = fb.build();
 
-			OkHttpClient client = NetworkClient.getInstance(url, false);
+			OkHttpClient client = NetworkClient.getInstance(url);
 
 			LogMessage("uploadMissingIcon() Sending everything to reallyUploadMissingIcon()");
 
@@ -4107,7 +4295,7 @@ class weeWXAppCommon
 
 		LogMessage("reallyUploadString() checking if url " + url + " is valid, attempt: #" + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url, false)
+		Request request = NetworkClient.getRequest(false, url)
 				.newBuilder().post(requestBody).build();
 
 		try(Response response = client.newCall(request).execute())
@@ -4599,7 +4787,232 @@ class weeWXAppCommon
 		return filtered;
 	}
 
-	static boolean reallyGetForecast(String fctype, String url, int UpdateInterval) throws InterruptedException, IOException
+	static Result3 processWZ2(String url) throws IOException
+	{
+		String forecast_text_url = url.substring(0, url.lastIndexOf("/"));
+		LogMessage("reallyGetForecast() Trying secondary URL for forecasts strings: " + forecast_text_url);
+
+		int attempts = 0;
+		Result r1 = null;
+		Result2 r2 = null;
+		String wzHTML = null;
+		boolean r1fromfile = false, r2fromfile = false;
+
+		String forecastData = null;
+		if(weeWXApp.DEBUG)
+		{
+			try
+			{
+				wzHTML = CustomDebug.readDebug("weeWX", "R2_body.html");
+				LogMessage("reallyGetForecast() wzHTML: " + wzHTML);
+				if(wzHTML != null && wzHTML.length() > 128)
+				{
+					r2 = JsoupHelper.processWZ2GetForecastStrings(wzHTML);
+					if(r2 != null && r2.rc() > 0)
+						r2fromfile = true;
+				}
+			} catch(Exception e) {
+				LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
+				doStackOutput(e);
+				return new Result3(false, e.getLocalizedMessage(), null);
+			}
+		}
+
+		if(r2 == null || r2.rc() == 0)
+		{
+			do
+			{
+				wzHTML = getWZHTML(forecast_text_url, true);
+				if(wzHTML == null)
+					break;
+
+				if(wzHTML.isBlank())
+					continue;
+
+				if(wzHTML.startsWith("error|"))
+					break;
+
+				if(wzHTML.length() > 128 && !r2fromfile && KeyValue.debugging_on())
+					CustomDebug.writeDebug("weeWX", "R2_body.html", wzHTML);
+
+				LogMessage("reallyGetForecast() Got data from WZ, let's try to find forecast strings in it...");
+				r2 = JsoupHelper.processWZ2GetForecastStrings(wzHTML);
+			} while(attempts++ < 3 && (r2 == null || r2.rc() == 0));
+
+			if(wzHTML == null || wzHTML.isBlank())
+			{
+				LogMessage("Nothing substantial was returned from WZ...", KeyValue.w);
+				return new Result3(false, "Nothing substantial was returned from WZ...", null);
+			}
+
+			if(wzHTML.startsWith("error|"))
+			{
+				String[] errors = wzHTML.strip().split("\\|", 2);
+				LogMessage("Error! errors[1]: " + errors[1], KeyValue.w);
+				return new Result3(false, errors[1], null);
+			}
+		}
+
+		if(r2 == null || r2.rc() == 0)
+		{
+			if(wzHTML != null && !wzHTML.isBlank() && !r2fromfile)
+				CustomDebug.writeDebug("weeWX", "R2_body.html", wzHTML);
+
+			LogMessage("reallyGetForecast() Nothing substantial was returned from WZ...", KeyValue.w);
+			return new Result3(false, "Nothing substantial was returned from WZ...", null);
+		}
+
+		LogMessage("reallyGetForecast() Got forecast strings from WZ... rc: " + r2.rc());
+
+		if(weeWXApp.DEBUG && KeyValue.debugging_on())
+		{
+			try
+			{
+				forecastData = CustomDebug.readDebug("weeWX", "R1_body.html");
+				LogMessage("reallyGetForecast() forecastData: " + forecastData);
+				if(forecastData != null && forecastData.length() > 128)
+				{
+					r1 = JsoupHelper.processWZ2Forecasts(url, forecastData, r2);
+					if(r1 != null && r1.days() != null && !r1.days().isEmpty())
+						r1fromfile = true;
+				}
+			} catch(Exception e) {
+				LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
+				doStackOutput(e);
+				return new Result3(false, e.getLocalizedMessage(), null);
+			}
+		}
+
+		if(r1 == null || r1.days() == null || r1.days().isEmpty())
+		{
+			attempts = 0;
+			do
+			{
+				forecastData = getWZHTML(url, false);
+				if(forecastData == null)
+					break;
+
+				if(forecastData.isBlank())
+					continue;
+
+				if(forecastData.startsWith("error|"))
+					break;
+
+				if(forecastData.length() > 128 && !r1fromfile && KeyValue.debugging_on())
+					CustomDebug.writeDebug("weeWX", "R1_body.html", forecastData);
+
+				LogMessage("reallyGetForecast() Got data from WZ, let's try to find forecast blocks in it...");
+				r1 = JsoupHelper.processWZ2Forecasts(url, forecastData, r2);
+			} while(attempts++ < 3 && (r1 == null || r1.days() == null || r1.days().isEmpty()));
+
+			if(forecastData == null || forecastData.isBlank())
+			{
+				LogMessage("Nothing substantial was returned from WZ...", KeyValue.w);
+				return new Result3(false, "Nothing substantial was returned from WZ...", null);
+			}
+
+			if(forecastData.startsWith("error|"))
+			{
+				String[] errors = forecastData.strip().split("\\|", 2);
+				LogMessage("Error! errors[1]: " + errors[1], KeyValue.w);
+				KeyValue.putVar("LastForecastError", errors[1]);
+				return new Result3(false, errors[1], null);
+			}
+		}
+
+		if(r1 == null || r1.days() == null || r1.days().isEmpty())
+		{
+			if(forecastData != null && !forecastData.isBlank() && !r1fromfile)
+				CustomDebug.writeDebug("weeWX", "R1_body.html", forecastData);
+
+			LogMessage("reallyGetForecast() Failed to find any forecast blocks, giving up...", KeyValue.w);
+			return new Result3(false, "Nothing substantial was returned from WZ...", null);
+		}
+
+		return new Result3(true, null, r1);
+	}
+
+	static Result3 processForecast(int modhour, String fctype, String forecastData, String url) throws IOException, InterruptedException
+	{
+		Result r1 = null;
+		if(fctype.equals("weatherzone2"))
+		{
+			Result3 r3 = processWZ2(url);
+			if(!r3.succeeded())
+				return r3;
+
+			r1 = r3.result();
+		}
+
+		if(forecastData == null || forecastData.isBlank())
+		{
+			LogMessage("reallyGetForecast() Failed to get any forecast blocks after 3 attempts... giving up...", KeyValue.w);
+			return new Result3(false, getAndroidString(R.string.failed_to_process_forecast_data), null);
+		}
+
+		if(forecastData.length() > 128 && KeyValue.debugging_on())
+		{
+			try
+			{
+				CustomDebug.writeDebug("weeWX", "forecast.html", forecastData);
+			} catch(Exception e) {
+				LogMessage("reallyGetForecast() Debug write failed: " + e.getMessage(), KeyValue.w);
+			}
+		}
+
+		switch(fctype)
+		{
+			case "aemet.es" -> r1 = processAEMET(forecastData);
+			case "bom2" -> r1 = JsoupHelper.processBoM2(forecastData);
+			case "bom3daily" -> r1 = processBOM3Daily(forecastData, true);
+			case "bom3hourly" -> r1 = processBOM3(modhour, forecastData, url);
+			case "dwd.de" -> r1 = processDWD(forecastData);
+			case "tempoitalia.it" -> r1 = JsoupHelper.processTempoItalia(forecastData);
+			case "met.ie" -> r1 = processMETIE(forecastData);
+			case "met.no" -> r1 = processMetNO(forecastData);
+			case "metoffice.gov.uk" -> r1 = processMET(forecastData);
+			case "metservice.com" -> r1 = processMetService(forecastData);
+			case "openweathermap.org" -> r1 = processOWM(forecastData);
+			case "weather.com" -> r1 = processWCOM(forecastData);
+			case "weather.gc.ca" -> r1 = JsoupHelper.processWCA(forecastData);
+			case "weather.gc.ca-fr" -> r1 = JsoupHelper.processWCAF(forecastData);
+			case "weather.gov" -> r1 = processWGOV(forecastData);
+			case "weatherzone" -> r1 = processWZ(url, forecastData);
+			case "weatherzone2" -> {}
+			case "wmo.int" -> r1 = processWMO(forecastData);
+			case "yahoo" -> r1 = JsoupHelper.processYahoo(forecastData);
+			default ->
+			{
+				LogMessage("reallyGetForecast() Failed to process forecast, fctype is invalid: " + fctype);
+				String fmtStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
+				return new Result3(false, fmtStr, null);
+			}
+		}
+
+		if(r1 == null || r1.days() == null || r1.days().isEmpty())
+		{
+			LogMessage("reallyGetForecast() Failed to process forecast data, giving up...", KeyValue.w);
+			return new Result3(false, getAndroidString(R.string.failed_to_process_forecast_data), null);
+		}
+
+		GsonHelper gh = new GsonHelper();
+		gh.days = r1.days();
+		gh.desc = r1.desc();
+		gh.timestamp = r1.timestamp() > 0 ? r1.timestamp() : System.currentTimeMillis();
+		gh.isDaily = r1.isDaily();
+
+		Gson gson = new Gson();
+		String forecastGson = gson.toJson(gh);
+
+		LogMessage("reallyGetForecast() Updating forecast cache, forecastGson.length(): " + forecastGson.length());
+		KeyValue.putVar("forecastGsonEncoded", forecastGson);
+		KeyValue.putVar("rssCheck", gh.timestamp);
+		KeyValue.putVar("LastForecastError", null);
+
+		return new Result3(true, null, r1);
+	}
+
+	static boolean reallyGetForecast(String fctype, String url, int modhour) throws InterruptedException, IOException
 	{
 		if(fctype.equals("metservice2") || fctype.equals("weatherzone3"))
 			return false;
@@ -4628,158 +5041,9 @@ class weeWXAppCommon
 
 		String forecastData = null;
 		Result r1 = null;
-		if(fctype.equals("weatherzone2"))
+		if(!fctype.equals("weatherzone2"))
 		{
-			String forecast_text_url = url.substring(0, url.lastIndexOf("/"));
-			LogMessage("reallyGetForecast() Trying secondary URL for forecasts strings: " + forecast_text_url);
-
-			int attempts = 0;
-			Result2 r2 = null;
-			String wzHTML = null;
-			boolean r1fromfile = false, r2fromfile = false;
-
-			if(weeWXApp.DEBUG)
-			{
-				try
-				{
-					wzHTML = CustomDebug.readDebug("weeWX", "R2_body.html");
-					LogMessage("reallyGetForecast() wzHTML: " + wzHTML);
-					if(wzHTML != null && wzHTML.length() > 128)
-					{
-						r2 = JsoupHelper.processWZ2GetForecastStrings(wzHTML);
-						if(r2 != null && r2.rc() > 0)
-							r2fromfile = true;
-					}
-				} catch(Exception e) {
-//					LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
-//					doStackOutput(e);
-//					return false;
-				}
-			}
-
-//			if(weeWXApp.DEBUG)
-//				return true;
-
-			if(r2 == null || r2.rc() == 0)
-			{
-				do
-				{
-					wzHTML = getWZHTML(forecast_text_url, true);
-					if(wzHTML == null)
-						break;
-
-					if(wzHTML.isBlank())
-						continue;
-
-					if(wzHTML.startsWith("error|"))
-						break;
-
-					if(wzHTML.length() > 128 && !r2fromfile && KeyValue.debugging_on())
-						CustomDebug.writeDebug("weeWX", "R2_body.html", wzHTML);
-
-					LogMessage("reallyGetForecast() Got data from WZ, let's try to find forecast strings in it...");
-					r2 = JsoupHelper.processWZ2GetForecastStrings(wzHTML);
-				} while(attempts++ < 3 && (r2 == null || r2.rc() == 0));
-
-				if(wzHTML == null || wzHTML.isBlank())
-				{
-					LogMessage("Nothing substantial was returned from WZ...", KeyValue.w);
-					KeyValue.putVar("LastForecastError", "Nothing substantial was returned from WZ...");
-					return false;
-				}
-
-				if(wzHTML.startsWith("error|"))
-				{
-					String[] errors = wzHTML.strip().split("\\|", 2);
-					LogMessage("Error! errors[1]: " + errors[1], KeyValue.w);
-					KeyValue.putVar("LastForecastError", errors[1]);
-					return false;
-				}
-			}
-
-			if(r2 == null || r2.rc() == 0)
-			{
-				if(wzHTML != null && !wzHTML.isBlank() && !r2fromfile)
-					CustomDebug.writeDebug("weeWX", "R2_body.html", wzHTML);
-
-				LogMessage("reallyGetForecast() Nothing substantial was returned from WZ...", KeyValue.w);
-				KeyValue.putVar("LastForecastError", "Nothing substantial was returned from WZ...");
-				return false;
-			}
-
-			LogMessage("reallyGetForecast() Got forecast strings from WZ... rc: " + r2.rc());
-
-			if(weeWXApp.DEBUG && KeyValue.debugging_on())
-			{
-				try
-				{
-					forecastData = CustomDebug.readDebug("weeWX", "R1_body.html");
-					LogMessage("reallyGetForecast() forecastData: " + forecastData);
-					if(forecastData != null && forecastData.length() > 128)
-					{
-						r1 = JsoupHelper.processWZ2Forecasts(url, forecastData, r2);
-						if(r1 != null && r1.days() != null && !r1.days().isEmpty())
-							r1fromfile = true;
-					}
-				} catch(Exception e) {
-//					LogMessage("Error! e: " + e.getMessage(), true, KeyValue.e);
-//					doStackOutput(e);
-//					return false;
-				}
-			}
-
-//			if(weeWXApp.DEBUG)
-//				return true;
-
-			if(r1 == null || r1.days() == null || r1.days().isEmpty())
-			{
-				attempts = 0;
-				do
-				{
-					forecastData = getWZHTML(url, false);
-					if(forecastData == null)
-						break;
-
-					if(forecastData.isBlank())
-						continue;
-
-					if(forecastData.startsWith("error|"))
-						break;
-
-					if(forecastData.length() > 128 && !r1fromfile && KeyValue.debugging_on())
-						CustomDebug.writeDebug("weeWX", "R1_body.html", forecastData);
-
-					LogMessage("reallyGetForecast() Got data from WZ, let's try to find forecast blocks in it...");
-					r1 = JsoupHelper.processWZ2Forecasts(url, forecastData, r2);
-				} while(attempts++ < 3 && (r1 == null || r1.days() == null || r1.days().isEmpty()));
-
-				if(forecastData == null || forecastData.isBlank())
-				{
-					LogMessage("Nothing substantial was returned from WZ...", KeyValue.w);
-					KeyValue.putVar("LastForecastError", "Nothing substantial was returned from WZ...");
-					return false;
-				}
-
-				if(forecastData.startsWith("error|"))
-				{
-					String[] errors = forecastData.strip().split("\\|", 2);
-					LogMessage("Error! errors[1]: " + errors[1], KeyValue.w);
-					KeyValue.putVar("LastForecastError", errors[1]);
-					return false;
-				}
-			}
-
-			if(r1 == null || r1.days() == null || r1.days().isEmpty())
-			{
-				if(forecastData != null && !forecastData.isBlank() && !r1fromfile)
-					CustomDebug.writeDebug("weeWX", "R1_body.html", forecastData);
-
-				LogMessage("reallyGetForecast() Failed to find any forecast blocks, giving up...", KeyValue.w);
-				KeyValue.putVar("LastForecastError", "Nothing substantial was returned from WZ...");
-				return false;
-			}
-		} else {
-			forecastData = downloadString(url, false);
+			forecastData = downloadString(url);
 
 			if(forecastData == null || forecastData.isBlank())
 			{
@@ -4797,74 +5061,19 @@ class weeWXAppCommon
 					LogMessage("reallyGetForecast() Debug write failed: " + e.getMessage(), KeyValue.w);
 				}
 			}
-
-//			LogMessage("reallyGetForecast() forcecastData: " + forecastData);
 		}
 
 		if(KeyValue.countyName != null && !KeyValue.countyName.isBlank())
 		{
-			String textFC = downloadString("https://www.met.ie/Open_Data/json/" + KeyValue.countyName + ".json", false);
+			String textFC = downloadString("https://www.met.ie/Open_Data/json/" + KeyValue.countyName + ".json");
 			KeyValue.putVar("textFC", textFC);
 		}
 
-		switch(fctype)
-		{
-			case "aemet.es" -> r1 = processAEMET(forecastData);
-			case "bom2" -> r1 = JsoupHelper.processBoM2(forecastData);
-			case "bom3daily" -> r1 = processBOM3Daily(forecastData, true);
-			case "bom3hourly" -> r1 = processBOM3(UpdateInterval, forecastData, url);
-			case "dwd.de" -> r1 = processDWD(forecastData);
-			case "tempoitalia.it" -> r1 = JsoupHelper.processTempoItalia(forecastData);
-			case "met.ie" -> r1 = processMETIE(forecastData);
-			case "met.no" -> r1 = processMetNO(forecastData);
-			case "metoffice.gov.uk" -> r1 = processMET(forecastData);
-			case "metservice.com" -> r1 = processMetService(forecastData);
-			case "openweathermap.org" -> r1 = processOWM(forecastData);
-			case "weather.com" -> r1 = processWCOM(forecastData);
-			case "weather.gc.ca" -> r1 = JsoupHelper.processWCA(forecastData);
-			case "weather.gc.ca-fr" -> r1 = JsoupHelper.processWCAF(forecastData);
-			case "weather.gov" -> r1 = processWGOV(forecastData);
-			case "weatherzone" -> r1 = processWZ(url, forecastData);
-			case "weatherzone2" -> {}
-			case "wmo.int" -> r1 = processWMO(forecastData);
-			case "yahoo" -> r1 = JsoupHelper.processYahoo(forecastData);
-			default ->
-			{
-				LogMessage("reallyGetForecast() Failed to process forecast, fctype is invalid: " + fctype);
-				String fmtStr = String.format(getAndroidString(R.string.forecast_type_is_invalid), fctype);
-				KeyValue.putVar("LastForecastError", fmtStr);
-				return false;
-			}
-		}
-
-		if(r1 == null || r1.days() == null || r1.days().isEmpty())
-		{
-//			if(forecastData != null && !forecastData.isBlank())
-//				CustomDebug.writeDebug("weeWX", "forecast.html", forecastData);
-
-			LogMessage("reallyGetForecast() Failed to process forecast data, giving up...", KeyValue.w);
-			KeyValue.putVar("LastForecastError", getAndroidString(R.string.failed_to_process_forecast_data));
-			return false;
-		}
-
-		GsonHelper gh = new GsonHelper();
-		gh.days = r1.days();
-		gh.desc = r1.desc();
-		gh.timestamp = r1.timestamp() > 0 ? r1.timestamp() : System.currentTimeMillis();
-		gh.isDaily = r1.isDaily();
-
-		Gson gson = new Gson();
-		String forecastGson = gson.toJson(gh);
-
-		LogMessage("reallyGetForecast() Updating forecast cache, forecastGson.length(): " + forecastGson.length());
-		KeyValue.putVar("forecastGsonEncoded", forecastGson);
-		KeyValue.putVar("rssCheck", gh.timestamp);
-		KeyValue.putVar("LastForecastError", null);
-
-		return true;
+		Result3 r3 = processForecast(modhour, fctype, forecastData, url);
+		return r3.succeeded();
 	}
 
-	static Bitmap getRadarImage(boolean forced, boolean calledFromweeWXApp, boolean noCache, boolean runningInBG)
+	static Bitmap getRadarImage(boolean forced, boolean calledFromweeWXApp, boolean runningInBG)
 	{
 		Bitmap bm = null;
 
@@ -4959,7 +5168,7 @@ class weeWXAppCommon
 				try
 				{
 					LogMessage("getRadarImage() Starting to download radar image from: " + radarURL);
-					if(loadOrDownloadImage(radarURL, weeWXApp.radarFilename, noCache) != null)
+					if(loadOrDownloadImage(radarURL, weeWXApp.radarFilename) != null)
 					{
 						KeyValue.putVar("lastRadarDownload", System.currentTimeMillis());
 						SendIntent(REFRESH_RADAR_INTENT);
@@ -4981,7 +5190,7 @@ class weeWXAppCommon
 			try
 			{
 				LogMessage("getRadarImage() Starting to download radar image from: " + radarURL);
-				bm = loadOrDownloadImage(radarURL, weeWXApp.radarFilename, noCache);
+				bm = loadOrDownloadImage(radarURL, weeWXApp.radarFilename);
 				if(bm != null)
 				{
 					KeyValue.putVar("lastRadarDownload", System.currentTimeMillis());
@@ -4999,12 +5208,12 @@ class weeWXAppCommon
 		}
 	}
 
-	static Bitmap getWebcamImage(boolean forced, boolean calledFromweeWXApp, boolean noCache, boolean runningInBG)
+	static Bitmap getWebcamImage(boolean forced, boolean calledFromweeWXApp, boolean runningInBG)
 	{
-		return getWebcamImage(forced, calledFromweeWXApp, noCache, runningInBG, true);
+		return getWebcamImage(forced, calledFromweeWXApp, runningInBG, true);
 	}
 
-	static Bitmap getWebcamImage(boolean forced, boolean calledFromweeWXApp, boolean noCache, boolean runningInBG, boolean requireIntent)
+	static Bitmap getWebcamImage(boolean forced, boolean calledFromweeWXApp, boolean runningInBG, boolean requireIntent)
 	{
 		Bitmap bm = null;
 		long now = System.currentTimeMillis();
@@ -5145,7 +5354,7 @@ class weeWXAppCommon
 				try
 				{
 					LogMessage("getWebcamImage() Starting to download webcam image from: " + webcamURL);
-					if(loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename, noCache) != null)
+					if(loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename) != null)
 					{
 						KeyValue.putVar("lastWebcamDownload", npwsll.lastStart);
 						LogMessage("getWebcamImage() Webcam image downloaded successfully...");
@@ -5179,7 +5388,7 @@ class weeWXAppCommon
 			try
 			{
 				LogMessage("getWebcamImage() Starting to download webcam image from: " + webcamURL);
-				bm = loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename, noCache);
+				bm = loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename);
 				if(bm != null)
 				{
 					KeyValue.putVar("lastWebcamDownload", npwsll.lastStart);
@@ -5390,7 +5599,7 @@ class weeWXAppCommon
 			LogMessage("delImage() Failed to delete " + filename);
 	}
 
-	static Bitmap loadOrDownloadImage(String url, String filename, boolean noCache) throws InterruptedException, IOException
+	static Bitmap loadOrDownloadImage(String url, String filename) throws InterruptedException, IOException
 	{
 		Bitmap bm = null;
 		File file = getFile(filename);
@@ -5400,7 +5609,7 @@ class weeWXAppCommon
 		   url.toLowerCase(Locale.ENGLISH).strip().endsWith(".mjpg"))
 		{
 			LogMessage("Trying to get a frame from a MJPEG stream and set bm to it...");
-			bm = grabMjpegFrame(url, false);
+			bm = grabMjpegFrame(url);
 			LogMessage("Saving frame to storage...");
 			try(FileOutputStream out = new FileOutputStream(file))
 			{
@@ -5415,7 +5624,7 @@ class weeWXAppCommon
 			LogMessage("Frame saved successfully to storage...");
 		} else {
 			LogMessage("Trying to download a JPEG file and set bm to it...");
-			if(downloadToFile(file, url, noCache))
+			if(downloadToFile(file, url))
 				bm = loadImage(file);
 		}
 
@@ -5423,7 +5632,7 @@ class weeWXAppCommon
 		return bm;
 	}
 
-	static byte[] downloadContent(String url, boolean noCache) throws InterruptedException, IOException
+	static byte[] downloadContent(String url) throws InterruptedException, IOException
 	{
 		if(url == null || url.isBlank())
 		{
@@ -5431,16 +5640,16 @@ class weeWXAppCommon
 			throw new IOException("url is null or blank, bailing out...");
 		}
 
-		OkHttpClient client = NetworkClient.getInstance(url, noCache);
+		OkHttpClient client = NetworkClient.getInstance(url);
 
-		return reallyDownloadContent(client, url, 0, noCache);
+		return reallyDownloadContent(client, url, 0);
 	}
 
-	private static byte[] reallyDownloadContent(OkHttpClient client, String url, int retries, boolean noCache) throws InterruptedException, IOException
+	private static byte[] reallyDownloadContent(OkHttpClient client, String url, int retries) throws InterruptedException, IOException
 	{
 		LogMessage("reallyDownloadContent() checking if url  " + url + " is valid, attempt " + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url, noCache);
+		Request request = NetworkClient.getRequest(false, url);
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -5470,7 +5679,7 @@ class weeWXAppCommon
 					throw ie;
 				}
 
-				return reallyDownloadContent(client, url, retries, noCache);
+				return reallyDownloadContent(client, url, retries);
 			}
 
 //			LogMessage("reallyCheckURL() Error! e: " + e.getMessage(), true, KeyValue.e);
@@ -5481,10 +5690,10 @@ class weeWXAppCommon
 		}
 	}
 
-	static boolean downloadToFile(File file, String url, boolean noCache) throws InterruptedException, IOException
+	static boolean downloadToFile(File file, String url) throws InterruptedException, IOException
 	{
 		LogMessage("Downloading from url: " + url);
-		byte[] body = downloadContent(url, noCache);
+		byte[] body = downloadContent(url);
 		if(body == null || body.length == 0)
 		{
 			String warning = "Download content was null or empty";
@@ -5520,7 +5729,7 @@ class weeWXAppCommon
 		return true;
 	}
 
-	static Bitmap grabMjpegFrame(String url, boolean noCache) throws InterruptedException, IOException
+	static Bitmap grabMjpegFrame(String url) throws InterruptedException, IOException
 	{
 		if(url == null || url.isBlank())
 		{
@@ -5530,10 +5739,10 @@ class weeWXAppCommon
 
 		OkHttpClient client = NetworkClient.getStream(url);
 
-		return reallyGrabMjpegFrame(client, url, 0, noCache);
+		return reallyGrabMjpegFrame(client, url, 0);
 	}
 
-	static Bitmap reallyGrabMjpegFrame(OkHttpClient client, String url, int retries, boolean noCache) throws InterruptedException, IOException
+	static Bitmap reallyGrabMjpegFrame(OkHttpClient client, String url, int retries) throws InterruptedException, IOException
 	{
 		Exception lastException = null;
 		Bitmap bm;
@@ -5541,7 +5750,7 @@ class weeWXAppCommon
 
 		LogMessage("reallyGrabMjpegFrame() checking if url  " + url + " is valid, attempt " + (retries + 1));
 
-		Request request = NetworkClient.getRequest(false, url, noCache);
+		Request request = NetworkClient.getRequest(false, url);
 
 		try(Response response = client.newCall(request).execute())
 		{
@@ -5624,7 +5833,7 @@ class weeWXAppCommon
 				throw ie;
 			}
 
-			return reallyGrabMjpegFrame(client, url, retries, noCache);
+			return reallyGrabMjpegFrame(client, url, retries);
 		}
 
 		if(lastException != null)

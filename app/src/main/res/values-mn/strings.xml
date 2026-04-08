@@ -73,7 +73,6 @@
     <string name="ok">Бас</string>
     <string name="please_wait_verify_url">Бид таны оруулсан URL-г шалгаж байгаарай</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s файлд %1$d алдаа илэрсэн, %3$s дээрээс олсон %2$s файлыг харах эсвэл %4$s логийг дэлгэрэнгүй үзэх боломжтой</item>
         <item quantity="other">%2$s файлд %1$d алдаа илэрсэн, %3$s дээрээс олсон %2$s файлыг харах эсвэл %4$s логийг дэлгэрэнгүй үзэх боломжтой</item>
     </plurals>
     <string name="radar">Радиолокац</string>

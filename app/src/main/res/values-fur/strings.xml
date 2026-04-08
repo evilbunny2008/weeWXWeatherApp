@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">A son stâts rilevâts erôrs %1$d tal file %2$s, viodi il file %2$s cjatât a %3$s o viodi i regjstris %4$s pai detais</item>
         <item quantity="many">A son stâts rilevâts erôrs %1$d tal file %2$s, viodi il file %2$s cjatât a %3$s o viodi i regjstris %4$s pai detais</item>
-        <item quantity="one">A son stâts rilevâts erôrs %1$d tal file %2$s, viodi il file %2$s cjatât a %3$s o viodi i regjstris %4$s pai detais</item>
         <item quantity="other">A son stâts rilevâts erôrs %1$d tal file %2$s, viodi il file %2$s cjatât a %3$s o viodi i regjstris %4$s pai detais</item>
         <item quantity="two">A son stâts rilevâts erôrs %1$d tal file %2$s, viodi il file %2$s cjatât a %3$s o viodi i regjstris %4$s pai detais</item>
         <item quantity="zero">A son stâts rilevâts erôrs %1$d tal file %2$s, viodi il file %2$s cjatât a %3$s o viodi i regjstris %4$s pai detais</item>

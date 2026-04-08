@@ -73,7 +73,6 @@
     <string name="ok">Kelishdikmi</string>
     <string name="please_wait_verify_url">Iltimos, siz yuborgan URL manzilini tekshirganimizni kuting</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s faylida %1$d xatolik aniqlandi, %3$s da topilgan %2$s faylni ko\'ring yoki tafsilotlar uchun %4$s jurnalini ko\'ring</item>
         <item quantity="other">%2$s faylida %1$d xatolik aniqlandi, %3$s da topilgan %2$s faylni ko\'ring yoki tafsilotlar uchun %4$s jurnalini ko\'ring</item>
     </plurals>
     <string name="radar">Radar</string>

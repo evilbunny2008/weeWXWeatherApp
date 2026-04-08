@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Braitheadh ​​%1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
         <item quantity="many">Braitheadh ​​%1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
-        <item quantity="one">Braitheadh ​​earráid %1$d i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
         <item quantity="other">Braitheadh ​​%1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
         <item quantity="two">Braitheadh ​​%1$d earráidí i gcomhad %2$s, féach ar an gcomhad %2$s a fuarthas ag %3$s nó féach ar loga %4$s le haghaidh na sonraí</item>
     </plurals>

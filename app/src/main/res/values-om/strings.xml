@@ -73,7 +73,6 @@
     <string name="ok">Tole</string>
     <string name="please_wait_verify_url">Mee URL isin galchitan yeroo mirkaneessinu eegaa</string>
     <plurals name="processing_errors">
-        <item quantity="one">Faayilii %2$s keessatti dogongorri %1$d argame ture, faayilii %2$s %3$s irratti argame ilaali ykn bal\'inaaf galmee %4$s ilaali</item>
         <item quantity="other">Faayilii %2$s keessatti dogongorri %1$d argame, faayilii %2$s %3$s irratti argame ilaali ykn bal\'inaaf galmee %4$s ilaali</item>
     </plurals>
     <string name="radar">Raadaara</string>

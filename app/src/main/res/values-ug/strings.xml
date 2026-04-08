@@ -73,7 +73,6 @@
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">سىز تاپشۇرغان URL نى دەلىللەۋاتقاندا ساقلاڭ</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s ھۆججىتىدە% %1$d خاتالىق بايقالدى ،%3$s دىن تېپىلغان%2$s ھۆججىتىنى كۆرۈڭ ياكى تەپسىلاتلار ئۈچۈن%4$s خاتىرىسىنى كۆرۈڭ</item>
         <item quantity="other">%2$s ھۆججىتىدە% %1$d خاتالىق بايقالدى ،%3$s دىن تېپىلغان%2$s ھۆججىتىنى كۆرۈڭ ياكى تەپسىلاتلار ئۈچۈن%4$s خاتىرىسىنى كۆرۈڭ</item>
     </plurals>
     <string name="radar">Radar</string>

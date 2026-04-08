@@ -73,7 +73,6 @@
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Vent mens vi bekrefter nettadressen du sendte inn</string>
     <plurals name="processing_errors">
-        <item quantity="one">Det ble oppdaget %1$d feil i %2$s filen, se %2$s filen funnet på %3$s eller vis %4$s logger for detaljer</item>
         <item quantity="other">Det ble oppdaget %1$d feil i %2$s filen, se %2$s filen funnet på %3$s eller vis %4$s logger for detaljer</item>
     </plurals>
     <string name="radar">Radar</string>

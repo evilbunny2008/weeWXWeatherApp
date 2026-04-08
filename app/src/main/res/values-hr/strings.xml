@@ -74,7 +74,6 @@
     <string name="please_wait_verify_url">Pričekajte dok ne provjerimo URL koji ste poslali</string>
     <plurals name="processing_errors">
         <item quantity="few">Bilo je %1$d grešaka otkrivenih u %2$s datoteci, pogledajte %2$s datoteku pronađenu na %3$s ili pogledajte %4$s zapisnike za detalje</item>
-        <item quantity="one">Otkrivena je %1$d pogreška u %2$s datoteci, pogledajte %2$s datoteku pronađenu na %3$s ili pogledajte %4$s zapisnike za detalje</item>
         <item quantity="other">Bilo je %1$d grešaka otkrivenih u %2$s datoteci, pogledajte %2$s datoteku pronađenu na %3$s ili pogledajte %4$s zapisnike za detalje</item>
     </plurals>
     <string name="radar">Radar</string>

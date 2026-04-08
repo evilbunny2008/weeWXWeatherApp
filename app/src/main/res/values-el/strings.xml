@@ -73,7 +73,6 @@
     <string name="ok">Εντάξει</string>
     <string name="please_wait_verify_url">Περιμένετε μέχρι να επαληθεύσουμε τη διεύθυνση URL που υποβάλατε</string>
     <plurals name="processing_errors">
-        <item quantity="one">Εντοπίστηκε %1$d σφάλμα στο αρχείο %2$s, δείτε το αρχείο %2$s που βρέθηκε στο %3$s ή δείτε τα αρχεία καταγραφής %4$s για λεπτομέρειες</item>
         <item quantity="other">Εντοπίστηκαν %1$d σφάλματα στο αρχείο %2$s, δείτε το αρχείο %2$s που βρέθηκε στο %3$s ή δείτε τα αρχεία καταγραφής %4$s για λεπτομέρειες</item>
     </plurals>
     <string name="radar">Ραντάρ</string>

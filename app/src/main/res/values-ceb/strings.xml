@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
         <item quantity="many">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
-        <item quantity="one">Adunay %1$d error nga nakita sa %2$s file, tan-awa ang %2$s file nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
         <item quantity="other">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
         <item quantity="two">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>
         <item quantity="zero">Adunay %1$d nga mga sayop nga nakita sa %2$s nga payl, tan-awa ang %2$s nga payl nga makita sa %3$s o tan-awa ang %4$s nga mga log alang sa mga detalye</item>

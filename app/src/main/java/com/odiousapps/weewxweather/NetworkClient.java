@@ -1,6 +1,5 @@
 package com.odiousapps.weewxweather;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.Uri;
 
@@ -22,8 +21,9 @@ import okhttp3.Response;
 import okhttp3.TlsVersion;
 
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 
-@SuppressWarnings({"unused", "SameParameterValue"})
+@SuppressWarnings({"unused", "SameParameterValue", "CustomX509TrustManager", "TrustAllX509TrustManager"})
 class NetworkClient
 {
 	final static String[] UAstrings = {
@@ -59,12 +59,18 @@ class NetworkClient
 		{
 			Context context = weeWXApp.getInstance();
 
-			@SuppressLint("CustomX509TrustManager")
 			TrustManager[] trustAllCerts = new TrustManager[]{new X509TrustManager()
 			{
-				@SuppressLint("TrustAllX509TrustManager") @Override public void checkClientTrusted(X509Certificate[] chain, String authType) {}
-				@SuppressLint("TrustAllX509TrustManager") @Override public void checkServerTrusted(X509Certificate[] chain, String authType) {}
-				@Override public X509Certificate[] getAcceptedIssuers()
+				@Override
+				public void checkClientTrusted(X509Certificate[] chain, String authType)
+				{}
+
+				@Override
+				public void checkServerTrusted(X509Certificate[] chain, String authType)
+				{}
+
+				@Override
+				public X509Certificate[] getAcceptedIssuers()
 				{
 					return new X509Certificate[0];
 				}
@@ -75,9 +81,9 @@ class NetworkClient
 			SSLSocketFactory sslSocketFactory = sslContext.getSocketFactory();
 
 			// Define connection spec with TLS 1.3 first, fallback to 1.2
-			ConnectionSpec modernTLS = new ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS).tlsVersions(TlsVersion.TLS_1_3, TlsVersion.TLS_1_2).allEnabledCipherSuites().build();
-
-//					.callTimeout(weeWXAppCommon.default_timeout, TimeUnit.MILLISECONDS)
+			ConnectionSpec modernTLS = new ConnectionSpec.Builder(ConnectionSpec.MODERN_TLS)
+					.tlsVersions(TlsVersion.TLS_1_3, TlsVersion.TLS_1_2)
+					.allEnabledCipherSuites().build();
 
 			clientNoTimeoutInstance = new OkHttpClient.Builder()
 					.sslSocketFactory(sslSocketFactory, (X509TrustManager)trustAllCerts[0])
@@ -114,7 +120,7 @@ class NetworkClient
 		return clientNoTimeoutInstance.newBuilder().build();
 	}
 
-	static OkHttpClient getInstance(String url, boolean nocache)
+	static OkHttpClient getInstance(String url)
 	{
 		OkHttpClient.Builder newClient = newInstance();
 
@@ -124,12 +130,6 @@ class NetworkClient
 		// windy.com is very noisy... 2s connectivity checks is beyond excessive...
 		//if(!url.contains("windy.com"))
 		LogMessage("NetworkClient.getInstance() URL: " + url);
-
-		if(nocache)
-		{
-			url = noCache(url);
-			LogMessage("NetworkClient.getInstance() New URL: " + url);
-		}
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() == null || !uri.getUserInfo().contains(":"))
@@ -149,14 +149,10 @@ class NetworkClient
 	{
 		OkHttpClient.Builder newClient = newInstance();
 
-		if(url == null || url.isBlank() || !url.startsWith("http"))
+		if(url == null || url.isBlank() || !is_valid_url(url))
 			return newClient.build();
 
 		LogMessage("NetworkClient.getStream() URL: " + url);
-
-		url = noCache(url);
-
-		LogMessage("NetworkClient.getStream() New URL: " + url);
 
 		Uri uri = Uri.parse(url);
 		if(uri.getUserInfo() != null && uri.getUserInfo().contains(":"))
@@ -175,14 +171,6 @@ class NetworkClient
 		return newClient.build();
 	}
 
-	private static String noCache(String url)
-	{
-		// Cache-Control headers already handle caching (set in getRequest).
-		// Appending noCache= as a query parameter breaks APIs like met.no
-		// and weather.com that reject unknown parameters with HTTP 400.
-		return url;
-	}
-
 	private static int responseCount(Response response)
 	{
 		int result = 1;
@@ -193,7 +181,7 @@ class NetworkClient
 		return result;
 	}
 
-	static Request getRequest(boolean doHead, String url, boolean noCache)
+	static Request getRequest(boolean doHead, String url)
 	{
 		if(url == null || url.isBlank() || !url.startsWith("http"))
 			return null;
@@ -203,13 +191,6 @@ class NetworkClient
 		String referer = url.indexOf("/", 8) > 0 ? url.substring(0, url.indexOf("/", 8)) : url;
 
 		LogMessage("NetworkClient.getRequest() referer: " + referer);
-
-		if(noCache)
-		{
-			url = noCache(url);
-
-			LogMessage("NetworkClient.getRequest() New URL: " + url);
-		}
 
 		Request.Builder req = new Request.Builder()
 				.header("User-Agent", UA)

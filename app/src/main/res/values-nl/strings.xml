@@ -73,7 +73,6 @@
     <string name="ok">OK</string>
     <string name="please_wait_verify_url">Een ogenblik geduld terwijl we de door u ingediende URL verifiëren</string>
     <plurals name="processing_errors">
-        <item quantity="one">Er is een %1$d-fout gedetecteerd in het %2$s bestand. Bekijk het %2$s bestand gevonden op %3$s of bekijk de %4$s logboeken voor de details</item>
         <item quantity="other">Er zijn %1$d fouten gedetecteerd in het %2$s bestand, bekijk het %2$s bestand gevonden op %3$s of bekijk %4$s logs voor de details</item>
     </plurals>
     <string name="radar">Radar</string>

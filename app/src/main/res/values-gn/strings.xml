@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Ojejuhúkuri %1$d jejavy %2$s vore\'ípe, ehecha %2$s vore ojejuhúva %3$s pe térã ehecha %4$s registro umi detalle rehegua</item>
         <item quantity="many">Ojejuhúkuri %1$d jejavy %2$s vore\'ípe, ehecha %2$s vore ojejuhúva %3$s pe térã ehecha %4$s registro umi detalle rehegua</item>
-        <item quantity="one">Ojejuhúkuri %1$d jejavy %2$s vore\'ípe, ehecha %2$s vore ojejuhúva %3$s pe térã ehecha %4$s registro umi detalle rehegua</item>
         <item quantity="other">Ojejuhúkuri %1$d jejavy %2$s vore\'ípe, ehecha %2$s vore ojejuhúva %3$s pe térã ehecha %4$s registro umi detalle rehegua</item>
         <item quantity="two">Ojejuhúkuri %1$d jejavy %2$s vore\'ípe, ehecha %2$s vore ojejuhúva %3$s pe térã ehecha %4$s registro umi detalle rehegua</item>
         <item quantity="zero">Ojejuhúkuri %1$d jejavy %2$s vore\'ípe, ehecha %2$s vore ojejuhúva %3$s pe térã ehecha %4$s registro umi detalle rehegua</item>

@@ -74,7 +74,6 @@
     <string name="please_wait_verify_url">Aguarde enquanto verificamos o URL que você enviou</string>
     <plurals name="processing_errors">
         <item quantity="many">Foram detectados %1$d erros no arquivo %2$s, veja o arquivo %2$s encontrado em %3$s ou veja os logs %4$s para mais detalhes</item>
-        <item quantity="one">Foi detectado um erro %1$d no arquivo %2$s, veja o arquivo %2$s encontrado em %3$s ou veja os logs %4$s para mais detalhes</item>
         <item quantity="other">Foram detectados %1$d erros no arquivo %2$s, veja o arquivo %2$s encontrado em %3$s ou veja os logs %4$s para mais detalhes</item>
     </plurals>
     <string name="radar">Radar</string>

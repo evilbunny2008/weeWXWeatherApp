@@ -73,7 +73,6 @@
     <string name="ok">Լավ</string>
     <string name="please_wait_verify_url">Խնդրում ենք սպասել, մինչև մենք հաստատենք ձեր ուղարկած URL-ը:</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s ֆայլում հայտնաբերվեց %1$d սխալ, դիտեք %2$s ֆայլը, որը գտնվել է %3$s ում կամ դիտեք %4$s մատյանները մանրամասների համար</item>
         <item quantity="other">%2$s ֆայլում հայտնաբերվել են %1$d սխալներ, դիտեք %2$s ֆայլը, որը գտնվել է %3$s ում կամ դիտեք %4$s մատյանները մանրամասների համար</item>
     </plurals>
     <string name="radar">Ռադար</string>

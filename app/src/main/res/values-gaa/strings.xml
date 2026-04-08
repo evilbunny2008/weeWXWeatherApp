@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Tɔmɔi %1$d yɛ %2$s faili lɛ mli, kwɛmɔ %2$s faili ni ana yɛ %3$s loo kwɛmɔ %4$s woji kɛha mlitsɔɔmɔ</item>
         <item quantity="many">Tɔmɔi %1$d yɛ %2$s faili lɛ mli, kwɛmɔ %2$s faili ni ana yɛ %3$s loo kwɛmɔ %4$s woji kɛha mlitsɔɔmɔ</item>
-        <item quantity="one">Ana %1$d tɔmɔ yɛ %2$s faili lɛ mli, kwɛmɔ %2$s faili ni ana yɛ %3$s loo kwɛmɔ %4$s woji kɛha mlitsɔɔmɔ</item>
         <item quantity="other">Tɔmɔi %1$d yɛ %2$s faili lɛ mli, kwɛmɔ %2$s faili ni ana yɛ %3$s loo kwɛmɔ %4$s woji kɛha mlitsɔɔmɔ</item>
         <item quantity="two">Tɔmɔi %1$d yɛ %2$s faili lɛ mli, kwɛmɔ %2$s faili ni ana yɛ %3$s loo kwɛmɔ %4$s woji kɛha mlitsɔɔmɔ</item>
         <item quantity="zero">Tɔmɔi %1$d yɛ %2$s faili lɛ mli, kwɛmɔ %2$s faili ni ana yɛ %3$s loo kwɛmɔ %4$s woji kɛha mlitsɔɔmɔ</item>

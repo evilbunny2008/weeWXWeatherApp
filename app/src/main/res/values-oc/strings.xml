@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
         <item quantity="many">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
-        <item quantity="one">I aguèt %1$d error detectada dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
         <item quantity="other">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
         <item quantity="two">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>
         <item quantity="zero">I aguèt %1$d errors detectadas dins lo fichièr %2$s, consultatz lo fichièr %2$s trobat a %3$s o consultatz los jornals %4$s pels detalhs</item>

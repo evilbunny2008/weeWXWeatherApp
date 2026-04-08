@@ -73,10 +73,18 @@
     <string name="notifications_needed2">Since you declined the notification permission twice, you need to enable it in settings instead, launch settings?</string>
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Please wait while we verify the URL you submitted</string>
+    <plurals name="processing_errors2">
+        <item quantity="few">There were %1$d errors detected while updating, view %2$s logs for the details</item>
+        <item quantity="many">There were %1$d errors detected while updating, view %2$s logs for the details</item>
+        <item quantity="one">There was %1$d error detected while updating, view %2$s logs for the details</item>
+        <item quantity="other">There were %1$d errors detected while updating, view %2$s logs for the details</item>
+        <item quantity="two">There were %1$d errors detected while updating, view %2$s logs for the details</item>
+        <item quantity="zero">There were %1$d errors detected while updating, view %2$s logs for the details</item>
+    </plurals>
     <plurals name="processing_errors">
         <item quantity="few">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
         <item quantity="many">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
-        <item quantity="one">There were %1$d error detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
+        <item quantity="one">There was %1$d error detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
         <item quantity="other">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
         <item quantity="two">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>
         <item quantity="zero">There were %1$d errors detected in the %2$s file, view the %2$s file found at %3$s or view %4$s logs for the details</item>

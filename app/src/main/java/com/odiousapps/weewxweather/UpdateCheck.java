@@ -17,8 +17,8 @@ import java.util.concurrent.Future;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
 
 import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+import static com.odiousapps.weewxweather.weeWXAppCommon.processUpdates;
 
-@SuppressWarnings("unused")
 public class UpdateCheck extends BroadcastReceiver
 {
 	private final static ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -369,46 +369,20 @@ public class UpdateCheck extends BroadcastReceiver
 		{
 			LogMessage("UpdateCheck.runInTheBackground() New background thread started...");
 
-			try
+			if(onAppStart)
 			{
-				if(onAppStart)
+				try
 				{
-					try
-					{
-						LogMessage("UpdateCheck.runInTheBackground() onAppStart is true, sleeping for " +
-						           (Math.round(weeWXAppCommon.default_wait_on_boot / 100f) / 10.0) + "s so all " +
-						           "the fragments have a chance to load...");
-						Thread.sleep(weeWXAppCommon.default_wait_on_boot);
-					} catch(InterruptedException e) {
-						LogMessage("UpdateCheck.runInTheBackground() Sleep interrupted by a thrown InterruptedException, is this normal?");
-						//doStackOutput(e);
-						//weeWXApp.hasBootedFully = true;
-						//return;
-					}
+					LogMessage("UpdateCheck.runInTheBackground() onAppStart is true, sleeping for " +
+					           (Math.round(weeWXAppCommon.default_wait_on_boot / 100f) / 10.0) + "s so all " +
+					           "the fragments have a chance to load...");
+					Thread.sleep(weeWXAppCommon.default_wait_on_boot);
+				} catch(InterruptedException e) {
+					LogMessage("UpdateCheck.runInTheBackground() Sleep interrupted by a thrown InterruptedException, is this normal?");
 				}
-
-				LogMessage("UpdateCheck.runInTheBackground() weeWXAppCommon.getForecast(false, " + onAppStart + ", true)...");
-				weeWXAppCommon.getForecast(false, onAppStart, true);
-
-				String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
-				if(radtype != null && radtype.equals("image"))
-				{
-					String radarURL = (String)KeyValue.readVar("RADAR_URL", "");
-					if(radarURL != null && !radarURL.isBlank())
-					{
-						LogMessage("UpdateCheck.runInTheBackground() weeWXAppCommon.getRadarImage(false, " + onAppStart + ", false, true)...");
-						weeWXAppCommon.getRadarImage(false, onAppStart, false, true);
-					}
-				}
-
-				LogMessage("UpdateCheck.runInTheBackground() weeWXAppCommon.getWeather(false, " + onAppStart + ", true)...");
-				weeWXAppCommon.getWeather(false, onAppStart, true);
-
-				//LogMessage("UpdateCheck.runInTheBackground() weeWXAppCommon.getWebcam(false, " + onAppStart + ", true, true)...");
-				//weeWXAppCommon.getWebcamImage(false, onAppStart, true, true);
-			} catch(Exception e) {
-				LogMessage("UpdateCheck.runInTheBackground() Error! e: " + e, true, KeyValue.e);
 			}
+
+			processUpdates(onReceivedUpdate, onAppStart);
 
 			if(!weeWXApp.hasBootedFully)
 			{

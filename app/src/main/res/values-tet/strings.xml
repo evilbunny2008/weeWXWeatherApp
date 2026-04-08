@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Iha erru %1$d ne\'ebé detekta iha arkivu %2$s, haree arkivu %2$s ne\'ebé hetan iha %3$s ka haree rejistu %4$s ba detalle sira</item>
         <item quantity="many">Iha erru %1$d ne\'ebé detekta iha arkivu %2$s, haree arkivu %2$s ne\'ebé hetan iha %3$s ka haree rejistu %4$s ba detalle sira</item>
-        <item quantity="one">Iha erru %1$d ne\'ebé detekta iha arkivu %2$s, haree arkivu %2$s ne\'ebé hetan iha %3$s ka haree rejistu %4$s ba detalle sira</item>
         <item quantity="other">Iha erru %1$d ne\'ebé detekta iha arkivu %2$s, haree arkivu %2$s ne\'ebé hetan iha %3$s ka haree rejistu %4$s ba detalle sira</item>
         <item quantity="two">Iha erru %1$d ne\'ebé detekta iha arkivu %2$s, haree arkivu %2$s ne\'ebé hetan iha %3$s ka haree rejistu %4$s ba detalle sira</item>
         <item quantity="zero">Iha erru %1$d ne\'ebé detekta iha arkivu %2$s, haree arkivu %2$s ne\'ebé hetan iha %3$s ka haree rejistu %4$s ba detalle sira</item>

@@ -45,12 +45,11 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.android.material.textview.MaterialTextView;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.lang.reflect.Field;
 import java.net.URI;
 import java.net.URLDecoder;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -85,6 +84,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.github.evilbunny2008.colourpicker.CPEditText;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 
@@ -97,15 +97,24 @@ import static com.odiousapps.weewxweather.weeWXApp.getAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishAndroidString;
 import static com.odiousapps.weewxweather.weeWXApp.getEnglishPlural;
 import static com.odiousapps.weewxweather.weeWXApp.getPlural;
-import static com.odiousapps.weewxweather.weeWXAppCommon.checkURL;
+import static com.odiousapps.weewxweather.weeWXAppCommon.FAILED_TO_MERGE;
+import static com.odiousapps.weewxweather.weeWXAppCommon.INIGO_INTENT;
+import static com.odiousapps.weewxweather.weeWXAppCommon.PROCESSING_ERRORS;
+import static com.odiousapps.weewxweather.weeWXAppCommon.UPDATE_ERRORS;
 import static com.odiousapps.weewxweather.weeWXAppCommon.doStackOutput;
 import static com.odiousapps.weewxweather.weeWXAppCommon.LogMessage;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getFile;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getIntervalTime;
+import static com.odiousapps.weewxweather.weeWXAppCommon.getJSONerrors;
 import static com.odiousapps.weewxweather.weeWXAppCommon.is_valid_url;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_keys;
 import static com.odiousapps.weewxweather.weeWXAppCommon.json_labels;
-import static com.odiousapps.weewxweather.weeWXAppCommon.loadOrDownloadImage;
 import static com.odiousapps.weewxweather.weeWXAppCommon.mergeJsonObjects;
+import static com.odiousapps.weewxweather.weeWXAppCommon.processForecast;
+import static com.odiousapps.weewxweather.weeWXAppCommon.processWeather;
+import static com.odiousapps.weewxweather.weeWXAppCommon.saveJSONerrors;
 import static com.odiousapps.weewxweather.weeWXAppCommon.str2Float;
+import static com.odiousapps.weewxweather.weeWXAppCommon.Result3;
 
 @SuppressWarnings({"unused", "FieldCanBeLocal", "UnspecifiedRegisterReceiverFlag", "UnsafeIntentLaunch",
                    "SourceLockedOrientationActivity", "ConstantConditions", "SameParameterValue",
@@ -1500,6 +1509,26 @@ public class MainActivity extends FragmentActivity
 		showAlertDialog(errorStr, logStr);
 	}
 
+	private void showUpdateErrors()
+	{
+		JSONArray jsonArray = getJSONerrors();
+		if(jsonArray.length() < 1)
+			return;
+
+		try
+		{
+			int errorCount = jsonArray.length();
+
+			String plural = getPlural(R.plurals.processing_errors2, errorCount);
+			String errorStr = String.format(Locale.getDefault(), plural, errorCount, getEnglishAndroidString(R.string.app_name));
+
+			showAlertDialog(errorStr);
+			jsonArray = new JSONArray();
+		} catch(Exception ignored) {}
+
+		saveJSONerrors(jsonArray);
+	}
+
 	private void showMergeError()
 	{
 		String errorStr = String.format(Locale.getDefault(), getAndroidString(R.string.failed_to_merge_weather_data),
@@ -1524,6 +1553,11 @@ public class MainActivity extends FragmentActivity
 	}
 
 	private void showAlertDialog(String errorStr, String logStr)
+	{
+		showAlertDialog(errorStr);
+	}
+
+	private void showAlertDialog(String errorStr)
 	{
 		new AlertDialog.Builder(this)
 				.setCancelable(false)
@@ -1700,8 +1734,6 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			LogMessage("processSettings() here0a!");
-
 			if(!is_valid_url(json_urls[0]) || !is_valid_url(json_urls[1]) || !is_valid_url(json_urls[2]))
 			{
 				if(is_valid_url(jsonData))
@@ -1717,87 +1749,11 @@ public class MainActivity extends FragmentActivity
 				}
 			}
 
-			LogMessage("processSettings() here0b!");
-			for(int i = 0; i < json_urls.length; i++)
-			{
-				LogMessage("processSettings() json_urls[" + i + "]: " + json_urls[i]);
-				if(!is_valid_url(json_urls[i]))
-				{
-					errorDialog(R.string.wasnt_able_to_download_url_is_blank, json_labels[i]);
-					return;
-				}
-
-				int validURL1;
-				try
-				{
-					LogMessage("processSettings() Checking " + json_labels[i] + ": " + json_urls[i]);
-					validURL1 = weeWXAppCommon.reallyGetWeather(i, json_urls[i], true);
-				} catch(Exception e) {
-					doStackOutput(e);
-					errorDialog(e);
-					return;
-				}
-
-				if(validURL1 == 2)
-				{
-					int errorCount = (int)KeyValue.readVar("ProcessingErrorCount", -1);
-					if(errorCount > 0)
-					{
-						int final_i = i;
-
-						bgStart = 0;
-						runOnUiThread(() ->
-						{
-							b1.setEnabled(true);
-							b2.setEnabled(true);
-							dialog.dismiss();
-							showProcessingErrors(final_i, json_urls[final_i]);
-						});
-
-						return;
-					}
-				}
-
-				if(validURL1 == 0)
-				{
-					errorDialog(R.string.wasnt_able_to_connect_or_download, json_labels[i], json_urls[i]);
-					return;
-				}
-			}
-
-			LogMessage("processSettings() here1!");
-
-			if(!mergeJsonObjects())
-			{
-				bgStart = 0;
-				runOnUiThread(() ->
-				{
-					b1.setEnabled(true);
-					b2.setEnabled(true);
-					dialog.dismiss();
-					showMergeError();
-				});
-
-				return;
-			}
-
-			LogMessage("processSettings() here2!");
-
-			if(!KeyValue.parseDicts())
-			{
-				errorDialog(R.string.failed_to_process_weather_data, json_labels[1]);
-				return;
-			}
-
-			LogMessage("processSettings() here3!");
-
 			if(radtype == null || radtype.isBlank())
 			{
 				errorDialog(R.string.radar_type_is_invalid);
 				return;
 			}
-
-			LogMessage("processSettings() here4!");
 
 			if(!is_valid_url(radarURL))
 			{
@@ -1805,23 +1761,17 @@ public class MainActivity extends FragmentActivity
 				return;
 			}
 
-			LogMessage("processSettings() here5!");
-
 			if(fctype == null || fctype.isBlank())
 			{
 				errorDialog(R.string.forecast_type_is_invalid);
 				return;
 			}
 
-			LogMessage("processSettings() here6!");
-
 			if(forecastURL == null || forecastURL.isBlank())
 			{
 				errorDialog(R.string.wasnt_able_to_connect_forecast);
 				return;
 			}
-
-			LogMessage("processSettings() here7!");
 
 			for(int i = 0; i < json_urls.length; i++)
 				LogMessage("processSettings() " + json_labels[i] + ": " + json_urls[i]);
@@ -1888,16 +1838,15 @@ public class MainActivity extends FragmentActivity
 							for(int i = 0; i < 7; i++)
 							{
 								long futureWhen = now + 86_400_000 * i;
-								LocalDate date = Instant.ofEpochMilli(futureWhen)
-										.atZone(ZoneId.systemDefault())
-										.toLocalDate();
+								Calendar calendar = Calendar.getInstance();
+								calendar.setTimeInMillis(futureWhen);
 
 								allURLs[rc] = url;
 								if(i > 0)
 								{
-									allURLs[rc] += String.format(Locale.getDefault(), "?date=%04d", date.getYear());
-									allURLs[rc] += String.format(Locale.getDefault(), "-%02d", date.getMonthValue());
-									allURLs[rc] += String.format(Locale.getDefault(), "-%02d", date.getDayOfMonth());
+									allURLs[rc] += String.format(Locale.getDefault(), "?date=%04d", calendar.get(Calendar.YEAR));
+									allURLs[rc] += String.format(Locale.getDefault(), "-%02d", calendar.get(Calendar.MONTH));
+									allURLs[rc] += String.format(Locale.getDefault(), "-%02d", calendar.get(Calendar.DAY_OF_MONTH));
 								}
 
 								rc++;
@@ -2076,7 +2025,7 @@ public class MainActivity extends FragmentActivity
 						{
 							KeyValue.bomGeohash = forecastURL.strip();
 							String newurl = "https://api.weather.bom.gov.au/v1/locations/" + forecastURL.strip();
-							String text = weeWXAppCommon.downloadString(newurl, false);
+							String text = weeWXAppCommon.downloadString(newurl);
 							LogMessage("processSettings(): text: " + text);
 
 							JSONObject jobj = new JSONObject(text);
@@ -2168,7 +2117,7 @@ public class MainActivity extends FragmentActivity
 					default ->
 					{
 						LogMessage("processSettings() No forecast information...", KeyValue.w);
-						errorDialog(R.string.forecast_type_is_invalid, fctype);
+						errorDialog(R.string.forecast_type_is_invalid, new Object[]{fctype});
 						return;
 					}
 				}
@@ -2183,88 +2132,199 @@ public class MainActivity extends FragmentActivity
 			LogMessage("processSettings() UpdateInterval: " + UpdateInterval);
 			LogMessage("processSettings() webcamInterval: " + webcamInterval);
 
-			try
+			if(forecastURL == null || forecastURL.isBlank())
 			{
-				validURL3 = weeWXAppCommon.reallyGetForecast(fctype, forecastURL, UpdateInterval);
-				//LogMessage("processSettings() tmpStr: " + tmpStr);
-			} catch(Exception e) {
-				//doStackOutput(e);
-				errorDialog(e);
-				return;
-			}
-
-			if(!validURL3)
-			{
-				errorDialog(R.string.wasnt_able_to_connect_forecast);
-				return;
-			}
-
-			try
-			{
-				if(radtype.equals("image"))
-					validURL2 = loadOrDownloadImage(radarURL, weeWXApp.radarFilename, false) != null;
-				else if(radtype.equals("webpage"))
-					validURL2 = checkURL(radarURL, false);
-				else
-					validURL2 = false;
-			} catch(Exception e) {
-				doStackOutput(e);
-				errorDialog(e);
-				return;
-			}
-
-			if(!validURL2)
-			{
-				errorDialog(R.string.wasnt_able_to_connect_radar_image);
-				return;
-			}
-
-			LogMessage("processSettings() checking: " + webcamURL);
-
-			Bitmap bm;
-
-			try
-			{
-				bm = loadOrDownloadImage(webcamURL, weeWXApp.webcamFilename, true);
-			} catch(Exception e) {
-				LogMessage("processSettings() Error! e: " + e.getMessage(), true, KeyValue.e);
-				//doStackOutput(e);
-				errorDialog(e);
-				return;
-			}
-
-			if(bm == null)
-			{
-				LogMessage("processSettings() bm is null!", true, KeyValue.w);
-				errorDialog(R.string.wasnt_able_to_connect_webcam_url);
+				errorDialog(R.string.forecast_url_not_set, new Object[]{"inigo-settings.txt"});
 				return;
 			}
 
 			appCustomURL = customURL.getText() != null ? customURL.getText().toString().strip() : "";
-			try
+			if(appCustomURL.isBlank() || !is_valid_url(appCustomURL))
+				appCustomURL = null;
+
+			if(CustomURL.isBlank() || !is_valid_url(CustomURL))
+				CustomURL = null;
+
+			if(appCustomURL == null && CustomURL == null)
 			{
-				if(appCustomURL.isBlank())
-				{
-					if(!CustomURL.isBlank() && !CustomURL.equals(weeWXApp.CustomURL_default))
-					{
-						LogMessage("processSettings() Checking url: " + CustomURL);
-						validURL5 = checkURL(CustomURL, false);
-						if(!validURL5)
-							KeyValue.putVar("custom_url", null);
-					}
-				} else {
-					LogMessage("processSettings() Checking url: " + appCustomURL);
-					validURL5 = checkURL(appCustomURL, false);
-				}
-			} catch(Exception e) {
-				doStackOutput(e);
-				errorDialog(e);
+				errorDialog(R.string.custom_url_not_set_or_blank);
 				return;
 			}
 
-			if(!validURL5)
+			List<Object> PossibleErrors = Arrays.asList(
+					new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[0], json_urls[0]}},
+					new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[1], json_urls[1]}},
+					new Object[]{R.string.wasnt_able_to_connect_or_download, new Object[]{json_labels[2], json_urls[2]}},
+					R.string.wasnt_able_to_connect_forecast,
+					R.string.wasnt_able_to_connect_radar_image,
+					R.string.wasnt_able_to_connect_webcam_url,
+					R.string.wasnt_able_to_connect_custom_url
+			);
+
+			String tmpForecastURL = forecastURL;
+			if(fctype.equals("wetherzone2"))
+				tmpForecastURL = null;
+
+			String tmpCustomURL = appCustomURL;
+			if(appCustomURL == null)
+				tmpCustomURL = CustomURL;
+
+			List<String> urls = Arrays.asList(
+					json_urls[0], json_urls[1], json_urls[2],
+					tmpForecastURL,
+					radarURL,
+					webcamURL,
+					tmpCustomURL
+			);
+
+			String tmpRadType = radtype.equals("image") ? "IMAGE" : "HTML";
+			if(radtype.equals("image") &&
+			   (radarURL.toLowerCase(Locale.ENGLISH).strip().endsWith(".mjpeg") ||
+			   radarURL.toLowerCase(Locale.ENGLISH).strip().endsWith(".mjpg")))
+				tmpRadType = "MJPEG";
+
+			List<String> contentTypes = Arrays.asList(
+					"JSON", "JSON", "JSON",
+					"HTML",
+					tmpRadType,
+					"IMAGE",
+					"HTML"
+			);
+
+			List<Integer> idtype = Arrays.asList(
+					0, 1, 2,
+					3,
+					4,
+					5,
+					6
+			);
+
+			ParallelDownloader downloader = new ParallelDownloader(urls.size(), false);
+			List<ParallelDownloader.DownloadResult> results = downloader.downloadAll(idtype, urls, contentTypes);
+
+			boolean allOk = results.stream().allMatch(r -> r.success);
+			long totalBytes = results.stream().mapToLong(r -> r.length).sum();
+
+			List<ParallelDownloader.DownloadResult> failed = results.stream().filter(r -> !r.success).toList();
+
+			if(!allOk)
 			{
-				errorDialog(R.string.wasnt_able_to_connect_custom_url);
+				for(ParallelDownloader.DownloadResult r : failed)
+				{
+					LogMessage("MainActivity.processSettings(" + r.id + ") Error! " + r.error, KeyValue.e);
+
+					Object obj = PossibleErrors.get(r.id);
+					if(obj instanceof Object[] multiobj)
+					{
+						errorDialog((int)multiobj[0], (Object[])multiobj[1]);
+						return;
+					}
+
+					errorDialog((int)obj);
+					return;
+				}
+			}
+
+			int modhour = getIntervalTime(UpdateInterval)[1];
+
+			List<ParallelDownloader.DownloadResult> succeeded = results.stream().toList();
+			for(ParallelDownloader.DownloadResult r : succeeded)
+			{
+				if(0 <= r.id && r.id <= 2)
+				{
+					try
+					{
+						Boolean ret = processWeather(r.id, r.string);
+						if(ret == null)
+						{
+							int errorCount = (int)KeyValue.readVar("ProcessingErrorCount", -1);
+							if(errorCount > 0)
+							{
+								bgStart = 0;
+								runOnUiThread(() ->
+								{
+									b1.setEnabled(true);
+									b2.setEnabled(true);
+									dialog.dismiss();
+									showProcessingErrors(r.id, r.url);
+								});
+
+								return;
+							}
+						}
+					} catch(Exception e) {
+						errorDialog(e);
+						return;
+					}
+				}
+
+				if(r.id == 3)
+				{
+					try
+					{
+						Result3 r3 = processForecast(modhour, fctype, r.string, forecastURL);
+
+						if(r3 == null)
+						{
+							errorDialog(R.string.wasnt_able_to_connect_forecast);
+							return;
+						}
+
+						if(!r3.succeeded())
+						{
+							errorDialog(r3.error(), r3.error());
+							return;
+						}
+					} catch(Exception e) {
+						errorDialog(e);
+						return;
+					}
+				} else if(idtype.get(r.id) == 4 && r.contentType.equals("IMAGE")) {
+					Bitmap bm = r.bm;
+					File file = getFile(weeWXApp.radarFilename);
+					try(FileOutputStream out = new FileOutputStream(file))
+					{
+						LogMessage("Attempting to save to " + file.getAbsoluteFile());
+						bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
+						LogMessage("Got past the save... ");
+					} catch(Exception e) {
+						LogMessage("Error! e: " + e, true, KeyValue.e);
+						errorDialog(e);
+						return;
+					}
+				} else if(r.id == 5) {
+					Bitmap bm = r.bm;
+					File file = getFile(weeWXApp.webcamFilename);
+					try(FileOutputStream out = new FileOutputStream(file))
+					{
+						LogMessage("Attempting to save to " + file.getAbsoluteFile());
+						bm.compress(Bitmap.CompressFormat.JPEG, 85, out);
+						LogMessage("Got past the save... ");
+					} catch(Exception e) {
+						LogMessage("Error! e: " + e, true, KeyValue.e);
+						errorDialog(e);
+						return;
+					}
+				}
+			}
+
+			if(!KeyValue.parseDicts())
+			{
+				errorDialog(R.string.failed_to_process_weather_data, new Object[]{json_labels[1]});
+				return;
+			}
+
+			if(!mergeJsonObjects())
+			{
+				bgStart = 0;
+				runOnUiThread(() ->
+				{
+					b1.setEnabled(true);
+					b2.setEnabled(true);
+					dialog.dismiss();
+					showMergeError();
+				});
+
 				return;
 			}
 
@@ -2290,38 +2350,18 @@ public class MainActivity extends FragmentActivity
 			for(int i = 0; i < json_urls.length; i++)
 				KeyValue.putVar(json_keys[i] + "_url", json_urls[i]);
 
-			if(forecastURL == null || forecastURL.isBlank())
-			{
-				KeyValue.putVar("rssCheck", null);
-				KeyValue.putVar("forecastData", null);
-				KeyValue.putVar("forecastGsonEncoded", null);
-				KeyValue.putVar("lastAttemptedForecastDownloadTime", null);
-				KeyValue.putVar("FORECAST_URL", null);
-				KeyValue.putVar("fctype", null);
-				KeyValue.putVar("forecastLocationName", null);
-			} else {
-				KeyValue.putVar("FORECAST_URL", forecastURL);
-				KeyValue.putVar("fctype", fctype);
+			KeyValue.putVar("FORECAST_URL", forecastURL);
+			KeyValue.putVar("fctype", fctype);
 
-				if(forecastLocationName == null || forecastLocationName.isBlank())
-					forecastLocationName = null;
+			if(forecastLocationName == null || forecastLocationName.isBlank())
+				forecastLocationName = null;
 
-				KeyValue.putVar("forecastLocationName", forecastLocationName);
-			}
+			KeyValue.putVar("forecastLocationName", forecastLocationName);
 
-			if(radarURL == null || radarURL.isBlank())
-			{
-				KeyValue.putVar("radtype", null);
-				KeyValue.putVar("RADAR_URL", null);
-			} else {
-				KeyValue.putVar("radtype", radtype);
-				KeyValue.putVar("RADAR_URL", radarURL);
-			}
+			KeyValue.putVar("radtype", radtype);
+			KeyValue.putVar("RADAR_URL", radarURL);
 
-			if(webcamURL == null || webcamURL.isBlank())
-				KeyValue.putVar("WEBCAM_URL", null);
-			else
-				KeyValue.putVar("WEBCAM_URL", webcamURL);
+			KeyValue.putVar("WEBCAM_URL", webcamURL);
 
 			if(CustomURL == null || CustomURL.isBlank())
 				KeyValue.putVar("CUSTOM_URL", null);
@@ -2429,10 +2469,17 @@ public class MainActivity extends FragmentActivity
 		});
 	}
 
-	void errorDialog(int strid, String... vars)
+	void errorDialog(int strid, Object[] vars)
 	{
-		String errorStr = String.format(Locale.getDefault(), getAndroidString(strid), (Object[]) vars);
-		String logStr = String.format(Locale.ENGLISH, getEnglishAndroidString(strid), (Object[]) vars);
+		String errorStr = String.format(Locale.getDefault(), getAndroidString(strid), vars);
+		String logStr = String.format(Locale.ENGLISH, getEnglishAndroidString(strid), vars);
+		errorDialog(errorStr, logStr);
+	}
+
+	void errorDialog(int strid)
+	{
+		String errorStr = getAndroidString(strid);
+		String logStr = getEnglishAndroidString(strid);
 		errorDialog(errorStr, logStr);
 	}
 
@@ -2445,10 +2492,10 @@ public class MainActivity extends FragmentActivity
 	{
 		LogMessage("notificationObserver: " + str);
 
-		if(str.equals(weeWXAppCommon.INIGO_INTENT))
+		if(str.equals(INIGO_INTENT))
 			showUpdateAvailable();
 
-		if(str.equals(weeWXAppCommon.PROCESSING_ERRORS))
+		if(str.equals(PROCESSING_ERRORS))
 		{
 			int errorCount = (int)KeyValue.readVar("ProcessingErrorCount", -1);
 			if(errorCount < 1)
@@ -2465,8 +2512,11 @@ public class MainActivity extends FragmentActivity
 			showProcessingErrors(json_id, json_url);
 		}
 
-		if(str.equals(weeWXAppCommon.FAILED_TO_MERGE))
+		if(str.equals(FAILED_TO_MERGE))
 			showMergeError();
+
+		if(str.equals(UPDATE_ERRORS))
+			showUpdateErrors();
 	};
 
 	public boolean isViewPagerNull()

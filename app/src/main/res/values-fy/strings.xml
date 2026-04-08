@@ -73,7 +73,6 @@
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Wachtsje asjebleaft wylst wy de URL dy\'t jo yntsjinne hawwe ferifiearje</string>
     <plurals name="processing_errors">
-        <item quantity="one">Der binne %1$d flater ûntdutsen yn it %2$s bestân, besjoch it %2$s bestân fûn op %3$s of besjoch %4$s logboeken foar de details</item>
         <item quantity="other">Der binne %1$d flaters ûntdutsen yn it %2$s bestân, besjoch de %2$s bestân fûn op %3$s of besjoch %4$s logboeken foar de details</item>
     </plurals>
     <string name="radar">Radar</string>

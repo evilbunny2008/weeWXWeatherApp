@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï ke yök në %2$s ë athör yic, tïŋ %2$s ë athör cï yök në %3$s wala tïŋ %4$s ë lööŋ cï keek yök në wël ë lëk yiic</item>
         <item quantity="many">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï ke yök në %2$s ë athör yic, tïŋ %2$s ë athör cï yök në %3$s wala tïŋ %4$s ë lööŋ cï keek yök në wël ë lëk yiic</item>
-        <item quantity="one">Anɔŋ %1$d cï yök ke cï yök në %2$s yic, tïŋ %2$s cï yök në %3$s wala tïŋ %4$s cï gɔ̈t në wël juëc yiic</item>
         <item quantity="other">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï ke yök në %2$s ë athör yic, tïŋ %2$s ë athör cï yök në %3$s wala tïŋ %4$s ë lööŋ cï keek yök në wël ë lëk yiic</item>
         <item quantity="two">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï ke yök në %2$s ë athör yic, tïŋ %2$s ë athör cï yök në %3$s wala tïŋ %4$s ë lööŋ cï keek yök në wël ë lëk yiic</item>
         <item quantity="zero">Anɔŋ %1$d ë kä cï röt wuɔ̈ɔ̈c cï ke yök në %2$s ë athör yic, tïŋ %2$s ë athör cï yök në %3$s wala tïŋ %4$s ë lööŋ cï keek yök në wël ë lëk yiic</item>

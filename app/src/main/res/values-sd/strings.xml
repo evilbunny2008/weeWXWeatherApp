@@ -73,7 +73,6 @@
     <string name="ok">ٺيڪ</string>
     <string name="please_wait_verify_url">مھرباني ڪري انتظار ڪريو جيستائين اسان توھان جي ڏنل URL جي تصديق ڪريون</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s فائل ۾ %1$d نقص مليا، %3$s تي مليل %2$s فائل ڏسو يا تفصيل لاءِ %4$s لاگ ڏسو</item>
         <item quantity="other">%2$s فائل ۾ %1$d غلطيون مليون، %3$s تي مليل %2$s فائل ڏسو يا تفصيل لاءِ %4$s لاگ ڏسو</item>
     </plurals>
     <string name="radar">ريڊار</string>

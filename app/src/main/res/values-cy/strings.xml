@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Canfuwyd %1$d gwallau yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>
         <item quantity="many">Canfuwyd %1$d gwallau yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>
-        <item quantity="one">Canfuwyd gwall %1$d yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>
         <item quantity="other">Canfuwyd %1$d gwallau yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>
         <item quantity="two">Canfuwyd %1$d gwallau yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>
         <item quantity="zero">Canfuwyd %1$d gwallau yn y ffeil %2$s, gweld y ffeil %2$s a ganfuwyd yn %3$s neu weld %4$s logiau am y manylion</item>

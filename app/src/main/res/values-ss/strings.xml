@@ -73,7 +73,6 @@
     <string name="ok">Kulungile</string>
     <string name="please_wait_verify_url">Sicela ulindze ngesikhatsi sicinisekisa i-URL loyifakile</string>
     <plurals name="processing_errors">
-        <item quantity="one">Bekuneliphutsa le %1$d lelitfolakele kufayela le %2$s, buka lifayela le %2$s lelitfolakala ku %3$s noma buka emalogi e %4$s kute utfole imininingwane</item>
         <item quantity="other">Bekunemaphutsa langu %1$d latfolakala kufayela le %2$s, buka lifayela le %2$s lelitfolakala ku %3$s noma buka emalogi langu %4$s kute utfole imininingwane</item>
     </plurals>
     <string name="radar">Radari</string>

@@ -73,7 +73,6 @@
     <string name="ok">சரி</string>
     <string name="please_wait_verify_url">நீங்கள் சமர்ப்பித்த URL ஐ நாங்கள் சரிபார்க்கும் வரை காத்திருக்கவும்</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s கோப்பில் %1$d பிழை கண்டறியப்பட்டது, %3$s இல் காணப்படும் %2$s கோப்பைப் பார்க்கவும் அல்லது விவரங்களுக்கு %4$s பதிவுகளைப் பார்க்கவும்</item>
         <item quantity="other">%2$s கோப்பில் %1$d பிழைகள் கண்டறியப்பட்டுள்ளன, %3$s இல் காணப்படும் %2$s கோப்பைப் பார்க்கவும் அல்லது விவரங்களுக்கு %4$s பதிவுகளைப் பார்க்கவும்</item>
     </plurals>
     <string name="radar">ரேடார்</string>

@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Adda dagiti %1$d a biddut a naduktalan iti %2$s a papeles, kitaen ti %2$s a papeles a nasarakan iti %3$s wenno kitaen dagiti %4$s a log para kadagiti detalye</item>
         <item quantity="many">Adda dagiti %1$d a biddut a naduktalan iti %2$s a papeles, kitaen ti %2$s a papeles a nasarakan iti %3$s wenno kitaen dagiti %4$s a log para kadagiti detalye</item>
-        <item quantity="one">Adda dagiti %1$d a biddut a naduktalan iti %2$s a papeles, kitaen ti %2$s a papeles a nasarakan iti %3$s wenno kitaen dagiti %4$s a log para kadagiti detalye</item>
         <item quantity="other">Adda dagiti %1$d a biddut a naduktalan iti %2$s a papeles, kitaen ti %2$s a papeles a nasarakan iti %3$s wenno kitaen dagiti %4$s a log para kadagiti detalye</item>
         <item quantity="two">Adda dagiti %1$d a biddut a naduktalan iti %2$s a papeles, kitaen ti %2$s a papeles a nasarakan iti %3$s wenno kitaen dagiti %4$s a log para kadagiti detalye</item>
         <item quantity="zero">Adda dagiti %1$d a biddut a naduktalan iti %2$s a papeles, kitaen ti %2$s a papeles a nasarakan iti %3$s wenno kitaen dagiti %4$s a log para kadagiti detalye</item>

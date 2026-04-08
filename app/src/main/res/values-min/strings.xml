@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Ado %1$d kasalahan nan tadeteksi dalam berkas %2$s, caliak berkas %2$s nan ditamukan pado %3$s atau caliak log %4$s untuak rinciannyo</item>
         <item quantity="many">Ado %1$d kasalahan nan tadeteksi dalam berkas %2$s, caliak berkas %2$s nan ditamukan pado %3$s atau caliak log %4$s untuak rinciannyo</item>
-        <item quantity="one">Ado kasalahan %1$d nan tadeteksi dalam berkas %2$s, caliak berkas %2$s nan ditamukan pado %3$s atau caliak log %4$s untuak rinciannyo</item>
         <item quantity="other">Ado %1$d kasalahan nan tadeteksi dalam berkas %2$s, caliak berkas %2$s nan ditamukan pado %3$s atau caliak log %4$s untuak rinciannyo</item>
         <item quantity="two">Ado %1$d kasalahan nan tadeteksi dalam berkas %2$s, caliak berkas %2$s nan ditamukan pado %3$s atau caliak log %4$s untuak rinciannyo</item>
         <item quantity="zero">Ado %1$d kasalahan nan tadeteksi dalam berkas %2$s, caliak berkas %2$s nan ditamukan pado %3$s atau caliak log %4$s untuak rinciannyo</item>

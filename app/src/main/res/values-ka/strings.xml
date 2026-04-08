@@ -73,7 +73,6 @@
     <string name="ok">კარგი</string>
     <string name="please_wait_verify_url">გთხოვთ, დაელოდოთ სანამ ჩვენ დავადასტურებთ თქვენ მიერ გაგზავნილ URL-ს</string>
     <plurals name="processing_errors">
-        <item quantity="one">%2$s ფაილში აღმოჩენილია %1$d შეცდომა, იხილეთ %2$s ფაილი ნაპოვნი %3$s ზე ან ნახეთ %4$s ჟურნალები დეტალებისთვის</item>
         <item quantity="other">%2$s ფაილში აღმოჩენილია %1$d შეცდომა, იხილეთ %2$s ფაილი ნაპოვნი %3$s ზე ან ნახეთ %4$s ჟურნალები დეტალებისთვის</item>
     </plurals>
     <string name="radar">რადარი</string>

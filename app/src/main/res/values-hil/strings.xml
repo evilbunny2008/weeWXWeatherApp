@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">May %1$d nga mga sayop nga nakit-an sa %2$s nga file, tan-awa ang %2$s nga file nga nakita sa %3$s ukon tan-awa ang %4$s nga mga log para sa mga detalye</item>
         <item quantity="many">May %1$d nga mga sayop nga nakit-an sa %2$s nga file, tan-awa ang %2$s nga file nga nakita sa %3$s ukon tan-awa ang %4$s nga mga log para sa mga detalye</item>
-        <item quantity="one">May %1$d nga sayop nga nakit-an sa %2$s nga file, tan-awa ang %2$s nga file nga nakita sa %3$s ukon tan-awa ang %4$s nga mga log para sa mga detalye</item>
         <item quantity="other">May %1$d nga mga sayop nga nakit-an sa %2$s nga file, tan-awa ang %2$s nga file nga nakita sa %3$s ukon tan-awa ang %4$s nga mga log para sa mga detalye</item>
         <item quantity="two">May %1$d nga mga sayop nga nakit-an sa %2$s nga file, tan-awa ang %2$s nga file nga nakita sa %3$s ukon tan-awa ang %4$s nga mga log para sa mga detalye</item>
         <item quantity="zero">May %1$d nga mga sayop nga nakit-an sa %2$s nga file, tan-awa ang %2$s nga file nga nakita sa %3$s ukon tan-awa ang %4$s nga mga log para sa mga detalye</item>

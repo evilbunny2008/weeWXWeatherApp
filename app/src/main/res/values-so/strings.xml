@@ -73,7 +73,6 @@
     <string name="ok">Hagaag</string>
     <string name="please_wait_verify_url">Fadlan sug inta aan xaqiijineyno url aad gudbisay</string>
     <plurals name="processing_errors">
-        <item quantity="one">Waxaa jiray %1$d khalad ah oo laga helay faylka %2$s, ka eeg faylka %2$s ee laga helay %3$s ama eeg %4$s diiwaanka faahfaahinta</item>
         <item quantity="other">Waxaa jiray %1$d khaladaad laga helay faylka %2$s, eeg faylka %2$s ee laga helay %3$s ama eeg %4$s diiwaanka faahfaahinta</item>
     </plurals>
     <string name="radar">Raadaar</string>

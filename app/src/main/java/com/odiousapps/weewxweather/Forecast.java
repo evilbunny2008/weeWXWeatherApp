@@ -81,7 +81,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 			String radtype = (String)KeyValue.readVar("radtype", weeWXApp.radtype_default);
 			if(radtype != null && radtype.equals("image"))
-				weeWXAppCommon.getRadarImage(true, false, false, false);
+				weeWXAppCommon.getRadarImage(true, false, false);
 			else
 				loadRadar(true);
 		});
@@ -258,7 +258,7 @@ public class Forecast extends Fragment implements View.OnClickListener
 
 		if(radtype.equals("image"))
 		{
-			Bitmap bm = weeWXAppCommon.getRadarImage(false, false, false, false);
+			Bitmap bm = weeWXAppCommon.getRadarImage(false, false, false);
 			if(bm == null)
 			{
 				failedRadarWebViewDownload(R.string.radar_download_failed);

@@ -73,7 +73,6 @@
     <string name="ok">Labi</string>
     <string name="please_wait_verify_url">Lūdzu, uzgaidiet, kamēr mēs pārbaudīsim jūsu iesniegto URL</string>
     <plurals name="processing_errors">
-        <item quantity="one">Failā %2$s tika konstatēta %1$d kļūda, skatiet %2$s failu, kas atrasts vietnē %3$s, vai skatiet %4$s žurnālus, lai iegūtu sīkāku informāciju</item>
         <item quantity="other">%2$s failā tika konstatētas %1$d kļūdas, skatiet %2$s failu, kas atrasts %3$s, vai skatiet %4$s žurnālus, lai iegūtu sīkāku informāciju</item>
         <item quantity="zero">%2$s failā tika konstatētas %1$d kļūdas, skatiet %2$s failu, kas atrasts %3$s, vai skatiet %4$s žurnālus, lai iegūtu sīkāku informāciju</item>
     </plurals>

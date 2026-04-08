@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">V souboru %2$s bylo zjištěno %1$d chyb, prohlédněte si soubor %2$s nalezený na %3$s nebo si prohlédněte protokoly %4$s, kde najdete podrobnosti</item>
         <item quantity="many">V souboru %2$s bylo zjištěno %1$d chyb, prohlédněte si soubor %2$s nalezený na %3$s nebo si prohlédněte protokoly %4$s, kde najdete podrobnosti</item>
-        <item quantity="one">V souboru %2$s byla zjištěna %1$d chyba, prohlédněte si soubor %2$s nalezený na %3$s nebo si prohlédněte protokoly %4$s, kde najdete podrobnosti</item>
         <item quantity="other">V souboru %2$s bylo zjištěno %1$d chyb, prohlédněte si soubor %2$s nalezený na %3$s nebo si prohlédněte protokoly %4$s, kde najdete podrobnosti</item>
     </plurals>
     <string name="radar">Radar</string>

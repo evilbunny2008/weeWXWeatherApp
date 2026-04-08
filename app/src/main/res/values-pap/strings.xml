@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">Tabatin %1$d eror detektá den e archivo %2$s, wak e archivo %2$s hañá na %3$s òf wak e lognan di %4$s pa e detayenan</item>
         <item quantity="many">Tabatin %1$d eror detektá den e archivo %2$s, wak e archivo %2$s hañá na %3$s òf wak e lognan di %4$s pa e detayenan</item>
-        <item quantity="one">Tabatin %1$d eror detektá den e archivo %2$s, wak e archivo %2$s hañá na %3$s òf wak e lognan di %4$s pa e detayenan</item>
         <item quantity="other">Tabatin %1$d eror detektá den e archivo %2$s, wak e archivo %2$s hañá na %3$s òf wak e lognan di %4$s pa e detayenan</item>
         <item quantity="two">Tabatin %1$d eror detektá den e archivo %2$s, wak e archivo %2$s hañá na %3$s òf wak e lognan di %4$s pa e detayenan</item>
         <item quantity="zero">Tabatin %1$d eror detektá den e archivo %2$s, wak e archivo %2$s hañá na %3$s òf wak e lognan di %4$s pa e detayenan</item>

@@ -73,7 +73,6 @@
     <string name="ok">Ados</string>
     <string name="please_wait_verify_url">Mesedez, itxaron bidali duzun URLa egiaztatzen dugun bitartean</string>
     <plurals name="processing_errors">
-        <item quantity="one">%1$d errore detektatu da %2$s fitxategian, ikusi %3$s helbidean aurkitutako %2$s fitxategia edo ikusi %4$s erregistroak xehetasunetarako</item>
         <item quantity="other">%1$d akats detektatu dira %2$s fitxategian, ikusi %2$s fitxategia %3$s helbidean edo ikusi %4$s erregistroak xehetasunetarako</item>
     </plurals>
     <string name="radar">Radarra</string>

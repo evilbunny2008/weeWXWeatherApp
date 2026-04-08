@@ -75,7 +75,6 @@
     <plurals name="processing_errors">
         <item quantity="few">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
         <item quantity="many">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
-        <item quantity="one">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
         <item quantity="other">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
         <item quantity="two">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>
         <item quantity="zero">D\'r zien %1$d foute gedetecteerd in \'t %2$s bestand, bekiek \'t %2$s bestand dat is gevoonde op %3$s of bekiek de %4$s logs veur de details</item>

@@ -73,7 +73,6 @@
     <string name="ok">Ok</string>
     <string name="please_wait_verify_url">Ju lutemi prisni derisa të verifikojmë URL-në që keni dorëzuar</string>
     <plurals name="processing_errors">
-        <item quantity="one">U zbulua %1$d gabim në skedarin %2$s, shikoni skedarin %2$s të gjetur në %3$s ose shikoni regjistrat e %4$s për detajet</item>
         <item quantity="other">U zbuluan %1$d gabime në skedarin %2$s, shikoni skedarin %2$s të gjetur në %3$s ose shikoni regjistrat e %4$s për detajet</item>
     </plurals>
     <string name="radar">Radari</string>
